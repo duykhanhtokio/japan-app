@@ -1,0 +1,1069 @@
+import { Text } from '@/components/app/LocalizedText';
+import {
+    router } from 'expo-router';
+
+import {
+    ImageBackground,
+    Pressable,
+    ScrollView,
+    StyleSheet,
+    View,
+} from 'react-native';
+
+import { SafeAreaView } from 'react-native-safe-area-context';
+
+import GameHeader from '@/components/app/GameHeader';
+import { useAppLanguage } from '@/context/LanguageContext';
+
+type TokyoLocationId =
+    | 'station'
+    | 'shibuya'
+    | 'odaiba'
+    | 'shinjuku'
+    | 'asakusa';
+
+type TokyoLocation = {
+    id: TokyoLocationId;
+
+    ja: string;
+    en: string;
+
+    descriptionJa: string;
+    descriptionVi: string;
+
+    progress: string;
+
+    unlocked: boolean;
+
+    image: any;
+};
+
+const locations: TokyoLocation[] = [
+    {
+        id: 'station',
+
+        ja: '東京駅',
+        en: 'Tokyo Station',
+
+        descriptionJa:
+            '駅で使う日本語を学びます。',
+
+        descriptionVi:
+            'Học hội thoại sử dụng tại nhà ga.',
+
+        progress: '0 / 6',
+
+        unlocked: true,
+
+        image: require(
+            '../../../assets/app/cards/tokyo-station.jpg'
+        ),
+    },
+
+    {
+        id: 'shibuya',
+
+        ja: '渋谷',
+        en: 'Shibuya',
+
+        descriptionJa:
+            'カフェで注文の会話を練習します。',
+
+        descriptionVi:
+            'Luyện hội thoại gọi món tại quán café.',
+
+        progress: '1 / 6',
+
+        unlocked: true,
+
+        image: require(
+            '../../../assets/app/cards/shibuya.jpg'
+        ),
+    },
+
+    {
+        id: 'odaiba',
+
+        ja: 'お台場',
+        en: 'Odaiba',
+
+        descriptionJa:
+            '観光で使う日本語を学びます。',
+
+        descriptionVi:
+            'Học tiếng Nhật sử dụng khi tham quan.',
+
+        progress: '0 / 6',
+
+        unlocked: true,
+
+        image: require(
+            '../../../assets/app/cards/odaiba.jpg'
+        ),
+    },
+
+    {
+        id: 'shinjuku',
+
+        ja: '新宿',
+        en: 'Shinjuku',
+
+        descriptionJa:
+            '買い物や生活の会話を学びます。',
+
+        descriptionVi:
+            'Học hội thoại mua sắm và sinh hoạt.',
+
+        progress: '0 / 6',
+
+        unlocked: true,
+
+        image: require(
+            '../../../assets/app/cards/shinjuku.jpg'
+        ),
+    },
+
+    {
+        id: 'asakusa',
+
+        ja: '浅草',
+        en: 'Asakusa',
+
+        descriptionJa:
+            '観光地での会話を練習します。',
+
+        descriptionVi:
+            'Luyện hội thoại tại địa điểm du lịch.',
+
+        progress: '0 / 6',
+
+        unlocked: true,
+
+        image: require(
+            '../../../assets/app/cards/asakusa.jpg'
+        ),
+    },
+];
+
+export default function TokyoScreen() {
+    const { language } = useAppLanguage();
+    function openLocation(
+        location: TokyoLocation
+    ) {
+        console.log(
+            'Tokyo location pressed:',
+            location.id
+        );
+
+        router.push('/world/city/CTY-013');
+    }
+
+    return (
+        <ImageBackground
+            source={require(
+                '../../../assets/app/cities/tokyo-bg.jpg'
+            )}
+            style={styles.background}
+            resizeMode="cover"
+        >
+            <View
+                pointerEvents="none"
+                style={styles.overlay}
+            />
+
+            <SafeAreaView
+                style={styles.container}
+                edges={[
+                    'top',
+                    'bottom',
+                ]}
+            >
+                <View style={styles.content}>
+                    {/* HEADER */}
+
+                    <GameHeader
+                        name="Haruto"
+                        level={12}
+                        xpCurrent={1420}
+                        xpMax={5000}
+                        coins={2450}
+                        diamonds={85}
+                    />
+
+                    {/* TITLE */}
+
+                    <View style={styles.titleRow}>
+                        <Pressable
+                            style={({ pressed }) => [
+                                styles.backButton,
+
+                                pressed &&
+                                styles.pressed,
+                            ]}
+                            onPress={() =>
+                                router.back()
+                            }
+                        >
+                            <Text
+                                style={
+                                    styles.backText
+                                }
+                            >
+                                ←
+                            </Text>
+                        </Pressable>
+
+                        <View
+                            style={
+                                styles.titleContent
+                            }
+                        >
+                            <Text
+                                style={
+                                    styles.title
+                                }
+                            >
+                                東京都
+                            </Text>
+
+                            <Text
+                                style={
+                                    styles.subtitle
+                                }
+                            >
+                                Tokyo
+                            </Text>
+                        </View>
+                    </View>
+
+                    {/* PROGRESS */}
+
+                    <View
+                        style={
+                            styles.progressCard
+                        }
+                    >
+                        <View
+                            style={
+                                styles.progressTop
+                            }
+                        >
+                            <View>
+                                <Text
+                                    style={
+                                        styles.progressTitle
+                                    }
+                                >
+                                    東京の冒険
+                                </Text>
+
+                                <Text
+                                    style={
+                                        styles.progressSubtitle
+                                    }
+                                >
+                                    TOKYO JOURNEY
+                                </Text>
+                            </View>
+
+                            <View
+                                style={
+                                    styles.progressRight
+                                }
+                            >
+                                <Text
+                                    style={
+                                        styles.progressValue
+                                    }
+                                >
+                                    5 / 30
+                                </Text>
+
+                                <Text
+                                    style={
+                                        styles.progressPercent
+                                    }
+                                >
+                                    16%
+                                </Text>
+                            </View>
+                        </View>
+
+                        <View
+                            style={
+                                styles.progressTrack
+                            }
+                        >
+                            <View
+                                style={
+                                    styles.progressFill
+                                }
+                            />
+                        </View>
+
+                        <Text
+                            style={
+                                styles.progressNote
+                            }
+                        >
+                            渋谷が開放されています
+                        </Text>
+                    </View>
+
+                    {/* SECTION TITLE */}
+
+                    <View
+                        style={
+                            styles.sectionHeader
+                        }
+                    >
+                        <View>
+                            <Text
+                                style={
+                                    styles.sectionTitle
+                                }
+                            >
+                                場所を選ぶ
+                            </Text>
+
+                            <Text
+                                style={
+                                    styles.sectionSubtitle
+                                }
+                            >
+                                Chọn địa điểm để bắt đầu hội thoại
+                            </Text>
+                        </View>
+
+                        <View
+                            style={
+                                styles.locationCounter
+                            }
+                        >
+                            <Text
+                                style={
+                                    styles.locationCounterText
+                                }
+                            >
+                                1 / 5 OPEN
+                            </Text>
+                        </View>
+                    </View>
+
+                    {/* LOCATION CARDS */}
+
+                    <ScrollView
+                        style={styles.scroll}
+                        contentContainerStyle={
+                            styles.grid
+                        }
+                        showsVerticalScrollIndicator={
+                            false
+                        }
+                    >
+                        {locations.map(
+                            (
+                                location
+                            ) => (
+                                <LocationCard
+                                    key={
+                                        location.id
+                                    }
+                                    location={
+                                        location
+                                    }
+                                    onPress={() =>
+                                        openLocation(
+                                            location
+                                        )
+                                    }
+                                />
+                            )
+                        )}
+                    </ScrollView>
+                </View>
+            </SafeAreaView>
+        </ImageBackground>
+    );
+}
+
+function LocationCard({
+    location,
+    onPress,
+}: {
+    location: TokyoLocation;
+
+    onPress: () => void;
+}) {
+    return (
+        <Pressable
+            onPress={onPress}
+            style={({ pressed }) => [
+                styles.card,
+
+                location.unlocked
+                    ? styles.cardUnlocked
+                    : styles.cardLocked,
+
+                pressed &&
+                styles.cardPressed,
+            ]}
+        >
+            <ImageBackground
+                source={location.image}
+                style={styles.cardImage}
+                imageStyle={styles.cardRadius}
+                resizeMode="cover"
+            >
+                {/* IMAGE SHADE */}
+
+                <View
+                    pointerEvents="none"
+                    style={[
+                        styles.cardShade,
+
+                        !location.unlocked &&
+                        styles.cardShadeLocked,
+                    ]}
+                />
+
+                {/* TOP BADGE */}
+
+                <View
+                    style={
+                        styles.cardTop
+                    }
+                >
+                    {location.unlocked ? (
+                        <View
+                            style={
+                                styles.openBadge
+                            }
+                        >
+                            <Text
+                                style={
+                                    styles.openBadgeText
+                                }
+                            >
+                                OPEN
+                            </Text>
+                        </View>
+                    ) : (
+                        <View
+                            style={
+                                styles.lockBadge
+                            }
+                        >
+                            <Text
+                                style={
+                                    styles.lockBadgeText
+                                }
+                            >
+                                🔒 LOCK
+                            </Text>
+                        </View>
+                    )}
+
+                    <View
+                        style={
+                            styles.cardProgressBadge
+                        }
+                    >
+                        <Text
+                            style={
+                                styles.cardProgressText
+                            }
+                        >
+                            {
+                                location.progress
+                            }
+                        </Text>
+                    </View>
+                </View>
+
+                {/* BOTTOM */}
+
+                <View
+                    style={
+                        styles.cardBottom
+                    }
+                >
+                    <Text
+                        style={
+                            styles.cardJa
+                        }
+                    >
+                        {location.ja}
+                    </Text>
+
+                    <Text
+                        style={
+                            styles.cardEn
+                        }
+                    >
+                        {location.en}
+                    </Text>
+
+                    <Text
+                        style={
+                            styles.cardDescriptionJa
+                        }
+                        numberOfLines={1}
+                    >
+                        {
+                            location.descriptionJa
+                        }
+                    </Text>
+
+                    <Text
+                        style={
+                            styles.cardDescriptionVi
+                        }
+                        numberOfLines={1}
+                    >
+                        {
+                            language === 'vi'
+                                ? location.descriptionVi
+                                : location.en
+                        }
+                    </Text>
+
+                    {location.unlocked && (
+                        <View
+                            style={
+                                styles.startRow
+                            }
+                        >
+                            <Text
+                                style={
+                                    styles.startText
+                                }
+                            >
+                                会話を始める
+                            </Text>
+
+                            <Text
+                                style={
+                                    styles.startArrow
+                                }
+                            >
+                                →
+                            </Text>
+                        </View>
+                    )}
+                </View>
+            </ImageBackground>
+        </Pressable>
+    );
+}
+
+const styles =
+    StyleSheet.create({
+        background: {
+            flex: 1,
+        },
+
+        overlay: {
+            position: 'absolute',
+
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+
+            backgroundColor:
+                'rgba(8,35,65,0.27)',
+        },
+
+        container: {
+            flex: 1,
+        },
+
+        content: {
+            flex: 1,
+
+            paddingHorizontal: 18,
+        },
+
+        pressed: {
+            opacity: 0.65,
+        },
+
+        /*
+         * TITLE
+         */
+
+        titleRow: {
+            flexDirection: 'row',
+
+            alignItems: 'center',
+
+            marginTop: 8,
+        },
+
+        backButton: {
+            width: 42,
+            height: 42,
+
+            borderRadius: 21,
+
+            backgroundColor:
+                'rgba(20,50,90,0.78)',
+
+            alignItems: 'center',
+            justifyContent: 'center',
+
+            marginRight: 11,
+        },
+
+        backText: {
+            color: '#ffffff',
+
+            fontSize: 25,
+            fontWeight: '800',
+        },
+
+        titleContent: {
+            flex: 1,
+        },
+
+        title: {
+            color: '#ffffff',
+
+            fontSize: 30,
+            fontWeight: '900',
+
+            textShadowColor:
+                'rgba(0,0,0,0.42)',
+
+            textShadowOffset: {
+                width: 0,
+                height: 2,
+            },
+
+            textShadowRadius: 5,
+        },
+
+        subtitle: {
+            color:
+                'rgba(255,255,255,0.88)',
+
+            fontSize: 15,
+            fontWeight: '700',
+
+            marginTop: -2,
+        },
+
+        /*
+         * PROGRESS
+         */
+
+        progressCard: {
+            marginTop: 12,
+
+            padding: 13,
+
+            borderRadius: 17,
+
+            backgroundColor:
+                'rgba(255,255,255,0.88)',
+
+            borderWidth: 1,
+
+            borderColor:
+                'rgba(255,255,255,0.88)',
+
+            shadowColor:
+                '#000000',
+
+            shadowOpacity: 0.10,
+
+            shadowRadius: 6,
+
+            shadowOffset: {
+                width: 0,
+                height: 3,
+            },
+
+            elevation: 4,
+        },
+
+        progressTop: {
+            flexDirection: 'row',
+
+            alignItems: 'center',
+
+            justifyContent:
+                'space-between',
+        },
+
+        progressTitle: {
+            color: '#1f2937',
+
+            fontSize: 15,
+            fontWeight: '900',
+        },
+
+        progressSubtitle: {
+            color: '#697386',
+
+            fontSize: 7,
+
+            fontWeight: '800',
+
+            letterSpacing: 1,
+
+            marginTop: 2,
+        },
+
+        progressRight: {
+            alignItems: 'flex-end',
+        },
+
+        progressValue: {
+            color: '#1f2937',
+
+            fontSize: 13,
+            fontWeight: '900',
+        },
+
+        progressPercent: {
+            color: '#ff5470',
+
+            fontSize: 10,
+            fontWeight: '900',
+
+            marginTop: 1,
+        },
+
+        progressTrack: {
+            height: 6,
+
+            backgroundColor:
+                '#e6e9ef',
+
+            borderRadius: 3,
+
+            marginTop: 9,
+
+            overflow: 'hidden',
+        },
+
+        progressFill: {
+            width: '16%',
+
+            height: '100%',
+
+            borderRadius: 3,
+
+            backgroundColor:
+                '#ff5470',
+        },
+
+        progressNote: {
+            color: '#697386',
+
+            fontSize: 9,
+
+            marginTop: 6,
+        },
+
+        /*
+         * SECTION
+         */
+
+        sectionHeader: {
+            flexDirection: 'row',
+
+            alignItems: 'center',
+
+            justifyContent:
+                'space-between',
+
+            marginTop: 15,
+            marginBottom: 9,
+        },
+
+        sectionTitle: {
+            color: '#ffffff',
+
+            fontSize: 20,
+            fontWeight: '900',
+
+            textShadowColor:
+                'rgba(0,0,0,0.35)',
+
+            textShadowOffset: {
+                width: 0,
+                height: 1,
+            },
+
+            textShadowRadius: 3,
+        },
+
+        sectionSubtitle: {
+            color:
+                'rgba(255,255,255,0.83)',
+
+            fontSize: 9,
+
+            marginTop: 2,
+        },
+
+        locationCounter: {
+            backgroundColor:
+                'rgba(255,255,255,0.86)',
+
+            paddingHorizontal: 9,
+            paddingVertical: 5,
+
+            borderRadius: 12,
+        },
+
+        locationCounterText: {
+            color: '#344054',
+
+            fontSize: 8,
+            fontWeight: '900',
+        },
+
+        /*
+         * SCROLL / GRID
+         */
+
+        scroll: {
+            flex: 1,
+        },
+
+        grid: {
+            flexDirection: 'row',
+
+            flexWrap: 'wrap',
+
+            gap: 10,
+
+            paddingBottom: 26,
+        },
+
+        /*
+         * CARD
+         */
+
+        card: {
+            width: '48%',
+
+            height: 205,
+
+            borderRadius: 18,
+
+            overflow: 'hidden',
+
+            shadowColor:
+                '#000000',
+
+            shadowOpacity: 0.20,
+
+            shadowRadius: 7,
+
+            shadowOffset: {
+                width: 0,
+                height: 4,
+            },
+
+            elevation: 5,
+        },
+
+        cardUnlocked: {
+            borderWidth: 2,
+
+            borderColor:
+                '#00d29a',
+        },
+
+        cardLocked: {
+            borderWidth: 1,
+
+            borderColor:
+                'rgba(255,255,255,0.35)',
+        },
+
+        cardPressed: {
+            opacity: 0.70,
+
+            transform: [
+                {
+                    scale: 0.975,
+                },
+            ],
+        },
+
+        cardImage: {
+            flex: 1,
+
+            padding: 10,
+
+            justifyContent:
+                'space-between',
+        },
+
+        cardRadius: {
+            borderRadius: 18,
+        },
+
+        cardShade: {
+            position: 'absolute',
+
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+
+            backgroundColor:
+                'rgba(0,0,0,0.14)',
+        },
+
+        cardShadeLocked: {
+            backgroundColor:
+                'rgba(20,24,35,0.55)',
+        },
+
+        /*
+         * CARD TOP
+         */
+
+        cardTop: {
+            flexDirection: 'row',
+
+            alignItems: 'center',
+
+            justifyContent:
+                'space-between',
+
+            zIndex: 2,
+        },
+
+        openBadge: {
+            backgroundColor:
+                '#00c98b',
+
+            paddingHorizontal: 7,
+            paddingVertical: 4,
+
+            borderRadius: 8,
+        },
+
+        openBadgeText: {
+            color: '#ffffff',
+
+            fontSize: 7,
+            fontWeight: '900',
+        },
+
+        lockBadge: {
+            backgroundColor:
+                'rgba(20,24,35,0.74)',
+
+            paddingHorizontal: 7,
+            paddingVertical: 4,
+
+            borderRadius: 8,
+        },
+
+        lockBadgeText: {
+            color: '#ffffff',
+
+            fontSize: 7,
+            fontWeight: '900',
+        },
+
+        cardProgressBadge: {
+            backgroundColor:
+                'rgba(255,255,255,0.88)',
+
+            paddingHorizontal: 7,
+            paddingVertical: 4,
+
+            borderRadius: 8,
+        },
+
+        cardProgressText: {
+            color: '#344054',
+
+            fontSize: 7,
+            fontWeight: '900',
+        },
+
+        /*
+         * CARD BOTTOM
+         */
+
+        cardBottom: {
+            backgroundColor:
+                'rgba(255,255,255,0.92)',
+
+            borderRadius: 13,
+
+            paddingHorizontal: 9,
+            paddingVertical: 8,
+
+            zIndex: 2,
+        },
+
+        cardJa: {
+            color: '#15191f',
+
+            fontSize: 18,
+            fontWeight: '900',
+        },
+
+        cardEn: {
+            color: '#475467',
+
+            fontSize: 10,
+            fontWeight: '700',
+
+            marginTop: 1,
+        },
+
+        cardDescriptionJa: {
+            color: '#344054',
+
+            fontSize: 8,
+
+            fontWeight: '700',
+
+            marginTop: 5,
+        },
+
+        cardDescriptionVi: {
+            color: '#667085',
+
+            fontSize: 7,
+
+            marginTop: 2,
+        },
+
+        startRow: {
+            flexDirection: 'row',
+
+            alignItems: 'center',
+
+            marginTop: 5,
+        },
+
+        startText: {
+            color: '#00a978',
+
+            fontSize: 8,
+            fontWeight: '900',
+        },
+
+        startArrow: {
+            color: '#00a978',
+
+            fontSize: 12,
+            fontWeight: '900',
+
+            marginLeft: 4,
+        },
+    });

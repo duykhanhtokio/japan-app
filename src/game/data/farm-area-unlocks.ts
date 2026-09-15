@@ -1,0 +1,51 @@
+export type FarmAreaUnlockId =
+    | 'vegetable'
+    | 'orchard'
+    | 'chicken'
+    | 'cow'
+    | 'restaurant'
+    | 'shop';
+
+export const FARM_AREA_UNLOCK_LEVELS:
+    Record<FarmAreaUnlockId, number> = {
+        vegetable:
+            1,
+
+        orchard:
+            2,
+
+        chicken:
+            3,
+
+        cow:
+            4,
+
+        restaurant:
+            5,
+
+        shop:
+            6,
+    };
+
+export function getFarmAreaUnlockLevel(
+    area:
+        FarmAreaUnlockId
+) {
+    return FARM_AREA_UNLOCK_LEVELS[
+        area
+    ];
+}
+
+export function isFarmAreaUnlocked(
+    area:
+        FarmAreaUnlockId,
+    farmLevel:
+        number
+) {
+    return (
+        farmLevel >=
+        getFarmAreaUnlockLevel(
+            area
+        )
+    );
+}

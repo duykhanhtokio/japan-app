@@ -1,0 +1,14 @@
+import type { ImageSourcePropType } from 'react-native';
+export const N1_2018_12_EXAM_ID = 'n1-2018-12-exam-14';
+export const N1_2018_12_SOURCE = { sourcePdfSha256: '9f36659ccd73b00f36cac6acb9030902e3dfe17393541187666234062c79903d', audioSha256: '0ce7be1fec7022a9e1075d5cf25a321e6c7c4ec4bead4740f1451d6a320a9550' } as const;
+export const N1_2018_12_WRITTEN_KEY = [3,2,3,4,1,2,1,2,4,2, 4,3,3,2,2,4,1,3,1,4, 3,1,4,2,1, 2,4,3,1,3,3,3,2,4,4, 1,4,4,2,4,1,2,4,3,1, 3,4,3,1,4,1,2,4,4,2, 2,3,1,3,3,2,2,2,4,4, 1,1,3,2,2] as const;
+export const N1_2018_12_LISTENING_KEY = [4,2,1,3,4,1, 3,2,1,4,3,4, 1,3,4,4,2,3, 2,1,1,2,3,3,2,2,1,3,1,3,1, 4,2,3] as const;
+export const N1_2018_12_WRITTEN_PAGES: readonly ImageSourcePropType[] = [
+  require('../../../assets/jlpt/n1/2018-12/source-pages/page-03.jpg'), require('../../../assets/jlpt/n1/2018-12/source-pages/page-04.jpg'), require('../../../assets/jlpt/n1/2018-12/source-pages/page-05.jpg'), require('../../../assets/jlpt/n1/2018-12/source-pages/page-06.jpg'), require('../../../assets/jlpt/n1/2018-12/source-pages/page-07.jpg'), require('../../../assets/jlpt/n1/2018-12/source-pages/page-08.jpg'), require('../../../assets/jlpt/n1/2018-12/source-pages/page-09.jpg'), require('../../../assets/jlpt/n1/2018-12/source-pages/page-10.jpg'), require('../../../assets/jlpt/n1/2018-12/source-pages/page-11.jpg'), require('../../../assets/jlpt/n1/2018-12/source-pages/page-12.jpg'), require('../../../assets/jlpt/n1/2018-12/source-pages/page-13.jpg'), require('../../../assets/jlpt/n1/2018-12/source-pages/page-14.jpg'), require('../../../assets/jlpt/n1/2018-12/source-pages/page-15.jpg'), require('../../../assets/jlpt/n1/2018-12/source-pages/page-16.jpg'), require('../../../assets/jlpt/n1/2018-12/source-pages/page-17.jpg'), require('../../../assets/jlpt/n1/2018-12/source-pages/page-18.jpg'), require('../../../assets/jlpt/n1/2018-12/source-pages/page-19.jpg'), require('../../../assets/jlpt/n1/2018-12/source-pages/page-20.jpg'), require('../../../assets/jlpt/n1/2018-12/source-pages/page-21.jpg'),
+] as const;
+export const N1_2018_12_LISTENING_PAGES: readonly ImageSourcePropType[] = [require('../../../assets/jlpt/n1/2018-12/source-pages/page-23.jpg'), require('../../../assets/jlpt/n1/2018-12/source-pages/page-24.jpg'), require('../../../assets/jlpt/n1/2018-12/source-pages/page-25.jpg')] as const;
+export const N1_2018_12_SCRIPT_PAGES: readonly ImageSourcePropType[] = [];
+export const N1_2018_12_AUDIO = require('../../../assets/jlpt/n1/2018-12/audio/n1-2018-12.mp3');
+export const N1_2018_12_ANSWER_KEY_PAGE: ImageSourcePropType = require('../../../assets/jlpt/n1/2018-12/source-pages/page-26.jpg');
+if (N1_2018_12_WRITTEN_KEY.length !== 70) throw new Error('N1 2018-12: written key must contain 70 responses');
+if (N1_2018_12_LISTENING_KEY.length !== 34) throw new Error('N1 2018-12: listening key must contain 34 responses');

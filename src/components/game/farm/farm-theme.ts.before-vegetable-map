@@ -1,0 +1,161 @@
+/*
+ * =========================================================
+ * FARM VISUAL THEME
+ * =========================================================
+ *
+ * Visual target:
+ * - cozy 2D farming game
+ * - warm cream UI
+ * - golden active states
+ * - green farm world
+ * - brown wood navigation
+ *
+ * Không chứa gameplay logic.
+ * =========================================================
+ */
+
+export const FARM_COLORS = {
+    cream:
+        '#FFF4D6',
+
+    creamLight:
+        '#FFFBEF',
+
+    creamBorder:
+        '#D8A94E',
+
+    gold:
+        '#FFC83D',
+
+    goldDark:
+        '#B87416',
+
+    green:
+        '#69B83F',
+
+    greenDark:
+        '#39752A',
+
+    grass:
+        '#73B947',
+
+    soil:
+        '#815027',
+
+    soilDark:
+        '#56331C',
+
+    wood:
+        '#5B3215',
+
+    woodLight:
+        '#855022',
+
+    text:
+        '#3B2415',
+
+    textMuted:
+        '#80694F',
+
+    white:
+        '#FFFFFF',
+
+    locked:
+        '#81786D',
+
+    shadow:
+        'rgba(67, 38, 12, 0.28)',
+} as const;
+
+/*
+ * =========================================================
+ * FARM WORLD LAYOUT
+ * =========================================================
+ *
+ * Tọa độ tính theo % của Farm World.
+ *
+ * Sau khi background artwork cuối cùng được đưa vào,
+ * chỉ cần tinh chỉnh bảng này.
+ * Engine không bị ảnh hưởng.
+ * =========================================================
+ */
+
+export type FarmWorldPosition = {
+    left:
+        `${number}%`;
+
+    top:
+        `${number}%`;
+
+    width:
+        `${number}%`;
+};
+
+export const FARM_PLOT_POSITIONS:
+    readonly FarmWorldPosition[] = [
+        {
+            left:
+                '24%',
+
+            top:
+                '42%',
+
+            width:
+                '24%',
+        },
+
+        {
+            left:
+                '52%',
+
+            top:
+                '42%',
+
+            width:
+                '24%',
+        },
+
+        {
+            left:
+                '24%',
+
+            top:
+                '57%',
+
+            width:
+                '24%',
+        },
+
+        {
+            left:
+                '52%',
+
+            top:
+                '57%',
+
+            width:
+                '24%',
+        },
+
+        {
+            left:
+                '24%',
+
+            top:
+                '72%',
+
+            width:
+                '24%',
+        },
+
+        {
+            left:
+                '52%',
+
+            top:
+                '72%',
+
+            width:
+                '24%',
+        },
+    ];

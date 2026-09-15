@@ -1,0 +1,30 @@
+import type { ImageSourcePropType } from 'react-native';
+import type { NpcCategoryId } from '@/data/npc-progression';
+
+export const npcCardById:Record<NpcCategoryId,ImageSourcePropType>={
+ 'station':require('../../../assets/app/life/rewards/cards/station.png'),
+ 'convenience-store':require('../../../assets/app/life/rewards/cards/convenience-store.png'),
+ 'cafe':require('../../../assets/app/life/rewards/cards/cafe.png'),
+ 'restaurant':require('../../../assets/app/life/rewards/cards/restaurant.png'),
+ 'ramen-shop':require('../../../assets/app/life/rewards/cards/ramen-shop.png'),
+ 'supermarket':require('../../../assets/app/life/rewards/cards/supermarket.png'),
+ 'shopping':require('../../../assets/app/life/rewards/cards/shopping.png'),
+ 'bank':require('../../../assets/app/life/rewards/cards/bank.png'),
+ 'post-office':require('../../../assets/app/life/rewards/cards/post-office.png'),
+ 'government-office':require('../../../assets/app/life/rewards/cards/government-office.png'),
+ 'tax-office':require('../../../assets/app/life/rewards/cards/tax-office.png'),
+ 'hospital':require('../../../assets/app/life/rewards/cards/hospital.png'),
+ 'pharmacy':require('../../../assets/app/life/rewards/cards/pharmacy.png'),
+ 'police-station':require('../../../assets/app/life/rewards/cards/police-station.png'),
+ 'hotel':require('../../../assets/app/life/rewards/cards/hotel.png'),
+ 'izakaya':require('../../../assets/app/life/rewards/cards/izakaya.png'),
+ 'onsen':require('../../../assets/app/life/rewards/cards/onsen.png'),
+ 'amusement-park':require('../../../assets/app/life/rewards/cards/amusement-park.png'),
+ 'museum':require('../../../assets/app/life/rewards/cards/museum.png'),
+ 'landmark':require('../../../assets/app/life/rewards/cards/landmark.png'),
+ 'shrine-temple':require('../../../assets/app/life/rewards/cards/shrine-temple.png'),
+ 'castle':require('../../../assets/app/life/rewards/cards/castle.png'),
+ 'park':require('../../../assets/app/life/rewards/cards/park.png'),
+ 'nature':require('../../../assets/app/life/rewards/cards/nature.png'),
+ 'construction-site':require('../../../assets/app/life/rewards/cards/construction-site.png'),
+};

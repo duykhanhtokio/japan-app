@@ -1,0 +1,456 @@
+/*
+ * =========================================================
+ * FARM LEVEL DEFINITIONS
+ * =========================================================
+ */
+
+export type FarmLevelDefinition = {
+    level:
+    number;
+
+    /*
+     * XP cần kiếm thêm từ level trước.
+     *
+     * Level 1 = 0.
+     */
+    xpFromPreviousLevel:
+    number;
+
+    /*
+     * Tổng XP tối thiểu để đạt level này.
+     */
+    requiredTotalXp:
+    number;
+
+    unlockIds:
+    string[];
+};
+
+type FarmLevelSource = {
+    level:
+    number;
+
+    xpFromPreviousLevel:
+    number;
+
+    unlockIds:
+    string[];
+};
+
+/*
+ * =========================================================
+ * LEVEL SOURCE
+ *
+ * Đây là nơi chúng ta balance progression.
+ * =========================================================
+ */
+
+const FARM_LEVEL_SOURCE:
+    FarmLevelSource[] = [
+        {
+            level: 1,
+            xpFromPreviousLevel: 0,
+            unlockIds: [
+                'crop_wheat',
+            ],
+        },
+
+        {
+            level: 2,
+            xpFromPreviousLevel: 80,
+            unlockIds: [
+                'crop_carrot',
+                'animal_chicken',
+            ],
+        },
+
+        {
+            level: 3,
+            xpFromPreviousLevel: 120,
+            unlockIds: [
+                'crop_potato',
+                'land_zone_a',
+            ],
+        },
+
+        {
+            level: 4,
+            xpFromPreviousLevel: 170,
+            unlockIds: [
+                'crop_corn',
+            ],
+        },
+
+        {
+            level: 5,
+            xpFromPreviousLevel: 230,
+            unlockIds: [
+                'crop_tomato',
+            ],
+        },
+
+        {
+            level: 6,
+            xpFromPreviousLevel: 300,
+            unlockIds: [
+                'crop_onion',
+                'land_zone_b',
+            ],
+        },
+
+        {
+            level: 7,
+            xpFromPreviousLevel: 380,
+            unlockIds: [
+                'crop_cabbage',
+            ],
+        },
+
+        {
+            level: 8,
+            xpFromPreviousLevel: 470,
+            unlockIds: [
+                'crop_cucumber',
+            ],
+        },
+
+        {
+            level: 9,
+            xpFromPreviousLevel: 570,
+            unlockIds: [
+                'crop_lettuce',
+            ],
+        },
+
+        {
+            level: 10,
+            xpFromPreviousLevel: 700,
+            unlockIds: [
+                'crop_strawberry',
+                'animal_cow',
+                'land_zone_c',
+            ],
+        },
+
+        {
+            level: 11,
+            xpFromPreviousLevel: 850,
+            unlockIds: [
+                'warehouse_level_2',
+            ],
+        },
+
+        {
+            level: 12,
+            xpFromPreviousLevel: 1020,
+            unlockIds: [
+                'crop_pumpkin',
+            ],
+        },
+
+        {
+            level: 13,
+            xpFromPreviousLevel: 1220,
+            unlockIds: [
+                'building_feed_mill',
+            ],
+        },
+
+        {
+            level: 14,
+            xpFromPreviousLevel: 1450,
+            unlockIds: [
+                'crop_rice',
+            ],
+        },
+
+        {
+            level: 15,
+            xpFromPreviousLevel: 1700,
+            unlockIds: [
+                'land_zone_d',
+                'pizza_eligibility',
+            ],
+        },
+
+        {
+            level: 16,
+            xpFromPreviousLevel: 2000,
+            unlockIds: [
+                'tool_tier_2',
+            ],
+        },
+
+        {
+            level: 17,
+            xpFromPreviousLevel: 2350,
+            unlockIds: [
+                'crop_apple',
+            ],
+        },
+
+        {
+            level: 18,
+            xpFromPreviousLevel: 2750,
+            unlockIds: [
+            ],
+        },
+
+        {
+            level: 19,
+            xpFromPreviousLevel: 3200,
+            unlockIds: [
+                'market_expansion',
+            ],
+        },
+
+        {
+            level: 20,
+            xpFromPreviousLevel: 3700,
+            unlockIds: [
+                'crop_grape',
+                'land_zone_e',
+            ],
+        },
+
+        {
+            level: 21,
+            xpFromPreviousLevel: 4300,
+            unlockIds: [
+                'dairy_upgrade',
+            ],
+        },
+
+        {
+            level: 22,
+            xpFromPreviousLevel: 5000,
+            unlockIds: [
+                'production_slot',
+            ],
+        },
+
+        {
+            level: 23,
+            xpFromPreviousLevel: 5800,
+            unlockIds: [
+                'order_board_level_2',
+            ],
+        },
+
+        {
+            level: 24,
+            xpFromPreviousLevel: 6700,
+            unlockIds: [
+                'crop_melon',
+            ],
+        },
+
+        {
+            level: 25,
+            xpFromPreviousLevel: 7700,
+            unlockIds: [
+                'land_zone_f',
+                'fertilizer_advanced',
+            ],
+        },
+
+        {
+            level: 26,
+            xpFromPreviousLevel: 8800,
+            unlockIds: [
+                'automation_level_1',
+            ],
+        },
+
+        {
+            level: 27,
+            xpFromPreviousLevel: 10000,
+            unlockIds: [
+                'farm_zone_upgrade',
+            ],
+        },
+
+        {
+            level: 28,
+            xpFromPreviousLevel: 11500,
+            unlockIds: [
+                'premium_orders',
+            ],
+        },
+
+        {
+            level: 29,
+            xpFromPreviousLevel: 13000,
+            unlockIds: [
+                'automation_level_2',
+            ],
+        },
+
+        {
+            level: 30,
+            xpFromPreviousLevel: 15000,
+            unlockIds: [
+                'land_zone_g',
+                'farm_chapter_1_complete',
+            ],
+        },
+    ];
+
+/*
+ * =========================================================
+ * CALCULATE CUMULATIVE XP
+ * =========================================================
+ */
+
+let cumulativeXp =
+    0;
+
+export const FARM_LEVELS:
+    FarmLevelDefinition[] =
+    FARM_LEVEL_SOURCE.map(
+        definition => {
+            cumulativeXp +=
+                definition
+                    .xpFromPreviousLevel;
+
+            return {
+                ...definition,
+
+                requiredTotalXp:
+                    cumulativeXp,
+            };
+        }
+    );
+
+/*
+ * =========================================================
+ * LOOKUPS
+ * =========================================================
+ */
+
+export function getFarmLevelDefinition(
+    level:
+        number
+) {
+    return FARM_LEVELS.find(
+        definition =>
+            definition.level ===
+            level
+    );
+}
+
+/*
+ * =========================================================
+ * XP → LEVEL
+ * =========================================================
+ */
+
+export function getFarmLevelFromXp(
+    farmXp:
+        number
+) {
+    const safeXp =
+        Math.max(
+            0,
+            farmXp
+        );
+
+    let currentLevel =
+        1;
+
+    for (
+        const definition
+        of FARM_LEVELS
+    ) {
+        if (
+            safeXp >=
+            definition.requiredTotalXp
+        ) {
+            currentLevel =
+                definition.level;
+        } else {
+            break;
+        }
+    }
+
+    return currentLevel;
+}
+
+/*
+ * =========================================================
+ * LEVEL PROGRESS
+ *
+ * Dùng cho progress bar sau này.
+ * =========================================================
+ */
+
+export function getFarmLevelProgress(
+    farmXp:
+        number
+) {
+    const level =
+        getFarmLevelFromXp(
+            farmXp
+        );
+
+    const current =
+        getFarmLevelDefinition(
+            level
+        );
+
+    const next =
+        getFarmLevelDefinition(
+            level + 1
+        );
+
+    if (
+        !current ||
+        !next
+    ) {
+        return {
+            level,
+            currentLevelXp:
+                0,
+
+            requiredXp:
+                0,
+
+            progress:
+                1,
+
+            isMaxLevel:
+                true,
+        };
+    }
+
+    const currentLevelXp =
+        Math.max(
+            0,
+            farmXp -
+            current.requiredTotalXp
+        );
+
+    const requiredXp =
+        next.requiredTotalXp -
+        current.requiredTotalXp;
+
+    const progress =
+        Math.min(
+            1,
+            currentLevelXp /
+            requiredXp
+        );
+
+    return {
+        level,
+
+        currentLevelXp,
+
+        requiredXp,
+
+        progress,
+
+        isMaxLevel:
+            false,
+    };
+}

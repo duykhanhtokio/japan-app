@@ -1,0 +1,1907 @@
+import type {
+    GameItemDefinition,
+    GameItemId,
+} from '../core/game-types';
+
+/*
+ * =========================================================
+ * ITEM DEFINITIONS
+ * =========================================================
+ */
+
+export const GAME_ITEMS:
+    GameItemDefinition[] = [
+        /*
+         * =====================================================
+         * WHEAT
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_wheat',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    '小麦の種',
+
+                readingJa:
+                    'こむぎのたね',
+
+                translationKey:
+                    'game.items.seedWheat',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                1,
+
+            shopPrice:
+                5,
+
+            unlockFarmLevel:
+                1,
+
+            stackable:
+                true,
+        },
+        {
+            id:
+                'feed_chicken',
+
+            category:
+                'feed',
+
+            name: {
+                textJa:
+                    '鶏のえさ',
+
+                readingJa:
+                    'にわとりのえさ',
+
+                translationKey:
+                    'game.items.chickenFeed',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                2,
+
+            shopPrice:
+                10,
+
+            unlockFarmLevel:
+                2,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'product_egg',
+
+            category:
+                'animal_product',
+
+            name: {
+                textJa:
+                    '卵',
+
+                readingJa:
+                    'たまご',
+
+                translationKey:
+                    'game.items.egg',
+
+                vocabularyIds:
+                    [],
+            },
+
+
+            baseSellPrice:
+                18,
+
+            unlockFarmLevel:
+                2,
+
+            stackable:
+                true,
+        },
+        {
+            id:
+                'feed_cow',
+
+            category:
+                'feed',
+
+            name: {
+                textJa:
+                    '牛のえさ',
+
+                readingJa:
+                    'うしのえさ',
+
+                translationKey:
+                    'game.items.cowFeed',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                8,
+
+            shopPrice:
+                35,
+
+            unlockFarmLevel:
+                10,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'product_milk',
+
+            category:
+                'animal_product',
+
+            name: {
+                textJa:
+                    '牛乳',
+
+                readingJa:
+                    'ぎゅうにゅう',
+
+                translationKey:
+                    'game.items.milk',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                65,
+
+            unlockFarmLevel:
+                10,
+
+            stackable:
+                true,
+        },
+
+
+        {
+            id:
+                'crop_wheat',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    '小麦',
+
+                readingJa:
+                    'こむぎ',
+
+                translationKey:
+                    'game.items.wheat',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                4,
+
+            unlockFarmLevel:
+                1,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * CARROT
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_carrot',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    'にんじんの種',
+
+                readingJa:
+                    'にんじんのたね',
+
+                translationKey:
+                    'game.items.seedCarrot',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                2,
+
+            shopPrice:
+                12,
+
+            unlockFarmLevel:
+                2,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_carrot',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    'にんじん',
+
+                readingJa:
+                    'にんじん',
+
+                translationKey:
+                    'game.items.carrot',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                7,
+
+            unlockFarmLevel:
+                2,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * POTATO
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_potato',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    'じゃがいもの種',
+
+                readingJa:
+                    'じゃがいものたね',
+
+                translationKey:
+                    'game.items.seedPotato',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                3,
+
+            shopPrice:
+                20,
+
+            unlockFarmLevel:
+                3,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_potato',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    'じゃがいも',
+
+                readingJa:
+                    'じゃがいも',
+
+                translationKey:
+                    'game.items.potato',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                12,
+
+            unlockFarmLevel:
+                3,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * CORN
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_corn',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    'とうもろこしの種',
+
+                readingJa:
+                    'とうもろこしのたね',
+
+                translationKey:
+                    'game.items.seedCorn',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                5,
+
+            shopPrice:
+                30,
+
+            unlockFarmLevel:
+                4,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_corn',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    'とうもろこし',
+
+                readingJa:
+                    'とうもろこし',
+
+                translationKey:
+                    'game.items.corn',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                15,
+
+            unlockFarmLevel:
+                4,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * TOMATO
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_tomato',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    'トマトの種',
+
+                readingJa:
+                    'トマトのたね',
+
+                translationKey:
+                    'game.items.seedTomato',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                8,
+
+            shopPrice:
+                50,
+
+            unlockFarmLevel:
+                5,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_tomato',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    'トマト',
+
+                readingJa:
+                    'トマト',
+
+                translationKey:
+                    'game.items.tomato',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                25,
+
+            unlockFarmLevel:
+                5,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * ONION
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_onion',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    '玉ねぎの種',
+
+                readingJa:
+                    'たまねぎのたね',
+
+                translationKey:
+                    'game.items.seedOnion',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                10,
+
+            shopPrice:
+                65,
+
+            unlockFarmLevel:
+                6,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_onion',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    '玉ねぎ',
+
+                readingJa:
+                    'たまねぎ',
+
+                translationKey:
+                    'game.items.onion',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                32,
+
+            unlockFarmLevel:
+                6,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * CABBAGE
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_cabbage',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    'キャベツの種',
+
+                readingJa:
+                    'キャベツのたね',
+
+                translationKey:
+                    'game.items.seedCabbage',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                12,
+
+            shopPrice:
+                80,
+
+            unlockFarmLevel:
+                7,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_cabbage',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    'キャベツ',
+
+                readingJa:
+                    'キャベツ',
+
+                translationKey:
+                    'game.items.cabbage',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                35,
+
+            unlockFarmLevel:
+                7,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * CUCUMBER
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_cucumber',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    'きゅうりの種',
+
+                readingJa:
+                    'きゅうりのたね',
+
+                translationKey:
+                    'game.items.seedCucumber',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                15,
+
+            shopPrice:
+                95,
+
+            unlockFarmLevel:
+                8,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_cucumber',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    'きゅうり',
+
+                readingJa:
+                    'きゅうり',
+
+                translationKey:
+                    'game.items.cucumber',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                42,
+
+            unlockFarmLevel:
+                8,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * LETTUCE
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_lettuce',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    'レタスの種',
+
+                readingJa:
+                    'レタスのたね',
+
+                translationKey:
+                    'game.items.seedLettuce',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                18,
+
+            shopPrice:
+                120,
+
+            unlockFarmLevel:
+                9,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_lettuce',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    'レタス',
+
+                readingJa:
+                    'レタス',
+
+                translationKey:
+                    'game.items.lettuce',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                50,
+
+            unlockFarmLevel:
+                9,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * STRAWBERRY
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_strawberry',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    'いちごの苗',
+
+                readingJa:
+                    'いちごのなえ',
+
+                translationKey:
+                    'game.items.seedStrawberry',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                25,
+
+            shopPrice:
+                150,
+
+            unlockFarmLevel:
+                10,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_strawberry',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    'いちご',
+
+                readingJa:
+                    'いちご',
+
+                translationKey:
+                    'game.items.strawberry',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                70,
+
+            unlockFarmLevel:
+                10,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * PUMPKIN
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_pumpkin',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    'かぼちゃの種',
+
+                readingJa:
+                    'かぼちゃのたね',
+
+                translationKey:
+                    'game.items.seedPumpkin',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                35,
+
+            shopPrice:
+                200,
+
+            unlockFarmLevel:
+                12,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_pumpkin',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    'かぼちゃ',
+
+                readingJa:
+                    'かぼちゃ',
+
+                translationKey:
+                    'game.items.pumpkin',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                90,
+
+            unlockFarmLevel:
+                12,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * RICE
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_rice',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    '稲の苗',
+
+                readingJa:
+                    'いねのなえ',
+
+                translationKey:
+                    'game.items.seedRice',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                40,
+
+            shopPrice:
+                240,
+
+            unlockFarmLevel:
+                14,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_rice',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    '米',
+
+                readingJa:
+                    'こめ',
+
+                translationKey:
+                    'game.items.rice',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                95,
+
+            unlockFarmLevel:
+                14,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * APPLE
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_apple',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    'りんごの苗',
+
+                readingJa:
+                    'りんごのなえ',
+
+                translationKey:
+                    'game.items.seedApple',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                55,
+
+            shopPrice:
+                350,
+
+            unlockFarmLevel:
+                17,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_apple',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    'りんご',
+
+                readingJa:
+                    'りんご',
+
+                translationKey:
+                    'game.items.apple',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                130,
+
+            unlockFarmLevel:
+                17,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * GRAPE
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_grape',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    'ぶどうの苗',
+
+                readingJa:
+                    'ぶどうのなえ',
+
+                translationKey:
+                    'game.items.seedGrape',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                80,
+
+            shopPrice:
+                500,
+
+            unlockFarmLevel:
+                20,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_grape',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    'ぶどう',
+
+                readingJa:
+                    'ぶどう',
+
+                translationKey:
+                    'game.items.grape',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                175,
+
+            unlockFarmLevel:
+                20,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * MIKAN
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_mikan',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    'みかんの苗',
+
+                readingJa:
+                    'みかんのなえ',
+
+                translationKey:
+                    'game.items.seedMikan',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                95,
+
+            shopPrice:
+                600,
+
+            unlockFarmLevel:
+                22,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_mikan',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    'みかん',
+
+                readingJa:
+                    'みかん',
+
+                translationKey:
+                    'game.items.mikan',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                205,
+
+            unlockFarmLevel:
+                22,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * PEACH
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_peach',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    'ももの苗',
+
+                readingJa:
+                    'もものなえ',
+
+                translationKey:
+                    'game.items.seedPeach',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                110,
+
+            shopPrice:
+                700,
+
+            unlockFarmLevel:
+                24,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_peach',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    'もも',
+
+                readingJa:
+                    'もも',
+
+                translationKey:
+                    'game.items.peach',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                240,
+
+            unlockFarmLevel:
+                24,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * JAPANESE PEAR
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_pear',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    'なしの苗',
+
+                readingJa:
+                    'なしのなえ',
+
+                translationKey:
+                    'game.items.seedPear',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                125,
+
+            shopPrice:
+                800,
+
+            unlockFarmLevel:
+                26,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_pear',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    'なし',
+
+                readingJa:
+                    'なし',
+
+                translationKey:
+                    'game.items.pear',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                275,
+
+            unlockFarmLevel:
+                26,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * CHERRY
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_cherry',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    'さくらんぼの苗',
+
+                readingJa:
+                    'さくらんぼのなえ',
+
+                translationKey:
+                    'game.items.seedCherry',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                140,
+
+            shopPrice:
+                900,
+
+            unlockFarmLevel:
+                28,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_cherry',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    'さくらんぼ',
+
+                readingJa:
+                    'さくらんぼ',
+
+                translationKey:
+                    'game.items.cherry',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                310,
+
+            unlockFarmLevel:
+                28,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * PERSIMMON
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_persimmon',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    '柿の苗',
+
+                readingJa:
+                    'かきのなえ',
+
+                translationKey:
+                    'game.items.seedPersimmon',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                155,
+
+            shopPrice:
+                1000,
+
+            unlockFarmLevel:
+                30,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_persimmon',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    '柿',
+
+                readingJa:
+                    'かき',
+
+                translationKey:
+                    'game.items.persimmon',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                345,
+
+            unlockFarmLevel:
+                30,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * LEMON
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_lemon',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    'レモンの苗',
+
+                readingJa:
+                    'レモンのなえ',
+
+                translationKey:
+                    'game.items.seedLemon',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                170,
+
+            shopPrice:
+                1100,
+
+            unlockFarmLevel:
+                32,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_lemon',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    'レモン',
+
+                readingJa:
+                    'レモン',
+
+                translationKey:
+                    'game.items.lemon',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                380,
+
+            unlockFarmLevel:
+                32,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * KIWI
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_kiwi',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    'キウイの苗',
+
+                readingJa:
+                    'キウイのなえ',
+
+                translationKey:
+                    'game.items.seedKiwi',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                190,
+
+            shopPrice:
+                1250,
+
+            unlockFarmLevel:
+                34,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_kiwi',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    'キウイ',
+
+                readingJa:
+                    'キウイ',
+
+                translationKey:
+                    'game.items.kiwi',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                420,
+
+            unlockFarmLevel:
+                34,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * BLUEBERRY
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_blueberry',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    'ブルーベリーの苗',
+
+                readingJa:
+                    'ブルーベリーのなえ',
+
+                translationKey:
+                    'game.items.seedBlueberry',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                215,
+
+            shopPrice:
+                1400,
+
+            unlockFarmLevel:
+                36,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_blueberry',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    'ブルーベリー',
+
+                readingJa:
+                    'ブルーベリー',
+
+                translationKey:
+                    'game.items.blueberry',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                470,
+
+            unlockFarmLevel:
+                36,
+
+            stackable:
+                true,
+        },
+
+        /*
+         * =====================================================
+         * MELON
+         * =====================================================
+         */
+
+        {
+            id:
+                'seed_melon',
+
+            category:
+                'seed',
+
+            name: {
+                textJa:
+                    'メロンの種',
+
+                readingJa:
+                    'メロンのたね',
+
+                translationKey:
+                    'game.items.seedMelon',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                120,
+
+            shopPrice:
+                800,
+
+            unlockFarmLevel:
+                24,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'crop_melon',
+
+            category:
+                'crop',
+
+            name: {
+                textJa:
+                    'メロン',
+
+                readingJa:
+                    'メロン',
+
+                translationKey:
+                    'game.items.melon',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                300,
+
+            unlockFarmLevel:
+                24,
+
+            stackable:
+                true,
+        },
+        {
+            id:
+                'fertilizer_normal',
+
+            category:
+                'fertilizer',
+
+            name: {
+                textJa:
+                    '普通肥料',
+
+                readingJa:
+                    'ふつうひりょう',
+
+                translationKey:
+                    'game.items.fertilizerNormal',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                20,
+
+            shopPrice:
+                100,
+
+            unlockFarmLevel:
+                3,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'fertilizer_advanced',
+
+            category:
+                'fertilizer',
+
+            name: {
+                textJa:
+                    '高級肥料',
+
+                readingJa:
+                    'こうきゅうひりょう',
+
+                translationKey:
+                    'game.items.fertilizerAdvanced',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                70,
+
+            shopPrice:
+                350,
+
+            unlockFarmLevel:
+                10,
+
+            stackable:
+                true,
+        },
+
+        {
+            id:
+                'fertilizer_special',
+
+            category:
+                'fertilizer',
+
+            name: {
+                textJa:
+                    '特製肥料',
+
+                readingJa:
+                    'とくせいひりょう',
+
+                translationKey:
+                    'game.items.fertilizerSpecial',
+
+                vocabularyIds:
+                    [],
+            },
+
+            baseSellPrice:
+                180,
+
+            shopPrice:
+                900,
+
+            unlockFarmLevel:
+                25,
+
+            stackable:
+                true,
+        },
+
+    ];
+
+
+/*
+ * =========================================================
+ * LOOKUP
+ * =========================================================
+ */
+
+export const GAME_ITEM_BY_ID =
+    new Map<
+        GameItemId,
+        GameItemDefinition
+    >(
+        GAME_ITEMS.map(
+            item => [
+                item.id,
+                item,
+            ]
+        )
+    );
+
+export function getGameItem(
+    id:
+        GameItemId
+) {
+    return GAME_ITEM_BY_ID.get(
+        id
+    );
+}

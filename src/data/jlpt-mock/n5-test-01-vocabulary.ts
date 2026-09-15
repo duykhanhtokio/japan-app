@@ -1,0 +1,51 @@
+import type { JlptMockQuestion, JlptOption } from '@/data/jlpt-mock/types';
+
+const choices = (values: readonly string[]): readonly JlptOption[] => values.map((text, index) => ({ id: String(index + 1), text }));
+const question = (
+    id: string,
+    family: Extract<JlptMockQuestion['family'], 'kanjiReading' | 'orthography' | 'contextualVocabulary' | 'paraphrase'>,
+    prompt: string,
+    values: readonly string[],
+    answer: number,
+    vocabularyId: string,
+    explanation: string,
+): JlptMockQuestion => ({ id, level: 'N5', section: 'vocabulary', family, prompt, options: choices(values), correctOptionId: String(answer), sourceVocabularyIds: [vocabularyId], sourceGrammarIds: [], explanation });
+
+/** N5 mock paper 01 - 言語知識（文字・語彙）. Every item is authored, not generated from a label. */
+export const N5_TEST_01_VOCABULARY: readonly JlptMockQuestion[] = [
+    question('n5-01-v-01', 'kanjiReading', '駅で 友だちを 待ちます。', ['えき', 'いき', 'せき', 'あき'], 1, 'VOC0002', '駅（えき）は電車に乗る場所です。'),
+    question('n5-01-v-02', 'kanjiReading', '今日は 母の 誕生日です。', ['たんじょうび', 'たんじょうにち', 'だんじょうび', 'たんしょうび'], 1, 'VOC0410', '誕生日（たんじょうび）は生まれた日です。'),
+    question('n5-01-v-03', 'kanjiReading', 'この 店は 九時に 開きます。', ['あきます', 'おきます', 'ひらきます', 'あけます'], 1, 'VOC0202', '開きます（あきます）は店などが営業を始めることです。'),
+    question('n5-01-v-04', 'kanjiReading', '右に 曲がって ください。', ['ひだり', 'みぎ', 'うえ', 'した'], 2, 'VOC0051', '右は「みぎ」と読みます。'),
+    question('n5-01-v-05', 'kanjiReading', '水を 一杯 お願いします。', ['みず', 'ひ', 'すい', 'おゆ'], 1, 'VOC0044', '水は「みず」と読みます。'),
+    question('n5-01-v-06', 'kanjiReading', '山田さんの 名前を 書いて ください。', ['なまえ', 'まえ', 'なまい', 'めいまえ'], 1, 'VOC0018', '名前は「なまえ」と読みます。'),
+    question('n5-01-v-07', 'kanjiReading', '病院は 駅の 近くです。', ['びょいん', 'びょういん', 'びゅういん', 'びょうえん'], 2, 'VOC0030', '病院（びょういん）は医者に診てもらう場所です。'),
+    question('n5-01-v-08', 'kanjiReading', '写真を 見せて ください。', ['しゃしん', 'しゃじん', 'さしん', 'しゃせん'], 1, 'VOC0266', '写真は「しゃしん」と読みます。'),
+    question('n5-01-v-09', 'kanjiReading', '明日は 雨が 降るでしょう。', ['あした', 'あさって', 'きのう', 'きょう'], 1, 'VOC0049', '明日は「あした」と読みます。'),
+    question('n5-01-v-10', 'kanjiReading', 'この かばんは 安いです。', ['やすい', 'たかい', 'ちかい', 'おそい'], 1, 'VOC0036', '安いは「やすい」と読みます。'),
+    question('n5-01-v-34', 'kanjiReading', '先生に 質問が あります。', ['しつもん', 'しもん', 'しつぶん', 'しつとい'], 1, 'VOC0040', '質問（しつもん）は、聞きたいことです。'),
+    question('n5-01-v-35', 'kanjiReading', '午後 三時に 会いましょう。', ['ごぜん', 'ごご', 'ごし', 'ごうし'], 2, 'VOC0017', '午後は「ごご」と読み、昼の12時から後の時間です。'),
+    question('n5-01-v-11', 'orthography', 'けさ しんぶんを よみました。', ['新聞', '新門', '親聞', '新問'], 1, 'VOC0350', 'しんぶんは「新聞」と書きます。'),
+    question('n5-01-v-12', 'orthography', 'あした ともだちが きます。', ['来ます', '乗ます', '帰ます', '見ます'], 1, 'VOC0008', 'くるは「来る」、きますは「来ます」です。'),
+    question('n5-01-v-13', 'orthography', 'この みせの ねだんは やすいです。', ['値段', '値団', '根段', '値暖'], 1, 'VOC0222', 'ねだんは「値段」と書きます。'),
+    question('n5-01-v-14', 'orthography', 'わたしは まいにち でんしゃに のります。', ['電車', '電気', '電話', '車電'], 1, 'VOC0003', 'でんしゃは「電車」と書きます。'),
+    question('n5-01-v-15', 'orthography', 'まどを しめて ください。', ['閉めて', '開めて', '聞めて', '問めて'], 1, 'VOC0621', 'しめるは「閉める」と書きます。'),
+    question('n5-01-v-16', 'orthography', 'この くすりを のんで ください。', ['薬', '楽', '医', '病'], 1, 'VOC0031', 'くすりは「薬」と書きます。'),
+    question('n5-01-v-17', 'orthography', 'へやに かぎを わすれました。', ['鍵', '鏡', '銀', '鐘'], 1, 'VOC0297', 'かぎは「鍵」と書きます。'),
+    question('n5-01-v-18', 'orthography', 'ちずを みて、えきへ いきます。', ['地図', '場所', '写真', '住所'], 1, 'VOC0268', 'ちずは「地図」と書きます。'),
+    question('n5-01-v-19', 'contextualVocabulary', 'のどが かわきました。冷たい（　）を 飲みたいです。', ['水', '薬', '写真', '鍵'], 1, 'VOC0044', 'のどがかわいたときは水を飲みます。'),
+    question('n5-01-v-20', 'contextualVocabulary', '電車を（　）とき、切符が いります。', ['乗る', '降りる', '待つ', '書く'], 1, 'VOC0005', '電車に「乗る」と言います。'),
+    question('n5-01-v-21', 'contextualVocabulary', '風邪ですから、きょうは（　）へ 行きます。', ['病院', '駅', '店内', '入口'], 1, 'VOC0030', '病気のときは病院へ行きます。'),
+    question('n5-01-v-22', 'contextualVocabulary', 'この シャツは 小さすぎます。大きい（　）は ありますか。', ['サイズ', '味', '時間', '地図'], 1, 'VOC0201', '服の大きさはサイズです。'),
+    question('n5-01-v-23', 'contextualVocabulary', 'すみません、トイレは（　）ですか。', ['どこ', 'いくら', 'だれ', 'いつ'], 1, 'VOC0011', '場所を聞くときは「どこ」です。'),
+    question('n5-01-v-24', 'contextualVocabulary', 'この カレーは とても（　）です。水を ください。', ['辛い', '甘い', '近い', '新しい'], 1, 'VOC0243', '辛い食べ物を食べると水がほしくなります。'),
+    question('n5-01-v-25', 'contextualVocabulary', 'レジで 千円を 出して、おつりを（　）。', ['もらいます', '読みます', '待ちます', '降ります'], 1, 'VOC0238', '買い物のあとにおつりをもらいます。'),
+    question('n5-01-v-26', 'contextualVocabulary', '雨ですから、かさを（　）ください。', ['持って', '飲んで', '読んで', '話して'], 1, 'VOC0342', '雨の日はかさを持って行きます。'),
+    question('n5-01-v-27', 'contextualVocabulary', '先生の 話を よく（　）ください。', ['聞いて', '書いて', '買って', '降りて'], 1, 'VOC0040', '話や音楽は「聞く」です。'),
+    question('n5-01-v-28', 'contextualVocabulary', 'きょうは わたしの（　）です。二十歳に なりました。', ['誕生日', '出口', '値段', '食べ物'], 1, 'VOC0410', '生まれた日は誕生日です。'),
+    question('n5-01-v-29', 'paraphrase', 'この みせは えきの ちかくです。', ['この みせは えきから とおくないです。', 'この みせは えきの なかです。', 'この みせは えきより おおきいです。', 'この みせは えきで かいものを します。'], 1, 'VOC0037', '近くは「遠くない」という意味です。'),
+    question('n5-01-v-30', 'paraphrase', '田中さんは いつも はやく 来ます。', ['田中さんは 毎日 早い 時間に 来ます。', '田中さんは 今日だけ 来ます。', '田中さんは まだ 来ません。', '田中さんは ゆっくり 来ます。'], 1, 'VOC0008', 'いつもは「毎日・たいてい」の意味です。'),
+    question('n5-01-v-31', 'paraphrase', 'この 本は おもしろくなかったです。', ['この 本は つまらなかったです。', 'この 本は 新しかったです。', 'この 本は 安かったです。', 'この 本は 小さかったです。'], 1, 'VOC0041', 'おもしろくないは、つまらないに近い意味です。'),
+    question('n5-01-v-32', 'paraphrase', 'わたしは きのう うちに いました。', ['わたしは きのう 外へ 行きませんでした。', 'わたしは きのう 学校へ 行きました。', 'わたしは きのう 友だちと 会いました。', 'わたしは きのう 電車に 乗りました。'], 1, 'VOC0050', 'うちにいたので、外へ行っていません。'),
+    question('n5-01-v-33', 'paraphrase', 'この 料理は あまり 高くないです。', ['この 料理は 安いです。', 'この 料理は 辛いです。', 'この 料理は 多いです。', 'この 料理は 新しいです。'], 1, 'VOC0035', 'あまり高くないは、安いという意味です。'),
+];

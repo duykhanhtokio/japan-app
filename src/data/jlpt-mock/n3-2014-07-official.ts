@@ -1,0 +1,12 @@
+import type { ImageSourcePropType } from 'react-native';
+export const N3_2014_07_EXAM_ID = 'n3-2014-07-exam-05';
+export const N3_2014_07_SOURCE = { questionPdfSha256: 'cf6efd4863890b6b7df5455e123e32f5621aef1c9f0fe2f9802fc092a1f0c1c6', answerScriptPdfSha256: 'c7aa8b62c268bd566d01ffa89209598d7942659c6b41fb288bea5658f1e472e0', audioSha256: 'e32bc62e1a08b32f33fb0d92236a3d6e9ad11939891eb219eb2e409575cb8604' } as const;
+export const N3_2014_07_WRITTEN_KEY = [2,2,1,3,3,1,4,2,3,4,1,4,1,2,1,2,1,3,2,3,3,4,3,4,4,4,3,1,2,1,4,1,4,2,3,2,3,1,3,1,4,3,2,1,2,4,4,3,2,1,2,3,4,1,4,3,4,2,2,1,1,2,2,1,3,1,4,3,2,3,4,1,3,4] as const;
+export const N3_2014_07_LISTENING_KEY = [2,3,4,2,2,1,4,2,3,4,3,2,1,4,2,3,3,1,2,2,1,1,1,2,1,3,2,3] as const;
+export const N3_2014_07_WRITTEN_PAGES: readonly ImageSourcePropType[] = [require('../../../assets/jlpt/n3/2014-07/question/page-02.jpg'),require('../../../assets/jlpt/n3/2014-07/question/page-03.jpg'),require('../../../assets/jlpt/n3/2014-07/question/page-04.jpg'),require('../../../assets/jlpt/n3/2014-07/question/page-05.jpg'),require('../../../assets/jlpt/n3/2014-07/question/page-06.jpg'),require('../../../assets/jlpt/n3/2014-07/question/page-07.jpg'),require('../../../assets/jlpt/n3/2014-07/question/page-08.jpg'),require('../../../assets/jlpt/n3/2014-07/question/page-09.jpg')] as const;
+export const N3_2014_07_LISTENING_PAGES: readonly ImageSourcePropType[] = [require('../../../assets/jlpt/n3/2014-07/question/page-10.jpg'),require('../../../assets/jlpt/n3/2014-07/question/page-11.jpg')] as const;
+export const N3_2014_07_SCRIPT_PAGES: readonly ImageSourcePropType[] = [require('../../../assets/jlpt/n3/2014-07/answer-script/page-10.jpg'),require('../../../assets/jlpt/n3/2014-07/answer-script/page-11.jpg'),require('../../../assets/jlpt/n3/2014-07/answer-script/page-12.jpg'),require('../../../assets/jlpt/n3/2014-07/answer-script/page-13.jpg')] as const;
+export const N3_2014_07_AUDIO = require('../../../assets/jlpt/n3/2014-07/audio/n3-2014-07.mp3');
+export const N3_2014_07_ANSWER_KEY_PAGE: ImageSourcePropType = require('../../../assets/jlpt/n3/2014-07/answer-script/page-01.jpg');
+if (N3_2014_07_WRITTEN_KEY.length !== 74) throw new Error('N3 2014-07: written key must contain 74 responses');
+if (N3_2014_07_LISTENING_KEY.length !== 28) throw new Error('N3 2014-07: listening key must contain 28 responses');

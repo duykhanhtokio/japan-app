@@ -1,0 +1,237 @@
+import {
+    ImageBackground,
+    Pressable,
+    StyleSheet,
+    View,
+} from 'react-native';
+
+export type FarmMapDestination =
+    | 'rice'
+    | 'orchard'
+    | 'chicken'
+    | 'cow'
+    | 'shop'
+    | 'produce';
+
+type FarmMapWorldProps = {
+    onSelect:
+        (
+            destination:
+                FarmMapDestination
+        ) => void;
+};
+
+type Hotspot = {
+    id:
+        FarmMapDestination;
+
+    left:
+        `${number}%`;
+
+    top:
+        `${number}%`;
+
+    width:
+        `${number}%`;
+
+    height:
+        `${number}%`;
+};
+
+/*
+ * Hotspots normalized to the approved full-screen portrait map.
+ * Coordinates intentionally track the visible building/area footprint.
+ */
+const HOTSPOTS:
+    readonly Hotspot[] = [
+        {
+            id:
+                'orchard',
+            left:
+                '28%',
+            top:
+                '28%',
+            width:
+                '34%',
+            height:
+                '18%',
+        },
+        {
+            id:
+                'chicken',
+            left:
+                '3%',
+            top:
+                '39%',
+            width:
+                '28%',
+            height:
+                '16%',
+        },
+        {
+            id:
+                'cow',
+            left:
+                '65%',
+            top:
+                '32%',
+            width:
+                '31%',
+            height:
+                '20%',
+        },
+        {
+            id:
+                'rice',
+            left:
+                '0%',
+            top:
+                '58%',
+            width:
+                '34%',
+            height:
+                '22%',
+        },
+        {
+            id:
+                'produce',
+            left:
+                '37%',
+            top:
+                '60%',
+            width:
+                '26%',
+            height:
+                '17%',
+        },
+        {
+            id:
+                'shop',
+            left:
+                '66%',
+            top:
+                '58%',
+            width:
+                '31%',
+            height:
+                '20%',
+        },
+    ];
+
+export default function FarmMapWorld({
+    onSelect,
+}: FarmMapWorldProps) {
+    return (
+        <View
+            style={
+                styles.frame
+            }
+        >
+            <ImageBackground
+                source={
+                    require(
+                        '../../../../assets/game/farm/background/farm_map_master.png'
+                    )
+                }
+                resizeMode="cover"
+                style={
+                    styles.map
+                }
+                imageStyle={
+                    styles.image
+                }
+            >
+                {HOTSPOTS.map(
+                    hotspot => (
+                        <Pressable
+                            key={
+                                hotspot.id
+                            }
+                            accessibilityRole="button"
+                            accessibilityLabel={
+                                hotspot.id
+                            }
+                            onPress={() =>
+                                onSelect(
+                                    hotspot.id
+                                )
+                            }
+                            style={({
+                                pressed,
+                            }) => [
+                                styles.hotspot,
+                                {
+                                    left:
+                                        hotspot.left,
+                                    top:
+                                        hotspot.top,
+                                    width:
+                                        hotspot.width,
+                                    height:
+                                        hotspot.height,
+                                },
+                                pressed &&
+                                    styles.hotspotPressed,
+                            ]}
+                        />
+                    )
+                )}
+            </ImageBackground>
+        </View>
+    );
+}
+
+const styles =
+    StyleSheet.create({
+        frame: {
+            flex:
+                1,
+
+            width:
+                '100%',
+
+            minHeight:
+                0,
+
+            backgroundColor:
+                '#173C24',
+        },
+
+        map: {
+            flex:
+                1,
+
+            width:
+                '100%',
+
+            minHeight:
+                0,
+
+            position:
+                'relative',
+
+            overflow:
+                'hidden',
+        },
+
+        image: {
+            width:
+                '100%',
+
+            height:
+                '100%',
+        },
+
+        hotspot: {
+            position:
+                'absolute',
+
+            borderRadius:
+                18,
+        },
+
+        hotspotPressed: {
+            backgroundColor:
+                'rgba(255, 225, 116, 0.16)',
+        },
+    });

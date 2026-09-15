@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 3,
+  "auditStatus": "verified_from_current_source",
+  "sourceRoot": "/Users/doduykhanh/Desktop/japan-app99/japan-app",
+  "canonicalLanguageList": "src/i18n/languages.ts#appLanguages",
+  "runtimeContext": "src/context/LanguageContext.tsx",
+  "registrationRoutes": ["src/app/register.tsx", "src/app/register/work.tsx"],
+  "settingsRoute": "src/app/settings/index.tsx",
+  "storageKey": "@japan_app_language",
+  "defaultLocale": "ja",
+  "fallbackLocale": "en",
+  "profileLanguageField": null,
+  "languageResolution": [
+    "AsyncStorage:@japan_app_language",
+    "LanguageContext default:ja",
+    "translations locale table",
+    "translations.en fallback"
+  ],
+  "languages": [
+    {"localeCode":"ja","displayName":"日本語","registrationSelectable":true,"settingsSelectable":true,"translationResourceExists":true,"appWideTranslationComplete":true,"runtimeSupported":true},
+    {"localeCode":"en","displayName":"English","registrationSelectable":true,"settingsSelectable":true,"translationResourceExists":true,"appWideTranslationComplete":true,"runtimeSupported":true},
+    {"localeCode":"vi","displayName":"Tiếng Việt","registrationSelectable":true,"settingsSelectable":true,"translationResourceExists":true,"appWideTranslationComplete":true,"runtimeSupported":true},
+    {"localeCode":"id","displayName":"Bahasa Indonesia","registrationSelectable":true,"settingsSelectable":true,"translationResourceExists":true,"appWideTranslationComplete":true,"runtimeSupported":true},
+    {"localeCode":"zh-CN","displayName":"简体中文","registrationSelectable":true,"settingsSelectable":true,"translationResourceExists":true,"appWideTranslationComplete":true,"runtimeSupported":true},
+    {"localeCode":"zh-TW","displayName":"繁體中文","registrationSelectable":true,"settingsSelectable":true,"translationResourceExists":true,"appWideTranslationComplete":false,"runtimeSupported":true,"note":"JLPT result copy exists separately, but the general translations table currently aliases zh-CN."},
+    {"localeCode":"hi","displayName":"हिन्दी","registrationSelectable":true,"settingsSelectable":true,"translationResourceExists":true,"appWideTranslationComplete":true,"runtimeSupported":true},
+    {"localeCode":"bn","displayName":"বাংলা","registrationSelectable":true,"settingsSelectable":true,"translationResourceExists":true,"appWideTranslationComplete":false,"runtimeSupported":true,"note":"General UI currently falls back to English."},
+    {"localeCode":"ne","displayName":"नेपाली","registrationSelectable":true,"settingsSelectable":true,"translationResourceExists":true,"appWideTranslationComplete":false,"runtimeSupported":true,"note":"General UI currently falls back to English."},
+    {"localeCode":"my","displayName":"မြန်မာဘာသာ","registrationSelectable":true,"settingsSelectable":true,"translationResourceExists":true,"appWideTranslationComplete":false,"runtimeSupported":true,"note":"General UI currently falls back to English."},
+    {"localeCode":"th","displayName":"ภาษาไทย","registrationSelectable":true,"settingsSelectable":true,"translationResourceExists":true,"appWideTranslationComplete":false,"runtimeSupported":true,"note":"General UI currently falls back to English."},
+    {"localeCode":"km","displayName":"ភាសាខ្មែរ","registrationSelectable":true,"settingsSelectable":true,"translationResourceExists":true,"appWideTranslationComplete":false,"runtimeSupported":true,"note":"General UI currently falls back to English."},
+    {"localeCode":"tl","displayName":"Filipino","registrationSelectable":true,"settingsSelectable":true,"translationResourceExists":true,"appWideTranslationComplete":false,"runtimeSupported":true,"note":"General UI currently falls back to English."}
+  ],
+  "excludedFalsePositives": ["de", "es", "ko", "ru"],
+  "evidenceFiles": [
+    "src/i18n/languages.ts",
+    "src/context/LanguageContext.tsx",
+    "src/app/register.tsx",
+    "src/app/register/work.tsx",
+    "src/app/settings/index.tsx",
+    "src/i18n/translations.ts",
+    "src/i18n/jlpt-result-copy.ts",
+    "src/app/_layout.tsx"
+  ]
+}

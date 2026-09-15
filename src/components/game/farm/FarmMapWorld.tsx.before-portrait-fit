@@ -1,0 +1,294 @@
+import {
+    ImageBackground,
+    Pressable,
+    StyleSheet,
+    Text,
+    View,
+    useWindowDimensions,
+} from 'react-native';
+
+export type FarmMapDestination =
+    | 'rice'
+    | 'orchard'
+    | 'chicken'
+    | 'cow'
+    | 'shop'
+    | 'produce';
+
+type FarmMapWorldProps = {
+    onSelect:
+        (
+            destination:
+                FarmMapDestination
+        ) => void;
+};
+
+type Hotspot = {
+    id:
+        FarmMapDestination;
+
+    label:
+        string;
+
+    left:
+        `${number}%`;
+
+    top:
+        `${number}%`;
+
+    width:
+        `${number}%`;
+
+    height:
+        `${number}%`;
+};
+
+const HOTSPOTS:
+    readonly Hotspot[] = [
+        {
+            id:
+                'orchard',
+            label:
+                '果樹園',
+            left:
+                '31%',
+            top:
+                '18%',
+            width:
+                '30%',
+            height:
+                '20%',
+        },
+        {
+            id:
+                'chicken',
+            label:
+                '鶏小屋',
+            left:
+                '5%',
+            top:
+                '29%',
+            width:
+                '28%',
+            height:
+                '20%',
+        },
+        {
+            id:
+                'cow',
+            label:
+                '牛舎',
+            left:
+                '62%',
+            top:
+                '25%',
+            width:
+                '32%',
+            height:
+                '24%',
+        },
+        {
+            id:
+                'rice',
+            label:
+                'やさい畑',
+            left:
+                '3%',
+            top:
+                '52%',
+            width:
+                '36%',
+            height:
+                '24%',
+        },
+        {
+            id:
+                'produce',
+            label:
+                'やさい直売所',
+            left:
+                '35%',
+            top:
+                '59%',
+            width:
+                '24%',
+            height:
+                '17%',
+        },
+        {
+            id:
+                'shop',
+            label:
+                'ファームショップ',
+            left:
+                '61%',
+            top:
+                '54%',
+            width:
+                '34%',
+            height:
+                '22%',
+        },
+    ];
+
+export default function FarmMapWorld({
+    onSelect,
+}: FarmMapWorldProps) {
+    const {
+        width,
+    } =
+        useWindowDimensions();
+
+    const mapHeight =
+        Math.max(
+            560,
+            width *
+                1.30
+        );
+
+    return (
+        <View
+            style={
+                styles.frame
+            }
+        >
+            <ImageBackground
+                source={
+                    require(
+                        '../../../../assets/game/farm/background/farm_map_master.png'
+                    )
+                }
+                resizeMode="cover"
+                style={[
+                    styles.map,
+                    {
+                        height:
+                            mapHeight,
+                    },
+                ]}
+                imageStyle={
+                    styles.image
+                }
+            >
+                {HOTSPOTS.map(
+                    hotspot => (
+                        <Pressable
+                            key={
+                                hotspot.id
+                            }
+                            accessibilityRole="button"
+                            accessibilityLabel={
+                                hotspot.label
+                            }
+                            onPress={() =>
+                                onSelect(
+                                    hotspot.id
+                                )
+                            }
+                            style={({
+                                pressed,
+                            }) => [
+                                styles.hotspot,
+                                {
+                                    left:
+                                        hotspot.left,
+                                    top:
+                                        hotspot.top,
+                                    width:
+                                        hotspot.width,
+                                    height:
+                                        hotspot.height,
+                                },
+                                pressed &&
+                                    styles.hotspotPressed,
+                            ]}
+                        >
+                            <View
+                                pointerEvents="none"
+                                style={
+                                    styles.debugLabel
+                                }
+                            >
+                                <Text
+                                    style={
+                                        styles.debugLabelText
+                                    }
+                                >
+                                    {
+                                        hotspot.label
+                                    }
+                                </Text>
+                            </View>
+                        </Pressable>
+                    )
+                )}
+            </ImageBackground>
+        </View>
+    );
+}
+
+const styles =
+    StyleSheet.create({
+        frame: {
+            width:
+                '100%',
+            alignItems:
+                'center',
+            backgroundColor:
+                '#263A25',
+        },
+
+        map: {
+            width:
+                '100%',
+            position:
+                'relative',
+            overflow:
+                'hidden',
+        },
+
+        image: {
+            width:
+                '100%',
+            height:
+                '100%',
+        },
+
+        hotspot: {
+            position:
+                'absolute',
+            justifyContent:
+                'flex-end',
+            alignItems:
+                'center',
+            borderRadius:
+                18,
+        },
+
+        hotspotPressed: {
+            backgroundColor:
+                'rgba(255, 226, 107, 0.18)',
+        },
+
+        debugLabel: {
+            marginBottom:
+                4,
+            paddingHorizontal:
+                8,
+            paddingVertical:
+                4,
+            borderRadius:
+                10,
+            backgroundColor:
+                'rgba(53, 34, 18, 0.74)',
+        },
+
+        debugLabelText: {
+            color:
+                '#FFF7D6',
+            fontSize:
+                10,
+            fontWeight:
+                '900',
+        },
+    });

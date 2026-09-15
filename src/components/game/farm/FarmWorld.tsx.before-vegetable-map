@@ -1,0 +1,742 @@
+import {
+    StyleSheet,
+    Text,
+    View,
+} from 'react-native';
+
+import type {
+    FarmPlotState,
+} from '@/game/core/game-types';
+
+import FarmPlot from './FarmPlot';
+
+import {
+    FARM_COLORS,
+    FARM_PLOT_POSITIONS,
+} from './farm-theme';
+
+type FarmWorldProps = {
+    plots:
+    readonly FarmPlotState[];
+
+    selectedPlotId:
+    string | null;
+
+    onSelectPlot:
+    (
+        plotId:
+            string
+    ) => void;
+};
+
+export default function FarmWorld({
+    plots,
+    selectedPlotId,
+    onSelectPlot,
+}: FarmWorldProps) {
+    return (
+        <View
+            style={
+                styles.frame
+            }
+        >
+            <View
+                style={
+                    styles.world
+                }
+            >
+                {/*
+                 * =============================================
+                 * ENVIRONMENT LAYER
+                 * =============================================
+                 */}
+
+                <View
+                    pointerEvents="none"
+                    style={
+                        StyleSheet
+                            .absoluteFill
+                    }
+                >
+                    <View
+                        style={
+                            styles.skyLand
+                        }
+                    />
+
+                    <View
+                        style={
+                            styles.distantHillLeft
+                        }
+                    />
+
+                    <View
+                        style={
+                            styles.distantHillRight
+                        }
+                    />
+
+                    <View
+                        style={
+                            styles.river
+                        }
+                    />
+
+                    <View
+                        style={
+                            styles.path
+                        }
+                    />
+
+                    <View
+                        style={[
+                            styles.tree,
+                            styles.treeOne,
+                        ]}
+                    >
+                        <Text
+                            style={
+                                styles.treeEmoji
+                            }
+                        >
+                            🌳
+                        </Text>
+                    </View>
+
+                    <View
+                        style={[
+                            styles.tree,
+                            styles.treeTwo,
+                        ]}
+                    >
+                        <Text
+                            style={
+                                styles.treeEmoji
+                            }
+                        >
+                            🌳
+                        </Text>
+                    </View>
+
+                    <View
+                        style={[
+                            styles.tree,
+                            styles.treeThree,
+                        ]}
+                    >
+                        <Text
+                            style={
+                                styles.treeEmoji
+                            }
+                        >
+                            🌲
+                        </Text>
+                    </View>
+
+                    <Text
+                        style={
+                            styles.flowerOne
+                        }
+                    >
+                        🌼
+                    </Text>
+
+                    <Text
+                        style={
+                            styles.flowerTwo
+                        }
+                    >
+                        🌻
+                    </Text>
+                </View>
+
+                {/*
+                 * =============================================
+                 * BUILDING LAYER
+                 *
+                 * Đây là placeholder về vị trí.
+                 * Building artwork thật sẽ thay các View này.
+                 * =============================================
+                 */}
+
+                <WorldBuilding
+                    style={
+                        styles.farmHouse
+                    }
+                    icon="🏡"
+                    label="農家"
+                />
+
+                <WorldBuilding
+                    style={
+                        styles.chickenCoop
+                    }
+                    icon="🐔"
+                    label="鶏小屋"
+                    small
+                />
+
+                <WorldBuilding
+                    style={
+                        styles.feedMill
+                    }
+                    icon="🏭"
+                    label="飼料工場"
+                    small
+                />
+
+                {/*
+                 * =============================================
+                 * PLOT LAYER
+                 * =============================================
+                 */}
+
+                {plots.map(
+                    (
+                        plot,
+                        index
+                    ) => {
+                        const position =
+                            FARM_PLOT_POSITIONS[
+                            index
+                            ];
+
+                        if (!position) {
+                            return null;
+                        }
+
+                        return (
+                            <View
+                                key={
+                                    plot.id
+                                }
+                                style={[
+                                    styles.plotPosition,
+
+                                    {
+                                        left:
+                                            position.left,
+
+                                        top:
+                                            position.top,
+
+                                        width:
+                                            position.width,
+                                    },
+                                ]}
+                            >
+                                <FarmPlot
+                                    plot={
+                                        plot
+                                    }
+                                    number={
+                                        index +
+                                        1
+                                    }
+                                    selected={
+                                        selectedPlotId ===
+                                        plot.id
+                                    }
+                                    onPress={() =>
+                                        onSelectPlot(
+                                            plot.id
+                                        )
+                                    }
+                                />
+                            </View>
+                        );
+                    }
+                )}
+
+                {/*
+                 * Decorative foreground.
+                 */}
+
+                <View
+                    pointerEvents="none"
+                    style={
+                        styles.foregroundFence
+                    }
+                >
+                    <Text
+                        style={
+                            styles.fenceText
+                        }
+                    >
+                        🪵  🪵  🪵
+                    </Text>
+                </View>
+            </View>
+        </View>
+    );
+}
+
+/*
+ * =========================================================
+ * WORLD BUILDING PLACEHOLDER
+ * =========================================================
+ */
+
+function WorldBuilding({
+    icon,
+    label,
+    style,
+    small = false,
+}: {
+    icon:
+    string;
+
+    label:
+    string;
+
+    style:
+    object;
+
+    small?:
+    boolean;
+}) {
+    return (
+        <View
+            pointerEvents="none"
+            style={[
+                styles.building,
+                small &&
+                styles.buildingSmall,
+                style,
+            ]}
+        >
+            <Text
+                style={[
+                    styles.buildingIcon,
+                    small &&
+                    styles.buildingIconSmall,
+                ]}
+            >
+                {icon}
+            </Text>
+
+            <View
+                style={
+                    styles.buildingLabel
+                }
+            >
+                <Text
+                    style={
+                        styles.buildingLabelText
+                    }
+                >
+                    {label}
+                </Text>
+            </View>
+        </View>
+    );
+}
+
+/*
+ * =========================================================
+ * STYLES
+ * =========================================================
+ */
+
+const styles =
+    StyleSheet.create({
+        frame: {
+            flex:
+                1,
+
+            minHeight:
+                400,
+
+            marginHorizontal:
+                8,
+
+            marginTop:
+                7,
+
+            borderRadius:
+                24,
+
+            borderWidth:
+                3,
+
+            borderColor:
+                '#B77A2C',
+
+            overflow:
+                'hidden',
+
+            backgroundColor:
+                FARM_COLORS.grass,
+
+            shadowColor:
+                '#000000',
+
+            shadowOffset: {
+                width:
+                    0,
+
+                height:
+                    4,
+            },
+
+            shadowOpacity:
+                0.18,
+
+            shadowRadius:
+                5,
+
+            elevation:
+                5,
+        },
+
+        world: {
+            flex:
+                1,
+
+            minHeight:
+                400,
+
+            position:
+                'relative',
+
+            overflow:
+                'hidden',
+
+            backgroundColor:
+                FARM_COLORS.grass,
+        },
+
+        /*
+         * ENVIRONMENT
+         */
+
+        skyLand: {
+            position:
+                'absolute',
+
+            left:
+                0,
+
+            right:
+                0,
+
+            top:
+                0,
+
+            height:
+                '31%',
+
+            backgroundColor:
+                '#A8D86D',
+        },
+
+        distantHillLeft: {
+            position:
+                'absolute',
+
+            width:
+                '65%',
+
+            height:
+                '24%',
+
+            left:
+                '-16%',
+
+            top:
+                '-8%',
+
+            borderRadius:
+                200,
+
+            backgroundColor:
+                '#5F9C43',
+
+            transform: [
+                {
+                    rotate:
+                        '-5deg',
+                },
+            ],
+        },
+
+        distantHillRight: {
+            position:
+                'absolute',
+
+            width:
+                '72%',
+
+            height:
+                '25%',
+
+            right:
+                '-20%',
+
+            top:
+                '-5%',
+
+            borderRadius:
+                200,
+
+            backgroundColor:
+                '#6AA849',
+
+            transform: [
+                {
+                    rotate:
+                        '7deg',
+                },
+            ],
+        },
+
+        river: {
+            position:
+                'absolute',
+
+            width:
+                '23%',
+
+            height:
+                '125%',
+
+            right:
+                '-8%',
+
+            top:
+                '-8%',
+
+            borderRadius:
+                80,
+
+            backgroundColor:
+                '#71CBE8',
+
+            transform: [
+                {
+                    rotate:
+                        '9deg',
+                },
+            ],
+
+            borderLeftWidth:
+                5,
+
+            borderLeftColor:
+                '#D9D58B',
+        },
+
+        path: {
+            position:
+                'absolute',
+
+            width:
+                '24%',
+
+            height:
+                '86%',
+
+            left:
+                '4%',
+
+            top:
+                '23%',
+
+            borderRadius:
+                80,
+
+            backgroundColor:
+                '#D8B36B',
+
+            transform: [
+                {
+                    rotate:
+                        '8deg',
+                },
+            ],
+        },
+
+        tree: {
+            position:
+                'absolute',
+        },
+
+        treeOne: {
+            left:
+                '3%',
+
+            top:
+                '12%',
+        },
+
+        treeTwo: {
+            right:
+                '5%',
+
+            top:
+                '25%',
+        },
+
+        treeThree: {
+            left:
+                '3%',
+
+            bottom:
+                '3%',
+        },
+
+        treeEmoji: {
+            fontSize:
+                42,
+        },
+
+        flowerOne: {
+            position:
+                'absolute',
+
+            left:
+                '17%',
+
+            bottom:
+                '6%',
+
+            fontSize:
+                18,
+        },
+
+        flowerTwo: {
+            position:
+                'absolute',
+
+            right:
+                '18%',
+
+            bottom:
+                '7%',
+
+            fontSize:
+                20,
+        },
+
+        /*
+         * BUILDINGS
+         */
+
+        building: {
+            position:
+                'absolute',
+
+            alignItems:
+                'center',
+
+            justifyContent:
+                'center',
+        },
+
+        buildingSmall: {
+            transform: [
+                {
+                    scale:
+                        0.88,
+                },
+            ],
+        },
+
+        buildingIcon: {
+            fontSize:
+                61,
+        },
+
+        buildingIconSmall: {
+            fontSize:
+                46,
+        },
+
+        buildingLabel: {
+            marginTop:
+                -6,
+
+            paddingHorizontal:
+                7,
+
+            paddingVertical:
+                2,
+
+            borderRadius:
+                8,
+
+            backgroundColor:
+                FARM_COLORS.cream,
+
+            borderWidth:
+                1,
+
+            borderColor:
+                FARM_COLORS
+                    .creamBorder,
+        },
+
+        buildingLabelText: {
+            color:
+                FARM_COLORS.text,
+
+            fontSize:
+                8,
+
+            fontWeight:
+                '900',
+        },
+
+        farmHouse: {
+            left:
+                '31%',
+
+            top:
+                '5%',
+        },
+
+        chickenCoop: {
+            right:
+                '12%',
+
+            top:
+                '18%',
+        },
+
+        feedMill: {
+            left:
+                '4%',
+
+            top:
+                '31%',
+        },
+
+        /*
+         * PLOTS
+         */
+
+        plotPosition: {
+            position:
+                'absolute',
+        },
+
+        /*
+         * FOREGROUND
+         */
+
+        foregroundFence: {
+            position:
+                'absolute',
+
+            right:
+                '3%',
+
+            bottom:
+                '1%',
+        },
+
+        fenceText: {
+            fontSize:
+                17,
+        },
+    });

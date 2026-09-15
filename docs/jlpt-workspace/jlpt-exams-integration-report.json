@@ -1,0 +1,82 @@
+{
+  "totalExamFilesFound": 7,
+  "validExamCount": 7,
+  "integratedExamCount": 7,
+  "skippedExamCount": 0,
+  "totalQuestionCount": 718,
+  "duplicateExamIdCount": 0,
+  "duplicateQuestionIdCount": 0,
+  "missingRequiredDataCount": 0,
+  "typeScriptCheck": "PASS",
+  "lintCheck": "PASS_WITH_PREEXISTING_WARNINGS",
+  "runtimeBundleCheck": "BLOCKED_BY_PREEXISTING_MISSING_ASSET",
+  "dataValidation": "PASS",
+  "translationCheckpointPreserved": true,
+  "readyForUse": true,
+  "exams": [
+    {
+      "examId": "n1-2012-07-exam-01",
+      "kind": "official",
+      "level": "N1",
+      "questionCount": 106,
+      "status": "integrated"
+    },
+    {
+      "examId": "n1-2012-12-exam-02",
+      "kind": "official",
+      "level": "N1",
+      "questionCount": 106,
+      "status": "integrated",
+      "sourceAudioAvailable": false
+    },
+    {
+      "examId": "n1-mock-01",
+      "kind": "mock",
+      "level": "N1",
+      "questionCount": 108,
+      "status": "integrated"
+    },
+    {
+      "examId": "n2-mock-01",
+      "kind": "mock",
+      "level": "N2",
+      "questionCount": 107,
+      "status": "integrated"
+    },
+    {
+      "examId": "n3-mock-01",
+      "kind": "mock",
+      "level": "N3",
+      "questionCount": 102,
+      "status": "integrated"
+    },
+    {
+      "examId": "n4-mock-01",
+      "kind": "mock",
+      "level": "N4",
+      "questionCount": 98,
+      "status": "integrated"
+    },
+    {
+      "examId": "n5-mock-01",
+      "kind": "mock",
+      "level": "N5",
+      "questionCount": 91,
+      "status": "integrated"
+    }
+  ],
+  "unavailablePlannedSlots": {
+    "count": 43,
+    "reason": "Không có bộ dữ liệu câu hỏi riêng trong mã nguồn; không được tự sáng tác để tạo đề số 2–10."
+  },
+  "limitations": [
+    "Gói đầu vào không chứa tệp âm thanh gốc N1 12/2012; app sử dụng transcript tiếng Nhật đã xác minh và không tạo âm thanh thay thế.",
+    "Bản mã nguồn japan-app-current-small.zip thiếu assets/app/home-cards/writing.jpg vốn đã được tham chiếu trước thay đổi này, nên không thể hoàn tất Expo web bundle trong workspace; TypeScript và kiểm tra dữ liệu JLPT đều PASS."
+  ],
+  "checkpointAudit": {
+    "command": "npm run jlpt:checkpoint:check",
+    "status": "FAIL_FILTERED_INPUT",
+    "reason": "PROGRESS_MANIFEST.json tham chiếu hàng nghìn tệp không được đóng gói trong ZIP đầu vào đã lọc; các dữ liệu đích N1 12/2012 vẫn được kiểm tra riêng và PASS."
+  },
+  "errors": []
+}

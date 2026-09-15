@@ -1,0 +1,2162 @@
+
+import {
+    careForAnimal,
+    collectAnimalProduct,
+    feedAnimal,
+    resolveAnimalTime,
+} from '@/game/animals/animal-engine';
+
+import type {
+    AnimalId,
+    FarmGameState,
+} from '@/game/core/game-types';
+import {
+    Pressable,
+    StyleSheet,
+    Text,
+    View,
+} from 'react-native';
+
+import {
+    useEffect,
+    useMemo,
+    useState,
+} from 'react';
+
+import {
+    SafeAreaView,
+    useSafeAreaInsets,
+} from 'react-native-safe-area-context';
+
+import CropCarePanel from '@/components/game/farm/CropCarePanel';
+
+import CropPlantPanel from '@/components/game/farm/CropPlantPanel';
+
+import FarmAreaBar, {
+    type FarmAreaId,
+} from '@/components/game/farm/FarmAreaBar';
+
+import FarmHud from '@/components/game/farm/FarmHud';
+
+import FarmWorld from '@/components/game/farm/FarmWorld';
+
+import FarmMapWorld, {
+    type FarmMapDestination,
+} from '@/components/game/farm/FarmMapWorld';
+
+import OrchardPlantPanel from '@/components/game/farm/OrchardPlantPanel';
+
+import OrchardWorld from '@/components/game/farm/OrchardWorld';
+
+import type {
+    CareActionLevel,
+    CareType,
+} from '@/game/care/care-types';
+
+import type {
+    CropId,
+} from '@/game/core/game-types';
+
+import {
+    createInitialFarmGameState,
+} from '@/game/core/initial-game-state';
+
+import type {
+    OrchardTreeId,
+} from '@/game/core/orchard-types';
+
+import {
+    getFarmLevelProgress,
+} from '@/game/data/farm-levels';
+
+import {
+    careForCrop,
+    cleanupCropPlot,
+    fertilizeCropPlot,
+    harvestCrop,
+    plantCrop,
+    resolveFarmTime,
+} from '@/game/farming/plot-engine';
+
+import AnimalWorld from '@/components/game/farm/AnimalWorld';
+
+import {
+    harvestOrchardFruit,
+    plantOrchardTree,
+    resolveOrchardTime,
+} from '@/game/orchards/orchard-engine';
+
+export default function FarmGameScreen() {
+    const insets =
+        useSafeAreaInsets();
+
+    const [
+        farmState,
+        setFarmState,
+    ] =
+        useState<FarmGameState>(
+            () => {
+                const state =
+                    createInitialFarmGameState();
+
+                if (!__DEV__) {
+                    return state;
+                }
+
+                /*
+                 * =============================================
+                 * DEVELOPMENT FIXTURE
+                 * =============================================
+                 *
+                 * Mở level để test toàn bộ crop/orchard.
+                 *
+                 * Economy V2:
+                 * trồng bằng Gold trực tiếp.
+                 */
+
+                return {
+                    ...state,
+
+                    farmLevel:
+                        36,
+
+                    gold:
+                        Math.max(
+                            state.gold,
+                            10000
+                        ),
+
+                    animalSlots: [
+                        { id: 'chicken_slot_1', animalId: 'chicken', status: 'idle' },
+                        { id: 'chicken_slot_2', animalId: 'chicken', status: 'idle' },
+                        { id: 'chicken_slot_3', animalId: 'chicken', status: 'idle' },
+                        { id: 'cow_slot_1', animalId: 'cow', status: 'idle' },
+                        { id: 'cow_slot_2', animalId: 'cow', status: 'idle' },
+                    ],
+                };
+            }
+        );
+
+    /*
+     * =====================================================
+     * AREA
+     * =====================================================
+     */
+
+    const [
+        showFarmMap,
+        setShowFarmMap,
+    ] =
+        useState(
+            true
+        );
+
+    const [
+        selectedArea,
+        setSelectedArea,
+    ] =
+        useState<FarmAreaId>(
+            'rice'
+        );
+
+    /*
+     * =====================================================
+     * FARM PLOT
+     * =====================================================
+     */
+
+    const [
+        selectedPlotId,
+        setSelectedPlotId,
+    ] =
+        useState<
+            string | null
+        >(
+            farmState
+                .plots[0]
+                ?.id ??
+            null
+        );
+
+    /*
+     * =====================================================
+     * CROP PLANT PANEL
+     * =====================================================
+     */
+
+    const [
+        cropPlantOpen,
+        setCropPlantOpen,
+    ] =
+        useState(
+            false
+        );
+
+    /*
+     * =====================================================
+     * FARM CARE PANEL
+     * =====================================================
+     */
+
+    const [
+        cropCareOpen,
+        setCropCareOpen,
+    ] =
+        useState(
+            false
+        );
+
+    const [
+        selectedCareType,
+        setSelectedCareType,
+    ] =
+        useState<
+            CareType | null
+        >(
+            null
+        );
+
+    /*
+     * =====================================================
+     * ORCHARD PLOT
+     * =====================================================
+     */
+
+    const [
+        selectedOrchardPlotId,
+        setSelectedOrchardPlotId,
+    ] =
+        useState<
+            string | null
+        >(
+            farmState
+                .orchardPlots[0]
+                ?.id ??
+            null
+        );
+
+    const [
+        orchardPlantOpen,
+        setOrchardPlantOpen,
+    ] =
+        useState(
+            false
+        );
+
+    const [
+        selectedAnimalSlotId,
+        setSelectedAnimalSlotId,
+    ] =
+        useState<string | null>(
+            null
+        );
+
+    /*
+     * =====================================================
+     * ANIMAL CARE PANEL
+     * =====================================================
+     */
+
+    const [
+        animalCareOpen,
+        setAnimalCareOpen,
+    ] =
+        useState(
+            false
+        );
+
+    const [
+        selectedAnimalCareType,
+        setSelectedAnimalCareType,
+    ] =
+        useState<
+            CareType | null
+        >(
+            null
+        );
+
+    /*
+     * =====================================================
+     * DEVELOPMENT CLOCK
+     * =====================================================
+     */
+
+    const [
+        devTimeOffsetMs,
+        setDevTimeOffsetMs,
+    ] =
+        useState(
+            0
+        );
+
+    /*
+     * =====================================================
+     * UI CLOCK
+     * =====================================================
+     */
+
+    const [
+        clockNow,
+        setClockNow,
+    ] =
+        useState(
+            () =>
+                Date.now()
+        );
+
+    useEffect(
+        () => {
+            const timer =
+                setInterval(
+                    () => {
+                        setClockNow(
+                            Date.now()
+                        );
+                    },
+                    1000
+                );
+
+            return () => {
+                clearInterval(
+                    timer
+                );
+            };
+        },
+        []
+    );
+
+    const gameNow =
+        clockNow +
+        devTimeOffsetMs;
+
+    /*
+     * =====================================================
+     * RESOLVE GAME TIME
+     * =====================================================
+     */
+
+    const resolvedState =
+        useMemo(
+            () => {
+                const farmResolved =
+                    resolveFarmTime(
+                        farmState,
+                        gameNow
+                    );
+
+                const orchardResolved =
+                    resolveOrchardTime(
+                        farmResolved,
+                        gameNow
+                    );
+
+                return resolveAnimalTime(
+                    orchardResolved,
+                    gameNow
+                );
+            },
+            [
+                farmState,
+                gameNow,
+            ]
+        );
+
+    /*
+     * =====================================================
+     * FARM LEVEL
+     * =====================================================
+     */
+
+    const levelProgress =
+        useMemo(
+            () =>
+                getFarmLevelProgress(
+                    resolvedState
+                        .farmXp
+                ),
+            [
+                resolvedState
+                    .farmXp,
+            ]
+        );
+
+    /*
+     * =====================================================
+     * SELECTED ORCHARD PLOT
+     * =====================================================
+     */
+
+    const selectedOrchardPlot =
+        resolvedState
+            .orchardPlots
+            .find(
+                plot =>
+                    plot.id ===
+                    selectedOrchardPlotId
+            );
+
+    /*
+     * =====================================================
+     * XP HUD
+     * =====================================================
+     */
+
+    const xpMax =
+        levelProgress
+            .isMaxLevel
+            ? Math.max(
+                1,
+                levelProgress
+                    .currentLevelXp
+            )
+            : Math.max(
+                1,
+                levelProgress
+                    .requiredXp
+            );
+
+    /*
+     * =====================================================
+     * FARM — PLOT INTERACTION
+     * =====================================================
+     */
+
+    function handleFarmPlotPress(
+        plotId:
+            string
+    ) {
+        setSelectedPlotId(
+            plotId
+        );
+
+        const plot =
+            resolvedState
+                .plots
+                .find(
+                    current =>
+                        current.id ===
+                        plotId
+                );
+
+        if (!plot) {
+            return;
+        }
+
+        /*
+         * =================================================
+         * EMPTY → OPEN CROP PLANT PANEL
+         * =================================================
+         */
+
+        if (
+            plot.status ===
+            'empty'
+        ) {
+            setCropCareOpen(
+                false
+            );
+
+            setSelectedCareType(
+                null
+            );
+
+            setCropPlantOpen(
+                true
+            );
+
+            return;
+        }
+
+        /*
+         * =================================================
+         * CARE REQUIRED
+         * =================================================
+         */
+
+        if (
+            plot.status ===
+            'growing' &&
+            plot.production
+                ?.status ===
+            'care_required'
+        ) {
+            const requirement =
+                plot.production
+                    .careRequirements
+                    .find(
+                        current =>
+                            !current.completed &&
+                            current.dueAt <=
+                            gameNow
+                    );
+
+            if (!requirement) {
+                if (__DEV__) {
+                    console.log(
+                        '[FARM CARE] NO DUE REQUIREMENT',
+                        plotId
+                    );
+                }
+
+                return;
+            }
+
+            setCropPlantOpen(
+                false
+            );
+
+            setSelectedCareType(
+                requirement.type
+            );
+
+            setCropCareOpen(
+                true
+            );
+
+            return;
+        }
+
+        /*
+         * =================================================
+         * HARVEST
+         * =================================================
+         */
+
+        if (
+            plot.status ===
+            'ready'
+        ) {
+            const result =
+                harvestCrop(
+                    resolvedState,
+                    plotId,
+                    gameNow
+                );
+
+            if (
+                !result.success
+            ) {
+                if (__DEV__) {
+                    console.log(
+                        '[FARM HARVEST] FAILED',
+                        result.reason
+                    );
+                }
+
+                return;
+            }
+
+            if (__DEV__) {
+                console.log(
+                    '[FARM HARVEST] SUCCESS',
+                    {
+                        plotId,
+
+                        goldEarned:
+                            result.goldEarned,
+
+                        xpGained:
+                            result.xpGained,
+                    }
+                );
+            }
+
+            setFarmState(
+                result.state
+            );
+
+            setCropPlantOpen(
+                false
+            );
+
+            setCropCareOpen(
+                false
+            );
+
+            return;
+        }
+
+        /*
+         * =================================================
+         * CLEANUP OLD CROP
+         * =================================================
+         */
+
+        if (
+            plot.status ===
+            'cleanup_required'
+        ) {
+            const nextState =
+                cleanupCropPlot(
+                    resolvedState,
+                    plotId
+                );
+
+            setFarmState(
+                nextState
+            );
+
+            if (__DEV__) {
+                console.log(
+                    '[FARM CLEANUP] SUCCESS',
+                    plotId
+                );
+            }
+
+            return;
+        }
+
+        /*
+         * =================================================
+         * FERTILIZE / PREPARE SOIL
+         * =================================================
+         */
+
+        if (
+            plot.status ===
+            'fertilizer_required'
+        ) {
+            const nextState =
+                fertilizeCropPlot(
+                    resolvedState,
+                    plotId
+                );
+
+            setFarmState(
+                nextState
+            );
+
+            if (__DEV__) {
+                console.log(
+                    '[FARM FERTILIZE] SUCCESS',
+                    plotId
+                );
+            }
+
+            return;
+        }
+
+        /*
+         * growing bình thường:
+         * chỉ select plot, không mở panel.
+         */
+    }
+
+    /*
+     * =====================================================
+     * FARM — BUY + PLANT CROP
+     * =====================================================
+     */
+
+    function handlePlantCrop(
+        cropId:
+            CropId
+    ) {
+        if (
+            !selectedPlotId
+        ) {
+            return;
+        }
+
+        const result =
+            plantCrop(
+                resolvedState,
+                selectedPlotId,
+                cropId,
+                gameNow
+            );
+
+        if (
+            !result.success
+        ) {
+            if (__DEV__) {
+                console.log(
+                    '[FARM PLANT] FAILED',
+                    {
+                        plotId:
+                            selectedPlotId,
+
+                        cropId,
+
+                        reason:
+                            result.reason,
+                    }
+                );
+            }
+
+            return;
+        }
+
+        if (__DEV__) {
+            console.log(
+                '[FARM PLANT] SUCCESS',
+                {
+                    plotId:
+                        selectedPlotId,
+
+                    cropId,
+
+                    goldSpent:
+                        result.goldSpent,
+                }
+            );
+        }
+
+        setFarmState(
+            result.state
+        );
+
+        setCropPlantOpen(
+            false
+        );
+
+        setCropCareOpen(
+            false
+        );
+
+        setSelectedCareType(
+            null
+        );
+    }
+
+    /*
+     * =====================================================
+     * FARM — CARE ACTION
+     * =====================================================
+     */
+
+    function handleCropCare(
+        level:
+            CareActionLevel
+    ) {
+        if (
+            !selectedPlotId
+        ) {
+            return;
+        }
+
+        const result =
+            careForCrop(
+                resolvedState,
+                selectedPlotId,
+                level,
+                gameNow
+            );
+
+        if (
+            !result.success
+        ) {
+            if (__DEV__) {
+                console.log(
+                    '[FARM CARE] FAILED',
+                    {
+                        plotId:
+                            selectedPlotId,
+
+                        level,
+
+                        reason:
+                            result.reason,
+                    }
+                );
+            }
+
+            return;
+        }
+
+        if (__DEV__) {
+            console.log(
+                '[FARM CARE] SUCCESS',
+                {
+                    plotId:
+                        selectedPlotId,
+
+                    level,
+                }
+            );
+        }
+
+        setFarmState(
+            result.state
+        );
+
+        setCropCareOpen(
+            false
+        );
+
+        setSelectedCareType(
+            null
+        );
+    }
+
+    /*
+     * =====================================================
+     * FARM — CLOSE CARE PANEL
+     * =====================================================
+     */
+
+    function handleCloseCropCare() {
+        setCropCareOpen(
+            false
+        );
+
+        setSelectedCareType(
+            null
+        );
+    }
+
+    /*
+     * =====================================================
+     * ORCHARD — SELECT PLOT
+     * =====================================================
+     */
+
+    function handleOrchardPlotPress(
+        plotId:
+            string
+    ) {
+        setSelectedOrchardPlotId(
+            plotId
+        );
+
+        const plot =
+            resolvedState
+                .orchardPlots
+                .find(
+                    current =>
+                        current.id ===
+                        plotId
+                );
+
+        if (
+            !plot ||
+            plot.status !==
+            'empty'
+        ) {
+            return;
+        }
+
+        setOrchardPlantOpen(
+            true
+        );
+    }
+
+    /*
+     * =====================================================
+     * ORCHARD — BUY + PLANT
+     * =====================================================
+     */
+
+    function handlePlantOrchardTree(
+        treeId:
+            OrchardTreeId
+    ) {
+        if (
+            !selectedOrchardPlotId
+        ) {
+            return;
+        }
+
+        const result =
+            plantOrchardTree(
+                resolvedState,
+                selectedOrchardPlotId,
+                treeId,
+                gameNow
+            );
+
+        if (
+            !result.success
+        ) {
+            if (__DEV__) {
+                console.log(
+                    '[ORCHARD PLANT] FAILED',
+                    result.reason
+                );
+            }
+
+            return;
+        }
+
+        setFarmState(
+            result.state
+        );
+
+        setOrchardPlantOpen(
+            false
+        );
+    }
+
+    /*
+     * =====================================================
+     * ORCHARD — HARVEST + AUTO SELL
+     * =====================================================
+     */
+
+    function handleHarvestOrchard() {
+        if (
+            !selectedOrchardPlotId
+        ) {
+            return;
+        }
+
+        const result =
+            harvestOrchardFruit(
+                resolvedState,
+                selectedOrchardPlotId,
+                gameNow
+            );
+
+        if (
+            !result.success
+        ) {
+            if (__DEV__) {
+                console.log(
+                    '[ORCHARD HARVEST] FAILED',
+                    result.reason
+                );
+            }
+
+            return;
+        }
+
+        if (__DEV__) {
+            console.log(
+                '[ORCHARD HARVEST] SUCCESS',
+                {
+                    fruitItemId:
+                        result.fruitItemId,
+
+                    quantity:
+                        result.quantity,
+
+                    goldEarned:
+                        result.goldEarned,
+
+                    xpGained:
+                        result.xpGained,
+
+                    nextReadyAt:
+                        result.nextReadyAt,
+                }
+            );
+        }
+
+        setFarmState(
+            result.state
+        );
+    }
+
+    /*
+     * =====================================================
+     * ANIMAL — SELECT SLOT
+     * =====================================================
+     */
+
+    function handleAnimalSlotSelect(
+        slotId:
+            string
+    ) {
+        setSelectedAnimalSlotId(
+            slotId
+        );
+    }
+
+    /*
+     * =====================================================
+     * ANIMAL — FEED
+     * =====================================================
+     */
+
+    function handleAnimalFeed(
+        slotId:
+            string
+    ) {
+        setSelectedAnimalSlotId(
+            slotId
+        );
+
+        const result =
+            feedAnimal(
+                resolvedState,
+                slotId,
+                gameNow
+            );
+
+        if (!result.success) {
+            if (__DEV__) {
+                console.log(
+                    '[ANIMAL FEED] FAILED',
+                    {
+                        slotId,
+                        reason:
+                            result.reason,
+                    }
+                );
+            }
+
+            return;
+        }
+
+        setFarmState(
+            result.state
+        );
+    }
+
+    /*
+     * =====================================================
+     * ANIMAL — CARE
+     * =====================================================
+     */
+
+    function handleAnimalCare(
+        slotId:
+            string
+    ) {
+        setSelectedAnimalSlotId(
+            slotId
+        );
+
+        const slot =
+            resolvedState
+                .animalSlots
+                .find(
+                    current =>
+                        current.id ===
+                        slotId
+                );
+
+        if (
+            !slot ||
+            slot.status !==
+            'producing' ||
+            !slot.production
+        ) {
+            return;
+        }
+
+        const requirement =
+            slot.production
+                .careRequirements
+                .find(
+                    current =>
+                        !current.completed &&
+                        current.dueAt <=
+                        gameNow
+                );
+
+        if (!requirement) {
+            if (__DEV__) {
+                console.log(
+                    '[ANIMAL CARE] NO DUE REQUIREMENT',
+                    slotId
+                );
+            }
+
+            return;
+        }
+
+        setSelectedAnimalCareType(
+            requirement.type
+        );
+
+        setAnimalCareOpen(
+            true
+        );
+    }
+
+    function handleAnimalCareAction(
+        level:
+            CareActionLevel
+    ) {
+        if (
+            !selectedAnimalSlotId
+        ) {
+            return;
+        }
+
+        const result =
+            careForAnimal(
+                resolvedState,
+                selectedAnimalSlotId,
+                level,
+                gameNow
+            );
+
+        if (!result.success) {
+            if (__DEV__) {
+                console.log(
+                    '[ANIMAL CARE] FAILED',
+                    {
+                        slotId:
+                            selectedAnimalSlotId,
+
+                        level,
+
+                        reason:
+                            result.reason,
+                    }
+                );
+            }
+
+            return;
+        }
+
+        if (__DEV__) {
+            console.log(
+                '[ANIMAL CARE] SUCCESS',
+                {
+                    slotId:
+                        selectedAnimalSlotId,
+
+                    careType:
+                        result.careType,
+
+                    level,
+
+                    timeReducedSeconds:
+                        result.timeReducedSeconds,
+                }
+            );
+        }
+
+        setFarmState(
+            result.state
+        );
+
+        setAnimalCareOpen(
+            false
+        );
+
+        setSelectedAnimalCareType(
+            null
+        );
+    }
+
+    function handleCloseAnimalCare() {
+        setAnimalCareOpen(
+            false
+        );
+
+        setSelectedAnimalCareType(
+            null
+        );
+    }
+
+    /*
+     * =====================================================
+     * ANIMAL — COLLECT PRODUCT
+     * =====================================================
+     */
+
+    function handleAnimalCollect(
+        slotId:
+            string
+    ) {
+        setSelectedAnimalSlotId(
+            slotId
+        );
+
+        const result =
+            collectAnimalProduct(
+                resolvedState,
+                slotId,
+                gameNow
+            );
+
+        if (!result.success) {
+            if (__DEV__) {
+                console.log(
+                    '[ANIMAL COLLECT] FAILED',
+                    {
+                        slotId,
+                        reason:
+                            result.reason,
+                    }
+                );
+            }
+
+            return;
+        }
+
+        setFarmState(
+            result.state
+        );
+    }
+
+    /*
+     * =====================================================
+     * DEV — ADVANCE GAME TIME
+     * =====================================================
+     */
+
+    function handleDevAdvanceHours(
+        hours:
+            number
+    ) {
+        if (!__DEV__) {
+            return;
+        }
+
+        setDevTimeOffsetMs(
+            current =>
+                current +
+                hours *
+                60 *
+                60 *
+                1000
+        );
+    }
+
+    function handleDevAdvanceMinutes(
+        minutes:
+            number
+    ) {
+        if (!__DEV__) {
+            return;
+        }
+
+        setDevTimeOffsetMs(
+            current =>
+                current +
+                minutes *
+                60 *
+                1000
+        );
+    }
+
+    /*
+     * =====================================================
+     * AREA SELECT
+     * =====================================================
+     */
+
+    function handleAreaSelect(
+        area:
+            FarmAreaId
+    ) {
+        setShowFarmMap(
+            false
+        );
+
+        setSelectedArea(
+            area
+        );
+
+        setOrchardPlantOpen(
+            false
+        );
+
+        setCropPlantOpen(
+            false
+        );
+
+        setCropCareOpen(
+            false
+        );
+
+        setSelectedCareType(
+            null
+        );
+
+        setAnimalCareOpen(
+            false
+        );
+
+        setSelectedAnimalCareType(
+            null
+        );
+    }
+
+    function handleFarmMapSelect(
+        destination:
+            FarmMapDestination
+    ) {
+        if (
+            destination ===
+                'rice' ||
+            destination ===
+                'orchard' ||
+            destination ===
+                'chicken' ||
+            destination ===
+                'cow'
+        ) {
+            handleAreaSelect(
+                destination
+            );
+
+            return;
+        }
+
+        console.log(
+            '[FARM MAP] SELECT',
+            destination
+        );
+    }
+
+    function handleReturnToFarmMap() {
+        setShowFarmMap(
+            true
+        );
+
+        setOrchardPlantOpen(
+            false
+        );
+
+        setCropPlantOpen(
+            false
+        );
+
+        setCropCareOpen(
+            false
+        );
+
+        setSelectedCareType(
+            null
+        );
+
+        setAnimalCareOpen(
+            false
+        );
+
+        setSelectedAnimalCareType(
+            null
+        );
+    }
+
+    /*
+     * =====================================================
+     * RENDER
+     * =====================================================
+     */
+
+    return (
+        <SafeAreaView
+            style={
+                styles.container
+            }
+            edges={[]}
+        >
+            <View
+                style={
+                    styles.game
+                }
+            >
+                {showFarmMap && (
+                    <View
+                        style={
+                            styles.farmMapLayer
+                        }
+                    >
+                        <FarmMapWorld
+                            onSelect={
+                                handleFarmMapSelect
+                            }
+                        />
+                    </View>
+                )}
+
+                <View
+                    pointerEvents="box-none"
+                    style={[
+                        styles.hudSafeLayer,
+                        {
+                            paddingTop:
+                                insets.top +
+                                16,
+                        },
+                    ]}
+                >
+                    <FarmHud
+                        level={
+                            resolvedState
+                                .farmLevel
+                        }
+                        xpCurrent={
+                            levelProgress
+                                .currentLevelXp
+                        }
+                        xpMax={
+                            xpMax
+                        }
+                        gold={
+                            resolvedState
+                                .gold
+                        }
+                        diamonds={
+                            0
+                        }
+                        keys={
+                            resolvedState
+                                .keys
+                        }
+                    />
+                </View>
+
+                {!showFarmMap && (
+                    <>
+                        <Pressable
+                            onPress={
+                                handleReturnToFarmMap
+                            }
+                            style={
+                                styles.mapReturnButton
+                            }
+                        >
+                            <Text
+                                style={
+                                    styles.mapReturnButtonText
+                                }
+                            >
+                                ← ファームマップ
+                            </Text>
+                        </Pressable>
+
+                        {/*
+                         * Area navigation now lives on Farm Map.
+                         * FarmAreaBar retired from gameplay UI.
+                         */}
+                    </>
+                )}
+
+                {!showFarmMap && (
+                    <View
+                        style={
+                            styles.worldContainer
+                        }
+                    >
+                    {selectedArea ===
+                        'rice' ? (
+                        <FarmWorld
+                            plots={resolvedState.plots}
+                            selectedPlotId={selectedPlotId}
+                            onSelectPlot={handleFarmPlotPress}
+                        />
+                    ) : selectedArea ===
+                        'orchard' ? (
+                        <OrchardWorld
+                            plots={resolvedState.orchardPlots}
+                            selectedPlotId={selectedOrchardPlotId}
+                            onSelectPlot={handleOrchardPlotPress}
+                        />
+                    ) : (
+                        <AnimalWorld
+                            animalId={
+                                selectedArea as AnimalId
+                            }
+                            slots={
+                                resolvedState.animalSlots
+                            }
+                            selectedSlotId={
+                                selectedAnimalSlotId
+                            }
+                            now={
+                                gameNow
+                            }
+                            onSelectSlot={
+                                handleAnimalSlotSelect
+                            }
+                            onFeed={
+                                handleAnimalFeed
+                            }
+                            onCare={
+                                handleAnimalCare
+                            }
+                            onCollect={
+                                handleAnimalCollect
+                            }
+                        />
+                    )}
+                    </View>
+                )}
+
+                {!showFarmMap &&
+                    selectedArea ===
+                    'orchard' &&
+                    selectedOrchardPlot &&
+                    selectedOrchardPlot
+                        .status ===
+                    'ready' && (
+                        <Pressable
+                            onPress={
+                                handleHarvestOrchard
+                            }
+                            style={({
+                                pressed,
+                            }) => [
+                                    styles.harvestButton,
+
+                                    pressed &&
+                                    styles.harvestButtonPressed,
+                                ]}
+                        >
+                            <Text
+                                style={
+                                    styles.harvestButtonText
+                                }
+                            >
+                                🍎 収穫する
+                            </Text>
+                        </Pressable>
+                    )}
+
+                {__DEV__ &&
+                    !showFarmMap &&
+                    selectedArea ===
+                    'orchard' && (
+                        <View
+                            style={
+                                styles.devBar
+                            }
+                        >
+                            <Text
+                                style={
+                                    styles.devLabel
+                                }
+                            >
+                                DEV TIME
+                            </Text>
+
+                            <Pressable
+                                style={({
+                                    pressed,
+                                }) => [
+                                        styles.devButton,
+
+                                        pressed &&
+                                        styles.devButtonPressed,
+                                    ]}
+                                onPress={() =>
+                                    handleDevAdvanceHours(
+                                        8
+                                    )
+                                }
+                            >
+                                <Text
+                                    style={
+                                        styles.devButtonText
+                                    }
+                                >
+                                    +8h
+                                </Text>
+                            </Pressable>
+
+                            <Pressable
+                                style={({
+                                    pressed,
+                                }) => [
+                                        styles.devButton,
+
+                                        pressed &&
+                                        styles.devButtonPressed,
+                                    ]}
+                                onPress={() =>
+                                    handleDevAdvanceHours(
+                                        24
+                                    )
+                                }
+                            >
+                                <Text
+                                    style={
+                                        styles.devButtonText
+                                    }
+                                >
+                                    +24h
+                                </Text>
+                            </Pressable>
+
+                            <Text
+                                style={
+                                    styles.devTime
+                                }
+                            >
+                                +
+                                {Math.floor(
+                                    devTimeOffsetMs /
+                                    3600000
+                                )}
+                                h
+                            </Text>
+                        </View>
+                    )}
+
+                {__DEV__ &&
+                    !showFarmMap &&
+                    (
+                        selectedArea ===
+                        'chicken' ||
+                        selectedArea ===
+                        'cow' ||
+
+                        <View
+                            style={
+                                styles.devBar
+                            }
+                        >
+                            <Text
+                                style={
+                                    styles.devLabel
+                                }
+                            >
+                                DEV ANIMAL
+                            </Text>
+
+                            <Pressable
+                                style={({
+                                    pressed,
+                                }) => [
+                                        styles.devButton,
+
+                                        pressed &&
+                                        styles.devButtonPressed,
+                                    ]}
+                                onPress={() =>
+                                    handleDevAdvanceMinutes(
+                                        1
+                                    )
+                                }
+                            >
+                                <Text
+                                    style={
+                                        styles.devButtonText
+                                    }
+                                >
+                                    +1m
+                                </Text>
+                            </Pressable>
+
+                            <Pressable
+                                style={({
+                                    pressed,
+                                }) => [
+                                        styles.devButton,
+
+                                        pressed &&
+                                        styles.devButtonPressed,
+                                    ]}
+                                onPress={() =>
+                                    handleDevAdvanceMinutes(
+                                        5
+                                    )
+                                }
+                            >
+                                <Text
+                                    style={
+                                        styles.devButtonText
+                                    }
+                                >
+                                    +5m
+                                </Text>
+                            </Pressable>
+
+                            <Pressable
+                                style={({
+                                    pressed,
+                                }) => [
+                                        styles.devButton,
+
+                                        pressed &&
+                                        styles.devButtonPressed,
+                                    ]}
+                                onPress={() =>
+                                    handleDevAdvanceMinutes(
+                                        20
+                                    )
+                                }
+                            >
+                                <Text
+                                    style={
+                                        styles.devButtonText
+                                    }
+                                >
+                                    +20m
+                                </Text>
+                            </Pressable>
+
+                            <Text
+                                style={
+                                    styles.devTime
+                                }
+                            >
+                                +
+                                {Math.floor(
+                                    devTimeOffsetMs /
+                                    60000
+                                )}
+                                m
+                            </Text>
+                        </View>
+                    )}
+
+                {__DEV__ &&
+                    !showFarmMap &&
+                    selectedArea ===
+                    'rice' && (
+                        <View
+                            style={
+                                styles.devBar
+                            }
+                        >
+                            <Text
+                                style={
+                                    styles.devLabel
+                                }
+                            >
+                                DEV FARM
+                            </Text>
+
+                            <Pressable
+                                style={({
+                                    pressed,
+                                }) => [
+                                        styles.devButton,
+
+                                        pressed &&
+                                        styles.devButtonPressed,
+                                    ]}
+                                onPress={() =>
+                                    handleDevAdvanceHours(
+                                        1
+                                    )
+                                }
+                            >
+                                <Text
+                                    style={
+                                        styles.devButtonText
+                                    }
+                                >
+                                    +1h
+                                </Text>
+                            </Pressable>
+
+                            <Pressable
+                                style={({
+                                    pressed,
+                                }) => [
+                                        styles.devButton,
+
+                                        pressed &&
+                                        styles.devButtonPressed,
+                                    ]}
+                                onPress={() =>
+                                    handleDevAdvanceHours(
+                                        4
+                                    )
+                                }
+                            >
+                                <Text
+                                    style={
+                                        styles.devButtonText
+                                    }
+                                >
+                                    +4h
+                                </Text>
+                            </Pressable>
+
+                            <Pressable
+                                style={({
+                                    pressed,
+                                }) => [
+                                        styles.devButton,
+
+                                        pressed &&
+                                        styles.devButtonPressed,
+                                    ]}
+                                onPress={() =>
+                                    handleDevAdvanceHours(
+                                        8
+                                    )
+                                }
+                            >
+                                <Text
+                                    style={
+                                        styles.devButtonText
+                                    }
+                                >
+                                    +8h
+                                </Text>
+                            </Pressable>
+
+                            <Text
+                                style={
+                                    styles.devTime
+                                }
+                            >
+                                +
+                                {Math.floor(
+                                    devTimeOffsetMs /
+                                    3600000
+                                )}
+                                h
+                            </Text>
+                        </View>
+                    )}
+            </View>
+
+            <CropPlantPanel
+                visible={
+                    !showFarmMap &&
+                    cropPlantOpen
+                }
+                farmLevel={
+                    resolvedState
+                        .farmLevel
+                }
+                gold={
+                    resolvedState
+                        .gold
+                }
+                onClose={() =>
+                    setCropPlantOpen(
+                        false
+                    )
+                }
+                onPlant={
+                    handlePlantCrop
+                }
+            />
+
+            <CropCarePanel
+                visible={
+                    !showFarmMap &&
+                    cropCareOpen
+                }
+                careType={
+                    selectedCareType
+                }
+                onClose={
+                    handleCloseCropCare
+                }
+                onCare={
+                    handleCropCare
+                }
+            />
+
+            <CropCarePanel
+                visible={
+                    !showFarmMap &&
+                    animalCareOpen
+                }
+                careType={
+                    selectedAnimalCareType
+                }
+                onClose={
+                    handleCloseAnimalCare
+                }
+                onCare={
+                    handleAnimalCareAction
+                }
+            />
+
+            <OrchardPlantPanel
+                visible={
+                    !showFarmMap &&
+                    orchardPlantOpen
+                }
+                farmLevel={
+                    resolvedState
+                        .farmLevel
+                }
+                gold={
+                    resolvedState
+                        .gold
+                }
+                onClose={() =>
+                    setOrchardPlantOpen(
+                        false
+                    )
+                }
+                onPlant={
+                    handlePlantOrchardTree
+                }
+            />
+        </SafeAreaView>
+    );
+}
+
+const styles =
+    StyleSheet.create({
+        container: {
+            flex:
+                1,
+
+            backgroundColor:
+                '#89CBE8',
+        },
+
+        game: {
+            flex:
+                1,
+
+            position:
+                'relative',
+
+            overflow:
+                'hidden',
+        },
+
+        farmMapLayer: {
+            ...StyleSheet.absoluteFillObject,
+
+            zIndex:
+                0,
+        },
+
+        hudSafeLayer: {
+            zIndex:
+                10,
+
+            width:
+                '100%',
+
+            paddingHorizontal:
+                8,
+        },
+
+        farmMapOverlayContent: {
+            zIndex:
+                1,
+        },
+
+        gameLegacyMarker: {
+            flex:
+                1,
+
+            backgroundColor:
+                '#89CBE8',
+        },
+
+        worldContainer: {
+            flex:
+                1,
+
+            minHeight:
+                0,
+        },
+
+        mapReturnButton: {
+            alignSelf:
+                'flex-start',
+
+            marginTop:
+                5,
+
+            marginLeft:
+                10,
+
+            marginBottom:
+                5,
+
+            paddingHorizontal:
+                13,
+
+            paddingVertical:
+                7,
+
+            borderRadius:
+                14,
+
+            backgroundColor:
+                '#6B4528',
+
+            borderWidth:
+                2,
+
+            borderColor:
+                '#E7C98A',
+        },
+
+        mapReturnButtonText: {
+            color:
+                '#FFF4D0',
+
+            fontSize:
+                12,
+
+            fontWeight:
+                '900',
+        },
+
+        harvestButton: {
+            alignSelf:
+                'center',
+
+            minWidth:
+                180,
+
+            marginTop:
+                6,
+
+            marginBottom:
+                4,
+
+            paddingHorizontal:
+                22,
+
+            paddingVertical:
+                11,
+
+            borderRadius:
+                16,
+
+            alignItems:
+                'center',
+
+            backgroundColor:
+                '#F0A53A',
+
+            borderWidth:
+                3,
+
+            borderColor:
+                '#A96420',
+
+            shadowColor:
+                '#000000',
+
+            shadowOffset: {
+                width:
+                    0,
+
+                height:
+                    3,
+            },
+
+            shadowOpacity:
+                0.2,
+
+            shadowRadius:
+                3,
+
+            elevation:
+                4,
+        },
+
+        harvestButtonPressed: {
+            transform: [
+                {
+                    scale:
+                        0.97,
+                },
+            ],
+
+            opacity:
+                0.9,
+        },
+
+        harvestButtonText: {
+            color:
+                '#FFFFFF',
+
+            fontSize:
+                15,
+
+            fontWeight:
+                '900',
+        },
+
+        devBar: {
+            flexDirection:
+                'row',
+
+            alignItems:
+                'center',
+
+            justifyContent:
+                'center',
+
+            gap:
+                8,
+
+            marginHorizontal:
+                10,
+
+            marginVertical:
+                5,
+
+            paddingVertical:
+                6,
+
+            paddingHorizontal:
+                8,
+
+            borderRadius:
+                12,
+
+            backgroundColor:
+                '#403A32',
+        },
+
+        devLabel: {
+            color:
+                '#FFE8A8',
+
+            fontSize:
+                9,
+
+            fontWeight:
+                '900',
+        },
+
+        devButton: {
+            paddingHorizontal:
+                12,
+
+            paddingVertical:
+                6,
+
+            borderRadius:
+                8,
+
+            backgroundColor:
+                '#F1C65D',
+
+            borderWidth:
+                1,
+
+            borderColor:
+                '#C69A35',
+        },
+
+        devButtonPressed: {
+            transform: [
+                {
+                    scale:
+                        0.95,
+                },
+            ],
+
+            opacity:
+                0.85,
+        },
+
+        devButtonText: {
+            color:
+                '#493516',
+
+            fontSize:
+                10,
+
+            fontWeight:
+                '900',
+        },
+
+        devTime: {
+            minWidth:
+                38,
+
+            color:
+                '#FFFFFF',
+
+            fontSize:
+                10,
+
+            fontWeight:
+                '900',
+
+            textAlign:
+                'center',
+        },
+    });
+

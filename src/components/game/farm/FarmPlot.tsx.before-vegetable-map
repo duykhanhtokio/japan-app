@@ -1,0 +1,856 @@
+import {
+    Pressable,
+    StyleSheet,
+    Text,
+    View,
+} from 'react-native';
+
+import type {
+    FarmPlotState,
+} from '@/game/core/game-types';
+
+import {
+    getProductionProgress,
+    getProductionRemainingSeconds,
+} from '@/game/care/care-engine';
+
+import {
+    FARM_COLORS,
+} from './farm-theme';
+
+type FarmPlotProps = {
+    plot:
+    FarmPlotState;
+
+    number:
+    number;
+
+    selected:
+    boolean;
+
+    now?:
+    number;
+
+    onPress:
+    () => void;
+};
+
+/*
+ * =========================================================
+ * TIME
+ * =========================================================
+ */
+
+function formatRemainingTime(
+    seconds:
+        number
+) {
+    const safeSeconds =
+        Math.max(
+            0,
+            seconds
+        );
+
+    const hours =
+        Math.floor(
+            safeSeconds /
+            3600
+        );
+
+    const minutes =
+        Math.floor(
+            (
+                safeSeconds %
+                3600
+            ) /
+            60
+        );
+
+    const secs =
+        safeSeconds %
+        60;
+
+    if (
+        hours >
+        0
+    ) {
+        return `${hours}時間${minutes}分`;
+    }
+
+    if (
+        minutes >
+        0
+    ) {
+        return `${minutes}分${secs}秒`;
+    }
+
+    return `${secs}秒`;
+}
+
+/*
+ * =========================================================
+ * VISUAL
+ * =========================================================
+ */
+
+function getCropVisual(
+    plot:
+        FarmPlotState,
+
+    now:
+        number
+) {
+    if (
+        plot.status ===
+        'locked'
+    ) {
+        return {
+            icon:
+                '🔒',
+
+            label:
+                '未開放',
+
+            urgent:
+                false,
+
+            watered:
+                false,
+
+            progress:
+                0,
+        };
+    }
+
+    if (
+        plot.status ===
+        'empty'
+    ) {
+        return {
+            icon:
+                undefined,
+
+            label:
+                '空き畑',
+
+            urgent:
+                false,
+
+            watered:
+                false,
+
+            progress:
+                0,
+        };
+    }
+
+    if (
+        plot.status ===
+        'cleanup_required'
+    ) {
+        return {
+            icon:
+                '🪏',
+
+            label:
+                '古い株を抜く',
+
+            urgent:
+                true,
+
+            watered:
+                false,
+
+            progress:
+                1,
+        };
+    }
+
+    if (
+        plot.status ===
+        'fertilizer_required'
+    ) {
+        return {
+            icon:
+                '🟤',
+
+            label:
+                '肥料をまく',
+
+            urgent:
+                true,
+
+            watered:
+                false,
+
+            progress:
+                0,
+        };
+    }
+
+    if (
+        plot.status ===
+        'ready'
+    ) {
+        return {
+            icon:
+                '🌾',
+
+            label:
+                '収穫できます！',
+
+            urgent:
+                true,
+
+            watered:
+                true,
+
+            progress:
+                1,
+        };
+    }
+
+    const production =
+        plot.production;
+
+    if (!production) {
+        return {
+            icon:
+                '🌱',
+
+            label:
+                '成長中',
+
+            urgent:
+                false,
+
+            watered:
+                false,
+
+            progress:
+                0,
+        };
+    }
+
+    const progress =
+        getProductionProgress(
+            production,
+            now
+        );
+
+    const remainingSeconds =
+        getProductionRemainingSeconds(
+            production,
+            now
+        );
+
+    if (
+        production.status ===
+        'care_required'
+    ) {
+        const requirement =
+            production
+                .careRequirements
+                .find(
+                    current =>
+                        !current.completed &&
+                        current.dueAt <=
+                        now
+                );
+
+        const careLabel =
+            requirement?.type ===
+                'fertilizer'
+                ? '肥料が必要！'
+                : requirement?.type ===
+                    'feed'
+                    ? 'エサが必要！'
+                    : requirement?.type ===
+                        'drink'
+                        ? '水を飲ませる！'
+                        : '水やりが必要！';
+
+        return {
+            icon:
+                '💧',
+
+            label:
+                careLabel,
+
+            urgent:
+                true,
+
+            watered:
+                true,
+
+            progress,
+        };
+    }
+
+    return {
+        icon:
+            progress >=
+                0.66
+                ? '🌿'
+                : '🌱',
+
+        label:
+            formatRemainingTime(
+                remainingSeconds
+            ),
+
+        urgent:
+            false,
+
+        /*
+         * Đất tối hơn khi đã bước vào
+         * nửa sau của growth cycle.
+         *
+         * Đây chỉ là visual.
+         * Không phải legacy plot.watered.
+         */
+        watered:
+            progress >=
+            0.5,
+
+        progress,
+    };
+}
+
+/*
+ * =========================================================
+ * COMPONENT
+ * =========================================================
+ */
+
+export default function FarmPlot({
+    plot,
+    number,
+    selected,
+    now =
+    Date.now(),
+    onPress,
+}: FarmPlotProps) {
+    const visual =
+        getCropVisual(
+            plot,
+            now
+        );
+
+    const progressPercent =
+        Math.round(
+            visual.progress *
+            100
+        );
+
+    return (
+        <Pressable
+            disabled={
+                plot.status ===
+                'locked'
+            }
+            onPress={
+                onPress
+            }
+            style={({
+                pressed,
+            }) => [
+                    styles.touchArea,
+
+                    pressed &&
+                    styles.pressed,
+                ]}
+        >
+            <View
+                style={[
+                    styles.soilShadow,
+
+                    selected &&
+                    styles.soilShadowSelected,
+                ]}
+            >
+                <View
+                    style={[
+                        styles.soil,
+
+                        visual.watered &&
+                        styles.soilMoist,
+
+                        plot.status ===
+                        'locked' &&
+                        styles.soilLocked,
+                    ]}
+                >
+                    <View
+                        style={[
+                            styles.furrow,
+                            styles.furrowOne,
+                        ]}
+                    />
+
+                    <View
+                        style={[
+                            styles.furrow,
+                            styles.furrowTwo,
+                        ]}
+                    />
+
+                    <View
+                        style={[
+                            styles.furrow,
+                            styles.furrowThree,
+                        ]}
+                    />
+
+                    {visual.icon && (
+                        <View
+                            style={
+                                styles.cropLayer
+                            }
+                        >
+                            <Text
+                                style={
+                                    styles.cropIcon
+                                }
+                            >
+                                {
+                                    visual.icon
+                                }
+                            </Text>
+                        </View>
+                    )}
+
+                    {plot.status ===
+                        'growing' &&
+                        plot.production && (
+                            <View
+                                style={
+                                    styles.progressTrack
+                                }
+                            >
+                                <View
+                                    style={[
+                                        styles.progressFill,
+
+                                        {
+                                            width:
+                                                `${progressPercent}%`,
+                                        },
+                                    ]}
+                                />
+                            </View>
+                        )}
+                </View>
+            </View>
+
+            <View
+                style={
+                    styles.plotNumber
+                }
+            >
+                <Text
+                    style={
+                        styles.plotNumberText
+                    }
+                >
+                    {number}
+                </Text>
+            </View>
+
+            {/*
+             * Không còn dấu ✓ ở góc.
+             *
+             * Selection chỉ thể hiện bằng
+             * viền vàng của plot.
+             */}
+
+            {visual.label && (
+                <View
+                    style={[
+                        styles.statusBubble,
+
+                        visual.urgent &&
+                        styles.statusBubbleUrgent,
+                    ]}
+                >
+                    <Text
+                        numberOfLines={
+                            1
+                        }
+                        style={[
+                            styles.statusText,
+
+                            visual.urgent &&
+                            styles.statusTextUrgent,
+                        ]}
+                    >
+                        {
+                            visual.label
+                        }
+                    </Text>
+                </View>
+            )}
+        </Pressable>
+    );
+}
+
+const styles =
+    StyleSheet.create({
+        touchArea: {
+            width:
+                '100%',
+
+            aspectRatio:
+                1.55,
+
+            position:
+                'relative',
+
+            alignItems:
+                'center',
+
+            justifyContent:
+                'center',
+        },
+
+        pressed: {
+            transform: [
+                {
+                    scale:
+                        0.96,
+                },
+            ],
+        },
+
+        /*
+         * =================================================
+         * SOIL
+         * =================================================
+         */
+
+        soilShadow: {
+            width:
+                '94%',
+
+            height:
+                '72%',
+
+            borderRadius:
+                18,
+
+            backgroundColor:
+                FARM_COLORS
+                    .soilDark,
+
+            paddingBottom:
+                5,
+
+            transform: [
+                {
+                    skewX:
+                        '-7deg',
+                },
+            ],
+
+            shadowColor:
+                '#000000',
+
+            shadowOffset: {
+                width:
+                    0,
+
+                height:
+                    5,
+            },
+
+            shadowOpacity:
+                0.24,
+
+            shadowRadius:
+                4,
+
+            elevation:
+                5,
+        },
+
+        soilShadowSelected: {
+            backgroundColor:
+                FARM_COLORS
+                    .gold,
+        },
+
+        soil: {
+            flex:
+                1,
+
+            borderRadius:
+                16,
+
+            overflow:
+                'hidden',
+
+            backgroundColor:
+                FARM_COLORS
+                    .soil,
+
+            borderWidth:
+                2,
+
+            borderColor:
+                '#A76C32',
+
+            position:
+                'relative',
+        },
+
+        soilMoist: {
+            backgroundColor:
+                '#65401F',
+
+            borderColor:
+                '#80552B',
+        },
+
+        soilLocked: {
+            backgroundColor:
+                '#706254',
+
+            borderColor:
+                FARM_COLORS
+                    .locked,
+
+            opacity:
+                0.7,
+        },
+
+        /*
+         * =================================================
+         * FURROWS
+         * =================================================
+         */
+
+        furrow: {
+            position:
+                'absolute',
+
+            left:
+                '8%',
+
+            right:
+                '8%',
+
+            height:
+                3,
+
+            borderRadius:
+                2,
+
+            backgroundColor:
+                'rgba(69, 38, 17, 0.34)',
+        },
+
+        furrowOne: {
+            top:
+                '27%',
+        },
+
+        furrowTwo: {
+            top:
+                '50%',
+        },
+
+        furrowThree: {
+            top:
+                '73%',
+        },
+
+        /*
+         * =================================================
+         * CROP
+         * =================================================
+         */
+
+        cropLayer: {
+            ...StyleSheet
+                .absoluteFillObject,
+
+            alignItems:
+                'center',
+
+            justifyContent:
+                'center',
+        },
+
+        cropIcon: {
+            fontSize:
+                37,
+
+            transform: [
+                {
+                    skewX:
+                        '7deg',
+                },
+            ],
+        },
+
+        /*
+         * =================================================
+         * PROGRESS
+         * =================================================
+         */
+
+        progressTrack: {
+            position:
+                'absolute',
+
+            left:
+                '9%',
+
+            right:
+                '9%',
+
+            bottom:
+                5,
+
+            height:
+                5,
+
+            borderRadius:
+                3,
+
+            overflow:
+                'hidden',
+
+            backgroundColor:
+                'rgba(255,255,255,0.30)',
+        },
+
+        progressFill: {
+            height:
+                '100%',
+
+            borderRadius:
+                3,
+
+            backgroundColor:
+                '#9DDB65',
+        },
+
+        /*
+         * =================================================
+         * NUMBER
+         * =================================================
+         */
+
+        plotNumber: {
+            position:
+                'absolute',
+
+            left:
+                1,
+
+            top:
+                2,
+
+            width:
+                23,
+
+            height:
+                23,
+
+            borderRadius:
+                12,
+
+            alignItems:
+                'center',
+
+            justifyContent:
+                'center',
+
+            backgroundColor:
+                FARM_COLORS
+                    .cream,
+
+            borderWidth:
+                2,
+
+            borderColor:
+                FARM_COLORS
+                    .creamBorder,
+        },
+
+        plotNumberText: {
+            color:
+                FARM_COLORS.text,
+
+            fontSize:
+                10,
+
+            fontWeight:
+                '900',
+        },
+
+        /*
+         * =================================================
+         * STATUS
+         * =================================================
+         */
+
+        statusBubble: {
+            position:
+                'absolute',
+
+            bottom:
+                0,
+
+            alignSelf:
+                'center',
+
+            maxWidth:
+                '96%',
+
+            paddingHorizontal:
+                7,
+
+            paddingVertical:
+                3,
+
+            borderRadius:
+                9,
+
+            backgroundColor:
+                FARM_COLORS
+                    .cream,
+
+            borderWidth:
+                1,
+
+            borderColor:
+                FARM_COLORS
+                    .creamBorder,
+        },
+
+        statusBubbleUrgent: {
+            backgroundColor:
+                '#FFF1CF',
+
+            borderColor:
+                '#E3A646',
+        },
+
+        statusText: {
+            color:
+                FARM_COLORS.text,
+
+            fontSize:
+                8,
+
+            fontWeight:
+                '900',
+        },
+
+        statusTextUrgent: {
+            color:
+                '#8A4A13',
+        },
+    });

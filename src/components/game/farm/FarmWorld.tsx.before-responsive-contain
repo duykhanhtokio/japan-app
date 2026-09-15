@@ -1,0 +1,261 @@
+import {
+    Image,
+    LayoutChangeEvent,
+    StyleSheet,
+    View,
+} from 'react-native';
+
+import {
+    useState,
+} from 'react';
+
+import type {
+    FarmPlotState,
+} from '@/game/core/game-types';
+
+import FarmPlot from './FarmPlot';
+
+import {
+    FARM_PLOT_POSITIONS,
+} from './farm-theme';
+
+type FarmWorldProps = {
+    plots:
+        readonly FarmPlotState[];
+
+    selectedPlotId:
+        string | null;
+
+    now:
+        number;
+
+    onSelectPlot:
+        (
+            plotId:
+                string
+        ) => void;
+};
+
+type ViewportSize = {
+    width:
+        number;
+
+    height:
+        number;
+};
+
+const ART_WIDTH =
+    832;
+
+const ART_HEIGHT =
+    1792;
+
+const VEGETABLE_BACKGROUND =
+    require(
+        '../../../../assets/game/farm/background/vegetable_map_background.png'
+    );
+
+export default function FarmWorld({
+    plots,
+    selectedPlotId,
+    now,
+    onSelectPlot,
+}: FarmWorldProps) {
+    const [
+        viewport,
+        setViewport,
+    ] =
+        useState<ViewportSize>({
+            width:
+                0,
+
+            height:
+                0,
+        });
+
+    function handleLayout(
+        event:
+            LayoutChangeEvent
+    ) {
+        const {
+            width,
+            height,
+        } =
+            event.nativeEvent
+                .layout;
+
+        setViewport({
+            width,
+            height,
+        });
+    }
+
+    /*
+     * Same geometry as resizeMode="cover".
+     * Background and interactive plots therefore receive
+     * exactly the same scale and crop transformation.
+     */
+    const scale =
+        viewport.width > 0 &&
+        viewport.height > 0
+            ? Math.max(
+                  viewport.width /
+                      ART_WIDTH,
+
+                  viewport.height /
+                      ART_HEIGHT
+              )
+            : 1;
+
+    const renderedWidth =
+        ART_WIDTH *
+        scale;
+
+    const renderedHeight =
+        ART_HEIGHT *
+        scale;
+
+    const offsetX =
+        (
+            viewport.width -
+            renderedWidth
+        ) /
+        2;
+
+    const offsetY =
+        (
+            viewport.height -
+            renderedHeight
+        ) /
+        2;
+
+    return (
+        <View
+            onLayout={
+                handleLayout
+            }
+            style={
+                styles.viewport
+            }
+        >
+            <View
+                style={[
+                    styles.artwork,
+                    {
+                        width:
+                            renderedWidth,
+
+                        height:
+                            renderedHeight,
+
+                        left:
+                            offsetX,
+
+                        top:
+                            offsetY,
+                    },
+                ]}
+            >
+                <Image
+                    source={
+                        VEGETABLE_BACKGROUND
+                    }
+                    resizeMode="stretch"
+                    style={
+                        StyleSheet
+                            .absoluteFillObject
+                    }
+                />
+
+                {plots.map(
+                    (
+                        plot,
+                        index
+                    ) => {
+                        const position =
+                            FARM_PLOT_POSITIONS[
+                                index
+                            ];
+
+                        if (!position) {
+                            return null;
+                        }
+
+                        return (
+                            <View
+                                key={
+                                    plot.id
+                                }
+                                style={[
+                                    styles.plotPosition,
+                                    {
+                                        left:
+                                            position.left,
+
+                                        top:
+                                            position.top,
+
+                                        width:
+                                            position.width,
+
+                                        height:
+                                            position.height,
+                                    },
+                                ]}
+                            >
+                                <FarmPlot
+                                    plot={
+                                        plot
+                                    }
+                                    number={
+                                        index +
+                                        1
+                                    }
+                                    selected={
+                                        selectedPlotId ===
+                                        plot.id
+                                    }
+                                    now={
+                                        now
+                                    }
+                                    onPress={() =>
+                                        onSelectPlot(
+                                            plot.id
+                                        )
+                                    }
+                                />
+                            </View>
+                        );
+                    }
+                )}
+            </View>
+        </View>
+    );
+}
+
+const styles =
+    StyleSheet.create({
+        viewport: {
+            flex:
+                1,
+
+            position:
+                'relative',
+
+            overflow:
+                'hidden',
+
+            backgroundColor:
+                '#1D6FB7',
+        },
+
+        artwork: {
+            position:
+                'absolute',
+        },
+
+        plotPosition: {
+            position:
+                'absolute',
+        },
+    });

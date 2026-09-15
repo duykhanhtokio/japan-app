@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "japan-app",
+    "slug": "japan-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "japanapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.doduykhanh.japanapp"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#FFFFFF"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "package": "com.doduykhanh.japanapp"
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "音声入力のためにマイクを使用します。",
+          "speechRecognitionPermission": "日本語の音声認識を使用します。"
+        }
+      ],
+      "expo-router",
+      "expo-asset",
+      "expo-audio",
+      "expo-font",
+      "expo-web-browser",
+      "expo-sqlite",
+      "expo-video"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
