@@ -35,6 +35,8 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Translation questions 56-58: `13ce32d84b16665ee99dff30d447d595bd3633d5`; remote persistence PASS, clean working tree, 2026-09-17.
+
 - Translation questions 53-55: `60676d2acc4e579d0eb57e866e70b9b52161b2a3`; remote persistence PASS, clean working tree, 2026-09-17.
 
 - Translation questions 50-52: `f76d625b1d6842dd5be121092db3b502695ed907`; remote persistence PASS, clean working tree, 2026-09-17.
@@ -254,3 +256,5 @@ User explicitly prohibits sending exam/questions/answers/transcripts/explanation
 - Codex-authored translations 53-55: cumulative 660/840 targets. Scientific-discovery passage reasoning and demonstrative references retained. Next: questions 56-58.
 
 - Codex-authored translations 56-58: cumulative 696/840 targets. Individuality/ordinariness argument, pronoun links and distractor exclusions translated. Next: questions 59-62.
+
+- Codex-authored translations 59-62: cumulative 744/840 targets. Music research/social context and distractor explanation retained; question 60 notes source 今年/現今 discrepancy. Next: questions 63-64.
