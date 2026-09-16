@@ -43,6 +43,8 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Final user Simulator approval: `82be7e6cdc3a9fc32dc6840395565eca1435c0cb`; pushed, fetched and exact-HEAD verified by `check-work-persistence.mjs` on `origin/recovery/n1-2013-12`, working tree clean, 2026-09-17. All requested N1 12/2013 work and user runtime reviews are complete.
+
 - Complete offline explanation integration (910 texts / 13 locales): `95c90843dd180cfe06cf9e83c1d3c99d6e690199`; pushed to `origin/recovery/n1-2013-12`, fetched and exact-HEAD verified by `check-work-persistence.mjs`, clean working tree, 2026-09-17. Only the new post-submission explanation rendering awaits user Simulator review; prior exam/audio approval remains valid.
 
 - Full in-session translation set (840/840): `3fb4ecbed5562c6284b4d6c17e0bad409db3ff80`; remote persistence PASS, clean working tree, 2026-09-17.
