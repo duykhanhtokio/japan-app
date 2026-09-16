@@ -35,6 +35,7 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- User-approved runtime commit: `601e9fcff653d3f80bbf684fbd1a607287ce9853`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12`, clean working tree, 2026-09-17. Dataset `structured_ready`; 35 audio timing ranges accepted by user review.
 - App integration and Simulator screenshot commit: `8482ad1459e63292411a2d11c7a27a3d3be86b4e`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-17. Screenshot LFS object uploaded successfully. This is the durable integrated review candidate, not a final runtime-approved exam.
 
 - Structured candidate commit: `625d7ef867388f32c33849e3267a90e54489d722`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-17.
@@ -157,3 +158,8 @@ The user confirmed: “đã duyệt ổn, làm tiếp .” in response to the Si
 Backup: `.jlpt-backups/n1-2013-12-runtime-approval-20260917-001643/`.
 
 Next: convert source explanations from answer/script pages 2-7 and their 12 translations, preserving the source text and marking AI translations `translated_ai_unreviewed`. Integrate through the existing registry explanation callback only; do not change locked UI or rework question pages 2-3.
+
+## Explanation conversion progress
+
+- Answer/script page 2 visually transcribed: source explanations 1-14 in `explanations/source-page-02.json`. Printed source wording is retained, including questionable dictionary glosses (e.g. question 12 手前); this is source transcription, not an editorial correction.
+- Source validator: `node scripts/check-n1-2013-12-explanations.mjs`. Translation count: 0/840. Next: source page 3, from explanation 15.
