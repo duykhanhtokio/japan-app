@@ -35,6 +35,8 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Explanation source page 4: `e62dc9499a14ef7287bf9b772dee931956209ecf`; remote persistence PASS, clean working tree, 2026-09-17.
+
 - Explanation source page 3: `5149a05d4b75b082946a39f0c39fd171ec1c8951`; remote persistence PASS, clean working tree, 2026-09-17.
 
 - Explanation source page 2: `545c4ba7a51923d07f5167c853ec0dccf06a9904`; remote persistence PASS, clean working tree, 2026-09-17.
@@ -170,3 +172,5 @@ Next: convert source explanations from answer/script pages 2-7 and their 12 tran
 - Answer/script page 3 visually transcribed: explanations 15-28 in `explanations/source-page-03.json`. Explanation 29 continues on page 4 and is deferred intact. Printed inconsistencies in 20/22/24/25 are preserved as source text; no question data or answer is changed. Next: source pages 3-4, explanation 29 onward.
 
 - Answer/script page 4 visually transcribed: explanations 29-39 in `explanations/source-page-04.json`. Inspection confirms explanation 29 ends on page 3 (prior continuation assumption corrected); explanation 40 continues on page 5 and is deferred intact. Source typos in 37/39 are retained. Next: explanation 40 onward.
+
+- Answer/script pages 4-5 visually transcribed: explanations 40-52 in `explanations/source-page-05.json`. Source misprints retained, including question 45 referring to options 1 and 4 as inference while its answer is 4. Explanation 53 continues on page 6. Next: explanation 53 onward.
