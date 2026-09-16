@@ -35,6 +35,8 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Translation questions 65-68: `d0e782d6380fb95e51094e01b6f84dab1ee7ee06`; remote persistence PASS, clean working tree, 2026-09-17.
+
 - Translation questions 63-64: `fa1766e4f2aa11fb61ddf2d3ed7a23ac402a8752`; remote persistence PASS, clean working tree, 2026-09-17.
 
 - Translation questions 59-62: `72fb77905501e3804a237e37c2d4c460ddeaa533`; remote persistence PASS, clean working tree, 2026-09-17.
@@ -266,3 +268,5 @@ User explicitly prohibits sending exam/questions/answers/transcripts/explanation
 - Codex-authored translations 63-64: cumulative 768/840 targets. Both food-safety passages and their distinction between safety and reassurance translated in full substance. Next: questions 65-68.
 
 - Codex-authored translations 65-68: cumulative 816/840 targets. Eye-contact and respect argument translated; question 67 explicitly notes the mismatched source heading. Next: questions 69-70.
+
+- Codex-authored translations 69-70: all 840/840 target entries now exist (70 questions × 12 target locales), alongside 70 original zh-CN explanations. Source allotment names retained without conjectural correction. Every target remains AI-generated and unreviewed by native speakers. Next: deterministic 13-locale assembly, registry callback integration and completion validation.
