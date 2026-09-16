@@ -35,6 +35,8 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Translation questions 26-29: `75dbf1a502ac42316a71006739a1f603f5cfefaf`; remote persistence PASS, clean working tree, 2026-09-17.
+
 - Translation questions 23-25: `f0c69ba4244e9e16daa03db166d22a3b9bcdc3e1`; remote persistence PASS, clean working tree, 2026-09-17.
 
 - Translation questions 20-22: `3dfbb70ef0ecb9429ac1731105698d334054b52e`; remote persistence PASS, clean working tree, 2026-09-17.
@@ -214,3 +216,5 @@ User explicitly prohibits sending exam/questions/answers/transcripts/explanation
 - Codex-authored translations 23-25: cumulative 300/840 targets. Localized source notes retain the 当てはまる/当てはめる mismatch (24) and inconsistent kanji/reading/gloss in 25. Next: grammar explanations 26 onward.
 
 - Codex-authored translations 26-29: cumulative 348/840 targets. Grammar forms retained and translated directly from source explanations. Next: questions 30-35.
+
+- Codex-authored translations 30-32: cumulative 384/840 targets. Conditional/passive/causative explanations translated; question 32 retains printed 思いきゃ with an explicit note distinguishing the explained と思いきや form. Next: questions 33-35.
