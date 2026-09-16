@@ -35,6 +35,8 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Translation questions 63-64: `fa1766e4f2aa11fb61ddf2d3ed7a23ac402a8752`; remote persistence PASS, clean working tree, 2026-09-17.
+
 - Translation questions 59-62: `72fb77905501e3804a237e37c2d4c460ddeaa533`; remote persistence PASS, clean working tree, 2026-09-17.
 
 - Translation questions 56-58: `13ce32d84b16665ee99dff30d447d595bd3633d5`; remote persistence PASS, clean working tree, 2026-09-17.
@@ -262,3 +264,5 @@ User explicitly prohibits sending exam/questions/answers/transcripts/explanation
 - Codex-authored translations 59-62: cumulative 744/840 targets. Music research/social context and distractor explanation retained; question 60 notes source 今年/現今 discrepancy. Next: questions 63-64.
 
 - Codex-authored translations 63-64: cumulative 768/840 targets. Both food-safety passages and their distinction between safety and reassurance translated in full substance. Next: questions 65-68.
+
+- Codex-authored translations 65-68: cumulative 816/840 targets. Eye-contact and respect argument translated; question 67 explicitly notes the mismatched source heading. Next: questions 69-70.
