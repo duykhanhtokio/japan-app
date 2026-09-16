@@ -35,6 +35,8 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Translation questions 15-19: `dca1db74f1f4b1f8e86a380ad5b58b40a5fe696d`; remote persistence PASS, clean working tree, 2026-09-17.
+
 - Translation questions 11-14: `097f86080d81bbb0c9bf919fb56f25b5270ad723`; remote persistence PASS, clean working tree, 2026-09-17.
 
 - Translation questions 7-10: `272cf86848ed6434f28347c07db98af06f362975`; remote persistence PASS, clean working tree, 2026-09-17.
@@ -202,3 +204,5 @@ User explicitly prohibits sending exam/questions/answers/transcripts/explanation
 - Codex-authored translations 11-14: cumulative 168/840 targets. Question 12 preserves the questionable printed 手前 gloss, with an explicit source caveat in all 12 translations. All target records remain AI-unreviewed. Next: questions 15-19.
 
 - Codex-authored translations 15-19: cumulative 228/840 targets, all 12 locales for every completed question. Next: questions 20-25, including printed-source inconsistencies that require explicit caveats.
+
+- Codex-authored translations 20-22: cumulative 264/840 targets. Explicit localized notes preserve the unresolved printed 上并 fragment (20) and inconsistent suggested replacements もちかえる/すいせん (22); no editorial correction is invented. Next: questions 23-25.
