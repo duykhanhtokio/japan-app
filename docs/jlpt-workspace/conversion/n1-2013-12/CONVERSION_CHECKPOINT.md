@@ -35,6 +35,7 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Listening problem 3 commit: `22e4b6f7643885dbd6cf7469a8a75f5c2261a8ce`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Listening problem 2 commit: `fc68b44ebee03d39a3a26720f380a2380e02c694`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Listening problem 1 commit: `a9e927dd301fd89e69975bb03348505dc90113d9`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Written page 12 commit: `74663d427f868c0e6d8228581e6acf8f0c7ecd09`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16. All 70 written review responses pass sequence/option/key validation; all eight JLPT regression checks pass.
@@ -118,4 +119,8 @@ Listening problem 3 is transcribed in `listening-problem-03.review.json`: 5 resp
 
 Listening problem 3 backup: `.jlpt-backups/n1-2013-12-listening03-20260916-235403/`.
 
-Next, restore listening problem 4 (14 responses) from answer/script page 12. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
+Listening problem 4 is transcribed in `listening-problem-04.review.json`: 14 responses with exactly three options each, all visually checked against answer/script page 12. OCR omitted question 3 options 1-2; these were recovered directly from the image. Fourteen candidate audio ranges decode; runtime listening review remains pending.
+
+Listening problem 4 backup: `.jlpt-backups/n1-2013-12-listening04-20260916-235525/`.
+
+Next, restore listening problem 5 (4 responses sharing 3 audio segments) from answer/script pages 12-13. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
