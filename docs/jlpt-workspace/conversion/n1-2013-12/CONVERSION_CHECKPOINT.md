@@ -35,6 +35,8 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Translation questions 36-38: `7fef55378258f2403e136dc2c9c62b0e6f410d83`; remote persistence PASS, clean working tree, 2026-09-17.
+
 - Translation questions 33-35: `bfd48e1f70c20fdd3ff2523815d087aa4aa77822`; remote persistence PASS, clean working tree, 2026-09-17.
 
 - Translation questions 30-32: `6bd05bcbdd18a9ec7b1cfc26becbb019308f28b3`; remote persistence PASS, clean working tree, 2026-09-17.
@@ -226,3 +228,5 @@ User explicitly prohibits sending exam/questions/answers/transcripts/explanation
 - Codex-authored translations 33-35: cumulative 420/840 targets. Degree expressions, humble/honorific contrasts and deliberative どうしたものか translated with all source option explanations. Next: sentence-composition explanations 36-40.
 
 - Codex-authored translations 36-38: cumulative 456/840 targets. Full sentence meaning, grammar reasoning and option ordering retained. Source school name 四川 retained with a source note. Next: questions 39-40.
+
+- Codex-authored translations 39-40: cumulative 480/840 targets. Source typo 去打扮 is retained as an unresolved quoted fragment with localized notes; no place-name correction is guessed. Full しか scope explanation and both orderings retained. Next: questions 41-45.
