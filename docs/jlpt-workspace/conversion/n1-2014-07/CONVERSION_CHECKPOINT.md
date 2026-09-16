@@ -10,11 +10,13 @@ User requested “tiếp tục” after final N1 12/2013 approval; interpreted a
 - Answer/script page 1 visually checked; all 70 written and 37 listening answers match `src/data/jlpt-mock/n1-2014-07-official.ts`.
 - Listening counts: 6 + 7 + 6 + 14 + 4 = 37. Problem 5 item 3 has two responses (4, 1); expected 36 unique segments. Do not copy the 2013 exam's 36-response / 35-segment counts.
 - Status: source_inventory_verified; not structured-ready or registered.
-- Written: 37/70 responses transcribed from question pages 2-4 and visually compared; underline targets retained as metadata. Next: question page 5, from question 38. Listening transcription and audio alignment remain pending.
+- Written: 45/70 responses transcribed from question pages 2-5 plus page 6 options for 44-45; all visually compared. Next: question page 6, from question 46. Listening transcription and audio alignment remain pending.
 - Explanation transcription/translation: pending, outside the inventory unit. Use only approved repository sources. Translate in Codex with `generatedBy: AI`, `reviewedByNativeSpeaker: false`, `status: translated_ai_unreviewed`; never use public translation services or runtime translation APIs/dependencies.
 - All nine startup validators passed. UI lock 10/10, catalog 50 = 4 structured official + 41 pending + 5 mocks.
 
 ## Durable checkpoint
+
+- Written page 4: `426828c208c0b1c009f35e15e6f8f8f93b456925`; push/fetch/exact remote HEAD verified, working tree clean.
 
 - Written page 3: `3e301fb920a36235571ce7cd351e04d248810952`; push/fetch/exact remote HEAD verified, working tree clean.
 
