@@ -35,11 +35,17 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
-- Source-inventory content commit: pending initial remote commit.
-- Remote verification: pending initial remote commit.
+- Source-inventory content commit: `213ab3d0163573540ff6a6fb8ad25b5e783a2a51`.
+- Remote verification: PASS on `origin/main` and independently confirmed through the GitHub connector.
 
 ## Current resume point
 
-Source identity, real asset integrity, page dimensions, audio metadata, response counts, and answer keys are verified. No question or transcript has yet been transcribed for this exam.
+Source identity, real asset integrity, page dimensions, audio metadata, response counts, and answer keys are verified.
 
-Next, inspect question page 2 directly and transcribe its complete written questions into `written-page-02.review.json`. Compare every answer ID against the verified source key. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
+Question page 2 was inspected directly. Written questions 1-17 were transcribed into `written-page-02.review.json`; their answer IDs match the verified source key:
+
+```text
+4, 3, 1, 3, 1, 2, 3, 4, 1, 2, 1, 3, 2, 1, 1, 4, 2
+```
+
+Next, inspect question page 3 directly and continue written transcription from question 18. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
