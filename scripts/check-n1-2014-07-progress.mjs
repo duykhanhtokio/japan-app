@@ -27,3 +27,24 @@ for (const q of rows) {
 assert.deepEqual([...seen].sort((a,b) => a-b), Array.from({length:rows.length}, (_,i)=>i+1));
 if (process.argv.includes('--complete-written')) assert.equal(rows.length, 70);
 console.log(`N1 2014-07 PROGRESS PASS: ${rows.length}/70 written, exact answer keys, options, contiguous sequence and 29 source hashes; listening/translation remain pending.`);
+const listeningKey = JSON.parse(`[${source.match(/LISTENING_KEY = \[([\s\S]*?)\] as const/)[1].replace(/,\s*$/, '')}]`);
+assert.equal(listeningKey.length, 37);
+const counts = [6,7,6,14,4];
+const listening = fs.readdirSync(base).filter(n=>/^listening-problem-\d+\.review\.json$/.test(n)).sort().flatMap(n=>JSON.parse(fs.readFileSync(`${base}/${n}`, 'utf8')));
+const listeningSeen = new Set();
+for (const q of listening) {
+  const index = counts.slice(0,q.problemNumber-1).reduce((a,b)=>a+b,0)+q.questionNumber-1;
+  assert(q.problemNumber>=1 && q.problemNumber<=5);
+  assert(q.questionNumber>=1 && q.questionNumber<=counts[q.problemNumber-1]);
+  assert(!listeningSeen.has(index)); listeningSeen.add(index);
+  assert.equal(q.correctOptionId,String(listeningKey[index]));
+  assert.equal(q.options.length,q.problemNumber===4?3:4);
+  assert(q.options.every(x=>typeof x==='string' && x.trim()));
+  assert(q.transcriptJa.trim()); assert(q.promptJa.trim());
+  assert.equal(q.transcriptVerificationStatus,'verified_against_source_image');
+  for(const page of q.source.answerScriptPages) assert(manifest.assets.some(x=>x.path.endsWith(`/answer-script/page-${String(page).padStart(2,'0')}.jpg`)));
+  if(q.audio) {assert(q.audio.startMs>=0);assert(q.audio.endMs>q.audio.startMs);assert(q.audio.endMs<=2979900);}
+  else assert.equal(q.audioTimingStatus,'pending_alignment');
+}
+if(process.argv.includes('--complete-listening')) assert.equal(listening.length,37);
+console.log(`N1 2014-07 LISTENING PROGRESS PASS: ${listening.length}/37 source transcripts, ${listening.filter(q=>q.audio).length}/37 audio mappings; missing mappings remain pending.`);
