@@ -3,6 +3,7 @@ import type { ImageSourcePropType } from 'react-native';
 import { N1_2012_07_AUDIO } from '@/data/jlpt-mock/n1-2012-07-official';
 import { N1_2012_07_SESSION_KEY, N1_2012_07_TRIAL, type TrialQuestion } from '@/data/jlpt-official/n1-2012-07-trial';
 import { N1_2013_07_SESSION_KEY, N1_2013_07_TRIAL } from '@/data/jlpt-official/n1-2013-07-trial';
+import { N1_2013_12_SESSION_KEY, N1_2013_12_TRIAL } from '@/data/jlpt-official/n1-2013-12-trial';
 import type { AppLanguageCode } from '@/i18n/languages';
 
 type RawOption = { optionId: string; textJa: string };
@@ -130,6 +131,12 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
     id: 'n1-2013-07-exam-03', level: 'N1', title: '日本語能力試験 N1', periodLabel: '2013年7月・第3回',
     startLabel: '第3回を始める', storageKey: N1_2013_07_SESSION_KEY, questions: N1_2013_07_TRIAL,
     audioSource: require('../../../assets/jlpt/n1/2013-07/audio/n1-2013-07.mp3'), visualOptions: {},
+  },
+  {
+    // Recovery-branch candidate: final listening/Simulator review is still pending.
+    id: 'n1-2013-12-exam-04', level: 'N1', title: '日本語能力試験 N1', periodLabel: '2013年12月・第4回',
+    startLabel: '第4回を始める', storageKey: N1_2013_12_SESSION_KEY, questions: N1_2013_12_TRIAL,
+    audioSource: require('../../../assets/jlpt/n1/2013-12/audio/n1-2013-12.mp3'), visualOptions: {},
   },
 ];
 

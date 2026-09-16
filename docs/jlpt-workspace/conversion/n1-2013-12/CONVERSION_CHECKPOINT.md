@@ -35,6 +35,7 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Structured candidate commit: `625d7ef867388f32c33849e3267a90e54489d722`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-17.
 - Listening problem 5 commit: `d209768e40d6c72051584cce586a8cd50601dd18`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Listening problem 4 commit: `ac6fe433ec0444d33c3ea796f19dcf366b334550`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Listening problem 3 commit: `22e4b6f7643885dbd6cf7469a8a75f5c2261a8ce`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
@@ -137,4 +138,12 @@ Candidate backup: `.jlpt-backups/n1-2013-12-candidate-20260916-235928/`.
 
 Candidate validation on 2026-09-17: `check-n1-2013-12-integration.mjs` PASS for 70 written / 36 listening / 35 decoded ranges; source hashes, exact answer keys, family mapping, shared passage lookup, and distinct problem-5 response labels pass. TypeScript PASS; lint 0 errors / 16 pre-existing warnings. UI lock remains 10/10. Candidate status stays `needs_runtime_review`; explanation conversion is not included (same missing/not_generated adapter contract as N1 2013-07).
 
-Next, prepare registry integration and the Simulator review gate. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
+Recovery-branch integration: the user-requested app integration registers the source-reviewed structured candidate once and replaces its pending entry, solely for final runtime review. Dataset status remains `needs_runtime_review`, not `structured_ready`; audio boundaries are not promoted to verified. Catalog remains 50 entries (4 structured official, 41 pending official, 5 mocks). Two inventory validators now read the actual registry rather than hard-coding 3/42. All nine validators pass; post-integration TypeScript passes; lint remains 0 errors / 16 pre-existing warnings.
+
+Integration backup: `.jlpt-backups/n1-2013-12-integration-20260917-000417/`.
+
+`npx expo start -c --port 8082` could not bind inside the sandbox (ERR_SOCKET_BAD_PORT after port probing); rerunning outside the sandbox started Metro successfully. iOS bundle built successfully (5997 modules). Booted device: iPhone 16 Plus, iOS 18.4, D079E542-BB48-40D3-B00B-0E35DEE2E31F.
+
+Simulator evidence: `runtime-review/n1-2013-12-simulator-20260917.png` captures the running N1 2013-12 candidate (questions 2-3 match the dataset, 1/106 answered, selected option visible). This proves initial rendering only, not a full interaction or listening review. No automated touch tool was used; no user answers were cleared. Expo Go reports the existing optional ExpoSpeechRecognition native module unavailable; no JLPT-specific runtime error was logged.
+
+Final review gate: user Simulator review is still required for all 35 audio boundaries, question navigation, persisted answers after leaving/reopening, incomplete-submission confirmation, and post-submit answers/transcripts. In particular verify independent answers for problem 5 item 3a/3b. Review printed source anomalies before declaring content final. The candidate remains `needs_runtime_review`; do not mark it `structured_ready` or promote timing verification until this gate passes. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
