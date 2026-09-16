@@ -35,6 +35,7 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Listening problem 2 commit: `fc68b44ebee03d39a3a26720f380a2380e02c694`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Listening problem 1 commit: `a9e927dd301fd89e69975bb03348505dc90113d9`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Written page 12 commit: `74663d427f868c0e6d8228581e6acf8f0c7ecd09`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16. All 70 written review responses pass sequence/option/key validation; all eight JLPT regression checks pass.
 - Written page 11 commit: `ae5a3a8b5ff9225e23c6bb48e471a89d18fcedfe`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
@@ -113,4 +114,8 @@ Listening problem 2 is transcribed in `listening-problem-02.review.json`: 7 prom
 
 Listening problem 2 backup: `.jlpt-backups/n1-2013-12-listening02-20260916-235231/`.
 
-Next, restore listening problem 3 (5 responses) from answer/script page 11. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
+Listening problem 3 is transcribed in `listening-problem-03.review.json`: 5 responses with all spoken options and transcripts visually checked against answer/script page 11. All five candidate audio ranges decode; runtime listening review remains pending.
+
+Listening problem 3 backup: `.jlpt-backups/n1-2013-12-listening03-20260916-235403/`.
+
+Next, restore listening problem 4 (14 responses) from answer/script page 12. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
