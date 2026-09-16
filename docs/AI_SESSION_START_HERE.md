@@ -26,6 +26,16 @@ Before changing anything:
 7. Continue from the first unfinished item. Do not restart completed OCR, translation, or verification work.
 8. Before relying on any claimed completed work, run `node scripts/check-work-persistence.mjs` and confirm the exact local commit exists on the configured remote branch.
 
+### Choose the durable execution mode before doing work
+
+For any substantial multi-page or multi-stage recovery, use these modes in priority order:
+
+1. **Default — Codex CLI in the user's real clone:** create or reuse a dedicated remote-tracking branch (for example `recovery/n1-2013-12`); let the AI commit completed units and push them directly with the user's configured Git credentials. The user reviews and merges at the end rather than applying intermediate patches.
+2. **Fallback — write-enabled remote development checkout:** use the same dedicated-branch, automatic commit/push workflow.
+3. **Last resort — ephemeral workspace without push access:** explain the limitation before beginning and recommend switching to mode 1. Continue with downloadable patches only if the user chooses this mode; batch several reviewable units per cumulative patch when safe instead of imposing one manual patch per page.
+
+Never silently adopt the last-resort workflow as the project's normal process. The absence of push credentials is an environment limitation to surface and solve at startup, not a reason to transfer repetitive Git work to the user.
+
 If a reported state conflicts with actual files or checks, trust the files and checks. Record the discrepancy before proceeding.
 
 ### Ephemeral-workspace warning
@@ -261,6 +271,22 @@ Lint warnings are not errors, but record their exact count. Do not claim iPhone 
 
 ## 10. Backup, commit, and remote-persistence protocol
 
+### Normal low-effort workflow
+
+Substantial JLPT work should normally run through Codex CLI in the actual local repository on a dedicated branch. Once the user has launched Codex in that checkout, the AI owns the routine persistence operations: create or reuse the branch, commit narrowly, push, fetch, and run the persistence validator. Do not pause merely to ask the user to run commands that the AI can run itself. Do not work directly on `main` unless the user explicitly requests it.
+
+Recommended one-time setup when starting a new exam:
+
+```bash
+git switch main
+git pull --ff-only origin main
+git switch -c recovery/<exam-id>
+git push -u origin recovery/<exam-id>
+codex
+```
+
+If the recovery branch already exists, fetch it and continue it rather than creating a duplicate. Commit after each completed source unit. Push and remotely verify often enough that a workspace or machine interruption cannot destroy a meaningful amount of work; when network access is available, the preferred default is to push every completed unit automatically.
+
 Before editing JLPT-related files:
 
 1. List the exact files to change.
@@ -292,7 +318,7 @@ The persistence validator must report that:
 
 After verification, write the exact commit SHA into the current conversion checkpoint under `Durable checkpoint`. Only then may work continue to the next unit.
 
-If the AI lacks push credentials or remote access, it must stop at the first durability checkpoint and give the user exact commit/push commands. It must not accumulate another page or exam only in the temporary workspace. Creating a ZIP in the same temporary workspace does not satisfy this rule.
+If the AI lacks push credentials or remote access, it must stop before accumulating expensive work and recommend continuing through Codex CLI in the user's real clone. If the user explicitly elects to stay in the restricted workspace, provide exact commit/push commands or cumulative patches at agreed checkpoints. It must not accumulate another page or exam only in the temporary workspace. Creating a ZIP in the same temporary workspace does not satisfy this rule.
 
 Never delete existing backups. Never restore the whole project to solve a local problem. Never overwrite verified new data with an older backup. Never use a local backup as evidence that work will survive a new session.
 

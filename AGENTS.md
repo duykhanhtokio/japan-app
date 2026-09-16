@@ -12,6 +12,14 @@ Then read every checkpoint or rule file listed by its "Mandatory reading order" 
 
 This repository may be opened inside an ephemeral AI workspace. Files, `.git` objects, and local backup folders in that workspace can disappear between turns. Therefore a local edit, local commit, checkpoint file, validation pass, ZIP, or assistant progress report is **not** proof that work is preserved.
 
+### Preferred execution environment
+
+For multi-page JLPT restoration, conversion, translation, or integration work, the default recommendation is **Codex CLI running inside the user's real local clone on a dedicated remote-tracking branch**. The AI should work on a branch such as `recovery/n1-2013-12`, commit each completed unit, and push checkpoints itself using the user's existing Git credentials. The user should normally need to review and merge only after the exam is complete.
+
+At the beginning of a new session, determine whether the AI can commit and push from the current checkout. If it cannot, say so before beginning expensive work and recommend moving the task to Codex CLI in the real clone. Do not make per-page downloadable patches the default workflow.
+
+Patch transfer is a fallback only when the user explicitly chooses to continue in a workspace without remote write access. In fallback mode, group several safely reviewable units into one cumulative patch when practical, while never allowing irreplaceable work to exist only in an ephemeral workspace. Do not repeatedly require the user to apply one patch per page unless there is no safer workable alternative.
+
 Before editing, the AI must verify all of the following:
 
 1. `git rev-parse --show-toplevel` succeeds.
@@ -29,7 +37,7 @@ Durability checkpoints are mandatory after every completed source page, listenin
 5. Fetch/inspect the remote and prove that the remote branch contains the exact local commit by running `node scripts/check-work-persistence.mjs`.
 6. Record the durable commit SHA in the checkpoint before starting the next unit.
 
-The AI must not begin the next page, section, exam, or large batch while the previous unit exists only in an ephemeral workspace. If commit or push is unavailable, fails, lacks credentials, or cannot be verified remotely, stop immediately and ask the user to perform the exact persistence action. Do not bypass this gate because of a continuous-work instruction.
+The AI must not begin the next page, section, exam, or large batch while the previous unit exists only in an ephemeral workspace. If commit or push is unavailable, fails, lacks credentials, or cannot be verified remotely, stop immediately. First recommend switching to Codex CLI in the user's real clone so the AI can perform commit/push itself. Offer exact manual persistence commands or a patch only as fallback choices. Do not bypass this gate because of a continuous-work instruction.
 
 Never tell the user that work is “saved,” “recorded,” “completed,” “safe,” or “available for the next session” unless the remote verification step passes. A `.jlpt-backups` directory is only a short-term rollback aid and never satisfies the durable-work gate.
 
