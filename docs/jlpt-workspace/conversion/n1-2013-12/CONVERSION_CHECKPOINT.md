@@ -35,6 +35,8 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Translation questions 1-6: `8ef115b339e9781a844e12ad675829e1dfe39489`; remote persistence PASS, clean working tree, 2026-09-17.
+
 - Explanation source page 7 / source complete: `4f44fbf6b788c5133526062a2d0e0d5ad860c232`; remote persistence PASS, clean working tree, 2026-09-17.
 
 - Explanation source page 6: `69c61569bd8f9cc8e2b959e3413dc546d856057d`; remote persistence PASS, clean working tree, 2026-09-17.
@@ -190,3 +192,5 @@ Next: convert source explanations from answer/script pages 2-7 and their 12 tran
 User explicitly prohibits sending exam/questions/answers/transcripts/explanations to Google Translate or any public translation service. Translate within the Codex session using approved repository sources only. Every target record must retain `generatedBy: AI`, `reviewedByNativeSpeaker: false`, `status: translated_ai_unreviewed`. No runtime translation API or translation dependency. The attempted sandbox request failed DNS; its escalated retry was canceled by the user. No translation service script or dependency was created. Current unit is explanation translation, authorized by the runtime-approval checkpoint above.
 
 - Codex-authored translation batch questions 1-6: 72/840 target translations, all 12 target locales per question. Japanese terms preserved; every record has AI/unreviewed metadata and its source-text SHA-256. `--complete-translations` enforces 840 targets at final integration; partial validation explicitly reports pending coverage. No external translation service used for this batch. Next: questions 7-14.
+
+- Codex-authored translations 7-10: cumulative 120/840 targets, 12 locales per completed question, full source meanings and option glosses retained. Next: questions 11-14.
