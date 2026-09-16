@@ -35,6 +35,7 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Listening problem 4 commit: `ac6fe433ec0444d33c3ea796f19dcf366b334550`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Listening problem 3 commit: `22e4b6f7643885dbd6cf7469a8a75f5c2261a8ce`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Listening problem 2 commit: `fc68b44ebee03d39a3a26720f380a2380e02c694`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Listening problem 1 commit: `a9e927dd301fd89e69975bb03348505dc90113d9`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
@@ -123,4 +124,8 @@ Listening problem 4 is transcribed in `listening-problem-04.review.json`: 14 res
 
 Listening problem 4 backup: `.jlpt-backups/n1-2013-12-listening04-20260916-235525/`.
 
-Next, restore listening problem 5 (4 responses sharing 3 audio segments) from answer/script pages 12-13. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
+Listening problem 5 is transcribed in `listening-problem-05.review.json`: 4 responses, visually checked against question page 14 and answer/script pages 12-13. Item 3 has two independent response suffixes (a/b) sharing one segment and transcript; answers are 1 and 3. All three candidate audio ranges decode. Full listening inventory is now 36 responses / 35 unique candidate audio segments; runtime listening review remains pending.
+
+Listening problem 5 backup: `.jlpt-backups/n1-2013-12-listening05-20260916-235657/`.
+
+Next, build and validate the complete structured candidate and adapter without changing the locked UI. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
