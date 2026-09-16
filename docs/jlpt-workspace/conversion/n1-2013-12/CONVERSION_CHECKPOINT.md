@@ -35,6 +35,7 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Written page 10 commit: `b847c46af79252ffd43b6fab5cf493a01a9f5509`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Written page 9 commit: `e629b6e57b49a09fde8d1a4f76f9a056f6531902`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Written page 8 commit: `7718c1cf6ddadedb9050fec07d06821f30706bd3`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Written page 7 commit: `dbdf0d8f433690a4a0e7ba2ecf5be05b224dfb61`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
@@ -93,4 +94,8 @@ Question page 10 was inspected directly. Written questions 63-64 and both food-s
 
 Page 10 backup: `.jlpt-backups/n1-2013-12-page10-20260916-234339/`.
 
-Next, inspect question page 11 and continue from question 65, including the passage starting on page 10. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
+Question page 11 was inspected directly. Written questions 65-68 and their complete communication passage from pages 10-11 are transcribed in `written-page-11.review.json`. Question 69 depends on the information sheet on page 12 and is deferred to that unit.
+
+Page 11 backup: `.jlpt-backups/n1-2013-12-page11-20260916-234510/`.
+
+Next, inspect question page 12 and continue from question 69, including its prompt on page 11. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
