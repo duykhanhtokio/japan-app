@@ -35,6 +35,7 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Listening problem 5 commit: `d209768e40d6c72051584cce586a8cd50601dd18`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Listening problem 4 commit: `ac6fe433ec0444d33c3ea796f19dcf366b334550`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Listening problem 3 commit: `22e4b6f7643885dbd6cf7469a8a75f5c2261a8ce`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Listening problem 2 commit: `fc68b44ebee03d39a3a26720f380a2380e02c694`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
@@ -128,4 +129,12 @@ Listening problem 5 is transcribed in `listening-problem-05.review.json`: 4 resp
 
 Listening problem 5 backup: `.jlpt-backups/n1-2013-12-listening05-20260916-235657/`.
 
-Next, build and validate the complete structured candidate and adapter without changing the locked UI. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
+Structured candidate work: `scripts/build-n1-2013-12-structured.mjs` builds all 106 responses with runtime-compatible families, deduplicated shared passages and independent question/session IDs. `src/data/jlpt-official/n1-2013-12-trial.ts` adapts the candidate to the existing approved UI; no UI file changes.
+
+Current ffprobe reports 2861.165714 seconds for the same hash-verified audio, versus the historical checkpoint duration 2861.191837. The final candidate segment was reduced to 2861165 ms to remain inside the measured duration. This is a timing-bound correction, not proof of perceptual boundary verification.
+
+Candidate backup: `.jlpt-backups/n1-2013-12-candidate-20260916-235928/`.
+
+Candidate validation on 2026-09-17: `check-n1-2013-12-integration.mjs` PASS for 70 written / 36 listening / 35 decoded ranges; source hashes, exact answer keys, family mapping, shared passage lookup, and distinct problem-5 response labels pass. TypeScript PASS; lint 0 errors / 16 pre-existing warnings. UI lock remains 10/10. Candidate status stays `needs_runtime_review`; explanation conversion is not included (same missing/not_generated adapter contract as N1 2013-07).
+
+Next, prepare registry integration and the Simulator review gate. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
