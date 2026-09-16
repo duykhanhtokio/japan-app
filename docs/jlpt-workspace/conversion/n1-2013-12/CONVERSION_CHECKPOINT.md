@@ -35,6 +35,7 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Written page 5 commit: `203898c4b6eb9c45278b1390380d25b4598379f9`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Written page 4 commit: `c241ece16f5476eb6de526a6abe7a87cc25e523b`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Source-inventory content commit: `213ab3d0163573540ff6a6fb8ad25b5e783a2a51`.
 - Remote verification: PASS on `origin/main` and independently confirmed through the GitHub connector.
@@ -68,4 +69,8 @@ Question page 5 was inspected directly. Written questions 40-45 are transcribed 
 
 Page 5 backup: `.jlpt-backups/n1-2013-12-page05-20260916-233301/`.
 
-Next, inspect question page 6 directly and continue from question 46, including its passage on page 5. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
+Question page 6 was inspected directly. Written questions 46-49, including all four short passages, are transcribed in `written-page-06.review.json`. Question 46 combines pages 5-6. The printed question 49 passage has an annotation marker but no annotation text on page 6; page 7 begins problem 9, so no missing note is invented. Preserve printed wording, including question 48 option 4.
+
+Page 6 backup: `.jlpt-backups/n1-2013-12-page06-20260916-233453/`.
+
+Next, continue on question page 7 from question 50. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
