@@ -98,7 +98,7 @@ const dataset = {
   review: {
     audioTiming: 'Accepted by the user after Simulator review on 2026-09-17; see runtime-review/approval.json for exact reviewed input hashes.',
     writtenSourceAnomalies: 'Printed anomalies are retained; see the conversion checkpoint, especially question-page 12 table conflicts.',
-    explanations: 'Source explanations and translations are not converted in this candidate; adapter reports missing/not_generated.',
+    explanations: '70 image-verified source transcriptions and 840 in-session AI-unreviewed translations; served offline through the registry explanation callback. Printed anomalies are retained. Adapter legacy status fields remain unchanged.',
   },
   passages, questions,
 };

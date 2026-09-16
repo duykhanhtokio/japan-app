@@ -1,5 +1,13 @@
 # N1 2013-12 conversion checkpoint
 
+## Current state — 2026-09-17
+
+- Runtime/audio: user approved; 70 written + 36 listening responses, 35 audio segments.
+- Explanations: 70 image-verified source transcriptions + 840 Codex-authored target entries = 910 texts in 13 locales. All target translations are AI-unreviewed, not native-speaker approved.
+- Runtime uses the existing post-submission callback and locale → English → zh-CN fallback. No translation API or dependency.
+- Printed source anomalies remain visible in original source and explicit notes in affected translations; transcription verification is not certification of their factual correctness.
+- All transcription/translation is finished. Automated completion checks passed. Remaining: Simulator review of the newly added explanation rendering; remote integration receipt is recorded under Durable checkpoint after verification. Do not redo source pages or translations.
+
 ## Source identity
 
 - Planned exam ID: `n1-2013-12-exam-04`.
@@ -34,6 +42,8 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 - Listening 問題5: `1, 3, 1, 3`.
 
 ## Durable checkpoint
+
+- Full in-session translation set (840/840): `3fb4ecbed5562c6284b4d6c17e0bad409db3ff80`; remote persistence PASS, clean working tree, 2026-09-17.
 
 - Translation questions 65-68: `d0e782d6380fb95e51094e01b6f84dab1ee7ee06`; remote persistence PASS, clean working tree, 2026-09-17.
 
@@ -270,3 +280,15 @@ User explicitly prohibits sending exam/questions/answers/transcripts/explanation
 - Codex-authored translations 65-68: cumulative 816/840 targets. Eye-contact and respect argument translated; question 67 explicitly notes the mismatched source heading. Next: questions 69-70.
 
 - Codex-authored translations 69-70: all 840/840 target entries now exist (70 questions × 12 target locales), alongside 70 original zh-CN explanations. Source allotment names retained without conjectural correction. Every target remains AI-generated and unreviewed by native speakers. Next: deterministic 13-locale assembly, registry callback integration and completion validation.
+
+## Explanation integration — 2026-09-17
+
+`build-n1-2013-12-explanations.mjs` deterministically assembles the 70 source + 840 authored translations. Runtime file: `src/data/jlpt-official/n1-2013-12/explanations.13-locales.json`; registry callback: `n1December2013Explanation`. The locked controller already restricts this callback to submitted review, preserving answers/transcripts before submission. Listening keeps its verified Japanese transcript; no source listening explanation is invented.
+
+Validation: all nine startup/regression validators PASS; N1 2013-12 requires ready and registered. Explanation validator with `--complete --complete-translations --require-runtime` PASS: all 910 lookups exactly match authored data, source hashes match, current-language/English/zh-CN fallbacks work, unknown and listening IDs do not leak written explanations. TypeScript PASS. Lint: 0 errors, 16 pre-existing warnings.
+
+Backup: `.jlpt-backups/n1-2013-12-explanations-integration-20260917-015057/`.
+
+Clean-cache runtime check: `npx expo start -c --port 8082` succeeded outside the sandbox; iOS bundle built in 10.399 s (5999 modules). Screenshot `runtime-review/n1-2013-12-explanations-bundle-20260917.png` shows the catalog with December 2013 / 106 responses. It proves bundle/catalog loading only, not explanation rendering after submission. `runtime-review/explanations-review.json` records the precise remaining review scope. Earlier exam/audio approval is unchanged. The optional ExpoSpeechRecognition module remains unavailable in Expo Go, as before.
+
+During intermediate editing, the old Metro process briefly reported the new JSON import missing before the deterministic JSON build ran. The completed clean-cache bundle resolves it successfully. No dependency was added and no locked UI/session file changed. Protected N1 2012-12 explanation and audio hashes still match.

@@ -180,7 +180,7 @@ Expected verified state:
 
 ## 7. Current JLPT resume point
 
-N1 12/2013 runtime/audio was accepted by the user on 2026-09-17. Its 106-response dataset is `structured_ready`; source explanations and translations remain the active work. Read the N1 07/2013 preservation checkpoint below, then `docs/jlpt-workspace/conversion/n1-2013-12/CONVERSION_CHECKPOINT.md`. Do not restart written/listening transcription or move to another exam before the remaining N1 12/2013 explanation work is resolved.
+N1 12/2013 runtime/audio was accepted by the user on 2026-09-17. Its 106-response dataset is `structured_ready`. All 70 source explanations and 840 in-session translations are now assembled into 13 locales and integrated through the existing post-submission callback. Every target remains `generatedBy: AI`, `reviewedByNativeSpeaker: false`, `status: translated_ai_unreviewed`; source transcription verification does not certify printed errors. The remaining review is the new explanation rendering in Simulator. Read the N1 07/2013 preservation checkpoint below, then `docs/jlpt-workspace/conversion/n1-2013-12/CONVERSION_CHECKPOINT.md`. Do not restart written/listening transcription or translation. Do not move to another exam before the final N1 12/2013 explanation review is resolved. Never send exam content to public translation services or add runtime translation APIs/dependencies.
 
 First read:
 

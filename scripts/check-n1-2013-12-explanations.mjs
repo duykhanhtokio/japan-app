@@ -1,6 +1,9 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
+import vm from 'node:vm';
+import ts from 'typescript';
+import { buildExplanations } from './build-n1-2013-12-explanations.mjs';
 
 const dir = 'docs/jlpt-workspace/conversion/n1-2013-12/explanations';
 const dataset = JSON.parse(fs.readFileSync('src/data/jlpt-official/n1-2013-12/exam.candidate.json', 'utf8'));
@@ -45,4 +48,43 @@ if (process.argv.includes('--complete-translations')) {
   assert.equal(records.length, 70);
   assert.equal(translated.length, 70, 'All 70 questions must have 12 target translations');
 }
-console.log(`N1 2013-12 EXPLANATION TRANSLATION PASS: ${translated.length * 12}/840 targets; each completed question has all 12 locales, source hashes and AI-unreviewed metadata. Remaining questions are pending.`);
+console.log(`N1 2013-12 EXPLANATION TRANSLATION PASS: ${translated.length * 12}/840 targets; all completed questions have 12 locales, source hashes and AI-unreviewed metadata; ${70 - translated.length} questions pending.`);
+
+if (process.argv.includes('--require-runtime')) {
+  const runtime = JSON.parse(fs.readFileSync('src/data/jlpt-official/n1-2013-12/explanations.13-locales.json', 'utf8'));
+  assert.deepEqual(runtime, buildExplanations(), 'Runtime explanations must exactly match approved sources and authored translations');
+  assert.equal(runtime.records.length, 70);
+  assert.equal(runtime.targetTranslationCount, 840);
+  assert.equal(runtime.totalLocalizedExplanationCount, 910);
+  assert.equal(runtime.runtimeTranslationApiRequired, false);
+  const moduleSource = fs.readFileSync('src/data/jlpt-official/n1-2013-12-explanations.ts', 'utf8');
+  const js = ts.transpileModule(moduleSource, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText;
+  const loadLookup = (data) => {
+    const exports = {};
+    vm.runInNewContext(js, { exports, require: (name) => {
+      assert.equal(name, './n1-2013-12/explanations.13-locales.json');
+      return data;
+    } });
+    return exports.n1December2013Explanation;
+  };
+  const lookup = loadLookup(runtime);
+  for (const record of runtime.records) {
+    assert.ok([...questions.values()].some((q) => q.questionId === record.questionId));
+    assert.equal(record.localizedExplanations.length, 13);
+    for (const entry of record.localizedExplanations) assert.equal(lookup(record.questionId, entry.localeCode), entry.text);
+  }
+  assert.equal(lookup('unknown-question', 'vi'), undefined);
+  for (const question of dataset.questions.filter((q) => q.sectionId === 'listening')) assert.equal(lookup(question.questionId, 'vi'), undefined);
+  const fallback = loadLookup({ records: [
+    { questionId: 'english', localizedExplanations: [{ localeCode: 'en', text: 'English' }, { localeCode: 'zh-CN', text: '中文' }] },
+    { questionId: 'source', localizedExplanations: [{ localeCode: 'zh-CN', text: '中文' }] },
+    { questionId: 'empty', localizedExplanations: [{ localeCode: 'vi', text: '' }, { localeCode: 'en', text: 'English' }] },
+  ] });
+  assert.equal(fallback('english', 'vi'), 'English');
+  assert.equal(fallback('source', 'vi'), '中文');
+  assert.equal(fallback('empty', 'vi'), 'English');
+  const registry = fs.readFileSync('src/data/jlpt-official/approved-n1-exams.ts', 'utf8');
+  assert.equal((registry.match(/explanationFor: n1December2013Explanation/g) ?? []).length, 1);
+  assert.ok(!/fetch\s*\(|https?:\/\/|translate\.google|axios/.test(moduleSource), 'Runtime translation/network access is prohibited');
+  console.log('N1 2013-12 EXPLANATION RUNTIME PASS: 910 exact lookups; current locale → English → zh-CN fallback; unknown/listening IDs isolated; one registry callback; no runtime translation API.');
+}
