@@ -35,6 +35,7 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Written page 9 commit: `e629b6e57b49a09fde8d1a4f76f9a056f6531902`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Written page 8 commit: `7718c1cf6ddadedb9050fec07d06821f30706bd3`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Written page 7 commit: `dbdf0d8f433690a4a0e7ba2ecf5be05b224dfb61`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Written page 6 commit: `06a28b218c1e0512625197193cdf7940ff45817c`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
@@ -88,4 +89,8 @@ Question page 9 was inspected directly. Written questions 59-62 and the complete
 
 Page 9 backup: `.jlpt-backups/n1-2013-12-page09-20260916-234012/`.
 
-Next, inspect question page 10 and continue from question 63. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
+Question page 10 was inspected directly. Written questions 63-64 and both food-safety passages are transcribed in `written-page-10.review.json`. The problem-12 passage continues on page 11 and is deferred intact.
+
+Page 10 backup: `.jlpt-backups/n1-2013-12-page10-20260916-234339/`.
+
+Next, inspect question page 11 and continue from question 65, including the passage starting on page 10. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
