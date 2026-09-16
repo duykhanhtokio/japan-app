@@ -35,6 +35,7 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Written page 4 commit: `c241ece16f5476eb6de526a6abe7a87cc25e523b`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Source-inventory content commit: `213ab3d0163573540ff6a6fb8ad25b5e783a2a51`.
 - Remote verification: PASS on `origin/main` and independently confirmed through the GitHub connector.
 - Written page 2 commit: `ca35043300097b8cfc8c9ed2c669248d56828ac3` (remote verified).
@@ -63,4 +64,8 @@ Page 4 backup: `.jlpt-backups/n1-2013-12-page04-20260916-233015/`, with SHA-256 
 
 Startup validation on 2026-09-16: all eight section-9 checks passed; UI lock 10/10; catalog 50 (3 structured official, 42 pending official, 5 mocks); N1 2013-07 remains verified at 70 written + 36 listening responses and 35 decoded audio segments.
 
-Next, inspect question page 5 directly and continue written transcription from question 40, using its opening on page 4. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
+Question page 5 was inspected directly. Written questions 40-45 are transcribed in `written-page-05.review.json`; question 40 combines pages 4-5, and questions 41-45 include the complete shared passage. The reading passage for question 46 starts on page 5 and is deferred until its question/options on page 6 are inspected. Source wording is preserved, including apparent grammatical omissions in the printed dog-consultation passage.
+
+Page 5 backup: `.jlpt-backups/n1-2013-12-page05-20260916-233301/`.
+
+Next, inspect question page 6 directly and continue from question 46, including its passage on page 5. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
