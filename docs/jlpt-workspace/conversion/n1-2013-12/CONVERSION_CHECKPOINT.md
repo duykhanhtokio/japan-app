@@ -35,6 +35,8 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Explanation source page 5: `5f10c6cd8bc174f329e7036ef06b85656c2c66c0`; remote persistence PASS, clean working tree, 2026-09-17.
+
 - Explanation source page 4: `e62dc9499a14ef7287bf9b772dee931956209ecf`; remote persistence PASS, clean working tree, 2026-09-17.
 
 - Explanation source page 3: `5149a05d4b75b082946a39f0c39fd171ec1c8951`; remote persistence PASS, clean working tree, 2026-09-17.
@@ -174,3 +176,5 @@ Next: convert source explanations from answer/script pages 2-7 and their 12 tran
 - Answer/script page 4 visually transcribed: explanations 29-39 in `explanations/source-page-04.json`. Inspection confirms explanation 29 ends on page 3 (prior continuation assumption corrected); explanation 40 continues on page 5 and is deferred intact. Source typos in 37/39 are retained. Next: explanation 40 onward.
 
 - Answer/script pages 4-5 visually transcribed: explanations 40-52 in `explanations/source-page-05.json`. Source misprints retained, including question 45 referring to options 1 and 4 as inference while its answer is 4. Explanation 53 continues on page 6. Next: explanation 53 onward.
+
+- Answer/script pages 5-6 visually transcribed: explanations 53-62 in `explanations/source-page-06.json`. Printed explanation 56 is misnumbered 54; metadata records the anomaly, and its content/key match question 56. Next: explanation 63 onward (page boundary verification pending).
