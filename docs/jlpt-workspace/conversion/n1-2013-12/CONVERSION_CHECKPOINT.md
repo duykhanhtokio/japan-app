@@ -35,6 +35,7 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Written page 11 commit: `ae5a3a8b5ff9225e23c6bb48e471a89d18fcedfe`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Written page 10 commit: `b847c46af79252ffd43b6fab5cf493a01a9f5509`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Written page 9 commit: `e629b6e57b49a09fde8d1a4f76f9a056f6531902`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Written page 8 commit: `7718c1cf6ddadedb9050fec07d06821f30706bd3`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
@@ -98,4 +99,8 @@ Question page 11 was inspected directly. Written questions 65-68 and their compl
 
 Page 11 backup: `.jlpt-backups/n1-2013-12-page11-20260916-234510/`.
 
-Next, inspect question page 12 and continue from question 69, including its prompt on page 11. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
+Question page 12 was inspected directly. Written questions 69-70 and the complete farm-information sheet are transcribed in `written-page-12.review.json`, with question 69 from page 11. The source sheet contains contradictory statements about seed provision in row 2 and cultivation guidance in row 4 versus its footnote; all printed statements are retained rather than silently corrected. The verified key remains 69=2 and 70=3.
+
+Page 12 backup: `.jlpt-backups/n1-2013-12-page12-20260916-234705/`.
+
+Written transcription now covers all 70 responses. Next, inspect listening source pages 13-15 and answer/script pages to restore listening problem 1. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
