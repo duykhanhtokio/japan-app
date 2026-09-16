@@ -4,7 +4,7 @@
 DOCUMENT ROLE: AUTHORITATIVE SESSION ENTRY POINT
 READ: AT THE START OF EVERY AI/CODEX SESSION
 PROJECT: Japan App
-LAST UPDATED: 2026-09-15
+LAST UPDATED: 2026-09-16
 ```
 
 This file exists so a new AI session can continue work without asking the user to reconstruct prior decisions. Chat history is supporting context only. The current project files, checksums, checkpoints, and validation scripts are authoritative.
@@ -24,8 +24,15 @@ Before changing anything:
 5. Run the startup checks in section 9.
 6. Record the exact files that may change, back them up with a timestamp, and record SHA-256 before editing.
 7. Continue from the first unfinished item. Do not restart completed OCR, translation, or verification work.
+8. Before relying on any claimed completed work, run `node scripts/check-work-persistence.mjs` and confirm the exact local commit exists on the configured remote branch.
 
 If a reported state conflicts with actual files or checks, trust the files and checks. Record the discrepancy before proceeding.
+
+### Ephemeral-workspace warning
+
+AI workspaces are temporary and may be replaced without notice. Local files, uncommitted changes, local commits, `.jlpt-backups`, `/tmp` outputs, and generated artifacts can all disappear. GitHub (or another verified remote explicitly chosen by the user) is the durable source of truth.
+
+No AI may interpret “continue continuously” as permission to postpone persistence. The durability gate in section 10 takes precedence over the continuous-work rule.
 
 ## 2. Project architecture relevant to JLPT
 
@@ -252,7 +259,7 @@ npx expo start -c
 
 Lint warnings are not errors, but record their exact count. Do not claim iPhone visual verification unless the Simulator/device was actually used and screenshots were saved.
 
-## 10. Backup and editing protocol
+## 10. Backup, commit, and remote-persistence protocol
 
 Before editing JLPT-related files:
 
@@ -264,11 +271,36 @@ Before editing JLPT-related files:
 6. Run relevant validation.
 7. Save `SHA256-AFTER.txt` and update the exam checkpoint.
 
-Never delete existing backups. Never restore the whole project to solve a local problem. Never overwrite verified new data with an older backup.
+Local backups are necessary for rollback but are not durable storage. For each completed page, listening problem, translation batch, integrated exam, or similarly expensive unit, perform this gate before starting the next unit:
+
+```bash
+git status --short
+git add -- <only the files belonging to the completed unit>
+git commit -m "<narrow description of the completed unit>"
+git push origin "$(git branch --show-current)"
+git fetch origin "$(git branch --show-current)"
+node scripts/check-work-persistence.mjs
+```
+
+The persistence validator must report that:
+
+- the working directory is a Git repository;
+- the current branch has a configured remote branch;
+- local HEAD equals the remote-tracking HEAD;
+- the remote itself advertises that exact commit; and
+- there are no uncommitted files belonging to the completed unit.
+
+After verification, write the exact commit SHA into the current conversion checkpoint under `Durable checkpoint`. Only then may work continue to the next unit.
+
+If the AI lacks push credentials or remote access, it must stop at the first durability checkpoint and give the user exact commit/push commands. It must not accumulate another page or exam only in the temporary workspace. Creating a ZIP in the same temporary workspace does not satisfy this rule.
+
+Never delete existing backups. Never restore the whole project to solve a local problem. Never overwrite verified new data with an older backup. Never use a local backup as evidence that work will survive a new session.
 
 ## 11. Continuous-work rule
 
 After completing a page, passage, section, exam, check, or checkpoint, continue immediately to the next unfinished item in the same session. A progress report is not a reason to stop. Do not ask whether to continue when the next action is already defined.
+
+Exception: stop at every durability checkpoint until commit, push, and remote verification succeed. Remote durability is a required part of completing the unit, not an optional progress report.
 
 Do not claim that a patch was installed on the user's Mac merely because it works in another workspace. For downloaded installers, verify the user's actual project with file-existence checks and validation output.
 
@@ -282,5 +314,6 @@ At startup, report only concise verified facts:
 - Presence and status of current candidate files.
 - Current resume checkpoint and next concrete action.
 - Any real blocker.
+- Exact durable commit SHA and confirmation that it exists on the remote branch.
 
-Never state “completed” solely because TypeScript passes, a ZIP was created, or a checkpoint was written.
+Never state “completed” solely because TypeScript passes, a ZIP was created, a local commit exists, or a checkpoint was written. Completion requires verified remote persistence.
