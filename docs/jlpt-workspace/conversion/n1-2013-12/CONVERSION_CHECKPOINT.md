@@ -35,6 +35,8 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- App integration and Simulator screenshot commit: `8482ad1459e63292411a2d11c7a27a3d3be86b4e`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-17. Screenshot LFS object uploaded successfully. This is the durable integrated review candidate, not a final runtime-approved exam.
+
 - Structured candidate commit: `625d7ef867388f32c33849e3267a90e54489d722`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-17.
 - Listening problem 5 commit: `d209768e40d6c72051584cce586a8cd50601dd18`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Listening problem 4 commit: `ac6fe433ec0444d33c3ea796f19dcf366b334550`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
