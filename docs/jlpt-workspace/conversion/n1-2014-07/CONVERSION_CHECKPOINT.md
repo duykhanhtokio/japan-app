@@ -10,11 +10,13 @@ User requested “tiếp tục” after final N1 12/2013 approval; interpreted a
 - Answer/script page 1 visually checked; all 70 written and 37 listening answers match `src/data/jlpt-mock/n1-2014-07-official.ts`.
 - Listening counts: 6 + 7 + 6 + 14 + 4 = 37. Problem 5 item 3 has two responses (4, 1); expected 36 unique segments. Do not copy the 2013 exam's 36-response / 35-segment counts.
 - Status: source_inventory_verified; not structured-ready or registered.
-- Written: 70/70 responses complete, including the full CPJ card table and continuation footnote on pages 12-13. All options/keys and complete 1-70 sequence pass validation. Next: listening problem 1, question page 13 and answer/script pages. Listening problem 1: 6/37 transcripts/options/prompts verified against source images, keys match. Audio alignment pending; local Whisper small is processing the approved MP3 as a navigation aid. Next: listening problem 2.
+- Written: 70/70 responses complete, including the full CPJ card table and continuation footnote on pages 12-13. All options/keys and complete 1-70 sequence pass validation. Next: listening problem 1, question page 13 and answer/script pages. Listening problems 1-2: 13/37 transcripts/options/prompts verified against source images, keys match. Audio alignment pending; local Whisper small is processing the approved MP3 as a navigation aid. Next: listening problem 3.
 - Explanation transcription/translation: pending, outside the inventory unit. Use only approved repository sources. Translate in Codex with `generatedBy: AI`, `reviewedByNativeSpeaker: false`, `status: translated_ai_unreviewed`; never use public translation services or runtime translation APIs/dependencies.
 - All nine startup validators passed. UI lock 10/10, catalog 50 = 4 structured official + 41 pending + 5 mocks.
 
 ## Durable checkpoint
+
+- Listening problem 1 transcripts: `d1051f79b54fb854157dae8568cffc9ceaf998d5`; push/fetch/exact remote HEAD verified, working tree clean.
 
 - Written complete 70/70: `dd5ad7b4c25a8f03d2d4664cc8bec7f5c4ee806e`; push/fetch/exact remote HEAD verified, working tree clean.
 
@@ -51,3 +53,5 @@ Page 3 source anomaly: question 22 has a printed answer key of 2, although optio
 Source declaration page grouping is historical and inaccurate: written material actually continues through question page 13 (CPJ footnote), while listening begins on that same page. Conversion follows actual images rather than the old WRITTEN_PAGES/LISTENING_PAGES arrays.
 
 Listening problem 1 transcript unit: question page 13 and answer/script pages 7-9 visually compared. No audio boundaries guessed; mappings remain absent until local alignment output is inspected. No external service is used.
+
+Listening problem 2: seven responses compared with question pages 13-14 and answer/script pages 9-10. Printed transcript omissions/awkward phrases retained (e.g. q2/q6 repeated prompt); prompt field remains the complete question.
