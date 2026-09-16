@@ -38,6 +38,8 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 - Source-inventory content commit: `213ab3d0163573540ff6a6fb8ad25b5e783a2a51`.
 - Remote verification: PASS on `origin/main` and independently confirmed through the GitHub connector.
 - Written page 2 commit: `ca35043300097b8cfc8c9ed2c669248d56828ac3` (remote verified).
+- Written page 3 commit: `8b69866d48c4d8e29222b8f8dfc2dd4edf1fd627` (ancestor of the remotely verified recovery branch HEAD).
+- Session startup remote HEAD: `c79af863806824ad431294dfb74dd0554805b30b`, verified by `node scripts/check-work-persistence.mjs` on `origin/recovery/n1-2013-12`; clean working tree. Push dry run succeeded.
 
 ## Current resume point
 
@@ -55,4 +57,10 @@ Question page 3 was inspected directly. Written questions 18-26 were transcribed
 3, 2, 4, 1, 4, 1, 3, 4, 4
 ```
 
-Next, inspect question page 4 directly and continue written transcription from question 27. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
+Question page 4 was inspected directly. Complete written questions 27-39 were transcribed into `written-page-04.review.json`. Question 40 starts at the bottom of page 4 and continues on page 5; it is deliberately deferred to the next unit so the complete question can be verified together.
+
+Page 4 backup: `.jlpt-backups/n1-2013-12-page04-20260916-233015/`, with SHA-256 before and after. Source spellings, including `勧める` in question 27 and `一度あって` in question 39, are preserved as printed.
+
+Startup validation on 2026-09-16: all eight section-9 checks passed; UI lock 10/10; catalog 50 (3 structured official, 42 pending official, 5 mocks); N1 2013-07 remains verified at 70 written + 36 listening responses and 35 decoded audio segments.
+
+Next, inspect question page 5 directly and continue written transcription from question 40, using its opening on page 4. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
