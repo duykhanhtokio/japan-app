@@ -35,6 +35,8 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Explanation source page 3: `5149a05d4b75b082946a39f0c39fd171ec1c8951`; remote persistence PASS, clean working tree, 2026-09-17.
+
 - Explanation source page 2: `545c4ba7a51923d07f5167c853ec0dccf06a9904`; remote persistence PASS, clean working tree, 2026-09-17.
 - User-approved runtime commit: `601e9fcff653d3f80bbf684fbd1a607287ce9853`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12`, clean working tree, 2026-09-17. Dataset `structured_ready`; 35 audio timing ranges accepted by user review.
 - App integration and Simulator screenshot commit: `8482ad1459e63292411a2d11c7a27a3d3be86b4e`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-17. Screenshot LFS object uploaded successfully. This is the durable integrated review candidate, not a final runtime-approved exam.
@@ -166,3 +168,5 @@ Next: convert source explanations from answer/script pages 2-7 and their 12 tran
 - Source validator: `node scripts/check-n1-2013-12-explanations.mjs`. Translation count: 0/840. Next: source page 3, from explanation 15.
 
 - Answer/script page 3 visually transcribed: explanations 15-28 in `explanations/source-page-03.json`. Explanation 29 continues on page 4 and is deferred intact. Printed inconsistencies in 20/22/24/25 are preserved as source text; no question data or answer is changed. Next: source pages 3-4, explanation 29 onward.
+
+- Answer/script page 4 visually transcribed: explanations 29-39 in `explanations/source-page-04.json`. Inspection confirms explanation 29 ends on page 3 (prior continuation assumption corrected); explanation 40 continues on page 5 and is deferred intact. Source typos in 37/39 are retained. Next: explanation 40 onward.
