@@ -4,6 +4,11 @@ import fs from 'node:fs';
 
 const reviewDir = 'docs/jlpt-workspace/conversion/n1-2013-12';
 const outDir = 'src/data/jlpt-official/n1-2013-12';
+const approval = JSON.parse(fs.readFileSync(`${reviewDir}/runtime-review/approval.json`, 'utf8'));
+assert.equal(approval.status, 'approved_by_user');
+const reviewHashes = Object.fromEntries(fs.readdirSync(reviewDir).filter((name) => /\.review\.json$/.test(name)).sort()
+  .map((name) => [name, createHash('sha256').update(fs.readFileSync(`${reviewDir}/${name}`)).digest('hex')]));
+assert.deepEqual(reviewHashes, approval.reviewInputsSha256, 'Runtime-reviewed content changed; approval must be revisited');
 const readReviews = (pattern) => fs.readdirSync(reviewDir).filter((name) => pattern.test(name)).sort()
   .flatMap((name) => JSON.parse(fs.readFileSync(`${reviewDir}/${name}`, 'utf8')));
 const written = readReviews(/^written-page-\d+\.review\.json$/);
@@ -68,8 +73,8 @@ const listeningQuestions = listening.map((q, index) => {
     instructionJa: instructions[q.problemNumber], promptJa: q.promptJa, options: options(q),
     correctOptionId: q.correctOptionId, source: q.source,
     answerVerificationStatus: 'verified_against_source_key', transcriptVerificationStatus: q.transcriptVerificationStatus,
-    verificationStatus: 'needs_runtime_review',
-    audio: { ...q.audio, transcriptJa: q.transcriptJa, transcriptSourcePages: q.source.answerScriptPages },
+    verificationStatus: 'verified',
+    audio: { ...q.audio, timingVerificationStatus: 'verified', timingVerificationBasis: 'user_runtime_approval_2026-09-17', transcriptJa: q.transcriptJa, transcriptSourcePages: q.source.answerScriptPages },
   };
 });
 const sha256 = (file) => createHash('sha256').update(fs.readFileSync(file)).digest('hex');
@@ -82,15 +87,16 @@ for (const folder of ['question', 'answer-script']) {
 }
 const audioHash = sha256('assets/jlpt/n1/2013-12/audio/n1-2013-12.mp3');
 assert.equal(audioHash, 'ff577435f993cbf20c85d83b8851e4059a423412b91c027d4801103508a0835b');
+assert.equal(audioHash, approval.audioSha256);
 const questions = [...writtenQuestions, ...listeningQuestions];
 assert.equal(new Set(questions.map((q) => q.questionId)).size, 106);
 assert.equal(new Set(listeningQuestions.map((q) => q.audio.segmentId)).size, 35);
 const dataset = {
-  schemaVersion: 1, examId: 'n1-2013-12-exam-04', status: 'needs_runtime_review',
+  schemaVersion: 1, examId: 'n1-2013-12-exam-04', status: 'structured_ready',
   counts: { writtenResponses: 70, listeningResponses: 36, totalResponses: 106, uniqueAudioSegments: 35 },
   source: { audioSha256: audioHash, assets: sourceAssets },
   review: {
-    audioTiming: 'ASR-aligned candidate ranges; source-audio listening and Simulator review pending.',
+    audioTiming: 'Accepted by the user after Simulator review on 2026-09-17; see runtime-review/approval.json for exact reviewed input hashes.',
     writtenSourceAnomalies: 'Printed anomalies are retained; see the conversion checkpoint, especially question-page 12 table conflicts.',
     explanations: 'Source explanations and translations are not converted in this candidate; adapter reports missing/not_generated.',
   },
@@ -98,4 +104,4 @@ const dataset = {
 };
 fs.mkdirSync(outDir, { recursive: true });
 fs.writeFileSync(`${outDir}/exam.candidate.json`, `${JSON.stringify(dataset, null, 2)}\n`);
-console.log('N1 2013-12 candidate built: 70 written + 36 listening; 35 audio segments; runtime review pending.');
+console.log('N1 2013-12 built: 70 written + 36 listening; 35 audio segments; user runtime approval verified.');

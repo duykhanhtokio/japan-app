@@ -148,4 +148,12 @@ Integration backup: `.jlpt-backups/n1-2013-12-integration-20260917-000417/`.
 
 Simulator evidence: `runtime-review/n1-2013-12-simulator-20260917.png` captures the running N1 2013-12 candidate (questions 2-3 match the dataset, 1/106 answered, selected option visible). This proves initial rendering only, not a full interaction or listening review. No automated touch tool was used; no user answers were cleared. Expo Go reports the existing optional ExpoSpeechRecognition native module unavailable; no JLPT-specific runtime error was logged.
 
-Final review gate: user Simulator review is still required for all 35 audio boundaries, question navigation, persisted answers after leaving/reopening, incomplete-submission confirmation, and post-submit answers/transcripts. In particular verify independent answers for problem 5 item 3a/3b. Review printed source anomalies before declaring content final. The candidate remains `needs_runtime_review`; do not mark it `structured_ready` or promote timing verification until this gate passes. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
+## Runtime approval — 2026-09-17
+
+The user confirmed: “đã duyệt ổn, làm tiếp .” in response to the Simulator/audio review gate. Runtime status is now `structured_ready`; all 35 audio timing ranges are accepted on the basis of that user review. This does not claim a second automated interaction test or change printed source anomalies. The prior review candidate and its original pending statuses above are historical records.
+
+`runtime-review/approval.json` records the reviewed HEAD, candidate SHA-256, every review input hash, audio hash and existing screenshot. Builder and validator enforce those hashes so changed source data cannot inherit this approval silently. The stable `exam.candidate.json` filename is retained to avoid needless import churn; its status is authoritative.
+
+Backup: `.jlpt-backups/n1-2013-12-runtime-approval-20260917-001643/`.
+
+Next: convert source explanations from answer/script pages 2-7 and their 12 translations, preserving the source text and marking AI translations `translated_ai_unreviewed`. Integrate through the existing registry explanation callback only; do not change locked UI or rework question pages 2-3.

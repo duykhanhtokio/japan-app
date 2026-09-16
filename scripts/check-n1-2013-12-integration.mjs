@@ -5,6 +5,11 @@ import fs from 'node:fs';
 import ts from 'typescript';
 
 const data = JSON.parse(fs.readFileSync('src/data/jlpt-official/n1-2013-12/exam.candidate.json', 'utf8'));
+const reviewDir = 'docs/jlpt-workspace/conversion/n1-2013-12';
+const approval = JSON.parse(fs.readFileSync(`${reviewDir}/runtime-review/approval.json`, 'utf8'));
+assert.equal(approval.status, 'approved_by_user');
+assert.deepEqual(Object.fromEntries(fs.readdirSync(reviewDir).filter((name) => /\.review\.json$/.test(name)).sort()
+  .map((name) => [name, createHash('sha256').update(fs.readFileSync(`${reviewDir}/${name}`)).digest('hex')])), approval.reviewInputsSha256);
 const source = fs.readFileSync('src/data/jlpt-mock/n1-2013-12-official.ts', 'utf8');
 const sourceKey = (name) => source.match(new RegExp(`${name} = \\[([\\s\\S]*?)\\]`))[1].match(/\d+/g).map(Number);
 const written = data.questions.filter((q) => q.sectionId === 'written');
@@ -89,4 +94,4 @@ const ui = fs.readFileSync('src/components/jlpt/N1OfficialTrial.tsx', 'utf8');
 assert.match(ui, /\{submitted \? <><JlptReviewFeedback/);
 assert.match(ui, /showTranscript && question\.audio\?\.transcriptJa/);
 assert.doesNotMatch(ui, /submitted=\{false\}[^\n]*showTranscript=\{true\}/);
-console.log(`N1 2013-12 CANDIDATE PASS: 70 written; 36 listening; 35 decoded ranges; source hashes and keys match; adapter exercised; registered=${registered}; status=${data.status}.`);
+console.log(`N1 2013-12 INTEGRATION PASS: 70 written; 36 listening; 35 decoded ranges; source hashes and keys match; adapter exercised; registered=${registered}; status=${data.status}.`);

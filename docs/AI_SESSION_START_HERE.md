@@ -4,7 +4,7 @@
 DOCUMENT ROLE: AUTHORITATIVE SESSION ENTRY POINT
 READ: AT THE START OF EVERY AI/CODEX SESSION
 PROJECT: Japan App
-LAST UPDATED: 2026-09-16
+LAST UPDATED: 2026-09-17
 ```
 
 This file exists so a new AI session can continue work without asking the user to reconstruct prior decisions. Chat history is supporting context only. The current project files, checksums, checkpoints, and validation scripts are authoritative.
@@ -142,11 +142,11 @@ The catalog must always contain exactly 50 entries:
 
 Converting an exam from pending to structured means replacing its pending entry with one structured entry. Never create entry 51. Never hide, delete, or filter pending exams merely because structured conversion is incomplete.
 
-Current expected registry totals after N1 07/2013 is installed:
+Current expected registry totals after N1 12/2013 is installed:
 
 ```text
-structured official: 3
-pending official: 42
+structured official: 4
+pending official: 41
 mock ready: 5
 total: 50
 ```
@@ -179,6 +179,8 @@ Expected verified state:
 - Explanation fallback order: current app language, English, then `zh-CN`.
 
 ## 7. Current JLPT resume point
+
+N1 12/2013 runtime/audio was accepted by the user on 2026-09-17. Its 106-response dataset is `structured_ready`; source explanations and translations remain the active work. Read the N1 07/2013 preservation checkpoint below, then `docs/jlpt-workspace/conversion/n1-2013-12/CONVERSION_CHECKPOINT.md`. Do not restart written/listening transcription or move to another exam before the remaining N1 12/2013 explanation work is resolved.
 
 First read:
 

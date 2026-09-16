@@ -133,7 +133,7 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
     audioSource: require('../../../assets/jlpt/n1/2013-07/audio/n1-2013-07.mp3'), visualOptions: {},
   },
   {
-    // Recovery-branch candidate: final listening/Simulator review is still pending.
+    // Runtime and audio accepted by the user on 2026-09-17.
     id: 'n1-2013-12-exam-04', level: 'N1', title: '日本語能力試験 N1', periodLabel: '2013年12月・第4回',
     startLabel: '第4回を始める', storageKey: N1_2013_12_SESSION_KEY, questions: N1_2013_12_TRIAL,
     audioSource: require('../../../assets/jlpt/n1/2013-12/audio/n1-2013-12.mp3'), visualOptions: {},

@@ -1,4 +1,4 @@
-// Candidate data: audio timing and Simulator review remain pending.
+// Runtime and audio accepted by the user on 2026-09-17; stable dataset path retained.
 import type { TrialQuestion } from './n1-2012-07-trial';
 
 type DatasetQuestion = {
