@@ -35,6 +35,8 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Translation questions 30-32: `6bd05bcbdd18a9ec7b1cfc26becbb019308f28b3`; remote persistence PASS, clean working tree, 2026-09-17.
+
 - Translation questions 26-29: `75dbf1a502ac42316a71006739a1f603f5cfefaf`; remote persistence PASS, clean working tree, 2026-09-17.
 
 - Translation questions 23-25: `f0c69ba4244e9e16daa03db166d22a3b9bcdc3e1`; remote persistence PASS, clean working tree, 2026-09-17.
@@ -218,3 +220,5 @@ User explicitly prohibits sending exam/questions/answers/transcripts/explanation
 - Codex-authored translations 26-29: cumulative 348/840 targets. Grammar forms retained and translated directly from source explanations. Next: questions 30-35.
 
 - Codex-authored translations 30-32: cumulative 384/840 targets. Conditional/passive/causative explanations translated; question 32 retains printed 思いきゃ with an explicit note distinguishing the explained と思いきや form. Next: questions 33-35.
+
+- Codex-authored translations 33-35: cumulative 420/840 targets. Degree expressions, humble/honorific contrasts and deliberative どうしたものか translated with all source option explanations. Next: sentence-composition explanations 36-40.
