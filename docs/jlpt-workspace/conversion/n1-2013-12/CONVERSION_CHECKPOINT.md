@@ -6,7 +6,7 @@
 - Explanations: 70 image-verified source transcriptions + 840 Codex-authored target entries = 910 texts in 13 locales. All target translations are AI-unreviewed, not native-speaker approved.
 - Runtime uses the existing post-submission callback and locale → English → zh-CN fallback. No translation API or dependency.
 - Printed source anomalies remain visible in original source and explicit notes in affected translations; transcription verification is not certification of their factual correctness.
-- All transcription/translation is finished. Automated completion checks passed. Remaining: Simulator review of the newly added explanation rendering; remote integration receipt is recorded under Durable checkpoint after verification. Do not redo source pages or translations.
+- All transcription/translation is finished. Automated completion checks passed. The user accepted the final Simulator explanation rendering on 2026-09-17 (“đã kiểm tra ok”). No remaining item in the requested N1 12/2013 scope; native-speaker translation review was not claimed. Do not redo source pages or translations.
 
 ## Source identity
 
@@ -122,7 +122,7 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 - Written page 3 commit: `8b69866d48c4d8e29222b8f8dfc2dd4edf1fd627` (ancestor of the remotely verified recovery branch HEAD).
 - Session startup remote HEAD: `c79af863806824ad431294dfb74dd0554805b30b`, verified by `node scripts/check-work-persistence.mjs` on `origin/recovery/n1-2013-12`; clean working tree. Push dry run succeeded.
 
-## Current resume point
+## Historical conversion progress
 
 Source identity, real asset integrity, page dimensions, audio metadata, response counts, and answer keys are verified.
 
@@ -294,3 +294,11 @@ Backup: `.jlpt-backups/n1-2013-12-explanations-integration-20260917-015057/`.
 Clean-cache runtime check: `npx expo start -c --port 8082` succeeded outside the sandbox; iOS bundle built in 10.399 s (5999 modules). Screenshot `runtime-review/n1-2013-12-explanations-bundle-20260917.png` shows the catalog with December 2013 / 106 responses. It proves bundle/catalog loading only, not explanation rendering after submission. `runtime-review/explanations-review.json` records the precise remaining review scope. Earlier exam/audio approval is unchanged. The optional ExpoSpeechRecognition module remains unavailable in Expo Go, as before.
 
 During intermediate editing, the old Metro process briefly reported the new JSON import missing before the deterministic JSON build ran. The completed clean-cache bundle resolves it successfully. No dependency was added and no locked UI/session file changed. Protected N1 2012-12 explanation and audio hashes still match.
+
+## Final Simulator approval — 2026-09-17
+
+The user confirmed “đã kiểm tra ok” after the final explanation-rendering review request. `runtime-review/explanations-review.json` now records `approved_by_user`, the reviewed commit and unchanged explanation SHA-256. Earlier exam/audio approval remains valid. N1 12/2013 data, audio, 13-locale explanations and app integration are complete within the requested scope. All 840 target translations remain `generatedBy: AI`, `reviewedByNativeSpeaker: false`, `status: translated_ai_unreviewed`; runtime acceptance does not certify native-speaker review or correct source misprints. No new screenshot is claimed.
+
+All nine startup validators passed again with the working tree initially clean at remotely verified `f7a55c31c5cec3d7fa4e881271f8bdb03640bfd3`. This finalization changes only the session entry point, this checkpoint and the explanation review record. Prior TypeScript, lint (0 errors / 16 existing warnings) and clean-cache iOS bundle results remain applicable to unchanged runtime code. No further exam is started without a new task.
+
+Backup: `.jlpt-backups/n1-2013-12-final-approval-20260917-063846/`.

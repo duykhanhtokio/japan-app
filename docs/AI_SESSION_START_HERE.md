@@ -180,7 +180,7 @@ Expected verified state:
 
 ## 7. Current JLPT resume point
 
-N1 12/2013 runtime/audio was accepted by the user on 2026-09-17. Its 106-response dataset is `structured_ready`. All 70 source explanations and 840 in-session translations are now assembled into 13 locales and integrated through the existing post-submission callback. Every target remains `generatedBy: AI`, `reviewedByNativeSpeaker: false`, `status: translated_ai_unreviewed`; source transcription verification does not certify printed errors. The remaining review is the new explanation rendering in Simulator. Read the N1 07/2013 preservation checkpoint below, then `docs/jlpt-workspace/conversion/n1-2013-12/CONVERSION_CHECKPOINT.md`. Do not restart written/listening transcription or translation. Do not move to another exam before the final N1 12/2013 explanation review is resolved. Never send exam content to public translation services or add runtime translation APIs/dependencies.
+N1 12/2013 runtime/audio was accepted by the user on 2026-09-17. Its 106-response dataset is `structured_ready`. All 70 source explanations and 840 in-session translations are now assembled into 13 locales and integrated through the existing post-submission callback. Every target remains `generatedBy: AI`, `reviewedByNativeSpeaker: false`, `status: translated_ai_unreviewed`; source transcription verification does not certify printed errors. The user accepted the final explanation rendering in Simulator on 2026-09-17 (“đã kiểm tra ok”); N1 12/2013 is complete within the requested scope. Read the N1 07/2013 preservation checkpoint below, then `docs/jlpt-workspace/conversion/n1-2013-12/CONVERSION_CHECKPOINT.md`. Do not restart written/listening transcription or translation. No N1 12/2013 review gate remains. Preserve the completed exam and wait for a new task before starting another exam. Never send exam content to public translation services or add runtime translation APIs/dependencies.
 
 First read:
 
@@ -213,7 +213,7 @@ Required next action:
 2. Verify `approved-n1-exams.ts` imports and registers `N1_2013_07_TRIAL` exactly once.
 3. Verify `'n1-2013-07'` is no longer in the pending array.
 4. Run all checks and preserve N1 07/2013 as completed.
-5. Continue automatically to N1 12/2013. Do not stop merely to report progress.
+5. Preserve completed N1 12/2013 and its user-approved runtime/explanation review records; the original continuous-work scope is fulfilled.
 
 N1 12/2013 sources are expected under:
 
