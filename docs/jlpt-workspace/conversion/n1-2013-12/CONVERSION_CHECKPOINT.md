@@ -37,6 +37,7 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 - Source-inventory content commit: `213ab3d0163573540ff6a6fb8ad25b5e783a2a51`.
 - Remote verification: PASS on `origin/main` and independently confirmed through the GitHub connector.
+- Written page 2 commit: `ca35043300097b8cfc8c9ed2c669248d56828ac3` (remote verified).
 
 ## Current resume point
 
@@ -48,4 +49,10 @@ Question page 2 was inspected directly. Written questions 1-17 were transcribed 
 4, 3, 1, 3, 1, 2, 3, 4, 1, 2, 1, 3, 2, 1, 1, 4, 2
 ```
 
-Next, inspect question page 3 directly and continue written transcription from question 18. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
+Question page 3 was inspected directly. Written questions 18-26 were transcribed into `written-page-03.review.json`; their answer IDs match the verified source key:
+
+```text
+3, 2, 4, 1, 4, 1, 3, 4, 4
+```
+
+Next, inspect question page 4 directly and continue written transcription from question 27. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
