@@ -35,6 +35,7 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Written page 12 commit: `74663d427f868c0e6d8228581e6acf8f0c7ecd09`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16. All 70 written review responses pass sequence/option/key validation; all eight JLPT regression checks pass.
 - Written page 11 commit: `ae5a3a8b5ff9225e23c6bb48e471a89d18fcedfe`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Written page 10 commit: `b847c46af79252ffd43b6fab5cf493a01a9f5509`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Written page 9 commit: `e629b6e57b49a09fde8d1a4f76f9a056f6531902`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
@@ -103,4 +104,8 @@ Question page 12 was inspected directly. Written questions 69-70 and the complet
 
 Page 12 backup: `.jlpt-backups/n1-2013-12-page12-20260916-234705/`.
 
-Written transcription now covers all 70 responses. Next, inspect listening source pages 13-15 and answer/script pages to restore listening problem 1. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
+Written transcription now covers all 70 responses. Listening problem 1 is transcribed in `listening-problem-01.review.json`: 6 prompts/options/answers and full transcripts, visually checked against question page 13 and answer/script pages 7-9. Six audio ranges decode successfully. Timings are ASR-aligned candidates pending runtime listening review, not verified timings. Whisper omitted the q5/q6 transition in the existing TSV; local Whisper small re-transcription of seconds 470-510 recovered the repeated q5 prompt and q6 introduction.
+
+Listening problem 1 backup: `.jlpt-backups/n1-2013-12-listening01-20260916-234937/`.
+
+Next, restore listening problem 2 (7 response units) using question pages 13-14 and answer/script pages 9-10. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
