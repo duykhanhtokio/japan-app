@@ -35,6 +35,7 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Written page 6 commit: `06a28b218c1e0512625197193cdf7940ff45817c`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Written page 5 commit: `203898c4b6eb9c45278b1390380d25b4598379f9`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Written page 4 commit: `c241ece16f5476eb6de526a6abe7a87cc25e523b`; `check-work-persistence.mjs` PASS on `origin/recovery/n1-2013-12` after push/fetch, clean working tree, 2026-09-16.
 - Source-inventory content commit: `213ab3d0163573540ff6a6fb8ad25b5e783a2a51`.
@@ -73,4 +74,8 @@ Question page 6 was inspected directly. Written questions 46-49, including all f
 
 Page 6 backup: `.jlpt-backups/n1-2013-12-page06-20260916-233453/`.
 
-Next, continue on question page 7 from question 50. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
+Question page 7 was inspected directly. Written questions 50-52 and their complete painting passage are transcribed in `written-page-07.review.json`. The next science passage continues on page 8 and is deferred as one complete unit.
+
+Page 7 backup: `.jlpt-backups/n1-2013-12-page07-20260916-233800/`.
+
+Next, inspect question page 8 and continue from question 53, including the passage starting on page 7. Preserve any question or passage that continues onto the next page intact rather than guessing or splitting it. Do not register the exam until all written content, listening content, audio timing, TypeScript, catalog, runtime, and remote-persistence checks pass.
