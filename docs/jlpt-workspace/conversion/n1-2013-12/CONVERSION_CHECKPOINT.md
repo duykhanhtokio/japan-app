@@ -35,6 +35,8 @@ Answer/script page 1 was inspected directly. The following keys match `src/data/
 
 ## Durable checkpoint
 
+- Translation questions 48-49: `40dfbedc6009f24d8b20a6bbb1fb2b950f55be45`; remote persistence PASS, clean working tree, 2026-09-17.
+
 - Translation questions 46-47: `cf968981707c19eafc724ca44d932a36910e77e3`; remote persistence PASS, clean working tree, 2026-09-17.
 
 - Translation questions 41-45: `ad31aa306e6735339ab94e6a141832764145e703`; remote persistence PASS, clean working tree, 2026-09-17.
@@ -242,3 +244,5 @@ User explicitly prohibits sending exam/questions/answers/transcripts/explanation
 - Codex-authored translations 46-47: cumulative 564/840 targets, full source reasoning retained. Next: questions 48-49.
 
 - Codex-authored translations 48-49: cumulative 588/840 targets. Medical passage quotation retained verbatim; diary explanation notes inconsistent 四人记录 and grounds private-record rendering in the same source’s explicit 私人记录. Next: questions 50-52.
+
+- Codex-authored translations 50-52: cumulative 624/840 targets. Full painting/eating analogy retained; source quotations and the unusual 讲解画 heading remain explicit source content. Next: questions 53-55.
