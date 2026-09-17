@@ -142,11 +142,11 @@ The catalog must always contain exactly 50 entries:
 
 Converting an exam from pending to structured means replacing its pending entry with one structured entry. Never create entry 51. Never hide, delete, or filter pending exams merely because structured conversion is incomplete.
 
-Current expected registry totals after N1 12/2013 is installed:
+Current expected registry totals with the N1 07/2014 review candidate installed:
 
 ```text
-structured official: 4
-pending official: 41
+structured official: 5
+pending official: 40
 mock ready: 5
 total: 50
 ```
@@ -180,7 +180,7 @@ Expected verified state:
 
 ## 7. Current JLPT resume point
 
-Active task: the user requested “tiếp tục” after completing N1 12/2013. Continue with the next pending exam, **N1 07/2014**, on the existing user-designated `recovery/n1-2013-12` branch. Read the two preservation checkpoints below, then `docs/jlpt-workspace/conversion/n1-2014-07/CONVERSION_CHECKPOINT.md`. Its inventory is 70 written and **37** listening responses; do not inherit previous-exam counts. Commit/push/remote-verify every completed unit.
+Active task: the user requested “tiếp tục” after completing N1 12/2013. Continue with the next pending exam, **N1 07/2014**, on the existing user-designated `recovery/n1-2013-12` branch. Read the two preservation checkpoints below, then `docs/jlpt-workspace/conversion/n1-2014-07/CONVERSION_CHECKPOINT.md`. Its inventory is 70 written and **37** listening responses; do not inherit previous-exam counts. Commit/push/remote-verify every completed unit. The 70-written / 37-listening candidate is now integrated with 36 audio ranges, status `needs_runtime_review`; the next gate is Simulator/audio review before explanation conversion. N1 12/2013 approval does not approve this new exam.
 
 N1 12/2013 runtime/audio was accepted by the user on 2026-09-17. Its 106-response dataset is `structured_ready`. All 70 source explanations and 840 in-session translations are now assembled into 13 locales and integrated through the existing post-submission callback. Every target remains `generatedBy: AI`, `reviewedByNativeSpeaker: false`, `status: translated_ai_unreviewed`; source transcription verification does not certify printed errors. The user accepted the final explanation rendering in Simulator on 2026-09-17 (“đã kiểm tra ok”); N1 12/2013 is complete within the requested scope. Read the N1 07/2013 preservation checkpoint below, then `docs/jlpt-workspace/conversion/n1-2013-12/CONVERSION_CHECKPOINT.md`. Do not restart written/listening transcription or translation. No N1 12/2013 review gate remains. Preserve the completed exam while working on N1 07/2014. Never send exam content to public translation services or add runtime translation APIs/dependencies.
 

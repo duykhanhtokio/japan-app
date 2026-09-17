@@ -9,12 +9,14 @@ User requested “tiếp tục” after final N1 12/2013 approval; interpreted a
 - Audio SHA-256: `f534896b9c9962ce3ff1eae69f49b7afb1a0e93438ab437d63d3a55032937309`, matching the repository source declaration.
 - Answer/script page 1 visually checked; all 70 written and 37 listening answers match `src/data/jlpt-mock/n1-2014-07-official.ts`.
 - Listening counts: 6 + 7 + 6 + 14 + 4 = 37. Problem 5 item 3 has two responses (4, 1); expected 36 unique segments. Do not copy the 2013 exam's 36-response / 35-segment counts.
-- Status: source_inventory_verified; not structured-ready or registered.
-- Written: 70/70 responses complete, including the full CPJ card table and continuation footnote on pages 12-13. All options/keys and complete 1-70 sequence pass validation. Next: listening problem 1, question page 13 and answer/script pages. Listening problems 1-5: 37/37 transcripts/options/prompts verified against source images, keys match. Audio: 36 unique ASR-aligned candidate segments mapped to 37 responses; all ranges decode, perceptual/runtime review pending. Next: build structured candidate and integrate for Simulator review.
+- Status: needs_runtime_review; registered once as a structured review candidate, not final structured_ready.
+- Written: 70/70 responses complete, including the full CPJ card table and continuation footnote on pages 12-13. All options/keys and complete 1-70 sequence pass validation. Next: listening problem 1, question page 13 and answer/script pages. Listening problems 1-5: 37/37 transcripts/options/prompts verified against source images, keys match. Audio: 36 unique ASR-aligned candidate segments mapped to 37 responses; all ranges decode, perceptual/runtime review pending. Next: user Simulator/audio review of this new exam before final structured_ready and explanation conversion.
 - Explanation transcription/translation: pending, outside the inventory unit. Use only approved repository sources. Translate in Codex with `generatedBy: AI`, `reviewedByNativeSpeaker: false`, `status: translated_ai_unreviewed`; never use public translation services or runtime translation APIs/dependencies.
 - All nine startup validators passed. UI lock 10/10, catalog 50 = 4 structured official + 41 pending + 5 mocks.
 
 ## Durable checkpoint
+
+- Audio alignment: `66b38b49eab5b39eeba954314dfe239a47bc585a`; push/fetch/exact remote HEAD verified, working tree clean.
 
 - Listening complete 37/37: `9448e63fb8d6591f1ee0f99faf63b395f90aa2d7`; push/fetch/exact remote HEAD verified, working tree clean.
 
@@ -71,3 +73,13 @@ Listening problem 4: all 14 prompts and exactly three spoken choices per item vi
 Listening source transcription complete: 37 responses. Problem 5 item 3 retains two independent responses (suffix a/b, answer 4/1) sharing the complete source transcript and later one audio segment. Original Japanese transcripts remain distinct from future translated explanations.
 
 Audio alignment: full source duration 2979.900023 s. `audio-alignment.tsv` is local Whisper small output, not authoritative text. Full-pass timing hallucinations around problem 4 items 5-8 were resolved by a fresh local run on seconds 2138-2288 (`audio-alignment-p4-recheck.tsv`, relative times +2138 s). Candidate starts for these four items: 2152.7, 2188.7, 2221.7, 2251.7 seconds. Ranges include inter-question silence and exclude the following item. Final range ends at 2979900 ms. All timing statuses remain pending runtime review.
+
+## Candidate integration
+
+Builder `scripts/build-n1-2014-07-structured.mjs` deterministically assembles 107 responses and deduplicates passages. `--check` detects drift from reviews. Adapter has independent exam/session/question IDs; final shared listening item is question 3 / suffix a and b. Underlined vocabulary targets are preserved and shown as 対象 in the existing instruction field, since locked UI renders plain text. No UI changes. Registry replaces one pending entry, maintaining 50 entries: 5 structured official (including this pending-review candidate), 40 pending, 5 mocks. Explanations and translations remain pending until runtime approval, following the prior exam workflow.
+
+Candidate validation: all nine preservation/startup validators and new N1 2014-07 integration validator PASS; 36 audio segments decode; deterministic source rebuild and adapter exercised. TypeScript PASS; lint 0 errors / 16 existing warnings. Clean-cache iOS bundle PASS (15288 ms, 6002 modules) using Expo on port 8083. Simulator screenshot `runtime-review/n1-2014-07-catalog-20260917.png` shows the fifth entry with 107 responses. It verifies catalog loading only. `runtime-review/candidate-review.json` binds the pending review to exact candidate, review-input and audio hashes. Existing optional ExpoSpeechRecognition warning remains unrelated to JLPT. No answers were cleared or automatically submitted.
+
+Resume: obtain user Simulator/audio review for the new 2014-07 candidate; then promote only the reviewed hashes and begin source explanation conversion/AI translations. Do not reuse N1 2013-12 approval.
+
+Integration backup: `.jlpt-backups/n1-2014-07-integration-20260917-201858/`.
