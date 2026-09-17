@@ -8,6 +8,10 @@ const rebuild = spawnSync(process.execPath, ['scripts/build-n1-2014-07-structure
 assert.equal(rebuild.status, 0, rebuild.stderr);
 const data = JSON.parse(fs.readFileSync('src/data/jlpt-official/n1-2014-07/exam.candidate.json', 'utf8'));
 const reviewDir = 'docs/jlpt-workspace/conversion/n1-2014-07';
+const approval = JSON.parse(fs.readFileSync(`${reviewDir}/runtime-review/approval.json`, 'utf8'));
+assert.equal(approval.status, 'approved_by_user');
+assert.deepEqual(Object.fromEntries(fs.readdirSync(reviewDir).filter((name) => /\.review\.json$/.test(name)).sort()
+  .map((name) => [name, createHash('sha256').update(fs.readFileSync(`${reviewDir}/${name}`)).digest('hex')])), approval.reviewInputsSha256);
 const source = fs.readFileSync('src/data/jlpt-mock/n1-2014-07-official.ts', 'utf8');
 const sourceKey = (name) => source.match(new RegExp(`${name} = \\[([\\s\\S]*?)\\]`))[1].match(/\d+/g).map(Number);
 const written = data.questions.filter((q) => q.sectionId === 'written');

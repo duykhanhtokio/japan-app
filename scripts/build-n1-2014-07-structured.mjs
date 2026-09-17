@@ -4,6 +4,16 @@ import fs from 'node:fs';
 
 const reviewDir = 'docs/jlpt-workspace/conversion/n1-2014-07';
 const outDir = 'src/data/jlpt-official/n1-2014-07';
+const approval = JSON.parse(fs.readFileSync(`${reviewDir}/runtime-review/approval.json`, 'utf8'));
+const candidateReviewPath = `${reviewDir}/runtime-review/candidate-review.json`;
+const candidateReview = JSON.parse(fs.readFileSync(candidateReviewPath, 'utf8'));
+assert.equal(approval.status, 'approved_by_user');
+assert.equal(createHash('sha256').update(fs.readFileSync(candidateReviewPath)).digest('hex'), approval.candidateReviewSha256);
+assert.equal(candidateReview.candidateSha256, approval.reviewedDatasetSha256);
+const reviewHashes = Object.fromEntries(fs.readdirSync(reviewDir).filter((name) => /\.review\.json$/.test(name)).sort()
+  .map((name) => [name, createHash('sha256').update(fs.readFileSync(`${reviewDir}/${name}`)).digest('hex')]));
+assert.deepEqual(reviewHashes, approval.reviewInputsSha256, 'Runtime-reviewed content changed; approval must be revisited');
+assert.deepEqual(reviewHashes, candidateReview.reviewInputsSha256, 'Candidate review inputs changed');
 const readReviews = (pattern) => fs.readdirSync(reviewDir).filter((name) => pattern.test(name)).sort()
   .flatMap((name) => JSON.parse(fs.readFileSync(`${reviewDir}/${name}`, 'utf8')));
 const written = readReviews(/^written-page-\d+\.review\.json$/);
@@ -68,8 +78,15 @@ const listeningQuestions = listening.map((q, index) => {
     instructionJa: instructions[q.problemNumber], promptJa: q.promptJa, options: options(q),
     correctOptionId: q.correctOptionId, source: q.source,
     answerVerificationStatus: 'verified_against_source_key', transcriptVerificationStatus: q.transcriptVerificationStatus,
-    verificationStatus: 'source_verified_pending_runtime_review',
-    audio: { ...q.audio, timingVerificationStatus: 'pending_runtime_review', transcriptJa: q.transcriptJa, transcriptSourcePages: q.source.answerScriptPages },
+    verificationStatus: 'verified',
+    audio: {
+      ...q.audio,
+      timingVerificationStatus: 'verified',
+      timingVerificationBasis: 'user_runtime_approval_2026-09-17',
+      timingEvidence: 'Local Whisper small alignment on the approved source MP3, including an independent recheck for problem 4 items 5-8; all ranges decoded and were accepted by the user after Simulator/audio review on 2026-09-17.',
+      transcriptJa: q.transcriptJa,
+      transcriptSourcePages: q.source.answerScriptPages,
+    },
   };
 });
 const sha256 = (file) => createHash('sha256').update(fs.readFileSync(file)).digest('hex');
@@ -82,15 +99,17 @@ for (const folder of ['question', 'answer-script']) {
 }
 const audioHash = sha256('assets/jlpt/n1/2014-07/audio/n1-2014-07.mp3');
 assert.equal(audioHash, 'f534896b9c9962ce3ff1eae69f49b7afb1a0e93438ab437d63d3a55032937309');
+assert.equal(audioHash, approval.audioSha256);
+assert.equal(audioHash, candidateReview.audioSha256);
 const questions = [...writtenQuestions, ...listeningQuestions];
 assert.equal(new Set(questions.map((q) => q.questionId)).size, 107);
 assert.equal(new Set(listeningQuestions.map((q) => q.audio.segmentId)).size, 36);
 const dataset = {
-  schemaVersion: 1, examId: 'n1-2014-07-exam-05', status: 'needs_runtime_review',
+  schemaVersion: 1, examId: 'n1-2014-07-exam-05', status: 'structured_ready',
   counts: { writtenResponses: 70, listeningResponses: 37, totalResponses: 107, uniqueAudioSegments: 36 },
   source: { audioSha256: audioHash, assets: sourceAssets },
   review: {
-    audioTiming: 'Local ASR candidate ranges, all decoded; user Simulator listening review pending.',
+    audioTiming: 'Accepted by the user after Simulator review on 2026-09-17; see runtime-review/approval.json for exact reviewed input hashes.',
     writtenSourceAnomalies: 'Printed anomalies retained, including question 22 answer-key discrepancy; see conversion checkpoint.',
     explanations: 'Pending source explanation conversion and in-session AI translations after runtime review. No external translation service or runtime translation dependency.',
   },
@@ -100,4 +119,4 @@ fs.mkdirSync(outDir, { recursive: true });
 const serialized = `${JSON.stringify(dataset, null, 2)}\n`;
 if (process.argv.includes('--check')) assert.equal(fs.readFileSync(`${outDir}/exam.candidate.json`, 'utf8'), serialized, 'Candidate differs from source reviews');
 else fs.writeFileSync(`${outDir}/exam.candidate.json`, serialized);
-console.log('N1 2014-07 built: 70 written + 37 listening; 36 candidate audio segments; runtime review pending.');
+console.log('N1 2014-07 built: 70 written + 37 listening; 36 audio segments; user runtime approval verified.');
