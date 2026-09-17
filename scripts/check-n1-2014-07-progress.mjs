@@ -48,3 +48,18 @@ for (const q of listening) {
 }
 if(process.argv.includes('--complete-listening')) assert.equal(listening.length,37);
 console.log(`N1 2014-07 LISTENING PROGRESS PASS: ${listening.length}/37 source transcripts, ${listening.filter(q=>q.audio).length}/37 audio mappings; missing mappings remain pending.`);
+if (process.argv.includes('--complete-audio')) {
+  assert.equal(listening.length,37);
+  assert(listening.every(q=>q.audio));
+  const segments = [...new Map(listening.map(q=>[q.audio.segmentId,q.audio])).values()];
+  assert.equal(segments.length,36);
+  const {spawnSync} = await import('node:child_process');
+  for(const [i,a] of segments.entries()) {
+    if(i) assert(segments[i-1].endMs<=a.startMs,a.segmentId);
+    const decoded=spawnSync('ffmpeg',['-v','error','-ss',String(a.startMs/1000),'-t',String((a.endMs-a.startMs)/1000),'-i','assets/jlpt/n1/2014-07/audio/n1-2014-07.mp3','-f','null','-'],{encoding:'utf8'});
+    assert.equal(decoded.status,0,`${a.segmentId}: ${decoded.stderr}`);
+  }
+  const shared=listening.filter(q=>q.problemNumber===5 && q.responseSuffix);
+  assert.equal(shared.length,2);assert.deepEqual(shared.map(q=>q.correctOptionId),['4','1']);assert.deepEqual(shared[0].audio,shared[1].audio);
+  console.log('N1 2014-07 AUDIO PASS: 36 unique segments decode; two independent final responses share one range. Perceptual runtime review remains pending.');
+}
