@@ -90,6 +90,10 @@ The user confirmed “đã duyệt ok. Tiếp tục tiến trình” after the N
 
 Resume: transcribe source explanations from answer/script page 2, validate the complete page unit, commit/push/remote-verify it, then continue page by page. Translate only in Codex after source transcription, retain Japanese terms as needed, and mark every target `generatedBy: AI`, `reviewedByNativeSpeaker: false`, `status: translated_ai_unreviewed`. No public translation service, runtime translation API, or translation dependency.
 
+## Explanation conversion progress
+
+- Answer/script page 2 visually transcribed: source explanations 1-13 in `explanations/source-page-02.json`. The source validator checks unique questions, answer-key agreement, source-image hashes, locale completeness and required AI-unreviewed translation metadata. Translation coverage remains 0/840 because translation is outside this source-page unit. Durable commit receipt pending for this unit. Next: answer/script page 3, beginning with explanation 14.
+
 Integration backup: `.jlpt-backups/n1-2014-07-integration-20260917-201858/`.
 
 Runtime approval backup: `.jlpt-backups/n1-2014-07-runtime-approval-20260917-205100/`.
