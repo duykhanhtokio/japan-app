@@ -16,6 +16,8 @@ User requested “tiếp tục” after final N1 12/2013 approval; interpreted a
 
 ## Durable checkpoint
 
+- Integrated Simulator review candidate: `22296850301ed5941c9ed50ab22dc090a721a57a`; pushed to origin/recovery/n1-2013-12, fetched and exact-HEAD verified by `check-work-persistence.mjs`, clean working tree. Candidate is awaiting user runtime/audio approval; explanations/translations pending.
+
 - Audio alignment: `66b38b49eab5b39eeba954314dfe239a47bc585a`; push/fetch/exact remote HEAD verified, working tree clean.
 
 - Listening complete 37/37: `9448e63fb8d6591f1ee0f99faf63b395f90aa2d7`; push/fetch/exact remote HEAD verified, working tree clean.
