@@ -10,11 +10,13 @@ User requested “tiếp tục” after final N1 12/2013 approval; interpreted a
 - Answer/script page 1 visually checked; all 70 written and 37 listening answers match `src/data/jlpt-mock/n1-2014-07-official.ts`.
 - Listening counts: 6 + 7 + 6 + 14 + 4 = 37. Problem 5 item 3 has two responses (4, 1); expected 36 unique segments. Do not copy the 2013 exam's 36-response / 35-segment counts.
 - Status: source_inventory_verified; not structured-ready or registered.
-- Written: 70/70 responses complete, including the full CPJ card table and continuation footnote on pages 12-13. All options/keys and complete 1-70 sequence pass validation. Next: listening problem 1, question page 13 and answer/script pages. Listening problems 1-4: 33/37 transcripts/options/prompts verified against source images, keys match. Audio alignment pending; local Whisper small is processing the approved MP3 as a navigation aid. Next: listening problem 5.
+- Written: 70/70 responses complete, including the full CPJ card table and continuation footnote on pages 12-13. All options/keys and complete 1-70 sequence pass validation. Next: listening problem 1, question page 13 and answer/script pages. Listening problems 1-5: 37/37 transcripts/options/prompts verified against source images, keys match. Audio alignment pending; local Whisper small is processing the approved MP3 as a navigation aid. Next: inspect local Whisper boundaries and add all 36 unique audio segments.
 - Explanation transcription/translation: pending, outside the inventory unit. Use only approved repository sources. Translate in Codex with `generatedBy: AI`, `reviewedByNativeSpeaker: false`, `status: translated_ai_unreviewed`; never use public translation services or runtime translation APIs/dependencies.
 - All nine startup validators passed. UI lock 10/10, catalog 50 = 4 structured official + 41 pending + 5 mocks.
 
 ## Durable checkpoint
+
+- Listening problem 4: `b5ec5c0f9743b0ae1d60ad43c3d07b44ca1d0a98`; push/fetch/exact remote HEAD verified, working tree clean.
 
 - Listening problem 3: `d48b01aeb811be5317f8a9d21159e74d8954882e`; push/fetch/exact remote HEAD verified, working tree clean.
 
@@ -63,3 +65,5 @@ Listening problem 2: seven responses compared with question pages 13-14 and answ
 Listening problem 3: six full transcripts and spoken choices compared with answer/script pages 10-12. Source wording retained, including printed 終演 and ストーリ in item 2. Local Whisper finished successfully; its output is an alignment aid only and does not replace source transcription.
 
 Listening problem 4: all 14 prompts and exactly three spoken choices per item visually checked against answer/script page 12. Printed anomalies such as 急い出る, 思わしくないだ and 勝手出て retained without editorial correction.
+
+Listening source transcription complete: 37 responses. Problem 5 item 3 retains two independent responses (suffix a/b, answer 4/1) sharing the complete source transcript and later one audio segment. Original Japanese transcripts remain distinct from future translated explanations.
