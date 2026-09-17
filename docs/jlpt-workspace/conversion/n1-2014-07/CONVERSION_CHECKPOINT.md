@@ -92,7 +92,7 @@ Resume: transcribe source explanations from answer/script page 2, validate the c
 
 ## Explanation conversion progress
 
-- Answer/script page 2 visually transcribed: source explanations 1-13 in `explanations/source-page-02.json`. The source validator checks unique questions, answer-key agreement, source-image hashes, locale completeness and required AI-unreviewed translation metadata. Translation coverage remains 0/840 because translation is outside this source-page unit. Durable commit receipt pending for this unit. Next: answer/script page 3, beginning with explanation 14.
+- Answer/script page 2 visually transcribed: source explanations 1-13 in `explanations/source-page-02.json`. The source validator checks unique questions, answer-key agreement, source-image hashes, locale completeness and required AI-unreviewed translation metadata. Translation coverage remains 0/840 because translation is outside this source-page unit. Commit `3fb867bbb1e1adde7466a7da5abe3eb47973b4e6` was pushed, fetched and exact-HEAD verified by `check-work-persistence.mjs`, clean working tree. Next: answer/script page 3, beginning with explanation 14.
 
 Integration backup: `.jlpt-backups/n1-2014-07-integration-20260917-201858/`.
 
