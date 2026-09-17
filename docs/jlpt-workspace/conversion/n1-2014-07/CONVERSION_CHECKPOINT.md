@@ -16,7 +16,7 @@ User requested “tiếp tục” after final N1 12/2013 approval; interpreted a
 
 ## Durable checkpoint
 
-- Runtime/audio approval finalization: pending commit/push receipt in this unit. Reviewed HEAD `0bd3e2dd8cd2e097a4086a42d128909a244d9f83`; reviewed candidate commit `22296850301ed5941c9ed50ab22dc090a721a57a`; reviewed dataset SHA-256 `729e680533a5660b56a223abfa209fcef98ade9eb21162cd3c921fd2318fc273`.
+- Runtime/audio approval finalization: `d0e9c93c09d1d6b4ce42e886b3febdf0985e52c9`; pushed, fetched and exact-HEAD verified by `check-work-persistence.mjs` on `origin/recovery/n1-2013-12`, clean working tree, 2026-09-17. Reviewed HEAD `0bd3e2dd8cd2e097a4086a42d128909a244d9f83`; reviewed candidate commit `22296850301ed5941c9ed50ab22dc090a721a57a`; reviewed dataset SHA-256 `729e680533a5660b56a223abfa209fcef98ade9eb21162cd3c921fd2318fc273`.
 
 - Integrated Simulator review candidate: `22296850301ed5941c9ed50ab22dc090a721a57a`; pushed to origin/recovery/n1-2013-12, fetched and exact-HEAD verified by `check-work-persistence.mjs`, clean working tree. Candidate is awaiting user runtime/audio approval; explanations/translations pending.
 
