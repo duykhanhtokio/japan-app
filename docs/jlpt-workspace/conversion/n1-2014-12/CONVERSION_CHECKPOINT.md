@@ -283,6 +283,14 @@ Next: validate and durably persist answer/script page 5, then transcribe page 6.
 
 Next: transcribe answer/script page 6.
 
+## Answer/script source page 6 transcription — 2026-09-20
+
+- Transcribed source explanations for questions 46–60 into `explanations/source-page-06.json`.
+- Source image SHA-256: `b1b2a39fca12395a21d55d9f8e26ef3c54e2b90faa8163904707f81570770510`.
+- No translation records were created.
+
+Next: validate and durably persist answer/script page 6, then transcribe page 7.
+
 ## Page 6 answer-key correction — 2026-09-20
 
 - Rechecked `N1_2014_12_WRITTEN_KEY` directly after detecting an indexing error in the prior validation helper. Questions 46–48 are `3,4,1`, not `1,2,2`.
