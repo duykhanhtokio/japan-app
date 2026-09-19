@@ -174,7 +174,7 @@ Resume: transcribe source explanations from answer/script page 2, validate the c
 - All 70 source explanations now have all 12 Codex-authored targets: 840/840. Every target remains `generatedBy: AI`, `reviewedByNativeSpeaker: false`, and `status: translated_ai_unreviewed`; no public translation service, runtime translation API, or translation dependency was used.
 - Completion suite PASS: approved UI lock, catalog completeness, structured-exam policy, no scanned runtime, navigation contract, 50-exam inventory, N1 2012-12 integration, N1 2013-07 integration, N1 2014-07 explanation/integration checks, and TypeScript.
 - Lint: 0 errors; 16 pre-existing warnings outside this translation scope.
-- Pending durable finalization commit and exact remote verification.
+- Completion finalization commit `11b3832b078edb304729ffce75332d31bcc70246` was pushed, fetched and exact-HEAD verified by `check-work-persistence.mjs`, clean working tree.
 
 Integration backup: `.jlpt-backups/n1-2014-07-integration-20260917-201858/`.
 
