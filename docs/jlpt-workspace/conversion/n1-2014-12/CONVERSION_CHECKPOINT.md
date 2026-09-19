@@ -126,6 +126,13 @@ Next: validate and durably persist page 7, then transcribe question page 8.
 
 Next: transcribe question page 8.
 
+## Written question page 8 transcription — 2026-09-20
+
+- Transcribed complete questions 53–55 from `question/page-08.jpg`; the next passage continues to page 9.
+- Visually checked official answers: `2,3,1`.
+
+Next: validate and durably persist page 8, then transcribe question page 9.
+
 ## Page 6 answer-key correction — 2026-09-20
 
 - Rechecked `N1_2014_12_WRITTEN_KEY` directly after detecting an indexing error in the prior validation helper. Questions 46–48 are `3,4,1`, not `1,2,2`.
