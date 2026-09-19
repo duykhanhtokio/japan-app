@@ -169,6 +169,13 @@ Resume: transcribe source explanations from answer/script page 2, validate the c
 - Codex-authored translation question 69: cumulative 828/840 targets, all 12 locales. The source's CPJ-card fee/age/insurance comparison and option 3 are retained. Every target remains `generatedBy: AI`, `reviewedByNativeSpeaker: false`, `status: translated_ai_unreviewed`; no external translation service was used. Commit `529345af0253df0b5a6a1af7813056b063062ae8` was pushed, fetched and exact-HEAD verified by `check-work-persistence.mjs`, clean working tree. Next: question 70 onward.
 - Codex-authored translation question 70: cumulative 840/840 targets, all 12 locales. The source's CPJ address-proof requirements and option 4 are retained. Every target remains `generatedBy: AI`, `reviewedByNativeSpeaker: false`, `status: translated_ai_unreviewed`; no external translation service was used. Commit `ce949d6ede3c12c8979b8a14cce7ebd2e272644a` was pushed, fetched and exact-HEAD verified by `check-work-persistence.mjs`, clean working tree. Translation coverage is complete; next: run the full completion validation suite before declaring N1 2014-07 translation work complete.
 
+## Translation completion — 2026-09-19
+
+- All 70 source explanations now have all 12 Codex-authored targets: 840/840. Every target remains `generatedBy: AI`, `reviewedByNativeSpeaker: false`, and `status: translated_ai_unreviewed`; no public translation service, runtime translation API, or translation dependency was used.
+- Completion suite PASS: approved UI lock, catalog completeness, structured-exam policy, no scanned runtime, navigation contract, 50-exam inventory, N1 2012-12 integration, N1 2013-07 integration, N1 2014-07 explanation/integration checks, and TypeScript.
+- Lint: 0 errors; 16 pre-existing warnings outside this translation scope.
+- Pending durable finalization commit and exact remote verification.
+
 Integration backup: `.jlpt-backups/n1-2014-07-integration-20260917-201858/`.
 
 Runtime approval backup: `.jlpt-backups/n1-2014-07-runtime-approval-20260917-205100/`.
