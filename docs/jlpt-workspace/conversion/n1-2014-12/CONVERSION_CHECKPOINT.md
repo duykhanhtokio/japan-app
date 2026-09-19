@@ -498,6 +498,14 @@ Next: validate and durably persist 問題3 question 1, then transcribe 問題3 q
 
 Next: transcribe 問題3 question 2.
 
+## Listening transcript 問題3 question 2 — 2026-09-20
+
+- Transcribed the complete printed answer/script for 問題3 question 2 from answer/script page 11 into `listening-transcript-p3-q02.review.json`.
+- The prompt and transcript remain source-only Japanese; no timing was inferred from the audio.
+- Correct option (`3`) matches the verified answer key. Transcript status: `verified_against_source_image`.
+
+Next: validate and durably persist 問題3 question 2, then transcribe 問題3 question 3.
+
 ## Questions 65–68 answer-key correction — 2026-09-20
 
 - Answer/script page 7 directly confirmed questions 65–68 as `4,1,4,3`; corrected prior page-11 source transcription commit `928cc1ced6ae85c1b78c7e4cca017fbb9100884f` was pushed, fetched, and exact-HEAD verified (`WORK PERSISTENCE PASS`).
