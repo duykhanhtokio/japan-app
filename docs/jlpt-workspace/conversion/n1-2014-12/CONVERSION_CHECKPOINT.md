@@ -688,6 +688,12 @@ Next: transcribe 問題4 question 9.
 
 Next: validate and durably persist 問題4 question 9, then transcribe 問題4 question 10.
 
+## Listening transcript 問題4 question 9 durability record — 2026-09-20
+
+- Source transcript commit `75d9c054b9ad6e5eb3665aa7f3809ee13a82dc04` was pushed to `origin/recovery/n1-2013-12`, fetched, and exact-HEAD verified with `check-work-persistence.mjs` (`WORK PERSISTENCE PASS`).
+
+Next: transcribe 問題4 question 10.
+
 ## Questions 65–68 answer-key correction — 2026-09-20
 
 - Answer/script page 7 directly confirmed questions 65–68 as `4,1,4,3`; corrected prior page-11 source transcription commit `928cc1ced6ae85c1b78c7e4cca017fbb9100884f` was pushed, fetched, and exact-HEAD verified (`WORK PERSISTENCE PASS`).
