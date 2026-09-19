@@ -42,3 +42,9 @@ Next: visually inspect answer/script page 1, verify the 70 written and 37 listen
 - Backup before editing: `.jlpt-backups/n1-2014-12-written-page-02-20260919-234500/`.
 
 Next: validate and durably persist page 2, then transcribe question page 3.
+
+## Page 2 durability record — 2026-09-19
+
+- Source transcription commit `0922dbd803bf75c6d4567639e04f6c61b259025a` was pushed to `origin/recovery/n1-2013-12`, fetched, and exact-HEAD verified with `check-work-persistence.mjs` (`WORK PERSISTENCE PASS`).
+
+Next: transcribe question page 3.
