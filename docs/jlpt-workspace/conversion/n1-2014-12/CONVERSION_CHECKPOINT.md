@@ -178,6 +178,14 @@ Next: validate and durably persist page 11, then transcribe question page 12.
 
 Next: transcribe question page 12.
 
+## Written question page 12 transcription — 2026-09-20
+
+- Transcribed complete schedule-reading questions 69–70 from `question/page-12.jpg`.
+- Listening instructions/options begin on this page and are deferred to the listening-source workflow.
+- Visually checked official answers: `1,1`.
+
+Next: validate and durably persist page 12, then begin listening source transcription.
+
 ## Page 6 answer-key correction — 2026-09-20
 
 - Rechecked `N1_2014_12_WRITTEN_KEY` directly after detecting an indexing error in the prior validation helper. Questions 46–48 are `3,4,1`, not `1,2,2`.
