@@ -221,6 +221,12 @@ Next: transcribe listening source from question page 14.
 
 Next: validate and durably persist listening page 14 choices, then start answer/script source transcription.
 
+## Listening page 14 durability record — 2026-09-20
+
+- Source-choice transcription commit `de5b4c34efbd61fa1cebf036b0226097f79af654` was pushed to `origin/recovery/n1-2013-12`, fetched, and exact-HEAD verified with `check-work-persistence.mjs` (`WORK PERSISTENCE PASS`).
+
+Next: start answer/script source transcription from page 2.
+
 ## Page 6 answer-key correction — 2026-09-20
 
 - Rechecked `N1_2014_12_WRITTEN_KEY` directly after detecting an indexing error in the prior validation helper. Questions 46–48 are `3,4,1`, not `1,2,2`.
