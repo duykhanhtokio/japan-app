@@ -186,6 +186,12 @@ Next: transcribe question page 12.
 
 Next: validate and durably persist page 12, then begin listening source transcription.
 
+## Page 12 durability record — 2026-09-20
+
+- Source transcription commit `bc1ecc747c245061f71d40fc1c5778d397ddbaf0` was pushed to `origin/recovery/n1-2013-12`, fetched, and exact-HEAD verified with `check-work-persistence.mjs` (`WORK PERSISTENCE PASS`).
+
+Next: begin listening source transcription from question page 12.
+
 ## Page 6 answer-key correction — 2026-09-20
 
 - Rechecked `N1_2014_12_WRITTEN_KEY` directly after detecting an indexing error in the prior validation helper. Questions 46–48 are `3,4,1`, not `1,2,2`.
