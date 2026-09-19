@@ -297,6 +297,14 @@ Next: validate and durably persist answer/script page 6, then transcribe page 7.
 
 Next: transcribe answer/script page 7.
 
+## Answer/script source page 7 transcription — 2026-09-20
+
+- Transcribed source explanations for questions 61–70 into `explanations/source-page-07.json`.
+- Source image SHA-256: `acd86f1b546da448c33f59e82242c5f197abadf9ef3e303fd4e0ce6215b842ad`.
+- Listening transcript begins below this content and remains a separate source unit; no translation records were created.
+
+Next: validate and durably persist answer/script page 7, then transcribe listening transcript page 7.
+
 ## Questions 65–68 answer-key correction — 2026-09-20
 
 - Answer/script page 7 directly confirmed questions 65–68 as `4,1,4,3`; corrected prior page-11 source transcription commit `928cc1ced6ae85c1b78c7e4cca017fbb9100884f` was pushed, fetched, and exact-HEAD verified (`WORK PERSISTENCE PASS`).
