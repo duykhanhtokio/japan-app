@@ -318,6 +318,12 @@ Next: transcribe listening transcript page 7.
 
 Next: validate and durably persist listening transcript question 1, then transcribe question 2.
 
+## Listening transcript question 1 durability record — 2026-09-20
+
+- Source transcript commit `f78bb32885448ef13d0264d748b51a272534c283` was pushed to `origin/recovery/n1-2013-12`, fetched, and exact-HEAD verified with `check-work-persistence.mjs` (`WORK PERSISTENCE PASS`).
+
+Next: transcribe listening question 2.
+
 ## Questions 65–68 answer-key correction — 2026-09-20
 
 - Answer/script page 7 directly confirmed questions 65–68 as `4,1,4,3`; corrected prior page-11 source transcription commit `928cc1ced6ae85c1b78c7e4cca017fbb9100884f` was pushed, fetched, and exact-HEAD verified (`WORK PERSISTENCE PASS`).
