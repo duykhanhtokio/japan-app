@@ -297,6 +297,12 @@ Next: validate and durably persist answer/script page 6, then transcribe page 7.
 
 Next: transcribe answer/script page 7.
 
+## Questions 65–68 answer-key correction — 2026-09-20
+
+- Answer/script page 7 directly confirmed questions 65–68 as `4,1,4,3`; corrected prior page-11 source transcription commit `928cc1ced6ae85c1b78c7e4cca017fbb9100884f` was pushed, fetched, and exact-HEAD verified (`WORK PERSISTENCE PASS`).
+
+Next: transcribe answer/script page 7.
+
 ## Page 6 answer-key correction — 2026-09-20
 
 - Rechecked `N1_2014_12_WRITTEN_KEY` directly after detecting an indexing error in the prior validation helper. Questions 46–48 are `3,4,1`, not `1,2,2`.
