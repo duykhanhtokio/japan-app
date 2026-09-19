@@ -96,3 +96,12 @@ Next: validate and durably persist page 5, then transcribe question page 6.
 - Source transcription commit `5e879f334d89784a12736225cb5bc20e432dd385` was pushed to `origin/recovery/n1-2013-12`, fetched, and exact-HEAD verified with `check-work-persistence.mjs` (`WORK PERSISTENCE PASS`).
 
 Next: transcribe question page 6.
+
+## Written question page 6 transcription — 2026-09-20
+
+- Transcribed complete reading-comprehension questions 46–48 from `question/page-06.jpg`; question 46 retains its page 5–6 passage boundary.
+- Question 49 begins on this page and remains deferred to page 7.
+- Visually checked answers 46–48 against the verified official key: `1,2,2`.
+- Page image SHA-256: `3c5cceb05203cfeb1f19119f506935fc05ec8a08f70c407f2d8f821735fd2699`.
+
+Next: validate and durably persist page 6, then transcribe question page 7.
