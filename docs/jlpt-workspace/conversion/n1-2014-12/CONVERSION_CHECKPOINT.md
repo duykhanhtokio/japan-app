@@ -213,6 +213,14 @@ Next: transcribe remaining listening choices on question page 13.
 
 Next: transcribe listening source from question page 14.
 
+## Listening question page 14 transcription — 2026-09-20
+
+- Transcribed the printed 問題5 question 3 choices as two distinct scored responses, 36 and 37.
+- Preserved the official split keys: `4,1`; no transcript or audio boundary was inferred.
+- The Chinese mini-program advertisement at the bottom is non-exam source material and was excluded.
+
+Next: validate and durably persist listening page 14 choices, then start answer/script source transcription.
+
 ## Page 6 answer-key correction — 2026-09-20
 
 - Rechecked `N1_2014_12_WRITTEN_KEY` directly after detecting an indexing error in the prior validation helper. Questions 46–48 are `3,4,1`, not `1,2,2`.
