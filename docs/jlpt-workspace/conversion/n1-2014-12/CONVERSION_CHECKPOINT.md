@@ -192,6 +192,15 @@ Next: validate and durably persist page 12, then begin listening source transcri
 
 Next: begin listening source transcription from question page 12.
 
+## Listening question page 12 transcription — 2026-09-20
+
+- Transcribed printed answer choices for listening 問題1 questions 1–3 into `listening-page-12.review.json`.
+- Audio transcript and segment boundaries remain a separate, later source-verification unit; no transcript was inferred.
+- Visually checked official answers: `2,1,2`.
+- Page image SHA-256: `a0a74c67e9bd19a2fc35309b16e55d0f0a989a2c3d7fc0411f826c9b65f3e501`.
+
+Next: validate and durably persist listening page 12 choices, then transcribe remaining listening choices on page 13.
+
 ## Page 6 answer-key correction — 2026-09-20
 
 - Rechecked `N1_2014_12_WRITTEN_KEY` directly after detecting an indexing error in the prior validation helper. Questions 46–48 are `3,4,1`, not `1,2,2`.
