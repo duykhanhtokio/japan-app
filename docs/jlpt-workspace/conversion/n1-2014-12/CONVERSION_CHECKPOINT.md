@@ -48,3 +48,13 @@ Next: validate and durably persist page 2, then transcribe question page 3.
 - Source transcription commit `0922dbd803bf75c6d4567639e04f6c61b259025a` was pushed to `origin/recovery/n1-2013-12`, fetched, and exact-HEAD verified with `check-work-persistence.mjs` (`WORK PERSISTENCE PASS`).
 
 Next: transcribe question page 3.
+
+## Written question page 3 transcription — 2026-09-19
+
+- Transcribed questions 18–27 from `question/page-03.jpg` to `written-page-03.review.json`.
+- The page-boundary continuation of question 18 is explicitly noted; its source-page attribution follows the page containing its choices.
+- Visually checked answers 18–27 against the verified official key: `4,2,2,3,1,2,1,4,4,3`.
+- Page image SHA-256: `9f73c9f6ceefb1b715ee08298a0ee44d7d0019a71d318b57aa0ebf86e4ace56d`.
+- Backup before editing: `.jlpt-backups/n1-2014-12-written-page-03-20260919-235000/`.
+
+Next: validate and durably persist page 3, then transcribe question page 4.
