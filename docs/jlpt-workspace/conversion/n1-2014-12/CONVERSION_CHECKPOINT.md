@@ -165,6 +165,13 @@ Next: validate and durably persist page 10, then transcribe question page 11.
 
 Next: transcribe question page 11.
 
+## Written question page 11 transcription — 2026-09-20
+
+- Transcribed complete questions 65–68 from `question/page-11.jpg`; schedule questions 69–70 continue to page 12.
+- Visually checked official answers: `2,4,3,1`.
+
+Next: validate and durably persist page 11, then transcribe question page 12.
+
 ## Page 6 answer-key correction — 2026-09-20
 
 - Rechecked `N1_2014_12_WRITTEN_KEY` directly after detecting an indexing error in the prior validation helper. Questions 46–48 are `3,4,1`, not `1,2,2`.
