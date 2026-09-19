@@ -31,4 +31,4 @@ Next: visually inspect answer/script page 1, verify the 70 written and 37 listen
 
 - Answer/script page 1 was inspected directly against the declared source key. All 70 written answers match continuously: 問題1–7 (1–45), 問題8–13 (46–70).
 - All 37 listening answers match continuously: 問題1=6, 問題2=7, 問題3=6, 問題4=14, 問題5=4. 問題5’s four printed keys are `2, 4, 4, 1`; the two final values remain separate scored responses as declared.
-- No answer-key correction was inferred or made. Pending durable checkpoint. Next: transcribe question page 2 only after WORK PERSISTENCE PASS.
+- No answer-key correction was inferred or made. Commit `9775374d889b248002cc10f1c19cb96723a37c4d` was pushed, fetched and exact-HEAD verified by `check-work-persistence.mjs`, clean working tree. Next: transcribe question page 2.
