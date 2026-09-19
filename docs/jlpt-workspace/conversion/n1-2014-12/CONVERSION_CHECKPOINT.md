@@ -80,3 +80,13 @@ Next: validate and durably persist page 4, then transcribe question page 5.
 - Source transcription commit `fbf9207430721a343ab54fbdcd77fe93adc31493` was pushed to `origin/recovery/n1-2013-12`, fetched, and exact-HEAD verified with `check-work-persistence.mjs` (`WORK PERSISTENCE PASS`).
 
 Next: transcribe question page 5.
+
+## Written question page 5 transcription — 2026-09-20
+
+- Transcribed the complete sentence-composition question 40 and grammar-text questions 41–45 to `written-page-05.review.json`.
+- Question 40 preserves its page 4–5 source boundary; the first reading passage is retained verbatim once with question 41.
+- Visually checked answers 40–45 against the verified official key: `2,3,1,2,3,2`.
+- Page image SHA-256: `995f6287570f37d0944e4a058f1b4043a903a6f6ba0244e231f6bb9ce4d3564d`.
+- Backup before editing: `.jlpt-backups/n1-2014-12-written-page-05-20260920-001500/`.
+
+Next: validate and durably persist page 5, then transcribe question page 6.
