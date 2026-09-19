@@ -105,3 +105,9 @@ Next: transcribe question page 6.
 - Page image SHA-256: `3c5cceb05203cfeb1f19119f506935fc05ec8a08f70c407f2d8f821735fd2699`.
 
 Next: validate and durably persist page 6, then transcribe question page 7.
+
+## Page 6 durability record — 2026-09-20
+
+- Source transcription commit `7f9ca2fd7c58f83ae203a193286fcfb2f10023b6` was pushed to `origin/recovery/n1-2013-12`, fetched, and exact-HEAD verified with `check-work-persistence.mjs` (`WORK PERSISTENCE PASS`).
+
+Next: transcribe question page 7.
