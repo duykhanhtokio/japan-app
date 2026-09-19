@@ -23,4 +23,6 @@ WORK STATUS: source inventory verified; conversion not started
 
 ## Next action
 
-Visually inspect answer/script page 1, verify the 70 written and 37 listening answer-key inventory against `n1-2014-12-official.ts`, then record the completed inventory unit with validation, narrow commit, push/fetch, and `WORK PERSISTENCE PASS` before transcribing page 2.
+Inventory commit `8c77e541aa5e9b3cd03de429e0078b96e5ac52c0` was pushed, fetched and exact-HEAD verified by `check-work-persistence.mjs`, clean working tree.
+
+Next: visually inspect answer/script page 1, verify the 70 written and 37 listening answer-key inventory against `n1-2014-12-official.ts`, then record the completed key-verification unit with validation, narrow commit, push/fetch, and `WORK PERSISTENCE PASS` before transcribing page 2.
