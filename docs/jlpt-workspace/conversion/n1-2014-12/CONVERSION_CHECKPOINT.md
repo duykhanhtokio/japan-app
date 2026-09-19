@@ -74,3 +74,9 @@ Next: transcribe question page 4.
 - Backup before editing: `.jlpt-backups/n1-2014-12-written-page-04-20260920-000500/`.
 
 Next: validate and durably persist page 4, then transcribe question page 5.
+
+## Page 4 durability record — 2026-09-20
+
+- Source transcription commit `fbf9207430721a343ab54fbdcd77fe93adc31493` was pushed to `origin/recovery/n1-2013-12`, fetched, and exact-HEAD verified with `check-work-persistence.mjs` (`WORK PERSISTENCE PASS`).
+
+Next: transcribe question page 5.
