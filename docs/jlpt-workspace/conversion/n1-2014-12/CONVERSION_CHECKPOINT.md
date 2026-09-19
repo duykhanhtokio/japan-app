@@ -32,3 +32,13 @@ Next: visually inspect answer/script page 1, verify the 70 written and 37 listen
 - Answer/script page 1 was inspected directly against the declared source key. All 70 written answers match continuously: 問題1–7 (1–45), 問題8–13 (46–70).
 - All 37 listening answers match continuously: 問題1=6, 問題2=7, 問題3=6, 問題4=14, 問題5=4. 問題5’s four printed keys are `2, 4, 4, 1`; the two final values remain separate scored responses as declared.
 - No answer-key correction was inferred or made. Commit `9775374d889b248002cc10f1c19cb96723a37c4d` was pushed, fetched and exact-HEAD verified by `check-work-persistence.mjs`, clean working tree. Next: transcribe question page 2.
+
+## Written question page 2 transcription — 2026-09-19
+
+- Transcribed the 17 complete questions from `question/page-02.jpg` to `written-page-02.review.json`.
+- Preserved the source-page boundary: question 18 starts on page 2 and remains deferred to page 3, where its stem and choices are complete.
+- Visually checked answers 1–17 against the verified official key: `3,4,2,3,1,4,4,2,4,2,1,1,3,3,2,4,1`.
+- Page image SHA-256: `4095502aea98dddca9dde4254198d7fcd69a7f5015267e2c333899765f594a3c`.
+- Backup before editing: `.jlpt-backups/n1-2014-12-written-page-02-20260919-234500/`.
+
+Next: validate and durably persist page 2, then transcribe question page 3.
