@@ -311,6 +311,13 @@ Next: validate and durably persist answer/script page 7, then transcribe listeni
 
 Next: transcribe listening transcript page 7.
 
+## Listening transcript question 1 — 2026-09-20
+
+- Transcribed the complete 問題1 question 1 transcript from answer/script pages 7–8 into `listening-transcript-q01.review.json`.
+- Transcript is source-image verified; audio timing remains explicitly unaligned.
+
+Next: validate and durably persist listening transcript question 1, then transcribe question 2.
+
 ## Questions 65–68 answer-key correction — 2026-09-20
 
 - Answer/script page 7 directly confirmed questions 65–68 as `4,1,4,3`; corrected prior page-11 source transcription commit `928cc1ced6ae85c1b78c7e4cca017fbb9100884f` was pushed, fetched, and exact-HEAD verified (`WORK PERSISTENCE PASS`).
