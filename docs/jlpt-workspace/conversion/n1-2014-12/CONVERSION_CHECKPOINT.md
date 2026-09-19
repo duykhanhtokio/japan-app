@@ -277,6 +277,12 @@ Next: transcribe answer/script page 5.
 
 Next: validate and durably persist answer/script page 5, then transcribe page 6.
 
+## Answer/script page 5 durability record — 2026-09-20
+
+- Source-explanation transcription commit `18fdf93bb216d92e7ee7173d9d797596e5367020` was pushed to `origin/recovery/n1-2013-12`, fetched, and exact-HEAD verified with `check-work-persistence.mjs` (`WORK PERSISTENCE PASS`).
+
+Next: transcribe answer/script page 6.
+
 ## Page 6 answer-key correction — 2026-09-20
 
 - Rechecked `N1_2014_12_WRITTEN_KEY` directly after detecting an indexing error in the prior validation helper. Questions 46–48 are `3,4,1`, not `1,2,2`.
