@@ -64,3 +64,13 @@ Next: validate and durably persist page 3, then transcribe question page 4.
 - Source transcription commit `5820c75a6a5698e71173d8ba93cabed3e05ead61` was pushed to `origin/recovery/n1-2013-12`, fetched, and exact-HEAD verified with `check-work-persistence.mjs` (`WORK PERSISTENCE PASS`).
 
 Next: transcribe question page 4.
+
+## Written question page 4 transcription — 2026-09-20
+
+- Transcribed the 12 complete questions (28–39) from `question/page-04.jpg` to `written-page-04.review.json`.
+- Question 40 begins on this page and remains deferred to page 5, where its complete sentence and choices appear.
+- Visually checked answers 28–39 against the verified official key: `2,1,3,3,2,1,4,3,4,1,2,3`.
+- Page image SHA-256: `abf5d898b1515879cd8f6d9bb009dc84322a659ee73d0336a6ae47da5593c35c`.
+- Backup before editing: `.jlpt-backups/n1-2014-12-written-page-04-20260920-000500/`.
+
+Next: validate and durably persist page 4, then transcribe question page 5.
