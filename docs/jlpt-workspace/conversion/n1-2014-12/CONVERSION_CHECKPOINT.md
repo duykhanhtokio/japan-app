@@ -363,6 +363,13 @@ Next: validate and durably persist listening transcript question 4, then transcr
 
 Next: transcribe listening question 5.
 
+## Listening transcript question 5 — 2026-09-20
+
+- Transcribed the complete 問題1 question 5 transcript from answer/script pages 8–9 into `listening-transcript-q05.review.json`.
+- Transcript is source-image verified; audio timing remains explicitly unaligned.
+
+Next: validate and durably persist listening transcript question 5, then transcribe question 6.
+
 ## Questions 65–68 answer-key correction — 2026-09-20
 
 - Answer/script page 7 directly confirmed questions 65–68 as `4,1,4,3`; corrected prior page-11 source transcription commit `928cc1ced6ae85c1b78c7e4cca017fbb9100884f` was pushed, fetched, and exact-HEAD verified (`WORK PERSISTENCE PASS`).
