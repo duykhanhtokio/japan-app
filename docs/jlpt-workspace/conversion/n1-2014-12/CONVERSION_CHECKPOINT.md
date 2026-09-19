@@ -227,6 +227,14 @@ Next: validate and durably persist listening page 14 choices, then start answer/
 
 Next: start answer/script source transcription from page 2.
 
+## Answer/script source page 2 transcription — 2026-09-20
+
+- Transcribed source explanations for questions 1–13 into `explanations/source-page-02.json`.
+- Source image SHA-256: `614ae5fbd99db2baf0b7f0e9a98465cbd220bab900d095855178c79ae25b2b96`.
+- No translation records were created.
+
+Next: validate and durably persist answer/script page 2, then transcribe page 3.
+
 ## Page 6 answer-key correction — 2026-09-20
 
 - Rechecked `N1_2014_12_WRITTEN_KEY` directly after detecting an indexing error in the prior validation helper. Questions 46–48 are `3,4,1`, not `1,2,2`.
