@@ -228,6 +228,14 @@ Next: launch the simplified two-button local review server and continue human re
 
 Next: do not return to listening unless the user explicitly requests it. Prioritize source-verified written conversion for remaining exams; mark only `WRITTEN_READY` (or equivalent), never full-exam `structured_ready` while listening is deferred.
 
+## Written conversion readiness — 2026-09-20
+
+- Status: `WRITTEN_READY` for the N1 2014-12 written section only.
+- Validation PASS: 70/70 continuous source-verified written questions, each with four choices and a key from the official source reviews.
+- Listening remains `DEFERRED_UNVERIFIED`; this exam is not full-exam `structured_ready` and is not registered for runtime.
+
+Next: continue written-only conversion for the next incomplete exam checkpoint; do not process listening.
+
 ## Written question page 7 transcription — 2026-09-20
 
 - Transcribed complete questions 49–52 from `question/page-07.jpg`; question 53 remains deferred to page 8.
