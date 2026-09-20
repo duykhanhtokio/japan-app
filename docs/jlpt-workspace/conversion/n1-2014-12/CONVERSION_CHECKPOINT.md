@@ -236,6 +236,15 @@ Next: do not return to listening unless the user explicitly requests it. Priorit
 
 Next: continue written-only conversion for the next incomplete exam checkpoint; do not process listening.
 
+## Written explanation translation — 2026-09-20
+
+- Codex-authored translation completed for written explanation question 1: 12/840 target locales are present in `explanations/translations-q01-q01.json`.
+- The source record remains `explanations/source-page-02.json` question 1, hash `abaa821805f22ad8c7f1aaaa1424ea30b989b9adaab7786a84992a39db4ee877`.
+- Every target is `generatedBy: AI`, `reviewedByNativeSpeaker: false`, and `status: translated_ai_unreviewed`; no external translation service was used.
+- Listening remains `DEFERRED_UNVERIFIED`; this written translation does not make the exam full-exam `structured_ready`.
+
+Next: translate written explanation question 2, then validate, checkpoint, commit, push, fetch, and remote-verify that completed translation unit before question 3.
+
 ## Written question page 7 transcription — 2026-09-20
 
 - Transcribed complete questions 49–52 from `question/page-07.jpg`; question 53 remains deferred to page 8.
