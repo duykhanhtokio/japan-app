@@ -184,6 +184,13 @@ Next: durably persist 問題2 options 1–7, then transcribe the printed choices
 
 Next: durably persist 問題3 options 1–6.
 
+## Complete listening-option source gate — 2026-09-20
+
+- Strengthened `check-n1-2014-12-source-preflight.mjs` to require source-verified option counts and key membership for all 37 listening responses (three choices for 問題4, four otherwise).
+- Full source preflight and source-only builder PASS; timing remains candidate-only and no runtime/UI change was made.
+
+Next: durably persist the complete listening-option source gate, then review source-only candidate schema readiness without attaching audio timing.
+
 ## Written question page 7 transcription — 2026-09-20
 
 - Transcribed complete questions 49–52 from `question/page-07.jpg`; question 53 remains deferred to page 8.

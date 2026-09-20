@@ -25,6 +25,11 @@ const responseCount = names.reduce((total, name) => {
   assert.equal(data.transcriptVerificationStatus, 'verified_against_source_image', name);
   assert.equal(data.audioTimingStatus, 'not_yet_transcribed_or_aligned', name);
   assert.ok(data.transcriptJa.length > 20, name);
+  for (const response of data.responseUnits ?? [data]) {
+    const options = response.options ?? data.options;
+    assert.equal(options.length, data.problemNumber === 4 ? 3 : 4, `${name} options`);
+    assert.ok(options[Number(response.correctOptionId ?? data.correctOptionId) - 1], `${name} key`);
+  }
   return total + (data.responseUnits?.length ?? 1);
 }, 0);
 assert.equal(responseCount, 37);
