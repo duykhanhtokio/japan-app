@@ -16,3 +16,5 @@
 - Unattended full-recovery supervisor/rules are remote-persisted at `1420130d835b15db7258c1cd070f1a691e42b855`; no question 39 content was started in that unit.
 
 Next: continue source transcription with question 50 on `assets/jlpt/n1/2015-07/question/page-07.jpg`. Keep question 29 `BLOCKED_SOURCE_UNREADABLE`; do not infer it from the answer key. After available written units, continue listening candidate, sourced explanations/translations, and candidate integration under the current unattended rules.
+
+- Supervisor durable unit: `e4487abefb371f1498a9606b9ef2f3fd6907813b` | `written question 49 across source pages 6–7` | `2026-09-20T09:54:40Z`
