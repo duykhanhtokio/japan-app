@@ -151,7 +151,7 @@ is_allowed_child_path() {
   case "$file_name" in
     .git|.git/*|.env|.env.*|*/.env|*/.env.*|*.pem|*.key|*[Cc][Rr][Ee][Dd][Ee][Nn][Tt][Ii][Aa][Ll]*|*[Ss][Ee][Cc][Rr][Ee][Tt]*) return 1 ;;
     src/app/'[level]'/'[section].tsx'|src/components/jlpt/N1OfficialTrial.tsx|src/components/jlpt/N1ExamPicker.tsx|src/components/jlpt/ui/JlptExamUI.tsx|src/services/jlpt-trial-session-storage.ts|src/theme/jlpt-exam-design-system.ts|src/components/jlpt/ApprovedJlptExamCatalog.tsx|src/components/jlpt/ApprovedScannedExam.tsx|src/components/jlpt/ApprovedMockExam.tsx|src/data/jlpt-official/approved-scanned-exams.generated.ts) return 1 ;;
-    assets/jlpt/*|src/data/jlpt-official/*|src/data/jlpt-mock/*|docs/jlpt-workspace/conversion/*|scripts/check-jlpt-*.mjs|scripts/check-n1-*.mjs) return 0 ;;
+    assets/jlpt/*|src/data/jlpt-official/*|src/data/jlpt-mock/*|docs/jlpt-workspace/conversion/*|scripts/check-jlpt-*.mjs|scripts/check-n[1-5]-*.mjs|scripts/build-n[1-5]-????-??-structured.mjs) return 0 ;;
     *) return 1 ;;
   esac
 }
