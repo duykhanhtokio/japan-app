@@ -820,6 +820,14 @@ Next: validate and durably persist the 問題5 question 1 option correction, the
 
 Next: re-run listening-source coverage validation before beginning integration work.
 
+## Listening-source transcription coverage complete — 2026-09-20
+
+- Coverage validation PASS: 36 transcript review files represent all 37 scored listening response units: 問題1=6, 問題2=7, 問題3=6, 問題4=14, 問題5=4.
+- The 18 response units with printed answer choices in the answer/script match the verified key. 問題5 question 3 remains two independent responses sharing one transcript (`4`, `1`).
+- No audio timing was inferred. All transcript review data remains source-image verified only; no translations or runtime integration were created.
+
+Next: inspect the established N1 structured-exam adapter/data pattern and prepare a source-to-structured integration plan without changing the locked JLPT UI.
+
 ## Questions 65–68 answer-key correction — 2026-09-20
 
 - Answer/script page 7 directly confirmed questions 65–68 as `4,1,4,3`; corrected prior page-11 source transcription commit `928cc1ced6ae85c1b78c7e4cca017fbb9100884f` was pushed, fetched, and exact-HEAD verified (`WORK PERSISTENCE PASS`).
