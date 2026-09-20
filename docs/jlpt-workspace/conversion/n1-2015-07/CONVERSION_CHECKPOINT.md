@@ -77,3 +77,5 @@ Next: continue source transcription with question 70 from the 問題13 reader-mo
 - Supervisor durable unit: `4da0a2d4b55c7e86aeb3091ec5bb6721d17bd2ca` | `written question 67 across source pages 10–11` | `2026-09-20T11:09:47Z`
 
 - Supervisor durable unit: `252b236b255f70e454c28510fc84b8886c701da9` | `written question 68 across source pages 10–11` | `2026-09-20T11:14:54Z`
+
+- Supervisor durable unit: `6f7be30133d3595816b02d27fb0b55b644d3cbae` | `written question 69 across source pages 11–12` | `2026-09-20T11:18:35Z`
