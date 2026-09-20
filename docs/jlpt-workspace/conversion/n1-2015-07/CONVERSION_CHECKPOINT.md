@@ -2,7 +2,7 @@
 
 - Exam ID: `n1-2015-07-exam-07`.
 - Scope: full available exam recovery. Automated listening timing/data is authorized only as candidate/unverified; it must not claim human, perceptual, or audio verification.
-- Official sources: `assets/jlpt/n1/2015-07/question/page-02.jpg`, `question/page-05.jpg`, `question/page-06.jpg`, `question/page-07.jpg`, `question/page-08.jpg`, `question/page-09.jpg`, and `answer-script/page-01.jpg` were visually read. The page 2 and answer-key SHA-256 values are recorded in `.jlpt-backups/n1-2015-07-written-page-02-20260920-164059/SHA256-SOURCE.txt`; the page 5 SHA-256 is recorded in `.jlpt-backups/n1-2015-07-written-q39-q45-20260920-174306/SHA256-BEFORE.txt`; page 6 has SHA-256 `896eb237c1084db6bd9d19775b73614b00b0406634cc51b792ac314cbcfe6215`; page 7 has SHA-256 `d6923d9de633f5bfab829146100a3bd0e564fa9d4dbe8385c4ed0806a5921cd4`; page 8 has SHA-256 `c8a4bfeb10740aca082273d62165b1feffe466daf1f5410f59b02960015f93cf`; page 9 has SHA-256 `17a8d9e1598c0219da263d178406ed87aa93faebf019f10f2979fc218e40eb82`.
+- Official sources: `assets/jlpt/n1/2015-07/question/page-02.jpg`, `question/page-05.jpg`, `question/page-06.jpg`, `question/page-07.jpg`, `question/page-08.jpg`, `question/page-09.jpg`, `question/page-10.jpg`, and `answer-script/page-01.jpg` were visually read. The page 2 and answer-key SHA-256 values are recorded in `.jlpt-backups/n1-2015-07-written-page-02-20260920-164059/SHA256-SOURCE.txt`; the page 5 SHA-256 is recorded in `.jlpt-backups/n1-2015-07-written-q39-q45-20260920-174306/SHA256-BEFORE.txt`; page 6 has SHA-256 `896eb237c1084db6bd9d19775b73614b00b0406634cc51b792ac314cbcfe6215`; page 7 has SHA-256 `d6923d9de633f5bfab829146100a3bd0e564fa9d4dbe8385c4ed0806a5921cd4`; page 8 has SHA-256 `c8a4bfeb10740aca082273d62165b1feffe466daf1f5410f59b02960015f93cf`; page 9 has SHA-256 `17a8d9e1598c0219da263d178406ed87aa93faebf019f10f2979fc218e40eb82`; page 10 has SHA-256 `a681823bcf33fb62a93faed6e5b40cc39c3796e200cc531f26058c5c437ebb3e`.
 - Written page 2: questions 1–17 transcribed into `written-page-02.review.json`; each has four options and matches `N1_2015_07_WRITTEN_KEY` and the official answer table.
 - Written page 3: questions 18–25 transcribed into `written-page-03.review.json`; each has four choices and matches the official answer table.
 - Questions 26–28 and 30 were source-transcribed from pages 3–4 into `written-page-03-q26-q28.review.json`.
@@ -25,11 +25,12 @@
 - Question 60 was source-transcribed from page 9 into `written-page-09-q60.review.json` and checked against `N1_2015_07_WRITTEN_KEY` and the official answer table.
 - Question 61 was source-transcribed from page 9 into `written-page-09-q61.review.json` and checked against `N1_2015_07_WRITTEN_KEY` and the official answer table.
 - Question 62 was source-transcribed from page 9 into `written-page-09-q62.review.json` and checked against `N1_2015_07_WRITTEN_KEY` and the official answer table.
-- Status: `WRITTEN_IN_PROGRESS` (61/70, with question 29 blocked). This is not full-exam `structured_ready`.
+- Question 63 was source-transcribed across pages 9–10 into `written-page-09-10-q63.review.json` and checked against `N1_2015_07_WRITTEN_KEY` and the official answer table.
+- Status: `WRITTEN_IN_PROGRESS` (62/70, with question 29 blocked). This is not full-exam `structured_ready`.
 - Durable checkpoint: written questions 1–28 and 30–38 exist on remote commit `8ba37fdf0fb6ef1283231f592b669b62ef35f690`; questions 39–45 exist on remote commit `d2c8e17e05632978366ecdedf21b0e923665ae8d`; questions 46–48 exist in the startup remote-tracking history at commit `cf50bfc4e13f92be6af8ad2e666ff321c3393087`.
 - Unattended full-recovery supervisor/rules are remote-persisted at `1420130d835b15db7258c1cd070f1a691e42b855`; no question 39 content was started in that unit.
 
-Next: continue source transcription with question 63 across `assets/jlpt/n1/2015-07/question/page-09.jpg` and `assets/jlpt/n1/2015-07/question/page-10.jpg`. Keep question 29 `BLOCKED_SOURCE_UNREADABLE`; do not infer it from the answer key. After available written units, continue listening candidate, sourced explanations/translations, and candidate integration under the current unattended rules.
+Next: continue source transcription with question 64 on `assets/jlpt/n1/2015-07/question/page-10.jpg`, reusing the question 63 comparative passage. Keep question 29 `BLOCKED_SOURCE_UNREADABLE`; do not infer it from the answer key. After available written units, continue listening candidate, sourced explanations/translations, and candidate integration under the current unattended rules.
 
 - Supervisor durable unit: `e4487abefb371f1498a9606b9ef2f3fd6907813b` | `written question 49 across source pages 6–7` | `2026-09-20T09:54:40Z`
 
