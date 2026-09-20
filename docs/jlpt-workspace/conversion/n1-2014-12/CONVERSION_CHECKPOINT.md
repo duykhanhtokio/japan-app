@@ -198,6 +198,13 @@ Next: durably persist the complete listening-option source gate, then review sou
 
 Next: durably persist schema review; runtime adapter work remains blocked by perceptual audio-timing approval.
 
+## Local audio timing review tool — 2026-09-20
+
+- Added `scripts/review-n1-2014-12-audio.mjs`, a loopback-only review server. It validates all 36 ranges before serving, shows segment number/time/script, supports replay and PASS/NEEDS_ADJUSTMENT, and writes resumable choices to `runtime-review/audio-timing-review.json`.
+- The tool starts at the first pending segment after restart. It is separate from the locked JLPT UI and does not alter timing verification status itself.
+
+Next: durably persist the review tool, then have the user perform perceptual review locally.
+
 ## Written question page 7 transcription — 2026-09-20
 
 - Transcribed complete questions 49–52 from `question/page-07.jpg`; question 53 remains deferred to page 8.
