@@ -13,6 +13,8 @@ This file exists so a new AI session can continue work without asking the user t
 
 All listening work is deferred by the user: do not process audio, Whisper, timecodes, listening transcripts, or audio review for any exam unless the user explicitly reopens that scope. Preserve existing artifacts without treating them as verified. Prioritize source-verified written conversion (vocabulary/kanji, grammar, reading, choices, keys, required written images, explanations, and approved translation metadata). A written-only result may be `WRITTEN_READY`, but must never be marked full-exam `structured_ready` while listening is deferred.
 
+For a long unattended written-only batch, the default runner is `bash scripts/run-jlpt-written-unattended.sh`; it reads `docs/jlpt-workspace/JLPT_WRITTEN_UNATTENDED_PROMPT.md` for each isolated unit and validates persistence before continuing. Its runbook is `docs/jlpt-workspace/JLPT_WRITTEN_UNATTENDED_RUNBOOK.md`.
+
 ## 1. Mandatory startup procedure
 
 Before changing anything:
