@@ -191,6 +191,13 @@ Next: durably persist 問題3 options 1–6.
 
 Next: durably persist the complete listening-option source gate, then review source-only candidate schema readiness without attaching audio timing.
 
+## Source-only candidate schema review — 2026-09-20
+
+- Added `check-n1-2014-12-source-only.mjs`; it verifies 107 unique source-traceable responses, valid choices/keys, 37 listening responses, and the absence of runtime audio metadata.
+- Builder check, schema check, and JLPT UI lock PASS.
+
+Next: durably persist schema review; runtime adapter work remains blocked by perceptual audio-timing approval.
+
 ## Written question page 7 transcription — 2026-09-20
 
 - Transcribed complete questions 49–52 from `question/page-07.jpg`; question 53 remains deferred to page 8.
