@@ -212,6 +212,14 @@ Next: durably persist the review tool, then have the user perform perceptual rev
 
 Next: durably persist the partial review artifact, then restart the improved local review server at the first pending segment (`n1-2014-12-p3-q05`).
 
+## Whisper word-timestamp realignment candidate — 2026-09-20
+
+- Local Whisper word-timestamp output is complete at `whisper-word-timestamps/n1-2014-12.json`: 679 ASR segments and 7,568 word timestamps.
+- `audio-alignment-realigned.candidate.json` contains 36 ordered candidate ranges. All values are milliseconds; no range overlaps, has zero duration, or exceeds the 2,913,140 ms source duration. The final listening segment ends at 2,900,000 ms, before the separate exam-closing speech beginning near 2,909,580 ms.
+- This is candidate-only evidence. Existing user PASS decisions remain review records; no timing receives perceptual approval or verified status automatically.
+
+Next: launch the simplified two-button local review server and continue human review from the first pending segment.
+
 ## Written question page 7 transcription — 2026-09-20
 
 - Transcribed complete questions 49–52 from `question/page-07.jpg`; question 53 remains deferred to page 8.
