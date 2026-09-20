@@ -123,3 +123,5 @@ Next: keep question 29 `BLOCKED_SOURCE_UNREADABLE`; do not infer it from the ans
 - Supervisor durable unit: `b6a208c5ecd8205b0f20bb7fbc94f796ed84f12a` | `source explanation 33 from answer-script page 04` | `2026-09-20T12:48:12Z`
 
 - Supervisor durable unit: `8f18ddd5f1e5c8d25e934507294afade2146d91c` | `source explanation 34 from answer-script page 04` | `2026-09-20T12:50:51Z`
+
+- Supervisor durable unit: `974f30f5dd4239ffd9c584b445d3b8813bdfcb7f` | `source explanation 35 from answer-script page 04` | `2026-09-20T12:53:31Z`
