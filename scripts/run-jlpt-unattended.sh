@@ -159,7 +159,7 @@ for ((turn=1; turn<=MAX_TURNS; turn++)); do
   while :; do
     rm -f "$result"
     set +e
-    "$codex_bin" exec --sandbox workspace-write --approve-for-me -C "$root" \
+    "$codex_bin" exec --sandbox workspace-write -C "$root" \
       --output-last-message "$result" "$prompt" >"$log" 2>&1
     codex_rc=$?
     set -e
