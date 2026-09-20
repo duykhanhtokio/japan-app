@@ -9,6 +9,10 @@ LAST UPDATED: 2026-09-17
 
 This file exists so a new AI session can continue work without asking the user to reconstruct prior decisions. Chat history is supporting context only. The current project files, checksums, checkpoints, and validation scripts are authoritative.
 
+## Current cross-exam scope restriction — 2026-09-20
+
+All listening work is deferred by the user: do not process audio, Whisper, timecodes, listening transcripts, or audio review for any exam unless the user explicitly reopens that scope. Preserve existing artifacts without treating them as verified. Prioritize source-verified written conversion (vocabulary/kanji, grammar, reading, choices, keys, required written images, explanations, and approved translation metadata). A written-only result may be `WRITTEN_READY`, but must never be marked full-exam `structured_ready` while listening is deferred.
+
 ## 1. Mandatory startup procedure
 
 Before changing anything:

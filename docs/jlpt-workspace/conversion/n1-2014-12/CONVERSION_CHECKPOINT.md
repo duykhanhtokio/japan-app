@@ -220,6 +220,14 @@ Next: durably persist the partial review artifact, then restart the improved loc
 
 Next: launch the simplified two-button local review server and continue human review from the first pending segment.
 
+## Listening deferred by user — 2026-09-20
+
+- Status: `DEFERRED_UNVERIFIED`.
+- Reason: the user explicitly paused all N1 12/2014 audio review, Whisper/timecode work, transcripts, and segment handling. Preserve all existing audio artifacts without deletion; do not infer verification, listening pass, or `structured_ready`.
+- The locally generated `runtime-review/simple-perceptual-review.json` is not a valid review record (it contains an `undefined` key from the faulty local UI) and is deliberately uncommitted. It must not confer perceptual approval.
+
+Next: do not return to listening unless the user explicitly requests it. Prioritize source-verified written conversion for remaining exams; mark only `WRITTEN_READY` (or equivalent), never full-exam `structured_ready` while listening is deferred.
+
 ## Written question page 7 transcription — 2026-09-20
 
 - Transcribed complete questions 49–52 from `question/page-07.jpg`; question 53 remains deferred to page 8.
