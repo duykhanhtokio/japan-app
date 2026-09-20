@@ -149,6 +149,13 @@ Next: await perceptual approval of the candidate timings before building any run
 
 Next: implement only a source-only structured builder if needed; do not attach timing metadata or register the exam until perceptual audio approval is recorded.
 
+## Source-only structured candidate — 2026-09-20
+
+- Added `scripts/build-n1-2014-12-source-only.mjs` and its deterministic output `source-only-structured.candidate.json`. The candidate has 107 source-traceable responses (70 written, 37 listening) but contains no runtime audio metadata.
+- Builder and `--check` PASS, together with source preflight and JLPT UI-lock validation. The 19 問題1–3 listening reviews do not yet contain printed response options, so their source-only records intentionally retain empty option arrays. This candidate is not runtime-ready and must not be adapted or registered.
+
+Next: source-transcribe the missing printed listening options for 問題1–3 before any runtime candidate work; retain the perceptual audio-timing gate and do not alter the locked JLPT UI.
+
 ## Written question page 7 transcription — 2026-09-20
 
 - Transcribed complete questions 49–52 from `question/page-07.jpg`; question 53 remains deferred to page 8.
