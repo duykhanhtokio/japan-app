@@ -95,3 +95,5 @@ Next: keep question 29 `BLOCKED_SOURCE_UNREADABLE`; do not infer it from the ans
 - Supervisor durable unit: `a2a3541d718907fb6edc3a1d1982281baf5b2866` | `listening problem 3 questions 1–6 with candidate audio ranges` | `2026-09-20T11:50:19Z`
 
 - Supervisor durable unit: `2df4a1721cee0faae5e5fc64fdc5cdfaf8bcf6e8` | `listening problem 4 questions 1–14 with candidate audio ranges` | `2026-09-20T11:56:42Z`
+
+- Supervisor durable unit: `315d48360390966a4e42006293744cbad35080bf` | `listening problem 5 questions 1–3 (4 scored responses, 3 unique candidate audio segments)` | `2026-09-20T12:05:01Z`
