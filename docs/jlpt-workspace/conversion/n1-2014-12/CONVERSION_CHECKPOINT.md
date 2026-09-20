@@ -135,6 +135,13 @@ Next: conduct source-script/audio review of all candidate boundaries before usin
 
 Next: preserve the candidate-only timing status and begin source-to-structured integration planning; do not add audio timing to runtime data until a perceptual audio review has approved it, and do not alter the locked JLPT UI.
 
+## Source-to-structured integration planning — 2026-09-20
+
+- Added `STRUCTURED_INTEGRATION_PLAN.md`, defining the source-review inputs, the 70 written / 37 listening / 36 unique-audio invariants, the 問題5 shared-segment rule, and the deterministic-builder validation gates.
+- The plan explicitly keeps this exam unregistered and blocks runtime audio metadata until a perceptual timing review is recorded. No JLPT UI, route, style, or registry was changed.
+
+Next: await perceptual approval of the candidate timings before building any runtime candidate that includes audio metadata; source-only structured conversion may be planned but must not bypass this gate.
+
 ## Written question page 7 transcription — 2026-09-20
 
 - Transcribed complete questions 49–52 from `question/page-07.jpg`; question 53 remains deferred to page 8.
