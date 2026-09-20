@@ -44,6 +44,13 @@ AI workspaces are temporary and may be replaced without notice. Local files, unc
 
 No AI may interpret “continue continuously” as permission to postpone persistence. The durability gate in section 10 takes precedence over the continuous-work rule.
 
+### Execution evidence and unit safety
+
+- Never report a process as running after control returns without a current process/tool check.
+- Completion reports require immediately preceding tool evidence; file work requires write, validation, commit, push, fetch, and `WORK PERSISTENCE PASS`.
+- Do not finish at analysis or a plan when a safe authorized implementation step remains.
+- Validate seconds ↔ milliseconds conversions explicitly before writing audio timing values.
+
 ## 2. Project architecture relevant to JLPT
 
 | Responsibility | Location |

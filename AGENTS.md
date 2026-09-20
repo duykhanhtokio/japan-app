@@ -41,6 +41,14 @@ The AI must not begin the next page, section, exam, or large batch while the pre
 
 Never tell the user that work is “saved,” “recorded,” “completed,” “safe,” or “available for the next session” unless the remote verification step passes. A `.jlpt-backups` directory is only a short-term rollback aid and never satisfies the durable-work gate.
 
+## Execution-evidence discipline
+
+- Do not claim a process is running or work is in progress after returning to an input prompt unless a live tool/process check supplies current evidence.
+- Every completion claim must cite evidence from the immediately preceding command or tool result.
+- For file-changing work, perform the actual write, relevant validation, narrow commit, push, fetch, and work-persistence verification; analysis or a proposed next step is not completion.
+- Do not stop after analysis while an authorized, safe execution step remains. Continue autonomously within scope.
+- Validate every seconds-to-milliseconds conversion explicitly; never substitute seconds for millisecond fields.
+
 ## JLPT approved exam UI lock
 
 The current JLPT N1 exam UI is user-approved and locked. Before changing JLPT code, read:
