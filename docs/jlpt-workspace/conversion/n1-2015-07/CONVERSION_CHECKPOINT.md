@@ -71,3 +71,5 @@ Next: continue source transcription with question 68 from the 問題12 passage a
 - Supervisor durable unit: `6e777cdfb44c49fe7d51b6acf4d7a08a9f6d95be` | `written question 65 across source pages 10–11` | `2026-09-20T11:00:46Z`
 
 - Supervisor durable unit: `0d21a78813b92f7ef792695f3f24e102c06a0a50` | `written question 66 across source pages 10–11` | `2026-09-20T11:04:08Z`
+
+- Supervisor durable unit: `4da0a2d4b55c7e86aeb3091ec5bb6721d17bd2ca` | `written question 67 across source pages 10–11` | `2026-09-20T11:09:47Z`
