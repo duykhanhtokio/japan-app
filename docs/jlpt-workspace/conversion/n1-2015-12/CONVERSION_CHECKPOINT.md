@@ -8,3 +8,5 @@
 - Durable checkpoint: pending outer-supervisor commit, push, fetch, and remote persistence verification for this page-02 unit.
 
 Next: after the supervisor remotely persists this unit, continue written question 20 on `assets/jlpt/n1/2015-12/question/page-03.jpg`. Do not register an incomplete candidate or change the locked UI.
+
+- Supervisor durable unit: `68e354b7f6a19a2aefdeca531670972f8695138d` | `written source page 02, questions 1–19` | `2026-09-20T23:33:46Z`
