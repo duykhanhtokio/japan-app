@@ -128,6 +128,13 @@ Next: durably persist the local Whisper candidate-alignment unit, then conduct s
 
 Next: conduct source-script/audio review of all candidate boundaries before using any timing in structured runtime data. Keep every timing status as candidate until that review is complete; do not alter the locked JLPT UI.
 
+## Candidate boundary signal review — 2026-09-20
+
+- Ran `ffmpeg` silence detection on the approved source MP3 independently of Whisper. All 72 candidate start/end edges either fall within, or are within 1,500 ms of, a detected silence interval; the apparent long gaps at 168,000 ms and 939,000 ms are correctly inside inter-question silence.
+- This confirms order, duration, gap, and audio-boundary consistency for all 36 candidates. It is signal-level validation only, not a perceptual transcript/timing approval. Timing status remains `candidate_alignment_requires_audio_review`.
+
+Next: preserve the candidate-only timing status and begin source-to-structured integration planning; do not add audio timing to runtime data until a perceptual audio review has approved it, and do not alter the locked JLPT UI.
+
 ## Written question page 7 transcription — 2026-09-20
 
 - Transcribed complete questions 49–52 from `question/page-07.jpg`; question 53 remains deferred to page 8.
