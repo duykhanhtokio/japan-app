@@ -11,3 +11,5 @@
 Next: after the supervisor remotely persists this unit, continue written question 30 across `assets/jlpt/n1/2015-12/question/page-03.jpg` and `page-04.jpg`. Do not register an incomplete candidate or change the locked UI.
 
 - Supervisor durable unit: `68e354b7f6a19a2aefdeca531670972f8695138d` | `written source page 02, questions 1–19` | `2026-09-20T23:33:46Z`
+
+- Supervisor durable unit: `5236c07f3674ecf8564ee38512bd70f537650c0b` | `written source page 03, questions 20–29` | `2026-09-20T23:38:24Z`
