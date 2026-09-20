@@ -44,7 +44,7 @@ for ((turn=1; turn<=MAX_TURNS; turn++)); do
   prompt=$(cat docs/jlpt-workspace/JLPT_WRITTEN_UNATTENDED_PROMPT.md)
   ok=0
   for attempt in 1 2 3; do
-    if codex exec --sandbox workspace-write --approve-for-me -C "$root" --output-last-message "$result" "$prompt" >"$log" 2>&1; then ok=1; break; fi
+    if codex exec --sandbox workspace-write -C "$root" --output-last-message "$result" "$prompt" >"$log" 2>&1; then ok=1; break; fi
     echo "attempt=$attempt exit=failed" >>"$log"
     sleep "$SLEEP_SECONDS"
   done
