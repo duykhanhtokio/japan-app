@@ -205,6 +205,13 @@ Next: durably persist schema review; runtime adapter work remains blocked by per
 
 Next: durably persist the review tool, then have the user perform perceptual review locally.
 
+## Perceptual audio review in progress — 2026-09-20
+
+- Preserved the user-created `runtime-review/audio-timing-review.json`: 16 of 36 segments have explicit review decisions (3 `PASS`, 13 `NEEDS_ADJUSTMENT`); the remaining 20 are `PENDING`.
+- This artifact records review decisions only. It does not mark any timing as verified, does not infer corrected values, and must not be used for runtime integration.
+
+Next: durably persist the partial review artifact, then restart the improved local review server at the first pending segment (`n1-2014-12-p3-q05`).
+
 ## Written question page 7 transcription — 2026-09-20
 
 - Transcribed complete questions 49–52 from `question/page-07.jpg`; question 53 remains deferred to page 8.
