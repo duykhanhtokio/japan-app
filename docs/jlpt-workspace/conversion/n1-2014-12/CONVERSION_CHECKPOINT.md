@@ -170,6 +170,13 @@ Next: durably persist 問題1 options 1–3, then transcribe the remaining print
 
 Next: durably persist 問題1 options 4–6, then transcribe the printed choices for 問題2 from question page 13.
 
+## Listening 問題2 options 1–7 — 2026-09-20
+
+- Visually transcribed all 28 printed choices for 問題2 from `question/page-13.jpg` into the seven corresponding source-review files.
+- Verified keys remain `3,1,4,2,2,4,2`. Source preflight, regenerated source-only candidate, builder `--check`, and JLPT UI lock all PASS.
+
+Next: durably persist 問題2 options 1–7, then transcribe the printed choices for 問題3 from its question source page.
+
 ## Written question page 7 transcription — 2026-09-20
 
 - Transcribed complete questions 49–52 from `question/page-07.jpg`; question 53 remains deferred to page 8.
