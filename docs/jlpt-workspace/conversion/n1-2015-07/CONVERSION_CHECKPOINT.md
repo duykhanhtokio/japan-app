@@ -345,3 +345,5 @@ Next: keep question 29 `BLOCKED_SOURCE_UNREADABLE`; do not infer it from the ans
 - Supervisor durable unit: `dfd630ceda446f471cd0e740122d33b41c1fd4e7` | `AI-unreviewed explanation translation for written question 38 across 12 target locales` | `2026-09-20T16:49:23Z`
 
 - Supervisor durable unit: `c4438db47610277a64549f7fc1f61251184deab6` | `AI-unreviewed explanation translation for written question 39 across 12 target locales` | `2026-09-20T16:53:22Z`
+
+- Supervisor durable unit: `b4a5905d6dd2836b41af3bf9b081a8105f2cf869` | `AI-unreviewed explanation translation for written question 40 across 12 target locales` | `2026-09-20T16:57:17Z`
