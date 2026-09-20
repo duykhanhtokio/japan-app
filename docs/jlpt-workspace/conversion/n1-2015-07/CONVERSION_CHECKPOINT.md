@@ -147,3 +147,5 @@ Next: keep question 29 `BLOCKED_SOURCE_UNREADABLE`; do not infer it from the ans
 - Supervisor durable unit: `756f1c51e568c21f5d43edb075dce1ac57c10eb0` | `source explanation 41 from answer-script page 05` | `2026-09-20T13:12:20Z`
 
 - Supervisor durable unit: `c038968b7661e691b2c05ab03a52138065c311de` | `source explanation 42 from answer-script page 05` | `2026-09-20T13:15:38Z`
+
+- Supervisor durable unit: `aa574c285d3e8af35b1f4381e2f1c56a31a229e8` | `source explanation 43 from answer-script page 05` | `2026-09-20T13:18:42Z`
