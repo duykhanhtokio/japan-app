@@ -163,6 +163,13 @@ Next: source-transcribe the missing printed listening options for 問題1–3 be
 
 Next: durably persist 問題1 options 1–3, then transcribe the remaining printed choices for 問題1 items 4–6 from the next listening question source page.
 
+## Listening 問題1 options 4–6 — 2026-09-20
+
+- Visually transcribed the four printed choices for 問題1 items 4–6 from `question/page-13.jpg`; verified keys remain `3,1,4`.
+- Source preflight, regenerated source-only candidate, builder `--check`, and JLPT UI lock all PASS. No timing or UI state changed.
+
+Next: durably persist 問題1 options 4–6, then transcribe the printed choices for 問題2 from question page 13.
+
 ## Written question page 7 transcription — 2026-09-20
 
 - Transcribed complete questions 49–52 from `question/page-07.jpg`; question 53 remains deferred to page 8.
