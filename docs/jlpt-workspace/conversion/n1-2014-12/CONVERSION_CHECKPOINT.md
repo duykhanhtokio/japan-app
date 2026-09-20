@@ -828,6 +828,12 @@ Next: re-run listening-source coverage validation before beginning integration w
 
 Next: inspect the established N1 structured-exam adapter/data pattern and prepare a source-to-structured integration plan without changing the locked JLPT UI.
 
+## Listening-source coverage durability record — 2026-09-20
+
+- Coverage completion commit `316a1e35bdefc0384c53b718b52c562153657c34` was pushed to `origin/recovery/n1-2013-12`, fetched, and exact-HEAD verified with `check-work-persistence.mjs` (`WORK PERSISTENCE PASS`).
+
+Next: inspect the established N1 structured-exam adapter/data pattern and prepare a source-to-structured integration plan without changing the locked JLPT UI.
+
 ## Questions 65–68 answer-key correction — 2026-09-20
 
 - Answer/script page 7 directly confirmed questions 65–68 as `4,1,4,3`; corrected prior page-11 source transcription commit `928cc1ced6ae85c1b78c7e4cca017fbb9100884f` was pushed, fetched, and exact-HEAD verified (`WORK PERSISTENCE PASS`).
