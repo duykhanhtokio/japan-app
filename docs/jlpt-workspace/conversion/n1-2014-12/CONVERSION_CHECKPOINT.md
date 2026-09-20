@@ -807,6 +807,13 @@ Next: validate and durably persist 問題5 question 3's paired responses, then v
 
 Next: validate listening-source transcription coverage before beginning any integration work.
 
+## Listening transcript 問題5 question 1 option correction — 2026-09-20
+
+- Coverage validation found that `listening-transcript-p5-q01.review.json` omitted the four printed response choices and its key field.
+- Rechecked answer/script page 13 and restored `赤い鳥`, `白い鳥`, `黄色い鳥`, `水色の鳥` with verified correct option `2`.
+
+Next: validate and durably persist the 問題5 question 1 option correction, then re-run listening-source coverage validation.
+
 ## Questions 65–68 answer-key correction — 2026-09-20
 
 - Answer/script page 7 directly confirmed questions 65–68 as `4,1,4,3`; corrected prior page-11 source transcription commit `928cc1ced6ae85c1b78c7e4cca017fbb9100884f` was pushed, fetched, and exact-HEAD verified (`WORK PERSISTENCE PASS`).
