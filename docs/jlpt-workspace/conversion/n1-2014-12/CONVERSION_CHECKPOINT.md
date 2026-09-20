@@ -156,6 +156,13 @@ Next: implement only a source-only structured builder if needed; do not attach t
 
 Next: source-transcribe the missing printed listening options for 問題1–3 before any runtime candidate work; retain the perceptual audio-timing gate and do not alter the locked JLPT UI.
 
+## Listening 問題1 options 1–3 — 2026-09-20
+
+- Visually transcribed the four printed choices for 問題1 items 1–3 from `question/page-12.jpg` into their corresponding source-review files.
+- The verified keys remain `2,1,2`; source-only builder and preflight PASS after regeneration. No timing or UI state changed.
+
+Next: durably persist 問題1 options 1–3, then transcribe the remaining printed choices for 問題1 items 4–6 from the next listening question source page.
+
 ## Written question page 7 transcription — 2026-09-20
 
 - Transcribed complete questions 49–52 from `question/page-07.jpg`; question 53 remains deferred to page 8.
