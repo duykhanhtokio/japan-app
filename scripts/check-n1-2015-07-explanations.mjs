@@ -26,3 +26,35 @@ for (const record of records) {
 
 assert.ok(!records.some((record) => record.questionNumber === 29), 'Blocked question 29 must not be inferred');
 console.log(`N1 2015-07 EXPLANATION SOURCE PASS: ${records.length}/69 source-readable records; unique questions, matching source keys and image hashes; blocked question 29 absent.`);
+
+const targetLocales = ['ja', 'en', 'vi', 'id', 'zh-TW', 'hi', 'bn', 'ne', 'my', 'th', 'km', 'tl'].sort();
+const sources = new Map(records.map((record) => [record.questionNumber, record]));
+const translationFiles = fs.readdirSync(explanationDir)
+  .filter((name) => /^translations-q\d+-q\d+\.json$/.test(name))
+  .sort();
+const translations = translationFiles.flatMap((name) => JSON.parse(fs.readFileSync(`${explanationDir}/${name}`, 'utf8')));
+
+assert.equal(new Set(translations.map((record) => record.questionNumber)).size, translations.length, 'Duplicate translation question');
+for (const record of translations) {
+  const source = sources.get(record.questionNumber);
+  assert.ok(source, `Missing source for translated question ${record.questionNumber}`);
+  assert.equal(
+    record.sourceTextSha256,
+    createHash('sha256').update(source.text).digest('hex'),
+    `Stale translation ${record.questionNumber}`,
+  );
+  assert.deepEqual(
+    record.localizedExplanations.map((entry) => entry.localeCode).sort(),
+    targetLocales,
+    `Locale coverage ${record.questionNumber}`,
+  );
+  for (const entry of record.localizedExplanations) {
+    assert.equal(entry.generatedBy, 'AI');
+    assert.equal(entry.reviewedByNativeSpeaker, false);
+    assert.equal(entry.status, 'translated_ai_unreviewed');
+    assert.ok(typeof entry.text === 'string' && entry.text.trim().length > 15, `Empty translation ${record.questionNumber}/${entry.localeCode}`);
+    assert.ok(!/TODO|PLACEHOLDER|\uFFFD/.test(entry.text), `Invalid translation ${record.questionNumber}/${entry.localeCode}`);
+  }
+}
+
+console.log(`N1 2015-07 EXPLANATION TRANSLATION PASS: ${translations.length * 12}/828 targets; all completed questions have 12 locales, source hashes and AI-unreviewed metadata; ${69 - translations.length} source-readable questions pending.`);
