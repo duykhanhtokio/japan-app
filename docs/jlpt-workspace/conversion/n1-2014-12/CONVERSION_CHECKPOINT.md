@@ -792,6 +792,14 @@ Next: validate and durably persist 問題5 question 2, then transcribe 問題5 q
 
 Next: transcribe 問題5 question 3's paired responses.
 
+## Listening transcript 問題5 question 3 paired responses — 2026-09-20
+
+- Transcribed the shared printed answer/script for 問題5 question 3 and its two independent response prompts into `listening-transcript-p5-q03.review.json`.
+- Preserved the two printed scoring keys (`4`, `1`) and the source discrepancy: the script says 「あの星」/「みどりの森」 while the printed response options say 「あの雲」/「緑の家」.
+- No timing was inferred from the audio; transcript status: `verified_against_source_image`.
+
+Next: validate and durably persist 問題5 question 3's paired responses, then transcribe 問題5 question 4.
+
 ## Questions 65–68 answer-key correction — 2026-09-20
 
 - Answer/script page 7 directly confirmed questions 65–68 as `4,1,4,3`; corrected prior page-11 source transcription commit `928cc1ced6ae85c1b78c7e4cca017fbb9100884f` was pushed, fetched, and exact-HEAD verified (`WORK PERSISTENCE PASS`).
