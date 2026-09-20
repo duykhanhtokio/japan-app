@@ -80,3 +80,5 @@ Next: keep question 29 `BLOCKED_SOURCE_UNREADABLE`; do not infer it from the ans
 - Supervisor durable unit: `252b236b255f70e454c28510fc84b8886c701da9` | `written question 68 across source pages 10–11` | `2026-09-20T11:14:54Z`
 
 - Supervisor durable unit: `6f7be30133d3595816b02d27fb0b55b644d3cbae` | `written question 69 across source pages 11–12` | `2026-09-20T11:18:35Z`
+
+- Supervisor durable unit: `7db17b91728995ce765ad6045244f8ae317948a9` | `written question 70 across source pages 11–12` | `2026-09-20T11:22:23Z`
