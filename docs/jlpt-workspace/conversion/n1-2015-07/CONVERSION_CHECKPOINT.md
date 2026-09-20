@@ -10,8 +10,7 @@
 - Questions 36–38 were source-transcribed from pages 4–5 into `written-page-04-q36-q38.review.json`.
 - Questions 39–45 were source-transcribed from page 5 into `written-page-05-q39-q45.review.json` and checked against `N1_2015_07_WRITTEN_KEY`.
 - Status: `WRITTEN_IN_PROGRESS` (44/70, with question 29 blocked). This is not full-exam `structured_ready`.
-- Durable checkpoint: written questions 1–28 and 30–38 exist on remote commit `8ba37fdf0fb6ef1283231f592b669b62ef35f690`.
+- Durable checkpoint: written questions 1–28 and 30–38 exist on remote commit `8ba37fdf0fb6ef1283231f592b669b62ef35f690`; questions 39–45 exist on remote commit `d2c8e17e05632978366ecdedf21b0e923665ae8d` with `WORK PERSISTENCE PASS`.
 - Unattended full-recovery supervisor/rules are remote-persisted at `1420130d835b15db7258c1cd070f1a691e42b855`; no question 39 content was started in that unit.
-- Local checkpoint awaiting outer-supervisor remote persistence: written questions 39–45. No remote durability is claimed here.
 
-Next after outer-supervisor persistence: continue source transcription with question 46 from `assets/jlpt/n1/2015-07/question/page-06.jpg`. Keep question 29 `BLOCKED_SOURCE_UNREADABLE`; do not infer it from the answer key. After available written units, continue listening candidate, sourced explanations/translations, and candidate integration under the current unattended rules.
+Next: continue source transcription with question 46 from `assets/jlpt/n1/2015-07/question/page-06.jpg`. Keep question 29 `BLOCKED_SOURCE_UNREADABLE`; do not infer it from the answer key. After available written units, continue listening candidate, sourced explanations/translations, and candidate integration under the current unattended rules.

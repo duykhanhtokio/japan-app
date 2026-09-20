@@ -13,7 +13,7 @@ This file exists so a new AI session can continue work without asking the user t
 
 The user has authorized automated end-to-end recovery of all available JLPT exams, including listening candidate segmentation and integration. Human per-segment review is deferred until after broad catalog integration. Automatically derived timing must be explicitly candidate/unverified, must not claim human/perceptual/audio approval, and may carry `needs_later_review` without blocking other work. A source-unreadable written question or unresolved listening segment is a local blocker only; record it and continue all other available units.
 
-For a long unattended batch, use `bash scripts/run-jlpt-unattended.sh`. It reads `docs/jlpt-workspace/JLPT_UNATTENDED_PROMPT.md`, lets each sandboxed child create one validated local commit without network access, and makes the outer supervisor push/fetch/run persistence verification before another child starts. See `docs/jlpt-workspace/JLPT_UNATTENDED_RUNBOOK.md`.
+For a long unattended batch, use `bash scripts/run-jlpt-unattended.sh`. It reads `docs/jlpt-workspace/JLPT_UNATTENDED_PROMPT.md`; each sandboxed child only edits one data/checkpoint unit, validates it locally, and returns fixed-schema JSON. The outer supervisor alone verifies the changed-file manifest, stages exact paths, commits, pushes, fetches, and runs persistence verification before another child starts. See `docs/jlpt-workspace/JLPT_UNATTENDED_RUNBOOK.md`.
 
 ## 1. Mandatory startup procedure
 
@@ -193,7 +193,7 @@ Expected verified state:
 
 ## 7. Current JLPT resume point
 
-Newest active exam checkpoint: `docs/jlpt-workspace/conversion/n1-2015-07/CONVERSION_CHECKPOINT.md`. N1 07/2015 written questions 1–28 and 30–38 are remotely durable; question 29 remains `BLOCKED_SOURCE_UNREADABLE`. Verify the checkpoint and Git state, then continue from the first available incomplete unit (currently expected questions 39–45 on `assets/jlpt/n1/2015-07/question/page-05.jpg`). After available written work, continue listening candidate, explanations/translations when required and sourced, and candidate integration. Do not redo remotely verified units.
+Newest active exam checkpoint: `docs/jlpt-workspace/conversion/n1-2015-07/CONVERSION_CHECKPOINT.md`. N1 07/2015 written questions 1–28 and 30–45 are remotely durable at `d2c8e17e05632978366ecdedf21b0e923665ae8d`; question 29 remains `BLOCKED_SOURCE_UNREADABLE`. Verify the checkpoint and Git state, then continue from the first available incomplete unit, question 46 on `assets/jlpt/n1/2015-07/question/page-06.jpg`. After available written work, continue listening candidate, explanations/translations when required and sourced, and candidate integration. Do not redo remotely verified units.
 
 The historical text below preserves earlier exam checkpoints; when it conflicts with this newest resume point, follow the newest checkpoint and actual repository state.
 

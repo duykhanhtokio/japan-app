@@ -53,7 +53,7 @@ Never tell the user that work is “saved,” “recorded,” “completed,” �
 
 For unattended multi-unit JLPT recovery, use `bash scripts/run-jlpt-unattended.sh` from a clean remote-tracking recovery branch. It covers written recovery, listening candidate timing/data, explanations/translations, and approved data/adapter integration. Read `docs/jlpt-workspace/JLPT_UNATTENDED_RUNBOOK.md` first. The old written runner is only a compatibility wrapper.
 
-The sandboxed child may create one validated local commit but must not fetch or push. The outer supervisor owns push/fetch/persistence verification and may start the next child only after `WORK PERSISTENCE PASS`. Automatically derived listening timing must remain candidate/unverified; never fabricate human/perceptual/audio approval. A blocked question or segment is not a global blocker while any other repository-backed unit remains available.
+The sandboxed child may only edit one JLPT data/checkpoint unit, run local validations, and return strict schema-validated JSON. It must not stage, commit, fetch, push, or run persistence verification. The outer supervisor exclusively verifies the actual changed-file manifest, reruns validations, stages exact paths, commits, pushes, fetches, and requires `WORK PERSISTENCE PASS` before another child starts. Automatically derived listening timing must remain candidate/unverified; never fabricate human/perceptual/audio approval. A blocked question or segment is not a global blocker while any other repository-backed unit remains available.
 
 ## JLPT approved exam UI lock
 
