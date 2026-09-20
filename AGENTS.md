@@ -49,9 +49,11 @@ Never tell the user that work is “saved,” “recorded,” “completed,” �
 - Do not stop after analysis while an authorized, safe execution step remains. Continue autonomously within scope.
 - Validate every seconds-to-milliseconds conversion explicitly; never substitute seconds for millisecond fields.
 
-## Long written-recovery batches
+## Long unattended JLPT recovery
 
-For unattended multi-unit written JLPT recovery, use `bash scripts/run-jlpt-written-unattended.sh` from a clean `recovery/n1-2013-12` checkout. It invokes one durable `codex exec` unit at a time, requires remote persistence before the next turn, preserves blockers, and never opens listening scope. Read `docs/jlpt-workspace/JLPT_WRITTEN_UNATTENDED_RUNBOOK.md` before use.
+For unattended multi-unit JLPT recovery, use `bash scripts/run-jlpt-unattended.sh` from a clean remote-tracking recovery branch. It covers written recovery, listening candidate timing/data, explanations/translations, and approved data/adapter integration. Read `docs/jlpt-workspace/JLPT_UNATTENDED_RUNBOOK.md` first. The old written runner is only a compatibility wrapper.
+
+The sandboxed child may create one validated local commit but must not fetch or push. The outer supervisor owns push/fetch/persistence verification and may start the next child only after `WORK PERSISTENCE PASS`. Automatically derived listening timing must remain candidate/unverified; never fabricate human/perceptual/audio approval. A blocked question or segment is not a global blocker while any other repository-backed unit remains available.
 
 ## JLPT approved exam UI lock
 

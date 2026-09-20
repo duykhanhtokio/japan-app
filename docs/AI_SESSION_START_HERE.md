@@ -4,16 +4,16 @@
 DOCUMENT ROLE: AUTHORITATIVE SESSION ENTRY POINT
 READ: AT THE START OF EVERY AI/CODEX SESSION
 PROJECT: Japan App
-LAST UPDATED: 2026-09-17
+LAST UPDATED: 2026-09-20
 ```
 
 This file exists so a new AI session can continue work without asking the user to reconstruct prior decisions. Chat history is supporting context only. The current project files, checksums, checkpoints, and validation scripts are authoritative.
 
-## Current cross-exam scope restriction — 2026-09-20
+## Current cross-exam scope — 2026-09-20
 
-All listening work is deferred by the user: do not process audio, Whisper, timecodes, listening transcripts, or audio review for any exam unless the user explicitly reopens that scope. Preserve existing artifacts without treating them as verified. Prioritize source-verified written conversion (vocabulary/kanji, grammar, reading, choices, keys, required written images, explanations, and approved translation metadata). A written-only result may be `WRITTEN_READY`, but must never be marked full-exam `structured_ready` while listening is deferred.
+The user has authorized automated end-to-end recovery of all available JLPT exams, including listening candidate segmentation and integration. Human per-segment review is deferred until after broad catalog integration. Automatically derived timing must be explicitly candidate/unverified, must not claim human/perceptual/audio approval, and may carry `needs_later_review` without blocking other work. A source-unreadable written question or unresolved listening segment is a local blocker only; record it and continue all other available units.
 
-For a long unattended written-only batch, the default runner is `bash scripts/run-jlpt-written-unattended.sh`; it reads `docs/jlpt-workspace/JLPT_WRITTEN_UNATTENDED_PROMPT.md` for each isolated unit and validates persistence before continuing. Its runbook is `docs/jlpt-workspace/JLPT_WRITTEN_UNATTENDED_RUNBOOK.md`.
+For a long unattended batch, use `bash scripts/run-jlpt-unattended.sh`. It reads `docs/jlpt-workspace/JLPT_UNATTENDED_PROMPT.md`, lets each sandboxed child create one validated local commit without network access, and makes the outer supervisor push/fetch/run persistence verification before another child starts. See `docs/jlpt-workspace/JLPT_UNATTENDED_RUNBOOK.md`.
 
 ## 1. Mandatory startup procedure
 
@@ -193,9 +193,13 @@ Expected verified state:
 
 ## 7. Current JLPT resume point
 
-Active task: continue **N1 07/2014** on the existing user-designated `recovery/n1-2013-12` branch. Read the two preservation checkpoints below, then `docs/jlpt-workspace/conversion/n1-2014-07/CONVERSION_CHECKPOINT.md`. Its inventory is 70 written and **37** listening responses; do not inherit previous-exam counts. Commit/push/remote-verify every completed unit. The user accepted the integrated 70-written / 37-listening candidate and its 36 audio ranges on 2026-09-17; the dataset is `structured_ready`. The next action is source explanation conversion from answer/script page 2, followed by Codex-authored translations with AI-unreviewed metadata. Never use a public translation service, runtime translation API, or translation dependency.
+Newest active exam checkpoint: `docs/jlpt-workspace/conversion/n1-2015-07/CONVERSION_CHECKPOINT.md`. N1 07/2015 written questions 1–28 and 30–38 are remotely durable; question 29 remains `BLOCKED_SOURCE_UNREADABLE`. Verify the checkpoint and Git state, then continue from the first available incomplete unit (currently expected questions 39–45 on `assets/jlpt/n1/2015-07/question/page-05.jpg`). After available written work, continue listening candidate, explanations/translations when required and sourced, and candidate integration. Do not redo remotely verified units.
 
-N1 12/2013 runtime/audio was accepted by the user on 2026-09-17. Its 106-response dataset is `structured_ready`. All 70 source explanations and 840 in-session translations are now assembled into 13 locales and integrated through the existing post-submission callback. Every target remains `generatedBy: AI`, `reviewedByNativeSpeaker: false`, `status: translated_ai_unreviewed`; source transcription verification does not certify printed errors. The user accepted the final explanation rendering in Simulator on 2026-09-17 (“đã kiểm tra ok”); N1 12/2013 is complete within the requested scope. Read the N1 07/2013 preservation checkpoint below, then `docs/jlpt-workspace/conversion/n1-2013-12/CONVERSION_CHECKPOINT.md`. Do not restart written/listening transcription or translation. No N1 12/2013 review gate remains. Preserve the completed exam while working on N1 07/2014. Never send exam content to public translation services or add runtime translation APIs/dependencies.
+The historical text below preserves earlier exam checkpoints; when it conflicts with this newest resume point, follow the newest checkpoint and actual repository state.
+
+Preserved completed exam: **N1 07/2014** has 70 written and **37** listening responses; do not inherit previous-exam counts. The user accepted its integrated candidate and 36 audio ranges on 2026-09-17. Preserve this remote-verified work and do not restart it. Never use a public translation service, runtime translation API, or translation dependency.
+
+N1 12/2013 runtime/audio was accepted by the user on 2026-09-17. Its 106-response dataset is `structured_ready`. All 70 source explanations and 840 in-session translations are now assembled into 13 locales and integrated through the existing post-submission callback. Every target remains `generatedBy: AI`, `reviewedByNativeSpeaker: false`, `status: translated_ai_unreviewed`; source transcription verification does not certify printed errors. The user accepted the final explanation rendering in Simulator on 2026-09-17 (“đã kiểm tra ok”); N1 12/2013 is complete within the requested scope. Read the N1 07/2013 preservation checkpoint below, then `docs/jlpt-workspace/conversion/n1-2013-12/CONVERSION_CHECKPOINT.md`. Do not restart written/listening transcription or translation. No N1 12/2013 review gate remains. Preserve the completed exam while working from the newest N1 07/2015 checkpoint. Never send exam content to public translation services or add runtime translation APIs/dependencies.
 
 First read:
 
@@ -253,7 +257,7 @@ docs/jlpt-workspace/conversion/n1-2013-12/CONVERSION_CHECKPOINT.md
 - Do not guess kanji, kana, questions, choices, answers, transcripts, or audio boundaries.
 - A raw OCR result is never `structured_ready`.
 - Preserve source hashes in each exam checkpoint.
-- Only stop when a required source is missing/corrupt, content remains unreadable after all available comparisons, a locked UI change is required, or a real device/runtime capability is unavailable.
+- A missing/corrupt source, unreadable question, or unresolved candidate timing blocks only that item. Record it and continue other available units. Stop globally only when no written, listening candidate, explanation, translation, or integration unit remains available, or when all remaining work requires a locked UI change or unavailable runtime capability.
 - When blocked, state the precise exam, page, question, file, verified facts, unresolved fact, checks attempted, and exact input/action needed.
 
 ## 9. Startup and completion checks

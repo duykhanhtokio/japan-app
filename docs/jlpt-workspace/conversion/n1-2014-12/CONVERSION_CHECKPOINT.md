@@ -226,7 +226,7 @@ Next: launch the simplified two-button local review server and continue human re
 - Reason: the user explicitly paused all N1 12/2014 audio review, Whisper/timecode work, transcripts, and segment handling. Preserve all existing audio artifacts without deletion; do not infer verification, listening pass, or `structured_ready`.
 - The locally generated `runtime-review/simple-perceptual-review.json` is not a valid review record (it contains an `undefined` key from the faulty local UI) and is deliberately uncommitted. It must not confer perceptual approval.
 
-Next: do not return to listening unless the user explicitly requests it. Prioritize source-verified written conversion for remaining exams; mark only `WRITTEN_READY` (or equivalent), never full-exam `structured_ready` while listening is deferred.
+Historical next action (superseded 2026-09-20): listening was deferred at this checkpoint. Current policy authorizes truthful candidate/unverified listening after the active N1 07/2015 units.
 
 ## Written conversion readiness — 2026-09-20
 
@@ -234,7 +234,7 @@ Next: do not return to listening unless the user explicitly requests it. Priorit
 - Validation PASS: 70/70 continuous source-verified written questions, each with four choices and a key from the official source reviews.
 - Listening remains `DEFERRED_UNVERIFIED`; this exam is not full-exam `structured_ready` and is not registered for runtime.
 
-Next: continue written-only conversion for the next incomplete exam checkpoint; do not process listening.
+Historical next action (superseded 2026-09-20): current policy continues full available recovery, including candidate/unverified listening, in the general catalog order.
 
 ## Written explanation translation — 2026-09-20
 

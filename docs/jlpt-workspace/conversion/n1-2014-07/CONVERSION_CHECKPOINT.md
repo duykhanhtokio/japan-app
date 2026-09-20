@@ -1,11 +1,11 @@
 # N1 2014-07 conversion checkpoint
 
-## Current written-only scope override — 2026-09-20
+## Current full-recovery scope override — 2026-09-20
 
 - Written conversion is complete: 70/70 source-verified written responses, 70/70 source explanations, and 840/840 Codex-authored translation targets across 12 locales. Translation metadata remains `generatedBy: AI`, `reviewedByNativeSpeaker: false`, and `status: translated_ai_unreviewed`.
 - Effective status for the current recovery scope: `WRITTEN_READY`.
-- Listening status for the current recovery scope: `DEFERRED_UNVERIFIED`. Preserve the historical listening artifacts and earlier user-approval records without deleting or altering them, but do not perform audio, Whisper, timecode, transcript, or review work and do not rely on those records to declare a current full-exam `structured_ready` result.
-- Next action: inspect the remaining conversion checkpoints for unfinished written-only work. Do not reopen listening unless the user explicitly requests it.
+- Automated listening candidate processing is authorized across incomplete exams. Preserve this exam's historical accepted artifacts and approval records without deleting, downgrading, or redoing its remote-verified units. New automatic timings elsewhere must remain candidate/unverified and must not inherit this exam's human approval.
+- Next action: follow the newest active exam checkpoint and the general unattended full-recovery order; do not reopen completed N1 07/2014 units.
 - Scope validation: UI lock, catalog, structured-exam policy, no-scanned-runtime, navigation, 50-exam inventory, N1 2012-12 and N1 2013-07 integration, N1 2014-07 source/translation/integration checks, TypeScript, and lint all passed on 2026-09-20 (lint: 0 errors, 16 pre-existing warnings outside this scope). The pre-scope durable remote HEAD was `b97e8922aae0d43324026dd62bbd04608b6b6c27`.
 
 ## Current state — 2026-09-17
