@@ -141,7 +141,7 @@ persist_head() {
   node scripts/check-work-persistence.mjs >>"$output_log" 2>&1 || {
     echo "STOP: persistence verification failed; local state preserved; log=$output_log" >&2; return 1;
   }
-  tail -n "+$((persistence_start + 1))" "$output_log" | rg -q 'WORK PERSISTENCE PASS' || {
+  tail -n "+$((persistence_start + 1))" "$output_log" | grep -q 'WORK PERSISTENCE PASS' || {
     echo "STOP: persistence checker did not emit WORK PERSISTENCE PASS; log=$output_log" >&2; return 1;
   }
 }
@@ -163,7 +163,7 @@ validate_commit_message() {
 
 record_durable_sha() {
   local unit_sha=$1 checkpoint=$2 exam_id=$3 unit=$4 output_log=$5 record_sha staged
-  if rg -q -F "$unit_sha" "$checkpoint"; then return 0; fi
+  if grep -q -F "$unit_sha" "$checkpoint"; then return 0; fi
   printf '\n- Supervisor durable unit: `%s` | `%s` | `%s`\n' \
     "$unit_sha" "$unit" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" >>"$checkpoint"
   run_unit_validations "$output_log" "$exam_id" || return 1
@@ -252,7 +252,7 @@ for ((turn=1; turn<=MAX_TURNS; turn++)); do
     fi
     if ! node "$result_validator" validate "$result" >>"$current_log" 2>&1; then
       actual_dirty=$(git status --porcelain --untracked-files=all)
-      if ((child_rc != 0)) && [[ -z $actual_dirty ]] && rg -qi \
+      if ((child_rc != 0)) && [[ -z $actual_dirty ]] && grep -Eqi \
         'rate.?limit|capacity|too many requests|resource exhausted|temporarily unavailable' "$attempt_log" "$result" 2>/dev/null; then
         if ((rate_attempt >= ${#RATE_RETRY_DELAYS[@]})); then
           echo "STOP: rate limit retry budget exhausted; tree clean; log=$current_log" >&2; exit 10
@@ -367,7 +367,7 @@ for ((turn=1; turn<=MAX_TURNS; turn++)); do
       node scripts/check-work-persistence.mjs >>"$current_log" 2>&1 || {
         echo "STOP: final persistence gate failed; log=$current_log" >&2; exit 6;
       }
-      tail -n 20 "$current_log" | rg -q 'WORK PERSISTENCE PASS' || {
+      tail -n 20 "$current_log" | grep -q 'WORK PERSISTENCE PASS' || {
         echo "STOP: final gate lacked WORK PERSISTENCE PASS; log=$current_log" >&2; exit 6;
       }
       printf 'COMPLETE_ALL_AVAILABLE | HEAD=%s | WORK PERSISTENCE PASS\n' "$(git rev-parse HEAD)"
