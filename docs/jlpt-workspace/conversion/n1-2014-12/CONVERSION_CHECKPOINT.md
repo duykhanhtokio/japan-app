@@ -112,6 +112,16 @@ Next: validate and durably persist page 6, then transcribe question page 7.
 
 Next: transcribe question page 7.
 
+## Local Whisper candidate audio alignment — 2026-09-20
+
+- Created a repository-local Python virtual environment (`.whisper-venv`) without changing system Python; `openai-whisper 20250625` and the verified `small` model loaded successfully.
+- The approved source MP3 was transcribed locally with Whisper small. `whisper/n1-2014-12.json` is retained as non-authoritative timing evidence only; source review JSON and source images remain the authority for Japanese transcript text and scoring content.
+- Added `audio-alignment-candidates.json` containing all 36 independent ranges for the 37 scored response units (問題5 question 3 has two responses sharing `n1-2014-12-p5-q03`). Each boundary follows the sequential local-ASR anchors and corresponding source-review file.
+- Candidate validation PASS: 36 ordered ranges, no overlap, source-review references exist, final end boundary equals the MP3 duration (2,914,168 ms), and all 36 ranges decode with ffmpeg.
+- All timing remains `candidate_alignment_requires_audio_review`; no range is verified and no transcript verification state was changed based on Whisper.
+
+Next: durably persist the local Whisper candidate-alignment unit, then conduct source-script/audio review before using any timing in structured runtime data. Do not alter the locked JLPT UI.
+
 ## Written question page 7 transcription — 2026-09-20
 
 - Transcribed complete questions 49–52 from `question/page-07.jpg`; question 53 remains deferred to page 8.
