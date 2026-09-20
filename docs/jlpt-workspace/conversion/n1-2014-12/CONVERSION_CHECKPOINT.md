@@ -798,7 +798,14 @@ Next: transcribe 問題5 question 3's paired responses.
 - Preserved the two printed scoring keys (`4`, `1`) and the source discrepancy: the script says 「あの星」/「みどりの森」 while the printed response options say 「あの雲」/「緑の家」.
 - No timing was inferred from the audio; transcript status: `verified_against_source_image`.
 
-Next: validate and durably persist 問題5 question 3's paired responses, then transcribe 問題5 question 4.
+Next: validate and durably persist 問題5 question 3's paired responses, then validate listening-source transcription coverage. 問題5 has four response units total: questions 1, 2, and the two responses for question 3; it has no separate question 4.
+
+## Listening transcript 問題5 question 3 paired-response durability record — 2026-09-20
+
+- Source transcript commit `982827d2f182fe78e6af76a3e614c45db369a656` was pushed to `origin/recovery/n1-2013-12`, fetched, and exact-HEAD verified with `check-work-persistence.mjs` (`WORK PERSISTENCE PASS`).
+- The verified inventory confirms that 問題5 ends with the two independent scored responses for question 3 (`4`, `1`), so no separate question 4 exists.
+
+Next: validate listening-source transcription coverage before beginning any integration work.
 
 ## Questions 65–68 answer-key correction — 2026-09-20
 
