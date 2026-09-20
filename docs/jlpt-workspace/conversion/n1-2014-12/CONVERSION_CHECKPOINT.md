@@ -122,6 +122,12 @@ Next: transcribe question page 7.
 
 Next: durably persist the local Whisper candidate-alignment unit, then conduct source-script/audio review before using any timing in structured runtime data. Do not alter the locked JLPT UI.
 
+## Local Whisper candidate-alignment durability record — 2026-09-20
+
+- Candidate-alignment evidence commit `63e72d86b94032d0d10a6319ff829b7460137be8` was pushed to `origin/recovery/n1-2013-12`, fetched, and exact-HEAD verified with `check-work-persistence.mjs` (`WORK PERSISTENCE PASS`).
+
+Next: conduct source-script/audio review of all candidate boundaries before using any timing in structured runtime data. Keep every timing status as candidate until that review is complete; do not alter the locked JLPT UI.
+
 ## Written question page 7 transcription — 2026-09-20
 
 - Transcribed complete questions 49–52 from `question/page-07.jpg`; question 53 remains deferred to page 8.
