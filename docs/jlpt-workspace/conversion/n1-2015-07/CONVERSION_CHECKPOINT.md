@@ -62,3 +62,5 @@ Next: continue source transcription with question 65 from the 問題12 passage b
 - Supervisor durable unit: `d0d6333d5949ee1b982b3d90f6e6f4f3623e8cc4` | `written question 62 from source page 9` | `2026-09-20T10:46:20Z`
 
 - Supervisor durable unit: `bbfe5b24bc184d485a147081ae6211963f4e458b` | `written question 63 across source pages 9–10` | `2026-09-20T10:51:02Z`
+
+- Supervisor durable unit: `0b5cb709183e6b77d2d041f9802d38571c989248` | `written question 64 from source page 10 using the comparative passage across pages 9–10` | `2026-09-20T10:54:55Z`
