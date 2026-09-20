@@ -142,6 +142,13 @@ Next: preserve the candidate-only timing status and begin source-to-structured i
 
 Next: await perceptual approval of the candidate timings before building any runtime candidate that includes audio metadata; source-only structured conversion may be planned but must not bypass this gate.
 
+## Source-only structured preflight — 2026-09-20
+
+- Added `scripts/check-n1-2014-12-source-preflight.mjs`. It deterministically verifies all 70 written source questions, all 36 listening source-review files, the 37 scored listening responses, and the candidate-only timing gate before future builder work.
+- Preflight PASS. It accepts both single-page and multi-page written source attribution and deliberately requires every listening review to remain `not_yet_transcribed_or_aligned` while the separate alignment file remains candidate-only.
+
+Next: implement only a source-only structured builder if needed; do not attach timing metadata or register the exam until perceptual audio approval is recorded.
+
 ## Written question page 7 transcription — 2026-09-20
 
 - Transcribed complete questions 49–52 from `question/page-07.jpg`; question 53 remains deferred to page 8.
