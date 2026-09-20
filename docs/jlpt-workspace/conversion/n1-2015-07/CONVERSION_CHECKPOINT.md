@@ -41,3 +41,5 @@ Next: continue source transcription with question 58 on `assets/jlpt/n1/2015-07/
 - Supervisor durable unit: `6970eab910a4faf1499d2294fe6e6474becd865c` | `written question 55 from source page 8` | `2026-09-20T10:18:32Z`
 
 - Supervisor durable unit: `4043146f9bc405c8492459aa2cac9bcb826d85db` | `written question 56 from source page 8` | `2026-09-20T10:21:42Z`
+
+- Supervisor durable unit: `90ded8364c0aecd5248aa32f980b3ce477f64cc4` | `written question 57 across source pages 8–9` | `2026-09-20T10:25:50Z`
