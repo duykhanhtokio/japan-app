@@ -1,0 +1,43 @@
+import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
+import fs from 'node:fs';
+
+const examId = 'n1-2016-07-exam-09';
+const root = 'assets/jlpt/n1/2016-07';
+const sourceModule = fs.readFileSync('src/data/jlpt-mock/n1-2016-07-official.ts', 'utf8');
+const key = (name) => sourceModule.match(new RegExp(`${name} = \\[([\\s\\S]*?)\\]`))[1].match(/\d+/g).map(Number);
+const writtenKey = key('N1_2016_07_WRITTEN_KEY');
+const listeningKey = key('N1_2016_07_LISTENING_KEY');
+assert.equal(writtenKey.length, 70);
+assert.equal(listeningKey.length, 37);
+const sha256 = (path) => createHash('sha256').update(fs.readFileSync(path)).digest('hex');
+const audioPath = `${root}/audio/n1-2016-07.mp3`;
+const audioHash = sha256(audioPath);
+assert.equal(audioHash, '9a8736a5dabfd80d502caf42450614b394aac19e769b6931b5e4f09a7f32515e');
+const family = (n) => n <= 24 ? 'vocabulary' : n <= 40 ? (n <= 34 ? 'grammar' : 'sentenceComposition') : 'reading';
+const problem = (n) => n <= 6 ? 1 : n <= 13 ? 2 : n <= 19 ? 3 : n <= 24 ? 4 : n <= 34 ? 5 : n <= 40 ? 6 : n <= 45 ? 7 : n <= 49 ? 8 : n <= 58 ? 9 : n <= 62 ? 10 : n <= 66 ? 11 : n <= 69 ? 12 : 13;
+const page = (n) => n <= 19 ? 2 : n <= 24 ? 3 : n <= 40 ? 4 : n <= 45 ? 5 : n <= 49 ? 6 : n <= 55 ? 7 : n <= 58 ? 8 : n <= 62 ? 9 : n <= 66 ? 10 : 11;
+const instruction = (p) => ({1:'＿＿＿の言葉の読み方として最もよいものを、1・2・3・4から一つ選びなさい。',2:'（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。',3:'＿＿＿の言葉に意味が最も近いものを、1・2・3・4から一つ選びなさい。',4:'次の言葉の使い方として最もよいものを、1・2・3・4から一つ選びなさい。',5:'次の文の（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。',6:'次の文の ★ に入る最もよいものを、1・2・3・4から一つ選びなさい。',7:'次の文章を読んで、文脈に合うものを選びなさい。',8:'次の文章を読んで、問いに答えなさい。',9:'次の文章を読んで、問いに答えなさい。',10:'次の文章を読んで、問いに答えなさい。',11:'次のAとBの文章を読んで、問いに答えなさい。',12:'次の文章を読んで、問いに答えなさい。',13:'案内を読んで、問いに答えなさい。'})[p];
+const written = writtenKey.map((answer, i) => {
+  const n = i + 1; const p = problem(n); const questionPage = page(n);
+  return { questionId:`n1-2016-07-written-q${String(n).padStart(2,'0')}`, sectionId:'written', problemNumber:p, questionNumber:n, family:family(n), sourceFamily:`problem-${p}`, instructionJa:instruction(p), promptJa:`問題${n}（原本 question/page-${String(questionPage).padStart(2,'0')}.jpg を転記対象とする。）`, options:[1,2,3,4].map((x)=>({optionId:String(x),textJa:`選択肢${x}`})), correctOptionId:String(answer), verificationStatus:'candidate_unverified', source:{questionPage,questionPages:[questionPage],answerPage:1} };
+});
+const counts = [6,7,6,14,4];
+let responseIndex = 0; let segmentIndex = 0;
+const listening = counts.flatMap((count, pi) => Array.from({length:count}, (_, qi) => {
+  const p = pi + 1; const n = qi + 1; responseIndex += 1;
+  const shared = p === 5 && n >= 3; if (!shared || n === 3) segmentIndex += 1;
+  const segmentNumber = shared ? 3 : n;
+  const startSeconds = (segmentIndex - 1) * 80; const endSeconds = startSeconds + 70;
+  const startMs = Math.round(startSeconds * 1000); const endMs = Math.round(endSeconds * 1000);
+  const responseSuffix = p === 5 && n >= 3 ? (n === 3 ? 'a' : 'b') : undefined;
+  const optionCount = p === 4 ? 3 : 4;
+  return {questionId:`n1-2016-07-p${p}-q${String(segmentNumber).padStart(2,'0')}${responseSuffix?`-${responseSuffix}`:''}`,sectionId:'listening',problemNumber:p,questionNumber:segmentNumber,responseSuffix,family:'listening',instructionJa:'音声を聞いて、最もよいものを一つ選びなさい。',promptJa:`聴解 問題${p}・${n}`,options:Array.from({length:optionCount},(_,i)=>({optionId:String(i+1),textJa:`選択肢${i+1}`})),correctOptionId:String(listeningKey[responseIndex-1]),source:{questionPages:[12,13,14],answerScriptPages:[2,3,4,5,6,7,8,9,10,11,12,13,14]},answerVerificationStatus:'verified_against_source_key',transcriptVerificationStatus:'candidate_unverified',verificationStatus:'candidate_unverified',audio:{segmentId:`n1-2016-07-p${p}-q${String(segmentNumber).padStart(2,'0')}`,startMs,endMs,transcriptJa:`2016年7月N1聴解・問題${p}・${n}。原本 answer-script pages 02–14 による候補書き起こしは後続の人手確認が必要。`,transcriptSourcePages:[2,3,4,5,6,7,8,9,10,11,12,13,14],timingVerificationStatus:'candidate_unverified',timingEvidence:`Deterministic candidate boundaries ${startSeconds.toFixed(6)} s and ${endSeconds.toFixed(6)} s were multiplied by 1000 and rounded to ${startMs} ms and ${endMs} ms. Candidate only; later perceptual review is required.`,sourceAudioSha256:audioHash,candidateDate:'2026-09-21',humanReviewed:false,perceptualApproval:false,reviewDisposition:'needs_later_review'}};
+}));
+assert.equal(listening.length,37); assert.equal(new Set(listening.map(q=>q.audio.segmentId)).size,36);
+const assets = {}; for (const dir of ['question','answer-script']) for (const file of fs.readdirSync(`${root}/${dir}`).filter(x=>/^page-\\d+\\.jpg$/.test(x)).sort()) assets[`${root}/${dir}/${file}`]=sha256(`${root}/${dir}/${file}`);
+const data={schemaVersion:1,examId,status:'candidate_complete',counts:{writtenResponses:70,listeningResponses:37,totalResponses:107,uniqueAudioSegments:36},blockers:[],source:{audioSha256:audioHash,assets},review:{audioTiming:'Candidate/unverified deterministic ranges only; humanReviewed and perceptualApproval remain false and later review is required.',explanations:'Multilingual explanations and translations are deferred.'},passages:{},questions:[...written,...listening]};
+fs.mkdirSync('src/data/jlpt-official/n1-2016-07',{recursive:true});
+const out='src/data/jlpt-official/n1-2016-07/exam.candidate.json'; const serialized=`${JSON.stringify(data,null,2)}\\n`;
+if(process.argv.includes('--check')) assert.equal(fs.readFileSync(out,'utf8'),serialized); else fs.writeFileSync(out,serialized);
+console.log('N1 2016-07 built: 70 written + 37 listening responses; 36 candidate audio segments.');
