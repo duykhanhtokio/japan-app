@@ -49,6 +49,8 @@ import { N3_2012_12_AUDIO } from '@/data/jlpt-mock/n3-2012-12-official';
 import { N3_2012_12_SESSION_KEY, N3_2012_12_TRIAL } from '@/data/jlpt-official/n3-2012-12-trial';
 import { N3_2013_07_AUDIO } from '@/data/jlpt-mock/n3-2013-07-official';
 import { N3_2013_07_SESSION_KEY, N3_2013_07_TRIAL } from '@/data/jlpt-official/n3-2013-07-trial';
+import { N3_2013_12_AUDIO } from '@/data/jlpt-mock/n3-2013-12-official';
+import { N3_2013_12_SESSION_KEY, N3_2013_12_TRIAL } from '@/data/jlpt-official/n3-2013-12-trial';
 import { n1December2013Explanation } from '@/data/jlpt-official/n1-2013-12-explanations';
 import type { AppLanguageCode } from '@/i18n/languages';
 
@@ -346,6 +348,12 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
     id: 'n3-2013-07-exam-03', level: 'N3', title: '日本語能力試験 N3', periodLabel: '2013年7月・第3回',
     startLabel: '第3回を始める', storageKey: N3_2013_07_SESSION_KEY, questions: N3_2013_07_TRIAL,
     audioSource: N3_2013_07_AUDIO, visualOptions: {},
+  },
+  {
+    // Complete source-backed candidate; timing/transcript remain candidate/unverified.
+    id: 'n3-2013-12-exam-04', level: 'N3', title: '日本語能力試験 N3', periodLabel: '2013年12月・第4回',
+    startLabel: '第4回を始める', storageKey: N3_2013_12_SESSION_KEY, questions: N3_2013_12_TRIAL,
+    audioSource: N3_2013_12_AUDIO, visualOptions: {},
   },
 ];
 
