@@ -38,3 +38,5 @@ Next: after the supervisor remotely persists this unit, continue written questio
 - Supervisor durable unit: `e10bdf474f11ab2f0e3c20bcac665f5cb532c69a` | `written question 36 from question page 04` | `2026-09-21T00:04:39Z`
 
 - Supervisor durable unit: `69cdc0fe12c2b35a0f985fc3c98ee1d5ebaf5513` | `written question 37 from question page 04` | `2026-09-21T00:09:20Z`
+
+- Supervisor durable unit: `1f21a4ac2e5e4b6e475ceb6565bb16d8d445a063` | `written question 38 from question page 04` | `2026-09-21T00:12:38Z`
