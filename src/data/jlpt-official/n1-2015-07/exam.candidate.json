@@ -1,21 +1,14 @@
 {
   "schemaVersion": 1,
   "examId": "n1-2015-07-exam-07",
-  "status": "candidate_incomplete_source_blocked",
+  "status": "candidate_complete",
   "counts": {
-    "writtenResponses": 69,
+    "writtenResponses": 70,
     "listeningResponses": 37,
-    "totalResponses": 106,
+    "totalResponses": 107,
     "uniqueAudioSegments": 36
   },
-  "blockers": [
-    {
-      "code": "BLOCKED_SOURCE_UNREADABLE",
-      "questionNumber": 29,
-      "scope": "written",
-      "disposition": "needs_authoritative_source_mapping"
-    }
-  ],
+  "blockers": [],
   "source": {
     "audioSha256": "37bb9bc85dba19522939e546b8d964bbd3f840160ec99f129a8154ebc11fb6a2",
     "assets": {
@@ -51,7 +44,7 @@
   },
   "review": {
     "audioTiming": "Candidate/unverified local ffmpeg and Whisper alignment only; humanReviewed and perceptualApproval remain false and later review is required.",
-    "writtenSourceAnomalies": "Question 29 is omitted because the duplicated printed numbering across source pages 3-4 cannot be authoritatively mapped from the answer key.",
+    "writtenSourceAnomalies": "Source page 4 repeats printed number 28. Its sequential placement between questions 28 and 30 establishes that item as question 29; the answer matches official key slot 29.",
     "explanations": "Pending source explanation conversion and in-session AI translations. No external translation service or runtime translation dependency."
   },
   "passages": {
@@ -1137,6 +1130,43 @@
         "questionPage": 3,
         "questionPages": [
           3
+        ],
+        "answerPage": 1
+      }
+    },
+    {
+      "questionId": "n1-2015-07-written-q29",
+      "sectionId": "written",
+      "problemNumber": 5,
+      "questionNumber": 29,
+      "family": "grammar",
+      "sourceFamily": "grammar",
+      "instructionJa": "次の文の（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。",
+      "promptJa": "調査の結果、南北川の水質汚染の原因はA社の工場にあることが明らかになったにもかかわらず、A社は決してそれを（　）。",
+      "options": [
+        {
+          "optionId": "1",
+          "textJa": "認めるほかはなかった"
+        },
+        {
+          "optionId": "2",
+          "textJa": "認めないでもなかった"
+        },
+        {
+          "optionId": "3",
+          "textJa": "認めようとはしなかった"
+        },
+        {
+          "optionId": "4",
+          "textJa": "認めねばならなかった"
+        }
+      ],
+      "correctOptionId": "3",
+      "verificationStatus": "verified_against_source_image",
+      "source": {
+        "questionPage": 4,
+        "questionPages": [
+          4
         ],
         "answerPage": 1
       }

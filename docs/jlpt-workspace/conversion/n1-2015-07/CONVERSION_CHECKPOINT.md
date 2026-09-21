@@ -1,5 +1,13 @@
 # N1 2015-07 conversion checkpoint
 
+## Runtime repair — 2026-09-21
+
+- Runtime candidate is complete and registered: 70 written responses plus 37 listening responses using 36 candidate audio segments.
+- The second item printed as `28` across source pages 3–4 is recorded as logical question 29, preserving `sourcePrintedNumber: 28` and the source anomaly note; its official key is 3.
+- Listening timing remains `candidate_unverified`; `humanReviewed=false`, `perceptualApproval=false`, and later review is required.
+- Integration validation, source/key/count/ID/range checks, catalog checks, and the 10-file approved UI lock pass.
+- The former local question-29 blocker is resolved without changing the printed source text.
+
 - Exam ID: `n1-2015-07-exam-07`.
 - Scope: full available exam recovery. Automated listening timing/data is authorized only as candidate/unverified; it must not claim human, perceptual, or audio verification.
 - Official sources: `assets/jlpt/n1/2015-07/question/page-02.jpg`, `question/page-05.jpg`, `question/page-06.jpg`, `question/page-07.jpg`, `question/page-08.jpg`, `question/page-09.jpg`, `question/page-10.jpg`, `question/page-11.jpg`, `question/page-12.jpg`, and `answer-script/page-01.jpg` were visually read. The page 2 and answer-key SHA-256 values are recorded in `.jlpt-backups/n1-2015-07-written-page-02-20260920-164059/SHA256-SOURCE.txt`; the page 5 SHA-256 is recorded in `.jlpt-backups/n1-2015-07-written-q39-q45-20260920-174306/SHA256-BEFORE.txt`; page 6 has SHA-256 `896eb237c1084db6bd9d19775b73614b00b0406634cc51b792ac314cbcfe6215`; page 7 has SHA-256 `d6923d9de633f5bfab829146100a3bd0e564fa9d4dbe8385c4ed0806a5921cd4`; page 8 has SHA-256 `c8a4bfeb10740aca082273d62165b1feffe466daf1f5410f59b02960015f93cf`; page 9 has SHA-256 `17a8d9e1598c0219da263d178406ed87aa93faebf019f10f2979fc218e40eb82`; page 10 has SHA-256 `a681823bcf33fb62a93faed6e5b40cc39c3796e200cc531f26058c5c437ebb3e`; page 11 has SHA-256 `510c34b7b4cecb788d6826a8a5ea801a047d3f6f5843c23e4a542e31d4d8e080`; page 12 has SHA-256 `4a4493d3dbf2bfe82ce165363ad650c274efc0e79186768c40b1e50fb710f0cf`.

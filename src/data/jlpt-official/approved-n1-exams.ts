@@ -5,6 +5,10 @@ import { N1_2012_07_SESSION_KEY, N1_2012_07_TRIAL, type TrialQuestion } from '@/
 import { N1_2013_07_SESSION_KEY, N1_2013_07_TRIAL } from '@/data/jlpt-official/n1-2013-07-trial';
 import { N1_2013_12_SESSION_KEY, N1_2013_12_TRIAL } from '@/data/jlpt-official/n1-2013-12-trial';
 import { N1_2014_07_SESSION_KEY, N1_2014_07_TRIAL } from '@/data/jlpt-official/n1-2014-07-trial';
+import { N1_2014_12_AUDIO } from '@/data/jlpt-mock/n1-2014-12-official';
+import { N1_2014_12_SESSION_KEY, N1_2014_12_TRIAL } from '@/data/jlpt-official/n1-2014-12-trial';
+import { N1_2015_07_AUDIO } from '@/data/jlpt-mock/n1-2015-07-official';
+import { N1_2015_07_SESSION_KEY, N1_2015_07_TRIAL } from '@/data/jlpt-official/n1-2015-07-trial';
 import { N1_2015_12_SESSION_KEY, N1_2015_12_TRIAL } from '@/data/jlpt-official/n1-2015-12-trial';
 import { N1_2016_07_SESSION_KEY, N1_2016_07_TRIAL } from '@/data/jlpt-official/n1-2016-07-trial';
 import { N1_2016_12_SESSION_KEY, N1_2016_12_TRIAL } from '@/data/jlpt-official/n1-2016-12-trial';
@@ -172,6 +176,18 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
     id: 'n1-2014-07-exam-05', level: 'N1', title: '日本語能力試験 N1', periodLabel: '2014年7月・第5回',
     startLabel: '第5回を始める', storageKey: N1_2014_07_SESSION_KEY, questions: N1_2014_07_TRIAL,
     audioSource: require('../../../assets/jlpt/n1/2014-07/audio/n1-2014-07.mp3'), visualOptions: {},
+  },
+  {
+    // Complete source-backed candidate; audio timing remains candidate/unverified.
+    id: 'n1-2014-12-exam-06', level: 'N1', title: '日本語能力試験 N1', periodLabel: '2014年12月・第6回',
+    startLabel: '第6回を始める', storageKey: N1_2014_12_SESSION_KEY, questions: N1_2014_12_TRIAL,
+    audioSource: N1_2014_12_AUDIO, visualOptions: {},
+  },
+  {
+    // Complete source-backed candidate; audio timing remains candidate/unverified.
+    id: 'n1-2015-07-exam-07', level: 'N1', title: '日本語能力試験 N1', periodLabel: '2015年7月・第7回',
+    startLabel: '第7回を始める', storageKey: N1_2015_07_SESSION_KEY, questions: N1_2015_07_TRIAL,
+    audioSource: N1_2015_07_AUDIO, visualOptions: {},
   },
   {
     // Complete source-backed candidate; audio timing remains candidate/unverified.

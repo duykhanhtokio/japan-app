@@ -1,4 +1,4 @@
-// Candidate adapter only: question 29 is source-blocked and audio timing is not human/perceptually verified.
+// Complete source-backed candidate; audio timing is not human/perceptually verified.
 import type { TrialQuestion } from './n1-2012-07-trial';
 
 type DatasetQuestion = {
@@ -54,9 +54,8 @@ export const N1_2015_07_TRIAL: readonly TrialQuestion[] = DATASET.questions.map(
   } : undefined,
 }));
 
-if (N1_2015_07_TRIAL.length !== 106) throw new Error('N1 2015-07 candidate must contain 106 available responses.');
-if (new Set(N1_2015_07_TRIAL.map((question) => question.id)).size !== 106) throw new Error('N1 2015-07 contains duplicate question IDs.');
-if (N1_2015_07_TRIAL.filter((question) => question.family !== 'listening').length !== 69) throw new Error('N1 2015-07 candidate must contain 69 available written responses.');
-if (N1_2015_07_TRIAL.some((question) => question.id === 'n1-2015-07-written-q29')) throw new Error('N1 2015-07 blocked written question 29 must not be inferred.');
+if (N1_2015_07_TRIAL.length !== 107) throw new Error('N1 2015-07 candidate must contain 107 responses.');
+if (new Set(N1_2015_07_TRIAL.map((question) => question.id)).size !== 107) throw new Error('N1 2015-07 contains duplicate question IDs.');
+if (N1_2015_07_TRIAL.filter((question) => question.family !== 'listening').length !== 70) throw new Error('N1 2015-07 candidate must contain 70 written responses.');
 if (N1_2015_07_TRIAL.filter((question) => question.family === 'listening').length !== 37) throw new Error('N1 2015-07 must contain 37 listening responses.');
 if (new Set(N1_2015_07_TRIAL.flatMap((question) => question.audio?.segmentId ?? [])).size !== 36) throw new Error('N1 2015-07 must contain 36 unique candidate audio segments.');

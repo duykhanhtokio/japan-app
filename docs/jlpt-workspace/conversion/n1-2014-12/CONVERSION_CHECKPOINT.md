@@ -1,9 +1,17 @@
 # N1 2014-12 conversion checkpoint
 
+## Runtime repair — 2026-09-21
+
+- Runtime candidate is complete and registered: 70 written responses plus 37 listening responses using 36 candidate audio segments.
+- Written passages required by questions 41–70 are present in the structured dataset.
+- Listening timing remains `candidate_unverified`; `humanReviewed=false`, `perceptualApproval=false`, and later review is required.
+- Integration validation, source/key/count/ID/range checks, catalog checks, and the 10-file approved UI lock pass.
+- The exam no longer uses the `scanned_only` pending path.
+
 ```text
 EXAM ID: n1-2014-12-exam-06
-CATALOG STATUS: scanned_only; not registered as a structured runtime exam
-WORK STATUS: source inventory verified; conversion not started
+CATALOG STATUS: candidate_complete; registered as a structured runtime exam
+WORK STATUS: runtime integration complete; listening timing awaits later human review
 ```
 
 ## Verified source inventory — 2026-09-19

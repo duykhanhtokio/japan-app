@@ -12,9 +12,9 @@ const sourceModule = fs.readFileSync('src/data/jlpt-mock/n1-2015-07-official.ts'
 const key = (name) => sourceModule.match(new RegExp(`${name} = \\[([\\s\\S]*?)\\]`))[1].match(/\d+/g).map(Number);
 const writtenKey = key('WRITTEN_KEY');
 const listeningKey = key('LISTENING_KEY');
-assert.equal(written.length, 69);
+assert.equal(written.length, 70);
 assert.equal(listening.length, 37);
-assert.deepEqual(written.map((q) => q.questionNumber), [...Array.from({ length: 28 }, (_, i) => i + 1), ...Array.from({ length: 41 }, (_, i) => i + 30)]);
+assert.deepEqual(written.map((q) => q.questionNumber), Array.from({ length: 70 }, (_, i) => i + 1));
 
 const familyMap = {
   'kanji-reading': 'vocabulary', 'vocabulary-context': 'vocabulary',
@@ -103,16 +103,16 @@ for (const folder of ['question', 'answer-script']) {
 const audioHash = sha256('assets/jlpt/n1/2015-07/audio/n1-2015-07.mp3');
 assert.equal(audioHash, '37bb9bc85dba19522939e546b8d964bbd3f840160ec99f129a8154ebc11fb6a2');
 const questions = [...writtenQuestions, ...listeningQuestions];
-assert.equal(new Set(questions.map((q) => q.questionId)).size, 106);
+assert.equal(new Set(questions.map((q) => q.questionId)).size, 107);
 assert.equal(new Set(listeningQuestions.map((q) => q.audio.segmentId)).size, 36);
 const dataset = {
-  schemaVersion: 1, examId: 'n1-2015-07-exam-07', status: 'candidate_incomplete_source_blocked',
-  counts: { writtenResponses: 69, listeningResponses: 37, totalResponses: 106, uniqueAudioSegments: 36 },
-  blockers: [{ code: 'BLOCKED_SOURCE_UNREADABLE', questionNumber: 29, scope: 'written', disposition: 'needs_authoritative_source_mapping' }],
+  schemaVersion: 1, examId: 'n1-2015-07-exam-07', status: 'candidate_complete',
+  counts: { writtenResponses: 70, listeningResponses: 37, totalResponses: 107, uniqueAudioSegments: 36 },
+  blockers: [],
   source: { audioSha256: audioHash, assets: sourceAssets },
   review: {
     audioTiming: 'Candidate/unverified local ffmpeg and Whisper alignment only; humanReviewed and perceptualApproval remain false and later review is required.',
-    writtenSourceAnomalies: 'Question 29 is omitted because the duplicated printed numbering across source pages 3-4 cannot be authoritatively mapped from the answer key.',
+    writtenSourceAnomalies: 'Source page 4 repeats printed number 28. Its sequential placement between questions 28 and 30 establishes that item as question 29; the answer matches official key slot 29.',
     explanations: 'Pending source explanation conversion and in-session AI translations. No external translation service or runtime translation dependency.',
   },
   passages, questions,
@@ -122,4 +122,4 @@ const serialized = `${JSON.stringify(dataset, null, 2)}\n`;
 const outputPath = `${outDir}/exam.candidate.json`;
 if (process.argv.includes('--check')) assert.equal(fs.readFileSync(outputPath, 'utf8'), serialized, 'Candidate differs from source reviews');
 else fs.writeFileSync(outputPath, serialized);
-console.log('N1 2015-07 built: 69 available written + 37 listening; question 29 blocked; 36 candidate audio segments.');
+console.log('N1 2015-07 built: 70 written + 37 listening; 36 candidate audio segments.');

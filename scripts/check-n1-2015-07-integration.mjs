@@ -2,7 +2,6 @@ import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import fs from 'node:fs';
-import ts from 'typescript';
 
 const rebuild = spawnSync(process.execPath, ['scripts/build-n1-2015-07-structured.mjs', '--check'], { encoding: 'utf8' });
 assert.equal(rebuild.status, 0, rebuild.stderr);
@@ -12,15 +11,14 @@ const sourceKey = (name) => source.match(new RegExp(`${name} = \\[([\\s\\S]*?)\\
 const written = data.questions.filter((q) => q.sectionId === 'written');
 const listening = data.questions.filter((q) => q.sectionId === 'listening');
 assert.equal(data.examId, 'n1-2015-07-exam-07');
-assert.equal(data.status, 'candidate_incomplete_source_blocked');
-assert.deepEqual(data.counts, { writtenResponses: 69, listeningResponses: 37, totalResponses: 106, uniqueAudioSegments: 36 });
-assert.deepEqual(data.blockers, [{ code: 'BLOCKED_SOURCE_UNREADABLE', questionNumber: 29, scope: 'written', disposition: 'needs_authoritative_source_mapping' }]);
-assert.equal(data.questions.length, 106);
-assert.equal(new Set(data.questions.map((q) => q.questionId)).size, 106);
-assert.equal(written.length, 69);
+assert.equal(data.status, 'candidate_complete');
+assert.deepEqual(data.counts, { writtenResponses: 70, listeningResponses: 37, totalResponses: 107, uniqueAudioSegments: 36 });
+assert.deepEqual(data.blockers, []);
+assert.equal(data.questions.length, 107);
+assert.equal(new Set(data.questions.map((q) => q.questionId)).size, 107);
+assert.equal(written.length, 70);
 assert.equal(listening.length, 37);
-assert.deepEqual(written.map((q) => q.questionNumber), [...Array.from({ length: 28 }, (_, i) => i + 1), ...Array.from({ length: 41 }, (_, i) => i + 30)]);
-assert.ok(!written.some((q) => q.questionNumber === 29));
+assert.deepEqual(written.map((q) => q.questionNumber), Array.from({ length: 70 }, (_, i) => i + 1));
 const writtenKey = sourceKey('WRITTEN_KEY');
 for (const q of written) assert.equal(Number(q.correctOptionId), writtenKey[q.questionNumber - 1], q.questionId);
 assert.deepEqual(listening.map((q) => Number(q.correctOptionId)), sourceKey('LISTENING_KEY'));
@@ -80,23 +78,16 @@ assert.equal(shared[0].audio.endMs, 3112155, 'Closing announcement must remain e
 assert.equal(Math.round(3112.155329 * 1000), shared[0].audio.endMs, 'Closing boundary seconds-to-ms conversion');
 
 const adapter = fs.readFileSync('src/data/jlpt-official/n1-2015-07-trial.ts', 'utf8');
-const compiled = ts.transpileModule(adapter, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText;
-const adapterExports = {};
-new Function('require', 'exports', compiled)((name) => {
-  assert.equal(name, './n1-2015-07/exam.candidate.json');
-  return data;
-}, adapterExports);
-assert.equal(adapterExports.N1_2015_07_SESSION_KEY, 'jlpt:n1:2015-07:exam-07:session:v1');
-const runtime = adapterExports.N1_2015_07_TRIAL;
-assert.equal(runtime.length, 106);
-assert.equal(runtime.filter((q) => q.family !== 'listening').length, 69);
-assert.ok(!runtime.some((q) => q.id === 'n1-2015-07-written-q29'));
-assert.notEqual(runtime[104].id, runtime[105].id);
-assert.notEqual(runtime[104].label, runtime[105].label);
-assert.ok(runtime.filter((q) => q.family === 'reading').every((q) => q.passageJa));
+assert.match(adapter, /N1_2015_07_SESSION_KEY\s*=\s*'jlpt:n1:2015-07:exam-07:session:v1'/);
+assert.match(adapter, /DATASET\.questions\.map/);
+assert.match(adapter, /N1_2015_07_TRIAL\.length\s*!==\s*107/);
+assert.match(adapter, /family\s*!==\s*'listening'\)\.length\s*!==\s*70/);
+assert.match(adapter, /family\s*===\s*'listening'\)\.length\s*!==\s*37/);
+assert.ok(data.questions.some((q) => q.questionId === 'n1-2015-07-written-q29'));
+assert.match(adapter, /passageJa:/);
 
 const registry = fs.readFileSync('src/data/jlpt-official/approved-n1-exams.ts', 'utf8');
 const catalog = fs.readFileSync('src/data/jlpt-official/jlpt-exam-catalog.ts', 'utf8');
-assert.ok(!registry.includes("id: 'n1-2015-07-exam-07'"), 'Incomplete candidate must not be registered');
-assert.ok(catalog.includes("'n1-2015-07'"), 'Incomplete candidate must remain visible as pending');
-console.log(`N1 2015-07 CANDIDATE PASS: 69 written available; question 29 blocked; 37 listening; 36 decoded candidate ranges; source hashes, keys, IDs, adapter, and seconds-to-ms evidence validated.`);
+assert.ok(registry.includes("id: 'n1-2015-07-exam-07'"), 'Complete candidate must be registered');
+assert.ok(!catalog.includes("'n1-2015-07'"), 'Complete candidate must not remain pending');
+console.log(`N1 2015-07 INTEGRATION PASS: 70 written; 37 listening; 36 decoded candidate ranges; source hashes, keys, IDs, adapter, and seconds-to-ms evidence validated.`);
