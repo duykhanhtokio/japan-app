@@ -1,12 +1,22 @@
 # Fully unattended JLPT N1 → N2 → N3 recovery
 
-From the clean remote-tracking recovery branch, run exactly:
+From the clean remote-tracking recovery branch, start or resume with:
 
 ```bash
-bash scripts/run-jlpt-unattended.sh
+bash scripts/run-jlpt-unattended.sh start
+bash scripts/run-jlpt-unattended.sh resume
 ```
 
-The command is non-interactive and ignores stdin. `--dry-run` performs Git/upstream, schema/state, UI-lock, regression, persistence, rule-digest, and installed Codex CLI compatibility checks without starting a worker. `--max-batches N` is a controlled test/session boundary; the exit handler pushes valid local commits before stopping.
+The no-argument command remains an alias for `start`. Add `--background` to either command for a detached supervisor. `resume --offline` skips fetch/push while retaining `pushPending` for later remote verification; it also supports `--background`. `status` verifies both PID liveness and the actual process command without calling a model. `stop` sends a controlled termination signal and waits for the persistence exit path. `--dry-run` performs Git/upstream, schema/state, UI-lock, regression, persistence, rule-digest, and installed Codex CLI compatibility checks without starting a worker. `--max-batches N` is a controlled test/session boundary.
+
+```bash
+bash scripts/run-jlpt-unattended.sh start --background
+bash scripts/run-jlpt-unattended.sh status
+bash scripts/run-jlpt-unattended.sh stop
+bash scripts/run-jlpt-unattended.sh resume --background
+bash scripts/run-jlpt-unattended.sh resume --offline
+bash scripts/run-jlpt-unattended.sh resume --offline --background
+```
 
 ## Architecture
 
@@ -14,7 +24,7 @@ The shell entry point starts `scripts/jlpt-unattended-supervisor.mjs`. Determini
 
 One Codex session is retained for the entire active exam. It returns control at large validated durability batches; the supervisor resumes the same session ID. A fresh Codex session is created only after an exam completes or after a compact context handoff. There is no per-question or per-page initialization.
 
-The worker is launched as `codex exec --sandbox workspace-write -c approval_policy="never" ...` with the prompt passed as an argument and stdin set to `ignore`. It never uses the incompatible `--sandbox workspace-write --approve-for-me` combination. The result must match `scripts/jlpt-unattended-result.schema.json`; results that ask the user, mention stdin, emit numbered choices, omit the checkpoint/manifest/progress atomic set, or declare unexpected paths are rejected.
+The worker is launched as `codex exec --sandbox workspace-write -c approval_policy="never" ...` with the prompt passed as an argument and no user stdin. A private pseudo-terminal prevents the CLI from treating `/dev/null` as piped context; nothing writes to that pseudo-terminal's input. It never uses the incompatible `--sandbox workspace-write --approve-for-me` combination. `--json` stdout is stored as an event stream in `worker-*.jsonl`; stderr has its own `worker-*.stderr.log`. `--output-last-message` writes to `worker-*.result.json.partial`. Only a non-empty final message that passes `scripts/validate-jlpt-unattended-result.mjs` is atomically renamed to the matching `worker-*.result.json`. The event, stderr, partial, and result paths share one generated stem. A nonzero CLI exit is classified from JSONL/stderr as rate-limit, capacity, schema, network, CLI, or worker failure instead of being reduced to “result missing.”
 
 ## Persistence and shutdown
 
