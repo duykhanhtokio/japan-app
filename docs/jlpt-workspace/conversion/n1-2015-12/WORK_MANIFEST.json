@@ -31,8 +31,8 @@
     { "pages": ["page-06.jpg", "page-07.jpg"], "questions": "50-55", "status": "remote_verified" },
     { "pages": ["page-07.jpg", "page-08.jpg"], "questions": "56-58", "status": "remote_verified" },
     { "pages": ["page-08.jpg", "page-09.jpg"], "questions": "59-62", "status": "remote_verified" },
-    { "pages": ["page-09.jpg", "page-10.jpg"], "questions": "63-66", "status": "local_validated" },
-    { "pages": ["page-10.jpg", "page-11.jpg"], "questions": "67-70", "status": "local_validated" }
+    { "pages": ["page-09.jpg", "page-10.jpg"], "questions": "63-66", "status": "remote_verified" },
+    { "pages": ["page-10.jpg", "page-11.jpg"], "questions": "67-70", "status": "remote_verified" }
   ],
   "answerKeyPaths": [
     "assets/jlpt/n1/2015-12/answer-script/page-01.jpg",
@@ -45,7 +45,7 @@
   "listeningSource": {
     "questionPages": ["assets/jlpt/n1/2015-12/question/page-12.jpg", "assets/jlpt/n1/2015-12/question/page-13.jpg", "assets/jlpt/n1/2015-12/question/page-14.jpg"],
     "audioPath": "assets/jlpt/n1/2015-12/audio/n1-2015-12.mp3",
-    "status": "pending",
+    "status": "candidate_unverified",
     "requiredCandidateStatus": "candidate_unverified",
     "humanReviewed": false,
     "perceptualApproval": false,
@@ -68,8 +68,8 @@
   ],
   "explanationSources": ["assets/jlpt/n1/2015-12/answer-script/page-02.jpg", "assets/jlpt/n1/2015-12/answer-script/page-03.jpg", "assets/jlpt/n1/2015-12/answer-script/page-04.jpg", "assets/jlpt/n1/2015-12/answer-script/page-05.jpg", "assets/jlpt/n1/2015-12/answer-script/page-06.jpg", "assets/jlpt/n1/2015-12/answer-script/page-07.jpg", "assets/jlpt/n1/2015-12/answer-script/page-08.jpg", "assets/jlpt/n1/2015-12/answer-script/page-09.jpg", "assets/jlpt/n1/2015-12/answer-script/page-10.jpg", "assets/jlpt/n1/2015-12/answer-script/page-11.jpg", "assets/jlpt/n1/2015-12/answer-script/page-12.jpg", "assets/jlpt/n1/2015-12/answer-script/page-13.jpg"],
   "translationState": { "status": "pending", "generatedBy": "AI", "reviewedByNativeSpeaker": false, "requiredStatus": "translated_ai_unreviewed" },
-  "integrationState": { "adapter": "pending", "runtime": "pending", "registry": "pending", "catalog": "pending", "validation": "pending" },
-  "completedUnits": ["written:q001-q019", "written:q020-q029", "written:q030-q048", "written:q049-q055", "written:q056-q058", "written:q059-q062", "written:q063-q070"],
+  "integrationState": { "adapter": "complete", "runtime": "candidate_unverified", "registry": "complete", "catalog": "complete", "validation": "complete" },
+  "completedUnits": ["written:q001-q019", "written:q020-q029", "written:q030-q048", "written:q049-q055", "written:q056-q058", "written:q059-q062", "written:q063-q070", "listening:all-problems", "integration:full-exam", "validation:per-exam"],
   "remoteVerifiedUnits": [
     { "unit": "written:q001-q019", "sha": "68e354b7f6a19a2aefdeca531670972f8695138d" },
     { "unit": "written:q020-q029", "sha": "5236c07f3674ecf8564ee38512bd70f537650c0b" },
@@ -78,9 +78,9 @@
   ],
   "localOnlyCommittedUnits": [],
   "blockedUnits": [],
-  "pendingUnits": ["listening:all-problems", "explanations:all-available", "translations:all-locales", "integration:full-exam", "validation:per-exam"],
-  "nextUnit": "listening:first-candidate-unit from repository audio and answer-script sources",
-  "validationCommands": ["node scripts/validate-jlpt-automation-state.mjs", "node scripts/check-n1-2015-12-recovery.mjs", "node scripts/check-jlpt-approved-ui-lock.mjs", "git diff --check"],
+  "pendingUnits": ["explanations:deferred", "translations:deferred", "listening:later-human-perceptual-review"],
+  "nextUnit": "EXAM_COMPLETE; advance active progress to n1-2016-07-exam-09",
+  "validationCommands": ["node scripts/check-n1-2015-12-recovery.mjs", "node scripts/check-n1-2015-12-integration.mjs", "node scripts/check-jlpt-approved-ui-lock.mjs", "git diff --check"],
   "allowedOutputPaths": ["docs/jlpt-workspace/conversion/n1-2015-12/**", "docs/jlpt-workspace/JLPT_ACTIVE_PROGRESS.json", "src/data/jlpt-official/n1-2015-12/**", "src/data/jlpt-official/n1-2015-12-trial.ts", "src/data/jlpt-official/approved-n1-exams.ts", "src/data/jlpt-official/jlpt-exam-catalog.ts", "scripts/check-n1-2015-12-*.mjs", "scripts/build-n1-2015-12-structured.mjs"],
   "sourceChecksums": {
     "assets/jlpt/n1/2015-12/question/page-02.jpg": "c5318f40788403c0525c1de2670c8ba6f71efae6b2f77c7d82ccf9b6fe027085",
