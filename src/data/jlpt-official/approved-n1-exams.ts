@@ -15,6 +15,8 @@ import { N1_2018_12_SESSION_KEY, N1_2018_12_TRIAL } from '@/data/jlpt-official/n
 import { N1_2019_07_SESSION_KEY, N1_2019_07_TRIAL } from '@/data/jlpt-official/n1-2019-07-trial';
 import { N2_2012_07_AUDIO } from '@/data/jlpt-mock/n2-2012-07-official';
 import { N2_2012_07_SESSION_KEY, N2_2012_07_TRIAL } from '@/data/jlpt-official/n2-2012-07-trial';
+import { N2_2012_12_AUDIO } from '@/data/jlpt-mock/n2-2012-12-official';
+import { N2_2012_12_SESSION_KEY, N2_2012_12_TRIAL } from '@/data/jlpt-official/n2-2012-12-trial';
 import { n1December2013Explanation } from '@/data/jlpt-official/n1-2013-12-explanations';
 import type { AppLanguageCode } from '@/i18n/languages';
 
@@ -210,6 +212,12 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
     id: 'n2-2012-07-exam-01', level: 'N2', title: '日本語能力試験 N2', periodLabel: '2012年7月・第1回',
     startLabel: '第1回を始める', storageKey: N2_2012_07_SESSION_KEY, questions: N2_2012_07_TRIAL,
     audioSource: N2_2012_07_AUDIO, visualOptions: {},
+  },
+  {
+    // Complete source-backed candidate; timing/transcript remain candidate/unverified.
+    id: 'n2-2012-12-exam-02', level: 'N2', title: '日本語能力試験 N2', periodLabel: '2012年12月・第2回',
+    startLabel: '第2回を始める', storageKey: N2_2012_12_SESSION_KEY, questions: N2_2012_12_TRIAL,
+    audioSource: N2_2012_12_AUDIO, visualOptions: {},
   },
 ];
 
