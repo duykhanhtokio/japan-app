@@ -9,11 +9,13 @@ LAST UPDATED: 2026-09-21
 
 This file exists so a new AI session can continue work without asking the user to reconstruct prior decisions. Chat history is supporting context only. The current project files, checksums, checkpoints, and validation scripts are authoritative.
 
-## Current cross-exam scope — 2026-09-20
+## Current cross-exam scope — 2026-09-21
 
 The user has authorized automated end-to-end recovery of all available JLPT exams, including listening candidate segmentation and integration. Human per-segment review is deferred until after broad catalog integration. Automatically derived timing must be explicitly candidate/unverified, must not claim human/perceptual/audio approval, and may carry `needs_later_review` without blocking other work. A source-unreadable written question or unresolved listening segment is a local blocker only; record it and continue all other available units.
 
-For a long unattended batch, use `bash scripts/run-jlpt-unattended.sh`. Fixed policy is in `JLPT_AUTOMATION_DECISIONS.json`; `JLPT_ACTIVE_PROGRESS.json` and the active exam's `WORK_MANIFEST.json` are the resume and queue authorities. One non-interactive Codex session spans a complete exam and is resumed across large validated batches. The deterministic supervisor owns Git, cache, journal, retry, and persistence. See `docs/jlpt-workspace/JLPT_UNATTENDED_RUNBOOK.md`.
+The default unattended entry point is now `bash scripts/run-jlpt-simple-loop.sh`. It is one foreground shell loop and starts exactly one `codex exec` for one complete active exam. It advances through N1, N2, and N3, oldest exam first within each level. The older supervisor/worker automation remains only as historical compatibility material and is not part of the default process.
+
+`docs/jlpt-workspace/JLPT_ACTIVE_PROGRESS.json`, the active checkpoint, and Git are authoritative. N1 12/2015 written questions 1–70 are remote-verified at `cd6614e7362b1fbe7b855c4b66a9e68e6899c7b7`; its next work is listening candidate integration, and its written section must not be repeated.
 
 ## 1. Mandatory startup procedure
 
@@ -31,6 +33,8 @@ Before changing anything:
 6. Record the exact files that may change, back them up with a timestamp, and record SHA-256 before editing.
 7. Continue from the first unfinished item. Do not restart completed OCR, translation, or verification work.
 8. Before relying on any claimed completed work, run `node scripts/check-work-persistence.mjs` and confirm the exact local commit exists on the configured remote branch.
+
+Child sessions launched by `scripts/run-jlpt-simple-loop.sh` use the compact reading list embedded in that script instead of repeating this full document for every exam. They do not create per-iteration backups; Git history and the one-exam durability gate are the rollback and persistence mechanisms for the loop.
 
 ### Choose the durable execution mode before doing work
 
@@ -193,11 +197,11 @@ Expected verified state:
 
 ## 7. Current JLPT resume point
 
-The machine-readable pointer `docs/jlpt-workspace/JLPT_ACTIVE_PROGRESS.json` supersedes the historical prose below. As of 2026-09-21, actual remote-backed progress is N1 12/2015 through written question 48; the next unit starts at question 49 on `assets/jlpt/n1/2015-12/question/page-06.jpg`. Never infer progress from the branch name.
+The machine-readable pointer `docs/jlpt-workspace/JLPT_ACTIVE_PROGRESS.json` supersedes all historical prose below. As of 2026-09-21, N1 12/2015 written questions 1–70 are remote-verified at `cd6614e7362b1fbe7b855c4b66a9e68e6899c7b7`. Continue that exam from listening candidate integration; do not redo written work.
 
-Newest active exam checkpoint: `docs/jlpt-workspace/conversion/n1-2015-07/CONVERSION_CHECKPOINT.md`. N1 07/2015 written questions 1–28 and 30–45 are remotely durable at `d2c8e17e05632978366ecdedf21b0e923665ae8d`; question 29 remains `BLOCKED_SOURCE_UNREADABLE`. Verify the checkpoint and Git state, then continue from the first available incomplete unit, question 46 on `assets/jlpt/n1/2015-07/question/page-06.jpg`. After available written work, continue listening candidate, explanations/translations when required and sourced, and candidate integration. Do not redo remotely verified units.
+The default loop completes one active exam per `codex exec`, then selects the oldest incomplete exam in the remaining N1 catalog, followed by N2 and N3. Multilingual explanations and translations are deferred. A source-unreadable item is LOCAL: record it, continue other work, and revisit level-local blockers before moving to the next level.
 
-The historical text below preserves earlier exam checkpoints; when it conflicts with this newest resume point, follow the newest checkpoint and actual repository state.
+The historical text below preserves earlier exam checkpoints. When it conflicts with active progress, the active checkpoint, or current Git evidence, follow the current machine-readable state and Git.
 
 Preserved completed exam: **N1 07/2014** has 70 written and **37** listening responses; do not inherit previous-exam counts. The user accepted its integrated candidate and 36 audio ranges on 2026-09-17. Preserve this remote-verified work and do not restart it. Never use a public translation service, runtime translation API, or translation dependency.
 
@@ -262,9 +266,9 @@ docs/jlpt-workspace/conversion/n1-2013-12/CONVERSION_CHECKPOINT.md
 - A missing/corrupt source, unreadable question, or unresolved candidate timing blocks only that item. Record it and continue other available units. Stop globally only when no written, listening candidate, explanation, translation, or integration unit remains available, or when all remaining work requires a locked UI change or unavailable runtime capability.
 - When blocked, state the precise exam, page, question, file, verified facts, unresolved fact, checks attempted, and exact input/action needed.
 
-## 9. Startup and completion checks
+## 9. Validation scope
 
-Run at session start and after a major JLPT change:
+Manual repository-wide maintenance may run the following full regression set:
 
 ```bash
 node scripts/check-jlpt-approved-ui-lock.mjs
@@ -282,7 +286,7 @@ When N1 07/2013 files exist, also run:
 node scripts/check-n1-2013-07-integration.mjs
 ```
 
-Before declaring completion, run:
+Manual release completion may also run:
 
 ```bash
 npx tsc --noEmit
@@ -292,43 +296,29 @@ npx expo start -c
 
 Lint warnings are not errors, but record their exact count. Do not claim iPhone visual verification unless the Simulator/device was actually used and screenshots were saved.
 
-## 10. Backup, commit, and remote-persistence protocol
+The simple loop does not run the whole-repository suite for every group of questions. Each exam session runs only its active-exam validator, `git diff --check`, and `node scripts/check-jlpt-approved-ui-lock.mjs`, plus any narrowly required integration check for that exam. The loop itself uses `bash -n` and `--smoke` for script validation.
+
+## 10. Commit and remote-persistence protocol
 
 ### Normal low-effort workflow
 
-Substantial JLPT work should normally run through Codex CLI in the actual local repository on a dedicated branch. Once the user has launched Codex in that checkout, the AI owns the routine persistence operations: create or reuse the branch, commit narrowly, push, fetch, and run the persistence validator. Do not pause merely to ask the user to run commands that the AI can run itself. Do not work directly on `main` unless the user explicitly requests it.
-
-Recommended one-time setup for the cross-level recovery run:
+Run the default process in the real local clone on the existing remote-tracking branch:
 
 ```bash
-git switch main
-git pull --ff-only origin main
-git switch -c recovery/jlpt-n3-n1
-git push -u origin recovery/jlpt-n3-n1
-bash scripts/run-jlpt-unattended.sh
+bash scripts/run-jlpt-simple-loop.sh
 ```
 
-If the recovery branch already exists, fetch it and continue it rather than creating a duplicate. Never infer the active exam from the branch name. The supervisor commits each validated large batch locally; normal push occurs at complete-exam boundaries, with immediate push on exit, signal, error, context handoff, rate-limit/global retry wait, or any other controlled session end.
+The script first pushes and verifies any existing local commit before allowing new data work. It preserves uncommitted work and never resets, checks out, cleans, stashes, or deletes it. The simple loop does not create repetitive backup directories; existing backups remain untouched, and Git provides the per-exam rollback record.
 
-Before editing JLPT-related files:
-
-1. List the exact files to change.
-2. Create `.jlpt-backups/<purpose>-<timestamp>/`.
-3. Copy only affected files while preserving relative paths.
-4. Save `SHA256-BEFORE.txt`.
-5. Make narrowly scoped changes.
-6. Run relevant validation.
-7. Save `SHA256-AFTER.txt` and update the exam checkpoint.
-
-Local backups are necessary for rollback but are not durable storage. For each validated large batch, the supervisor performs the local gate:
+Each child Codex session owns one whole active exam and creates exactly one narrow commit:
 
 ```bash
 git status --short
-git add -- <only the files belonging to the completed unit>
-git commit -m "<narrow description of the completed unit>"
+git add -- <only files belonging to the active exam>
+git commit -m "<narrow complete-exam description>"
 ```
 
-At exam completion or any controlled session boundary it then performs:
+Before advancing to another exam, that session performs:
 
 ```bash
 git push origin "$(git branch --show-current)"
@@ -344,7 +334,7 @@ The persistence validator must report that:
 - the remote itself advertises that exact commit; and
 - there are no uncommitted files belonging to the completed unit.
 
-The external journal records every exact local batch SHA. Do not create a second commit whose only purpose is to write the prior commit SHA. `WORK PERSISTENCE PASS` is required before the next exam or a clean session end.
+Do not create a second commit whose only purpose is to write the prior commit SHA. No external runtime journal or result schema is required. `WORK PERSISTENCE PASS` is required before the loop advances.
 
 If the AI lacks push credentials or remote access, it must stop before accumulating expensive work and recommend continuing through Codex CLI in the user's real clone. If the user explicitly elects to stay in the restricted workspace, provide exact commit/push commands or cumulative patches at agreed checkpoints. It must not accumulate another page or exam only in the temporary workspace. Creating a ZIP in the same temporary workspace does not satisfy this rule.
 
@@ -354,7 +344,7 @@ Never delete existing backups. Never restore the whole project to solve a local 
 
 After completing a page, passage, section, exam, check, or checkpoint, continue immediately to the next unfinished item in the same session. A progress report is not a reason to stop. Do not ask whether to continue when the next action is already defined.
 
-Exception: each large batch must validate and commit before the next begins. The supervisor must push/fetch/verify before a new exam, context handoff, retry wait, or session end.
+Exception: one child session must finish, validate, commit, push, fetch, and verify its active exam before the foreground loop starts the next exam. A network failure, rate limit, or unchanged HEAD/checkpoint stops immediately without automatic retry.
 
 Do not claim that a patch was installed on the user's Mac merely because it works in another workspace. For downloaded installers, verify the user's actual project with file-existence checks and validation output.
 

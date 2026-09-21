@@ -2,64 +2,67 @@
 
 ## Mandatory session startup
 
-Before planning, editing, restoring, integrating, or reporting any work in this project, read the following file completely:
+Before planning, editing, restoring, integrating, or reporting project work, read `docs/AI_SESSION_START_HERE.md` completely, then follow its mandatory reading order and verify the real working tree.
 
-- `docs/AI_SESSION_START_HERE.md`
+Exception: a child session launched by `scripts/run-jlpt-simple-loop.sh` must use the compact reading list embedded in that script. It must not reread the full startup document on every exam iteration.
 
-Then read every checkpoint or rule file listed by its "Mandatory reading order" section. Do not rely on chat history alone. Verify the actual working tree and run the startup checks before claiming the current state.
+## Default JLPT recovery process
+
+The default unattended process is now the single foreground loop:
+
+```bash
+bash scripts/run-jlpt-simple-loop.sh
+```
+
+It runs directly on `recovery/jlpt-n3-n1`, invokes exactly one `codex exec` for one complete active exam, and then advances sequentially through N1, N2, and N3, oldest exam first within each level. The older unattended supervisor, worker wrapper, result-schema, fixture, heartbeat, journal, and PID machinery remains historical compatibility material only and must not be used by the default process.
+
+The authoritative resume pointer is `docs/jlpt-workspace/JLPT_ACTIVE_PROGRESS.json`; the active exam checkpoint and repository state are authoritative. Never infer progress from a branch name. N1 12/2015 written questions 1–70 are remote-verified at `cd6614e7362b1fbe7b855c4b66a9e68e6899c7b7`; continue that exam from listening and never redo its written section.
+
+Each loop iteration must:
+
+1. Read only active progress, the current checkpoint, the active manifest when present, UI-lock rules, and necessary same-exam sources.
+2. Finish all remaining repository-backed work for exactly one exam.
+3. Produce complete written data and integrated listening marked `candidate_unverified`.
+4. Keep AI timing fields at `humanReviewed: false`, `perceptualApproval: false`, and `needs_later_review`.
+5. Defer multilingual explanations and translations.
+6. Run active-exam validation, `git diff --check`, and the UI-lock check.
+7. Update checkpoint and active progress, create exactly one narrow exam commit, push, fetch, and require `WORK PERSISTENCE PASS`.
+8. Advance only after HEAD and checkpoint progress both change.
+
+A source-unreadable item is a LOCAL blocker. Record it precisely and continue every other available unit. At the end of each level, revisit that level’s LOCAL blockers before moving to the next level. Stop the whole loop only for a genuine global technical blocker, rate limit, loss of network, or lack of progress.
+
+Never reset, checkout, clean, stash, delete, or overwrite existing work. Preserve legitimate unfinished working-tree data and continue it. If a local commit could not be pushed, the next loop run must push and verify it before processing new data.
 
 ## Mandatory durable-work gate
 
-This repository may be opened inside an ephemeral AI workspace. Files, `.git` objects, and local backup folders in that workspace can disappear between turns. Therefore a local edit, local commit, checkpoint file, validation pass, ZIP, or assistant progress report is **not** proof that work is preserved.
+Before editing, verify:
 
-### Preferred execution environment
+1. `git rev-parse --show-toplevel` succeeds and points to the intended Japan App repository.
+2. The current branch is `recovery/jlpt-n3-n1` and its configured remote is recorded.
+3. Local and remote-tracking HEAD are compared.
+4. Existing uncommitted changes are identified and preserved.
 
-For multi-page JLPT restoration, conversion, translation, or integration work, the default is **Codex CLI running inside the user's real local clone on the remote-tracking branch `recovery/jlpt-n3-n1`**. Never infer progress from this branch name. The central progress pointer, active manifest, checkpoint, and Git evidence are authoritative.
+A local edit, backup, validation, or commit is not durable proof. An exam is durable only after its narrow commit is pushed, fetched, and `node scripts/check-work-persistence.mjs` reports `WORK PERSISTENCE PASS`. If the network is unavailable, retain the local commit or valid unfinished data and stop safely without starting another exam.
 
-At the beginning of a new session, determine whether the AI can commit and push from the current checkout. If it cannot, say so before beginning expensive work and recommend moving the task to Codex CLI in the real clone. Do not make per-page downloadable patches the default workflow.
-
-Patch transfer is a fallback only when the user explicitly chooses to continue in a workspace without remote write access. In fallback mode, group several safely reviewable units into one cumulative patch when practical, while never allowing irreplaceable work to exist only in an ephemeral workspace. Do not repeatedly require the user to apply one patch per page unless there is no safer workable alternative.
-
-Before editing, the AI must verify all of the following:
-
-1. `git rev-parse --show-toplevel` succeeds.
-2. The checked-out repository is the intended Japan App repository.
-3. The current branch and configured remote are recorded.
-4. Local and remote HEAD are compared before relying on the checkout as current.
-5. Existing uncommitted user changes are identified and preserved.
-
-Durability checkpoints are mandatory after every validated large batch (normally a source page or 10–20 written questions, one listening problem/group, at least 20 translations when possible, or full-exam integration). At each durability checkpoint the unattended supervisor must:
-
-1. Update the authoritative checkpoint file.
-2. Run the relevant content and regression checks.
-3. Commit every file belonging to that completed unit to Git with a narrowly scoped message.
-4. Mark the commit pending in the external runtime journal without creating a second SHA-only commit.
-5. Normally push/fetch/verify at complete-exam boundaries; immediately push/fetch/verify on controlled exit, error, signal, context handoff, or a global retry wait.
-6. Require `WORK PERSISTENCE PASS` before advancing to a new exam or ending a session cleanly.
-
-The AI must not begin the next large batch until the previous batch has passed validation and exists in a narrow local commit recorded by the external journal. It must not begin the next exam until all commits for the previous exam are pushed and remotely verified. If a push required by an exit, error, handoff, retry wait, or exam boundary cannot be verified, stop content work and retain `pushPending: true` under the six-hour retry policy.
-
-Never tell the user that work is “saved,” “recorded,” “completed,” “safe,” or “available for the next session” unless the remote verification step passes. A `.jlpt-backups` directory is only a short-term rollback aid and never satisfies the durable-work gate.
+Do not claim that work is saved, complete, safe, or available for another session without remote verification. Do not create a second commit merely to record the first commit’s SHA.
 
 ## Execution-evidence discipline
 
-- Do not claim a process is running or work is in progress after returning to an input prompt unless a live tool/process check supplies current evidence.
-- Every completion claim must cite evidence from the immediately preceding command or tool result.
-- For file-changing work, perform the actual write, relevant validation, narrow commit, and the policy-required push/fetch/persistence gate at exam or session boundaries; analysis or a proposed next step is not completion.
-- Do not stop after analysis while an authorized, safe execution step remains. Continue autonomously within scope.
-- Validate every seconds-to-milliseconds conversion explicitly; never substitute seconds for millisecond fields.
-
-## Long unattended JLPT recovery
-
-For unattended multi-unit JLPT recovery, use `bash scripts/run-jlpt-unattended.sh` from a clean remote-tracking recovery branch. Fixed decisions are in `docs/jlpt-workspace/JLPT_AUTOMATION_DECISIONS.json`; the resume pointer is `docs/jlpt-workspace/JLPT_ACTIVE_PROGRESS.json`; each active exam has `WORK_MANIFEST.json`. Read `docs/jlpt-workspace/JLPT_UNATTENDED_RUNBOOK.md` first. The old written runner is only a compatibility wrapper.
-
-One non-interactive Codex worker session spans one complete exam and returns at large validation boundaries; the supervisor resumes that same session rather than creating per-question workers. The worker never owns Git. The deterministic outer supervisor selects work from the manifest, validates, creates one commit per batch, and owns all push/fetch/persistence, retry, cache, heartbeat, and journal operations. Automatically derived listening timing must remain candidate/unverified; never fabricate human/perceptual/audio approval. A blocked question or segment is not a global blocker while any other repository-backed unit remains available. In fully unattended mode, neither worker nor supervisor may ask the user or read stdin.
+- Never claim that a process is running after returning to a prompt without a current live-process check.
+- Completion claims require immediately preceding command evidence.
+- Do not stop at analysis while a safe authorized implementation step remains.
+- Validate every seconds-to-milliseconds conversion explicitly.
+- Do not retry rate limits, network failures, or zero-progress iterations indefinitely.
 
 ## JLPT approved exam UI lock
 
-The current JLPT N1 exam UI is user-approved and locked. Before changing JLPT code, read:
+Before changing JLPT data or integration, read:
 
 - `docs/checkpoints/JLPT_APPROVED_EXAM_UI_LOCKED.md`
 - `docs/jlpt-workspace/JLPT_UI_LOCK_RULES.md`
 
-Run `node scripts/check-jlpt-approved-ui-lock.mjs` before and after JLPT work. Do not change the approved hashes, snapshots, layout, styles, interaction behavior, or route without explicit user permission. Never reintroduce Royal A+F components into the JLPT exam screen.
+Run `node scripts/check-jlpt-approved-ui-lock.mjs` after JLPT work. Do not change approved hashes, snapshots, layout, styles, interaction behavior, session behavior, or routes without explicit user permission. Never reintroduce Royal A+F components into the JLPT exam screen.
+
+New exams must integrate through data/adapters compatible with the approved shared UI. Preserve independent exam IDs, question IDs, answer state, session keys, audio mappings, navigation, results, and post-submission review behavior. Never expose answers, transcripts, or explanations before submission.
+
+Do not overwrite the protected N1 12/2012 explanation or audio assets without explicit user instruction.
