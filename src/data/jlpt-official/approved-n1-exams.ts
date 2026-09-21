@@ -12,6 +12,7 @@ import { N1_2017_07_SESSION_KEY, N1_2017_07_TRIAL } from '@/data/jlpt-official/n
 import { N1_2017_12_SESSION_KEY, N1_2017_12_TRIAL } from '@/data/jlpt-official/n1-2017-12-trial';
 import { N1_2018_07_SESSION_KEY, N1_2018_07_TRIAL } from '@/data/jlpt-official/n1-2018-07-trial';
 import { N1_2018_12_SESSION_KEY, N1_2018_12_TRIAL } from '@/data/jlpt-official/n1-2018-12-trial';
+import { N1_2019_07_SESSION_KEY, N1_2019_07_TRIAL } from '@/data/jlpt-official/n1-2019-07-trial';
 import { n1December2013Explanation } from '@/data/jlpt-official/n1-2013-12-explanations';
 import type { AppLanguageCode } from '@/i18n/languages';
 
@@ -195,6 +196,12 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
     id: 'n1-2018-12-exam-14', level: 'N1', title: '日本語能力試験 N1', periodLabel: '2018年12月・第14回',
     startLabel: '第14回を始める', storageKey: N1_2018_12_SESSION_KEY, questions: N1_2018_12_TRIAL,
     audioSource: require('../../../assets/jlpt/n1/2018-12/audio/n1-2018-12.mp3'), visualOptions: {},
+  },
+  {
+    // Complete source-backed candidate; timing/transcript remain candidate/unverified.
+    id: 'n1-2019-07-exam-15', level: 'N1', title: '日本語能力試験 N1', periodLabel: '2019年7月・第15回',
+    startLabel: '第15回を始める', storageKey: N1_2019_07_SESSION_KEY, questions: N1_2019_07_TRIAL,
+    audioSource: require('../../../assets/jlpt/n1/2019-07/audio/n1-2019-07.mp3'), visualOptions: {},
   },
 ];
 
