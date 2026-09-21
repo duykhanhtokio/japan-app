@@ -383,8 +383,10 @@ async function main() {
   if (localHead !== remoteHead) {
     const remoteIsAncestor = git(['merge-base', '--is-ancestor', info.upstream, 'HEAD'], { allowFailure: true }).status === 0;
     if (!remoteIsAncestor) throw new Error(`local HEAD ${localHead} diverges from or trails remote ${remoteHead}`);
-    setState({ pushPending: true, recoveredFromGitAhead: true });
-    if (!offline && !testMode) await persistAll(info, startupLog);
+    if (!smoke) {
+      setState({ pushPending: true, recoveredFromGitAhead: true });
+      if (!offline && !testMode) await persistAll(info, startupLog);
+    }
   }
   const digest = node('scripts/jlpt-automation-state.mjs', ['digest-check'], { allowFailure: true });
   const fastResume = digest.status === 0;
@@ -532,8 +534,8 @@ async function shutdown() {
   const info = branchInfo();
   const logPath = resolve(logDir, `session-end-${Date.now()}.log`);
   const dirty = statusPorcelain();
-  let persistence = offline ? 'OFFLINE: remote verification deferred' : testMode ? 'TEST MODE: persistence skipped' : 'SKIPPED_DIRTY_UNVALIDATED';
-  if (!dirty && !offline && !testMode) {
+  let persistence = smoke ? 'SMOKE: persistence skipped' : offline ? 'OFFLINE: remote verification deferred' : testMode ? 'TEST MODE: persistence skipped' : 'SKIPPED_DIRTY_UNVALIDATED';
+  if (!smoke && !dirty && !offline && !testMode) {
     try { await persistAll(info, logPath); persistence = 'WORK PERSISTENCE PASS'; }
     catch (error) { persistence = `PUSH_PENDING: ${error.message}`; setState({ pushPending: true }); }
   }

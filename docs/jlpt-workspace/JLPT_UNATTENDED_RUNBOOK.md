@@ -1,6 +1,6 @@
 # Fully unattended JLPT N1 → N2 → N3 recovery
 
-From the clean remote-tracking recovery branch, start or resume with:
+Run a real data batch outside an interactive Codex maintenance session, from the clean remote-tracking recovery branch:
 
 ```bash
 bash scripts/run-jlpt-unattended.sh start
@@ -38,13 +38,31 @@ ${TMPDIR:-/tmp}/japan-app-jlpt-runtime/<repo-hash>/
 
 The journal records timestamp, exam/unit, source checksum, output paths, validation, local commit, push state, remote SHA, and next action. Heartbeats are printed by the supervisor once per minute and do not fetch, validate, inspect sources, mutate the repository, or call a model.
 
+## Maintenance validation
+
+Inside an interactive Codex maintenance session, run the complete non-destructive production test through exactly one shell entry point (and therefore one host-security approval boundary):
+
+```bash
+bash scripts/test-jlpt-unattended-production.sh
+```
+
+That script stops on the first failure, labels every step, runs syntax checks, the production lifecycle fixture, a real read-only Codex CLI smoke worker, result/event evidence checks, start/status/stop/resume coverage, and repository regressions. It never starts a real JLPT data batch, resets or cleans Git, changes credentials or Git configuration, or reads worker input from stdin. The fixture owns and cleans up only the isolated background processes and runtime directory it creates. Codex host-security prompts belong to the interactive environment; unattended worker decisions remain non-interactive through `approval_policy="never"`, ignored stdin, and schema rejection of user-directed questions.
+
+After that single test passes, persist only the maintenance allowlist with one controlled command:
+
+```bash
+bash scripts/persist-jlpt-unattended-maintenance.sh "test(jlpt): consolidate unattended maintenance checks"
+```
+
+The persistence script refuses unrelated or pre-staged changes, checks the diff, commits, pushes the configured upstream branch, fetches it, and requires `WORK PERSISTENCE PASS`. It does not reset, clean, reconfigure Git, or modify credentials.
+
 ## Resume
 
 On resume, deterministic startup reads `JLPT_ACTIVE_PROGRESS.json`, the active `WORK_MANIFEST.json`, local/upstream HEAD, `pushPending`, and `JLPT_RULE_DIGEST.json`. If the digest matches, full rules/inventory/OCR are not reloaded. If runtime state disappeared, Git plus the progress/manifest/checkpoint reconstructs the run. A pending local commit is pushed before content work begins.
 
 Validation tiers are PER_UNIT/PER_BATCH during ordinary work, PER_EXAM at exam completion, and GLOBAL only at startup, shared-file changes, exam completion, and final N1–N3 completion.
 
-Run the deterministic acceptance fixture with:
+For fixture-only development, the deterministic acceptance fixture remains available with:
 
 ```bash
 bash scripts/test-run-jlpt-unattended.sh

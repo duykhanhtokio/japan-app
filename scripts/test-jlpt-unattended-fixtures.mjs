@@ -15,6 +15,8 @@ const runbook = readFileSync(resolve(root, 'docs/jlpt-workspace/JLPT_UNATTENDED_
 const decisions = JSON.parse(readFileSync(resolve(root, 'docs/jlpt-workspace/JLPT_AUTOMATION_DECISIONS.json'), 'utf8'));
 const progress = JSON.parse(readFileSync(resolve(root, 'docs/jlpt-workspace/JLPT_ACTIVE_PROGRESS.json'), 'utf8'));
 const manifest = JSON.parse(readFileSync(resolve(root, progress.manifestPath), 'utf8'));
+const productionTest = readFileSync(resolve(root, 'scripts/test-jlpt-unattended-production.sh'), 'utf8');
+const persistenceScript = readFileSync(resolve(root, 'scripts/persist-jlpt-unattended-maintenance.sh'), 'utf8');
 const checks = [];
 const check = (name, condition, evidence = '') => {
   if (!condition) throw new Error(`FIXTURE FAIL: ${name}${evidence ? `: ${evidence}` : ''}`);
@@ -135,6 +137,10 @@ try {
 
   const source = readFileSync(resolve(root, 'scripts/jlpt-unattended-supervisor.mjs'), 'utf8');
   check('worker receives no user stdin and approval is never', source.includes("spawn('/usr/bin/script'") && source.includes("stdio: ['ignore'") && !source.includes('.stdin.write(') && source.includes('approval_policy="never"'));
+  check('production maintenance uses one approval entry point', runbook.includes('bash scripts/test-jlpt-unattended-production.sh') && productionTest.includes("step 'production lifecycle fixture'") && productionTest.includes("step 'real Codex live smoke'"));
+  check('production maintenance excludes destructive and credential operations', !/(?:git\s+(?:reset|clean|config)|credentials?)/i.test(productionTest) && !/\brm\b/.test(productionTest));
+  check('controlled persistence excludes destructive and Git configuration operations', !/(?:git\s+(?:reset|clean|config)|credentials?)/i.test(persistenceScript) && persistenceScript.includes('node scripts/check-work-persistence.mjs'));
+  check('live smoke cannot enter remote persistence', source.includes("if (!smoke && !dirty && !offline && !testMode)") && source.includes("if (!smoke) {\n      setState({ pushPending: true"));
   check('one unique stem defines event, stderr, partial, and result paths', source.includes('const stem = `worker-${turn}-${Date.now()}-${process.pid}-${workerPathSerial}`'));
   check('result promotion occurs only after production schema validation', source.indexOf("['validate', paths.resultPartialPath]") < source.indexOf('promoteResultAtomically(paths.resultPartialPath'));
   check('status uses PID liveness and process command verification', source.includes('process.kill(pid, 0)') && source.includes("spawnSync('/bin/ps'"));
@@ -161,6 +167,10 @@ try {
   check('INT TERM and HUP retain controlled shutdown', ['SIGINT', 'SIGTERM', 'SIGHUP'].every((signal) => source.includes(signal)) && source.includes('await persistAll(info, logPath)'));
   check('context handoff persists before a fresh session', source.includes('else if (result.contextHandoff)') && source.includes('sessionId = null'));
   check('retry waits never call the model', source.includes('modelCalled: false') && source.includes('GLOBAL_RETRY_WAIT'));
+  const heartbeatStart = source.indexOf('heartbeat = setInterval');
+  const heartbeatEnd = source.indexOf('}, testMode ? 250 : 60000);', heartbeatStart);
+  const heartbeatSlice = source.slice(heartbeatStart, heartbeatEnd);
+  check('heartbeat does not call the model', heartbeatSlice.includes('RUNNING |') && !heartbeatSlice.includes('invokeWorker') && !heartbeatSlice.includes('codexBin'));
   check('no arbitrary turn limit was introduced', !source.includes('MAX_NO_PROGRESS') && !source.includes('MAX_TURNS'));
   check('local no-progress keeps deterministic queue control', source.includes('WORKER_FAILURE_LOCAL') && source.includes('manifest.nextUnit'));
   check('locked UI paths remain explicitly rejected', source.includes('src/components/jlpt/ui/JlptExamUI.tsx') && source.includes('check-jlpt-approved-ui-lock.mjs'));
