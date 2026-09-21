@@ -26,6 +26,7 @@ const reviewPaths = [
   'docs/jlpt-workspace/conversion/n1-2015-12/written-page-06-q49.review.json',
   'docs/jlpt-workspace/conversion/n1-2015-12/written-page-06-07-q50-q55.review.json',
   'docs/jlpt-workspace/conversion/n1-2015-12/written-page-07-08-q56-q58.review.json',
+  'docs/jlpt-workspace/conversion/n1-2015-12/written-page-08-09-q59-q62.review.json',
 ];
 const questionPaths = [
   'assets/jlpt/n1/2015-12/question/page-02.jpg',
@@ -35,6 +36,7 @@ const questionPaths = [
   'assets/jlpt/n1/2015-12/question/page-06.jpg',
   'assets/jlpt/n1/2015-12/question/page-07.jpg',
   'assets/jlpt/n1/2015-12/question/page-08.jpg',
+  'assets/jlpt/n1/2015-12/question/page-09.jpg',
 ];
 const answerPath = 'assets/jlpt/n1/2015-12/answer-script/page-01.jpg';
 const sourcePath = 'src/data/jlpt-mock/n1-2015-12-official.ts';
@@ -46,10 +48,11 @@ const expectedHashes = new Map([
   [questionPaths[4], '88d6a62e89b9bd573c567c92a8a6a5fc7537dcb118a09f3ca3e6cacbcc6a416e'],
   [questionPaths[5], '85dd7a790364cb8978b5abe3480a7f09d673b7769a33cf3c33a8a4e2359732ec'],
   [questionPaths[6], 'b842b3d4fe099f608ad9cc3d9967fee27e489461eaab935553263a4304ff7058'],
+  [questionPaths[7], '0e3c5efcd6a8f37343b1d29bc78342e05bf8bdbd905b463d59fc63330c5cf1ba'],
   [answerPath, '36857fcd2d5987b0ce37b4dbab1dfd95e957a57552c542bb379291ef62b88529'],
   [sourcePath, '817145cefd066d55fe4edcf1fa8fe5cf430a93a3fb4a3a3434ba37a47bb6127b'],
 ]);
-const expectedKeys = [1, 2, 3, 4, 2, 1, 1, 3, 1, 2, 2, 4, 3, 4, 1, 2, 3, 4, 3, 4, 2, 3, 2, 1, 4, 1, 4, 1, 3, 2, 4, 3, 2, 1, 4, 1, 4, 2, 4, 3, 2, 1, 3, 1, 4, 4, 2, 3, 1, 4, 3, 3, 2, 4, 2, 1, 4, 2];
+const expectedKeys = [1, 2, 3, 4, 2, 1, 1, 3, 1, 2, 2, 4, 3, 4, 1, 2, 3, 4, 3, 4, 2, 3, 2, 1, 4, 1, 4, 1, 3, 2, 4, 3, 2, 1, 4, 1, 4, 2, 4, 3, 2, 1, 3, 1, 4, 4, 2, 3, 1, 4, 3, 3, 2, 4, 2, 1, 4, 2, 4, 2, 3, 3];
 
 const fail = message => {
   throw new Error(`N1 2015-12 RECOVERY FAIL: ${message}`);
@@ -85,6 +88,7 @@ if (!Array.isArray(recordsByPage[20]) || recordsByPage[20].length !== 1) fail(`e
 if (!Array.isArray(recordsByPage[21]) || recordsByPage[21].length !== 1) fail(`expected one page-06 question-49 record, found ${recordsByPage[21]?.length}`);
 if (!Array.isArray(recordsByPage[22]) || recordsByPage[22].length !== 6) fail(`expected six page-06-07 question-50-55 records, found ${recordsByPage[22]?.length}`);
 if (!Array.isArray(recordsByPage[23]) || recordsByPage[23].length !== 3) fail(`expected three page-07-08 question-56-58 records, found ${recordsByPage[23]?.length}`);
+if (!Array.isArray(recordsByPage[24]) || recordsByPage[24].length !== 4) fail(`expected four page-08-09 question-59-62 records, found ${recordsByPage[24]?.length}`);
 const records = recordsByPage.flat();
 
 const ids = new Set();
@@ -94,7 +98,7 @@ for (let index = 0; index < records.length; index += 1) {
   if (record.questionNumber !== questionNumber) fail(`record ${index} has questionNumber ${record.questionNumber}`);
   if (ids.has(record.questionNumber)) fail(`duplicate question ${record.questionNumber}`);
   ids.add(record.questionNumber);
-  const expectedPage = questionNumber <= 19 ? 2 : questionNumber <= 29 ? 3 : questionNumber <= 40 ? 4 : questionNumber <= 46 ? 5 : questionNumber <= 49 ? 6 : questionNumber <= 55 ? 7 : 8;
+  const expectedPage = questionNumber <= 19 ? 2 : questionNumber <= 29 ? 3 : questionNumber <= 40 ? 4 : questionNumber <= 46 ? 5 : questionNumber <= 49 ? 6 : questionNumber <= 55 ? 7 : questionNumber <= 58 ? 8 : 9;
   if (record.sourcePage !== expectedPage) fail(`question ${questionNumber} has sourcePage ${record.sourcePage}`);
   if (questionNumber === 30 && JSON.stringify(record.sourcePages) !== JSON.stringify([3, 4])) {
     fail(`question 30 sourcePages ${JSON.stringify(record.sourcePages)} != [3,4]`);
@@ -126,7 +130,10 @@ for (let index = 0; index < records.length; index += 1) {
   if ([56, 57, 58].includes(questionNumber) && JSON.stringify(record.sourcePages) !== JSON.stringify([7, 8])) {
     fail(`question ${questionNumber} sourcePages ${JSON.stringify(record.sourcePages)} != [7,8]`);
   }
-  if (![1, 2, 3, 4, 5, 6, 7, 8, 9].includes(record.problemNumber)) fail(`question ${questionNumber} has invalid problemNumber`);
+  if ([59, 60, 61, 62].includes(questionNumber) && JSON.stringify(record.sourcePages) !== JSON.stringify([8, 9])) {
+    fail(`question ${questionNumber} sourcePages ${JSON.stringify(record.sourcePages)} != [8,9]`);
+  }
+  if (![1, 2, 3, 4, 5, 6, 7, 8, 9, 10].includes(record.problemNumber)) fail(`question ${questionNumber} has invalid problemNumber`);
   if (!Array.isArray(record.options) || record.options.length !== 4 || record.options.some(option => typeof option !== 'string' || option.length === 0)) {
     fail(`question ${questionNumber} must have four nonempty options`);
   }
@@ -146,4 +153,4 @@ const declaredKeys = [...keyMatch[1].matchAll(/\d+/g)].map(match => Number(match
 if (declaredKeys.length !== 70) fail(`declared written key count ${declaredKeys.length} != 70`);
 if (!expectedKeys.every((key, index) => declaredKeys[index] === key)) fail('recovered keys differ from source declaration');
 
-console.log('N1 2015-12 RECOVERY PASS: pages 2-8 questions 1-58; four options each; unique IDs; 58/58 keys match 70-entry declaration; cross-page mappings and source hashes match');
+console.log('N1 2015-12 RECOVERY PASS: pages 2-9 questions 1-62; four options each; unique IDs; 62/62 keys match 70-entry declaration; cross-page mappings and source hashes match');
