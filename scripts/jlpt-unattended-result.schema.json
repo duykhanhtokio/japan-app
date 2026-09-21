@@ -2,40 +2,19 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
-  "required": ["status", "examId", "unit", "commitMessage", "changedFiles", "validations", "nextAction", "blockers"],
+  "required": ["status", "examId", "unit", "commitMessage", "changedFiles", "validations", "nextAction", "blockers", "sourceChecksum", "toolVersion", "examComplete", "contextHandoff"],
   "properties": {
     "status": { "type": "string", "enum": ["LOCAL_CHANGES_READY", "NO_CHANGE_CONTINUE", "RATE_LIMITED", "BLOCKED_GLOBAL", "COMPLETE_ALL_AVAILABLE"] },
     "examId": { "type": "string" },
     "unit": { "type": "string" },
     "commitMessage": { "type": "string" },
-    "changedFiles": { "type": "array", "items": { "type": "string", "minLength": 1 } },
-    "validations": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": ["name", "status", "evidence"],
-        "properties": {
-          "name": { "type": "string", "minLength": 1 },
-          "status": { "type": "string", "enum": ["PASS", "FAIL"] },
-          "evidence": { "type": "string" }
-        }
-      }
-    },
+    "changedFiles": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+    "validations": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["name", "status", "evidence"], "properties": { "name": { "type": "string", "minLength": 1 }, "status": { "type": "string", "enum": ["PASS", "FAIL"] }, "evidence": { "type": "string" } } } },
     "nextAction": { "type": "string" },
-    "blockers": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": ["scope", "code", "details", "evidence"],
-        "properties": {
-          "scope": { "type": "string", "enum": ["LOCAL", "GLOBAL"] },
-          "code": { "type": "string", "minLength": 1 },
-          "details": { "type": "string", "minLength": 1 },
-          "evidence": { "type": "string", "minLength": 1 }
-        }
-      }
-    }
+    "blockers": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["scope", "code", "details", "evidence"], "properties": { "scope": { "type": "string", "enum": ["LOCAL", "GLOBAL"] }, "code": { "type": "string", "minLength": 1 }, "details": { "type": "string", "minLength": 1 }, "evidence": { "type": "string", "minLength": 1 } } } },
+    "sourceChecksum": { "type": "string", "pattern": "^$|^[0-9a-f]{64}$" },
+    "toolVersion": { "type": "string" },
+    "examComplete": { "type": "boolean" },
+    "contextHandoff": { "type": "string", "maxLength": 8000 }
   }
 }

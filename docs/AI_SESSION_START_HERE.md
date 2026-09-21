@@ -4,7 +4,7 @@
 DOCUMENT ROLE: AUTHORITATIVE SESSION ENTRY POINT
 READ: AT THE START OF EVERY AI/CODEX SESSION
 PROJECT: Japan App
-LAST UPDATED: 2026-09-20
+LAST UPDATED: 2026-09-21
 ```
 
 This file exists so a new AI session can continue work without asking the user to reconstruct prior decisions. Chat history is supporting context only. The current project files, checksums, checkpoints, and validation scripts are authoritative.
@@ -13,7 +13,7 @@ This file exists so a new AI session can continue work without asking the user t
 
 The user has authorized automated end-to-end recovery of all available JLPT exams, including listening candidate segmentation and integration. Human per-segment review is deferred until after broad catalog integration. Automatically derived timing must be explicitly candidate/unverified, must not claim human/perceptual/audio approval, and may carry `needs_later_review` without blocking other work. A source-unreadable written question or unresolved listening segment is a local blocker only; record it and continue all other available units.
 
-For a long unattended batch, use `bash scripts/run-jlpt-unattended.sh`. It reads `docs/jlpt-workspace/JLPT_UNATTENDED_PROMPT.md`; each sandboxed child only edits one data/checkpoint unit, validates it locally, and returns fixed-schema JSON. The outer supervisor alone verifies the changed-file manifest, stages exact paths, commits, pushes, fetches, and runs persistence verification before another child starts. See `docs/jlpt-workspace/JLPT_UNATTENDED_RUNBOOK.md`.
+For a long unattended batch, use `bash scripts/run-jlpt-unattended.sh`. Fixed policy is in `JLPT_AUTOMATION_DECISIONS.json`; `JLPT_ACTIVE_PROGRESS.json` and the active exam's `WORK_MANIFEST.json` are the resume and queue authorities. One non-interactive Codex session spans a complete exam and is resumed across large validated batches. The deterministic supervisor owns Git, cache, journal, retry, and persistence. See `docs/jlpt-workspace/JLPT_UNATTENDED_RUNBOOK.md`.
 
 ## 1. Mandatory startup procedure
 
@@ -193,6 +193,8 @@ Expected verified state:
 
 ## 7. Current JLPT resume point
 
+The machine-readable pointer `docs/jlpt-workspace/JLPT_ACTIVE_PROGRESS.json` supersedes the historical prose below. As of 2026-09-21, actual remote-backed progress is N1 12/2015 through written question 48; the next unit starts at question 49 on `assets/jlpt/n1/2015-12/question/page-06.jpg`. Never infer progress from the branch name.
+
 Newest active exam checkpoint: `docs/jlpt-workspace/conversion/n1-2015-07/CONVERSION_CHECKPOINT.md`. N1 07/2015 written questions 1–28 and 30–45 are remotely durable at `d2c8e17e05632978366ecdedf21b0e923665ae8d`; question 29 remains `BLOCKED_SOURCE_UNREADABLE`. Verify the checkpoint and Git state, then continue from the first available incomplete unit, question 46 on `assets/jlpt/n1/2015-07/question/page-06.jpg`. After available written work, continue listening candidate, explanations/translations when required and sourced, and candidate integration. Do not redo remotely verified units.
 
 The historical text below preserves earlier exam checkpoints; when it conflicts with this newest resume point, follow the newest checkpoint and actual repository state.
@@ -296,17 +298,17 @@ Lint warnings are not errors, but record their exact count. Do not claim iPhone 
 
 Substantial JLPT work should normally run through Codex CLI in the actual local repository on a dedicated branch. Once the user has launched Codex in that checkout, the AI owns the routine persistence operations: create or reuse the branch, commit narrowly, push, fetch, and run the persistence validator. Do not pause merely to ask the user to run commands that the AI can run itself. Do not work directly on `main` unless the user explicitly requests it.
 
-Recommended one-time setup when starting a new exam:
+Recommended one-time setup for the cross-level recovery run:
 
 ```bash
 git switch main
 git pull --ff-only origin main
-git switch -c recovery/<exam-id>
-git push -u origin recovery/<exam-id>
-codex
+git switch -c recovery/jlpt-n3-n1
+git push -u origin recovery/jlpt-n3-n1
+bash scripts/run-jlpt-unattended.sh
 ```
 
-If the recovery branch already exists, fetch it and continue it rather than creating a duplicate. Commit after each completed source unit. Push and remotely verify often enough that a workspace or machine interruption cannot destroy a meaningful amount of work; when network access is available, the preferred default is to push every completed unit automatically.
+If the recovery branch already exists, fetch it and continue it rather than creating a duplicate. Never infer the active exam from the branch name. The supervisor commits each validated large batch locally; normal push occurs at complete-exam boundaries, with immediate push on exit, signal, error, context handoff, rate-limit/global retry wait, or any other controlled session end.
 
 Before editing JLPT-related files:
 
@@ -318,12 +320,17 @@ Before editing JLPT-related files:
 6. Run relevant validation.
 7. Save `SHA256-AFTER.txt` and update the exam checkpoint.
 
-Local backups are necessary for rollback but are not durable storage. For each completed page, listening problem, translation batch, integrated exam, or similarly expensive unit, perform this gate before starting the next unit:
+Local backups are necessary for rollback but are not durable storage. For each validated large batch, the supervisor performs the local gate:
 
 ```bash
 git status --short
 git add -- <only the files belonging to the completed unit>
 git commit -m "<narrow description of the completed unit>"
+```
+
+At exam completion or any controlled session boundary it then performs:
+
+```bash
 git push origin "$(git branch --show-current)"
 git fetch origin "$(git branch --show-current)"
 node scripts/check-work-persistence.mjs
@@ -337,7 +344,7 @@ The persistence validator must report that:
 - the remote itself advertises that exact commit; and
 - there are no uncommitted files belonging to the completed unit.
 
-After verification, write the exact commit SHA into the current conversion checkpoint under `Durable checkpoint`. Only then may work continue to the next unit.
+The external journal records every exact local batch SHA. Do not create a second commit whose only purpose is to write the prior commit SHA. `WORK PERSISTENCE PASS` is required before the next exam or a clean session end.
 
 If the AI lacks push credentials or remote access, it must stop before accumulating expensive work and recommend continuing through Codex CLI in the user's real clone. If the user explicitly elects to stay in the restricted workspace, provide exact commit/push commands or cumulative patches at agreed checkpoints. It must not accumulate another page or exam only in the temporary workspace. Creating a ZIP in the same temporary workspace does not satisfy this rule.
 
@@ -347,7 +354,7 @@ Never delete existing backups. Never restore the whole project to solve a local 
 
 After completing a page, passage, section, exam, check, or checkpoint, continue immediately to the next unfinished item in the same session. A progress report is not a reason to stop. Do not ask whether to continue when the next action is already defined.
 
-Exception: stop at every durability checkpoint until commit, push, and remote verification succeed. Remote durability is a required part of completing the unit, not an optional progress report.
+Exception: each large batch must validate and commit before the next begins. The supervisor must push/fetch/verify before a new exam, context handoff, retry wait, or session end.
 
 Do not claim that a patch was installed on the user's Mac merely because it works in another workspace. For downloaded installers, verify the user's actual project with file-existence checks and validation output.
 

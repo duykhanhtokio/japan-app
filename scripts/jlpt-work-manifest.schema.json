@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "examId", "level", "chronologicalOrder", "questionSourcePages", "writtenRanges", "answerKeyPaths", "answerKeyChecksums", "listeningSource", "audioChecksum", "scriptTranscriptPaths", "explanationSources", "translationState", "integrationState", "completedUnits", "remoteVerifiedUnits", "localOnlyCommittedUnits", "blockedUnits", "pendingUnits", "nextUnit", "validationCommands", "allowedOutputPaths", "sourceChecksums"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "examId": { "type": "string", "minLength": 1 },
+    "level": { "enum": ["N1", "N2", "N3"] },
+    "chronologicalOrder": { "type": "integer", "minimum": 1 },
+    "questionSourcePages": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "writtenRanges": { "type": "array", "items": { "type": "object", "required": ["pages", "questions", "status"], "properties": { "pages": { "type": "array", "items": { "type": "string" } }, "questions": { "type": "string" }, "status": { "enum": ["remote_verified", "local_committed", "pending", "blocked"] } } },
+    "answerKeyPaths": { "type": "array", "items": { "type": "string" } },
+    "answerKeyChecksums": { "type": "object", "additionalProperties": { "type": "string", "pattern": "^[0-9a-f]{64}$" } },
+    "listeningSource": { "type": "object" },
+    "audioChecksum": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "scriptTranscriptPaths": { "type": "array", "items": { "type": "string" } },
+    "explanationSources": { "type": "array", "items": { "type": "string" } },
+    "translationState": { "type": "object" },
+    "integrationState": { "type": "object" },
+    "completedUnits": { "type": "array", "items": { "type": "string" } },
+    "remoteVerifiedUnits": { "type": "array", "items": { "type": "object" } },
+    "localOnlyCommittedUnits": { "type": "array", "items": { "type": "object" } },
+    "blockedUnits": { "type": "array", "items": { "type": "object" } },
+    "pendingUnits": { "type": "array", "items": { "type": "string" } },
+    "nextUnit": { "type": "string", "minLength": 1 },
+    "validationCommands": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "allowedOutputPaths": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "sourceChecksums": { "type": "object", "additionalProperties": { "type": "string", "pattern": "^[0-9a-f]{64}$" } }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "executionMode": "fully_unattended",
+  "examOrder": ["N1", "N2", "N3"],
+  "reusePriorDecisions": true,
+  "askUserDuringRun": false,
+  "workerLifetime": "one_complete_exam",
+  "uiLocked": true,
+  "writtenBatchPolicy": {
+    "preferredUnit": "source_page",
+    "minimumQuestions": 10,
+    "maximumQuestions": 20,
+    "crossPageQuestionSameBatch": true
+  },
+  "listeningPolicy": {
+    "automaticSegmentationAllowed": true,
+    "integrationBeforeHumanReviewAllowed": true,
+    "status": "candidate_unverified",
+    "humanReviewed": false,
+    "perceptualApproval": false,
+    "needsLaterReview": true
+  },
+  "translationPolicy": {
+    "aiTranslationAllowed": true,
+    "preferredMinimumRecordsPerBatch": 20,
+    "mustRemainTruthfullyUnreviewed": true
+  },
+  "unreadableSourcePolicy": {
+    "scope": "LOCAL",
+    "action": "record_and_continue",
+    "inferFromAnswerKey": false,
+    "maximumAutomatedAttempts": 2
+  },
+  "persistencePolicy": {
+    "localCommitAfterValidatedBatch": true,
+    "normalRemotePush": "after_complete_exam",
+    "pushAtControlledSessionEnd": true,
+    "pushOnError": true,
+    "pushBeforeContextHandoff": true,
+    "pushBeforeRateLimitExit": true,
+    "fullPersistenceCheckAtExamCompletion": true,
+    "fullPersistenceCheckAtSessionEnd": true
+  },
+  "retryPolicy": {
+    "enabled": true,
+    "maximumTotalDurationHours": 6,
+    "useExponentialBackoff": true,
+    "doNotConsumeModelTokensWhileWaiting": true
+  },
+  "questionPolicy": {
+    "askForKnownDecision": false,
+    "askForTechnicalImplementationChoice": false,
+    "unknownNonDestructiveChoice": "follow_existing_verified_repository_pattern",
+    "unknownContentChoice": "record_local_blocker_and_continue",
+    "destructiveChoice": "do_not_execute"
+  }
+}

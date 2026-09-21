@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "activeLevel", "activeExamId", "phase", "completedWrittenThrough", "completedUnits", "blockedUnits", "nextAction", "checkpointPath", "manifestPath", "lastValidatedLocalCommit", "lastDurableUnitSHA", "lastRemoteHeadSHA", "pushPending", "updatedAt"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "activeLevel": { "enum": ["N1", "N2", "N3"] },
+    "activeExamId": { "type": "string", "minLength": 1 },
+    "phase": { "enum": ["written", "listening", "explanations", "translations", "integration", "validation", "complete"] },
+    "completedWrittenThrough": { "type": "integer", "minimum": 0 },
+    "completedUnits": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "blockedUnits": { "type": "array", "items": { "type": "object" } },
+    "nextAction": { "type": "string", "minLength": 1 },
+    "checkpointPath": { "type": "string", "pattern": "^docs/jlpt-workspace/conversion/" },
+    "manifestPath": { "type": "string", "pattern": "^docs/jlpt-workspace/conversion/" },
+    "lastValidatedLocalCommit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "lastDurableUnitSHA": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "lastRemoteHeadSHA": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "pushPending": { "type": "boolean" },
+    "updatedAt": { "type": "string", "format": "date-time" }
+  }
+}

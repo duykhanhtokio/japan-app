@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "executionMode", "examOrder", "reusePriorDecisions", "askUserDuringRun", "workerLifetime", "uiLocked", "writtenBatchPolicy", "listeningPolicy", "translationPolicy", "unreadableSourcePolicy", "persistencePolicy", "retryPolicy", "questionPolicy"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "executionMode": { "const": "fully_unattended" },
+    "examOrder": { "const": ["N1", "N2", "N3"] },
+    "reusePriorDecisions": { "const": true },
+    "askUserDuringRun": { "const": false },
+    "workerLifetime": { "const": "one_complete_exam" },
+    "uiLocked": { "const": true },
+    "writtenBatchPolicy": { "type": "object" },
+    "listeningPolicy": { "type": "object" },
+    "translationPolicy": { "type": "object" },
+    "unreadableSourcePolicy": { "type": "object" },
+    "persistencePolicy": { "type": "object" },
+    "retryPolicy": { "type": "object" },
+    "questionPolicy": { "type": "object" }
+  }
+}
