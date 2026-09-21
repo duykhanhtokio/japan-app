@@ -67,6 +67,8 @@ import { N3_2017_12_AUDIO } from '@/data/jlpt-mock/n3-2017-12-official';
 import { N3_2017_12_SESSION_KEY, N3_2017_12_TRIAL } from '@/data/jlpt-official/n3-2017-12-trial';
 import { N3_2018_07_AUDIO } from '@/data/jlpt-mock/n3-2018-07-official';
 import { N3_2018_07_SESSION_KEY, N3_2018_07_TRIAL } from '@/data/jlpt-official/n3-2018-07-trial';
+import { N3_2018_12_AUDIO } from '@/data/jlpt-mock/n3-2018-12-official';
+import { N3_2018_12_SESSION_KEY, N3_2018_12_TRIAL } from '@/data/jlpt-official/n3-2018-12-trial';
 import { n1December2013Explanation } from '@/data/jlpt-official/n1-2013-12-explanations';
 import type { AppLanguageCode } from '@/i18n/languages';
 
@@ -418,6 +420,12 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
     id: 'n3-2018-07-exam-13', level: 'N3', title: '日本語能力試験 N3', periodLabel: '2018年7月・第13回',
     startLabel: '第13回を始める', storageKey: N3_2018_07_SESSION_KEY, questions: N3_2018_07_TRIAL,
     audioSource: N3_2018_07_AUDIO, visualOptions: {},
+  },
+  {
+    // Complete candidate; one scan-gap placeholder and candidate audio remain for later review.
+    id: 'n3-2018-12-exam-14', level: 'N3', title: '日本語能力試験 N3', periodLabel: '2018年12月・第14回',
+    startLabel: '第14回を始める', storageKey: N3_2018_12_SESSION_KEY, questions: N3_2018_12_TRIAL,
+    audioSource: N3_2018_12_AUDIO, visualOptions: {},
   },
 ];
 
