@@ -19,7 +19,7 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
   const navigation = useNavigation();
   const [selected, setSelected] = useState<Choice | null>(null);
   const choices = useMemo<Choice[]>(() => {
-    const structured: Choice[] = level === 'N1' ? APPROVED_N1_EXAMS.map((exam) => ({ kind: 'structured' as const, exam })) : [];
+    const structured: Choice[] = APPROVED_N1_EXAMS.filter((exam) => exam.level === level).map((exam) => ({ kind: 'structured' as const, exam }));
     const pending: Choice[] = PENDING_JLPT_EXAMS.filter((exam) => exam.level === level).map((exam) => ({ kind: 'pending' as const, exam }));
     const mock = MOCK_JLPT_EXAMS.find((exam) => exam.level === level);
     return [...structured, ...pending, ...(mock ? [{ kind: 'mock' as const, id: mock.id, level }] : [])];
