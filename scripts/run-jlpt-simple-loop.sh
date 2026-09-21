@@ -170,7 +170,7 @@ One-exam deliverable:
 7. At the end, run the active-exam validator exactly once, then git diff --check exactly once, then node scripts/check-jlpt-approved-ui-lock.mjs exactly once. If final validation fails, leave valid work for fallback and do not commit.
 8. Only after all checks pass, update $checkpoint_path and active progress for THIS exam. Keep activeExamId=$active_exam; never point it to the next exam. Set phase="exam_complete" and add $active_exam once to completedUnits as {"examId":"$active_exam","status":"exam_complete"}. The shell derives the next exam only after remote persistence.
 9. Create exactly one narrow commit for this exam. If an incomplete unpushed Terra commit exists, Sol must amend it instead of creating a second one. Do not push or fetch; the shell owns the single push, fetch, and persistence check.
-10. Rate limit, network loss, or service failure must stop immediately without retrying or switching models. Do not ask for established Git or validation permission.
+10. External execution failures must stop immediately without retrying or switching models. Do not ask for established Git or validation permission.
 EOF
 }
 
