@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+
+const examId='n3-2013-07-exam-03',reviewDir='docs/jlpt-workspace/conversion/n3-2013-07';
+const written=JSON.parse(fs.readFileSync(`${reviewDir}/written.review.json`,'utf8'));
+const listeningReview=JSON.parse(fs.readFileSync(`${reviewDir}/listening.review.json`,'utf8'));
+const sourceModule=fs.readFileSync('src/data/jlpt-mock/n3-2013-07-official.ts','utf8');
+const key=(name)=>sourceModule.match(new RegExp(`${name} = \\[([\\s\\S]*?)\\]`))[1].match(/\d+/g).map(Number);
+const writtenKey=key('N3_2013_07_WRITTEN_KEY'),listeningKey=key('N3_2013_07_LISTENING_KEY');
+assert.equal(written.length,74);assert.equal(listeningReview.length,28);
+const familyMap={'kanji-reading':'vocabulary',orthography:'vocabulary','vocabulary-context':'vocabulary','vocabulary-synonym':'vocabulary','vocabulary-usage':'vocabulary','grammar-fill':'grammar','grammar-order':'sentenceComposition','grammar-text':'grammar','reading-short':'reading','reading-medium':'reading','reading-long':'reading','reading-comparative':'reading','reading-information-retrieval':'reading'};
+const optionObjects=(values)=>values.map((textJa,index)=>({optionId:String(index+1),textJa}));
+const writtenQuestions=written.map((q,index)=>{assert.equal(Number(q.correctOptionId),writtenKey[index]);assert.equal(q.options.length,4);return {questionId:`n3-2013-07-written-q${String(q.questionNumber).padStart(3,'0')}`,sectionId:'written',problemNumber:q.problemNumber,questionNumber:q.questionNumber,family:familyMap[q.family],sourceFamily:q.family,instructionJa:q.family.startsWith('reading')?'次の文章を読んで、問いに答えなさい。':'最もよいものを、1・2・3・4から一つ選びなさい。',promptJa:q.promptJa,options:optionObjects(q.options),correctOptionId:q.correctOptionId,verificationStatus:'candidate_source_transcription',source:{questionPage:q.sourcePage,questionPages:q.sourcePages,answerPage:15}};});
+const audioHash='3f4932373427719c5856fa9b0dd65509d366cf3def7dc0c558375d3c173cdd6e';
+const listeningQuestions=listeningReview.map((q,index)=>{assert.equal(Number(q.correctOptionId),listeningKey[index]);const [s,e]=q.audioSeconds,startMs=Math.round(s*1000),endMs=Math.round(e*1000);assert.ok(endMs>startMs&&endMs<=1800000);return {questionId:`n3-2013-07-p${q.problemNumber}-q${String(q.questionNumber).padStart(2,'0')}`,sectionId:'listening',problemNumber:q.problemNumber,questionNumber:q.questionNumber,family:'listening',instructionJa:'音声を聞いて、最もよいものを一つ選びなさい。',promptJa:q.promptJa,options:optionObjects(q.options),correctOptionId:q.correctOptionId,source:q.source,answerVerificationStatus:'verified_against_source_key',transcriptVerificationStatus:'candidate_unverified',verificationStatus:'candidate_unverified',audio:{segmentId:`n3-2013-07-p${q.problemNumber}-q${String(q.questionNumber).padStart(2,'0')}`,startMs,endMs,transcriptJa:q.transcriptJa,transcriptSourcePages:q.source.answerScriptPages,timingVerificationStatus:'candidate_unverified',timingEvidence:`Broad candidate boundaries ${s.toFixed(3)} s and ${e.toFixed(3)} s; exact perceptual review deferred.`,sourceAudioSha256:audioHash,candidateDate:'2026-09-21',humanReviewed:false,perceptualApproval:false,reviewDisposition:'needs_later_review'}};});
+const questions=[...writtenQuestions,...listeningQuestions];
+assert.equal(questions.length,102);assert.equal(new Set(questions.map(q=>q.questionId)).size,102);assert.equal(new Set(listeningQuestions.map(q=>q.audio.segmentId)).size,28);
+const data={schemaVersion:1,examId,status:'candidate_complete',counts:{writtenResponses:74,listeningResponses:28,totalResponses:102,uniqueAudioSegments:28},blockers:[],source:{questionPdfSha256:'3822e737deb8b4c0d3345f98e026c9e4bf374d2a31493197c4047713c2c8ecb6',answerScriptPdfSha256:'24d96b3e7f64983f7e4a5c71e1f51660d947057936d6596ca61379df217b5c30',audioSha256:audioHash},review:{audioTiming:'Candidate/unverified broad segmentation; later perceptual review required.',transcripts:'Candidate placeholders tied to source script pages; detailed transcription review deferred.',explanations:'Translations and explanations deferred.'},passages:{},questions};
+const out='src/data/jlpt-official/n3-2013-07/exam.candidate.json',serialized=`${JSON.stringify(data,null,2)}\n`;
+fs.mkdirSync('src/data/jlpt-official/n3-2013-07',{recursive:true});
+if(process.argv.includes('--check'))assert.equal(fs.readFileSync(out,'utf8'),serialized);else fs.writeFileSync(out,serialized);
+console.log('N3 2013-07 built: 74 written + 28 listening responses; 28 candidate audio segments.');
