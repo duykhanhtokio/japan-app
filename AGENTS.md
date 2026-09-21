@@ -14,24 +14,27 @@ The default unattended process is now the single foreground loop:
 bash scripts/run-jlpt-simple-loop.sh
 ```
 
-It runs directly on `recovery/jlpt-n3-n1`, invokes exactly one `codex exec` for one complete active exam, and then advances sequentially through N1, N2, and N3, oldest exam first within each level. The older unattended supervisor, worker wrapper, result-schema, fixture, heartbeat, journal, and PID machinery remains historical compatibility material only and must not be used by the default process.
+It runs directly on `recovery/jlpt-n3-n1` and advances sequentially through N1, N2, and N3, oldest exam first within each level. Each exam gets one `gpt-5.6-terra` call. Only when Terra fails to leave a complete validated commit may one `gpt-5.6-sol` fallback continue Terra's valid work; it must not restart the exam. A rate limit, network loss, or service failure stops safely without switching models or retrying. The older unattended supervisor, worker wrapper, result-schema, fixture, heartbeat, journal, and PID machinery remains historical compatibility material only and must not be used by the default process.
 
-The authoritative resume pointer is `docs/jlpt-workspace/JLPT_ACTIVE_PROGRESS.json`; the active exam checkpoint and repository state are authoritative. Never infer progress from a branch name. N1 12/2015 written questions 1–70 are remote-verified at `cd6614e7362b1fbe7b855c4b66a9e68e6899c7b7`; continue that exam from listening and never redo its written section.
+The authoritative durable state is `docs/jlpt-workspace/JLPT_ACTIVE_PROGRESS.json`, the active exam checkpoint, and Git. Never infer progress from a branch name. N1 12/2015 is complete and remote-verified at `1846d8c13ac11988cda08b5e6267686933d60b28`. The next exam is N1 07/2016 (`n1-2016-07-exam-09`). Its checkpoint/manifest may not exist until that first exam attempt creates them narrowly. Do not revisit remote-verified work.
 
 Each loop iteration must:
 
-1. Read only active progress, the current checkpoint, the active manifest when present, UI-lock rules, and necessary same-exam sources.
+1. Do not reread this file or the full startup document. Read only active progress, the current checkpoint and manifest when present, UI-lock rules, and necessary same-exam sources.
 2. Finish all remaining repository-backed work for exactly one exam.
 3. Produce complete written data and integrated listening marked `candidate_unverified`.
 4. Keep AI timing fields at `humanReviewed: false`, `perceptualApproval: false`, and `needs_later_review`.
 5. Defer multilingual explanations and translations.
-6. Run active-exam validation, `git diff --check`, and the UI-lock check.
-7. Update checkpoint and active progress, create exactly one narrow exam commit, push, fetch, and require `WORK PERSISTENCE PASS`.
-8. Advance only after HEAD and checkpoint progress both change.
+6. Read required source pages once in a batch, reuse the extracted content, and use local scripts for sorting, counts, timing conversion, IDs, hashes, and ranges.
+7. Run active-exam validation once at the end, then `git diff --check` once and the UI-lock check once. Do not run repository-wide validation or repeat unchanged checks.
+8. Mark only the current exam complete in active progress, create exactly one narrow exam commit, then let the shell push once, fetch, and require `WORK PERSISTENCE PASS`.
+9. Do not point active progress at the next exam before persistence. After persistence, the shell derives the next exam from the canonical ordered exam list; no SHA-only follow-up commit is allowed.
 
 A source-unreadable item is a LOCAL blocker. Record it precisely and continue every other available unit. At the end of each level, revisit that level’s LOCAL blockers before moving to the next level. Stop the whole loop only for a genuine global technical blocker, rate limit, loss of network, or lack of progress.
 
 Never reset, checkout, clean, stash, delete, or overwrite existing work. Preserve legitimate unfinished working-tree data and continue it. If a local commit could not be pushed, the next loop run must push and verify it before processing new data.
+
+Keep output bounded. Never run or print a full `git diff`, full JSON, transcript, source file, or generated dataset. Git inspection is limited to `git diff --stat`, `git diff --name-only`, `git status --short`, and `git diff --check`. The simple loop must remain one foreground shell loop and must not depend on `rg` or use `--approve-for-me`.
 
 ## Mandatory durable-work gate
 

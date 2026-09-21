@@ -13,9 +13,9 @@ This file exists so a new AI session can continue work without asking the user t
 
 The user has authorized automated end-to-end recovery of all available JLPT exams, including listening candidate segmentation and integration. Human per-segment review is deferred until after broad catalog integration. Automatically derived timing must be explicitly candidate/unverified, must not claim human/perceptual/audio approval, and may carry `needs_later_review` without blocking other work. A source-unreadable written question or unresolved listening segment is a local blocker only; record it and continue all other available units.
 
-The default unattended entry point is now `bash scripts/run-jlpt-simple-loop.sh`. It is one foreground shell loop and starts exactly one `codex exec` for one complete active exam. It advances through N1, N2, and N3, oldest exam first within each level. The older supervisor/worker automation remains only as historical compatibility material and is not part of the default process.
+The default unattended entry point is `bash scripts/run-jlpt-simple-loop.sh`. It is one foreground shell loop. Each complete exam gets one `gpt-5.6-terra` call; only an incomplete or final-validation-failed Terra attempt permits one `gpt-5.6-sol` continuation. Sol preserves valid Terra work and never restarts the exam. Rate limits, network loss, and service failures stop immediately without model switching or retries. The loop advances through N1, N2, and N3, oldest exam first within each level. Historical multi-process automation is not part of the default process.
 
-`docs/jlpt-workspace/JLPT_ACTIVE_PROGRESS.json`, the active checkpoint, and Git are authoritative. N1 12/2015 written questions 1–70 are remote-verified at `cd6614e7362b1fbe7b855c4b66a9e68e6899c7b7`; its next work is listening candidate integration, and its written section must not be repeated.
+`docs/jlpt-workspace/JLPT_ACTIVE_PROGRESS.json`, the current checkpoint, and Git are authoritative durable state. N1 12/2015 is complete and remote-verified at `1846d8c13ac11988cda08b5e6267686933d60b28`. The next exam is N1 07/2016 (`n1-2016-07-exam-09`). Its checkpoint/manifest may be absent before the first attempt and must then be created narrowly by that attempt. Do not repeat remote-verified work.
 
 ## 1. Mandatory startup procedure
 
@@ -34,7 +34,7 @@ Before changing anything:
 7. Continue from the first unfinished item. Do not restart completed OCR, translation, or verification work.
 8. Before relying on any claimed completed work, run `node scripts/check-work-persistence.mjs` and confirm the exact local commit exists on the configured remote branch.
 
-Child sessions launched by `scripts/run-jlpt-simple-loop.sh` use the compact reading list embedded in that script instead of repeating this full document for every exam. They do not create per-iteration backups; Git history and the one-exam durability gate are the rollback and persistence mechanisms for the loop.
+Child sessions launched by `scripts/run-jlpt-simple-loop.sh` must not reread this document or `AGENTS.md`. They use only the compact contract embedded in the script: active progress, the current checkpoint and manifest when present, UI-lock rules, and exact same-exam sources. They do not create per-iteration backups; Git history and the one-exam durability gate are the rollback and persistence mechanisms.
 
 ### Choose the durable execution mode before doing work
 
@@ -197,9 +197,9 @@ Expected verified state:
 
 ## 7. Current JLPT resume point
 
-The machine-readable pointer `docs/jlpt-workspace/JLPT_ACTIVE_PROGRESS.json` supersedes all historical prose below. As of 2026-09-21, N1 12/2015 written questions 1–70 are remote-verified at `cd6614e7362b1fbe7b855c4b66a9e68e6899c7b7`. Continue that exam from listening candidate integration; do not redo written work.
+The machine-readable state `docs/jlpt-workspace/JLPT_ACTIVE_PROGRESS.json` supersedes all historical prose below. As of 2026-09-21, N1 12/2015 is complete and remote-verified at `1846d8c13ac11988cda08b5e6267686933d60b28`. Continue with N1 07/2016 and do not redo earlier work.
 
-The default loop completes one active exam per `codex exec`, then selects the oldest incomplete exam in the remaining N1 catalog, followed by N2 and N3. Multilingual explanations and translations are deferred. A source-unreadable item is LOCAL: record it, continue other work, and revisit level-local blockers before moving to the next level.
+The default loop completes one active exam per Terra call, with at most one Sol continuation. The current-exam commit marks only that exam complete; it must not point active progress at the next exam before push verification. After `WORK PERSISTENCE PASS`, the shell derives the next exam from the canonical ordered list, avoiding a second SHA-only commit. Multilingual explanations and translations are deferred. A source-unreadable item is LOCAL: record it, continue other work, and revisit level-local blockers before moving to the next level.
 
 The historical text below preserves earlier exam checkpoints. When it conflicts with active progress, the active checkpoint, or current Git evidence, follow the current machine-readable state and Git.
 
@@ -296,7 +296,9 @@ npx expo start -c
 
 Lint warnings are not errors, but record their exact count. Do not claim iPhone visual verification unless the Simulator/device was actually used and screenshots were saved.
 
-The simple loop does not run the whole-repository suite for every group of questions. Each exam session runs only its active-exam validator, `git diff --check`, and `node scripts/check-jlpt-approved-ui-lock.mjs`, plus any narrowly required integration check for that exam. The loop itself uses `bash -n` and `--smoke` for script validation.
+The simple loop never runs the whole-repository suite. Each model attempt builds in a batch and runs only its active-exam validator once at the end, then `git diff --check` once and `node scripts/check-jlpt-approved-ui-lock.mjs` once. A failed Terra final validation may be repaired by the single Sol continuation and validated once after the repair. Do not repeat a check when its inputs have not changed. The loop itself uses `bash -n` and `--smoke` for script validation; smoke must not call a model or modify exam data.
+
+The loop must not print a full diff, JSON document, transcript, source file, or generated dataset. Git inspection is limited to `git diff --stat`, `git diff --name-only`, `git status --short`, and `git diff --check`. Source pages are opened once as a batch per attempt, and extracted content is reused. Mechanical sorting, counts, seconds-to-milliseconds conversion, IDs, hashes, and range checks belong in local scripts rather than record-by-record model reasoning.
 
 ## 10. Commit and remote-persistence protocol
 
@@ -310,7 +312,7 @@ bash scripts/run-jlpt-simple-loop.sh
 
 The script first pushes and verifies any existing local commit before allowing new data work. It preserves uncommitted work and never resets, checks out, cleans, stashes, or deletes it. The simple loop does not create repetitive backup directories; existing backups remain untouched, and Git provides the per-exam rollback record.
 
-Each child Codex session owns one whole active exam and creates exactly one narrow commit:
+Each child Codex session owns one whole active exam and creates exactly one narrow commit. Terra is called once. Sol is called at most once, only to continue valid Terra changes when Terra did not leave a complete validated commit. If Terra already created an incomplete unpushed commit, Sol amends it instead of adding a second commit:
 
 ```bash
 git status --short
@@ -318,7 +320,7 @@ git add -- <only files belonging to the active exam>
 git commit -m "<narrow complete-exam description>"
 ```
 
-Before advancing to another exam, that session performs:
+The child does not push. Before advancing to another exam, the foreground shell performs exactly one push, then fetches and verifies:
 
 ```bash
 git push origin "$(git branch --show-current)"
@@ -334,7 +336,7 @@ The persistence validator must report that:
 - the remote itself advertises that exact commit; and
 - there are no uncommitted files belonging to the completed unit.
 
-Do not create a second commit whose only purpose is to write the prior commit SHA. No external runtime journal or result schema is required. `WORK PERSISTENCE PASS` is required before the loop advances.
+The exam commit keeps `activeExamId` on the exam it completes and records that exam in `completedUnits`; it never points to the next exam before the push is verified. After `WORK PERSISTENCE PASS`, the foreground shell derives the next exam from the canonical N1 → N2 → N3 ordered list without mutating progress or creating a SHA-only follow-up commit. No external runtime journal or result schema is required.
 
 If the AI lacks push credentials or remote access, it must stop before accumulating expensive work and recommend continuing through Codex CLI in the user's real clone. If the user explicitly elects to stay in the restricted workspace, provide exact commit/push commands or cumulative patches at agreed checkpoints. It must not accumulate another page or exam only in the temporary workspace. Creating a ZIP in the same temporary workspace does not satisfy this rule.
 
@@ -344,7 +346,7 @@ Never delete existing backups. Never restore the whole project to solve a local 
 
 After completing a page, passage, section, exam, check, or checkpoint, continue immediately to the next unfinished item in the same session. A progress report is not a reason to stop. Do not ask whether to continue when the next action is already defined.
 
-Exception: one child session must finish, validate, commit, push, fetch, and verify its active exam before the foreground loop starts the next exam. A network failure, rate limit, or unchanged HEAD/checkpoint stops immediately without automatic retry.
+Exception: one child session must finish, validate, and commit its active exam; then the foreground shell must push, fetch, and verify it before starting the next exam. A network failure, rate limit, service failure, or failure after the single Sol fallback stops immediately without automatic retry.
 
 Do not claim that a patch was installed on the user's Mac merely because it works in another workspace. For downloaded installers, verify the user's actual project with file-existence checks and validation output.
 
