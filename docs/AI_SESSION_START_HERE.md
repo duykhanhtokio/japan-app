@@ -147,17 +147,18 @@ Every integrated exam must preserve the approved behavior:
 
 ## 5. Catalog invariant
 
-The catalog must always contain exactly 50 entries:
+The catalog must always contain exactly 59 entries:
 
 | Group | Count |
 |---|---:|
 | N1 official | 15 |
 | N2 official | 13 |
 | N3 official | 17 |
+| N4 official | 9 |
 | Mock N1–N5 | 5 |
-| Total | 50 |
+| Total | 59 |
 
-Converting an exam from pending to structured means replacing its pending entry with one structured entry. Never create entry 51. Never hide, delete, or filter pending exams merely because structured conversion is incomplete.
+The N4 periods are exactly 12/2011, 12/2012, 07/2013, 12/2013, 07/2014, 07/2017, 07/2018, 07/2021, and 12/2021. Converting an exam from pending to structured means replacing its pending entry with one structured entry. Never create entry 60. Never hide, delete, or filter pending exams merely because structured conversion is incomplete.
 
 Current expected registry totals with N1 07/2014 installed:
 

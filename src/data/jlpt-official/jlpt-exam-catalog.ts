@@ -12,6 +12,15 @@ export type JlptExamCatalogEntry = {
 };
 
 const scannedSourceIds = [
+  'n4-2011-12',
+  'n4-2012-12',
+  'n4-2013-07',
+  'n4-2013-12',
+  'n4-2014-07',
+  'n4-2017-07',
+  'n4-2018-07',
+  'n4-2021-07',
+  'n4-2021-12',
 ] as const;
 
 export const PENDING_JLPT_EXAMS: readonly JlptExamCatalogEntry[] = scannedSourceIds.map((sourceId) => {
@@ -23,7 +32,9 @@ export const PENDING_JLPT_EXAMS: readonly JlptExamCatalogEntry[] = scannedSource
     title: `日本語能力試験 ${upperLevel}`,
     periodLabel: `${year}年${Number(month)}月`,
     status: 'scanned_only',
-    sourceId: `src/data/jlpt-mock/${sourceId}-official.ts`,
+    sourceId: level === 'n4'
+      ? `external-source:N4/${year}-${month}`
+      : `src/data/jlpt-mock/${sourceId}-official.ts`,
   };
 });
 
