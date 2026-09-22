@@ -22,6 +22,7 @@ const scannedSourceIds = [
   'n4-2021-07',
   'n4-2021-12',
 ] as const;
+const incompleteSourceIds = new Set<string>([scannedSourceIds[0]]);
 
 export const PENDING_JLPT_EXAMS: readonly JlptExamCatalogEntry[] = scannedSourceIds.map((sourceId) => {
   const [level, year, month] = sourceId.split('-');
@@ -31,7 +32,7 @@ export const PENDING_JLPT_EXAMS: readonly JlptExamCatalogEntry[] = scannedSource
     level: upperLevel,
     title: `日本語能力試験 ${upperLevel}`,
     periodLabel: `${year}年${Number(month)}月`,
-    status: 'scanned_only',
+    status: incompleteSourceIds.has(sourceId) ? 'incomplete' : 'scanned_only',
     sourceId: level === 'n4'
       ? `external-source:N4/${year}-${month}`
       : `src/data/jlpt-mock/${sourceId}-official.ts`,
