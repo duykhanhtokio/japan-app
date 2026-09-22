@@ -22,7 +22,7 @@ const scannedSourceIds = [
   'n4-2021-07',
   'n4-2021-12',
 ] as const;
-const incompleteSourceIds = new Set<string>([scannedSourceIds[0], scannedSourceIds[1]]);
+const incompleteSourceIds = new Set<string>([scannedSourceIds[0], scannedSourceIds[1], scannedSourceIds[2]]);
 
 export const PENDING_JLPT_EXAMS: readonly JlptExamCatalogEntry[] = scannedSourceIds.map((sourceId) => {
   const [level, year, month] = sourceId.split('-');
