@@ -12,7 +12,6 @@ export type JlptExamCatalogEntry = {
 };
 
 const scannedSourceIds = [
-  'n3-2022-07',
 ] as const;
 
 export const PENDING_JLPT_EXAMS: readonly JlptExamCatalogEntry[] = scannedSourceIds.map((sourceId) => {
