@@ -42,3 +42,31 @@ The catalog target remains `incomplete`; it is not registered as `structured_rea
 - Catalog completeness and truthful inventory must remain exact at 66 entries.
 - Structured-exam, no-scanned-runtime, navigation-contract, protected N1 12/2012, and JLPT Approved UI Lock checks must pass.
 - TypeScript diagnostics must be separated into pre-existing N2/N3 adapter failures versus any N5 diagnostic.
+
+## Independent candidate validation and human review packet
+
+```text
+VALIDATION BASE HEAD: 3c5c46542f9df22664d40c3d03953bc7842fc2c7
+MACHINE CROSS-CHECKED: true
+HUMAN REVIEWED: false
+PERCEPTUAL APPROVAL: false
+TIMING VERIFICATION STATUS: candidate_unverified
+STATUS: incomplete; not structured_ready
+```
+
+- Direct source-page review produced 43 written validation records. Candidate and independently re-derived answers agree 43/43; the candidate key had already been seen during source recovery, so this is explicitly not claimed as blind validation.
+- Decoded-audio, recovered-transcript, and local Whisper `small` evidence produced 24 listening validation records. Candidate and machine-derived answers agree 24/24; 23 transcript comparisons are `audio_supported_candidate` and `listening-p1-q2` is `minor_uncertainty`.
+- All 24 candidate timing ranges contain detected speech and remain ordered/non-overlapping; no adjustment is proposed. This is machine evidence only: every timing remains `candidate_unverified`, `humanReviewed: false`, `perceptualApproval: false`, and `needs_later_review`.
+- The human review checklist contains exactly 67 unchecked items: 43 written and 24 listening.
+- The packet is under `review/`. It applies no candidate answer, transcript, or timing to runtime data.
+- No external page sharing the Yuuki Bùi provenance was counted as an independent source. The recovered key remains non-official under the JLPT publication policy.
+- The exam remains `incomplete`; candidate validation does not satisfy the human review, official transcript, explanation/translation, or structured-runtime requirements.
+
+### Candidate-validation gate evidence
+
+- Catalog completeness: PASS, exactly 66 entries.
+- Truthful inventory: PASS, including 7 exact N5 candidate periods.
+- N5 12/2021 integration: PASS with the official audit still truthfully recording absent answers, explanations, and source transcript; the review packet is non-runtime evidence only.
+- Navigation contract and no-scanned-runtime: PASS.
+- JLPT Approved UI Lock: PASS 10/10.
+- TypeScript: the repository-wide command still exits 2 only for the pre-existing N2/N3 adapter diagnostics (`n2-2012-12-trial.ts` missing `./n1-2012-12-trial`, plus N2/N3 imports of non-exported `TrialQuestion`); no N5 diagnostic was emitted and no out-of-scope adapter was changed.
