@@ -1,0 +1,49 @@
+{
+  "examId": "n5-2021-12-exam-07",
+  "catalogPeriodId": "n5-2021-12",
+  "status": "incomplete",
+  "identity": {
+    "confidence": "strong_source_match",
+    "evidence": [
+      "Every supplied PDF page explicitly prints 2021年12月・日本語能力試験・N5.",
+      "All 17 physical pages were inspected and form one internally consistent written/listening question package.",
+      "The audio introduction identifies the 2021 second administration and N5 listening; its question order and recognized content align with the supplied listening sheets."
+    ]
+  },
+  "counts": { "writtenResponses": 43, "listeningResponses": 24, "totalAuditIds": 67 },
+  "source": {
+    "pdfSha256": "284c73e4cf4b55f6bd1f6b2d1fb7579beb5cf1002fe36d28ed1e242d48669a67",
+    "pdfPages": 17,
+    "audioSha256": "f33f2ef39098d309e5f0373e25af376afb204fd9c166ace64b5e58d21dd28020",
+    "audioDurationSeconds": 1747.2,
+    "answerKeyPresent": false,
+    "japaneseListeningTranscriptPresent": false,
+    "explanationRecords": 0,
+    "missingExplanationRecords": 43,
+    "appLocaleTranslationsPresent": false,
+    "sourceTimingPresent": false
+  },
+  "runtimeAudio": {
+    "sha256": "1fe7d00c92ff084474d4aefe405fc027d612db23b52a39c2ca19bcbf3d6a7637",
+    "durationSeconds": 1747.2,
+    "durationMsCeiling": 1747200
+  },
+  "audioCrossCheck": {
+    "method": "Local Whisper small was used only to navigate recognized content and compare question order/content with the supplied listening sheets.",
+    "supportArtifactSha256": "a28db0803899c3c189f53919e2542d14af8c1293e0df3d217a8e4ca23deadcd0",
+    "modelSha256": "9ecf779972d90ba49c06d968637d720dd632c55bbf19d441fb42bf17a411e794",
+    "transcriptClaimed": false
+  },
+  "timing": {
+    "candidateCount": 24,
+    "method": "Local Whisper small word timestamps aligned to printed question order and recognized question markers; decimal seconds were mechanically multiplied by 1000 and rounded to integer milliseconds.",
+    "status": "candidate_unverified"
+  },
+  "review": { "humanReviewed": false, "perceptualApproval": false, "reviewDisposition": "needs_later_review" },
+  "blockers": [
+    "No answer key is supplied for any of the 43 written or 24 listening responses.",
+    "No written explanations, translations, or Japanese listening transcript are supplied.",
+    "Written question text and choices have been visually audited but not completed as character-by-character runtime structured transcriptions.",
+    "The 24 audio boundaries are automatically derived candidates without human listening review or perceptual approval."
+  ]
+}
