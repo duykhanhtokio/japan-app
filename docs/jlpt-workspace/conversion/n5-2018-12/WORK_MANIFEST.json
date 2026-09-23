@@ -1,0 +1,46 @@
+{
+  "examId": "n5-2018-12-exam-05",
+  "catalogPeriodId": "n5-2018-12",
+  "status": "incomplete",
+  "identity": {
+    "confidence": "year_only_month_unresolved",
+    "evidence": [
+      "The PDF cover explicitly prints 2018年 日本語能力試験 N5 but does not print an administration month.",
+      "All 24 physical pages were inspected; the question sheets, answer table, Chinese analysis, and Japanese listening transcript form one internally consistent package.",
+      "The audio introduction identifies JLPT N5, and its section order and recognized question content align with the supplied listening sheets and transcript, but it does not announce a month.",
+      "The 2018年1月1日 date on physical page 8 belongs to a reading-question notice and is not administration identity evidence; the folder and filenames are inventory hints only."
+    ]
+  },
+  "counts": { "writtenResponses": 67, "listeningResponses": 24, "totalAuditIds": 91 },
+  "source": {
+    "pdfSha256": "604220381a3cbdbf89647b2d315b0f72af870a789779b8cd85a14516078c900e",
+    "pdfPages": 24,
+    "audioSha256": "d09cb4f18006cca4350bec478341683353f897b4cbdf570a482e39be90ee98f1",
+    "audioDurationSeconds": 1730.592993,
+    "answerKeyPresent": true,
+    "japaneseListeningTranscriptPresent": true,
+    "simplifiedChineseExplanationRecords": 67,
+    "missingExplanationRecords": 0,
+    "appLocaleTranslationsPresent": false,
+    "sourceTimingPresent": false
+  },
+  "runtimeAudio": {
+    "sha256": "2130c71a21873be5afed12818fcdffee74540327da818d32ee4a32dc77f629eb",
+    "durationSeconds": 1730.592993,
+    "durationMsCeiling": 1730593
+  },
+  "timing": {
+    "candidateCount": 24,
+    "method": "Local Whisper small word timestamps aligned to the printed transcript section/question markers; decimal seconds were mechanically multiplied by 1000 and rounded to integer milliseconds.",
+    "supportArtifactSha256": "a2955e546623a119c925e11e86fa9f69c3d8157b236552504fa495fd780c16fc",
+    "modelSha256": "9ecf779972d90ba49c06d968637d720dd632c55bbf19d441fb42bf17a411e794",
+    "status": "candidate_unverified"
+  },
+  "review": { "humanReviewed": false, "perceptualApproval": false, "reviewDisposition": "needs_later_review" },
+  "blockers": [
+    "The supplied source proves year 2018 and level N5 but does not prove the catalog target month December.",
+    "No app-locale translations are supplied; the available written analysis is Simplified Chinese.",
+    "Written question text, choices, explanations, and the printed Japanese transcript have been visually audited but not completed as character-by-character runtime structured transcriptions.",
+    "The 24 audio boundaries are automatically derived candidates without human listening review or perceptual approval."
+  ]
+}
