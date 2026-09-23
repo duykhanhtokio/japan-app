@@ -21,8 +21,15 @@ const scannedSourceIds = [
   'n4-2018-07',
   'n4-2021-07',
   'n4-2021-12',
+  'n5-2011-12',
+  'n5-2012-12',
+  'n5-2013-07',
+  'n5-2017-07',
+  'n5-2018-12',
+  'n5-2020-12',
+  'n5-2021-12',
 ] as const;
-const incompleteSourceIds = new Set<string>([scannedSourceIds[0], scannedSourceIds[1], scannedSourceIds[2], scannedSourceIds[3], scannedSourceIds[4], scannedSourceIds[5], scannedSourceIds[6], scannedSourceIds[7], scannedSourceIds[8]]);
+const incompleteSourceIds = new Set<string>(scannedSourceIds);
 
 export const PENDING_JLPT_EXAMS: readonly JlptExamCatalogEntry[] = scannedSourceIds.map((sourceId) => {
   const [level, year, month] = sourceId.split('-');
@@ -33,8 +40,8 @@ export const PENDING_JLPT_EXAMS: readonly JlptExamCatalogEntry[] = scannedSource
     title: `日本語能力試験 ${upperLevel}`,
     periodLabel: `${year}年${Number(month)}月`,
     status: incompleteSourceIds.has(sourceId) ? 'incomplete' : 'scanned_only',
-    sourceId: level === 'n4'
-      ? `external-source:N4/${year}-${month}`
+    sourceId: level === 'n4' || level === 'n5'
+      ? `external-source:${upperLevel}/${year}-${month}`
       : `src/data/jlpt-mock/${sourceId}-official.ts`,
   };
 });

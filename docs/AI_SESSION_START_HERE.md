@@ -147,7 +147,7 @@ Every integrated exam must preserve the approved behavior:
 
 ## 5. Catalog invariant
 
-The catalog must always contain exactly 59 entries:
+The catalog must always contain exactly 66 entries:
 
 | Group | Count |
 |---|---:|
@@ -155,18 +155,21 @@ The catalog must always contain exactly 59 entries:
 | N2 official | 13 |
 | N3 official | 17 |
 | N4 official | 9 |
+| N5 official candidates | 7 |
 | Mock N1–N5 | 5 |
-| Total | 59 |
+| Total | 66 |
 
-The N4 periods are exactly 12/2011, 12/2012, 07/2013, 12/2013, 07/2014, 07/2017, 07/2018, 07/2021, and 12/2021. Converting an exam from pending to structured means replacing its pending entry with one structured entry. Never create entry 60. Never hide, delete, or filter pending exams merely because structured conversion is incomplete.
+The N4 periods are exactly 12/2011, 12/2012, 07/2013, 12/2013, 07/2014, 07/2017, 07/2018, 07/2021, and 12/2021. Converting an exam from pending to structured means replacing its pending entry with one structured entry. Never exceed the exact catalog invariant. Never hide, delete, or filter pending exams merely because structured conversion is incomplete.
+
+The N5 source-candidate periods are exactly 12/2011, 12/2012, 07/2013, 07/2017, 12/2018, 12/2020, and 12/2021. A catalog period is not proof of source identity: ambiguous or practice-workbook packages remain `incomplete` until their identity and content are independently verified. Converting any pending exam to structured replaces its pending entry and never adds a duplicate.
 
 Current expected registry totals with N1 07/2014 installed:
 
 ```text
-structured official: 5
-pending official: 40
+structured official: 45
+pending official: 16
 mock ready: 5
-total: 50
+total: 66
 ```
 
 At session start, verify rather than assume these totals. If the project still reports `structured official: 2` and `pending: 43`, the N1 07/2013 runtime package has not been installed in that working tree.

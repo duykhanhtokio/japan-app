@@ -64,26 +64,32 @@ if (forbiddenRuntime.test(approved) || forbiddenRuntime.test(catalog)) {
   failed = true;
   console.error('JLPT REGISTRY CHECK FAILED: Royal/scanned-page runtime token detected.');
 }
-const pendingIds = [...catalog.matchAll(/'n[1-4]-\d{4}-(?:07|12)'/g)].map((match) => match[0].slice(1, -1));
+const pendingIds = [...catalog.matchAll(/'n[1-5]-\d{4}-(?:07|12)'/g)].map((match) => match[0].slice(1, -1));
 if (new Set(pendingIds).size !== pendingIds.length) {
   failed = true;
   console.error('JLPT REGISTRY CHECK FAILED: duplicate pending exam ID.');
 }
-const structuredIds = [...approved.matchAll(/id: '(n[1-4]-\d{4}-(?:07|12)-exam-\d+)'/g)].map((match) => match[1]);
+const structuredIds = [...approved.matchAll(/id: '(n[1-5]-\d{4}-(?:07|12)-exam-\d+)'/g)].map((match) => match[1]);
 if (new Set(structuredIds).size !== structuredIds.length) {
   failed = true;
   console.error('JLPT REGISTRY CHECK FAILED: duplicate structured exam ID.');
 }
 const expectedN4 = ['n4-2011-12','n4-2012-12','n4-2013-07','n4-2013-12','n4-2014-07','n4-2017-07','n4-2018-07','n4-2021-07','n4-2021-12'];
+const expectedN5 = ['n5-2011-12','n5-2012-12','n5-2013-07','n5-2017-07','n5-2018-12','n5-2020-12','n5-2021-12'];
 const officialPeriods = [...structuredIds.map((id) => id.replace(/-exam-\d+$/, '')), ...pendingIds];
 const actualN4 = officialPeriods.filter((id) => id.startsWith('n4-')).sort();
-if (structuredIds.length + pendingIds.length + 5 !== 59) {
+const actualN5 = officialPeriods.filter((id) => id.startsWith('n5-')).sort();
+if (structuredIds.length + pendingIds.length + 5 !== 66) {
   failed = true;
-  console.error(`JLPT REGISTRY CHECK FAILED: expected 59 total entries, found ${structuredIds.length + pendingIds.length + 5}.`);
+  console.error(`JLPT REGISTRY CHECK FAILED: expected 66 total entries, found ${structuredIds.length + pendingIds.length + 5}.`);
 }
 if (JSON.stringify(actualN4) !== JSON.stringify(expectedN4)) {
   failed = true;
   console.error(`JLPT REGISTRY CHECK FAILED: exact N4 period set is invalid: ${JSON.stringify(actualN4)}.`);
+}
+if (JSON.stringify(actualN5) !== JSON.stringify(expectedN5)) {
+  console.error(`JLPT REGISTRY CHECK FAILED: exact N5 period set is invalid: ${JSON.stringify(actualN5)}.`);
+  process.exit(1);
 }
 
 if (failed) {
