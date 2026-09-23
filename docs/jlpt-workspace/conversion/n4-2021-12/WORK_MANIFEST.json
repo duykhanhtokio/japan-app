@@ -1,0 +1,51 @@
+{
+  "examId": "n4-2021-12-exam-09",
+  "catalogPeriodId": "n4-2021-12",
+  "status": "incomplete",
+  "identity": {
+    "confidence": "high",
+    "writtenHeaderPrintsPeriod": true,
+    "audioPrintsPeriod": false,
+    "evidence": [
+      "PDF page 1 explicitly prints 2021年12月・日本語能力試験・N4.",
+      "The folder, PDF filename, and audio filename consistently identify December 2021.",
+      "The audio section order, response counts, and prompts match the supplied listening question sheets.",
+      "The PDF June 2022 production metadata is later packaging metadata, not exam-period evidence."
+    ]
+  },
+  "counts": {
+    "writtenResponsesExpected": 57,
+    "writtenResponsesObserved": 56,
+    "missingWrittenResponses": 1,
+    "listeningResponsesExpected": 28,
+    "listeningResponsesObserved": 28
+  },
+  "source": {
+    "pdfSha256": "2224d3381bfdd399721ae646cb862f8f1ddf56212304772de53afcdf923a24e5",
+    "audioSha256": "ee1d6e27c114736c2d2d66c87f3d4889b281d10c3d9978b2fc78366edc4365a6",
+    "audioDurationSeconds": 2327.196625,
+    "answerKeyPresent": false,
+    "writtenExplanationsPresent": false,
+    "translationsPresent": false,
+    "japaneseListeningTranscriptPresent": false,
+    "sourceTimingPresent": false
+  },
+  "runtimeAudio": {
+    "sha256": "4f51258f5a87596d53847e5a983f9c7a016860eb8acbf603d7aa10144f4d6009",
+    "durationSeconds": 2327.196735,
+    "durationMsCeiling": 2327197
+  },
+  "timing": {
+    "candidateCount": 28,
+    "method": "Local Whisper small word-timestamp navigation with independent section/question markers; no source transcript was available.",
+    "status": "candidate_unverified"
+  },
+  "review": { "humanReviewed": false, "perceptualApproval": false, "reviewDisposition": "needs_later_review" },
+  "blockers": [
+    "Vocabulary overall question 12 is missing from the supplied PDF, which jumps directly from 11 to 13.",
+    "The supplied source contains no answer key for written or listening questions.",
+    "The supplied source contains no written explanations, translations, or Japanese listening transcript.",
+    "No authoritative or perceptually approved per-question audio timing is present.",
+    "Written questions/options and listening content have not completed character-by-character runtime transcription and verification."
+  ]
+}
