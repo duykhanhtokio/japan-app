@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "examId": "n5-2021-12-exam-07",
+  "catalogPeriodId": "n5-2021-12",
+  "status": "incomplete",
+  "structuredReady": false,
+  "recoveryConclusion": "A complete single-origin candidate answer key and listening script were recovered, but neither is official or independently verified. They were not applied to audit/runtime data.",
+  "recoveredButUnverified": {
+    "writtenAnswerCandidates": 43,
+    "listeningAnswerCandidates": 24,
+    "listeningTranscriptCandidates": 24,
+    "candidateTimings": 24,
+    "timingHumanReviewed": 0,
+    "timingPerceptuallyApproved": 0
+  },
+  "missing": [
+    {
+      "dataId": "verified-written-answers",
+      "expected": 43,
+      "verified": 0,
+      "candidate": 43,
+      "reason": "The recovered answer PDF is an unofficial single-origin document and has no organizer attribution or independent provenance. Content alignment alone is not independent proof of correctness."
+    },
+    {
+      "dataId": "verified-listening-answers",
+      "expected": 24,
+      "verified": 0,
+      "candidate": 24,
+      "reason": "The recovered listening table is complete but comes from the same unofficial document as the transcript and has not received independent or recorded human verification."
+    },
+    {
+      "dataId": "audio-verified-japanese-transcript",
+      "expected": 24,
+      "verified": 0,
+      "candidate": 24,
+      "reason": "A complete Japanese script was recovered, but it has not been compared line by line with the supplied audio by a human reviewer. Speech recognition is navigation evidence only."
+    },
+    {
+      "dataId": "human-reviewed-audio-boundaries",
+      "expected": 24,
+      "verified": 0,
+      "candidate": 24,
+      "reason": "All boundaries were automatically derived from Whisper navigation markers. Every range remains candidate_unverified with humanReviewed=false and perceptualApproval=false."
+    },
+    {
+      "dataId": "written-explanations",
+      "expected": 43,
+      "verified": 0,
+      "candidate": 0,
+      "reason": "The recovered PDF gives selected answers and completed sentences, not answer rationales. Explanation authoring is blocked until answers are verified."
+    },
+    {
+      "dataId": "source-translations",
+      "expected": 67,
+      "verified": 0,
+      "candidate": 0,
+      "reason": "No translation source was found for the 43 written responses or 24 listening transcripts. Translation work is blocked until the underlying answers/transcript are verified."
+    },
+    {
+      "dataId": "character-level-runtime-written-transcription",
+      "expected": 43,
+      "verified": 0,
+      "candidate": 0,
+      "reason": "The written pages are visually audited, but no character-by-character structured runtime transcription has been completed or verified in this source-recovery unit."
+    }
+  ],
+  "userMustProvideOrAuthorizeReviewOf": [
+    "An independently attributable answer key for this exact 43-written/24-listening December 2021 package, with provenance, or a recorded human review of all 67 candidate answers against the supplied questions and audio.",
+    "An independently attributable Japanese listening transcript, or a recorded line-by-line human comparison of all 24 recovered transcript units against the supplied MP3.",
+    "A human/perceptual boundary-review sheet for all 24 listening units, identifying approved start/end times and reviewer/date.",
+    "Source explanations and translations if available; otherwise explicit authorization to author them only after all answers and transcript units are verified."
+  ],
+  "prohibitedUntilResolved": [
+    "Do not populate correctOptionId from the recovered candidate key.",
+    "Do not represent the recovered script as official or audio-verified.",
+    "Do not change candidate_unverified timing to verified.",
+    "Do not author explanations or translations.",
+    "Do not register n5-2021-12-exam-07 as structured_ready."
+  ]
+}
