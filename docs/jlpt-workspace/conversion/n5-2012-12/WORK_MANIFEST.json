@@ -1,0 +1,56 @@
+{
+  "examId": "n5-2012-12-exam-02",
+  "catalogPeriodId": "n5-2012-12",
+  "status": "incomplete",
+  "identity": {
+    "confidence": "strong_source_match",
+    "evidence": [
+      "The PDF cover explicitly prints 2012年12月 日本語能力試験 N5.",
+      "The PDF answer table covers the 67 written and 24 listening responses audited from the supplied package.",
+      "The audio introduction identifies JLPT N5, and its section order and recognized question content align with the supplied listening sheets and Japanese transcript.",
+      "The audio does not independently state a date; the period claim rests on the explicit PDF cover plus the content match."
+    ]
+  },
+  "counts": {
+    "writtenResponses": 67,
+    "listeningResponses": 24,
+    "totalAuditIds": 91
+  },
+  "source": {
+    "pdfSha256": "4320847c1f89415c21169ad9e24dfec3b4d534c5c2594726125ccacded5facab",
+    "pdfPages": 22,
+    "audioSha256": "88afeee93f0bb0b4311f016fa4d1f19a0035c7f5c1cece1ed88dffa3d9345557",
+    "audioDurationSeconds": 1843.958005,
+    "answerKeyPresent": true,
+    "japaneseListeningTranscriptPresent": true,
+    "simplifiedChineseExplanationRecords": 55,
+    "missingExplanationRecords": 12,
+    "missingQuestionSourceRecords": 3,
+    "appLocaleTranslationsPresent": false,
+    "sourceTimingPresent": false
+  },
+  "runtimeAudio": {
+    "sha256": "c3e99d9445a54f00268d323e1179c38e26cc59f1581c250818e11c92ab00b9dd",
+    "durationSeconds": 1843.957551,
+    "durationMsCeiling": 1843958
+  },
+  "timing": {
+    "candidateCount": 24,
+    "method": "Local Whisper small word timestamps aligned to the printed transcript section/question markers; decimal seconds were mechanically multiplied by 1000 and rounded to integer milliseconds.",
+    "supportArtifactSha256": "f4365758372ed3d6e272d605c5c9c614233ab9997312f48ae2721ef4b1ce6a47",
+    "modelSha256": "9ecf779972d90ba49c06d968637d720dd632c55bbf19d441fb42bf17a411e794",
+    "status": "candidate_unverified"
+  },
+  "review": {
+    "humanReviewed": false,
+    "perceptualApproval": false,
+    "reviewDisposition": "needs_later_review"
+  },
+  "blockers": [
+    "The supplied question scan omits the source passages/questions for reading responses 27 through 29; only their answer key and Chinese explanation material are present.",
+    "Simplified Chinese explanations/translations are absent for vocabulary responses 1 through 12, and no app-locale translations are supplied.",
+    "Written question text and choices have been visually audited but not completed as character-by-character runtime structured transcription.",
+    "The printed Japanese transcript has been aligned to audio question markers but not completed as character-by-character runtime transcription.",
+    "The 24 audio boundaries are automatically derived candidates without human listening review or perceptual approval."
+  ]
+}
