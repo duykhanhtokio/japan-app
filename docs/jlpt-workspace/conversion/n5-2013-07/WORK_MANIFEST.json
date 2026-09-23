@@ -1,0 +1,55 @@
+{
+  "examId": "n5-2013-07-exam-03",
+  "catalogPeriodId": "n5-2013-07",
+  "status": "incomplete",
+  "identity": {
+    "confidence": "strong_source_match",
+    "evidence": [
+      "The PDF cover explicitly prints 2013年7月新日本語能力考試 N5.",
+      "The PDF answer table covers the 67 written and 24 listening responses audited from the supplied package.",
+      "The audio introduction identifies JLPT N5, and its section order and recognized question content align with the supplied listening sheets and Japanese transcript.",
+      "The audio does not independently state a date; the period claim rests on the explicit PDF cover plus the content match."
+    ]
+  },
+  "counts": {
+    "writtenResponses": 67,
+    "listeningResponses": 24,
+    "totalAuditIds": 91
+  },
+  "source": {
+    "pdfSha256": "e1e787b10f29adee65e1fc4e7a165e9a6e6a29e6b521f82d37cb0c2479b0fe05",
+    "pdfPages": 17,
+    "audioSha256": "ad43948e6dd89cdff016377488284745e2539879a9d7cf14cab14a2a963aba1d",
+    "audioDurationSeconds": 1779.409,
+    "answerKeyPresent": true,
+    "japaneseListeningTranscriptPresent": true,
+    "simplifiedChineseExplanationRecords": 0,
+    "missingExplanationRecords": 67,
+    "appLocaleTranslationsPresent": false,
+    "sourceTimingPresent": false
+  },
+  "runtimeAudio": {
+    "sha256": "20e13bd0ce43c581c8f81cd1587e4b5ffa995f70754051339e138ebcd427d151",
+    "durationSeconds": 1779.40898,
+    "durationMsCeiling": 1779409
+  },
+  "timing": {
+    "candidateCount": 24,
+    "method": "Local Whisper small word timestamps aligned to the printed transcript section/question markers; decimal seconds were mechanically multiplied by 1000 and rounded to integer milliseconds.",
+    "supportArtifactSha256": "14e78f3474bcbfd75f5def14e82789cae40bb4fc7ebf86722579561ea7336328",
+    "modelSha256": "9ecf779972d90ba49c06d968637d720dd632c55bbf19d441fb42bf17a411e794",
+    "status": "candidate_unverified"
+  },
+  "review": {
+    "humanReviewed": false,
+    "perceptualApproval": false,
+    "reviewDisposition": "needs_later_review"
+  },
+  "blockers": [
+    "The edited PDF omits internal analysis pages 14 through 19, so no supplied explanation/translation remains for any of the 67 written responses.",
+    "No app-locale translations are supplied.",
+    "Written question text and choices have been visually audited but not completed as character-by-character runtime structured transcription.",
+    "The printed Japanese transcript has been aligned to audio question markers but not completed as character-by-character runtime transcription.",
+    "The 24 audio boundaries are automatically derived candidates without human listening review or perceptual approval."
+  ]
+}
