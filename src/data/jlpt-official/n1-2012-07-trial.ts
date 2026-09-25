@@ -14,7 +14,7 @@ type VerifiedQuestion = {
   instructionJa: string; promptJa: string; passageId?: string; options: VerifiedOption[];
   correctOptionId: TrialQuestion['correctOptionId']; transcriptJa?: string; transcriptSourcePage?: number; verificationStatus: 'verified';
   source: { questionPage: number; answerPage: number; imageRegion?: { pageAsset: string } };
-  audio?: { segmentId: string; startMs: number; endMs: number; timingConfidence: 'verified'; verificationStatus: 'verified' | 'needs_runtime_review' };
+  audio?: { segmentId: string; startMs: number; endMs: number; timingConfidence: 'verified' | 'candidate_unverified'; verificationStatus: 'verified' | 'needs_runtime_review' };
 };
 type VerifiedDataset = {
   examId: string;
