@@ -64,7 +64,14 @@ for (const [id, [writtenCount, listeningCount]] of expected) {
   assert.equal(packet.writtenQuestions.length, writtenCount, `${id} written count mismatch`);
   assert.equal(packet.listeningQuestions.length, listeningCount, `${id} listening count mismatch`);
   assert.deepEqual([packet.counts.auditedWritten, packet.counts.auditedListening], [writtenCount, listeningCount], `${id} audit count mismatch`);
-  assert.ok(Array.isArray(packet.sourcePageTextCandidates) && packet.sourcePageTextCandidates.length > 0, `${id} must carry page-level OCR candidates`);
+  assert.ok(Array.isArray(packet.sourcePageTextCandidates), `${id} sourcePageTextCandidates must be an array`);
+  if (id === 'n4-2013-07') {
+    assert.equal(packet.sourcePageTextCandidates.length, 0, `${id} must not retain raw OCR after direct source-image verification`);
+    assert.equal(packet.sourceVerification?.method, 'direct_pdf_page_image_character_check');
+    assert.equal(packet.sourceVerification?.ocrUsedForNavigationOnly, true);
+  } else {
+    assert.ok(packet.sourcePageTextCandidates.length > 0, `${id} must carry page-level OCR candidates`);
+  }
 
   for (const question of [...packet.writtenQuestions, ...packet.listeningQuestions]) {
     assert.ok(!globalQuestionIds.has(question.questionId), `duplicate questionId ${question.questionId}`);
@@ -102,6 +109,48 @@ for (const [id, [writtenCount, listeningCount]] of expected) {
       assert.ok(Number.isInteger(question.startMs) && Number.isInteger(question.endMs));
       assert.ok(question.startMs >= 0 && question.endMs > question.startMs, `${question.questionId} has an invalid timing range`);
       assert.ok(Number.isInteger(duration) && question.endMs <= duration, `${question.questionId} timing exceeds audio duration`);
+    }
+  }
+
+  if (id === 'n4-2013-07') {
+    assert.equal(packet.writtenQuestions.length, 70);
+    assert.equal(packet.listeningQuestions.length, 28);
+    const passageIds = new Set(packet.passages.map((passage) => passage.passageId));
+    assert.equal(passageIds.size, packet.passages.length, 'n4-2013-07 has duplicate passage IDs');
+    for (const passage of packet.passages) {
+      assert.ok(typeof passage.passageJa === 'string' && passage.passageJa.trim(), `${passage.passageId} has null/empty passage text`);
+      assert.ok(Array.isArray(passage.sourcePages) && passage.sourcePages.length > 0, `${passage.passageId} lacks source pages`);
+    }
+    const writtenAudit = new Map(JSON.parse(fs.readFileSync('docs/jlpt-workspace/conversion/n4-2013-07/written.audit.json', 'utf8')).records.map((record) => [record.auditId, record]));
+    const listeningAudit = new Map(JSON.parse(fs.readFileSync('docs/jlpt-workspace/conversion/n4-2013-07/listening.audit.json', 'utf8')).records.map((record) => [record.auditId, record]));
+    for (const question of [...packet.writtenQuestions, ...packet.listeningQuestions]) {
+      assert.ok(typeof question.instructionJa === 'string' && question.instructionJa.trim(), `${question.questionId} has null/empty instruction`);
+      assert.ok(typeof question.promptJa === 'string' && question.promptJa.trim(), `${question.questionId} has null/empty prompt`);
+      assert.equal(question.questionId, `${id}-${question.auditId}`, `${question.auditId} has an unstable question ID`);
+      assert.ok(Number.isInteger(question.sourcePage), `${question.questionId} lacks a sourcePage`);
+      assert.equal(question.answerSourcePage, 14, `${question.questionId} answer must cite PDF page 14`);
+      assert.ok(question.options.length >= 3 && question.options.length <= 4, `${question.questionId} has an invalid option count`);
+      for (const option of question.options) assert.ok(typeof option.textJa === 'string' && option.textJa.trim(), `${question.questionId}/${option.optionId} has null/empty option text`);
+      assert.ok(question.correctOptionId !== null && question.options.some((option) => option.optionId === question.correctOptionId), `${question.questionId} has an invalid answer`);
+      if (question.passageId !== null) {
+        assert.ok(passageIds.has(question.passageId), `${question.questionId} references an unknown passage`);
+        assert.ok(typeof question.passageJa === 'string' && question.passageJa.trim(), `${question.questionId} has null/empty passage text`);
+      }
+      assert.equal(question.contentStatus, 'source_image_verified', `${question.questionId} is not source-image verified`);
+    }
+    for (const question of packet.writtenQuestions) {
+      const audit = writtenAudit.get(question.auditId);
+      assert.ok(audit, `${question.questionId} is absent from the written audit`);
+      assert.equal(question.correctOptionId, audit.correctOptionId, `${question.questionId} answer differs from audited page-14 key`);
+    }
+    for (const question of packet.listeningQuestions) {
+      const audit = listeningAudit.get(question.auditId);
+      assert.ok(audit, `${question.questionId} is absent from the listening audit`);
+      assert.equal(question.correctOptionId, audit.correctOptionId, `${question.questionId} answer differs from audited page-14 key`);
+      assert.ok(typeof question.transcriptJa === 'string' && question.transcriptJa.trim(), `${question.questionId} has null/empty transcript`);
+      assert.ok(Number.isInteger(question.startMs) && Number.isInteger(question.endMs), `${question.questionId} lacks candidate timing`);
+      assert.deepEqual([question.startMs, question.endMs], [audit.timingMs.start, audit.timingMs.end], `${question.questionId} timing differs from the existing candidate`);
+      assert.ok(Number.isInteger(question.transcriptSourcePage), `${question.questionId} lacks a transcript source page`);
     }
   }
 
