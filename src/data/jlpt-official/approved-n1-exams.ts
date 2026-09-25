@@ -80,6 +80,7 @@ import { N3_2022_07_SESSION_KEY, N3_2022_07_TRIAL } from '@/data/jlpt-official/n
 import { N4_2013_07_SESSION_KEY, N4_2013_07_TRIAL } from '@/data/jlpt-official/n4-2013-07-trial';
 import { N4_2013_12_SESSION_KEY, N4_2013_12_TRIAL } from '@/data/jlpt-official/n4-2013-12-trial';
 import { N4_2014_07_SESSION_KEY, N4_2014_07_TRIAL } from '@/data/jlpt-official/n4-2014-07-trial';
+import { N4_2017_07_SESSION_KEY, N4_2017_07_TRIAL } from '@/data/jlpt-official/n4-2017-07-trial';
 import { n1December2013Explanation } from '@/data/jlpt-official/n1-2013-12-explanations';
 import type { AppLanguageCode } from '@/i18n/languages';
 
@@ -479,6 +480,12 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
     id: 'n4-2014-07-exam-05', level: 'N4', title: '日本語能力試験 N4', periodLabel: '2014年7月・第5回',
     startLabel: '第5回を始める', storageKey: N4_2014_07_SESSION_KEY, questions: N4_2014_07_TRIAL,
     audioSource: require('../../../assets/jlpt/n4/2014-07/audio/n4-2014-07.mp3'), visualOptions: {},
+  },
+  {
+    // Source-backed content; audio timing remains candidate/unverified pending perceptual review.
+    id: 'n4-2017-07-exam-06', level: 'N4', title: '日本語能力試験 N4', periodLabel: '2017年7月・第6回',
+    startLabel: '第6回を始める', storageKey: N4_2017_07_SESSION_KEY, questions: N4_2017_07_TRIAL,
+    audioSource: require('../../../assets/jlpt/n4/2017-07/audio/n4-2017-07.mp3'), visualOptions: {},
   },
 ];
 
