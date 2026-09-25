@@ -14,7 +14,6 @@ export type JlptExamCatalogEntry = {
 const scannedSourceIds = [
   'n4-2011-12',
   'n4-2012-12',
-  'n4-2013-07',
   'n4-2013-12',
   'n4-2014-07',
   'n4-2017-07',

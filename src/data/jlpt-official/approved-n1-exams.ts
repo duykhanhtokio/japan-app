@@ -77,6 +77,7 @@ import { N3_2021_12_AUDIO } from '@/data/jlpt-mock/n3-2021-12-official';
 import { N3_2021_12_SESSION_KEY, N3_2021_12_TRIAL } from '@/data/jlpt-official/n3-2021-12-trial';
 import { N3_2022_07_AUDIO } from '@/data/jlpt-mock/n3-2022-07-official';
 import { N3_2022_07_SESSION_KEY, N3_2022_07_TRIAL } from '@/data/jlpt-official/n3-2022-07-trial';
+import { N4_2013_07_SESSION_KEY, N4_2013_07_TRIAL } from '@/data/jlpt-official/n4-2013-07-trial';
 import { n1December2013Explanation } from '@/data/jlpt-official/n1-2013-12-explanations';
 import type { AppLanguageCode } from '@/i18n/languages';
 
@@ -103,7 +104,7 @@ type RawExplanations = { records: ExplanationRecord[] };
 
 export type ApprovedN1Exam = {
   id: string;
-  level: 'N1' | 'N2' | 'N3';
+  level: 'N1' | 'N2' | 'N3' | 'N4' | 'N5';
   title: string;
   periodLabel: string;
   startLabel: string;
@@ -458,6 +459,12 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
     id: 'n3-2022-07-exam-18', level: 'N3', title: '日本語能力試験 N3', periodLabel: '2022年7月・第18回',
     startLabel: '第18回を始める', storageKey: N3_2022_07_SESSION_KEY, questions: N3_2022_07_TRIAL,
     audioSource: N3_2022_07_AUDIO, visualOptions: {},
+  },
+  {
+    // Character-verified content; audio timing remains candidate/unverified pending perceptual review.
+    id: 'n4-2013-07-exam-03', level: 'N4', title: '日本語能力試験 N4', periodLabel: '2013年7月・第3回',
+    startLabel: '第3回を始める', storageKey: N4_2013_07_SESSION_KEY, questions: N4_2013_07_TRIAL,
+    audioSource: require('../../../assets/jlpt/n4/2013-07/audio/n4-2013-07.mp3'), visualOptions: {},
   },
 ];
 
