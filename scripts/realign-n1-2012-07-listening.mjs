@@ -9,7 +9,8 @@ const ranges = [
   [15.30, 80.84], [89.73, 173.12], [179.79, 238.78],
   // Q6 starts after the 450.088–455.957 silence; starting at 450.09
   // played the preceding Q5 audio in the app's player (runtime report).
-  [243.63, 344.07], [349.86, 450.09], [455.96, 554.17],
+  // Keep Q4 as approved; Q5 started with 4–5 seconds from Q4 in the app.
+  [243.63, 344.07], [355.65, 450.09], [455.96, 554.17],
   // 問題2 has a spoken prompt before each 20-second answer pause.
   // The opening instruction starts at 558.71, before the first pause.
   [554.17, 657.24], [657.24, 786.55], [786.55, 886.66],
