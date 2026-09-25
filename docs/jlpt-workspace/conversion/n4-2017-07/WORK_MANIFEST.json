@@ -1,16 +1,18 @@
 {
   "examId": "n4-2017-07-exam-06",
   "catalogPeriodId": "n4-2017-07",
-  "status": "incomplete",
+  "status": "blocked_source_identity_conflict",
   "identity": {
-    "confidence": "high",
+    "confidence": "conflicted",
     "coverPrintsPeriod": true,
     "audioPrintsPeriod": false,
     "evidence": [
       "PDF cover explicitly prints 2017年7月 and N4.",
       "Folder, PDF filename, and audio filename consistently identify 2017-07.",
       "Audio identifies N4 and its complete question order/content matches the PDF question sheets, answer key, and transcript.",
-      "PDF metadata says 2012 and is treated as stale packaging metadata rather than exam-period evidence."
+      "PDF metadata says 2012.",
+      "The written questions, answer sequence, and listening transcript materially duplicate the separately supplied N4 December 2012 source despite the 2017 cover label.",
+      "The 2017 period identity cannot be accepted until an independent correctly identified source is supplied."
     ]
   },
   "counts": { "writtenResponsesObserved": 69, "listeningResponsesObserved": 28 },
@@ -35,6 +37,7 @@
   },
   "review": { "humanReviewed": false, "perceptualApproval": false, "reviewDisposition": "needs_later_review" },
   "blockers": [
+    "Mandatory identity blocker: the supplied 2017 package duplicates the separately supplied December 2012 exam content and cannot be published as July 2017.",
     "The supplied source contains no written explanations or translations.",
     "No authoritative or perceptually approved per-question audio timing is present.",
     "Written questions/options and listening transcript have not completed character-by-character runtime verification."

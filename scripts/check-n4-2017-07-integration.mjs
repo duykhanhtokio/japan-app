@@ -10,8 +10,8 @@ const catalog=fs.readFileSync('src/data/jlpt-official/jlpt-exam-catalog.ts','utf
 const hash=p=>createHash('sha256').update(fs.readFileSync(p)).digest('hex');
 
 assert.equal(manifest.examId,'n4-2017-07-exam-06');
-assert.equal(manifest.status,'incomplete');
-assert.equal(manifest.identity.confidence,'high');
+assert.equal(manifest.status,'blocked_source_identity_conflict');
+assert.equal(manifest.identity.confidence,'conflicted');
 assert.equal(manifest.identity.coverPrintsPeriod,true);
 assert.equal(manifest.identity.audioPrintsPeriod,false);
 assert.deepEqual(manifest.counts,{writtenResponsesObserved:69,listeningResponsesObserved:28});
@@ -67,9 +67,9 @@ assert.deepEqual(dataset.questions.map(question=>Number(question.correctOptionId
 const audioQuestions=dataset.questions.filter(question=>question.audio);
 assert.equal(audioQuestions.length,28);
 assert.ok(audioQuestions.every(question=>question.audio.timingStatus==='candidate_unverified'&&question.audio.humanReviewed===false&&question.audio.perceptualApproval===false&&question.audio.reviewDisposition==='needs_later_review'));
-assert.doesNotMatch(catalog,/'n4-2017-07'/);
-assert.match(registry,/n4-2017-07-exam-06/);
+assert.match(catalog,/'n4-2017-07'/);
+assert.doesNotMatch(registry,/n4-2017-07-exam-06/);
 const runtimeAudio=fs.readFileSync('assets/jlpt/n4/2017-07/audio/n4-2017-07.mp3');
 const lfsOid=runtimeAudio.toString('utf8').match(/^oid sha256:([a-f0-9]{64})$/m)?.[1];
 assert.equal(lfsOid??createHash('sha256').update(runtimeAudio).digest('hex'),manifest.runtimeAudio.sha256);
-console.log('N4 2017-07 INTEGRATION PASS: 69 written and 28 listening responses integrated; explanations/translations absent; 28 timings remain candidate_unverified.');
+console.log('N4 2017-07 SOURCE IDENTITY BLOCK PASS: duplicated December 2012 content is retained for audit but is not published as a July 2017 structured exam.');
