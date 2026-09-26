@@ -20,7 +20,6 @@ const scannedSourceIds = [
   'n5-2017-07',
   'n5-2018-12',
   'n5-2020-12',
-  'n5-2021-12',
 ] as const;
 const incompleteSourceIds = new Set<string>(scannedSourceIds);
 

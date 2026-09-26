@@ -83,6 +83,7 @@ import { N4_2012_12_SESSION_KEY, N4_2012_12_TRIAL } from '@/data/jlpt-official/n
 import { N4_2013_12_SESSION_KEY, N4_2013_12_TRIAL } from '@/data/jlpt-official/n4-2013-12-trial';
 import { N4_2014_07_SESSION_KEY, N4_2014_07_TRIAL } from '@/data/jlpt-official/n4-2014-07-trial';
 import { N5_2013_07_SESSION_KEY, N5_2013_07_TRIAL } from '@/data/jlpt-official/n5-2013-07-trial';
+import { N5_2021_12_SESSION_KEY, N5_2021_12_TRIAL } from '@/data/jlpt-official/n5-2021-12-trial';
 import { n1December2013Explanation } from '@/data/jlpt-official/n1-2013-12-explanations';
 import type { AppLanguageCode } from '@/i18n/languages';
 
@@ -507,6 +508,28 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
     id: 'n5-2013-07-exam-03', level: 'N5', title: '日本語能力試験 N5', periodLabel: '2013年7月・第3回',
     startLabel: '第3回を始める', storageKey: N5_2013_07_SESSION_KEY, questions: N5_2013_07_TRIAL,
     audioSource: require('../../../assets/jlpt/n5/2013-07/audio/n5-2013-07.mp3'), visualOptions: {},
+  },
+  {
+    id: 'n5-2021-12-exam-07', level: 'N5', title: '日本語能力試験 N5', periodLabel: '2021年12月・第7回',
+    startLabel: '第7回を始める', storageKey: N5_2021_12_SESSION_KEY, questions: N5_2021_12_TRIAL,
+    audioSource: require('../../../assets/jlpt/n5/2021-12/audio/n5-2021-12.mp3'),
+    visualOptions: {
+      101: require('../../../assets/jlpt/n5/2021-12/visual-options/p1q1.jpg'),
+      102: require('../../../assets/jlpt/n5/2021-12/visual-options/p1q2.jpg'),
+      103: require('../../../assets/jlpt/n5/2021-12/visual-options/p1q3.jpg'),
+      104: require('../../../assets/jlpt/n5/2021-12/visual-options/p1q4.jpg'),
+      105: require('../../../assets/jlpt/n5/2021-12/visual-options/p1q7.jpg'),
+      106: require('../../../assets/jlpt/n5/2021-12/visual-options/p2q1.jpg'),
+      107: require('../../../assets/jlpt/n5/2021-12/visual-options/p2q2.jpg'),
+      108: require('../../../assets/jlpt/n5/2021-12/visual-options/p2q3.jpg'),
+      109: require('../../../assets/jlpt/n5/2021-12/visual-options/p2q4.jpg'),
+      110: require('../../../assets/jlpt/n5/2021-12/visual-options/p2q6.jpg'),
+      111: require('../../../assets/jlpt/n5/2021-12/visual-options/p3q1.jpg'),
+      112: require('../../../assets/jlpt/n5/2021-12/visual-options/p3q2.jpg'),
+      113: require('../../../assets/jlpt/n5/2021-12/visual-options/p3q3.jpg'),
+      114: require('../../../assets/jlpt/n5/2021-12/visual-options/p3q4.jpg'),
+      115: require('../../../assets/jlpt/n5/2021-12/visual-options/p3q5.jpg'),
+    },
   },
 ];
 
