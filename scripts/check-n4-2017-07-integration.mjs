@@ -67,7 +67,7 @@ assert.deepEqual(dataset.questions.map(question=>Number(question.correctOptionId
 const audioQuestions=dataset.questions.filter(question=>question.audio);
 assert.equal(audioQuestions.length,28);
 assert.ok(audioQuestions.every(question=>question.audio.timingStatus==='candidate_unverified'&&question.audio.humanReviewed===false&&question.audio.perceptualApproval===false&&question.audio.reviewDisposition==='needs_later_review'));
-assert.match(catalog,/'n4-2017-07'/);
+assert.doesNotMatch(catalog,/'n4-2017-07'/);
 assert.doesNotMatch(registry,/n4-2017-07-exam-06/);
 const runtimeAudio=fs.readFileSync('assets/jlpt/n4/2017-07/audio/n4-2017-07.mp3');
 const lfsOid=runtimeAudio.toString('utf8').match(/^oid sha256:([a-f0-9]{64})$/m)?.[1];
