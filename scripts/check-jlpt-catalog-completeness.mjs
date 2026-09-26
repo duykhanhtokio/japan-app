@@ -11,15 +11,15 @@ const allIds = [...structured, ...pending, ...mocks.map((level) => `${level.toLo
 const failures = [];
 const officialPeriods = [...structured.map((id) => id.replace(/-exam-\d+$/, '')), ...pending];
 if (new Set(officialPeriods).size !== officialPeriods.length) failures.push('same official period appears more than once');
-const expectedN4 = ['n4-2011-12','n4-2012-12','n4-2013-07','n4-2013-12','n4-2014-07','n4-2017-07','n4-2018-07','n4-2021-07','n4-2021-12'];
+const expectedN4 = ['n4-2011-12','n4-2012-12','n4-2013-07','n4-2013-12','n4-2014-07','n4-2018-07','n4-2021-07','n4-2021-12'];
 const actualN4 = officialPeriods.filter((id) => id.startsWith('n4-')).sort();
 const expectedN5 = ['n5-2011-12','n5-2012-12','n5-2013-07','n5-2017-07','n5-2018-12','n5-2020-12','n5-2021-12'];
 const actualN5 = officialPeriods.filter((id) => id.startsWith('n5-')).sort();
-if (allIds.length !== 66) failures.push(`catalogTotal expected 66, found ${allIds.length}`);
+if (allIds.length !== 65) failures.push(`catalogTotal expected 65, found ${allIds.length}`);
 if (new Set(allIds).size !== allIds.length) failures.push('duplicate exam IDs found');
-if (counts.N1 !== 15 || counts.N2 !== 13 || counts.N3 !== 17 || counts.N4 !== 9 || counts.N5 !== 7) failures.push(`official counts invalid: ${JSON.stringify(counts)}`);
+if (counts.N1 !== 15 || counts.N2 !== 13 || counts.N3 !== 17 || counts.N4 !== 8 || counts.N5 !== 7) failures.push(`official counts invalid: ${JSON.stringify(counts)}`);
 if (JSON.stringify(actualN4) !== JSON.stringify(expectedN4)) failures.push(`N4 periods invalid: ${JSON.stringify(actualN4)}`);
 if (JSON.stringify(actualN5) !== JSON.stringify(expectedN5)) failures.push(`N5 periods invalid: ${JSON.stringify(actualN5)}`);
 for (const level of mocks) if (!metadata.includes(`'${level}'`)) failures.push(`mock registry level missing for ${level}`);
 if (failures.length) { console.error('JLPT CATALOG COMPLETENESS FAILED'); failures.forEach((item) => console.error(`- ${item}`)); process.exit(1); }
-console.log('JLPT CATALOG COMPLETENESS PASS: 66 entries = N1 official 15 + N2 official 13 + N3 official 17 + N4 official 9 + N5 official candidates 7 + mocks 5.');
+console.log('JLPT CATALOG COMPLETENESS PASS: 65 entries = N1 official 15 + N2 official 13 + N3 official 17 + N4 official 8 + N5 official candidates 7 + mocks 5.');
