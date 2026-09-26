@@ -6,7 +6,7 @@ import path from 'node:path';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const locked = new Map([
   ['src/app/[level]/[section].tsx', '4a4e0e1da02cb5b08d8e2309a441a9746c22dab280c97e0097ca32898b0d74c1'],
-  ['src/components/jlpt/N1OfficialTrial.tsx', '9cfd19c6d1411d732f0eda2405e84aaa8d917cf4d93368d1f4197405a08c4b3d'],
+  ['src/components/jlpt/N1OfficialTrial.tsx', 'c43d0822cf0d6c0f054c2f84cdfca080c2ef0d8e928a6e7be9a701d3fd12c255'],
   ['src/components/jlpt/N1ExamPicker.tsx', '6c8676b97d12d3da6fe36f5fde28adb1833bcb7208628c00dc61f1b9c5c55098'],
   ['src/components/jlpt/ui/JlptExamUI.tsx', '0ecea5a9f733d8d076bde7b7c1ea75be692255aae55e4447da3121ae06aec6cc'],
   ['src/services/jlpt-trial-session-storage.ts', 'ea21a8b371feeea3453cd10c5247bcb072c92f2ef5b4c5309d83df3392d1d7e1'],
@@ -74,14 +74,14 @@ if (new Set(structuredIds).size !== structuredIds.length) {
   failed = true;
   console.error('JLPT REGISTRY CHECK FAILED: duplicate structured exam ID.');
 }
-const expectedN4 = ['n4-2011-12','n4-2012-12','n4-2013-07','n4-2013-12','n4-2014-07','n4-2018-07','n4-2021-07','n4-2021-12'];
+const expectedN4 = ['n4-2011-12','n4-2012-12','n4-2013-07','n4-2013-12','n4-2014-07','n4-2017-07','n4-2018-07','n4-2021-07','n4-2021-12'];
 const expectedN5 = ['n5-2011-12','n5-2012-12','n5-2013-07','n5-2017-07','n5-2018-12','n5-2020-12','n5-2021-12'];
 const officialPeriods = [...structuredIds.map((id) => id.replace(/-exam-\d+$/, '')), ...pendingIds];
 const actualN4 = officialPeriods.filter((id) => id.startsWith('n4-')).sort();
 const actualN5 = officialPeriods.filter((id) => id.startsWith('n5-')).sort();
-if (structuredIds.length + pendingIds.length + 5 !== 65) {
+if (structuredIds.length + pendingIds.length + 5 !== 66) {
   failed = true;
-  console.error(`JLPT REGISTRY CHECK FAILED: expected 65 total entries, found ${structuredIds.length + pendingIds.length + 5}.`);
+  console.error(`JLPT REGISTRY CHECK FAILED: expected 66 total entries, found ${structuredIds.length + pendingIds.length + 5}.`);
 }
 if (JSON.stringify(actualN4) !== JSON.stringify(expectedN4)) {
   failed = true;
