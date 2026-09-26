@@ -83,6 +83,7 @@ import { N4_2012_12_SESSION_KEY, N4_2012_12_TRIAL } from '@/data/jlpt-official/n
 import { N4_2013_12_SESSION_KEY, N4_2013_12_TRIAL } from '@/data/jlpt-official/n4-2013-12-trial';
 import { N4_2014_07_SESSION_KEY, N4_2014_07_TRIAL } from '@/data/jlpt-official/n4-2014-07-trial';
 import { N5_2013_07_SESSION_KEY, N5_2013_07_TRIAL } from '@/data/jlpt-official/n5-2013-07-trial';
+import { N5_2017_07_SESSION_KEY, N5_2017_07_TRIAL } from '@/data/jlpt-official/n5-2017-07-trial';
 import { N5_2021_12_SESSION_KEY, N5_2021_12_TRIAL } from '@/data/jlpt-official/n5-2021-12-trial';
 import { n1December2013Explanation } from '@/data/jlpt-official/n1-2013-12-explanations';
 import type { AppLanguageCode } from '@/i18n/languages';
@@ -508,6 +509,27 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
     id: 'n5-2013-07-exam-03', level: 'N5', title: '日本語能力試験 N5', periodLabel: '2013年7月・第3回',
     startLabel: '第3回を始める', storageKey: N5_2013_07_SESSION_KEY, questions: N5_2013_07_TRIAL,
     audioSource: require('../../../assets/jlpt/n5/2013-07/audio/n5-2013-07.mp3'), visualOptions: {},
+  },
+  {
+    id: 'n5-2017-07-exam-04', level: 'N5', title: '日本語能力試験 N5', periodLabel: '2017年7月・第4回',
+    startLabel: '第4回を始める', storageKey: N5_2017_07_SESSION_KEY, questions: N5_2017_07_TRIAL,
+    audioSource: require('../../../assets/jlpt/n5/2017-07/audio/n5-2017-07.mp3'),
+    visualOptions: {
+      201: require('../../../assets/jlpt/n5/2017-07/visual-options/vocab-p2q1-spelling.jpg'),
+      202: require('../../../assets/jlpt/n5/2017-07/visual-options/vocab-p2q2-kanji.jpg'),
+      203: require('../../../assets/jlpt/n5/2017-07/visual-options/vocab-p2q3-kanji.jpg'),
+      204: require('../../../assets/jlpt/n5/2017-07/visual-options/vocab-p2q4-kanji.jpg'),
+      205: require('../../../assets/jlpt/n5/2017-07/visual-options/vocab-p2q5-kanji.jpg'),
+      206: require('../../../assets/jlpt/n5/2017-07/visual-options/vocab-p2q6-kanji.jpg'),
+      207: require('../../../assets/jlpt/n5/2017-07/visual-options/vocab-p3q9-apples.jpg'),
+      208: require('../../../assets/jlpt/n5/2017-07/visual-options/vocab-p3q10-glasses.jpg'),
+      209: require('../../../assets/jlpt/n5/2017-07/visual-options/reading-p4q2-rooms.jpg'),
+      210: require('../../../assets/jlpt/n5/2017-07/visual-options/listening-p1q1-socks.jpg'),
+      211: require('../../../assets/jlpt/n5/2017-07/visual-options/listening-p1q3-bags.jpg'),
+      212: require('../../../assets/jlpt/n5/2017-07/visual-options/listening-p1q4-items.jpg'),
+      213: require('../../../assets/jlpt/n5/2017-07/visual-options/listening-p1q5-actions.jpg'),
+      214: require('../../../assets/jlpt/n5/2017-07/visual-options/listening-p1q6-items.jpg'),
+    },
   },
   {
     id: 'n5-2021-12-exam-07', level: 'N5', title: '日本語能力試験 N5', periodLabel: '2021年12月・第7回',
