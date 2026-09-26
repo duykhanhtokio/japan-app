@@ -67,3 +67,9 @@ Therefore this exam remains `incomplete`; it is deliberately absent from the str
 - Catalog integration: PASS; 45 structured official, nine pending N4, five mocks.
 - Approved UI Lock: PASS, 10/10 byte-locked files unchanged.
 - TypeScript was run. It continues to report only the pre-existing unchanged N2/N3 adapter failures recorded in the catalog-expansion checkpoint; no N4 2011-12 or catalog file produced a TypeScript diagnostic.
+
+## 2026-09-26 continuation
+
+- Assembled 70 written and 27 listening source positions into `src/data/jlpt-official/n4-2011-12/{written,listening}.candidate.json`; verified the remote files contain these counts. They remain unpublished candidate data.
+- The PDF itself says `2010-2011年` rather than a confirmed December 2011 sitting. Reading question 30's printed key conflicts with the passage, and listening has no approved per-question timing. Do not mark this package `structured_ready` or register it as an official dated exam until these are resolved.
+- The separate listening correction route can review 14 N4/N5 packages with candidate timing. This N4 package has no candidate ranges and is not yet included there.
