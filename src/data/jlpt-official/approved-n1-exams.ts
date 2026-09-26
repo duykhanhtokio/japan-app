@@ -84,6 +84,7 @@ import { N4_2013_12_SESSION_KEY, N4_2013_12_TRIAL } from '@/data/jlpt-official/n
 import { N4_2014_07_SESSION_KEY, N4_2014_07_TRIAL } from '@/data/jlpt-official/n4-2014-07-trial';
 import { N5_2013_07_SESSION_KEY, N5_2013_07_TRIAL } from '@/data/jlpt-official/n5-2013-07-trial';
 import { N5_2017_07_SESSION_KEY, N5_2017_07_TRIAL } from '@/data/jlpt-official/n5-2017-07-trial';
+import { N5_2018_12_SESSION_KEY, N5_2018_12_TRIAL } from '@/data/jlpt-official/n5-2018-12-trial';
 import { N5_2021_12_SESSION_KEY, N5_2021_12_TRIAL } from '@/data/jlpt-official/n5-2021-12-trial';
 import { n1December2013Explanation } from '@/data/jlpt-official/n1-2013-12-explanations';
 import type { AppLanguageCode } from '@/i18n/languages';
@@ -529,6 +530,32 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
       212: require('../../../assets/jlpt/n5/2017-07/visual-options/listening-p1q4-items.jpg'),
       213: require('../../../assets/jlpt/n5/2017-07/visual-options/listening-p1q5-actions.jpg'),
       214: require('../../../assets/jlpt/n5/2017-07/visual-options/listening-p1q6-items.jpg'),
+    },
+  },
+  {
+    id: 'n5-2018-12-exam-05', level: 'N5', title: '日本語能力試験 N5', periodLabel: '2018年12月・第5回',
+    startLabel: '第5回を始める', storageKey: N5_2018_12_SESSION_KEY, questions: N5_2018_12_TRIAL,
+    audioSource: require('../../../assets/jlpt/n5/2018-12/audio/n5-2018-12.mp3'),
+    visualOptions: {
+      301: require('../../../assets/jlpt/n5/2018-12/visual-options/vocab-p1q9.jpg'),
+      302: require('../../../assets/jlpt/n5/2018-12/visual-options/vocab-p2q1.jpg'),
+      303: require('../../../assets/jlpt/n5/2018-12/visual-options/vocab-p2q3.jpg'),
+      304: require('../../../assets/jlpt/n5/2018-12/visual-options/vocab-p2q4.jpg'),
+      305: require('../../../assets/jlpt/n5/2018-12/visual-options/vocab-p2q6.jpg'),
+      306: require('../../../assets/jlpt/n5/2018-12/visual-options/reading-p6q1-route.jpg'),
+      307: require('../../../assets/jlpt/n5/2018-12/visual-options/listening-p1q1-map.jpg'),
+      308: require('../../../assets/jlpt/n5/2018-12/visual-options/listening-p1q2-magazines.jpg'),
+      309: require('../../../assets/jlpt/n5/2018-12/visual-options/listening-p1q3-calendar.jpg'),
+      310: require('../../../assets/jlpt/n5/2018-12/visual-options/listening-p1q4-food.jpg'),
+      311: require('../../../assets/jlpt/n5/2018-12/visual-options/listening-p1q7-party.jpg'),
+      312: require('../../../assets/jlpt/n5/2018-12/visual-options/listening-p2q1-juice.jpg'),
+      313: require('../../../assets/jlpt/n5/2018-12/visual-options/listening-p2q3-transport.jpg'),
+      314: require('../../../assets/jlpt/n5/2018-12/visual-options/listening-p2q4-actions.jpg'),
+      315: require('../../../assets/jlpt/n5/2018-12/visual-options/listening-p3q1-hiking.jpg'),
+      316: require('../../../assets/jlpt/n5/2018-12/visual-options/listening-p3q2-gift.jpg'),
+      317: require('../../../assets/jlpt/n5/2018-12/visual-options/listening-p3q3-visitor.jpg'),
+      318: require('../../../assets/jlpt/n5/2018-12/visual-options/listening-p3q4-bicycles.jpg'),
+      319: require('../../../assets/jlpt/n5/2018-12/visual-options/listening-p3q5-restaurant.jpg'),
     },
   },
   {
