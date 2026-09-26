@@ -1,10 +1,13 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import savedStarts from '@/data/jlpt-official/listening-start-overrides.json';
 
 export const DEFAULT_JLPT_LISTENING_START_MS = 6500;
 
 const keyFor = (examId: string) => `jlpt:listening-start:${examId}`;
 
 export async function loadJlptListeningStart(examId: string): Promise<number> {
+  const shared = (savedStarts as Record<string, number>)[examId];
+  if (Number.isInteger(shared) && shared >= 0) return shared;
   try {
     const raw = await AsyncStorage.getItem(keyFor(examId));
     if (raw === null) return DEFAULT_JLPT_LISTENING_START_MS;
