@@ -26,6 +26,8 @@ import { JLPT_EXAM, type JlptFontScale } from '@/theme/jlpt-exam-design-system';
 import { clearJlptTrialSession, loadJlptTrialSession, saveJlptTrialSession, type N1TrialSession } from '@/services/jlpt-trial-session-storage';
 
 type Mode = 'exam' | 'practice';
+const LISTENING_START_SECONDS = 6.5;
+const CONTINUOUS_AUDIO_ID = '__full_listening_track__';
 const FONT_SCALES: readonly JlptFontScale[] = [0.9, 1, 1.1, 1.2, 1.3, 1.4];
 export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; exam: ApprovedN1Exam }) {
   const questions = exam.questions;
@@ -46,13 +48,12 @@ export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; 
   const [currentQuestion, setCurrentQuestion] = useState(questions[0].id);
   const [playedAudioSegments, setPlayedAudioSegments] = useState<string[]>([]);
   const [audioPlaying, setAudioPlaying] = useState(false);
-  const [activeAudioSegment, setActiveAudioSegment] = useState<string | null>(null);
+  const listeningPosition = useRef(0);
+  const lastSavedAudioSecond = useRef(0);
   const [initialScrollY, setInitialScrollY] = useState(0);
   const scrollRef = useRef<ScrollView>(null);
   const positions = useRef<Record<string, number>>({});
-  const stopTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const playbackGeneration = useRef(0);
-  const activeRange = useRef<{ generation: number; endMs: number } | null>(null);
   const player = useAudioPlayer(exam.audioSource, { updateInterval: 100 });
   const playerStatus = useAudioPlayerStatus(player);
 
@@ -70,22 +71,22 @@ export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; 
 
   useEffect(() => () => {
     playbackGeneration.current += 1;
-    activeRange.current = null;
-    if (stopTimer.current) clearTimeout(stopTimer.current);
-    stopTimer.current = null;
+    player.pause();
   }, []);
 
   useEffect(() => {
-    const range = activeRange.current;
-    if (!range || range.generation !== playbackGeneration.current || !playerStatus.playing) return;
-    if (playerStatus.currentTime * 1000 < range.endMs) return;
-    player.pause();
-    activeRange.current = null;
-    if (stopTimer.current) clearTimeout(stopTimer.current);
-    stopTimer.current = null;
-    setAudioPlaying(false);
-    setActiveAudioSegment(null);
-  }, [player, playerStatus.currentTime, playerStatus.playing]);
+    if (!audioPlaying) return;
+    const seconds = playerStatus.currentTime;
+    if (playerStatus.didJustFinish || playerStatus.duration > LISTENING_START_SECONDS && seconds >= playerStatus.duration - 0.2 && !playerStatus.playing) {
+      listeningPosition.current = 0;
+      setAudioPlaying(false);
+      void persist({ listeningPositionMs: 0 });
+    } else if (playerStatus.playing && seconds >= LISTENING_START_SECONDS && Math.floor(seconds / 5) > lastSavedAudioSecond.current) {
+      lastSavedAudioSecond.current = Math.floor(seconds / 5);
+      listeningPosition.current = Math.round(seconds * 1000);
+      if (!submitted) void persist({ listeningPositionMs: listeningPosition.current });
+    }
+  }, [audioPlaying, playerStatus.currentTime, playerStatus.didJustFinish, playerStatus.duration, playerStatus.playing]);
 
   function changeFont(direction: -1 | 1) {
     const index = FONT_SCALES.indexOf(fontScale);
@@ -110,60 +111,44 @@ export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; 
     requestAnimationFrame(() => scrollRef.current?.scrollTo({ y: Math.max(0, (positions.current[questionId] ?? 0) - 12), animated: true }));
   }
 
-  async function playListening(question: TrialQuestion) {
-    const audio = question.audio;
-    if (!audio || audioPlaying || (mode === 'exam' && !submitted && playedAudioSegments.includes(audio.segmentId))) return;
+  async function playListening() {
+    if (audioPlaying || (mode === 'exam' && !submitted && playedAudioSegments.includes(CONTINUOUS_AUDIO_ID) && !listeningPosition.current)) return;
     const generation = playbackGeneration.current + 1;
     playbackGeneration.current = generation;
-    activeRange.current = null;
-    if (stopTimer.current) clearTimeout(stopTimer.current);
     player.pause();
-    await player.seekTo(audio.startMs / 1000);
+    await player.seekTo(Math.max(LISTENING_START_SECONDS, listeningPosition.current / 1000));
     if (playbackGeneration.current !== generation) return;
-    activeRange.current = { generation, endMs: audio.endMs };
     player.play();
     setAudioPlaying(true);
-    setActiveAudioSegment(audio.segmentId);
-    if (mode === 'exam') {
-      const nextPlayed = [...new Set([...playedAudioSegments, audio.segmentId])];
+    if (mode === 'exam' && !submitted && !playedAudioSegments.includes(CONTINUOUS_AUDIO_ID)) {
+      const nextPlayed = [...playedAudioSegments, CONTINUOUS_AUDIO_ID];
       setPlayedAudioSegments(nextPlayed);
-      void persist({ playedAudioSegments: nextPlayed });
+      listeningPosition.current = Math.round(LISTENING_START_SECONDS * 1000);
+      void persist({ playedAudioSegments: nextPlayed, listeningPositionMs: listeningPosition.current });
     }
-    stopTimer.current = setTimeout(() => {
-      if (playbackGeneration.current !== generation) return;
-      player.pause();
-      activeRange.current = null;
-      setAudioPlaying(false);
-      setActiveAudioSegment(null);
-      stopTimer.current = null;
-    }, audio.endMs - audio.startMs + 5000);
   }
 
   function pauseListening() {
-    if (mode !== 'practice') return;
+    if (mode !== 'practice' && !submitted) return;
     playbackGeneration.current += 1;
-    activeRange.current = null;
-    if (stopTimer.current) clearTimeout(stopTimer.current);
+    listeningPosition.current = Math.round(playerStatus.currentTime * 1000);
     player.pause();
     setAudioPlaying(false);
-    setActiveAudioSegment(null);
+    void persist({ listeningPositionMs: listeningPosition.current });
   }
 
   function exitExam() {
     playbackGeneration.current += 1;
-    activeRange.current = null;
-    if (stopTimer.current) clearTimeout(stopTimer.current);
-    stopTimer.current = null;
+    if (audioPlaying) void persist({ listeningPositionMs: Math.round(playerStatus.currentTime * 1000) });
     if (audioPlaying) player.pause();
     setAudioPlaying(false);
-    setActiveAudioSegment(null);
     onExit();
   }
 
   function resetLocalState() {
     playbackGeneration.current += 1;
-    activeRange.current = null;
-    if (stopTimer.current) clearTimeout(stopTimer.current);
+    listeningPosition.current = 0;
+    lastSavedAudioSecond.current = 0;
     player.pause();
     setAnswers({});
     setSubmitted(false);
@@ -179,7 +164,7 @@ export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; 
   }
 
   function persist(overrides: Partial<Omit<N1TrialSession, 'version' | 'updatedAt'>> = {}) {
-    return saveJlptTrialSession(exam.storageKey, { answers, mode, status: submitted ? reviewing ? 'reviewing' : 'submitted' : started ? 'in_progress' : 'not_started', started, submitted, currentQuestion, scrollY: initialScrollY, playedAudioSegments, submittedAt, result: submitted ? calculateResult(questions, answers) : null, ...overrides });
+    return saveJlptTrialSession(exam.storageKey, { answers, mode, status: submitted ? reviewing ? 'reviewing' : 'submitted' : started ? 'in_progress' : 'not_started', started, submitted, currentQuestion, scrollY: initialScrollY, playedAudioSegments, listeningPositionMs: listeningPosition.current, submittedAt, result: submitted ? calculateResult(questions, answers) : null, ...overrides });
   }
 
   function begin() {
@@ -188,10 +173,12 @@ export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; 
     setCurrentQuestion(questions[0].id);
     setInitialScrollY(0);
     setPlayedAudioSegments([]);
+    listeningPosition.current = 0;
+    lastSavedAudioSecond.current = 0;
     setPendingSession(null);
     setStarted(true);
     setCompletedSession(null);
-    void clearJlptTrialSession(exam.storageKey).then(() => saveJlptTrialSession(exam.storageKey, { answers: {}, mode, status: 'in_progress', started: true, submitted: false, currentQuestion: questions[0].id, scrollY: 0, playedAudioSegments: [], submittedAt: null, result: null }));
+    void clearJlptTrialSession(exam.storageKey).then(() => saveJlptTrialSession(exam.storageKey, { answers: {}, mode, status: 'in_progress', started: true, submitted: false, currentQuestion: questions[0].id, scrollY: 0, playedAudioSegments: [], listeningPositionMs: 0, submittedAt: null, result: null }));
   }
 
   function continueSession() {
@@ -202,6 +189,7 @@ export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; 
     setCurrentQuestion(pendingSession.currentQuestion || questions[0].id);
     setInitialScrollY(pendingSession.scrollY);
     setPlayedAudioSegments(pendingSession.playedAudioSegments);
+    listeningPosition.current = pendingSession.listeningPositionMs ?? 0;
     setPendingSession(null);
     setStarted(true);
   }
@@ -224,12 +212,9 @@ export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; 
 
   function submit() {
     playbackGeneration.current += 1;
-    activeRange.current = null;
-    if (stopTimer.current) clearTimeout(stopTimer.current);
-    stopTimer.current = null;
+    listeningPosition.current = 0;
     player.pause();
     setAudioPlaying(false);
-    setActiveAudioSegment(null);
     setSubmitConfirmationVisible(false);
     setSubmitted(true);
     setReviewing(false);
@@ -247,6 +232,7 @@ export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; 
     setSubmittedAt(completedSession.submittedAt);
     setCompletedSession(null);
     setReviewing(nextReviewing);
+    listeningPosition.current = 0;
   }
 
   function requestSubmit() {
@@ -260,6 +246,18 @@ export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; 
     void persist({ scrollY });
   }
 
+  function continuousListeningControls() {
+    const alreadyFinished = mode === 'exam' && !submitted && playedAudioSegments.includes(CONTINUOUS_AUDIO_ID) && !listeningPosition.current;
+    return <View style={styles.audioControls}>
+      <JlptActionButton
+        disabled={audioPlaying || alreadyFinished}
+        label={audioPlaying ? '聴解を連続再生中' : alreadyFinished ? '聴解は再生済み' : listeningPosition.current ? '聴解の続きから再生する' : '聴解全体を再生する'}
+        onPress={() => void playListening()}
+      />
+      {(mode === 'practice' || submitted) ? <JlptActionButton kind="secondary" disabled={!audioPlaying} label="一時停止" onPress={pauseListening} /> : null}
+    </View>;
+  }
+
   if (!started) return <View style={styles.startScreen}><JlptExamHeader title="N1 · JLPT模擬試験" subtitle="日本語能力試験" onBack={onExit} /><ScrollView contentContainerStyle={styles.startPage}>
     <JlptPaper>
       <Text style={styles.examName}>{exam.title}</Text>
@@ -269,11 +267,11 @@ export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; 
       <Text style={styles.modeLabel}>受験モード</Text>
       <Pressable accessibilityRole="radio" accessibilityState={{ checked: mode === 'exam' }} onPress={() => selectMode('exam')} style={[styles.modeRow, mode === 'exam' && styles.modeSelected]}>
         <View style={[styles.radio, mode === 'exam' && styles.radioSelected]} />
-        <View style={styles.modeCopy}><Text style={styles.modeTitle}>試験モード</Text><Text style={styles.modeDescription}>聴解は一度だけ再生され、提出前に正答・スクリプトは表示されません。</Text></View>
+        <View style={styles.modeCopy}><Text style={styles.modeTitle}>試験モード</Text><Text style={styles.modeDescription}>聴解は6.5秒から最後まで一度だけ連続再生され、提出前に正答・スクリプトは表示されません。</Text></View>
       </Pressable>
       <Pressable accessibilityRole="radio" accessibilityState={{ checked: mode === 'practice' }} onPress={() => selectMode('practice')} style={[styles.modeRow, mode === 'practice' && styles.modeSelected]}>
         <View style={[styles.radio, mode === 'practice' && styles.radioSelected]} />
-        <View style={styles.modeCopy}><Text style={styles.modeTitle}>練習モード</Text><Text style={styles.modeDescription}>聴解を繰り返し再生・一時停止できます。正答は提出後に表示されます。</Text></View>
+        <View style={styles.modeCopy}><Text style={styles.modeTitle}>練習モード</Text><Text style={styles.modeDescription}>聴解を6.5秒から最後まで連続再生し、一時停止・再開できます。正答は提出後に表示されます。</Text></View>
       </Pressable>
       <JlptActionButton label={exam.startLabel} onPress={begin} style={styles.startAction} />
       {completedSession ? <View style={styles.savedResult}>
@@ -307,7 +305,7 @@ export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; 
   const wrongCount = questions.length - correctCount - unansweredCount;
 
   if (submitted && !reviewing) return <View style={styles.screen}>
-    <JlptExamHeader title="N1 · 試験結果" subtitle={exam.periodLabel} onBack={onExit} />
+    <JlptExamHeader title="N1 · 試験結果" subtitle={exam.periodLabel} onBack={exitExam} />
     <ScrollView contentContainerStyle={styles.resultPage}><JlptPaper>
       <Text style={styles.resultTitle}>試験結果</Text>
       <Text style={styles.resultMode}>{mode === 'exam' ? '試験モード' : '練習モード'}　{formatSavedAt(submittedAt ?? '')}</Text>
@@ -321,7 +319,7 @@ export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; 
       <View style={styles.notEligible}><Text style={styles.notEligibleTitle}>素点による結果</Text><Text style={styles.notEligibleText}>公式の尺度得点への換算式は公開されていないため、正答数のみを表示します。正答率をJLPT公式得点や合否に置き換えていません。{`\n`}Chỉ hiển thị số câu đúng; không tự quy đổi thành điểm hoặc kết luận đỗ/trượt chính thức.</Text></View>
       <JlptActionButton label="詳しい解説を見る" onPress={() => { setReviewing(true); void persist({ status: 'reviewing' }); }} style={styles.resultAction} />
       <JlptActionButton kind="secondary" label="もう一度受験する" onPress={() => setRestartConfirmationVisible(true)} style={styles.resultAction} />
-      <JlptActionButton kind="secondary" label="JLPT一覧へ戻る" onPress={onExit} style={styles.resultAction} />
+      <JlptActionButton kind="secondary" label="JLPT一覧へ戻る" onPress={exitExam} style={styles.resultAction} />
     </JlptPaper></ScrollView>
     <JlptRestartConfirmation visible={restartConfirmationVisible} onCancel={() => setRestartConfirmationVisible(false)} onConfirm={confirmRestartSavedSession} />
   </View>;
@@ -329,16 +327,15 @@ export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; 
   if (submitted && reviewing) {
     const filtered = questions.filter((question) => reviewFilter === 'all' || reviewFilter === 'wrong' && !!answers[question.id] && answers[question.id] !== question.correctOptionId || reviewFilter === 'unanswered' && !answers[question.id]);
     return <View style={styles.screen}>
-      <JlptExamHeader title="詳しい解説" subtitle="提出後の確認" onBack={() => { setReviewing(false); void persist({ status: 'submitted' }); }} />
+      <JlptExamHeader title="詳しい解説" subtitle="提出後の確認" onBack={() => { playbackGeneration.current += 1; player.pause(); setAudioPlaying(false); listeningPosition.current = 0; setReviewing(false); void persist({ status: 'submitted', listeningPositionMs: 0 }); }} />
       <View style={styles.reviewFilters}>{(['all','wrong','unanswered'] as const).map((filter) => <Pressable key={filter} onPress={() => setReviewFilter(filter)} style={[styles.reviewFilter, reviewFilter === filter && styles.reviewFilterActive]}><Text style={[styles.reviewFilterText, reviewFilter === filter && styles.reviewFilterTextActive]}>{filter === 'all' ? 'すべて' : filter === 'wrong' ? '不正解' : '未回答'}</Text></Pressable>)}</View>
       <ScrollView contentContainerStyle={styles.content}><JlptPaper>
+        {filtered.some((question) => !!question.audio) ? continuousListeningControls() : null}
         {filtered.length ? filtered.map((question, index) => {
           const previous = filtered[index - 1];
           const firstForSegment = !!question.audio && (index === 0 || filtered[index - 1].audio?.segmentId !== question.audio.segmentId);
           const firstForPassage = !question.passageId || previous?.passageId !== question.passageId;
-          const isPlaying = !!question.audio && activeAudioSegment === question.audio.segmentId && audioPlaying;
           return <View key={question.id}>
-            {firstForSegment ? <View style={styles.audioControls}><JlptActionButton disabled={audioPlaying} label={isPlaying ? '再生中' : 'この問題の音声を再生する'} onPress={() => void playListening(question)} />{mode === 'practice' ? <JlptActionButton kind="secondary" disabled={!isPlaying} label="一時停止" onPress={pauseListening} /> : null}</View> : null}
             <QuestionBlock question={question} scale={fontScale} selected={answers[question.id]} submitted explanation={exam.explanationFor?.(question.id, getCurrentAppLanguage())} visualOptions={exam.visualOptions} showPassage={firstForPassage} showTranscript={!question.audio || firstForSegment} onChoose={choose} onLayout={() => undefined} onFocus={() => undefined} />
           </View>;
         }) : <Text style={styles.emptyReview}>該当する問題はありません。</Text>}
@@ -365,22 +362,12 @@ export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; 
         })}
         <View style={styles.majorDivider} />
         <Text style={styles.sectionTitle}>聴解</Text>
+        {continuousListeningControls()}
         {listening.map((question, index) => {
           const previous = listening[index - 1];
           const firstInProblem = !previous || previous.problemNumber !== question.problemNumber;
-          const firstForSegment = index === 0 || listening[index - 1].audio?.segmentId !== question.audio?.segmentId;
-          const played = !!question.audio && playedAudioSegments.includes(question.audio.segmentId);
-          const isPlaying = !!question.audio && activeAudioSegment === question.audio.segmentId && audioPlaying;
           return <View key={question.id}>
             {firstInProblem ? <><JlptSectionHeading problem={problemLabel(question)} detail={familyLabel(question)} /><JlptInstruction scale={fontScale}>{question.instructionJa}</JlptInstruction></> : null}
-            {firstForSegment && question.audio ? <View style={styles.audioControls}>
-              <JlptActionButton
-                disabled={audioPlaying || (mode === 'exam' && played)}
-                label={isPlaying ? '再生中' : mode === 'exam' && played ? '再生済み' : `${question.label}を再生する`}
-                onPress={() => void playListening(question)}
-              />
-              {mode === 'practice' ? <JlptActionButton kind="secondary" disabled={!isPlaying} label="一時停止" onPress={pauseListening} /> : null}
-            </View> : null}
             <QuestionBlock question={question} scale={fontScale} selected={answers[question.id]} submitted={false} visualOptions={exam.visualOptions} showProblemHeading={false} showInstruction={false} showPassage={false} onChoose={choose} onLayout={(event) => registerPosition(question.id, event)} onFocus={() => setCurrentQuestion(question.id)} />
           </View>;
         })}
