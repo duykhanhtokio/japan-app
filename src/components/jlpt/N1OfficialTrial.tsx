@@ -133,7 +133,9 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
     const generation = playbackGeneration.current + 1;
     playbackGeneration.current = generation;
     player.pause();
-    await player.seekTo(Math.max(LISTENING_START_SECONDS, listeningPosition.current / 1000));
+    const resumeSeconds = Math.max(LISTENING_START_SECONDS, listeningPosition.current / 1000);
+    lastSavedAudioSecond.current = Math.floor(resumeSeconds / 5);
+    await player.seekTo(resumeSeconds);
     if (playbackGeneration.current !== generation) return;
     player.play();
     setAudioPlaying(true);
