@@ -54,7 +54,8 @@ export const N1_2012_07_SCRIPT_PAGES: readonly ImageSourcePropType[] = [
   require('../../../assets/jlpt/n1/2012-07/answer-script/page-13.jpg'),
 ] as const;
 
-export const N1_2012_07_AUDIO = require('../../../assets/jlpt/n1/2012-07/audio/n1-2012-07.mp3');
+// Indexed AAC retains the source timeline and seeks reliably throughout the long recording.
+export const N1_2012_07_AUDIO = require('../../../assets/jlpt/n1/2012-07/audio/n1-2012-07-indexed.m4a');
 export const N1_2012_07_ANSWER_KEY_PAGE: ImageSourcePropType = require('../../../assets/jlpt/n1/2012-07/answer-script/page-01.jpg');
 
 if (N1_2012_07_WRITTEN_KEY.length !== 70) throw new Error('N1 2012-07: written key must contain 70 responses');

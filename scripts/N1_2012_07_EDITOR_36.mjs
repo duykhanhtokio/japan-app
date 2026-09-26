@@ -2,11 +2,12 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { spawn } from 'node:child_process';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dataPath = path.join(root, 'src/data/jlpt-official/n1-2012-07-exam-01.verified.json');
 const generatorPath = path.join(root, 'scripts/realign-n1-2012-07-listening.mjs');
-const port = Number(process.env.N1_TIMING_PORT || 8765);
+let port = Number(process.env.N1_TIMING_PORT || 8765);
 
 function listeningFrom(exam) {
   return exam.questions.filter(q => q.family === 'listening');
@@ -97,7 +98,7 @@ function save(input) {
 
 const html = `<!doctype html><html lang="vi"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Đánh dấu câu nghe N1 tháng 7/2012</title>
+<title>36 mục nghe N1 tháng 7/2012</title>
 <style>
 body{margin:0;background:#f4f6fb;color:#1a273b;font:16px system-ui,sans-serif}
 main{max-width:1080px;margin:auto;padding:16px 18px 48px}
@@ -115,7 +116,7 @@ button:hover{background:#eaf1ff}.time{font-variant-numeric:tabular-nums;font-wei
 <div class="player"><label>Chọn file âm thanh của đề: <input id="file" type="file" accept="audio/*,.mp3"></label>
 <audio id="audio" controls preload="metadata"></audio>
 <div>Đang nghe: <span id="position">00:00.00</span> · Phát liên tục toàn bộ bài nghe. Dừng tại điểm cần đánh dấu rồi bấm nút của câu bên dưới.</div></div>
-<div id="list"></div><button class="save" id="save">Lưu toàn bộ vị trí câu hỏi</button><p id="message" role="status"></p>
+<p id="count">Đang tải danh sách câu nghe…</p><div id="list"></div><button class="save" id="save">Lưu toàn bộ vị trí câu hỏi</button><p id="message" role="status"></p>
 </main><script>
 const audio=document.getElementById('audio'), list=document.getElementById('list'), msg=document.getElementById('message');
 let items=[], localUrl='';
@@ -131,6 +132,7 @@ function jump(ms){if(!audio.src){status('Hãy chọn file âm thanh trước.');
 function mark(index,field){if(!audio.src){status('Hãy chọn file âm thanh trước.');return}sync(index,field,Math.round(audio.currentTime*1000/10)*10)}
 function button(parent,label,action){const b=document.createElement('button');b.textContent=label;b.onclick=action;parent.append(b)}
 function render(){list.replaceChildren();let section=null,last=null;
+ document.getElementById('count').textContent='Đang hiển thị '+items.length+' mục trả lời thuộc '+new Set(items.map(x=>x.problem)).size+' 問題.';
  items.forEach((item,i)=>{
   if(item.problem!==last){last=item.problem;section=document.createElement('section');
    const heading=document.createElement('h2');heading.textContent='問題 '+last;section.append(heading);list.append(section)}
@@ -154,7 +156,9 @@ document.getElementById('file').onchange=e=>{
 };
 audio.ontimeupdate=()=>document.getElementById('position').textContent=clock(audio.currentTime*1000);
 async function request(url,options){const response=await fetch(url,options);const result=await response.json();if(!response.ok)throw Error(result.error||'Có lỗi');return result}
-request('/api').then(result=>{items=result;render()}).catch(error=>status(error.message));
+request('/api').then(result=>{items=result;render()}).catch(error=>{
+ document.getElementById('count').textContent='Không tải được danh sách câu.';status(error.message)
+});
 document.getElementById('save').onclick=async()=>{
  try{items=await request('/api',{method:'POST',headers:{'Content-Type':'application/json'},
  body:JSON.stringify(items.map(({id,startMs,endMs})=>({id,startMs,endMs})))});
@@ -188,4 +192,23 @@ const server = http.createServer(async (req, res) => {
   }
   res.writeHead(404).end('Not found');
 });
-server.listen(port, '127.0.0.1', () => console.log(`Mở http://127.0.0.1:${port} trên máy đang chạy chương trình.`));
+server.on('error', error => {
+  if (error.code === 'EADDRINUSE' && port < 8790) {
+    console.log(`Cổng ${port} đang chạy một bản cũ. Chuyển sang cổng ${port + 1}.`);
+    port++;
+    server.listen(port, '127.0.0.1');
+  } else {
+    console.error(error);
+    process.exitCode = 1;
+  }
+});
+server.on('listening', () => {
+  const url = `http://127.0.0.1:${port}`;
+  console.log(`Đã mở bản 36 mục: ${url}`);
+  if (process.platform === 'darwin') {
+    const browser = spawn('open', [url], { stdio: 'ignore' });
+    browser.on('error', () => {});
+    browser.unref();
+  }
+});
+server.listen(port, '127.0.0.1');
