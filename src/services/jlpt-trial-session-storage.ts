@@ -11,6 +11,7 @@ export type N1TrialSession = {
   currentQuestion: string;
   scrollY: number;
   playedAudioSegments: string[];
+  listeningPositionMs?: number;
   submittedAt: string | null;
   result: { correct: number; wrong: number; unanswered: number; total: number } | null;
   updatedAt: string;
@@ -39,6 +40,8 @@ export async function loadJlptTrialSession(storageKey: string): Promise<N1TrialS
       playedAudioSegments: Array.isArray(value.playedAudioSegments)
         ? value.playedAudioSegments.filter((id): id is string => typeof id === 'string')
         : [],
+      listeningPositionMs: Number.isFinite(value.listeningPositionMs)
+        ? Math.max(0, value.listeningPositionMs ?? 0) : 0,
       submittedAt: typeof value.submittedAt === 'string' ? value.submittedAt : null,
       result: value.result && Number.isFinite(value.result.correct) && Number.isFinite(value.result.total)
         ? value.result
