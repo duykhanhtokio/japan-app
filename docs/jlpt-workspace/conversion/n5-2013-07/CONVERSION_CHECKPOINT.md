@@ -54,3 +54,11 @@ The catalog target remains `incomplete`. It is not registered as `structured_rea
 - `src/data/jlpt-official/n5-2013-07/written.candidate.json` and `listening.candidate.json` assemble 67 written plus 24 listening candidate records without registering an exam as ready. Listening timing remains `candidate_unverified`, `humanReviewed: false`, `perceptualApproval: false`.
 - The separate `/jlpt-listening-review` route lists N4/N5 packages with candidate timing and saves per-question corrections on the device. It does not apply corrections to the exam dataset or sync them to GitHub.
 - Next: verify remaining written characters against the PDF at final runtime level; transcribe all listening prompts, options, visuals, and transcript from physical pages 10–17; then build the approved UI adapter. Keep this exam `incomplete` until the adapter has complete source-backed questions.
+
+## Runtime candidate integration — 2026-09-26
+
+- `src/data/jlpt-official/n5-2013-07-trial.ts` now maps 67 written and 24 listening responses to the approved shared trial data contract. The registry replaces the former pending entry with `n5-2013-07-exam-03`; the user can enter this exam through the existing N5 catalog.
+- All 67 written answers match `written.audit.json`; all 24 listening question positions match `listening.questions.candidate.json` and the printed key. The timing remains AI-derived candidate and the transcript field remains blank pending a character-level transcription.
+- Ten image-based listening choices are temporarily represented by text descriptions of the source images. Those descriptions are explicitly marked as candidates and require image-level review before claiming exact visual fidelity. The PDF page itself is not shown as a question.
+- TypeScript has no diagnostic in the new N5 adapter. UI lock, catalog, inventory, no-scanned-runtime, and navigation-contract checks pass with 65 total entries after removal of duplicate N4 07/2017.
+- Do not claim that an iPhone simulator or physical device was visually tested. Runtime availability follows the registry and adapter; visual QA and listening correction remain open.
