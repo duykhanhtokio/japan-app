@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Image, Pressable, ScrollView, StyleSheet, Text, View, type ImageSourcePropType, type LayoutChangeEvent, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
+import { AppState, Image, Pressable, ScrollView, StyleSheet, Text, View, type ImageSourcePropType, type LayoutChangeEvent, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
 import { useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
 
 import {
@@ -29,7 +29,7 @@ type Mode = 'exam' | 'practice';
 const LISTENING_START_SECONDS = 6.5;
 const CONTINUOUS_AUDIO_ID = '__full_listening_track__';
 const FONT_SCALES: readonly JlptFontScale[] = [0.9, 1, 1.1, 1.2, 1.3, 1.4];
-export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; exam: ApprovedN1Exam }) {
+export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit: () => void; registerExit: (handler: (() => void) | null) => void; exam: ApprovedN1Exam }) {
   const questions = exam.questions;
   const listening = questions.filter((question) => question.family === 'listening');
   const [answers, setAnswers] = useState<Record<string, string>>({});
@@ -54,6 +54,9 @@ export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; 
   const scrollRef = useRef<ScrollView>(null);
   const positions = useRef<Record<string, number>>({});
   const playbackGeneration = useRef(0);
+  const exitInProgress = useRef(false);
+  const latestExit = useRef<() => void>(() => undefined);
+  const latestBackgroundPause = useRef<() => void>(() => undefined);
   const player = useAudioPlayer(exam.audioSource, { updateInterval: 100 });
   const playerStatus = useAudioPlayerStatus(player);
 
@@ -74,9 +77,23 @@ export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; 
     player.pause();
   }, []);
 
+  latestExit.current = () => { void exitExam(); };
+  latestBackgroundPause.current = () => { if (audioPlaying) pauseListening(); };
+  useEffect(() => {
+    registerExit(() => latestExit.current());
+    return () => registerExit(null);
+  }, [registerExit]);
+  useEffect(() => {
+    const subscription = AppState.addEventListener('change', (state) => {
+      if (state !== 'active') latestBackgroundPause.current();
+    });
+    return () => subscription.remove();
+  }, []);
+
   useEffect(() => {
     if (!audioPlaying) return;
     const seconds = playerStatus.currentTime;
+    if (playerStatus.playing && seconds >= LISTENING_START_SECONDS) listeningPosition.current = Math.round(seconds * 1000);
     if (playerStatus.didJustFinish || playerStatus.duration > LISTENING_START_SECONDS && seconds >= playerStatus.duration - 0.2 && !playerStatus.playing) {
       listeningPosition.current = 0;
       setAudioPlaying(false);
@@ -129,19 +146,24 @@ export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; 
   }
 
   function pauseListening() {
-    if (mode !== 'practice' && !submitted) return;
+    if (!audioPlaying) return;
     playbackGeneration.current += 1;
-    listeningPosition.current = Math.round(playerStatus.currentTime * 1000);
+    listeningPosition.current = Math.max(listeningPosition.current, Math.round(player.currentTime * 1000));
     player.pause();
     setAudioPlaying(false);
     void persist({ listeningPositionMs: listeningPosition.current });
   }
 
-  function exitExam() {
+  async function exitExam() {
+    if (exitInProgress.current) return;
+    exitInProgress.current = true;
     playbackGeneration.current += 1;
-    if (audioPlaying) void persist({ listeningPositionMs: Math.round(playerStatus.currentTime * 1000) });
-    if (audioPlaying) player.pause();
+    if (audioPlaying) listeningPosition.current = Math.max(listeningPosition.current, Math.round(player.currentTime * 1000));
+    player.pause();
     setAudioPlaying(false);
+    if (started && !submitted) {
+      try { await persist({ listeningPositionMs: listeningPosition.current }); } catch { /* Keep the last periodic save. */ }
+    }
     onExit();
   }
 
@@ -254,7 +276,7 @@ export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; 
         label={audioPlaying ? '聴解を連続再生中' : alreadyFinished ? '聴解は再生済み' : listeningPosition.current ? '聴解の続きから再生する' : '聴解全体を再生する'}
         onPress={() => void playListening()}
       />
-      {(mode === 'practice' || submitted) ? <JlptActionButton kind="secondary" disabled={!audioPlaying} label="一時停止" onPress={pauseListening} /> : null}
+      <JlptActionButton kind="secondary" disabled={!audioPlaying} label="一時停止" onPress={pauseListening} />
     </View>;
   }
 
@@ -290,7 +312,7 @@ export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; 
       updatedAt={formatSavedAt(pendingSession.updatedAt)}
       answered={Object.keys(pendingSession.answers).length}
       total={questions.length}
-      currentLabel={questionPositionLabel(questions, pendingSession.currentQuestion)}
+      currentLabel={`${questionPositionLabel(questions, pendingSession.currentQuestion)}${pendingSession.listeningPositionMs ? `・聴解 ${formatListeningPosition(pendingSession.listeningPositionMs)} から再開できます` : ''}`}
       onContinue={continueSession}
       onRestart={requestRestartSavedSession}
       onCancel={() => setPendingSession(null)}
@@ -368,6 +390,9 @@ export default function N1OfficialTrial({ onExit, exam }: { onExit: () => void; 
           const firstInProblem = !previous || previous.problemNumber !== question.problemNumber;
           return <View key={question.id}>
             {firstInProblem ? <><JlptSectionHeading problem={problemLabel(question)} detail={familyLabel(question)} /><JlptInstruction scale={fontScale}>{question.instructionJa}</JlptInstruction></> : null}
+            {question.audio && (audioPlaying || listeningPosition.current > 0) ? <View style={styles.audioControls}>
+              <JlptActionButton kind="secondary" label={audioPlaying ? '聴解を一時停止' : '保存位置から聴解を再開'} onPress={() => { if (audioPlaying) pauseListening(); else void playListening(); }} />
+            </View> : null}
             <QuestionBlock question={question} scale={fontScale} selected={answers[question.id]} submitted={false} visualOptions={exam.visualOptions} showProblemHeading={false} showInstruction={false} showPassage={false} onChoose={choose} onLayout={(event) => registerPosition(question.id, event)} onFocus={() => setCurrentQuestion(question.id)} />
           </View>;
         })}
@@ -408,6 +433,11 @@ function calculateResult(questions: readonly TrialQuestion[], answers: Record<st
 function formatSavedAt(value: string) {
   const date = new Date(value);
   return Number.isNaN(date.getTime()) ? '不明' : date.toLocaleString('ja-JP');
+}
+
+function formatListeningPosition(positionMs: number) {
+  const seconds = Math.floor(positionMs / 1000);
+  return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
 }
 
 function questionPositionLabel(questions: readonly TrialQuestion[], questionId: string) {
