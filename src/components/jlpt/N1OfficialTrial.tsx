@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AppState, Image, Pressable, ScrollView, StyleSheet, Text, View, type ImageSourcePropType, type LayoutChangeEvent, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
-import { useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
+import { setAudioModeAsync, useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
 
 import {
   JlptActionButton,
@@ -48,6 +48,8 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
   const [currentQuestion, setCurrentQuestion] = useState(questions[0].id);
   const [playedAudioSegments, setPlayedAudioSegments] = useState<string[]>([]);
   const [audioPlaying, setAudioPlaying] = useState(false);
+  const [audioError, setAudioError] = useState<string | null>(null);
+  const compactN5Listening = exam.id === 'n5-2021-12-exam-07';
   const listeningStartMs = getJlptListeningStart(exam.id);
   const listeningPosition = useRef(0);
   const lastSavedAudioSecond = useRef(0);
@@ -60,6 +62,9 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
   const latestBackgroundPause = useRef<() => void>(() => undefined);
   const player = useAudioPlayer(exam.audioSource, { updateInterval: 100 });
   const playerStatus = useAudioPlayerStatus(player);
+
+  useEffect(() => { void setAudioModeAsync({ playsInSilentMode: true, shouldPlayInBackground: false }); }, []);
+  useEffect(() => { if (playerStatus.isLoaded) setAudioError(null); }, [playerStatus.isLoaded]);
 
   const answeredIds = useMemo(() => new Set(Object.keys(answers)), [answers]);
 
@@ -126,20 +131,30 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
 
   async function playListening() {
     if (audioPlaying || (mode === 'exam' && !submitted && playedAudioSegments.includes(CONTINUOUS_AUDIO_ID) && !listeningPosition.current)) return;
+    if (!playerStatus.isLoaded) {
+      setAudioError('音声を読み込めません。MP3 ファイルの取得を確認してください。');
+      return;
+    }
     const generation = playbackGeneration.current + 1;
     playbackGeneration.current = generation;
-    player.pause();
-    const resumeSeconds = Math.max(listeningStartMs / 1000, listeningPosition.current / 1000);
-    lastSavedAudioSecond.current = Math.floor(resumeSeconds / 5);
-    await player.seekTo(resumeSeconds);
-    if (playbackGeneration.current !== generation) return;
-    player.play();
-    setAudioPlaying(true);
-    if (mode === 'exam' && !submitted && !playedAudioSegments.includes(CONTINUOUS_AUDIO_ID)) {
-      const nextPlayed = [...playedAudioSegments, CONTINUOUS_AUDIO_ID];
-      setPlayedAudioSegments(nextPlayed);
-      listeningPosition.current = listeningStartMs;
-      void persist({ playedAudioSegments: nextPlayed, listeningPositionMs: listeningPosition.current });
+    setAudioError(null);
+    try {
+      await setAudioModeAsync({ playsInSilentMode: true, shouldPlayInBackground: false });
+      player.pause();
+      const resumeSeconds = Math.max(listeningStartMs / 1000, listeningPosition.current / 1000);
+      lastSavedAudioSecond.current = Math.floor(resumeSeconds / 5);
+      await player.seekTo(resumeSeconds);
+      if (playbackGeneration.current !== generation) return;
+      player.play();
+      setAudioPlaying(true);
+      if (mode === 'exam' && !submitted && !playedAudioSegments.includes(CONTINUOUS_AUDIO_ID)) {
+        const nextPlayed = [...playedAudioSegments, CONTINUOUS_AUDIO_ID];
+        setPlayedAudioSegments(nextPlayed);
+        listeningPosition.current = listeningStartMs;
+        void persist({ playedAudioSegments: nextPlayed, listeningPositionMs: listeningPosition.current });
+      }
+    } catch (error) {
+      setAudioError(error instanceof Error ? error.message : String(error));
     }
   }
 
@@ -271,14 +286,16 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
     return <View style={styles.audioControls}>
       <JlptActionButton
         disabled={audioPlaying || alreadyFinished}
-        label={audioPlaying ? '聴解を連続再生中' : alreadyFinished ? '聴解は再生済み' : listeningPosition.current ? '聴解の続きから再生する' : '聴解全体を再生する'}
+        label={compactN5Listening ? audioPlaying ? '再生中' : alreadyFinished ? '再生済み' : listeningPosition.current ? '続きから再生' : '聴解を再生' : audioPlaying ? '聴解を連続再生中' : alreadyFinished ? '聴解は再生済み' : listeningPosition.current ? '聴解の続きから再生する' : '聴解全体を再生する'}
         onPress={() => void playListening()}
+        style={compactN5Listening ? styles.compactAudioButton : undefined}
       />
-      <JlptActionButton kind="secondary" disabled={!audioPlaying} label="一時停止" onPress={pauseListening} />
+      <JlptActionButton kind="secondary" disabled={!audioPlaying} label="一時停止" onPress={pauseListening} style={compactN5Listening ? styles.compactAudioButton : undefined} />
+      {audioError ? <Text style={styles.audioError}>{audioError}</Text> : null}
     </View>;
   }
 
-  if (!started) return <View style={styles.startScreen}><JlptExamHeader title="N1 · JLPT模擬試験" subtitle="日本語能力試験" onBack={() => void exitExam()} /><ScrollView contentContainerStyle={styles.startPage}>
+  if (!started) return <View style={styles.startScreen}><JlptExamHeader title={`${exam.level} · JLPT模擬試験`} subtitle="日本語能力試験" onBack={() => void exitExam()} /><ScrollView contentContainerStyle={styles.startPage}>
     <JlptPaper>
       <Text style={styles.examName}>{exam.title}</Text>
       <Text style={styles.trialName}>{exam.periodLabel}</Text>
@@ -325,7 +342,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
   const wrongCount = questions.length - correctCount - unansweredCount;
 
   if (submitted && !reviewing) return <View style={styles.screen}>
-    <JlptExamHeader title="N1 · 試験結果" subtitle={exam.periodLabel} onBack={exitExam} />
+    <JlptExamHeader title={`${exam.level} · 試験結果`} subtitle={exam.periodLabel} onBack={exitExam} />
     <ScrollView contentContainerStyle={styles.resultPage}><JlptPaper>
       <Text style={styles.resultTitle}>試験結果</Text>
       <Text style={styles.resultMode}>{mode === 'exam' ? '試験モード' : '練習モード'}　{formatSavedAt(submittedAt ?? '')}</Text>
@@ -364,13 +381,14 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
   }
 
   return <View style={styles.screen}>
-    <JlptExamHeader title="N1 · JLPT模擬試験" subtitle="日本語能力試験" onBack={exitExam} />
+    <JlptExamHeader title={`${exam.level} · JLPT模擬試験`} subtitle="日本語能力試験" onBack={exitExam} />
     <View style={styles.toolRow}>
       <View><Text style={styles.progress}>{answeredIds.size}/{questions.length} 回答済み</Text><Text style={styles.modeIndicator}>{mode === 'exam' ? '試験モード' : '練習モード'}</Text></View>
       <JlptFontControls scale={fontScale} onSmaller={() => changeFont(-1)} onLarger={() => changeFont(1)} />
       <Pressable accessibilityRole="button" onPress={() => setNavigatorVisible(true)} style={styles.navigatorButton}><Text style={styles.navigatorButtonText}>問題一覧</Text></Pressable>
     </View>
     <JlptProgressBar answered={answeredIds.size} total={questions.length} />
+    {compactN5Listening ? <View style={styles.stickyAudio}>{continuousListeningControls()}</View> : null}
     <ScrollView ref={scrollRef} contentOffset={{ x: 0, y: initialScrollY }} onMomentumScrollEnd={saveScroll} contentContainerStyle={styles.content}>
       <JlptPaper>
         <Text style={styles.sectionTitle}>言語知識（文字・語彙・文法）・読解</Text>
@@ -382,13 +400,13 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
         })}
         <View style={styles.majorDivider} />
         <Text style={styles.sectionTitle}>聴解</Text>
-        {continuousListeningControls()}
+        {compactN5Listening ? null : continuousListeningControls()}
         {listening.map((question, index) => {
           const previous = listening[index - 1];
           const firstInProblem = !previous || previous.problemNumber !== question.problemNumber;
           return <View key={question.id}>
             {firstInProblem ? <><JlptSectionHeading problem={problemLabel(question)} detail={familyLabel(question)} /><JlptInstruction scale={fontScale}>{question.instructionJa}</JlptInstruction></> : null}
-            {question.audio && (audioPlaying || listeningPosition.current > 0) ? <View style={styles.audioControls}>
+            {!compactN5Listening && question.audio && (audioPlaying || listeningPosition.current > 0) ? <View style={styles.audioControls}>
               <JlptActionButton kind="secondary" label={audioPlaying ? '聴解を一時停止' : '保存位置から聴解を再開'} onPress={() => { if (audioPlaying) pauseListening(); else void playListening(); }} />
             </View> : null}
             <QuestionBlock question={question} scale={fontScale} selected={answers[question.id]} submitted={false} visualOptions={exam.visualOptions} showProblemHeading={false} showInstruction={false} showPassage={false} onChoose={choose} onLayout={(event) => registerPosition(question.id, event)} onFocus={() => setCurrentQuestion(question.id)} />
@@ -403,13 +421,15 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
 }
 
 function QuestionBlock({ question, scale, selected, submitted, explanation, visualOptions, showProblemHeading = true, showInstruction = true, showPassage = true, showTranscript = true, onChoose, onLayout, onFocus }: { question: TrialQuestion; scale: number; selected?: string; submitted: boolean; explanation?: string; visualOptions: Readonly<Record<number, ImageSourcePropType>>; showProblemHeading?: boolean; showInstruction?: boolean; showPassage?: boolean; showTranscript?: boolean; onChoose: (questionId: string, optionId: string) => void; onLayout: (event: LayoutChangeEvent) => void; onFocus: () => void }) {
+  const imageSource = question.visualOptionPage ? visualOptions[question.visualOptionPage] : undefined;
+  const imageSize = imageSource ? Image.resolveAssetSource(imageSource) : undefined;
   return <View onLayout={onLayout} style={styles.questionBlock}>
     {showProblemHeading ? <JlptSectionHeading problem={problemLabel(question)} detail={familyLabel(question)} /> : null}
     {showInstruction ? <JlptInstruction scale={scale}>{question.instructionJa}</JlptInstruction> : null}
     {showPassage && question.passageJa ? <JlptReadingPassage scale={scale}>{question.passageJa}</JlptReadingPassage> : null}
     <Text style={styles.questionNumber}>{displayQuestionNumber(question)}</Text>
     <JlptQuestionText scale={scale} style={question.family === 'sentenceComposition' ? styles.starQuestion : undefined}>{question.promptJa}</JlptQuestionText>
-    {question.visualOptionPage && visualOptions[question.visualOptionPage] ? <Image source={visualOptions[question.visualOptionPage]} resizeMode="contain" style={[styles.visualOptions, question.visualOptionPage === 12 ? styles.visualOptionsPage12 : styles.visualOptionsPage13]} accessibilityLabel={`${question.label}の選択肢図`} /> : null}
+    {imageSource ? <Image source={imageSource} resizeMode="contain" style={[styles.visualOptions, question.visualOptionPage && question.visualOptionPage >= 101 && imageSize?.width && imageSize?.height ? { aspectRatio: imageSize.width / imageSize.height } : question.visualOptionPage === 12 ? styles.visualOptionsPage12 : styles.visualOptionsPage13]} accessibilityLabel={`${question.label}の選択肢図`} /> : null}
     {question.family === 'sentenceComposition' ? <Text style={styles.starNote}>★ に入るものを一つ選んでください。</Text> : null}
     <View accessibilityRole="radiogroup" onTouchStart={onFocus} style={styles.options}>
       {question.options.map((option) => <JlptAnswerOption key={option.id} number={option.id} selected={selected === option.id} disabled={submitted} scale={scale} onPress={() => { onFocus(); onChoose(question.id, option.id); }}>{option.textJa}</JlptAnswerOption>)}
@@ -464,7 +484,7 @@ function displayQuestionNumber(question: TrialQuestion) {
 
 const styles = StyleSheet.create({
   screen:{flex:1,backgroundColor:JLPT_EXAM.color.page},startScreen:{flex:1,backgroundColor:JLPT_EXAM.color.page},startPage:{flexGrow:1,justifyContent:'center',padding:16,backgroundColor:JLPT_EXAM.color.page},examName:{fontFamily:JLPT_EXAM.font.content,fontSize:24,lineHeight:34,color:JLPT_EXAM.color.ink,textAlign:'center'},trialName:{fontFamily:JLPT_EXAM.font.interface,fontSize:15,lineHeight:22,color:JLPT_EXAM.color.secondaryInk,textAlign:'center',marginTop:4},rule:{height:2,backgroundColor:JLPT_EXAM.color.ink,marginVertical:20},startCopy:{fontFamily:JLPT_EXAM.font.content,fontSize:16,lineHeight:27,color:JLPT_EXAM.color.ink},modeLabel:{fontFamily:JLPT_EXAM.font.interface,fontSize:16,lineHeight:23,color:JLPT_EXAM.color.ink,marginTop:24,marginBottom:9},modeRow:{minHeight:70,flexDirection:'row',alignItems:'center',gap:12,padding:12,borderWidth:1,borderColor:JLPT_EXAM.color.divider,marginBottom:10},modeSelected:{borderColor:JLPT_EXAM.color.selected,backgroundColor:JLPT_EXAM.color.selectedFill},radio:{width:22,height:22,borderRadius:11,borderWidth:2,borderColor:JLPT_EXAM.color.secondaryInk},radioSelected:{borderWidth:6,borderColor:JLPT_EXAM.color.selected,backgroundColor:JLPT_EXAM.color.paper},modeCopy:{flex:1},modeTitle:{fontFamily:JLPT_EXAM.font.interface,fontSize:16,lineHeight:23,color:JLPT_EXAM.color.ink},modeDescription:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.secondaryInk,marginTop:3},startAction:{marginTop:14},
-  toolRow:{minHeight:58,flexDirection:'row',alignItems:'center',justifyContent:'space-between',gap:8,paddingHorizontal:10,paddingVertical:7,backgroundColor:JLPT_EXAM.color.paper,borderBottomWidth:1,borderBottomColor:JLPT_EXAM.color.divider},progress:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:19,color:JLPT_EXAM.color.ink},modeIndicator:{fontFamily:JLPT_EXAM.font.interface,fontSize:12,lineHeight:17,color:JLPT_EXAM.color.secondaryInk},navigatorButton:{minWidth:68,minHeight:44,alignItems:'center',justifyContent:'center',paddingHorizontal:8,borderWidth:1,borderColor:JLPT_EXAM.color.divider},navigatorButtonText:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,color:JLPT_EXAM.color.ink},content:{paddingVertical:12,paddingHorizontal:8,backgroundColor:JLPT_EXAM.color.page},sectionTitle:{fontFamily:JLPT_EXAM.font.content,fontSize:JLPT_EXAM.type.sectionTitle,lineHeight:31,color:JLPT_EXAM.color.ink,marginBottom:22},questionBlock:{paddingBottom:28,marginBottom:26,borderBottomWidth:1,borderBottomColor:JLPT_EXAM.color.divider},questionNumber:{fontFamily:JLPT_EXAM.font.content,fontSize:19,lineHeight:27,color:JLPT_EXAM.color.ink,marginBottom:6},options:{width:'100%'},visualOptions:{width:'100%',marginBottom:16},visualOptionsPage12:{aspectRatio:430/350},visualOptionsPage13:{aspectRatio:620/410},starQuestion:{letterSpacing:1.5},starNote:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.secondaryInk,marginTop:-7,marginBottom:12},majorDivider:{height:3,backgroundColor:JLPT_EXAM.color.ink,marginVertical:16},audioControls:{flexDirection:'row',gap:8,marginBottom:22},transcriptBlock:{borderWidth:1,borderColor:JLPT_EXAM.color.divider,padding:16,marginTop:12},transcriptTitle:{fontFamily:JLPT_EXAM.font.interface,fontSize:16,lineHeight:23,color:JLPT_EXAM.color.ink,marginBottom:10},transcript:{fontFamily:JLPT_EXAM.font.content,color:JLPT_EXAM.color.ink,lineHeight:26},submit:{marginTop:10},
+  toolRow:{minHeight:58,flexDirection:'row',alignItems:'center',justifyContent:'space-between',gap:8,paddingHorizontal:10,paddingVertical:7,backgroundColor:JLPT_EXAM.color.paper,borderBottomWidth:1,borderBottomColor:JLPT_EXAM.color.divider},progress:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:19,color:JLPT_EXAM.color.ink},modeIndicator:{fontFamily:JLPT_EXAM.font.interface,fontSize:12,lineHeight:17,color:JLPT_EXAM.color.secondaryInk},navigatorButton:{minWidth:68,minHeight:44,alignItems:'center',justifyContent:'center',paddingHorizontal:8,borderWidth:1,borderColor:JLPT_EXAM.color.divider},navigatorButtonText:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,color:JLPT_EXAM.color.ink},content:{width:'100%',paddingVertical:12,paddingHorizontal:8,backgroundColor:JLPT_EXAM.color.page},sectionTitle:{fontFamily:JLPT_EXAM.font.content,fontSize:JLPT_EXAM.type.sectionTitle,lineHeight:31,color:JLPT_EXAM.color.ink,marginBottom:22},questionBlock:{width:'100%',paddingBottom:28,marginBottom:26,borderBottomWidth:1,borderBottomColor:JLPT_EXAM.color.divider},questionNumber:{fontFamily:JLPT_EXAM.font.content,fontSize:19,lineHeight:27,color:JLPT_EXAM.color.ink,marginBottom:6},options:{width:'100%'},visualOptions:{width:'100%',maxWidth:'100%',alignSelf:'center',marginBottom:16},visualOptionsPage12:{aspectRatio:430/350},visualOptionsPage13:{aspectRatio:620/410},starQuestion:{letterSpacing:1.5},starNote:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,marginTop:-7,color:JLPT_EXAM.color.secondaryInk},majorDivider:{height:3,backgroundColor:JLPT_EXAM.color.ink,marginVertical:16},audioControls:{flexDirection:'row',flexWrap:'wrap',gap:8,marginBottom:22},stickyAudio:{backgroundColor:JLPT_EXAM.color.paper,paddingHorizontal:10,paddingTop:8},compactAudioButton:{flex:1,minWidth:0},audioError:{width:'100%',fontFamily:JLPT_EXAM.font.interface,fontSize:13,color:JLPT_EXAM.color.ink},transcriptBlock:{borderWidth:1,borderColor:JLPT_EXAM.color.divider,padding:16,marginTop:12},transcriptTitle:{fontFamily:JLPT_EXAM.font.interface,fontSize:16,lineHeight:23,color:JLPT_EXAM.color.ink,marginBottom:10},transcript:{fontFamily:JLPT_EXAM.font.content,color:JLPT_EXAM.color.ink,lineHeight:26},submit:{marginTop:10},
   savedResult:{marginTop:24,paddingTop:20,borderTopWidth:1,borderTopColor:JLPT_EXAM.color.divider},savedResultTitle:{fontFamily:JLPT_EXAM.font.content,fontSize:18,lineHeight:27,color:JLPT_EXAM.color.ink},savedResultText:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.secondaryInk,marginVertical:8},savedResultAction:{marginTop:8},sourceReference:{fontFamily:JLPT_EXAM.font.interface,fontSize:13,lineHeight:20,color:JLPT_EXAM.color.secondaryInk,marginTop:8},
   resultPage:{flexGrow:1,padding:16,backgroundColor:JLPT_EXAM.color.page},resultTitle:{fontFamily:JLPT_EXAM.font.content,fontSize:28,lineHeight:38,color:JLPT_EXAM.color.ink,textAlign:'center'},resultMode:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:22,color:JLPT_EXAM.color.secondaryInk,textAlign:'center',marginTop:5,marginBottom:20},scoreGrid:{flexDirection:'row',flexWrap:'wrap',gap:10},resultMetric:{flexGrow:1,flexBasis:'45%',minHeight:90,alignItems:'center',justifyContent:'center',borderWidth:1,borderColor:JLPT_EXAM.color.divider,padding:12},resultMetricLabel:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,color:JLPT_EXAM.color.secondaryInk},resultMetricValue:{fontFamily:JLPT_EXAM.font.content,fontSize:27,lineHeight:37,color:JLPT_EXAM.color.ink,marginTop:4},resultCorrect:{color:JLPT_EXAM.color.correct},resultWrong:{color:JLPT_EXAM.color.wrong},rawScore:{fontFamily:JLPT_EXAM.font.content,fontSize:18,lineHeight:27,color:JLPT_EXAM.color.ink,textAlign:'center',marginTop:18},notEligible:{marginTop:18,padding:16,borderLeftWidth:4,borderLeftColor:JLPT_EXAM.color.unanswered,backgroundColor:JLPT_EXAM.color.paper},notEligibleTitle:{fontFamily:JLPT_EXAM.font.content,fontSize:19,lineHeight:27,color:JLPT_EXAM.color.unanswered},notEligibleText:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:23,color:JLPT_EXAM.color.secondaryInk,marginTop:7},resultAction:{marginTop:10},
   reviewFilters:{flexDirection:'row',gap:8,padding:10,backgroundColor:JLPT_EXAM.color.page,borderBottomWidth:1,borderBottomColor:JLPT_EXAM.color.divider},reviewFilter:{flex:1,minHeight:44,alignItems:'center',justifyContent:'center',borderWidth:1,borderColor:JLPT_EXAM.color.divider},reviewFilterActive:{backgroundColor:JLPT_EXAM.color.selectedFill,borderColor:JLPT_EXAM.color.selectedBorder},reviewFilterText:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,color:JLPT_EXAM.color.secondaryInk},reviewFilterTextActive:{color:JLPT_EXAM.color.selected},emptyReview:{fontFamily:JLPT_EXAM.font.interface,fontSize:16,lineHeight:25,color:JLPT_EXAM.color.secondaryInk,textAlign:'center',paddingVertical:30},explanationPending:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:22,color:JLPT_EXAM.color.secondaryInk,marginTop:10,padding:12,borderWidth:1,borderColor:JLPT_EXAM.color.divider},
