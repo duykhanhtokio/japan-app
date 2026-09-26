@@ -73,3 +73,10 @@ Therefore this exam remains `incomplete`; it is deliberately absent from the str
 - Assembled 70 written and 27 listening source positions into `src/data/jlpt-official/n4-2011-12/{written,listening}.candidate.json`; verified the remote files contain these counts. They remain unpublished candidate data.
 - The PDF itself says `2010-2011年` rather than a confirmed December 2011 sitting. Reading question 30's printed key conflicts with the passage, and listening has no approved per-question timing. Do not mark this package `structured_ready` or register it as an official dated exam until these are resolved.
 - The separate listening correction route can review 14 N4/N5 packages with candidate timing. This N4 package has no candidate ranges and is not yet included there.
+
+## Continuous-audio runtime integration — 2026-09-26
+
+- The user confirmed that listening plays as one continuous recording. Per-question timestamps are not an entry requirement. The shared runner already uses a single `audioSource` and saves the playback position; the new adapter gives all 27 listening responses one recording identity without claiming item-level timing.
+- Registered the 70 written and 27 listening response candidates as `n4-2011-12-exam-01`. The catalog displays the source's `2010–2011年` label as a practice package rather than asserting a December 2011 official sitting. The folder-derived ID is retained for stable session and source references.
+- Attached the existing question-specific illustrations for listening problem 1 item 1 and problem 3 items 1–5. No complete PDF page is displayed as a question. Answers and transcripts remain hidden until submission; the transcript field is empty because character-level review is still pending.
+- This is candidate runtime content. The printed-key discrepancy for written question 30 and character-level source review remain open. Do not describe the package as organizer-issued or fully verified.

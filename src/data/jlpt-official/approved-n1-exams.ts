@@ -78,6 +78,7 @@ import { N3_2021_12_SESSION_KEY, N3_2021_12_TRIAL } from '@/data/jlpt-official/n
 import { N3_2022_07_AUDIO } from '@/data/jlpt-mock/n3-2022-07-official';
 import { N3_2022_07_SESSION_KEY, N3_2022_07_TRIAL } from '@/data/jlpt-official/n3-2022-07-trial';
 import { N4_2013_07_SESSION_KEY, N4_2013_07_TRIAL } from '@/data/jlpt-official/n4-2013-07-trial';
+import { N4_2011_12_SESSION_KEY, N4_2011_12_TRIAL } from '@/data/jlpt-official/n4-2011-12-trial';
 import { N4_2012_12_SESSION_KEY, N4_2012_12_TRIAL } from '@/data/jlpt-official/n4-2012-12-trial';
 import { N4_2013_12_SESSION_KEY, N4_2013_12_TRIAL } from '@/data/jlpt-official/n4-2013-12-trial';
 import { N4_2014_07_SESSION_KEY, N4_2014_07_TRIAL } from '@/data/jlpt-official/n4-2014-07-trial';
@@ -463,6 +464,16 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
     id: 'n3-2022-07-exam-18', level: 'N3', title: '日本語能力試験 N3', periodLabel: '2022年7月・第18回',
     startLabel: '第18回を始める', storageKey: N3_2022_07_SESSION_KEY, questions: N3_2022_07_TRIAL,
     audioSource: N3_2022_07_AUDIO, visualOptions: {},
+  },
+  {
+    // The supplied 2010–2011 source is a practice package; its original audio plays continuously.
+    id: 'n4-2011-12-exam-01', level: 'N4', title: '日本語能力試験 N4', periodLabel: '2010–2011年・第1回',
+    startLabel: '第1回を始める', storageKey: N4_2011_12_SESSION_KEY, questions: N4_2011_12_TRIAL,
+    audioSource: require('../../../assets/jlpt/n4/2011-12/audio/n4-2011-12.mp3'),
+    visualOptions: {
+      12: require('../../../assets/jlpt/n4/2011-12/visual-options/problem1-item1.jpg'),
+      13: require('../../../assets/jlpt/n4/2011-12/visual-options/problem3-items1-5.jpg'),
+    },
   },
   {
     // Source-image-verified content; audio timing remains candidate/unverified pending perceptual review.
