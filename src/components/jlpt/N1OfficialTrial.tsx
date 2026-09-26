@@ -24,7 +24,7 @@ import type { TrialQuestion } from '@/data/jlpt-official/n1-2012-07-trial';
 import { getCurrentAppLanguage } from '@/i18n/localization-runtime';
 import { JLPT_EXAM, type JlptFontScale } from '@/theme/jlpt-exam-design-system';
 import { clearJlptTrialSession, loadJlptTrialSession, saveJlptTrialSession, type N1TrialSession } from '@/services/jlpt-trial-session-storage';
-import { DEFAULT_JLPT_LISTENING_START_MS, loadJlptListeningStart, saveJlptListeningStart } from '@/services/jlpt-listening-start-storage';
+import { getJlptListeningStart } from '@/services/jlpt-listening-start-storage';
 
 type Mode = 'exam' | 'practice';
 const CONTINUOUS_AUDIO_ID = '__full_listening_track__';
@@ -48,13 +48,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
   const [currentQuestion, setCurrentQuestion] = useState(questions[0].id);
   const [playedAudioSegments, setPlayedAudioSegments] = useState<string[]>([]);
   const [audioPlaying, setAudioPlaying] = useState(false);
-  const [listeningStartMs, setListeningStartMs] = useState(DEFAULT_JLPT_LISTENING_START_MS);
-  const [draftStartMs, setDraftStartMs] = useState(DEFAULT_JLPT_LISTENING_START_MS);
-  const [startLoaded, setStartLoaded] = useState(false);
-  const [editingStart, setEditingStart] = useState(false);
-  const [previewPlaying, setPreviewPlaying] = useState(false);
-  const [editorError, setEditorError] = useState('');
-  const [timelineWidth, setTimelineWidth] = useState(1);
+  const listeningStartMs = getJlptListeningStart(exam.id);
   const listeningPosition = useRef(0);
   const lastSavedAudioSecond = useRef(0);
   const [initialScrollY, setInitialScrollY] = useState(0);
@@ -79,19 +73,8 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
     return () => { active = false; };
   }, [exam.storageKey]);
 
-  useEffect(() => {
-    let active = true;
-    void loadJlptListeningStart(exam.id).then((milliseconds) => {
-      if (!active) return;
-      setListeningStartMs(milliseconds);
-      setDraftStartMs(milliseconds);
-      setStartLoaded(true);
-    });
-    return () => { active = false; };
-  }, [exam.id]);
-
-  latestExit.current = () => { if (editingStart) closeStartEditor(); else void exitExam(); };
-  latestBackgroundPause.current = () => { if (editingStart && previewPlaying) pauseStartPreview(); else if (audioPlaying) pauseListening(); };
+  latestExit.current = () => { void exitExam(); };
+  latestBackgroundPause.current = () => { if (audioPlaying) pauseListening(); };
   useEffect(() => {
     registerExit(() => latestExit.current());
     return () => registerExit(null);
@@ -118,10 +101,6 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
     }
   }, [audioPlaying, playerStatus.currentTime, playerStatus.didJustFinish, playerStatus.duration, playerStatus.playing]);
 
-  useEffect(() => {
-    if (editingStart && previewPlaying && playerStatus.didJustFinish) setPreviewPlaying(false);
-  }, [editingStart, previewPlaying, playerStatus.didJustFinish]);
-
   function changeFont(direction: -1 | 1) {
     const index = FONT_SCALES.indexOf(fontScale);
     setFontScale(FONT_SCALES[Math.max(0, Math.min(FONT_SCALES.length - 1, index + direction))]);
@@ -146,7 +125,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
   }
 
   async function playListening() {
-    if (!startLoaded || audioPlaying || (mode === 'exam' && !submitted && playedAudioSegments.includes(CONTINUOUS_AUDIO_ID) && !listeningPosition.current)) return;
+    if (audioPlaying || (mode === 'exam' && !submitted && playedAudioSegments.includes(CONTINUOUS_AUDIO_ID) && !listeningPosition.current)) return;
     const generation = playbackGeneration.current + 1;
     playbackGeneration.current = generation;
     player.pause();
@@ -209,7 +188,6 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
   }
 
   function begin() {
-    if (!startLoaded) return;
     setAnswers({});
     setSubmitted(false);
     setCurrentQuestion(questions[0].id);
@@ -288,53 +266,6 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
     void persist({ scrollY });
   }
 
-  function openStartEditor() {
-    if (!startLoaded) return;
-    setDraftStartMs(listeningStartMs);
-    setEditorError('');
-    setEditingStart(true);
-  }
-
-  function pauseStartPreview() {
-    playbackGeneration.current += 1;
-    if (playerStatus.isLoaded) player.pause();
-    setPreviewPlaying(false);
-  }
-
-  function closeStartEditor() {
-    pauseStartPreview();
-    setEditingStart(false);
-  }
-
-  function adjustStart(milliseconds: number) {
-    if (!playerStatus.isLoaded || playerStatus.duration <= 0) return;
-    pauseStartPreview();
-    const maximum = Math.max(0, Math.floor((playerStatus.duration * 1000 - 100) / 500) * 500);
-    setDraftStartMs(Math.max(0, Math.min(maximum, Math.round(milliseconds / 500) * 500)));
-  }
-
-  async function previewStart() {
-    if (!playerStatus.isLoaded || playerStatus.duration <= 0) return;
-    const generation = ++playbackGeneration.current;
-    player.pause();
-    await player.seekTo(draftStartMs / 1000);
-    if (generation !== playbackGeneration.current) return;
-    player.play();
-    setPreviewPlaying(true);
-  }
-
-  async function saveStart() {
-    if (!playerStatus.isLoaded || draftStartMs >= playerStatus.duration * 1000) return;
-    pauseStartPreview();
-    try {
-      await saveJlptListeningStart(exam.id, draftStartMs);
-      setListeningStartMs(draftStartMs);
-      setEditingStart(false);
-    } catch {
-      setEditorError('保存できませんでした。もう一度お試しください。');
-    }
-  }
-
   function continuousListeningControls() {
     const alreadyFinished = mode === 'exam' && !submitted && playedAudioSegments.includes(CONTINUOUS_AUDIO_ID) && !listeningPosition.current;
     return <View style={styles.audioControls}>
@@ -344,32 +275,6 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
         onPress={() => void playListening()}
       />
       <JlptActionButton kind="secondary" disabled={!audioPlaying} label="一時停止" onPress={pauseListening} />
-    </View>;
-  }
-
-  if (editingStart) {
-    const durationMs = Math.round(playerStatus.duration * 1000);
-    return <View style={styles.startScreen}>
-      <JlptExamHeader title="聴解の開始位置" subtitle={exam.periodLabel} onBack={closeStartEditor} />
-      <ScrollView contentContainerStyle={styles.editorPage}><JlptPaper>
-        <Text style={styles.examName}>聴解の開始位置を調整</Text>
-        <Text style={styles.editorHint}>試験中と同じ音声・同じ再生方法で確認できます。保存した位置から最後まで連続再生します。</Text>
-        <Text style={styles.editorTime}>開始：{formatPreciseTime(draftStartMs)}</Text>
-        <Text style={styles.editorHint}>音声の全長：{playerStatus.isLoaded ? formatPreciseTime(durationMs) : '読み込み中'}　再生位置：{formatPreciseTime(Math.round(playerStatus.currentTime * 1000))}</Text>
-        <Pressable accessibilityRole="adjustable" accessibilityLabel="音声全体の再生位置" disabled={!playerStatus.isLoaded} onLayout={(event) => setTimelineWidth(event.nativeEvent.layout.width)} onPress={(event) => adjustStart(event.nativeEvent.locationX / timelineWidth * durationMs)} style={styles.editorTimeline}>
-          <View style={[styles.editorTimelineFill, { width: durationMs > 0 ? timelineWidth * draftStartMs / durationMs : 0 }]} />
-          {durationMs > 0 ? <View style={[styles.editorPlayhead, { left: Math.max(0, Math.min(timelineWidth - 3, timelineWidth * playerStatus.currentTime * 1000 / durationMs)) }]} /> : null}
-        </Pressable>
-        <View style={styles.editorButtons}>
-          <JlptActionButton kind="secondary" disabled={!playerStatus.isLoaded} label="−0.5秒" onPress={() => adjustStart(draftStartMs - 500)} style={styles.editorHalfButton} />
-          <JlptActionButton kind="secondary" disabled={!playerStatus.isLoaded} label="＋0.5秒" onPress={() => adjustStart(draftStartMs + 500)} style={styles.editorHalfButton} />
-        </View>
-        <JlptActionButton disabled={!playerStatus.isLoaded || durationMs <= 0} label="この位置から試聴" onPress={() => void previewStart()} style={styles.editorAction} />
-        <JlptActionButton kind="secondary" disabled={!previewPlaying} label="一時停止" onPress={pauseStartPreview} style={styles.editorAction} />
-        {editorError ? <Text style={styles.editorError}>{editorError}</Text> : null}
-        <JlptActionButton disabled={!playerStatus.isLoaded || draftStartMs >= durationMs} label="この開始位置を保存" onPress={() => void saveStart()} style={styles.editorAction} />
-        <JlptActionButton kind="secondary" label="キャンセル" onPress={closeStartEditor} style={styles.editorAction} />
-      </JlptPaper></ScrollView>
     </View>;
   }
 
@@ -388,8 +293,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
         <View style={[styles.radio, mode === 'practice' && styles.radioSelected]} />
         <View style={styles.modeCopy}><Text style={styles.modeTitle}>練習モード</Text><Text style={styles.modeDescription}>聴解を保存した位置から連続再生し、一時停止・再開できます。正答は提出後に表示されます。</Text></View>
       </Pressable>
-      <JlptActionButton kind="secondary" disabled={!startLoaded} label={`聴解の開始位置を調整（${formatPreciseTime(listeningStartMs)}）`} onPress={openStartEditor} style={styles.startAction} />
-      <JlptActionButton disabled={!startLoaded} label={exam.startLabel} onPress={begin} style={styles.startAction} />
+      <JlptActionButton label={exam.startLabel} onPress={begin} style={styles.startAction} />
       {completedSession ? <View style={styles.savedResult}>
         <Text style={styles.savedResultTitle}>提出済みの結果があります</Text>
         <Text style={styles.savedResultText}>{formatSavedAt(completedSession.submittedAt ?? completedSession.updatedAt)}</Text>
@@ -534,11 +438,6 @@ function formatListeningPosition(positionMs: number) {
   return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
 }
 
-function formatPreciseTime(positionMs: number) {
-  const seconds = Math.max(0, positionMs) / 1000;
-  return `${Math.floor(seconds / 60)}:${(seconds % 60).toFixed(1).padStart(4, '0')}`;
-}
-
 function questionPositionLabel(questions: readonly TrialQuestion[], questionId: string) {
   const index = questions.findIndex((question) => question.id === questionId);
   const question = questions[index];
@@ -564,7 +463,6 @@ function displayQuestionNumber(question: TrialQuestion) {
 }
 
 const styles = StyleSheet.create({
-  editorPage:{padding:16,backgroundColor:JLPT_EXAM.color.page},editorHint:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:22,color:JLPT_EXAM.color.secondaryInk,marginTop:14},editorTime:{fontFamily:JLPT_EXAM.font.content,fontSize:24,color:JLPT_EXAM.color.ink,marginTop:24},editorTimeline:{height:42,justifyContent:'center',backgroundColor:JLPT_EXAM.color.divider,marginTop:18,marginBottom:12},editorTimelineFill:{height:42,backgroundColor:JLPT_EXAM.color.selectedFill,borderRightWidth:3,borderRightColor:JLPT_EXAM.color.selected},editorPlayhead:{position:'absolute',top:0,width:3,height:42,backgroundColor:JLPT_EXAM.color.ink},editorButtons:{flexDirection:'row',gap:8},editorHalfButton:{flex:1},editorAction:{marginTop:10},editorError:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,color:JLPT_EXAM.color.wrong,marginTop:10},
   screen:{flex:1,backgroundColor:JLPT_EXAM.color.page},startScreen:{flex:1,backgroundColor:JLPT_EXAM.color.page},startPage:{flexGrow:1,justifyContent:'center',padding:16,backgroundColor:JLPT_EXAM.color.page},examName:{fontFamily:JLPT_EXAM.font.content,fontSize:24,lineHeight:34,color:JLPT_EXAM.color.ink,textAlign:'center'},trialName:{fontFamily:JLPT_EXAM.font.interface,fontSize:15,lineHeight:22,color:JLPT_EXAM.color.secondaryInk,textAlign:'center',marginTop:4},rule:{height:2,backgroundColor:JLPT_EXAM.color.ink,marginVertical:20},startCopy:{fontFamily:JLPT_EXAM.font.content,fontSize:16,lineHeight:27,color:JLPT_EXAM.color.ink},modeLabel:{fontFamily:JLPT_EXAM.font.interface,fontSize:16,lineHeight:23,color:JLPT_EXAM.color.ink,marginTop:24,marginBottom:9},modeRow:{minHeight:70,flexDirection:'row',alignItems:'center',gap:12,padding:12,borderWidth:1,borderColor:JLPT_EXAM.color.divider,marginBottom:10},modeSelected:{borderColor:JLPT_EXAM.color.selected,backgroundColor:JLPT_EXAM.color.selectedFill},radio:{width:22,height:22,borderRadius:11,borderWidth:2,borderColor:JLPT_EXAM.color.secondaryInk},radioSelected:{borderWidth:6,borderColor:JLPT_EXAM.color.selected,backgroundColor:JLPT_EXAM.color.paper},modeCopy:{flex:1},modeTitle:{fontFamily:JLPT_EXAM.font.interface,fontSize:16,lineHeight:23,color:JLPT_EXAM.color.ink},modeDescription:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.secondaryInk,marginTop:3},startAction:{marginTop:14},
   toolRow:{minHeight:58,flexDirection:'row',alignItems:'center',justifyContent:'space-between',gap:8,paddingHorizontal:10,paddingVertical:7,backgroundColor:JLPT_EXAM.color.paper,borderBottomWidth:1,borderBottomColor:JLPT_EXAM.color.divider},progress:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:19,color:JLPT_EXAM.color.ink},modeIndicator:{fontFamily:JLPT_EXAM.font.interface,fontSize:12,lineHeight:17,color:JLPT_EXAM.color.secondaryInk},navigatorButton:{minWidth:68,minHeight:44,alignItems:'center',justifyContent:'center',paddingHorizontal:8,borderWidth:1,borderColor:JLPT_EXAM.color.divider},navigatorButtonText:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,color:JLPT_EXAM.color.ink},content:{paddingVertical:12,paddingHorizontal:8,backgroundColor:JLPT_EXAM.color.page},sectionTitle:{fontFamily:JLPT_EXAM.font.content,fontSize:JLPT_EXAM.type.sectionTitle,lineHeight:31,color:JLPT_EXAM.color.ink,marginBottom:22},questionBlock:{paddingBottom:28,marginBottom:26,borderBottomWidth:1,borderBottomColor:JLPT_EXAM.color.divider},questionNumber:{fontFamily:JLPT_EXAM.font.content,fontSize:19,lineHeight:27,color:JLPT_EXAM.color.ink,marginBottom:6},options:{width:'100%'},visualOptions:{width:'100%',marginBottom:16},visualOptionsPage12:{aspectRatio:430/350},visualOptionsPage13:{aspectRatio:620/410},starQuestion:{letterSpacing:1.5},starNote:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.secondaryInk,marginTop:-7,marginBottom:12},majorDivider:{height:3,backgroundColor:JLPT_EXAM.color.ink,marginVertical:16},audioControls:{flexDirection:'row',gap:8,marginBottom:22},transcriptBlock:{borderWidth:1,borderColor:JLPT_EXAM.color.divider,padding:16,marginTop:12},transcriptTitle:{fontFamily:JLPT_EXAM.font.interface,fontSize:16,lineHeight:23,color:JLPT_EXAM.color.ink,marginBottom:10},transcript:{fontFamily:JLPT_EXAM.font.content,color:JLPT_EXAM.color.ink,lineHeight:26},submit:{marginTop:10},
   savedResult:{marginTop:24,paddingTop:20,borderTopWidth:1,borderTopColor:JLPT_EXAM.color.divider},savedResultTitle:{fontFamily:JLPT_EXAM.font.content,fontSize:18,lineHeight:27,color:JLPT_EXAM.color.ink},savedResultText:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.secondaryInk,marginVertical:8},savedResultAction:{marginTop:8},sourceReference:{fontFamily:JLPT_EXAM.font.interface,fontSize:13,lineHeight:20,color:JLPT_EXAM.color.secondaryInk,marginTop:8},
