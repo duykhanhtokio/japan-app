@@ -72,11 +72,6 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
     return () => { active = false; };
   }, [exam.storageKey]);
 
-  useEffect(() => () => {
-    playbackGeneration.current += 1;
-    player.pause();
-  }, []);
-
   latestExit.current = () => { void exitExam(); };
   latestBackgroundPause.current = () => { if (audioPlaying) pauseListening(); };
   useEffect(() => {
