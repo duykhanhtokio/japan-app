@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { BackHandler, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from 'expo-router';
 
@@ -18,6 +18,7 @@ type Choice =
 export default function ApprovedJlptExamCatalog({ level, onBack }: { level: JlptLevel; onBack: () => void }) {
   const navigation = useNavigation();
   const [selected, setSelected] = useState<Choice | null>(null);
+  const activeExamExit = useRef<(() => void) | null>(null);
   const choices = useMemo<Choice[]>(() => {
     const structured: Choice[] = APPROVED_N1_EXAMS.filter((exam) => exam.level === level).map((exam) => ({ kind: 'structured' as const, exam }));
     const pending: Choice[] = PENDING_JLPT_EXAMS.filter((exam) => exam.level === level).map((exam) => ({ kind: 'pending' as const, exam }));
@@ -28,7 +29,8 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
   useEffect(() => {
     if (!selected) return;
     const subscription = BackHandler.addEventListener('hardwareBackPress', () => {
-      setSelected(null);
+      if (selected.kind === 'structured' && activeExamExit.current) activeExamExit.current();
+      else setSelected(null);
       return true;
     });
     return () => subscription.remove();
@@ -37,10 +39,11 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
   useEffect(() => navigation.addListener('beforeRemove', (event) => {
     if (!selected) return;
     event.preventDefault();
-    setSelected(null);
+    if (selected.kind === 'structured' && activeExamExit.current) activeExamExit.current();
+    else setSelected(null);
   }), [navigation, selected]);
 
-  if (selected?.kind === 'structured') return <N1OfficialTrial exam={selected.exam} onExit={() => setSelected(null)} />;
+  if (selected?.kind === 'structured') return <N1OfficialTrial exam={selected.exam} onExit={() => { activeExamExit.current = null; setSelected(null); }} registerExit={(handler) => { activeExamExit.current = handler; }} />;
   if (selected?.kind === 'mock') return <ApprovedMockExam level={selected.level} onExit={() => setSelected(null)} />;
   if (selected?.kind === 'pending') return <View style={styles.screen}><JlptExamHeader title={`${selected.exam.level} · ${selected.exam.periodLabel}`} subtitle="変換状況" onBack={() => setSelected(null)} /><ScrollView contentContainerStyle={styles.content}><JlptPaper><Text style={styles.heading}>データ変換中</Text><Text style={styles.description}>この試験は現在、一問ずつ回答できる形式へ変換中です。元の資料はすべて保存されています。</Text><Pressable accessibilityRole="button" onPress={() => setSelected(null)} style={({ pressed }) => [styles.returnButton, pressed && styles.pressed]}><Text style={styles.returnButtonText}>試験一覧に戻る</Text></Pressable></JlptPaper></ScrollView></View>;
 
