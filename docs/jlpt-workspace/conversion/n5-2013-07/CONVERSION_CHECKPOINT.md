@@ -47,3 +47,10 @@ The catalog target remains `incomplete`. It is not registered as `structured_rea
 - JLPT Approved UI Lock: PASS 10/10 byte-locked files; no locked file is in the change set.
 - `git diff --check`: PASS.
 - TypeScript retains only the pre-existing unchanged N2/N3 adapter failures: missing `./n1-2012-12-trial` and non-exported `TrialQuestion` from `n1-2013-07-trial.ts`. No N5 file produced a diagnostic.
+
+## 2026-09-26 continuation
+
+- Source-image candidate transcription now covers all 67 written response positions in `written.page-02.candidate.json` through `written.page-08-09.candidate.json`. A mechanical pass confirms 35 vocabulary plus 32 grammar/reading positions, no duplicate numbers, and four options per position. This is not a final character-by-character certification.
+- `src/data/jlpt-official/n5-2013-07/written.candidate.json` and `listening.candidate.json` assemble 67 written plus 24 listening candidate records without registering an exam as ready. Listening timing remains `candidate_unverified`, `humanReviewed: false`, `perceptualApproval: false`.
+- The separate `/jlpt-listening-review` route lists N4/N5 packages with candidate timing and saves per-question corrections on the device. It does not apply corrections to the exam dataset or sync them to GitHub.
+- Next: verify remaining written characters against the PDF at final runtime level; transcribe all listening prompts, options, visuals, and transcript from physical pages 10–17; then build the approved UI adapter. Keep this exam `incomplete` until the adapter has complete source-backed questions.
