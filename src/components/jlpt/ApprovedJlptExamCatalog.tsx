@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { BackHandler, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { useNavigation, useRouter } from 'expo-router';
+import { useNavigation } from 'expo-router';
 
 import ApprovedMockExam from '@/components/jlpt/ApprovedMockExam';
 import N1OfficialTrial from '@/components/jlpt/N1OfficialTrial';
@@ -17,7 +17,6 @@ type Choice =
 
 export default function ApprovedJlptExamCatalog({ level, onBack }: { level: JlptLevel; onBack: () => void }) {
   const navigation = useNavigation();
-  const router = useRouter();
   const [selected, setSelected] = useState<Choice | null>(null);
   const activeExamExit = useRef<(() => void) | null>(null);
   const choices = useMemo<Choice[]>(() => {
@@ -46,7 +45,7 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
 
   if (selected?.kind === 'structured') return <N1OfficialTrial exam={selected.exam} onExit={() => { activeExamExit.current = null; setSelected(null); }} registerExit={(handler) => { activeExamExit.current = handler; }} />;
   if (selected?.kind === 'mock') return <ApprovedMockExam level={selected.level} onExit={() => setSelected(null)} />;
-  if (selected?.kind === 'pending') return <View style={styles.screen}><JlptExamHeader title={`${selected.exam.level} · ${selected.exam.periodLabel}`} subtitle="変換状況" onBack={() => setSelected(null)} /><ScrollView contentContainerStyle={styles.content}><JlptPaper><Text style={styles.heading}>データ変換中</Text><Text style={styles.description}>この試験は現在、一問ずつ回答できる形式へ変換中です。元の資料はすべて保存されています。</Text><Pressable accessibilityRole="button" onPress={() => setSelected(null)} style={({ pressed }) => [styles.returnButton, pressed && styles.pressed]}><Text style={styles.returnButtonText}>試験一覧に戻る</Text></Pressable>{selected.exam.id === 'n4-2017-07' ? <Pressable accessibilityRole="button" onPress={() => router.push({ pathname: '/jlpt-listening-review', params: { examId: 'n4-2017-07-exam-06' } })} style={styles.returnButton}><Text style={styles.returnButtonText}>聴解の区間を調整</Text></Pressable> : null}</JlptPaper></ScrollView></View>;
+  if (selected?.kind === 'pending') return <View style={styles.screen}><JlptExamHeader title={`${selected.exam.level} · ${selected.exam.periodLabel}`} subtitle="変換状況" onBack={() => setSelected(null)} /><ScrollView contentContainerStyle={styles.content}><JlptPaper><Text style={styles.heading}>データ変換中</Text><Text style={styles.description}>この試験は現在、一問ずつ回答できる形式へ変換中です。元の資料はすべて保存されています。</Text><Pressable accessibilityRole="button" onPress={() => setSelected(null)} style={({ pressed }) => [styles.returnButton, pressed && styles.pressed]}><Text style={styles.returnButtonText}>試験一覧に戻る</Text></Pressable></JlptPaper></ScrollView></View>;
 
   return <View style={styles.screen}><JlptExamHeader title={`${level} · JLPT模擬試験`} subtitle="受験する試験を選択" onBack={onBack} /><ScrollView contentContainerStyle={styles.content}><JlptPaper><Text style={styles.heading}>試験一覧</Text><Text style={styles.description}>収録済みの試験をすべて表示しています。変換中の試験も一覧から消えません。</Text>{choices.map((choice, index) => {
     const official = choice.kind !== 'mock';
