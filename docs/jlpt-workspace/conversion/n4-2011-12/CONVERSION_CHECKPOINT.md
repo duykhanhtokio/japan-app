@@ -1,5 +1,13 @@
 # N4 2011-12 conversion checkpoint
 
+## 2026-09-26 continuation (Asia/Tokyo)
+
+- On `recovery/jlpt-n3-n1`, source-page transcription records now cover all 70 written response positions in `written.page-02.verified.json` through `written.page-09.verified.json`. The answer numbers were compared with the printed key on PDF page 13. These are intermediate source records, not an approved runtime exam; character-level proofreading and passage formatting remain necessary.
+- `listening.source-positions.json` records all 27 listening response positions, printed answers, question/option sources, and 13 spoken choice sets from transcript pages 22–23. It does not claim full dialogue transcription or audio boundary approval. Keep `candidate_unverified`, `humanReviewed: false`, and `perceptualApproval: false`.
+- **New content conflict:** reading problem 5, question 30 (written page 8) has printed answer `4` on page 13, but option 4 says the student spent the entire day only arranging books and magazines. The passage says the beginning involved many unfamiliar tasks. Preserve the printed answer and mark `source_key_4_content_conflict_unresolved`; do not publish the question until an independent source resolves it.
+- **Source identity remains unresolved:** the PDF itself labels `2010-2011年` while `12-2011` comes only from the enclosing directory. Do not present it as an authenticated December 2011 official paper without corroboration.
+- Next work: independently resolve the answer/period conflicts, proofread the source records, transcribe the 27 Japanese dialogues against pages 20–23 and audio, validate the visual options and continuous audio behavior, then build the exam-scoped adapter and run its validator. The current catalog entry remains `incomplete` and is not playable.
+
 ```text
 BASE HEAD: fa2897c500aecf0e94b16f8d26077f9fc4717596
 EXAM ID: n4-2011-12-exam-01
