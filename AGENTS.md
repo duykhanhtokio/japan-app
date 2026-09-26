@@ -59,6 +59,8 @@ Do not claim that work is saved, complete, safe, or available for another sessio
 
 ## JLPT approved exam UI lock
 
+For N4/N5, the approved runner plays the recording continuously. Per-question audio timing is optional review metadata, not an integration gate. A candidate must still provide complete answerable questions, choices, answers, and its recording; do not substitute OCR placeholders for source text.
+
 Before changing JLPT data or integration, read:
 
 - `docs/checkpoints/JLPT_APPROVED_EXAM_UI_LOCKED.md`

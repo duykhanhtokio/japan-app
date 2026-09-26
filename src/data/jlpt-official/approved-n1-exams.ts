@@ -474,6 +474,9 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
       12: require('../../../assets/jlpt/n4/2011-12/visual-options/problem1-item1.jpg'),
       13: require('../../../assets/jlpt/n4/2011-12/visual-options/problem3-items1-5.jpg'),
     },
+    explanationFor: (questionId) => questionId === 'n4-2011-12-grammar_reading-p5-q30'
+      ? '答えは3を採用しています。本文では、仕事を始めたころは本の場所を覚え、並べ方を教わるなど、慣れない仕事が多くて大変だったと説明しています。印刷された解答表は4ですが、「一日中ずっと本や雑誌を並べていた」とは本文にありません。\nChọn 3 theo nội dung bài đọc: lúc mới làm có nhiều việc chưa quen. Bảng đáp án in số 4 mâu thuẫn với đoạn văn.'
+      : undefined,
   },
   {
     // Source-image-verified content; audio timing remains candidate/unverified pending perceptual review.
