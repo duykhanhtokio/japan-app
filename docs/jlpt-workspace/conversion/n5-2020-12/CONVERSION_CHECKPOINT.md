@@ -6,6 +6,7 @@ CATALOG TARGET: n5-2020-12
 EXAM ID RESERVED FOR A VERIFIED PACKAGE: n5-2020-12-exam-06
 STATUS: incomplete; source mismatch; not structured_ready
 DATE: 2026-09-23 (Asia/Tokyo)
+CONTINUATION AUDIT: 2026-09-27 (Asia/Tokyo), based on durable HEAD 083f6111609fc4c8703346d0ba5ecbe8f1458cd5
 ```
 
 ## Direct sources and identity
@@ -15,12 +16,17 @@ DATE: 2026-09-23 (Asia/Tokyo)
 
 The listening cover and page footers explicitly identify `ベスト模試 N5 第2回`. This is a practice test, not evidence of the official December 2020 administration. The November 2020 PDF creation timestamp and source folder name are not treated as exam identity evidence.
 
+The publisher's official product page was checked on 2026-09-27. It identifies ISBN `9784789017558` as *JLPT日本語能力試験ベスト模試 N5*, published 2020-06-05, containing three practice tests. Its table of contents states that the detachable volume contains the three question/answer-sheet booklets while the main volume contains `解答と解説` and `解答一覧`. The local 32-page PDF is therefore the detachable question booklet for practice test 2, not an official December 2020 paper and not the main answer/explanation volume.
+
+The publisher's public 30-page preview was also inspected directly. It exposes practice-test-1 explanations, scoring material, and its answer list, confirming that answers live in the missing main volume; it does not expose the practice-test-2 answer list. A character-level web copy matching the local practice-test-2 questions was found, but it likewise contains the question booklet without a trustworthy answer key. Neither source is used to infer any answer.
+
 ## Completed source audit
 
 - All 32 PDF pages were directly inspected.
 - Exactly 67 written IDs: 35 vocabulary and 32 grammar/reading. Exactly 24 listening IDs in `7 + 6 + 5 + 6` order; total 91.
 - The PDF supplies all written question sheets and the listening visuals needed for problems 1–3. Listening problem 4 is audio-only by design.
 - The package supplies no answer key, written explanations/translations, or Japanese listening transcript. No correct answer is inferred from question content.
+- A filename search and Spotlight content search across the Desktop found no local copy of the missing main volume or practice-test-2 answer list. Two one-page PDFs whose names mention N5/N4 answers were inspected and are generic link pages, not this book. A separate 358-page five-mock-test PDF was inspected and contains a different test.
 - All 35 audio files were inventoried. Their embedded titles explicitly map guidance, examples, the 24 question tracks `Q1_1` through `Q4_6`, the break, and ending. Recognized audio content aligns with the supplied listening visuals, but automated recognition is not claimed as a source transcript.
 - Runtime MP3: `assets/jlpt/n5/2020-12/audio/n5-2020-12.mp3`; SHA-256 `8e6f1d344c81632cba2ddc12c94aa5ecbdbdff747bb73daed0ca4bcc5d88f83e`; `1789.998707` seconds = `1,789,998.707 ms`; ceiling `1,789,999 ms`.
 - Local Whisper `small` was used only as a navigation aid. Its JSON SHA-256 is `8ec391fda0a0227daa149227f6d6c308e29b0207cf762c5f8a669691025dbebb`; model SHA-256 is `9ecf779972d90ba49c06d968637d720dd632c55bbf19d441fb42bf17a411e794`.
@@ -30,12 +36,14 @@ The listening cover and page footers explicitly identify `ベスト模試 N5 第
 ## Remaining blockers
 
 - The source is explicitly a practice test and does not match the official December 2020 catalog identity.
-- Answers are absent for all 91 responses.
+- Answers are absent for all 91 responses; the publisher confirms they belong to a separate main volume that is not present locally, and its public preview does not include the practice-test-2 key.
 - Written explanations/translations, app-locale translations, and Japanese transcript are absent.
 - Written questions/options are not yet character-level verified runtime transcriptions.
 - No authoritative timing exists; all 24 boundaries require human listening/perceptual review.
 
 The catalog target remains `incomplete`; it is not registered as `structured_ready`.
+
+This is a LOCAL source blocker, not permission to fabricate content or relabel the practice test as an official administration. All already-audited source data and candidate timing metadata remain preserved.
 
 ## Validation evidence
 
