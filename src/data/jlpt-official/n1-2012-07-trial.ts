@@ -4,9 +4,9 @@ export type TrialQuestion = {
   family: 'vocabulary' | 'grammar' | 'sentenceComposition' | 'reading' | 'listening';
   label: string; instructionJa: string; promptJa: string; passageJa?: string; passageId?: string;
   options: readonly TrialOption[]; correctOptionId: '1' | '2' | '3' | '4';
-  sourcePage: number; answerSourcePage: number; visualOptionPage?: number;
+  sourcePage: number; answerSourcePage?: number; visualOptionPage?: number;
   explanationStatus: 'missing'; generatedExplanationStatus: 'not_generated';
-  audio?: { segmentId: string; startMs: number; endMs: number; transcriptJa: string; transcriptSourcePage: number };
+  audio?: { segmentId: string; startMs: number; endMs: number; transcriptJa: string; transcriptSourcePage?: number };
 };
 type VerifiedOption = { optionId: TrialOption['id']; textJa?: string; imageAssetId?: string; imageRegionId?: string };
 type VerifiedQuestion = {

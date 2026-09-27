@@ -44,6 +44,13 @@ DATE: 2026-09-23 (Asia/Tokyo)
 
 The actual N4 July 2018 question content, audio, and complete image set have not been supplied or independently identified. The newly supplied URL is a second copy of the workbook, not the target administration. The catalog entry remains `incomplete` and is not `structured_ready`; no timing was generated and the exam was not registered in the runner.
 
+## Rights-safe app alternative (2026-09-27)
+
+- The app's existing repository-authored `n4-mock-01` is the safe runnable alternative: 70 written and 28 listening responses in the same N4 problem-count blueprint, with independent answer state and post-submission answer review through the approved shared UI.
+- Its listening content uses original Japanese `audioScript` strings through runtime speech. It does not use the Mac workbook recording, the mislabeled page's tracks or images, or third-party July 2018 scans/video.
+- The runtime ID is now exactly `n4-mock-01`, matching the catalog ID. It is displayed only as `模擬試験`, never as the July 2018 administration. `original-mock-runtime-audit.json` records counts, provenance, and the copyright separation.
+- The pending `n4-2018-07` catalog period remains visible and truthful. It cannot become `structured_ready` without a complete correctly identified source and permission to republish it.
+
 ## Validation evidence
 
 - Source audit: PASS; the supplied files are classified as Official Practice Workbook 2018 and no runtime data, audio, or timing was created for the target exam.

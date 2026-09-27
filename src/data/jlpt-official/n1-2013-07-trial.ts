@@ -1,4 +1,5 @@
 import type { TrialQuestion } from './n1-2012-07-trial';
+export type { TrialQuestion } from './n1-2012-07-trial';
 
 type DatasetQuestion = {
   questionId: string;

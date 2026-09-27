@@ -1,4 +1,4 @@
-import type { TrialQuestion } from './n1-2012-12-trial';
+import type { TrialQuestion } from './n1-2012-07-trial';
 const DATASET=require('./n2-2012-12/exam.candidate.json');
 const label=(family:TrialQuestion['family'])=>family==='listening'?'聴解':family==='reading'?'読解':family==='grammar'||family==='sentenceComposition'?'文法':'文字・語彙';
 export const N2_2012_12_SESSION_KEY='jlpt:n2:2012-12:exam-01:session:v1';

@@ -59,5 +59,5 @@ export function buildSampleExam(level:JlptLevel):JlptMockExam{
  const vocab=vocabulary.filter(x=>x.jlpt===level&&x.status!=='Draft'),gram=grammar.filter(x=>x.jlpt===level&&x.status!=='Draft'&&grammarMaskable(x));
  const parts:JlptMockPart[]=[],questions:JlptMockQuestion[]=[];let vi=0,gi=0,ri=0,li=0;
  for(const item of JLPT_OFFICIAL_STRUCTURE[level]){parts.push({id:`${level}-01-${item.family}`,title:`問題 ${parts.length+1}　${familyTitle[item.family]}`,instructions:instruction[item.family]||item.objective,section:item.section,family:item.family,questionCount:item.count});for(let i=0;i<item.count;i++){if(item.section==='vocabulary')questions.push(vocabularyQuestion(level,item.family,vi++,vocab));else if(item.section==='grammar')questions.push(grammarQuestion(level,item.family,gi++,gram));else if(item.section==='reading')questions.push(readingQuestion(level,item.family,ri++,vocab));else questions.push(listeningQuestion(level,item.family,li++,vocab));}}
- return{id:`${level.toLowerCase()}-test-01`,level,number:1,title:`JLPT ${level} 模擬試験 第1回`,parts,questions};
+ return{id:`${level.toLowerCase()}-mock-01`,level,number:1,title:`JLPT ${level} 模擬試験 第1回`,parts,questions};
 }
