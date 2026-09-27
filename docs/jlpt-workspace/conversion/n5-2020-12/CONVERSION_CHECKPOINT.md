@@ -9,6 +9,14 @@ DATE: 2026-09-23 (Asia/Tokyo)
 CONTINUATION AUDIT: 2026-09-27 (Asia/Tokyo), based on durable HEAD 083f6111609fc4c8703346d0ba5ecbe8f1458cd5
 ```
 
+## AI solution draft progress (2026-09-27)
+
+- Source name remains `JLPT日本語能力試験ベスト模試 N5 第2回`; it is not relabeled as an official December 2020 exam.
+- Rights check: the publisher states that copyright belongs to the authors/illustrators and prohibits unauthorized reproduction, sharing, transfer, reposting, or sale. No permission to publish the book's question text, illustrations, or audio in this public app repository was found.
+- Vocabulary group complete: 35/35 audit IDs have independently AI-derived answers, short rationales, confidence, and per-record `AI-derived/unreviewed` provenance in `ai-solutions-vocabulary.draft.json`.
+- The draft intentionally contains no question text, choices, images, audio, publisher answer key, or claim of publisher verification. It is audit-only and is not registered in runtime.
+- Source anomalies affecting review were rechecked independently: vocabulary problem 2 question 5 has a malformed predicate in the supplied PDF but an unambiguous target spelling; vocabulary problem 3 questions 7 and 10 remain readable despite source/OCR wording anomalies.
+
 ## Direct sources and identity
 
 - PDF: `/Users/doduykhanh/Desktop/Nội dung đưa vào app/N5/N5 12-2020/De thi N5.pdf`; SHA-256 `18a47a85016ad0ab09277f2140e20264f651a17f056bd9deafc9d3686633001e`; 32 pages.
