@@ -83,6 +83,7 @@ import { N4_2012_12_SESSION_KEY, N4_2012_12_TRIAL } from '@/data/jlpt-official/n
 import { N4_2013_12_SESSION_KEY, N4_2013_12_TRIAL } from '@/data/jlpt-official/n4-2013-12-trial';
 import { N4_2014_07_SESSION_KEY, N4_2014_07_TRIAL } from '@/data/jlpt-official/n4-2014-07-trial';
 import { N4_2021_07_SESSION_KEY, N4_2021_07_TRIAL } from '@/data/jlpt-official/n4-2021-07-trial';
+import { N4_2021_12_SESSION_KEY, N4_2021_12_TRIAL } from '@/data/jlpt-official/n4-2021-12-trial';
 import { N5_2011_12_SESSION_KEY, N5_2011_12_TRIAL } from '@/data/jlpt-official/n5-2011-12-trial';
 import { N5_2012_12_SESSION_KEY, N5_2012_12_TRIAL } from '@/data/jlpt-official/n5-2012-12-trial';
 import { N5_2013_07_SESSION_KEY, N5_2013_07_TRIAL } from '@/data/jlpt-official/n5-2013-07-trial';
@@ -524,6 +525,20 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
       133: require('../../../assets/jlpt/n4/2021-07/visual-options/p3q3.jpg'),
       134: require('../../../assets/jlpt/n4/2021-07/visual-options/p3q4.jpg'),
       135: require('../../../assets/jlpt/n4/2021-07/visual-options/p3q5.jpg'),
+    },
+  },
+  {
+    // Complete candidate; answers are externally reconstructed and timing remains unverified.
+    id: 'n4-2021-12-exam-09', level: 'N4', title: '日本語能力試験 N4', periodLabel: '2021年12月・第9回',
+    startLabel: '第9回を始める', storageKey: N4_2021_12_SESSION_KEY, questions: N4_2021_12_TRIAL,
+    audioSource: require('../../../assets/jlpt/n4/2021-12/audio/n4-2021-12.mp3'),
+    visualOptions: {
+      201: require('../../../assets/jlpt/n4/2021-12/visual-options/listening-p1-q2.jpg'),
+      202: require('../../../assets/jlpt/n4/2021-12/visual-options/listening-p1-q3-q4.jpg'),
+      203: require('../../../assets/jlpt/n4/2021-12/visual-options/listening-p1-q6.jpg'),
+      204: require('../../../assets/jlpt/n4/2021-12/visual-options/listening-p3-q1.jpg'),
+      205: require('../../../assets/jlpt/n4/2021-12/visual-options/listening-p3-q2-q3.jpg'),
+      206: require('../../../assets/jlpt/n4/2021-12/visual-options/listening-p3-q4-q5.jpg'),
     },
   },
   {

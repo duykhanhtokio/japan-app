@@ -15,8 +15,9 @@
   },
   "counts": {
     "writtenResponsesExpected": 57,
-    "writtenResponsesObserved": 56,
-    "missingWrittenResponses": 1,
+    "writtenResponsesObserved": 57,
+    "missingWrittenResponses": 0,
+    "externallyRecoveredWrittenResponses": 1,
     "listeningResponsesExpected": 28,
     "listeningResponsesObserved": 28
   },
@@ -25,6 +26,10 @@
     "audioSha256": "ee1d6e27c114736c2d2d66c87f3d4889b281d10c3d9978b2fc78366edc4365a6",
     "audioDurationSeconds": 2327.196625,
     "answerKeyPresent": false,
+    "externalAnswerReconstructionPresent": true,
+    "externalAnswerReconstructionOfficial": false,
+    "externalRecoverySource": "https://www.scribd.com/document/1056799871/JLPT-N4-2021-12",
+    "externalListeningTranscriptSource": "https://aixinjp.com/a/lianxifangshi/zhentidaan/2021/1221/1001.html",
     "writtenExplanationsPresent": false,
     "translationsPresent": false,
     "japaneseListeningTranscriptPresent": false,
@@ -41,11 +46,19 @@
     "status": "candidate_unverified"
   },
   "review": { "humanReviewed": false, "perceptualApproval": false, "reviewDisposition": "needs_later_review" },
+  "runtimeCandidate": {
+    "registered": true,
+    "writtenResponses": 57,
+    "listeningResponses": 28,
+    "writtenQuestionPayloadSha256": "f86ffa5bb46d3a80bd1c4bacf5d4809d7c37dd2a6a998b18a63fa02f4b83b696",
+    "listeningQuestionPayloadSha256": "7df6b0df5b49cf4275408b2a943221f424940d3c93103917b86120734692cd43",
+    "answerStatus": "external_reconstruction_unverified_ai_and_audio_cross_checked",
+    "continuousAudioPlayback": true,
+    "visualAssetCount": 6
+  },
   "blockers": [
-    "Vocabulary overall question 12 is missing from the supplied PDF, which jumps directly from 11 to 13.",
-    "The supplied source contains no answer key for written or listening questions.",
     "The supplied source contains no written explanations, translations, or Japanese listening transcript.",
     "No authoritative or perceptually approved per-question audio timing is present.",
-    "Written questions/options and listening content have not completed character-by-character runtime transcription and verification."
+    "The supplied PDF prints パン for listening problem 1 question 1, while the audio and independent transcript say 砂糖; the external reconstructed answer remains option 2 and is explicitly unverified."
   ]
 }
