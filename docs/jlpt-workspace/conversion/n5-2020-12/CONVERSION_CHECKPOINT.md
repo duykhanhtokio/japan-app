@@ -18,6 +18,9 @@ CONTINUATION AUDIT: 2026-09-27 (Asia/Tokyo), based on durable HEAD 083f6111609fc
 - Source anomalies affecting review were rechecked independently: vocabulary problem 2 question 5 has a malformed predicate in the supplied PDF but an unambiguous target spelling; vocabulary problem 3 questions 7 and 10 remain readable despite source/OCR wording anomalies.
 - Grammar/reading group complete: 32/32 audit IDs now have AI-derived answers, rationales, confidence, and provenance in `ai-solutions-grammar-reading.draft.json`.
 - All five sentence-order items were checked against the rendered source page rather than relying on text extraction. Ambiguous/context-sensitive items 25, 29, and 32 were solved again independently before recording.
+- Listening group complete: 24/24 audit IDs now have AI-derived answers, short rationales, confidence, provenance, and the exact reviewed source-track filename in `ai-solutions-listening.draft.json`.
+- Every listening item was reviewed from its supplied source track; local ASR was only a navigation aid and is not treated as a source transcript. Visual choices were checked against rendered PDF pages. Map/umbrella items 2 and 4, picture-dependent items 10–12, and the final situational-response item in problem 3 received a separate independent solve.
+- These answers remain metadata-only, `AI-derived/unreviewed`, not publisher-verified, and not runtime-eligible. Candidate timing stays `humanReviewed: false`, `perceptualApproval: false`, and `needs_later_review`.
 
 ## Direct sources and identity
 
