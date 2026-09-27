@@ -21,6 +21,7 @@ CONTINUATION AUDIT: 2026-09-27 (Asia/Tokyo), based on durable HEAD 083f6111609fc
 - Listening group complete: 24/24 audit IDs now have AI-derived answers, short rationales, confidence, provenance, and the exact reviewed source-track filename in `ai-solutions-listening.draft.json`.
 - Every listening item was reviewed from its supplied source track; local ASR was only a navigation aid and is not treated as a source transcript. Visual choices were checked against rendered PDF pages. Map/umbrella items 2 and 4, picture-dependent items 10–12, and the final situational-response item in problem 3 received a separate independent solve.
 - These answers remain metadata-only, `AI-derived/unreviewed`, not publisher-verified, and not runtime-eligible. Candidate timing stays `humanReviewed: false`, `perceptualApproval: false`, and `needs_later_review`.
+- Rights-safe runtime alternative verified: the existing repository-authored `n5-mock-01` already implements the same 67-written + 24-listening N5 blueprint. It remains registered only as `模擬試験`, uses original question/script data and runtime speech, and contains no book image, recording, transcript, or official December 2020 identity claim. `original-mock-runtime-audit.json` records this separation.
 
 ## Direct sources and identity
 
