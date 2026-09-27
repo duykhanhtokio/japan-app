@@ -66,7 +66,31 @@ assert.equal(manifest.timing.status,'candidate_unverified');
 assert.equal(manifest.review.humanReviewed,false);
 assert.equal(manifest.review.perceptualApproval,false);
 assert.equal(manifest.review.reviewDisposition,'needs_later_review');
-assert.match(catalog,/'n4-2021-07'/);
-assert.doesNotMatch(catalog,/n4-2021-07-exam-08/);
+assert.doesNotMatch(catalog,/['"]n4-2021-07['"]/);
+const approved=fs.readFileSync('src/data/jlpt-official/approved-n1-exams.ts','utf8');
+assert.match(approved,/id: 'n4-2021-07-exam-08'/);
+const writtenCandidate=JSON.parse(fs.readFileSync('src/data/jlpt-official/n4-2021-07/written.candidate.json'));
+const listeningCandidate=JSON.parse(fs.readFileSync('src/data/jlpt-official/n4-2021-07/listening.candidate.json'));
+assert.equal(writtenCandidate.questions.length,57);
+assert.equal(listeningCandidate.questions.length,28);
+assert.equal(writtenCandidate.remainingWritten,0);
+assert.deepEqual(writtenCandidate.questions.map(q=>q.answer),written.records.map(r=>Number(r.correctOptionId)));
+assert.deepEqual(listeningCandidate.questions.map(q=>q.answer),listening.records.map(r=>Number(r.correctOptionId)));
+assert.equal(new Set([...writtenCandidate.questions,...listeningCandidate.questions].map(q=>q.id)).size,85);
+for(const q of [...writtenCandidate.questions,...listeningCandidate.questions]) {
+  assert.ok(q.prompt && q.options.length >= 3 && q.options.every(Boolean));
+  assert.ok(q.answer >= 1 && q.answer <= q.options.length);
+}
+for(const q of listeningCandidate.questions) {
+  assert.equal(q.audio.timingStatus,'candidate_unverified');
+  assert.equal(q.audio.humanReviewed,false);
+  assert.ok(q.audio.startMs < q.audio.endMs && q.audio.endMs <= 2376020);
+  if(q.visualOptionPage) {
+    const asset=listeningCandidate.visualAssets[String(q.visualOptionPage)];
+    assert.ok(asset && fs.statSync(asset).size > 1000, `missing illustration for ${q.id}`);
+    assert.ok(approved.includes(`visual-options/${asset.split('/').at(-1)}`));
+  }
+}
+
 assert.equal(hash('assets/jlpt/n4/2021-07/audio/n4-2021-07.mp3'),manifest.runtimeAudio.sha256);
-console.log('N4 2021-07 INTEGRATION AUDIT PASS: 57 written and 28 listening responses audited; explanations, translations, and transcript absent; 28 timings remain candidate_unverified; exam is incomplete and not structured_ready.');
+console.log('N4 2021-07 INTEGRATION PASS: 57 written + 28 listening; all answers and 10 illustrations present; continuous audio uses candidate review metadata.');

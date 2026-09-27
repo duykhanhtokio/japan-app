@@ -82,6 +82,7 @@ import { N4_2011_12_SESSION_KEY, N4_2011_12_TRIAL } from '@/data/jlpt-official/n
 import { N4_2012_12_SESSION_KEY, N4_2012_12_TRIAL } from '@/data/jlpt-official/n4-2012-12-trial';
 import { N4_2013_12_SESSION_KEY, N4_2013_12_TRIAL } from '@/data/jlpt-official/n4-2013-12-trial';
 import { N4_2014_07_SESSION_KEY, N4_2014_07_TRIAL } from '@/data/jlpt-official/n4-2014-07-trial';
+import { N4_2021_07_SESSION_KEY, N4_2021_07_TRIAL } from '@/data/jlpt-official/n4-2021-07-trial';
 import { N5_2013_07_SESSION_KEY, N5_2013_07_TRIAL } from '@/data/jlpt-official/n5-2013-07-trial';
 import { N5_2017_07_SESSION_KEY, N5_2017_07_TRIAL } from '@/data/jlpt-official/n5-2017-07-trial';
 import { N5_2018_12_SESSION_KEY, N5_2018_12_TRIAL } from '@/data/jlpt-official/n5-2018-12-trial';
@@ -504,6 +505,24 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
     id: 'n4-2014-07-exam-05', level: 'N4', title: '日本語能力試験 N4', periodLabel: '2014年7月・第5回',
     startLabel: '第5回を始める', storageKey: N4_2014_07_SESSION_KEY, questions: N4_2014_07_TRIAL,
     audioSource: require('../../../assets/jlpt/n4/2014-07/audio/n4-2014-07.mp3'), visualOptions: {},
+  },
+  {
+    // Complete source-backed questions and answers; the recording plays continuously.
+    id: 'n4-2021-07-exam-08', level: 'N4', title: '日本語能力試験 N4', periodLabel: '2021年7月・第8回',
+    startLabel: '第8回を始める', storageKey: N4_2021_07_SESSION_KEY, questions: N4_2021_07_TRIAL,
+    audioSource: require('../../../assets/jlpt/n4/2021-07/audio/n4-2021-07.mp3'),
+    visualOptions: {
+      101: require('../../../assets/jlpt/n4/2021-07/visual-options/p1q1.jpg'),
+      103: require('../../../assets/jlpt/n4/2021-07/visual-options/p1q3.jpg'),
+      105: require('../../../assets/jlpt/n4/2021-07/visual-options/p1q5.jpg'),
+      106: require('../../../assets/jlpt/n4/2021-07/visual-options/p1q6.jpg'),
+      108: require('../../../assets/jlpt/n4/2021-07/visual-options/p1q8.jpg'),
+      131: require('../../../assets/jlpt/n4/2021-07/visual-options/p3q1.jpg'),
+      132: require('../../../assets/jlpt/n4/2021-07/visual-options/p3q2.jpg'),
+      133: require('../../../assets/jlpt/n4/2021-07/visual-options/p3q3.jpg'),
+      134: require('../../../assets/jlpt/n4/2021-07/visual-options/p3q4.jpg'),
+      135: require('../../../assets/jlpt/n4/2021-07/visual-options/p3q5.jpg'),
+    },
   },
   {
     // Source-backed candidate; visual choices transcribed as text and listening boundaries need later review.
