@@ -4,8 +4,9 @@
 BASE HEAD: eece8a133f01a2f533b38080e11f4b287186b61b
 CATALOG TARGET: n5-2011-12
 EXAM ID RESERVED FOR A VERIFIED PACKAGE: n5-2011-12-exam-01
-STATUS: incomplete; identity unresolved; not structured_ready
-DATE: 2026-09-23 (Asia/Tokyo)
+CONTINUATION BASE HEAD: 94c5c765e326cb849a701ace413f8f42845a775b
+STATUS: runtime candidate integrated; source identity unresolved; manifest remains incomplete
+DATE: 2026-09-27 (Asia/Tokyo)
 ```
 
 ## Direct sources
@@ -29,22 +30,22 @@ The PDF cover prints `2010-2011年 日本語能力試験 N5`. It does not isolat
 - Runtime MP3: `assets/jlpt/n5/2011-12/audio/n5-2011-12.mp3`; SHA-256 `24f7d28b1265d92fa02f79c0b4bc0b4efe5e3452c9c12ce937813cc97858e88f`; measured duration `1712.900998` seconds = `1,712,900.998` milliseconds; ceiling `1,712,901 ms`.
 - Local Whisper `small` was used only as a navigation aid. Its JSON SHA-256 is `a5578082b7175a9e0c626ff9bfed8c7d00654002a69b552ac0c161184ec24ba2`; model SHA-256 is `9ecf779972d90ba49c06d968637d720dd632c55bbf19d441fb42bf17a411e794`.
 - Twenty-four question ranges were derived from section/question markers. Seconds were mechanically multiplied by 1000 and rounded to integer milliseconds. Every range remains `candidate_unverified`, `humanReviewed: false`, `perceptualApproval: false`, and `needs_later_review`.
+- The original M4A was decoded again locally on 2026-09-27 and transcribed with the repository-cached Whisper `small` model. Its dialogue, question order, and the printed transcript were cross-checked against all 24 completed listening prompts/options.
+- The 24 listening response records are complete in `listening.partial.json`; their order and keyed answers match the page-13 key exactly (`7 + 6 + 5 + 6`).
+- The 65 previously saved written question payloads remain unchanged at parsed-payload SHA-256 `8e7207ef404257c39684c19ce79062c2828beec5d19bc863e74be62e7f056ae0`.
+- Six source crops provide the written and listening illustrations required to keep all 89 response units answerable in the approved shared UI.
+- `n5-2011-12-exam-01` is registered with an independent session key and the full runtime MP3. N4/N5 playback remains continuous; per-question ranges are review metadata only.
 - No PDF page is used as a runtime question and no approved UI-lock file was changed.
 
 ## Remaining blockers
 
 - The exact administration is not established by the supplied PDF or audio.
 - Chinese explanations/translations are missing for grammar responses 15–26; no app-locale translations are supplied.
-- Written questions/options and the Japanese transcript are not yet character-level verified runtime transcriptions.
 - No authoritative timing exists; all 24 boundaries still require listening/perceptual review.
 
-The catalog target remains `incomplete`. It is not registered as `structured_ready`.
+The source identity remains `incomplete` in the manifest. The complete answerable runtime candidate is registered using the explicit `2010–2011年` label rather than claiming an independently verified December 2011 administration.
 
 ## Validation evidence
 
-- Per-exam integration: PASS for exactly 65 written records, 24 listening records, 89 unique audit IDs, all answer mappings, exact explanation-presence counts, runtime audio hash, and 24 ordered in-range candidate timings.
-- Catalog completeness: PASS at exactly 66 entries. Inventory integration: PASS with 45 structured official exams, 16 visible incomplete N4/N5 candidates, and five ready mocks.
-- Structured-exam, no-scanned-runtime, navigation-contract, and protected N1 12/2012 checks: PASS.
-- JLPT Approved UI Lock: PASS 10/10 byte-locked files; no locked file is in the change set.
-- `git diff --check`: PASS.
-- TypeScript retains only the pre-existing unchanged N2/N3 adapter failures: missing `./n1-2012-12-trial` and non-exported `TrialQuestion` from `n1-2013-07-trial.ts`. No N5 file produced a diagnostic.
+- Final validation evidence is recorded by the current commit's command output; the active-exam validator, `git diff --check`, and approved UI-lock check must all pass immediately before commit.
+- Remote durability is not claimed until push, fetch, and `node scripts/check-work-persistence.mjs` report `WORK PERSISTENCE PASS` for the resulting narrow commit.

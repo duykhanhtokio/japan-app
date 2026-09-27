@@ -83,6 +83,7 @@ import { N4_2012_12_SESSION_KEY, N4_2012_12_TRIAL } from '@/data/jlpt-official/n
 import { N4_2013_12_SESSION_KEY, N4_2013_12_TRIAL } from '@/data/jlpt-official/n4-2013-12-trial';
 import { N4_2014_07_SESSION_KEY, N4_2014_07_TRIAL } from '@/data/jlpt-official/n4-2014-07-trial';
 import { N4_2021_07_SESSION_KEY, N4_2021_07_TRIAL } from '@/data/jlpt-official/n4-2021-07-trial';
+import { N5_2011_12_SESSION_KEY, N5_2011_12_TRIAL } from '@/data/jlpt-official/n5-2011-12-trial';
 import { N5_2013_07_SESSION_KEY, N5_2013_07_TRIAL } from '@/data/jlpt-official/n5-2013-07-trial';
 import { N5_2017_07_SESSION_KEY, N5_2017_07_TRIAL } from '@/data/jlpt-official/n5-2017-07-trial';
 import { N5_2018_12_SESSION_KEY, N5_2018_12_TRIAL } from '@/data/jlpt-official/n5-2018-12-trial';
@@ -522,6 +523,20 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
       133: require('../../../assets/jlpt/n4/2021-07/visual-options/p3q3.jpg'),
       134: require('../../../assets/jlpt/n4/2021-07/visual-options/p3q4.jpg'),
       135: require('../../../assets/jlpt/n4/2021-07/visual-options/p3q5.jpg'),
+    },
+  },
+  {
+    // The supplied source identifies itself only as 2010–2011; its original recording plays continuously.
+    id: 'n5-2011-12-exam-01', level: 'N5', title: '日本語能力試験 N5', periodLabel: '2010–2011年・第1回',
+    startLabel: '第1回を始める', storageKey: N5_2011_12_SESSION_KEY, questions: N5_2011_12_TRIAL,
+    audioSource: require('../../../assets/jlpt/n5/2011-12/audio/n5-2011-12.mp3'),
+    visualOptions: {
+      101: require('../../../assets/jlpt/n5/2011-12/visual-options/written-p3-q9-q10.jpg'),
+      102: require('../../../assets/jlpt/n5/2011-12/visual-options/written-p4-q2.jpg'),
+      103: require('../../../assets/jlpt/n5/2011-12/visual-options/written-p6-q1.jpg'),
+      104: require('../../../assets/jlpt/n5/2011-12/visual-options/listening-p1-options.jpg'),
+      105: require('../../../assets/jlpt/n5/2011-12/visual-options/listening-p3-q1-q4.jpg'),
+      106: require('../../../assets/jlpt/n5/2011-12/visual-options/listening-p3-q5.jpg'),
     },
   },
   {
