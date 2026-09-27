@@ -56,6 +56,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
   const scrollRef = useRef<ScrollView>(null);
   const positions = useRef<Record<string, number>>({});
   const playbackGeneration = useRef(0);
+  const pendingAudioStart = useRef(false);
   const exitInProgress = useRef(false);
   const latestExit = useRef<() => void>(() => undefined);
   const latestBackgroundPause = useRef<() => void>(() => undefined);
@@ -63,7 +64,14 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
   const playerStatus = useAudioPlayerStatus(player);
 
   useEffect(() => { void setAudioModeAsync({ playsInSilentMode: true, shouldPlayInBackground: false }); }, []);
-  useEffect(() => { if (playerStatus.isLoaded) setAudioError(null); }, [playerStatus.isLoaded]);
+  useEffect(() => {
+    if (!playerStatus.isLoaded) return;
+    setAudioError(null);
+    if (pendingAudioStart.current) {
+      pendingAudioStart.current = false;
+      void playListening();
+    }
+  }, [playerStatus.isLoaded]);
 
   const answeredIds = useMemo(() => new Set(Object.keys(answers)), [answers]);
 
@@ -131,7 +139,8 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
   async function playListening() {
     if (audioPlaying || (mode === 'exam' && !submitted && playedAudioSegments.includes(CONTINUOUS_AUDIO_ID) && !listeningPosition.current)) return;
     if (!playerStatus.isLoaded) {
-      setAudioError('音声を読み込めません。MP3 ファイルの取得を確認してください。');
+      pendingAudioStart.current = true;
+      setAudioError('音声を読み込み中です。読み込み後に再生します。');
       return;
     }
     const generation = playbackGeneration.current + 1;
@@ -141,6 +150,10 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
       await setAudioModeAsync({ playsInSilentMode: true, shouldPlayInBackground: false });
       player.pause();
       const resumeSeconds = Math.max(listeningStartMs / 1000, listeningPosition.current / 1000);
+      if (playerStatus.duration > 0 && resumeSeconds >= playerStatus.duration) {
+        listeningPosition.current = 0;
+        throw new Error('音声の開始位置がファイルの長さを超えています。');
+      }
       lastSavedAudioSecond.current = Math.floor(resumeSeconds / 5);
       await player.seekTo(resumeSeconds);
       if (playbackGeneration.current !== generation) return;
@@ -158,6 +171,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
   }
 
   function pauseListening() {
+    pendingAudioStart.current = false;
     if (!audioPlaying) return;
     playbackGeneration.current += 1;
     listeningPosition.current = Math.max(listeningPosition.current, Math.round(player.currentTime * 1000));
@@ -170,6 +184,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
     if (exitInProgress.current) return;
     exitInProgress.current = true;
     playbackGeneration.current += 1;
+    pendingAudioStart.current = false;
     if (audioPlaying) listeningPosition.current = Math.max(listeningPosition.current, Math.round(player.currentTime * 1000));
     player.pause();
     setAudioPlaying(false);
@@ -181,6 +196,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
 
   function resetLocalState() {
     playbackGeneration.current += 1;
+    pendingAudioStart.current = false;
     listeningPosition.current = 0;
     lastSavedAudioSecond.current = 0;
     player.pause();
@@ -246,6 +262,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
 
   function submit() {
     playbackGeneration.current += 1;
+    pendingAudioStart.current = false;
     listeningPosition.current = 0;
     player.pause();
     setAudioPlaying(false);
