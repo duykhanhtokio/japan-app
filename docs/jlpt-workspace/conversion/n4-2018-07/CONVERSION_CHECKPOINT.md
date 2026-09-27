@@ -1,7 +1,7 @@
 # N4 2018-07 source identity checkpoint
 
 ```text
-BASE HEAD: c5c9444eec4bd80245b2699fa1054730c19daa7f
+BASE HEAD: f49736b509ad8869bc3b0539498734dedcb2b569
 TARGET EXAM ID: n4-2018-07-exam-07
 STATUS: incomplete; supplied package is not verified as the July 2018 exam
 DATE: 2026-09-23 (Asia/Tokyo)
@@ -23,6 +23,16 @@ DATE: 2026-09-23 (Asia/Tokyo)
 - The written passages (including `黒い消しゴム`), listening illustrations, question sequence, and transcripts match the JLPT official `sample2018` N4 practice workbook published at `https://www.jlpt.jp/samples/sample2018/pdf/N4R.pdf` and `https://www.jlpt.jp/samples/sample2018/pdf/N4L.pdf`.
 - The user confirmed this package should be treated as Official Practice Workbook 2018, not asserted to be the July 2018 examination.
 
+## New URL audit (2026-09-27)
+
+- Audited `https://www.jlptzhen.com/精品真题-n4真题在线做2018年07月日本语能力试验/` across all 98 numbered positions: 70 written and 28 listening, in the workbook's 15 expected problem groups.
+- The page title claims July 2018, but its first written item, all 98 embedded answer flags, written structure, listening sequence, illustrations, Japanese transcripts, and audio identify it as the N4 Official Practice Workbook Vol. 2 material published in 2018.
+- All 98 page answers match the official workbook answer PDF. Two independent July 2018 answer tables instead give vocabulary position 1 as option 4, while the page/workbook give option 3; the cleaner independent July table differs from the workbook at 30 of 35 vocabulary positions.
+- Downloaded and decoded all 28 page audio tracks. Every track occurs in the matching official workbook audio in order; envelope correlation is at least `0.935723`. The page tracks total `1569.776284` seconds, and `1569.776284 × 1000 = 1569776.284` milliseconds exactly.
+- Compared all 28 Japanese transcript blocks with the official workbook script. They follow the same dialogues and responses. Position 89 has a concrete source transcription discrepancy: choice 1 uses `が` where the official script uses `を`; the official script remains authoritative. Chinese translations and explanations were not copied.
+- Visually checked all supplied images against the official workbook PDFs. The page omits the required listening illustrations at positions 73 (problem 1 question 3) and 78 (problem 1 question 8); the official workbook PDF contains them. This omission is recorded rather than filled from the mislabeled page.
+- Detailed hashes, per-part provenance, counts, independent identity evidence, and runtime decision are recorded in `SOURCE_URL_AUDIT.json`.
+
 ## Audited source contents
 
 - The practice package contains 70 written responses, 28 listening responses, an answer key on page 14, Chinese explanations/translations on pages 15–19, and Japanese listening transcripts on pages 20–23.
@@ -32,7 +42,7 @@ DATE: 2026-09-23 (Asia/Tokyo)
 
 ## Remaining blocker
 
-The actual N4 July 2018 exam package has not been supplied or independently identified. The catalog entry remains `incomplete` and is not `structured_ready`.
+The actual N4 July 2018 question content, audio, and complete image set have not been supplied or independently identified. The newly supplied URL is a second copy of the workbook, not the target administration. The catalog entry remains `incomplete` and is not `structured_ready`; no timing was generated and the exam was not registered in the runner.
 
 ## Validation evidence
 
