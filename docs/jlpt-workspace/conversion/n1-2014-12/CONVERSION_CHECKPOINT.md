@@ -253,6 +253,15 @@ Historical next action (superseded 2026-09-20): current policy continues full av
 
 Next: translate written explanation question 2, then validate, checkpoint, commit, push, fetch, and remote-verify that completed translation unit before question 3.
 
+## Written explanation translation question 2 — 2026-09-27
+
+- Codex-authored translation completed for written explanation question 2: cumulative coverage is 24/840 target locales in `explanations/translations-q01-q01.json` and `explanations/translations-q02-q02.json`.
+- The source remains `explanations/source-page-02.json` question 2, hash `fd2d3ee859177eecc03a800cdacf221bd22a33e6d3b7dbcac16b94eb4997834b`; the explanation preserves the interview context, the keyed option 4, and the sense of `臨む` as facing an important situation.
+- Every target is `generatedBy: AI`, `reviewedByNativeSpeaker: false`, and `status: translated_ai_unreviewed`; no external translation service was used.
+- Listening remains `DEFERRED_UNVERIFIED`; this written translation does not alter timing, human review, perceptual approval, or runtime status.
+
+Next: translate written explanation question 3.
+
 ## Written question page 7 transcription — 2026-09-20
 
 - Transcribed complete questions 49–52 from `question/page-07.jpg`; question 53 remains deferred to page 8.
