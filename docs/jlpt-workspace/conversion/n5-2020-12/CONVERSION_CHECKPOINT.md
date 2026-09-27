@@ -16,6 +16,8 @@ CONTINUATION AUDIT: 2026-09-27 (Asia/Tokyo), based on durable HEAD 083f6111609fc
 - Vocabulary group complete: 35/35 audit IDs have independently AI-derived answers, short rationales, confidence, and per-record `AI-derived/unreviewed` provenance in `ai-solutions-vocabulary.draft.json`.
 - The draft intentionally contains no question text, choices, images, audio, publisher answer key, or claim of publisher verification. It is audit-only and is not registered in runtime.
 - Source anomalies affecting review were rechecked independently: vocabulary problem 2 question 5 has a malformed predicate in the supplied PDF but an unambiguous target spelling; vocabulary problem 3 questions 7 and 10 remain readable despite source/OCR wording anomalies.
+- Grammar/reading group complete: 32/32 audit IDs now have AI-derived answers, rationales, confidence, and provenance in `ai-solutions-grammar-reading.draft.json`.
+- All five sentence-order items were checked against the rendered source page rather than relying on text extraction. Ambiguous/context-sensitive items 25, 29, and 32 were solved again independently before recording.
 
 ## Direct sources and identity
 
