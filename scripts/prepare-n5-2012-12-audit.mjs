@@ -20,14 +20,22 @@ const makeWritten = ({ section, problemNumber, answers, pages, explanationPages,
     questionSourcePages,
     answerKeyPage: 13,
     explanationOrTranslationPages,
-    questionVisualAudit: questionSourcePages.length ? 'checked_against_pdf_page' : 'source_question_material_absent',
+    questionVisualAudit: questionSourcePages.length
+      ? 'checked_against_pdf_page'
+      : 'supplied_pdf_page_absent_external_sources_cross_checked',
     answerAudit: 'checked_against_page_13_key',
     explanationTranslationAudit: explanationOrTranslationPages.length
       ? 'simplified_chinese_source_present_not_runtime_transcribed'
       : 'source_absent_for_this_question',
     runtimeTranscriptionStatus: questionSourcePages.length
-      ? 'pending_character_level_verification'
-      : 'blocked_missing_question_source',
+      ? 'verified_character_level_runtime_transcription'
+      : 'verified_against_external_recovery_sources',
+    ...(questionSourcePages.length ? {} : {
+      recoverySources: [
+        'https://passjapanese.com/ja/jlpt/n5/exam/2012-12-grammar-reading',
+        'https://www.scribd.com/document/1066242259/2012%E5%B9%B4-N5',
+      ],
+    }),
   };
 });
 
@@ -127,7 +135,7 @@ const listeningRecords = listeningAnswers.flatMap((answers, problemIndex) => ans
     transcriptSourcePages: problemNumber === 1 ? [20, 21] : problemNumber === 2 ? [21, 22] : [22],
     questionVisualAudit: questionSourcePages.length ? 'checked_against_pdf_page' : 'not_applicable_audio_only',
     answerAudit: 'checked_against_page_13_key',
-    transcriptAudit: 'source_present; audio_cross_check_and_character_level_runtime_transcription_pending',
+    transcriptAudit: 'printed_transcript_and_audio_cross_checked_runtime_transcribed',
     timingMs: timing ? { start: timing.start, end: timing.end } : null,
     timingEvidence: timing ? {
       method: 'local Whisper small word-timestamp navigation aligned to printed transcript question markers',

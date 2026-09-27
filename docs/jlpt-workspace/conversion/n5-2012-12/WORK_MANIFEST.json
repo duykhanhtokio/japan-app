@@ -26,6 +26,7 @@
     "simplifiedChineseExplanationRecords": 55,
     "missingExplanationRecords": 12,
     "missingQuestionSourceRecords": 3,
+    "externallyRecoveredQuestionRecords": 3,
     "appLocaleTranslationsPresent": false,
     "sourceTimingPresent": false
   },
@@ -46,11 +47,21 @@
     "perceptualApproval": false,
     "reviewDisposition": "needs_later_review"
   },
+  "runtimeCandidate": {
+    "registered": true,
+    "writtenResponses": 67,
+    "listeningResponses": 24,
+    "writtenQuestionPayloadSha256": "782d483fad4bd9d5f0e5d56f3f4163da91431ba37fff51d21840b63aa5447d25",
+    "listeningQuestionPayloadSha256": "2a139bc6d5716032edcb7aafef055b05df0de4fa214295a249a7fc1854686602",
+    "listeningContentStatus": "source_pdf_audio_cross_checked_candidate_unverified",
+    "continuousAudioPlayback": true,
+    "visualAssetCount": 6
+  },
   "blockers": [
-    "The supplied question scan omits the source passages/questions for reading responses 27 through 29; only their answer key and Chinese explanation material are present.",
     "Simplified Chinese explanations/translations are absent for vocabulary responses 1 through 12, and no app-locale translations are supplied.",
-    "Written question text and choices have been visually audited but not completed as character-by-character runtime structured transcription.",
-    "The printed Japanese transcript has been aligned to audio question markers but not completed as character-by-character runtime transcription.",
     "The 24 audio boundaries are automatically derived candidates without human listening review or perceptual approval."
+  ],
+  "sourceLimitations": [
+    "The supplied PDF omits the page containing reading responses 27 through 29. Their content was recovered by cross-checking PassJapanese and a separately indexed Scribd transcription; the prompts and answers also match the PDF's Chinese explanation page and page-13 answer key."
   ]
 }

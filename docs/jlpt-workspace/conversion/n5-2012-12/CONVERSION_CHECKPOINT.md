@@ -4,8 +4,8 @@
 BASE HEAD: 8ea732050bc2160ed9782e49d1fad9e80f5b3ac3
 CATALOG TARGET: n5-2012-12
 EXAM ID RESERVED FOR A VERIFIED PACKAGE: n5-2012-12-exam-02
-STATUS: incomplete; not structured_ready
-DATE: 2026-09-23 (Asia/Tokyo)
+STATUS: runtime candidate integrated; source scan limitation and later-review metadata remain
+DATE: 2026-09-27 (Asia/Tokyo)
 ```
 
 ## Direct sources
@@ -25,27 +25,24 @@ The PDF cover explicitly prints `2012年12月 日本語能力試験 N5`. The aud
 - Listening structure: 24 responses in `7 + 6 + 5 + 6` order, exactly 24 unique listening audit IDs.
 - Page 13 supplies answers for all 91 response IDs; every stored answer was checked against that table.
 - Simplified Chinese analysis/translation is present for vocabulary responses 13–35 and all 32 grammar/reading responses: 55/67 written records. Vocabulary responses 1–12 have no supplied explanation page.
-- The supplied question scan skips the source material for reading responses 27–29: problem 3 ends on page 6 and problem 5 begins on page 7. The answer table and Chinese explanation still cover those three IDs, so their absence is recorded rather than reconstructed.
+- The supplied question scan skips the source material for reading responses 27–29: problem 3 ends on page 6 and problem 5 begins on page 7. Those records were recovered by cross-checking the independently indexed PassJapanese reconstruction and Scribd transcription. Their prompts and keyed answers also match the PDF's page-18 Chinese analysis and page-13 answer table. The checkpoint still records that the original supplied PDF page is absent.
 - Pages 20–22 supply Japanese transcript material for all 24 listening responses. Section markers and recognized question content align with the audio, but no character-level runtime transcript is claimed.
 - Runtime MP3: `assets/jlpt/n5/2012-12/audio/n5-2012-12.mp3`; SHA-256 `c3e99d9445a54f00268d323e1179c38e26cc59f1581c250818e11c92ab00b9dd`; measured duration `1843.957551` seconds = `1,843,957.551` milliseconds; ceiling `1,843,958 ms`.
 - Local Whisper `small` was used only as a navigation aid. Its JSON SHA-256 is `f4365758372ed3d6e272d605c5c9c614233ab9997312f48ae2721ef4b1ce6a47`; model SHA-256 is `9ecf779972d90ba49c06d968637d720dd632c55bbf19d441fb42bf17a411e794`.
 - Twenty-four question ranges are derived from section/question markers. Seconds are mechanically multiplied by 1000 and rounded to integer milliseconds. Every range remains `candidate_unverified`, `humanReviewed: false`, `perceptualApproval: false`, and `needs_later_review`.
+- All 67 written questions and all 24 listening responses now have complete runtime prompts, choices, and keyed answers. The written parsed-payload SHA-256 is `782d483fad4bd9d5f0e5d56f3f4163da91431ba37fff51d21840b63aa5447d25`; the listening parsed-payload SHA-256 is `2a139bc6d5716032edcb7aafef055b05df0de4fa214295a249a7fc1854686602`.
+- Six source crops provide the one written information table and listening illustrations needed by the approved shared UI. No complete PDF page is used as a runtime question.
+- `n5-2012-12-exam-02` is registered with an independent session key and the full runtime MP3. N4/N5 playback remains continuous; per-question ranges are review metadata only.
 - No PDF page is used as a runtime question and no approved UI-lock file was changed.
 
 ## Remaining blockers
 
-- Question/passages for reading responses 27–29 are absent from the supplied scan.
 - Chinese explanations/translations are missing for vocabulary responses 1–12; no app-locale translations are supplied.
-- Written questions/options and the Japanese transcript are not yet character-level verified runtime transcriptions.
 - No authoritative timing exists; all 24 boundaries still require listening/perceptual review.
 
-The catalog target remains `incomplete`. It is not registered as `structured_ready`.
+The manifest remains `incomplete` because explanation coverage and timing review are deferred. The complete answerable runtime candidate is registered; this does not claim that the missing original scan page was recovered from the supplied PDF.
 
 ## Validation evidence
 
-- Per-exam integration: PASS for exactly 67 written records, 24 listening records, 91 unique audit IDs, all answer mappings, exact explanation/source-absence counts, runtime audio hash, and 24 ordered in-range candidate timings.
-- Catalog completeness: PASS at exactly 66 entries. Inventory integration: PASS with 45 structured official exams, 16 visible incomplete N4/N5 candidates, and five ready mocks.
-- Structured-exam, no-scanned-runtime, navigation-contract, and protected N1 12/2012 checks: PASS.
-- JLPT Approved UI Lock: PASS 10/10 byte-locked files; no locked file is in the change set.
-- `git diff --check`: PASS.
-- TypeScript retains only the pre-existing unchanged N2/N3 adapter failures: missing `./n1-2012-12-trial` and non-exported `TrialQuestion` from `n1-2013-07-trial.ts`. No N5 file produced a diagnostic.
+- Final validation evidence is recorded by the current commit's command output. Run the active-exam validator once, `git diff --check` once, and the approved UI-lock check once immediately before commit.
+- Remote durability is not claimed until push, fetch, and `node scripts/check-work-persistence.mjs` report `WORK PERSISTENCE PASS` for the resulting narrow commit.

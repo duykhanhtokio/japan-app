@@ -84,6 +84,7 @@ import { N4_2013_12_SESSION_KEY, N4_2013_12_TRIAL } from '@/data/jlpt-official/n
 import { N4_2014_07_SESSION_KEY, N4_2014_07_TRIAL } from '@/data/jlpt-official/n4-2014-07-trial';
 import { N4_2021_07_SESSION_KEY, N4_2021_07_TRIAL } from '@/data/jlpt-official/n4-2021-07-trial';
 import { N5_2011_12_SESSION_KEY, N5_2011_12_TRIAL } from '@/data/jlpt-official/n5-2011-12-trial';
+import { N5_2012_12_SESSION_KEY, N5_2012_12_TRIAL } from '@/data/jlpt-official/n5-2012-12-trial';
 import { N5_2013_07_SESSION_KEY, N5_2013_07_TRIAL } from '@/data/jlpt-official/n5-2013-07-trial';
 import { N5_2017_07_SESSION_KEY, N5_2017_07_TRIAL } from '@/data/jlpt-official/n5-2017-07-trial';
 import { N5_2018_12_SESSION_KEY, N5_2018_12_TRIAL } from '@/data/jlpt-official/n5-2018-12-trial';
@@ -537,6 +538,20 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
       104: require('../../../assets/jlpt/n5/2011-12/visual-options/listening-p1-options.jpg'),
       105: require('../../../assets/jlpt/n5/2011-12/visual-options/listening-p3-q1-q4.jpg'),
       106: require('../../../assets/jlpt/n5/2011-12/visual-options/listening-p3-q5.jpg'),
+    },
+  },
+  {
+    // PDF-cover-identified December 2012 candidate; the original recording plays continuously.
+    id: 'n5-2012-12-exam-02', level: 'N5', title: '日本語能力試験 N5', periodLabel: '2012年12月・第2回',
+    startLabel: '第2回を始める', storageKey: N5_2012_12_SESSION_KEY, questions: N5_2012_12_TRIAL,
+    audioSource: require('../../../assets/jlpt/n5/2012-12/audio/n5-2012-12.mp3'),
+    visualOptions: {
+      201: require('../../../assets/jlpt/n5/2012-12/visual-options/written-p6-q1.jpg'),
+      202: require('../../../assets/jlpt/n5/2012-12/visual-options/listening-p1-q1-q5.jpg'),
+      203: require('../../../assets/jlpt/n5/2012-12/visual-options/listening-p1-q6-q7.jpg'),
+      204: require('../../../assets/jlpt/n5/2012-12/visual-options/listening-p2-q1-q4.jpg'),
+      205: require('../../../assets/jlpt/n5/2012-12/visual-options/listening-p3-q1-q3.jpg'),
+      206: require('../../../assets/jlpt/n5/2012-12/visual-options/listening-p3-q4-q5.jpg'),
     },
   },
   {
