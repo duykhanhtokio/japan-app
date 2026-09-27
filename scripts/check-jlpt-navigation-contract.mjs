@@ -7,7 +7,7 @@ if (catalog.includes('router.back(') || catalog.includes('router.replace(')) fai
 if (!catalog.includes("BackHandler.addEventListener('hardwareBackPress'")) failures.push('hardware Back interception is missing while an exam is selected');
 if (!catalog.includes("navigation.addListener('beforeRemove'")) failures.push('iPhone swipe/route Back interception is missing while an exam is selected');
 if (!catalog.includes('setSelected(null)')) failures.push('selected exam must return to catalog through state');
-if (!catalog.includes('PENDING_JLPT_EXAMS.filter')) failures.push('Back-capable catalog must retain pending entries');
-if (catalog.includes("level === 'N1' ? APPROVED_N1_EXAMS") && !catalog.includes('PENDING_JLPT_EXAMS')) failures.push('catalog must not collapse to N1 structured exams only');
+if (!catalog.includes('APPROVED_N1_EXAMS.filter')) failures.push('catalog must select structured exams for every level');
+if (catalog.includes('ApprovedMockExam') || catalog.includes('MOCK_JLPT_EXAMS') || catalog.includes('PENDING_JLPT_EXAMS')) failures.push('catalog navigation must not expose mock or incomplete exams');
 if (failures.length) { console.error('JLPT NAVIGATION CONTRACT FAILED'); failures.forEach((failure) => console.error(`- ${failure}`)); process.exit(1); }
 console.log('JLPT NAVIGATION CONTRACT PASS: router Back only at catalog boundary; internal Back returns to catalog once.');

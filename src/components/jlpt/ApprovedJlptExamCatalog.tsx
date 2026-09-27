@@ -2,17 +2,13 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { BackHandler, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from 'expo-router';
 
-import ApprovedMockExam from '@/components/jlpt/ApprovedMockExam';
 import N1OfficialTrial from '@/components/jlpt/N1OfficialTrial';
 import { JlptExamHeader, JlptPaper } from '@/components/jlpt/ui/JlptExamUI';
 import type { JlptLevel } from '@/data/jlpt-learning';
-import { MOCK_JLPT_EXAMS } from '@/data/jlpt-official/jlpt-exam-catalog';
 import { APPROVED_N1_EXAMS, type ApprovedN1Exam } from '@/data/jlpt-official/approved-n1-exams';
 import { JLPT_EXAM } from '@/theme/jlpt-exam-design-system';
 
-type Choice =
-  | { kind: 'structured'; exam: ApprovedN1Exam; label: string }
-  | { kind: 'mock'; id: string; level: JlptLevel; label: string };
+type Choice = { kind: 'structured'; exam: ApprovedN1Exam; label: string };
 
 export default function ApprovedJlptExamCatalog({ level, onBack }: { level: JlptLevel; onBack: () => void }) {
   const navigation = useNavigation();
@@ -23,8 +19,7 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
       const label = `Đề số ${index + 1}`;
       return { kind: 'structured' as const, label, exam: { ...exam, periodLabel: label, startLabel: `Bắt đầu ${label.toLowerCase()}` } };
     });
-    const mock = MOCK_JLPT_EXAMS.find((exam) => exam.level === level);
-    return [...structured, ...(mock ? [{ kind: 'mock' as const, id: mock.id, level, label: `Đề số ${structured.length + 1}` }] : [])];
+    return structured;
   }, [level]);
 
   useEffect(() => {
@@ -45,11 +40,9 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
   }), [navigation, selected]);
 
   if (selected?.kind === 'structured') return <N1OfficialTrial exam={selected.exam} onExit={() => { activeExamExit.current = null; setSelected(null); }} registerExit={(handler) => { activeExamExit.current = handler; }} />;
-  if (selected?.kind === 'mock') return <ApprovedMockExam level={selected.level} examLabel={selected.label} onExit={() => setSelected(null)} />;
-
   return <View style={styles.screen}><JlptExamHeader title={`${level} · Danh sách đề`} subtitle="Chọn đề để làm bài" onBack={onBack} /><ScrollView contentContainerStyle={styles.content}><JlptPaper><Text style={styles.heading}>Danh sách đề</Text><Text style={styles.description}>Các đề đã sẵn sàng để làm trực tiếp trên ứng dụng.</Text>{choices.map((choice) => {
     const count = choice.kind === 'structured' ? choice.exam.questions.length : undefined;
-    return <Pressable key={choice.kind === 'mock' ? choice.id : choice.exam.id} accessibilityRole="button" onPress={() => setSelected(choice)} style={({ pressed }) => [styles.examRow, pressed && styles.pressed]}><View style={styles.copy}><Text style={styles.examTitle}>{choice.label}</Text>{count ? <Text style={styles.count}>Tổng số câu: {count}</Text> : null}</View><Text style={styles.chevron}>›</Text></Pressable>;
+    return <Pressable key={choice.exam.id} accessibilityRole="button" onPress={() => setSelected(choice)} style={({ pressed }) => [styles.examRow, pressed && styles.pressed]}><View style={styles.copy}><Text style={styles.examTitle}>{choice.label}</Text>{count ? <Text style={styles.count}>Tổng số câu: {count}</Text> : null}</View><Text style={styles.chevron}>›</Text></Pressable>;
   })}</JlptPaper></ScrollView></View>;
 }
 
