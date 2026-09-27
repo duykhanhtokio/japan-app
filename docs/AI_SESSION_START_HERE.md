@@ -11,6 +11,8 @@ This file exists so a new AI session can continue work without asking the user t
 
 ## Current cross-exam scope — 2026-09-21
 
+**V1 review policy updated 2026-09-27:** The user explicitly removed detailed explanations and listening transcripts from every JLPT exam's app review, including exams that already had explanations. The post-submission review shows correct/incorrect/unanswered status and the correct option only. Stop authoring/translating explanations for V1. Preserve source and translation files as historical data. `docs/checkpoints/JLPT_APPROVED_EXAM_UI_LOCKED_V6.md` and the current UI-lock script supersede older hashes and historical explanation-rendering descriptions below.
+
 The user has authorized automated end-to-end recovery of all available JLPT exams, including listening candidate segmentation and integration. Human per-segment review is deferred until after broad catalog integration. Automatically derived timing must be explicitly candidate/unverified, must not claim human/perceptual/audio approval, and may carry `needs_later_review` without blocking other work. A source-unreadable written question or unresolved listening segment is a local blocker only; record it and continue all other available units.
 
 The default unattended entry point is `bash scripts/run-jlpt-simple-loop.sh`. It is one foreground shell loop. Each complete exam gets one `gpt-5.6-terra` call; only an incomplete or final-validation-failed Terra attempt permits one `gpt-5.6-sol` continuation. Sol preserves valid Terra work and never restarts the exam. Rate limits, network loss, and service failures stop immediately without model switching or retries. The loop advances through N1, N2, and N3, oldest exam first within each level. Historical multi-process automation is not part of the default process.
@@ -98,8 +100,8 @@ src/services/jlpt-trial-session-storage.ts
 Approved hashes at this checkpoint:
 
 ```text
-36389c36539c7d942275264c4329e8f90183e865b61faee7fe9cd2d4081c6509  src/components/jlpt/N1OfficialTrial.tsx
-0ecea5a9f733d8d076bde7b7c1ea75be692255aae55e4447da3121ae06aec6cc  src/components/jlpt/ui/JlptExamUI.tsx
+3ef2d2658b3d4ed52ec0bcf6c3dc37983dbdc18dc3efb41cbd5e5d45293f06be  src/components/jlpt/N1OfficialTrial.tsx
+bb0dd35d4184a050c29e4d48d37974d9b434a41950045d9f14b801730e9a76ef  src/components/jlpt/ui/JlptExamUI.tsx
 9d8276e32e5b1b25485d84cbe961acd5cbca5b106ee2dd95e6fbaadd9d2b9bb7  src/theme/jlpt-exam-design-system.ts
 117ee15c311453c01c230e6c46290388474874d4384284c9f2ac43f4ed67a51d  src/services/jlpt-trial-session-storage.ts
 ```
@@ -140,7 +142,7 @@ Every integrated exam must preserve the approved behavior:
 - Do not expose answers, correctness, explanations, or transcripts before submission.
 - Confirm before submitting incomplete work.
 - Show results after submission.
-- Show detailed explanations/transcripts only inside post-submission review.
+- Show only answer status and the correct option inside post-submission review; hide detailed explanations and transcripts for V1.
 - Preserve previous/next navigation, question navigator, progress, timing, Back behavior, and audio controls.
 - Shared audio segments may serve multiple response units, but those responses must have distinct question IDs and answer state.
 - Every exam must have a unique stable exam ID and session storage key.

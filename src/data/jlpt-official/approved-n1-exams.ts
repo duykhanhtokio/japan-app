@@ -90,8 +90,6 @@ import { N5_2013_07_SESSION_KEY, N5_2013_07_TRIAL } from '@/data/jlpt-official/n
 import { N5_2017_07_SESSION_KEY, N5_2017_07_TRIAL } from '@/data/jlpt-official/n5-2017-07-trial';
 import { N5_2018_12_SESSION_KEY, N5_2018_12_TRIAL } from '@/data/jlpt-official/n5-2018-12-trial';
 import { N5_2021_12_SESSION_KEY, N5_2021_12_TRIAL } from '@/data/jlpt-official/n5-2021-12-trial';
-import { n1December2013Explanation } from '@/data/jlpt-official/n1-2013-12-explanations';
-import type { AppLanguageCode } from '@/i18n/languages';
 
 type RawOption = { optionId: string; textJa: string };
 type RawPassage = { passageId: string; textJa: string };
@@ -110,9 +108,6 @@ type RawListeningQuestion = {
 };
 type RawWritten = { problemGroups: RawGroup[]; passages: RawPassage[]; questions: RawWrittenQuestion[] };
 type RawListening = { questions: RawListeningQuestion[] };
-type LocalizedExplanation = { localeCode: AppLanguageCode; text: string; status: 'translated_verified' | 'translated_ai_unreviewed' };
-type ExplanationRecord = { questionId: string; localizedExplanations: LocalizedExplanation[] };
-type RawExplanations = { records: ExplanationRecord[] };
 
 export type ApprovedN1Exam = {
   id: string;
@@ -124,16 +119,13 @@ export type ApprovedN1Exam = {
   questions: readonly TrialQuestion[];
   audioSource: number;
   visualOptions: Readonly<Record<number, ImageSourcePropType>>;
-  explanationFor?: (questionId: string, language: AppLanguageCode) => string | undefined;
 };
 
 const WRITTEN = require('./n1-2012-12/written.json') as RawWritten;
 const LISTENING = require('./n1-2012-12/listening.json') as RawListening;
-const EXPLANATIONS = require('./n1-2012-12/explanations.13-locales.json') as RawExplanations;
 
 const passageById = new Map(WRITTEN.passages.map((passage) => [passage.passageId, passage.textJa]));
 const instructionByProblem = new Map(WRITTEN.problemGroups.map((group) => [group.problemNumber, group.instructionJa]));
-const explanationByQuestion = new Map(EXPLANATIONS.records.map((record) => [record.questionId, record.localizedExplanations]));
 
 function familyLabel(question: Pick<TrialQuestion, 'family'>) {
   if (question.family === 'vocabulary') return '文字・語彙';
@@ -191,13 +183,6 @@ const listeningQuestions: TrialQuestion[] = LISTENING.questions.map((question) =
 
 const N1_2012_12_QUESTIONS = [...writtenQuestions, ...listeningQuestions];
 
-function localizedExplanation(questionId: string, language: AppLanguageCode) {
-  const entries = explanationByQuestion.get(questionId);
-  return entries?.find((item) => item.localeCode === language)?.text
-    ?? entries?.find((item) => item.localeCode === 'en')?.text
-    ?? entries?.find((item) => item.localeCode === 'zh-CN')?.text;
-}
-
 export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
   {
     id: 'n1-2012-07-exam-01', level: 'N1', title: '日本語能力試験 N1', periodLabel: '2012年7月・第1回',
@@ -212,7 +197,6 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
     id: 'n1-2012-12-exam-02', level: 'N1', title: '日本語能力試験 N1', periodLabel: '2012年12月・第2回',
     startLabel: '第2回を始める', storageKey: 'jlpt:n1:2012-12:exam-02:session:v1', questions: N1_2012_12_QUESTIONS,
     audioSource: require('../../../assets/jlpt/n1/2012-12/audio/n1-2012-12.mp3'), visualOptions: {},
-    explanationFor: localizedExplanation,
   },
   {
     id: 'n1-2013-07-exam-03', level: 'N1', title: '日本語能力試験 N1', periodLabel: '2013年7月・第3回',
@@ -224,7 +208,6 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
     id: 'n1-2013-12-exam-04', level: 'N1', title: '日本語能力試験 N1', periodLabel: '2013年12月・第4回',
     startLabel: '第4回を始める', storageKey: N1_2013_12_SESSION_KEY, questions: N1_2013_12_TRIAL,
     audioSource: require('../../../assets/jlpt/n1/2013-12/audio/n1-2013-12.mp3'), visualOptions: {},
-    explanationFor: n1December2013Explanation,
   },
   {
     // Source-verified candidate; final Simulator/audio review pending.
@@ -481,9 +464,6 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
       12: require('../../../assets/jlpt/n4/2011-12/visual-options/problem1-item1.jpg'),
       13: require('../../../assets/jlpt/n4/2011-12/visual-options/problem3-items1-5.jpg'),
     },
-    explanationFor: (questionId) => questionId === 'n4-2011-12-grammar_reading-p5-q30'
-      ? '答えは3を採用しています。本文では、仕事を始めたころは本の場所を覚え、並べ方を教わるなど、慣れない仕事が多くて大変だったと説明しています。印刷された解答表は4ですが、「一日中ずっと本や雑誌を並べていた」とは本文にありません。\nChọn 3 theo nội dung bài đọc: lúc mới làm có nhiều việc chưa quen. Bảng đáp án in số 4 mâu thuẫn với đoạn văn.'
-      : undefined,
   },
   {
     // Source-image-verified content; audio timing remains candidate/unverified pending perceptual review.
