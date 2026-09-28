@@ -27,11 +27,11 @@ export default function HomeScreen(){
  return <ImageBackground source={require('../../assets/app/home/home-bg.jpg')} style={styles.background} resizeMode="cover"><View pointerEvents="none" style={styles.overlay}/>
   <View style={[styles.screen,{paddingTop:edgeInset,paddingBottom:edgeInset}]}>
    <View style={styles.content}>
-    <View onLayout={event=>setHeaderHeight(Math.ceil(event.nativeEvent.layout.height))}><GameHeader name={profile.name?.trim()||'プレイヤー'} abilityLevel={ability.level} abilityTarget={ability.target} abilityProgress={(stats.xp%1000)/1000} conversationCredits={stats.conversationCredits} coins={stats.coins}/></View>
+    <View onLayout={event=>setHeaderHeight(Math.ceil(event.nativeEvent.layout.height))}><GameHeader variant="approved" name={profile.name?.trim()||'プレイヤー'} abilityLevel={ability.level} abilityTarget={ability.target} abilityProgress={(stats.xp%1000)/1000} conversationCredits={stats.conversationCredits} coins={stats.coins}/></View>
     <View style={styles.headingArea}><Text style={styles.heading}>学習モード</Text><Text style={styles.headingVi}>Chọn nội dung bạn muốn học</Text></View>
     <View style={[styles.cards,{gap:ROYAL_LAYOUT.homeModeGap}]}>{MODES.map(mode=><LearningImageCard key={mode.ja} {...mode} height={cardHeight} onPress={()=>router.push(mode.route)}/>)}</View>
    </View>
-   <View onLayout={event=>setNavHeight(Math.ceil(event.nativeEvent.layout.height))}><BottomNav active="home"/></View>
+   <View onLayout={event=>setNavHeight(Math.ceil(event.nativeEvent.layout.height))}><BottomNav active="home" variant="approved"/></View>
   </View>
  </ImageBackground>
 }

@@ -196,6 +196,7 @@ export default function LearnScreen() {
 
                     <GameHeader
                         name="Haruto"
+                        variant="approved"
                         abilityProgress={(stats.xp % 1000) / 1000}
                         conversationCredits={stats.conversationCredits}
                         coins={stats.coins}
@@ -480,7 +481,7 @@ export default function LearnScreen() {
                     </ScrollView>
                 </View>
 
-                <BottomNav active="home" />
+                <BottomNav active="home" variant="approved" />
             </SafeAreaView>
         </View>
     );

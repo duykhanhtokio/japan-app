@@ -1,4 +1,5 @@
 import { router } from 'expo-router';
+import { useState } from 'react';
 import { Image, ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
 import { RoyalBackButton, ROYAL, ROYAL_FONT, ROYAL_LAYOUT, ROYAL_TEXT_FIT } from '@/components/ui/RoyalSurface';
 
@@ -7,16 +8,46 @@ const HUD_NAVY=require('../../../assets/app/ui/royal-af/button-wide-v2.png');
 const HUD_PLAYER=require('../../../assets/app/ui/royal-af/hud-player-medallion-v1.png');
 const HUD_COIN=require('../../../assets/app/ui/royal-af/hud-coin-v1.png');
 const HUD_FILL=require('../../../assets/app/ui/royal-af/map-marker-fill-v1.png');
+const HUD_TOP_COMPOSITE=require('../../../assets/app/ui/royal-af/hud-top-composite-v1.png');
 
-type Props={name?:string;abilityLevel?:string;abilityTarget?:string;abilityProgress?:number;conversationCredits?:number;conversationCreditMax?:number;coins?:number;onProfile?:()=>void;onCoins?:()=>void;onBack?:()=>void;variant?:'royal'|'study';level?:number;xpCurrent?:number;xpMax?:number;diamonds?:number;onDiamonds?:()=>void;onSettings?:()=>void};
+type Props={name?:string;abilityLevel?:string;abilityTarget?:string;abilityProgress?:number;conversationCredits?:number;conversationCreditMax?:number;coins?:number;onProfile?:()=>void;onCoins?:()=>void;onBack?:()=>void;variant?:'royal'|'study'|'approved';level?:number;xpCurrent?:number;xpMax?:number;diamonds?:number;onDiamonds?:()=>void;onSettings?:()=>void};
 
 function goBackOrHome(){
  if(router.canGoBack()) router.back();
  else router.replace('/home');
 }
+function coinDisplay(value:number){
+ return value>=100000?`${Math.floor(value/10000).toLocaleString('ja-JP')}万`:value.toLocaleString('ja-JP');
+}
 
 export default function GameHeader({name='プレイヤー',abilityLevel='N5',abilityTarget='N4',abilityProgress=0,conversationCredits=0,conversationCreditMax=100,coins=0,onProfile,onCoins,onBack,variant='royal'}:Props){
  const abilityRatio=clamp01(abilityProgress),creditRatio=conversationCreditMax>0?clamp01(conversationCredits/conversationCreditMax):0;
+ const [topWidth,setTopWidth]=useState(0);
+ if(variant==='approved'){
+  const artworkHeight=topWidth*757/2078;
+  const plaqueHeight=topWidth*(538-184)/2078;
+  const artworkTop=(ROYAL_LAYOUT.homeHudTopRowHeight-plaqueHeight)/2-topWidth*184/2078;
+  return <View style={s.container}>
+   <View style={s.approvedTopRow}>
+    <RoyalBackButton onPress={onBack??goBackOrHome}/>
+    <View onLayout={event=>setTopWidth(Math.round(event.nativeEvent.layout.width))} style={s.approvedTopBody}>
+     {topWidth>0&&<View pointerEvents="none" style={[s.approvedTopArt,{height:artworkHeight,top:artworkTop}]}><Image source={HUD_TOP_COMPOSITE} resizeMode="stretch" style={s.approvedTopImage}/></View>}
+     <Pressable accessibilityRole="button" accessibilityLabel={name} onPress={()=>onProfile?onProfile():router.push('/profile')} style={s.approvedProfile}>
+      <Image source={HUD_PLAYER} resizeMode="contain" style={s.approvedAvatar}/>
+      <Text numberOfLines={2} adjustsFontSizeToFit minimumFontScale={.72} style={s.approvedName}>{name}</Text>
+     </Pressable>
+     <Pressable accessibilityRole="button" accessibilityLabel={`コイン ${coins}`} onPress={onCoins} style={s.approvedCoins}>
+      <Image source={HUD_COIN} resizeMode="contain" style={s.approvedCoinIcon}/>
+      <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.7} style={s.approvedCoinValue}>{coinDisplay(coins)}</Text>
+     </Pressable>
+    </View>
+   </View>
+   <View style={s.energyStack}>
+    <EnergyBar label="日本語能力" value={`${abilityLevel} / ${abilityTarget}`} ratio={abilityRatio} tint={ROYAL.gold}/>
+    <EnergyBar label="CREDIT" value={conversationCredits.toLocaleString()} ratio={creditRatio} tint="#d96379"/>
+   </View>
+  </View>;
+ }
  if(variant==='study') return <View style={s.studyContainer}>
   <View style={s.studyTop}>
    <Pressable accessibilityRole="button" accessibilityLabel="戻る" onPress={onBack??goBackOrHome} style={s.studyBack}><Text style={s.studyBackText}>‹</Text></Pressable>
@@ -66,6 +97,16 @@ function EnergyBar({label,value,ratio,tint}:{label:string;value:string;ratio:num
 }
 
 const s=StyleSheet.create({
+ approvedTopRow:{height:ROYAL_LAYOUT.homeHudTopRowHeight,flexDirection:'row',alignItems:'center',gap:4},
+ approvedTopBody:{flex:1,minWidth:0,height:'100%',position:'relative',justifyContent:'center'},
+ approvedTopArt:{position:'absolute',left:0,right:0},
+ approvedTopImage:{width:'100%',height:'100%'},
+ approvedProfile:{position:'absolute',left:0,right:'31%',height:'100%',flexDirection:'row',alignItems:'center',minWidth:0},
+ approvedAvatar:{width:ROYAL_LAYOUT.homeAvatarSize,height:ROYAL_LAYOUT.homeAvatarSize,flexShrink:0},
+ approvedName:{flex:1,minWidth:0,marginLeft:4,marginRight:8,color:ROYAL.lacquer,fontFamily:ROYAL_FONT.heading,fontSize:16,lineHeight:20},
+ approvedCoins:{position:'absolute',right:8,width:'29%',height:58,flexDirection:'row',alignItems:'center',justifyContent:'center',paddingHorizontal:5,gap:3},
+ approvedCoinIcon:{width:22,height:22,flexShrink:0},
+ approvedCoinValue:{flex:1,minWidth:0,color:ROYAL.darkGold,fontFamily:ROYAL_FONT.heading,fontSize:13,lineHeight:20,textAlign:'center'},
  studyContainer:{width:'100%',paddingHorizontal:10,paddingTop:8,paddingBottom:10,borderWidth:1,borderRadius:16,borderColor:ROYAL.gold,backgroundColor:ROYAL.lacquer,shadowColor:'#07101f',shadowOpacity:.24,shadowRadius:8,shadowOffset:{width:0,height:4},elevation:4},
  studyTop:{minHeight:48,flexDirection:'row',alignItems:'center',gap:8},
  studyBack:{width:40,height:40,borderRadius:12,borderWidth:1,borderColor:ROYAL.gold,backgroundColor:ROYAL.lacquerLight,alignItems:'center',justifyContent:'center'},
