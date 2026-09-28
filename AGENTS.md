@@ -59,7 +59,7 @@ Do not claim that work is saved, complete, safe, or available for another sessio
 
 ## JLPT approved exam UI lock
 
-The user authorized V6 review behavior and V7 sequential naming on 2026-09-27, then V9 Japanese catalog and restart behavior on 2026-09-28. The current authorized hashes are in `scripts/check-jlpt-approved-ui-lock.mjs` and `docs/checkpoints/JLPT_APPROVED_EXAM_UI_LOCKED_V9.md`. The V6 review still shows only correct, incorrect, or unanswered status and the correct option. Detailed explanations, source-page references, and listening transcripts remain hidden; preserve source data for future use.
+The user authorized V6 review behavior and V7 sequential naming on 2026-09-27, then V9 Japanese catalog and restart behavior and V10 readable exam cards on 2026-09-28. The current authorized hashes are in `scripts/check-jlpt-approved-ui-lock.mjs` and `docs/checkpoints/JLPT_APPROVED_EXAM_UI_LOCKED_V10.md`. The V6 review still shows only correct, incorrect, or unanswered status and the correct option. Detailed explanations, source-page references, and listening transcripts remain hidden; preserve source data for future use.
 
 For N4/N5, the approved runner plays the recording continuously. Per-question audio timing is optional review metadata, not an integration gate. A candidate must still provide complete answerable questions, choices, answers, and its recording; do not substitute OCR placeholders for source text.
 

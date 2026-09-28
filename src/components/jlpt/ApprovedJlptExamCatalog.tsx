@@ -55,8 +55,18 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
     const count = choice.kind === 'structured' ? choice.exam.questions.length : undefined;
     const summary = summaries[choice.exam.id];
     const percent = summary?.latestTotal ? Math.round(summary.latestCorrect / summary.latestTotal * 100) : null;
-    return <Pressable key={choice.exam.id} accessibilityRole="button" onPress={() => setSelected(choice)} style={({ pressed }) => [styles.examRow, pressed && styles.pressed]}><View style={styles.copy}><Text style={styles.examTitle}>{choice.label}</Text><Text style={styles.count}>全{count}問 · 受験回数：{summary?.attempts ?? 0}回 · 正答率：{percent === null ? '—' : `${percent}%`}</Text></View><Text style={styles.chevron}>›</Text></Pressable>;
+    return <Pressable key={choice.exam.id} accessibilityRole="button" onPress={() => setSelected(choice)} style={({ pressed }) => [styles.examRow, pressed && styles.pressed]}>
+      <View style={styles.copy}>
+        <Text style={styles.examTitle}>{choice.label}</Text>
+        <Text style={styles.count}>全{count}問</Text>
+        <View style={styles.stats}>
+          <Text style={styles.stat}>受験回数：{summary?.attempts ?? 0}回</Text>
+          <Text style={styles.stat}>正答率：{percent === null ? '—' : `${percent}%`}</Text>
+        </View>
+      </View>
+      <Text style={styles.chevron}>›</Text>
+    </Pressable>;
   })}</JlptPaper></ScrollView></View>;
 }
 
-const styles = StyleSheet.create({screen:{flex:1,backgroundColor:JLPT_EXAM.color.page},content:{paddingVertical:12,paddingHorizontal:8,backgroundColor:JLPT_EXAM.color.page},heading:{fontFamily:JLPT_EXAM.font.content,fontSize:JLPT_EXAM.type.sectionTitle,lineHeight:31,color:JLPT_EXAM.color.ink,marginBottom:8},description:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:22,color:JLPT_EXAM.color.secondaryInk,marginBottom:20},examRow:{minHeight:92,flexDirection:'row',alignItems:'center',borderWidth:1,borderColor:JLPT_EXAM.color.divider,backgroundColor:JLPT_EXAM.color.paper,paddingHorizontal:16,paddingVertical:14,marginBottom:12},copy:{flex:1,minWidth:0},examTitle:{fontFamily:JLPT_EXAM.font.content,fontSize:18,lineHeight:26,color:JLPT_EXAM.color.ink},count:{fontFamily:JLPT_EXAM.font.interface,fontSize:13,lineHeight:19,color:JLPT_EXAM.color.secondaryInk,marginTop:2},chevron:{fontFamily:JLPT_EXAM.font.interface,fontSize:34,lineHeight:38,color:JLPT_EXAM.color.ink,marginLeft:12},pressed:{opacity:.62}});
+const styles = StyleSheet.create({screen:{flex:1,backgroundColor:JLPT_EXAM.color.page},content:{paddingVertical:12,paddingHorizontal:8,backgroundColor:JLPT_EXAM.color.page},heading:{fontFamily:JLPT_EXAM.font.content,fontSize:JLPT_EXAM.type.sectionTitle,lineHeight:31,color:JLPT_EXAM.color.ink,marginBottom:8},description:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:22,color:JLPT_EXAM.color.secondaryInk,marginBottom:20},examRow:{minHeight:112,flexDirection:'row',alignItems:'center',borderWidth:1,borderColor:JLPT_EXAM.color.divider,backgroundColor:JLPT_EXAM.color.paper,paddingHorizontal:16,paddingVertical:14,marginBottom:12},copy:{flex:1,minWidth:0},examTitle:{fontFamily:JLPT_EXAM.font.content,fontSize:18,lineHeight:26,color:JLPT_EXAM.color.ink},count:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.secondaryInk,marginTop:2},stats:{flexDirection:'row',flexWrap:'wrap',columnGap:12,rowGap:4,marginTop:8},stat:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.ink,flexGrow:1,flexBasis:110},chevron:{fontFamily:JLPT_EXAM.font.interface,fontSize:34,lineHeight:38,color:JLPT_EXAM.color.ink,marginLeft:12},pressed:{opacity:.62}});
