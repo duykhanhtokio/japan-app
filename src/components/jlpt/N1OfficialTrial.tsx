@@ -24,6 +24,7 @@ import type { TrialQuestion } from '@/data/jlpt-official/n1-2012-07-trial';
 import { JLPT_EXAM, type JlptFontScale } from '@/theme/jlpt-exam-design-system';
 import { clearJlptTrialSession, loadJlptTrialSession, saveJlptTrialSession, type N1TrialSession } from '@/services/jlpt-trial-session-storage';
 import { getJlptListeningStart } from '@/services/jlpt-listening-start-storage';
+import { loadJlptAttemptSummary, recordJlptAttempt } from '@/services/jlpt-exam-attempt-history';
 
 type Mode = 'exam' | 'practice';
 const CONTINUOUS_AUDIO_ID = '__full_listening_track__';
@@ -194,30 +195,15 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
     onExit();
   }
 
-  function resetLocalState() {
-    playbackGeneration.current += 1;
-    pendingAudioStart.current = false;
-    listeningPosition.current = 0;
-    lastSavedAudioSecond.current = 0;
-    player.pause();
-    setAnswers({});
-    setSubmitted(false);
-    setStarted(false);
-    setMode('exam');
-    setPlayedAudioSegments([]);
-    setAudioPlaying(false);
-    setReviewing(false);
-    setSubmittedAt(null);
-    setCurrentQuestion(questions[0].id);
-    setInitialScrollY(0);
-    scrollRef.current?.scrollTo({ y: 0, animated: false });
-  }
-
   function persist(overrides: Partial<Omit<N1TrialSession, 'version' | 'updatedAt'>> = {}) {
     return saveJlptTrialSession(exam.storageKey, { answers, mode, status: submitted ? reviewing ? 'reviewing' : 'submitted' : started ? 'in_progress' : 'not_started', started, submitted, currentQuestion, scrollY: initialScrollY, playedAudioSegments, listeningPositionMs: listeningPosition.current, submittedAt, result: submitted ? calculateResult(questions, answers) : null, ...overrides });
   }
 
   function begin() {
+    playbackGeneration.current += 1;
+    pendingAudioStart.current = false;
+    player.pause();
+    setAudioPlaying(false);
     setAnswers({});
     setSubmitted(false);
     setCurrentQuestion(questions[0].id);
@@ -227,14 +213,18 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
     lastSavedAudioSecond.current = 0;
     setPendingSession(null);
     setStarted(true);
+    setMode('exam');
     setCompletedSession(null);
-    void clearJlptTrialSession(exam.storageKey).then(() => saveJlptTrialSession(exam.storageKey, { answers: {}, mode, status: 'in_progress', started: true, submitted: false, currentQuestion: questions[0].id, scrollY: 0, playedAudioSegments: [], listeningPositionMs: 0, submittedAt: null, result: null }));
+    setReviewing(false);
+    setSubmittedAt(null);
+    scrollRef.current?.scrollTo({ y: 0, animated: false });
+    void clearJlptTrialSession(exam.storageKey).then(() => saveJlptTrialSession(exam.storageKey, { answers: {}, mode: 'exam', status: 'in_progress', started: true, submitted: false, currentQuestion: questions[0].id, scrollY: 0, playedAudioSegments: [], listeningPositionMs: 0, submittedAt: null, result: null }));
   }
 
   function continueSession() {
     if (!pendingSession) return;
     setAnswers(pendingSession.answers);
-    setMode(pendingSession.mode);
+    setMode('exam');
     setSubmitted(false);
     setCurrentQuestion(pendingSession.currentQuestion || questions[0].id);
     setInitialScrollY(pendingSession.scrollY);
@@ -242,6 +232,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
     listeningPosition.current = pendingSession.listeningPositionMs ?? 0;
     setPendingSession(null);
     setStarted(true);
+    void saveJlptTrialSession(exam.storageKey, { ...pendingSession, mode: 'exam' });
   }
 
   function requestRestartSavedSession() {
@@ -251,13 +242,8 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
   function confirmRestartSavedSession() {
     setRestartConfirmationVisible(false);
     setPendingSession(null);
-    resetLocalState();
-    void clearJlptTrialSession(exam.storageKey);
-  }
-
-  function selectMode(next: Mode) {
-    setMode(next);
-    void persist({ mode: next });
+    // Preserve a result created before attempt history existed, then go straight to question one.
+    void loadJlptAttemptSummary(exam.storageKey).then(begin);
   }
 
   function submit() {
@@ -271,7 +257,8 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
     setReviewing(false);
     const now = new Date().toISOString();
     setSubmittedAt(now);
-    void persist({ status: 'submitted', submitted: true, submittedAt: now, result: calculateResult(questions, answers) });
+    const result = calculateResult(questions, answers);
+    void persist({ status: 'submitted', submitted: true, submittedAt: now, result }).then(() => recordJlptAttempt(exam.storageKey, result, now));
   }
 
   function openCompleted(nextReviewing: boolean) {
@@ -317,15 +304,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
       <Text style={styles.trialName}>{exam.periodLabel}</Text>
       <View style={styles.rule} />
       <Text style={styles.startCopy}>全{questions.length}問を収録しています。提出後に正誤と正答を確認できます。</Text>
-      <Text style={styles.modeLabel}>受験モード</Text>
-      <Pressable accessibilityRole="radio" accessibilityState={{ checked: mode === 'exam' }} onPress={() => selectMode('exam')} style={[styles.modeRow, mode === 'exam' && styles.modeSelected]}>
-        <View style={[styles.radio, mode === 'exam' && styles.radioSelected]} />
-        <View style={styles.modeCopy}><Text style={styles.modeTitle}>試験モード</Text><Text style={styles.modeDescription}>聴解は保存した位置から最後まで一度だけ連続再生され、正答は提出後に確認できます。</Text></View>
-      </Pressable>
-      <Pressable accessibilityRole="radio" accessibilityState={{ checked: mode === 'practice' }} onPress={() => selectMode('practice')} style={[styles.modeRow, mode === 'practice' && styles.modeSelected]}>
-        <View style={[styles.radio, mode === 'practice' && styles.radioSelected]} />
-        <View style={styles.modeCopy}><Text style={styles.modeTitle}>練習モード</Text><Text style={styles.modeDescription}>聴解を保存した位置から連続再生し、一時停止・再開できます。正答は提出後に表示されます。</Text></View>
-      </Pressable>
+      <Text style={styles.startCopy}>聴解は連続再生されます。保存した位置から再開でき、正答は提出後に確認できます。</Text>
       <JlptActionButton label={exam.startLabel} onPress={begin} style={styles.startAction} />
       {completedSession ? <View style={styles.savedResult}>
         <Text style={styles.savedResultTitle}>提出済みの結果があります</Text>
@@ -339,7 +318,6 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
     {pendingSession ? <JlptResumePrompt
       visible={!restartConfirmationVisible}
       examName={`${exam.title}・${exam.periodLabel}`}
-      mode={pendingSession.mode}
       updatedAt={formatSavedAt(pendingSession.updatedAt)}
       answered={Object.keys(pendingSession.answers).length}
       total={questions.length}
@@ -361,7 +339,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
     <JlptExamHeader title={`${exam.level} · 試験結果`} subtitle={exam.periodLabel} onBack={exitExam} />
     <ScrollView contentContainerStyle={styles.resultPage}><JlptPaper>
       <Text style={styles.resultTitle}>試験結果</Text>
-      <Text style={styles.resultMode}>{mode === 'exam' ? '試験モード' : '練習モード'}　{formatSavedAt(submittedAt ?? '')}</Text>
+      <Text style={styles.resultMode}>{formatSavedAt(submittedAt ?? '')}</Text>
       <View style={styles.scoreGrid}>
         <ResultMetric label="正解" value={correctCount} tone="correct" />
         <ResultMetric label="不正解" value={wrongCount} tone="wrong" />
@@ -369,7 +347,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
         <ResultMetric label="正答率" value={`${Math.round((correctCount / questions.length) * 100)}%`} />
       </View>
       <Text style={styles.rawScore}>正答数：{correctCount}/{questions.length}</Text>
-      <View style={styles.notEligible}><Text style={styles.notEligibleTitle}>素点による結果</Text><Text style={styles.notEligibleText}>公式の尺度得点への換算式は公開されていないため、正答数のみを表示します。正答率をJLPT公式得点や合否に置き換えていません。{`\n`}Chỉ hiển thị số câu đúng; không tự quy đổi thành điểm hoặc kết luận đỗ/trượt chính thức.</Text></View>
+      <View style={styles.notEligible}><Text style={styles.notEligibleTitle}>素点による結果</Text><Text style={styles.notEligibleText}>公式の尺度得点への換算式は公開されていないため、正答数のみを表示します。正答率をJLPT公式得点や合否に置き換えていません。</Text></View>
       <JlptActionButton label="解答を確認する" onPress={() => { setReviewing(true); void persist({ status: 'reviewing' }); }} style={styles.resultAction} />
       <JlptActionButton kind="secondary" label="もう一度受験する" onPress={() => setRestartConfirmationVisible(true)} style={styles.resultAction} />
       <JlptActionButton kind="secondary" label="JLPT一覧へ戻る" onPress={exitExam} style={styles.resultAction} />
@@ -398,7 +376,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
   return <View style={styles.screen}>
     <JlptExamHeader title={`${exam.level} · JLPT模擬試験`} subtitle="日本語能力試験" onBack={exitExam} />
     <View style={styles.toolRow}>
-      <View><Text style={styles.progress}>{answeredIds.size}/{questions.length} 回答済み</Text><Text style={styles.modeIndicator}>{mode === 'exam' ? '試験モード' : '練習モード'}</Text></View>
+      <Text style={styles.progress}>{answeredIds.size}/{questions.length} 回答済み</Text>
       <JlptFontControls scale={fontScale} onSmaller={() => changeFont(-1)} onLarger={() => changeFont(1)} />
       <Pressable accessibilityRole="button" onPress={() => setNavigatorVisible(true)} style={styles.navigatorButton}><Text style={styles.navigatorButtonText}>問題一覧</Text></Pressable>
     </View>

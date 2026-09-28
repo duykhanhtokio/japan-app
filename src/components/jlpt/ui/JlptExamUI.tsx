@@ -85,12 +85,11 @@ export function JlptQuestionNavigator({ visible, labels, answered, current, onCh
   </Modal>;
 }
 
-export function JlptResumePrompt({ visible, examName, mode, updatedAt, answered, total, currentLabel, onContinue, onRestart, onCancel }: { visible: boolean; examName: string; mode: 'exam' | 'practice'; updatedAt: string; answered: number; total: number; currentLabel: string; onContinue: () => void; onRestart: () => void; onCancel: () => void }) {
+export function JlptResumePrompt({ visible, examName, updatedAt, answered, total, currentLabel, onContinue, onRestart, onCancel }: { visible: boolean; examName: string; updatedAt: string; answered: number; total: number; currentLabel: string; onContinue: () => void; onRestart: () => void; onCancel: () => void }) {
   return <Modal visible={visible} transparent animationType="fade" onRequestClose={onCancel}>
     <View style={s.confirmShade}><View accessibilityRole="alert" style={s.resumePanel}>
       <Text style={s.confirmTitle}>前回の続きがあります</Text>
       <Text style={s.resumeExam}>{examName}</Text>
-      <Text style={s.confirmLine}>モード：{mode === 'exam' ? '試験モード' : '練習モード'}</Text>
       <Text style={s.confirmLine}>保存日時：{updatedAt}</Text>
       <Text style={s.confirmLine}>回答済み：{answered}/{total}</Text>
       <Text style={s.confirmLine}>前回の位置：{currentLabel}</Text>

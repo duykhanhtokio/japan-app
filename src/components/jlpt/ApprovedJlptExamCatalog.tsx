@@ -7,20 +7,31 @@ import { JlptExamHeader, JlptPaper } from '@/components/jlpt/ui/JlptExamUI';
 import type { JlptLevel } from '@/data/jlpt-learning';
 import { APPROVED_N1_EXAMS, type ApprovedN1Exam } from '@/data/jlpt-official/approved-n1-exams';
 import { JLPT_EXAM } from '@/theme/jlpt-exam-design-system';
+import { loadJlptAttemptSummary, type JlptAttemptSummary } from '@/services/jlpt-exam-attempt-history';
 
 type Choice = { kind: 'structured'; exam: ApprovedN1Exam; label: string };
 
 export default function ApprovedJlptExamCatalog({ level, onBack }: { level: JlptLevel; onBack: () => void }) {
   const navigation = useNavigation();
   const [selected, setSelected] = useState<Choice | null>(null);
+  const [summaries, setSummaries] = useState<Record<string, JlptAttemptSummary>>({});
   const activeExamExit = useRef<(() => void) | null>(null);
   const choices = useMemo<Choice[]>(() => {
     const structured: Choice[] = APPROVED_N1_EXAMS.filter((exam) => exam.level === level).map((exam, index) => {
-      const label = `Đề số ${index + 1}`;
-      return { kind: 'structured' as const, label, exam: { ...exam, periodLabel: label, startLabel: `Bắt đầu ${label.toLowerCase()}` } };
+      const label = `第${index + 1}回`;
+      return { kind: 'structured' as const, label, exam: { ...exam, periodLabel: label, startLabel: '試験を始める' } };
     });
     return structured;
   }, [level]);
+
+  useEffect(() => {
+    if (selected) return;
+    let active = true;
+    void Promise.all(choices.map(async ({ exam }) => [exam.id, await loadJlptAttemptSummary(exam.storageKey)] as const)).then((entries) => {
+      if (active) setSummaries(Object.fromEntries(entries));
+    });
+    return () => { active = false; };
+  }, [choices, selected]);
 
   useEffect(() => {
     if (!selected) return;
@@ -40,9 +51,11 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
   }), [navigation, selected]);
 
   if (selected?.kind === 'structured') return <N1OfficialTrial exam={selected.exam} onExit={() => { activeExamExit.current = null; setSelected(null); }} registerExit={(handler) => { activeExamExit.current = handler; }} />;
-  return <View style={styles.screen}><JlptExamHeader title={`${level} · Danh sách đề`} subtitle="Chọn đề để làm bài" onBack={onBack} /><ScrollView contentContainerStyle={styles.content}><JlptPaper><Text style={styles.heading}>Danh sách đề</Text><Text style={styles.description}>Các đề đã sẵn sàng để làm trực tiếp trên ứng dụng.</Text>{choices.map((choice) => {
+  return <View style={styles.screen}><JlptExamHeader title={`${level} · 模擬試験一覧`} subtitle="受験する試験を選択" onBack={onBack} /><ScrollView contentContainerStyle={styles.content}><JlptPaper><Text style={styles.heading}>模擬試験一覧</Text><Text style={styles.description}>受験する試験を選んでください。</Text>{choices.map((choice) => {
     const count = choice.kind === 'structured' ? choice.exam.questions.length : undefined;
-    return <Pressable key={choice.exam.id} accessibilityRole="button" onPress={() => setSelected(choice)} style={({ pressed }) => [styles.examRow, pressed && styles.pressed]}><View style={styles.copy}><Text style={styles.examTitle}>{choice.label}</Text>{count ? <Text style={styles.count}>Tổng số câu: {count}</Text> : null}</View><Text style={styles.chevron}>›</Text></Pressable>;
+    const summary = summaries[choice.exam.id];
+    const percent = summary?.latestTotal ? Math.round(summary.latestCorrect / summary.latestTotal * 100) : null;
+    return <Pressable key={choice.exam.id} accessibilityRole="button" onPress={() => setSelected(choice)} style={({ pressed }) => [styles.examRow, pressed && styles.pressed]}><View style={styles.copy}><Text style={styles.examTitle}>{choice.label}</Text><Text style={styles.count}>全{count}問 · 受験回数：{summary?.attempts ?? 0}回 · 正答率：{percent === null ? '—' : `${percent}%`}</Text></View><Text style={styles.chevron}>›</Text></Pressable>;
   })}</JlptPaper></ScrollView></View>;
 }
 
