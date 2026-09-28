@@ -22,7 +22,6 @@ export const ROYAL_LAYOUT = {
   hudControlMinHeight: 58,
   homeEdgeGap: 8,
   homeHudHeight: 170,
-  homeBalancedHudHeight: 140,
   homeHudTopRowHeight: 78,
   homeAvatarSize: 72,
   homeCoinWidth: 112,

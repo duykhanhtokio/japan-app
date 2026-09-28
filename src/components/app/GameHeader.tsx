@@ -15,7 +15,10 @@ export default function GameHeader({name='プレイヤー',abilityLevel='N5',abi
  if(variant==='study') return <View style={s.studyContainer}>
   <View style={s.studyTop}>
    <Pressable accessibilityRole="button" accessibilityLabel="戻る" onPress={onBack??(()=>router.back())} style={s.studyBack}><Text style={s.studyBackText}>‹</Text></Pressable>
-   <Pressable accessibilityRole="button" accessibilityLabel={`${name}のプロフィール`} onPress={()=>onProfile?onProfile():router.push('/profile')} style={s.studyIdentity}><Text numberOfLines={1} style={s.studyName}>{name}</Text><Text style={s.studySubtitle}>学習状況</Text></Pressable>
+   <Pressable accessibilityRole="button" accessibilityLabel={`${name}のプロフィール`} onPress={()=>onProfile?onProfile():router.push('/profile')} style={s.studyIdentity}>
+    <Image source={HUD_PLAYER} resizeMode="contain" style={s.studyAvatar}/>
+    <View style={s.studyIdentityText}><Text numberOfLines={1} style={s.studyName}>{name}</Text><Text style={s.studySubtitle}>学習状況</Text></View>
+   </Pressable>
    <View accessibilityLabel={`コイン ${coins}`} style={s.studyCoins}><Image source={HUD_COIN} resizeMode="contain" style={s.studyCoinIcon}/><Text numberOfLines={1} style={s.studyCoinValue}>{coins.toLocaleString()}</Text></View>
   </View>
   <View style={s.studyMetrics}>
@@ -43,7 +46,8 @@ function clamp01(value:number){return Math.min(1,Math.max(0,Number.isFinite(valu
 function StudyMetric({label,value,ratio}:{label:string;value:string;ratio:number}){
  const percentage=Math.round(clamp01(ratio)*100);
  return <View style={s.studyMetric}>
-  <View style={s.studyMetricCopy}><Text style={s.studyMetricLabel}>{label}</Text><Text style={s.studyMetricValue}>{value}</Text><Text style={s.studyMetricPercent}>{percentage}%</Text></View>
+  <View style={s.studyMetricHeading}><Text numberOfLines={1} style={s.studyMetricLabel}>{label}</Text><Text style={s.studyMetricPercent}>{percentage}%</Text></View>
+  <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.85} style={s.studyMetricValue}>{value}</Text>
   <View style={s.studyTrack}><View style={[s.studyFill,{width:`${percentage}%`}]}/></View>
  </View>;
 }
@@ -57,23 +61,24 @@ function EnergyBar({label,value,ratio,tint}:{label:string;value:string;ratio:num
 }
 
 const s=StyleSheet.create({
- studyContainer:{width:'100%',height:ROYAL_LAYOUT.homeBalancedHudHeight,paddingTop:5,paddingBottom:10,borderBottomWidth:1,borderBottomColor:'#c9c1b4'},
- studyTop:{minHeight:52,flexDirection:'row',alignItems:'center',gap:10},
- studyBack:{width:42,height:42,borderRadius:14,borderWidth:1,borderColor:'#b9aa87',backgroundColor:'#f5f0e6',alignItems:'center',justifyContent:'center'},
- studyBackText:{color:'#273947',fontSize:30,lineHeight:34,marginTop:-3},
- studyIdentity:{flex:1,minWidth:0,justifyContent:'center'},
- studyName:{color:'#253847',fontFamily:ROYAL_FONT.heading,fontSize:18,lineHeight:24},
- studySubtitle:{color:'#68655d',fontFamily:ROYAL_FONT.body,fontSize:11,lineHeight:16},
- studyCoins:{minWidth:66,maxWidth:105,minHeight:38,flexDirection:'row',alignItems:'center',justifyContent:'center',gap:4,paddingHorizontal:8,borderWidth:1,borderRadius:12,borderColor:'#b9aa87',backgroundColor:'#f5f0e6'},
- studyCoinIcon:{width:20,height:20},studyCoinValue:{flexShrink:1,color:'#514124',fontFamily:ROYAL_FONT.heading,fontSize:14,lineHeight:20},
- studyMetrics:{flexDirection:'row',gap:8,marginTop:10},
- studyMetric:{flex:1,minWidth:0,minHeight:61,paddingHorizontal:10,paddingVertical:8,borderRadius:12,backgroundColor:'#f5f0e6',borderWidth:1,borderColor:'#c9c1b4'},
- studyMetricCopy:{flexDirection:'row',alignItems:'center',justifyContent:'space-between',flexWrap:'wrap',columnGap:4},
- studyMetricLabel:{color:'#273947',fontFamily:ROYAL_FONT.body,fontSize:11,lineHeight:17},
- studyMetricValue:{color:'#273947',fontFamily:ROYAL_FONT.heading,fontSize:11,lineHeight:17},
- studyMetricPercent:{color:'#625d53',fontFamily:ROYAL_FONT.body,fontSize:10,lineHeight:16},
- studyTrack:{height:5,borderRadius:3,backgroundColor:'#d3cabc',overflow:'hidden',marginTop:6},
- studyFill:{height:'100%',backgroundColor:'#567864',borderRadius:3},
+ studyContainer:{width:'100%',paddingHorizontal:10,paddingTop:8,paddingBottom:10,borderWidth:1,borderRadius:16,borderColor:ROYAL.gold,backgroundColor:ROYAL.lacquer,shadowColor:'#07101f',shadowOpacity:.24,shadowRadius:8,shadowOffset:{width:0,height:4},elevation:4},
+ studyTop:{minHeight:48,flexDirection:'row',alignItems:'center',gap:8},
+ studyBack:{width:40,height:40,borderRadius:12,borderWidth:1,borderColor:ROYAL.gold,backgroundColor:ROYAL.lacquerLight,alignItems:'center',justifyContent:'center'},
+ studyBackText:{color:ROYAL.paleGold,fontSize:29,lineHeight:33,marginTop:-3},
+ studyIdentity:{flex:1,minWidth:0,flexDirection:'row',alignItems:'center',gap:6},
+ studyAvatar:{width:38,height:38},studyIdentityText:{flex:1,minWidth:0},
+ studyName:{color:ROYAL.white,fontFamily:ROYAL_FONT.heading,fontSize:17,lineHeight:23},
+ studySubtitle:{color:ROYAL.paleGold,fontFamily:ROYAL_FONT.body,fontSize:10,lineHeight:15},
+ studyCoins:{minWidth:66,maxWidth:98,minHeight:36,flexDirection:'row',alignItems:'center',justifyContent:'center',gap:3,paddingHorizontal:5,borderWidth:1,borderRadius:11,borderColor:ROYAL.gold,backgroundColor:ROYAL.lacquerLight},
+ studyCoinIcon:{width:19,height:19},studyCoinValue:{flexShrink:1,color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:13,lineHeight:19},
+ studyMetrics:{flexDirection:'row',gap:8,marginTop:8},
+ studyMetric:{flex:1,minWidth:0,paddingHorizontal:9,paddingTop:6,paddingBottom:7,borderRadius:11,backgroundColor:ROYAL.lacquerLight,borderWidth:1,borderColor:'rgba(203,165,90,.6)'},
+ studyMetricHeading:{flexDirection:'row',alignItems:'center',justifyContent:'space-between',gap:4},
+ studyMetricLabel:{flexShrink:1,color:ROYAL.white,fontFamily:ROYAL_FONT.body,fontSize:10,lineHeight:15},
+ studyMetricValue:{color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:11,lineHeight:17},
+ studyMetricPercent:{color:ROYAL.paleGold,fontFamily:ROYAL_FONT.body,fontSize:10,lineHeight:15},
+ studyTrack:{height:5,borderRadius:3,backgroundColor:'rgba(255,255,255,.22)',overflow:'hidden',marginTop:5},
+ studyFill:{height:'100%',backgroundColor:ROYAL.gold,borderRadius:3},
  container:{width:'100%',height:ROYAL_LAYOUT.homeHudHeight,zIndex:100},
  topRow:{height:ROYAL_LAYOUT.homeHudTopRowHeight,flexDirection:'row',alignItems:'center',gap:4},
  profile:{flex:1,minWidth:0,height:'100%',position:'relative',justifyContent:'center'},
