@@ -30,7 +30,7 @@ export default function GameHeader({name='プレイヤー',abilityLevel='N5',abi
   const artworkHeight=topWidth*757/2078;
   const plaqueHeight=topWidth*(538-184)/2078;
   const artworkTop=(ROYAL_LAYOUT.homeHudTopRowHeight-plaqueHeight)/2-topWidth*184/2078;
-  return <View style={s.container}>
+  return <View style={[s.container,s.approvedContainer]}>
    <View style={s.approvedTopRow}>
     <RoyalBackButton onPress={onBack??goBackOrHome}/>
     <View onLayout={event=>setTopWidth(Math.round(event.nativeEvent.layout.width))} style={s.approvedTopBody}>
@@ -45,7 +45,7 @@ export default function GameHeader({name='プレイヤー',abilityLevel='N5',abi
      </Pressable>
     </View>
    </View>
-   <View style={s.energyStack}>
+   <View style={[s.energyStack,s.approvedEnergyStack]}>
     <EnergyBar label="日本語能力" value={`${abilityLevel} / ${abilityTarget}`} ratio={abilityRatio} tint={ROYAL.gold} large/>
     <EnergyBar label="CREDIT" value={conversationCredits.toLocaleString()} ratio={creditRatio} tint="#d96379" large/>
    </View>
@@ -92,7 +92,7 @@ function StudyMetric({label,value,ratio}:{label:string;value:string;ratio:number
 }
 function EnergyBar({label,value,ratio,tint,large=false}:{label:string;value:string;ratio:number;tint:string;large?:boolean}){
  const percentage=Math.round(clamp01(ratio)*100);
- return <ImageBackground source={HUD_NAVY} resizeMode="stretch" style={s.energyFrame}>
+ return <ImageBackground source={HUD_NAVY} resizeMode="stretch" style={[s.energyFrame,large&&s.approvedEnergyFrame]}>
   <View style={[s.energyCopy,large&&s.energyCopyLarge]}><Text numberOfLines={1} maxFontSizeMultiplier={1} style={[s.energyLabel,large&&s.energyLabelLarge]}>{label}</Text><Text numberOfLines={1} maxFontSizeMultiplier={1} style={[s.energyValue,large&&s.energyValueLarge]}>{value}</Text></View>
   <View style={s.track}><View style={[s.fillClip,{width:`${Math.max(2,percentage)}%`}]}><Image source={HUD_FILL} resizeMode="stretch" tintColor={tint} style={s.fillImage}/></View></View>
   <Text numberOfLines={1} maxFontSizeMultiplier={1} style={[s.percent,large&&s.percentLarge]}>{percentage}%</Text>
@@ -129,6 +129,7 @@ const s=StyleSheet.create({
  studyTrack:{height:5,borderRadius:3,backgroundColor:'rgba(255,255,255,.22)',overflow:'hidden',marginTop:5},
  studyFill:{height:'100%',backgroundColor:ROYAL.gold,borderRadius:3},
  container:{width:'100%',height:ROYAL_LAYOUT.homeHudHeight,zIndex:100},
+ approvedContainer:{height:208},
  topRow:{height:ROYAL_LAYOUT.homeHudTopRowHeight,flexDirection:'row',alignItems:'center',gap:4},
  profile:{flex:1,minWidth:0,height:'100%',position:'relative',justifyContent:'center'},
  nameFrame:{height:58,marginLeft:48,justifyContent:'center',paddingLeft:38,paddingRight:25,paddingVertical:14},
@@ -138,7 +139,9 @@ const s=StyleSheet.create({
  coinFrame:{flex:1,flexDirection:'row',alignItems:'center',justifyContent:'center',paddingHorizontal:21,gap:4},
  coinIcon:{width:25,height:25,flexShrink:0},coinValue:{flex:1,minWidth:0,color:ROYAL.darkGold,fontFamily:ROYAL_FONT.heading,fontSize:14,lineHeight:19,textAlign:'center',includeFontPadding:false},
  energyStack:{flex:1,gap:2},
+ approvedEnergyStack:{flex:0,height:130},
  energyFrame:{flex:1,minHeight:44,flexDirection:'row',alignItems:'center',paddingHorizontal:24,paddingVertical:10,gap:7},
+ approvedEnergyFrame:{flex:0,height:64,minHeight:64},
  energyCopy:{width:126,flexDirection:'row',alignItems:'center',gap:5},
  energyCopyLarge:{width:136},
  energyLabel:{flexShrink:1,color:'#fff8e8',fontFamily:ROYAL_FONT.body,fontSize:11.5,lineHeight:16,textShadowColor:'#000',textShadowOffset:{width:0,height:1},textShadowRadius:2},
