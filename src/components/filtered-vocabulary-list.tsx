@@ -26,8 +26,8 @@ export function FilteredVocabularyList({
 }: Props) {
     return (
         <SafeAreaView style={styles.container}>
+            <View style={styles.header}><RoyalBackButton onPress={() => router.back()} /></View>
             <ScrollView contentContainerStyle={styles.content}>
-                <RoyalBackButton onPress={() => router.back()} />
 
                 <Text style={styles.smallTitle}>
                     {typeLabel}
@@ -86,6 +86,13 @@ export function FilteredVocabularyList({
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: '#e8e2d6',
+    },
+
+    header: {
+        paddingHorizontal: 24,
+        paddingTop: 8,
+        paddingBottom: 6,
         backgroundColor: '#e8e2d6',
     },
 
