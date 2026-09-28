@@ -13,7 +13,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import BottomNav from '@/components/app/BottomNav';
 import GameHeader from '@/components/app/GameHeader';
-import { RoyalBackButton } from '@/components/ui/RoyalSurface';
 import { getGameProgress } from '@/services/progress-storage';
 import { getJlptProgress } from '@/services/jlpt-progress-storage';
 import { generatedGrammar, generatedVocabulary } from '@/data/jlpt-learning';
@@ -140,11 +139,11 @@ const levels: LevelItem[] = [
 
 export default function LearnScreen() {
     const [runtimeLevels, setRuntimeLevels] = useState(levels);
-    const [stats, setStats] = useState({ xp: 0, coins: 0, diamonds: 0 });
+    const [stats, setStats] = useState({ xp: 0, coins: 0, conversationCredits: 0 });
 
     useEffect(() => {
         void Promise.all([getGameProgress(), getJlptProgress()]).then(([game, learning]) => {
-            setStats({ xp: game.stats.xp, coins: game.stats.coins, diamonds: game.stats.diamonds });
+            setStats({ xp: game.stats.xp, coins: game.stats.coins, conversationCredits: game.stats.conversationCredits });
             setRuntimeLevels(levels.map((item) => {
                 const levelIds = new Set([
                     ...generatedVocabulary.filter((entry) => entry.jlpt === item.level).map((entry) => entry.id),
@@ -197,16 +196,11 @@ export default function LearnScreen() {
 
                     <GameHeader
                         name="Haruto"
-                        level={12}
-                        xpCurrent={stats.xp}
-                        xpMax={5000}
+                        variant="study"
+                        abilityProgress={(stats.xp % 1000) / 1000}
+                        conversationCredits={stats.conversationCredits}
                         coins={stats.coins}
-                        diamonds={stats.diamonds}
                     />
-
-                    {/* BACK */}
-
-                    <RoyalBackButton onPress={() => router.back()} />
 
                     {/* TITLE */}
 
@@ -487,7 +481,7 @@ export default function LearnScreen() {
                     </ScrollView>
                 </View>
 
-                <BottomNav active="home" />
+                <BottomNav active="home" variant="study" />
             </SafeAreaView>
         </View>
     );
