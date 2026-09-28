@@ -6,7 +6,7 @@ import path from 'node:path';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const locked = new Map([
   ['src/app/[level]/[section].tsx', '4a4e0e1da02cb5b08d8e2309a441a9746c22dab280c97e0097ca32898b0d74c1'],
-  ['src/components/jlpt/N1OfficialTrial.tsx', '6220f1a439f4e454e95d34f31f1b7a24e61c533fc8709aec7152ef1c9a4bbe78'],
+  ['src/components/jlpt/N1OfficialTrial.tsx', '4a3abbc76b089cfaaf6835e64e85e2eac0e1264d79dd7667eb685c4a1be3cb31'],
   ['src/components/jlpt/N1ExamPicker.tsx', '6c8676b97d12d3da6fe36f5fde28adb1833bcb7208628c00dc61f1b9c5c55098'],
   ['src/components/jlpt/ui/JlptExamUI.tsx', 'e1b9298d38229bb8004051b2aee4cb66471ea49205fed7e5b22bbf8aba7ebca0'],
   ['src/services/jlpt-trial-session-storage.ts', 'ea21a8b371feeea3453cd10c5247bcb072c92f2ef5b4c5309d83df3392d1d7e1'],

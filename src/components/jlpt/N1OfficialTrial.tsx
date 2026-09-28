@@ -181,7 +181,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
     void persist({ listeningPositionMs: listeningPosition.current });
   }
 
-  async function exitExam() {
+  function exitExam() {
     if (exitInProgress.current) return;
     exitInProgress.current = true;
     playbackGeneration.current += 1;
@@ -189,9 +189,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
     if (audioPlaying) listeningPosition.current = Math.max(listeningPosition.current, Math.round(player.currentTime * 1000));
     player.pause();
     setAudioPlaying(false);
-    if (started && !submitted) {
-      try { await persist({ listeningPositionMs: listeningPosition.current }); } catch { /* Keep the last periodic save. */ }
-    }
+    if (started && !submitted) void persist({ listeningPositionMs: listeningPosition.current }).catch(() => { /* Keep the last periodic save. */ });
     onExit();
   }
 
@@ -324,7 +322,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
       currentLabel={`${questionPositionLabel(questions, pendingSession.currentQuestion)}${pendingSession.listeningPositionMs ? `・聴解 ${formatListeningPosition(pendingSession.listeningPositionMs)} から再開できます` : ''}`}
       onContinue={continueSession}
       onRestart={requestRestartSavedSession}
-      onCancel={() => setPendingSession(null)}
+      onCancel={exitExam}
     /> : null}
     <JlptRestartConfirmation visible={restartConfirmationVisible} onCancel={() => setRestartConfirmationVisible(false)} onConfirm={confirmRestartSavedSession} />
   </View>;
