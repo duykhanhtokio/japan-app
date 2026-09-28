@@ -21,14 +21,15 @@ function abilityPair(raw:string){const level=raw||'N5',next:Record<string,string
 export default function HomeScreen(){
  const [headerHeight,setHeaderHeight]=useState(0),[navHeight,setNavHeight]=useState(0),[stats,setStats]=useState(EMPTY_STATS),{profile,reloadProfile}=useUserProfile(),insets=useSafeAreaInsets(),royal=useRoyalPositioning();
  useFocusEffect(useCallback(()=>{let active=true;void Promise.all([getGameProgress(),reloadProfile()]).then(([progress])=>{if(active)setStats(progress.stats)}).catch(error=>console.log('Load home progress error:',error));return()=>{active=false}},[reloadProfile]));
- const edgeInset=Math.max(insets.top,insets.bottom)+ROYAL_LAYOUT.homeEdgeGap;
+ const topInset=Math.max(insets.top,insets.bottom)+ROYAL_LAYOUT.homeEdgeGap;
+ const bottomInset=Math.max(insets.bottom,8);
  const ability=abilityPair(profile.level);
- const cardHeight=useMemo(()=>{const usable=royal.height-edgeInset*2-headerHeight-navHeight-ROYAL_LAYOUT.homeHeadingHeight-ROYAL_LAYOUT.homeModeGap*3;return Math.max(124,Math.min(178,Math.floor(usable/3)))},[edgeInset,royal.height,headerHeight,navHeight]);
+ const cardHeight=useMemo(()=>{const usable=royal.height-topInset-bottomInset-headerHeight-navHeight-ROYAL_LAYOUT.homeHeadingHeight-20-ROYAL_LAYOUT.homeModeGap*3;return Math.max(124,Math.min(160,Math.floor(usable/3)))},[topInset,bottomInset,royal.height,headerHeight,navHeight]);
  return <ImageBackground source={require('../../assets/app/home/home-bg.jpg')} style={styles.background} resizeMode="cover"><View pointerEvents="none" style={styles.overlay}/>
-  <View style={[styles.screen,{paddingTop:edgeInset,paddingBottom:edgeInset}]}>
+  <View style={[styles.screen,{paddingTop:topInset,paddingBottom:bottomInset}]}>
    <View style={styles.content}>
     <View onLayout={event=>setHeaderHeight(Math.ceil(event.nativeEvent.layout.height))}><GameHeader variant="approved" name={profile.name?.trim()||'プレイヤー'} abilityLevel={ability.level} abilityTarget={ability.target} abilityProgress={(stats.xp%1000)/1000} conversationCredits={stats.conversationCredits} coins={stats.coins}/></View>
-    <View style={styles.headingArea}><Text style={styles.heading}>学習モード</Text><Text style={styles.headingVi}>Chọn nội dung bạn muốn học</Text></View>
+    <View style={[styles.headingArea,{height:ROYAL_LAYOUT.homeHeadingHeight+20}]}><Text style={styles.heading}>学習モード</Text><Text style={styles.headingVi}>Chọn nội dung bạn muốn học</Text></View>
     <View style={[styles.cards,{gap:ROYAL_LAYOUT.homeModeGap}]}>{MODES.map(mode=><LearningImageCard key={mode.ja} {...mode} height={cardHeight} onPress={()=>router.push(mode.route)}/>)}</View>
    </View>
    <View onLayout={event=>setNavHeight(Math.ceil(event.nativeEvent.layout.height))}><BottomNav active="home" variant="approved"/></View>
