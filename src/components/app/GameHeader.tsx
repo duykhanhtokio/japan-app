@@ -10,11 +10,16 @@ const HUD_FILL=require('../../../assets/app/ui/royal-af/map-marker-fill-v1.png')
 
 type Props={name?:string;abilityLevel?:string;abilityTarget?:string;abilityProgress?:number;conversationCredits?:number;conversationCreditMax?:number;coins?:number;onProfile?:()=>void;onCoins?:()=>void;onBack?:()=>void;variant?:'royal'|'study';level?:number;xpCurrent?:number;xpMax?:number;diamonds?:number;onDiamonds?:()=>void;onSettings?:()=>void};
 
+function goBackOrHome(){
+ if(router.canGoBack()) router.back();
+ else router.replace('/home');
+}
+
 export default function GameHeader({name='プレイヤー',abilityLevel='N5',abilityTarget='N4',abilityProgress=0,conversationCredits=0,conversationCreditMax=100,coins=0,onProfile,onCoins,onBack,variant='royal'}:Props){
  const abilityRatio=clamp01(abilityProgress),creditRatio=conversationCreditMax>0?clamp01(conversationCredits/conversationCreditMax):0;
  if(variant==='study') return <View style={s.studyContainer}>
   <View style={s.studyTop}>
-   <Pressable accessibilityRole="button" accessibilityLabel="戻る" onPress={onBack??(()=>router.back())} style={s.studyBack}><Text style={s.studyBackText}>‹</Text></Pressable>
+   <Pressable accessibilityRole="button" accessibilityLabel="戻る" onPress={onBack??goBackOrHome} style={s.studyBack}><Text style={s.studyBackText}>‹</Text></Pressable>
    <Pressable accessibilityRole="button" accessibilityLabel={`${name}のプロフィール`} onPress={()=>onProfile?onProfile():router.push('/profile')} style={s.studyIdentity}>
     <Image source={HUD_PLAYER} resizeMode="contain" style={s.studyAvatar}/>
     <View style={s.studyIdentityText}><Text numberOfLines={1} style={s.studyName}>{name}</Text><Text style={s.studySubtitle}>学習状況</Text></View>
@@ -28,7 +33,7 @@ export default function GameHeader({name='プレイヤー',abilityLevel='N5',abi
  </View>;
  return <View style={s.container}>
   <View style={s.topRow}>
-   <RoyalBackButton onPress={onBack??(()=>router.back())}/>
+   <RoyalBackButton onPress={onBack??goBackOrHome}/>
    <Pressable accessibilityRole="button" accessibilityLabel={name} onPress={()=>onProfile?onProfile():router.push('/profile')} style={({pressed})=>[s.profile,pressed&&s.pressed]}>
     <ImageBackground source={HUD_IVORY} resizeMode="stretch" style={s.nameFrame}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} minimumFontScale={.68} style={s.name}>{name}</Text></ImageBackground>
     <Image source={HUD_PLAYER} resizeMode="contain" style={s.avatar}/>
