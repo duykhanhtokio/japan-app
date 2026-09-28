@@ -23,15 +23,15 @@ export default function HomeScreen(){
  useFocusEffect(useCallback(()=>{let active=true;void Promise.all([getGameProgress(),reloadProfile()]).then(([progress])=>{if(active)setStats(progress.stats)}).catch(error=>console.log('Load home progress error:',error));return()=>{active=false}},[reloadProfile]));
  const edgeInset=Math.max(insets.top,insets.bottom)+ROYAL_LAYOUT.homeEdgeGap;
  const ability=abilityPair(profile.level);
- const cardHeight=useMemo(()=>{const usable=royal.height-edgeInset*2-ROYAL_LAYOUT.homeHudHeight-ROYAL_LAYOUT.homeBottomNavHeight-ROYAL_LAYOUT.homeHeadingHeight-ROYAL_LAYOUT.homeModeGap*2;return Math.max(124,Math.min(178,Math.floor(usable/3)))},[edgeInset,royal.height]);
+ const cardHeight=useMemo(()=>{const usable=royal.height-edgeInset*2-ROYAL_LAYOUT.homeBalancedHudHeight-ROYAL_LAYOUT.homeBalancedBottomNavHeight-ROYAL_LAYOUT.homeHeadingHeight-ROYAL_LAYOUT.homeModeGap*3;return Math.max(124,Math.min(178,Math.floor(usable/3)))},[edgeInset,royal.height]);
  return <ImageBackground source={require('../../assets/app/home/home-bg.jpg')} style={styles.background} resizeMode="cover"><View pointerEvents="none" style={styles.overlay}/>
   <View style={[styles.screen,{paddingTop:edgeInset,paddingBottom:edgeInset}]}>
    <View style={styles.content}>
-    <GameHeader name={profile.name?.trim()||'プレイヤー'} abilityLevel={ability.level} abilityTarget={ability.target} abilityProgress={(stats.xp%1000)/1000} conversationCredits={stats.conversationCredits} coins={stats.coins}/>
+    <GameHeader variant="study" name={profile.name?.trim()||'プレイヤー'} abilityLevel={ability.level} abilityTarget={ability.target} abilityProgress={(stats.xp%1000)/1000} conversationCredits={stats.conversationCredits} coins={stats.coins}/>
     <View style={styles.headingArea}><Text style={styles.heading}>学習モード</Text><Text style={styles.headingVi}>Chọn nội dung bạn muốn học</Text></View>
     <View style={[styles.cards,{gap:ROYAL_LAYOUT.homeModeGap}]}>{MODES.map(mode=><LearningImageCard key={mode.ja} {...mode} height={cardHeight} onPress={()=>router.push(mode.route)}/>)}</View>
    </View>
-   <BottomNav active="home"/>
+   <BottomNav active="home" variant="study"/>
   </View>
  </ImageBackground>
 }

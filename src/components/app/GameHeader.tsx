@@ -57,7 +57,7 @@ function EnergyBar({label,value,ratio,tint}:{label:string;value:string;ratio:num
 }
 
 const s=StyleSheet.create({
- studyContainer:{width:'100%',paddingTop:5,paddingBottom:10,borderBottomWidth:1,borderBottomColor:'#c9c1b4'},
+ studyContainer:{width:'100%',height:ROYAL_LAYOUT.homeBalancedHudHeight,paddingTop:5,paddingBottom:10,borderBottomWidth:1,borderBottomColor:'#c9c1b4'},
  studyTop:{minHeight:52,flexDirection:'row',alignItems:'center',gap:10},
  studyBack:{width:42,height:42,borderRadius:14,borderWidth:1,borderColor:'#b9aa87',backgroundColor:'#f5f0e6',alignItems:'center',justifyContent:'center'},
  studyBackText:{color:'#273947',fontSize:30,lineHeight:34,marginTop:-3},
