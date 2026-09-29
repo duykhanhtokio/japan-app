@@ -91,7 +91,7 @@ export default function FarmWorld({
     }
 
     /*
-     * The source artwork always fills the viewport width.
+     * The source artwork fits inside the viewport without cropping.
      *
      * Both the bitmap and every FarmPlot use the exact same:
      * - scale
@@ -101,9 +101,8 @@ export default function FarmWorld({
      * No percentage layout is involved.
      */
     const scale =
-        viewport.width > 0
-            ? viewport.width /
-              SOURCE_WIDTH
+        viewport.width > 0 && viewport.height > 0
+            ? Math.min(viewport.width / SOURCE_WIDTH, viewport.height / SOURCE_HEIGHT)
             : 1;
 
     const renderedWidth =
@@ -154,7 +153,7 @@ export default function FarmWorld({
                 source={
                     VEGETABLE_BACKGROUND
                 }
-                resizeMode="stretch"
+                resizeMode="contain"
                 style={[
                     styles.artwork,
                     {

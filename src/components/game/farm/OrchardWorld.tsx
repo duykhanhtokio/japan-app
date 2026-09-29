@@ -1,9 +1,13 @@
 import {
+    Image,
+    LayoutChangeEvent,
     Pressable,
     StyleSheet,
     Text,
     View,
 } from 'react-native';
+
+import { useState } from 'react';
 
 import type {
     OrchardPlotState,
@@ -31,31 +35,13 @@ type OrchardWorldProps = {
         ) => void;
 };
 
+const ART_WIDTH = 941;
+const ART_HEIGHT = 1672;
 const ORCHARD_POSITIONS = [
-    {
-        left:
-            '20%',
-        top:
-            '42%',
-    },
-    {
-        left:
-            '53%',
-        top:
-            '42%',
-    },
-    {
-        left:
-            '20%',
-        top:
-            '67%',
-    },
-    {
-        left:
-            '53%',
-        top:
-            '67%',
-    },
+    { x: 0.13, y: 0.39 },
+    { x: 0.57, y: 0.39 },
+    { x: 0.13, y: 0.57 },
+    { x: 0.57, y: 0.57 },
 ] as const;
 
 export default function OrchardWorld({
@@ -63,127 +49,43 @@ export default function OrchardWorld({
     selectedPlotId,
     onSelectPlot,
 }: OrchardWorldProps) {
+    const [viewport, setViewport] = useState({ width: 0, height: 0 });
+
+    function handleLayout(event: LayoutChangeEvent) {
+        const { width, height } = event.nativeEvent.layout;
+        setViewport({ width, height });
+    }
+
+    const scale = viewport.width > 0 && viewport.height > 0
+        ? Math.min(viewport.width / ART_WIDTH, viewport.height / ART_HEIGHT)
+        : 0;
+    const artworkWidth = ART_WIDTH * scale;
+    const artworkHeight = ART_HEIGHT * scale;
+    const offsetX = (viewport.width - artworkWidth) / 2;
+    const offsetY = (viewport.height - artworkHeight) / 2;
+
     return (
-        <View
-            style={
-                styles.frame
-            }
-        >
-            <View
-                style={
-                    styles.world
-                }
-            >
-                {/*
-                 * =============================================
-                 * BACKGROUND
-                 * =============================================
-                 */}
+        <View style={styles.frame} onLayout={handleLayout}>
+            <Image
 
-                <View
-                    pointerEvents="none"
-                    style={
-                        StyleSheet.absoluteFill
-                    }
-                >
-                    <View
-                        style={
-                            styles.upperGrass
-                        }
-                    />
+                source={require('../../../../assets/game/farm/background/orchard_map_background.png')}
+                resizeMode="cover"
+                blurRadius={12}
+                style={StyleSheet.absoluteFill}
+            />
+            {scale > 0 && <Image
 
-                    <View
-                        style={
-                            styles.hillLeft
-                        }
-                    />
-
-                    <View
-                        style={
-                            styles.hillRight
-                        }
-                    />
-
-                    <View
-                        style={
-                            styles.path
-                        }
-                    />
-
-                    <View
-                        style={
-                            styles.river
-                        }
-                    />
-
-                    <Text
-                        style={
-                            styles.treeLeft
-                        }
-                    >
-                        🌳
-                    </Text>
-
-                    <Text
-                        style={
-                            styles.treeRight
-                        }
-                    >
-                        🌲
-                    </Text>
-
-                    <Text
-                        style={
-                            styles.flowerLeft
-                        }
-                    >
-                        🌼
-                    </Text>
-
-                    <Text
-                        style={
-                            styles.flowerRight
-                        }
-                    >
-                        🌻
-                    </Text>
-                </View>
-
-                {/*
-                 * =============================================
-                 * ORCHARD HOUSE
-                 * =============================================
-                 */}
-
-                <View
-                    pointerEvents="none"
-                    style={
-                        styles.orchardHouse
-                    }
-                >
-                    <Text
-                        style={
-                            styles.houseIcon
-                        }
-                    >
-                        🏡
-                    </Text>
-
-                    <View
-                        style={
-                            styles.houseLabel
-                        }
-                    >
-                        <Text
-                            style={
-                                styles.houseLabelText
-                            }
-                        >
-                            果樹園
-                        </Text>
-                    </View>
-                </View>
-
+                source={require('../../../../assets/game/farm/background/orchard_map_background.png')}
+                resizeMode="contain"
+                style={{
+                    position: 'absolute',
+                    left: offsetX,
+                    top: offsetY,
+                    width: artworkWidth,
+                    height: artworkHeight,
+                }}
+            />}
+            {scale > 0 && <View style={StyleSheet.absoluteFill}>
                 {/*
                  * =============================================
                  * ORCHARD PLOTS
@@ -212,11 +114,9 @@ export default function OrchardWorld({
                                 style={[
                                     styles.plotPosition,
                                     {
-                                        left:
-                                            position.left,
-
-                                        top:
-                                            position.top,
+                                        left: offsetX + position.x * artworkWidth,
+                                        top: offsetY + position.y * artworkHeight,
+                                        width: artworkWidth * 0.30,
                                     },
                                 ]}
                             >
@@ -243,21 +143,7 @@ export default function OrchardWorld({
                     }
                 )}
 
-                <View
-                    pointerEvents="none"
-                    style={
-                        styles.foregroundFence
-                    }
-                >
-                    <Text
-                        style={
-                            styles.fenceText
-                        }
-                    >
-                        🪵  🪵  🪵
-                    </Text>
-                </View>
-            </View>
+            </View>}
         </View>
     );
 }
@@ -297,29 +183,11 @@ function OrchardPlot({
             )
             : undefined;
 
-    let treeIcon =
-        '🌱';
-
-    if (
-        plot.mature &&
-        plot.treeId ===
-            'apple'
-    ) {
-        treeIcon =
-            '🍎';
-    } else if (
-        plot.mature &&
-        plot.treeId ===
-            'grape'
-    ) {
-        treeIcon =
-            '🍇';
-    } else if (
-        plot.mature
-    ) {
-        treeIcon =
-            '🌳';
-    }
+    const treeArtwork = plot.mature && plot.treeId === 'apple'
+        ? require('../../../../assets/game/farm/orchard/apple_tree.png')
+        : plot.mature && plot.treeId === 'grape'
+            ? require('../../../../assets/game/farm/orchard/grape_vine.png')
+            : require('../../../../assets/game/farm/orchard/sapling.png');
 
     return (
         <Pressable
@@ -332,52 +200,25 @@ function OrchardPlot({
             style={({
                 pressed,
             }) => [
-                styles.plot,
+                !locked && styles.plot,
 
                 selected &&
                 !locked &&
                 styles.plotSelected,
-
-                locked &&
-                styles.plotLocked,
 
                 pressed &&
                 !locked &&
                 styles.plotPressed,
             ]}
         >
-            <View
+            {!locked && <View
                 style={
                     styles.soil
                 }
             >
-                {locked ? (
+                {plot.treeId ? (
                     <>
-                        <Text
-                            style={
-                                styles.lockIcon
-                            }
-                        >
-                            🔒
-                        </Text>
-
-                        <Text
-                            style={
-                                styles.lockText
-                            }
-                        >
-                            未開放
-                        </Text>
-                    </>
-                ) : plot.treeId ? (
-                    <>
-                        <Text
-                            style={
-                                styles.treeIcon
-                            }
-                        >
-                            {treeIcon}
-                        </Text>
+                        <Image source={treeArtwork} resizeMode="contain" style={styles.treeSprite} />
 
                         <Text
                             numberOfLines={
@@ -409,13 +250,7 @@ function OrchardPlot({
                     </>
                 ) : (
                     <>
-                        <Text
-                            style={
-                                styles.emptyIcon
-                            }
-                        >
-                            🌱
-                        </Text>
+                        <Image source={treeArtwork} resizeMode="contain" style={styles.emptySprite} />
 
                         <Text
                             style={
@@ -426,9 +261,9 @@ function OrchardPlot({
                         </Text>
                     </>
                 )}
-            </View>
+            </View>}
 
-            <View
+            {!locked && <View
                 style={
                     styles.numberBadge
                 }
@@ -440,7 +275,7 @@ function OrchardPlot({
                 >
                     {number}
                 </Text>
-            </View>
+            </View>}
         </Pressable>
     );
 }
@@ -543,284 +378,23 @@ const styles =
                 '#79BC4D',
         },
 
-        upperGrass: {
-            position:
-                'absolute',
-
-            left:
-                0,
-
-            right:
-                0,
-
-            top:
-                0,
-
-            height:
-                '34%',
-
-            backgroundColor:
-                '#A9D96F',
-        },
-
-        hillLeft: {
-            position:
-                'absolute',
-
-            width:
-                '70%',
-
-            height:
-                '24%',
-
-            left:
-                '-19%',
-
-            top:
-                '-8%',
-
-            borderRadius:
-                200,
-
-            backgroundColor:
-                '#609C43',
-
-            transform: [
-                {
-                    rotate:
-                        '-5deg',
-                },
-            ],
-        },
-
-        hillRight: {
-            position:
-                'absolute',
-
-            width:
-                '72%',
-
-            height:
-                '25%',
-
-            right:
-                '-20%',
-
-            top:
-                '-5%',
-
-            borderRadius:
-                200,
-
-            backgroundColor:
-                '#6AAA49',
-
-            transform: [
-                {
-                    rotate:
-                        '7deg',
-                },
-            ],
-        },
-
-        path: {
-            position:
-                'absolute',
-
-            width:
-                '22%',
-
-            height:
-                '100%',
-
-            left:
-                '5%',
-
-            top:
-                '20%',
-
-            borderRadius:
-                80,
-
-            backgroundColor:
-                '#D8B36B',
-
-            transform: [
-                {
-                    rotate:
-                        '7deg',
-                },
-            ],
-        },
-
-        river: {
-            position:
-                'absolute',
-
-            width:
-                '22%',
-
-            height:
-                '125%',
-
-            right:
-                '-8%',
-
-            top:
-                '-8%',
-
-            borderRadius:
-                80,
-
-            backgroundColor:
-                '#71CBE8',
-
-            borderLeftWidth:
-                5,
-
-            borderLeftColor:
-                '#D9D58B',
-
-            transform: [
-                {
-                    rotate:
-                        '9deg',
-                },
-            ],
-        },
-
-        orchardHouse: {
-            position:
-                'absolute',
-
-            left:
-                '36%',
-
-            top:
-                '7%',
-
-            alignItems:
-                'center',
-        },
-
-        houseIcon: {
-            fontSize:
-                62,
-        },
-
-        houseLabel: {
-            marginTop:
-                -7,
-
-            paddingHorizontal:
-                9,
-
-            paddingVertical:
-                3,
-
-            borderRadius:
-                9,
-
-            backgroundColor:
-                FARM_COLORS.cream,
-
-            borderWidth:
-                1,
-
-            borderColor:
-                FARM_COLORS
-                    .creamBorder,
-        },
-
-        houseLabelText: {
-            color:
-                FARM_COLORS.text,
-
-            fontSize:
-                9,
-
-            fontWeight:
-                '900',
-        },
-
         plotPosition: {
             position:
                 'absolute',
 
             width:
-                '25%',
+                '30%',
         },
 
         plot: {
-            width:
-                '100%',
-
-            aspectRatio:
-                1.35,
-
-            borderRadius:
-                14,
-
-            borderWidth:
-                3,
-
-            borderColor:
-                '#5C351B',
-
-            backgroundColor:
-                '#9C6936',
-
-            padding:
-                5,
-
-            shadowColor:
-                '#000000',
-
-            shadowOffset: {
-                width:
-                    0,
-
-                height:
-                    3,
-            },
-
-            shadowOpacity:
-                0.22,
-
-            shadowRadius:
-                3,
-
-            elevation:
-                4,
-
-            position:
-                'relative',
+            width: '100%',
+            aspectRatio: 1.12,
+            alignItems: 'center',
+            justifyContent: 'center',
         },
 
         plotSelected: {
-            borderColor:
-                '#FFD348',
-
-            borderWidth:
-                4,
-
-            transform: [
-                {
-                    scale:
-                        1.04,
-                },
-            ],
-        },
-
-        plotLocked: {
-            backgroundColor:
-                '#59564E',
-
-            borderColor:
-                '#454139',
-
-            opacity:
-                0.76,
+            transform: [{ scale: 1.05 }],
         },
 
         plotPressed: {
@@ -833,51 +407,14 @@ const styles =
         },
 
         soil: {
-            flex:
-                1,
-
-            borderRadius:
-                9,
-
-            backgroundColor:
-                FARM_COLORS.soil,
-
-            borderWidth:
-                1,
-
-            borderColor:
-                FARM_COLORS
-                    .soilDark,
-
-            alignItems:
-                'center',
-
-            justifyContent:
-                'center',
+            flex: 1,
+            alignItems: 'center',
+            justifyContent: 'center',
         },
 
-        lockIcon: {
-            fontSize:
-                26,
-        },
-
-        lockText: {
-            marginTop:
-                2,
-
-            color:
-                '#FFF3D1',
-
-            fontSize:
-                8,
-
-            fontWeight:
-                '900',
-        },
-
-        emptyIcon: {
-            fontSize:
-                28,
+        emptySprite: {
+            width: '48%',
+            height: '58%',
         },
 
         emptyText: {
@@ -894,9 +431,9 @@ const styles =
                 '900',
         },
 
-        treeIcon: {
-            fontSize:
-                30,
+        treeSprite: {
+            width: '100%',
+            height: '82%',
         },
 
         treeName: {
@@ -971,75 +508,4 @@ const styles =
                 '900',
         },
 
-        treeLeft: {
-            position:
-                'absolute',
-
-            left:
-                '3%',
-
-            top:
-                '12%',
-
-            fontSize:
-                42,
-        },
-
-        treeRight: {
-            position:
-                'absolute',
-
-            right:
-                '4%',
-
-            top:
-                '26%',
-
-            fontSize:
-                41,
-        },
-
-        flowerLeft: {
-            position:
-                'absolute',
-
-            left:
-                '16%',
-
-            bottom:
-                '5%',
-
-            fontSize:
-                18,
-        },
-
-        flowerRight: {
-            position:
-                'absolute',
-
-            right:
-                '18%',
-
-            bottom:
-                '6%',
-
-            fontSize:
-                19,
-        },
-
-        foregroundFence: {
-            position:
-                'absolute',
-
-            right:
-                '3%',
-
-            bottom:
-                '1%',
-        },
-
-        fenceText: {
-            fontSize:
-                17,
-        },
     });

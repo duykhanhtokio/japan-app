@@ -331,7 +331,7 @@ export default function ChickenWorld({
     }
 
     const scale = viewport.width > 0 && viewport.height > 0
-        ? Math.max(
+        ? Math.min(
             viewport.width / CANVAS_WIDTH,
             viewport.height / CANVAS_HEIGHT
         )
@@ -347,8 +347,15 @@ export default function ChickenWorld({
             {viewport.width > 0 && (
                 <>
                     <Image
+
                         source={BACKGROUND}
-                        resizeMode="stretch"
+                        resizeMode="cover"
+                        blurRadius={12}
+                        style={StyleSheet.absoluteFill}
+                    />
+                    <Image
+                        source={BACKGROUND}
+                        resizeMode="contain"
                         style={[
                             styles.background,
                             {

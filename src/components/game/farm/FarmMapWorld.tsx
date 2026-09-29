@@ -69,17 +69,17 @@ type Hotspot = {
 
 /*
  * Approved master artwork:
- * 832 x 1792
+ * 853 x 1844
  *
  * IMPORTANT:
  * Keep these values synchronized with
  * farm_map_master.png.
  */
 const MAP_WIDTH =
-    832;
+    853;
 
 const MAP_HEIGHT =
-    1792;
+    1844;
 
 /*
  * Coordinates recalibrated for the approved
@@ -231,7 +231,7 @@ export default function FarmMapWorld({
     }
 
     /*
-     * Equivalent to resizeMode="cover",
+     * Equivalent to resizeMode="contain",
      * but we calculate the geometry ourselves.
      *
      * This is important because hotspots must
@@ -241,7 +241,7 @@ export default function FarmMapWorld({
     const scale =
         viewport.width > 0 &&
         viewport.height > 0
-            ? Math.max(
+            ? Math.min(
                   viewport.width /
                       MAP_WIDTH,
 
@@ -259,10 +259,9 @@ export default function FarmMapWorld({
         scale;
 
     /*
-     * Center crop.
+     * Center the complete artwork.
      *
-     * Negative offsets mean that part of the
-     * master artwork lives outside the viewport.
+     * Hotspots remain on the visible artwork on every aspect ratio.
      */
     const offsetX =
         (
@@ -293,12 +292,18 @@ export default function FarmMapWorld({
                     0 && (
                     <>
                         <Image
+                            source={require('../../../../assets/game/farm/background/farm_map_master.png')}
+                            resizeMode="cover"
+                            blurRadius={12}
+                            style={StyleSheet.absoluteFill}
+                        />
+                        <Image
                             source={
                                 require(
                                     '../../../../assets/game/farm/background/farm_map_master.png'
                                 )
                             }
-                            resizeMode="stretch"
+                            resizeMode="contain"
                             style={{
                                 position:
                                     'absolute',

@@ -270,7 +270,7 @@ export default function CowWorld({
     }
 
     const scale = viewport.width > 0 && viewport.height > 0
-        ? Math.max(viewport.width / CANVAS_WIDTH, viewport.height / CANVAS_HEIGHT)
+        ? Math.min(viewport.width / CANVAS_WIDTH, viewport.height / CANVAS_HEIGHT)
         : 1;
     const renderedWidth = CANVAS_WIDTH * scale;
     const renderedHeight = CANVAS_HEIGHT * scale;
@@ -282,8 +282,15 @@ export default function CowWorld({
             {viewport.width > 0 && (
                 <>
                     <Image
+
                         source={BACKGROUND}
-                        resizeMode="stretch"
+                        resizeMode="cover"
+                        blurRadius={12}
+                        style={StyleSheet.absoluteFill}
+                    />
+                    <Image
+                        source={BACKGROUND}
+                        resizeMode="contain"
                         style={[
                             styles.background,
                             {
