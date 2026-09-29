@@ -20,6 +20,7 @@ export type FarmMapDestination =
     | 'orchard'
     | 'chicken'
     | 'cow'
+    | 'restaurant'
     | 'shop'
     | 'produce';
 
@@ -86,6 +87,13 @@ const MAP_HEIGHT =
  */
 const HOTSPOTS:
     readonly Hotspot[] = [
+        {
+            id: 'restaurant',
+            x: 17,
+            y: 30,
+            width: 24,
+            height: 15,
+        },
         {
             id:
                 'orchard',

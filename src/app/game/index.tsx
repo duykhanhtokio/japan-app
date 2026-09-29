@@ -1297,6 +1297,11 @@ export default function FarmGameScreen() {
         destination:
             FarmMapDestination
     ) {
+        if (destination === 'restaurant') {
+            handleAreaSelect('restaurant');
+            return;
+        }
+
         if (
             destination ===
                 'vegetable' ||
