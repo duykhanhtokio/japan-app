@@ -913,7 +913,7 @@ const styles =
 
         sectionProgress: {
             color:
-                '#ff72ab',
+                ROYAL.paleGold,
 
             fontSize: 15,
 
@@ -954,10 +954,10 @@ const styles =
 
         checkboxDone: {
             backgroundColor:
-                '#00b982',
+                ROYAL.darkGold,
 
             borderColor:
-                '#00b982',
+                ROYAL.gold,
         },
 
         check: {
@@ -988,12 +988,12 @@ const styles =
                 19,
 
             backgroundColor:
-                '#2a2546',
+                ROYAL.lacquer,
 
             borderWidth: 1,
 
             borderColor:
-                '#6558f5',
+                ROYAL.gold,
         },
 
         workHeader: {
@@ -1026,7 +1026,7 @@ const styles =
 
         workLocalized: {
             color:
-                '#d7d3ff',
+                ROYAL.paleGold,
 
             fontSize: 16,
 
@@ -1038,7 +1038,7 @@ const styles =
 
         workJapanese: {
             color:
-                '#8f8aa8',
+                ROYAL.ivoryDeep,
 
             fontSize: 15,
 
@@ -1047,7 +1047,7 @@ const styles =
 
         workDescription: {
             color:
-                '#b9b4d2',
+                ROYAL.ivory,
 
             fontSize: 16,
 
@@ -1118,7 +1118,7 @@ const styles =
 
         workMissionJapanese: {
             color:
-                '#9994ad',
+                ROYAL.ivoryDeep,
 
             fontSize: 16,
 
@@ -1127,7 +1127,7 @@ const styles =
 
         workMissionDescription: {
             color:
-                '#b8b3ca',
+                ROYAL.ivory,
 
             fontSize: 16,
 
@@ -1211,12 +1211,12 @@ const styles =
                 18,
 
             backgroundColor:
-                '#43351b',
+                ROYAL.lacquer,
 
             borderWidth: 1,
 
             borderColor:
-                '#d8a72d',
+                ROYAL.gold,
         },
 
         goldenKey: {
