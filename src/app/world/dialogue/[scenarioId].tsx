@@ -14,6 +14,7 @@ import NpcRewardModal from '@/components/world/NpcRewardModal';
 import { normalizeNpcCategory, npcCategoryById, type NpcCategory } from '@/data/npc-progression';
 import { recordNpcScenario } from '@/services/npc-progression-storage';
 import { scenarioMission } from '@/components/world/scenario-mission';
+import { displayLocationNameJa } from '@/components/world/world-ja';
 import { getPlayerAnswerGuidance } from '@/components/world/player-answer-guidance';
 import { RoyalBackButton, RoyalButton, RoyalDialogueFrame, RoyalField, RoyalHintButton, RoyalLabelPlaque, ROYAL, ROYAL_CONTENT_GROUP, ROYAL_FONT, ROYAL_PLACEMENT, ROYAL_TEXT_FIT, ROYAL_TYPE, useRoyalPositioning } from '@/components/ui/RoyalSurface';
 
@@ -41,7 +42,7 @@ export default function DialogueScreen(){
  const nextHint=()=>setRevealedTurnIds(previous=>{const next=new Set(previous);next.add(turn.id);return next}),move=(next:number)=>{speech.abortListening();setIndex(Math.max(0,Math.min(turns.length-1,next)))};
  const finish=async()=>{if(finishing)return;const category=normalizeNpcCategory(location?.category);if(!category){router.back();return}setFinishing(true);const result=await recordNpcScenario(scenario.id,category.id);const unlocked=result.unlockedCategoryId?npcCategoryById(result.unlockedCategoryId):null;setRewardCategory(unlocked??category);setRewardProgress(result.progress);setIsUnlock(!!unlocked);setRewardVisible(true);setFinishing(false)};
  return <ImageBackground source={background} resizeMode="cover" style={s.screen}><View style={s.backdrop}/><SafeAreaView style={s.safe}>
-  <View style={s.header}><View style={s.headerRow}><RoyalBackButton onPress={()=>router.back()}/><View style={s.headerTitle}><View style={s.titleRow}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.title}>{location?.nameJa??'会話練習'}</Text></View></View></View><RoyalField sizingGroup={ROYAL_CONTENT_GROUP.worldHeaderMission} label="課題" style={s.missionCard}><Text maxFontSizeMultiplier={1} style={s.missionText}>{mission}</Text></RoyalField></View>
+  <View style={s.header}><View style={s.headerRow}><RoyalBackButton onPress={()=>router.back()}/><View style={s.headerTitle}><View style={s.titleRow}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.title}>{location?displayLocationNameJa(location.nameJa,location.category):'会話練習'}</Text></View></View></View><RoyalField sizingGroup={ROYAL_CONTENT_GROUP.worldHeaderMission} label="課題" style={s.missionCard}><Text maxFontSizeMultiplier={1} style={s.missionText}>{mission}</Text></RoyalField></View>
   <View pointerEvents="none" style={[s.npcLayer,{bottom:controlsBottom},wide&&s.npcLayerWide]}><Image source={npcImage} resizeMode="contain" style={s.npcImage}/></View>
   <View style={[s.bubbleLayer,{bottom:dialogueBottom},wide&&s.bubbleLayerWide]}>
    <ScrollView key={turn.id} contentContainerStyle={s.bubbleScroll} showsVerticalScrollIndicator={true} nestedScrollEnabled>

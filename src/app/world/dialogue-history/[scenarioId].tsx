@@ -6,6 +6,7 @@ import { useAppLanguage } from '@/context/LanguageContext';
 import { getLifeLocationById, getLifeScenarioById } from '@/services/life-content-repository';
 import { loadDialogueTurns } from '@/services/dialogue-content-loader';
 import { loadNpcCollection } from '@/services/npc-progression-storage';
+import { displayLocationNameJa } from '@/components/world/world-ja';
 
 export default function CompletedDialogue() {
     const raw = useLocalSearchParams<{ scenarioId: string }>().scenarioId;
@@ -22,7 +23,7 @@ export default function CompletedDialogue() {
     const turns = completed && id ? loadDialogueTurns(id) : [];
     const { language } = useAppLanguage();
     return <SafeAreaView style={s.screen}>
-        <View style={s.header}><RoyalBackButton onPress={() => router.back()} /><Text style={s.title}>{location?.nameJa ?? '会話'} · {scenario?.name ?? ''}</Text></View>
+        <View style={s.header}><RoyalBackButton onPress={() => router.back()} /><Text style={s.title}>{location ? displayLocationNameJa(location.nameJa,location.category) : '会話'} · {scenario?.name ?? ''}</Text></View>
         <ScrollView contentContainerStyle={s.content}>
             {!turns.length && <Text style={s.empty}>会話データがありません。</Text>}
             {turns.map((turn, index) => {

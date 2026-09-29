@@ -17,6 +17,11 @@ export function categoryLabelJa(category?: string | null) {
   return CATEGORY_LABELS.find(([pattern])=>pattern.test(value))?.[1] ?? '会話スポット';
 }
 
+/** Bank locations are practice settings, not names of real institutions. */
+export function displayLocationNameJa(name: string, category?: string | null) {
+  return /bank/i.test(category ?? '') ? '銀行窓口' : name;
+}
+
 export function regionLabelJa(region?: string | null) {
   return REGION_LABELS[(region??'').toLowerCase()] ?? '地域';
 }

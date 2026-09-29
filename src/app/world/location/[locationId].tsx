@@ -4,7 +4,7 @@ import { ImageBackground, SafeAreaView, ScrollView, StyleSheet, Text, View } fro
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { sceneForCategory } from '@/components/world/life-assets';
 import { locationBackground } from '@/components/world/location-backgrounds.generated';
-import { categoryLabelJa } from '@/components/world/world-ja';
+import { categoryLabelJa, displayLocationNameJa } from '@/components/world/world-ja';
 import { DepthPressable } from '@/components/world/WorldSurface';
 import { RoyalBackButton, RoyalButton, RoyalInfoPanel, ROYAL, ROYAL_CONTENT_GROUP, ROYAL_FONT, ROYAL_PLACEMENT, ROYAL_TEXT_FIT, ROYAL_TYPE, useRoyalPositioning } from '@/components/ui/RoyalSurface';
 import { scenarioMission } from '@/components/world/scenario-mission';
@@ -28,7 +28,7 @@ export default function LocationScreen(){
  if(!location)return <SafeAreaView style={s.empty}><Text>ロケーションが見つかりません。</Text></SafeAreaView>;
  const activeScenario=scenarios.find(x=>x.id===selectedId),bg=locationBackground(location.id,location.category)??sceneForCategory(location.category),wide=royalPosition.isWide;
  return <ImageBackground source={bg} resizeMode="cover" style={s.screen}><View style={s.shade}/><SafeAreaView style={s.safe}>
-  <View style={s.header}><RoyalBackButton onPress={()=>router.back()}/><View style={s.heading}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.kicker}>会話練習・{categoryLabelJa(location.category)}</Text><Text {...ROYAL_TEXT_FIT} numberOfLines={2} style={s.title}>{location.nameJa}</Text><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.subtitle}>今回の課題</Text></View></View>
+  <View style={s.header}><RoyalBackButton onPress={()=>router.back()}/><View style={s.heading}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.kicker}>会話練習・{categoryLabelJa(location.category)}</Text><Text {...ROYAL_TEXT_FIT} numberOfLines={2} style={s.title}>{displayLocationNameJa(location.nameJa,location.category)}</Text><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.subtitle}>今回の課題</Text></View></View>
   <ScrollView contentContainerStyle={[s.content,wide&&s.contentWide]} showsVerticalScrollIndicator={false}>
    <RoyalInfoPanel sizingGroup={ROYAL_CONTENT_GROUP.worldLocationSummary} label="会話トレーニング" style={[s.summary,wide&&s.summaryWide]} innerStyle={s.summaryInner}><Text maxFontSizeMultiplier={1} style={s.summaryTitle}>会話の進め方</Text>{KAIWA_GUIDE.map(line=><Text key={line} maxFontSizeMultiplier={1} style={s.guideLine}>{line}</Text>)}</RoyalInfoPanel>
    <View style={[s.scenarioGrid,wide&&s.scenarioGridWide]}>{activeScenario&&<Animated.View key={activeScenario.id} entering={FadeInDown.duration(220)} style={wide?s.wideItem:undefined}><DepthPressable onPress={()=>router.push(`/world/dialogue/${activeScenario.id}`)} style={s.scenarioDepth}><RoyalInfoPanel sizingGroup={ROYAL_CONTENT_GROUP.worldScenario} label="今回の課題" style={s.scenario}><View style={s.scenarioContent}><Text maxFontSizeMultiplier={1} style={s.objective}>{scenarioMission(activeScenario,location.category)}</Text></View></RoyalInfoPanel></DepthPressable><RoyalButton onPress={()=>router.push(`/world/dialogue/${activeScenario.id}`)} style={s.play} compact><Text maxFontSizeMultiplier={1} style={s.playText}>開始</Text></RoyalButton></Animated.View>}</View>

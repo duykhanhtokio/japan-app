@@ -6,7 +6,7 @@ import { RoyalBackButton, RoyalCapsule, RoyalChevron, RoyalLocationCard, RoyalLo
 import { locationBackground } from '@/components/world/location-backgrounds.generated';
 import { cityImageById } from '@/components/world/city-images.generated';
 import { sceneForCategory } from '@/components/world/life-assets';
-import { categoryLabelJa } from '@/components/world/world-ja';
+import { categoryLabelJa, displayLocationNameJa } from '@/components/world/world-ja';
 import { DepthPressable } from '@/components/world/WorldSurface';
 import { WorldTitleHeader } from '@/components/world/WorldTitleHeader';
 import { normalizeNpcCategory, type NpcCategoryId } from '@/data/npc-progression';
@@ -52,13 +52,13 @@ export default function CityScreen() {
           const category = normalizeNpcCategory(item.category);
           const categoryLabel = categoryLabelJa(item.category);
           const locked = !!category && !!unlocked && !unlocked.includes(category.id);
-          return <DepthPressable accessibilityLabel={item.nameJa} onPress={() => { if (!locked) router.push(`/world/location/${item.id}`); }} style={[s.cardPress, { width: grid.cardWidth }]}>
+          return <DepthPressable accessibilityLabel={displayLocationNameJa(item.nameJa,item.category)} onPress={() => { if (!locked) router.push(`/world/location/${item.id}`); }} style={[s.cardPress, { width: grid.cardWidth }]}>
             <RoyalLocationCard source={locationBackground(item.id,item.category) ?? sceneForCategory(item.category)} style={s.locationCard}>
               {locked && <View style={s.lockedShade} />}
               <RoyalCapsule label={categoryLabel} style={s.category} textStyle={{fontSize:Math.max(10,Math.min(15,Math.floor((grid.cardWidth*.82-32)/Array.from(categoryLabel).length))),lineHeight:18}} />
               {locked && <RoyalLockCrest style={s.lock} />}
               <View style={s.cardCopy}>
-                <View style={s.cardText}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.location}>{item.nameJa}</Text><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.reading}>{item.name}</Text><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.meta}>{locked ? '未解放' : `${count}会話`}</Text></View>
+                <View style={s.cardText}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.location}>{displayLocationNameJa(item.nameJa,item.category)}</Text><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.reading}>{/bank/i.test(item.category??'')?'Bank counter':item.name}</Text><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.meta}>{locked ? '未解放' : `${count}会話`}</Text></View>
                 {!locked && <RoyalChevron variant="card"/>} 
               </View>
             </RoyalLocationCard>

@@ -2,7 +2,7 @@ import { useFocusEffect, router } from 'expo-router';
 import { useCallback, useState } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { RoyalBackButton, RoyalButton, ROYAL, ROYAL_FONT } from '@/components/ui/RoyalSurface';
-import { categoryLabelJa } from '@/components/world/world-ja';
+import { categoryLabelJa, displayLocationNameJa } from '@/components/world/world-ja';
 import { getLifeLocationById, getLifeScenarioById } from '@/services/life-content-repository';
 import { loadNpcCollection } from '@/services/npc-progression-storage';
 
@@ -17,7 +17,7 @@ export default function DialogueHistory() {
             setItems(state.completedScenarioIds.flatMap(id => {
                 const scenario = getLifeScenarioById(id);
                 const location = scenario?.locationId ? getLifeLocationById(scenario.locationId) : null;
-                return scenario && location ? [{ id, title: scenario.name, location: location.nameJa, category: location.category ?? 'Other' }] : [];
+                return scenario && location ? [{ id, title: scenario.name, location: displayLocationNameJa(location.nameJa,location.category), category: location.category ?? 'Other' }] : [];
             }));
         });
         return () => { active = false; };
