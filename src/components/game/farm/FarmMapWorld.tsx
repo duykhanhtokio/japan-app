@@ -314,12 +314,12 @@ export default function FarmMapWorld({
                                 const progressionId =
                                     hotspot.id ===
                                     'produce'
-                                        ? 'restaurant'
+                                        ? null
                                         : hotspot.id as
                                               FarmAreaUnlockId;
 
                                 const unlocked =
-                                    isFarmAreaUnlocked(
+                                    progressionId !== null && isFarmAreaUnlocked(
                                         progressionId,
                                         farmLevel
                                     );

@@ -1325,11 +1325,6 @@ export default function FarmGameScreen() {
             return;
         }
 
-        if (destination === 'produce') {
-            handleAreaSelect('restaurant');
-            return;
-        }
-
         console.log(
             '[FARM MAP] SELECT',
             destination
