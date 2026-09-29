@@ -1,42 +1,47 @@
-import { Text } from '@/components/app/LocalizedText';
-import {
-    Pressable,
-    StyleSheet,
-    View,
-} from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+
+const RESTAURANT_ICON = require('../../../../assets/app/ui/royal-af/game-restaurant-v1.png');
+const CHECK_ICON = require('../../../../assets/app/ui/royal-af/checkmark-v2.png');
+
+const STEPS = [
+    { title: '食材を育てる', detail: '畑・果樹園・牧場で食材を育てます。' },
+    { title: '収穫する', detail: '育った作物や畜産物を収穫します。' },
+    { title: '料理と注文', detail: '料理を作って注文に応える機能は準備中です。' },
+] as const;
 
 export default function RestaurantWorld() {
     return (
-        <View style={styles.world}>
-            <View style={styles.glow} />
-            <View style={styles.building}>
-                <Text style={styles.sign}>FARM RESTAURANT</Text>
-                <Text style={styles.icon}>🍽️</Text>
+        <ScrollView style={styles.world} contentContainerStyle={styles.content}>
+            <View style={styles.panel}>
+                <Image source={RESTAURANT_ICON} resizeMode="contain" style={styles.heroIcon} />
                 <Text style={styles.title}>ファームレストラン</Text>
-                <Text style={styles.description}>農場で収穫した食材から料理を作るエリア</Text>
-                <View style={styles.orders}>
-                    {['🥗 サラダ', '🥚 オムレツ', '🥛 ミルクセット'].map((label, index) => (
-                        <Pressable key={label} style={styles.order}>
-                            <Text style={styles.orderName}>{label}</Text>
-                            <Text style={styles.orderState}>{index === 0 ? 'テスト可能' : '準備中'}</Text>
-                        </Pressable>
-                    ))}
-                </View>
+                <Text style={styles.intro}>このエリアの遊び方</Text>
+                {STEPS.map((step, index) => (
+                    <View key={step.title} style={styles.step}>
+                        <Image source={CHECK_ICON} resizeMode="contain" style={styles.stepIcon} />
+                        <View style={styles.stepCopy}>
+                            <Text style={styles.stepTitle}>{index + 1}. {step.title}</Text>
+                            <Text style={styles.stepDetail}>{step.detail}</Text>
+                        </View>
+                    </View>
+                ))}
+                <Text style={styles.notice}>現在は案内のみ表示しています。料理・注文の操作は利用できません。</Text>
             </View>
-        </View>
+        </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
-    world: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 22, backgroundColor: '#729E4D' },
-    glow: { position: 'absolute', width: 420, height: 420, borderRadius: 210, backgroundColor: 'rgba(255,220,124,0.24)' },
-    building: { width: '100%', maxWidth: 520, padding: 22, borderRadius: 28, borderWidth: 3, borderColor: '#E7BF6C', backgroundColor: 'rgba(82,47,23,0.94)', shadowColor: '#211006', shadowOffset: { width: 0, height: 8 }, shadowOpacity: 0.35, shadowRadius: 12, elevation: 10 },
-    sign: { alignSelf: 'center', paddingHorizontal: 14, paddingVertical: 6, borderRadius: 12, color: '#5B3519', backgroundColor: '#FFE8AC', fontSize: 10, fontWeight: '900', letterSpacing: 1.3 },
-    icon: { marginTop: 8, fontSize: 64, textAlign: 'center' },
-    title: { color: '#FFF1C8', fontSize: 23, fontWeight: '900', textAlign: 'center' },
-    description: { marginTop: 5, color: '#E9CFA4', fontSize: 11, fontWeight: '700', textAlign: 'center' },
-    orders: { marginTop: 18, gap: 8 },
-    order: { minHeight: 52, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, borderRadius: 15, borderWidth: 1, borderColor: '#D3AB68', backgroundColor: '#FFF7E2' },
-    orderName: { flex: 1, color: '#4E321A', fontSize: 13, fontWeight: '900' },
-    orderState: { color: '#8B6B43', fontSize: 9, fontWeight: '800' },
+    world: { flex: 1, backgroundColor: '#e8e2d6' },
+    content: { flexGrow: 1, justifyContent: 'center', paddingHorizontal: 20, paddingTop: 100, paddingBottom: 32 },
+    panel: { width: '100%', maxWidth: 520, alignSelf: 'center', padding: 22, borderRadius: 24, borderWidth: 2, borderColor: '#c39a47', backgroundColor: '#fff9e9' },
+    heroIcon: { width: 110, height: 110, alignSelf: 'center' },
+    title: { marginTop: 5, color: '#24334b', fontSize: 23, fontWeight: '900', textAlign: 'center' },
+    intro: { marginTop: 8, marginBottom: 14, color: '#735b31', fontSize: 15, fontWeight: '700', textAlign: 'center' },
+    step: { flexDirection: 'row', alignItems: 'center', paddingVertical: 12, borderTopWidth: 1, borderTopColor: '#d9c9a9' },
+    stepIcon: { width: 30, height: 30, marginRight: 12 },
+    stepCopy: { flex: 1 },
+    stepTitle: { color: '#24334b', fontSize: 16, fontWeight: '800' },
+    stepDetail: { marginTop: 3, color: '#665944', fontSize: 13, lineHeight: 20 },
+    notice: { marginTop: 12, color: '#705935', fontSize: 12, lineHeight: 18, textAlign: 'center' },
 });

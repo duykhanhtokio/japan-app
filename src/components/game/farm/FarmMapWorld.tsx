@@ -3,7 +3,6 @@ import {
     LayoutChangeEvent,
     Pressable,
     StyleSheet,
-    Text,
     View,
 } from 'react-native';
 
@@ -12,7 +11,6 @@ import {
 } from 'react';
 
 import {
-    getFarmAreaUnlockLevel,
     isFarmAreaUnlocked,
     type FarmAreaUnlockId,
 } from '@/game/data/farm-area-unlocks';
@@ -313,33 +311,18 @@ export default function FarmMapWorld({
 
                         {HOTSPOTS.map(
                             hotspot => {
-                                /*
-                                 * "produce" is intentionally disabled
-                                 * until it becomes Restaurant in the
-                                 * next phase.
-                                 */
                                 const progressionId =
                                     hotspot.id ===
                                     'produce'
-                                        ? null
+                                        ? 'restaurant'
                                         : hotspot.id as
                                               FarmAreaUnlockId;
 
                                 const unlocked =
-                                    progressionId !==
-                                        null &&
                                     isFarmAreaUnlocked(
                                         progressionId,
                                         farmLevel
                                     );
-
-                                const unlockLevel =
-                                    progressionId !==
-                                    null
-                                        ? getFarmAreaUnlockLevel(
-                                              progressionId
-                                          )
-                                        : null;
 
                                 const centerX =
                                     offsetX +
@@ -411,40 +394,11 @@ export default function FarmMapWorld({
                                                     hotspotHeight,
                                             },
 
-                                            !unlocked &&
-                                                styles.lockedHotspot,
-
                                             pressed &&
                                                 unlocked &&
                                                 styles.hotspotPressed,
                                         ]}
                                     >
-                                        {!unlocked && (
-                                            <View
-                                                style={
-                                                    styles.lockContent
-                                                }
-                                            >
-                                                <Text
-                                                    style={
-                                                        styles.lockIcon
-                                                    }
-                                                >
-                                                    🔒
-                                                </Text>
-
-                                                <Text
-                                                    style={
-                                                        styles.lockText
-                                                    }
-                                                >
-                                                    {unlockLevel !==
-                                                    null
-                                                        ? `Lv.${unlockLevel}`
-                                                        : 'COMING SOON'}
-                                                </Text>
-                                            </View>
-                                        )}
                                     </Pressable>
                                 );
                             }
@@ -490,59 +444,4 @@ const styles =
                 'rgba(255, 225, 116, 0.16)',
         },
 
-        lockedHotspot: {
-            alignItems:
-                'center',
-
-            justifyContent:
-                'center',
-
-            backgroundColor:
-                'rgba(10, 18, 14, 0.58)',
-
-            borderWidth:
-                1,
-
-            borderColor:
-                'rgba(255, 255, 255, 0.22)',
-        },
-
-        lockContent: {
-            alignItems:
-                'center',
-
-            justifyContent:
-                'center',
-
-            paddingHorizontal:
-                8,
-
-            paddingVertical:
-                5,
-
-            borderRadius:
-                12,
-
-            backgroundColor:
-                'rgba(0, 0, 0, 0.32)',
-        },
-
-        lockIcon: {
-            fontSize:
-                21,
-        },
-
-        lockText: {
-            marginTop:
-                2,
-
-            fontSize:
-                12,
-
-            fontWeight:
-                '900',
-
-            color:
-                '#FFFFFF',
-        },
     });

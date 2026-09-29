@@ -46,6 +46,7 @@ import FarmWorld from '@/components/game/farm/FarmWorld';
 import FarmMapWorld, {
     type FarmMapDestination,
 } from '@/components/game/farm/FarmMapWorld';
+import RestaurantWorld from '@/components/game/farm/RestaurantWorld';
 
 import FarmCosmeticPanel from '@/components/game/farm/FarmCosmeticPanel';
 
@@ -1324,6 +1325,11 @@ export default function FarmGameScreen() {
             return;
         }
 
+        if (destination === 'produce') {
+            handleAreaSelect('restaurant');
+            return;
+        }
+
         console.log(
             '[FARM MAP] SELECT',
             destination
@@ -1649,6 +1655,8 @@ export default function FarmGameScreen() {
                                 handleAnimalCollect
                             }
                         />
+                    ) : selectedArea === 'restaurant' ? (
+                        <RestaurantWorld />
                     ) : (
                         <AnimalWorld
                             animalId={

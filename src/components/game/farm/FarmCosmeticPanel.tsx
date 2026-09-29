@@ -1,5 +1,6 @@
 import {
     FlatList,
+    Image,
     Modal,
     Pressable,
     StyleSheet,
@@ -13,6 +14,7 @@ import {
 } from 'react';
 
 import FarmCosmeticPreview from './FarmCosmeticPreview';
+import FarmAreaIcon, { type FarmAreaIconName } from './FarmAreaIcon';
 
 import type {
     FarmGameState,
@@ -33,6 +35,8 @@ import {
     isFarmAreaUnlocked,
     type FarmAreaUnlockId,
 } from '@/game/data/farm-area-unlocks';
+
+const LOCK_ICON = require('../../../../assets/app/ui/royal-af/lock-grape-v2.png');
 
 type CosmeticFilter =
     | 'all'
@@ -304,19 +308,19 @@ function isMatchingFilter(
 function getCosmeticIcon(
     item:
         FarmCosmeticDefinition
-) {
+): FarmAreaIconName {
     if (
         item.target ===
         'chicken'
     ) {
-        return '🐔';
+        return 'chicken';
     }
 
     if (
         item.target ===
         'cow'
     ) {
-        return '🐮';
+        return 'cow';
     }
 
     if (
@@ -325,10 +329,10 @@ function getCosmeticIcon(
         item.target ===
             'cow_barn'
     ) {
-        return '🏠';
+        return 'restaurant';
     }
 
-    return '🌳';
+    return 'orchard';
 }
 
 export default function FarmCosmeticPanel({
@@ -437,17 +441,9 @@ export default function FarmCosmeticPanel({
                         styles.preview
                     }
                 >
-                    <Text
-                        style={
-                            styles.previewIcon
-                        }
-                    >
-                        {locked
-                            ? '🔒'
-                            : getCosmeticIcon(
-                                  item
-                              )}
-                    </Text>
+                    {locked
+                        ? <Image source={LOCK_ICON} resizeMode="contain" style={styles.previewAsset} />
+                        : <FarmAreaIcon name={getCosmeticIcon(item)} size={50} />}
                 </View>
 
                 <View
@@ -1224,10 +1220,7 @@ const styles =
                 '#F6E9C9',
         },
 
-        previewIcon: {
-            fontSize:
-                35,
-        },
+        previewAsset: { width: 42, height: 42 },
 
         itemContent: {
             flex:

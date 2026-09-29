@@ -1,9 +1,11 @@
 import {
+    Image,
     Pressable,
     StyleSheet,
     Text,
     View,
 } from 'react-native';
+import FarmAreaIcon, { type FarmAreaIconName } from './FarmAreaIcon';
 
 import {
     getAnimal,
@@ -13,18 +15,21 @@ import {
     FARM_COLORS,
 } from './farm-theme';
 
+const LOCK_ICON = require('../../../../assets/app/ui/royal-af/lock-grape-v2.png');
+
 export type FarmAreaId =
     | 'vegetable'
     | 'orchard'
     | 'chicken'
-    | 'cow';
+    | 'cow'
+    | 'restaurant';
 
 type FarmArea = {
     id:
         FarmAreaId;
 
     icon:
-        string;
+        FarmAreaIconName;
 
     label:
         string;
@@ -40,7 +45,7 @@ const AREAS:
                 'vegetable',
 
             icon:
-                '🌾',
+                'rice',
 
             label:
                 'お米を育てる',
@@ -54,7 +59,7 @@ const AREAS:
                 'orchard',
 
             icon:
-                '🌳',
+                'orchard',
 
             label:
                 '果物を育てる',
@@ -68,7 +73,7 @@ const AREAS:
                 'chicken',
 
             icon:
-                '🐔',
+                'chicken',
 
             label:
                 '鶏を育てる',
@@ -82,7 +87,7 @@ const AREAS:
                 'cow',
 
             icon:
-                '🐄',
+                'cow',
 
             label:
                 '牛を育てる',
@@ -166,13 +171,7 @@ export default function FarmAreaBar({
                                     styles.pressed,
                             ]}
                         >
-                            <Text
-                                style={
-                                    styles.icon
-                                }
-                            >
-                                {area.icon}
-                            </Text>
+                            <FarmAreaIcon name={area.icon} size={30} />
 
                             <Text
                                 numberOfLines={
@@ -186,13 +185,7 @@ export default function FarmAreaBar({
                             </Text>
 
                             {locked && (
-                                <Text
-                                    style={
-                                        styles.lock
-                                    }
-                                >
-                                    🔒
-                                </Text>
+                                <Image source={LOCK_ICON} resizeMode="contain" style={styles.lock} />
                             )}
                         </Pressable>
                     );
@@ -270,11 +263,6 @@ const styles =
                 0.7,
         },
 
-        icon: {
-            fontSize:
-                27,
-        },
-
         label: {
             color:
                 FARM_COLORS.text,
@@ -299,7 +287,7 @@ const styles =
             bottom:
                 5,
 
-            fontSize:
-                11,
+            width: 14,
+            height: 14,
         },
     });

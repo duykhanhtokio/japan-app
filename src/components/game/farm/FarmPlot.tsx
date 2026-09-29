@@ -1,9 +1,11 @@
 import {
+    Image,
     Pressable,
     StyleSheet,
     Text,
     View,
 } from 'react-native';
+import FarmAreaIcon from './FarmAreaIcon';
 
 import type {
     FarmPlotState,
@@ -13,6 +15,8 @@ import {
     getProductionProgress,
     getProductionRemainingSeconds,
 } from '@/game/care/care-engine';
+
+const LOCK_ICON = require('../../../../assets/app/ui/royal-af/lock-grape-v2.png');
 
 type FarmPlotProps = {
     plot:
@@ -348,16 +352,13 @@ export default function FarmPlot({
                 </Text>
             </View>
 
-            <Text
-                style={[
-                    styles.stateIcon,
-
-                    locked &&
-                        styles.lockIcon,
-                ]}
-            >
-                {visual.icon}
-            </Text>
+            {locked ? (
+                <Image source={LOCK_ICON} resizeMode="contain" style={{ width: 32, height: 32 }} />
+            ) : visual.icon === '🌾' || visual.icon === '🌱' ? (
+                <FarmAreaIcon name="rice" size={37} />
+            ) : (
+                <Text style={styles.stateIcon}>{visual.icon}</Text>
+            )}
 
             <View
                 style={[
