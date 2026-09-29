@@ -13,9 +13,13 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import BottomNav from '@/components/app/BottomNav';
 import GameHeader from '@/components/app/GameHeader';
+import { ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
+import { useUserProfile } from '@/hooks/useUserProfile';
 import { getGameProgress } from '@/services/progress-storage';
 import { getJlptProgress } from '@/services/jlpt-progress-storage';
 import { generatedGrammar, generatedVocabulary } from '@/data/jlpt-learning';
+
+const NEXT_JLPT_LEVEL: Record<string,string> = { 未受験:'N5', N5:'N4', N4:'N3', N3:'N2', N2:'N1', N1:'N1' };
 
 type LevelItem = {
     level: 'N5' | 'N4' | 'N3' | 'N2' | 'N1';
@@ -138,6 +142,7 @@ const levels: LevelItem[] = [
 ];
 
 export default function LearnScreen() {
+    const { profile } = useUserProfile();
     const [runtimeLevels, setRuntimeLevels] = useState(levels);
     const [stats, setStats] = useState({ xp: 0, coins: 0, conversationCredits: 0 });
 
@@ -195,8 +200,10 @@ export default function LearnScreen() {
                     {/* HEADER */}
 
                     <GameHeader
-                        name="Haruto"
+                        name={profile.name?.trim() || 'プレイヤー'}
                         variant="approved"
+                        abilityLevel={profile.level || 'N5'}
+                        abilityTarget={NEXT_JLPT_LEVEL[profile.level || 'N5'] || 'N4'}
                         abilityProgress={(stats.xp % 1000) / 1000}
                         conversationCredits={stats.conversationCredits}
                         coins={stats.coins}
@@ -513,7 +520,8 @@ const styles =
         content: {
             flex: 1,
 
-            paddingHorizontal: 18,
+            paddingHorizontal: ROYAL_LAYOUT.screenGutter,
+            paddingTop: ROYAL_LAYOUT.backSafeTop,
         },
 
         pressed: {

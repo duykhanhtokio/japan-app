@@ -2,11 +2,13 @@ import {
     router,
 } from 'expo-router';
 import {
+    Image,
     Pressable,
     ScrollView,
     StyleSheet,
     Text,
     View,
+    type ImageSourcePropType,
 } from 'react-native';
 
 import {
@@ -15,10 +17,12 @@ import {
 
 import BottomNav from '@/components/app/BottomNav';
 import GameHeader from '@/components/app/GameHeader';
+import { ROYAL, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
 
 import {
     useUserProfile,
 } from '@/hooks/useUserProfile';
+import { useGameProgress } from '@/hooks/useGameProgress';
 
 import {
     useAppLanguage,
@@ -31,6 +35,17 @@ import {
 import {
     getDailyWorkMission,
 } from '@/data/work-missions';
+
+const MISSION_ICONS = {
+    daily: require('../../../assets/app/ui/royal-af/nav-mission-v1.png'),
+    weekly: require('../../../assets/app/ui/royal-af/checkmark-v2.png'),
+    monthly: require('../../../assets/app/ui/royal-af/mission-trophy-v1.png'),
+    work: require('../../../assets/app/ui/royal-af/mission-work-v1.png'),
+    key: require('../../../assets/app/ui/royal-af/mission-key-v1.png'),
+    coin: require('../../../assets/app/ui/royal-af/hud-coin-v1.png'),
+    lock: require('../../../assets/app/ui/royal-af/lock-grape-v2.png'),
+};
+const NEXT_JLPT_LEVEL: Record<string,string> = { 未受験:'N5', N5:'N4', N4:'N3', N3:'N2', N2:'N1', N1:'N1' };
 
 type TasksCopy = {
     title: string;
@@ -289,6 +304,7 @@ const taskCopies:
 };
 
 export default function TasksScreen() {
+    const { progress } = useGameProgress();
     const {
         profile,
         loading,
@@ -359,7 +375,7 @@ export default function TasksScreen() {
                     styles.content
                 }
             >
-                <GameHeader />
+                <GameHeader variant="approved" name={profile.name?.trim() || 'プレイヤー'} abilityLevel={profile.level || 'N5'} abilityTarget={NEXT_JLPT_LEVEL[profile.level || 'N5'] || 'N4'} abilityProgress={(progress.stats.xp % 1000) / 1000} conversationCredits={progress.stats.conversationCredits} coins={progress.stats.coins} />
 
                 <Text
                     style={
@@ -388,7 +404,7 @@ export default function TasksScreen() {
                     }
                 >
                     <MissionSection
-                        icon="☀️"
+                        icon={MISSION_ICONS.daily}
                         title={
                             copy.daily
                         }
@@ -399,13 +415,13 @@ export default function TasksScreen() {
                         items={[
                             '会話練習 ×1',
                             '単語 ×10',
-                            '🌱 Water Farm',
-                            '🌾 Harvest ×3',
+                            'Water Farm',
+                            'Harvest ×3',
                         ]}
                     />
 
                     <MissionSection
-                        icon="📅"
+                        icon={MISSION_ICONS.weekly}
                         title={
                             copy.weekly
                         }
@@ -423,7 +439,7 @@ export default function TasksScreen() {
                     />
 
                     <MissionSection
-                        icon="🏆"
+                        icon={MISSION_ICONS.monthly}
                         title={
                             copy.monthly
                         }
@@ -455,14 +471,7 @@ export default function TasksScreen() {
                                 styles.workHeader
                             }
                         >
-                            <Text
-                                style={
-                                    styles.workIcon
-                                }
-                            >
-                                {workProfile?.groupIcon ??
-                                    '💼'}
-                            </Text>
+                            <Image source={MISSION_ICONS.work} resizeMode="contain" style={styles.workIcon} accessibilityLabel="仕事会話" />
 
                             <View
                                 style={
@@ -613,23 +622,10 @@ export default function TasksScreen() {
                                         }
                                     </Text>
 
-                                    <Text
-                                        style={
-                                            styles.rewardValue
-                                        }
-                                    >
-                                        +
-                                        {
-                                            workMission.rewardXp
-                                        }{' '}
-                                        XP
-                                        {'  '}
-                                        +
-                                        {
-                                            workMission.rewardCoins
-                                        }{' '}
-                                        🪙
-                                    </Text>
+                                    <View style={styles.rewardAmount}>
+                                        <Text style={styles.rewardValue}>+{workMission.rewardXp} XP　+{workMission.rewardCoins}</Text>
+                                        <Image source={MISSION_ICONS.coin} resizeMode="contain" style={styles.rewardCoin} accessibilityLabel="コイン" />
+                                    </View>
                                 </View>
                             </Pressable>
                         ) : (
@@ -658,13 +654,7 @@ export default function TasksScreen() {
                             styles.goldenCard
                         }
                     >
-                        <Text
-                            style={
-                                styles.goldenKey
-                            }
-                        >
-                            🗝️
-                        </Text>
+                        <Image source={MISSION_ICONS.key} resizeMode="contain" style={styles.goldenKey} accessibilityLabel="ゴールデンキー" />
 
                         <View
                             style={{
@@ -690,13 +680,7 @@ export default function TasksScreen() {
                             </Text>
                         </View>
 
-                        <Text
-                            style={
-                                styles.goldenLock
-                            }
-                        >
-                            🔒
-                        </Text>
+                        <Image source={MISSION_ICONS.lock} resizeMode="contain" style={styles.goldenLock} accessibilityLabel="ロック中" />
                     </View>
                 </ScrollView>
             </View>
@@ -715,7 +699,7 @@ function MissionSection({
     progress,
     items,
 }: {
-    icon: string;
+    icon: ImageSourcePropType;
 
     title: string;
 
@@ -736,13 +720,7 @@ function MissionSection({
                     styles.sectionHeader
                 }
             >
-                <Text
-                    style={
-                        styles.sectionIcon
-                    }
-                >
-                    {icon}
-                </Text>
+                <Image source={icon} resizeMode="contain" style={styles.sectionIcon} accessibilityLabel={title} />
 
                 <View
                     style={{
@@ -827,16 +805,13 @@ const styles =
     StyleSheet.create({
         container: {
             flex: 1,
-
-            backgroundColor:
-                '#111827',
+            backgroundColor: ROYAL.ivory,
         },
 
         content: {
             flex: 1,
-
-            paddingHorizontal:
-                18,
+            paddingHorizontal: ROYAL_LAYOUT.screenGutter,
+            paddingTop: ROYAL_LAYOUT.backSafeTop,
         },
 
         loading: {
@@ -860,7 +835,7 @@ const styles =
 
         title: {
             color:
-                '#ffffff',
+                ROYAL.lacquer,
 
             fontSize: 28,
 
@@ -872,7 +847,7 @@ const styles =
 
         subtitle: {
             color:
-                '#aeb7c5',
+                ROYAL.darkGold,
 
             fontSize: 16,
 
@@ -895,7 +870,9 @@ const styles =
             padding: 14,
 
             backgroundColor:
-                '#202a40',
+                ROYAL.lacquer,
+            borderWidth: 1,
+            borderColor: ROYAL.gold,
         },
 
         sectionHeader: {
@@ -910,9 +887,9 @@ const styles =
         },
 
         sectionIcon: {
-            fontSize: 25,
-
-            width: 42,
+            width: 38,
+            height: 38,
+            marginRight: 8,
         },
 
         sectionTitle: {
@@ -1028,9 +1005,9 @@ const styles =
         },
 
         workIcon: {
-            fontSize: 34,
-
-            width: 50,
+            width: 44,
+            height: 44,
+            marginRight: 6,
         },
 
         workHeaderContent: {
@@ -1195,6 +1172,8 @@ const styles =
             fontWeight:
                 '900',
         },
+        rewardAmount: { flexDirection: 'row', alignItems: 'center', gap: 3, flexShrink: 1 },
+        rewardCoin: { width: 18, height: 18 },
 
         noWork: {
             marginTop: 13,
@@ -1241,8 +1220,8 @@ const styles =
         },
 
         goldenKey: {
-            fontSize: 34,
-
+            width: 42,
+            height: 42,
             marginRight: 12,
         },
 
@@ -1266,6 +1245,7 @@ const styles =
         },
 
         goldenLock: {
-            fontSize: 18,
+            width: 24,
+            height: 24,
         },
     });

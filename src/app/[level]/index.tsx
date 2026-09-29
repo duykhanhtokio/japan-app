@@ -1,7 +1,7 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { RoyalBackButton } from '@/components/ui/RoyalSurface';
+import { RoyalBackButton, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
 
 const levelInfo = {
     N5: {
@@ -38,7 +38,7 @@ export default function LevelScreen() {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.content}>
-                <RoyalBackButton onPress={() => router.back()} />
+                <RoyalBackButton onPress={() => router.canGoBack() ? router.back() : router.replace('/learn')} />
 
                 <Text style={styles.level}>{levelName}</Text>
 
@@ -115,8 +115,8 @@ const styles = StyleSheet.create({
 
     content: {
         flex: 1,
-        paddingHorizontal: 24,
-        paddingTop: 16,
+        paddingHorizontal: ROYAL_LAYOUT.screenGutter,
+        paddingTop: ROYAL_LAYOUT.backSafeTop,
     },
 
     backButton: {

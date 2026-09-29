@@ -13,6 +13,7 @@ export const ROYAL_LAYOUT = {
   screenGutter: 12,
   backTouch: 44,
   backArtwork: 36,
+  backSafeTop: 16,
   topPanelHeight: 112,
   registrationHeaderHeight: 132,
   registrationFieldHeight: 82,

@@ -152,6 +152,22 @@ language. Email is passed to Step 2 and persisted in the user profile.
 
 ## Learning Mode HUD
 
+### 29/09/2026 implementation update
+
+The approved Home/Learning/Mission header now reserves 208 dp: 78 dp for the
+portrait/name/coin row and two 64 dp meter slots with 2 dp between them. The
+meter art has transparent source margins; render it at its natural aspect ratio
+and center its opaque region inside each slot. A slot height is not evidence of
+visible rail thickness. The previous 170 dp header metric below describes the
+earlier implementation and is superseded for these screens.
+
+The connected bottom navigation uses one navy four-cell raster under four
+independent hit targets. The selected target receives a gold glow; the game
+map retains its separate FarmHud. Royal Back targets are 44 × 44 dp at 12 dp
+from the content edge and 16 dp below the top safe-area inset on screens using
+this shared Home/Learning/Mission placement. Home uses the canonical ivory
+screen color and retains artwork inside its three mode cards.
+
 - The complete HUD uses raster Royal A+F surfaces; CSS/native borders, fills,
   emoji avatar/currency icons and default controls are forbidden.
 - The approved compact header contains the shared Back button, circular player

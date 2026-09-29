@@ -1,6 +1,6 @@
 import { router, useFocusEffect } from 'expo-router';
 import { useCallback, useMemo, useState } from 'react';
-import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BottomNav from '@/components/app/BottomNav';
 import GameHeader from '@/components/app/GameHeader';
@@ -21,24 +21,24 @@ function abilityPair(raw:string){const level=raw||'N5',next:Record<string,string
 export default function HomeScreen(){
  const [headerHeight,setHeaderHeight]=useState(0),[navHeight,setNavHeight]=useState(0),[stats,setStats]=useState(EMPTY_STATS),{profile,reloadProfile}=useUserProfile(),insets=useSafeAreaInsets(),royal=useRoyalPositioning();
  useFocusEffect(useCallback(()=>{let active=true;void Promise.all([getGameProgress(),reloadProfile()]).then(([progress])=>{if(active)setStats(progress.stats)}).catch(error=>console.log('Load home progress error:',error));return()=>{active=false}},[reloadProfile]));
- const topInset=Math.max(insets.top,insets.bottom)+ROYAL_LAYOUT.homeEdgeGap;
+ const topInset=insets.top+ROYAL_LAYOUT.backSafeTop;
  const bottomInset=Math.max(insets.bottom,8);
  const ability=abilityPair(profile.level);
  const cardHeight=useMemo(()=>{const usable=royal.height-topInset-bottomInset-headerHeight-navHeight-ROYAL_LAYOUT.homeHeadingHeight-20-ROYAL_LAYOUT.homeModeGap*3;return Math.max(124,Math.min(160,Math.floor(usable/3)))},[topInset,bottomInset,royal.height,headerHeight,navHeight]);
- return <ImageBackground source={require('../../assets/app/home/home-bg.jpg')} style={styles.background} resizeMode="cover"><View pointerEvents="none" style={styles.overlay}/>
+ return <View style={styles.background}>
   <View style={[styles.screen,{paddingTop:topInset,paddingBottom:bottomInset}]}>
-   <View style={styles.content}>
+   <ScrollView style={styles.content} contentContainerStyle={styles.contentInner} showsVerticalScrollIndicator={false}>
     <View onLayout={event=>setHeaderHeight(Math.ceil(event.nativeEvent.layout.height))}><GameHeader variant="approved" name={profile.name?.trim()||'プレイヤー'} abilityLevel={ability.level} abilityTarget={ability.target} abilityProgress={(stats.xp%1000)/1000} conversationCredits={stats.conversationCredits} coins={stats.coins}/></View>
     <View style={[styles.headingArea,{height:ROYAL_LAYOUT.homeHeadingHeight+20}]}><Text style={styles.heading}>学習モード</Text><Text style={styles.headingVi}>Chọn nội dung bạn muốn học</Text></View>
     <View style={[styles.cards,{gap:ROYAL_LAYOUT.homeModeGap}]}>{MODES.map(mode=><LearningImageCard key={mode.ja} {...mode} height={cardHeight} onPress={()=>router.push(mode.route)}/>)}</View>
-   </View>
+   </ScrollView>
    <View onLayout={event=>setNavHeight(Math.ceil(event.nativeEvent.layout.height))}><BottomNav active="home" variant="approved"/></View>
   </View>
- </ImageBackground>
+ </View>
 }
 
 function LearningImageCard({image,badge,ja,en,description,height,onPress}:{image:any;badge:string;ja:string;en:string;description:string;height:number;onPress:()=>void}){return <Pressable onPress={onPress} style={({pressed})=>[styles.card,{height},pressed&&styles.cardPressed]}><ImageBackground source={image} resizeMode="cover" style={styles.cardImage} imageStyle={styles.cardRadius}><View pointerEvents="none" style={styles.cardShade}/><View style={styles.badge}><Text numberOfLines={1} style={styles.badgeText}>{badge}</Text></View><View style={styles.cardBottom}><Text numberOfLines={1} adjustsFontSizeToFit style={styles.cardJapanese}>{ja}</Text><Text numberOfLines={1} style={styles.cardEnglish}>{en}</Text><Text numberOfLines={1} adjustsFontSizeToFit style={styles.cardDescription}>{description}</Text><Text style={styles.startText}>始める　→</Text></View></ImageBackground></Pressable>}
 
 const styles=StyleSheet.create({
- background:{flex:1},overlay:{...StyleSheet.absoluteFillObject,backgroundColor:'rgba(15,10,25,.42)'},screen:{flex:1,paddingHorizontal:ROYAL_LAYOUT.screenGutter,gap:ROYAL_LAYOUT.homeModeGap},content:{flex:1,minHeight:0},headingArea:{height:ROYAL_LAYOUT.homeHeadingHeight,alignItems:'center',justifyContent:'center'},heading:{color:'#fff',fontSize:22,lineHeight:28,fontFamily:ROYAL_FONT.heading,textAlign:'center',textShadowColor:'#000',textShadowOffset:{width:0,height:2},textShadowRadius:3},headingVi:{color:'rgba(255,255,255,.86)',fontSize:10.5,lineHeight:14,fontFamily:ROYAL_FONT.body,textAlign:'center'},cards:{flex:1,minHeight:0,justifyContent:'center'},card:{width:'100%',minHeight:124,borderRadius:20,overflow:'hidden',shadowColor:'#000',shadowOpacity:.22,shadowRadius:9,shadowOffset:{width:0,height:5},elevation:6},cardPressed:{opacity:.74,transform:[{scale:.985}]},cardImage:{flex:1,paddingHorizontal:15,paddingVertical:11,justifyContent:'space-between'},cardRadius:{borderRadius:20},cardShade:{...StyleSheet.absoluteFillObject,backgroundColor:'rgba(0,0,0,.43)'},badge:{alignSelf:'flex-start',paddingHorizontal:9,paddingVertical:4},badgeText:{color:'#fff',fontSize:7.5,letterSpacing:.7,fontFamily:ROYAL_FONT.body,textShadowColor:'#000',textShadowOffset:{width:0,height:1},textShadowRadius:2},cardBottom:{zIndex:2},cardJapanese:{color:'#fff',fontSize:21,lineHeight:26,fontFamily:ROYAL_FONT.heading},cardEnglish:{color:'rgba(255,255,255,.9)',fontSize:10,lineHeight:13,fontFamily:ROYAL_FONT.body},cardDescription:{color:'rgba(255,255,255,.84)',fontSize:8.5,lineHeight:12,fontFamily:ROYAL_FONT.body,marginTop:1},startText:{alignSelf:'flex-end',color:'#fff3cf',fontSize:10.5,lineHeight:14,fontFamily:ROYAL_FONT.heading,marginTop:2}
+ background:{flex:1,backgroundColor:'#e8e2d6'},screen:{flex:1,paddingHorizontal:ROYAL_LAYOUT.screenGutter,gap:ROYAL_LAYOUT.homeModeGap},content:{flex:1,minHeight:0},contentInner:{flexGrow:1,paddingBottom:ROYAL_LAYOUT.homeModeGap},headingArea:{height:ROYAL_LAYOUT.homeHeadingHeight,alignItems:'center',justifyContent:'center'},heading:{color:'#0b1830',fontSize:22,lineHeight:28,fontFamily:ROYAL_FONT.heading,textAlign:'center'},headingVi:{color:'#72501f',fontSize:10.5,lineHeight:14,fontFamily:ROYAL_FONT.body,textAlign:'center'},cards:{flex:1,minHeight:0,justifyContent:'center'},card:{width:'100%',minHeight:124,borderRadius:20,overflow:'hidden',borderWidth:1.5,borderColor:'#cba55a',shadowColor:'#000',shadowOpacity:.22,shadowRadius:9,shadowOffset:{width:0,height:5},elevation:6},cardPressed:{opacity:.74,transform:[{scale:.985}]},cardImage:{flex:1,paddingHorizontal:15,paddingVertical:11,justifyContent:'space-between'},cardRadius:{borderRadius:20},cardShade:{...StyleSheet.absoluteFillObject,backgroundColor:'rgba(0,0,0,.43)'},badge:{alignSelf:'flex-start',paddingHorizontal:9,paddingVertical:4},badgeText:{color:'#fff',fontSize:7.5,letterSpacing:.7,fontFamily:ROYAL_FONT.body,textShadowColor:'#000',textShadowOffset:{width:0,height:1},textShadowRadius:2},cardBottom:{zIndex:2},cardJapanese:{color:'#fff',fontSize:21,lineHeight:26,fontFamily:ROYAL_FONT.heading},cardEnglish:{color:'rgba(255,255,255,.9)',fontSize:10,lineHeight:13,fontFamily:ROYAL_FONT.body},cardDescription:{color:'rgba(255,255,255,.84)',fontSize:8.5,lineHeight:12,fontFamily:ROYAL_FONT.body,marginTop:1},startText:{alignSelf:'flex-end',color:'#fff3cf',fontSize:10.5,lineHeight:14,fontFamily:ROYAL_FONT.heading,marginTop:2}
 });

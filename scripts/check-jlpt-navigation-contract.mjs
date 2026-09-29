@@ -2,7 +2,7 @@ import fs from 'node:fs';
 const route = fs.readFileSync('src/app/[level]/[section].tsx', 'utf8');
 const catalog = fs.readFileSync('src/components/jlpt/ApprovedJlptExamCatalog.tsx', 'utf8');
 const failures = [];
-if (!route.includes('onBack={()=>router.back()}')) failures.push('top-level catalog must own router.back()');
+if (!route.includes('onBack={()=>router.canGoBack()?router.back():router.replace(`/${level}`)}')) failures.push('catalog Back must return to the level even without stack history');
 if (catalog.includes('router.back(') || catalog.includes('router.replace(')) failures.push('catalog internals must not mutate the router');
 if (!catalog.includes("BackHandler.addEventListener('hardwareBackPress'")) failures.push('hardware Back interception is missing while an exam is selected');
 if (!catalog.includes("navigation.addListener('beforeRemove'")) failures.push('iPhone swipe/route Back interception is missing while an exam is selected');
