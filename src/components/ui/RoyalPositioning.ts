@@ -13,7 +13,7 @@ export const ROYAL_LAYOUT = {
   screenGutter: 12,
   backTouch: 44,
   backArtwork: 36,
-  backSafeTop: 16,
+  backSafeTop: 8,
   topPanelHeight: 112,
   registrationHeaderHeight: 132,
   registrationFieldHeight: 82,
@@ -36,9 +36,9 @@ export const ROYAL_LAYOUT = {
   selectorRowHeight: 72,
   topPanelEdgeInset: 2,
   framedTextHorizontalInset: 32,
-  mapMarkerWidthPhone: 174,
-  mapMarkerWidthWide: 184,
-  mapMarkerHeight: 104,
+  mapMarkerWidthPhone: 104,
+  mapMarkerWidthWide: 112,
+  mapMarkerHeight: 74,
   cityGridGap: 6,
 } as const;
 
@@ -53,7 +53,7 @@ export const ROYAL_CONTENT_GROUP = {
   worldHeaderMission: 'world/header-mission',
   worldLocationSummary: 'world/location-summary',
   worldScenario: 'world/scenario-explanation',
-  worldMapMarker: 'world/map-marker',
+  worldMapMarker: 'world/map-marker-compact-v2',
 } as const;
 
 export type RoyalContentGroup = typeof ROYAL_CONTENT_GROUP[keyof typeof ROYAL_CONTENT_GROUP];

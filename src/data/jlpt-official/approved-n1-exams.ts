@@ -273,7 +273,7 @@ export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
     // Complete source-backed candidate; timing/transcript remain candidate/unverified.
     id: 'n1-2019-07-exam-15', level: 'N1', title: '日本語能力試験 N1', periodLabel: '2019年7月・第15回',
     startLabel: '第15回を始める', storageKey: N1_2019_07_SESSION_KEY, questions: N1_2019_07_TRIAL,
-    audioSource: require('../../../assets/jlpt/n1/2019-07/audio/n1-2019-07.mp3'), visualOptions: {},
+    audioSource: require('../../../assets/jlpt/n1/2019-07/audio/n1-2019-07.m4a'), visualOptions: {},
   },
   {
     // Complete source-backed candidate; timing/transcript remain candidate/unverified.

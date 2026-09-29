@@ -1,4 +1,4 @@
-import { MapPlacement, ResponsiveMapAssets, WorldMapItem } from '@/components/world/ResponsiveWorldMap';
+import { MapLandZones, MapMode, MapPlacement, ResponsiveMapAssets, WorldMapItem } from '@/components/world/ResponsiveWorldMap';
 
 export type RegionMapId = 'hokkaido' | 'tohoku' | 'kanto' | 'chubu' | 'kansai' | 'chugoku' | 'shikoku' | 'kyushu';
 
@@ -23,8 +23,8 @@ const place=(pa:XY,pl:XY,la:XY,ll:XY):Record<'phone'|'tablet'|'landscape',MapPla
 const P:Record<string,ReturnType<typeof place>>={
  hokkaido:place([.76,.26],[.86,.20],[.58,.20],[.76,.16]),tohoku:place([.67,.41],[.84,.35],[.59,.37],[.77,.31]),kanto:place([.65,.56],[.84,.55],[.59,.50],[.79,.49]),chubu:place([.51,.55],[.34,.47],[.54,.48],[.31,.43]),kansai:place([.39,.57],[.20,.54],[.50,.54],[.27,.58]),chugoku:place([.23,.59],[.12,.67],[.46,.57],[.25,.70]),shikoku:place([.34,.67],[.39,.76],[.49,.63],[.48,.80]),kyushu:place([.17,.75],[.13,.83],[.43,.70],[.72,.73]),
  doo:place([.54,.55],[.25,.38],[.52,.53],[.20,.33]),donan:place([.29,.69],[.18,.76],[.45,.65],[.20,.72]),dohoku:place([.49,.39],[.50,.26],[.51,.39],[.50,.17]),doto:place([.72,.48],[.84,.45],[.59,.47],[.82,.39]),
- aomori:place([.53,.33],[.24,.28],[.52,.28],[.22,.24]),iwate:place([.62,.43],[.83,.38],[.56,.40],[.81,.34]),miyagi:place([.58,.57],[.82,.57],[.55,.51],[.81,.51]),akita:place([.40,.43],[.17,.42],[.47,.40],[.20,.39]),yamagata:place([.43,.57],[.18,.59],[.48,.51],[.20,.56]),fukushima:place([.49,.70],[.50,.79],[.50,.64],[.50,.80]),
- gunma:place([.30,.42],[.14,.36],[.46,.41],[.18,.32]),tochigi:place([.52,.39],[.50,.27],[.52,.38],[.48,.18]),ibaraki:place([.75,.48],[.85,.43],[.59,.46],[.82,.38]),saitama:place([.39,.55],[.17,.54],[.48,.50],[.20,.51]),tokyo:place([.42,.63],[.20,.68],[.49,.58],[.22,.69]),chiba:place([.68,.65],[.84,.68],[.58,.59],[.80,.68]),kanagawa:place([.35,.70],[.45,.79],[.47,.64],[.47,.81]),
+ aomori:place([.53,.33],[.24,.28],[.52,.28],[.22,.24]),iwate:place([.62,.43],[.83,.38],[.56,.40],[.81,.34]),miyagi:place([.58,.57],[.82,.57],[.55,.51],[.81,.51]),akita:place([.40,.43],[.17,.42],[.47,.40],[.20,.39]),yamagata:place([.43,.57],[.18,.59],[.48,.51],[.20,.56]),fukushima:place([.49,.70],[.81,.75],[.50,.64],[.77,.73]),
+ gunma:place([.30,.42],[.14,.36],[.46,.41],[.18,.32]),tochigi:place([.52,.39],[.50,.27],[.52,.38],[.48,.18]),ibaraki:place([.75,.48],[.85,.43],[.59,.46],[.82,.38]),saitama:place([.39,.55],[.17,.54],[.48,.50],[.20,.51]),tokyo:place([.42,.63],[.20,.68],[.49,.58],[.22,.69]),chiba:place([.68,.65],[.84,.68],[.58,.59],[.80,.68]),kanagawa:place([.35,.70],[.17,.77],[.47,.64],[.20,.77]),
  niigata:place([.65,.36],[.83,.30],[.57,.37],[.80,.27]),toyama:place([.52,.46],[.66,.40],[.52,.45],[.70,.39]),ishikawa:place([.35,.45],[.18,.36],[.46,.44],[.24,.35]),fukui:place([.26,.57],[.14,.56],[.43,.53],[.19,.52]),yamanashi:place([.68,.59],[.85,.55],[.58,.54],[.82,.53]),nagano:place([.59,.50],[.81,.43],[.55,.47],[.79,.42]),gifu:place([.47,.61],[.30,.66],[.50,.55],[.28,.64]),shizuoka:place([.63,.72],[.79,.73],[.56,.64],[.80,.69]),aichi:place([.38,.72],[.36,.80],[.47,.64],[.48,.80]),
  hyogo:place([.31,.42],[.14,.34],[.45,.43],[.19,.32]),kyoto:place([.54,.37],[.50,.25],[.53,.39],[.50,.18]),shiga:place([.68,.43],[.85,.36],[.58,.43],[.82,.34]),osaka:place([.45,.58],[.26,.61],[.49,.53],[.23,.58]),nara:place([.57,.62],[.75,.64],[.54,.56],[.78,.58]),wakayama:place([.36,.70],[.23,.77],[.46,.63],[.24,.75]),mie:place([.71,.64],[.85,.72],[.59,.58],[.81,.70]),
  tottori:place([.54,.36],[.50,.25],[.52,.38],[.50,.18]),shimane:place([.34,.43],[.15,.39],[.46,.43],[.19,.36]),okayama:place([.59,.52],[.82,.47],[.55,.49],[.81,.43]),hiroshima:place([.42,.58],[.19,.61],[.49,.53],[.20,.58]),yamaguchi:place([.28,.62],[.16,.72],[.44,.57],[.22,.72]),
@@ -38,6 +38,60 @@ export const japanAssets: ResponsiveMapAssets = {
     tablet: require('../../assets/app/maps/regions/japan-tablet.png'),
     landscape: require('../../assets/app/maps/regions/japan-landscape.png'),
 };
+
+// Land bounds measured in source-image pixels. The cover transform in the map
+// converts these to screen coordinates for tablet and landscape layouts.
+export const japanLandZones:MapLandZones={
+ phone:{width:853,height:1844,rects:[
+  [530,375,820,638],[520,620,680,955],[470,880,780,1200],[370,858,600,1080],
+  [245,950,470,1130],[45,990,315,1245],[210,1095,445,1315],[42,1190,330,1600],
+ ]},
+ tablet:{width:1086,height:1448,rects:[
+  [620,290,850,505],[610,485,750,770],[570,715,825,965],[490,680,650,840],
+  [385,750,565,900],[245,780,475,980],[395,890,540,1050],[210,935,470,1280],
+ ]},
+ landscape:{width:1672,height:941,rects:[
+  [895,190,1040,325],[890,305,970,470],[850,445,1010,595],[815,410,935,550],
+  [745,480,860,575],[660,490,790,620],[740,555,845,650],[650,595,800,800],
+ ]},
+};
+
+// Bounds traced against the 24 original region map images. These conservative
+// image-space envelopes keep large-screen labels outside the colored islands.
+type Bounds=readonly [number,number,number,number];
+const regionBounds:Record<RegionMapId,Record<MapMode,Bounds>>={
+ hokkaido:{phone:[.07,.28,.95,.83],tablet:[.21,.18,.79,.82],landscape:[.38,.25,.65,.81]},
+ tohoku:{phone:[.16,.17,.79,.88],tablet:[.34,.12,.68,.91],landscape:[.41,.14,.59,.91]},
+ kanto:{phone:[.05,.25,.90,.83],tablet:[.26,.20,.76,.75],landscape:[.38,.24,.66,.76]},
+ chubu:{phone:[.07,.27,.98,.82],tablet:[.22,.17,.81,.85],landscape:[.36,.21,.66,.81]},
+ kansai:{phone:[.07,.34,.94,.82],tablet:[.17,.31,.86,.85],landscape:[.36,.32,.65,.84]},
+ chugoku:{phone:[.09,.32,.93,.77],tablet:[.17,.30,.86,.83],landscape:[.35,.31,.67,.80]},
+ shikoku:{phone:[.09,.33,.90,.79],tablet:[.19,.38,.86,.79],landscape:[.37,.38,.67,.81]},
+ kyushu:{phone:[.05,.22,.97,.95],tablet:[.29,.16,.83,.94],landscape:[.38,.17,.66,.95]},
+};
+const regionSourceSizes:Record<RegionMapId,Record<MapMode,readonly [number,number]>>={
+ hokkaido:{phone:[863,1823],tablet:[1086,1448],landscape:[1672,941]},
+ tohoku:{phone:[862,1825],tablet:[1086,1448],landscape:[1672,941]},
+ kanto:{phone:[852,1847],tablet:[1086,1448],landscape:[1672,941]},
+ chubu:{phone:[864,1821],tablet:[1086,1448],landscape:[1672,941]},
+ kansai:{phone:[852,1846],tablet:[1085,1449],landscape:[1672,940]},
+ chugoku:{phone:[862,1825],tablet:[1086,1449],landscape:[1672,941]},
+ shikoku:{phone:[852,1846],tablet:[1086,1448],landscape:[1672,941]},
+ kyushu:{phone:[862,1825],tablet:[1086,1448],landscape:[1672,941]},
+};
+export const regionLandZones:Record<RegionMapId,MapLandZones>=Object.fromEntries(
+ (Object.keys(regionBounds) as RegionMapId[]).map(region=>[region,Object.fromEntries(
+  (['phone','tablet','landscape'] as MapMode[]).map(mode=>{
+   const [width,height]=regionSourceSizes[region][mode];
+   const [l,t,r,b]=regionBounds[region][mode];
+   const pad=.015;
+   return [mode,{width,height,rects:[[
+    Math.max(0,l-pad)*width,Math.max(0,t-pad)*height,
+    Math.min(1,r+pad)*width,Math.min(1,b+pad)*height,
+   ]]}];
+  })
+ )])
+) as unknown as Record<RegionMapId,MapLandZones>;
 
 export const japanRegions: WorldMapItem[] = [
     item('hokkaido', '北海道', 'Hokkaido', '❄️', 0, '0/20'),

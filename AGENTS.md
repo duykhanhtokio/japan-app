@@ -70,6 +70,12 @@ Before changing JLPT data or integration, read:
 
 Run `node scripts/check-jlpt-approved-ui-lock.mjs` after JLPT work. Do not change approved hashes, snapshots, layout, styles, interaction behavior, session behavior, or routes without explicit user permission. Never reintroduce Royal A+F components into the JLPT exam screen.
 
+Exception explicitly approved by the user on 2026-09-29: the shared Royal Back control may replace the JLPT exam header Back only; relock that file after validation. Other Royal exam UI remains subject to the restriction above.
+
 New exams must integrate through data/adapters compatible with the approved shared UI. Preserve independent exam IDs, question IDs, answer state, session keys, audio mappings, navigation, results, and post-submission review behavior. Never expose answers, transcripts, or explanations before submission.
 
 Do not overwrite the protected N1 12/2012 explanation or audio assets without explicit user instruction.
+
+## Image coverage across devices (user requirement, 2026-09-29)
+
+Every scene or card background in the app must fully cover its allocated display frame on iPhone, iPad, Android, and desktop/web aspect ratios. Never leave blank bands, letterboxing, or a blurred duplicate around a smaller `contain` image. Use aspect-preserving `cover` geometry (`max(viewportWidth/sourceWidth, viewportHeight/sourceHeight)`) for the primary artwork and apply the exact same scale and centered offsets to hotspots and overlays. Cropping at the edges is acceptable only if essential subjects, controls, and tappable targets remain visible and usable; otherwise provide responsive framing or alternate artwork. Run geometry checks and inspect actual simulator/browser screenshots at representative portrait and landscape sizes before asking the user to test. Do not claim device validation from geometry checks alone.

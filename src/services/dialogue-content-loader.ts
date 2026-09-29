@@ -1,4 +1,4 @@
-import type { LifeDialogueLevel, LifeDialogueLevelSet, LifeDialogueTurn } from '@/types/life-conversation';
+import type { LifeDialogueLevelSet, LifeDialogueTurn } from '@/types/life-conversation';
 
 type MetroRequireContext = {
     (key: string): unknown;
@@ -19,13 +19,11 @@ const dialogueContext = (require as RequireWithContext).context(
 
 const availableFiles = new Set(dialogueContext.keys());
 
-export function normalizeDialogueLevel(level?: string | null): LifeDialogueLevel {
-    return level === 'N1' || level === 'N2' || level === 'N3' || level === 'N4' || level === 'N5'
-        ? level
-        : 'N5';
-}
-
-export function loadDialogueTurns(scenarioId: string, level?: string | null): LifeDialogueTurn[] {
+// The initial JLPT assessment describes the learner; it does not select or
+// restrict conversation content. New authored scenarios use `shared`.
+// Existing five-level packages remain available through their N5 content
+// while each scenario is rewritten; scenario IDs and saved card progress stay stable.
+export function loadDialogueTurns(scenarioId: string): LifeDialogueTurn[] {
     const directKey = `./${scenarioId}.json`;
     const genericMatch = /^SC-LOC-JP-\d{5}-(\d{2})-001$/.exec(scenarioId);
     const key = availableFiles.has(directKey)
@@ -40,7 +38,8 @@ export function loadDialogueTurns(scenarioId: string, level?: string | null): Li
         : moduleValue;
     if (Array.isArray(value)) return value as LifeDialogueTurn[];
     if (value && typeof value === 'object') {
-        const selected = (value as LifeDialogueLevelSet)[normalizeDialogueLevel(level)];
+        const content = value as LifeDialogueLevelSet & { shared?: LifeDialogueTurn[] };
+        const selected = content.shared ?? content.N5;
         if (!Array.isArray(selected)) return [];
         if (key === directKey) return selected;
         const genericId = `GENERIC-CITY-${genericMatch![1]}`;

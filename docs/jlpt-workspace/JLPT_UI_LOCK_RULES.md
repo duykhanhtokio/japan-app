@@ -8,5 +8,7 @@
 6. Preserve selection color, persisted state, navigation, progress, submission, review, language fallback, and audio behavior exactly as approved.
 7. Never modify or overwrite `src/data/jlpt-official/n1-2012-12/explanations.13-locales.json` or `assets/jlpt/n1/2012-12/audio/n1-2012-12.mp3` without explicit user instruction.
 8. Run `node scripts/check-jlpt-approved-ui-lock.mjs` before and after every JLPT change.
-9. If the lock check fails or a new exam cannot be integrated without changing a locked file, stop and ask the user. Do not update the hashes to make the failure disappear.
+9. If the lock check fails or a new exam cannot be integrated without changing a locked file, stop and ask the user. Update a hash only for a specifically authorized and verified UI change, with a dated checkpoint recording old and new hashes.
 10. Visual completion requires an iPhone-sized runtime check and screenshots.
+
+On 2026-09-29 the user explicitly authorized replacing the exam Back control with the common Royal Back appearance, then relocking that specific file. Preserve all exam answers, navigation callbacks, state, audio, and review behavior. Runtime visual approval remains pending until simulator screenshots are checked.

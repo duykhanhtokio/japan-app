@@ -60,6 +60,16 @@ export function OnboardingMusic() {
         }
         if (!active) return;
 
+        // A recording screen can leave the shared iOS audio session routed to
+        // the receiver. Restore speaker playback before entering an exam.
+        if (/^\/(?:n[1-5]|jlpt-listening-review)(?:\/|$)/i.test(pathname)) {
+          await setAudioModeAsync({
+            allowsRecording: false,
+            playsInSilentMode: true,
+            shouldPlayInBackground: false,
+          });
+        }
+
         player.loop = true;
         player.volume = 0.38;
 

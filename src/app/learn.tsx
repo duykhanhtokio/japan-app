@@ -2,6 +2,7 @@ import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
 
 import {
+    Modal,
     Pressable,
     ScrollView,
     StyleSheet,
@@ -18,6 +19,8 @@ import { useUserProfile } from '@/hooks/useUserProfile';
 import { getGameProgress } from '@/services/progress-storage';
 import { getJlptProgress } from '@/services/jlpt-progress-storage';
 import { generatedGrammar, generatedVocabulary } from '@/data/jlpt-learning';
+import { RANK_COLORS, RANKS, type LearningEconomy } from '@/services/learning-economy';
+import { syncJlptQualification } from '@/services/sync-jlpt-qualification';
 
 const NEXT_JLPT_LEVEL: Record<string,string> = { 未受験:'N5', N5:'N4', N4:'N3', N3:'N2', N2:'N1', N1:'N1' };
 
@@ -37,6 +40,7 @@ type LevelItem = {
     unlocked: boolean;
 
     accentColor: string;
+    bodyColor: string;
 };
 
 const levels: LevelItem[] = [
@@ -57,7 +61,7 @@ const levels: LevelItem[] = [
 
         unlocked: true,
 
-        accentColor: '#50745c',
+        accentColor: RANK_COLORS.N5, bodyColor: '#dcebdc',
     },
 
     {
@@ -77,7 +81,7 @@ const levels: LevelItem[] = [
 
         unlocked: true,
 
-        accentColor: '#50745c',
+        accentColor: RANK_COLORS.N4, bodyColor: '#91bed5',
     },
 
     {
@@ -97,7 +101,7 @@ const levels: LevelItem[] = [
 
         unlocked: true,
 
-        accentColor: '#50745c',
+        accentColor: RANK_COLORS.N3, bodyColor: '#ead8bd',
     },
 
     {
@@ -117,7 +121,7 @@ const levels: LevelItem[] = [
 
         unlocked: true,
 
-        accentColor: '#50745c',
+        accentColor: RANK_COLORS.N2, bodyColor: '#d8c0aa',
     },
 
     {
@@ -137,7 +141,7 @@ const levels: LevelItem[] = [
 
         unlocked: true,
 
-        accentColor: '#9f7aea',
+        accentColor: RANK_COLORS.N1, bodyColor: '#f2c7c7',
     },
 ];
 
@@ -145,9 +149,12 @@ export default function LearnScreen() {
     const { profile } = useUserProfile();
     const [runtimeLevels, setRuntimeLevels] = useState(levels);
     const [stats, setStats] = useState({ xp: 0, coins: 0, conversationCredits: 0 });
+    const [economy,setEconomy] = useState<LearningEconomy|null>(null);
+    const [helpVisible,setHelpVisible] = useState(false);
 
     useEffect(() => {
-        void Promise.all([getGameProgress(), getJlptProgress()]).then(([game, learning]) => {
+        void Promise.all([getGameProgress(), getJlptProgress(), syncJlptQualification()]).then(([game, learning, ledger]) => {
+            setEconomy(ledger);
             setStats({ xp: game.stats.xp, coins: game.stats.coins, conversationCredits: game.stats.conversationCredits });
             setRuntimeLevels(levels.map((item) => {
                 const levelIds = new Set([
@@ -166,6 +173,8 @@ export default function LearnScreen() {
             }));
         });
     }, []);
+    const currentTarget = economy?.officialRank ? NEXT_JLPT_LEVEL[economy.officialRank] as keyof typeof RANK_COLORS : 'N5';
+    const qualifiedCount = Object.keys(economy?.passed[currentTarget]??{}).length;
     function openLevel(
         item: LevelItem
     ) {
@@ -202,10 +211,10 @@ export default function LearnScreen() {
                     <GameHeader
                         name={profile.name?.trim() || 'プレイヤー'}
                         variant="approved"
-                        abilityLevel={profile.level || 'N5'}
-                        abilityTarget={NEXT_JLPT_LEVEL[profile.level || 'N5'] || 'N4'}
-                        abilityProgress={(stats.xp % 1000) / 1000}
-                        conversationCredits={stats.conversationCredits}
+                        abilityLevel={economy?.officialRank || 'N5'}
+                        abilityTarget={economy?.officialRank?NEXT_JLPT_LEVEL[economy.officialRank]:'N5'}
+                        qualifiedExams={Object.fromEntries(RANKS.map(rank=>[rank,Object.keys(economy?.passed[rank]??{}).length]))}
+                        conversationCredits={economy?.credits ?? 100}
                         coins={stats.coins}
                     />
 
@@ -216,13 +225,13 @@ export default function LearnScreen() {
                             styles.headingArea
                         }
                     >
-                        <Text
+                        <View style={styles.headingTitleRow}><Text
                             style={
                                 styles.heading
                             }
                         >
                             JLPT 学習
-                        </Text>
+                        </Text><Pressable accessibilityRole="button" accessibilityLabel="JLPT の認定条件" onPress={()=>setHelpVisible(true)} style={styles.helpButton}><Text style={styles.helpGlyph}>?</Text></Pressable></View>
 
                         <Text
                             style={
@@ -250,7 +259,7 @@ export default function LearnScreen() {
                                     styles.totalProgressTitle
                                 }
                             >
-                                TOTAL PROGRESS
+                                JLPT 認定進捗
                             </Text>
 
                             <Text
@@ -258,7 +267,7 @@ export default function LearnScreen() {
                                     styles.totalProgressXp
                                 }
                             >
-                                {stats.xp.toLocaleString()} / 5,000 XP
+                                {RANKS.filter(rank=>!economy?.officialRank||RANKS.indexOf(rank)>RANKS.indexOf(economy.officialRank)).map(rank=>`${rank} ${Object.keys(economy?.passed[rank]??{}).length}/6`).join(' · ')}
                             </Text>
                         </View>
 
@@ -268,19 +277,11 @@ export default function LearnScreen() {
                             }
                         >
                             <View
-                                style={
-                                    styles.totalProgressFill
-                                }
+                                style={[styles.totalProgressFill,
+                                    {width:`${Math.min(100,qualifiedCount/6*100)}%`,backgroundColor:RANK_COLORS[currentTarget]}]}
                             />
                         </View>
 
-                        <Text
-                            style={
-                                styles.totalProgressNote
-                            }
-                        >
-                            N5 đang được mở
-                        </Text>
                     </View>
 
                     {/* LEVEL LIST */}
@@ -315,6 +316,7 @@ export default function LearnScreen() {
                                             item.unlocked
                                                 ? styles.levelCardUnlocked
                                                 : styles.levelCardLocked,
+                                            { backgroundColor: item.bodyColor },
 
                                             pressed &&
                                             item.unlocked &&
@@ -450,20 +452,6 @@ export default function LearnScreen() {
                                     >
                                         {item.unlocked ? (
                                             <>
-                                                <View
-                                                    style={
-                                                        styles.openBadge
-                                                    }
-                                                >
-                                                    <Text
-                                                        style={
-                                                            styles.openBadgeText
-                                                        }
-                                                    >
-                                                        OPEN
-                                                    </Text>
-                                                </View>
-
                                                 <Text
                                                     style={
                                                         styles.arrow
@@ -489,6 +477,7 @@ export default function LearnScreen() {
                 </View>
 
                 <BottomNav active="home" variant="approved" />
+                <Modal visible={helpVisible} transparent animationType="fade" onRequestClose={()=>setHelpVisible(false)}><View style={styles.helpBackdrop}><View style={styles.helpPanel}><ScrollView contentContainerStyle={styles.helpContent}><Text style={styles.helpTitle}>JLPT 認定の進め方</Text><Text style={styles.helpCopy}>Mỗi cấp cần 6 đề thi khác nhau đạt ít nhất 80% sau khi nộp bài. Thi lại đề chưa đạt được tính khi điểm mới đạt yêu cầu; làm một đề nhiều lần vẫn chỉ tính là một đề.</Text><Text style={styles.helpCopy}>Thanh x/6 cho biết số đề đã đạt tại cấp đó. Có thể thăng thẳng lên cấp cao khi đủ 6 đề tại cấp ấy. Cấp chính thức được hiển thị trong hồ sơ; tiến độ cấp thấp hơn sẽ ẩn sau khi đã được công nhận cấp cao.</Text></ScrollView><Pressable accessibilityRole="button" accessibilityLabel="閉じる" onPress={()=>setHelpVisible(false)} style={styles.helpClose}><Text style={styles.helpCloseText}>閉じる</Text></Pressable></View></View></Modal>
             </SafeAreaView>
         </View>
     );
@@ -496,6 +485,13 @@ export default function LearnScreen() {
 
 const styles =
     StyleSheet.create({
+        headingTitleRow:{flexDirection:'row',alignItems:'center',gap:10},
+        helpButton:{width:42,height:42,borderRadius:21,borderWidth:2,borderColor:'#b68d47',backgroundColor:'#fff8e8',alignItems:'center',justifyContent:'center'},
+        helpGlyph:{color:'#263b55',fontSize:24,fontWeight:'700',lineHeight:30},
+        helpBackdrop:{flex:1,justifyContent:'center',padding:20,backgroundColor:'rgba(4,15,31,.65)'},
+        helpPanel:{maxHeight:'80%',maxWidth:560,width:'100%',alignSelf:'center',backgroundColor:'#fff8e8',borderWidth:3,borderColor:'#c9a361',borderRadius:22,padding:18},
+        helpContent:{gap:15,paddingBottom:12},helpTitle:{fontSize:22,fontWeight:'700',color:'#193551',textAlign:'center'},helpCopy:{fontSize:16,lineHeight:25,color:'#23384d'},
+        helpClose:{minHeight:48,alignItems:'center',justifyContent:'center',backgroundColor:'#223d5b',borderRadius:12},helpCloseText:{color:'#fff8e8',fontSize:17},
         background: {
             flex: 1,
             backgroundColor: '#e8e2d6',
@@ -616,7 +612,7 @@ const styles =
         totalProgressTop: {
             flexDirection: 'row',
 
-            alignItems: 'center',
+            alignItems: 'flex-start',
 
             justifyContent:
                 'space-between',
@@ -625,7 +621,7 @@ const styles =
         totalProgressTitle: {
             color: '#50745c',
 
-            fontSize: 16,
+            fontSize: 13,
             fontWeight: '900',
 
             letterSpacing: 0.7,
@@ -633,8 +629,8 @@ const styles =
 
         totalProgressXp: {
             color: '#24231f',
-
-            fontSize: 16,
+            flex:1,minWidth:0,marginLeft:8,textAlign:'right',
+            fontSize: 12,
             fontWeight: '800',
         },
 
@@ -652,7 +648,7 @@ const styles =
         },
 
         totalProgressFill: {
-            width: '28.4%',
+            width: '0%',
             height: '100%',
 
             borderRadius: 4,

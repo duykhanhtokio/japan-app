@@ -48,7 +48,7 @@ const writtenQuestions=written.map((q,index)=>{
 });
 
 const sha256=(path)=>createHash('sha256').update(fs.readFileSync(path)).digest('hex');
-const audioPath=`${root}/audio/n1-2019-07.mp3`; const audioHash=sha256(audioPath);
+const audioPath=`${root}/audio/n1-2019-07.m4a`; const audioHash=sha256(audioPath);
 assert.equal(audioHash,'6c61c700dd438f8e792fad0954044eefce69e84875537cc36e07a345de71a3f4');
 const listeningQuestions=listeningReview.map((q,index)=>{
   assert.equal(Number(q.correctOptionId),listeningKey[index]);

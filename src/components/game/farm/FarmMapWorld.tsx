@@ -4,6 +4,7 @@ import {
     Pressable,
     StyleSheet,
     View,
+    useWindowDimensions,
 } from 'react-native';
 
 import {
@@ -14,6 +15,7 @@ import {
     isFarmAreaUnlocked,
     type FarmAreaUnlockId,
 } from '@/game/data/farm-area-unlocks';
+import { RoyalCapsule } from '@/components/ui/RoyalSurface';
 
 export type FarmMapDestination =
     | 'vegetable'
@@ -80,6 +82,17 @@ const MAP_WIDTH =
 
 const MAP_HEIGHT =
     1844;
+const LANDSCAPE_WIDTH = 1672;
+const LANDSCAPE_HEIGHT = 941;
+const TABLET_WIDTH = 1448;
+const TABLET_HEIGHT = 1086;
+const PORTRAIT_ART = require('../../../../assets/game/farm/background/farm_map_master.png');
+const LANDSCAPE_ART = require('../../../../assets/game/farm/background/farm_map_landscape_v1.png');
+const TABLET_ART = require('../../../../assets/game/farm/background/farm_map_tablet_landscape_v1.png');
+const DESTINATION_LABELS: Record<FarmMapDestination, string> = {
+    restaurant: 'レストラン', orchard: '果樹園', chicken: '鶏小屋',
+    cow: '牛舎', vegetable: '野菜畑', produce: '直売所', shop: 'ショップ',
+};
 
 /*
  * Coordinates recalibrated for the approved
@@ -196,6 +209,24 @@ const HOTSPOTS:
                 20,
         },
     ];
+const LANDSCAPE_HOTSPOTS: readonly Hotspot[] = [
+    { id: 'restaurant', x: 22, y: 28, width: 20, height: 25 },
+    { id: 'orchard', x: 49, y: 30, width: 23, height: 24 },
+    { id: 'chicken', x: 19, y: 52, width: 24, height: 25 },
+    { id: 'cow', x: 80, y: 48, width: 23, height: 26 },
+    { id: 'vegetable', x: 20, y: 75, width: 28, height: 23 },
+    { id: 'produce', x: 52, y: 74, width: 19, height: 20 },
+    { id: 'shop', x: 84, y: 76, width: 22, height: 22 },
+];
+const TABLET_HOTSPOTS: readonly Hotspot[] = [
+    { id: 'restaurant', x: 25, y: 27, width: 22, height: 22 },
+    { id: 'orchard', x: 49, y: 33, width: 24, height: 22 },
+    { id: 'chicken', x: 23, y: 48, width: 25, height: 22 },
+    { id: 'cow', x: 77, y: 47, width: 23, height: 25 },
+    { id: 'vegetable', x: 22, y: 72, width: 27, height: 22 },
+    { id: 'produce', x: 49, y: 72, width: 19, height: 19 },
+    { id: 'shop', x: 77, y: 73, width: 23, height: 22 },
+];
 
 export default function FarmMapWorld({
     farmLevel,
@@ -212,6 +243,12 @@ export default function FarmMapWorld({
             height:
                 0,
         });
+    const window = useWindowDimensions();
+    const aspect = (viewport.width || window.width) / (viewport.height || window.height);
+    const isLandscape = aspect > 1;
+    const isTabletLandscape = isLandscape && aspect < 1.55;
+    const sourceWidth = isTabletLandscape ? TABLET_WIDTH : isLandscape ? LANDSCAPE_WIDTH : MAP_WIDTH;
+    const sourceHeight = isTabletLandscape ? TABLET_HEIGHT : isLandscape ? LANDSCAPE_HEIGHT : MAP_HEIGHT;
 
     function handleLayout(
         event:
@@ -224,14 +261,11 @@ export default function FarmMapWorld({
             event.nativeEvent
                 .layout;
 
-        setViewport({
-            width,
-            height,
-        });
+        setViewport(current => current.width === width && current.height === height ? current : { width, height });
     }
 
     /*
-     * Equivalent to resizeMode="contain",
+     * Equivalent to resizeMode="cover",
      * but we calculate the geometry ourselves.
      *
      * This is important because hotspots must
@@ -241,27 +275,27 @@ export default function FarmMapWorld({
     const scale =
         viewport.width > 0 &&
         viewport.height > 0
-            ? Math.min(
+            ? Math.max(
                   viewport.width /
-                      MAP_WIDTH,
+                      sourceWidth,
 
                   viewport.height /
-                      MAP_HEIGHT
+                      sourceHeight
               )
             : 1;
 
     const renderedWidth =
-        MAP_WIDTH *
+        sourceWidth *
         scale;
 
     const renderedHeight =
-        MAP_HEIGHT *
+        sourceHeight *
         scale;
 
     /*
-     * Center the complete artwork.
+     * Center the artwork so it covers the viewport.
      *
-     * Hotspots remain on the visible artwork on every aspect ratio.
+     * Hotspots use the same scale and offsets as the artwork.
      */
     const offsetX =
         (
@@ -286,43 +320,17 @@ export default function FarmMapWorld({
                 styles.viewport
             }
         >
+            <Image
+                source={isTabletLandscape ? TABLET_ART : isLandscape ? LANDSCAPE_ART : PORTRAIT_ART}
+                resizeMode="cover"
+                style={StyleSheet.absoluteFill}
+            />
             {viewport.width >
                 0 &&
                 viewport.height >
                     0 && (
                     <>
-                        <Image
-                            source={require('../../../../assets/game/farm/background/farm_map_master.png')}
-                            resizeMode="cover"
-                            blurRadius={12}
-                            style={StyleSheet.absoluteFill}
-                        />
-                        <Image
-                            source={
-                                require(
-                                    '../../../../assets/game/farm/background/farm_map_master.png'
-                                )
-                            }
-                            resizeMode="contain"
-                            style={{
-                                position:
-                                    'absolute',
-
-                                left:
-                                    offsetX,
-
-                                top:
-                                    offsetY,
-
-                                width:
-                                    renderedWidth,
-
-                                height:
-                                    renderedHeight,
-                            }}
-                        />
-
-                        {HOTSPOTS.map(
+                        {(isTabletLandscape ? TABLET_HOTSPOTS : isLandscape ? LANDSCAPE_HOTSPOTS : HOTSPOTS).map(
                             hotspot => {
                                 const progressionId =
                                     hotspot.id ===
@@ -373,9 +381,7 @@ export default function FarmMapWorld({
                                             hotspot.id
                                         }
                                         accessibilityRole="button"
-                                        accessibilityLabel={
-                                            hotspot.id
-                                        }
+                                        accessibilityLabel={DESTINATION_LABELS[hotspot.id]}
                                         disabled={
                                             !unlocked
                                         }
@@ -412,6 +418,20 @@ export default function FarmMapWorld({
                                                 styles.hotspotPressed,
                                         ]}
                                     >
+                                        {isLandscape && (
+                                            <RoyalCapsule
+                                                label={DESTINATION_LABELS[hotspot.id]}
+                                                style={{
+                                                    position: 'absolute',
+                                                    bottom: 0,
+                                                    alignSelf: 'center',
+                                                    width: Math.min(108, Math.max(64, hotspotWidth * 0.8)),
+                                                    height: Math.min(38, Math.max(26, viewport.height * 0.065)),
+                                                    opacity: unlocked ? 1 : 0.58,
+                                                }}
+                                                textStyle={{ fontSize: viewport.width < 900 ? 11 : 14 }}
+                                            />
+                                        )}
                                     </Pressable>
                                 );
                             }

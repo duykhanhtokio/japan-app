@@ -2,16 +2,16 @@ import { router } from 'expo-router';
 import { useState } from 'react';
 import { Image, ImageBackground, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { RoyalBackButton, ROYAL, ROYAL_FONT, ROYAL_LAYOUT, ROYAL_TEXT_FIT } from '@/components/ui/RoyalSurface';
+import { CREDIT_CAPACITY, RANK_COLORS, RANKS, type JlptRank } from '@/services/learning-economy';
 
 const HUD_IVORY=require('../../../assets/app/ui/royal-af/dialogue-frame-v1.png');
 const HUD_NAVY=require('../../../assets/app/ui/royal-af/button-wide-v2.png');
+const HUD_ENERGY_FRAME=require('../../../assets/app/ui/royal-af/hud-energy-open-frame-v1.png');
 const HUD_PLAYER=require('../../../assets/app/ui/royal-af/hud-player-medallion-v1.png');
 const HUD_COIN=require('../../../assets/app/ui/royal-af/hud-coin-v1.png');
-const HUD_FILL=require('../../../assets/app/ui/royal-af/map-marker-fill-v1.png');
 const HUD_TOP_COMPOSITE=require('../../../assets/app/ui/royal-af/hud-top-composite-v1.png');
-const HUD_METER_ORNATE=require('../../../assets/app/ui/royal-af/hud-meter-ornate-v1.png');
 
-type Props={name?:string;abilityLevel?:string;abilityTarget?:string;abilityProgress?:number;conversationCredits?:number;conversationCreditMax?:number;coins?:number;onProfile?:()=>void;onCoins?:()=>void;onBack?:()=>void;variant?:'royal'|'study'|'approved';level?:number;xpCurrent?:number;xpMax?:number;diamonds?:number;onDiamonds?:()=>void;onSettings?:()=>void};
+type Props={name?:string;abilityLevel?:string;abilityTarget?:string;abilityProgress?:number;conversationCredits?:number;conversationCreditMax?:number;qualifiedExams?:Partial<Record<JlptRank, number>>;coins?:number;onProfile?:()=>void;onCoins?:()=>void;onBack?:()=>void;variant?:'royal'|'study'|'approved';level?:number;xpCurrent?:number;xpMax?:number;diamonds?:number;onDiamonds?:()=>void;onSettings?:()=>void};
 
 function goBackOrHome(){
  if(router.canGoBack()) router.back();
@@ -21,8 +21,13 @@ function coinDisplay(value:number){
  return value>=100000?`${Math.floor(value/10000).toLocaleString('ja-JP')}万`:value.toLocaleString('ja-JP');
 }
 
-export default function GameHeader({name='プレイヤー',abilityLevel='N5',abilityTarget='N4',abilityProgress=0,conversationCredits=0,conversationCreditMax=100,coins=0,onProfile,onCoins,onBack,variant='royal'}:Props){
+export default function GameHeader({name='プレイヤー',abilityLevel='N5',abilityTarget='N4',abilityProgress=0,conversationCredits=CREDIT_CAPACITY,conversationCreditMax=CREDIT_CAPACITY,qualifiedExams={},coins=0,onProfile,onCoins,onBack,variant='royal'}:Props){
  const abilityRatio=clamp01(abilityProgress),creditRatio=conversationCreditMax>0?clamp01(conversationCredits/conversationCreditMax):0;
+ const target = RANKS.includes(abilityTarget as JlptRank) ? abilityTarget as JlptRank : 'N5';
+ const passed = Math.min(6,qualifiedExams[target]??0);
+ const examLabel = `${target} 合格 ${passed}/6`;
+ const visibleRanks = RANKS.filter(rank=>RANKS.indexOf(rank)>RANKS.indexOf(abilityLevel as JlptRank)&& (qualifiedExams[rank]??0)>0);
+ const otherProgress=visibleRanks.filter(rank=>rank!==target).map(rank=>`${rank} ${qualifiedExams[rank]}/6`).join(' · ');
  const [topWidth,setTopWidth]=useState(0);
  const {width:screenWidth}=useWindowDimensions();
  if(variant==='approved'){
@@ -47,14 +52,14 @@ export default function GameHeader({name='プレイヤー',abilityLevel='N5',abi
     </View>
    </View>
    <View style={[s.energyStack,s.approvedEnergyStack]}>
-    <EnergyBar label="日本語能力" value={`${abilityLevel} / ${abilityTarget}`} ratio={abilityRatio} tint={ROYAL.gold} large/>
-    <EnergyBar label="CREDIT" value={conversationCredits.toLocaleString()} ratio={creditRatio} tint="#d96379" large/>
+    <EnergyBar label="CREDIT" value={`${conversationCredits}/${conversationCreditMax}`} ratio={creditRatio} tint="#ba343a" large/>
+    <EnergyBar label={otherProgress?`${examLabel} · ${otherProgress}`:examLabel} value="" ratio={passed/6} tint={RANK_COLORS[target]} large/>
    </View>
   </View>;
  }
  if(variant==='study') return <View style={s.studyContainer}>
   <View style={s.studyTop}>
-   <Pressable accessibilityRole="button" accessibilityLabel="戻る" onPress={onBack??goBackOrHome} style={s.studyBack}><Text style={s.studyBackText}>‹</Text></Pressable>
+   <RoyalBackButton onPress={onBack??goBackOrHome}/>
    <Pressable accessibilityRole="button" accessibilityLabel={`${name}のプロフィール`} onPress={()=>onProfile?onProfile():router.push('/profile')} style={s.studyIdentity}>
     <Image source={HUD_PLAYER} resizeMode="contain" style={s.studyAvatar}/>
     <View style={s.studyIdentityText}><Text numberOfLines={1} style={s.studyName}>{name}</Text><Text style={s.studySubtitle}>学習状況</Text></View>
@@ -62,8 +67,8 @@ export default function GameHeader({name='プレイヤー',abilityLevel='N5',abi
    <View accessibilityLabel={`コイン ${coins}`} style={s.studyCoins}><Image source={HUD_COIN} resizeMode="contain" style={s.studyCoinIcon}/><Text numberOfLines={1} style={s.studyCoinValue}>{coins.toLocaleString()}</Text></View>
   </View>
   <View style={s.studyMetrics}>
-   <StudyMetric label="日本語能力" value={`${abilityLevel} → ${abilityTarget}`} ratio={abilityRatio}/>
-   <StudyMetric label="CREDIT" value={`${conversationCredits.toLocaleString()} / ${conversationCreditMax.toLocaleString()}`} ratio={creditRatio}/>
+   <StudyMetric label="CREDIT" value={`${conversationCredits} / ${conversationCreditMax}`} ratio={creditRatio}/>
+   <StudyMetric label={examLabel} value="" ratio={passed/6}/>
   </View>
  </View>;
  return <View style={s.container}>
@@ -76,8 +81,8 @@ export default function GameHeader({name='プレイヤー',abilityLevel='N5',abi
    <Pressable accessibilityRole="button" accessibilityLabel={`コイン ${coins}`} onPress={onCoins} style={({pressed})=>[s.coinPressable,pressed&&s.pressed]}><ImageBackground source={HUD_IVORY} resizeMode="stretch" style={s.coinFrame}><Image source={HUD_COIN} resizeMode="contain" style={s.coinIcon}/><Text {...ROYAL_TEXT_FIT} numberOfLines={1} minimumFontScale={.62} style={s.coinValue}>{coins.toLocaleString()}</Text></ImageBackground></Pressable>
   </View>
   <View style={s.energyStack}>
-   <EnergyBar label="日本語能力" value={`${abilityLevel} / ${abilityTarget}`} ratio={abilityRatio} tint={ROYAL.gold}/>
-   <EnergyBar label="CREDIT" value={conversationCredits.toLocaleString()} ratio={creditRatio} tint="#d96379"/>
+   <EnergyBar label="CREDIT" value={`${conversationCredits}/${conversationCreditMax}`} ratio={creditRatio} tint="#ba343a"/>
+   <EnergyBar label={examLabel} value="" ratio={passed/6} tint={RANK_COLORS[target]}/>
   </View>
  </View>
 }
@@ -92,16 +97,23 @@ function StudyMetric({label,value,ratio}:{label:string;value:string;ratio:number
  </View>;
 }
 function EnergyBar({label,value,ratio,tint,large=false}:{label:string;value:string;ratio:number;tint:string;large?:boolean}){
+ const [height,setHeight]=useState(large?64:44);
  const percentage=Math.round(clamp01(ratio)*100);
- const [frameWidth,setFrameWidth]=useState(0);
- const artHeight=frameWidth*724/2172;
- const visibleHeight=frameWidth*(451-243)/2172;
- const artTop=(64-visibleHeight)/2-frameWidth*243/2172;
- return <ImageBackground onLayout={large?event=>setFrameWidth(Math.round(event.nativeEvent.layout.width)):undefined} source={large?HUD_METER_ORNATE:HUD_NAVY} resizeMode="stretch" imageStyle={large?{width:frameWidth,height:artHeight,top:artTop}:undefined} style={[s.energyFrame,large&&s.approvedEnergyFrame]}>
-  <View style={[s.energyCopy,large&&s.energyCopyLarge]}><Text numberOfLines={1} maxFontSizeMultiplier={1} style={[s.energyLabel,large&&s.energyLabelLarge]}>{label}</Text><Text numberOfLines={1} maxFontSizeMultiplier={1} style={[s.energyValue,large&&s.energyValueLarge]}>{value}</Text></View>
-  <View style={[s.track,large&&s.approvedTrack]}><View style={[s.fillClip,{width:`${Math.max(2,percentage)}%`}]}><Image source={HUD_FILL} resizeMode="stretch" tintColor={tint} style={s.fillImage}/></View></View>
-  <Text numberOfLines={1} maxFontSizeMultiplier={1} style={[s.percent,large&&s.percentLarge]}>{percentage}%</Text>
- </ImageBackground>
+ // The transparent source has its visible frame at y=156..550 of 724 px.
+ // Crop those empty source margins inside the measured bar, so art and fill share one box.
+ const artHeight=height*724/394;
+ const artTop=-height*156/394;
+ return <View onLayout={event=>{
+  const next=Math.round(event.nativeEvent.layout.height);
+  if(next>0&&next!==height)setHeight(next);
+ }} style={[s.energyFrame,large&&s.approvedEnergyFrame]}>
+  <View pointerEvents="none" style={s.energyInset}>
+   <View style={s.energyIvory}/>
+   <View style={[s.energyColorClip,{width:`${percentage}%`,backgroundColor:tint}]}/>
+  </View>
+  <Image source={HUD_ENERGY_FRAME} resizeMode="stretch" style={[s.energyOrnament,{height:artHeight,top:artTop}]}/>
+  <View pointerEvents="none" style={s.energyTextSafe}><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.78} maxFontSizeMultiplier={1} style={s.energyCenteredText}>{label}{value?`  ${value}`:''}</Text></View>
+ </View>;
 }
 
 const s=StyleSheet.create({
@@ -117,8 +129,6 @@ const s=StyleSheet.create({
  approvedCoinValue:{flex:1,minWidth:0,color:ROYAL.darkGold,fontFamily:ROYAL_FONT.heading,fontSize:16,lineHeight:22,textAlign:'center',includeFontPadding:false},
  studyContainer:{width:'100%',paddingHorizontal:10,paddingTop:8,paddingBottom:10,borderWidth:1,borderRadius:16,borderColor:ROYAL.gold,backgroundColor:ROYAL.lacquer,shadowColor:'#07101f',shadowOpacity:.24,shadowRadius:8,shadowOffset:{width:0,height:4},elevation:4},
  studyTop:{minHeight:48,flexDirection:'row',alignItems:'center',gap:8},
- studyBack:{width:40,height:40,borderRadius:12,borderWidth:1,borderColor:ROYAL.gold,backgroundColor:ROYAL.lacquerLight,alignItems:'center',justifyContent:'center'},
- studyBackText:{color:ROYAL.paleGold,fontSize:29,lineHeight:33,marginTop:-3},
  studyIdentity:{flex:1,minWidth:0,flexDirection:'row',alignItems:'center',gap:6},
  studyAvatar:{width:38,height:38},studyIdentityText:{flex:1,minWidth:0},
  studyName:{color:ROYAL.white,fontFamily:ROYAL_FONT.heading,fontSize:17,lineHeight:23},
@@ -145,18 +155,13 @@ const s=StyleSheet.create({
  coinIcon:{width:25,height:25,flexShrink:0},coinValue:{flex:1,minWidth:0,color:ROYAL.darkGold,fontFamily:ROYAL_FONT.heading,fontSize:14,lineHeight:19,textAlign:'center',includeFontPadding:false},
  energyStack:{flex:1,gap:2},
  approvedEnergyStack:{flex:0,height:130},
- energyFrame:{flex:1,minHeight:44,flexDirection:'row',alignItems:'center',paddingHorizontal:24,paddingVertical:10,gap:7},
- approvedEnergyFrame:{flex:0,height:64,minHeight:64,overflow:'hidden',paddingHorizontal:16},
- energyCopy:{width:126,flexDirection:'row',alignItems:'center',gap:5},
- energyCopyLarge:{width:'24%',justifyContent:'center'},
- energyLabel:{flexShrink:1,color:'#fff8e8',fontFamily:ROYAL_FONT.body,fontSize:11.5,lineHeight:16,textShadowColor:'#000',textShadowOffset:{width:0,height:1},textShadowRadius:2},
- energyLabelLarge:{fontSize:13,lineHeight:19},
- energyValue:{flexShrink:0,color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:12,lineHeight:16},
- energyValueLarge:{fontSize:13,lineHeight:19},
- track:{flex:1,minWidth:40,height:16,position:'relative',overflow:'hidden'},
- approvedTrack:{marginRight:'4%'},
- fillClip:{position:'absolute',left:0,top:2,bottom:2,overflow:'hidden'},fillImage:{width:420,height:'100%',opacity:.82},
- percent:{width:34,color:'#fff8e8',fontFamily:ROYAL_FONT.body,fontSize:11,lineHeight:15,textAlign:'right'},
- percentLarge:{fontSize:13,lineHeight:19},
+ energyFrame:{flex:1,minHeight:44,position:'relative',overflow:'hidden'},
+ approvedEnergyFrame:{flex:0,height:64,minHeight:64},
+ energyInset:{position:'absolute',left:'3.4%',right:'3.4%',top:'16%',bottom:'13%',borderRadius:10,overflow:'hidden'},
+ energyIvory:{...StyleSheet.absoluteFillObject,backgroundColor:'#fff7e7'},
+ energyColorClip:{height:'100%'},
+ energyOrnament:{position:'absolute',left:0,right:0,width:'100%'},
+ energyTextSafe:{position:'absolute',left:'16%',right:'16%',top:'16%',bottom:'13%',alignItems:'center',justifyContent:'center'},
+ energyCenteredText:{width:'100%',textAlign:'center',color:'#142335',fontFamily:ROYAL_FONT.heading,fontSize:13,lineHeight:20,includeFontPadding:false,textShadowColor:'rgba(255,248,231,.95)',textShadowOffset:{width:0,height:1},textShadowRadius:3},
  pressed:{opacity:.84,transform:[{translateY:2},{scale:.985}]}
 });

@@ -8,7 +8,7 @@ const locked = new Map([
   ['src/app/[level]/[section].tsx', '8b6d55723b9c5960a5252d2b958c27fe591265847beb83c7da441fe1a7d61c3a'],
   ['src/components/jlpt/N1OfficialTrial.tsx', '4a3abbc76b089cfaaf6835e64e85e2eac0e1264d79dd7667eb685c4a1be3cb31'],
   ['src/components/jlpt/N1ExamPicker.tsx', '6c8676b97d12d3da6fe36f5fde28adb1833bcb7208628c00dc61f1b9c5c55098'],
-  ['src/components/jlpt/ui/JlptExamUI.tsx', 'e1b9298d38229bb8004051b2aee4cb66471ea49205fed7e5b22bbf8aba7ebca0'],
+  ['src/components/jlpt/ui/JlptExamUI.tsx', '03cfb15b58da93360f277b5bf6b0b3c63bb63adcd644a4b9a184dbdfce03f90d'],
   ['src/services/jlpt-trial-session-storage.ts', 'ea21a8b371feeea3453cd10c5247bcb072c92f2ef5b4c5309d83df3392d1d7e1'],
   ['src/theme/jlpt-exam-design-system.ts', '9d8276e32e5b1b25485d84cbe961acd5cbca5b106ee2dd95e6fbaadd9d2b9bb7'],
   ['src/components/jlpt/ApprovedJlptExamCatalog.tsx', '50d5afcf378b34efcee1ac1fae8221dee841111e033da9aec6c9cee05555c2a9'],

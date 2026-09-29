@@ -3,6 +3,7 @@ import {
     LayoutChangeEvent,
     StyleSheet,
     View,
+    useWindowDimensions,
 } from 'react-native';
 
 import {
@@ -54,6 +55,17 @@ const VEGETABLE_BACKGROUND =
     require(
         '../../../../assets/game/farm/background/vegetable_map_background_v2.png'
     );
+const VEGETABLE_LANDSCAPE = require('../../../../assets/game/farm/background/vegetable_map_landscape_v1.png');
+const LANDSCAPE_WIDTH = 1672;
+const LANDSCAPE_HEIGHT = 940;
+const LANDSCAPE_PLOT_RECTS = [
+    { x: 0.26 * LANDSCAPE_WIDTH, y: 0.34 * LANDSCAPE_HEIGHT, width: 0.22 * LANDSCAPE_WIDTH, height: 0.12 * LANDSCAPE_HEIGHT },
+    { x: 0.53 * LANDSCAPE_WIDTH, y: 0.34 * LANDSCAPE_HEIGHT, width: 0.22 * LANDSCAPE_WIDTH, height: 0.12 * LANDSCAPE_HEIGHT },
+    { x: 0.22 * LANDSCAPE_WIDTH, y: 0.48 * LANDSCAPE_HEIGHT, width: 0.26 * LANDSCAPE_WIDTH, height: 0.13 * LANDSCAPE_HEIGHT },
+    { x: 0.53 * LANDSCAPE_WIDTH, y: 0.48 * LANDSCAPE_HEIGHT, width: 0.26 * LANDSCAPE_WIDTH, height: 0.13 * LANDSCAPE_HEIGHT },
+    { x: 0.18 * LANDSCAPE_WIDTH, y: 0.64 * LANDSCAPE_HEIGHT, width: 0.29 * LANDSCAPE_WIDTH, height: 0.14 * LANDSCAPE_HEIGHT },
+    { x: 0.54 * LANDSCAPE_WIDTH, y: 0.64 * LANDSCAPE_HEIGHT, width: 0.29 * LANDSCAPE_WIDTH, height: 0.14 * LANDSCAPE_HEIGHT },
+] as const;
 
 export default function FarmWorld({
     plots,
@@ -72,6 +84,10 @@ export default function FarmWorld({
             height:
                 0,
         });
+    const window = useWindowDimensions();
+    const isLandscape = (viewport.width || window.width) > (viewport.height || window.height);
+    const sourceWidth = isLandscape ? LANDSCAPE_WIDTH : SOURCE_WIDTH;
+    const sourceHeight = isLandscape ? LANDSCAPE_HEIGHT : SOURCE_HEIGHT;
 
     function handleLayout(
         event:
@@ -84,14 +100,11 @@ export default function FarmWorld({
             event.nativeEvent
                 .layout;
 
-        setViewport({
-            width,
-            height,
-        });
+        setViewport(current => current.width === width && current.height === height ? current : { width, height });
     }
 
     /*
-     * The source artwork fits inside the viewport without cropping.
+     * The source artwork covers the entire viewport; edges may be cropped.
      *
      * Both the bitmap and every FarmPlot use the exact same:
      * - scale
@@ -102,15 +115,15 @@ export default function FarmWorld({
      */
     const scale =
         viewport.width > 0 && viewport.height > 0
-            ? Math.min(viewport.width / SOURCE_WIDTH, viewport.height / SOURCE_HEIGHT)
+            ? Math.max(viewport.width / sourceWidth, viewport.height / sourceHeight)
             : 1;
 
     const renderedWidth =
-        SOURCE_WIDTH *
+        sourceWidth *
         scale;
 
     const renderedHeight =
-        SOURCE_HEIGHT *
+        sourceHeight *
         scale;
 
     const offsetX =
@@ -138,38 +151,10 @@ export default function FarmWorld({
         >
             <Image
                 source={
-                    VEGETABLE_BACKGROUND
+                    isLandscape ? VEGETABLE_LANDSCAPE : VEGETABLE_BACKGROUND
                 }
                 resizeMode="cover"
-                blurRadius={
-                    5
-                }
-                style={
-                    styles.backdrop
-                }
-            />
-
-            <Image
-                source={
-                    VEGETABLE_BACKGROUND
-                }
-                resizeMode="contain"
-                style={[
-                    styles.artwork,
-                    {
-                        left:
-                            offsetX,
-
-                        top:
-                            offsetY,
-
-                        width:
-                            renderedWidth,
-
-                        height:
-                            renderedHeight,
-                    },
-                ]}
+                style={StyleSheet.absoluteFill}
             />
 
             {viewport.width > 0 &&
@@ -179,7 +164,7 @@ export default function FarmWorld({
                         index
                     ) => {
                         const sourceRect =
-                            FARM_PLOT_SOURCE_RECTS[
+                            (isLandscape ? LANDSCAPE_PLOT_RECTS : FARM_PLOT_SOURCE_RECTS)[
                                 index
                             ];
 
@@ -258,18 +243,6 @@ const styles =
 
             backgroundColor:
                 '#176AA7',
-        },
-
-        backdrop: {
-            ...StyleSheet.absoluteFillObject,
-
-            opacity:
-                0.88,
-        },
-
-        artwork: {
-            position:
-                'absolute',
         },
 
         plot: {

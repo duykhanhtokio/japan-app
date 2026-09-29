@@ -1,6 +1,9 @@
 import { router } from 'expo-router';
+import { useFocusEffect } from 'expo-router';
+import { useCallback, useState } from 'react';
 
 import {
+    Image,
     Pressable,
     ScrollView,
     StyleSheet,
@@ -13,6 +16,10 @@ import {
 } from 'react-native-safe-area-context';
 
 import BottomNav from '@/components/app/BottomNav';
+import GameHeader from '@/components/app/GameHeader';
+import { ROYAL } from '@/components/ui/RoyalSurface';
+import { RANKS, type LearningEconomy } from '@/services/learning-economy';
+import { syncJlptQualification } from '@/services/sync-jlpt-qualification';
 
 import {
     getOccupation,
@@ -29,8 +36,13 @@ import {
 import {
     calculateCommunicationTitle,
 } from '@/services/progress-engine';
+const PROFILE_FRAME = require('../../../assets/app/ui/royal-af/button-wide-v2.png');
+const PROFILE_AVATAR = require('../../../assets/app/ui/royal-af/hud-player-medallion-v1.png');
+function ProfileFrame(){return <View pointerEvents="none" style={styles.royalFrame}><Image source={PROFILE_FRAME} resizeMode="stretch" style={styles.royalFrame}/></View>}
 
 export default function ProfileScreen() {
+    const [economy,setEconomy]=useState<LearningEconomy|null>(null);
+    useFocusEffect(useCallback(()=>{let active=true;void syncJlptQualification().then(value=>{if(active)setEconomy(value)});return()=>{active=false}},[]));
     const {
         profile,
     } =
@@ -99,6 +111,7 @@ export default function ProfileScreen() {
                     false
                 }
             >
+                <GameHeader variant="approved" name={profile.name?.trim()||'プレイヤー'} abilityLevel={economy?.officialRank??'N5'} abilityTarget={economy?.officialRank?RANKS[RANKS.indexOf(economy.officialRank)+1]??economy.officialRank:'N5'} qualifiedExams={Object.fromEntries(RANKS.map(rank=>[rank,Object.keys(economy?.passed[rank]??{}).length]))} conversationCredits={economy?.credits??100} coins={stats.coins}/>
                 {/* =========================
                     PROFILE HEADER
                 ========================== */}
@@ -108,18 +121,13 @@ export default function ProfileScreen() {
                         styles.profileCard
                     }
                 >
+                    <ProfileFrame/>
                     <View
                         style={
                             styles.avatar
                         }
                     >
-                        <Text
-                            style={
-                                styles.avatarText
-                            }
-                        >
-                            👤
-                        </Text>
+                        <Image source={PROFILE_AVATAR} resizeMode="contain" style={styles.avatarArtwork}/>
                     </View>
 
                     <View
@@ -143,7 +151,7 @@ export default function ProfileScreen() {
                         >
                             LV.{playerLevel}
                             {' · '}
-                            {profile.level}
+                            {economy?.officialRank ?? 'N5'}
 
                         </Text>
 
@@ -197,6 +205,7 @@ export default function ProfileScreen() {
                         styles.ratingCard
                     }
                 >
+                    <ProfileFrame/>
                     <Text
                         style={
                             styles.cardLabel
@@ -262,6 +271,7 @@ export default function ProfileScreen() {
                         styles.abilityCard
                     }
                 >
+                    <ProfileFrame/>
                     <Text
                         style={
                             styles.sectionTitle
@@ -370,6 +380,7 @@ export default function ProfileScreen() {
                         styles.workCard
                     }
                 >
+                    <ProfileFrame/>
                     <View
                         style={
                             styles.workHeader
@@ -455,6 +466,7 @@ export default function ProfileScreen() {
                         styles.journeyCard
                     }
                 >
+                    <ProfileFrame/>
                     <View
                         style={
                             styles.journeyHeader
@@ -607,6 +619,7 @@ export default function ProfileScreen() {
                         )
                     }
                 >
+                    <ProfileFrame/>
                     <View
                         style={
                             styles.logHeader
@@ -754,6 +767,7 @@ export default function ProfileScreen() {
                         styles.achievementCard
                     }
                 >
+                    <ProfileFrame/>
                     <Text
                         style={
                             styles.sectionTitle
@@ -802,6 +816,7 @@ export default function ProfileScreen() {
                         styles.certificateCard
                     }
                 >
+                    <ProfileFrame/>
                     <Text
                         style={
                             styles.sectionTitle
@@ -942,6 +957,7 @@ function StatSection({
                 styles.statCard
             }
         >
+            <ProfileFrame/>
             <Text
                 style={
                     styles.sectionTitle
@@ -1066,11 +1082,11 @@ function Achievement({
 
 const styles =
     StyleSheet.create({
+        royalFrame: {...StyleSheet.absoluteFillObject,width:'100%',height:'100%'},
         container: {
             flex: 1,
 
-            backgroundColor:
-                '#101827',
+            backgroundColor: ROYAL.lacquer,
         },
 
         scroll: {
@@ -1102,13 +1118,11 @@ const styles =
 
             borderRadius: 20,
 
-            backgroundColor:
-                '#202a40',
+            backgroundColor: 'transparent',
 
             borderWidth: 1,
 
-            borderColor:
-                '#2d3951',
+            borderColor: ROYAL.gold,
         },
 
         avatar: {
@@ -1131,6 +1145,7 @@ const styles =
         avatarText: {
             fontSize: 31,
         },
+        avatarArtwork:{width:'100%',height:'100%'},
 
         profileInfo: {
             flex: 1,
@@ -1214,13 +1229,11 @@ const styles =
 
             borderRadius: 20,
 
-            backgroundColor:
-                '#292545',
+            backgroundColor: 'transparent',
 
             borderWidth: 1,
 
-            borderColor:
-                '#6558f5',
+            borderColor: ROYAL.gold,
         },
 
         ratingTitle: {
@@ -1290,8 +1303,7 @@ const styles =
 
             borderRadius: 18,
 
-            backgroundColor:
-                '#202a40',
+            backgroundColor: 'transparent',
         },
 
         abilityRow: {
@@ -1403,13 +1415,11 @@ const styles =
 
             borderRadius: 19,
 
-            backgroundColor:
-                '#292545',
+            backgroundColor: 'transparent',
 
             borderWidth: 1,
 
-            borderColor:
-                '#4c4383',
+            borderColor: ROYAL.gold,
         },
 
         workHeader: {
@@ -1504,8 +1514,7 @@ const styles =
 
             borderRadius: 19,
 
-            backgroundColor:
-                '#202a40',
+            backgroundColor: 'transparent',
         },
 
         journeyHeader: {
