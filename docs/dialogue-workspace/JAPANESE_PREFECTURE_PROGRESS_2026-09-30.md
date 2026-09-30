@@ -66,3 +66,7 @@ Prefectures: PRF-036, PRF-037, PRF-038, PRF-039. Canonical scenarios covered by 
 ## CLUSTER_13_NORTH_KYUSHU_2026-09-30
 
 Prefectures: PRF-040, PRF-041, PRF-042. Canonical scenarios covered by Japanese packages: 455/455. Added: 455 scenarios, 5005 turns. Global shared Japanese packages after this batch: 6519/7128. No translations added. Structural validation and remote persistence must pass before the next cluster. Detailed manifest: `docs/dialogue-workspace/CLUSTER_13_NORTH_KYUSHU_2026-09-30.json`.
+
+## CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30
+
+Prefectures: PRF-043, PRF-044, PRF-045, PRF-046, PRF-047. Canonical scenarios covered by Japanese packages: 609/609. Added: 609 scenarios, 6699 turns. Global shared Japanese packages after this batch: 7128/7128. No translations added. Structural validation and remote persistence must pass before the next cluster. Detailed manifest: `docs/dialogue-workspace/CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30.json`.
