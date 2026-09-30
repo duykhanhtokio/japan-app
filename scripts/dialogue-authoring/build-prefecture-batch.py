@@ -29,6 +29,8 @@ def recipes():
 def choose(scenario, loc, n, book):
     label = loc['nameJa']
     special = [
+        ('眼科', 'hospital-eye'), ('皮膚科', 'hospital-skin'), ('夜間救急', 'hospital-night'),
+        ('焼肉', 'restaurant-allergy'), ('天ぷら', 'restaurant-allergy'),
         ('漁港仕分け', 'fish-sort'), ('酒蔵', 'work-brew'), ('醸造', 'work-brew'),
         ('食品工場', 'work-food'), ('酪農', 'work-dairy'), ('牧場', 'work-dairy'),
         ('畑作', 'work-farm'), ('田んぼ', 'work-farm'), ('果樹園', 'work-orchard'),
@@ -68,7 +70,17 @@ def choose(scenario, loc, n, book):
         raise ValueError('No situation-specific recipe: ' + scenario['id'] + ' ' + label)
     return types[scenario['locationType']][n % len(types[scenario['locationType']])]
 
-EXTRA_MATCHES = []
+EXTRA_MATCHES = [
+    ('御朱印', 'shrine'), ('料理教室', 'cooking'), ('キャンプ', 'camp'),
+    ('美術', 'art'), ('ギャラリー', 'art'), ('スタジアム売店', 'shop-compare'),
+    ('ライブハウス', 'live'), ('美容院', 'salon'), ('温泉', 'onsen'),
+    ('家具店', 'furniture'), ('観光案内', 'tourist'), ('米屋', 'rice-shop'),
+    ('公民館', 'community'), ('花火', 'fireworks'), ('リハビリ', 'rehab'),
+    ('不動産', 'property'), ('映画館', 'cinema'), ('免許', 'license'),
+    ('海の家', 'beach'), ('生花店', 'florist'), ('駐輪場', 'bicycle-parking'),
+    ('介護施設', 'care-work'), ('祭り準備', 'festival-work'), ('登山口', 'mountain'),
+    ('ドラッグストア日用品', 'shop-compare'),
+]
 
 def build(prefectures, cluster):
     book = recipes()
@@ -137,7 +149,11 @@ def build(prefectures, cluster):
     for path, value in [('src/data/dialogue-content/scenario-overrides.json', list(overrides.values())), ('src/data/dialogue-content/scenario-index-overrides.json', idx)]:
         (STAGE/path).write_text(json.dumps(value, ensure_ascii=False, indent=2)+'\n')
         changed.append(path)
-    for path in ['scripts/dialogue-authoring/dialogue-stories.txt', 'scripts/dialogue-authoring/special-stories.txt', 'scripts/dialogue-authoring/build-prefecture-batch.py']:
+    sources = ['dialogue-stories.txt', 'special-stories.txt', 'build-prefecture-batch.py']
+    if (BASE/'additional-stories.txt').exists():
+        sources.append('additional-stories.txt')
+    for filename in sources:
+        path = 'scripts/dialogue-authoring/' + filename
         name = {'build-prefecture-batch.py':'build_batch.py'}.get(pathlib.Path(path).name,pathlib.Path(path).name)
         (STAGE/path).parent.mkdir(parents=True,exist_ok=True)
         shutil_source = pathlib.Path(__file__) if path.endswith('.py') else BASE/name
