@@ -6,28 +6,15 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。ご相談をお聞かせください。",
+        "textJa": "こんにちは。現金のお引き出しで、何かお困りでしょうか。",
         "furigana": null,
-        "translationVi": "Xin chào. Hãy cho tôi biết bạn muốn hỏi điều gì.",
-        "translations": {
-          "vi": "Xin chào. Hãy cho tôi biết bạn muốn hỏi điều gì.",
-          "id": "Selamat siang. Apa yang ingin Anda tanyakan?",
-          "zh-CN": "您好。请说说您想咨询什么。",
-          "zh-TW": "您好。請說說您想諮詢什麼。",
-          "hi": "नमस्ते। आप क्या पूछना चाहते हैं?",
-          "bn": "নমস্কার। কী জানতে চান?",
-          "ne": "नमस्ते। के सोध्न चाहनुहुन्छ?",
-          "my": "မင်္ဂလာပါ။ ဘာမေးချင်ပါသလဲ။",
-          "th": "สวัสดีค่ะ ต้องการสอบถามเรื่องอะไรคะ",
-          "km": "សួស្តី។ សូមប្រាប់ពីអ្វីដែលអ្នកចង់ពិគ្រោះ។",
-          "tl": "Magandang araw. Ano po ang nais ninyong itanong?",
-          "en": "Hello. Please tell me what you would like to ask."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01208-06-002-SHARED-02",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -37,41 +24,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_clerk",
+        "communicativeIntent": "request_small_notes_for_trip_withdrawal",
         "requiredSemanticComponents": {
-          "goal": "現金を引き出す方法を確かめる"
+          "goal": "旅行用現金の小額紙幣を含む出金を相談する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "口座から現金を引き出したいのですが、方法を教えてください。",
+        "recommendedAnswerJa": "旅行で使う現金を出したいです。小さい店へ行くので、全部大きな紙幣にならないようにできますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に合わせて、用件を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Tôi muốn rút tiền mặt từ tài khoản. Xin chỉ cho tôi cách làm.",
-          "id": "Saya ingin menarik uang tunai dari rekening. Tolong jelaskan caranya.",
-          "zh-CN": "我想从账户里取现金，请告诉我怎么操作。",
-          "zh-TW": "我想從帳戶裡取現金，請告訴我怎麼操作。",
-          "hi": "मैं अपने खाते से नक़द निकालना चाहता हूँ। कृपया तरीका बताइए।",
-          "bn": "অ্যাকাউন্ট থেকে নগদ টাকা তুলতে চাই। পদ্ধতিটি বলবেন?",
-          "ne": "खाताबाट नगद निकाल्न चाहन्छु। तरिका बताइदिनुहोस्।",
-          "my": "စာရင်းထဲကနေ ငွေသား ထုတ်ချင်ပါတယ်။ လုပ်နည်းပြောပြပေးပါ။",
-          "th": "ฉันอยากถอนเงินสดจากบัญชี กรุณาบอกวิธีด้วยค่ะ",
-          "km": "ខ្ញុំចង់ដកប្រាក់សុទ្ធពីគណនី។ សូមប្រាប់របៀបធ្វើ។",
-          "tl": "Gusto kong mag-withdraw ng pera mula sa account. Pakituro po ang paraan.",
-          "en": "I want to withdraw cash from my account. Could you tell me how?"
-        },
-        "evaluationNotes": "内容が相手の質問と矛盾しないことを確認する。",
+        "hint": "旅行用現金の小額紙幣を含む出金を相談する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "旅行用現金の小額紙幣を含む出金を相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
-        "targetGrammarIds": [
-          "GR0001",
-          "GR0005"
-        ],
+        "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01208-06-002-SHARED-03",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -80,28 +51,15 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。カードや通帳はお持ちでしょうか。",
+        "textJa": "希望する金額と、紙幣の内訳を教えてください。出金方法によって指定できる内容が異なります。",
         "furigana": null,
-        "translationVi": "Vâng. Bạn có mang theo thẻ hoặc sổ ngân hàng không?",
-        "translations": {
-          "vi": "Vâng. Bạn có mang theo thẻ hoặc sổ ngân hàng không?",
-          "id": "Baik. Apakah Anda membawa kartu atau buku tabungan?",
-          "zh-CN": "好的。您带了银行卡或存折吗？",
-          "zh-TW": "好的。您帶了金融卡或存摺嗎？",
-          "hi": "जी। क्या आपके पास कार्ड या पासबुक है?",
-          "bn": "ঠিক আছে। কার্ড বা পাসবই সঙ্গে আছে?",
-          "ne": "हुन्छ। कार्ड वा पासबुक साथमा छ?",
-          "my": "ရပါတယ်။ ကတ် ဒါမှမဟုတ် ဘဏ်စာအုပ် ပါလာပါသလား။",
-          "th": "ได้ค่ะ คุณนำบัตรหรือสมุดบัญชีมาด้วยไหมคะ",
-          "km": "បាន។ តើអ្នកមានកាត ឬសៀវភៅគណនីនៅជាមួយទេ?",
-          "tl": "Sige po. May dala po ba kayong card o passbook?",
-          "en": "Certainly. Do you have your card or bankbook with you?"
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01208-06-002-SHARED-04",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -111,38 +69,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_clerk",
+        "communicativeIntent": "specify_total_and_thousand_yen_notes",
         "requiredSemanticComponents": {
-          "goal": "現金を引き出す方法を確かめる"
+          "goal": "額と千円札希望を示しATM自動指定の思込を説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "カードはありますが、通帳は持っていません。",
+        "recommendedAnswerJa": "合計はこの金額です。千円札を何枚か入れたいですが、ATMで金額を入力すれば、自動でそうなると思っていました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に合わせて、用件を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Tôi có thẻ, nhưng không mang theo sổ.",
-          "id": "Saya membawa kartu, tetapi tidak membawa buku tabungan.",
-          "zh-CN": "我带了银行卡，但没带存折。",
-          "zh-TW": "我帶了金融卡，但沒帶存摺。",
-          "hi": "कार्ड है, लेकिन पासबुक नहीं लाया हूँ।",
-          "bn": "কার্ড আছে, কিন্তু পাসবই আনিনি।",
-          "ne": "कार्ड छ, तर पासबुक ल्याएको छैन।",
-          "my": "ကတ်ရှိပါတယ်၊ စာအုပ်တော့ မပါပါဘူး။",
-          "th": "มีบัตรค่ะ แต่ไม่ได้พกสมุดบัญชีมา",
-          "km": "ខ្ញុំមានកាត ប៉ុន្តែមិនបានយកសៀវភៅគណនីមកទេ។",
-          "tl": "May dala akong card, pero wala akong passbook.",
-          "en": "I have my card, but I did not bring my bankbook."
-        },
-        "evaluationNotes": "内容が相手の質問と矛盾しないことを確認する。",
+        "hint": "額と千円札希望を示しATM自動指定の思込を説明する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "額と千円札希望を示しATM自動指定の思込を説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01208-06-002-SHARED-05",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -151,28 +96,15 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ありがとうございます。ご利用できる方法を確認します。",
+        "textJa": "ATMでの紙幣指定の可否を確認してご案内します。窓口での手続きも条件を確認できます。カードはお持ちですか。",
         "furigana": null,
-        "translationVi": "Cảm ơn. Tôi sẽ kiểm tra những cách bạn có thể sử dụng.",
-        "translations": {
-          "vi": "Cảm ơn. Tôi sẽ kiểm tra những cách bạn có thể sử dụng.",
-          "id": "Terima kasih. Saya akan memeriksa pilihan yang dapat Anda gunakan.",
-          "zh-CN": "谢谢。我会确认您可以使用哪些方式。",
-          "zh-TW": "謝謝。我會確認您可以使用哪些方式。",
-          "hi": "धन्यवाद। मैं जाँचता हूँ कि आप कौन सा तरीका इस्तेमाल कर सकते हैं।",
-          "bn": "ধন্যবাদ। কোন কোন উপায় আপনি ব্যবহার করতে পারেন তা যাচাই করছি।",
-          "ne": "धन्यवाद। कुन तरिका प्रयोग गर्न सक्नुहुन्छ भनेर जाँच्दै छु।",
-          "my": "ကျေးဇူးတင်ပါတယ်။ သုံးလို့ရတဲ့ နည်းလမ်းတွေ စစ်ကြည့်ပါမယ်။",
-          "th": "ขอบคุณค่ะ ฉันจะตรวจสอบว่าคุณใช้วิธีใดได้บ้าง",
-          "km": "អរគុណ។ ខ្ញុំនឹងពិនិត្យរបៀបដែលអ្នកអាចប្រើបាន។",
-          "tl": "Salamat po. Titingnan ko kung aling paraan ang maaari ninyong gamitin.",
-          "en": "Thank you. I will check which methods you can use."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01208-06-002-SHARED-06",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -182,40 +114,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_clerk",
+        "communicativeIntent": "report_uncertain_pin_avoid_trial",
         "requiredSemanticComponents": {
-          "goal": "現金を引き出す方法を確かめる"
+          "goal": "カード所持と暗証番号の曖昧さを伝え試行を避けると述べる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "現金を引き出す前に、残高も見られますか。",
+        "recommendedAnswerJa": "カードはあります。でも暗証番号が二つ思い浮かんで、どちらか曖昧です。試しながら出金するのはやめたほうがいいですね。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に合わせて、用件を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Trước khi rút tiền, tôi có thể xem số dư không?",
-          "id": "Bisakah saya memeriksa saldo sebelum menarik uang?",
-          "zh-CN": "取钱之前可以先查看余额吗？",
-          "zh-TW": "提款之前可以先查看餘額嗎？",
-          "hi": "पैसे निकालने से पहले क्या मैं शेष राशि देख सकता हूँ?",
-          "bn": "টাকা তোলার আগে ব্যালান্স কি দেখতে পারি?",
-          "ne": "रकम निकाल्नुअघि खातामा कति बाँकी छ हेर्न सक्छु?",
-          "my": "ငွေမထုတ်မီ ကျန်ငွေကို ကြည့်နိုင်မလား။",
-          "th": "ก่อนถอนเงิน ฉันตรวจสอบยอดคงเหลือได้ไหมคะ",
-          "km": "មុនដកប្រាក់ តើខ្ញុំអាចមើលសមតុល្យបានទេ?",
-          "tl": "Maaari ko po bang tingnan muna ang balanse bago mag-withdraw?",
-          "en": "Can I check my balance before withdrawing cash?"
-        },
-        "evaluationNotes": "内容が相手の質問と矛盾しないことを確認する。",
+        "hint": "カード所持と暗証番号の曖昧さを伝え試行を避けると述べる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "カード所持と暗証番号の曖昧さを伝え試行を避けると述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
-        "targetVocabularyIds": [
-          "VOC1082"
-        ]
+        "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01208-06-002-SHARED-07",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -224,28 +141,15 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。確認する手順をご案内しますので、画面の内容を一緒に見ましょう。",
+        "textJa": "番号を当てようとして操作を繰り返さないでください。暗証番号が不明な場合の手続きへご案内します。",
         "furigana": null,
-        "translationVi": "Được. Tôi sẽ hướng dẫn các bước, chúng ta cùng xem nội dung trên màn hình.",
-        "translations": {
-          "vi": "Được. Tôi sẽ hướng dẫn các bước, chúng ta cùng xem nội dung trên màn hình.",
-          "id": "Ya. Saya akan menjelaskan langkahnya. Mari kita lihat informasi pada layar bersama.",
-          "zh-CN": "可以。我会说明步骤，我们一起看屏幕上的信息。",
-          "zh-TW": "可以。我會說明步驟，我們一起看屏幕上的資訊。",
-          "hi": "हाँ। मैं चरण समझाता हूँ। आइए स्क्रीन पर जानकारी साथ में देखें।",
-          "bn": "হ্যাঁ। ধাপগুলো বলছি, স্ক্রিনের তথ্য একসঙ্গে দেখি।",
-          "ne": "सक्नुहुन्छ। म चरणहरू बताउँछु, स्क्रिनको विवरण सँगै हेरौँ।",
-          "my": "ရပါတယ်။ အဆင့်တွေကို ပြောပြပါမယ်၊ မျက်နှာပြင်က အချက်တွေကို အတူကြည့်ကြရအောင်။",
-          "th": "ได้ค่ะ ฉันจะอธิบายขั้นตอน มาดูข้อมูลบนหน้าจอด้วยกันค่ะ",
-          "km": "បាន។ ខ្ញុំនឹងណែនាំជំហានពិនិត្យ ហើយយើងមើលអ្វីដែលបង្ហាញលើអេក្រង់ជាមួយគ្នា។",
-          "tl": "Opo. Ipapaliwanag ko ang mga hakbang at sabay nating titingnan ang nasa screen.",
-          "en": "Yes. I will explain the steps, and we can look at the screen together."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01208-06-002-SHARED-08",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -255,42 +159,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_clerk",
+        "communicativeIntent": "request_pin_process_and_timeframe",
         "requiredSemanticComponents": {
-          "goal": "現金を引き出す方法を確かめる"
+          "goal": "本人確認書類を示し手続きと旅行までの見込確認を求める"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "時間帯によって手数料が変わるかも知りたいです。",
+        "recommendedAnswerJa": "今日はまず、その手続きを聞きます。本人確認の書類は持っています。旅行までに受け取れるかも、確実な案内を聞きたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に合わせて、用件を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Tôi cũng muốn biết phí có thay đổi theo thời gian trong ngày không.",
-          "id": "Saya juga ingin tahu apakah biaya berubah menurut jam transaksi.",
-          "zh-CN": "我还想知道手续费是否会随时间段变化。",
-          "zh-TW": "我還想知道手續費是否會隨時間段變化。",
-          "hi": "मैं यह भी जानना चाहता हूँ कि समय के अनुसार शुल्क बदलता है या नहीं।",
-          "bn": "দিনের সময় অনুযায়ী ফি বদলায় কি না তাও জানতে চাই।",
-          "ne": "समयअनुसार शुल्क बदलिन्छ कि भनेर पनि जान्न चाहन्छु।",
-          "my": "အချိန်ပေါ် မူတည်ပြီး ဝန်ဆောင်ခ ပြောင်းလဲလားလည်း သိချင်ပါတယ်။",
-          "th": "อยากทราบด้วยว่าค่าธรรมเนียมเปลี่ยนตามช่วงเวลาหรือไม่",
-          "km": "ខ្ញុំចង់ដឹងថាថ្លៃសេវាផ្លាស់ប្តូរតាមម៉ោងឬទេ។",
-          "tl": "Gusto ko ring malaman kung nagbabago ang bayad ayon sa oras.",
-          "en": "I would also like to know whether the fee changes by time of day."
-        },
-        "evaluationNotes": "内容が相手の質問と矛盾しないことを確認する。",
+        "hint": "本人確認書類を示し手続きと旅行までの見込確認を求める。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "本人確認書類を示し手続きと旅行までの見込確認を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
-        "targetGrammarIds": [
-          "GR0001"
-        ],
-        "targetVocabularyIds": [
-          "VOC1693"
-        ]
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01208-06-002-SHARED-09",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -299,28 +186,15 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "今回の時間と方法で調べてから、お伝えします。",
+        "textJa": "必要な確認と手続きの見込みは担当からご案内します。ここで受取日や出金を約束することはできません。",
         "furigana": null,
-        "translationVi": "Tôi sẽ kiểm tra theo thời điểm và cách thực hiện lần này rồi cho bạn biết.",
-        "translations": {
-          "vi": "Tôi sẽ kiểm tra theo thời điểm và cách thực hiện lần này rồi cho bạn biết.",
-          "id": "Saya akan memeriksa waktu dan metode kali ini lalu memberi tahu Anda.",
-          "zh-CN": "我会按这次的时间和方式查询后告诉您。",
-          "zh-TW": "我會按這次的時間和方式查詢後告訴您。",
-          "hi": "इस समय और तरीके के हिसाब से जाँचकर आपको बताऊँगा।",
-          "bn": "এখনকার সময় ও পদ্ধতি অনুযায়ী দেখে আপনাকে জানাব।",
-          "ne": "यस समय र तरिकाअनुसार जाँचेर बताउँछु।",
-          "my": "ဒီအချိန်နဲ့ နည်းလမ်းအတိုင်း စစ်ပြီး ပြောပြပါမယ်။",
-          "th": "ฉันจะตรวจสอบตามเวลาและวิธีที่ใช้ครั้งนี้แล้วแจ้งค่ะ",
-          "km": "ខ្ញុំនឹងពិនិត្យតាមម៉ោង និងវិធីលើកនេះ រួចប្រាប់អ្នក។",
-          "tl": "Susuriin ko ito ayon sa kasalukuyang oras at paraang gagamitin bago ko sabihin sa inyo.",
-          "en": "I will check the fee for this time and method before telling you."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01208-06-002-SHARED-10",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -330,38 +204,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_clerk",
+        "communicativeIntent": "defer_cash_breakdown_until_access_restored",
         "requiredSemanticComponents": {
-          "goal": "現金を引き出す方法を確かめる"
+          "goal": "番号を試さず手続きし出金可能後に紙幣内訳を相談すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "助かります。確認した後で、引き出すか決めます。",
+        "recommendedAnswerJa": "暗証番号を試さず、確認手続きをします。出金できる状態になってから、希望額と千円札の内訳を相談します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に合わせて、用件を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Nhờ bạn giúp. Sau khi kiểm tra, tôi sẽ quyết định có rút tiền không.",
-          "id": "Terima kasih. Setelah memeriksanya, saya akan memutuskan apakah jadi menarik uang.",
-          "zh-CN": "谢谢。确认以后，我再决定是否取钱。",
-          "zh-TW": "謝謝。確認以後，我再決定是否提款。",
-          "hi": "धन्यवाद। जाँचने के बाद तय करूँगा कि पैसे निकालने हैं या नहीं।",
-          "bn": "ধন্যবাদ। যাচাইয়ের পর টাকা তুলব কি না সিদ্ধান্ত নেব।",
-          "ne": "धन्यवाद। जाँच गरेपछि मात्र रकम निकाल्ने कि निर्णय गर्छु।",
-          "my": "ကျေးဇူးတင်ပါတယ်။ စစ်ပြီးမှ ထုတ်မထုတ် ဆုံးဖြတ်ပါမယ်။",
-          "th": "ขอบคุณค่ะ หลังตรวจสอบแล้วค่อยตัดสินใจว่าจะถอนหรือไม่",
-          "km": "អរគុណ។ បន្ទាប់ពីពិនិត្យ ខ្ញុំនឹងសម្រេចថាដកឬអត់។",
-          "tl": "Salamat po. Magpapasiya ako kung magwi-withdraw pagkatapos kong masuri ang lahat.",
-          "en": "That helps. After checking, I will decide whether to withdraw."
-        },
-        "evaluationNotes": "内容が相手の質問と矛盾しないことを確認する。",
+        "hint": "番号を試さず手続きし出金可能後に紙幣内訳を相談すると伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "番号を試さず手続きし出金可能後に紙幣内訳を相談すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01208-06-002-SHARED-11",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -370,29 +231,26 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "かしこまりました。先に条件を確認してから進めましょう。",
+        "textJa": "承知しました。担当へおつなぎしますので、書類をご用意ください。ご相談ありがとうございました。",
         "furigana": null,
-        "translationVi": "Vâng. Ta sẽ kiểm tra điều kiện trước rồi mới tiếp tục.",
-        "translations": {
-          "vi": "Vâng. Ta sẽ kiểm tra điều kiện trước rồi mới tiếp tục.",
-          "id": "Baik. Kita periksa ketentuannya dahulu sebelum melanjutkan.",
-          "zh-CN": "好的。我们先确认条件，再继续办理。",
-          "zh-TW": "好的。我們先確認條件，再繼續辦理。",
-          "hi": "जी। पहले शर्तें देख लेते हैं, फिर आगे बढ़ते हैं।",
-          "bn": "ঠিক আছে। আগে শর্তগুলো দেখি, তারপর এগোই।",
-          "ne": "हुन्छ। पहिले सर्तहरू जाँचौँ, अनि अगाडि बढौँ।",
-          "my": "ရပါတယ်။ အခြေအနေတွေကို အရင်စစ်ပြီးမှ ဆက်လုပ်ပါမယ်။",
-          "th": "ได้ค่ะ ตรวจสอบเงื่อนไขก่อนแล้วค่อยดำเนินการค่ะ",
-          "km": "បាន។ យើងពិនិត្យលក្ខខណ្ឌជាមុន ហើយទើបបន្ត។",
-          "tl": "Sige po. Kumpirmahin muna natin ang mga kondisyon bago magpatuloy.",
-          "en": "Certainly. Let us check the conditions first before proceeding."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": null,
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     }
-  ]
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-kitami.json",
+    "premise": "北見の銀行で旅行前の出金相談。大きな紙幣を避けたい希望とATMでの出金単位を区別し、暗証番号を思い出せず無理に操作を繰り返さない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
 }

@@ -6,15 +6,15 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。受付でお手伝いできることはありますか。",
+        "textJa": "こんにちは。受付でどのようなご相談でしょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-03-001-SHARED-02",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -24,25 +24,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_staff",
+        "communicativeIntent": "request_afternoon_change_due_to_shift",
         "requiredSemanticComponents": {
-          "goal": "予約を変更する方法を確認する"
+          "goal": "勤務変更による午後への予約変更を相談する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "来週の診察予約を変更したいのですが、相談できますか。",
+        "recommendedAnswerJa": "来週の予約を変更したいです。勤務が変わったので、午後の時間に移せますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な情報を具体的に伝えましょう。",
+        "hint": "勤務変更による午後への予約変更を相談する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "evaluationNotes": "勤務変更による午後への予約変更を相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-03-001-SHARED-03",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -51,15 +51,15 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。予約した日と、お名前を確認してもよろしいですか。",
+        "textJa": "予約票を拝見します。こちらには検査と診察の二つが記載されていますが、両方の変更をご希望ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-03-001-SHARED-04",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -69,25 +69,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_staff",
+        "communicativeIntent": "recognize_separate_test_and_consultation",
         "requiredSemanticComponents": {
-          "goal": "予約を変更する方法を確認する"
+          "goal": "検査診察が別予約と気づき両方の調整を求める"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "来週の火曜日です。名前は受付票に書いてあります。",
+        "recommendedAnswerJa": "一つの予約だと思っていました。午前の検査に来られないので、診察も含めて組み直せるか相談したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な情報を具体的に伝えましょう。",
+        "hint": "検査診察が別予約と気づき両方の調整を求める。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "evaluationNotes": "検査診察が別予約と気づき両方の調整を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-03-001-SHARED-05",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -96,15 +96,15 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ありがとうございます。予約内容を確認しますので、少々お待ちください。",
+        "textJa": "検査担当と診療科で調整が必要です。来院できる曜日と時間帯を教えてください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-03-001-SHARED-06",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -114,25 +114,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_staff",
+        "communicativeIntent": "offer_wednesday_and_friday_availability",
         "requiredSemanticComponents": {
-          "goal": "予約を変更する方法を確認する"
+          "goal": "水曜終日と金曜午後の都合を示し水曜集約を相談する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "仕事の都合で行けません。別の日の空きは確認できますか。",
+        "recommendedAnswerJa": "水曜は一日空いています。金曜は午後だけです。検査の準備があるなら、水曜にまとめられるか聞いてほしいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な情報を具体的に伝えましょう。",
+        "hint": "水曜終日と金曜午後の都合を示し水曜集約を相談する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "evaluationNotes": "水曜終日と金曜午後の都合を示し水曜集約を相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-03-001-SHARED-07",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -141,15 +141,15 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "確認できる日時をお調べします。ご都合の悪い曜日はありますか。",
+        "textJa": "ご希望を担当へ伝えます。前回渡された準備の説明書もお持ちですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-03-001-SHARED-08",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -159,25 +159,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_staff",
+        "communicativeIntent": "request_new_preparation_explanation",
         "requiredSemanticComponents": {
-          "goal": "予約を変更する方法を確認する"
+          "goal": "旧説明書を示し変更後の食事指示の再説明を求める"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "火曜日以外なら調整できます。変更後の時間も教えてください。",
+        "recommendedAnswerJa": "持っていますが、変更後もこの食事の指示を使ってよいかがわかりません。新しい日時に合わせて説明を受けたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な情報を具体的に伝えましょう。",
+        "hint": "旧説明書を示し変更後の食事指示の再説明を求める。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "evaluationNotes": "旧説明書を示し変更後の食事指示の再説明を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-03-001-SHARED-09",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -186,15 +186,15 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "候補が見つかりましたら、日時を読み上げて一緒に確認します。",
+        "textJa": "準備の内容は検査担当に確認してください。予約が決まったら、日時と説明書の扱いを一緒に確認できるようお伝えします。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-03-001-SHARED-10",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -204,25 +204,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_staff",
+        "communicativeIntent": "confirm_two_bookings_and_priority_day",
         "requiredSemanticComponents": {
-          "goal": "予約を変更する方法を確認する"
+          "goal": "両予約変更と水曜優先と担当からの準備確認を伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "お願いします。前回の受付票は次回も持ってきたほうがいいですか。",
+        "recommendedAnswerJa": "検査と診察の両方を変更したいこと、水曜を第一希望にすることを伝えてください。準備も担当の説明で確認します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な情報を具体的に伝えましょう。",
+        "hint": "両予約変更と水曜優先と担当からの準備確認を伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "evaluationNotes": "両予約変更と水曜優先と担当からの準備確認を伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-03-001-SHARED-11",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -231,16 +231,26 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "必要な持ち物も含めて、変更を確定する前にご案内します。",
+        "textJa": "承りました。調整担当へおつなぎします。まだ変更は確定していませんので、担当からの案内をお待ちください。お大事に。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": null,
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     }
-  ]
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-kushiro.json",
+    "premise": "釧路の病院受付で検査予約を変更したい客。単なる時間変更と思っていたが検査と診察が別予約だと気づき、準備の指示も担当へ再確認する。受付は医療指示を代行しない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
 }

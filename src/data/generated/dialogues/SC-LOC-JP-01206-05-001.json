@@ -6,15 +6,15 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "いらっしゃいませ。今日はどのようなご用件ですか。",
+        "textJa": "こんにちは。郵便物について、何を確認されたいですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-05-001-SHARED-02",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -24,25 +24,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_staff",
+        "communicativeIntent": "ask_immediate_pickup_with_notice",
         "requiredSemanticComponents": {
-          "goal": "不在の荷物を受け取る方法を確認する"
+          "goal": "不在票を提示し今の窓口受取可否を尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "家に不在票が入っていました。荷物の受け取り方を教えてください。",
+        "recommendedAnswerJa": "不在票を持ってきました。この荷物を今、私が受け取れますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な情報を具体的に伝えましょう。",
+        "hint": "不在票を提示し今の窓口受取可否を尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "evaluationNotes": "不在票を提示し今の窓口受取可否を尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-05-001-SHARED-03",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -51,15 +51,15 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "不在票を拝見できますか。お名前と番号を確認します。",
+        "textJa": "不在票の宛名と、保管についての表示を確認させてください。宛名の方はご本人ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-05-001-SHARED-04",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -69,25 +69,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_staff",
+        "communicativeIntent": "correct_recipient_to_husband",
         "requiredSemanticComponents": {
-          "goal": "不在の荷物を受け取る方法を確認する"
+          "goal": "宛名が夫と気づき同居を伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい、こちらです。今日ここで受け取ることはできますか。",
+        "recommendedAnswerJa": "住所だけ見て自分宛てだと思いましたが、夫の名前でした。同じ住所に住んでいます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な情報を具体的に伝えましょう。",
+        "hint": "宛名が夫と気づき同居を伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "evaluationNotes": "宛名が夫と気づき同居を伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-05-001-SHARED-05",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -96,15 +96,15 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "荷物の保管状況を確認します。すぐにお渡しできるかは確認後にご案内します。",
+        "textJa": "郵便物の種類によって受け取りの確認事項が違います。ご主人は、今日、荷物の受け取りができますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-05-001-SHARED-06",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -114,25 +114,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_staff",
+        "communicativeIntent": "choose_redelivery_if_proxy_documents_missing",
         "requiredSemanticComponents": {
-          "goal": "不在の荷物を受け取る方法を確認する"
+          "goal": "夜は夫が在宅と伝え代理受取が難しければ再配達を希望する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "わかりました。もしここになければ、再配達を頼めますか。",
+        "recommendedAnswerJa": "夜なら家にいます。私が窓口で受け取るのに必要なものが足りなければ、夫宛ての再配達にしたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な情報を具体的に伝えましょう。",
+        "hint": "夜は夫が在宅と伝え代理受取が難しければ再配達を希望する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "evaluationNotes": "夜は夫が在宅と伝え代理受取が難しければ再配達を希望する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-05-001-SHARED-07",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -141,15 +141,15 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。利用できる方法と日時を確認しましょう。",
+        "textJa": "まず、この郵便物を窓口で渡せる条件と保管状況を確認します。再配達なら、不在票の案内から手続きできます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-05-001-SHARED-08",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -159,25 +159,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_staff",
+        "communicativeIntent": "distinguish_addressee_and_contact_fields",
         "requiredSemanticComponents": {
-          "goal": "不在の荷物を受け取る方法を確認する"
+          "goal": "宛名と申込連絡先の欄を区別して確認する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "仕事で昼間は家にいません。夜の時間帯を選べますか。",
+        "recommendedAnswerJa": "再配達の入力で私の名前を入れてしまいそうでした。宛名は夫のままにして、連絡先を入力する欄とは分けるんですね。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な情報を具体的に伝えましょう。",
+        "hint": "宛名と申込連絡先の欄を区別して確認する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "evaluationNotes": "宛名と申込連絡先の欄を区別して確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-05-001-SHARED-09",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -186,15 +186,15 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "選べる時間帯は荷物の条件で変わりますので、案内を確認します。",
+        "textJa": "はい、各欄の説明に沿って入力してください。保管期限と、申し込める配達日時も画面で確認できます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-05-001-SHARED-10",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -204,25 +204,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_staff",
+        "communicativeIntent": "plan_check_deadline_slot_with_husband",
         "requiredSemanticComponents": {
-          "goal": "不在の荷物を受け取る方法を確認する"
+          "goal": "宛名期限時間帯を確認し夫の都合で再配達を申込むと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "ありがとうございます。受け取りに本人確認書類は必要ですか。",
+        "recommendedAnswerJa": "宛名、保管期限、選べる時間を確かめます。夫に在宅時間を聞いてから、不在票の案内で再配達を申し込みます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な情報を具体的に伝えましょう。",
+        "hint": "宛名期限時間帯を確認し夫の都合で再配達を申込むと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "evaluationNotes": "宛名期限時間帯を確認し夫の都合で再配達を申込むと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-05-001-SHARED-11",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -231,16 +231,26 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "受け取り方法に応じて必要なものをお伝えします。まず荷物の状況を確認します。",
+        "textJa": "承知しました。宛名と連絡先を取り違えないようご確認ください。手続きで迷ったらまたお尋ねください。ありがとうございました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": null,
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     }
-  ]
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-kushiro.json",
+    "premise": "釧路の郵便窓口で不在票相談。宛名が家族で本人宛てと思い込んでいたことが判明し、受取方法と依頼人名義を整理する。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
 }

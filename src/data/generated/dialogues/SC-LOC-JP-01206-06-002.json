@@ -6,28 +6,15 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。どのようなお手続きをご希望ですか。",
+        "textJa": "こんにちは。お振り込みについて何を確認しましょうか。",
         "furigana": null,
-        "translationVi": "Xin chào. Bạn muốn thực hiện giao dịch gì?",
-        "translations": {
-          "vi": "Xin chào. Bạn muốn thực hiện giao dịch gì?",
-          "id": "Selamat siang. Transaksi apa yang ingin Anda lakukan?",
-          "zh-CN": "您好。您想办理什么业务？",
-          "zh-TW": "您好。您想辦理什麼業務？",
-          "hi": "नमस्ते। आप कौन सा लेन-देन करना चाहते हैं?",
-          "bn": "নমস্কার। কোন লেনদেন করতে চান?",
-          "ne": "नमस्ते। तपाईं कुन कारोबार गर्न चाहनुहुन्छ?",
-          "my": "မင်္ဂလာပါ။ ဘယ်လိုငွေလွှဲလုပ်ချင်ပါသလဲ။",
-          "th": "สวัสดีค่ะ ต้องการทำธุรกรรมแบบไหนคะ",
-          "km": "សួស្តី។ តើអ្នកចង់ធ្វើនីតិវិធីអ្វី?",
-          "tl": "Magandang araw. Anong transaksiyon po ang nais ninyo?",
-          "en": "Hello. What transaction would you like to make?"
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-06-002-SHARED-02",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -37,42 +24,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_clerk",
+        "communicativeIntent": "report_invoice_payee_name_mismatch",
         "requiredSemanticComponents": {
-          "goal": "振込前に必要情報と費用を確認する"
+          "goal": "修理請求の店名と表示受取人名の違いを相談する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "家賃を振り込みたいので、必要な情報を確認したいです。",
+        "recommendedAnswerJa": "修理代を振り込もうとしたら、画面の受取人名が請求書の店名と違いました。このまま進めてよいかわかりません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に合わせて、用件を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Tôi muốn chuyển tiền nhà, nên muốn kiểm tra những thông tin cần có.",
-          "id": "Saya ingin mentransfer uang sewa dan memastikan informasi yang diperlukan.",
-          "zh-CN": "我想汇房租，先确认需要哪些信息。",
-          "zh-TW": "我想匯房租，先確認需要哪些資訊。",
-          "hi": "मैं घर का किराया भेजना चाहता हूँ और पहले ज़रूरी जानकारी की पुष्टि करना चाहता हूँ।",
-          "bn": "বাড়িভাড়া পাঠাতে চাই, তাই আগে কী তথ্য লাগবে জানতে চাই।",
-          "ne": "घरभाडा पठाउन चाहन्छु। त्यसका लागि आवश्यक जानकारी जाँच्न चाहन्छु।",
-          "my": "အိမ်ငှားခ လွှဲချင်လို့ လိုအပ်တဲ့အချက်အလက်တွေကို အရင်စစ်ချင်ပါတယ်။",
-          "th": "ฉันอยากโอนค่าเช่าบ้าน จึงอยากตรวจสอบข้อมูลที่ต้องใช้ก่อน",
-          "km": "ខ្ញុំចង់ផ្ទេរប្រាក់ថ្លៃផ្ទះ។ ខ្ញុំចង់ពិនិត្យព័ត៌មានដែលត្រូវការ។",
-          "tl": "Gusto kong magpadala ng bayad sa upa. Nais kong tiyakin ang impormasyong kailangan.",
-          "en": "I want to transfer my rent payment, so I would like to check the required information."
-        },
-        "evaluationNotes": "内容が相手の質問と矛盾しないことを確認する。",
+        "hint": "修理請求の店名と表示受取人名の違いを相談する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "修理請求の店名と表示受取人名の違いを相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
-        "targetGrammarIds": [
-          "GR0001"
-        ],
-        "targetVocabularyIds": [
-          "VOC0083"
-        ]
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-06-002-SHARED-03",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -81,28 +51,15 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。振込先の情報はお手元にありますか。",
+        "textJa": "振り込みはまだ確定していませんか。口座番号などの入力内容と請求書を確認しましょう。",
         "furigana": null,
-        "translationVi": "Vâng. Bạn đã có thông tin người nhận chưa?",
-        "translations": {
-          "vi": "Vâng. Bạn đã có thông tin người nhận chưa?",
-          "id": "Baik. Apakah Anda sudah memiliki informasi penerima?",
-          "zh-CN": "好的。您手边有收款人的信息吗？",
-          "zh-TW": "好的。您手邊有收款人的資訊嗎？",
-          "hi": "जी। क्या आपके पास पैसे पाने वाले की जानकारी है?",
-          "bn": "ঠিক আছে। প্রাপকের তথ্য কি আপনার কাছে আছে?",
-          "ne": "हुन्छ। रकम पाउने व्यक्तिको विवरण तपाईंसँग छ?",
-          "my": "ရပါတယ်။ ငွေလက်ခံမယ့်သူရဲ့ အချက်အလက်ရှိပါသလား။",
-          "th": "ได้ค่ะ คุณมีข้อมูลของผู้รับเงินอยู่ไหมคะ",
-          "km": "បាន។ តើអ្នកមានព័ត៌មានគណនីអ្នកទទួលនៅជាមួយទេ?",
-          "tl": "Naiintindihan ko. Dala po ba ninyo ang impormasyon ng padadalhan?",
-          "en": "Certainly. Do you have the recipient’s details with you?"
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-06-002-SHARED-04",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -112,40 +69,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_clerk",
+        "communicativeIntent": "confirm_unsubmitted_transfer_and_matching_number",
         "requiredSemanticComponents": {
-          "goal": "振込前に必要情報と費用を確認する"
+          "goal": "確定前で番号一致だが個人名表示と伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "銀行名と口座番号のメモがあります。これで足りますか。",
+        "recommendedAnswerJa": "確認画面で止めています。番号は請求書と同じですが、店名ではなく個人の名前が表示されています。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に合わせて、用件を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Tôi có ghi lại tên ngân hàng và số tài khoản. Như vậy đã đủ chưa?",
-          "id": "Saya mencatat nama bank dan nomor rekening. Apakah itu cukup?",
-          "zh-CN": "我记下了银行名称和账号。这些够吗？",
-          "zh-TW": "我記下了銀行名稱和帳號。這些夠嗎？",
-          "hi": "मेरे पास बैंक का नाम और खाता संख्या लिखी है। क्या इतना काफ़ी है?",
-          "bn": "ব্যাংকের নাম আর অ্যাকাউন্ট নম্বর লিখে এনেছি। এতেই হবে?",
-          "ne": "बैंकको नाम र खाता नम्बर लेखेको छु। यति पुग्छ?",
-          "my": "ဘဏ်နာမည်နဲ့ စာရင်းနံပါတ်ကို မှတ်ထားပါတယ်။ ဒါလောက်လုံလောက်မလား။",
-          "th": "ฉันจดชื่อธนาคารกับหมายเลขบัญชีไว้ แค่นี้พอไหมคะ",
-          "km": "ខ្ញុំមានកំណត់ត្រាឈ្មោះធនាគារ និងលេខគណនី។ តើគ្រប់គ្រាន់ទេ?",
-          "tl": "May tala ako ng pangalan ng bangko at account number. Sapat na po ba ito?",
-          "en": "I have a note with the bank name and account number. Is that enough?"
-        },
-        "evaluationNotes": "内容が相手の質問と矛盾しないことを確認する。",
+        "hint": "確定前で番号一致だが個人名表示と伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "確定前で番号一致だが個人名表示と伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
-        "targetVocabularyIds": [
-          "VOC1059"
-        ]
+        "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-06-002-SHARED-05",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -154,28 +96,15 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ほかに確認する項目がないか、メモを一緒に見てみましょう。",
+        "textJa": "屋号と名義が異なることはありますが、銀行から相手の請求の正当性は判断できません。修理業者に確認できますか。",
         "furigana": null,
-        "translationVi": "Ta hãy xem cùng tờ ghi chú để kiểm tra có cần thêm mục nào không.",
-        "translations": {
-          "vi": "Ta hãy xem cùng tờ ghi chú để kiểm tra có cần thêm mục nào không.",
-          "id": "Mari kita periksa catatan itu bersama untuk melihat apakah masih ada informasi lain.",
-          "zh-CN": "我们一起看看记录，确认是否还需要其他信息。",
-          "zh-TW": "我們一起看看記錄，確認是否還需要其他資訊。",
-          "hi": "आइए उस नोट को साथ में देखकर जाँच लें कि और कुछ चाहिए या नहीं।",
-          "bn": "নোটটি একসঙ্গে দেখে নিই, আর কিছু লাগবে কি না যাচাই করি।",
-          "ne": "त्यो टिपोट सँगै हेरेर अरू जानकारी चाहिन्छ कि जाँचौँ।",
-          "my": "မှတ်စုကို အတူကြည့်ပြီး တခြားဘာလိုသေးလဲ စစ်ကြည့်ပါမယ်။",
-          "th": "เรามาดูบันทึกด้วยกันว่าต้องมีข้อมูลอื่นอีกหรือไม่",
-          "km": "យើងមើលកំណត់ត្រាជាមួយគ្នា ដើម្បីពិនិត្យថាមានព័ត៌មានផ្សេងត្រូវការទៀតឬទេ។",
-          "tl": "Tingnan natin ang tala nang magkasama upang malaman kung may iba pang kailangang impormasyon.",
-          "en": "Let us check your note together to see whether any other details are needed."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-06-002-SHARED-06",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -185,40 +114,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_clerk",
+        "communicativeIntent": "choose_known_vendor_contact_over_new_number",
         "requiredSemanticComponents": {
-          "goal": "振込前に必要情報と費用を確認する"
+          "goal": "新記載番号と旧番号を区別し既知の連絡先で確認すると述べる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "名前の読み方を間違えたくありません。確認する方法はありますか。",
+        "recommendedAnswerJa": "請求書に新しい番号が書いてありますが、修理を頼んだ時の電話番号も残っています。そちらへ聞いたほうがいいですね。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に合わせて、用件を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Tôi không muốn đọc sai tên người nhận. Có cách nào xác nhận không?",
-          "id": "Saya tidak ingin salah membaca nama penerima. Bagaimana cara memastikannya?",
-          "zh-CN": "我不想弄错收款人的姓名。有什么办法可以核对？",
-          "zh-TW": "我不想弄錯收款人的姓名。有什麼辦法可以核對？",
-          "hi": "मैं पाने वाले का नाम ग़लत नहीं पढ़ना चाहता। उसे कैसे पक्का करूँ?",
-          "bn": "প্রাপকের নাম ভুল পড়তে চাই না। কীভাবে নিশ্চিত হব?",
-          "ne": "प्रापकको नाम गलत पढ्न चाहन्नँ। कसरी पक्का गर्ने?",
-          "my": "လက်ခံသူနာမည်ကို မှားမဖတ်ချင်ပါဘူး။ ဘယ်လိုအတည်ပြုရမလဲ။",
-          "th": "ฉันไม่อยากอ่านชื่อผู้รับผิด มีวิธียืนยันไหมคะ",
-          "km": "ខ្ញុំមិនចង់អានឈ្មោះអ្នកទទួលខុសទេ។ តើមានរបៀបផ្ទៀងផ្ទាត់ទេ?",
-          "tl": "Ayaw kong magkamali sa pagbasa ng pangalan. May paraan po ba para makumpirma ito?",
-          "en": "I do not want to get the name wrong. Is there a way to verify its reading?"
-        },
-        "evaluationNotes": "内容が相手の質問と矛盾しないことを確認する。",
+        "hint": "新記載番号と旧番号を区別し既知の連絡先で確認すると述べる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "新記載番号と旧番号を区別し既知の連絡先で確認すると述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
-        "targetVocabularyIds": [
-          "VOC0083"
-        ]
+        "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-06-002-SHARED-07",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -227,28 +141,15 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。入力する前に、表示された内容を一つずつ確かめる方法をご案内します。",
+        "textJa": "連絡先の変更も含め、もともと確認できている連絡先で口座名義を照会してください。確定操作は確認後にしましょう。",
         "furigana": null,
-        "translationVi": "Có. Tôi sẽ hướng dẫn bạn kiểm tra lần lượt thông tin hiển thị trước khi nhập lệnh.",
-        "translations": {
-          "vi": "Có. Tôi sẽ hướng dẫn bạn kiểm tra lần lượt thông tin hiển thị trước khi nhập lệnh.",
-          "id": "Saya akan menunjukkan cara memeriksa informasi yang tampil satu per satu sebelum melanjutkan.",
-          "zh-CN": "有的。我会说明提交之前如何逐项核对显示的信息。",
-          "zh-TW": "有的。我會說明提交之前如何逐項核對顯示的資訊。",
-          "hi": "मैं बताऊँगा कि आगे बढ़ने से पहले स्क्रीन पर दिखी जानकारी एक-एक करके कैसे जाँचें।",
-          "bn": "এগোনোর আগে স্ক্রিনে দেখানো তথ্য একে একে কীভাবে যাচাই করবেন তা দেখাব।",
-          "ne": "अगाडि बढ्नुअघि स्क्रिनमा देखिएको विवरण एकएक गरी जाँच्ने तरिका बताउँछु।",
-          "my": "ဆက်မလုပ်မီ မျက်နှာပြင်မှာ ပြတဲ့အချက်တွေကို တစ်ခုချင်းစီ စစ်နည်း ပြောပြပါမယ်။",
-          "th": "มีค่ะ ฉันจะอธิบายวิธีตรวจสอบข้อมูลที่แสดงทีละรายการก่อนดำเนินการ",
-          "km": "មាន។ ខ្ញុំនឹងបង្ហាញរបៀបពិនិត្យព័ត៌មានដែលបង្ហាញលើអេក្រង់ម្តងមួយ មុនបញ្ចូល។",
-          "tl": "Opo. Ipapakita ko kung paano suriin nang isa-isa ang impormasyong lalabas bago magpatuloy.",
-          "en": "Yes. I will show you how to check each item displayed before entering the transfer."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-06-002-SHARED-08",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -258,42 +159,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_clerk",
+        "communicativeIntent": "report_vendor_confirmation_request_total",
         "requiredSemanticComponents": {
-          "goal": "振込前に必要情報と費用を確認する"
+          "goal": "業者確認結果を伝え手数料込み合計確認を求める"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "手数料と、相手に届くまでの時間も知りたいです。",
+        "recommendedAnswerJa": "今、元の番号で確認できました。請求書の名義を担当者が説明してくれました。手数料を含めた合計も確定前に見たいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に合わせて、用件を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Tôi cũng muốn biết phí và bao lâu tiền đến nơi.",
-          "id": "Saya juga ingin tahu biaya transfer dan kapan uangnya sampai.",
-          "zh-CN": "我也想知道手续费和到账时间。",
-          "zh-TW": "我也想知道手續費和到帳時間。",
-          "hi": "मैं शुल्क और पैसे पहुँचने में लगने वाला समय भी जानना चाहता हूँ।",
-          "bn": "ফি কত এবং টাকা পৌঁছাতে কত সময় লাগে তাও জানতে চাই।",
-          "ne": "शुल्क र पैसा पुग्न लाग्ने समय पनि जान्न चाहन्छु।",
-          "my": "ဝန်ဆောင်ခနဲ့ ငွေရောက်ချိန်ကိုလည်း သိချင်ပါတယ်။",
-          "th": "ฉันอยากรู้ค่าธรรมเนียมและเวลาที่เงินจะถึงด้วยค่ะ",
-          "km": "ខ្ញុំចង់ដឹងថ្លៃសេវា និងពេលវេលាដែលប្រាក់ទៅដល់អ្នកទទួលផង។",
-          "tl": "Gusto ko ring malaman ang bayad sa serbisyo at kung kailan matatanggap ang pera.",
-          "en": "I would also like to know the fee and how long the payment will take to arrive."
-        },
-        "evaluationNotes": "内容が相手の質問と矛盾しないことを確認する。",
+        "hint": "業者確認結果を伝え手数料込み合計確認を求める。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "業者確認結果を伝え手数料込み合計確認を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
-        "targetGrammarIds": [
-          "GR0001"
-        ],
-        "targetVocabularyIds": [
-          "VOC1693"
-        ]
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-06-002-SHARED-09",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -302,28 +186,15 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "方法や時間帯によって変わる場合があります。今回の条件で確認しましょう。",
+        "textJa": "確認画面の振込額、受取人、手数料、引き落とし合計を照らし合わせてください。表示がわからない所はご説明します。",
         "furigana": null,
-        "translationVi": "Điều đó có thể thay đổi tùy phương thức và thời điểm. Ta hãy kiểm tra theo giao dịch này.",
-        "translations": {
-          "vi": "Điều đó có thể thay đổi tùy phương thức và thời điểm. Ta hãy kiểm tra theo giao dịch này.",
-          "id": "Hal itu bisa berbeda menurut metode dan waktunya. Mari kita periksa untuk transaksi ini.",
-          "zh-CN": "这可能因办理方式和时间段而异，我们按这次的条件确认。",
-          "zh-TW": "這可能因辦理方式和時間段而異，我們按這次的條件確認。",
-          "hi": "तरीके और समय के अनुसार यह बदल सकता है। इस लेन-देन के लिए जाँचते हैं।",
-          "bn": "পদ্ধতি ও সময় অনুযায়ী তা বদলাতে পারে। এই লেনদেনের জন্য দেখে নিই।",
-          "ne": "तरिका र समयअनुसार फरक हुन सक्छ। यो कारोबारका लागि जाँचौँ।",
-          "my": "နည်းလမ်းနဲ့ အချိန်ပေါ် မူတည်ပြီး ကွာနိုင်ပါတယ်။ ဒီငွေလွှဲအတွက် စစ်ကြည့်ပါမယ်။",
-          "th": "อาจต่างกันตามวิธีและช่วงเวลา มาตรวจสอบตามธุรกรรมครั้งนี้ค่ะ",
-          "km": "វាអាចខុសគ្នាតាមរបៀប និងម៉ោងធ្វើប្រតិបត្តិការ។ យើងពិនិត្យតាមលក្ខខណ្ឌលើកនេះ។",
-          "tl": "Maaaring mag-iba ito ayon sa paraan at oras. Tingnan natin ang mga kondisyon ng transaksiyong ito.",
-          "en": "Those can vary by method and time of day. Let us check the conditions for this transfer."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-06-002-SHARED-10",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -333,40 +204,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_clerk",
+        "communicativeIntent": "confirm_amount_payee_total_before_submit",
         "requiredSemanticComponents": {
-          "goal": "振込前に必要情報と費用を確認する"
+          "goal": "額名義合計を確認後確定し不明なら送金しないと述べる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "ありがとうございます。確認してから振り込みます。",
+        "recommendedAnswerJa": "請求額と名義を確認して、手数料を含む合計を見てから確定します。確認できなければ今日は振り込まないつもりでした。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に合わせて、用件を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Cảm ơn. Tôi sẽ kiểm tra xong rồi mới chuyển tiền.",
-          "id": "Terima kasih. Saya akan mentransfer setelah semuanya diperiksa.",
-          "zh-CN": "谢谢。核对之后我再汇款。",
-          "zh-TW": "謝謝。核對之後我再匯款。",
-          "hi": "धन्यवाद। पुष्टि करने के बाद ही पैसे भेजूँगा।",
-          "bn": "ধন্যবাদ। সব যাচাই করে তারপর টাকা পাঠাব।",
-          "ne": "धन्यवाद। पुष्टि गरेपछि मात्र पैसा पठाउँछु।",
-          "my": "ကျေးဇူးတင်ပါတယ်။ စစ်ပြီးမှ ငွေလွှဲပါမယ်။",
-          "th": "ขอบคุณค่ะ ฉันจะโอนหลังจากตรวจสอบก่อน",
-          "km": "អរគុណ។ ខ្ញុំនឹងផ្ទេរប្រាក់បន្ទាប់ពីពិនិត្យរួច។",
-          "tl": "Salamat po. Magpapadala ako pagkatapos kong makumpirma ang lahat.",
-          "en": "Thank you. I will make the transfer after checking everything."
-        },
-        "evaluationNotes": "内容が相手の質問と矛盾しないことを確認する。",
+        "hint": "額名義合計を確認後確定し不明なら送金しないと述べる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "額名義合計を確認後確定し不明なら送金しないと述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
-        "targetVocabularyIds": [
-          "VOC0083"
-        ]
+        "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-06-002-SHARED-11",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -375,29 +231,26 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。内容に間違いがないことを確かめてから進めましょう。",
+        "textJa": "その順で慎重に確認してください。確定後は控えも保管しましょう。ご相談ありがとうございました。",
         "furigana": null,
-        "translationVi": "Vâng. Chúng ta hãy xác nhận nội dung không có sai sót trước khi tiếp tục.",
-        "translations": {
-          "vi": "Vâng. Chúng ta hãy xác nhận nội dung không có sai sót trước khi tiếp tục.",
-          "id": "Baik. Mari pastikan semua informasinya benar sebelum melanjutkan.",
-          "zh-CN": "好的。继续之前，请先确认信息没有错误。",
-          "zh-TW": "好的。繼續之前，請先確認資訊沒有錯誤。",
-          "hi": "जी। आगे बढ़ने से पहले सारी जानकारी सही है, यह जाँच लें।",
-          "bn": "ঠিক আছে। এগোনোর আগে তথ্য সঠিক আছে কি না নিশ্চিত হই।",
-          "ne": "हुन्छ। अगाडि बढ्नुअघि सबै विवरण ठीक छ भनेर जाँचौँ।",
-          "my": "ရပါတယ်။ ဆက်မလုပ်မီ အချက်အလက်အားလုံး မှန်မမှန် အတည်ပြုပါမယ်။",
-          "th": "ได้ค่ะ มายืนยันว่าข้อมูลถูกต้องก่อนดำเนินการต่อค่ะ",
-          "km": "បាន។ សូមបញ្ជាក់ថាព័ត៌មានទាំងអស់ត្រឹមត្រូវ មុនបន្ត។",
-          "tl": "Sige po. Tiyakin muna nating walang mali sa mga detalye bago magpatuloy.",
-          "en": "Understood. Let us confirm all the details before proceeding."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": null,
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     }
-  ]
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-kushiro.json",
+    "premise": "釧路の銀行で修理業者への振込前相談。請求書の屋号と口座名義の個人名が異なるため、既知の連絡先で照会してから送金する。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
 }

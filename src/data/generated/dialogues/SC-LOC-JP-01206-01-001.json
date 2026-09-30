@@ -6,28 +6,15 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。行き方のご相談ですか。",
+        "textJa": "こんにちは。移動について、何をお調べしましょうか。",
         "furigana": null,
-        "translationVi": "Xin chào. Bạn muốn hỏi đường đi phải không?",
-        "translations": {
-          "vi": "Xin chào. Bạn muốn hỏi đường đi phải không?",
-          "id": "Selamat siang. Apakah Anda ingin bertanya tentang rute?",
-          "zh-CN": "您好。您想咨询路线吗？",
-          "zh-TW": "您好。您想諮詢路線嗎？",
-          "hi": "नमस्ते। क्या आप रास्ते के बारे में पूछना चाहते हैं?",
-          "bn": "নমস্কার। যাওয়ার পথ সম্পর্কে জানতে চান?",
-          "ne": "नमस्ते। बाटोबारे सोध्न चाहनुहुन्छ?",
-          "my": "မင်္ဂလာပါ။ လမ်းကြောင်း မေးချင်တာလား။",
-          "th": "สวัสดีค่ะ ต้องการถามเส้นทางใช่ไหมคะ",
-          "km": "សួស្តី។ តើអ្នកចង់សួរផ្លូវមែនទេ?",
-          "tl": "Magandang araw. Nais po ba ninyong magtanong ng direksiyon?",
-          "en": "Hello. Are you asking for directions?"
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-01-001-SHARED-02",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -37,42 +24,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_station_staff",
+        "communicativeIntent": "request_boarding_check_from_booking",
         "requiredSemanticComponents": {
-          "goal": "乗り換えの経路とホームを確認する"
+          "goal": "予約を示し釧路で乗換列車を待てばよいか尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "別の路線に乗り換えたいのですが、どこへ行けばいいですか。",
+        "recommendedAnswerJa": "この予約の列車に乗り換えたいです。釧路駅で待っていれば乗れますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、行き先や状況を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Tôi muốn chuyển sang tuyến khác; xin chỉ cho tôi phải đi đâu.",
-          "id": "Saya ingin pindah ke jalur lain. Ke mana saya harus pergi?",
-          "zh-CN": "我想换乘另一条线路，应该往哪里走？",
-          "zh-TW": "我想轉乘另一條線路，應該往哪裡走？",
-          "hi": "मुझे दूसरी लाइन में बदलना है। किधर जाना होगा?",
-          "bn": "অন্য লাইনে বদলাতে চাই। কোন দিকে যেতে হবে?",
-          "ne": "अर्को लाइनमा सर्न चाहन्छु। कता जानुपर्छ?",
-          "my": "တခြားလိုင်းကို ပြောင်းစီးချင်ပါတယ်။ ဘယ်ဘက်သွားရမလဲ။",
-          "th": "ฉันอยากเปลี่ยนไปสายอื่น ต้องเดินไปทางไหนคะ",
-          "km": "ខ្ញុំចង់ប្តូរទៅខ្សែរថភ្លើងផ្សេង។ តើខ្ញុំត្រូវទៅណា?",
-          "tl": "Gusto kong lumipat sa ibang linya ng tren. Saan po ako pupunta?",
-          "en": "I want to transfer to another train line. Where should I go?"
-        },
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "hint": "予約を示し釧路で乗換列車を待てばよいか尋ねる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "予約を示し釧路で乗換列車を待てばよいか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
-        "targetGrammarIds": [
-          "GR0001"
-        ],
-        "targetVocabularyIds": [
-          "VOC0277"
-        ]
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-01-001-SHARED-03",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -81,28 +51,15 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "行き先を教えていただけますか。",
+        "textJa": "予約画面の出発駅と到着駅を、一緒に確認してもよろしいですか。",
         "furigana": null,
-        "translationVi": "Bạn cho tôi biết điểm đến được không?",
-        "translations": {
-          "vi": "Bạn cho tôi biết điểm đến được không?",
-          "id": "Bisa beri tahu tujuan Anda?",
-          "zh-CN": "可以告诉我您的目的地吗？",
-          "zh-TW": "可以告訴我您的目的地嗎？",
-          "hi": "क्या आप गंतव्य बता सकते हैं?",
-          "bn": "গন্তব্যটি বলবেন?",
-          "ne": "गन्तव्य बताउन सक्नुहुन्छ?",
-          "my": "သွားမယ့်နေရာကို ပြောပြနိုင်မလား။",
-          "th": "บอกจุดหมายได้ไหมคะ",
-          "km": "សូមប្រាប់គោលដៅរបស់អ្នកបានទេ?",
-          "tl": "Maaari po bang sabihin ninyo ang inyong destinasyon?",
-          "en": "Could you tell me your destination?"
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-01-001-SHARED-04",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -112,42 +69,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_station_staff",
+        "communicativeIntent": "correct_reversed_departure_arrival",
         "requiredSemanticComponents": {
-          "goal": "乗り換えの経路とホームを確認する"
+          "goal": "出発と到着の読違いを認め釧路発の予約確認を求める"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "市内の美術館へ行きたいです。途中で乗り換える必要がありますか。",
+        "recommendedAnswerJa": "出発が別の駅で、到着が釧路になっています。画面を反対に読んでいました。ここから出発する予約を確認したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、行き先や状況を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Tôi muốn đến bảo tàng trong thành phố. Tôi có cần chuyển tàu giữa đường không?",
-          "id": "Saya ingin pergi ke museum di kota ini. Apakah saya perlu pindah kereta di tengah perjalanan?",
-          "zh-CN": "我想去市内的美术馆。途中需要换乘吗？",
-          "zh-TW": "我想去市内的美術館。途中需要轉乘嗎？",
-          "hi": "मैं शहर के संग्रहालय जाना चाहता हूँ। क्या रास्ते में ट्रेन बदलनी होगी?",
-          "bn": "শহরের জাদুঘরে যেতে চাই। পথে কি ট্রেন বদলাতে হবে?",
-          "ne": "सहरको संग्रहालय जान चाहन्छु। बाटोमा रेल फेर्नुपर्छ?",
-          "my": "မြို့ထဲက ပြတိုက်ကို သွားချင်ပါတယ်။ လမ်းမှာ ရထားပြောင်းရမလား။",
-          "th": "ฉันอยากไปพิพิธภัณฑ์ในเมือง ต้องเปลี่ยนรถระหว่างทางไหมคะ",
-          "km": "ខ្ញុំចង់ទៅសារមន្ទីរសិល្បៈក្នុងក្រុង។ តើត្រូវប្តូររថភ្លើងនៅតាមផ្លូវទេ?",
-          "tl": "Pupunta po ako sa museo ng sining sa lungsod. Kailangan ko po bang lumipat ng tren?",
-          "en": "I want to go to the art museum in the city. Do I need to transfer on the way?"
-        },
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "hint": "出発と到着の読違いを認め釧路発の予約確認を求める。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "出発と到着の読違いを認め釧路発の予約確認を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
-        "targetGrammarIds": [
-          "GR0001"
-        ],
-        "targetVocabularyIds": [
-          "VOC0277"
-        ]
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-01-001-SHARED-05",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -156,28 +96,15 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "路線を確認して、乗り換えの有無をご案内します。",
+        "textJa": "では、別の予約がないかご確認ください。一緒に行かれる方も同じ列車ですか。",
         "furigana": null,
-        "translationVi": "Tôi sẽ kiểm tra tuyến và hướng dẫn xem có cần chuyển tàu không.",
-        "translations": {
-          "vi": "Tôi sẽ kiểm tra tuyến và hướng dẫn xem có cần chuyển tàu không.",
-          "id": "Saya akan memeriksa jalurnya dan menjelaskan apakah perlu pindah kereta.",
-          "zh-CN": "我会核对线路，说明是否需要换乘。",
-          "zh-TW": "我會核對線路，說明是否需要轉乘。",
-          "hi": "मैं रास्ता जाँचकर बताता हूँ कि ट्रेन बदलनी है या नहीं।",
-          "bn": "লাইন দেখে বলছি বদলাতে হবে কি না।",
-          "ne": "लाइन जाँचेर फेर्नुपर्छ कि पर्दैन बताउँछु।",
-          "my": "လမ်းကြောင်းစစ်ပြီး ပြောင်းရမလား ပြောပြပါမယ်။",
-          "th": "ฉันจะตรวจสอบเส้นทางและแจ้งว่าต้องเปลี่ยนรถหรือไม่",
-          "km": "ខ្ញុំនឹងពិនិត្យខ្សែរថភ្លើង ហើយប្រាប់ថាត្រូវប្តូរឬអត់។",
-          "tl": "Titingnan ko ang mga linya at sasabihin kung kailangan ng paglipat.",
-          "en": "I will check the routes and tell you whether a transfer is needed."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-01-001-SHARED-06",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -187,43 +114,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_station_staff",
+        "communicativeIntent": "explain_companion_booking_and_unclear_gate_meeting",
         "requiredSemanticComponents": {
-          "goal": "乗り換えの経路とホームを確認する"
+          "goal": "同行者の予約管理と改札内外が不明な待合を説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "もし乗り換えるなら、次のホームも教えてください。",
+        "recommendedAnswerJa": "同行者が予約をまとめています。改札で待ち合わせと言われましたが、改札の内側か外側かは聞いていません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、行き先や状況を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Nếu cần chuyển, xin cho tôi biết cả sân ga tiếp theo.",
-          "id": "Kalau perlu pindah, tolong beri tahu juga peron berikutnya.",
-          "zh-CN": "如果要换乘，也请告诉我下一班车在哪个站台。",
-          "zh-TW": "如果要轉乘，也請告訴我下一班車在哪個月臺。",
-          "hi": "यदि बदलनी हो तो अगला प्लेटफ़ॉर्म भी बताइए।",
-          "bn": "বদলাতে হলে পরের প্ল্যাটফর্মটিও বলবেন।",
-          "ne": "फेर्नुपरे अर्को प्लेटफर्म पनि बताइदिनुहोस्।",
-          "my": "ပြောင်းရရင် နောက်ပလက်ဖောင်းကိုလည်း ပြောပြပါ။",
-          "th": "ถ้าต้องเปลี่ยน ช่วยบอกชานชาลาถัดไปด้วยค่ะ",
-          "km": "បើត្រូវប្តូរ សូមប្រាប់ខ្ញុំពីចំណតរង់ចាំបន្ទាប់ផង។",
-          "tl": "Kung kailangan, pakisabi rin po kung saang platform ako pupunta.",
-          "en": "If I need to transfer, please tell me which platform to use next."
-        },
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "hint": "同行者の予約管理と改札内外が不明な待合を説明する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "同行者の予約管理と改札内外が不明な待合を説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
-        "targetGrammarIds": [
-          "GR0005"
-        ],
-        "targetVocabularyIds": [
-          "VOC0277",
-          "VOC0284"
-        ]
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-01-001-SHARED-07",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -232,28 +141,15 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。表示を見ながら、進む方向を一緒に確認しましょう。",
+        "textJa": "乗る列車が決まるまでは、入場せずに同行者へ予約と待ち合わせ場所を確認しましょう。",
         "furigana": null,
-        "translationVi": "Được. Ta cùng xem biển chỉ dẫn để xác nhận hướng đi.",
-        "translations": {
-          "vi": "Được. Ta cùng xem biển chỉ dẫn để xác nhận hướng đi.",
-          "id": "Baik. Mari kita lihat petunjuk arah bersama untuk memastikan jalannya.",
-          "zh-CN": "好的。我们对照指示牌，一起确认方向。",
-          "zh-TW": "好的。我們對照指示牌，一起確認方向。",
-          "hi": "जी। संकेत देखकर दिशा की पुष्टि साथ में करते हैं।",
-          "bn": "অবশ্যই। সাইনবোর্ড দেখে একসঙ্গে দিকটি নিশ্চিত করি।",
-          "ne": "हुन्छ। सङ्केत हेरेर दिशा सँगै पक्का गरौँ।",
-          "my": "ရပါတယ်။ ဆိုင်းဘုတ်ကို ကြည့်ပြီး သွားရမယ့်ဘက်ကို အတူစစ်ကြည့်ပါမယ်။",
-          "th": "ได้ค่ะ มาดูป้ายบอกทางแล้วตรวจสอบทิศทางด้วยกัน",
-          "km": "បាន។ យើងមើលផ្លាកសញ្ញា ហើយពិនិត្យទិសដៅដែលត្រូវទៅជាមួយគ្នា។",
-          "tl": "Opo. Tingnan natin ang mga karatula at kumpirmahin ang direksiyon nang magkasama.",
-          "en": "Of course. Let us look at the signs and check which way to go."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-01-001-SHARED-08",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -263,42 +159,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_station_staff",
+        "communicativeIntent": "present_correct_booking_and_outside_meeting",
         "requiredSemanticComponents": {
-          "goal": "乗り換えの経路とホームを確認する"
+          "goal": "連絡で確認した予約と改札外の待合を伝え乗場照会を求める"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "乗り換えの時間が短い場合、駅員さんにまた聞いてもいいですか。",
+        "recommendedAnswerJa": "連絡が取れました。これが釧路出発の予約で、待ち合わせは改札の外側でした。こちらの予約で乗り場を調べてもらえますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、行き先や状況を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Nếu thời gian chuyển tàu ngắn, tôi có thể hỏi lại nhân viên ga không?",
-          "id": "Jika waktu untuk pindah kereta singkat, bolehkah saya bertanya lagi kepada petugas stasiun?",
-          "zh-CN": "如果换乘时间很短，我还能再问车站工作人员吗？",
-          "zh-TW": "如果轉乘時間很短，我還能再問車站工作人員嗎？",
-          "hi": "यदि बदलने का समय कम हुआ, तो क्या मैं फिर किसी स्टेशन कर्मचारी से पूछ सकता हूँ?",
-          "bn": "বদলানোর সময় কম হলে আবার কি স্টেশন কর্মীকে জিজ্ঞেস করতে পারি?",
-          "ne": "रेल फेर्ने समय छोटो भए फेरि स्टेसनका कर्मचारीलाई सोध्न मिल्छ?",
-          "my": "ပြောင်းချိန်နည်းရင် ဘူတာဝန်ထမ်းကို ထပ်မေးလို့ရမလား။",
-          "th": "ถ้ามีเวลาเปลี่ยนรถน้อย ฉันถามเจ้าหน้าที่สถานีอีกได้ไหมคะ",
-          "km": "បើពេលប្តូររថភ្លើងខ្លី តើខ្ញុំអាចសួរបុគ្គលិកស្ថានីយម្តងទៀតបានទេ?",
-          "tl": "Kung maikli ang oras para lumipat, maaari po ba akong muling magtanong sa kawani ng istasyon?",
-          "en": "If I have little time to transfer, can I ask a station attendant again?"
-        },
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "hint": "連絡で確認した予約と改札外の待合を伝え乗場照会を求める。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "連絡で確認した予約と改札外の待合を伝え乗場照会を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
-        "targetGrammarIds": [
-          "GR0015"
-        ],
-        "targetVocabularyIds": [
-          "VOC0277"
-        ]
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-01-001-SHARED-09",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -307,28 +186,15 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "もちろんです。迷ったら近くの案内窓口でお声がけください。",
+        "textJa": "はい、この出発日時と列車名で確認します。乗り場は当日の表示とも照らし合わせてください。",
         "furigana": null,
-        "translationVi": "Tất nhiên. Nếu bị lạc, bạn hãy hỏi ở quầy hướng dẫn gần đó.",
-        "translations": {
-          "vi": "Tất nhiên. Nếu bị lạc, bạn hãy hỏi ở quầy hướng dẫn gần đó.",
-          "id": "Tentu. Jika bingung, tanyakan di loket informasi terdekat.",
-          "zh-CN": "当然可以。如果迷路了，请向附近的服务窗口求助。",
-          "zh-TW": "當然可以。如果迷路了，請向附近的服務櫃檯求助。",
-          "hi": "बिलकुल। रास्ता न मिले तो पास के सूचना काउंटर पर पूछिए।",
-          "bn": "অবশ্যই। পথ হারালে কাছের তথ্য কাউন্টারে জিজ্ঞেস করুন।",
-          "ne": "अवश्य। बाटो बिराए नजिकको सूचना काउन्टरमा सोध्नुहोस्।",
-          "my": "ရပါတယ်။ လမ်းပျောက်ရင် နီးစပ်ရာသတင်းကောင်တာမှာ မေးပါ။",
-          "th": "ได้แน่นอนค่ะ ถ้าหลงทางให้ถามที่เคาน์เตอร์ประชาสัมพันธ์ใกล้ ๆ",
-          "km": "បានជានិច្ច។ បើវង្វេង សូមសួរនៅបញ្ជរព័ត៌មានក្បែរនោះ។",
-          "tl": "Siyempre po. Kung maligaw kayo, magtanong sa pinakamalapit na information counter.",
-          "en": "Of course. If you get lost, ask at a nearby information counter."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-01-001-SHARED-10",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -338,40 +204,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_station_staff",
+        "communicativeIntent": "confirm_train_display_before_entry",
         "requiredSemanticComponents": {
-          "goal": "乗り換えの経路とホームを確認する"
+          "goal": "表示確認後の入場と同行者との合流を伝え礼を述べる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "ありがとうございます。まず何番の改札に向かえばいいですか。",
+        "recommendedAnswerJa": "表示で列車名を確かめてから入ります。先に改札の外で同行者と合流します。読み間違いに気づけて助かりました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、行き先や状況を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Cảm ơn. Trước tiên tôi nên đi tới cổng soát vé nào?",
-          "id": "Terima kasih. Pertama, saya harus menuju gerbang tiket yang mana?",
-          "zh-CN": "谢谢。我应该先去哪个检票口？",
-          "zh-TW": "謝謝。我應該先去哪個驗票閘門？",
-          "hi": "धन्यवाद। पहले मुझे किस टिकट गेट पर जाना चाहिए?",
-          "bn": "ধন্যবাদ। প্রথমে কোন টিকিট গেটে যাব?",
-          "ne": "धन्यवाद। पहिले कुन टिकट गेटमा जानुपर्छ?",
-          "my": "ကျေးဇူးတင်ပါတယ်။ အရင်ဆုံး ဘယ်လက်မှတ်ဂိတ်ကို သွားရမလဲ။",
-          "th": "ขอบคุณค่ะ ก่อนอื่นฉันควรไปทางออกตรวจตั๋วหมายเลขไหน",
-          "km": "អរគុណ។ ជាដំបូង ខ្ញុំត្រូវទៅច្រកត្រួតសំបុត្រលេខប៉ុន្មាន?",
-          "tl": "Salamat po. Aling ticket gate po ang una kong pupuntahan?",
-          "en": "Thank you. Which ticket gate should I head to first?"
-        },
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "hint": "表示確認後の入場と同行者との合流を伝え礼を述べる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "表示確認後の入場と同行者との合流を伝え礼を述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
-        "targetVocabularyIds": [
-          "VOC0278"
-        ]
+        "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-01-001-SHARED-11",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -380,29 +231,26 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ご利用になる路線を確認して、改札までの道をご案内します。",
+        "textJa": "予約の確認ができてよかったです。同行者と合流してからご乗車ください。お気をつけて。",
         "furigana": null,
-        "translationVi": "Tôi sẽ kiểm tra tuyến bạn đi rồi chỉ đường tới cổng soát vé.",
-        "translations": {
-          "vi": "Tôi sẽ kiểm tra tuyến bạn đi rồi chỉ đường tới cổng soát vé.",
-          "id": "Saya akan memeriksa jalur Anda lalu menunjukkan jalan ke gerbang tiket.",
-          "zh-CN": "我会确认您要乘坐的线路，再为您指路。",
-          "zh-TW": "我會確認您要乘坐的線路，再為您指路。",
-          "hi": "आपकी लाइन जाँचकर गेट का रास्ता बताऊँगा।",
-          "bn": "আপনার লাইন যাচাই করে গেটের পথ দেখাব।",
-          "ne": "तपाईंको लाइन जाँचेर गेटसम्मको बाटो देखाउँछु।",
-          "my": "သင့်လိုင်းကို စစ်ပြီး ဂိတ်ဆီ လမ်းညွှန်ပါမယ်။",
-          "th": "ฉันจะตรวจสอบสายที่จะใช้แล้วบอกทางไปจุดตรวจตั๋วค่ะ",
-          "km": "ខ្ញុំនឹងពិនិត្យខ្សែរថភ្លើងដែលអ្នកប្រើ ហើយណែនាំផ្លូវទៅច្រកត្រួតសំបុត្រ។",
-          "tl": "Titingnan ko ang linyang gagamitin ninyo at ituturo ang daan papunta sa ticket gate.",
-          "en": "I will check which line you need and show you the way to the ticket gate."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": null,
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     }
-  ]
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-kushiro.json",
+    "premise": "釧路駅の乗換相談。客は乗車駅と到着駅を取り違えた予約画面を持ち、同行者との待合場所も改札外と判明する。架空の旅程で実際の便やホームは断定しない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
 }

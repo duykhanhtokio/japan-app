@@ -6,28 +6,15 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "いらっしゃいませ。どのようなご用件でしょうか。",
+        "textJa": "こんにちは。銀行でどのようなお手続きが必要ですか。",
         "furigana": null,
-        "translationVi": "Xin chào quý khách. Bạn cần làm thủ tục gì?",
-        "translations": {
-          "vi": "Xin chào quý khách. Bạn cần làm thủ tục gì?",
-          "id": "Selamat datang. Ada keperluan apa?",
-          "zh-CN": "欢迎光临。请问您要办理什么业务？",
-          "zh-TW": "歡迎光臨。請問您要辦理什麼業務？",
-          "hi": "स्वागत है। आप कौन सा काम करवाना चाहते हैं?",
-          "bn": "স্বাগতম। কোন কাজটি করতে চান?",
-          "ne": "स्वागत छ। तपाईं के काम गर्न चाहनुहुन्छ?",
-          "my": "ကြိုဆိုပါတယ်။ ဘာလုပ်ငန်း ဆောင်ရွက်ချင်ပါသလဲ။",
-          "th": "ยินดีต้อนรับค่ะ ต้องการทำธุรกรรมอะไรคะ",
-          "km": "សូមស្វាគមន៍។ តើអ្នកមានការអ្វី?",
-          "tl": "Magandang araw. Ano po ang pakay ninyo?",
-          "en": "Welcome. What can I help you with?"
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-06-001-SHARED-02",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -37,42 +24,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_clerk",
+        "communicativeIntent": "ask_salary_account_branch_requirement",
         "requiredSemanticComponents": {
-          "goal": "口座を作るための手順を確認する"
+          "goal": "給与口座の開設と会社記載支店の必要性を尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "生活費を管理するために、口座を作りたいです。",
+        "recommendedAnswerJa": "釧路で働き始めるので、給与を受け取る口座を作りたいです。会社の紙に書かれた支店と同じ所でないとだめですか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に合わせて、用件を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Tôi muốn mở tài khoản để quản lý chi phí sinh hoạt.",
-          "id": "Saya ingin membuka rekening untuk mengatur biaya hidup.",
-          "zh-CN": "我想开设一个账户来管理生活费。",
-          "zh-TW": "我想開設一個帳戶來管理生活費。",
-          "hi": "मैं रोज़मर्रा के ख़र्च सँभालने के लिए खाता खोलना चाहता हूँ।",
-          "bn": "দৈনন্দিন খরচ সামলাতে একটি অ্যাকাউন্ট খুলতে চাই।",
-          "ne": "दैनिक खर्च व्यवस्थापन गर्न खाता खोल्न चाहन्छु।",
-          "my": "နေ့စဉ်အသုံးစရိတ် စီမံဖို့ ဘဏ်စာရင်း ဖွင့်ချင်ပါတယ်။",
-          "th": "ฉันอยากเปิดบัญชีเพื่อจัดการค่าใช้จ่ายในชีวิตประจำวัน",
-          "km": "ខ្ញុំចង់បើកគណនី ដើម្បីគ្រប់គ្រងចំណាយប្រចាំថ្ងៃ។",
-          "tl": "Gusto kong magbukas ng account para maayos kong mapamahalaan ang pang-araw-araw na gastos.",
-          "en": "I want to open an account to manage my living expenses."
-        },
-        "evaluationNotes": "内容が相手の質問と矛盾しないことを確認する。",
+        "hint": "給与口座の開設と会社記載支店の必要性を尋ねる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "給与口座の開設と会社記載支店の必要性を尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
-        "targetGrammarIds": [
-          "GR0001"
-        ],
-        "targetVocabularyIds": [
-          "VOC0121"
-        ]
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-06-001-SHARED-03",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -81,28 +51,15 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。まず、口座の使い方について伺ってもよろしいですか。",
+        "textJa": "勤務先がどの金融機関や支店を指定しているか、案内を確認しましょう。書類を見せていただけますか。",
         "furigana": null,
-        "translationVi": "Vâng. Trước tiên tôi có thể hỏi bạn định dùng tài khoản như thế nào không?",
-        "translations": {
-          "vi": "Vâng. Trước tiên tôi có thể hỏi bạn định dùng tài khoản như thế nào không?",
-          "id": "Baik. Boleh saya tahu untuk apa rekening itu akan digunakan?",
-          "zh-CN": "好的。可以先了解一下您打算怎样使用账户吗？",
-          "zh-TW": "好的。可以先了解一下您打算怎樣使用帳戶嗎？",
-          "hi": "जी। क्या पहले बता सकते हैं कि आप खाते का इस्तेमाल किस लिए करेंगे?",
-          "bn": "ঠিক আছে। অ্যাকাউন্টটি কী কাজে ব্যবহার করবেন বলবেন?",
-          "ne": "हुन्छ। त्यो खाता कुन काममा प्रयोग गर्नुहुन्छ?",
-          "my": "ရပါတယ်။ စာရင်းကို ဘယ်လိုအသုံးပြုမလဲ အရင်ပြောပြနိုင်ပါသလား။",
-          "th": "ได้ค่ะ ขอถามก่อนว่าคุณตั้งใจใช้บัญชีอย่างไรคะ",
-          "km": "បាន។ ជាដំបូង តើខ្ញុំអាចសួរថាអ្នកនឹងប្រើគណនីនេះយ៉ាងណាបានទេ?",
-          "tl": "Naiintindihan ko. Maaari ko po bang itanong muna kung paano ninyo gagamitin ang account?",
-          "en": "Certainly. May I first ask how you plan to use the account?"
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-06-001-SHARED-04",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -112,40 +69,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_clerk",
+        "communicativeIntent": "recognize_example_branch_and_defer_application",
         "requiredSemanticComponents": {
-          "goal": "口座を作るための手順を確認する"
+          "goal": "支店名が記入例と気づき会社の振込条件を先に確認すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "給料を受け取り、家賃も支払いたいです。",
+        "recommendedAnswerJa": "この紙です。支店名は記入例のようです。「振込可能な口座」とだけ書いてあるので、会社へ確認してから申し込みたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に合わせて、用件を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Tôi muốn nhận lương và thanh toán tiền nhà.",
-          "id": "Untuk menerima gaji dan membayar sewa rumah.",
-          "zh-CN": "我想用它收工资，也用来支付房租。",
-          "zh-TW": "我想用它收工資，也用來支付房租。",
-          "hi": "मैं इसमें वेतन लेना और किराया चुकाना चाहता हूँ।",
-          "bn": "বেতন নিতে এবং বাড়িভাড়া দিতে চাই।",
-          "ne": "तलब लिन र घरभाडा तिर्न प्रयोग गर्न चाहन्छु।",
-          "my": "လစာလက်ခံဖို့နဲ့ အိမ်ငှားခပေးဖို့ သုံးချင်ပါတယ်။",
-          "th": "ฉันอยากรับเงินเดือนและจ่ายค่าเช่าบ้านค่ะ",
-          "km": "ខ្ញុំចង់ទទួលប្រាក់ខែ និងបង់ថ្លៃផ្ទះ។",
-          "tl": "Doon ko gustong tanggapin ang sahod at magbayad ng upa.",
-          "en": "I want to receive my salary and pay my rent with it."
-        },
-        "evaluationNotes": "内容が相手の質問と矛盾しないことを確認する。",
+        "hint": "支店名が記入例と気づき会社の振込条件を先に確認すると伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "支店名が記入例と気づき会社の振込条件を先に確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
-        "targetGrammarIds": [
-          "GR0001"
-        ],
+        "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-06-001-SHARED-05",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -154,28 +96,15 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ありがとうございます。ご希望を踏まえて、申込みの流れをご案内します。",
+        "textJa": "勤務先の条件を確認したうえで、当行での申込条件をご案内します。今のお住まいを確認できる書類はありますか。",
         "furigana": null,
-        "translationVi": "Cảm ơn. Tôi sẽ dựa trên nhu cầu của bạn để hướng dẫn quy trình đăng ký.",
-        "translations": {
-          "vi": "Cảm ơn. Tôi sẽ dựa trên nhu cầu của bạn để hướng dẫn quy trình đăng ký.",
-          "id": "Terima kasih. Saya akan menjelaskan alur pendaftaran sesuai kebutuhan Anda.",
-          "zh-CN": "谢谢。我会根据您的需求说明申请流程。",
-          "zh-TW": "謝謝。我會根據您的需求說明申請流程。",
-          "hi": "धन्यवाद। आपकी ज़रूरत के अनुसार आवेदन की प्रक्रिया समझाता हूँ।",
-          "bn": "ধন্যবাদ। আপনার প্রয়োজন অনুযায়ী আবেদনের ধাপ বুঝিয়ে দিচ্ছি।",
-          "ne": "धन्यवाद। तपाईंको आवश्यकताअनुसार आवेदन प्रक्रिया बुझाउँछु।",
-          "my": "ကျေးဇူးတင်ပါတယ်။ သင့်လိုအပ်ချက်နဲ့ ကိုက်ညီတဲ့ လျှောက်ထားမှုအဆင့်တွေကို ရှင်းပြပါမယ်။",
-          "th": "ขอบคุณค่ะ ฉันจะอธิบายขั้นตอนสมัครให้เหมาะกับความต้องการของคุณ",
-          "km": "អរគុណ។ ខ្ញុំនឹងណែនាំដំណើរការដាក់ពាក្យតាមតម្រូវការរបស់អ្នក។",
-          "tl": "Salamat po. Batay sa inyong pangangailangan, ipapaliwanag ko ang proseso ng aplikasyon.",
-          "en": "Thank you. I will explain the application process based on your needs."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-06-001-SHARED-06",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -185,40 +114,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_clerk",
+        "communicativeIntent": "explain_updated_card_and_old_bill_address",
         "requiredSemanticComponents": {
-          "goal": "口座を作るための手順を確認する"
+          "goal": "新住所カードと旧住所明細の混在を説明し扱いを尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "申し込む前に、必要な書類を確認できますか。",
+        "recommendedAnswerJa": "在留カードの住所は変更しました。でも携帯料金の明細は前の住所です。古い明細も一緒に出すと、かえって紛らわしいですか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に合わせて、用件を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Trước khi đăng ký, tôi có thể kiểm tra những giấy tờ cần thiết không?",
-          "id": "Sebelum mendaftar, bisakah saya memastikan dokumen yang diperlukan?",
-          "zh-CN": "申请之前，可以确认需要哪些材料吗？",
-          "zh-TW": "申請之前，可以確認需要哪些文件嗎？",
-          "hi": "आवेदन से पहले क्या मैं ज़रूरी दस्तावेज़ों की पुष्टि कर सकता हूँ?",
-          "bn": "আবেদনের আগে কী কাগজ লাগবে তা কি যাচাই করতে পারি?",
-          "ne": "आवेदन गर्नुअघि आवश्यक कागजात जाँच्न सकिन्छ?",
-          "my": "လျှောက်မတိုင်မီ လိုအပ်တဲ့စာရွက်စာတမ်းတွေကို စစ်နိုင်မလား။",
-          "th": "ก่อนสมัคร ตรวจสอบเอกสารที่ต้องใช้ได้ไหมคะ",
-          "km": "មុនដាក់ពាក្យ តើខ្ញុំអាចពិនិត្យឯកសារដែលត្រូវការបានទេ?",
-          "tl": "Maaari ko po bang malaman muna ang mga kinakailangang dokumento?",
-          "en": "Can I check which documents I need before applying?"
-        },
-        "evaluationNotes": "内容が相手の質問と矛盾しないことを確認する。",
+        "hint": "新住所カードと旧住所明細の混在を説明し扱いを尋ねる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "新住所カードと旧住所明細の混在を説明し扱いを尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
-        "targetVocabularyIds": [
-          "VOC0068"
-        ]
+        "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-06-001-SHARED-07",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -227,28 +141,15 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。必要な書類は状況によって異なりますので、一緒に確認しましょう。",
+        "textJa": "書類の種類と現在の記載内容を確認します。古い住所の書類については、その事情をお伝えください。",
         "furigana": null,
-        "translationVi": "Được. Giấy tờ cần thiết tùy hoàn cảnh, chúng ta hãy kiểm tra cùng nhau.",
-        "translations": {
-          "vi": "Được. Giấy tờ cần thiết tùy hoàn cảnh, chúng ta hãy kiểm tra cùng nhau.",
-          "id": "Tentu. Persyaratan dokumen bergantung pada keadaan Anda. Mari kita periksa bersama.",
-          "zh-CN": "可以。所需材料会因个人情况而异，我们一起确认吧。",
-          "zh-TW": "可以。所需文件會因個人情況而異，我們一起確認吧。",
-          "hi": "ज़रूर। दस्तावेज़ आपकी परिस्थिति पर निर्भर करते हैं। आइए साथ में जाँच लें।",
-          "bn": "অবশ্যই। আপনার পরিস্থিতি অনুযায়ী কাগজপত্র আলাদা হতে পারে। একসঙ্গে দেখে নিই।",
-          "ne": "पक्कै। परिस्थिति अनुसार कागजात फरक हुन सक्छ। सँगै जाँचौँ।",
-          "my": "ရပါတယ်။ ကိုယ့်အခြေအနေအလိုက် လိုတာကွာနိုင်ပါတယ်။ အတူစစ်ကြည့်ပါမယ်။",
-          "th": "ได้ค่ะ เอกสารอาจแตกต่างตามสถานการณ์ของแต่ละคน มาตรวจสอบด้วยกันค่ะ",
-          "km": "បាន។ ឯកសារដែលត្រូវការខុសគ្នាតាមស្ថានភាព។ យើងពិនិត្យជាមួយគ្នា។",
-          "tl": "Opo. Nag-iiba ang mga kailangan ayon sa sitwasyon, kaya suriin natin nang magkasama.",
-          "en": "Yes. The requirements depend on your situation, so let us check them together."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-06-001-SHARED-08",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -258,42 +159,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_clerk",
+        "communicativeIntent": "request_document_sufficiency_list",
         "requiredSemanticComponents": {
-          "goal": "口座を作るための手順を確認する"
+          "goal": "カード雇用案内を示し不足書類の一覧を求める"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "手続きにかかる時間も知りたいです。今日中に終わりますか。",
+        "recommendedAnswerJa": "新しい住所のカードと、会社からの雇用の案内を持っています。今日持っている書類で足りるか、一覧にして教えてください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に合わせて、用件を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Tôi cũng muốn biết thủ tục mất bao lâu. Có thể xong trong hôm nay không?",
-          "id": "Saya juga ingin tahu berapa lama prosesnya. Apakah bisa selesai hari ini?",
-          "zh-CN": "我还想知道办理需要多久。今天能办完吗？",
-          "zh-TW": "我還想知道辦理需要多久。今天能辦完嗎？",
-          "hi": "मैं यह भी जानना चाहता हूँ कि इसमें कितना समय लगेगा। क्या आज पूरा हो सकता है?",
-          "bn": "কত সময় লাগবে তাও জানতে চাই। আজই কি শেষ হতে পারে?",
-          "ne": "कति समय लाग्छ भनेर पनि जान्न चाहन्छु। आजै सकिन्छ?",
-          "my": "ဘယ်လောက်ကြာမလဲလည်း သိချင်ပါတယ်။ ဒီနေ့ပဲ ပြီးနိုင်မလား။",
-          "th": "ฉันอยากทราบด้วยว่าใช้เวลานานเท่าไร วันนี้เสร็จได้ไหมคะ",
-          "km": "ខ្ញុំចង់ដឹងថានីតិវិធីចំណាយពេលប៉ុន្មាន។ តើអាចបញ្ចប់ថ្ងៃនេះបានទេ?",
-          "tl": "Gusto ko ring malaman kung gaano katagal ang proseso. Matatapos po ba ito ngayong araw?",
-          "en": "I would also like to know how long it takes. Can it be finished today?"
-        },
-        "evaluationNotes": "内容が相手の質問と矛盾しないことを確認する。",
+        "hint": "カード雇用案内を示し不足書類の一覧を求める。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "カード雇用案内を示し不足書類の一覧を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
-        "targetGrammarIds": [
-          "GR0001"
-        ],
-        "targetVocabularyIds": [
-          "VOC0064"
-        ]
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-06-001-SHARED-09",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -302,28 +186,15 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "確認する内容によって変わります。窓口で現在の目安をお伝えします。",
+        "textJa": "拝見して、必要な書類と不足しているものを整理します。受付しただけでは口座開設が確定しない点もご確認ください。",
         "furigana": null,
-        "translationVi": "Điều đó tùy vào những thông tin cần kiểm tra. Tôi sẽ cho bạn biết thời gian dự kiến hiện tại tại quầy.",
-        "translations": {
-          "vi": "Điều đó tùy vào những thông tin cần kiểm tra. Tôi sẽ cho bạn biết thời gian dự kiến hiện tại tại quầy.",
-          "id": "Lama proses bergantung pada hal yang perlu diperiksa. Saya akan memberi tahu perkiraan saat ini di loket.",
-          "zh-CN": "这取决于需要核实的事项。我会在柜台告诉您目前的预计时间。",
-          "zh-TW": "這取決於需要確認的事項。我會在櫃檯告訴您目前的預計時間。",
-          "hi": "यह जाँचने वाली बातों पर निर्भर करता है। काउंटर पर अभी का अनुमान बता दूँगा।",
-          "bn": "কী কী যাচাই করতে হবে তার ওপর সময় নির্ভর করে। কাউন্টারে বর্তমান আনুমানিক সময় জানাব।",
-          "ne": "जाँच गर्नुपर्ने कुरामा भर पर्छ। काउन्टरमा अहिलेको अनुमान बताउँछु।",
-          "my": "စစ်ဆေးရမယ့်အချက်တွေပေါ် မူတည်ပါတယ်။ ကောင်တာမှာ လက်ရှိခန့်မှန်းချိန် ပြောပြပါမယ်။",
-          "th": "ขึ้นอยู่กับสิ่งที่ต้องตรวจสอบ ฉันจะแจ้งเวลาโดยประมาณที่เคาน์เตอร์ค่ะ",
-          "km": "វាអាស្រ័យលើអ្វីដែលត្រូវពិនិត្យ។ នៅបញ្ជរ យើងនឹងប្រាប់ពេលវេលាប៉ាន់ស្មានបច្ចុប្បន្ន។",
-          "tl": "Depende ito sa mga kailangang suriin. Sasabihin namin sa counter ang kasalukuyang tantiya.",
-          "en": "That depends on what needs to be checked. We can give you a current estimate at the counter."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01206-06-001-SHARED-10",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -333,38 +204,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_clerk",
+        "communicativeIntent": "confirm_employer_condition_then_new_address_documents",
         "requiredSemanticComponents": {
-          "goal": "口座を作るための手順を確認する"
+          "goal": "会社条件確認後に新住所資料と不足書類で申し込むと述べる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "わかりました。まず何から始めればいいですか。",
+        "recommendedAnswerJa": "会社の振込条件を先に聞きます。新住所の書類を中心に、必要な追加書類を揃えてから申し込みます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に合わせて、用件を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Tôi hiểu. Trước tiên tôi nên bắt đầu từ đâu?",
-          "id": "Saya mengerti. Apa yang harus saya lakukan terlebih dahulu?",
-          "zh-CN": "明白了。我首先应该做什么？",
-          "zh-TW": "明白了。我首先應該做什麼？",
-          "hi": "समझ गया। मुझे सबसे पहले क्या करना चाहिए?",
-          "bn": "বুঝেছি। প্রথমে কী করা উচিত?",
-          "ne": "बुझेँ। पहिले के गर्नुपर्छ?",
-          "my": "နားလည်ပါပြီ။ အရင်ဆုံး ဘာစလုပ်ရမလဲ။",
-          "th": "เข้าใจแล้วค่ะ ควรเริ่มจากอะไรก่อนคะ",
-          "km": "យល់ហើយ។ តើខ្ញុំត្រូវចាប់ផ្តើមពីអ្វី?",
-          "tl": "Naiintindihan ko. Ano po ang una kong gagawin?",
-          "en": "I see. What should I do first?"
-        },
-        "evaluationNotes": "内容が相手の質問と矛盾しないことを確認する。",
+        "hint": "会社条件確認後に新住所資料と不足書類で申し込むと述べる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "会社条件確認後に新住所資料と不足書類で申し込むと述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01206-06-001-SHARED-11",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -373,29 +231,26 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "最初にご本人について確認します。わからない点はその都度お尋ねください。",
+        "textJa": "承りました。では、お持ちの書類を確認しましょう。申込条件で不明な点は遠慮なくお尋ねください。ありがとうございました。",
         "furigana": null,
-        "translationVi": "Trước hết, chúng tôi sẽ xác minh thông tin của bạn. Chỗ nào chưa rõ bạn cứ hỏi ngay nhé.",
-        "translations": {
-          "vi": "Trước hết, chúng tôi sẽ xác minh thông tin của bạn. Chỗ nào chưa rõ bạn cứ hỏi ngay nhé.",
-          "id": "Pertama kami akan memeriksa identitas Anda. Silakan bertanya kapan saja jika ada yang kurang jelas.",
-          "zh-CN": "首先需要核实您的身份。过程中如有不清楚的地方，请随时提问。",
-          "zh-TW": "首先需要確認您的身份。過程中如有不清楚的地方，請隨時提問。",
-          "hi": "सबसे पहले आपकी पहचान जाँची जाएगी। कुछ समझ न आए तो बीच में पूछिए।",
-          "bn": "প্রথমে আপনার পরিচয় যাচাই করা হবে। কিছু না বুঝলে তখনই জিজ্ঞেস করুন।",
-          "ne": "पहिले तपाईंको पहिचान जाँचिन्छ। अस्पष्ट कुरा भए बीचमै सोध्नुहोस्।",
-          "my": "ပထမဦးဆုံး သင့်အထောက်အထား စစ်ပါမယ်။ နားမလည်တာရှိရင် ချက်ချင်းမေးပါ။",
-          "th": "เริ่มจากตรวจสอบตัวตนของคุณ หากไม่เข้าใจตรงไหนถามได้ทันทีค่ะ",
-          "km": "ជាដំបូង យើងនឹងបញ្ជាក់ព័ត៌មានអំពីអ្នក។ ប្រសិនបើមិនយល់ សូមសួរបានគ្រប់ពេល។",
-          "tl": "Kukumpirmahin muna namin ang inyong pagkakakilanlan. Magtanong lang po sa anumang hindi malinaw.",
-          "en": "First, we will verify your identity. Please ask whenever anything is unclear."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": null,
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     }
-  ]
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-kushiro.json",
+    "premise": "釧路の銀行で給与受取口座を作る相談。雇用先が指定した金融機関の確認を先に行い、旧住所書類と新住所書類を混同しないよう整理する。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
 }

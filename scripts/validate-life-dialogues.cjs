@@ -1,13 +1,16 @@
 const fs=require('fs'),path=require('path'),root=path.resolve(__dirname,'../src/data/generated');
 const read=(name)=>JSON.parse(fs.readFileSync(path.join(root,name),'utf8'));
-const cities=read('cities.json'),locations=read('locations.json'),scenarios=read('scenarios.json'),index=read('scenario-index.json');
+const cities=read('cities.json'),locations=read('locations.json'),scenarios=[...new Map([...read('scenarios.json'),...JSON.parse(fs.readFileSync(path.join(root,'../dialogue-content/scenario-overrides.json'),'utf8'))].map(x=>[x.id,x])).values()],index={...read('scenario-index.json'),...JSON.parse(fs.readFileSync(path.join(root,'../dialogue-content/scenario-index-overrides.json'),'utf8'))};
 const cityIds=new Set(cities.map(x=>x.id)),locationIds=new Set(locations.map(x=>x.id)),errors=[],covered=new Set(); let turns=0;
 for(const location of locations)if(!location.cityId||!cityIds.has(location.cityId))errors.push(`Orphan location: ${location.id}`);
 for(const scenario of scenarios){
   if(!scenario.cityId||!cityIds.has(scenario.cityId))errors.push(`Invalid city: ${scenario.id}`);
   if(!scenario.locationId||!locationIds.has(scenario.locationId))errors.push(`Invalid location: ${scenario.id}`);
   const file=path.join(root,'dialogues',`${scenario.id}.json`); if(!fs.existsSync(file)){errors.push(`Missing: ${scenario.id}`);continue;}
-  const rows=JSON.parse(fs.readFileSync(file,'utf8')); turns+=rows.length; covered.add(scenario.cityId);
+  const data=JSON.parse(fs.readFileSync(file,'utf8'));
+  const rows=Array.isArray(data)?data:(data.shared??data.N5);
+  if(!Array.isArray(rows)){errors.push(`Invalid dialogue package: ${scenario.id}`);continue;}
+  turns+=rows.length; covered.add(scenario.cityId);
   if(index[scenario.id]?.dialogueCount!==rows.length)errors.push(`Index mismatch: ${scenario.id}`);
   rows.forEach((row,i)=>{if(row.scenarioId!==scenario.id||row.turnOrder!==i+1)errors.push(`Order/id: ${row.id}`);if(row.speaker==='NPC'&&!row.npc?.textJa)errors.push(`NPC missing: ${row.id}`);if(row.speaker==='PLAYER'&&!row.player?.recommendedAnswerJa)errors.push(`Player missing: ${row.id}`);});
 }
