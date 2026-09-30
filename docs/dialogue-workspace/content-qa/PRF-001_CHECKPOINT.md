@@ -33,7 +33,10 @@ Individually rewritten so far:
 - Monbetsu: `SC-LOC-JP-01219-01-001` through `SC-LOC-JP-01219-08-001` (8).
 - Shibetsu: `SC-LOC-JP-01220-01-001` through `SC-LOC-JP-01220-08-001` (8).
 
-Total: 179 individual exchanges / 1969 turns / 895 separately specified player tasks. Each exchange has a manually authored premise and eleven Japanese utterances. The application script only installs those supplied utterances; it does not generate exchanges from a recipe. Scenario IDs, location IDs, dialogue IDs, order and next links remain unchanged. Existing originals are retained at the input commit and in local timestamped backups. Stale translations and furigana are cleared for changed utterances; no translations are authored. Unchanged scenarios and their existing translations are preserved.
+- Nayoro: `SC-LOC-JP-01221-01-001` through `SC-LOC-JP-01221-08-001` (8).
+- Mikasa: `SC-LOC-JP-01222-01-001` through `SC-LOC-JP-01222-08-001` (8).
+
+Total: 195 individual exchanges / 2145 turns / 975 separately specified player tasks. Each exchange has a manually authored premise and eleven Japanese utterances. The application script only installs those supplied utterances; it does not generate exchanges from a recipe. Scenario IDs, location IDs, dialogue IDs, order and next links remain unchanged. Existing originals are retained at the input commit and in local timestamped backups. Stale translations and furigana are cleared for changed utterances; no translations are authored. Unchanged scenarios and their existing translations are preserved.
 
 Editorial sources:
 
@@ -58,16 +61,18 @@ Editorial sources:
 - `scripts/dialogue-authoring/prf-001-akabira.json`
 - `scripts/dialogue-authoring/prf-001-monbetsu.json`
 - `scripts/dialogue-authoring/prf-001-shibetsu.json`
+- `scripts/dialogue-authoring/prf-001-nayoro.json`
+- `scripts/dialogue-authoring/prf-001-mikasa.json`
 
-Simulation premises do not certify an actual business's prices, hours, facilities, policies or service availability. Next action is to audit and rewrite Nayoro (CTY-JP-01221), then continue the remaining PRF-001 cities. There are 120 scenarios not yet individually rewritten. Do not begin PRF-002 or translation.
+Simulation premises do not certify an actual business's prices, hours, facilities, policies or service availability. Next action is to audit and rewrite Nemuro (CTY-JP-01223), then continue the remaining PRF-001 cities. There are 104 scenarios not yet individually rewritten. Do not begin PRF-002 or translation.
 
-Before CONTENT PASS, finish all 299 exchanges, review near and normalized duplicate candidates, compare causal developments and player tasks semantically across the entire master, verify location relevance and natural Japanese, and run compatibility checks. The 179 rewrites have not been declared prefecture-wide CONTENT PASS. Native speaker review is not claimed.
+Before CONTENT PASS, finish all 299 exchanges, review near and normalized duplicate candidates, compare causal developments and player tasks semantically across the entire master, verify location relevance and natural Japanese, and run compatibility checks. The 195 rewrites have not been declared prefecture-wide CONTENT PASS. Native speaker review is not claimed.
 
 Persistence transport: direct shell `git push` lacks an HTTPS credential in this workspace. The authenticated GitHub connection identifies `duykhanhtokio`, grants repository admin/push permission, and successfully creates a blob and updates the required branch to its unchanged input SHA. Use that connection for durable commits, then shell fetch and the repository persistence validator. No new prefecture may begin before remote verification.
 
 Location-label corrections: Asahikawa's canonical `旭川新幹線乗換口` is replaced with `旭川の乗換案内（学習用）`; the canonical ID is preserved and no Shinkansen terminal is asserted. Yubari's `夕張駅` is replaced with `夕張の交通案内（学習用）`; its exchange explicitly avoids boarding at the former station. JR Hokkaido confirms abolition of the Shin-Yubari–Yubari section on 2019-04-01: https://www.jrhokkaido.co.jp/corporate/region/current.html (checked 2026-09-30). This does not certify a real staffed information desk or its services. Other facility labels across the prefecture still need location QA.
 
-Validation at the 179-rewrite checkpoint: 299/299 file coverage, zero structural errors, zero exact script duplicate groups, 32 normalized duplicate groups and 168 near-duplicate candidate pairs. These groups still require editorial work; similarity is not content certification. Global shared-data validator: 7128 scenarios / 78408 turns / zero errors. The legacy validator previously crashed on object packages (`rows.forEach`); it now selects shared/N5/array formats consistently with the runtime loader and merges canonical scenario overrides before checking. No runtime UI or loader changes.
+Validation at the 195-rewrite checkpoint: 299/299 file coverage, zero structural errors, zero exact script duplicate groups, 32 normalized duplicate groups and 120 near-duplicate candidate pairs. These groups still require editorial work; similarity is not content certification. Global shared-data validator: 7128 scenarios / 78408 turns / zero errors. The legacy validator previously crashed on object packages (`rows.forEach`); it now selects shared/N5/array formats consistently with the runtime loader and merges canonical scenario overrides before checking. No runtime UI or loader changes.
 
 Location correction: canonical `LOC-JP-01212-01` now has the display label `留萌の交通案内（学習用）` with its ID preserved. The Rumoi exchange explicitly teaches not to use old station rail departures and is a simulated transport enquiry. The former station label was corrected; JR Hokkaido confirms Ishikari-Numata–Rumoi abolition on 2023-04-01 at the official source above. No current rail service or real staffed counter at the former station is asserted. Other fictitious facility names also require review.
 
@@ -78,3 +83,7 @@ At 147 rewrites, lexical screening within the individually rewritten subset find
 At 179 rewrites, the individually rewritten subset still has zero repeated full player answers, zero repeated specified player tasks, and zero near-duplicate script candidate pairs. Global screening remains incomplete content evidence. The 32 latest exchanges were reviewed for speaker alternation, task-to-answer correspondence, consistent actor and time references, and causal response to each preceding utterance; each retains an explicit simulated premise and unreviewed native-speaker status.
 
 Pending geographic label QA includes `LOC-JP-01219-01` / `紋別駅`. Its rewritten exchange concerns a simulated transport enquiry and explicitly requires checking current transport operators rather than claiming real rail departures. The canonical display label still needs source-backed review before prefecture CONTENT PASS, along with remaining historic/fictitious facility labels. Do not treat those labels as verified operating venues.
+
+At 195 rewrites, screening still finds zero repeated player answers/tasks and zero near-duplicate candidates within the rewritten subset. The current canonical count is 299; 104 scenarios remain unrewritten. Next city is Nemuro, CTY-JP-01223. No translations or prefecture content approval have been added.
+
+Pending geographic label QA also includes `LOC-JP-01222-01` / `三笠駅`. The Mikasa exchange explicitly treats transport as travel planning at the actual stations in the learner's itinerary and does not assert current railway boarding in Mikasa. Its display label remains pending source-backed correction before CONTENT PASS.
