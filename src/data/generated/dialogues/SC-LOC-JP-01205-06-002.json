@@ -6,28 +6,15 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。お困りのことはございますか。",
+        "textJa": "こんにちは。カードについて、どのようなことでお困りですか。",
         "furigana": null,
-        "translationVi": "Xin chào. Bạn đang gặp khó khăn gì?",
-        "translations": {
-          "vi": "Xin chào. Bạn đang gặp khó khăn gì?",
-          "id": "Selamat siang. Ada yang bisa kami bantu?",
-          "zh-CN": "您好。有什么需要帮助的吗？",
-          "zh-TW": "您好。有什麼需要幫助的嗎？",
-          "hi": "नमस्ते। क्या कोई समस्या है जिसमें हम मदद कर सकें?",
-          "bn": "নমস্কার। কী সমস্যা হয়েছে?",
-          "ne": "नमस्ते। केही समस्या परेको छ?",
-          "my": "မင်္ဂလာပါ။ ဘာအခက်အခဲရှိပါသလဲ။",
-          "th": "สวัสดีค่ะ มีเรื่องอะไรให้ช่วยไหมคะ",
-          "km": "សួស្តី។ តើអ្នកមានបញ្ហាអ្វីដែលត្រូវការជំនួយ?",
-          "tl": "Magandang araw. May maitutulong po ba ako?",
-          "en": "Hello. Is there something you need help with?"
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01205-06-002-SHARED-02",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -37,42 +24,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_clerk",
+        "communicativeIntent": "request_lost_cash_card_stop_consultation",
         "requiredSemanticComponents": {
-          "goal": "紛失したカードの対応方法を確認する"
+          "goal": "昨日利用後に紛失した可能性と利用停止相談を伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "キャッシュカードが見当たらず、どうすればいいか相談したいです。",
+        "recommendedAnswerJa": "キャッシュカードが見つかりません。昨日使った後でなくしたかもしれないので、利用を止める相談をしたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に合わせて、用件を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Tôi không tìm thấy thẻ ATM và muốn hỏi nên làm gì.",
-          "id": "Saya tidak dapat menemukan kartu ATM saya. Saya ingin bertanya apa yang harus dilakukan.",
-          "zh-CN": "我找不到银行卡了，想咨询应该怎么办。",
-          "zh-TW": "我找不到金融卡了，想諮詢應該怎麼辦。",
-          "hi": "मेरा बैंक कार्ड नहीं मिल रहा है। मैं जानना चाहता हूँ कि अब क्या करूँ।",
-          "bn": "আমার ব্যাংক কার্ডটি খুঁজে পাচ্ছি না। কী করব জানতে চাই।",
-          "ne": "मेरो बैंक कार्ड भेटिएको छैन। अब के गर्ने भनेर सोध्न चाहन्छु।",
-          "my": "ကျွန်တော့် ဘဏ်ကတ် ပျောက်နေသလိုပါပဲ။ ဘာလုပ်ရမလဲ မေးချင်ပါတယ်။",
-          "th": "ฉันหาบัตรธนาคารไม่เจอ อยากปรึกษาว่าควรทำอย่างไร",
-          "km": "ខ្ញុំរកកាតដកប្រាក់មិនឃើញ។ ខ្ញុំចង់ពិគ្រោះថាគួរធ្វើយ៉ាងណា។",
-          "tl": "Hindi ko makita ang ATM card ko. Gusto kong itanong kung ano ang dapat kong gawin.",
-          "en": "I cannot find my cash card, and I would like to ask what I should do."
-        },
-        "evaluationNotes": "内容が相手の質問と矛盾しないことを確認する。",
+        "hint": "昨日利用後に紛失した可能性と利用停止相談を伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "昨日利用後に紛失した可能性と利用停止相談を伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
-        "targetGrammarIds": [
-          "GR0001"
-        ],
-        "targetVocabularyIds": [
-          "VOC2672"
-        ]
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01205-06-002-SHARED-03",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -81,28 +51,15 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "それはご心配ですね。最後に使ったのはいつ頃ですか。",
+        "textJa": "ご本人のカードですね。銀行名と最後に使った場所を確認します。暗証番号は声に出さず、担当者の案内に従ってください。",
         "furigana": null,
-        "translationVi": "Việc đó hẳn khiến bạn lo lắng. Lần cuối bạn dùng thẻ là khoảng khi nào?",
-        "translations": {
-          "vi": "Việc đó hẳn khiến bạn lo lắng. Lần cuối bạn dùng thẻ là khoảng khi nào?",
-          "id": "Saya mengerti Anda khawatir. Kapan terakhir kali kartu itu digunakan?",
-          "zh-CN": "那确实让人担心。您最后一次使用是什么时候？",
-          "zh-TW": "那確實讓人擔心。您最後一次使用是什麼時候？",
-          "hi": "यह चिंता की बात है। आपने उसे आख़िरी बार कब इस्तेमाल किया था?",
-          "bn": "বিষয়টি নিশ্চয়ই উদ্বেগের। শেষ কবে কার্ডটি ব্যবহার করেছিলেন?",
-          "ne": "त्यो चिन्ताको कुरा हो। अन्तिम पटक कहिले प्रयोग गर्नुभयो?",
-          "my": "စိတ်ပူစရာပါပဲ။ နောက်ဆုံး ဘယ်အချိန်က သုံးခဲ့ပါသလဲ။",
-          "th": "น่าเป็นห่วงนะคะ คุณใช้บัตรครั้งสุดท้ายเมื่อไรคะ",
-          "km": "គួរឱ្យបារម្ភណាស់។ តើអ្នកបានប្រើវាចុងក្រោយនៅពេលណា?",
-          "tl": "Nakababahala po iyon. Kailan ninyo ito huling ginamit?",
-          "en": "That is worrying. About when did you last use it?"
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01205-06-002-SHARED-04",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -112,40 +69,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_clerk",
+        "communicativeIntent": "identify_bank_atm_and_unexecuted_app_cancellation",
         "requiredSemanticComponents": {
-          "goal": "紛失したカードの対応方法を確認する"
+          "goal": "銀行とATM利用を説明し安全のためアプリ解約を考え未操作と伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "昨日の夕方です。そのあと、かばんを確認しましたがありませんでした。",
+        "recommendedAnswerJa": "この銀行のカードで、昨日ATMで使いました。携帯の口座アプリも解約すれば安全になると思いましたが、まだ操作していません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に合わせて、用件を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Chiều hôm qua. Sau đó tôi đã kiểm tra túi nhưng không thấy.",
-          "id": "Kemarin sore. Setelah itu saya memeriksa tas, tetapi kartu itu tidak ada.",
-          "zh-CN": "昨天下午。之后我检查过包，但没有找到。",
-          "zh-TW": "昨天下午。之後我檢查過包，但沒有找到。",
-          "hi": "कल शाम। उसके बाद मैंने अपना बैग देखा, लेकिन कार्ड नहीं मिला।",
-          "bn": "গতকাল বিকেলে। তারপর ব্যাগ দেখেছি, কিন্তু কার্ডটি পাইনি।",
-          "ne": "हिजो साँझ। त्यसपछि झोला हेरेँ, तर कार्ड भेटिनँ।",
-          "my": "မနေ့ညနေကပါ။ အဲဒီနောက် အိတ်ကို ရှာပေမယ့် မတွေ့ပါဘူး။",
-          "th": "เมื่อเย็นวานค่ะ หลังจากนั้นตรวจในกระเป๋าแล้วแต่ไม่พบ",
-          "km": "កាលពីល្ងាចម្សិលមិញ។ បន្ទាប់មកខ្ញុំបានរកក្នុងកាបូប ប៉ុន្តែមិនឃើញទេ។",
-          "tl": "Kahapon ng hapon. Tiningnan ko ang bag ko pagkatapos, pero wala roon.",
-          "en": "Yesterday evening. I checked my bag afterward, but it was not there."
-        },
-        "evaluationNotes": "内容が相手の質問と矛盾しないことを確認する。",
+        "hint": "銀行とATM利用を説明し安全のためアプリ解約を考え未操作と伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "銀行とATM利用を説明し安全のためアプリ解約を考え未操作と伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
-        "targetVocabularyIds": [
-          "VOC0083"
-        ]
+        "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01205-06-002-SHARED-05",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -154,28 +96,15 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。安全のため、まずカードについて確認する方法をご案内します。",
+        "textJa": "カードの紛失と口座やアプリの解約は、同じ手続きとは限りません。紛失時の正式な対応を確認して進めましょう。本人確認に使う書類はありますか。",
         "furigana": null,
-        "translationVi": "Tôi hiểu rồi. Để an toàn, trước tiên tôi sẽ hướng dẫn cách kiểm tra tình trạng thẻ.",
-        "translations": {
-          "vi": "Tôi hiểu rồi. Để an toàn, trước tiên tôi sẽ hướng dẫn cách kiểm tra tình trạng thẻ.",
-          "id": "Baik. Demi keamanan, saya akan menjelaskan cara memeriksa keadaan kartu terlebih dahulu.",
-          "zh-CN": "明白了。为了安全起见，我先为您说明如何确认卡片状态。",
-          "zh-TW": "明白了。為了安全起見，我先為您說明如何確認卡片状態。",
-          "hi": "समझ गया। सुरक्षा के लिए पहले मैं कार्ड की स्थिति जाँचने का तरीका बताता हूँ।",
-          "bn": "বুঝলাম। নিরাপত্তার জন্য আগে কার্ডের অবস্থা কীভাবে যাচাই করবেন তা বলছি।",
-          "ne": "बुझेँ। सुरक्षाका लागि पहिले कार्डको अवस्था कसरी जाँच्ने भन्ने बताउँछु।",
-          "my": "နားလည်ပါပြီ။ လုံခြုံရေးအတွက် အရင်ဆုံး ကတ်အခြေအနေကို ဘယ်လိုစစ်ရမလဲ ရှင်းပြပါမယ်။",
-          "th": "เข้าใจค่ะ เพื่อความปลอดภัย ฉันจะอธิบายวิธีตรวจสอบสถานะบัตรก่อน",
-          "km": "បាន។ ដើម្បីសុវត្ថិភាព ជាដំបូងខ្ញុំនឹងណែនាំរបៀបពិនិត្យស្ថានភាពកាត។",
-          "tl": "Naiintindihan ko. Para sa kaligtasan, ipapaliwanag ko muna kung paano susuriin ang kalagayan ng card.",
-          "en": "I understand. For security, I will first explain how to check the card status."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01205-06-002-SHARED-06",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -185,40 +114,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_clerk",
+        "communicativeIntent": "offer_identity_and_ask_found_after_stop_action",
         "requiredSemanticComponents": {
-          "goal": "紛失したカードの対応方法を確認する"
+          "goal": "在留カード提示と停止後発見時の自己再利用を避ける確認を求める"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "利用を止める手続きが必要か、ここで確認できますか。",
+        "recommendedAnswerJa": "在留カードがあります。止めた後でカードが家から見つかった場合も、自分で使い始めず、再利用できるか聞いた方がいいですか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に合わせて、用件を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Tôi có thể kiểm tra ở đây xem có cần làm thủ tục khóa thẻ không?",
-          "id": "Bisakah saya memastikan di sini apakah kartu perlu diblokir?",
-          "zh-CN": "可以在这里确认是否需要挂失停用吗？",
-          "zh-TW": "可以在這裡確認是否需要掛失停用嗎？",
-          "hi": "क्या यहाँ पता चल सकता है कि कार्ड को बंद करवाना ज़रूरी है या नहीं?",
-          "bn": "কার্ডটি বন্ধ করা দরকার কি না এখানে জানতে পারি?",
-          "ne": "कार्ड रोक्नु पर्ने हो कि होइन यहाँ पत्ता लगाउन सकिन्छ?",
-          "my": "ကတ်အသုံးပြုမှု ရပ်ထားဖို့ လိုမလို ဒီမှာ စစ်လို့ရပါသလား။",
-          "th": "ที่นี่ตรวจได้ไหมคะว่าจำเป็นต้องระงับบัตรหรือเปล่า",
-          "km": "តើខ្ញុំអាចពិនិត្យនៅទីនេះថាត្រូវផ្អាកការប្រើកាតឬទេ?",
-          "tl": "Maaari po bang malaman dito kung kailangan kong ipahinto ang paggamit ng card?",
-          "en": "Can we check here whether I need to suspend use of the card?"
-        },
-        "evaluationNotes": "内容が相手の質問と矛盾しないことを確認する。",
+        "hint": "在留カード提示と停止後発見時の自己再利用を避ける確認を求める。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "在留カード提示と停止後発見時の自己再利用を避ける確認を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
-        "targetVocabularyIds": [
-          "VOC0083"
-        ]
+        "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01205-06-002-SHARED-07",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -227,28 +141,15 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "状況を伺ってから、ご利用先の手順をお調べします。暗証番号は声に出さないでください。",
+        "textJa": "はい。停止後の扱いは担当者に確認してください。再発行が必要か、見つかった時に何をするかも説明を受けましょう。",
         "furigana": null,
-        "translationVi": "Sau khi nghe tình hình, tôi sẽ tra cứu hướng xử lý của nơi cung cấp dịch vụ. Xin đừng đọc to mã PIN.",
-        "translations": {
-          "vi": "Sau khi nghe tình hình, tôi sẽ tra cứu hướng xử lý của nơi cung cấp dịch vụ. Xin đừng đọc to mã PIN.",
-          "id": "Setelah mendengar situasinya, saya akan memeriksa prosedur penyedia layanan Anda. Jangan sebutkan PIN dengan suara keras.",
-          "zh-CN": "我会先了解情况，再查询相关服务的办理步骤。请不要大声说出密码。",
-          "zh-TW": "我會先了解情況，再查詢相關服務的辦理步驟。請不要大聲說出密碼。",
-          "hi": "स्थिति जानने के बाद संबंधित सेवा की प्रक्रिया जाँचूँगा। कृपया अपना पिन ज़ोर से न बोलें।",
-          "bn": "পরিস্থিতি শুনে সংশ্লিষ্ট পরিষেবার নিয়ম যাচাই করব। দয়া করে পিন নম্বর জোরে বলবেন না।",
-          "ne": "अवस्था बुझेर सम्बन्धित सेवाको प्रक्रिया जाँच्नेछु। कृपया पिन ठूलो स्वरमा नभन्नुहोस्।",
-          "my": "အခြေအနေကို သိပြီးမှ သက်ဆိုင်ရာဝန်ဆောင်မှုရဲ့ လုပ်ထုံးလုပ်နည်းကို စစ်ပါမယ်။ PIN ကို အသံကျယ်ကျယ် မပြောပါနဲ့။",
-          "th": "หลังจากทราบรายละเอียด ฉันจะตรวจสอบขั้นตอนของผู้ให้บริการ กรุณาอย่าพูดรหัส PIN ออกมาดัง ๆ นะคะ",
-          "km": "ខ្ញុំនឹងសួរពីស្ថានភាព ហើយរកមើលនីតិវិធីរបស់សេវាដែលអ្នកប្រើ។ សូមកុំប្រាប់លេខសម្ងាត់ដោយសំឡេង។",
-          "tl": "Aalamin ko muna ang sitwasyon at ang proseso ng serbisyong ginagamit ninyo. Huwag po ninyong sabihin nang malakas ang PIN.",
-          "en": "I will ask about the situation and check your provider’s procedure. Please do not say your PIN aloud."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01205-06-002-SHARED-08",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -258,40 +159,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_clerk",
+        "communicativeIntent": "ask_salary_transfer_impact_separate_from_card_stop",
         "requiredSemanticComponents": {
-          "goal": "紛失したカードの対応方法を確認する"
+          "goal": "給与口座のため振込への影響をカードと区別して説明してほしいと頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "わかりました。本人確認の書類は必要でしょうか。",
+        "recommendedAnswerJa": "給与がこの口座に入るので、カードを止めると振り込みまで止まるのかも心配です。カードと口座の扱いを分けて教えてください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に合わせて、用件を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Tôi hiểu. Có cần giấy tờ xác minh danh tính không?",
-          "id": "Baik. Apakah saya perlu membawa dokumen identitas?",
-          "zh-CN": "明白了。需要出示身份证明吗？",
-          "zh-TW": "明白了。需要出示身分證明嗎？",
-          "hi": "ठीक है। क्या पहचान का दस्तावेज़ चाहिए?",
-          "bn": "ঠিক আছে। পরিচয়ের কাগজ লাগবে কি?",
-          "ne": "ठीक छ। परिचय खुल्ने कागजात चाहिन्छ?",
-          "my": "နားလည်ပါပြီ။ ကိုယ်ရေးအထောက်အထား လိုပါသလား။",
-          "th": "เข้าใจแล้วค่ะ ต้องใช้เอกสารยืนยันตัวตนไหมคะ",
-          "km": "យល់ហើយ។ តើត្រូវការឯកសារបញ្ជាក់អត្តសញ្ញាណទេ?",
-          "tl": "Naiintindihan ko. Kailangan ko po ba ng dokumentong pagkakakilanlan?",
-          "en": "I see. Will I need identification?"
-        },
-        "evaluationNotes": "内容が相手の質問と矛盾しないことを確認する。",
+        "hint": "給与口座のため振込への影響をカードと区別して説明してほしいと頼む。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "給与口座のため振込への影響をカードと区別して説明してほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
-        "targetVocabularyIds": [
-          "VOC0083"
-        ]
+        "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01205-06-002-SHARED-09",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -300,28 +186,15 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "必要な確認方法も含めてご案内します。お手元にある書類を教えてください。",
+        "textJa": "担当者が今回の対応と、口座への影響を確認して説明します。給与の予定も伝え、どの機能が対象になるかを確認してください。",
         "furigana": null,
-        "translationVi": "Tôi sẽ hướng dẫn cả cách xác minh cần thiết. Bạn cho tôi biết mình đang có giấy tờ nào nhé.",
-        "translations": {
-          "vi": "Tôi sẽ hướng dẫn cả cách xác minh cần thiết. Bạn cho tôi biết mình đang có giấy tờ nào nhé.",
-          "id": "Saya akan menjelaskan cara verifikasi yang diperlukan. Dokumen apa yang Anda bawa sekarang?",
-          "zh-CN": "我也会说明需要怎样核实身份。请告诉我您现在带了哪些证件。",
-          "zh-TW": "我也會說明需要怎樣確認身分。請告訴我您現在帶了哪些證件。",
-          "hi": "मैं पहचान जाँचने की प्रक्रिया भी बताऊँगा। आपके पास अभी कौन से दस्तावेज़ हैं?",
-          "bn": "পরিচয় যাচাইয়ের পদ্ধতিও বলব। এখন আপনার কাছে কোন কাগজ আছে?",
-          "ne": "पहिचान जाँच्ने तरिका पनि बताउँछु। अहिले तपाईंसँग कुन कागजात छ?",
-          "my": "လိုအပ်တဲ့ အတည်ပြုနည်းကိုလည်း ပြောပြပါမယ်။ အခု ဘာစာရွက်စာတမ်းရှိပါသလဲ။",
-          "th": "ฉันจะอธิบายวิธียืนยันตัวตนด้วย ตอนนี้คุณมีเอกสารอะไรบ้างคะ",
-          "km": "ខ្ញុំនឹងពន្យល់រួមទាំងរបៀបបញ្ជាក់អត្តសញ្ញាណ។ សូមប្រាប់ថាអ្នកមានឯកសារអ្វីនៅជាមួយ។",
-          "tl": "Ipapaliwanag ko rin kung paano kukumpirmahin ang inyong pagkakakilanlan. Anong dokumento po ang dala ninyo?",
-          "en": "I will also explain the identity check. Please tell me which documents you have at hand."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01205-06-002-SHARED-10",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -331,40 +204,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_clerk",
+        "communicativeIntent": "confirm_official_stop_scope_without_app_cancellation",
         "requiredSemanticComponents": {
-          "goal": "紛失したカードの対応方法を確認する"
+          "goal": "本人確認と給与事情を示し勝手なアプリ解約をせず停止範囲と発見時対応を聞くと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "在留カードがあります。次に何をすればよいか教えてください。",
+        "recommendedAnswerJa": "在留カードを見せ、カード紛失と給与口座の事情を伝えます。アプリは勝手に解約せず、停止の範囲と見つかった時の対応を聞きます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に合わせて、用件を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Tôi có thẻ cư trú. Xin cho tôi biết bước tiếp theo cần làm.",
-          "id": "Saya membawa kartu izin tinggal. Tolong beri tahu langkah selanjutnya.",
-          "zh-CN": "我带了在留卡。请告诉我下一步该怎么做。",
-          "zh-TW": "我帶了在留卡。請告訴我下一步該怎麼做。",
-          "hi": "मेरे पास निवास कार्ड है। कृपया अगला कदम बताइए।",
-          "bn": "আমার কাছে রেসিডেন্স কার্ড আছে। পরের ধাপটি বলুন।",
-          "ne": "मसँग बसोबास कार्ड छ। अबको कदम बताइदिनुहोस्।",
-          "my": "နေထိုင်ခွင့်ကတ်ရှိပါတယ်။ နောက်တစ်ဆင့် ဘာလုပ်ရမလဲ ပြောပြပါ။",
-          "th": "ฉันมีบัตรผู้พำนัก กรุณาบอกขั้นตอนต่อไปด้วยค่ะ",
-          "km": "ខ្ញុំមានប័ណ្ណស្នាក់នៅ។ សូមប្រាប់ខ្ញុំថាត្រូវធ្វើអ្វីបន្ទាប់។",
-          "tl": "Dala ko ang residence card ko. Pakisabi po kung ano ang susunod kong gagawin.",
-          "en": "I have my residence card. Please tell me what to do next."
-        },
-        "evaluationNotes": "内容が相手の質問と矛盾しないことを確認する。",
+        "hint": "本人確認と給与事情を示し勝手なアプリ解約をせず停止範囲と発見時対応を聞くと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "本人確認と給与事情を示し勝手なアプリ解約をせず停止範囲と発見時対応を聞くと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
-        "targetGrammarIds": [
-          "GR0005"
-        ],
+        "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01205-06-002-SHARED-11",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -373,29 +231,26 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ありがとうございます。内容を確認して、次の手順を順番に説明します。",
+        "textJa": "承知しました。紛失の担当者へおつなぎします。暗証番号はここでは伝えず、確認の案内をお待ちください。ご相談ありがとうございます。",
         "furigana": null,
-        "translationVi": "Cảm ơn. Tôi sẽ kiểm tra rồi giải thích từng bước tiếp theo.",
-        "translations": {
-          "vi": "Cảm ơn. Tôi sẽ kiểm tra rồi giải thích từng bước tiếp theo.",
-          "id": "Terima kasih. Saya akan memeriksanya lalu menjelaskan langkah berikutnya satu per satu.",
-          "zh-CN": "谢谢。我会确认情况，再按顺序说明接下来的步骤。",
-          "zh-TW": "謝謝。我會確認情況，再按順序說明接下來的步驟。",
-          "hi": "धन्यवाद। मैं जानकारी जाँचकर अगले कदम क्रम से समझाता हूँ।",
-          "bn": "ধন্যবাদ। তথ্য দেখে পরের ধাপগুলো ক্রমানুসারে বুঝিয়ে দিচ্ছি।",
-          "ne": "धन्यवाद। विवरण जाँचेर अर्को प्रक्रिया क्रमसँग बुझाउँछु।",
-          "my": "ကျေးဇူးတင်ပါတယ်။ အချက်အလက်စစ်ပြီး နောက်တစ်ဆင့်ကို အစဉ်လိုက် ရှင်းပြပါမယ်။",
-          "th": "ขอบคุณค่ะ ฉันจะตรวจสอบแล้วอธิบายขั้นตอนต่อไปตามลำดับค่ะ",
-          "km": "អរគុណ។ ខ្ញុំនឹងពិនិត្យព័ត៌មាន ហើយពន្យល់ជំហានបន្ទាប់តាមលំដាប់។",
-          "tl": "Salamat po. Susuriin ko ang detalye at ipapaliwanag ang mga susunod na hakbang nang sunod-sunod.",
-          "en": "Thank you. I will review the details and explain the next steps in order."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": null,
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     }
-  ]
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-muroran.json",
+    "premise": "室蘭の銀行でキャッシュカード紛失を相談した本人が、携帯の口座アプリを解約する必要があると思い込んでいたと説明し、カードと口座を区別して正式窓口で対応を確認する。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
 }

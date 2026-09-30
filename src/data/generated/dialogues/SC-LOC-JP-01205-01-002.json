@@ -6,28 +6,15 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "お困りですか。何かお手伝いしましょうか。",
+        "textJa": "こんにちは。遅延案内で、どのような点を確認されたいですか。",
         "furigana": null,
-        "translationVi": "Bạn đang gặp khó khăn gì? Tôi giúp được gì không?",
-        "translations": {
-          "vi": "Bạn đang gặp khó khăn gì? Tôi giúp được gì không?",
-          "id": "Ada kesulitan? Bisa saya bantu?",
-          "zh-CN": "您遇到什么困难了吗？需要帮忙吗？",
-          "zh-TW": "您遇到什麼困難了嗎？需要幫忙嗎？",
-          "hi": "कोई परेशानी है? क्या मैं मदद करूँ?",
-          "bn": "কোনো অসুবিধা হচ্ছে? আমি কি সাহায্য করতে পারি?",
-          "ne": "केही समस्या छ? म सहयोग गरूँ?",
-          "my": "အခက်အခဲရှိပါသလား။ ကူညီပေးရမလား။",
-          "th": "มีปัญหาอะไรไหมคะ ให้ช่วยไหม",
-          "km": "តើអ្នកកំពុងជួបការលំបាកមែនទេ? តើខ្ញុំអាចជួយអ្វីបាន?",
-          "tl": "May problema po ba? Maaari ba akong tumulong?",
-          "en": "Is something wrong? Can I help you?"
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01205-01-002-SHARED-02",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -37,40 +24,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_station_staff",
+        "communicativeIntent": "report_delayed_train_threat_to_hospital_booking",
         "requiredSemanticComponents": {
-          "goal": "遅延時の案内と次の行動を確認する"
+          "goal": "病院予約への遅刻の懸念と待つ列車の遅延を伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "乗る予定の電車が遅れているようです。状況を教えてください。",
+        "recommendedAnswerJa": "病院の予約があるんですが、室蘭駅で待っている列車が遅れています。予約に間に合わなくなりそうで困っています。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、行き先や状況を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Hình như chuyến tàu tôi định đi đang bị trễ. Xin cho tôi biết tình hình.",
-          "id": "Kereta yang akan saya naiki sepertinya terlambat. Bisa jelaskan situasinya?",
-          "zh-CN": "我准备坐的火车好像晚点了。请告诉我目前的情况。",
-          "zh-TW": "我準備坐的列車好像誤點了。請告訴我目前的情況。",
-          "hi": "मेरी ट्रेन शायद देर से चल रही है। कृपया स्थिति बताइए।",
-          "bn": "যে ট্রেনে উঠব সেটি সম্ভবত দেরি করছে। বর্তমান অবস্থা বলবেন?",
-          "ne": "चढ्ने रेल ढिलो भएको जस्तो छ। अहिलेको अवस्था बताइदिनुहोस्।",
-          "my": "ကျွန်တော်စီးမယ့် ရထား နောက်ကျနေသလိုပဲ။ အခြေအနေ ပြောပြပါ။",
-          "th": "รถไฟที่ฉันจะขึ้นเหมือนจะล่าช้า ช่วยบอกสถานการณ์ตอนนี้ได้ไหมคะ",
-          "km": "រថភ្លើងដែលខ្ញុំគ្រោងជិះហាក់ដូចជាយឺត។ សូមប្រាប់ខ្ញុំពីស្ថានភាព។",
-          "tl": "Mukhang naantala ang tren na sasakyan ko. Maaari po bang sabihin ninyo ang kasalukuyang sitwasyon?",
-          "en": "The train I planned to take seems to be delayed. Could you tell me what is happening?"
-        },
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "hint": "病院予約への遅刻の懸念と待つ列車の遅延を伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "病院予約への遅刻の懸念と待つ列車の遅延を伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
-        "targetGrammarIds": [
-          "GR0005"
-        ],
+        "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01205-01-002-SHARED-03",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -79,28 +51,15 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "どの方面へ行く電車をお待ちですか。",
+        "textJa": "お待ちの列車と予約時刻を確認しましょう。病院には、もう遅れる可能性を連絡されていますか。",
         "furigana": null,
-        "translationVi": "Bạn đang đợi tàu đi hướng nào?",
-        "translations": {
-          "vi": "Bạn đang đợi tàu đi hướng nào?",
-          "id": "Kereta ke arah mana yang sedang Anda tunggu?",
-          "zh-CN": "您在等开往哪个方向的车？",
-          "zh-TW": "您在等開往哪個方向的車？",
-          "hi": "आप किस दिशा की ट्रेन का इंतज़ार कर रहे हैं?",
-          "bn": "কোন দিকের ট্রেনের জন্য অপেক্ষা করছেন?",
-          "ne": "कुन दिशातिर जाने रेल पर्खिरहनुभएको छ?",
-          "my": "ဘယ်ဘက်ကို သွားမယ့်ရထားကို စောင့်နေတာလဲ။",
-          "th": "คุณรอรถไฟไปทางไหนคะ",
-          "km": "តើអ្នកកំពុងរង់ចាំរថភ្លើងទៅទិសណា?",
-          "tl": "Saang direksiyon po ang hinihintay ninyong tren?",
-          "en": "Which direction is the train you are waiting for going?"
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01205-01-002-SHARED-04",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -110,40 +69,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_station_staff",
+        "communicativeIntent": "explain_waiting_for_definite_eta_before_hospital_call",
         "requiredSemanticComponents": {
-          "goal": "遅延時の案内と次の行動を確認する"
+          "goal": "病院未連絡と確定時刻を待つ考えを説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "市内の病院へ行きたいです。到着時間が気になっています。",
+        "recommendedAnswerJa": "まだです。駅で到着時刻を教えてもらってから連絡しようと思っていました。遅れがどのくらい続くかわからないので迷っています。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、行き先や状況を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Tôi muốn đến bệnh viện trong thành phố và lo về giờ đến.",
-          "id": "Saya ingin pergi ke rumah sakit di kota ini dan khawatir akan waktu kedatangan.",
-          "zh-CN": "我要去市内的医院，担心到达时间。",
-          "zh-TW": "我要去市内的醫院，擔心到達時間。",
-          "hi": "मैं शहर के अस्पताल जाना चाहता हूँ। पहुँचने के समय की चिंता है।",
-          "bn": "শহরের হাসপাতালে যেতে চাই। পৌঁছানোর সময় নিয়ে চিন্তিত।",
-          "ne": "सहरको अस्पताल जान चाहन्छु। पुग्ने समयको चिन्ता छ।",
-          "my": "မြို့ထဲက ဆေးရုံကို သွားချင်ပါတယ်။ ရောက်ချိန်ကို စိတ်ပူနေပါတယ်။",
-          "th": "ฉันจะไปโรงพยาบาลในเมืองและกังวลเรื่องเวลาไปถึงค่ะ",
-          "km": "ខ្ញុំចង់ទៅមន្ទីរពេទ្យក្នុងក្រុង។ ខ្ញុំបារម្ភពីម៉ោងទៅដល់។",
-          "tl": "Pupunta po ako sa ospital sa lungsod. Nag-aalala ako sa oras ng pagdating.",
-          "en": "I need to go to a hospital in the city. I am concerned about my arrival time."
-        },
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "hint": "病院未連絡と確定時刻を待つ考えを説明する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "病院未連絡と確定時刻を待つ考えを説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
-        "targetGrammarIds": [
-          "GR0001"
-        ],
+        "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01205-01-002-SHARED-05",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -152,28 +96,15 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。現在の案内を確認しますので、少々お待ちください。",
+        "textJa": "到着見込みが確定しない場合もあります。病院へは、移動が遅れていることと、時刻が未定であることを先にお伝えいただけます。",
         "furigana": null,
-        "translationVi": "Vâng. Tôi sẽ kiểm tra thông báo hiện tại, xin đợi một chút.",
-        "translations": {
-          "vi": "Vâng. Tôi sẽ kiểm tra thông báo hiện tại, xin đợi một chút.",
-          "id": "Baik. Saya akan memeriksa pengumuman terkini. Mohon tunggu sebentar.",
-          "zh-CN": "明白了。我去确认目前的通知，请稍等。",
-          "zh-TW": "明白了。我去確認目前的通知，請稍等。",
-          "hi": "समझ गया। मैं अभी की सूचना देखता हूँ। कृपया थोड़ा इंतज़ार करें।",
-          "bn": "বুঝেছি। এখনকার ঘোষণা দেখে আসছি, একটু অপেক্ষা করুন।",
-          "ne": "बुझेँ। अहिलेको सूचना जाँचेर आउँछु, कृपया केहीबेर पर्खनुहोस्।",
-          "my": "နားလည်ပါပြီ။ လက်ရှိကြေညာချက်ကို စစ်ပါမယ်၊ ခဏစောင့်ပါ။",
-          "th": "เข้าใจค่ะ ฉันจะตรวจสอบประกาศปัจจุบัน กรุณารอสักครู่",
-          "km": "បាន។ សូមរង់ចាំបន្តិច ខ្ញុំនឹងពិនិត្យព័ត៌មានបច្ចុប្បន្ន។",
-          "tl": "Naiintindihan ko po. Sandali lang habang tinitingnan ko ang kasalukuyang abiso.",
-          "en": "Understood. Please wait a moment while I check the current notices."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01205-01-002-SHARED-06",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -183,38 +114,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_station_staff",
+        "communicativeIntent": "choose_early_hospital_notice_and_update_before_departure",
         "requiredSemanticComponents": {
-          "goal": "遅延時の案内と次の行動を確認する"
+          "goal": "先に病院へ連絡し駅を離れる前に運行更新を確かめたいと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "もし遅れが長くなるなら、別の行き方もありますか。",
+        "recommendedAnswerJa": "では病院に先に電話します。駅を離れて別の交通を探す場合、列車の案内が更新されたかも確認してから決めたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、行き先や状況を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Nếu tàu trễ lâu, còn cách đi nào khác không?",
-          "id": "Jika keterlambatannya lama, apakah ada cara lain untuk pergi?",
-          "zh-CN": "如果晚点很久，还有其他去法吗？",
-          "zh-TW": "如果誤點很久，還有其他去法嗎？",
-          "hi": "अगर बहुत देर हुई, तो जाने का कोई दूसरा तरीका है?",
-          "bn": "অনেক দেরি হলে অন্য কোনোভাবে যাওয়া যাবে?",
-          "ne": "धेरै ढिलो भए अर्को बाटो छ?",
-          "my": "အရမ်းနောက်ကျရင် တခြားသွားနည်းရှိမလား။",
-          "th": "ถ้าล่าช้ามาก มีวิธีเดินทางอื่นไหมคะ",
-          "km": "បើការយឺតយ៉ាវបន្តយូរ តើមានផ្លូវផ្សេងទៀតទេ?",
-          "tl": "Kung matagal ang pagkaantala, mayroon po bang ibang paraan para makarating doon?",
-          "en": "If the delay is long, is there another way to get there?"
-        },
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "hint": "先に病院へ連絡し駅を離れる前に運行更新を確かめたいと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "先に病院へ連絡し駅を離れる前に運行更新を確かめたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01205-01-002-SHARED-07",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -223,28 +141,15 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ほかの移動方法を調べられるか、案内を確認しましょう。",
+        "textJa": "はい。現時点の運行案内と更新の確認方法をご説明します。ほかの交通の利用可否や所要は、案内先で別に確認が必要です。",
         "furigana": null,
-        "translationVi": "Ta hãy kiểm tra xem có thông tin về phương án di chuyển khác không.",
-        "translations": {
-          "vi": "Ta hãy kiểm tra xem có thông tin về phương án di chuyển khác không.",
-          "id": "Mari kita periksa apakah ada informasi tentang pilihan perjalanan lain.",
-          "zh-CN": "我们查一下是否有其他出行方式的信息。",
-          "zh-TW": "我們查一下是否有其他出行方式的資訊。",
-          "hi": "आइए जाँचें कि दूसरे रास्तों के बारे में कोई जानकारी उपलब्ध है या नहीं।",
-          "bn": "অন্য যাতায়াতের উপায় সম্পর্কে তথ্য আছে কি না দেখি।",
-          "ne": "अरू यात्रा गर्ने तरिकाबारे जानकारी छ कि जाँचौँ।",
-          "my": "တခြားခရီးသွားနည်းအကြောင်း သတင်းရှိမရှိ စစ်ကြည့်ပါမယ်။",
-          "th": "มาตรวจสอบกันว่ามีข้อมูลเกี่ยวกับทางเลือกอื่นหรือไม่",
-          "km": "យើងពិនិត្យព័ត៌មានថាតើអាចរកមធ្យោបាយធ្វើដំណើរផ្សេងបានឬទេ។",
-          "tl": "Tingnan natin ang mga abiso kung may iba pang paraan ng pagbiyahe.",
-          "en": "Let us check the notices to see whether another travel option is available."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01205-01-002-SHARED-08",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -254,40 +159,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_station_staff",
+        "communicativeIntent": "relay_hospital_callback_request_and_seek_alternative_info",
         "requiredSemanticComponents": {
-          "goal": "遅延時の案内と次の行動を確認する"
+          "goal": "病院の再連絡依頼を伝え別経路の案内先を尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "病院に連絡する前に、おおよその見込みを知りたいです。",
+        "recommendedAnswerJa": "病院から、来られる時刻がわかったらもう一度連絡するよう言われました。別の行き方を調べられる案内先はありますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、行き先や状況を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Trước khi gọi cho bệnh viện, tôi muốn biết thời gian dự kiến.",
-          "id": "Sebelum menghubungi rumah sakit, saya ingin tahu perkiraan waktunya.",
-          "zh-CN": "联系医院之前，我想先知道大概会晚多久。",
-          "zh-TW": "聯繫醫院之前，我想先知道大概會晚多久。",
-          "hi": "अस्पताल में फ़ोन करने से पहले अनुमानित समय जानना चाहता हूँ।",
-          "bn": "হাসপাতালে ফোন করার আগে আনুমানিক সময় জানতে চাই।",
-          "ne": "अस्पतालमा फोन गर्नुअघि अनुमानित समय जान्न चाहन्छु।",
-          "my": "ဆေးရုံကို မဆက်သွယ်ခင် ခန့်မှန်းချိန် သိချင်ပါတယ်။",
-          "th": "ก่อนโทรหาโรงพยาบาล ฉันอยากรู้เวลาถึงโดยประมาณค่ะ",
-          "km": "មុននឹងទាក់ទងមន្ទីរពេទ្យ ខ្ញុំចង់ដឹងការប៉ាន់ស្មានពេលវេលា។",
-          "tl": "Bago tumawag sa ospital, gusto kong malaman ang tinatayang oras ng pagdating.",
-          "en": "Before I contact the hospital, I would like an approximate arrival time."
-        },
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "hint": "病院の再連絡依頼を伝え別経路の案内先を尋ねる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "病院の再連絡依頼を伝え別経路の案内先を尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
-        "targetGrammarIds": [
-          "GR0001"
-        ],
+        "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01205-01-002-SHARED-09",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -296,28 +186,15 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "現時点でわかる情報と、更新を確認する方法をお伝えします。",
+        "textJa": "確認できる案内先をご紹介します。急いで駅を出る前に、行き先と運行状況、乗り場をそちらで確認してください。",
         "furigana": null,
-        "translationVi": "Tôi sẽ cho bạn biết thông tin hiện có và cách theo dõi cập nhật.",
-        "translations": {
-          "vi": "Tôi sẽ cho bạn biết thông tin hiện có và cách theo dõi cập nhật.",
-          "id": "Saya akan menyampaikan informasi yang tersedia saat ini dan cara memeriksa pembaruannya.",
-          "zh-CN": "我会告诉您目前掌握的信息，以及如何查看后续更新。",
-          "zh-TW": "我會告訴您目前掌握的資訊，以及如何查看後續更新。",
-          "hi": "मैं अभी उपलब्ध जानकारी और नए अपडेट देखने का तरीका बताऊँगा।",
-          "bn": "এখন যা জানা আছে এবং নতুন খবর কীভাবে দেখবেন তা বলব।",
-          "ne": "अहिले उपलब्ध जानकारी र नयाँ सूचना कसरी हेर्ने बताउँछु।",
-          "my": "အခုသိနိုင်တာနဲ့ နောက်ဆုံးသတင်းကို ဘယ်လိုစစ်ရမလဲ ပြောပြပါမယ်။",
-          "th": "ฉันจะแจ้งข้อมูลที่ทราบตอนนี้และวิธีติดตามข้อมูลใหม่ค่ะ",
-          "km": "ខ្ញុំនឹងប្រាប់ព័ត៌មានដែលដឹងនៅពេលនេះ និងរបៀបពិនិត្យព័ត៌មានថ្មី។",
-          "tl": "Sasabihin ko ang impormasyong alam sa ngayon at kung paano tingnan ang mga bagong abiso.",
-          "en": "I will tell you what is known now and how to check for updates."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01205-01-002-SHARED-10",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -327,38 +204,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_station_staff",
+        "communicativeIntent": "compare_options_then_callback_with_estimate",
         "requiredSemanticComponents": {
-          "goal": "遅延時の案内と次の行動を確認する"
+          "goal": "未定連絡済と伝え案内比較後に見込みで再連絡する方針を示す"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "ありがとうございます。案内が変わったら、どこで見ればいいですか。",
+        "recommendedAnswerJa": "病院には未定と伝えたので、列車の更新と別交通の案内を比べます。行き方が決まって見込みがわかったら、病院へ再連絡します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、行き先や状況を具体的に伝えましょう。",
-        "translations": {
-          "vi": "Cảm ơn. Nếu thông báo thay đổi, tôi xem ở đâu?",
-          "id": "Terima kasih. Jika pengumumannya berubah, di mana saya bisa melihatnya?",
-          "zh-CN": "谢谢。如果通知有变化，我应该去哪里看？",
-          "zh-TW": "謝謝。如果通知有變化，我應該去哪裡看？",
-          "hi": "धन्यवाद। सूचना बदले तो उसे कहाँ देखूँ?",
-          "bn": "ধন্যবাদ। ঘোষণা বদলালে কোথায় দেখব?",
-          "ne": "धन्यवाद। सूचना फेरिए कहाँ हेर्ने?",
-          "my": "ကျေးဇူးတင်ပါတယ်။ ကြေညာချက်ပြောင်းရင် ဘယ်မှာကြည့်ရမလဲ။",
-          "th": "ขอบคุณค่ะ ถ้าประกาศเปลี่ยน ฉันจะดูที่ไหน",
-          "km": "អរគុណ។ បើព័ត៌មានផ្លាស់ប្តូរ តើខ្ញុំគួរមើលនៅឯណា?",
-          "tl": "Salamat po. Kung magbago ang abiso, saan ko po ito makikita?",
-          "en": "Thank you. Where should I look if the information changes?"
-        },
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "hint": "未定連絡済と伝え案内比較後に見込みで再連絡する方針を示す。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "未定連絡済と伝え案内比較後に見込みで再連絡する方針を示す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01205-01-002-SHARED-11",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -367,29 +231,26 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "掲示と放送の確認場所をご案内します。わからなければまたお声がけください。",
+        "textJa": "承知しました。現在の運行案内から確認しましょう。焦らず、変更点があればまたお尋ねください。お気をつけて。",
         "furigana": null,
-        "translationVi": "Tôi sẽ chỉ chỗ xem bảng thông báo và nghe phát thanh. Nếu chưa rõ, bạn cứ hỏi lại.",
-        "translations": {
-          "vi": "Tôi sẽ chỉ chỗ xem bảng thông báo và nghe phát thanh. Nếu chưa rõ, bạn cứ hỏi lại.",
-          "id": "Saya akan menunjukkan papan informasi dan tempat mendengar pengumuman. Silakan bertanya lagi jika belum jelas.",
-          "zh-CN": "我会告诉您公告和广播的查询地点。不清楚的话请再问我。",
-          "zh-TW": "我會告訴您公告和廣播的查詢地點。不清楚的話請再問我。",
-          "hi": "मैं सूचना पट्ट और घोषणा सुनने की जगह दिखाऊँगा। स्पष्ट न हो तो फिर पूछिए।",
-          "bn": "তথ্য বোর্ড ও ঘোষণার জায়গা দেখিয়ে দিচ্ছি। না বুঝলে আবার জিজ্ঞেস করুন।",
-          "ne": "सूचना पाटी र घोषणा सुन्ने ठाउँ देखाउँछु। नबुझे फेरि सोध्नुहोस्।",
-          "my": "သတင်းဘုတ်နဲ့ အသံကြေညာချက် နားထောင်ရမယ့်နေရာကို ညွှန်ပြပါမယ်။ မရှင်းရင် ထပ်မေးပါ။",
-          "th": "ฉันจะบอกจุดดูป้ายประกาศและฟังเสียงประกาศ ถ้าไม่ชัดถามได้อีกค่ะ",
-          "km": "ខ្ញុំនឹងណែនាំកន្លែងមើលសេចក្តីជូនដំណឹង និងស្តាប់ការប្រកាស។ បើមិនយល់ សូមសួរម្តងទៀត។",
-          "tl": "Ituturo ko kung saan makikita ang mga paskil at maririnig ang mga anunsiyo. Magtanong lang po ulit kung may hindi malinaw.",
-          "en": "I will show you where to check the displays and announcements. Please ask again if anything is unclear."
-        }
+        "translationVi": null,
+        "translations": {}
       },
       "player": null,
       "nextDialogueId": null,
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     }
-  ]
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-muroran.json",
+    "premise": "室蘭駅で診察予約への遅刻を心配する客が、駅員に到着時刻の断定を求めず病院へ先に連絡し、駅を離れる前に別交通の確認先を尋ねる。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
 }
