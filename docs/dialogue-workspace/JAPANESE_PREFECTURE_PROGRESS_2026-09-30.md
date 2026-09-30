@@ -42,3 +42,7 @@ Prefectures: PRF-013, PRF-014. Canonical scenarios covered by Japanese packages:
 ## CLUSTER_07_HOKURIKU_2026-09-30
 
 Prefectures: PRF-015, PRF-016, PRF-017, PRF-018. Canonical scenarios covered by Japanese packages: 452/452. Added: 452 scenarios, 4972 turns. Global shared Japanese packages after this batch: 3134/7128. No translations added. Structural validation and remote persistence must pass before the next cluster. Detailed manifest: `docs/dialogue-workspace/CLUSTER_07_HOKURIKU_2026-09-30.json`.
+
+## CLUSTER_08_KOSHIN_2026-09-30
+
+Prefectures: PRF-019, PRF-020. Canonical scenarios covered by Japanese packages: 285/285. Added: 285 scenarios, 3135 turns. Global shared Japanese packages after this batch: 3419/7128. No translations added. Structural validation and remote persistence must pass before the next cluster. Detailed manifest: `docs/dialogue-workspace/CLUSTER_08_KOSHIN_2026-09-30.json`.
