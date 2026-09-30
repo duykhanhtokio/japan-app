@@ -26,8 +26,13 @@ def recipes():
             result[key] = (title, goal, lines[1:])
     return result
 
-def choose(scenario, loc, n, book):
+def choose(scenario, loc, n, book, city_name=''):
     label = loc['nameJa']
+    # A city such as 国分寺市 must not turn its police station into a temple.
+    for prefix in [city_name, city_name.removesuffix('市').removesuffix('町').removesuffix('区')]:
+        if prefix and label.startswith(prefix):
+            label = label[len(prefix):]
+            break
     special = [
         ('眼科', 'hospital-eye'), ('皮膚科', 'hospital-skin'), ('夜間救急', 'hospital-night'),
         ('焼肉', 'restaurant-allergy'), ('天ぷら', 'restaurant-allergy'),
@@ -127,7 +132,7 @@ def build(prefectures, cluster):
         city = cities[s['cityId']]['nameJa']
         number = cities[s['cityId']]['order'] + s['order'] + loc['order']
         try:
-            key = choose(s, loc, number, book)
+            key = choose(s, loc, number, book, city)
         except ValueError:
             if s['locationType'] == 'Construction Site':
                 key = 'work-site'
