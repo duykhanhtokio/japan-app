@@ -20,7 +20,10 @@ Individually rewritten so far:
 - Yubari: `SC-LOC-JP-01209-01-001` through `SC-LOC-JP-01209-08-001`, plus `SC-LOC-JP-01209-06-002` (9).
 - Iwamizawa: `SC-LOC-JP-01210-01-001` through `SC-LOC-JP-01210-08-001` (8).
 
-Total: 99 individual exchanges / 1089 turns / 495 separately specified player tasks. Each exchange has a manually authored premise and eleven Japanese utterances. The application script only installs those supplied utterances; it does not generate exchanges from a recipe. Scenario IDs, location IDs, dialogue IDs, order and next links remain unchanged. Existing originals are retained at the input commit and in local timestamped backups. Stale translations and furigana are cleared for changed utterances; no translations are authored. Unchanged scenarios and their existing translations are preserved.
+- Abashiri: `SC-LOC-JP-01211-01-001` through `SC-LOC-JP-01211-08-001` (8).
+- Rumoi: `SC-LOC-JP-01212-01-001` through `SC-LOC-JP-01212-08-001` (8).
+
+Total: 115 individual exchanges / 1265 turns / 575 separately specified player tasks. Each exchange has a manually authored premise and eleven Japanese utterances. The application script only installs those supplied utterances; it does not generate exchanges from a recipe. Scenario IDs, location IDs, dialogue IDs, order and next links remain unchanged. Existing originals are retained at the input commit and in local timestamped backups. Stale translations and furigana are cleared for changed utterances; no translations are authored. Unchanged scenarios and their existing translations are preserved.
 
 Editorial sources:
 
@@ -35,13 +38,19 @@ Editorial sources:
 - `scripts/dialogue-authoring/prf-001-kitami.json`
 - `scripts/dialogue-authoring/prf-001-yubari.json`
 - `scripts/dialogue-authoring/prf-001-iwamizawa.json`
+- `scripts/dialogue-authoring/prf-001-abashiri.json`
+- `scripts/dialogue-authoring/prf-001-rumoi.json`
 
-Simulation premises do not certify an actual business's prices, hours, facilities, policies or service availability. Next action is to audit and rewrite Abashiri (CTY-JP-01211), then continue the remaining PRF-001 cities. There are 200 scenarios not yet individually rewritten. Do not begin PRF-002 or translation.
+Simulation premises do not certify an actual business's prices, hours, facilities, policies or service availability. Next action is to audit and rewrite Tomakomai (CTY-JP-01213), then continue the remaining PRF-001 cities. There are 184 scenarios not yet individually rewritten. Do not begin PRF-002 or translation.
 
-Before CONTENT PASS, finish all 299 exchanges, review near and normalized duplicate candidates, compare causal developments and player tasks semantically across the entire master, verify location relevance and natural Japanese, and run compatibility checks. The 99 rewrites have not been declared prefecture-wide CONTENT PASS. Native speaker review is not claimed.
+Before CONTENT PASS, finish all 299 exchanges, review near and normalized duplicate candidates, compare causal developments and player tasks semantically across the entire master, verify location relevance and natural Japanese, and run compatibility checks. The 115 rewrites have not been declared prefecture-wide CONTENT PASS. Native speaker review is not claimed.
 
 Persistence transport: direct shell `git push` lacks an HTTPS credential in this workspace. The authenticated GitHub connection identifies `duykhanhtokio`, grants repository admin/push permission, and successfully creates a blob and updates the required branch to its unchanged input SHA. Use that connection for durable commits, then shell fetch and the repository persistence validator. No new prefecture may begin before remote verification.
 
 Location-label corrections: Asahikawa's canonical `旭川新幹線乗換口` is replaced with `旭川の乗換案内（学習用）`; the canonical ID is preserved and no Shinkansen terminal is asserted. Yubari's `夕張駅` is replaced with `夕張の交通案内（学習用）`; its exchange explicitly avoids boarding at the former station. JR Hokkaido confirms abolition of the Shin-Yubari–Yubari section on 2019-04-01: https://www.jrhokkaido.co.jp/corporate/region/current.html (checked 2026-09-30). This does not certify a real staffed information desk or its services. Other facility labels across the prefecture still need location QA.
 
-Validation at the 99-rewrite checkpoint: 299/299 file coverage, zero structural errors, zero exact script duplicate groups, 32 normalized duplicate groups and 480 near-duplicate candidate pairs. These groups still require editorial work; similarity is not content certification. Global shared-data validator: 7128 scenarios / 78408 turns / zero errors. The legacy validator previously crashed on object packages (`rows.forEach`); it now selects shared/N5/array formats consistently with the runtime loader and merges canonical scenario overrides before checking. No runtime UI or loader changes.
+Validation at the 115-rewrite checkpoint: 299/299 file coverage, zero structural errors, zero exact script duplicate groups, 32 normalized duplicate groups and 440 near-duplicate candidate pairs. These groups still require editorial work; similarity is not content certification. Global shared-data validator: 7128 scenarios / 78408 turns / zero errors. The legacy validator previously crashed on object packages (`rows.forEach`); it now selects shared/N5/array formats consistently with the runtime loader and merges canonical scenario overrides before checking. No runtime UI or loader changes.
+
+Location correction: canonical `LOC-JP-01212-01` now has the display label `留萌の交通案内（学習用）` with its ID preserved. The Rumoi exchange explicitly teaches not to use old station rail departures and is a simulated transport enquiry. The former station label was corrected; JR Hokkaido confirms Ishikari-Numata–Rumoi abolition on 2023-04-01 at the official source above. No current rail service or real staffed counter at the former station is asserted. Other fictitious facility names also require review.
+
+Current runtime compatibility remains checked by both the shared-data validator and updated legacy validator. No native speaker review, multilingual completion, full prefecture semantic approval, device screenshots or publication approval is claimed.

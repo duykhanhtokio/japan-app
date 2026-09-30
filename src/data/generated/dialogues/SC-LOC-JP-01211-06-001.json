@@ -6,15 +6,15 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "いらっしゃいませ。お振り込みのご相談ですか。",
+        "textJa": "こんにちは。振り込みの操作で、何をご確認しましょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01211-06-001-SHARED-02",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -24,25 +24,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_staff",
+        "communicativeIntent": "report_saved_branch_vs_new_invoice",
         "requiredSemanticComponents": {
-          "goal": "振込前の情報と手数料を確認する"
+          "goal": "保存振込先と新請求支店の違いを相談する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。初めての相手に振り込むので、入力内容を確認したいです。",
+        "recommendedAnswerJa": "いつもの相手に振り込みたいです。名前は合っていますが、保存した振込先と新しい請求書の支店が違います。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な情報を具体的に伝えましょう。",
+        "hint": "保存振込先と新請求支店の違いを相談する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "evaluationNotes": "保存振込先と新請求支店の違いを相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01211-06-001-SHARED-03",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -51,15 +51,15 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "振込先の情報が書かれたものはお持ちですか。",
+        "textJa": "まだ確定していませんね。保存先の情報と、今回の請求書の金融機関、支店、番号を照合しましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01211-06-001-SHARED-04",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -69,25 +69,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_staff",
+        "communicativeIntent": "confirm_unsubmitted_same_name_different_numbers",
         "requiredSemanticComponents": {
-          "goal": "振込前の情報と手数料を確認する"
+          "goal": "未確定で機関同一支店番号違いと名前一致の思込を伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "メールに銀行名と口座番号があります。ここで見せてもいいですか。",
+        "recommendedAnswerJa": "確定していません。金融機関は同じですが支店と番号が変わっています。カナの名前だけ同じなら大丈夫だと思いかけました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な情報を具体的に伝えましょう。",
+        "hint": "未確定で機関同一支店番号違いと名前一致の思込を伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "evaluationNotes": "未確定で機関同一支店番号違いと名前一致の思込を伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01211-06-001-SHARED-05",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -96,15 +96,15 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。まず必要な情報がそろっているか確認しましょう。",
+        "textJa": "名前の一致だけでは確認できません。振込先の変更が本当か、相手の確認済みの連絡先に照会できますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01211-06-001-SHARED-06",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -114,25 +114,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_staff",
+        "communicativeIntent": "hold_transfer_until_known_contact_reply",
         "requiredSemanticComponents": {
-          "goal": "振込前の情報と手数料を確認する"
+          "goal": "既知担当へ照会中で期限が近くても送金を待つと述べる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "受取人の名前が表示されたら、そこで止めて確認できますか。",
+        "recommendedAnswerJa": "担当者へ電話しましたが、今日は返事がありません。期限が近いので急いでいますが、確認できるまで送るのを待ちます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な情報を具体的に伝えましょう。",
+        "hint": "既知担当へ照会中で期限が近くても送金を待つと述べる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "evaluationNotes": "既知担当へ照会中で期限が近くても送金を待つと述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01211-06-001-SHARED-07",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -141,15 +141,15 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "操作方法を確認し、確定する前に見直す手順をご案内します。",
+        "textJa": "相手からの確認後に情報を確かめてください。手数料も、保存先を使う場合と新しい情報を入力する場合で、画面を確認しましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01211-06-001-SHARED-08",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -159,25 +159,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_staff",
+        "communicativeIntent": "avoid_overwrite_request_fee_burden_check",
         "requiredSemanticComponents": {
-          "goal": "振込前の情報と手数料を確認する"
+          "goal": "保存先を上書きせず差分メモと手数料負担の確認を求める"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "手数料も知りたいです。金額によって変わりますか。",
+        "recommendedAnswerJa": "保存先を上書きせずに、今日は請求書と違う点をメモします。振込手数料を私が負担するかも、相手に聞きたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な情報を具体的に伝えましょう。",
+        "hint": "保存先を上書きせず差分メモと手数料負担の確認を求める。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "evaluationNotes": "保存先を上書きせず差分メモと手数料負担の確認を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01211-06-001-SHARED-09",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -186,15 +186,15 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "方法や条件で変わる場合があるので、今回の内容で調べましょう。",
+        "textJa": "請求額とは別に、手数料の負担を相手と確認してください。必要な総額は、送金を確定する前に見てください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01211-06-001-SHARED-10",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -204,25 +204,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_staff",
+        "communicativeIntent": "confirm_all_fields_and_deadline_with_recipient",
         "requiredSemanticComponents": {
-          "goal": "振込前の情報と手数料を確認する"
+          "goal": "支店番号名義負担を確認し返答前確定せず期限相談すると述べる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "ありがとうございます。確認が済んでから振り込みます。",
+        "recommendedAnswerJa": "支店、番号、名義、手数料負担を相手へ確認します。返事が来るまで確定せず、期限の相談もします。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な情報を具体的に伝えましょう。",
+        "hint": "支店番号名義負担を確認し返答前確定せず期限相談すると述べる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "evaluationNotes": "支店番号名義負担を確認し返答前確定せず期限相談すると述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01211-06-001-SHARED-11",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -231,16 +231,26 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。誤りがないか一つずつ確かめて進めましょう。",
+        "textJa": "承知しました。確認できた情報で手続きを進めてください。保存先の更新も慎重に行ってください。ありがとうございました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": null,
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     }
-  ]
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-abashiri.json",
+    "premise": "網走の銀行で同名相手への振込相談。カナ名の一致だけで判定せず、保存先の旧支店と新請求書を区別し、受取側への確認で送金を保留する。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
 }

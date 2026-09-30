@@ -6,15 +6,15 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。何かお困りですか。",
+        "textJa": "こんにちは。移動のことで、何を確認されたいですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01212-01-001-SHARED-02",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -24,25 +24,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "station-delay_response_1",
+        "communicativeIntent": "ask_if_old_station_result_is_today",
         "requiredSemanticComponents": {
-          "goal": "遅延情報と次の行動を確認する"
+          "goal": "留萌駅検索の列車時刻が当日遅延案内か尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "留萌市で仕事の待ち合わせがあるのですが、列車が遅れているようです。",
+        "recommendedAnswerJa": "留萌から帰る交通が遅れているか知りたいです。この駅名の検索結果を見ると列車の時刻があるのですが、今日の案内でしょうか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "留萌駅検索の列車時刻が当日遅延案内か尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "留萌駅検索の列車時刻が当日遅延案内か尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01212-01-001-SHARED-03",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -51,15 +51,15 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ご利用予定の列車を教えていただけますか。",
+        "textJa": "古い鉄道の案内と、今ご利用になる交通を分けましょう。旧留萌駅から列車が出る前提の案内は使わないでください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01212-01-001-SHARED-04",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -69,25 +69,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "station-delay_response_2",
+        "communicativeIntent": "correct_old_article_to_bus_operator_stop",
         "requiredSemanticComponents": {
-          "goal": "遅延情報と次の行動を確認する"
+          "goal": "旧記事と気づき今日利用バスの会社停留所で調べ直すと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "この画面にある列車です。運転の見通しはわかりますか。",
+        "recommendedAnswerJa": "古い記事を開いていました。今日乗るつもりなのはバスです。駅名ではなく、利用する会社と停留所で調べ直します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "旧記事と気づき今日利用バスの会社停留所で調べ直すと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "旧記事と気づき今日利用バスの会社停留所で調べ直すと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01212-01-001-SHARED-05",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -96,15 +96,15 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "最新の運行情報を確認します。状況が変わる可能性もあります。",
+        "textJa": "はい。運行情報の更新日時と、対象の便を確認してください。遅延の時刻が出ていなくても、定時運行と決めつけないでください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01212-01-001-SHARED-06",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -114,25 +114,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "station-delay_response_3",
+        "communicativeIntent": "explain_pickup_need_and_unknown_arrival",
         "requiredSemanticComponents": {
-          "goal": "遅延情報と次の行動を確認する"
+          "goal": "家族迎えと到着未定なら未定と伝えたい意図を述べる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "別の経路で行けるかも知りたいです。",
+        "recommendedAnswerJa": "家族に迎えを頼んでいて、到着時刻を知りたいです。遅れが未定なら、そのまま未定と伝えたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "家族迎えと到着未定なら未定と伝えたい意図を述べる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "家族迎えと到着未定なら未定と伝えたい意図を述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01212-01-001-SHARED-07",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -141,15 +141,15 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。目的地と、何時までに到着したいかを教えてください。",
+        "textJa": "確かな案内がない時は、予定と現在の状況を分けて連絡できます。事業者の確認先も調べましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01212-01-001-SHARED-08",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -159,25 +159,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "station-delay_response_4",
+        "communicativeIntent": "request_update_source_and_separate_plan_status",
         "requiredSemanticComponents": {
-          "goal": "遅延情報と次の行動を確認する"
+          "goal": "予定と判明状況を分け再連絡するため更新確認先を求める"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "この駅に、できれば一時間以内に着きたいです。",
+        "recommendedAnswerJa": "予定の到着と、今わかっている状況を別々に送ります。乗る便が確認できたら、もう一度連絡するので、案内の更新場所を教えてください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "予定と判明状況を分け再連絡するため更新確認先を求める。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "予定と判明状況を分け再連絡するため更新確認先を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01212-01-001-SHARED-09",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -186,15 +186,15 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "代替経路の所要時間と費用を比較しましょう。払い戻しについては切符も確認します。",
+        "textJa": "事業者の公式案内で確認してください。この学習場面では実際の便の到着を確定できません。停留所へ向かう前にも最新情報を見ましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01212-01-001-SHARED-10",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -204,25 +204,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "station-delay_response_5",
+        "communicativeIntent": "confirm_operator_stop_date_and_family_update",
         "requiredSemanticComponents": {
-          "goal": "遅延情報と次の行動を確認する"
+          "goal": "旧鉄道案内を使わず会社停留所日付確認と家族更新を伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "わかりました。まず職場に遅れる可能性を連絡します。",
+        "recommendedAnswerJa": "古い駅の列車時刻を使わず、会社、停留所、日付で確認します。家族には今は未定と伝え、確認後に更新します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "旧鉄道案内を使わず会社停留所日付確認と家族更新を伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "旧鉄道案内を使わず会社停留所日付確認と家族更新を伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01212-01-001-SHARED-11",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -231,24 +231,27 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "そのうえで、案内表示の更新を確認しながら経路をお選びください。",
+        "textJa": "承知しました。案内を確かめてから移動してください。ご相談ありがとうございました。お気をつけて。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": null,
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     }
   ],
   "authoring": {
     "locale": "ja",
-    "recipe": "station-delay",
     "cluster": "CLUSTER_01_HOKKAIDO_2026-09-30",
     "contentScope": "simulated_learning_scenario",
     "nativeSpeakerReviewed": false,
-    "translationState": "deferred_until_all_japanese_complete"
+    "translationState": "deferred_until_all_japanese_complete",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-rumoi.json",
+    "premise": "留萌の架空交通案内で遅延相談。旧駅発の鉄道案内を現行便と混同した客が、現在利用予定の交通事業者の情報を調べ、送迎相手へ不確定な到着を伝える。JR公式の留萌区間廃止記録を参照し列車発着を捏造しない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
   }
 }

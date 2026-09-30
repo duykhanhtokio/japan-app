@@ -6,15 +6,15 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "いらっしゃいませ。商品についてご質問ですか。",
+        "textJa": "いらっしゃいませ。商品の表示で何かご不明ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01211-07-001-SHARED-02",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -24,25 +24,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_staff",
+        "communicativeIntent": "ask_discounted_price_and_short_date",
         "requiredSemanticComponents": {
-          "goal": "割引条件と食品表示を確認する"
+          "goal": "チーズ割引シール額から再割引か期限も含め尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "この食品の割引は、レジで自動的に適用されますか。",
+        "recommendedAnswerJa": "このチーズは、シールの金額からさらに割引されるんでしょうか。期限も短いので、買う前に確認したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な情報を具体的に伝えましょう。",
+        "hint": "チーズ割引シール額から再割引か期限も含め尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "evaluationNotes": "チーズ割引シール額から再割引か期限も含め尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01211-07-001-SHARED-03",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -51,15 +51,15 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "シールと商品を確認します。表示されている日付もご覧になりましたか。",
+        "textJa": "シールの表記を一緒に見ましょう。「割引後」の金額なのか、「何円引き」なのかで意味が違います。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01211-07-001-SHARED-04",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -69,25 +69,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_staff",
+        "communicativeIntent": "recognize_after_discount_not_further_deduction",
         "requiredSemanticComponents": {
-          "goal": "割引条件と食品表示を確認する"
+          "goal": "割引後表示と二重値引き誤認を確認する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "まだです。賞味期限がどこに書いてあるか教えてください。",
+        "recommendedAnswerJa": "ここには割引後とあります。もう一度引かれると思っていました。支払う金額はこの表示を基準に確かめるんですね。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な情報を具体的に伝えましょう。",
+        "hint": "割引後表示と二重値引き誤認を確認する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "evaluationNotes": "割引後表示と二重値引き誤認を確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01211-07-001-SHARED-05",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -96,15 +96,15 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こちらにあります。購入前に日付と保存方法を確認してください。",
+        "textJa": "はい、会計で実際の金額も確認できます。期限は、どの表示を見ていらっしゃいますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01211-07-001-SHARED-06",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -114,25 +114,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_staff",
+        "communicativeIntent": "ask_opened_storage_vs_best_before",
         "requiredSemanticComponents": {
-          "goal": "割引条件と食品表示を確認する"
+          "goal": "賞味期限と開封後少しずつ保存の思込を説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "ありがとうございます。割引後の金額も先にわかりますか。",
+        "recommendedAnswerJa": "賞味期限の表示です。今日開けて少しずつ食べるつもりですが、この日付までは開封後も同じ条件で保存できると思っていました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な情報を具体的に伝えましょう。",
+        "hint": "賞味期限と開封後少しずつ保存の思込を説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "evaluationNotes": "賞味期限と開封後少しずつ保存の思込を説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01211-07-001-SHARED-07",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -141,15 +141,15 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "表示の条件を確認してから、ご購入前にお伝えします。",
+        "textJa": "期限の表示だけで開封後の保存を決めないでください。開封後の注意と保存方法も別に確認しましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01211-07-001-SHARED-08",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -159,25 +159,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_staff",
+        "communicativeIntent": "request_smaller_pack_after_opening_notice",
         "requiredSemanticComponents": {
-          "goal": "割引条件と食品表示を確認する"
+          "goal": "開封後注意を読み食べ残しのため小包装比較を求める"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "もし条件が違えば、別の商品を選んでもいいですか。",
+        "recommendedAnswerJa": "開けたら早めに食べると書いてありますね。一人では残りそうなので、小さい包装の商品と比較したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な情報を具体的に伝えましょう。",
+        "hint": "開封後注意を読み食べ残しのため小包装比較を求める。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "evaluationNotes": "開封後注意を読み食べ残しのため小包装比較を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01211-07-001-SHARED-09",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -186,15 +186,15 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "もちろんです。確認後にお決めください。",
+        "textJa": "小さい包装の候補をご案内します。価格だけでなく、内容量と食べ切れる量も比べてお選びください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-01211-07-001-SHARED-10",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -204,25 +204,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "respond_to_staff",
+        "communicativeIntent": "choose_consumable_amount_with_three_labels",
         "requiredSemanticComponents": {
-          "goal": "割引条件と食品表示を確認する"
+          "goal": "割引後額未開封期限開封後注意を分け食切れる小量を選ぶと述べる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "わかりました。まず日付を自分で確かめます。",
+        "recommendedAnswerJa": "割引後の値段と未開封の期限、開封後の注意を分けます。安いから多く買わず、食べ切れる小さいものを選びます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な情報を具体的に伝えましょう。",
+        "hint": "割引後額未開封期限開封後注意を分け食切れる小量を選ぶと述べる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相手の案内に合う返答であることを確認する。",
+        "evaluationNotes": "割引後額未開封期限開封後注意を分け食切れる小量を選ぶと述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-01211-07-001-SHARED-11",
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -231,16 +231,26 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。表示が読みにくければお手伝いします。",
+        "textJa": "承知しました。表示を確認して無理のない量をお選びください。お買い上げありがとうございました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": null,
-      "status": "Japanese draft",
-      "qualityCheck": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     }
-  ]
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-abashiri.json",
+    "premise": "網走のスーパーで割引シールと期限を相談。客は元値からさらに引く表示と割引後価格の違いに気づき、賞味期限と開封後保存を別に確認する。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
 }
