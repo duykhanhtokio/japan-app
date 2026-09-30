@@ -6,15 +6,15 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "いらっしゃいませ。お会計でしょうか。",
+        "textJa": "ありがとうございます。お会計の前に確認したい点はありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-HKD-HAKODATE-08-001-SHARED-02",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -24,25 +24,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "restaurant-bill_response_1",
+        "communicativeIntent": "query_repeated_food_bill_lines",
         "requiredSemanticComponents": {
-          "goal": "注文内容と会計方法を確認する"
+          "goal": "同じ料理の二行と一回しか頼んだ記憶がないことを示し確認を求める"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。函館市の友人と食事をしました。会計の内容を確認したいです。",
+        "recommendedAnswerJa": "この明細に同じ料理が二回書かれています。函館の友人と二人で食べましたが、一回しか頼んでいない気がします。確認できますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "同じ料理の二行と一回しか頼んだ記憶がないことを示し確認を求める。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "同じ料理の二行と一回しか頼んだ記憶がないことを示し確認を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-HKD-HAKODATE-08-001-SHARED-03",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -51,15 +51,15 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こちらがご注文の明細です。",
+        "textJa": "注文の記録を確認します。最初の注文の後に、追加で注文した方はいらっしゃいますか。同行の方にも確認していただけますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-HKD-HAKODATE-08-001-SHARED-04",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -69,25 +69,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "restaurant-bill_response_2",
+        "communicativeIntent": "correct_duplicate_charge_claim_after_companion_check",
         "requiredSemanticComponents": {
-          "goal": "注文内容と会計方法を確認する"
+          "goal": "同行者の追加注文を確認し二重計上の思い違いを訂正する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "この飲み物は注文していないと思います。確認していただけますか。",
+        "recommendedAnswerJa": "友人に聞いたら、私が席を外した時に追加したそうです。二回の注文で合っています。二重に入ったと決めつけてしまいました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "同行者の追加注文を確認し二重計上の思い違いを訂正する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "同行者の追加注文を確認し二重計上の思い違いを訂正する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-HKD-HAKODATE-08-001-SHARED-05",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -96,15 +96,15 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。伝票と注文の記録を確認します。",
+        "textJa": "確認ありがとうございます。ではその二行は、追加分を含むものとして記録を照合します。ほかに気になる項目はありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-HKD-HAKODATE-08-001-SHARED-06",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -114,25 +114,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "restaurant-bill_response_3",
+        "communicativeIntent": "request_drink_abbreviation_breakdown_for_cost_sharing",
         "requiredSemanticComponents": {
-          "goal": "注文内容と会計方法を確認する"
+          "goal": "飲み物の略称が不明と説明し同行者との分担のため内容を尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "ありがとうございます。二人分を別々に払えるかも知りたいです。",
+        "recommendedAnswerJa": "飲み物は名前が短く書かれていて、どれが私の分かわかりません。友人と分担したいので、略称の意味を教えてください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "飲み物の略称が不明と説明し同行者との分担のため内容を尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "飲み物の略称が不明と説明し同行者との分担のため内容を尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-HKD-HAKODATE-08-001-SHARED-07",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -141,15 +141,15 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "お店の会計方法を確認します。できない場合は先にお伝えします。",
+        "textJa": "略称と注文内容を確認して説明します。お二人の分担と、お店で別会計にできるかは別ですので、会計方法も確認しましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-HKD-HAKODATE-08-001-SHARED-08",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -159,25 +159,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "restaurant-bill_response_4",
+        "communicativeIntent": "offer_combined_payment_with_later_private_settlement",
         "requiredSemanticComponents": {
-          "goal": "注文内容と会計方法を確認する"
+          "goal": "別会計不可ならまとめ払いして後で精算する代案を伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "わかりました。確認が終わってから支払います。",
+        "recommendedAnswerJa": "別会計ができなければ、私がまとめて払って友人と後で精算します。まず飲み物の内訳がわかる明細を確認したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "別会計不可ならまとめ払いして後で精算する代案を伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "別会計不可ならまとめ払いして後で精算する代案を伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-HKD-HAKODATE-08-001-SHARED-09",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -186,15 +186,15 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "確認した内容を説明しますので、明細をもう一度ご覧ください。",
+        "textJa": "承知しました。内訳をご説明した後、まとめ払いか別会計かを確認して進めます。追加注文も含めた合計をもう一度ご覧ください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-HKD-HAKODATE-08-001-SHARED-10",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -204,25 +204,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "restaurant-bill_response_5",
+        "communicativeIntent": "confirm_itemized_review_and_receipt_use",
         "requiredSemanticComponents": {
-          "goal": "注文内容と会計方法を確認する"
+          "goal": "追加料理と飲料を確認後に払いレシートで同行者と精算すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。内容が合っているか確認します。レシートもお願いします。",
+        "recommendedAnswerJa": "追加の料理と飲み物の内訳を確認してから、会計方法を決めます。支払い後のレシートも受け取り、友人との精算に使います。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "追加料理と飲料を確認後に払いレシートで同行者と精算すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "追加料理と飲料を確認後に払いレシートで同行者と精算すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-HKD-HAKODATE-08-001-SHARED-11",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -231,24 +231,27 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。お忘れ物のないようにお帰りください。",
+        "textJa": "はい。ご確認いただいてからお支払いを伺います。ご利用ありがとうございました。お帰りの際は、お忘れ物にお気をつけください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": null,
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     }
   ],
   "authoring": {
     "locale": "ja",
-    "recipe": "restaurant-bill",
     "cluster": "CLUSTER_01_HOKKAIDO_2026-09-30",
     "contentScope": "simulated_learning_scenario",
     "nativeSpeakerReviewed": false,
-    "translationState": "deferred_until_all_japanese_complete"
+    "translationState": "deferred_until_all_japanese_complete",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-hakodate.json",
+    "premise": "函館の居酒屋で明細に同じ料理が二行あり二重計上を疑うが、同行者の追加注文を確認して訂正し、飲料の内訳と支払い方法を整理する。店の実在料金は指定しない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
   }
 }
