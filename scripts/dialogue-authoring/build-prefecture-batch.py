@@ -40,6 +40,7 @@ def choose(scenario, loc, n, book):
         ('郵便局', ['post-parcel', 'post-redelivery', 'post-address', 'post-letter'][n % 4]),
         ('銀行窓口', ['bank-open', 'bank-transfer', 'bank-card', 'bank-update'][n % 4]),
         ('ATM', 'bank-transfer'), ('鮮魚売場', 'fish-shop'), ('果物売場', 'fruit-shop'),
+        ('銀行', ['bank-open', 'bank-transfer', 'bank-card', 'bank-update'][n % 4]),
         ('携帯ショップ', 'phone-shop'), ('ICカード', 'ic-card'), ('動物園', 'zoo'),
         ('展望台', 'viewpoint'), ('書道教室', 'calligraphy'), ('工芸体験', 'craft'),
         ('科学館', 'museum'), ('博物館', 'museum'), ('古民家園', 'museum'), ('城跡', 'museum'),
@@ -80,6 +81,22 @@ EXTRA_MATCHES = [
     ('海の家', 'beach'), ('生花店', 'florist'), ('駐輪場', 'bicycle-parking'),
     ('介護施設', 'care-work'), ('祭り準備', 'festival-work'), ('登山口', 'mountain'),
     ('ドラッグストア日用品', 'shop-compare'),
+    ('ホテル', 'hotel'), ('旅館', 'hotel'), ('リゾート', 'hotel'),
+    ('ANAクラウンプラザ', 'hotel'), ('グランドハイアット', 'hotel'), ('ドーミーイン', 'hotel'),
+    ('シェラトン', 'hotel'), ('スポーツジム', 'gym'), ('図書館', 'library'),
+    ('日本語教室', 'classroom'), ('コインランドリー', 'laundry'), ('カラオケ', 'karaoke'),
+    ('茶室', 'tea'), ('スキー場', 'ski-area'), ('金属加工', 'work-machine'),
+    ('精密部品検査', 'work-inspect'), ('織物工房', 'work-craft'), ('陶芸窯', 'work-craft'),
+    ('野菜ハウス', 'work-farm'), ('ビニールハウス', 'work-farm'), ('野菜畑', 'work-farm'),
+    ('茶畑', 'work-farm'), ('花き苗農園', 'work-farm'), ('惣菜キッチン', 'work-food'),
+    ('小型工場', 'work-machine'), ('水族館', 'zoo'), ('動植物園', 'zoo'),
+    ('どうぶつ', 'zoo'), ('神社', 'shrine'), ('神宮', 'shrine'), ('大社', 'shrine'),
+    ('寺', 'shrine'), ('銭湯', 'onsen'), ('ビーチ', 'beach'), ('海水浴場', 'beach'),
+    ('野球場', 'live'), ('アリーナ', 'live'), ('公園', 'park-walk'),
+    ('展望', 'viewpoint'), ('タワー', 'viewpoint'), ('テレビ塔', 'viewpoint'),
+    ('コンビニ', 'shop-compare'), ('メディアテーク', 'library'),
+    ('テーマパーク', 'amusement'), ('ディズニー', 'amusement'),
+    ('ユニバーサル', 'amusement'), ('レゴランド', 'amusement'),
 ]
 
 def build(prefectures, cluster):
@@ -109,9 +126,31 @@ def build(prefectures, cluster):
         loc = locations[s['locationId']]
         city = cities[s['cityId']]['nameJa']
         number = cities[s['cityId']]['order'] + s['order'] + loc['order']
-        key = choose(s, loc, number, book)
+        try:
+            key = choose(s, loc, number, book)
+        except ValueError:
+            if s['locationType'] == 'Construction Site':
+                key = 'work-site'
+            elif s['locationType'] == 'Other':
+                key = ['visitor-route', 'visitor-photo', 'visitor-info', 'visitor-meeting'][number % 4]
+            else:
+                raise
         title, goal, lines = book[key]
         words = [line.replace('{city}', city) for line in lines]
+        families = {
+            'restaurant': ['restaurant-order', 'restaurant-allergy', 'restaurant-bill', 'restaurant-takeaway', 'restaurant-seat', 'restaurant-reserve'],
+            'shop': ['shop-compare', 'shop-size', 'shop-gift', 'shop-stock'],
+            'visitor': ['visitor-route', 'visitor-photo', 'visitor-info', 'visitor-meeting'],
+            'station': ['station-route', 'station-delay', 'station-ticket', 'station-access'],
+        }
+        family = key.split('-')[0]
+        if '\n'.join(words) in signatures and family in families:
+            for candidate in families[family]:
+                ct, cg, cl = book[candidate]
+                cw = [line.replace('{city}', city) for line in cl]
+                if '\n'.join(cw) not in signatures:
+                    key, title, goal, words = candidate, ct, cg, cw
+                    break
         # Multiple distinct locations in a city can legitimately teach the same skill.
         # Identify the second visit naturally rather than adding numeric IDs to speech.
         signature = '\n'.join(words)
@@ -164,6 +203,13 @@ def build(prefectures, cluster):
     (STAGE/rp).parent.mkdir(parents=True,exist_ok=True)
     (STAGE/rp).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     changed.append(rp)
+    progress_path = 'docs/dialogue-workspace/JAPANESE_PREFECTURE_PROGRESS_2026-09-30.md'
+    progress = (ROOT / progress_path).read_text()
+    marker = f'## {cluster}'
+    if marker not in progress:
+        progress += f'\n{marker}\n\nPrefectures: {", ".join(prefectures)}. Canonical scenarios covered by Japanese packages: {len(targets)}/{len(targets)}. Added: {len(manifest)} scenarios, {len(manifest)*11} turns. Global shared Japanese packages after this batch: {len(existing)+len(manifest)}/{len(scenarios)}. No translations added. Structural validation and remote persistence must pass before the next cluster. Detailed manifest: `{rp}`.\n'
+    (STAGE / progress_path).write_text(progress)
+    changed.append(progress_path)
     (BASE/'changed.json').write_text(json.dumps(changed))
     print(json.dumps({k:v for k,v in report.items() if k not in ['scenarios','recipesUsed']},ensure_ascii=False))
 

@@ -22,3 +22,7 @@ Cities: Muroran 10, Kushiro 10, Kitami 9, Yubari 2, Iwamizawa 8, Abashiri 8, Sap
 ## Next action
 
 Determine all unfinished canonical scenarios in the first geographic cluster, then finish its Japanese content. No new translations until all Japanese content is complete.
+
+## CLUSTER_03_SOUTH_TOHOKU_2026-09-30
+
+Prefectures: PRF-004, PRF-006, PRF-007. Canonical scenarios covered by Japanese packages: 367/367. Added: 346 scenarios, 3806 turns. Global shared Japanese packages after this batch: 1001/7128. No translations added. Structural validation and remote persistence must pass before the next cluster. Detailed manifest: `docs/dialogue-workspace/CLUSTER_03_SOUTH_TOHOKU_2026-09-30.json`.
