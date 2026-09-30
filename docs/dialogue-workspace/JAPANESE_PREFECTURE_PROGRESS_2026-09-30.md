@@ -26,3 +26,7 @@ Determine all unfinished canonical scenarios in the first geographic cluster, th
 ## CLUSTER_03_SOUTH_TOHOKU_2026-09-30
 
 Prefectures: PRF-004, PRF-006, PRF-007. Canonical scenarios covered by Japanese packages: 367/367. Added: 346 scenarios, 3806 turns. Global shared Japanese packages after this batch: 1001/7128. No translations added. Structural validation and remote persistence must pass before the next cluster. Detailed manifest: `docs/dialogue-workspace/CLUSTER_03_SOUTH_TOHOKU_2026-09-30.json`.
+
+## CLUSTER_04_NORTH_KANTO_2026-09-30
+
+Prefectures: PRF-008, PRF-009, PRF-010. Canonical scenarios covered by Japanese packages: 503/503. Added: 503 scenarios, 5533 turns. Global shared Japanese packages after this batch: 1504/7128. No translations added. Structural validation and remote persistence must pass before the next cluster. Detailed manifest: `docs/dialogue-workspace/CLUSTER_04_NORTH_KANTO_2026-09-30.json`.
