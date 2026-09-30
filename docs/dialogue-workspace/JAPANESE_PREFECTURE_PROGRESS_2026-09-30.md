@@ -30,3 +30,7 @@ Prefectures: PRF-004, PRF-006, PRF-007. Canonical scenarios covered by Japanese 
 ## CLUSTER_04_NORTH_KANTO_2026-09-30
 
 Prefectures: PRF-008, PRF-009, PRF-010. Canonical scenarios covered by Japanese packages: 503/503. Added: 503 scenarios, 5533 turns. Global shared Japanese packages after this batch: 1504/7128. No translations added. Structural validation and remote persistence must pass before the next cluster. Detailed manifest: `docs/dialogue-workspace/CLUSTER_04_NORTH_KANTO_2026-09-30.json`.
+
+## CLUSTER_05_EAST_KANTO_2026-09-30
+
+Prefectures: PRF-011, PRF-012. Canonical scenarios covered by Japanese packages: 642/642. Added: 642 scenarios, 7062 turns. Global shared Japanese packages after this batch: 2146/7128. No translations added. Structural validation and remote persistence must pass before the next cluster. Detailed manifest: `docs/dialogue-workspace/CLUSTER_05_EAST_KANTO_2026-09-30.json`.
