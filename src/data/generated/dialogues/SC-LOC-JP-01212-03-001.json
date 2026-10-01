@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。会計の書類について、何をご確認されたいですか。",
+        "textJa": "こんにちは。受診後のご相談で何をお手伝いできますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "ask_receipt_as_unfit_for_work_proof",
+        "communicativeIntent": "SC-LOC-JP-01212-03-001_semantic_task_1",
         "requiredSemanticComponents": {
-          "goal": "領収書で病気欠勤証明になるか尋ねる"
+          "goal": "濡医療説明読不明自己補完せず再説明を求める"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "今日休んだことを会社に説明したいです。この領収書を出せば、病気で働けなかった証明になりますか。",
+        "recommendedAnswerJa": "もらった説明の紙が水で濡れて、読めない行があります。自己判断で補わず、担当へもう一度聞きたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "領収書で病気欠勤証明になるか尋ねる。日本語で伝えてください。",
+        "hint": "濡医療説明読不明自己補完せず再説明を求める。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "領収書で病気欠勤証明になるか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "濡医療説明読不明自己補完せず再説明を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "領収書は支払いの記録です。会社がどの書類を必要としているか、案内はありますか。",
+        "textJa": "用紙をお持ちですか。どの部分が読めなくなっていますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "check_employer_requirement_before_certificate",
+        "communicativeIntent": "SC-LOC-JP-01212-03-001_semantic_task_2",
         "requiredSemanticComponents": {
-          "goal": "会社文言は受診確認のみで診断書指定なしと説明し先に確認する"
+          "goal": "下行不明旧類似紙と今回指示非同一を述べる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "メールでは受診を確認できるものとありますが、診断書とは書いていません。必要な書類を会社に聞いてから依頼したいです。",
+        "recommendedAnswerJa": "この下の行です。前に受け取った似た紙はありますが、今回も同じ指示だとは思いません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "会社文言は受診確認のみで診断書指定なしと説明し先に確認する。日本語で伝えてください。",
+        "hint": "下行不明旧類似紙と今回指示非同一を述べる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "会社文言は受診確認のみで診断書指定なしと説明し先に確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "下行不明旧類似紙と今回指示非同一を述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。診断書などの医療文書が必要なら、受付方法を担当へ確認してください。会社の指定様式はありますか。",
+        "textJa": "今回の説明を担当へ確認します。用紙の上にある氏名や受診日は読めますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "identify_patient_vs_doctor_form_fields",
+        "communicativeIntent": "SC-LOC-JP-01212-03-001_semantic_task_3",
         "requiredSemanticComponents": {
-          "goal": "添付様式の本人医師欄を分け勝手に全記入しないと述べる"
+          "goal": "本人氏名当日可読本人記録で照会希望"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "添付に様式がありました。自分が書く欄と医師に書いてもらう欄があるので、全部を自分で埋めないようにします。",
+        "recommendedAnswerJa": "名前と今日の日付は読めます。友人の紙を借りるのではなく、自分の今日の説明として確認したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "添付様式の本人医師欄を分け勝手に全記入しないと述べる。日本語で伝えてください。",
+        "hint": "本人氏名当日可読本人記録で照会希望。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "添付様式の本人医師欄を分け勝手に全記入しないと述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "本人氏名当日可読本人記録で照会希望。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "指定様式を持参して、医療文書の担当へご相談ください。発行の可否、時間、費用は内容によって確認が必要です。",
+        "textJa": "本人の説明として照会します。読める行も含め、わからない所を教えてください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "request_deadline_flexibility_keep_receipt",
+        "communicativeIntent": "SC-LOC-JP-01212-03-001_semantic_task_4",
         "requiredSemanticComponents": {
-          "goal": "当日発行不可の可能性を理解し会社期限相談と領収書保管を述べる"
+          "goal": "次連絡目安不明数字推測せず言葉メモ希望"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "明日提出と言われていますが、今日作ってもらえるとは限らないんですね。会社にも期限を相談します。領収書はなくさず持ち帰ります。",
+        "recommendedAnswerJa": "次に連絡する目安の所です。見えない数字を想像せず、言葉で聞いてメモを取りたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "当日発行不可の可能性を理解し会社期限相談と領収書保管を述べる。日本語で伝えてください。",
+        "hint": "次連絡目安不明数字推測せず言葉メモ希望。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "当日発行不可の可能性を理解し会社期限相談と領収書保管を述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "次連絡目安不明数字推測せず言葉メモ希望。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "そのようにしてください。書類を依頼する場合は、受け取り方法も担当に確認しましょう。",
+        "textJa": "担当が内容を確認してご説明します。聞いた内容も復唱して確かめてください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "confirm_requirement_then_form_application",
+        "communicativeIntent": "SC-LOC-JP-01212-03-001_semantic_task_5",
         "requiredSemanticComponents": {
-          "goal": "必要書類期限確認後様式で依頼し領収書医療文書を区別する"
+          "goal": "氏名日付再説明復唱旧数字代入しないを整理"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "会社に必要書類と期限を確認し、必要なら様式を持って依頼します。領収書と医療文書を混同しないようにします。",
+        "recommendedAnswerJa": "氏名と受診日を示し、読めない行の再説明をお願いします。メモを復唱して、古い紙の数字で埋めません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "必要書類期限確認後様式で依頼し領収書医療文書を区別する。日本語で伝えてください。",
+        "hint": "氏名日付再説明復唱旧数字代入しないを整理。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "必要書類期限確認後様式で依頼し領収書医療文書を区別する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "氏名日付再説明復唱旧数字代入しないを整理。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。必要になったら文書の受付へお尋ねください。お大事に。",
+        "textJa": "承知しました。担当へご案内します。お大事になさってください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-rumoi.json",
-    "premise": "留萌の病院会計学習場面。客が領収書を職場欠勤理由の証明と同一視し、会社指定の様式と医療文書作成を別に確認する。発行や金額を確約しない。",
+    "premise": "学習用シミュレーション。診察後の説明用紙がかばんで濡れた受診者が、読めない部分を推測せず担当へ再説明を依頼する。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

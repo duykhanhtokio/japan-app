@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。職場へ出す書類のことで、何をご相談されたいですか。",
+        "textJa": "こんにちは。受診の準備で何をお手伝いできますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "shibetsu_03_task_1",
+        "communicativeIntent": "SC-LOC-JP-01220-03-001_semantic_task_1",
         "requiredSemanticComponents": {
-          "goal": "受診日会計明細で休業期間も示せるか尋ねる"
+          "goal": "夜勤睡眠記録実時刻の担当記入確認を相談"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "会社から休んだ期間の書類を求められました。会計の明細に受診日があるので、それで期間も示せますか。",
+        "recommendedAnswerJa": "睡眠の記録を持ってくるよう言われました。夜勤の日もあるので、実際の時刻をどう書くか担当に聞きたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "受診日会計明細で休業期間も示せるか尋ねる。日本語で伝えてください。",
+        "hint": "夜勤睡眠記録実時刻の担当記入確認を相談。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "受診日会計明細で休業期間も示せるか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "夜勤睡眠記録実時刻の担当記入確認を相談。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "明細の受診日と、休業の期間を示す医療文書は別です。会社から書類名の指定はありますか。",
+        "textJa": "用紙と、ご自身で書いた記録を見せていただけますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "shibetsu_03_task_2",
+        "communicativeIntent": "SC-LOC-JP-01220-03-001_semantic_task_2",
         "requiredSemanticComponents": {
-          "goal": "書類名未指定と一日受診対数日休業の違いを伝える"
+          "goal": "昼寝実時刻起床も書換せず記録と説明"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "書類名は書かれていません。受診日は一日ですが、休んだのは数日なので、その違いを確認したいです。",
+        "recommendedAnswerJa": "こちらです。昼に寝た日を、夜の睡眠と同じ時刻へ書き換えず、起きた時刻もそのまま記しました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "書類名未指定と一日受診対数日休業の違いを伝える。日本語で伝えてください。",
+        "hint": "昼寝実時刻起床も書換せず記録と説明。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "書類名未指定と一日受診対数日休業の違いを伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "昼寝実時刻起床も書換せず記録と説明。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "必要な文書を職場へ確認し、医療担当にもご相談ください。休む期間を受付だけで決めることはできません。",
+        "textJa": "担当へ記入の確認を依頼します。職場での休憩は記録していますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "shibetsu_03_task_3",
+        "communicativeIntent": "SC-LOC-JP-01220-03-001_semantic_task_3",
         "requiredSemanticComponents": {
-          "goal": "自己予定休暇を医療証明と決めず経過要求を担当へ示す"
+          "goal": "勤務休憩と睡眠非同一を区別"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "私が予定していた休みの日を、そのまま病院が証明するとは考えません。担当に経過と職場の要求を説明します。",
+        "recommendedAnswerJa": "休憩の時刻はあります。でも寝ていたとは限らないので、休憩全部を睡眠時間に数えません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "自己予定休暇を医療証明と決めず経過要求を担当へ示す。日本語で伝えてください。",
+        "hint": "勤務休憩と睡眠非同一を区別。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "自己予定休暇を医療証明と決めず経過要求を担当へ示す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "勤務休憩と睡眠非同一を区別。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。指定の様式があればご用意ください。発行できる内容と必要な確認は担当がご案内します。",
+        "textJa": "実際にわかる状態を分けて伝えてください。覚えていない時刻はありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "shibetsu_03_task_4",
+        "communicativeIntent": "SC-LOC-JP-01220-03-001_semantic_task_4",
         "requiredSemanticComponents": {
-          "goal": "様式本人欄確認と会計対文書依頼の別手続きを確認する"
+          "goal": "二日前起床不明で逆算を正確記録にしない"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "会社に様式を聞き、本人が書く欄だけ確認します。文書の依頼と今日の支払いは別に手続きするんですね。",
+        "recommendedAnswerJa": "二日前に目が覚めた時刻は覚えていません。仕事の開始から逆算して、正確な時刻として書くのはやめます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "様式本人欄確認と会計対文書依頼の別手続きを確認する。日本語で伝えてください。",
+        "hint": "二日前起床不明で逆算を正確記録にしない。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "様式本人欄確認と会計対文書依頼の別手続きを確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "二日前起床不明で逆算を正確記録にしない。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。会計の書類を保管し、医療文書の担当へ依頼方法と費用、受取を確認してください。",
+        "textJa": "未確認の点も担当へ伝えれば相談できます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "shibetsu_03_task_5",
+        "communicativeIntent": "SC-LOC-JP-01220-03-001_semantic_task_5",
         "requiredSemanticComponents": {
-          "goal": "会社指定医療確認後必要文書依頼を述べる"
+          "goal": "睡眠起床休憩分離不明明記と担当確認を整理"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "受診日と休んだ期間を混同せず、会社の指定を聞きます。医療担当に確認し、必要な文書だけ依頼します。",
+        "recommendedAnswerJa": "昼の睡眠、起床、休憩を分けて見せます。二日前の起床は不明と書き、記入方法と説明を担当へ確認します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "会社指定医療確認後必要文書依頼を述べる。日本語で伝えてください。",
+        "hint": "睡眠起床休憩分離不明明記と担当確認を整理。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "会社指定医療確認後必要文書依頼を述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "睡眠起床休憩分離不明明記と担当確認を整理。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。文書の受付へご案内します。お大事に。",
+        "textJa": "承知しました。記録を持って担当へご相談ください。お大事に。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-shibetsu.json",
-    "premise": "士別の病院で職場休業期間の文書相談。会計明細だけで期間が証明されると決めず、職場の指定と医療者の確認を分ける。",
+    "premise": "学習用シミュレーション。医師へ持参する睡眠記録で夜勤の睡眠を夜の欄へ移さず、実際の時刻と休憩を分けて記す。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

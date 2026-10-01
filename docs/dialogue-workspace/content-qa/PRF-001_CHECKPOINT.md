@@ -12,11 +12,11 @@ Full player answers and task descriptions are unique across the 299 sources. Str
 
 ## Next action
 
-Do not restart the 299-file rewrite. Continue semantic and location-label audit. Premise review identifies overlapping learning goals despite lexical uniqueness, including Asahikawa/Fukagawa postal deadline distinction, Wakkanai/Sunagawa set-price shopping, Sapporo/Takikawa unit-price shopping, and several park fatigue/return-route enquiries. Inspect complete exchanges and replace overlapping developments rather than synonym edits. Some medical certificate enquiries and household-move scope enquiries also need cross-city comparison.
+All 299 have been rewritten. Continue full-turn semantic QA, beginning with the four pending groups in `PRF-001_SEMANTIC_REVIEW.json`. Do not restart file generation. Twelve identified semantic overlaps were replaced on 2026-10-01: the report records exact IDs, comparison peers, different causal developments and runtime hashes. Full scenario titles/goals and natural player-task wording still require review. Do not award CONTENT PASS from the zero duplicate counts.
 
-Correct historic/fictitious venue display labels while preserving IDs. Earlier corrected labels: Asahikawa Shinkansen transfer, Yubari and Rumoi transport. Pending examples: Monbetsu, Mikasa, Utashinai, Ishikari, Date and Hokuto station-like labels. Learning simulations must not imply verified operating stations, hospitals, banks or staffed desks. Source-backed facts remain distinct from simulated dialogue.
+`PRF-001_LOCATION_LABEL_REPAIRS.json` records 240 PRF-001-only record changes: ambiguous Monbetsu/Mikasa/Utashinai/Ishikari/Date/Hokuto station-like names become transport learning enquiries; fictitious hospital/bank/police/post/park labels explicitly describe simulations; synthetic operating hours removed. IDs, categories and other prefectures preserved. This is honest labelling rather than certification that real staffed counters or services exist. Named Sapporo/special venues still need operational-data review. Official JR reference URLs are recorded in the report.
 
-After repairs, read candidate pairs, audit all 299 for causal progression/task-answer alignment/location role, run shared and legacy validators plus `git diff --check`, then persist. `contentPass=false`, `nativeSpeakerReviewed=false`, translations deferred until all Japanese work is complete. Do not begin PRF-002 before prefecture semantic approval and remote verification.
+Effective canonical difficulty is None for all 299; all shared rewritten turns have unrestricted grammar/vocabulary targets. No UI/route/loader changes. Native-speaker review is not claimed. Translation remains deferred. Do not begin PRF-002 until full content QA and remote verification.
 
 ## Durability
 
