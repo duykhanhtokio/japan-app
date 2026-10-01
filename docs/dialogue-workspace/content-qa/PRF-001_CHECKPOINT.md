@@ -12,7 +12,11 @@ Full player answers and task descriptions are unique across the 299 sources. Str
 
 ## Next action
 
-All 299 have been rewritten. Continue full-turn semantic QA, beginning with the four pending groups in `PRF-001_SEMANTIC_REVIEW.json`. Do not restart file generation. Twelve identified semantic overlaps were replaced on 2026-10-01: the report records exact IDs, comparison peers, different causal developments and runtime hashes. Full scenario titles/goals and natural player-task wording still require review. Do not award CONTENT PASS from the zero duplicate counts.
+All 299 have been rewritten. The four previously pending comparison groups have now been read in full and their distinct information gaps, decisions and outcomes documented in `PRF-001_SEMANTIC_REVIEW.json`. This closes those groups only. Twelve previously identified overlaps remain replaced.
+
+31/299 complete exchanges have had their five player instructions manually rewritten into natural Japanese in this checkpoint (155 tasks): the twelve replacement scenarios, eleven scenarios from the four comparison groups, and all eight Nemuro exchanges. Source and runtime goals/hints/evaluation notes match. Mikasa's NPC no longer mentions the learning simulation inside its speech. The editorial apply tool now notices task/premise-only changes, and backup directories use microseconds to avoid overwriting manifests between batches.
+
+Remaining: full-turn semantic/naturalness audit across all 299, instruction review for the other 268, and canonical title/goal alignment. **Next: Chitose's other six scenarios**, then Takikawa's other seven, then city order. Do not regenerate completed exchanges or award CONTENT PASS from the zero duplicate counts.
 
 `PRF-001_LOCATION_LABEL_REPAIRS.json` records 240 PRF-001-only record changes: ambiguous Monbetsu/Mikasa/Utashinai/Ishikari/Date/Hokuto station-like names become transport learning enquiries; fictitious hospital/bank/police/post/park labels explicitly describe simulations; synthetic operating hours removed. IDs, categories and other prefectures preserved. This is honest labelling rather than certification that real staffed counters or services exist. Named Sapporo/special venues still need operational-data review. Official JR reference URLs are recorded in the report.
 

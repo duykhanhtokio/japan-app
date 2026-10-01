@@ -12,7 +12,7 @@ def read(path):
 
 source = ROOT / sys.argv[1]
 entries = read(source)
-backup = ROOT / '.dialogue-backups' / datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')
+backup = ROOT / '.dialogue-backups' / datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
 manifest = []
 for sid, entry in entries.items():
     assert len(entry['turns']) == 11 and len(entry['tasks']) == 5, sid
@@ -20,7 +20,7 @@ for sid, entry in entries.items():
     path = ROOT / 'src/data/generated/dialogues' / (sid + '.json')
     data = read(path)
     assert len(data['shared']) == 11, sid
-    if data.get('authoring', {}).get('editorialSource') == str(source.relative_to(ROOT)) and all((t['player']['recommendedAnswerJa'] if n % 2 else t['npc']['textJa']) == entry['turns'][n] for n, t in enumerate(data['shared'])):
+    if data.get('authoring', {}).get('editorialSource') == str(source.relative_to(ROOT)) and data['authoring'].get('premise') == entry['premise'] and all((t['player']['recommendedAnswerJa'] if n % 2 else t['npc']['textJa']) == entry['turns'][n] for n, t in enumerate(data['shared'])) and all(t['player'].get('communicativeIntent') == entry['tasks'][i][0] and t['player'].get('requiredSemanticComponents') == {'goal': entry['tasks'][i][1]} for i, t in enumerate(data['shared'][1::2])):
         continue
     backup.mkdir(parents=True, exist_ok=True)
     shutil.copy2(path, backup / path.name)
