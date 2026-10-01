@@ -2,7 +2,7 @@
 
 Status: **FAIL CONTENT QA — SEMANTIC AUDIT IN PROGRESS**.
 
-Current continuation (supersedes historical next-actions below): 29 municipal exchanges compared in full; Sapporo in-city-move overlap fully replaced, nine NPC record/condition/preparation repairs. Twenty-nine full replacements documented; 265 distinct exchanges in full comparison records. CONTENT QA remains FAIL. Next: remaining 34 bank/work/retail/post/other exchanges, reconciling current remote. No translations or PRF-002.
+Current continuation (supersedes historical next-actions below): final34 previously uncovered exchanges read in full (19 bank and15 workplace/post/retail/other);13 narrow NPC evidence/record/packaging/product-answer repairs. All299 distinct exchanges now have full comparison records;29 full replacements retained. Structural/parity screening: zero errors, zero exact/normalized/near candidates; UI lock10/10 PASS. CONTENT QA remains FAIL pending final causal-repetition and answer/closure signoff, especially card/PIN handoffs and workplace scope/waiting answers. No translations or PRF-002.
 
 Branch: `recovery/jlpt-n3-n1`. This continuation started from remote-verified `f687aed169babf8e40ca85659273bc0687d3a964` (251/299), preserving all existing data. Original input: `dd1ecd44cc9537efc79b578ac636d5f68792ceff`.
 
@@ -113,3 +113,8 @@ Sapporo move overlap with Abashiri replaced by resident flyer revision (organize
 Concurrent municipal history preserved: local0522dcb4 (27 conversations, Fukagawa/Furano source-document readings and Shibetsu applicant/consultant fields) retained in archive branch and exact-tree GitHub counterpart. Latest completion repairs retain those definitions, complete fictional field/copy handling and replace Sapporo move overlap. Both review histories retained; no CONTENT PASS.
 
 The other session published exact-tree counterpart `d8cc35a1` during reconciliation. This continuation uses that remote as its parent. Verbatim local commit0522dcb4 is also preserved in `docs/dialogue-workspace/history/PRF-001_LOCAL_0522dcb4.bundle`, verified with Git; prerequisite is7bcd809e. No local history is discarded.
+
+
+## Final uncovered-exchange comparison continuation
+
+Read all eleven turns and five tasks for the remaining34 exchanges; revised13 and re-read them in full. Date demonstrates the single completed payment record; Noboribetsu compares envelope fit; Yubari supplies the fictional onion label result and changes the purchase choice. Ten bank repairs distinguish supplied evidence, completed enquiry notes and still-pending bank decisions. Counts now cover299/299; this does not assert CONTENT PASS. The semantic report lists the next concrete closure checks and preserves all prior findings and histories.
