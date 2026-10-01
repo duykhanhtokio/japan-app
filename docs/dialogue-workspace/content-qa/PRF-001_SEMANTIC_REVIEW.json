@@ -196,10 +196,26 @@
         "自分で相手を特定すると申し出る業者に情報を渡さず、通信事業者への相談方法を知りたいと伝える",
         "二日分の着信履歴と未応答で発言を聞いていないことを示し、設定や担当窓口について相談すると伝える"
       ]
+    },
+    {
+      "replacedScenarioId": "SC-LOC-JP-01229-08-001",
+      "comparisonScenarioId": "SC-LOC-JP-01218-08-001",
+      "oldOverlap": "Closed park path checked against present signage, then choose an allowed alternative path. Actor information differed but the resolution repeated Akabira. Both complete exchanges read.",
+      "newDistinctDevelopment": "Two bird observations ten minutes apart may concern the same flock: retain counts for each observation, location and uncertainty instead of adding an unsupported unique-individual total.",
+      "status": "replacement reviewed against supplied tasks and utterances; no prefecture approval",
+      "source": "scripts/dialogue-authoring/prf-001-furano.json",
+      "runtimeSha256": "64c1b1d3ebe120e53ac0d4887a698bfb4eb32760e7a1b6885c54d8826fd6a95c",
+      "playerTasks": [
+        "公園で見た鳥の数を観察記録に書きたいので、同じ鳥を重複して数えた可能性を相談する",
+        "池の同じ場所で十時と十時十分にそれぞれ十羽見たが、移動して戻った同じ群れかもしれないと説明する",
+        "個体を見分ける印は分からず、別の二群とは確認できないので、観察時刻ごとの数を記録したいと伝える",
+        "時刻と場所を案内図で示し、見失った間の行動を推測で足さず、群れの関係は不明と書くと伝える",
+        "二十羽いたとはせず、二回それぞれ十羽見たことと同じ群れか不明なことを分けて報告すると伝える"
+      ]
     }
   ],
   "otherRemainingWork": [
-    "Complete full-turn semantic review and natural Japanese player instructions for the remaining 235/299 scenarios; 64/299 reviewed instruction sets explicitly recorded. Next: Furano remaining seven (SC-LOC-JP-01229-01-001 through -06-001, plus -08-001); -07-001 already reviewed. Then Noboribetsu all eight. Whole-corpus comparison can still reveal issues in reviewed sets.",
+    "Complete full-turn semantic review and natural Japanese player instructions for the remaining 204/299 scenarios; 95/299 reviewed instruction sets explicitly recorded. Next: Kitahiroshima all eight (SC-LOC-JP-01234-01-001 through -08-001), then Ishikari and Hokuto; afterwards the remaining earlier-city sets. Whole-corpus comparison can still reveal issues in reviewed sets.",
     "Align canonical scenario titles/goals with revised premises; some legacy metadata still names original recipe goals.",
     "Audit specifically named landmark/business operational metadata; no live facility verification is claimed."
   ],
@@ -249,8 +265,8 @@
   "pendingGroups": [],
   "naturalInstructionReview": {
     "status": "partial; not prefecture approval",
-    "scenarioCount": 64,
-    "playerInstructionCount": 320,
+    "scenarioCount": 95,
+    "playerInstructionCount": 475,
     "scenarioIds": [
       "SC-LOC-JP-01228-05-001",
       "SC-LOC-JP-01226-07-001",
@@ -315,7 +331,38 @@
       "SC-LOC-JP-01227-05-001",
       "SC-LOC-JP-01227-06-001",
       "SC-LOC-JP-01227-07-001",
-      "SC-LOC-JP-01227-08-001"
+      "SC-LOC-JP-01227-08-001",
+      "SC-LOC-JP-01229-01-001",
+      "SC-LOC-JP-01229-02-001",
+      "SC-LOC-JP-01229-03-001",
+      "SC-LOC-JP-01229-04-001",
+      "SC-LOC-JP-01229-05-001",
+      "SC-LOC-JP-01229-06-001",
+      "SC-LOC-JP-01229-08-001",
+      "SC-LOC-JP-01230-01-001",
+      "SC-LOC-JP-01230-02-001",
+      "SC-LOC-JP-01230-03-001",
+      "SC-LOC-JP-01230-04-001",
+      "SC-LOC-JP-01230-05-001",
+      "SC-LOC-JP-01230-06-001",
+      "SC-LOC-JP-01230-07-001",
+      "SC-LOC-JP-01230-08-001",
+      "SC-LOC-JP-01231-01-001",
+      "SC-LOC-JP-01231-02-001",
+      "SC-LOC-JP-01231-03-001",
+      "SC-LOC-JP-01231-04-001",
+      "SC-LOC-JP-01231-05-001",
+      "SC-LOC-JP-01231-06-001",
+      "SC-LOC-JP-01231-07-001",
+      "SC-LOC-JP-01231-08-001",
+      "SC-LOC-JP-01233-01-001",
+      "SC-LOC-JP-01233-02-001",
+      "SC-LOC-JP-01233-03-001",
+      "SC-LOC-JP-01233-04-001",
+      "SC-LOC-JP-01233-05-001",
+      "SC-LOC-JP-01233-06-001",
+      "SC-LOC-JP-01233-07-001",
+      "SC-LOC-JP-01233-08-001"
     ],
     "method": "Manually wrote grammatical Japanese task descriptions after reading the complete exchanges; updated both editorial source and runtime semantic goals/hints/evaluation notes. No recommended-answer quotation substituted for a task.",
     "utteranceRepairs": [
@@ -342,6 +389,24 @@
       {
         "scenarioId": "SC-LOC-JP-01227-03-001",
         "reason": "Player now directly answers the NPC question about urgent recent symptom changes rather than deferring it."
+      },
+      {
+        "scenarioId": "SC-LOC-JP-01230-02-001",
+        "reason": "Added an appropriate closing courtesy."
+      },
+      {
+        "scenarioId": "SC-LOC-JP-01230-03-001",
+        "reason": "Hearing/privacy requirements now consistently request written communication instead of quiet speech."
+      },
+      {
+        "scenarioId": "SC-LOC-JP-01233-01-001",
+        "reason": "NPC now supplies the requested station reading, and player repeats it. Official JR station-name/reading reference checked; no schedule or operating-counter availability certified.",
+        "sourceUrl": "https://www3.jrhokkaido.co.jp/webunkou/timetable.html?id=194",
+        "checkedDate": "2026-10-01"
+      },
+      {
+        "scenarioId": "SC-LOC-JP-01233-06-001",
+        "reason": "Final player response includes the name required by the recipient, alongside payment date and amount."
       }
     ]
   }
