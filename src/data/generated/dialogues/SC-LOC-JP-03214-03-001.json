@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。問診票で分からない言葉がありますか。",
+        "textJa": "こんにちは。問診票でお手伝いできますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,10 +26,10 @@
       "player": {
         "communicativeIntent": "hachimantai_3_task_1",
         "requiredSemanticComponents": {
-          "goal": "服薬中が今日薬を飲んだかだけの質問か意味を尋ねる"
+          "goal": "継続薬の一覧をどこで提示するか尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "「服薬中」は今日薬を飲んだかだけを聞いていると思いました。どう書けばよいですか。",
+        "recommendedAnswerJa": "はい。毎日使っている薬があります。薬の一覧を持ってきたので、どこで見せればよいですか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "服薬中が今日薬を飲んだかだけの質問か意味を尋ねる。日本語で伝えてください。",
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "現在継続して使っている薬があるかを確認する意味として、この学習用票を扱います。",
+        "textJa": "受付で確認して診療担当へ引き継ぎます。今日はその薬を服用しましたか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,10 +71,10 @@
       "player": {
         "communicativeIntent": "hachimantai_3_task_2",
         "requiredSemanticComponents": {
-          "goal": "継続使用薬の有無を含むと理解し毎日使う薬があると伝える"
+          "goal": "今日は未服用で先週一種類変更されたと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "今日飲んだかどうかだけではないんですね。毎日使う薬があります。",
+        "recommendedAnswerJa": "今日はまだ飲んでいません。それと、先週から一種類だけ薬が変わりました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "継続使用薬の有無を含むと理解し毎日使う薬があると伝える。日本語で伝えてください。",
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "薬の名前が分かる物はお持ちですか。",
+        "textJa": "変更された薬が分かる資料もありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,10 +116,10 @@
       "player": {
         "communicativeIntent": "hachimantai_3_task_3",
         "requiredSemanticComponents": {
-          "goal": "薬一覧を示し今日は未服用も別に伝える"
+          "goal": "新しい薬袋と古い一覧を一緒に見せると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "薬の一覧を持っています。今日はまだ飲んでいないことも別に伝えます。",
+        "recommendedAnswerJa": "新しい薬の袋があります。古い薬の一覧と一緒に見せます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "薬一覧を示し今日は未服用も別に伝える。日本語で伝えてください。",
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。薬の継続使用と今日の服用状況を分けて診療担当へ伝えられます。",
+        "textJa": "ありがとうございます。自己判断で内容を省略せず、そのまま担当へ伝えましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,10 +161,10 @@
       "player": {
         "communicativeIntent": "hachimantai_3_task_4",
         "requiredSemanticComponents": {
-          "goal": "薬名を省略せず一覧を見せると伝える"
+          "goal": "未服用と変更時期を分けて伝えると述べる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "名前を自己判断で省略せず、一覧を見せます。",
+        "recommendedAnswerJa": "分かりました。飲んでいないことと、先週変更されたことを別に伝えます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "薬名を省略せず一覧を見せると伝える。日本語で伝えてください。",
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "受付では診断せず、情報を担当へ引き継ぎます。",
+        "textJa": "体調の変化があればそれも診療担当へお話しください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,10 +206,10 @@
       "player": {
         "communicativeIntent": "hachimantai_3_task_5",
         "requiredSemanticComponents": {
-          "goal": "継続薬一覧と今日未服用を分けて伝えるとまとめる"
+          "goal": "薬一覧・新薬袋・当日服用状況を整理して伝えるとまとめる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "継続中の薬の一覧と、今日は未服用という事実を分けて伝えます。",
+        "recommendedAnswerJa": "薬一覧と新しい薬袋を見せ、今日は未服用で先週変更があったと伝えます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "継続薬一覧と今日未服用を分けて伝えるとまとめる。日本語で伝えてください。",
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。問診票と一緒にご提示ください。",
+        "textJa": "承知しました。資料をお預かりして確認します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-003-hachimantai.json",
-    "premise": "八幡平の架空医療受付。問診票の「服薬中」を今日薬を飲んだかだけの質問と思い、継続して使う薬の情報と当日服用を分けて伝える。",
+    "premise": "八幡平の架空医療受付。継続して使う薬がある患者が薬の一覧を持参し、当日はまだ服用していないことと最近変更された薬があることを分けて伝える。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
