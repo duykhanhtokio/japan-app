@@ -1,11 +1,9 @@
 # PRF-002 Japanese content audit checkpoint
 
-Status: IN PROGRESS; contentPass remains false. PRF-001 retains its separate hash-bound AI editorial decision.
+Status: IN PROGRESS; contentPass remains false. PRF-001 keeps its separate hash-bound AI editorial decision.
 
-Eight canonical Hachinohe exchanges were individually rewritten and fully read with all 40 player tasks. Scenario IDs, dialogue IDs, next links and location assignments are preserved. Source/runtime premises and canonical first-task goals agree. Original runtime files are retained in timestamped local backups.
+24/93 canonical exchanges individually rewritten and read with 120 player tasks. 69 remain. Source files and exact hashes are listed in PRF-002_SEMANTIC_REVIEW.json. IDs, dialogue order, next links, locations and approved UI are preserved. Canonical titles, premises and player goals match the editorial sources.
 
-Distinct plots: unreadable shipping label; missing dish and incorrect receipt quantity; fish price unit and budget; accessible eye-exam explanation before signing; ownership verification for a forgotten coat; pre-cooking pickup-time change; faulty umbrella exchange with inspection; returned application envelope and deadline confirmation.
+Screening: zero structural errors; 9 normalized duplicate groups and 9 near-duplicate candidates. Original baseline: 13 groups and 24 candidates. Screening is not semantic approval. Whole-prefecture and cross-prefecture signoff remain pending.
 
-The 93-exchange screening has zero structural errors. Normalized duplicate groups decreased from 13 to 12; near-duplicate candidates decreased from 24 to 17. These counts are screening results, not semantic approval. Eight exchanges have individual reading evidence; 85 remain to review/rewrite. See PRF-002_SEMANTIC_REVIEW.json for exact scenario hashes and pending cities.
-
-Japanese work continues before translation. No native-speaker, real institution policy, or prefecture-wide content certification is claimed. Approved UI lock: PASS 10/10. Whitespace diff check: PASS.
+Japanese is completed before translation. All scenes are fictional; no native-speaker, actual institutional policy or prefecture-wide certification is claimed. Clinical scenes stop at staff handoff, and do not diagnose or invent medical clearance. Original files are retained in timestamped snapshots outside the checkout. UI lock: PASS 10/10. Whitespace diff check: PASS.
