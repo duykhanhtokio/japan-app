@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "袋は不要ですね。利用方法を確認してから、合計をご案内します。",
+        "textJa": "確認しました。この場面の端末では、その電子マネーと現金は併用できません。全額を現金でお支払いになれます。袋は不要として、商品だけの合計をご案内します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "monbetsu_07_task_4",
+        "communicativeIntent": "choose_cash_after_confirmed_no_split_payment",
         "requiredSemanticComponents": {
-          "goal": "ポイント利用と電子マネー払いを区別し、店員の確認前にはかざさないと話す"
+          "goal": "電子マネーと現金を併用できないと確認できたので、カードをかざさず全額現金で払い、合計を見てから現金を出すと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "ポイントだけ使う時と電子マネーで払う時が違うので、店員さんの確認前にはかざさないようにします。",
+        "recommendedAnswerJa": "では、全額を現金で払います。電子マネーのカードは読み取り機にかざさず、合計を見てから現金を出します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "ポイント利用と電子マネー払いを区別し、店員の確認前にはかざさないと話す。日本語で伝えてください。",
+        "hint": "電子マネーと現金を併用できないと確認できたので、カードをかざさず全額現金で払い、合計を見てから現金を出すと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "ポイント利用と電子マネー払いを区別し、店員の確認前にはかざさないと話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "電子マネーと現金を併用できないと確認できたので、カードをかざさず全額現金で払い、合計を見てから現金を出すと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-monbetsu.json",
-    "premise": "紋別のスーパー会計。現金と残高の少ない電子マネーを併用できるか客が確認し、可能と決めつけず不足時に現金全額を選ぶ。",
+    "premise": "紋別のスーパー会計を想定した学習用シミュレーション。残高の少ない電子マネーと現金の併用を先に相談する。この架空の端末では併用不可と店員が確認し、客は全額現金へ切り替える。実在店の決済規則ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "いらっしゃいませ。料理の材料で、何をお探しですか。",
+        "textJa": "いらっしゃいませ。お買い物で何をお手伝いしましょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "ebetsu_07_task_1",
+        "communicativeIntent": "ask_scale_milk_and_choose_package_combination",
         "requiredSemanticComponents": {
-          "goal": "乳製品を使わないソースを作るため、豆乳入りという商品名なら牛乳不使用なのか尋ねる"
+          "goal": "二人分のパンケーキレシピで五人分を作るため、必要な牛乳の量と買う包装の組合せを確認してほしいと頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "乳製品を使わないソースを作りたいです。この「豆乳入り」の商品なら、牛乳は使っていませんか。",
+        "recommendedAnswerJa": "五人でパンケーキを作ります。レシピは二人分なので、必要な牛乳の量と、どの包装を買うか一緒に確かめてもらえますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "乳製品を使わないソースを作るため、豆乳入りという商品名なら牛乳不使用なのか尋ねる。日本語で伝えてください。",
+        "hint": "二人分のパンケーキレシピで五人分を作るため、必要な牛乳の量と買う包装の組合せを確認してほしいと頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "乳製品を使わないソースを作るため、豆乳入りという商品名なら牛乳不使用なのか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "二人分のパンケーキレシピで五人分を作るため、必要な牛乳の量と買う包装の組合せを確認してほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "豆乳入りという名前だけでは判断できません。原材料を一緒に確認しましょう。",
+        "textJa": "レシピに書かれた牛乳の量を教えてください。今日は五人とも一人分ずつ作る予定ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "ebetsu_07_task_2",
+        "communicativeIntent": "state_two_servings_120ml_five_equal_portions",
         "requiredSemanticComponents": {
-          "goal": "生クリームの記載を見つけ豆乳だけではなかったので、乳製品を含まない表示の候補を探したいと伝える"
+          "goal": "五人とも一人分ずつで、レシピの二人分に牛乳百二十ミリリットルが必要だと示し、五人分を計算したいと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "ここに生クリームもありますね。豆乳だけだと思っていました。乳製品の記載がない候補を見たいです。",
+        "recommendedAnswerJa": "はい、五人とも同じ一人分です。レシピは二人分で百二十ミリリットルです。まず五人分の量を計算したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "生クリームの記載を見つけ豆乳だけではなかったので、乳製品を含まない表示の候補を探したいと伝える。日本語で伝えてください。",
+        "hint": "五人とも一人分ずつで、レシピの二人分に牛乳百二十ミリリットルが必要だと示し、五人分を計算したいと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "生クリームの記載を見つけ豆乳だけではなかったので、乳製品を含まない表示の候補を探したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "五人とも一人分ずつで、レシピの二人分に牛乳百二十ミリリットルが必要だと示し、五人分を計算したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "候補ごとの原材料と注意書きをご確認ください。必要な食事の条件で不明な点は、メーカーへ確認しましょう。",
+        "textJa": "二人分の百二十を五人分にすると、合計三百ミリリットルですね。この場面の売場には二百と百の包装があります。量を計る道具はありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "ebetsu_07_task_3",
+        "communicativeIntent": "distinguish_100ml_mark_from_full_cup",
         "requiredSemanticComponents": {
-          "goal": "家族の希望で避けておりアレルギーと同じ条件とは判断せず、必要な確認を家族にも尋ねると伝える"
+          "goal": "百ミリリットルの目盛りがある計量カップを使い、三回で三百になるが、カップ一杯と目盛りを同じだと扱わないと説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "今回は家族の希望で乳製品を避けます。アレルギーと同じ条件だとは決めず、家族に必要な確認も聞きます。",
+        "recommendedAnswerJa": "百ミリリットルの目盛りがある計量カップを使います。百まで計るのを三回繰り返せば三百ですが、カップ一杯と百の目盛りは分けて考えたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "家族の希望で避けておりアレルギーと同じ条件とは判断せず、必要な確認を家族にも尋ねると伝える。日本語で伝えてください。",
+        "hint": "百ミリリットルの目盛りがある計量カップを使い、三回で三百になるが、カップ一杯と目盛りを同じだと扱わないと説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "家族の希望で避けておりアレルギーと同じ条件とは判断せず、必要な確認を家族にも尋ねると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "百ミリリットルの目盛りがある計量カップを使い、三回で三百になるが、カップ一杯と目盛りを同じだと扱わないと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "食事の条件を確認して選んでください。保存方法も、商品ごとに見ていただけます。",
+        "textJa": "はい、カップの縁までではなく、百ミリリットルの目盛りで三回ですね。包装は一つだけにしますか、それとも二つを組み合わせますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "ebetsu_07_task_4",
+        "communicativeIntent": "combine_200ml_and_100ml_packages",
         "requiredSemanticComponents": {
-          "goal": "未開封と開封後の保存表示を分けて読み、少量しか使わないので小さい包装を希望する"
+          "goal": "二百の包装一つでは百足りないため、二百と百を一つずつ買って必要な三百にすると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "大きい紙パックは未開封と開封後の表示が別ですね。少量しか使わないので、小さいものを探したいです。",
+        "recommendedAnswerJa": "二百の包装一つだけでは百足りません。二百と百を一つずつ買えば、必要な三百にできるので、その組合せにします。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "未開封と開封後の保存表示を分けて読み、少量しか使わないので小さい包装を希望する。日本語で伝えてください。",
+        "hint": "二百の包装一つでは百足りないため、二百と百を一つずつ買って必要な三百にすると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "未開封と開封後の保存表示を分けて読み、少量しか使わないので小さい包装を希望する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "二百の包装一つでは百足りないため、二百と百を一つずつ買って必要な三百にすると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "小さい包装の候補をご案内します。量と保存方法を比べてください。",
+        "textJa": "二つの表示の単位も同じミリリットルです。二百と百を合わせて三百になります。レシピの二人分と、今日の五人分のメモを分けておくと、準備の時に見直せますね。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "ebetsu_07_task_5",
+        "communicativeIntent": "record_scaled_quantity_and_measure_three_times",
         "requiredSemanticComponents": {
-          "goal": "商品名だけで判断せず原材料と注意、開封後保管を確認して使い切れる少量を選ぶと伝える"
+          "goal": "二人分の百二十ではなく五人分の三百をメモし、二百と百の包装を買って百の目盛りで三回計ると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "豆乳入りという名前だけで選ばず、原材料と注意、開封後の保管を確認します。使い切れる小さい量にします。",
+        "recommendedAnswerJa": "レシピの百二十をそのまま使わず、五人分は三百とメモします。二百と百の包装を買い、調理する時は百の目盛りで三回計ります。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "商品名だけで判断せず原材料と注意、開封後保管を確認して使い切れる少量を選ぶと伝える。日本語で伝えてください。",
+        "hint": "二人分の百二十ではなく五人分の三百をメモし、二百と百の包装を買って百の目盛りで三回計ると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "商品名だけで判断せず原材料と注意、開封後保管を確認して使い切れる少量を選ぶと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "二人分の百二十ではなく五人分の三百をメモし、二百と百の包装を買って百の目盛りで三回計ると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。条件に合う表示か確認してお選びください。ありがとうございました。",
+        "textJa": "承知しました。二百と百の包装はこちらです。人数、必要量、目盛りを確認できましたね。お買い物ありがとうございました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-ebetsu.json",
-    "premise": "江別のスーパーで乳製品を使わない料理材料を探す。名称の豆乳入りと全原材料の違いを確認し、開封前後の保管表示を読んで小包装を選ぶ。",
+    "premise": "江別のスーパーを想定した学習用シミュレーション。二人分のパンケーキレシピを五人分に換算する客が、必要な牛乳の量、計量カップの目盛り、買う包装の組合せを照合する。架空の商品容量を用いた計算相談で、実在店の在庫や販売形態は認定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

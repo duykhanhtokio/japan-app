@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "いらっしゃいませ。お買い上げの商品で、何がありましたか。",
+        "textJa": "いらっしゃいませ。お会計で何かお困りですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "ashibetsu_07_task_1",
+        "communicativeIntent": "report_excess_change_before_mixing_wallet",
         "requiredSemanticComponents": {
-          "goal": "昨日買った調味料が未開封のまま袋内で漏れたので、状態を確認してほしいと頼む"
+          "goal": "受け取った釣銭が多い気がするため、財布へ入れる前にレシートと照合してほしいと頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "昨日買った調味料が袋の中で漏れていました。開けていないので、状態を見てもらいたいです。",
+        "recommendedAnswerJa": "今いただいたお釣りが多い気がします。財布へ入れる前に、レシートと一緒に確認していただけますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "昨日買った調味料が未開封のまま袋内で漏れたので、状態を確認してほしいと頼む。日本語で伝えてください。",
+        "hint": "受け取った釣銭が多い気がするため、財布へ入れる前にレシートと照合してほしいと頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "昨日買った調味料が未開封のまま袋内で漏れたので、状態を確認してほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "受け取った釣銭が多い気がするため、財布へ入れる前にレシートと照合してほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "商品とレシートを拝見します。帰ってから、どこで漏れに気づきましたか。",
+        "textJa": "ありがとうございます。お支払いの金額と、受け取ったお釣りを教えてください。レシートも拝見します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "ashibetsu_07_task_2",
+        "communicativeIntent": "state_1000_paid_680_total_820_received",
         "requiredSemanticComponents": {
-          "goal": "帰宅後に発見し、蓋が緩いが購入前からかは不明で、運搬中に袋が傾いた事実も伝える"
+          "goal": "千円札一枚で六百八十円を払い、釣銭を八百二十円受け取ったが、差額は三百二十円のはずだと説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "家で袋を開いた時です。蓋が緩いようですが、買った時からかはわかりません。車で袋が傾いたことも伝えます。",
+        "recommendedAnswerJa": "千円札を一枚出しました。合計は六百八十円で、いただいたお釣りは八百二十円です。千円から引くと三百二十円のはずだと思います。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "帰宅後に発見し、蓋が緩いが購入前からかは不明で、運搬中に袋が傾いた事実も伝える。日本語で伝えてください。",
+        "hint": "千円札一枚で六百八十円を払い、釣銭を八百二十円受け取ったが、差額は三百二十円のはずだと説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "帰宅後に発見し、蓋が緩いが購入前からかは不明で、運搬中に袋が傾いた事実も伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "千円札一枚で六百八十円を払い、釣銭を八百二十円受け取ったが、差額は三百二十円のはずだと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "商品状態と持ち運びの経緯を分けて確認しましょう。使用はしていませんか。",
+        "textJa": "この場面のレシートには、お預かり千五百円と入力されています。実際のお支払いは千円札一枚だけでしたか。追加の硬貨はありませんでしたか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "ashibetsu_07_task_3",
+        "communicativeIntent": "confirm_no_extra_coins_and_separate_change",
         "requiredSemanticComponents": {
-          "goal": "未使用で外側だけ拭き、最初の状態の写真と汚れた袋も持参したと説明する"
+          "goal": "支払ったのは千円札だけで追加の硬貨はなく、受取釣銭八百二十円は自分のお金と混ぜず別に置いたと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "使っていません。外側だけ拭いたので、最初の漏れた状態はこの写真で示します。汚れた袋も持ってきました。",
+        "recommendedAnswerJa": "はい、千円札一枚だけで、硬貨は足していません。受け取った八百二十円は、自分の財布のお金と混ぜず、ここに置いてあります。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "未使用で外側だけ拭き、最初の状態の写真と汚れた袋も持参したと説明する。日本語で伝えてください。",
+        "hint": "支払ったのは千円札だけで追加の硬貨はなく、受取釣銭八百二十円は自分のお金と混ぜず別に置いたと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "未使用で外側だけ拭き、最初の状態の写真と汚れた袋も持参したと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "支払ったのは千円札だけで追加の硬貨はなく、受取釣銭八百二十円は自分のお金と混ぜず別に置いたと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "写真も確認します。交換などの対応は、商品と条件を見てからご案内します。",
+        "textJa": "担当の確認でも、お預かりは千円でした。入力を訂正します。差の五百円をお返しいただき、残る三百二十円と訂正した控えを一緒に確認できますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "ashibetsu_07_task_4",
+        "communicativeIntent": "return_500_and_count_remaining_320",
         "requiredSemanticComponents": {
-          "goal": "同品への交換を希望するが傾いた事実は隠さず、状態確認後の対応を聞きたいと伝える"
+          "goal": "過剰な五百円を返し、残る百円玉三枚と十円玉二枚が三百二十円で、訂正控えの預り額も確認すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "同じ物に替えられるか希望を伝えたいです。でも傾いた事実を隠さず、確認の結果と対応を先に聞きます。",
+        "recommendedAnswerJa": "こちらの五百円を返します。残りは百円玉三枚と十円玉二枚で、三百二十円です。控えのお預かり額も千円になっているか見ます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "同品への交換を希望するが傾いた事実は隠さず、状態確認後の対応を聞きたいと伝える。日本語で伝えてください。",
+        "hint": "過剰な五百円を返し、残る百円玉三枚と十円玉二枚が三百二十円で、訂正控えの預り額も確認すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "同品への交換を希望するが傾いた事実は隠さず、状態確認後の対応を聞きたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "過剰な五百円を返し、残る百円玉三枚と十円玉二枚が三百二十円で、訂正控えの預り額も確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。確認した内容と対応の選択肢をご説明します。今の状態のまま職員へお渡しください。",
+        "textJa": "五百円を受け取りました。こちらが訂正した控えです。合計六百八十円、お預かり千円、釣銭三百二十円になっています。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "ashibetsu_07_task_5",
+        "communicativeIntent": "confirm_corrected_receipt_matches_change",
         "requiredSemanticComponents": {
-          "goal": "未開封、未使用、運搬時の傾き、清拭を区別し、写真とレシートで対応を相談すると伝える"
+          "goal": "訂正控えと手元の三百二十円が一致すると伝え、古い控えと分けて、確認済みの釣銭を財布へ入れると話す"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "未開封、未使用、傾いたこと、拭いたことを分けて説明します。写真とレシートで確認して、対応を相談します。",
+        "recommendedAnswerJa": "控えと手元の三百二十円が合っています。先ほどの控えと訂正した控えを区別し、確認できたお釣りを財布に入れます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "未開封、未使用、運搬時の傾き、清拭を区別し、写真とレシートで対応を相談すると伝える。日本語で伝えてください。",
+        "hint": "訂正控えと手元の三百二十円が一致すると伝え、古い控えと分けて、確認済みの釣銭を財布へ入れると話す。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "未開封、未使用、運搬時の傾き、清拭を区別し、写真とレシートで対応を相談すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "訂正控えと手元の三百二十円が一致すると伝え、古い控えと分けて、確認済みの釣銭を財布へ入れると話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。商品をお預かりして確認します。ご説明ありがとうございました。",
+        "textJa": "ご確認ありがとうございます。入力を誤って失礼いたしました。お申し出いただき助かりました。またお越しください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-ashibetsu.json",
-    "premise": "芦別のスーパーで購入品の液漏れ相談。客は未使用ボトルの蓋緩みと運搬傾きの事実を分け、汚れた袋も持参し対応を確認する。",
+    "premise": "芦別のスーパー会計を想定した学習用シミュレーション。客が多すぎる釣銭を申し出て、支払った千円とレシートの千五百円入力を照合する。架空の会計六百八十円、受取釣銭八百二十円から過剰な五百円を返し、訂正控えと残る三百二十円を確かめる。実在店の会計記録ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
