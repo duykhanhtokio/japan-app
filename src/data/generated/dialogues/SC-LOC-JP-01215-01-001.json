@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "受付までの経路を主催者の案内で確認してください。集合時刻も、建物に着く時刻とは分けて考えましょう。",
+        "textJa": "主催者の図では参加者入口は北側で、正面玄関とは別です。この図の駅から北側入口までの徒歩目安は15分です。受付は何時ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "bibai_01_task_4",
         "requiredSemanticComponents": {
-          "goal": "受付開始時刻を示し、徒歩で余裕がなければ別の交通手段も確認したいと伝える"
+          "goal": "受付10時、現在9時40分、徒歩15分なら9時55分ごろで余裕5分と計算し、道を尋ねられるよう図を持って歩きたいと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "受付が始まる時刻はこちらです。徒歩で行けるか、時間に余裕がなければ別の移動を確認したいです。",
+        "recommendedAnswerJa": "受付は10時で、今は9時40分です。歩くと9時55分ごろで、余裕は5分ですね。道が不明なら途中で尋ねられるよう、案内図を持って歩きたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "受付開始時刻を示し、徒歩で余裕がなければ別の交通手段も確認したいと伝える。日本語で伝えてください。",
+        "hint": "受付10時、現在9時40分、徒歩15分なら9時55分ごろで余裕5分と計算し、道を尋ねられるよう図を持って歩きたいと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "受付開始時刻を示し、徒歩で余裕がなければ別の交通手段も確認したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "受付10時、現在9時40分、徒歩15分なら9時55分ごろで余裕5分と計算し、道を尋ねられるよう図を持って歩きたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "現在地から受付までの経路を調べ、利用する交通の最新案内もご確認ください。",
+        "textJa": "計算はそのとおりです。これは案内図の目安なので、到着保証ではありません。北側入口へ向かう線をこちらで確認できます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "bibai_01_task_5",
         "requiredSemanticComponents": {
-          "goal": "同名施設の検索をやめ案内の住所と受付入口で調べ、受付時刻から逆算して移動方法を決めると伝える"
+          "goal": "別町の同名施設でなく案内図の北側入口へ徒歩で向かい、到着は9時55分ごろの目安で余裕5分と理解したと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "同名施設の検索をやめ、案内の住所と参加者入口で調べます。受付時刻から逆算して移動方法を決めます。",
+        "recommendedAnswerJa": "別町の同名施設ではなく、この案内図の北側入口へ歩きます。9時55分ごろは目安で余裕5分と理解し、図を持って出発します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "同名施設の検索をやめ案内の住所と受付入口で調べ、受付時刻から逆算して移動方法を決めると伝える。日本語で伝えてください。",
+        "hint": "別町の同名施設でなく案内図の北側入口へ徒歩で向かい、到着は9時55分ごろの目安で余裕5分と理解したと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "同名施設の検索をやめ案内の住所と受付入口で調べ、受付時刻から逆算して移動方法を決めると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "別町の同名施設でなく案内図の北側入口へ徒歩で向かい、到着は9時55分ごろの目安で余裕5分と理解したと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-bibai.json",
-    "premise": "美唄駅で会場経路を相談。同名の公共施設を見分け、職員用入口でなく来場者受付へ向かう。実際の所在地や交通は指定しない。",
+    "premise": "美唄の架空交通案内。講習会の同名会場を混同した客へ、主催者の架空案内図では来場者入口は北側、駅から入口まで徒歩15分、現在9時40分、受付10時というデータを提示する。余裕5分を比較し徒歩を選ぶ。実在の施設、徒歩所要、時刻や職員用入口ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

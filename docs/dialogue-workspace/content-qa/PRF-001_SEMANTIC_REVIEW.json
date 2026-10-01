@@ -220,7 +220,7 @@
       "newDistinctDevelopment": "Already-found glasses case: distinguish notifying office from storage station, compare personal/proxy pickup conditions and deadline, avoid promising a pickup before friend availability is known.",
       "status": "replacement reviewed against supplied tasks and utterances; no prefecture approval",
       "source": "scripts/dialogue-authoring/prf-001-abashiri.json",
-      "runtimeSha256": "b750797d965062078cb1c7c67f1dd84f1aba94755d4e18a2cb23b49d068b2f7c",
+      "runtimeSha256": "5762b5a69866af9c9efbd888b165c01c1862670b5963e4ca56f3f3b9bf1d5568",
       "playerTasks": [
         "駅から眼鏡ケースが見つかったと連絡が来たので、翌日帰る前に受取方法を相談したいと伝える",
         "電話してきた窓口と保管している駅を混同し、連絡元へ行けば受け取れると思っていたと説明する",
@@ -363,6 +363,19 @@
       "status": "full replacement compared against claimant and photographic-evidence cases; not CONTENT PASS",
       "source": "scripts/dialogue-authoring/prf-001-kitami.json",
       "runtimeSha256": "bc27637b1842ba315d025f8beb485192f569c00dce64809b305b1aae370b9ac9"
+    },
+    {
+      "replacedScenarioId": "SC-LOC-JP-01235-01-001",
+      "comparisonScenarioId": "SC-LOC-JP-01213-01-001",
+      "additionalComparisonScenarioIds": [
+        "SC-LOC-JP-01209-01-001",
+        "SC-LOC-JP-01208-01-001"
+      ],
+      "oldOverlap": "Rail reservation excludes access transport -> separate arranged/unarranged portions and costs -> address/station and walking conditions -> check operators and decide later.",
+      "newDistinctDevelopment": "Compute complete itinerary rather than sum ride times;25-minute station wait and20-minute destination walk makes10:45 too late, select earlier8:30/9:10 connection arriving10:00 with15-minute margin. NPC supplies timetable and confirms actual calculation/choice. Kitami only corrects search and employer-to-station walk margin, not full multistage arithmetic.",
+      "status": "full replacement compared across contract-scope and temporal-planning cases; not CONTENT PASS",
+      "source": "scripts/dialogue-authoring/prf-001-ishikari.json",
+      "runtimeSha256": "4a66a1e34dcf32dc795e4703330aa724713ac8434c6660fab1a19c5dbdcd729b"
     }
   ],
   "otherRemainingWork": [
@@ -1591,6 +1604,53 @@
         "SC-LOC-JP-01219-04-001"
       ],
       "method": "16 full police exchanges read; one full replacement, five NPC evidence/record/receipt repairs and two premise-only accuracy repairs.90-minute delta verified. No rights/procedure/medical approval, translations or CONTENT PASS."
+    },
+    {
+      "date": "2026-10-01",
+      "scenarioIds": [
+        "SC-LOC-JP-01211-01-001",
+        "SC-LOC-JP-01206-01-002",
+        "SC-LOC-JP-01225-01-001",
+        "SC-LOC-JP-01228-01-001",
+        "SC-LOC-JP-01233-01-001",
+        "SC-LOC-JP-01217-01-001",
+        "SC-LOC-JP-01229-01-001",
+        "SC-LOC-JP-01236-01-001",
+        "SC-LOC-JP-01221-01-001",
+        "SC-LOC-JP-01223-01-001",
+        "SC-LOC-JP-01213-01-001",
+        "SC-LOC-JP-01209-01-001",
+        "SC-LOC-JP-01215-01-001",
+        "SC-LOC-JP-01224-01-001",
+        "SC-LOC-JP-01231-01-001",
+        "SC-LOC-JP-01235-01-001",
+        "SC-LOC-JP-01219-01-001",
+        "SC-LOC-JP-01205-01-001",
+        "SC-LOC-JP-01227-01-001",
+        "SC-LOC-JP-01216-01-001",
+        "SC-LOC-JP-01234-01-001",
+        "SC-LOC-JP-01208-01-001",
+        "SC-LOC-JP-01206-01-001",
+        "SC-LOC-JP-01205-01-002",
+        "SC-LOC-JP-01230-01-001",
+        "SC-LOC-JP-01212-01-001",
+        "SC-LOC-JP-01220-01-001",
+        "SC-LOC-JP-01226-01-001"
+      ],
+      "changedScenarioIds": [
+        "SC-LOC-JP-01211-01-001",
+        "SC-LOC-JP-01215-01-001",
+        "SC-LOC-JP-01217-01-001",
+        "SC-LOC-JP-01228-01-001",
+        "SC-LOC-JP-01229-01-001",
+        "SC-LOC-JP-01236-01-001",
+        "SC-LOC-JP-01235-01-001",
+        "SC-LOC-JP-01208-01-001",
+        "SC-LOC-JP-01206-01-001",
+        "SC-LOC-JP-01219-01-001",
+        "SC-LOC-JP-01227-01-001"
+      ],
+      "method": "28 full transport exchanges compared; Ishikari full replacement and ten targeted evidence/response/outcome repairs. Fictional diagrams/times/records explicit in metadata; arithmetic verified. No timetable/venue/prefecture approval, translations or CONTENT PASS."
     }
   ],
   "continuationMetadataBatches": [
@@ -2178,6 +2238,70 @@
       ],
       "method": "All eleven turns and five tasks manually read together; causal evidence, NPC contributions and actual/pending outcome compared. Changed turns re-read after editing.",
       "finding": "Compared missing person versus phone position, threatening bill with phone info already entered/code not sent, unreturned entrusted key versus entry evidence, car before/after scratch photos without observed cause, battery versus bicycle IDs, new friend account versus known-number denial, old door scratch versus unknown lock/interior, missing phone versus stale location update. Abashiri actually updates contact regained/reunion pending; Mikasa reads separate F/B identifiers; Rumoi compares last use18:10 against16:40 update90 minutes earlier and alternative permitted family number. Nemuro premise no longer asks photo investigation before consulting; Monbetsu metadata does not decide sender identity/crime. No investigation or emergency-response approval.",
+      "status": "group reviewed with specified repairs; whole-corpus CONTENT QA remains pending",
+      "realLocationOrPolicyVerified": false
+    },
+    {
+      "group": "transport_property_storage_and_collection",
+      "scenarioIds": [
+        "SC-LOC-JP-01211-01-001",
+        "SC-LOC-JP-01206-01-002",
+        "SC-LOC-JP-01225-01-001",
+        "SC-LOC-JP-01228-01-001"
+      ],
+      "method": "Every full eleven-turn conversation and five tasks manually read; compared initial need, evidence, causal development, NPC contributions and actual/pending outcome; edited turns re-read.",
+      "finding": "Found glasses collection source/storage differs from unlocated child-coat bag, umbrella train identification from boarding record rather than message time, and unmoved locker luggage return. Abashiri now supplies bounded fictional storage/reference/deadline and obtains personal-collection choice, exact visit still pending. Fukagawa informs waiting person immediately before recovery. Takikawa photo timestamp is not used to infer train departure; unlike Kitami police correction, ticket content and uncertain car are evidence for a still-pending search.",
+      "status": "group reviewed with specified repairs; whole-corpus CONTENT QA remains pending",
+      "realLocationOrPolicyVerified": false
+    },
+    {
+      "group": "transport_ticket_scope_dates_and_grouping",
+      "scenarioIds": [
+        "SC-LOC-JP-01233-01-001",
+        "SC-LOC-JP-01217-01-001",
+        "SC-LOC-JP-01229-01-001",
+        "SC-LOC-JP-01236-01-001",
+        "SC-LOC-JP-01221-01-001",
+        "SC-LOC-JP-01223-01-001",
+        "SC-LOC-JP-01213-01-001",
+        "SC-LOC-JP-01209-01-001"
+      ],
+      "method": "Every full eleven-turn conversation and five tasks manually read; compared initial need, evidence, causal development, NPC contributions and actual/pending outcome; edited turns re-read.",
+      "finding": "Date answers ticket-name kana; Ebetsu now shows daughter outward only versus parents2 outward/2 return draft, unissued. Furano actually rejects family tomorrow ticket and receives today ticket. Hokuto actually sorts printed roles/control copy, gate combination pending. Nayoro extra travel beyond season ticket differs from unknown return route; Nemuro date agreement/work leave remains pending. Tomakomai boat contract versus rail, Yubari old station/map/current access-payment scope compared; both retained as distinct trigger and unresolved route, with no real schedule inserted.",
+      "status": "group reviewed with specified repairs; whole-corpus CONTENT QA remains pending",
+      "realLocationOrPolicyVerified": false
+    },
+    {
+      "group": "transport_destination_and_multistage_duration",
+      "scenarioIds": [
+        "SC-LOC-JP-01215-01-001",
+        "SC-LOC-JP-01224-01-001",
+        "SC-LOC-JP-01231-01-001",
+        "SC-LOC-JP-01235-01-001",
+        "SC-LOC-JP-01219-01-001",
+        "SC-LOC-JP-01205-01-001",
+        "SC-LOC-JP-01227-01-001"
+      ],
+      "method": "Every full eleven-turn conversation and five tasks manually read; compared initial need, evidence, causal development, NPC contributions and actual/pending outcome; edited turns re-read.",
+      "finding": "Bibai official-event diagram versus wrong same-name facility now includes fictional north entrance15-minute estimate and choice. Chitose airport unchanged but airline reception changed, Eniwa packed-bike conditions pending, Muroran employer reception versus HQ and last mile pending. Monbetsu map source/pickup unbooked then rejected differs from Utashinai place/station confusion and terrain response, both NPCs now actually read supplied fictional route evidence. Ishikari contract-scope overlap with Tomakomai/Yubari replaced by timed connection:25-minute wait and20-minute final walk makes10:45 late; earlier bus/train gives10:00 arrival15-minute margin. No real routes/facility/operating times certified.",
+      "status": "group reviewed with specified repairs; whole-corpus CONTENT QA remains pending",
+      "realLocationOrPolicyVerified": false
+    },
+    {
+      "group": "transport_disruption_search_meeting_and_luggage",
+      "scenarioIds": [
+        "SC-LOC-JP-01216-01-001",
+        "SC-LOC-JP-01234-01-001",
+        "SC-LOC-JP-01208-01-001",
+        "SC-LOC-JP-01206-01-001",
+        "SC-LOC-JP-01205-01-002",
+        "SC-LOC-JP-01230-01-001",
+        "SC-LOC-JP-01212-01-001",
+        "SC-LOC-JP-01220-01-001",
+        "SC-LOC-JP-01226-01-001"
+      ],
+      "method": "Every full eleven-turn conversation and five tasks manually read; compared initial need, evidence, causal development, NPC contributions and actual/pending outcome; edited turns re-read.",
+      "finding": "Ashibetsu interview method can become online and then travel may be unnecessary; Muroran clinic cannot be decided by station and asks callback after ETA, distinct downstream decisions retained. Rumoi obsolete rail result/current bus differs from Shibetsu wrong line plus seller-specific change handling. Kitami reverse direction/stale date now returns two fictional candidates and walk margin. Kushiro wrong booking corrected then NPC matches fictionalT-6/platform2, outside companion reunion. Kitahiroshima crowd/exit/meetup planning and Noboribetsu bag/boarding roles differ from Sunagawa gate-separated transfer friend resulting in cancelled meeting. No real disruption/transport guarantee.",
       "status": "group reviewed with specified repairs; whole-corpus CONTENT QA remains pending",
       "realLocationOrPolicyVerified": false
     }

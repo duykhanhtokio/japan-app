@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "担当に、ご自身の旅程と券を見せてご相談ください。ロッカーの連絡先も写真で確認できます。",
+        "textJa": "元の駅へ戻る必要があるので、荷物を取ってからではなく、今のうちに待ち合わせ相手へ予定が変わることを知らせますか。新しい時刻は未定と伝えられます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "fukagawa_01_task_5",
         "requiredSemanticComponents": {
-          "goal": "元の駅で受け取るための移動を相談し、荷物を受け取ってから待ち合わせ先に新しい予定を知らせると伝える"
+          "goal": "回収完了を待たず今すぐ相手へ元の駅へ戻る必要と新時刻未定を知らせ、戻る旅程と券を相談して回収後に予定を更新すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "元の駅で受け取るため移動を相談します。荷物を受け取った時点で、先の待ち合わせ先へ新しい予定を伝えます。",
+        "recommendedAnswerJa": "はい、今すぐ戻る必要があることと、新しい待ち合わせ時刻は未定と連絡します。戻る旅程と券の扱いを相談し、荷物を回収したら改めて予定を更新します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "元の駅で受け取るための移動を相談し、荷物を受け取ってから待ち合わせ先に新しい予定を知らせると伝える。日本語で伝えてください。",
+        "hint": "回収完了を待たず今すぐ相手へ元の駅へ戻る必要と新時刻未定を知らせ、戻る旅程と券を相談して回収後に予定を更新すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "元の駅で受け取るための移動を相談し、荷物を受け取ってから待ち合わせ先に新しい予定を知らせると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "回収完了を待たず今すぐ相手へ元の駅へ戻る必要と新時刻未定を知らせ、戻る旅程と券を相談して回収後に予定を更新すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-fukagawa.json",
-    "premise": "深川の学習用シミュレーション。出発駅のロッカーに預けた荷物を、乗り換え駅で受け取れると思い込んだ旅行者が旅程を組み直す。",
+    "premise": "深川の架空交通相談。出発駅のロッカーへ入れた荷物は配送されていないと気づき、鍵札の出発駅と元の写真の場所を照合して戻る旅程を相談する。待合せ相手には回収完了を待たず、戻る必要と新時刻未定を先に伝える。戻る便・券の扱いは未確認。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

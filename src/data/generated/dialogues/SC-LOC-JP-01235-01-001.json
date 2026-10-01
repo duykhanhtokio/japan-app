@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。移動の相談で何をお手伝いできますか。",
+        "textJa": "こんにちは。移動の予定で何をお手伝いしましょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "ishikari_01_task_1",
+        "communicativeIntent": "ishikari_timetable_task_1",
         "requiredSemanticComponents": {
-          "goal": "石狩から旅行へ出るが列車の予約駅までの移動は未手配なので、旅程全体を整理したいと伝える"
+          "goal": "会場受付10時15分までに着くため、バスと列車の時刻表で間に合うか計算を手伝ってほしいと頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "石狩から旅行に出ます。列車の予約はありますが、そこまでの移動をまだ決めていません。全体を整理したいです。",
+        "recommendedAnswerJa": "会場の受付に10時15分までに着きたいです。この時刻表で、バスと列車を乗り継げば間に合うか計算を手伝ってください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "石狩から旅行へ出るが列車の予約駅までの移動は未手配なので、旅程全体を整理したいと伝える。日本語で伝えてください。",
+        "hint": "会場受付10時15分までに着くため、バスと列車の時刻表で間に合うか計算を手伝ってほしいと頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "石狩から旅行へ出るが列車の予約駅までの移動は未手配なので、旅程全体を整理したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "会場受付10時15分までに着くため、バスと列車の時刻表で間に合うか計算を手伝ってほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "予約した列車の出発駅と、現在地からの経路は確認できますか。",
+        "textJa": "選んだバスと列車を見せてください。乗り物に乗る時間だけでなく、徒歩と待つ時間も入れていますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "ishikari_01_task_2",
+        "communicativeIntent": "ishikari_timetable_task_2",
         "requiredSemanticComponents": {
-          "goal": "券の出発駅は現在地と違い、地名だけで近くに駅があるとは考えず、駅までの交通を調べたいと伝える"
+          "goal": "9時のバスは9時20分着で徒歩10分、列車30分を合計60分と思ったが待ち時間は入れていないと説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "券にある出発駅はここではありません。地名が同じなら近くに駅があると思わず、そこまでの交通を調べたいです。",
+        "recommendedAnswerJa": "9時のバスが9時20分に着き、駅へ歩いて10分、列車には30分乗ります。全部で60分と思っていましたが、待つ時間は入れていません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "券の出発駅は現在地と違い、地名だけで近くに駅があるとは考えず、駅までの交通を調べたいと伝える。日本語で伝えてください。",
+        "hint": "9時のバスは9時20分着で徒歩10分、列車30分を合計60分と思ったが待ち時間は入れていないと説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "券の出発駅は現在地と違い、地名だけで近くに駅があるとは考えず、駅までの交通を調べたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "9時のバスは9時20分着で徒歩10分、列車30分を合計60分と思ったが待ち時間は入れていないと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "出発駅までの移動と、予約した列車の区間を分けて確認しましょう。予約には、どこからどこまでの移動が含まれていますか。",
+        "textJa": "駅に着くのは9時30分ですが、その列車は9時55分発です。待ち時間は25分ですね。列車の到着は10時25分なので、受付10時15分より遅くなります。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "ishikari_01_task_3",
+        "communicativeIntent": "ishikari_timetable_task_3",
         "requiredSemanticComponents": {
-          "goal": "予約済みなのは列車区間だけで、バスなども含まれるとは判断せず費用と条件を別に確認すると伝える"
+          "goal": "駅で待つ25分を忘れ、到着駅から徒歩20分も必要なので会場10時45分となると確認し、早いバスの候補を尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "予約は列車の区間だけです。バスなどの移動も予約に含まれるとは思わず、別に費用と条件を確認します。",
+        "recommendedAnswerJa": "25分待つのを忘れていました。到着駅から会場へも徒歩20分あるので、この候補では10時45分ですね。もっと早いバスの組合せを見たいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "予約済みなのは列車区間だけで、バスなども含まれるとは判断せず費用と条件を別に確認すると伝える。日本語で伝えてください。",
+        "hint": "駅で待つ25分を忘れ、到着駅から徒歩20分も必要なので会場10時45分となると確認し、早いバスの候補を尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "予約済みなのは列車区間だけで、バスなども含まれるとは判断せず費用と条件を別に確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "駅で待つ25分を忘れ、到着駅から徒歩20分も必要なので会場10時45分となると確認し、早いバスの候補を尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "出発駅までの移動と、列車の予約を分けられましたね。荷物などの条件はありますか。",
+        "textJa": "早い候補は8時30分のバスで8時50分着、徒歩10分で駅に9時です。9時10分の列車が9時40分に着きます。会場まで歩く20分を足すと何時でしょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "ishikari_01_task_4",
+        "communicativeIntent": "ishikari_timetable_task_4",
         "requiredSemanticComponents": {
-          "goal": "荷物を二つ持つため、徒歩の乗換区間も含めて自分で運べる経路か確認したいと伝える"
+          "goal": "早い候補の列車到着9時40分に徒歩20分を足すと会場10時で受付まで15分余裕があり、早い方を予定にしたいと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "荷物を二つ持ちます。乗り継ぎの徒歩区間を含め、自分で運べる経路か見たいです。",
+        "recommendedAnswerJa": "10時です。列車が到着する9時40分を会場到着と思わず、徒歩20分を足しました。受付まで15分の余裕があります。早い方を予定にしたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "荷物を二つ持つため、徒歩の乗換区間も含めて自分で運べる経路か確認したいと伝える。日本語で伝えてください。",
+        "hint": "早い候補の列車到着9時40分に徒歩20分を足すと会場10時で受付まで15分余裕があり、早い方を予定にしたいと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "荷物を二つ持つため、徒歩の乗換区間も含めて自分で運べる経路か確認したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "早い候補の列車到着9時40分に徒歩20分を足すと会場10時で受付まで15分余裕があり、早い方を予定にしたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "各区間の移動条件と時間を確認し、無理のない旅程を選んでください。",
+        "textJa": "はい、計算上は8時30分のバスから、駅で10分待って9時10分の列車、会場10時です。これはこの時刻表に基づく予定で、遅延や道の状況で変わります。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "ishikari_01_task_5",
+        "communicativeIntent": "ishikari_timetable_task_5",
         "requiredSemanticComponents": {
-          "goal": "出発駅、駅までの交通、徒歩区間を確認し、手配済みと未手配を表に分けて旅程を決めると伝える"
+          "goal": "8時30分のバスと9時10分の列車、会場10時で余裕15分と控え、徒歩二区間と待ち時間を入れて出発前の運行案内も確認すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "列車の出発駅、そこまでの交通、徒歩区間を確認します。予約済みと未手配を表に分けて決めます。",
+        "recommendedAnswerJa": "8時30分のバスと9時10分の列車を候補にし、会場10時、受付まで15分と控えました。二つの徒歩区間と待ち時間を入れ、出発前に利用便の案内も確認します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "出発駅、駅までの交通、徒歩区間を確認し、手配済みと未手配を表に分けて旅程を決めると伝える。日本語で伝えてください。",
+        "hint": "8時30分のバスと9時10分の列車、会場10時で余裕15分と控え、徒歩二区間と待ち時間を入れて出発前の運行案内も確認すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "出発駅、駅までの交通、徒歩区間を確認し、手配済みと未手配を表に分けて旅程を決めると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "8時30分のバスと9時10分の列車、会場10時で余裕15分と控え、徒歩二区間と待ち時間を入れて出発前の運行案内も確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。実際の案内を確認して、よいご旅行を。",
+        "textJa": "計算と選んだ候補の確認ができました。受付期限と、実際に利用する交通の最新案内もご確認ください。お気をつけて。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-ishikari.json",
-    "premise": "石狩の学習用シミュレーション。石狩の架空交通案内でバスと鉄道を組み合わせる旅程を、予約済み区間と未手配区間に分ける。",
+    "premise": "石狩の架空交通相談。A停留所・B駅・C会場の練習用時刻表で受付10時15分までの到着を計算する。9時便は9時20分着・徒歩10分・9時55分列車・10時25分着・会場まで徒歩20分で10時45分。早い候補8時30分便→8時50分着→徒歩10分→9時10分列車→9時40分着→徒歩20分で10時着。実在経路・所要・運行ではなく、最終徒歩と待ち時間の見落としを解く。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

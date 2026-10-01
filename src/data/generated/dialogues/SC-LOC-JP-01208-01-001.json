@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "では、当日の出発駅と目的地を指定して検索します。仕事先から駅までの移動時間も見込んでください。",
+        "textJa": "当日の帰る方向に直した画面では、一つ前が20時10分、最終が21時05分で、どちらも乗換なしです。仕事先から駅まで、何分かかりますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "include_walk_and_plan_employer_ride",
         "requiredSemanticComponents": {
-          "goal": "会社から駅まで歩く時間も必要だと確認し、二つの候補を控えて難しければ会社に送迎を相談すると伝える"
+          "goal": "徒歩20分と退勤19時40分なら駅へ20時で一つ前まで10分あると計算し、長引けば走らず会社の送迎も相談すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "駅まで歩く時間が必要でした。退勤時刻が遅れたら、乗れない前提で会社の送迎を相談するので、二つの候補をメモします。",
+        "recommendedAnswerJa": "徒歩20分で、退勤予定は19時40分です。予定どおりなら駅へ20時で、一つ前まで10分あります。長引けば無理に走らず、会社の送迎も相談します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "会社から駅まで歩く時間も必要だと確認し、二つの候補を控えて難しければ会社に送迎を相談すると伝える。日本語で伝えてください。",
+        "hint": "徒歩20分と退勤19時40分なら駅へ20時で一つ前まで10分あると計算し、長引けば走らず会社の送迎も相談すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "会社から駅まで歩く時間も必要だと確認し、二つの候補を控えて難しければ会社に送迎を相談すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "徒歩20分と退勤19時40分なら駅へ20時で一つ前まで10分あると計算し、長引けば走らず会社の送迎も相談すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "二つの候補の出発時刻と、乗り換えがあるかを確認しましょう。当日の運行変更は駅の案内でもご確認ください。",
+        "textJa": "19時40分に出て20分歩くと20時、20時10分まで10分ですね。今示した二つは候補で、当日の変更は出発前の運行案内で確認してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "confirm_date_direction_options_before_departure",
         "requiredSemanticComponents": {
-          "goal": "方向と日付を直した結果を控え、徒歩の時間を含めて判断し、間に合わなければ退勤前に送迎を相談すると伝える"
+          "goal": "一つ前20時10分と最終21時05分は乗換なしと控え、予定どおりなら一つ前、退勤が遅れそうなら先に送迎を相談すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "方向と日付を直した結果を控えます。会社から駅までの時間を含めて考え、難しければ退勤前に送迎を相談します。",
+        "recommendedAnswerJa": "一つ前20時10分と最終21時05分、どちらも乗換なしと控えました。予定どおりなら一つ前を候補にして、退勤が遅れそうなら出る前に送迎も相談します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "方向と日付を直した結果を控え、徒歩の時間を含めて判断し、間に合わなければ退勤前に送迎を相談すると伝える。日本語で伝えてください。",
+        "hint": "一つ前20時10分と最終21時05分は乗換なしと控え、予定どおりなら一つ前、退勤が遅れそうなら先に送迎を相談すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "方向と日付を直した結果を控え、徒歩の時間を含めて判断し、間に合わなければ退勤前に送迎を相談すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "一つ前20時10分と最終21時05分は乗換なしと控え、予定どおりなら一つ前、退勤が遅れそうなら先に送迎を相談すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -247,7 +247,7 @@
     "locale": "ja",
     "contentScope": "simulated_learning_scenario",
     "editorialSource": "scripts/dialogue-authoring/prf-001-kitami.json",
-    "premise": "北見駅で帰りの列車を相談。客の最終列車の画面は反対方向かつ別曜日で、当日の目的地と日付を指定して検索をやり直す。便や時刻は架空の案内画面のみ。",
+    "premise": "北見の架空交通案内画面。反対方向・先週の日付を修正し、当日帰路の一つ前20時10分と最終21時05分、いずれも乗換なしという架空候補を示す。会社から駅は徒歩20分、退勤19時40分なら一つ前まで10分余裕。実在の運行・終電・歩行所要ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",

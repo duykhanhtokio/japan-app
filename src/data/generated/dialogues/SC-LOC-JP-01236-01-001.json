@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "券の種類ごとに確認できます。実際の乗換駅の名称は旅程に記載されていますか。",
+        "textJa": "印字を見て分けました。こちらが前の区間の乗車券、次の二枚が新幹線区間の乗車券と特急券、最後が「申込控え」です。実際の乗換駅は旅程に何とありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "利用する改札や券の扱いを担当に確認してからお進みください。",
+        "textJa": "新函館北斗ですね。申込控えは控えとして分け、新幹線区間の二枚は一緒に置きました。改札でどれを使うかは、券を担当に見せて確認してから進んでください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "hokuto_01_task_5",
         "requiredSemanticComponents": {
-          "goal": "旅程順に券と控えを分けて正式な乗換駅を確認し、改札に進む前に使う券の組合せを尋ねると伝える"
+          "goal": "前区間の券、新幹線区間の二枚、申込控えに分かれたと確認し、新函館北斗で改札に使う組合せを担当へ尋ねると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "旅程の順に券と控えを分け、正式な乗換駅を確かめます。改札で迷う前に、使う券の組合せを聞きます。",
+        "recommendedAnswerJa": "前の区間の券、新幹線区間の二枚、申込控えに分かれました。旅程の乗換は新函館北斗です。控えを券と取り違えず、改札で使う組合せは担当に確認します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "旅程順に券と控えを分けて正式な乗換駅を確認し、改札に進む前に使う券の組合せを尋ねると伝える。日本語で伝えてください。",
+        "hint": "前区間の券、新幹線区間の二枚、申込控えに分かれたと確認し、新函館北斗で改札に使う組合せを担当へ尋ねると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "旅程順に券と控えを分けて正式な乗換駅を確認し、改札に進む前に使う券の組合せを尋ねると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "前区間の券、新幹線区間の二枚、申込控えに分かれたと確認し、新函館北斗で改札に使う組合せを担当へ尋ねると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-hokuto.json",
-    "premise": "北斗の学習用シミュレーション。北斗の交通相談で新幹線と在来線の予約を並べ、改札を通る前に乗換に使う券の組合せを確認する。",
+    "premise": "北斗の架空交通相談。旅程の新函館北斗乗換を確認し、印字された「前区間の乗車券」「新幹線区間の乗車券」「新幹線特急券」「申込控え」の四枚をスタッフと役割別に整理する。券の役割の読み取りまでで、実際の改札投入・取扱いは担当の確認待ち。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

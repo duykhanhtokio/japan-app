@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "furano_01_task_4",
         "requiredSemanticComponents": {
-          "goal": "自分は今日、家族は明日帰るため、同じ区間でも日付の違う券を取り違えないようにすると伝える"
+          "goal": "家族が持ってきた券は10月4日だが自分は今日10月3日に帰るため返し、今日の自分の券を探してもらうと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "帰る日は私だけ今日です。家族は明日なので、同じ区間でも日付が違う券を受け取らないよう確認します。",
+        "recommendedAnswerJa": "家族が持ってきた券は10月4日でした。私は今日の10月3日に帰るので、明日の券は返し、自分の今日の分をもう一度探してもらいます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "自分は今日、家族は明日帰るため、同じ区間でも日付の違う券を取り違えないようにすると伝える。日本語で伝えてください。",
+        "hint": "家族が持ってきた券は10月4日だが自分は今日10月3日に帰るため返し、今日の自分の券を探してもらうと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "自分は今日、家族は明日帰るため、同じ区間でも日付の違う券を取り違えないようにすると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "家族が持ってきた券は10月4日だが自分は今日10月3日に帰るため返し、今日の自分の券を探してもらうと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "予定と券が合わない場合は、使う前に担当へ相談してください。",
+        "textJa": "今渡された券は10月3日で、区間も本人の旅程と一致しています。10月4日の券は家族の方が持っています。ご本人も日付を見て確認できますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "furano_01_task_5",
         "requiredSemanticComponents": {
-          "goal": "自分の紙の券で今日の日付と区間を確かめ、写真だけでは乗らず、予定と違えば担当者に相談すると伝える"
+          "goal": "10月3日の自分の紙の券を受け取り日付と区間が合うと確認し、家族の明日の券と分けて乗車案内を確認すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "家族から自分の券を受け取り、今日の日付と区間を見ます。写真だけで乗らず、違う日付なら担当へ相談します。",
+        "recommendedAnswerJa": "はい、10月3日の紙の券を受け取りました。区間も合っています。10月4日の家族の券とは分けられたので、自分の券を持って乗車の案内を確認します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "自分の紙の券で今日の日付と区間を確かめ、写真だけでは乗らず、予定と違えば担当者に相談すると伝える。日本語で伝えてください。",
+        "hint": "10月3日の自分の紙の券を受け取り日付と区間が合うと確認し、家族の明日の券と分けて乗車案内を確認すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "自分の紙の券で今日の日付と区間を確かめ、写真だけでは乗らず、予定と違えば担当者に相談すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "10月3日の自分の紙の券を受け取り日付と区間が合うと確認し、家族の明日の券と分けて乗車案内を確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。切符を確認してお気をつけてお帰りください。",
+        "textJa": "券の受取と日付・区間の照合ができました。写真ではなく、受け取ったご本人の券をお持ちください。お気をつけて。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-furano.json",
-    "premise": "富良野の学習用シミュレーション。往復切符を家族が一緒に保管しており、自分だけ先に帰る予定を相談する。",
+    "premise": "富良野の架空駅相談。本人が家族より先に帰り、紙の券を改札外で受け取る。家族は明日の券を誤って渡しかけ、本人が日付を見て返す。今日10月3日の本人の券を受け取りNPCと区間を照合する。実際の券の効力や写真利用を判定する教材ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

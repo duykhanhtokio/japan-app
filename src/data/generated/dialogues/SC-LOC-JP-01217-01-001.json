@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "ebetsu_01_task_2",
         "requiredSemanticComponents": {
-          "goal": "娘と他の二人の目的地を分け、三人分を同一区間で購入しないよう頼む"
+          "goal": "娘は途中駅Aで両親二人は駅Bまでなので、娘だけAまでの一人分に分けたいと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "娘はこの駅で、私たちはその先のこちらです。三人分を同じ行き先で買わず、一人分だけ区間を分けたいです。",
+        "recommendedAnswerJa": "娘は途中の駅A、私たちはその先の駅Bです。三人分を同じ行き先で買わず、娘一人分をAまでに分けたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "娘と他の二人の目的地を分け、三人分を同一区間で購入しないよう頼む。日本語で伝えてください。",
+        "hint": "娘は途中駅Aで両親二人は駅Bまでなので、娘だけAまでの一人分に分けたいと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "娘と他の二人の目的地を分け、三人分を同一区間で購入しないよう頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "娘は途中駅Aで両親二人は駅Bまでなので、娘だけAまでの一人分に分けたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。行きは三人の区間を分け、帰りは二人分ですね。利用日時と購入できる方法を確認します。",
+        "textJa": "購入内容の下書きを見せます。娘さんはAまで行き一人分、ほかのお二人はBまで行き二人分と帰り二人分です。娘さんの帰りは入れていません。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "ebetsu_01_task_5",
         "requiredSemanticComponents": {
-          "goal": "娘の往路一人分と他の二人の往復を分け、区間と人数を購入前に確認してほしいと頼む"
+          "goal": "娘はAまで行き一人分、両親はBまで行き二人分と帰り二人分で娘の復路なしという下書きを確認し、料金と列車の確認後に購入すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "娘の行き一人分と、私たち二人の行き帰りを分けます。区間と人数が正しいか、買う前に見せてください。",
+        "recommendedAnswerJa": "下書きは合っています。娘はAまで行き一人分、私たちはBまで行き二人分と帰り二人分ですね。全員の往復としては買いません。料金と列車を確認してから購入します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "娘の往路一人分と他の二人の往復を分け、区間と人数を購入前に確認してほしいと頼む。日本語で伝えてください。",
+        "hint": "娘はAまで行き一人分、両親はBまで行き二人分と帰り二人分で娘の復路なしという下書きを確認し、料金と列車の確認後に購入すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "娘の往路一人分と他の二人の往復を分け、区間と人数を購入前に確認してほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "娘はAまで行き一人分、両親はBまで行き二人分と帰り二人分で娘の復路なしという下書きを確認し、料金と列車の確認後に購入すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい、内容を確認してから購入に進みましょう。ご家族でお気をつけてお出かけください。",
+        "textJa": "はい、人数と区間の確認ができました。まだ発券や決済はしていません。利用列車と料金を確認して購入に進みましょう。お気をつけて。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-ebetsu.json",
-    "premise": "江別駅の切符購入相談。家族の一人だけ別駅へ行くため人数分を同一区間にせず、各人の目的地と希望を整理して券を選ぶ。架空旅程。",
+    "premise": "江別の架空切符購入相談。三人のうち15歳の娘は途中駅A、両親二人は駅Bへ同じ列車で行く。娘は行きだけ、両親は往復。NPCが娘一人行き一枚、両親二人の行き二枚と帰り二枚の計五区間分を下書きして照合する。実際の券種・運賃・運行は未提示。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

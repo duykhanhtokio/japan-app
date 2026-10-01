@@ -2,7 +2,7 @@
 
 Status: **FAIL CONTENT QA — SEMANTIC AUDIT IN PROGRESS**.
 
-Current continuation (supersedes historical next-actions below): 16 remaining police exchanges read in full; Kitami fully replaced, five record/evidence/receipt repairs and two premise clarifications. Twenty-seven full replacements documented; 188 distinct exchanges covered by full comparison-group records. CONTENT QA remains FAIL. Next: remaining transport and other unreviewed corpus, first reconciling current remote. No translations or PRF-002.
+Current continuation (supersedes historical next-actions below): 28 remaining transport exchanges compared in full; Ishikari fully replaced and ten NPC evidence/choice/outcome repairs. Twenty-eight full replacements documented, 216 distinct exchanges in full comparison records. CONTENT QA remains FAIL. Next: remaining unreviewed municipal/bank/retail and other exchanges from source inventory, reconciling latest remote before each batch. No translations or PRF-002.
 
 Branch: `recovery/jlpt-n3-n1`. This continuation started from remote-verified `f687aed169babf8e40ca85659273bc0687d3a964` (251/299), preserving all existing data. Original input: `dd1ecd44cc9537efc79b578ac636d5f68792ceff`.
 
@@ -88,3 +88,8 @@ Yubari now checks two sleep bouts (3+2=5, not continuous five hours) and next-da
 ## Police continuation: 16 full exchanges
 
 Kitami claimant-verification overlap replaced by correction of existing recordK-27 using original versus forwarded photograph time. Abashiri updates contact regained/reunion pending, Ashibetsu reads answered/pending searches and current photo, Mikasa separates battery/frame identifiers, Nayoro receives only found umbrella, Rumoi distinguishes18:10 last use from16:40 stale update. Nemuro premise does not defer consultation for photos; Monbetsu sender identity remains undetermined.27 full replacements and188 distinct full exchanges in comparison records; CONTENT QA remains FAIL. The main shared workspace contains concurrent unfinished UI edits; this batch uses an isolated repository copy to preserve them and verify only published audit work. Next unreviewed transport cases.
+
+
+## Transport continuation: 28 full exchanges
+
+Ishikari repeated contract-scope story replaced by complete connection arithmetic including wait and last walk. Ten targeted repairs supply actual fictional evidence or outcome: Abashiri personal collection choice, Bibai entrance/time estimate, Ebetsu purchase draft, Fukagawa immediate changed-plan notice, Furano correct paper-ticket receipt, Hokuto printed-role sort, Kitami two-candidate return search, Kushiro reservation/display match, Monbetsu map correspondence, Utashinai hotel response. Source/runtime/canonical alignment and numerical checks performed; no real operating times/routes certified.28 full replacements and216 distinct full comparison records; CONTENT QA remains FAIL. Next remaining municipal/bank/retail and other unreviewed records.

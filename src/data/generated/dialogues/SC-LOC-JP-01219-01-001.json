@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。今いる場所を地図で確認し、交通事業者の案内で乗場を調べましょう。宿から教わった入口の住所も一緒に見せてください。",
+        "textJa": "地図の丸印が現在地、四角印が宿の入口ですね。丸印の右側にバスの乗場の印、四角印の手前に降車停留所の印があります。宿の送迎地点とは別です。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "monbetsu_01_task_5",
         "requiredSemanticComponents": {
-          "goal": "待ち合わせ地点を現在地にせず、今いる場所と宿の入口を指定し、乗場と降車後の道を確かめると伝える"
+          "goal": "丸印右側の乗場までと降車停留所から四角印の宿入口までに徒歩区間があると読み返し、送迎地点を現在地にせず便も確認すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "送迎待ち合わせ地点を現在地にせず、今いる所と宿の入口住所で経路を調べます。乗場と降りた後の道も確かめます。",
+        "recommendedAnswerJa": "丸印から右側の乗場、降車停留所から四角印の入口へ歩く区間がありますね。送迎地点を出発地にせず、この二つの徒歩区間と利用できる便を確認します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "待ち合わせ地点を現在地にせず、今いる場所と宿の入口を指定し、乗場と降車後の道を確かめると伝える。日本語で伝えてください。",
+        "hint": "丸印右側の乗場までと降車停留所から四角印の宿入口までに徒歩区間があると読み返し、送迎地点を現在地にせず便も確認すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "待ち合わせ地点を現在地にせず、今いる場所と宿の入口を指定し、乗場と降車後の道を確かめると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "丸印右側の乗場までと降車停留所から四角印の宿入口までに徒歩区間があると読み返し、送迎地点を現在地にせず便も確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-monbetsu.json",
-    "premise": "紋別の架空交通案内。客は宿へ行く経路を自分の現在地でなく迎え場所の地図から検索し、実際のバス乗場と入口住所を確認し直す。実鉄道発着を主張しない。",
+    "premise": "紋別の架空交通案内。宿の送迎地点を現在地と誤認した客が、宿から送迎不可と回答を得る。NPCと地図の現在地の丸印、宿入口の四角印、徒歩区間付きバス案内を対応させる。地図上では現在地側の乗場が丸印右、降車停留所は入口の手前。実在バス停・便・運賃は未提示。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
