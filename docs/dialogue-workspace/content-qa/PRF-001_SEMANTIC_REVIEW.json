@@ -231,8 +231,8 @@
     }
   ],
   "otherRemainingWork": [
-    "Complete full-turn semantic review and natural Japanese player instructions for remaining 70/299 scenarios; 229/299 instruction sets recorded. Next: Obihiro all eight (SC-HKD-OBIHIRO-001 and SC-LOC-HKD-OBIHIRO-02-001 through -08-001), then remaining Otaru. Whole-corpus comparison can still reveal issues in reviewed sets.",
-    "Align and review canonical scenario titles/goals for remaining 134/299 scenarios; 165 records aligned. Assess whether repeated NPC referral to another staff member is justified and sufficiently responsive.",
+    "Complete instruction review for remaining 28/299: Sapporo 20 and Yubari eight. Full-corpus causal and referral-pattern comparison remains separate from structural screening.",
+    "Align canonical titles/situations/goals for remaining 92/299; 207 reviewed records. Audit named operational metadata before prefecture CONTENT PASS.",
     "Audit specifically named landmark/business operational metadata; no live facility verification is claimed."
   ],
   "nativeSpeakerReviewed": false,
@@ -281,8 +281,8 @@
   "pendingGroups": [],
   "naturalInstructionReview": {
     "status": "partial; not prefecture approval",
-    "scenarioCount": 244,
-    "playerInstructionCount": 1220,
+    "scenarioCount": 271,
+    "playerInstructionCount": 1355,
     "scenarioIds": [
       "SC-LOC-JP-01228-05-001",
       "SC-LOC-JP-01226-07-001",
@@ -527,7 +527,34 @@
       "SC-LOC-HKD-OTARU-04-001",
       "SC-LOC-HKD-OTARU-05-001",
       "SC-LOC-HKD-OTARU-06-001",
-      "SC-LOC-HKD-OTARU-07-001"
+      "SC-LOC-HKD-OTARU-07-001",
+      "SC-LOC-JP-01212-01-001",
+      "SC-LOC-JP-01212-02-001",
+      "SC-LOC-JP-01212-04-001",
+      "SC-LOC-JP-01212-05-001",
+      "SC-LOC-JP-01212-06-001",
+      "SC-LOC-JP-01212-07-001",
+      "SC-LOC-JP-01220-01-001",
+      "SC-LOC-JP-01220-02-001",
+      "SC-LOC-JP-01220-04-001",
+      "SC-LOC-JP-01220-05-001",
+      "SC-LOC-JP-01220-06-001",
+      "SC-LOC-JP-01220-07-001",
+      "SC-LOC-JP-01220-08-001",
+      "SC-LOC-JP-01213-01-001",
+      "SC-LOC-JP-01213-02-001",
+      "SC-LOC-JP-01213-03-001",
+      "SC-LOC-JP-01213-04-001",
+      "SC-LOC-JP-01213-05-001",
+      "SC-LOC-JP-01213-06-001",
+      "SC-LOC-JP-01213-07-001",
+      "SC-LOC-JP-01213-08-001",
+      "SC-LOC-JP-01214-02-001",
+      "SC-LOC-JP-01214-03-001",
+      "SC-LOC-JP-01214-04-001",
+      "SC-LOC-JP-01214-06-001",
+      "SC-LOC-JP-01214-07-001",
+      "SC-LOC-JP-01214-08-001"
     ],
     "method": "Manually wrote grammatical Japanese task descriptions after reading the complete exchanges; updated both editorial source and runtime semantic goals/hints/evaluation notes. No recommended-answer quotation substituted for a task.",
     "utteranceRepairs": [
@@ -677,12 +704,20 @@
       {
         "scenarioId": "SC-LOC-JP-01219-01-001",
         "reason": "Removes fourth-wall learning-simulation explanation from NPC speech; checks current location and transport guidance directly."
+      },
+      {
+        "scenarioId": "SC-LOC-JP-01212-01-001",
+        "reason": "Replaced NPC fourth-wall simulation disclaimer with an in-world request to check current bus operator information."
+      },
+      {
+        "scenarioId": "SC-LOC-JP-01213-06-001",
+        "reason": "Avoided universal bank account-address procedure claim; asks to verify each account holder and the bank’s document/acceptance conditions."
       }
     ]
   },
   "canonicalMetadataReview": {
     "status": "partial — not CONTENT PASS",
-    "scenarioCount": 180,
+    "scenarioCount": 207,
     "scenarioIds": [
       "SC-LOC-JP-01229-01-001",
       "SC-LOC-JP-01229-02-001",
@@ -863,7 +898,34 @@
       "SC-LOC-HKD-OTARU-04-001",
       "SC-LOC-HKD-OTARU-05-001",
       "SC-LOC-HKD-OTARU-06-001",
-      "SC-LOC-HKD-OTARU-07-001"
+      "SC-LOC-HKD-OTARU-07-001",
+      "SC-LOC-JP-01212-01-001",
+      "SC-LOC-JP-01212-02-001",
+      "SC-LOC-JP-01212-04-001",
+      "SC-LOC-JP-01212-05-001",
+      "SC-LOC-JP-01212-06-001",
+      "SC-LOC-JP-01212-07-001",
+      "SC-LOC-JP-01220-01-001",
+      "SC-LOC-JP-01220-02-001",
+      "SC-LOC-JP-01220-04-001",
+      "SC-LOC-JP-01220-05-001",
+      "SC-LOC-JP-01220-06-001",
+      "SC-LOC-JP-01220-07-001",
+      "SC-LOC-JP-01220-08-001",
+      "SC-LOC-JP-01213-01-001",
+      "SC-LOC-JP-01213-02-001",
+      "SC-LOC-JP-01213-03-001",
+      "SC-LOC-JP-01213-04-001",
+      "SC-LOC-JP-01213-05-001",
+      "SC-LOC-JP-01213-06-001",
+      "SC-LOC-JP-01213-07-001",
+      "SC-LOC-JP-01213-08-001",
+      "SC-LOC-JP-01214-02-001",
+      "SC-LOC-JP-01214-03-001",
+      "SC-LOC-JP-01214-04-001",
+      "SC-LOC-JP-01214-06-001",
+      "SC-LOC-JP-01214-07-001",
+      "SC-LOC-JP-01214-08-001"
     ],
     "file": "src/data/dialogue-content/scenario-overrides.json",
     "method": "Manually authored distinct concise Japanese titles; situation and initial player goal match the individual editorial source. Unrestricted objectives and no grammar/vocabulary caps. Parsed before/after checks confirm only the 57 current-batch records changed; previous 108 preserved, other prefectures unchanged."
@@ -887,6 +949,45 @@
         "SC-LOC-HKD-OTARU-05-001",
         "SC-LOC-HKD-OTARU-06-001",
         "SC-LOC-HKD-OTARU-07-001"
+      ],
+      "method": "Complete eleven-turn source read; manually authored five grammatical, answer-independent tasks and specific titles; aligned canonical situation and first player goal. No native-speaker approval or prefecture CONTENT PASS."
+    },
+    {
+      "date": "2026-10-01",
+      "scenarioIds": [
+        "SC-LOC-JP-01212-01-001",
+        "SC-LOC-JP-01212-02-001",
+        "SC-LOC-JP-01212-04-001",
+        "SC-LOC-JP-01212-05-001",
+        "SC-LOC-JP-01212-06-001",
+        "SC-LOC-JP-01212-07-001",
+        "SC-LOC-JP-01220-01-001",
+        "SC-LOC-JP-01220-02-001",
+        "SC-LOC-JP-01220-04-001",
+        "SC-LOC-JP-01220-05-001",
+        "SC-LOC-JP-01220-06-001",
+        "SC-LOC-JP-01220-07-001",
+        "SC-LOC-JP-01220-08-001"
+      ],
+      "method": "Complete eleven-turn source read; manually authored five grammatical, answer-independent tasks and specific titles; aligned canonical situation and first player goal. No native-speaker approval or prefecture CONTENT PASS."
+    },
+    {
+      "date": "2026-10-01",
+      "scenarioIds": [
+        "SC-LOC-JP-01213-01-001",
+        "SC-LOC-JP-01213-02-001",
+        "SC-LOC-JP-01213-03-001",
+        "SC-LOC-JP-01213-04-001",
+        "SC-LOC-JP-01213-05-001",
+        "SC-LOC-JP-01213-06-001",
+        "SC-LOC-JP-01213-07-001",
+        "SC-LOC-JP-01213-08-001",
+        "SC-LOC-JP-01214-02-001",
+        "SC-LOC-JP-01214-03-001",
+        "SC-LOC-JP-01214-04-001",
+        "SC-LOC-JP-01214-06-001",
+        "SC-LOC-JP-01214-07-001",
+        "SC-LOC-JP-01214-08-001"
       ],
       "method": "Complete eleven-turn source read; manually authored five grammatical, answer-independent tasks and specific titles; aligned canonical situation and first player goal. No native-speaker approval or prefecture CONTENT PASS."
     }
