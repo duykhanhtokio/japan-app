@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。荷物の発送で、何を確認しましょうか。",
+        "textJa": "こんにちは。何をお手伝いできますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "bibai_05_task_1",
+        "communicativeIntent": "ask_return_recently_handed_gift_wrong_size",
         "requiredSemanticComponents": {
-          "goal": "衣類と玩具を同じ箱で家族へ贈りたいので、内容に応じた発送可否を尋ねる"
+          "goal": "渡したばかりの贈り物にサイズ違いの服を入れたので、箱がまだあるなら返してもらえるか相談する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "家族へ贈り物を送りたいです。衣類とおもちゃを同じ箱に入れました。この内容で発送できますか。",
+        "recommendedAnswerJa": "今渡した贈り物に、違うサイズの服を入れたことに気づきました。まだこちらにあるなら、箱を返していただけるか相談したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "衣類と玩具を同じ箱で家族へ贈りたいので、内容に応じた発送可否を尋ねる。日本語で伝えてください。",
+        "hint": "渡したばかりの贈り物にサイズ違いの服を入れたので、箱がまだあるなら返してもらえるか相談する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "衣類と玩具を同じ箱で家族へ贈りたいので、内容に応じた発送可否を尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "渡したばかりの贈り物にサイズ違いの服を入れたので、箱がまだあるなら返してもらえるか相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "中の品をそれぞれ確認しましょう。電池や液体が入った物はありますか。",
+        "textJa": "まず受付の記録と箱を確認します。控えを見せていただけますか。カウンターの内側の箱には、ご自身で手を触れずにお待ちください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "bibai_05_task_2",
+        "communicativeIntent": "identify_sister_parcel_blue_tape_size_error",
         "requiredSemanticComponents": {
-          "goal": "玩具には電池があり香水も同梱したため、衣類だけと書かず全ての品を申告すると伝える"
+          "goal": "控えを示し、姉宛てで青いテープの箱に、頼まれた百二十ではなく百の子供服を入れたと説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "おもちゃに電池があり、小さい香水も入れました。衣類だけと書けば簡単だと思いましたが、全部伝えます。",
+        "recommendedAnswerJa": "こちらが控えです。姉宛ての箱で、青いテープを貼りました。子供用の服は百二十を頼まれたのに、百を入れてしまいました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "玩具には電池があり香水も同梱したため、衣類だけと書かず全ての品を申告すると伝える。日本語で伝えてください。",
+        "hint": "控えを示し、姉宛てで青いテープの箱に、頼まれた百二十ではなく百の子供服を入れたと説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "玩具には電池があり香水も同梱したため、衣類だけと書かず全ての品を申告すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "控えを示し、姉宛てで青いテープの箱に、頼まれた百二十ではなく百の子供服を入れたと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "内容品を正確に申告してください。宛先と輸送方法に応じて、条件を確認します。",
+        "textJa": "この場面の受付記録では、箱はまだ運び出されていません。宛先と控えの番号を照合したうえで、担当者が返却を確認します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "bibai_05_task_3",
+        "communicativeIntent": "update_sister_and_hold_replacement_dispatch",
         "requiredSemanticComponents": {
-          "goal": "宛先と電池の種類が分かる箱、写真、現物を示し、発送前に条件を確認してほしいと頼む"
+          "goal": "姉へサイズ違いと取り替えの希望を伝え、元の箱が戻るまでは別の荷物を追加発送せず待つと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "宛先はこちらです。電池の種類は箱に書かれています。写真と品物を見せるので、先に送れる条件を教えてください。",
+        "recommendedAnswerJa": "姉にはもう送ったと連絡しましたが、受け取る服を取り替えたいと伝えます。箱が戻るまで、別の荷物を追加で送るのは待ちます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "宛先と電池の種類が分かる箱、写真、現物を示し、発送前に条件を確認してほしいと頼む。日本語で伝えてください。",
+        "hint": "姉へサイズ違いと取り替えの希望を伝え、元の箱が戻るまでは別の荷物を追加発送せず待つと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "宛先と電池の種類が分かる箱、写真、現物を示し、発送前に条件を確認してほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "姉へサイズ違いと取り替えの希望を伝え、元の箱が戻るまでは別の荷物を追加発送せず待つと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "表示を確認して担当へ照会します。条件が確認できない物を入れたまま、発送可能と決めつけないでください。",
+        "textJa": "控えの番号と宛先が箱の表示に一致しました。担当者から、この箱を返却する確認が取れました。青いテープもご確認ください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "bibai_05_task_4",
+        "communicativeIntent": "confirm_own_box_and_correct_dispatch_message",
         "requiredSemanticComponents": {
-          "goal": "必要なら玩具と香水を外して衣類だけを送り、内容を変更した場合の記入も確認したいと伝える"
+          "goal": "返却する箱は自分の物だと確認し、受取り後に家でタグを見直して、姉へ受付済みと知らせた内容も訂正すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "必要なら香水とおもちゃは外し、衣類だけ別に送ります。品物を分けた場合の記入内容も確認したいです。",
+        "recommendedAnswerJa": "はい、私の箱です。こちらで受け取ったことを確認してから、家で服のタグを見直します。受付済みという連絡も、姉に訂正します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "必要なら玩具と香水を外して衣類だけを送り、内容を変更した場合の記入も確認したいと伝える。日本語で伝えてください。",
+        "hint": "返却する箱は自分の物だと確認し、受取り後に家でタグを見直して、姉へ受付済みと知らせた内容も訂正すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "必要なら玩具と香水を外して衣類だけを送り、内容を変更した場合の記入も確認したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "返却する箱は自分の物だと確認し、受取り後に家でタグを見直して、姉へ受付済みと知らせた内容も訂正すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "実際に送る物に合わせて、内容品と梱包を確認します。利用できる方法と料金はその後にご案内します。",
+        "textJa": "では箱をお返しします。今回はこの荷物を運搬へ回しません。再度送るときは、中身と表示を準備して新たに受付へお持ちください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "bibai_05_task_5",
+        "communicativeIntent": "acknowledge_return_and_prepare_correct_size",
         "requiredSemanticComponents": {
-          "goal": "品を種類別に申告し、条件に合わず外した物があれば内容欄も実際の荷物に合わせて直すと伝える"
+          "goal": "箱を受け取ったことを伝え、姉に今回の発送取りやめを知らせ、百二十の服へ入れ替えて確認後に改めて持参すると話す"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "衣類、電池入りおもちゃ、香水を別々に申告します。条件が合わない品を外したら、内容欄も書き直します。",
+        "recommendedAnswerJa": "箱を受け取りました。姉に今の発送は取りやめたと伝え、百二十の服へ入れ替えます。確認が済んでから改めて持ってきます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "品を種類別に申告し、条件に合わず外した物があれば内容欄も実際の荷物に合わせて直すと伝える。日本語で伝えてください。",
+        "hint": "箱を受け取ったことを伝え、姉に今回の発送取りやめを知らせ、百二十の服へ入れ替えて確認後に改めて持参すると話す。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "品を種類別に申告し、条件に合わず外した物があれば内容欄も実際の荷物に合わせて直すと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "箱を受け取ったことを伝え、姉に今回の発送取りやめを知らせ、百二十の服へ入れ替えて確認後に改めて持参すると話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。内容と条件を確認してから発送しましょう。ありがとうございました。",
+        "textJa": "承知しました。取り違えに気づけてよかったですね。箱をお忘れなく。ご相談ありがとうございました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-bibai.json",
-    "premise": "美唄の郵便発送相談。贈り物の玩具に電池と香水があり、全部を衣類として書かず内容別の発送条件を照会する。品目の適法配送を断定しない。",
+    "premise": "美唄の郵便受付を想定した学習用シミュレーション。贈り物を渡した直後に子供用の服のサイズ違いに気づき、受付済みの箱を自分で持ち出さず返却を相談する。この架空の場面では担当者の照合後に箱が返却される。現実の取戻し制度、料金、可否を説明するものではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

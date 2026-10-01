@@ -309,6 +309,15 @@
       "newDistinctDevelopment": "Completes fictional surname/given-name fields using explicit source labels; catches omitted surname component, confirms transcription and distinguishes workplace nickname from registered name.",
       "status": "all eleven turns and five tasks individually authored and reviewed",
       "source": "scripts/dialogue-authoring/prf-001-muroran.json"
+    },
+    {
+      "replacedScenarioId": "SC-LOC-JP-01215-05-001",
+      "comparisonScenarioId": "SC-LOC-JP-01205-05-001",
+      "oldOverlap": "Battery-item disclosure -> acceptance enquiry -> item removal -> updated contents",
+      "newDistinctDevelopment": "Wrong-size gift already handed over: receipt/parcel matching, fictional return, corrected recipient notification, reprepare without duplicate shipment.",
+      "status": "complete authored replacement; not prefecture approval",
+      "source": "scripts/dialogue-authoring/prf-001-bibai.json",
+      "runtimeSha256": "8d86bb9bb348a3fa4ee0492cbde5693de81cb0d0bbce482f74150272e682735c"
     }
   ],
   "otherRemainingWork": [
@@ -1559,6 +1568,86 @@
         "SC-LOC-JP-01214-06-001": "Seasonal employment, dorm actual residence and separate employment/residence-period dates; does not decide eligibility."
       },
       "status": "group reviewed; Muroran eleven turns and five tasks fully replaced; no prefecture CONTENT PASS"
+    },
+    {
+      "group": "postal_contents_packing_and_post_acceptance_change",
+      "scenarioIds": [
+        "SC-LOC-JP-01205-05-001",
+        "SC-LOC-JP-01215-05-001",
+        "SC-LOC-JP-01219-05-001",
+        "SC-LOC-JP-01223-05-001",
+        "SC-LOC-JP-01233-05-001",
+        "SC-LOC-JP-01235-05-001"
+      ],
+      "method": "All six complete eleven-turn exchanges read together, with postal premise inventory screened before choosing replacement. Compared initial request, evidence, NPC response, choice and actual/pending end state.",
+      "finding": "Muroran and old Bibai both disclosed battery-containing items then offered removing unsupported items and rewriting contents; toy/perfume differences did not distinguish their solution. Date did not answer the explicit work-space request.",
+      "repairs": [
+        "Bibai completely replaced by post-acceptance wrong-size gift: staff matches receipt/addressee/tape, confirms fictional not-yet-transported state, returns box, player corrects family notification and plans replacement; real recall rights/fees not certified.",
+        "Date NPC now answers space request with a supplied fictional desk, then asks the player to choose a non-mixing work sequence."
+      ],
+      "distinctDevelopment": {
+        "SC-LOC-JP-01205-05-001": "Before dispatch: electronic-device specifications and terminal protection require item-dependent acceptance/packing enquiry.",
+        "SC-LOC-JP-01215-05-001": "After handover: incorrect gift size causes an identified parcel to be returned in the fictional scene; no duplicate shipment.",
+        "SC-LOC-JP-01219-05-001": "Temperature-sensitive homemade food: transport conditions cannot be inferred from weather; send only after suitability confirmed.",
+        "SC-LOC-JP-01223-05-001": "Duplicate address labels and indistinguishable closed boxes: open both to identify contents before associating different recipients.",
+        "SC-LOC-JP-01233-05-001": "Already sorted photographs for three people: sequential sealing prevents mixing, rather than recovering unknown contents.",
+        "SC-LOC-JP-01235-05-001": "Known missing page before handover: restore numbered sequence and list reply insert separately, keeping a single dispatch."
+      },
+      "status": "reviewed with one complete replacement and one NPC-response repair; not whole-prefecture CONTENT PASS"
+    },
+    {
+      "group": "postal_receipt_availability_and_move_scope",
+      "scenarioIds": [
+        "SC-LOC-JP-01212-05-001",
+        "SC-LOC-JP-01216-05-001",
+        "SC-LOC-JP-01206-05-001",
+        "SC-LOC-JP-01220-05-001",
+        "SC-LOC-JP-01208-05-001",
+        "SC-LOC-JP-01209-05-001",
+        "SC-LOC-JP-01217-05-001",
+        "SC-LOC-JP-01213-05-001",
+        "SC-LOC-JP-01221-05-001"
+      ],
+      "method": "All nine complete exchanges read together. Existing Abashiri current-notice redelivery and new Mikasa partial-delivery status repair cross-compared.",
+      "distinctDevelopment": {
+        "01212": "Accepted redelivery becomes infeasible; cannot edit online; contact responsible holder before relocating pickup.",
+        "01216": "Two notices from different carriers; split enquiries despite same seller.",
+        "01206": "Household addressee is spouse; choose his available time and distinguish contact field.",
+        "01220": "Delivered status without physical parcel; specified storage checked and empty; escalate with negative search evidence.",
+        "01208": "Correct home versus work destination and explicitly list two differently named movers.",
+        "01209": "Only online shop address changed; establish missing postal notification and independently notify school; family stays.",
+        "01217": "Two scripts denote one person, not two movers; resolve mailbox name evidence.",
+        "01213": "Old company dorm must distinguish east building/room; future occupancy affects requested start; employer address separate.",
+        "01221": "Temporary absence with uncertain return is not a move; enquire duration/extension constraints before choosing."
+      },
+      "finding": "Retained: requests and evidence lead to separate choices; exact causes and unconfirmed outcomes recorded. Several end with a responsible-party enquiry rather than completed receipt/registration; no completion is asserted. This review does not certify real postal procedures.",
+      "status": "group reviewed; whole-corpus generic referral patterns remain pending"
+    },
+    {
+      "group": "postal_label_correspondence_and_signature_return",
+      "scenarioIds": [
+        "SC-LOC-JP-01228-05-001",
+        "SC-LOC-JP-01229-05-001",
+        "SC-LOC-JP-01224-05-001",
+        "SC-LOC-JP-01226-05-001",
+        "SC-LOC-JP-01231-05-001",
+        "SC-LOC-JP-01225-05-001",
+        "SC-LOC-JP-01227-05-001",
+        "SC-LOC-JP-01210-05-001"
+      ],
+      "method": "All eight complete exchanges read together; Iwamizawa also compared with already-read Wakkanai signed-contract return and Asahikawa arrive-by deadline.",
+      "distinctDevelopment": {
+        "01228": "Readable envelope and enclosed letter are separate tasks; maintain address details and separate phone line.",
+        "01229": "Obtain recipient name in writing rather than borrow homophone kanji; then confirm work department destination.",
+        "01224": "Home box plus label-creation screen disproves dispatch; correct earlier recipient message and keep acceptance record separately.",
+        "01226": "Return borrowed book without unrelated private note or bill; write a fresh thank-you note.",
+        "01231": "Wet unreadable label reconstructed from source data; remove old reused-box addressing; box itself dry.",
+        "01225": "Inner reply envelope goes home, outer application envelope goes to institution; avoid correcting both to home.",
+        "01227": "Former sender address causes return-to-sender concern; new envelope and enclosed-document address reviewed separately.",
+        "01210": "Cross-border original versus retained copy; signature handling plus outbound/return/person-processing time, rather than one-way application deadline."
+      },
+      "finding": "Retained eight distinct primary decisions. Iwamizawa/Wakkanai share a signed-original topic but Iwamizawa needs selecting the correct original and planning round trip, Wakkanai distinguishes delivery evidence from signature return. No arrival guarantee, real-country service or document acceptance certified.",
+      "status": "group reviewed; not prefecture CONTENT PASS"
     }
   ],
   "operationalMetadataReview": {
