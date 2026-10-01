@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。セルフ会計で何を確認したいですか。",
+        "textJa": "こんにちは。セルフレジの操作でお手伝いしましょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,10 +26,10 @@
       "player": {
         "communicativeIntent": "hachimantai_7_task_1",
         "requiredSemanticComponents": {
-          "goal": "投入千円表示を商品代千円と思い追加投入前に確認する"
+          "goal": "初めてのセルフレジで現金支払いの流れを尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "千円を入れたら画面に千円と出ました。商品代も千円だと思って、さらにお金を入れるところでした。",
+        "recommendedAnswerJa": "はい、初めて使います。現金で払いたいので、支払いまでの流れを教えてください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "投入千円表示を商品代千円と思い追加投入前に確認する。日本語で伝えてください。",
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "その表示は投入した金額です。商品の合計額は別の欄にあります。",
+        "textJa": "商品を読み取ったあと、商品数と合計額を確認して支払方法を選びます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,10 +71,10 @@
       "player": {
         "communicativeIntent": "hachimantai_7_task_2",
         "requiredSemanticComponents": {
-          "goal": "投入額と商品合計は別だと理解する"
+          "goal": "商品四点が全て読み取れているか確認すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "入れた金額と買い物の合計を同じだと思っていました。",
+        "recommendedAnswerJa": "商品は四点です。全部読み取れているか画面で確認します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "投入額と商品合計は別だと理解する。日本語で伝えてください。",
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "商品合計はこちらで、投入額との差がお釣りとして表示される想定です。",
+        "textJa": "はい。現金を入れる前に合計額も見てください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,10 +116,10 @@
       "player": {
         "communicativeIntent": "hachimantai_7_task_3",
         "requiredSemanticComponents": {
-          "goal": "追加投入前に合計額と投入額を比較すると伝える"
+          "goal": "千円投入後に足りていれば追加投入不要か確認する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "追加で入れる前に、合計額と投入額を見比べます。",
+        "recommendedAnswerJa": "千円を入れます。足りている場合は追加で入れず、そのまま精算を進めればよいですか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "追加投入前に合計額と投入額を比較すると伝える。日本語で伝えてください。",
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。支払い完了表示が出たら、お釣りとレシートも確認してください。",
+        "textJa": "画面の投入額と不足額またはお釣り表示を確認してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,10 +161,10 @@
       "player": {
         "communicativeIntent": "hachimantai_7_task_4",
         "requiredSemanticComponents": {
-          "goal": "商品数も変わっていないか最後に確認すると伝える"
+          "goal": "完了後にお釣りとレシートを取ると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "商品数も変わっていないか最後に見ます。",
+        "recommendedAnswerJa": "分かりました。支払い完了後にお釣りとレシートを忘れず取ります。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "商品数も変わっていないか最後に確認すると伝える。日本語で伝えてください。",
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "困った場合は操作を続けず係員へ声をかけてください。",
+        "textJa": "困った場合は操作を止めて係員を呼んでください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,10 +206,10 @@
       "player": {
         "communicativeIntent": "hachimantai_7_task_5",
         "requiredSemanticComponents": {
-          "goal": "商品合計・投入額・釣銭・商品数を確認し不要な追加投入をしないとまとめる"
+          "goal": "商品数・合計額・投入額・釣銭を確認して会計するとまとめる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "商品合計、投入額、お釣り、商品数を確認し、不要な追加投入はしません。",
+        "recommendedAnswerJa": "四点と合計額を確認し、現金投入後は画面のお釣り表示を見て会計します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "商品合計・投入額・釣銭・商品数を確認し不要な追加投入をしないとまとめる。日本語で伝えてください。",
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。画面を確認してお会計ください。",
+        "textJa": "承知しました。ゆっくり操作してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-003-hachimantai.json",
-    "premise": "八幡平の架空スーパー。セルフレジで現金投入額を支払額だと思い、お釣り表示を見ず追加投入しかけたため合計・投入・釣銭を分ける。",
+    "premise": "八幡平の架空スーパー。セルフレジを初めて使う利用者が、商品数、合計額、投入額、お釣りを画面で確認しながら現金で会計する。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
