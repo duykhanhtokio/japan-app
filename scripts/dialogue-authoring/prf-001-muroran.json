@@ -7,7 +7,7 @@
       "港といっても目的の場所が広いので、面接先の住所を確認しましょう。会社から案内は届いていますか。",
       "会社名だけメモしましたが、メールを見ると受付の住所が別にあります。会社の本社ではなく、この受付へ行くようです。",
       "その受付の住所を基準に行き方を調べましょう。駅で降りた後の移動も含めて確認する必要があります。集合時刻は決まっていますか。",
-      "この時刻です。歩く時間を考えていませんでした。駅に着いたら終わりと思わず、受付までの経路を見たいです。",
+      "面接は午後二時です。駅から歩く時間を考えていませんでした。駅に着いたら終わりと思わず、受付までの経路を見たいです。",
       "はい。目的地、降りる駅、その先の経路を確認してから切符を選びましょう。案内でわからない入口は、面接先へ尋ねると確実です。",
       "面接先にも入口を確認します。帰りは同僚に送ってもらうかもしれないので、今日は片道だけ買いたいです。",
       "片道のご希望ですね。区間が決まったら、購入できる方法と料金をご案内します。券売機で迷ったら操作前にお尋ねください。",
@@ -15,11 +15,26 @@
       "承知しました。まずメールの受付住所をお示しください。行き方と購入方法を順に確認しましょう。お気をつけてお出かけください。"
     ],
     "tasks": [
-      ["ask_port_interview_ticket_destination", "港近くの面接先への切符を求め最寄駅だけでよいか尋ねる"],
-      ["correct_head_office_to_interview_reception_address", "メールで本社とは別の受付住所を見つけ目的地を訂正する"],
-      ["include_last_mile_in_arrival_deadline", "集合時刻を示し降車後の徒歩を含む経路確認を求める"],
-      ["request_oneway_with_uncertain_return_ride", "入口を先方へ確認すると伝え帰路送迎の可能性から片道を希望する"],
-      ["confirm_address_route_then_fare_purchase", "受付住所と降車後経路を確かめ区間料金確認後に買うと伝える"]
+      [
+        "ask_port_interview_ticket_destination",
+        "港近くの仕事の面接に向かうと伝え、港に近い駅への切符を買えばよいか相談する"
+      ],
+      [
+        "correct_head_office_to_interview_reception_address",
+        "会社のメールには本社とは別の受付住所があると示し、そちらが行き先だと説明する"
+      ],
+      [
+        "include_last_mile_in_arrival_deadline",
+        "集合時刻を示し、駅で降りた後に受付まで歩く時間と道も確認したいと伝える"
+      ],
+      [
+        "request_oneway_with_uncertain_return_ride",
+        "面接先に入口を確認すると伝え、帰りは送ってもらう可能性があるので片道券だけを希望する"
+      ],
+      [
+        "confirm_address_route_then_fare_purchase",
+        "受付住所と降車後の経路を確かめて余裕のある移動を選び、区間と料金を確認して片道券を買うと伝える"
+      ]
     ]
   },
   "SC-LOC-JP-01205-01-002": {
@@ -38,17 +53,32 @@
       "承知しました。現在の運行案内から確認しましょう。焦らず、変更点があればまたお尋ねください。お気をつけて。"
     ],
     "tasks": [
-      ["report_delayed_train_threat_to_hospital_booking", "病院予約への遅刻の懸念と待つ列車の遅延を伝える"],
-      ["explain_waiting_for_definite_eta_before_hospital_call", "病院未連絡と確定時刻を待つ考えを説明する"],
-      ["choose_early_hospital_notice_and_update_before_departure", "先に病院へ連絡し駅を離れる前に運行更新を確かめたいと伝える"],
-      ["relay_hospital_callback_request_and_seek_alternative_info", "病院の再連絡依頼を伝え別経路の案内先を尋ねる"],
-      ["compare_options_then_callback_with_estimate", "未定連絡済と伝え案内比較後に見込みで再連絡する方針を示す"]
+      [
+        "report_delayed_train_threat_to_hospital_booking",
+        "待っている列車が遅れ病院の予約に間に合わないかもしれないと伝え、相談する"
+      ],
+      [
+        "explain_waiting_for_definite_eta_before_hospital_call",
+        "まだ病院には連絡しておらず、到着見込みを聞いてから電話するつもりだったと説明する"
+      ],
+      [
+        "choose_early_hospital_notice_and_update_before_departure",
+        "先に病院へ電話すると伝え、駅を離れて別の交通を探す前に列車案内の更新も確認したいと話す"
+      ],
+      [
+        "relay_hospital_callback_request_and_seek_alternative_info",
+        "病院から時刻が分かれば再連絡するよう言われたと伝え、別の行き方を調べる案内先を尋ねる"
+      ],
+      [
+        "compare_options_then_callback_with_estimate",
+        "病院へは時刻未定と伝えたので列車と別交通を比較し、行き方と見込みが決まれば再連絡すると話す"
+      ]
     ]
   },
   "SC-LOC-JP-01205-02-001": {
     "premise": "室蘭市役所で他市からの転入を相談する客が、前市の手続書類と引越業者の伝票を混同しており、書類名を確かめて担当窓口へ持参情報を整理する。",
     "turns": [
-      "こんにちは。住所の手続きについてのご相談ですか。",
+      "こんにちは。住所のお手続きについて、何をお手伝いしましょうか。",
       "別の市から室蘭市へ引っ越して来ました。転入の手続きの窓口へ行きたいんですが、持っている書類で足りるか心配です。",
       "前のお住まいの自治体での手続きについて、何か書類や案内を受け取っていますか。まず書類の名前を確認しましょう。",
       "この紙が転出の書類だと思っていました。でも上には引越会社の名前が書いてあって、自治体の書類ではなさそうです。",
@@ -61,11 +91,26 @@
       "承知しました。転入の担当窓口へご案内します。わからない書類名は、その場でメモしてご確認ください。ありがとうございます。"
     ],
     "tasks": [
-      ["request_intercity_move_counter_and_document_check", "他市から室蘭への転居と手持書類の不安を伝え担当窓口を尋ねる"],
-      ["identify_mover_receipt_misread_as_municipal_document", "転出書類と思った紙が引越会社発行と気づき訂正する"],
-      ["disclose_uncertain_former_city_procedure_and_offer_email", "前市相談後の完了不明を伝え案内メールを提示する"],
-      ["request_precise_missing_document_enquiry_wording", "在留カード持参と不足時の前市問い合わせ内容も聞きたいと伝える"],
-      ["separate_records_and_verify_before_former_city_call", "伝票と自治体案内を分け不明手続と書類を整理して連絡すると伝える"]
+      [
+        "request_intercity_move_counter_and_document_check",
+        "別の市から転入したいと伝え、担当窓口と持参書類を相談する"
+      ],
+      [
+        "identify_mover_receipt_misread_as_municipal_document",
+        "転出書類だと思った紙には引越会社の名があり、自治体の書類ではなさそうだと説明する"
+      ],
+      [
+        "disclose_uncertain_former_city_procedure_and_offer_email",
+        "前の自治体に相談したが手続きの完了は不明だと伝え、案内メールを見せてよいか尋ねる"
+      ],
+      [
+        "request_precise_missing_document_enquiry_wording",
+        "在留カードがあると答え、不足があれば前の自治体へ何を問い合わせるか担当に聞きたいと伝える"
+      ],
+      [
+        "separate_records_and_verify_before_former_city_call",
+        "引越会社の紙と自治体の案内を分け、在留カードとメールを見せて必要書類を整理してから問い合わせると伝える"
+      ]
     ]
   },
   "SC-LOC-JP-01205-03-001": {
@@ -84,11 +129,26 @@
       "はい。医療スタッフにおつなぎしますので、案内した場所でお待ちください。つらくなった時は遠慮なくお知らせください。お大事に。"
     ],
     "tasks": [
-      ["ask_first_visit_registration_with_fever_sore_throat", "初診で発熱とのど痛があり先に記入するか尋ねる"],
-      ["report_onset_and_wrong_hospital_booking_screen", "昨夜発症と予約画面が前居住地の別病院と気づいたことを説明する"],
-      ["report_fatigue_and_request_clinical_handover_seat", "歩行後のだるさと待てるか不明を伝え座る案内と医療職連絡を求める"],
-      ["offer_identity_cards_and_clarify_booking_not_here", "持参カードを示し別院予約と受付へ明確に伝える方針を述べる"],
-      ["prioritize_symptoms_then_correct_booking_registration", "症状を先に伝え別院画面と書類で当地受付を確認すると伝える"]
+      [
+        "ask_first_visit_registration_with_fever_sore_throat",
+        "初めて来院し熱とのどの痛みで受診したいと伝え、先に初診の書類を書くか尋ねる"
+      ],
+      [
+        "report_onset_and_wrong_hospital_booking_screen",
+        "症状は昨夜からと答え、予約画面が以前住んでいた地域の別の病院だったと説明する"
+      ],
+      [
+        "report_fatigue_and_request_clinical_handover_seat",
+        "歩いてだるさが強くなり待てるか分からないと伝え、座る場所の案内と医療スタッフへの連絡を頼む"
+      ],
+      [
+        "offer_identity_cards_and_clarify_booking_not_here",
+        "持参したマイナンバーカードと在留カードを伝え、予約は別の病院のものだとはっきり説明すると話す"
+      ],
+      [
+        "prioritize_symptoms_then_correct_booking_registration",
+        "昨夜からの症状と今のだるさを先に伝え、別病院の予約画面と書類を示して受付方法を確認すると話す"
+      ]
     ]
   },
   "SC-LOC-JP-01205-04-001": {
@@ -107,11 +167,26 @@
       "承知しました。まず朝に財布を使った場所を確認しましょう。後で思い出した情報も追加でお知らせください。ご相談ありがとうございます。"
     ],
     "tasks": [
-      ["report_missing_wallet_after_shopping", "買物後の財布紛失とスーパーで最後に使ったと思う記憶を伝える"],
-      ["correct_last_wallet_use_after_mobile_payment_check", "スーパーは携帯決済で最後の財布使用は朝の店と訂正する"],
-      ["distinguish_known_contents_from_assumed_identity_card", "財布特徴と銀行カードを伝え家にあるはずの在留カードは未確認と示す"],
-      ["request_found_wallet_contact_with_work_unavailability", "銀行別連絡を示し仕事中電話不可時の確認方法を尋ねる"],
-      ["confirm_route_known_contents_and_contact_plan", "朝からの経路・確実な中身・連絡時間を伝え銀行へ別相談すると述べる"]
+      [
+        "report_missing_wallet_after_shopping",
+        "買い物後に財布がないと気づいたと伝え、店での支払い時にはあったと思うので紛失の届出を相談する"
+      ],
+      [
+        "correct_last_wallet_use_after_mobile_payment_check",
+        "スーパーでは携帯で払っていたと訂正し、財布を最後に見たのは朝の飲み物購入時だと説明する"
+      ],
+      [
+        "distinguish_known_contents_from_assumed_identity_card",
+        "財布の色と傷、銀行カードが入っていたことを伝え、在留カードは自宅かもしれないので紛失と断定しないと話す"
+      ],
+      [
+        "request_found_wallet_contact_with_work_unavailability",
+        "銀行にも相談すると伝え、仕事中に連絡へ出られない場合の確認方法を尋ねる"
+      ],
+      [
+        "confirm_route_known_contents_and_contact_plan",
+        "朝の店からの経路と確実に入っていたカード、連絡できる時間を伝え、銀行には別に相談すると話す"
+      ]
     ]
   },
   "SC-LOC-JP-01205-05-001": {
@@ -130,11 +205,26 @@
       "承知しました。まず商品の写真と送り先を確認します。中身に合う案内をしますので、そのままお待ちください。ありがとうございます。"
     ],
     "tasks": [
-      ["request_first_domestic_parcel_addressing_method", "国内友人宛の箱と初利用を伝え宛名と発送方法を尋ねる"],
-      ["disclose_clothing_and_battery_device_contents", "服と充電器を申告し閉箱なら説明不要と思っていたと説明する"],
-      ["offer_model_photo_and_request_packaging_review", "型番写真と服だけの包み方を示し端子等の確認後に封を直したいと伝える"],
-      ["offer_removing_device_and_request_unpacking_area", "不明なら服だけ送る代案を示し作業場所を尋ねる"],
-      ["confirm_item_review_repacking_and_updated_declaration", "型番・受入・梱包確認後に封し内容変更時は申告を直して差し出すと伝える"]
+      [
+        "request_first_domestic_parcel_addressing_method",
+        "国内の友人へ箱を送りたいと伝え、宛名と送り方を尋ねる"
+      ],
+      [
+        "disclose_clothing_and_battery_device_contents",
+        "服と携帯用充電器が入っていると説明し、封をしていても中身と電池の確認が必要だと理解を伝える"
+      ],
+      [
+        "offer_model_photo_and_request_packaging_review",
+        "型番の写真を示し、服で包んだだけなので電池や端子の扱いを確認してから封を直したいと話す"
+      ],
+      [
+        "offer_removing_device_and_request_unpacking_area",
+        "確認できなければ充電器を抜いて服だけ送る案も伝え、箱を開けてよい作業場所を尋ねる"
+      ],
+      [
+        "confirm_item_review_repacking_and_updated_declaration",
+        "型番と内容を示して受付可否と梱包を確認し、中身を変えたら申告も直して宛名と料金を確かめると伝える"
+      ]
     ]
   },
   "SC-LOC-JP-01205-06-001": {
@@ -153,11 +243,26 @@
       "承知しました。こちらで担当者へ確認しましょう。曖昧なまま記入せず、先にご相談いただきありがとうございます。"
     ],
     "tasks": [
-      ["request_account_document_check_for_name_difference", "持参カードと勤務資料の名前表記差を示し開設書類を相談する"],
-      ["explain_full_name_vs_workplace_katakana_short_name", "正式な長い名前と勤務先略名を説明し略名で申込む考えを示す"],
-      ["disclose_old_workplace_address_after_move", "勤務資料旧住所と新住所控えを示し使える書類が不明と伝える"],
-      ["hold_form_and_request_precise_missing_document_names", "記入を保留し名前住所差をメモして不足書類の正式名称を求める"],
-      ["confirm_separate_document_review_before_form", "資料を分け名前住所の扱いと不足を確認後に記入すると伝える"]
+      [
+        "request_account_document_check_for_name_difference",
+        "口座開設の書類を相談し、在留カードと勤務資料で氏名表記が違うと説明する"
+      ],
+      [
+        "explain_full_name_vs_workplace_katakana_short_name",
+        "在留カードには氏名全体があるが勤務資料は短いカタカナ名で、それを申込書にも使うつもりだったと話す"
+      ],
+      [
+        "disclose_old_workplace_address_after_move",
+        "転居直後で勤務資料は旧住所だと伝え、新住所の控えもあるが使える書類は判断できないと説明する"
+      ],
+      [
+        "hold_form_and_request_precise_missing_document_names",
+        "記入は待ち、氏名の省略と住所差を整理すると伝え、不足書類の正式な名称を教えてほしいと頼む"
+      ],
+      [
+        "confirm_separate_document_review_before_form",
+        "三種類の資料を分けて示し、氏名と住所の扱い、不足書類を確認してから申込書を書くと伝える"
+      ]
     ]
   },
   "SC-LOC-JP-01205-06-002": {
@@ -176,11 +281,26 @@
       "承知しました。紛失の担当者へおつなぎします。暗証番号はここでは伝えず、確認の案内をお待ちください。ご相談ありがとうございます。"
     ],
     "tasks": [
-      ["request_lost_cash_card_stop_consultation", "昨日利用後に紛失した可能性と利用停止相談を伝える"],
-      ["identify_bank_atm_and_unexecuted_app_cancellation", "銀行とATM利用を説明し安全のためアプリ解約を考え未操作と伝える"],
-      ["offer_identity_and_ask_found_after_stop_action", "在留カード提示と停止後発見時の自己再利用を避ける確認を求める"],
-      ["ask_salary_transfer_impact_separate_from_card_stop", "給与口座のため振込への影響をカードと区別して説明してほしいと頼む"],
-      ["confirm_official_stop_scope_without_app_cancellation", "本人確認と給与事情を示し勝手なアプリ解約をせず停止範囲と発見時対応を聞くと伝える"]
+      [
+        "request_lost_cash_card_stop_consultation",
+        "キャッシュカードが見つからず昨日の利用後に紛失したかもしれないと伝え、利用停止を相談する"
+      ],
+      [
+        "identify_bank_atm_and_unexecuted_app_cancellation",
+        "銀行と最後のATM利用を伝え、口座アプリも解約すべきだと思ったが操作はしていないと説明する"
+      ],
+      [
+        "offer_identity_and_ask_found_after_stop_action",
+        "在留カードがあると答え、停止後にカードが見つかったら再利用前に確認すべきか尋ねる"
+      ],
+      [
+        "ask_salary_transfer_impact_separate_from_card_stop",
+        "給与が入る口座なので振込にも影響するか心配だと伝え、カード停止と口座の扱いを分けて説明してほしいと頼む"
+      ],
+      [
+        "confirm_official_stop_scope_without_app_cancellation",
+        "本人確認書類と紛失・給与口座の事情を示し、アプリを勝手に解約せず停止範囲と発見時の対応を聞くと伝える"
+      ]
     ]
   },
   "SC-LOC-JP-01205-07-001": {
@@ -199,11 +319,26 @@
       "承知しました。写真を見ながら売場へご案内します。選ぶ商品の表示で確認していきましょう。ありがとうございます。"
     ],
     "tasks": [
-      ["request_tofu_location_using_reference_photo", "初来店でいつもの豆腐写真を示す売場案内を求める"],
-      ["state_stirfry_use_and_accept_texture_checked_substitute", "炒める用途と同品不可なら代替可を伝え硬さの確認を求める"],
-      ["disclose_common_storage_assumption_from_shelf_pack", "常温箱入りの記憶と全豆腐同じ置場保存と思ったことを説明する"],
-      ["request_use_storage_comparison_and_restock_info", "今回の用途保存を見て写真商品入荷の確認も頼む"],
-      ["choose_usable_substitute_without_restock_assurance", "代替条件を比べ入荷不明なら待つと決めず料理も見直すと伝える"]
+      [
+        "request_tofu_location_using_reference_photo",
+        "豆腐を探していると伝え、普段の商品の写真を見せて売場を案内してもらえるか尋ねる"
+      ],
+      [
+        "state_stirfry_use_and_accept_texture_checked_substitute",
+        "今夜炒める料理に使うと答え、同じ商品がなければ代わりでもよいが固さを確認したいと話す"
+      ],
+      [
+        "disclose_common_storage_assumption_from_shelf_pack",
+        "以前常温の棚で箱入り商品を見たと伝え、豆腐ならどれも同じ置場と保存方法だと思っていたと説明する"
+      ],
+      [
+        "request_use_storage_comparison_and_restock_info",
+        "今の候補の固さと保存表示を確認すると伝え、いつもの商品がなければ入荷予定も聞いてほしいと頼む"
+      ],
+      [
+        "choose_usable_substitute_without_restock_assurance",
+        "候補の条件が合えば代わりを買い、入荷予定が不明なら待つと決めず今夜の料理を考え直すと伝える"
+      ]
     ]
   },
   "SC-LOC-JP-01205-08-001": {
@@ -222,11 +357,26 @@
       "承知しました。まず入口付近の案内を見ましょう。周囲に配慮しながら、どうぞごゆっくりお過ごしください。"
     ],
     "tasks": [
-      ["request_dry_rest_place_and_park_rules", "ぬれたベンチで休めないと説明し別の場所とルールを尋ねる"],
-      ["ask_flowerbed_edge_seating_permission", "入口近くの乾いた花壇縁を候補にして立入可否を尋ねる"],
-      ["request_food_and_waste_rules_without_bin", "飲料おにぎりを持参しごみ箱不明なので飲食と処分を確認する"],
-      ["offer_takehome_bag_and_short_standing_rest", "袋ありと伝え遠いベンチなら短く立って飲む代案と通行を塞がない位置を求める"],
-      ["confirm_designated_rest_and_waste_takehome", "花壇に入らず飲食案内を確認し通路を避けごみを持ち帰る方針を伝える"]
+      [
+        "request_dry_rest_place_and_park_rules",
+        "濡れたベンチの代わりに休める場所を探していると伝え、公園の利用ルールも尋ねる"
+      ],
+      [
+        "ask_flowerbed_edge_seating_permission",
+        "入口近くの花壇の縁が乾いていたと説明し、そこへ入って座ってよいか分からないと伝える"
+      ],
+      [
+        "request_food_and_waste_rules_without_bin",
+        "飲み物とおにぎりがあるがごみ箱は見えないと伝え、飲食してよい場所とごみの扱いを先に確認したいと話す"
+      ],
+      [
+        "offer_takehome_bag_and_short_standing_rest",
+        "持帰り用の袋があると伝え、使えるベンチが遠ければ入口近くで立って飲むため通行の邪魔にならない場所を尋ねる"
+      ],
+      [
+        "confirm_designated_rest_and_waste_takehome",
+        "花壇へ入らず休憩と飲食の案内を確認し、通路を塞がない場所を選んでごみは持ち帰ると伝える"
+      ]
     ]
   }
 }
