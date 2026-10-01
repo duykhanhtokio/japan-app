@@ -1,13 +1,11 @@
 # PRF-003 Japanese editorial checkpoint
 
-Status: IN PROGRESS; contentPass remains false. Sixteen of 125 canonical exchanges were individually rewritten and read with 80 player tasks: Hanamaki 8 and Kitakami 8. The remaining 109 require individual review/rewrite.
+Status: INDIVIDUAL JAPANESE REWRITE COMPLETE; contentPass remains false until the full near-semantic/cross-prefecture screen is completed.
 
-Each scenario keeps its ID, location, 11 alternating turns, dialogue IDs and next links. Canonical titles, premises and first-task goals are synchronized. The canonical edit was limited to these exact 16 records; the other 7112 records were preserved. Difficulty remains None and translation is deferred until all Japanese prefectures are complete.
+All 125 canonical PRF-003 exchanges have now been individually rewritten and read: 1,375 dialogue turns and 625 player tasks across Morioka 21 plus thirteen 8-exchange city groups. Translation remains deferred until the Japanese prefecture audit is complete.
 
-Screening: coverage 125/125, zero structural errors, 34 normalized duplicate groups and 56 near candidates. Baseline was 36 and 61. These counts do not establish semantic approval. Exact source/runtime hashes and remaining cities are in PRF-003_SEMANTIC_REVIEW.json.
+Current exact screening: coverage 125/125; every source exchange has exactly 11 turns and 5 player tasks; zero exact duplicate recommended player answers; zero exact duplicate player task goals. This is a structural/exact-duplicate PASS, not yet the final semantic CONTENT PASS.
 
-Compared the new group with 392 PRF-001/PRF-002 source exchanges. A too-similar allergy plot was replaced by a separate additional-purchase exchange. Candidate notes remain partial and do not certify the unfinished prefecture.
+The rewrite preserves scenario IDs and the runtime dialogue structure. New authoring sources exist for each completed city group. Real venue policies and institutional procedures are not certified; scenarios remain simulated learning content. Medical scenes do not diagnose.
 
-UI lock: PASS 10/10. ID/link/task consistency: PASS 16 exchanges/80 mappings. Whitespace diff check: PASS. All original runtime snapshots remain outside the checkout. Real venue policies and institutional procedures are not certified; medical scenes hand off to staff without diagnosing.
-
-PRF-001 and PRF-002 retain their own hash-bound AI Japanese editorial CONTENT PASS decisions. Next group: Ichinoseki, followed by the remaining city inventory; no translations yet.
+Next required step: full PRF-003 near-semantic and cross-prefecture comparison against PRF-001/PRF-002, repair any remaining template-like or meaning-level collisions, then update PRF-003 contentPass only if that audit passes. No translations yet.
