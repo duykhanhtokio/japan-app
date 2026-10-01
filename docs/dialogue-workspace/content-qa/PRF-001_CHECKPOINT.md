@@ -36,7 +36,7 @@ Individually rewritten so far:
 - Nayoro: `SC-LOC-JP-01221-01-001` through `SC-LOC-JP-01221-08-001` (8).
 - Mikasa: `SC-LOC-JP-01222-01-001` through `SC-LOC-JP-01222-08-001` (8).
 
-Total: 203 individual exchanges / 2233 turns / 1015 separately specified player tasks. Each exchange has a manually authored premise and eleven Japanese utterances. The application script only installs those supplied utterances; it does not generate exchanges from a recipe. Scenario IDs, location IDs, dialogue IDs, order and next links remain unchanged. Existing originals are retained at the input commit and in local timestamped backups. Stale translations and furigana are cleared for changed utterances; no translations are authored. Unchanged scenarios and their existing translations are preserved.
+Total: 219 individual exchanges / 2409 turns / 1095 separately specified player tasks. Each exchange has a manually authored premise and eleven Japanese utterances. The application script only installs those supplied utterances; it does not generate exchanges from a recipe. Scenario IDs, location IDs, dialogue IDs, order and next links remain unchanged. Existing originals are retained at the input commit and in local timestamped backups. Stale translations and furigana are cleared for changed utterances; no translations are authored. Unchanged scenarios and their existing translations are preserved.
 
 Editorial sources:
 
@@ -64,7 +64,7 @@ Editorial sources:
 - `scripts/dialogue-authoring/prf-001-nayoro.json`
 - `scripts/dialogue-authoring/prf-001-mikasa.json`
 
-Simulation premises do not certify an actual business's prices, hours, facilities, policies or service availability. Next action is to audit and rewrite Chitose (CTY-JP-01224), then continue the remaining PRF-001 cities. There are 96 scenarios not yet individually rewritten. Do not begin PRF-002 or translation.
+Simulation premises do not certify an actual business's prices, hours, facilities, policies or service availability. Next action is to audit and rewrite Sunagawa (CTY-JP-01226), then continue the remaining PRF-001 cities. There are 80 scenarios not yet individually rewritten. Do not begin PRF-002 or translation.
 
 Before CONTENT PASS, finish all 299 exchanges, review near and normalized duplicate candidates, compare causal developments and player tasks semantically across the entire master, verify location relevance and natural Japanese, and run compatibility checks. The 195 rewrites have not been declared prefecture-wide CONTENT PASS. Native speaker review is not claimed.
 
@@ -90,3 +90,5 @@ Pending geographic label QA also includes `LOC-JP-01222-01` / `三笠駅`. The M
 
 
 2026-10-01 continuation: Nemuro (CTY-JP-01223), eight exchanges individually rewritten using `scripts/dialogue-authoring/prf-001-nemuro.json`. Total 203/299; 96 remain. Eleven alternating turns and five separate player tasks per exchange. Exact player-answer/task screening passed across the 203 editorial sources. Simulated learning settings; no current venue/service certification. CONTENT PASS remains false; translation deferred. Next city: Chitose.
+
+2026-10-01 continuation: Chitose and Takikawa, eight exchanges each, authored in `prf-001-chitose.json` and `prf-001-takikawa.json`. Current total 219/299; 80 remain. All editorial sources have eleven turns and five unique player tasks; no repeated full player answers or task descriptions. Reviewed these sixteen for causal continuity, distinct situations, task/answer alignment and ending greetings. Full prefecture semantic/location approval remains pending. Next: Sunagawa (CTY-JP-01226).
