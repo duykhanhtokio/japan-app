@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。駅の移動で何を確認したいですか。",
+        "textJa": "こんにちは。駅の移動でお手伝いできますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,10 +26,10 @@
       "player": {
         "communicativeIntent": "ninohe_1_task_1",
         "requiredSemanticComponents": {
-          "goal": "エスカレーターの上り表示が列車の目的地方向か確認する"
+          "goal": "大荷物で階段を避け十分以内にホームへ行く経路を尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "「上り」と書いたエスカレーターが目的地方面だと思いました。この表示は列車の方向ですか。",
+        "recommendedAnswerJa": "大きな荷物があります。次の列車まで十分しかないので、階段を使わずホームへ行く道を教えてください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "エスカレーターの上り表示が列車の目的地方向か確認する。日本語で伝えてください。",
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "これは設備が上階へ動く方向の表示です。列車の行先を示す「上り」とは別です。",
+        "textJa": "承知しました。エレベーターを使う経路があります。行き先と番線は分かりますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,10 +71,10 @@
       "player": {
         "communicativeIntent": "ninohe_1_task_2",
         "requiredSemanticComponents": {
-          "goal": "設備方向と列車方向の上りは別だと理解し行先ホームを確認する"
+          "goal": "行先は分かるが番線未確認と伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "同じ言葉なので列車方向だと思っていました。まず行先ホームを確認します。",
+        "recommendedAnswerJa": "行き先は分かりますが、番線をまだ確認していません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "設備方向と列車方向の上りは別だと理解し行先ホームを確認する。日本語で伝えてください。",
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "行先ホームは二階です。この設備で上階へ行ったあと、番線表示を見てください。",
+        "textJa": "現在の案内では二番線です。エレベーターを降りたら発車表示も確認してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,10 +116,10 @@
       "player": {
         "communicativeIntent": "ninohe_1_task_3",
         "requiredSemanticComponents": {
-          "goal": "大荷物で上階到着後に行先と番線を再確認すると伝える"
+          "goal": "走らず移動し間に合わない場合は次便を確認したいと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "大きな荷物があるので、上階へ着いてから行先と番線をもう一度確認します。",
+        "recommendedAnswerJa": "荷物があるので急いで走らず、その経路で向かいます。間に合わなければ次の便を確認したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "大荷物で上階到着後に行先と番線を再確認すると伝える。日本語で伝えてください。",
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。設備の運転方向と列車案内を別々に見てください。",
+        "textJa": "はい。次便の時刻は案内表示か係員へ確認できます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,10 +161,10 @@
       "player": {
         "communicativeIntent": "ninohe_1_task_4",
         "requiredSemanticComponents": {
-          "goal": "下り表示も列車方向と決めつけず設備表示として見ると伝える"
+          "goal": "二番線へ向かい発車済みなら次便を相談すると述べる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "戻るときも「下り」を列車方向と決めつけず、設備表示として確認します。",
+        "recommendedAnswerJa": "ではまず二番線へ向かい、発車済みなら無理に追わず次便を相談します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "下り表示も列車方向と決めつけず設備表示として見ると伝える。日本語で伝えてください。",
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "案内が分からなければ係員へお尋ねください。",
+        "textJa": "安全のため足元にもお気をつけください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,10 +206,10 @@
       "player": {
         "communicativeIntent": "ninohe_1_task_5",
         "requiredSemanticComponents": {
-          "goal": "設備方向と列車行先を分け二階で番線行先を確認するとまとめる"
+          "goal": "エレベーター経路と番線を確認し次便対応も決めるとまとめる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "設備の上り下りと列車の行先を分け、二階で番線と行先を確認して移動します。",
+        "recommendedAnswerJa": "エレベーター経路で二番線へ行き、間に合わない場合は次便を確認します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "設備方向と列車行先を分け二階で番線行先を確認するとまとめる。日本語で伝えてください。",
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。安全にお進みください。",
+        "textJa": "承知しました。お気をつけてお進みください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-003-ninohe.json",
-    "premise": "二戸の架空駅。エスカレーターの上り下り表示を行先方向だと思い、大荷物で逆側へ進みかけたため、設備方向とホーム行先を分ける。",
+    "premise": "二戸の架空駅。大きな荷物を持つ利用者が乗換時間の短い列車へ向かうため、階段を避けた移動経路と番線を確認し、間に合わない場合の次便も相談する。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
