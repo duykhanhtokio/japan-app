@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ご用意できるサイズを確認してご説明します。お持ち帰りの後は、すぐにお飲みになりますか。",
+        "textJa": "ご用意できるのは、二百ミリリットルと三百五十ミリリットルです。温かいコーヒーをお持ち帰りになって、すぐにお飲みになりますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "無理に二つ持たず、資材の有無を確認してから決めましょう。ふたが付いていても、傾けるとこぼれることがあります。",
+        "textJa": "今日は二杯をまとめて運ぶ資材をご用意できません。片手がふさがるなら一杯にする方法があります。ふたがあっても、バッグへ横に入れたり傾けたりしないでください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。一つのサイズを確認してご注文を伺います。受け取る時にふたの状態も確認して、立てたままお持ちください。",
+        "textJa": "二百ミリリットルの一杯でよろしいでしょうか。仕事バッグと分けて、空いている手でカップを立ててお持ちください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "confirm_quantity_change_and_upright_carry",
+        "communicativeIntent": "order_one_200ml_invite_friend_later_keep_cup_upright",
         "requiredSemanticComponents": {
-          "goal": "量を確認して一杯を注文し、友人には一緒に来るよう連絡してカップはバッグに入れず立てて持つと話す"
+          "goal": "二百ミリリットルを一杯注文し、友人とは後で一緒に買いに来ると連絡して、カップは仕事バッグへ入れず立てて持つと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "量を確認して、一つにします。友人には一緒に買いに来ようと連絡し、受け取ったカップはバッグに入れず立てて持ちます。",
+        "recommendedAnswerJa": "はい、二百ミリリットルを一杯お願いします。友人には後で一緒に買いに来ようと連絡し、カップは仕事バッグへ入れず立てて持ちます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "量を確認して一杯を注文し、友人には一緒に来るよう連絡してカップはバッグに入れず立てて持つと話す。日本語で伝えてください。",
+        "hint": "二百ミリリットルを一杯注文し、友人とは後で一緒に買いに来ると連絡して、カップは仕事バッグへ入れず立てて持つと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "量を確認して一杯を注文し、友人には一緒に来るよう連絡してカップはバッグに入れず立てて持つと話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "二百ミリリットルを一杯注文し、友人とは後で一緒に買いに来ると連絡して、カップは仕事バッグへ入れず立てて持つと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "かしこまりました。サイズをご案内してからお作りします。お持ち歩きの際は足元にもお気をつけください。ありがとうございます。",
+        "textJa": "かしこまりました。温かいコーヒー二百ミリリットルを一杯お作りします。受取りの際に、ふたが閉まっているかもご確認ください。ありがとうございます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -247,7 +247,7 @@
     "locale": "ja",
     "contentScope": "simulated_learning_scenario",
     "editorialSource": "scripts/dialogue-authoring/prf-001-sapporo-rest.json",
-    "premise": "宮越屋珈琲の学習用場面で持ち帰り飲料を頼む客が、量の選択から徒歩移動中のこぼれ対策へ相談を発展させる。サイズや資材の提供は確認する。",
+    "premise": "宮越屋珈琲の店舗を想定した学習用シミュレーション。架空の持帰りコーヒーは二百または三百五十ミリリットルで、二杯用の持運び資材は用意できない。片手が仕事バッグでふさがる客は二百の一杯を選び、友人とは後で一緒に買いに来る。実店の商品、容量や資材提供は認定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",

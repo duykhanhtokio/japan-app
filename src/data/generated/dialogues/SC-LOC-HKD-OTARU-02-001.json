@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "見本は仕上げまで終えたものです。同じ形を作っても、すぐ持ち帰れるとは限りません。今日受け取れる候補と、後日受取りの候補を分けて説明します。",
+        "textJa": "その見本は、仕上げが済んだ木製の飾りです。同じ体験では仕上げは翌日になり、今日の夕方には持ち帰れません。今日持ち帰る内容を選ぶか、この木製飾りを後日受け取るか、お選びいただけます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "発送の対応と梱包、追加費用は申し込む前に確認します。体験中の工程も、ご自身で行う部分と担当者が行う部分を見ていただきます。",
+        "textJa": "この木製飾りは、翌日の仕上げ後にこちらで梱包して発送できます。体験は千八百円、発送は五百円で、合計二千三百円です。形と模様を選び、下書きまではご自身でできます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "選べる内容と参加条件を確認しましょう。無理に道具を使わず、担当者へ任せる工程があるかも含めてご案内します。",
+        "textJa": "形は丸か四角、模様は花か波から選べます。裁断と仕上げの乾燥、梱包は担当者が行います。お客様が裁断の道具を使う内容ではありません。どの組合せにしますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "confirm_scope_completion_and_collection_before_enrolment",
+        "communicativeIntent": "choose_round_wave_and_next_day_shipping_2300",
         "requiredSemanticComponents": {
-          "goal": "自分が選べる部分と担当者の工程、完成までの時間、受取り費用を聞いてから申し込み、未完成品を持ち出さないと伝える"
+          "goal": "丸い波模様を選び、自分は下書きまでで裁断と仕上げを担当者に任せ、合計二千三百円と翌日の仕上げ後発送を確認して申し込むと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "自分で選べる部分、担当者の工程、完成までの時間と受取り費用を聞いてから申し込みます。未完成のまま持ち出すことはしません。",
+        "recommendedAnswerJa": "丸い形に波の模様でお願いします。下書きまで自分で行い、裁断と仕上げは担当者に任せます。合計二千三百円を確認したので、翌日の仕上げ後に発送する内容で申し込みます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "自分が選べる部分と担当者の工程、完成までの時間、受取り費用を聞いてから申し込み、未完成品を持ち出さないと伝える。日本語で伝えてください。",
+        "hint": "丸い波模様を選び、自分は下書きまでで裁断と仕上げを担当者に任せ、合計二千三百円と翌日の仕上げ後発送を確認して申し込むと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "自分が選べる部分と担当者の工程、完成までの時間、受取り費用を聞いてから申し込み、未完成品を持ち出さないと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "丸い波模様を選び、自分は下書きまでで裁断と仕上げを担当者に任せ、合計二千三百円と翌日の仕上げ後発送を確認して申し込むと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。候補を比べられるよう、順にご説明します。ご自身に合う体験をお選びください。ありがとうございます。",
+        "textJa": "承知しました。丸い形と波の模様、翌日の仕上げ後の発送ですね。送り先と申込み内容を確認してから、下書きの説明を始めます。ありがとうございます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-otaru.json",
-    "premise": "小樽の工芸体験工房で、当日持ち帰る土産を作りたい客が仕上げ工程を担当者から聞き、急いで未完成品を扱わず受取り方法を先に決める。具体的素材や設備は確定しない。",
+    "premise": "小樽の工芸体験を想定した学習用シミュレーション。架空の木製飾りは翌日仕上げで、体験千八百円と発送五百円。参加者は丸か四角の形と花か波の模様を選び下書きをし、裁断と乾燥・梱包は担当者が行う。客は丸い波模様を選び翌日の発送を依頼する。実在の体験、料金、工程や発送条件は認定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

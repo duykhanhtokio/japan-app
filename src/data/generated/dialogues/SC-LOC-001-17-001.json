@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "日帰り利用の受け付けとタオルの扱いを確認しますね。タオルは購入したいですか。それとも借りられるかを知りたいですか。",
+        "textJa": "今日は日帰り利用を受け付けています。タオルは購入品と貸し出し品があります。購入したいですか、それとも借りて返すものをご希望ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "貸し出しの有無と返却方法を確認しましょう。購入品と貸し出し品を取り違えないよう、受け取る前に説明をお聞きください。",
+        "textJa": "タオルは借りられます。入浴後は、貸し出し品をこちらの入口の返却かごへ入れてください。購入するタオルとは別なので、貸し出し品はお持ち帰りにならないでください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "state_no_rental_fallback_and_ask_valuables",
+        "communicativeIntent": "choose_day_use_with_returnable_towel_ask_storage",
         "requiredSemanticComponents": {
-          "goal": "借りられなければ今日は見送ると伝え、利用時に携帯や財布を浴室まで持つ必要があるか尋ねる"
+          "goal": "タオルを借りて返せると確認できたので利用したいと伝え、携帯と財布を浴室へ持たず保管する場所を尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "わかりました。もし借りられなければ今日は利用を見送れます。利用する場合、スマートフォンや財布を浴室まで持って行く必要はありますか。",
+        "recommendedAnswerJa": "借りて返せるなら、今日は利用したいです。スマートフォンや財布は浴室へ持って行かず、保管する場所を教えてください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "借りられなければ今日は見送ると伝え、利用時に携帯や財布を浴室まで持つ必要があるか尋ねる。日本語で伝えてください。",
+        "hint": "タオルを借りて返せると確認できたので利用したいと伝え、携帯と財布を浴室へ持たず保管する場所を尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "借りられなければ今日は見送ると伝え、利用時に携帯や財布を浴室まで持つ必要があるか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "タオルを借りて返せると確認できたので利用したいと伝え、携帯と財布を浴室へ持たず保管する場所を尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "浴室へ持ち込まず保管する方法を、館内の案内で確認しましょう。ロッカーや鍵の扱いは、利用する場所の説明に従ってください。",
+        "textJa": "スマートフォンや財布は、脱衣所のロッカーへ保管してください。鍵には手首に付ける帯があります。鍵をロッカーの中へ置いたままにせず、帯でご自身が持って入浴します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。鍵の持ち方、保管する荷物、タオルの返却先を先に確かめましょう。わからなければ脱衣所へ進む前にお尋ねください。",
+        "textJa": "はい。この帯を手首に付け、鍵が手元にあることを確かめてください。ロッカーに入れる荷物と、借りたタオルを分けて準備できますね。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "confirm_reception_storage_and_return_sequence",
+        "communicativeIntent": "confirm_towel_basket_locker_wrist_key_then_register",
         "requiredSemanticComponents": {
-          "goal": "日帰り利用とタオル条件を聞いて受付し、貴重品と鍵の扱いを確認して貸出タオルは返すと話す"
+          "goal": "借りたタオルは入口のかごへ返し、財布と携帯はロッカー、鍵は手首の帯で持つと確認して受付を頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "利用とタオルの条件を聞いてから受付します。利用できたら貴重品を保管し、鍵の扱いを確認して、返すタオルは持ち帰らないようにします。",
+        "recommendedAnswerJa": "借りたタオルは入浴後に入口のかごへ返します。財布と携帯はロッカーへ入れ、鍵は手首の帯で持って利用します。受付をお願いします。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "日帰り利用とタオル条件を聞いて受付し、貴重品と鍵の扱いを確認して貸出タオルは返すと話す。日本語で伝えてください。",
+        "hint": "借りたタオルは入口のかごへ返し、財布と携帯はロッカー、鍵は手首の帯で持つと確認して受付を頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "日帰り利用とタオル条件を聞いて受付し、貴重品と鍵の扱いを確認して貸出タオルは返すと話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "借りたタオルは入口のかごへ返し、財布と携帯はロッカー、鍵は手首の帯で持つと確認して受付を頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。まず日帰り利用とタオルの条件を確認してご案内します。どうぞ、こちらでお待ちください。ありがとうございます。",
+        "textJa": "承知しました。利用とタオルの料金を受付で確認してから、ロッカーへお進みください。お帰りの際は貸し出しタオルの返却もお願いします。ありがとうございます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -247,7 +247,7 @@
     "locale": "ja",
     "contentScope": "simulated_learning_scenario",
     "editorialSource": "scripts/dialogue-authoring/prf-001-sapporo-rest.json",
-    "premise": "定山渓温泉の利用前に、荷物に濡れたタオルを入れたくない客がレンタルと返却を相談し、脱衣所に持ち込む物を整理する。利用条件は仮定せず確認。",
+    "premise": "定山渓の温泉受付を想定した学習用シミュレーション。架空の日帰り利用ではタオルを借りて入口の返却かごへ返せ、荷物は脱衣所のロッカーへ保管し鍵は手首の帯で持つ。客は濡れた貸出タオルを荷物へ入れず、貴重品と鍵の扱いを確認して受付する。実施設の料金、貸出や設備条件は認定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
