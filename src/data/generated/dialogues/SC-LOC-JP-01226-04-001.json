@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "SC-LOC-JP-01226-04-001_semantic_task_3",
         "requiredSemanticComponents": {
-          "goal": "昨日の夕方と今日に着信があり、記録で確認できる二日間の範囲を伝える"
+          "goal": "昨日夕方三件と今日二件の二日分を示し、それより前から続いたとは説明しないと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "昨日の夕方からです。今日も来たので、前からずっと続いたと言わず、記録にある二日分を示します。",
+        "recommendedAnswerJa": "昨日の夕方に三件、今日は二件です。記録では二日分だけで、ずっと前から続いているとは言いません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "昨日の夕方と今日に着信があり、記録で確認できる二日間の範囲を伝える。日本語で伝えてください。",
+        "hint": "昨日夕方三件と今日二件の二日分を示し、それより前から続いたとは説明しないと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "昨日の夕方と今日に着信があり、記録で確認できる二日間の範囲を伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "昨日夕方三件と今日二件の二日分を示し、それより前から続いたとは説明しないと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "通話の設定は契約先などの案内で確認できます。現在の危険や新たな内容があれば担当へ伝えてください。",
+        "textJa": "昨日三件、今日二件、計五件で全て未応答、メッセージなしと記録しました。「脅す発言があった」とは書いていません。通信設定の相談と、発言を受けた場合の相談は分けて進められます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "SC-LOC-JP-01226-04-001_semantic_task_5",
         "requiredSemanticComponents": {
-          "goal": "二日分の着信履歴と未応答で発言を聞いていないことを示し、設定や担当窓口について相談すると伝える"
+          "goal": "計五件で全て未応答、メッセージなしという読み返しを確認し、発言や相手を推測せず二日分の履歴で相談すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "二日分の履歴、未応答、発言なしを見せます。相手を決めつけず、設定と相談の手順を聞きます。",
+        "recommendedAnswerJa": "計五件で未応答、メッセージなしという記録で合っています。聞いていない発言や相手を推測せず、この二日分の履歴で担当と通信の相談先に確認します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "二日分の着信履歴と未応答で発言を聞いていないことを示し、設定や担当窓口について相談すると伝える。日本語で伝えてください。",
+        "hint": "計五件で全て未応答、メッセージなしという読み返しを確認し、発言や相手を推測せず二日分の履歴で相談すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "二日分の着信履歴と未応答で発言を聞いていないことを示し、設定や担当窓口について相談すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "計五件で全て未応答、メッセージなしという読み返しを確認し、発言や相手を推測せず二日分の履歴で相談すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-sunagawa.json",
-    "premise": "学習用シミュレーション。非通知の着信が続く人が、通話内容を聞いていない事実と着信回数を分けて相談する。",
+    "premise": "砂川の架空着信相談。履歴は昨日夕方三件・今日二件の計五件、全て未応答でメッセージなし。NPCが二日分の件数と未応答を読み返し、通話内容・相手・犯罪を断定しない。端末設定や通信契約は個別の相談先に確認する。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

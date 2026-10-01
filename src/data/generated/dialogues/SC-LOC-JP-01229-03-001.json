@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "担当へ新しい番号をお知らせください。こちらから連絡したかどうかも確認します。",
+        "textJa": "受付記録では、旧番号へ一度連絡して不通でした。予約は現在も残っています。連絡できなかったことと、予約の取消しは別です。新しい番号を見せていただけますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "furano_03_task_4",
         "requiredSemanticComponents": {
-          "goal": "連絡を受けていなくても案内が一度もなかったとは断言せず、記録を確認してほしいと頼む"
+          "goal": "新番号を示し、旧番号への不通記録はあるが予約は残っていると確認して、今後の連絡先を新番号へ直してほしいと頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "お願いします。連絡を受けていないから、案内が一度もなかったと断言せず、記録を聞きたいです。",
+        "recommendedAnswerJa": "こちらが新しい番号です。不通の連絡記録があり、予約は残っているとわかりました。これからの連絡先をこの番号へ直してください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "連絡を受けていなくても案内が一度もなかったとは断言せず、記録を確認してほしいと頼む。日本語で伝えてください。",
+        "hint": "新番号を示し、旧番号への不通記録はあるが予約は残っていると確認して、今後の連絡先を新番号へ直してほしいと頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "連絡を受けていなくても案内が一度もなかったとは断言せず、記録を確認してほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "新番号を示し、旧番号への不通記録はあるが予約は残っていると確認して、今後の連絡先を新番号へ直してほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "記録を確認して受診についてご案内します。新しい予約を重ねて取る前に今の予約を確認しましょう。",
+        "textJa": "新しい番号を登録しました。お手元の表示と、こちらの登録番号を照合してください。現在の予約は変更していません。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "furano_03_task_5",
         "requiredSemanticComponents": {
-          "goal": "予約票と新番号を示して現在の予約と連絡記録を確認し、必要な次の対応を担当者に相談すると伝える"
+          "goal": "登録した新番号が手元の番号と一致し、予約維持と旧番号への一度の不通連絡を確認して新しい予約は重ねないと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "予約票と新番号を見せます。今の予約と連絡記録を確かめ、必要なら次の対応を担当へ相談します。",
+        "recommendedAnswerJa": "登録番号は私が見せた新番号と一致しています。予約は維持で、以前は旧番号へ一度連絡したが不通だったのですね。新しい予約は重ねて取りません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "予約票と新番号を示して現在の予約と連絡記録を確認し、必要な次の対応を担当者に相談すると伝える。日本語で伝えてください。",
+        "hint": "登録した新番号が手元の番号と一致し、予約維持と旧番号への一度の不通連絡を確認して新しい予約は重ねないと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "予約票と新番号を示して現在の予約と連絡記録を確認し、必要な次の対応を担当者に相談すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "登録した新番号が手元の番号と一致し、予約維持と旧番号への一度の不通連絡を確認して新しい予約は重ねないと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。担当が確認しますのでお待ちください。お大事に。",
+        "textJa": "連絡先の更新と、現在の予約の維持を確認できました。旧番号の不通記録は、新番号と分けて残しています。お大事に。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-furano.json",
-    "premise": "富良野の学習用シミュレーション。予約者が電話番号変更後の連絡漏れを気にし、未着通知を取消と決めず予約状況を確認する。",
+    "premise": "富良野の架空医療予約相談。連絡先が旧番号で連絡記録には不通が一件、予約自体は維持。NPCがその二つを別に読み返し、本人が提示した新番号を登録して確認する。通話内容や自動取消・実在システムの保証はしない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

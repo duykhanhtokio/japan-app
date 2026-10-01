@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "担当に原本とコピーを分けて提示してください。原本を預かるかは確認してお知らせします。",
+        "textJa": "担当の了解が取れました。原本の裏も複写して、表裏のコピーを受け取ります。原本はその場でお返しする取扱いです。ほかの受診にも使いますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "必要な資料と返却方法を担当が確認します。確認前に原本を置いて帰らないでください。",
+        "textJa": "裏面も複写できました。こちらが表裏のコピーで、こちらが返却する原本です。表と裏が両方あるか、一緒に見比べられますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "fukagawa_03_task_5",
         "requiredSemanticComponents": {
-          "goal": "両面の原本と片面コピーを示して裏面の不足を伝え、原本の扱いと返却方法を確認すると伝える"
+          "goal": "コピーに表裏の両方があり原本も受け取ったと確認し、数値を手で書き直さずコピーを渡して原本は次の受診へ持参すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "両面ある原本と片面コピーを見せます。裏面不足を伝え、原本の扱いと返却を確かめます。",
+        "recommendedAnswerJa": "コピーには表と裏の両方がありますね。原本も受け取りました。数値を自分で書き直さず、両面のコピーを渡して原本は次の受診に持っていきます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "両面の原本と片面コピーを示して裏面の不足を伝え、原本の扱いと返却方法を確認すると伝える。日本語で伝えてください。",
+        "hint": "コピーに表裏の両方があり原本も受け取ったと確認し、数値を手で書き直さずコピーを渡して原本は次の受診へ持参すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "両面の原本と片面コピーを示して裏面の不足を伝え、原本の扱いと返却方法を確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "コピーに表裏の両方があり原本も受け取ったと確認し、数値を手で書き直さずコピーを渡して原本は次の受診へ持参すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。書類を持ったまま担当へご相談ください。お大事に。",
+        "textJa": "両面のコピーを受け取り、原本をお返ししたことを確認できました。原本はお手元で保管してください。お大事に。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-fukagawa.json",
-    "premise": "深川の学習用シミュレーション。受付に預ける検査資料のコピーに裏面があり、片面だけ複写した不足を担当へ伝える。",
+    "premise": "深川の架空医療受付。持参検査資料は原本両面、コピー表のみ。架空担当の了解で裏面も複写し両面のコピーを受領、原本はその場で返す。NPCと本人が表裏を比較して不足補完と原本返却を確認する。数値を創作・転記したり医療内容を判定したりしない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

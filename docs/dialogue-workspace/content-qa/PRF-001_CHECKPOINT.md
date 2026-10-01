@@ -2,7 +2,7 @@
 
 Status: **FAIL CONTENT QA — SEMANTIC AUDIT IN PROGRESS**.
 
-Current continuation (supersedes historical next-actions below): 28 remaining transport exchanges compared in full; Ishikari fully replaced and ten NPC evidence/choice/outcome repairs. Twenty-eight full replacements documented, 216 distinct exchanges in full comparison records. CONTENT QA remains FAIL. Next: remaining unreviewed municipal/bank/retail and other exchanges from source inventory, reconciling latest remote before each batch. No translations or PRF-002.
+Current continuation (supersedes historical next-actions below): 20 newly covered exchanges compared using canonical type inventory (9 Hospital,11 Police Station), plus one roadside market re-read; nine NPC evidence/record repairs. Twenty-eight full replacements remain documented; 236 distinct exchanges in full comparison records. CONTENT QA remains FAIL. Next: remaining 63 unreviewed municipal/bank/retail/work/other records, using canonical type inventory and reconciling latest remote. No translations or PRF-002.
 
 Branch: `recovery/jlpt-n3-n1`. This continuation started from remote-verified `f687aed169babf8e40ca85659273bc0687d3a964` (251/299), preserving all existing data. Original input: `dd1ecd44cc9537efc79b578ac636d5f68792ceff`.
 
@@ -93,3 +93,8 @@ Kitami claimant-verification overlap replaced by correction of existing recordK-
 ## Transport continuation: 28 full exchanges
 
 Ishikari repeated contract-scope story replaced by complete connection arithmetic including wait and last walk. Ten targeted repairs supply actual fictional evidence or outcome: Abashiri personal collection choice, Bibai entrance/time estimate, Ebetsu purchase draft, Fukagawa immediate changed-plan notice, Furano correct paper-ticket receipt, Hokuto printed-role sort, Kitami two-candidate return search, Kushiro reservation/display match, Monbetsu map correspondence, Utashinai hotel response. Source/runtime/canonical alignment and numerical checks performed; no real operating times/routes certified.28 full replacements and216 distinct full comparison records; CONTENT QA remains FAIL. Next remaining municipal/bank/retail and other unreviewed records.
+
+
+## Canonical-type coverage continuation: 20 new full exchanges and one re-read
+
+Keyword screening omitted9 Hospital and11 Police Station records with generic simulation premises. All20 now read plus Obihiro roadside market re-read for cross-comparison. Nine repairs return actual administrative or evidence answers: Chitose014/041 call, Fukagawa back-copy/original return, Furano failed old-number call/current booking/new contact, Hokuto patient/companion dates, Nemuro self/family-history fields, Shibetsu actual/rest/unknown sleep fields, Date remembered original Japanese phrase, Eniwa playback reset with original preserved, Sunagawa5 unanswered calls. Yubari sleep-bout arithmetic explicitly compared to Shibetsu field/sleep-rest distinction; Kitami amended report compared to Yubari first delivery/time-window/wetness. No new full replacement.28 replacements,236 distinct full comparison records, remaining63. CONTENT QA remains FAIL; no translations or PRF-002.

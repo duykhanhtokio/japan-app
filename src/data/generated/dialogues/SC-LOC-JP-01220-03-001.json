@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "未確認の点も担当へ伝えれば相談できます。",
+        "textJa": "昼に眠った実時刻は睡眠欄、勤務の休憩は休憩欄、二日前の起床時刻は「不明」と別にしました。休憩を眠った時間へ足してはいません。記録と一致していますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "SC-LOC-JP-01220-03-001_semantic_task_5",
         "requiredSemanticComponents": {
-          "goal": "寝た時刻、起きた時刻、休憩を分け、不明な部分を明記して担当者に確認すると伝える"
+          "goal": "睡眠と休憩が別欄で昼の実時刻が保たれ、二日前の起床は不明と記録されたと確認し、その用紙で医療担当へ説明すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "昼の睡眠、起床、休憩を分けて見せます。二日前の起床は不明と書き、記入方法と説明を担当へ確認します。",
+        "recommendedAnswerJa": "はい、昼の睡眠時刻はそのままで、休憩も睡眠へ足されていません。二日前の起床は不明になっています。この分けた用紙で担当に説明します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "寝た時刻、起きた時刻、休憩を分け、不明な部分を明記して担当者に確認すると伝える。日本語で伝えてください。",
+        "hint": "睡眠と休憩が別欄で昼の実時刻が保たれ、二日前の起床は不明と記録されたと確認し、その用紙で医療担当へ説明すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "寝た時刻、起きた時刻、休憩を分け、不明な部分を明記して担当者に確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "睡眠と休憩が別欄で昼の実時刻が保たれ、二日前の起床は不明と記録されたと確認し、その用紙で医療担当へ説明すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。記録を持って担当へご相談ください。お大事に。",
+        "textJa": "欄の分け方を確認できました。覚えていない起床を逆算で埋めずに残しています。用紙を医療担当へお見せください。お大事に。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-shibetsu.json",
-    "premise": "学習用シミュレーション。医師へ持参する睡眠記録で夜勤の睡眠を夜の欄へ移さず、実際の時刻と休憩を分けて記す。",
+    "premise": "士別の架空医療受付。睡眠記録の記入欄を分ける相談。昼の実時刻を夜へ換算せず、勤務休憩は睡眠と断定しない。二日前の起床時刻は不明欄に残す。NPCは三種の欄を整理して返し、医療判断や睡眠時間の足し算はしない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

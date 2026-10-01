@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "eniwa_04_task_2",
         "requiredSemanticComponents": {
-          "goal": "交差点の位置と元ファイルを示し、遅い再生では実際の速さを表せないと説明する"
+          "goal": "交差点を示し、元ファイルを0.5倍再生しているだけで別編集はなく、遅く見える映像で実際の速さを断定しないと説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "場所はこの交差点です。元のファイルは残っています。遅くした画面だけでは実際の速さを説明できないと思います。",
+        "recommendedAnswerJa": "この交差点です。元のファイルを0.5倍で再生しているだけで、別の編集ファイルは作っていません。遅く見えるので、実際の速さとして説明しないようにしたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "交差点の位置と元ファイルを示し、遅い再生では実際の速さを表せないと説明する。日本語で伝えてください。",
+        "hint": "交差点を示し、元ファイルを0.5倍再生しているだけで別編集はなく、遅く見える映像で実際の速さを断定しないと説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "交差点の位置と元ファイルを示し、遅い再生では実際の速さを表せないと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "交差点を示し、元ファイルを0.5倍再生しているだけで別編集はなく、遅く見える映像で実際の速さを断定しないと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "元の記録と、再生方法を変えたものを区別してください。ご自身が見た範囲はどこまでですか。",
+        "textJa": "表示の設定が0.5倍になっていますね。元のファイルはそのままで、再生を1倍へ戻しました。撮影を始めたのは、どの場面からですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "記録と説明を合わせて担当が確認します。ご自身で広く公開する前に取扱いを相談してください。",
+        "textJa": "元のファイルで再生表示は1倍に戻っています。直前の信号は映っていない、音の話者は未確認として記録します。設定を変えた表示から車の速度は断定しません。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "eniwa_04_task_5",
         "requiredSemanticComponents": {
-          "goal": "元ファイルを保存して示し、撮影開始位置、再生の変更、映らない信号、音の不明点を区別して説明すると伝える"
+          "goal": "元ファイルは保存したままで再生表示が1倍へ戻ったと確認し、0.5倍で見せたことと撮影開始位置、信号や音の不明点を伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "元ファイルを保存して見せます。撮り始めた位置、変更した再生、映らない信号、音の不明点を分けて説明します。",
+        "recommendedAnswerJa": "1倍の表示に戻ったことを確認しました。元ファイルは保存したままです。0.5倍で見せたこと、曲がる所から撮ったこと、信号と音の不明点を分けて説明します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "元ファイルを保存して示し、撮影開始位置、再生の変更、映らない信号、音の不明点を区別して説明すると伝える。日本語で伝えてください。",
+        "hint": "元ファイルは保存したままで再生表示が1倍へ戻ったと確認し、0.5倍で見せたことと撮影開始位置、信号や音の不明点を伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "元ファイルを保存して示し、撮影開始位置、再生の変更、映らない信号、音の不明点を区別して説明すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "元ファイルは保存したままで再生表示が1倍へ戻ったと確認し、0.5倍で見せたことと撮影開始位置、信号や音の不明点を伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-eniwa.json",
-    "premise": "恵庭の学習用シミュレーション。交通の出来事を記録した動画で、再生速度を変えた画面を原記録と区別して担当へ示す。",
+    "premise": "恵庭の架空交通動画相談。本人の端末では同じ元ファイルを0.5倍で再生しており、別編集ファイルではない。NPCが再生設定を1倍へ戻し本人に確認して、元記録と表示設定を区別する。車速・直前の信号・音の話者は判断しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
