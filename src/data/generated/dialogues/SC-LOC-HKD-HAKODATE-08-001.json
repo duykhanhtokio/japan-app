@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "略称と注文内容を確認して説明します。お二人の分担と、お店で別会計にできるかは別ですので、会計方法も確認しましょう。",
+        "textJa": "この明細の「生」は生ビール一杯、「ウ」はウーロン茶一杯です。ご友人の追加注文と飲み物も合わせて確認しましょう。別会計にできるかは、レジで確認します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。内訳をご説明した後、まとめ払いか別会計かを確認して進めます。追加注文も含めた合計をもう一度ご覧ください。",
+        "textJa": "確認しました。こちらでは別会計はできません。飲み物の略称を説明した明細をお渡ししますので、追加料理も含めた合計をご覧ください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "confirm_itemized_review_and_receipt_use",
+        "communicativeIntent": "confirm_order_and_abbreviations_then_pay_together",
         "requiredSemanticComponents": {
-          "goal": "追加の料理と飲み物の内訳を確認して会計方法を決め、レシートを友人との精算に使うと伝える"
+          "goal": "友人の追加料理と飲み物の略称を確認できたと伝え、自分がまとめて払って後で友人と精算するためレシートを頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "追加の料理と飲み物の内訳を確認してから、会計方法を決めます。支払い後のレシートも受け取り、友人との精算に使います。",
+        "recommendedAnswerJa": "追加の料理は友人が頼んだ分で、飲み物の略称も確認できました。私がまとめて払って、明細を使い友人と後で精算します。レシートもお願いします。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "追加の料理と飲み物の内訳を確認して会計方法を決め、レシートを友人との精算に使うと伝える。日本語で伝えてください。",
+        "hint": "友人の追加料理と飲み物の略称を確認できたと伝え、自分がまとめて払って後で友人と精算するためレシートを頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "追加の料理と飲み物の内訳を確認して会計方法を決め、レシートを友人との精算に使うと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "友人の追加料理と飲み物の略称を確認できたと伝え、自分がまとめて払って後で友人と精算するためレシートを頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-hakodate.json",
-    "premise": "函館の居酒屋で明細に同じ料理が二行あり二重計上を疑うが、同行者の追加注文を確認して訂正し、飲料の内訳と支払い方法を整理する。店の実在料金は指定しない。",
+    "premise": "函館の居酒屋を想定した学習用シミュレーション。同じ料理の二行が友人の追加注文だとわかり、架空の明細略称「生」と「ウ」を店員が説明する。この場面では別会計不可と確認し、一人がまとめて払って友人と後で精算する。実在店の略称や会計方式は認定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

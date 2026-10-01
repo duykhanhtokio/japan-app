@@ -317,7 +317,7 @@
       "newDistinctDevelopment": "Wrong-size gift already handed over: receipt/parcel matching, fictional return, corrected recipient notification, reprepare without duplicate shipment.",
       "status": "complete authored replacement; not prefecture approval",
       "source": "scripts/dialogue-authoring/prf-001-bibai.json",
-      "runtimeSha256": "8d86bb9bb348a3fa4ee0492cbde5693de81cb0d0bbce482f74150272e682735c"
+      "runtimeSha256": "e2aeea104de0972e19511e8266041b2cf4ddab43153b1ad3505e66a71703506c"
     },
     {
       "replacedScenarioId": "SC-LOC-JP-01217-07-001",
@@ -326,7 +326,7 @@
       "newDistinctDevelopment": "Two-person 120ml recipe becomes five-person 300ml; distinguish 100ml graduation from full cup; select 200ml+100ml.",
       "status": "complete replacement re-read against compared groups; not CONTENT PASS",
       "source": "scripts/dialogue-authoring/prf-001-ebetsu.json",
-      "runtimeSha256": "5c3e65605ab408c015ad0a6782a938d0bbac29eb9cfa2b6fc71acc4f62bfa25b"
+      "runtimeSha256": "ee5271ace1754e472874ec8b321bbc275241bb8f0703f158e3bc14bfc57fd9d3"
     },
     {
       "replacedScenarioId": "SC-LOC-JP-01216-07-001",
@@ -335,7 +335,7 @@
       "newDistinctDevelopment": "1000yen actual tender versus 1500yen fictional entry; return excess 500yen; corrected receipt and counted 320yen.",
       "status": "complete replacement re-read against compared groups; not CONTENT PASS",
       "source": "scripts/dialogue-authoring/prf-001-ashibetsu.json",
-      "runtimeSha256": "13a04edaad6bf80650c4dd75a32d6c8851ceb4351b8a95d848e74c6c739e4e74"
+      "runtimeSha256": "c5cfc66a66f7df20e9eb8f2cedfd706f9cfb4ac303a8b45140b1ad06da69ff3f"
     }
   ],
   "otherRemainingWork": [
@@ -1772,6 +1772,29 @@
       "finding": "Old Ashibetsu repeated damage evidence, unknown cause and deferred replacement in Rumoi/Shibetsu. Replace with excess-change report, actual-tender/record mismatch, return of 500 yen, corrected receipt and counted 320 yen. Shibetsu keeps two separately caused egg cracks; Rumoi checks dimension choice versus initial scratch. Chitose supplies forgotten-bag identity with another-store notebook/private mark; Hakodate chooses gift for delayed handoff/no knife; Sapporo returns a borrowed box with original missing strap and supplied return terms. No actual exchange rights or food shelf-life claims.",
       "status": "comparison reviewed; whole-prefecture CONTENT QA pending",
       "realServicePolicyVerified": false
+    },
+    {
+      "group": "restaurant_seating_order_and_payment_resolution",
+      "scenarioIds": [
+        "SC-LOC-001-09-001",
+        "SC-LOC-001-10-001",
+        "SC-LOC-HKD-HAKODATE-08-001",
+        "SC-LOC-HKD-ASAHIKAWA-02-001",
+        "SC-LOC-HKD-ASAHIKAWA-07-001"
+      ],
+      "method": "All five complete eleven-turn exchanges read and compared, then three repaired exchanges read against player tasks and confirmed/pending end states.",
+      "finding": "Susukino repeatedly promised to confirm seating/payment/charges without answering. Hakodate promised to explain abbreviations but did not provide them or the payment decision. Asahikawa ramen never returned from the kitchen enquiry before ending.",
+      "repairs": [
+        "Susukino supplies fictional late-arrival seating condition, no separate payment and 300yen per-person cover; two guests choose two seats, 600yen cover plus orders and one payer, update coworker.",
+        "Hakodate supplies fictional beer/tea receipt abbreviations, confirms no separate payment and user chooses one payer and later settlement; duplicate dish lines are confirmed as actual additional order.",
+        "Asahikawa ramen returns chef response: less noodles possible, broth modification not possible, no spicy toppings; user places a specific order."
+      ],
+      "retainedDistinctDecisions": {
+        "SC-LOC-001-09-001": "Two adjacent seats needed for menu assistance plus luggage-blockage constraint, with seating/storage still explicitly pending.",
+        "SC-LOC-HKD-ASAHIKAWA-07-001": "In-store versus family takeaway order evidence and employer expense-document requirements; format not guaranteed."
+      },
+      "status": "comparison reviewed with three targeted resolution repairs; no prefecture CONTENT PASS",
+      "realBusinessPolicyVerified": false
     }
   ],
   "operationalMetadataReview": {
@@ -1786,5 +1809,19 @@
     "scope": "PRF-001 only; preserves all IDs, categories, ordering, routing and other prefecture records. Originals retained in Git and timestamped backup. Names describe learning settings and are not facility/service certification.",
     "nativeSpeakerReviewed": false,
     "report": "docs/dialogue-workspace/content-qa/PRF-001_OPERATIONAL_METADATA_REPAIRS.json"
-  }
+  },
+  "dialogueImmersionRepairs": [
+    {
+      "date": "2026-10-01",
+      "scenarioIds": [
+        "SC-LOC-JP-01216-07-001",
+        "SC-LOC-JP-01219-07-001",
+        "SC-LOC-JP-01233-05-001",
+        "SC-LOC-JP-01217-07-001",
+        "SC-LOC-JP-01215-05-001",
+        "SC-LOC-JP-01215-07-001"
+      ],
+      "method": "Removed six NPC utterances referencing this scenario; fiction remains in authoring premise/canonical metadata, while characters speak naturally within the conversation. Whole-source NPC scan found no remaining this-scenario, textbook or simulation mentions; legitimate conversations about lessons/music practice retained."
+    }
+  ]
 }

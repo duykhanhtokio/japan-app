@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい、味の濃さと辛さは別です。麺を減らせるか、辛い具があるか、調整できない部分は何かを分けてご案内します。",
+        "textJa": "調理担当に確認しました。ご覧の料理は麺を少なめにできますが、スープの味は変更できません。辛い具は入っていません。濃い味が苦手でしたら、別の料理を選ぶこともできます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "defer_order_and_choose_feasible_menu_alternative",
+        "communicativeIntent": "order_less_noodles_after_three_conditions_confirmed",
         "requiredSemanticComponents": {
-          "goal": "説明を聞いて注文し、変更できない場合は無理に頼まず量と具が合う別の料理を選ぶと伝える"
+          "goal": "スープの味は変更不可で辛い具はなく麺を少なくできると確認し、この料理を麺少なめで注文すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "その説明を聞いてから注文します。調整できない場合は無理に変更を頼まず、量と具が合う別の料理を選びます。",
+        "recommendedAnswerJa": "味の濃さは変えられず、辛い具は入っていないと確認できました。今回はこの料理を麺少なめでお願いします。味と量を別々に伝えられました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "説明を聞いて注文し、変更できない場合は無理に頼まず量と具が合う別の料理を選ぶと伝える。日本語で伝えてください。",
+        "hint": "スープの味は変更不可で辛い具はなく麺を少なくできると確認し、この料理を麺少なめで注文すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "説明を聞いて注文し、変更できない場合は無理に頼まず量と具が合う別の料理を選ぶと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "スープの味は変更不可で辛い具はなく麺を少なくできると確認し、この料理を麺少なめで注文すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。注文は確認が済むまで保留にして、調理担当に聞いてまいります。お尋ねいただき、ありがとうございます。",
+        "textJa": "承知しました。こちらの料理を麺少なめでお受けします。内容を確認してご注文いただき、ありがとうございます。どうぞお待ちください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-asahikawa.json",
-    "premise": "旭川のラーメン店でメニューの『濃い』を量の多さと取り違え、味の濃さと麺の量を分けて確認してから注文する。店独自の調整可否は確認する。",
+    "premise": "旭川のラーメン店を想定した学習用シミュレーション。「濃い」を麺量と混同した客が、味の強さ、麺量、辛い具を分ける。調理担当の架空の回答は麺少なめ可、スープの味変更不可、指定の料理に辛い具なし。実在店の調理対応は認定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

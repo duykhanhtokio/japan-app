@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "別会計の可否と、席料などの追加料金の有無を確認します。メニューの価格だけで決めず、ご案内を聞いてからご注文ください。",
+        "textJa": "確認しました。三人目のお席は到着予定が決まってからのご案内になります。別会計はできません。席料はお一人三百円で、お料理と飲み物は別にメニューの価格で計算します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "propose_two_person_fallback",
+        "communicativeIntent": "choose_two_after_unknown_arrival_condition",
         "requiredSemanticComponents": {
-          "goal": "三人の席の条件が合わなければ今日は二人で利用し、同僚とは別の場所で会うと伝える"
+          "goal": "同僚の到着時刻が未定なので二人で利用し、三人分の席は確保せず、同僚には食後に別の場所で会うと連絡すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "お願いします。もし三人分の席を確保する条件が合わなければ、今日は二人で利用して、同僚には別の場所で会うことにします。",
+        "recommendedAnswerJa": "同僚の到着がまだわからないので、今日は二人で入ります。三人分は確保せず、同僚には食事の後で別の場所で会うと連絡します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "三人の席の条件が合わなければ今日は二人で利用し、同僚とは別の場所で会うと伝える。日本語で伝えてください。",
+        "hint": "同僚の到着時刻が未定なので二人で利用し、三人分の席は確保せず、同僚には食後に別の場所で会うと連絡すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "三人の席の条件が合わなければ今日は二人で利用し、同僚とは別の場所で会うと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "同僚の到着時刻が未定なので二人で利用し、三人分の席は確保せず、同僚には食後に別の場所で会うと連絡すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。条件をご案内した後に、二人で入るか三人を待つかお選びください。同僚の方には、決まった人数を伝えていただけますか。",
+        "textJa": "二名様で承ります。席料は二名で六百円です。会計はお一人にまとめてお願いする形ですが、それでよろしいですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "defer_order_until_terms_and_party_size_agreed",
+        "communicativeIntent": "confirm_two_cover_charges_and_single_payer",
         "requiredSemanticComponents": {
-          "goal": "席、料金、会計条件を聞いて人数を決め同僚へ知らせ、確認までは注文を待つと話す"
+          "goal": "二人分の席料が六百円で飲食代は別に加わると確認し、自分がまとめて払い、同僚に連絡して二人で注文すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。席の条件と料金、会計方法を確認してから人数を決め、同僚にも連絡します。確認が済むまでは注文を待ちます。",
+        "recommendedAnswerJa": "はい、私がまとめて払います。二人分の席料六百円に飲食代が加わると確認できました。同僚には別の場所で会うと連絡し、二人で注文します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "席、料金、会計条件を聞いて人数を決め同僚へ知らせ、確認までは注文を待つと話す。日本語で伝えてください。",
+        "hint": "二人分の席料が六百円で飲食代は別に加わると確認し、自分がまとめて払い、同僚に連絡して二人で注文すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "席、料金、会計条件を聞いて人数を決め同僚へ知らせ、確認までは注文を待つと話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "二人分の席料が六百円で飲食代は別に加わると確認し、自分がまとめて払い、同僚に連絡して二人で注文すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ありがとうございます。先に確認事項を整理してご説明しますので、こちらで少々お待ちください。ご相談ありがとうございました。",
+        "textJa": "承知しました。二名様のお席へご案内します。お連れ様への連絡が済んだらメニューをお選びください。ご確認ありがとうございました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -247,7 +247,7 @@
     "locale": "ja",
     "contentScope": "simulated_learning_scenario",
     "editorialSource": "scripts/dialogue-authoring/prf-001-sapporo-rest.json",
-    "premise": "すすきのの居酒屋で、後から到着する同僚を含めた人数と会計の扱いを入店前に確認する。店舗の料金体系を仮定しない。",
+    "premise": "すすきのの居酒屋を想定した学習用シミュレーション。到着未定の同僚を待つか二人で入るか、店員が示す架空の席確保条件、別会計不可、一人三百円の席料を聞いて決める。実在店の料金や利用条件を認定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
