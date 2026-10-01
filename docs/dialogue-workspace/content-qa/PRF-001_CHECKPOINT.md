@@ -2,7 +2,7 @@
 
 Status: **FAIL CONTENT QA — SEMANTIC AUDIT IN PROGRESS**.
 
-Current continuation (supersedes historical next-actions below): 23 clinic exchanges read in full; Yubari wrist overlap fully replaced and nine evidence/timeline/administrative responses repaired. Twenty-six canonical full replacements documented. CONTENT QA remains FAIL. Next: remaining police evidence/lost-property/scam comparisons, then remaining transport and other unreviewed corpus, reconciling latest remote before each batch. No translations or PRF-002.
+Current continuation (supersedes historical next-actions below): 16 remaining police exchanges read in full; Kitami fully replaced, five record/evidence/receipt repairs and two premise clarifications. Twenty-seven full replacements documented; 188 distinct exchanges covered by full comparison-group records. CONTENT QA remains FAIL. Next: remaining transport and other unreviewed corpus, first reconciling current remote. No translations or PRF-002.
 
 Branch: `recovery/jlpt-n3-n1`. This continuation started from remote-verified `f687aed169babf8e40ca85659273bc0687d3a964` (251/299), preserving all existing data. Original input: `dd1ecd44cc9537efc79b578ac636d5f68792ceff`.
 
@@ -83,3 +83,8 @@ Craft supplies fictional next-day delivery and 2300 yen total; gear demonstratio
 ## Clinic continuation: 23 full exchanges
 
 Yubari now checks two sleep bouts (3+2=5, not continuous five hours) and next-day sleepiness, replacing wrist-pain overlap with Sapporo. Nine targeted repairs: Abashiri named-test reception, Akabira separate child IDs, Ashibetsu actual fictional certificate response, Mikasa current booking/calendar, Kitahiroshima A/B document sequence, Ebetsu symptom timeline, Ishikari cross-midnight date correction, Tomakomai completed patient-name comparison, Noboribetsu number-screen and written enquiry. Medical judgments remain with clinicians. No real hospital handling or medical content approval. Twenty-six full replacements; CONTENT QA remains FAIL. Next police comparison group.
+
+
+## Police continuation: 16 full exchanges
+
+Kitami claimant-verification overlap replaced by correction of existing recordK-27 using original versus forwarded photograph time. Abashiri updates contact regained/reunion pending, Ashibetsu reads answered/pending searches and current photo, Mikasa separates battery/frame identifiers, Nayoro receives only found umbrella, Rumoi distinguishes18:10 last use from16:40 stale update. Nemuro premise does not defer consultation for photos; Monbetsu sender identity remains undetermined.27 full replacements and188 distinct full exchanges in comparison records; CONTENT QA remains FAIL. The main shared workspace contains concurrent unfinished UI edits; this batch uses an isolated repository copy to preserve them and verify only published audit work. Next unreviewed transport cases.

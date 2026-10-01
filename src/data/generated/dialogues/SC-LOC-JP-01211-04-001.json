@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "report_new_borrowed_phone_contact_immediately",
         "requiredSemanticComponents": {
-          "goal": "母から別の電話で案内所にいると連絡が来たので、新情報をすぐ担当者に知らせてほしいと頼む"
+          "goal": "母から別の電話で東案内所にいると連絡が来たが合流はまだなので、新情報をすぐ担当へ伝えてほしいと頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "今、母から別の人の電話で連絡がありました。売場の案内所にいると言っています。この新しい情報をすぐ担当へ伝えてください。",
+        "recommendedAnswerJa": "今、母から別の人の電話で連絡がありました。「東案内所」にいると言っています。まだ会えていないので、この新しい情報をすぐ担当へ伝えてください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "母から別の電話で案内所にいると連絡が来たので、新情報をすぐ担当者に知らせてほしいと頼む。日本語で伝えてください。",
+        "hint": "母から別の電話で東案内所にいると連絡が来たが合流はまだなので、新情報をすぐ担当へ伝えてほしいと頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "母から別の電話で案内所にいると連絡が来たので、新情報をすぐ担当者に知らせてほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "母から別の電話で東案内所にいると連絡が来たが合流はまだなので、新情報をすぐ担当へ伝えてほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "すぐに伝えます。無事に合流できたかまで確認しましょう。案内所と待ち合わせ方法を、相手の方とも確認してください。",
+        "textJa": "今すぐ担当へ伝えました。「お母様から連絡あり、東案内所にいるとの話、合流は未確認」と記録を更新しました。案内所の場所と合流方法は担当と確認しましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "confirm_reunion_and_report_completion",
         "requiredSemanticComponents": {
-          "goal": "案内所名と待合せ方法を確認し、担当者の案内に沿って合流して、会えたら結果も知らせると伝える"
+          "goal": "母との連絡は取れたが合流は未確認という記録を確認し、担当と場所を確かめて会えたら結果も知らせると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "母がいる案内所の名前を確認します。担当の指示に沿って合流し、会えたらこちらにも必ず知らせます。",
+        "recommendedAnswerJa": "母から東案内所にいると連絡があっただけで、合流はまだですね。その記録で合っています。担当と場所を確認して向かい、会えたら結果も知らせます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "案内所名と待合せ方法を確認し、担当者の案内に沿って合流して、会えたら結果も知らせると伝える。日本語で伝えてください。",
+        "hint": "母との連絡は取れたが合流は未確認という記録を確認し、担当と場所を確かめて会えたら結果も知らせると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "案内所名と待合せ方法を確認し、担当者の案内に沿って合流して、会えたら結果も知らせると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "母との連絡は取れたが合流は未確認という記録を確認し、担当と場所を確かめて会えたら結果も知らせると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。合流の確認まで担当の案内に従ってください。連絡が取れてよかったです。お気をつけて。",
+        "textJa": "はい、連絡が取れたことと、実際に会えたことを分けて確認します。担当の案内を続けますので、合流状況をお知らせください。お気をつけて。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -247,7 +247,7 @@
     "locale": "ja",
     "contentScope": "simulated_learning_scenario",
     "editorialSource": "scripts/dialogue-authoring/prf-001-abashiri.json",
-    "premise": "網走の警察相談学習場面。家族とはぐれた客が電話位置表示を本人位置と混同し、連絡が取れた段階で担当へ直ちに状況を更新する。緊急対応を先送りしない。",
+    "premise": "網走の架空警察相談。母とはぐれた客が携帯の駐車場表示と本人の所在を区別する。別人の電話で母と連絡が取れた際、売場の「東案内所」と聞いたことを即時更新し、NPCが本人連絡済み・合流未確認と読み返す。緊急相談を遅らせず、捜索手順を規定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",

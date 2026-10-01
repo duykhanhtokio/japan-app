@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "写真と内容も記録します。駅から確認の返事が来たら、その結果を届け出の担当にもお知らせください。",
+        "textJa": "記録を読み返します。小さい紺色のかばん、修理後の黄色い糸、服と記名ノートで電子機器なし。タクシーは車内なしと回答済み、駅は確認中です。「駅にもなかった」とは記録していません。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "ashibetsu_04_task_5",
         "requiredSemanticComponents": {
-          "goal": "修理後の特徴と中身を示して照会済みと確認中を分け、駅の返答が来たら届出を更新すると伝える"
+          "goal": "修理後の黄色い糸が写る最近の写真を使うよう頼み、駅は確認中という読み返しを確認して返答後に担当へ知らせると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "修理後の写真とノートの名前を示します。タクシーは確認済み、駅は確認中として伝え、返事があれば更新します。",
+        "recommendedAnswerJa": "その記録で合っています。黄色い糸がある最近の写真を使ってください。駅から返事があれば、確認中の欄を更新できるよう担当へ知らせます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "修理後の特徴と中身を示して照会済みと確認中を分け、駅の返答が来たら届出を更新すると伝える。日本語で伝えてください。",
+        "hint": "修理後の黄色い糸が写る最近の写真を使うよう頼み、駅は確認中という読み返しを確認して返答後に担当へ知らせると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "修理後の特徴と中身を示して照会済みと確認中を分け、駅の返答が来たら届出を更新すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "修理後の黄色い糸が写る最近の写真を使うよう頼み、駅は確認中という読み返しを確認して返答後に担当へ知らせると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。連絡先も確認して記録します。ご相談ありがとうございました。",
+        "textJa": "承知しました。購入時の写真と最近の写真を区別して記録しました。連絡先を確認し、今後の返答も伺います。ご相談ありがとうございました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-ashibetsu.json",
-    "premise": "芦別の警察署で紛失旅行かばんを相談。客はタクシーと駅に既に照会し、調査済みと未確認を分ける。特徴として修理したファスナーを伝える。",
+    "premise": "芦別の架空警察相談。旅行かばんのタクシー照会は車内なしと回答済み、駅照会は確認中と分ける。修理後の黄色い糸と現在の写真を使い、NPCが購入時写真より現在の特徴を記録して読み返す。届出記録は紛失場所や発見を確定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
