@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。駅で、どのようなご相談でしょうか。",
+        "textJa": "こんにちは。お忘れ物の受取りについて、何をお手伝いしましょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "request_eyeglass_case_search_from_photo",
         "requiredSemanticComponents": {
-          "goal": "前日の車内眼鏡ケースを写真便で探せるか尋ねる"
+          "goal": "駅から眼鏡ケースが見つかったと連絡が来たので、翌日帰る前に受取方法を相談したいと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "昨日乗った列車に眼鏡のケースを忘れたと思います。この写真の列車で探してもらえますか。",
+        "recommendedAnswerJa": "駅から眼鏡ケースが見つかったと連絡が来ました。明日帰るので、受取方法を相談したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "前日の車内眼鏡ケースを写真便で探せるか尋ねる。日本語で伝えてください。",
+        "hint": "駅から眼鏡ケースが見つかったと連絡が来たので、翌日帰る前に受取方法を相談したいと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "前日の車内眼鏡ケースを写真便で探せるか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "駅から眼鏡ケースが見つかったと連絡が来たので、翌日帰る前に受取方法を相談したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "写真は、実際に乗られた時のものでしょうか。乗った区間と時間も教えてください。",
+        "textJa": "連絡に、保管している場所は書かれていますか。電話をした窓口と保管先が同じか確認しましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "correct_photo_of_different_train",
         "requiredSemanticComponents": {
-          "goal": "写真は別列車で実乗車は後と気づき網走降車を伝える"
+          "goal": "電話してきた窓口と保管している駅を混同し、連絡元へ行けば受け取れると思っていたと説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "写真は待っている間に別の列車を撮ったものでした。乗ったのはその後です。網走で降りたことは覚えています。",
+        "recommendedAnswerJa": "電話してきた窓口へ行けば受け取れると思っていました。このメモでは別の駅が保管先になっているので、先に場所を確かめます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "写真は別列車で実乗車は後と気づき網走降車を伝える。日本語で伝えてください。",
+        "hint": "電話してきた窓口と保管している駅を混同し、連絡元へ行けば受け取れると思っていたと説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "写真は別列車で実乗車は後と気づき網走降車を伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "電話してきた窓口と保管している駅を混同し、連絡元へ行けば受け取れると思っていたと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "写真の列車名ではなく、ご利用の便を確認しましょう。切符の控えや同行者の記録はありますか。",
+        "textJa": "保管先の案内で受取方法を確認できます。ご本人が行く予定ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "use_companion_ticket_record_and_seat_pocket",
         "requiredSemanticComponents": {
-          "goal": "友人購入控えを示し便照会と座席ポケットを伝える"
+          "goal": "知人に受取を頼む可能性があるので、代理受取の可否と必要な確認事項を先に尋ねたいと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "友人が切符をまとめて買いました。控えを送ってもらったので、この区間と日時で調べたいです。ケースは座席のポケットに入れました。",
+        "recommendedAnswerJa": "知人に頼めるかもしれません。代理で受け取れるかと、必要な確認事項を先に聞きたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "友人購入控えを示し便照会と座席ポケットを伝える。日本語で伝えてください。",
+        "hint": "知人に受取を頼む可能性があるので、代理受取の可否と必要な確認事項を先に尋ねたいと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "友人購入控えを示し便照会と座席ポケットを伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "知人に受取を頼む可能性があるので、代理受取の可否と必要な確認事項を先に尋ねたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "その情報をもとに相談先をご案内します。ケースの色と、眼鏡が中に入っていたかも教えてください。",
+        "textJa": "頼む前に条件を確認してください。ご本人が後日受け取る場合の期限も聞いておくと、方法を比べられます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "identify_empty_green_hard_case",
         "requiredSemanticComponents": {
-          "goal": "緑の硬ケースで眼鏡は持っているため中は空と説明する"
+          "goal": "知人の予定は未確定なので来ると約束せず、自分が後日受け取る場合の期限も確認したいと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "緑の硬いケースで、中は空です。眼鏡は今かけているので、眼鏡入りのケースを探しているわけではありません。",
+        "recommendedAnswerJa": "知人の予定はまだ決まっていません。来ると約束せず、私が後日行く場合の受取期限も確認します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "緑の硬ケースで眼鏡は持っているため中は空と説明する。日本語で伝えてください。",
+        "hint": "知人の予定は未確定なので来ると約束せず、自分が後日受け取る場合の期限も確認したいと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "緑の硬ケースで眼鏡は持っているため中は空と説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "知人の予定は未確定なので来ると約束せず、自分が後日受け取る場合の期限も確認したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "空のケースとして記録しましょう。連絡方法と、照会する時に必要な情報もお伝えします。",
+        "textJa": "保管先へ、予定が未確定だと伝えてご相談ください。決まった受取方法は知人にも正確に知らせましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "confirm_correct_train_empty_case_enquiry",
         "requiredSemanticComponents": {
-          "goal": "控え便とポケット空ケースで照会し別列車写真を使わないと述べる"
+          "goal": "保管先と受取期限、本人と代理の手続きを確認し、知人の都合が決まってから方法を選ぶと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "友人の控えで便を確認し、座席のポケットの緑の空ケースと伝えます。写真の別の列車で問い合わせないようにします。",
+        "recommendedAnswerJa": "保管先と期限、本人と代理の手続きを確かめます。知人の都合が決まってから方法を選び、先に取りに来るとは約束しません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "控え便とポケット空ケースで照会し別列車写真を使わないと述べる。日本語で伝えてください。",
+        "hint": "保管先と受取期限、本人と代理の手続きを確認し、知人の都合が決まってから方法を選ぶと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "控え便とポケット空ケースで照会し別列車写真を使わないと述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "保管先と受取期限、本人と代理の手続きを確認し、知人の都合が決まってから方法を選ぶと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。案内した担当先で確認をお願いします。見つかった場合の受け取りも、保管先へご確認ください。ありがとうございました。",
+        "textJa": "承知しました。発見連絡のメモを用意して保管先へご相談ください。お気をつけてお帰りください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -247,7 +247,7 @@
     "locale": "ja",
     "contentScope": "simulated_learning_scenario",
     "editorialSource": "scripts/dialogue-authoring/prf-001-abashiri.json",
-    "premise": "網走駅で前日の車内忘れ物を相談。客の写真の列車と実際に乗った便が違い、同行者の切符控えで便を特定する。忘れた物は眼鏡ケースで袋の照会とは別。",
+    "premise": "網走の学習用駅案内。眼鏡ケースの発見連絡を受けた旅行者が、連絡元と保管先を区別し、本人受取と代理受取の条件、期限を確認して方法を選ぶ。実際の保管先・代理条件は断定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",

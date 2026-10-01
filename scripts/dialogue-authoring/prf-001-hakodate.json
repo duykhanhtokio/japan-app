@@ -12,20 +12,35 @@
       "持ち上げようとしたら重かったので、やめました。台車を使うか、二人で運ぶか指示してもらえますか。",
       "持ち上げるのを止めて正解です。台車の使用と移動経路を担当者に確認し、箱が滑らない置き方も教えてもらいましょう。",
       "読めない荷札の箱は混ぜずに保留します。重量、台車、指定場所を確認してから運び、荷札の確認が済むまで仕分けません。",
-      "はい。まず担当者を呼びますので、箱には手をつけずここで待ってください。早めに報告してくれて、ありがとうございます。"
+      "はい。まず担当者を呼びますので、箱には手をつけずここで待ってください。早めの報告、ありがとうございます。引き続きよろしくお願いします。"
     ],
     "tasks": [
-      ["ask_sorting_basis_for_similar_fish_boxes", "見た目の似た二箱について作業票・表示による分類方法を尋ねる"],
-      ["report_water_damaged_shipping_label", "濡れて読めない荷札と同種なら混ぜられると思った理由を説明する"],
-      ["request_hold_location_before_moving_box", "箱は未移動と伝え通路近くにあるため保留場所を尋ねる"],
-      ["report_stopped_heavy_lift_and_request_method", "重くて持上げを止めたと報告し台車または二人運搬の指示を求める"],
-      ["confirm_hold_and_verified_movement_sequence", "混ぜず保留し重量・方法・指定場所確認後に運ぶと伝える"]
+      [
+        "ask_sorting_basis_for_similar_fish_boxes",
+        "見た目が似ている二つの魚の箱を、どの表示で仕分ければよいか尋ねる"
+      ],
+      [
+        "report_water_damaged_shipping_label",
+        "片方の荷札が水でにじんで読めないことと、魚が同じ種類なら混ぜてもよいと思っていたことを説明する"
+      ],
+      [
+        "request_hold_location_before_moving_box",
+        "箱はまだ動かしていないが通路に近いため、移す前に保留品の置き場を確認したいと伝える"
+      ],
+      [
+        "report_stopped_heavy_lift_and_request_method",
+        "重かったので持ち上げるのをやめたと報告し、台車を使うか二人で運ぶか指示を求める"
+      ],
+      [
+        "confirm_hold_and_verified_movement_sequence",
+        "読めない荷札の箱は混ぜず、重量と運び方、指定場所を確認してから移し、確認が済むまで仕分けないと伝える"
+      ]
     ]
   },
   "SC-LOC-HKD-HAKODATE-02-001": {
     "premise": "函館の展望施設で階段を避けたい客が、同行者との待合せ時刻に合わせて戻れるか相談する。移動設備や天候による運用を断定しない。",
     "turns": [
-      "こんにちは。展望施設の経路についてご相談ですか。",
+      "こんにちは。展望施設のご利用について、何をお手伝いしましょうか。",
       "函館の景色を見たいんですが、膝が痛むので長い階段は避けたいです。展望場所へ行く方法を選べますか。",
       "利用できる経路を現地の案内で確認しましょう。上りだけでなく、帰りも階段を避けたいということでよろしいですか。",
       "はい、下りも不安です。同行者は先に上へ行ったので、別の経路なら合流できる場所も確認したいです。",
@@ -38,17 +53,32 @@
       "承知しました。担当者に確認する場所をご案内します。膝に無理のない方法をお選びください。どうぞお気をつけて。"
     ],
     "tasks": [
-      ["request_stair_avoiding_viewpoint_route", "膝の痛みで長い階段を避けたいと説明し展望への経路を尋ねる"],
-      ["require_accessible_return_and_companion_reunion", "下りの不安と先に上がった同行者との合流確認を伝える"],
-      ["ask_return_contingency_under_time_constraint", "次の約束による時間制約と帰り設備停止時の案内を尋ねる"],
-      ["choose_wait_pending_round_trip_confirmation", "往復方法確認まで待つ方針と下で合流する可能性の連絡を伝える"],
-      ["define_conditional_visit_or_wait_below", "現在地写真と往復・時間確認を行い合わなければ上がらない方針を伝える"]
+      [
+        "request_stair_avoiding_viewpoint_route",
+        "膝が痛むので長い階段を避けたいと説明し、展望場所へ行く方法を相談する"
+      ],
+      [
+        "require_accessible_return_and_companion_reunion",
+        "帰りの階段も不安だと伝え、先に上がった同行者と合流できる場所を確認したいと話す"
+      ],
+      [
+        "ask_return_contingency_under_time_constraint",
+        "次の待ち合わせまで時間が少ないことを伝え、帰りの設備が使えなくなった場合の案内を尋ねる"
+      ],
+      [
+        "choose_wait_pending_round_trip_confirmation",
+        "往復の方法が分かるまで待ち、同行者には下で合流する可能性を知らせると伝える"
+      ],
+      [
+        "define_conditional_visit_or_wait_below",
+        "現在地を写真で知らせ、往復の経路と所要時間を確認し、条件が合わなければ下で待つと伝える"
+      ]
     ]
   },
   "SC-LOC-HKD-HAKODATE-03-001": {
     "premise": "函館の鮮魚売場で丸魚を焼こうとした客が、家の小型調理器に入らないと気づき切り身と下処理を相談する。具体的な取扱商品や加工サービスは確認する。",
     "turns": [
-      "いらっしゃいませ。今夜のお料理に使う魚をお探しですか。",
+      "いらっしゃいませ。魚選びについて、どのようなお手伝いができますか。",
       "家で二人分の焼き魚を作りたいです。函館の売場でこの丸いままの魚が気になりましたが、料理はあまり得意ではありません。",
       "丸ごと焼ける調理器具はありますか。魚の大きさと、家のグリルの幅を比べてみましょう。",
       "グリルは小さくて、この魚は入りそうにありません。切り身にしてもらえれば使えるかと思うんですが、お願いできますか。",
@@ -61,11 +91,26 @@
       "承知しました。まず加工できるかと切り身の商品を確認します。ご自宅で扱いやすいものを一緒に選びましょう。ありがとうございます。"
     ],
     "tasks": [
-      ["request_beginner_two_person_grilled_fish", "二人分の焼き魚と調理経験の少なさを伝え丸魚について相談する"],
-      ["request_filleting_due_to_small_grill", "家のグリルに入らないと説明し切り身加工を尋ねる"],
-      ["explain_need_for_visible_bone_check", "同席者が小骨を取れない事情と骨を確かめやすい形への希望を伝える"],
-      ["accept_alternative_cuts_and_portion_advice", "丸魚へのこだわりを撤回し二人の食事量に合う切り身を相談する"],
-      ["confirm_equipment_fit_processing_limits_and_label", "グリルに入る量と加工範囲・骨・保存加熱案内の確認を伝える"]
+      [
+        "request_beginner_two_person_grilled_fish",
+        "二人分の焼き魚を作りたいが料理に慣れていないと伝え、丸ごとの魚について相談する"
+      ],
+      [
+        "request_filleting_due_to_small_grill",
+        "家のグリルには魚が入りそうにないと説明し、切り身にしてもらえるか尋ねる"
+      ],
+      [
+        "explain_need_for_visible_bone_check",
+        "一緒に食べる人が小骨を取りにくいと説明し、骨がないと思い込まず食べる前に確かめられる形を希望する"
+      ],
+      [
+        "accept_alternative_cuts_and_portion_advice",
+        "丸魚にはこだわらないと伝え、二人が食べる量に合う切り身を相談してよいか尋ねる"
+      ],
+      [
+        "confirm_equipment_fit_processing_limits_and_label",
+        "グリルに入る切り身を二人分選び、加工の範囲、残る骨、保存と加熱の案内を確認してから買うと伝える"
+      ]
     ]
   },
   "SC-LOC-HKD-HAKODATE-04-001": {
@@ -84,11 +129,26 @@
       "それでは、まず一文字の練習から始めましょう。できた作品を傷めずに持ち帰れるよう、最後も一緒に確認します。よろしくお願いします。"
     ],
     "tasks": [
-      ["request_name_calligraphy_with_kanji_conversion", "記念作品として名前を持ち帰りたいと伝え漢字化を相談する"],
-      ["correct_kanji_name_assumption_and_choose_katakana", "正式な名前になると思っていた誤解を訂正し普段のカタカナを選ぶ"],
-      ["report_ink_spread_and_brush_pressure_uncertainty", "線が広がり文字がくっついたと報告し墨量と筆圧を尋ねる"],
-      ["agree_single_character_practice_and_transport_check", "練習から配置を決める方針と乾燥・携帯方法の確認を求める"],
-      ["confirm_katakana_finish_and_dry_transport", "カタカナ仕上げ・墨と間隔の練習・乾燥確認の順序を伝える"]
+      [
+        "request_name_calligraphy_with_kanji_conversion",
+        "記念に自分の名前を書いて持ち帰りたいと伝え、漢字に変えて書けるか相談する"
+      ],
+      [
+        "correct_kanji_name_assumption_and_choose_katakana",
+        "漢字にすれば正式な日本語の名前になると思っていたと説明し、普段使うカタカナの名前を選ぶ"
+      ],
+      [
+        "report_ink_spread_and_brush_pressure_uncertainty",
+        "線が広がって隣の文字とくっついたと報告し、墨の量や筆に入れる力について尋ねる"
+      ],
+      [
+        "agree_single_character_practice_and_transport_check",
+        "一文字ずつ練習してから名前の間隔を決めると伝え、乾燥と持ち帰り方も確認したいと話す"
+      ],
+      [
+        "confirm_katakana_finish_and_dry_transport",
+        "カタカナで仕上げ、墨の量と間隔を練習し、乾いたことと運び方を確認してから荷物に入れると伝える"
+      ]
     ]
   },
   "SC-LOC-HKD-HAKODATE-05-001": {
@@ -107,11 +167,26 @@
       "はい。確認する項目を資料にまとめてご案内します。不明点が残る場合は、契約前にまたご相談ください。ありがとうございました。"
     ],
     "tasks": [
-      ["request_smaller_data_plan_from_usage_pattern", "無線LAN中心で外の動画利用が少ないと説明しプラン縮小を求める"],
-      ["disclose_installment_cancellation_misconception", "端末分割代を示し乗換えで支払いが消えると思っていたと説明する"],
-      ["request_post_discount_costs_pending_balance_check", "残額を旧社へ確認すると伝え割引終了後の費用説明を求める"],
-      ["include_work_calls_in_written_comparison", "職場への電話が必要と説明しデータだけでなく通話条件の書面比較を求める"],
-      ["defer_contract_for_total_cost_comparison", "当日契約を保留し残額・通信・通話・初期費用を確認して判断すると伝える"]
+      [
+        "request_smaller_data_plan_from_usage_pattern",
+        "家では無線LANを使い外では動画をあまり見ないと説明し、携帯の請求を抑えるため小さいプランを相談する"
+      ],
+      [
+        "disclose_installment_cancellation_misconception",
+        "明細に端末の分割払いがあり、通信会社を変えればその支払いもなくなると思っていたと説明する"
+      ],
+      [
+        "request_post_discount_costs_pending_balance_check",
+        "今の会社に端末代の残額を確認すると伝え、割引が終わった後の料金も説明してほしいと頼む"
+      ],
+      [
+        "include_work_calls_in_written_comparison",
+        "職場への電話も必要だと伝え、データ量だけでなく通話の条件も書面で比べたいと話す"
+      ],
+      [
+        "defer_contract_for_total_cost_comparison",
+        "今日は契約せず資料を持ち帰り、端末代の残額と通信料、通話料、初期費用を合わせて比べてから決めると伝える"
+      ]
     ]
   },
   "SC-LOC-HKD-HAKODATE-06-001": {
@@ -130,17 +205,32 @@
       "承知しました。まずカードの表示と地図を一緒に確認しましょう。ご相談ありがとうございました。お気をつけてお出かけください。"
     ],
     "tasks": [
-      ["ask_topup_after_failed_card_payment", "カードが使えなかった状況を伝え残高不足なら追加したいと相談する"],
-      ["correct_prior_success_as_different_card", "エラー表示不明と過去の利用が別カードだったことを説明する"],
-      ["prioritize_route_compatibility_before_topup", "地図で目的地を示し入金前に路線での可否確認を求める"],
-      ["request_cash_fare_and_payment_timing", "現金の代案を示し乗る前の運賃確認場所を尋ねる"],
-      ["confirm_compatibility_then_payment_plan", "カードと路線照合後に現金の運賃と支払時点を確認し入金を保留すると伝える"]
+      [
+        "ask_topup_after_failed_card_payment",
+        "移動中にカードで支払えなかったと説明し、残高不足ならチャージしたいと相談する"
+      ],
+      [
+        "correct_prior_success_as_different_card",
+        "エラー表示は覚えておらず、以前の支払いは別のカードだったと分かったことを説明する"
+      ],
+      [
+        "prioritize_route_compatibility_before_topup",
+        "地図で行き先を示し、多くチャージする前に予定の路線でカードが使えるか確認したいと伝える"
+      ],
+      [
+        "request_cash_fare_and_payment_timing",
+        "現金も持っていると伝え、カードが使えない場合の運賃を乗る前にどこで確認できるか尋ねる"
+      ],
+      [
+        "confirm_compatibility_then_payment_plan",
+        "カードの種類と路線を確認し、使えなければ現金の運賃と支払いのタイミングを調べ、確認前にはチャージしないと伝える"
+      ]
     ]
   },
   "SC-LOC-HKD-HAKODATE-07-001": {
     "premise": "函館の果物売場で友人への手土産を選ぶが、受取が一日遅れる可能性と相手の切る道具不足を知り、食べ頃より扱いやすさで選び直す。商品状態は確認。",
     "turns": [
-      "いらっしゃいませ。果物はご自宅用ですか。それともお渡し用でしょうか。",
+      "いらっしゃいませ。果物選びについて、何をお手伝いしましょうか。",
       "函館の友人への手土産です。明日渡すつもりなので、ちょうど食べごろのものを選びたいです。",
       "明日渡して、すぐ食べるご予定ですか。食べる日が変わるなら、それも考えて選びましょう。",
       "今連絡が来て、友人は明日残業かもしれないそうです。渡せるのが翌日になる可能性があります。すぐ熟しそうなものは避けたいです。",
@@ -153,11 +243,26 @@
       "承知しました。まず受け取る日と、この商品の状態を確認しましょう。ご友人に合う手土産を選ぶお手伝いをします。ありがとうございます。"
     ],
     "tasks": [
-      ["request_next_day_fruit_gift_ripeness", "友人への翌日の手土産と食べごろ希望を伝える"],
-      ["revise_gift_date_due_to_overtime", "残業で受取が翌々日になり得ると説明し急に熟す物を避けたいと伝える"],
-      ["adapt_gift_to_no_knife_dormitory", "相手の包丁がない住環境を説明し手で扱える少量の希望へ変える"],
-      ["request_later_handover_condition_and_label_record", "少量と二日後の状態について相談し保存表示の写真記録を尋ねる"],
-      ["coordinate_recipient_date_and_storage_information", "受取日再確認・扱いやすい量の選択・保存表示の共有を伝える"]
+      [
+        "request_next_day_fruit_gift_ripeness",
+        "明日友人に渡す手土産を探していると伝え、食べごろの果物を希望する"
+      ],
+      [
+        "revise_gift_date_due_to_overtime",
+        "友人の残業で渡せる日が一日遅れるかもしれないと説明し、すぐ熟しそうな果物を避けたいと伝える"
+      ],
+      [
+        "adapt_gift_to_no_knife_dormitory",
+        "友人の部屋には包丁がないと説明し、手で扱えて少しずつ食べられる果物を希望する"
+      ],
+      [
+        "request_later_handover_condition_and_label_record",
+        "二日後にも渡しやすい状態の少量の商品を相談し、保存表示を写真に撮ってよいか尋ねる"
+      ],
+      [
+        "coordinate_recipient_date_and_storage_information",
+        "友人の受取日を再確認して扱いやすい少量の果物を選び、保存表示も控えて一緒に伝えると話す"
+      ]
     ]
   },
   "SC-LOC-HKD-HAKODATE-08-001": {
@@ -176,11 +281,26 @@
       "はい。ご確認いただいてからお支払いを伺います。ご利用ありがとうございました。お帰りの際は、お忘れ物にお気をつけください。"
     ],
     "tasks": [
-      ["query_repeated_food_bill_lines", "同じ料理の二行と一回しか頼んだ記憶がないことを示し確認を求める"],
-      ["correct_duplicate_charge_claim_after_companion_check", "同行者の追加注文を確認し二重計上の思い違いを訂正する"],
-      ["request_drink_abbreviation_breakdown_for_cost_sharing", "飲み物の略称が不明と説明し同行者との分担のため内容を尋ねる"],
-      ["offer_combined_payment_with_later_private_settlement", "別会計不可ならまとめ払いして後で精算する代案を伝える"],
-      ["confirm_itemized_review_and_receipt_use", "追加料理と飲料を確認後に払いレシートで同行者と精算すると伝える"]
+      [
+        "query_repeated_food_bill_lines",
+        "明細に同じ料理が二行あるが一度しか頼んだ記憶がないと説明し、注文を確認してほしいと頼む"
+      ],
+      [
+        "correct_duplicate_charge_claim_after_companion_check",
+        "友人が自分の離席中に追加注文したと分かったことを伝え、二重計上だと思った誤解を訂正する"
+      ],
+      [
+        "request_drink_abbreviation_breakdown_for_cost_sharing",
+        "飲み物の略称では自分の注文が分からないと説明し、友人と費用を分担するため内訳を尋ねる"
+      ],
+      [
+        "offer_combined_payment_with_later_private_settlement",
+        "別会計ができなければ自分がまとめて払い、友人と後で精算すると伝え、飲み物の内訳を先に確認したいと話す"
+      ],
+      [
+        "confirm_itemized_review_and_receipt_use",
+        "追加の料理と飲み物の内訳を確認して会計方法を決め、レシートを友人との精算に使うと伝える"
+      ]
     ]
   }
 }
