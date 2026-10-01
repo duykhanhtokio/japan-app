@@ -2,7 +2,7 @@
 
 Status: **FAIL CONTENT QA — SEMANTIC AUDIT IN PROGRESS**.
 
-Current continuation (supersedes historical next-actions below): 23 additional named culture/transport/retail exchanges read in full; four NPC response/outcome repairs and one Asahikawa premise/location metadata repair. Twenty-five canonical full replacements remain documented. CONTENT QA remains FAIL. Next: remaining clinic/police corpus comparisons and unreviewed transport cases, first reconciling current remote. No translations or PRF-002.
+Current continuation (supersedes historical next-actions below): 23 clinic exchanges read in full; Yubari wrist overlap fully replaced and nine evidence/timeline/administrative responses repaired. Twenty-six canonical full replacements documented. CONTENT QA remains FAIL. Next: remaining police evidence/lost-property/scam comparisons, then remaining transport and other unreviewed corpus, reconciling latest remote before each batch. No translations or PRF-002.
 
 Branch: `recovery/jlpt-n3-n1`. This continuation started from remote-verified `f687aed169babf8e40ca85659273bc0687d3a964` (251/299), preserving all existing data. Original input: `dd1ecd44cc9537efc79b578ac636d5f68792ceff`.
 
@@ -78,3 +78,8 @@ Mikasa replaced repeated snow-return plot with fictional stamp-location evidence
 ## Named culture, transport and retail continuation: 23 full exchanges
 
 Craft supplies fictional next-day delivery and 2300 yen total; gear demonstration supplies two opposite rotations for 20/10 teeth; onsen supplies rental return and locker-key handling; coffee completes one 200ml order after stating two-cup carrier unavailable. Asahikawa learning metadata removes inconsistent Shinkansen-gate assertion. Other genuinely unknown stock, contract, transit or setup conditions remain pending. No new full replacement or real venue certification. CONTENT QA remains FAIL.
+
+
+## Clinic continuation: 23 full exchanges
+
+Yubari now checks two sleep bouts (3+2=5, not continuous five hours) and next-day sleepiness, replacing wrist-pain overlap with Sapporo. Nine targeted repairs: Abashiri named-test reception, Akabira separate child IDs, Ashibetsu actual fictional certificate response, Mikasa current booking/calendar, Kitahiroshima A/B document sequence, Ebetsu symptom timeline, Ishikari cross-midnight date correction, Tomakomai completed patient-name comparison, Noboribetsu number-screen and written enquiry. Medical judgments remain with clinicians. No real hospital handling or medical content approval. Twenty-six full replacements; CONTENT QA remains FAIL. Next police comparison group.

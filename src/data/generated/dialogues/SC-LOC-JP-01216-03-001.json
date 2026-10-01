@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "利用記録と医療機関の書類は別です。必要な記録の条件を会社に確認してからご相談ください。",
+        "textJa": "会計担当から回答が来ました。領収書原本の再発行はできませんが、「支払証明書」は発行できます。カードの利用記録とは別の書類です。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "その三点を担当に照会します。本人確認に必要なものもご案内します。",
+        "textJa": "支払証明書は300円で、翌営業日以降にご本人が会計で受け取る取扱いです。今日は同じ領収書を渡すことはできません。会社がこの証明書を認めるか、先に確認されますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "ashibetsu_03_task_5",
         "requiredSemanticComponents": {
-          "goal": "受診日と支払いを示して発行可能な記録を確認し、会社が認める種類を聞いて必要な物だけ依頼すると伝える"
+          "goal": "代替は支払証明書で300円、翌営業日以降に本人が会計で受け取ると復唱し、今日は依頼せず会社の承認を確認してから申し込むと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "日付とカード支払いを示して、発行可能な記録を確認します。会社が認める種類を聞いてから、必要な物だけ依頼します。",
+        "recommendedAnswerJa": "支払証明書、300円、翌営業日以降に本人が会計で受取ですね。今日は発行を依頼せず、その条件で会社に確認してから申し込みます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "受診日と支払いを示して発行可能な記録を確認し、会社が認める種類を聞いて必要な物だけ依頼すると伝える。日本語で伝えてください。",
+        "hint": "代替は支払証明書で300円、翌営業日以降に本人が会計で受け取ると復唱し、今日は依頼せず会社の承認を確認してから申し込むと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "受診日と支払いを示して発行可能な記録を確認し、会社が認める種類を聞いて必要な物だけ依頼すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "代替は支払証明書で300円、翌営業日以降に本人が会計で受け取ると復唱し、今日は依頼せず会社の承認を確認してから申し込むと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。会計担当へご案内します。ご相談ありがとうございました。",
+        "textJa": "承知しました。書類名、費用、受取条件をこちらに書きました。今日はまだ発行申込みを受け付けていません。ご相談ありがとうございました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-ashibetsu.json",
-    "premise": "芦別の病院会計で領収書紛失相談。職場経費申請に必要な記録と診断書を区別し、再発行と別証明の可否を担当に照会する。",
+    "premise": "芦別の架空病院会計。領収書原本の再発行不可、代替の「支払証明書」は300円で翌営業日以降に本人が会計で受領という架空取扱いを担当が回答する。会社が代替を認めるか未確認なので即時発行依頼はせず書類条件を持ち帰る。実際の施設の取扱いではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

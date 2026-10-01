@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "両方の予約票を見せてください。同じ時刻ではありませんか。",
+        "textJa": "予約票Aは9時に受付A、予約票Bは11時に受付Bと書かれています。同時刻ではありませんね。まず受付Aへ行きます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "受付の順序と、遅れそうな時の連絡先を担当に確認します。持参書類は分けていますか。",
+        "textJa": "一つ目が長引きそうな時は、受付Aの職員へ「11時に受付Bの予約がある」と伝えてください。こちらからBへ連絡する案内です。持参書類は分けていますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "それぞれの担当へ見せる内容を整理できます。共通して伝える情報もありますか。",
+        "textJa": "Aの資料はこちら、Bへの質問メモはBの票と一緒に分けました。両方で使う共通の資料もありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "資料の扱いも担当と確認しましょう。ご自身で予約を取り消す前に相談してください。",
+        "textJa": "ご希望に合わせて薬の一覧を二枚用意しました。A用とB用の資料に一枚ずつ入れます。内容に違いがないか見比べてください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "kitahiroshima_03_task_5",
         "requiredSemanticComponents": {
-          "goal": "予約票で順序と連絡先を確認し、科別の資料を整理して薬の一覧が両方で必要だと伝える"
+          "goal": "同内容の薬一覧をA用とB用に分け、9時の受付Aへ先に行き、11時のBに遅れそうならA職員に知らせると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "二枚の票で順序と連絡先を聞きます。科ごとの資料を分け、薬の一覧は両方で必要だと伝えます。",
+        "recommendedAnswerJa": "二枚の薬一覧は同じ内容ですね。A用とB用に入れました。9時のAへ先に行き、11時のBに遅れそうならAの職員に伝えます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "予約票で順序と連絡先を確認し、科別の資料を整理して薬の一覧が両方で必要だと伝える。日本語で伝えてください。",
+        "hint": "同内容の薬一覧をA用とB用に分け、9時の受付Aへ先に行き、11時のBに遅れそうならA職員に知らせると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "予約票で順序と連絡先を確認し、科別の資料を整理して薬の一覧が両方で必要だと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "同内容の薬一覧をA用とB用に分け、9時の受付Aへ先に行き、11時のBに遅れそうならA職員に知らせると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。担当へご案内します。お大事になさってください。",
+        "textJa": "はい、資料が分かれました。受付Aの表示はこちらです。診察にかかる時間はお約束できませんので、遅れの見込みは職員へお知らせください。お大事に。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-kitahiroshima.json",
-    "premise": "北広島の学習用シミュレーション。同じ日に別診療科の予約がある受診者が、受付移動の順序と資料の使い分けを相談する。",
+    "premise": "北広島の架空病院二科受付相談。予約票は受付Aが9時、受付Bが11時、遅れ見込みはA職員からBへ連絡とする架空案内。受付で資料を科別に整理し、共通の薬一覧は二枚用意する。診療順序や時間内終了の保証はしない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

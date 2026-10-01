@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "akabira_03_task_2",
         "requiredSemanticComponents": {
-          "goal": "兄の氏名と患者番号を示し、同じ名字の弟の予約は維持すると指定する"
+          "goal": "兄ハルの患者番号314と弟レンの315を示し、弟の予約は維持すると指定する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "この兄の予約です。弟の予約はそのままです。名字が同じなので、名前と番号まで伝えます。",
+        "recommendedAnswerJa": "兄はハルで、患者番号は314です。弟はレン、315で、弟の予約はそのままです。名字だけではなく、番号でも分けてください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "兄の氏名と患者番号を示し、同じ名字の弟の予約は維持すると指定する。日本語で伝えてください。",
+        "hint": "兄ハルの患者番号314と弟レンの315を示し、弟の予約は維持すると指定する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "兄の氏名と患者番号を示し、同じ名字の弟の予約は維持すると指定する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "兄ハルの患者番号314と弟レンの315を示し、弟の予約は維持すると指定する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。変更する方を特定して確認します。希望する日と、変更したい事情を教えてください。",
+        "textJa": "314のハルさんは変更希望、315のレンさんは変更せず、と別々に記録します。お兄さんの希望する日と理由を教えてください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "そのようにしてください。確認前は、変更が確定したと扱わないでください。",
+        "textJa": "記録を読み返します。ハルさん314は学校行事のため変更相談中、レンさん315は元の予約を維持しています。お兄さんの新しい日時はまだ決まっていません。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "akabira_03_task_5",
         "requiredSemanticComponents": {
-          "goal": "兄の番号で変更を相談して弟は維持し、結果は二枚の予約票に別々に記録すると伝える"
+          "goal": "兄314だけが変更相談中で弟315は維持という読み返しを確認し、新日時の連絡後に二枚の票へ別々に記録すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "兄の番号で変更を相談し、弟は維持すると伝えます。結果を聞いたら、二枚の予約票に別々に書きます。",
+        "recommendedAnswerJa": "その記録で合っています。314の兄だけが変更相談中で、315の弟は維持ですね。新日時の連絡が来たら、二枚の票に別々に記録します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "兄の番号で変更を相談して弟は維持し、結果は二枚の予約票に別々に記録すると伝える。日本語で伝えてください。",
+        "hint": "兄314だけが変更相談中で弟315は維持という読み返しを確認し、新日時の連絡後に二枚の票へ別々に記録すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "兄の番号で変更を相談して弟は維持し、結果は二枚の予約票に別々に記録すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "兄314だけが変更相談中で弟315は維持という読み返しを確認し、新日時の連絡後に二枚の票へ別々に記録すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。兄の変更希望として担当へつなぎます。ご確認ありがとうございました。お大事に。",
+        "textJa": "はい、二人を一括取消しにはしていません。お兄さん一人の変更相談として担当に渡します。ご確認ありがとうございました。お大事に。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-akabira.json",
-    "premise": "赤平の病院予約相談。兄弟二人分の予約のうち一人だけ変更する親が患者番号と氏名を照合し、別児の予約を維持する。",
+    "premise": "赤平の架空病院予約相談。兄「ハル・番号314」と弟「レン・番号315」のうち兄のみ変更希望を登録する。受付は二件の記録を読み返し、弟の予約維持を確認する。兄の変更日時は担当の確認待ちで、予約変更や医療上の可否は確定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

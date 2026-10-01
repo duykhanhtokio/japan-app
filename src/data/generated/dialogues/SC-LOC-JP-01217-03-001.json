@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "ebetsu_03_task_3",
         "requiredSemanticComponents": {
-          "goal": "お薬手帳と薬袋を示し、かゆみで眠れなかったが赤みの開始時刻は不明だと伝える"
+          "goal": "お薬手帳と薬袋を示し、かゆみで昨夜眠れず赤みは今朝見つけたが開始時刻は不明だと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "お薬手帳と薬の袋があります。かゆみで夜に眠れなかったことも伝えたいです。ただ、赤くなった時刻は正確には覚えていません。",
+        "recommendedAnswerJa": "お薬手帳と薬の袋があります。かゆみは昨夜からで、眠れませんでした。赤みは今朝見つけましたが、いつ赤くなったかはわかりません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "お薬手帳と薬袋を示し、かゆみで眠れなかったが赤みの開始時刻は不明だと伝える。日本語で伝えてください。",
+        "hint": "お薬手帳と薬袋を示し、かゆみで昨夜眠れず赤みは今朝見つけたが開始時刻は不明だと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "お薬手帳と薬袋を示し、かゆみで眠れなかったが赤みの開始時刻は不明だと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "お薬手帳と薬袋を示し、かゆみで昨夜眠れず赤みは今朝見つけたが開始時刻は不明だと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "気づいた時刻と、いつ始まったか不明な点を分けてください。担当が状況を確認します。",
+        "textJa": "薬は一昨日から、かゆみは昨夜から、赤みに気づいたのは今朝、赤みの開始は不明ですね。この四点を分けて担当へ伝えます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-ebetsu.json",
-    "premise": "江別の病院で発疹相談。受付客が服薬開始と症状開始の時系列を示し、自己判断の原因特定を避けて医療職へ伝える。投薬指示は与えない。",
+    "premise": "江別の架空病院受付で発疹相談。薬を一昨日開始し、かゆみは昨夜、赤みに気づいたのは今朝と区別する。赤みの実際の開始は不明。受付は時系列を読み返して医療職へ伝え、原因や投薬指示を生成しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

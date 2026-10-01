@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。受診について、何をお手伝いしましょうか。",
+        "textJa": "こんにちは。受診のご相談で、何をお手伝いしましょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "ask_first_visit_with_other_hospital_card",
+        "communicativeIntent": "yubari_sleep_task_1",
         "requiredSemanticComponents": {
-          "goal": "右手首の痛みで初めて受診したいと伝え、別病院の診察券で受付できるか尋ねる"
+          "goal": "夜勤後の仕事中の眠気を相談したく、睡眠メモは合計時間だけで伝えてよいか迷っていると話す"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "右手首が痛くて受診したいです。初めてですが、以前の病院の診察券で受付できますか。",
+        "recommendedAnswerJa": "夜勤の後、仕事中の眠気について相談したいです。睡眠時間をメモしましたが、合計だけで伝えてよいか迷っています。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "右手首の痛みで初めて受診したいと伝え、別病院の診察券で受付できるか尋ねる。日本語で伝えてください。",
+        "hint": "夜勤後の仕事中の眠気を相談したく、睡眠メモは合計時間だけで伝えてよいか迷っていると話す。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "右手首の痛みで初めて受診したいと伝え、別病院の診察券で受付できるか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "夜勤後の仕事中の眠気を相談したく、睡眠メモは合計時間だけで伝えてよいか迷っていると話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こちらでの受付は、担当が本人確認をしてご案内します。痛みはいつからで、何をしていた時に気づきましたか。",
+        "textJa": "医療担当へ渡せるよう、メモの書き方を確認しましょう。「5時間」は、一度に続けて眠った時間ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "separate_wrist_onset_from_prior_back_visit",
+        "communicativeIntent": "yubari_sleep_task_2",
         "requiredSemanticComponents": {
-          "goal": "昨日荷物を持った後から痛みがあると答え、以前の腰の診療とは別の症状だと説明する"
+          "goal": "10月1日は午前9〜12時と午後3〜5時の二回で、連続5時間ではないと説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "昨日、荷物を持った後からです。前の病院は腰のことで通っていたので、診察券があっても今回の手首とは別です。",
+        "recommendedAnswerJa": "いいえ、10月1日は午前9時から12時までと、午後3時から5時までの二回です。合計だけ書いたので、続けて5時間と読まれるかもしれません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "昨日荷物を持った後から痛みがあると答え、以前の腰の診療とは別の症状だと説明する。日本語で伝えてください。",
+        "hint": "10月1日は午前9〜12時と午後3〜5時の二回で、連続5時間ではないと説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "昨日荷物を持った後から痛みがあると答え、以前の腰の診療とは別の症状だと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "10月1日は午前9〜12時と午後3〜5時の二回で、連続5時間ではないと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "今回の症状として伝えます。お持ちの書類と、現在使っている薬について確認できるものはありますか。",
+        "textJa": "最初が3時間、次が2時間で、合計5時間ですね。二回の時刻を別の行に書きます。睡眠の長さが十分かどうかは医療担当へご相談ください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "present_medication_record_and_patch_photo",
+        "communicativeIntent": "yubari_sleep_task_3",
         "requiredSemanticComponents": {
-          "goal": "本人確認書類とお薬手帳があると答え、使った市販の貼り薬の箱の写真も見せたいと話す"
+          "goal": "受付に十分な睡眠か判断してほしいのではなく、途中で起きたことと仕事中の眠気を別々に医療者へ伝えたいと話す"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "本人確認の書類とお薬手帳があります。手首に市販の貼り薬も使ったので、箱の写真を見せたいです。",
+        "recommendedAnswerJa": "はい、5時間で足りるかを受付で決めてほしいのではありません。途中で起きたことと、仕事中に眠気を感じたことを別々に伝えたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "本人確認書類とお薬手帳があると答え、使った市販の貼り薬の箱の写真も見せたいと話す。日本語で伝えてください。",
+        "hint": "受付に十分な睡眠か判断してほしいのではなく、途中で起きたことと仕事中の眠気を別々に医療者へ伝えたいと話す。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "本人確認書類とお薬手帳があると答え、使った市販の貼り薬の箱の写真も見せたいと話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "受付に十分な睡眠か判断してほしいのではなく、途中で起きたことと仕事中の眠気を別々に医療者へ伝えたいと話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "医療スタッフが確認できるようご用意ください。問診票で記入しづらい所はありますか。",
+        "textJa": "眠った時刻と眠気を感じた時刻を分けましょう。眠気は同じ日でしたか、それとも次の勤務でしたか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "ask_form_for_non_fall_pain",
+        "communicativeIntent": "yubari_sleep_task_4",
         "requiredSemanticComponents": {
-          "goal": "転倒ではなく荷物を持った後に痛みが出たと説明し、問診票にそのまま書いてよいか尋ねる"
+          "goal": "眠気は次の勤務の10月2日午前2時ごろで、10月1日の睡眠と別の行へ書いてほしいと頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "けがをした場所の欄で迷いました。転んだわけではなく、荷物を持った後に痛みが出たので、そのまま書けばいいですか。",
+        "recommendedAnswerJa": "次の勤務で、10月2日の午前2時ごろです。眠った10月1日の欄にまとめず、別の日の出来事として書いてください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "転倒ではなく荷物を持った後に痛みが出たと説明し、問診票にそのまま書いてよいか尋ねる。日本語で伝えてください。",
+        "hint": "眠気は次の勤務の10月2日午前2時ごろで、10月1日の睡眠と別の行へ書いてほしいと頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "転倒ではなく荷物を持った後に痛みが出たと説明し、問診票にそのまま書いてよいか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "眠気は次の勤務の10月2日午前2時ごろで、10月1日の睡眠と別の行へ書いてほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "推測で原因を決めず、起きたことを書いてください。書き方が不明なら、医療スタッフへ確認します。",
+        "textJa": "睡眠は10月1日に二回、眠気は10月2日午前2時ごろと分けました。睡眠中に何回も目が覚めたと書いたのではなく、二つの睡眠の間に起きていた、で合っていますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "record_observed_onset_and_documents",
+        "communicativeIntent": "yubari_sleep_task_5",
         "requiredSemanticComponents": {
-          "goal": "右手首の痛みと開始時刻、荷物を持った後で転倒なしという経緯を記し、書類と薬の情報も出すと話す"
+          "goal": "睡眠は3時間と2時間の二回で連続5時間ではなく、翌日の眠気も別の行になっていると確認し、メモを医療者へ渡したいと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "右手首、昨日から、荷物を持った後と記入します。転倒はしていないと伝え、書類と薬の記録も出します。",
+        "recommendedAnswerJa": "合っています。3時間と2時間の二回で、連続5時間ではありません。翌日の午前2時ごろの眠気も別の行になっています。このメモを医療担当へ渡したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "右手首の痛みと開始時刻、荷物を持った後で転倒なしという経緯を記し、書類と薬の情報も出すと話す。日本語で伝えてください。",
+        "hint": "睡眠は3時間と2時間の二回で連続5時間ではなく、翌日の眠気も別の行になっていると確認し、メモを医療者へ渡したいと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "右手首の痛みと開始時刻、荷物を持った後で転倒なしという経緯を記し、書類と薬の情報も出すと話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "睡眠は3時間と2時間の二回で連続5時間ではなく、翌日の眠気も別の行になっていると確認し、メモを医療者へ渡したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。受付と医療スタッフへつなぎます。症状が変わった時はすぐお知らせください。お大事に。",
+        "textJa": "表記を確認できました。メモを医療担当へお渡しします。眠気の原因や仕事についての相談は担当にお伝えください。お大事に。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-yubari.json",
-    "premise": "夕張の医療受付学習場面。初診客が前回受診とは別の手首痛を説明し、問診票と持参書類を確認する。架空の病院で医療判断は担当へ。",
+    "premise": "夕張の架空医療受付。夜勤後の眠気を相談する患者が、睡眠メモの「5時間」を連続した睡眠と誤解されないよう、10月1日の午前9〜12時と午後3〜5時の二回に分ける。受付は合計と回数の表記を一緒に確認し、診断・勤務可否・望ましい睡眠時間を判断しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

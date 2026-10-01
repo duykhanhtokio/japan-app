@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "ishikari_03_task_4",
         "requiredSemanticComponents": {
-          "goal": "夜勤中で日付をまたぐため、夜中の時刻を前日の昼と誤読されないよう日付も添えると伝える"
+          "goal": "夜勤は10月1日から2日で、メモの10月1日午後1時を10月2日午前1時に直したいと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "夜勤中の出来事なので、日付をまたいでいます。夜中の時刻を前の日の昼だと読まれないよう、日付も添えます。",
+        "recommendedAnswerJa": "10月1日から2日にかけての夜勤で、夜中の1時です。日本語のメモには10月1日午後1時と書いてしまったので、10月2日午前1時に直したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "夜勤中で日付をまたぐため、夜中の時刻を前日の昼と誤読されないよう日付も添えると伝える。日本語で伝えてください。",
+        "hint": "夜勤は10月1日から2日で、メモの10月1日午後1時を10月2日午前1時に直したいと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "夜勤中で日付をまたぐため、夜中の時刻を前日の昼と誤読されないよう日付も添えると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "夜勤は10月1日から2日で、メモの10月1日午後1時を10月2日午前1時に直したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "担当が内容を確認します。理解できない説明は、わからないとお伝えください。",
+        "textJa": "日付と時刻を10月2日午前1時に直しました。元の母語メモは別に残しています。「痛み」と「だるさ」の感じは、医療担当がご本人へ確認できるよう伝えます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "ishikari_03_task_5",
         "requiredSemanticComponents": {
-          "goal": "母語と日本語のメモを示して日付と感覚の違いを説明し、分からない言葉は聞き直すと伝える"
+          "goal": "訂正後の10月2日午前1時を確認し、母語メモも示して痛みとだるさを区別する医療担当の質問に答えたいと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "母語と日本語の両方を見せ、日付をまたぐ時刻と感じの違いを説明します。わからない言葉は聞き直します。",
+        "recommendedAnswerJa": "10月2日午前1時になっていますね。母語のメモも渡します。痛みとだるさを一つにまとめず、担当の質問に具体的に答えたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "母語と日本語のメモを示して日付と感覚の違いを説明し、分からない言葉は聞き直すと伝える。日本語で伝えてください。",
+        "hint": "訂正後の10月2日午前1時を確認し、母語メモも示して痛みとだるさを区別する医療担当の質問に答えたいと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "母語と日本語のメモを示して日付と感覚の違いを説明し、分からない言葉は聞き直すと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "訂正後の10月2日午前1時を確認し、母語メモも示して痛みとだるさを区別する医療担当の質問に答えたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-ishikari.json",
-    "premise": "石狩の学習用シミュレーション。受診に母語の説明メモを持参した患者が、日付と症状の言葉を翻訳済みと思わず医療者と確認する。",
+    "premise": "石狩の架空病院受付。母語と日本語の症状メモを分け、夜勤中の10月2日午前1時を10月1日午後1時と書いた誤りを訂正する。痛みとだるさの意味は医療者が本人へ確認し、受付は翻訳を診断済み情報と扱わない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
