@@ -199,7 +199,7 @@
     }
   ],
   "otherRemainingWork": [
-    "Complete full-turn semantic review and natural Japanese player instructions for the remaining 268/299 scenarios; 31/299 reviewed instruction sets are explicitly recorded. Next: Chitose remaining six scenarios, then Takikawa remaining seven, then continue city order. Previously reviewed wording can still require correction in whole-corpus comparison.",
+    "Complete full-turn semantic review and natural Japanese player instructions for the remaining 243/299 scenarios; 56/299 reviewed instruction sets are explicitly recorded. Next: Utashinai all eight (SC-LOC-JP-01227-01-001 through -08-001), then Furano remaining seven, then Noboribetsu in city order. Whole-corpus comparison can still reveal issues in reviewed sets.",
     "Align canonical scenario titles/goals with revised premises; some legacy metadata still names original recipe goals.",
     "Audit specifically named landmark/business operational metadata; no live facility verification is claimed."
   ],
@@ -249,8 +249,8 @@
   "pendingGroups": [],
   "naturalInstructionReview": {
     "status": "partial; not prefecture approval",
-    "scenarioCount": 31,
-    "playerInstructionCount": 155,
+    "scenarioCount": 56,
+    "playerInstructionCount": 280,
     "scenarioIds": [
       "SC-LOC-JP-01228-05-001",
       "SC-LOC-JP-01226-07-001",
@@ -282,8 +282,51 @@
       "SC-LOC-JP-01223-05-001",
       "SC-LOC-JP-01223-06-001",
       "SC-LOC-JP-01223-07-001",
-      "SC-LOC-JP-01223-08-001"
+      "SC-LOC-JP-01223-08-001",
+      "SC-LOC-JP-01224-01-001",
+      "SC-LOC-JP-01224-03-001",
+      "SC-LOC-JP-01224-04-001",
+      "SC-LOC-JP-01224-05-001",
+      "SC-LOC-JP-01224-06-001",
+      "SC-LOC-JP-01224-08-001",
+      "SC-LOC-JP-01225-01-001",
+      "SC-LOC-JP-01225-02-001",
+      "SC-LOC-JP-01225-03-001",
+      "SC-LOC-JP-01225-04-001",
+      "SC-LOC-JP-01225-05-001",
+      "SC-LOC-JP-01225-06-001",
+      "SC-LOC-JP-01225-08-001",
+      "SC-LOC-JP-01226-01-001",
+      "SC-LOC-JP-01226-02-001",
+      "SC-LOC-JP-01226-03-001",
+      "SC-LOC-JP-01226-05-001",
+      "SC-LOC-JP-01226-06-001",
+      "SC-LOC-JP-01226-08-001",
+      "SC-LOC-JP-01228-01-001",
+      "SC-LOC-JP-01228-02-001",
+      "SC-LOC-JP-01228-03-001",
+      "SC-LOC-JP-01228-04-001",
+      "SC-LOC-JP-01228-06-001",
+      "SC-LOC-JP-01228-07-001"
     ],
-    "method": "Manually wrote grammatical Japanese task descriptions after reading the complete exchanges; updated both editorial source and runtime semantic goals/hints/evaluation notes. No recommended-answer quotation substituted for a task."
+    "method": "Manually wrote grammatical Japanese task descriptions after reading the complete exchanges; updated both editorial source and runtime semantic goals/hints/evaluation notes. No recommended-answer quotation substituted for a task.",
+    "utteranceRepairs": [
+      {
+        "scenarioId": "SC-LOC-JP-01222-01-001",
+        "reason": "Removed simulation explanation from NPC speech."
+      },
+      {
+        "scenarioId": "SC-LOC-JP-01225-04-001",
+        "reason": "Player explicitly returns from checking the other bicycle-parking area; avoids instantaneous off-site discovery."
+      },
+      {
+        "scenarioId": "SC-LOC-JP-01228-07-001",
+        "reason": "NPC now distinguishes container capacity from external shelf fit; objects placed inside do not change outer dimensions."
+      },
+      {
+        "scenarioId": "SC-LOC-JP-01224-04-001",
+        "reason": "Added an appropriate closing courtesy after reporting instructions."
+      }
+    ]
   }
 }

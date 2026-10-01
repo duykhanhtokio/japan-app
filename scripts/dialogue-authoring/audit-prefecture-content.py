@@ -26,6 +26,7 @@ def audit(prefecture):
     intents = collections.defaultdict(list)
     recipe_groups = collections.defaultdict(list)
     inventory = []
+    editorial_sources = {}
     for s in targets:
         path = 'src/data/generated/dialogues/' + s['id'] + '.json'
         raw = (ROOT / path).read_bytes()
@@ -49,6 +50,31 @@ def audit(prefecture):
             texts.append(text)
             if n % 2:
                 purposes.append(obj.get('communicativeIntent'))
+        source_path = data.get('authoring', {}).get('editorialSource')
+        if source_path:
+            if source_path not in editorial_sources:
+                editorial_sources[source_path] = read(source_path)
+            entry = editorial_sources[source_path].get(s['id'])
+            if not entry:
+                errors.append('missing_editorial_entry')
+            else:
+                if texts != entry.get('turns'):
+                    errors.append('editorial_utterance_mismatch')
+                tasks = entry.get('tasks', [])
+                if len(tasks) != 5:
+                    errors.append('editorial_task_count')
+                else:
+                    for i, turn in enumerate(turns[1::2]):
+                        player = turn.get('player') or {}
+                        intent, goal = tasks[i]
+                        if player.get('communicativeIntent') != intent or player.get('requiredSemanticComponents') != {'goal': goal}:
+                            errors.append('editorial_goal_mismatch:' + str(i + 1))
+                        if player.get('hint') != goal + '。日本語で伝えてください。':
+                            errors.append('editorial_hint_mismatch:' + str(i + 1))
+                        if player.get('evaluationNotes') != goal + '。言い換えは許容する。直前のNPCの問いに応じているかを確認する。':
+                            errors.append('editorial_evaluation_mismatch:' + str(i + 1))
+                if data['authoring'].get('premise') != entry.get('premise'):
+                    errors.append('editorial_premise_mismatch')
         if turns and (index.get(s['id'], {}).get('firstDialogueId') != turns[0]['id'] or index[s['id']].get('dialogueCount') != 11):
             errors.append('index')
         script = '\n'.join(texts)
@@ -83,3 +109,6 @@ if __name__ == '__main__':
     destination.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({k: result[k] for k in ['prefectureId', 'canonicalCount', 'coverageCount', 'structuralErrorCount', 'contentPass']}))
     print('exact groups:', len(result['exactDuplicateGroups']), 'normalized groups:', len(result['placeQuantityNormalizedDuplicateGroups']), 'near candidates:', len(result['nearDuplicateCandidates']))
+
+    if result['structuralErrorCount']:
+        sys.exit(1)
