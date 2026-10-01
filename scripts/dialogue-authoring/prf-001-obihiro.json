@@ -12,14 +12,29 @@
       "一頭が通路の途中で止まっています。自分で追い立てず、場所を担当者に伝えればよいですか。",
       "はい。牛の場所と、見えた様子だけを伝えてください。無理に近づかず、動物への接近方法は担当者の実演で確認します。",
       "作業票を見せて、止まっている牛の位置を伝えます。扉は開けず、範囲と開始の合図、立ち位置を教えてもらってから掃除します。",
-      "承知しました。担当者を呼びますので、指定の待機場所でお待ちください。作業前に確認してくれて、ありがとうございます。"
+      "承知しました。担当者を呼びますので、指定の待機場所でお待ちください。作業前に確認してくれて、ありがとうございます。引き続きよろしくお願いします。"
     ],
     "tasks": [
-      ["request_waiting_point_before_occupied_cattle_lane_cleaning", "牛がいる通路の掃除指示を伝え待機場所を尋ねる"],
-      ["disclose_unverified_gate_entry_assumption", "奥が担当と思うが扉を開けて入れると考えたことを説明する"],
-      ["identify_instructor_by_work_sheet_and_request_start_scope", "名前不明でも作業票の印で担当確認し範囲と開始時点を聞きたいと伝える"],
-      ["report_stationary_cow_without_driving_it", "通路途中の牛を知らせ追い立てず担当へ位置報告する方法を確認する"],
-      ["confirm_wait_gate_closed_and_demonstrated_entry", "作業票と牛位置を報告し扉を開けず範囲・合図・立ち位置確認後に掃除すると伝える"]
+      [
+        "request_waiting_point_before_occupied_cattle_lane_cleaning",
+        "牛がいる通路の掃除を指示されたと伝え、作業前に待つ場所を尋ねる"
+      ],
+      [
+        "disclose_unverified_gate_entry_assumption",
+        "奥の通路を掃除すると思っていたと説明し、扉を開けて入る前に牛の動線を確認する必要があると伝える"
+      ],
+      [
+        "identify_instructor_by_work_sheet_and_request_start_scope",
+        "指示者の名前は不明だが作業票に印があると伝え、その人に範囲と開始時期を確認したいと話す"
+      ],
+      [
+        "report_stationary_cow_without_driving_it",
+        "通路で止まっている牛を知らせ、自分で追い立てず担当へ位置を報告すればよいか尋ねる"
+      ],
+      [
+        "confirm_wait_gate_closed_and_demonstrated_entry",
+        "作業票と牛の位置を示し、扉を開けず範囲、開始の合図、立ち位置を教わってから掃除すると伝える"
+      ]
     ]
   },
   "SC-LOC-HKD-OBIHIRO-02-001": {
@@ -35,14 +50,29 @@
       "図を持って担当者に聞きます。境の札が見えない所では、隣の畝まで続けず、どこで止めるか確認したいです。",
       "はい。区画の境と本日の作業範囲は、現地で示してもらってください。道具の扱いも説明を受けてから始めます。",
       "三番区画へ安全な通路で移動し、境と止める位置を指してもらいます。道具の使い方を見てから、指定の範囲だけ作業します。",
-      "承知しました。まず移動の案内を確認します。場所が曖昧なまま始めず、相談してくれてありがとうございます。"
+      "承知しました。まず移動の案内を確認します。場所が曖昧なまま始めず、相談してくれてありがとうございます。引き続きよろしくお願いします。"
     ],
     "tasks": [
-      ["ask_ambiguous_numbered_farm_assignment", "三番の指示について今いる畝が担当か尋ねる"],
-      ["correct_plot_vs_row_number_misreading", "図の三番区画を三本目の畝と読んで別区画へ来たと説明する"],
-      ["confirm_no_work_and_request_machine_avoiding_route", "未作業と道具持参を伝え機械近くを避ける移動案内を頼む"],
-      ["request_boundary_and_stop_point_with_missing_sign", "図で担当へ聞き境札が見えない場合の止める位置を確認したいと伝える"],
-      ["confirm_correct_plot_boundaries_and_tool_demo", "安全経路・境・停止位置・道具実演確認後に指定範囲だけ作業すると伝える"]
+      [
+        "ask_ambiguous_numbered_farm_assignment",
+        "三番を担当する指示を受けたと伝え、目の前の畝から始めればよいか尋ねる"
+      ],
+      [
+        "correct_plot_vs_row_number_misreading",
+        "図には三番区画とあり入口から三本目の畝と取り違えて隣へ来たと説明する"
+      ],
+      [
+        "confirm_no_work_and_request_machine_avoiding_route",
+        "作業は未開始だが機械の近くを通って戻るつもりだったと伝え、安全な移動通路を尋ねる"
+      ],
+      [
+        "request_boundary_and_stop_point_with_missing_sign",
+        "図を持って担当へ確認すると伝え、境の札が見えない部分ではどこまで作業するか教えてほしいと頼む"
+      ],
+      [
+        "confirm_correct_plot_boundaries_and_tool_demo",
+        "正しい区画へ安全に移り、境と停止位置、道具の扱いを教わって指定範囲だけ作業すると伝える"
+      ]
     ]
   },
   "SC-LOC-HKD-OBIHIRO-03-001": {
@@ -61,11 +91,26 @@
       "承知しました。少量の候補から一緒に見ていきましょう。ご自宅で使い切れるものを選ぶお手伝いをします。ありがとうございます。"
     ],
     "tasks": [
-      ["compare_edible_quantity_of_equal_weight_vegetables", "調理用野菜について同重量なら食べる量も同じか尋ねる"],
-      ["explain_one_pot_after_work_prep_limits", "鍋一つと仕事後の皮むき切断時間の制約を説明する"],
-      ["disclose_small_dorm_fridge_and_bulk_waste_risk", "小型冷蔵庫と大袋を保管できず余らせる心配を伝える"],
-      ["choose_single_meal_quantity_and_check_price_unit", "一回で使える量へ変更し一袋と重量単価の区別を確認する"],
-      ["confirm_usable_quantity_prep_and_storage_based_choice", "量と手間を優先し価格単位と保存を確認して過量を買わないと伝える"]
+      [
+        "compare_edible_quantity_of_equal_weight_vegetables",
+        "帰宅後の料理用野菜を探していると伝え、同じ重さなら食べられる量も同じか尋ねる"
+      ],
+      [
+        "explain_one_pot_after_work_prep_limits",
+        "鍋一つで煮る予定だが仕事後なので皮むきや硬い野菜を切る時間が少ないと説明する"
+      ],
+      [
+        "disclose_small_dorm_fridge_and_bulk_waste_risk",
+        "寮の小さい冷蔵庫しかなく、大袋は保存しきれず余る可能性があると伝える"
+      ],
+      [
+        "choose_single_meal_quantity_and_check_price_unit",
+        "大袋にこだわらず一回で使う量を希望し、表示価格が一袋分か重さ当たりか確認したいと話す"
+      ],
+      [
+        "confirm_usable_quantity_prep_and_storage_based_choice",
+        "下準備の少ない一回分を優先し、価格単位と保存表示を確認して冷蔵庫に入らない量は買わないと伝える"
+      ]
     ]
   },
   "SC-LOC-HKD-OBIHIRO-04-001": {
@@ -84,11 +129,26 @@
       "承知しました。必要な表示の確認をお手伝いします。気になる症状を先にご相談ください。ご来店ありがとうございました。"
     ],
     "tasks": [
-      ["request_testing_after_prior_cosmetic_redness", "顔用製品で以前赤くなったことを伝え試用後に選べるか尋ねる"],
-      ["disclose_current_redness_and_mild_label_assumption", "旧商品写真と現在の頬の赤みを伝え低刺激なら試せると思ったと説明する"],
-      ["decline_face_trial_and_ask_cause_from_ingredient_overlap", "顔で試さないと伝え同成分から原因判断できるか尋ねる"],
-      ["accept_uncertain_cause_and_request_product_info_record", "原因を断定せず時期と写真を整理すると伝え候補情報を控える許可を求める"],
-      ["defer_purchase_and_testing_pending_professional_consultation", "試用と購入を見送り旧商品・症状経緯・候補表示を持って相談すると伝える"]
+      [
+        "request_testing_after_prior_cosmetic_redness",
+        "別の商品で顔が赤くなったことがあると説明し、新しい化粧品を試して選べるか相談する"
+      ],
+      [
+        "disclose_current_redness_and_mild_label_assumption",
+        "前の商品の写真を示し、今も頬が赤いが低刺激の商品なら試せると思っていたと説明する"
+      ],
+      [
+        "decline_face_trial_and_ask_cause_from_ingredient_overlap",
+        "今日は顔に試さないと答え、成分表示の共通点だけで原因を判断してよいか尋ねる"
+      ],
+      [
+        "accept_uncertain_cause_and_request_product_info_record",
+        "原因を決めつけず写真と使用時期を整理すると伝え、候補の商品表示を控えて持ち帰れるか尋ねる"
+      ],
+      [
+        "defer_purchase_and_testing_pending_professional_consultation",
+        "購入も試用も今日は見送り、使用した商品と症状の経緯、候補の表示を相談材料にしてから選ぶと話す"
+      ]
     ]
   },
   "SC-LOC-HKD-OBIHIRO-05-001": {
@@ -107,11 +167,26 @@
       "承知しました。まずこの商品の状態と条件をご案内します。運べることまで確認してからお選びください。ありがとうございます。"
     ],
     "tasks": [
-      ["request_used_washer_operation_check", "部屋用洗濯機が幅では置けそうと伝え動作確認を求める"],
-      ["disclose_unmeasured_narrow_delivery_route", "設置幅だけ測り階段と玄関曲がり未確認と説明する"],
-      ["report_unknown_hose_and_tap_compatibility", "排水口のみ確認で部品適合不明と説明し自己流で付ける考えを示す"],
-      ["plan_site_measurement_and_request_warranty_terms", "写真と寸法を調べて出直すと伝え保証返品の案内を求める"],
-      ["defer_purchase_for_route_connection_and_total_terms", "購入を保留し搬入・接続・付属品・動作・保証・配送費を確認すると伝える"]
+      [
+        "request_used_washer_operation_check",
+        "部屋に合う中古洗濯機を探していると伝え、動作を確認してから買いたいと話す"
+      ],
+      [
+        "disclose_unmeasured_narrow_delivery_route",
+        "設置場所の幅だけ測り、階段や玄関の曲がり角が狭く搬入できない可能性に気づいたと説明する"
+      ],
+      [
+        "report_unknown_hose_and_tap_compatibility",
+        "排水口は見たがホースと蛇口の接続は不明だと伝え、適合せず別部品を使おうとしていた考えを見直す"
+      ],
+      [
+        "plan_site_measurement_and_request_warranty_terms",
+        "寸法と接続場所を調べて出直すと伝え、保証と返品条件を読むための案内を求める"
+      ],
+      [
+        "defer_purchase_for_route_connection_and_total_terms",
+        "購入は保留し、搬入寸法、接続、付属品、動作、保証、配送費を確認してから相談すると話す"
+      ]
     ]
   },
   "SC-LOC-HKD-OBIHIRO-06-001": {
@@ -130,11 +205,26 @@
       "承知しました。薬剤師へ勤務時間とご質問をお伝えします。わからない点を残さず、一緒に確認しましょう。ありがとうございます。"
     ],
     "tasks": [
-      ["ask_morning_dose_meaning_for_night_shift", "処方箋持参と夜勤を伝え朝という服用時点への疑問を尋ねる"],
-      ["explain_sleep_meal_work_cycle_and_morning_ambiguity", "昼起床・夕食・朝就寝の生活を説明し起床を朝と読替える迷いを示す"],
-      ["disclose_unknown_otc_medicine_and_offer_package_photo", "市販薬利用と名称不明を伝え箱写真で確認すると申し出る"],
-      ["request_teachback_with_written_shift_and_meals", "生活時刻を書き薬剤師の個別説明を言い直して照合したいと伝える"],
-      ["defer_dose_timing_to_pharmacist_after_full_information", "写真と時間を示して個別説明後に決め自己流の時間用量変更をしないと伝える"]
+      [
+        "ask_morning_dose_meaning_for_night_shift",
+        "夜勤の生活なので処方の朝という指示がいつになるか気になると伝え、説明を求める"
+      ],
+      [
+        "explain_sleep_meal_work_cycle_and_morning_ambiguity",
+        "起床、食事、勤務の時間帯を説明し、起きた時を朝と読み替えてよいか迷っていると話す"
+      ],
+      [
+        "disclose_unknown_otc_medicine_and_offer_package_photo",
+        "市販薬も使っているが名前を覚えていないと伝え、箱の写真を確認して薬剤師に見せたいと話す"
+      ],
+      [
+        "request_teachback_with_written_shift_and_meals",
+        "勤務と食事の時刻を記して説明後に自分の言葉で言い直し、理解が合うか確認したいと伝える"
+      ],
+      [
+        "defer_dose_timing_to_pharmacist_after_full_information",
+        "薬の写真と生活時間を示して薬剤師の説明を聞き、自己判断で朝の意味や服用量を変えないと伝える"
+      ]
     ]
   },
   "SC-LOC-HKD-OBIHIRO-07-001": {
@@ -153,34 +243,64 @@
       "承知しました。まず確認先をご案内します。無理に友人と同じ場所へ行かず、ご自身に合う体験をお選びください。ありがとうございます。"
     ],
     "tasks": [
-      ["request_switch_from_ski_spectator_to_participant", "見学から体験へ変更希望と借りるだけで友人と滑れるかという疑問を伝える"],
-      ["disclose_no_experience_and_same_equipment_assumption", "未経験で友人と同用品なら同場所へ行けると思ったと説明する"],
-      ["prioritize_beginner_information_and_ask_boot_adjustment", "初心者案内を先に聞くと伝え痛いブーツの自己調整可否を尋ねる"],
-      ["accept_staff_adjustment_and_spectator_fallback", "自己調整せず参加不可なら見学へ戻ると伝え取消返却条件を求める"],
-      ["sequence_participation_approval_fitting_and_instruction", "参加と指導を確認した場合だけ適合と使い方確認後に借りると伝える"]
+      [
+        "request_switch_from_ski_spectator_to_participant",
+        "見学予定からスキー体験へ変えたいと伝え、道具を借りれば初心者でも友人と滑れるか尋ねる"
+      ],
+      [
+        "disclose_no_experience_and_same_equipment_assumption",
+        "経験はなく、友人と同じ道具なら同じ場所へ行けると思っていたと説明する"
+      ],
+      [
+        "prioritize_beginner_information_and_ask_boot_adjustment",
+        "先に初心者向けの案内を聞くと伝え、ブーツが痛い時の調整について尋ねる"
+      ],
+      [
+        "accept_staff_adjustment_and_spectator_fallback",
+        "自分で用具を調整せず条件が合わなければ見学に戻ると伝え、申込み前に取消と返却条件を尋ねる"
+      ],
+      [
+        "sequence_participation_approval_fitting_and_instruction",
+        "初心者の参加条件と指導を確認し、参加できる場合だけサイズと使用法を確認して借り、調整は担当へ頼むと話す"
+      ]
     ]
   },
   "SC-LOC-HKD-OBIHIRO-08-001": {
-    "premise": "帯広の税相談場面で催促らしい封筒を開けず放置した人が、払ったという記憶と通知を照合し、納付先や相談先が未確定のまま二重払いしないため資料を整理する。個別税務判断はしない。",
+    "premise": "帯広の税務書類相談という仮想場面。転職した人が給与書類の金額と口座への入金合計をそのまま比べ、勤務期間と振込に含む立替精算を整理して、勤務先へ確認する項目を決める。課税区分や申告額の結論は出さない。",
     "turns": [
-      "こんにちは。税の通知について、どのような点を確認したいですか。",
-      "帯広の住所にこの封筒が届きました。前にも払った気がするので、二重に請求されているのか確認したいです。",
-      "発行元、税の種類、対象の期間を確認しましょう。以前払った時の記録はありますか。",
-      "携帯の画面に支払いの記録がありますが、何の税だったか覚えていません。同じ税でも期間が違うことがあるんですね。",
-      "記憶だけで二重請求とは決めず、記録と通知を照合する必要があります。封筒の中の通知と支払った記録を担当者へ示してください。",
-      "届いてから開けずに置いていました。すぐに払えない場合も心配ですが、まず何の通知かを確認して相談したいです。",
-      "はい。支払いについて相談する場合も、まず担当する窓口と通知の内容を確認します。通知にある期限や問い合わせ先も見ておきましょう。",
-      "問い合わせ先を控えます。画面の記録と通知が一致するか不明なまま、もう一度払うのではなく、確認してから対応したいです。",
-      "納付状況や次の対応は担当者に確認してください。相談に必要な情報が不足していれば何を用意するかも聞き、通知は捨てずに保管しましょう。",
-      "通知と支払記録をそろえ、税の種類と期間を照合してもらいます。期限と窓口を確認し、未納があるなら支払いの相談もします。",
-      "承知しました。まず発行元と件名を確認します。今回の通知を扱う担当先を整理しましょう。ご相談ありがとうございました。"
+      "こんにちは。税務関係の書類について、何をお手伝いしましょうか。",
+      "勤務先から受け取った給与の書類と、口座に入った金額の合計が違います。どの資料をそろえて確認すればよいか相談したいです。",
+      "まず、書類の項目名と対象の期間を確認しましょう。口座の合計は、どの期間のどの入金を足したものですか。",
+      "一月から十二月までの入金を足しました。でも七月に転職したので、この書類は今の会社の分だけです。前の会社の分も同じ合計に入れていました。",
+      "勤務先ごと、対象期間ごとに分けて見ましょう。今の会社からの入金にも、給与以外の説明が付いているものはありますか。",
+      "出張で立て替えた代金の精算が、給与と同じ日に入っていました。入金した日だけで給与だと決めて足したので、明細の項目も確かめたいです。",
+      "口座の入金日だけでは内容を区別できません。給与明細と立替精算の控えを対応させ、分からない項目は勤務先へ確認しましょう。",
+      "精算の控えが一枚見つかりません。数字が合うように適当な額を引くのではなく、その月の明細を会社に再確認します。",
+      "そのように、不明な部分を推測で埋めずに整理してください。税務書類の訂正が必要かも、確認した内容をもとに担当へ相談できます。",
+      "二つの勤務先と期間を分け、給与明細、口座の記録、精算の控えをそろえます。足りない控えと書類の項目を会社へ確認してから、訂正が必要か相談します。",
+      "承知しました。確認できた数字と未確認の項目を分けたメモをお持ちください。ご相談ありがとうございました。"
     ],
     "tasks": [
-      ["query_possible_duplicate_tax_notice", "過去に払った記憶と新しい封筒を示し二重請求の確認を求める"],
-      ["disclose_payment_record_with_unknown_tax_period", "携帯の支払記録はあるが税種不明と説明し期間の違いに気づく"],
-      ["report_unopened_notice_and_payment_worry", "開封せず置いた事情と支払困難の懸念を伝え通知内容確認を優先する"],
-      ["request_verification_before_repeat_payment", "問い合わせ先を控え照合不明のまま再払せず担当へ確認したいと伝える"],
-      ["confirm_notice_record_reconciliation_and_arrears_consultation", "税種期間・記録照合・期限窓口確認後に必要なら支払相談する方針を伝える"]
+      [
+        "request_documents_for_pay_statement_bank_comparison",
+        "給与の書類と口座への入金合計が違うと伝え、確認に必要な資料を相談する"
+      ],
+      [
+        "separate_two_employers_and_periods",
+        "一年分の口座入金に前の会社の分も含めたが、書類は転職後の会社分だけだと説明する"
+      ],
+      [
+        "identify_reimbursement_in_deposit_total",
+        "出張の立替精算も給与と同じ日に入り、日付だけで給与として合計したと説明して明細を確認したいと伝える"
+      ],
+      [
+        "request_missing_reimbursement_record_without_guessing",
+        "精算控えが一枚ないと伝え、金額を推測で引かず該当月の明細を会社に確認すると話す"
+      ],
+      [
+        "organize_evidence_before_document_correction_request",
+        "勤務先と期間を分けて明細と入金記録、精算控えを揃え、不足と項目を会社へ確認してから訂正の要否を相談すると伝える"
+      ]
     ]
   }
 }
