@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。一度に全部ではなく、区切ってご説明できます。わからない所は進む前にお尋ねください。",
+        "textJa": "では最初の区間だけご説明します。この案内板を背にして、右側の通路へ進みます。青い札の手前にあるベンチまでです。右というのは、案内板を背にした向きでお伝えしています。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "akabira_01_task_4",
         "requiredSemanticComponents": {
-          "goal": "まず現在地から最初の曲がり角まで聞き、案内と違って見えたら立ち止まって係員に尋ねると伝える"
+          "goal": "案内板を背に右へ進み青い札の手前のベンチまでという説明を復唱し、休んでから次の区間を聞いてよいか尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "まず今いる所から最初の曲がり角まで教えてください。その先の案内と違って見えたら、立ち止まって係員に聞きます。",
+        "recommendedAnswerJa": "案内板を背にして右へ進み、青い札の手前のベンチまでですね。ベンチで一度休んでから、その先の案内を聞いてもよいですか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "まず現在地から最初の曲がり角まで聞き、案内と違って見えたら立ち止まって係員に尋ねると伝える。日本語で伝えてください。",
+        "hint": "案内板を背に右へ進み青い札の手前のベンチまでという説明を復唱し、休んでから次の区間を聞いてよいか尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "まず現在地から最初の曲がり角まで聞き、案内と違って見えたら立ち止まって係員に尋ねると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "案内板を背に右へ進み青い札の手前のベンチまでという説明を復唱し、休んでから次の区間を聞いてよいか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "そのように確認してください。列車の時刻に合わせるために無理をせず、移動の余裕も考えましょう。",
+        "textJa": "はい、向きと目印は合っています。まずそこまでをご案内します。ベンチで休んでから、改札までの次の区間を確認しましょう。途中で目印がわからなくなったら、お声がけください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "akabira_01_task_5",
         "requiredSemanticComponents": {
-          "goal": "休憩場所と使える設備を確認し、道順を区切って復唱して、急いで階段を使わないと伝える"
+          "goal": "最初の区間を右側の通路から青い札手前のベンチまで進んで休み、その先も区間ごとに復唱して確認すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "休憩点と利用できる設備を確かめ、道順を区切って復唱します。急いで階段を使わず案内を確認します。",
+        "recommendedAnswerJa": "まず案内板を背に右側の通路へ進み、青い札の手前で休みます。その先を一度に覚えようとせず、次の区間も言い直して確かめます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "休憩場所と使える設備を確認し、道順を区切って復唱して、急いで階段を使わないと伝える。日本語で伝えてください。",
+        "hint": "最初の区間を右側の通路から青い札手前のベンチまで進んで休み、その先も区間ごとに復唱して確認すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "休憩場所と使える設備を確認し、道順を区切って復唱して、急いで階段を使わないと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "最初の区間を右側の通路から青い札手前のベンチまで進んで休み、その先も区間ごとに復唱して確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-akabira.json",
-    "premise": "赤平の駅案内学習。杖利用客がエレベーターの有無だけで判断せず、案内図の読み上げと改札までの休憩点を確認する。実施設配置を断定しない。",
+    "premise": "赤平駅を舞台とする学習用の架空の案内。杖を使い小さな図が読めない来訪者に、案内役が短い区間の方向を言葉で説明し、本人が右方向の基準と目印を復唱する。案内板、青い札、待機ベンチと通路の配置は架空で、実在の駅構内図ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

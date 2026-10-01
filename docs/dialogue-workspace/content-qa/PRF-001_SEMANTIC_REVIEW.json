@@ -260,6 +260,17 @@
         "箱とふたの番号を示し、洗って乾かしたが借りた時からの角の傷も確認してほしいと頼む",
         "今日は箱も持ち帰り、明日ベルトと控えをそろえて返し、一式の確認と精算の完了まで確かめると伝える"
       ]
+    },
+    {
+      "replacedScenarioId": "SC-LOC-JP-01214-01-001",
+      "comparisonScenarioIds": [
+        "SC-LOC-JP-01210-01-001",
+        "SC-LOC-JP-01218-01-001"
+      ],
+      "oldOverlap": "Another stair-free route/elevator enquiry ending in generic route confirmation.",
+      "newDistinctDevelopment": "Conditional stroller-folding notice, family roles, preparation timing and storage enquiry before boarding.",
+      "status": "all eleven new turns and five tasks individually authored and reviewed; simulated policy only",
+      "source": "scripts/dialogue-authoring/prf-001-wakkanai.json"
     }
   ],
   "otherRemainingWork": [
@@ -823,6 +834,10 @@
       {
         "scenarioId": "SC-LOC-JP-01213-06-001",
         "reason": "Avoided universal bank account-address procedure claim; asks to verify each account holder and the bank’s document/acceptance conditions."
+      },
+      {
+        "scenarioId": "SC-LOC-JP-01218-01-001",
+        "reason": "NPC now answers the request for the first spoken direction with a fictional orientation and landmark, confirms player teachback, and agrees on a rest point."
       }
     ]
   },
@@ -1362,5 +1377,41 @@
       "preservedLocalHistory": "6faf87ddf34508a40e68614d6c1c4c41d034c9b2",
       "resolution": "Preserved remote 299 instruction/metadata alignment, two semantic replacements, explicit notice/room/child details and courtesy repairs. Local strengthened source-parity/duplicate audit retained. Kept additional local allergy decision wording and recorded both histories; no CONTENT PASS claimed."
     }
-  ]
+  ],
+  "wholeCorpusComparisonGroups": [
+    {
+      "group": "station_accessibility_and_wayfinding",
+      "scenarioIds": [
+        "SC-LOC-JP-01214-01-001",
+        "SC-LOC-JP-01218-01-001",
+        "SC-LOC-JP-01210-01-001",
+        "SC-LOC-JP-01222-01-001"
+      ],
+      "method": "All four complete eleven-turn exchanges read and compared in this continuation.",
+      "finding": "Stroller and cane stories ended too similarly in generic route-checking; Akabira failed to answer the concrete first-segment question.",
+      "repairs": [
+        "Wakkanai now concerns a supplied conditional stroller notice, division of child/bag roles, preparation time and onboard storage, rather than another step-free-route search.",
+        "Akabira NPC gives a bounded fictional first segment; player repeats the orientation and landmark and receives confirmation."
+      ],
+      "remainingDistinctDevelopment": {
+        "SC-LOC-JP-01210-01-001": "Connection feasibility with unliftable luggage; deliberately chooses a later candidate and updates the pickup person.",
+        "SC-LOC-JP-01222-01-001": "Wrong station diagram before travel; resolves formal station identity and checks two different stations."
+      },
+      "status": "reviewed with two targeted repairs; does not establish prefecture CONTENT PASS",
+      "realInfrastructureVerified": false
+    }
+  ],
+  "operationalMetadataReview": {
+    "date": "2026-10-01",
+    "prefectureId": "PRF-001",
+    "status": "Unverified operational claims removed; real venue/service verification not claimed",
+    "canonicalScenarioCount": 299,
+    "usedLocationCount": 293,
+    "changedLocationCount": 20,
+    "remainingOpeningHours": 0,
+    "remainingStreetAddresses": 0,
+    "scope": "PRF-001 only; preserves all IDs, categories, ordering, routing and other prefecture records. Originals retained in Git and timestamped backup. Names describe learning settings and are not facility/service certification.",
+    "nativeSpeakerReviewed": false,
+    "report": "docs/dialogue-workspace/content-qa/PRF-001_OPERATIONAL_METADATA_REPAIRS.json"
+  }
 }
