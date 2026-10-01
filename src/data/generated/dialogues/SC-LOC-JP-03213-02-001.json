@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。転入書類で何を確認したいですか。",
+        "textJa": "こんにちは。今日はどのような手続きでしょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,10 +26,10 @@
       "player": {
         "communicativeIntent": "ninohe_2_task_1",
         "requiredSemanticComponents": {
-          "goal": "世帯主欄へ会社の上司名を書くのか意味を確認する"
+          "goal": "一人転入のため世帯欄の記入方法を尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "「世帯主」の欄に会社の上司の名前を書くのかと思いました。意味を確認したいです。",
+        "recommendedAnswerJa": "転入の書類を書いています。一人で引っ越してきたので、世帯の欄をどう書けばよいか確認したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "世帯主欄へ会社の上司名を書くのか意味を確認する。日本語で伝えてください。",
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "世帯主は勤務先の上司を示す言葉ではありません。この学習用書類では住所の世帯情報として確認します。",
+        "textJa": "分かりました。新しい住所には現在ほかの方が住んでいますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,10 +71,10 @@
       "player": {
         "communicativeIntent": "ninohe_2_task_2",
         "requiredSemanticComponents": {
-          "goal": "世帯主は会社役職と無関係で世帯情報だと理解する"
+          "goal": "新住所は一人暮らしで前住所は家族同居だったと説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "会社の役職とは関係ないんですね。自分の世帯について確認して書きます。",
+        "recommendedAnswerJa": "いいえ、私一人で住みます。前の住所では家族と同居していました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "世帯主は会社役職と無関係で世帯情報だと理解する。日本語で伝えてください。",
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。現在の世帯状況が分からなければ、推測せず担当へ相談してください。",
+        "textJa": "ありがとうございます。前住所と新住所の情報を分けて確認しましょう。勤務先情報を書く欄もあります。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,10 +116,10 @@
       "player": {
         "communicativeIntent": "ninohe_2_task_3",
         "requiredSemanticComponents": {
-          "goal": "一人転入の状況を伝え記入方法を尋ねる"
+          "goal": "勤務先は変わらず住所だけ変更と伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "一人で転入するので、その状況を伝えて記入方法を聞きます。",
+        "recommendedAnswerJa": "勤務先は変わっていません。住所だけ今回変わりました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "一人転入の状況を伝え記入方法を尋ねる。日本語で伝えてください。",
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "勤務先を書く欄がある場合も、世帯情報とは別に見出しを確認してください。",
+        "textJa": "では変更のある情報と変わらない情報を確認しながら記入してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,10 +161,10 @@
       "player": {
         "communicativeIntent": "ninohe_2_task_4",
         "requiredSemanticComponents": {
-          "goal": "世帯主欄と勤務先欄を混ぜず不明欄は確認すると伝える"
+          "goal": "不明欄は推測せず窓口で確認すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "世帯主欄と勤務先欄を混ぜず、分からない欄は空欄のまま確認します。",
+        "recommendedAnswerJa": "分からない欄を推測で埋めず、空けておいて最後に窓口で確認します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "世帯主欄と勤務先欄を混ぜず不明欄は確認すると伝える。日本語で伝えてください。",
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "提出前に前住所と新住所も見直してください。",
+        "textJa": "はい。提出前に氏名と住所も見直しましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,10 +206,10 @@
       "player": {
         "communicativeIntent": "ninohe_2_task_5",
         "requiredSemanticComponents": {
-          "goal": "世帯・勤務先・住所情報を分け担当案内で記入するとまとめる"
+          "goal": "一人転入・住所変更・勤務先不変を整理して提出するとまとめる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "世帯情報、勤務先情報、住所を分けて確認し、担当の案内で記入します。",
+        "recommendedAnswerJa": "一人で転入し勤務先は同じだと伝え、前住所と新住所を確認して提出します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "世帯・勤務先・住所情報を分け担当案内で記入するとまとめる。日本語で伝えてください。",
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。窓口で確認しましょう。",
+        "textJa": "承知しました。記入内容を確認します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-003-ninohe.json",
-    "premise": "二戸の架空行政窓口。転入書類の世帯主欄を勤務先の上司名を書く欄と思い、世帯情報と勤務先情報を分けて確認する。",
+    "premise": "二戸の架空行政窓口。一人で転入する利用者が世帯情報の書き方に迷い、前住所と新住所、同居予定の有無を説明して必要欄を確認する。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
