@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。配達の記録で、何をお手伝いしましょうか。",
+        "textJa": "こんにちは。発送した郵便のことで、何をお手伝いしましょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "mikasa_05_task_1",
+        "communicativeIntent": "ask_separate_work_private_postage",
         "requiredSemanticComponents": {
-          "goal": "配達済みの画面を印刷したので、提出する配達記録として使えるか確認したいと伝える"
+          "goal": "仕事用と私用の二通を同時に送り、合計だけの会計控えから会社に申告する金額を分けたいと相談する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "送った書類が届いた画面を印刷しました。提出先へ出す配達記録として、これだけでよいか確認したいです。",
+        "recommendedAnswerJa": "さっき仕事の書類と私用の手紙を一通ずつ送りました。会社に出す金額を分けたいのですが、会計の控えには合計しか見当たりません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "配達済みの画面を印刷したので、提出する配達記録として使えるか確認したいと伝える。日本語で伝えてください。",
+        "hint": "仕事用と私用の二通を同時に送り、合計だけの会計控えから会社に申告する金額を分けたいと相談する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "配達済みの画面を印刷したので、提出する配達記録として使えるか確認したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "仕事用と私用の二通を同時に送り、合計だけの会計控えから会社に申告する金額を分けたいと相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "提出先が求める記録の形式をご確認ください。画面の印刷と、正式に依頼する記録は別の場合があります。",
+        "textJa": "二通分を一緒にお支払いになったのですね。会計の控えのほかに、それぞれの発送時に渡されたものはありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "mikasa_05_task_2",
+        "communicativeIntent": "match_two_dispatch_records_to_addressees",
         "requiredSemanticComponents": {
-          "goal": "指定された書類名が画面と違うため、受理されると決めつけず提出先に問い合わせると伝える"
+          "goal": "二枚の発送記録と会社宛て・姉宛てのメモを示し、各番号がどちらの封筒か確かめたいと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "案内に必要な書類名がありますが、私の印刷した画面と同じ名前ではありません。受理されると決めず問い合わせます。",
+        "recommendedAnswerJa": "この二枚もあります。仕事の書類は会社宛て、私用の手紙は姉宛てです。どちらの番号がどちらの封筒か、先に確かめたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "指定された書類名が画面と違うため、受理されると決めつけず提出先に問い合わせると伝える。日本語で伝えてください。",
+        "hint": "二枚の発送記録と会社宛て・姉宛てのメモを示し、各番号がどちらの封筒か確かめたいと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "指定された書類名が画面と違うため、受理されると決めつけず提出先に問い合わせると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "二枚の発送記録と会社宛て・姉宛てのメモを示し、各番号がどちらの封筒か確かめたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "利用した発送方法も確認しましょう。差し出した控えをお持ちですか。",
+        "textJa": "宛先のメモと各通の記録を照らし合わせましょう。番号を取り違えないよう、一通ずつ確認します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "mikasa_05_task_3",
+        "communicativeIntent": "exclude_private_two_hundred_from_expense",
         "requiredSemanticComponents": {
-          "goal": "発送方法と番号が書かれた控えを示し、発送後に依頼できる記録を知りたいと伝える"
+          "goal": "会社宛ては六百円、姉宛ては二百円で合計八百円を払い、私用分を会社への申告に含めたくないと説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "この控えです。送る時に選んだ方法と番号が書いてあります。後からどの記録を依頼できるか知りたいです。",
+        "recommendedAnswerJa": "会社宛ての記録には六百円、姉宛てには二百円とあります。合計八百円は払いましたが、会社には私用の二百円を含めたくありません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "発送方法と番号が書かれた控えを示し、発送後に依頼できる記録を知りたいと伝える。日本語で伝えてください。",
+        "hint": "会社宛ては六百円、姉宛ては二百円で合計八百円を払い、私用分を会社への申告に含めたくないと説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "発送方法と番号が書かれた控えを示し、発送後に依頼できる記録を知りたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "会社宛ては六百円、姉宛ては二百円で合計八百円を払い、私用分を会社への申告に含めたくないと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "方法ごとの取扱いを担当へ確認します。記録の内容や発行条件は確認後にご案内します。",
+        "textJa": "この場面の記録では、二通の金額と合計が一致しています。会社へ提出する書類の条件は、社内の担当者に確認できますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "mikasa_05_task_4",
+        "communicativeIntent": "preserve_original_receipt_and_ask_company_requirements",
         "requiredSemanticComponents": {
-          "goal": "担当者に提出先が指定した記録名を伝え、画面の印刷を正式書類と呼ばないようにすると伝える"
+          "goal": "元の控えは書き換えず、二通の記録と仕事分の説明を社内担当者に見せて必要書類を確認すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "届いた日だけでなく、提出先が指定する記録名を担当へ伝えます。画面印刷を正式書類だと言い換えないようにします。",
+        "recommendedAnswerJa": "担当者に確認します。今ある控えに自分で金額を書き換えず、二通の記録と、仕事分が六百円という説明を一緒に見せたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "担当者に提出先が指定した記録名を伝え、画面の印刷を正式書類と呼ばないようにすると伝える。日本語で伝えてください。",
+        "hint": "元の控えは書き換えず、二通の記録と仕事分の説明を社内担当者に見せて必要書類を確認すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "担当者に提出先が指定した記録名を伝え、画面の印刷を正式書類と呼ばないようにすると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "元の控えは書き換えず、二通の記録と仕事分の説明を社内担当者に見せて必要書類を確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "その区別でご相談ください。費用や受取方法がある場合も、依頼前に確認できます。",
+        "textJa": "元の控えはそのまま保管してください。別の書類が必要と言われた場合は、書類名と必要な記載を確認してから、こちらで対応できるか相談してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "mikasa_05_task_5",
+        "communicativeIntent": "separate_amounts_and_return_if_documents_needed",
         "requiredSemanticComponents": {
-          "goal": "指定書類と差出控えを示して発行可能な記録を確認し、必要なら画面印刷とは別に申し込むと伝える"
+          "goal": "八百円の元の控えを残し、仕事分六百円と私用分二百円を分け、会社が求める書類が足りなければ改めて相談すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "提出先の指定と差出控えを示し、依頼できる記録を確認します。画面の印刷とは分けて、必要なら正式に申し込みます。",
+        "recommendedAnswerJa": "元の控えは八百円のまま残し、会社宛ての六百円と私用の二百円を分けて説明します。必要書類は会社に聞いて、足りなければ改めて相談します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "指定書類と差出控えを示して発行可能な記録を確認し、必要なら画面印刷とは別に申し込むと伝える。日本語で伝えてください。",
+        "hint": "八百円の元の控えを残し、仕事分六百円と私用分二百円を分け、会社が求める書類が足りなければ改めて相談すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "指定書類と差出控えを示して発行可能な記録を確認し、必要なら画面印刷とは別に申し込むと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "八百円の元の控えを残し、仕事分六百円と私用分二百円を分け、会社が求める書類が足りなければ改めて相談すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。担当へ照会します。ご相談ありがとうございました。",
+        "textJa": "承知しました。二通の記録を別々にまとめてお渡しします。ご確認ありがとうございました。お気をつけて。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-mikasa.json",
-    "premise": "三笠の郵便記録相談。オンライン配達表示の印刷と正式な記録の提供が別であることを客が確認し、提出先の必要な形式を照会する。",
+    "premise": "三笠の郵便窓口を想定した学習場面。仕事用と私用の二通を同時に送った客が、ひとまとめの会計控えだけでは会社へ申告する額を分けられず、各通の記録を照合する。経費の承認や書類再発行は確約しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
