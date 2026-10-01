@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。不審な連絡についてのご相談ですか。",
+        "textJa": "こんにちは。どのようなご相談ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,10 +26,10 @@
       "player": {
         "communicativeIntent": "hachimantai_4_task_1",
         "requiredSemanticComponents": {
-          "goal": "配送SMSの再配達リンクへ荷物番号入力前に相談する"
+          "goal": "心当たりのない配送SMSをリンク開封前に相談する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "配送会社を名乗るSMSが来ました。再配達リンクに荷物番号を入れる前に確認したいです。",
+        "recommendedAnswerJa": "配送会社を名乗るSMSが来ましたが、今日届く荷物に心当たりがありません。リンクを開く前に相談したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "配送SMSの再配達リンクへ荷物番号入力前に相談する。日本語で伝えてください。",
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "リンクは開かず、まずご自身に心当たりのある配送があるか確認してください。",
+        "textJa": "リンクは開かず、まずご自身の注文履歴を確認しましたか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,10 +71,10 @@
       "player": {
         "communicativeIntent": "hachimantai_4_task_2",
         "requiredSemanticComponents": {
-          "goal": "注文履歴に今日の配送予定がないと確認する"
+          "goal": "注文履歴に配達予定がなく個人情報未入力と伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "注文履歴を見ると、今日届く予定の荷物はありません。",
+        "recommendedAnswerJa": "はい。確認しましたが、今日の配達予定はありません。個人情報も入力していません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "注文履歴に今日の配送予定がないと確認する。日本語で伝えてください。",
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "SMS内の連絡先ではなく、必要なら配送会社の公式な窓口を別に確認してください。",
+        "textJa": "分かりました。メッセージは削除せず、送信元表示と受信時刻を確認できる状態にしてください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,10 +116,10 @@
       "player": {
         "communicativeIntent": "hachimantai_4_task_3",
         "requiredSemanticComponents": {
-          "goal": "SMSへ情報入力せず公式サイトを自分で開くと伝える"
+          "goal": "受信情報を保存し公式窓口を使うと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "SMSへ荷物番号や住所を入力せず、公式サイトを自分で開いて確認します。",
+        "recommendedAnswerJa": "スクリーンショットも残します。配送会社へ確認するならSMSの番号ではなく公式窓口を使います。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "SMSへ情報入力せず公式サイトを自分で開くと伝える。日本語で伝えてください。",
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。すでに情報を入力した場合は、その事実も相談してください。",
+        "textJa": "はい。公式な連絡先を別に確認してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,10 +161,10 @@
       "player": {
         "communicativeIntent": "hachimantai_4_task_4",
         "requiredSemanticComponents": {
-          "goal": "リンク未開封・個人情報未入力でメッセージを残すと伝える"
+          "goal": "家族注文でもSMSリンクは使わず確認すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "今回はリンクを開いておらず、個人情報も入力していません。メッセージを残します。",
+        "recommendedAnswerJa": "もし家族が注文していたと後で分かっても、このSMSのリンクは使わず確認します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "リンク未開封・個人情報未入力でメッセージを残すと伝える。日本語で伝えてください。",
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "送信元表示や受信時刻も確認できる状態にしておいてください。",
+        "textJa": "それがよいでしょう。不審な入力をしてしまった場合はその事実も伝えてください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,10 +206,10 @@
       "player": {
         "communicativeIntent": "hachimantai_4_task_5",
         "requiredSemanticComponents": {
-          "goal": "心当たり確認・リンク不使用・公式窓口別確認・受信情報保存をまとめる"
+          "goal": "注文履歴・リンク不使用・受信保存・公式確認をまとめる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "心当たりを確認し、SMSリンクを使わず公式窓口を別に調べ、受信情報を残して相談します。",
+        "recommendedAnswerJa": "注文履歴を確認し、リンクを開かず受信情報を保存して公式窓口から確認します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "心当たり確認・リンク不使用・公式窓口別確認・受信情報保存をまとめる。日本語で伝えてください。",
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。状況に応じてご案内します。",
+        "textJa": "承知しました。安全な方法で確認してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-003-hachimantai.json",
-    "premise": "八幡平の架空交番相談。配送会社を名乗るSMSの再配達リンクを公式と思い、荷物番号を入力する前に自分の注文履歴と公式窓口を確認する。",
+    "premise": "八幡平の架空交番相談。配送会社を名乗るSMSが届いた利用者が、注文履歴に該当する荷物がないことを確認し、リンクを開かず受信情報を残して相談する。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
