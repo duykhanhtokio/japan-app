@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "利用条件を担当へ確認しましょう。休憩で離れる時は道具を置いたままにしないでください。",
+        "textJa": "こちらの利用案内では、噴水右の通路から外れた舗装スペースで、小さい椅子と三脚を使えます。休憩で離れる時は、道具を残して場所を確保せず、全てお持ちください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "道具と片付けの条件を確認してから始めましょう。",
+        "textJa": "ご案内した舗装スペースで、使った水を回収して持ち帰る準備をしてから始めてください。休憩後に戻った時は、空いている場所を選び直してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "eniwa_08_task_5",
+        "communicativeIntent": "use_fictional_paved_art_area_remove_all_on_break",
         "requiredSemanticComponents": {
-          "goal": "通行の邪魔にならない場所と水の扱いを聞き、離れる時は全部片付けて公園を汚さず描きたいと伝える"
+          "goal": "噴水右の舗装スペースで通路を空けて描き、休憩時は椅子と三脚を全て持ち、使用水も持ち帰って戻ったら場所を選び直すと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "通行を妨げない場所を聞き、離れる時は全部片付けます。水の扱いも確認して、公園を汚さず描きたいです。",
+        "recommendedAnswerJa": "噴水右の舗装スペースを使い、通路は空けます。休憩に出る時は椅子も三脚も持ち、使った水も持ち帰って、戻ったら場所を選び直します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "通行の邪魔にならない場所と水の扱いを聞き、離れる時は全部片付けて公園を汚さず描きたいと伝える。日本語で伝えてください。",
+        "hint": "噴水右の舗装スペースで通路を空けて描き、休憩時は椅子と三脚を全て持ち、使用水も持ち帰って戻ったら場所を選び直すと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "通行の邪魔にならない場所と水の扱いを聞き、離れる時は全部片付けて公園を汚さず描きたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "噴水右の舗装スペースで通路を空けて描き、休憩時は椅子と三脚を全て持ち、使用水も持ち帰って戻ったら場所を選び直すと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。担当へ確認してご案内します。どうぞお楽しみください。",
+        "textJa": "承知しました。道具と水の準備をして、周りの方に配慮してお楽しみください。ご確認ありがとうございました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-eniwa.json",
-    "premise": "恵庭の学習用シミュレーション。絵を描く利用者が長時間の場所取りを避け、三脚と椅子を通路から外して途中休憩時に片付ける。",
+    "premise": "恵庭の公園案内を想定した学習用シミュレーション。架空の利用案内は噴水右の通路外の舗装スペースで小型椅子と三脚を使えると示す。描画する客は休憩で離れる時に道具を全て持ち、使用水も持ち帰る。実公園の規則、場所や描画許可は認定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

@@ -2,6 +2,8 @@
 
 Status: **FAIL CONTENT QA — SEMANTIC AUDIT IN PROGRESS**.
 
+Current continuation (supersedes historical next-actions below): 33 full park/observation/viewpoint exchanges compared; 14 scenarios repaired, including Mikasa full replacement. Twenty-five canonical full replacements documented. CONTENT QA remains FAIL. Next: remaining named sightseeing/culture/transport exchanges, then remaining clinic/police corpus checks; verify current remote to avoid duplicate work. No translations or PRF-002.
+
 Branch: `recovery/jlpt-n3-n1`. This continuation started from remote-verified `f687aed169babf8e40ca85659273bc0687d3a964` (251/299), preserving all existing data. Original input: `dd1ecd44cc9537efc79b578ac636d5f68792ceff`.
 
 ## Current authoritative state
@@ -67,3 +69,7 @@ Read 32 full price/packaging, ingredient/preparation/quantity, payment/grouping/
 ## Restaurant continuation and NPC immersion
 
 Five full restaurant exchanges compared. Susukino now resolves fictional late-guest seats, separate-payment and cover charge conditions and receives a concrete two-person decision; Hakodate explains beer/tea receipt abbreviations and resolves one-payer settlement; Asahikawa ramen returns the chef response and takes a concrete less-noodles order. Sapporo luggage seating and Asahikawa expense-document format remain honestly pending. Six NPC utterances referencing this scenario were removed from the previously repaired postal/market dialogues; fictional conditions remain in metadata. Latest source/runtime replacement hashes refreshed. No real business policy certified. This continuation has now read 60 distinct complete postal/market/restaurant exchanges. All 299 still require complete whole-corpus semantic signoff: CONTENT QA remains FAIL, no translations or PRF-002. Next independent comparison group: park lost-property/walking/observation/permission stories, starting Abashiri -08, Ashibetsu -08, Rumoi -08, Fukagawa -08, Furano -08 and Akabira -08; check latest remote first to preserve concurrent work.
+
+## Park, observation and viewpoint continuation: 33 full exchanges
+
+Mikasa replaced repeated snow-return plot with fictional stamp-location evidence, folded-card review and completed postcard selection. Monbetsu identifies/returns the right glove; Akabira gives actual fictional entrance-route instructions. Kitami, Muroran, Iwamizawa and Shibetsu supply requested route/facility/transport evidence rather than another promise to check. Nayoro, Tomakomai, Yubari, Ebetsu, Takikawa, Eniwa and Noboribetsu supply bounded fictional participation/space conditions and obtain concrete choices. Fourteen canonical scenarios changed, runtime IDs/turns/links/UI and other prefectures preserved. Weather-return and generic referral overlap addressed without certifying real conditions. Twenty-five full replacements documented. No CONTENT PASS, translations or PRF-002. Continue with remaining named sightseeing/culture/transport cases and remaining clinic/police comparisons, checking the latest remote first.

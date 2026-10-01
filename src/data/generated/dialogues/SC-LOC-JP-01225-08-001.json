@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "再生機器がなくても音が出ますね。この場所の利用条件を担当へ確認しましょう。",
+        "textJa": "この広場の掲示では、太鼓の練習はできません。録音を流さなくても、生の太鼓の練習ができるという条件ではありません。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "注意の内容や場所の条件を確かめてください。確認が済むまで演奏は始めないでください。",
+        "textJa": "音を小さくしても、この広場で太鼓の練習をしてよいという案内にはなりません。ここでは始めず、練習に利用できる別の施設をお探しください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "takikawa_08_task_5",
+        "communicativeIntent": "accept_no_drums_here_seek_two_person_practice_room",
         "requiredSemanticComponents": {
-          "goal": "担当者に二人の太鼓練習の条件を聞き、確認前には演奏せず使えなければ別の施設へ相談すると伝える"
+          "goal": "この広場では今日は太鼓を演奏せず、二人で使える別の練習場所を探し、楽器と人数を伝えて利用条件を確認後に申し込むと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "今日は担当へ太鼓二人の練習条件を聞きます。確認前に演奏せず、使えなければ別の施設へ相談します。",
+        "recommendedAnswerJa": "今日この広場では太鼓を演奏しません。二人で使える練習場所を探し、楽器の種類と人数を伝えて施設の条件を確認してから申し込みます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "担当者に二人の太鼓練習の条件を聞き、確認前には演奏せず使えなければ別の施設へ相談すると伝える。日本語で伝えてください。",
+        "hint": "この広場では今日は太鼓を演奏せず、二人で使える別の練習場所を探し、楽器と人数を伝えて利用条件を確認後に申し込むと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "担当者に二人の太鼓練習の条件を聞き、確認前には演奏せず使えなければ別の施設へ相談すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "この広場では今日は太鼓を演奏せず、二人で使える別の練習場所を探し、楽器と人数を伝えて利用条件を確認後に申し込むと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。担当の確認先をご案内します。ご相談ありがとうございました。",
+        "textJa": "承知しました。条件を聞いてから場所をお選びください。太鼓を出さずにご確認いただき、ありがとうございました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-takikawa.json",
-    "premise": "滝川の学習用シミュレーション。公園で練習する音楽グループが再生音と生演奏の違いを相談し、注意後に音量だけで解決したと決めない。",
+    "premise": "滝川の公園案内を想定した学習用シミュレーション。二人で太鼓練習をしたい客へ、架空の広場の掲示は太鼓練習不可と係員が説明する。スピーカーの有無や弱くたたくことでは条件は変わらず、その日は演奏せず別施設の利用条件を調べる。実在公園や施設の規則を認定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

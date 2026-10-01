@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "その特徴で確認しましょう。届いていなければ、連絡先と今後の確認方法をご案内します。",
+        "textJa": "保管品に、灰色に赤い線の右手袋が一枚あります。こちらが内側の名前です。お持ちの左手袋と、線の模様、サイズ、名前を照らし合わせてください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "monbetsu_08_task_5",
+        "communicativeIntent": "verify_found_right_against_left_and_accept",
         "requiredSemanticComponents": {
-          "goal": "探すのは右一枚で灰色に赤い線と内側の氏名があると整理し、写真の黒い借り物と区別して説明する"
+          "goal": "保管された右手袋の模様、サイズ、内側の名前が手元の左手袋と一致し、借りた黒い手袋ではなく自分の右だと確認して受け取ると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "右の一枚だけ、灰色に赤い線、内側の名前と伝えます。黒い借り物を探しているのではないと、経路の写真も説明します。",
+        "recommendedAnswerJa": "左と同じ模様とサイズで、内側の名前も私のものです。写真の黒い借り物ではなく、探していた右手袋だと確認できました。こちらを受け取ります。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "探すのは右一枚で灰色に赤い線と内側の氏名があると整理し、写真の黒い借り物と区別して説明する。日本語で伝えてください。",
+        "hint": "保管された右手袋の模様、サイズ、内側の名前が手元の左手袋と一致し、借りた黒い手袋ではなく自分の右だと確認して受け取ると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "探すのは右一枚で灰色に赤い線と内側の氏名があると整理し、写真の黒い借り物と区別して説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "保管された右手袋の模様、サイズ、内側の名前が手元の左手袋と一致し、借りた黒い手袋ではなく自分の右だと確認して受け取ると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。残っている手袋で特徴を確認します。ご相談ありがとうございました。",
+        "textJa": "承知しました。確認できた右手袋をお渡しします。左右がそろいましたね。お忘れ物に気をつけてお帰りください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-monbetsu.json",
-    "premise": "紋別の公園で手袋の忘れ物相談。片方はポケットに残るため一組と誤記せず、移動途中で借りたものと自分のものを区別する。",
+    "premise": "紋別の公園受付を想定した学習用シミュレーション。右手袋だけを失くした客が、借りた黒い手袋の写真を捜索対象と区別する。架空の保管品にある灰色と赤線の右手袋を、手元の左手袋と内側の名前で照合して受け取る。実施設の拾得状況や受渡し規則を認定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

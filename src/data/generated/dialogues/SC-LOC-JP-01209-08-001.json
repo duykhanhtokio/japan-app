@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。植栽の近くや通路で遊べるとは限りません。指定された遊びの区域と今日の利用案内を確認してください。",
+        "textJa": "花壇横はボール遊びの区域ではありません。地図のこちらが食事のできる休憩区画、こちらがボール遊びの自由広場です。別の場所なので、食事の後に移動してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "そのようにしてください。遊びのルールは区域ごとに異なります。持ってきた物を使えない場合は別の遊びにしましょう。",
+        "textJa": "自由広場の掲示では、柔らかいボールを使えます。花壇横で使えるという意味ではありません。広場でも周りに人がいれば、ぶつけないよう距離を取ってください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "choose_picnic_then_walk_if_no_ball_zone",
+        "communicativeIntent": "choose_meal_area_then_permitted_soft_ball_field",
         "requiredSemanticComponents": {
-          "goal": "先に飲食可の場所で食べ、遊べる区域がなければボールを出さず散歩に変えると話す"
+          "goal": "休憩区画で食べた後に柔らかいボールを持って自由広場へ移り、花壇横では出さず広場でも他の人と距離を取ると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "では先に食事のできる所でお弁当を食べます。遊べる区域が見つからなければ、ボールを出さず散歩に変えます。",
+        "recommendedAnswerJa": "では休憩区画でお弁当を食べてから、柔らかいボールを持って自由広場へ行きます。花壇横では出さず、広場でもほかの人と距離を取ります。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "先に飲食可の場所で食べ、遊べる区域がなければボールを出さず散歩に変えると話す。日本語で伝えてください。",
+        "hint": "休憩区画で食べた後に柔らかいボールを持って自由広場へ移り、花壇横では出さず広場でも他の人と距離を取ると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "先に飲食可の場所で食べ、遊べる区域がなければボールを出さず散歩に変えると話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "休憩区画で食べた後に柔らかいボールを持って自由広場へ移り、花壇横では出さず広場でも他の人と距離を取ると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "飲食の案内も確認し、周りの利用者が通れるようにしてください。ごみの持ち帰りについても掲示をご覧ください。",
+        "textJa": "その順番でご利用ください。食事のごみは持ち帰る案内です。食べた物を片付けて、お子さんと一緒に広場へ移動してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "confirm_separate_rules_no_flowerbed_play",
+        "communicativeIntent": "confirm_two_areas_and_carry_meal_rubbish",
         "requiredSemanticComponents": {
-          "goal": "休憩、飲食、ボール遊びを分けて確認し、許可された区域だけで遊びごみも片付けると話す"
+          "goal": "休憩区画で食べてごみを片付け、子供と自由広場へ移り、ボールは広場だけで使い花壇横では遊ばないと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "休憩、食事、ボール遊びを分けて確認します。花壇の横では遊ばず、許可された区域だけで使い、ごみも片付けます。",
+        "recommendedAnswerJa": "休憩区画で食べてごみを片付け、子供と自由広場へ行きます。柔らかいボールは広場でだけ使い、花壇横では遊びません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "休憩、飲食、ボール遊びを分けて確認し、許可された区域だけで遊びごみも片付けると話す。日本語で伝えてください。",
+        "hint": "休憩区画で食べてごみを片付け、子供と自由広場へ移り、ボールは広場だけで使い花壇横では遊ばないと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "休憩、飲食、ボール遊びを分けて確認し、許可された区域だけで遊びごみも片付けると話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "休憩区画で食べてごみを片付け、子供と自由広場へ移り、ボールは広場だけで使い花壇横では遊ばないと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-yubari.json",
-    "premise": "夕張の公園学習場面。休憩中の客が子供のボール遊びと飲食場所を区別し、花壇近くを遊び場にせず指定区域を確認する。架空の公園ルール。",
+    "premise": "夕張の公園案内を想定した学習用シミュレーション。架空の掲示では食事は休憩区画、柔らかいボール遊びは自由広場ででき、花壇横は遊びの区域ではない。係員が両区域を地図で示し、親子は食事後に自由広場へ移り、ごみを持ち帰る。実際の公園配置や規則を認定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "その距離は、現在地から目的の場所までの表示かもしれません。戻りたい場所はどちらですか。",
+        "textJa": "その表示は「入口から見晴台まで二キロ、片道」です。一周の距離ではありません。戻りたいのは、出発した同じ入口でしょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "利用できる交通の日時と行き先は、事業者の案内で確認してください。そこまで歩く距離も考えましょう。",
+        "textJa": "今日の案内のバスは別の入口行きで、出発した入口には戻りません。その便に乗れば同じ入口へ着く、という案内ではないのでご注意ください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "shibetsu_08_task_4",
+        "communicativeIntent": "reject_other_entrance_bus_and_request_rest_points",
         "requiredSemanticComponents": {
-          "goal": "家族に休んでもらい乗場までの距離と入口へ向かう便を確認し、条件が合わなければ休憩を増やして指定の道を戻ると伝える"
+          "goal": "案内のバスは別の入口行きなので利用せず、家族と現在地で休み、出発した入口への帰路と途中の休憩所を地図で確認したいと頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "家族に休んでもらい、今の場所から乗場までと入口への行き先を確認します。合わなければ、休憩を増やして指定の道で戻ります。",
+        "recommendedAnswerJa": "別の入口では困るので、そのバスには乗りません。まず家族とここで休み、出発した入口までの帰り道と途中で休める所を地図で確認したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "家族に休んでもらい乗場までの距離と入口へ向かう便を確認し、条件が合わなければ休憩を増やして指定の道を戻ると伝える。日本語で伝えてください。",
+        "hint": "案内のバスは別の入口行きなので利用せず、家族と現在地で休み、出発した入口への帰路と途中の休憩所を地図で確認したいと頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "家族に休んでもらい乗場までの距離と入口へ向かう便を確認し、条件が合わなければ休憩を増やして指定の道を戻ると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "案内のバスは別の入口行きなので利用せず、家族と現在地で休み、出発した入口への帰路と途中の休憩所を地図で確認したいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "その選択でよいでしょう。ご家族と別れて進む場合も、合流する場所と連絡方法を確認してください。",
+        "textJa": "帰りはこの舗装通路で出発した入口へ戻れます。途中の休憩所はこちらの印です。今いる場所で休んでから、ご家族と一緒に休憩を挟んでお戻りください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "shibetsu_08_task_5",
+        "communicativeIntent": "confirm_one_way_distance_and_walk_back_together",
         "requiredSemanticComponents": {
-          "goal": "今日は家族と離れず一緒に行き、交通の利用可否と乗場までの距離を確認して無理のない帰り方を選ぶと伝える"
+          "goal": "表示は片道二キロでバスは別入口行きだと確認し、現在地で休んでから家族と離れず案内の帰路で休憩を挟み戻ると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "今日は離れず、家族と一緒に行きます。交通が使えるかと乗場への距離を見て、無理のない戻り方を選びます。",
+        "recommendedAnswerJa": "片道二キロで、バスは違う入口へ行くと確認できました。今休んでから、家族と離れず、案内された帰路で途中も休憩しながら戻ります。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "今日は家族と離れず一緒に行き、交通の利用可否と乗場までの距離を確認して無理のない帰り方を選ぶと伝える。日本語で伝えてください。",
+        "hint": "表示は片道二キロでバスは別入口行きだと確認し、現在地で休んでから家族と離れず案内の帰路で休憩を挟み戻ると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "今日は家族と離れず一緒に行き、交通の利用可否と乗場までの距離を確認して無理のない帰り方を選ぶと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "表示は片道二キロでバスは別入口行きだと確認し、現在地で休んでから家族と離れず案内の帰路で休憩を挟み戻ると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-shibetsu.json",
-    "premise": "士別の公園で長距離散歩の帰路相談。家族と歩いた客が歩行距離の表示を一周と誤認し、帰りのバス利用も確認した上で短縮する。実交通便は断定しない。",
+    "premise": "士別の公園案内を想定した学習用シミュレーション。架空の「入口から見晴台まで二キロ、片道」の表示を一周と誤認した家族が帰路を相談する。架空の今日のバス案内は別入口行きで、希望の入口には戻れないとNPCが説明する。家族は現在地で休み、地図の帰路と途中の休憩所を確認して徒歩で戻る。実際の距離、便、設備は認定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
