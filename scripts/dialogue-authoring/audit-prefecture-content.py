@@ -27,6 +27,9 @@ def audit(prefecture):
     recipe_groups = collections.defaultdict(list)
     inventory = []
     editorial_sources = {}
+    player_task_groups = collections.defaultdict(list)
+    player_answer_groups = collections.defaultdict(list)
+    title_groups = collections.defaultdict(list)
     for s in targets:
         path = 'src/data/generated/dialogues/' + s['id'] + '.json'
         raw = (ROOT / path).read_bytes()
@@ -61,6 +64,17 @@ def audit(prefecture):
                 if texts != entry.get('turns'):
                     errors.append('editorial_utterance_mismatch')
                 tasks = entry.get('tasks', [])
+                for i, task in enumerate(tasks):
+                    player_task_groups[task[1]].append({'scenarioId': s['id'], 'playerTask': i + 1})
+                for i, text in enumerate(texts[1::2]):
+                    player_answer_groups[text].append({'scenarioId': s['id'], 'playerAnswer': i + 1})
+                title_groups[s.get('name', '')].append(s['id'])
+                if tasks and s.get('playerGoal') != tasks[0][1]:
+                    errors.append('canonical_initial_goal_mismatch')
+                if s.get('situation') != entry.get('premise'):
+                    errors.append('canonical_situation_mismatch')
+                if s.get('difficulty') is not None:
+                    errors.append('unexpected_level_cap')
                 if len(tasks) != 5:
                     errors.append('editorial_task_count')
                 else:
@@ -99,7 +113,7 @@ def audit(prefecture):
                 if ratio >= .72:
                     near.append({'a': a, 'b': b, 'normalizedSimilarity': round(ratio, 4), 'fourGramJaccard': round(overlap, 4), 'review': 'pending'})
     groups = lambda d: [v for v in d.values() if len(v) > 1]
-    return {'prefectureId': prefecture, 'status': 'FAIL CONTENT QA / rewrite in progress', 'canonicalCount': len(targets), 'coverageCount': sum(x['turnCount'] > 0 for x in inventory), 'structuralErrorCount': sum(bool(x['structuralErrors']) for x in inventory), 'exactDuplicateGroups': groups(exact), 'placeQuantityNormalizedDuplicateGroups': groups(normalized_groups), 'nearDuplicateCandidates': near, 'intentStructureCandidates': groups(intents), 'recipeReuseGroups': dict(recipe_groups), 'semanticReview': 'Manual causal-development and location-role review required; similarity scores are candidate evidence only.', 'contentPass': False, 'inventory': inventory}
+    return {'prefectureId': prefecture, 'status': 'FAIL CONTENT QA / rewrite in progress', 'canonicalCount': len(targets), 'coverageCount': sum(x['turnCount'] > 0 for x in inventory), 'structuralErrorCount': sum(bool(x['structuralErrors']) for x in inventory), 'exactDuplicateGroups': groups(exact), 'placeQuantityNormalizedDuplicateGroups': groups(normalized_groups), 'nearDuplicateCandidates': near, 'exactPlayerTaskDuplicateGroups': groups(player_task_groups), 'exactPlayerAnswerDuplicateGroups': groups(player_answer_groups), 'canonicalTitleDuplicateGroups': groups(title_groups), 'intentStructureCandidates': groups(intents), 'recipeReuseGroups': dict(recipe_groups), 'semanticReview': 'Manual causal-development and location-role review required; similarity scores are candidate evidence only.', 'contentPass': False, 'inventory': inventory}
 
 if __name__ == '__main__':
     prefecture = sys.argv[1]

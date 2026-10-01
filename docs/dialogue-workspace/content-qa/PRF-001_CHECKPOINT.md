@@ -33,3 +33,5 @@ Remote advanced to `b893911a130dadaea94be73c6e87497809c7d0dd` while this batch w
 ## Durability
 
 Direct shell push lacks credentials; use the authenticated GitHub connection to create tree/commit and fast-forward the required branch with force=false. Fetch, verify the local staged tree matches the remote commit, merge fast-forward, and require `node scripts/check-work-persistence.mjs` to report WORK PERSISTENCE PASS. Original utterances remain in Git history and timestamped backups.
+
+Additional continuation reconciliation: preserve remote `32a2d3b1f3caa24a70401ec4ef2f8fd6e5b5f407` semantic repairs and all source/canonical alignment. Local independent instruction/title history is retained as a merge parent `6faf87ddf34508a40e68614d6c1c4c41d034c9b2`; expanded duplicate and canonical parity checks remain active. No CONTENT PASS claimed.
