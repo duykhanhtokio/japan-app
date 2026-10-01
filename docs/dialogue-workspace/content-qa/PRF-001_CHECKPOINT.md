@@ -2,7 +2,7 @@
 
 Status: **FAIL CONTENT QA — SEMANTIC AUDIT IN PROGRESS**.
 
-Current continuation (supersedes historical next-actions below): 29 municipal exchanges compared in full; Sapporo in-city-move overlap fully replaced, nine NPC record/condition/preparation repairs. Twenty-nine full replacements documented; 265 distinct exchanges in full comparison records. CONTENT QA remains FAIL. Next: remaining 34 bank/work/retail/post/other exchanges, reconciling current remote. No translations or PRF-002.
+Current continuation (supersedes historical next-actions below): final34 previously uncovered exchanges read in full (19 bank and15 workplace/post/retail/other);13 narrow NPC evidence/record/packaging/product-answer repairs. All299 distinct exchanges now have full comparison records;29 full replacements retained. Structural/parity screening: zero errors, zero exact/normalized/near candidates; UI lock10/10 PASS. CONTENT QA remains FAIL pending final causal-repetition and answer/closure signoff, especially card/PIN handoffs and workplace scope/waiting answers. No translations or PRF-002.
 
 Branch: `recovery/jlpt-n3-n1`. This continuation started from remote-verified `f687aed169babf8e40ca85659273bc0687d3a964` (251/299), preserving all existing data. Original input: `dd1ecd44cc9537efc79b578ac636d5f68792ceff`.
 
@@ -121,3 +121,8 @@ The other session published exact-tree counterpart `d8cc35a1` during reconciliat
 ## Reconciled final reading checkpoint
 
 Preserved remote1fa2aa88 administrative replacement/completions and history bundle alongside this session's36 remaining full reads. Read the ten updated administrative exchanges in full; Sapporo flyer replacement closes the prior move overlap, Sunagawa recorded single-consultation request differs from Shibetsu applicant/consultant receipt, and Noboribetsu learning conditions are now answered. Three further bank completions provide Iwamizawa rollover/detail guide, Akabira current-status inquiry checklist and Otaru two-documents/three-employer-questions checklist. This session changed12 exchanges in total. All299 current scenarios have full comparison coverage. CONTENT QA remains FAIL pending final cross-group outcome/referral comparison; detailed pending groups are in PRF-001_SEMANTIC_REVIEW.json. No unread coverage work remains, no translation or PRF-002.
+
+
+## Independent final34 reconciliation
+
+Preserved remote bcb2a0d3211e8061227d2abd302908450b549b06 and independent final34 reading records,13 repairs and all historical group findings. Remote supplied banking references/amounts, ATM-only screen, employment/document checklists, egg and heating label responses are retained. Independent enquiry readbacks, callback/voicemail request, completed one-record display, postal fit/accessory checks and onion exclusion are combined. Both prepared commit histories will be parents of the reconciliation checkpoint. Final outcome/referral QA remains pending.
