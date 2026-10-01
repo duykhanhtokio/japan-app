@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "kitahiroshima_06_task_2",
         "requiredSemanticComponents": {
-          "goal": "仕事後なら落ち着いて話せるが、休憩中でも口座番号を周囲に読み上げるのは避けたいと伝える"
+          "goal": "仕事は18時に終わり18時半なら静かな場所で話せると伝え、休憩中でも口座番号を周囲に読み上げないと話す"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "仕事が終わってからです。休憩中に取れても、口座番号を周りで読み上げることは避けたいです。",
+        "recommendedAnswerJa": "仕事が終わるのは18時です。18時半なら静かな場所で話せます。休憩中に取れても、口座番号を周りで読み上げることは避けたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "仕事後なら落ち着いて話せるが、休憩中でも口座番号を周囲に読み上げるのは避けたいと伝える。日本語で伝えてください。",
+        "hint": "仕事は18時に終わり18時半なら静かな場所で話せると伝え、休憩中でも口座番号を周囲に読み上げないと話す。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "仕事後なら落ち着いて話せるが、休憩中でも口座番号を周囲に読み上げるのは避けたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "仕事は18時に終わり18時半なら静かな場所で話せると伝え、休憩中でも口座番号を周囲に読み上げないと話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "連絡方法の希望として「仕事後、静かな場所で本人が対応。同僚への内容説明は希望しない。留守番電話は詳細な口座情報ではなく連絡先と折返し方法」と記録しました。実際の連絡時刻と案内方法は担当の確認待ちです。",
+        "textJa": "担当から、今日は18時半に折り返すという回答が来ました。留守番電話には口座の詳細を残さず、連絡が必要な場合はお渡しした案内の連絡先と折返し方法だけを使う、という希望も記録しました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "kitahiroshima_06_task_5",
         "requiredSemanticComponents": {
-          "goal": "仕事後に話せる時間を知らせ、静かな場所で本人確認に答え、同僚に照会を代わってもらわないと伝える"
+          "goal": "18時半の折返しを静かな場所で本人が受け、案内の連絡先を手元に置き、口座の詳細は留守番電話や同僚への伝言に残さないよう頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "仕事後に話せる時間を伝え、詳しい情報は静かな場所で答えます。同僚へ照会を代わってもらいません。",
+        "recommendedAnswerJa": "今日は18時半に静かな場所で私が電話を受けます。案内の連絡先は手元に置き、詳しい口座情報は留守番電話や同僚への伝言に残さないでください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "仕事後に話せる時間を知らせ、静かな場所で本人確認に答え、同僚に照会を代わってもらわないと伝える。日本語で伝えてください。",
+        "hint": "18時半の折返しを静かな場所で本人が受け、案内の連絡先を手元に置き、口座の詳細は留守番電話や同僚への伝言に残さないよう頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "仕事後に話せる時間を知らせ、静かな場所で本人確認に答え、同僚に照会を代わってもらわないと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "18時半の折返しを静かな場所で本人が受け、案内の連絡先を手元に置き、口座の詳細は留守番電話や同僚への伝言に残さないよう頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。担当へ連絡方法の希望をお伝えします。ご相談ありがとうございました。",
+        "textJa": "18時半の折返しと、詳しい情報を伝言に残さない希望を確認しました。取引の確認自体が終わったわけではありませんので、その内容は担当と直接お話しください。ご相談ありがとうございました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -252,6 +252,7 @@
     "editorialSource": "scripts/dialogue-authoring/prf-001-kitahiroshima.json",
     "premise": "北広島の学習用シミュレーション。取引照会を職場の休憩時間に行う人が、会話の内容を周囲に聞かせず折返し予定を相談する。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
-    "contentPass": false
+    "contentPass": false,
+    "fictionalProcedureExample": true
   }
 }
