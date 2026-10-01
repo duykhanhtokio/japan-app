@@ -1,6 +1,5 @@
-import { router } from 'expo-router';
-import { useFocusEffect } from 'expo-router';
-import { useCallback, useState } from 'react';
+import { router, useFocusEffect } from 'expo-router';
+import { useCallback, useState, type PropsWithChildren } from 'react';
 
 import {
     Image,
@@ -9,6 +8,8 @@ import {
     StyleSheet,
     Text,
     View,
+    type StyleProp,
+    type ViewStyle,
 } from 'react-native';
 
 import {
@@ -17,7 +18,7 @@ import {
 
 import BottomNav from '@/components/app/BottomNav';
 import GameHeader from '@/components/app/GameHeader';
-import { ROYAL } from '@/components/ui/RoyalSurface';
+import { ROYAL, ROYAL_FONT, ROYAL_TYPE, RoyalNavyFrame } from '@/components/ui/RoyalSurface';
 import { RANKS, type LearningEconomy } from '@/services/learning-economy';
 import { syncJlptQualification } from '@/services/sync-jlpt-qualification';
 
@@ -36,9 +37,22 @@ import {
 import {
     calculateCommunicationTitle,
 } from '@/services/progress-engine';
-const PROFILE_FRAME = require('../../../assets/app/ui/royal-af/button-wide-v2.png');
 const PROFILE_AVATAR = require('../../../assets/app/ui/royal-af/hud-player-medallion-v1.png');
-function ProfileFrame(){return <View pointerEvents="none" style={styles.royalFrame}><Image source={PROFILE_FRAME} resizeMode="stretch" style={styles.royalFrame}/></View>}
+function ProfileFrame(){return <View pointerEvents="none" style={styles.royalFrame}><RoyalNavyFrame style={styles.royalFrame}/></View>}
+
+/** Content measures independently from the decorative inset, preventing layout feedback. */
+function ProfilePanel({children,style,kind='plain'}:PropsWithChildren<{style?:StyleProp<ViewStyle>;kind?:'profile'|'rating'|'plain'}>) {
+    const [contentHeight,setContentHeight]=useState(0);
+    const [width,setWidth]=useState(0);
+    return <View onLayout={event=>setWidth(event.nativeEvent.layout.width)} style={[style,{position:'relative',flexDirection:'column',alignItems:'stretch',padding:0,paddingHorizontal:0,paddingVertical:0,borderWidth:0}]}>
+        <ProfileFrame/>
+        <View style={{paddingHorizontal:Math.max(24,width*.12),paddingVertical:Math.max(24,contentHeight*.28)}}>
+            <View onLayout={event=>setContentHeight(event.nativeEvent.layout.height)} style={kind==='profile'?{flexDirection:width<480?'column':'row',flexWrap:'wrap',alignItems:width<480?'stretch':'center',gap:8}:kind==='rating'?{alignItems:'center'}:undefined}>
+                {children}
+            </View>
+        </View>
+    </View>;
+}
 
 export default function ProfileScreen() {
     const [economy,setEconomy]=useState<LearningEconomy|null>(null);
@@ -102,6 +116,9 @@ export default function ProfileScreen() {
                 'bottom',
             ]}
         >
+            <View style={styles.fixedHeader}>
+                <GameHeader variant="approved" name={profile.name?.trim()||'プレイヤー'} abilityLevel={economy?.officialRank??'N5'} abilityTarget={economy?.officialRank?RANKS[RANKS.indexOf(economy.officialRank)+1]??economy.officialRank:'N5'} qualifiedExams={Object.fromEntries(RANKS.map(rank=>[rank,Object.keys(economy?.passed[rank]??{}).length]))} conversationCredits={economy?.credits??100} coins={stats.coins}/>
+            </View>
             <ScrollView
                 style={styles.scroll}
                 contentContainerStyle={
@@ -111,17 +128,15 @@ export default function ProfileScreen() {
                     false
                 }
             >
-                <GameHeader variant="approved" name={profile.name?.trim()||'プレイヤー'} abilityLevel={economy?.officialRank??'N5'} abilityTarget={economy?.officialRank?RANKS[RANKS.indexOf(economy.officialRank)+1]??economy.officialRank:'N5'} qualifiedExams={Object.fromEntries(RANKS.map(rank=>[rank,Object.keys(economy?.passed[rank]??{}).length]))} conversationCredits={economy?.credits??100} coins={stats.coins}/>
                 {/* =========================
                     PROFILE HEADER
                 ========================== */}
 
-                <View
+                <ProfilePanel kind="profile"
                     style={
                         styles.profileCard
                     }
                 >
-                    <ProfileFrame/>
                     <View
                         style={
                             styles.avatar
@@ -194,18 +209,17 @@ export default function ProfileScreen() {
                             編集
                         </Text>
                     </Pressable>
-                </View>
+                </ProfilePanel>
 
                 {/* =========================
                     COMMUNICATION RATING
                 ========================== */}
 
-                <View
+                <ProfilePanel kind="rating"
                     style={
                         styles.ratingCard
                     }
                 >
-                    <ProfileFrame/>
                     <Text
                         style={
                             styles.cardLabel
@@ -260,18 +274,17 @@ export default function ProfileScreen() {
                         正確さ・流暢さ・発音・聴解などを
                         総合して判定します。
                     </Text>
-                </View>
+                </ProfilePanel>
 
                 {/* =========================
                     SPEAKING ABILITY
                 ========================== */}
 
-                <View
+                <ProfilePanel kind="plain"
                     style={
                         styles.abilityCard
                     }
                 >
-                    <ProfileFrame/>
                     <Text
                         style={
                             styles.sectionTitle
@@ -311,7 +324,7 @@ export default function ProfileScreen() {
                             stats.listening
                         }
                     />
-                </View>
+                </ProfilePanel>
 
                 {/* =========================
                     CONVERSATION STATS
@@ -375,12 +388,11 @@ export default function ProfileScreen() {
                     WORK JAPANESE
                 ========================== */}
 
-                <View
+                <ProfilePanel kind="plain"
                     style={
                         styles.workCard
                     }
                 >
-                    <ProfileFrame/>
                     <View
                         style={
                             styles.workHeader
@@ -455,18 +467,17 @@ export default function ProfileScreen() {
                         nhiệm vụ chuyên môn được hiển thị
                         trong tab ミッション.
                     </Text>
-                </View>
+                </ProfilePanel>
 
                 {/* =========================
                     JAPAN JOURNEY
                 ========================== */}
 
-                <View
+                <ProfilePanel kind="plain"
                     style={
                         styles.journeyCard
                     }
                 >
-                    <ProfileFrame/>
                     <View
                         style={
                             styles.journeyHeader
@@ -600,7 +611,7 @@ export default function ProfileScreen() {
                             🔒
                         </Text>
                     </View>
-                </View>
+                </ProfilePanel>
 
                 {/* =========================
                     CONVERSATION LOG
@@ -608,7 +619,7 @@ export default function ProfileScreen() {
 
                 <Pressable
                     style={({ pressed }) => [
-                        styles.logCard,
+                        {width:'100%'},
 
                         pressed &&
                         styles.pressed,
@@ -618,8 +629,7 @@ export default function ProfileScreen() {
                             '/conversation-log'
                         )
                     }
-                >
-                    <ProfileFrame/>
+                ><ProfilePanel style={styles.logCard}>
                     <View
                         style={
                             styles.logHeader
@@ -756,18 +766,17 @@ export default function ProfileScreen() {
                             →
                         </Text>
                     </View>
-                </Pressable>
+                </ProfilePanel></Pressable>
 
                 {/* =========================
                     ACHIEVEMENTS
                 ========================== */}
 
-                <View
+                <ProfilePanel kind="plain"
                     style={
                         styles.achievementCard
                     }
                 >
-                    <ProfileFrame/>
                     <Text
                         style={
                             styles.sectionTitle
@@ -805,18 +814,17 @@ export default function ProfileScreen() {
                             unlocked={false}
                         />
                     </View>
-                </View>
+                </ProfilePanel>
 
                 {/* =========================
                     CERTIFICATES
                 ========================== */}
 
-                <View
+                <ProfilePanel kind="plain"
                     style={
                         styles.certificateCard
                     }
                 >
-                    <ProfileFrame/>
                     <Text
                         style={
                             styles.sectionTitle
@@ -855,7 +863,7 @@ export default function ProfileScreen() {
                             まだ修了証がありません
                         </Text>
                     </View>
-                </View>
+                </ProfilePanel>
             </ScrollView>
 
             <BottomNav
@@ -952,12 +960,11 @@ function StatSection({
     ][];
 }) {
     return (
-        <View
+        <ProfilePanel kind="plain"
             style={
                 styles.statCard
             }
         >
-            <ProfileFrame/>
             <Text
                 style={
                     styles.sectionTitle
@@ -999,7 +1006,7 @@ function StatSection({
                     </View>
                 )
             )}
-        </View>
+        </ProfilePanel>
     );
 }
 
@@ -1089,12 +1096,15 @@ const styles =
             backgroundColor: ROYAL.lacquer,
         },
 
+        fixedHeader: { paddingHorizontal: 18, paddingTop: 18, marginBottom: 12 },
+
         scroll: {
             flex: 1,
         },
 
         content: {
             padding: 18,
+            paddingTop: 0,
 
             paddingBottom: 26,
 
@@ -1110,11 +1120,15 @@ const styles =
          */
 
         profileCard: {
+            flexWrap: 'wrap',
+            gap: 8,
+            position: 'relative',
+            paddingHorizontal: 32,
+            paddingVertical: 30,
             flexDirection: 'row',
 
             alignItems: 'center',
 
-            padding: 17,
 
             borderRadius: 20,
 
@@ -1126,6 +1140,7 @@ const styles =
         },
 
         avatar: {
+            alignSelf: 'center',
             width: 64,
             height: 64,
 
@@ -1143,18 +1158,25 @@ const styles =
         },
 
         avatarText: {
+            fontFamily: ROYAL_FONT.body,
             fontSize: 31,
         },
         avatarArtwork:{width:'100%',height:'100%'},
 
         profileInfo: {
-            flex: 1,
+            minWidth: 0,
+            flexGrow: 1,
+            flexShrink: 1,
+            flexBasis: 'auto',
         },
 
         name: {
+            lineHeight: ROYAL_TYPE.bodyLine,
             color: '#ffffff',
 
-            fontSize: 21,
+            fontFamily: ROYAL_FONT.heading,
+
+            fontSize: ROYAL_TYPE.sectionTitle,
 
             fontWeight: '900',
         },
@@ -1162,7 +1184,9 @@ const styles =
         profileLevel: {
             color: '#ff76ad',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.body,
 
             fontWeight: '800',
 
@@ -1172,12 +1196,15 @@ const styles =
         occupation: {
             color: '#aeb7c5',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.body,
 
             marginTop: 5,
         },
 
         editButton: {
+            alignSelf: 'center',
             paddingHorizontal: 11,
 
             paddingVertical: 7,
@@ -1191,7 +1218,9 @@ const styles =
         editText: {
             color: '#ffffff',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.body,
 
             fontWeight: '800',
         },
@@ -1201,9 +1230,12 @@ const styles =
          */
 
         sectionTitle: {
+            lineHeight: ROYAL_TYPE.bodyLine,
             color: '#ffffff',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.heading,
+
+            fontSize: ROYAL_TYPE.sectionTitle,
 
             fontWeight: '900',
 
@@ -1213,7 +1245,9 @@ const styles =
         cardLabel: {
             color: '#a9b2c0',
 
-            fontSize: 15,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.caption,
 
             fontWeight: '900',
         },
@@ -1223,9 +1257,11 @@ const styles =
          */
 
         ratingCard: {
+            position: 'relative',
+            paddingHorizontal: 32,
+            paddingVertical: 30,
             alignItems: 'center',
 
-            padding: 20,
 
             borderRadius: 20,
 
@@ -1237,9 +1273,12 @@ const styles =
         },
 
         ratingTitle: {
+            lineHeight: ROYAL_TYPE.bodyLine,
             color: '#ffffff',
 
-            fontSize: 25,
+            fontFamily: ROYAL_FONT.heading,
+
+            fontSize: ROYAL_TYPE.pageTitle,
 
             fontWeight: '900',
 
@@ -1249,7 +1288,9 @@ const styles =
         ratingVi: {
             color: '#cbc6ff',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.body,
 
             marginTop: 3,
         },
@@ -1275,7 +1316,9 @@ const styles =
         ratingLevel: {
             color: '#ffcf59',
 
-            fontSize: 15,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.caption,
 
             fontWeight: '900',
         },
@@ -1283,9 +1326,11 @@ const styles =
         ratingNote: {
             color: '#a49eb8',
 
-            fontSize: 15,
+            fontFamily: ROYAL_FONT.body,
 
-            lineHeight: 13,
+            fontSize: ROYAL_TYPE.caption,
+
+            lineHeight: ROYAL_TYPE.bodyLine,
 
             textAlign: 'center',
 
@@ -1299,7 +1344,9 @@ const styles =
          */
 
         abilityCard: {
-            padding: 15,
+            position: 'relative',
+            paddingHorizontal: 32,
+            paddingVertical: 30,
 
             borderRadius: 18,
 
@@ -1311,6 +1358,8 @@ const styles =
         },
 
         abilityTitleRow: {
+            flexWrap: 'wrap',
+            gap: 8,
             flexDirection: 'row',
 
             alignItems: 'center',
@@ -1322,9 +1371,13 @@ const styles =
         },
 
         abilityLabel: {
+            flexShrink: 1,
+            lineHeight: ROYAL_TYPE.bodyLine,
             color: '#ffffff',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.body,
 
             fontWeight: '800',
         },
@@ -1336,9 +1389,12 @@ const styles =
         },
 
         abilityValue: {
+            lineHeight: ROYAL_TYPE.bodyLine,
             color: '#ffffff',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.value,
 
             fontWeight: '900',
         },
@@ -1368,7 +1424,9 @@ const styles =
          */
 
         statCard: {
-            padding: 15,
+            position: 'relative',
+            paddingHorizontal: 32,
+            paddingVertical: 30,
 
             borderRadius: 18,
 
@@ -1377,6 +1435,8 @@ const styles =
         },
 
         statRow: {
+            flexWrap: 'wrap',
+            gap: 8,
             minHeight: 32,
 
             flexDirection: 'row',
@@ -1393,15 +1453,23 @@ const styles =
         },
 
         statLabel: {
+            flexShrink: 1,
+            lineHeight: ROYAL_TYPE.bodyLine,
             color: '#aab4c4',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.body,
         },
 
         statValue: {
+            flexShrink: 1,
+            lineHeight: ROYAL_TYPE.bodyLine,
             color: '#ffffff',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.value,
 
             fontWeight: '800',
         },
@@ -1411,7 +1479,9 @@ const styles =
          */
 
         workCard: {
-            padding: 16,
+            position: 'relative',
+            paddingHorizontal: 32,
+            paddingVertical: 30,
 
             borderRadius: 19,
 
@@ -1429,19 +1499,24 @@ const styles =
         },
 
         workIcon: {
+            fontFamily: ROYAL_FONT.body,
             fontSize: 33,
 
             width: 48,
         },
 
         workHeaderText: {
+            minWidth: 0,
             flex: 1,
         },
 
         workTitle: {
+            lineHeight: ROYAL_TYPE.bodyLine,
             color: '#ffffff',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.heading,
+
+            fontSize: ROYAL_TYPE.sectionTitle,
 
             fontWeight: '900',
         },
@@ -1449,15 +1524,18 @@ const styles =
         workOccupation: {
             color: '#c5bfff',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.body,
 
             marginTop: 3,
         },
 
         workStats: {
+            gap: 8,
+            flexWrap: 'wrap',
             flexDirection: 'row',
 
-            gap: 8,
 
             marginTop: 14,
         },
@@ -1465,9 +1543,11 @@ const styles =
         workDescription: {
             color: '#aaa5bd',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
 
-            lineHeight: 14,
+            fontSize: ROYAL_TYPE.body,
+
+            lineHeight: ROYAL_TYPE.bodyLine,
 
             marginTop: 12,
         },
@@ -1477,6 +1557,8 @@ const styles =
          */
 
         miniStat: {
+            minWidth: 64,
+            paddingHorizontal: 6,
             flex: 1,
 
             alignItems: 'center',
@@ -1490,17 +1572,24 @@ const styles =
         },
 
         miniStatValue: {
+            lineHeight: ROYAL_TYPE.bodyLine,
             color: '#ffffff',
 
-            fontSize: 17,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.value,
 
             fontWeight: '900',
         },
 
         miniStatLabel: {
+            flexShrink: 1,
+            lineHeight: ROYAL_TYPE.bodyLine,
             color: '#8994a5',
 
-            fontSize: 15,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.caption,
 
             marginTop: 2,
         },
@@ -1510,7 +1599,9 @@ const styles =
          */
 
         journeyCard: {
-            padding: 16,
+            position: 'relative',
+            paddingHorizontal: 32,
+            paddingVertical: 30,
 
             borderRadius: 19,
 
@@ -1529,13 +1620,17 @@ const styles =
         journeySubtitle: {
             color: '#8792a3',
 
-            fontSize: 15,
+            fontFamily: ROYAL_FONT.body,
 
-            marginTop: -5,
+            fontSize: ROYAL_TYPE.caption,
+
+            marginTop: 0,
         },
 
         journeyPercent: {
             color: '#ff659e',
+
+            fontFamily: ROYAL_FONT.body,
 
             fontSize: 18,
 
@@ -1565,14 +1660,17 @@ const styles =
         },
 
         journeyStats: {
+            gap: 8,
+            flexWrap: 'wrap',
             flexDirection: 'row',
 
-            gap: 6,
 
             marginTop: 12,
         },
 
         prefectureRow: {
+            flexWrap: 'wrap',
+            gap: 8,
             minHeight: 47,
 
             flexDirection: 'row',
@@ -1593,9 +1691,13 @@ const styles =
         },
 
         prefectureName: {
+            flexShrink: 1,
+            lineHeight: ROYAL_TYPE.bodyLine,
             color: '#ffffff',
 
-            fontSize: 15,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.caption,
 
             fontWeight: '900',
         },
@@ -1603,21 +1705,28 @@ const styles =
         prefectureSub: {
             color: '#778397',
 
-            fontSize: 15,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.caption,
 
             marginTop: 2,
         },
 
         prefectureStatus: {
+            flexShrink: 1,
+            lineHeight: ROYAL_TYPE.bodyLine,
             color: '#00d493',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.body,
 
             fontWeight: '900',
         },
 
         prefectureLocked: {
-            fontSize: 15,
+            fontFamily: ROYAL_FONT.body,
+            fontSize: ROYAL_TYPE.caption,
         },
 
         /*
@@ -1625,7 +1734,9 @@ const styles =
          */
 
         logCard: {
-            padding: 16,
+            position: 'relative',
+            paddingHorizontal: 32,
+            paddingVertical: 30,
 
             borderRadius: 19,
 
@@ -1648,9 +1759,12 @@ const styles =
         },
 
         logTitle: {
+            lineHeight: ROYAL_TYPE.bodyLine,
             color: '#ffffff',
 
-            fontSize: 18,
+            fontFamily: ROYAL_FONT.heading,
+
+            fontSize: ROYAL_TYPE.sectionTitle,
 
             fontWeight: '900',
 
@@ -1660,28 +1774,35 @@ const styles =
         logArrow: {
             color: '#ffffff',
 
+            fontFamily: ROYAL_FONT.body,
+
             fontSize: 29,
         },
 
         logDescription: {
             color: '#a8b1c0',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
 
-            lineHeight: 14,
+            fontSize: ROYAL_TYPE.body,
+
+            lineHeight: ROYAL_TYPE.bodyLine,
 
             marginTop: 5,
         },
 
         logStats: {
+            gap: 8,
+            flexWrap: 'wrap',
             flexDirection: 'row',
 
             marginTop: 14,
 
-            gap: 8,
         },
 
         logStat: {
+            minWidth: 64,
+            paddingHorizontal: 6,
             flex: 1,
 
             backgroundColor:
@@ -1695,9 +1816,12 @@ const styles =
         },
 
         logStatValue: {
+            lineHeight: ROYAL_TYPE.bodyLine,
             color: '#ffffff',
 
-            fontSize: 17,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.value,
 
             fontWeight: '900',
         },
@@ -1705,7 +1829,9 @@ const styles =
         logStatLabel: {
             color: '#8d98a9',
 
-            fontSize: 15,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.caption,
 
             marginTop: 2,
         },
@@ -1721,7 +1847,9 @@ const styles =
         logOpenText: {
             color: '#ff73ae',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.body,
 
             fontWeight: '900',
         },
@@ -1729,7 +1857,9 @@ const styles =
         logOpenArrow: {
             color: '#ff73ae',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.body,
 
             marginLeft: 5,
         },
@@ -1739,7 +1869,9 @@ const styles =
          */
 
         achievementCard: {
-            padding: 16,
+            position: 'relative',
+            paddingHorizontal: 32,
+            paddingVertical: 30,
 
             borderRadius: 19,
 
@@ -1748,12 +1880,14 @@ const styles =
         },
 
         achievementGrid: {
+            gap: 8,
+            flexWrap: 'wrap',
             flexDirection: 'row',
 
-            gap: 7,
         },
 
         achievement: {
+            minWidth: 90,
             flex: 1,
 
             minHeight: 74,
@@ -1776,13 +1910,18 @@ const styles =
         },
 
         achievementIcon: {
+            fontFamily: ROYAL_FONT.body,
             fontSize: 24,
         },
 
         achievementTitle: {
+            flexShrink: 1,
+            lineHeight: ROYAL_TYPE.bodyLine,
             color: '#ffffff',
 
-            fontSize: 15,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.caption,
 
             textAlign: 'center',
 
@@ -1794,7 +1933,9 @@ const styles =
          */
 
         certificateCard: {
-            padding: 16,
+            position: 'relative',
+            paddingHorizontal: 32,
+            paddingVertical: 30,
 
             borderRadius: 19,
 
@@ -1805,9 +1946,11 @@ const styles =
         certificateDescription: {
             color: '#8994a5',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
 
-            lineHeight: 14,
+            fontSize: ROYAL_TYPE.body,
+
+            lineHeight: ROYAL_TYPE.bodyLine,
         },
 
         certificateEmpty: {
@@ -1827,13 +1970,16 @@ const styles =
         },
 
         certificateEmptyIcon: {
-            fontSize: 25,
+            fontFamily: ROYAL_FONT.body,
+            fontSize: ROYAL_TYPE.pageTitle,
         },
 
         certificateEmptyText: {
             color: '#778396',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.body,
 
             marginTop: 7,
         },
