@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "同伴での相談方法は担当に確認します。預かりの対応があるとは、ここでお約束できません。",
+        "textJa": "担当から受付条件の回答が来ました。相談は予約が必要で、お子さん同伴はできますが託児はありません。お子さんの様子による途中休憩は相談できます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "その希望を担当へ伝えます。送付の方法と、個人情報の扱いは案内に従ってください。",
+        "textJa": "事前の紙の送付は受け付けず、当日にメモを持参する案内です。保育の相談を先に、午前で予約希望を伝えてよろしいですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "ashibetsu_02_task_5",
         "requiredSemanticComponents": {
-          "goal": "保育の相談を先に予約し、午前の時間と同伴条件、案内された事前資料の送付方法を確認すると伝える"
+          "goal": "保育利用相談の午前予約を希望し、子供同伴可だが託児なし、休憩は相談でき、メモは送付せず当日持参と確認する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "保育の利用相談を先に予約し、午前と子供同伴の条件を確認します。事前資料が送れるなら、案内された方法で用意します。",
+        "recommendedAnswerJa": "はい、保育の相談を午前で希望します。子供と一緒で託児はなく、必要な休憩を相談するのですね。メモは先に送らず当日持参します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "保育の相談を先に予約し、午前の時間と同伴条件、案内された事前資料の送付方法を確認すると伝える。日本語で伝えてください。",
+        "hint": "保育利用相談の午前予約を希望し、子供同伴可だが託児なし、休憩は相談でき、メモは送付せず当日持参と確認する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "保育の相談を先に予約し、午前の時間と同伴条件、案内された事前資料の送付方法を確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "保育利用相談の午前予約を希望し、子供同伴可だが託児なし、休憩は相談でき、メモは送付せず当日持参と確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。担当の受付方法をご案内します。ご相談ありがとうございました。",
+        "textJa": "その希望を記録しました。午前の日時は担当の空き確認待ちです。子供同伴と当日メモ持参の条件を確認できました。ありがとうございました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-ashibetsu.json",
-    "premise": "芦別の市役所相談。育児と就労の相談を希望する客が面談時間に子供を連れて行く条件や事前資料を問い合わせる。託児提供を確約しない。",
+    "premise": "芦別の架空行政予約。保育利用相談の学習用受付条件は予約必要・2歳児同伴可・託児なし・途中休憩可・事前資料の送付不可で当日メモ持参。親が午前の予約希望を選ぶが、日時の確定と実際の保育利用条件は担当確認待ち。実在の支援・面談条件ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

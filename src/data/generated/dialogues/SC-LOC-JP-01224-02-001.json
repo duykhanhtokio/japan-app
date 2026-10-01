@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "現在の住所の地区に合う案内を担当へ確認しましょう。何を出す予定ですか。",
+        "textJa": "今の住所は北地区です。保存画像の南地区とは違います。こちらが2026年北地区の案内です。何を出す予定ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "品目の扱いと指定場所は案内に沿って確認してください。住居の管理者も確認先になります。",
+        "textJa": "この北地区カレンダーでは、段ボールの欄は木曜日です。まとめ方と共同の置き場は、このカレンダーだけでは決まらないので、住居の管理者にも確認してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "地域の案内と住居の置き場を合わせて確認しましょう。",
+        "textJa": "2026年北地区の段ボール欄が木曜日であることは確認できました。置き場は管理者の回答待ち、と分けておきましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "SC-LOC-JP-01224-02-001_semantic_task_5",
         "requiredSemanticComponents": {
-          "goal": "今の地区と年度、品目、収集日、共同の置き場を確認し、古い画像は使わないと伝える"
+          "goal": "2026年北地区では段ボール欄が木曜日と確認し、隣町南地区の画像は使わず出し方と共同置場を管理者に確認してから出すと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "今の地区と年のカレンダーを用意し、段ボールの分け方、日、共同の置き場を確かめます。隣町の画像は使いません。",
+        "recommendedAnswerJa": "北地区2026年の段ボール欄は木曜日ですね。隣町南地区の画像は使いません。出す方法と共同置場を管理者に確認してから出します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "今の地区と年度、品目、収集日、共同の置き場を確認し、古い画像は使わないと伝える。日本語で伝えてください。",
+        "hint": "2026年北地区では段ボール欄が木曜日と確認し、隣町南地区の画像は使わず出し方と共同置場を管理者に確認してから出すと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "今の地区と年度、品目、収集日、共同の置き場を確認し、古い画像は使わないと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "2026年北地区では段ボール欄が木曜日と確認し、隣町南地区の画像は使わず出し方と共同置場を管理者に確認してから出すと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-chitose.json",
-    "premise": "学習用シミュレーション。ごみの収集カレンダーの地区が隣町のものと気づき、現在の居住地区に合う案内を探す。",
+    "premise": "千歳の架空生活案内。住所の地区名は北地区、保存画像は隣町南地区。NPCが学習用「2026年北地区」カレンダーを示し、段ボール欄の木曜日を読む。共同置場と具体的な出し方は住居管理者・地区担当に確認待ち。実在の収集曜日や分別ルールではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

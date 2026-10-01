@@ -92,7 +92,7 @@
       "newDistinctDevelopment": "Wrong district waste calendar and building-specific collection place",
       "status": "replacement reviewed against supplied tasks and utterances",
       "source": "scripts/dialogue-authoring/prf-001-chitose.json",
-      "runtimeSha256": "71de1b943ebf588ad2e212fb6d9999aef37b1bc9c6994cf93f3185ae2a2dd35c",
+      "runtimeSha256": "8d8b13c4625d5fdf916e4fc7e738eda71b8b8f586d0db77c5147c80e6683f586",
       "playerTasks": [
         "保存したごみ収集日程が自分の住所の地区に合っているか確認してほしいと頼む",
         "検索時に隣の町の地区を選び、その画像を保存してしまったと説明する",
@@ -376,6 +376,15 @@
       "status": "full replacement compared across contract-scope and temporal-planning cases; not CONTENT PASS",
       "source": "scripts/dialogue-authoring/prf-001-ishikari.json",
       "runtimeSha256": "4a66a1e34dcf32dc795e4703330aa724713ac8434c6660fab1a19c5dbdcd729b"
+    },
+    {
+      "replacedScenarioId": "SC-LOC-001-12-001",
+      "comparisonScenarioId": "SC-LOC-JP-01211-02-001",
+      "oldOverlap": "Within-city move misnamed outside-city change -> list addresses/documents -> ask necessary counter and date/associated procedures -> prepare and defer.",
+      "newDistinctDevelopment": "Revise resident-run community flyer: city organizer implication removed, weekly schedule corrected to tentative, home address removed for contact email; NPC completes and reads revised draft while actual posting approval pending. Distinct from photograph reuse copyright/subject consent.",
+      "status": "full replacement compared with municipal/photographic-permission cases; not CONTENT PASS",
+      "source": "scripts/dialogue-authoring/prf-001-sapporo-rest.json",
+      "runtimeSha256": "56340e015055240f3523383291660d52af3baa06a8031d1e206581b810b5a64e"
     }
   ],
   "otherRemainingWork": [
@@ -1689,6 +1698,53 @@
         "SC-LOC-JP-01226-04-001"
       ],
       "method": "20 newly covered exchanges (9 Hospital,11 Police Station), plus Obihiro roadside-market Other re-read as cross-comparison. Nine NPC evidence/response/completed-record repairs, no additional full replacement. Shibetsu/Yubari sleep and Yubari/Kitami pickup-time developments explicitly compared. No translations or CONTENT PASS."
+    },
+    {
+      "date": "2026-10-01",
+      "scenarioIds": [
+        "SC-LOC-JP-01211-02-001",
+        "SC-LOC-JP-01218-02-001",
+        "SC-LOC-JP-01215-02-001",
+        "SC-LOC-JP-01206-02-001",
+        "SC-LOC-JP-01219-02-001",
+        "SC-LOC-JP-01205-02-001",
+        "SC-LOC-JP-01223-02-001",
+        "SC-LOC-JP-01214-02-001",
+        "SC-LOC-JP-01216-02-001",
+        "SC-LOC-JP-01236-02-001",
+        "SC-LOC-JP-01212-02-001",
+        "SC-LOC-JP-01220-02-001",
+        "SC-LOC-JP-01226-02-001",
+        "SC-LOC-JP-01227-02-001",
+        "SC-LOC-HKD-ASAHIKAWA-04-001",
+        "SC-LOC-JP-01224-02-001",
+        "SC-LOC-JP-01233-02-001",
+        "SC-LOC-JP-01231-02-001",
+        "SC-LOC-JP-01234-02-001",
+        "SC-LOC-JP-01222-02-001",
+        "SC-LOC-JP-01230-02-001",
+        "SC-LOC-001-12-001",
+        "SC-LOC-JP-01228-02-001",
+        "SC-LOC-JP-01229-02-001",
+        "SC-LOC-JP-01235-02-001",
+        "SC-LOC-JP-01208-02-001",
+        "SC-LOC-HKD-OBIHIRO-08-001",
+        "SC-LOC-001-13-001",
+        "SC-LOC-JP-01225-02-001"
+      ],
+      "changedScenarioIds": [
+        "SC-LOC-JP-01216-02-001",
+        "SC-LOC-JP-01224-02-001",
+        "SC-LOC-JP-01228-02-001",
+        "SC-LOC-JP-01229-02-001",
+        "SC-LOC-JP-01236-02-001",
+        "SC-LOC-JP-01234-02-001",
+        "SC-LOC-JP-01230-02-001",
+        "SC-LOC-JP-01226-02-001",
+        "SC-LOC-JP-01227-02-001",
+        "SC-LOC-001-12-001"
+      ],
+      "method": "29 full municipal conversations compared; Sapporo full replacement and nine NPC record/condition/preparation repairs. No real procedure/rights/emergency/tax approval, translations or CONTENT PASS."
     }
   ],
   "continuationMetadataBatches": [
@@ -1773,6 +1829,14 @@
       "remote": "4d0df355c6df2069014067d8721931fc9d0e8f7d",
       "preservedLocalHistory": "5e1c47ad2f60f85896d8eaf49562761954945796",
       "resolution": "Both continuations independently reviewed the five postal-record exchanges and identified Mikasa overlap. Preserve newer published two-parcel status reconciliation and Yubari booking changes as canonical. Alternative private/work postage exchange remains in independent commit history only, not runtime. Whole-prefecture CONTENT PASS not claimed."
+    },
+    {
+      "date": "2026-10-01",
+      "preservedLocalCommit": "0522dcb4b28630203845f47505c5f9ead73a63a2",
+      "baseRemoteCommit": "7bcd809ed6598aed610ad1c99828473027d7e99a",
+      "method": "Preserve published d8cc35a1 exact-tree counterpart of local0522dcb4, all27-case comparison records and Shibetsu applicant/consultant fields. Retain Fukagawa actual field definition and Furano original-size/single-sided specification, adding completed correction/copy preparation. Original local commit retained verbatim in a verified incremental Git bundle with prerequisite7bcd809e. Sapporo old move-referral replaced; prior findings retained as history. No CONTENT PASS.",
+      "verifiedRemoteCounterpart": "d8cc35a1",
+      "rawLocalHistoryBundle": "docs/dialogue-workspace/history/PRF-001_LOCAL_0522dcb4.bundle"
     }
   ],
   "wholeCorpusComparisonGroups": [
@@ -1856,7 +1920,8 @@
         "SC-LOC-JP-01221-02-001": "Payment receipt belongs to a different period; seeks matching payment records without declaring nonpayment or duplicate claim.",
         "SC-LOC-JP-01213-02-001": "Arrive-by return deadline, alternative online submission; discovers saved draft is unsent, no reference number, and clarifies attachments/completion."
       },
-      "status": "group reviewed with one complete replacement; no prefecture CONTENT PASS"
+      "status": "group reviewed with one complete replacement; no prefecture CONTENT PASS",
+      "laterReviewNote": "Historical27-case review retained. Later municipal_* groups document completed NPC repairs and Sapporo replacement; earlier deferred-response findings are not current claims for repaired scenarios."
     },
     {
       "group": "bank_transfer_recipient_reference_salary",
@@ -2407,7 +2472,8 @@
       "method": "All eleven turns and five tasks read in full; compared information gaps, NPC answers and final outcomes against current review records. Three targeted source/runtime repairs; remaining editorial limitations stated explicitly.",
       "finding": "Abashiri unsent out-of-city form and self-only household change differs from Sapporo cross-ward destination enquiry and Muroran mover receipt mistaken for municipal evidence. Kushiro has explicit employer individual/no-number requirements; Monbetsu overseas original/translation conditions remain unconfirmed. Nemuro historical reference date, Bibai fiscal versus income year and two applicants, Obihiro employer/deposit/reimbursement periods, Sapporo income versus resident-tax routing differ. Sapporo destination response is still deferred and must be revisited; this group is read, not certified fully repaired.",
       "status": "read and compared; identified unresolved referrals and overlap remain; whole-corpus CONTENT QA pending",
-      "realLocationOrPolicyVerified": false
+      "realLocationOrPolicyVerified": false,
+      "laterReviewNote": "Historical27-case review retained. Later municipal_* groups document completed NPC repairs and Sapporo replacement; earlier deferred-response findings are not current claims for repaired scenarios."
     },
     {
       "group": "administrative_family_document_and_housing_information",
@@ -2425,7 +2491,8 @@
       "method": "All eleven turns and five tasks read in full; compared information gaps, NPC answers and final outcomes against current review records. Three targeted source/runtime repairs; remaining editorial limitations stated explicitly.",
       "finding": "Akabira existing pending application/name update differs from bank name-field transcription. Ashibetsu childcare plus employment priority and child presence differs from Date enrolment/food-language evidence. Eniwa current dorm notice/language differs from Kitahiroshima old activity booklet/contact/participant role. Fukagawa NPC now reads the actual one-versus-five field distinction. Furano NPC answers reduced-copy rejection against supplied original-size requirement and reads two single-sided copies/original retention. Hokuto housing deadline versus employment uncertainty differs from Ishikari repair contact/cost authority. Contact and handling outcomes in several referrals remain deferred; do not award CONTENT PASS.",
       "status": "read and compared; identified unresolved referrals and overlap remain; whole-corpus CONTENT QA pending",
-      "realLocationOrPolicyVerified": false
+      "realLocationOrPolicyVerified": false,
+      "laterReviewNote": "Historical27-case review retained. Later municipal_* groups document completed NPC repairs and Sapporo replacement; earlier deferred-response findings are not current claims for repaired scenarios."
     },
     {
       "group": "administrative_consultant_companion_authority_and_disposal",
@@ -2443,6 +2510,72 @@
       "method": "All eleven turns and five tasks read in full; compared information gaps, NPC answers and final outcomes against current review records. Three targeted source/runtime repairs; remaining editorial limitations stated explicitly.",
       "finding": "Rumoi notice reading/payment affordability differs from Shibetsu deadline application/livelihood consultation. Shibetsu NPC now reads applicant friend versus consulting person self, avoiding automatic name correction; booking handling stays pending. Sunagawa one consulting person plus language companion still has a similar companion/booking resolution requiring later comparison. Utashinai contact number does not establish proxy authority; Wakkanai birth notice/benefit and absent mother differs. Kitami loss/start dates differ from income-period cases. Mikasa bulky item ownership/departure date differs from Chitose wrong district calendar and building disposal point. Referrals remain unresolved where no answer is supplied.",
       "status": "read and compared; identified unresolved referrals and overlap remain; whole-corpus CONTENT QA pending",
+      "realLocationOrPolicyVerified": false,
+      "laterReviewNote": "Historical27-case review retained. Later municipal_* groups document completed NPC repairs and Sapporo replacement; earlier deferred-response findings are not current claims for repaired scenarios."
+    },
+    {
+      "group": "municipal_move_identity_certificates_and_family_procedures",
+      "scenarioIds": [
+        "SC-LOC-JP-01211-02-001",
+        "SC-LOC-JP-01218-02-001",
+        "SC-LOC-JP-01215-02-001",
+        "SC-LOC-JP-01206-02-001",
+        "SC-LOC-JP-01219-02-001",
+        "SC-LOC-JP-01205-02-001",
+        "SC-LOC-JP-01223-02-001",
+        "SC-LOC-JP-01214-02-001"
+      ],
+      "method": "All eleven turns and five tasks manually read; compared evidence, causal steps, NPC contributions and completed/pending decisions across29 current municipal scenarios and related earlier groups. Edited turns re-read.",
+      "finding": "Compared self-only in-city move/contract-versus-actual date, changed formal/previous/call name and existing application, school certificate fiscal/income years plus spouse, employer individual certificate with specified exclusions and readings, overseas original/translation/authentication requirements, former-city procedure/mover receipt, requested historical address basis and newborn declaration/benefit/agency scope. Each has distinct evidence/request and legitimately pending legal/issuance condition. Sapporo in-city-move overlap with Abashiri removed by full replacement. No current law, tax or eligibility determination.",
+      "status": "group reviewed with specified repairs; whole-corpus CONTENT QA remains pending",
+      "realLocationOrPolicyVerified": false
+    },
+    {
+      "group": "municipal_consultation_priority_roles_and_contact",
+      "scenarioIds": [
+        "SC-LOC-JP-01216-02-001",
+        "SC-LOC-JP-01236-02-001",
+        "SC-LOC-JP-01212-02-001",
+        "SC-LOC-JP-01220-02-001",
+        "SC-LOC-JP-01226-02-001",
+        "SC-LOC-JP-01227-02-001"
+      ],
+      "method": "All eleven turns and five tasks manually read; compared evidence, causal steps, NPC contributions and completed/pending decisions across29 current municipal scenarios and related earlier groups. Edited turns re-read.",
+      "finding": "Ashibetsu childcare-before-work with2-year companion now returns fictional reservation/child/no childcare/break/day-note handling and records morning request, time pending. Hokuto writes fixed departure8th/uncontracted housing/unknown job in three lines. Rumoi notice-reading versus instalment consultation distinguishes request from permission. Shibetsu incorrect booking name plus priority deadline differs from Sunagawa counting interpreter as second consultation: Sunagawa now returns one-request/companion requested/unconfirmed record. Utashinai changes contact number/time18–19, not agency authorization. Compare prior clinic family proxy/date/identity repairs; outcomes differ and unconfirmed appointment/authority not fabricated.",
+      "status": "group reviewed with specified repairs; whole-corpus CONTENT QA remains pending",
+      "realLocationOrPolicyVerified": false
+    },
+    {
+      "group": "municipal_community_information_waste_and_education",
+      "scenarioIds": [
+        "SC-LOC-HKD-ASAHIKAWA-04-001",
+        "SC-LOC-JP-01224-02-001",
+        "SC-LOC-JP-01233-02-001",
+        "SC-LOC-JP-01231-02-001",
+        "SC-LOC-JP-01234-02-001",
+        "SC-LOC-JP-01222-02-001",
+        "SC-LOC-JP-01230-02-001",
+        "SC-LOC-001-12-001"
+      ],
+      "method": "All eleven turns and five tasks manually read; compared evidence, causal steps, NPC contributions and completed/pending decisions across29 current municipal scenarios and related earlier groups. Edited turns re-read.",
+      "finding": "Fire drill resident/manager role and night shift differs from Eniwa latest translated notice/family understanding (not training authorization). Chitose now returns fictional correct district/year/cardboard calendar; dwelling collection place pending, unlike Mikasa own desk versus landlord chair/dimensions/collection request. Date school placement and food representation differ from restaurant allergy accommodation, neither guaranteed. Kitahiroshima old2018-person versus current activity desk now supplies fictional observer condition and actual one-sentence introduction; Noboribetsu shift-based single attendance now gets fictional method/work-report practice answer. New Sapporo resident flyer edit distinguishes organizer from city, tentative from weekly dates, removes home address, completes revised draft and requests posting. Unlike Utashinai photo use, no supplied-image rights are the issue. No activity/venue/policy or emergency approval.",
+      "status": "group reviewed with specified repairs; whole-corpus CONTENT QA remains pending",
+      "realLocationOrPolicyVerified": false
+    },
+    {
+      "group": "municipal_form_evidence_size_finance_and_insurance",
+      "scenarioIds": [
+        "SC-LOC-JP-01228-02-001",
+        "SC-LOC-JP-01229-02-001",
+        "SC-LOC-JP-01235-02-001",
+        "SC-LOC-JP-01208-02-001",
+        "SC-LOC-HKD-OBIHIRO-08-001",
+        "SC-LOC-001-13-001",
+        "SC-LOC-JP-01225-02-001"
+      ],
+      "method": "All eleven turns and five tasks manually read; compared evidence, causal steps, NPC contributions and completed/pending decisions across29 current municipal scenarios and related earlier groups. Edited turns re-read.",
+      "finding": "Fukagawa actually corrects consultation1/household5, distinct from Sunagawa reservation interpreter role. Furano actually prepares two original-size copies and retains originals, unlike Fukagawa clinic missing reverse-side content. Ishikari repair contact versus rent payee and cost responsibility stays pending. Kitami insurance loss/employment/unconfirmed coverage chronology differs from newborn benefits or bank former-employment evidence. Obihiro employer-specific bank amounts include reimbursements/missing receipt; Sapporo13 distinguishes prior-employer annual adjustment from other resident-tax notice and enquiry source, no tax arithmetic/obligation conclusion. Takikawa company-only form route corrects automatic municipal-to-employer assumption. No current financial/legal or eligibility guidance certified.",
+      "status": "group reviewed with specified repairs; whole-corpus CONTENT QA remains pending",
       "realLocationOrPolicyVerified": false
     }
   ],

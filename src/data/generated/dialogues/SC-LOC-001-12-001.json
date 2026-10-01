@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。どのような手続きの窓口をお探しですか。",
+        "textJa": "こんにちは。地域の掲示について、何をお手伝いしましょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "ask_city_hall_or_ward_move_procedure",
+        "communicativeIntent": "sapporo_community_flyer_1",
         "requiredSemanticComponents": {
-          "goal": "転居の住所手続きをしたいと伝え、市役所と区役所のどちらへ行くか分からないと相談する"
+          "goal": "住民の日本語とベトナム語の練習会を募集したいので、掲示前の自作チラシがどう伝わるか見てほしいと頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "引っ越したので住所の手続きをしたいです。札幌市役所に来ましたが、区役所へ行く必要があるのかもわかりません。",
+        "recommendedAnswerJa": "日本語とベトナム語を練習する住民の集まりを募集したいです。このチラシを掲示する前に、伝わり方を見てもらえますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "転居の住所手続きをしたいと伝え、市役所と区役所のどちらへ行くか分からないと相談する。日本語で伝えてください。",
+        "hint": "住民の日本語とベトナム語の練習会を募集したいので、掲示前の自作チラシがどう伝わるか見てほしいと頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "転居の住所手続きをしたいと伝え、市役所と区役所のどちらへ行くか分からないと相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "住民の日本語とベトナム語の練習会を募集したいので、掲示前の自作チラシがどう伝わるか見てほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "引っ越し前も札幌市内でしたか。それとも、市外から札幌市へ来られましたか。移動の範囲で確認する手続きが変わります。",
+        "textJa": "主催するのは住民の皆さんですね。表題の「市の交流会」は、市が主催するという意味で書きましたか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "clarify_within_city_cross_ward_move",
+        "communicativeIntent": "sapporo_community_flyer_2",
         "requiredSemanticComponents": {
-          "goal": "札幌市内の中央区から別の区へ移ったと説明し、市が変わらなくても転入と呼ぶのか迷っていると話す"
+          "goal": "市内という意味で市の交流会と書いたが市主催ではなく住民が開くため、住民有志の交流練習へ表題を直したいと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "前も札幌市内です。中央区から別の区へ引っ越しました。市が変わっていないのに、転入届という名前を使っていいのか迷っています。",
+        "recommendedAnswerJa": "いいえ、住民が自分たちで開く予定です。市内で行うという意味でしたが、市主催のように見えますね。表題を「住民有志の交流練習」に直したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "札幌市内の中央区から別の区へ移ったと説明し、市が変わらなくても転入と呼ぶのか迷っていると話す。日本語で伝えてください。",
+        "hint": "市内という意味で市の交流会と書いたが市主催ではなく住民が開くため、住民有志の交流練習へ表題を直したいと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "札幌市内の中央区から別の区へ移ったと説明し、市が変わらなくても転入と呼ぶのか迷っていると話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "市内という意味で市の交流会と書いたが市主催ではなく住民が開くため、住民有志の交流練習へ表題を直したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "名称を決めつけず、旧住所と新住所を伝えれば担当者が確認できます。新しい住所がわかる書類と、本人確認に使えるものはお持ちですか。",
+        "textJa": "表題をそのように直しました。日時は毎週土曜とありますが、場所と参加者の予定は決まっていますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "list_documents_and_residence_card_address_need",
+        "communicativeIntent": "sapporo_community_flyer_3",
         "requiredSemanticComponents": {
-          "goal": "賃貸契約控えと在留カードを持参したと伝え、カードの住所変更も同じ窓口で相談できるか尋ねる"
+          "goal": "日時も会場も未定で関心のある人を募る段階なので、毎週土曜でなく参加希望者と日時調整と書きたいと頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "賃貸契約の控えと在留カードがあります。カードの住所も変わると思いますが、同じ窓口で相談できるか確認したいです。",
+        "recommendedAnswerJa": "まだです。まず関心のある人を募る段階なので、毎週土曜とは書かず「日時は参加希望者と調整」としたいです。参加者もまだ決まっていません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "賃貸契約控えと在留カードを持参したと伝え、カードの住所変更も同じ窓口で相談できるか尋ねる。日本語で伝えてください。",
+        "hint": "日時も会場も未定で関心のある人を募る段階なので、毎週土曜でなく参加希望者と日時調整と書きたいと頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "賃貸契約控えと在留カードを持参したと伝え、カードの住所変更も同じ窓口で相談できるか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "日時も会場も未定で関心のある人を募る段階なので、毎週土曜でなく参加希望者と日時調整と書きたいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "お持ちのものを伝えて、住所変更に伴う確認事項も相談しましょう。ここで受付できるか、区の窓口をご案内するかを先に確認します。",
+        "textJa": "日時の行も調整中に直しました。下にはご自宅の住所があります。掲示を見る人全員へ、その住所を知らせるつもりですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "request_destination_and_reception_details_under_time_limit",
+        "communicativeIntent": "sapporo_community_flyer_4",
         "requiredSemanticComponents": {
-          "goal": "仕事の休憩中なので移動が必要なら出直すと伝え、行き先と受付方法を控えられるよう説明を頼む"
+          "goal": "自宅開催は未定なので住所を削って連絡用メールだけを載せ、決まった会場は参加者へ別に知らせると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "ありがとうございます。今日は仕事の休憩中なので、移動が必要なら出直します。行く先と受付方法をメモできるように教えてください。",
+        "recommendedAnswerJa": "家で開くと決まったわけではありません。自宅住所は削り、連絡用のメールだけ載せたいです。会場が決まったら、参加する人へ別に知らせます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "仕事の休憩中なので移動が必要なら出直すと伝え、行き先と受付方法を控えられるよう説明を頼む。日本語で伝えてください。",
+        "hint": "自宅開催は未定なので住所を削って連絡用メールだけを載せ、決まった会場は参加者へ別に知らせると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "仕事の休憩中なので移動が必要なら出直すと伝え、行き先と受付方法を控えられるよう説明を頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "自宅開催は未定なので住所を削って連絡用メールだけを載せ、決まった会場は参加者へ別に知らせると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "では担当窓口の案内を確認し、所在地と受付方法をお伝えします。必要書類も、移動する前に担当先へ確認できるよう整理しましょう。",
+        "textJa": "修正版を読みます。「住民有志の交流練習」、日時は希望者と調整、会場未定、連絡はメールです。市主催や毎週開催、自宅会場という表記は外しました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "prepare_addresses_and_verify_before_travel",
+        "communicativeIntent": "sapporo_community_flyer_5",
         "requiredSemanticComponents": {
-          "goal": "新旧住所と書類を整理し、行き先と必要物を確認してから向かい、不足なら準備して出直すと話す"
+          "goal": "住民有志で日時と会場は未定、自宅住所なしという修正版を確認し、掲載未許可と理解したうえでこの版の掲示申込みを相談する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "旧住所と新住所、持っている書類を書き出します。行く先と必要なものを確認してから移動し、足りなければ準備して出直します。",
+        "recommendedAnswerJa": "その修正で合っています。住民有志で日時と会場は未定、自宅住所も載っていません。この版で掲示の申込みを相談したいです。掲載はまだ許可されていないと理解しています。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "新旧住所と書類を整理し、行き先と必要物を確認してから向かい、不足なら準備して出直すと話す。日本語で伝えてください。",
+        "hint": "住民有志で日時と会場は未定、自宅住所なしという修正版を確認し、掲載未許可と理解したうえでこの版の掲示申込みを相談する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "新旧住所と書類を整理し、行き先と必要物を確認してから向かい、不足なら準備して出直すと話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "住民有志で日時と会場は未定、自宅住所なしという修正版を確認し、掲載未許可と理解したうえでこの版の掲示申込みを相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。それなら手戻りを減らせます。担当先の確認をお手伝いしますので、まず新住所をお示しください。ありがとうございます。",
+        "textJa": "修正版とご希望を掲示担当へ渡します。募集内容の修正はできましたが、掲載可否は担当の確認待ちです。ご相談ありがとうございました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -247,7 +247,7 @@
     "locale": "ja",
     "contentScope": "simulated_learning_scenario",
     "editorialSource": "scripts/dialogue-authoring/prf-001-sapporo-rest.json",
-    "premise": "札幌市役所で市内転居に必要な窓口を探すが、市外転入と混同していたため移動範囲を整理し、担当窓口と持参書類を確認する。窓口階・必要書類は断定しない。",
+    "premise": "札幌の架空地域掲示相談。住民有志の日本語・ベトナム語交流募集チラシが市主催に見える表題、未定日時を確定のように書いた点、自宅住所を公開する点をNPCと修正する。修正版は「住民有志の交流練習」、日時調整中、連絡用メールのみ。掲示許可や市の支援は未確定で、実在掲示基準・活動ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",

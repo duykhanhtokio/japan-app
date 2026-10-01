@@ -2,7 +2,7 @@
 
 Status: **FAIL CONTENT QA — SEMANTIC AUDIT IN PROGRESS**.
 
-Current continuation (supersedes historical next-actions below): 20 newly covered exchanges compared using canonical type inventory (9 Hospital,11 Police Station), plus one roadside market re-read; nine NPC evidence/record repairs. Twenty-eight full replacements remain documented; 236 distinct exchanges in full comparison records. CONTENT QA remains FAIL. Next: remaining 63 unreviewed municipal/bank/retail/work/other records, using canonical type inventory and reconciling latest remote. No translations or PRF-002.
+Current continuation (supersedes historical next-actions below): 29 municipal exchanges compared in full; Sapporo in-city-move overlap fully replaced, nine NPC record/condition/preparation repairs. Twenty-nine full replacements documented; 265 distinct exchanges in full comparison records. CONTENT QA remains FAIL. Next: remaining 34 bank/work/retail/post/other exchanges, reconciling current remote. No translations or PRF-002.
 
 Branch: `recovery/jlpt-n3-n1`. This continuation started from remote-verified `f687aed169babf8e40ca85659273bc0687d3a964` (251/299), preserving all existing data. Original input: `dd1ecd44cc9537efc79b578ac636d5f68792ceff`.
 
@@ -103,3 +103,13 @@ Keyword screening omitted9 Hospital and11 Police Station records with generic si
 ## Administrative continuation: 27 additional full exchanges
 
 All 25 remaining municipal-type exchanges and two unreviewed tax comparisons (27 total) read in full. Three targeted NPC evidence repairs: Shibetsu applicant versus consulting-person fields; Fukagawa consultation one versus household five; Furano supplied original-size/two-single-sided-copy requirements. Source/runtime parity preserved, no new translations. 263 distinct full exchanges in comparison records, 36 not yet read. This is coverage, not CONTENT PASS: Sapporo destination answer and multiple administrative referrals still defer an actual response; Shibetsu/Sunagawa companion-booking resolutions need final overlap review. Next remaining bank, postal, workplace and retail records, then revisit the explicitly deferred editorial issues.
+
+
+## Municipal continuation: 29 full exchanges
+
+Sapporo move overlap with Abashiri replaced by resident flyer revision (organizer, tentative dates, private contact, pending posting). Nine targeted NPC repairs: Ashibetsu child companion conditions, Chitose fictional district/calendar, Fukagawa actual1/5 field correction, Furano original-size two-copy preparation, Hokuto three-line deadline/unknown summary, Kitahiroshima current activity desk and observer request, Noboribetsu learning-method response, Sunagawa one-consultation request record, Utashinai contact/time correction.29 full replacements;265 distinct full comparison records;remaining34. No legal/tax/rights/emergency/policy approval. CONTENT QA remains FAIL. Next remaining bank and other canonical types.
+
+
+Concurrent municipal history preserved: local0522dcb4 (27 conversations, Fukagawa/Furano source-document readings and Shibetsu applicant/consultant fields) retained in archive branch and exact-tree GitHub counterpart. Latest completion repairs retain those definitions, complete fictional field/copy handling and replace Sapporo move overlap. Both review histories retained; no CONTENT PASS.
+
+The other session published exact-tree counterpart `d8cc35a1` during reconciliation. This continuation uses that remote as its parent. Verbatim local commit0522dcb4 is also preserved in `docs/dialogue-workspace/history/PRF-001_LOCAL_0522dcb4.bundle`, verified with Git; prerequisite is7bcd809e. No local history is discarded.

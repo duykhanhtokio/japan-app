@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "あなたの説明では、相談者は一人、同居する世帯の人数は五人ですね。直すのは相談者数の欄です。訂正方法は受付担当に確認してから直しましょう。",
+        "textJa": "担当の了解が取れたので、相談者欄だけ五人から一人へ訂正しました。世帯欄は五人のままです。二つの欄を見比べてください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "fukagawa_02_task_5",
         "requiredSemanticComponents": {
-          "goal": "相談者は一人、同居は五人として相談者欄だけの訂正を頼み、他の欄も意味を読んでから記入すると伝える"
+          "goal": "相談者欄は一人へ訂正され世帯欄は五人のままと確認し、他の欄も見出しを読んでから記入すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "相談者一人、同居五人と説明して、相談者欄だけ訂正をお願いします。ほかの欄は意味を読んでから記入します。",
+        "recommendedAnswerJa": "はい、相談者は一人、世帯は五人になっています。世帯の欄まで一人にはしていませんね。ほかの欄も見出しを読んでから記入します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相談者は一人、同居は五人として相談者欄だけの訂正を頼み、他の欄も意味を読んでから記入すると伝える。日本語で伝えてください。",
+        "hint": "相談者欄は一人へ訂正され世帯欄は五人のままと確認し、他の欄も見出しを読んでから記入すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "相談者は一人、同居は五人として相談者欄だけの訂正を頼み、他の欄も意味を読んでから記入すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "相談者欄は一人へ訂正され世帯欄は五人のままと確認し、他の欄も見出しを読んでから記入すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。担当が訂正方法をご案内します。ありがとうございました。",
+        "textJa": "訂正した欄と、変えずに残した欄を確認できました。この受付票で相談へ進みましょう。ありがとうございました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-fukagawa.json",
-    "premise": "深川の学習用シミュレーション。行政相談の受付票に実際に来た人数でなく扶養家族全員を書き、対象人数欄を確認する。",
+    "premise": "深川の架空行政受付票。相談者数1人、世帯人数5人を別欄に記す用紙。架空担当の了解で相談者欄だけ5から1へ訂正し、世帯欄の5を維持して本人と読み返す。実際の申請・扶養判定や法的手続きではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

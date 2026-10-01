@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "utashinai_02_task_2",
         "requiredSemanticComponents": {
-          "goal": "仕事中は出られず家族の番号を書いたが、自分の携帯にも夕方なら出られると説明する"
+          "goal": "家族番号は勤務中に出られないため書いたが、自分の携帯は18〜19時なら出られると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "仕事中は電話を取れないので家族の番号にしました。私の携帯はありますが、夕方なら出られます。",
+        "recommendedAnswerJa": "仕事中は出られないので家族の番号を書きました。でも自分の携帯はあり、18時から19時なら出られます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "仕事中は出られず家族の番号を書いたが、自分の携帯にも夕方なら出られると説明する。日本語で伝えてください。",
+        "hint": "家族番号は勤務中に出られないため書いたが、自分の携帯は18〜19時なら出られると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "仕事中は出られず家族の番号を書いたが、自分の携帯にも夕方なら出られると説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "家族番号は勤務中に出られないため書いたが、自分の携帯は18〜19時なら出られると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "担当に希望を伝えます。連絡方法は担当の案内で確認してください。",
+        "textJa": "担当の了解を得て、本人が示した携帯番号へ訂正しました。連絡可能時間は18時から19時と記録しました。登録した番号を、お手元の番号と照合してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "utashinai_02_task_5",
         "requiredSemanticComponents": {
-          "goal": "連絡先を自分の携帯に訂正して夕方の連絡か折返しを相談し、家族が当然に代理回答できるとは考えないと伝える"
+          "goal": "登録が自分の番号と18〜19時に訂正されたと確認し、家族の代理回答を当然にせず本人連絡と折返し方法を相談すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "番号を自分の携帯へ訂正し、夕方の連絡か折返しを相談します。家族の代理回答を当然とはしません。",
+        "recommendedAnswerJa": "はい、登録は私の番号と一致し、18時から19時となっています。家族の番号を書いたまま代理回答を頼むのではなく、自分へ連絡を受け、折返しの方法を担当に確認します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "連絡先を自分の携帯に訂正して夕方の連絡か折返しを相談し、家族が当然に代理回答できるとは考えないと伝える。日本語で伝えてください。",
+        "hint": "登録が自分の番号と18〜19時に訂正されたと確認し、家族の代理回答を当然にせず本人連絡と折返し方法を相談すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "連絡先を自分の携帯に訂正して夕方の連絡か折返しを相談し、家族が当然に代理回答できるとは考えないと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "登録が自分の番号と18〜19時に訂正されたと確認し、家族の代理回答を当然にせず本人連絡と折返し方法を相談すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。担当と連絡方法をご確認ください。ありがとうございました。",
+        "textJa": "番号と連絡可能時間の訂正を確認できました。代理の手続きが済んだという記録にはしていません。ご相談ありがとうございました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-001-utashinai.json",
-    "premise": "歌志内の学習用シミュレーション。申請書の連絡先が家族の番号で、本人へ連絡できる時間と代理回答の権限を分ける。",
+    "premise": "歌志内の架空行政連絡先相談。本人は18〜19時なら自分の携帯に出られる。架空担当の了解で家族番号から本人提示番号へ訂正し連絡可能時間も記録する。番号記入が代理権を確定するとはしない。折返し時の確認方法は担当確認待ち。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
