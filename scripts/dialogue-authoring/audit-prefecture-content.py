@@ -1,4 +1,4 @@
-"""Inventory and duplicate evidence; deliberately does not award CONTENT PASS."""
+"""Inventory and duplicate evidence; recognize only a separate hash-bound editorial decision."""
 import collections
 import difflib
 import hashlib
@@ -10,6 +10,31 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 def read(path):
     return json.loads((ROOT / path).read_text())
+
+def editorial_decision_matches(report, review):
+    """Screening alone never passes content; every reviewed runtime hash must match."""
+    decision = review.get('finalDecision', {})
+    inventory = report['inventory']
+    count = report['canonicalCount']
+    current = {item['scenarioId']: item['sha256'] for item in inventory}
+    reviewed = {sid for group in review.get('wholeCorpusComparisonGroups', [])
+                for sid in group.get('scenarioIds', [])}
+    screening = ('exactDuplicateGroups', 'placeQuantityNormalizedDuplicateGroups',
+                 'nearDuplicateCandidates', 'exactPlayerTaskDuplicateGroups',
+                 'exactPlayerAnswerDuplicateGroups', 'canonicalTitleDuplicateGroups',
+                 'recipeReuseGroups')
+    return (count > 0 and report['coverageCount'] == count
+            and report['structuralErrorCount'] == 0
+            and all(not report[field] for field in screening)
+            and review.get('contentPass') is True
+            and decision.get('contentPass') is True
+            and decision.get('reviewer') in ('AI', 'Human')
+            and decision.get('canonicalCount') == count
+            and decision.get('reviewedScenarioCount') == count
+            and decision.get('openEditorialBlockers') == 0
+            and not review.get('pendingGroups')
+            and reviewed == set(current)
+            and decision.get('scenarioSha256') == current)
 
 def audit(prefecture):
     cities = {x['id']: x for x in read('src/data/generated/cities.json')}
@@ -113,7 +138,21 @@ def audit(prefecture):
                 if ratio >= .72:
                     near.append({'a': a, 'b': b, 'normalizedSimilarity': round(ratio, 4), 'fourGramJaccard': round(overlap, 4), 'review': 'pending'})
     groups = lambda d: [v for v in d.values() if len(v) > 1]
-    return {'prefectureId': prefecture, 'status': 'FAIL CONTENT QA / rewrite in progress', 'canonicalCount': len(targets), 'coverageCount': sum(x['turnCount'] > 0 for x in inventory), 'structuralErrorCount': sum(bool(x['structuralErrors']) for x in inventory), 'exactDuplicateGroups': groups(exact), 'placeQuantityNormalizedDuplicateGroups': groups(normalized_groups), 'nearDuplicateCandidates': near, 'exactPlayerTaskDuplicateGroups': groups(player_task_groups), 'exactPlayerAnswerDuplicateGroups': groups(player_answer_groups), 'canonicalTitleDuplicateGroups': groups(title_groups), 'intentStructureCandidates': groups(intents), 'recipeReuseGroups': dict(recipe_groups), 'semanticReview': 'Manual causal-development and location-role review required; similarity scores are candidate evidence only.', 'contentPass': False, 'inventory': inventory}
+    result = {'prefectureId': prefecture, 'status': 'FAIL CONTENT QA / rewrite in progress', 'canonicalCount': len(targets), 'coverageCount': sum(x['turnCount'] > 0 for x in inventory), 'structuralErrorCount': sum(bool(x['structuralErrors']) for x in inventory), 'exactDuplicateGroups': groups(exact), 'placeQuantityNormalizedDuplicateGroups': groups(normalized_groups), 'nearDuplicateCandidates': near, 'exactPlayerTaskDuplicateGroups': groups(player_task_groups), 'exactPlayerAnswerDuplicateGroups': groups(player_answer_groups), 'canonicalTitleDuplicateGroups': groups(title_groups), 'intentStructureCandidates': groups(intents), 'recipeReuseGroups': dict(recipe_groups), 'semanticReview': 'Manual causal-development and location-role review required; similarity scores are candidate evidence only.', 'contentPass': False, 'inventory': inventory}
+
+
+    review_path = ROOT / 'docs/dialogue-workspace/content-qa' / (prefecture + '_SEMANTIC_REVIEW.json')
+    if review_path.exists():
+        try:
+            review = json.loads(review_path.read_text())
+            if editorial_decision_matches(result, review):
+                result['contentPass'] = True
+                result['status'] = 'CONTENT PASS — ' + review['finalDecision']['reviewer'] + ' JAPANESE EDITORIAL REVIEW'
+                result['semanticReview'] = 'Separate editorial decision verified against all current runtime SHA-256 hashes; no native-speaker, translation or real-policy approval implied.'
+        except (ValueError, KeyError, TypeError):
+            # Malformed or obsolete decisions never upgrade an inventory scan.
+            pass
+    return result
 
 if __name__ == '__main__':
     prefecture = sys.argv[1]

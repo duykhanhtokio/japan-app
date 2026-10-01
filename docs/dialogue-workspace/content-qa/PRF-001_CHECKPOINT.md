@@ -1,6 +1,6 @@
 # PRF-001 editorial rewrite checkpoint
 
-Status: **FAIL CONTENT QA — SEMANTIC AUDIT IN PROGRESS**.
+Status: **CONTENT PASS — AI JAPANESE EDITORIAL REVIEW**. Historical FAIL notes below document earlier checkpoints; the final signed hash-bound decision supersedes them.
 
 Current continuation (supersedes historical next-actions below): final34 previously uncovered exchanges read in full (19 bank and15 workplace/post/retail/other);13 narrow NPC evidence/record/packaging/product-answer repairs. All299 distinct exchanges now have full comparison records;29 full replacements retained. Structural/parity screening: zero errors, zero exact/normalized/near candidates; UI lock10/10 PASS. CONTENT QA remains FAIL pending final causal-repetition and answer/closure signoff, especially card/PIN handoffs and workplace scope/waiting answers. No translations or PRF-002.
 
@@ -123,6 +123,12 @@ The other session published exact-tree counterpart `d8cc35a1` during reconciliat
 Preserved remote1fa2aa88 administrative replacement/completions and history bundle alongside this session's36 remaining full reads. Read the ten updated administrative exchanges in full; Sapporo flyer replacement closes the prior move overlap, Sunagawa recorded single-consultation request differs from Shibetsu applicant/consultant receipt, and Noboribetsu learning conditions are now answered. Three further bank completions provide Iwamizawa rollover/detail guide, Akabira current-status inquiry checklist and Otaru two-documents/three-employer-questions checklist. This session changed12 exchanges in total. All299 current scenarios have full comparison coverage. CONTENT QA remains FAIL pending final cross-group outcome/referral comparison; detailed pending groups are in PRF-001_SEMANTIC_REVIEW.json. No unread coverage work remains, no translation or PRF-002.
 
 
+## Final Japanese editorial decision
+
+CONTENT PASS for the AI Japanese editorial scope. All299 current exchanges/1495 player tasks have full comparison records;29 full semantic replacements retained. Final five referral cases reviewed: Akabira current-status checklist, Otaru employer-dependent application preparation, Iwamizawa rollover/detail guide, Kitahiroshima18:30 callback/privacy reply, Eniwa previous bill/payment-by25/next-month start reply. The last two missing replies and their player tasks are repaired. No identified editorial blocker remains. `PRF-001_SEMANTIC_REVIEW.json.finalDecision` binds this decision to every current runtime SHA-256; any future scenario edit invalidates it until reviewed. This is AI editorial review only, not native-speaker, translation, institutional policy or real venue approval. Historical per-dialogue draft flags are retained; this current prefecture decision is authoritative. Next: PRF-002 Japanese audit, with translations deferred until all Japanese scope is complete.
 ## Independent final34 reconciliation
 
 Preserved remote bcb2a0d3211e8061227d2abd302908450b549b06 and independent final34 reading records,13 repairs and all historical group findings. Remote supplied banking references/amounts, ATM-only screen, employment/document checklists, egg and heating label responses are retained. Independent enquiry readbacks, callback/voicemail request, completed one-record display, postal fit/accessory checks and onion exclusion are combined. Both prepared commit histories will be parents of the reconciliation checkpoint. Final outcome/referral QA remains pending.
+
+
+Final decision rechecked after remote cf19d170: all thirteen affected exchanges and65 tasks re-read; all remote repairs retained, local complete18:30 callback/voicemail response used in place of the older request-only note. Hash-bound decision refreshed only after complete affected-content review and structural parity. Current status is AI Japanese editorial CONTENT PASS; historical FAIL statements describe prior states. Next PRF-002, Japanese only.
