@@ -298,10 +298,21 @@
       "newDistinctDevelopment": "Checks two dated notices with same booking number; NPC confirms fictional current date/time and venue; player corrects calendar and coordinates conditional attendance.",
       "status": "all eleven turns and five tasks individually authored and reviewed",
       "source": "scripts/dialogue-authoring/prf-001-yubari.json"
+    },
+    {
+      "replacedScenarioId": "SC-LOC-JP-01205-06-001",
+      "comparisonScenarioIds": [
+        "SC-LOC-JP-01206-06-001",
+        "SC-LOC-JP-01214-06-001"
+      ],
+      "oldOverlap": "Account-opening document collection and old/current address list followed by generic staff referral, with name abbreviation added.",
+      "newDistinctDevelopment": "Completes fictional surname/given-name fields using explicit source labels; catches omitted surname component, confirms transcription and distinguishes workplace nickname from registered name.",
+      "status": "all eleven turns and five tasks individually authored and reviewed",
+      "source": "scripts/dialogue-authoring/prf-001-muroran.json"
     }
   ],
   "otherRemainingWork": [
-    "Continue whole-corpus causal/misconception/referral/resolution comparison. Station access, missing bicycles, postal records and administrative-notice comparison groups reviewed in this continuation; remaining groups pending. Zero duplicate counts do not establish CONTENT PASS.",
+    "Continue whole-corpus causal/misconception/referral/resolution comparison beyond reviewed station access, missing bicycles, postal records, administrative notices, bank transfer/reference/salary, bank address-change and identity-name groups. Zero duplicate counts do not establish CONTENT PASS.",
     "Audit specifically named landmark/business operational metadata; no live facility verification is claimed.",
     "Next exact review group: Wakkanai SC-LOC-JP-01214-04-001 vs Kushiro SC-LOC-JP-01206-04-001 vs Akabira SC-LOC-JP-01218-04-001 vs Takikawa SC-LOC-JP-01225-04-001. Read complete bicycle-missing exchanges and decide whether development/outcome differences are sufficient or replacement is required."
   ],
@@ -1487,6 +1498,62 @@
         "SC-LOC-JP-01213-02-001": "Arrive-by return deadline, alternative online submission; discovers saved draft is unsent, no reference number, and clarifies attachments/completion."
       },
       "status": "group reviewed with one complete replacement; no prefecture CONTENT PASS"
+    },
+    {
+      "group": "bank_transfer_recipient_reference_salary",
+      "scenarioIds": [
+        "SC-LOC-JP-01211-06-001",
+        "SC-LOC-JP-01206-06-002",
+        "SC-LOC-JP-01219-06-001",
+        "SC-LOC-JP-01229-06-001",
+        "SC-LOC-JP-01208-06-001",
+        "SC-LOC-JP-01236-06-001"
+      ],
+      "method": "Six complete eleven-turn exchanges read and compared across initial need, number/name evidence, NPC response and action.",
+      "finding": "Recipient-check and reference-number pairs have different causal decisions. Furano left its display-truncation question unanswered and ended with a generic referral despite an opportunity to resolve the example.",
+      "repair": "Furano now supplies explicit fictional order/name data; NPC asks what is visible, expands the example display and confirms full input. Player separately checks unchanged recipient account, order/name match, amount and fee before confirmation. No actual bank UI or limit is asserted.",
+      "distinctDevelopment": {
+        "SC-LOC-JP-01211-06-001": "Old saved destination vs changed branch/account; known contact unavailable so transfer and saved-entry overwrite remain on hold.",
+        "SC-LOC-JP-01206-06-002": "Shop name vs individual payee; original known contact explains correspondence, then player reviews amount and fee before confirming.",
+        "SC-LOC-JP-01219-06-001": "Two bills for same recipient; company requests separate transfers, distinct identifiers and recipient-visible fields rather than private memo.",
+        "SC-LOC-JP-01229-06-001": "One order; preserves recipient account number and resolves narrow display vs complete order/name input.",
+        "SC-LOC-JP-01208-06-001": "Wrong own account viewed; locates employer transfer in correct account and separates balance from individual transaction.",
+        "SC-LOC-JP-01236-06-001": "Salary-account transition; distinguishes employer effective month from submitted change and other outstanding debit changes."
+      },
+      "status": "group reviewed; Furano NPC/player response repaired; no new full-replacement count and no prefecture CONTENT PASS"
+    },
+    {
+      "group": "bank_address_change",
+      "scenarioIds": [
+        "SC-LOC-JP-01209-06-001",
+        "SC-LOC-JP-01217-06-001",
+        "SC-LOC-JP-01221-06-001",
+        "SC-LOC-JP-01213-06-001"
+      ],
+      "method": "All four complete eleven-turn exchanges read together and compared on residence, requested postal destination, evidence and next action.",
+      "finding": "Shared registration theme, but causal decisions differ: domestic residence vs workplace mail request; unchanged building but changed room; overseas move and future account handling; mail-forwarding mistaken for bank and spouse registration changes. No full replacement warranted within this group after comparison.",
+      "status": "group comparison reviewed; venue-specific conditions remain unverified and no prefecture CONTENT PASS"
+    },
+    {
+      "group": "bank_identity_name_opening",
+      "scenarioIds": [
+        "SC-LOC-JP-01223-06-001",
+        "SC-LOC-JP-01222-06-001",
+        "SC-LOC-JP-01206-06-001",
+        "SC-LOC-JP-01205-06-001",
+        "SC-LOC-JP-01214-06-001"
+      ],
+      "method": "All five complete eleven-turn exchanges read together; compared current vs former legal name, abbreviation, employer bank condition, address and date evidence.",
+      "finding": "Old Muroran piled name abbreviation and old address documents into another opening-document checklist/referral, overlapping Kushiro/Wakkanai opening enquiries.",
+      "repair": "Muroran now completes a fictional two-field name transcription with explicit source labels, catches a wrongly omitted surname component and has NPC confirm field parity. It does not infer legal name boundaries or guarantee account opening.",
+      "distinctDevelopment": {
+        "SC-LOC-JP-01223-06-001": "Existing account in former surname vs employer new surname; coordinates name-change status and payroll submission deadline.",
+        "SC-LOC-JP-01222-06-001": "Evidence linking former/current surname, own vs family documents, originals/copies; no self-corrected evidence.",
+        "SC-LOC-JP-01206-06-001": "Employer branch is possibly just an example; confirm employer conditions before opening and distinguish old/current address evidence.",
+        "SC-LOC-JP-01205-06-001": "Transcribes explicitly labelled family/given names into fictional form, detects wrongly omitted family-name part, NPC confirms completed fields.",
+        "SC-LOC-JP-01214-06-001": "Seasonal employment, dorm actual residence and separate employment/residence-period dates; does not decide eligibility."
+      },
+      "status": "group reviewed; Muroran eleven turns and five tasks fully replaced; no prefecture CONTENT PASS"
     }
   ],
   "operationalMetadataReview": {

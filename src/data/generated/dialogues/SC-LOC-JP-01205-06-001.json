@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。お手続き前に、どのようなことを確認したいですか。",
+        "textJa": "こんにちは。申込書の記入で、どの欄を確認されたいですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "request_account_document_check_for_name_difference",
         "requiredSemanticComponents": {
-          "goal": "口座開設の書類を相談し、在留カードと勤務資料で氏名表記が違うと説明する"
+          "goal": "口座申込書の氏と名の欄に、勤務先で使う短い呼び名のアナを書いてよいか尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "口座を作るための書類を相談したいです。在留カードと勤務先の資料がありますが、名前の書き方が違います。",
+        "recommendedAnswerJa": "口座の申込書に氏と名の欄があります。職場ではアナと呼ばれていて、勤務先の紙もその名前だけです。ここにもアナと書いてよいですか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "口座開設の書類を相談し、在留カードと勤務資料で氏名表記が違うと説明する。日本語で伝えてください。",
+        "hint": "口座申込書の氏と名の欄に、勤務先で使う短い呼び名のアナを書いてよいか尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "口座開設の書類を相談し、在留カードと勤務資料で氏名表記が違うと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "口座申込書の氏と名の欄に、勤務先で使う短い呼び名のアナを書いてよいか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ご本人の資料ですね。どのような表記の違いがありますか。正式なお名前が確認できる書類も見せていただけますか。",
+        "textJa": "この申込書は、本人確認資料にある氏と名の区分をそれぞれ写す案内です。お持ちの資料では、二つの欄にどう書かれていますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "explain_full_name_vs_workplace_katakana_short_name",
         "requiredSemanticComponents": {
-          "goal": "在留カードには氏名全体があるが勤務資料は短いカタカナ名で、それを申込書にも使うつもりだったと話す"
+          "goal": "本人確認資料の氏はSILVA COSTA、名はANA MARIAで、職場のアナは省略した呼び名だと説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "在留カードには長い名前が全部あります。勤務先の紙は短いカタカナ名なので、それを申込書にも書けばいいと思っていました。",
+        "recommendedAnswerJa": "資料の氏の欄はSILVA COSTA、名の欄はANA MARIAです。職場のアナは短い呼び方なので、資料の名前全部とは違います。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "在留カードには氏名全体があるが勤務資料は短いカタカナ名で、それを申込書にも使うつもりだったと話す。日本語で伝えてください。",
+        "hint": "本人確認資料の氏はSILVA COSTA、名はANA MARIAで、職場のアナは省略した呼び名だと説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "在留カードには氏名全体があるが勤務資料は短いカタカナ名で、それを申込書にも使うつもりだったと話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "本人確認資料の氏はSILVA COSTA、名はANA MARIAで、職場のアナは省略した呼び名だと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "略称のまま記入してよいとは限りません。本人確認と申込みの表記を担当者が確認します。住所の記載は、今お住まいの場所と一致していますか。",
+        "textJa": "はい。この申込書では、その区分どおりに、氏の欄へSILVA COSTA、名の欄へANA MARIAを記入します。ご自身で名前の区切りを変えないでください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "disclose_old_workplace_address_after_move",
         "requiredSemanticComponents": {
-          "goal": "転居直後で勤務資料は旧住所だと伝え、新住所の控えもあるが使える書類は判断できないと説明する"
+          "goal": "COSTAを別の名前と考えて省きかけたが、資料ではSILVAとCOSTAの両方が氏の欄にあると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "引っ越したばかりで、勤務先の資料には古い住所があります。新しい住所の控えもありますが、どの書類が使えるか自分では判断できません。",
+        "recommendedAnswerJa": "氏はSILVAだけかと思いました。COSTAを真ん中の名前と考えて省きかけましたが、資料では二つとも氏の欄にあります。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "転居直後で勤務資料は旧住所だと伝え、新住所の控えもあるが使える書類は判断できないと説明する。日本語で伝えてください。",
+        "hint": "COSTAを別の名前と考えて省きかけたが、資料ではSILVAとCOSTAの両方が氏の欄にあると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "転居直後で勤務資料は旧住所だと伝え、新住所の控えもあるが使える書類は判断できないと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "COSTAを別の名前と考えて省きかけたが、資料ではSILVAとCOSTAの両方が氏の欄にあると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "古い住所と新しい住所の資料を分けて、確認できていない点を伝えましょう。必要な書類は状況に合わせてご案内します。",
+        "textJa": "その資料ではSILVA COSTAが氏として示されています。COSTAを落としたり、名の欄へ移したりせず、記入後に資料と一つずつ照らし合わせましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "hold_form_and_request_precise_missing_document_names",
         "requiredSemanticComponents": {
-          "goal": "記入は待ち、氏名の省略と住所差を整理すると伝え、不足書類の正式な名称を教えてほしいと頼む"
+          "goal": "氏へSILVA COSTA、名へANA MARIAを記入し、略称ではなく資料の区分と一致しているか確認を頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "では記入は待ちます。名前の省略と住所の違いをメモして、足りない書類があれば正式な書類名を教えてもらえますか。",
+        "recommendedAnswerJa": "氏はSILVA COSTA、名はANA MARIAと記入しました。略したアナではなく、二つの欄を資料と比べて確認していただけますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "記入は待ち、氏名の省略と住所差を整理すると伝え、不足書類の正式な名称を教えてほしいと頼む。日本語で伝えてください。",
+        "hint": "氏へSILVA COSTA、名へANA MARIAを記入し、略称ではなく資料の区分と一致しているか確認を頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "記入は待ち、氏名の省略と住所差を整理すると伝え、不足書類の正式な名称を教えてほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "氏へSILVA COSTA、名へANA MARIAを記入し、略称ではなく資料の区分と一致しているか確認を頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。記入する表記と不足書類を担当者に確認してください。勤務先の資料を訂正する必要があるかも、確認事項として相談できます。",
+        "textJa": "こちらの二つの欄は、資料の区分と一致しています。勤務先へ給与口座を伝える時も、職場での呼び名と口座に登録された表記を混ぜないよう、提出する情報を確認してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "confirm_separate_document_review_before_form",
         "requiredSemanticComponents": {
-          "goal": "三種類の資料を分けて示し、氏名と住所の扱い、不足書類を確認してから申込書を書くと伝える"
+          "goal": "資料の氏名を省略せずに記入し、勤務先にも呼び名だけではなく確認した口座登録表記を伝え、残りの欄も案内を見て記入すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "在留カード、勤務先の資料、新住所の控えを分けて見せます。名前と住所の扱いを聞き、不足する書類を確認してから申込書を書きます。",
+        "recommendedAnswerJa": "申込書は資料の氏と名を省略せずに写します。勤務先への提出にも呼び名だけを使わず、口座の登録表記を確認してから伝えます。ほかの欄も案内を見て記入します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "三種類の資料を分けて示し、氏名と住所の扱い、不足書類を確認してから申込書を書くと伝える。日本語で伝えてください。",
+        "hint": "資料の氏名を省略せずに記入し、勤務先にも呼び名だけではなく確認した口座登録表記を伝え、残りの欄も案内を見て記入すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "三種類の資料を分けて示し、氏名と住所の扱い、不足書類を確認してから申込書を書くと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "資料の氏名を省略せずに記入し、勤務先にも呼び名だけではなく確認した口座登録表記を伝え、残りの欄も案内を見て記入すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。こちらで担当者へ確認しましょう。曖昧なまま記入せず、先にご相談いただきありがとうございます。",
+        "textJa": "承知しました。氏名の記入を確認できました。続いてほかの記入事項と申込条件を確認します。記入ができたことだけで口座開設が決まったわけではありません。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -247,7 +247,7 @@
     "locale": "ja",
     "contentScope": "simulated_learning_scenario",
     "editorialSource": "scripts/dialogue-authoring/prf-001-muroran.json",
-    "premise": "室蘭の銀行で口座開設の持参書類を相談する人が、勤務資料のカタカナ略名と本人確認書類の表記差を示し、申込書を自己流の名前で埋めないよう確認する。",
+    "premise": "室蘭の架空銀行申込書の記入相談。教材用本人確認資料の氏はSILVA COSTA、名はANA MARIA、勤務先の呼び名はアナ。氏名の二欄へ本人確認資料の区分を転記し、COSTAを推測で省略せず、略名と正式表記を区別する。資料、記入欄、表記指定は全て架空で、実在銀行の書式や開設審査を断定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
