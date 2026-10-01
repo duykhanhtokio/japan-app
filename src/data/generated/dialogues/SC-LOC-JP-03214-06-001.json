@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。振込画面で何を確認したいですか。",
+        "textJa": "こんにちは。振込みについて確認がありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,10 +26,10 @@
       "player": {
         "communicativeIntent": "hachimantai_6_task_1",
         "requiredSemanticComponents": {
-          "goal": "依頼人名欄へ受取人名を書くのか確認する"
+          "goal": "会社請求書の振込確定前に確認する項目を尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "依頼人名の欄にも受取人の名前を書くのだと思いました。誰の名前を入れる欄ですか。",
+        "recommendedAnswerJa": "会社から届いた請求書の振込みをしたいです。入力を確定する前に確認する項目を教えてください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "依頼人名欄へ受取人名を書くのか確認する。日本語で伝えてください。",
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "依頼人は振り込む側として、この学習用画面ではご本人の情報を確認します。",
+        "textJa": "受取人名、口座情報、金額、依頼人情報を請求書と照合してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,10 +71,10 @@
       "player": {
         "communicativeIntent": "hachimantai_6_task_2",
         "requiredSemanticComponents": {
-          "goal": "依頼人と受取人は別だと理解する"
+          "goal": "受取人は会社で依頼人は自分、請求番号もあると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "受取人名を二回入れる欄ではないんですね。",
+        "recommendedAnswerJa": "受取人は会社名で、依頼人は私の名前を入れます。請求番号もあります。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "依頼人と受取人は別だと理解する。日本語で伝えてください。",
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。受取人は振込先情報、依頼人は送る側として分けて確認します。",
+        "textJa": "請求番号をどこへ記載するかは先方の案内を確認してください。口座番号とは別に扱います。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,10 +116,10 @@
       "player": {
         "communicativeIntent": "hachimantai_6_task_3",
         "requiredSemanticComponents": {
-          "goal": "自分名義を依頼人、相手名を受取人で照合すると伝える"
+          "goal": "口座と会社名を照合し請求番号の指定欄を確認すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "自分の名義表記を確認して依頼人欄へ入れ、相手の名前は受取人欄で照合します。",
+        "recommendedAnswerJa": "分かりました。まず口座と会社名を照合し、請求番号は指定された欄があるか確認します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "自分名義を依頼人、相手名を受取人で照合すると伝える。日本語で伝えてください。",
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "金額と口座情報も確定前に確認してください。",
+        "textJa": "はい。金額も桁を含めて確定前に見直してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,10 +161,10 @@
       "player": {
         "communicativeIntent": "hachimantai_6_task_4",
         "requiredSemanticComponents": {
-          "goal": "似た名前を推測せず請求書と画面を比較すると伝える"
+          "goal": "不一致があれば送金せず請求書を再確認すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "似た名前でも推測せず、請求書と画面を見比べます。",
+        "recommendedAnswerJa": "違う表示が一つでもあれば送金せず、請求書を確認し直します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "似た名前を推測せず請求書と画面を比較すると伝える。日本語で伝えてください。",
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "確認画面で四つの項目を見直しましょう。",
+        "textJa": "不明点は振込先または担当窓口へ確認してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,10 +206,10 @@
       "player": {
         "communicativeIntent": "hachimantai_6_task_5",
         "requiredSemanticComponents": {
-          "goal": "依頼人・受取人・口座・金額を分けて照合するとまとめる"
+          "goal": "受取人・口座・金額・依頼人・請求番号を確認するとまとめる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "依頼人、受取人、口座、金額を分けて照合してから振込を確定します。",
+        "recommendedAnswerJa": "受取人、口座、金額、依頼人、請求番号の扱いを確認してから確定します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
         "hint": "依頼人・受取人・口座・金額を分けて照合するとまとめる。日本語で伝えてください。",
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。確認後に実行してください。",
+        "textJa": "承知しました。確認画面をよくご覧ください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-003-hachimantai.json",
-    "premise": "八幡平の架空銀行場面。振込画面の依頼人名を受取人名と同じに書く欄だと思い、自分の名義と相手名義を分けて確認する。",
+    "premise": "八幡平の架空銀行。請求書に基づいて会社へ振り込む利用者が、受取人名、依頼人名、口座、金額を確認画面で照合してから送金する。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
