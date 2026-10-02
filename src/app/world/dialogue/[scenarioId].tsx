@@ -49,6 +49,7 @@ export default function DialogueScreen(){
  const npcContext=npcTurn?turn:turns.slice(0,index).reverse().find(item=>item.speaker==='NPC');
  const playerTurn=turn?.speaker==='PLAYER'?turn:turns[index+1]?.speaker==='PLAYER'?turns[index+1]:null;
  const theme=themeFor(location?.category),background=locationBackground(location?.id,location?.category)??sceneForCategory(location?.category),npcImage=npcForCategory(location?.category),controlsBottom=Math.max(18,insets.bottom+10),mission=scenarioMission(scenario,location?.category),npcCategory=normalizeNpcCategory(location?.category),npcName=npcCategory?`${npcCategory.ja}さん`:'スタッフ',playerName=profile.name?.trim()||'プレイヤー';
+ useEffect(()=>{if(!npcTurn)conversationRef.current?.scrollToEnd({animated:false})},[turn?.id,npcTurn]);
  useEffect(()=>{
   let active=true;
   abortListening();
