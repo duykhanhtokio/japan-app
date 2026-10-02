@@ -17,6 +17,7 @@ import {
 
 import {
     SafeAreaView,
+    SafeAreaProvider,
 } from 'react-native-safe-area-context';
 
 import BottomNav from '@/components/app/BottomNav';
@@ -142,7 +143,7 @@ export default function ProfileScreen() {
                 </View>
             </ScrollView>
             <Modal visible={detailsVisible} animationType="slide" onRequestClose={()=>setDetailsVisible(false)}>
-                <RoyalPageBackground source={PROFILE_ART} tone="dark" shadeOpacity={.50}><SafeAreaView style={styles.detailsPage}>
+                <SafeAreaProvider><RoyalPageBackground source={PROFILE_ART} tone="dark" shadeOpacity={.50}><SafeAreaView style={styles.detailsPage}>
                     <View style={styles.detailsHeader}>
                         <Text style={styles.sectionTitle}>プロフィール · 詳細</Text>
                         <RoyalButton onPress={()=>setDetailsVisible(false)} style={styles.detailsClose}>
@@ -187,11 +188,7 @@ export default function ProfileScreen() {
                         }
                     </Text>
 
-                    <View
-                        style={
-                            styles.ratingLevelBadge
-                        }
-                    >
+                    <RoyalPaperPanel tone="hud" style={[styles.ratingLevelBadge,{backgroundColor:'transparent',borderWidth:0,paddingHorizontal:24,paddingVertical:12,minHeight:48}]}>
                         <Text
                             style={
                                 styles.ratingLevel
@@ -202,7 +199,7 @@ export default function ProfileScreen() {
                                 communication.level
                             }
                         </Text>
-                    </View>
+                    </RoyalPaperPanel>
 
                     <Text
                         style={
@@ -785,7 +782,7 @@ export default function ProfileScreen() {
                     </View>
                 </ProfilePanel>
                     </ScrollView>
-                </SafeAreaView></RoyalPageBackground>
+                </SafeAreaView></RoyalPageBackground></SafeAreaProvider>
             </Modal>
 
             <BottomNav
@@ -1013,8 +1010,8 @@ const styles =
         detailsButton: {paddingHorizontal:16,paddingVertical:14,marginTop:16,minHeight:48},
         detailsLink: {fontFamily:ROYAL_FONT.body,fontSize:16,color:ROYAL.lacquer,textAlign:'center'},
         detailsPage: {flex:1,backgroundColor:'transparent'},
-        detailsHeader: {padding:18,flexDirection:'row',flexWrap:'wrap',alignItems:'center',justifyContent:'space-between',gap:12},
-        detailsClose: {minHeight:64,minWidth:160},
+        detailsHeader: {padding:18,paddingTop:12,flexDirection:'row',flexWrap:'wrap',alignItems:'center',justifyContent:'space-between',gap:12},
+        detailsClose: {minHeight:52,width:160},
         royalFrame: {...StyleSheet.absoluteFillObject,width:'100%',height:'100%'},
         container: {
             flex: 1,
@@ -1142,6 +1139,7 @@ const styles =
         },
 
         editText: {
+            textAlign: 'center',
             color: '#ffffff',
 
             fontFamily: ROYAL_FONT.body,
@@ -1425,6 +1423,9 @@ const styles =
         },
 
         workIcon: {
+            height: 40,
+            marginRight: 8,
+            flexShrink: 0,
             fontFamily: ROYAL_FONT.body,
             fontSize: 33,
 
@@ -1483,8 +1484,10 @@ const styles =
          */
 
         miniStat: {
-            minWidth: 64,
-            paddingHorizontal: 6,
+            minWidth: 100,
+            flexBasis: 100,
+            justifyContent: 'center',
+            paddingHorizontal: 14,
             flex: 1,
 
             alignItems: 'center',
@@ -1497,6 +1500,8 @@ const styles =
         },
 
         miniStatValue: {
+            textAlign: 'center',
+            width: '100%',
             lineHeight: ROYAL_TYPE.bodyLine,
             color: '#ffffff',
 
@@ -1508,6 +1513,8 @@ const styles =
         },
 
         miniStatLabel: {
+            textAlign: 'center',
+            width: '100%',
             flexShrink: 1,
             lineHeight: ROYAL_TYPE.bodyLine,
             color: '#8994a5',
@@ -1727,7 +1734,7 @@ const styles =
 
         logStat: {
             minWidth: 64,
-            paddingHorizontal: 6,
+            paddingHorizontal: 14,
             flex: 1,
 
             backgroundColor:

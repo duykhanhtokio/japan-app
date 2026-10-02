@@ -325,7 +325,7 @@ export default function LearnScreen() {
                                     {/* LEVEL BADGE */}
 
                                     <View style={styles.levelBadge}>
-                                        <Image source={RANK_BADGES[item.level]} resizeMode="contain" style={StyleSheet.absoluteFillObject}/>
+                                        <Image source={RANK_BADGES[item.level]} resizeMode="contain" style={{position:'absolute',left:0,top:0,width:72,height:72}}/>
                                         <Text style={styles.levelBadgeText}>{item.level}</Text>
                                     </View>
 
@@ -652,7 +652,7 @@ const styles =
          * LEVEL BADGE
          */
 
-        levelBadge: {width:72,height:72,alignItems:'center',justifyContent:'center',marginRight:12},
+        levelBadge: {width:72,height:72,flexShrink:0,overflow:'hidden',alignItems:'center',justifyContent:'center',marginRight:12},
         levelBadgeText: {color:'#fff0bd',fontSize:22,fontWeight:'900',textShadowColor:'#020a17',textShadowOffset:{width:0,height:2},textShadowRadius:3},
 
         /*

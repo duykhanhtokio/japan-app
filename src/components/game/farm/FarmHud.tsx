@@ -1,21 +1,22 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
-import { router } from 'expo-router';
 import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 import { RoyalBackButton, ROYAL, ROYAL_FONT } from '@/components/ui/RoyalSurface';
 
-type Props={level:number;xpCurrent:number;xpMax:number;gold:number;diamonds:number;keys:number;onGoldPlus:()=>void;onDiamondPlus:()=>void};
+type Props={level:number;xpCurrent:number;xpMax:number;gold:number;diamonds:number;keys:number;onBack:()=>void;onGoldPlus:()=>void;onDiamondPlus:()=>void};
 const AVATAR=require('../../../../assets/app/ui/royal-af/hud-player-medallion-v1.png');
 const COIN=require('../../../../assets/app/ui/royal-af/hud-coin-v1.png');
 const KEY=require('../../../../assets/app/ui/royal-af/mission-key-v1.png');
 
-export default function FarmHud({level,xpCurrent,xpMax,gold,diamonds,keys,onGoldPlus,onDiamondPlus}:Props){
+export default function FarmHud({level,xpCurrent,xpMax,gold,diamonds,keys,onBack,onGoldPlus,onDiamondPlus}:Props){
  return <View pointerEvents="box-none" style={s.container}>
-  <RoyalBackButton onPress={()=>router.replace('/home')}/>
-  <RoyalPaperPanel tone="hud" style={s.row}>
+  <RoyalBackButton onPress={onBack}/>
+  <RoyalPaperPanel tone="hud" style={s.playerFrame}>
    <View accessibilityLabel={`レベル ${level}、EXP ${xpCurrent}/${xpMax}`} style={s.player}>
     <Image source={AVATAR} resizeMode="contain" style={s.avatar}/>
     <View style={s.playerCopy}><Text numberOfLines={1} adjustsFontSizeToFit style={s.level}>Lv.{level}</Text><Text numberOfLines={1} adjustsFontSizeToFit style={s.xp}>EXP {xpCurrent}/{xpMax}</Text></View>
    </View>
+  </RoyalPaperPanel>
+  <RoyalPaperPanel tone="hud" style={s.row}>
    <Resource label="ゴールド" value={gold} icon={COIN} onPress={onGoldPlus} wide/>
    <Resource label="ダイヤ" value={diamonds} onPress={onDiamondPlus}/>
    <Resource label="鍵" value={keys} icon={KEY}/>
@@ -29,7 +30,8 @@ function Resource({label,value,icon,onPress,wide=false}:{label:string;value:numb
 }
 const s=StyleSheet.create({
  container:{width:'100%',maxWidth:900,alignSelf:'center',flexDirection:'row',alignItems:'center',gap:4},
- row:{flex:1,minWidth:0,minHeight:58,paddingVertical:10,paddingHorizontal:12,flexDirection:'row',alignItems:'center',gap:4},
+ playerFrame:{flex:.95,minWidth:0,minHeight:58,paddingVertical:10,paddingHorizontal:10,justifyContent:'center'},
+ row:{flex:1.8,minWidth:0,minHeight:58,paddingVertical:10,paddingHorizontal:12,flexDirection:'row',alignItems:'center',gap:4},
  player:{flex:1.15,minWidth:0,flexDirection:'row',alignItems:'center',gap:3},avatar:{width:24,height:28},playerCopy:{flex:1,minWidth:0},
  level:{fontFamily:ROYAL_FONT.heading,color:ROYAL.paleGold,fontSize:13,lineHeight:18},xp:{fontFamily:ROYAL_FONT.body,color:'#fff',fontSize:9,lineHeight:14},
  cell:{flex:.7,minWidth:0,minHeight:38,justifyContent:'center',alignItems:'center'},gold:{flex:1.15},

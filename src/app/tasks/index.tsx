@@ -1,3 +1,4 @@
+import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { router, useFocusEffect } from 'expo-router';
 import { useCallback, useState } from 'react';
@@ -465,11 +466,7 @@ export default function TasksScreen() {
                         WORK MISSION
                     ========================== */}
 
-                    <View
-                        style={
-                            styles.workCard
-                        }
-                    >
+                    <RoyalPaperPanel tone="hud" style={[styles.workCard,{backgroundColor:'transparent',borderWidth:0,paddingHorizontal:24,paddingVertical:24}]}>
                         <View
                             style={
                                 styles.workHeader
@@ -649,15 +646,11 @@ export default function TasksScreen() {
                                 </Text>
                             </View>
                         )}
-                    </View>
+                    </RoyalPaperPanel>
 
                     {/* GOLDEN KEY */}
 
-                    <View
-                        style={
-                            styles.goldenCard
-                        }
-                    >
+                    <RoyalPaperPanel tone="hud" style={[styles.goldenCard,{backgroundColor:'transparent',borderWidth:0,paddingHorizontal:24,paddingVertical:24}]}>
                         <Image source={MISSION_ICONS.key} resizeMode="contain" style={styles.goldenKey} accessibilityLabel="ゴールデンキー" />
 
                         <View
@@ -685,7 +678,7 @@ export default function TasksScreen() {
                         </View>
 
                         <Image source={MISSION_ICONS.lock} resizeMode="contain" style={styles.goldenLock} accessibilityLabel="ロック中" />
-                    </View>
+                    </RoyalPaperPanel>
                 </ScrollView>
             </View>
 
@@ -714,11 +707,7 @@ function MissionSection({
     items: string[];
 }) {
     return (
-        <View
-            style={
-                styles.section
-            }
-        >
+        <RoyalPaperPanel tone="hud" style={[styles.section,{backgroundColor:'transparent',borderWidth:0,paddingHorizontal:24,paddingVertical:24}]}>
             <View
                 style={
                     styles.sectionHeader
@@ -796,7 +785,7 @@ function MissionSection({
                     </View>
                 )
             )}
-        </View>
+        </RoyalPaperPanel>
     );
 }
 

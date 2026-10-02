@@ -102,9 +102,8 @@ function StudyMetric({label,value,ratio}:{label:string;value:string;ratio:number
 }
 function EnergyBar({label,value,ratio,tint,large=false}:{label:string;value:string;ratio:number;tint:string;large?:boolean}){
  const percentage=Math.round(clamp01(ratio)*100);
- return <RoyalPaperPanel style={[s.energyFrame,large&&s.approvedEnergyFrame]}>
-  <View pointerEvents="none" style={s.energyInset}><View style={s.energyIvory}/><View style={[s.energyColorClip,{width:`${percentage}%`,backgroundColor:tint,opacity:.18}]}/></View>
-  <View pointerEvents="none" style={s.energyTextSafe}><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.78} maxFontSizeMultiplier={1} style={s.energyCenteredText}>{label}{value?`  ${value}`:''}</Text></View>
+ return <RoyalPaperPanel borderOnly style={[s.energyFrame,large&&s.approvedEnergyFrame]} underlay={<View pointerEvents="none" style={s.energyInset}><View style={s.energyIvory}/><View style={[s.energyColorClip,{width:`${percentage}%`,backgroundColor:tint}]}/></View>}>
+  <View pointerEvents="none" style={s.energyTextSafe}><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.78} maxFontSizeMultiplier={1} style={[s.energyCenteredText,percentage>=55&&s.creditText]}>{label}{value?`  ${value}`:''}</Text></View>
  </RoyalPaperPanel>;
 }
 
@@ -156,7 +155,7 @@ const s=StyleSheet.create({
  approvedEnergyStack:{flex:0,height:66,gap:2},
  energyFrame:{flex:0,height:ROYAL_BAR_HEIGHT,minHeight:ROYAL_BAR_HEIGHT,position:'relative',paddingHorizontal:0,paddingVertical:0},
  approvedEnergyFrame:{flex:0,height:APPROVED_BAR_HEIGHT,minHeight:APPROVED_BAR_HEIGHT},
- energyInset:{position:'absolute',left:28,right:28,top:9,bottom:9,borderRadius:10,overflow:'hidden'},
+ energyInset:{position:'absolute',left:8,right:8,top:4,bottom:4,borderRadius:8,overflow:'hidden'},
  energyIvory:{...StyleSheet.absoluteFillObject,backgroundColor:'#fff7e7'},
  energyColorClip:{height:'100%'},
  energyOrnament:{position:'absolute',left:0,right:0,width:'100%'},

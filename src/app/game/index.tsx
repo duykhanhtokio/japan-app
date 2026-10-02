@@ -1,3 +1,4 @@
+import { router } from 'expo-router';
 
 import {
     careForAnimal,
@@ -41,7 +42,7 @@ import {
 } from '@/components/game/farm/FarmAreaBar';
 
 import FarmHud from '@/components/game/farm/FarmHud';
-import { RoyalBackButton, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
+import { ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
 
 
 import FarmWorld from '@/components/game/farm/FarmWorld';
@@ -115,7 +116,6 @@ export default function FarmGameScreen() {
     const insets =
         useSafeAreaInsets();
 
-    const [farmHudHeight,setFarmHudHeight]=useState(insets.top+ROYAL_LAYOUT.backSafeTop+58);
 
     const [
         farmState,
@@ -1519,7 +1519,6 @@ export default function FarmGameScreen() {
 
                 <View
                     pointerEvents="box-none"
-                    onLayout={event=>setFarmHudHeight(event.nativeEvent.layout.height)}
                     style={[
                         styles.hudSafeLayer,
                         {
@@ -1530,6 +1529,7 @@ export default function FarmGameScreen() {
                     ]}
                 >
                     <FarmHud
+                        onBack={showFarmMap?()=>router.replace('/home'):handleReturnToFarmMap}
                         level={
                             resolvedState
                                 .farmLevel
@@ -1566,20 +1566,6 @@ export default function FarmGameScreen() {
                         }
                     />
                 </View>
-
-                {!showFarmMap && (
-                    <>
-                        <RoyalBackButton
-                            onPress={handleReturnToFarmMap}
-                            style={[styles.mapReturnButton, { top: farmHudHeight + 8 }]}
-                        />
-
-                        {/*
-                         * Area navigation now lives on Farm Map.
-                         * FarmAreaBar retired from gameplay UI.
-                         */}
-                    </>
-                )}
 
                 {!showFarmMap && (
                     <View
