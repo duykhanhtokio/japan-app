@@ -41,3 +41,8 @@ Identity and source/runtime parity checked; canonical metadata aligned; exact an
 ## Continuation: five additional full replacements — 2026-10-02
 
 Reassessed five eleven-turn exchanges and all 25 speaking goals: Tendo binocular fit/focus, Murayama physical locker fit, Murayama envelope adhesive cover, Sagae delivery status versus reply, Sakata envelope selection using same-size test paper. Replaced the complete previous exchanges and synchronized canonical title/premise/first goal and runtime sources. Inherited 112 unchanged hash-bound reviews from checkpoint 32689dea; current five decisions include explicit prior-scenario comparisons and new runtime hashes. Added canonical-title/source parity to the audit. Japanese-only content; no native-speaker, translation, real-facility or simulator approval.
+
+
+## Sakata overlap correction — 2026-10-02
+
+Expanded comparison identified the envelope-fit draft as too close to Hokkaido SC-LOC-JP-01230-05-001. Its earlier approval is superseded. Replaced all eleven turns and five goals with a future-self letter consultation, clarified future-date versus storage request, fictional counter service limit and own opening-date/home-storage plan. Canonical metadata and current hash-bound AI review updated. Yamagata remains 117 Japanese exchanges and 585 goals; no translation, native review, real postal-policy certification or simulator approval.

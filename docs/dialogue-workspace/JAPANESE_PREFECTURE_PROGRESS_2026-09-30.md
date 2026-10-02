@@ -78,3 +78,8 @@ Current 117/117 Japanese scripts and 585 tasks individually reviewed. Eleven cau
 ## Yamagata continuation review — 2026-10-02
 
 PRF-006 has 117 individually authored Japanese exchanges and 585 matching speaking tasks. Five further complete replacements remove towel-selection, traveller-count, return-label, arrival-deadline and old-parcel-label progression reuse; all 112 other runtime hashes remain as in remotely published checkpoint 32689dea. Current hash-bound AI editorial review passes with zero structural, exact, normalized and near-duplicate screening groups. No translation, native-speaker or device approval. Resume at PRF-007 after current branch persistence passes.
+
+
+## Sakata overlap correction — 2026-10-02
+
+Expanded comparison identified the envelope-fit draft as too close to Hokkaido SC-LOC-JP-01230-05-001. Its earlier approval is superseded. Replaced all eleven turns and five goals with a future-self letter consultation, clarified future-date versus storage request, fictional counter service limit and own opening-date/home-storage plan. Canonical metadata and current hash-bound AI review updated. Yamagata remains 117 Japanese exchanges and 585 goals; no translation, native review, real postal-policy certification or simulator approval.
