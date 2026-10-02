@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。お手伝いできることはありますか。",
+        "textJa": "こんにちは。何かお手伝いできますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "sendai_01_1",
         "requiredSemanticComponents": {
-          "goal": "途中で分かれる予約列車の乗車側について相談する"
+          "goal": "購入操作後に切符が出ず再購入前に係員確認を依頼する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "予約した列車が途中で分かれると聞きました。どちら側に乗ればいいでしょうか。",
+        "recommendedAnswerJa": "切符を買う操作をしましたが、まだ紙が出ません。もう一度買う前に見てもらえますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "途中で分かれる予約列車の乗車側について相談する。日本語で伝えてください。",
+        "hint": "購入操作後に切符が出ず再購入前に係員確認を依頼する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "途中で分かれる予約列車の乗車側について相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "購入操作後に切符が出ず再購入前に係員確認を依頼する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "予約票を見せていただけますか。列車名と号車を一緒に読みましょう。",
+        "textJa": "この学習用画面は「印刷中」です。追加の購入操作はせず、そのままお待ちください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "sendai_01_2",
         "requiredSemanticComponents": {
-          "goal": "六号車の予約を示し前側の車両の行先を質問する"
+          "goal": "印刷中と理解し購入失敗と思って初期画面へ戻ろうとしたと説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "この予約は六号車です。前に並んでいる車両も同じ行先ですか。",
+        "recommendedAnswerJa": "印刷中なのですね。購入に失敗したと思って、最初の画面へ戻ろうとしていました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "六号車の予約を示し前側の車両の行先を質問する。日本語で伝えてください。",
+        "hint": "印刷中と理解し購入失敗と思って初期画面へ戻ろうとしたと説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "六号車の予約を示し前側の車両の行先を質問する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "印刷中と理解し購入失敗と思って初期画面へ戻ろうとしたと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "この練習用表示では、前側と後ろ側で行先が異なります。号車だけでなく、列車名も照合してください。",
+        "textJa": "今は結果を確認しましょう。操作を終えた後に、何かボタンを押しましたか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "sendai_01_3",
         "requiredSemanticComponents": {
-          "goal": "列車名の違いに気づき後ろ側の六号車を探す理解を確認する"
+          "goal": "一人分の購入一回後は追加ボタンを押していないと答える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "前側の列車名は予約票と違いますね。後ろ側の六号車を探せばいいですか。",
+        "recommendedAnswerJa": "いいえ。購入を一回進めた後は触っていません。切符は一人分です。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "列車名の違いに気づき後ろ側の六号車を探す理解を確認する。日本語で伝えてください。",
+        "hint": "一人分の購入一回後は追加ボタンを押していないと答える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "列車名の違いに気づき後ろ側の六号車を探す理解を確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "一人分の購入一回後は追加ボタンを押していないと答える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "その表示は予約票と一致しています。床の乗車位置にも列車名があります。",
+        "textJa": "わかりました。いま受取口へ紙が出ました。ご自身の券を取り、行先と日付を確認してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "sendai_01_4",
         "requiredSemanticComponents": {
-          "goal": "二種類ある床の印のうち自分の乗車位置を示してほしいと頼む"
+          "goal": "一人分の券を受領し受取口のほかの紙も確認したいと頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "床に二種類の番号があります。私が見る印を指してもらえますか。",
+        "recommendedAnswerJa": "一人分の券を受け取りました。ほかに紙が残っていないかも確認したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "二種類ある床の印のうち自分の乗車位置を示してほしいと頼む。日本語で伝えてください。",
+        "hint": "一人分の券を受領し受取口のほかの紙も確認したいと頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "二種類ある床の印のうち自分の乗車位置を示してほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "一人分の券を受領し受取口のほかの紙も確認したいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こちらの列車名が付いた印です。到着した車両の表示でもう一度確認しましょう。",
+        "textJa": "受取口と画面の案内を一緒に見ましょう。決済について不明な点があれば、担当へ照会できます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "sendai_01_5",
         "requiredSemanticComponents": {
-          "goal": "指定された印で待ち車両表示を照合して乗ると伝える"
+          "goal": "受領券と表示を照合して再購入せず原操作の結果を確認すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "この印で待ち、車両の列車名と六号車の表示を確かめてから乗ります。",
+        "recommendedAnswerJa": "券と残る表示を確認し、重複した購入はせず、この一回の結果を確かめます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "指定された印で待ち車両表示を照合して乗ると伝える。日本語で伝えてください。",
+        "hint": "受領券と表示を照合して再購入せず原操作の結果を確認すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "指定された印で待ち車両表示を照合して乗ると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "受領券と表示を照合して再購入せず原操作の結果を確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。確認できましたね。お気をつけて、いってらっしゃいませ。",
+        "textJa": "承知しました。ご不明な点は担当へお尋ねください。お気をつけて。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -247,7 +247,7 @@
     "locale": "ja",
     "contentScope": "simulated_learning_scenario",
     "editorialSource": "scripts/dialogue-authoring/prf-004-sendai.json",
-    "premise": "仙台の架空の学習用場面。予約の号車を連結列車の前後と取り違えかけた客が、列車名と行先を照合し、自分の車両の乗車位置を確認する。 実在施設の設備・料金・運用を認定しない。",
+    "premise": "仙台の架空の学習用場面。券売機で購入操作後に紙が出ず不安になった客が、印刷中の表示を係員と確認し、もう一度購入せず発券結果を待つ。出た券を確認して購入が重複していないか担当へ尋ねる。実在の機器や決済結果を認定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",

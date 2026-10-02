@@ -1,15 +1,13 @@
 # PRF-004 Japanese editorial recovery
 
-Status: **FAIL CONTENT QA / rewrite in progress**. No CONTENT PASS, translation or native-speaker approval.
+Status: **CONTENT PASS — AI Japanese editorial review** for the exact runtime hashes in `PRF-004_SEMANTIC_REVIEW.json`. Native-speaker approval and real-location/policy verification are not claimed. Translation remains deferred.
 
-Input remote: `206da6362d61bda9136aa0d63dad4cb4b46b1794`. PRF-003 is complete at `edc11dc7733d19af5b07f42f5da0f7257ab9fbb7`; do not restart Iwate or Nemuro.
+All 133/133 Miyagi exchanges have individually authored scripts in the 15 `scripts/dialogue-authoring/prf-004-*.json` sources: 1,463 alternating Japanese turns and 665 individual speaking tasks. The last 56 are integrated, and 18 substantive plot collisions/adaptations were replaced during whole-prefecture comparison, including the earlier Sendai divided-train plot. Task/answer disagreements and incomplete final NPC handoffs were corrected. Fictional-scene provenance stays in metadata rather than NPC speech.
 
-77/133 Miyagi exchanges have individually authored replacement scripts: Sendai 21, Ishinomaki 8, Shiogama 8, Kesennuma 8, Matsushima 8, Shiroishi 8, Natori 8, Kakuda 8. 847 Japanese turns and 385 distinct player instructions. Runtime and canonical metadata are updated together; all IDs, ordering, turn links and location assignments remain unchanged. No existing translations were present in the replaced subset; no translations added. All source files are under `scripts/dialogue-authoring/prf-004-*.json`.
+The separate editorial decision contains city-specific causal assessments and every scenarios initial request, final player action, closing NPC and five speaking goals. Cross-prefecture evidence includes 517 reference scenarios, 68,761 screened pairs, reference/target hashes, replaced cases and retained-case reasons. Automated screening alone does not grant CONTENT PASS.
 
-Current automated prefecture screening: 133/133 coverage, zero structural errors, zero exact whole-dialogue duplicate groups; 22 place-normalized duplicate groups and 42 near-duplicate candidates remain among the unrevised city scripts. JLPT UI lock PASS 10/10. Screening is not semantic approval.
+Validation: canonical/source/runtime parity, 133/133 coverage, zero structural errors and zero exact, place-normalized, near-dialogue, task, answer, title or recipe duplicate groups. Exact task and answer collision checks against PRF-001 through PRF-004 pass. Turn IDs, scenario IDs, speaker/order/next links and location assignments are preserved; unrelated canonical records are unchanged. No existing translations were present in edited runtimes; no translations added. JLPT approved UI lock PASS 10/10.
 
-Next: Tagajo, Iwanuma, Tome, Kurihara, Higashimatsushima, Osaki and Tomiya, eight exchanges each (56 remaining). Read actual runtime location and content first, author complete independent causal exchanges with five individually specified speaking tasks, and preserve canonical/runtime parity. Review all 133 Miyagi exchanges against hash-bound PRF-001, PRF-002 and PRF-003 corpora before any final decision. Japanese remains first; translation deferred.
+Incoming remote base: `e091d93a528b4f4fc636658a941edd611191a033`, including the separate paired-dialogue UI change. PRF-001, PRF-002 and PRF-003 remain untouched. Durability requires connector fast-forward, remote fetch and WORK PERSISTENCE PASS before starting PRF-005 Akita. Do not redo Miyagi after that gate succeeds.
 
-Durability requires remote fetch and WORK PERSISTENCE PASS. Direct CLI push in this environment lacks credentials; the authorized GitHub connector can create a tree/commit and fast-forward the required branch. Preserve the earlier local baseline commit in its existing workspace.
-
-Continuation base: `c9904a0d3c6a61d71128fd1c4c44f44976dc1f42`; preserves the remote/Mac Royal HUD merge. The 24 new exchanges were checked for unchanged IDs, chain references, unrelated canonical records, absence of prior translations, and exact player answer/task collisions against PRF-001 through PRF-004. No whole-prefecture semantic decision is claimed.
+Publication base also preserves remote compact-foreground dialogue UI update `189b58665a79db7c046fc9186aeaf7528abe5a48`; no dialogue data conflicts.
