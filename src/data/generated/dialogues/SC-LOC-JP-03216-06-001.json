@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。電話番号変更で何を確認したいですか。",
+        "textJa": "いらっしゃいませ。ご用件を教えてください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "takizawa_6_task_1",
+        "communicativeIntent": "SC-LOC-JP-03216-06-001_causal_1",
         "requiredSemanticComponents": {
-          "goal": "新番号入力直後から認証SMSも新番号へ届くか確認する"
+          "goal": "電話番号変更後も認証先が旧番号で新番号にコードが届くか尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "新しい番号を入力したので、認証SMSもすぐ新番号へ届くと思ってよいですか。",
+        "recommendedAnswerJa": "電話番号を変えましたが、認証の表示は古い番号です。もう新番号へコードが届きますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "新番号入力直後から認証SMSも新番号へ届くか確認する。日本語で伝えてください。",
+        "hint": "電話番号変更後も認証先が旧番号で新番号にコードが届くか尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "新番号入力直後から認証SMSも新番号へ届くか確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "電話番号変更後も認証先が旧番号で新番号にコードが届くか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "変更が確定する前後で認証先が異なる場合があります。この学習用画面の案内を確認しましょう。",
+        "textJa": "変更完了の画面や控えはありますか。今の表示も見せてください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "takizawa_6_task_2",
+        "communicativeIntent": "SC-LOC-JP-03216-06-001_causal_2",
         "requiredSemanticComponents": {
-          "goal": "入力だけで切替完了ではないと理解する"
+          "goal": "変更入力だけで完了未確認だが旧回線を翌日解約予定と説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "入力しただけで新番号へ切り替わったと思っていました。",
+        "recommendedAnswerJa": "変更の入力はしました。完了は確認していませんが、旧番号は明日解約する予定です。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "入力だけで切替完了ではないと理解する。日本語で伝えてください。",
+        "hint": "変更入力だけで完了未確認だが旧回線を翌日解約予定と説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "入力だけで切替完了ではないと理解する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "変更入力だけで完了未確認だが旧回線を翌日解約予定と説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "現在は変更確認中という想定です。画面に表示された送信先末尾を確認してください。",
+        "textJa": "入力だけで反映済みとは確認できません。認証先の状態を担当へ照会しましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "takizawa_6_task_3",
+        "communicativeIntent": "SC-LOC-JP-03216-06-001_causal_3",
         "requiredSemanticComponents": {
-          "goal": "旧番号も使えるため画面末尾とSMS送信先を確認すると伝える"
+          "goal": "解約前の照会を希望し旧番号の携帯もまだ使えると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "古い番号もまだ使えるので、表示された末尾と実際に届く先を確認します。",
+        "recommendedAnswerJa": "解約前に確認したいです。旧番号で受ける携帯もまだ持っています。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "旧番号も使えるため画面末尾とSMS送信先を確認すると伝える。日本語で伝えてください。",
+        "hint": "解約前の照会を希望し旧番号の携帯もまだ使えると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "旧番号も使えるため画面末尾とSMS送信先を確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "解約前の照会を希望し旧番号の携帯もまだ使えると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "変更完了後に登録番号が新番号になったことも公式画面で確認してください。",
+        "textJa": "両方使える状態なのですね。コードそのものは職員へ伝えず、ご自身で扱ってください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "takizawa_6_task_4",
+        "communicativeIntent": "SC-LOC-JP-03216-06-001_causal_4",
         "requiredSemanticComponents": {
-          "goal": "SMS未着で重複変更せず状態を確認すると伝える"
+          "goal": "認証コードは共有せず両番号の表示だけ示すと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "SMSが来ないからと何度も変更申請を送らず、状態を確認します。",
+        "recommendedAnswerJa": "コードは見せません。旧番号と新番号の表示だけを示します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "SMS未着で重複変更せず状態を確認すると伝える。日本語で伝えてください。",
+        "hint": "認証コードは共有せず両番号の表示だけ示すと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "SMS未着で重複変更せず状態を確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "認証コードは共有せず両番号の表示だけ示すと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "不審なSMSには認証情報を入力しないでください。",
+        "textJa": "ご本人を確認して変更受付と認証先を調べます。状態が分かるまでは繰り返し変更を送らないでください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "takizawa_6_task_5",
+        "communicativeIntent": "SC-LOC-JP-03216-06-001_causal_5",
         "requiredSemanticComponents": {
-          "goal": "入力・認証先・変更完了を分け公式画面で反映確認するとまとめる"
+          "goal": "再申請をせず担当照会後に旧回線の解約予定を見直すと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "入力、認証先、変更完了を分け、公式画面で新番号への反映を確認します。",
+        "recommendedAnswerJa": "変更を送り直さず、解約予定も担当へ伝えます。認証先を確認してから旧回線の予定を見直します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "入力・認証先・変更完了を分け公式画面で反映確認するとまとめる。日本語で伝えてください。",
+        "hint": "再申請をせず担当照会後に旧回線の解約予定を見直すと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "入力・認証先・変更完了を分け公式画面で反映確認するとまとめる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "再申請をせず担当照会後に旧回線の解約予定を見直すと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。画面の案内に従ってください。",
+        "textJa": "担当へ引き継ぎます。端末はお手元にお持ちください。少々お待ちください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -249,9 +249,9 @@
     "contentScope": "simulated_learning_scenario",
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
-    "editorialSource": "scripts/dialogue-authoring/prf-003-runtime-reconciled.json",
-    "premise": "滝沢の架空銀行場面。登録電話番号変更でSMS認証先も即時新番号になると思い、変更前後の認証先を公式画面で確認する。",
-    "contentReview": "runtime/source parity reconciled; generic causal/response patterns still require semantic rewrite/review",
+    "editorialSource": "scripts/dialogue-authoring/prf-003-final-causal-rewrites.json",
+    "premise": "滝沢の架空銀行。電話番号変更の入力を済ませた客が、認証画面に旧番号が表示されるため変更完了とみなさず旧回線解約前に窓口で確認する。 架空の学習場面であり実施設の運用・料金・受付条件を認定しない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
 }

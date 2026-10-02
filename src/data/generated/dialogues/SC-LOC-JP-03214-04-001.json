@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。どのようなご相談ですか。",
+        "textJa": "こんにちは。どのようなご相談でしょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "hachimantai_4_task_1",
+        "communicativeIntent": "SC-LOC-JP-03214-04-001_causal_1",
         "requiredSemanticComponents": {
-          "goal": "心当たりのない配送SMSをリンク開封前に相談する"
+          "goal": "注文中の荷物はあるがSMSと注文履歴の番号が違うと相談する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "配送会社を名乗るSMSが来ましたが、今日届く荷物に心当たりがありません。リンクを開く前に相談したいです。",
+        "recommendedAnswerJa": "配送のSMSが来ました。注文した荷物はありますが、この番号は注文履歴と違います。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "心当たりのない配送SMSをリンク開封前に相談する。日本語で伝えてください。",
+        "hint": "注文中の荷物はあるがSMSと注文履歴の番号が違うと相談する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "心当たりのない配送SMSをリンク開封前に相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "注文中の荷物はあるがSMSと注文履歴の番号が違うと相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "リンクは開かず、まずご自身の注文履歴を確認しましたか。",
+        "textJa": "SMSのリンクを開いたり、再配達の情報を入力したりしましたか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "hachimantai_4_task_2",
+        "communicativeIntent": "SC-LOC-JP-03214-04-001_causal_2",
         "requiredSemanticComponents": {
-          "goal": "注文履歴に配達予定がなく個人情報未入力と伝える"
+          "goal": "リンク未操作だが注文があるため本物と思って入力しかけたと説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。確認しましたが、今日の配達予定はありません。個人情報も入力していません。",
+        "recommendedAnswerJa": "開いていません。注文中だから本物だろうと思って、今から入力するところでした。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "注文履歴に配達予定がなく個人情報未入力と伝える。日本語で伝えてください。",
+        "hint": "リンク未操作だが注文があるため本物と思って入力しかけたと説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "注文履歴に配達予定がなく個人情報未入力と伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "リンク未操作だが注文があるため本物と思って入力しかけたと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "分かりました。メッセージは削除せず、送信元表示と受信時刻を確認できる状態にしてください。",
+        "textJa": "注文があることだけで同じ荷物とは確認できません。履歴の番号を示せますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "hachimantai_4_task_3",
+        "communicativeIntent": "SC-LOC-JP-03214-04-001_causal_3",
         "requiredSemanticComponents": {
-          "goal": "受信情報を保存し公式窓口を使うと伝える"
+          "goal": "履歴を提示しSMSと注文の番号末尾の違いを伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "スクリーンショットも残します。配送会社へ確認するならSMSの番号ではなく公式窓口を使います。",
+        "recommendedAnswerJa": "履歴を見せます。SMSの末尾は八七、注文の方は三二です。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "受信情報を保存し公式窓口を使うと伝える。日本語で伝えてください。",
+        "hint": "履歴を提示しSMSと注文の番号末尾の違いを伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "受信情報を保存し公式窓口を使うと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "履歴を提示しSMSと注文の番号末尾の違いを伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。公式な連絡先を別に確認してください。",
+        "textJa": "二つの番号が違う点を記録します。確認は注文先の正式な窓口から行ってください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "hachimantai_4_task_4",
+        "communicativeIntent": "SC-LOC-JP-03214-04-001_causal_4",
         "requiredSemanticComponents": {
-          "goal": "家族注文でもSMSリンクは使わず確認すると伝える"
+          "goal": "注文履歴から正式問い合わせを行いSMS番号の伝え方を尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "もし家族が注文していたと後で分かっても、このSMSのリンクは使わず確認します。",
+        "recommendedAnswerJa": "注文履歴の問い合わせ機能を使います。SMSの番号は転記しない方がいいですか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "家族注文でもSMSリンクは使わず確認すると伝える。日本語で伝えてください。",
+        "hint": "注文履歴から正式問い合わせを行いSMS番号の伝え方を尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "家族注文でもSMSリンクは使わず確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "注文履歴から正式問い合わせを行いSMS番号の伝え方を尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "それがよいでしょう。不審な入力をしてしまった場合はその事実も伝えてください。",
+        "textJa": "問い合わせには両方を区別して示すと伝わります。リンク操作や支払いは確認前に進めないでください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "hachimantai_4_task_5",
+        "communicativeIntent": "SC-LOC-JP-03214-04-001_causal_5",
         "requiredSemanticComponents": {
-          "goal": "注文履歴・リンク不使用・受信保存・公式確認をまとめる"
+          "goal": "両番号を区別して照会しSMS画面と受信時刻を保存すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "注文履歴を確認し、リンクを開かず受信情報を保存して公式窓口から確認します。",
+        "recommendedAnswerJa": "注文の番号とSMSの番号を分けて問い合わせます。SMS画面と受信時刻も保存します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "注文履歴・リンク不使用・受信保存・公式確認をまとめる。日本語で伝えてください。",
+        "hint": "両番号を区別して照会しSMS画面と受信時刻を保存すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "注文履歴・リンク不使用・受信保存・公式確認をまとめる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "両番号を区別して照会しSMS画面と受信時刻を保存すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。安全な方法で確認してください。",
+        "textJa": "はい。返答があっても疑問が残る場合はまたご相談ください。お気をつけて。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -249,9 +249,9 @@
     "contentScope": "simulated_learning_scenario",
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
-    "editorialSource": "scripts/dialogue-authoring/prf-003-runtime-reconciled.json",
-    "premise": "八幡平の架空交番相談。配送会社を名乗るSMSが届いた利用者が、注文履歴に該当する荷物がないことを確認し、リンクを開かず受信情報を残して相談する。",
-    "contentReview": "runtime/source parity reconciled; generic causal/response patterns still require semantic rewrite/review",
+    "editorialSource": "scripts/dialogue-authoring/prf-003-final-causal-rewrites.json",
+    "premise": "八幡平の架空交番。荷物を注文中の人が届いた配送SMSを注文と同じものと思い込みかけ、番号不一致を示し、注文履歴の配送窓口から確認する。 架空の学習場面であり実施設の運用・料金・受付条件を認定しない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
 }

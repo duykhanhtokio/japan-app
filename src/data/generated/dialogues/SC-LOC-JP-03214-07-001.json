@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。セルフレジの操作でお手伝いしましょうか。",
+        "textJa": "こんにちは。会計の操作でお困りですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "hachimantai_7_task_1",
+        "communicativeIntent": "SC-LOC-JP-03214-07-001_causal_1",
         "requiredSemanticComponents": {
-          "goal": "初めてのセルフレジで現金支払いの流れを尋ねる"
+          "goal": "未投入のセルフレジでお釣り欄に金額を入力するのか尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい、初めて使います。現金で払いたいので、支払いまでの流れを教えてください。",
+        "recommendedAnswerJa": "画面にお釣りとありますが、まだお金を入れていません。そこへ金額を入力するのですか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "初めてのセルフレジで現金支払いの流れを尋ねる。日本語で伝えてください。",
+        "hint": "未投入のセルフレジでお釣り欄に金額を入力するのか尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "初めてのセルフレジで現金支払いの流れを尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "未投入のセルフレジでお釣り欄に金額を入力するのか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "商品を読み取ったあと、商品数と合計額を確認して支払方法を選びます。",
+        "textJa": "お釣りは支払後の表示欄です。今の合計は千二百円で、投入額はゼロです。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "hachimantai_7_task_2",
+        "communicativeIntent": "SC-LOC-JP-03214-07-001_causal_2",
         "requiredSemanticComponents": {
-          "goal": "商品四点が全て読み取れているか確認すると伝える"
+          "goal": "所持硬貨では表示された千二百円に足りないと説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "商品は四点です。全部読み取れているか画面で確認します。",
+        "recommendedAnswerJa": "そうでしたか。財布には硬貨が少ししかなく、千二百円には足りません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "商品四点が全て読み取れているか確認すると伝える。日本語で伝えてください。",
+        "hint": "所持硬貨では表示された千二百円に足りないと説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "商品四点が全て読み取れているか確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "所持硬貨では表示された千二百円に足りないと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。現金を入れる前に合計額も見てください。",
+        "textJa": "お金はまだ入れていないので、ほかの支払い方を確認しましょう。カードをお持ちですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "hachimantai_7_task_3",
+        "communicativeIntent": "SC-LOC-JP-03214-07-001_causal_3",
         "requiredSemanticComponents": {
-          "goal": "千円投入後に足りていれば追加投入不要か確認する"
+          "goal": "所持カードへ現金画面から支払方法を変更できるか尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "千円を入れます。足りている場合は追加で入れず、そのまま精算を進めればよいですか。",
+        "recommendedAnswerJa": "カードはあります。この現金の画面からカードへ変えられますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "千円投入後に足りていれば追加投入不要か確認する。日本語で伝えてください。",
+        "hint": "所持カードへ現金画面から支払方法を変更できるか尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "千円投入後に足りていれば追加投入不要か確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "所持カードへ現金画面から支払方法を変更できるか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "画面の投入額と不足額またはお釣り表示を確認してください。",
+        "textJa": "この端末は現金専用です。会計をこちらで戻し、カード対応のレジへ案内します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "hachimantai_7_task_4",
+        "communicativeIntent": "SC-LOC-JP-03214-07-001_causal_4",
         "requiredSemanticComponents": {
-          "goal": "完了後にお釣りとレシートを取ると伝える"
+          "goal": "別レジへ案内を頼み商品の再登録が必要か確認する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "分かりました。支払い完了後にお釣りとレシートを忘れず取ります。",
+        "recommendedAnswerJa": "お願いします。商品をもう一度全部読む必要がありますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "完了後にお釣りとレシートを取ると伝える。日本語で伝えてください。",
+        "hint": "別レジへ案内を頼み商品の再登録が必要か確認する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "完了後にお釣りとレシートを取ると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "別レジへ案内を頼み商品の再登録が必要か確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "困った場合は操作を止めて係員を呼んでください。",
+        "textJa": "こちらでは記録を移せないので、別のレジで登録し直します。この会計は取消しを確認します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "hachimantai_7_task_5",
+        "communicativeIntent": "SC-LOC-JP-03214-07-001_causal_5",
         "requiredSemanticComponents": {
-          "goal": "商品数・合計額・投入額・釣銭を確認して会計するとまとめる"
+          "goal": "現会計の取消し確認後に商品を持ってカード対応レジへ移ると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "四点と合計額を確認し、現金投入後は画面のお釣り表示を見て会計します。",
+        "recommendedAnswerJa": "未払いの会計を取り消してから、商品を持ってカードのレジへ移ります。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "商品数・合計額・投入額・釣銭を確認して会計するとまとめる。日本語で伝えてください。",
+        "hint": "現会計の取消し確認後に商品を持ってカード対応レジへ移ると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "商品数・合計額・投入額・釣銭を確認して会計するとまとめる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "現会計の取消し確認後に商品を持ってカード対応レジへ移ると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。ゆっくり操作してください。",
+        "textJa": "取消しを確認しました。こちらのレジへどうぞ。ご協力ありがとうございます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -249,9 +249,9 @@
     "contentScope": "simulated_learning_scenario",
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
-    "editorialSource": "scripts/dialogue-authoring/prf-003-runtime-reconciled.json",
-    "premise": "八幡平の架空スーパー。セルフレジを初めて使う利用者が、商品数、合計額、投入額、お釣りを画面で確認しながら現金で会計する。",
-    "contentReview": "runtime/source parity reconciled; generic causal/response patterns still require semantic rewrite/review",
+    "editorialSource": "scripts/dialogue-authoring/prf-003-final-causal-rewrites.json",
+    "premise": "八幡平の架空スーパー。セルフレジの現金会計で硬貨しかない客が釣銭表示を投入額と誤解し、未投入の状態で会計を戻してカード対応レジへ移る。 架空の学習場面であり実施設の運用・料金・受付条件を認定しない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
 }

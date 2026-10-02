@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。振込みについて確認がありますか。",
+        "textJa": "いらっしゃいませ。何かお困りですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "hachimantai_6_task_1",
+        "communicativeIntent": "SC-LOC-JP-03214-06-001_distinct_1",
         "requiredSemanticComponents": {
-          "goal": "会社請求書の振込確定前に確認する項目を尋ねる"
+          "goal": "記帳預り札をなくし呼出番号が本人のものか不明と相談する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "会社から届いた請求書の振込みをしたいです。入力を確定する前に確認する項目を教えてください。",
+        "recommendedAnswerJa": "記帳で通帳を預けましたが、預り札がありません。今呼ばれた番号が自分か分かりません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "会社請求書の振込確定前に確認する項目を尋ねる。日本語で伝えてください。",
+        "hint": "記帳預り札をなくし呼出番号が本人のものか不明と相談する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "会社請求書の振込確定前に確認する項目を尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "記帳預り札をなくし呼出番号が本人のものか不明と相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "受取人名、口座情報、金額、依頼人情報を請求書と照合してください。",
+        "textJa": "番号だけで受け取らず、預けた窓口と時刻を教えてください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "hachimantai_6_task_2",
+        "communicativeIntent": "SC-LOC-JP-03214-06-001_distinct_2",
         "requiredSemanticComponents": {
-          "goal": "受取人は会社で依頼人は自分、請求番号もあると伝える"
+          "goal": "預けた窓口と時刻を示し番号記憶は曖昧と説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "受取人は会社名で、依頼人は私の名前を入れます。請求番号もあります。",
+        "recommendedAnswerJa": "十五分前に一番窓口で預けました。番号は七が付いていた気がするだけです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "受取人は会社で依頼人は自分、請求番号もあると伝える。日本語で伝えてください。",
+        "hint": "預けた窓口と時刻を示し番号記憶は曖昧と説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "受取人は会社で依頼人は自分、請求番号もあると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "預けた窓口と時刻を示し番号記憶は曖昧と説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "請求番号をどこへ記載するかは先方の案内を確認してください。口座番号とは別に扱います。",
+        "textJa": "曖昧な番号を本人のものと決めず、担当が記録を確認します。本人確認の資料はありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "hachimantai_6_task_3",
+        "communicativeIntent": "SC-LOC-JP-03214-06-001_distinct_3",
         "requiredSemanticComponents": {
-          "goal": "口座と会社名を照合し請求番号の指定欄を確認すると伝える"
+          "goal": "本人確認資料を持参しているが呼出通帳を取らず照会を待つと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "分かりました。まず口座と会社名を照合し、請求番号は指定された欄があるか確認します。",
+        "recommendedAnswerJa": "あります。呼ばれた通帳には触らず、こちらで確認を待ちます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "口座と会社名を照合し請求番号の指定欄を確認すると伝える。日本語で伝えてください。",
+        "hint": "本人確認資料を持参しているが呼出通帳を取らず照会を待つと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "口座と会社名を照合し請求番号の指定欄を確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "本人確認資料を持参しているが呼出通帳を取らず照会を待つと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。金額も桁を含めて確定前に見直してください。",
+        "textJa": "ご本人を確認して預り状況を調べます。通帳の表紙の色だけでは判定しません。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "hachimantai_6_task_4",
+        "communicativeIntent": "SC-LOC-JP-03214-06-001_distinct_4",
         "requiredSemanticComponents": {
-          "goal": "不一致があれば送金せず請求書を再確認すると伝える"
+          "goal": "表紙色だけでは区別できず氏名の大声読上げを避けてほしいと頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "違う表示が一つでもあれば送金せず、請求書を確認し直します。",
+        "recommendedAnswerJa": "自分の通帳は青ですが、青い物はほかにもあります。名前を大声で読み上げないでください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "不一致があれば送金せず請求書を再確認すると伝える。日本語で伝えてください。",
+        "hint": "表紙色だけでは区別できず氏名の大声読上げを避けてほしいと頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "不一致があれば送金せず請求書を再確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "表紙色だけでは区別できず氏名の大声読上げを避けてほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "不明点は振込先または担当窓口へ確認してください。",
+        "textJa": "個別に確認します。札が見つかった場合も、記録と照合してから返却をご案内します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "hachimantai_6_task_5",
+        "communicativeIntent": "SC-LOC-JP-03214-06-001_distinct_5",
         "requiredSemanticComponents": {
-          "goal": "受取人・口座・金額・依頼人・請求番号を確認するとまとめる"
+          "goal": "本人資料で預り記録を照会し札番号を推測しないと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "受取人、口座、金額、依頼人、請求番号の扱いを確認してから確定します。",
+        "recommendedAnswerJa": "資料を担当へ示します。札の番号を推測せず、自分の預り記録の確認をお願いします。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "受取人・口座・金額・依頼人・請求番号を確認するとまとめる。日本語で伝えてください。",
+        "hint": "本人資料で預り記録を照会し札番号を推測しないと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "受取人・口座・金額・依頼人・請求番号を確認するとまとめる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "本人資料で預り記録を照会し札番号を推測しないと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。確認画面をよくご覧ください。",
+        "textJa": "担当へ引き継ぎます。通帳の返却までこちらでお待ちください。ありがとうございます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -249,9 +249,9 @@
     "contentScope": "simulated_learning_scenario",
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
-    "editorialSource": "scripts/dialogue-authoring/prf-003-runtime-reconciled.json",
-    "premise": "八幡平の架空銀行。請求書に基づいて会社へ振り込む利用者が、受取人名、依頼人名、口座、金額を確認画面で照合してから送金する。",
-    "contentReview": "runtime/source parity reconciled; generic causal/response patterns still require semantic rewrite/review",
+    "editorialSource": "scripts/dialogue-authoring/prf-003-final-causal-rewrites.json",
+    "premise": "八幡平の架空銀行。記帳のため通帳を預けた客が預り札を見つけられず、似た呼出しに反応して他人の通帳を受け取らず、本人確認で窓口に照会する。 架空の学習場面であり実施設の運用・料金・受付条件を認定しない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
 }

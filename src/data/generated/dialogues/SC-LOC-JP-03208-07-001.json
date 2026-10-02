@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。セルフ会計についてお困りですか。",
+        "textJa": "こんにちは。会計でお手伝いが必要ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "tono_7_task_1",
+        "communicativeIntent": "SC-LOC-JP-03208-07-001_causal_1",
         "requiredSemanticComponents": {
-          "goal": "次の内容を自分の言葉で日本語で伝える：レジ袋を一枚お願いして受け取りました。セルフ会計の画面でも袋を選ぶ必要がありますか。"
+          "goal": "支払前の画面で袋が二枚だが実物は一枚だと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "レジ袋を一枚お願いして受け取りました。セルフ会計の画面でも袋を選ぶ必要がありますか。",
+        "recommendedAnswerJa": "袋は一枚なのに、画面には二枚あります。まだ支払っていません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "次の内容を自分の言葉で日本語で伝える：レジ袋を一枚お願いして受け取りました。セルフ会計の画面でも袋を選ぶ必要がありますか。。日本語で伝えてください。",
+        "hint": "支払前の画面で袋が二枚だが実物は一枚だと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "次の内容を自分の言葉で日本語で伝える：レジ袋を一枚お願いして受け取りました。セルフ会計の画面でも袋を選ぶ必要がありますか。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "支払前の画面で袋が二枚だが実物は一枚だと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "詳しい状況を確認します。",
+        "textJa": "最初に画面で袋を選びましたか。その後で店員から受け取りましたか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "tono_7_task_2",
+        "communicativeIntent": "SC-LOC-JP-03208-07-001_causal_2",
         "requiredSemanticComponents": {
-          "goal": "次の内容を自分の言葉で日本語で伝える：今の画面に袋一枚が入っているか確認したいです。"
+          "goal": "画面で一枚選んだ後店員にも一枚を頼んだ経緯を説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "今の画面に袋一枚が入っているか確認したいです。",
+        "recommendedAnswerJa": "はい。画面で一枚を選び、店員さんにも一枚くださいと言いました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "次の内容を自分の言葉で日本語で伝える：今の画面に袋一枚が入っているか確認したいです。。日本語で伝えてください。",
+        "hint": "画面で一枚選んだ後店員にも一枚を頼んだ経緯を説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "次の内容を自分の言葉で日本語で伝える：今の画面に袋一枚が入っているか確認したいです。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "画面で一枚選んだ後店員にも一枚を頼んだ経緯を説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ありがとうございます。次にどうしたいですか。",
+        "textJa": "追加分が重なっていますね。一枚を取り消します。商品にも気になる行はありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "tono_7_task_3",
+        "communicativeIntent": "SC-LOC-JP-03208-07-001_causal_3",
         "requiredSemanticComponents": {
-          "goal": "次の内容を自分の言葉で日本語で伝える：商品は五点です。袋と商品数を支払い前に見直します。"
+          "goal": "商品明細は正しいため袋の重複だけを取り消してほしいと頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "商品は五点です。袋と商品数を支払い前に見直します。",
+        "recommendedAnswerJa": "袋以外は合っています。商品は取り消さず、袋だけ直してください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "次の内容を自分の言葉で日本語で伝える：商品は五点です。袋と商品数を支払い前に見直します。。日本語で伝えてください。",
+        "hint": "商品明細は正しいため袋の重複だけを取り消してほしいと頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "次の内容を自分の言葉で日本語で伝える：商品は五点です。袋と商品数を支払い前に見直します。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "商品明細は正しいため袋の重複だけを取り消してほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "分かりました。その点も確認しましょう。",
+        "textJa": "袋を一枚にしました。合計額が変わったので、表示をもう一度ご覧ください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "tono_7_task_4",
+        "communicativeIntent": "SC-LOC-JP-03208-07-001_causal_4",
         "requiredSemanticComponents": {
-          "goal": "次の内容を自分の言葉で日本語で伝える：袋がすでに一枚計上されていれば追加しません。"
+          "goal": "訂正後一枚になったことを確認し袋を再度読み取らないか尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "袋がすでに一枚計上されていれば追加しません。",
+        "recommendedAnswerJa": "一枚になりました。袋を受け取っても、もう一度商品として読ませる必要はないですね。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "次の内容を自分の言葉で日本語で伝える：袋がすでに一枚計上されていれば追加しません。。日本語で伝えてください。",
+        "hint": "訂正後一枚になったことを確認し袋を再度読み取らないか尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "次の内容を自分の言葉で日本語で伝える：袋がすでに一枚計上されていれば追加しません。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "訂正後一枚になったことを確認し袋を再度読み取らないか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "最後に内容を見直しましょう。",
+        "textJa": "はい。この会計では袋を登録済みです。そのまま支払いへ進めます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "tono_7_task_5",
+        "communicativeIntent": "SC-LOC-JP-03208-07-001_causal_5",
         "requiredSemanticComponents": {
-          "goal": "次の内容を自分の言葉で日本語で伝える：商品五点と袋一枚、合計額を確認して支払います。"
+          "goal": "袋を追加登録せず訂正後の合計額で払うと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "商品五点と袋一枚、合計額を確認して支払います。",
+        "recommendedAnswerJa": "袋を追加で読ませず、この合計額で払います。訂正をありがとうございます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "次の内容を自分の言葉で日本語で伝える：商品五点と袋一枚、合計額を確認して支払います。。日本語で伝えてください。",
+        "hint": "袋を追加登録せず訂正後の合計額で払うと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "次の内容を自分の言葉で日本語で伝える：商品五点と袋一枚、合計額を確認して支払います。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "袋を追加登録せず訂正後の合計額で払うと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。",
+        "textJa": "こちらこそありがとうございます。レシートを忘れずお取りください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -249,9 +249,9 @@
     "contentScope": "simulated_learning_scenario",
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
-    "editorialSource": "scripts/dialogue-authoring/prf-003-runtime-reconciled.json",
-    "premise": "遠野の架空スーパー。セルフ会計でレジ袋を店員から受け取った客が、画面上の袋数と商品数を確認し、二重購入を避けて支払う。",
-    "contentReview": "runtime/source parity reconciled; generic causal/response patterns still require semantic rewrite/review",
+    "editorialSource": "scripts/dialogue-authoring/prf-003-final-causal-rewrites.json",
+    "premise": "遠野の架空スーパー。袋を画面で選んだ後に店員が追加登録したため二重になった客が、決済前に明細の一行だけを訂正してもらう。 架空の学習場面であり実施設の運用・料金・受付条件を認定しない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
 }
