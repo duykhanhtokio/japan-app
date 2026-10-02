@@ -1,3 +1,4 @@
+import { Image as CachedImage } from 'expo-image';
 import {
     Image,
     LayoutChangeEvent,
@@ -320,9 +321,8 @@ export default function FarmMapWorld({
                 styles.viewport
             }
         >
-            <Image
-                source={isTabletLandscape ? TABLET_ART : isLandscape ? LANDSCAPE_ART : PORTRAIT_ART}
-                resizeMode="cover"
+            <CachedImage source={isTabletLandscape ? TABLET_ART : isLandscape ? LANDSCAPE_ART : PORTRAIT_ART}
+                contentFit="cover" transition={0} cachePolicy="memory-disk"
                 style={[StyleSheet.absoluteFill,{width:'100%',height:'100%'}]}
             />
             {viewport.width >
@@ -461,7 +461,7 @@ const styles =
                 'hidden',
 
             backgroundColor:
-                '#173C24',
+                '#142847',
         },
 
         hotspot: {

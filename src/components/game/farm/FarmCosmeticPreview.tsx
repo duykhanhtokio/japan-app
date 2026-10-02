@@ -1,3 +1,5 @@
+import { RoyalContentPanel, RoyalExplanationPanel } from '@/components/ui/RoyalPanels';
+import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
 import {
     Image,
     StyleSheet,
@@ -165,7 +167,7 @@ export default function FarmCosmeticPreview({
             : centerpieceAsset;
 
     return (
-        <View
+        <RoyalContentPanel
             style={
                 styles.container
             }
@@ -178,7 +180,7 @@ export default function FarmCosmeticPreview({
                 コーディネートプレビュー
             </Text>
 
-            <View
+            <RoyalExplanationPanel
                 style={
                     styles.stage
                 }
@@ -285,7 +287,7 @@ export default function FarmCosmeticPreview({
                             : '🏠'}
                     </Text>
                 )}
-            </View>
+            </RoyalExplanationPanel>
 
             <Text
                 style={
@@ -294,7 +296,7 @@ export default function FarmCosmeticPreview({
             >
                 装備を変更するとすぐに反映されます
             </Text>
-        </View>
+        </RoyalContentPanel>
     );
 }
 
@@ -310,20 +312,17 @@ const styles =
             padding:
                 9,
 
-            borderRadius:
-                16,
 
-            borderWidth:
-                2,
 
-            borderColor:
-                '#D7B77B',
 
-            backgroundColor:
-                '#F9EDCF',
+
+
+
+
         },
 
         title: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 '#5A3E22',
 
@@ -353,11 +352,9 @@ const styles =
             marginTop:
                 6,
 
-            borderRadius:
-                13,
 
-            backgroundColor:
-                '#A9DEF0',
+
+
         },
 
         animal: {
@@ -415,11 +412,13 @@ const styles =
         },
 
         emptyIcon: {
+            fontFamily: ROYAL_FONT.body,
             fontSize:
                 70,
         },
 
         hint: {
+            fontFamily: ROYAL_FONT.body,
             marginTop:
                 5,
 

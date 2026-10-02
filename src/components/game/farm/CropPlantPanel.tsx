@@ -1,3 +1,6 @@
+import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
+import FarmAreaIcon from './FarmAreaIcon';
+import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import {
     Modal,
     Pressable,
@@ -214,7 +217,7 @@ export default function CropPlantPanel({
                     }
                 />
 
-                <View
+                <RoyalContentPanel
                     style={
                         styles.panel
                     }
@@ -335,7 +338,7 @@ export default function CropPlantPanel({
                                                 !disabled &&
                                                 styles.cropCardPressed,
                                             ]}
-                                    >
+                                    ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
                                         {/*
                                          * ICON
                                          */}
@@ -345,15 +348,7 @@ export default function CropPlantPanel({
                                                 styles.cropIconBox
                                             }
                                         >
-                                            <Text
-                                                style={
-                                                    styles.cropIcon
-                                                }
-                                            >
-                                                {getCropIcon(
-                                                    crop.id
-                                                )}
-                                            </Text>
+                                            <View>{crop.id === "wheat" ? <FarmAreaIcon name="rice" size={42}/> : <Text style={styles.cropIcon}>{getCropIcon(crop.id)}</Text>}</View>
                                         </View>
 
                                         {/*
@@ -537,7 +532,7 @@ export default function CropPlantPanel({
                                 pressed &&
                                 styles.closeButtonPressed,
                             ]}
-                    >
+                    ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
                         <Text
                             style={
                                 styles.closeText
@@ -546,7 +541,7 @@ export default function CropPlantPanel({
                             閉じる
                         </Text>
                     </Pressable>
-                </View>
+                </RoyalContentPanel>
             </View>
         </Modal>
     );
@@ -638,6 +633,7 @@ const styles =
         },
 
         title: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 '#57361D',
 
@@ -649,6 +645,7 @@ const styles =
         },
 
         subtitle: {
+            fontFamily: ROYAL_FONT.body,
             marginTop:
                 3,
 
@@ -683,6 +680,7 @@ const styles =
         },
 
         goldText: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 '#6A4914',
 
@@ -725,25 +723,20 @@ const styles =
             borderRadius:
                 17,
 
-            borderWidth:
-                2,
 
-            borderColor:
-                '#B7CF82',
 
-            backgroundColor:
-                '#F7FCEB',
+
+
+
         },
 
         cropCardDisabled: {
             opacity:
                 0.53,
 
-            borderColor:
-                '#C8C1B7',
 
-            backgroundColor:
-                '#EEEAE2',
+
+
         },
 
         cropCardPressed: {
@@ -774,17 +767,15 @@ const styles =
             borderRadius:
                 15,
 
-            backgroundColor:
-                '#E8F3CB',
 
-            borderWidth:
-                1,
 
-            borderColor:
-                '#B6CB7A',
+
+
+
         },
 
         cropIcon: {
+            fontFamily: ROYAL_FONT.body,
             fontSize:
                 34,
         },
@@ -808,9 +799,8 @@ const styles =
                 6,
         },
 
-        cropName: {
-            color:
-                '#4F371F',
+        cropName: {fontFamily: ROYAL_FONT.body,
+            color:'#142847',
 
             fontSize:
                 15,
@@ -820,6 +810,7 @@ const styles =
         },
 
         levelText: {
+            fontFamily: ROYAL_FONT.body,
             paddingHorizontal:
                 5,
 
@@ -832,8 +823,7 @@ const styles =
             overflow:
                 'hidden',
 
-            color:
-                '#5D7337',
+            color:'#142847',
 
             backgroundColor:
                 '#E5F0CB',
@@ -846,11 +836,11 @@ const styles =
         },
 
         reading: {
+            fontFamily: ROYAL_FONT.body,
             marginTop:
                 1,
 
-            color:
-                '#88725E',
+            color:'#142847',
 
             fontSize:
                 9,
@@ -874,8 +864,8 @@ const styles =
         },
 
         stat: {
-            color:
-                '#695442',
+            fontFamily: ROYAL_FONT.body,
+            color:'#142847',
 
             fontSize:
                 9,
@@ -895,9 +885,8 @@ const styles =
                 'center',
         },
 
-        price: {
-            color:
-                '#815511',
+        price: {fontFamily: ROYAL_FONT.body,
+            color:'#142847',
 
             fontSize:
                 13,
@@ -906,12 +895,11 @@ const styles =
                 '900',
         },
 
-        buyLabel: {
+        buyLabel: {fontFamily: ROYAL_FONT.body,
             marginTop:
                 3,
 
-            color:
-                '#5D7C31',
+            color:'#142847',
 
             fontSize:
                 9,
@@ -921,21 +909,21 @@ const styles =
         },
 
         priceInsufficient: {
-            color:
-                '#B24C42',
+            color:'#142847',
         },
 
         lockIcon: {
+            fontFamily: ROYAL_FONT.body,
             fontSize:
                 19,
         },
 
         lockText: {
+            fontFamily: ROYAL_FONT.body,
             marginTop:
                 2,
 
-            color:
-                '#74685E',
+            color:'#142847',
 
             fontSize:
                 9,
@@ -945,8 +933,8 @@ const styles =
         },
 
         unavailableText: {
-            color:
-                '#8B8177',
+            fontFamily: ROYAL_FONT.body,
+            color:'#142847',
 
             fontSize:
                 9,
@@ -956,8 +944,7 @@ const styles =
         },
 
         disabledText: {
-            color:
-                '#766E66',
+            color:'#142847',
         },
 
         closeButton: {
@@ -980,8 +967,8 @@ const styles =
         },
 
         closeText: {
-            color:
-                '#796552',
+            fontFamily: ROYAL_FONT.body,
+            color:'#142847',
 
             fontSize:
                 13,

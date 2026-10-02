@@ -1,3 +1,4 @@
+import { Image as CachedImage } from 'expo-image';
 import {
     Image,
     LayoutChangeEvent,
@@ -149,11 +150,10 @@ export default function FarmWorld({
                 styles.viewport
             }
         >
-            <Image
-                source={
+            <CachedImage source={
                     isLandscape ? VEGETABLE_LANDSCAPE : VEGETABLE_BACKGROUND
                 }
-                resizeMode="cover"
+                contentFit="cover" transition={0} cachePolicy="memory-disk"
                 style={[StyleSheet.absoluteFill,{width:'100%',height:'100%'}]}
             />
 

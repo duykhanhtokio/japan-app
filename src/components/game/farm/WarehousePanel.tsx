@@ -1,3 +1,6 @@
+import FarmAreaIcon from './FarmAreaIcon';
+import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
+import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import {
     Modal,
     Pressable,
@@ -71,7 +74,7 @@ export default function WarehousePanel({
                     styles.overlay
                 }
             >
-                <View
+                <RoyalContentPanel
                     style={
                         styles.window
                     }
@@ -110,7 +113,7 @@ export default function WarehousePanel({
                             style={
                                 styles.closeButton
                             }
-                        >
+                        ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
                             <Text
                                 style={
                                     styles.closeText
@@ -163,7 +166,7 @@ export default function WarehousePanel({
                     ) : (
                         <ShopPreview />
                     )}
-                </View>
+                </RoyalContentPanel>
             </View>
         </Modal>
     );
@@ -194,7 +197,7 @@ function WarehouseTabButton({
                 active &&
                     styles.activeTab,
             ]}
-        >
+        ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
             <Text
                 style={
                     styles.tabText
@@ -233,7 +236,7 @@ function InventoryView({
             ) : (
                 inventory.map(
                     entry => (
-                        <View
+                        <RoyalContentPanel
                             key={
                                 entry.itemId
                             }
@@ -271,7 +274,7 @@ function InventoryView({
                                     entry.quantity
                                 }
                             </Text>
-                        </View>
+                        </RoyalContentPanel>
                     )
                 )
             )}
@@ -385,7 +388,7 @@ function ShopPreview() {
                         price,
                     ]
                 ) => (
-                    <View
+                    <RoyalContentPanel
                         key={
                             title
                         }
@@ -398,7 +401,7 @@ function ShopPreview() {
                                 styles.shopIcon
                             }
                         >
-                            {icon}
+                            {icon === "🌾" ? <FarmAreaIcon name="rice" size={42}/> : icon === "🐔" ? <FarmAreaIcon name="chicken" size={42}/> : icon === "🐄" ? <FarmAreaIcon name="cow" size={42}/> : icon}
                         </Text>
 
                         <View
@@ -462,7 +465,7 @@ function ShopPreview() {
                                 🪙 {price}
                             </Text>
                         </View>
-                    </View>
+                    </RoyalContentPanel>
                 )
             )}
         </ScrollView>
@@ -492,28 +495,23 @@ const styles =
             maxHeight:
                 '94%',
 
-            borderRadius:
-                24,
+
 
             overflow:
                 'hidden',
 
-            borderWidth:
-                4,
 
-            borderColor:
-                '#7B4219',
 
-            backgroundColor:
-                '#FFF3D5',
+
+
+
         },
 
         titleBar: {
             minHeight:
                 68,
 
-            backgroundColor:
-                '#89501E',
+
 
             flexDirection:
                 'row',
@@ -529,8 +527,9 @@ const styles =
         },
 
         title: {
+            fontFamily: ROYAL_FONT.body,
             color:
-                '#FFFFFF',
+                '#142847',
 
             fontSize:
                 26,
@@ -560,6 +559,7 @@ const styles =
         },
 
         capacityText: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 FARM_COLORS.text,
 
@@ -586,8 +586,7 @@ const styles =
             borderRadius:
                 22,
 
-            backgroundColor:
-                '#D94B2B',
+
 
             alignItems:
                 'center',
@@ -595,16 +594,14 @@ const styles =
             justifyContent:
                 'center',
 
-            borderWidth:
-                3,
 
-            borderColor:
-                '#FFD88B',
+
+
         },
 
         closeText: {
-            color:
-                '#FFFFFF',
+            fontFamily: ROYAL_FONT.body,
+            color:'#142847',
 
             fontSize:
                 29,
@@ -646,8 +643,7 @@ const styles =
             borderTopRightRadius:
                 15,
 
-            backgroundColor:
-                '#F3E4C5',
+
         },
 
         activeTab: {
@@ -656,8 +652,8 @@ const styles =
         },
 
         tabText: {
-            color:
-                FARM_COLORS.text,
+            fontFamily: ROYAL_FONT.body,
+            color:'#142847',
 
             fontSize:
                 17,
@@ -698,14 +694,11 @@ const styles =
             borderRadius:
                 15,
 
-            borderWidth:
-                2,
 
-            borderColor:
-                '#E0BB70',
 
-            backgroundColor:
-                '#FFF9E9',
+
+
+
 
             alignItems:
                 'center',
@@ -715,11 +708,13 @@ const styles =
         },
 
         inventoryIcon: {
+            fontFamily: ROYAL_FONT.body,
             fontSize:
                 29,
         },
 
         inventoryName: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 FARM_COLORS.text,
 
@@ -734,6 +729,7 @@ const styles =
         },
 
         inventoryQuantity: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 '#80501E',
 
@@ -748,6 +744,7 @@ const styles =
         },
 
         emptyText: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 FARM_COLORS
                     .textMuted,
@@ -770,6 +767,7 @@ const styles =
         },
 
         shopHeadingText: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 FARM_COLORS.text,
 
@@ -793,20 +791,17 @@ const styles =
             paddingHorizontal:
                 10,
 
-            borderRadius:
-                14,
 
-            borderWidth:
-                1,
 
-            borderColor:
-                '#E4C286',
 
-            backgroundColor:
-                '#FFF9EA',
+
+
+
+
         },
 
         shopIcon: {
+            fontFamily: ROYAL_FONT.body,
             width:
                 48,
 
@@ -826,6 +821,7 @@ const styles =
         },
 
         shopTitle: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 FARM_COLORS.text,
 
@@ -837,6 +833,7 @@ const styles =
         },
 
         shopDescription: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 FARM_COLORS
                     .textMuted,
@@ -874,17 +871,19 @@ const styles =
                 '#C89C4E',
 
             backgroundColor:
-                '#FFF4D6',
+                '#142847',
         },
 
         quantityValue: {
+            fontFamily: ROYAL_FONT.body,
             fontWeight:
                 '900',
         },
 
         plus: {
+            fontFamily: ROYAL_FONT.body,
             color:
-                '#FFFFFF',
+                '#142847',
 
             backgroundColor:
                 '#459A26',
@@ -926,6 +925,7 @@ const styles =
         },
 
         priceText: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 '#56300D',
 

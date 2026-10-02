@@ -1,3 +1,5 @@
+import FarmAreaIcon from './FarmAreaIcon';
+import { Image as CachedImage } from 'expo-image';
 import {
     Animated,
     Easing,
@@ -176,8 +178,7 @@ function ChickenSprite({
                 { transform: [{ translateY }] },
             ]}
         >
-            <Image
-                source={source}
+            <Image source={source}
                 resizeMode="contain"
                 style={styles.sprite}
             />
@@ -271,7 +272,7 @@ function ChickenSlot({
                     style={styles.feedButton}
                     hitSlop={6}
                 >
-                    <Text style={styles.feedText}>🌾 えさ</Text>
+                    <View style={{flexDirection:"row",alignItems:"center",gap:3}}><FarmAreaIcon name="rice" size={24}/><Text style={styles.feedText}>えさ</Text></View>
                 </Pressable>
             )}
 
@@ -290,7 +291,7 @@ function ChickenSlot({
                     style={styles.careButton}
                     hitSlop={8}
                 >
-                    <Text style={styles.careIcon}>{careIcon}</Text>
+                    <Text style={styles.careIcon}>{careIcon === "🌾" ? <FarmAreaIcon name="rice" size={24}/> : careIcon}</Text>
                     <View style={styles.alertDot}>
                         <Text style={styles.alertText}>!</Text>
                     </View>
@@ -361,7 +362,7 @@ export default function ChickenWorld({
 
     return (
         <View style={styles.world} onLayout={handleLayout}>
-            <Image source={isLandscape ? LANDSCAPE_BACKGROUND : BACKGROUND} resizeMode="cover" style={[StyleSheet.absoluteFill,{width:'100%',height:'100%'}]} />
+            <CachedImage source={isLandscape ? LANDSCAPE_BACKGROUND : BACKGROUND} contentFit="cover" transition={0} cachePolicy="memory-disk" style={[StyleSheet.absoluteFill,{width:'100%',height:'100%'}]} />
             {viewport.width > 0 && (
                 <>
                     {chickenSlots.slice(0, centers.length).map(
@@ -393,7 +394,7 @@ const styles = StyleSheet.create({
     world: {
         flex: 1,
         overflow: 'hidden',
-        backgroundColor: '#78A94E',
+        backgroundColor: '#142847',
     },
     slot: {
         position: 'absolute',

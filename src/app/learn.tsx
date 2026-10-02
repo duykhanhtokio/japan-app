@@ -231,14 +231,14 @@ export default function LearnScreen() {
                             styles.headingArea
                         }
                     >
-                        <View style={styles.headingTitleRow}><RoyalNavyFrame style={styles.headingPlaque}><Text
+                        <View style={styles.headingTitleRow}><Text
                             numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.75}
                             style={
                                 styles.heading
                             }
                         >
                             JLPT 学習
-                        </Text></RoyalNavyFrame><Pressable accessibilityRole="button" accessibilityLabel="JLPT の認定条件" onPress={()=>setHelpVisible(true)} style={styles.helpButton}><Text style={styles.helpGlyph}>?</Text></Pressable></View>
+                        </Text><Pressable accessibilityRole="button" accessibilityLabel="JLPT の認定条件" onPress={()=>setHelpVisible(true)} style={styles.helpButton}><Text style={styles.helpGlyph}>?</Text></Pressable></View>
 
                         <Text
                             style={
@@ -544,14 +544,15 @@ const styles =
         },
 
         heading: {
-            color: '#f2db9b',
+            flex: 1,
+            color: '#142847',
 
             fontSize: 28,
             fontFamily: ROYAL_FONT.heading,
             textAlign:'center',
 
             textShadowColor:
-                '#07101f',
+                '#fffdf7',
 
             textShadowOffset: {
                 width: 0,

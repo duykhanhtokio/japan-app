@@ -1,3 +1,5 @@
+import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
+import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 const RESTAURANT_ICON = require('../../../../assets/app/ui/royal-af/game-restaurant-v1.png');
@@ -12,7 +14,7 @@ const STEPS = [
 export default function RestaurantWorld() {
     return (
         <ScrollView style={styles.world} contentContainerStyle={styles.content}>
-            <View style={styles.panel}>
+            <RoyalContentPanel style={styles.panel}>
                 <Image source={RESTAURANT_ICON} resizeMode="contain" style={styles.heroIcon} />
                 <Text style={styles.title}>ファームレストラン</Text>
                 <Text style={styles.intro}>このエリアの遊び方</Text>
@@ -26,7 +28,7 @@ export default function RestaurantWorld() {
                     </View>
                 ))}
                 <Text style={styles.notice}>現在は案内のみ表示しています。料理・注文の操作は利用できません。</Text>
-            </View>
+            </RoyalContentPanel>
         </ScrollView>
     );
 }
@@ -34,14 +36,19 @@ export default function RestaurantWorld() {
 const styles = StyleSheet.create({
     world: { flex: 1, backgroundColor: '#e8e2d6' },
     content: { flexGrow: 1, justifyContent: 'center', paddingHorizontal: 20, paddingTop: 100, paddingBottom: 32 },
-    panel: { width: '100%', maxWidth: 520, alignSelf: 'center', padding: 22, borderRadius: 24, borderWidth: 2, borderColor: '#c39a47', backgroundColor: '#fff9e9' },
+    panel: { width: '100%', maxWidth: 520, alignSelf: 'center', padding: 22,     },
     heroIcon: { width: 110, height: 110, alignSelf: 'center' },
-    title: { marginTop: 5, color: '#24334b', fontSize: 23, fontWeight: '900', textAlign: 'center' },
-    intro: { marginTop: 8, marginBottom: 14, color: '#735b31', fontSize: 15, fontWeight: '700', textAlign: 'center' },
+    title: {
+            fontFamily: ROYAL_FONT.body, marginTop: 5, color: '#24334b', fontSize: 23, fontWeight: '900', textAlign: 'center' },
+    intro: {
+            fontFamily: ROYAL_FONT.body, marginTop: 8, marginBottom: 14, color: '#735b31', fontSize: 15, fontWeight: '700', textAlign: 'center' },
     step: { flexDirection: 'row', alignItems: 'center', paddingVertical: 12, borderTopWidth: 1, borderTopColor: '#d9c9a9' },
     stepIcon: { width: 30, height: 30, marginRight: 12 },
     stepCopy: { flex: 1 },
-    stepTitle: { color: '#24334b', fontSize: 16, fontWeight: '800' },
-    stepDetail: { marginTop: 3, color: '#665944', fontSize: 13, lineHeight: 20 },
-    notice: { marginTop: 12, color: '#705935', fontSize: 12, lineHeight: 18, textAlign: 'center' },
+    stepTitle: {
+            fontFamily: ROYAL_FONT.body, color: '#24334b', fontSize: 16, fontWeight: '800' },
+    stepDetail: {
+            fontFamily: ROYAL_FONT.body, marginTop: 3, color: '#665944', fontSize: 13, lineHeight: 20 },
+    notice: {
+            fontFamily: ROYAL_FONT.body, marginTop: 12, color: '#705935', fontSize: 12, lineHeight: 18, textAlign: 'center' },
 });

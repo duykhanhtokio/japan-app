@@ -1,3 +1,6 @@
+import { Image } from 'react-native';
+import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
+import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import {
     Modal,
     Pressable,
@@ -97,7 +100,7 @@ export default function FarmEconomyPanel({
                     styles.overlay
                 }
             >
-                <View
+                <RoyalContentPanel
                     style={
                         styles.panel
                     }
@@ -136,7 +139,7 @@ export default function FarmEconomyPanel({
                             style={
                                 styles.close
                             }
-                        >
+                        ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
                             <Text
                                 style={
                                     styles.closeText
@@ -157,7 +160,7 @@ export default function FarmEconomyPanel({
                                 styles.goldText
                             }
                         >
-                            🪙 {state.gold}
+                            <Image source={require("../../../../assets/app/ui/royal-af/hud-coin-v1.png")} resizeMode="contain" style={{width:20,height:20}}/> {state.gold}
                         </Text>
                     </View>
 
@@ -190,7 +193,7 @@ export default function FarmEconomyPanel({
                                     );
 
                                 return (
-                                    <View
+                                    <RoyalContentPanel
                                         key={
                                             item.id
                                         }
@@ -257,7 +260,7 @@ export default function FarmEconomyPanel({
                                                             styles.price
                                                         }
                                                     >
-                                                        🪙{' '}
+                                                        <Image source={require("../../../../assets/app/ui/royal-af/hud-coin-v1.png")} resizeMode="contain" style={{width:18,height:18}}/>{" "}
                                                         {isShop
                                                             ? item.shopPrice
                                                             : item.baseSellPrice}
@@ -282,7 +285,7 @@ export default function FarmEconomyPanel({
                                                             disabled &&
                                                                 styles.disabledButton,
                                                         ]}
-                                                    >
+                                                    ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
                                                         <Text
                                                             style={
                                                                 styles.actionText
@@ -296,12 +299,12 @@ export default function FarmEconomyPanel({
                                                 </>
                                             )}
                                         </View>
-                                    </View>
+                                    </RoyalContentPanel>
                                 );
                             }
                         )}
                     </ScrollView>
-                </View>
+                </RoyalContentPanel>
             </View>
         </Modal>
     );
@@ -339,17 +342,13 @@ const styles =
             overflow:
                 'hidden',
 
-            borderRadius:
-                24,
 
-            backgroundColor:
-                '#FFF9E8',
 
-            borderWidth:
-                3,
 
-            borderColor:
-                '#704A25',
+
+
+
+
         },
 
         header: {
@@ -368,11 +367,11 @@ const styles =
             paddingVertical:
                 14,
 
-            backgroundColor:
-                '#F2D58A',
+
         },
 
         title: {
+            fontFamily: ROYAL_FONT.body,
             fontSize:
                 21,
 
@@ -384,6 +383,7 @@ const styles =
         },
 
         subtitle: {
+            fontFamily: ROYAL_FONT.body,
             marginTop:
                 2,
 
@@ -410,19 +410,18 @@ const styles =
             justifyContent:
                 'center',
 
-            backgroundColor:
-                '#FFFFFF',
+
         },
 
         closeText: {
+            fontFamily: ROYAL_FONT.body,
             fontSize:
                 26,
 
             fontWeight:
                 '800',
 
-            color:
-                '#49321D',
+            color:'#142847',
         },
 
         goldBar: {
@@ -435,11 +434,11 @@ const styles =
             alignItems:
                 'flex-end',
 
-            backgroundColor:
-                '#FFF1BF',
+
         },
 
         goldText: {
+            fontFamily: ROYAL_FONT.body,
             fontSize:
                 17,
 
@@ -482,14 +481,11 @@ const styles =
             borderRadius:
                 16,
 
-            backgroundColor:
-                '#FFFFFF',
 
-            borderWidth:
-                1,
 
-            borderColor:
-                '#E6D7B5',
+
+
+
         },
 
         itemInfo: {
@@ -498,6 +494,7 @@ const styles =
         },
 
         itemName: {
+            fontFamily: ROYAL_FONT.body,
             fontSize:
                 17,
 
@@ -509,6 +506,7 @@ const styles =
         },
 
         reading: {
+            fontFamily: ROYAL_FONT.body,
             marginTop:
                 2,
 
@@ -520,6 +518,7 @@ const styles =
         },
 
         owned: {
+            fontFamily: ROYAL_FONT.body,
             marginTop:
                 5,
 
@@ -542,6 +541,7 @@ const styles =
         },
 
         price: {
+            fontFamily: ROYAL_FONT.body,
             marginBottom:
                 6,
 
@@ -571,8 +571,7 @@ const styles =
             borderRadius:
                 13,
 
-            backgroundColor:
-                '#5CA852',
+
         },
 
         disabledButton: {
@@ -581,17 +580,18 @@ const styles =
         },
 
         actionText: {
+            fontFamily: ROYAL_FONT.body,
             fontSize:
                 14,
 
             fontWeight:
                 '900',
 
-            color:
-                '#FFFFFF',
+            color:'#142847',
         },
 
         locked: {
+            fontFamily: ROYAL_FONT.body,
             fontSize:
                 13,
 

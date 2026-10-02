@@ -1,3 +1,5 @@
+import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
+import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import {
     Modal,
     Pressable,
@@ -169,7 +171,7 @@ export default function OrchardPlantPanel({
                                 style={
                                     styles.closeButton
                                 }
-                            >
+                            ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
                                 <Text
                                     style={
                                         styles.closeText
@@ -314,7 +316,7 @@ function TreeCard({
     }
 
     return (
-        <View
+        <RoyalContentPanel
             style={[
                 styles.card,
 
@@ -462,7 +464,7 @@ function TreeCard({
                                 !disabled &&
                                 styles.plantButtonPressed,
                             ]}
-                    >
+                    ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
                         <Text
                             style={[
                                 styles.plantButtonText,
@@ -478,7 +480,7 @@ function TreeCard({
                     </Pressable>
                 </View>
             </View>
-        </View>
+        </RoyalContentPanel>
     );
 }
 
@@ -655,6 +657,7 @@ const styles =
         },
 
         title: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 FARM_COLORS.text,
 
@@ -666,6 +669,7 @@ const styles =
         },
 
         subtitle: {
+            fontFamily: ROYAL_FONT.body,
             marginTop:
                 1,
 
@@ -706,6 +710,7 @@ const styles =
         },
 
         goldText: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 '#694417',
 
@@ -732,19 +737,16 @@ const styles =
             justifyContent:
                 'center',
 
-            backgroundColor:
-                '#E7C88F',
 
-            borderWidth:
-                2,
 
-            borderColor:
-                '#A56D31',
+
+
+
         },
 
         closeText: {
-            color:
-                '#6E431D',
+            fontFamily: ROYAL_FONT.body,
+            color:'#142847',
 
             fontSize:
                 23,
@@ -789,6 +791,7 @@ const styles =
         },
 
         infoText: {
+            fontFamily: ROYAL_FONT.body,
             flex:
                 1,
 
@@ -820,6 +823,7 @@ const styles =
         },
 
         levelText: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 '#FFFFFF',
 
@@ -850,28 +854,23 @@ const styles =
             flexDirection:
                 'row',
 
-            borderRadius:
-                17,
+
 
             padding:
                 9,
 
-            backgroundColor:
-                '#FFFDF3',
 
-            borderWidth:
-                2,
 
-            borderColor:
-                '#D3A35F',
+
+
+
         },
 
         cardLocked: {
             opacity:
                 0.58,
 
-            backgroundColor:
-                '#D9D2C2',
+
         },
 
         iconBox: {
@@ -890,17 +889,15 @@ const styles =
             justifyContent:
                 'center',
 
-            backgroundColor:
-                '#DCEEB8',
 
-            borderWidth:
-                2,
 
-            borderColor:
-                '#A2C06E',
+
+
+
         },
 
         treeIcon: {
+            fontFamily: ROYAL_FONT.body,
             fontSize:
                 44,
         },
@@ -931,6 +928,7 @@ const styles =
         },
 
         treeName: {
+            fontFamily: ROYAL_FONT.body,
             flex:
                 1,
 
@@ -959,6 +957,7 @@ const styles =
         },
 
         lockText: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 '#FFFFFF',
 
@@ -981,6 +980,7 @@ const styles =
         },
 
         stat: {
+            fontFamily: ROYAL_FONT.body,
             flex:
                 1,
 
@@ -998,6 +998,7 @@ const styles =
         },
 
         statLabel: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 '#8B6A40',
 
@@ -1009,6 +1010,7 @@ const styles =
         },
 
         statValue: {
+            fontFamily: ROYAL_FONT.body,
             marginTop:
                 1,
 
@@ -1067,7 +1069,7 @@ const styles =
                 '#D29B8B',
         },
 
-        priceText: {
+        priceText: {fontFamily: ROYAL_FONT.body,
             color:
                 '#765019',
 
@@ -1099,22 +1101,17 @@ const styles =
             borderRadius:
                 11,
 
-            backgroundColor:
-                '#6DAF45',
 
-            borderWidth:
-                2,
 
-            borderColor:
-                '#4C8730',
+
+
+
         },
 
         plantButtonDisabled: {
-            backgroundColor:
-                '#C8C1B4',
 
-            borderColor:
-                '#AAA297',
+
+
         },
 
         plantButtonPressed: {
@@ -1126,9 +1123,8 @@ const styles =
             ],
         },
 
-        plantButtonText: {
-            color:
-                '#FFFFFF',
+        plantButtonText: {fontFamily: ROYAL_FONT.body,
+            color:'#142847',
 
             fontSize:
                 11,
@@ -1138,7 +1134,6 @@ const styles =
         },
 
         plantButtonTextDisabled: {
-            color:
-                '#756F66',
+            color:'#142847',
         },
     });

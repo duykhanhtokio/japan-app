@@ -1,3 +1,6 @@
+import FarmAreaIcon from './FarmAreaIcon';
+import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
+import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import {
     Modal,
     Pressable,
@@ -121,7 +124,7 @@ export default function CropCarePanel({
                     }
                 />
 
-                <View
+                <RoyalContentPanel
                     style={
                         styles.panel
                     }
@@ -137,7 +140,7 @@ export default function CropCarePanel({
                             }
                         >
                             {
-                                content.icon
+                                content.icon === "🌾" ? <FarmAreaIcon name="rice" size={40}/> : content.icon
                             }
                         </Text>
                     </View>
@@ -176,7 +179,7 @@ export default function CropCarePanel({
                                 'normal'
                             )
                         }
-                    >
+                    ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
                         <Text
                             style={
                                 styles.actionIcon
@@ -223,7 +226,7 @@ export default function CropCarePanel({
                                 'boost'
                             )
                         }
-                    >
+                    ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
                         <Text
                             style={
                                 styles.actionIcon
@@ -270,7 +273,7 @@ export default function CropCarePanel({
                                 'ad'
                             )
                         }
-                    >
+                    ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
                         <Text
                             style={
                                 styles.actionIcon
@@ -314,7 +317,7 @@ export default function CropCarePanel({
                         onPress={
                             onClose
                         }
-                    >
+                    ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
                         <Text
                             style={
                                 styles.closeText
@@ -323,7 +326,7 @@ export default function CropCarePanel({
                             閉じる
                         </Text>
                     </Pressable>
-                </View>
+                </RoyalContentPanel>
             </View>
         </Modal>
     );
@@ -427,11 +430,13 @@ const styles =
         },
 
         icon: {
+            fontFamily: ROYAL_FONT.body,
             fontSize:
                 34,
         },
 
         title: {
+            fontFamily: ROYAL_FONT.body,
             marginTop:
                 12,
 
@@ -449,6 +454,7 @@ const styles =
         },
 
         description: {
+            fontFamily: ROYAL_FONT.body,
             marginTop:
                 5,
 
@@ -487,33 +493,27 @@ const styles =
             borderRadius:
                 16,
 
-            borderWidth:
-                2,
 
-            borderColor:
-                '#9ABD67',
 
-            backgroundColor:
-                '#F3FBE8',
+
+
+
         },
 
         boostButton: {
-            borderColor:
-                '#E0AE45',
 
-            backgroundColor:
-                '#FFF5D6',
+
+
         },
 
         adButton: {
-            borderColor:
-                '#78A6D8',
 
-            backgroundColor:
-                '#EAF4FF',
+
+
         },
 
         actionIcon: {
+            fontFamily: ROYAL_FONT.body,
             width:
                 42,
 
@@ -533,28 +533,29 @@ const styles =
         },
 
         actionTitle: {
+            fontFamily: ROYAL_FONT.body,
             fontSize:
                 15,
 
             fontWeight:
                 '900',
 
-            color:
-                '#57361D',
+            color:'#142847',
         },
 
         adTitle: {
+            fontFamily: ROYAL_FONT.body,
             fontSize:
                 15,
 
             fontWeight:
                 '900',
 
-            color:
-                '#315D8A',
+            color:'#142847',
         },
 
         actionDescription: {
+            fontFamily: ROYAL_FONT.body,
             marginTop:
                 2,
 
@@ -564,8 +565,7 @@ const styles =
             fontWeight:
                 '700',
 
-            color:
-                '#806A55',
+            color:'#142847',
         },
 
         closeButton: {
@@ -583,14 +583,14 @@ const styles =
         },
 
         closeText: {
+            fontFamily: ROYAL_FONT.body,
             fontSize:
                 13,
 
             fontWeight:
                 '900',
 
-            color:
-                '#816A56',
+            color:'#142847',
         },
 
         pressed: {

@@ -1,3 +1,4 @@
+import { Image as CachedImage } from 'expo-image';
 import { router } from 'expo-router';
 
 import {
@@ -1276,7 +1277,9 @@ export default function FarmGameScreen() {
     ) {
         const token = ++transitionToken.current;
         try {
-            await Asset.loadAsync(AREA_ARTWORK[area]);
+            const assets = await Asset.loadAsync(AREA_ARTWORK[area]);
+            const cached = await CachedImage.prefetch(assets.map(asset => asset.localUri ?? asset.uri), {cachePolicy: "memory-disk"});
+            if (!cached) throw new Error("Farm artwork cache was not ready");
         } catch (error) {
             console.warn('Farm area artwork failed to load', area, error);
             return;

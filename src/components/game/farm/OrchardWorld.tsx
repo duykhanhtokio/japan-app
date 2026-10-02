@@ -1,3 +1,4 @@
+import { Image as CachedImage } from 'expo-image';
 import {
     Image,
     LayoutChangeEvent,
@@ -82,9 +83,8 @@ export default function OrchardWorld({
 
     return (
         <View style={styles.frame} onLayout={handleLayout}>
-            <Image
-                source={isLandscape ? LANDSCAPE_ART : PORTRAIT_ART}
-                resizeMode="cover"
+            <CachedImage source={isLandscape ? LANDSCAPE_ART : PORTRAIT_ART}
+                contentFit="cover" transition={0} cachePolicy="memory-disk"
                 style={[StyleSheet.absoluteFill,{width:'100%',height:'100%'}]}
             />
             {scale > 0 && <View style={StyleSheet.absoluteFill}>
@@ -319,7 +319,7 @@ const styles =
             width: '100%',
             minHeight: 0,
             overflow: 'hidden',
-            backgroundColor: FARM_COLORS.grass,
+            backgroundColor: '#142847',
         },
 
         world: {

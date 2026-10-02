@@ -1,3 +1,5 @@
+import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
+import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import {
     FlatList,
     Image,
@@ -13,6 +15,7 @@ import {
     useState,
 } from 'react';
 
+import { getFarmCosmeticAsset } from '@/game/data/farm-cosmetic-assets';
 import FarmCosmeticPreview from './FarmCosmeticPreview';
 import FarmAreaIcon, { type FarmAreaIconName } from './FarmAreaIcon';
 
@@ -425,7 +428,7 @@ export default function FarmCosmeticPanel({
                   item.price;
 
         return (
-            <View
+            <RoyalContentPanel
                 style={[
                     styles.card,
 
@@ -443,7 +446,7 @@ export default function FarmCosmeticPanel({
                 >
                     {locked
                         ? <Image source={LOCK_ICON} resizeMode="contain" style={styles.previewAsset} />
-                        : <FarmAreaIcon name={getCosmeticIcon(item)} size={50} />}
+                        : getFarmCosmeticAsset(item.assetKey) ? <Image source={getFarmCosmeticAsset(item.assetKey)!} resizeMode="contain" style={{width:64,height:64}} /> : <Text style={{color:"#142847"}}>画像未登録</Text>}
                 </View>
 
                 <View
@@ -519,10 +522,7 @@ export default function FarmCosmeticPanel({
                                     styles.price
                                 }
                             >
-                                {item.currency ===
-                                'gold'
-                                    ? '🪙'
-                                    : '💎'}{' '}
+                                <Image source={item.currency === "gold" ? require("../../../../assets/app/ui/royal-af/hud-coin-v1.png") : require("../../../../assets/app/ui/royal-af/hud-diamond-v1.png")} resizeMode="contain" style={{width:18,height:18}}/>{' '}
                                 {item.price}
                             </Text>
 
@@ -553,7 +553,7 @@ export default function FarmCosmeticPanel({
                                         equipped &&
                                             styles.equippedButton,
                                     ]}
-                                >
+                                ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
                                     <Text
                                         style={
                                             styles.buyButtonText
@@ -584,7 +584,7 @@ export default function FarmCosmeticPanel({
                                         ) &&
                                             styles.buyButtonDisabled,
                                     ]}
-                                >
+                                ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
                                     <Text
                                         style={
                                             styles.buyButtonText
@@ -621,7 +621,7 @@ export default function FarmCosmeticPanel({
                             </Text>
                         )}
                 </View>
-            </View>
+            </RoyalContentPanel>
         );
     }
 
@@ -641,7 +641,7 @@ export default function FarmCosmeticPanel({
                     styles.overlay
                 }
             >
-                <View
+                <RoyalContentPanel
                     style={
                         styles.panel
                     }
@@ -678,7 +678,7 @@ export default function FarmCosmeticPanel({
                             style={
                                 styles.closeButton
                             }
-                        >
+                        ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
                             <Text
                                 style={
                                     styles.closeText
@@ -763,7 +763,7 @@ export default function FarmCosmeticPanel({
                                             selected &&
                                                 styles.filterButtonSelected,
                                         ]}
-                                    >
+                                    ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
                                         <Text
                                             style={[
                                                 styles.filterText,
@@ -792,7 +792,7 @@ export default function FarmCosmeticPanel({
                                 styles.balanceText
                             }
                         >
-                            🪙 {state.gold}
+                            <Image source={require("../../../../assets/app/ui/royal-af/hud-coin-v1.png")} resizeMode="contain" style={{width:20,height:20}}/> {state.gold}
                         </Text>
 
                         <Text
@@ -800,7 +800,7 @@ export default function FarmCosmeticPanel({
                                 styles.balanceText
                             }
                         >
-                            💎 {state.diamonds}
+                            <Image source={require("../../../../assets/app/ui/royal-af/hud-diamond-v1.png")} resizeMode="contain" style={{width:20,height:20}}/> {state.diamonds}
                         </Text>
                     </View>
 
@@ -841,7 +841,7 @@ export default function FarmCosmeticPanel({
                     >
                         同じスロットに装備すると自動で入れ替わります
                     </Text>
-                </View>
+                </RoyalContentPanel>
             </View>
         </Modal>
     );
@@ -876,17 +876,13 @@ const styles =
             overflow:
                 'hidden',
 
-            borderRadius:
-                24,
 
-            borderWidth:
-                3,
 
-            borderColor:
-                '#8B5A2B',
 
-            backgroundColor:
-                '#FFF8E8',
+
+
+
+
         },
 
         header: {
@@ -905,17 +901,15 @@ const styles =
             paddingVertical:
                 14,
 
-            backgroundColor:
-                '#F1C96B',
 
-            borderBottomWidth:
-                2,
 
-            borderBottomColor:
-                '#C68A35',
+
+
+
         },
 
         title: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 '#563619',
 
@@ -927,6 +921,7 @@ const styles =
         },
 
         subtitle: {
+            fontFamily: ROYAL_FONT.body,
             marginTop:
                 2,
 
@@ -956,13 +951,12 @@ const styles =
             borderRadius:
                 19,
 
-            backgroundColor:
-                '#8B5A2B',
+
         },
 
         closeText: {
-            color:
-                '#FFFFFF',
+            fontFamily: ROYAL_FONT.body,
+            color:'#142847',
 
             fontSize:
                 25,
@@ -1007,27 +1001,21 @@ const styles =
             borderRadius:
                 10,
 
-            borderWidth:
-                1,
 
-            borderColor:
-                '#D7B77B',
 
-            backgroundColor:
-                '#FFFDF7',
+
+
+
         },
 
         filterButtonSelected: {
-            borderColor:
-                '#7B4C21',
 
-            backgroundColor:
-                '#8B5A2B',
+
+
         },
 
-        filterText: {
-            color:
-                '#745331',
+        filterText: {fontFamily: ROYAL_FONT.body,
+            color:'#142847',
 
             fontSize:
                 10,
@@ -1037,11 +1025,11 @@ const styles =
         },
 
         filterTextSelected: {
-            color:
-                '#FFFFFF',
+            color:'#142847',
         },
 
         balanceBar: {
+            fontFamily: ROYAL_FONT.body,
             flexDirection:
                 'row',
 
@@ -1059,6 +1047,7 @@ const styles =
         },
 
         balanceText: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 '#5B421F',
 
@@ -1096,23 +1085,20 @@ const styles =
             borderRadius:
                 9,
 
-            backgroundColor:
-                '#E8942E',
+
         },
 
         equippedButton: {
-            backgroundColor:
-                '#35A853',
+
         },
 
         buyButtonDisabled: {
-            backgroundColor:
-                '#A9A39A',
+
         },
 
         buyButtonText: {
-            color:
-                '#FFFFFF',
+            fontFamily: ROYAL_FONT.body,
+            color:'#142847',
 
             fontSize:
                 9,
@@ -1122,6 +1108,7 @@ const styles =
         },
 
         resultCount: {
+            fontFamily: ROYAL_FONT.body,
             paddingHorizontal:
                 14,
 
@@ -1165,36 +1152,28 @@ const styles =
             padding:
                 10,
 
-            borderRadius:
-                16,
 
-            borderWidth:
-                2,
 
-            borderColor:
-                '#E2C38A',
 
-            backgroundColor:
-                '#FFFFFF',
+
+
+
+
         },
 
         cardEquipped: {
-            borderColor:
-                '#36A852',
 
-            borderWidth:
-                3,
 
-            backgroundColor:
-                '#F1FFF0',
+
+
+
         },
 
         cardLocked: {
             opacity:
                 0.52,
 
-            backgroundColor:
-                '#E8E3D9',
+
         },
 
         preview: {
@@ -1216,13 +1195,13 @@ const styles =
             borderRadius:
                 14,
 
-            backgroundColor:
-                '#F6E9C9',
+
         },
 
         previewAsset: { width: 42, height: 42 },
 
         itemContent: {
+            fontFamily: ROYAL_FONT.body,
             flex:
                 1,
 
@@ -1237,6 +1216,7 @@ const styles =
         },
 
         itemName: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 '#4E3824',
 
@@ -1248,6 +1228,7 @@ const styles =
         },
 
         itemMeta: {
+            fontFamily: ROYAL_FONT.body,
             marginTop:
                 2,
 
@@ -1287,6 +1268,7 @@ const styles =
         },
 
         rarityText: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 '#FFFFFF',
 
@@ -1298,6 +1280,7 @@ const styles =
         },
 
         price: {
+            fontFamily: ROYAL_FONT.body,
             color:
                 '#5B421F',
 
@@ -1309,6 +1292,7 @@ const styles =
         },
 
         lockReason: {
+            fontFamily: ROYAL_FONT.body,
             marginTop:
                 5,
 
@@ -1323,6 +1307,7 @@ const styles =
         },
 
         notice: {
+            fontFamily: ROYAL_FONT.body,
             paddingHorizontal:
                 12,
 
