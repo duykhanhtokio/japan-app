@@ -49,3 +49,8 @@ Five-bank integrated continuation remotely verified at `a4b519906cf085ff882469c1
 ## Reconciled postal causal continuation — 2026-10-02
 
 Resumed from remote-verified 1907a812; retained the five integrated bank replacements and preserved the alternate four-bank draft source without making it runtime. Read eight full current exchanges. Replaced two repeated postal address-role scripts with fragile pop-up card packaging and a damaged-envelope key return; repaired one unsupported spouse speech inference and five scenario-specific conclusions. All 117 source/runtime exchanges still require whole-prefecture final causal review. No CONTENT PASS, translations or native-speaker approval. Next: compare two new postal exchanges against prior corpus, then continue unresolved city groups.
+
+
+## Three-city causal review continuation — 2026-10-02
+
+Postal continuation remote-verified at aa2ad3c7 with WORK PERSISTENCE PASS. Read all 24 current exchanges in Motomiya, Iwaki and Shirakawa; read retrieved full-turn postal and housing comparisons. Resolved four additional findings: explicitly unresolved home-route handoff; refund difference receipt before food-order closure; named peach in ripening consultation; full housing replacement with agreed short voice trial and conditional observation. Structural/parity screening remains 117/117 with zero reported errors or duplicate groups. These three-city findings do not constitute whole-prefecture CONTENT PASS. No translation or native-speaker approval. Next: remaining city groups, starting Sukagawa and Kitakata, for complete causal reading and cross-prefecture comparison. Preserve five integrated bank scenes and the archived alternate bank source.
