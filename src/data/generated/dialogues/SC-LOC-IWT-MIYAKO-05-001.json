@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "いらっしゃいませ。チケット購入で何を確認しますか。",
+        "textJa": "こんにちは。映画のご予約で何をお手伝いできますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "miyako_5_task_1",
+        "communicativeIntent": "miyako_5_editorial_1",
         "requiredSemanticComponents": {
-          "goal": "字幕版のつもりだが座席画面が吹替表示なので決済前に確認する"
+          "goal": "友人が通路側で本人が隣という二席の選び方を尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "字幕版を選んだつもりですが、座席画面に「吹替」と出ています。支払う前に確認したいです。",
+        "recommendedAnswerJa": "友人と二人で見ます。友人は通路側、私はその隣に座りたいのですが、この画面でどの席を選べばよいですか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "字幕版のつもりだが座席画面が吹替表示なので決済前に確認する。日本語で伝えてください。",
+        "hint": "友人が通路側で本人が隣という二席の選び方を尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "字幕版のつもりだが座席画面が吹替表示なので決済前に確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "友人が通路側で本人が隣という二席の選び方を尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "今開いているのは別時刻の吹替版です。作品名だけでなく上映方式と時刻も確認しましょう。",
+        "textJa": "今の回は通路側が一席空いていますが、その隣は予約済みです。二人並ぶ席なら次の回を確認できます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "miyako_5_task_2",
+        "communicativeIntent": "miyako_5_editorial_2",
         "requiredSemanticComponents": {
-          "goal": "同作品の別上映を開いたと理解し、字幕版の時刻へ戻りたいと伝える"
+          "goal": "離席でなく次の回を選ぶため終了予定を求める"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "同じ作品なので画面を間違えました。字幕版の時刻へ戻りたいです。",
+        "recommendedAnswerJa": "離れて座るより、次の回を見たいです。友人の帰りの予定に合うか、終了時刻も見せてください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "同作品の別上映を開いたと理解し、字幕版の時刻へ戻りたいと伝える。日本語で伝えてください。",
+        "hint": "離席でなく次の回を選ぶため終了予定を求める。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "同作品の別上映を開いたと理解し、字幕版の時刻へ戻りたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "離席でなく次の回を選ぶため終了予定を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "この学習用画面では一つ前の上映一覧へ戻り、字幕表示のある回を選び直します。",
+        "textJa": "次の回は午後六時に終わる予定です。通路側と隣の二席が今は空いています。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "miyako_5_task_3",
+        "communicativeIntent": "miyako_5_editorial_3",
         "requiredSemanticComponents": {
-          "goal": "未決済なので現在の座席選択も確定ではないか確認する"
+          "goal": "友人の六時終了了承を得て現回の一席をやめ次回の二席を選ぶ"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "まだ決済していません。今選んだ座席も確定済みではないですね。",
+        "recommendedAnswerJa": "友人へ確認したら六時終了でよいそうです。今の一席の選択をやめて、次の回の二席を選びます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "未決済なので現在の座席選択も確定ではないか確認する。日本語で伝えてください。",
+        "hint": "友人の六時終了了承を得て現回の一席をやめ次回の二席を選ぶ。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "未決済なので現在の座席選択も確定ではないか確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "友人の六時終了了承を得て現回の一席をやめ次回の二席を選ぶ。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。この想定では決済前なので、吹替版の座席選択をやめて選び直せます。",
+        "textJa": "次の回のＢ一とＢ二ですね。まだお支払い前なので、決済内容をご確認ください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "miyako_5_task_4",
+        "communicativeIntent": "miyako_5_editorial_4",
         "requiredSemanticComponents": {
-          "goal": "字幕版を選び直してから通路側の空席を改めて確認すると伝える"
+          "goal": "Ｂ一を友人Ｂ二を本人として作品と日時も確認する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "字幕版を選び直したら、通路側の空席があるか改めて見ます。",
+        "recommendedAnswerJa": "Ｂ一が通路側で友人、Ｂ二が私です。作品名と日時も、この二枚の内容で合っています。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "字幕版を選び直してから通路側の空席を改めて確認すると伝える。日本語で伝えてください。",
+        "hint": "Ｂ一を友人Ｂ二を本人として作品と日時も確認する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "字幕版を選び直してから通路側の空席を改めて確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "Ｂ一を友人Ｂ二を本人として作品と日時も確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "上映回が変わると座席状況も変わります。新しい座席表で確認してください。",
+        "textJa": "その内容で購入しますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "miyako_5_task_5",
+        "communicativeIntent": "miyako_5_editorial_5",
         "requiredSemanticComponents": {
-          "goal": "作品名・字幕・時刻・座席を決済前に照合して購入するとまとめる"
+          "goal": "二枚購入し座席と終了予定を友人へ伝えて一緒に入ると答える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "作品名、字幕表示、時刻、座席の四つを決済前に確認してから購入します。",
+        "recommendedAnswerJa": "はい、二枚購入します。友人へ座席番号と六時の終了予定を送り、入口で一緒に入ります。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "作品名・字幕・時刻・座席を決済前に照合して購入するとまとめる。日本語で伝えてください。",
+        "hint": "二枚購入し座席と終了予定を友人へ伝えて一緒に入ると答える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "作品名・字幕・時刻・座席を決済前に照合して購入するとまとめる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "二枚購入し座席と終了予定を友人へ伝えて一緒に入ると答える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。内容を確認してからお手続きください。",
+        "textJa": "承知しました。こちらの確認内容を保存してご来場ください。ありがとうございました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -249,8 +249,8 @@
     "contentScope": "simulated_learning_scenario",
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
-    "editorialSource": "scripts/dialogue-authoring/prf-003-miyako.json",
-    "premise": "宮古の架空の学習用映画館場面。字幕版を選んだつもりで座席画面へ進んだが、別時刻の吹替版を開いていたことに気づき、決済前に作品・上映方式・時刻を戻って照合する。",
+    "editorialSource": "scripts/dialogue-authoring/prf-003-semantic-repairs.json",
+    "premise": "宮古の架空の学習用場面。映画館で友人と席を買おうとした客が、片方は通路側、本人は隣席を希望する。並んだ空席がない回を避け、次の回の二席を決済前に選んで友人にも番号を伝える。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
