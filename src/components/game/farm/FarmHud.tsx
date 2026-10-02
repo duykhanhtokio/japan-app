@@ -35,7 +35,7 @@ export default function FarmHud({
     onDiamondPlus,
 }: Props) {
     const { width } = useRoyalPositioning();
-    const hudWidth = Math.min(width - 12, 900);
+    const hudWidth = Math.max(0, width - 16);
     const hudHeight = hudWidth / HUD_ASPECT_RATIO;
     const fontSize = Math.max(9, Math.min(14, hudWidth * 0.029));
 

@@ -5,6 +5,7 @@ import {
     StyleSheet,
     Text,
     View,
+    useWindowDimensions,
 } from 'react-native';
 
 import { useState } from 'react';
@@ -37,11 +38,21 @@ type OrchardWorldProps = {
 
 const ART_WIDTH = 941;
 const ART_HEIGHT = 1672;
+const LANDSCAPE_WIDTH = 1672;
+const LANDSCAPE_HEIGHT = 941;
+const PORTRAIT_ART = require('../../../../assets/game/farm/background/orchard_map_background.png');
+const LANDSCAPE_ART = require('../../../../assets/game/farm/background/orchard_map_landscape_v1.png');
 const ORCHARD_POSITIONS = [
     { x: 0.13, y: 0.39 },
     { x: 0.57, y: 0.39 },
     { x: 0.13, y: 0.57 },
     { x: 0.57, y: 0.57 },
+] as const;
+const LANDSCAPE_POSITIONS = [
+    { x: 0.25, y: 0.43 },
+    { x: 0.62, y: 0.43 },
+    { x: 0.25, y: 0.67 },
+    { x: 0.62, y: 0.67 },
 ] as const;
 
 export default function OrchardWorld({
@@ -50,41 +61,32 @@ export default function OrchardWorld({
     onSelectPlot,
 }: OrchardWorldProps) {
     const [viewport, setViewport] = useState({ width: 0, height: 0 });
+    const window = useWindowDimensions();
+    const isLandscape = (viewport.width || window.width) > (viewport.height || window.height);
+    const imageWidth = isLandscape ? LANDSCAPE_WIDTH : ART_WIDTH;
+    const imageHeight = isLandscape ? LANDSCAPE_HEIGHT : ART_HEIGHT;
+    const positions = isLandscape ? LANDSCAPE_POSITIONS : ORCHARD_POSITIONS;
 
     function handleLayout(event: LayoutChangeEvent) {
         const { width, height } = event.nativeEvent.layout;
-        setViewport({ width, height });
+        setViewport(current => current.width === width && current.height === height ? current : { width, height });
     }
 
     const scale = viewport.width > 0 && viewport.height > 0
-        ? Math.min(viewport.width / ART_WIDTH, viewport.height / ART_HEIGHT)
+        ? Math.max(viewport.width / imageWidth, viewport.height / imageHeight)
         : 0;
-    const artworkWidth = ART_WIDTH * scale;
-    const artworkHeight = ART_HEIGHT * scale;
+    const artworkWidth = imageWidth * scale;
+    const artworkHeight = imageHeight * scale;
     const offsetX = (viewport.width - artworkWidth) / 2;
     const offsetY = (viewport.height - artworkHeight) / 2;
 
     return (
         <View style={styles.frame} onLayout={handleLayout}>
             <Image
-
-                source={require('../../../../assets/game/farm/background/orchard_map_background.png')}
+                source={isLandscape ? LANDSCAPE_ART : PORTRAIT_ART}
                 resizeMode="cover"
-                blurRadius={12}
                 style={StyleSheet.absoluteFill}
             />
-            {scale > 0 && <Image
-
-                source={require('../../../../assets/game/farm/background/orchard_map_background.png')}
-                resizeMode="contain"
-                style={{
-                    position: 'absolute',
-                    left: offsetX,
-                    top: offsetY,
-                    width: artworkWidth,
-                    height: artworkHeight,
-                }}
-            />}
             {scale > 0 && <View style={StyleSheet.absoluteFill}>
                 {/*
                  * =============================================
@@ -98,7 +100,7 @@ export default function OrchardWorld({
                         index
                     ) => {
                         const position =
-                            ORCHARD_POSITIONS[
+                            positions[
                                 index
                             ];
 
@@ -116,7 +118,7 @@ export default function OrchardWorld({
                                     {
                                         left: offsetX + position.x * artworkWidth,
                                         top: offsetY + position.y * artworkHeight,
-                                        width: artworkWidth * 0.30,
+                                        width: artworkWidth * (isLandscape ? 0.13 : 0.30),
                                     },
                                 ]}
                             >
@@ -313,52 +315,11 @@ function getStatusLabel(
 const styles =
     StyleSheet.create({
         frame: {
-            flex:
-                1,
-
-            minHeight:
-                400,
-
-            marginHorizontal:
-                8,
-
-            marginTop:
-                7,
-
-            borderRadius:
-                24,
-
-            borderWidth:
-                3,
-
-            borderColor:
-                '#B77A2C',
-
-            overflow:
-                'hidden',
-
-            backgroundColor:
-                FARM_COLORS.grass,
-
-            shadowColor:
-                '#000000',
-
-            shadowOffset: {
-                width:
-                    0,
-
-                height:
-                    4,
-            },
-
-            shadowOpacity:
-                0.18,
-
-            shadowRadius:
-                5,
-
-            elevation:
-                5,
+            flex: 1,
+            width: '100%',
+            minHeight: 0,
+            overflow: 'hidden',
+            backgroundColor: FARM_COLORS.grass,
         },
 
         world: {

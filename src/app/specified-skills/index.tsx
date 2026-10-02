@@ -1,5 +1,6 @@
 import {
-    Pressable,
+    Image,
+    ImageBackground,
     ScrollView,
     StyleSheet,
     Text,
@@ -17,22 +18,14 @@ import { RoyalBackButton } from '@/components/ui/RoyalSurface';
 
 import BottomNav from '@/components/app/BottomNav';
 
+const SECTOR_FRAME=require('../../../assets/app/ui/royal-af/button-wide-v2.png');
 const sectors = [
-    ['🌱', '農業', 'Nông nghiệp'],
-
-    ['🏗️', '建設', 'Xây dựng'],
-
-    ['🍽️', '外食業', 'Nhà hàng'],
-
-    [
-        '🏭',
-        '飲食料品製造業',
-        'Sản xuất thực phẩm',
-    ],
-
-    ['🩺', '介護', 'Điều dưỡng'],
-
-    ['🏨', '宿泊', 'Khách sạn'],
+    {icon:require('../../../assets/game/farm/background/vegetable_map_background_v2.png'),ja:'農業',vi:'Nông nghiệp'},
+    {icon:require('../../../assets/app/life/rewards/cards/construction-site.png'),ja:'建設',vi:'Xây dựng'},
+    {icon:require('../../../assets/app/life/rewards/cards/restaurant.png'),ja:'外食業',vi:'Nhà hàng'},
+    {icon:require('../../../assets/app/life/rewards/cards/supermarket.png'),ja:'飲食料品製造業',vi:'Sản xuất thực phẩm'},
+    {icon:require('../../../assets/app/life/rewards/cards/hospital.png'),ja:'介護',vi:'Điều dưỡng'},
+    {icon:require('../../../assets/app/life/rewards/cards/hotel.png'),ja:'宿泊',vi:'Khách sạn'},
 ];
 
 export default function SpecifiedSkillsScreen() {
@@ -74,26 +67,21 @@ export default function SpecifiedSkillsScreen() {
                 }
             >
                 {sectors.map(
-                    (
-                        [
-                            icon,
-                            ja,
-                            vi,
-                        ]
-                    ) => (
-                        <Pressable
+                    ({ icon, ja, vi }) => (
+                        <View
                             key={ja}
                             style={
                                 styles.card
                             }
                         >
-                            <Text
+                            <ImageBackground source={SECTOR_FRAME} resizeMode="stretch" style={styles.cardArtwork}>
+                            <Image
+                                source={icon}
+                                resizeMode="cover"
                                 style={
                                     styles.icon
                                 }
-                            >
-                                {icon}
-                            </Text>
+                            />
 
                             <View>
                                 <Text
@@ -112,7 +100,8 @@ export default function SpecifiedSkillsScreen() {
                                     {vi}
                                 </Text>
                             </View>
-                        </Pressable>
+                            </ImageBackground>
+                        </View>
                     )
                 )}
             </ScrollView>
@@ -130,7 +119,7 @@ const styles =
             flex: 1,
 
             backgroundColor:
-                '#111827',
+                '#e8e2d6',
         },
 
         header: {
@@ -154,7 +143,7 @@ const styles =
         },
 
         title: {
-            color: '#ffffff',
+            color: '#0b1830',
 
             fontSize: 25,
 
@@ -162,7 +151,7 @@ const styles =
         },
 
         subtitle: {
-            color: '#9ea8b7',
+            color: '#72501f',
 
             fontSize: 16,
         },
@@ -174,22 +163,12 @@ const styles =
         },
 
         card: {
-            flexDirection: 'row',
-
-            alignItems: 'center',
-
-            padding: 17,
-
-            borderRadius: 18,
-
-            backgroundColor:
-                '#202a40',
+            minHeight: 90,
         },
+        cardArtwork:{flex:1,flexDirection:'row',alignItems:'center',paddingHorizontal:25,paddingVertical:14,gap:12},
 
         icon: {
-            fontSize: 32,
-
-            width: 54,
+            width:54,height:54,borderRadius:12,
         },
 
         cardTitle: {

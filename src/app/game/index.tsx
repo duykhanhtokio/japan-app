@@ -22,8 +22,10 @@ import {
 import {
     useEffect,
     useMemo,
+    useRef,
     useState,
 } from 'react';
+import { Asset } from 'expo-asset';
 
 import {
     SafeAreaView,
@@ -39,6 +41,7 @@ import {
 } from '@/components/game/farm/FarmAreaBar';
 
 import FarmHud from '@/components/game/farm/FarmHud';
+import { RoyalBackButton } from '@/components/ui/RoyalSurface';
 
 
 import FarmWorld from '@/components/game/farm/FarmWorld';
@@ -99,7 +102,16 @@ import {
     resolveOrchardTime,
 } from '@/game/orchards/orchard-engine';
 
+const AREA_ARTWORK: Record<FarmAreaId, number[]> = {
+    vegetable: [require('../../../assets/game/farm/background/vegetable_map_background_v2.png'), require('../../../assets/game/farm/background/vegetable_map_landscape_v1.png')],
+    orchard: [require('../../../assets/game/farm/background/orchard_map_background.png'), require('../../../assets/game/farm/background/orchard_map_landscape_v1.png')],
+    chicken: [require('../../../assets/game/farm/background/chicken_coop_background.png'), require('../../../assets/game/farm/background/chicken_coop_landscape_v1.png')],
+    cow: [require('../../../assets/game/farm/background/cow_barn_background.png'), require('../../../assets/game/farm/background/cow_barn_landscape_v1.png')],
+    restaurant: [require('../../../assets/app/ui/royal-af/game-restaurant-v1.png')],
+};
+
 export default function FarmGameScreen() {
+    const transitionToken = useRef(0);
     const insets =
         useSafeAreaInsets();
 
@@ -1256,10 +1268,18 @@ export default function FarmGameScreen() {
      * =====================================================
      */
 
-    function handleAreaSelect(
+    async function handleAreaSelect(
         area:
             FarmAreaId
     ) {
+        const token = ++transitionToken.current;
+        try {
+            await Asset.loadAsync(AREA_ARTWORK[area]);
+        } catch (error) {
+            console.warn('Farm area artwork failed to load', area, error);
+            return;
+        }
+        if (token !== transitionToken.current) return;
         setShowFarmMap(
             false
         );
@@ -1337,6 +1357,7 @@ export default function FarmGameScreen() {
     }
 
     function handleReturnToFarmMap() {
+        transitionToken.current += 1;
         setShowFarmMap(
             true
         );
@@ -1477,11 +1498,10 @@ export default function FarmGameScreen() {
                     styles.game
                 }
             >
-                {showFarmMap && (
+                {(
                     <View
-                        style={
-                            styles.farmMapLayer
-                        }
+                        pointerEvents={showFarmMap ? 'auto' : 'none'}
+                        style={[styles.farmMapLayer, !showFarmMap && styles.farmMapHidden]}
                     >
                         <FarmMapWorld
                             farmLevel={
@@ -1546,27 +1566,10 @@ export default function FarmGameScreen() {
 
                 {!showFarmMap && (
                     <>
-                        <Pressable
-                            onPress={
-                                handleReturnToFarmMap
-                            }
-                            style={[
-                                styles.mapReturnButton,
-                                {
-                                    top:
-                                        insets.top +
-                                        92,
-                                },
-                            ]}
-                        >
-                            <Text
-                                style={
-                                    styles.mapReturnButtonText
-                                }
-                            >
-                                ← ファームマップ
-                            </Text>
-                        </Pressable>
+                        <RoyalBackButton
+                            onPress={handleReturnToFarmMap}
+                            style={[styles.mapReturnButton, { top: insets.top + 92 }]}
+                        />
 
                         {/*
                          * Area navigation now lives on Farm Map.
@@ -2146,6 +2149,10 @@ const styles =
                 0,
         },
 
+        farmMapHidden: {
+            opacity: 0,
+        },
+
         hudSafeLayer: {
             position:
                 'absolute',
@@ -2186,90 +2193,16 @@ const styles =
             ...StyleSheet.absoluteFillObject,
 
             zIndex:
-                0,
+                1,
 
             overflow:
                 'hidden',
         },
 
         mapReturnButton: {
-            position:
-                'absolute',
-
-            left:
-                12,
-
-            zIndex:
-                25,
-
-            minHeight:
-                38,
-
-            paddingHorizontal:
-                16,
-
-            alignItems:
-                'center',
-
-            justifyContent:
-                'center',
-
-            borderRadius:
-                19,
-
-            backgroundColor:
-                'rgba(91, 52, 24, 0.95)',
-
-            borderWidth:
-                2,
-
-            borderColor:
-                '#F0CB78',
-
-            shadowColor:
-                '#1F1006',
-
-            shadowOffset: {
-                width:
-                    0,
-
-                height:
-                    3,
-            },
-
-            shadowOpacity:
-                0.32,
-
-            shadowRadius:
-                4,
-
-            elevation:
-                7,
-        },
-
-        mapReturnButtonText: {
-            color:
-                '#FFF4D0',
-
-            fontSize:
-                12,
-
-            fontWeight:
-                '900',
-
-            textShadowColor:
-                'rgba(0,0,0,0.35)',
-
-            textShadowOffset: {
-                width:
-                    0,
-
-                height:
-                    1,
-            },
-
-            textShadowRadius:
-                1,
+            position: 'absolute',
+            left: 12,
+            zIndex: 25,
         },
 
         harvestButton: {

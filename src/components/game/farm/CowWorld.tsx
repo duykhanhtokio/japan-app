@@ -7,6 +7,7 @@ import {
     StyleSheet,
     Text,
     View,
+    useWindowDimensions,
 } from 'react-native';
 
 import {
@@ -31,6 +32,9 @@ const COW = {
 
 const CANVAS_WIDTH = 853;
 const CANVAS_HEIGHT = 1844;
+const LANDSCAPE_WIDTH = 1672;
+const LANDSCAPE_HEIGHT = 941;
+const LANDSCAPE_BACKGROUND = require('../../../../assets/game/farm/background/cow_barn_landscape_v1.png');
 
 type SourcePoint = {
     x: number;
@@ -53,6 +57,11 @@ const STALL_CENTERS: readonly SourcePoint[] = [
     { x: 687, y: 919 },
     { x: 687, y: 1072 },
 ] as const;
+const LANDSCAPE_STALL_CENTERS: readonly SourcePoint[] = [
+    ...[0.37, 0.50, 0.63].map(x => ({ x: x * LANDSCAPE_WIDTH, y: 0.30 * LANDSCAPE_HEIGHT })),
+    ...[0.37, 0.50, 0.63].map(x => ({ x: x * LANDSCAPE_WIDTH, y: 0.48 * LANDSCAPE_HEIGHT })),
+    ...[0.37, 0.50, 0.63].map(x => ({ x: x * LANDSCAPE_WIDTH, y: 0.65 * LANDSCAPE_HEIGHT })),
+];
 
 type Props = {
     slots: readonly AnimalSlotState[];
@@ -141,6 +150,7 @@ function CowSlot({
     scale,
     offsetX,
     offsetY,
+    landscape,
     onSelect,
     onFeed,
     onCare,
@@ -153,14 +163,16 @@ function CowSlot({
     scale: number;
     offsetX: number;
     offsetY: number;
+    landscape: boolean;
     onSelect: () => void;
     onFeed: () => void;
     onCare: () => void;
     onCollect: () => void;
 }) {
-    const center = STALL_CENTERS[index] ?? STALL_CENTERS[0];
-    const sourceWidth = index < 3 ? 104 : 112;
-    const sourceHeight = 132;
+    const centers = landscape ? LANDSCAPE_STALL_CENTERS : STALL_CENTERS;
+    const center = centers[index] ?? centers[0];
+    const sourceWidth = landscape ? 130 : index < 3 ? 104 : 112;
+    const sourceHeight = landscape ? 115 : 132;
     const careRequirement = slot.production?.careRequirements.find(
         requirement => !requirement.completed && requirement.dueAt <= now
     );
@@ -259,6 +271,11 @@ export default function CowWorld({
     onCollect,
 }: Props) {
     const [viewport, setViewport] = useState<Viewport>({ width: 0, height: 0 });
+    const window = useWindowDimensions();
+    const isLandscape = (viewport.width || window.width) > (viewport.height || window.height);
+    const sourceWidth = isLandscape ? LANDSCAPE_WIDTH : CANVAS_WIDTH;
+    const sourceHeight = isLandscape ? LANDSCAPE_HEIGHT : CANVAS_HEIGHT;
+    const centers = isLandscape ? LANDSCAPE_STALL_CENTERS : STALL_CENTERS;
     const cowSlots = useMemo(
         () => slots.filter(slot => slot.animalId === 'cow'),
         [slots]
@@ -266,43 +283,23 @@ export default function CowWorld({
 
     function handleLayout(event: LayoutChangeEvent) {
         const { width, height } = event.nativeEvent.layout;
-        setViewport({ width, height });
+        setViewport(current => current.width === width && current.height === height ? current : { width, height });
     }
 
     const scale = viewport.width > 0 && viewport.height > 0
-        ? Math.min(viewport.width / CANVAS_WIDTH, viewport.height / CANVAS_HEIGHT)
+        ? Math.max(viewport.width / sourceWidth, viewport.height / sourceHeight)
         : 1;
-    const renderedWidth = CANVAS_WIDTH * scale;
-    const renderedHeight = CANVAS_HEIGHT * scale;
+    const renderedWidth = sourceWidth * scale;
+    const renderedHeight = sourceHeight * scale;
     const offsetX = (viewport.width - renderedWidth) / 2;
     const offsetY = (viewport.height - renderedHeight) / 2;
 
     return (
         <View style={styles.world} onLayout={handleLayout}>
+            <Image source={isLandscape ? LANDSCAPE_BACKGROUND : BACKGROUND} resizeMode="cover" style={StyleSheet.absoluteFill} />
             {viewport.width > 0 && (
                 <>
-                    <Image
-
-                        source={BACKGROUND}
-                        resizeMode="cover"
-                        blurRadius={12}
-                        style={StyleSheet.absoluteFill}
-                    />
-                    <Image
-                        source={BACKGROUND}
-                        resizeMode="contain"
-                        style={[
-                            styles.background,
-                            {
-                                left: offsetX,
-                                top: offsetY,
-                                width: renderedWidth,
-                                height: renderedHeight,
-                            },
-                        ]}
-                    />
-
-                    {cowSlots.slice(0, STALL_CENTERS.length).map((slot, index) => (
+                    {cowSlots.slice(0, centers.length).map((slot, index) => (
                         <CowSlot
                             key={slot.id}
                             slot={slot}
@@ -312,6 +309,7 @@ export default function CowWorld({
                             scale={scale}
                             offsetX={offsetX}
                             offsetY={offsetY}
+                            landscape={isLandscape}
                             onSelect={() => onSelectSlot(slot.id)}
                             onFeed={() => onFeed(slot.id)}
                             onCare={() => onCare(slot.id)}
@@ -326,7 +324,6 @@ export default function CowWorld({
 
 const styles = StyleSheet.create({
     world: { flex: 1, overflow: 'hidden', backgroundColor: '#79A94D' },
-    background: { position: 'absolute' },
     slot: {
         position: 'absolute',
         alignItems: 'center',

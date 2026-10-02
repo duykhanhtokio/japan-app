@@ -7,16 +7,27 @@ export { ROYAL_CONTENT_GROUP, ROYAL_CONTROL_SIZE, ROYAL_LAYOUT, ROYAL_PLACEMENT,
 const WIDE_BUTTON = require('../../../assets/app/ui/royal-af/button-wide-v2.png');
 const BACK_BUTTON = require('../../../assets/app/ui/royal-af/button-back-curved-a-v1.png');
 const DIALOGUE_FRAME = require('../../../assets/app/ui/royal-af/dialogue-frame-v1.png');
+const MAP_PILL_COLORS: Record<string,ImageSourcePropType> = {
+  '#dce5ff': require('../../../assets/app/maps/pills/dce5ff.png'),
+  '#dcecff': require('../../../assets/app/maps/pills/dcecff.png'),
+  '#ddf8f6': require('../../../assets/app/maps/pills/ddf8f6.png'),
+  '#e6f5d7': require('../../../assets/app/maps/pills/e6f5d7.png'),
+  '#e6f6d5': require('../../../assets/app/maps/pills/e6f6d5.png'),
+  '#eadcff': require('../../../assets/app/maps/pills/eadcff.png'),
+  '#ffd9ee': require('../../../assets/app/maps/pills/ffd9ee.png'),
+  '#ffe1e5': require('../../../assets/app/maps/pills/ffe1e5.png'),
+  '#ffe4cf': require('../../../assets/app/maps/pills/ffe4cf.png'),
+  '#fff0bd': require('../../../assets/app/maps/pills/fff0bd.png'),
+  '#fff1bd': require('../../../assets/app/maps/pills/fff1bd.png'),
+};
 const LOCK_CREST = require('../../../assets/app/ui/royal-af/lock-grape-v2.png');
-const HINT_LANTERN = require('../../../assets/app/ui/royal-af/hint-red-lantern-v2.png');
+const HINT_LANTERN = require('../../../assets/app/ui/royal-af/hint-gold-grape-v1.png');
 const LOCATION_CARD_FRAME = require('../../../assets/app/ui/royal-af/location-card-frame-grape-ivory-v2.png');
 const PLACE_ROW_FRAME = require('../../../assets/app/ui/royal-af/place-row-frame-grape-ivory-40-60-v3.png');
 const CHEVRON = require('../../../assets/app/ui/royal-af/chevron-right-v2.png');
 const CHECKMARK = require('../../../assets/app/ui/royal-af/checkmark-v2.png');
 const CLOSE_X = require('../../../assets/app/ui/royal-af/close-x-v2.png');
 const SELECTION_PANEL = require('../../../assets/app/ui/royal-af/selection-panel-rect-v1.png');
-const MAP_MARKER_FRAME = require('../../../assets/app/ui/royal-af/start-frame-transparent-v1.png');
-const MAP_MARKER_FILL = require('../../../assets/app/ui/royal-af/map-marker-fill-v1.png');
 
 export const ROYAL = {
   ink: '#07101f', lacquer: '#0b1830', lacquerLight: '#142847',
@@ -74,11 +85,9 @@ export function RoyalIvoryPill({primary,secondary,style}: {primary:string;second
 }
 
 export function RoyalMapPill({primary,secondary,color,style}: {primary:string;secondary?:string;color:string;style?:StyleProp<ViewStyle>}) {
-  return <View style={[s.mapPill,style]}>
-    <View pointerEvents="none" style={s.mapPillFillClip}><Image source={MAP_MARKER_FILL} resizeMode="stretch" tintColor={color} style={s.fillImage}/></View>
-    <View pointerEvents="none" style={s.mapPillFrame}><Image source={MAP_MARKER_FRAME} resizeMode="stretch" style={s.fillImage}/></View>
-    <View style={s.mapPillCopy}><Text maxFontSizeMultiplier={1} style={s.mapPillPrimary}>{primary}</Text>{!!secondary&&<Text maxFontSizeMultiplier={1} style={s.mapPillSecondary}>{secondary}</Text>}</View>
-  </View>;
+  return <ImageBackground source={MAP_PILL_COLORS[color.toLowerCase()]??DIALOGUE_FRAME} resizeMode="stretch" style={[s.mapPill,style]}>
+    <View style={s.mapPillCopy}><Text maxFontSizeMultiplier={1} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.7} style={s.mapPillPrimary}>{primary}</Text>{!!secondary&&<Text maxFontSizeMultiplier={1} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.7} style={s.mapPillSecondary}>{secondary}</Text>}</View>
+  </ImageBackground>;
 }
 
 export function RoyalLockCrest({style}:{style?:StyleProp<ViewStyle>}) {
@@ -169,7 +178,7 @@ const s=StyleSheet.create({
   labelPlaqueText:{flexShrink:1,color:ROYAL.paleGold,fontFamily:ROYAL_FONT.body,fontSize:ROYAL_TYPE.fieldLabel,lineHeight:18,textAlign:'center',textAlignVertical:'center',includeFontPadding:false,textShadowColor:'#271805',textShadowOffset:{width:0,height:2},textShadowRadius:3},
   capsule:{minWidth:112,minHeight:48,alignItems:'center',justifyContent:'center',paddingHorizontal:30,paddingVertical:10},capsuleText:{flexShrink:1,color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:16,lineHeight:22,textAlign:'center',textAlignVertical:'center',includeFontPadding:false,textShadowColor:'#271805',textShadowOffset:{width:0,height:2},textShadowRadius:3},
   ivoryPill:{minWidth:140,minHeight:68,alignItems:'center',justifyContent:'center',paddingHorizontal:ROYAL_LAYOUT.framedTextHorizontalInset,paddingVertical:20},ivoryPillPrimary:{width:'100%',color:ROYAL.lacquer,fontFamily:ROYAL_FONT.heading,fontSize:16,lineHeight:22,textAlign:'center',textAlignVertical:'center',includeFontPadding:false},ivoryPillSecondary:{width:'100%',color:'#725d3b',fontFamily:ROYAL_FONT.body,fontSize:11,lineHeight:15,textAlign:'center',textAlignVertical:'center',includeFontPadding:false,marginTop:2},
-  mapPill:{position:'relative',minWidth:140,minHeight:68,alignItems:'center',justifyContent:'center',overflow:'hidden'},mapPillFillClip:{position:'absolute',left:'7%',right:'7%',top:'17%',bottom:'17%',overflow:'hidden'},mapPillFrame:{...StyleSheet.absoluteFillObject,width:'100%',height:'100%'},mapPillCopy:{width:'100%',paddingHorizontal:ROYAL_LAYOUT.framedTextHorizontalInset,alignItems:'center',justifyContent:'center'},mapPillPrimary:{width:'100%',color:ROYAL.ink,fontFamily:ROYAL_FONT.heading,fontSize:16,lineHeight:22,textAlign:'center'},mapPillSecondary:{width:'100%',color:'#302718',fontFamily:ROYAL_FONT.body,fontSize:10.5,lineHeight:14,textAlign:'center'},
+  mapPill:{minWidth:96,minHeight:74,alignItems:'center',justifyContent:'center'},mapPillCopy:{width:'100%',paddingHorizontal:9,paddingTop:14,paddingBottom:14,alignItems:'center',justifyContent:'center'},mapPillPrimary:{width:'100%',color:ROYAL.ink,fontFamily:ROYAL_FONT.heading,fontSize:13,lineHeight:17,textAlign:'center'},mapPillSecondary:{width:'100%',color:'#302718',fontFamily:ROYAL_FONT.body,fontSize:8,lineHeight:11,textAlign:'center'},
   lockCrest:{width:52,height:52,shadowColor:'#f2c55d',shadowOffset:{width:0,height:3},shadowOpacity:.5,shadowRadius:7,elevation:10},fillImage:{width:'100%',height:'100%'},
   chevronBox:{...ROYAL_CONTROL_SIZE.chevronNavigation,alignItems:'center',justifyContent:'center'},chevronSelector:ROYAL_CONTROL_SIZE.chevronSelector,chevronCard:ROYAL_CONTROL_SIZE.chevronCard,chevronDown:{transform:[{rotate:'90deg'}]},
   hintAsset:{width:54,height:68,shadowColor:'#020611',shadowOffset:{width:0,height:5},shadowOpacity:.5,shadowRadius:8,elevation:12},hintPressed:{transform:[{translateY:3},{scale:.96}],opacity:.9},

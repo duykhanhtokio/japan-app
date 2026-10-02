@@ -7,6 +7,7 @@ import {
     StyleSheet,
     Text,
     View,
+    useWindowDimensions,
 } from 'react-native';
 
 import {
@@ -35,6 +36,9 @@ const CHICKEN = {
 
 const CANVAS_WIDTH = 832;
 const CANVAS_HEIGHT = 1792;
+const LANDSCAPE_WIDTH = 1672;
+const LANDSCAPE_HEIGHT = 941;
+const LANDSCAPE_BACKGROUND = require('../../../../assets/game/farm/background/chicken_coop_landscape_v1.png');
 
 type SourcePoint = {
     x: number;
@@ -59,6 +63,11 @@ const NEST_CENTERS: readonly SourcePoint[] = [
     { x: 468, y: 1210 },
     { x: 584, y: 1210 },
 ] as const;
+const LANDSCAPE_NEST_CENTERS: readonly SourcePoint[] = [
+    ...[0.38, 0.48, 0.58, 0.68].map(x => ({ x: x * LANDSCAPE_WIDTH, y: 0.40 * LANDSCAPE_HEIGHT })),
+    ...[0.38, 0.48, 0.58, 0.68].map(x => ({ x: x * LANDSCAPE_WIDTH, y: 0.58 * LANDSCAPE_HEIGHT })),
+    ...[0.38, 0.48, 0.58, 0.68].map(x => ({ x: x * LANDSCAPE_WIDTH, y: 0.76 * LANDSCAPE_HEIGHT })),
+];
 
 type Props = {
     slots: readonly AnimalSlotState[];
@@ -184,6 +193,7 @@ function ChickenSlot({
     scale,
     offsetX,
     offsetY,
+    landscape,
     onSelect,
     onFeed,
     onCare,
@@ -196,14 +206,16 @@ function ChickenSlot({
     scale: number;
     offsetX: number;
     offsetY: number;
+    landscape: boolean;
     onSelect: () => void;
     onFeed: () => void;
     onCare: () => void;
     onCollect: () => void;
 }) {
-    const center = NEST_CENTERS[index] ?? NEST_CENTERS[0];
-    const sourceWidth = 112;
-    const sourceHeight = 126;
+    const centers = landscape ? LANDSCAPE_NEST_CENTERS : NEST_CENTERS;
+    const center = centers[index] ?? centers[0];
+    const sourceWidth = landscape ? 142 : 112;
+    const sourceHeight = landscape ? 112 : 126;
 
     const careRequirement = slot.production?.careRequirements.find(
         requirement =>
@@ -319,6 +331,11 @@ export default function ChickenWorld({
         width: 0,
         height: 0,
     });
+    const window = useWindowDimensions();
+    const isLandscape = (viewport.width || window.width) > (viewport.height || window.height);
+    const sourceWidth = isLandscape ? LANDSCAPE_WIDTH : CANVAS_WIDTH;
+    const sourceHeight = isLandscape ? LANDSCAPE_HEIGHT : CANVAS_HEIGHT;
+    const centers = isLandscape ? LANDSCAPE_NEST_CENTERS : NEST_CENTERS;
 
     const chickenSlots = useMemo(
         () => slots.filter(slot => slot.animalId === 'chicken'),
@@ -327,47 +344,27 @@ export default function ChickenWorld({
 
     function handleLayout(event: LayoutChangeEvent) {
         const { width, height } = event.nativeEvent.layout;
-        setViewport({ width, height });
+        setViewport(current => current.width === width && current.height === height ? current : { width, height });
     }
 
     const scale = viewport.width > 0 && viewport.height > 0
-        ? Math.min(
-            viewport.width / CANVAS_WIDTH,
-            viewport.height / CANVAS_HEIGHT
+        ? Math.max(
+            viewport.width / sourceWidth,
+            viewport.height / sourceHeight
         )
         : 1;
 
-    const renderedWidth = CANVAS_WIDTH * scale;
-    const renderedHeight = CANVAS_HEIGHT * scale;
+    const renderedWidth = sourceWidth * scale;
+    const renderedHeight = sourceHeight * scale;
     const offsetX = (viewport.width - renderedWidth) / 2;
     const offsetY = (viewport.height - renderedHeight) / 2;
 
     return (
         <View style={styles.world} onLayout={handleLayout}>
+            <Image source={isLandscape ? LANDSCAPE_BACKGROUND : BACKGROUND} resizeMode="cover" style={StyleSheet.absoluteFill} />
             {viewport.width > 0 && (
                 <>
-                    <Image
-
-                        source={BACKGROUND}
-                        resizeMode="cover"
-                        blurRadius={12}
-                        style={StyleSheet.absoluteFill}
-                    />
-                    <Image
-                        source={BACKGROUND}
-                        resizeMode="contain"
-                        style={[
-                            styles.background,
-                            {
-                                left: offsetX,
-                                top: offsetY,
-                                width: renderedWidth,
-                                height: renderedHeight,
-                            },
-                        ]}
-                    />
-
-                    {chickenSlots.slice(0, NEST_CENTERS.length).map(
+                    {chickenSlots.slice(0, centers.length).map(
                         (slot, index) => (
                             <ChickenSlot
                                 key={slot.id}
@@ -378,6 +375,7 @@ export default function ChickenWorld({
                                 scale={scale}
                                 offsetX={offsetX}
                                 offsetY={offsetY}
+                                landscape={isLandscape}
                                 onSelect={() => onSelectSlot(slot.id)}
                                 onFeed={() => onFeed(slot.id)}
                                 onCare={() => onCare(slot.id)}
@@ -396,9 +394,6 @@ const styles = StyleSheet.create({
         flex: 1,
         overflow: 'hidden',
         backgroundColor: '#78A94E',
-    },
-    background: {
-        position: 'absolute',
     },
     slot: {
         position: 'absolute',
