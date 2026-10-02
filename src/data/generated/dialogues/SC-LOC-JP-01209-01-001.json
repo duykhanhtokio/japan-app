@@ -1,0 +1,257 @@
+{
+  "shared": [
+    {
+      "id": "DLG-SC-LOC-JP-01209-01-001-SHARED-01",
+      "scenarioId": "SC-LOC-JP-01209-01-001",
+      "turnOrder": 1,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "こんにちは。移動について、何を確認されたいですか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01209-01-001-SHARED-02",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01209-01-001-SHARED-02",
+      "scenarioId": "SC-LOC-JP-01209-01-001",
+      "turnOrder": 2,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "ask_ticket_from_old_yubari_map",
+        "requiredSemanticComponents": {
+          "goal": "夕張から出かける切符を買いたいと伝え、古い地図の駅から乗る想定でよいか尋ねる"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "夕張から出かける切符を買いたいです。昔の地図にある夕張駅から乗るつもりですが、その行き方でいいですか。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "夕張から出かける切符を買いたいと伝え、古い地図の駅から乗る想定でよいか尋ねる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "夕張から出かける切符を買いたいと伝え、古い地図の駅から乗る想定でよいか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01209-01-001-SHARED-03",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01209-01-001-SHARED-03",
+      "scenarioId": "SC-LOC-JP-01209-01-001",
+      "turnOrder": 3,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "旧夕張駅から列車に乗る前提では調べられません。現在使える交通と、列車に乗る駅を分けて確認しましょう。目的地はどちらですか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01209-01-001-SHARED-04",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01209-01-001-SHARED-04",
+      "scenarioId": "SC-LOC-JP-01209-01-001",
+      "turnOrder": 4,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "switch_station_search_to_destination_address",
+        "requiredSemanticComponents": {
+          "goal": "目的地の住所を示し、駅名だけで検索せず現在の経路を確認したいと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "この住所です。駅名だけで検索していました。まず目的地までの今の経路を確かめたいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "目的地の住所を示し、駅名だけで検索せず現在の経路を確認したいと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "目的地の住所を示し、駅名だけで検索せず現在の経路を確認したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01209-01-001-SHARED-05",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01209-01-001-SHARED-05",
+      "scenarioId": "SC-LOC-JP-01209-01-001",
+      "turnOrder": 5,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "はい。鉄道を利用する区間と、そこまでの移動を区別します。切符を買う前に出発日も確認しましょう。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01209-01-001-SHARED-06",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01209-01-001-SHARED-06",
+      "scenarioId": "SC-LOC-JP-01209-01-001",
+      "turnOrder": 6,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "select_outbound_only_with_unknown_return",
+        "requiredSemanticComponents": {
+          "goal": "明日出発で帰りは未定だと答え、往復券を先に買わず行きの区間が決まってから購入したいと話す"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "明日出発ですが、帰りの日は決まっていません。最初から往復券にせず、行きの区間が決まってから買いたいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "明日出発で帰りは未定だと答え、往復券を先に買わず行きの区間が決まってから購入したいと話す。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "明日出発で帰りは未定だと答え、往復券を先に買わず行きの区間が決まってから購入したいと話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01209-01-001-SHARED-07",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01209-01-001-SHARED-07",
+      "scenarioId": "SC-LOC-JP-01209-01-001",
+      "turnOrder": 7,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "その希望で調べましょう。移動手段ごとに支払い方法が違う場合があるので、一枚の切符で全部乗れるとは限りません。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01209-01-001-SHARED-08",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01209-01-001-SHARED-08",
+      "scenarioId": "SC-LOC-JP-01209-01-001",
+      "turnOrder": 8,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "separate_ticket_and_access_transport_payment",
+        "requiredSemanticComponents": {
+          "goal": "鉄道券で駅までの別交通も払えると思っていたと説明し、各区間の購入先を確認したいと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "列車の切符だけで、駅へ向かう交通も払えると思っていました。それぞれどこで買うか確認したいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "鉄道券で駅までの別交通も払えると思っていたと説明し、各区間の購入先を確認したいと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "鉄道券で駅までの別交通も払えると思っていたと説明し、各区間の購入先を確認したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01209-01-001-SHARED-09",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01209-01-001-SHARED-09",
+      "scenarioId": "SC-LOC-JP-01209-01-001",
+      "turnOrder": 9,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "経路が決まったら、区間ごとの購入先と支払い方法を確認しましょう。便と料金は、出発日の交通事業者の案内で調べてください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01209-01-001-SHARED-10",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01209-01-001-SHARED-10",
+      "scenarioId": "SC-LOC-JP-01209-01-001",
+      "turnOrder": 10,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "confirm_current_route_date_and_purchase_points",
+        "requiredSemanticComponents": {
+          "goal": "古い駅を出発地にせず住所と日付で調べ、行きの区間と購入先に合う必要な券だけ買うと話す"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "古い駅を出発駅にせず、住所と日付で経路を調べます。行きの区間と購入先を確かめて、必要な切符だけ買います。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "古い駅を出発地にせず住所と日付で調べ、行きの区間と購入先に合う必要な券だけ買うと話す。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "古い駅を出発地にせず住所と日付で調べ、行きの区間と購入先に合う必要な券だけ買うと話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01209-01-001-SHARED-11",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01209-01-001-SHARED-11",
+      "scenarioId": "SC-LOC-JP-01209-01-001",
+      "turnOrder": 11,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "はい。新しい案内で出発前に再確認してください。ご相談ありがとうございました。お気をつけて。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    }
+  ],
+  "authoring": {
+    "locale": "ja",
+    "cluster": "CLUSTER_01_HOKKAIDO_2026-09-30",
+    "contentScope": "simulated_learning_scenario",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-yubari.json",
+    "premise": "夕張の架空の交通案内場面。旧夕張駅から現役列車に乗れると想定せず、目的地までの現在の経路と切符の区間を分ける。夕張支線廃止はJR北海道公式資料で確認。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
+  }
+}

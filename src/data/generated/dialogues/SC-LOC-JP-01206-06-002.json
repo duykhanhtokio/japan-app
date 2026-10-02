@@ -1,0 +1,256 @@
+{
+  "shared": [
+    {
+      "id": "DLG-SC-LOC-JP-01206-06-002-SHARED-01",
+      "scenarioId": "SC-LOC-JP-01206-06-002",
+      "turnOrder": 1,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "こんにちは。お振り込みについて何を確認しましょうか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-06-002-SHARED-02",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-06-002-SHARED-02",
+      "scenarioId": "SC-LOC-JP-01206-06-002",
+      "turnOrder": 2,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "report_invoice_payee_name_mismatch",
+        "requiredSemanticComponents": {
+          "goal": "修理代の受取人名が請求書の店名と違うと伝え、振込を進めてよいか相談する"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "修理代を振り込もうとしたら、画面の受取人名が請求書の店名と違いました。このまま進めてよいかわかりません。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "修理代の受取人名が請求書の店名と違うと伝え、振込を進めてよいか相談する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "修理代の受取人名が請求書の店名と違うと伝え、振込を進めてよいか相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-06-002-SHARED-03",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-06-002-SHARED-03",
+      "scenarioId": "SC-LOC-JP-01206-06-002",
+      "turnOrder": 3,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "振り込みはまだ確定していませんか。口座番号などの入力内容と請求書を確認しましょう。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-06-002-SHARED-04",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-06-002-SHARED-04",
+      "scenarioId": "SC-LOC-JP-01206-06-002",
+      "turnOrder": 4,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "confirm_unsubmitted_transfer_and_matching_number",
+        "requiredSemanticComponents": {
+          "goal": "確定前の確認画面で止めており、番号は請求書と同じだが個人名が表示されていると説明する"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "確認画面で止めています。番号は請求書と同じですが、店名ではなく個人の名前が表示されています。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "確定前の確認画面で止めており、番号は請求書と同じだが個人名が表示されていると説明する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "確定前の確認画面で止めており、番号は請求書と同じだが個人名が表示されていると説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-06-002-SHARED-05",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-06-002-SHARED-05",
+      "scenarioId": "SC-LOC-JP-01206-06-002",
+      "turnOrder": 5,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "屋号と名義が異なることはありますが、銀行から相手の請求の正当性は判断できません。修理業者に確認できますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-06-002-SHARED-06",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-06-002-SHARED-06",
+      "scenarioId": "SC-LOC-JP-01206-06-002",
+      "turnOrder": 6,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "choose_known_vendor_contact_over_new_number",
+        "requiredSemanticComponents": {
+          "goal": "請求書の新しい連絡先のほかに以前依頼した時の番号があると伝え、既知の番号へ確認すると話す"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "請求書に新しい番号が書いてありますが、修理を頼んだ時の電話番号も残っています。そちらへ聞いたほうがいいですね。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "請求書の新しい連絡先のほかに以前依頼した時の番号があると伝え、既知の番号へ確認すると話す。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "請求書の新しい連絡先のほかに以前依頼した時の番号があると伝え、既知の番号へ確認すると話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-06-002-SHARED-07",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-06-002-SHARED-07",
+      "scenarioId": "SC-LOC-JP-01206-06-002",
+      "turnOrder": 7,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "連絡先の変更も含め、もともと確認できている連絡先で口座名義を照会してください。確定操作は確認後にしましょう。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-06-002-SHARED-08",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-06-002-SHARED-08",
+      "scenarioId": "SC-LOC-JP-01206-06-002",
+      "turnOrder": 8,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "report_vendor_confirmation_request_total",
+        "requiredSemanticComponents": {
+          "goal": "元の番号で業者から名義の説明を受けたと伝え、確定前に手数料を含む合計を見たいと頼む"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "今、元の番号で確認できました。請求書の名義を担当者が説明してくれました。手数料を含めた合計も確定前に見たいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "元の番号で業者から名義の説明を受けたと伝え、確定前に手数料を含む合計を見たいと頼む。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "元の番号で業者から名義の説明を受けたと伝え、確定前に手数料を含む合計を見たいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-06-002-SHARED-09",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-06-002-SHARED-09",
+      "scenarioId": "SC-LOC-JP-01206-06-002",
+      "turnOrder": 9,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "確認画面の振込額、受取人、手数料、引き落とし合計を照らし合わせてください。表示がわからない所はご説明します。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-06-002-SHARED-10",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-06-002-SHARED-10",
+      "scenarioId": "SC-LOC-JP-01206-06-002",
+      "turnOrder": 10,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "confirm_amount_payee_total_before_submit",
+        "requiredSemanticComponents": {
+          "goal": "請求額と名義、手数料込みの合計を照合してから確定し、確認できなければ振り込まないと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "請求額と名義を確認して、手数料を含む合計を見てから確定します。確認できなければ今日は振り込まないつもりでした。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "請求額と名義、手数料込みの合計を照合してから確定し、確認できなければ振り込まないと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "請求額と名義、手数料込みの合計を照合してから確定し、確認できなければ振り込まないと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-06-002-SHARED-11",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-06-002-SHARED-11",
+      "scenarioId": "SC-LOC-JP-01206-06-002",
+      "turnOrder": 11,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "その順で慎重に確認してください。確定後は控えも保管しましょう。ご相談ありがとうございました。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    }
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-kushiro.json",
+    "premise": "釧路の銀行で修理業者への振込前相談。請求書の屋号と口座名義の個人名が異なるため、既知の連絡先で照会してから送金する。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
+}

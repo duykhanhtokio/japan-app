@@ -1,0 +1,256 @@
+{
+  "shared": [
+    {
+      "id": "DLG-SC-LOC-JP-01205-01-001-SHARED-01",
+      "scenarioId": "SC-LOC-JP-01205-01-001",
+      "turnOrder": 1,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "こんにちは。切符について、何かお手伝いできますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01205-01-001-SHARED-02",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01205-01-001-SHARED-02",
+      "scenarioId": "SC-LOC-JP-01205-01-001",
+      "turnOrder": 2,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "ask_port_interview_ticket_destination",
+        "requiredSemanticComponents": {
+          "goal": "港近くの仕事の面接に向かうと伝え、港に近い駅への切符を買えばよいか相談する"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "港の近くで仕事の面接があります。室蘭駅から切符を買いたいんですが、港に近い駅を選べばいいですか。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "港近くの仕事の面接に向かうと伝え、港に近い駅への切符を買えばよいか相談する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "港近くの仕事の面接に向かうと伝え、港に近い駅への切符を買えばよいか相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01205-01-001-SHARED-03",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01205-01-001-SHARED-03",
+      "scenarioId": "SC-LOC-JP-01205-01-001",
+      "turnOrder": 3,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "港といっても目的の場所が広いので、面接先の住所を確認しましょう。会社から案内は届いていますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01205-01-001-SHARED-04",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01205-01-001-SHARED-04",
+      "scenarioId": "SC-LOC-JP-01205-01-001",
+      "turnOrder": 4,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "correct_head_office_to_interview_reception_address",
+        "requiredSemanticComponents": {
+          "goal": "会社のメールには本社とは別の受付住所があると示し、そちらが行き先だと説明する"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "会社名だけメモしましたが、メールを見ると受付の住所が別にあります。会社の本社ではなく、この受付へ行くようです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "会社のメールには本社とは別の受付住所があると示し、そちらが行き先だと説明する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "会社のメールには本社とは別の受付住所があると示し、そちらが行き先だと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01205-01-001-SHARED-05",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01205-01-001-SHARED-05",
+      "scenarioId": "SC-LOC-JP-01205-01-001",
+      "turnOrder": 5,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "その受付の住所を基準に行き方を調べましょう。駅で降りた後の移動も含めて確認する必要があります。集合時刻は決まっていますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01205-01-001-SHARED-06",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01205-01-001-SHARED-06",
+      "scenarioId": "SC-LOC-JP-01205-01-001",
+      "turnOrder": 6,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "include_last_mile_in_arrival_deadline",
+        "requiredSemanticComponents": {
+          "goal": "集合時刻を示し、駅で降りた後に受付まで歩く時間と道も確認したいと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "面接は午後二時です。駅から歩く時間を考えていませんでした。駅に着いたら終わりと思わず、受付までの経路を見たいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "集合時刻を示し、駅で降りた後に受付まで歩く時間と道も確認したいと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "集合時刻を示し、駅で降りた後に受付まで歩く時間と道も確認したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01205-01-001-SHARED-07",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01205-01-001-SHARED-07",
+      "scenarioId": "SC-LOC-JP-01205-01-001",
+      "turnOrder": 7,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "はい。目的地、降りる駅、その先の経路を確認してから切符を選びましょう。案内でわからない入口は、面接先へ尋ねると確実です。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01205-01-001-SHARED-08",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01205-01-001-SHARED-08",
+      "scenarioId": "SC-LOC-JP-01205-01-001",
+      "turnOrder": 8,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "request_oneway_with_uncertain_return_ride",
+        "requiredSemanticComponents": {
+          "goal": "面接先に入口を確認すると伝え、帰りは送ってもらう可能性があるので片道券だけを希望する"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "面接先にも入口を確認します。帰りは同僚に送ってもらうかもしれないので、今日は片道だけ買いたいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "面接先に入口を確認すると伝え、帰りは送ってもらう可能性があるので片道券だけを希望する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "面接先に入口を確認すると伝え、帰りは送ってもらう可能性があるので片道券だけを希望する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01205-01-001-SHARED-09",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01205-01-001-SHARED-09",
+      "scenarioId": "SC-LOC-JP-01205-01-001",
+      "turnOrder": 9,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "片道のご希望ですね。区間が決まったら、購入できる方法と料金をご案内します。券売機で迷ったら操作前にお尋ねください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01205-01-001-SHARED-10",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01205-01-001-SHARED-10",
+      "scenarioId": "SC-LOC-JP-01205-01-001",
+      "turnOrder": 10,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "confirm_address_route_then_fare_purchase",
+        "requiredSemanticComponents": {
+          "goal": "受付住所と降車後の経路を確かめて余裕のある移動を選び、区間と料金を確認して片道券を買うと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "受付住所と降車後の経路を先に確かめ、余裕のある移動を選びます。区間と料金を確認してから片道券を買います。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "受付住所と降車後の経路を確かめて余裕のある移動を選び、区間と料金を確認して片道券を買うと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "受付住所と降車後の経路を確かめて余裕のある移動を選び、区間と料金を確認して片道券を買うと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01205-01-001-SHARED-11",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01205-01-001-SHARED-11",
+      "scenarioId": "SC-LOC-JP-01205-01-001",
+      "turnOrder": 11,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "承知しました。まずメールの受付住所をお示しください。行き方と購入方法を順に確認しましょう。お気をつけてお出かけください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    }
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-muroran.json",
+    "premise": "室蘭駅で港へ向かう客が施設名ではなく目的の受付住所を示して、降車駅から先の移動を確認してから片道券を選ぶ。実際の駅名・運賃・交通接続は指定しない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
+}

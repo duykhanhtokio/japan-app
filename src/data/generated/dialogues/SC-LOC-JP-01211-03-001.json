@@ -1,0 +1,256 @@
+{
+  "shared": [
+    {
+      "id": "DLG-SC-LOC-JP-01211-03-001-SHARED-01",
+      "scenarioId": "SC-LOC-JP-01211-03-001",
+      "turnOrder": 1,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "こんにちは。検査の受付で、何かお困りですか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-03-001-SHARED-02",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-03-001-SHARED-02",
+      "scenarioId": "SC-LOC-JP-01211-03-001",
+      "turnOrder": 2,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "ask_if_similar_test_reception_correct",
+        "requiredSemanticComponents": {
+          "goal": "似た検査名の案内を見て並んだので、予約した検査の受付がここで正しいか尋ねる"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "予約した検査の受付に来ました。似た名前の案内を見て並んだのですが、この場所で合っていますか。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "似た検査名の案内を見て並んだので、予約した検査の受付がここで正しいか尋ねる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "似た検査名の案内を見て並んだので、予約した検査の受付がここで正しいか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-03-001-SHARED-03",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-03-001-SHARED-03",
+      "scenarioId": "SC-LOC-JP-01211-03-001",
+      "turnOrder": 3,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "予約票で検査名と受付の指定を確認しましょう。今日はどの書類をお持ちですか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-03-001-SHARED-04",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-03-001-SHARED-04",
+      "scenarioId": "SC-LOC-JP-01211-03-001",
+      "turnOrder": 4,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "compare_remembered_abbreviation_and_booking_name",
+        "requiredSemanticComponents": {
+          "goal": "予約票の正式名が覚えていた略称と違い、別の受付に並んだ可能性があると説明する"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "この予約票です。略して覚えていた名前と、ここに書かれた正式な名前が違います。別の受付に並んだかもしれません。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "予約票の正式名が覚えていた略称と違い、別の受付に並んだ可能性があると説明する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "予約票の正式名が覚えていた略称と違い、別の受付に並んだ可能性があると説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-03-001-SHARED-05",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-03-001-SHARED-05",
+      "scenarioId": "SC-LOC-JP-01211-03-001",
+      "turnOrder": 5,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "予約票には「腹部超音波検査」、受付は「検査受付B」と書かれています。ここは受付Aなので、この票の受付とは違います。準備の説明書もありますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-03-001-SHARED-06",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-03-001-SHARED-06",
+      "scenarioId": "SC-LOC-JP-01211-03-001",
+      "turnOrder": 6,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "report_possible_preparation_drink_misreading",
+        "requiredSemanticComponents": {
+          "goal": "朝の飲み物について準備指示を読み違えた可能性があり、実際にしたことを受付で知らせたいと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "ありますが、朝の飲み物について読み違えたかもしれません。指示と違うことをした可能性も、受付で伝えたいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "朝の飲み物について準備指示を読み違えた可能性があり、実際にしたことを受付で知らせたいと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "朝の飲み物について準備指示を読み違えた可能性があり、実際にしたことを受付で知らせたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-03-001-SHARED-07",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-03-001-SHARED-07",
+      "scenarioId": "SC-LOC-JP-01211-03-001",
+      "turnOrder": 7,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "準備のことは、検査担当へ必ずお知らせください。ここで検査できるかを判断せず、担当に確認します。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-03-001-SHARED-08",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-03-001-SHARED-08",
+      "scenarioId": "SC-LOC-JP-01211-03-001",
+      "turnOrder": 8,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "offer_consumption_time_note_before_test",
+        "requiredSemanticComponents": {
+          "goal": "飲んだ物と時刻のメモを示し、黙って検査を受けず担当者の指示を聞くと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "何時に何を飲んだかはメモしました。黙って検査を受けず、このメモを見せて今後の指示を聞きます。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "飲んだ物と時刻のメモを示し、黙って検査を受けず担当者の指示を聞くと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "飲んだ物と時刻のメモを示し、黙って検査を受けず担当者の指示を聞くと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-03-001-SHARED-09",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-03-001-SHARED-09",
+      "scenarioId": "SC-LOC-JP-01211-03-001",
+      "turnOrder": 9,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "担当に連絡しました。まず受付Bで予約票と飲んだ物・時刻のメモを見せるよう案内されています。検査を行えるかは、その担当が確認します。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-03-001-SHARED-10",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-03-001-SHARED-10",
+      "scenarioId": "SC-LOC-JP-01211-03-001",
+      "turnOrder": 10,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "confirm_formal_test_reception_and_preparation_disclosure",
+        "requiredSemanticComponents": {
+          "goal": "受付Bという案内を復唱し、腹部超音波検査の予約票と飲んだ物・時刻のメモを示して担当の判断を待つと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "受付AではなくBですね。腹部超音波検査の予約票と、飲んだ物と時刻のメモを見せます。検査できるかは担当の確認を待ちます。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "受付Bという案内を復唱し、腹部超音波検査の予約票と飲んだ物・時刻のメモを示して担当の判断を待つと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "受付Bという案内を復唱し、腹部超音波検査の予約票と飲んだ物・時刻のメモを示して担当の判断を待つと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-03-001-SHARED-11",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-03-001-SHARED-11",
+      "scenarioId": "SC-LOC-JP-01211-03-001",
+      "turnOrder": 11,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "はい、受付Bです。検査前の準備に関するご申告も伝えました。こちらの案内表示をご一緒に確認します。お大事に。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    }
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-abashiri.json",
+    "premise": "網走の架空病院受付。予約票には「腹部超音波検査・検査受付B」と記載され、客は別の受付Aに並んだ。受付職員が表題と受付名を読み、準備について実際に飲んだ物と時刻を検査担当へ伝える。検査可否や飲食の指示は生成しない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
+}

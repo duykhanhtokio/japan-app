@@ -1,0 +1,256 @@
+{
+  "shared": [
+    {
+      "id": "DLG-SC-LOC-JP-01210-06-001-SHARED-01",
+      "scenarioId": "SC-LOC-JP-01210-06-001",
+      "turnOrder": 1,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "こんにちは。通帳について、何かお困りですか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01210-06-001-SHARED-02",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01210-06-001-SHARED-02",
+      "scenarioId": "SC-LOC-JP-01210-06-001",
+      "turnOrder": 2,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "ask_unupdated_passbook_no_transaction_assumption",
+        "requiredSemanticComponents": {
+          "goal": "長く記帳していない通帳の金額が変わらないと伝え、取引がなかったという意味か尋ねる"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "しばらく記帳していないのですが、通帳の金額が変わっていません。取引がなかったということでしょうか。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "長く記帳していない通帳の金額が変わらないと伝え、取引がなかったという意味か尋ねる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "長く記帳していない通帳の金額が変わらないと伝え、取引がなかったという意味か尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01210-06-001-SHARED-03",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01210-06-001-SHARED-03",
+      "scenarioId": "SC-LOC-JP-01210-06-001",
+      "turnOrder": 3,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "通帳に記録されていない取引がある場合もあります。最後に記帳した日と、最近利用した手続きを確認しましょう。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01210-06-001-SHARED-04",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01210-06-001-SHARED-04",
+      "scenarioId": "SC-LOC-JP-01210-06-001",
+      "turnOrder": 4,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "identify_half_year_gap_and_rent_debits",
+        "requiredSemanticComponents": {
+          "goal": "最後の記帳は半年ほど前で、その後も家賃の引落しがあるので取引はあったと説明する"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "最後は半年ほど前です。その後も家賃の引き落としがあるので、何も動いていないわけではないですね。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "最後の記帳は半年ほど前で、その後も家賃の引落しがあるので取引はあったと説明する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "最後の記帳は半年ほど前で、その後も家賃の引落しがあるので取引はあったと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01210-06-001-SHARED-05",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01210-06-001-SHARED-05",
+      "scenarioId": "SC-LOC-JP-01210-06-001",
+      "turnOrder": 5,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "はい。記帳できる方法をご案内します。通帳の残りの記入欄も確認してよろしいですか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01210-06-001-SHARED-06",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01210-06-001-SHARED-06",
+      "scenarioId": "SC-LOC-JP-01210-06-001",
+      "turnOrder": 6,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "ask_one_line_remaining_rollover",
+        "requiredSemanticComponents": {
+          "goal": "記入欄が一行しか残っていないと伝え、半年分を記帳するには欄が足りない場合どうなるか尋ねる"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "もう一行しかありません。機械に入れれば、半年分がその一行に全部入ると思っていました。足りない場合はどうなりますか。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "記入欄が一行しか残っていないと伝え、半年分を記帳するには欄が足りない場合どうなるか尋ねる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "記入欄が一行しか残っていないと伝え、半年分を記帳するには欄が足りない場合どうなるか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01210-06-001-SHARED-07",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01210-06-001-SHARED-07",
+      "scenarioId": "SC-LOC-JP-01210-06-001",
+      "turnOrder": 7,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "この通帳には一行しか残っていませんね。取扱い案内には、欄が足りなくなったら窓口で繰越を相談し、まとまった表示だけでは分からない取引は別の明細を照会するとあります。半年分が一行に全て個別記載されるとは限りません。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01210-06-001-SHARED-08",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01210-06-001-SHARED-08",
+      "scenarioId": "SC-LOC-JP-01210-06-001",
+      "turnOrder": 8,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "request_old_passbook_retention_for_rent",
+        "requiredSemanticComponents": {
+          "goal": "新しい通帳になる場合も、家賃の支払い確認に使う古い通帳を保管したいと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "新しい通帳になるなら、古い通帳も手元に残したいです。家賃の支払いを確認する時に必要なので、捨てずに保管します。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "新しい通帳になる場合も、家賃の支払い確認に使う古い通帳を保管したいと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "新しい通帳になる場合も、家賃の支払い確認に使う古い通帳を保管したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01210-06-001-SHARED-09",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01210-06-001-SHARED-09",
+      "scenarioId": "SC-LOC-JP-01210-06-001",
+      "turnOrder": 9,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "過去の取引を確認する資料として保管できます。明細が必要な期間と、表示で不明な取引を整理してください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01210-06-001-SHARED-10",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01210-06-001-SHARED-10",
+      "scenarioId": "SC-LOC-JP-01210-06-001",
+      "turnOrder": 10,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "confirm_update_rollover_and_rent_details",
+        "requiredSemanticComponents": {
+          "goal": "記帳と繰越の方法を聞き、新旧の通帳を保管して半年分の家賃を明細で確認したいと話す"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "まず記帳と繰り越しの方法を聞きます。新旧の通帳を保管し、半年分の家賃が明細で確認できるか見たいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "記帳と繰越の方法を聞き、新旧の通帳を保管して半年分の家賃を明細で確認したいと話す。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "記帳と繰越の方法を聞き、新旧の通帳を保管して半年分の家賃を明細で確認したいと話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01210-06-001-SHARED-11",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01210-06-001-SHARED-11",
+      "scenarioId": "SC-LOC-JP-01210-06-001",
+      "turnOrder": 11,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "繰越の窓口相談と、半年分の家賃を個別に見る明細照会の二つを担当へ渡します。新しい通帳の発行や明細の交付が済んだわけではありませんので、新旧の資料を区別して保管してください。ありがとうございました。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    }
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-iwamizawa.json",
+    "premise": "岩見沢の銀行で通帳記帳の相談。空白期間を残高不変と誤認し、通帳記入欄が残り少ないことから繰越時の旧通帳保管も尋ねる。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
+}

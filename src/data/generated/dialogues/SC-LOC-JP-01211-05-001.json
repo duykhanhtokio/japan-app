@@ -1,0 +1,256 @@
+{
+  "shared": [
+    {
+      "id": "DLG-SC-LOC-JP-01211-05-001-SHARED-01",
+      "scenarioId": "SC-LOC-JP-01211-05-001",
+      "turnOrder": 1,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "こんにちは。配達のことで、何をお手伝いしましょうか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-05-001-SHARED-02",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-05-001-SHARED-02",
+      "scenarioId": "SC-LOC-JP-01211-05-001",
+      "turnOrder": 2,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "ask_failed_redelivery_number_entry",
+        "requiredSemanticComponents": {
+          "goal": "不在票の番号で再配達を申し込めないので、写真と入力画面を確認してほしいと頼む"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "不在票の番号を入力しても再配達を申し込めません。携帯の写真を見てもらえますか。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "不在票の番号で再配達を申し込めないので、写真と入力画面を確認してほしいと頼む。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "不在票の番号で再配達を申し込めないので、写真と入力画面を確認してほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-05-001-SHARED-03",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-05-001-SHARED-03",
+      "scenarioId": "SC-LOC-JP-01211-05-001",
+      "turnOrder": 3,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "写真の配達日と、入力している番号の欄を確認しましょう。今回入っていた不在票はお持ちですか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-05-001-SHARED-04",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-05-001-SHARED-04",
+      "scenarioId": "SC-LOC-JP-01211-05-001",
+      "turnOrder": 4,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "identify_old_photo_wrong_parcel",
+        "requiredSemanticComponents": {
+          "goal": "今回の不在票は持参しているが、写真は先月の別荷物で古い番号を入力していたと訂正する"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "紙は持っています。写真は先月の不在票で、別の荷物でした。今回のものを見ずに入力していました。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "今回の不在票は持参しているが、写真は先月の別荷物で古い番号を入力していたと訂正する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "今回の不在票は持参しているが、写真は先月の別荷物で古い番号を入力していたと訂正する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-05-001-SHARED-05",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-05-001-SHARED-05",
+      "scenarioId": "SC-LOC-JP-01211-05-001",
+      "turnOrder": 5,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "では、今回の不在票に書かれた案内を使いましょう。番号が複数ある場合は、入力欄の名称を確認してください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-05-001-SHARED-06",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-05-001-SHARED-06",
+      "scenarioId": "SC-LOC-JP-01211-05-001",
+      "turnOrder": 6,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "ask_tracking_vs_requested_number_field",
+        "requiredSemanticComponents": {
+          "goal": "今回の票に複数の番号欄があるため、画面が求める名称と同じ欄を確認したいと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "今回の票には番号の欄が二つあります。画面が求める番号の名前をよく見ずに入力していました。どの欄を使うか確認したいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "今回の票に複数の番号欄があるため、画面が求める名称と同じ欄を確認したいと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "今回の票に複数の番号欄があるため、画面が求める名称と同じ欄を確認したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-05-001-SHARED-07",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-05-001-SHARED-07",
+      "scenarioId": "SC-LOC-JP-01211-05-001",
+      "turnOrder": 7,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "この不在票の案内と画面を照らし合わせてご説明します。入力前に宛名と配達日もご確認ください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-05-001-SHARED-08",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-05-001-SHARED-08",
+      "scenarioId": "SC-LOC-JP-01211-05-001",
+      "turnOrder": 8,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "confirm_addressee_date_and_available_evening_slot",
+        "requiredSemanticComponents": {
+          "goal": "今回の宛名は自分、配達日は昨日で、明日の夜を希望し画面の受付可能な候補を確認する"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "宛名は私で、配達日は昨日です。明日の夜を希望しますが、画面に出ている候補から選べばいいんですね。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "今回の宛名は自分、配達日は昨日で、明日の夜を希望し画面の受付可能な候補を確認する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "今回の宛名は自分、配達日は昨日で、明日の夜を希望し画面の受付可能な候補を確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-05-001-SHARED-09",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-05-001-SHARED-09",
+      "scenarioId": "SC-LOC-JP-01211-05-001",
+      "turnOrder": 9,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "はい、申し込める日時の表示に従ってください。選択しただけでは完了しない場合もあるので、最後の確認まで進めてください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-05-001-SHARED-10",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-05-001-SHARED-10",
+      "scenarioId": "SC-LOC-JP-01211-05-001",
+      "turnOrder": 10,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "use_current_notice_and_save_completion",
+        "requiredSemanticComponents": {
+          "goal": "古い写真ではなく今回の票で番号と宛名、日時を確認し、申込完了表示を保存すると伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "古い写真を使わず、今回の案内の番号で申し込みます。宛名と日時を確かめ、申込完了の表示も保存します。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "古い写真ではなく今回の票で番号と宛名、日時を確認し、申込完了表示を保存すると伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "古い写真ではなく今回の票で番号と宛名、日時を確認し、申込完了表示を保存すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-05-001-SHARED-11",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-05-001-SHARED-11",
+      "scenarioId": "SC-LOC-JP-01211-05-001",
+      "turnOrder": 11,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "承知しました。操作で迷ったら確定前にお尋ねください。再配達のお手続きありがとうございました。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    }
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-abashiri.json",
+    "premise": "網走の郵便局で不在票の再配達相談。客は追跡番号と再配達申込番号を混同し、旧不在票の写真で申し込もうとしたことを発見する。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
+}

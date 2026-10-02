@@ -1,0 +1,256 @@
+{
+  "shared": [
+    {
+      "id": "DLG-SC-LOC-JP-01206-02-001-SHARED-01",
+      "scenarioId": "SC-LOC-JP-01206-02-001",
+      "turnOrder": 1,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "こんにちは。本日はどのようなご用件でしょうか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-02-001-SHARED-02",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-02-001-SHARED-02",
+      "scenarioId": "SC-LOC-JP-01206-02-001",
+      "turnOrder": 2,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "ask_household_or_individual_certificate",
+        "requiredSemanticComponents": {
+          "goal": "勤務先に提出する住民票の写しが必要だと伝え、同居家族全員分を申し込むのか尋ねる"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "勤務先に出す住民票の写しが必要です。家族と住んでいますが、全員分を申し込むんでしょうか。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "勤務先に提出する住民票の写しが必要だと伝え、同居家族全員分を申し込むのか尋ねる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "勤務先に提出する住民票の写しが必要だと伝え、同居家族全員分を申し込むのか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-02-001-SHARED-03",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-02-001-SHARED-03",
+      "scenarioId": "SC-LOC-JP-01206-02-001",
+      "turnOrder": 3,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "提出先の指定を確認しましょう。勤務先からの案内をお持ちですか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-02-001-SHARED-04",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-02-001-SHARED-04",
+      "scenarioId": "SC-LOC-JP-01206-02-001",
+      "turnOrder": 4,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "select_individual_from_employer_email",
+        "requiredSemanticComponents": {
+          "goal": "勤務先のメールには本人分とあると示し、家族分ではなく自分だけのものを希望する"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "メールに「本人分」とあります。家族の情報も必要だと思っていましたが、私だけのものを希望します。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "勤務先のメールには本人分とあると示し、家族分ではなく自分だけのものを希望する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "勤務先のメールには本人分とあると示し、家族分ではなく自分だけのものを希望する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-02-001-SHARED-05",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-02-001-SHARED-05",
+      "scenarioId": "SC-LOC-JP-01206-02-001",
+      "turnOrder": 5,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "本人分ですね。記載項目の指定はありますか。個人番号などは提出先の要否を確かめて選んでください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-02-001-SHARED-06",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-02-001-SHARED-06",
+      "scenarioId": "SC-LOC-JP-01206-02-001",
+      "turnOrder": 6,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "defer_unspecified_domicile_item",
+        "requiredSemanticComponents": {
+          "goal": "個人番号は不要と指定されているが本籍の指定はないと説明し、会社へ確認してから選びたいと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "メールには個人番号は不要と書かれています。本籍については書かれていないので、勝手に付けずに会社へ確認したいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "個人番号は不要と指定されているが本籍の指定はないと説明し、会社へ確認してから選びたいと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "個人番号は不要と指定されているが本籍の指定はないと説明し、会社へ確認してから選びたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-02-001-SHARED-07",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-02-001-SHARED-07",
+      "scenarioId": "SC-LOC-JP-01206-02-001",
+      "turnOrder": 7,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "はい。不明な項目を確認してから申請できます。申請書のどの欄がわからないかお知らせください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-02-001-SHARED-08",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-02-001-SHARED-08",
+      "scenarioId": "SC-LOC-JP-01206-02-001",
+      "turnOrder": 8,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "request_reading_of_householder_relationship",
+        "requiredSemanticComponents": {
+          "goal": "世帯主・続柄の欄が分からないと示し、会社への確認用に読み方も控えてよいか尋ねる"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "この「世帯主・続柄」の欄です。会社に確認する時に、その言葉も読めるようメモしていいですか。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "世帯主・続柄の欄が分からないと示し、会社への確認用に読み方も控えてよいか尋ねる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "世帯主・続柄の欄が分からないと示し、会社への確認用に読み方も控えてよいか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-02-001-SHARED-09",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-02-001-SHARED-09",
+      "scenarioId": "SC-LOC-JP-01206-02-001",
+      "turnOrder": 9,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "どうぞ。「せたいぬし・つづきがら」と読みます。項目の意味と、申請時の本人確認についてもご説明します。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-02-001-SHARED-10",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-02-001-SHARED-10",
+      "scenarioId": "SC-LOC-JP-01206-02-001",
+      "turnOrder": 10,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "confirm_employer_queries_before_application",
+        "requiredSemanticComponents": {
+          "goal": "本人分で個人番号は不要と整理し、本籍と続柄の要否を会社へ聞いてから申請書を仕上げると伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "本人分で、個人番号は不要と整理しました。本籍と続柄の要否を会社へ聞いてから、申請書を仕上げます。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "本人分で個人番号は不要と整理し、本籍と続柄の要否を会社へ聞いてから申請書を仕上げると伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "本人分で個人番号は不要と整理し、本籍と続柄の要否を会社へ聞いてから申請書を仕上げると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-02-001-SHARED-11",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-02-001-SHARED-11",
+      "scenarioId": "SC-LOC-JP-01206-02-001",
+      "turnOrder": 11,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "承知しました。指定が確認できたら、記入した申請書をお持ちください。ありがとうございました。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    }
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-kushiro.json",
+    "premise": "釧路市役所で住民票の写しを申請する相談。提出先の指定が本人分であることを文書で確認し、不要な個人番号を含めない申請を相談する。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
+}

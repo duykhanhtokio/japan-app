@@ -2,6 +2,8 @@ import citiesJson from '@/data/generated/cities.json';
 import locationsJson from '@/data/generated/locations.json';
 import scenarioIndexJson from '@/data/generated/scenario-index.json';
 import scenariosJson from '@/data/generated/scenarios.json';
+import scenarioOverridesJson from '@/data/dialogue-content/scenario-overrides.json';
+import scenarioIndexOverridesJson from '@/data/dialogue-content/scenario-index-overrides.json';
 
 import type {
     LifeCity,
@@ -22,14 +24,22 @@ const cities =
 const locations =
     locationsJson as LifeLocation[];
 
-const scenarios =
-    scenariosJson as LifeScenario[];
+const scenarioOverrides = scenarioOverridesJson as LifeScenario[];
+const scenarioOverrideById = new Map(scenarioOverrides.map(scenario => [scenario.id, scenario]));
+const sourceScenarios = scenariosJson as LifeScenario[];
+const sourceScenarioIds = new Set(sourceScenarios.map(scenario => scenario.id));
+const scenarios = [
+    ...sourceScenarios.map(scenario => scenarioOverrideById.get(scenario.id) ?? scenario),
+    ...scenarioOverrides.filter(scenario => !sourceScenarioIds.has(scenario.id)),
+];
 
-const scenarioIndex =
-    scenarioIndexJson as Record<
+const scenarioIndex = {
+    ...(scenarioIndexJson as Record<
         string,
         LifeScenarioIndexItem
-    >;
+    >),
+    ...(scenarioIndexOverridesJson as Record<string, LifeScenarioIndexItem>),
+};
 
 /*
  * =========================================================

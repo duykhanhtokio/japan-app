@@ -1,0 +1,257 @@
+{
+  "shared": [
+    {
+      "id": "DLG-SC-LOC-JP-01212-04-001-SHARED-01",
+      "scenarioId": "SC-LOC-JP-01212-04-001",
+      "turnOrder": 1,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "こんにちは。何をなくされましたか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01212-04-001-SHARED-02",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01212-04-001-SHARED-02",
+      "scenarioId": "SC-LOC-JP-01212-04-001",
+      "turnOrder": 2,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "report_moving_phone_location_before_search",
+        "requiredSemanticComponents": {
+          "goal": "携帯が見つからず位置表示が家から離れた場所に変わったので、自分で探しに行く前に相談したいと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "携帯が見つかりません。位置の表示が家から離れた所に変わったので、探しに行く前に相談したいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "携帯が見つからず位置表示が家から離れた場所に変わったので、自分で探しに行く前に相談したいと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "携帯が見つからず位置表示が家から離れた場所に変わったので、自分で探しに行く前に相談したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01212-04-001-SHARED-03",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01212-04-001-SHARED-03",
+      "scenarioId": "SC-LOC-JP-01212-04-001",
+      "turnOrder": 3,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "まず状況を伺います。最後にご自身で携帯を持っていた場所と時刻はわかりますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01212-04-001-SHARED-04",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01212-04-001-SHARED-04",
+      "scenarioId": "SC-LOC-JP-01212-04-001",
+      "turnOrder": 4,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "separate_last_use_from_location_timestamp",
+        "requiredSemanticComponents": {
+          "goal": "最後に車内で使ったのは18時10分で、位置画面は同日16時40分に更新されたと説明する"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "買い物の後、車で18時10分に使いました。その後は見ていません。今開いた位置画面の更新時刻は、同じ日の16時40分です。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "最後に車内で使ったのは18時10分で、位置画面は同日16時40分に更新されたと説明する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "最後に車内で使ったのは18時10分で、位置画面は同日16時40分に更新されたと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01212-04-001-SHARED-05",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01212-04-001-SHARED-05",
+      "scenarioId": "SC-LOC-JP-01212-04-001",
+      "turnOrder": 5,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "表示の更新は、最後に使った18時10分より1時間30分前ですね。今画面を開いた時刻とは違います。この表示を現在の場所としては記録せず、更新時刻付きの情報として残します。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01212-04-001-SHARED-06",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01212-04-001-SHARED-06",
+      "scenarioId": "SC-LOC-JP-01212-04-001",
+      "turnOrder": 6,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "avoid_solo_tracking_preserve_timestamp",
+        "requiredSemanticComponents": {
+          "goal": "今見た画面を現在位置と思っていたと説明し、表示の場所へ行かず16時40分の画面を保存して車の座席を確認したいと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "画面を今見たので、位置も今のものだと思っていました。表示の場所へ行くのはやめます。16時40分の画面を残し、最後に使った車の座席を確認したいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "今見た画面を現在位置と思っていたと説明し、表示の場所へ行かず16時40分の画面を保存して車の座席を確認したいと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "今見た画面を現在位置と思っていたと説明し、表示の場所へ行かず16時40分の画面を保存して車の座席を確認したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01212-04-001-SHARED-07",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01212-04-001-SHARED-07",
+      "scenarioId": "SC-LOC-JP-01212-04-001",
+      "turnOrder": 7,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "安全に確認できる範囲で探してください。携帯の色、ケース、連絡先も伺います。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01212-04-001-SHARED-08",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01212-04-001-SHARED-08",
+      "scenarioId": "SC-LOC-JP-01212-04-001",
+      "turnOrder": 8,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "identify_phone_and_family_contact",
+        "requiredSemanticComponents": {
+          "goal": "灰色の携帯と透明ケースの特徴を示し、家族の許可を得た番号を代替連絡先として伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "灰色の携帯に透明のケースです。紛失した電話では連絡を受けられないので、家族に許可をもらったこの番号を連絡先にしたいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "灰色の携帯と透明ケースの特徴を示し、家族の許可を得た番号を代替連絡先として伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "灰色の携帯と透明ケースの特徴を示し、家族の許可を得た番号を代替連絡先として伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01212-04-001-SHARED-09",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01212-04-001-SHARED-09",
+      "scenarioId": "SC-LOC-JP-01212-04-001",
+      "turnOrder": 9,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "ご家族の許可がある別の連絡先ですね。灰色の携帯・透明ケース、最後の使用18時10分、画面更新16時40分を別々に記録しました。読み返した内容で合っていますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01212-04-001-SHARED-10",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01212-04-001-SHARED-10",
+      "scenarioId": "SC-LOC-JP-01212-04-001",
+      "turnOrder": 10,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "confirm_evidence_contact_and_provider_protection",
+        "requiredSemanticComponents": {
+          "goal": "18時10分の使用と16時40分の位置更新を別々に記録したと確認し、家族の番号で連絡を受け契約先にも保護手続きを聞くと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "はい、合っています。18時10分の使用と16時40分の更新は別ですね。家族の番号で連絡を受け、端末や回線の保護は契約先にも確認します。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "18時10分の使用と16時40分の位置更新を別々に記録したと確認し、家族の番号で連絡を受け契約先にも保護手続きを聞くと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "18時10分の使用と16時40分の位置更新を別々に記録したと確認し、家族の番号で連絡を受け契約先にも保護手続きを聞くと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01212-04-001-SHARED-11",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01212-04-001-SHARED-11",
+      "scenarioId": "SC-LOC-JP-01212-04-001",
+      "turnOrder": 11,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "その区別で記録しました。現在の場所はまだ確認できていません。連絡先は紛失した端末の番号と分けて残します。ご相談ありがとうございました。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    }
+  ],
+  "authoring": {
+    "locale": "ja",
+    "cluster": "CLUSTER_01_HOKKAIDO_2026-09-30",
+    "contentScope": "simulated_learning_scenario",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-rumoi.json",
+    "premise": "留萌の架空警察相談。本人が携帯を車内で最後に使ったのは18時10分、位置画面の更新は同日16時40分でそれより古い。NPCが90分前の表示と現在位置を区別して記録する。家族許可済みの代替番号を伝える。位置の相手や犯罪を判定しない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
+  }
+}

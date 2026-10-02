@@ -1,0 +1,256 @@
+{
+  "shared": [
+    {
+      "id": "DLG-SC-LOC-JP-01209-06-002-SHARED-01",
+      "scenarioId": "SC-LOC-JP-01209-06-002",
+      "turnOrder": 1,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "こんにちは。明細について、どのようなご相談でしょうか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01209-06-002-SHARED-02",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01209-06-002-SHARED-02",
+      "scenarioId": "SC-LOC-JP-01209-06-002",
+      "turnOrder": 2,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "query_unrecognized_debit_name",
+        "requiredSemanticComponents": {
+          "goal": "明細に知らない名称の引き落としがあるので、内容を確認したいと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "この引き落としに覚えがありません。知らない名前が出ているので、確認したいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "明細に知らない名称の引き落としがあるので、内容を確認したいと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "明細に知らない名称の引き落としがあるので、内容を確認したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01209-06-002-SHARED-03",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01209-06-002-SHARED-03",
+      "scenarioId": "SC-LOC-JP-01209-06-002",
+      "turnOrder": 3,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "取引の日付、金額、表示されている名称を確認しましょう。表示名だけで不正な取引とは判断できません。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01209-06-002-SHARED-04",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01209-06-002-SHARED-04",
+      "scenarioId": "SC-LOC-JP-01209-06-002",
+      "turnOrder": 4,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "provide_date_amount_and_family_possibility",
+        "requiredSemanticComponents": {
+          "goal": "日付と金額を示し、その日は買い物をしていないが家族の利用分の可能性もあると伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "この日付と金額です。その日は買い物をしていないのですが、家族の利用分が含まれる可能性もあります。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "日付と金額を示し、その日は買い物をしていないが家族の利用分の可能性もあると伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "日付と金額を示し、その日は買い物をしていないが家族の利用分の可能性もあると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01209-06-002-SHARED-05",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01209-06-002-SHARED-05",
+      "scenarioId": "SC-LOC-JP-01209-06-002",
+      "turnOrder": 5,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "購入日と処理日が違う場合や、店舗名と明細名が違う場合もあります。領収書や利用通知を確認できますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01209-06-002-SHARED-06",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01209-06-002-SHARED-06",
+      "scenarioId": "SC-LOC-JP-01209-06-002",
+      "turnOrder": 6,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "keep_similar_family_purchase_unconfirmed",
+        "requiredSemanticComponents": {
+          "goal": "家族は前の週に似た金額を使ったが同じ取引とは未確認なので、利用通知を探してもらうと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "家族に聞いたら、前の週に似た金額を使ったそうです。でも同じ取引とはまだ確認できません。通知の画面を探してもらいます。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "家族は前の週に似た金額を使ったが同じ取引とは未確認なので、利用通知を探してもらうと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "家族は前の週に似た金額を使ったが同じ取引とは未確認なので、利用通知を探してもらうと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01209-06-002-SHARED-07",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01209-06-002-SHARED-07",
+      "scenarioId": "SC-LOC-JP-01209-06-002",
+      "turnOrder": 7,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "その情報も照会の参考になります。確認できないまま安全だと判断せず、担当へ不明な取引としてお伝えください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01209-06-002-SHARED-08",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01209-06-002-SHARED-08",
+      "scenarioId": "SC-LOC-JP-01209-06-002",
+      "turnOrder": 8,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "request_notice_matching_and_protection",
+        "requiredSemanticComponents": {
+          "goal": "金額が似ているだけで判断せず、通知の日時と加盟店名を照合し、照会中に必要な対応も知りたいと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "似た金額だけで終わりにしないで、通知の日時と加盟店名を照らし合わせたいです。照会中に必要な対応も聞けますか。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "金額が似ているだけで判断せず、通知の日時と加盟店名を照合し、照会中に必要な対応も知りたいと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "金額が似ているだけで判断せず、通知の日時と加盟店名を照合し、照会中に必要な対応も知りたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01209-06-002-SHARED-09",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01209-06-002-SHARED-09",
+      "scenarioId": "SC-LOC-JP-01209-06-002",
+      "turnOrder": 9,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "照会メモは「明細の日に本人の買い物なし、家族は前の週に似た額を利用、同じ取引か未確認」です。通知の日時と加盟店名は確認待ちとして残しました。取引照会と必要な保護手続きの相談を担当へつなぎます。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01209-06-002-SHARED-10",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01209-06-002-SHARED-10",
+      "scenarioId": "SC-LOC-JP-01209-06-002",
+      "turnOrder": 10,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "summarize_mismatch_and_request_pending_review",
+        "requiredSemanticComponents": {
+          "goal": "明細と通知の不一致をまとめ、家族の利用か未確定だと担当者に伝えて確認と対応を相談する"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "明細と利用通知を比べ、不一致の点をまとめます。家族の利用か未確定だと伝えて、担当へ確認と対応を相談します。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "明細と通知の不一致をまとめ、家族の利用か未確定だと担当者に伝えて確認と対応を相談する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "明細と通知の不一致をまとめ、家族の利用か未確定だと担当者に伝えて確認と対応を相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01209-06-002-SHARED-11",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01209-06-002-SHARED-11",
+      "scenarioId": "SC-LOC-JP-01209-06-002",
+      "turnOrder": 11,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "承知しました。必要な情報を整理して担当へおつなぎします。ご相談ありがとうございました。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    }
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-yubari.json",
+    "premise": "夕張の銀行学習場面。身に覚えのない引落を店舗の別名表記か不正か断定せず照会。家族カードの可能性が出ても取引日と売上処理日の差を整理する。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
+}

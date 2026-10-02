@@ -1,0 +1,256 @@
+{
+  "shared": [
+    {
+      "id": "DLG-SC-LOC-JP-01206-01-001-SHARED-01",
+      "scenarioId": "SC-LOC-JP-01206-01-001",
+      "turnOrder": 1,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "こんにちは。移動について、何をお調べしましょうか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-01-001-SHARED-02",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-01-001-SHARED-02",
+      "scenarioId": "SC-LOC-JP-01206-01-001",
+      "turnOrder": 2,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "request_boarding_check_from_booking",
+        "requiredSemanticComponents": {
+          "goal": "予約の列車に乗り換えたいと伝え、釧路駅で待てば乗れるか尋ねる"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "この予約の列車に乗り換えたいです。釧路駅で待っていれば乗れますか。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "予約の列車に乗り換えたいと伝え、釧路駅で待てば乗れるか尋ねる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "予約の列車に乗り換えたいと伝え、釧路駅で待てば乗れるか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-01-001-SHARED-03",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-01-001-SHARED-03",
+      "scenarioId": "SC-LOC-JP-01206-01-001",
+      "turnOrder": 3,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "予約画面の出発駅と到着駅を、一緒に確認してもよろしいですか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-01-001-SHARED-04",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-01-001-SHARED-04",
+      "scenarioId": "SC-LOC-JP-01206-01-001",
+      "turnOrder": 4,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "correct_reversed_departure_arrival",
+        "requiredSemanticComponents": {
+          "goal": "予約画面の出発駅と到着駅を逆に読んだと説明し、釧路出発の予約を確認したいと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "出発が別の駅で、到着が釧路になっています。画面を反対に読んでいました。ここから出発する予約を確認したいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "予約画面の出発駅と到着駅を逆に読んだと説明し、釧路出発の予約を確認したいと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "予約画面の出発駅と到着駅を逆に読んだと説明し、釧路出発の予約を確認したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-01-001-SHARED-05",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-01-001-SHARED-05",
+      "scenarioId": "SC-LOC-JP-01206-01-001",
+      "turnOrder": 5,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "では、別の予約がないかご確認ください。一緒に行かれる方も同じ列車ですか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-01-001-SHARED-06",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-01-001-SHARED-06",
+      "scenarioId": "SC-LOC-JP-01206-01-001",
+      "turnOrder": 6,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "explain_companion_booking_and_unclear_gate_meeting",
+        "requiredSemanticComponents": {
+          "goal": "同行者が予約をまとめていると伝え、改札の内外のどちらで待ち合わせるか未確認だと説明する"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "同行者が予約をまとめています。改札で待ち合わせと言われましたが、改札の内側か外側かは聞いていません。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "同行者が予約をまとめていると伝え、改札の内外のどちらで待ち合わせるか未確認だと説明する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "同行者が予約をまとめていると伝え、改札の内外のどちらで待ち合わせるか未確認だと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-01-001-SHARED-07",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-01-001-SHARED-07",
+      "scenarioId": "SC-LOC-JP-01206-01-001",
+      "turnOrder": 7,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "乗る列車が決まるまでは、入場せずに同行者へ予約と待ち合わせ場所を確認しましょう。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-01-001-SHARED-08",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-01-001-SHARED-08",
+      "scenarioId": "SC-LOC-JP-01206-01-001",
+      "turnOrder": 8,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "present_correct_booking_and_outside_meeting",
+        "requiredSemanticComponents": {
+          "goal": "同行者から釧路出発のT-6と改札外の待合せを確認できたと伝え、その予約で乗り場を調べてほしいと頼む"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "同行者から正しい釧路出発の予約が届き、列車はT-6、待ち合わせは改札の外だと確認できました。この予約で乗り場を調べてもらえますか。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "同行者から釧路出発のT-6と改札外の待合せを確認できたと伝え、その予約で乗り場を調べてほしいと頼む。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "同行者から釧路出発のT-6と改札外の待合せを確認できたと伝え、その予約で乗り場を調べてほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-01-001-SHARED-09",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-01-001-SHARED-09",
+      "scenarioId": "SC-LOC-JP-01206-01-001",
+      "turnOrder": 9,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "予約のT-6と、この案内表示のT-6が一致しています。表示は2番のりばです。別の到着予約ではなく、今の出発予約を見ています。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-01-001-SHARED-10",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-01-001-SHARED-10",
+      "scenarioId": "SC-LOC-JP-01206-01-001",
+      "turnOrder": 10,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "confirm_train_display_before_entry",
+        "requiredSemanticComponents": {
+          "goal": "T-6は2番のりばと復唱し、改札外で同行者と合流して二人で予約と当日の表示を確認してから入ると伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "T-6が2番のりばですね。先に改札の外で同行者と合流し、二人でこの予約と当日の表示を確かめてから入ります。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "T-6は2番のりばと復唱し、改札外で同行者と合流して二人で予約と当日の表示を確認してから入ると伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "T-6は2番のりばと復唱し、改札外で同行者と合流して二人で予約と当日の表示を確認してから入ると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01206-01-001-SHARED-11",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01206-01-001-SHARED-11",
+      "scenarioId": "SC-LOC-JP-01206-01-001",
+      "turnOrder": 11,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "予約の確認ができてよかったです。同行者と合流してからご乗車ください。お気をつけて。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    }
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-kushiro.json",
+    "premise": "釧路の架空予約画面と案内表示。最初は到着釧路の別予約、同行者から正しい釧路出発の架空列車「T-6」、改札外待合せを確認する。NPCは当日の練習用表示T-6・2番のりばを照合し、本人は改札外で合流してからその表示へ進む。実在便・ホーム・発車を保証しない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
+}

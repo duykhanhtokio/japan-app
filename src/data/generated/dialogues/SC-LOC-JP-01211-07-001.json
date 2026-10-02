@@ -1,0 +1,256 @@
+{
+  "shared": [
+    {
+      "id": "DLG-SC-LOC-JP-01211-07-001-SHARED-01",
+      "scenarioId": "SC-LOC-JP-01211-07-001",
+      "turnOrder": 1,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "いらっしゃいませ。商品の表示で何かご不明ですか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-07-001-SHARED-02",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-07-001-SHARED-02",
+      "scenarioId": "SC-LOC-JP-01211-07-001",
+      "turnOrder": 2,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "ask_discounted_price_and_short_date",
+        "requiredSemanticComponents": {
+          "goal": "チーズのシール価格からさらに割引されるか、期限の短さも含め購入前に尋ねる"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "このチーズは、シールの金額からさらに割引されるんでしょうか。期限も短いので、買う前に確認したいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "チーズのシール価格からさらに割引されるか、期限の短さも含め購入前に尋ねる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "チーズのシール価格からさらに割引されるか、期限の短さも含め購入前に尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-07-001-SHARED-03",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-07-001-SHARED-03",
+      "scenarioId": "SC-LOC-JP-01211-07-001",
+      "turnOrder": 3,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "シールの表記を一緒に見ましょう。「割引後」の金額なのか、「何円引き」なのかで意味が違います。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-07-001-SHARED-04",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-07-001-SHARED-04",
+      "scenarioId": "SC-LOC-JP-01211-07-001",
+      "turnOrder": 4,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "recognize_after_discount_not_further_deduction",
+        "requiredSemanticComponents": {
+          "goal": "シールは割引後の価格で、さらに引かれると思ったのは誤解だったと確認する"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "ここには割引後とあります。もう一度引かれると思っていました。支払う金額はこの表示を基準に確かめるんですね。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "シールは割引後の価格で、さらに引かれると思ったのは誤解だったと確認する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "シールは割引後の価格で、さらに引かれると思ったのは誤解だったと確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-07-001-SHARED-05",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-07-001-SHARED-05",
+      "scenarioId": "SC-LOC-JP-01211-07-001",
+      "turnOrder": 5,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "はい、会計で実際の金額も確認できます。期限は、どの表示を見ていらっしゃいますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-07-001-SHARED-06",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-07-001-SHARED-06",
+      "scenarioId": "SC-LOC-JP-01211-07-001",
+      "turnOrder": 6,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "ask_opened_storage_vs_best_before",
+        "requiredSemanticComponents": {
+          "goal": "賞味期限を見ており、開封後も表示日まで同じ条件で保存できると思っていたと説明する"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "賞味期限の表示です。今日開けて少しずつ食べるつもりですが、この日付までは開封後も同じ条件で保存できると思っていました。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "賞味期限を見ており、開封後も表示日まで同じ条件で保存できると思っていたと説明する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "賞味期限を見ており、開封後も表示日まで同じ条件で保存できると思っていたと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-07-001-SHARED-07",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-07-001-SHARED-07",
+      "scenarioId": "SC-LOC-JP-01211-07-001",
+      "turnOrder": 7,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "期限の表示だけで開封後の保存を決めないでください。開封後の注意と保存方法も別に確認しましょう。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-07-001-SHARED-08",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-07-001-SHARED-08",
+      "scenarioId": "SC-LOC-JP-01211-07-001",
+      "turnOrder": 8,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "request_smaller_pack_after_opening_notice",
+        "requiredSemanticComponents": {
+          "goal": "開封後の注意を読み、一人では残りそうなので小さい包装と比べたいと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "開けたら早めに食べると書いてありますね。一人では残りそうなので、小さい包装の商品と比較したいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "開封後の注意を読み、一人では残りそうなので小さい包装と比べたいと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "開封後の注意を読み、一人では残りそうなので小さい包装と比べたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-07-001-SHARED-09",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-07-001-SHARED-09",
+      "scenarioId": "SC-LOC-JP-01211-07-001",
+      "turnOrder": 9,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "小さい包装の候補をご案内します。価格だけでなく、内容量と食べ切れる量も比べてお選びください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-07-001-SHARED-10",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-07-001-SHARED-10",
+      "scenarioId": "SC-LOC-JP-01211-07-001",
+      "turnOrder": 10,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "choose_consumable_amount_with_three_labels",
+        "requiredSemanticComponents": {
+          "goal": "割引後価格、未開封の期限、開封後の注意を分け、食べ切れる小さい量を選ぶと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "割引後の値段と未開封の期限、開封後の注意を分けます。安いから多く買わず、食べ切れる小さいものを選びます。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "割引後価格、未開封の期限、開封後の注意を分け、食べ切れる小さい量を選ぶと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "割引後価格、未開封の期限、開封後の注意を分け、食べ切れる小さい量を選ぶと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-07-001-SHARED-11",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-07-001-SHARED-11",
+      "scenarioId": "SC-LOC-JP-01211-07-001",
+      "turnOrder": 11,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "承知しました。表示を確認して、食べ切れる量をお選びください。ご相談ありがとうございました。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    }
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-abashiri.json",
+    "premise": "網走のスーパーで割引シールと期限を相談。客は元値からさらに引く表示と割引後価格の違いに気づき、賞味期限と開封後保存を別に確認する。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
+}

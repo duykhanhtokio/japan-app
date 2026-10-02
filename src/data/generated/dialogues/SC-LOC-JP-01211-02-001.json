@@ -1,0 +1,256 @@
+{
+  "shared": [
+    {
+      "id": "DLG-SC-LOC-JP-01211-02-001-SHARED-01",
+      "scenarioId": "SC-LOC-JP-01211-02-001",
+      "turnOrder": 1,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "こんにちは。住所のお手続きで、何をお手伝いしましょうか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-02-001-SHARED-02",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-02-001-SHARED-02",
+      "scenarioId": "SC-LOC-JP-01211-02-001",
+      "turnOrder": 2,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "ask_in_city_move_using_move_out_form",
+        "requiredSemanticComponents": {
+          "goal": "市内で転居したので、開いている転出申請を送信して住所変更してよいか尋ねる"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "網走市内で引っ越しました。携帯で転出の申請を開いたのですが、このまま送れば住所が変わりますか。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "市内で転居したので、開いている転出申請を送信して住所変更してよいか尋ねる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "市内で転居したので、開いている転出申請を送信して住所変更してよいか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-02-001-SHARED-03",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-02-001-SHARED-03",
+      "scenarioId": "SC-LOC-JP-01211-02-001",
+      "turnOrder": 3,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "引っ越し前と後は、どちらも網走市内ですか。転出の申請はまだ送信されていませんか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-02-001-SHARED-04",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-02-001-SHARED-04",
+      "scenarioId": "SC-LOC-JP-01211-02-001",
+      "turnOrder": 4,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "confirm_unsent_form_both_addresses_same_city",
+        "requiredSemanticComponents": {
+          "goal": "新旧住所はどちらも市内で、まだ送信しておらず市外転出とは違う申請を選んだようだと説明する"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "両方とも市内です。まだ送っていません。市外へ出るわけではないので、違う申請を選んだようです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "新旧住所はどちらも市内で、まだ送信しておらず市外転出とは違う申請を選んだようだと説明する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "新旧住所はどちらも市内で、まだ送信しておらず市外転出とは違う申請を選んだようだと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-02-001-SHARED-05",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-02-001-SHARED-05",
+      "scenarioId": "SC-LOC-JP-01211-02-001",
+      "turnOrder": 5,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "市内の住所変更として担当窓口へご案内します。引っ越したのは、ご家族全員でしょうか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-02-001-SHARED-06",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-02-001-SHARED-06",
+      "scenarioId": "SC-LOC-JP-01211-02-001",
+      "turnOrder": 6,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "specify_only_self_not_parents",
+        "requiredSemanticComponents": {
+          "goal": "転居したのは自分だけで親は旧住所に残り、世帯全員の変更にはしないと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "私だけです。親は元の住所に残っています。世帯全員に印を付けそうでしたが、私の分だけ相談したいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "転居したのは自分だけで親は旧住所に残り、世帯全員の変更にはしないと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "転居したのは自分だけで親は旧住所に残り、世帯全員の変更にはしないと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-02-001-SHARED-07",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-02-001-SHARED-07",
+      "scenarioId": "SC-LOC-JP-01211-02-001",
+      "turnOrder": 7,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "本人だけの異動として、必要な記入を確認してください。新しい住所と住み始めた日がわかる資料はありますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-02-001-SHARED-08",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-02-001-SHARED-08",
+      "scenarioId": "SC-LOC-JP-01211-02-001",
+      "turnOrder": 8,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "separate_lease_start_and_actual_move_day",
+        "requiredSemanticComponents": {
+          "goal": "契約書の部屋番号を示し、契約開始日と実際の入居日が違うため必要な日付を確認したいと伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "契約書に部屋番号はあります。契約の開始日と実際に住み始めた日が違うので、どちらを伝えるか確認したいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "契約書の部屋番号を示し、契約開始日と実際の入居日が違うため必要な日付を確認したいと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "契約書の部屋番号を示し、契約開始日と実際の入居日が違うため必要な日付を確認したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-02-001-SHARED-09",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-02-001-SHARED-09",
+      "scenarioId": "SC-LOC-JP-01211-02-001",
+      "turnOrder": 9,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "契約日と実際の転居日を分けて担当に伝えてください。届け出に必要な日付は、担当の案内で確認しましょう。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-02-001-SHARED-10",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-02-001-SHARED-10",
+      "scenarioId": "SC-LOC-JP-01211-02-001",
+      "turnOrder": 10,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "summarize_self_in_city_addresses_dates",
+        "requiredSemanticComponents": {
+          "goal": "自分だけの市内転居として、新旧住所、契約開始日、実際の転居日を分けて用意すると伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "市内転居で私だけの変更です。旧住所、新住所、契約開始日、実際の転居日を分けて用意します。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "自分だけの市内転居として、新旧住所、契約開始日、実際の転居日を分けて用意すると伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "自分だけの市内転居として、新旧住所、契約開始日、実際の転居日を分けて用意すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01211-02-001-SHARED-11",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01211-02-001-SHARED-11",
+      "scenarioId": "SC-LOC-JP-01211-02-001",
+      "turnOrder": 11,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "承知しました。送信前に気づかれてよかったです。担当窓口で必要な手続きを確認してください。ありがとうございました。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    }
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-abashiri.json",
+    "premise": "網走市役所で市内転居の手続き相談。市外転出用フォームを開いた客が転出と市内住所変更を区別し、世帯全員でなく本人だけの異動と説明する。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
+}

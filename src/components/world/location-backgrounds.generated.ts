@@ -257,7 +257,16 @@ const backgrounds: Record<string, ImageSourcePropType> = {
 const assignments = (assignmentJson as { assignments: { locationId: string; background: string }[] }).assignments;
 const backgroundByLocation = new Map(assignments.map(item => [item.locationId, backgrounds[item.background]]));
 
-export function locationBackground(locationId?: string | null): ImageSourcePropType | undefined {
-  return locationId ? backgroundByLocation.get(locationId) : undefined;
-}
+const variants = ['01-clear-morning','02-sunny-midday','03-golden-hour','04-clear-night','05-rainy-day','06-rainy-night','07-overcast','08-spring','09-autumn','10-winter'];
 
+export function locationBackground(locationId?: string | null, category?: string | null): ImageSourcePropType | undefined {
+  if (!locationId) return undefined;
+  const assigned = backgroundByLocation.get(locationId);
+  if (assigned) return assigned;
+  // Later generated locations have no assignment row. Keep their artwork in
+  // the correct category and choose a stable variant without changing the
+  // existing assignments or silently showing another category's picture.
+  const slug = (category ?? '').trim().toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  const hash = Array.from(locationId).reduce((value,char)=>(value*31+char.charCodeAt(0))>>>0,0);
+  return backgrounds[`variants/${slug}/${variants[hash%variants.length]}.jpg`];
+}

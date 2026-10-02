@@ -1,6 +1,5 @@
-import {
-    router,
-} from 'expo-router';
+import { router, useFocusEffect } from 'expo-router';
+import { useCallback, useState } from 'react';
 import {
     Image,
     Pressable,
@@ -17,12 +16,14 @@ import {
 
 import BottomNav from '@/components/app/BottomNav';
 import GameHeader from '@/components/app/GameHeader';
-import { ROYAL, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
+import { ROYAL, ROYAL_FONT, ROYAL_LAYOUT, ROYAL_TYPE } from '@/components/ui/RoyalSurface';
 
 import {
     useUserProfile,
 } from '@/hooks/useUserProfile';
 import { useGameProgress } from '@/hooks/useGameProgress';
+import { RANKS, type LearningEconomy } from '@/services/learning-economy';
+import { syncJlptQualification } from '@/services/sync-jlpt-qualification';
 
 import {
     useAppLanguage,
@@ -45,7 +46,7 @@ const MISSION_ICONS = {
     coin: require('../../../assets/app/ui/royal-af/hud-coin-v1.png'),
     lock: require('../../../assets/app/ui/royal-af/lock-grape-v2.png'),
 };
-const NEXT_JLPT_LEVEL: Record<string,string> = { 未受験:'N5', N5:'N4', N4:'N3', N3:'N2', N2:'N1', N1:'N1' };
+const PENDING_COPY: Record<string,string> = {ja:'準備中',vi:'Đang chuẩn bị',en:'Coming soon',id:'Segera hadir','zh-CN':'准备中'};
 
 type TasksCopy = {
     title: string;
@@ -304,6 +305,8 @@ const taskCopies:
 };
 
 export default function TasksScreen() {
+    const [economy,setEconomy]=useState<LearningEconomy|null>(null);
+    useFocusEffect(useCallback(()=>{let active=true;void syncJlptQualification().then(value=>{if(active)setEconomy(value)}).catch(error=>console.log('Load Mission HUD error:',error));return()=>{active=false}},[]));
     const { progress } = useGameProgress();
     const {
         profile,
@@ -375,7 +378,7 @@ export default function TasksScreen() {
                     styles.content
                 }
             >
-                <GameHeader variant="approved" name={profile.name?.trim() || 'プレイヤー'} abilityLevel={profile.level || 'N5'} abilityTarget={NEXT_JLPT_LEVEL[profile.level || 'N5'] || 'N4'} abilityProgress={(progress.stats.xp % 1000) / 1000} conversationCredits={progress.stats.conversationCredits} coins={progress.stats.coins} />
+                <GameHeader variant="approved" name={profile.name?.trim() || 'プレイヤー'} abilityLevel={economy?.officialRank??'N5'} abilityTarget={economy?.officialRank?RANKS[RANKS.indexOf(economy.officialRank)+1]??economy.officialRank:'N5'} qualifiedExams={Object.fromEntries(RANKS.map(rank=>[rank,Object.keys(economy?.passed[rank]??{}).length]))} conversationCredits={economy?.credits??100} coins={progress.stats.coins} />
 
                 <Text
                     style={
@@ -411,7 +414,7 @@ export default function TasksScreen() {
                         subtitle={
                             copy.dailySub
                         }
-                        progress="2 / 4"
+                        progress={PENDING_COPY[language]??PENDING_COPY.en}
                         items={[
                             '会話練習 ×1',
                             '単語 ×10',
@@ -428,7 +431,7 @@ export default function TasksScreen() {
                         subtitle={
                             copy.weeklySub
                         }
-                        progress="3 / 5"
+                        progress={PENDING_COPY[language]??PENDING_COPY.en}
                         items={[
                             '会話練習 ×5',
                             '筆記学習 ×5',
@@ -446,7 +449,7 @@ export default function TasksScreen() {
                         subtitle={
                             copy.monthlySub
                         }
-                        progress="2 / 6"
+                        progress={PENDING_COPY[language]??PENDING_COPY.en}
                         items={[
                             'Speaking ×20',
                             'Writing ×20',
@@ -770,9 +773,7 @@ function MissionSection({
                             style={[
                                 styles.checkbox,
 
-                                index <
-                                2 &&
-                                styles.checkboxDone,
+
                             ]}
                         >
                             <Text
@@ -780,10 +781,7 @@ function MissionSection({
                                     styles.check
                                 }
                             >
-                                {index <
-                                    2
-                                    ? '✓'
-                                    : ''}
+                                {''}
                             </Text>
                         </View>
 
@@ -837,7 +835,9 @@ const styles =
             color:
                 ROYAL.lacquer,
 
-            fontSize: 28,
+            fontFamily: ROYAL_FONT.heading,
+
+            fontSize: ROYAL_TYPE.pageTitle,
 
             fontWeight:
                 '900',
@@ -846,10 +846,13 @@ const styles =
         },
 
         subtitle: {
+            lineHeight: ROYAL_TYPE.bodyLine,
             color:
                 ROYAL.darkGold,
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.body,
 
             marginTop: 3,
         },
@@ -876,6 +879,8 @@ const styles =
         },
 
         sectionHeader: {
+            flexWrap: 'wrap',
+            gap: 8,
             flexDirection:
                 'row',
 
@@ -893,20 +898,26 @@ const styles =
         },
 
         sectionTitle: {
+            lineHeight: ROYAL_TYPE.bodyLine,
             color:
                 '#ffffff',
 
-            fontSize: 15,
+            fontFamily: ROYAL_FONT.heading,
+
+            fontSize: ROYAL_TYPE.sectionTitle,
 
             fontWeight:
                 '900',
         },
 
         sectionSubtitle: {
+            lineHeight: ROYAL_TYPE.bodyLine,
             color:
                 '#8995a6',
 
-            fontSize: 15,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.caption,
 
             marginTop: 2,
         },
@@ -915,7 +926,9 @@ const styles =
             color:
                 ROYAL.paleGold,
 
-            fontSize: 15,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.caption,
 
             fontWeight:
                 '900',
@@ -964,17 +977,24 @@ const styles =
             color:
                 '#ffffff',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.body,
 
             fontWeight:
                 '900',
         },
 
         taskText: {
+            flex: 1,
+            minWidth: 0,
+            lineHeight: ROYAL_TYPE.bodyLine,
             color:
                 '#dce1e8',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.body,
         },
 
         /*
@@ -1011,14 +1031,18 @@ const styles =
         },
 
         workHeaderContent: {
+            minWidth: 0,
             flex: 1,
         },
 
         workTitle: {
+            lineHeight: ROYAL_TYPE.bodyLine,
             color:
                 '#ffffff',
 
-            fontSize: 18,
+            fontFamily: ROYAL_FONT.heading,
+
+            fontSize: ROYAL_TYPE.sectionTitle,
 
             fontWeight:
                 '900',
@@ -1028,7 +1052,9 @@ const styles =
             color:
                 ROYAL.paleGold,
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.body,
 
             fontWeight:
                 '800',
@@ -1040,7 +1066,9 @@ const styles =
             color:
                 ROYAL.ivoryDeep,
 
-            fontSize: 15,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.caption,
 
             marginTop: 2,
         },
@@ -1049,9 +1077,11 @@ const styles =
             color:
                 ROYAL.ivory,
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
 
-            lineHeight: 14,
+            fontSize: ROYAL_TYPE.body,
+
+            lineHeight: ROYAL_TYPE.bodyLine,
 
             marginTop: 11,
         },
@@ -1074,6 +1104,8 @@ const styles =
         },
 
         workMissionTop: {
+            flexWrap: 'wrap',
+            gap: 8,
             flexDirection:
                 'row',
 
@@ -1085,10 +1117,13 @@ const styles =
         },
 
         workMissionLabel: {
+            lineHeight: ROYAL_TYPE.bodyLine,
             color:
                 '#ffcf59',
 
-            fontSize: 15,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.caption,
 
             fontWeight:
                 '900',
@@ -1098,17 +1133,22 @@ const styles =
             color:
                 '#ffffff',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.body,
 
             fontWeight:
                 '900',
         },
 
         workMissionTitle: {
+            lineHeight: ROYAL_TYPE.bodyLine,
             color:
                 '#ffffff',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.heading,
+
+            fontSize: ROYAL_TYPE.sectionTitle,
 
             fontWeight:
                 '900',
@@ -1120,7 +1160,9 @@ const styles =
             color:
                 ROYAL.ivoryDeep,
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.body,
 
             marginTop: 3,
         },
@@ -1129,14 +1171,18 @@ const styles =
             color:
                 ROYAL.ivory,
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
 
-            lineHeight: 14,
+            fontSize: ROYAL_TYPE.body,
+
+            lineHeight: ROYAL_TYPE.bodyLine,
 
             marginTop: 6,
         },
 
         rewardRow: {
+            flexWrap: 'wrap',
+            gap: 8,
             flexDirection:
                 'row',
 
@@ -1160,14 +1206,18 @@ const styles =
             color:
                 '#8f899f',
 
-            fontSize: 15,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.caption,
         },
 
         rewardValue: {
             color:
                 '#ffd75e',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.body,
 
             fontWeight:
                 '900',
@@ -1191,7 +1241,9 @@ const styles =
             color:
                 '#918ca5',
 
-            fontSize: 16,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.body,
         },
 
         /*
@@ -1226,10 +1278,13 @@ const styles =
         },
 
         goldenTitle: {
+            lineHeight: ROYAL_TYPE.bodyLine,
             color:
                 '#ffd75e',
 
-            fontSize: 15,
+            fontFamily: ROYAL_FONT.heading,
+
+            fontSize: ROYAL_TYPE.sectionTitle,
 
             fontWeight:
                 '900',
@@ -1239,7 +1294,9 @@ const styles =
             color:
                 '#cbbf9d',
 
-            fontSize: 15,
+            fontFamily: ROYAL_FONT.body,
+
+            fontSize: ROYAL_TYPE.caption,
 
             marginTop: 3,
         },

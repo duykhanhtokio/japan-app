@@ -1,6 +1,7 @@
-import type { PropsWithChildren, ReactNode } from 'react';
+import { APP_TYPOGRAPHY } from '@/theme/app-design-system';
+import { useState, type PropsWithChildren, type ReactNode } from 'react';
 import { Image, ImageBackground, Pressable, StyleSheet, Text, View, type ImageSourcePropType, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
-import { ROYAL_CONTROL_SIZE, ROYAL_LAYOUT, ROYAL_SAFE_AREA, ROYAL_TEXT_FIT, useRoyalGroupHeight, useRoyalGroupSize, type RoyalContentGroup } from './RoyalPositioning';
+import { ROYAL_CONTROL_SIZE, ROYAL_LAYOUT, ROYAL_SAFE_AREA, useRoyalGroupHeight, useRoyalGroupSize, type RoyalContentGroup } from './RoyalPositioning';
 
 export { ROYAL_CONTENT_GROUP, ROYAL_CONTROL_SIZE, ROYAL_LAYOUT, ROYAL_PLACEMENT, ROYAL_SAFE_AREA, ROYAL_TEXT_FIT, resolveRoyalGrid, useRoyalGroupHeight, useRoyalGroupSize, useRoyalPositioning } from './RoyalPositioning';
 
@@ -36,7 +37,7 @@ export const ROYAL = {
 };
 
 export const ROYAL_TYPE = {
-  pageTitle: 28,
+  ...APP_TYPOGRAPHY,
   fieldLabel: 13,
   fieldValue: 17,
   helper: 13,
@@ -53,6 +54,16 @@ export const ROYAL_FONT = {
   heading: 'RoyalSerifJP-SemiBold',
   body: 'RoyalSansJP-Medium',
 } as const;
+
+/** Wide plaque visible alpha bounds: y=84..396 in a 1800x480 source. */
+export function RoyalNavyFrame({children,style}:PropsWithChildren<{style?:StyleProp<ViewStyle>}>) {
+  const [height,setHeight]=useState(0);
+  return <View onLayout={event=>setHeight(event.nativeEvent.layout.height)} style={[{position:'relative',overflow:'hidden'},style]}>
+    <View pointerEvents="none" style={{position:'absolute',left:'4%',right:'4%',top:'12%',bottom:'12%',borderRadius:8,backgroundColor:ROYAL.lacquerLight}}/>
+    {height>0&&<Image source={WIDE_BUTTON} resizeMode="stretch" style={{position:'absolute',left:0,width:'100%',height:height*480/312,top:-height*84/312}}/>}
+    {children}
+  </View>;
+}
 
 export function RoyalField({label,children,style,compact=false,wideLabel=false,sizingGroup}:PropsWithChildren<{label:string;style?:StyleProp<ViewStyle>;compact?:boolean;wideLabel?:boolean;sizingGroup?:RoyalContentGroup}>) {
   const equalHeight = useRoyalGroupHeight(sizingGroup, compact ? ROYAL_LAYOUT.registrationFieldHeight : 104);

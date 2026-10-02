@@ -1,0 +1,256 @@
+{
+  "shared": [
+    {
+      "id": "DLG-SC-LOC-JP-01208-01-001-SHARED-01",
+      "scenarioId": "SC-LOC-JP-01208-01-001",
+      "turnOrder": 1,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "こんにちは。列車のご案内で、何をお調べしますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01208-01-001-SHARED-02",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01208-01-001-SHARED-02",
+      "scenarioId": "SC-LOC-JP-01208-01-001",
+      "turnOrder": 2,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "ask_last_return_train_from_saved_screen",
+        "requiredSemanticComponents": {
+          "goal": "今日の帰りの最終列車を知りたいと伝え、携帯の時刻までに駅へ戻ればよいか尋ねる"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "今日の帰りの最終列車を知りたいです。携帯に出ているこの時刻までに北見駅へ戻れば大丈夫でしょうか。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "今日の帰りの最終列車を知りたいと伝え、携帯の時刻までに駅へ戻ればよいか尋ねる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "今日の帰りの最終列車を知りたいと伝え、携帯の時刻までに駅へ戻ればよいか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01208-01-001-SHARED-03",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01208-01-001-SHARED-03",
+      "scenarioId": "SC-LOC-JP-01208-01-001",
+      "turnOrder": 3,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "目的地と、画面で選ばれている出発駅を教えていただけますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01208-01-001-SHARED-04",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01208-01-001-SHARED-04",
+      "scenarioId": "SC-LOC-JP-01208-01-001",
+      "turnOrder": 4,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "correct_reverse_direction_search",
+        "requiredSemanticComponents": {
+          "goal": "目的地を示し、検索が目的地から北見へ来る逆方向だったので帰りの方向に直したいと説明する"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "目的地はこちらです。でも画面は目的地から北見へ来る方向でした。帰る方向に直して調べたいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "目的地を示し、検索が目的地から北見へ来る逆方向だったので帰りの方向に直したいと説明する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "目的地を示し、検索が目的地から北見へ来る逆方向だったので帰りの方向に直したいと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01208-01-001-SHARED-05",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01208-01-001-SHARED-05",
+      "scenarioId": "SC-LOC-JP-01208-01-001",
+      "turnOrder": 5,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "方向を直しましょう。検索日は今日になっていますか。曜日も確認してください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01208-01-001-SHARED-06",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01208-01-001-SHARED-06",
+      "scenarioId": "SC-LOC-JP-01208-01-001",
+      "turnOrder": 6,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "correct_stale_date_request_penultimate_option",
+        "requiredSemanticComponents": {
+          "goal": "検索日が先週のままだったと伝え、仕事が長引く可能性があるので最終と一つ前の候補を確認したいと話す"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "日付が先週のままでした。今日は仕事が長引くかもしれないので、最終だけでなく一つ前の候補も確認したいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "検索日が先週のままだったと伝え、仕事が長引く可能性があるので最終と一つ前の候補を確認したいと話す。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "検索日が先週のままだったと伝え、仕事が長引く可能性があるので最終と一つ前の候補を確認したいと話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01208-01-001-SHARED-07",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01208-01-001-SHARED-07",
+      "scenarioId": "SC-LOC-JP-01208-01-001",
+      "turnOrder": 7,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "当日の帰る方向に直した画面では、一つ前が20時10分、最終が21時05分で、どちらも乗換なしです。仕事先から駅まで、何分かかりますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01208-01-001-SHARED-08",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01208-01-001-SHARED-08",
+      "scenarioId": "SC-LOC-JP-01208-01-001",
+      "turnOrder": 8,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "include_walk_and_plan_employer_ride",
+        "requiredSemanticComponents": {
+          "goal": "徒歩20分と退勤19時40分なら駅へ20時で一つ前まで10分あると計算し、長引けば走らず会社の送迎も相談すると伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "徒歩20分で、退勤予定は19時40分です。予定どおりなら駅へ20時で、一つ前まで10分あります。長引けば無理に走らず、会社の送迎も相談します。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "徒歩20分と退勤19時40分なら駅へ20時で一つ前まで10分あると計算し、長引けば走らず会社の送迎も相談すると伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "徒歩20分と退勤19時40分なら駅へ20時で一つ前まで10分あると計算し、長引けば走らず会社の送迎も相談すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01208-01-001-SHARED-09",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01208-01-001-SHARED-09",
+      "scenarioId": "SC-LOC-JP-01208-01-001",
+      "turnOrder": 9,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "19時40分に出て20分歩くと20時、20時10分まで10分ですね。今示した二つは候補で、当日の変更は出発前の運行案内で確認してください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-01208-01-001-SHARED-10",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01208-01-001-SHARED-10",
+      "scenarioId": "SC-LOC-JP-01208-01-001",
+      "turnOrder": 10,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "confirm_date_direction_options_before_departure",
+        "requiredSemanticComponents": {
+          "goal": "一つ前20時10分と最終21時05分は乗換なしと控え、予定どおりなら一つ前、退勤が遅れそうなら先に送迎を相談すると伝える"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "一つ前20時10分と最終21時05分、どちらも乗換なしと控えました。予定どおりなら一つ前を候補にして、退勤が遅れそうなら出る前に送迎も相談します。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "一つ前20時10分と最終21時05分は乗換なしと控え、予定どおりなら一つ前、退勤が遅れそうなら先に送迎を相談すると伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "一つ前20時10分と最終21時05分は乗換なしと控え、予定どおりなら一つ前、退勤が遅れそうなら先に送迎を相談すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-01208-01-001-SHARED-11",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-01208-01-001-SHARED-11",
+      "scenarioId": "SC-LOC-JP-01208-01-001",
+      "turnOrder": 11,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "承知しました。出発前にも当日の案内をご確認ください。お気をつけてお帰りください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    }
+  ],
+  "authoring": {
+    "locale": "ja",
+    "contentScope": "simulated_learning_scenario",
+    "editorialSource": "scripts/dialogue-authoring/prf-001-kitami.json",
+    "premise": "北見の架空交通案内画面。反対方向・先週の日付を修正し、当日帰路の一つ前20時10分と最終21時05分、いずれも乗換なしという架空候補を示す。会社から駅は徒歩20分、退勤19時40分なら一つ前まで10分余裕。実在の運行・終電・歩行所要ではない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "contentPass": false
+  }
+}
