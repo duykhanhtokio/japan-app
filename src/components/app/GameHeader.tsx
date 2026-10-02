@@ -32,7 +32,7 @@ export default function GameHeader({name='プレイヤー',abilityLevel='N5',abi
  const {width:screenWidth}=useWindowDimensions();
  if(variant==='approved'){
   const scale=Math.max(.9,Math.min(1.18,screenWidth/390));
-  const avatarSize=Math.round(89*scale);
+  const avatarSize=Math.round(72*scale);
   return <View style={[s.container,s.approvedContainer]}>
    <View style={s.approvedTopRow}>
     <RoyalBackButton onPress={onBack??goBackOrHome}/>
@@ -108,21 +108,21 @@ function EnergyBar({label,value,ratio,tint,large=false}:{label:string;value:stri
    <View style={[s.energyColorClip,{width:`${percentage}%`,backgroundColor:tint}]}/>
   </View>
   <Image source={HUD_ENERGY_FRAME} resizeMode="stretch" style={[s.energyOrnament,{height:artHeight,top:artTop}]}/>
-  <View pointerEvents="none" style={s.energyTextSafe}><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.78} maxFontSizeMultiplier={1} style={s.energyCenteredText}>{label}{value?`  ${value}`:''}</Text></View>
+  <View pointerEvents="none" style={s.energyTextSafe}><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.78} maxFontSizeMultiplier={1} style={[s.energyCenteredText,label==='CREDIT'&&s.creditText]}>{label}{value?`  ${value}`:''}</Text></View>
  </View>;
 }
 
 const s=StyleSheet.create({
- approvedTopRow:{height:ROYAL_LAYOUT.homeHudTopRowHeight,flexDirection:'row',alignItems:'center',gap:4},
- approvedTopBody:{flex:1,minWidth:0,height:'100%',flexDirection:'row',alignItems:'center',gap:4},
+ approvedTopRow:{height:ROYAL_LAYOUT.homeHudTopRowHeight,flexDirection:'row',alignItems:'center',gap:8},
+ approvedTopBody:{flex:1,minWidth:0,height:'100%',flexDirection:'row',alignItems:'center',gap:8},
  approvedNameFrame:{flex:1,minWidth:0,height:58,justifyContent:'center',paddingHorizontal:14},
- approvedCoinFrame:{flex:1,flexDirection:'row',alignItems:'center',justifyContent:'center',paddingHorizontal:'16%',gap:3},
+ approvedCoinFrame:{flex:1,flexDirection:'row',alignItems:'center',justifyContent:'center',paddingHorizontal:14,gap:4},
  approvedTopArt:{position:'absolute',left:0,right:0},
  approvedTopImage:{width:'100%',height:'100%'},
  approvedProfile:{flex:1,height:'100%',flexDirection:'row',alignItems:'center',minWidth:0},
  approvedAvatar:{width:ROYAL_LAYOUT.homeAvatarSize,height:ROYAL_LAYOUT.homeAvatarSize,flexShrink:0},
  approvedName:{width:'100%',flexShrink:1,minWidth:0,marginLeft:0,marginRight:0,color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:20,lineHeight:26,textAlign:'center',textAlignVertical:'center',includeFontPadding:false},
- approvedCoins:{width:'29%',height:58},
+ approvedCoins:{width:'34%',minWidth:94,height:58},
  approvedCoinIcon:{width:22,height:22,flexShrink:0},
  approvedCoinValue:{flex:1,minWidth:0,color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:16,lineHeight:22,textAlign:'center',includeFontPadding:false},
  studyContainer:{width:'100%',paddingHorizontal:10,paddingTop:8,paddingBottom:10,borderWidth:1,borderRadius:16,borderColor:ROYAL.gold,backgroundColor:ROYAL.lacquer,shadowColor:'#07101f',shadowOpacity:.24,shadowRadius:8,shadowOffset:{width:0,height:4},elevation:4},
@@ -142,7 +142,7 @@ const s=StyleSheet.create({
  studyTrack:{height:5,borderRadius:3,backgroundColor:'rgba(255,255,255,.22)',overflow:'hidden',marginTop:5},
  studyFill:{height:'100%',backgroundColor:ROYAL.gold,borderRadius:3},
  container:{width:'100%',height:ROYAL_LAYOUT.homeHudTopRowHeight+2*ROYAL_BAR_HEIGHT,zIndex:100},
- approvedContainer:{height:144},
+ approvedContainer:{height:ROYAL_LAYOUT.homeHudTopRowHeight+66},
  topRow:{height:ROYAL_LAYOUT.homeHudTopRowHeight,flexDirection:'row',alignItems:'center',gap:4},
  profile:{flex:1,minWidth:0,height:'100%',position:'relative',justifyContent:'center'},
  nameFrame:{height:58,marginLeft:48,justifyContent:'center',paddingLeft:38,paddingRight:25,paddingVertical:14},
@@ -160,6 +160,7 @@ const s=StyleSheet.create({
  energyColorClip:{height:'100%'},
  energyOrnament:{position:'absolute',left:0,right:0,width:'100%'},
  energyTextSafe:{position:'absolute',left:'16%',right:'16%',top:0,bottom:0,alignItems:'center',justifyContent:'center'},
- energyCenteredText:{width:'100%',textAlign:'center',color:'#142335',fontFamily:ROYAL_FONT.heading,fontSize:13,lineHeight:20,includeFontPadding:false,textShadowColor:'rgba(255,248,231,.95)',textShadowOffset:{width:0,height:1},textShadowRadius:3},
+ energyCenteredText:{width:'100%',textAlign:'center',color:'#142335',fontFamily:ROYAL_FONT.heading,fontSize:13,lineHeight:20,includeFontPadding:false,textShadowColor:'transparent',textShadowOffset:{width:0,height:0},textShadowRadius:0},
+ creditText:{backgroundColor:'#142847',borderRadius:6,color:'#fff7df',fontWeight:'700',textShadowColor:'#43121a',textShadowOffset:{width:0,height:1},textShadowRadius:1},
  pressed:{opacity:.84,transform:[{translateY:2},{scale:.985}]}
 });
