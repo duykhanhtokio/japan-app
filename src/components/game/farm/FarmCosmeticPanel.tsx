@@ -1,3 +1,4 @@
+import FarmCosmeticArtwork from './FarmCosmeticArtwork';
 import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
 import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import {
@@ -446,7 +447,7 @@ export default function FarmCosmeticPanel({
                 >
                     {locked
                         ? <Image source={LOCK_ICON} resizeMode="contain" style={styles.previewAsset} />
-                        : getFarmCosmeticAsset(item.assetKey) ? <Image source={getFarmCosmeticAsset(item.assetKey)!} resizeMode="contain" style={{width:64,height:64}} /> : <Text style={{color:"#142847"}}>画像未登録</Text>}
+                        : getFarmCosmeticAsset(item.assetKey) ? <FarmCosmeticArtwork assetKey={item.assetKey} width={64} height={64} /> : <Text style={{color:"#142847"}}>画像未登録</Text>}
                 </View>
 
                 <View

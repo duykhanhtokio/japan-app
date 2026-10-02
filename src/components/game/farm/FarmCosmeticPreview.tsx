@@ -1,3 +1,4 @@
+import FarmCosmeticArtwork from './FarmCosmeticArtwork';
 import { RoyalContentPanel, RoyalExplanationPanel } from '@/components/ui/RoyalPanels';
 import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
 import {
@@ -152,13 +153,12 @@ export default function FarmCosmeticPreview({
         isChicken ||
         isCow;
 
-    const buildingAsset =
-        target ===
-            'chicken_barn' ||
-        target ===
-            'cow_barn'
-            ? barnLightAsset
-            : null;
+    const isBuilding = target === 'chicken_barn' || target === 'cow_barn';
+    const buildingId = isBuilding
+        ? targetEquipment.barn_set ?? targetEquipment.barn_roof ?? targetEquipment.barn_light
+        : undefined;
+    const buildingDefinition = FARM_COSMETICS.find(item => item.id === buildingId);
+    const buildingAsset = getAssetById(buildingId);
 
     const decorationAsset =
         target ===
@@ -182,7 +182,7 @@ export default function FarmCosmeticPreview({
 
             <RoyalExplanationPanel
                 style={
-                    styles.stage
+                    [styles.stage, isBuilding && {height:206}]
                 }
             >
                 {effectAsset && (
@@ -249,16 +249,8 @@ export default function FarmCosmeticPreview({
                     />
                 )}
 
-                {buildingAsset && (
-                    <Image
-                        source={
-                            buildingAsset
-                        }
-                        resizeMode="contain"
-                        style={
-                            styles.largeDecoration
-                        }
-                    />
+                {buildingAsset && buildingDefinition && (
+                    <FarmCosmeticArtwork assetKey={buildingDefinition.assetKey} width={180} height={150} />
                 )}
 
                 {decorationAsset && (
@@ -283,8 +275,8 @@ export default function FarmCosmeticPreview({
                     >
                         {target ===
                         'farm'
-                            ? '🌳'
-                            : '🏠'}
+                            ? '装飾を選んでください'
+                            : '建物を選んでください'}
                     </Text>
                 )}
             </RoyalExplanationPanel>
@@ -414,7 +406,8 @@ const styles =
         emptyIcon: {
             fontFamily: ROYAL_FONT.body,
             fontSize:
-                70,
+                14,
+            color: '#fff7df',
         },
 
         hint: {

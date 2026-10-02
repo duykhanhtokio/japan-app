@@ -1,3 +1,5 @@
+import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
+import FarmBadgeFrame from './FarmBadgeFrame';
 import FarmAreaIcon from './FarmAreaIcon';
 import { Image as CachedImage } from 'expo-image';
 import {
@@ -219,13 +221,13 @@ function CowSlot({
                     }}
                     style={styles.feedButton}
                     hitSlop={6}
-                >
-                    <View style={{flexDirection:"row",alignItems:"center",gap:3}}><FarmAreaIcon name="rice" size={24}/><Text style={styles.feedText}>えさ</Text></View>
+                ><FarmBadgeFrame/>
+                    <View style={{flexDirection:"row",alignItems:"center",gap:3}}><FarmAreaIcon name="rice" size={16}/><Text numberOfLines={1} style={styles.feedText}>えさ</Text></View>
                 </Pressable>
             )}
 
             {producing && !careRequired && remaining !== '' && (
-                <View pointerEvents="none" style={styles.timerBadge}>
+                <View pointerEvents="none" style={styles.timerBadge}><FarmBadgeFrame dark/>
                     <Text style={styles.timerText}>⏱ {remaining}</Text>
                 </View>
             )}
@@ -238,7 +240,7 @@ function CowSlot({
                     }}
                     style={styles.careButton}
                     hitSlop={8}
-                >
+                ><FarmBadgeFrame/>
                     <Text style={styles.careIcon}>{careIcon === "🌾" ? <FarmAreaIcon name="rice" size={24}/> : careIcon}</Text>
                     <View style={styles.alertDot}>
                         <Text style={styles.alertText}>!</Text>
@@ -353,16 +355,17 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: -3,
         minWidth: 57,
-        paddingHorizontal: 8,
+        paddingHorizontal: 4,
         paddingVertical: 4,
         borderRadius: 12,
-        borderWidth: 2,
-        borderColor: '#8A5523',
-        backgroundColor: '#FFF0C5',
+
+
+
     },
-    feedText: {
+    feedText: {fontFamily: ROYAL_FONT.body,
+
         color: '#4C2D14',
-        fontSize: 16,
+        fontSize: 11,
         fontWeight: '900',
         textAlign: 'center',
     },
@@ -372,11 +375,12 @@ const styles = StyleSheet.create({
         paddingHorizontal: 7,
         paddingVertical: 3,
         borderRadius: 11,
-        borderWidth: 1,
-        borderColor: '#D3A94C',
-        backgroundColor: 'rgba(64,42,22,0.9)',
+
+
+
     },
-    timerText: { color: '#FFF4CF', fontSize: 15, fontWeight: '900' },
+    timerText: {fontFamily: ROYAL_FONT.body,
+ color: '#FFF4CF', fontSize: 15, fontWeight: '900' },
     careButton: {
         position: 'absolute',
         right: -4,
@@ -386,11 +390,12 @@ const styles = StyleSheet.create({
         borderRadius: 17,
         alignItems: 'center',
         justifyContent: 'center',
-        borderWidth: 2,
-        borderColor: '#A86A21',
-        backgroundColor: '#FFF1C7',
+
+
+
     },
-    careIcon: { fontSize: 18 },
+    careIcon: {fontFamily: ROYAL_FONT.body,
+ fontSize: 18 },
     alertDot: {
         position: 'absolute',
         right: -4,
@@ -402,7 +407,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#E34332',
     },
-    alertText: { color: '#FFFFFF', fontSize: 16, fontWeight: '900' },
+    alertText: {fontFamily: ROYAL_FONT.body,
+ color: '#FFFFFF', fontSize: 16, fontWeight: '900' },
     milkButton: {
         position: 'absolute',
         right: -2,
@@ -411,7 +417,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     milk: { width: 34, height: 34 },
-    collectText: {
+    collectText: {fontFamily: ROYAL_FONT.body,
+
         marginTop: -3,
         paddingHorizontal: 5,
         paddingVertical: 1,

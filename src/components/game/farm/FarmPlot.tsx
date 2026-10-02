@@ -1,3 +1,5 @@
+import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
+import FarmBadgeFrame from './FarmBadgeFrame';
 import {
     Image,
     Pressable,
@@ -342,7 +344,7 @@ export default function FarmPlot({
                 style={
                     styles.numberBadge
                 }
-            >
+            ><FarmBadgeFrame/>
                 <Text
                     style={
                         styles.numberText
@@ -357,7 +359,7 @@ export default function FarmPlot({
             ) : visual.icon === '🌾' || visual.icon === '🌱' ? (
                 <FarmAreaIcon name="rice" size={37} />
             ) : (
-                <Text style={styles.stateIcon}>{visual.icon}</Text>
+                null
             )}
 
             <View
@@ -370,13 +372,13 @@ export default function FarmPlot({
                     locked &&
                         styles.statusLocked,
                 ]}
-            >
+            ><FarmBadgeFrame/>
                 <Text
                     numberOfLines={
                         1
                     }
                     style={
-                        styles.statusText
+                        [styles.statusText, visual.urgent && {color:'#a12626'}]
                     }
                 >
                     {visual.label}
@@ -492,17 +494,15 @@ const styles =
             borderRadius:
                 13,
 
-            borderWidth:
-                2,
 
-            borderColor:
-                '#7C4B1F',
 
-            backgroundColor:
-                '#FFF5D2',
+
+
+
         },
 
-        numberText: {
+        numberText: {fontFamily: ROYAL_FONT.body,
+
             color:
                 '#5B3416',
 
@@ -513,7 +513,8 @@ const styles =
                 '900',
         },
 
-        stateIcon: {
+        stateIcon: {fontFamily: ROYAL_FONT.body,
+
             fontSize:
                 35,
 
@@ -521,7 +522,8 @@ const styles =
                 'center',
         },
 
-        lockIcon: {
+        lockIcon: {fontFamily: ROYAL_FONT.body,
+
             fontSize:
                 29,
         },
@@ -548,33 +550,27 @@ const styles =
             borderRadius:
                 10,
 
-            borderWidth:
-                1,
 
-            borderColor:
-                '#6A451F',
 
-            backgroundColor:
-                'rgba(255, 248, 222, 0.93)',
+
+
+
         },
 
         statusUrgent: {
-            borderColor:
-                '#A83C23',
 
-            backgroundColor:
-                'rgba(255, 225, 181, 0.96)',
+
+
         },
 
         statusLocked: {
-            borderColor:
-                '#60584D',
 
-            backgroundColor:
-                'rgba(82, 75, 67, 0.9)',
+
+
         },
 
-        statusText: {
+        statusText: {fontFamily: ROYAL_FONT.body,
+
             color:
                 '#4E3219',
 

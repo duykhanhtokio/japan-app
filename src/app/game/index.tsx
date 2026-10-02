@@ -1,5 +1,6 @@
+import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import { Image as CachedImage } from 'expo-image';
-import { router } from 'expo-router';
+import { router, useFocusEffect } from 'expo-router';
 
 import {
     careForAnimal,
@@ -22,7 +23,7 @@ import {
 } from 'react-native';
 
 import {
-    useEffect,
+    useCallback,
     useMemo,
     useRef,
     useState,
@@ -92,7 +93,6 @@ import {
     resolveFarmTime,
 } from '@/game/farming/plot-engine';
 
-import AnimalWorld from '@/components/game/farm/AnimalWorld';
 
 import ChickenWorld from '@/components/game/farm/ChickenWorld';
 
@@ -344,26 +344,12 @@ export default function FarmGameScreen() {
                 Date.now()
         );
 
-    useEffect(
-        () => {
-            const timer =
-                setInterval(
-                    () => {
-                        setClockNow(
-                            Date.now()
-                        );
-                    },
-                    1000
-                );
-
-            return () => {
-                clearInterval(
-                    timer
-                );
-            };
-        },
-        []
-    );
+    // Resolve elapsed production time on return without rendering a hidden game each second.
+    useFocusEffect(useCallback(() => {
+        setClockNow(Date.now());
+        const timer = setInterval(() => setClockNow(Date.now()), 1000);
+        return () => clearInterval(timer);
+    }, []));
 
     const gameNow =
         clockNow +
@@ -1549,7 +1535,7 @@ export default function FarmGameScreen() {
                                 .gold
                         }
                         diamonds={
-                            0
+                            resolvedState.diamonds
                         }
                         keys={
                             resolvedState
@@ -1650,35 +1636,8 @@ export default function FarmGameScreen() {
                                 handleAnimalCollect
                             }
                         />
-                    ) : selectedArea === 'restaurant' ? (
-                        <RestaurantWorld />
                     ) : (
-                        <AnimalWorld
-                            animalId={
-                                selectedArea as AnimalId
-                            }
-                            slots={
-                                resolvedState.animalSlots
-                            }
-                            selectedSlotId={
-                                selectedAnimalSlotId
-                            }
-                            now={
-                                gameNow
-                            }
-                            onSelectSlot={
-                                handleAnimalSlotSelect
-                            }
-                            onFeed={
-                                handleAnimalFeed
-                            }
-                            onCare={
-                                handleAnimalCare
-                            }
-                            onCollect={
-                                handleAnimalCollect
-                            }
-                        />
+                        <RestaurantWorld />
                     )}
                     </View>
                 )}
@@ -1698,17 +1657,18 @@ export default function FarmGameScreen() {
                                 pressed,
                             }) => [
                                     styles.harvestButton,
+                                    {bottom: insets.bottom + (__DEV__ ? 76 : 24)},
 
                                     pressed &&
                                     styles.harvestButtonPressed,
                                 ]}
-                        >
+                        ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
                             <Text
                                 style={
                                     styles.harvestButtonText
                                 }
                             >
-                                🍎 収穫する
+                                収穫する
                             </Text>
                         </Pressable>
                     )}
@@ -2198,58 +2158,9 @@ const styles =
         },
 
         harvestButton: {
-            alignSelf:
-                'center',
-
-            minWidth:
-                180,
-
-            marginTop:
-                6,
-
-            marginBottom:
-                4,
-
-            paddingHorizontal:
-                22,
-
-            paddingVertical:
-                11,
-
-            borderRadius:
-                16,
-
-            alignItems:
-                'center',
-
-            backgroundColor:
-                '#F0A53A',
-
-            borderWidth:
-                3,
-
-            borderColor:
-                '#A96420',
-
-            shadowColor:
-                '#000000',
-
-            shadowOffset: {
-                width:
-                    0,
-
-                height:
-                    3,
-            },
-
-            shadowOpacity:
-                0.2,
-
-            shadowRadius:
-                3,
-
-            elevation:
-                4,
+            position: 'absolute', zIndex: 25, alignSelf: 'center',
+            minWidth: 180, minHeight: 48, paddingHorizontal: 28,
+            paddingVertical: 14, alignItems: 'center', justifyContent: 'center',
         },
 
         harvestButtonPressed: {
@@ -2266,7 +2177,7 @@ const styles =
 
         harvestButtonText: {
             color:
-                '#FFFFFF',
+                '#142847',
 
             fontSize:
                 15,
