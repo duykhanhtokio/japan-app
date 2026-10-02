@@ -1,3 +1,4 @@
+import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { router, useFocusEffect } from 'expo-router';
 import { useCallback, useState, type PropsWithChildren } from 'react';
@@ -20,7 +21,7 @@ import {
 
 import BottomNav from '@/components/app/BottomNav';
 import GameHeader from '@/components/app/GameHeader';
-import { ROYAL, ROYAL_FONT, ROYAL_TYPE } from '@/components/ui/RoyalSurface';
+import { RoyalButton, ROYAL, ROYAL_FONT, ROYAL_TYPE } from '@/components/ui/RoyalSurface';
 import { RANKS, type LearningEconomy } from '@/services/learning-economy';
 import { syncJlptQualification } from '@/services/sync-jlpt-qualification';
 
@@ -40,9 +41,10 @@ import {
     calculateCommunicationTitle,
 } from '@/services/progress-engine';
 const PROFILE_AVATAR = require('../../../assets/app/ui/royal-af/hud-player-medallion-v1.png');
-/** Detail sections use separators rather than repeated ornamental picture frames. */
+const PROFILE_ART=require('../../../assets/app/life/location-backgrounds/cafe/01-clear-morning.jpg');
+const PROFILE_ICONS={work:require('../../../assets/app/ui/royal-af/mission-work-v1.png'),lock:require('../../../assets/app/ui/royal-af/lock-grape-v2.png'),book:require('../../../assets/app/ui/royal-af/learning-grammar-v1.png'),map:require('../../../assets/app/ui/royal-af/map-marker-fill-v1.png'),trophy:require('../../../assets/app/ui/royal-af/mission-trophy-v1.png'),key:require('../../../assets/app/ui/royal-af/mission-key-v1.png')};
 function ProfilePanel({children,style,kind='plain'}:PropsWithChildren<{style?:StyleProp<ViewStyle>;kind?:'profile'|'rating'|'plain'}>) {
-    return <View style={[style, {paddingHorizontal: 0, paddingVertical: 18, borderWidth: 0, borderRadius: 0, borderBottomWidth: 1, borderBottomColor: 'rgba(212,175,55,.25)', backgroundColor: 'transparent'}, kind==='rating' && {alignItems:'center'}]}>{children}</View>;
+ return <RoyalPaperPanel tone="hud" style={[style,{paddingHorizontal:22,paddingVertical:24,borderWidth:0,borderRadius:0,backgroundColor:'transparent'},kind==='rating'&&{alignItems:'center'}]}>{children}</RoyalPaperPanel>;
 }
 
 export default function ProfileScreen() {
@@ -130,22 +132,22 @@ export default function ProfileScreen() {
                     <Image source={PROFILE_AVATAR} resizeMode="contain" style={styles.identityAvatar}/>
                     <Text style={styles.identityName}>{profile.name?.trim() || 'プレイヤー'}</Text>
                     <Text style={styles.identityRank}>JLPT · {economy?.officialRank ?? 'N5'}</Text>
-                    <Text style={styles.identityOccupation}>{occupation?.icon ?? '💼'} {occupation?.titleJa ?? 'その他'} / {occupation?.titleVi ?? 'Công việc khác'}</Text>
-                    <Pressable accessibilityRole="button" style={({pressed})=>[styles.identityEdit,pressed && {opacity:.65}]} onPress={()=>navigate('/register')}>
+                    <Image source={PROFILE_ICONS.work} resizeMode="contain" style={{width:40,height:40,marginTop:12}}/><Text style={styles.identityOccupation}> {occupation?.titleJa ?? 'その他'} / {occupation?.titleVi ?? 'Công việc khác'}</Text>
+                    <RoyalButton style={styles.identityEdit} onPress={()=>navigate('/register')}>
                         <Text style={styles.editText}>編集 · Chỉnh sửa</Text>
-                    </Pressable>
+                    </RoyalButton>
                     <Pressable accessibilityRole="button" style={styles.detailsButton} onPress={()=>setDetailsVisible(true)}>
                         <Text style={styles.detailsLink}>詳細を見る · Xem chi tiết ›</Text>
                     </Pressable>
                 </View>
             </ScrollView>
             <Modal visible={detailsVisible} animationType="slide" onRequestClose={()=>setDetailsVisible(false)}>
-                <SafeAreaView style={styles.detailsPage}>
+                <RoyalPageBackground source={PROFILE_ART} tone="dark" shadeOpacity={.50}><SafeAreaView style={styles.detailsPage}>
                     <View style={styles.detailsHeader}>
                         <Text style={styles.sectionTitle}>プロフィール · 詳細</Text>
-                        <Pressable accessibilityRole="button" accessibilityLabel="Đóng chi tiết" onPress={()=>setDetailsVisible(false)} style={styles.detailsClose}>
+                        <RoyalButton onPress={()=>setDetailsVisible(false)} style={styles.detailsClose}>
                             <Text style={styles.editText}>閉じる · Đóng</Text>
-                        </Pressable>
+                        </RoyalButton>
                     </View>
                     <ScrollView contentContainerStyle={styles.content}>
                 {/* =========================
@@ -297,7 +299,7 @@ export default function ProfileScreen() {
                 ========================== */}
 
                 <StatSection
-                    title="📚 学習統計"
+                    title="学習統計"
                     rows={[
                         [
                             'Vocabulary',
@@ -316,7 +318,7 @@ export default function ProfileScreen() {
 
                         [
                             'Coins',
-                            `${stats.coins.toLocaleString()} 🪙`,
+                            `${stats.coins.toLocaleString()} コイン`,
                         ],
                     ]}
                 />
@@ -335,14 +337,7 @@ export default function ProfileScreen() {
                             styles.workHeader
                         }
                     >
-                        <Text
-                            style={
-                                styles.workIcon
-                            }
-                        >
-                            {occupation?.icon ??
-                                '💼'}
-                        </Text>
+                        <Image source={PROFILE_ICONS.work} resizeMode="contain" style={{width:32,height:36}}/>
 
                         <View
                             style={
@@ -426,7 +421,7 @@ export default function ProfileScreen() {
                                     styles.sectionTitle
                                 }
                             >
-                                🗾 JAPAN JOURNEY
+                                JAPAN JOURNEY
                             </Text>
 
                             <Text
@@ -540,13 +535,7 @@ export default function ProfileScreen() {
                             </Text>
                         </View>
 
-                        <Text
-                            style={
-                                styles.prefectureLocked
-                            }
-                        >
-                            🔒
-                        </Text>
+                        <Image source={PROFILE_ICONS.lock} resizeMode="contain" style={{width:32,height:36}}/>
                     </View>
                 </ProfilePanel>
 
@@ -578,7 +567,7 @@ export default function ProfileScreen() {
                                     styles.cardLabel
                                 }
                             >
-                                📖 会話ログ
+                                会話ログ
                             </Text>
 
                             <Text
@@ -719,7 +708,7 @@ export default function ProfileScreen() {
                             styles.sectionTitle
                         }
                     >
-                        🏆 ACHIEVEMENTS
+                        ACHIEVEMENTS
                     </Text>
 
                     <View
@@ -728,25 +717,25 @@ export default function ProfileScreen() {
                         }
                     >
                         <Achievement
-                            icon="☕"
+                            icon={PROFILE_ICONS.book}
                             title="初めての会話"
                             unlocked
                         />
 
                         <Achievement
-                            icon="🗾"
+                            icon={PROFILE_ICONS.map}
                             title="東京探検"
                             unlocked
                         />
 
                         <Achievement
-                            icon="🔥"
+                            icon={PROFILE_ICONS.trophy}
                             title="7日連続"
                             unlocked
                         />
 
                         <Achievement
-                            icon="🗝️"
+                            icon={PROFILE_ICONS.key}
                             title="Golden Key"
                             unlocked={false}
                         />
@@ -767,7 +756,7 @@ export default function ProfileScreen() {
                             styles.sectionTitle
                         }
                     >
-                        🎓 CERTIFICATES
+                        CERTIFICATES
                     </Text>
 
                     <Text
@@ -784,13 +773,7 @@ export default function ProfileScreen() {
                             styles.certificateEmpty
                         }
                     >
-                        <Text
-                            style={
-                                styles.certificateEmptyIcon
-                            }
-                        >
-                            🔒
-                        </Text>
+                        <Image source={PROFILE_ICONS.lock} resizeMode="contain" style={{width:32,height:36}}/>
 
                         <Text
                             style={
@@ -802,7 +785,7 @@ export default function ProfileScreen() {
                     </View>
                 </ProfilePanel>
                     </ScrollView>
-                </SafeAreaView>
+                </SafeAreaView></RoyalPageBackground>
             </Modal>
 
             <BottomNav
@@ -960,7 +943,7 @@ function MiniStat({
     label: string;
 }) {
     return (
-        <View
+        <RoyalPaperPanel tone="hud"
             style={
                 styles.miniStat
             }
@@ -980,7 +963,7 @@ function MiniStat({
             >
                 {label}
             </Text>
-        </View>
+        </RoyalPaperPanel>
     );
 }
 
@@ -989,14 +972,14 @@ function Achievement({
     title,
     unlocked,
 }: {
-    icon: string;
+    icon: number;
 
     title: string;
 
     unlocked: boolean;
 }) {
     return (
-        <View
+        <RoyalPaperPanel tone="hud"
             style={[
                 styles.achievement,
 
@@ -1004,15 +987,7 @@ function Achievement({
                 styles.achievementLocked,
             ]}
         >
-            <Text
-                style={
-                    styles.achievementIcon
-                }
-            >
-                {unlocked
-                    ? icon
-                    : '🔒'}
-            </Text>
+            <Image source={unlocked?icon:PROFILE_ICONS.lock} resizeMode="contain" style={{width:38,height:38,marginBottom:8}}/>
 
             <Text
                 style={
@@ -1022,7 +997,7 @@ function Achievement({
             >
                 {title}
             </Text>
-        </View>
+        </RoyalPaperPanel>
     );
 }
 
@@ -1034,12 +1009,12 @@ const styles =
         identityName: {fontFamily:ROYAL_FONT.heading,fontSize:24,lineHeight:34,color:ROYAL.lacquer,textAlign:'center'},
         identityRank: {fontFamily:ROYAL_FONT.body,fontSize:18,lineHeight:26,color:ROYAL.lacquerLight,marginTop:8},
         identityOccupation: {fontFamily:ROYAL_FONT.body,fontSize:16,lineHeight:24,color:ROYAL.lacquerLight,textAlign:'center',marginTop:12},
-        identityEdit: {backgroundColor:ROYAL.lacquer,paddingHorizontal:24,paddingVertical:12,borderRadius:12,marginTop:24,minHeight:48},
+        identityEdit: {width:'80%',maxWidth:320,marginTop:24,minHeight:64},
         detailsButton: {paddingHorizontal:16,paddingVertical:14,marginTop:16,minHeight:48},
         detailsLink: {fontFamily:ROYAL_FONT.body,fontSize:16,color:ROYAL.lacquer,textAlign:'center'},
-        detailsPage: {flex:1,backgroundColor:ROYAL.lacquer},
+        detailsPage: {flex:1,backgroundColor:'transparent'},
         detailsHeader: {padding:18,flexDirection:'row',flexWrap:'wrap',alignItems:'center',justifyContent:'space-between',gap:12},
-        detailsClose: {padding:12,minHeight:48},
+        detailsClose: {minHeight:64,minWidth:160},
         royalFrame: {...StyleSheet.absoluteFillObject,width:'100%',height:'100%'},
         container: {
             flex: 1,
@@ -1518,8 +1493,7 @@ const styles =
 
             borderRadius: 12,
 
-            backgroundColor:
-                'rgba(255,255,255,0.05)',
+            backgroundColor:'transparent',
         },
 
         miniStatValue: {
@@ -1845,15 +1819,14 @@ const styles =
 
             borderRadius: 13,
 
-            backgroundColor:
-                'rgba(255,255,255,0.05)',
+            backgroundColor:'transparent',
 
             alignItems: 'center',
 
             justifyContent:
                 'center',
 
-            padding: 6,
+            padding:10,
         },
 
         achievementLocked: {

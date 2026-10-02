@@ -1,3 +1,4 @@
+import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 import {
     Image,
     ImageBackground,
@@ -18,7 +19,6 @@ import { RoyalBackButton } from '@/components/ui/RoyalSurface';
 
 import BottomNav from '@/components/app/BottomNav';
 
-const SECTOR_FRAME=require('../../../assets/app/ui/royal-af/button-wide-v2.png');
 const sectors = [
     {icon:require('../../../assets/game/farm/background/vegetable_map_background_v2.png'),ja:'農業',vi:'Nông nghiệp'},
     {icon:require('../../../assets/app/life/rewards/cards/construction-site.png'),ja:'建設',vi:'Xây dựng'},
@@ -74,7 +74,7 @@ export default function SpecifiedSkillsScreen() {
                                 styles.card
                             }
                         >
-                            <ImageBackground source={SECTOR_FRAME} resizeMode="stretch" style={styles.cardArtwork}>
+                            <RoyalPaperPanel style={styles.cardArtwork}>
                             <Image
                                 source={icon}
                                 resizeMode="cover"
@@ -83,7 +83,7 @@ export default function SpecifiedSkillsScreen() {
                                 }
                             />
 
-                            <View>
+                            <View style={{flex:1,minWidth:0}}>
                                 <Text
                                     style={
                                         styles.cardTitle
@@ -100,7 +100,7 @@ export default function SpecifiedSkillsScreen() {
                                     {vi}
                                 </Text>
                             </View>
-                            </ImageBackground>
+                            </RoyalPaperPanel>
                         </View>
                     )
                 )}
@@ -135,7 +135,7 @@ const styles =
         },
 
         back: {
-            color: '#ffffff',
+            color: '#142335',
 
             fontSize: 27,
 
@@ -165,14 +165,14 @@ const styles =
         card: {
             minHeight: 90,
         },
-        cardArtwork:{flex:1,flexDirection:'row',alignItems:'center',paddingHorizontal:25,paddingVertical:14,gap:12},
+        cardArtwork:{flexDirection:'row',alignItems:'center',paddingHorizontal:28,paddingVertical:24,gap:12},
 
         icon: {
             width:54,height:54,borderRadius:12,
         },
 
         cardTitle: {
-            color: '#ffffff',
+            color: '#142335',
 
             fontSize: 17,
 
@@ -180,7 +180,7 @@ const styles =
         },
 
         cardVi: {
-            color: '#9ea8b7',
+            color: '#34425a',
 
             fontSize: 16,
 

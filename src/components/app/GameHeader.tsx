@@ -1,10 +1,10 @@
+import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 import { router } from 'expo-router';
 import { useState } from 'react';
 import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { RoyalBackButton, ROYAL, ROYAL_FONT, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
 import { CREDIT_CAPACITY, RANK_COLORS, RANKS, type JlptRank } from '@/services/learning-economy';
 
-const HUD_ENERGY_FRAME=require('../../../assets/app/ui/royal-af/hud-energy-open-frame-v1.png');
 const HUD_PLAYER=require('../../../assets/app/ui/royal-af/hud-player-medallion-v1.png');
 const HUD_IDENTITY=require('../../../assets/app/ui/royal-af/hud-top-composite-midnight-v3.png');
 const HUD_COIN=require('../../../assets/app/ui/royal-af/hud-coin-v1.png');
@@ -98,31 +98,14 @@ function ReferenceIdentity({name,coins,avatarSize,onProfile,onCoins}:Pick<Props,
 
 function clamp01(value:number){return Math.min(1,Math.max(0,Number.isFinite(value)?value:0))}
 function StudyMetric({label,value,ratio}:{label:string;value:string;ratio:number}){
- const percentage=Math.round(clamp01(ratio)*100);
- return <View style={s.studyMetric}>
-  <View style={s.studyMetricHeading}><Text numberOfLines={1} style={s.studyMetricLabel}>{label}</Text><Text style={s.studyMetricPercent}>{percentage}%</Text></View>
-  <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.85} style={s.studyMetricValue}>{value}</Text>
-  <View style={s.studyTrack}><View style={[s.studyFill,{width:`${percentage}%`}]}/></View>
- </View>;
+ return <View style={{flex:1,minWidth:0}}><EnergyBar label={label} value={value} ratio={ratio} tint="#142335" large/></View>;
 }
 function EnergyBar({label,value,ratio,tint,large=false}:{label:string;value:string;ratio:number;tint:string;large?:boolean}){
- const [height,setHeight]=useState(large?APPROVED_BAR_HEIGHT:ROYAL_BAR_HEIGHT);
  const percentage=Math.round(clamp01(ratio)*100);
- // The transparent source has its visible frame at y=156..550 of 724 px.
- // Crop those empty source margins inside the measured bar, so art and fill share one box.
- const artHeight=height*724/394;
- const artTop=-height*156/394;
- return <View onLayout={event=>{
-  const next=event.nativeEvent.layout.height;
-  if(next>0&&next!==height)setHeight(next);
- }} style={[s.energyFrame,large&&s.approvedEnergyFrame]}>
-  <View pointerEvents="none" style={s.energyInset}>
-   <View style={s.energyIvory}/>
-   <View style={[s.energyColorClip,{width:`${percentage}%`,backgroundColor:tint}]}/>
-  </View>
-  <Image source={HUD_ENERGY_FRAME} resizeMode="stretch" style={[s.energyOrnament,{height:artHeight,top:artTop}]}/>
-  <View pointerEvents="none" style={s.energyTextSafe}><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.78} maxFontSizeMultiplier={1} style={[s.energyCenteredText,label==='CREDIT'&&s.creditText]}>{label}{value?`  ${value}`:''}</Text></View>
- </View>;
+ return <RoyalPaperPanel style={[s.energyFrame,large&&s.approvedEnergyFrame]}>
+  <View pointerEvents="none" style={s.energyInset}><View style={s.energyIvory}/><View style={[s.energyColorClip,{width:`${percentage}%`,backgroundColor:tint,opacity:.18}]}/></View>
+  <View pointerEvents="none" style={s.energyTextSafe}><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.78} maxFontSizeMultiplier={1} style={s.energyCenteredText}>{label}{value?`  ${value}`:''}</Text></View>
+ </RoyalPaperPanel>;
 }
 
 const s=StyleSheet.create({
@@ -171,13 +154,13 @@ const s=StyleSheet.create({
  coinIcon:{width:20,height:20,flexShrink:0},coinValue:{flex:1,minWidth:0,color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:14,lineHeight:19,textAlign:'center',includeFontPadding:false},
  energyStack:{height:2*ROYAL_BAR_HEIGHT,flex:0,gap:0},
  approvedEnergyStack:{flex:0,height:66,gap:2},
- energyFrame:{flex:0,height:ROYAL_BAR_HEIGHT,minHeight:ROYAL_BAR_HEIGHT,position:'relative',overflow:'hidden'},
+ energyFrame:{flex:0,height:ROYAL_BAR_HEIGHT,minHeight:ROYAL_BAR_HEIGHT,position:'relative',paddingHorizontal:0,paddingVertical:0},
  approvedEnergyFrame:{flex:0,height:APPROVED_BAR_HEIGHT,minHeight:APPROVED_BAR_HEIGHT},
- energyInset:{position:'absolute',left:'3.4%',right:'3.4%',top:'16%',bottom:'13%',borderRadius:10,overflow:'hidden'},
+ energyInset:{position:'absolute',left:28,right:28,top:9,bottom:9,borderRadius:10,overflow:'hidden'},
  energyIvory:{...StyleSheet.absoluteFillObject,backgroundColor:'#fff7e7'},
  energyColorClip:{height:'100%'},
  energyOrnament:{position:'absolute',left:0,right:0,width:'100%'},
- energyTextSafe:{position:'absolute',left:'16%',right:'16%',top:0,bottom:0,alignItems:'center',justifyContent:'center'},
+ energyTextSafe:{position:'absolute',left:36,right:36,top:0,bottom:0,alignItems:'center',justifyContent:'center'},
  energyCenteredText:{width:'100%',textAlign:'center',color:'#142335',fontFamily:ROYAL_FONT.heading,fontSize:13,lineHeight:20,includeFontPadding:false,textShadowColor:'transparent',textShadowOffset:{width:0,height:0},textShadowRadius:0},
  creditText:{color:'#fff7df',fontWeight:'700',textShadowColor:'#43121a',textShadowOffset:{width:0,height:1},textShadowRadius:1},
  pressed:{opacity:.84,transform:[{translateY:2},{scale:.985}]}

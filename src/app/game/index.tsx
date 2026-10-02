@@ -115,7 +115,7 @@ export default function FarmGameScreen() {
     const insets =
         useSafeAreaInsets();
 
-    const [farmHudHeight,setFarmHudHeight]=useState(insets.top+152);
+    const [farmHudHeight,setFarmHudHeight]=useState(insets.top+ROYAL_LAYOUT.backSafeTop+58);
 
     const [
         farmState,

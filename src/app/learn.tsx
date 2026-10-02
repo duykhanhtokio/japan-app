@@ -2,6 +2,7 @@ import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
 
 import {
+    Image,
     ImageBackground,
     Modal,
     Pressable,
@@ -23,6 +24,9 @@ import { getJlptProgress } from '@/services/jlpt-progress-storage';
 import { generatedGrammar, generatedVocabulary } from '@/data/jlpt-learning';
 import { RANK_COLORS, RANKS, type LearningEconomy } from '@/services/learning-economy';
 import { syncJlptQualification } from '@/services/sync-jlpt-qualification';
+
+
+const RANK_BADGES = {N5:require('../../assets/app/ui/royal-af/rank-n5-v1.png'),N4:require('../../assets/app/ui/royal-af/rank-n4-v1.png'),N3:require('../../assets/app/ui/royal-af/rank-n3-v1.png'),N2:require('../../assets/app/ui/royal-af/rank-n2-v1.png'),N1:require('../../assets/app/ui/royal-af/rank-n1-v1.png')};
 
 const NEXT_JLPT_LEVEL: Record<string,string> = { 未受験:'N5', N5:'N4', N4:'N3', N3:'N2', N2:'N1', N1:'N1' };
 
@@ -320,27 +324,9 @@ export default function LearnScreen() {
                                     <RoyalPaperPanel style={styles.levelCard}>
                                     {/* LEVEL BADGE */}
 
-                                    <View
-                                        style={[
-                                            styles.levelBadge,
-
-                                            {
-                                                backgroundColor:
-                                                    item.unlocked
-                                                        ? item.accentColor
-                                                        : 'rgba(255,255,255,0.10)',
-                                            },
-                                        ]}
-                                    >
-                                        <Text
-                                            style={
-                                                styles.levelBadgeText
-                                            }
-                                        >
-                                            {
-                                                item.level
-                                            }
-                                        </Text>
+                                    <View style={styles.levelBadge}>
+                                        <Image source={RANK_BADGES[item.level]} resizeMode="contain" style={StyleSheet.absoluteFillObject}/>
+                                        <Text style={styles.levelBadgeText}>{item.level}</Text>
                                     </View>
 
                                     {/* CONTENT */}
@@ -666,37 +652,8 @@ const styles =
          * LEVEL BADGE
          */
 
-        levelBadge: {
-            width: 62,
-            height: 62,
-
-            borderRadius: 18,
-
-            alignItems: 'center',
-            justifyContent: 'center',
-
-            marginRight: 13,
-
-            shadowColor: '#000000',
-
-            shadowOpacity: 0.18,
-
-            shadowRadius: 6,
-
-            shadowOffset: {
-                width: 0,
-                height: 3,
-            },
-
-            elevation: 4,
-        },
-
-        levelBadgeText: {
-            color: '#e8e2d6',
-
-            fontSize: 23,
-            fontWeight: '900',
-        },
+        levelBadge: {width:72,height:72,alignItems:'center',justifyContent:'center',marginRight:12},
+        levelBadgeText: {color:'#fff0bd',fontSize:22,fontWeight:'900',textShadowColor:'#020a17',textShadowOffset:{width:0,height:2},textShadowRadius:3},
 
         /*
          * LEVEL CONTENT
