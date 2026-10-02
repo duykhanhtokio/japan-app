@@ -59,3 +59,8 @@ Postal continuation remote-verified at aa2ad3c7 with WORK PERSISTENCE PASS. Read
 ## Sukagawa–Kitakata causal continuation — 2026-10-02
 
 Startup fetched and preserved UI-only remote commit 48a692b9; WORK PERSISTENCE PASS confirmed. Read all 16 current eleven-turn exchanges in Sukagawa and Kitakata. One full stock-misunderstanding replacement now handles three equal tea gifts, alternative stock, individual wrapping, budget and receipt custody; compared three retrieved authored exchanges in full. Seven further individual repairs resolve prior-call status, consultation handoffs, search closure and explicit park directions. IDs/chains and all original 117 scenario slots preserved; structural/source-runtime audit has zero errors and no screening duplicate groups. No whole-prefecture CONTENT PASS or translations. Next: Soma and Nihonmatsu full-turn review, then remaining city groups.
+
+
+## Soma–Nihonmatsu causal continuation — 2026-10-02
+
+Sukagawa–Kitakata continuation remote-verified at 6e88b3ee with WORK PERSISTENCE PASS before continuing. Read all 16 current Soma and Nihonmatsu exchanges. Replaced one numeric-envelope-classification plot with a personal thanks-sentence addition before sealing. Seven further repairs give explicit station destination/path, fictional tree label, double recipe quantity and consultation endings. Read four full related writing/preparation exchanges; source/runtime and scenario slots preserved. Audit remains 117/117 with zero structure errors or screening duplicate groups. No whole-prefecture CONTENT PASS or translations. Next: Tamura, Minamisoma and Date, followed by remaining Fukushima/Aizuwakamatsu/Koriyama final review.
