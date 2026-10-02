@@ -3,14 +3,20 @@
   "reviewer": "AI",
   "contentPass": false,
   "nativeSpeakerReviewed": false,
-  "individualAuthoringCount": 7,
-  "runtimeReadCount": 7,
-  "speakingTaskReadCount": 35,
-  "scope": "First seven Fukushima-city exchanges independently authored and adjacent NPC/player goal chains read. All-prefecture review and remaining 110 independent rewrites pending. Japanese only.",
-  "findings": [],
+  "individualAuthoringCount": 37,
+  "runtimeReadCount": 37,
+  "speakingTaskReadCount": 185,
+  "scope": "37 independently authored Japanese exchanges and 185 adjacent-response speaking goals read; full 117-scene and cross-prefecture final review pending. Japanese only. No native or policy approval.",
+  "findings": [
+    {
+      "scenarioId": "SC-LOC-007-11-001",
+      "finding": "Initial quoted speech versus interpretation draft repeats Hokkaido SC-LOC-JP-01233-04-001.",
+      "resolution": "Rejected and completely replaced by community traffic-safety speaker consultation: speaker versus venue, child/parent audience, pedestrian subject, provisional dates and enquiry follow-up."
+    }
+  ],
   "wholeCorpusComparisonGroups": [
     {
-      "cityId": "CTY-007-first-seven",
+      "cityId": "prf-007-fukushima",
       "scenarioIds": [
         "SC-LOC-007-01-001",
         "SC-LOC-007-02-001",
@@ -18,19 +24,61 @@
         "SC-LOC-007-04-001",
         "SC-LOC-007-05-001",
         "SC-LOC-007-06-001",
-        "SC-LOC-007-07-001"
+        "SC-LOC-007-07-001",
+        "SC-LOC-007-08-001",
+        "SC-LOC-007-09-001",
+        "SC-LOC-007-10-001",
+        "SC-LOC-007-11-001",
+        "SC-LOC-007-12-001",
+        "SC-LOC-007-13-001",
+        "SC-LOC-007-14-001",
+        "SC-LOC-007-15-001",
+        "SC-LOC-007-16-001",
+        "SC-LOC-007-17-001",
+        "SC-LOC-007-18-001",
+        "SC-LOC-007-19-001",
+        "SC-LOC-007-20-001",
+        "SC-LOC-007-21-001"
       ],
-      "review": "Seven distinct initiating causes: hearing accessibility, reversed pain scale, fading receipt preservation, partially opened rice wrapper, renamed-town address plate, uncertain draft/final letter before handoff, PIN-containing consultation note. Source/runtime and identity parity checked; whole-prefecture and prior-corpus final review pending."
+      "review": "Complete current eleven-turn exchanges and five adjacent-response goals read. Full-prefecture causal review and final prior-corpus comparison pending."
+    },
+    {
+      "cityId": "prf-007-koriyama",
+      "scenarioIds": [
+        "SC-FKS-KORIYAMA-001",
+        "SC-LOC-FKS-KORIYAMA-02-001",
+        "SC-LOC-FKS-KORIYAMA-03-001",
+        "SC-LOC-FKS-KORIYAMA-04-001",
+        "SC-LOC-FKS-KORIYAMA-05-001",
+        "SC-LOC-FKS-KORIYAMA-06-001",
+        "SC-LOC-FKS-KORIYAMA-07-001",
+        "SC-LOC-FKS-KORIYAMA-08-001"
+      ],
+      "review": "Complete current eleven-turn exchanges and five adjacent-response goals read. Full-prefecture causal review and final prior-corpus comparison pending."
+    },
+    {
+      "cityId": "prf-007-aizuwakamatsu",
+      "scenarioIds": [
+        "SC-FKS-AIZUWAKAMATSU-001",
+        "SC-LOC-FKS-AIZUWAKAMATSU-02-001",
+        "SC-LOC-FKS-AIZUWAKAMATSU-03-001",
+        "SC-LOC-FKS-AIZUWAKAMATSU-04-001",
+        "SC-LOC-FKS-AIZUWAKAMATSU-05-001",
+        "SC-LOC-FKS-AIZUWAKAMATSU-06-001",
+        "SC-LOC-FKS-AIZUWAKAMATSU-07-001",
+        "SC-LOC-FKS-AIZUWAKAMATSU-08-001"
+      ],
+      "review": "Complete current eleven-turn exchanges and five adjacent-response goals read. Full-prefecture causal review and final prior-corpus comparison pending."
     }
   ],
   "pendingGroups": [
     {
-      "scope": "PRF-007 remaining 110 scenarios",
-      "reason": "Old recipe drafts need independent authoring and full causal review."
+      "scope": "PRF-007 remaining 80 scenarios",
+      "reason": "Old recipe drafts require individual authoring."
     },
     {
       "scope": "All 117 scenarios",
-      "reason": "Final whole-prefecture and cross-prefecture review before content pass."
+      "reason": "Whole-prefecture and cross-prefecture final semantic review before content pass."
     }
   ],
   "finalDecision": {
@@ -40,6 +88,7 @@
     {
       "scenarioId": "SC-LOC-007-01-001",
       "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "放送が聞き取れないと伝えて変更案内を文字で確認する",
       "initiatingRequest": "耳が聞こえにくく、今の放送を聞き取れませんでした。乗る列車に変更があったか、文字で確認したいです。",
       "fifthPlayerAction": "列車名と時刻、乗り場を文字で確かめます。放送が聞こえたかどうかで決めず、表示が変わって読めない場合は係員へこのメモを見せます。",
       "npcClosure": "承知しました。まず、ご予定の列車の現在の案内を文字でお伝えします。",
@@ -50,11 +99,13 @@
         "待合から見える表示と不明な変更時にメモを持って再相談する方法を尋ねる",
         "列車名時刻乗り場を文字で照合し読めない変更は係員へメモで相談すると伝える"
       ],
-      "sha256": "db97c2454202631b54a5c5a7ecdcb50c9492a61460a2e703730098535f050838"
+      "sha256": "db97c2454202631b54a5c5a7ecdcb50c9492a61460a2e703730098535f050838",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
     },
     {
       "scenarioId": "SC-LOC-007-02-001",
       "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "痛みの数字の向きを確かめて書きかけた回答を直す",
       "initiatingRequest": "痛みを零から十で書く欄があります。十が痛くないという意味だと思って八と書きかけましたが、両端の説明を逆に読んだかもしれません。",
       "fifthPlayerAction": "案内に従って八を書き直し、今は三くらい、昨夜は強くて眠れなかったと分けて伝えます。数字の読み違いも隠さず、医療スタッフに説明します。",
       "npcClosure": "承知しました。訂正方法をご案内し、症状のお話を医療スタッフへつなぎます。",
@@ -65,11 +116,13 @@
         "今も痛く昨夜から三だったわけではないことと睡眠への影響を診察用メモへ残したいと伝える",
         "数字の訂正案内に従い現在と昨夜と尺度の読み違いを医療スタッフへ伝える"
       ],
-      "sha256": "97d3c81c399ce6045e3d75e985b861f8035fa50269ad7bd78319b90c9ba23c53"
+      "sha256": "97d3c81c399ce6045e3d75e985b861f8035fa50269ad7bd78319b90c9ba23c53",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
     },
     {
       "scenarioId": "SC-LOC-007-03-001",
       "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "消えかけた買物レシートの記録を残す方法を相談する",
       "initiatingRequest": "昨日買った収納箱について、後日問い合わせる時のためにレシートを残したいです。車に置いたら文字が薄くなっていて、どう記録しておけばよいか相談したいです。",
       "fifthPlayerAction": "まだ加工していません。写真、包装、薄くなった実物を分けて残し、読めない所は読めないと説明します。今日は保管方法を担当へ確認します。",
       "npcClosure": "分かりました。担当に、そのご希望と現在のレシートの状態を伝えます。",
@@ -80,11 +133,13 @@
         "今日は交換申込でなく記録保存の相談で後日の条件はその時に確かめると答える",
         "未加工の現物写真包装を分け不明箇所を明示して担当へ保管方法を確認する"
       ],
-      "sha256": "2325513e27099ea8f277d935e41b34226d051c453f17fc5ce325b6d1b589ee48"
+      "sha256": "2325513e27099ea8f277d935e41b34226d051c453f17fc5ce325b6d1b589ee48",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
     },
     {
       "scenarioId": "SC-LOC-007-04-001",
       "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "買ったおにぎりの包装を途中まで開けて案内を聞く",
       "initiatingRequest": "今買ったおにぎりの包装がうまく取れません。途中の部分から引いてしまったので、開け方の図を一緒に見てもらえますか。",
       "fifthPlayerAction": "図の順番と動かす包装を確認して、自分で開けます。取り外したフィルムを食品に戻さず、残った包装の片も確かめてから食べます。",
       "npcClosure": "承知しました。こちらの図を使って、残っている包装をご説明します。",
@@ -95,11 +150,13 @@
         "食品に店員が直接触れず自分で扱うので包装図で示してほしいと伝える",
         "図で包装の順序を確認しフィルムを食品へ戻さず残る片も確かめて食べると話す"
       ],
-      "sha256": "36aab5c1fcd9718cf4041e10944200697a276c055dc07105266782dfeba71f55"
+      "sha256": "36aab5c1fcd9718cf4041e10944200697a276c055dc07105266782dfeba71f55",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
     },
     {
       "scenarioId": "SC-LOC-007-05-001",
       "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "古い住所プレートと新しい住所通知の表記を窓口で照合する",
       "initiatingRequest": "住所を書こうとしたら、町名変更の通知と建物の入口のプレートで町名が違いました。プレートを見て写しかけたので、今使う表記を確認したいです。",
       "fifthPlayerAction": "今の用紙は担当と町名、番地、建物名、部屋番号を照合して直します。ここで確認しただけで銀行なども変更済みとはせず、別に連絡方法を確認します。",
       "npcClosure": "承知しました。まず通知と、この用紙の住所欄を一緒に確認します。",
@@ -110,11 +167,13 @@
         "旧プレート写真は差異説明用で通知代用ではなく通知を残して訂正案内を受けると答える",
         "用紙の住所各要素を担当と直し銀行等の登録も自動変更済みとはせず別途手続き確認すると伝える"
       ],
-      "sha256": "7b99df57d31e6bef2989c4ab22ff4577543b87ce4c69d463d6c48419e3085314"
+      "sha256": "7b99df57d31e6bef2989c4ab22ff4577543b87ce4c69d463d6c48419e3085314",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
     },
     {
       "scenarioId": "SC-LOC-007-06-001",
       "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "封をした手紙の下書きと実際に入れた清書を区別して発送を相談する",
       "initiatingRequest": "この手紙を出すつもりでしたが、清書と下書きのどちらを入れたか思い出せません。まだお渡ししていないので、今日は一度持ち帰って確かめたいです。",
       "fifthPlayerAction": "今日はこの封筒を持ち帰ります。清書かどうかを実物で確認し、封筒を整えて、到着の希望をあわせて相談してから差し出します。",
       "npcClosure": "承知しました。確認後に、発送について改めてご相談ください。",
@@ -125,11 +184,13 @@
         "明日差出し予定だが到着保証依頼ではなく内容確認後に到着希望を相談すると答える",
         "今日は持帰り清書確認と包装準備をして到着希望と発送方法を相談後差し出すと伝える"
       ],
-      "sha256": "f13cf459793b3151eb4da8f1dde93587d6a01db8f1f82f0fb3657b5f41b3a5ea"
+      "sha256": "f13cf459793b3151eb4da8f1dde93587d6a01db8f1f82f0fb3657b5f41b3a5ea",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
     },
     {
       "scenarioId": "SC-LOC-007-07-001",
       "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "銀行の相談メモへ書いた暗証番号を見せず用件だけ整理する",
       "initiatingRequest": "登録した電話番号を変えたいです。相談用のメモを用意しましたが、暗証番号まで書いてしまったので、このままお見せせず用件だけ伝えたいです。",
       "fifthPlayerAction": "暗証番号入りのメモは渡さず、電話番号変更の用件だけを伝えます。必要書類と記入方法を確かめ、受付で話しただけで変更済みと思わず完了の確認を受けます。",
       "npcClosure": "承知しました。連絡先変更を担当する窓口へご案内します。",
@@ -140,14 +201,525 @@
         "元メモは自分でしまい用件だけ書き直し必要な本人確認書類を担当へ尋ねる",
         "私的番号の紙を渡さず変更方法と必要書類を確認し受付相談だけで完了とせず完了確認を受けると話す"
       ],
-      "sha256": "c7c25e8153f179477f4228087a76be51994645d40342ccd3a9c130458880e6a0"
+      "sha256": "c7c25e8153f179477f4228087a76be51994645d40342ccd3a9c130458880e6a0",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-007-08-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "公園で来園者への聞き取り調査を始める前に実施相談をする",
+      "initiatingRequest": "日本語の授業で、公園の好きな場所を来園者に聞く課題があります。知らない方に声をかける前に、こちらで相談したいです。",
+      "fifthPlayerAction": "お願いします。質問三つと二人の役割、予定の時間をまとめてから連絡します。案内を聞いただけで実施できると決めず、担当の返答を待ちます。",
+      "npcClosure": "こちらが相談先です。ご相談の内容を整理してからお問い合わせください。",
+      "fiveGoals": [
+        "授業の課題で知らない来園者に質問する活動を始める前に相談したいと伝える",
+        "学生二人で三問を尋ね名前や連絡先を集めず回答メモを取る計画を説明する",
+        "看板は置かないが入口で声をかける予定だったため通行を妨げない場所も相談すると話す",
+        "提出は来週なので今日は実施せず協力を断られた人へ再依頼しない方針を案に含める",
+        "相談先のメモを受け取り質問役割時間を整理して管理担当の返答を待つと伝える"
+      ],
+      "sha256": "c6b355da1f22c11d9ceeca51046a6ef3ceb49a2d56ba5ca35bb459088ed7b1cd",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-007-09-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "脱衣所に預けた電話のアラームを止めるため一度戻る",
+      "initiatingRequest": "脱衣所に置いた自分の電話で、設定したアラームが鳴っていると思います。一度荷物の所へ戻って止めたいです。",
+      "fifthPlayerAction": "分かりました。音を止めて設定を確認し、電話は袋に戻します。戻る道を教えていただき、ありがとうございます。",
+      "npcClosure": "こちらの通路をお進みください。慌てず、ご自分の荷物を確認してください。",
+      "fiveGoals": [
+        "脱衣所の自分の電話のアラームが鳴っていると思い荷物へ戻って止めたいと申し出る",
+        "奥の青い袋と予定変更後に消し忘れた繰り返しのアラームを説明する",
+        "自分の袋だけ確認し別の電話なら他人の荷物を探さず係へ知らせると答える",
+        "音を止めた後も今日の設定を見直し通話目的ではないと伝える",
+        "電話を止めて設定を確認し袋にしまって戻ると答え案内に礼を言う"
+      ],
+      "sha256": "1b388427acfd61607d75ff0d007cb9f4f092d29d9b9406ddf0117a094108d208",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-007-10-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "受付で名前の漢字から推測せず希望する読み方を伝える",
+      "initiatingRequest": "家族の申込をしたいです。この名前は漢字だけだと別の読み方をされるので、ふりがなも一緒にお伝えしたいです。",
+      "fifthPlayerAction": "今日は用紙を持ち帰ります。弟に確認して、読み方と連絡する人の欄をそろえてから申し込みます。",
+      "npcClosure": "承知しました。ご本人との確認後にお持ちください。ありがとうございました。",
+      "fiveGoals": [
+        "漢字だけでは別の読み方になる家族の行事申込にふりがなも伝えたいと頼む",
+        "参加者は弟で自分は連絡する人として別欄に書き弟の読みはあきらと説明する",
+        "呼び出しはあきらとし漢字から推測せずふりがなを使ってほしいと確認する",
+        "参加者と連絡者の欄が正しいことを確認し弟本人にも書き方を確認すると答える",
+        "今日は用紙を持ち帰り本人確認後に名前の読みと連絡者の欄を整えて申し込むと伝える"
+      ],
+      "sha256": "7924cc3eef2783c83d2146872e68a30a49438667d39affa49783b60115d4b956",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-007-11-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "町内会の交通安全講話の講師相談に対象年齢と希望内容を伝える",
+      "initiatingRequest": "町内会で交通安全の話を聞く会を考えています。講師をお願いできるか、相談先を教えていただきたいです。",
+      "fifthPlayerAction": "分かりました。町内会で人数と候補日をまとめてから担当へ連絡します。今日の案内だけで講師が決まったとはせず、返答を待ちます。",
+      "npcClosure": "承知しました。こちらが担当への問い合わせ先です。内容を整理してご相談ください。",
+      "fiveGoals": [
+        "町内会の交通安全講話の講師を頼めるか相談先を尋ねる",
+        "会場は町内集会室で施設の部屋の貸出でなく講師の相談と説明する",
+        "小学生と保護者向けに運転より通学時の道路横断など歩行の話を希望する",
+        "候補日は二つだが会場も未予約で開催決定でなく相談段階と伝える",
+        "人数と候補日を町内会でまとめ担当へ連絡し講師決定とせず返答を待つと話す"
+      ],
+      "sha256": "54cbeb0b0cbee6faa29655de6e6dac0015091a83e26df78c23aab69ca2c9427e",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-007-12-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "同じ日に受け取った家族二人の薬袋を名前で分け直す",
+      "initiatingRequest": "今日、家族二人の薬を受け取って同じ手提げに入れました。どちらの袋か迷ったので、名前を一緒に確認してもらいたいです。",
+      "fifthPlayerAction": "分かりました。名前と袋を照合してから、それぞれの飲み方を確認します。順番で決めず、記載が読めない時も薬剤師に尋ねます。",
+      "npcClosure": "承知しました。未開封の二つの袋を、そのまま担当にお見せください。",
+      "fiveGoals": [
+        "家族二人分を同じ手提げに入れて持ち主に迷い薬袋の名前を一緒に確認してほしいと頼む",
+        "未開封で先に受け取った方が母と思ったが収納順は覚えていないと説明する",
+        "母と自分の名前を担当へ伝え見た目が似ていても薬を入れ替えないと答える",
+        "確認後は袋ごと別のかごに置き中身だけ出して持ち主を不明にしないと説明する",
+        "名前と袋の照合後に各人の飲み方を薬剤師へ確認し読めない記載も推測しないと伝える"
+      ],
+      "sha256": "974924715e6c270ec30652390075233ca4347ade6b0d246c39ee9af502a01e2c",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-007-13-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "マネキンの服の留め具を外した状態で形を確認する",
+      "initiatingRequest": "このマネキンの上着の形が好きです。腰が細くなっていますが、同じ上着なら着た時もこの形になりますか。",
+      "fifthPlayerAction": "番号だけ控えさせてください。マネキンの写真だけで形を判断せず、今日試した幅も覚えておきます。上着はお返しします。",
+      "npcClosure": "ありがとうございます。こちらが商品番号です。またご相談ください。",
+      "fiveGoals": [
+        "マネキンの細い腰の形が同じ上着を着た時も出るのか尋ねる",
+        "背中の仮留めを知り留めていない商品の腰の幅を見たいと頼む",
+        "薄いセーターの上に着て背中を留めず本来の形で試すと伝える",
+        "前を閉めた幅が予想よりゆったりなので今日は買わず形を検討すると答える",
+        "番号を控え写真だけで形を判断せず試着幅も覚えて上着を返すと伝える"
+      ],
+      "sha256": "5633bbc1949aa1b1b244b12ad2d42ba45e51fcc05f0ede9f7c9851319101dad8",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-007-14-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "ホテルで遮光カーテンを少し開けた希望を清掃担当へ伝える",
+      "initiatingRequest": "明日の朝は自然な明るさで起きたいので、部屋のカーテンを少し開けておきたいです。今日の清掃の後も、今の開き方を残してもらえますか。",
+      "fifthPlayerAction": "はい。その内容でお願いします。起きる時間の保証をお願いするものではないので、必要なアラームは自分でも設定します。",
+      "npcClosure": "承知しました。担当へ伝え、対応の確認が取れましたらご案内します。",
+      "fiveGoals": [
+        "朝の明るさで起きるため厚いカーテンを少し開け清掃後も今の状態を残してほしいと頼む",
+        "厚い方の端だけ開け薄い方は閉めて全面を開ける希望ではないと説明する",
+        "今の約二十センチの開き幅を動かした場合も清掃後に戻してほしいと伝える",
+        "寝る直前は自分で光を見て調整し開けたままにするか室内で決めると答える",
+        "厚い方約二十センチ薄い方閉で取次ぎを頼み起床保証ではなくアラームも自分で設定すると話す"
+      ],
+      "sha256": "96522f2fab50930652b9d7a851402c904045c65680bd5b75e8593b89a5c81a5d",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-007-15-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "体験用の兜を着けた時に動かしにくい首の状態を係へ伝える",
+      "initiatingRequest": "写真を撮るつもりでしたが、兜を着けると首を回しにくいです。撮影はいったん止めて、外したいです。",
+      "fifthPlayerAction": "かばんと電話は手元にあります。落ち着いてから友人と移動します。撮影を急がず対応してくださって、ありがとうございました。",
+      "npcClosure": "分かりました。お忘れ物に気を付け、無理をせずお過ごしください。",
+      "fiveGoals": [
+        "兜で首を回しづらいため写真を中断して外したいと申し出る",
+        "痛みはないが重く感じ写真のため我慢せず体験を終えると伝える",
+        "自分であごひもを引かず係を待ち友人にも撮影を再開しないよう伝える",
+        "外すと動きやすくなったが座ってから移動し別の兜は試さないと話す",
+        "かばんと電話は手元にあり落ち着いて友人と移動すると答え対応に礼を言う"
+      ],
+      "sha256": "a23b306c5f64e125dbe268d7c5e6ecae3ba4d67774327d917dee31bb6ed38996",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-007-16-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "別の店で買った品を持ったまま会計することを先に伝える",
+      "initiatingRequest": "はい。その前に、手提げの中のマグカップは別の店で買った物だとお伝えしておきたいです。こちらでは小皿を探しています。",
+      "fifthPlayerAction": "はい。こちらで買う白い小皿二枚です。包みを受け取って自分で手提げへ入れるので、前の買物の袋はそのままで大丈夫です。",
+      "npcClosure": "ありがとうございます。小皿二枚とレシートをお渡しします。",
+      "fiveGoals": [
+        "手提げのマグカップは他店購入品で今回は小皿を探すと先に説明する",
+        "他店の紙袋は手提げに残し今回選ぶ小皿だけかごへ入れると答える",
+        "白い小皿二枚を選び組合せ用の既購入マグカップは今回の会計に含めないと話す",
+        "小皿を別包みにして手提げへ入れ他店の包みとレシートを区別して残すと頼む",
+        "今回の会計は白い小皿二枚と確認し自分で受取品を手提げへ入れると伝える"
+      ],
+      "sha256": "11b27f26b5c260dd2f4ab7fd768e898a0c0c3bed05c38229f7fbe31b77f19f62",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-007-17-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "展示音声の子ども向け版と一般向け版を聞き分けて選ぶ",
+      "initiatingRequest": "家族で同じ展示番号を選んだのに、私の説明と子どもの説明が違います。番号を間違えたのか、画面を見てもらえますか。",
+      "fifthPlayerAction": "両方確認できました。子どもと開始をそろえて聞きます。後で一般向けに戻す時も、種類の表示を確かめます。",
+      "npcClosure": "承知しました。それぞれの案内で展示をお楽しみください。",
+      "fiveGoals": [
+        "家族で同じ展示番号なのに説明が違うため画面確認を頼む",
+        "故障ではなく案内種類が違うと理解し子どもの質問に一緒に答えるため切替えを頼む",
+        "一般向けの続きは止め先に子どもの質問を考え時間があれば一般版を最初から聞くと話す",
+        "子どもの再生も止め同じ位置から開始して異なる説明のまま答えだけ合わせないと答える",
+        "種類と展示番号を確認し子どもと開始を合わせ後で一般向けへ戻す時も種類表示を見ると伝える"
+      ],
+      "sha256": "adf52d10da68fde6e7c1497f3613c12fe17742006227e5e0860657ad3acc0ea9",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-007-18-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "終点に着いた列車の車内でそのまま折り返せると思わず確認する",
+      "initiatingRequest": "この列車で元の駅へ戻りたいです。同じ列車が折り返すなら、この席で待っていてもよいと思っていました。",
+      "fifthPlayerAction": "はい。荷物と駅名のメモを持って降ります。乗車の案内が出てから戻る便に乗り、席はその時に探します。",
+      "npcClosure": "ありがとうございます。降りる際は足元にお気を付けください。",
+      "fiveGoals": [
+        "終点から同じ列車で戻るつもりで席に残って待てると思ったと説明する",
+        "席確保のため残らず荷物と降り戻る便の案内を見る場所を尋ねる",
+        "途中駅へ戻るため到着時の表示でなく出発用表示で停車駅も確認すると伝える",
+        "駅名メモを示し同じ車両でもこれから乗る便の行先を確認したいと頼む",
+        "荷物とメモを持って降り乗車案内後に乗ってその時の席を探すと答える"
+      ],
+      "sha256": "c55953787e3f95801e43e907042e2f62c704939cbd276b3828dc3a096afe18f2",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-007-19-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "友人との食事代を同額にするか注文別にするか会計前に相談する",
+      "initiatingRequest": "友人と代金を分けたいのですが、食事は同じでも私は飲み物を追加しました。合計と飲み物の金額を見せてもらえますか。",
+      "fifthPlayerAction": "合計は確認できました。この金額を支払います。あとで友人と確かめられるよう、明細のあるレシートもお願いします。",
+      "npcClosure": "ありがとうございます。お会計の明細とレシートをお渡しします。",
+      "fiveGoals": [
+        "食事は同じだが自分だけ追加飲料があり合計と飲料代の表示を頼む",
+        "負担方法は未決定なので別払いを頼む前に友人同士で内容を確認すると答える",
+        "会計横へ移動し飲料は自分負担で食事分は半分ずつの案を友人へ話すと伝える",
+        "友人と決まり代表して全額払い友人から食事一人分を受け取ると説明する",
+        "合計確認後支払いを申し出て後で友人と確認する明細付きレシートを頼む"
+      ],
+      "sha256": "42f305a81f9aae2843891409c2860a24d93f6a694d97cab14a36378598f42621",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-007-20-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "用紙に合わせて縮小した図面の長さを物差しで現場寸法にしない",
+      "initiatingRequest": "このコピーです。用紙に収めるために縮小したのですが、図の長さを物差しで測って材料の寸法を決めようとしていました。",
+      "fifthPlayerAction": "確認済み図面の記載寸法と資料名をメモへ残してから準備します。コピーを取り直しても、印刷設定だけで確認を済ませたことにはしません。",
+      "npcClosure": "分かりました。寸法の確認が終わるまで、加工の依頼は待ってください。",
+      "fiveGoals": [
+        "用紙に合わせ縮小した図を測って材料寸法を決めかけたことを説明する",
+        "小さくて読めない記載寸法をコピーの実測値で代用しないと答える",
+        "未依頼でメモだけの数字を未確認と明示し加工指示に使わないと伝える",
+        "部材端から接合部までの位置とページを示し確認済み図面の記載寸法照合を頼む",
+        "確認寸法と資料名を記録して準備し再印刷設定だけで寸法確認済みとしないと話す"
+      ],
+      "sha256": "67a7dcda1d07c24896501433cf2c94b509dc0206625ff01f9588222da6de494a",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-007-21-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "title": "窓口のつながれたペンが届かず書きやすい位置を相談する",
+      "initiatingRequest": "私は左手で書くのですが、ペンのひもが引っ張られて、この位置では書きにくいです。用紙を少し動かしてもよいですか。",
+      "fifthPlayerAction": "新しい用紙に貸していただいたペンで書きます。古い用紙と使ったペンは、記入後にこちらへ返します。",
+      "npcClosure": "承知しました。こちらの用紙をお使いください。書き終わりましたらお知らせください。",
+      "fiveGoals": [
+        "左利きで固定ペンのひもが張り書きにくいため用紙の位置変更を相談する",
+        "中央でも左端で張るため固定具を外さず別のペンの貸出を頼む",
+        "自分の筆記具は鉛筆だけなので貸出ペンを希望し用紙に使えるか確認する",
+        "書きかけの名前前に線が入り消してごまかさず継続か新用紙か案内を頼む",
+        "新用紙へ貸出ペンで記入し古い用紙とペンを記入後に返すと答える"
+      ],
+      "sha256": "3b790174320a70b66de5bcfaef8eaab3898aebd48ff00689f27aa2f50716434f",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-FKS-KORIYAMA-001",
+      "source": "scripts/dialogue-authoring/prf-007-koriyama.json",
+      "title": "乗換案内の出発駅を現在いる駅へ変更して検索し直す",
+      "initiatingRequest": "この検索結果の乗り換え時間が、今いる駅の表示と合いません。検索の出発駅が、朝出た駅のままになっていました。",
+      "fifthPlayerAction": "列車名、時刻、乗り場を一緒に確認します。次に調べる時も、出発駅と時刻の設定を最初に見ます。",
+      "npcClosure": "では、現在の表示と照合してご案内します。",
+      "fiveGoals": [
+        "乗換結果が駅表示と合わず検索出発駅に朝の駅が残っていたと説明する",
+        "目的地は同じで旅全体でなく現在駅から乗る便を調べたいと伝える",
+        "朝八時の設定も今からへ変え以前の結果画面とは分けると答える",
+        "新検索画面を示し過去の便を追わず現在表示で列車名と時刻を確認したいと頼む",
+        "列車名時刻乗り場を照合し次回も出発駅と時刻設定を先に見ると話す"
+      ],
+      "sha256": "1d1b97fb8cf6cdcfa6b709c0885e293827c53fab58cf67a33ebddf6dceaa52d2",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-FKS-KORIYAMA-02-001",
+      "source": "scripts/dialogue-authoring/prf-007-koriyama.json",
+      "title": "途中退場する客が演奏の静かな部分を避け移動時機を相談する",
+      "initiatingRequest": "帰りの都合で、最後の曲まで聴けません。途中で出る時に演奏を妨げないよう、座る場所と退場のタイミングを相談したいです。",
+      "fifthPlayerAction": "はい、今日はそのまま帰ります。時間に余裕を持って曲間に出られるようにし、案内された後方の席を使います。",
+      "npcClosure": "承知しました。こちらのお席をご利用ください。演奏をお楽しみください。",
+      "fiveGoals": [
+        "途中で帰るため演奏を妨げない席と退場時機を相談する",
+        "八時半頃だが静かな曲中は急に立たず曲間を待つ余裕を取ると伝える",
+        "荷物は小かばんで上着も手元にまとめ退場時の準備を短くすると説明する",
+        "出口前で立って待たず曲終了後スタッフへ小声で伝えて移動すると答える",
+        "再入場せず帰り時間に余裕を持ち案内された後方席を使うと話す"
+      ],
+      "sha256": "69042ee50f6c136ea0e30e3f3d5f206a066824b584c1df0511e3d5b6bea31775",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-FKS-KORIYAMA-03-001",
+      "source": "scripts/dialogue-authoring/prf-007-koriyama.json",
+      "title": "作業用エプロンのポケットに私物が残ると入室前に申告する",
+      "initiatingRequest": "エプロンのポケットに自分の鍵を入れたままです。このまま作業へ入らず、鍵の保管場所を確認したいです。",
+      "fifthPlayerAction": "はい。鍵が必要になってもその場で取りに戻らず、担当へ相談します。まず入室前の確認をお願いします。",
+      "npcClosure": "では、持ち物と服装を確認してからご案内します。",
+      "fiveGoals": [
+        "エプロン内に私物鍵が残り未入室のまま保管場所を尋ねる",
+        "私物紙メモもあり鍵とともに出してポケットを確認すると答える",
+        "自分の紙を作業メモとして持ち込まず保管し用件は担当へ口頭で伝える",
+        "二品保管後に空ポケットを確認し再度入室前確認を受けたいと頼む",
+        "鍵が必要でも勝手に取りに戻らず相談しまず服装持物の確認を頼む"
+      ],
+      "sha256": "3357f2cd14645528649f8c37b4f5f9a3d1dccdc62b12a547263a5c72cee0e541",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-FKS-KORIYAMA-04-001",
+      "source": "scripts/dialogue-authoring/prf-007-koriyama.json",
+      "title": "科学展示の予想欄へ結果を写さず自分の予想を残す",
+      "initiatingRequest": "予想の欄に、実験で見た結果を書いてしまいました。最初に考えたことと結果が違ったので、どう分けて残すか相談したいです。",
+      "fifthPlayerAction": "この二つの欄を見てください。最初の予想と結果を分けて残したので、違った理由の説明を聞きたいです。",
+      "npcClosure": "承知しました。予想が違ったことも含めて、順に考えてみましょう。",
+      "fiveGoals": [
+        "予想欄に結果を書いてしまい初めの考えと結果を分けたいと相談する",
+        "同時と思ったが片方が先に落ち予想も後の答えへ直したと説明する",
+        "予想を当初の同時へ戻し先に落ちた物は結果欄へ書くと話す",
+        "原因説明は未受領なので決め付けず先に落ちた理由を質問にすると伝える",
+        "予想結果の別欄を示し違った理由の説明を聞きたいと頼む"
+      ],
+      "sha256": "125063e3bf73c6204b716f5e7ff3a5fe3e4b8e40e99ab546f513442e62538a6b",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-FKS-KORIYAMA-05-001",
+      "source": "scripts/dialogue-authoring/prf-007-koriyama.json",
+      "title": "浴衣の柄を布の平面だけでなく着た時の重なりで選ぶ",
+      "initiatingRequest": "この大きい花の模様が好きです。着た時も前の真ん中に出るのか、広げた布だけでなく合わせた状態で見たいです。",
+      "fifthPlayerAction": "確認できました。小さい模様の方を選びます。布を広げた写真だけでなく、着た時の重なりを見て選べてよかったです。",
+      "npcClosure": "承知しました。こちらの商品のお会計をご案内します。",
+      "fiveGoals": [
+        "大花が着用時前中央に出るか布平面でなく前合わせ状態を見たいと頼む",
+        "隠れる部分を理解し試着見本で花の位置確認を頼む",
+        "花が横に出ると分かり合わせ方を変えず別柄を比べたいと話す",
+        "全体小模様を好み試着見本と販売品の柄の一致も見たいと頼む",
+        "一致確認後小模様を選び着用重なりを見て選べた感想を伝える"
+      ],
+      "sha256": "e579ab6621516a9fd970d284b7dd4ce24a45c6577417462868181136990c3875",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-FKS-KORIYAMA-06-001",
+      "source": "scripts/dialogue-authoring/prf-007-koriyama.json",
+      "title": "学校の連絡で家族内の二人の窓口を用途別に整理する",
+      "initiatingRequest": "家族の連絡先を二人分書きたいです。普段のお知らせを見る人と、昼間に電話を受けられる人が違うので、分けて伝えたいです。",
+      "fifthPlayerAction": "分かりました。用紙を整えて担当と方法を確認します。番号を二つ書いただけで使い分けが確定したとは思わず、説明を聞きます。",
+      "npcClosure": "承知しました。連絡先の役割と時間帯を担当へお伝えします。",
+      "fiveGoals": [
+        "家族二人で日常通知の確認者と昼間電話を受ける人が違うため用途別に伝えたいと相談する",
+        "日常通知は自分だが勤務中電話不可があり急ぎ電話は夫が受けやすいと説明する",
+        "家族で合意済みで自分の番号削除でなく日常と急ぎの役割分けを希望する",
+        "備考に役割と受けやすい時間を書き夫と名前番号の対応を確認すると答える",
+        "番号二つの記入だけで使分け確定とせず担当の連絡方法説明で確認すると伝える"
+      ],
+      "sha256": "6d6b85581f0e5f422df4ed3d84a81a70b133de029f891cca403ed562b1acfbb5",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-FKS-KORIYAMA-07-001",
+      "source": "scripts/dialogue-authoring/prf-007-koriyama.json",
+      "title": "自分宛てではない配達物を開けたと気付いて経緯を相談する",
+      "initiatingRequest": "自宅にあった封筒を自分宛てと思って開けましたが、別の方の名前でした。間違えて開けたことを隠さず、どう連絡すればよいか相談したいです。",
+      "fifthPlayerAction": "分かりました。自分で別の家へ届けず、封筒の状態と気付いた順を担当に伝えます。今後は開ける前に宛名を確認します。",
+      "npcClosure": "では、その経緯と封筒の状態について担当へおつなぎします。",
+      "fiveGoals": [
+        "他人宛て封筒を自分宛てと誤って開けたため隠さず連絡方法を相談する",
+        "中身未取出で名前違い後は読まず他家へ再投函もしていないと説明する",
+        "開封状態のまま袋で持参し封を直して隠さず気付いた経緯を説明すると答える",
+        "名前住所を未共有で知人へ写真送信もせず必要窓口だけへ伝えたいと話す",
+        "自力で他家へ届けず状態と気付いた順を担当へ伝え次回は開封前の宛名確認をすると答える"
+      ],
+      "sha256": "c238cc02bb16a4ad2f384e6921ead06f59bdfafe59f864ab11cffc9d43c1433e",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-FKS-KORIYAMA-08-001",
+      "source": "scripts/dialogue-authoring/prf-007-koriyama.json",
+      "title": "税相談の資料へ私用と仕事用の混在した支出を未整理と伝える",
+      "initiatingRequest": "仕事で使う物と家で使う物を一緒に買いました。同じ領収書の合計を仕事用のメモに写しかけたので、用途を分けて相談したいです。",
+      "fifthPlayerAction": "お願いします。領収書、用途メモ、未確認の質問を分けて出します。合計を写しただけで申告の金額が決まったとはしません。",
+      "npcClosure": "分かりました。混在する品目と確認したい点を担当へお伝えします。",
+      "fiveGoals": [
+        "私用仕事用を一括購入し合計を仕事メモへ写しかけたため用途別の相談を頼む",
+        "読める品目は仕事紙と家族ノートで合計全部を仕事としないと説明する",
+        "原領収書を残し別紙へ品目用途と税扱い未確認を記すと答える",
+        "兼用ペンもあり全て仕事と決めず実際の使い方を伝え扱いを尋ねる",
+        "原資料用途メモ未確認質問を分け合計転記だけで申告額確定としないと話す"
+      ],
+      "sha256": "0521ec22934b5a9e052723e21c24d4b9328e966b5cb103710564c49a1c9f80d6",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-FKS-AIZUWAKAMATSU-001",
+      "source": "scripts/dialogue-authoring/prf-007-aizuwakamatsu.json",
+      "title": "見学中の質問を移動中に重ねず説明後の時間へまとめる",
+      "initiatingRequest": "先ほどの説明について、まだ質問があります。歩きながら聞いてもよいか迷っています。質問の時間は後でありますか。",
+      "fifthPlayerAction": "はい。メモはしまって足元を見て移動します。説明後に「門の修理」の質問を二つお伝えします。",
+      "npcClosure": "では、こちらへお進みください。段差の前では間隔を空けてお待ちください。",
+      "fiveGoals": [
+        "前の説明の質問を歩行中に聞かず後の質問時間があるか尋ねる",
+        "入口の門の修理について題名だけメモし後で質問すると答える",
+        "前の話の題名を残し次の説明を遮らず説明後に順番を待つと話す",
+        "二問に絞り年代全部より修理と建替えの違いを先に確かめたいと伝える",
+        "メモをしまい足元を見て移動し説明後に門の修理について二問を伝えると答える"
+      ],
+      "sha256": "3a914522296e143f36ce8321d9c47a443ec4d0042609a4ed897cc86d9ddaa478",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-FKS-AIZUWAKAMATSU-02-001",
+      "source": "scripts/dialogue-authoring/prf-007-aizuwakamatsu.json",
+      "title": "試飲をしない見学者が香りの説明だけ聞けるか相談する",
+      "initiatingRequest": "私はお酒を飲まないので、試飲はしません。飲まずに説明だけ聞いていてもよいですか。",
+      "fifthPlayerAction": "ありがとうございます。試飲はせず、説明を聞いてから次の見学へ進みます。質問ができたら、終わった時にお尋ねします。",
+      "npcClosure": "承知しました。それでは、香りを表す言葉からご説明します。",
+      "fiveGoals": [
+        "飲酒をしないため試飲を辞退し飲まず説明だけ聞けるか尋ねる",
+        "器は不要で口に含んで出す方法もせず見学と説明だけを希望する",
+        "器の香りを直接確かめることも控え香りの説明表現を聞きたいと伝える",
+        "受渡しを妨げない横へ移動し辞退しても説明参加できた安心を話す",
+        "試飲せず説明後に次の見学へ進み質問は説明終了時に尋ねると伝える"
+      ],
+      "sha256": "947407cf072e11330656d3c06ef3befb138f3efb171fd9447bd6f52d25f96ea5",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-FKS-AIZUWAKAMATSU-03-001",
+      "source": "scripts/dialogue-authoring/prf-007-aizuwakamatsu.json",
+      "title": "刺しゅうの糸を強く引いて布が縮んだ時にほどく相談をする",
+      "initiatingRequest": "糸を強く引いたら、布にしわが寄りました。このまま次の色を縫うより、今の部分を直したいです。",
+      "fifthPlayerAction": "はい。布の状態を見ながら練習をやり直し、迷った所で止めて声をかけます。完成を急ぐより、この部分を確かめたいです。",
+      "npcClosure": "承知しました。最初の一針ができたら、もう一度見せてください。",
+      "fiveGoals": [
+        "糸を強く引いて布にしわが寄ったため次色に進まず修正を相談する",
+        "最後の三針で強く引き布を伸ばしても戻らず止めたと説明する",
+        "針は針山へ戻し布を引かずほどく箇所を見て自分で試したいと伝える",
+        "三針を戻し一針ずつ確かめしわを見てもらってから次色へ進むと答える",
+        "完成を急がず練習をやり直し迷えばさらに引く前に止めて声をかけると話す"
+      ],
+      "sha256": "3c00ce2434052ab37c10e17b6a37fe9f3e1ab8bf70ee1e70cbb6609cfaa8d646",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-FKS-AIZUWAKAMATSU-04-001",
+      "source": "scripts/dialogue-authoring/prf-007-aizuwakamatsu.json",
+      "title": "運動機器の数字が経過時間か残り時間か開始前に確認する",
+      "initiatingRequest": "画面の時間が増えているのを見ましたが、残り時間ではないのですか。初めて使うので、開始前に表示を教えてください。",
+      "fifthPlayerAction": "はい。今日は説明を受けてから一緒に開始を確認します。時間の表示と停止の方法が分かってから使いたいです。",
+      "npcClosure": "分かりました。初期状態の画面から順にご説明します。",
+      "fiveGoals": [
+        "増える時間表示が残りか分からず初回開始前に説明を頼む",
+        "前の利用の経過表示は自分の設定でなく経過と予定時間を別に確認したいと伝える",
+        "まず短く操作を覚え動いたら長く続ける必要はなく停止方法も先に知りたいと話す",
+        "停止ボタンを示し経過を見て必要時停止し不明時動かしたまま画面を探し続けないと答える",
+        "一人ですぐ開始せず時間表示と停止方法の説明後スタッフと開始を確認したいと伝える"
+      ],
+      "sha256": "e7316e30862d6522e2a854c3edf2bd508fab1e77e305fdc489a41100c5d3adba",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-FKS-AIZUWAKAMATSU-05-001",
+      "source": "scripts/dialogue-authoring/prf-007-aizuwakamatsu.json",
+      "title": "カードを硬いケースごと差し込まず読み取り方法を確かめる",
+      "initiatingRequest": "はい。カードを硬いケースに入れたまま機械へ差し込もうとしましたが、入りませんでした。押すのをやめたので、使い方を教えてください。",
+      "fifthPlayerAction": "終わったらカードを受け取り、表示された入金結果を確認してからケースへ戻します。入らない物を押し込まず相談できてよかったです。",
+      "npcClosure": "承知しました。まずカードの読み取りからご案内します。",
+      "fiveGoals": [
+        "ケース付きカードが差込口に入らず押すのをやめたため方法を尋ねる",
+        "留め具を開けカードを曲げず取り出しケースごと使用できると思ったと説明する",
+        "見える割れはなくカード単体を使い向きは挿入前に確認すると答える",
+        "現金未投入で読み取り表示後に希望金額を選ぶと伝える",
+        "終了後カード回収と入金結果確認をしてケースへ戻すと話す"
+      ],
+      "sha256": "081ce0087d10fa2d692df8b371ed01fcc5efa2ce8921cefc1fc5ac64a9606c7b",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-FKS-AIZUWAKAMATSU-06-001",
+      "source": "scripts/dialogue-authoring/prf-007-aizuwakamatsu.json",
+      "title": "通訳を頼む人の話せる範囲と読める範囲を分けて相談する",
+      "initiatingRequest": "友人に通訳を頼んで来ましたが、友人も用紙の漢字は全部読めるわけではないそうです。話す時と用紙を読む時の支援を分けて相談したいです。",
+      "fifthPlayerAction": "分かりました。友人の会話の支援と用紙の説明を別に確認してから記入します。分からない文を推測で埋めず、担当に質問します。",
+      "npcClosure": "承知しました。ご希望の説明支援について担当へおつなぎします。",
+      "fiveGoals": [
+        "友人は会話通訳ができても漢字用紙全部は読めず口頭と読解の支援を分けたいと相談する",
+        "注意事項を友人が正確に説明できず未記入で質問整理中と伝える",
+        "自分の質問の通訳は友人へ頼み不明な説明は分かったことにせず止めて確認すると話す",
+        "ベトナム語資料の有無を尋ねなければ別の説明方法も相談したいと答える",
+        "会話支援と用紙説明を確認後に記入し不明文を推測で埋めず担当へ質問すると伝える"
+      ],
+      "sha256": "204d9d91586565024980396dbee90941411677a52acf69c7a99f95b42192f280",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-FKS-AIZUWAKAMATSU-07-001",
+      "source": "scripts/dialogue-authoring/prf-007-aizuwakamatsu.json",
+      "title": "収穫する実と隣の枝を切らぬよう手を止めて係の実演を見る",
+      "initiatingRequest": "この実を取りたいのですが、道具を当てる所が分かりません。隣の細い枝も一緒に切りそうなので、手を止めています。",
+      "fifthPlayerAction": "分かりました。最初の一個を見てもらい、迷った所で止めて呼びます。隣の枝までまとめて切ろうとせず、一個ずつ確認します。",
+      "npcClosure": "では、まず場所を示してください。確認してから始めましょう。",
+      "fiveGoals": [
+        "道具の位置に迷い隣枝まで切りそうで手を止めたと伝える",
+        "実から道具を離し太枝を切ると思ったため正しい位置の実演を頼む",
+        "実演中は道具を置き係の位置と切りかけた枝の違いを見たいと答える",
+        "試す一個の位置を先に示し確認後に道具を持つと伝える",
+        "最初の一個を係と確認し迷えば止め隣枝ごと切らず一個ずつ進めると話す"
+      ],
+      "sha256": "cb23b06de06aa8e9d3aa630b48035815de84eb0ebaaac4e1fd0e9a20e2147db5",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
+    },
+    {
+      "scenarioId": "SC-LOC-FKS-AIZUWAKAMATSU-08-001",
+      "source": "scripts/dialogue-authoring/prf-007-aizuwakamatsu.json",
+      "title": "記念に保存した消印付き切手を新しい郵便に使おうとしない",
+      "initiatingRequest": "はい。家の切手を持って来ましたが、手紙から剥がして集めた物も混ざっているかもしれません。貼る前に確認してほしいです。",
+      "fifthPlayerAction": "保存用は持ち帰ります。発送用だけを確認してから貼り、不足する分の案内を受けます。次から保管場所も分けておきます。",
+      "npcClosure": "分かりました。まず、発送用としてお持ちの切手を一緒に確認します。",
+      "fiveGoals": [
+        "手持ち切手に手紙から剥がした収集品が混ざるかもしれず貼付前の確認を頼む",
+        "未貼付で絵柄のきれいさから新しいと思ったが剥がした物は記念保存用と説明する",
+        "印付きは袋へ分け薄い印も未使用と決めず見せると答える",
+        "絵柄で料金を決めず封筒の内容と送り先に合わせ条件と料金確認を頼む",
+        "保存用は持ち帰り発送用確認後の貼付と不足分案内を頼み今後保管を分けると伝える"
+      ],
+      "sha256": "0c3ddb575c2af287ecb700fb857c111158d34f218b8ed04c00de9256af54df3c",
+      "decision": "Individual turn/goal/source parity read; final whole-corpus semantic decision pending."
     }
   ],
   "preliminaryCrossPrefectureReview": {
     "priorScenarioCount": 884,
     "inspectedLexicalPairs": 21,
     "withinSevenTopicCandidates": 0,
-    "decision": "No same causal chain found in the inspected shortlist; final 117-scene cross-prefecture review remains pending.",
+    "decision": "Previously inspected first-seven shortlist retained. Additional topic/premise searches across 884 prior scenes identified and removed the quoted-speech overlap; broader final review of all 117 is still pending. No shortlist grants content approval.",
     "relatedSkills": [
       {
         "current": "SC-LOC-007-01-001",
@@ -163,6 +735,26 @@
         "current": "SC-LOC-007-07-001",
         "prior": "SC-LOC-JP-01229-03-001",
         "reason": "PIN written on an unshared note is the initiating privacy problem; prior phone change causes failed contact and mistaken appointment cancellation. Current has no missed-contact reservation story."
+      },
+      {
+        "current": "SC-LOC-FKS-AIZUWAKAMATSU-08-001",
+        "prior": "SC-LOC-JP-03208-05-001",
+        "reason": "Current already-used stamps mistakenly treated as unused: separate cancelled collection items from postage. Prior unused gift stamps mistakenly treated as postage: preserve gift inside envelope. Distinct initiation and decision, retain for final comparison."
+      },
+      {
+        "current": "SC-LOC-FKS-KORIYAMA-07-001",
+        "prior": "SC-LOC-JP-02205-02-001",
+        "reason": "Current already opened another person’s envelope: disclose mistake, preserve current condition, no concealment or self-delivery. Prior unopened administrative notice: check recipient before opening. Current consequences and next action differ, final review pending."
+      },
+      {
+        "current": "SC-LOC-FKS-KORIYAMA-06-001",
+        "prior": "SC-LOC-JP-03211-03-001",
+        "reason": "Current school daily notices versus urgent calls assigned separately between two parents. Prior clinic alternate urgent contact for unavailable family. Shared contact skill; compare full role split in final review."
+      },
+      {
+        "current": "SC-LOC-007-20-001",
+        "prior": "SC-LOC-JP-01229-02-001",
+        "reason": "Current reduced drawing cannot be measured at original scale for fabrication; prior reduced application copy fails requested page format. Technical measurement and unissued cutting instruction differ from document resubmission."
       }
     ]
   }

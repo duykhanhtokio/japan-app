@@ -83,3 +83,8 @@ PRF-006 has 117 individually authored Japanese exchanges and 585 matching speaki
 ## Sakata overlap correction — 2026-10-02
 
 Expanded comparison identified the envelope-fit draft as too close to Hokkaido SC-LOC-JP-01230-05-001. Its earlier approval is superseded. Replaced all eleven turns and five goals with a future-self letter consultation, clarified future-date versus storage request, fictional counter service limit and own opening-date/home-storage plan. Canonical metadata and current hash-bound AI review updated. Yamagata remains 117 Japanese exchanges and 585 goals; no translation, native review, real postal-policy certification or simulator approval.
+
+
+## Fukushima / Aizuwakamatsu / Koriyama authoring — 2026-10-02
+
+37/117 individually authored Japanese exchanges, 185 speaking goals. Added remaining fourteen Fukushima-city scenes and eight each for Aizuwakamatsu and Koriyama. Rejected Fukushima -11 quoted-speech/interpretation draft after finding Hokkaido overlap; its current full replacement is a community traffic-safety speaker enquiry. Source/runtime utterances and five goals checked; canonical names/premises/first goals synchronized. Preliminary related-topic comparisons documented, not a final content decision. No CONTENT PASS, translation, native review, real-policy or simulator approval. Remaining 80 old drafts. Next city Iwaki; finish all remaining cities, then full causal review.
