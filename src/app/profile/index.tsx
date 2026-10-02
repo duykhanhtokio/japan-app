@@ -4,6 +4,7 @@ import { useCallback, useState, type PropsWithChildren } from 'react';
 
 import {
     Image,
+    Modal,
     Pressable,
     ScrollView,
     StyleSheet,
@@ -19,7 +20,7 @@ import {
 
 import BottomNav from '@/components/app/BottomNav';
 import GameHeader from '@/components/app/GameHeader';
-import { ROYAL, ROYAL_FONT, ROYAL_TYPE, RoyalNavyFrame } from '@/components/ui/RoyalSurface';
+import { ROYAL, ROYAL_FONT, ROYAL_TYPE } from '@/components/ui/RoyalSurface';
 import { RANKS, type LearningEconomy } from '@/services/learning-economy';
 import { syncJlptQualification } from '@/services/sync-jlpt-qualification';
 
@@ -39,23 +40,14 @@ import {
     calculateCommunicationTitle,
 } from '@/services/progress-engine';
 const PROFILE_AVATAR = require('../../../assets/app/ui/royal-af/hud-player-medallion-v1.png');
-function ProfileFrame(){return <View pointerEvents="none" style={styles.royalFrame}><RoyalNavyFrame style={styles.royalFrame}/></View>}
-
-/** Content measures independently from the decorative inset, preventing layout feedback. */
+/** Detail sections use separators rather than repeated ornamental picture frames. */
 function ProfilePanel({children,style,kind='plain'}:PropsWithChildren<{style?:StyleProp<ViewStyle>;kind?:'profile'|'rating'|'plain'}>) {
-    const [contentHeight,setContentHeight]=useState(0);
-    const [width,setWidth]=useState(0);
-    return <View onLayout={event=>setWidth(event.nativeEvent.layout.width)} style={[style,{position:'relative',flexDirection:'column',alignItems:'stretch',padding:0,paddingHorizontal:0,paddingVertical:0,borderWidth:0}]}>
-        <ProfileFrame/>
-        <View style={{paddingHorizontal:Math.max(24,width*.12),paddingVertical:Math.max(24,contentHeight*.28)}}>
-            <View onLayout={event=>setContentHeight(event.nativeEvent.layout.height)} style={kind==='profile'?{flexDirection:width<480?'column':'row',flexWrap:'wrap',alignItems:width<480?'stretch':'center',gap:8}:kind==='rating'?{alignItems:'center'}:undefined}>
-                {children}
-            </View>
-        </View>
-    </View>;
+    return <View style={[style, {paddingHorizontal: 0, paddingVertical: 18, borderWidth: 0, borderRadius: 0, borderBottomWidth: 1, borderBottomColor: 'rgba(212,175,55,.25)', backgroundColor: 'transparent'}, kind==='rating' && {alignItems:'center'}]}>{children}</View>;
 }
 
 export default function ProfileScreen() {
+    const [detailsVisible,setDetailsVisible]=useState(false);
+    const navigate=(href:Parameters<typeof router.push>[0])=>{setDetailsVisible(false);router.push(href)};
     const [economy,setEconomy]=useState<LearningEconomy|null>(null);
     useFocusEffect(useCallback(()=>{let active=true;void syncJlptQualification().then(value=>{if(active)setEconomy(value)});return()=>{active=false}},[]));
     const {
@@ -108,7 +100,7 @@ export default function ProfileScreen() {
         60;
 
     return (
-        <RoyalPageBackground tone="dark"><SafeAreaView
+        <RoyalPageBackground source={require('../../../assets/app/welcome/welcome-japan-landscape-v2.png')}><SafeAreaView
             style={
                 styles.container
             }
@@ -133,85 +125,29 @@ export default function ProfileScreen() {
                     PROFILE HEADER
                 ========================== */}
 
-                <ProfilePanel kind="profile"
-                    style={
-                        styles.profileCard
-                    }
-                >
-                    <View
-                        style={
-                            styles.avatar
-                        }
-                    >
-                        <Image source={PROFILE_AVATAR} resizeMode="contain" style={styles.avatarArtwork}/>
-                    </View>
-
-                    <View
-                        style={
-                            styles.profileInfo
-                        }
-                    >
-                        <Text
-                            style={
-                                styles.name
-                            }
-                        >
-                            {profile.name ||
-                                'Haruto'}
-                        </Text>
-
-                        <Text
-                            style={
-                                styles.profileLevel
-                            }
-                        >
-                            LV.{playerLevel}
-                            {' · '}
-                            {economy?.officialRank ?? 'N5'}
-
-                        </Text>
-
-                        <Text
-                            style={
-                                styles.occupation
-                            }
-                        >
-                            {occupation?.icon ??
-                                '💼'}
-                            {' '}
-                            {occupation?.titleJa ??
-                                'その他'}
-                            {' / '}
-                            {occupation?.titleVi ??
-                                'Công việc khác'}
-                        </Text>
-                    </View>
-
-                    <Pressable
-                        style={({
-                            pressed,
-                        }) => [
-                                styles.editButton,
-
-                                pressed &&
-                                styles.pressed,
-                            ]}
-                        onPress={() =>
-                            router.push(
-                                '/register'
-                            )
-                        }
-                    >
-                        <Text
-                            style={
-                                styles.editText
-                            }
-                        >
-                            編集
-                        </Text>
+                <View style={styles.identity}>
+                    <Text style={styles.identityTitle}>プロフィール</Text>
+                    <Image source={PROFILE_AVATAR} resizeMode="contain" style={styles.identityAvatar}/>
+                    <Text style={styles.identityName}>{profile.name?.trim() || 'プレイヤー'}</Text>
+                    <Text style={styles.identityRank}>JLPT · {economy?.officialRank ?? 'N5'}</Text>
+                    <Text style={styles.identityOccupation}>{occupation?.icon ?? '💼'} {occupation?.titleJa ?? 'その他'} / {occupation?.titleVi ?? 'Công việc khác'}</Text>
+                    <Pressable accessibilityRole="button" style={({pressed})=>[styles.identityEdit,pressed && {opacity:.65}]} onPress={()=>navigate('/register')}>
+                        <Text style={styles.editText}>編集 · Chỉnh sửa</Text>
                     </Pressable>
-                </ProfilePanel>
-
+                    <Pressable accessibilityRole="button" style={styles.detailsButton} onPress={()=>setDetailsVisible(true)}>
+                        <Text style={styles.detailsLink}>詳細を見る · Xem chi tiết ›</Text>
+                    </Pressable>
+                </View>
+            </ScrollView>
+            <Modal visible={detailsVisible} animationType="slide" onRequestClose={()=>setDetailsVisible(false)}>
+                <SafeAreaView style={styles.detailsPage}>
+                    <View style={styles.detailsHeader}>
+                        <Text style={styles.sectionTitle}>プロフィール · 詳細</Text>
+                        <Pressable accessibilityRole="button" accessibilityLabel="Đóng chi tiết" onPress={()=>setDetailsVisible(false)} style={styles.detailsClose}>
+                            <Text style={styles.editText}>閉じる · Đóng</Text>
+                        </Pressable>
+                    </View>
+                    <ScrollView contentContainerStyle={styles.content}>
                 {/* =========================
                     COMMUNICATION RATING
                 ========================== */}
@@ -626,7 +562,7 @@ export default function ProfileScreen() {
                         styles.pressed,
                     ]}
                     onPress={() =>
-                        router.push(
+                        navigate(
                             '/conversation-log'
                         )
                     }
@@ -865,7 +801,9 @@ export default function ProfileScreen() {
                         </Text>
                     </View>
                 </ProfilePanel>
-            </ScrollView>
+                    </ScrollView>
+                </SafeAreaView>
+            </Modal>
 
             <BottomNav
                 active="profile"
@@ -1090,6 +1028,18 @@ function Achievement({
 
 const styles =
     StyleSheet.create({
+        identity: {alignItems:'center', paddingHorizontal:16, paddingVertical:24, width:'100%', maxWidth:640, alignSelf:'center'},
+        identityTitle: {fontFamily:ROYAL_FONT.heading,fontSize:26,color:ROYAL.lacquer,marginBottom:24},
+        identityAvatar: {width:96,height:96,marginBottom:16},
+        identityName: {fontFamily:ROYAL_FONT.heading,fontSize:24,lineHeight:34,color:ROYAL.lacquer,textAlign:'center'},
+        identityRank: {fontFamily:ROYAL_FONT.body,fontSize:18,lineHeight:26,color:ROYAL.lacquerLight,marginTop:8},
+        identityOccupation: {fontFamily:ROYAL_FONT.body,fontSize:16,lineHeight:24,color:ROYAL.lacquerLight,textAlign:'center',marginTop:12},
+        identityEdit: {backgroundColor:ROYAL.lacquer,paddingHorizontal:24,paddingVertical:12,borderRadius:12,marginTop:24,minHeight:48},
+        detailsButton: {paddingHorizontal:16,paddingVertical:14,marginTop:16,minHeight:48},
+        detailsLink: {fontFamily:ROYAL_FONT.body,fontSize:16,color:ROYAL.lacquer,textAlign:'center'},
+        detailsPage: {flex:1,backgroundColor:ROYAL.lacquer},
+        detailsHeader: {padding:18,flexDirection:'row',flexWrap:'wrap',alignItems:'center',justifyContent:'space-between',gap:12},
+        detailsClose: {padding:12,minHeight:48},
         royalFrame: {...StyleSheet.absoluteFillObject,width:'100%',height:'100%'},
         container: {
             flex: 1,

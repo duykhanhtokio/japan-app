@@ -1,9 +1,9 @@
 import type { PropsWithChildren } from 'react';
-import { ImageBackground, StyleSheet, View } from 'react-native';
+import { ImageBackground, StyleSheet, View, type ImageSourcePropType } from 'react-native';
 
 // Full-screen artwork lives outside safe-area padding and scroll containers.
-export default function RoyalPageBackground({children,tone='light'}:PropsWithChildren<{tone?:'light'|'dark'}>) {
- return <ImageBackground source={require('../../../assets/app/life/location-backgrounds/cafe/01-clear-morning.jpg')} resizeMode="cover" blurRadius={40} style={s.background}>
+export default function RoyalPageBackground({children,tone='light',source}:PropsWithChildren<{tone?:'light'|'dark';source?:ImageSourcePropType}>) {
+ return <ImageBackground source={source ?? require('../../../assets/app/life/location-backgrounds/cafe/01-clear-morning.jpg')} resizeMode="cover" blurRadius={40} style={s.background}>
   <View pointerEvents="none" style={[s.overlay,tone==='dark'?s.dark:s.light]}/>{children}
  </ImageBackground>;
 }
