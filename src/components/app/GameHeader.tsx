@@ -1,11 +1,12 @@
 import { router } from 'expo-router';
 import { useState } from 'react';
 import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
-import { RoyalBackButton, RoyalNavyFrame, ROYAL, ROYAL_FONT, ROYAL_LAYOUT, ROYAL_TEXT_FIT } from '@/components/ui/RoyalSurface';
+import { RoyalBackButton, ROYAL, ROYAL_FONT, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
 import { CREDIT_CAPACITY, RANK_COLORS, RANKS, type JlptRank } from '@/services/learning-economy';
 
 const HUD_ENERGY_FRAME=require('../../../assets/app/ui/royal-af/hud-energy-open-frame-v1.png');
 const HUD_PLAYER=require('../../../assets/app/ui/royal-af/hud-player-medallion-v1.png');
+const HUD_IDENTITY=require('../../../assets/app/ui/royal-af/hud-top-composite-navy-v2.png');
 const HUD_COIN=require('../../../assets/app/ui/royal-af/hud-coin-v1.png');
 
 type Props={name?:string;abilityLevel?:string;abilityTarget?:string;abilityProgress?:number;conversationCredits?:number;conversationCreditMax?:number;qualifiedExams?:Partial<Record<JlptRank, number>>;coins?:number;onProfile?:()=>void;onCoins?:()=>void;onBack?:()=>void;variant?:'royal'|'study'|'approved';level?:number;xpCurrent?:number;xpMax?:number;diamonds?:number;onDiamonds?:()=>void;onSettings?:()=>void};
@@ -36,16 +37,7 @@ export default function GameHeader({name='プレイヤー',abilityLevel='N5',abi
   return <View style={[s.container,s.approvedContainer]}>
    <View style={s.approvedTopRow}>
     <RoyalBackButton onPress={onBack??goBackOrHome}/>
-    <View style={s.approvedTopBody}>
-     <Pressable accessibilityRole="button" accessibilityLabel={name} onPress={()=>onProfile?onProfile():router.push('/profile')} style={s.approvedProfile}>
-      <Image source={HUD_PLAYER} resizeMode="contain" style={[s.approvedAvatar,{width:avatarSize,height:avatarSize}]}/>
-      <RoyalNavyFrame hud style={[s.approvedNameFrame,{paddingHorizontal:'19%'}]}><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.7} maxFontSizeMultiplier={1} style={[s.approvedName,{fontSize:(screenWidth<360?14:20)*scale,lineHeight:26*scale}]}>{name}</Text></RoyalNavyFrame>
-     </Pressable>
-     <Pressable accessibilityRole="button" accessibilityLabel={`コイン ${coins}`} onPress={onCoins} style={s.approvedCoins}>
-      <RoyalNavyFrame hud style={s.approvedCoinFrame}><Image source={HUD_COIN} resizeMode="contain" style={[s.approvedCoinIcon,{width:18*scale,height:18*scale}]}/>
-      <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.7} maxFontSizeMultiplier={1} style={[s.approvedCoinValue,{fontSize:16*scale,lineHeight:22*scale}]}>{coinDisplay(coins)}</Text></RoyalNavyFrame>
-     </Pressable>
-    </View>
+    <ReferenceIdentity name={name} coins={coins} avatarSize={avatarSize} onProfile={onProfile} onCoins={onCoins}/>
    </View>
    <View style={[s.energyStack,s.approvedEnergyStack]}>
     <EnergyBar label="CREDIT" value={`${conversationCredits}/${conversationCreditMax}`} ratio={creditRatio} tint="#ba343a" large/>
@@ -70,17 +62,38 @@ export default function GameHeader({name='プレイヤー',abilityLevel='N5',abi
  return <View style={s.container}>
   <View style={s.topRow}>
    <RoyalBackButton onPress={onBack??goBackOrHome}/>
-   <Pressable accessibilityRole="button" accessibilityLabel={name} onPress={()=>onProfile?onProfile():router.push('/profile')} style={({pressed})=>[s.profile,pressed&&s.pressed]}>
-    <RoyalNavyFrame hud style={s.nameFrame}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} minimumFontScale={.68} style={s.name}>{name}</Text></RoyalNavyFrame>
-    <Image source={HUD_PLAYER} resizeMode="contain" style={s.avatar}/>
-   </Pressable>
-   <Pressable accessibilityRole="button" accessibilityLabel={`コイン ${coins}`} onPress={onCoins} style={({pressed})=>[s.coinPressable,pressed&&s.pressed]}><RoyalNavyFrame hud style={s.coinFrame}><Image source={HUD_COIN} resizeMode="contain" style={s.coinIcon}/><Text {...ROYAL_TEXT_FIT} numberOfLines={1} minimumFontScale={.62} style={s.coinValue}>{coins.toLocaleString()}</Text></RoyalNavyFrame></Pressable>
+   <ReferenceIdentity name={name} coins={coins} avatarSize={ROYAL_LAYOUT.homeAvatarSize} onProfile={onProfile} onCoins={onCoins}/>
   </View>
   <View style={s.energyStack}>
    <EnergyBar label="CREDIT" value={`${conversationCredits}/${conversationCreditMax}`} ratio={creditRatio} tint="#ba343a"/>
    <EnergyBar label={examLabel} value="" ratio={passed/6} tint={RANK_COLORS[target]}/>
   </View>
  </View>
+}
+
+// Recoloured original composite from the corrected 2026-10-01 20:22 reference.
+// Visible source bounds x=51..2017, y=178..528; one uniform scale preserves all ornaments.
+function ReferenceIdentity({name,coins,avatarSize,onProfile,onCoins}:Pick<Props,'onProfile'|'onCoins'>&{name:string;coins:number;avatarSize:number}){
+ const [width,setWidth]=useState(0);
+ const artLeft=avatarSize*.45,artWidth=Math.max(0,Math.min(width-artLeft,(ROYAL_LAYOUT.homeHudTopRowHeight-16)*1966/350)),artScale=artWidth/1966,artHeight=350*artScale;
+ const artTop=(ROYAL_LAYOUT.homeHudTopRowHeight-artHeight)/2;
+ const nameLeft=Math.max(avatarSize+3,artLeft+artWidth*.09),nameRight=artLeft+artWidth*.655;
+ const openProfile=()=>onProfile?onProfile():router.push('/profile');
+ return <View onLayout={event=>setWidth(event.nativeEvent.layout.width)} style={s.referenceBody}>
+  {width>0&&<>
+   <View pointerEvents="none" style={[s.referenceArt,{left:artLeft,top:artTop,width:artWidth,height:artHeight}]}>
+    <Image source={HUD_IDENTITY} resizeMode="contain" style={{position:'absolute',left:-51*artScale,top:-178*artScale,width:2078*artScale,height:757*artScale}}/>
+   </View>
+   <Pressable accessibilityRole="button" accessibilityLabel={name} onPress={openProfile} hitSlop={8} style={[s.referenceName,{left:nameLeft,top:artTop,width:Math.max(0,nameRight-nameLeft),height:artHeight}]}>
+    <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.7} maxFontSizeMultiplier={1} style={[s.approvedName,{fontSize:Math.min(20,artHeight*.42),lineHeight:Math.min(26,artHeight*.52)}]}>{name}</Text>
+   </Pressable>
+   <Pressable accessibilityRole="button" accessibilityLabel={`コイン ${coins}`} onPress={onCoins} hitSlop={8} style={[s.referenceCoin,{left:artLeft+artWidth*.73,top:artTop,width:artWidth*.175,height:artHeight}]}>
+    <Image source={HUD_COIN} resizeMode="contain" style={{width:16,height:16,flexShrink:0}}/>
+    <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.65} maxFontSizeMultiplier={1} style={[s.approvedCoinValue,{fontSize:Math.min(16,artHeight*.4),lineHeight:Math.min(22,artHeight*.52)}]}>{coinDisplay(coins)}</Text>
+   </Pressable>
+  </>}
+  <Pressable accessibilityRole="button" accessibilityLabel={`${name}のプロフィール`} onPress={openProfile} style={[s.referenceAvatar,{width:avatarSize,height:avatarSize}]}><Image source={HUD_PLAYER} resizeMode="contain" style={{width:'100%',height:'100%'}}/></Pressable>
+ </View>;
 }
 
 function clamp01(value:number){return Math.min(1,Math.max(0,Number.isFinite(value)?value:0))}
@@ -113,6 +126,11 @@ function EnergyBar({label,value,ratio,tint,large=false}:{label:string;value:stri
 }
 
 const s=StyleSheet.create({
+ referenceBody:{flex:1,minWidth:0,height:ROYAL_LAYOUT.homeHudTopRowHeight,position:'relative'},
+ referenceArt:{position:'absolute',overflow:'hidden'},
+ referenceName:{position:'absolute',justifyContent:'center'},
+ referenceCoin:{position:'absolute',flexDirection:'row',gap:3,alignItems:'center'},
+ referenceAvatar:{position:'absolute',left:0,top:3,zIndex:3},
  approvedTopRow:{height:ROYAL_LAYOUT.homeHudTopRowHeight,flexDirection:'row',alignItems:'center',gap:2},
  approvedTopBody:{flex:1,minWidth:0,height:'100%',flexDirection:'row',alignItems:'center',gap:8},
  approvedNameFrame:{flex:1,minWidth:0,height:58,justifyContent:'center',paddingHorizontal:14},
