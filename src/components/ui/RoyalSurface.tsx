@@ -1,3 +1,4 @@
+import { RoyalExplanationPanel } from './RoyalPanels';
 import { APP_TYPOGRAPHY } from '@/theme/app-design-system';
 import { useState, type PropsWithChildren, type ReactNode } from 'react';
 import { Image, ImageBackground, Pressable, StyleSheet, Text, View, type ImageSourcePropType, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
@@ -171,7 +172,7 @@ export function RoyalInfoPanel({children,style,innerStyle,label='INFO',sizingGro
   const topInset = Math.max(32, plaque.size.height - 32);
   const bodyMinHeight = Math.max(86, equalHeight.height - topInset);
   return <View onLayout={equalHeight.onLayout} style={[s.infoPanel,equalHeight.groupStyle,{paddingTop:topInset},style]}>
-    <ImageBackground source={DIALOGUE_FRAME} resizeMode="stretch" style={[s.infoIvory,{minHeight:bodyMinHeight}]}><View style={[s.infoContent,innerStyle]}>{children}</View></ImageBackground>
+    <RoyalExplanationPanel style={[s.infoIvory,{minHeight:bodyMinHeight,paddingHorizontal:24,paddingVertical:20}]}><View style={[s.infoContent,innerStyle]}>{children}</View></RoyalExplanationPanel>
     <ImageBackground onLayout={plaque.onLayout} source={WIDE_BUTTON} resizeMode="stretch" style={[s.infoPlaque,plaque.groupStyle]}><Text maxFontSizeMultiplier={1} style={s.infoPlaqueText}>{label}</Text></ImageBackground>
   </View>;
 }

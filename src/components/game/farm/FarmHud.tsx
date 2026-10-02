@@ -30,9 +30,9 @@ function Resource({label,value,icon,onPress,wide=false}:{label:string;value:numb
 }
 const s=StyleSheet.create({
  container:{width:'100%',maxWidth:900,alignSelf:'center',flexDirection:'row',alignItems:'center',gap:4},
- playerFrame:{flex:.95,minWidth:0,minHeight:58,paddingVertical:10,paddingHorizontal:10,justifyContent:'center'},
- row:{flex:1.8,minWidth:0,minHeight:58,paddingVertical:10,paddingHorizontal:12,flexDirection:'row',alignItems:'center',gap:4},
- player:{flex:1.15,minWidth:0,flexDirection:'row',alignItems:'center',gap:3},avatar:{width:24,height:28},playerCopy:{flex:1,minWidth:0},
+ playerFrame:{flex:1.25,minWidth:0,minHeight:58,paddingVertical:10,paddingHorizontal:10,justifyContent:'center'},
+ row:{flex:1.5,minWidth:0,minHeight:58,paddingVertical:10,paddingHorizontal:12,flexDirection:'row',alignItems:'center',gap:4},
+ player:{flex:1.15,minWidth:0,paddingLeft:48,flexDirection:'row',alignItems:'center',gap:3},avatar:{width:72,height:72,position:'absolute',left:-10,top:-17},playerCopy:{flex:1,minWidth:0},
  level:{fontFamily:ROYAL_FONT.heading,color:ROYAL.paleGold,fontSize:13,lineHeight:18},xp:{fontFamily:ROYAL_FONT.body,color:'#fff',fontSize:9,lineHeight:14},
  cell:{flex:.7,minWidth:0,minHeight:38,justifyContent:'center',alignItems:'center'},gold:{flex:1.15},
  labelRow:{flexDirection:'row',alignItems:'center',gap:2},icon:{width:13,height:13},label:{flexShrink:1,fontFamily:ROYAL_FONT.body,color:ROYAL.paleGold,fontSize:9,lineHeight:14},

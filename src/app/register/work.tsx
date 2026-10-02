@@ -330,7 +330,7 @@ export default function RegistrationWorkScreen() {
 
                 <RoyalInfoPanel sizingGroup={ROYAL_CONTENT_GROUP.registrationGuide} label={bilingual('ご案内', GUIDE_LABEL[language])} style={styles.infoPanel}>
                     <View style={styles.infoRow}>
-                        <Text maxFontSizeMultiplier={1} style={styles.subtitle}>{bilingual(japaneseCopy.subtitle, copy.subtitle)}</Text>
+                        <Text maxFontSizeMultiplier={1} style={[styles.subtitle,{color:ROYAL.paleGold}]}>{bilingual(japaneseCopy.subtitle, copy.subtitle)}</Text>
                     </View>
                 </RoyalInfoPanel>
                 <View style={styles.flexSpacer} />

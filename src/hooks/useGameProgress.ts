@@ -17,20 +17,22 @@ import type {
     GameProgress,
 } from '@/types/progress';
 
+let lastLoadedProgress: GameProgress | null = null;
+
 export function useGameProgress() {
     const [
         progress,
         setProgress,
     ] =
         useState<GameProgress>(
-            INITIAL_GAME_PROGRESS
+            lastLoadedProgress ?? INITIAL_GAME_PROGRESS
         );
 
     const [
         loading,
         setLoading,
     ] =
-        useState(true);
+        useState(lastLoadedProgress === null);
 
     /*
      * =====================================================
@@ -45,6 +47,7 @@ export function useGameProgress() {
                     const storedProgress =
                         await getGameProgress();
 
+                    lastLoadedProgress = storedProgress;
                     setProgress(
                         storedProgress
                     );
@@ -85,6 +88,7 @@ export function useGameProgress() {
                         nextProgress
                     );
 
+                    lastLoadedProgress = nextProgress;
                     setProgress(
                         nextProgress
                     );

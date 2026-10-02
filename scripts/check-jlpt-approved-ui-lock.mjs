@@ -11,7 +11,7 @@ const locked = new Map([
   ['src/components/jlpt/ui/JlptExamUI.tsx', '03cfb15b58da93360f277b5bf6b0b3c63bb63adcd644a4b9a184dbdfce03f90d'],
   ['src/services/jlpt-trial-session-storage.ts', 'ea21a8b371feeea3453cd10c5247bcb072c92f2ef5b4c5309d83df3392d1d7e1'],
   ['src/theme/jlpt-exam-design-system.ts', '9d8276e32e5b1b25485d84cbe961acd5cbca5b106ee2dd95e6fbaadd9d2b9bb7'],
-  ['src/components/jlpt/ApprovedJlptExamCatalog.tsx', 'eeb3bda08045e682ba9ef86d70a382eec7092805d222d7e751dbf4638dd1cd4f'],
+  ['src/components/jlpt/ApprovedJlptExamCatalog.tsx', '597593050e507442e8b29836f89afb66b412142b3e905e23dc8d9e0baf849c78'],
   ['src/components/jlpt/ApprovedScannedExam.tsx', 'efa9b3abdcd3097b96415ecf731fe1400433dbdd53e38b606d3a6324aba728a9'],
   ['src/components/jlpt/ApprovedMockExam.tsx', '56ff95e19597865e480b650eae5e0077c3c8cf3c26566f3ead0cf31c69feef2a'],
   ['src/data/jlpt-official/approved-scanned-exams.generated.ts', '1e7baa59e6939929a46487fd9d91915217f1c7c2ba322f94c2ba72d93ecac0aa'],

@@ -1,16 +1,14 @@
 import { useState, type PropsWithChildren } from 'react';
-import { Image, ScrollView, StyleSheet, View } from 'react-native';
-
-// Preserve the source's aspect ratio; text scrolls inside the ivory area.
-export default function RoyalReadingFrame({ children }: PropsWithChildren) {
- const [size,setSize]=useState({width:0,height:0});
- return <View onLayout={event=>{const {width,height}=event.nativeEvent.layout;setSize(previous=>previous.width===width&&previous.height===height?previous:{width,height});}} style={s.frame}>
-  <Image source={require('../../../assets/app/ui/royal-af/dialogue-frame-v1.png')} resizeMode="contain" style={[StyleSheet.absoluteFill,{width:size.width,height:size.height}]}/>
-  <ScrollView style={s.reading} contentContainerStyle={s.copy} nestedScrollEnabled showsVerticalScrollIndicator>{children}</ScrollView>
- </View>;
+import { View, type StyleProp, type ViewStyle } from 'react-native';
+import { RoyalContentPanel, RoyalExplanationPanel } from '@/components/ui/RoyalPanels';
+/** Non-scrolling text: allocate height, then fit any measured overflow inside it. */
+export default function RoyalReadingFrame({children,style,explanation=false,fit=false}:PropsWithChildren<{style?:StyleProp<ViewStyle>;explanation?:boolean;fit?:boolean}>){
+ const [available,setAvailable]=useState(0),[copyHeight,setCopyHeight]=useState(0);
+ const Panel=explanation?RoyalExplanationPanel:RoyalContentPanel;
+ const scale=available>0&&copyHeight>0?Math.min(1,available/copyHeight):1;
+ return <Panel style={[{width:'100%',minHeight:0,paddingHorizontal:28,paddingVertical:18,justifyContent:'center'},style]}>
+  {fit?<View onLayout={event=>setAvailable(event.nativeEvent.layout.height)} style={{flex:1,minHeight:0,position:'relative'}}>
+   <View onLayout={event=>setCopyHeight(event.nativeEvent.layout.height)} style={{position:'absolute',left:0,right:0,top:'50%',marginTop:-copyHeight/2,transform:[{scale}]}}>{children}</View>
+  </View>:<View style={{minHeight:0,justifyContent:'center'}}>{children}</View>}
+ </Panel>;
 }
-const s=StyleSheet.create({
- frame:{width:'100%',aspectRatio:1600/550,overflow:'hidden'},
- reading:{position:'absolute',left:'13%',right:'13%',top:'25%',bottom:'24%'},
- copy:{flexGrow:1,justifyContent:'center',paddingVertical:4},
-});

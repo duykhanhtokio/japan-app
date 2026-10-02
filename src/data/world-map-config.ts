@@ -101,7 +101,7 @@ export const japanRegions: WorldMapItem[] = [
     item('kansai', '関西', 'Kansai', '⛩️', 4, '0/25'),
     item('chugoku', '中国', 'Chugoku', '🌉', 5, '0/20'),
     item('shikoku', '四国', 'Shikoku', '🍜', 6, '0/15'),
-    item('kyushu', '九州・沖縄', 'Kyushu & Okinawa', '🌋', 7, '0/20'),
+    item('kyushu', '九州・沖縄', 'Kyūshū · Okinawa', '🌋', 7, '0/20'),
 ];
 
 const assets = (name: RegionMapId): ResponsiveMapAssets => ({
@@ -133,8 +133,8 @@ const assets = (name: RegionMapId): ResponsiveMapAssets => ({
 
 export const regionMaps: Record<RegionMapId, { assets: ResponsiveMapAssets; items: WorldMapItem[] }> = {
     hokkaido: { assets: assets('hokkaido'), items: [
-        item('doo', '道央', 'Central Hokkaido', '🏙️', 0), item('donan', '道南', 'Southern Hokkaido', '🌃', 1),
-        item('dohoku', '道北', 'Northern Hokkaido', '🪻', 2), item('doto', '道東', 'Eastern Hokkaido', '🐦', 3),
+        item('doo', '道央', 'Dōō', '🏙️', 0), item('donan', '道南', 'Dōnan', '🌃', 1),
+        item('dohoku', '道北', 'Dōhoku', '🪻', 2), item('doto', '道東', 'Dōtō', '🐦', 3),
     ] },
     tohoku: { assets: assets('tohoku'), items: [
         item('aomori', '青森', 'Aomori', '🍎', 0), item('iwate', '岩手', 'Iwate', '🏯', 1), item('miyagi', '宮城', 'Miyagi', '🌙', 2),

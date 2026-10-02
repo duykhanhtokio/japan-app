@@ -1,3 +1,4 @@
+import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import JlptStudyBackground from './JlptStudyBackground';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { BackHandler, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
@@ -60,7 +61,7 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
     const submittedDate = submittedAt && Number.isFinite(Date.parse(submittedAt))
       ? new Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }).format(new Date(submittedAt))
       : '—';
-    return <Pressable key={choice.exam.id} accessibilityRole="button" onPress={() => setSelected(choice)} style={({ pressed }) => [styles.examRow, pressed && styles.pressed]}>
+    return <Pressable key={choice.exam.id} accessibilityRole="button" onPress={() => setSelected(choice)} style={({ pressed }) => [pressed && styles.pressed]}><RoyalContentPanel style={styles.examRow}>
       <View style={styles.copy}>
         <Text style={styles.examTitle}>{choice.label}</Text>
         <Text style={styles.count}>全{count}問</Text>
@@ -71,8 +72,8 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
         </View>
       </View>
       <Text style={styles.chevron}>›</Text>
-    </Pressable>;
+    </RoyalContentPanel></Pressable>;
   })}</JlptPaper></ScrollView></View></JlptStudyBackground>;
 }
 
-const styles = StyleSheet.create({screen:{flex:1,backgroundColor:'transparent'},content:{paddingVertical:12,paddingHorizontal:8,backgroundColor:'transparent'},heading:{fontFamily:JLPT_EXAM.font.content,fontSize:JLPT_EXAM.type.sectionTitle,lineHeight:31,color:JLPT_EXAM.color.ink,marginBottom:8},description:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:22,color:JLPT_EXAM.color.secondaryInk,marginBottom:20},catalogPaper:{backgroundColor:'transparent'},examRow:{minHeight:112,flexDirection:'row',alignItems:'center',borderWidth:1,borderColor:JLPT_EXAM.color.divider,backgroundColor:'rgba(255,255,255,.66)',paddingHorizontal:16,paddingVertical:14,marginBottom:12},copy:{flex:1,minWidth:0},examTitle:{fontFamily:JLPT_EXAM.font.content,fontSize:18,lineHeight:26,color:JLPT_EXAM.color.ink},count:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.secondaryInk,marginTop:2},stats:{flexDirection:'row',flexWrap:'wrap',columnGap:12,rowGap:4,marginTop:8},stat:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.ink,flexGrow:1,flexBasis:110},lastAttempt:{fontFamily:JLPT_EXAM.font.interface,fontSize:13,lineHeight:20,color:JLPT_EXAM.color.secondaryInk,marginTop:5},chevron:{fontFamily:JLPT_EXAM.font.interface,fontSize:34,lineHeight:38,color:JLPT_EXAM.color.ink,marginLeft:12},pressed:{opacity:.62}});
+const styles = StyleSheet.create({screen:{flex:1,backgroundColor:'transparent'},content:{paddingVertical:12,paddingHorizontal:8,backgroundColor:'transparent'},heading:{fontFamily:JLPT_EXAM.font.content,fontSize:JLPT_EXAM.type.sectionTitle,lineHeight:31,color:JLPT_EXAM.color.ink,marginBottom:8},description:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:22,color:JLPT_EXAM.color.secondaryInk,marginBottom:20},catalogPaper:{backgroundColor:'transparent'},examRow:{minHeight:112,flexDirection:'row',alignItems:'center',paddingHorizontal:28,paddingVertical:26,marginBottom:12},copy:{flex:1,minWidth:0},examTitle:{fontFamily:JLPT_EXAM.font.content,fontSize:18,lineHeight:26,color:JLPT_EXAM.color.ink},count:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.secondaryInk,marginTop:2},stats:{flexDirection:'row',flexWrap:'wrap',columnGap:12,rowGap:4,marginTop:8},stat:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.ink,flexGrow:1,flexBasis:110},lastAttempt:{fontFamily:JLPT_EXAM.font.interface,fontSize:13,lineHeight:20,color:JLPT_EXAM.color.secondaryInk,marginTop:5},chevron:{fontFamily:JLPT_EXAM.font.interface,fontSize:34,lineHeight:38,color:JLPT_EXAM.color.ink,marginLeft:12},pressed:{opacity:.62}});
