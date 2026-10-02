@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "いらっしゃいませ。どの商品をお探しですか。",
+        "textJa": "いらっしゃいませ。贈り物をお探しでしょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "kitakata_7_1",
+        "communicativeIntent": "kitakata_gift_tea_1",
         "requiredSemanticComponents": {
-          "goal": "見本箱三つを在庫三個と考えず販売用三つの有無を尋ねる"
+          "goal": "三人へ同じ茶を贈るため三箱をそろえて個別包装を頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "この箱の商品を三つ買いたいです。棚に箱は三つありますが、見本とも書いてあるので、販売用の在庫も三つあるか知りたいです。",
+        "recommendedAnswerJa": "お世話になった三人へ同じお茶を贈りたいです。この箱を三つそろえて、それぞれ包んでいただけますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "見本箱三つを在庫三個と考えず販売用三つの有無を尋ねる。日本語で伝えてください。",
+        "hint": "三人へ同じ茶を贈るため三箱をそろえて個別包装を頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "見本箱三つを在庫三個と考えず販売用三つの有無を尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "三人へ同じ茶を贈るため三箱をそろえて個別包装を頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こちらは中身のない見本箱です。三つともお買い上げ用ではありません。",
+        "textJa": "こちらのお茶は今、二箱だけです。三箱そろう別のお茶も見てみますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "kitakata_7_2",
+        "communicativeIntent": "kitakata_gift_tea_2",
         "requiredSemanticComponents": {
-          "goal": "空箱は購入品でなく中身のある商品三つを確認してほしいと頼む"
+          "goal": "二箱しかない最初の商品をやめ三箱そろう別の茶を見たいと答える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "では、箱が三つあることを在庫三個と考えない方がいいですね。商品が入った物を三つ用意できるか確認をお願いします。",
+        "recommendedAnswerJa": "お願いします。一人だけ違う物にするより、三人とも同じ商品にしたいので、別のお茶から選び直します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "空箱は購入品でなく中身のある商品三つを確認してほしいと頼む。日本語で伝えてください。",
+        "hint": "二箱しかない最初の商品をやめ三箱そろう別の茶を見たいと答える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "空箱は購入品でなく中身のある商品三つを確認してほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "二箱しかない最初の商品をやめ三箱そろう別の茶を見たいと答える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "確認します。全部同じ商品をご希望ですか。",
+        "textJa": "こちらは三箱あります。一箱五百円で、個別の包装は一つ百円です。ご予算はいくらでしょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "kitakata_7_3",
+        "communicativeIntent": "kitakata_gift_tea_3",
         "requiredSemanticComponents": {
-          "goal": "柄の見た目が違っても希望は同一商品三つで三種類でないと答える"
+          "goal": "包装込み予算二千円以内で商品千五百円と包装三百円の合計千八百円を確認する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい、見本の柄が少し違って見えますが、同じ商品を三つ希望します。柄違いを三種類選びたいということではありません。",
+        "recommendedAnswerJa": "包装も入れて二千円までです。このお茶を三箱にすると商品代が千五百円で、包装三つが三百円なので、合計千八百円ですね。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "柄の見た目が違っても希望は同一商品三つで三種類でないと答える。日本語で伝えてください。",
+        "hint": "包装込み予算二千円以内で商品千五百円と包装三百円の合計千八百円を確認する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "柄の見た目が違っても希望は同一商品三つで三種類でないと答える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "包装込み予算二千円以内で商品千五百円と包装三百円の合計千八百円を確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "在庫は二つでした。二つを購入して、残り一つは後日確認されますか。",
+        "textJa": "はい、千八百円です。三つとも同じ紙で包めます。お渡し用の袋も三枚必要ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "kitakata_7_4",
+        "communicativeIntent": "kitakata_gift_tea_4",
         "requiredSemanticComponents": {
-          "goal": "三つ同時に渡すので二つ購入は保留し空箱で補わないと話す"
+          "goal": "包装は三つだが運ぶ袋は一枚だけほしいと答える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "今回は三つそろえて渡したいので、二つだけ買う前に考えたいです。空の見本箱で数を補うつもりはありません。",
+        "recommendedAnswerJa": "一枚だけお願いします。配る場所まで三つをまとめて運びますが、包装は開かず一つずつ渡したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "三つ同時に渡すので二つ購入は保留し空箱で補わないと話す。日本語で伝えてください。",
+        "hint": "包装は三つだが運ぶ袋は一枚だけほしいと答える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "三つ同時に渡すので二つ購入は保留し空箱で補わないと話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "包装は三つだが運ぶ袋は一枚だけほしいと答える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。入荷日はまだ決まっていません。",
+        "textJa": "承知しました。包装には価格の分かるシールを残さないようにします。レシートはお客様にお渡ししてよいですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "kitakata_7_5",
+        "communicativeIntent": "kitakata_gift_tea_5",
         "requiredSemanticComponents": {
-          "goal": "在庫二つ入荷未定で約束と解釈せず購入を保留すると答える"
+          "goal": "レシートは贈り物に入れず自分が受け取り三箱を別々に包んで一袋にまとめてほしいと答える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "では、今日は在庫二つと入荷未定だと理解します。三つそろう日を約束されたとは考えず、購入は一度保留します。",
+        "recommendedAnswerJa": "はい、レシートは私が受け取り、贈り物の中へ入れないでください。三箱を別々に包み、一枚の袋へまとめる形でお願いします。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "在庫二つ入荷未定で約束と解釈せず購入を保留すると答える。日本語で伝えてください。",
+        "hint": "レシートは贈り物に入れず自分が受け取り三箱を別々に包んで一袋にまとめてほしいと答える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "在庫二つ入荷未定で約束と解釈せず購入を保留すると答える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "レシートは贈り物に入れず自分が受け取り三箱を別々に包んで一袋にまとめてほしいと答える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "分かりました。ご検討のうえ、またお声がけください。",
+        "textJa": "同じお茶を三箱、個別包装して一枚の袋にまとめます。合計千八百円で、レシートは別にお渡しします。ご注文ありがとうございました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -249,8 +249,8 @@
     "contentScope": "simulated_learning_scenario",
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
-    "editorialSource": "scripts/dialogue-authoring/prf-007-kitakata.json",
-    "premise": "喜多方の架空学習場面。棚に並ぶ見本箱を販売品だと思った人が、実商品が入っているか確認する。 実施設の対応、規則や制度を認定しない。",
+    "editorialSource": "scripts/dialogue-authoring/prf-007-sukagawa-kitakata-review.json",
+    "premise": "喜多方の架空売場で三人へ同じ茶を贈りたい人が、最初の商品は二箱しかないため別の商品を選び、包装料金を含む予算を確かめて注文する。商品、在庫、価格と包装は学習用の設定であり実店舗の情報ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
