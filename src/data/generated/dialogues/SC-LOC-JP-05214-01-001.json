@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "sc-loc-jp-05214-01-001_1",
         "requiredSemanticComponents": {
-          "goal": "音声駅名で類似検索二候補の選択を相談する"
+          "goal": "動く友人位置を待合せ駅と誤認して移動先を相談する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "友人の家へ行きますが、駅名を音声で聞いただけです。検索に似た読みの駅が二つ出ました。",
+        "recommendedAnswerJa": "友人の所へ行きたいですが、送られた地図の点が動いています。これが待合わせ駅だと思っていました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "音声駅名で類似検索二候補の選択を相談する。日本語で伝えてください。",
+        "hint": "動く友人位置を待合せ駅と誤認して移動先を相談する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "音声駅名で類似検索二候補の選択を相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "動く友人位置を待合せ駅と誤認して移動先を相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "駅名を文字で確認できる連絡はありますか。",
+        "textJa": "それは友人の現在位置の共有でしょうか。固定の駅名も届いていますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "sc-loc-jp-05214-01-001_2",
         "requiredSemanticComponents": {
-          "goal": "文字連絡なしで第一候補選択しかけたが目的駅不明と説明する"
+          "goal": "現在位置表示のみで駅名未受領・点方向駅へ行く案を説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "まだありません。最初の候補を選びかけましたが、友人がどちらを言ったか分かりません。",
+        "recommendedAnswerJa": "現在位置と書いてあります。駅名はまだなく、点が進む方向の駅へ行こうとしていました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "文字連絡なしで第一候補選択しかけたが目的駅不明と説明する。日本語で伝えてください。",
+        "hint": "現在位置表示のみで駅名未受領・点方向駅へ行く案を説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "文字連絡なしで第一候補選択しかけたが目的駅不明と説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "現在位置表示のみで駅名未受領・点方向駅へ行く案を説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "読みが似ていても別の駅かもしれません。友人へ表記を確認してください。",
+        "textJa": "移動中の位置と、待合わせ場所を分けて確認しましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "sc-loc-jp-05214-01-001_3",
         "requiredSemanticComponents": {
-          "goal": "友人へ文字表記依頼し到着時刻約束も保留すると答える"
+          "goal": "固定駅出口を友人へ照会し移動点追跡経路は選ばないと答える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "文字の駅名を送ってもらいます。到着時刻を先に約束するのも待ちます。",
+        "recommendedAnswerJa": "友人へ待合わせる駅名と出口を送ってもらいます。動く点を追う経路は選びません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "友人へ文字表記依頼し到着時刻約束も保留すると答える。日本語で伝えてください。",
+        "hint": "固定駅出口を友人へ照会し移動点追跡経路は選ばないと答える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "友人へ文字表記依頼し到着時刻約束も保留すると答える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "固定駅出口を友人へ照会し移動点追跡経路は選ばないと答える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "目的駅が分かってから経路を調べましょう。友人とは連絡が取れますか。",
+        "textJa": "ご友人も列車で移動中かもしれません。確認できた内容でご案内できます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "sc-loc-jp-05214-01-001_4",
         "requiredSemanticComponents": {
-          "goal": "照会メッセージ送信済みで返信前第一候補券を買わないと伝える"
+          "goal": "友人列車乗車は未確認で位置移動観察と本人返答を分ける"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい、今メッセージを送りました。返事前に最初の候補への切符は買いません。",
+        "recommendedAnswerJa": "まだ列車内なのかは分かりません。位置が動くことだけを、友人の返事と分けて説明します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "照会メッセージ送信済みで返信前第一候補券を買わないと伝える。日本語で伝えてください。",
+        "hint": "友人列車乗車は未確認で位置移動観察と本人返答を分ける。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "照会メッセージ送信済みで返信前第一候補券を買わないと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "友人列車乗車は未確認で位置移動観察と本人返答を分ける。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "返事を待って、駅名と路線を合わせて確認できます。",
+        "textJa": "はい。固定の待合わせ先が決まってからお知らせください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "sc-loc-jp-05214-01-001_5",
         "requiredSemanticComponents": {
-          "goal": "文字目的駅受領後路線経路照合して購入すると復唱する"
+          "goal": "未購入で待合地点照会し現在位置を目的地と決めないと復唱する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "正しい文字の駅名を受け取ってから、路線と経路を確認して切符を買います。",
+        "recommendedAnswerJa": "今は切符を買わず、友人へ待合わせ地点を聞きます。現在位置を目的地として決めません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "文字目的駅受領後路線経路照合して購入すると復唱する。日本語で伝えてください。",
+        "hint": "未購入で待合地点照会し現在位置を目的地と決めないと復唱する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "文字目的駅受領後路線経路照合して購入すると復唱する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "未購入で待合地点照会し現在位置を目的地と決めないと復唱する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。駅名が分かりましたらまたお声がけください。",
+        "textJa": "承知しました。場所が決まりましたらお声がけください。こちらで経路を確認できます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-005-nikaho.json",
-    "premise": "にかほの架空の学習場面。友人が音声で伝えた目的駅名を文字で未確認の旅客が経路検索候補を決めず友人へ正しい表記を求める。 実施設の条件を認定しない。",
+    "premise": "にかほの架空の学習場面。駅で友人が送った移動中の位置共有を目的駅と思った客が固定の待合せ場所を別に尋ねる。 実施設の条件を認定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
