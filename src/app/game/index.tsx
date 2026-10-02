@@ -2176,7 +2176,7 @@ const styles =
                 '100%',
 
             paddingHorizontal:
-                8,
+                ROYAL_LAYOUT.screenGutter,
         },
 
         farmMapOverlayContent: {
@@ -2204,7 +2204,7 @@ const styles =
 
         mapReturnButton: {
             position: 'absolute',
-            left: 12,
+            left: ROYAL_LAYOUT.screenGutter,
             zIndex: 25,
         },
 
@@ -2324,7 +2324,7 @@ const styles =
                 6,
 
             paddingHorizontal:
-                8,
+                ROYAL_LAYOUT.screenGutter,
 
             borderRadius:
                 12,

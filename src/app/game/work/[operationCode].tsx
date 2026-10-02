@@ -1263,20 +1263,15 @@ export default function WorkConversationScreen() {
                     styles.resultContainer
                 }
             >
-                <View
-                    style={
-                        styles.resultCard
-                    }
-                >
-                    <Text
-                        style={
-                            styles.resultIcon
-                        }
-                    >
-                        {missionFailed
-                            ? '📘'
-                            : '🎉'}
-                    </Text>
+                <ScrollView style={{width:'100%'}} contentContainerStyle={{flexGrow:1,alignItems:'center',justifyContent:'center',paddingVertical:12}}>
+                <RoyalPaperPanel tone="hud" style={styles.resultCard}>
+                    <Image
+                        source={missionFailed
+                            ? require('../../../../assets/app/ui/royal-af/learning-grammar-v1.png')
+                            : require('../../../../assets/app/ui/royal-af/mission-trophy-v1.png')}
+                        resizeMode="contain"
+                        style={styles.resultIcon}
+                    />
 
                     <Text
                         style={
@@ -1396,10 +1391,10 @@ export default function WorkConversationScreen() {
                                 ? 0
                                 : activeScenario.rewardCoins
                         }{' '}
-                        🪙
+                        <Image source={require('../../../../assets/app/ui/royal-af/hud-coin-v1.png')} style={{width:20,height:20}} resizeMode="contain"/>
                     </Text>
 
-                    <Pressable
+                    <RoyalButton
                         style={
                             styles.finishButton
                         }
@@ -1416,8 +1411,9 @@ export default function WorkConversationScreen() {
                         >
                             ミッションへ戻る
                         </Text>
-                    </Pressable>
-                </View>
+                    </RoyalButton>
+                </RoyalPaperPanel>
+                </ScrollView>
             </SafeAreaView>
         );
     }
@@ -2179,6 +2175,8 @@ export default function WorkConversationScreen() {
                     'incorrect' &&
                     !gaveUpCurrentTurn && (
                         <Pressable
+                            accessibilityRole="button"
+                            accessibilityLabel="答えを見る"
                             style={
                                 styles.giveUpButton
                             }
@@ -2186,6 +2184,7 @@ export default function WorkConversationScreen() {
                                 revealAnswer
                             }
                         >
+                            <Image source={require('../../../../assets/app/ui/royal-af/hint-red-lantern-v2.png')} resizeMode="contain" style={{width:38,height:48}}/>
                             <Text
                                 style={
                                     styles.giveUpText
@@ -2996,26 +2995,7 @@ const styles =
                 '900',
         },
 
-        checkButton: {
-            minWidth: 76,
-
-            height: 42,
-
-            borderRadius:
-                21,
-
-            backgroundColor:
-                '#6558f5',
-
-            alignItems:
-                'center',
-
-            justifyContent:
-                'center',
-
-            paddingHorizontal:
-                12,
-        },
+        checkButton: {minWidth:96,minHeight:64},
 
         checkButtonText: {
             color:
@@ -3043,7 +3023,9 @@ const styles =
             alignSelf:
                 'center',
 
-            marginTop: -2,
+            marginTop: 8,
+
+            alignItems: 'center',
 
             marginBottom: 8,
 
@@ -3056,7 +3038,7 @@ const styles =
 
         giveUpText: {
             color:
-                '#98a2b3',
+                ROYAL.paleGold,
 
             fontSize: 16,
 
@@ -3079,24 +3061,9 @@ const styles =
             padding: 22,
         },
 
-        resultCard: {
-            width: '100%',
+        resultCard: {width:'100%',maxWidth:680,paddingHorizontal:30,paddingVertical:24,alignItems:'center'},
 
-            borderRadius:
-                26,
-
-            backgroundColor:
-                '#202a40',
-
-            padding: 25,
-
-            alignItems:
-                'center',
-        },
-
-        resultIcon: {
-            fontSize: 52,
-        },
+        resultIcon: {width:64,height:64},
 
         resultTitle: {
             color:
@@ -3227,26 +3194,7 @@ const styles =
             marginTop: 10,
         },
 
-        finishButton: {
-            height: 48,
-
-            alignSelf:
-                'stretch',
-
-            borderRadius:
-                24,
-
-            backgroundColor:
-                '#6558f5',
-
-            alignItems:
-                'center',
-
-            justifyContent:
-                'center',
-
-            marginTop: 20,
-        },
+        finishButton: {minHeight:64,alignSelf:'stretch',marginTop:20},
 
         finishButtonText: {
             color:
