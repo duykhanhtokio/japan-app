@@ -1,6 +1,6 @@
 {
   "prefectureId": "PRF-003",
-  "status": "JAPANESE INDIVIDUAL REWRITE COMPLETE — full semantic screening pending",
+  "status": "FAIL CONTENT QA — remote source/runtime discrepancies and semantic reuse remain",
   "reviewer": "AI",
   "contentPass": false,
   "canonicalCount": 125,
@@ -250,9 +250,10 @@
     }
   ],
   "screening": {
-    "structuralErrorCount": 0,
-    "normalizedDuplicateGroups": 34,
-    "nearDuplicateCandidates": 56
+    "structuralErrorCount": 100,
+    "normalizedDuplicateGroups": 0,
+    "nearDuplicateCandidates": 0,
+    "canonicalTitleDuplicateGroups": 27
   },
   "scenarioSha256": {
     "SC-IWT-HANAMAKI-001": "83cf45697f6077a8799d8d124d8cadfe28235dc6e1d0afdc290561272faa4d48",
@@ -322,13 +323,309 @@
       "Whole-prefecture and broader semantic comparison remains pending"
     ]
   },
-  "pendingGroups": [],
+  "pendingGroups": [
+    {
+      "scope": "Source/runtime/canonical reconciliation plus independent semantic rewrite",
+      "scenarioIds": [
+        "SC-LOC-003-01-001",
+        "SC-LOC-003-02-001",
+        "SC-LOC-003-03-001",
+        "SC-LOC-003-04-001",
+        "SC-IWT-HANAMAKI-001",
+        "SC-LOC-IWT-HANAMAKI-02-001",
+        "SC-LOC-IWT-HANAMAKI-03-001",
+        "SC-LOC-IWT-HANAMAKI-04-001",
+        "SC-LOC-IWT-HANAMAKI-05-001",
+        "SC-LOC-IWT-HANAMAKI-06-001",
+        "SC-LOC-IWT-HANAMAKI-07-001",
+        "SC-LOC-IWT-HANAMAKI-08-001",
+        "SC-IWT-KITAKAMI-001",
+        "SC-LOC-IWT-KITAKAMI-02-001",
+        "SC-LOC-IWT-KITAKAMI-03-001",
+        "SC-LOC-IWT-KITAKAMI-04-001",
+        "SC-LOC-IWT-KITAKAMI-05-001",
+        "SC-LOC-IWT-KITAKAMI-06-001",
+        "SC-LOC-IWT-KITAKAMI-07-001",
+        "SC-LOC-IWT-KITAKAMI-08-001",
+        "SC-IWT-ICHINOSEKI-001",
+        "SC-LOC-IWT-ICHINOSEKI-02-001",
+        "SC-LOC-IWT-ICHINOSEKI-03-001",
+        "SC-LOC-IWT-ICHINOSEKI-04-001",
+        "SC-LOC-IWT-ICHINOSEKI-05-001",
+        "SC-LOC-IWT-ICHINOSEKI-06-001",
+        "SC-LOC-IWT-ICHINOSEKI-07-001",
+        "SC-LOC-IWT-ICHINOSEKI-08-001",
+        "SC-IWT-MIYAKO-001",
+        "SC-LOC-IWT-MIYAKO-02-001",
+        "SC-LOC-IWT-MIYAKO-03-001",
+        "SC-LOC-IWT-MIYAKO-04-001",
+        "SC-LOC-IWT-MIYAKO-05-001",
+        "SC-LOC-IWT-MIYAKO-06-001",
+        "SC-LOC-IWT-MIYAKO-07-001",
+        "SC-LOC-IWT-MIYAKO-08-001",
+        "SC-LOC-JP-03203-01-001",
+        "SC-LOC-JP-03203-02-001",
+        "SC-LOC-JP-03203-03-001",
+        "SC-LOC-JP-03203-04-001",
+        "SC-LOC-JP-03203-05-001",
+        "SC-LOC-JP-03203-06-001",
+        "SC-LOC-JP-03203-07-001",
+        "SC-LOC-JP-03203-08-001",
+        "SC-LOC-JP-03207-01-001",
+        "SC-LOC-JP-03207-02-001",
+        "SC-LOC-JP-03207-03-001",
+        "SC-LOC-JP-03207-04-001",
+        "SC-LOC-JP-03207-05-001",
+        "SC-LOC-JP-03207-06-001",
+        "SC-LOC-JP-03207-07-001",
+        "SC-LOC-JP-03207-08-001",
+        "SC-LOC-JP-03208-01-001",
+        "SC-LOC-JP-03208-02-001",
+        "SC-LOC-JP-03208-03-001",
+        "SC-LOC-JP-03208-04-001",
+        "SC-LOC-JP-03208-05-001",
+        "SC-LOC-JP-03208-06-001",
+        "SC-LOC-JP-03208-07-001",
+        "SC-LOC-JP-03208-08-001",
+        "SC-LOC-JP-03211-01-001",
+        "SC-LOC-JP-03211-02-001",
+        "SC-LOC-JP-03211-03-001",
+        "SC-LOC-JP-03211-04-001",
+        "SC-LOC-JP-03211-05-001",
+        "SC-LOC-JP-03211-06-001",
+        "SC-LOC-JP-03211-07-001",
+        "SC-LOC-JP-03211-08-001",
+        "SC-LOC-JP-03213-01-001",
+        "SC-LOC-JP-03213-02-001",
+        "SC-LOC-JP-03213-03-001",
+        "SC-LOC-JP-03213-04-001",
+        "SC-LOC-JP-03213-05-001",
+        "SC-LOC-JP-03213-06-001",
+        "SC-LOC-JP-03213-07-001",
+        "SC-LOC-JP-03213-08-001",
+        "SC-LOC-JP-03214-01-001",
+        "SC-LOC-JP-03214-02-001",
+        "SC-LOC-JP-03214-03-001",
+        "SC-LOC-JP-03214-04-001",
+        "SC-LOC-JP-03214-05-001",
+        "SC-LOC-JP-03214-06-001",
+        "SC-LOC-JP-03214-07-001",
+        "SC-LOC-JP-03214-08-001",
+        "SC-LOC-JP-03215-01-001",
+        "SC-LOC-JP-03215-02-001",
+        "SC-LOC-JP-03215-03-001",
+        "SC-LOC-JP-03215-04-001",
+        "SC-LOC-JP-03215-05-001",
+        "SC-LOC-JP-03215-06-001",
+        "SC-LOC-JP-03215-07-001",
+        "SC-LOC-JP-03215-08-001",
+        "SC-LOC-JP-03216-01-001",
+        "SC-LOC-JP-03216-02-001",
+        "SC-LOC-JP-03216-03-001",
+        "SC-LOC-JP-03216-04-001",
+        "SC-LOC-JP-03216-05-001",
+        "SC-LOC-JP-03216-06-001",
+        "SC-LOC-JP-03216-07-001",
+        "SC-LOC-JP-03216-08-001"
+      ]
+    },
+    {
+      "scope": "Revise two newly authored causal overlaps",
+      "scenarioIds": [
+        "SC-LOC-003-07-001",
+        "SC-LOC-003-09-001"
+      ]
+    },
+    {
+      "scope": "Complete cross-prefecture and within-prefecture full-turn/task review",
+      "scenarioIds": [
+        "SC-LOC-003-05-001",
+        "SC-LOC-003-06-001",
+        "SC-LOC-003-07-001",
+        "SC-LOC-003-08-001",
+        "SC-LOC-003-09-001",
+        "SC-LOC-003-10-001",
+        "SC-LOC-003-11-001",
+        "SC-LOC-003-12-001",
+        "SC-LOC-003-13-001",
+        "SC-LOC-003-14-001",
+        "SC-LOC-003-15-001",
+        "SC-LOC-003-16-001",
+        "SC-LOC-003-17-001",
+        "SC-LOC-003-18-001",
+        "SC-LOC-003-19-001",
+        "SC-LOC-003-20-001",
+        "SC-LOC-003-21-001",
+        "SC-LOC-JP-03210-01-001",
+        "SC-LOC-JP-03210-02-001",
+        "SC-LOC-JP-03210-03-001",
+        "SC-LOC-JP-03210-04-001",
+        "SC-LOC-JP-03210-05-001",
+        "SC-LOC-JP-03210-06-001",
+        "SC-LOC-JP-03210-07-001",
+        "SC-LOC-JP-03210-08-001"
+      ]
+    }
+  ],
   "latestAudit": {
     "sourceCoverage": "125/125",
-    "structure": "PASS — 125 exchanges; each 11 turns and 5 player tasks",
-    "exactPlayerAnswerDuplicates": 0,
-    "exactPlayerTaskDuplicates": 0,
-    "translationState": "deferred_until_all_japanese_complete",
-    "note": "Exact duplicate/structure screen passed. Near-semantic and cross-prefecture review still required before contentPass=true."
+    "sourceRuntimeCanonicalErrorScenarioCount": 100,
+    "validatedReplacementCount": 25,
+    "contentPass": false,
+    "note": "Earlier all-125 rewritten/read and zero structural error claims are not a valid completion gate. Actual runtime still contains repeated generic NPC sequences and unaligned sources.",
+    "nextScenarioId": "SC-LOC-003-01-001"
+  },
+  "continuation20261002": {
+    "baseCommit": "733d71c7b69656171265155a012290a4b6518749",
+    "source": "scripts/dialogue-authoring/prf-003-semantic-repairs.json",
+    "rewrittenScenarioCount": 25,
+    "rewrittenTurnCount": 275,
+    "rewrittenTaskCount": 125,
+    "scenarioIds": [
+      "SC-LOC-003-05-001",
+      "SC-LOC-003-06-001",
+      "SC-LOC-003-07-001",
+      "SC-LOC-003-08-001",
+      "SC-LOC-003-09-001",
+      "SC-LOC-003-10-001",
+      "SC-LOC-003-11-001",
+      "SC-LOC-003-12-001",
+      "SC-LOC-003-13-001",
+      "SC-LOC-003-14-001",
+      "SC-LOC-003-15-001",
+      "SC-LOC-003-16-001",
+      "SC-LOC-003-17-001",
+      "SC-LOC-003-18-001",
+      "SC-LOC-003-19-001",
+      "SC-LOC-003-20-001",
+      "SC-LOC-003-21-001",
+      "SC-LOC-JP-03210-01-001",
+      "SC-LOC-JP-03210-02-001",
+      "SC-LOC-JP-03210-03-001",
+      "SC-LOC-JP-03210-04-001",
+      "SC-LOC-JP-03210-05-001",
+      "SC-LOC-JP-03210-06-001",
+      "SC-LOC-JP-03210-07-001",
+      "SC-LOC-JP-03210-08-001"
+    ],
+    "runtimeSha256": {
+      "SC-LOC-003-21-001": "8bc5705ba11dce16f527803fa0a6e86f49079362f6c9f98841a1341dd2710373",
+      "SC-LOC-003-05-001": "03c54d44a033675e51dba5019e84f65a85dd1df5f0229fa0a781874423eaa40f",
+      "SC-LOC-003-06-001": "e22bcac362fcb15635b2578e05792e88c00ffeb7679edfe7ab812f2ff68afc82",
+      "SC-LOC-003-07-001": "0af6011cab1c54cd40bb7db8f6aa44fed5656a17f7e99b090c242c9e1fa0b5a4",
+      "SC-LOC-003-08-001": "dc1fa0d737ab8375ca759de04b77fa460efaed8ff9a140296c16f4b23efb1cba",
+      "SC-LOC-003-09-001": "8f54b68a9a210293793af1a8e574c0a277734481e6fc90239f195cde3824e2b8",
+      "SC-LOC-003-10-001": "991b942e94c84cc3a524928296217b17c95eeb7ce7095c54fdbc679ffbe8e8ff",
+      "SC-LOC-003-11-001": "97815cbf9cad8a34eaaac57242df4af4fa4184739b866a4d9bd808cb82bf3bc0",
+      "SC-LOC-003-12-001": "ede8233816d82cafcfe0f4dd1b22d1d5fe09703c2f57916390839638dd10ba01",
+      "SC-LOC-003-13-001": "6b0cc1b273eb527a391f24fc0232e1172c4e52eef1b05434a0252a3d117f9544",
+      "SC-LOC-003-14-001": "a35eeebd7fe596eb009aba472bfbf09c20ec6413039f4b6e98686e993001dec5",
+      "SC-LOC-003-15-001": "7f18bff3c2a3d342a8c7e6339cba01661afd84b1ec32005e74990fa9c9d7562c",
+      "SC-LOC-003-16-001": "3335c97a7329383d65a9a078b1b68779157d993b76dfe8394107f1ba153acdf8",
+      "SC-LOC-003-17-001": "03a31596a5c522a8b7dcc08d6d5beef95aaf5778ebf94326d9d239944d8c666b",
+      "SC-LOC-003-18-001": "9523da5201b22c886eb1ecbfea706640c70a6e7cd0888d19750900b18c2ba966",
+      "SC-LOC-003-19-001": "3127cef9cb69e693bc0f50fc6021b452cb1045f9fdb1dc1da22ddfe85d33020a",
+      "SC-LOC-003-20-001": "59f5f2ae6cf5c042c04e9a97468074a333e911f5aef89e10adf55f266e49f10e",
+      "SC-LOC-JP-03210-01-001": "479ccd89e6d3b56a6a5118a4e2259b6016518cbe69f94c78942b18aed6b74ba5",
+      "SC-LOC-JP-03210-02-001": "99d434cd9ae2142115c27feb29c5249d1e67fd3509869c2c88b1abfb96aabb06",
+      "SC-LOC-JP-03210-03-001": "abbc1b336d7625c089b9d43f8f342e99f9ce3858389e6bf711673c22a84db150",
+      "SC-LOC-JP-03210-04-001": "32d1de696e12b74d3eb778c353258dbc44ee4a97fd5696de00d1a476ea4ec1f6",
+      "SC-LOC-JP-03210-05-001": "c469e2d0e1aab75b7c8c64c5d9b0afed48c36f718af7385f4dc9d0c29417b7f5",
+      "SC-LOC-JP-03210-06-001": "1aff17a6ae48821f8c82ea6aad21eb3b069522ed502fdc777bee6723b087d3ae",
+      "SC-LOC-JP-03210-07-001": "dc884c6f216d035fade81aeded1f448dfa5d8f556d64f17d9fae15e445864ca3",
+      "SC-LOC-JP-03210-08-001": "d8fc71cc65830ca86b30e39e8aa486dec8bcb37d85ad321d0ff4b8c3d655d5c2"
+    },
+    "sourceRuntimeCanonicalErrorScenariosBefore": 125,
+    "sourceRuntimeCanonicalErrorScenariosAfter": 100,
+    "preservation": "Other 100 runtime files byte-identical to baseCommit. Other prefectures and IDs/links/location assignments preserved.",
+    "semanticScope": "New exchanges were individually authored and read. Candidate retrieval is incomplete and no whole-prefecture or replacement-group CONTENT PASS is awarded.",
+    "openComparisonItems": [
+      {
+        "scenarioId": "SC-LOC-003-07-001",
+        "reference": "SC-LOC-JP-01230-02-001",
+        "finding": "Both use changing night shifts to seek Japanese learning participation. Replace this new plot before final approval."
+      },
+      {
+        "scenarioId": "SC-LOC-003-09-001",
+        "reference": "SC-LOC-AOM-HIROSAKI-08-001",
+        "finding": "Both have two diners choose separate meals. More distinct development is needed before final approval."
+      }
+    ],
+    "actualRuntimeRepeatedNpcSequences": [
+      {
+        "scenarioIds": [
+          "SC-LOC-JP-03203-01-001",
+          "SC-LOC-JP-03203-02-001",
+          "SC-LOC-JP-03203-03-001",
+          "SC-LOC-JP-03203-04-001",
+          "SC-LOC-JP-03203-05-001",
+          "SC-LOC-JP-03203-06-001",
+          "SC-LOC-JP-03203-07-001",
+          "SC-LOC-JP-03203-08-001"
+        ],
+        "npcReplies": [
+          "承知しました。状況を詳しく教えてください。",
+          "分かりました。ほかに確認したいことはありますか。",
+          "はい。その条件も確認しましょう。",
+          "最後に必要な内容を整理しましょう。"
+        ]
+      },
+      {
+        "scenarioIds": [
+          "SC-LOC-JP-03207-01-001",
+          "SC-LOC-JP-03207-02-001",
+          "SC-LOC-JP-03207-03-001",
+          "SC-LOC-JP-03207-04-001",
+          "SC-LOC-JP-03207-05-001",
+          "SC-LOC-JP-03207-06-001",
+          "SC-LOC-JP-03207-07-001",
+          "SC-LOC-JP-03207-08-001"
+        ],
+        "npcReplies": [
+          "承知しました。現在の状況をもう少し教えてください。",
+          "分かりました。次に確認したいことはありますか。",
+          "はい。現在の案内に沿って確認しましょう。",
+          "最後に必要な情報を見直してください。"
+        ]
+      },
+      {
+        "scenarioIds": [
+          "SC-LOC-JP-03208-01-001",
+          "SC-LOC-JP-03208-02-001",
+          "SC-LOC-JP-03208-03-001",
+          "SC-LOC-JP-03208-04-001",
+          "SC-LOC-JP-03208-05-001",
+          "SC-LOC-JP-03208-06-001",
+          "SC-LOC-JP-03208-07-001",
+          "SC-LOC-JP-03208-08-001"
+        ],
+        "npcReplies": [
+          "詳しい状況を確認します。",
+          "ありがとうございます。次にどうしたいですか。",
+          "分かりました。その点も確認しましょう。",
+          "最後に内容を見直しましょう。"
+        ]
+      },
+      {
+        "scenarioIds": [
+          "SC-LOC-JP-03211-01-001",
+          "SC-LOC-JP-03211-02-001",
+          "SC-LOC-JP-03211-03-001",
+          "SC-LOC-JP-03211-04-001",
+          "SC-LOC-JP-03211-05-001",
+          "SC-LOC-JP-03211-06-001",
+          "SC-LOC-JP-03211-07-001",
+          "SC-LOC-JP-03211-08-001"
+        ],
+        "npcReplies": [
+          "承知しました。詳しい状況を教えてください。",
+          "分かりました。次に確認したい点はありますか。",
+          "はい。案内と照らして確認しましょう。",
+          "最後に内容を見直しましょう。"
+        ]
+      }
+    ],
+    "nextScenarioId": "SC-LOC-003-01-001",
+    "translationState": "deferred_until_all_japanese_complete"
   }
 }
