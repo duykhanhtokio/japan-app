@@ -323,7 +323,7 @@ export default function FarmMapWorld({
             <Image
                 source={isTabletLandscape ? TABLET_ART : isLandscape ? LANDSCAPE_ART : PORTRAIT_ART}
                 resizeMode="cover"
-                style={StyleSheet.absoluteFill}
+                style={[StyleSheet.absoluteFill,{width:'100%',height:'100%'}]}
             />
             {viewport.width >
                 0 &&

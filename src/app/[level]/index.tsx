@@ -1,8 +1,9 @@
 import JlptStudyBackground from '@/components/jlpt/JlptStudyBackground';
 import { router, useLocalSearchParams } from 'expo-router';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { RoyalBackButton, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
+import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
+import { RoyalBackButton, ROYAL_LAYOUT, ROYAL, ROYAL_FONT } from '@/components/ui/RoyalSurface';
 
 const levelInfo = {
     N5: {
@@ -49,18 +50,19 @@ export default function LevelScreen() {
                     {info.description}
                 </Text>
 
-                <View style={styles.section}>
+                <ScrollView contentContainerStyle={styles.section} showsVerticalScrollIndicator={false}>
                     {isN5 && <Pressable
                         style={styles.card}
                         onPress={() => router.push(`/${levelName}/characters`)}
                     >
-                        <Text style={styles.cardIcon}>🔤</Text>
-                        <View>
+                        <RoyalPaperPanel style={styles.paper}><View style={styles.cardRow}><Image source={require('../../../assets/app/ui/royal-af/learning-characters-v1.png')} resizeMode="contain" style={styles.cardIcon}/>
+                        <View style={styles.cardCopy}>
                             <Text style={styles.cardTitle}>文字</Text>
                             <Text style={styles.cardText}>
                                 ひらがな・カタカナ・漢字
                             </Text>
                         </View>
+                        </View></RoyalPaperPanel>
                     </Pressable>}
 
                     <Pressable
@@ -69,40 +71,43 @@ export default function LevelScreen() {
                             router.push(`/${levelName}/vocabulary`)
                         }
                     >
-                        <Text style={styles.cardIcon}>📝</Text>
+                        <RoyalPaperPanel style={styles.paper}><View style={styles.cardRow}><Image source={require('../../../assets/app/ui/royal-af/learning-vocabulary-v1.png')} resizeMode="contain" style={styles.cardIcon}/>
 
-                        <View>
+                        <View style={styles.cardCopy}>
                             <Text style={styles.cardTitle}>単語</Text>
                             <Text style={styles.cardText}>語彙を学ぶ</Text>
                         </View>
+                        </View></RoyalPaperPanel>
                     </Pressable>
 
                     <Pressable
                         style={styles.card}
                         onPress={() => router.push(`/${levelName}/grammar`)}
                     >
-                        <Text style={styles.cardIcon}>📖</Text>
-                        <View>
+                        <RoyalPaperPanel style={styles.paper}><View style={styles.cardRow}><Image source={require('../../../assets/app/ui/royal-af/learning-grammar-v1.png')} resizeMode="contain" style={styles.cardIcon}/>
+                        <View style={styles.cardCopy}>
                             <Text style={styles.cardTitle}>文法</Text>
                             <Text style={styles.cardText}>
                                 文法を学ぶ
                             </Text>
                         </View>
+                        </View></RoyalPaperPanel>
                     </Pressable>
 
                     <Pressable
                         style={styles.card}
                         onPress={() => router.push(`/${levelName}/test`)}
                     >
-                        <Text style={styles.cardIcon}>🎯</Text>
-                        <View>
+                        <RoyalPaperPanel style={styles.paper}><View style={styles.cardRow}><Image source={require('../../../assets/app/ui/royal-af/learning-exam-v1.png')} resizeMode="contain" style={styles.cardIcon}/>
+                        <View style={styles.cardCopy}>
                             <Text style={styles.cardTitle}>JLPT模擬試験</Text>
                             <Text style={styles.cardText}>
                                 本番形式で練習する
                             </Text>
                         </View>
+                        </View></RoyalPaperPanel>
                     </Pressable>
-                </View>
+                </ScrollView>
             </View>
         </SafeAreaView></JlptStudyBackground>
     );
@@ -147,30 +152,26 @@ const styles = StyleSheet.create({
 
     section: {
         gap: 14,
+        paddingBottom:24,
     },
 
-    card: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        padding: 18,
-        backgroundColor: 'transparent',
-        borderWidth: 1,
-        borderColor: '#b8b1a5',
-        borderRadius: 16,
-    },
-
-    cardIcon: {
-        fontSize: 30,
-        width: 52,
-    },
-
+    card: {width:'100%'},
+    paper: {paddingHorizontal:24,paddingVertical:24},
+    cardRow: {flexDirection:'row',alignItems:'center',gap:14},
+    cardCopy: {flex:1,minWidth:0},
+    cardIcon: {width:58,height:58},
     cardTitle: {
         fontSize: 18,
+        fontFamily:ROYAL_FONT.heading,
+        color:ROYAL.lacquer,
         fontWeight: '700',
     },
 
     cardText: {
         fontSize: 16,
+        lineHeight:24,
+        fontFamily:ROYAL_FONT.body,
+        color:ROYAL.lacquerLight,
         marginTop: 4,
     },
 });

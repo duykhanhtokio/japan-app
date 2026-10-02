@@ -85,7 +85,7 @@ export default function OrchardWorld({
             <Image
                 source={isLandscape ? LANDSCAPE_ART : PORTRAIT_ART}
                 resizeMode="cover"
-                style={StyleSheet.absoluteFill}
+                style={[StyleSheet.absoluteFill,{width:'100%',height:'100%'}]}
             />
             {scale > 0 && <View style={StyleSheet.absoluteFill}>
                 {/*

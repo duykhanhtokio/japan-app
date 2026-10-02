@@ -1,183 +1,49 @@
-import {
-    ImageBackground,
-    Pressable,
-    StyleSheet,
-    Text,
-    View,
-} from 'react-native';
-import { useRoyalPositioning } from '@/components/ui/RoyalPositioning';
-
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { router } from 'expo-router';
+import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
+import { RoyalBackButton, ROYAL, ROYAL_FONT } from '@/components/ui/RoyalSurface';
 
-const HUD_TOP = require('../../../../assets/game/farm/hud/hud_top_cluster_v4.png');
+type Props={level:number;xpCurrent:number;xpMax:number;gold:number;diamonds:number;keys:number;onGoldPlus:()=>void;onDiamondPlus:()=>void};
+const AVATAR=require('../../../../assets/app/ui/royal-af/hud-player-medallion-v1.png');
+const COIN=require('../../../../assets/app/ui/royal-af/hud-coin-v1.png');
+const KEY=require('../../../../assets/app/ui/royal-af/mission-key-v1.png');
+const PLUS=require('../../../../assets/game/farm/hud/hud_plus.png');
 
-const HUD_ASPECT_RATIO = 2071 / 299;
-
-type Props = {
-    level: number;
-    xpCurrent: number;
-    xpMax: number;
-    gold: number;
-    diamonds: number;
-    keys: number;
-    onGoldPlus: () => void;
-    onDiamondPlus: () => void;
-};
-
-export default function FarmHud({
-    level,
-    xpCurrent,
-    xpMax,
-    gold,
-    diamonds,
-    keys,
-    onGoldPlus,
-    onDiamondPlus,
-}: Props) {
-    const { width } = useRoyalPositioning();
-    const hudWidth = Math.max(0, width - 16);
-    const hudHeight = hudWidth / HUD_ASPECT_RATIO;
-    const fontSize = Math.max(9, Math.min(14, hudWidth * 0.029));
-
-    return (
-        <View style={[styles.container, { width: hudWidth, height: hudHeight }]}>
-            <ImageBackground
-                source={HUD_TOP}
-                resizeMode="contain"
-                style={styles.artwork}
-            >
-                <Pressable
-                    accessibilityRole="button"
-                    accessibilityLabel="ホームへ戻る"
-                    onPress={() => router.replace('/home')}
-                    style={({ pressed }) => [styles.homeHitArea, pressed && styles.pressed]}
-                />
-
-                <Text
-                    numberOfLines={1}
-                    style={[styles.level, { fontSize }]}
-                >
-                    Lv. {level}
-                </Text>
-
-                <Text
-                    numberOfLines={1}
-                    adjustsFontSizeToFit
-                    minimumFontScale={0.65}
-                    style={[styles.xpText, { fontSize: fontSize * 0.67 }]}
-                >
-                    {xpCurrent}/{xpMax}
-                </Text>
-
-                <HudValue value={gold} left="51.3%" width="11.2%" fontSize={fontSize} />
-                <HudValue value={diamonds} left="71.5%" width="10.8%" fontSize={fontSize} />
-                <HudValue value={keys} left="89.5%" width="8.2%" fontSize={fontSize} />
-
-                <Pressable
-                    accessibilityRole="button"
-                    accessibilityLabel="ゴールドを追加"
-                    hitSlop={4}
-                    onPress={onGoldPlus}
-                    style={({ pressed }) => [styles.goldPlusHitArea, pressed && styles.pressed]}
-                />
-
-                <Pressable
-                    accessibilityRole="button"
-                    accessibilityLabel="ダイヤを追加"
-                    hitSlop={4}
-                    onPress={onDiamondPlus}
-                    style={({ pressed }) => [styles.diamondPlusHitArea, pressed && styles.pressed]}
-                />
-            </ImageBackground>
-        </View>
-    );
+export default function FarmHud({level,xpCurrent,xpMax,gold,diamonds,keys,onGoldPlus,onDiamondPlus}:Props){
+ return <View style={s.container}>
+  <View style={s.top}>
+   <RoyalBackButton onPress={()=>router.replace('/home')}/>
+   <RoyalPaperPanel tone="hud" style={s.player}>
+    <Image source={AVATAR} resizeMode="contain" style={s.avatar}/>
+    <View style={s.playerCopy}><Text numberOfLines={1} adjustsFontSizeToFit style={s.level}>Lv. {level}</Text><Text numberOfLines={1} adjustsFontSizeToFit style={s.xp}>EXP {xpCurrent}/{xpMax}</Text></View>
+   </RoyalPaperPanel>
+  </View>
+  <View style={s.resources}>
+   <Resource label="ゴールド" value={gold} icon={COIN} onPress={onGoldPlus}/>
+   <Resource label="ダイヤ" value={diamonds} onPress={onDiamondPlus}/>
+   <Resource label="鍵" value={keys} icon={KEY}/>
+  </View>
+ </View>;
 }
-
-function HudValue({
-    value,
-    left,
-    width,
-    fontSize,
-}: {
-    value: number;
-    left: `${number}%`;
-    width: `${number}%`;
-    fontSize: number;
-}) {
-    return (
-        <Text
-            numberOfLines={1}
-            adjustsFontSizeToFit
-            minimumFontScale={0.5}
-            style={[styles.value, { left, width, fontSize }]}
-        >
-            {value.toLocaleString()}
-        </Text>
-    );
+function Resource({label,value,icon,onPress}:{label:string;value:number;icon?:number;onPress?:()=>void}){
+ const content=<RoyalPaperPanel tone="hud" style={s.resource}>
+  <View style={s.labelRow}>{icon&&<Image source={icon} resizeMode="contain" style={s.icon}/>}<Text numberOfLines={1} adjustsFontSizeToFit style={s.label}>{label}</Text></View>
+  <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.65} style={s.value}>{value.toLocaleString()}</Text>
+  {onPress&&<Image source={PLUS} resizeMode="contain" style={s.plus}/>}
+ </RoyalPaperPanel>;
+ return onPress?<Pressable accessibilityRole="button" accessibilityLabel={`${label}を追加`} onPress={onPress} style={({pressed})=>[s.cell,pressed&&{opacity:.8}]}>{content}</Pressable>:<View style={s.cell}>{content}</View>;
 }
-
-const styles = StyleSheet.create({
-    container: {
-        alignSelf: 'center',
-    },
-    artwork: {
-        width: '100%',
-        height: '100%',
-    },
-    pressed: {
-        opacity: 0.62,
-        transform: [{ scale: 0.94 }],
-    },
-    homeHitArea: {
-        position: 'absolute',
-        left: '0.6%',
-        top: '4%',
-        width: '12.5%',
-        height: '90%',
-        borderRadius: 999,
-    },
-    level: {
-        position: 'absolute',
-        left: '26.4%',
-        top: '17%',
-        width: '15%',
-        color: '#4A2A12',
-        fontWeight: '900',
-    },
-    xpText: {
-        position: 'absolute',
-        left: '28.1%',
-        top: '59%',
-        width: '15.2%',
-        color: '#FFFFFF',
-        fontWeight: '900',
-        textAlign: 'center',
-        textShadowColor: '#24430E',
-        textShadowOffset: { width: 0, height: 1 },
-        textShadowRadius: 1,
-    },
-    value: {
-        position: 'absolute',
-        top: '39%',
-        color: '#4A2A12',
-        fontWeight: '900',
-        textAlign: 'center',
-        fontVariant: ['tabular-nums'],
-    },
-    goldPlusHitArea: {
-        position: 'absolute',
-        left: '63.0%',
-        top: '58%',
-        width: '5.0%',
-        height: '40%',
-        borderRadius: 999,
-    },
-    diamondPlusHitArea: {
-        position: 'absolute',
-        left: '82.8%',
-        top: '58%',
-        width: '5.0%',
-        height: '40%',
-        borderRadius: 999,
-    },
+const s=StyleSheet.create({
+ container:{width:'100%',maxWidth:780,alignSelf:'center',gap:6},
+ top:{flexDirection:'row',alignItems:'center',gap:6},
+ player:{flex:1,minHeight:72,paddingVertical:10,paddingHorizontal:22,flexDirection:'row',alignItems:'center',gap:12},
+ avatar:{width:50,height:50},playerCopy:{flex:1,minWidth:0},
+ level:{fontFamily:ROYAL_FONT.heading,color:ROYAL.paleGold,fontSize:20,lineHeight:26},
+ xp:{fontFamily:ROYAL_FONT.body,color:'#fff',fontSize:14,lineHeight:20},
+ resources:{flexDirection:'row',gap:6},cell:{flex:1,minWidth:0},
+ resource:{minHeight:72,paddingVertical:16,paddingHorizontal:16,alignItems:'center',justifyContent:'center'},
+ labelRow:{flexDirection:'row',alignItems:'center',gap:4},icon:{width:18,height:18},
+ label:{fontFamily:ROYAL_FONT.body,color:ROYAL.paleGold,fontSize:12,lineHeight:17},
+ value:{fontFamily:ROYAL_FONT.heading,color:'#fff',fontSize:17,lineHeight:23,fontVariant:['tabular-nums'],width:'100%',textAlign:'center'},
+ plus:{position:'absolute',right:1,bottom:1,width:22,height:22},
 });

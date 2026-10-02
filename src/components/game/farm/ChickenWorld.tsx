@@ -361,7 +361,7 @@ export default function ChickenWorld({
 
     return (
         <View style={styles.world} onLayout={handleLayout}>
-            <Image source={isLandscape ? LANDSCAPE_BACKGROUND : BACKGROUND} resizeMode="cover" style={StyleSheet.absoluteFill} />
+            <Image source={isLandscape ? LANDSCAPE_BACKGROUND : BACKGROUND} resizeMode="cover" style={[StyleSheet.absoluteFill,{width:'100%',height:'100%'}]} />
             {viewport.width > 0 && (
                 <>
                     {chickenSlots.slice(0, centers.length).map(

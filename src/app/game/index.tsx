@@ -41,7 +41,7 @@ import {
 } from '@/components/game/farm/FarmAreaBar';
 
 import FarmHud from '@/components/game/farm/FarmHud';
-import { RoyalBackButton } from '@/components/ui/RoyalSurface';
+import { RoyalBackButton, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
 
 
 import FarmWorld from '@/components/game/farm/FarmWorld';
@@ -114,6 +114,8 @@ export default function FarmGameScreen() {
     const transitionToken = useRef(0);
     const insets =
         useSafeAreaInsets();
+
+    const [farmHudHeight,setFarmHudHeight]=useState(insets.top+152);
 
     const [
         farmState,
@@ -1517,12 +1519,13 @@ export default function FarmGameScreen() {
 
                 <View
                     pointerEvents="box-none"
+                    onLayout={event=>setFarmHudHeight(event.nativeEvent.layout.height)}
                     style={[
                         styles.hudSafeLayer,
                         {
                             paddingTop:
                                 insets.top +
-                                16,
+                                ROYAL_LAYOUT.backSafeTop,
                         },
                     ]}
                 >
@@ -1568,7 +1571,7 @@ export default function FarmGameScreen() {
                     <>
                         <RoyalBackButton
                             onPress={handleReturnToFarmMap}
-                            style={[styles.mapReturnButton, { top: insets.top + 92 }]}
+                            style={[styles.mapReturnButton, { top: farmHudHeight + 8 }]}
                         />
 
                         {/*

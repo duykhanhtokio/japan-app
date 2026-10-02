@@ -36,7 +36,7 @@ function checkRect(name, device, vw, vh, g, [x,y,w,h], center=false) {
 for (const scene of scenes) {
   const code = readFileSync(`src/components/game/farm/${scene.component}`, 'utf8');
   assert.match(code, /Math\.max\(/, `${scene.name} needs cover geometry`);
-  assert.match(code, /style=\{StyleSheet\.absoluteFill\}/, `${scene.name} needs an image on the first render`);
+  assert.match(code, /style=\{\[StyleSheet\.absoluteFill,\{width:'100%',height:'100%'\}\]\}/, `${scene.name} needs an image on the first render`);
   assert.doesNotMatch(code, /blurRadius\s*=/, `${scene.name} has a blurred fallback`);
   assert.match(code, /LANDSCAPE_/, `${scene.name} needs landscape art and coordinate mapping`);
   for (const variant of [scene.portrait, scene.landscape, scene.tablet].filter(Boolean)) {

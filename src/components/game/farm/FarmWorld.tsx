@@ -154,7 +154,7 @@ export default function FarmWorld({
                     isLandscape ? VEGETABLE_LANDSCAPE : VEGETABLE_BACKGROUND
                 }
                 resizeMode="cover"
-                style={StyleSheet.absoluteFill}
+                style={[StyleSheet.absoluteFill,{width:'100%',height:'100%'}]}
             />
 
             {viewport.width > 0 &&

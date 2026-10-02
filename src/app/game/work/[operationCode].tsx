@@ -28,6 +28,8 @@ import {
 } from 'react';
 
 import {
+    Image,
+    ImageBackground,
     Pressable,
     ScrollView,
     StyleSheet,
@@ -38,7 +40,8 @@ import {
 import {
     SafeAreaView,
 } from 'react-native-safe-area-context';
-import { RoyalBackButton } from '@/components/ui/RoyalSurface';
+import { RoyalBackButton, RoyalButton, RoyalNavyFrame, ROYAL_LAYOUT, ROYAL, ROYAL_FONT } from '@/components/ui/RoyalSurface';
+import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 
 import {
     detectUnexpectedConversationIntent,
@@ -1425,10 +1428,8 @@ export default function WorkConversationScreen() {
      */
 
     return (
-        <SafeAreaView
-            style={
-                styles.container
-            }
+        <ImageBackground source={operationCode?.startsWith('1-')?require('../../../../assets/game/farm/background/vegetable_map_background_v2.png'):require('../../../../assets/app/life/location-backgrounds/construction-site/01-clear-morning.jpg')} resizeMode="cover" style={{flex:1}}><SafeAreaView
+            style={[styles.container,{backgroundColor:'transparent'}]}
             edges={[
                 'top',
                 'bottom',
@@ -1443,11 +1444,7 @@ export default function WorkConversationScreen() {
             >
                 <RoyalBackButton onPress={() => router.back()} />
 
-                <View
-                    style={
-                        styles.headerContent
-                    }
-                >
+                <RoyalPaperPanel tone="hud" style={styles.headerContent}>
                     <Text
                         style={
                             styles.job
@@ -1476,13 +1473,9 @@ export default function WorkConversationScreen() {
                                 }
                             </Text>
                         )}
-                </View>
+                </RoyalPaperPanel>
 
-                <View
-                    style={
-                        styles.expBadge
-                    }
-                >
+                <RoyalPaperPanel tone="hud" style={styles.expBadge}>
                     <Text
                         style={
                             styles.expBadgeLabel
@@ -1500,16 +1493,13 @@ export default function WorkConversationScreen() {
                             potentialXp
                         }
                     </Text>
-                </View>
+                </RoyalPaperPanel>
             </View>
 
+            <ScrollView style={{flex:1}} contentContainerStyle={{flexGrow:1}} showsVerticalScrollIndicator={false}>
             {/* MISSION */}
 
-            <View
-                style={
-                    styles.missionHeader
-                }
-            >
+            <RoyalPaperPanel style={styles.missionHeader}>
                 <Text
                     style={
                         styles.missionLabel
@@ -1571,7 +1561,7 @@ export default function WorkConversationScreen() {
                         }
                     </Text>
                 </View>
-            </View>
+            </RoyalPaperPanel>
 
             {/* CHARACTER */}
 
@@ -1580,20 +1570,7 @@ export default function WorkConversationScreen() {
                     styles.characterArea
                 }
             >
-                <View
-                    style={
-                        styles.characterCircle
-                    }
-                >
-                    <Text
-                        style={
-                            styles.characterEmoji
-                        }
-                    >
-                        👷
-                    </Text>
-                </View>
-
+                <Image source={operationCode?.startsWith('1-')?require('../../../../assets/app/ui/royal-af/work-farm-supervisor-v1.png'):require('../../../../assets/app/life/npcs/construction-site.png')} resizeMode="contain" style={styles.characterSprite}/>
                 <Text
                     style={
                         styles.npcName
@@ -1613,11 +1590,7 @@ export default function WorkConversationScreen() {
                     styles.dialogueArea
                 }
             >
-                <View
-                    style={
-                        styles.dialogueBox
-                    }
-                >
+                <RoyalPaperPanel style={styles.dialogueBox}>
                     <View
                         style={
                             styles.speakerRow
@@ -1848,7 +1821,7 @@ export default function WorkConversationScreen() {
                                                                     styles.hintTitle
                                                                 }
                                                             >
-                                                                💡 ヒント
+                                                                ヒント
                                                             </Text>
 
                                                             {visibleHints.map(
@@ -2048,7 +2021,7 @@ export default function WorkConversationScreen() {
                                 </>
                             )}
                     </ScrollView>
-                </View>
+                </RoyalPaperPanel>
 
                 {/* BRANCH CONTROLS */}
 
@@ -2058,7 +2031,7 @@ export default function WorkConversationScreen() {
                             styles.branchControls
                         }
                     >
-                        <Pressable
+                        <RoyalButton
                             style={
                                 styles.branchResumeButton
                             }
@@ -2089,7 +2062,7 @@ export default function WorkConversationScreen() {
                             >
                                 ミッションに戻る
                             </Text>
-                        </Pressable>
+                        </RoyalButton>
                     </View>
                 )}
 
@@ -2097,7 +2070,7 @@ export default function WorkConversationScreen() {
 
                 {!activeBranch &&
                     !isPlayerTurn && (
-                        <Pressable
+                        <RoyalButton
                             style={
                                 styles.nextButton
                             }
@@ -2112,7 +2085,7 @@ export default function WorkConversationScreen() {
                             >
                                 次へ →
                             </Text>
-                        </Pressable>
+                        </RoyalButton>
                     )}
 
                 {/* PLAYER CONTROLS */}
@@ -2138,12 +2111,13 @@ export default function WorkConversationScreen() {
                                         handleHint
                                     }
                                 >
+                                    <Image source={require('../../../../assets/app/ui/royal-af/hint-gold-grape-v1.png')} resizeMode="contain" style={{width:28,height:32}}/>
                                     <Text
                                         style={
                                             styles.hintButtonText
                                         }
                                     >
-                                        💡 ヒント
+                                        ヒント
                                     </Text>
 
                                     <Text
@@ -2170,22 +2144,14 @@ export default function WorkConversationScreen() {
                                         : handleMic
                                 }
                             >
-                                <Text
-                                    style={
-                                        styles.micIcon
-                                    }
-                                >
-                                    {recognizing
-                                        ? '■'
-                                        : '🎤'}
-                                </Text>
+                                <Image source={require('../../../../assets/app/ui/royal-af/microphone-v2.png')} resizeMode="contain" style={{width:38,height:38}}/>
                             </Pressable>
 
                             {(playerAnswer ||
                                 transcript) &&
                                 answerResult ===
                                 null && (
-                                    <Pressable
+                                    <RoyalButton
                                         style={
                                             styles.checkButton
                                         }
@@ -2200,7 +2166,7 @@ export default function WorkConversationScreen() {
                                         >
                                             確認
                                         </Text>
-                                    </Pressable>
+                                    </RoyalButton>
                                 )}
                         </View>
                     )}
@@ -2240,7 +2206,7 @@ export default function WorkConversationScreen() {
                         answerResult ===
                         'understandable'
                     ) && (
-                        <Pressable
+                        <RoyalButton
                             style={
                                 styles.nextButton
                             }
@@ -2255,7 +2221,7 @@ export default function WorkConversationScreen() {
                             >
                                 次へ →
                             </Text>
-                        </Pressable>
+                        </RoyalButton>
                     )}
 
                 {/* GAVE UP */}
@@ -2263,7 +2229,7 @@ export default function WorkConversationScreen() {
                 {!activeBranch &&
                     isPlayerTurn &&
                     gaveUpCurrentTurn && (
-                        <Pressable
+                        <RoyalButton
                             style={
                                 styles.nextButton
                             }
@@ -2278,22 +2244,18 @@ export default function WorkConversationScreen() {
                             >
                                 次へ →
                             </Text>
-                        </Pressable>
+                        </RoyalButton>
                     )}
 
             </View>
-        </SafeAreaView>
+            </ScrollView>
+        </SafeAreaView></ImageBackground>
     );
 }
 
 const styles =
     StyleSheet.create({
-        container: {
-            flex: 1,
-
-            backgroundColor:
-                '#111827',
-        },
+        container: {flex:1,backgroundColor:ROYAL.lacquer},
         correctSubtext: {
             color:
                 '#14764a',
@@ -2418,18 +2380,7 @@ const styles =
                 4,
         },
 
-        header: {
-            height: 58,
-
-            flexDirection:
-                'row',
-
-            alignItems:
-                'center',
-
-            paddingHorizontal:
-                16,
-        },
+        header: {minHeight:64,flexDirection:'row',alignItems:'center',paddingHorizontal:ROYAL_LAYOUT.screenGutter,paddingTop:ROYAL_LAYOUT.backSafeTop,paddingBottom:8},
 
         backButton: {
             width: 40,
@@ -2456,12 +2407,7 @@ const styles =
             fontSize: 24,
         },
 
-        headerContent: {
-            flex: 1,
-
-            marginHorizontal:
-                12,
-        },
+        headerContent: {flex:1,minWidth:0,marginHorizontal:8,paddingHorizontal:16,paddingVertical:16,minHeight:70},
 
         job: {
             color:
@@ -2482,24 +2428,7 @@ const styles =
             marginTop: 2,
         },
 
-        expBadge: {
-            minWidth: 55,
-
-            borderRadius:
-                12,
-
-            backgroundColor:
-                '#202a40',
-
-            paddingHorizontal:
-                9,
-
-            paddingVertical:
-                5,
-
-            alignItems:
-                'center',
-        },
+        expBadge: {width:80,minHeight:70,paddingHorizontal:12,paddingVertical:16,alignItems:'center'},
 
         expBadgeLabel: {
             color:
@@ -2523,46 +2452,13 @@ const styles =
             marginTop: 1,
         },
 
-        missionHeader: {
-            paddingHorizontal:
-                18,
+        missionHeader: {marginHorizontal:ROYAL_LAYOUT.screenGutter,marginTop:8,paddingHorizontal:28,paddingVertical:24},
 
-            paddingTop: 8,
-        },
+        missionLabel: {color:'#77531b',fontFamily:ROYAL_FONT.heading,fontSize:14,letterSpacing:1},
 
-        missionLabel: {
-            color:
-                '#ffcf59',
+        missionTitle: {color:ROYAL.lacquer,fontFamily:ROYAL_FONT.heading,fontSize:18,lineHeight:25,marginTop:4},
 
-            fontSize: 15,
-
-            fontWeight:
-                '900',
-
-            letterSpacing:
-                1,
-        },
-
-        missionTitle: {
-            color:
-                '#ffffff',
-
-            fontSize: 19,
-
-            fontWeight:
-                '900',
-
-            marginTop: 5,
-        },
-
-        missionJapanese: {
-            color:
-                '#8994a5',
-
-            fontSize: 16,
-
-            marginTop: 3,
-        },
+        missionJapanese: {color:ROYAL.lacquerLight,fontFamily:ROYAL_FONT.body,fontSize:15,lineHeight:22,marginTop:4},
 
         levelRow: {
             flexDirection:
@@ -2576,27 +2472,7 @@ const styles =
             gap: 8,
         },
 
-        levelBadge: {
-            color:
-                '#ffffff',
-
-            fontSize: 15,
-
-            fontWeight:
-                '900',
-
-            backgroundColor:
-                '#6558f5',
-
-            paddingHorizontal:
-                8,
-
-            paddingVertical:
-                4,
-
-            borderRadius:
-                8,
-        },
+        levelBadge: {color:ROYAL.lacquer,fontFamily:ROYAL_FONT.heading,fontSize:14},
 
         nodeProgress: {
             color:
@@ -2608,18 +2484,9 @@ const styles =
                 '800',
         },
 
-        characterArea: {
-            flex: 1,
+        characterArea: {flex:1,minHeight:180,alignItems:'center',justifyContent:'center',paddingVertical:8},
 
-            alignItems:
-                'center',
-
-            justifyContent:
-                'center',
-
-            minHeight: 150,
-        },
-
+        characterSprite:{width:'100%',height:190},
         characterCircle: {
             width: 140,
 
@@ -2647,37 +2514,11 @@ const styles =
             fontSize: 74,
         },
 
-        npcName: {
-            color:
-                '#ffffff',
+        npcName: {color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:15,textShadowColor:ROYAL.lacquer,textShadowOffset:{width:0,height:1},textShadowRadius:4},
 
-            fontSize: 15,
+        dialogueArea: {paddingHorizontal:ROYAL_LAYOUT.screenGutter,paddingBottom:12},
 
-            fontWeight:
-                '900',
-
-            marginTop: 8,
-        },
-
-        dialogueArea: {
-            paddingHorizontal:
-                16,
-
-            paddingBottom:
-                12,
-        },
-
-        dialogueBox: {
-            height: 235,
-
-            borderRadius:
-                21,
-
-            padding: 15,
-
-            backgroundColor:
-                '#f7f7f8',
-        },
+        dialogueBox: {height:250,paddingHorizontal:30,paddingVertical:28},
 
         speakerRow: {
             flexDirection:
@@ -3128,71 +2969,13 @@ const styles =
             gap: 12,
         },
 
-        hintButton: {
-            minWidth: 76,
+        hintButton: {minWidth:88,minHeight:64,alignItems:'center',justifyContent:'center'},
 
-            height: 42,
+        hintButtonText: {color:ROYAL.paleGold,fontFamily:ROYAL_FONT.body,fontSize:14},
 
-            borderRadius:
-                21,
+        hintPenalty: {color:ROYAL.paleGold,fontSize:13},
 
-            backgroundColor:
-                '#fff2bd',
-
-            alignItems:
-                'center',
-
-            justifyContent:
-                'center',
-
-            paddingHorizontal:
-                10,
-        },
-
-        hintButtonText: {
-            color:
-                '#634b0e',
-
-            fontSize: 16,
-
-            fontWeight:
-                '900',
-        },
-
-        hintPenalty: {
-            color:
-                '#b98300',
-
-            fontSize: 15,
-
-            fontWeight:
-                '800',
-
-            marginTop: 1,
-        },
-
-        micButton: {
-            width: 62,
-
-            height: 62,
-
-            borderRadius:
-                31,
-
-            backgroundColor:
-                '#ef3340',
-
-            alignItems:
-                'center',
-
-            justifyContent:
-                'center',
-
-            borderWidth: 4,
-
-            borderColor:
-                'rgba(255,255,255,0.18)',
-        },
+        micButton: {width:52,height:52,alignItems:'center',justifyContent:'center'},
 
         micRecording: {
             transform: [
@@ -3244,23 +3027,7 @@ const styles =
                 '900',
         },
 
-        nextButton: {
-            height: 50,
-
-            borderRadius:
-                25,
-
-            backgroundColor:
-                '#6558f5',
-
-            alignItems:
-                'center',
-
-            justifyContent:
-                'center',
-
-            marginTop: 11,
-        },
+        nextButton: {height:64,marginTop:8},
 
         nextButtonText: {
             color:
