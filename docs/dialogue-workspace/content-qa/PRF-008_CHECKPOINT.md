@@ -15,3 +15,11 @@ Current structural/parity audit covers 269 slots without errors. Remaining old d
 Evidence and current hashes: `PRF-008_CLUSTER_02_REVIEW.json`; initial lexical retrieval: `PRF-008_CLUSTER_02_CANDIDATES.json`. All 24 retain eleven alternating turns, five semantic tasks, original IDs/links/index, no difficulty cap, and no stale runtime translations. Koga hospital companion-departure and Tsuchiura harvest-inspection differentiation remain explicitly open for final conceptual review. No prefecture CONTENT PASS or native-speaker certification.
 
 Next city: Ishioka, followed by Yuki and Ryugasaki. Persist and remotely verify this cluster before advancing.
+
+## Cluster 03 — Ishioka, Yuki, Ryugasaki
+
+24 further Japanese drafts, 120 speaking goals. Total 85/269 individually authored drafts; 184 old drafts remain. Also replaced the previous-cluster Tsuchiura harvest inspection and Koga companion departure drafts to remove their flagged causal overlap; updated previous-cluster hashes. Replaced Yuki display sample and Ryugasaki collision plots after complete candidate reading.
+
+Current evidence: `PRF-008_CLUSTER_03_REVIEW.json`; initial retrieval: `PRF-008_CLUSTER_03_CANDIDATES.json`. New drafts retain original IDs, eleven alternating turns, five distinct speaking tasks, no level cap, and cleared stale translations. Whole-prefecture conceptual review remains incomplete, with named topic comparisons retained for the final review. No CONTENT PASS, human/native-speaker certification or real-facility validation.
+
+Next city: Shimotsuma, then Joso and Hitachiota. Persist and remotely verify before advancing.

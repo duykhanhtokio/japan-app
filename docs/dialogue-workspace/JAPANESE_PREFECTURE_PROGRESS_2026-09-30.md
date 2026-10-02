@@ -134,3 +134,7 @@ Next: persist this narrow Fukushima unit and require WORK PERSISTENCE PASS befor
 ## Ibaraki individual authoring — 2026-10-03 (Asia/Tokyo)
 
 Fukushima remote-verified at 930414bc with WORK PERSISTENCE PASS. Ibaraki first three-city group: 37/269 individual Japanese drafts, 185 goals (Mito 21, Tsukuba 8, Hitachi 8); 232 old drafts remain. Source/runtime and progression parity verified; no CONTENT PASS or translation. Seven full draft replacements made after comparison/location-role findings. Current review and unresolved conceptual checks: PRF-008_CLUSTER_01_REVIEW.json. Next Tsuchiura, Bando and Koga after remote verification of this group.
+
+## Ibaraki clusters 02–03 — 2026-10-03 (Asia/Tokyo)
+
+Individual Japanese authoring now covers 85/269 drafts (425 speaking goals), including Tsuchiura, Bando, Koga, Ishioka, Yuki and Ryugasaki. 184 old drafts remain. Current structural audit covers all 269 without errors or exact dialogue/task/answer/title collisions. Seven new full-plot replacements and two previous-cluster follow-up replacements are documented across CLUSTER_02 and CLUSTER_03 review files. No CONTENT PASS or translations. Conceptual review of the complete prefecture remains pending. Next city: Shimotsuma, then Joso and Hitachiota; require remote persistence before advancing.
