@@ -1,0 +1,169 @@
+{
+  "prefectureId": "PRF-007",
+  "reviewer": "AI",
+  "contentPass": false,
+  "nativeSpeakerReviewed": false,
+  "individualAuthoringCount": 7,
+  "runtimeReadCount": 7,
+  "speakingTaskReadCount": 35,
+  "scope": "First seven Fukushima-city exchanges independently authored and adjacent NPC/player goal chains read. All-prefecture review and remaining 110 independent rewrites pending. Japanese only.",
+  "findings": [],
+  "wholeCorpusComparisonGroups": [
+    {
+      "cityId": "CTY-007-first-seven",
+      "scenarioIds": [
+        "SC-LOC-007-01-001",
+        "SC-LOC-007-02-001",
+        "SC-LOC-007-03-001",
+        "SC-LOC-007-04-001",
+        "SC-LOC-007-05-001",
+        "SC-LOC-007-06-001",
+        "SC-LOC-007-07-001"
+      ],
+      "review": "Seven distinct initiating causes: hearing accessibility, reversed pain scale, fading receipt preservation, partially opened rice wrapper, renamed-town address plate, uncertain draft/final letter before handoff, PIN-containing consultation note. Source/runtime and identity parity checked; whole-prefecture and prior-corpus final review pending."
+    }
+  ],
+  "pendingGroups": [
+    {
+      "scope": "PRF-007 remaining 110 scenarios",
+      "reason": "Old recipe drafts need independent authoring and full causal review."
+    },
+    {
+      "scope": "All 117 scenarios",
+      "reason": "Final whole-prefecture and cross-prefecture review before content pass."
+    }
+  ],
+  "finalDecision": {
+    "contentPass": false
+  },
+  "scenarioEvidence": [
+    {
+      "scenarioId": "SC-LOC-007-01-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "initiatingRequest": "耳が聞こえにくく、今の放送を聞き取れませんでした。乗る列車に変更があったか、文字で確認したいです。",
+      "fifthPlayerAction": "列車名と時刻、乗り場を文字で確かめます。放送が聞こえたかどうかで決めず、表示が変わって読めない場合は係員へこのメモを見せます。",
+      "npcClosure": "承知しました。まず、ご予定の列車の現在の案内を文字でお伝えします。",
+      "fiveGoals": [
+        "耳が聞こえにくく直前の放送を聞き取れず乗る列車の変更を文字で確認したいと頼む",
+        "十時二十分の列車の画面を示し日本語の文字は読めるため表示か短いメモを望む",
+        "変更がない場合も文字で知りたく放送が自分の列車の話か判断できないと説明する",
+        "待合から見える表示と不明な変更時にメモを持って再相談する方法を尋ねる",
+        "列車名時刻乗り場を文字で照合し読めない変更は係員へメモで相談すると伝える"
+      ],
+      "sha256": "db97c2454202631b54a5c5a7ecdcb50c9492a61460a2e703730098535f050838"
+    },
+    {
+      "scenarioId": "SC-LOC-007-02-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "initiatingRequest": "痛みを零から十で書く欄があります。十が痛くないという意味だと思って八と書きかけましたが、両端の説明を逆に読んだかもしれません。",
+      "fifthPlayerAction": "案内に従って八を書き直し、今は三くらい、昨夜は強くて眠れなかったと分けて伝えます。数字の読み違いも隠さず、医療スタッフに説明します。",
+      "npcClosure": "承知しました。訂正方法をご案内し、症状のお話を医療スタッフへつなぎます。",
+      "fiveGoals": [
+        "痛み欄の零と十の意味を逆に読み八と書きかけたため説明を確認する",
+        "八は尺度を読まず選んだ数字で現在の強さと誤伝達されぬよう訂正方法を尋ねる",
+        "今は三程度だが昨夜は強く眠れず一日中同じ数字ではないと説明する",
+        "今も痛く昨夜から三だったわけではないことと睡眠への影響を診察用メモへ残したいと伝える",
+        "数字の訂正案内に従い現在と昨夜と尺度の読み違いを医療スタッフへ伝える"
+      ],
+      "sha256": "97d3c81c399ce6045e3d75e985b861f8035fa50269ad7bd78319b90c9ba23c53"
+    },
+    {
+      "scenarioId": "SC-LOC-007-03-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "initiatingRequest": "昨日買った収納箱について、後日問い合わせる時のためにレシートを残したいです。車に置いたら文字が薄くなっていて、どう記録しておけばよいか相談したいです。",
+      "fifthPlayerAction": "まだ加工していません。写真、包装、薄くなった実物を分けて残し、読めない所は読めないと説明します。今日は保管方法を担当へ確認します。",
+      "npcClosure": "分かりました。担当に、そのご希望と現在のレシートの状態を伝えます。",
+      "fiveGoals": [
+        "車内保管で薄くなった購入レシートを後日の問合せ用にどう残すか相談する",
+        "店名日付は読め商品行は一部不明で推測した商品名を元印刷として書き足さないと説明する",
+        "包装と前日の読める写真があり写真だけの手続き成立を決めず実物も残したいと伝える",
+        "今日は交換申込でなく記録保存の相談で後日の条件はその時に確かめると答える",
+        "未加工の現物写真包装を分け不明箇所を明示して担当へ保管方法を確認する"
+      ],
+      "sha256": "2325513e27099ea8f277d935e41b34226d051c453f17fc5ce325b6d1b589ee48"
+    },
+    {
+      "scenarioId": "SC-LOC-007-04-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "initiatingRequest": "今買ったおにぎりの包装がうまく取れません。途中の部分から引いてしまったので、開け方の図を一緒に見てもらえますか。",
+      "fifthPlayerAction": "図の順番と動かす包装を確認して、自分で開けます。取り外したフィルムを食品に戻さず、残った包装の片も確かめてから食べます。",
+      "npcClosure": "承知しました。こちらの図を使って、残っている包装をご説明します。",
+      "fiveGoals": [
+        "購入済みおにぎりの包装を途中から引いたため開け方の図を見てほしいと頼む",
+        "中央帯は残り横を引くとご飯も動いたため止め不良断定でなく自分の操作確認と説明する",
+        "番号順を飛ばしたと理解し開いた部分を戻さず残る帯の扱いを尋ねる",
+        "食品に店員が直接触れず自分で扱うので包装図で示してほしいと伝える",
+        "図で包装の順序を確認しフィルムを食品へ戻さず残る片も確かめて食べると話す"
+      ],
+      "sha256": "36aab5c1fcd9718cf4041e10944200697a276c055dc07105266782dfeba71f55"
+    },
+    {
+      "scenarioId": "SC-LOC-007-05-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "initiatingRequest": "住所を書こうとしたら、町名変更の通知と建物の入口のプレートで町名が違いました。プレートを見て写しかけたので、今使う表記を確認したいです。",
+      "fifthPlayerAction": "今の用紙は担当と町名、番地、建物名、部屋番号を照合して直します。ここで確認しただけで銀行なども変更済みとはせず、別に連絡方法を確認します。",
+      "npcClosure": "承知しました。まず通知と、この用紙の住所欄を一緒に確認します。",
+      "fiveGoals": [
+        "町名変更通知と建物入口の旧住所プレートが違い写しかけた住所の現在表記を確認する",
+        "引越しせず同じ建物二〇一号室で通知の新町名と残る旧表示の違いを説明する",
+        "町名以外も変化なしと決めず通知の番地と建物名部屋番号メモの照合を頼む",
+        "旧プレート写真は差異説明用で通知代用ではなく通知を残して訂正案内を受けると答える",
+        "用紙の住所各要素を担当と直し銀行等の登録も自動変更済みとはせず別途手続き確認すると伝える"
+      ],
+      "sha256": "7b99df57d31e6bef2989c4ab22ff4577543b87ce4c69d463d6c48419e3085314"
+    },
+    {
+      "scenarioId": "SC-LOC-007-06-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "initiatingRequest": "この手紙を出すつもりでしたが、清書と下書きのどちらを入れたか思い出せません。まだお渡ししていないので、今日は一度持ち帰って確かめたいです。",
+      "fifthPlayerAction": "今日はこの封筒を持ち帰ります。清書かどうかを実物で確認し、封筒を整えて、到着の希望をあわせて相談してから差し出します。",
+      "npcClosure": "承知しました。確認後に、発送について改めてご相談ください。",
+      "fiveGoals": [
+        "清書か下書きか入れた内容が不明で未引渡し封筒を持帰って確認したいと申し出る",
+        "机に残る下書きだけでは封筒内が清書とは断定できず両方机にあったと説明する",
+        "家で実物確認し開封後の封筒再使用は状態も相談するため今は発送しないよう頼む",
+        "明日差出し予定だが到着保証依頼ではなく内容確認後に到着希望を相談すると答える",
+        "今日は持帰り清書確認と包装準備をして到着希望と発送方法を相談後差し出すと伝える"
+      ],
+      "sha256": "f13cf459793b3151eb4da8f1dde93587d6a01db8f1f82f0fb3657b5f41b3a5ea"
+    },
+    {
+      "scenarioId": "SC-LOC-007-07-001",
+      "source": "scripts/dialogue-authoring/prf-007-fukushima.json",
+      "initiatingRequest": "登録した電話番号を変えたいです。相談用のメモを用意しましたが、暗証番号まで書いてしまったので、このままお見せせず用件だけ伝えたいです。",
+      "fifthPlayerAction": "暗証番号入りのメモは渡さず、電話番号変更の用件だけを伝えます。必要書類と記入方法を確かめ、受付で話しただけで変更済みと思わず完了の確認を受けます。",
+      "npcClosure": "承知しました。連絡先変更を担当する窓口へご案内します。",
+      "fiveGoals": [
+        "登録電話番号を変えたいが暗証番号も書いた相談メモをそのまま見せず用件を伝える",
+        "メモは未引渡しで待機中も広げず保持し連絡先変更の相談と説明する",
+        "新番号は使用中で暗証番号入り紙を資料にせず必要な番号だけ指定方法で伝えたいと答える",
+        "元メモは自分でしまい用件だけ書き直し必要な本人確認書類を担当へ尋ねる",
+        "私的番号の紙を渡さず変更方法と必要書類を確認し受付相談だけで完了とせず完了確認を受けると話す"
+      ],
+      "sha256": "c7c25e8153f179477f4228087a76be51994645d40342ccd3a9c130458880e6a0"
+    }
+  ],
+  "preliminaryCrossPrefectureReview": {
+    "priorScenarioCount": 884,
+    "inspectedLexicalPairs": 21,
+    "withinSevenTopicCandidates": 0,
+    "decision": "No same causal chain found in the inspected shortlist; final 117-scene cross-prefecture review remains pending.",
+    "relatedSkills": [
+      {
+        "current": "SC-LOC-007-01-001",
+        "prior": "SC-LOC-AOM-MUTSU-04-001",
+        "reason": "Hearing accessibility for ongoing train changes requires written no-change/changed information and a reusable consultation note; unclear radio field number requires matching plot, route and tools. Shared clarification skill, different action chain."
+      },
+      {
+        "current": "SC-LOC-007-05-001",
+        "prior": "SC-LOC-JP-01218-02-001",
+        "reason": "Changed town designation with old physical building plate requires checking complete current address without moving; prior changed personal name requires separating official and everyday names."
+      },
+      {
+        "current": "SC-LOC-007-07-001",
+        "prior": "SC-LOC-JP-01229-03-001",
+        "reason": "PIN written on an unshared note is the initiating privacy problem; prior phone change causes failed contact and mistaken appointment cancellation. Current has no missed-contact reservation story."
+      }
+    ]
+  }
+}
