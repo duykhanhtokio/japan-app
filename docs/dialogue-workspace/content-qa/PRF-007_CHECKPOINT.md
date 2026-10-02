@@ -44,3 +44,8 @@ Preceding Fukushima draft checkpoint remotely verified at `fabbdabc498e6f7800c67
 ## Causal completion continuation — 2026-10-02
 
 Five-bank integrated continuation remotely verified at `a4b519906cf085ff882469c18442d36984211611`, exact tree `261d79ab493e88f71754965c96234958a5b37313`, WORK PERSISTENCE PASS. Three additional exchange repairs: explicitly name both Aizuwakamatsu questions and consistent final question time; give Fukushima train change in text before closing; explain the fictional numbered wrapper instead of only promising help. Current final whole-prefecture decision remains pending. No translations or CONTENT PASS. Resume with remaining city groups and update hash-bound review before PRF-008.
+
+
+## Reconciled postal causal continuation — 2026-10-02
+
+Resumed from remote-verified 1907a812; retained the five integrated bank replacements and preserved the alternate four-bank draft source without making it runtime. Read eight full current exchanges. Replaced two repeated postal address-role scripts with fragile pop-up card packaging and a damaged-envelope key return; repaired one unsupported spouse speech inference and five scenario-specific conclusions. All 117 source/runtime exchanges still require whole-prefecture final causal review. No CONTENT PASS, translations or native-speaker approval. Next: compare two new postal exchanges against prior corpus, then continue unresolved city groups.
