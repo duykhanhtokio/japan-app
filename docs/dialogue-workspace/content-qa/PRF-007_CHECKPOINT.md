@@ -64,3 +64,8 @@ Startup fetched and preserved UI-only remote commit 48a692b9; WORK PERSISTENCE P
 ## Soma–Nihonmatsu causal continuation — 2026-10-02
 
 Sukagawa–Kitakata continuation remote-verified at 6e88b3ee with WORK PERSISTENCE PASS before continuing. Read all 16 current Soma and Nihonmatsu exchanges. Replaced one numeric-envelope-classification plot with a personal thanks-sentence addition before sealing. Seven further repairs give explicit station destination/path, fictional tree label, double recipe quantity and consultation endings. Read four full related writing/preparation exchanges; source/runtime and scenario slots preserved. Audit remains 117/117 with zero structure errors or screening duplicate groups. No whole-prefecture CONTENT PASS or translations. Next: Tamura, Minamisoma and Date, followed by remaining Fukushima/Aizuwakamatsu/Koriyama final review.
+
+
+## Tamura–Minamisoma–Date causal continuation — 2026-10-02
+
+Soma–Nihonmatsu remote-verified at e4ba613f with WORK PERSISTENCE PASS before proceeding. Read all 24 current exchanges in Tamura, Minamisoma and Date, revising thirteen, including one full postal replacement and twelve individual response/closure repairs. Compared three retrieved exchanges in full, explicitly distinguishing Sakata ferry trolley logic from wet-umbrella/book-box movement. Current final review now covers 80/117 complete exchanges across ten city groups including the previous three-city review; remaining 37 are Fukushima, Aizuwakamatsu and Koriyama. All 117 remain structurally/source-runtime valid with zero duplicate groups in screening. No whole-prefecture CONTENT PASS or translation. Next: complete the remaining 37 causal readings and any repairs before a hash-bound editorial decision.
