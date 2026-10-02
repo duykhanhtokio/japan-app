@@ -129,3 +129,8 @@ Read the remaining 37 complete exchanges and their 185 speaking goals, closing w
 AI CONTENT PASS is bound to all 117 current runtime hashes in PRF-007_SEMANTIC_REVIEW.json. The final selected full-turn cross-prefecture decisions are in PRF-007_FINAL_CROSS_PREFECTURE_REVIEW.json; retrieval against 884 prior authored scripts is screening, not a claim to have fully read that entire prior corpus. Prior pending checkpoint sections are superseded by this final decision. No translations, native-speaker review, device testing or actual facility-policy approval. Preserve integrated five bank replacements and the four alternate source drafts.
 
 Next: persist this narrow Fukushima unit and require WORK PERSISTENCE PASS before starting PRF-008 Japanese individual editorial work. No translated work before all Japanese prefectures are complete.
+
+
+## Ibaraki individual authoring — 2026-10-03 (Asia/Tokyo)
+
+Fukushima remote-verified at 930414bc with WORK PERSISTENCE PASS. Ibaraki first three-city group: 37/269 individual Japanese drafts, 185 goals (Mito 21, Tsukuba 8, Hitachi 8); 232 old drafts remain. Source/runtime and progression parity verified; no CONTENT PASS or translation. Seven full draft replacements made after comparison/location-role findings. Current review and unresolved conceptual checks: PRF-008_CLUSTER_01_REVIEW.json. Next Tsuchiura, Bando and Koga after remote verification of this group.
