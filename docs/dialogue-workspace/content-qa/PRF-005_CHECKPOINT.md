@@ -15,3 +15,7 @@ Separate semantic review covers all 117 current runtime SHA-256 hashes, with thi
 Automated audit: zero structural errors, exact/normalized/near-dialogue duplicate groups, exact task/answer/title groups or recipe groups. Preservation check: all turn IDs/order/speakers/chain links unchanged, 106 dialogue/task bodies unchanged from the incoming baseline, eleven intentionally replaced, all unrelated canonical records unchanged. No UI changes authored. Existing corrupted Akita location labels remain unchanged and are not certified real locations.
 
 Next prefecture is PRF-006 Yamagata. Start it only after this complete-prefecture commit is remotely verified with WORK PERSISTENCE PASS. The commit itself records completion without a speculative remote SHA.
+
+## Two nonoverlapping follow-ups after merged review — 2026-10-02
+
+Preserved all eleven concurrent causal rewrites and their reviewed corpus. Five independent alternatives are retained as history instead of replacing those scenes. Integrated only two additional scenes: teacher thank-you gift with three sender names, and patient understanding/assent before signing while a friend helps read. Full eleven turns, five tasks and close earlier-purpose scripts reviewed. Updated evidence, sources, canonical metadata and exact runtime hashes; native review and translations remain absent. The whole-prefecture AI CONTENT PASS decision is retained for the reconciled corpus only after structural/hash checks.
