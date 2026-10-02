@@ -1,3 +1,4 @@
+import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { useCallback, useState } from 'react';
 
@@ -70,13 +71,13 @@ export default function ModuleScreen() {
 
     if (!module) {
         return (
-            <SafeAreaView style={styles.container}>
+            <RoyalPageBackground><SafeAreaView style={styles.container}>
                 <View style={styles.content}>
                     <Text>
                         モジュールが見つかりません。
                     </Text>
                 </View>
-            </SafeAreaView>
+            </SafeAreaView></RoyalPageBackground>
         );
     }
 
@@ -105,7 +106,7 @@ export default function ModuleScreen() {
             : 0;
 
     return (
-        <SafeAreaView style={styles.container}>
+        <RoyalPageBackground><SafeAreaView style={styles.container}>
             <ScrollView
                 contentContainerStyle={
                     styles.content
@@ -330,14 +331,14 @@ export default function ModuleScreen() {
                     }
                 )}
             </ScrollView>
-        </SafeAreaView>
+        </SafeAreaView></RoyalPageBackground>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#e8e2d6',
+        backgroundColor:'transparent',
     },
 
     content: {

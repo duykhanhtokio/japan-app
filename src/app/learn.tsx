@@ -507,7 +507,7 @@ const styles =
             left: 0,
 
             backgroundColor:
-                'rgba(255,250,236,.72)',
+                'rgba(255,255,255,.45)',
         },
 
         container: {

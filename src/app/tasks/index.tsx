@@ -1,3 +1,4 @@
+import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { router, useFocusEffect } from 'expo-router';
 import { useCallback, useState } from 'react';
 import {
@@ -341,7 +342,7 @@ export default function TasksScreen() {
 
     if (loading) {
         return (
-            <SafeAreaView
+            <RoyalPageBackground><SafeAreaView
                 style={
                     styles.container
                 }
@@ -359,12 +360,12 @@ export default function TasksScreen() {
                         ...
                     </Text>
                 </View>
-            </SafeAreaView>
+            </SafeAreaView></RoyalPageBackground>
         );
     }
 
     return (
-        <SafeAreaView
+        <RoyalPageBackground><SafeAreaView
             style={
                 styles.container
             }
@@ -691,7 +692,7 @@ export default function TasksScreen() {
             <BottomNav
                 active="tasks"
             />
-        </SafeAreaView>
+        </SafeAreaView></RoyalPageBackground>
     );
 }
 
@@ -803,7 +804,7 @@ const styles =
     StyleSheet.create({
         container: {
             flex: 1,
-            backgroundColor: ROYAL.ivory,
+            backgroundColor:'transparent',
         },
 
         content: {

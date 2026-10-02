@@ -1,3 +1,4 @@
+import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { router } from 'expo-router';
 import { useState } from 'react';
 import { Alert, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
@@ -85,7 +86,7 @@ export function OrganizationDashboard({ kind }: { kind: PortalKind }) {
   }
 
   return (
-    <View style={[styles.screen, { backgroundColor: `${config.accent}10` }]}>
+    <RoyalPageBackground><View style={[styles.screen, { backgroundColor: `${config.accent}10` }]}>
       <SafeAreaView style={styles.safeArea} edges={['top', 'left', 'right']}>
         <View style={styles.topBar}>
           <RoyalBackButton onPress={() => router.back()} />
@@ -122,7 +123,7 @@ export function OrganizationDashboard({ kind }: { kind: PortalKind }) {
           <View style={styles.securityNote}><Text style={styles.securityText}>🔒 役割と担当範囲に応じて、表示・編集できる情報を自動的に制限します。</Text></View>
         </ScrollView>
       </SafeAreaView>
-    </View>
+    </View></RoyalPageBackground>
   );
 }
 

@@ -1,3 +1,4 @@
+import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { router, useLocalSearchParams } from 'expo-router';
 import {
     Pressable,
@@ -42,18 +43,18 @@ export default function IndustryScreen() {
 
     if (!industry) {
         return (
-            <SafeAreaView style={styles.container}>
+            <RoyalPageBackground><SafeAreaView style={styles.container}>
                 <View style={styles.content}>
                     <Text>
                         業種が見つかりません。
                     </Text>
                 </View>
-            </SafeAreaView>
+            </SafeAreaView></RoyalPageBackground>
         );
     }
 
     return (
-        <SafeAreaView style={styles.container}>
+        <RoyalPageBackground><SafeAreaView style={styles.container}>
             <ScrollView contentContainerStyle={styles.content}>
 
                 <RoyalBackButton onPress={() => router.back()} />
@@ -145,14 +146,14 @@ export default function IndustryScreen() {
                 ))}
 
             </ScrollView>
-        </SafeAreaView>
+        </SafeAreaView></RoyalPageBackground>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#e8e2d6',
+        backgroundColor:'transparent',
     },
 
     content: {

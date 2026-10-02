@@ -1,3 +1,4 @@
+import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { router, useLocalSearchParams } from 'expo-router';
 import {
     Pressable,
@@ -25,13 +26,13 @@ export default function LessonDetailScreen() {
 
     if (!lesson) {
         return (
-            <SafeAreaView style={styles.container}>
+            <RoyalPageBackground><SafeAreaView style={styles.container}>
                 <View style={styles.content}>
                     <RoyalBackButton onPress={() => router.back()} />
 
                     <Text>レッスンが見つかりません。</Text>
                 </View>
-            </SafeAreaView>
+            </SafeAreaView></RoyalPageBackground>
         );
     }
 
@@ -41,7 +42,7 @@ export default function LessonDetailScreen() {
     );
 
     return (
-        <SafeAreaView style={styles.container}>
+        <RoyalPageBackground><SafeAreaView style={styles.container}>
             <ScrollView contentContainerStyle={styles.content}>
 
                 <RoyalBackButton onPress={() => router.back()} />
@@ -254,7 +255,7 @@ export default function LessonDetailScreen() {
                 </View>
 
             </ScrollView>
-        </SafeAreaView>
+        </SafeAreaView></RoyalPageBackground>
     );
 }
 
@@ -274,7 +275,7 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        backgroundColor: '#e8e2d6',
+        backgroundColor:'transparent',
     },
 
     content: {

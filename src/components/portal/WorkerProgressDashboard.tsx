@@ -1,3 +1,4 @@
+import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { router } from 'expo-router';
 import { useMemo, useState } from 'react';
 import { Alert, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
@@ -20,7 +21,7 @@ export function WorkerProgressDashboard() {
   }), [filter, query]);
 
   return (
-    <View style={styles.screen}>
+    <RoyalPageBackground><View style={styles.screen}>
       <SafeAreaView style={styles.safe} edges={['top', 'left', 'right']}>
         <View style={styles.topBar}>
           <RoyalBackButton onPress={() => router.back()} />
@@ -55,12 +56,12 @@ export function WorkerProgressDashboard() {
           <View style={styles.note}><Text style={styles.noteTitle}>評価を一致させる仕組み</Text><Text style={styles.noteText}>学習データは自動集計し、企業評価と監理団体評価は別々に記録します。差がある項目だけを表示して、面談と合意内容を同じ履歴へ保存します。</Text></View>
         </ScrollView>
       </SafeAreaView>
-    </View>
+    </View></RoyalPageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: '#f7f5ee' }, safe: { flex: 1 }, topBar: { height: 58, paddingHorizontal: 14, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderBottomWidth: 1, borderBottomColor: '#e5e0d4', backgroundColor: '#e8e2d6' }, back: { minHeight: 44, flexDirection: 'row', alignItems: 'center' }, backArrow: { marginRight: 5, color: '#5b4b2c', fontSize: 34 }, backText: { color: '#5b4b2c', fontSize: 11, fontWeight: '900' }, sharedBadge: { paddingHorizontal: 10, paddingVertical: 7, borderRadius: 12, backgroundColor: '#f4e9ce' }, sharedBadgeText: { color: '#836224', fontSize: 8, fontWeight: '900' },
+  screen: { flex: 1, backgroundColor:'transparent' }, safe: { flex: 1 }, topBar: { height: 58, paddingHorizontal: 14, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderBottomWidth: 1, borderBottomColor: '#e5e0d4', backgroundColor: '#e8e2d6' }, back: { minHeight: 44, flexDirection: 'row', alignItems: 'center' }, backArrow: { marginRight: 5, color: '#5b4b2c', fontSize: 34 }, backText: { color: '#5b4b2c', fontSize: 11, fontWeight: '900' }, sharedBadge: { paddingHorizontal: 10, paddingVertical: 7, borderRadius: 12, backgroundColor: '#f4e9ce' }, sharedBadgeText: { color: '#836224', fontSize: 8, fontWeight: '900' },
   content: { width: '100%', maxWidth: 1080, alignSelf: 'center', padding: 15, paddingBottom: 36 }, hero: { padding: 18, borderRadius: 20, borderLeftWidth: 5, borderLeftColor: '#c88a45', borderBottomWidth: 5, borderBottomColor: '#956328', backgroundColor: '#e8e2d6' }, eyebrow: { color: '#986628', fontSize: 9, fontWeight: '900' }, title: { marginTop: 7, color: '#3f3422', fontSize: 24, fontWeight: '900' }, summary: { marginTop: 8, color: '#706552', fontSize: 10, lineHeight: 16, fontWeight: '700' },
   metrics: { marginTop: 12, flexDirection: 'row', gap: 8 }, metric: { minWidth: 0, flex: 1, padding: 12, borderRadius: 14, backgroundColor: '#e8e2d6' }, metricLabel: { color: '#7b7467', fontSize: 8, fontWeight: '800' }, metricValue: { marginTop: 5, color: '#55472f', fontSize: 19, fontWeight: '900' },
   searchPanel: { marginTop: 15, padding: 12, borderRadius: 16, backgroundColor: '#e8e2d6' }, searchShell: { height: 43, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 12, borderRadius: 11, borderWidth: 1, borderColor: '#d6c8ae', backgroundColor: '#fcfbf7' }, searchIcon: { marginRight: 8, color: '#a07135', fontSize: 18 }, searchInput: { minWidth: 0, flex: 1, color: '#4d4435', fontSize: 10, fontWeight: '700' }, filters: { marginTop: 9, flexDirection: 'row', gap: 7 }, filter: { paddingHorizontal: 11, paddingVertical: 7, borderRadius: 9, backgroundColor: '#f0eee8' }, filterActive: { backgroundColor: '#f1dfbb' }, filterText: { color: '#776f61', fontSize: 8, fontWeight: '800' }, filterTextActive: { color: '#8a5d23' },

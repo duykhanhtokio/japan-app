@@ -1,3 +1,4 @@
+import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { router } from 'expo-router';
 import {
     Pressable,
@@ -25,7 +26,7 @@ export function FilteredVocabularyList({
     words,
 }: Props) {
     return (
-        <SafeAreaView style={styles.container}>
+        <RoyalPageBackground><SafeAreaView style={styles.container}>
             <View style={styles.header}><RoyalBackButton onPress={() => router.back()} /></View>
             <ScrollView contentContainerStyle={styles.content}>
 
@@ -79,21 +80,21 @@ export function FilteredVocabularyList({
                     </Pressable>
                 ))}
             </ScrollView>
-        </SafeAreaView>
+        </SafeAreaView></RoyalPageBackground>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#e8e2d6',
+        backgroundColor:'transparent',
     },
 
     header: {
         paddingHorizontal: 24,
         paddingTop: 8,
         paddingBottom: 6,
-        backgroundColor: '#e8e2d6',
+        backgroundColor:'transparent',
     },
 
     content: {

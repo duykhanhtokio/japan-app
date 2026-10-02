@@ -1,3 +1,4 @@
+import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { lessonSteps } from '@/data/lesson-steps';
 import { lessons } from '@/data/lessons';
 import { quizzes } from '@/data/quizzes';
@@ -67,7 +68,7 @@ export default function LessonPlayerScreen() {
 
     if (!lesson || steps.length === 0) {
         return (
-            <SafeAreaView style={styles.container}>
+            <RoyalPageBackground><SafeAreaView style={styles.container}>
                 <View style={styles.errorContainer}>
                     <Text style={styles.errorText}>
                         レッスンデータが見つかりません。
@@ -75,7 +76,7 @@ export default function LessonPlayerScreen() {
 
                     <RoyalBackButton onPress={() => router.back()} />
                 </View>
-            </SafeAreaView>
+            </SafeAreaView></RoyalPageBackground>
         );
     }
     const activeLesson =
@@ -209,7 +210,7 @@ export default function LessonPlayerScreen() {
     }
 
     return (
-        <SafeAreaView style={styles.container}>
+        <RoyalPageBackground><SafeAreaView style={styles.container}>
             <ScrollView
                 contentContainerStyle={
                     styles.content
@@ -441,7 +442,7 @@ export default function LessonPlayerScreen() {
                         </View>
                     )}
             </ScrollView>
-        </SafeAreaView>
+        </SafeAreaView></RoyalPageBackground>
     );
 }
 
@@ -1402,7 +1403,7 @@ function CompleteContent({
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#e8e2d6',
+        backgroundColor:'transparent',
     },
 
     content: {

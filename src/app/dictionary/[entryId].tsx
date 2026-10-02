@@ -1,3 +1,4 @@
+import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { Text } from '@/components/app/LocalizedText';
 import JmdictProvider from '@/components/jmdict/JmdictProvider';
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
@@ -26,9 +27,9 @@ function EntryContent() {
     const seq = Number(raw);
     const [entry, setEntry] = useState<JmdictEntry | null>();
     useEffect(() => { void getJmdictEntry(db, seq).then(setEntry); }, [db, seq]);
-    if (entry === undefined) return <SafeAreaView style={s.container}><ActivityIndicator style={s.loading} /></SafeAreaView>;
-    if (!entry) return <SafeAreaView style={s.container}><View style={s.content}><RoyalBackButton onPress={() => router.back()} /><Text style={s.missing}>単語が見つかりません。</Text></View></SafeAreaView>;
-    return <SafeAreaView style={s.container}><ScrollView contentContainerStyle={s.content}>
+    if (entry === undefined) return <RoyalPageBackground><SafeAreaView style={s.container}><ActivityIndicator style={s.loading} /></SafeAreaView></RoyalPageBackground>;
+    if (!entry) return <RoyalPageBackground><SafeAreaView style={s.container}><View style={s.content}><RoyalBackButton onPress={() => router.back()} /><Text style={s.missing}>単語が見つかりません。</Text></View></SafeAreaView></RoyalPageBackground>;
+    return <RoyalPageBackground><SafeAreaView style={s.container}><ScrollView contentContainerStyle={s.content}>
         <RoyalBackButton onPress={() => router.back()} />
         {!!entry.common&&<Text style={s.common}>よく使う言葉・Common</Text>}
         <Text style={s.word}>{entry.headword}</Text><Text style={s.reading}>{entry.reading}</Text>
@@ -39,8 +40,8 @@ function EntryContent() {
         {entry.fields.length>0&&<Section title="分野・Lĩnh vực"><Text style={s.value}>{entry.fields.join('・')}</Text></Section>}
         {entry.misc.length>0&&<Section title="注記・Nhãn"><Text style={s.value}>{entry.misc.join('・')}</Text></Section>}
         <Text style={s.source}>JMdict sequence: {entry.seq}{'\n'}JMdict/EDRDG • CC BY-SA 4.0</Text>
-    </ScrollView></SafeAreaView>;
+    </ScrollView></SafeAreaView></RoyalPageBackground>;
 }
 function Section({title,children}:{title:string;children:ReactNode}){return <View style={s.section}><Text style={s.label}>{title}</Text><View style={s.box}>{children}</View></View>}
 export default function DictionaryEntryScreen(){return <JmdictProvider><EntryContent/></JmdictProvider>}
-const s=StyleSheet.create({container:{flex:1,backgroundColor:'#f6f8fc'},content:{padding:22,paddingBottom:60},loading:{marginTop:80},back:{fontSize:16,marginBottom:22},common:{color:'#087f5b',fontWeight:'900'},word:{fontSize:42,fontWeight:'900',marginTop:7},reading:{fontSize:20,color:'#667085',marginTop:5},section:{marginTop:25},label:{fontWeight:'900',color:'#475467',marginBottom:8},box:{backgroundColor:'#e8e2d6',padding:16,borderRadius:14},gloss:{fontSize:17,lineHeight:25,marginBottom:4},value:{fontSize:17,lineHeight:25},source:{fontSize:11,color:'#667085',marginTop:30,lineHeight:17},missing:{marginTop:30}});
+const s=StyleSheet.create({container:{flex:1,backgroundColor:'transparent'},content:{padding:22,paddingBottom:60},loading:{marginTop:80},back:{fontSize:16,marginBottom:22},common:{color:'#087f5b',fontWeight:'900'},word:{fontSize:42,fontWeight:'900',marginTop:7},reading:{fontSize:20,color:'#667085',marginTop:5},section:{marginTop:25},label:{fontWeight:'900',color:'#475467',marginBottom:8},box:{backgroundColor:'#e8e2d6',padding:16,borderRadius:14},gloss:{fontSize:17,lineHeight:25,marginBottom:4},value:{fontSize:17,lineHeight:25},source:{fontSize:11,color:'#667085',marginTop:30,lineHeight:17},missing:{marginTop:30}});

@@ -1,3 +1,4 @@
+import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { router, useFocusEffect } from 'expo-router';
 import { useCallback, useState, type PropsWithChildren } from 'react';
 
@@ -107,7 +108,7 @@ export default function ProfileScreen() {
         60;
 
     return (
-        <SafeAreaView
+        <RoyalPageBackground tone="dark"><SafeAreaView
             style={
                 styles.container
             }
@@ -869,7 +870,7 @@ export default function ProfileScreen() {
             <BottomNav
                 active="profile"
             />
-        </SafeAreaView>
+        </SafeAreaView></RoyalPageBackground>
     );
 }
 
@@ -1093,7 +1094,7 @@ const styles =
         container: {
             flex: 1,
 
-            backgroundColor: ROYAL.lacquer,
+            backgroundColor:'transparent',
         },
 
         fixedHeader: { paddingHorizontal: 18, paddingTop: 18, marginBottom: 12 },
