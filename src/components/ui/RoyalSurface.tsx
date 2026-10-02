@@ -23,6 +23,7 @@ const MAP_PILL_COLORS: Record<string,ImageSourcePropType> = {
 };
 const LOCK_CREST = require('../../../assets/app/ui/royal-af/lock-grape-v2.png');
 const HINT_LANTERN = require('../../../assets/app/ui/royal-af/hint-gold-grape-v1.png');
+const RED_HINT_LANTERN = require('../../../assets/app/ui/royal-af/hint-red-lantern-v2.png');
 const LOCATION_CARD_FRAME = require('../../../assets/app/ui/royal-af/location-card-frame-grape-ivory-v2.png');
 const PLACE_ROW_FRAME = require('../../../assets/app/ui/royal-af/place-row-frame-grape-ivory-40-60-v3.png');
 const CHEVRON = require('../../../assets/app/ui/royal-af/chevron-right-v2.png');
@@ -109,8 +110,8 @@ export function RoyalChevron({style,direction='right',variant='navigation'}:{sty
   return <View pointerEvents="none" style={[s.chevronBox,variant==='selector'&&s.chevronSelector,variant==='card'&&s.chevronCard,style]}><Image source={CHEVRON} resizeMode="contain" style={[s.fillImage,direction==='down'&&s.chevronDown]}/></View>;
 }
 
-export function RoyalHintButton({onPress,style}:{onPress:()=>void;style?:StyleProp<ViewStyle>}) {
-  return <Pressable accessibilityRole="button" accessibilityLabel="ヒント" onPress={onPress} style={({pressed})=>[s.hintAsset,style,pressed&&s.hintPressed]}><Image source={HINT_LANTERN} resizeMode="contain" style={s.fillImage}/></Pressable>;
+export function RoyalHintButton({onPress,style,color='gold'}:{onPress:()=>void;style?:StyleProp<ViewStyle>;color?:'gold'|'red'}) {
+  return <Pressable accessibilityRole="button" accessibilityLabel="ヒント" hitSlop={8} onPress={onPress} style={({pressed})=>[s.hintAsset,style,pressed&&s.hintPressed]}><Image source={color==='red'?RED_HINT_LANTERN:HINT_LANTERN} resizeMode="contain" style={s.fillImage}/></Pressable>;
 }
 
 export function RoyalSelectionMark({style}:{style?:StyleProp<ViewStyle>}) {
