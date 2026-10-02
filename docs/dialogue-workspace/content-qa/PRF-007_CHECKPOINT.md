@@ -34,3 +34,8 @@ Read nine full exchanges and repaired nine final NPC turns that restarted consul
 ## Opening and closure contract review — 2026-10-02
 
 Repaired 16 NPC openings and 14 closures across 19 scenarios; preserved all five player turns/tasks and progression. Explicit handoff closes assistance without pretending the later service is complete. Removed unsupported photo-custody assumption. Compared five full accessibility exchanges across Fukushima, Akita and Yamagata. Flagged five bank correction scripts for shared causal-pattern review; no CONTENT PASS. Push attempted after user continuation but auto-review rejected vague authorization again; no workaround or durable-save claim. Resume with bank causal replacements before final whole-prefecture review.
+
+
+## Bank causal rewrites — 2026-10-02
+
+Preceding Fukushima draft checkpoint remotely verified at `fabbdabc498e6f7800c67cdf71f318649af51450`; exact content tree matches three original local commits. WORK PERSISTENCE PASS obtained before continuing. Five full bank exchanges and 25 goals replaced: household drawing, cancellation refunds, urgent consultation interruption, two-transaction lookup and spouses negotiating savings. Read all 14 distinct retrieved candidate exchanges (three per replacement, duplicates reused) from a 1001-script corpus. No claim to have read every candidate in the corpus. Source/runtime IDs and chain preserved. Final whole-prefecture semantic decision remains pending: NOT CONTENT PASS, no translations. Next review: all remaining city groups for correction framing, opening/closure compliance and causal repetition.

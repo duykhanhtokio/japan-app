@@ -1,8 +1,153 @@
 {
-  "prefectureId": "PRF-007",
+  "corpusCount": 1001,
+  "method": "Character 2-4 gram TF-IDF; player turns only. Retrieval aid, not content approval.",
+  "cases": [
+    {
+      "scenarioId": "SC-LOC-FKS-SHIRAKAWA-08-001",
+      "candidates": [
+        {
+          "scenarioId": "SC-LOC-MYG-KESENNUMA-05-001",
+          "title": "定規の目盛りの始点を端と分ける",
+          "score": 0.104,
+          "firstPlayer": "入れ物の幅を測りたいです。この定規は端から測ればいいですか。",
+          "fifthPlayer": "ゼロ線を合わせて引き出しの口と奥を測り、数字を控えてから選びます。"
+        },
+        {
+          "scenarioId": "SC-LOC-003-07-001",
+          "title": "家具の粗大ごみ申込みで解体後の大きさを伝えない",
+          "score": 0.1,
+          "firstPlayer": "自分の木の棚を処分したいです。分解すれば小さな板になるので、その寸法だけ伝えればいいですか。",
+          "fifthPlayer": "棚の現状寸法と金属部品を伝えました。分解はまだせず、品目と出し方の案内を聞きます。"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01206-07-001",
+          "title": "魚を使わないだしの原材料",
+          "score": 0.096,
+          "firstPlayer": "魚を使わないスープを作りたいです。この野菜だしは、名前が野菜なら魚も入っていませんか。",
+          "fifthPlayer": "商品名で決めず、原材料と注意書きを両方読みます。今回は家族にも確認してから選ぶので、この二つの写真を撮ってもいいですか。"
+        }
+      ],
+      "editorialComparison": "Creates player-owned cash-flow drawing, with wallet remainder and a family budget question; candidates concern measurement, disposal and ingredients. No matching causal exchange in the three read candidates.",
+      "sha256": "844cb8794797eef11143d52763181b968b2ea72fa046aead5cb6f4a3bfb91759"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-07207-06-001",
+      "candidates": [
+        {
+          "scenarioId": "SC-LOC-JP-04211-06-001",
+          "title": "入金する現金と持ち帰る交通費を分けて数える",
+          "score": 0.174,
+          "firstPlayer": "現金を入れたいです。ただ、帰りの交通費は手元に残したいです。",
+          "fifthPlayer": "二万円の入金だけをお願いし、交通費二千円は自分で持ち帰ります。"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-06212-06-001",
+          "title": "積立の目標額から既に貯めた分を引いて残りを相談する",
+          "score": 0.144,
+          "firstPlayer": "旅行用に四万円を用意したいです。一万円はもうあり、残りを四回で貯めたいので、全額をまた割らず計算したいです。",
+          "fifthPlayer": "既存一万円と予定四回各七千五百円で目標四万円と説明します。手続きの条件は別に確認します。"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-03208-06-001",
+          "title": "入金する現金から個人の紙幣を分ける",
+          "score": 0.114,
+          "firstPlayer": "行事で集めた現金を入れたいです。集計メモより封筒の中が多い気がします。",
+          "fifthPlayer": "集計と合った金額だけ申し込みます。自分の千円は財布へ戻し、控えは行事の記録と保管します。"
+        }
+      ],
+      "editorialComparison": "Refund distribution after cancellation, representative approval of charges, two-person envelope count and returned remainder; existing cash cases separate personal cash for deposit or compute savings. Same numerical vocabulary, different initiating task and sequence.",
+      "sha256": "5b4cb380e00694179356c6e3521aef4d9ecd69cddde0ea7f8b50fcd51fed91bd"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-07209-06-001",
+      "candidates": [
+        {
+          "scenarioId": "SC-LOC-JP-07213-06-001",
+          "title": "銀行で窓口へ呼ばれた後に待合席の荷物を取りに戻ると伝える",
+          "score": 0.123,
+          "firstPlayer": "相談を始める前に、待合席へ置いた袋を取りに戻りたいです。ここへ呼ばれた時に、上着の袋だけ置いて来てしまいました。",
+          "fifthPlayer": "袋を確認して持って来ました。こちらに上着が入っています。書類も手元にそろったので、改めて相談を始めたいです。"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01220-02-001",
+          "title": "本人の生活相談と友人名義の予約",
+          "score": 0.123,
+          "firstPlayer": "仕事を失った後の生活について相談したいです。書類の期限も近いので、先に話せる窓口を確認したいです。",
+          "fifthPlayer": "相談者は私、友人は付き添いと説明します。期限付き申請と生活相談を分け、予約の氏名と担当を確かめます。"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01216-02-001",
+          "title": "二歳の子供を連れて相談する",
+          "score": 0.101,
+          "firstPlayer": "育児と仕事のことで相談したいです。子供を連れて窓口へ行くので、予約が必要か知りたいです。",
+          "fifthPlayer": "はい、保育の相談を午前で希望します。子供と一緒で託児はなく、必要な休憩を相談するのですね。メモは先に送らず当日持参します。"
+        }
+      ],
+      "editorialComparison": "Work call interrupts a consultation; protects papers during response, ends consultation and receives all originals. Date bag case retrieves a forgotten bag before starting. Childcare appointment and unemployment referral have different triggers and outcomes.",
+      "sha256": "fbf56443fe9350a37ec7128899463957e4e48831eca6474e7cc880555a481de7"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-07211-06-001",
+      "candidates": [
+        {
+          "scenarioId": "SC-LOC-JP-04207-06-001",
+          "title": "振込金額の桁をゼロの数で読み直す",
+          "score": 0.131,
+          "firstPlayer": "振込金額が思っていた額より大きく見えます。まだ実行していないので、確認したいです。",
+          "fifthPlayer": "請求書の五万円と振込額が一致し、手数料も確認できてから実行します。"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-04211-06-001",
+          "title": "入金する現金と持ち帰る交通費を分けて数える",
+          "score": 0.121,
+          "firstPlayer": "現金を入れたいです。ただ、帰りの交通費は手元に残したいです。",
+          "fifthPlayer": "二万円の入金だけをお願いし、交通費二千円は自分で持ち帰ります。"
+        },
+        {
+          "scenarioId": "SC-LOC-002-08-001",
+          "title": "転居相談で予定日と実際に住み始めた日を分ける",
+          "score": 0.104,
+          "firstPlayer": "この日付欄は、引っ越す予定だった日ですか。それとも実際に住み始めた日ですか。",
+          "fifthPlayer": "予定日、居住開始日、契約日を分けて説明します。今日は相談票の意味を理解してから担当へ進みます。"
+        }
+      ],
+      "editorialComparison": "Locates two known transactions using amount, date and descriptor, writes a limited message for family; transfer-digit and cash-allocation cases correct unexecuted financial actions. No date-order misunderstanding remains.",
+      "sha256": "f6938bb4bc982418a527b26b2daeb071c72541c7967fada470c7f68febc5d263"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-07214-06-001",
+      "candidates": [
+        {
+          "scenarioId": "SC-LOC-YGT-YONEZAWA-06-001",
+          "title": "求人の勤務日数と自分の希望を逆に伝えた相談を訂正する",
+          "score": 0.12,
+          "firstPlayer": "さきほど希望の勤務日数を逆に伝えてしまいました。週二日の仕事を探していると記録されたようですが、私は週五日を希望しています。",
+          "fifthPlayer": "はい、日中の勤務を希望しています。週五日勤務と週二日休みを分けて、時間の希望も一緒に伝え直します。"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-06206-04-001",
+          "title": "警察の相談で相手と同じ待合場所に案内される前に希望を伝える",
+          "score": 0.12,
+          "firstPlayer": "近所の人とのことで相談に来ました。相手も来ると聞きましたが、一緒に話す前に私だけで事情を説明できるか尋ねたいです。",
+          "fifthPlayer": "はい、落ち着いて経緯を説明したいからです。最初は一人で話す希望があると伝え、実際の進め方は担当へ確認します。"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05214-02-001",
+          "title": "代理で書類を受け取る頼みが申請内容を変える委任だとは思わない",
+          "score": 0.116,
+          "firstPlayer": "友人から証明書を受け取ってほしいと頼まれました。ついでに記載項目を増やしてもよいか確認したいです。",
+          "fifthPlayer": "受取だけの依頼として資料を見せ、項目追加は本人の希望と窓口の方法を別に確認します。"
+        }
+      ],
+      "editorialComparison": "Spouses disagree about a trip and school expenses, both viewpoints are collected and application is deferred by joint decision; retrieved cases concern job schedule correction, police meeting separation and agency scope.",
+      "sha256": "29071fc6f071fa8f61632e3e9ca2791fed0ba64575e4249ae4c804ab78591964"
+    }
+  ],
+  "reviewer": "AI",
+  "nativeSpeakerReviewed": false,
   "contentPass": false,
-  "reviewedAt": "2026-10-02",
-  "findings": [
+  "candidateFullTurnReadCount": 14,
+  "previousCausalFindings": [
     {
       "scenarioId": "SC-LOC-FKS-SHIRAKAWA-08-001",
       "runtimeSha256": "ee5b2a521ba225fb5c0c965d36cc3b71cf078295048918d1d98d4cb9a1e4e49f",
@@ -39,5 +184,9 @@
       "reviewScope": "All eleven Japanese turns read; qualitative causal review, no native-speaker certification."
     }
   ],
-  "nextAction": "Individually author four full replacements, compare diagram scene with previous corpus, synchronize canonical/source/runtime, run structure/parity/collision checks. Do not start PRF-008 or translate."
+  "previousCausalFindingCommit": "e5cd42382995f6d64e658054a55af9f06df1e250",
+  "supplementalProposal": {
+    "path": "scripts/dialogue-authoring/prf-007-bank-causal-replacements.json",
+    "role": "Preserved four-scene proposal; active runtime sources remain the city authoring files named by each runtime editorialSource. Proposal task IDs are not runtime progression IDs."
+  }
 }

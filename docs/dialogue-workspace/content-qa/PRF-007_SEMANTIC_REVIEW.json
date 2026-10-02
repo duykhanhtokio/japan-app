@@ -219,17 +219,6 @@
     {
       "scope": "All 117 scenarios",
       "reason": "Final causal and cross-prefecture semantic review required. Screening and complete authoring are not content approval."
-    },
-    {
-      "scope": "Fukushima bank correction scenarios",
-      "scenarioIds": [
-        "SC-LOC-FKS-SHIRAKAWA-08-001",
-        "SC-LOC-JP-07207-06-001",
-        "SC-LOC-JP-07209-06-001",
-        "SC-LOC-JP-07211-06-001",
-        "SC-LOC-JP-07214-06-001"
-      ],
-      "reason": "Repeated misinterpretation -> separate quantities/categories -> restate distinction -> defer procedure pattern; closure repairs alone do not resolve conceptual recipe reuse. Full causal replacements/comparison remain required."
     }
   ],
   "finalDecision": {
@@ -1497,19 +1486,19 @@
     {
       "scenarioId": "SC-LOC-JP-07214-06-001",
       "source": "scripts/dialogue-authoring/prf-007-motomiya.json",
-      "title": "銀行で貯金の目標日と引落し希望日を分けて相談する",
-      "initiatingRequest": "旅行までに貯めたいと話して、出発日を毎月の入金希望日として伝えてしまいました。目標の日と、毎月お金を移す日を分けて相談したいです。",
-      "fifthPlayerAction": "分かりました。今日は目標までの計画を整え、移す日と金額が決まった後に手続きを相談します。",
-      "npcClosure": "旅行までの目標と毎月の予定を別に整え、手続きは後日ご相談されるのですね。本日のご希望を確認できました。ありがとうございました。",
+      "title": "銀行の貯金相談で夫婦の希望が合わず申込みを持ち帰る",
+      "initiatingRequest": "夫と旅行のための貯金を相談に来ました。私は来年行きたいのですが、夫は毎月の負担を増やしたくないそうで、まだ二人の希望が合っていません。",
+      "fifthPlayerAction": "はい。旅行の時期と学用品の支出を家で二人で見直します。今日は申込みをせず、共通の希望がまとまった後で改めて相談に来ます。",
+      "npcClosure": "本日は説明のみとして承りました。ご家庭でお話し合いのうえ、必要でしたらまたご相談ください。ありがとうございました。",
       "fiveGoals": [
-        "旅行出発日を月入金日と誤伝達し目標日と移動日を分けたいと話す",
-        "来年三月までに準備希望で当日開始ではないと答える",
-        "給与確認後希望だが即自動手続前に計画整理したいと話す",
-        "目標額月予定を別記し出発日を入金欄へ流用しないと答える",
-        "計画後移動日額確定して別手続相談すると伝える"
+        "旅行時期と毎月の負担で夫婦の希望が合わず貯金を相談したいと説明する",
+        "予約はなく自分は来年希望で夫は時期を遅らせても続けたいと答える",
+        "単独で金額を決めず今日は説明だけ受け夫婦で考える項目を尋ねる",
+        "項目をメモし夫自身にも心配している支出を一つ話してほしいと伝える",
+        "旅行時期と学用品の支出を二人で見直し申込みはせず合意後に再相談すると答える"
       ],
-      "sha256": "8435ca19b311f736933030fe8691bbf169bd3f865d54725671f468419374d367",
-      "decision": "Source-runtime parity checked; final semantic decision pending."
+      "sha256": "29071fc6f071fa8f61632e3e9ca2791fed0ba64575e4249ae4c804ab78591964",
+      "decision": "Five-bank causal rewrite read and compared to three retrieved candidates each; full prefecture decision pending."
     },
     {
       "scenarioId": "SC-LOC-JP-07214-07-001",
@@ -1803,19 +1792,19 @@
     {
       "scenarioId": "SC-LOC-FKS-SHIRAKAWA-08-001",
       "source": "scripts/dialogue-authoring/prf-007-shirakawa.json",
-      "title": "銀行の説明用図で矢印の向きとお金の流れを確かめる",
-      "initiatingRequest": "家計の説明図を見ていますが、矢印が口座へ向いていると、お金が減る意味だと思っていました。入るお金と出るお金を逆に読んでいるかもしれません。",
-      "fifthPlayerAction": "点線の矢印が分かりません。入金か支出かを実線と同じように決めず、点線が何を表すか教えてください。",
-      "npcClosure": "この資料では、点線はまだ実行していない予定の移動を表します。実際の入出金とは分けてご覧ください。ご質問ありがとうございました。",
+      "title": "銀行の家計相談で現金払いも含めた自分用の流れ図を作る",
+      "initiatingRequest": "家族と生活費の話をする時、数字だけでは伝えにくいので、簡単な図を作りたいです。口座から出した現金の使い道も入れられますか。",
+      "fifthPlayerAction": "野菜代はレシートで分かります。おやつ代はまだそろっていないので、その欄を空けて家で確かめます。家族には、この図を使って相談します。",
+      "npcClosure": "口座、財布、支払い先の三つを描けましたね。数字をそろえてからご家族とのお話にお使いください。ご相談ありがとうございました。",
       "fiveGoals": [
-        "図の口座向き矢印を減額と考え入出金を逆に読んだ疑いを伝える",
-        "青を支出と決めず図の説明にある意味を確認したいと答える",
-        "給与は口座へ入り家賃は口座から出ると方向を読み分ける",
-        "次資料も色を流用せず凡例と口座基準の向きで読むと伝える",
-        "点線を実線と同じ意味と断定せず点線の意味を尋ねる"
+        "家族向けの図に口座から引き出した現金の使い道を入れたいと頼む",
+        "野菜とおやつを現金で買い財布に未使用分も残ると答える",
+        "財布への入金矢印と店への支出矢印を描き残額も記したいと伝える",
+        "おやつ予算を一方的に減らさず図を見せて家族と決めたいと話す",
+        "野菜代は記入し未確認のおやつ代を空けて家で調べると伝える"
       ],
-      "sha256": "ee5b2a521ba225fb5c0c965d36cc3b71cf078295048918d1d98d4cb9a1e4e49f",
-      "decision": "Source-runtime parity checked; final semantic decision pending."
+      "sha256": "844cb8794797eef11143d52763181b968b2ea72fa046aead5cb6f4a3bfb91759",
+      "decision": "Five-bank causal rewrite read and compared to three retrieved candidates each; full prefecture decision pending."
     },
     {
       "scenarioId": "SC-LOC-JP-07209-01-001",
@@ -1905,19 +1894,19 @@
     {
       "scenarioId": "SC-LOC-JP-07209-06-001",
       "source": "scripts/dialogue-authoring/prf-007-soma.json",
-      "title": "銀行の家計相談で借りたお金を収入増として数えない",
-      "initiatingRequest": "今月の収入が増えたとメモしましたが、給与に友人から借りたお金も足していました。使える残高と収入を分けて整理したいです。",
-      "fifthPlayerAction": "分かりました。約束を確かめて家計に反映します。収入、借入、返済予定を混ぜたまま余裕があるとは判断しません。",
-      "npcClosure": "給与、借入、返済予定を分ける方針ですね。返済の約束を確認してから、ご自身のメモを整理してください。今日はご相談ありがとうございました。",
+      "title": "銀行の相談中に職場から呼ばれ書類を受け取って退席する",
+      "initiatingRequest": "家計の相談を予約して来ましたが、職場から急に連絡が入るかもしれません。呼ばれた場合は、途中で相談を切り上げたいです。",
+      "fifthPlayerAction": "はい。受け取った紙は三枚そろっています。次回は学用品を買う時期のメモも持って来たいので、帰ってから相談日時を取り直します。",
+      "npcClosure": "三枚ともお返しできました。続きは次回のご相談として承ります。お仕事へ向かう際はお気を付けください。ありがとうございました。",
       "fiveGoals": [
-        "給与と借入を合算して収入増としたメモを分けたいと話す",
-        "来月返済約束があり余裕と考え使い切りたくないと答える",
-        "給与借入返済日額を別記し残高全部自由としないと伝える",
-        "新借入希望でなく手元資金と返す分を把握したいと説明する",
-        "約束を確認し収入借入返済を分け余裕判断をすると答える"
+        "予約した家計相談を職場の呼出しがあれば途中で切り上げたいと伝える",
+        "学用品の年間支出を相談したいが資料全部を見る時間がないかもしれないと説明する",
+        "職場の電話へ応答する間退席し机の書類を見えないように頼む",
+        "職場へすぐ行くため今日の相談を終了し預けた資料全部を返してほしいと伝える",
+        "返却された三枚を確認し購入時期のメモを用意して後で日時を取り直すと答える"
       ],
-      "sha256": "47dd43ec31f5f0954479ebf7fcb253def519d6d4f4ee851fa30375bf2af261bd",
-      "decision": "Source-runtime parity checked; final semantic decision pending."
+      "sha256": "fbf56443fe9350a37ec7128899463957e4e48831eca6474e7cc880555a481de7",
+      "decision": "Five-bank causal rewrite read and compared to three retrieved candidates each; full prefecture decision pending."
     },
     {
       "scenarioId": "SC-LOC-JP-07209-07-001",
@@ -2041,19 +2030,19 @@
     {
       "scenarioId": "SC-LOC-JP-07207-06-001",
       "source": "scripts/dialogue-authoring/prf-007-sukagawa.json",
-      "title": "銀行の説明で預入頻度と金額を別々に言い直す",
-      "initiatingRequest": "貯金の計画について聞きたいです。先ほど「二万円を二回」と答えましたが、毎月合計二万円というつもりでした。回数と金額を言い直したいです。",
-      "fifthPlayerAction": "はい。一つの口座へ月二回、各一万円で、月合計二万円です。手続きが必要になったら、改めて相談します。",
-      "npcClosure": "一つの口座に月二回、各一万円というご計画ですね。今日のご希望を確認できました。ご相談ありがとうございました。",
+      "title": "銀行で中止になった催しの返金用に紙幣を用意したいと相談する",
+      "initiatingRequest": "町内の催しが中止になり、参加費を現金で返す係になりました。一人ずつ封筒へ入れられる紙幣を用意したいので、窓口で相談できますか。",
+      "fifthPlayerAction": "はい。了承が取れてから必要な紙幣を用意し、別の係と封筒ごとの三千円を確かめます。残ったお金と料金の記録も代表へ渡します。",
+      "npcClosure": "六人への返金と残金の扱い、ご確認が必要な点を承りました。両替の担当へご案内します。ご相談ありがとうございました。",
       "fiveGoals": [
-        "二万円二回と誤伝達したが月合計二万円の計画を言い直す",
-        "月二回各一万円で二万円ずつでは倍になると答える",
-        "月二度の収入ごとに一万円を確保する計画と説明する",
-        "今日は計画相談だけで二回入金は二口座開設の希望でないと伝える",
-        "一口座へ月二回各一万円合計二万円で手続きは別相談と答える"
+        "中止した催しの参加費を返すため封筒用の紙幣を窓口で相談する",
+        "六人へ各三千円を六つの封筒で返したいと答える",
+        "預かった二万円から一万八千円を返金し残り二千円を代表へ返すと説明する",
+        "料金の了承は未取得で返金額を減らせず条件確認後に代表へ連絡すると話す",
+        "了承後に別の係と各封筒の金額を確認し残金と料金記録も返すと答える"
       ],
-      "sha256": "16661921c5f93f28d566ff16b080a3e036bbe98aa23364be465f1f5abc68a932",
-      "decision": "Source-runtime parity checked; final semantic decision pending."
+      "sha256": "5b4cb380e00694179356c6e3521aef4d9ecd69cddde0ea7f8b50fcd51fed91bd",
+      "decision": "Five-bank causal rewrite read and compared to three retrieved candidates each; full prefecture decision pending."
     },
     {
       "scenarioId": "SC-LOC-JP-07207-07-001",
@@ -2177,19 +2166,19 @@
     {
       "scenarioId": "SC-LOC-JP-07211-06-001",
       "source": "scripts/dialogue-authoring/prf-007-tamura.json",
-      "title": "銀行で印刷した取引一覧の並び順を読み直す",
-      "initiatingRequest": "取引一覧の上から、古い順だと思って家計を説明しました。でも日付は新しいものが上です。順序を読み直したいです。",
-      "fifthPlayerAction": "分かりました。元の紙を切り貼りせず、並べ直したメモを別に作ります。家族にも上が最新だったと訂正します。",
-      "npcClosure": "はい、元の一覧は残し、説明用のメモを別に整理してください。並び順の読み違いを確認できてよかったです。ありがとうございました。",
+      "title": "銀行で家族へ説明する二つの取引の日付を一覧から探す",
+      "initiatingRequest": "家族から、生活費を入れた日と家賃が出た日を聞かれました。この一覧から二つの日付を探して、説明用にメモしたいです。",
+      "fifthPlayerAction": "はい。日付と用件だけをメモに残し、元の一覧は持ち帰ります。家族にほかの質問があれば、その内容を聞いてから必要な箇所を確かめます。",
+      "npcClosure": "二つの日付と用件を確認できました。メモと一覧のお忘れ物がないようにお持ち帰りください。ご利用ありがとうございました。",
       "fiveGoals": [
-        "一覧新しい順を古い順と誤読し取引順序を直したいと話す",
-        "上今日下先月で紙の位置を時間進行と勘違いしたと答える",
-        "行位置でなく日付で読み同日表示順で因果を決めないと伝える",
-        "古い順の家計説明用に自メモを日付順へ直したいと答える",
-        "原紙維持して別メモを作り家族へ最新上と訂正すると話す"
+        "生活費を入れた日と家賃が出た日を一覧から探し説明用に控えたいと頼む",
+        "同額二件のうち月後半に家族分を入れた五万円の取引を探したいと答える",
+        "家賃の摘要と二十三日を読み日付と摘要で見つけたと伝える",
+        "一覧写真全体を送らず二十日の入金と二十三日の家賃を文章で伝えると答える",
+        "日付と用件だけを控え一覧を持ち帰り追加の質問に応じて確認すると話す"
       ],
-      "sha256": "eb88c099e062c2c068b35c50eb8a2224d5300ff6ff02f32e784d4f24d50f0881",
-      "decision": "Source-runtime parity checked; final semantic decision pending."
+      "sha256": "f6938bb4bc982418a527b26b2daeb071c72541c7967fada470c7f68febc5d263",
+      "decision": "Five-bank causal rewrite read and compared to three retrieved candidates each; full prefecture decision pending."
     },
     {
       "scenarioId": "SC-LOC-JP-07211-07-001",
@@ -2253,23 +2242,25 @@
     "result": "Replaced final NPC turns that restarted information gathering; made Motomiya home destination explicit before NPC route referral. Remaining whole-prefecture quality review required."
   },
   "remotePersistence": {
-    "status": "blocked_by_automatic_approval_review",
-    "reason": "Push rejected: current turn was not recognised as authorisation to export this payload to the repository. No persistence claim; explicit push confirmation required."
+    "status": "preceding_checkpoint_remote_verified",
+    "commit": "fabbdabc498e6f7800c67cdf71f318649af51450",
+    "tree": "d1420762d0da03a3523b52e6f5cd6c7721370ff4",
+    "evidence": "WORK PERSISTENCE PASS in fresh tracked checkout before five-bank rewrites; current continuation pending publication."
   },
   "sourceSha256": {
-    "scripts/dialogue-authoring/prf-007-sukagawa.json": "8aa1e8ceead74a718503a3312cf25f0ef6e889b1d0bdc1a7e21c97fe1a922878",
+    "scripts/dialogue-authoring/prf-007-sukagawa.json": "67f4c53e5efb31bceac00da54f36a433dea7937e6e3154a1adc61de92803979d",
     "scripts/dialogue-authoring/prf-007-kitakata.json": "b736321c9301f2d7e8f710d116d7a853eed4ab703a0cfda7032f9a28decd35a1",
-    "scripts/dialogue-authoring/prf-007-shirakawa.json": "5e36ea4c5476f91ee50248a874b2f08e76c422c46f379063637e4e74e3b196ff",
+    "scripts/dialogue-authoring/prf-007-shirakawa.json": "8a161f3b5e6660351b33b1a344dd00cbb64bbfd3ba2d948e4869367d6a1df36c",
     "scripts/dialogue-authoring/prf-007-date.json": "bde92f50d1f5986fc85742f9082b65e434f4f69d5ddc2b2c1c75bf6cb1e1af30",
     "scripts/dialogue-authoring/prf-007-fukushima.json": "2d44d4e4ee537daa3445e46e9ace2969c52851066cd4e136484e251fa9c6f587",
     "scripts/dialogue-authoring/prf-007-iwaki.json": "25041b6a693ff0dc4b4592af05669c5eaec419d2ea3f6a00fd3e86dfed847161",
-    "scripts/dialogue-authoring/prf-007-tamura.json": "e5512f7e7e0cef3e58b7b0726961f4ed9a588756da9e9871908335ec6702ba7b",
+    "scripts/dialogue-authoring/prf-007-tamura.json": "31b58dd35048c0cd87d383de2f55989d23bac7a9973de2aba0320d26b0ce7667",
     "scripts/dialogue-authoring/prf-007-koriyama.json": "e1030a55e72ba557e0ce80cc6dca1e57806a421e3550177a5b9990970496c40b",
-    "scripts/dialogue-authoring/prf-007-soma.json": "0fcbdc8ae9122ce974cf6984b8ec10107b239aa0413b5bc1631d3c89d954649c",
+    "scripts/dialogue-authoring/prf-007-soma.json": "82841036e38a18aacbded43ac9098541653186d6299a37ce250b8fba82fc2530",
     "scripts/dialogue-authoring/prf-007-nihonmatsu.json": "d9dbcbc497b6219f40b2dfcc815bfbe03bb647ba677712dd0c91353d2a30a312",
     "scripts/dialogue-authoring/prf-007-aizuwakamatsu.json": "c8cf454fdb07555e03183af627fa77d556cc9253fc03676953f48ba6c67d31af",
     "scripts/dialogue-authoring/prf-007-minamisoma.json": "931612ab47e8393f8181b0a69978aad0d4db41f2534c23f8383fb1e313cced78",
-    "scripts/dialogue-authoring/prf-007-motomiya.json": "0d5e60bd28eda7df5bd9981aeca705feae5b78bf07f8eb2eaac36a83b39d666a"
+    "scripts/dialogue-authoring/prf-007-motomiya.json": "17c5fe53ef445bd40f8c3c4ee1125f6f70f204350d15bb4b462b2ebb1b8e9d7f"
   },
   "closureContinuationReview": {
     "count": 9,
@@ -2326,5 +2317,19 @@
       "SC-LOC-006-02-001"
     ],
     "decision": "Station case checks mutable train information in text; Motomiya case arranges a personal call and clinician handoff after battery loss; Akita cases concern pre-exam storage and care-worker resident preference; Yamagata tests a vibrating pager. Shared accessibility vocabulary alone is not causal duplication. Remaining corpus review pending."
+  },
+  "bankCausalContinuationReview": {
+    "scenarioIds": [
+      "SC-LOC-FKS-SHIRAKAWA-08-001",
+      "SC-LOC-JP-07207-06-001",
+      "SC-LOC-JP-07209-06-001",
+      "SC-LOC-JP-07211-06-001",
+      "SC-LOC-JP-07214-06-001"
+    ],
+    "fullRewriteCount": 5,
+    "speakingGoalCount": 25,
+    "candidateFullTurnReadCount": 14,
+    "evidence": "docs/dialogue-workspace/content-qa/PRF-007_BANK_CAUSAL_REVIEW.json",
+    "result": "Replaced repeated misunderstanding/category-correction sequence with distinct drawing, refund preparation, interrupted consultation, transaction lookup and joint-decision exchanges. All other Fukushima exchanges still require final whole-prefecture review."
   }
 }
