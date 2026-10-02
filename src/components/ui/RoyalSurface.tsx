@@ -59,7 +59,8 @@ export const ROYAL_FONT = {
 export function RoyalNavyFrame({children,style}:PropsWithChildren<{style?:StyleProp<ViewStyle>}>) {
   const [height,setHeight]=useState(0);
   return <View onLayout={event=>setHeight(event.nativeEvent.layout.height)} style={[{position:'relative',overflow:'hidden'},style]}>
-    {height>0&&<View pointerEvents="none" style={{position:'absolute',left:0,width:'100%',height:height*480/312,top:-height*84/312}}><Image source={WIDE_BUTTON} resizeMode="stretch" style={{width:'100%',height:'100%'}}/></View>}
+    <View pointerEvents="none" style={{position:'absolute',left:'4%',right:'4%',top:'12%',bottom:'12%',borderRadius:8,backgroundColor:ROYAL.lacquerLight}}/>
+    {height>0&&<Image source={WIDE_BUTTON} resizeMode="stretch" style={{position:'absolute',left:0,width:'100%',height:height*480/312,top:-height*84/312}}/>}
     {children}
   </View>;
 }

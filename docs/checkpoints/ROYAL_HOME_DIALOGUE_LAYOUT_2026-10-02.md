@@ -14,3 +14,7 @@ Guide: optional help button opens bounded scrollable modal. Dialogue: constant f
 Validation: scoped ESLint clean; JLPT lock PASS 10/10; diff whitespace check clean. TypeScript still reports existing TS2352 in src/services/life-content-repository.ts: generated SC-HKD-HAKODATE-001 index lacks required type. No unrelated data was modified.
 
 Runtime screenshots and native checks are unavailable in this environment: Playwright Chromium download returned an invalid/truncated archive; CUA rejects localhost with ERR_BLOCKED_BY_CLIENT. No screenshot, iPhone, iPad, Android or desktop visual PASS is claimed. Check /home, /world/location/LOC-001-01 (help open/close), /world/dialogue/SC-LOC-001-01-001 (NPC/player, long text, mic, hint, previous/next) on native and web before release.
+
+## HUD follow-up after user's native check
+
+User reported missing royal-blue fill in name/coin plaques and coin touching ornament. RoyalNavyFrame now supplies an explicit inset navy backing and positions the plaque Image directly in its measured container. Coin safe padding is 22% on each side; name padding 19%; coin icon reduced; approved coin allocation increased to 36%. Thin Credit/EXP heights and all economy behavior preserved. Scoped ESLint and UI-lock checks pass; native visual confirmation remains pending.

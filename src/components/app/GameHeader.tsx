@@ -39,10 +39,10 @@ export default function GameHeader({name='プレイヤー',abilityLevel='N5',abi
     <View style={s.approvedTopBody}>
      <Pressable accessibilityRole="button" accessibilityLabel={name} onPress={()=>onProfile?onProfile():router.push('/profile')} style={s.approvedProfile}>
       <Image source={HUD_PLAYER} resizeMode="contain" style={[s.approvedAvatar,{width:avatarSize,height:avatarSize}]}/>
-      <RoyalNavyFrame style={[s.approvedNameFrame,{paddingHorizontal:screenWidth<360?8:14}]}><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.7} maxFontSizeMultiplier={1} style={[s.approvedName,{fontSize:(screenWidth<360?14:20)*scale,lineHeight:26*scale}]}>{name}</Text></RoyalNavyFrame>
+      <RoyalNavyFrame style={[s.approvedNameFrame,{paddingHorizontal:'19%'}]}><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.7} maxFontSizeMultiplier={1} style={[s.approvedName,{fontSize:(screenWidth<360?14:20)*scale,lineHeight:26*scale}]}>{name}</Text></RoyalNavyFrame>
      </Pressable>
      <Pressable accessibilityRole="button" accessibilityLabel={`コイン ${coins}`} onPress={onCoins} style={s.approvedCoins}>
-      <RoyalNavyFrame style={s.approvedCoinFrame}><Image source={HUD_COIN} resizeMode="contain" style={[s.approvedCoinIcon,{width:20*scale,height:20*scale}]}/>
+      <RoyalNavyFrame style={s.approvedCoinFrame}><Image source={HUD_COIN} resizeMode="contain" style={[s.approvedCoinIcon,{width:18*scale,height:18*scale}]}/>
       <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.7} maxFontSizeMultiplier={1} style={[s.approvedCoinValue,{fontSize:16*scale,lineHeight:22*scale}]}>{coinDisplay(coins)}</Text></RoyalNavyFrame>
      </Pressable>
     </View>
@@ -116,13 +116,13 @@ const s=StyleSheet.create({
  approvedTopRow:{height:ROYAL_LAYOUT.homeHudTopRowHeight,flexDirection:'row',alignItems:'center',gap:8},
  approvedTopBody:{flex:1,minWidth:0,height:'100%',flexDirection:'row',alignItems:'center',gap:8},
  approvedNameFrame:{flex:1,minWidth:0,height:58,justifyContent:'center',paddingHorizontal:14},
- approvedCoinFrame:{flex:1,flexDirection:'row',alignItems:'center',justifyContent:'center',paddingHorizontal:14,gap:4},
+ approvedCoinFrame:{flex:1,flexDirection:'row',alignItems:'center',justifyContent:'center',paddingHorizontal:'22%',gap:5},
  approvedTopArt:{position:'absolute',left:0,right:0},
  approvedTopImage:{width:'100%',height:'100%'},
  approvedProfile:{flex:1,height:'100%',flexDirection:'row',alignItems:'center',minWidth:0},
  approvedAvatar:{width:ROYAL_LAYOUT.homeAvatarSize,height:ROYAL_LAYOUT.homeAvatarSize,flexShrink:0},
  approvedName:{width:'100%',flexShrink:1,minWidth:0,marginLeft:0,marginRight:0,color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:20,lineHeight:26,textAlign:'center',textAlignVertical:'center',includeFontPadding:false},
- approvedCoins:{width:'34%',minWidth:94,height:58},
+ approvedCoins:{width:'36%',minWidth:100,height:58},
  approvedCoinIcon:{width:22,height:22,flexShrink:0},
  approvedCoinValue:{flex:1,minWidth:0,color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:16,lineHeight:22,textAlign:'center',includeFontPadding:false},
  studyContainer:{width:'100%',paddingHorizontal:10,paddingTop:8,paddingBottom:10,borderWidth:1,borderRadius:16,borderColor:ROYAL.gold,backgroundColor:ROYAL.lacquer,shadowColor:'#07101f',shadowOpacity:.24,shadowRadius:8,shadowOffset:{width:0,height:4},elevation:4},
@@ -149,8 +149,8 @@ const s=StyleSheet.create({
  avatar:{position:'absolute',left:0,top:3,width:ROYAL_LAYOUT.homeAvatarSize,height:ROYAL_LAYOUT.homeAvatarSize,zIndex:3},
  name:{width:'100%',color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:19,lineHeight:25,textAlign:'center',includeFontPadding:false},
  coinPressable:{width:ROYAL_LAYOUT.homeCoinWidth,height:58},
- coinFrame:{flex:1,flexDirection:'row',alignItems:'center',justifyContent:'center',paddingHorizontal:21,gap:4},
- coinIcon:{width:25,height:25,flexShrink:0},coinValue:{flex:1,minWidth:0,color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:14,lineHeight:19,textAlign:'center',includeFontPadding:false},
+ coinFrame:{flex:1,flexDirection:'row',alignItems:'center',justifyContent:'center',paddingHorizontal:'22%',gap:5},
+ coinIcon:{width:20,height:20,flexShrink:0},coinValue:{flex:1,minWidth:0,color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:14,lineHeight:19,textAlign:'center',includeFontPadding:false},
  energyStack:{height:2*ROYAL_BAR_HEIGHT,flex:0,gap:0},
  approvedEnergyStack:{flex:0,height:66,gap:2},
  energyFrame:{flex:0,height:ROYAL_BAR_HEIGHT,minHeight:ROYAL_BAR_HEIGHT,position:'relative',overflow:'hidden'},
