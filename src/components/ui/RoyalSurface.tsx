@@ -57,10 +57,10 @@ export const ROYAL_FONT = {
 
 /** Wide plaque visible alpha bounds: y=84..396 in a 1800x480 source. */
 export function RoyalNavyFrame({children,style}:PropsWithChildren<{style?:StyleProp<ViewStyle>}>) {
-  const [height,setHeight]=useState(0);
-  return <View onLayout={event=>setHeight(event.nativeEvent.layout.height)} style={[{position:'relative',overflow:'hidden'},style]}>
+  const [size,setSize]=useState({width:0,height:0});
+  return <View onLayout={event=>{const {width,height}=event.nativeEvent.layout;setSize(previous=>previous.width===width&&previous.height===height?previous:{width,height});}} style={[{position:'relative',overflow:'hidden'},style]}>
     <View pointerEvents="none" style={{position:'absolute',left:'4%',right:'4%',top:'12%',bottom:'12%',borderRadius:8,backgroundColor:ROYAL.lacquerLight}}/>
-    {height>0&&<Image source={WIDE_BUTTON} resizeMode="stretch" style={{position:'absolute',left:0,width:'100%',height:height*480/312,top:-height*84/312}}/>}
+    {size.width>0&&size.height>0&&<Image source={WIDE_BUTTON} resizeMode="stretch" style={{position:'absolute',left:0,width:size.width,height:size.height*480/312,top:-size.height*84/312}}/>}
     {children}
   </View>;
 }
