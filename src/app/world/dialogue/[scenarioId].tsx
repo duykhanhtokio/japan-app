@@ -31,7 +31,7 @@ function themeFor(category?:string|null):Theme{const v=(category??'').toLowerCas
 function PulsingMic({disabled,recording,onPress}:{disabled:boolean;recording:boolean;onPress:()=>void}){
  const pulse=useRef(new NativeAnimated.Value(0)).current;
  useEffect(()=>{const loop=NativeAnimated.loop(NativeAnimated.sequence([NativeAnimated.timing(pulse,{toValue:1,duration:1500,useNativeDriver:true}),NativeAnimated.timing(pulse,{toValue:0,duration:1500,useNativeDriver:true})]));loop.start();return()=>loop.stop()},[pulse]);
- return <Pressable accessibilityRole="button" accessibilityLabel={recording?'録音を停止':'録音を開始'} disabled={disabled} onPress={onPress} style={({pressed})=>[s.mic,disabled&&s.disabled,pressed&&s.pressed]}><NativeAnimated.Image source={MICROPHONE} resizeMode="contain" style={[s.micIcon,{opacity:pulse.interpolate({inputRange:[0,1],outputRange:[.42,1]}),transform:[{scale:pulse.interpolate({inputRange:[0,1],outputRange:[.96,1.06]})}]}]}/></Pressable>
+ return <Pressable accessibilityRole="button" accessibilityLabel={recording?'録音を停止':'録音を開始'} disabled={disabled} onPress={onPress} style={({pressed})=>[s.mic,disabled&&{opacity:.7},pressed&&s.pressed]}><NativeAnimated.Image source={MICROPHONE} resizeMode="contain" style={[s.micIcon,{opacity:pulse.interpolate({inputRange:[0,1],outputRange:[.78,1]}),transform:[{scale:pulse.interpolate({inputRange:[0,1],outputRange:[.96,1.06]})}]}]}/></Pressable>
 }
 
 export default function DialogueScreen(){
@@ -43,9 +43,11 @@ export default function DialogueScreen(){
  const [spokenLengths,setSpokenLengths]=useState<Record<string,number>>({});
  const [hintStages,setHintStages]=useState<Record<string,number>>({});
  const [stageSize,setStageSize]=useState({width:0,height:0}),[headerHeight,setHeaderHeight]=useState(0);
+ const conversationRef=useRef<ScrollView>(null);
  const abortListening=speech.abortListening;
  const heardNpcIds=useRef(new Set<string>());
  const npcContext=npcTurn?turn:turns.slice(0,index).reverse().find(item=>item.speaker==='NPC');
+ const playerTurn=turn?.speaker==='PLAYER'?turn:turns[index+1]?.speaker==='PLAYER'?turns[index+1]:null;
  const theme=themeFor(location?.category),background=locationBackground(location?.id,location?.category)??sceneForCategory(location?.category),npcImage=npcForCategory(location?.category),controlsBottom=Math.max(18,insets.bottom+10),mission=scenarioMission(scenario,location?.category),npcCategory=normalizeNpcCategory(location?.category),npcName=npcCategory?`${npcCategory.ja}さん`:'スタッフ',playerName=profile.name?.trim()||'プレイヤー';
  useEffect(()=>{
   let active=true;
@@ -104,11 +106,11 @@ export default function DialogueScreen(){
  return <ImageBackground source={background} resizeMode="cover" style={s.screen}><View style={s.backdrop}/><SafeAreaView onLayout={event=>{const {width,height}=event.nativeEvent.layout;setStageSize({width,height});}} style={s.safe}>
   <View onLayout={event=>setHeaderHeight(event.nativeEvent.layout.height)} style={s.header}><View style={s.headerRow}><RoyalBackButton onPress={()=>router.back()}/><View style={s.headerTitle}><View style={s.titleRow}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.title}>{location?displayLocationNameJa(location.nameJa,location.category):'会話練習'}</Text></View></View></View><View style={s.missionCard}><RoyalNavyFrame style={s.missionLabel}><Text style={s.missionLabelText}>課題</Text></RoyalNavyFrame><RoyalReadingFrame><Text maxFontSizeMultiplier={1} style={s.missionText}>{mission}</Text></RoyalReadingFrame></View></View>
   <View pointerEvents="none" style={[s.npcLayer,{bottom:controlsBottom},wide&&s.npcLayerWide]}><Image source={npcImage} resizeMode="contain" style={s.npcImage}/></View>
-  <ScrollView style={[s.conversation,{top:conversationTop,bottom:controlsBottom+76},wide&&s.conversationWide]} contentContainerStyle={s.conversationContent} nestedScrollEnabled>
+  <ScrollView ref={conversationRef} onContentSizeChange={()=>{if(!npcTurn)conversationRef.current?.scrollToEnd({animated:false})}} style={[s.conversation,{top:conversationTop,bottom:controlsBottom+124},wide&&s.conversationWide]} contentContainerStyle={s.conversationContent} nestedScrollEnabled>
    {npcContext&&renderPanel(npcContext,!npcTurn)}
-   {!npcTurn&&renderPanel(turn)}
-   <View style={s.actionRow}>{!npcTurn&&<PulsingMic disabled={!speech.speechAvailable} recording={speech.recognizing} onPress={()=>{if(speech.recognizing)speech.stopListening();else void speech.startListening()}}/>}</View>
+   {playerTurn&&renderPanel(playerTurn)}
   </ScrollView>
+  {playerTurn&&<View style={[s.microphoneDock,{bottom:controlsBottom+72},wide&&s.conversationWide]}><PulsingMic disabled={!speech.speechAvailable||(npcTurn&&!npcSpeechDone)} recording={speech.recognizing} onPress={()=>{if(speech.recognizing)speech.stopListening();else void speech.startListening()}}/></View>}
   <View style={[s.controls,{bottom:controlsBottom},wide&&s.controlsWide]}><RoyalButton disabled={index===0} onPress={()=>move(index-1)} style={s.control}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.controlText}>前へ</Text></RoyalButton><RoyalButton disabled={finishing||(npcTurn&&!npcSpeechDone)} onPress={()=>index+1<turns.length?move(index+1):finish()} style={s.control}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.controlText}>{index+1<turns.length?'次へ':finishing?'保存中…':npcTurn&&!npcSpeechDone?'再生中…':'終了'}</Text></RoyalButton></View>
   <NpcRewardModal visible={rewardVisible} category={rewardCategory} progress={rewardProgress} isUnlock={isUnlock} onClose={()=>{if(scenario.locationId)router.dismissTo(`/world/location/${scenario.locationId}`);else router.back()}}/>
  </SafeAreaView></ImageBackground>
@@ -125,6 +127,7 @@ const s=StyleSheet.create({
  bubbleDepth:{position:'relative',shadowColor:'#020713',shadowOffset:{width:0,height:8},shadowOpacity:.42,shadowRadius:12,elevation:10},bubble:{minHeight:108,paddingRight:58,paddingBottom:48},
  japanese:{fontFamily:ROYAL_FONT.heading,fontSize:17,lineHeight:21,textAlign:'center'},reading:{fontFamily:ROYAL_FONT.body,fontSize:ROYAL_TYPE.optionSecondary,lineHeight:19,marginTop:3,textAlign:'center'},guidance:{fontFamily:ROYAL_FONT.body,fontSize:17,lineHeight:21,textAlign:'center'},
  translation:{fontFamily:ROYAL_FONT.body,fontSize:ROYAL_TYPE.optionSecondary,lineHeight:21,marginTop:7,textAlign:'center'},
+ microphoneDock:{position:'absolute',left:10,right:10,zIndex:9,elevation:14,height:48,alignItems:'center',justifyContent:'center'},
  actionRow:{height:44,width:'100%',flexDirection:'row',alignItems:'center',justifyContent:'center',gap:28},hintButton:{position:'absolute',right:0,bottom:-12,zIndex:20,width:30,height:38},
  speechArea:{marginTop:8,alignItems:'center',justifyContent:'center',gap:6,minHeight:44},transcript:{width:'100%',fontSize:16,lineHeight:24,fontFamily:ROYAL_FONT.body,textAlign:'center',textAlignVertical:'center',includeFontPadding:false},speechNotice:{marginTop:4,marginHorizontal:12,color:'#fff3e1',fontFamily:ROYAL_FONT.body,fontSize:12,lineHeight:18,textAlign:'center',textShadowColor:'#31151a',textShadowOffset:{width:0,height:1},textShadowRadius:3},mic:{width:44,height:44,alignItems:'center',justifyContent:'center'},micIcon:{width:28,height:28},
  controls:{position:'absolute',zIndex:8,left:10,right:10,flexDirection:'row',gap:6},controlsWide:{left:'51%',right:'3%'},control:{flex:1,height:66},controlText:{color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:18},pressed:{opacity:.86,transform:[{scale:.97}]},disabled:{opacity:.35},emptyScreen:{flex:1,backgroundColor:'#0b1b2a'},empty:{color:'#fff',fontFamily:ROYAL_FONT.body,padding:24,fontSize:18},

@@ -604,10 +604,10 @@ const styles =
             backgroundColor:
                 '#e8e2d6',
 
-            borderWidth: 1,
+            borderWidth: 2,
 
             borderColor:
-                '#b8b1a5',
+                '#847457',
         },
 
         totalProgressTop: {
@@ -643,7 +643,7 @@ const styles =
             marginTop: 10,
 
             backgroundColor:
-                '#b8b1a5',
+                '#847457',
 
             overflow: 'hidden',
         },
@@ -683,6 +683,11 @@ const styles =
         },
 
         levelCard: {
+            shadowColor: '#0b1830',
+            shadowOffset: {width:0,height:3},
+            shadowOpacity: .22,
+            shadowRadius: 5,
+            elevation: 3,
             minHeight: 102,
 
             borderRadius: 20,
@@ -701,19 +706,19 @@ const styles =
             borderWidth: 2,
 
             borderColor:
-                '#78917d',
+                '#725629',
         },
 
         levelCardLocked: {
             backgroundColor:
                 '#e8e2d6',
 
-            borderWidth: 1,
+            borderWidth: 2,
 
             borderColor:
-                '#b8b1a5',
+                '#847457',
 
-            opacity: 0.48,
+            opacity: 1,
         },
 
         /*
@@ -813,7 +818,7 @@ const styles =
             borderRadius: 3,
 
             backgroundColor:
-                '#b8b1a5',
+                '#847457',
 
             overflow: 'hidden',
         },

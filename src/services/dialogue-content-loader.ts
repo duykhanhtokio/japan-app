@@ -10,12 +10,12 @@ type RequireWithContext = NodeRequire & {
     context(directory: string, useSubdirectories: boolean, pattern: RegExp): MetroRequireContext;
 };
 
-type AuthoredHint={answerJa:string;hintTranslations:Record<string,string>;recommendedAnswerRuby:{text:string;reading?:string}[]};
+type AuthoredHint={answerJa:string;hintTranslations:Record<string,string>;recommendedAnswerRuby?:{text:string;reading?:string}[]};
 const authoredHints=authoredHintsJson as Record<string,AuthoredHint>;
 function withAuthoredHint(turn:LifeDialogueTurn):LifeDialogueTurn{
  const hint=authoredHints[turn.id];
  if(!turn.player||!hint||hint.answerJa!==turn.player.recommendedAnswerJa)return turn;
- return {...turn,player:{...turn.player,hintTranslations:hint.hintTranslations,recommendedAnswerRuby:hint.recommendedAnswerRuby}};
+ return {...turn,player:{...turn.player,hintTranslations:hint.hintTranslations,recommendedAnswerRuby:hint.recommendedAnswerRuby??turn.player.recommendedAnswerRuby}};
 }
 
 // Metro indexes the JSON modules at build time, while a scenario is read only
