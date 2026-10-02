@@ -58,7 +58,7 @@ export default function DialogueScreen(){
       {!npcTurn&&<View style={s.speechArea}>
        {(speech.recognizing||!!speech.transcript)&&<Text style={[s.transcript,{color:theme.text}]}>「{speech.transcript||'音声を認識しています…'}」</Text>}
       </View>}
-     </RoyalReadingFrame></View><View style={s.actionRow}><RoyalHintButton onPress={nextHint} style={s.hintButton}/>{!npcTurn&&<PulsingMic disabled={!speech.speechAvailable} recording={speech.recognizing} onPress={()=>{if(speech.recognizing)speech.stopListening();else void speech.startListening()}}/>}</View>
+     </RoyalReadingFrame><RoyalHintButton onPress={nextHint} style={s.hintButton}/></View><View style={s.actionRow}>{!npcTurn&&<PulsingMic disabled={!speech.speechAvailable} recording={speech.recognizing} onPress={()=>{if(speech.recognizing)speech.stopListening();else void speech.startListening()}}/>}</View>
      {!npcTurn&&!speech.speechAvailable&&<Text style={s.speechNotice}>音声認識には対応する開発ビルドが必要です。</Text>}
      {!npcTurn&&!!speech.speechError&&<Text style={s.speechNotice}>{speech.speechError}</Text>}
     </View>
@@ -80,7 +80,7 @@ const s=StyleSheet.create({
  bubbleDepth:{position:'relative',shadowColor:'#020713',shadowOffset:{width:0,height:8},shadowOpacity:.42,shadowRadius:12,elevation:10},bubble:{minHeight:108,paddingRight:58,paddingBottom:48},
  japanese:{fontFamily:ROYAL_FONT.heading,fontSize:ROYAL_TYPE.dialogue,lineHeight:ROYAL_TYPE.dialogueLine,textAlign:'center'},reading:{fontFamily:ROYAL_FONT.body,fontSize:ROYAL_TYPE.optionSecondary,lineHeight:19,marginTop:3,textAlign:'center'},guidance:{fontFamily:ROYAL_FONT.body,fontSize:ROYAL_TYPE.dialogue,lineHeight:ROYAL_TYPE.dialogueLine,textAlign:'center'},
  translation:{fontFamily:ROYAL_FONT.body,fontSize:ROYAL_TYPE.optionSecondary,lineHeight:21,marginTop:7,textAlign:'center'},
- actionRow:{height:60,flexDirection:'row',alignItems:'center',justifyContent:'center',gap:28},hintButton:{width:44,height:56},
+ actionRow:{height:60,flexDirection:'row',alignItems:'center',justifyContent:'center',gap:28},hintButton:{position:'absolute',right:-5,bottom:-25,zIndex:20,width:50,height:62},
  speechArea:{marginTop:8,alignItems:'center',justifyContent:'center',gap:6,minHeight:44},transcript:{width:'100%',fontSize:16,lineHeight:24,fontFamily:ROYAL_FONT.body,textAlign:'center',textAlignVertical:'center',includeFontPadding:false},speechNotice:{marginTop:4,marginHorizontal:12,color:'#fff3e1',fontFamily:ROYAL_FONT.body,fontSize:12,lineHeight:18,textAlign:'center',textShadowColor:'#31151a',textShadowOffset:{width:0,height:1},textShadowRadius:3},mic:{width:52,height:52,alignItems:'center',justifyContent:'center'},micIcon:{width:'100%',height:'100%'},
  controls:{position:'absolute',zIndex:8,left:10,right:10,flexDirection:'row',gap:6},controlsWide:{left:'51%',right:'3%'},control:{flex:1,height:66},controlText:{color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:18},pressed:{opacity:.86,transform:[{scale:.97}]},disabled:{opacity:.35},emptyScreen:{flex:1,backgroundColor:'#0b1b2a'},empty:{color:'#fff',fontFamily:ROYAL_FONT.body,padding:24,fontSize:18},
 });

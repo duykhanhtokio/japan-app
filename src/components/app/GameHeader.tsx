@@ -161,6 +161,6 @@ const s=StyleSheet.create({
  energyOrnament:{position:'absolute',left:0,right:0,width:'100%'},
  energyTextSafe:{position:'absolute',left:'16%',right:'16%',top:0,bottom:0,alignItems:'center',justifyContent:'center'},
  energyCenteredText:{width:'100%',textAlign:'center',color:'#142335',fontFamily:ROYAL_FONT.heading,fontSize:13,lineHeight:20,includeFontPadding:false,textShadowColor:'transparent',textShadowOffset:{width:0,height:0},textShadowRadius:0},
- creditText:{backgroundColor:'#142847',borderRadius:6,color:'#fff7df',fontWeight:'700',textShadowColor:'#43121a',textShadowOffset:{width:0,height:1},textShadowRadius:1},
+ creditText:{color:'#fff7df',fontWeight:'700',textShadowColor:'#43121a',textShadowOffset:{width:0,height:1},textShadowRadius:1},
  pressed:{opacity:.84,transform:[{translateY:2},{scale:.985}]}
 });
