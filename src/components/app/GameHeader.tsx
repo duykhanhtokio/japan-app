@@ -1,4 +1,4 @@
-import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
+import RoyalPaperPanel, { royalOpenFrameGeometry } from '@/components/ui/RoyalPaperPanel';
 import { router } from 'expo-router';
 import { useState } from 'react';
 import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
@@ -101,10 +101,14 @@ function StudyMetric({label,value,ratio}:{label:string;value:string;ratio:number
  return <View style={{flex:1,minWidth:0}}><EnergyBar label={label} value={value} ratio={ratio} tint="#142335" large/></View>;
 }
 function EnergyBar({label,value,ratio,tint,large=false}:{label:string;value:string;ratio:number;tint:string;large?:boolean}){
+ const [size,setSize]=useState({width:0,height:large?APPROVED_BAR_HEIGHT:ROYAL_BAR_HEIGHT});
+ const inset=royalOpenFrameGeometry(size.width,size.height);
  const percentage=Math.round(clamp01(ratio)*100);
- return <RoyalPaperPanel borderOnly style={[s.energyFrame,large&&s.approvedEnergyFrame]} underlay={<View pointerEvents="none" style={s.energyInset}><View style={s.energyIvory}/><View style={[s.energyColorClip,{width:`${percentage}%`,backgroundColor:tint}]}/></View>}>
+ return <View onLayout={event=>{const {width,height}=event.nativeEvent.layout;setSize(old=>old.width===width&&old.height===height?old:{width,height})}} style={[s.energyFrame,large&&s.approvedEnergyFrame]}>
+  {size.width>0&&<View pointerEvents="none" style={[s.energyInset,{left:inset.left,right:inset.right,top:inset.top,bottom:inset.bottom,borderRadius:inset.radius}]}><View style={s.energyIvory}/><View style={[s.energyColorClip,{width:`${percentage}%`,backgroundColor:tint}]}/></View>}
+  <RoyalPaperPanel borderOnly style={s.energyBorder}/>
   <View pointerEvents="none" style={s.energyTextSafe}><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.78} maxFontSizeMultiplier={1} style={[s.energyCenteredText,percentage>=55&&s.creditText]}>{label}{value?`  ${value}`:''}</Text></View>
- </RoyalPaperPanel>;
+ </View>;
 }
 
 const s=StyleSheet.create({
@@ -155,7 +159,8 @@ const s=StyleSheet.create({
  approvedEnergyStack:{flex:0,height:66,gap:2},
  energyFrame:{flex:0,height:ROYAL_BAR_HEIGHT,minHeight:ROYAL_BAR_HEIGHT,position:'relative',paddingHorizontal:0,paddingVertical:0},
  approvedEnergyFrame:{flex:0,height:APPROVED_BAR_HEIGHT,minHeight:APPROVED_BAR_HEIGHT},
- energyInset:{position:'absolute',left:8,right:8,top:4,bottom:4,borderRadius:8,overflow:'hidden'},
+ energyBorder:{...StyleSheet.absoluteFillObject,paddingHorizontal:0,paddingVertical:0,minHeight:0},
+ energyInset:{position:'absolute',overflow:'hidden'},
  energyIvory:{...StyleSheet.absoluteFillObject,backgroundColor:'#fff7e7'},
  energyColorClip:{height:'100%'},
  energyOrnament:{position:'absolute',left:0,right:0,width:'100%'},

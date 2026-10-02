@@ -17,7 +17,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import BottomNav from '@/components/app/BottomNav';
 import GameHeader from '@/components/app/GameHeader';
 import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
-import { ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
+import { ROYAL_LAYOUT, ROYAL_FONT, RoyalNavyFrame } from '@/components/ui/RoyalSurface';
 import { useUserProfile } from '@/hooks/useUserProfile';
 import { getGameProgress } from '@/services/progress-storage';
 import { getJlptProgress } from '@/services/jlpt-progress-storage';
@@ -231,13 +231,14 @@ export default function LearnScreen() {
                             styles.headingArea
                         }
                     >
-                        <View style={styles.headingTitleRow}><Text
+                        <View style={styles.headingTitleRow}><RoyalNavyFrame style={styles.headingPlaque}><Text
+                            numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.75}
                             style={
                                 styles.heading
                             }
                         >
                             JLPT 学習
-                        </Text><Pressable accessibilityRole="button" accessibilityLabel="JLPT の認定条件" onPress={()=>setHelpVisible(true)} style={styles.helpButton}><Text style={styles.helpGlyph}>?</Text></Pressable></View>
+                        </Text></RoyalNavyFrame><Pressable accessibilityRole="button" accessibilityLabel="JLPT の認定条件" onPress={()=>setHelpVisible(true)} style={styles.helpButton}><Text style={styles.helpGlyph}>?</Text></Pressable></View>
 
                         <Text
                             style={
@@ -462,7 +463,8 @@ export default function LearnScreen() {
 
 const styles =
     StyleSheet.create({
-        headingTitleRow:{flexDirection:'row',alignItems:'center',gap:10},
+        headingTitleRow:{flexDirection:'row',alignItems:'center',justifyContent:'center',gap:10},
+        headingPlaque:{flex:1,minWidth:0,maxWidth:420,height:58,paddingHorizontal:36,justifyContent:'center'},
         helpButton:{width:42,height:42,borderRadius:21,borderWidth:2,borderColor:'#b68d47',backgroundColor:'#fff8e8',alignItems:'center',justifyContent:'center'},
         helpGlyph:{color:'#263b55',fontSize:24,fontWeight:'700',lineHeight:30},
         helpBackdrop:{flex:1,justifyContent:'center',padding:20,backgroundColor:'rgba(4,15,31,.65)'},
@@ -542,20 +544,21 @@ const styles =
         },
 
         heading: {
-            color: '#24231f',
+            color: '#f2db9b',
 
             fontSize: 28,
-            fontWeight: '900',
+            fontFamily: ROYAL_FONT.heading,
+            textAlign:'center',
 
             textShadowColor:
-                'rgba(0,0,0,0.40)',
+                '#07101f',
 
             textShadowOffset: {
                 width: 0,
-                height: 2,
+                height: 1,
             },
 
-            textShadowRadius: 4,
+            textShadowRadius: 1,
         },
 
         headingVi: {
