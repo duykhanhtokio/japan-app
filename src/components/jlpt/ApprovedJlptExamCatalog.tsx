@@ -1,3 +1,4 @@
+import JlptStudyBackground from './JlptStudyBackground';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { BackHandler, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from 'expo-router';
@@ -51,7 +52,7 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
   }), [navigation, selected]);
 
   if (selected?.kind === 'structured') return <N1OfficialTrial exam={selected.exam} onExit={() => { activeExamExit.current = null; setSelected(null); }} registerExit={(handler) => { activeExamExit.current = handler; }} />;
-  return <View style={styles.screen}><JlptExamHeader title={`${level} · 模擬試験一覧`} subtitle="受験する試験を選択" onBack={onBack} /><ScrollView contentContainerStyle={styles.content}><JlptPaper><Text style={styles.heading}>模擬試験一覧</Text><Text style={styles.description}>受験する試験を選んでください。</Text>{choices.map((choice) => {
+  return <JlptStudyBackground><View style={styles.screen}><JlptExamHeader title={`${level} · 模擬試験一覧`} subtitle="受験する試験を選択" onBack={onBack} /><ScrollView contentContainerStyle={styles.content}><JlptPaper style={styles.catalogPaper}><Text style={styles.heading}>模擬試験一覧</Text><Text style={styles.description}>受験する試験を選んでください。</Text>{choices.map((choice) => {
     const count = choice.kind === 'structured' ? choice.exam.questions.length : undefined;
     const summary = summaries[choice.exam.id];
     const percent = summary?.latestTotal ? Math.round(summary.latestCorrect / summary.latestTotal * 100) : null;
@@ -71,7 +72,7 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
       </View>
       <Text style={styles.chevron}>›</Text>
     </Pressable>;
-  })}</JlptPaper></ScrollView></View>;
+  })}</JlptPaper></ScrollView></View></JlptStudyBackground>;
 }
 
-const styles = StyleSheet.create({screen:{flex:1,backgroundColor:JLPT_EXAM.color.page},content:{paddingVertical:12,paddingHorizontal:8,backgroundColor:JLPT_EXAM.color.page},heading:{fontFamily:JLPT_EXAM.font.content,fontSize:JLPT_EXAM.type.sectionTitle,lineHeight:31,color:JLPT_EXAM.color.ink,marginBottom:8},description:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:22,color:JLPT_EXAM.color.secondaryInk,marginBottom:20},examRow:{minHeight:112,flexDirection:'row',alignItems:'center',borderWidth:1,borderColor:JLPT_EXAM.color.divider,backgroundColor:JLPT_EXAM.color.paper,paddingHorizontal:16,paddingVertical:14,marginBottom:12},copy:{flex:1,minWidth:0},examTitle:{fontFamily:JLPT_EXAM.font.content,fontSize:18,lineHeight:26,color:JLPT_EXAM.color.ink},count:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.secondaryInk,marginTop:2},stats:{flexDirection:'row',flexWrap:'wrap',columnGap:12,rowGap:4,marginTop:8},stat:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.ink,flexGrow:1,flexBasis:110},lastAttempt:{fontFamily:JLPT_EXAM.font.interface,fontSize:13,lineHeight:20,color:JLPT_EXAM.color.secondaryInk,marginTop:5},chevron:{fontFamily:JLPT_EXAM.font.interface,fontSize:34,lineHeight:38,color:JLPT_EXAM.color.ink,marginLeft:12},pressed:{opacity:.62}});
+const styles = StyleSheet.create({screen:{flex:1,backgroundColor:'transparent'},content:{paddingVertical:12,paddingHorizontal:8,backgroundColor:'transparent'},heading:{fontFamily:JLPT_EXAM.font.content,fontSize:JLPT_EXAM.type.sectionTitle,lineHeight:31,color:JLPT_EXAM.color.ink,marginBottom:8},description:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:22,color:JLPT_EXAM.color.secondaryInk,marginBottom:20},catalogPaper:{backgroundColor:'transparent'},examRow:{minHeight:112,flexDirection:'row',alignItems:'center',borderWidth:1,borderColor:JLPT_EXAM.color.divider,backgroundColor:'rgba(255,255,255,.66)',paddingHorizontal:16,paddingVertical:14,marginBottom:12},copy:{flex:1,minWidth:0},examTitle:{fontFamily:JLPT_EXAM.font.content,fontSize:18,lineHeight:26,color:JLPT_EXAM.color.ink},count:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.secondaryInk,marginTop:2},stats:{flexDirection:'row',flexWrap:'wrap',columnGap:12,rowGap:4,marginTop:8},stat:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.ink,flexGrow:1,flexBasis:110},lastAttempt:{fontFamily:JLPT_EXAM.font.interface,fontSize:13,lineHeight:20,color:JLPT_EXAM.color.secondaryInk,marginTop:5},chevron:{fontFamily:JLPT_EXAM.font.interface,fontSize:34,lineHeight:38,color:JLPT_EXAM.color.ink,marginLeft:12},pressed:{opacity:.62}});

@@ -39,10 +39,10 @@ export default function GameHeader({name='プレイヤー',abilityLevel='N5',abi
     <View style={s.approvedTopBody}>
      <Pressable accessibilityRole="button" accessibilityLabel={name} onPress={()=>onProfile?onProfile():router.push('/profile')} style={s.approvedProfile}>
       <Image source={HUD_PLAYER} resizeMode="contain" style={[s.approvedAvatar,{width:avatarSize,height:avatarSize}]}/>
-      <RoyalNavyFrame style={[s.approvedNameFrame,{paddingHorizontal:'19%'}]}><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.7} maxFontSizeMultiplier={1} style={[s.approvedName,{fontSize:(screenWidth<360?14:20)*scale,lineHeight:26*scale}]}>{name}</Text></RoyalNavyFrame>
+      <RoyalNavyFrame hud style={[s.approvedNameFrame,{paddingHorizontal:'19%'}]}><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.7} maxFontSizeMultiplier={1} style={[s.approvedName,{fontSize:(screenWidth<360?14:20)*scale,lineHeight:26*scale}]}>{name}</Text></RoyalNavyFrame>
      </Pressable>
      <Pressable accessibilityRole="button" accessibilityLabel={`コイン ${coins}`} onPress={onCoins} style={s.approvedCoins}>
-      <RoyalNavyFrame style={s.approvedCoinFrame}><Image source={HUD_COIN} resizeMode="contain" style={[s.approvedCoinIcon,{width:18*scale,height:18*scale}]}/>
+      <RoyalNavyFrame hud style={s.approvedCoinFrame}><Image source={HUD_COIN} resizeMode="contain" style={[s.approvedCoinIcon,{width:18*scale,height:18*scale}]}/>
       <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.7} maxFontSizeMultiplier={1} style={[s.approvedCoinValue,{fontSize:16*scale,lineHeight:22*scale}]}>{coinDisplay(coins)}</Text></RoyalNavyFrame>
      </Pressable>
     </View>
@@ -71,10 +71,10 @@ export default function GameHeader({name='プレイヤー',abilityLevel='N5',abi
   <View style={s.topRow}>
    <RoyalBackButton onPress={onBack??goBackOrHome}/>
    <Pressable accessibilityRole="button" accessibilityLabel={name} onPress={()=>onProfile?onProfile():router.push('/profile')} style={({pressed})=>[s.profile,pressed&&s.pressed]}>
-    <RoyalNavyFrame style={s.nameFrame}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} minimumFontScale={.68} style={s.name}>{name}</Text></RoyalNavyFrame>
+    <RoyalNavyFrame hud style={s.nameFrame}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} minimumFontScale={.68} style={s.name}>{name}</Text></RoyalNavyFrame>
     <Image source={HUD_PLAYER} resizeMode="contain" style={s.avatar}/>
    </Pressable>
-   <Pressable accessibilityRole="button" accessibilityLabel={`コイン ${coins}`} onPress={onCoins} style={({pressed})=>[s.coinPressable,pressed&&s.pressed]}><RoyalNavyFrame style={s.coinFrame}><Image source={HUD_COIN} resizeMode="contain" style={s.coinIcon}/><Text {...ROYAL_TEXT_FIT} numberOfLines={1} minimumFontScale={.62} style={s.coinValue}>{coins.toLocaleString()}</Text></RoyalNavyFrame></Pressable>
+   <Pressable accessibilityRole="button" accessibilityLabel={`コイン ${coins}`} onPress={onCoins} style={({pressed})=>[s.coinPressable,pressed&&s.pressed]}><RoyalNavyFrame hud style={s.coinFrame}><Image source={HUD_COIN} resizeMode="contain" style={s.coinIcon}/><Text {...ROYAL_TEXT_FIT} numberOfLines={1} minimumFontScale={.62} style={s.coinValue}>{coins.toLocaleString()}</Text></RoyalNavyFrame></Pressable>
   </View>
   <View style={s.energyStack}>
    <EnergyBar label="CREDIT" value={`${conversationCredits}/${conversationCreditMax}`} ratio={creditRatio} tint="#ba343a"/>

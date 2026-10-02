@@ -189,7 +189,7 @@ export default function LearnScreen() {
     }
 
     return (
-        <ImageBackground source={require('../../assets/app/home-cards/study-man.png')} blurRadius={40} resizeMode="cover" style={styles.background}>
+        <ImageBackground source={require('../../assets/app/life/location-backgrounds/cafe/01-clear-morning.jpg')} blurRadius={40} resizeMode="cover" style={styles.background}>
             <View
                 pointerEvents="none"
                 style={styles.overlay}
@@ -507,7 +507,7 @@ const styles =
             left: 0,
 
             backgroundColor:
-                'rgba(11,24,48,.2)',
+                'rgba(255,250,236,.72)',
         },
 
         container: {

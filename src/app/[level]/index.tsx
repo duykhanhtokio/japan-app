@@ -1,3 +1,4 @@
+import JlptStudyBackground from '@/components/jlpt/JlptStudyBackground';
 import { router, useLocalSearchParams } from 'expo-router';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -36,7 +37,7 @@ export default function LevelScreen() {
     const isN5 = levelName === 'N5';
 
     return (
-        <SafeAreaView style={styles.container}>
+        <JlptStudyBackground><SafeAreaView style={styles.container}>
             <View style={styles.content}>
                 <RoyalBackButton onPress={() => router.canGoBack() ? router.back() : router.replace('/learn')} />
 
@@ -103,14 +104,14 @@ export default function LevelScreen() {
                     </Pressable>
                 </View>
             </View>
-        </SafeAreaView>
+        </SafeAreaView></JlptStudyBackground>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#e8e2d6',
+        backgroundColor: 'transparent',
     },
 
     content: {
@@ -152,7 +153,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         padding: 18,
-        backgroundColor: '#e8e2d6',
+        backgroundColor: 'transparent',
         borderWidth: 1,
         borderColor: '#b8b1a5',
         borderRadius: 16,

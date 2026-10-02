@@ -40,6 +40,7 @@ export default function DialogueScreen(){
  const{profile}=useUserProfile(),{language}=useAppLanguage(),royalPosition=useRoyalPositioning(),insets=useSafeAreaInsets(),wide=royalPosition.isWide;
  const turns=useMemo(()=>id?loadDialogueTurns(id):[],[id]);
  const[index,setIndex]=useState(0),[revealedTurnIds,setRevealedTurnIds]=useState<Set<string>>(()=>new Set()),[npcSpeechDone,setNpcSpeechDone]=useState(true),[rewardVisible,setRewardVisible]=useState(false),[rewardCategory,setRewardCategory]=useState<NpcCategory|null>(null),[rewardProgress,setRewardProgress]=useState(0),[isUnlock,setIsUnlock]=useState(false),[finishing,setFinishing]=useState(false),speech=useGameSpeech(),turn=turns[index],npcTurn=turn?.speaker==='NPC';
+ const [spokenLengths,setSpokenLengths]=useState<Record<string,number>>({});
  const [hintStages,setHintStages]=useState<Record<string,number>>({});
  const [stageSize,setStageSize]=useState({width:0,height:0}),[headerHeight,setHeaderHeight]=useState(0);
  const abortListening=speech.abortListening;
@@ -53,8 +54,15 @@ export default function DialogueScreen(){
   await Speech.stop();
   if(!active)return;
   if(turn?.speaker==='NPC'&&turn.npc?.textJa&&!heardNpcIds.current.has(turn.id)){
+   const spokenText=turn.npc.textJa;
    setNpcSpeechDone(false);
-   Speech.speak(turn.npc.textJa,{language:'ja-JP',rate:.82,
+   setSpokenLengths(previous=>({...previous,[turn.id]:0}));
+   Speech.speak(spokenText,{language:'ja-JP',rate:.82,
+    onBoundary:(event:{charIndex:number;charLength?:number})=>{
+     if(!active)return;
+     const end=Math.min(spokenText.length,event.charIndex+Math.max(1,event.charLength??1));
+     setSpokenLengths(previous=>({...previous,[turn.id]:Math.max(previous[turn.id]??0,end)}));
+    },
     onDone:()=>{
      if(!active)return;
      heardNpcIds.current.add(turn.id);
@@ -71,25 +79,24 @@ export default function DialogueScreen(){
   return()=>{active=false;void Speech.stop()};
  },[turn?.id,turn?.speaker,turn?.npc?.textJa,abortListening,index,turns]);
  if(!scenario||!turn)return <SafeAreaView style={s.emptyScreen}><Text style={s.empty}>会話データがありません。</Text></SafeAreaView>;
- const nextHint=(turnId:string,isNpc:boolean)=>{if(isNpc)setRevealedTurnIds(previous=>new Set(previous).add(turnId));else setHintStages(previous=>({...previous,[turnId]:Math.min(2,(previous[turnId]??0)+1)}))},move=(next:number)=>{speech.abortListening();setIndex(Math.max(0,Math.min(turns.length-1,next)))};
+ const nextHint=(turnId:string,isNpc:boolean)=>{if(isNpc)setHintStages(previous=>({...previous,[turnId]:previous[turnId]?0:1}));else setHintStages(previous=>({...previous,[turnId]:Math.min(2,(previous[turnId]??0)+1)}))},move=(next:number)=>{speech.abortListening();setIndex(Math.max(0,Math.min(turns.length-1,next)))};
  const finish=async()=>{if(finishing)return;const category=normalizeNpcCategory(location?.category);if(!category){router.back();return}setFinishing(true);const result=await recordNpcScenario(scenario.id,category.id);const unlocked=result.unlockedCategoryId?npcCategoryById(result.unlockedCategoryId):null;setRewardCategory(unlocked??category);setRewardProgress(result.progress);setIsUnlock(!!unlocked);setRewardVisible(true);setFinishing(false)};
  const npcSource=Image.resolveAssetSource?.(npcImage),npcRatio=npcSource?npcSource.width/npcSource.height:2/3;
  const npcBoxHeight=stageSize.height*(wide?.82:.72),npcBoxWidth=stageSize.width*(wide?.48:.94);
  const npcDrawHeight=Math.min(npcBoxHeight,npcBoxWidth/npcRatio);
  const npcWaist=stageSize.height-controlsBottom-npcBoxHeight+(npcBoxHeight-npcDrawHeight)/2+npcDrawHeight*.43;
  const conversationTop=Math.max(headerHeight+8,npcWaist);
- const availableHeight=Math.max(0,stageSize.height-conversationTop-controlsBottom-76);
- const panelWidth=Math.min(stageSize.width*(wide?.46:1)-20,480,Math.max(240,(availableHeight-88)/(npcTurn?1:2)*1600/550));
  const renderPanel=(panel:typeof turn,context=false)=>{
   const isNpc=panel.speaker==='NPC',showText=context||revealedTurnIds.has(panel.id),hintStage=hintStages[panel.id]??0;
-  return <View key={panel.id} style={[s.bubbleWrap,stageSize.width>0&&{maxWidth:panelWidth}]}>
+  const npcText=showText?panel.npc?.textJa??'':(panel.npc?.textJa??'').slice(0,spokenLengths[panel.id]??0);
+  const npcTranslation=panel.npc?.translations?.[language]??(language==='vi'?panel.npc?.translationVi:null);
+  return <View key={panel.id} style={s.bubbleWrap}>
    <RoyalNavyFrame style={s.speakerPlate}><Text numberOfLines={1} adjustsFontSizeToFit maxFontSizeMultiplier={1} style={s.speakerName}>{isNpc?npcName:playerName}</Text></RoyalNavyFrame>
    <View style={s.bubbleDepth}><RoyalReadingFrame>
-    {!isNpc?hintStage===0?<WaitingSpeechDots/>:hintStage===1?<Text style={[s.guidance,{color:theme.text}]}>{(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language]}</Text>:<JapaneseRuby text={panel.player?.recommendedAnswerJa??''} segments={panel.player?.recommendedAnswerRuby}/>:showText?<>
-     <Text style={[s.japanese,{color:theme.text}]}>{isNpc?panel.npc?.textJa:panel.player?.recommendedAnswerJa}</Text>
-     {!!(isNpc?panel.npc?.furigana:panel.player?.recommendedAnswerFurigana)&&<Text style={[s.reading,{color:theme.reading}]}>{isNpc?panel.npc?.furigana:panel.player?.recommendedAnswerFurigana}</Text>}
-     {language!=='ja'&&!!(isNpc?(panel.npc?.translations?.[language]??(language==='vi'?panel.npc?.translationVi:null)):panel.player?.translations?.[language])&&<Text style={[s.translation,{color:theme.reading}]}>{isNpc?(panel.npc?.translations?.[language]??panel.npc?.translationVi):panel.player?.translations?.[language]}</Text>}
-    </>:<Text style={[s.guidance,{color:theme.text}]}>{''}</Text>}
+    {!isNpc?hintStage===0?<WaitingSpeechDots/>:hintStage===1?<Text style={[s.guidance,{color:theme.text}]}>{(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language]}</Text>:<JapaneseRuby text={panel.player?.recommendedAnswerJa??''} segments={panel.player?.recommendedAnswerRuby}/>:<>
+     <Text style={[s.japanese,{color:theme.text}]}>{npcText||' '}</Text>
+     {hintStage>0&&language!=='ja'&&<Text style={[s.translation,{color:theme.reading}]}>{npcTranslation??missingHint[language]}</Text>}
+    </>}
     {!isNpc&&(speech.recognizing||!!speech.transcript)&&<Text style={[s.transcript,{color:theme.text}]}>「{speech.transcript||'音声を認識しています…'}」</Text>}
    </RoyalReadingFrame><RoyalHintButton onPress={()=>nextHint(panel.id,isNpc)} color={isNpc?'gold':'red'} style={s.hintButton}/></View>
   </View>;
@@ -114,7 +121,7 @@ const s=StyleSheet.create({
  missionCard:{position:'relative',paddingTop:12,marginTop:4,width:'100%',maxWidth:560,alignSelf:'center'},missionLabel:{position:'absolute',top:0,left:16,zIndex:30,elevation:14,width:120,height:26,justifyContent:'center'},missionLabelText:{color:ROYAL.paleGold,fontFamily:ROYAL_FONT.body,fontSize:13,textAlign:'center'},missionText:{color:'#18304b',fontFamily:ROYAL_FONT.body,fontSize:ROYAL_TYPE.explanation,lineHeight:ROYAL_TYPE.explanationLine,textAlign:'center'},
  npcLayer:{position:'absolute',zIndex:1,left:'3%',right:'3%',height:'72%'},npcLayerWide:{left:'2%',right:'50%',height:'82%'},npcImage:{width:'100%',height:'100%'},
  bubbleLayer:{position:'absolute',zIndex:5,left:10,right:10},bubbleLayerWide:{left:'51%',right:'3%'},bubbleScroll:{paddingTop:18,paddingBottom:8},
- conversation:{position:'absolute',left:10,right:10,minHeight:0,zIndex:5,elevation:12},conversationWide:{left:'51%',right:'3%'},conversationContent:{flexGrow:1,justifyContent:'flex-end',alignItems:'center',paddingTop:12,paddingBottom:8},bubbleWrap:{position:'relative',paddingTop:10,paddingBottom:10,width:'100%',maxWidth:480},playerWrap:{marginLeft:'7%',marginRight:0},speakerPlate:{position:'absolute',top:0,left:16,zIndex:30,elevation:14,width:120,maxWidth:'45%',height:26,justifyContent:'center',paddingHorizontal:14},speakerName:{color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,textAlign:'center',fontSize:12,lineHeight:17},
+ conversation:{position:'absolute',left:10,right:10,minHeight:0,zIndex:5,elevation:12},conversationWide:{left:'51%',right:'3%'},conversationContent:{flexGrow:1,justifyContent:'flex-end',alignItems:'center',paddingTop:12,paddingBottom:8},bubbleWrap:{position:'relative',paddingTop:10,paddingBottom:10,width:'100%'},playerWrap:{marginLeft:'7%',marginRight:0},speakerPlate:{position:'absolute',top:0,left:16,zIndex:30,elevation:14,width:120,maxWidth:'45%',height:26,justifyContent:'center',paddingHorizontal:14},speakerName:{color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,textAlign:'center',fontSize:12,lineHeight:17},
  bubbleDepth:{position:'relative',shadowColor:'#020713',shadowOffset:{width:0,height:8},shadowOpacity:.42,shadowRadius:12,elevation:10},bubble:{minHeight:108,paddingRight:58,paddingBottom:48},
  japanese:{fontFamily:ROYAL_FONT.heading,fontSize:17,lineHeight:21,textAlign:'center'},reading:{fontFamily:ROYAL_FONT.body,fontSize:ROYAL_TYPE.optionSecondary,lineHeight:19,marginTop:3,textAlign:'center'},guidance:{fontFamily:ROYAL_FONT.body,fontSize:17,lineHeight:21,textAlign:'center'},
  translation:{fontFamily:ROYAL_FONT.body,fontSize:ROYAL_TYPE.optionSecondary,lineHeight:21,marginTop:7,textAlign:'center'},
