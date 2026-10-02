@@ -86,6 +86,8 @@ def audit(prefecture):
             if not entry:
                 errors.append('missing_editorial_entry')
             else:
+                if entry.get('title') and s.get('name') != entry['title']:
+                    errors.append('canonical_title_mismatch')
                 if texts != entry.get('turns'):
                     errors.append('editorial_utterance_mismatch')
                 tasks = entry.get('tasks', [])

@@ -74,3 +74,7 @@ Prefectures: PRF-043, PRF-044, PRF-045, PRF-046, PRF-047. Canonical scenarios co
 ## PRF-005 Akita — merged editorial completion, 2026-10-02
 
 Current 117/117 Japanese scripts and 585 tasks individually reviewed. Eleven causal rewrites remove retained cross-prefecture and within-prefecture plot collisions while preserving incoming follow-ups and unrelated work. Hash-bound AI content decision and full inventory are in `content-qa/PRF-005_SEMANTIC_REVIEW.json` and `content-qa/PRF-005.json`. No native, translation or real-policy approval. PRF-006 begins only after this complete-prefecture save passes remote persistence.
+
+## Yamagata continuation review — 2026-10-02
+
+PRF-006 has 117 individually authored Japanese exchanges and 585 matching speaking tasks. Five further complete replacements remove towel-selection, traveller-count, return-label, arrival-deadline and old-parcel-label progression reuse; all 112 other runtime hashes remain as in remotely published checkpoint 32689dea. Current hash-bound AI editorial review passes with zero structural, exact, normalized and near-duplicate screening groups. No translation, native-speaker or device approval. Resume at PRF-007 after current branch persistence passes.

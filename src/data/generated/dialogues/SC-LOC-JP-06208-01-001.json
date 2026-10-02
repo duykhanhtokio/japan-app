@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。切符選びをお手伝いできますか。",
+        "textJa": "こんにちは。お荷物のことでお手伝いできますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "murayama_specific_1_1",
+        "communicativeIntent": "murayama_locker_1",
         "requiredSemanticComponents": {
-          "goal": "往復一組が二人分でなく一人の往路復路か尋ねる"
+          "goal": "未払いのロッカーに荷物を入れたが扉が閉まらず入れ方を確認してほしいと頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "二人で日帰りしたいです。この往復という表示は、二人分ではなく一人の行きと帰りですか。",
+        "recommendedAnswerJa": "この空いているロッカーにスーツケースを入れましたが、扉が閉まりません。まだ払っていないので、入れ方を見てもらえますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "往復一組が二人分でなく一人の往路復路か尋ねる。日本語で伝えてください。",
+        "hint": "未払いのロッカーに荷物を入れたが扉が閉まらず入れ方を確認してほしいと頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "往復一組が二人分でなく一人の往路復路か尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "未払いのロッカーに荷物を入れたが扉が閉まらず入れ方を確認してほしいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい、人数と往復の回数は別です。",
+        "textJa": "まず扉を押さず、お荷物を一度出しましょう。伸ばしている取っ手は収納できますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "murayama_specific_1_2",
+        "communicativeIntent": "murayama_locker_2",
         "requiredSemanticComponents": {
-          "goal": "二人各往復希望で帰り時刻が異なると伝える"
+          "goal": "取っ手を収納しても本体がはみ出すため取っ手だけの問題ではないと報告する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "では私と友人の二人なら、それぞれの往復を相談したいです。帰りは別々の時間になります。",
+        "recommendedAnswerJa": "はい、今しまいました。ただ、本体が入口から少し出ています。取っ手だけが原因ではなかったようです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "二人各往復希望で帰り時刻が異なると伝える。日本語で伝えてください。",
+        "hint": "取っ手を収納しても本体がはみ出すため取っ手だけの問題ではないと報告する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "二人各往復希望で帰り時刻が異なると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "取っ手を収納しても本体がはみ出すため取っ手だけの問題ではないと報告する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ご利用の区間と、行き帰りの予定を教えてください。",
+        "textJa": "本体の奥行きも、この庫には合わないようですね。隣の大きい庫を確認してみますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "murayama_specific_1_3",
+        "communicativeIntent": "murayama_locker_3",
         "requiredSemanticComponents": {
-          "goal": "同行の行きと夕方夜の別帰りで便統一が必要か質問する"
+          "goal": "小さい庫へ押し込まず大きい庫で扉までの余裕を確かめたいと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "行きは同じ列車ですが、私は夕方、友人は夜に帰りたいです。同じ帰りの便にそろえる必要はありますか。",
+        "recommendedAnswerJa": "お願いします。横向きにして無理に押すより、大きい方で扉までの余裕を見たいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "同行の行きと夕方夜の別帰りで便統一が必要か質問する。日本語で伝えてください。",
+        "hint": "小さい庫へ押し込まず大きい庫で扉までの余裕を確かめたいと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "同行の行きと夕方夜の別帰りで便統一が必要か質問する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "小さい庫へ押し込まず大きい庫で扉までの余裕を確かめたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "商品ごとの条件を確認しましょう。往復という言葉だけでは、帰りの便の条件は決まりません。",
+        "textJa": "こちらは現在空いています。中に入れて、荷物が扉の動きを妨げないか確かめてください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "murayama_specific_1_4",
+        "communicativeIntent": "murayama_locker_4",
         "requiredSemanticComponents": {
-          "goal": "人数と個別帰り希望を分け条件確認用にメモすると答える"
+          "goal": "大きい庫に収まり扉を妨げず財布は手元へ取り出したと報告する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "分かりました。人数二人と、それぞれの帰りの希望時刻を分けてメモします。",
+        "recommendedAnswerJa": "入りました。取っ手をしまった状態で、扉の内側にも余裕があります。財布は取り出して、自分で持っておきます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "人数と個別帰り希望を分け条件確認用にメモすると答える。日本語で伝えてください。",
+        "hint": "大きい庫に収まり扉を妨げず財布は手元へ取り出したと報告する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "人数と個別帰り希望を分け条件確認用にメモすると答える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "大きい庫に収まり扉を妨げず財布は手元へ取り出したと報告する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "その予定で利用できる商品をご案内します。",
+        "textJa": "それではこちらの庫の料金と、利用時間の表示をご確認ください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "murayama_specific_1_5",
+        "communicativeIntent": "murayama_locker_5",
         "requiredSemanticComponents": {
-          "goal": "各人の往復条件を確認後購入すると伝える"
+          "goal": "料金と時間を確認し大きい庫を案内の手順で利用すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "二人分を一組と思わず、各自の行きと帰りを確認してから購入します。",
+        "recommendedAnswerJa": "料金と時間を読みました。今回は大きい方を使います。小さい庫の扉を押して閉めず、こちらの手順で預けます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "各人の往復条件を確認後購入すると伝える。日本語で伝えてください。",
+        "hint": "料金と時間を確認し大きい庫を案内の手順で利用すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "各人の往復条件を確認後購入すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "料金と時間を確認し大きい庫を案内の手順で利用すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。予定のメモを拝見します。",
+        "textJa": "承知しました。こちらの案内に沿ってご利用ください。お気をつけてお出かけください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,8 +250,8 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-006-murayama.json",
-    "premise": "切符売場で往復の一組を二人分と思って買わないという架空の学習場面。実施設の制度・条件の認定を含まない。",
-    "contentReview": "AI Japanese turn/goal/closure and whole-prefecture causal review complete; separate hash-bound PRF-006 semantic decision. Not native-speaker or real-policy approval.",
-    "contentPass": true
+    "premise": "村山の架空駅で、スーツケースをロッカーへ一度入れてみた客が、扉が閉まらないため取っ手の収納と本体の奥行きを順に確かめる。小さい庫へ無理に押し込まず、見本の大きい庫で収まりを確認してから利用する。実在駅の設備や料金を認定しない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
   }
 }

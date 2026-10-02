@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。発送のお手伝いはありますか。",
+        "textJa": "こんにちは。差出しの準備でお手伝いできますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "murayama_specific_5_1",
+        "communicativeIntent": "murayama_seal_1",
         "requiredSemanticComponents": {
-          "goal": "返送ラベルを往路宛名と外へ貼る前に扱いを尋ねる"
+          "goal": "閉じた封筒のふたが浮いているため書類が落ちる前に封の方法を尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "この商品を送る箱に、返送用ラベルも入れたいです。往路の宛名と一緒に外へ貼ってよいか、先に聞きたいです。",
+        "recommendedAnswerJa": "封筒を閉じてきたのですが、ふたが浮いています。中の書類が落ちる前に、封の仕方を見てもらいたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "返送ラベルを往路宛名と外へ貼る前に扱いを尋ねる。日本語で伝えてください。",
+        "hint": "閉じた封筒のふたが浮いているため書類が落ちる前に封の方法を尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "返送ラベルを往路宛名と外へ貼る前に扱いを尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "閉じた封筒のふたが浮いているため書類が落ちる前に封の方法を尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "返送用は、相手が後で返す時に使う物ですね。",
+        "textJa": "ふたの細い保護紙がまだ付いていますね。この封筒は、そこをはがして接着面を出す物です。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "murayama_specific_5_2",
+        "communicativeIntent": "murayama_seal_2",
         "requiredSemanticComponents": {
-          "goal": "返送は自分へ戻す逆方向の宛名と説明する"
+          "goal": "細い紙を宛名ラベルと思った誤解を説明し接着面の保護紙だと確認する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい、こちらへ戻してもらうための物です。今送る先とは逆向きの宛名です。",
+        "recommendedAnswerJa": "折れば閉じると思っていました。この細い紙を宛名ラベルだと思って残しましたが、接着面のカバーなのですね。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "返送は自分へ戻す逆方向の宛名と説明する。日本語で伝えてください。",
+        "hint": "細い紙を宛名ラベルと思った誤解を説明し接着面の保護紙だと確認する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "返送は自分へ戻す逆方向の宛名と説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "細い紙を宛名ラベルと思った誤解を説明し接着面の保護紙だと確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "今回の外側に二つの送り先を示さないよう、往路の表示と分けてください。",
+        "textJa": "はい。はがす前に、中へ入れる書類がそろっているかも確かめてください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "murayama_specific_5_3",
+        "communicativeIntent": "murayama_seal_3",
         "requiredSemanticComponents": {
-          "goal": "返送ラベルを中に入れ後の返送時使用と説明紙を添えると答える"
+          "goal": "書類二枚と案内一枚の不足がないと伝え保護紙をはがして封をすると話す"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "返送用は中へ入れます。受取人が使い方を分かるよう、返す時に使うと書いて添えます。",
+        "recommendedAnswerJa": "書類二枚と返信の案内一枚が入っています。抜けはありません。ここで保護紙をはがして、ふたを押さえて閉じます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "返送ラベルを中に入れ後の返送時使用と説明紙を添えると答える。日本語で伝えてください。",
+        "hint": "書類二枚と案内一枚の不足がないと伝え保護紙をはがして封をすると話す。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "返送ラベルを中に入れ後の返送時使用と説明紙を添えると答える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "書類二枚と案内一枚の不足がないと伝え保護紙をはがして封をすると話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "返送の利用条件は、申込先の案内も確認してください。",
+        "textJa": "封ができましたね。はがした紙は、封筒へ一緒に貼らずに片付けてください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "murayama_specific_5_4",
+        "communicativeIntent": "murayama_seal_4",
         "requiredSemanticComponents": {
-          "goal": "同封で全返送手続完了とせず必要な利用案内も入れると話す"
+          "goal": "保護紙を片付けふたが閉じ宛名切手の位置も保たれていると報告する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。ラベルを入れたから返送手続きが全て済むと思わず、必要な案内も同封します。",
+        "recommendedAnswerJa": "紙はごみとして片付けます。ふたは浮かなくなりました。切手と宛名は表にあり、ふたの接着面には触れていません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "同封で全返送手続完了とせず必要な利用案内も入れると話す。日本語で伝えてください。",
+        "hint": "保護紙を片付けふたが閉じ宛名切手の位置も保たれていると報告する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "同封で全返送手続完了とせず必要な利用案内も入れると話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "保護紙を片付けふたが閉じ宛名切手の位置も保たれていると報告する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "今回発送する箱の宛名も、最後にご確認ください。",
+        "textJa": "では封筒の宛名と料金を確認します。ほかに入れ忘れはありませんか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "murayama_specific_5_5",
+        "communicativeIntent": "murayama_seal_5",
         "requiredSemanticComponents": {
-          "goal": "外の現送り先と内の将来返送資料を区別して発送すると伝える"
+          "goal": "内容物と封を確認した一通の引受けを頼み案内への礼を述べる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "外には今送る相手、中には返す時のラベルと案内と分けて、今回の宛名だけで差し出します。",
+        "recommendedAnswerJa": "ありません。書類と案内がそろい、ふたも閉じたので、この一通をお願いします。教えていただきありがとうございました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "外の現送り先と内の将来返送資料を区別して発送すると伝える。日本語で伝えてください。",
+        "hint": "内容物と封を確認した一通の引受けを頼み案内への礼を述べる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "外の現送り先と内の将来返送資料を区別して発送すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "内容物と封を確認した一通の引受けを頼み案内への礼を述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。箱の表示を確認します。",
+        "textJa": "承知しました。一通をお預かりします。お気をつけてお帰りください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,8 +250,8 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-006-murayama.json",
-    "premise": "返送用のラベルを往路の箱の外へ一緒に貼らないという架空の学習場面。実施設の制度・条件の認定を含まない。",
-    "contentReview": "AI Japanese turn/goal/closure and whole-prefecture causal review complete; separate hash-bound PRF-006 semantic decision. Not native-speaker or real-policy approval.",
-    "contentPass": true
+    "premise": "村山の架空郵便窓口で、折って閉じたはずの封筒が開いていると気づいた客が、接着面の保護紙をはがしていなかったことを確認する。中身の確認後に保護紙を取り、宛名面を汚さず封をしてから差し出す。実施設の運用を認定しない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
   }
 }

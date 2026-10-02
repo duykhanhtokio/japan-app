@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。郵便のご相談で何かお手伝いできますか。",
+        "textJa": "こんにちは。郵便のことで何をご相談でしょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "sagae_specific_5_1",
+        "communicativeIntent": "sagae_reply_1",
         "requiredSemanticComponents": {
-          "goal": "金曜必着が金曜差出の意味か発送前に確認する"
+          "goal": "友人から返事がなく未配達を心配して差出控えの配達表示の確認を頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "申込書を送りたいです。締切が金曜必着と書いてありますが、金曜に出せばよい意味なのか、先に確認したいです。",
+        "recommendedAnswerJa": "友人へ手紙を送りましたが、返事がありません。まだ届いていないのかと思って、控えを持ってきました。配達の表示を一緒に見てもらえますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "金曜必着が金曜差出の意味か発送前に確認する。日本語で伝えてください。",
+        "hint": "友人から返事がなく未配達を心配して差出控えの配達表示の確認を頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "金曜必着が金曜差出の意味か発送前に確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "友人から返事がなく未配達を心配して差出控えの配達表示の確認を頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "申込み先の説明には、ほかに日付について書かれていますか。",
+        "textJa": "控えの番号で開いた画面は、こちらですね。昨日の配達済みという表示があります。どの点がご心配ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "sagae_specific_5_2",
+        "communicativeIntent": "sagae_reply_2",
         "requiredSemanticComponents": {
-          "goal": "消印でなく到着日基準の説明があり差出控えだけと思ったと伝える"
+          "goal": "配達済みを返信も届く意味と誤解したと説明し読了や返信準備の表示でないと確認する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "消印ではなく到着日で確認するとあります。私は差し出した日を控えればよいと思っていました。",
+        "recommendedAnswerJa": "配達済みなら友人の返事も来ると思っていました。でも、相手が読んだか、返事を書いたかを示す表示ではないのですね。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "消印でなく到着日基準の説明があり差出控えだけと思ったと伝える。日本語で伝えてください。",
+        "hint": "配達済みを返信も届く意味と誤解したと説明し読了や返信準備の表示でないと確認する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "消印でなく到着日基準の説明があり差出控えだけと思ったと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "配達済みを返信も届く意味と誤解したと説明し読了や返信準備の表示でないと確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "その説明では、相手への到着が基準ですね。差出日と到着日は同じとは限りません。",
+        "textJa": "はい、ここにあるのは郵便物の配達状況です。友人が返事を用意したかは、この画面からは分かりません。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "sagae_specific_5_3",
+        "communicativeIntent": "sagae_reply_3",
         "requiredSemanticComponents": {
-          "goal": "控えだけで期限達成とせず方法と到着見込みを相談したいと答える"
+          "goal": "先月教わった住所と部屋番号を控えで照合したいと頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "分かりました。控えがあるだけで期限に間に合ったとは考えません。送る方法と見込みについて相談したいです。",
+        "recommendedAnswerJa": "分かりました。送り先も確認したいです。控えの住所は友人から先月教わった住所で、部屋番号もあります。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "控えだけで期限達成とせず方法と到着見込みを相談したいと答える。日本語で伝えてください。",
+        "hint": "先月教わった住所と部屋番号を控えで照合したいと頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "控えだけで期限達成とせず方法と到着見込みを相談したいと答える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "先月教わった住所と部屋番号を控えで照合したいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "送り先と希望する到着日を伺って案内します。ただし、申込み先の受付条件もご自身でご確認ください。",
+        "textJa": "その控えと手元の住所を照らし合わせましょう。記載は一致していますね。配達についてほかに確認したい点はありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "sagae_specific_5_4",
+        "communicativeIntent": "sagae_reply_4",
         "requiredSemanticComponents": {
-          "goal": "宛先を示し郵便案内と遅延時の申込先確認を分けると伝える"
+          "goal": "住所一致を確認し返事の不在で未配達と決めず友人へ受取りを尋ねると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "こちらが宛先です。間に合うと自分で決めず、郵送の案内と、遅れる場合の申込先への確認を分けます。",
+        "recommendedAnswerJa": "今はありません。返事がないことだけで配達されなかったと決めず、友人へ受取りの確認を短く連絡したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "宛先を示し郵便案内と遅延時の申込先確認を分けると伝える。日本語で伝えてください。",
+        "hint": "住所一致を確認し返事の不在で未配達と決めず友人へ受取りを尋ねると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "宛先を示し郵便案内と遅延時の申込先確認を分けると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "住所一致を確認し返事の不在で未配達と決めず友人へ受取りを尋ねると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "必要なら申込み先へお問い合わせください。こちらでは申込先が受け付けるかを決められません。",
+        "textJa": "友人との連絡はご自身の方法でお願いします。控えと照会画面は、後で確認できるよう保管できます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "sagae_specific_5_5",
+        "communicativeIntent": "sagae_reply_5",
         "requiredSemanticComponents": {
-          "goal": "到着条件を理解し方法と必要な申込先相談を確認する"
+          "goal": "控えを保持し友人には到着確認だけ先に連絡して返事を急がせないと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい、金曜に出すことではなく金曜到着が条件だと理解しました。郵便の方法を確認し、必要なら申込先にも相談します。",
+        "recommendedAnswerJa": "控えを残します。友人には手紙が届いたかだけ先に聞き、返事を急がせません。配達の照会と返事のお願いを分けられました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "到着条件を理解し方法と必要な申込先相談を確認する。日本語で伝えてください。",
+        "hint": "控えを保持し友人には到着確認だけ先に連絡して返事を急がせないと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "到着条件を理解し方法と必要な申込先相談を確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "控えを保持し友人には到着確認だけ先に連絡して返事を急がせないと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。送り先の情報を確認してご案内します。",
+        "textJa": "承知しました。表示をご確認いただきありがとうございました。お気をつけてお帰りください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,8 +250,8 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-006-sagae.json",
-    "premise": "寒河江の架空学習場面で、申込書の必着を差し出した日の記録だけで満たしたと思わない。実施設の制度・条件の認定を含まない。",
-    "contentReview": "AI Japanese turn/goal/closure and whole-prefecture causal review complete; separate hash-bound PRF-006 semantic decision. Not native-speaker or real-policy approval.",
-    "contentPass": true
+    "premise": "寒河江の架空郵便窓口で、追跡に配達済みと出た手紙への返事がなく、配達されていないと思った客が控えと照会結果を示す。宛先表示を確認し、配達状況の相談と友人への返事のお願いを別に行う。架空の照会結果であり実際の配達・受付条件を認定しない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
   }
 }
