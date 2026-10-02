@@ -15,6 +15,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import BottomNav from '@/components/app/BottomNav';
 import GameHeader from '@/components/app/GameHeader';
+import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 import { ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
 import { useUserProfile } from '@/hooks/useUserProfile';
 import { getGameProgress } from '@/services/progress-storage';
@@ -245,7 +246,7 @@ export default function LearnScreen() {
 
                     {/* TOTAL PROGRESS */}
 
-                    <View
+                    <RoyalPaperPanel
                         style={
                             styles.totalProgressCard
                         }
@@ -283,7 +284,7 @@ export default function LearnScreen() {
                             />
                         </View>
 
-                    </View>
+                    </RoyalPaperPanel>
 
                     {/* LEVEL LIST */}
 
@@ -309,26 +310,14 @@ export default function LearnScreen() {
                                     disabled={
                                         !item.unlocked
                                     }
-                                    style={({
-                                        pressed,
-                                    }) => [
-                                            styles.levelCard,
-
-                                            item.unlocked
-                                                ? styles.levelCardUnlocked
-                                                : styles.levelCardLocked,
-                                            { backgroundColor: item.bodyColor },
-
-                                            pressed &&
-                                            item.unlocked &&
-                                            styles.pressed,
-                                        ]}
+                                    style={({pressed}) => [!item.unlocked && {opacity:.6}, pressed && item.unlocked && styles.pressed]}
                                     onPress={() =>
                                         openLevel(
                                             item
                                         )
                                     }
                                 >
+                                    <RoyalPaperPanel style={styles.levelCard}>
                                     {/* LEVEL BADGE */}
 
                                     <View
@@ -471,6 +460,7 @@ export default function LearnScreen() {
                                             </Text>
                                         )}
                                     </View>
+                                    </RoyalPaperPanel>
                                 </Pressable>
                             )
                         )}
@@ -594,23 +584,11 @@ const styles =
          * TOTAL PROGRESS
          */
 
-        totalProgressCard: {
-            marginTop: 14,
-
-            padding: 14,
-
-            borderRadius: 17,
-
-            backgroundColor:
-                '#e8e2d6',
-
-            borderWidth: 2,
-
-            borderColor:
-                '#847457',
-        },
+        totalProgressCard: {marginTop:14,paddingHorizontal:26,paddingVertical:22},
 
         totalProgressTop: {
+            flexWrap:'wrap',
+            gap:6,
             flexDirection: 'row',
 
             alignItems: 'flex-start',
@@ -682,44 +660,7 @@ const styles =
             paddingBottom: 22,
         },
 
-        levelCard: {
-            shadowColor: '#0b1830',
-            shadowOffset: {width:0,height:3},
-            shadowOpacity: .22,
-            shadowRadius: 5,
-            elevation: 3,
-            minHeight: 102,
-
-            borderRadius: 20,
-
-            padding: 13,
-
-            flexDirection: 'row',
-
-            alignItems: 'center',
-        },
-
-        levelCardUnlocked: {
-            backgroundColor:
-                '#e8e2d6',
-
-            borderWidth: 2,
-
-            borderColor:
-                '#725629',
-        },
-
-        levelCardLocked: {
-            backgroundColor:
-                '#e8e2d6',
-
-            borderWidth: 2,
-
-            borderColor:
-                '#847457',
-
-            opacity: 1,
-        },
+        levelCard: {minHeight:126,paddingHorizontal:24,paddingVertical:22,flexDirection:'row',alignItems:'center'},
 
         /*
          * LEVEL BADGE
@@ -767,6 +708,7 @@ const styles =
         },
 
         levelTitleRow: {
+            flexWrap:'wrap',
             flexDirection: 'row',
             alignItems: 'center',
         },
