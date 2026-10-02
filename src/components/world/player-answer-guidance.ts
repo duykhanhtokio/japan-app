@@ -108,3 +108,12 @@ export function getPlayerAnswerGuidance(player: LifePlayerTurn, language: AppLan
   if (language === 'ja') return player.hint || answer;
   return player.hint || answer;
 }
+
+/** Never substitute Japanese when the learner requested a native-language hint. */
+export function getPlayerNativeHint(player:LifePlayerTurn,language:AppLanguageCode):string|null{
+ if(player.hintTranslations?.[language])return player.hintTranslations[language];
+ if(language==='ja')return player.hint||null;
+ if(player.translations?.[language])return player.translations[language];
+ if(language==='vi')return VI[player.recommendedAnswerJa??'']??null;
+ return null;
+}

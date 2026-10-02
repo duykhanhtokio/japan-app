@@ -113,7 +113,7 @@ function EnergyBar({label,value,ratio,tint,large=false}:{label:string;value:stri
 }
 
 const s=StyleSheet.create({
- approvedTopRow:{height:ROYAL_LAYOUT.homeHudTopRowHeight,flexDirection:'row',alignItems:'center',gap:8},
+ approvedTopRow:{height:ROYAL_LAYOUT.homeHudTopRowHeight,flexDirection:'row',alignItems:'center',gap:2},
  approvedTopBody:{flex:1,minWidth:0,height:'100%',flexDirection:'row',alignItems:'center',gap:8},
  approvedNameFrame:{flex:1,minWidth:0,height:58,justifyContent:'center',paddingHorizontal:14},
  approvedCoinFrame:{flex:1,flexDirection:'row',alignItems:'center',justifyContent:'center',paddingHorizontal:'22%',gap:5},
@@ -122,7 +122,7 @@ const s=StyleSheet.create({
  approvedProfile:{flex:1,height:'100%',flexDirection:'row',alignItems:'center',minWidth:0},
  approvedAvatar:{width:ROYAL_LAYOUT.homeAvatarSize,height:ROYAL_LAYOUT.homeAvatarSize,flexShrink:0},
  approvedName:{width:'100%',flexShrink:1,minWidth:0,marginLeft:0,marginRight:0,color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:20,lineHeight:26,textAlign:'center',textAlignVertical:'center',includeFontPadding:false},
- approvedCoins:{width:'36%',minWidth:100,height:58},
+ approvedCoins:{width:'25%',minWidth:78,height:58},
  approvedCoinIcon:{width:22,height:22,flexShrink:0},
  approvedCoinValue:{flex:1,minWidth:0,color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:16,lineHeight:22,textAlign:'center',includeFontPadding:false},
  studyContainer:{width:'100%',paddingHorizontal:10,paddingTop:8,paddingBottom:10,borderWidth:1,borderRadius:16,borderColor:ROYAL.gold,backgroundColor:ROYAL.lacquer,shadowColor:'#07101f',shadowOpacity:.24,shadowRadius:8,shadowOffset:{width:0,height:4},elevation:4},

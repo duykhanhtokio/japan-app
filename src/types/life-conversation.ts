@@ -94,6 +94,11 @@ export type LifePlayerTurn = {
     hint:
     string | null;
 
+    /** Authored native-language task, distinct from the model answer. */
+    hintTranslations?: Record<string, string>;
+    /** Aligned kanji readings; concatenated text must match recommendedAnswerJa. */
+    recommendedAnswerRuby?: {text:string;reading?:string}[];
+
     /** Meaning of the recommended answer keyed by the selected app language. */
     translations?: Record<string, string>;
 

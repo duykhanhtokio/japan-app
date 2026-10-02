@@ -30,7 +30,7 @@ const sectors = [
 
 export default function SpecifiedSkillsScreen() {
     return (
-        <SafeAreaView
+        <ImageBackground source={require('../../../assets/app/home-cards/tokutei-engine-safety.png')} blurRadius={40} resizeMode="cover" style={{flex:1}}><SafeAreaView
             style={
                 styles.container
             }
@@ -109,7 +109,7 @@ export default function SpecifiedSkillsScreen() {
             <BottomNav
                 active="home"
             />
-        </SafeAreaView>
+        </SafeAreaView></ImageBackground>
     );
 }
 
@@ -119,7 +119,7 @@ const styles =
             flex: 1,
 
             backgroundColor:
-                '#e8e2d6',
+                'rgba(11,24,48,.16)',
         },
 
         header: {
