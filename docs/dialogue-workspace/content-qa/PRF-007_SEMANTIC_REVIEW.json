@@ -236,11 +236,11 @@
         "前の説明の質問を歩行中に聞かず後の質問時間があるか尋ねる",
         "入口の門の修理について題名だけメモし後で質問すると答える",
         "前の話の題名を残し次の説明を遮らず説明後に順番を待つと話す",
-        "二問に絞り年代全部より修理と建替えの違いを先に確かめたいと伝える",
+        "修理と建て直しの違いと使った材料の二問に絞り年代は資料で調べたいと伝える",
         "メモをしまい足元を見て移動し説明後に門の修理について二問を伝えると答える"
       ],
-      "sha256": "571945d77cee7c6510cd6624370484d060054a8a632e37d7369f19086058e2da",
-      "decision": "Source-runtime parity checked; final semantic decision pending."
+      "sha256": "4146dd917fde8e031650685efab1993af27ab6436667494b8c09ba52cf1211d3",
+      "decision": "Repaired explicit causal completion; final whole-prefecture decision pending."
     },
     {
       "scenarioId": "SC-LOC-FKS-AIZUWAKAMATSU-02-001",
@@ -503,16 +503,16 @@
       "title": "放送が聞き取れないと伝えて変更案内を文字で確認する",
       "initiatingRequest": "耳が聞こえにくく、今の放送を聞き取れませんでした。乗る列車に変更があったか、文字で確認したいです。",
       "fifthPlayerAction": "列車名と時刻、乗り場を文字で確かめます。放送が聞こえたかどうかで決めず、表示が変わって読めない場合は係員へこのメモを見せます。",
-      "npcClosure": "承知しました。まず、ご予定の列車の現在の案内を文字でお伝えします。",
+      "npcClosure": "文字で現在の時刻と乗り場を確認できましたね。このメモをお持ちください。どうぞお気を付けてお出かけください。",
       "fiveGoals": [
         "耳が聞こえにくく直前の放送を聞き取れず乗る列車の変更を文字で確認したいと頼む",
         "十時二十分の列車の画面を示し日本語の文字は読めるため表示か短いメモを望む",
-        "変更がない場合も文字で知りたく放送が自分の列車の話か判断できないと説明する",
+        "十五分遅れで二番線とメモを読み返し待機中の変更も文字で確認したいと伝える",
         "待合から見える表示と不明な変更時にメモを持って再相談する方法を尋ねる",
         "列車名時刻乗り場を文字で照合し読めない変更は係員へメモで相談すると伝える"
       ],
-      "sha256": "db97c2454202631b54a5c5a7ecdcb50c9492a61460a2e703730098535f050838",
-      "decision": "Source-runtime parity checked; final semantic decision pending."
+      "sha256": "50618d1d824407c57c23748dfc76e7667123687be703a336a191814096d6b95e",
+      "decision": "Repaired explicit causal completion; final whole-prefecture decision pending."
     },
     {
       "scenarioId": "SC-LOC-007-02-001",
@@ -554,7 +554,7 @@
       "title": "買ったおにぎりの包装を途中まで開けて案内を聞く",
       "initiatingRequest": "今買ったおにぎりの包装がうまく取れません。途中の部分から引いてしまったので、開け方の図を一緒に見てもらえますか。",
       "fifthPlayerAction": "図の順番と動かす包装を確認して、自分で開けます。取り外したフィルムを食品に戻さず、残った包装の片も確かめてから食べます。",
-      "npcClosure": "承知しました。こちらの図を使って、残っている包装をご説明します。",
+      "npcClosure": "残っていた帯と左右のフィルムの順番を確認できました。開ける時に包装が残っていないかご覧ください。お声がけありがとうございました。",
       "fiveGoals": [
         "購入済みおにぎりの包装を途中から引いたため開け方の図を見てほしいと頼む",
         "中央帯は残り横を引くとご飯も動いたため止め不良断定でなく自分の操作確認と説明する",
@@ -562,8 +562,8 @@
         "食品に店員が直接触れず自分で扱うので包装図で示してほしいと伝える",
         "図で包装の順序を確認しフィルムを食品へ戻さず残る片も確かめて食べると話す"
       ],
-      "sha256": "36aab5c1fcd9718cf4041e10944200697a276c055dc07105266782dfeba71f55",
-      "decision": "Source-runtime parity checked; final semantic decision pending."
+      "sha256": "e3e95f5f6e146a3ebc6aa189a3f7adea4f0be711fca6ce999930d7dba5420bd7",
+      "decision": "Repaired explicit causal completion; final whole-prefecture decision pending."
     },
     {
       "scenarioId": "SC-LOC-007-05-001",
@@ -2245,20 +2245,22 @@
     "status": "preceding_checkpoint_remote_verified",
     "commit": "fabbdabc498e6f7800c67cdf71f318649af51450",
     "tree": "d1420762d0da03a3523b52e6f5cd6c7721370ff4",
-    "evidence": "WORK PERSISTENCE PASS in fresh tracked checkout before five-bank rewrites; current continuation pending publication."
+    "evidence": "WORK PERSISTENCE PASS in fresh tracked checkout before five-bank rewrites; current continuation pending publication.",
+    "latestVerifiedContinuationCommit": "a4b519906cf085ff882469c18442d36984211611",
+    "latestVerifiedContinuationTree": "261d79ab493e88f71754965c96234958a5b37313"
   },
   "sourceSha256": {
     "scripts/dialogue-authoring/prf-007-sukagawa.json": "67f4c53e5efb31bceac00da54f36a433dea7937e6e3154a1adc61de92803979d",
     "scripts/dialogue-authoring/prf-007-kitakata.json": "b736321c9301f2d7e8f710d116d7a853eed4ab703a0cfda7032f9a28decd35a1",
     "scripts/dialogue-authoring/prf-007-shirakawa.json": "8a161f3b5e6660351b33b1a344dd00cbb64bbfd3ba2d948e4869367d6a1df36c",
     "scripts/dialogue-authoring/prf-007-date.json": "bde92f50d1f5986fc85742f9082b65e434f4f69d5ddc2b2c1c75bf6cb1e1af30",
-    "scripts/dialogue-authoring/prf-007-fukushima.json": "2d44d4e4ee537daa3445e46e9ace2969c52851066cd4e136484e251fa9c6f587",
+    "scripts/dialogue-authoring/prf-007-fukushima.json": "dbb558b06c0011d834a147f33a40ccca5636bd2e670e17f2b6f9dca991862b23",
     "scripts/dialogue-authoring/prf-007-iwaki.json": "25041b6a693ff0dc4b4592af05669c5eaec419d2ea3f6a00fd3e86dfed847161",
     "scripts/dialogue-authoring/prf-007-tamura.json": "31b58dd35048c0cd87d383de2f55989d23bac7a9973de2aba0320d26b0ce7667",
     "scripts/dialogue-authoring/prf-007-koriyama.json": "e1030a55e72ba557e0ce80cc6dca1e57806a421e3550177a5b9990970496c40b",
     "scripts/dialogue-authoring/prf-007-soma.json": "82841036e38a18aacbded43ac9098541653186d6299a37ce250b8fba82fc2530",
     "scripts/dialogue-authoring/prf-007-nihonmatsu.json": "d9dbcbc497b6219f40b2dfcc815bfbe03bb647ba677712dd0c91353d2a30a312",
-    "scripts/dialogue-authoring/prf-007-aizuwakamatsu.json": "c8cf454fdb07555e03183af627fa77d556cc9253fc03676953f48ba6c67d31af",
+    "scripts/dialogue-authoring/prf-007-aizuwakamatsu.json": "195fa76b1deafb17105f45b32393eff2ce59c5b1e7658f2aa2f239ee8ba1f2fc",
     "scripts/dialogue-authoring/prf-007-minamisoma.json": "931612ab47e8393f8181b0a69978aad0d4db41f2534c23f8383fb1e313cced78",
     "scripts/dialogue-authoring/prf-007-motomiya.json": "17c5fe53ef445bd40f8c3c4ee1125f6f70f204350d15bb4b462b2ebb1b8e9d7f"
   },
@@ -2331,5 +2333,20 @@
     "candidateFullTurnReadCount": 14,
     "evidence": "docs/dialogue-workspace/content-qa/PRF-007_BANK_CAUSAL_REVIEW.json",
     "result": "Replaced repeated misunderstanding/category-correction sequence with distinct drawing, refund preparation, interrupted consultation, transaction lookup and joint-decision exchanges. All other Fukushima exchanges still require final whole-prefecture review."
+  },
+  "causalCompletionContinuation": {
+    "scenarioIds": [
+      "SC-FKS-AIZUWAKAMATSU-001",
+      "SC-LOC-007-01-001",
+      "SC-LOC-007-04-001"
+    ],
+    "findings": [
+      "Aizuwakamatsu question count and question timing were inconsistent; two actual questions and a single final question time are now explicit.",
+      "Fukushima station offered text information but never stated the current change; gives explicitly fictional departure/track and locates the display before closure.",
+      "Fukushima packaging repeatedly promised explanation; gives the fictional numbered wrapper actions before closure."
+    ],
+    "reviewer": "AI",
+    "contentPass": false,
+    "nativeSpeakerReviewed": false
   }
 }

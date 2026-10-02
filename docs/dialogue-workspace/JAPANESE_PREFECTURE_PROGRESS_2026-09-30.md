@@ -115,3 +115,8 @@ Repaired 16 NPC openings and 14 closures across 19 scenarios; preserved all five
 ## Bank causal rewrites — 2026-10-02
 
 Preceding Fukushima draft checkpoint remotely verified at `fabbdabc498e6f7800c67cdf71f318649af51450`; exact content tree matches three original local commits. WORK PERSISTENCE PASS obtained before continuing. Five full bank exchanges and 25 goals replaced: household drawing, cancellation refunds, urgent consultation interruption, two-transaction lookup and spouses negotiating savings. Read all 14 distinct retrieved candidate exchanges (three per replacement, duplicates reused) from a 1001-script corpus. No claim to have read every candidate in the corpus. Source/runtime IDs and chain preserved. Final whole-prefecture semantic decision remains pending: NOT CONTENT PASS, no translations. Next review: all remaining city groups for correction framing, opening/closure compliance and causal repetition.
+
+
+## Causal completion continuation — 2026-10-02
+
+Five-bank integrated continuation remotely verified at `a4b519906cf085ff882469c18442d36984211611`, exact tree `261d79ab493e88f71754965c96234958a5b37313`, WORK PERSISTENCE PASS. Three additional exchange repairs: explicitly name both Aizuwakamatsu questions and consistent final question time; give Fukushima train change in text before closing; explain the fictional numbered wrapper instead of only promising help. Current final whole-prefecture decision remains pending. No translations or CONTENT PASS. Resume with remaining city groups and update hash-bound review before PRF-008.
