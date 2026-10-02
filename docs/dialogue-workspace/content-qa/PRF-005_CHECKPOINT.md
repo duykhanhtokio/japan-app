@@ -14,3 +14,7 @@ Some original Akita city location labels contain corrupted characters (`男鹼�
 Preservation validation: 50 changed runtime files retain all ID/order/speaker/next links; changed canonical entries retain location/city assignments; unrelated canonical records unchanged. The 32 concurrent runtime/source changes are byte-for-byte preserved. No translations were present in edited runtimes and none were added. No UI changes authored. This is an intermediate durability record.
 
 After the full-draft save, two within-prefecture collisions were replaced: Nikaho spoken station-name confirmation becomes moving location sharing versus a fixed meeting point; Kitaakita coin count becomes private accessible balance confirmation. Four named cross-prefecture candidates still require substantive revision/review. No final CONTENT PASS.
+
+## Four additional meaning-level repairs — 2026-10-02
+
+Concurrent checkpoint 5894c3c is preserved, including its Nikaho station and Kitaakita bank replacements. The other four listed collisions are replaced: Yurihonjo park frees a shared bench occupied by wet paintings; Daisen hospital consults about the payment queue before returning to work; Daisen post addresses a reply envelope; Kitaakita post repairs an envelope that would not fit a posting slot. Each has an independently authored eleven-turn development and five matching speaking tasks. IDs and chain links remain unchanged. Full corpus review and cross-prefecture recomputation remain pending; no CONTENT PASS or translation approval.
