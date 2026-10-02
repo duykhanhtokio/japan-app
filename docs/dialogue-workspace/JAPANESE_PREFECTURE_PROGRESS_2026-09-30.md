@@ -70,3 +70,7 @@ Prefectures: PRF-040, PRF-041, PRF-042. Canonical scenarios covered by Japanese 
 ## CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30
 
 Prefectures: PRF-043, PRF-044, PRF-045, PRF-046, PRF-047. Canonical scenarios covered by Japanese packages: 609/609. Added: 609 scenarios, 6699 turns. Global shared Japanese packages after this batch: 7128/7128. No translations added. Structural validation and remote persistence must pass before the next cluster. Detailed manifest: `docs/dialogue-workspace/CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30.json`.
+
+## PRF-005 Akita — merged editorial completion, 2026-10-02
+
+Current 117/117 Japanese scripts and 585 tasks individually reviewed. Eleven causal rewrites remove retained cross-prefecture and within-prefecture plot collisions while preserving incoming follow-ups and unrelated work. Hash-bound AI content decision and full inventory are in `content-qa/PRF-005_SEMANTIC_REVIEW.json` and `content-qa/PRF-005.json`. No native, translation or real-policy approval. PRF-006 begins only after this complete-prefecture save passes remote persistence.

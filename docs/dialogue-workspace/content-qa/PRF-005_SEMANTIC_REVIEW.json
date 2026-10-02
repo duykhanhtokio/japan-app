@@ -1,36 +1,17 @@
 {
   "prefectureId": "PRF-005",
+  "status": "CONTENT PASS — AI JAPANESE EDITORIAL REVIEW",
   "reviewer": "AI",
+  "contentPass": true,
+  "canonicalCount": 117,
+  "individuallyRewrittenCount": 117,
+  "fullDialogueAndTaskReviewedCount": 117,
   "nativeSpeakerReviewed": false,
-  "contentPass": false,
-  "scope": "All 117 current Akita runtime scripts, five speaking tasks per script and NPC endings read. Cross-prefecture candidate triage is partial and does not grant semantic uniqueness.",
-  "runtimeReadCount": 117,
-  "speakingTaskReadCount": 585,
-  "withinPrefectureFindings": [
-    {
-      "scenarioId": "SC-LOC-005-06-001",
-      "finding": "The outer box question and answer could be read as contradicting the two parcels already presented.",
-      "resolution": "Both turns now explicitly identify the absent outer box."
-    },
-    {
-      "scenarioId": "SC-AKT-ODATE-001",
-      "finding": "Player offered to hand over the timber as on hold, then said they would not hand it over.",
-      "resolution": "Player now keeps the timber on hold pending the instructor."
-    },
-    {
-      "scenarioId": "SC-LOC-JP-05212-05-001",
-      "finding": "First follow-up reply-envelope version duplicated the Noshiro reply-envelope development and Iwate reply-envelope scenario.",
-      "resolution": "Replaced with non-copying carbon form caused by writing on a separated upper sheet."
-    },
-    {
-      "scenarioId": "SC-LOC-JP-05212-06-001",
-      "finding": "ATM-ending advice repeated Semboku ATM-ending purpose.",
-      "resolution": "Replaced with English balance-certificate name spelling/order and school submission deadline."
-    }
-  ],
+  "realLocationOrPolicyVerified": false,
+  "translationState": "deferred_until_all_japanese_complete",
   "wholeCorpusComparisonGroups": [
     {
-      "cityId": "CTY-005",
+      "city": "akita",
       "scenarioIds": [
         "SC-LOC-005-01-001",
         "SC-LOC-005-02-001",
@@ -54,10 +35,329 @@
         "SC-LOC-005-20-001",
         "SC-LOC-005-21-001"
       ],
-      "review": "All current Akita utterances, tasks and endings read for flow and within-prefecture purpose; cross-prefecture review remains pending."
+      "reviewer": "AI",
+      "reviewBasis": "All eleven utterances and five task/answer pairs individually read or authored during this recovery, not inferred from count/similarity output. Prior 37 drafts were read again; 54 differing merged scenes and the subsequent four concurrent fixes were read in full; repaired sources were independently authored or read in full; previous-prefecture topic/causal candidates were examined and overlapping plots replaced.",
+      "causalAssessment": "Twenty-one exchanges read with five goals and endings. Causes differ: shared locker access during separate plans; hearing aid custody before examination; soil and purchased vegetable bagging; blank PDF page selection; accidentally duplicated queue tokens; tying two parcels versus one outer package; term/current deposits without double totals; shade-driven relocation; pacing one audio-guide chapter; visitor satisfaction rather than scored test; self-commentary within recorded evidence; medication case versus contents; private item versus store stock; roommate checkout affecting key access; tripod across a passage; recipient identity inside/outside wrapping; camera color correction versus observed painting; seat suffix versus seat diagram; addition timing in a cooking pot; unauthorised wiping of a work vehicle; promised reimbursement versus actual credit. The new survey is a personal subjective response, unlike household one-response consensus. Hotel dialogue is access/key reconciliation after roommate checkout, not partial cancellation.",
+      "scenarioEvidence": [
+        {
+          "scenarioId": "SC-LOC-005-01-001",
+          "title": "二人の荷物を一つのロッカーへ入れる前に取り出す予定を合わせる",
+          "initialRequest": "友人と二人の鞄を一つのロッカーに入れたいです。料金を一回払えば、途中で片方だけ取り出せますか。",
+          "finalPlayerAction": "一つにまとめず各自で預けます。自分の受取時刻と利用終了の扱いも確認します。",
+          "closingNpc": "承知しました。貴重品の置き忘れに気をつけてお出かけください。",
+          "speakingGoals": [
+            "二人の鞄を一ロッカーへ入れ途中で片方のみ取り出せるか尋ねる",
+            "本人夕方と友人昼の書類取出しという別予定を伝える",
+            "未収納で本人だけ鍵を持つと同行者が使えないと説明する",
+            "本人小鞄は小型へ入れ友人には必要書類を先に取り出してもらうと答える",
+            "各自保管に変え本人受取時刻と開扉後終了を確認すると伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-akita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-005-02-001",
+          "title": "診療前に外した補聴器を付き添いの荷物へ混ぜない",
+          "initialRequest": "検査前に持ち物を整理したいです。補聴器も外すのか、担当へ確認してもらえますか。",
+          "finalPlayerAction": "先に外すか確認し、必要ならケースへ保管して、説明を理解できる方法も頼みます。",
+          "closingNpc": "はい、そのご希望を担当へ引き継ぎます。ご相談ありがとうございます。",
+          "speakingGoals": [
+            "検査前に補聴器を外す必要があるか医療担当への照会を依頼する",
+            "現在使用中で未取外しだが外すと小声を聞き取りづらいと説明する",
+            "本人専用ケースがあり同行者鞄へ混ぜたくないと伝える",
+            "ケースを示し取外し後は文字の説明も希望すると答える",
+            "取外し可否と保管と理解方法を個別担当へ先に相談すると伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-akita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-005-03-001",
+          "title": "会計後に土のついた野菜を洗ってもらう注文と袋の相談を分ける",
+          "initialRequest": "買った野菜に土が付いていました。ここで洗ってから持ち帰れるでしょうか。",
+          "finalPlayerAction": "洗ってもらう注文はせず、追加の袋で包んで仕事の荷物と分けて帰ります。",
+          "closingNpc": "承知しました。追加の袋はこちらでお会計します。ありがとうございました。",
+          "speakingGoals": [
+            "購入済み土付き野菜を店で洗えるか尋ねる",
+            "布袋のみで仕事鞄を土で汚したくないと説明する",
+            "洗浄は帰宅後とし布袋内側用の追加袋を購入したいと伝える",
+            "長い野菜も入る大袋を選び書類鞄から分けると答える",
+            "洗浄依頼を取り下げ追加袋で包み別携行すると伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-akita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-005-04-001",
+          "title": "コンビニの印刷で不要な白紙ページまで出力しない",
+          "initialRequest": "書類を印刷したいです。最後のページが白紙ですが、これも一枚として出るのでしょうか。",
+          "finalPlayerAction": "片面二ページを二部にします。白紙末尾を含めず、四枚の表示を確認して支払います。",
+          "closingNpc": "承知しました。取り出した書類を忘れずお持ちください。ご利用ありがとうございます。",
+          "speakingGoals": [
+            "PDF末尾白紙がコンビニ印刷の枚数に入るか尋ねる",
+            "支払前で全三ページのうち最初二ページだけ必要と説明する",
+            "全出力破棄でなく対象一二ページ指定を希望する",
+            "必要二部なので片面の総枚数四枚と確認する",
+            "片面二ページ二部と範囲枚数金額を照合して支払うと伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-akita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-005-05-001",
+          "title": "番号札を二枚取ったとき順番を二重に確保しない",
+          "initialRequest": "番号札のボタンを二度押してしまい、二枚あります。余分な方をどうすればよいですか。",
+          "finalPlayerAction": "残す一枚だけで待ちます。案内された番号を確かめ、余分な呼出しには応じません。",
+          "closingNpc": "ご協力ありがとうございます。こちらの待合でお待ちください。",
+          "speakingGoals": [
+            "同用件の受付ボタン二度押しで二枚取ったと申告する",
+            "紙出力が遅く同じボタン再押下したと説明する",
+            "用件は住所記入の一件で二枠予約ではないと明確にする",
+            "番号を自己選択せず二枚とも職員へ渡すと答える",
+            "指定一枚のみ保持し余分な番号へ反応せず待つと伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-akita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-005-06-001",
+          "title": "二箱をひもで束ねる前に発送単位を相談する",
+          "initialRequest": "同じ住所へ二箱送りたいです。ひもで束ねれば、一つの荷物として扱えますか。",
+          "finalPlayerAction": "二箱の扱いを聞き、一つにするなら外箱と緩衝を整えてから持参します。",
+          "closingNpc": "承知しました。お荷物を拝見して方法をご案内します。ご相談ありがとうございます。",
+          "speakingGoals": [
+            "一住所宛の二箱をひもで束ね一荷物にできるか尋ねる",
+            "未結束で本箱と衣類箱をひもだけで連結予定と説明する",
+            "一荷物用の外箱に収める案の確認を依頼する",
+            "外箱未持参で二個発送の場合も比べたいと伝える",
+            "二個条件を聞き一包装なら外箱緩衝完成後に持参すると答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-review-followup.json"
+        },
+        {
+          "scenarioId": "SC-LOC-005-07-001",
+          "title": "定期預金の通知を普通預金の残高として足さない",
+          "initialRequest": "この満期の通知と通帳を見ています。二つの金額を足せば、今使える額になるのでしょうか。",
+          "finalPlayerAction": "通知と普通預金の記録を別に照合し、同じ資金を二度数えず確認結果を家計へ記録します。",
+          "closingNpc": "はい。担当窓口へご案内します。ご相談ありがとうございます。",
+          "speakingGoals": [
+            "定期満期通知と普通預金通帳額を足せば利用額になるか尋ねる",
+            "通知は定期で普通通帳記録は本日とは限らないと説明する",
+            "家計で同資金を二重集計しないため対象確認を希望する",
+            "資金運用の決定でなく所在額の整理が目的と伝える",
+            "資料を別照合して重複を避け確認結果のみ家計へ記すと答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-akita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-005-08-001",
+          "title": "写生する席の日陰が動いたら荷物ごと移る場所を尋ねる",
+          "initialRequest": "ここで絵を描いていましたが、日陰がなくなりました。ほかの日陰の席へ移ってよいですか。",
+          "finalPlayerAction": "元の席を片付け、空いた日陰へ全道具を運びます。ほかの人の荷物には触れません。",
+          "closingNpc": "承知しました。休憩も取りながら写生をお楽しみください。",
+          "speakingGoals": [
+            "日陰が移動した写生席から別の日陰へ移れるか尋ねる",
+            "候補席に鞄があり他人使用中の可能性を説明する",
+            "二席占有せず絵具を閉じ全画材を運ぶと答える",
+            "水容器を閉じ紙屑も回収して移動すると伝える",
+            "元席片付けと道具全移動を行い他人荷物を動かさないと復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-akita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-005-09-001",
+          "title": "音声ガイドを速く感じたら展示の前で一場面だけ聞き直す",
+          "initialRequest": "音声ガイドが速く感じます。速度をゆっくりにできるボタンはありますか。",
+          "finalPlayerAction": "速度を探す操作はやめ、番号を合わせて一章ずつ止めながら見学します。",
+          "closingNpc": "承知しました。どうぞご自分のペースでお楽しみください。",
+          "speakingGoals": [
+            "速く感じる音声ガイドの速度変更機能を尋ねる",
+            "歩きながら長い第一説明を聞き対象展示不明になったと説明する",
+            "番号一致の展示で一章を停止しながら聞き直したいと頼む",
+            "短区切り停止と観察メモ後に同章を再生すると答える",
+            "速度機能を探さず番号合わせ章ごと停止して見学すると伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-akita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-005-10-001",
+          "title": "見学アンケートの感想欄で正解を教えてもらうと思わない",
+          "initialRequest": "見学のアンケートをもらいました。この五段階の欄は、どれが正解ですか。",
+          "finalPlayerAction": "選択肢を理解して、自分が見た部分の感想を書きます。二階は見ていないと伝え、記入方法を確認します。",
+          "closingNpc": "承知しました。設問を一緒に確認しましょう。ご感想をお聞かせいただきありがとうございます。",
+          "speakingGoals": [
+            "見学アンケート五段階評価の正解を求めて相談する",
+            "理解度採点と誤解し友人の数字を写すつもりだったが未記入と説明する",
+            "満足の意味の平易説明を求め回答数字は本人で選びたいと伝える",
+            "二階未見学で好評価を捏造せず未見学時記入方法を尋ねる",
+            "見学済部分の本人感想と未見学部分を分け設問の扱いを確認すると答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-merged-semantic-repairs.json"
+        },
+        {
+          "scenarioId": "SC-LOC-005-11-001",
+          "title": "警察相談へ持参する音声メモに自分の解説が混ざったと伝える",
+          "initialRequest": "道で大きな音を録音しました。途中に私の説明も入っているので、分けて相談したいです。",
+          "finalPlayerAction": "原音を残し、自分の声の部分と環境音の部分を示します。事故発生とは断定しません。",
+          "closingNpc": "承知しました。相談担当へ引き継ぎます。ご説明ありがとうございます。",
+          "speakingGoals": [
+            "路上録音に自分の説明も混在するため区別して相談したいと伝える",
+            "環境音後の事故かもしれない発言は本人推測で事故未目撃と説明する",
+            "本人声を削除編集せず原音を持参したと答える",
+            "店前人集合は見たが負傷接触は未確認と伝える",
+            "元音保存と本人発言区間明示を行い事故を断定しないと復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-akita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-005-12-001",
+          "title": "薬を選ぶ前に携帯用の薬ケースと中身を区別する",
+          "initialRequest": "普段の薬を持ち歩くケースを探しています。この曜日の印がある物に薬も入っていますか。",
+          "finalPlayerAction": "見本で開閉を試し、薬の保管条件を確認できてから空ケースを買うか決めます。",
+          "closingNpc": "承知しました。薬の相談担当はこちらです。ご来店ありがとうございます。",
+          "speakingGoals": [
+            "携帯用曜日ケースに薬が付属するか尋ねる",
+            "空ケースへ本人薬を入れる希望だが包装取外し可否は未確認と伝える",
+            "薬包装を薬剤師へ示し混薬や移替えを先にしないと答える",
+            "販売封を開けず見本で開閉しやすさを確かめたいと頼む",
+            "見本確認と薬保管条件確認後にケース購入を決めると伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-akita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-005-13-001",
+          "title": "試着室へ忘れた私物を店の商品として棚へ戻さない",
+          "initialRequest": "試着室へ自分のカーディガンを置いてきました。試着した商品とは別の私物です。",
+          "finalPlayerAction": "この直した縫い目は私の物です。私物だけを受け取り、試着した商品と分けて持ち帰ります。",
+          "closingNpc": "確認できましたね。お忘れ物のないようお帰りください。ありがとうございました。",
+          "speakingGoals": [
+            "試着商品と別の私物カーディガンを試着室へ残したと伝える",
+            "入口二番目で十分前退出かつ試着商品は職員へ返却済みと説明する",
+            "薄青色と本人修繕の袖縫い目を特徴として示す",
+            "試着室を無断で開けず似た販売品も持ち帰らないと答える",
+            "修繕部で本人私物を照合して商品の返却と別に受け取ると伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-akita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-005-14-001",
+          "title": "ホテルで部屋の鍵が使えないとき同室者の退室操作を確認する",
+          "initialRequest": "部屋のカードが使えません。連れは先に帰りましたが、私は今夜も泊まる予定です。",
+          "finalPlayerAction": "確認が終わるまで待ちます。継続する本人分の案内とカードを受け取ってから戻ります。",
+          "closingNpc": "承知しました。こちらの席でお待ちください。ご相談ありがとうございます。",
+          "speakingGoals": [
+            "同行者退室後に本人カードが使えず今夜宿泊継続と相談する",
+            "同行者は自分のみ退室意図で全体退室記録は不明と説明する",
+            "本人予約日を示し二名全退室依頼ではないと伝える",
+            "部屋内鞄を知らせ新カード前に本人宿泊存続確認を求める",
+            "確認後に本人継続案内とカードを受け部屋へ戻ると答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-akita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-005-15-001",
+          "title": "太鼓を見る位置から通路へ伸ばした三脚を片付ける",
+          "initialRequest": "太鼓を撮りたくて三脚を広げました。足が通路へ出ているので、置ける場所を確認したいです。",
+          "finalPlayerAction": "三脚を使わず後方で観覧し、帰るときも一般通路へ出ます。",
+          "closingNpc": "ご協力ありがとうございます。どうぞ演奏をお楽しみください。",
+          "speakingGoals": [
+            "観覧用三脚の足が通路へ出るため設置位置を尋ねる",
+            "使用禁止表示を見落とし撮影前なので三脚を畳むと答える",
+            "割込撮影でなく後方で演奏のみ見る希望を伝える",
+            "機材を袋に収納し体横保持で視界と通行を妨げないと説明する",
+            "三脚不使用観覧と一般通路で退席すると復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-akita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-005-16-001",
+          "title": "渡す相手の名前を包装の外と内で二重に取り違えない",
+          "initialRequest": "二人へ別々の菓子を贈ります。包むと中が見えないので、どちらか分かる目印を付けられますか。",
+          "finalPlayerAction": "赤印が兄の甘い方、印なしが姉の塩味とメモします。渡す前に照合して印を外します。",
+          "closingNpc": "承知しました。二つを分けてお包みします。ありがとうございました。",
+          "speakingGoals": [
+            "別人別商品を包装後も識別できる目印を依頼する",
+            "兄甘味と姉塩味を各一つと具体的に区分する",
+            "兄甘味のみ赤仮印で姉は印なしと指定する",
+            "相手名は本人メモのみで渡す前に仮印を外す希望を伝える",
+            "赤印対応を記録し贈呈前に照合して外すと復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-akita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-005-17-001",
+          "title": "展示の絵の色を電話の自動補正で同じと判断しない",
+          "initialRequest": "この絵は案内の写真より暗く見えます。写真と同じ色だと思ってメモしてよいでしょうか。",
+          "finalPlayerAction": "画面の色で断定せず、肉眼の印象と解説の表現を分けてメモします。",
+          "closingNpc": "承知しました。どうぞゆっくり作品をご覧ください。",
+          "speakingGoals": [
+            "案内写真と作品の色差を感じ写真色を同一として記録できるか尋ねる",
+            "高輝度の電話写真を根拠に鮮青と書きかけたと説明する",
+            "電話をしまい肉眼の深青という本人印象を記したいと伝える",
+            "解説記述と主観観察を別々に記録すると答える",
+            "画面色を断定根拠にせず肉眼と説明の表現を分けると復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-akita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-005-18-001",
+          "title": "指定席の通路側を座席番号の末尾だけで決めない",
+          "initialRequest": "二人の指定席を確認したいです。私が通路側を希望しましたが、この番号のどちらが通路側でしょうか。",
+          "finalPlayerAction": "Aの連れは窓側、Bの私は通路側で、号車も合わせてから乗ります。",
+          "closingNpc": "承知しました。指定の号車へお気をつけてご乗車ください。",
+          "speakingGoals": [
+            "二人の指定席で本人希望の通路側番号を照会する",
+            "同列ABで後文字Bを窓側と誤解したと説明する",
+            "図でB本人通路を確認し同行者にも番号照合を頼む",
+            "同行者窓希望で現二席のままと双方合意したと伝える",
+            "列車の図に合うAB位置と号車を照合して乗ると復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-akita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-005-19-001",
+          "title": "鍋が煮える前に追加具材を先に全部入れない",
+          "initialRequest": "追加の皿が届きました。この鍋へ全部入れて、すぐ食べてもよいですか。",
+          "finalPlayerAction": "未調理の追加皿は先に食べず、店員さんの案内を待って取り分けます。",
+          "closingNpc": "承知しました。こちらで準備しますので、少々お待ちください。",
+          "speakingGoals": [
+            "卓上鍋の追加皿を全投入して即食べられるか尋ねる",
+            "最初の調理済み鍋と追加皿を同状態と思ったと説明する",
+            "既調理の残りと追加分を混ぜず区別保持すると答える",
+            "本人で加熱操作せず職員の準備完了を確認したいと伝える",
+            "未調理追加分を食べず職員案内後に専用具で取り分けると復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-akita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-005-20-001",
+          "title": "作業車両の汚れた窓を清掃担当の許可なしで拭かない",
+          "initialRequest": "車の窓が泥で見えにくそうです。待っている間に、私が拭いておきましょうか。",
+          "finalPlayerAction": "見学者として待ち、車両の清掃を自分で始めず担当へ状態だけ伝えます。",
+          "closingNpc": "ご協力ありがとうございます。見学担当が来るまでこちらでお待ちください。",
+          "speakingGoals": [
+            "待機中に泥付き作業車窓を拭く手伝いを申し出る",
+            "本人見学者で清掃は作業外と思ったと説明する",
+            "タオル未使用で車両未接触かつ前窓泥付着を報告する",
+            "窓へ近づかず指定待機位置から車を言葉で示すと答える",
+            "見学者待機を守り清掃せず状態のみ担当へ知らせると復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-akita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-005-21-001",
+          "title": "取引一覧の返金予定を受取済みとして職場へ報告しない",
+          "initialRequest": "会社から立替分の返金予定が来ました。口座にはまだ見えませんが、受け取ったと報告してよいでしょうか。",
+          "finalPlayerAction": "返金予定は連絡済み、受取は未確認として伝えます。照合後に入金の有無を改めて報告します。",
+          "closingNpc": "承知しました。対象の記録を担当窓口でご相談ください。ありがとうございます。",
+          "speakingGoals": [
+            "会社返金予定連絡があるが口座未表示で受領報告可否を尋ねる",
+            "本日取引一覧と会社の本日実行予定メールを区別して説明する",
+            "予定通知を受領証拠にせず会社へ実行完了を照会すると答える",
+            "別額の入金を対象返金と決めつけないと伝える",
+            "予定連絡あり受領未確認を報告し口座照合後に実受領を知らせると復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-akita.json"
+        }
+      ]
     },
     {
-      "cityId": "CTY-AKT-YOKOTE",
+      "city": "yokote",
       "scenarioIds": [
         "SC-AKT-YOKOTE-001",
         "SC-LOC-AKT-YOKOTE-02-001",
@@ -68,10 +368,134 @@
         "SC-LOC-AKT-YOKOTE-07-001",
         "SC-LOC-AKT-YOKOTE-08-001"
       ],
-      "review": "All current Akita utterances, tasks and endings read for flow and within-prefecture purpose; cross-prefecture review remains pending."
+      "reviewer": "AI",
+      "reviewBasis": "All eleven utterances and five task/answer pairs individually read or authored during this recovery, not inferred from count/similarity output. Prior 37 drafts were read again; 54 differing merged scenes and the subsequent four concurrent fixes were read in full; repaired sources were independently authored or read in full; previous-prefecture topic/causal candidates were examined and overlapping plots replaced.",
+      "causalAssessment": "Eight complete scripts and tasks reviewed. Undistributed festival dates; raw/cooked tong separation; staying in an agricultural work row while requesting retrieval; dry powder measured by mass not liquid volume; used detergent pouch eligibility and wrappers; water purpose in a hut; planned versus actual break record; converted salary figures versus original currency. Broom matching by color was rejected as the old container/lid plot. Collection now concerns end-of-use eligibility and preparation, not buying refill into a container.",
+      "scenarioEvidence": [
+        {
+          "scenarioId": "SC-AKT-YOKOTE-001",
+          "title": "祭りの配布物の日付が違ったら残りの配布を止める",
+          "initialRequest": "配るチラシの日付が、今日の案内と違います。残りを配る前に確認してほしいです。",
+          "finalPlayerAction": "自分の配布数と残りの箱を示し、責任者の回答まで新たに配りません。",
+          "closingNpc": "承知しました。気づいて知らせてくださりありがとうございます。確認が済むまでお待ちください。",
+          "speakingGoals": [
+            "印刷チラシの日付相違を発見し残り配布前の照合を依頼する",
+            "本人入口配布十枚と箱残部と他場所数量不明を報告する",
+            "日付未訂正で訂正版か別案内か責任者判断を求める",
+            "誤版を混ぜず残し別担当への配布待ち連絡方法を尋ねる",
+            "本人配布数と残箱を知らせ責任者回答まで配布停止すると答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yokote.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-YOKOTE-02-001",
+          "title": "焼肉の生肉用トングを取り分け用として渡さない",
+          "initialRequest": "友人へ焼けた物を分けたいです。この肉を載せたトングとは別の道具をもらえますか。",
+          "finalPlayerAction": "道具を分け、調理状態の確認が済んだ物だけを店員さんの案内で取り分けます。",
+          "closingNpc": "承知しました。取り分け用はこちらです。どうぞお食事をお楽しみください。",
+          "speakingGoals": [
+            "生肉を扱ったトングと別の取分け道具を依頼する",
+            "生肉用使用済みで友人へ渡すのを止めたと説明する",
+            "一切れの調理状態は未判断なので店員確認を求める",
+            "道具二種類の置場を同行者へ説明し私用箸へ混ぜないと答える",
+            "道具区分と調理状態確認後の店員案内に従い取分けると伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yokote.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-YOKOTE-03-001",
+          "title": "田んぼへ落ちた私物を探すため作業列から離れない",
+          "initialRequest": "腕時計がなくなりました。田んぼへ落ちたかもしれないので、作業を離れて探してよいですか。",
+          "finalPlayerAction": "黒い文字盤と銀色のバンドです。見失った区間と特徴を伝え、探す方法は担当に確認します。",
+          "closingNpc": "承知しました。指導者へ引き継ぎます。知らせてくださりありがとうございます。",
+          "speakingGoals": [
+            "作業中の時計紛失で田へ探しに離れてよいか尋ねる",
+            "落下未目撃で休憩後装着と今列で不在発見を説明する",
+            "最終確認地点と気づいた地点を分け未発見と伝える",
+            "他人作業列を動かさず担当指示を待つと答える",
+            "黒文字盤銀バンド特徴と区間を知らせ捜索方法は担当へ照会すると伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yokote.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-YOKOTE-04-001",
+          "title": "粉の量を液体の目盛りだけで決めず秤を使う",
+          "initialRequest": "粉を量りたいです。このカップの百ミリリットルまで入れると、百グラムになるでしょうか。",
+          "finalPlayerAction": "材料表の重さを秤で確認して示し、液体目盛りから粉の重さを推測しません。",
+          "closingNpc": "承知しました。まず秤の実演をこちらでご覧ください。",
+          "speakingGoals": [
+            "粉百mLを百gと扱えるか講師へ尋ねる",
+            "表は百g指定で水目盛り同等と思ったが粉未投入と伝える",
+            "秤容器差引き実演後に計量し体積数字転記はしないと答える",
+            "計量済み容器と未計量袋を分けると説明する",
+            "指定重さを秤で確認して講師へ示し粉体積から推定しないと復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yokote.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-YOKOTE-05-001",
+          "title": "使用済み洗剤袋を店の回収箱へ入れる前に対象を確認する",
+          "initialRequest": "使い終わった洗剤の袋を持ってきました。この回収箱に入れられるか、先に見てもらえますか。",
+          "finalPlayerAction": "この二枚は案内どおり準備できています。対象の洗剤袋だけ入れ、ほかの包装は持ち帰ります。",
+          "closingNpc": "ありがとうございます。対象を確認してくださり助かります。",
+          "speakingGoals": [
+            "使用済空洗剤袋の店内回収対象照合を投入前に頼む",
+            "洗剤空袋二枚と菓子包装混在を説明する",
+            "菓子包装を分け空包装全般同対象ではないと確認する",
+            "二枚の個別対象と準備確認を求め不足時は持帰ると答える",
+            "対象準備適合二洗剤袋のみ投入し他包装を持帰ると伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-merged-semantic-repairs.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-YOKOTE-06-001",
+          "title": "小屋の水を無料の飲料水と思わず用途を尋ねる",
+          "initialRequest": "水を足したいです。この大きい容器から自分のボトルへ入れてもよいですか。",
+          "finalPlayerAction": "はい。作業用の水は使わず、飲料と帰路の準備を相談してから動きます。",
+          "closingNpc": "承知しました。確認先はこちらです。無理のない予定でお過ごしください。",
+          "speakingGoals": [
+            "小屋の大容器から本人ボトルへ給水できるか尋ねる",
+            "未開蓋で小屋の水を飲料と考えたと説明する",
+            "持参水僅少で長い徒歩をやめ休憩後帰路も検討すると伝える",
+            "飲料準備できなければ登らず同行者と帰路相談すると答える",
+            "作業用水未使用を明示し飲料と帰路確認後に行動すると復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yokote.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-YOKOTE-07-001",
+          "title": "牧場の作業メモに休憩予定と実施時刻を分けて書く",
+          "initialRequest": "交替する人へ作業メモを残したいです。予定表の時刻を、そのまま完了時刻として書けますか。",
+          "finalPlayerAction": "道具整理は三時十五分完了、飼料準備は未確認と分けて残します。",
+          "closingNpc": "承知しました。その内容で責任者へお渡しください。引継ぎありがとうございます。",
+          "speakingGoals": [
+            "交替作業メモへ予定時刻を完了時刻として転記できるか尋ねる",
+            "道具整理は予定三時で実終了三時十五分と説明する",
+            "別担当飼料準備を未目撃なので完了記録しないと伝える",
+            "動物区域へ確認進入せず責任者と交替者へ未確認を知らせると答える",
+            "本人完了時刻内容と別担当未確認を分けて引継ぐと復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yokote.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-YOKOTE-08-001",
+          "title": "給与の資料に手書きした円換算額を原本の数字と分ける",
+          "initialRequest": "海外の給与資料に、自分で円に直した額を書きました。元の数字と混ざらないよう相談したいです。",
+          "finalPlayerAction": "原資料を保持して、自分の換算額は参考の計算と伝え、必要な方法を担当へ確認します。",
+          "closingNpc": "承知しました。相談窓口へご案内します。ご準備ありがとうございます。",
+          "speakingGoals": [
+            "海外給与写しの本人円換算追記を原資料と区別する相談をする",
+            "原本無追記保持で写し余白だけ自己計算と説明する",
+            "元通貨と本人メモを分けネット相場使用を伝える",
+            "換算に使った日を保持し追記額を正式元資料額と主張しないと答える",
+            "原資料保持と参考計算明示で換算方法は専門担当へ照会すると復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yokote.json"
+        }
+      ]
     },
     {
-      "cityId": "CTY-AKT-ODATE",
+      "city": "odate",
       "scenarioIds": [
         "SC-AKT-ODATE-001",
         "SC-LOC-AKT-ODATE-02-001",
@@ -82,10 +506,134 @@
         "SC-LOC-AKT-ODATE-07-001",
         "SC-LOC-AKT-ODATE-08-001"
       ],
-      "review": "All current Akita utterances, tasks and endings read for flow and within-prefecture purpose; cross-prefecture review remains pending."
+      "reviewer": "AI",
+      "reviewBasis": "All eleven utterances and five task/answer pairs individually read or authored during this recovery, not inferred from count/similarity output. Prior 37 drafts were read again; 54 differing merged scenes and the subsequent four concurrent fixes were read in full; repaired sources were independently authored or read in full; previous-prefecture topic/causal candidates were examined and overlapping plots replaced.",
+      "causalAssessment": "Eight complete scripts and tasks reviewed. Timber mark versus cut instruction (keep the timber on hold, corrected concurrent wording); individual zoo pass versus companion rights; producer address versus origin; interpreter reading versus owner receiving/signing; display furniture sold as the actual sample versus unseen new stock; flower water pouch during carrying; paid bicycle rack versus selected bike; two envelopes to distinct addressees rather than one outer delivery. Rack confusion is retained here only; Kitaakita police was substantively replaced.",
+      "scenarioEvidence": [
+        {
+          "scenarioId": "SC-AKT-ODATE-001",
+          "title": "木材の端に書いた寸法が切る線なのか確認する",
+          "initialRequest": "この木材の文字の所で切るのか確認したいです。長さの数字と線が同じ端にあります。",
+          "finalPlayerAction": "文字を加工線と決めず、この一本の不一致を知らせ、指導者の確認が済むまで渡しません。",
+          "closingNpc": "承知しました。気づいて止めてくださりありがとうございます。指導者をお呼びします。",
+          "speakingGoals": [
+            "木材端の寸法文字と線が切断位置か加工前照会する",
+            "加工未実施で手書き線と作業票位置不一致を説明する",
+            "本人で指示線を追加せず実物票を指導者へ示すと答える",
+            "対象一本を保留し別材へ自己交換して加工しないと伝える",
+            "寸法文字を加工線と扱わず確認前は加工へ渡さないと復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-review-followup.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-ODATE-02-001",
+          "title": "動物園の年間券を持つ人の同伴者も入れると決めない",
+          "initialRequest": "年間券を持っています。今日は友人と来ましたが、この券で二人とも入れるのでしょうか。",
+          "finalPlayerAction": "年間券は自分だけに使い、友人は別に受付してから二人で入ります。",
+          "closingNpc": "承知しました。どうぞ園内をお楽しみください。",
+          "speakingGoals": [
+            "年間券一枚で友人同伴二人が入れるか尋ねる",
+            "同行者利用可と思ったが二人とも未入園と説明する",
+            "年間券本人名義で友人への貸与予定ではないと伝える",
+            "友人別受付と知らせ本人照合後も入口外で合流待ちすると答える",
+            "本人年間券と友人別券各自確認後に二人で入ると復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-odate.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-ODATE-03-001",
+          "title": "道の駅の産地表示を出品者の住所と分けて読む",
+          "initialRequest": "近くで育った野菜を選びたいです。この住所が、畑のある場所なのでしょうか。",
+          "finalPlayerAction": "産地欄が希望に合うと確認できた一袋を買います。出品者の住所とは別に読みます。",
+          "closingNpc": "承知しました。お会計へどうぞ。ありがとうございました。",
+          "speakingGoals": [
+            "近隣産野菜の出品者住所が畑所在地か尋ねる",
+            "近住所表示から全内容が同産地と思ったと説明する",
+            "玉ねぎ二袋の個別産地欄を読んで比べたいと頼む",
+            "札折れ未可読袋を近隣産と決めず読める袋を先確認すると答える",
+            "希望産地を確認した一袋を選び出品者住所とは別に読むと復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-odate.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-ODATE-04-001",
+          "title": "駅へ届けられた物の受取時に本人の署名欄を同行者へ渡さない",
+          "initialRequest": "届いた楽譜のケースを受け取りたいです。友人が日本語を読めるので、受取の紙も全部書いてもらえますか。",
+          "finalPlayerAction": "特徴で照合し、友人の読み上げも聞いたうえで、自分で受領の意味を確認して署名します。",
+          "closingNpc": "承知しました。確認できましたらお渡しします。お越しくださりありがとうございます。",
+          "speakingGoals": [
+            "本人忘れ楽譜ケースの受取用紙を日本語得意な友人へ全面記入依頼できるか尋ねる",
+            "電車へ置き忘れた本人所有で友人所有ではないと説明する",
+            "説明読上げ補助と本人署名を分け代筆署名しないと伝える",
+            "本人記入の楽譜表題を特徴として受領前に示したいと頼む",
+            "特徴照合と内容理解後に本人が受領署名すると答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-odate.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-ODATE-05-001",
+          "title": "現品限りの展示家具を新品取り寄せと同じと思わない",
+          "initialRequest": "この机を買うと、同じ型の新しい物が家へ届くのでしょうか。展示の端に傷が見えます。",
+          "finalPlayerAction": "この現品の状態と配送条件を聞いてから買うか決めます。新品の取寄せとして注文しません。",
+          "closingNpc": "承知しました。まず状態をご案内します。ご相談ありがとうございます。",
+          "speakingGoals": [
+            "傷のある展示机購入で新品納品になるか尋ねる",
+            "現品限定を見本不足と誤解しこの机が納品物と確認する",
+            "配送希望だが現物状態未確認なので注文未確定と伝える",
+            "天板端と脚接続部の確認を頼み表示額を配送込みと扱わないと答える",
+            "現物状態と配送合計を確認後購入判断し新品注文としないと復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-odate.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-ODATE-06-001",
+          "title": "花束の水袋を外してから店を出ると思わず持ち方を聞く",
+          "initialRequest": "この花束の下に袋があります。持ち帰る前に外したほうが軽くなりますか。",
+          "finalPlayerAction": "保水袋を付けたまま縦に運び、渡す相手へ案内も一緒に伝えます。",
+          "closingNpc": "承知しました。お気をつけてお持ちください。ありがとうございました。",
+          "speakingGoals": [
+            "花束下部袋を移動前に外すと軽くなるか尋ねる",
+            "保水を包装余りと誤解し未除去だが横向き鞄収納予定を説明する",
+            "徒歩二十分で他荷物を同行者へ頼み花を支えられると伝える",
+            "家で立置きし受取人へ袋の開け方も説明したいと頼む",
+            "袋保持縦運搬と受取人への案内引継ぎをすると復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-odate.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-ODATE-07-001",
+          "title": "駐輪の精算後に別の番号の自転車を外さない",
+          "initialRequest": "駐輪の精算をしましたが、自転車が外れません。この番号の所でよいか確認したいです。",
+          "finalPlayerAction": "十二番の本人車体を鍵とベルで照合し、二十一番の他人の車体には触らずに出します。",
+          "closingNpc": "承知しました。出口では通行に気をつけてお帰りください。",
+          "speakingGoals": [
+            "精算後駐輪解除できず現在区画の正誤確認を頼む",
+            "控え十二番と現在二十一番不一致で色だけで移動したと説明する",
+            "控えの本人番号へ戻り色のみ所有判断しないと答える",
+            "十二番青ベルを特徴に本人鍵対応確認後取り出したいと伝える",
+            "本人番号鍵特徴一致の車体のみ出し別人車体未接触を確認する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-odate.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-ODATE-08-001",
+          "title": "宛名別の二通を一枚の封筒に入れて各人へ配達と思わない",
+          "initialRequest": "友人二人への手紙を一つの封筒に入れました。それぞれの家へ届けてもらえると思っていました。",
+          "finalPlayerAction": "一つの外宛名で二軒へ分けて届くと考えず、二通として封筒と料金を用意します。",
+          "closingNpc": "承知しました。二通の準備ができましたらお持ちください。ありがとうございます。",
+          "speakingGoals": [
+            "二人別宛手紙一封筒で各家へ届くと思ったと相談する",
+            "外一人宛と中別市友人宛の相違を説明する",
+            "最初受取人再送依頼なしで二封筒分離希望を伝える",
+            "未差出しで各手紙を各宛先に合わせ直すと答える",
+            "一外宛先で二軒配達とせず二通包装料金準備を復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-odate.json"
+        }
+      ]
     },
     {
-      "cityId": "CTY-AKT-SEMBOKU",
+      "city": "semboku",
       "scenarioIds": [
         "SC-AKT-SEMBOKU-001",
         "SC-LOC-AKT-SEMBOKU-02-001",
@@ -96,10 +644,134 @@
         "SC-LOC-AKT-SEMBOKU-07-001",
         "SC-LOC-AKT-SEMBOKU-08-001"
       ],
-      "review": "All current Akita utterances, tasks and endings read for flow and within-prefecture purpose; cross-prefecture review remains pending."
+      "reviewer": "AI",
+      "reviewBasis": "All eleven utterances and five task/answer pairs individually read or authored during this recovery, not inferred from count/similarity output. Prior 37 drafts were read again; 54 differing merged scenes and the subsequent four concurrent fixes were read in full; repaired sources were independently authored or read in full; previous-prefecture topic/causal candidates were examined and overlapping plots replaced.",
+      "causalAssessment": "Eight complete scripts and tasks reviewed. Already owned obi pattern location; returning retained rented towel used/unwashed; heritage threshold versus visitor seat; ATM transaction ending/card retrieval; hearing-device absence during a care handover; self-caused water spill on unmeasured paper specimen; recovered versus remaining transfer tickets; shared cooked platter order count. Lost glasses and static production label mismatch were rejected against prior scenes. The wet specimen asks about unmeasured material and traceability, not changing a completed result.",
+      "scenarioEvidence": [
+        {
+          "scenarioId": "SC-AKT-SEMBOKU-001",
+          "title": "手持ちの帯で柄が隠れる巻き方を相談する",
+          "initialRequest": "帯の柄を正面に出したいのですが、結ぶと裏に隠れます。柄の位置を一緒に見ていただけますか。",
+          "finalPlayerAction": "新しい帯を買う前に、手持ちの帯の巻く向きと柄の出る位置を相談します。",
+          "closingNpc": "承知しました。着付けの担当へおつなぎします。ご相談ありがとうございます。",
+          "speakingGoals": [
+            "手持ち帯の花柄が結ぶと背中へ隠れるため正面位置の相談を頼む",
+            "巻き始めた端と腹側無地背中花柄の結果を説明する",
+            "切断変更せず手持ち帯で花柄を前に出す結び方を希望する",
+            "帯未マーキングで巻始めと柄を示し現状確認後ほどいてよいか尋ねる",
+            "新規購入前に手持ち帯の巻向きと柄位置を相談すると答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-semboku.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-SEMBOKU-02-001",
+          "title": "貸出タオルを持ち帰ってしまった後に使用済みとして返す",
+          "initialRequest": "昨日借りたタオルを、家へ持ち帰ってしまいました。返しに来ましたが、どこへ渡せばよいですか。",
+          "finalPlayerAction": "貸出品の持帰りと使用済み未洗濯を申告して返します。自分で棚へ戻さず受付へ渡します。",
+          "closingNpc": "承知しました。お返しに来てくださりありがとうございます。",
+          "speakingGoals": [
+            "前日貸出タオルを持帰ったため受付で返却先を尋ねる",
+            "料金支払いを購入と誤解したが貸出品と確認する",
+            "使用済未洗濯で清潔棚へ自己返却しないと伝える",
+            "貸出一枚のみで私物と分け袋内保持と説明する",
+            "持帰り使用状態を申告し受付へ返却すると答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-merged-semantic-repairs.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-SEMBOKU-03-001",
+          "title": "古民家の敷居に座る前に見学用の腰掛けを尋ねる",
+          "initialRequest": "少し休みたいです。この入口の木の段に腰を掛けてもよいですか。",
+          "finalPlayerAction": "今は外の腰掛けへ行きます。敷居には座らず、再入場時に入口の表示を確認します。",
+          "closingNpc": "承知しました。ごゆっくりお休みください。",
+          "speakingGoals": [
+            "古民家入口の木段を休憩に使えるか尋ねる",
+            "敷居を低いベンチと誤解し未着座で靴脱ぎ条件に迷ったと説明する",
+            "同行者見学中に入口を塞がず外で待てる腰掛けを尋ねる",
+            "案内板横で待つと連れへ知らせ再見学時の靴扱いを尋ねる",
+            "敷居に座らず外で休み再入場時は入口表示を確認すると伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-semboku.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-SEMBOKU-04-001",
+          "title": "ATM操作をやめたいときに取引終了を確認する",
+          "initialRequest": "残高を見ただけで帰りたいのですが、次の操作を選ぶ画面が出ています。終わり方を教えてください。",
+          "finalPlayerAction": "カードを受け取り、次の取引画面が消えたことも見ました。これで退出します。",
+          "closingNpc": "承知しました。お忘れ物のないようにお帰りください。",
+          "speakingGoals": [
+            "残高照会後に次操作画面が残るため終了方法を尋ねる",
+            "カード未返却で無操作なら自動終了と思ったと説明する",
+            "暗証番号を告げず終了操作が引出し開始にならないか確認する",
+            "引出し振込未実施と伝えカード返却を本人確認すると答える",
+            "カード受領と取引画面終了を確認したので退出すると伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-semboku.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-SEMBOKU-05-001",
+          "title": "補聴器を外した利用者への呼びかけを申し送る",
+          "initialRequest": "食堂への声かけに返事がありません。拒否なのか、聞こえていないのか分からないので相談したいです。",
+          "finalPlayerAction": "補聴器を外されていて、筆談では少し待ちたいとのことでした。この内容で引き継ぎます。",
+          "closingNpc": "ありがとうございます。ご本人の希望に合わせて担当者が対応します。",
+          "speakingGoals": [
+            "食堂声かけ無応答を拒否か聴取困難か分からず相談する",
+            "視線応答はあるが補聴器が耳になくケース内と報告する",
+            "本人の紙指示を受け短い筆談で食堂希望を尋ねてよいか確認する",
+            "筆談で待機希望と分かったため拒否扱いせず担当へ伝えると答える",
+            "補聴器未装着の状況と本人の少し待ちたい希望を申し送る"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-semboku.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-SEMBOKU-06-001",
+          "title": "測定用の紙試料へ水をこぼしたことを検査前に報告する",
+          "initialRequest": "測定用の紙に水をこぼしました。このまま検査へ渡さず、試料の扱いを確認したいです。",
+          "finalPlayerAction": "試料番号と水をこぼした時刻、未測定を伝えます。元どおりと決めず、担当の判断を待ちます。",
+          "closingNpc": "ありがとうございます。検査担当と確認します。",
+          "speakingGoals": [
+            "測定用紙試料へ水をこぼし検査へ渡す前に扱いを相談する",
+            "右側一枚未測定と本人容器から水落下を報告する",
+            "未乾燥未交換で濡れ試料を区別保持すると答える",
+            "試料番号と五分前発生及び測定結果修正ではなく未測定品相談と明示する",
+            "番号発生時刻未測定を伝え自己復元判断せず担当指示待機を確認する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-merged-semantic-repairs.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-SEMBOKU-07-001",
+          "title": "乗換改札で回収された券と手元の券を区別する",
+          "initialRequest": "乗換改札に二枚入れたのに、一枚しか戻りませんでした。券が中に残ったのでしょうか。",
+          "finalPlayerAction": "戻った券の用途を確認して携帯します。機械から自分で券を取り出そうとはしません。",
+          "closingNpc": "承知しました。次の列車へご案内します。お気をつけて。",
+          "speakingGoals": [
+            "乗換改札へ二枚投入後一枚返却で機内残留か尋ねる",
+            "使用済区間券と先区間券を投入したと説明し返却券を示す",
+            "返却枚数を紛失判断したと伝え行先座席記載券の照合を頼む",
+            "先区間券を保持し出口で必要な券の用途を尋ねる",
+            "返却券の用途確認後携帯し自力で機内取出ししないと答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-semboku.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-SEMBOKU-08-001",
+          "title": "取り分け前の大皿を人数分の注文と数えない",
+          "initialRequest": "この大皿料理を二人で食べたいです。一人につき一皿注文する料理ですか。",
+          "finalPlayerAction": "注文数はそのとおりです。取り皿二枚は料理二皿という意味ではありません。",
+          "closingNpc": "はい、確認できました。お料理をお待ちください。",
+          "speakingGoals": [
+            "大皿料理を二人で食べる際に一人一皿必要か尋ねる",
+            "二皿必要と誤解したが別小料理も注文予定と説明する",
+            "取り皿二枚と大皿一皿小料理一品を具体的に注文する",
+            "同行者同意済みで追加は食後判断すると伝える",
+            "料理注文数と取り皿枚数の区別を確認する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-semboku.json"
+        }
+      ]
     },
     {
-      "cityId": "CTY-AKT-YUZAWA",
+      "city": "yuzawa",
       "scenarioIds": [
         "SC-AKT-YUZAWA-001",
         "SC-LOC-AKT-YUZAWA-02-001",
@@ -110,10 +782,134 @@
         "SC-LOC-AKT-YUZAWA-07-001",
         "SC-LOC-AKT-YUZAWA-08-001"
       ],
-      "review": "All current Akita utterances, tasks and endings read for flow and within-prefecture purpose; cross-prefecture review remains pending."
+      "reviewer": "AI",
+      "reviewBasis": "All eleven utterances and five task/answer pairs individually read or authored during this recovery, not inferred from count/similarity output. Prior 37 drafts were read again; 54 differing merged scenes and the subsequent four concurrent fixes were read in full; repaired sources were independently authored or read in full; previous-prefecture topic/causal candidates were examined and overlapping plots replaced.",
+      "causalAssessment": "Eight complete scripts and tasks reviewed. Bottling label year versus work day; campsite companion arrival pending; rice split between two households preserving each bag label; guest return bottles during cleaning; fringe-only appointment versus extra haircut scope; training fire-report subject versus actual emergency; experienced symptoms versus family diagnostic guesses; current deposit versus future installment enrollment. Rice purchase is already agreed; the problem is household separation with product information, distinct from transport weight alone.",
+      "scenarioEvidence": [
+        {
+          "scenarioId": "SC-AKT-YUZAWA-001",
+          "title": "瓶詰め用ラベルの年表示と作業日の違いを報告する",
+          "initialRequest": "このラベルの年が今年と違います。今日使ってよいラベルか確認したいです。",
+          "finalPlayerAction": "未使用の束は作業台の箱に置いてあります。表示を直さず、照合と記録欄の説明を待ちます。",
+          "closingNpc": "ありがとうございます。担当者と一緒に確認しましょう。",
+          "speakingGoals": [
+            "ラベル印刷年が今年と異なるため使用前照合を頼む",
+            "表面年数字を作業日と読んだが未修正と説明する",
+            "印刷年を保持した束を示し作業日記録欄を尋ねる",
+            "商品年表示と記録欄を分け照合前の貼付けを保留すると答える",
+            "未使用束の保管位置を伝え表示未修正で説明を待つと報告する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yuzawa.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-YUZAWA-02-001",
+          "title": "キャンプの同行者到着が遅れることを受付に伝える",
+          "initialRequest": "二人で予約しましたが、一人だけ先に来ました。連れが夜に着くので、受付方法を相談したいです。",
+          "finalPlayerAction": "受け入れの返答を聞いてから連れへ伝えます。予約人数は二人で、車は二台です。",
+          "closingNpc": "承知しました。遅着の担当へ確認します。お知らせありがとうございます。",
+          "speakingGoals": [
+            "二人予約で本人先着同行者夜着の受付方法を相談する",
+            "別車で来る同行者も本人受付後そのまま入れると思ったと説明する",
+            "二台利用を申告し受付終了時の連絡方法を尋ねる",
+            "同行者の午後八時予定を伝え到着前電話を依頼すると答える",
+            "遅着受入れ回答後に連れへ案内し二人二台を確認する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yuzawa.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-YUZAWA-03-001",
+          "title": "分けて持ち帰る米の表示を両方の袋へ残す",
+          "initialRequest": "この米を親と半分ずつ使いたいです。買った袋を二つに分けて持ち帰れるか相談したいです。",
+          "finalPlayerAction": "食品用の二袋と、両方に付ける表示をお願いします。親へも保存上の注意を渡します。",
+          "closingNpc": "承知しました。その方法で準備します。ありがとうございました。",
+          "speakingGoals": [
+            "購入米を親と分け二袋で持ち帰れるか相談する",
+            "別世帯へ持帰る親にも商品名注意書きが必要と説明する",
+            "商品名だけでなく保存注意を両袋へ残したいと頼む",
+            "買物袋へ米を直接入れず食品用袋の用意可否を尋ねる",
+            "食品用二袋と両袋表示を依頼し親へ保存注意を渡すと答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yuzawa.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-YUZAWA-04-001",
+          "title": "客室清掃で返却予定の空き瓶を廃棄しない",
+          "initialRequest": "清掃する部屋に空き瓶とメモがあります。ごみとして片づけてよいか確認したいです。",
+          "finalPlayerAction": "机の瓶は返却予定で未移動、周辺の清掃は確認待ちとして報告します。",
+          "closingNpc": "ありがとうございます。責任者へ伝えますので、ほかの指示済みの作業へ進んでください。",
+          "speakingGoals": [
+            "客室空瓶とメモがあり廃棄可否を相談する",
+            "返却希望メモと瓶未袋詰めで机上保持を報告する",
+            "空瓶を廃棄物と決めずメモと現状保持すると答える",
+            "他物品未移動で瓶周辺清掃を確認後行いたいと頼む",
+            "瓶返却予定未移動と周辺清掃確認待ちを報告する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yuzawa.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-YUZAWA-05-001",
+          "title": "前髪だけの予約に追加カットを含めず相談する",
+          "initialRequest": "前髪だけで予約しましたが、後ろの長さも整えたくなりました。今日追加できますか。",
+          "finalPlayerAction": "はい、眉が見える長さです。今日は前髪だけで、全体の予約は施術後に相談します。",
+          "closingNpc": "承知しました。その範囲で始めます。ありがとうございます。",
+          "speakingGoals": [
+            "前髪予約へ後ろ髪カットの当日追加を相談する",
+            "後ろ三センチ希望と前髪料金で全体少量も可能と思ったと説明する",
+            "追加料金終了時刻確認前に施術を始めないよう依頼する",
+            "当日枠不足を受け前髪のみ実施と全体別日予約を希望する",
+            "眉が見える前髪のみ本日施術し全体予約は後で相談すると答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yuzawa.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-YUZAWA-06-001",
+          "title": "通報練習の題材と現在起きている火災を区別して話す",
+          "initialRequest": "防災の勉強で、火災を知らせる練習をしたいです。今火事が起きているわけではありません。",
+          "finalPlayerAction": "この窓口で練習します。住所、建物のメモ、青い看板を順に伝えます。",
+          "closingNpc": "承知しました。練習を始めましょう。ご相談ありがとうございます。",
+          "speakingGoals": [
+            "現実の火災ではなく防災学習の通報練習と明示して相談する",
+            "自宅住所を使う煙の例が練習題材と説明する",
+            "建物名漢字を読めないため事前メモ準備を相談する",
+            "青い入口看板を住所の代替ではなく番地と併記すると答える",
+            "窓口練習で住所建物メモ目印を順に伝えると確認する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yuzawa.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-YUZAWA-07-001",
+          "title": "診察用メモで本人が経験した症状と家族の推測を分ける",
+          "initialRequest": "昨日の夕方に体がだるくなりました。家族が原因を書いたメモもありますが、そのまま渡してよいですか。",
+          "finalPlayerAction": "だるさは食事前からで、原因は未確認です。家族の考えは別の参考情報としてお伝えします。",
+          "closingNpc": "ありがとうございます。その内容を踏まえて診察を進めます。",
+          "speakingGoals": [
+            "本人倦怠感と家族原因メモを一緒に提示してよいか相談する",
+            "夕食前の本人症状と食事原因という家族推測を分けて説明する",
+            "五時症状六時半食事の時系列と原因未確認を伝える",
+            "メモ原因見出しを本人確認症状と別に説明したいと頼む",
+            "食前症状と未確認原因を再提示し家族推測を参考情報として渡す"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yuzawa.json"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-YUZAWA-08-001",
+          "title": "口座への入金と積立商品の申込みを区別する",
+          "initialRequest": "この口座へ入金したいだけです。この積立の用紙も書く必要がありますか。",
+          "finalPlayerAction": "この口座へ三万円で合っています。積立の申込みはせず、入金をお願いします。",
+          "closingNpc": "承知しました。入金を受け付けます。ご説明ありがとうございます。",
+          "speakingGoals": [
+            "口座入金のみ希望で積立用紙記入が必要か尋ねる",
+            "積立用紙未記名未署名で入金必須書類と思ったと説明する",
+            "本日入金のみで定期引落し設定も希望しないと伝える",
+            "通帳口座三万円入金と商品申込書返却控え受領を依頼する",
+            "口座金額を確認し積立申込みなしの入金を指示する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yuzawa.json"
+        }
+      ]
     },
     {
-      "cityId": "CTY-JP-05202",
+      "city": "noshiro",
       "scenarioIds": [
         "SC-LOC-JP-05202-01-001",
         "SC-LOC-JP-05202-02-001",
@@ -124,10 +920,134 @@
         "SC-LOC-JP-05202-07-001",
         "SC-LOC-JP-05202-08-001"
       ],
-      "review": "All current Akita utterances, tasks and endings read for flow and within-prefecture purpose; cross-prefecture review remains pending."
+      "reviewer": "AI",
+      "reviewBasis": "All eleven utterances and five task/answer pairs individually read or authored during this recovery, not inferred from count/similarity output. Prior 37 drafts were read again; 54 differing merged scenes and the subsequent four concurrent fixes were read in full; repaired sources were independently authored or read in full; previous-prefecture topic/causal candidates were examined and overlapping plots replaced.",
+      "causalAssessment": "Eight complete scripts and tasks reviewed. Conflicting station clocks; unreachable daytime civic callback and channel/address confirmation; unused wrong-name urine container; owner inquiry without visiting finder address; former surname on outer mail versus document identity; aggregate passbook entry versus underlying transactions; purchased brought-in eggs versus shop goods; fallen leaves collection eligibility. Old reply-envelope addressing was rejected. Callback changes communication channel after an existing civic inquiry, rather than confirming a lost-bag record or rescheduling medicine.",
+      "scenarioEvidence": [
+        {
+          "scenarioId": "SC-LOC-JP-05202-01-001",
+          "title": "駅の時計とスマートフォンの時刻差を係員に確かめる",
+          "initialRequest": "スマートフォンと駅の時計で時間が違います。この列車の発車まで何分あるか確認したいです。",
+          "finalPlayerAction": "駅の表示で確認したホームへ行きます。端末の時刻は列車の運行情報と分けて扱います。",
+          "closingNpc": "承知しました。お気をつけてご乗車ください。",
+          "speakingGoals": [
+            "端末時計と駅時計の差で予定列車発車までの時間を尋ねる",
+            "端末非自動設定と旅行前時刻の可能性及び遅延誤認を説明する",
+            "駅表示で残十分と確認し端末修正より先にホーム移動を希望する",
+            "対象列車ホームを尋ね端末時間で別列車へ変更しないと答える",
+            "駅表示ホームへ移動し端末時刻と運行情報を分けると伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-noshiro.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05202-02-001",
+          "title": "相談後の返答を勤務中の電話で受けられないと知らせる",
+          "initialRequest": "昨日こちらで相談しました。返事は電話と聞きましたが、日中は仕事で出られません。連絡方法を相談したいです。",
+          "finalPlayerAction": "昼は出られずメール希望と伝え、アドレスを照合します。不可なら電話できる時間を改めて相談します。",
+          "closingNpc": "承知しました。昨日の担当へおつなぎします。お知らせありがとうございます。",
+          "speakingGoals": [
+            "昨日の相談回答電話を日中仕事で受けられず連絡方法変更を相談する",
+            "公園利用相談窓口と昼電話不可未申告を説明する",
+            "第一希望メールで不可の場合の電話可能時間相談を希望する",
+            "メールアドレスを紙で提出し口頭聞違い防止の照合を頼む",
+            "昼不在メール希望と宛先照合及び不可時電話時間調整を確認する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-merged-semantic-repairs.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05202-03-001",
+          "title": "病院の採尿容器の名前が違うことを使用前に知らせる",
+          "initialRequest": "渡された採尿の容器の名前が私と違います。使う前に確認していただけますか。",
+          "finalPlayerAction": "正しい名前と使用の案内を確認してから使います。未使用の違う容器は返します。",
+          "closingNpc": "承知しました。お知らせいただきありがとうございます。",
+          "speakingGoals": [
+            "採尿容器の氏名差を使用前に照合依頼する",
+            "容器未使用と本人氏名及び別名ラベルを示す",
+            "ラベル自己修正せず現状の容器を渡すと答える",
+            "未採取と報告し再交付容器の氏名読上げ確認を依頼する",
+            "正しい氏名使用説明後に採取し違う未使用容器を返すと伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-noshiro.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05202-04-001",
+          "title": "落とした鍵を拾った人の住所へ取りに行かず警察へ照会する",
+          "initialRequest": "鍵を落としました。拾ったという投稿を見ましたが、直接取りに行く前に相談したいです。",
+          "finalPlayerAction": "星の傷を特徴として伝え、警察を通して照会します。投稿者の家へ一人で行きません。",
+          "closingNpc": "承知しました。詳しい状況を伺います。ご相談ありがとうございます。",
+          "speakingGoals": [
+            "鍵遺失と拾得投稿を伝え直接訪問前に相談する",
+            "投稿者未連絡とタグ星傷特徴及び写真の見えない部分を説明する",
+            "昨夜駅から自宅の遺失経路を述べ住所を相手へ送らず照会したいと頼む",
+            "投稿画面時刻保存を伝え警察への拾得届照会を依頼する",
+            "本人鍵特徴で警察経由照会し投稿者宅へ単独訪問しないと答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-noshiro.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05202-05-001",
+          "title": "差出前の封筒に書いた旧姓と書類の氏名差を照会する",
+          "initialRequest": "書類を送る封筒に旧姓を書きました。中の書類は今の姓です。送る前に相談したいです。",
+          "finalPlayerAction": "提出先の回答を聞いて、差出人欄と同封書類の氏名を整えてから発送します。",
+          "closingNpc": "承知しました。またご相談ください。ありがとうございました。",
+          "speakingGoals": [
+            "差出封筒旧姓と書類現在姓の差を発送前に相談する",
+            "提出先一致指示と封筒のみ旧姓記入を説明する",
+            "配達と書類受理を区別し未封のまま提出先へ確認すると答える",
+            "姓変更表示を提出先へ聞くまで本日の発送受付を保留する",
+            "提出先回答後に封筒書類の氏名記載を整えて発送すると伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-noshiro.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05202-06-001",
+          "title": "通帳のまとめ記帳を取引一回と読み違えない",
+          "initialRequest": "通帳に大きい金額が一行で出ています。この一回で支払った記憶がないので確認したいです。",
+          "finalPlayerAction": "個別明細を見てから、心当たりのない行を日付と金額で照会します。",
+          "closingNpc": "承知しました。明細の担当へご案内します。",
+          "speakingGoals": [
+            "通帳一行の大額に一回支払の記憶がなく照会を頼む",
+            "まとめ表示を一件と誤解し長期間未記帳と説明する",
+            "まとめ対象期間の件数と個別明細の確認を依頼する",
+            "本人確認を依頼し合計額を単一送金と決めないと答える",
+            "個別明細確認後に不明取引を日付金額で照会すると伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-noshiro.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05202-07-001",
+          "title": "店内で割れた卵を購入済みの持込み品と区別して知らせる",
+          "initialRequest": "カートの卵を荷物で押して、一つ割ってしまいました。まだ会計していません。どうすればよいですか。",
+          "finalPlayerAction": "このパックの破損を申告して、処理と会計の案内に従います。ほかの卵は取らずに待ちます。",
+          "closingNpc": "ありがとうございます。担当者が対応します。",
+          "speakingGoals": [
+            "会計前の店内卵をカート荷物で破損したと申告し対応を尋ねる",
+            "液はパック内で床未確認及び自己交換を考えたと説明する",
+            "未開封で待機し店内未購入品で持込み品ではないと伝える",
+            "破損を隠さずパック全体を係員に見せると答える",
+            "破損申告後処理会計指示を待ち別卵へ自己交換しないと確認する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-noshiro.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05202-08-001",
+          "title": "公園の落葉を私物の飾りに持ち帰る前に尋ねる",
+          "initialRequest": "工作に使う落ち葉を少し持ち帰りたいです。清掃に協力とあるので拾ってよいのでしょうか。",
+          "finalPlayerAction": "今日相談した少量の落葉だけです。ほかの植物も自由に持ち帰れるとは考えません。",
+          "closingNpc": "承知しました。工作をお楽しみください。",
+          "speakingGoals": [
+            "工作用落葉持帰りが清掃協力表示で許可されるか尋ねる",
+            "遊歩道落葉小袋一つ予定で枝採取なしと説明する",
+            "花壇立入りをせず清掃協力を無制限持帰りと扱わないと答える",
+            "今回案内された小袋範囲で枝花を取らず通路を塞がないと伝える",
+            "本日の少量落葉相談を他植物の自由採取に広げないと確認する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-noshiro.json"
+        }
+      ]
     },
     {
-      "cityId": "CTY-JP-05206",
+      "city": "oga",
       "scenarioIds": [
         "SC-LOC-JP-05206-01-001",
         "SC-LOC-JP-05206-02-001",
@@ -138,10 +1058,134 @@
         "SC-LOC-JP-05206-07-001",
         "SC-LOC-JP-05206-08-001"
       ],
-      "review": "All current Akita utterances, tasks and endings read for flow and within-prefecture purpose; cross-prefecture review remains pending."
+      "reviewer": "AI",
+      "reviewBasis": "All eleven utterances and five task/answer pairs individually read or authored during this recovery, not inferred from count/similarity output. Prior 37 drafts were read again; 54 differing merged scenes and the subsequent four concurrent fixes were read in full; repaired sources were independently authored or read in full; previous-prefecture topic/causal candidates were examined and overlapping plots replaced.",
+      "causalAssessment": "Eight complete scripts and tasks reviewed. Unridden same-station IC entry; original civic appointment holder versus proxy attendee; scope of clothing removal before tests; surveillance footage access versus customer possession; gift-wrap before payment; coin amount/count uncertainty; conditional self-checkout prompt for absent gift code; photographing without hiding public directional signs. Similar station-name discrimination was rejected. IC treatment is requested from staff with actual journey disclosed, without promising a refund or fee rule.",
+      "scenarioEvidence": [
+        {
+          "scenarioId": "SC-LOC-JP-05206-01-001",
+          "title": "同じ駅へ戻ったICカードの入場記録を係員へ相談する",
+          "initialRequest": "改札に入ったあと忘れ物に気づきました。列車に乗らずここへ戻ったのですが、同じカードで出られるか相談したいです。",
+          "finalPlayerAction": "未乗車で同じ駅へ戻ったことを伝え、説明された処理に従って退出します。",
+          "closingNpc": "承知しました。こちらで確認いたします。",
+          "speakingGoals": [
+            "未乗車で同駅改札へ戻ったICカード出場処理を相談する",
+            "十分前同駅入場とホームから戻っただけで他駅利用なしを説明する",
+            "係員に対象カードを示し反復タッチ別カード退出をしないと答える",
+            "当日は帰宅し再外出時は今回記録確認後に新規入場すると伝える",
+            "未乗車同駅戻りの利用状況に沿う処理料金説明後に退出すると確認する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-merged-semantic-repairs.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05206-02-001",
+          "title": "相談予約の名義を代理で来た人に変更しない",
+          "initialRequest": "母の相談予約で来ました。母は少し遅れます。私の名前で受付を始められますか。",
+          "finalPlayerAction": "予約対象は母で、私は付き添いです。十五分遅れることと合わせて伝えます。",
+          "closingNpc": "承知しました。担当へお知らせします。ありがとうございます。",
+          "speakingGoals": [
+            "母名義の相談予約へ本人遅着中に家族名義受付できるか尋ねる",
+            "相談対象は母で本人は説明補助と予約名変更の誤解を説明する",
+            "予約名義を保持し本人遅着連絡を依頼して代理同意ではないと伝える",
+            "母到着十五分予定で家族自身の相談に切替えないと答える",
+            "母本人対象と付き添い役割及び遅着時間をまとめて伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-oga.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05206-03-001",
+          "title": "検査前の服装説明で外す物の範囲を聞き返す",
+          "initialRequest": "検査前の説明で全部という言葉が聞こえました。何を外すのか、もう一度教えてください。",
+          "finalPlayerAction": "服装と置き場を聞き返してから更衣室で準備します。聞こえた一語だけで判断しません。",
+          "closingNpc": "承知しました。更衣室へご案内します。",
+          "speakingGoals": [
+            "検査服装説明の全部という一語の対象を聞き返す",
+            "上着か身付け物全体か不明で未更衣と伝える",
+            "残す服外す物を順に説明依頼し廊下で更衣しないと答える",
+            "案内範囲のみ更衣し外した物の袋置場を尋ねる",
+            "服装置場再説明後に更衣室で準備すると確認する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-oga.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05206-04-001",
+          "title": "防犯カメラの映像を自分で持ち出せると思わず相談する",
+          "initialRequest": "停めた車に傷がありました。近くの店にカメラがあります。自分で映像をもらう前に相談したいです。",
+          "finalPlayerAction": "午前九時から十二時の間に傷が見つかったことと、店のカメラの場所を報告します。",
+          "closingNpc": "承知しました。詳しく伺います。ご相談ありがとうございます。",
+          "speakingGoals": [
+            "駐車車両傷と近隣カメラ存在を伝え映像取得前に相談する",
+            "傷なし九時発見十二時と通行人原因未確認を説明する",
+            "店へ傷のみ伝え映像コピー人物名未要求と報告する",
+            "カメラ位置方向を示し人物写真をネット公開しないと答える",
+            "傷確認時間帯とカメラ所在を事実として報告する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-oga.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05206-05-001",
+          "title": "返信はがきの自分宛てと相手宛ての面を分ける",
+          "initialRequest": "往復はがきを送りたいのですが、返信の方にも相手の住所を書きました。直し方を相談できますか。",
+          "finalPlayerAction": "往信は相手宛て、返信は自分宛てに整え、返事を書く欄は空けて差し出します。",
+          "closingNpc": "承知しました。整いましたら受付へお持ちください。ありがとうございます。",
+          "speakingGoals": [
+            "往復はがき返信側へ相手住所を記入した修正方法を相談する",
+            "両宛先相手住所で未投函と説明する",
+            "返信面の識別を頼み正しい往信宛先は消さないと伝える",
+            "返信のみ本人宛て修正し返事記入欄を住所で埋めないよう確認する",
+            "往信相手宛て返信本人宛て及び返信欄空白で差出すと答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-oga.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05206-06-001",
+          "title": "硬貨を入金する袋の合計を推測額で申告しない",
+          "initialRequest": "貯めた硬貨を口座に入れたいです。金額を数えていないのですが、受付方法を教えてください。",
+          "finalPlayerAction": "異物を除いた硬貨を見てもらい、費用と確認できた金額に納得してから入金を頼みます。",
+          "closingNpc": "承知しました。担当へご案内します。",
+          "speakingGoals": [
+            "未計数硬貨を口座へ入金する受付方法を尋ねる",
+            "クリップ混入可能性と重量から五千円程度と推測しただけと説明する",
+            "異物除去後の取扱いと枚数手数料を事前に尋ねる",
+            "費用後に入金判断し推測五千円を確定額としないと伝える",
+            "異物除去済硬貨の計数額費用確認後に入金同意すると答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-oga.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05206-07-001",
+          "title": "予約ケーキの受取日と消費期限を同じ欄と思わない",
+          "initialRequest": "予約したケーキを受け取りに来ました。予約票の日付まで食べられる、という意味ですか。",
+          "finalPlayerAction": "すぐ家へ運び、商品表示の方法で保管します。受取日と期限は分けて見ます。",
+          "closingNpc": "ありがとうございます。お気をつけてお持ち帰りください。",
+          "speakingGoals": [
+            "予約ケーキ票の日付が食用期限か尋ねる",
+            "明後日集まり用途と受取日を保存最終日と誤解したと説明する",
+            "商品期限を事前確認し予約を日持ち保証と扱わないと答える",
+            "予定不適合を受け追加購入をやめ予約品を当日分として受取る",
+            "即時持帰り表示保存を守り受取日と期限を分けると伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-oga.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05206-08-001",
+          "title": "写真撮影で公園の案内標識を隠さない",
+          "initialRequest": "友人と記念写真を撮りたいです。この案内標識に布を掛けて背景を作ってもよいですか。",
+          "finalPlayerAction": "写真のために標識を覆わず、この場所で撮り、布も全て持ち帰ります。",
+          "closingNpc": "承知しました。周囲に気をつけてお楽しみください。",
+          "speakingGoals": [
+            "集合写真の背景用に案内標識へ布を掛けてよいか尋ねる",
+            "未掛布で短時間なら可能と思ったと説明する",
+            "木への結付けもせず手持ち布で通路外撮影場所を尋ねる",
+            "案内入口を隠さず指定広場で二人手持ち撮影すると答える",
+            "標識未遮蔽で撮影後布荷物全て持帰ると確認する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-oga.json"
+        }
+      ]
     },
     {
-      "cityId": "CTY-JP-05209",
+      "city": "kazuno",
       "scenarioIds": [
         "SC-LOC-JP-05209-01-001",
         "SC-LOC-JP-05209-02-001",
@@ -152,10 +1196,134 @@
         "SC-LOC-JP-05209-07-001",
         "SC-LOC-JP-05209-08-001"
       ],
-      "review": "All current Akita utterances, tasks and endings read for flow and within-prefecture purpose; cross-prefecture review remains pending."
+      "reviewer": "AI",
+      "reviewBasis": "All eleven utterances and five task/answer pairs individually read or authored during this recovery, not inferred from count/similarity output. Prior 37 drafts were read again; 54 differing merged scenes and the subsequent four concurrent fixes were read in full; repaired sources were independently authored or read in full; previous-prefecture topic/causal candidates were examined and overlapping plots replaced.",
+      "causalAssessment": "Eight current merged scripts and tasks read in full. Upside-down station map and common orientation; own older documents versus former resident notice; suggested clinic date versus confirmed booking; old bicycle image versus present identifying parts; unsent-envelope image versus mailing evidence; unissued salary account number; duplicate price tags versus pack quantity; incomplete rain-damaged sign versus original instruction. Same object photographs have distinct purposes: identifying current bicycle changes, not deriving an incident timestamp. Price-label repetition does not change the physical package quantity; no set is split.",
+      "scenarioEvidence": [
+        {
+          "scenarioId": "SC-LOC-JP-05209-01-001",
+          "title": "駅の案内図を逆さに持って出口の左右を取り違える",
+          "initialRequest": "案内図では右なのにエレベーターが見えません。大きい荷物があるので場所を確かめたいです。",
+          "finalPlayerAction": "余裕はあります。地図の向きと現在地を合わせ、売店の先の表示を見て移動します。",
+          "closingNpc": "承知しました。迷ったら近くの係員へお声がけください。お気をつけて。",
+          "speakingGoals": [
+            "案内図の右に設備が見えず大型荷物で場所確認を頼む",
+            "紙を逆さに保持し左右だけで進んだと説明する",
+            "売店の図位置と本人方向を一致させたいと答える",
+            "荷物を放置せず保持して表示までゆっくり進むと伝える",
+            "時間余裕と図方向現在地を合わせ目印表示で移動すると復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-kazuno.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05209-02-001",
+          "title": "旧住所の書類を前の住人の物と混ぜず窓口へ示す",
+          "initialRequest": "住所の手続きに持ってきた袋に、前の部屋に残っていた他人の通知も入っていました。分けて確認したいです。",
+          "finalPlayerAction": "本人の二枚で住所手続きを相談し、他人の紙は申請に使わず別の扱いを確認します。",
+          "closingNpc": "承知しました。担当窓口へご案内します。分けてくださりありがとうございます。",
+          "speakingGoals": [
+            "転入書類袋に他人通知混入で分離確認を頼む",
+            "本人名義二枚と未面識別名義一枚を区別する",
+            "他人紙を読み上げず封筒へ戻し本人資料不足確認を希望する",
+            "他人住所変更代理でなく通知扱いのみ別照会と説明する",
+            "本人申請二枚と他人紙処理を分けて進めると復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-kazuno.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05209-03-001",
+          "title": "予約変更の候補日を確定日として勤務先へ送らない",
+          "initialRequest": "電話で聞いた予約変更の候補日を勤務先へ送ろうとしました。まだ確定しているか確認したいです。",
+          "finalPlayerAction": "確定した日時を確認してから勤務先へ送ります。候補だけで元の予約がなくなったとは考えません。",
+          "closingNpc": "承知しました。予約担当へおつなぎします。少々お待ちください。",
+          "speakingGoals": [
+            "変更候補を勤務先送信前に確定状態を照会する",
+            "同医師空き折返し待ちなのに火曜決定と誤認したと説明する",
+            "元予約票を保持し自分で取り消さず変更成立確認を求める",
+            "勤務先未送信で変更希望返事待ちと伝える予定を述べる",
+            "日時確定後報告し候補だけで元予約消滅とみなさないと復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-kazuno.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05209-04-001",
+          "title": "自転車の写真が撮影日の古い物だと先に説明する",
+          "initialRequest": "見当たらない自転車の写真を持ってきました。ただ、買った時の写真なので今とは少し違います。",
+          "finalPlayerAction": "古い写真だけを今の姿として出さず、黒いかごと銀テープ、最後に停めた場所と時刻を説明します。",
+          "closingNpc": "承知しました。資料と現在の特徴を担当が確認します。こちらでお待ちください。",
+          "speakingGoals": [
+            "不明自転車の購入時写真が現在と異なると先に説明する",
+            "白かご写真と先月交換黒かごを区別し車体緑同一と伝える",
+            "写真にない後泥除け銀テープを現在特徴として述べる",
+            "東側駐輪昨夜八時と朝不在・管理者照会中を報告する",
+            "古写真と現特徴を分け停車地点時刻と併せ示すと答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-kazuno.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05209-05-001",
+          "title": "送った記録を残す書類の控えに受付印があると誤解しない",
+          "initialRequest": "提出書類を送った記録が必要です。家で封筒の写真を撮ったので、もう発送証明になると思っていました。",
+          "finalPlayerAction": "必要な発送記録が残る方法を選び、受付後の控えと内容コピーを別々に保管します。",
+          "closingNpc": "承知しました。案内の条件を確認して受付を進めます。ありがとうございます。",
+          "speakingGoals": [
+            "自宅封筒写真を発送証明と思ったため記録方法を尋ねる",
+            "住所記入後机撮影で実封筒は未差出しと説明する",
+            "提出先差出し控え指定を示し自宅写真のみ送付証拠としないと答える",
+            "内容コピー作成済みだが発送記録と別保存と伝える",
+            "条件適合発送方法と受付控え・内容控え別保管を復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-kazuno.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05209-06-001",
+          "title": "給与口座の提出欄が空なら架空の番号を入れない",
+          "initialRequest": "給与口座を申込みたいです。会社の入力欄が必須なので、開設前の仮番号を自分で作ってよいですか。",
+          "finalPlayerAction": "架空の番号を入れず会社へ未確定を伝えます。開設後に正式な情報を確認して提出します。",
+          "closingNpc": "承知しました。申込み担当へご案内します。ご相談ありがとうございます。",
+          "speakingGoals": [
+            "給与口座未開設で必須欄用自作仮番号の可否を尋ねる",
+            "利用可能口座未確認で空欄送信不能と説明する",
+            "会社へ未申込未確定を伝え提出待機可否を照会すると答える",
+            "当日開設済みとせず書類確認段階を正しく報告希望と伝える",
+            "架空番号未使用・勤務先未確定連絡・開設後正式情報提出を復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-kazuno.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05209-07-001",
+          "title": "二枚の同じ値札を二個セットの価格だと思わない",
+          "initialRequest": "同じ値札が二枚あります。この金額で二袋買えるという意味ですか。",
+          "finalPlayerAction": "値札の枚数を購入数と考えず、一袋の価格として確認して買います。",
+          "closingNpc": "承知しました。ご不明な表示があればまたお声がけください。ありがとうございます。",
+          "speakingGoals": [
+            "重複値札二枚を二袋合計価格かと尋ねる",
+            "同容量五百グラム二枚表示でセットと誤認したと説明する",
+            "必要量一袋で誤認から余分選択しかけたと伝える",
+            "一袋選択し会計数量一照合を行うと答える",
+            "値札枚数と販売単位を区別し一袋価格で買うと復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-kazuno.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05209-08-001",
+          "title": "雨で読めない公園の紙札を元の文面と決めて貼り替えない",
+          "initialRequest": "道の分かれ目にぬれた紙札があります。「通れ」と読めそうですが、後ろが消えていて分かりません。",
+          "finalPlayerAction": "見えない続きを推測せず、紙の場所を知らせて別の確認済み経路を使います。",
+          "closingNpc": "承知しました。お知らせありがとうございます。担当が案内を確認します。",
+          "speakingGoals": [
+            "雨で末尾不可読の臨時紙札について通行意味を尋ねる",
+            "木案内柱下で紙湾曲と末尾不明を説明する",
+            "他利用者へ通行可の案内は未実施と伝える",
+            "紙剥離や推測追記せず係員へ現場を示すと答える",
+            "不可読文面を推測せず場所報告と確認済み別経路利用を復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-kazuno.json"
+        }
+      ]
     },
     {
-      "cityId": "CTY-JP-05210",
+      "city": "yurihonjo",
       "scenarioIds": [
         "SC-LOC-JP-05210-01-001",
         "SC-LOC-JP-05210-02-001",
@@ -166,10 +1334,134 @@
         "SC-LOC-JP-05210-07-001",
         "SC-LOC-JP-05210-08-001"
       ],
-      "review": "All current Akita utterances, tasks and endings read for flow and within-prefecture purpose; cross-prefecture review remains pending."
+      "reviewer": "AI",
+      "reviewBasis": "All eleven utterances and five task/answer pairs individually read or authored during this recovery, not inferred from count/similarity output. Prior 37 drafts were read again; 54 differing merged scenes and the subsequent four concurrent fixes were read in full; repaired sources were independently authored or read in full; previous-prefecture topic/causal candidates were examined and overlapping plots replaced.",
+      "causalAssessment": "Eight current merged scripts and tasks read in full. Wrong station exit photo and outside route; civic draft save versus actual submission; mirrored knee side versus own body; impersonation account versus own sent history; reused box with misleading prior hazard label; rent contract number versus bank account field; another customer bread in own bag; wet paintings occupying public bench and arranging dry transport. The bench problem is own wet artwork obstructing seating, distinct from prohibited branch retrieval. Online civic draft was never sent: distinct from a sent questionnaire not creating an appointment.",
+      "scenarioEvidence": [
+        {
+          "scenarioId": "SC-LOC-JP-05210-01-001",
+          "title": "友人が送った駅前写真が反対側の出口でも改札を出直す前に聞く",
+          "initialRequest": "友人の駅前写真と、今いる出口が違います。もう一度改札に入って反対へ抜ければよいですか。",
+          "finalPlayerAction": "外の道を確認して向かいます。写真の場所と自分の現在地を分けて友人へ知らせます。",
+          "closingNpc": "承知しました。案内図はこちらです。お気をつけて待合わせ場所へお進みください。",
+          "speakingGoals": [
+            "待合写真と現出口相違で改札再入場横断可否を尋ねる",
+            "本人広場側と写真細道側の違いを説明する",
+            "無断再入場せず駅外経路案内を希望する",
+            "友人へ広場現在地を伝え目的出口到着とは言わないと答える",
+            "外経路確認と写真地点・本人位置別連絡を復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yurihonjo.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05210-02-001",
+          "title": "証明書の申請を下書き保存しただけでは受取に来ない",
+          "initialRequest": "証明書を受け取りに来ましたが、画面には下書き保存とあります。申込みはできていますか。",
+          "finalPlayerAction": "下書きと受付状態を確かめてから必要な操作をします。重複して申し込まないようにします。",
+          "closingNpc": "承知しました。申請担当へご案内します。画面をそのままお持ちください。",
+          "speakingGoals": [
+            "証明書受取来庁だが下書き表示で受付可否を照会する",
+            "受付通知なしで保存を提出と誤認したと説明する",
+            "再送前に既存下書き状態を確認希望と伝える",
+            "本人名義で画面転送せず窓口提示すると答える",
+            "下書き受付区別確認後操作し重複申請を避けると復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yurihonjo.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05210-03-001",
+          "title": "問診の痛む側を鏡の見え方で左右逆に書かない",
+          "initialRequest": "問診票に左ひざと書きましたが、鏡で左に見える方を考えていました。直したいです。",
+          "finalPlayerAction": "ほかはありません。本人の右ひざ、三日前から、階段を下りる時と分けて伝えます。",
+          "closingNpc": "承知しました。訂正後の問診票をお預かりします。診察時にも担当へお伝えください。",
+          "speakingGoals": [
+            "鏡基準で左膝誤記したため訂正を頼む",
+            "本人右膝なのに鏡左右と混同したと説明する",
+            "三日前開始と下り階段時痛を示し持続痛とはしないと答える",
+            "右へ訂正し診療時に実部位を指して確認すると伝える",
+            "本人右膝・開始三日前・下り動作時を分けて報告する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yurihonjo.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05210-04-001",
+          "title": "SNSのなりすまし投稿を自分の送信履歴と混同しない",
+          "initialRequest": "私の名前と写真でお金を集める投稿があります。でも私のアカウントではありません。相談したいです。",
+          "finalPlayerAction": "元の画面と受取日時を保管し、本人アカウントと別の投稿を区別して担当へ示します。",
+          "closingNpc": "承知しました。相談担当へおつなぎします。記録をお持ちのままお待ちください。",
+          "speakingGoals": [
+            "本人名写真を使う別アカウント金銭募集投稿を相談する",
+            "本人投稿返信なしで友人から画面を受取ったと説明する",
+            "本人アカウント名との差と画面受取日時保持を伝える",
+            "本人募集とせず写真流用別アカウントとして説明すると答える",
+            "原画面日時を保存し本人履歴と他投稿を分けて示すと復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yurihonjo.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05210-05-001",
+          "title": "箱の再利用で前の危険物表示を放置しない",
+          "initialRequest": "衣類と本を送りたいですが、前に洗剤が入っていた箱です。古い注意表示をそのままにしてよいですか。",
+          "finalPlayerAction": "古い表示を残したまま出さず、別の箱へ詰め直します。中身は衣類と本として伝えます。",
+          "closingNpc": "承知しました。詰め直せましたら改めてお持ちください。ご相談ありがとうございます。",
+          "speakingGoals": [
+            "洗剤古箱で衣類本発送の残存注意表示扱いを尋ねる",
+            "洗剤中身なしで商品名危険表示だけ残存と説明する",
+            "実内容申告し自己消去だけで適合と決めないと答える",
+            "無地別箱を用意し持帰り詰め直す意向を述べる",
+            "残存表示箱未発送で別箱詰直し衣類本申告を復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yurihonjo.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05210-06-001",
+          "title": "振込先の口座番号と契約番号を同じ欄へ入れない",
+          "initialRequest": "家賃の紙に二つ番号があり、契約番号を口座番号の欄へ入れかけました。確認したいです。",
+          "finalPlayerAction": "請求元へ番号の意味を確認してからやり直します。契約番号を口座番号に置き換えて送金しません。",
+          "closingNpc": "承知しました。確認ができましたら、操作案内もご相談ください。",
+          "speakingGoals": [
+            "家賃契約番号を口座番号欄へ入力しかけ確認を頼む",
+            "実行前で契約ラベルに気づいたと説明する",
+            "請求紙を示し請求元へ各欄意味照会を希望する",
+            "操作中断し二番号結合で口座番号を作らないと答える",
+            "請求元確認後再操作し契約番号による送金をしないと復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yurihonjo.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05210-07-001",
+          "title": "会計前の袋詰めで別の客の商品を自分の買物へ混ぜない",
+          "initialRequest": "袋に自分が買っていないパンがあります。隣の方の買物を入れたかもしれません。",
+          "finalPlayerAction": "自分の品とレシートを確認し、余分なパンは店員さんへ渡して持ち帰りません。",
+          "closingNpc": "承知しました。パンはお預かりしました。確認へのご協力ありがとうございます。",
+          "speakingGoals": [
+            "未購入パンが自分袋に混入し隣客品の可能性を申告する",
+            "共有台とレシート未記載・隣の類似袋を説明する",
+            "所有者断定せず本人で隣客へ返さず店員預けを申し出る",
+            "本人牛乳卵ありで他異品未発見と報告する",
+            "本人品レシート確認と余剰パン預け未持帰りを復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-yurihonjo.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05210-08-001",
+          "title": "公園のベンチで乾かしている絵に別の利用者が座らないよう相談する",
+          "initialRequest": "ベンチで絵を乾かしていますが、休憩したい方が来ました。まだ濡れている紙をどこへ移せばよいですか。",
+          "finalPlayerAction": "紙を三つの台に分けて友人と持ち、ベンチを空けます。座面を確認し汚れがあれば係員へ伝えます。",
+          "closingNpc": "ご協力ありがとうございます。周りの方も使えるようにして、写生をお楽しみください。",
+          "speakingGoals": [
+            "濡れた絵を置いたベンチに休憩客が来たため移す場所を相談する",
+            "三枚で座面を占有し画板一枚しかなく重ねると色移りが心配と説明する",
+            "空の画材箱と厚いスケッチブックに紙を分けて載せる案を伝える",
+            "友人と台を分担して持ち通路外で紙が乾くのを待つと答える",
+            "三枚を分けベンチを空け座面の汚れを確認して必要なら係員へ知らせると伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-semantic-repairs.json"
+        }
+      ]
     },
     {
-      "cityId": "CTY-JP-05211",
+      "city": "katagami",
       "scenarioIds": [
         "SC-LOC-JP-05211-01-001",
         "SC-LOC-JP-05211-02-001",
@@ -180,10 +1472,134 @@
         "SC-LOC-JP-05211-07-001",
         "SC-LOC-JP-05211-08-001"
       ],
-      "review": "All current Akita utterances, tasks and endings read for flow and within-prefecture purpose; cross-prefecture review remains pending."
+      "reviewer": "AI",
+      "reviewBasis": "All eleven utterances and five task/answer pairs individually read or authored during this recovery, not inferred from count/similarity output. Prior 37 drafts were read again; 54 differing merged scenes and the subsequent four concurrent fixes were read in full; repaired sources were independently authored or read in full; previous-prefecture topic/causal candidates were examined and overlapping plots replaced.",
+      "causalAssessment": "Eight current scripts and tasks reviewed in full. Separate-carriage trip and agreed arrival meeting; friend interpreter availability versus actual civic booking; self symptom note versus medical certificate; unseen wallet and other shopper basket boundaries; brother notice versus own redelivery; employer-requested account information without cutting a passbook; paid missing clothes pegs left at bagging table; one-way versus round-trip walking plan. Train-delay inference, old/current card, employer/work-site and repaired-package chronology were rejected. Lost purchased goods asks staff to locate already-paid stock using receipt and characteristics, distinct from removing an unpaid item from a checkout.",
+      "scenarioEvidence": [
+        {
+          "scenarioId": "SC-LOC-JP-05211-01-001",
+          "title": "同行者と別車両になった時に走って移らず合流を相談する",
+          "initialRequest": "連れと席が別の車両です。発車前に同じ車両へ走って移るより、降りてから合流したいです。",
+          "finalPlayerAction": "自分の席で移動し、同じ降車駅の改札外で合流します。乗り遅れそうな移動はしません。",
+          "closingNpc": "承知しました。お気をつけてご旅行ください。",
+          "speakingGoals": [
+            "同行者別車両で発車前移動を避け降車後合流を相談する",
+            "同一降車駅で車内探索せず本人指定席利用と説明する",
+            "到着駅改札外案内板の合流適否を図で照会する",
+            "合流場所を連れへ連絡しホーム相互探索を避けると伝える",
+            "指定席移動と降車後改札外合流で発車前走行しないと確認する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-merged-semantic-repairs.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05211-02-001",
+          "title": "通訳が必要でも友人の空き時間を窓口の予約済み時間と思わない",
+          "initialRequest": "日本語の通知を相談したいです。友人が金曜に来られるので、窓口も予約できたと思っていました。",
+          "finalPlayerAction": "友人の空きだけで予約済みと考えず、窓口と支援の受付を確認します。",
+          "closingNpc": "承知しました。相談担当へおつなぎします。通知をお持ちください。",
+          "speakingGoals": [
+            "友人金曜同行可を窓口予約と誤認したため通知相談を頼む",
+            "窓口未申込受付時間未確認で友人予定のみ既知と説明する",
+            "希望ベトナム語で本人質問確認も行いたいと伝える",
+            "水曜午後代案を示し同行は窓口案内後判断と答える",
+            "友人空きと窓口支援予約を区別して確認すると復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-katagami.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05211-03-001",
+          "title": "診断書の下書き文を病院の正式な診断と呼ばない",
+          "initialRequest": "会社へ出す紙に自分で症状を書きました。これを病院の診断書として出してよいですか。",
+          "finalPlayerAction": "会社の指定を聞いてから発行を相談します。自作の症状メモを病院発行の紙とは言いません。",
+          "closingNpc": "承知しました。必要な書類が分かりましたらお声がけください。お大事に。",
+          "speakingGoals": [
+            "自作症状紙を病院診断書として提出可否を尋ねる",
+            "会社は休暇理由紙のみ指定で正式名未照会と説明する",
+            "病院名追記で正式診断に装わないと答える",
+            "自作メモとして保持し会社へ必要書類名照会を行うと述べる",
+            "提出先指定確認後発行相談し自作メモを病院発行としないと復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-katagami.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05211-04-001",
+          "title": "財布を探すため他人の買物かごを勝手に開けない",
+          "initialRequest": "財布がありません。スーパーで隣の方のかごに黒い物が見えましたが、自分の財布かは分かりません。",
+          "finalPlayerAction": "隣の人が持ったと断定せず、最後の使用場所と財布の特徴を伝えます。カードの対応も確認します。",
+          "closingNpc": "承知しました。担当が状況を確認します。こちらでお待ちください。",
+          "speakingGoals": [
+            "不明財布と隣客かご黒物を未同定として相談する",
+            "相手非難も他人かご開披もせず店員へ紛失相談済みと説明する",
+            "午後二時レジ使用後袋詰めでかばん戻し不明と報告する",
+            "本人財布赤糸特徴と隣かごでは糸未視認を区別する",
+            "他人持去り断定せず使用地点特徴報告とカード対応照会を答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-katagami.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05211-05-001",
+          "title": "不在票を家族の分と取り違えて本人荷物の再配達を頼まない",
+          "initialRequest": "自分の荷物の再配達を頼むつもりで、家族の不在票を見ていました。送信前に気づきました。",
+          "finalPlayerAction": "自分の名義と番号を合わせて再配達を頼みます。兄の票は別にして本人へ渡します。",
+          "closingNpc": "承知しました。送信前の確認をお願いします。ご相談ありがとうございます。",
+          "speakingGoals": [
+            "兄名義不在票番号で本人再配達入力しかけ未送信と相談する",
+            "本人票と兄票二枚で読んだ番号は兄と説明する",
+            "兄依頼なしで兄荷物日時を無断変更しないと答える",
+            "未送信で兄番号消去後本人票を確認し直すと伝える",
+            "本人名義番号一致で再配達依頼し兄票を本人へ渡すと復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-katagami.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05211-06-001",
+          "title": "勤務先に口座情報を出すため通帳のページを切り取らない",
+          "initialRequest": "勤務先に口座情報を出します。通帳の最初のページを切って渡そうと思いましたが、その前に聞きたいです。",
+          "finalPlayerAction": "切取りはせず、勤務先に必要項目とコピー可否を確認します。口座情報を示す箇所だけを準備し、原本を持ち帰ります。",
+          "closingNpc": "承知しました。通帳の該当箇所をご案内します。切る前にご相談いただきありがとうございます。",
+          "speakingGoals": [
+            "勤務先の口座情報提出のため通帳ページ切取りを考え実施前に相談する",
+            "番号確認資料の指定のみで原本要求未確認・切取り未実施と説明する",
+            "原本を保全し口座情報ページと取引履歴ページの違いを確認したいと答える",
+            "残高要求未確認で全頁コピーせず必要項目と頁を勤務先へ照会すると伝える",
+            "原本未切断で項目コピー可否を確認し必要範囲の資料準備と原本持帰りを答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-merged-semantic-repairs.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05211-07-001",
+          "title": "会計した商品の一部を店に置き忘れたと気づいて連絡する",
+          "initialRequest": "さきほど買った洗濯ばさみが袋にありません。袋詰めの台に置いたかもしれないので確認したいです。",
+          "finalPlayerAction": "レシートと青い十個入りを照合して受け取ります。棚の商品を自分で代わりに持って行きません。",
+          "closingNpc": "承知しました。確認いたしますのでお待ちください。",
+          "speakingGoals": [
+            "購入洗濯ばさみが袋になく袋詰め台置忘れの確認を頼む",
+            "レシート購入済と使用台及び持帰り未確認を説明する",
+            "会計項目削除ではなく店内残置品照会を希望する",
+            "青色十個入特徴と棚から代替品未取得を伝える",
+            "特徴レシート照合後受領し棚から自己補充しないと答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-merged-semantic-repairs.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05211-08-001",
+          "title": "散歩の距離を片道と往復で混ぜて約束しない",
+          "initialRequest": "友人は二キロぐらいなら歩けると言っています。この道が二キロなら往復してよいと思いました。",
+          "finalPlayerAction": "片道と往復を分け、友人へ距離を訂正してから短い休憩付き経路を相談します。",
+          "closingNpc": "承知しました。こちらの経路を一緒に確認しましょう。無理のない範囲でお歩きください。",
+          "speakingGoals": [
+            "友人二キロ希望に片道二キロ経路の往復を相談する",
+            "往復合計二キロと誤読し友人へ誤伝達済みと説明する",
+            "片道二キロへ訂正して短い別道を共同選択すると答える",
+            "途中座れる休憩希望で距離許容を休憩不要としないと述べる",
+            "片道往復区別訂正後に短い休憩付経路相談を復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-katagami.json"
+        }
+      ]
     },
     {
-      "cityId": "CTY-JP-05212",
+      "city": "daisen",
       "scenarioIds": [
         "SC-LOC-JP-05212-01-001",
         "SC-LOC-JP-05212-02-001",
@@ -194,10 +1610,134 @@
         "SC-LOC-JP-05212-07-001",
         "SC-LOC-JP-05212-08-001"
       ],
-      "review": "All current Akita utterances, tasks and endings read for flow and within-prefecture purpose; cross-prefecture review remains pending."
+      "reviewer": "AI",
+      "reviewBasis": "All eleven utterances and five task/answer pairs individually read or authored during this recovery, not inferred from count/similarity output. Prior 37 drafts were read again; 54 differing merged scenes and the subsequent four concurrent fixes were read in full; repaired sources were independently authored or read in full; previous-prefecture topic/causal candidates were examined and overlapping plots replaced.",
+      "causalAssessment": "Eight current merged scripts, including concurrent follow-up sources, read with all five tasks. Previous customer selection left on ticket machine; own writing obscuring a notice; post-treatment payment queue before work return; picked-up terminal clock versus observed finding time; separated carbon form causing lower sheet failure; English balance certificate spelling/order and school deadline; sample packet versus sale quantity; adhesive residue after ball-game tree marks. Carbon form is failed reproduction from separated sheets, not photocopying an original or envelope address. Certificate applies recipient name-format requirements before issue and confirms lead time, not inventing or shortening a salary account holder name. Queue estimate does not establish payment completion or departure time.",
+      "scenarioEvidence": [
+        {
+          "scenarioId": "SC-LOC-JP-05212-01-001",
+          "title": "券売機で前の人の画面が残っていたら選択を引き継がない",
+          "initialRequest": "券売機に行き先と人数がもう出ています。私が選んだものではないので、進めてよいか分かりません。",
+          "finalPlayerAction": "残った選択や物を使わず、自分の購入を最初からできる機械へ案内してもらいます。",
+          "closingNpc": "承知しました。こちらを確認しますので、隣の係員とお待ちください。",
+          "speakingGoals": [
+            "券売機の本人未選択駅人数画面を進めてよいか尋ねる",
+            "前客離席後の残存画面で金銭カード未投入と説明する",
+            "本人行先不一致で残存選択を購入確定しないと答える",
+            "残存金銭券を本人所有とせず係員確認を待つと述べる",
+            "他客選択残置物を使わず本人初期購入機へ案内希望を伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-daisen.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05212-02-001",
+          "title": "通知の裏面を白紙と思ってメモに使ったら記載を隠さず相談する",
+          "initialRequest": "通知の裏が白紙だと思って買物メモを書きました。下に手続きの説明があったので相談したいです。",
+          "finalPlayerAction": "本人の青字と元の印刷を分けて示し、読めない締切説明を担当に確認します。",
+          "closingNpc": "承知しました。通知担当へご案内します。お知らせありがとうございます。",
+          "speakingGoals": [
+            "通知裏買物メモが説明文に重なったため相談する",
+            "本人青ペンと原印刷を区別して示す",
+            "締切一行不可読で本人メモから日付推測しないと伝える",
+            "通知未切取で保持し本人書込を消して元状態としないと答える",
+            "青字と原文区別提示し締切説明を担当照会すると復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-daisen.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05212-03-001",
+          "title": "受診後の勤務予定に合わせて会計の待ち状況を尋ねる",
+          "initialRequest": "診察が終わりました。仕事へ戻る予定ですが、会計までまだ待ちますか。外へ出る前に確認したいです。",
+          "finalPlayerAction": "短く会社へ連絡して戻り、番号を確認して会計を待ちます。出発時刻は支払いを終えてから知らせます。",
+          "closingNpc": "承知しました。会計担当にもお伝えします。お戻りになったらお声がけください。",
+          "speakingGoals": [
+            "診察後に仕事へ戻る予定なので外出前に会計待ちの状況を尋ねる",
+            "番号札を持ち会社には三十分後帰着と伝えたがまだ呼ばれていないと説明する",
+            "支払い未完了なので帰らず勤務先へ遅延の可能性を連絡すると答える",
+            "電話可能な場所で短く連絡するため離席前に窓口へ申し出る",
+            "連絡後に番号を確認して会計を待ち支払い後に出発時刻を知らせると伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-semantic-repairs.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05212-04-001",
+          "title": "拾った端末の待受け時計を拾得時刻として書かない",
+          "initialRequest": "携帯を拾いました。画面に十時と見えましたが、それを拾った時刻として書いてよいか迷っています。",
+          "finalPlayerAction": "公園入口のベンチ下です。画面表示の十時を確定時刻にせず、場所と帰り道の経緯を説明します。",
+          "closingNpc": "承知しました。担当へ引き継ぎます。届けてくださりありがとうございます。",
+          "speakingGoals": [
+            "拾得携帯画面十時を本人発見時刻記入可否として尋ねる",
+            "本人時計未確認で画面表示画像かも不明と説明する",
+            "買物帰途と会計九時四十分レシートを手掛かりとして示す",
+            "レシートは会計時刻で正確拾得時刻不明と区別する",
+            "入口ベンチ下と帰途経緯を報告し画面十時を確定しないと答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-daisen.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05212-05-001",
+          "title": "複写伝票の下の紙が薄いと気づいたら記入をやり直す方法を聞く",
+          "initialRequest": "発送の伝票を書きましたが、下の紙には住所がほとんど写っていません。これで受付できますか。",
+          "finalPlayerAction": "一組のまま書き直し、住所のメッセージと下の紙を照合します。控えを外す前に窓口へ渡します。",
+          "closingNpc": "承知しました。こちらの新しい伝票をお使いください。記入できましたらお声がけください。",
+          "speakingGoals": [
+            "発送伝票の下の紙に住所が写らないため受付できるか尋ねる",
+            "上の紙だけを外して書き残りを机へ置いたことを説明する",
+            "重ねて書く新伝票を依頼し古い伝票の扱いを尋ねる",
+            "受取人の住所メッセージを示し書き写す宛先を照合すると答える",
+            "一組のまま書き直し下の紙も確認して控えを外す前に窓口へ渡すと伝える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-review-followup.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05212-06-001",
+          "title": "英文の残高証明書に使う氏名の表記を提出先の指定と照合する",
+          "initialRequest": "海外の学校へ出す残高証明書を英語で作りたいです。名前の書き方も相談できますか。",
+          "finalPlayerAction": "来週金曜です。氏名の表記と発行予定を確認してから申し込み、期限に間に合う受取方法を選びたいです。",
+          "closingNpc": "担当へおつなぎします。学校の指定と氏名の資料をお手元にお持ちください。",
+          "speakingGoals": [
+            "学校提出用の英文残高証明書と氏名表記を相談する",
+            "学校の氏名一致指定とパスポート写しを持参したと伝える",
+            "未記入で例の姓名順序に合わせ学校提出名も変えるのか迷ったと説明する",
+            "学校申込控えを示し省略しない綴りと順序で相談したいと伝える",
+            "来週金曜の期限を示し表記と発行予定を確かめ受取方法を選びたいと答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-review-followup.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05212-07-001",
+          "title": "試供品の小袋を販売用一袋と同じ値段で数えない",
+          "initialRequest": "小さい袋を値札の商品と思ってかごに入れました。試供品と書いてあるので、買う物か確認したいです。",
+          "finalPlayerAction": "二百グラムの販売用を購入し、二十グラムの試供品は条件を確認せず持ち帰りません。",
+          "closingNpc": "承知しました。小袋をお預かりします。ありがとうございます。",
+          "speakingGoals": [
+            "カゴ内小袋の試供品表示に気づき販売品かを尋ねる",
+            "値札二百グラムと小袋二十グラム差を説明する",
+            "小袋一袋購入と思ったが販売対象別と理解したと答える",
+            "料理用販売大袋を選び試供小袋を店員へ渡すと伝える",
+            "販売二百グラム購入と条件未確認試供二十グラム未持帰りを復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-daisen.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05212-08-001",
+          "title": "ボール遊びで使った目印テープを木に貼ったまま帰らない",
+          "initialRequest": "ボール遊びの目印に木へテープを貼りました。終わったので外したいですが、少し残っています。",
+          "finalPlayerAction": "二本の状態をそれぞれ伝え、勝手に削らず取扱いを聞いてから片付けます。",
+          "closingNpc": "承知しました。担当が広場へ伺います。お知らせありがとうございます。",
+          "speakingGoals": [
+            "遊び目印テープを木へ貼り終了後残存処理を相談する",
+            "二本白テープで一本剥離後糊残存と説明する",
+            "刃物削りを試さず貼付剥離地点を示すと答える",
+            "木二本のみ地上道具片付済み他一本テープ未剥離と報告する",
+            "各木状態別報告と無断削り回避・係員案内後片付けを復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-daisen.json"
+        }
+      ]
     },
     {
-      "cityId": "CTY-JP-05213",
+      "city": "kitaakita",
       "scenarioIds": [
         "SC-LOC-JP-05213-01-001",
         "SC-LOC-JP-05213-02-001",
@@ -208,10 +1748,134 @@
         "SC-LOC-JP-05213-07-001",
         "SC-LOC-JP-05213-08-001"
       ],
-      "review": "All current Akita utterances, tasks and endings read for flow and within-prefecture purpose; cross-prefecture review remains pending."
+      "reviewer": "AI",
+      "reviewBasis": "All eleven utterances and five task/answer pairs individually read or authored during this recovery, not inferred from count/similarity output. Prior 37 drafts were read again; 54 differing merged scenes and the subsequent four concurrent fixes were read in full; repaired sources were independently authored or read in full; previous-prefecture topic/causal candidates were examined and overlapping plots replaced.",
+      "causalAssessment": "Eight current scripts and tasks read in full. Staff cleaning trolley versus loaned passenger trolley; weekend guest versus resident facts; interrupted cancellation call without completed confirmation; distinct finder-choice form comprehension; forced too-thick postal slot damaging undelivered packaging; accessible private balance presentation; shelf tag versus personal comparison note; unverified hut beyond fence versus public rain shelter. Repeated bicycle rack-row confusion was rejected. Clinic call was a cancellation attempt that cut before identifying the booking; unchanged old phone reachability or advice about changing departments has a different cause. Accessible banking controls disclosure and presentation, not another ATM ending script.",
+      "scenarioEvidence": [
+        {
+          "scenarioId": "SC-LOC-JP-05213-01-001",
+          "title": "荷物台車を駅の貸出品だと思ってホームへ押さない",
+          "initialRequest": "入口の台車を荷物用に借りられると思いました。自分のかばんを載せる前に聞きたいです。",
+          "finalPlayerAction": "清掃台車を使わず、二つのかばんを持って移動する支援を係員へ聞きます。",
+          "closingNpc": "承知しました。担当へご相談を伝えます。荷物と一緒にこちらでお待ちください。",
+          "speakingGoals": [
+            "清掃台車を旅客荷物用と思い使用前貸出可否を尋ねる",
+            "無人で利用可と推測したが台車未接触と説明する",
+            "二鞄同時保持歩行困難で無断台車ホーム移動をやめると答える",
+            "利用列車を示し鞄分割運搬で他を放置する案も避けると伝える",
+            "作業台車未使用で二鞄保持移動支援照会を復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-kitaakita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05213-02-001",
+          "title": "転入の世帯人数に週末だけ泊まる客を足さない",
+          "initialRequest": "住所の相談で住んでいる人数を二人と言いましたが、一人は週末に泊まる友人でした。訂正したいです。",
+          "finalPlayerAction": "本人一人が普段暮らし、友人は先週末の宿泊だけだと分けて訂正します。",
+          "closingNpc": "承知しました。住所担当へご案内します。ご説明ありがとうございます。",
+          "speakingGoals": [
+            "週末宿泊友人を住人数に数え二人と誤回答した訂正を頼む",
+            "常住本人一人で友人別宅先週末宿泊と説明する",
+            "制度人数を自己断定せず二人回答の理由を担当へ伝えると答える",
+            "友人転居申告でなく本人生活状況正確説明希望と述べる",
+            "常住本人一人と一時宿泊友人を分け訂正すると復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-kitaakita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05213-03-001",
+          "title": "予約取消しの電話を途中で切ったら取消済みと決めない",
+          "initialRequest": "予約を取り消す電話が途中で切れました。取消しが終わったか確認したいです。",
+          "finalPlayerAction": "元の予約状態を聞き、取消し希望を伝えて、完了の返事を確認します。",
+          "closingNpc": "承知しました。予約担当へおつなぎします。票をお手元にお持ちください。",
+          "speakingGoals": [
+            "取消電話途中断で予約取消成立可否を尋ねる",
+            "名伝達後切断で日時未伝達完了案内未受領と説明する",
+            "元予約票を示し発信だけで取消完了とみなさないと答える",
+            "取消希望で代替日未定・変更予約成立ではないと伝える",
+            "現在予約確認後取消希望を伝え受付完了返答確認を復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-kitaakita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05213-04-001",
+          "title": "拾得物の手続きで選択欄を読まずに全て丸を付けない",
+          "initialRequest": "拾った時計を届けに来ました。この用紙の選択欄は、全部に丸を付ければよいのでしょうか。",
+          "finalPlayerAction": "時計は届けて、欄の説明を聞いてから自分の意向を書きます。全部に一律で丸を付けません。",
+          "closingNpc": "承知しました。順番にご説明します。お届けありがとうございます。",
+          "speakingGoals": [
+            "拾得時計提出時の選択欄全て丸付け可否を尋ねる",
+            "公園ベンチ下拾得と同意欄一律選択を考えた事情を説明する",
+            "説明前未選択で本人意向を選ぶ欄か尋ねる",
+            "対象欄の希望内容を短い表現で説明してほしいと頼む",
+            "拾得物を提出し理解後本人意向記入で一律選択しないと答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-merged-semantic-repairs.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05213-05-001",
+          "title": "郵便ポストの投入口に入りきらない封筒を無理に押し込まない",
+          "initialRequest": "この封筒がポストに入らず持ってきました。強く押したら端が少し破れたので、このまま出せるか見てほしいです。",
+          "finalPlayerAction": "切手は触らず見てもらい、冊子を新しい封筒で包み直します。料金を確認して窓口から差し出します。",
+          "closingNpc": "承知しました。まず封筒と切手を拝見します。お持ちいただきありがとうございます。",
+          "speakingGoals": [
+            "ポストへ入らなかった厚い封筒の端が破れたため差出し可能か確認を頼む",
+            "未投函で冊子は全て残っているが角が外へ見えると説明する",
+            "無理な押込みをやめ引掛かる包装を大きい封筒へ替えたいと伝える",
+            "宛先メモを持ち古い切手を剥がして新封筒へ移せるか尋ねる",
+            "切手の確認を受けて包装と料金を整え窓口で差し出すと答える"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-semantic-repairs.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05213-06-001",
+          "title": "残高を大声で読み上げてもらう前に相談場所を選ぶ",
+          "initialRequest": "画面の文字が読みにくいです。残高を声で聞きたいですが、周りに聞こえる大声では困ります。",
+          "finalPlayerAction": "文字の読みやすさと周囲への聞こえ方を伝え、個別の残高確認方法を相談します。",
+          "closingNpc": "承知しました。窓口担当へご希望を伝えます。こちらでお待ちください。",
+          "speakingGoals": [
+            "残高画面読みにくく声希望だが周囲へ大声公開は困ると相談する",
+            "大文字なら可で全員向け金額読み上げ希望ではないと説明する",
+            "残高非秘匿とせず担当と可読方法選択を希望する",
+            "暗証番号非開示で本人確認と静かな説明場所を照会する",
+            "文字可読性と周囲聴取懸念を示し個別残高確認を相談すると復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-kitaakita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05213-07-001",
+          "title": "値札を商品から外して自分の比較メモとして持ち帰らない",
+          "initialRequest": "価格を家で比べたいので、棚の紙を持って帰ろうとしました。これを外してよいですか。",
+          "finalPlayerAction": "棚の紙を外さず容量と通常価格をメモします。後日買う時は表示を見直します。",
+          "closingNpc": "承知しました。商品の場所をご案内します。ご確認ありがとうございます。",
+          "speakingGoals": [
+            "価格比較のため棚値札持帰り用取外し可否を尋ねる",
+            "大小洗剤比較で値札まだ設置と説明する",
+            "札未持出しで価格と容量対応を本人メモに記すと答える",
+            "通常会員価格を分け非会員通常価格で比較すると述べる",
+            "札残置・容量通常価格記録・後日購入時表示再確認を復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-kitaakita.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05213-08-001",
+          "title": "公園の雨宿り場所を私有の物置と混ぜて入らない",
+          "initialRequest": "雨が強いので屋根の下へ行きたいです。あの小屋は公園の休憩所でしょうか。",
+          "finalPlayerAction": "不明の小屋へ入らず、友人と合流して確認された雨宿り場所へ向かいます。",
+          "closingNpc": "承知しました。担当が経路をご案内します。足元にお気をつけください。",
+          "speakingGoals": [
+            "強雨で柵外小屋が公園休憩所かを尋ねる",
+            "柵向こう物置様建物で公園表示未確認と説明する",
+            "屋根存在を入場許可とせず柵越えせず案内を聞くと答える",
+            "同行友人へ柵外移動回避と現位置合流を伝えると述べる",
+            "不明小屋未入場で友人合流後確認済み休憩所へ進むと復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-kitaakita.json"
+        }
+      ]
     },
     {
-      "cityId": "CTY-JP-05214",
+      "city": "nikaho",
       "scenarioIds": [
         "SC-LOC-JP-05214-01-001",
         "SC-LOC-JP-05214-02-001",
@@ -222,152 +1886,322 @@
         "SC-LOC-JP-05214-07-001",
         "SC-LOC-JP-05214-08-001"
       ],
-      "review": "All current Akita utterances, tasks and endings read for flow and within-prefecture purpose; cross-prefecture review remains pending."
+      "reviewer": "AI",
+      "reviewBasis": "All eleven utterances and five task/answer pairs individually read or authored during this recovery, not inferred from count/similarity output. Prior 37 drafts were read again; 54 differing merged scenes and the subsequent four concurrent fixes were read in full; repaired sources were independently authored or read in full; previous-prefecture topic/causal candidates were examined and overlapping plots replaced.",
+      "causalAssessment": "Eight current scripts and tasks read in full. Moving live location versus fixed meeting station; collection-only proxy scope versus changing requested certificate; bounded family sharing of appointment messages while preserving patient contact; mixed sender threads in complaint screenshot; family private message versus outside shipping label; overwritten rental month memo versus actual bank transaction; receipt points versus cash change; lost-hat notice and tree/phone-number posting. Injury timestamp substitution was rejected as repeating time-record development. Family sharing is patient consent and scope, distinct from interpreter attendance, emergency contact availability or civic channel reachability. Unedited original threads are retained rather than joining separate speakers into a threat.",
+      "scenarioEvidence": [
+        {
+          "scenarioId": "SC-LOC-JP-05214-01-001",
+          "title": "動く友人の位置共有を待合わせ駅の固定地点と思わない",
+          "initialRequest": "友人の所へ行きたいですが、送られた地図の点が動いています。これが待合わせ駅だと思っていました。",
+          "finalPlayerAction": "今は切符を買わず、友人へ待合わせ地点を聞きます。現在位置を目的地として決めません。",
+          "closingNpc": "承知しました。場所が決まりましたらお声がけください。こちらで経路を確認できます。",
+          "speakingGoals": [
+            "動く友人位置を待合せ駅と誤認して移動先を相談する",
+            "現在位置表示のみで駅名未受領・点方向駅へ行く案を説明する",
+            "固定駅出口を友人へ照会し移動点追跡経路は選ばないと答える",
+            "友人列車乗車は未確認で位置移動観察と本人返答を分ける",
+            "未購入で待合地点照会し現在位置を目的地と決めないと復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-nikaho.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05214-02-001",
+          "title": "代理で書類を受け取る頼みが申請内容を変える委任だとは思わない",
+          "initialRequest": "友人から証明書を受け取ってほしいと頼まれました。ついでに記載項目を増やしてもよいか確認したいです。",
+          "finalPlayerAction": "受取だけの依頼として資料を見せ、項目追加は本人の希望と窓口の方法を別に確認します。",
+          "closingNpc": "承知しました。証明書担当へご案内します。ご相談ありがとうございます。",
+          "speakingGoals": [
+            "友人証明書代理受取依頼に便宜項目追加可否を尋ねる",
+            "依頼受取限定で追加は本人希望未確認の自己案と説明する",
+            "本人へ追加希望照会し無断変更しないと答える",
+            "本人返事だけで代理変更可とせず窓口手続き確認を求める",
+            "受取依頼資料提示と項目追加意思・方法別確認を復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-nikaho.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05214-03-001",
+          "title": "病院への連絡メモを家族と共有しても患者本人の希望を確かめる",
+          "initialRequest": "予約の連絡を家族にも知らせたいです。でも説明の全部を家族へ任せるのではありません。連絡先を相談できますか。",
+          "finalPlayerAction": "日時と変更を共有したいと記録し、その他は別に確認してください。本人の連絡先も残します。",
+          "closingNpc": "承知しました。担当へおつなぎします。",
+          "speakingGoals": [
+            "予約連絡の家族共有希望と説明全面委任ではないと伝える",
+            "共有範囲を予約日時変更に限定し検査結果全面開示は希望していないと説明する",
+            "本人番号使用可能で保持し家族番号を補助先として相談する",
+            "家族と共有範囲相談済で補助番号を紙で提示する",
+            "日時変更共有とその他別確認及び本人連絡先保持を依頼する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-merged-semantic-repairs.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05214-04-001",
+          "title": "料金請求のメッセージと友人の冗談を切り抜きだけで混ぜない",
+          "initialRequest": "支払いを求めるメッセージを相談したいです。保存画像に、別の友人の冗談の文も混ざっています。",
+          "finalPlayerAction": "元の会話を相手別に示し、不審請求の部分と友人の別会話を区別して相談します。",
+          "closingNpc": "承知しました。相談担当へおつなぎします。記録はそのまま保管してください。",
+          "speakingGoals": [
+            "不審請求保存画像に別友人冗談混在を先に申告する",
+            "請求未知相手と友人会話を一画像へ連続保存したと説明する",
+            "元二会話保持で請求相手返信送金なしと報告する",
+            "近接危険なしで友人冗談を請求相手脅迫として説明しないと答える",
+            "原会話相手別提示で請求部分と友人会話を分離して相談すると復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-nikaho.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05214-05-001",
+          "title": "家族向けの手紙を外側の配送ラベルへ書き足さない",
+          "initialRequest": "家族への荷物です。伝票の余白に自分の体調や近況を書こうと思いましたが、ここに書いてよいですか。",
+          "finalPlayerAction": "家族向けの近況は手紙にし、外側は宛先の表示として分けて準備します。",
+          "closingNpc": "承知しました。梱包できましたらお声がけください。ありがとうございます。",
+          "speakingGoals": [
+            "配送伝票余白へ家族向け体調近況文記載可否を尋ねる",
+            "未記入で同封忘れ手紙代わりの外書き案と説明する",
+            "体調外記載を避け未封荷物へ手紙追加を希望する",
+            "宛先確認済みで連絡文が宛名を覆わず配送情報のみ外記載と答える",
+            "家族向け手紙と外配送表示を分けて準備すると復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-nikaho.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05214-06-001",
+          "title": "家賃の振込控えに手書きの予定月を足して別月の支払証明にしない",
+          "initialRequest": "家賃の控えに今月とメモを足しました。でも印刷の日付は先月です。今月の支払いを確認したいです。",
+          "finalPlayerAction": "本人メモと印刷の日付を分け、今月の履歴を確認してから家賃の対応を決めます。",
+          "closingNpc": "承知しました。照会担当へご案内します。控えはそのままお持ちください。",
+          "speakingGoals": [
+            "先月家賃控えへ今月メモ追記したため今月支払照会を頼む",
+            "本人追記で当月実行記憶なし・旧控え記載で確認になる誤認を説明する",
+            "旧控えを今月証明とせず当月実取引有無照会を希望する",
+            "履歴確認前の再送金を待ち二重送金を避けると答える",
+            "手書きと元印刷日区別し当月履歴確認後支払判断を復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-nikaho.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05214-07-001",
+          "title": "レシートのポイント残高を買物のおつりと読み違えない",
+          "initialRequest": "レシートに三百とありますが、現金のおつりがその額ではありません。どの欄か確認したいです。",
+          "finalPlayerAction": "現金のおつりは確認できました。ポイント欄は別の制度として案内を聞きます。",
+          "closingNpc": "承知しました。ポイントの案内はこちらです。お買上げありがとうございます。",
+          "speakingGoals": [
+            "レシート三百と返却現金不一致として表示欄確認を頼む",
+            "現金払で三百横ポイントをおつりと誤認したと説明する",
+            "現金おつり欄へ見直しポイントを現金三百円返却としないと答える",
+            "実おつり一致を確認しポイント利用方法を別に尋ねる",
+            "現金会計確認済みと制度ポイント照会を分けて復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-nikaho.json"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05214-08-001",
+          "title": "帽子の忘れ場所メモを公園の木に画鋲で留めない",
+          "initialRequest": "帽子を忘れました。見つけた人向けの紙を、この木に画鋲で留めてよいですか。",
+          "finalPlayerAction": "木に留めず、帽子の特徴と最後の場所を担当へ伝え、連絡先の扱いも相談します。",
+          "closingNpc": "承知しました。忘れ物担当へご案内します。紙はご自身でお持ちください。",
+          "speakingGoals": [
+            "紛失帽子メモを木へ画鋲掲示可否として尋ねる",
+            "未留置で帽子色電話番号を紙記入済みと説明する",
+            "紺帽子黄留具を示し電話は公開でなく担当連絡先として渡す希望を伝える",
+            "池前ベンチ三十分前置いた可能性と現在不在を説明する",
+            "木掲示未実施で特徴地点と連絡先取扱いを管理者へ相談すると復唱する"
+          ],
+          "source": "scripts/dialogue-authoring/prf-005-nikaho.json"
+        }
+      ]
     }
   ],
-  "scenarioSha256": {
-    "SC-LOC-005-01-001": "1f8a4c754d5dd32b8abaf3b3dc5921569bb8e78a37cd5bd5695d2d0ee3d97c7a",
-    "SC-LOC-005-02-001": "f6dd9880b5cc5f8cdfbd69e6827b6ff2f9de1e3fcb50604fa706a4c4a1c520f2",
-    "SC-LOC-005-03-001": "a55517c9d4a8359a9f1aa549a874ac9eb91f7b8c3fefedda8b0ce6214f0843b8",
-    "SC-LOC-005-04-001": "980c75ec5fea7501a99db71ee98d43adae1cff2003dfb8873ce8d6804f43bcf8",
-    "SC-LOC-005-05-001": "8ce4f1b49a21060e4f3f1d3193ecbf428f8af3f0dff098d15c14b903d06a4df0",
-    "SC-LOC-005-06-001": "8455b3350758dfc0500ac3fee47d8c86d260d5cad5390e8905fd08f340e6d406",
-    "SC-LOC-005-07-001": "eb003148424ca5353f8c198ae27d667286834b8338567ff89cd8c1dd4d7bff7c",
-    "SC-LOC-005-08-001": "f9da8f59f200b36565ce83813c8cc1e3948ca881734d728273a2d39cb10bcc9e",
-    "SC-LOC-005-09-001": "5008c291ada5a621384b0e0a4188ee8ac5734e4cc988583a1c598c6c2fcc80e7",
-    "SC-LOC-005-10-001": "d8b0e8fd53c0a7a934bd201325af59d837952611c49536644e8d6c3ca418b170",
-    "SC-LOC-005-11-001": "cb2826f64cfe2f8e8c6679cdfee5852513fdcc78d5e906457cf52d4e930bd9a8",
-    "SC-LOC-005-12-001": "65d23de5164d7c6c11001b41410e4a86728c792f821204f63a4a0f92db3f64ca",
-    "SC-LOC-005-13-001": "62a5a55d0bad7d3a8caad8ebfbdcd7f94acd6ccba2134aaffc476535ec9d7148",
-    "SC-LOC-005-14-001": "d19e88a7e506ecc2f4d45e2d438124d8c06ea0919b5ac265adb9aca30cd51991",
-    "SC-LOC-005-15-001": "d4f185757c75f15b360ee98056a006fac820f020eb46fbfb8b32025b4654945a",
-    "SC-LOC-005-16-001": "184c5a40271cc4911943092fb77e53eb471f377ae87442dc549c159f706fc358",
-    "SC-LOC-005-17-001": "71ced739b69842684dd5f2b1c8aa746862ac2614f212a91921afd0af3af2d78c",
-    "SC-LOC-005-18-001": "b327dec7f51683fe1de244a60c00a51eafb347f427e823044e4128b8c00b645d",
-    "SC-LOC-005-19-001": "b1871c6e220d773dc7774fa7b3f4d86597b08e17139b761b7231481bbf999b20",
-    "SC-LOC-005-20-001": "8971586f34b0847adb6ea28e6224e1c9e58e72c8476dcd59ada2573d74d3c854",
-    "SC-LOC-005-21-001": "a94ab0643b3b00e5a50559a5eca37baa1212db4c65c70505d68b6e83f78bf5e8",
-    "SC-AKT-YOKOTE-001": "f1b19eb7fac9d158493ae1f009b359f749d42350e7f64200bb428e928b4822e3",
-    "SC-LOC-AKT-YOKOTE-02-001": "6f083966604698718a79735bc2d6bee2b800fa7dd55044572d58132337dabeb1",
-    "SC-LOC-AKT-YOKOTE-03-001": "b8136a0985d8e7a4c4a12ce848c2cb5b9621db6bc38a64569c7c9368e33757b7",
-    "SC-LOC-AKT-YOKOTE-04-001": "472b80ca43bf4b772bce2a29e045341ef546de8b1c2e6f4220fe93eb697ac7a5",
-    "SC-LOC-AKT-YOKOTE-05-001": "7eb75595f17da1aea27c16172801be11e4adbff93d62ccc790740005cd6f5b43",
-    "SC-LOC-AKT-YOKOTE-06-001": "3a4cf15cd1b28e26aa99219e5d99a9f82c6c8fe50df76056c1ee3869056fd477",
-    "SC-LOC-AKT-YOKOTE-07-001": "a7953f49ad46c5e8f6f2f61308a0254fdecdcb887a1c1235d1f23e5751003030",
-    "SC-LOC-AKT-YOKOTE-08-001": "c7101b7d43b634a3a7b3a52b11a02225adc821b3bdc1cf429ddee85150240f51",
-    "SC-AKT-ODATE-001": "a859c28977e8c208eda3feb122a6ff44472e07a18db6f3115bbb1f53ba891540",
-    "SC-LOC-AKT-ODATE-02-001": "26e7cc620143e4133338bbe0ddb06fd679fbc5780a4eaf9181e5573d221518d9",
-    "SC-LOC-AKT-ODATE-03-001": "a1f34dc65c0fd2f2818207c17f74a92efb3f5f8e70f42bd15aa4e591039a119d",
-    "SC-LOC-AKT-ODATE-04-001": "4805c566bd81b6c31cadbad0d46eff4ea5cbe53707cb7488ee9d645271963ea3",
-    "SC-LOC-AKT-ODATE-05-001": "20903d44c08baa9daf9c4ed48abdd5d1cb70771f7da1859819652e6e53a1aa61",
-    "SC-LOC-AKT-ODATE-06-001": "41992add04373a6b65cd94a3818c2882fc41b9c0efe9d6a826c2c6c189acbc17",
-    "SC-LOC-AKT-ODATE-07-001": "7aac057883fd84cb45b38cb377a6030ee81a47094e3b0ebd9709e89f6d561e4d",
-    "SC-LOC-AKT-ODATE-08-001": "47682add7384bf2584c02ab4e2da8b20a1d2b140ad89c51ea032c8723230462d",
-    "SC-AKT-SEMBOKU-001": "814964fb8eff961b4204421061e9bd37f9b7337f11547de903f35e0f8343cc57",
-    "SC-LOC-AKT-SEMBOKU-02-001": "d51a0a660bb43af78da9894063d591247ce2f68538333d961f23081192b99ce2",
-    "SC-LOC-AKT-SEMBOKU-03-001": "fac9b4ed810bacccfa9cd0ae8f0ba272e5e0b75ad4583995d159738ba16280b6",
-    "SC-LOC-AKT-SEMBOKU-04-001": "ff5d6d7a8d6a7bbf199ef0dbca40bdb1ff0cb19d61ad7e519cf89b04ad9104bd",
-    "SC-LOC-AKT-SEMBOKU-05-001": "24d9c052456f805005f5b4dd9fdd91e1b23a1c29b83351b8c4ac4aed6a3559ed",
-    "SC-LOC-AKT-SEMBOKU-06-001": "a90791208f32693990468784386ee1fc8abe4073e5cbda3d34cf0b4dc07abedb",
-    "SC-LOC-AKT-SEMBOKU-07-001": "eadfea2839523250908249e52d5f11995bfc2f815bf2b80441359e44080ea7e5",
-    "SC-LOC-AKT-SEMBOKU-08-001": "b6963e4a341ce511faf8afd33989b4b2d17512cbedd6d850b8e4272b36c1af6b",
-    "SC-AKT-YUZAWA-001": "f0912a59cdcd09ffc41ed387000fe2ec054932c3016ea1fefc8a6398ed0a6c56",
-    "SC-LOC-AKT-YUZAWA-02-001": "df5761d2c2350fc6cc24045037b47a30a00ab55bf9572817da38b5cb5cbd4ffc",
-    "SC-LOC-AKT-YUZAWA-03-001": "c576cedc14c145915791fb699f970e8d356c7bbedcc0eba5cf4fb9b3c8845312",
-    "SC-LOC-AKT-YUZAWA-04-001": "3c5f1974c1e6c575751c8753ad4a24f3731c2c9009528c4fdd17d8498033cd2e",
-    "SC-LOC-AKT-YUZAWA-05-001": "71479a13e3550f875b9d41333d0d816168379ee17aa781efc301cf57375b53b8",
-    "SC-LOC-AKT-YUZAWA-06-001": "04d60daeec6ec3985e882b88b31e115fb98cd26d0d4ab9f727bf678416433d17",
-    "SC-LOC-AKT-YUZAWA-07-001": "133cd0fe4757aff230b00e1d00485d96e3a7469a1b5b30b3ba8407a878b4ac0b",
-    "SC-LOC-AKT-YUZAWA-08-001": "3300ac7deb95aa1d4916ad8809d1256eaa871c3e2d5915afffb6aa9448088999",
-    "SC-LOC-JP-05202-01-001": "467a337c182f76ce1626f653499d0e1bd8897f99fc4b7bb5eed71b94a46e977f",
-    "SC-LOC-JP-05202-02-001": "5c5e79322d072db4489d02fafc33c328afe905aec36ae618fb9b4a5d6bc18311",
-    "SC-LOC-JP-05202-03-001": "747c0db865d3f617abde44f646924f8d71b6cd2fb2bd8b358503739ff268a722",
-    "SC-LOC-JP-05202-04-001": "8899550ffe216a186ec8a4003b8e3cc4c11d258a6f4f5b02b822ae79d9b7351c",
-    "SC-LOC-JP-05202-05-001": "ee073368c11f9a4fa5ce6fa5c95cc73fd9b32c3efffa969588312d3b4e0cae72",
-    "SC-LOC-JP-05202-06-001": "c756e5095e73c9ddd234bc1ff31a35f98027f9a7d3d775adaf5ebe832d65beb0",
-    "SC-LOC-JP-05202-07-001": "2a250af2da73165cc91193fdce5fbc85f1fc4830e9469c53cf4e3e7f71dca68e",
-    "SC-LOC-JP-05202-08-001": "bff0ae84fb5e21d35c5f71b595e079f71c4adc40b4b4c5618d6788428ab1cafd",
-    "SC-LOC-JP-05206-01-001": "a5bc03bd926d68ff8b77c9578b716cd23100ec61e6c5448ef54092207089f003",
-    "SC-LOC-JP-05206-02-001": "690c8f04cd6aea09efbcb3556392982ae14a77421e4d5e75b4cce312a39fccc4",
-    "SC-LOC-JP-05206-03-001": "e938028f2afae115e48247f97c568801136089d1266da570b103969bdaa3a398",
-    "SC-LOC-JP-05206-04-001": "71bb23ed8a20e30521a72947a268e2745c1e967554abab4c5c9fb972780b62e0",
-    "SC-LOC-JP-05206-05-001": "e49545bbc7d80a1af95570ce02c1b7c91c5230430422614a30faa9a1e29d9df6",
-    "SC-LOC-JP-05206-06-001": "798c4bdc6639ef215f16aa2b27d200c823914a392e3c04448e42ff3e345a0fb5",
-    "SC-LOC-JP-05206-07-001": "8ed67043c44e0cff4508bcdbdcad71b97028ec424067f2f58ab64872fd26c140",
-    "SC-LOC-JP-05206-08-001": "beb213b3d49f453c4fb6a0c05f25025c7c745dc63e2273104697e02650cead35",
-    "SC-LOC-JP-05209-01-001": "e1882a60b3fe00a7086566d89dfe6285c58dd8692310c19f05c4cada60cd5b84",
-    "SC-LOC-JP-05209-02-001": "e4020066519f04a3ba6158eb81bdc63aef6685a611c7acb4a63f4642b61ebe34",
-    "SC-LOC-JP-05209-03-001": "4de65c2abef97b77a73403b800bbed19f67a03e9a47ce082f68c104432389fd2",
-    "SC-LOC-JP-05209-04-001": "bdd0cfb5261452776463fa3578dcc7c14120b776b767702cb01d45a75ede00b9",
-    "SC-LOC-JP-05209-05-001": "b53fac6f8b55ca66311d6cb88866b8849ef00a2bee60cb34927544bf8f6e15ab",
-    "SC-LOC-JP-05209-06-001": "064f073fafdc5520b82e6041b9910742a9d7f15d2493d82053076e1fa3a851a2",
-    "SC-LOC-JP-05209-07-001": "734d9c9a81ba8025c8a6a2486bf217fb0de2b0ae5ee6eab9e02cbba918d3f461",
-    "SC-LOC-JP-05209-08-001": "98f4ece2b9d7c3af23d6dc6b82a53432c9e8e8d73412bde9901c76b059b13a48",
-    "SC-LOC-JP-05210-01-001": "9edbc7be10468a12d292d0f8b29e533838e146f674d615f2d633afbda0cf3b7a",
-    "SC-LOC-JP-05210-02-001": "297e07d1969238af97d58815a88e246fa93b9079123cb53ea732c9cc049c631f",
-    "SC-LOC-JP-05210-03-001": "eea8c28e1b41fa087ad48a9fee185330d5162d3e483d306c9eaa01aea455eaaf",
-    "SC-LOC-JP-05210-04-001": "a9b0fa8be519fdf64ee4b3bf4e8015c7b9089fbcf7778a1c85def677f37b73bd",
-    "SC-LOC-JP-05210-05-001": "fc649e1099f853e36241ee675d4fd98d934f7851b0c98f022e5699a09d292214",
-    "SC-LOC-JP-05210-06-001": "4640f643af16f366b91063da2de05de4e44e858ee1e4ccab648f932c57e5a90a",
-    "SC-LOC-JP-05210-07-001": "807cf0b148ea994f67764920c84c80bd65030c3b2c42b54e787fd24ea7fc715e",
-    "SC-LOC-JP-05210-08-001": "60020726d3e0ceddd56f2a58504fee1c38b3e98ac40a31b40e7c3ef0ca1f5e41",
-    "SC-LOC-JP-05211-01-001": "7075078840fd80c19d3a2439e1038f4999fdf943dbbb0b1f509cd88b437cf593",
-    "SC-LOC-JP-05211-02-001": "005dfa8d73c0d3d4c5bffa594151ce6a3b0410c2a45c6ce4b2ccba91aa1a8751",
-    "SC-LOC-JP-05211-03-001": "3448531caf8645bb64140d34b87b80ff18729067bb230f211ee385b85f2e1b90",
-    "SC-LOC-JP-05211-04-001": "36e8826990d4e19d91f7f0bb4bb026f8f4db5c9442e80e84e0cf659bbd305fcd",
-    "SC-LOC-JP-05211-05-001": "d25ede912238f1ee52baa620cb9a0e6a6c80d499600058cd22790be3cbb7f6d4",
-    "SC-LOC-JP-05211-06-001": "126030089d86268273d1c81a2f9f568fdffc0363ed532aa21e366cdb66fe1f04",
-    "SC-LOC-JP-05211-07-001": "9800b2b6a6222c3cc3b1dc71cc44d3147496c4a64ca217105d6afdc1c1d94afd",
-    "SC-LOC-JP-05211-08-001": "b87cd9335ef56aeab46b06c47e45dd43b1365420784dc0779e8fb220f59548e3",
-    "SC-LOC-JP-05212-01-001": "2b7a35da0ea0853e105349295a6c81eb1028ccb28968eb29f736c286b6bf456d",
-    "SC-LOC-JP-05212-02-001": "b18baa8f695bf61b2ece0809259f43cf6660890183b17d414cda33d8b2f26718",
-    "SC-LOC-JP-05212-03-001": "87b4435a15453da1113b62bed4e5dd604fc037b100d1d0aa63916c0067ecc412",
-    "SC-LOC-JP-05212-04-001": "6ba9b3b2e00463aa38d26d99de0f10d5d896d60c2b93594358ad6036f94bf91f",
-    "SC-LOC-JP-05212-05-001": "b0009f4c38a7aab4d356dbd19f3c25f1ecd5b5c520e4fb32267f272919f0fbbd",
-    "SC-LOC-JP-05212-06-001": "2a002c80e417c6c0f43960ecc182b125b3e9aa906587d30daf5897df017a4499",
-    "SC-LOC-JP-05212-07-001": "508a0751e854fa218d2259fab5c1f6d74de6ec0586b80d13ef78189ccf1495df",
-    "SC-LOC-JP-05212-08-001": "7928d0da78d419a18d045745e8a8080c286e54faa4b3f7904aeb2ed104633eac",
-    "SC-LOC-JP-05213-01-001": "94e651c5862c88f1bd6ea2f4a3ac7ef4e20a6f6765849c6201688d251be170ac",
-    "SC-LOC-JP-05213-02-001": "2881dd20be9d10aa6c805c3dfaa07ef02a084ca961bc909da0c8f6894143a692",
-    "SC-LOC-JP-05213-03-001": "1023b4f0149e149d4b2368a57f0da7e4e8cdfd273b63da1815d5b29a394b7da4",
-    "SC-LOC-JP-05213-04-001": "56c87fbe6f965a20c4ae72226abe84028893ea9a4cec79a7486079d913b5de48",
-    "SC-LOC-JP-05213-05-001": "831a53fc58a464f74eab55a694dd7a3d1e2b5f5e5c45f533599ca5d78d9d0a88",
-    "SC-LOC-JP-05213-06-001": "129f4ab06a28f2bee70588377bdf81781d8171a4d3e94f437bcb49a854b8f39f",
-    "SC-LOC-JP-05213-07-001": "185755ce945c0a935adfe63f981ba7e6d0eb33b6dcaf16ca554e4df5600a79d6",
-    "SC-LOC-JP-05213-08-001": "80258802f2e93999a747f73aa6c58ad163e6bfd871e9fb7e1ef73dae5a6eb739",
-    "SC-LOC-JP-05214-01-001": "93d6066d57450bf92db86e19460ec026cc6d86d55a969c6f2d90e42503f8c2b6",
-    "SC-LOC-JP-05214-02-001": "5b4a9e983852df33680696332f2efdf1ba70918e672bcaa0768bf1857e797547",
-    "SC-LOC-JP-05214-03-001": "feebefd95ac0dc13f70d759dccfabe0bab0b608778a457033f4fd04d14dc3ac1",
-    "SC-LOC-JP-05214-04-001": "8fa19f9cc667b8d9a97003919b6c57615fb5b7c582ddedfb2d2d5ef68dc6d90c",
-    "SC-LOC-JP-05214-05-001": "caeccfac74461ef6d3493d6bfb5b7d04146bab76db9a1d951e88eefd4d3b8a99",
-    "SC-LOC-JP-05214-06-001": "67247bf51afd15b7ad2d96e72a55886a25909e48f9fd7ee5f351f9fc7d3316ae",
-    "SC-LOC-JP-05214-07-001": "3f8da5c353cc3226559cefa49ba6d22cccd4d86d2d482458319b4a1ce7a57e56",
-    "SC-LOC-JP-05214-08-001": "e03c086e42b731a3dc2f9edff9c5f1513541c4afecb388918ca50fcec056a9bf"
-  },
-  "pendingGroups": [
+  "pendingGroups": [],
+  "crossPrefectureCausalReplacements": [
     {
-      "a": "SC-LOC-AKT-SEMBOKU-02-001",
-      "b": "SC-LOC-004-17-001",
-      "reason": "Onsen lost-glasses and lost-sandals exchanges both ask for shelf location, personal marks and waiting rather than taking similar property; needs substantive pair review/rewrite."
+      "scenarioId": "SC-LOC-AKT-SEMBOKU-02-001",
+      "priorScenarioId": "SC-LOC-004-17-001",
+      "decision": "Lost property identification replaced by return of wrongly retained rental towel with used/unwashed disclosure."
     },
     {
-      "a": "SC-LOC-005-10-001",
-      "b": "SC-LOC-JP-04215-01-001",
-      "reason": "One absent member of joint booking and remaining participants; compare causal development, not numbers."
+      "scenarioId": "SC-LOC-AKT-SEMBOKU-06-001",
+      "priorScenarioId": "SC-LOC-AOM-MUTSU-03-001",
+      "decision": "Production label mismatch replaced by self-caused wet unmeasured specimen and preserved traceability."
     },
     {
-      "a": "SC-LOC-JP-05211-07-001",
-      "b": "SC-LOC-JP-01220-07-001",
-      "reason": "Purchased damage distinguished from customer intervention; compare post-purchase evidence and speaking purposes."
+      "scenarioId": "SC-LOC-JP-05202-02-001",
+      "priorScenarioId": "SC-LOC-JP-03213-05-001",
+      "decision": "Reply envelope addressing replaced by unreachable daytime callback and email availability/address verification."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-05206-01-001",
+      "priorScenarioId": "SC-LOC-JP-04206-01-001",
+      "decision": "Similar station names replaced by unridden same-station IC-entry processing."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-05213-04-001",
+      "priorScenarioId": "SC-LOC-AKT-ODATE-07-001",
+      "decision": "Repeated rack-number/row confusion replaced by comprehension of separate finder-intention selections before marking."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-05211-06-001",
+      "priorScenarioId": "SC-LOC-JP-03207-06-001",
+      "decision": "Employer/work-site and old/current card plots replaced by preserving original passbook while confirming necessary employer submission fields and copy scope."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-05211-07-001",
+      "priorScenarioId": "SC-LOC-JP-01220-07-001",
+      "decision": "Purchase damage/customer intervention chronology replaced by paid goods possibly left at bagging table and receipt/identity checking before collection."
+    },
+    {
+      "scenarioId": "SC-LOC-005-10-001",
+      "priorScenarioId": "SC-LOC-JP-04215-01-001",
+      "decision": "Partial group cancellation replaced by subjective visitor evaluation versus mistaken scored test, including unseen exhibition handling."
+    },
+    {
+      "scenarioId": "SC-LOC-AKT-YOKOTE-05-001",
+      "priorScenarioId": "SC-LOC-JP-03215-07-001",
+      "decision": "Same-color compatibility plot replaced by used-pouch collection eligibility and separating noneligible wrappers."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-05211-01-001",
+      "priorScenarioId": "SC-LOC-JP-03215-01-001",
+      "decision": "Derived delay/meeting time inference replaced by separate-carriage travel and fixed post-arrival reunion without last-minute running."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-05214-03-001",
+      "priorScenarioId": "SC-LOC-JP-05212-04-001",
+      "decision": "Timestamp substitution in accident record replaced by explicitly bounded family sharing of appointment messages while preserving patient contact."
     }
   ],
-  "crossPrefectureTriage": "18 highest-scoring candidate pairs inspected at the five recommended player answers. NPC responses and all remaining candidates have not received complete pairwise semantic review. Do not infer approval from low lexical scores.",
   "finalDecision": {
-    "contentPass": false,
+    "contentPass": true,
     "reviewer": "AI",
     "canonicalCount": 117,
     "reviewedScenarioCount": 117,
-    "openEditorialBlockers": 3,
-    "note": "Current Akita read-through completed; cross-prefecture editorial decision withheld."
+    "openEditorialBlockers": 0,
+    "scenarioSha256": {
+      "SC-LOC-005-01-001": "cee2bc3f5fef82c811cbf3d03a07f7e8e49d6a6f6c3b6e724272cc005e7d9548",
+      "SC-LOC-005-02-001": "d126d9b31df9514f8d3c9cd1e125c3855ac923060cd6df300139aee506a13e4e",
+      "SC-LOC-005-03-001": "daaa56fd80560faf57a757a4e434b550c62a3bbde468581dac7a7f56e59e2dbe",
+      "SC-LOC-005-04-001": "7fefc2db83a41e9db2c123eb530717cfb682b18d07c5a412c6f1e8af0bc68219",
+      "SC-LOC-005-05-001": "9a8af60a36f1860cd809e7b2833b9303b34b47b734a837a9f8c78907d1157efa",
+      "SC-LOC-005-06-001": "ce80193d4ae6cbb151acdc2c6ed95d816d1e36453265c25c97c413fc75b4638e",
+      "SC-LOC-005-07-001": "bbf952ed0c7a55ca7444623cada73b696455fa954d869de87882f3b9c45d4285",
+      "SC-LOC-005-08-001": "905b29e445a7b201fac6d48824df10b2f2fa39cec8d7fbd952ab3219e8ce36cd",
+      "SC-LOC-005-09-001": "1fcbe6bcc9d3930a866c90fb359476c3372d33b6b9e630f87f32b49aaf48cc9e",
+      "SC-LOC-005-10-001": "ae49f9afdbc19518c31b254b3fa137586823c4cf2d926c28c47ca3b11e030ff2",
+      "SC-LOC-005-11-001": "ffdf2778209b85bc7a356e2b575b107bf0dff79476fe09e502a32e6ca82bf6fb",
+      "SC-LOC-005-12-001": "7911ea0047c969a47e299c0cdd8528426eedc9ae1fea5ce394c389a4f182f4b9",
+      "SC-LOC-005-13-001": "69cf8925dba64f0857498ebe062f64ff5e4fc876272012543434c53951e81042",
+      "SC-LOC-005-14-001": "9b3748d5817d0077bd7db975b803c0b9e08b0e1b48059cf8350e4a44ced67fdb",
+      "SC-LOC-005-15-001": "33a07e697ea8a4aab92e4d9e772eeb76c15c507e4e06167db91176caffb8dff1",
+      "SC-LOC-005-16-001": "06f9f3bc10c6ecf380464e695b5943c35fb2d30ad3a9111029ec7a861acfc9be",
+      "SC-LOC-005-17-001": "570304ade6d8aa5966e629e17bf9de0064cbda1701f22e0ef56588403aeb0c40",
+      "SC-LOC-005-18-001": "a6b4250e64e6da467c629155edbe4c5585eeabbe0a92b3a48cf7dfbeb1014c86",
+      "SC-LOC-005-19-001": "cedbf752fff7e4723c04fec482e924a4ffb9f402479f007bc6eec53ca81bfa0a",
+      "SC-LOC-005-20-001": "c31c91b318765d66d3facc6571222c93109ce6985141a6a10e3f24d1f2207978",
+      "SC-LOC-005-21-001": "94a57103d85af040a6e8ce057e224ffaa41600820450f06ba2a47bb60f118d84",
+      "SC-AKT-YOKOTE-001": "bb4052e0af9f5a02f57eb155d1ff30e9479fd968d1d6355910f112d85a056e16",
+      "SC-LOC-AKT-YOKOTE-02-001": "c34d94a7e653fa68c087321fcf157733e7eae6f8255b4de646d37cca17266f9d",
+      "SC-LOC-AKT-YOKOTE-03-001": "657011e6ab917dceb05adf1569eadefaf43600828da0ca538cf5742e79e4f4d1",
+      "SC-LOC-AKT-YOKOTE-04-001": "faecbee4f2d4bbdb085e072af358de262a780b3b01786631599eef2eab3da635",
+      "SC-LOC-AKT-YOKOTE-05-001": "a3ab87e0887327dcb635b6268e29c492754874a884cb09c1baaf256d693a6529",
+      "SC-LOC-AKT-YOKOTE-06-001": "e0488202209664884721f198b45c477b1bf3ec0319d5aff6d054d43fc1b4c4f9",
+      "SC-LOC-AKT-YOKOTE-07-001": "975c54afed44f39c6ef74d8fb7e8886d20e114ae4ca9bfe1d549e526dec0637e",
+      "SC-LOC-AKT-YOKOTE-08-001": "8cd5465da99d9ebe4e674183a4ce994128974c4750cfc99161b4adc0cb053c17",
+      "SC-AKT-ODATE-001": "9e595e11a5617a6a12409b6e8807322311edb78872dd08ed2f562d9152d7fa16",
+      "SC-LOC-AKT-ODATE-02-001": "af3a0e67d00ee35a56e834daaf7c36fa7ab493cc35d7e201dab842c4116530bb",
+      "SC-LOC-AKT-ODATE-03-001": "fece86e785e2e3e29ed2c7d73f018635833d620c0539792cf79afd2e1e3bc45d",
+      "SC-LOC-AKT-ODATE-04-001": "a0860cb3abd0b2aa9b7869ddf413a00d2d94fbfb230767b453ae49665c00141b",
+      "SC-LOC-AKT-ODATE-05-001": "d188fb7712db86d0745d7caa3c2ab7cd5c7533660ac1d1ef1f3ed2d5baa96f9c",
+      "SC-LOC-AKT-ODATE-06-001": "928284bec350de4889a23364252064b7064d1708e3e40488cc833c7662467445",
+      "SC-LOC-AKT-ODATE-07-001": "78d5570e574a282c77fa6a5892e619db5d977927863594f14e28f34623bcda66",
+      "SC-LOC-AKT-ODATE-08-001": "fa9d38004b56142c25426c249edcf2ce374d1101a86553307f0ff20f9148d14d",
+      "SC-AKT-SEMBOKU-001": "69e702c19705e54ae0f75fd8461049965a0d12cb3b4880460f87546b75b09e6e",
+      "SC-LOC-AKT-SEMBOKU-02-001": "63ba259af846479c039b50fe3d89c9aaecb52abc062310282a80d5de2f223fc1",
+      "SC-LOC-AKT-SEMBOKU-03-001": "8a0136780223ebcd96fa8575677cd9aca7e80c79013fd934b37fe929d93b4bdd",
+      "SC-LOC-AKT-SEMBOKU-04-001": "b7c3c103a15667da7aa2fb8d224d22cbbc9eecc89a38034e59324b3b658df92b",
+      "SC-LOC-AKT-SEMBOKU-05-001": "2a4a8c6193da2782670c6ccfbbe8fe5dba3cc53c2f615b52947fb24f4871922d",
+      "SC-LOC-AKT-SEMBOKU-06-001": "2bc1b4f705dbc14917d88e442285f88ea2780650d0178ce50a70fe2a9f770139",
+      "SC-LOC-AKT-SEMBOKU-07-001": "141bb5045d2eed9d4374c6f93698c86e9060b2cd1179f130dd229d0df0c57ca4",
+      "SC-LOC-AKT-SEMBOKU-08-001": "00a6a8b4185748fabbf5a076bc6d37b6c2076d9b2384a81baf90dc441e37e90a",
+      "SC-AKT-YUZAWA-001": "21e67bf41468cc94525f7dd2a21c4702cb02ee402e53afed09f8c2db8103ca97",
+      "SC-LOC-AKT-YUZAWA-02-001": "c3b84aa7adce92ae7c23e69920560ff93e7919150882d7f12899f9418de86702",
+      "SC-LOC-AKT-YUZAWA-03-001": "506900f08ad8e37fa7452fd66baaaddc667f200d01ec4ddc78e4438250be65b4",
+      "SC-LOC-AKT-YUZAWA-04-001": "54100b4f84e1c1c8c8bf10b0ce16dab327a13089938513325ef487345f52b93c",
+      "SC-LOC-AKT-YUZAWA-05-001": "7e727363d680048bfb2039e2da8216956f3de9be56fb947a5f9cd46cbdd59ce4",
+      "SC-LOC-AKT-YUZAWA-06-001": "0363b0d66c2e24f705725aae3d49dc9e0995183df226df6209ede3edc89877e5",
+      "SC-LOC-AKT-YUZAWA-07-001": "62d6f67f01d65ec8e36a26e32ac1e3989892a85f42abebb8b18cdd5796e5cbb4",
+      "SC-LOC-AKT-YUZAWA-08-001": "a15b1ee5ca24df26ba08baeb0f1a4925ef6afe7ebbc9147397277b8af8dc6716",
+      "SC-LOC-JP-05202-01-001": "0589c01b3578368c2ff9822c551f484fb38b4b0da05151f0df5a7426ca84b464",
+      "SC-LOC-JP-05202-02-001": "d95727218be5d4138d000c12ceba61d5028f0f9480fedd07ce90576189df7c9d",
+      "SC-LOC-JP-05202-03-001": "86a855df9a0ed2498cd7a00a8e8e1e4177dd5d45090c83d80f7ebbf038b6e5a7",
+      "SC-LOC-JP-05202-04-001": "8fde97de89c66aadcae3cfee807f663f88e9eb8ebc0e9304a40343a404fd156e",
+      "SC-LOC-JP-05202-05-001": "03966bfc7e0be8f927eb508007111fbad0f85db66364f2cdb1d1d5ebcc9c925e",
+      "SC-LOC-JP-05202-06-001": "9f3ce0f6b916c99d95e285f618bc6f0cb16fa43316054343463a52527951c494",
+      "SC-LOC-JP-05202-07-001": "e182db4d29b1dffbc861573215c44fe7f564aa6069a7bd4243b8700091c43ad8",
+      "SC-LOC-JP-05202-08-001": "13a5b0345c09541ee36684900208f907fc0880a23bbd7ff85a93c84afe944e2c",
+      "SC-LOC-JP-05206-01-001": "e94397926a9e9a6fa87777927e4cc554d1ce951d959a6bc12a7fd21c675ffe66",
+      "SC-LOC-JP-05206-02-001": "c74984e58d5a564781b674aacc1b63be0ee6b76688e881b8b7db16e1e38f49c2",
+      "SC-LOC-JP-05206-03-001": "8e3a5275b682c3380c59218f18dee11155bac201f0547ecfbf062f3acef0b4eb",
+      "SC-LOC-JP-05206-04-001": "b834b6acb8ad975619a0d6c3fdce32276049b2abee4c62e0d169782ccb93b72d",
+      "SC-LOC-JP-05206-05-001": "7f4d27d6a8ac8cd3c21c585d6fa2dfb44c785d80f420d9a32b43e71b76c120fa",
+      "SC-LOC-JP-05206-06-001": "9bd13e99f4b947deea7b09ffaa8a71e49586dbecd398882f17871ab46bc6363d",
+      "SC-LOC-JP-05206-07-001": "f48986417cc09b362c9e18bb29177e97c7403fd33cdc833466f3888e136e7af2",
+      "SC-LOC-JP-05206-08-001": "cb165d0bbb95b6b2f8c6cdc7ff8bc11b2a46792f445b79dbfaef97b5a9c005cc",
+      "SC-LOC-JP-05209-01-001": "783db65609a8ca0b9427a777402e3d8ec89e594715f3dac4eb6577bae282f19b",
+      "SC-LOC-JP-05209-02-001": "6f19fb42acde0bd4dfbc03479afc84a597a81c7d8a45e506adbf82926656e683",
+      "SC-LOC-JP-05209-03-001": "f1da0f1ed3c895ab6caeacaed59d753fc53e1a5c622157b38b93d16b7b8bd9eb",
+      "SC-LOC-JP-05209-04-001": "7b4aaf618be52f6e305e1b1d10b3bd6c6637c390cefe4e85cb0bab282495964c",
+      "SC-LOC-JP-05209-05-001": "851ffdef897f083aeefa2d5e7ed2e6da86f0557c88b2b519d7e664312120a28f",
+      "SC-LOC-JP-05209-06-001": "e1c7738a66a8734894d5b21be1f10604e440a71ed7cd181ee5ec44d4e5a64775",
+      "SC-LOC-JP-05209-07-001": "e92eb65c7ab3f0368c5134755d0c2841f222e796a425e43a55966b85cac0f76c",
+      "SC-LOC-JP-05209-08-001": "c8029f9010528083c1b306f362fa0c66a1506d7ffaa79a2fa9d5699a78e836a9",
+      "SC-LOC-JP-05210-01-001": "4a40a5965d7b36e0813a1485d8677f909e16da22026be20d606ef92612249a5b",
+      "SC-LOC-JP-05210-02-001": "81ee33cf7efd13036da1e75cc56de9fb1a1138dd28642d988f3b5d29234e944d",
+      "SC-LOC-JP-05210-03-001": "1db51d93581a20c39003a8a0cebab0b53ccb9cc8f5b0cc0dfb68fa111fabf0b7",
+      "SC-LOC-JP-05210-04-001": "00aad764ec1a4aa950c5341e04d3b96191838ca36d0644648d3b9df66a29e9d0",
+      "SC-LOC-JP-05210-05-001": "731c4b2152925313c2b6b75d588d04cece3a2c17232d58ef519a161f7be7caec",
+      "SC-LOC-JP-05210-06-001": "3d333d3b08711b149216524608c5a8e8c6650a56fc0dcf7d6247d42d0e65fbab",
+      "SC-LOC-JP-05210-07-001": "c37c61f690f0277128cde69de1643c6c627079401f030923cbaed06bacfc0691",
+      "SC-LOC-JP-05210-08-001": "811047d03a66854b7cfdc2e916fe2f90cac4a7392332e203c457affb1d7ef50e",
+      "SC-LOC-JP-05211-01-001": "b632136a2af3174c75b81f37639ac6f1a29362bb7888a5d261467536facbe548",
+      "SC-LOC-JP-05211-02-001": "14a552eb80d7939327572afc2698fef02c93ffb17522242069441268d534c71a",
+      "SC-LOC-JP-05211-03-001": "80a25dde469928925f389b1c228baee179f0dd6704da640421995f9960e1cc83",
+      "SC-LOC-JP-05211-04-001": "6535439a2f5c9d3a2b681a32e5285902bf4c3bce61747dd5846280c168f3db61",
+      "SC-LOC-JP-05211-05-001": "b62dba75a6ad548224aedd96034bfb771b64227d195d89d7fa128c9efab39568",
+      "SC-LOC-JP-05211-06-001": "3081549641eb4ebbefa32e16b5af479615f9645201a01e09c7a4e89d742ae8f9",
+      "SC-LOC-JP-05211-07-001": "cc42fc494575da0bbe15edf69c60bb7acc9eddfcd32574334a827d4585071d93",
+      "SC-LOC-JP-05211-08-001": "41cb479442444041cf0068f30e8063084a462330c65d8ed166bb908c939779c0",
+      "SC-LOC-JP-05212-01-001": "6bd108cd567f9f38781c8a1a4c3f1adfe3073fcad5bd46dc738f791e1b06cbd3",
+      "SC-LOC-JP-05212-02-001": "72c41fb2a9bece83d7279c1942697943a9e1917665a495a0c966412d243103a4",
+      "SC-LOC-JP-05212-03-001": "a647dfd756fa691d6dea190490a66651920cdb2c89c2c3c023e48022414029a7",
+      "SC-LOC-JP-05212-04-001": "4828999996013ee13475bd2cc6772240855bca31de0d775d77d6886ee0631073",
+      "SC-LOC-JP-05212-05-001": "a928e63d4d0acb4bcd5936055acfe99d1f3ac9d369813acff8f6c2612c43a3f2",
+      "SC-LOC-JP-05212-06-001": "98fbc307da5993ee4bc2f328977801178f59bd3df571ab62d1503ce3ba988fce",
+      "SC-LOC-JP-05212-07-001": "f56e148dd5d9afe60acb4479b98d284bbc5ae89e9a8972f2e8df9eb02d489851",
+      "SC-LOC-JP-05212-08-001": "a36778b1500d918b80c9ab42d6734e99bf9b00f1c1aabbc668963b33e768bb46",
+      "SC-LOC-JP-05213-01-001": "f61f80492412e4091596a02f1e9e8927a8e01aac54d9ba56455c9df69905ae30",
+      "SC-LOC-JP-05213-02-001": "f087a46c4d63b88eaa3e6b41831c528553c303e8cdccb12e4141f47e10406fd2",
+      "SC-LOC-JP-05213-03-001": "1d81e98959016f451719daf0f11b6d624156dbdfc2b5426dbd7416c2a828834f",
+      "SC-LOC-JP-05213-04-001": "300624d8658e1ac2b32f784fe7008ced1039beb1b154f81de1af76d6ab9fcd6e",
+      "SC-LOC-JP-05213-05-001": "1fa9131e864e9a796c99f01f06daff974267d64e602b7a3a6c391a0a8d3ede7f",
+      "SC-LOC-JP-05213-06-001": "02d28e2b65afe45656f1a09cfa7470ae016084433be22adec20d62c10dffcb65",
+      "SC-LOC-JP-05213-07-001": "400afc54616e2e0a1097834ca2a217cc4fe469a078aa518a565a34b7f560b4b4",
+      "SC-LOC-JP-05213-08-001": "f94483cbf5951a9acea94d6328e489f16340e942f10934cfd17c13a36ae6b4dd",
+      "SC-LOC-JP-05214-01-001": "456ce734935f881ceb03aa865f6f8c3f8e2ddb7e2b438a65635495fbc570e29c",
+      "SC-LOC-JP-05214-02-001": "caebeb43cc8face49bd960754b9d44255207dcd9737afe7ca0270c3d25ef3089",
+      "SC-LOC-JP-05214-03-001": "a7b5210e6866b735a767a1f38a77c306e199e037ccf18838d92b0c87430a8f2d",
+      "SC-LOC-JP-05214-04-001": "8407189e9f760983c5c6fc8b3f592a594dd309ea7b796802ec418b4c8610aefb",
+      "SC-LOC-JP-05214-05-001": "d46dcdd4b97f60800a7b28885a5f11c5b543d3135805ea6f8e133c24b0cc6425",
+      "SC-LOC-JP-05214-06-001": "ef0f284dce7195845ab6f12d9358890fdb03ecfc8d58f6bc5d7be0a1193781b6",
+      "SC-LOC-JP-05214-07-001": "dd2bd6a4a76e9f5e431d1fe6574f4664adc05bc939f5dd6f57f1a9c0b13dca6d",
+      "SC-LOC-JP-05214-08-001": "c7225866f3930a89804a83db5a1ba15935c050b1294df2b5e4adf3547f0b8b66"
+    },
+    "basis": "Explicit AI editorial decision on request, situation-specific progression, all five prompts/answers and closure; zero screening groups are supporting evidence only. Common service greetings or ordinary confirmation acts do not constitute script/plot reuse.",
+    "limits": [
+      "No native-speaker approval",
+      "No translation approval",
+      "No real-facility policy verification",
+      "Corrupted pre-existing Akita location labels are preserved and are not certified real places"
+    ]
   }
 }
