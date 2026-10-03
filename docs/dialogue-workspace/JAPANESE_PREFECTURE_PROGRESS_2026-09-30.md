@@ -138,3 +138,7 @@ Fukushima remote-verified at 930414bc with WORK PERSISTENCE PASS. Ibaraki first 
 ## Ibaraki clusters 02–03 — 2026-10-03 (Asia/Tokyo)
 
 Individual Japanese authoring now covers 85/269 drafts (425 speaking goals), including Tsuchiura, Bando, Koga, Ishioka, Yuki and Ryugasaki. 184 old drafts remain. Current structural audit covers all 269 without errors or exact dialogue/task/answer/title collisions. Seven new full-plot replacements and two previous-cluster follow-up replacements are documented across CLUSTER_02 and CLUSTER_03 review files. No CONTENT PASS or translations. Conceptual review of the complete prefecture remains pending. Next city: Shimotsuma, then Joso and Hitachiota; require remote persistence before advancing.
+
+## Cluster 04 — 2026-10-03 (Asia/Tokyo)
+
+Shimotsuma, Joso and Hitachiota: 24 additional individual Japanese drafts and 120 goals. Total 109/269 drafts, 545 goals; 160 old drafts remain. Three whole-plot replacements after reading 22 complete prior candidates; 1086 prior authored scripts screened. All 269 slots retain structural/parity coverage with zero structural errors and zero exact dialogue/task/answer/title collisions. 29 normalized groups and 470 near candidates remain in corpus screening. Evidence and open conceptual checks: PRF-008_CLUSTER_04_REVIEW.json and PRF-008_CLUSTER_04_CANDIDATES.json. No CONTENT PASS, native certification or translation. Require remote persistence before advancing; whole-prefecture conceptual review remains pending.
