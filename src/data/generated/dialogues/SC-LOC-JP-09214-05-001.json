@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "転居後の郵便について、ご相談でしょうか。",
+        "textJa": "転送を申し込んだ後のお荷物が心配とのことですね。追跡番号はお持ちですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_09214_05_001_goal_1",
         "requiredSemanticComponents": {
-          "goal": "新居で受け取った郵便の旧住所印刷を転居未反映と心配して尋ねる"
+          "goal": "転送申込み後も友人の荷物の画面が旧住所なので配達先を心配すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。この手紙は新しい家に届いたんですが、封筒の印刷は前の住所です。転居の申込みができていないのかと思いました。",
+        "recommendedAnswerJa": "はい、友人が旧住所へ送った荷物です。転送は申し込んだのに、友人から届いた画面には旧住所のまま載っています。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "新居で受け取った郵便の旧住所印刷を転居未反映と心配して尋ねる。日本語で伝えてください。",
+        "hint": "転送申込み後も友人の荷物の画面が旧住所なので配達先を心配すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "新居で受け取った郵便の旧住所印刷を転居未反映と心配して尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "転送申込み後も友人の荷物の画面が旧住所なので配達先を心配すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "転送の表示が付いていますね。差出人が書いた宛先と、転送後のお届け先は別です。",
+        "textJa": "その画面は、発送したときの送り先を示していますか。それとも現在の配達状況の画面でしょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_09214_05_001_goal_2",
         "requiredSemanticComponents": {
-          "goal": "転送で到着したと理解し銀行側の登録住所の状態を聞く"
+          "goal": "見ていたのは現在追跡でなく発送時の送り状写真だと訂正する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "前の住所のままでも転送で届いたということですね。銀行からの手紙なので、銀行の登録はまだ古いのでしょうか。",
+        "recommendedAnswerJa": "友人が送ってくれた送り状の写真でした。追跡の画面だと思っていましたが、そこには配達の状態は書いていません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "転送で到着したと理解し銀行側の登録住所の状態を聞く。日本語で伝えてください。",
+        "hint": "見ていたのは現在追跡でなく発送時の送り状写真だと訂正する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "転送で到着したと理解し銀行側の登録住所の状態を聞く。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "見ていたのは現在追跡でなく発送時の送り状写真だと訂正する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こちらでは銀行の登録内容までは分かりません。差出人へ住所を連絡しているか、ご自身で確かめてください。",
+        "textJa": "送り状の住所だけでは、今どこへ向かっているかは分かりません。この番号で配送の担当へ照会しましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_09214_05_001_goal_3",
         "requiredSemanticComponents": {
-          "goal": "銀行未連絡で郵便手続きが銀行登録も変えると思ったと説明する"
+          "goal": "転送申込みと特定荷物の現在の行先は別途確認が必要と理解を示す"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "銀行へはまだ伝えていません。郵便の手続きだけで銀行の住所も変わると思っていたので、別に連絡します。",
+        "recommendedAnswerJa": "転送の申込みがあれば何でも届くと思っていました。申込みの受付と、この荷物の今の行き先は別に聞く必要がありますね。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "銀行未連絡で郵便手続きが銀行登録も変えると思ったと説明する。日本語で伝えてください。",
+        "hint": "転送申込みと特定荷物の現在の行先は別途確認が必要と理解を示す。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "銀行未連絡で郵便手続きが銀行登録も変えると思ったと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "転送申込みと特定荷物の現在の行先は別途確認が必要と理解を示す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。ほかにも、旧住所へ送っている相手があればお知らせください。",
+        "textJa": "はい、個別のお荷物について確認します。旧住所では、今もどなたかが受け取れる状態ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_09214_05_001_goal_4",
         "requiredSemanticComponents": {
-          "goal": "ほかの差出人を挙げ未連絡先の一覧を作りたいと伝える"
+          "goal": "旧住所の同居人へ受取り依頼はせず照会中と知らせる方針を述べる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "学校と通信会社もあります。届いた封筒を見て、どこへまだ知らせていないか一覧にしたいです。",
+        "recommendedAnswerJa": "元の同居人がいますが、私の荷物を勝手に受け取ってほしいわけではありません。まず私から、照会中だと知らせます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "ほかの差出人を挙げ未連絡先の一覧を作りたいと伝える。日本語で伝えてください。",
+        "hint": "旧住所の同居人へ受取り依頼はせず照会中と知らせる方針を述べる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "ほかの差出人を挙げ未連絡先の一覧を作りたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "旧住所の同居人へ受取り依頼はせず照会中と知らせる方針を述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "そのように整理できます。転送されて届いた封筒も、住所確認の参考としてお手元に残せます。",
+        "textJa": "承知しました。担当へは転送の申込みをしたことと、旧住所に同居人が残っていることを分けて伝えます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_09214_05_001_goal_5",
         "requiredSemanticComponents": {
-          "goal": "封筒を保管し転送と個別差出人登録を分け新住所を知らせると決める"
+          "goal": "友人へ新住所を通知し今回の荷物は確認前に到着と報告しないと決める"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "この封筒は保管します。銀行、学校、通信会社へそれぞれ新住所を伝え、転送の表示と送る側の住所登録を分けて確認します。",
+        "recommendedAnswerJa": "お願いします。友人には次から新住所を使うよう送り直し、今回はこの荷物の確認ができるまで届いたとは報告しません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "封筒を保管し転送と個別差出人登録を分け新住所を知らせると決める。日本語で伝えてください。",
+        "hint": "友人へ新住所を通知し今回の荷物は確認前に到着と報告しないと決める。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "封筒を保管し転送と個別差出人登録を分け新住所を知らせると決める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "友人へ新住所を通知し今回の荷物は確認前に到着と報告しないと決める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。封筒をお返しします。郵便の申込みについてご不明な点があれば、改めてお尋ねください。",
+        "textJa": "こちらの追跡番号で確認を進めます。送り状の写真と転送申込みの控えは、お手元に残しておいてください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-009-sakura.json",
-    "premise": "転居後に旧住所が印刷された郵便を新居で受け取った人が転送の意味と差出人の住所登録を分けて確認する。 架空の学習場面。運賃、路線、時間、設備、商品、書式と職員の対応は教材内の設定であり、実在施設の案内や規則ではない。",
+    "premise": "転送を申し込んだ住民が友人に新住所を知らせる前に発送された荷物を心配し、転送申込みと個別荷物の照会を区別する。 架空の学習場面。施設名は既存の教材上の識別名を保持し、設備、商品、書式と応対は場面内の設定であり、実在施設の案内や規則ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
