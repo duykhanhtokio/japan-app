@@ -93,3 +93,8 @@ Full eleven-turn/five-goal reads and selected cross-corpus comparisons for 37 ta
 ### Systematic semantic continuation — Tsuchiura, Bando, Koga
 
 24 additional full eleven-turn/five-goal targets compared with selected complete scripts, 61 distinct current hashes in PRF-008_SEMANTIC_TSUCHIURA_BANDO_KOGA_2026-10-03.json. Systematic target coverage now 61/269; 208 remain. Recipient portioning and comparative-year tax bundles share motifs with prior scripts; differing measurement/custody/authority/information tasks documented rather than treated as lexical approval. No runtime rewrite in this unit. CONTENT PASS remains false; final whole-corpus synthesis remains required. No PRF-009 or translation. Persist and verify before advancing.
+
+
+### Systematic semantic continuation — Ishioka, Yuki, Ryugasaki
+
+24 additional full eleven-turn/five-goal targets and selected full cross-corpus comparisons; 58 distinct current script hashes in PRF-008_SEMANTIC_ISHIOKA_YUKI_RYUGASAKI_2026-10-03.json. Systematic target coverage 85/269; 184 remain. Distinguish passbook-record continuity from account identity, participant count from delayed arrival, known own scattered tools from unknown roadway objects, and intended recipe quantity from per-piece weight. No runtime rewrite in this unit. CONTENT PASS remains false; full-corpus synthesis pending. No PRF-009 or translations. Persist and verify before advancing.
