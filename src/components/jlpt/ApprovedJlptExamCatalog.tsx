@@ -1,3 +1,4 @@
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import JlptStudyBackground from './JlptStudyBackground';
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -53,7 +54,7 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
   }), [navigation, selected]);
 
   if (selected?.kind === 'structured') return <N1OfficialTrial exam={selected.exam} onExit={() => { activeExamExit.current = null; setSelected(null); }} registerExit={(handler) => { activeExamExit.current = handler; }} />;
-  return <JlptStudyBackground><View style={styles.screen}><JlptExamHeader title={`${level} · 模擬試験一覧`} subtitle="受験する試験を選択" onBack={onBack} /><ScrollView contentContainerStyle={styles.content}><JlptPaper style={styles.catalogPaper}><Text style={styles.heading}>模擬試験一覧</Text><Text style={styles.description}>受験する試験を選んでください。</Text>{choices.map((choice) => {
+  return <JlptStudyBackground><SafeAreaView style={styles.screen}><JlptExamHeader title={`${level} · 模擬試験一覧`} subtitle="受験する試験を選択" transparent onBack={onBack} /><ScrollView contentContainerStyle={styles.content}><JlptPaper style={styles.catalogPaper}><Text style={styles.heading}>模擬試験一覧</Text><Text style={styles.description}>受験する試験を選んでください。</Text>{choices.map((choice) => {
     const count = choice.kind === 'structured' ? choice.exam.questions.length : undefined;
     const summary = summaries[choice.exam.id];
     const percent = summary?.latestTotal ? Math.round(summary.latestCorrect / summary.latestTotal * 100) : null;
@@ -73,7 +74,7 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
       </View>
       <Text style={styles.chevron}>›</Text>
     </RoyalContentPanel></Pressable>;
-  })}</JlptPaper></ScrollView></View></JlptStudyBackground>;
+  })}</JlptPaper></ScrollView></SafeAreaView></JlptStudyBackground>;
 }
 
 const styles = StyleSheet.create({screen:{flex:1,backgroundColor:'transparent'},content:{paddingVertical:12,paddingHorizontal:8,backgroundColor:'transparent'},heading:{fontFamily:JLPT_EXAM.font.content,fontSize:JLPT_EXAM.type.sectionTitle,lineHeight:31,color:JLPT_EXAM.color.ink,marginBottom:8},description:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:22,color:JLPT_EXAM.color.secondaryInk,marginBottom:20},catalogPaper:{backgroundColor:'transparent'},examRow:{minHeight:112,flexDirection:'row',alignItems:'center',paddingHorizontal:28,paddingVertical:26,marginBottom:12},copy:{flex:1,minWidth:0},examTitle:{fontFamily:JLPT_EXAM.font.content,fontSize:18,lineHeight:26,color:JLPT_EXAM.color.ink},count:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.secondaryInk,marginTop:2},stats:{flexDirection:'row',flexWrap:'wrap',columnGap:12,rowGap:4,marginTop:8},stat:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.ink,flexGrow:1,flexBasis:110},lastAttempt:{fontFamily:JLPT_EXAM.font.interface,fontSize:13,lineHeight:20,color:JLPT_EXAM.color.secondaryInk,marginTop:5},chevron:{fontFamily:JLPT_EXAM.font.interface,fontSize:34,lineHeight:38,color:JLPT_EXAM.color.ink,marginLeft:12},pressed:{opacity:.62}});

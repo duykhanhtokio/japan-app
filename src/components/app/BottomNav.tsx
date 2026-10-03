@@ -1,6 +1,6 @@
 import { router } from 'expo-router';
-import { useRef, useState } from 'react';
-import { Animated, Image, ImageBackground, Pressable, StyleSheet, Text, View, useWindowDimensions, type ImageSourcePropType } from 'react-native';
+import { useState } from 'react';
+import { Image, ImageBackground, Pressable, StyleSheet, Text, View, useWindowDimensions, type ImageSourcePropType } from 'react-native';
 import { ROYAL, ROYAL_FONT, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
 
 const NAV_NAVY=require('../../../assets/app/ui/royal-af/button-wide-v2.png');
@@ -30,15 +30,13 @@ export default function BottomNav({active,variant='approved'}:{active:BottomNavT
  return <View style={[styles.container,variant==='study'&&styles.studyContainer]}>{TABS.map(tab=><Pressable key={tab.id} accessibilityRole="button" accessibilityLabel={tab.label} accessibilityState={{selected:active===tab.id}} onPress={()=>{if(active!==tab.id)router.replace(tab.route)}} style={({pressed})=>[styles.item,variant==='study'&&styles.studyItem,pressed&&styles.pressed]}>{variant==='study'?<View style={[styles.studyFrame,active===tab.id&&styles.studyFrameActive]}><Image source={tab.icon} resizeMode="contain" style={styles.studyIcon}/><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.85} style={[styles.studyLabel,active===tab.id&&styles.studyLabelActive]}>{tab.label}</Text></View>:<ImageBackground source={active===tab.id?NAV_IVORY:NAV_NAVY} resizeMode="stretch" style={styles.frame}><Image source={tab.icon} resizeMode="contain" style={styles.icon}/><Text numberOfLines={1} adjustsFontSizeToFit maxFontSizeMultiplier={1} minimumFontScale={.7} style={[styles.label,active===tab.id&&styles.labelActive]}>{tab.label}</Text></ImageBackground>}</Pressable>)}</View>;
 }
 function ApprovedTab({tab,active,scale}:{tab:typeof TABS[number];active:boolean;scale:number}){
- const depth=useRef(new Animated.Value(0)).current;
- const pressIn=()=>Animated.timing(depth,{toValue:1,duration:75,useNativeDriver:true}).start();
- const pressOut=()=>Animated.spring(depth,{toValue:0,speed:21,bounciness:8,useNativeDriver:true}).start();
- return <Animated.View style={[styles.approvedItem,{transform:[{translateY:depth.interpolate({inputRange:[0,1],outputRange:[0,4]})},{scale:depth.interpolate({inputRange:[0,1],outputRange:[1,.975]})}]}]}>
-  <Pressable accessibilityRole="button" accessibilityLabel={tab.label} accessibilityState={{selected:active}} onPressIn={pressIn} onPressOut={pressOut} onPress={()=>{if(!active)router.replace(tab.route)}} style={styles.approvedTouch}>
+ return <View style={styles.approvedItem}>
+  <Pressable accessibilityRole="button" accessibilityLabel={tab.label} accessibilityState={{selected:active}} onPress={()=>{if(!active)router.replace(tab.route)}} style={({pressed})=>[styles.approvedTouch,pressed&&{opacity:.9}]}>
+
    <Image source={tab.icon} resizeMode="contain" style={[styles.approvedIcon,{width:27*scale,height:27*scale}]}/>
    <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.8} maxFontSizeMultiplier={1} style={[styles.approvedLabel,{fontSize:12*scale,lineHeight:17*scale},active&&styles.approvedLabelActive]}>{tab.label}</Text>
   </Pressable>
- </Animated.View>;
+ </View>;
 }
 const styles=StyleSheet.create({
  container:{width:'100%',height:ROYAL_LAYOUT.homeBottomNavHeight,flexDirection:'row',gap:2},

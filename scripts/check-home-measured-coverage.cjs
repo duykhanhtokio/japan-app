@@ -17,7 +17,7 @@ const output=path.join(process.cwd(),'docs/ui-workspace/home-measured-cover-2026
    await page.evaluate(()=>document.fonts.ready);
    await page.waitForTimeout(200);
    const cards=await page.evaluate(()=>['筆記学習','会話練習','特定技能学習'].map(name=>{
-    const box=document.querySelector(`[data-testid="home-mode-${name}"]`).getBoundingClientRect();
+    const box=document.querySelector(`[data-testid="home-artwork-viewport-${name}"]`).getBoundingClientRect();
     const image=document.querySelector(`[data-testid="home-artwork-${name}"]`).getBoundingClientRect();
     const tolerance=.1;
     return {name,card:{width:box.width,height:box.height},image:{width:image.width,height:image.height,left:image.left-box.left,top:image.top-box.top},covers:image.left<=box.left+tolerance&&image.top<=box.top+tolerance&&image.right>=box.right-tolerance&&image.bottom>=box.bottom-tolerance,aspectPreserved:Math.abs(image.width/image.height-3)<.001};

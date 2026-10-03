@@ -1,11 +1,14 @@
+import { SafeAreaView } from 'react-native-safe-area-context';
+import JlptStudyBackground from '@/components/jlpt/JlptStudyBackground';
+import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import type { PropsWithChildren, ReactNode } from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
 
 import { JLPT_EXAM } from '@/theme/jlpt-exam-design-system';
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
 
-export function JlptExamHeader({ title, subtitle, onBack, right }: { title: string; subtitle?: string; onBack: () => void; right?: ReactNode }) {
-  return <View style={s.header}>
+export function JlptExamHeader({ title, subtitle, onBack, right, transparent = false }: { transparent?: boolean; title: string; subtitle?: string; onBack: () => void; right?: ReactNode }) {
+  return <View style={[s.header,transparent&&{backgroundColor:'transparent',borderBottomWidth:0}]}>
     <View style={s.back}><RoyalBackButton onPress={onBack} /></View>
     <View style={s.headerCopy}><Text style={s.headerTitle}>{title}</Text>{subtitle ? <Text style={s.headerSubtitle}>{subtitle}</Text> : null}</View>
     {right ? <View style={s.headerRight}>{right}</View> : <View style={s.headerSpacer} />}
@@ -85,18 +88,22 @@ export function JlptQuestionNavigator({ visible, labels, answered, current, onCh
 }
 
 export function JlptResumePrompt({ visible, examName, updatedAt, answered, total, currentLabel, onContinue, onRestart, onCancel }: { visible: boolean; examName: string; updatedAt: string; answered: number; total: number; currentLabel: string; onContinue: () => void; onRestart: () => void; onCancel: () => void }) {
-  return <Modal visible={visible} transparent animationType="fade" onRequestClose={onCancel}>
-    <View style={s.confirmShade}><View accessibilityRole="alert" style={s.resumePanel}>
+  return <Modal visible={visible} animationType="none" statusBarTranslucent navigationBarTranslucent onRequestClose={onCancel}>
+    <JlptStudyBackground><SafeAreaView style={{flex:1}}><ScrollView contentContainerStyle={{flexGrow:1,justifyContent:'center',padding:24}}><View accessibilityRole="alert" style={{width:'100%',maxWidth:460,alignSelf:'center'}}>
       <Text style={s.confirmTitle}>前回の続きがあります</Text>
       <Text style={s.resumeExam}>{examName}</Text>
       <Text style={s.confirmLine}>保存日時：{updatedAt}</Text>
       <Text style={s.confirmLine}>回答済み：{answered}/{total}</Text>
       <Text style={s.confirmLine}>前回の位置：{currentLabel}</Text>
-      <JlptActionButton label="前回の続きから" onPress={onContinue} style={s.resumePrimary} />
-      <JlptActionButton kind="secondary" label="最初からやり直す" onPress={onRestart} style={s.resumeSecondary} />
-      <Pressable accessibilityRole="button" onPress={onCancel} style={s.resumeCancel}><Text style={s.resumeCancelText}>キャンセル</Text></Pressable>
-    </View></View>
+      <ResumeRoyalAction label="前回の続きから" onPress={onContinue} />
+      <ResumeRoyalAction label="最初からやり直す" onPress={onRestart} />
+      <ResumeRoyalAction label="キャンセル" onPress={onCancel} />
+    </View></ScrollView></SafeAreaView></JlptStudyBackground>
   </Modal>;
+}
+
+function ResumeRoyalAction({label,onPress}:{label:string;onPress:()=>void}) {
+ return <Pressable accessibilityRole="button" accessibilityLabel={label} onPress={onPress} style={({pressed})=>[{marginTop:12},pressed&&{opacity:.85}]}><RoyalContentPanel style={{minHeight:68,paddingVertical:20,alignItems:'center',justifyContent:'center'}}><Text style={s.resumeCancelText}>{label}</Text></RoyalContentPanel></Pressable>;
 }
 
 export function JlptRestartConfirmation({ visible, onCancel, onConfirm }: { visible: boolean; onCancel: () => void; onConfirm: () => void }) {

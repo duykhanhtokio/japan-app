@@ -5,13 +5,13 @@ import path from 'node:path';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const locked = new Map([
-  ['src/app/[level]/[section].tsx', 'a4b1820a39e9e7ecc51dbb3c8848d10bfdd0ac864b13392c2df2ce7817efb6b4'],
+  ['src/app/[level]/[section].tsx', '133c36b5c993151d80249f37659a220a88ed18c2738fe8a7a3d11acbf007dc87'],
   ['src/components/jlpt/N1OfficialTrial.tsx', '4a3abbc76b089cfaaf6835e64e85e2eac0e1264d79dd7667eb685c4a1be3cb31'],
   ['src/components/jlpt/N1ExamPicker.tsx', '6c8676b97d12d3da6fe36f5fde28adb1833bcb7208628c00dc61f1b9c5c55098'],
-  ['src/components/jlpt/ui/JlptExamUI.tsx', '03cfb15b58da93360f277b5bf6b0b3c63bb63adcd644a4b9a184dbdfce03f90d'],
+  ['src/components/jlpt/ui/JlptExamUI.tsx', 'adba4ca1690e6241073f49552eea71296d1a823b98698d237e28dfb37529f127'],
   ['src/services/jlpt-trial-session-storage.ts', 'ea21a8b371feeea3453cd10c5247bcb072c92f2ef5b4c5309d83df3392d1d7e1'],
   ['src/theme/jlpt-exam-design-system.ts', '9d8276e32e5b1b25485d84cbe961acd5cbca5b106ee2dd95e6fbaadd9d2b9bb7'],
-  ['src/components/jlpt/ApprovedJlptExamCatalog.tsx', '597593050e507442e8b29836f89afb66b412142b3e905e23dc8d9e0baf849c78'],
+  ['src/components/jlpt/ApprovedJlptExamCatalog.tsx', '02041d560d2a9b197c2e7fc6b3027cc5e6f08490172e901c697b98daaf043e9a'],
   ['src/components/jlpt/ApprovedScannedExam.tsx', 'efa9b3abdcd3097b96415ecf731fe1400433dbdd53e38b606d3a6324aba728a9'],
   ['src/components/jlpt/ApprovedMockExam.tsx', '56ff95e19597865e480b650eae5e0077c3c8cf3c26566f3ead0cf31c69feef2a'],
   ['src/data/jlpt-official/approved-scanned-exams.generated.ts', '1e7baa59e6939929a46487fd9d91915217f1c7c2ba322f94c2ba72d93ecac0aa'],

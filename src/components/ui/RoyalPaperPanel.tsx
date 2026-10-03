@@ -1,6 +1,8 @@
+import { Image as CachedImage } from 'expo-image';
 import { useState, type PropsWithChildren, type ReactNode } from 'react';
 import { Image, StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
 
+export const PAPER_FRAME_SLICES=[require('../../../assets/app/ui/royal-af/paper-slices/0-0.png'),require('../../../assets/app/ui/royal-af/paper-slices/0-1.png'),require('../../../assets/app/ui/royal-af/paper-slices/0-2.png'),require('../../../assets/app/ui/royal-af/paper-slices/1-0.png'),require('../../../assets/app/ui/royal-af/paper-slices/1-1.png'),require('../../../assets/app/ui/royal-af/paper-slices/1-2.png'),require('../../../assets/app/ui/royal-af/paper-slices/2-0.png'),require('../../../assets/app/ui/royal-af/paper-slices/2-1.png'),require('../../../assets/app/ui/royal-af/paper-slices/2-2.png')];
 const HUD_ART=require('../../../assets/app/ui/royal-af/farm-hud-plaque-v1.png');
 const ART = require('../../../assets/app/ui/royal-af/dialogue-frame-v1.png');
 const OPEN_ART = require('../../../assets/app/ui/royal-af/hud-energy-open-frame-v1.png');
@@ -19,6 +21,17 @@ export default function RoyalPaperPanel({children,style,tone='paper',borderOnly=
  const open=royalOpenFrameGeometry(size.width,size.height);
  const cornerX=borderOnly?open.cornerX:(hud?30:36)*cornerScale,cornerY=borderOnly?open.cornerY:(hud?15:24)*cornerScale;
  const dx=[0,cornerX,Math.max(cornerX,size.width-cornerX),size.width],dy=[0,cornerY,Math.max(cornerY,size.height-cornerY),size.height];
+ // Paper corners/edges are positioned on the first render. Each source is
+ // already cropped, so no onLayout -> state update -> oversized image pass.
+ if(!borderOnly&&!hud)return <View style={[s.panel,style,{backgroundColor:'transparent'}]}>
+  {underlay}<View pointerEvents="none" style={StyleSheet.absoluteFillObject}>
+   {PAPER_FRAME_SLICES.map((source,index)=>{
+    const row=Math.floor(index/3),col=index%3;
+    const horizontal=col===0?{left:0,width:36}:col===2?{right:0,width:36}:{left:36,right:36};
+    const vertical=row===0?{top:0,height:24}:row===2?{bottom:0,height:24}:{top:24,bottom:24};
+    return <View key={index} style={{position:'absolute',...horizontal,...vertical}}><CachedImage source={source} contentFit="fill" transition={0} cachePolicy="memory-disk" style={{width:'100%',height:'100%'}}/></View>;
+   })}
+  </View>{children}</View>;
  return <View pointerEvents={borderOnly?'none':'auto'} onLayout={event=>{const {width,height}=event.nativeEvent.layout;setSize(old=>old.width===width&&old.height===height?old:{width,height})}} style={[s.panel,style,{backgroundColor:'transparent'}]}>
   {underlay}
   <View pointerEvents="none" style={StyleSheet.absoluteFillObject}>
