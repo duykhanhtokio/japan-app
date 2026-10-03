@@ -73,3 +73,8 @@ Read the full 11 turns and five goals of 61 current scripts: Mito 21, Tsukuba/Hi
 ### Final causal review batch 02 — 2026-10-03
 
 Read all 11 turns and five goals for Ishioka and Yuki, 16 additional scripts (77/269 in this causal pass). Repaired Ishioka photo numbering so a numbered closed sleeve stays with each photograph and matches its explanatory sheet after shuffling. Removed the NPC learning-only-shop aside. CONTENT PASS remains false; 192 causal reads and cross-prefecture reconciliation remain.
+
+
+### Complete current causal/location/closure read — 2026-10-03
+
+All 269 current exchanges and 1,345 speaking goals have been manually read. Remaining 192 after batches 01–02 are recorded with current hashes and city-level judgments in PRF-008_COMPLETE_CAUSAL_REVIEW_2026-10-03.json. Two additional coherence fixes: Kasumigaura plush/ribbon prior attachment is not asserted; Tsukubamirai 09:00 event start is not silently turned into reception opening. No remaining blocker identified in this narrow causal/location/closure pass. Historical Otaru/Nagai/Nikaho/Yubari comparison labels are mapped or flagged accurately in the report. CONTENT PASS remains false: full 269-hash whole-corpus semantic comparison and reconciliation remain required. Do not start PRF-009 or translations.
