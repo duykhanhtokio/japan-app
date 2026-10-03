@@ -118,3 +118,8 @@ Full eleven-turn/five-goal reads and selected cross-corpus comparisons for 37 ta
 ### Systematic semantic continuation — Kashima, Itako, Moriya
 
 24 additional full scripts and selected cross-corpus comparisons in PRF-008_SEMANTIC_KASHIMA_ITAKO_MORIYA_2026-10-03.json. Coverage181/269;88 remaining. No runtime edits. Separate conditional fee applicability, money unit and participation count; annual payment timing from monthly preparation; actual object possession from incomplete instruction recall. Earlier open ATM, letter-order and referral pairs preserved. CONTENT PASS false; no PRF-009 or translations. Persist and verify before advancing.
+
+
+### Systematic semantic continuation — Hitachiomiya, Naka, Chikusei
+
+24 additional full scripts and selected cross-corpus evidence in PRF-008_SEMANTIC_HITACHIOMIYA_NAKA_CHIKUSEI_2026-10-03.json. Coverage205/269;64 remaining. No runtime edits. Heavy roadside bag reporting and found-notebook privacy/identity pairs explicitly unresolved; previous pairs preserved. Numeric grouping punctuation differs from unit/count and expense-period errors; incoming unspecified promise differs from outgoing amount amendment. CONTENT PASS false; no PRF-009 or translations. Persist and verify before advancing.
