@@ -15,7 +15,7 @@ import {
 import {
     SafeAreaView,
 } from 'react-native-safe-area-context';
-import { RoyalBackButton, ROYAL_FONT } from '@/components/ui/RoyalSurface';
+import { RoyalBackButton, ROYAL_FONT, ROYAL_PLACEMENT } from '@/components/ui/RoyalSurface';
 
 import BottomNav from '@/components/app/BottomNav';
 
@@ -117,19 +117,18 @@ const styles =
     StyleSheet.create({
         container: {
             flex: 1,
-
-            backgroundColor:
-                'rgba(11,24,48,.16)',
         },
 
         header: {
             flexDirection: 'row',
 
-            alignItems: 'center',
+            alignItems: 'flex-start',
 
-            paddingHorizontal: 18,
+            gap: ROYAL_PLACEMENT.headerGap,
 
-            paddingTop: 12,
+            paddingHorizontal: ROYAL_PLACEMENT.headerHorizontal,
+
+            paddingTop: ROYAL_PLACEMENT.headerTop,
 
             paddingBottom: 12,
         },
