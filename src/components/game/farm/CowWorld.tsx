@@ -254,7 +254,7 @@ function CowSlot({
                     hitSlop={8}
                 >
                     <Image source={COW.milk} resizeMode="contain" style={styles.milk} />
-                    <Text style={styles.collectText}>搾乳</Text>
+                    <View style={styles.collectBadge}><FarmBadgeFrame/><Text numberOfLines={1} style={styles.collectText}>搾乳</Text></View>
                 </Pressable>
             )}
         </Pressable>
@@ -413,15 +413,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     milk: { width: 34, height: 34 },
-    collectText: {fontFamily: ROYAL_FONT.body,
-
+    collectBadge: {
+        minWidth: 52,
         marginTop: -3,
-        paddingHorizontal: 5,
-        paddingVertical: 1,
-        overflow: 'hidden',
-        borderRadius: 7,
+        paddingHorizontal: 7,
+        paddingVertical: 3,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    collectText: {fontFamily: ROYAL_FONT.body,
         color: '#5B3416',
-        backgroundColor: '#FFF0C5',
         fontSize: 15,
         fontWeight: '900',
     },

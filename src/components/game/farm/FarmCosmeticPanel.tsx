@@ -1,6 +1,6 @@
 import FarmCosmeticArtwork from './FarmCosmeticArtwork';
 import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
-import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
+import { RoyalContentPanel, RoyalExplanationPanel } from '@/components/ui/RoyalPanels';
 import {
     FlatList,
     Image,
@@ -835,13 +835,9 @@ export default function FarmCosmeticPanel({
                         }
                     />
 
-                    <Text
-                        style={
-                            styles.notice
-                        }
-                    >
-                        同じスロットに装備すると自動で入れ替わります
-                    </Text>
+                    <RoyalExplanationPanel style={styles.noticePanel}>
+                        <Text style={styles.notice}>同じスロットに装備すると自動で入れ替わります</Text>
+                    </RoyalExplanationPanel>
                 </RoyalContentPanel>
             </View>
         </Modal>
@@ -1307,19 +1303,17 @@ const styles =
                 '800',
         },
 
+        noticePanel: {
+            minHeight: 0, paddingHorizontal: 12, paddingVertical: 9,
+        },
         notice: {
             fontFamily: ROYAL_FONT.body,
-            paddingHorizontal:
-                12,
-
-            paddingVertical:
-                9,
 
             textAlign:
                 'center',
 
             color:
-                '#8A6A44',
+                '#FFF4CF',
 
             fontSize:
                 11,
@@ -1327,7 +1321,5 @@ const styles =
             fontWeight:
                 '700',
 
-            backgroundColor:
-                '#F4E5C4',
         },
     });
