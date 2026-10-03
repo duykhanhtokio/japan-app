@@ -15,17 +15,17 @@ import {
 import {
     SafeAreaView,
 } from 'react-native-safe-area-context';
-import { RoyalBackButton } from '@/components/ui/RoyalSurface';
+import { RoyalBackButton, ROYAL_FONT } from '@/components/ui/RoyalSurface';
 
 import BottomNav from '@/components/app/BottomNav';
 
 const sectors = [
-    {icon:require('../../../assets/game/farm/background/vegetable_map_background_v2.png'),ja:'農業',vi:'Nông nghiệp'},
-    {icon:require('../../../assets/app/life/rewards/cards/construction-site.png'),ja:'建設',vi:'Xây dựng'},
-    {icon:require('../../../assets/app/life/rewards/cards/restaurant.png'),ja:'外食業',vi:'Nhà hàng'},
-    {icon:require('../../../assets/app/life/rewards/cards/supermarket.png'),ja:'飲食料品製造業',vi:'Sản xuất thực phẩm'},
-    {icon:require('../../../assets/app/life/rewards/cards/hospital.png'),ja:'介護',vi:'Điều dưỡng'},
-    {icon:require('../../../assets/app/life/rewards/cards/hotel.png'),ja:'宿泊',vi:'Khách sạn'},
+    {icon:require('../../../assets/app/industries/agriculture-v1.png'),ja:'農業',vi:'Nông nghiệp'},
+    {icon:require('../../../assets/app/industries/construction-v1.png'),ja:'建設',vi:'Xây dựng'},
+    {icon:require('../../../assets/app/industries/food-service-v1.png'),ja:'外食業',vi:'Nhà hàng'},
+    {icon:require('../../../assets/app/industries/food-manufacturing-v1.png'),ja:'飲食料品製造業',vi:'Sản xuất thực phẩm'},
+    {icon:require('../../../assets/app/industries/caregiving-v1.png'),ja:'介護',vi:'Điều dưỡng'},
+    {icon:require('../../../assets/app/industries/hospitality-v1.png'),ja:'宿泊',vi:'Khách sạn'},
 ];
 
 export default function SpecifiedSkillsScreen() {
@@ -143,7 +143,9 @@ const styles =
         },
 
         title: {
-            color: '#0b1830',
+            fontFamily:ROYAL_FONT.heading,
+            color: '#fff3cf',
+            textShadowColor:'#07101f',textShadowOffset:{width:0,height:2},textShadowRadius:4,
 
             fontSize: 25,
 
@@ -151,7 +153,9 @@ const styles =
         },
 
         subtitle: {
-            color: '#72501f',
+            fontFamily:ROYAL_FONT.body,
+            color: '#fffdf7',
+            textShadowColor:'#07101f',textShadowOffset:{width:0,height:1},textShadowRadius:3,
 
             fontSize: 16,
         },
@@ -173,6 +177,7 @@ const styles =
 
         cardTitle: {
             color: '#142335',
+            fontFamily:ROYAL_FONT.heading,
 
             fontSize: 17,
 
@@ -181,6 +186,7 @@ const styles =
 
         cardVi: {
             color: '#34425a',
+            fontFamily:ROYAL_FONT.body,
 
             fontSize: 16,
 

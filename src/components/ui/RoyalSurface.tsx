@@ -1,7 +1,7 @@
 import { RoyalExplanationPanel } from './RoyalPanels';
 import { APP_TYPOGRAPHY } from '@/theme/app-design-system';
 import { type PropsWithChildren, type ReactNode } from 'react';
-import { Image, ImageBackground, Pressable, StyleSheet, Text, View, type ImageSourcePropType, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
+import { Image, ImageBackground, Pressable, StyleSheet, Text, View, type ImageSourcePropType, type LayoutChangeEvent, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
 import { ROYAL_CONTROL_SIZE, ROYAL_LAYOUT, ROYAL_SAFE_AREA, useRoyalGroupHeight, useRoyalGroupSize, type RoyalContentGroup } from './RoyalPositioning';
 
 export { ROYAL_CONTENT_GROUP, ROYAL_CONTROL_SIZE, ROYAL_LAYOUT, ROYAL_PLACEMENT, ROYAL_SAFE_AREA, ROYAL_TEXT_FIT, resolveRoyalGrid, useRoyalGroupHeight, useRoyalGroupSize, useRoyalPositioning } from './RoyalPositioning';
@@ -61,10 +61,14 @@ export const ROYAL_FONT = {
 /** Wide plaque visible alpha bounds: y=84..396 in a 1800x480 source. */
 export function RoyalNavyFrame({children,style}:PropsWithChildren<{style?:StyleProp<ViewStyle>}>) {
   return <View style={[{position:'relative',overflow:'hidden'},style]}>
-    <View pointerEvents="none" style={{position:'absolute',left:'4%',right:'4%',top:'12%',bottom:'12%',borderRadius:8,backgroundColor:ROYAL.lacquerLight}}/>
-    <Image fadeDuration={0} source={NAVY_FRAME_ART} resizeMode="stretch" style={[StyleSheet.absoluteFillObject,{width:'100%',height:'100%'}]}/>
+    <View pointerEvents="none" style={StyleSheet.absoluteFillObject}><Image fadeDuration={0} source={NAVY_FRAME_ART} resizeMode="stretch" style={{width:'100%',height:'100%'}}/></View>
     {children}
   </View>;
+}
+
+/** Background sizing is isolated from content padding on native Yoga and web. */
+function RoyalWideArtwork({children,style,onLayout,source=WIDE_BUTTON}:PropsWithChildren<{style?:StyleProp<ViewStyle>;onLayout?:(event:LayoutChangeEvent)=>void;source?:ImageSourcePropType}>){
+ return <View onLayout={onLayout} style={style}><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><Image fadeDuration={0} source={source} resizeMode="stretch" style={{width:'100%',height:'100%'}}/></View>{children}</View>;
 }
 
 export function RoyalField({label,children,style,compact=false,wideLabel=false,sizingGroup}:PropsWithChildren<{label:string;style?:StyleProp<ViewStyle>;compact?:boolean;wideLabel?:boolean;sizingGroup?:RoyalContentGroup}>) {
@@ -73,21 +77,21 @@ export function RoyalField({label,children,style,compact=false,wideLabel=false,s
   const topInset = Math.max(compact ? 13 : 17, plaque.size.height - (compact ? 23 : 26));
   const bodyMinHeight = Math.max(compact ? 69 : 87, equalHeight.height - topInset);
   return <View onLayout={equalHeight.onLayout} style={[s.assetField,compact&&s.assetFieldCompact,equalHeight.groupStyle,{paddingTop:topInset},style]}>
-    <ImageBackground source={DIALOGUE_FRAME} resizeMode="stretch" style={[s.fieldIvoryBody,compact&&s.fieldIvoryBodyCompact,{minHeight:bodyMinHeight}]}><View style={[s.fieldBody,compact&&s.fieldBodyCompact]}>{children}</View></ImageBackground>
-    <ImageBackground onLayout={plaque.onLayout} source={WIDE_BUTTON} resizeMode="stretch" style={[s.fieldLabelPlaque,compact&&s.fieldLabelPlaqueCompact,wideLabel&&s.fieldLabelPlaqueWide,plaque.groupStyle]}><Text maxFontSizeMultiplier={1} style={[s.fieldLabelText,compact&&s.fieldLabelTextCompact,wideLabel&&s.fieldLabelTextWide]}>{label}</Text></ImageBackground>
+    <RoyalWideArtwork source={DIALOGUE_FRAME} style={[s.fieldIvoryBody,compact&&s.fieldIvoryBodyCompact,{minHeight:bodyMinHeight}]}><View style={[s.fieldBody,compact&&s.fieldBodyCompact]}>{children}</View></RoyalWideArtwork>
+    <RoyalWideArtwork onLayout={plaque.onLayout} style={[s.fieldLabelPlaque,compact&&s.fieldLabelPlaqueCompact,wideLabel&&s.fieldLabelPlaqueWide,plaque.groupStyle]}><Text maxFontSizeMultiplier={1} style={[s.fieldLabelText,compact&&s.fieldLabelTextCompact,wideLabel&&s.fieldLabelTextWide]}>{label}</Text></RoyalWideArtwork>
   </View>;
 }
 
 export function RoyalLabelPlaque({children,style}:PropsWithChildren<{style?:StyleProp<ViewStyle>}>) {
-  return <ImageBackground source={WIDE_BUTTON} resizeMode="stretch" style={[s.labelPlaque,style]}>
+  return <RoyalWideArtwork style={[s.labelPlaque,style]}>
     <Text maxFontSizeMultiplier={1} style={s.labelPlaqueText}>{children}</Text>
-  </ImageBackground>;
+  </RoyalWideArtwork>;
 }
 
 export function RoyalCapsule({label,style,textStyle}: {label:string;style?:StyleProp<ViewStyle>;textStyle?:StyleProp<TextStyle>}) {
-  return <ImageBackground source={WIDE_BUTTON} resizeMode="stretch" style={[s.capsule,style]}>
+  return <RoyalWideArtwork style={[s.capsule,style]}>
     <Text maxFontSizeMultiplier={1} style={[s.capsuleText,textStyle]}>{label}</Text>
-  </ImageBackground>;
+  </RoyalWideArtwork>;
 }
 
 export function RoyalIvoryPill({primary,secondary,style}: {primary:string;secondary?:string;style?:StyleProp<ViewStyle>}) {
@@ -153,7 +157,7 @@ export function RoyalPlaceRow({source,children,style}:PropsWithChildren<{source?
 export function RoyalButton({children,label,onPress,disabled=false,style,contentStyle,compact=false,round=false,accessibilityLabel,sizingGroup}:PropsWithChildren<{children?:ReactNode;label?:string;onPress:()=>void;disabled?:boolean;style?:StyleProp<ViewStyle>;contentStyle?:StyleProp<ViewStyle>;compact?:boolean;round?:boolean;accessibilityLabel?:string;sizingGroup?:RoyalContentGroup}>) {
   const equalHeight = useRoyalGroupHeight(sizingGroup, compact ? 62 : 78);
   return <Pressable onLayout={equalHeight.onLayout} accessibilityRole="button" accessibilityLabel={accessibilityLabel} disabled={disabled} onPress={onPress} style={({pressed})=>[s.assetButton,compact&&s.assetButtonCompact,equalHeight.groupStyle,style,disabled&&s.disabled,pressed&&!disabled&&s.buttonPressed]}>
-    <ImageBackground fadeDuration={0} source={WIDE_BUTTON} resizeMode="stretch" imageStyle={{width:'100%',height:'100%'}} style={[s.assetButtonImage,contentStyle]}>{children??<Text style={s.buttonText}>{label}</Text>}</ImageBackground>
+    <View style={[s.assetButtonImage,contentStyle]}><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><Image fadeDuration={0} source={WIDE_BUTTON} resizeMode="stretch" style={{width:'100%',height:'100%'}}/></View>{children??<Text style={s.buttonText}>{label}</Text>}</View>
   </Pressable>;
 }
 
@@ -163,7 +167,7 @@ export function RoyalBackButton({onPress,style}:{onPress:()=>void;style?:StylePr
 
 export function RoyalTitlePanel({children,style,sizingGroup}:PropsWithChildren<{style?:StyleProp<ViewStyle>;sizingGroup?:RoyalContentGroup}>) {
   const equalHeight = useRoyalGroupHeight(sizingGroup, 76);
-  return <ImageBackground onLayout={equalHeight.onLayout} source={WIDE_BUTTON} resizeMode="stretch" style={[s.titlePanel,equalHeight.groupStyle,style]}>{children}</ImageBackground>;
+  return <RoyalWideArtwork onLayout={equalHeight.onLayout} style={[s.titlePanel,equalHeight.groupStyle,style]}>{children}</RoyalWideArtwork>;
 }
 
 export function RoyalInfoPanel({children,style,innerStyle,label='INFO',sizingGroup}:PropsWithChildren<{style?:StyleProp<ViewStyle>;innerStyle?:StyleProp<ViewStyle>;label?:string;sizingGroup?:RoyalContentGroup}>) {
@@ -173,7 +177,7 @@ export function RoyalInfoPanel({children,style,innerStyle,label='INFO',sizingGro
   const bodyMinHeight = Math.max(86, equalHeight.height - topInset);
   return <View onLayout={equalHeight.onLayout} style={[s.infoPanel,equalHeight.groupStyle,{paddingTop:topInset},style]}>
     <RoyalExplanationPanel style={[s.infoIvory,{minHeight:bodyMinHeight,paddingHorizontal:24,paddingVertical:20}]}><View style={[s.infoContent,innerStyle]}>{children}</View></RoyalExplanationPanel>
-    <ImageBackground onLayout={plaque.onLayout} source={WIDE_BUTTON} resizeMode="stretch" style={[s.infoPlaque,plaque.groupStyle]}><Text maxFontSizeMultiplier={1} style={s.infoPlaqueText}>{label}</Text></ImageBackground>
+    <RoyalWideArtwork onLayout={plaque.onLayout} style={[s.infoPlaque,plaque.groupStyle]}><Text maxFontSizeMultiplier={1} style={s.infoPlaqueText}>{label}</Text></RoyalWideArtwork>
   </View>;
 }
 
