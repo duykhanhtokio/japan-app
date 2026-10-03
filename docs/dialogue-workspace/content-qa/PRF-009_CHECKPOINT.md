@@ -14,3 +14,10 @@ Remaining old drafts: 88. Next cities in canonical order: Ashikaga, Nasushiobara
 Ashikaga, Nasushiobara and Tochigi: 24 additional individually authored Japanese drafts, 120 speaking goals. Total 61/125 drafts and 305 goals; 64 old drafts remain. Source/runtime/canonical parity verified for all 61 authored slots; original identity and progression verified for new 24. Two full plot replacements followed 13 selected full prior-dialogue comparisons. Evidence, current hashes and explicit open comparisons: content-qa/PRF-009_CLUSTER_02_REVIEW.json (same directory for the prefecture checkpoint). Retrieval over 1331 current authored scripts is screening only.
 
 Structural coverage 125/125, zero errors; 29 normalized groups and 56 near candidates remain. No prefecture CONTENT PASS, native, translation, real-policy or device approval. Next Sano, Kanuma, Moka in canonical city order after remote persistence and WORK PERSISTENCE PASS. Complete prefecture semantic review before translation; all Japanese prefectures precede any new translation.
+
+
+## Tochigi cluster 03 — 2026-10-03
+
+Sano, Kanuma, Moka: 24 individually authored Japanese exchanges, 120 speaking goals. Total 85/125, 425 goals, 40 old drafts remaining. Read all 24 current exchanges and goals and 27 selected complete prior comparisons; three whole-plot replacements removed storage/small-pack, deadline/arrival-record and employer/bank/old-account trajectories. Shared motifs explicitly remain open rather than granting uniqueness by text screening. Evidence and current hashes: PRF-009_CLUSTER_03_REVIEW.json; lexical retrieval: PRF-009_CLUSTER_03_CANDIDATES.json.
+
+All original IDs, order, next links and indexes preserved. Source/runtime/canonical parity and 125-slot structural coverage pass without errors. Screening: exact groups 0, normalized groups 8, near candidates 17, including remaining old drafts. These counts are not CONTENT PASS. No translation, level cap, UI change or real-facility approval. Next Otawara, Yaita, Nasukarasuyama, then Sakura and Shimotsuke after commit/push/fetch WORK PERSISTENCE PASS.
