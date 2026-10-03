@@ -98,3 +98,8 @@ Full eleven-turn/five-goal reads and selected cross-corpus comparisons for 37 ta
 ### Systematic semantic continuation — Ishioka, Yuki, Ryugasaki
 
 24 additional full eleven-turn/five-goal targets and selected full cross-corpus comparisons; 58 distinct current script hashes in PRF-008_SEMANTIC_ISHIOKA_YUKI_RYUGASAKI_2026-10-03.json. Systematic target coverage 85/269; 184 remain. Distinguish passbook-record continuity from account identity, participant count from delayed arrival, known own scattered tools from unknown roadway objects, and intended recipe quantity from per-piece weight. No runtime rewrite in this unit. CONTENT PASS remains false; full-corpus synthesis pending. No PRF-009 or translations. Persist and verify before advancing.
+
+
+### Systematic semantic continuation — Shimotsuma, Joso, Hitachiota
+
+24 additional full eleven-turn/five-goal targets; selected cross-corpus comparisons recorded in PRF-008_SEMANTIC_SHIMOTSUMA_JOSO_HITACHIOTA_2026-10-03.json. Coverage 109/269; 160 remain. Hitachiota03 replaced same-surname call sequence overlapping Chitose with results-booking versus repeat-test misunderstanding. Existing IDs and dialogue chain preserved; stale translation/furigana approval cleared. Written clinical communication and preparation-allocation motifs remain for whole-corpus synthesis. CONTENT PASS false; no PRF-009 or translations. Persist and verify before advancing.
