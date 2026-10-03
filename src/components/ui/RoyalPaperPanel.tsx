@@ -13,6 +13,13 @@ export function royalOpenFrameGeometry(width:number,height:number) {
  const scale=Math.max(0,Math.min(36/330,width/660,height/288));
  return {cornerX:330*scale,cornerY:144*scale,left:140*scale,right:139*scale,top:68*scale,bottom:41*scale,radius:70*scale};
 }
+// Home artwork reaches beneath the opaque gold stroke, not the leaf tips.
+// Source stroke: x=10..55 / 2116..2166; top y=175..220; bottom y=515..545.
+// These anchors sit inside opaque gold, allowing subpixel overlap on all edges.
+export function royalOpenStrokeGeometry(width:number,height:number) {
+ const scale=Math.max(0,Math.min(36/330,width/660,height/288));
+ return {left:36*scale,right:36*scale,top:38*scale,bottom:22*scale,radius:140*scale};
+}
 /** Nine raster slices: corners keep their proportions while straight edges extend. */
 export default function RoyalPaperPanel({children,style,tone='paper',borderOnly=false,immediateBorder=false,underlay}:PropsWithChildren<{style?:StyleProp<ViewStyle>;tone?:'paper'|'hud';borderOnly?:boolean;immediateBorder?:boolean;underlay?:ReactNode}>) {
  const [size,setSize]=useState({width:0,height:0});

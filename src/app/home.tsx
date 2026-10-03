@@ -1,4 +1,4 @@
-import RoyalPaperPanel, { royalOpenFrameGeometry } from '@/components/ui/RoyalPaperPanel';
+import RoyalPaperPanel, { royalOpenFrameGeometry, royalOpenStrokeGeometry } from '@/components/ui/RoyalPaperPanel';
 import { router, useFocusEffect } from 'expo-router';
 import { useCallback, useMemo, useState } from 'react';
 import { Image, ImageBackground, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
@@ -30,10 +30,13 @@ export default function HomeScreen(){
  const qualifiedExams=Object.fromEntries(RANKS.map(rank=>[rank,Object.keys(economy?.passed[rank]??{}).length]));
  // The approved artwork is 3:1. Keep that ratio as the available width changes;
  // the ScrollView accommodates taller cards on iPad and desktop.
- const cardWidth=useMemo(()=>Math.min(960,royal.width-2*ROYAL_LAYOUT.screenGutter),[royal.width]);
- // Fit the frame to the unchanged 3:1 artwork opening, including gold edges.
- const edge=royalOpenFrameGeometry(cardWidth,1000);
- const cardHeight=(cardWidth-edge.left-edge.right)/3+edge.top+edge.bottom;
+ const availableWidth=useMemo(()=>Math.min(960,royal.width-2*ROYAL_LAYOUT.screenGutter),[royal.width]);
+ // Keep the previous artwork dimensions and shrink only its surrounding frame.
+ const previousOpening=royalOpenFrameGeometry(availableWidth,1000);
+ const artworkWidth=availableWidth-previousOpening.left-previousOpening.right;
+ const stroke=royalOpenStrokeGeometry(availableWidth,1000);
+ const cardWidth=artworkWidth+stroke.left+stroke.right;
+ const cardHeight=artworkWidth/3+stroke.top+stroke.bottom;
  return <ImageBackground fadeDuration={0} source={require('../../assets/app/welcome/welcome-japan-landscape-v2.png')} resizeMode="cover" blurRadius={40} style={styles.background}><View pointerEvents="none" style={styles.backgroundShade}/>
   <View style={[styles.screen,{paddingTop:topInset,paddingBottom:bottomInset}]}>
     <View><GameHeader variant="approved" name={profile.name?.trim()||'プレイヤー'} abilityLevel={ability.level} abilityTarget={ability.target} qualifiedExams={qualifiedExams} conversationCredits={economy?.credits??100} coins={stats.coins}/></View>
@@ -48,7 +51,7 @@ export default function HomeScreen(){
 
 function LearningImageCard({image,badge,ja,en,description,width,height,onPress}:{image:any;badge:string;ja:string;en:string;description:string;width:number;height:number;onPress:()=>void}){
  const bounds={width,height};
- const inner=royalOpenFrameGeometry(bounds.width,bounds.height);
+ const inner=royalOpenStrokeGeometry(bounds.width,bounds.height);
  const viewportWidth=Math.max(0,bounds.width-inner.left-inner.right),viewportHeight=Math.max(0,bounds.height-inner.top-inner.bottom);
  const source={width:2172,height:724}; // Verified dimensions of all three original PNGs.
  // Frame and artwork use the same numeric bounds on their first render.
