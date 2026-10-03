@@ -2,6 +2,7 @@ import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
 import FarmAreaIcon from './FarmAreaIcon';
 import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import {
+    Image,
     Modal,
     Pressable,
     ScrollView,
@@ -39,6 +40,9 @@ import {
  * Economy thật được xử lý bởi plantCrop().
  * =========================================================
  */
+
+const COIN_ICON = require('../../../../assets/app/ui/royal-af/hud-coin-v1.png');
+const LOCK_ICON = require('../../../../assets/app/ui/royal-af/lock-grape-v2.png');
 
 type CropPlantPanelProps = {
     visible:
@@ -129,55 +133,6 @@ function formatGrowTime(
     )}時間`;
 }
 
-function getCropIcon(
-    cropId:
-        CropId
-) {
-    switch (cropId) {
-        case 'wheat':
-            return '🌾';
-
-        case 'carrot':
-            return '🥕';
-
-        case 'potato':
-            return '🥔';
-
-        case 'corn':
-            return '🌽';
-
-        case 'tomato':
-            return '🍅';
-
-        case 'onion':
-            return '🧅';
-
-        case 'cabbage':
-            return '🥬';
-
-        case 'cucumber':
-            return '🥒';
-
-        case 'lettuce':
-            return '🥬';
-
-        case 'strawberry':
-            return '🍓';
-
-        case 'pumpkin':
-            return '🎃';
-
-        case 'vegetable':
-            return '🌾';
-
-        case 'melon':
-            return '🍈';
-
-        default:
-            return '🌱';
-    }
-}
-
 /*
  * =========================================================
  * COMPONENT
@@ -239,7 +194,7 @@ export default function CropPlantPanel({
                                     styles.title
                                 }
                             >
-                                🌱 作物を植える
+                                作物を植える
                             </Text>
 
                             <Text
@@ -251,19 +206,20 @@ export default function CropPlantPanel({
                             </Text>
                         </View>
 
-                        <View
+                        <RoyalContentPanel
                             style={
                                 styles.goldBadge
                             }
                         >
+                            <Image source={COIN_ICON} resizeMode="contain" style={styles.goldIcon} />
                             <Text
                                 style={
                                     styles.goldText
                                 }
                             >
-                                🪙 {gold}
+                                {gold}
                             </Text>
-                        </View>
+                        </RoyalContentPanel>
                     </View>
 
                     {/*
@@ -348,7 +304,7 @@ export default function CropPlantPanel({
                                                 styles.cropIconBox
                                             }
                                         >
-                                            <View>{crop.id === "wheat" ? <FarmAreaIcon name="rice" size={42}/> : <Text style={styles.cropIcon}>{getCropIcon(crop.id)}</Text>}</View>
+                                            {crop.id === "wheat" && <FarmAreaIcon name="rice" size={42}/>}
                                         </View>
 
                                         {/*
@@ -412,7 +368,7 @@ export default function CropPlantPanel({
                                                         styles.stat
                                                     }
                                                 >
-                                                    ⏱{' '}
+                                                    成長
                                                     {formatGrowTime(
                                                         crop.growTimeSeconds
                                                     )}
@@ -423,7 +379,7 @@ export default function CropPlantPanel({
                                                         styles.stat
                                                     }
                                                 >
-                                                    📦 ×
+                                                    収穫 ×
                                                     {
                                                         crop.yieldAmount
                                                     }
@@ -434,7 +390,7 @@ export default function CropPlantPanel({
                                                         styles.stat
                                                     }
                                                 >
-                                                    ⭐ +
+                                                    経験値 +
                                                     {
                                                         crop.harvestXp
                                                     }
@@ -453,13 +409,7 @@ export default function CropPlantPanel({
                                         >
                                             {locked ? (
                                                 <>
-                                                    <Text
-                                                        style={
-                                                            styles.lockIcon
-                                                        }
-                                                    >
-                                                        🔒
-                                                    </Text>
+                                                    <Image source={LOCK_ICON} resizeMode="contain" style={{width:26,height:26}} />
 
                                                     <Text
                                                         style={
@@ -482,6 +432,7 @@ export default function CropPlantPanel({
                                                 </Text>
                                             ) : (
                                                 <>
+                                                    <Image source={COIN_ICON} resizeMode="contain" style={{width:18,height:18}} />
                                                     <Text
                                                         style={[
                                                             styles.price,
@@ -490,7 +441,7 @@ export default function CropPlantPanel({
                                                             styles.priceInsufficient,
                                                         ]}
                                                     >
-                                                        🪙 {price}
+                                                        {price}
                                                     </Text>
 
                                                     <Text
@@ -567,55 +518,10 @@ const styles =
         },
 
         panel: {
-            maxHeight:
-                '78%',
-
-            paddingTop:
-                18,
-
-            paddingHorizontal:
-                16,
-
-            paddingBottom:
-                12,
-
-            borderTopLeftRadius:
-                26,
-
-            borderTopRightRadius:
-                26,
-
-            borderWidth:
-                3,
-
-            borderBottomWidth:
-                0,
-
-            borderColor:
-                '#B77A2C',
-
-            backgroundColor:
-                '#FFF8E8',
-
-            shadowColor:
-                '#000000',
-
-            shadowOffset: {
-                width:
-                    0,
-
-                height:
-                    -4,
-            },
-
-            shadowOpacity:
-                0.2,
-
-            shadowRadius:
-                8,
-
-            elevation:
-                12,
+            maxHeight: '78%',
+            paddingTop: 18,
+            paddingHorizontal: 16,
+            paddingBottom: 12,
         },
 
         header: {
@@ -659,24 +565,15 @@ const styles =
                 '700',
         },
 
+        goldIcon: { width: 22, height: 22 },
+
         goldBadge: {
-            paddingHorizontal:
-                11,
-
-            paddingVertical:
-                7,
-
-            borderRadius:
-                14,
-
-            borderWidth:
-                2,
-
-            borderColor:
-                '#D29A32',
-
-            backgroundColor:
-                '#FFF0B5',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: 4,
+            minHeight: 0,
+            paddingHorizontal: 11,
+            paddingVertical: 7,
         },
 
         goldText: {
