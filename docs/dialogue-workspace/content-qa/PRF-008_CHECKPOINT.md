@@ -88,3 +88,8 @@ Read 51 current complete eleven-turn exchanges and all five goals across 20 them
 ### Systematic semantic continuation — Mito, Tsukuba, Hitachi
 
 Full eleven-turn/five-goal reads and selected cross-corpus comparisons for 37 targets, with 77 distinct current script hashes recorded in PRF-008_SEMANTIC_MITO_TSUKUBA_HITACHI_2026-10-03.json. Replaced Mito recipient-bag grouping and Hitachi wind-blown hat recovery after causal overlap findings; corrected Hitachi eighth measurement to value unconfirmed, not unmeasured. Authoring/runtime/canonical data synchronized; IDs/chains/UI preserved. CONTENT PASS remains false. Remaining 232 target scripts need systematic semantic reconciliation, supplemented by prior selected review evidence. No PRF-009 or translations. Require remote persistence before next unit.
+
+
+### Systematic semantic continuation — Tsuchiura, Bando, Koga
+
+24 additional full eleven-turn/five-goal targets compared with selected complete scripts, 61 distinct current hashes in PRF-008_SEMANTIC_TSUCHIURA_BANDO_KOGA_2026-10-03.json. Systematic target coverage now 61/269; 208 remain. Recipient portioning and comparative-year tax bundles share motifs with prior scripts; differing measurement/custody/authority/information tasks documented rather than treated as lexical approval. No runtime rewrite in this unit. CONTENT PASS remains false; final whole-corpus synthesis remains required. No PRF-009 or translation. Persist and verify before advancing.
