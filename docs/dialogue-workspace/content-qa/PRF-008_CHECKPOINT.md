@@ -103,3 +103,8 @@ Full eleven-turn/five-goal reads and selected cross-corpus comparisons for 37 ta
 ### Systematic semantic continuation — Shimotsuma, Joso, Hitachiota
 
 24 additional full eleven-turn/five-goal targets; selected cross-corpus comparisons recorded in PRF-008_SEMANTIC_SHIMOTSUMA_JOSO_HITACHIOTA_2026-10-03.json. Coverage 109/269; 160 remain. Hitachiota03 replaced same-surname call sequence overlapping Chitose with results-booking versus repeat-test misunderstanding. Existing IDs and dialogue chain preserved; stale translation/furigana approval cleared. Written clinical communication and preparation-allocation motifs remain for whole-corpus synthesis. CONTENT PASS false; no PRF-009 or translations. Persist and verify before advancing.
+
+
+### Systematic semantic continuation — Takahagi, Kitaibaraki, Kasama
+
+24 additional full scripts and selected cross-corpus evidence in PRF-008_SEMANTIC_TAKAHAGI_KITAIBARAKI_KASAMA_2026-10-03.json. Target coverage 133/269; 136 remaining. No runtime edits. ATM session closure (Kitaibaraki06/Semboku04) and letter enclosure order (Kasama05/Mito06) remain explicitly unresolved; different setting alone is not semantic approval. Single-glove identity and reachable-contact-time motifs also await final synthesis. CONTENT PASS false; no PRF-009 or translations. Persist and verify before advancing.
