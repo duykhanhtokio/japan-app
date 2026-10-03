@@ -152,7 +152,7 @@ export default function CropPlantPanel({
                 visible
             }
             transparent
-            animationType="slide"
+            animationType="none"
             onRequestClose={
                 onClose
             }

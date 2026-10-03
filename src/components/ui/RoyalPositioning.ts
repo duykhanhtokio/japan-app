@@ -164,7 +164,7 @@ export function useRoyalPositioning(): RoyalPositioning {
 
   return useMemo(() => {
     const width = Math.max(320, viewport.width);
-    const height = Math.max(480, viewport.height);
+    const height = Math.max(1, viewport.height);
     const isLandscape = width > height;
     const isCompactPhone = width < 390;
     const isWide = width >= 760 || isLandscape;

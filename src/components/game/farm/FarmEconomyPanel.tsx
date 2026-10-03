@@ -90,7 +90,7 @@ export default function FarmEconomyPanel({
                 visible
             }
             transparent
-            animationType="fade"
+            animationType="none"
             onRequestClose={
                 onClose
             }

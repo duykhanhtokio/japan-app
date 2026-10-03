@@ -68,7 +68,7 @@ export default function OrchardPlantPanel({
                 visible
             }
             transparent
-            animationType="slide"
+            animationType="none"
             onRequestClose={
                 onClose
             }

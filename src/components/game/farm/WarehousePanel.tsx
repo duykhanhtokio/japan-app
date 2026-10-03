@@ -64,7 +64,7 @@ export default function WarehousePanel({
             visible={
                 visible
             }
-            animationType="fade"
+            animationType="none"
             transparent
             onRequestClose={
                 onClose
