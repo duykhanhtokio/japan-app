@@ -138,3 +138,8 @@ Full eleven-turn/five-goal reads and selected cross-corpus comparisons for 37 ta
 ### Systematic semantic coverage complete — Tsukubamirai, Omitama
 
 Final16full scripts and selected comparisons in PRF-008_SEMANTIC_TSUKUBAMIRAI_OMITAMA_2026-10-03.json. Current target coverage269/269, unique269, target-hash mismatches0. Coverage reconciliation in PRF-008_SYSTEMATIC_SEMANTIC_COVERAGE_269_2026-10-03.json. Open semantic pairs: 14. No runtime edits in this unit. Ready-food preparation and own-container tare sequences newly retained for final decision; all previous pairs and broader motif synthesis remain open. Coverage completion is not CONTENT PASS. CONTENT PASS false; no PRF-009 or translations. Persist and verify before advancing.
+
+
+### Four semantic replacements — 2026-10-03
+
+Kitaibaraki06, Kamisu01, Namegata07 and Omitama07 replaced repeated causal sequences and reread all 11 turns/five speaking goals against listed comparisons. Current runtime hashes supersede four historical coverage hashes; IDs/order/links preserved. 269 systematic targets remain covered, ten open semantic pairs remain. CONTENT PASS remains false. Evidence: content-qa/PRF-008_SEMANTIC_FOUR_REPAIRS_2026-10-03.json.

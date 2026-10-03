@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_08232_01_001_goal_1",
         "requiredSemanticComponents": {
-          "goal": "列車を見送り次の便を尋ねる"
+          "goal": "起点距離の二数を足して乗車区間と書きかけたと相談する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "荷物をまとめている間に列車が出ました。走って乗ることはしなかったので、次の便を確認したいです。",
+        "recommendedAnswerJa": "旅の記録に乗る区間の距離を書きたいです。この図では今の駅が十キロ、行く駅が三十キロとあります。二つを足して四十キロと書きかけました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "列車を見送り次の便を尋ねる。日本語で伝えてください。",
+        "hint": "起点距離の二数を足して乗車区間と書きかけたと相談する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "列車を見送り次の便を尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "起点距離の二数を足して乗車区間と書きかけたと相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "どちらへ向かいますか。",
+        "textJa": "この図の数字は、路線の起点からの距離です。今回はどちらから乗られますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_08232_01_001_goal_2",
         "requiredSemanticComponents": {
-          "goal": "行先と見送った便の未確認を説明する"
+          "goal": "今回の出発駅と未乗車の起点区間を区別する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "中央の駅です。表示を見ずに急いで乗場へ来たので、出た列車が目的の便だったかも確かではありません。",
+        "recommendedAnswerJa": "今いる駅からです。起点からここまでの十キロは、今回は乗りません。行く駅の三十キロにも、その前の区間が含まれるのですね。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "行先と見送った便の未確認を説明する。日本語で伝えてください。",
+        "hint": "今回の出発駅と未乗車の起点区間を区別する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "行先と見送った便の未確認を説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "今回の出発駅と未乗車の起点区間を区別する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "次の発車表示で行先をご確認ください。",
+        "textJa": "この図の差は二十キロです。運賃や実際に利用する経路は、別の案内で確認してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_08232_01_001_goal_3",
         "requiredSemanticComponents": {
-          "goal": "現在乗れる行先の案内を求める"
+          "goal": "図の三十引く十の差二十キロと運賃確認を分ける"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。出た列車を追うより、今乗れる便を見ます。中央へ行く行がどれか教えてください。",
+        "recommendedAnswerJa": "分かりました。三十から十を引いた図の差として二十キロをメモします。その数字だけで切符の料金を計算せず、利用する便と区間を確認します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "現在乗れる行先の案内を求める。日本語で伝えてください。",
+        "hint": "図の三十引く十の差二十キロと運賃確認を分ける。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "現在乗れる行先の案内を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "図の三十引く十の差二十キロと運賃確認を分ける。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こちらです。乗場も同じ行にあります。",
+        "textJa": "すでに乗られた区間の記録でしょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_08232_01_001_goal_4",
         "requiredSemanticComponents": {
-          "goal": "次の便を記録し本人の遅れとして連絡する"
+          "goal": "乗車予定と移動実績および駅外徒歩を区別して記録する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "分かりました。次の時刻と乗場を控えます。待つ人には列車の遅延と言わず、私が間に合わなかったと伝えます。",
+        "recommendedAnswerJa": "これから乗る予定です。まだ二十キロを移動した実績としては書きません。駅から目的の建物まで歩く分も、この図の数字には含めません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "次の便を記録し本人の遅れとして連絡する。日本語で伝えてください。",
+        "hint": "乗車予定と移動実績および駅外徒歩を区別して記録する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "次の便を記録し本人の遅れとして連絡する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "乗車予定と移動実績および駅外徒歩を区別して記録する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "荷物の準備はできていますか。",
+        "textJa": "列車の時刻は、発車案内でご確認ください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_08232_01_001_goal_5",
         "requiredSemanticComponents": {
-          "goal": "荷物と案内を準備して乗場へ進む"
+          "goal": "距離から時間を推測せず停車駅時刻を確認して実績を後で記録する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "できました。次は案内を先に見て、余裕を持って乗場へ行きます。予定を変えたことも連絡しました。",
+        "recommendedAnswerJa": "はい。距離が二十キロだから二十分で着くとも考えず、停車駅と時刻を別に見ます。記録にはこの駅から先の予定区間と書き、移動後に実際に乗ったことを確かめます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "荷物と案内を準備して乗場へ進む。日本語で伝えてください。",
+        "hint": "距離から時間を推測せず停車駅時刻を確認して実績を後で記録する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "荷物と案内を準備して乗場へ進む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "距離から時間を推測せず停車駅時刻を確認して実績を後で記録する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。お気を付けてお進みください。",
+        "textJa": "承知しました。図の距離とご利用の案内を分けてご確認ください。お気を付けてどうぞ。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -249,8 +249,8 @@
     "contentScope": "simulated_learning_scenario",
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
-    "editorialSource": "scripts/dialogue-authoring/prf-008-kamisu.json",
-    "premise": "荷物を整えている間に列車を見送った客が次の移動を相談する。 架空の学習場面であり、実施設の名称、設備、制度、料金や対応を認定しない。",
+    "editorialSource": "scripts/dialogue-authoring/prf-008-final-semantic-four-repairs-2026-10-03.json",
+    "premise": "駅で旅の記録を作る人が、架空の路線図の起点からの距離を今回の乗車区間と取り違える。図の差分、予定と実績、距離と所要時間を区別する。 架空の学習場面であり、実施設の設備、規則、料金、取扱いや対応を認定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
