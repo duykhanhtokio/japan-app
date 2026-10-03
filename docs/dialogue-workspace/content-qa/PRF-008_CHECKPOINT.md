@@ -39,3 +39,7 @@ Toride, Ushiku, Hitachinaka: 24 additional individual Japanese drafts, 120 goals
 ## Cluster 07 — 2026-10-03 (Asia/Tokyo)
 
 Kashima, Itako, Moriya: 24 further individual Japanese drafts, 120 goals. Total 181/269 drafts, 905 goals; 88 old drafts remain. Five whole-plot replacements after reading 23 complete prior candidates and screening 1158 prior authored scripts. All 269 covered without structural errors or exact dialogue/task/answer/title collisions. Screening still has 29 normalized groups and 125 near candidates; it does not approve content. Evidence and open checks: PRF-008_CLUSTER_07_REVIEW.json; initial retrieval PRF-008_CLUSTER_07_CANDIDATES.json. No CONTENT PASS, native certification or translation. Next Hitachiomiya, Naka, Chikusei after remote persistence.
+
+## Cluster 08 — 2026-10-03 (Asia/Tokyo)
+
+Hitachiomiya, Naka, Chikusei: 24 additional individual Japanese drafts, 120 goals. Total 205/269 drafts, 1025 goals; 64 old drafts remain. Four complete replacements after reading 23 complete lexical candidates plus a selected Tokyo postal exchange; screened 1182 prior authored runtime scripts. All 269 slots covered with zero structural errors and zero exact dialogue/task/answer/title collisions. 29 normalized groups and 56 near candidates remain in screening, without content approval. Evidence and open comparisons: PRF-008_CLUSTER_08_REVIEW.json; initial retrieval PRF-008_CLUSTER_08_CANDIDATES.json. No CONTENT PASS, native certification or translation. Next Inashiki, Kasumigaura, Sakuragawa after remote persistence.
