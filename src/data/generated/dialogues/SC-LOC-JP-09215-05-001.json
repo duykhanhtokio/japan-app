@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "書類の発送ですね。封筒はお決まりですか。",
+        "textJa": "保管しているお荷物のお受け取りですね。こちらは代引きの扱いです。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_09215_05_001_goal_1",
         "requiredSemanticComponents": {
-          "goal": "返信用封筒指定を示し誰の住所を書くのか尋ねる"
+          "goal": "注文の心当たりがない代引き荷物の差出人を支払前に確認する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "申請書を送りたいです。案内に「返信用封筒を同封」とありますが、提出先の住所を書いた封筒をもう一枚入れるんですか。",
+        "recommendedAnswerJa": "通知を持って来ましたが、私は何も注文していません。支払う前に、荷物の差出人を確認してもいいですか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "返信用封筒指定を示し誰の住所を書くのか尋ねる。日本語で伝えてください。",
+        "hint": "注文の心当たりがない代引き荷物の差出人を支払前に確認する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "返信用封筒指定を示し誰の住所を書くのか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "注文の心当たりがない代引き荷物の差出人を支払前に確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "返信用は、提出先からお客様へ返す際に使う封筒です。戻してほしい宛先を書くものとして案内されています。",
+        "textJa": "伝票の差出人名と金額を一緒にご確認ください。ご家族が注文された可能性はありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_09215_05_001_goal_2",
         "requiredSemanticComponents": {
-          "goal": "外封筒は提出先内封筒は自分宛てと理解して言い直す"
+          "goal": "同居の母が注文した可能性はあるが店名だけでは分からず本人に確認したいと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "私の住所と名前を書くんですね。外側の封筒は提出先、内側は自分宛てで、同じ住所を二枚に書くのではないと分かりました。",
+        "recommendedAnswerJa": "母と暮らしているので、その可能性はあります。でも、この店名だけでは分かりません。母に電話して確かめたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "外封筒は提出先内封筒は自分宛てと理解して言い直す。日本語で伝えてください。",
+        "hint": "同居の母が注文した可能性はあるが店名だけでは分からず本人に確認したいと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "外封筒は提出先内封筒は自分宛てと理解して言い直す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "同居の母が注文した可能性はあるが店名だけでは分からず本人に確認したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。返信用の大きさや切手について、提出先の指定もございますか。",
+        "textJa": "確認してからお知らせください。お荷物は、まだこちらでお預かりしています。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_09215_05_001_goal_3",
         "requiredSemanticComponents": {
-          "goal": "指定サイズの封筒はあり指定額の切手を購入したいと頼む"
+          "goal": "母が電話に出ず別の贈り物との同一性も不明なため未払いで待つ希望を伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "この欄にあります。指定の封筒は用意しましたが、切手はまだです。ここで指定額の切手を買えますか。",
+        "recommendedAnswerJa": "電話しましたが出ませんでした。母からの贈り物だと聞いていた別の荷物と、同じ物かも分かりません。今は支払わずに待ちたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "指定サイズの封筒はあり指定額の切手を購入したいと頼む。日本語で伝えてください。",
+        "hint": "母が電話に出ず別の贈り物との同一性も不明なため未払いで待つ希望を伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "指定サイズの封筒はあり指定額の切手を購入したいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "母が電話に出ず別の贈り物との同一性も不明なため未払いで待つ希望を伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "切手をご案内できます。ただ、指定額が返送物の内容に合うかは、提出先の案内に従ってご確認ください。",
+        "textJa": "では、お受け取りの扱いを決める前に、担当へ確認しましょう。お母様には何をお聞きになりますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_09215_05_001_goal_4",
         "requiredSemanticComponents": {
-          "goal": "指定額に従い内封筒準備後に外封筒を封じると示す"
+          "goal": "店名と残る支払を母へ聞き通知だけを示して未受取と説明すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "分かりました。この案内どおりの額を買います。今は外の封筒も開いているので、返信用の準備ができてから封をします。",
+        "recommendedAnswerJa": "注文した店名と、この金額の支払いが残っているかを聞きます。通知を見せますが、荷物を受け取ったとは伝えません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "指定額に従い内封筒準備後に外封筒を封じると示す。日本語で伝えてください。",
+        "hint": "店名と残る支払を母へ聞き通知だけを示して未受取と説明すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "指定額に従い内封筒準備後に外封筒を封じると示す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "店名と残る支払を母へ聞き通知だけを示して未受取と説明すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "そうなさってください。封入内容はご自身で見直し、発送方法の指定もお知らせください。",
+        "textJa": "確認できない場合の対応も担当がご案内します。ご希望を伝えてください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_09215_05_001_goal_5",
         "requiredSemanticComponents": {
-          "goal": "自分宛て返信用と申請書を同封後に外の送り先と方法を見直すと決める"
+          "goal": "返事後に判断したいと伝え保管期限と現段階の手続きを尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "返信用に自分の宛先を書いて切手を貼り、申請書と一緒に入れます。その後、外の宛先と送り方を確認して差し出します。",
+        "recommendedAnswerJa": "母の返事を待ってから判断したいです。返事が遅くなるかもしれないので、保管期限と今の段階でできる手続きを教えてください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "自分宛て返信用と申請書を同封後に外の送り先と方法を見直すと決める。日本語で伝えてください。",
+        "hint": "返事後に判断したいと伝え保管期限と現段階の手続きを尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "自分宛て返信用と申請書を同封後に外の送り先と方法を見直すと決める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "返事後に判断したいと伝え保管期限と現段階の手続きを尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "では、まず切手の指定額を拝見します。返信用の準備が終わりましたら、お声がけください。",
+        "textJa": "承知しました。まだ受け取りもお支払いもされていない状態として、担当へご相談を引き継ぎます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-009-nasukarasuyama.json",
-    "premise": "申請書を発送する人が提出先の返信用封筒という指定を理解し、戻してほしい宛先と外封筒を作り分ける。 架空の学習場面。路線、時刻、価格、施設設備、商品、書式と応対は教材内の設定であり、実在施設の案内や規則ではない。",
+    "premise": "郵便窓口で保管中の代引き荷物を受け取る人が、同居家族の注文か不明なため支払い前に確認する。 実施設のサービスや手続きを保証しない架空の学習場面。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

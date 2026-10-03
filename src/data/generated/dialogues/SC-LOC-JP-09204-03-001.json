@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "領収書と明細書をお渡ししました。書類について何かございますか。",
+        "textJa": "お会計後の書類についてでしょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_09204_03_001_goal_1",
         "requiredSemanticComponents": {
-          "goal": "受診証明と診療内容の開示を区別して書類の記載を尋ねる"
+          "goal": "領収書の名が自分と違うため会計へ確認を頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "会社に今日受診したことを知らせるんですが、病名や検査の内容まで提出したくなくて。どの書類に何が載っていますか。",
+        "recommendedAnswerJa": "はい。領収書の名前が私ではありません。受け取ってから気づいたので、確認してもらえますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "受診証明と診療内容の開示を区別して書類の記載を尋ねる。日本語で伝えてください。",
+        "hint": "領収書の名が自分と違うため会計へ確認を頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "受診証明と診療内容の開示を区別して書類の記載を尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "領収書の名が自分と違うため会計へ確認を頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "この領収書には受診日と金額があり、別の明細書には診療内容の項目があります。会社が何を必要としているかはお分かりですか。",
+        "textJa": "書類はこちらで確認します。お客様のお名前が分かるものはお持ちですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_09204_03_001_goal_2",
         "requiredSemanticComponents": {
-          "goal": "会社の受診日要件と原本を残す希望を説明する"
+          "goal": "診察券を示し別人の領収書を撮影せず返すと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "上司からは「受診日が分かるもの」と言われています。原本は自分で残して、領収書のコピーを出したいです。",
+        "recommendedAnswerJa": "この診察券です。間違った領収書は、このままお返しします。ほかの方の内容なので、写真には撮っていません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "会社の受診日要件と原本を残す希望を説明する。日本語で伝えてください。",
+        "hint": "診察券を示し別人の領収書を撮影せず返すと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "会社の受診日要件と原本を残す希望を説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "診察券を示し別人の領収書を撮影せず返すと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "会社がコピーを受け付けるかは、提出先にお尋ねください。こちらから会社へ診療内容を説明する予定はありません。",
+        "textJa": "ありがとうございます。ご自身のお支払いの控えもありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_09204_03_001_goal_3",
         "requiredSemanticComponents": {
-          "goal": "金額欄を隠す可否を提出先に聞く意向を示す"
+          "goal": "カード控えを出し金額が似ていても自分の支払との照合を頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "それを聞いて安心しました。コピーを出す前に、金額の欄を隠してよいかも会社に聞いてみます。",
+        "recommendedAnswerJa": "カードのお控えがあります。金額は同じように見えますが、私の会計と合っているかも確認してほしいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "金額欄を隠す可否を提出先に聞く意向を示す。日本語で伝えてください。",
+        "hint": "カード控えを出し金額が似ていても自分の支払との照合を頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "金額欄を隠す可否を提出先に聞く意向を示す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "カード控えを出し金額が似ていても自分の支払との照合を頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。別の証明書を求められた場合は、その書類名をお知らせください。",
+        "textJa": "書類と支払記録を照合します。ほかに受け取った物はありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_09204_03_001_goal_4",
         "requiredSemanticComponents": {
-          "goal": "証明書申込みを保留して後日の連絡先を聞く"
+          "goal": "自分名義の予約票は手元に残してよいか尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "まだ証明書は申し込みません。必要だと分かった場合は、会計窓口に相談すればよいですか。",
+        "recommendedAnswerJa": "予約票もありますが、そちらは私の名前です。確認が済むまで、予約票は自分で持っていてもいいですか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "証明書申込みを保留して後日の連絡先を聞く。日本語で伝えてください。",
+        "hint": "自分名義の予約票は手元に残してよいか尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "証明書申込みを保留して後日の連絡先を聞く。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "自分名義の予約票は手元に残してよいか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "まずはこちらへご連絡ください。書類の種類に応じて担当へおつなぎします。",
+        "textJa": "どうぞお持ちください。領収書の確認が済んだらお呼びします。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_09204_03_001_goal_5",
         "requiredSemanticComponents": {
-          "goal": "二書類を持ち帰り必要欄とコピー受付を会社に聞いてから提出すると決める"
+          "goal": "照合を待ち訂正書類をその場で名前日付確認したいと頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "今日は領収書と明細書を持ち帰ります。コピーの可否と、どの欄が必要かを会社に確認してから提出します。",
+        "recommendedAnswerJa": "ここで待ちます。正しい書類を受け取ったら、名前と日付を見直したいので、その場で確認させてください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "二書類を持ち帰り必要欄とコピー受付を会社に聞いてから提出すると決める。日本語で伝えてください。",
+        "hint": "照合を待ち訂正書類をその場で名前日付確認したいと頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "二書類を持ち帰り必要欄とコピー受付を会社に聞いてから提出すると決める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "照合を待ち訂正書類をその場で名前日付確認したいと頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。書類を別々にお入れしますので、どうぞお持ちください。お大事になさってください。",
+        "textJa": "承知しました。診察券とカード控え、領収書を照合してご案内します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-009-sano.json",
-    "premise": "会計後の患者が受診日の証明を求める職場に診療内容まで渡したくないと窓口へ相談する。 佐野の架空の学習場面。時刻、料金、経路、設備、商品、書式と職員の対応は教材内の設定であり、実在施設の案内・規則ではない。",
+    "premise": "病院会計で受け取った領収書が別人名と気づいた患者が書類と自分の支払記録の確認を頼む。 実施設のサービスや手続きを保証しない架空の学習場面。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

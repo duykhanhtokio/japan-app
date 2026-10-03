@@ -1,3 +1,21 @@
+# Tochigi PRF-009 — completed Japanese prefecture review, 2026-10-03
+
+Current authoritative status: **AI Japanese CONTENT PASS; master locked for 125/125 exchanges and 625 speaking goals.** No open editorial blockers remain in this scope. The decision is bound to every current runtime SHA-256 in `PRF-009_SEMANTIC_REVIEW.json`; source/runtime lock is `PRF-009_JAPANESE_MASTER_LOCK.json`.
+
+Steps 1–4: all canonical slots individually authored and read; unnatural hypothetical denials replaced with actual requests, evidence or decisions. Steps 5–8: eleven alternating NPC/PLAYER turns, five distinct communicative goals, causal reply/closure, location-role suitability and cross-prefecture semantic comparison completed. Whole runtime corpus screening covered 7,123 scripts; all125 targets and their primary external comparators were read in full, with selected semantic-domain comparisons. This is not a claim of manually reading all7,123 scripts.
+
+Substantive final replacements remove lost-card, soup-spill, windblown-hat, company-receipt, phone-update, price-label, nested reply-envelope and mirrored craft-letter reuse. Final plots include water-damaged passbook, lost paid food ticket, unfinished child stamp activity, paid receipt reconciliation, confidential employer-escorted consultation, moving cartons, unknown COD parcel and left-handed craft space/demonstration. Nurse handoff now concerns actual newly developing back pain rather than another unidentified medication photo sequence. Detailed per-scenario judgments and remaining shared-motif distinctions are in the semantic review.
+
+Step 9: structure and source/runtime/canonical parity125/125, preserved scenario/dialogue IDs, order and next links125/125; exact, normalized, near, task, answer, title and recipe screening groups zero. Cross-corpus exact target task/answer/full-exchange collisions zero. AI content review is separate from these checks.
+
+Step 10: current Japanese master hash lock recorded. Per-dialogue historical draft flags are retained as provenance; the current prefecture decision is authoritative. Any content edit requires renewed review and hash reconciliation. No native-speaker, actual venue-policy or device signoff is implied. Translations remain deferred until every Japanese prefecture is complete.
+
+Next Japanese unit: PRF-010 only after this completed prefecture is committed, pushed, fetched and WORK PERSISTENCE PASS verified. GitHub checkpoints are persistence steps, not a reason to end a session with part of a prefecture unfinished.
+
+---
+
+## Historical authoring checkpoints (superseded by the current125-hash decision)
+
 # Tochigi individual Japanese authoring — 2026-10-03
 
 Ibaraki AI CONTENT PASS for 269 exchanges was remotely verified at 858fa7cf5f1233b2c97e5533932af59a6e2a3ee2, WORK PERSISTENCE PASS, before Tochigi authoring.

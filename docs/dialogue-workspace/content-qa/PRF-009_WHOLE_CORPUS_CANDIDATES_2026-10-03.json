@@ -1,0 +1,4634 @@
+{
+  "method": "Character 3-4 gram TF-IDF top-three retrieval across all present runtime scripts; candidate retrieval only, never content approval.",
+  "corpusCount": 7123,
+  "targetCount": 125,
+  "scenarioSha256": {
+    "SC-LOC-JP-09204-02-001": "c1ec9bf2ccaf50345ee2b47bf799a7abd6aef89e9a2e06073c188401f6bbe33d",
+    "SC-LOC-JP-09204-07-001": "af8ab9aef665dccb2543e3e30b17441617258f8cd7f8203b9ca1b4c8d262846e",
+    "SC-TCG-NIKKO-001": "0f51258da277fbc97ce72cdd81a1f9ff7ab1f384e3a5c01abca836f3c61ff27c",
+    "SC-TCG-NASUSHIOBARA-001": "64f1f6400362830c1f268c1247b91953af143463a990355f97645ad06adfdfb2",
+    "SC-LOC-JP-09210-06-001": "71ca5f79132eedd6bf7a789720faf7c7c55bd4676075ef000b221dbe5a4bbda9",
+    "SC-LOC-JP-09216-07-001": "28cf6cedd3acfaa9cd5f9f82f1a338ffce4901daf0f33b11b972a3e389117ae8",
+    "SC-LOC-JP-09209-04-001": "d0827cf9e53c85f2a8243d73d7f47cffe174f74401243585b80d253d681081a8",
+    "SC-LOC-TCG-NIKKO-07-001": "53137cc94c136cc0450f00d635896a256b0255c9d660bdb3da5ab9c02ad5fc0c",
+    "SC-LOC-TCG-OYAMA-06-001": "feb6ed9c5114af312baea93e24409ea573b3ec4cb2228dec4c7afe89ef42c7f4",
+    "SC-LOC-JP-09211-02-001": "d260c7835fafa0bb77776e6618e25de56d2de897220a5b37453029681354f04d",
+    "SC-LOC-JP-09211-07-001": "b2089e072c1a83c85c558b7cfa34d97f94cbbd8db65385a0c028cffa0a299c6d",
+    "SC-LOC-JP-09210-03-001": "1a20eee6a44717c8edc61f4c26061d8ca9de8a7a63a54ab7cc93ff393c8150fa",
+    "SC-LOC-JP-09209-02-001": "e6437f5bd8d6f8f277cd0d636955ebff0526edfb8733094ef0fe1c1242f69f51",
+    "SC-LOC-TCG-OYAMA-04-001": "a005775f430812e7cfd6e3d8509a2978d367c4910f0d983f9369553a4e780c96",
+    "SC-LOC-TCG-NIKKO-05-001": "bede1b41d318949375a7e3a3d702af867d5de5d4970641112f14c8e270e6fee4",
+    "SC-LOC-TCG-OYAMA-02-001": "335584391b7e8ca6b7fa21931890b4c0f07df97b9ba0c6f55fa5aff2384aef2b",
+    "SC-LOC-JP-09216-08-001": "009ea794cca05c4ac6e897cae132df221e59301fe28972048a2dc727862cc7b6",
+    "SC-LOC-009-01-001": "7a25bbd8e49250583f79776af1e39f88dfd976207fa4ca602b85db86da8e0599",
+    "SC-LOC-JP-09214-05-001": "ca2403f1d255e9449901e9c6630025710a6fe9419f4a9a2baa54a32ce9e27339",
+    "SC-LOC-TCG-OYAMA-05-001": "c5012d79be4086fb8e94961d3b08df2d0470abb81025d47089975c3f38c378ec",
+    "SC-LOC-JP-09205-06-001": "3384a9ea1332dabfe5d352f111558f2832f5944b7e922972c94fd462828fd428",
+    "SC-LOC-009-10-001": "9a347192d12c5c6cdb18bc3ec156cf8b1220f88aea55fc5f9d0538041aa40ff5",
+    "SC-LOC-JP-09216-02-001": "a79cb9fb045f566813fff0ea018b968f2381926a1720b95e1c95144f3bb96f32",
+    "SC-LOC-009-06-001": "17fdf52367f7a8ec462944fb9db786686cc0b9c769f8ad0c2aa6d13959ba94d1",
+    "SC-LOC-JP-09209-05-001": "043eb5576c8f87508a7824b60b9476c507aca743b867de0b629fcab679463e60",
+    "SC-LOC-JP-09204-01-001": "3585cc5331d681ab364e16a8bfea209cf8de02e7db4bf4a7bfbbf00cabcde8be",
+    "SC-LOC-TCG-ASHIKAGA-06-001": "af122ee0f0f7184fc59387ba9ff23ee41c6fc1706d2a92b94a79a67d14700e8b",
+    "SC-LOC-JP-09209-03-001": "40817d3bc9e75613b8769e339d77061c73b5bec7ae42aea39af3346cb954ee7a",
+    "SC-LOC-JP-09214-04-001": "cc995fe017d965e8ca893e6a0d322d59fd22d66ad1237d41cb48152e38d0cc17",
+    "SC-LOC-JP-09203-06-001": "249b277f56bd68533385db3fce8bf928aa0894c7bf6d0cb64e2ad03dba234b0b",
+    "SC-LOC-JP-09205-04-001": "5a1b258710d74b5e68aeacddf6215e681b8264294b2b52568df099c79719f50e",
+    "SC-LOC-JP-09203-02-001": "e48fa67394ce3e01e16b03d08c19fcef6cbf32e31e24453c2d5aac60d7167660",
+    "SC-LOC-JP-09215-07-001": "1864c86f15e7068df4b4e246465e8d8b968f58bd0770ace9e2a2d6f1c3eada7e",
+    "SC-LOC-TCG-ASHIKAGA-08-001": "4bd3748eb9e8b21fb8c395e39d6a3c854d2a00a3c20fc5db3a7335b31a07cbc7",
+    "SC-LOC-JP-09203-01-001": "85eb9aba3642e32bd4983e484178efe4ec298ac20e1834f28d2c11bfee7ac60f",
+    "SC-LOC-JP-09214-02-001": "a37089f933baf1de273ffa8551ad4837904eb8fbedcfb78de37fd09b215ca13e",
+    "SC-LOC-009-20-001": "b2bbb6a48b2b4f84886247d8ae9d89c4ec0bb731c3c59dd2632b826c8668e914",
+    "SC-LOC-009-04-001": "6659876a7068e9e42eb82fb05828147d2be8c28aa2cfd2c544b7340e2b21e034",
+    "SC-LOC-JP-09209-07-001": "55035af541f980b67f7cebaea3b5eb1cfb69f12803def4a55fd5d8c2b00c5a08",
+    "SC-LOC-009-21-001": "b7942040710972afb7bb5133ae6c07516a4336afeb236df05d9ea363cbf96f00",
+    "SC-LOC-JP-09204-08-001": "f050090e969d3657deb5543a6fa530acd95d3e0b0fde0f5cd8c960b06ff9f844",
+    "SC-LOC-JP-09214-08-001": "458e31411ada1db6e26a51bafd38fe7f6e0444cdb0fd86e61cc0d82d1c357eda",
+    "SC-LOC-TCG-OYAMA-03-001": "56ffe73a96a9cc57656a043b6ab5c0690f49fa0bc965b9f42e043b7a53e2365b",
+    "SC-LOC-JP-09205-03-001": "d12c124d9af8fa225bd2cb04e5fdcaf2e807476707f99b5a70456bf56ae7efd6",
+    "SC-LOC-JP-09205-08-001": "5f328ae36e41405f6734425292434a7aea37c1e64d8e89c8d7e0af1cfff75328",
+    "SC-LOC-JP-09214-06-001": "1c0883c426b4dcbfd9b0b6df327198ddc4289833dd44ff24ce8c2bdb26012c57",
+    "SC-LOC-JP-09203-08-001": "07718626615933da96e828f6e3b7efcc0f16a1d925909ee5ee1ac5def7f8a515",
+    "SC-LOC-009-16-001": "f822c4fa7325a4e1ec0887edc65a3aefc0e54bc84fc3f45d789710cb8a81b4b4",
+    "SC-LOC-009-17-001": "5ec1d950f9636246a1a286268b045a7f1a858ff87de117718c84541ff97ca549",
+    "SC-LOC-JP-09211-01-001": "69e0ced282d51cd0e6cf1a6200181fea792fd787dea1a60cc566f6ec418feb91",
+    "SC-LOC-JP-09215-06-001": "a4b59c0bbe115ee50e11eb824bc911261015561d0490066ee5954c8de2743cb3",
+    "SC-LOC-TCG-NASUSHIOBARA-03-001": "094f3ae6ff1562a3d2f1f7c26ecd38c60d931ad61bfa93c8f87c8067c1e3d8ef",
+    "SC-LOC-009-09-001": "6d8c49d5e8245feafe360ccf90e8a6c31923cb24099613d75bff59f64fe0acd1",
+    "SC-LOC-JP-09210-02-001": "07d1a6f84d8f4fead102f6ad73306c610d2743c6edb1b3324a6a8b3a144a041b",
+    "SC-LOC-009-02-001": "29b62d3786856ee791235dae136517a7b980972cb61de6389a0c272e17aec793",
+    "SC-LOC-JP-09203-04-001": "e008cd1c5281ae723a8e600515fae47b131ef8be7d2f6a307d85b01858bcdd10",
+    "SC-LOC-TCG-NIKKO-03-001": "0c098582394d3b6f56b54671aba4094aad73b9853a7d0fcec5efc0af5a572fec",
+    "SC-LOC-JP-09205-05-001": "9a081a0d904a6eba118248dada64170f8f8e5e58430789109144faee7ddcebef",
+    "SC-LOC-TCG-NASUSHIOBARA-05-001": "646f8c49d967f6ff024646f2a948df0632a5fb678f45b887641902f878aa1b93",
+    "SC-LOC-JP-09210-08-001": "4ff8fff99012f652064795b8a09e2773f83292c6bd4b9976e530914c708e2040",
+    "SC-LOC-TCG-NASUSHIOBARA-06-001": "cda4c1779ade3dd066478ae5cb4f2d3e44287a9b7c54170527c476a5d535fb61",
+    "SC-LOC-009-12-001": "9921ac5c2e63301249538943c55eee1c80ab97b47d291312df8e96d62c393ef8",
+    "SC-TCG-ASHIKAGA-001": "5d53d3d663c295edbaa17bd335cfcce21591340ac5ffb8b28a02c2c8cbb9e29d",
+    "SC-LOC-JP-09211-03-001": "9d4dbd95b3f3e23b1b249364bd09223aea654670cae704e3252149f98d6066ff",
+    "SC-LOC-TCG-ASHIKAGA-07-001": "cd0148b1be8174262650aeee373010d6eb888e23889177efc4ac7e9331f8a0c6",
+    "SC-LOC-009-11-001": "770d96c1289e855c44c0ffd3a2605d4c340cf4e75c87683904e9f95b9f0633af",
+    "SC-LOC-JP-09214-07-001": "87b8d44d47cfa972501e7d50ff2afe4d999053ba07358e6de8820badb8dbc35b",
+    "SC-TCG-OYAMA-001": "6f7314983717983827bb482ae0648434f775f2e5fc839ae1d8f30058d0afb19f",
+    "SC-LOC-009-08-001": "7fa93ed35750a379fcba0a6e23379ca4b2f819624e0ab61a2e7a667bedae2f39",
+    "SC-LOC-009-07-001": "ba2ed43f1cc5c250c8310244f9939afc6d3758d466b84618f77b32de42023d6d",
+    "SC-LOC-JP-09210-05-001": "a6cffc172fe43b576e65683fd4a9724bc4e72482dd755ba94923811618baffc6",
+    "SC-LOC-JP-09210-01-001": "45b9f22145439ce3e135bf369af2e800ad7c2338c2279ef15de032f563286358",
+    "SC-LOC-JP-09216-01-001": "c19d20c70969f5a16a6d1ea33074fe95721670f63869dfe6cf7a96ade642ec78",
+    "SC-LOC-JP-09215-08-001": "5d0291a974d37fd781ad56c4f1410670f867446379a4ca6a07eb11f1ff2588fe",
+    "SC-LOC-TCG-OYAMA-07-001": "1b175ba6955badef322dfdd8b1af1e779122c9ef1b9cdf7b4a95c8031b31c6d6",
+    "SC-LOC-TCG-NIKKO-02-001": "8e6ea39ebab8ac3d888eb094073bc6ad45b75e5b89d341921b48feeeb5db618c",
+    "SC-LOC-JP-09216-06-001": "84dc7e8f651dd17348b3fdabf837a4f400311b31428a49083b6cea98f18b8b0f",
+    "SC-LOC-JP-09204-06-001": "5e8a0afb613b25d22fbefce47883713d4fe2a82fe9601ff4bea191942a44c5ff",
+    "SC-LOC-JP-09216-03-001": "cc1f054ea6aac52cbf2fafb86ea7838918bb27de44116c7361653ea844cbfc67",
+    "SC-LOC-JP-09204-03-001": "e8d0fca667a3cb7d6b7fb56536db58093850be49b807c59135f89b2605e72a2b",
+    "SC-LOC-009-14-001": "5d4c4e698a3384a0c0784687e5717820ad4df33e1315dc54e6865283c407b6d4",
+    "SC-LOC-JP-09216-04-001": "ed15d678b095bb55c14320179a3aaff8214837901d5e3eddb200189700a3a444",
+    "SC-LOC-JP-09205-02-001": "5a775a7e63ef25a7c2d90c310709f8594d2bbfd4915d3732d0f8f23f9d268c90",
+    "SC-LOC-JP-09211-05-001": "b82e69b709c0ec6e5d2d9cef80a9e63240ef84f40cdf9d1e3195f0667964a4b9",
+    "SC-LOC-JP-09203-07-001": "9e23669e75a1a7fb608c93f1a1745b054f057e94d5eccd3a91201e870729b0d0",
+    "SC-LOC-009-18-001": "6ca88a9a2a0dd621d1845bd71497190757fef829d4a9df16682a6e94532645d7",
+    "SC-LOC-TCG-NASUSHIOBARA-04-001": "223c97d295ef1afc1b805884cd54a50b44df2ca9d7527972154026bffa8d71b7",
+    "SC-LOC-JP-09204-04-001": "e25208147288acab31604ebd4a4a6d995f787c9ceae4256856d54e27434e4359",
+    "SC-LOC-009-03-001": "3e401a1cd7df51967c197b0efe532efe0d566a4b9ffe2432ba45d9c86fe4effd",
+    "SC-LOC-TCG-NIKKO-08-001": "060aefe441ee22a8467e5ed06e95bcfab02351e29ad627e279a1c03c67f04b2d",
+    "SC-LOC-JP-09215-04-001": "31f655b2a2823885708ede49bb2cace2348fa8583923601487c835c7276b5fb7",
+    "SC-LOC-009-15-001": "c8903fc47096d7ec3f4dd37344630dbe0de9751b93f896b232bb69155c117cc3",
+    "SC-LOC-JP-09215-03-001": "de7b2cd8c959d4408bb0acd47aee1f66990adc4b8f156cb4204598217ebb471e",
+    "SC-LOC-TCG-ASHIKAGA-04-001": "19b8a559249de5a4d98b481f95752693292eb0a993ab08079ef9ea0e5cc219d3",
+    "SC-LOC-JP-09203-03-001": "5549284219b7a5a449f16a9e2505538842aa1fc31362b0d53e374385988dbae8",
+    "SC-LOC-JP-09211-04-001": "3613be2a7d95674f9a130454087fd7bce0718c6e2a04782cce055d77cc7aa4ef",
+    "SC-LOC-JP-09205-01-001": "96b29d5f812b69bfe70c811b41bdd4889b52da86c3ef3c1c3d82571747e7cf6a",
+    "SC-LOC-JP-09215-01-001": "c51ee0745ff682e8684f5362de8192b0c2cfc5582b32a3d9797f062571bda1c8",
+    "SC-LOC-JP-09210-07-001": "341639f1940d62396bf38b61c5f0d9cfe7d64ca3d5ba4d0a71c1823e1caf7d2f",
+    "SC-LOC-009-13-001": "50f2025712da8a613b878a25f2e463011659330b7b9cdc418199c3dc40231b44",
+    "SC-LOC-JP-09209-06-001": "e5dfcc0878fae125ac2df0570287166412b9b8947f6edee1549555b3832467b4",
+    "SC-LOC-009-05-001": "89dbcb1467f2279e5545d2d7fa9d86f08cf31054c7c78a8ca0590b28a77bfd6f",
+    "SC-LOC-JP-09209-01-001": "e705624d5f760bf30be62962c5eee1c8f392f193dbbdc883428369788cb27955",
+    "SC-LOC-TCG-NASUSHIOBARA-08-001": "979339deda7ea14c90664c100f746027ba5e4e36acd595028b4536c504bb3c79",
+    "SC-LOC-JP-09211-08-001": "196485b6d61003db7b93daa7670a6aacf089714765bf241bd47e9f3d0576f259",
+    "SC-LOC-TCG-NASUSHIOBARA-07-001": "e214e2414a28cb9644395da2e9896d161aea6d05cf3aa04eee5a2c084b46968d",
+    "SC-LOC-JP-09215-05-001": "b4f71baa720c8a8fa08f0faa0369258bb696d9aada4af18d22669753590dc407",
+    "SC-LOC-JP-09214-01-001": "4bd28542c93eeedb7a2cec76ca4ddae376a665ba7a0c859731050b525ea42441",
+    "SC-LOC-TCG-NIKKO-04-001": "c3525cf3edb3334a4794ac4179c2dd5819f10a046ce227ae9bf1f8b3799451c9",
+    "SC-LOC-JP-09211-06-001": "11c2effdbfd70020bb93e58b639b135928e96b90e3add27f486748d411014e25",
+    "SC-LOC-TCG-ASHIKAGA-05-001": "eb1e972d36248c2c719b59f50d7e1d8e498c1147347f9d197889983cc86e7265",
+    "SC-LOC-009-19-001": "22bf1d8756d00427bffbbe50f9fcf7cf2c8f6f9c8fc522bad1f310871f628b8a",
+    "SC-LOC-JP-09209-08-001": "d4f52f8b86fe8277b4031b717babfc884be484dd93041cc7536bf3916f568a33",
+    "SC-LOC-TCG-ASHIKAGA-02-001": "f6dda251a26c66468d9c1655047616afe62ab0cdae4e7213bb8216c8f65a6a23",
+    "SC-LOC-JP-09204-05-001": "392d079a6e48409cd35ea1849d419b2083f768c1212eae98e306461b7c530214",
+    "SC-LOC-JP-09210-04-001": "47acbdfd031fc02afaf332d13bc9c84432b2b3de867b90ce94bfc3e8f0597832",
+    "SC-LOC-JP-09214-03-001": "8d88dbd893da1eca661e19b018db8dc91741e08b4ba232f5bfb0128abf55dc9c",
+    "SC-LOC-JP-09215-02-001": "811ac23af807e03127526fa5c0ab544b64b396addfabef274e6c402b9f32a233",
+    "SC-LOC-TCG-NASUSHIOBARA-02-001": "470dc0e568163efd8e9d11cc4e685d68c2670dca81ccd098b8bd27fa170cfb97",
+    "SC-LOC-TCG-NIKKO-06-001": "2f99a1bc2022f7c984d3dd2dba24e7799a9d6434e22c934c2f68bc5f8732ce8c",
+    "SC-LOC-JP-09205-07-001": "94fd94a5d939caf331340caeec16058b523d72addc63b6b27e4e05a72e13213c",
+    "SC-LOC-JP-09203-05-001": "27a6386f4aea648045843fcc42d45cee5dfa6c48eea37230a6148a625f8911dc",
+    "SC-LOC-TCG-ASHIKAGA-03-001": "baca9a815c40b5da34521524390aa030e83938dfdccc86a29c8355588282a643",
+    "SC-LOC-JP-09216-05-001": "5d8bae10fd4eb83fe630e55008436d008644c198c2e5c7524ee85395197fb808",
+    "SC-LOC-TCG-OYAMA-08-001": "c3bf36b8f4a52e1e686f50da7ef6b2f141a5d26708a8b836f0524cfaf2d356dd"
+  },
+  "candidates": {
+    "SC-LOC-009-01-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-08227-01-001",
+          "score": 0.1131,
+          "sha256": "8c9a197bc9ae3becd2c140d0dfd2ab49406debd60b405a4322dc01518ec29235"
+        },
+        {
+          "scenarioId": "SC-LOC-007-01-001",
+          "score": 0.1011,
+          "sha256": "50618d1d824407c57c23748dfc76e7667123687be703a336a191814096d6b95e"
+        },
+        {
+          "scenarioId": "SC-IWT-ICHINOSEKI-001",
+          "score": 0.0935,
+          "sha256": "35bbe3713fd536bd086a1f54f154dfff22281039e970828f1067e9f791f71e8e"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-TCG-OYAMA-001",
+          "score": 0.0885,
+          "sha256": "6f7314983717983827bb482ae0648434f775f2e5fc839ae1d8f30058d0afb19f"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-ASHIKAGA-07-001",
+          "score": 0.0689,
+          "sha256": "cd0148b1be8174262650aeee373010d6eb888e23889177efc4ac7e9331f8a0c6"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-01-001",
+          "score": 0.0541,
+          "sha256": "3585cc5331d681ab364e16a8bfea209cf8de02e7db4bf4a7bfbbf00cabcde8be"
+        }
+      ]
+    },
+    "SC-LOC-009-02-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-08215-08-001",
+          "score": 0.0822,
+          "sha256": "a4f378dae435e5c9a4c9da06e3c6f182e01665de8f7ffb6c9d2ec4b365f1f1b4"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08214-08-001",
+          "score": 0.0687,
+          "sha256": "be5b8cc9bed181c29d6e94a55ba01807fe05b0f34b65ef3546e3700324c71adb"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01224-08-001",
+          "score": 0.0656,
+          "sha256": "b5860be42ade1d7e002dcdbe3f66e2ae67c63ab0420584ac2f88dab52bc2d1c1"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-12-001",
+          "score": 0.1014,
+          "sha256": "9921ac5c2e63301249538943c55eee1c80ab97b47d291312df8e96d62c393ef8"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09205-08-001",
+          "score": 0.0857,
+          "sha256": "5f328ae36e41405f6734425292434a7aea37c1e64d8e89c8d7e0af1cfff75328"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-08-001",
+          "score": 0.074,
+          "sha256": "4ff8fff99012f652064795b8a09e2773f83292c6bd4b9976e530914c708e2040"
+        }
+      ]
+    },
+    "SC-LOC-009-03-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-YGT-TENDO-08-001",
+          "score": 0.0987,
+          "sha256": "17ef03cc8fd24a7e2b4108754fc06267dd7ba8e2397db0592cb0f696b03825bb"
+        },
+        {
+          "scenarioId": "SC-LOC-005-04-001",
+          "score": 0.0957,
+          "sha256": "7fefc2db83a41e9db2c123eb530717cfb682b18d07c5a412c6f1e8af0bc68219"
+        },
+        {
+          "scenarioId": "SC-LOC-AOM-MUTSU-02-001",
+          "score": 0.0873,
+          "sha256": "8b959f5821b2e211519bbd43157e0219f8a51537becfe316fe193d2f1597832b"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09215-07-001",
+          "score": 0.0681,
+          "sha256": "1864c86f15e7068df4b4e246465e8d8b968f58bd0770ace9e2a2d6f1c3eada7e"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-ASHIKAGA-07-001",
+          "score": 0.0647,
+          "sha256": "cd0148b1be8174262650aeee373010d6eb888e23889177efc4ac7e9331f8a0c6"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09211-04-001",
+          "score": 0.0625,
+          "sha256": "3613be2a7d95674f9a130454087fd7bce0718c6e2a04782cce055d77cc7aa4ef"
+        }
+      ]
+    },
+    "SC-LOC-009-04-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-06205-03-001",
+          "score": 0.082,
+          "sha256": "97aaad7d9d3452ff4cb6b31031ee727efde2e5abe73cfdfc8d8baaf84a2a1ed6"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08227-03-001",
+          "score": 0.0797,
+          "sha256": "36c36c290c88db3f6a15cde4a9096821624ba81ec4f77f87b4de2dd3f9b15284"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08230-03-001",
+          "score": 0.0743,
+          "sha256": "beb4df1687dafac6d571f184a0c202a51137609e08d94ffee163ad17ec4ea931"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09203-06-001",
+          "score": 0.106,
+          "sha256": "249b277f56bd68533385db3fce8bf928aa0894c7bf6d0cb64e2ad03dba234b0b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09203-03-001",
+          "score": 0.081,
+          "sha256": "5549284219b7a5a449f16a9e2505538842aa1fc31362b0d53e374385988dbae8"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-ASHIKAGA-06-001",
+          "score": 0.075,
+          "sha256": "af122ee0f0f7184fc59387ba9ff23ee41c6fc1706d2a92b94a79a67d14700e8b"
+        }
+      ]
+    },
+    "SC-LOC-009-05-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-08225-04-001",
+          "score": 0.1,
+          "sha256": "1e288c5523cdad8ec60a030f97923e7000d5a2ed016603ef3bfc1dd33c14051b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08227-04-001",
+          "score": 0.0967,
+          "sha256": "31f11d4f671c590565f9dc7cfb05d907b1f2d39aa5633fd24880717888c1b4aa"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08222-03-001",
+          "score": 0.0865,
+          "sha256": "66d065ec17499ebf410126218499dfabf2957fa53ed006c1a64ae327bc1b239d"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09215-04-001",
+          "score": 0.0537,
+          "sha256": "31f655b2a2823885708ede49bb2cace2348fa8583923601487c835c7276b5fb7"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09203-04-001",
+          "score": 0.0485,
+          "sha256": "e008cd1c5281ae723a8e600515fae47b131ef8be7d2f6a307d85b01858bcdd10"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09216-03-001",
+          "score": 0.047,
+          "sha256": "cc1f054ea6aac52cbf2fafb86ea7838918bb27de44116c7361653ea844cbfc67"
+        }
+      ]
+    },
+    "SC-LOC-009-06-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-AOM-TOWADA-04-001",
+          "score": 0.1051,
+          "sha256": "c616f77577f48dcbbdd9bda2b400bd7aebedffe79a644e678e81916d34d9b85f"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-03210-01-001",
+          "score": 0.0703,
+          "sha256": "479ccd89e6d3b56a6a5118a4e2259b6016518cbe69f94c78942b18aed6b74ba5"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-04208-07-001",
+          "score": 0.0687,
+          "sha256": "e0d0f4d5d7fd730bc5336aa74373ec66073fde3f51b2b3d5fe115d9ea59380b6"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-07-001",
+          "score": 0.0762,
+          "sha256": "ba2ed43f1cc5c250c8310244f9939afc6d3758d466b84618f77b32de42023d6d"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09209-05-001",
+          "score": 0.0631,
+          "sha256": "043eb5576c8f87508a7824b60b9476c507aca743b867de0b629fcab679463e60"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09215-08-001",
+          "score": 0.0604,
+          "sha256": "5d0291a974d37fd781ad56c4f1410670f867446379a4ca6a07eb11f1ff2588fe"
+        }
+      ]
+    },
+    "SC-LOC-009-07-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-008-04-001",
+          "score": 0.107,
+          "sha256": "1fb8f354258adaba0d9b0139fe5d76561fc85228b6ac3173973ca8944acb648b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08223-07-001",
+          "score": 0.1013,
+          "sha256": "3b19f203c5ad61b7fe5eaead67c587ccdec68fa944f7fe7d222da2ad9e9971a9"
+        },
+        {
+          "scenarioId": "SC-LOC-AOM-TOWADA-04-001",
+          "score": 0.0784,
+          "sha256": "c616f77577f48dcbbdd9bda2b400bd7aebedffe79a644e678e81916d34d9b85f"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09214-07-001",
+          "score": 0.0915,
+          "sha256": "87b8d44d47cfa972501e7d50ff2afe4d999053ba07358e6de8820badb8dbc35b"
+        },
+        {
+          "scenarioId": "SC-LOC-009-06-001",
+          "score": 0.0762,
+          "sha256": "17fdf52367f7a8ec462944fb9db786686cc0b9c769f8ad0c2aa6d13959ba94d1"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-03-001",
+          "score": 0.0673,
+          "sha256": "56ffe73a96a9cc57656a043b6ab5c0690f49fa0bc965b9f42e043b7a53e2365b"
+        }
+      ]
+    },
+    "SC-LOC-009-08-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01211-02-001",
+          "score": 0.1067,
+          "sha256": "60a7a9d4d48999a04e8da79eeba7b9c685e053ec3459fcdc931ed3a713acb59b"
+        },
+        {
+          "scenarioId": "SC-LOC-002-08-001",
+          "score": 0.1023,
+          "sha256": "30352d9f0b8928925dca2efd57925f28dbab9f746ad5d9eae51ff3e584f4a4e4"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01205-06-001",
+          "score": 0.0792,
+          "sha256": "d22bb9fe61a5a2c7fae2889822a36b2e178f2adb43d27c69b928e3958f192210"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-TCG-ASHIKAGA-06-001",
+          "score": 0.1024,
+          "sha256": "af122ee0f0f7184fc59387ba9ff23ee41c6fc1706d2a92b94a79a67d14700e8b"
+        },
+        {
+          "scenarioId": "SC-TCG-NASUSHIOBARA-001",
+          "score": 0.0729,
+          "sha256": "64f1f6400362830c1f268c1247b91953af143463a990355f97645ad06adfdfb2"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NIKKO-08-001",
+          "score": 0.0652,
+          "sha256": "060aefe441ee22a8467e5ed06e95bcfab02351e29ad627e279a1c03c67f04b2d"
+        }
+      ]
+    },
+    "SC-LOC-009-09-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-HKD-OBIHIRO-08-001",
+          "score": 0.1223,
+          "sha256": "73086d96d6ff4735d7a495cc05c991037c762feee861a4fcfaacbcc02f2c3132"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-04208-06-001",
+          "score": 0.0892,
+          "sha256": "b58f2cc2410a024582c3033ed4c7629b9c390279d2ada2bdb335c6804dde94a0"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-YOKOTE-08-001",
+          "score": 0.0687,
+          "sha256": "8cd5465da99d9ebe4e674183a4ce994128974c4750cfc99161b4adc0cb053c17"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-TCG-NIKKO-08-001",
+          "score": 0.1315,
+          "sha256": "060aefe441ee22a8467e5ed06e95bcfab02351e29ad627e279a1c03c67f04b2d"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09209-02-001",
+          "score": 0.0639,
+          "sha256": "e6437f5bd8d6f8f277cd0d636955ebff0526edfb8733094ef0fe1c1242f69f51"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09214-02-001",
+          "score": 0.0603,
+          "sha256": "a37089f933baf1de273ffa8551ad4837904eb8fbedcfb78de37fd09b215ca13e"
+        }
+      ]
+    },
+    "SC-LOC-009-10-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-002-17-001",
+          "score": 0.1099,
+          "sha256": "25e33a3fd8af86b69ed80df7002437f45a71ee4444728317a132a7e17de83a41"
+        },
+        {
+          "scenarioId": "SC-LOC-004-11-001",
+          "score": 0.095,
+          "sha256": "cce8d36cdb603f6bffd9b28d0110af557bf669ffdda73110ae41540d3b8e4dc5"
+        },
+        {
+          "scenarioId": "SC-LOC-004-01-001",
+          "score": 0.0903,
+          "sha256": "47f276af385c789747094161a2da0be08b795927b130ffcc627aedd7e4a0729e"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09216-08-001",
+          "score": 0.1213,
+          "sha256": "009ea794cca05c4ac6e897cae132df221e59301fe28972048a2dc727862cc7b6"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09215-05-001",
+          "score": 0.0606,
+          "sha256": "b4f71baa720c8a8fa08f0faa0369258bb696d9aada4af18d22669753590dc407"
+        },
+        {
+          "scenarioId": "SC-LOC-009-11-001",
+          "score": 0.0596,
+          "sha256": "770d96c1289e855c44c0ffd3a2605d4c340cf4e75c87683904e9f95b9f0633af"
+        }
+      ]
+    },
+    "SC-LOC-009-11-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-AKT-SEMBOKU-08-001",
+          "score": 0.0866,
+          "sha256": "00a6a8b4185748fabbf5a076bc6d37b6c2076d9b2384a81baf90dc441e37e90a"
+        },
+        {
+          "scenarioId": "SC-LOC-IWT-ICHINOSEKI-08-001",
+          "score": 0.073,
+          "sha256": "5ecce9886a148a8d6cb44751c1a80a2668af468f72d65be9c6543233d2728d1b"
+        },
+        {
+          "scenarioId": "SC-LOC-IWT-MIYAKO-04-001",
+          "score": 0.0729,
+          "sha256": "efefa5d652bd64d74c070a7c4739f9769a461fc25d196c2fd9e8e94317b9cb6d"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-TCG-ASHIKAGA-07-001",
+          "score": 0.0685,
+          "sha256": "cd0148b1be8174262650aeee373010d6eb888e23889177efc4ac7e9331f8a0c6"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-03-001",
+          "score": 0.0649,
+          "sha256": "56ffe73a96a9cc57656a043b6ab5c0690f49fa0bc965b9f42e043b7a53e2365b"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NIKKO-03-001",
+          "score": 0.0639,
+          "sha256": "0c098582394d3b6f56b54671aba4094aad73b9853a7d0fcec5efc0af5a572fec"
+        }
+      ]
+    },
+    "SC-LOC-009-12-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-AOM-HIROSAKI-08-001",
+          "score": 0.0972,
+          "sha256": "47164e1e64a2080e8a2f2465c54ae83e2af142ca61f94c9f37513d6ae7d5fca1"
+        },
+        {
+          "scenarioId": "SC-LOC-IBR-TSUKUBA-04-001",
+          "score": 0.0899,
+          "sha256": "9d6039f509ee2ac5fd40942e3454666de7759a653b72f0d1e04d9ce7cd65e9d2"
+        },
+        {
+          "scenarioId": "SC-LOC-001-09-001",
+          "score": 0.0834,
+          "sha256": "0d84282a501d13bf786c33d1fde2006078c7900b722a3630859453aad09e3ee5"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-16-001",
+          "score": 0.1232,
+          "sha256": "f822c4fa7325a4e1ec0887edc65a3aefc0e54bc84fc3f45d789710cb8a81b4b4"
+        },
+        {
+          "scenarioId": "SC-LOC-009-19-001",
+          "score": 0.1157,
+          "sha256": "22bf1d8756d00427bffbbe50f9fcf7cf2c8f6f9c8fc522bad1f310871f628b8a"
+        },
+        {
+          "scenarioId": "SC-LOC-009-02-001",
+          "score": 0.1014,
+          "sha256": "29b62d3786856ee791235dae136517a7b980972cb61de6389a0c272e17aec793"
+        }
+      ]
+    },
+    "SC-LOC-009-13-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-003-11-001",
+          "score": 0.1177,
+          "sha256": "97815cbf9cad8a34eaaac57242df4af4fa4184739b866a4d9bd808cb82bf3bc0"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08210-04-001",
+          "score": 0.0995,
+          "sha256": "6297c25bcb3cc73291c4eca5528e780ce6adac1b351e2f5a4386470f450f8a66"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08224-08-001",
+          "score": 0.074,
+          "sha256": "c3b973b4f9abab8447e7d998d9db9cdab81744e868846efd3a48ffe0e335fba9"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-TCG-ASHIKAGA-02-001",
+          "score": 0.087,
+          "sha256": "f6dda251a26c66468d9c1655047616afe62ab0cdae4e7213bb8216c8f65a6a23"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NIKKO-02-001",
+          "score": 0.0604,
+          "sha256": "8e6ea39ebab8ac3d888eb094073bc6ad45b75e5b89d341921b48feeeb5db618c"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NIKKO-03-001",
+          "score": 0.0597,
+          "sha256": "0c098582394d3b6f56b54671aba4094aad73b9853a7d0fcec5efc0af5a572fec"
+        }
+      ]
+    },
+    "SC-LOC-009-14-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-03214-01-001",
+          "score": 0.0865,
+          "sha256": "4dc7fa33a3ce95ac9d6ee58739e5848f4fc45ec899d1d2cc53959a04134e9439"
+        },
+        {
+          "scenarioId": "SC-LOC-IWT-ICHINOSEKI-03-001",
+          "score": 0.0764,
+          "sha256": "12e9d05874a143100c23b6edb0c86d67316984953caab94e65c352136d56f523"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08227-01-001",
+          "score": 0.0705,
+          "sha256": "8c9a197bc9ae3becd2c140d0dfd2ab49406debd60b405a4322dc01518ec29235"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09216-01-001",
+          "score": 0.0726,
+          "sha256": "c19d20c70969f5a16a6d1ea33074fe95721670f63869dfe6cf7a96ade642ec78"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-05-001",
+          "score": 0.0721,
+          "sha256": "c5012d79be4086fb8e94961d3b08df2d0470abb81025d47089975c3f38c378ec"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09209-08-001",
+          "score": 0.0711,
+          "sha256": "d4f52f8b86fe8277b4031b717babfc884be484dd93041cc7536bf3916f568a33"
+        }
+      ]
+    },
+    "SC-LOC-009-15-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01222-08-001",
+          "score": 0.1388,
+          "sha256": "072eb1910358e4d0b745dda1f21e4e24f628565d8708a14be6fac25f8bd59e2e"
+        },
+        {
+          "scenarioId": "SC-LOC-001-15-001",
+          "score": 0.0581,
+          "sha256": "9527e2e1e743e81fb0b51be8c2c8417956b4be91f58ea9a581721a4d17c30cfc"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-07213-07-001",
+          "score": 0.0579,
+          "sha256": "cc89e06a74421418f041d484151b2ad4f1bb4ae6d367711d935dfc3299eb843d"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09216-08-001",
+          "score": 0.0716,
+          "sha256": "009ea794cca05c4ac6e897cae132df221e59301fe28972048a2dc727862cc7b6"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-08-001",
+          "score": 0.0666,
+          "sha256": "f050090e969d3657deb5543a6fa530acd95d3e0b0fde0f5cd8c960b06ff9f844"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-05-001",
+          "score": 0.0645,
+          "sha256": "392d079a6e48409cd35ea1849d419b2083f768c1212eae98e306461b7c530214"
+        }
+      ]
+    },
+    "SC-LOC-009-16-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-IWT-ICHINOSEKI-08-001",
+          "score": 0.0944,
+          "sha256": "5ecce9886a148a8d6cb44751c1a80a2668af468f72d65be9c6543233d2728d1b"
+        },
+        {
+          "scenarioId": "SC-LOC-001-19-001",
+          "score": 0.0928,
+          "sha256": "22fbeeaddbd887b0e3c02cea55749436b57aa687bb314846da010bf41ee16848"
+        },
+        {
+          "scenarioId": "SC-LOC-004-14-001",
+          "score": 0.0879,
+          "sha256": "89acddbcb495b954c606cb9e157f1ccfe406db2569ab97c7dbed18f0db3d6076"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-12-001",
+          "score": 0.1232,
+          "sha256": "9921ac5c2e63301249538943c55eee1c80ab97b47d291312df8e96d62c393ef8"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NIKKO-04-001",
+          "score": 0.1039,
+          "sha256": "c3525cf3edb3334a4794ac4179c2dd5819f10a046ce227ae9bf1f8b3799451c9"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NIKKO-06-001",
+          "score": 0.0838,
+          "sha256": "2f99a1bc2022f7c984d3dd2dba24e7799a9d6434e22c934c2f68bc5f8732ce8c"
+        }
+      ]
+    },
+    "SC-LOC-009-17-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01233-08-001",
+          "score": 0.0995,
+          "sha256": "80843a6ac43a85df721febffee8f87f0ff24e0fad01091412d662611e2fb459f"
+        },
+        {
+          "scenarioId": "SC-LOC-001-15-001",
+          "score": 0.0893,
+          "sha256": "9527e2e1e743e81fb0b51be8c2c8417956b4be91f58ea9a581721a4d17c30cfc"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01208-08-001",
+          "score": 0.0818,
+          "sha256": "36dd867a88c3707b255187f2d155db849444d4bf52e399743d3ca059764226cf"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09211-08-001",
+          "score": 0.0655,
+          "sha256": "196485b6d61003db7b93daa7670a6aacf089714765bf241bd47e9f3d0576f259"
+        },
+        {
+          "scenarioId": "SC-LOC-009-15-001",
+          "score": 0.0598,
+          "sha256": "c8903fc47096d7ec3f4dd37344630dbe0de9751b93f896b232bb69155c117cc3"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09209-08-001",
+          "score": 0.0568,
+          "sha256": "d4f52f8b86fe8277b4031b717babfc884be484dd93041cc7536bf3916f568a33"
+        }
+      ]
+    },
+    "SC-LOC-009-18-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-004-17-001",
+          "score": 0.079,
+          "sha256": "2b0e038faba9becc05b38f7ebf42e5e8881ce86d0947447a8ec0d207fde0fb88"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08210-03-001",
+          "score": 0.0728,
+          "sha256": "7009427d4895a592eced198bd9de35461ffecc9d9f27e31e17d8abab147324b3"
+        },
+        {
+          "scenarioId": "SC-LOC-008-11-001",
+          "score": 0.0702,
+          "sha256": "413148e14dde3f17b857edbc11d06e9c5f73978d3da260772a1fe72fa207e2b6"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-06-001",
+          "score": 0.0764,
+          "sha256": "feb6ed9c5114af312baea93e24409ea573b3ec4cb2228dec4c7afe89ef42c7f4"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-08-001",
+          "score": 0.0719,
+          "sha256": "4ff8fff99012f652064795b8a09e2773f83292c6bd4b9976e530914c708e2040"
+        },
+        {
+          "scenarioId": "SC-LOC-009-08-001",
+          "score": 0.0633,
+          "sha256": "7fa93ed35750a379fcba0a6e23379ca4b2f819624e0ab61a2e7a667bedae2f39"
+        }
+      ]
+    },
+    "SC-LOC-009-19-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-001-02-001",
+          "score": 0.0957,
+          "sha256": "78c739500f57f0a2ce8a767753b60c09af7d636c3665365b6efa1610c7e1dfce"
+        },
+        {
+          "scenarioId": "SC-LOC-001-18-001",
+          "score": 0.0918,
+          "sha256": "bf1c37577b345a640757117be4a666240131b8bb265b1591fcc9f7838a426805"
+        },
+        {
+          "scenarioId": "SC-LOC-001-09-001",
+          "score": 0.0902,
+          "sha256": "0d84282a501d13bf786c33d1fde2006078c7900b722a3630859453aad09e3ee5"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-12-001",
+          "score": 0.1157,
+          "sha256": "9921ac5c2e63301249538943c55eee1c80ab97b47d291312df8e96d62c393ef8"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NASUSHIOBARA-07-001",
+          "score": 0.0933,
+          "sha256": "e214e2414a28cb9644395da2e9896d161aea6d05cf3aa04eee5a2c084b46968d"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-03-001",
+          "score": 0.0916,
+          "sha256": "e8d0fca667a3cb7d6b7fb56536db58093850be49b807c59135f89b2605e72a2b"
+        }
+      ]
+    },
+    "SC-LOC-009-20-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-07212-03-001",
+          "score": 0.0693,
+          "sha256": "f9670d6d28e1b29b6ef8d13312fe24246d9588424faf9fbc1b9c535bad1d2dc6"
+        },
+        {
+          "scenarioId": "SC-IWT-MIYAKO-001",
+          "score": 0.0686,
+          "sha256": "ffa7a08297bf6aded6ab8c18ba0fbd8fe971672e51a0b6e6fc22da3838749444"
+        },
+        {
+          "scenarioId": "SC-TKY-CON-002",
+          "score": 0.068,
+          "sha256": "c09d692b58a7d1cb22ae149b0043a224ea135c77ada977d4230d83114ee494a0"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-TCG-NASUSHIOBARA-04-001",
+          "score": 0.069,
+          "sha256": "223c97d295ef1afc1b805884cd54a50b44df2ca9d7527972154026bffa8d71b7"
+        },
+        {
+          "scenarioId": "SC-TCG-ASHIKAGA-001",
+          "score": 0.0636,
+          "sha256": "5d53d3d663c295edbaa17bd335cfcce21591340ac5ffb8b28a02c2c8cbb9e29d"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09203-08-001",
+          "score": 0.0526,
+          "sha256": "07718626615933da96e828f6e3b7efcc0f16a1d925909ee5ee1ac5def7f8a515"
+        }
+      ]
+    },
+    "SC-LOC-009-21-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01210-06-001",
+          "score": 0.1309,
+          "sha256": "7e9d440a156f8324e84d6becdf8bfe95b05390e29db81a92229a732e8ebcbee9"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08205-06-001",
+          "score": 0.107,
+          "sha256": "00e172fa26a7dd935bf156ef8adc0e311c51f78c855e6196996a21887d4b05c4"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-06207-06-001",
+          "score": 0.084,
+          "sha256": "50f2f085b2698925109ba66aa6c6e88ba7cd97f7683a3ab629ae7496851f98bc"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09209-06-001",
+          "score": 0.0993,
+          "sha256": "e5dfcc0878fae125ac2df0570287166412b9b8947f6edee1549555b3832467b4"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09203-03-001",
+          "score": 0.0639,
+          "sha256": "5549284219b7a5a449f16a9e2505538842aa1fc31362b0d53e374385988dbae8"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09216-06-001",
+          "score": 0.0612,
+          "sha256": "84dc7e8f651dd17348b3fdabf837a4f400311b31428a49083b6cea98f18b8b0f"
+        }
+      ]
+    },
+    "SC-LOC-JP-09203-01-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01209-01-001",
+          "score": 0.1085,
+          "sha256": "2c32bdaa5e7744208b5b187c48724b4c59694f5d7b2d64722e432020e812d928"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01221-01-001",
+          "score": 0.0743,
+          "sha256": "9adf331b3e66ca0351a509b0406d6143cd7e58dad128e23dc03b9e8d756e8581"
+        },
+        {
+          "scenarioId": "SC-LOC-003-01-001",
+          "score": 0.073,
+          "sha256": "827fb5d08ed0afbb343cacd596bb746982c85540d65a1b24514ed68387e6b9f3"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09205-01-001",
+          "score": 0.0601,
+          "sha256": "96b29d5f812b69bfe70c811b41bdd4889b52da86c3ef3c1c3d82571747e7cf6a"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09216-01-001",
+          "score": 0.0599,
+          "sha256": "c19d20c70969f5a16a6d1ea33074fe95721670f63869dfe6cf7a96ade642ec78"
+        },
+        {
+          "scenarioId": "SC-TCG-NIKKO-001",
+          "score": 0.0499,
+          "sha256": "0f51258da277fbc97ce72cdd81a1f9ff7ab1f384e3a5c01abca836f3c61ff27c"
+        }
+      ]
+    },
+    "SC-LOC-JP-09203-02-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-05202-05-001",
+          "score": 0.1018,
+          "sha256": "03966bfc7e0be8f927eb508007111fbad0f85db66364f2cdb1d1d5ebcc9c925e"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01219-02-001",
+          "score": 0.0908,
+          "sha256": "89645faecd4997894151716a63617889a91c4f2a10f2dc3dbcd96cca62c443af"
+        },
+        {
+          "scenarioId": "SC-LOC-AOM-HACHINOHE-08-001",
+          "score": 0.0906,
+          "sha256": "bdfd3235e4069663de9add842087ec37e71ce60aa1a8289e79b82e522cf6a2e8"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09209-05-001",
+          "score": 0.0693,
+          "sha256": "043eb5576c8f87508a7824b60b9476c507aca743b867de0b629fcab679463e60"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09211-03-001",
+          "score": 0.0533,
+          "sha256": "9d4dbd95b3f3e23b1b249364bd09223aea654670cae704e3252149f98d6066ff"
+        },
+        {
+          "scenarioId": "SC-LOC-009-03-001",
+          "score": 0.0511,
+          "sha256": "3e401a1cd7df51967c197b0efe532efe0d566a4b9ffe2432ba45d9c86fe4effd"
+        }
+      ]
+    },
+    "SC-LOC-JP-09203-03-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01211-03-001",
+          "score": 0.0933,
+          "sha256": "69ecdace40a7c4278b9b5510d8af1f1166989cb989a22fc832c18767773157d2"
+        },
+        {
+          "scenarioId": "SC-LOC-AOM-HACHINOHE-04-001",
+          "score": 0.0887,
+          "sha256": "3cdde6a8ed5cb8d72c2c77a28ddabd7652ab582df17a462ba32331c7a81399c4"
+        },
+        {
+          "scenarioId": "SC-LOC-005-02-001",
+          "score": 0.0822,
+          "sha256": "d126d9b31df9514f8d3c9cd1e125c3855ac923060cd6df300139aee506a13e4e"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-04-001",
+          "score": 0.081,
+          "sha256": "6659876a7068e9e42eb82fb05828147d2be8c28aa2cfd2c544b7340e2b21e034"
+        },
+        {
+          "scenarioId": "SC-TCG-NASUSHIOBARA-001",
+          "score": 0.0689,
+          "sha256": "64f1f6400362830c1f268c1247b91953af143463a990355f97645ad06adfdfb2"
+        },
+        {
+          "scenarioId": "SC-LOC-009-16-001",
+          "score": 0.0672,
+          "sha256": "f822c4fa7325a4e1ec0887edc65a3aefc0e54bc84fc3f45d789710cb8a81b4b4"
+        }
+      ]
+    },
+    "SC-LOC-JP-09203-04-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-04214-04-001",
+          "score": 0.1673,
+          "sha256": "db764504aeddae15e1b07d6a046ec6336f84f461f46cda923577cc20410b9e88"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-07209-04-001",
+          "score": 0.1352,
+          "sha256": "f54b22ad98cee4acacb4b9996cace1bbf7bbc1847877128e96255db558b379e3"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08231-04-001",
+          "score": 0.1175,
+          "sha256": "141e2f800644bc9f3a91f06d4b3846ab3b6d69832af984f01cc7da86815a1dc5"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-12-001",
+          "score": 0.0605,
+          "sha256": "9921ac5c2e63301249538943c55eee1c80ab97b47d291312df8e96d62c393ef8"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NASUSHIOBARA-04-001",
+          "score": 0.0602,
+          "sha256": "223c97d295ef1afc1b805884cd54a50b44df2ca9d7527972154026bffa8d71b7"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09215-04-001",
+          "score": 0.0568,
+          "sha256": "31f655b2a2823885708ede49bb2cace2348fa8583923601487c835c7276b5fb7"
+        }
+      ]
+    },
+    "SC-LOC-JP-09203-05-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-04214-05-001",
+          "score": 0.195,
+          "sha256": "5a5c729c4acc3f3889d9e32772114aa114d48ab5b7c3a8c8a565fb1416a28c90"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01231-05-001",
+          "score": 0.1363,
+          "sha256": "05f9b2a85ee8695e05229c08b9c973ebc79e8b45979d2fe1662245a4e83c088b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-03203-05-001",
+          "score": 0.1198,
+          "sha256": "dbc3753a76e1b31918ca30d5017be0e37a7022dc6f228e1d5daf1fca7529e6ec"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-TCG-ASHIKAGA-08-001",
+          "score": 0.0708,
+          "sha256": "4bd3748eb9e8b21fb8c395e39d6a3c854d2a00a3c20fc5db3a7335b31a07cbc7"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-02-001",
+          "score": 0.0505,
+          "sha256": "335584391b7e8ca6b7fa21931890b4c0f07df97b9ba0c6f55fa5aff2384aef2b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09215-05-001",
+          "score": 0.0505,
+          "sha256": "b4f71baa720c8a8fa08f0faa0369258bb696d9aada4af18d22669753590dc407"
+        }
+      ]
+    },
+    "SC-LOC-JP-09203-06-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-06209-06-001",
+          "score": 0.0824,
+          "sha256": "83574ce0aeecd260a0536cf0e66b6eaf5b88bef1d0490f94bc9ede26582239bb"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-06212-06-001",
+          "score": 0.0734,
+          "sha256": "462e2b78f076b53ea570e1ac775f2183255ff1fa031ce7e2a948b619dd29f945"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01226-06-001",
+          "score": 0.0685,
+          "sha256": "3c4df0c7d4c48e29e202bf7bb12f3d505ade736a9aecbbcf09bd6b63ab5f8fd9"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-04-001",
+          "score": 0.106,
+          "sha256": "6659876a7068e9e42eb82fb05828147d2be8c28aa2cfd2c544b7340e2b21e034"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-07-001",
+          "score": 0.0538,
+          "sha256": "1b175ba6955badef322dfdd8b1af1e779122c9ef1b9cdf7b4a95c8031b31c6d6"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09216-07-001",
+          "score": 0.0508,
+          "sha256": "28cf6cedd3acfaa9cd5f9f82f1a338ffce4901daf0f33b11b972a3e389117ae8"
+        }
+      ]
+    },
+    "SC-LOC-JP-09203-07-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-001-09-001",
+          "score": 0.0753,
+          "sha256": "0d84282a501d13bf786c33d1fde2006078c7900b722a3630859453aad09e3ee5"
+        },
+        {
+          "scenarioId": "SC-LOC-IWT-ICHINOSEKI-05-001",
+          "score": 0.0679,
+          "sha256": "b33290727673d6807cf39e1f95a307a704ce1bc09f90c922ed493d3349ff0520"
+        },
+        {
+          "scenarioId": "SC-LOC-001-19-001",
+          "score": 0.0599,
+          "sha256": "22fbeeaddbd887b0e3c02cea55749436b57aa687bb314846da010bf41ee16848"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09216-08-001",
+          "score": 0.0602,
+          "sha256": "009ea794cca05c4ac6e897cae132df221e59301fe28972048a2dc727862cc7b6"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-ASHIKAGA-06-001",
+          "score": 0.06,
+          "sha256": "af122ee0f0f7184fc59387ba9ff23ee41c6fc1706d2a92b94a79a67d14700e8b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-02-001",
+          "score": 0.0551,
+          "sha256": "07d1a6f84d8f4fead102f6ad73306c610d2743c6edb1b3324a6a8b3a144a041b"
+        }
+      ]
+    },
+    "SC-LOC-JP-09203-08-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-08222-08-001",
+          "score": 0.0837,
+          "sha256": "edf75ea0dcd954d61a0b792038dc83261f8b9704cb37e8d6c37e068b581f2098"
+        },
+        {
+          "scenarioId": "SC-LOC-YGT-TENDO-07-001",
+          "score": 0.0693,
+          "sha256": "ee5ed7aa33c9b9adae19de16c1734682eb843715e86520ce9865485f2967abd7"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01230-08-001",
+          "score": 0.0662,
+          "sha256": "b41d0cfe42b539cde239fcf3eb84e48d30d42c697704b04a3ca6a7f2efb7dd53"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-02-001",
+          "score": 0.0749,
+          "sha256": "335584391b7e8ca6b7fa21931890b4c0f07df97b9ba0c6f55fa5aff2384aef2b"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NASUSHIOBARA-04-001",
+          "score": 0.0659,
+          "sha256": "223c97d295ef1afc1b805884cd54a50b44df2ca9d7527972154026bffa8d71b7"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-06-001",
+          "score": 0.0608,
+          "sha256": "feb6ed9c5114af312baea93e24409ea573b3ec4cb2228dec4c7afe89ef42c7f4"
+        }
+      ]
+    },
+    "SC-LOC-JP-09204-01-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-07208-01-001",
+          "score": 0.0958,
+          "sha256": "2dc0459484dd244533543c45047ed787644965b7aa112faa4e55a0cc9fedd5e1"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-03208-01-001",
+          "score": 0.0884,
+          "sha256": "c0a80385648364eeb7f7586efd41a5d31900ed19b7ebc777d80a75e65e69ff4e"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-02207-01-001",
+          "score": 0.0854,
+          "sha256": "4657faf5f028dbcbb78a8b403c133aa29bd54e91b778730a2ad8ee14b5c1f22c"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09209-01-001",
+          "score": 0.0862,
+          "sha256": "e705624d5f760bf30be62962c5eee1c8f392f193dbbdc883428369788cb27955"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-01-001",
+          "score": 0.0835,
+          "sha256": "45b9f22145439ce3e135bf369af2e800ad7c2338c2279ef15de032f563286358"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09205-08-001",
+          "score": 0.0662,
+          "sha256": "5f328ae36e41405f6734425292434a7aea37c1e64d8e89c8d7e0af1cfff75328"
+        }
+      ]
+    },
+    "SC-LOC-JP-09204-02-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01234-06-001",
+          "score": 0.1307,
+          "sha256": "938e0bafc9ea6276e521f26cb4e3bcd0fefff63bf7c6cc50fe94123d81347c3d"
+        },
+        {
+          "scenarioId": "SC-LOC-003-04-001",
+          "score": 0.113,
+          "sha256": "f13779789141f97f81cd16f20937b7151ea883ffbaf55db4e9cfc7343b378ea1"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-07212-03-001",
+          "score": 0.0933,
+          "sha256": "f9670d6d28e1b29b6ef8d13312fe24246d9588424faf9fbc1b9c535bad1d2dc6"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09209-06-001",
+          "score": 0.1025,
+          "sha256": "e5dfcc0878fae125ac2df0570287166412b9b8947f6edee1549555b3832467b4"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09215-03-001",
+          "score": 0.0916,
+          "sha256": "de7b2cd8c959d4408bb0acd47aee1f66990adc4b8f156cb4204598217ebb471e"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-02-001",
+          "score": 0.0884,
+          "sha256": "07d1a6f84d8f4fead102f6ad73306c610d2743c6edb1b3324a6a8b3a144a041b"
+        }
+      ]
+    },
+    "SC-LOC-JP-09204-03-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-02204-03-001",
+          "score": 0.1032,
+          "sha256": "a5649c837afa7fa4cee6ceaa4159914a932f637bb6f88445d4769a11887c31c2"
+        },
+        {
+          "scenarioId": "SC-LOC-004-13-001",
+          "score": 0.0832,
+          "sha256": "763b568394fe7794cb55f135132c07329916e44f45db392fc71adb09bdc69e1c"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08217-03-001",
+          "score": 0.0809,
+          "sha256": "8655f5d6fa8deb5c5854e3e438decbf58a561cf51d4727b76cabf7cd8df0592d"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09216-07-001",
+          "score": 0.1086,
+          "sha256": "28cf6cedd3acfaa9cd5f9f82f1a338ffce4901daf0f33b11b972a3e389117ae8"
+        },
+        {
+          "scenarioId": "SC-LOC-009-19-001",
+          "score": 0.0916,
+          "sha256": "22bf1d8756d00427bffbbe50f9fcf7cf2c8f6f9c8fc522bad1f310871f628b8a"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09211-03-001",
+          "score": 0.0911,
+          "sha256": "9d4dbd95b3f3e23b1b249364bd09223aea654670cae704e3252149f98d6066ff"
+        }
+      ]
+    },
+    "SC-LOC-JP-09204-04-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01205-04-001",
+          "score": 0.1357,
+          "sha256": "62ec6ba705265524c9d48db156f0ef4cc1c13b797e169bf25d5714da4783e6f0"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05211-04-001",
+          "score": 0.1299,
+          "sha256": "6535439a2f5c9d3a2b681a32e5285902bf4c3bce61747dd5846280c168f3db61"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-24208-04-001",
+          "score": 0.1163,
+          "sha256": "dd2559d41bda3d3cb73d09b6f5a8093e53eb089f74e6e971f33363e507d04ca4"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09204-06-001",
+          "score": 0.1002,
+          "sha256": "5e8a0afb613b25d22fbefce47883713d4fe2a82fe9601ff4bea191942a44c5ff"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09211-06-001",
+          "score": 0.0928,
+          "sha256": "11c2effdbfd70020bb93e58b639b135928e96b90e3add27f486748d411014e25"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09215-04-001",
+          "score": 0.0621,
+          "sha256": "31f655b2a2823885708ede49bb2cace2348fa8583923601487c835c7276b5fb7"
+        }
+      ]
+    },
+    "SC-LOC-JP-09204-05-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-02210-05-001",
+          "score": 0.1061,
+          "sha256": "daeb4ffe3e3f15bf38536a28cd129e0053c036e333d0e66ab1afda3cfcfa0529"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-03215-05-001",
+          "score": 0.0858,
+          "sha256": "4af43cd5b0ec10116e8d9f602ebce27c26551b72d9ddfafe074c45a7000cb08e"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01211-01-001",
+          "score": 0.0857,
+          "sha256": "5762b5a69866af9c9efbd888b165c01c1862670b5963e4ca56f3f3b9bf1d5568"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09215-03-001",
+          "score": 0.0739,
+          "sha256": "de7b2cd8c959d4408bb0acd47aee1f66990adc4b8f156cb4204598217ebb471e"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NASUSHIOBARA-07-001",
+          "score": 0.0724,
+          "sha256": "e214e2414a28cb9644395da2e9896d161aea6d05cf3aa04eee5a2c084b46968d"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09215-05-001",
+          "score": 0.0677,
+          "sha256": "b4f71baa720c8a8fa08f0faa0369258bb696d9aada4af18d22669753590dc407"
+        }
+      ]
+    },
+    "SC-LOC-JP-09204-06-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01212-06-001",
+          "score": 0.1444,
+          "sha256": "254f359458a06a625339aa320c5780d52ed3344eb5366c42a8cf09b7772f40d2"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01205-06-002",
+          "score": 0.1338,
+          "sha256": "32846046740452081a647ae93778cbd5f35d2da479dc35446012bb4f12a76fa5"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-24208-06-001",
+          "score": 0.1259,
+          "sha256": "327221cba7d5ed9e82c1397ea49e6920f6f80635c9a7beaafc8365f1370d1fac"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09211-06-001",
+          "score": 0.105,
+          "sha256": "11c2effdbfd70020bb93e58b639b135928e96b90e3add27f486748d411014e25"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-04-001",
+          "score": 0.1002,
+          "sha256": "e25208147288acab31604ebd4a4a6d995f787c9ceae4256856d54e27434e4359"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-01-001",
+          "score": 0.0633,
+          "sha256": "3585cc5331d681ab364e16a8bfea209cf8de02e7db4bf4a7bfbbf00cabcde8be"
+        }
+      ]
+    },
+    "SC-LOC-JP-09204-07-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-02207-07-001",
+          "score": 0.1258,
+          "sha256": "b74585b30614e8ae46c6acfbc92822f265be4afa7a22a29f4efd6cc818254d6e"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-02210-07-001",
+          "score": 0.1192,
+          "sha256": "6a84682ab07fce4d0154dd6f016c14ca4e066b08c4cf41a0dd56212b3a7fa2d5"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05211-07-001",
+          "score": 0.0947,
+          "sha256": "cc42fc494575da0bbe15edf69c60bb7acc9eddfcd32574334a827d4585071d93"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09216-07-001",
+          "score": 0.073,
+          "sha256": "28cf6cedd3acfaa9cd5f9f82f1a338ffce4901daf0f33b11b972a3e389117ae8"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-07-001",
+          "score": 0.0669,
+          "sha256": "341639f1940d62396bf38b61c5f0d9cfe7d64ca3d5ba4d0a71c1823e1caf7d2f"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09211-07-001",
+          "score": 0.0664,
+          "sha256": "b2089e072c1a83c85c558b7cfa34d97f94cbbd8db65385a0c028cffa0a299c6d"
+        }
+      ]
+    },
+    "SC-LOC-JP-09204-08-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-002-14-001",
+          "score": 0.0983,
+          "sha256": "668cc1777ba3f3ed09120228df9b47d1f9b51595dbeb1a8b23dc543477d61558"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01205-08-001",
+          "score": 0.0669,
+          "sha256": "e928b14aa589ae4d1221adc0c2b1658f789e92cca4498add78470f1927718dca"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-03210-08-001",
+          "score": 0.0644,
+          "sha256": "d8fc71cc65830ca86b30e39e8aa486dec8bcb37d85ad321d0ff4b8c3d655d5c2"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09209-08-001",
+          "score": 0.0743,
+          "sha256": "d4f52f8b86fe8277b4031b717babfc884be484dd93041cc7536bf3916f568a33"
+        },
+        {
+          "scenarioId": "SC-LOC-009-15-001",
+          "score": 0.0666,
+          "sha256": "c8903fc47096d7ec3f4dd37344630dbe0de9751b93f896b232bb69155c117cc3"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09215-08-001",
+          "score": 0.057,
+          "sha256": "5d0291a974d37fd781ad56c4f1410670f867446379a4ca6a07eb11f1ff2588fe"
+        }
+      ]
+    },
+    "SC-LOC-JP-09205-01-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01205-01-001",
+          "score": 0.1143,
+          "sha256": "b3d80f97d7a4b5196e4ad39c8834415093cb640974814cef8f00a0e8cd9644e5"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01217-01-001",
+          "score": 0.0722,
+          "sha256": "3f7c5ddbc771a337af0d8b2972319ad9f5ddfe1ee84d19309bed3bb3a1eb850c"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01209-01-001",
+          "score": 0.0713,
+          "sha256": "2c32bdaa5e7744208b5b187c48724b4c59694f5d7b2d64722e432020e812d928"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09210-01-001",
+          "score": 0.0853,
+          "sha256": "45b9f22145439ce3e135bf369af2e800ad7c2338c2279ef15de032f563286358"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09214-01-001",
+          "score": 0.0739,
+          "sha256": "4bd28542c93eeedb7a2cec76ca4ddae376a665ba7a0c859731050b525ea42441"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09216-01-001",
+          "score": 0.0731,
+          "sha256": "c19d20c70969f5a16a6d1ea33074fe95721670f63869dfe6cf7a96ade642ec78"
+        }
+      ]
+    },
+    "SC-LOC-JP-09205-02-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-02210-02-001",
+          "score": 0.1218,
+          "sha256": "291d00eaf4e4d56bf4627c1442f8fee8892085293bed821d63ba36ceb1c61594"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01233-02-001",
+          "score": 0.0989,
+          "sha256": "48fe9c33a40af9a063bfb841ff55c06d4e61f9e07c926d9c28c0e184ce6e83a6"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-04213-02-001",
+          "score": 0.0885,
+          "sha256": "9842fb7bfb6b396cc054b00235f3162dbf75b654a3cb332503c443287ba602a1"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09204-02-001",
+          "score": 0.0778,
+          "sha256": "c1ec9bf2ccaf50345ee2b47bf799a7abd6aef89e9a2e06073c188401f6bbe33d"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-05-001",
+          "score": 0.0758,
+          "sha256": "c5012d79be4086fb8e94961d3b08df2d0470abb81025d47089975c3f38c378ec"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09211-02-001",
+          "score": 0.0661,
+          "sha256": "d260c7835fafa0bb77776e6618e25de56d2de897220a5b37453029681354f04d"
+        }
+      ]
+    },
+    "SC-LOC-JP-09205-03-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-02209-03-001",
+          "score": 0.139,
+          "sha256": "2876092456e183d112f3b8c95e7e290ab7bb994e6e6de76d8ce766ee26eb2e5f"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-04207-03-001",
+          "score": 0.1238,
+          "sha256": "69adcd048c9ac89aa87bbe799bac3c7fd6dfabfcfd7a107f1291ad2819a05497"
+        },
+        {
+          "scenarioId": "SC-LOC-006-12-001",
+          "score": 0.1187,
+          "sha256": "248a1a7720b159fde0454ea792e6cc3f2324d1730cd83b1acfeb1a5d0e452d95"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09214-03-001",
+          "score": 0.0849,
+          "sha256": "8d88dbd893da1eca661e19b018db8dc91741e08b4ba232f5bfb0128abf55dc9c"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-07-001",
+          "score": 0.0814,
+          "sha256": "1b175ba6955badef322dfdd8b1af1e779122c9ef1b9cdf7b4a95c8031b31c6d6"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-03-001",
+          "score": 0.0672,
+          "sha256": "1a20eee6a44717c8edc61f4c26061d8ca9de8a7a63a54ab7cc93ff393c8150fa"
+        }
+      ]
+    },
+    "SC-LOC-JP-09205-04-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-04206-04-001",
+          "score": 0.1724,
+          "sha256": "fe92884e610169f6df48b9e8bcd4854bf3e788a6f2163e59faacf443a3c03adb"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-04208-04-001",
+          "score": 0.1315,
+          "sha256": "f9e3f7bb8ebee78bd37d5c780c630ff0d3fe15445dab0d107e784d68b4b56240"
+        },
+        {
+          "scenarioId": "SC-LOC-001-06-001",
+          "score": 0.1189,
+          "sha256": "43676900de156a6a250a418e877fe32cc96b3996b5d719cc883b79309a3bda57"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09214-04-001",
+          "score": 0.1295,
+          "sha256": "cc995fe017d965e8ca893e6a0d322d59fd22d66ad1237d41cb48152e38d0cc17"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09211-08-001",
+          "score": 0.0652,
+          "sha256": "196485b6d61003db7b93daa7670a6aacf089714765bf241bd47e9f3d0576f259"
+        },
+        {
+          "scenarioId": "SC-LOC-009-03-001",
+          "score": 0.0601,
+          "sha256": "3e401a1cd7df51967c197b0efe532efe0d566a4b9ffe2432ba45d9c86fe4effd"
+        }
+      ]
+    },
+    "SC-LOC-JP-09205-05-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01209-05-001",
+          "score": 0.1485,
+          "sha256": "4f7bb4e661b95bdbe61ad4242239afef0084f8e31db08c0aa40a65e3e0f0ada9"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-02204-05-001",
+          "score": 0.1414,
+          "sha256": "dc7c58ced52a6e8f9d1510ec9e91cd42455d5e8215765ace2521e78364f7c6d2"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01213-05-001",
+          "score": 0.1344,
+          "sha256": "5c1274a136967c9321ac8761517607e8fc4d1d406c4aa4ba4adf8d37598c6712"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09214-06-001",
+          "score": 0.0932,
+          "sha256": "1c0883c426b4dcbfd9b0b6df327198ddc4289833dd44ff24ce8c2bdb26012c57"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09214-05-001",
+          "score": 0.0829,
+          "sha256": "ca2403f1d255e9449901e9c6630025710a6fe9419f4a9a2baa54a32ce9e27339"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09209-02-001",
+          "score": 0.0672,
+          "sha256": "e6437f5bd8d6f8f277cd0d636955ebff0526edfb8733094ef0fe1c1242f69f51"
+        }
+      ]
+    },
+    "SC-LOC-JP-09205-06-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-03216-06-001",
+          "score": 0.1323,
+          "sha256": "4cc43ea86ca1c8fba975cbb5efc066dbb49e0c72e1eebc98ce8990e2a559e06f"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01229-03-001",
+          "score": 0.128,
+          "sha256": "e4cefe3f47939ccb73ed1ca994cfc6a8cd6c71c7a2d8f6ce6c5b133e298a42ab"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-03203-06-001",
+          "score": 0.1177,
+          "sha256": "e893e0e0703577b675103f1078d409a97137afd978e710d4b54b882392aa3fcb"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09214-06-001",
+          "score": 0.1044,
+          "sha256": "1c0883c426b4dcbfd9b0b6df327198ddc4289833dd44ff24ce8c2bdb26012c57"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09216-06-001",
+          "score": 0.09,
+          "sha256": "84dc7e8f651dd17348b3fdabf837a4f400311b31428a49083b6cea98f18b8b0f"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09209-06-001",
+          "score": 0.0665,
+          "sha256": "e5dfcc0878fae125ac2df0570287166412b9b8947f6edee1549555b3832467b4"
+        }
+      ]
+    },
+    "SC-LOC-JP-09205-07-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-07207-07-001",
+          "score": 0.0807,
+          "sha256": "8081b23ad18106246203d8f5d6ad81b18361ca2efefbbcb6403ee38d7126e34f"
+        },
+        {
+          "scenarioId": "SC-LOC-MYG-KESENNUMA-04-001",
+          "score": 0.0768,
+          "sha256": "a003b347af4adae7e288d88033fc5db164b334aedbdb3d928ed6efcc014d78bd"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01225-07-001",
+          "score": 0.0738,
+          "sha256": "bfcca62ad17bcc9e60ac09518ef1d0b0136c8d713b34cd005b565b4ea7e16652"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09214-07-001",
+          "score": 0.1104,
+          "sha256": "87b8d44d47cfa972501e7d50ff2afe4d999053ba07358e6de8820badb8dbc35b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09209-07-001",
+          "score": 0.0716,
+          "sha256": "55035af541f980b67f7cebaea3b5eb1cfb69f12803def4a55fd5d8c2b00c5a08"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09214-08-001",
+          "score": 0.0629,
+          "sha256": "458e31411ada1db6e26a51bafd38fe7f6e0444cdb0fd86e61cc0d82d1c357eda"
+        }
+      ]
+    },
+    "SC-LOC-JP-09205-08-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-03207-08-001",
+          "score": 0.0865,
+          "sha256": "22f39973c2c075e741cfa7a3a12aedd6db2a0f797ed1ac44ecd8895ea0d91826"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-06205-08-001",
+          "score": 0.0688,
+          "sha256": "635a37f85ca6d0b2d3f78ee3abb6fd9dc3ce7a437f3871ddf0a72dd9aa39793a"
+        },
+        {
+          "scenarioId": "SC-HKD-OTARU-001",
+          "score": 0.06,
+          "sha256": "3c9a3d94eab58bcce4d1b1a8ce655a907623bfcda704457e4e3978697268de96"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-02-001",
+          "score": 0.0857,
+          "sha256": "29b62d3786856ee791235dae136517a7b980972cb61de6389a0c272e17aec793"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09214-08-001",
+          "score": 0.0778,
+          "sha256": "458e31411ada1db6e26a51bafd38fe7f6e0444cdb0fd86e61cc0d82d1c357eda"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-01-001",
+          "score": 0.0662,
+          "sha256": "3585cc5331d681ab364e16a8bfea209cf8de02e7db4bf4a7bfbbf00cabcde8be"
+        }
+      ]
+    },
+    "SC-LOC-JP-09209-01-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-02207-01-001",
+          "score": 0.1483,
+          "sha256": "4657faf5f028dbcbb78a8b403c133aa29bd54e91b778730a2ad8ee14b5c1f22c"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01210-01-001",
+          "score": 0.0842,
+          "sha256": "f7131c8ee113bd3a4f03ed04686167c5ee8368dddcf2a564c600ad9971485875"
+        },
+        {
+          "scenarioId": "SC-LOC-IBR-BANDO-04-001",
+          "score": 0.0839,
+          "sha256": "79e63ba9de35bfcd0ca098bd9ab99d9046e19b90bcec057edf831b6a764ba681"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09210-01-001",
+          "score": 0.1439,
+          "sha256": "45b9f22145439ce3e135bf369af2e800ad7c2338c2279ef15de032f563286358"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09214-01-001",
+          "score": 0.0948,
+          "sha256": "4bd28542c93eeedb7a2cec76ca4ddae376a665ba7a0c859731050b525ea42441"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-01-001",
+          "score": 0.0862,
+          "sha256": "3585cc5331d681ab364e16a8bfea209cf8de02e7db4bf4a7bfbbf00cabcde8be"
+        }
+      ]
+    },
+    "SC-LOC-JP-09209-02-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01205-02-001",
+          "score": 0.112,
+          "sha256": "dad07dd9293543171b6107e0439d3f0401acef18e39146e066c6b047be8703ac"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01225-02-001",
+          "score": 0.0908,
+          "sha256": "fb2d85f7d9232c34b5f21be0734f673a4a6178f48f7adf6a605eb63cbc8d63a5"
+        },
+        {
+          "scenarioId": "SC-LOC-YMC-HAGI-07-001",
+          "score": 0.0804,
+          "sha256": "76fd7752abcf15b224f2e354a8a9134e51332f6998855678f61a8aff9bc195f8"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09216-08-001",
+          "score": 0.0767,
+          "sha256": "009ea794cca05c4ac6e897cae132df221e59301fe28972048a2dc727862cc7b6"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09214-06-001",
+          "score": 0.0697,
+          "sha256": "1c0883c426b4dcbfd9b0b6df327198ddc4289833dd44ff24ce8c2bdb26012c57"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09205-05-001",
+          "score": 0.0672,
+          "sha256": "9a081a0d904a6eba118248dada64170f8f8e5e58430789109144faee7ddcebef"
+        }
+      ]
+    },
+    "SC-LOC-JP-09209-03-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-07210-02-001",
+          "score": 0.0999,
+          "sha256": "fba85297be1baadc9a29858d72b9bc6cdca9100d9b3eac5c785bfd4829b1c4d2"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01209-02-001",
+          "score": 0.087,
+          "sha256": "11129b3317a50be508bffa2f48bbfd2ac8e9332135f1d02b1a4382cc40f31ebb"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08212-03-001",
+          "score": 0.0777,
+          "sha256": "32c6aedf89a14ca92240a5e8ed65975cd66891be3113ab344a325a2337a51edb"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09215-03-001",
+          "score": 0.0949,
+          "sha256": "de7b2cd8c959d4408bb0acd47aee1f66990adc4b8f156cb4204598217ebb471e"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09211-02-001",
+          "score": 0.0674,
+          "sha256": "d260c7835fafa0bb77776e6618e25de56d2de897220a5b37453029681354f04d"
+        },
+        {
+          "scenarioId": "SC-LOC-009-12-001",
+          "score": 0.0606,
+          "sha256": "9921ac5c2e63301249538943c55eee1c80ab97b47d291312df8e96d62c393ef8"
+        }
+      ]
+    },
+    "SC-LOC-JP-09209-04-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-35206-04-001",
+          "score": 0.1485,
+          "sha256": "6aa4f4ed70050f2fccd36a849546b1447177b446feed8c1aa285e4357455cb13"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-11225-04-001",
+          "score": 0.1469,
+          "sha256": "45fe04d8bfe82473c394a556d653e656d87d22eac2d1e699a07e0d6b72b94c0d"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-15213-04-001",
+          "score": 0.1435,
+          "sha256": "f18551092487ba66b17b34c5076045318379b7963c8f4ba563f182aee72df6cc"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09215-04-001",
+          "score": 0.0863,
+          "sha256": "31f655b2a2823885708ede49bb2cace2348fa8583923601487c835c7276b5fb7"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-03-001",
+          "score": 0.05,
+          "sha256": "1a20eee6a44717c8edc61f4c26061d8ca9de8a7a63a54ab7cc93ff393c8150fa"
+        },
+        {
+          "scenarioId": "SC-LOC-009-20-001",
+          "score": 0.0474,
+          "sha256": "b2bbb6a48b2b4f84886247d8ae9d89c4ec0bb731c3c59dd2632b826c8668e914"
+        }
+      ]
+    },
+    "SC-LOC-JP-09209-05-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-08215-05-001",
+          "score": 0.122,
+          "sha256": "e3f0e326844bb0fc6a3e9bacc4c97b890d36dfbae66c9022c1da0a09330fc43a"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01233-05-001",
+          "score": 0.1105,
+          "sha256": "1c2179e926f3004595b99f72aae22f1ef0ba3076c53b0b92b87d664903091edc"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01223-05-001",
+          "score": 0.1052,
+          "sha256": "a076c9bade598b087536d15ddbc0f00cae1ccdfa3ed8dfe77d09eadc63344450"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09210-05-001",
+          "score": 0.0751,
+          "sha256": "a6cffc172fe43b576e65683fd4a9724bc4e72482dd755ba94923811618baffc6"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09216-05-001",
+          "score": 0.0749,
+          "sha256": "5d8bae10fd4eb83fe630e55008436d008644c198c2e5c7524ee85395197fb808"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09203-02-001",
+          "score": 0.0693,
+          "sha256": "e48fa67394ce3e01e16b03d08c19fcef6cbf32e31e24453c2d5aac60d7167660"
+        }
+      ]
+    },
+    "SC-LOC-JP-09209-06-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-07212-03-001",
+          "score": 0.1001,
+          "sha256": "f9670d6d28e1b29b6ef8d13312fe24246d9588424faf9fbc1b9c535bad1d2dc6"
+        },
+        {
+          "scenarioId": "SC-LOC-006-05-001",
+          "score": 0.0838,
+          "sha256": "ec11bc0337995208e6e2f15337bff3e54e13210189f592b6c377c5471a6b5ad0"
+        },
+        {
+          "scenarioId": "SC-LOC-005-02-001",
+          "score": 0.0831,
+          "sha256": "d126d9b31df9514f8d3c9cd1e125c3855ac923060cd6df300139aee506a13e4e"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09204-02-001",
+          "score": 0.1025,
+          "sha256": "c1ec9bf2ccaf50345ee2b47bf799a7abd6aef89e9a2e06073c188401f6bbe33d"
+        },
+        {
+          "scenarioId": "SC-LOC-009-21-001",
+          "score": 0.0993,
+          "sha256": "b7942040710972afb7bb5133ae6c07516a4336afeb236df05d9ea363cbf96f00"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09211-02-001",
+          "score": 0.0748,
+          "sha256": "d260c7835fafa0bb77776e6618e25de56d2de897220a5b37453029681354f04d"
+        }
+      ]
+    },
+    "SC-LOC-JP-09209-07-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01210-07-001",
+          "score": 0.1129,
+          "sha256": "623a6dbd7fe724c05eb7c55234b7f76f4c290169e53be1f56353e862a36bf715"
+        },
+        {
+          "scenarioId": "SC-LOC-AOM-HIROSAKI-05-001",
+          "score": 0.0958,
+          "sha256": "a51e30f1450bed31c2ba4f4ae606e28803f83b41f95263eb0ebd2de066b041ce"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-04209-07-001",
+          "score": 0.0827,
+          "sha256": "6bb4a5d32bd340af016a8f5a4a7bd1bd2f0aa569709173a1138a310a39097954"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09205-07-001",
+          "score": 0.0716,
+          "sha256": "94fd94a5d939caf331340caeec16058b523d72addc63b6b27e4e05a72e13213c"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09211-03-001",
+          "score": 0.0564,
+          "sha256": "9d4dbd95b3f3e23b1b249364bd09223aea654670cae704e3252149f98d6066ff"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09214-07-001",
+          "score": 0.0527,
+          "sha256": "87b8d44d47cfa972501e7d50ff2afe4d999053ba07358e6de8820badb8dbc35b"
+        }
+      ]
+    },
+    "SC-LOC-JP-09209-08-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01221-08-001",
+          "score": 0.1166,
+          "sha256": "319af66ab580d619e7f8362d8df15461d9d3451217db2cb532c805ab08e8c824"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01206-08-001",
+          "score": 0.0855,
+          "sha256": "aa706da6b845b1431fb1f69c2200247c40ae536eccd2134f9c8bead6b9ccd11e"
+        },
+        {
+          "scenarioId": "SC-LOC-004-03-001",
+          "score": 0.0541,
+          "sha256": "244594e1243d2ee62102066a7d04d8eab7330e264e85fffc3b80bb80aa86ce5b"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09204-08-001",
+          "score": 0.0743,
+          "sha256": "f050090e969d3657deb5543a6fa530acd95d3e0b0fde0f5cd8c960b06ff9f844"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-01-001",
+          "score": 0.0725,
+          "sha256": "45b9f22145439ce3e135bf369af2e800ad7c2338c2279ef15de032f563286358"
+        },
+        {
+          "scenarioId": "SC-LOC-009-14-001",
+          "score": 0.0711,
+          "sha256": "5d4c4e698a3384a0c0784687e5717820ad4df33e1315dc54e6865283c407b6d4"
+        }
+      ]
+    },
+    "SC-LOC-JP-09210-01-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-CHB-KASHIWA-07-001",
+          "score": 0.11,
+          "sha256": "dc20b488039e48356510d91a56b6cafcc98ad497d7100177886fd475a2753c2e"
+        },
+        {
+          "scenarioId": "SC-LOC-KCH-AKI-03-001",
+          "score": 0.1097,
+          "sha256": "9cae3eca6f273aad239b12dc14af7b35116f140ba52e58ae105fdf7a96df61bf"
+        },
+        {
+          "scenarioId": "SC-NAR-IKOMA-001",
+          "score": 0.1095,
+          "sha256": "a610d30637a49431dd29db443adedbe4a28032f1d9e1c6be84432abdfc96c158"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09209-01-001",
+          "score": 0.1439,
+          "sha256": "e705624d5f760bf30be62962c5eee1c8f392f193dbbdc883428369788cb27955"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09215-01-001",
+          "score": 0.1256,
+          "sha256": "c51ee0745ff682e8684f5362de8192b0c2cfc5582b32a3d9797f062571bda1c8"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09214-01-001",
+          "score": 0.1141,
+          "sha256": "4bd28542c93eeedb7a2cec76ca4ddae376a665ba7a0c859731050b525ea42441"
+        }
+      ]
+    },
+    "SC-LOC-JP-09210-02-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-08233-03-001",
+          "score": 0.1573,
+          "sha256": "4a4d78d5d1fd96127e549e8005b4e588dce34b2966dd9f1d1215ffeac944092e"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-06206-04-001",
+          "score": 0.0903,
+          "sha256": "cb83dd78afd9f0d02a7382f58a8990cf9637c140cae3eb4489712005ad093b74"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-06209-02-001",
+          "score": 0.0797,
+          "sha256": "4d6777f878c1adef20634a2c591e68b6effd7c5211bc75ab199c4c96716f3298"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09211-02-001",
+          "score": 0.0892,
+          "sha256": "d260c7835fafa0bb77776e6618e25de56d2de897220a5b37453029681354f04d"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-02-001",
+          "score": 0.0884,
+          "sha256": "c1ec9bf2ccaf50345ee2b47bf799a7abd6aef89e9a2e06073c188401f6bbe33d"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-05-001",
+          "score": 0.0712,
+          "sha256": "c5012d79be4086fb8e94961d3b08df2d0470abb81025d47089975c3f38c378ec"
+        }
+      ]
+    },
+    "SC-LOC-JP-09210-03-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-08232-03-001",
+          "score": 0.0769,
+          "sha256": "7abccb156ed80e125a20af959f18b461c05ac03fc48ff34c20d4a414fda7649b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-02209-03-001",
+          "score": 0.07,
+          "sha256": "2876092456e183d112f3b8c95e7e290ab7bb994e6e6de76d8ce766ee26eb2e5f"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-04209-03-001",
+          "score": 0.0696,
+          "sha256": "5889becbd109c9c9aa577a085e2d6fa7f2735d00b5ddf10d7a665d702fbfd48a"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09216-03-001",
+          "score": 0.126,
+          "sha256": "cc1f054ea6aac52cbf2fafb86ea7838918bb27de44116c7361653ea844cbfc67"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09205-03-001",
+          "score": 0.0672,
+          "sha256": "d12c124d9af8fa225bd2cb04e5fdcaf2e807476707f99b5a70456bf56ae7efd6"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NIKKO-03-001",
+          "score": 0.0562,
+          "sha256": "0c098582394d3b6f56b54671aba4094aad73b9853a7d0fcec5efc0af5a572fec"
+        }
+      ]
+    },
+    "SC-LOC-JP-09210-04-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01215-04-001",
+          "score": 0.2152,
+          "sha256": "35d0b7cd75f84d334de301dada4ef9becf7c91d470a134dbd2cc447199ec144e"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-03208-04-001",
+          "score": 0.1217,
+          "sha256": "7180e4ce8fa8bab8249ad4cb61969e14034186a8435b9aef776dd389bcfd7436"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-03214-04-001",
+          "score": 0.1102,
+          "sha256": "311b6666c21d703532b6546a35261145884579b18251d6d46cf8741d505fb172"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09216-04-001",
+          "score": 0.0697,
+          "sha256": "ed15d678b095bb55c14320179a3aaff8214837901d5e3eddb200189700a3a444"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09205-06-001",
+          "score": 0.065,
+          "sha256": "3384a9ea1332dabfe5d352f111558f2832f5944b7e922972c94fd462828fd428"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09216-06-001",
+          "score": 0.0642,
+          "sha256": "84dc7e8f651dd17348b3fdabf837a4f400311b31428a49083b6cea98f18b8b0f"
+        }
+      ]
+    },
+    "SC-LOC-JP-09210-05-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-04212-05-001",
+          "score": 0.0942,
+          "sha256": "13edfe3b6561eb9f643d70bac37bdd3ed9e4268f47514fb3d0615fd74ad3346f"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-07212-05-001",
+          "score": 0.0822,
+          "sha256": "fcc48d9145c9ac666717ccef7e4dd5a21016e225b0da5c614a69790761b8d449"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08217-05-001",
+          "score": 0.0794,
+          "sha256": "cc5a086c4e79005bd261c9fef61c5f51daa1c69baa5fc6bc102d09ee988824d6"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09209-05-001",
+          "score": 0.0751,
+          "sha256": "043eb5576c8f87508a7824b60b9476c507aca743b867de0b629fcab679463e60"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-ASHIKAGA-08-001",
+          "score": 0.0656,
+          "sha256": "4bd3748eb9e8b21fb8c395e39d6a3c854d2a00a3c20fc5db3a7335b31a07cbc7"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09216-05-001",
+          "score": 0.0609,
+          "sha256": "5d8bae10fd4eb83fe630e55008436d008644c198c2e5c7524ee85395197fb808"
+        }
+      ]
+    },
+    "SC-LOC-JP-09210-06-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-006-07-001",
+          "score": 0.1079,
+          "sha256": "59515870774c1a3ed7d412d89c195f1bac2b1d7477a819873f113256f7ce7dcb"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08208-04-001",
+          "score": 0.0946,
+          "sha256": "364277024396138031038f31173b693a5c84c7c85583161c0be545aae32bc77b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01219-06-001",
+          "score": 0.0935,
+          "sha256": "46c03888bdd4467002f07b5a735ebf0464faea233826c883131d9b90f9e9e0d6"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09211-06-001",
+          "score": 0.1027,
+          "sha256": "11c2effdbfd70020bb93e58b639b135928e96b90e3add27f486748d411014e25"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09216-06-001",
+          "score": 0.0677,
+          "sha256": "84dc7e8f651dd17348b3fdabf837a4f400311b31428a49083b6cea98f18b8b0f"
+        },
+        {
+          "scenarioId": "SC-LOC-009-21-001",
+          "score": 0.0584,
+          "sha256": "b7942040710972afb7bb5133ae6c07516a4336afeb236df05d9ea363cbf96f00"
+        }
+      ]
+    },
+    "SC-LOC-JP-09210-07-001": {
+      "external": [
+        {
+          "scenarioId": "SC-TKY-ITABASHI-001",
+          "score": 0.1217,
+          "sha256": "f13af45be5f1dfdfb145c6c7a4e80cf05dc4c276e034a1c662b78aeca30d8ac9"
+        },
+        {
+          "scenarioId": "SC-LOC-EHM-IMABARI-04-001",
+          "score": 0.1214,
+          "sha256": "7eda099d091ffaef8219b9834bbc436fbc5c6e9025e3296f519d4c4469123e12"
+        },
+        {
+          "scenarioId": "SC-LOC-TYM-UOZU-04-001",
+          "score": 0.1211,
+          "sha256": "d92e3c607bf5a910561390cdac93a5f069ac80dd78b8a7906d671eca3a582b60"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09216-07-001",
+          "score": 0.1038,
+          "sha256": "28cf6cedd3acfaa9cd5f9f82f1a338ffce4901daf0f33b11b972a3e389117ae8"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-07-001",
+          "score": 0.0669,
+          "sha256": "af8ab9aef665dccb2543e3e30b17441617258f8cd7f8203b9ca1b4c8d262846e"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09214-04-001",
+          "score": 0.0636,
+          "sha256": "cc995fe017d965e8ca893e6a0d322d59fd22d66ad1237d41cb48152e38d0cc17"
+        }
+      ]
+    },
+    "SC-LOC-JP-09210-08-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-008-09-001",
+          "score": 0.0736,
+          "sha256": "47d214c9c4cb692a567ffc7ad5ee3ffb8d51a61de43fc989543524d0b59d5212"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-02204-01-001",
+          "score": 0.0728,
+          "sha256": "f76c571138628afbc1970d2263ba09c6ebd037b19f92e6807ce9c44d4ce17a4c"
+        },
+        {
+          "scenarioId": "SC-LOC-006-02-001",
+          "score": 0.0711,
+          "sha256": "34562edb7b58fe618de7f3feb4758d61d88d6b059e099b337573209279bb3557"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-TCG-ASHIKAGA-07-001",
+          "score": 0.0991,
+          "sha256": "cd0148b1be8174262650aeee373010d6eb888e23889177efc4ac7e9331f8a0c6"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09214-03-001",
+          "score": 0.0879,
+          "sha256": "8d88dbd893da1eca661e19b018db8dc91741e08b4ba232f5bfb0128abf55dc9c"
+        },
+        {
+          "scenarioId": "SC-LOC-009-19-001",
+          "score": 0.081,
+          "sha256": "22bf1d8756d00427bffbbe50f9fcf7cf2c8f6f9c8fc522bad1f310871f628b8a"
+        }
+      ]
+    },
+    "SC-LOC-JP-09211-01-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-08210-01-001",
+          "score": 0.0733,
+          "sha256": "fac119c6d6cd02e5d1c847a4a2eb3f72a2716040e63dec1e8bc36d158ed07c94"
+        },
+        {
+          "scenarioId": "SC-AOM-HIROSAKI-001",
+          "score": 0.066,
+          "sha256": "cf37d0ee2f80e43d3e2233a89bc98369f24235a674cc1a9c185d5c45e1a1c8c3"
+        },
+        {
+          "scenarioId": "SC-LOC-HKD-ASAHIKAWA-06-001",
+          "score": 0.0655,
+          "sha256": "f7879e171d0b108efe47195dbe3c4d0c0f1fa0fc160c0e30fa468a86dbb97dd5"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09209-01-001",
+          "score": 0.0804,
+          "sha256": "e705624d5f760bf30be62962c5eee1c8f392f193dbbdc883428369788cb27955"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-01-001",
+          "score": 0.0581,
+          "sha256": "3585cc5331d681ab364e16a8bfea209cf8de02e7db4bf4a7bfbbf00cabcde8be"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-01-001",
+          "score": 0.0517,
+          "sha256": "45b9f22145439ce3e135bf369af2e800ad7c2338c2279ef15de032f563286358"
+        }
+      ]
+    },
+    "SC-LOC-JP-09211-02-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-07210-02-001",
+          "score": 0.0933,
+          "sha256": "fba85297be1baadc9a29858d72b9bc6cdca9100d9b3eac5c785bfd4829b1c4d2"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05202-02-001",
+          "score": 0.0866,
+          "sha256": "d95727218be5d4138d000c12ceba61d5028f0f9480fedd07ce90576189df7c9d"
+        },
+        {
+          "scenarioId": "SC-LOC-FKS-AIZUWAKAMATSU-06-001",
+          "score": 0.0864,
+          "sha256": "23ae820425132bc79c465ee0e2dd9816f73da3bbcedac1869eb0441810dc47ce"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09210-02-001",
+          "score": 0.0892,
+          "sha256": "07d1a6f84d8f4fead102f6ad73306c610d2743c6edb1b3324a6a8b3a144a041b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-02-001",
+          "score": 0.0764,
+          "sha256": "c1ec9bf2ccaf50345ee2b47bf799a7abd6aef89e9a2e06073c188401f6bbe33d"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09209-06-001",
+          "score": 0.0748,
+          "sha256": "e5dfcc0878fae125ac2df0570287166412b9b8947f6edee1549555b3832467b4"
+        }
+      ]
+    },
+    "SC-LOC-JP-09211-03-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01216-03-001",
+          "score": 0.0807,
+          "sha256": "3bb968fbe95dd4396d2b0a94752c0ac61baf9c7c5adb175154ee1ef0eb9409de"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01224-06-001",
+          "score": 0.0786,
+          "sha256": "86ef52d076b3505ce38d66f4cfbf64b994ea4cd96bc35ac9ca39dbd6e5238413"
+        },
+        {
+          "scenarioId": "SC-LOC-IWT-ICHINOSEKI-02-001",
+          "score": 0.0669,
+          "sha256": "89d68227834b7d25cb8626851c677f17e32f7914b83e20391bd6f7f00b856023"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09204-03-001",
+          "score": 0.0911,
+          "sha256": "e8d0fca667a3cb7d6b7fb56536db58093850be49b807c59135f89b2605e72a2b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09216-07-001",
+          "score": 0.0684,
+          "sha256": "28cf6cedd3acfaa9cd5f9f82f1a338ffce4901daf0f33b11b972a3e389117ae8"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09209-05-001",
+          "score": 0.0626,
+          "sha256": "043eb5576c8f87508a7824b60b9476c507aca743b867de0b629fcab679463e60"
+        }
+      ]
+    },
+    "SC-LOC-JP-09211-04-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-08227-04-001",
+          "score": 0.0698,
+          "sha256": "31f11d4f671c590565f9dc7cfb05d907b1f2d39aa5633fd24880717888c1b4aa"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-02210-04-001",
+          "score": 0.0682,
+          "sha256": "97290d315e61b31f7846d2136963958500d355f74d345009321d3d81fa29f319"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05211-04-001",
+          "score": 0.0677,
+          "sha256": "6535439a2f5c9d3a2b681a32e5285902bf4c3bce61747dd5846280c168f3db61"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-03-001",
+          "score": 0.0625,
+          "sha256": "3e401a1cd7df51967c197b0efe532efe0d566a4b9ffe2432ba45d9c86fe4effd"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NASUSHIOBARA-07-001",
+          "score": 0.0624,
+          "sha256": "e214e2414a28cb9644395da2e9896d161aea6d05cf3aa04eee5a2c084b46968d"
+        },
+        {
+          "scenarioId": "SC-TCG-NASUSHIOBARA-001",
+          "score": 0.0593,
+          "sha256": "64f1f6400362830c1f268c1247b91953af143463a990355f97645ad06adfdfb2"
+        }
+      ]
+    },
+    "SC-LOC-JP-09211-05-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-03215-05-001",
+          "score": 0.1148,
+          "sha256": "4af43cd5b0ec10116e8d9f602ebce27c26551b72d9ddfafe074c45a7000cb08e"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01212-05-001",
+          "score": 0.1067,
+          "sha256": "34dcc792fa6c59c083d56ac111cf344aab1172772501cb38d885ee92133aa93c"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01206-05-001",
+          "score": 0.0839,
+          "sha256": "89c29334ad3ed19c472a0c82762128b6eb402c7b6d3e14d3958fc7915aa17014"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09214-05-001",
+          "score": 0.1228,
+          "sha256": "ca2403f1d255e9449901e9c6630025710a6fe9419f4a9a2baa54a32ce9e27339"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-08-001",
+          "score": 0.0662,
+          "sha256": "c3bf36b8f4a52e1e686f50da7ef6b2f141a5d26708a8b836f0524cfaf2d356dd"
+        },
+        {
+          "scenarioId": "SC-LOC-009-08-001",
+          "score": 0.0624,
+          "sha256": "7fa93ed35750a379fcba0a6e23379ca4b2f819624e0ab61a2e7a667bedae2f39"
+        }
+      ]
+    },
+    "SC-LOC-JP-09211-06-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01205-06-002",
+          "score": 0.1231,
+          "sha256": "32846046740452081a647ae93778cbd5f35d2da479dc35446012bb4f12a76fa5"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01216-06-001",
+          "score": 0.1049,
+          "sha256": "62ff358910ed0e96f47b6744483d28c4f612b9df3ff1d9166065495455e436f8"
+        },
+        {
+          "scenarioId": "SC-LOC-024-21-001",
+          "score": 0.1022,
+          "sha256": "bbd34860e8090eb5fc044e2deb6729a9d3bfc09e4f3b4c3f320462e8565af73b"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09216-06-001",
+          "score": 0.1063,
+          "sha256": "84dc7e8f651dd17348b3fdabf837a4f400311b31428a49083b6cea98f18b8b0f"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-06-001",
+          "score": 0.105,
+          "sha256": "5e8a0afb613b25d22fbefce47883713d4fe2a82fe9601ff4bea191942a44c5ff"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-06-001",
+          "score": 0.1027,
+          "sha256": "71ca5f79132eedd6bf7a789720faf7c7c55bd4676075ef000b221dbe5a4bbda9"
+        }
+      ]
+    },
+    "SC-LOC-JP-09211-07-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-08233-07-001",
+          "score": 0.1275,
+          "sha256": "3c463cebe7a56e64be83a09be9000f59531475eb7cec100f42bcbf183c4cc103"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08231-03-001",
+          "score": 0.0809,
+          "sha256": "f28ca9f4949c0cd1702ad8421366c12fc9e710200532c8e70a3ecd98858355cf"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-03215-07-001",
+          "score": 0.0771,
+          "sha256": "335aaf40c1632aa163a996139946a49fe31297b5e14ce65a98421c30d6fda8d3"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09204-07-001",
+          "score": 0.0664,
+          "sha256": "af8ab9aef665dccb2543e3e30b17441617258f8cd7f8203b9ca1b4c8d262846e"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-05-001",
+          "score": 0.0544,
+          "sha256": "392d079a6e48409cd35ea1849d419b2083f768c1212eae98e306461b7c530214"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-04-001",
+          "score": 0.0526,
+          "sha256": "47acbdfd031fc02afaf332d13bc9c84432b2b3de867b90ce94bfc3e8f0597832"
+        }
+      ]
+    },
+    "SC-LOC-JP-09211-08-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-05214-08-001",
+          "score": 0.0822,
+          "sha256": "c7225866f3930a89804a83db5a1ba15935c050b1294df2b5e4adf3547f0b8b66"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01213-08-001",
+          "score": 0.0766,
+          "sha256": "4915b047f11e7a31cd7694716577dabe47dad524cb53713abbc5129d4a9db5aa"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01216-04-001",
+          "score": 0.0758,
+          "sha256": "2686f95cd34c69ff04c29e317827f3a945a50a438e04b9408547b6ec6697acfa"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-19-001",
+          "score": 0.0857,
+          "sha256": "22bf1d8756d00427bffbbe50f9fcf7cf2c8f6f9c8fc522bad1f310871f628b8a"
+        },
+        {
+          "scenarioId": "SC-TCG-NASUSHIOBARA-001",
+          "score": 0.0735,
+          "sha256": "64f1f6400362830c1f268c1247b91953af143463a990355f97645ad06adfdfb2"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-08-001",
+          "score": 0.0685,
+          "sha256": "4ff8fff99012f652064795b8a09e2773f83292c6bd4b9976e530914c708e2040"
+        }
+      ]
+    },
+    "SC-LOC-JP-09214-01-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-05206-02-001",
+          "score": 0.0775,
+          "sha256": "c74984e58d5a564781b674aacc1b63be0ee6b76688e881b8b7db16e1e38f49c2"
+        },
+        {
+          "scenarioId": "SC-LOC-IBR-HITACHI-02-001",
+          "score": 0.0701,
+          "sha256": "01acd710ba7d2b69d46c0286ac57307980ccb4c076f075daca2d1fd317805588"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-11225-01-001",
+          "score": 0.0701,
+          "sha256": "d4c0cee822e20655eb3ec2c15e4f3781575589e66891692cd3d34be475d96934"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09210-01-001",
+          "score": 0.1141,
+          "sha256": "45b9f22145439ce3e135bf369af2e800ad7c2338c2279ef15de032f563286358"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09215-01-001",
+          "score": 0.104,
+          "sha256": "c51ee0745ff682e8684f5362de8192b0c2cfc5582b32a3d9797f062571bda1c8"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09209-01-001",
+          "score": 0.0948,
+          "sha256": "e705624d5f760bf30be62962c5eee1c8f392f193dbbdc883428369788cb27955"
+        }
+      ]
+    },
+    "SC-LOC-JP-09214-02-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-03216-02-001",
+          "score": 0.0993,
+          "sha256": "1ecdb43568c330cd5c452123c8a9c9117a9d998b9c9eafa12dfdef6b35ede6a7"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01206-03-001",
+          "score": 0.0897,
+          "sha256": "933014a968ecc5ca7d7a2051a33b0f9e5e43f2738ea95eec9135b8866224209f"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01218-06-001",
+          "score": 0.078,
+          "sha256": "54a8cda792d385a16cf3376f3c6f93225e2ebc5e3fae958d6b5092babe93722a"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09215-03-001",
+          "score": 0.0753,
+          "sha256": "de7b2cd8c959d4408bb0acd47aee1f66990adc4b8f156cb4204598217ebb471e"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09209-06-001",
+          "score": 0.0677,
+          "sha256": "e5dfcc0878fae125ac2df0570287166412b9b8947f6edee1549555b3832467b4"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-02-001",
+          "score": 0.0611,
+          "sha256": "c1ec9bf2ccaf50345ee2b47bf799a7abd6aef89e9a2e06073c188401f6bbe33d"
+        }
+      ]
+    },
+    "SC-LOC-JP-09214-03-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-002-06-001",
+          "score": 0.1252,
+          "sha256": "37ac6a86d474706d060acee77297d0dfe8cf321c2b092b5f3b5f5cbd6de40fe1"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08215-03-001",
+          "score": 0.0944,
+          "sha256": "97ac0d30c2bd017c37bf73d3409f1cbc4c6913312852ea1391cfb1a1c20f7205"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-07207-03-001",
+          "score": 0.0919,
+          "sha256": "8b823ae079688898ec4d66b8e0a15ba91822589aac7cce33ba472d5ca8e4eb74"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09210-08-001",
+          "score": 0.0879,
+          "sha256": "4ff8fff99012f652064795b8a09e2773f83292c6bd4b9976e530914c708e2040"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09205-03-001",
+          "score": 0.0849,
+          "sha256": "d12c124d9af8fa225bd2cb04e5fdcaf2e807476707f99b5a70456bf56ae7efd6"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-02-001",
+          "score": 0.0598,
+          "sha256": "07d1a6f84d8f4fead102f6ad73306c610d2743c6edb1b3324a6a8b3a144a041b"
+        }
+      ]
+    },
+    "SC-LOC-JP-09214-04-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01234-05-001",
+          "score": 0.1135,
+          "sha256": "b1d05a38b61705d0e3f92ffae92e6e2d8bc8b84f3a6e80f90a0c67358d407188"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-04206-04-001",
+          "score": 0.1092,
+          "sha256": "fe92884e610169f6df48b9e8bcd4854bf3e788a6f2163e59faacf443a3c03adb"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-04208-04-001",
+          "score": 0.1047,
+          "sha256": "f9e3f7bb8ebee78bd37d5c780c630ff0d3fe15445dab0d107e784d68b4b56240"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09205-04-001",
+          "score": 0.1295,
+          "sha256": "5a1b258710d74b5e68aeacddf6215e681b8264294b2b52568df099c79719f50e"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-07-001",
+          "score": 0.0636,
+          "sha256": "341639f1940d62396bf38b61c5f0d9cfe7d64ca3d5ba4d0a71c1823e1caf7d2f"
+        },
+        {
+          "scenarioId": "SC-LOC-009-03-001",
+          "score": 0.0533,
+          "sha256": "3e401a1cd7df51967c197b0efe532efe0d566a4b9ffe2432ba45d9c86fe4effd"
+        }
+      ]
+    },
+    "SC-LOC-JP-09214-05-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01224-05-001",
+          "score": 0.1004,
+          "sha256": "5cf014cbb4782e214c5dbf908569b4bcfc5672f76406a65cadd73a27f05df8a4"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01209-05-001",
+          "score": 0.0958,
+          "sha256": "4f7bb4e661b95bdbe61ad4242239afef0084f8e31db08c0aa40a65e3e0f0ada9"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01213-05-001",
+          "score": 0.095,
+          "sha256": "5c1274a136967c9321ac8761517607e8fc4d1d406c4aa4ba4adf8d37598c6712"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09211-05-001",
+          "score": 0.1228,
+          "sha256": "b82e69b709c0ec6e5d2d9cef80a9e63240ef84f40cdf9d1e3195f0667964a4b9"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09205-05-001",
+          "score": 0.0829,
+          "sha256": "9a081a0d904a6eba118248dada64170f8f8e5e58430789109144faee7ddcebef"
+        },
+        {
+          "scenarioId": "SC-LOC-009-19-001",
+          "score": 0.0809,
+          "sha256": "22bf1d8756d00427bffbbe50f9fcf7cf2c8f6f9c8fc522bad1f310871f628b8a"
+        }
+      ]
+    },
+    "SC-LOC-JP-09214-06-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01217-06-001",
+          "score": 0.1361,
+          "sha256": "90e8df10be37ee9fbdde947c727dd7fac025e5a6ff71d06bbd9e5a7b09873afc"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01208-05-001",
+          "score": 0.1133,
+          "sha256": "2d44bb7b8da1c5e079de6a36b943b912872d9c57ae146fee8441d246ca35a10e"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01213-05-001",
+          "score": 0.0879,
+          "sha256": "5c1274a136967c9321ac8761517607e8fc4d1d406c4aa4ba4adf8d37598c6712"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09205-06-001",
+          "score": 0.1044,
+          "sha256": "3384a9ea1332dabfe5d352f111558f2832f5944b7e922972c94fd462828fd428"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09205-05-001",
+          "score": 0.0932,
+          "sha256": "9a081a0d904a6eba118248dada64170f8f8e5e58430789109144faee7ddcebef"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09209-02-001",
+          "score": 0.0697,
+          "sha256": "e6437f5bd8d6f8f277cd0d636955ebff0526edfb8733094ef0fe1c1242f69f51"
+        }
+      ]
+    },
+    "SC-LOC-JP-09214-07-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01209-07-001",
+          "score": 0.115,
+          "sha256": "a3fb4e69d176c9c7fd24ea4a50b054e6a601b1babe170a12ea8823029e00ef34"
+        },
+        {
+          "scenarioId": "SC-LOC-MYG-KESENNUMA-04-001",
+          "score": 0.1039,
+          "sha256": "a003b347af4adae7e288d88033fc5db164b334aedbdb3d928ed6efcc014d78bd"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-04211-07-001",
+          "score": 0.0883,
+          "sha256": "ac83be0057e7ca4ce72446be5341cc41379852f0edeb17d19d3bd9129cef494c"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09205-07-001",
+          "score": 0.1104,
+          "sha256": "94fd94a5d939caf331340caeec16058b523d72addc63b6b27e4e05a72e13213c"
+        },
+        {
+          "scenarioId": "SC-LOC-009-07-001",
+          "score": 0.0915,
+          "sha256": "ba2ed43f1cc5c250c8310244f9939afc6d3758d466b84618f77b32de42023d6d"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-ASHIKAGA-02-001",
+          "score": 0.0618,
+          "sha256": "f6dda251a26c66468d9c1655047616afe62ab0cdae4e7213bb8216c8f65a6a23"
+        }
+      ]
+    },
+    "SC-LOC-JP-09214-08-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-04207-08-001",
+          "score": 0.0857,
+          "sha256": "be81c2094f8abf71a61330882382c238f20f282b7814923dc34ae7cbb8c35cad"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01208-08-001",
+          "score": 0.0765,
+          "sha256": "36dd867a88c3707b255187f2d155db849444d4bf52e399743d3ca059764226cf"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-02210-08-001",
+          "score": 0.0612,
+          "sha256": "8850c0eaa12d2f7e32073c99f684b2dd090a93a5e4e057d812cd43894147932f"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09205-08-001",
+          "score": 0.0778,
+          "sha256": "5f328ae36e41405f6734425292434a7aea37c1e64d8e89c8d7e0af1cfff75328"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09205-07-001",
+          "score": 0.0629,
+          "sha256": "94fd94a5d939caf331340caeec16058b523d72addc63b6b27e4e05a72e13213c"
+        },
+        {
+          "scenarioId": "SC-LOC-009-14-001",
+          "score": 0.0526,
+          "sha256": "5d4c4e698a3384a0c0784687e5717820ad4df33e1315dc54e6865283c407b6d4"
+        }
+      ]
+    },
+    "SC-LOC-JP-09215-01-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-001-04-001",
+          "score": 0.0826,
+          "sha256": "43cba1ef7150b7fe581fe5857d228827805518e43ebe8db74b2e7d93136e922a"
+        },
+        {
+          "scenarioId": "SC-IWT-HANAMAKI-001",
+          "score": 0.0722,
+          "sha256": "83cf45697f6077a8799d8d124d8cadfe28235dc6e1d0afdc290561272faa4d48"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08212-01-001",
+          "score": 0.0716,
+          "sha256": "38b0a5e5a03735b9f9c240da49d9638e00d8766fdd6ff7067eebe166798bf846"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09210-01-001",
+          "score": 0.1256,
+          "sha256": "45b9f22145439ce3e135bf369af2e800ad7c2338c2279ef15de032f563286358"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09214-01-001",
+          "score": 0.104,
+          "sha256": "4bd28542c93eeedb7a2cec76ca4ddae376a665ba7a0c859731050b525ea42441"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09209-01-001",
+          "score": 0.0678,
+          "sha256": "e705624d5f760bf30be62962c5eee1c8f392f193dbbdc883428369788cb27955"
+        }
+      ]
+    },
+    "SC-LOC-JP-09215-02-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01208-02-001",
+          "score": 0.1593,
+          "sha256": "ba0565f0fbff3f76d15f289fae993edc014e868c73973a9e6fb28613fb0decd0"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01205-02-001",
+          "score": 0.0869,
+          "sha256": "dad07dd9293543171b6107e0439d3f0401acef18e39146e066c6b047be8703ac"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01212-02-001",
+          "score": 0.0791,
+          "sha256": "0fddc918fc4a0656cab7a15184f2288d53d9852eebd267ddaeb61e45d31c2939"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09216-02-001",
+          "score": 0.0636,
+          "sha256": "a79cb9fb045f566813fff0ea018b968f2381926a1720b95e1c95144f3bb96f32"
+        },
+        {
+          "scenarioId": "SC-LOC-009-19-001",
+          "score": 0.0597,
+          "sha256": "22bf1d8756d00427bffbbe50f9fcf7cf2c8f6f9c8fc522bad1f310871f628b8a"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09215-06-001",
+          "score": 0.0589,
+          "sha256": "a4b59c0bbe115ee50e11eb824bc911261015561d0490066ee5954c8de2743cb3"
+        }
+      ]
+    },
+    "SC-LOC-JP-09215-03-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-05209-03-001",
+          "score": 0.0868,
+          "sha256": "f1da0f1ed3c895ab6caeacaed59d753fc53e1a5c622157b38b93d16b7b8bd9eb"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01214-03-001",
+          "score": 0.08,
+          "sha256": "4f5508431e9c3017c08f1ef4b6a18b504597ce05e92a1854a2d5ad9d242f5980"
+        },
+        {
+          "scenarioId": "SC-LOC-003-04-001",
+          "score": 0.0713,
+          "sha256": "f13779789141f97f81cd16f20937b7151ea883ffbaf55db4e9cfc7343b378ea1"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09209-03-001",
+          "score": 0.0949,
+          "sha256": "40817d3bc9e75613b8769e339d77061c73b5bec7ae42aea39af3346cb954ee7a"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-02-001",
+          "score": 0.0916,
+          "sha256": "c1ec9bf2ccaf50345ee2b47bf799a7abd6aef89e9a2e06073c188401f6bbe33d"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09214-02-001",
+          "score": 0.0753,
+          "sha256": "a37089f933baf1de273ffa8551ad4837904eb8fbedcfb78de37fd09b215ca13e"
+        }
+      ]
+    },
+    "SC-LOC-JP-09215-04-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-03207-04-001",
+          "score": 0.0989,
+          "sha256": "cff6167abd7ff76241509e83335bbeed4f3fd9ed2407b5d527d0539181d7dd2f"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-17209-04-001",
+          "score": 0.0977,
+          "sha256": "a417ab4482022a3d59a7a2f742e4f68616004de3ec9566f31cc599f65f04c347"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-15213-04-001",
+          "score": 0.0939,
+          "sha256": "f18551092487ba66b17b34c5076045318379b7963c8f4ba563f182aee72df6cc"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09209-04-001",
+          "score": 0.0863,
+          "sha256": "d0827cf9e53c85f2a8243d73d7f47cffe174f74401243585b80d253d681081a8"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09211-02-001",
+          "score": 0.063,
+          "sha256": "d260c7835fafa0bb77776e6618e25de56d2de897220a5b37453029681354f04d"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-ASHIKAGA-07-001",
+          "score": 0.0628,
+          "sha256": "cd0148b1be8174262650aeee373010d6eb888e23889177efc4ac7e9331f8a0c6"
+        }
+      ]
+    },
+    "SC-LOC-JP-09215-05-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-05206-02-001",
+          "score": 0.0819,
+          "sha256": "c74984e58d5a564781b674aacc1b63be0ee6b76688e881b8b7db16e1e38f49c2"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01236-05-001",
+          "score": 0.0773,
+          "sha256": "03731ac5eb03024b78109b286dd810001da887175f743eac514abc188e15e6db"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01220-05-001",
+          "score": 0.0707,
+          "sha256": "c430261b3009e2e7ed608405518af93bedc4fb21fd8c923d32cf9ed1782b09de"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-TCG-NASUSHIOBARA-07-001",
+          "score": 0.0999,
+          "sha256": "e214e2414a28cb9644395da2e9896d161aea6d05cf3aa04eee5a2c084b46968d"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-05-001",
+          "score": 0.0677,
+          "sha256": "392d079a6e48409cd35ea1849d419b2083f768c1212eae98e306461b7c530214"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-ASHIKAGA-04-001",
+          "score": 0.0651,
+          "sha256": "19b8a559249de5a4d98b481f95752693292eb0a993ab08079ef9ea0e5cc219d3"
+        }
+      ]
+    },
+    "SC-LOC-JP-09215-06-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-05213-04-001",
+          "score": 0.0864,
+          "sha256": "300624d8658e1ac2b32f784fe7008ced1039beb1b154f81de1af76d6ab9fcd6e"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-ODATE-04-001",
+          "score": 0.0819,
+          "sha256": "a0860cb3abd0b2aa9b7869ddf413a00d2d94fbfb230767b453ae49665c00141b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05210-03-001",
+          "score": 0.0811,
+          "sha256": "e4f785e0d59b6850bda0e2433bcbb5dea8e326f60f1e34a75a73bc33c95866c5"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09216-02-001",
+          "score": 0.065,
+          "sha256": "a79cb9fb045f566813fff0ea018b968f2381926a1720b95e1c95144f3bb96f32"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09211-06-001",
+          "score": 0.0623,
+          "sha256": "11c2effdbfd70020bb93e58b639b135928e96b90e3add27f486748d411014e25"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09215-02-001",
+          "score": 0.0589,
+          "sha256": "811ac23af807e03127526fa5c0ab544b64b396addfabef274e6c402b9f32a233"
+        }
+      ]
+    },
+    "SC-LOC-JP-09215-07-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-001-08-001",
+          "score": 0.1054,
+          "sha256": "a77b2edc7ebbedf7fffcfe432a53edd826c65f55226134c8b83a0480440b9c0d"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08221-07-001",
+          "score": 0.102,
+          "sha256": "99775efee58b6bbd121e7893e4b9d420b7fabd56742d669bc26e1d82fbea8b63"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-03216-07-001",
+          "score": 0.0932,
+          "sha256": "2e247c1c94de5919c84e6ab61428954ba51eab8ffb913ed9f8baad053910aa1c"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-03-001",
+          "score": 0.0681,
+          "sha256": "3e401a1cd7df51967c197b0efe532efe0d566a4b9ffe2432ba45d9c86fe4effd"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09211-04-001",
+          "score": 0.0591,
+          "sha256": "3613be2a7d95674f9a130454087fd7bce0718c6e2a04782cce055d77cc7aa4ef"
+        },
+        {
+          "scenarioId": "SC-TCG-ASHIKAGA-001",
+          "score": 0.0565,
+          "sha256": "5d53d3d663c295edbaa17bd335cfcce21591340ac5ffb8b28a02c2c8cbb9e29d"
+        }
+      ]
+    },
+    "SC-LOC-JP-09215-08-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-03215-08-001",
+          "score": 0.0863,
+          "sha256": "3648a095bee7d5500467e4dc42161b41fb3ab510472d62cbe4290c23717a3377"
+        },
+        {
+          "scenarioId": "SC-LOC-YGT-SAKATA-05-001",
+          "score": 0.0668,
+          "sha256": "8eeac4e5e6d1e901f7bfefb37b994a2d37c75aae3a1d09badc7d799168e0000e"
+        },
+        {
+          "scenarioId": "SC-LOC-006-14-001",
+          "score": 0.0598,
+          "sha256": "e90f65eae9b7662abf1307b35a266ea4d7ee7e27b62849e9d5c939e43e5fb5e3"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09210-08-001",
+          "score": 0.0637,
+          "sha256": "4ff8fff99012f652064795b8a09e2773f83292c6bd4b9976e530914c708e2040"
+        },
+        {
+          "scenarioId": "SC-LOC-009-06-001",
+          "score": 0.0604,
+          "sha256": "17fdf52367f7a8ec462944fb9db786686cc0b9c769f8ad0c2aa6d13959ba94d1"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09209-06-001",
+          "score": 0.0593,
+          "sha256": "e5dfcc0878fae125ac2df0570287166412b9b8947f6edee1549555b3832467b4"
+        }
+      ]
+    },
+    "SC-LOC-JP-09216-01-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-02209-01-001",
+          "score": 0.1101,
+          "sha256": "23d49c58b480f1e92bb6ce3768be565b2c32805edeadd6f6a8e9c0c68a646d03"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-02210-01-001",
+          "score": 0.0968,
+          "sha256": "01c88767c67fe505caab43c2cf527da32000210a6a3bc10e44e887a27f320af7"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05214-01-001",
+          "score": 0.0824,
+          "sha256": "456ce734935f881ceb03aa865f6f8c3f8e2ddb7e2b438a65635495fbc570e29c"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09210-01-001",
+          "score": 0.0877,
+          "sha256": "45b9f22145439ce3e135bf369af2e800ad7c2338c2279ef15de032f563286358"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09205-01-001",
+          "score": 0.0731,
+          "sha256": "96b29d5f812b69bfe70c811b41bdd4889b52da86c3ef3c1c3d82571747e7cf6a"
+        },
+        {
+          "scenarioId": "SC-LOC-009-14-001",
+          "score": 0.0726,
+          "sha256": "5d4c4e698a3384a0c0784687e5717820ad4df33e1315dc54e6865283c407b6d4"
+        }
+      ]
+    },
+    "SC-LOC-JP-09216-02-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-004-13-001",
+          "score": 0.099,
+          "sha256": "763b568394fe7794cb55f135132c07329916e44f45db392fc71adb09bdc69e1c"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08219-03-001",
+          "score": 0.0913,
+          "sha256": "e0d4e2611e354d6dcf3a46d6f2152213a779007785d7ed4c0e213dc60816bf73"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-04206-03-001",
+          "score": 0.0845,
+          "sha256": "e6013b00c7883627496e6ccb5b4974b7f719b865412fbb64ffa2481c7b37bea0"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09210-08-001",
+          "score": 0.073,
+          "sha256": "4ff8fff99012f652064795b8a09e2773f83292c6bd4b9976e530914c708e2040"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-03-001",
+          "score": 0.0689,
+          "sha256": "e8d0fca667a3cb7d6b7fb56536db58093850be49b807c59135f89b2605e72a2b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09215-06-001",
+          "score": 0.065,
+          "sha256": "a4b59c0bbe115ee50e11eb824bc911261015561d0490066ee5954c8de2743cb3"
+        }
+      ]
+    },
+    "SC-LOC-JP-09216-03-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-07208-03-001",
+          "score": 0.0889,
+          "sha256": "002cedf56dc30b1b182e0b617d292816596df40d90f33af5dd032314ca4ea857"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08227-03-001",
+          "score": 0.0885,
+          "sha256": "36c36c290c88db3f6a15cde4a9096821624ba81ec4f77f87b4de2dd3f9b15284"
+        },
+        {
+          "scenarioId": "SC-LOC-MYG-KESENNUMA-07-001",
+          "score": 0.0767,
+          "sha256": "38e72de4a2d342eb336a843b884f4cac9cd778a9aea03ce740d53eb57fe70ec2"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09210-03-001",
+          "score": 0.126,
+          "sha256": "1a20eee6a44717c8edc61f4c26061d8ca9de8a7a63a54ab7cc93ff393c8150fa"
+        },
+        {
+          "scenarioId": "SC-LOC-009-04-001",
+          "score": 0.0715,
+          "sha256": "6659876a7068e9e42eb82fb05828147d2be8c28aa2cfd2c544b7340e2b21e034"
+        },
+        {
+          "scenarioId": "SC-TCG-ASHIKAGA-001",
+          "score": 0.0635,
+          "sha256": "5d53d3d663c295edbaa17bd335cfcce21591340ac5ffb8b28a02c2c8cbb9e29d"
+        }
+      ]
+    },
+    "SC-LOC-JP-09216-04-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-03203-04-001",
+          "score": 0.0876,
+          "sha256": "a9aa52cf7cefa5a62449185cf15777a9249dba39f778187914fed465fed86038"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-04207-04-001",
+          "score": 0.0857,
+          "sha256": "cfa9a507c90583463abff5411cd47fddfdf7dbc7ae95d323f275168f3ede6326"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-06213-04-001",
+          "score": 0.0807,
+          "sha256": "ef9483d35911e6aa427e31e96017d897f25165bfdf9240a7d2f5e95f1ac57f9f"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09210-04-001",
+          "score": 0.0697,
+          "sha256": "47acbdfd031fc02afaf332d13bc9c84432b2b3de867b90ce94bfc3e8f0597832"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09214-05-001",
+          "score": 0.0596,
+          "sha256": "ca2403f1d255e9449901e9c6630025710a6fe9419f4a9a2baa54a32ce9e27339"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-02-001",
+          "score": 0.0549,
+          "sha256": "07d1a6f84d8f4fead102f6ad73306c610d2743c6edb1b3324a6a8b3a144a041b"
+        }
+      ]
+    },
+    "SC-LOC-JP-09216-05-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-08234-06-001",
+          "score": 0.0847,
+          "sha256": "937556617b62922fb5c4bfaaba89cbf42ea430b5f5de1f58be3f0cb99df96338"
+        },
+        {
+          "scenarioId": "SC-LOC-007-06-001",
+          "score": 0.0807,
+          "sha256": "f13cf459793b3151eb4da8f1dde93587d6a01db8f1f82f0fb3657b5f41b3a5ea"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01212-02-001",
+          "score": 0.0773,
+          "sha256": "0fddc918fc4a0656cab7a15184f2288d53d9852eebd267ddaeb61e45d31c2939"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09209-05-001",
+          "score": 0.0749,
+          "sha256": "043eb5576c8f87508a7824b60b9476c507aca743b867de0b629fcab679463e60"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09209-06-001",
+          "score": 0.063,
+          "sha256": "e5dfcc0878fae125ac2df0570287166412b9b8947f6edee1549555b3832467b4"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-05-001",
+          "score": 0.0609,
+          "sha256": "a6cffc172fe43b576e65683fd4a9724bc4e72482dd755ba94923811618baffc6"
+        }
+      ]
+    },
+    "SC-LOC-JP-09216-06-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-05210-02-001",
+          "score": 0.0753,
+          "sha256": "81ee33cf7efd13036da1e75cc56de9fb1a1138dd28642d988f3b5d29234e944d"
+        },
+        {
+          "scenarioId": "SC-LOC-MYG-MATSUSHIMA-05-001",
+          "score": 0.0696,
+          "sha256": "0ce3b4c8c5643d78b938b2c91e1897d48a5cc0f49c44a479b26e57e312bc4d2e"
+        },
+        {
+          "scenarioId": "SC-LOC-006-21-001",
+          "score": 0.0652,
+          "sha256": "16127a973882b9038110011a5c2a6178f2ad0c0da3194777723f74f80832dda8"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09211-06-001",
+          "score": 0.1063,
+          "sha256": "11c2effdbfd70020bb93e58b639b135928e96b90e3add27f486748d411014e25"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09205-06-001",
+          "score": 0.09,
+          "sha256": "3384a9ea1332dabfe5d352f111558f2832f5944b7e922972c94fd462828fd428"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-06-001",
+          "score": 0.0677,
+          "sha256": "71ca5f79132eedd6bf7a789720faf7c7c55bd4676075ef000b221dbe5a4bbda9"
+        }
+      ]
+    },
+    "SC-LOC-JP-09216-07-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-05211-07-001",
+          "score": 0.0877,
+          "sha256": "cc42fc494575da0bbe15edf69c60bb7acc9eddfcd32574334a827d4585071d93"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01216-07-001",
+          "score": 0.0803,
+          "sha256": "c5cfc66a66f7df20e9eb8f2cedfd706f9cfb4ac303a8b45140b1ad06da69ff3f"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-02204-07-001",
+          "score": 0.08,
+          "sha256": "2b7bd5b156517cee2fd4dfb02294e261a53eb17e5c0d1e68c0f0ba35d60e498e"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09204-03-001",
+          "score": 0.1086,
+          "sha256": "e8d0fca667a3cb7d6b7fb56536db58093850be49b807c59135f89b2605e72a2b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-07-001",
+          "score": 0.1038,
+          "sha256": "341639f1940d62396bf38b61c5f0d9cfe7d64ca3d5ba4d0a71c1823e1caf7d2f"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-07-001",
+          "score": 0.073,
+          "sha256": "af8ab9aef665dccb2543e3e30b17441617258f8cd7f8203b9ca1b4c8d262846e"
+        }
+      ]
+    },
+    "SC-LOC-JP-09216-08-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-03203-08-001",
+          "score": 0.1129,
+          "sha256": "7fd3f07d0687823cd22c4ee20246226af29459b46915de388c9ce04676fd4080"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-07213-07-001",
+          "score": 0.0916,
+          "sha256": "cc89e06a74421418f041d484151b2ad4f1bb4ae6d367711d935dfc3299eb843d"
+        },
+        {
+          "scenarioId": "SC-LOC-HKD-OTARU-07-001",
+          "score": 0.0857,
+          "sha256": "5d2da4b246eec6ce163241f097ed442883e26b560846608d232d1d8edab00a8e"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-10-001",
+          "score": 0.1213,
+          "sha256": "9a347192d12c5c6cdb18bc3ec156cf8b1220f88aea55fc5f9d0538041aa40ff5"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09209-02-001",
+          "score": 0.0767,
+          "sha256": "e6437f5bd8d6f8f277cd0d636955ebff0526edfb8733094ef0fe1c1242f69f51"
+        },
+        {
+          "scenarioId": "SC-LOC-009-15-001",
+          "score": 0.0716,
+          "sha256": "c8903fc47096d7ec3f4dd37344630dbe0de9751b93f896b232bb69155c117cc3"
+        }
+      ]
+    },
+    "SC-LOC-TCG-ASHIKAGA-02-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-004-04-001",
+          "score": 0.0646,
+          "sha256": "f0183f85b6706430997cee1444d98ed22095ea1825f121364e1fe1efe999e434"
+        },
+        {
+          "scenarioId": "SC-LOC-AOM-TOWADA-03-001",
+          "score": 0.0619,
+          "sha256": "db233ff8775ad96179c5a6d0231cbda9779c859a6b59641ec29264b4dcfcb8de"
+        },
+        {
+          "scenarioId": "SC-LOC-006-17-001",
+          "score": 0.0611,
+          "sha256": "8687966ab8c45204b8118b8ff1065312f4e7ee6cae12546e6d005c6743adc778"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-13-001",
+          "score": 0.087,
+          "sha256": "50f2025712da8a613b878a25f2e463011659330b7b9cdc418199c3dc40231b44"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09214-07-001",
+          "score": 0.0618,
+          "sha256": "87b8d44d47cfa972501e7d50ff2afe4d999053ba07358e6de8820badb8dbc35b"
+        },
+        {
+          "scenarioId": "SC-LOC-009-17-001",
+          "score": 0.0553,
+          "sha256": "5ec1d950f9636246a1a286268b045a7f1a858ff87de117718c84541ff97ca549"
+        }
+      ]
+    },
+    "SC-LOC-TCG-ASHIKAGA-03-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-FKS-AIZUWAKAMATSU-03-001",
+          "score": 0.1023,
+          "sha256": "ef63907ae6b80d834d4a6dc62b152f6dea421de82a6c74aab0e680f5939aa2d9"
+        },
+        {
+          "scenarioId": "SC-LOC-FKS-AIZUWAKAMATSU-07-001",
+          "score": 0.0769,
+          "sha256": "bbe9ee5c6d26f9bd4f53c2882229e9653668fdc10cfbdbc6dad2060964bd1104"
+        },
+        {
+          "scenarioId": "SC-LOC-IWT-KITAKAMI-06-001",
+          "score": 0.0752,
+          "sha256": "b7891ea9d4e96e9a9a40c9994c0460fd28be16a6a8c9d675e8353ec2e51e1f59"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09210-08-001",
+          "score": 0.0762,
+          "sha256": "4ff8fff99012f652064795b8a09e2773f83292c6bd4b9976e530914c708e2040"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09214-03-001",
+          "score": 0.0504,
+          "sha256": "8d88dbd893da1eca661e19b018db8dc91741e08b4ba232f5bfb0128abf55dc9c"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NASUSHIOBARA-08-001",
+          "score": 0.0497,
+          "sha256": "979339deda7ea14c90664c100f746027ba5e4e36acd595028b4536c504bb3c79"
+        }
+      ]
+    },
+    "SC-LOC-TCG-ASHIKAGA-04-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-006-13-001",
+          "score": 0.0891,
+          "sha256": "8d814b7421c18236a5bd55a77d5e67334df91fbb1c2e804648886472b15456cf"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-07209-05-001",
+          "score": 0.0753,
+          "sha256": "568ee0139b17ab51064a4c896e8f4141f9ef49a630fae329eb0eafe4ee15bf84"
+        },
+        {
+          "scenarioId": "SC-AKT-SEMBOKU-001",
+          "score": 0.0726,
+          "sha256": "69e702c19705e54ae0f75fd8461049965a0d12cb3b4880460f87546b75b09e6e"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09204-03-001",
+          "score": 0.0664,
+          "sha256": "e8d0fca667a3cb7d6b7fb56536db58093850be49b807c59135f89b2605e72a2b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09215-05-001",
+          "score": 0.0651,
+          "sha256": "b4f71baa720c8a8fa08f0faa0369258bb696d9aada4af18d22669753590dc407"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09214-03-001",
+          "score": 0.0576,
+          "sha256": "8d88dbd893da1eca661e19b018db8dc91741e08b4ba232f5bfb0128abf55dc9c"
+        }
+      ]
+    },
+    "SC-LOC-TCG-ASHIKAGA-05-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01206-01-002",
+          "score": 0.1337,
+          "sha256": "97d2e516dfecfecee0d2e30965388a96ce549e60c6ef9cd6b00355a2479390e1"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-07207-08-001",
+          "score": 0.069,
+          "sha256": "c69c7f2e01661923bc7da683c455268a589e9d077f637aa1981de5f93ce9a3d1"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05211-04-001",
+          "score": 0.0656,
+          "sha256": "6535439a2f5c9d3a2b681a32e5285902bf4c3bce61747dd5846280c168f3db61"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09204-03-001",
+          "score": 0.0843,
+          "sha256": "e8d0fca667a3cb7d6b7fb56536db58093850be49b807c59135f89b2605e72a2b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-04-001",
+          "score": 0.0462,
+          "sha256": "e25208147288acab31604ebd4a4a6d995f787c9ceae4256856d54e27434e4359"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09211-05-001",
+          "score": 0.0438,
+          "sha256": "b82e69b709c0ec6e5d2d9cef80a9e63240ef84f40cdf9d1e3195f0667964a4b9"
+        }
+      ]
+    },
+    "SC-LOC-TCG-ASHIKAGA-06-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01221-02-001",
+          "score": 0.101,
+          "sha256": "03b306736c1c7dc7493b67f74a8619c8403f2a8388cf402223b2920aed922a9d"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-03215-03-001",
+          "score": 0.0706,
+          "sha256": "35a6828c950d35944a851d826ff7af3d0f83fed205da24bc8b315be8ea9a4d42"
+        },
+        {
+          "scenarioId": "SC-LOC-005-07-001",
+          "score": 0.0679,
+          "sha256": "bbf952ed0c7a55ca7444623cada73b696455fa954d869de87882f3b9c45d4285"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-08-001",
+          "score": 0.1024,
+          "sha256": "7fa93ed35750a379fcba0a6e23379ca4b2f819624e0ab61a2e7a667bedae2f39"
+        },
+        {
+          "scenarioId": "SC-LOC-009-04-001",
+          "score": 0.075,
+          "sha256": "6659876a7068e9e42eb82fb05828147d2be8c28aa2cfd2c544b7340e2b21e034"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09211-06-001",
+          "score": 0.061,
+          "sha256": "11c2effdbfd70020bb93e58b639b135928e96b90e3add27f486748d411014e25"
+        }
+      ]
+    },
+    "SC-LOC-TCG-ASHIKAGA-07-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-IBR-TSUKUBA-04-001",
+          "score": 0.1123,
+          "sha256": "9d6039f509ee2ac5fd40942e3454666de7759a653b72f0d1e04d9ce7cd65e9d2"
+        },
+        {
+          "scenarioId": "SC-FKS-SHIRAKAWA-001",
+          "score": 0.1001,
+          "sha256": "091025e9be7822799930d31186f35f87b4a72c13826ede1d65f915b5354e8297"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-YUZAWA-02-001",
+          "score": 0.0753,
+          "sha256": "c3b84aa7adce92ae7c23e69920560ff93e7919150882d7f12899f9418de86702"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09210-08-001",
+          "score": 0.0991,
+          "sha256": "4ff8fff99012f652064795b8a09e2773f83292c6bd4b9976e530914c708e2040"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NIKKO-04-001",
+          "score": 0.0822,
+          "sha256": "c3525cf3edb3334a4794ac4179c2dd5819f10a046ce227ae9bf1f8b3799451c9"
+        },
+        {
+          "scenarioId": "SC-LOC-009-16-001",
+          "score": 0.0743,
+          "sha256": "f822c4fa7325a4e1ec0887edc65a3aefc0e54bc84fc3f45d789710cb8a81b4b4"
+        }
+      ]
+    },
+    "SC-LOC-TCG-ASHIKAGA-08-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-IBR-BANDO-08-001",
+          "score": 0.0683,
+          "sha256": "713d5bae2ce673787cd03e0e46c3b19a324a22fa003e2a093929e18efc2815c5"
+        },
+        {
+          "scenarioId": "SC-LOC-008-06-001",
+          "score": 0.0682,
+          "sha256": "c7f15d7332b09c34275d62e84fbdb2d09b0699980dd5245fb3a1b2a4b4cb85ab"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05214-05-001",
+          "score": 0.0649,
+          "sha256": "d46dcdd4b97f60800a7b28885a5f11c5b543d3135805ea6f8e133c24b0cc6425"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09203-05-001",
+          "score": 0.0708,
+          "sha256": "27a6386f4aea648045843fcc42d45cee5dfa6c48eea37230a6148a625f8911dc"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-05-001",
+          "score": 0.0656,
+          "sha256": "a6cffc172fe43b576e65683fd4a9724bc4e72482dd755ba94923811618baffc6"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09211-03-001",
+          "score": 0.0415,
+          "sha256": "9d4dbd95b3f3e23b1b249364bd09223aea654670cae704e3252149f98d6066ff"
+        }
+      ]
+    },
+    "SC-LOC-TCG-NASUSHIOBARA-02-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-001-17-001",
+          "score": 0.0895,
+          "sha256": "296350181e950234bae5d7ba0934407e9c7e6fd163fca0732d174bbca8939bd2"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01228-01-001",
+          "score": 0.0843,
+          "sha256": "c2dfbc84c1375d2269d4524ba2e8bac2a79c0ff491d37e80b349b2c0b72b3dee"
+        },
+        {
+          "scenarioId": "SC-LOC-002-12-001",
+          "score": 0.0813,
+          "sha256": "a4978dec2e52cb1e6b72262234a79eba0cb9e122a07c71a275b59cf3bf171b70"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-19-001",
+          "score": 0.0802,
+          "sha256": "22bf1d8756d00427bffbbe50f9fcf7cf2c8f6f9c8fc522bad1f310871f628b8a"
+        },
+        {
+          "scenarioId": "SC-LOC-009-11-001",
+          "score": 0.0601,
+          "sha256": "770d96c1289e855c44c0ffd3a2605d4c340cf4e75c87683904e9f95b9f0633af"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09215-05-001",
+          "score": 0.0567,
+          "sha256": "b4f71baa720c8a8fa08f0faa0369258bb696d9aada4af18d22669753590dc407"
+        }
+      ]
+    },
+    "SC-LOC-TCG-NASUSHIOBARA-03-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-08212-02-001",
+          "score": 0.0786,
+          "sha256": "3b1079c9909c7736be468c04463ad9d2b678a9853169d30648dd53f5ce9d7a17"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08222-02-001",
+          "score": 0.0778,
+          "sha256": "82f2d40f54974e25cbcfd7d249ca99ef9436ee588a991d668a195e181ccacb47"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-07210-06-001",
+          "score": 0.0683,
+          "sha256": "80ba0bbf7dee356dd84b09255f810326211d0728c174d4b68318dcbb5313d70e"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09210-02-001",
+          "score": 0.0634,
+          "sha256": "07d1a6f84d8f4fead102f6ad73306c610d2743c6edb1b3324a6a8b3a144a041b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09210-08-001",
+          "score": 0.0609,
+          "sha256": "4ff8fff99012f652064795b8a09e2773f83292c6bd4b9976e530914c708e2040"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NASUSHIOBARA-07-001",
+          "score": 0.0606,
+          "sha256": "e214e2414a28cb9644395da2e9896d161aea6d05cf3aa04eee5a2c084b46968d"
+        }
+      ]
+    },
+    "SC-LOC-TCG-NASUSHIOBARA-04-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-006-20-001",
+          "score": 0.0894,
+          "sha256": "dab2bfebfaf0bf08c8c2e5ac8f61dd5289cc8bb19130de30ade1c2a198bd4c57"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08225-08-001",
+          "score": 0.0768,
+          "sha256": "63b33b1c83689f9bea994d52933cf2bc44bbd3bd35726a835488b6c9a2c3ec75"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-07213-04-001",
+          "score": 0.0735,
+          "sha256": "b5b8bfbc3c9b4b8a2f45e28ba4920710fbe36afbd526be1b4b6411a92c76aeb3"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-02-001",
+          "score": 0.0921,
+          "sha256": "335584391b7e8ca6b7fa21931890b4c0f07df97b9ba0c6f55fa5aff2384aef2b"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-04-001",
+          "score": 0.0723,
+          "sha256": "a005775f430812e7cfd6e3d8509a2978d367c4910f0d983f9369553a4e780c96"
+        },
+        {
+          "scenarioId": "SC-LOC-009-20-001",
+          "score": 0.069,
+          "sha256": "b2bbb6a48b2b4f84886247d8ae9d89c4ec0bb731c3c59dd2632b826c8668e914"
+        }
+      ]
+    },
+    "SC-LOC-TCG-NASUSHIOBARA-05-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-YGT-TENDO-04-001",
+          "score": 0.0818,
+          "sha256": "218256c4b4755f6231787890624e205480547e53175673e1bcdd2222aacc72a3"
+        },
+        {
+          "scenarioId": "SC-AKT-SEMBOKU-001",
+          "score": 0.0773,
+          "sha256": "69e702c19705e54ae0f75fd8461049965a0d12cb3b4880460f87546b75b09e6e"
+        },
+        {
+          "scenarioId": "SC-LOC-IWT-HANAMAKI-05-001",
+          "score": 0.072,
+          "sha256": "d4adde756384adb95237e7e4fbf58593f19ce41f79e5c0923ad71db579f5713c"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09214-07-001",
+          "score": 0.0499,
+          "sha256": "87b8d44d47cfa972501e7d50ff2afe4d999053ba07358e6de8820badb8dbc35b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-02-001",
+          "score": 0.0355,
+          "sha256": "c1ec9bf2ccaf50345ee2b47bf799a7abd6aef89e9a2e06073c188401f6bbe33d"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09203-02-001",
+          "score": 0.0344,
+          "sha256": "e48fa67394ce3e01e16b03d08c19fcef6cbf32e31e24453c2d5aac60d7167660"
+        }
+      ]
+    },
+    "SC-LOC-TCG-NASUSHIOBARA-06-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-07208-02-001",
+          "score": 0.1149,
+          "sha256": "d0d9ec4a7a5852c32d1d9c82ce7cefa69dc24392a7a42ce68c2dba6bc802de5d"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08234-03-001",
+          "score": 0.0776,
+          "sha256": "55ebea64c7761aa6882487338a83ad62b7cd615f5d6648643b7b6eb8b2ad0d21"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-07209-03-001",
+          "score": 0.0706,
+          "sha256": "98b601aaa6aa9d9c6a8362295466cdf8ba309e86a9c6ab0ec3c9d5ffb99bacc9"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-07-001",
+          "score": 0.0598,
+          "sha256": "1b175ba6955badef322dfdd8b1af1e779122c9ef1b9cdf7b4a95c8031b31c6d6"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NASUSHIOBARA-04-001",
+          "score": 0.0523,
+          "sha256": "223c97d295ef1afc1b805884cd54a50b44df2ca9d7527972154026bffa8d71b7"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09211-08-001",
+          "score": 0.0498,
+          "sha256": "196485b6d61003db7b93daa7670a6aacf089714765bf241bd47e9f3d0576f259"
+        }
+      ]
+    },
+    "SC-LOC-TCG-NASUSHIOBARA-07-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-08217-04-001",
+          "score": 0.0718,
+          "sha256": "88632d82079d0c592925654065d88c126f844cc6f1ffb517b98395f8b592cce1"
+        },
+        {
+          "scenarioId": "SC-LOC-YGT-TSURUOKA-04-001",
+          "score": 0.0714,
+          "sha256": "718ec9d6f6a190f19e9152e60b970dad24ecd846113689f526c0dd5cee3d6ad8"
+        },
+        {
+          "scenarioId": "SC-LOC-IWT-MIYAKO-03-001",
+          "score": 0.0668,
+          "sha256": "8bac7ab4692b170b0f1e3ac4020f5cbc32ed5753a791e1784aeefb5dfc7f77bb"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09215-05-001",
+          "score": 0.0999,
+          "sha256": "b4f71baa720c8a8fa08f0faa0369258bb696d9aada4af18d22669753590dc407"
+        },
+        {
+          "scenarioId": "SC-LOC-009-19-001",
+          "score": 0.0933,
+          "sha256": "22bf1d8756d00427bffbbe50f9fcf7cf2c8f6f9c8fc522bad1f310871f628b8a"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-03-001",
+          "score": 0.0783,
+          "sha256": "e8d0fca667a3cb7d6b7fb56536db58093850be49b807c59135f89b2605e72a2b"
+        }
+      ]
+    },
+    "SC-LOC-TCG-NASUSHIOBARA-08-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-IBR-BANDO-05-001",
+          "score": 0.0905,
+          "sha256": "194e7398c014f23538b414dbc862849cdfcd50cefcc667dffc9e7304099c1333"
+        },
+        {
+          "scenarioId": "SC-LOC-FKS-IWAKI-08-001",
+          "score": 0.0891,
+          "sha256": "eb36d0a78cdd4523fe7e25f8b9e71ef59015354bb879bbcdc9057a9e2fdf169b"
+        },
+        {
+          "scenarioId": "SC-LOC-AKT-ODATE-05-001",
+          "score": 0.0731,
+          "sha256": "d188fb7712db86d0745d7caa3c2ab7cd5c7533660ac1d1ef1f3ed2d5baa96f9c"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-08-001",
+          "score": 0.077,
+          "sha256": "c3bf36b8f4a52e1e686f50da7ef6b2f141a5d26708a8b836f0524cfaf2d356dd"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09209-06-001",
+          "score": 0.0717,
+          "sha256": "e5dfcc0878fae125ac2df0570287166412b9b8947f6edee1549555b3832467b4"
+        },
+        {
+          "scenarioId": "SC-LOC-009-12-001",
+          "score": 0.0619,
+          "sha256": "9921ac5c2e63301249538943c55eee1c80ab97b47d291312df8e96d62c393ef8"
+        }
+      ]
+    },
+    "SC-LOC-TCG-NIKKO-02-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-IBR-TSUCHIURA-05-001",
+          "score": 0.0896,
+          "sha256": "ff49496679810ff1701d68644e0237a893c63813267376c607991422b04045a7"
+        },
+        {
+          "scenarioId": "SC-LOC-004-02-001",
+          "score": 0.0685,
+          "sha256": "fb32414b54e208532abe1960e57db8a4bfc365026f5afcb29555d390d66fa6c6"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01211-04-001",
+          "score": 0.0684,
+          "sha256": "95888dcec97426dc308c9ca4ae5c2e7754090cc12ec6f7e26e62a262c1325c34"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-05-001",
+          "score": 0.0736,
+          "sha256": "c5012d79be4086fb8e94961d3b08df2d0470abb81025d47089975c3f38c378ec"
+        },
+        {
+          "scenarioId": "SC-TCG-NIKKO-001",
+          "score": 0.0725,
+          "sha256": "0f51258da277fbc97ce72cdd81a1f9ff7ab1f384e3a5c01abca836f3c61ff27c"
+        },
+        {
+          "scenarioId": "SC-LOC-009-14-001",
+          "score": 0.0694,
+          "sha256": "5d4c4e698a3384a0c0784687e5717820ad4df33e1315dc54e6865283c407b6d4"
+        }
+      ]
+    },
+    "SC-LOC-TCG-NIKKO-03-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-FKS-AIZUWAKAMATSU-07-001",
+          "score": 0.0825,
+          "sha256": "bbe9ee5c6d26f9bd4f53c2882229e9653668fdc10cfbdbc6dad2060964bd1104"
+        },
+        {
+          "scenarioId": "SC-LOC-IWT-KITAKAMI-06-001",
+          "score": 0.077,
+          "sha256": "b7891ea9d4e96e9a9a40c9994c0460fd28be16a6a8c9d675e8353ec2e51e1f59"
+        },
+        {
+          "scenarioId": "SC-LOC-HKD-OBIHIRO-02-001",
+          "score": 0.0686,
+          "sha256": "2429a4b2d5fdba9c3f3a6b16911a40c50ab282efd6c979ce78855f6ed3359f12"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-02-001",
+          "score": 0.0687,
+          "sha256": "335584391b7e8ca6b7fa21931890b4c0f07df97b9ba0c6f55fa5aff2384aef2b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-05-001",
+          "score": 0.0674,
+          "sha256": "392d079a6e48409cd35ea1849d419b2083f768c1212eae98e306461b7c530214"
+        },
+        {
+          "scenarioId": "SC-LOC-009-11-001",
+          "score": 0.0639,
+          "sha256": "770d96c1289e855c44c0ffd3a2605d4c340cf4e75c87683904e9f95b9f0633af"
+        }
+      ]
+    },
+    "SC-LOC-TCG-NIKKO-04-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-AOM-MUTSU-05-001",
+          "score": 0.1115,
+          "sha256": "0495b8e5f51166e1fde4790794c89b5da7f20a954d5e798a61d14edf0143e293"
+        },
+        {
+          "scenarioId": "SC-LOC-002-16-001",
+          "score": 0.1004,
+          "sha256": "8ed836bd18bdb81230d52addee6499434a7268448a8dec1b24e9df73a510a18b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-04208-07-001",
+          "score": 0.0906,
+          "sha256": "e0d0f4d5d7fd730bc5336aa74373ec66073fde3f51b2b3d5fe115d9ea59380b6"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-16-001",
+          "score": 0.1039,
+          "sha256": "f822c4fa7325a4e1ec0887edc65a3aefc0e54bc84fc3f45d789710cb8a81b4b4"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-ASHIKAGA-07-001",
+          "score": 0.0822,
+          "sha256": "cd0148b1be8174262650aeee373010d6eb888e23889177efc4ac7e9331f8a0c6"
+        },
+        {
+          "scenarioId": "SC-LOC-009-11-001",
+          "score": 0.0597,
+          "sha256": "770d96c1289e855c44c0ffd3a2605d4c340cf4e75c87683904e9f95b9f0633af"
+        }
+      ]
+    },
+    "SC-LOC-TCG-NIKKO-05-001": {
+      "external": [
+        {
+          "scenarioId": "SC-AOM-HACHINOHE-001",
+          "score": 0.0712,
+          "sha256": "150842000b0a0da511c7da4b8a592b12fd4489345e4335b45a8e02331930444f"
+        },
+        {
+          "scenarioId": "SC-LOC-004-17-001",
+          "score": 0.0619,
+          "sha256": "2b0e038faba9becc05b38f7ebf42e5e8881ce86d0947447a8ec0d207fde0fb88"
+        },
+        {
+          "scenarioId": "SC-LOC-MYG-MATSUSHIMA-06-001",
+          "score": 0.0604,
+          "sha256": "6d9da2aa4e512764d54cec3cd8375e738f8f9cc6f7675932aee846a6c57f8427"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-TCG-ASHIKAGA-001",
+          "score": 0.0903,
+          "sha256": "5d53d3d663c295edbaa17bd335cfcce21591340ac5ffb8b28a02c2c8cbb9e29d"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-02-001",
+          "score": 0.0551,
+          "sha256": "335584391b7e8ca6b7fa21931890b4c0f07df97b9ba0c6f55fa5aff2384aef2b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-07-001",
+          "score": 0.0518,
+          "sha256": "af8ab9aef665dccb2543e3e30b17441617258f8cd7f8203b9ca1b4c8d262846e"
+        }
+      ]
+    },
+    "SC-LOC-TCG-NIKKO-06-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-AOM-HIROSAKI-06-001",
+          "score": 0.1253,
+          "sha256": "93546e118503abca7343107d1d075d301e7aeeaf9dafe69ef3f06129bd0c41ad"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01221-03-001",
+          "score": 0.0898,
+          "sha256": "2bbdc7d7d64c9d4c571ad4a6bd2f8aa1fb11d376fedb679971fb06c1d51b3ddb"
+        },
+        {
+          "scenarioId": "SC-LOC-FKS-AIZUWAKAMATSU-06-001",
+          "score": 0.0836,
+          "sha256": "23ae820425132bc79c465ee0e2dd9816f73da3bbcedac1869eb0441810dc47ce"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-16-001",
+          "score": 0.0838,
+          "sha256": "f822c4fa7325a4e1ec0887edc65a3aefc0e54bc84fc3f45d789710cb8a81b4b4"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-06-001",
+          "score": 0.0642,
+          "sha256": "feb6ed9c5114af312baea93e24409ea573b3ec4cb2228dec4c7afe89ef42c7f4"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09211-02-001",
+          "score": 0.0611,
+          "sha256": "d260c7835fafa0bb77776e6618e25de56d2de897220a5b37453029681354f04d"
+        }
+      ]
+    },
+    "SC-LOC-TCG-NIKKO-07-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-08234-02-001",
+          "score": 0.081,
+          "sha256": "e9fff49b0620ee3761434dc850c85d8a155043936005c7405979fcfd67c4e063"
+        },
+        {
+          "scenarioId": "SC-LOC-FKS-IWAKI-07-001",
+          "score": 0.0623,
+          "sha256": "dbaaa629a410fc94b6a44d4a0944910703c6dbf4c80b90d34ac60f1755505076"
+        },
+        {
+          "scenarioId": "SC-LOC-006-04-001",
+          "score": 0.0547,
+          "sha256": "ad4ecd3f0e05686ae85669561752b734e67da78e40e037b8d664d7e3a56b7e32"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-05-001",
+          "score": 0.0382,
+          "sha256": "c5012d79be4086fb8e94961d3b08df2d0470abb81025d47089975c3f38c378ec"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09215-07-001",
+          "score": 0.0338,
+          "sha256": "1864c86f15e7068df4b4e246465e8d8b968f58bd0770ace9e2a2d6f1c3eada7e"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09203-02-001",
+          "score": 0.0335,
+          "sha256": "e48fa67394ce3e01e16b03d08c19fcef6cbf32e31e24453c2d5aac60d7167660"
+        }
+      ]
+    },
+    "SC-LOC-TCG-NIKKO-08-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-002-05-001",
+          "score": 0.0785,
+          "sha256": "5e03061d5db5c5899e9403380a7f2a92d8d6166ce10a3b4da96d82981a4fb0a5"
+        },
+        {
+          "scenarioId": "SC-LOC-HKD-OTARU-08-001",
+          "score": 0.0783,
+          "sha256": "a056617ef706434e17919b598bac711083f77398f97bb7b11ab4c47e49e0f46c"
+        },
+        {
+          "scenarioId": "SC-LOC-001-20-001",
+          "score": 0.0767,
+          "sha256": "f8c09921ec57c8764a64e8f96b56092c533bbe5c66715b40dd3aae13206241f2"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-09-001",
+          "score": 0.1315,
+          "sha256": "6d8c49d5e8245feafe360ccf90e8a6c31923cb24099613d75bff59f64fe0acd1"
+        },
+        {
+          "scenarioId": "SC-LOC-009-08-001",
+          "score": 0.0652,
+          "sha256": "7fa93ed35750a379fcba0a6e23379ca4b2f819624e0ab61a2e7a667bedae2f39"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09209-02-001",
+          "score": 0.0624,
+          "sha256": "e6437f5bd8d6f8f277cd0d636955ebff0526edfb8733094ef0fe1c1242f69f51"
+        }
+      ]
+    },
+    "SC-LOC-TCG-OYAMA-02-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-01224-03-001",
+          "score": 0.0764,
+          "sha256": "3e1d1eeaef48ea2842c9588160990113b125bbf7f90a246a358920e3c71e55a3"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08236-08-001",
+          "score": 0.076,
+          "sha256": "5f69c78c4615a04310d9b5ac8ef750b5baee495bd54a0b1ce2f4a6ecb1110ef1"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08229-08-001",
+          "score": 0.0748,
+          "sha256": "c971a0b3297770bf97958208780ede7f53a5234c1bcebd59fed32c30049e82a6"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-TCG-NASUSHIOBARA-04-001",
+          "score": 0.0921,
+          "sha256": "223c97d295ef1afc1b805884cd54a50b44df2ca9d7527972154026bffa8d71b7"
+        },
+        {
+          "scenarioId": "SC-TCG-ASHIKAGA-001",
+          "score": 0.0829,
+          "sha256": "5d53d3d663c295edbaa17bd335cfcce21591340ac5ffb8b28a02c2c8cbb9e29d"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09203-08-001",
+          "score": 0.0749,
+          "sha256": "07718626615933da96e828f6e3b7efcc0f16a1d925909ee5ee1ac5def7f8a515"
+        }
+      ]
+    },
+    "SC-LOC-TCG-OYAMA-03-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-005-16-001",
+          "score": 0.0704,
+          "sha256": "274065ef6628640050d338c794040fb5ba196e5865bfe693fbd364bc86963fba"
+        },
+        {
+          "scenarioId": "SC-LOC-004-08-001",
+          "score": 0.0659,
+          "sha256": "958ae8a74cc69a3b11ad8c32e8545f64530f5240a5dd3f09a26c71413eafde70"
+        },
+        {
+          "scenarioId": "SC-LOC-008-19-001",
+          "score": 0.0652,
+          "sha256": "7d547d911d8df327eb95abec05b82e31af5fcc12f0737818ed067c46637f79a7"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-07-001",
+          "score": 0.0673,
+          "sha256": "ba2ed43f1cc5c250c8310244f9939afc6d3758d466b84618f77b32de42023d6d"
+        },
+        {
+          "scenarioId": "SC-LOC-009-11-001",
+          "score": 0.0649,
+          "sha256": "770d96c1289e855c44c0ffd3a2605d4c340cf4e75c87683904e9f95b9f0633af"
+        },
+        {
+          "scenarioId": "SC-LOC-009-06-001",
+          "score": 0.0602,
+          "sha256": "17fdf52367f7a8ec462944fb9db786686cc0b9c769f8ad0c2aa6d13959ba94d1"
+        }
+      ]
+    },
+    "SC-LOC-TCG-OYAMA-04-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-04212-06-001",
+          "score": 0.0724,
+          "sha256": "7667e66654ca5df9af8d6ef689d47add466aa7cbd9bfee5792b9350e0e0b49e0"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-06207-02-001",
+          "score": 0.0703,
+          "sha256": "96e951da2966b9b4e010138c08b91da03943ac6b192fa5822b13b7a28ab92b8a"
+        },
+        {
+          "scenarioId": "SC-LOC-001-21-001",
+          "score": 0.0701,
+          "sha256": "87a6d407b6f4c39317db1485eac7e3dd8b2b47b6fd99a08f516ad4d632f9e0a4"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-TCG-NASUSHIOBARA-04-001",
+          "score": 0.0723,
+          "sha256": "223c97d295ef1afc1b805884cd54a50b44df2ca9d7527972154026bffa8d71b7"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NIKKO-03-001",
+          "score": 0.0593,
+          "sha256": "0c098582394d3b6f56b54671aba4094aad73b9853a7d0fcec5efc0af5a572fec"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09204-03-001",
+          "score": 0.0591,
+          "sha256": "e8d0fca667a3cb7d6b7fb56536db58093850be49b807c59135f89b2605e72a2b"
+        }
+      ]
+    },
+    "SC-LOC-TCG-OYAMA-05-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-08216-06-001",
+          "score": 0.118,
+          "sha256": "9abc491da4520a9cd4cfe8942aa5d003d8aa01ef3b94784ebc247479ed8277f1"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-07213-01-001",
+          "score": 0.096,
+          "sha256": "d0c4737a7c2ea17dbb0079321a4bdcb9a36d0c56bdd6d1d755fe975417a322f2"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08221-02-001",
+          "score": 0.0905,
+          "sha256": "29bd5208293aaf59fbc7796c7e380a3af07270bb8632e135af91ddff5975b110"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09205-02-001",
+          "score": 0.0758,
+          "sha256": "5a775a7e63ef25a7c2d90c310709f8594d2bbfd4915d3732d0f8f23f9d268c90"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NIKKO-02-001",
+          "score": 0.0736,
+          "sha256": "8e6ea39ebab8ac3d888eb094073bc6ad45b75e5b89d341921b48feeeb5db618c"
+        },
+        {
+          "scenarioId": "SC-LOC-009-14-001",
+          "score": 0.0721,
+          "sha256": "5d4c4e698a3384a0c0784687e5717820ad4df33e1315dc54e6865283c407b6d4"
+        }
+      ]
+    },
+    "SC-LOC-TCG-OYAMA-06-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-08223-08-001",
+          "score": 0.0711,
+          "sha256": "ed1545eef44b0931dffca87988b597333c8337f2f21314068087cf177dc5aa7b"
+        },
+        {
+          "scenarioId": "SC-LOC-004-19-001",
+          "score": 0.0664,
+          "sha256": "ec5fd3ad5c652d16c0efb36f168bdd4dc69f16d06c217d3e2072ca736a51d6c6"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-05210-03-001",
+          "score": 0.0664,
+          "sha256": "e4f785e0d59b6850bda0e2433bcbb5dea8e326f60f1e34a75a73bc33c95866c5"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-18-001",
+          "score": 0.0764,
+          "sha256": "6ca88a9a2a0dd621d1845bd71497190757fef829d4a9df16682a6e94532645d7"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NIKKO-06-001",
+          "score": 0.0642,
+          "sha256": "2f99a1bc2022f7c984d3dd2dba24e7799a9d6434e22c934c2f68bc5f8732ce8c"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09203-08-001",
+          "score": 0.0608,
+          "sha256": "07718626615933da96e828f6e3b7efcc0f16a1d925909ee5ee1ac5def7f8a515"
+        }
+      ]
+    },
+    "SC-LOC-TCG-OYAMA-07-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-006-12-001",
+          "score": 0.1209,
+          "sha256": "248a1a7720b159fde0454ea792e6cc3f2324d1730cd83b1acfeb1a5d0e452d95"
+        },
+        {
+          "scenarioId": "SC-LOC-008-12-001",
+          "score": 0.1186,
+          "sha256": "9153ee6317d1f310461b3bf12c78a23b28288b557f8f2f048cc08be11d72979a"
+        },
+        {
+          "scenarioId": "SC-LOC-HKD-OBIHIRO-06-001",
+          "score": 0.096,
+          "sha256": "0058cf7ef8f7a2f63b6a1323bdaaf15cc4a34e7520353672400544beb50214d4"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09205-03-001",
+          "score": 0.0814,
+          "sha256": "d12c124d9af8fa225bd2cb04e5fdcaf2e807476707f99b5a70456bf56ae7efd6"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NASUSHIOBARA-06-001",
+          "score": 0.0598,
+          "sha256": "cda4c1779ade3dd066478ae5cb4f2d3e44287a9b7c54170527c476a5d535fb61"
+        },
+        {
+          "scenarioId": "SC-LOC-009-04-001",
+          "score": 0.0598,
+          "sha256": "6659876a7068e9e42eb82fb05828147d2be8c28aa2cfd2c544b7340e2b21e034"
+        }
+      ]
+    },
+    "SC-LOC-TCG-OYAMA-08-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-07209-05-001",
+          "score": 0.1004,
+          "sha256": "568ee0139b17ab51064a4c896e8f4141f9ef49a630fae329eb0eafe4ee15bf84"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-02210-05-001",
+          "score": 0.093,
+          "sha256": "daeb4ffe3e3f15bf38536a28cd129e0053c036e333d0e66ab1afda3cfcfa0529"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-04213-05-001",
+          "score": 0.0652,
+          "sha256": "ad4ec789217df4dec8139f8688151fb6e864cecd8527b38065313ecdf5c8986f"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-TCG-NASUSHIOBARA-08-001",
+          "score": 0.077,
+          "sha256": "979339deda7ea14c90664c100f746027ba5e4e36acd595028b4536c504bb3c79"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09211-05-001",
+          "score": 0.0662,
+          "sha256": "b82e69b709c0ec6e5d2d9cef80a9e63240ef84f40cdf9d1e3195f0667964a4b9"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09214-05-001",
+          "score": 0.0579,
+          "sha256": "ca2403f1d255e9449901e9c6630025710a6fe9419f4a9a2baa54a32ce9e27339"
+        }
+      ]
+    },
+    "SC-TCG-ASHIKAGA-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-07214-04-001",
+          "score": 0.0663,
+          "sha256": "5b6cb8113d8535e8b79349b0dbf6da9ff7f3f7df0d1b3e65505dddf2cf63a16f"
+        },
+        {
+          "scenarioId": "SC-HKD-HAKODATE-001",
+          "score": 0.0653,
+          "sha256": "a96856260e8f1a380372ae19d9ca32586bec8a09adb592613c2bfc1840772f66"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-01210-04-001",
+          "score": 0.0622,
+          "sha256": "6ab6292c43d801d2c3f093c06288c5859f331d4d8de678b6752eabd8b3b34253"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-TCG-NIKKO-05-001",
+          "score": 0.0903,
+          "sha256": "bede1b41d318949375a7e3a3d702af867d5de5d4970641112f14c8e270e6fee4"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-OYAMA-02-001",
+          "score": 0.0829,
+          "sha256": "335584391b7e8ca6b7fa21931890b4c0f07df97b9ba0c6f55fa5aff2384aef2b"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NASUSHIOBARA-04-001",
+          "score": 0.0683,
+          "sha256": "223c97d295ef1afc1b805884cd54a50b44df2ca9d7527972154026bffa8d71b7"
+        }
+      ]
+    },
+    "SC-TCG-NASUSHIOBARA-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-08232-03-001",
+          "score": 0.1182,
+          "sha256": "7abccb156ed80e125a20af959f18b461c05ac03fc48ff34c20d4a414fda7649b"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08222-03-001",
+          "score": 0.1114,
+          "sha256": "66d065ec17499ebf410126218499dfabf2957fa53ed006c1a64ae327bc1b239d"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-08215-08-001",
+          "score": 0.0869,
+          "sha256": "a4f378dae435e5c9a4c9da06e3c6f182e01665de8f7ffb6c9d2ec4b365f1f1b4"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-JP-09211-08-001",
+          "score": 0.0735,
+          "sha256": "196485b6d61003db7b93daa7670a6aacf089714765bf241bd47e9f3d0576f259"
+        },
+        {
+          "scenarioId": "SC-LOC-009-08-001",
+          "score": 0.0729,
+          "sha256": "7fa93ed35750a379fcba0a6e23379ca4b2f819624e0ab61a2e7a667bedae2f39"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-09203-03-001",
+          "score": 0.0689,
+          "sha256": "5549284219b7a5a449f16a9e2505538842aa1fc31362b0d53e374385988dbae8"
+        }
+      ]
+    },
+    "SC-TCG-NIKKO-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-JP-08214-08-001",
+          "score": 0.0932,
+          "sha256": "be5b8cc9bed181c29d6e94a55ba01807fe05b0f34b65ef3546e3700324c71adb"
+        },
+        {
+          "scenarioId": "SC-LOC-003-16-001",
+          "score": 0.0913,
+          "sha256": "3335c97a7329383d65a9a078b1b68779157d993b76dfe8394107f1ba153acdf8"
+        },
+        {
+          "scenarioId": "SC-LOC-006-08-001",
+          "score": 0.0903,
+          "sha256": "7921fd897391c04b57f1edb8b73769e1d97e0f3cc52a303d25a250d6ced17481"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-TCG-OYAMA-001",
+          "score": 0.0794,
+          "sha256": "6f7314983717983827bb482ae0648434f775f2e5fc839ae1d8f30058d0afb19f"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NIKKO-02-001",
+          "score": 0.0725,
+          "sha256": "8e6ea39ebab8ac3d888eb094073bc6ad45b75e5b89d341921b48feeeb5db618c"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-ASHIKAGA-07-001",
+          "score": 0.0702,
+          "sha256": "cd0148b1be8174262650aeee373010d6eb888e23889177efc4ac7e9331f8a0c6"
+        }
+      ]
+    },
+    "SC-TCG-OYAMA-001": {
+      "external": [
+        {
+          "scenarioId": "SC-LOC-005-18-001",
+          "score": 0.092,
+          "sha256": "a6b4250e64e6da467c629155edbe4c5585eeabbe0a92b3a48cf7dfbeb1014c86"
+        },
+        {
+          "scenarioId": "SC-FKS-SHIRAKAWA-001",
+          "score": 0.0859,
+          "sha256": "091025e9be7822799930d31186f35f87b4a72c13826ede1d65f915b5354e8297"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-03211-01-001",
+          "score": 0.0789,
+          "sha256": "d13e85a0bc59e65ef84f16d8c52c9f6e2c57516e8aaa1e4ecfdcbb1ed69ee0b0"
+        }
+      ],
+      "internal": [
+        {
+          "scenarioId": "SC-LOC-009-01-001",
+          "score": 0.0885,
+          "sha256": "7a25bbd8e49250583f79776af1e39f88dfd976207fa4ca602b85db86da8e0599"
+        },
+        {
+          "scenarioId": "SC-TCG-NIKKO-001",
+          "score": 0.0794,
+          "sha256": "0f51258da277fbc97ce72cdd81a1f9ff7ab1f384e3a5c01abca836f3c61ff27c"
+        },
+        {
+          "scenarioId": "SC-LOC-TCG-NASUSHIOBARA-03-001",
+          "score": 0.059,
+          "sha256": "094f3ae6ff1562a3d2f1f7c26ecd38c60d931ad61bfa93c8f87c8067c1e3d8ef"
+        }
+      ]
+    }
+  }
+}
