@@ -60,3 +60,17 @@ CONTENT PASS remains false. Explicit priority pairs: Sakura05 forwarding/sender-
 Reconciled remote1fab1945 before editing. Replaced three complete priority plots: Sakura05 (sender label versus current shipment inquiry), Shimotsuke01 (station versus shop rendezvous clarified with friend), Shimotsuke04 (original mother-tongue voice demand versus player-added certainty in a Japanese summary). Fifteen PLAYER goals follow new causal developments. Other122 runtime dialogues are preserved against that remote; original IDs/order/links/index retained. Current-hash evidence and comparisons: PRF-009_PRIORITY_REWRITE_REVIEW_2026-10-03.json. Previous cluster05 evidence for changed slots is explicitly superseded, not silently treated as approval.
 
 125/125 individually authored draft slots remain. Structural checks have zero errors and exact/normalized/near screening groups zero. CONTENT PASS remains false, Japanese master is not locked, and no new translation is started. Next work is full125 current-script causal/location/closure and cross-prefecture semantic synthesis, including the remaining cluster01-05 motifs. Do not proceed to PRF-010 before this editorial gate.
+
+
+## Final 64 causal/naturalness pass — 2026-10-03
+
+Integrated latest remote repairs at 04908965 before writing. Read all 64 later-city scripts and their 320 speaking goals, then repaired14 of these plus one Utsunomiya question/answer polarity error discovered in comparison. Two full trajectory replacements remove the second stop-lost-card plot and the passive companion-booking handoff. Bank paper/card uses, signature purposes, accepted-transfer result and municipal partial-filing outcome now develop through actual NPC answers. Registered-cash shipment wording uses verified Japan Post general guidance; no made-up local prices/hours. Source/runtime/canonical parity and unchanged IDs/order/links verified. Evidence: PRF-009_FINAL64_REPAIR_REVIEW_2026-10-03.json; candidate retrieval remains lexical screening only.
+
+Coverage125/125 and zero structural errors remain structural evidence. CONTENT PASS false, Japanese master not locked. Next: current-hash semantic synthesis for all125, including explicit repeated motifs; no PRF-010 authoring or translations before that gate.
+
+
+## Concurrent master integration and incremental revalidation
+
+Remote320f1ad6 completed the whole125-script prefecture review while local repairs were being prepared. Preserved all remote edits; the overlapping Otawara02 record-scope draft was superseded by remote private consultation with independent language support. Retained14 local edits, including the Utsunomiya approximate-count polarity correction. Original111 unchanged runtime hashes inherit the remote editorial decision. Re-read all14 changed scripts/goals and selected full external/internal/same-category comparisons; retrieval screened7128 runtime scripts without claiming full7128 human/AI reading. Evidence: PRF-009_CONCURRENT_REPAIR_REVIEW_2026-10-03.json.
+
+Revalidated source/runtime/canonical parity and unchanged identity/order/links for all125 against320f1ad6. Updated current-hash semantic decision and Japanese master lock; earlier15-repair and cluster snapshots remain historical. Current state: AI CONTENT PASS125/125,625 speaking goals, Japanese master locked in AI editorial scope only. No native-speaker, actual facility-policy, translation or device certification. Stop at step10 for this prefecture; translations remain deferred.
