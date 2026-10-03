@@ -1,6 +1,5 @@
 import { router } from 'expo-router';
-import { useEffect, useRef } from 'react';
-import { Animated, Easing, ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { SakuraPetalField } from '@/components/ui/SakuraPetalField';
 
@@ -20,21 +19,7 @@ const PORTALS: Portal[] = [
   { titleJa: '学習者', titleEn: 'Learners', learner: true },
 ];
 
-function PortalCard({ portal, index, wide }: { portal: Portal; index: number; wide: boolean }) {
-  const entrance = useRef(new Animated.Value(0)).current;
-
-  useEffect(() => {
-    const animation = Animated.timing(entrance, {
-      toValue: 1,
-      duration: 430,
-      delay: 70 + index * 65,
-      easing: Easing.out(Easing.cubic),
-      useNativeDriver: true,
-    });
-    animation.start();
-    return () => animation.stop();
-  }, [entrance, index]);
-
+function PortalCard({ portal, wide }: { portal: Portal; wide: boolean }) {
   const openPortal = () => {
     if (portal.learner) {
       router.push('/register');
@@ -44,11 +29,10 @@ function PortalCard({ portal, index, wide }: { portal: Portal; index: number; wi
   };
 
   return (
-    <Animated.View
+    <View
       style={[
         styles.cardShell,
         wide && styles.cardShellWide,
-        { opacity: entrance, transform: [{ translateY: entrance.interpolate({ inputRange: [0, 1], outputRange: [16, 0] }) }] },
       ]}
     >
       <RoyalButton accessibilityLabel={`${portal.titleJa} ${portal.titleEn}`} onPress={openPortal} style={styles.card}>
@@ -57,7 +41,7 @@ function PortalCard({ portal, index, wide }: { portal: Portal; index: number; wi
           <Text {...ROYAL_TEXT_FIT} minimumFontScale={0.58} numberOfLines={2} style={styles.cardTitleEn}>{portal.titleEn}</Text>
         </View>
       </RoyalButton>
-    </Animated.View>
+    </View>
   );
 }
 
@@ -80,7 +64,7 @@ export default function PortalSelectionScreen() {
             <Text maxFontSizeMultiplier={1} numberOfLines={2} style={styles.titleEn}>Choose how you will use the app</Text>
           </RoyalTitlePanel>
           <View style={[styles.grid, wide && styles.gridWide]}>
-            {PORTALS.map((portal, index) => <PortalCard key={portal.titleJa} portal={portal} index={index} wide={wide} />)}
+            {PORTALS.map((portal) => <PortalCard key={portal.titleJa} portal={portal} wide={wide} />)}
           </View>
         </View>
       </SafeAreaView>

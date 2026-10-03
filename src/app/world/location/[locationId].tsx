@@ -1,7 +1,6 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useMemo, useState } from 'react';
 import { ImageBackground, Modal, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
-import Animated, { FadeInDown } from 'react-native-reanimated';
 import { sceneForCategory } from '@/components/world/life-assets';
 import { locationBackground } from '@/components/world/location-backgrounds.generated';
 import { categoryLabelJa, displayLocationNameJa } from '@/components/world/world-ja';
@@ -31,7 +30,7 @@ export default function LocationScreen(){
   <View style={s.header}><RoyalBackButton onPress={()=>router.back()}/><View style={s.heading}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.kicker}>会話練習・{categoryLabelJa(location.category)}</Text><Text {...ROYAL_TEXT_FIT} numberOfLines={2} style={s.title}>{displayLocationNameJa(location.nameJa,location.category)}</Text><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.subtitle}>今回の課題</Text></View></View>
   <ScrollView contentContainerStyle={[s.content,wide&&s.contentWide]} showsVerticalScrollIndicator={false}>
    <RoyalButton onPress={()=>setGuideVisible(true)} compact style={s.guideButton}><Text style={s.playText}>会話の進め方</Text></RoyalButton>
-   <View style={[s.scenarioGrid,wide&&s.scenarioGridWide]}>{activeScenario&&<Animated.View key={activeScenario.id} style={wide?s.wideItem:undefined}><DepthPressable onPress={()=>router.push(`/world/dialogue/${activeScenario.id}`)} style={s.scenarioDepth}><RoyalInfoPanel sizingGroup={ROYAL_CONTENT_GROUP.worldScenario} label="今回の課題" style={s.scenario}><View style={s.scenarioContent}><Text maxFontSizeMultiplier={1} style={s.objective}>{scenarioMission(activeScenario,location.category)}</Text></View></RoyalInfoPanel></DepthPressable><RoyalButton onPress={()=>router.push(`/world/dialogue/${activeScenario.id}`)} style={s.play} compact><Text maxFontSizeMultiplier={1} style={s.playText}>開始</Text></RoyalButton></Animated.View>}</View>
+   <View style={[s.scenarioGrid,wide&&s.scenarioGridWide]}>{activeScenario&&<View key={activeScenario.id} style={wide?s.wideItem:undefined}><DepthPressable onPress={()=>router.push(`/world/dialogue/${activeScenario.id}`)} style={s.scenarioDepth}><RoyalInfoPanel sizingGroup={ROYAL_CONTENT_GROUP.worldScenario} label="今回の課題" style={s.scenario}><View style={s.scenarioContent}><Text maxFontSizeMultiplier={1} style={s.objective}>{scenarioMission(activeScenario,location.category)}</Text></View></RoyalInfoPanel></DepthPressable><RoyalButton onPress={()=>router.push(`/world/dialogue/${activeScenario.id}`)} style={s.play} compact><Text maxFontSizeMultiplier={1} style={s.playText}>開始</Text></RoyalButton></View>}</View>
    <RoyalButton onPress={()=>router.push('/world/dialogue-history')} style={s.history} compact><Text style={s.playText}>学習した会話を見る</Text></RoyalButton>
   </ScrollView>
   <Modal visible={guideVisible} transparent animationType="fade" onRequestClose={()=>setGuideVisible(false)}>

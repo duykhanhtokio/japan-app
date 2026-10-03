@@ -1,6 +1,6 @@
 import { router } from 'expo-router';
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { Animated, Image, ImageSourcePropType, LayoutChangeEvent, Pressable, StyleSheet, Text, View } from 'react-native';
+import { useMemo, useRef, useState } from 'react';
+import { Animated, useWindowDimensions, Image, ImageSourcePropType, LayoutChangeEvent, Pressable, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { RoyalMapPill, ROYAL, ROYAL_CONTENT_GROUP, ROYAL_FONT, ROYAL_LAYOUT, useRoyalGroupHeight } from '@/components/ui/RoyalSurface';
 import { WorldTitleHeader } from '@/components/world/WorldTitleHeader';
@@ -13,13 +13,12 @@ export type ResponsiveMapAssets = Record<MapMode, ImageSourcePropType>;
 export type MapLandZones = Record<MapMode,{width:number;height:number;rects:readonly (readonly [number,number,number,number])[]}>;
 
 export default function ResponsiveWorldMap({assets,items,onItemPress,title,subtitle,regionLabel,landZones}:{assets:ResponsiveMapAssets;items:WorldMapItem[];onItemPress:(item:WorldMapItem)=>void;title?:string;subtitle?:string;regionLabel?:string;landZones?:MapLandZones}) {
- const insets=useSafeAreaInsets(); const [size,setSize]=useState({width:0,height:0}); const intro=useRef(new Animated.Value(0)).current;
+ const insets=useSafeAreaInsets(),windowSize=useWindowDimensions(); const [size,setSize]=useState({width:windowSize.width,height:windowSize.height});
  const markerSizing=useRoyalGroupHeight(ROYAL_CONTENT_GROUP.worldMapMarker,ROYAL_LAYOUT.mapMarkerHeight);
  const [headerHeight,setHeaderHeight]=useState(0);
  const [textWidths,setTextWidths]=useState<Record<string,{ja?:number;en?:number}>>({});
  const recordWidth=(id:string,language:'ja'|'en',width:number)=>setTextWidths(old=>
   Math.abs((old[id]?.[language]??0)-width)<1?old:{...old,[id]:{...old[id],[language]:width}});
- useEffect(()=>{Animated.spring(intro,{toValue:1,speed:8,bounciness:5,useNativeDriver:true}).start()},[intro]);
  const onLayout=(e:LayoutChangeEvent)=>{const {width,height}=e.nativeEvent.layout;setSize(o=>o.width===width&&o.height===height?o:{width,height})};
  const ratio=size.height?size.width/size.height:.46; const mode:MapMode=ratio>=1.1?'landscape':ratio>=.62?'tablet':'phone';
   const cardWidths=useMemo(()=>Object.fromEntries(items.map(item=>{
@@ -104,9 +103,9 @@ export default function ResponsiveWorldMap({assets,items,onItemPress,title,subti
    <Text onLayout={e=>recordWidth(item.id,'ja',e.nativeEvent.layout.width)} style={s.measurePrimary}>{item.ja}</Text>
    <Text onLayout={e=>recordWidth(item.id,'en',e.nativeEvent.layout.width)} style={s.measureSecondary}>{item.en}</Text>
   </View>)}</View>
-  {!!title&&<Animated.View onLayout={event=>setHeaderHeight(Math.ceil(event.nativeEvent.layout.height))} style={[s.hero,{top:insets.top,left:insets.left,right:insets.right,opacity:intro,transform:[{translateY:intro.interpolate({inputRange:[0,1],outputRange:[-12,0]})}]}]}>
+  {!!title&&<View onLayout={event=>setHeaderHeight(Math.ceil(event.nativeEvent.layout.height))} style={[s.hero,{top:insets.top,left:insets.left,right:insets.right}]}>
    <WorldTitleHeader title={title} subtitle={regionLabel} detail={subtitle} onBack={()=>router.back()}/>
-  </Animated.View>}
+  </View>}
   {placements.map(({item,label,anchor})=><MapMarker key={item.id} item={item} width={cardWidths[item.id]} height={markerSizing.height} onLayout={markerSizing.onLayout} label={label} anchor={anchor} onPress={()=>onItemPress(item)}/>)}
 
  </View>

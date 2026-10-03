@@ -1,11 +1,12 @@
 import { RoyalExplanationPanel } from './RoyalPanels';
 import { APP_TYPOGRAPHY } from '@/theme/app-design-system';
-import { useState, type PropsWithChildren, type ReactNode } from 'react';
+import { type PropsWithChildren, type ReactNode } from 'react';
 import { Image, ImageBackground, Pressable, StyleSheet, Text, View, type ImageSourcePropType, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
 import { ROYAL_CONTROL_SIZE, ROYAL_LAYOUT, ROYAL_SAFE_AREA, useRoyalGroupHeight, useRoyalGroupSize, type RoyalContentGroup } from './RoyalPositioning';
 
 export { ROYAL_CONTENT_GROUP, ROYAL_CONTROL_SIZE, ROYAL_LAYOUT, ROYAL_PLACEMENT, ROYAL_SAFE_AREA, ROYAL_TEXT_FIT, resolveRoyalGrid, useRoyalGroupHeight, useRoyalGroupSize, useRoyalPositioning } from './RoyalPositioning';
 
+export const NAVY_FRAME_ART=require('../../../assets/app/ui/royal-af/button-wide-visible-v2.png');
 const WIDE_BUTTON = require('../../../assets/app/ui/royal-af/button-wide-v2.png');
 const BACK_BUTTON = require('../../../assets/app/ui/royal-af/button-back-curved-a-v1.png');
 const DIALOGUE_FRAME = require('../../../assets/app/ui/royal-af/dialogue-frame-v1.png');
@@ -59,10 +60,9 @@ export const ROYAL_FONT = {
 
 /** Wide plaque visible alpha bounds: y=84..396 in a 1800x480 source. */
 export function RoyalNavyFrame({children,style}:PropsWithChildren<{style?:StyleProp<ViewStyle>}>) {
-  const [size,setSize]=useState({width:0,height:0});
-  return <View onLayout={event=>{const {width,height}=event.nativeEvent.layout;setSize(previous=>previous.width===width&&previous.height===height?previous:{width,height});}} style={[{position:'relative',overflow:'hidden'},style]}>
+  return <View style={[{position:'relative',overflow:'hidden'},style]}>
     <View pointerEvents="none" style={{position:'absolute',left:'4%',right:'4%',top:'12%',bottom:'12%',borderRadius:8,backgroundColor:ROYAL.lacquerLight}}/>
-    {size.width>0&&size.height>0&&<Image source={WIDE_BUTTON} resizeMode="stretch" style={{position:'absolute',left:0,width:size.width,height:size.height*480/312,top:-size.height*84/312}}/>}
+    <Image fadeDuration={0} source={NAVY_FRAME_ART} resizeMode="stretch" style={[StyleSheet.absoluteFillObject,{width:'100%',height:'100%'}]}/>
     {children}
   </View>;
 }
@@ -150,10 +150,10 @@ export function RoyalPlaceRow({source,children,style}:PropsWithChildren<{source?
   </View>;
 }
 
-export function RoyalButton({children,label,onPress,disabled=false,style,compact=false,round=false,accessibilityLabel,sizingGroup}:PropsWithChildren<{children?:ReactNode;label?:string;onPress:()=>void;disabled?:boolean;style?:StyleProp<ViewStyle>;compact?:boolean;round?:boolean;accessibilityLabel?:string;sizingGroup?:RoyalContentGroup}>) {
+export function RoyalButton({children,label,onPress,disabled=false,style,contentStyle,compact=false,round=false,accessibilityLabel,sizingGroup}:PropsWithChildren<{children?:ReactNode;label?:string;onPress:()=>void;disabled?:boolean;style?:StyleProp<ViewStyle>;contentStyle?:StyleProp<ViewStyle>;compact?:boolean;round?:boolean;accessibilityLabel?:string;sizingGroup?:RoyalContentGroup}>) {
   const equalHeight = useRoyalGroupHeight(sizingGroup, compact ? 62 : 78);
   return <Pressable onLayout={equalHeight.onLayout} accessibilityRole="button" accessibilityLabel={accessibilityLabel} disabled={disabled} onPress={onPress} style={({pressed})=>[s.assetButton,compact&&s.assetButtonCompact,equalHeight.groupStyle,style,disabled&&s.disabled,pressed&&!disabled&&s.buttonPressed]}>
-    <ImageBackground source={WIDE_BUTTON} resizeMode="stretch" style={s.assetButtonImage}>{children??<Text style={s.buttonText}>{label}</Text>}</ImageBackground>
+    <ImageBackground fadeDuration={0} source={WIDE_BUTTON} resizeMode="stretch" imageStyle={{width:'100%',height:'100%'}} style={[s.assetButtonImage,contentStyle]}>{children??<Text style={s.buttonText}>{label}</Text>}</ImageBackground>
   </Pressable>;
 }
 

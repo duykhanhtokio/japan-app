@@ -5,11 +5,11 @@ import type { PropsWithChildren, ReactNode } from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
 
 import { JLPT_EXAM } from '@/theme/jlpt-exam-design-system';
-import { RoyalBackButton } from '@/components/ui/RoyalSurface';
+import { RoyalBackButton, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
 
 export function JlptExamHeader({ title, subtitle, onBack, right, transparent = false }: { transparent?: boolean; title: string; subtitle?: string; onBack: () => void; right?: ReactNode }) {
   return <View style={[s.header,transparent&&{backgroundColor:'transparent',borderBottomWidth:0}]}>
-    <View style={s.back}><RoyalBackButton onPress={onBack} /></View>
+    <View testID="jlpt-back-slot" style={s.back}><RoyalBackButton onPress={onBack} /></View>
     <View style={s.headerCopy}><Text style={s.headerTitle}>{title}</Text>{subtitle ? <Text style={s.headerSubtitle}>{subtitle}</Text> : null}</View>
     {right ? <View style={s.headerRight}>{right}</View> : <View style={s.headerSpacer} />}
   </View>;
@@ -134,9 +134,9 @@ function scaled(fontSize: number, lineHeight: number, scale: number): TextStyle 
 }
 
 const s = StyleSheet.create({
-  header:{minHeight:64,flexDirection:'row',alignItems:'center',paddingHorizontal:10,paddingVertical:8,backgroundColor:JLPT_EXAM.color.paper,borderBottomWidth:1,borderBottomColor:JLPT_EXAM.color.divider},
-  back:{width:48,height:48,alignItems:'center',justifyContent:'center'},pressed:{opacity:.62},
-  headerCopy:{flex:1,minWidth:0,alignItems:'center'},headerTitle:{fontFamily:JLPT_EXAM.font.interface,fontSize:18,lineHeight:24,color:JLPT_EXAM.color.ink,textAlign:'center'},headerSubtitle:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:20,color:JLPT_EXAM.color.secondaryInk,textAlign:'center',marginTop:1},headerRight:{minWidth:48,alignItems:'flex-end'},headerSpacer:{width:48},
+  header:{minHeight:64,flexDirection:'row',alignItems:'center',paddingHorizontal:ROYAL_LAYOUT.screenGutter,paddingVertical:ROYAL_LAYOUT.backSafeTop,backgroundColor:JLPT_EXAM.color.paper,borderBottomWidth:1,borderBottomColor:JLPT_EXAM.color.divider},
+  back:{width:ROYAL_LAYOUT.backTouch,height:ROYAL_LAYOUT.backTouch,alignSelf:'flex-start',alignItems:'center',justifyContent:'center'},pressed:{opacity:.62},
+  headerCopy:{flex:1,minWidth:0,alignItems:'center'},headerTitle:{fontFamily:JLPT_EXAM.font.interface,fontSize:18,lineHeight:24,color:JLPT_EXAM.color.ink,textAlign:'center'},headerSubtitle:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:20,color:JLPT_EXAM.color.secondaryInk,textAlign:'center',marginTop:1},headerRight:{minWidth:48,alignItems:'flex-end'},headerSpacer:{width:ROYAL_LAYOUT.backTouch},
   paper:{width:'100%',maxWidth:JLPT_EXAM.contentMaxWidth,alignSelf:'center',backgroundColor:JLPT_EXAM.color.paper,paddingHorizontal:18,paddingVertical:22},
   sectionHeading:{borderBottomWidth:2,borderBottomColor:JLPT_EXAM.color.ink,paddingBottom:8,marginBottom:14,flexDirection:'row',alignItems:'baseline',gap:10},problem:{fontFamily:JLPT_EXAM.font.content,fontSize:JLPT_EXAM.type.problemTitle,lineHeight:28,color:JLPT_EXAM.color.ink},problemDetail:{flex:1,fontFamily:JLPT_EXAM.font.interface,fontSize:JLPT_EXAM.type.auxiliary,lineHeight:JLPT_EXAM.line.auxiliary,color:JLPT_EXAM.color.secondaryInk},
   instruction:{fontFamily:JLPT_EXAM.font.content,color:JLPT_EXAM.color.ink,marginBottom:18},passageBlock:{borderLeftWidth:3,borderLeftColor:JLPT_EXAM.color.divider,paddingLeft:14,marginVertical:18},passage:{fontFamily:JLPT_EXAM.font.content,color:JLPT_EXAM.color.ink},question:{fontFamily:JLPT_EXAM.font.content,color:JLPT_EXAM.color.ink,marginTop:18,marginBottom:14},

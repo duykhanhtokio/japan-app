@@ -1,10 +1,8 @@
 import type { PropsWithChildren } from 'react';
 import { Pressable, StyleSheet, type StyleProp, type ViewStyle } from 'react-native';
-import Animated, { FadeIn, FadeInDown, interpolate, useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
+import Animated, { interpolate, useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
 
 export const WorldAnimatedView = Animated.View;
-export const worldEnter = FadeInDown.springify().damping(17).stiffness(155);
-export const worldFade = FadeIn.duration(360);
 
 export function DepthPressable({ children, onPress, style, accessibilityLabel }: PropsWithChildren<{ onPress:()=>void; style?:StyleProp<ViewStyle>; accessibilityLabel?:string }>) {
   const pressed=useSharedValue(0);

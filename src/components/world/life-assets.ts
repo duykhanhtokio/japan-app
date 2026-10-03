@@ -58,3 +58,7 @@ const npcAssets: Record<string, ImageSourcePropType> = {
 export function npcForCategory(category?: string | null): ImageSourcePropType {
   return npcAssets[(category ?? '').trim().toLowerCase()] ?? npcAssets.landmark;
 }
+
+// Source-space waist landmarks, not one screen-height ratio for every NPC.
+const npcWaistY:Record<string,number>={"amusement park": 614, "bank": 686, "cafe": 548, "castle": 702, "construction site": 603, "convenience store": 702, "government office": 576, "hospital": 680, "hotel": 691, "izakaya": 576, "landmark": 625, "museum": 625, "nature": 603, "onsen": 565, "park": 603, "pharmacy": 625, "police station": 631, "post office": 697, "ramen shop": 576, "restaurant": 576, "shopping": 603, "shrine / temple": 620, "station": 631, "supermarket": 614, "tax office": 614};
+export function npcPresentationForCategory(category?:string|null){const key=(category??'').trim().toLowerCase();return {source:npcForCategory(category),width:1024,height:1536,waistY:npcWaistY[key]??npcWaistY.landmark};}
