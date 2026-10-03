@@ -21,3 +21,10 @@ Structural coverage 125/125, zero errors; 29 normalized groups and 56 near candi
 Sano, Kanuma, Moka: 24 individually authored Japanese exchanges, 120 speaking goals. Total 85/125, 425 goals, 40 old drafts remaining. Read all 24 current exchanges and goals and 27 selected complete prior comparisons; three whole-plot replacements removed storage/small-pack, deadline/arrival-record and employer/bank/old-account trajectories. Shared motifs explicitly remain open rather than granting uniqueness by text screening. Evidence and current hashes: PRF-009_CLUSTER_03_REVIEW.json; lexical retrieval: PRF-009_CLUSTER_03_CANDIDATES.json.
 
 All original IDs, order, next links and indexes preserved. Source/runtime/canonical parity and 125-slot structural coverage pass without errors. Screening: exact groups 0, normalized groups 8, near candidates 17, including remaining old drafts. These counts are not CONTENT PASS. No translation, level cap, UI change or real-facility approval. Next Otawara, Yaita, Nasukarasuyama, then Sakura and Shimotsuke after commit/push/fetch WORK PERSISTENCE PASS.
+
+
+## Tochigi cluster 04 — 2026-10-03
+
+Otawara, Yaita, Nasukarasuyama: 24 further individually authored Japanese exchanges and 120 speaking goals. Total 109/125, 545 goals; 16 old drafts remain. Read current 24 full exchanges/goals and 26 selected full prior comparisons. Two entire plot replacements removed identifier-prefix and torn-bag repacking overlap. Evidence and explicit unresolved motifs: PRF-009_CLUSTER_04_REVIEW.json. Retrieval over 1355 authored scripts is supporting evidence, not semantic approval.
+
+Original identity/order/links/index preserved and source/runtime/canonical parity verified. Structural coverage125/125, zero errors. No prefecture CONTENT PASS or master lock; no translations or real-facility approval. Next Sakura and Shimotsuke after commit/push/fetch WORK PERSISTENCE PASS.
