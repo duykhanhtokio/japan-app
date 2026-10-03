@@ -143,3 +143,8 @@ Final16full scripts and selected comparisons in PRF-008_SEMANTIC_TSUKUBAMIRAI_OM
 ### Four semantic replacements — 2026-10-03
 
 Kitaibaraki06, Kamisu01, Namegata07 and Omitama07 replaced repeated causal sequences and reread all 11 turns/five speaking goals against listed comparisons. Current runtime hashes supersede four historical coverage hashes; IDs/order/links preserved. 269 systematic targets remain covered, ten open semantic pairs remain. CONTENT PASS remains false. Evidence: content-qa/PRF-008_SEMANTIC_FOUR_REPAIRS_2026-10-03.json.
+
+
+### Ten systematic pair decisions — 2026-10-03
+
+All ten open pairs reread in full. Seven retained with explicit task-level distinctions; three complete replacements (Hitachiomiya04 reflected scene, Naka04 lending consent/deadline, Kamisu06 overlapping statement identity) remove the repetitive source trajectories. Seven replacement identity/link fields verified against the original 269 checkpoint. No explicit systematic pairs remain; eleven legacy pending groups and whole-corpus/current-hash synthesis still require reconciliation. CONTENT PASS false. Evidence: PRF-008_TEN_PAIR_FINAL_DECISIONS_2026-10-03.json.
