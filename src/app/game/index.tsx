@@ -1966,7 +1966,7 @@ export default function FarmGameScreen() {
                     )}
             </View>
 
-            <CropPlantPanel
+            {!showFarmMap && cropPlantOpen&&<CropPlantPanel
                 visible={
                     !showFarmMap &&
                     cropPlantOpen
@@ -1987,9 +1987,9 @@ export default function FarmGameScreen() {
                 onPlant={
                     handlePlantCrop
                 }
-            />
+            />}
 
-            <CropCarePanel
+            {!showFarmMap && cropCareOpen&&<CropCarePanel
                 visible={
                     !showFarmMap &&
                     cropCareOpen
@@ -2003,9 +2003,9 @@ export default function FarmGameScreen() {
                 onCare={
                     handleCropCare
                 }
-            />
+            />}
 
-            <CropCarePanel
+            {!showFarmMap && animalCareOpen&&<CropCarePanel
                 visible={
                     !showFarmMap &&
                     animalCareOpen
@@ -2019,9 +2019,9 @@ export default function FarmGameScreen() {
                 onCare={
                     handleAnimalCareAction
                 }
-            />
+            />}
 
-            <OrchardPlantPanel
+            {!showFarmMap && orchardPlantOpen&&<OrchardPlantPanel
                 visible={
                     !showFarmMap &&
                     orchardPlantOpen
@@ -2042,11 +2042,11 @@ export default function FarmGameScreen() {
                 onPlant={
                     handlePlantOrchardTree
                 }
-            />
+            />}
 
 
 
-            <FarmCosmeticPanel
+            {cosmeticPanelOpen&&<FarmCosmeticPanel
                 visible={
                     cosmeticPanelOpen
                 }
@@ -2067,7 +2067,7 @@ export default function FarmGameScreen() {
                 onUnequip={
                     handleUnequipFarmCosmetic
                 }
-            />
+            />}
 
         </SafeAreaView>
     );
