@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { NPC_CATEGORIES, type NpcCategoryId } from '@/data/npc-progression';
+import { NPC_CATEGORIES, NPC_TEST_UNLOCK_ALL, type NpcCategoryId } from '@/data/npc-progression';
 
 const KEY='@japan_app/npc_collection_v1';
 export type NpcCollectionState={
@@ -12,18 +12,22 @@ export type NpcCollectionState={
 export type NpcProgressResult={state:NpcCollectionState;added:boolean;progress:number;unlockedCategoryId:NpcCategoryId|null};
 const EMPTY:NpcCollectionState={starterCategoryId:null,unlockedCategoryIds:[],completedScenarioIds:[],categoryProgress:{},rewardedCategoryIds:[]};
 
-export async function loadNpcCollection():Promise<NpcCollectionState>{
+async function loadSavedNpcCollection():Promise<NpcCollectionState>{
   try{const raw=await AsyncStorage.getItem(KEY);return raw?{...EMPTY,...JSON.parse(raw)}:EMPTY}catch{return EMPTY}
+}
+export async function loadNpcCollection():Promise<NpcCollectionState>{
+  const state=await loadSavedNpcCollection();
+  return NPC_TEST_UNLOCK_ALL?{...state,starterCategoryId:state.starterCategoryId??'station',unlockedCategoryIds:NPC_CATEGORIES.map(item=>item.id)}:state;
 }
 async function save(state:NpcCollectionState){await AsyncStorage.setItem(KEY,JSON.stringify(state));return state}
 export async function chooseStarterNpc(_id?:NpcCategoryId){
-  const current=await loadNpcCollection();
+  const current=await loadSavedNpcCollection();
   const unlocked=Array.from(new Set<NpcCategoryId>(['station',...current.unlockedCategoryIds]));
   return save({...current,starterCategoryId:'station',unlockedCategoryIds:unlocked});
 }
 export async function isNpcCategoryUnlocked(id:NpcCategoryId){return (await loadNpcCollection()).unlockedCategoryIds.includes(id)}
 export async function recordNpcScenario(scenarioId:string,categoryId:NpcCategoryId):Promise<NpcProgressResult>{
-  const current=await loadNpcCollection();
+  const current=await loadSavedNpcCollection();
   if(current.completedScenarioIds.includes(scenarioId))return{state:current,added:false,progress:current.categoryProgress[categoryId]??0,unlockedCategoryId:null};
   const progress=Math.min(5,(current.categoryProgress[categoryId]??0)+1);
   let unlockedCategoryId:NpcCategoryId|null=null;

@@ -103,8 +103,8 @@ export default function DialogueScreen(){
   const copyHeight=Math.max(20,allocatedHeight-(wide?30:54));
   const copyWidth=Math.max(80,(wide?stageSize.width*.46:stageSize.width-20)-56);
   let fontSize=17;
-  while(fontSize>6&&Math.ceil((weight+30)/Math.max(1,Math.floor(copyWidth/fontSize)))*fontSize*1.45>copyHeight)fontSize-=.5;
-  const fit={fontSize,lineHeight:fontSize*1.3};
+  while(fontSize>6&&Math.ceil((weight+30)/Math.max(1,Math.floor(copyWidth/fontSize)))*fontSize*1.25>copyHeight)fontSize-=.5;
+  const fit={fontSize,lineHeight:fontSize*1.15};
   return <View key={panel.id} style={[s.bubbleWrap,{height:allocatedHeight}]}>
    <RoyalNavyFrame style={s.speakerPlate}><Text numberOfLines={1} adjustsFontSizeToFit maxFontSizeMultiplier={1} style={s.speakerName}>{isNpc?npcName:playerName}</Text></RoyalNavyFrame>
    <View style={[s.bubbleDepth,{flex:1}]}><RoyalReadingFrame fit style={[{flex:1},wide&&{paddingVertical:8,paddingHorizontal:22}]}>
@@ -136,12 +136,12 @@ const s=StyleSheet.create({
  missionCard:{position:'relative',paddingTop:12,marginTop:4,width:'100%',maxWidth:560,alignSelf:'center'},missionCardWide:{width:'46%',alignSelf:'flex-end'},missionLabel:{position:'absolute',top:0,left:16,zIndex:30,elevation:14,width:120,height:26,justifyContent:'center'},missionLabelText:{color:ROYAL.paleGold,fontFamily:ROYAL_FONT.body,fontSize:13,textAlign:'center'},missionText:{color:'#18304b',fontFamily:ROYAL_FONT.body,fontSize:ROYAL_TYPE.explanation,lineHeight:ROYAL_TYPE.explanationLine,textAlign:'center'},
  npcLayer:{position:'absolute',zIndex:1},npcImage:{width:'100%',height:'100%'},
  bubbleLayer:{position:'absolute',zIndex:5,left:10,right:10},bubbleLayerWide:{left:'51%',right:'3%'},bubbleScroll:{paddingTop:18,paddingBottom:8},
- conversation:{position:'absolute',left:10,right:10,minHeight:0,zIndex:5,elevation:12},conversationWide:{left:'51%',right:'3%'},conversationContent:{flexGrow:1,justifyContent:'flex-end',alignItems:'center',paddingTop:12,paddingBottom:8},bubbleWrap:{position:'relative',paddingTop:12,paddingBottom:2,width:'100%'},playerWrap:{marginLeft:'7%',marginRight:0},speakerPlate:{position:'absolute',top:0,left:16,zIndex:30,elevation:14,width:120,maxWidth:'45%',height:26,justifyContent:'center',paddingHorizontal:14},speakerName:{color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,textAlign:'center',fontSize:12,lineHeight:17},
+ conversation:{position:'absolute',left:10,right:10,minHeight:0,zIndex:5,elevation:12},conversationWide:{left:'51%',right:'3%'},conversationContent:{flexGrow:1,justifyContent:'flex-end',alignItems:'center',paddingTop:12,paddingBottom:8},bubbleWrap:{position:'relative',paddingTop:12,paddingBottom:12,width:'100%'},playerWrap:{marginLeft:'7%',marginRight:0},speakerPlate:{position:'absolute',top:0,left:16,zIndex:30,elevation:14,width:120,maxWidth:'45%',height:26,justifyContent:'center',paddingHorizontal:14},speakerName:{color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,textAlign:'center',fontSize:12,lineHeight:17},
  bubbleDepth:{position:'relative',shadowColor:'#020713',shadowOffset:{width:0,height:8},shadowOpacity:.42,shadowRadius:12,elevation:10},bubble:{minHeight:108,paddingRight:58,paddingBottom:48},
  japanese:{fontFamily:ROYAL_FONT.heading,fontSize:17,lineHeight:21,textAlign:'center'},reading:{fontFamily:ROYAL_FONT.body,fontSize:ROYAL_TYPE.optionSecondary,lineHeight:19,marginTop:3,textAlign:'center'},guidance:{fontFamily:ROYAL_FONT.body,fontSize:17,lineHeight:21,textAlign:'center'},
- translation:{fontFamily:ROYAL_FONT.body,fontSize:ROYAL_TYPE.optionSecondary,lineHeight:21,marginTop:7,textAlign:'center'},
+ translation:{fontFamily:ROYAL_FONT.body,fontSize:ROYAL_TYPE.optionSecondary,lineHeight:21,marginTop:3,textAlign:'center'},
  microphoneDock:{position:'absolute',left:10,right:10,zIndex:9,elevation:14,height:48,alignItems:'center',justifyContent:'center'},
- actionRow:{height:44,width:'100%',flexDirection:'row',alignItems:'center',justifyContent:'center',gap:28},hintButton:{position:'absolute',right:8,bottom:4,zIndex:20,width:30,height:38},
+ actionRow:{height:44,width:'100%',flexDirection:'row',alignItems:'center',justifyContent:'center',gap:28},hintButton:{position:'absolute',left:8,bottom:-8,zIndex:20,width:30,height:38},
  speechArea:{marginTop:8,alignItems:'center',justifyContent:'center',gap:6,minHeight:44},transcript:{width:'100%',fontSize:16,lineHeight:24,fontFamily:ROYAL_FONT.body,textAlign:'center',textAlignVertical:'center',includeFontPadding:false},speechNotice:{marginTop:4,marginHorizontal:12,color:'#fff3e1',fontFamily:ROYAL_FONT.body,fontSize:12,lineHeight:18,textAlign:'center',textShadowColor:'#31151a',textShadowOffset:{width:0,height:1},textShadowRadius:3},mic:{width:44,height:44,alignItems:'center',justifyContent:'center'},micIcon:{width:28,height:28},
  controls:{position:'absolute',zIndex:8,left:10,right:10,flexDirection:'row',gap:6},controlsWide:{left:'51%',right:'3%'},control:{flex:1,height:66,minHeight:66},controlText:{color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:18},pressed:{opacity:.86,transform:[{scale:.97}]},disabled:{opacity:.35},emptyScreen:{flex:1,backgroundColor:'#0b1b2a'},empty:{color:'#fff',fontFamily:ROYAL_FONT.body,padding:24,fontSize:18},
 });

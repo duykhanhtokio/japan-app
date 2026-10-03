@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { FlatList, Image, ImageBackground, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { npcCardById } from '@/components/world/npc-card-assets';
 import { npcForCategory, sceneForCategory } from '@/components/world/life-assets';
-import { NPC_CATEGORIES, type NpcCategory } from '@/data/npc-progression';
+import { NPC_CATEGORIES, NPC_TEST_UNLOCK_ALL, type NpcCategory } from '@/data/npc-progression';
 import { chooseStarterNpc } from '@/services/npc-progression-storage';
 import { RoyalButton, RoyalCapsule, RoyalDialogueFrame, RoyalLockCrest, ROYAL, ROYAL_FONT, ROYAL_TEXT_FIT, resolveRoyalGrid, useRoyalPositioning } from '@/components/ui/RoyalSurface';
 
@@ -14,8 +14,8 @@ export default function NpcStarterScreen(){
  const[saving,setSaving]=useState(false),royalPosition=useRoyalPositioning(),grid=resolveRoyalGrid(royalPosition.width,{phoneColumns:2,tabletColumns:4,desktopColumns:5,phoneInset:14,wideInset:14,gap:12}),station=NPC_CATEGORIES.find(item=>item.id==='station')??NPC_CATEGORIES[0];
  const start=async()=>{if(saving)return;setSaving(true);await chooseStarterNpc('station');router.replace('/home')};
  return <RoyalPageBackground><View style={s.screen}><View style={s.sky}/><SafeAreaView style={s.safe}>
-  <View style={s.header}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.kicker}>最初の相棒</Text><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.title}>最初の仲間</Text><Text {...ROYAL_TEXT_FIT} minimumFontScale={0.68} numberOfLines={3} style={s.guide}>駅員からスタートします。会話レッスンを達成すると、ほかのNPCカードが順番に解放されます。</Text></View>
-  <FlatList initialNumToRender={Math.ceil(royalPosition.height/(grid.cardWidth/.667+12))*grid.columns} maxToRenderPerBatch={Math.ceil(royalPosition.height/(grid.cardWidth/.667+12))*grid.columns} updateCellsBatchingPeriod={0} data={NPC_CATEGORIES} numColumns={grid.columns} key={grid.columns} keyExtractor={item=>item.id} contentContainerStyle={[s.list,{paddingHorizontal:grid.horizontalInset}]} columnWrapperStyle={[s.row,{gap:grid.gap}]} renderItem={({item})=><View style={{width:grid.cardWidth}}><NpcStarterCard item={item} unlocked={item.id==='station'}/></View>}/>
+  <View style={s.header}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.kicker}>最初の相棒</Text><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.title}>最初の仲間</Text><Text {...ROYAL_TEXT_FIT} minimumFontScale={0.68} numberOfLines={3} style={s.guide}>{NPC_TEST_UNLOCK_ALL?'すべてのNPCで会話を試せます。':'駅員からスタートします。会話レッスンを達成すると、ほかのNPCカードが順番に解放されます。'}</Text></View>
+  <FlatList initialNumToRender={Math.ceil(royalPosition.height/(grid.cardWidth/.667+12))*grid.columns} maxToRenderPerBatch={Math.ceil(royalPosition.height/(grid.cardWidth/.667+12))*grid.columns} updateCellsBatchingPeriod={0} data={NPC_CATEGORIES} numColumns={grid.columns} key={grid.columns} keyExtractor={item=>item.id} contentContainerStyle={[s.list,{paddingHorizontal:grid.horizontalInset}]} columnWrapperStyle={[s.row,{gap:grid.gap}]} renderItem={({item})=><View style={{width:grid.cardWidth}}><NpcStarterCard item={item} unlocked={NPC_TEST_UNLOCK_ALL||item.id==='station'}/></View>}/>
   <RoyalDialogueFrame style={s.confirmBar}><View><Text maxFontSizeMultiplier={1} style={s.confirmLabel}>最初のNPC</Text><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.confirmName}>{station.ja}</Text></View><RoyalButton disabled={saving} onPress={start} style={s.confirm}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.confirmText}>{saving?'保存中…':'駅員と始める'}</Text></RoyalButton></RoyalDialogueFrame>
  </SafeAreaView></View></RoyalPageBackground>
 }

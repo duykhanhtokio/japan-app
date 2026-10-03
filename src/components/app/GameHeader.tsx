@@ -1,4 +1,4 @@
-import RoyalPaperPanel, { royalOpenFrameGeometry } from '@/components/ui/RoyalPaperPanel';
+import { OPEN_FRAME_SLICES, royalOpenFrameGeometry } from '@/components/ui/RoyalPaperPanel';
 import { router } from 'expo-router';
 import { useState } from 'react';
 import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
@@ -101,12 +101,19 @@ function StudyMetric({label,value,ratio}:{label:string;value:string;ratio:number
  return <View style={{flex:1,minWidth:0}}><EnergyBar label={label} value={value} ratio={ratio} tint="#142335" large/></View>;
 }
 function EnergyBar({label,value,ratio,tint,large=false}:{label:string;value:string;ratio:number;tint:string;large?:boolean}){
- const [size,setSize]=useState({width:0,height:large?APPROVED_BAR_HEIGHT:ROYAL_BAR_HEIGHT});
- const inset=royalOpenFrameGeometry(size.width,size.height);
+ const height=large?APPROVED_BAR_HEIGHT:ROYAL_BAR_HEIGHT;
+ // Bar hosts exceed two corners; ornament scale is determined by fixed height.
+ // No width/onLayout/state dependency: track, stroke and text mount together.
+ const inset=royalOpenFrameGeometry(Number.MAX_SAFE_INTEGER,height);
  const percentage=Math.round(clamp01(ratio)*100);
- return <View onLayout={event=>{const {width,height}=event.nativeEvent.layout;setSize(old=>old.width===width&&old.height===height?old:{width,height})}} style={[s.energyFrame,large&&s.approvedEnergyFrame]}>
-  {size.width>0&&<View pointerEvents="none" style={[s.energyInset,{left:inset.left,right:inset.right,top:inset.top,bottom:inset.bottom,borderRadius:inset.radius}]}><View style={s.energyIvory}/><View style={[s.energyColorClip,{width:`${percentage}%`,backgroundColor:tint}]}/></View>}
-  <RoyalPaperPanel borderOnly style={s.energyBorder}/>
+ return <View testID={`hud-energy-${label.startsWith('CREDIT')?'credit':'exp'}`} style={[s.energyFrame,large&&s.approvedEnergyFrame]}>
+  <View pointerEvents="none" style={[s.energyInset,{left:inset.left,right:inset.right,top:inset.top,bottom:inset.bottom,borderRadius:inset.radius,backgroundColor:'#fff7e7'}]}><View style={[s.energyColorClip,{width:`${percentage}%`,backgroundColor:tint}]}/></View>
+  <View pointerEvents="none" style={StyleSheet.absoluteFillObject}>{OPEN_FRAME_SLICES.map((source,index)=>{
+   const cell=index<4?index:index+1,row=Math.floor(cell/3),col=cell%3;
+   const horizontal=col===0?{left:0,width:inset.cornerX}:col===2?{right:0,width:inset.cornerX}:{left:inset.cornerX,right:inset.cornerX};
+   const vertical=row===0?{top:0,height:inset.cornerY}:row===2?{bottom:0,height:inset.cornerY}:{top:inset.cornerY,bottom:inset.cornerY};
+   return <View key={cell} style={{position:'absolute',...horizontal,...vertical}}><Image fadeDuration={0} source={source} resizeMode="stretch" style={{width:'100%',height:'100%'}}/></View>;
+  })}</View>
   <View pointerEvents="none" style={s.energyTextSafe}><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.78} maxFontSizeMultiplier={1} style={[s.energyCenteredText,percentage>=55&&s.creditText]}>{label}{value?`  ${value}`:''}</Text></View>
  </View>;
 }
@@ -159,11 +166,8 @@ const s=StyleSheet.create({
  approvedEnergyStack:{flex:0,height:66,gap:2},
  energyFrame:{flex:0,height:ROYAL_BAR_HEIGHT,minHeight:ROYAL_BAR_HEIGHT,position:'relative',paddingHorizontal:0,paddingVertical:0},
  approvedEnergyFrame:{flex:0,height:APPROVED_BAR_HEIGHT,minHeight:APPROVED_BAR_HEIGHT},
- energyBorder:{...StyleSheet.absoluteFillObject,paddingHorizontal:0,paddingVertical:0,minHeight:0},
  energyInset:{position:'absolute',overflow:'hidden'},
- energyIvory:{...StyleSheet.absoluteFillObject,backgroundColor:'#fff7e7'},
  energyColorClip:{height:'100%'},
- energyOrnament:{position:'absolute',left:0,right:0,width:'100%'},
  energyTextSafe:{position:'absolute',left:36,right:36,top:0,bottom:0,alignItems:'center',justifyContent:'center'},
  energyCenteredText:{width:'100%',textAlign:'center',color:'#142335',fontFamily:ROYAL_FONT.heading,fontSize:13,lineHeight:20,includeFontPadding:false,textShadowColor:'transparent',textShadowOffset:{width:0,height:0},textShadowRadius:0},
  creditText:{color:'#fff7df',fontWeight:'700',textShadowColor:'#43121a',textShadowOffset:{width:0,height:1},textShadowRadius:1},

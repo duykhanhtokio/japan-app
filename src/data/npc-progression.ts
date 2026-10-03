@@ -1,3 +1,7 @@
+// Temporary user-authorized access for NPC testing (2026-10-03).
+// Set false to restore progression locks; persisted unlocks are not changed.
+export const NPC_TEST_UNLOCK_ALL = true;
+
 export const NPC_CATEGORIES = [
   { id:'station', category:'Station', ja:'駅員', icon:'🚉' },
   { id:'convenience-store', category:'Convenience Store', ja:'コンビニ店員', icon:'🏪' },
