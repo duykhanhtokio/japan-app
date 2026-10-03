@@ -98,13 +98,15 @@ export default function CropCarePanel({
             careType
         );
 
+    const CarePanel = careType === 'feed' ? View : RoyalContentPanel;
+
     return (
         <Modal
             visible={
                 visible
             }
             transparent
-            animationType="fade"
+            animationType="none"
             onRequestClose={
                 onClose
             }
@@ -124,9 +126,9 @@ export default function CropCarePanel({
                     }
                 />
 
-                <RoyalContentPanel
+                <CarePanel
                     style={
-                        styles.panel
+                        [styles.panel,careType==='feed'&&{backgroundColor:'#fff7e7'}]
                     }
                 >
                     <View
@@ -306,7 +308,7 @@ export default function CropCarePanel({
                             閉じる
                         </Text>
                     </Pressable>
-                </RoyalContentPanel>
+                </CarePanel>
             </View>
         </Modal>
     );

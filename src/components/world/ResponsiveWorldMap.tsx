@@ -1,6 +1,7 @@
+import fontAdvances from './royal-font-advances.json';
 import { router } from 'expo-router';
-import { useMemo, useRef, useState } from 'react';
-import { Animated, useWindowDimensions, Image, ImageSourcePropType, LayoutChangeEvent, Pressable, StyleSheet, Text, View } from 'react-native';
+import { useMemo, useRef } from 'react';
+import { Animated, useWindowDimensions, Image, ImageSourcePropType, Pressable, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { RoyalMapPill, ROYAL, ROYAL_CONTENT_GROUP, ROYAL_FONT, ROYAL_LAYOUT, useRoyalGroupHeight } from '@/components/ui/RoyalSurface';
 import { WorldTitleHeader } from '@/components/world/WorldTitleHeader';
@@ -13,18 +14,17 @@ export type ResponsiveMapAssets = Record<MapMode, ImageSourcePropType>;
 export type MapLandZones = Record<MapMode,{width:number;height:number;rects:readonly (readonly [number,number,number,number])[]}>;
 
 export default function ResponsiveWorldMap({assets,items,onItemPress,title,subtitle,regionLabel,landZones}:{assets:ResponsiveMapAssets;items:WorldMapItem[];onItemPress:(item:WorldMapItem)=>void;title?:string;subtitle?:string;regionLabel?:string;landZones?:MapLandZones}) {
- const insets=useSafeAreaInsets(),windowSize=useWindowDimensions(); const [size,setSize]=useState({width:windowSize.width,height:windowSize.height});
+ const insets=useSafeAreaInsets(),size=useWindowDimensions();
  const markerSizing=useRoyalGroupHeight(ROYAL_CONTENT_GROUP.worldMapMarker,ROYAL_LAYOUT.mapMarkerHeight);
- const [headerHeight,setHeaderHeight]=useState(0);
- const [textWidths,setTextWidths]=useState<Record<string,{ja?:number;en?:number}>>({});
- const recordWidth=(id:string,language:'ja'|'en',width:number)=>setTextWidths(old=>
-  Math.abs((old[id]?.[language]??0)-width)<1?old:{...old,[id]:{...old[id],[language]:width}});
- const onLayout=(e:LayoutChangeEvent)=>{const {width,height}=e.nativeEvent.layout;setSize(o=>o.width===width&&o.height===height?o:{width,height})};
+ const advance=(text:string,role:'heading'|'body',fontSize:number)=>Array.from(text).reduce((sum,char)=>sum+((fontAdvances[role] as Record<string,number>)[char]??1)*fontSize,0);
+ // Same font advances as the bundled typefaces; no hidden measuring copies.
+ const detailLines=subtitle?Math.min(2,Math.max(1,Math.ceil(advance(subtitle,'body',12)/Math.max(1,size.width-36)))):0;
+ const headerHeight=52+76+(regionLabel?15:0)+(subtitle?2+detailLines*17:0);
  const ratio=size.height?size.width/size.height:.46; const mode:MapMode=ratio>=1.1?'landscape':ratio>=.62?'tablet':'phone';
   const cardWidths=useMemo(()=>Object.fromEntries(items.map(item=>{
-   const natural=Math.max(textWidths[item.id]?.ja??Array.from(item.ja).length*13,textWidths[item.id]?.en??item.en.length*4.5);
+   const natural=Math.max(advance(item.ja,'heading',13),advance(item.en,'body',8));
    return [item.id,Math.min(Math.max(70,Math.ceil(natural+32)),Math.max(70,size.width-ROYAL_LAYOUT.screenGutter*2))];
-  })),[items,size.width,textWidths]);
+  })),[items,size.width]);
  const placements=useMemo(()=>{
   if(!size.width||!size.height)return [];
   const cardHeight=markerSizing.height,margin=ROYAL_LAYOUT.screenGutter,topGuard=insets.top+(title?Math.max(headerHeight+12,150):70),bottomGuard=18;
@@ -97,25 +97,21 @@ export default function ResponsiveWorldMap({assets,items,onItemPress,title,subti
   }
   return chosen;
  },[cardWidths,insets.top,items,landZones,markerSizing.height,mode,size.height,size.width,title,headerHeight]);
- return <View style={s.screen} onLayout={onLayout}>
-  <Image source={assets[mode]} resizeMode="cover" style={s.background}/><View pointerEvents="none" style={s.skyWash}/>
-  <View pointerEvents="none" style={s.measurements}>{items.map(item=><View key={item.id}>
-   <Text onLayout={e=>recordWidth(item.id,'ja',e.nativeEvent.layout.width)} style={s.measurePrimary}>{item.ja}</Text>
-   <Text onLayout={e=>recordWidth(item.id,'en',e.nativeEvent.layout.width)} style={s.measureSecondary}>{item.en}</Text>
-  </View>)}</View>
-  {!!title&&<View onLayout={event=>setHeaderHeight(Math.ceil(event.nativeEvent.layout.height))} style={[s.hero,{top:insets.top,left:insets.left,right:insets.right}]}>
+ return <View style={s.screen}>
+  <Image source={assets[mode]} resizeMode="cover" style={s.background}/>
+  {!!title&&<View style={[s.hero,{top:insets.top,left:insets.left,right:insets.right}]}>
    <WorldTitleHeader title={title} subtitle={regionLabel} detail={subtitle} onBack={()=>router.back()}/>
   </View>}
-  {placements.map(({item,label,anchor})=><MapMarker key={item.id} item={item} width={cardWidths[item.id]} height={markerSizing.height} onLayout={markerSizing.onLayout} label={label} anchor={anchor} onPress={()=>onItemPress(item)}/>)}
+  {placements.map(({item,label,anchor})=><MapMarker key={item.id} item={item} width={cardWidths[item.id]} height={markerSizing.height} label={label} anchor={anchor} onPress={()=>onItemPress(item)}/>)}
 
  </View>
 }
 
-function MapMarker({item,width,height,onLayout,label,anchor,onPress}:{item:WorldMapItem;width:number;height:number;onLayout?:((event:LayoutChangeEvent)=>void);label:Point;anchor:Point;onPress:()=>void}){
+function MapMarker({item,width,height,label,anchor,onPress}:{item:WorldMapItem;width:number;height:number;label:Point;anchor:Point;onPress:()=>void}){
  const press=useRef(new Animated.Value(0)).current; const cx=label.x,cy=label.y+height/2,dx=anchor.x-cx,dy=anchor.y-cy;
  const length=Math.sqrt(dx*dx+dy*dy),angle=`${Math.atan2(dy,dx)}rad`; const release=()=>Animated.spring(press,{toValue:0,speed:20,bounciness:9,useNativeDriver:true}).start();
  return <><View pointerEvents="none" style={[s.connector,{left:cx,top:cy,width:length,transform:[{rotate:angle}]}]}/><View pointerEvents="none" style={[s.pin,{left:anchor.x-5,top:anchor.y-5}]}/>
-  <Animated.View onLayout={onLayout} style={[s.marker,{left:label.x-width/2,top:label.y,width,minHeight:height,transform:[{translateY:press.interpolate({inputRange:[0,1],outputRange:[0,5]})},{scale:press.interpolate({inputRange:[0,1],outputRange:[1,.965]})}]}]}>
+  <Animated.View style={[s.marker,{left:label.x-width/2,top:label.y,width,minHeight:height,transform:[{translateY:press.interpolate({inputRange:[0,1],outputRange:[0,5]})},{scale:press.interpolate({inputRange:[0,1],outputRange:[1,.965]})}]}]}>
    <Pressable style={s.markerButton} onPressIn={()=>Animated.timing(press,{toValue:1,duration:70,useNativeDriver:true}).start()} onPressOut={release} onPress={onPress} accessibilityRole="button" accessibilityLabel={item.ja}>
     <RoyalMapPill primary={item.ja} secondary={item.en} color={item.color} style={s.markerCapsule}/>
    </Pressable>
@@ -123,7 +119,7 @@ function MapMarker({item,width,height,onLayout,label,anchor,onPress}:{item:World
 }
 
 const s=StyleSheet.create({
- screen:{flex:1,overflow:'hidden',backgroundColor:'#1598e1'},background:{...StyleSheet.absoluteFillObject,width:'100%',height:'100%'},skyWash:{position:'absolute',left:0,right:0,top:0,height:'24%',backgroundColor:'rgba(7,94,177,.08)'},
- hero:{position:'absolute',zIndex:20,alignItems:'center'},measurements:{position:'absolute',top:0,left:0,opacity:0,pointerEvents:'none'},measurePrimary:{alignSelf:'flex-start',fontFamily:ROYAL_FONT.heading,fontSize:13,lineHeight:17},measureSecondary:{alignSelf:'flex-start',fontFamily:ROYAL_FONT.body,fontSize:8,lineHeight:11},
+ screen:{flex:1,overflow:'hidden',backgroundColor:'#1598e1'},background:{...StyleSheet.absoluteFillObject,width:'100%',height:'100%'},
+ hero:{position:'absolute',zIndex:20,alignItems:'center'},
  connector:{position:'absolute',height:2,borderRadius:1,transformOrigin:'left center',opacity:.92,zIndex:14,backgroundColor:ROYAL.gold,shadowColor:'#fff1b0',shadowOpacity:.8,shadowRadius:3},pin:{position:'absolute',width:10,height:10,borderRadius:5,backgroundColor:ROYAL.gold,zIndex:15,shadowColor:'#fff2a8',shadowOpacity:.9,shadowRadius:5},marker:{position:'absolute',zIndex:18,shadowColor:'#020713',shadowOffset:{width:0,height:6},shadowOpacity:.5,shadowRadius:8,elevation:12},markerButton:{flex:1,width:'100%'},markerCapsule:{width:'100%',minHeight:ROYAL_LAYOUT.mapMarkerHeight,minWidth:0},ja:{fontFamily:ROYAL_FONT.heading}
 });

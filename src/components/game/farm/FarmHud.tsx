@@ -16,7 +16,7 @@ export default function FarmHud({level,xpCurrent,xpMax,gold,diamonds,keys,onBack
    <RoyalPaperPanel tone="hud" style={s.playerFrame}>
     <View accessibilityLabel={`レベル ${level}、EXP ${xpCurrent}/${xpMax}`} style={s.player}>
      <Image source={AVATAR} resizeMode="contain" style={s.avatar}/>
-     <View style={s.playerCopy}><Text numberOfLines={1} adjustsFontSizeToFit style={s.level}>Lv.{level}</Text><Text numberOfLines={1} style={s.xp}>EXP {Math.floor(xpRatio*100)}%</Text><View accessibilityRole="progressbar" accessibilityLabel="EXP" accessibilityValue={{min:0,max:xpMax,now:xpCurrent}} style={s.xpTrack}><View style={[s.xpFill,{width:`${xpRatio*100}%`}]}/><RoyalPaperPanel borderOnly style={s.xpBorder}/></View></View>
+     <View style={s.playerCopy}><Text numberOfLines={1} adjustsFontSizeToFit style={s.level}>Lv.{level}</Text><Text numberOfLines={1} style={s.xp}>EXP {Math.floor(xpRatio*100)}%</Text><View accessibilityRole="progressbar" accessibilityLabel="EXP" accessibilityValue={{min:0,max:xpMax,now:xpCurrent}} style={s.xpTrack}><View style={[s.xpFill,{width:`${xpRatio*100}%`}]}/></View></View>
     </View>
    </RoyalPaperPanel>
    <RoyalPaperPanel tone="hud" style={s.row}>
@@ -34,9 +34,9 @@ function Resource({label,value,icon,onPress}:{label:string;value:number;icon:num
 const s=StyleSheet.create({
  container:{width:'100%',maxWidth:900,alignSelf:'center',gap:4},back:{alignSelf:'flex-start'},
  frames:{width:'100%',flexDirection:'row',alignItems:'stretch',gap:8},
- playerFrame:{flex:1,minWidth:0,minHeight:78,paddingVertical:13,paddingHorizontal:12,justifyContent:'center'},
+ playerFrame:{flex:1,minWidth:0,minHeight:78,paddingVertical:9,paddingHorizontal:12,justifyContent:'center'},
  row:{flex:1,minWidth:0,minHeight:78,paddingVertical:13,paddingHorizontal:12,flexDirection:'row',alignItems:'center',gap:3},
- player:{minWidth:0,flexDirection:'row',alignItems:'center',gap:6},avatar:{width:48,height:48,flexShrink:0},playerCopy:{flex:1,minWidth:0},
+ player:{minWidth:0,flexDirection:'row',alignItems:'center',gap:6},avatar:{width:60,height:60,flexShrink:0},playerCopy:{flex:1,minWidth:0},
  level:{fontFamily:ROYAL_FONT.heading,color:ROYAL.paleGold,fontSize:14,lineHeight:20},xp:{fontFamily:ROYAL_FONT.body,color:'#fff',fontSize:10,lineHeight:15},
  xpTrack:{height:10,width:'100%',position:'relative',overflow:'hidden',backgroundColor:'#142847',marginTop:2},xpFill:{height:'100%',backgroundColor:'#d1ab53'},xpBorder:{...StyleSheet.absoluteFillObject,padding:0,minHeight:0},
  cell:{flex:1,minWidth:0,justifyContent:'center',alignItems:'center',gap:3},icon:{width:30,height:30},

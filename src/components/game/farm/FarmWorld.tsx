@@ -1,14 +1,12 @@
 import { Image as CachedImage } from 'expo-image';
 import {
     Image,
-    LayoutChangeEvent,
     StyleSheet,
     View,
     useWindowDimensions,
 } from 'react-native';
 
 import {
-    useState,
 } from 'react';
 
 import type {
@@ -38,13 +36,6 @@ type FarmWorldProps = {
         ) => void;
 };
 
-type ViewportSize = {
-    width:
-        number;
-
-    height:
-        number;
-};
 
 const SOURCE_WIDTH =
     832;
@@ -74,35 +65,10 @@ export default function FarmWorld({
     now,
     onSelectPlot,
 }: FarmWorldProps) {
-    const [
-        viewport,
-        setViewport,
-    ] =
-        useState<ViewportSize>({
-            width:
-                0,
-
-            height:
-                0,
-        });
-    const window = useWindowDimensions();
-    const isLandscape = (viewport.width || window.width) > (viewport.height || window.height);
+    const viewport=useWindowDimensions();
+    const isLandscape = viewport.width > viewport.height;
     const sourceWidth = isLandscape ? LANDSCAPE_WIDTH : SOURCE_WIDTH;
     const sourceHeight = isLandscape ? LANDSCAPE_HEIGHT : SOURCE_HEIGHT;
-
-    function handleLayout(
-        event:
-            LayoutChangeEvent
-    ) {
-        const {
-            width,
-            height,
-        } =
-            event.nativeEvent
-                .layout;
-
-        setViewport(current => current.width === width && current.height === height ? current : { width, height });
-    }
 
     /*
      * The source artwork covers the entire viewport; edges may be cropped.
@@ -143,9 +109,6 @@ export default function FarmWorld({
 
     return (
         <View
-            onLayout={
-                handleLayout
-            }
             style={
                 styles.viewport
             }

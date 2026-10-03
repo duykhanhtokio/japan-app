@@ -34,8 +34,18 @@ function PulsingMic({disabled,recording,onPress}:{disabled:boolean;recording:boo
  return <Pressable accessibilityRole="button" accessibilityLabel={recording?'録音を停止':'録音を開始'} disabled={disabled} onPress={onPress} style={({pressed})=>[s.mic,disabled&&{opacity:.7},pressed&&s.pressed]}><NativeAnimated.Image source={MICROPHONE} resizeMode="contain" style={[s.micIcon,{opacity:pulse.interpolate({inputRange:[0,1],outputRange:[.78,1]}),transform:[{scale:pulse.interpolate({inputRange:[0,1],outputRange:[.96,1.06]})}]}]}/></Pressable>
 }
 
-export default function DialogueScreen(){
+// Conservative line budgeting before paint; Latin glyphs occupy half a full-width cell.
+function copyLines(text:string,width:number,size:number){
+ const capacity=Math.max(1,width/size);let lines=1,used=0;
+ for(const char of text){if(char==='\n'){lines++;used=0;continue;}const unit=/[\u0000-\u007f]/.test(char)?.6:1;if(used+unit>capacity){lines++;used=0;}used+=unit;}
+ return lines;
+}
+
+export default function DialogueRoute(){
  const raw=useLocalSearchParams<{scenarioId:string}>().scenarioId,id=Array.isArray(raw)?raw[0]:raw;
+ return <DialogueScreen key={id} id={id}/>;
+}
+function DialogueScreen({id}:{id?:string}){
  const scenario=id?getLifeScenarioById(id):null,location=scenario?.locationId?getLifeLocationById(scenario.locationId):null;
  const{profile}=useUserProfile(),{language}=useAppLanguage(),royalPosition=useRoyalPositioning(),insets=useSafeAreaInsets(),wide=royalPosition.isWide;
  const turns=useMemo(()=>id?loadDialogueTurns(id):[],[id]);
@@ -43,7 +53,7 @@ export default function DialogueScreen(){
  const [spokenLengths,setSpokenLengths]=useState<Record<string,number>>({});
  const [hintStages,setHintStages]=useState<Record<string,number>>({});
  const viewport=useWindowDimensions();
- const [stageSize,setStageSize]=useState({width:viewport.width,height:viewport.height}),[headerHeight,setHeaderHeight]=useState(0);
+ const stageSize=viewport;
  const abortListening=speech.abortListening;
  const heardNpcIds=useRef(new Set<string>());
  const npcContext=npcTurn?turn:turns.slice(0,index).reverse().find(item=>item.speaker==='NPC');
@@ -89,6 +99,10 @@ export default function DialogueScreen(){
  const npcDrawHeight=Math.min(npcBoxHeight,npcBoxWidth/npcRatio);
  const npcWaist=stageSize.height-controlsBottom-npcBoxHeight+(npcBoxHeight-npcDrawHeight)/2+npcDrawHeight*npcPresentation.waistY/npcPresentation.height;
  const dockReserve=wide?96:124;
+ const missionWidth=(wide?stageSize.width*.46:Math.min(560,stageSize.width-24))-56;
+ const missionFont=wide?12:ROYAL_TYPE.explanation,missionLine=wide?16:ROYAL_TYPE.explanationLine;
+ const missionLines=copyLines(mission,missionWidth,missionFont);
+ const headerHeight=insets.top+ROYAL_PLACEMENT.headerTop+44+4+12+(wide?20:36)+missionLines*missionLine;
  const conversationTop=Math.max(headerHeight+8,npcWaist);
  const visiblePanels=[npcContext,reservedPlayerTurn].filter(Boolean);
  const availableHeight=Math.max(0,stageSize.height-conversationTop-controlsBottom-dockReserve);
@@ -99,15 +113,22 @@ export default function DialogueScreen(){
   const npcText=showText?panel.npc?.textJa??'':(panel.npc?.textJa??'').slice(0,spokenLengths[panel.id]??0);
   const npcTranslation=panel.npc?.translations?.[language]??(language==='vi'?panel.npc?.translationVi:null);
   const weight=panelWeight(panel);
-  const allocatedHeight=availableHeight*(.3/Math.max(1,visiblePanels.length)+.7*weight/totalWeight);
-  const copyHeight=Math.max(20,allocatedHeight-(wide?30:54));
+  const budgetHeight=availableHeight*(.3/Math.max(1,visiblePanels.length)+.7*weight/totalWeight);
   const copyWidth=Math.max(80,(wide?stageSize.width*.46:stageSize.width-20)-56);
+  const fullNpc=panel.npc?.textJa??'';
+  const panelCopy=isNpc?fullNpc:hintStage===1?(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language]:hintStage===2?panel.player?.recommendedAnswerJa??'':'';
+  const copyPixels=(size:number)=>copyLines(panelCopy,copyWidth,size)*size*(isNpc?1.15:hintStage===2?1.9:1.15)+(isNpc&&hintStage>0&&language!=='ja'?3+copyLines(npcTranslation??missingHint[language],copyWidth,size)*size*1.15:0)+(!isNpc&&speech.transcript?copyLines(speech.transcript,copyWidth,size)*size*1.15:0);
+  const panelInsets=wide?40:60;
+  // Last NPC hugs the complete sentence, including revealed translation.
+  // Reserve against full copy so speech boundary events never resize the panel.
+  const allocatedHeight=visiblePanels.length===1?Math.min(budgetHeight,Math.max(80,copyPixels(17)+panelInsets)):budgetHeight;
+  const copyHeight=Math.max(20,allocatedHeight-panelInsets);
   let fontSize=17;
-  while(fontSize>6&&Math.ceil((weight+30)/Math.max(1,Math.floor(copyWidth/fontSize)))*fontSize*1.25>copyHeight)fontSize-=.5;
+  while(fontSize>6&&copyPixels(fontSize)>copyHeight)fontSize-=.5;
   const fit={fontSize,lineHeight:fontSize*1.15};
   return <View key={panel.id} style={[s.bubbleWrap,{height:allocatedHeight}]}>
    <RoyalNavyFrame style={s.speakerPlate}><Text numberOfLines={1} adjustsFontSizeToFit maxFontSizeMultiplier={1} style={s.speakerName}>{isNpc?npcName:playerName}</Text></RoyalNavyFrame>
-   <View style={[s.bubbleDepth,{flex:1}]}><RoyalReadingFrame fit style={[{flex:1},wide&&{paddingVertical:8,paddingHorizontal:22}]}>
+   <View style={[s.bubbleDepth,{flex:1}]}><RoyalReadingFrame style={[{flex:1},wide&&{paddingVertical:8,paddingHorizontal:22}]}>
     {!isNpc?hintStage===0?<WaitingSpeechDots/>:hintStage===1?<Text maxFontSizeMultiplier={1} style={[s.guidance,fit,{color:theme.text}]}>{(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language]}</Text>:<JapaneseRuby fontSize={fontSize} text={panel.player?.recommendedAnswerJa??''} segments={panel.player?.recommendedAnswerRuby}/>:<>
      <Text maxFontSizeMultiplier={1} style={[s.japanese,fit,{color:theme.text}]}>{npcText||' '}</Text>
      {hintStage>0&&language!=='ja'&&<Text maxFontSizeMultiplier={1} style={[s.translation,fit,{color:theme.reading}]}>{npcTranslation??missingHint[language]}</Text>}
@@ -116,9 +137,9 @@ export default function DialogueScreen(){
    </RoyalReadingFrame><RoyalHintButton onPress={()=>nextHint(panel.id,isNpc)} color={isNpc?'gold':'red'} style={s.hintButton}/></View>
   </View>;
  };
- return <ImageBackground source={background} resizeMode="cover" style={s.screen}><View style={s.backdrop}/><View onLayout={event=>{const {width,height}=event.nativeEvent.layout;setStageSize({width,height});}} style={s.safe}>
-  <View onLayout={event=>setHeaderHeight(event.nativeEvent.layout.y+event.nativeEvent.layout.height)} style={[s.header,{paddingTop:insets.top+ROYAL_PLACEMENT.headerTop}]}><View style={s.headerRow}><RoyalBackButton onPress={()=>router.back()}/><View style={s.headerTitle}><View style={s.titleRow}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.title}>{location?displayLocationNameJa(location.nameJa,location.category):'会話練習'}</Text></View></View></View><View style={[s.missionCard,wide&&s.missionCardWide]}><RoyalNavyFrame style={s.missionLabel}><Text style={s.missionLabelText}>課題</Text></RoyalNavyFrame><RoyalReadingFrame explanation style={wide?{paddingVertical:10}:undefined}><Text maxFontSizeMultiplier={1} style={[s.missionText,{color:ROYAL.paleGold},wide&&{fontSize:12,lineHeight:16}]}>{mission}</Text></RoyalReadingFrame></View></View>
-  <View testID="dialogue-npc" pointerEvents="none" style={[s.npcLayer,{left:stageSize.width*(wide?.02:.03),top:stageSize.height-controlsBottom-npcBoxHeight,width:npcBoxWidth,height:npcBoxHeight}]}><Image source={npcImage} resizeMode="contain" style={s.npcImage}/></View>
+ return <ImageBackground key={location?.id} source={background} resizeMode="cover" style={s.screen}><View style={s.safe}>
+  <View style={[s.header,{paddingTop:insets.top+ROYAL_PLACEMENT.headerTop}]}><View style={s.headerRow}><RoyalBackButton onPress={()=>router.back()}/><View style={s.headerTitle}><View style={s.titleRow}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.title}>{location?displayLocationNameJa(location.nameJa,location.category):'会話練習'}</Text></View></View></View><View style={[s.missionCard,wide&&s.missionCardWide]}><RoyalNavyFrame style={s.missionLabel}><Text style={s.missionLabelText}>課題</Text></RoyalNavyFrame><RoyalReadingFrame explanation style={wide?{paddingVertical:10}:undefined}><Text maxFontSizeMultiplier={1} style={[s.missionText,{color:ROYAL.paleGold},wide&&{fontSize:12,lineHeight:16}]}>{mission}</Text></RoyalReadingFrame></View></View>
+  <View testID="dialogue-npc" pointerEvents="none" style={[s.npcLayer,{left:stageSize.width*(wide?.02:.03),top:stageSize.height-controlsBottom-npcBoxHeight,width:npcBoxWidth,height:npcBoxHeight}]}><Image key={location?.category} fadeDuration={0} source={npcImage} resizeMode="contain" style={s.npcImage}/></View>
   <View testID="dialogue-panels" style={[s.conversation,{top:conversationTop,bottom:controlsBottom+dockReserve},wide&&s.conversationWide]}>
    {npcContext&&renderPanel(npcContext,!npcTurn)}
    {playerTurn&&renderPanel(playerTurn)}
@@ -130,7 +151,7 @@ export default function DialogueScreen(){
 }
 
 const s=StyleSheet.create({
- screen:{flex:1,backgroundColor:'#d9e7ef'},backdrop:{...StyleSheet.absoluteFillObject,backgroundColor:'rgba(5,12,24,.15)'},safe:{flex:1},
+ screen:{flex:1},safe:{flex:1},
  header:{zIndex:10,width:'100%',paddingHorizontal:ROYAL_PLACEMENT.headerHorizontal,paddingTop:ROYAL_PLACEMENT.headerTop},headerRow:{flexDirection:'row',alignItems:'center',gap:ROYAL_PLACEMENT.headerGap},headerTitle:{flex:1},
  titleRow:{flexDirection:'row',alignItems:'center',justifyContent:'space-between',gap:6},title:{flex:1,color:'#fff',fontFamily:ROYAL_FONT.heading,fontSize:20,textShadowColor:'rgba(0,0,0,.65)',textShadowOffset:{width:0,height:2},textShadowRadius:5},
  missionCard:{position:'relative',paddingTop:12,marginTop:4,width:'100%',maxWidth:560,alignSelf:'center'},missionCardWide:{width:'46%',alignSelf:'flex-end'},missionLabel:{position:'absolute',top:0,left:16,zIndex:30,elevation:14,width:120,height:26,justifyContent:'center'},missionLabelText:{color:ROYAL.paleGold,fontFamily:ROYAL_FONT.body,fontSize:13,textAlign:'center'},missionText:{color:'#18304b',fontFamily:ROYAL_FONT.body,fontSize:ROYAL_TYPE.explanation,lineHeight:ROYAL_TYPE.explanationLine,textAlign:'center'},
@@ -141,7 +162,7 @@ const s=StyleSheet.create({
  japanese:{fontFamily:ROYAL_FONT.heading,fontSize:17,lineHeight:21,textAlign:'center'},reading:{fontFamily:ROYAL_FONT.body,fontSize:ROYAL_TYPE.optionSecondary,lineHeight:19,marginTop:3,textAlign:'center'},guidance:{fontFamily:ROYAL_FONT.body,fontSize:17,lineHeight:21,textAlign:'center'},
  translation:{fontFamily:ROYAL_FONT.body,fontSize:ROYAL_TYPE.optionSecondary,lineHeight:21,marginTop:3,textAlign:'center'},
  microphoneDock:{position:'absolute',left:10,right:10,zIndex:9,elevation:14,height:48,alignItems:'center',justifyContent:'center'},
- actionRow:{height:44,width:'100%',flexDirection:'row',alignItems:'center',justifyContent:'center',gap:28},hintButton:{position:'absolute',left:8,bottom:-8,zIndex:20,width:30,height:38},
+ actionRow:{height:44,width:'100%',flexDirection:'row',alignItems:'center',justifyContent:'center',gap:28},hintButton:{position:'absolute',right:8,bottom:-8,zIndex:20,width:30,height:38},
  speechArea:{marginTop:8,alignItems:'center',justifyContent:'center',gap:6,minHeight:44},transcript:{width:'100%',fontSize:16,lineHeight:24,fontFamily:ROYAL_FONT.body,textAlign:'center',textAlignVertical:'center',includeFontPadding:false},speechNotice:{marginTop:4,marginHorizontal:12,color:'#fff3e1',fontFamily:ROYAL_FONT.body,fontSize:12,lineHeight:18,textAlign:'center',textShadowColor:'#31151a',textShadowOffset:{width:0,height:1},textShadowRadius:3},mic:{width:44,height:44,alignItems:'center',justifyContent:'center'},micIcon:{width:28,height:28},
  controls:{position:'absolute',zIndex:8,left:10,right:10,flexDirection:'row',gap:6},controlsWide:{left:'51%',right:'3%'},control:{flex:1,height:66,minHeight:66},controlText:{color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:18},pressed:{opacity:.86,transform:[{scale:.97}]},disabled:{opacity:.35},emptyScreen:{flex:1,backgroundColor:'#0b1b2a'},empty:{color:'#fff',fontFamily:ROYAL_FONT.body,padding:24,fontSize:18},
 });

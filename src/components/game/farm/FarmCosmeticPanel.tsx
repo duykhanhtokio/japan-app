@@ -9,6 +9,7 @@ import {
     StyleSheet,
     Text,
     View,
+    useWindowDimensions,
 } from 'react-native';
 
 import {
@@ -347,6 +348,7 @@ export default function FarmCosmeticPanel({
     onEquip,
     onUnequip,
 }: Props) {
+    const windowSize=useWindowDimensions(),compactLandscape=windowSize.width>windowSize.height&&windowSize.height<600;
     const [
         selectedFilter,
         setSelectedFilter,
@@ -554,7 +556,7 @@ export default function FarmCosmeticPanel({
                                         equipped &&
                                             styles.equippedButton,
                                     ]}
-                                ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
+                                >
                                     <Text
                                         style={
                                             styles.buyButtonText
@@ -632,7 +634,7 @@ export default function FarmCosmeticPanel({
                 visible
             }
             transparent
-            animationType="fade"
+            animationType="none"
             onRequestClose={
                 onClose
             }
@@ -679,7 +681,7 @@ export default function FarmCosmeticPanel({
                             style={
                                 styles.closeButton
                             }
-                        ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
+                        >
                             <Text
                                 style={
                                     styles.closeText
@@ -690,7 +692,9 @@ export default function FarmCosmeticPanel({
                         </Pressable>
                     </View>
 
-                    <FarmCosmeticPreview
+                    <View style={{flex:1,minHeight:0,flexDirection:compactLandscape?'row':'column',gap:compactLandscape?10:0}}>
+                    <View style={compactLandscape?{width:'30%',maxWidth:300}:undefined}><FarmCosmeticPreview
+                        compact={compactLandscape}
                         target={
                             previewTarget
                         }
@@ -698,8 +702,8 @@ export default function FarmCosmeticPanel({
                             state
                                 .equippedFarmCosmetics
                         }
-                    />
-
+                    /></View>
+                    <View style={{flex:1,minHeight:0}}>
                     <View
                         style={
                             styles.filterRow
@@ -764,7 +768,7 @@ export default function FarmCosmeticPanel({
                                             selected &&
                                                 styles.filterButtonSelected,
                                         ]}
-                                    ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
+                                    >
                                         <Text
                                             style={[
                                                 styles.filterText,
@@ -838,6 +842,7 @@ export default function FarmCosmeticPanel({
                     <RoyalExplanationPanel style={styles.noticePanel}>
                         <Text style={styles.notice}>同じスロットに装備すると自動で入れ替わります</Text>
                     </RoyalExplanationPanel>
+                    </View></View>
                 </RoyalContentPanel>
             </View>
         </Modal>
@@ -1022,6 +1027,7 @@ const styles =
         },
 
         filterTextSelected: {
+            textDecorationLine:'underline',
             color:'#142847',
         },
 

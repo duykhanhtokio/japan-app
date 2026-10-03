@@ -1,14 +1,8 @@
-import { useState, type PropsWithChildren } from 'react';
+import { type PropsWithChildren } from 'react';
 import { View, type StyleProp, type ViewStyle } from 'react-native';
 import { RoyalContentPanel, RoyalExplanationPanel } from '@/components/ui/RoyalPanels';
-/** Non-scrolling text: allocate height, then fit any measured overflow inside it. */
-export default function RoyalReadingFrame({children,style,explanation=false,fit=false}:PropsWithChildren<{style?:StyleProp<ViewStyle>;explanation?:boolean;fit?:boolean}>){
- const [available,setAvailable]=useState(0),[copyHeight,setCopyHeight]=useState(0);
+/** The dialogue caller fits its copy before mounting; no measured rescale pass. */
+export default function RoyalReadingFrame({children,style,explanation=false}:PropsWithChildren<{style?:StyleProp<ViewStyle>;explanation?:boolean;fit?:boolean}>){
  const Panel=explanation?RoyalExplanationPanel:RoyalContentPanel;
- const scale=available>0&&copyHeight>0?Math.min(1,available/copyHeight):1;
- return <Panel style={[{width:'100%',minHeight:0,paddingHorizontal:28,paddingVertical:18,justifyContent:'center'},style]}>
-  {fit?<View onLayout={event=>setAvailable(event.nativeEvent.layout.height)} style={{flex:1,minHeight:0,justifyContent:'center'}}>
-   <View onLayout={event=>setCopyHeight(event.nativeEvent.layout.height)} style={{width:'100%',flexShrink:0,transform:[{scale}]}}>{children}</View>
-  </View>:<View style={{minHeight:0,justifyContent:'center'}}>{children}</View>}
- </Panel>;
+ return <Panel style={[{width:'100%',minHeight:0,paddingHorizontal:28,paddingVertical:18,justifyContent:'center'},style]}><View style={{minHeight:0,justifyContent:'center'}}>{children}</View></Panel>;
 }

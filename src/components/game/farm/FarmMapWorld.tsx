@@ -1,16 +1,13 @@
 import { Image as CachedImage } from 'expo-image';
 import {
     Image,
-    LayoutChangeEvent,
     Pressable,
     StyleSheet,
     View,
     useWindowDimensions,
 } from 'react-native';
 
-import {
-    useState,
-} from 'react';
+
 
 import {
     isFarmAreaUnlocked,
@@ -36,14 +33,6 @@ type FarmMapWorldProps = {
             destination:
                 FarmMapDestination
         ) => void;
-};
-
-type ViewportSize = {
-    width:
-        number;
-
-    height:
-        number;
 };
 
 type Hotspot = {
@@ -233,37 +222,13 @@ export default function FarmMapWorld({
     farmLevel,
     onSelect,
 }: FarmMapWorldProps) {
-    const [
-        viewport,
-        setViewport,
-    ] =
-        useState<ViewportSize>({
-            width:
-                0,
-
-            height:
-                0,
-        });
-    const window = useWindowDimensions();
-    const aspect = (viewport.width || window.width) / (viewport.height || window.height);
+    // This map occupies the full-screen absolute farmMapLayer.
+    const viewport = useWindowDimensions();
+    const aspect = viewport.width / viewport.height;
     const isLandscape = aspect > 1;
     const isTabletLandscape = isLandscape && aspect < 1.55;
     const sourceWidth = isTabletLandscape ? TABLET_WIDTH : isLandscape ? LANDSCAPE_WIDTH : MAP_WIDTH;
     const sourceHeight = isTabletLandscape ? TABLET_HEIGHT : isLandscape ? LANDSCAPE_HEIGHT : MAP_HEIGHT;
-
-    function handleLayout(
-        event:
-            LayoutChangeEvent
-    ) {
-        const {
-            width,
-            height,
-        } =
-            event.nativeEvent
-                .layout;
-
-        setViewport(current => current.width === width && current.height === height ? current : { width, height });
-    }
 
     /*
      * Equivalent to resizeMode="cover",
@@ -314,9 +279,6 @@ export default function FarmMapWorld({
 
     return (
         <View
-            onLayout={
-                handleLayout
-            }
             style={
                 styles.viewport
             }
@@ -325,11 +287,7 @@ export default function FarmMapWorld({
                 contentFit="cover" transition={0} cachePolicy="memory-disk"
                 style={[StyleSheet.absoluteFill,{width:'100%',height:'100%'}]}
             />
-            {viewport.width >
-                0 &&
-                viewport.height >
-                    0 && (
-                    <>
+            {(                    <>
                         {(isTabletLandscape ? TABLET_HOTSPOTS : isLandscape ? LANDSCAPE_HOTSPOTS : HOTSPOTS).map(
                             hotspot => {
                                 const progressionId =

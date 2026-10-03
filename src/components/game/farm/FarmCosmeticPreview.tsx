@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import FarmCosmeticArtwork from './FarmCosmeticArtwork';
 import { RoyalContentPanel, RoyalExplanationPanel } from '@/components/ui/RoyalPanels';
 import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
@@ -22,6 +23,7 @@ import {
 } from '@/game/data/farm-cosmetics';
 
 type Props = {
+    compact?: boolean;
     target:
         FarmCosmeticTarget;
 
@@ -94,6 +96,7 @@ function getColorTint(
 export default function FarmCosmeticPreview({
     target,
     equipped,
+    compact=false,
 }: Props) {
     const targetEquipment =
         equipped[
@@ -166,10 +169,12 @@ export default function FarmCosmeticPreview({
             ? environmentAsset
             : centerpieceAsset;
 
+    const Stage = compact ? View : Fragment;
+    const sceneHeight=isBuilding?206:150;
     return (
         <RoyalContentPanel
             style={
-                styles.container
+                [styles.container,compact&&{marginHorizontal:0,marginTop:0,paddingHorizontal:9,paddingVertical:9}]
             }
         >
             <Text
@@ -182,9 +187,10 @@ export default function FarmCosmeticPreview({
 
             <RoyalExplanationPanel
                 style={
-                    [styles.stage, isBuilding && {height:206}]
+                    [styles.stage, isBuilding && {height:206},compact&&{height:110,paddingHorizontal:0,paddingVertical:0}]
                 }
             >
+                <Stage {...(compact?{style:{width:'100%',height:sceneHeight,alignItems:'center',justifyContent:'center',transform:[{scale:110/sceneHeight}]}}:{})}>
                 {effectAsset && (
                     <Image
                         source={
@@ -279,6 +285,7 @@ export default function FarmCosmeticPreview({
                             : '建物を選んでください'}
                     </Text>
                 )}
+                </Stage>
             </RoyalExplanationPanel>
 
             <Text

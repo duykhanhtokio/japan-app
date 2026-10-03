@@ -1489,10 +1489,10 @@ export default function FarmGameScreen() {
                     styles.game
                 }
             >
-                {(
+                {showFarmMap && (
                     <View
                         pointerEvents={showFarmMap ? 'auto' : 'none'}
-                        style={[styles.farmMapLayer, !showFarmMap && styles.farmMapHidden]}
+                        style={styles.farmMapLayer}
                     >
                         <FarmMapWorld
                             farmLevel={
@@ -2099,10 +2099,6 @@ const styles =
 
             zIndex:
                 0,
-        },
-
-        farmMapHidden: {
-            opacity: 0,
         },
 
         hudSafeLayer: {

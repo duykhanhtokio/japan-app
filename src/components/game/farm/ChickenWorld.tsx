@@ -6,7 +6,6 @@ import {
     Animated,
     Easing,
     Image,
-    LayoutChangeEvent,
     Pressable,
     StyleSheet,
     Text,
@@ -83,10 +82,6 @@ type Props = {
     onCollect: (slotId: string) => void;
 };
 
-type Viewport = {
-    width: number;
-    height: number;
-};
 
 function formatRemainingTime(
     readyAt: number | undefined,
@@ -326,12 +321,8 @@ export default function ChickenWorld({
     onCare,
     onCollect,
 }: Props) {
-    const [viewport, setViewport] = useState<Viewport>({
-        width: 0,
-        height: 0,
-    });
-    const window = useWindowDimensions();
-    const isLandscape = (viewport.width || window.width) > (viewport.height || window.height);
+    const viewport=useWindowDimensions();
+    const isLandscape = viewport.width > viewport.height;
     const sourceWidth = isLandscape ? LANDSCAPE_WIDTH : CANVAS_WIDTH;
     const sourceHeight = isLandscape ? LANDSCAPE_HEIGHT : CANVAS_HEIGHT;
     const centers = isLandscape ? LANDSCAPE_NEST_CENTERS : NEST_CENTERS;
@@ -341,10 +332,6 @@ export default function ChickenWorld({
         [slots]
     );
 
-    function handleLayout(event: LayoutChangeEvent) {
-        const { width, height } = event.nativeEvent.layout;
-        setViewport(current => current.width === width && current.height === height ? current : { width, height });
-    }
 
     const scale = viewport.width > 0 && viewport.height > 0
         ? Math.max(
@@ -359,9 +346,9 @@ export default function ChickenWorld({
     const offsetY = (viewport.height - renderedHeight) / 2;
 
     return (
-        <View style={styles.world} onLayout={handleLayout}>
+        <View style={styles.world}>
             <CachedImage source={isLandscape ? LANDSCAPE_BACKGROUND : BACKGROUND} contentFit="cover" transition={0} cachePolicy="memory-disk" style={[StyleSheet.absoluteFill,{width:'100%',height:'100%'}]} />
-            {viewport.width > 0 && (
+            {(
                 <>
                     {chickenSlots.slice(0, centers.length).map(
                         (slot, index) => (

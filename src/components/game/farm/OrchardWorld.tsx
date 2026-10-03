@@ -1,7 +1,6 @@
 import { Image as CachedImage } from 'expo-image';
 import {
     Image,
-    LayoutChangeEvent,
     Pressable,
     StyleSheet,
     Text,
@@ -9,7 +8,6 @@ import {
     useWindowDimensions,
 } from 'react-native';
 
-import { useState } from 'react';
 
 import type {
     OrchardPlotState,
@@ -61,17 +59,12 @@ export default function OrchardWorld({
     selectedPlotId,
     onSelectPlot,
 }: OrchardWorldProps) {
-    const [viewport, setViewport] = useState({ width: 0, height: 0 });
-    const window = useWindowDimensions();
-    const isLandscape = (viewport.width || window.width) > (viewport.height || window.height);
+    const viewport=useWindowDimensions();
+    const isLandscape = viewport.width > viewport.height;
     const imageWidth = isLandscape ? LANDSCAPE_WIDTH : ART_WIDTH;
     const imageHeight = isLandscape ? LANDSCAPE_HEIGHT : ART_HEIGHT;
     const positions = isLandscape ? LANDSCAPE_POSITIONS : ORCHARD_POSITIONS;
 
-    function handleLayout(event: LayoutChangeEvent) {
-        const { width, height } = event.nativeEvent.layout;
-        setViewport(current => current.width === width && current.height === height ? current : { width, height });
-    }
 
     const scale = viewport.width > 0 && viewport.height > 0
         ? Math.max(viewport.width / imageWidth, viewport.height / imageHeight)
@@ -82,7 +75,7 @@ export default function OrchardWorld({
     const offsetY = (viewport.height - artworkHeight) / 2;
 
     return (
-        <View style={styles.frame} onLayout={handleLayout}>
+        <View style={styles.frame}>
             <CachedImage source={isLandscape ? LANDSCAPE_ART : PORTRAIT_ART}
                 contentFit="cover" transition={0} cachePolicy="memory-disk"
                 style={[StyleSheet.absoluteFill,{width:'100%',height:'100%'}]}

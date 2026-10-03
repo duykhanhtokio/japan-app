@@ -1,6 +1,8 @@
 import type { ImageSourcePropType } from 'react-native';
 const assets:Record<string,ImageSourcePropType>={
  amusement:require('../../../assets/app/life/location-backgrounds/amusement-park/01-clear-morning.jpg'),
+ shopping:require('../../../assets/app/life/location-backgrounds/shopping/01-clear-morning.jpg'),
+ tax:require('../../../assets/app/life/location-backgrounds/tax-office/01-clear-morning.jpg'),
  station:require('../../../assets/app/life/location-backgrounds/station/01-clear-morning.jpg'),
  cafe:require('../../../assets/app/life/location-backgrounds/cafe/01-clear-morning.jpg'),
  restaurant:require('../../../assets/app/life/location-backgrounds/restaurant/01-clear-morning.jpg'),
@@ -24,7 +26,13 @@ const assets:Record<string,ImageSourcePropType>={
  shrine:require('../../../assets/app/life/location-backgrounds/shrine-temple/01-clear-morning.jpg'),
  castle:require('../../../assets/app/life/location-backgrounds/castle/01-clear-morning.jpg'),
 };
-export function sceneForCategory(category?:string|null):ImageSourcePropType{const c=(category??'').toLowerCase();if(c.includes('amusement'))return assets.amusement;if(c.includes('station'))return assets.station;if(c.includes('cafe'))return assets.cafe;if(c.includes('ramen'))return assets.ramen;if(c.includes('izakaya'))return assets.izakaya;if(c.includes('restaurant'))return assets.restaurant;if(c.includes('hotel'))return assets.hotel;if(c.includes('onsen'))return assets.onsen;if(c.includes('convenience'))return assets.convenience;if(c.includes('pharmacy'))return assets.pharmacy;if(c.includes('hospital'))return assets.hospital;if(c.includes('police'))return assets.police;if(c.includes('government')||c.includes('tax'))return assets.government;if(c.includes('bank'))return assets.bank;if(c.includes('post'))return assets.post;if(c.includes('supermarket')||c.includes('shopping'))return assets.supermarket;if(c.includes('construction'))return assets.construction;if(c.includes('museum'))return assets.museum;if(c.includes('shrine'))return assets.shrine;if(c.includes('castle'))return assets.castle;if(c.includes('park'))return assets.park;if(c.includes('nature'))return assets.nature;return assets.sightseeing}
+export function categoryAssetKey(category?:string|null){return (category??'').trim().toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
+const sceneCategories:Record<string,string>={
+ 'amusement-park':'amusement',station:'station',cafe:'cafe','ramen-shop':'ramen',izakaya:'izakaya',restaurant:'restaurant',hotel:'hotel',onsen:'onsen',
+ 'convenience-store':'convenience',pharmacy:'pharmacy',hospital:'hospital','police-station':'police','government-office':'government','tax-office':'tax',bank:'bank','post-office':'post',supermarket:'supermarket',shopping:'shopping','construction-site':'construction',museum:'museum','shrine-temple':'shrine',castle:'castle',park:'park',nature:'nature',landmark:'sightseeing',
+};
+export function sceneForCategory(category?:string|null):ImageSourcePropType{return assets[sceneCategories[categoryAssetKey(category)]??'sightseeing'];}
+
 const list=Object.values(assets);export const cityScene=(seed:number)=>list[Math.abs(seed)%list.length];
 
 const npcAssets: Record<string, ImageSourcePropType> = {
@@ -56,9 +64,9 @@ const npcAssets: Record<string, ImageSourcePropType> = {
 };
 
 export function npcForCategory(category?: string | null): ImageSourcePropType {
-  return npcAssets[(category ?? '').trim().toLowerCase()] ?? npcAssets.landmark;
+  return npcAssets[Object.keys(npcAssets).find(key=>categoryAssetKey(key)===categoryAssetKey(category))??'landmark'] ?? npcAssets.landmark;
 }
 
 // Source-space waist landmarks, not one screen-height ratio for every NPC.
 const npcWaistY:Record<string,number>={"amusement park": 614, "bank": 686, "cafe": 548, "castle": 702, "construction site": 603, "convenience store": 702, "government office": 576, "hospital": 680, "hotel": 691, "izakaya": 576, "landmark": 625, "museum": 625, "nature": 603, "onsen": 565, "park": 603, "pharmacy": 625, "police station": 631, "post office": 697, "ramen shop": 576, "restaurant": 576, "shopping": 603, "shrine / temple": 620, "station": 631, "supermarket": 614, "tax office": 614};
-export function npcPresentationForCategory(category?:string|null){const key=(category??'').trim().toLowerCase();return {source:npcForCategory(category),width:1024,height:1536,waistY:npcWaistY[key]??npcWaistY.landmark};}
+export function npcPresentationForCategory(category?:string|null){const key=Object.keys(npcWaistY).find(key=>categoryAssetKey(key)===categoryAssetKey(category))??'landmark';return {source:npcForCategory(category),width:1024,height:1536,waistY:npcWaistY[key]??npcWaistY.landmark};}

@@ -1,5 +1,4 @@
 import { router } from 'expo-router';
-import { useState } from 'react';
 import { Image, ImageBackground, Pressable, StyleSheet, Text, View, useWindowDimensions, type ImageSourcePropType } from 'react-native';
 import { ROYAL, ROYAL_FONT, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
 
@@ -14,7 +13,6 @@ const TABS:{id:BottomNavTab;icon:ImageSourcePropType;label:string;route:'/home'|
 ];
 export type BottomNavTab='home'|'game'|'tasks'|'profile';
 export default function BottomNav({active,variant='approved'}:{active:BottomNavTab;variant?:'royal'|'study'|'approved'}){
- const [artworkWidth,setArtworkWidth]=useState(0);
  const {width:screenWidth}=useWindowDimensions();
  if(variant==='approved'){
   const scale=Math.max(.9,Math.min(1.18,screenWidth/390));
@@ -22,8 +20,8 @@ export default function BottomNav({active,variant='approved'}:{active:BottomNavT
   const imageHeight=navHeight*724/336;
   const barHeight=navHeight;
   const imageTop=(navHeight-barHeight)/2-navHeight*195/336;
-  return <View onLayout={event=>setArtworkWidth(Math.round(event.nativeEvent.layout.width))} style={[styles.approvedContainer,{height:navHeight}]}>
-   {artworkWidth>0&&<View pointerEvents="none" style={[styles.approvedArtwork,{width:artworkWidth,height:imageHeight,top:imageTop}]}><Image source={NAV_COMPOSITE_NAVY} resizeMode="stretch" style={styles.approvedArtworkImage}/></View>}
+  return <View style={[styles.approvedContainer,{height:navHeight}]}>
+   <View pointerEvents="none" style={[styles.approvedArtwork,{width:'100%',height:imageHeight,top:imageTop}]}><Image source={NAV_COMPOSITE_NAVY} resizeMode="stretch" style={styles.approvedArtworkImage}/></View>
    {TABS.map(tab=><ApprovedTab key={tab.id} tab={tab} active={active===tab.id} scale={scale}/>)}
   </View>;
  }

@@ -1,5 +1,5 @@
 const CATEGORY_LABELS: [RegExp, string][] = [
-  [/amusement/, '遊園地'], [/station/, '駅'], [/cafe/, 'カフェ'], [/ramen/, 'ラーメン店'],
+  [/amusement/, '遊園地'], [/^station$/, '駅'], [/cafe/, 'カフェ'], [/ramen/, 'ラーメン店'],
   [/izakaya/, '居酒屋'], [/restaurant/, '飲食店'], [/hotel/, 'ホテル'], [/onsen/, '温泉'],
   [/convenience/, 'コンビニ'], [/pharmacy/, '薬局'], [/hospital/, '病院'], [/police/, '警察署'],
   [/government/, '市役所'], [/tax/, '税務署'], [/bank/, '銀行'], [/post/, '郵便局'],

@@ -6,7 +6,6 @@ import {
     Animated,
     Easing,
     Image,
-    LayoutChangeEvent,
     Pressable,
     StyleSheet,
     Text,
@@ -18,7 +17,6 @@ import {
     useEffect,
     useMemo,
     useRef,
-    useState,
 } from 'react';
 
 import type {
@@ -77,10 +75,6 @@ type Props = {
     onCollect: (slotId: string) => void;
 };
 
-type Viewport = {
-    width: number;
-    height: number;
-};
 
 function formatRemainingTime(readyAt: number | undefined, now: number) {
     if (readyAt === undefined) return '';
@@ -270,9 +264,8 @@ export default function CowWorld({
     onCare,
     onCollect,
 }: Props) {
-    const [viewport, setViewport] = useState<Viewport>({ width: 0, height: 0 });
-    const window = useWindowDimensions();
-    const isLandscape = (viewport.width || window.width) > (viewport.height || window.height);
+    const viewport=useWindowDimensions();
+    const isLandscape = viewport.width > viewport.height;
     const sourceWidth = isLandscape ? LANDSCAPE_WIDTH : CANVAS_WIDTH;
     const sourceHeight = isLandscape ? LANDSCAPE_HEIGHT : CANVAS_HEIGHT;
     const centers = isLandscape ? LANDSCAPE_STALL_CENTERS : STALL_CENTERS;
@@ -281,10 +274,6 @@ export default function CowWorld({
         [slots]
     );
 
-    function handleLayout(event: LayoutChangeEvent) {
-        const { width, height } = event.nativeEvent.layout;
-        setViewport(current => current.width === width && current.height === height ? current : { width, height });
-    }
 
     const scale = viewport.width > 0 && viewport.height > 0
         ? Math.max(viewport.width / sourceWidth, viewport.height / sourceHeight)
@@ -295,9 +284,9 @@ export default function CowWorld({
     const offsetY = (viewport.height - renderedHeight) / 2;
 
     return (
-        <View style={styles.world} onLayout={handleLayout}>
+        <View style={styles.world}>
             <CachedImage source={isLandscape ? LANDSCAPE_BACKGROUND : BACKGROUND} contentFit="cover" transition={0} cachePolicy="memory-disk" style={[StyleSheet.absoluteFill,{width:'100%',height:'100%'}]} />
-            {viewport.width > 0 && (
+            {(
                 <>
                     {cowSlots.slice(0, centers.length).map((slot, index) => (
                         <CowSlot
