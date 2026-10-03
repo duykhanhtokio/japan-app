@@ -63,3 +63,8 @@ Read eight complete current exchanges. Replaced Shimotsuma embroidery packaging 
 ## Extended final causal follow-up — 2026-10-03
 
 Read 95 current full exchanges with all five goals across 36 selected comparison records. Three whole-plot replacements: Moriya gift packing -> classroom postcard purchasing; Kamisu wet-hat reporting -> locker operator contact after forgotten code; Kasumigaura broken-handle preparation -> fictional station piano permission consultation. All preserve IDs and chains; no real service/facility certification. Selected differences documented with current hashes in PRF-008_FINAL_CAUSAL_FOLLOWUP_2026-10-03.json. A new explicit blocker remains: Hitachiota forgotten-copy plot versus Kamaishi postal forgotten-copy plot. Several historical labels require precise current mapping. Whole-prefecture CONTENT PASS remains false. No translations or next prefecture.
+
+
+### Final causal review batch 01 — 2026-10-03
+
+Read the full 11 turns and five goals of 61 current scripts: Mito 21, Tsukuba/Hitachi/Tsuchiura/Bando/Koga eight each. Hitachi bill wording now limits “only tea” to drinks. Hitachiota municipal forgotten-copy plot replaced with native-language explanatory-note clarification; its previous Kamaishi overlap is resolved by a new five-task trajectory. Runtime hashes are recorded in PRF-008_FINAL_BATCH_01_2026-10-03.json. CONTENT PASS remains false; remaining 208 scripts and cross-prefecture semantic reconciliation are pending.
