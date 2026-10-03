@@ -108,3 +108,8 @@ Full eleven-turn/five-goal reads and selected cross-corpus comparisons for 37 ta
 ### Systematic semantic continuation — Takahagi, Kitaibaraki, Kasama
 
 24 additional full scripts and selected cross-corpus evidence in PRF-008_SEMANTIC_TAKAHAGI_KITAIBARAKI_KASAMA_2026-10-03.json. Target coverage 133/269; 136 remaining. No runtime edits. ATM session closure (Kitaibaraki06/Semboku04) and letter enclosure order (Kasama05/Mito06) remain explicitly unresolved; different setting alone is not semantic approval. Single-glove identity and reachable-contact-time motifs also await final synthesis. CONTENT PASS false; no PRF-009 or translations. Persist and verify before advancing.
+
+
+### Systematic semantic continuation — Toride, Ushiku, Hitachinaka
+
+24 additional full scripts and cross-corpus comparison evidence in PRF-008_SEMANTIC_TORIDE_USHIKU_HITACHINAKA_2026-10-03.json. Coverage 157/269;112 remaining. No runtime edits. Toride03/Takikawa03 closed referral-envelope pair remains unresolved for synthesis. Preserve earlier ATM/letter-order pairs. CONTENT PASS false; no PRF-009 or translations. Persist and verify before advancing.
