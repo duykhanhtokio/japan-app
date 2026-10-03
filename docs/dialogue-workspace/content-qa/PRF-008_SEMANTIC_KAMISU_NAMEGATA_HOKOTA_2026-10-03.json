@@ -3,9 +3,334 @@
   "contentPass": false,
   "reviewer": "AI",
   "nativeSpeakerReviewed": false,
-  "currentRuntimeCount": 269,
-  "currentSpeakingGoalCount": 1345,
-  "currentRuntimeSha256": {
+  "baseCommit": "b06c445bc666943a1fa518b5d07ef164ea305da0",
+  "scope": "24 full eleven-turn/five-goal targets and selected full cross-corpus comparisons plus earlier full-read evidence. No runtime edits; four shared-sequence pairs open.",
+  "targetCount": 24,
+  "readScenarioCount": 68,
+  "readScenarioSha256": {
+    "SC-LOC-AKT-ODATE-08-001": "fa9d38004b56142c25426c249edcf2ce374d1101a86553307f0ff20f9148d14d",
+    "SC-LOC-JP-01209-04-001": "2087cf98f35d49dd6dcbd42235ea2aca1bb4d1718a09aa69d249e0fbfc59b33e",
+    "SC-LOC-JP-01213-04-001": "5078612985b9e82e88447ec9d18a9fb79a52d3bfd5c80909f9f5f7d28d1910b3",
+    "SC-LOC-JP-01233-03-001": "1a2b255bde0f5f1fcfba13f497d00bdd14f9151bceae81cc199e4baa23d2ac36",
+    "SC-LOC-JP-01236-08-001": "5f84c3ef924cdf6e07cfb733b00eaa8f43dc2c43189a1d69eaee4a912f38a2ee",
+    "SC-LOC-JP-03216-07-001": "2e247c1c94de5919c84e6ab61428954ba51eab8ffb913ed9f8baad053910aa1c",
+    "SC-LOC-JP-04208-06-001": "b58f2cc2410a024582c3033ed4c7629b9c390279d2ada2bdb335c6804dde94a0",
+    "SC-LOC-JP-04209-05-001": "e53463696074eaa68c7dbcbb3dd1b553e81bdb8145b1e98ca1b99058785b6578",
+    "SC-LOC-JP-05209-01-001": "783db65609a8ca0b9427a777402e3d8ec89e594715f3dac4eb6577bae282f19b",
+    "SC-LOC-JP-06208-01-001": "21bfe06399a9f1ec38a420d785c5a87b4f776cac7a4472b373740ed37f89209c",
+    "SC-LOC-JP-08205-03-001": "f17c41ed5b7a8580e02e20ca3a14570542fa84be10e3b80090af9ab80fd6015d",
+    "SC-LOC-JP-08205-08-001": "cb7e82c4ff1c52be8f97fb1749ad613e288bf5d37a48f49f9acfa70f347d7719",
+    "SC-LOC-JP-08208-01-001": "d553d28f68c91cff71cf7b96ad5b963e6abed3d712e86ed339e3ffd057f6a0e5",
+    "SC-LOC-JP-08208-06-001": "063df0571b8e39ece5a9d07bd6271a164992276422960bbf85bc2e9b5f856ea9",
+    "SC-LOC-JP-08208-07-001": "a754aa2f54363924728ca436cf20b2d24a05eee6334c1c62e640f806a78e27a3",
+    "SC-LOC-JP-08210-01-001": "fac119c6d6cd02e5d1c847a4a2eb3f72a2716040e63dec1e8bc36d158ed07c94",
+    "SC-LOC-JP-08211-06-001": "989ac2b4af078b3d1ae548e77de4e4c77a3a25f4f5e1287e8772bf1de9634840",
+    "SC-LOC-JP-08211-07-001": "3177cf9b4662c48e1625b9c01415b8a427d0eea87297734f7362e32f92c70091",
+    "SC-LOC-JP-08212-05-001": "b16f00941f2d3098e0383211dfff4c7dffedf6be9bfc1751d227af8f505185f5",
+    "SC-LOC-JP-08212-08-001": "5874564f8ff5b0e87e6669aa7c2c438ec6a1bbf5d4d5ba335573b826c47c100b",
+    "SC-LOC-JP-08215-04-001": "d4ae10edbb87faf8fa3c4c9d457935d9070d9f008feaa08792fd00b78c45265a",
+    "SC-LOC-JP-08215-08-001": "a4f378dae435e5c9a4c9da06e3c6f182e01665de8f7ffb6c9d2ec4b365f1f1b4",
+    "SC-LOC-JP-08216-01-001": "fac78de67eec5db924933fd8d4ccd66390e7ab3cf6fdb3c3f5dd0aec9cc4b85e",
+    "SC-LOC-JP-08217-06-001": "5b433760a412aa1ab9e2cb05bedd47c42aa0c6d975b117c40e26a6519efac915",
+    "SC-LOC-JP-08219-05-001": "5a8e12e322c3174cfc465424d70ba645ff8cb1b901e3523d7b36c0f3caf1a24b",
+    "SC-LOC-JP-08219-06-001": "fd6ea0e3b40b6d07966864598ceda83189df846b3c42f0cb59b7560b407b3278",
+    "SC-LOC-JP-08222-02-001": "82f2d40f54974e25cbcfd7d249ca99ef9436ee588a991d668a195e181ccacb47",
+    "SC-LOC-JP-08222-07-001": "961fa07e2f7f2f4e56654335ed516c75a92e9a5befbff330db8f56e3360fc22c",
+    "SC-LOC-JP-08223-01-001": "76d6ce2a00df70617da694881246ede0e432a2f83a4b9e20c8130d9ae713e8ea",
+    "SC-LOC-JP-08223-05-001": "e00987d04747baa8055b4879e27d9a64a7e5efd1d81004e99edb56e38ef65646",
+    "SC-LOC-JP-08223-08-001": "ed1545eef44b0931dffca87988b597333c8337f2f21314068087cf177dc5aa7b",
+    "SC-LOC-JP-08224-08-001": "c3b973b4f9abab8447e7d998d9db9cdab81744e868846efd3a48ffe0e335fba9",
+    "SC-LOC-JP-08225-03-001": "c66dbf59500b4caf33646bc854e2e19e71d74bd770c7dc8131ff4bdc7b1e433d",
+    "SC-LOC-JP-08225-04-001": "abe78e5924d0ebfab03371edc7584ef05be41c90c4f4ddb3dd930899d038f7e8",
+    "SC-LOC-JP-08226-02-001": "ab5c8e164cca9b62e7344de24e2890da58c71d057eb783153fca898405dc8aa2",
+    "SC-LOC-JP-08226-07-001": "f04c942170cdaa2862207d6eecfdd493af02948d13b63fc7eaa52c476e501f16",
+    "SC-LOC-JP-08227-02-001": "ea94a6d1f69b8fcfd08ad2aa471323f812d95f3c404e4220c9df4c4d34424265",
+    "SC-LOC-JP-08227-03-001": "36c36c290c88db3f6a15cde4a9096821624ba81ec4f77f87b4de2dd3f9b15284",
+    "SC-LOC-JP-08229-06-001": "258351c06c687e77f891fdf4ec887c22a26c957fae0983cc44ea5ab4d2c9ae7d",
+    "SC-LOC-JP-08231-03-001": "f28ca9f4949c0cd1702ad8421366c12fc9e710200532c8e70a3ecd98858355cf",
+    "SC-LOC-JP-08231-04-001": "141e2f800644bc9f3a91f06d4b3846ab3b6d69832af984f01cc7da86815a1dc5",
+    "SC-LOC-JP-08231-05-001": "72b30c0ff9f7c91865dcccb0736f4e84d8434d608049088cd9dee4796dd87a3e",
+    "SC-LOC-JP-08231-06-001": "cec68700988504415d371be38b58c8e8ae8e92641175bbcc1b2e774328e31b48",
+    "SC-LOC-JP-08231-07-001": "f4af4a847ce9de991d270ccaf13a21ccf0ad82396be86258f8bdff0d8a459bcb",
+    "SC-LOC-JP-08232-01-001": "5dc90fd7c4494d05bc89a03997dab9bd95b5dabfba030c7ce1a89f5c4c9f8842",
+    "SC-LOC-JP-08232-02-001": "107565306e0eeca8671b9f6eb915151f61a3e4ab381f10bfcb65bacd863d70b9",
+    "SC-LOC-JP-08232-03-001": "7abccb156ed80e125a20af959f18b461c05ac03fc48ff34c20d4a414fda7649b",
+    "SC-LOC-JP-08232-04-001": "f988a53dba4cb5864c360aa2fb1bafd5fb6131c1f27f02028d09cd94d64e53a5",
+    "SC-LOC-JP-08232-05-001": "c2806433c20b7143b2033a8b077a974e59928c561328f75c61f866b7408c144b",
+    "SC-LOC-JP-08232-06-001": "ad98e9d19413e59d690afe9140770f6d2da4b9017d5bd474f3642457ded8c478",
+    "SC-LOC-JP-08232-07-001": "fe9a65d66e9a3f21049b4225e4365ccd528f46bed57f6fb57fb6e372ef47a7a7",
+    "SC-LOC-JP-08232-08-001": "e193c1e85fc3a628b4fef361077698486aba8d1405b9d88b759222d0382c1770",
+    "SC-LOC-JP-08233-01-001": "051508360b931b7dc951f3c47c9539235e2fdc65405d4beed59ee7234225f17e",
+    "SC-LOC-JP-08233-02-001": "c132841f345ee8a3f5e9a9581bd0ee80b10138dca2f1cb48b100f0e041466a0b",
+    "SC-LOC-JP-08233-03-001": "4a4d78d5d1fd96127e549e8005b4e588dce34b2966dd9f1d1215ffeac944092e",
+    "SC-LOC-JP-08233-04-001": "25a3a870ebe0d2c9200790b62995c89bc4ab8643dce3a22b66e81bff1ffcb334",
+    "SC-LOC-JP-08233-05-001": "599b6216d39ba363b277428cb8b3e286409a04b89e5111bb7345cab30a76a6b1",
+    "SC-LOC-JP-08233-06-001": "35ee0652e7c00dc817a2db947497525825cbe5b7c3ee74d92edb8ae7267565d6",
+    "SC-LOC-JP-08233-07-001": "2d1fc5c6010467cadfc2db096f50578fd8b46e77cf2c6539f96cf5cd8a08c727",
+    "SC-LOC-JP-08233-08-001": "ea2ddf7eb44008ca95cff2291d918d9936c14a9678fdf7bba5a35023770c06d6",
+    "SC-LOC-JP-08234-01-001": "d228bef672b25c31871e16b1e5e39e8a6f6759eeaaa4594c492f24845a0781e3",
+    "SC-LOC-JP-08234-02-001": "e9fff49b0620ee3761434dc850c85d8a155043936005c7405979fcfd67c4e063",
+    "SC-LOC-JP-08234-03-001": "55ebea64c7761aa6882487338a83ad62b7cd615f5d6648643b7b6eb8b2ad0d21",
+    "SC-LOC-JP-08234-04-001": "ce750fe7f65cd5a97ec3b141f3eba2883c93281a13eca3eafbe1664470528583",
+    "SC-LOC-JP-08234-05-001": "408a6d6c4c4bbb2ec63544db3bfd149cb031d7e6da963a27837121e8e930d853",
+    "SC-LOC-JP-08234-06-001": "937556617b62922fb5c4bfaaba89cbf42ea430b5f5de1f58be3f0cb99df96338",
+    "SC-LOC-JP-08234-07-001": "731976b01a4212e99fc02ef305426388d98d07c67010333aa5f819f8dcaf4753",
+    "SC-LOC-JP-08234-08-001": "771150ae56981d22d3da337372eff8e29f665392c8b217a10901b0838e3d0f4c"
+  },
+  "comparisons": [
+    {
+      "targetScenarioId": "SC-LOC-JP-08232-01-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-08210-01-001",
+        "SC-LOC-JP-08208-01-001"
+      ],
+      "decision": "pending_whole_corpus_synthesis",
+      "judgment": "OPEN SYNTHESIS: departed train missed while packing, next direction/time/platform and truthful personal-delay message repeat Shimotsuma/Ryugasaki recovery sequence. Kamisu never confirmed departing train was desired, Shimotsuma work-call interruption, Ryugasaki wet shoe. Cause substitution alone may be insufficient; final decision pending."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08232-02-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-08217-06-001",
+        "SC-LOC-JP-08226-02-001"
+      ],
+      "decision": "distinct_within_selected_comparison",
+      "judgment": "Cannot write explanation fast enough: pause per item and attach window-issued vs home-prepared source before next name, finally compare list. Calculation distracted listening; unread deadline kanji requires vocabulary and date-role clarification."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08232-03-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-08205-03-001",
+        "SC-LOC-JP-08231-03-001"
+      ],
+      "decision": "distinct_within_selected_comparison",
+      "judgment": "Previous similar sensation not known same condition, blank yes/no intentional rather than ignored/no, previous-winter memory not recorded current experience, ask clinical recording guidance. Unmeasured daily data and mixed family experience do not require similarity-category binary judgment."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08232-04-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-06208-01-001",
+        "SC-LOC-JP-08225-04-001"
+      ],
+      "decision": "distinct_within_selected_comparison",
+      "judgment": "Forgot own locker code, not stolen property; operator contact not in location photo, receipt inside, exterior7vsunlockcode and self-described contents not sufficient authorization, no force/other locker attempts. Locker fit before renting and heavy roadside bag custody are different blockers."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08232-05-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-08231-05-001",
+        "SC-LOC-JP-08212-05-001"
+      ],
+      "decision": "distinct_within_selected_comparison",
+      "judgment": "Back support thought absent found folded behind photo frame; don’t replace or pull out, rewrap actual frame/support/photo. Deliberate removed glass/backboard-only sending and omitted photo from sealed letter differ in component status and correction."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08232-06-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-04208-06-001",
+        "SC-LOC-JP-08208-06-001"
+      ],
+      "decision": "pending_whole_corpus_synthesis",
+      "judgment": "OPEN SYNTHESIS: balance mistaken individual transaction. Kamisu already copied balance into spending sum and must remove false expense for last-month ledger; Kakuda asks before reporting salary to company and matches specific income with pay slip. Shared field-meaning correction may need rewrite despite different output document."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08232-07-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-08211-07-001",
+        "SC-LOC-JP-08231-07-001"
+      ],
+      "decision": "distinct_within_selected_comparison",
+      "judgment": "Separate beans for salad/soup: mixed bag requires sorting, choose two single-kind small bags, one per dish and not all contents per recipe. Two tofu textures need before-crushing division; disliked assortment replaces mix with one kind for household shares."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08232-08-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-01236-08-001",
+        "SC-LOC-JP-08215-08-001"
+      ],
+      "decision": "distinct_within_selected_comparison",
+      "judgment": "Both images knowingly same pond from entrance/bridge, numbered map-image correspondence prevents false two-pond inference. Hokuto similar tree pictures have unknown earlier positions and walked segments; seasonal flower images differ in time/spatial scope. New evidence established location vs unresolved reconstruction."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08233-01-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-08223-01-001",
+        "SC-LOC-JP-08216-01-001"
+      ],
+      "decision": "distinct_within_selected_comparison",
+      "judgment": "Friend cane unused while seated may be needed walking; ask and return now, carry small bags and match pace without pulling arm. Borrowed bag vs ticket separates travel-document independence; gift distribution changes presentation timing, not mobility aid."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08233-02-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-08219-06-001",
+        "SC-LOC-JP-08212-08-001"
+      ],
+      "decision": "distinct_within_selected_comparison",
+      "judgment": "Relationship field is from applicant viewpoint, not nickname/name: elder brother vs reverse younger-brother and wife entries then names paired. Name/furigana script roles and left-right observer viewpoint involve different directional relation semantics."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08233-03-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-01233-03-001",
+        "SC-LOC-JP-08225-03-001"
+      ],
+      "decision": "distinct_within_selected_comparison",
+      "judgment": "Sister helped travel only, self speaks Japanese; request private clinician portion without public detail, explain thanks/scope to sister and await staff arrangement rather than eject companion. Patient-answer independence and two booked people initially mistaken companion have different consent/scheduling outcomes."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08233-04-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-08231-04-001",
+        "SC-LOC-JP-08215-04-001"
+      ],
+      "decision": "distinct_within_selected_comparison",
+      "judgment": "Friend sighting similar blue bag unverified identity/time, actual follow-up says yesterday near entrance no nametag confirmation; personal loss history separate and don’t treat latest location as known. Friend-as-owner correction and home-photo bag color correction have different hearsay/evidence updating."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08233-05-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-04209-05-001",
+        "SC-LOC-AKT-ODATE-08-001"
+      ],
+      "decision": "distinct_within_selected_comparison",
+      "judgment": "Two brothers confirmed same address and agree elder receives/distributes one box; separate inner gift names not separate carrier delivery. Tagajo one intended brother requires full-name label; Odate different domestic addresses cannot combine outer envelope. Household delivery and internal distribution explicitly agreed."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08233-06-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-08231-06-001",
+        "SC-LOC-JP-08229-06-001"
+      ],
+      "decision": "distinct_within_selected_comparison",
+      "judgment": "First listed service not presumed best: wants home checking, owns phone/no PC, compare actual compatibility/requirements before choice and carry guide home. Blank-form receipt not commencement; mixed furniture/remittance memo requires purpose filtering rather than device-fit decision."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08233-07-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-08208-07-001",
+        "SC-LOC-JP-08226-07-001"
+      ],
+      "decision": "pending_whole_corpus_synthesis",
+      "judgment": "OPEN SYNTHESIS: recipe-specific small-container choice resembles Ryugasaki cheese. Here sweetened yogurt violates unsweetened sauce ingredient, return and choose small one without future daily use, dose not full tub. Cheese one-bag100gtype vs larger cheaper amount; flavor discount salt/soy differs. Final sequence-level decision pending."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08233-08-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-05209-01-001",
+        "SC-LOC-JP-08223-08-001"
+      ],
+      "decision": "distinct_within_selected_comparison",
+      "judgment": "Opposite-facing friends orient common map/current position/north, shared pond target and landmark/path roles, recheck fork instead of assuming leading friend correct. Kazuno lone inverted paper for elevator/large luggage; peer hand-game same-facing avoids mirrored moves but teaches transition rather than route."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08234-01-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-08223-05-001",
+        "SC-LOC-JP-08233-08-001"
+      ],
+      "decision": "distinct_within_selected_comparison",
+      "judgment": "Color discrimination difficult but station text legible: fictionalAtoCentralBtoPark, circle-A/square-B and text fallback at platform. Colored map errands add text to purpose labels; shared reversed map concerns orientation not access via non-color encoding."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08234-02-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-08224-08-001",
+        "SC-LOC-JP-08222-02-001"
+      ],
+      "decision": "distinct_within_selected_comparison",
+      "judgment": "Unreserved community venue draft looks confirmed; mark desired venue/candidate dates, reservation date/count query first, correct2consulted readers before actual participation notice. Poem completed/draft versions differ in feedback; explanation-series attendance concern admissible dates not organizer booking status."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08234-03-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-08205-03-001",
+        "SC-LOC-JP-08227-03-001"
+      ],
+      "decision": "distinct_within_selected_comparison",
+      "judgment": "Sleepiness compared7work/holidaydays incl absence, bedtime1forgotten not fabricated, differences breakfast/departure not cause, today sitting train updates work-only wording. Home measurements genuinely unmeasured vs forgotten time and lastnight/morning/current improvement concern different data status and inference. Shared diary integrity motif retained."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08234-04-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-01213-04-001",
+        "SC-LOC-JP-01209-04-001"
+      ],
+      "decision": "distinct_within_selected_comparison",
+      "judgment": "Key photo shows after moving from walkway middle to planting edge, actual original white-line location separate, red ring originally attached, eventual pickup/possession order explained. Card acquired new envelope in staff custody; bag pickup time estimated after return, no relocated-position photo."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08234-05-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-08227-02-001",
+        "SC-LOC-JP-08219-05-001"
+      ],
+      "decision": "distinct_within_selected_comparison",
+      "judgment": "Unopened former resident letter same correct room address but named person no longer lives there, unknown forwarding/contact, only own received-date sticky note and no invented envelope address. Wife notice belongs current family but misread own task; outgoing surname update gets actual recipient reply."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08234-06-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-08231-06-001",
+        "SC-LOC-JP-08211-06-001"
+      ],
+      "decision": "distinct_within_selected_comparison",
+      "judgment": "Card brochure did not initiate foreign-cash exchange; Vietnam next-month10departure, initial cash transit budget separate card purchases, currency handling/leadtime/fees before amount/application. Generic blank procedure form receipt and year-specific commemorative coin exchange have different product/purpose prerequisites."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08234-07-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-03216-07-001",
+        "SC-LOC-JP-08222-07-001"
+      ],
+      "decision": "pending_whole_corpus_synthesis",
+      "judgment": "OPEN SYNTHESIS: freezer-limited downgrade resembles Takizawa. Hokota actual one small empty drawer photo,2soupuses plus remaining onion stock, return2largebags choose1small; Takizawa total-weight/per-piece mistake selected4bags, count6use/4left and1bagcapacity. Storage constraint plus basket quantity-change motif requires final decision."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08234-08-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-08215-08-001",
+        "SC-LOC-JP-08205-08-001"
+      ],
+      "decision": "distinct_within_selected_comparison",
+      "judgment": "Drawing full spreading tree shrinks desired bark, choose main trunk/lower-branch close detail and separate whole outline with framed area/title; keep both references. Flowerbed photo not all park and fixed-shadow record both constrain representation but different scale/part-whole vs temporal evidence."
+    }
+  ],
+  "repairs": [],
+  "pendingSemanticPairs": [
+    {
+      "targetScenarioId": "SC-LOC-JP-08232-01-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-08210-01-001",
+        "SC-LOC-JP-08208-01-001"
+      ],
+      "reason": "OPEN SYNTHESIS: departed train missed while packing, next direction/time/platform and truthful personal-delay message repeat Shimotsuma/Ryugasaki recovery sequence. Kamisu never confirmed departing train was desired, Shimotsuma work-call interruption, Ryugasaki wet shoe. Cause substitution alone may be insufficient; final decision pending."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08232-06-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-04208-06-001",
+        "SC-LOC-JP-08208-06-001"
+      ],
+      "reason": "OPEN SYNTHESIS: balance mistaken individual transaction. Kamisu already copied balance into spending sum and must remove false expense for last-month ledger; Kakuda asks before reporting salary to company and matches specific income with pay slip. Shared field-meaning correction may need rewrite despite different output document."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08233-07-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-08208-07-001",
+        "SC-LOC-JP-08226-07-001"
+      ],
+      "reason": "OPEN SYNTHESIS: recipe-specific small-container choice resembles Ryugasaki cheese. Here sweetened yogurt violates unsweetened sauce ingredient, return and choose small one without future daily use, dose not full tub. Cheese one-bag100gtype vs larger cheaper amount; flavor discount salt/soy differs. Final sequence-level decision pending."
+    },
+    {
+      "targetScenarioId": "SC-LOC-JP-08234-07-001",
+      "comparedScenarioIds": [
+        "SC-LOC-JP-03216-07-001",
+        "SC-LOC-JP-08222-07-001"
+      ],
+      "reason": "OPEN SYNTHESIS: freezer-limited downgrade resembles Takizawa. Hokota actual one small empty drawer photo,2soupuses plus remaining onion stock, return2largebags choose1small; Takizawa total-weight/per-piece mistake selected4bags, count6use/4left and1bagcapacity. Storage constraint plus basket quantity-change motif requires final decision."
+    }
+  ],
+  "currentPrefectureSha256": {
     "SC-LOC-008-01-001": "91f9745e744070b973d6c0798503fcbe41e88aeb7cbe6ae7c7e6139c79f8a733",
     "SC-LOC-008-02-001": "7a6628723970e404943e0d844d6f3e9ee682b21e83109642784e732e0ff14c66",
     "SC-LOC-008-03-001": "c35f8ec9beed9f5e123bed58010c7ef9bde39d221f2bb6fcf6287ba56f6d5f89",
@@ -276,285 +601,7 @@
     "SC-LOC-JP-08236-07-001": "e2b9b7d62257510d896dc3fab02c9cabb6f13a5a54c38e71621047e32bee1b31",
     "SC-LOC-JP-08236-08-001": "5f69c78c4615a04310d9b5ac8ef750b5baee495bd54a0b1ce2f4a6ecb1110ef1"
   },
-  "pendingGroups": [
-    {
-      "cluster": 1,
-      "sourceReview": "docs/dialogue-workspace/content-qa/PRF-008_CLUSTER_01_REVIEW.json",
-      "pendingChecks": [
-        "Complete remaining 232 old Ibaraki drafts before whole-prefecture decision.",
-        "Final cross-prefecture conceptual review of current replacements; candidate retrieval alone does not prove uniqueness.",
-        "Reassess Mito anxiety memo versus Tsukuba post-visit recall memo for five-step causal differentiation.",
-        "Reassess international reply-address sample against earlier return-envelope address corrections.",
-        "Canonical baseline contains corrupted real-place labels; retain slot identities and fictional framing, and review location metadata separately without inventing corrections."
-      ],
-      "preliminaryOnly": true
-    },
-    {
-      "cluster": 2,
-      "sourceReview": "docs/dialogue-workspace/content-qa/PRF-008_CLUSTER_02_REVIEW.json",
-      "pendingChecks": [
-        "Final comparison of current replacement drafts with corpus and remaining Ibaraki drafts.",
-        "Location metadata remains fictional framing over preserved canonical slot labels."
-      ],
-      "preliminaryOnly": true
-    },
-    {
-      "cluster": 3,
-      "sourceReview": "docs/dialogue-workspace/content-qa/PRF-008_CLUSTER_03_REVIEW.json",
-      "pendingChecks": [
-        "Review all current Ibaraki drafts as a corpus before CONTENT PASS.",
-        "Ishioka old/new passbook record boundaries share topic with Kaminoyama booklet/account distinction but have different five-task progression; confirm in final conceptual review.",
-        "Ishioka outdoor drawing keeps first shadow/construction; Akita drawing moves seat for shade. Confirm distinction during final corpus review.",
-        "Yuki banking bag preparation versus Bando photography preparation should receive final task-level comparison."
-      ],
-      "preliminaryOnly": true
-    },
-    {
-      "cluster": 4,
-      "sourceReview": "docs/dialogue-workspace/content-qa/PRF-008_CLUSTER_04_REVIEW.json",
-      "pendingChecks": [
-        "Complete prefecture causal comparison before CONTENT PASS.",
-        "Compare Shimotsuma embroidery packaging against Minamisoma pop-up card packaging.",
-        "Compare Joso cash division against denomination exchange scripts.",
-        "Compare Hitachiota pre-acceptance missing photo against Nagai post-acceptance supplementary paper; timing differs but final conceptual assessment pending.",
-        "Compare Shimotsuma small-print assistance against Nikaho consent reading; reading aid and decision separation share topic."
-      ],
-      "preliminaryOnly": true
-    },
-    {
-      "cluster": 5,
-      "sourceReview": "docs/dialogue-workspace/content-qa/PRF-008_CLUSTER_05_REVIEW.json",
-      "pendingChecks": [
-        "Whole-prefecture causal comparison before CONTENT PASS.",
-        "Takahagi station reversed outbound/return itinerary shares correction theme with Koriyama search but has different sequencing; final conceptual review pending.",
-        "Kitaibaraki identical-weight packaging shares packaging-unit topic with Higashine; distribution count differs, final comparison pending.",
-        "Kasama preparation memo versus Otaru preparation error: source uncertainty differs from known deviation, final task comparison pending.",
-        "Kasama measuring-spoon seasoning versus Ryugasaki recipe bag: measure and package distinctions share a general concept; final conceptual review pending."
-      ],
-      "preliminaryOnly": true
-    },
-    {
-      "cluster": 6,
-      "sourceReview": "docs/dialogue-workspace/content-qa/PRF-008_CLUSTER_06_REVIEW.json",
-      "pendingChecks": [
-        "Whole-prefecture comparison before CONTENT PASS.",
-        "Toride ceramic packing requires comparison with earlier packaging plots, including Morioka poster and Shimotsuma embroidery.",
-        "Ushiku Roman-letter/kana name form versus Muroran name-field distinction requires final conceptual comparison.",
-        "Hitachinaka price per fruit/bag shares unit distinction with Kitaibaraki packing; compare task trajectories.",
-        "Hitachinaka coat preparation versus Bando photography coat prep requires final comparison."
-      ],
-      "preliminaryOnly": true
-    },
-    {
-      "cluster": 7,
-      "sourceReview": "docs/dialogue-workspace/content-qa/PRF-008_CLUSTER_07_REVIEW.json",
-      "pendingChecks": [
-        "Whole-prefecture comparison before CONTENT PASS.",
-        "Kashima yearly versus monthly expenditure should be compared with recurring/monthly/bonus-payment plots in final task-level review.",
-        "Itako fee conditions and previous banking fee explanations require final conceptual comparison.",
-        "Moriya newspaper regrouping versus Toride book retrieval: paper handling theme shared, final trajectory comparison pending.",
-        "Moriya gift bag outer packaging versus Toride ceramic box and Morioka poster packaging requires final task-level comparison."
-      ],
-      "preliminaryOnly": true
-    },
-    {
-      "cluster": 8,
-      "sourceReview": "docs/dialogue-workspace/content-qa/PRF-008_CLUSTER_08_REVIEW.json",
-      "pendingChecks": [
-        "Complete Ibaraki whole-corpus conceptual and closure review before CONTENT PASS.",
-        "Chikusei self/companion different boarding stops versus Hitachiota different station exits and Naka boarding-memo scripts: compare five-task trajectories.",
-        "Chikusei dark/old wallet photo versus Kitaibaraki color correction and Moriya missing family photo require final conceptual comparison.",
-        "Naka decimal grouping versus earlier zero-count financial amount scripts requires final task-level comparison.",
-        "Naka pouch strap preparation versus Joso rolling-bag lifting requires final conceptual comparison."
-      ],
-      "preliminaryOnly": true
-    },
-    {
-      "cluster": 9,
-      "sourceReview": "docs/dialogue-workspace/content-qa/PRF-008_CLUSTER_09_REVIEW.json",
-      "pendingChecks": [
-        "Complete prefecture causal/task/closure comparison before CONTENT PASS.",
-        "Kasumigaura damaged handle versus Naka strap shortening and Joso bag lifting requires final task-level distinction.",
-        "Sakuragawa borrowed/distributed city materials versus other take-home leaflet stories requires final conceptual review.",
-        "Sakuragawa friend-owned lost bag versus person-role questions in Sukagawa requires final comparison.",
-        "Inashiki gift ribbon/internal packing versus Moriya gift bag and Yubari decoration/postage requires final comparison.",
-        "Sakuragawa preferred sweets versus Kitaibaraki counts/individual wrapping requires final conceptual review."
-      ],
-      "preliminaryOnly": true
-    },
-    {
-      "cluster": 10,
-      "sourceReview": "docs/dialogue-workspace/content-qa/PRF-008_CLUSTER_10_REVIEW.json",
-      "pendingChecks": [
-        "Final current-hash whole-prefecture causal and closure review.",
-        "Compare current Hokota color-independent route guidance with all accessibility/navigation scripts.",
-        "Compare current Namegata private-consultation request with accompaniment and interpretation scripts; current repair is not final whole-corpus approval.",
-        "Compare Namegata lost-bag hearsay with Kasama ambiguous-family-message trajectory.",
-        "Compare Kamisu wet found hat with Takahagi found watch: observation chronology differs but lost-property reporting scaffolding remains a review risk.",
-        "Compare Hokota freezer-capacity shopping with Moriya inventory-list selection; storage constraint differs but purchase-list actions overlap.",
-        "Location metadata retains canonical identities and fictional framing; real facility or railway existence is not certified."
-      ],
-      "preliminaryOnly": true
-    },
-    {
-      "cluster": 11,
-      "sourceReview": "docs/dialogue-workspace/content-qa/PRF-008_CLUSTER_11_REVIEW.json",
-      "pendingChecks": [
-        "Current-hash whole-prefecture causal, location-role and closure review remains required before CONTENT PASS.",
-        "Compare Tsukubamirai work-glove intake with Kasumigaura work-history intake at task level.",
-        "Compare Omitama own/family printed test sheets with Sakuragawa mixed family-experience memo at task level; document ownership and optional diagnostic questions differ, but source separation may retain scaffolding.",
-        "Compare Omitama transfer-name versus private thank-you channel with earlier postal recipient-message plots.",
-        "Final compare current two full replacements with the complete corpus, not only rejected initial nearest candidates."
-      ],
-      "preliminaryOnly": true
-    }
-  ],
-  "followups": [
-    "PRF-008_CLUSTER_07_TARGETED_CAUSAL_FOLLOWUP_2026-10-03.json",
-    "PRF-008_MORIYA_STATION_CAUSAL_REPAIR_2026-10-03.json",
-    "PRF-008_POSTAL_FINAL_FOLLOWUP_2026-10-03.json",
-    "PRF-008_FINAL_CAUSAL_FOLLOWUP_2026-10-03.json",
-    "PRF-008_SEMANTIC_RECONCILIATION_2026-10-03.json"
-  ],
-  "resolvedOldHashFindings": [
-    "Moriya newspaper-before-boarding draft superseded by current staff-gratitude exchange; other cluster-07 packing review remains open.",
-    "Shimotsuma embroidery packaging superseded by non-mailing commemorative impression consultation; selected comparison only, final current replacement review pending.",
-    "Moriya gift-bag packaging superseded by classroom postcard purchasing.",
-    "Kamisu wet-found-hat reporting superseded by forgotten locker-code operator consultation.",
-    "Kasumigaura damaged-handle carrying superseded by fictional station-piano permission consultation.",
-    "Hitachiota forgotten-copy superseded by native-language cleaning explanation; current exact comparison with Kamaishi verified in semantic reconciliation.",
-    "Joso child-cash envelope allocation superseded by birth-year coin consultation after targeted causal overlap finding."
-  ],
-  "rule": "No CONTENT PASS from screening alone; read current scripts and all selected causal candidates, resolve open findings, bind final editorial decision to all 269 current runtime hashes, and remotely verify before next prefecture or translation.",
-  "latestSelectedFollowup": {
-    "report": "PRF-008_FINAL_CAUSAL_FOLLOWUP_2026-10-03.json",
-    "readScenarioCount": 95,
-    "comparisonCount": 36,
-    "contentPass": false,
-    "openBlockers": [
-      "Resolve Hitachiota municipal forgotten-copy plot against Kamaishi postal forgotten-copy plot.",
-      "Precisely map historical same-topic comparison labels; some pending prose no longer describes the current runtime.",
-      "Complete current-hash whole-prefecture causal/location-role/closure review, including broader accessibility, bank/clinic/return-envelope and remaining comparison coverage."
-    ]
-  },
-  "latestCausalBatch": "docs/dialogue-workspace/content-qa/PRF-008_FINAL_BATCH_02_2026-10-03.json",
-  "latestCausalReview": "docs/dialogue-workspace/content-qa/PRF-008_COMPLETE_CAUSAL_REVIEW_2026-10-03.json",
-  "causalLocationClosureReview": {
-    "reviewedCount": 269,
-    "openBlockerCount": 0,
-    "report": "docs/dialogue-workspace/content-qa/PRF-008_COMPLETE_CAUSAL_REVIEW_2026-10-03.json",
-    "contentPass": false,
-    "hashReconciliationReport": "PRF-008_SEMANTIC_RECONCILIATION_2026-10-03.json",
-    "currentHashCount": 269
-  },
-  "latestSemanticReconciliation": "PRF-008_SEMANTIC_KAMISU_NAMEGATA_HOKOTA_2026-10-03.json",
-  "systematicSemanticTargetCount": 253,
-  "systematicSemanticReports": [
-    "PRF-008_SEMANTIC_MITO_TSUKUBA_HITACHI_2026-10-03.json",
-    "PRF-008_SEMANTIC_TSUCHIURA_BANDO_KOGA_2026-10-03.json",
-    "PRF-008_SEMANTIC_ISHIOKA_YUKI_RYUGASAKI_2026-10-03.json",
-    "PRF-008_SEMANTIC_SHIMOTSUMA_JOSO_HITACHIOTA_2026-10-03.json",
-    "PRF-008_SEMANTIC_TAKAHAGI_KITAIBARAKI_KASAMA_2026-10-03.json",
-    "PRF-008_SEMANTIC_TORIDE_USHIKU_HITACHINAKA_2026-10-03.json",
-    "PRF-008_SEMANTIC_KASHIMA_ITAKO_MORIYA_2026-10-03.json",
-    "PRF-008_SEMANTIC_HITACHIOMIYA_NAKA_CHIKUSEI_2026-10-03.json",
-    "PRF-008_SEMANTIC_INASHIKI_KASUMIGAURA_SAKURAGAWA_2026-10-03.json",
-    "PRF-008_SEMANTIC_KAMISU_NAMEGATA_HOKOTA_2026-10-03.json"
-  ],
-  "systematicOpenSemanticPairs": [
-    {
-      "targetScenarioId": "SC-LOC-JP-08215-06-001",
-      "comparedScenarioIds": [
-        "SC-LOC-AKT-SEMBOKU-04-001",
-        "SC-LOC-JP-08216-06-001"
-      ],
-      "reason": "OPEN SYNTHESIS: both ATM scripts involve unfinished screen, card collection and screen termination; family handoff alone may not sufficiently change causal structure. Kitaibaraki has pending confirmation, no cash, own card/receipt then independent family card; Semboku balance-only termination asks whether ending starts withdrawal and rejects disclosing PIN. Keep pair unresolved for full semantic gate; separate counter conversations are comparison only."
-    },
-    {
-      "targetScenarioId": "SC-LOC-JP-08216-05-001",
-      "comparedScenarioIds": [
-        "SC-LOC-008-06-001",
-        "SC-LOC-JP-08205-05-001"
-      ],
-      "reason": "OPEN SYNTHESIS: dated separate postscript labels recipient and yesterday-letter continuity, two-page read order/count then sealing. Mito disordered five pages plus photo requires arranging station and particular insertion position, counting and deferred fee. Substantial enclosure-order motif shared; record difference without final distinctness approval."
-    },
-    {
-      "targetScenarioId": "SC-LOC-JP-08217-03-001",
-      "comparedScenarioIds": [
-        "SC-LOC-JP-01225-03-001"
-      ],
-      "reason": "OPEN SYNTHESIS: shared closed referral-envelope identity and submission-confirmation motif. Toride nearly omits known referral while handing consultation card and matches own external name; Takikawa confuses referral/receipt envelopes, nearly discards receipt, confirms return items. Need whole-corpus decision whether five-goal roles sufficiently differ; no automatic approval."
-    },
-    {
-      "targetScenarioId": "SC-LOC-JP-08225-04-001",
-      "comparedScenarioIds": [
-        "SC-LOC-AOM-MUTSU-07-001",
-        "SC-LOC-JP-01230-04-001"
-      ],
-      "reason": "OPEN SYNTHESIS: too close to outside-object report motif. Heavy grey bag not possessed, lifted but returned, photo/background location then current state unknown. Fenced hat cannot be retrieved and road box cannot be self-opened/moved differ in physical scope, but final semantic decision required beyond object substitution."
-    },
-    {
-      "targetScenarioId": "SC-LOC-JP-08226-04-001",
-      "comparedScenarioIds": [
-        "SC-LOC-JP-01236-04-001"
-      ],
-      "reason": "OPEN SYNTHESIS: found notebook, partial inside name, no public image/contact, disclose observed scope then handover closely shares Hokuto sequence. Naka originally open, visible name may be scheduled third-party not owner, no cover name/no added label; Hokuto personally opened for contact and saw confidential work material. Final rewrite-or-retain decision pending."
-    },
-    {
-      "targetScenarioId": "SC-LOC-JP-08229-03-001",
-      "comparedScenarioIds": [
-        "SC-LOC-008-02-001",
-        "SC-LOC-JP-08217-06-001"
-      ],
-      "reason": "OPEN SYNTHESIS: reception vs clinical narration shares Mito’s long-description organization. Inashiki interrupts already-started long public reception account, confirms10:00booking and sitting ability, reports any waiting changes, clinician has not automatically heard reception. Mito organizes start/life-impact memo before consultation; final causal-sequence decision required."
-    },
-    {
-      "targetScenarioId": "SC-LOC-JP-08231-03-001",
-      "comparedScenarioIds": [
-        "SC-LOC-JP-01219-03-001",
-        "SC-LOC-AKT-YUZAWA-07-001"
-      ],
-      "reason": "OPEN SYNTHESIS: own vs family symptom information resembles Monbetsu/Yuzawa attribution. Sakura actual mixed memo own3rows/family prior-experience2rows, add separate heading and discuss self first, family-derived similarity question later. Monbetsu shared cough/night/day question ambiguity; Yuzawa family causal claim versus chronology. Require final decision, not cosmetic attribution wording approval."
-    },
-    {
-      "targetScenarioId": "SC-LOC-JP-08231-06-001",
-      "comparedScenarioIds": [
-        "SC-LOC-JP-08229-06-001",
-        "SC-LOC-JP-08225-02-001"
-      ],
-      "reason": "OPEN SYNTHESIS: information-only blank form receipt≠procedure commencement/completion closely repeats no-application-yet bank/advice motif. Specific unchosen contact/method, blank form+guide same pouch, family clarification then later requirements. Inashiki filters unrelated budget and asks remittance requirements; Hitachiomiya asks two-person participation/deadline. Final distinction decision pending."
-    },
-    {
-      "targetScenarioId": "SC-LOC-JP-08232-01-001",
-      "comparedScenarioIds": [
-        "SC-LOC-JP-08210-01-001",
-        "SC-LOC-JP-08208-01-001"
-      ],
-      "reason": "OPEN SYNTHESIS: departed train missed while packing, next direction/time/platform and truthful personal-delay message repeat Shimotsuma/Ryugasaki recovery sequence. Kamisu never confirmed departing train was desired, Shimotsuma work-call interruption, Ryugasaki wet shoe. Cause substitution alone may be insufficient; final decision pending."
-    },
-    {
-      "targetScenarioId": "SC-LOC-JP-08232-06-001",
-      "comparedScenarioIds": [
-        "SC-LOC-JP-04208-06-001",
-        "SC-LOC-JP-08208-06-001"
-      ],
-      "reason": "OPEN SYNTHESIS: balance mistaken individual transaction. Kamisu already copied balance into spending sum and must remove false expense for last-month ledger; Kakuda asks before reporting salary to company and matches specific income with pay slip. Shared field-meaning correction may need rewrite despite different output document."
-    },
-    {
-      "targetScenarioId": "SC-LOC-JP-08233-07-001",
-      "comparedScenarioIds": [
-        "SC-LOC-JP-08208-07-001",
-        "SC-LOC-JP-08226-07-001"
-      ],
-      "reason": "OPEN SYNTHESIS: recipe-specific small-container choice resembles Ryugasaki cheese. Here sweetened yogurt violates unsweetened sauce ingredient, return and choose small one without future daily use, dose not full tub. Cheese one-bag100gtype vs larger cheaper amount; flavor discount salt/soy differs. Final sequence-level decision pending."
-    },
-    {
-      "targetScenarioId": "SC-LOC-JP-08234-07-001",
-      "comparedScenarioIds": [
-        "SC-LOC-JP-03216-07-001",
-        "SC-LOC-JP-08222-07-001"
-      ],
-      "reason": "OPEN SYNTHESIS: freezer-limited downgrade resembles Takizawa. Hokota actual one small empty drawer photo,2soupuses plus remaining onion stock, return2largebags choose1small; Takizawa total-weight/per-piece mistake selected4bags, count6use/4left and1bagcapacity. Storage constraint plus basket quantity-change motif requires final decision."
-    }
-  ]
+  "systematicTargetCount": 253,
+  "remainingSystematicTargets": 16,
+  "remainingGate": "Complete final16target comparisons and resolve all open semantic pairs before CONTENT PASS; no PRF-009 or translations."
 }

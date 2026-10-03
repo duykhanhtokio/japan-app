@@ -128,3 +128,8 @@ Full eleven-turn/five-goal reads and selected cross-corpus comparisons for 37 ta
 ### Systematic semantic continuation — Inashiki, Kasumigaura, Sakuragawa
 
 24 additional full scripts and selected comparisons in PRF-008_SEMANTIC_INASHIKI_KASUMIGAURA_SAKURAGAWA_2026-10-03.json. Coverage229/269;40 remaining. No runtime edits. Reception/clinical explanation, family symptom attribution and information-only form receipt pairs remain explicitly unresolved; prior pairs preserved. CONTENT PASS false; no PRF-009 or translations. Persist and verify before advancing.
+
+
+### Systematic semantic continuation — Kamisu, Namegata, Hokota
+
+24 additional full scripts and selected comparisons in PRF-008_SEMANTIC_KAMISU_NAMEGATA_HOKOTA_2026-10-03.json. Coverage253/269;16 remaining. No runtime edits. Missed-departure recovery, balance/transaction-field correction, recipe small-container and freezer-limit selection sequences remain open for synthesis. Prior pairs preserved. CONTENT PASS false; no PRF-009 or translations. Persist and verify before advancing.
