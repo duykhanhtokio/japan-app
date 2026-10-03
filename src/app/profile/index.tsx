@@ -142,7 +142,7 @@ export default function ProfileScreen() {
                     </Pressable>
                 </View>
             </ScrollView>
-            <Modal visible={detailsVisible} animationType="slide" onRequestClose={()=>setDetailsVisible(false)}>
+            {detailsVisible && <Modal visible={detailsVisible} animationType="none" onRequestClose={()=>setDetailsVisible(false)}>
                 <SafeAreaProvider><RoyalPageBackground source={PROFILE_ART} tone="dark" shadeOpacity={.50}><SafeAreaView style={styles.detailsPage}>
                     <View style={styles.detailsHeader}>
                         <Text style={styles.sectionTitle}>プロフィール · 詳細</Text>
@@ -783,7 +783,7 @@ export default function ProfileScreen() {
                 </ProfilePanel>
                     </ScrollView>
                 </SafeAreaView></RoyalPageBackground></SafeAreaProvider>
-            </Modal>
+            </Modal>}
 
             <BottomNav
                 active="profile"

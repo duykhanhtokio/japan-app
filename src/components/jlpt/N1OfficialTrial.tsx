@@ -1,3 +1,4 @@
+import JlptStudyBackground from './JlptStudyBackground';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AppState, Image, Pressable, ScrollView, StyleSheet, Text, View, type ImageSourcePropType, type LayoutChangeEvent, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
 import { setAudioModeAsync, useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
@@ -35,6 +36,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
   const [started, setStarted] = useState(false);
+  const [sessionReady, setSessionReady] = useState(false);
   const [mode, setMode] = useState<Mode>('exam');
   const [fontScale, setFontScale] = useState<JlptFontScale>(1);
   const [navigatorVisible, setNavigatorVisible] = useState(false);
@@ -82,7 +84,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
       if (!active || !session || !session.started) return;
       if (session.status === 'submitted' || session.status === 'reviewing' || session.submitted) setCompletedSession(session);
       else setPendingSession(session);
-    });
+    }).catch((error) => { console.warn('Load JLPT session:', error); }).finally(() => { if (active) setSessionReady(true); });
     return () => { active = false; };
   }, [exam.storageKey]);
 
@@ -238,10 +240,11 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
   }
 
   function confirmRestartSavedSession() {
-    setRestartConfirmationVisible(false);
-    setPendingSession(null);
-    // Preserve a result created before attempt history existed, then go straight to question one.
-    void loadJlptAttemptSummary(exam.storageKey).then(begin);
+    // Keep the current confirmation visible until the new exam can begin.
+    void loadJlptAttemptSummary(exam.storageKey).then(() => {
+      begin();
+      setRestartConfirmationVisible(false);
+    }).catch((error) => { console.warn('Restart JLPT session:', error); });
   }
 
   function submit() {
@@ -296,6 +299,20 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
     </View>;
   }
 
+  if (!sessionReady) return <JlptStudyBackground><JlptExamHeader title={`${exam.level} · JLPT模擬試験`} onBack={() => void exitExam()} /></JlptStudyBackground>;
+  if (!started && restartConfirmationVisible) return <JlptStudyBackground><JlptRestartConfirmation visible onCancel={() => setRestartConfirmationVisible(false)} onConfirm={confirmRestartSavedSession} /></JlptStudyBackground>;
+  if (!started && pendingSession) return <JlptResumePrompt
+      visible
+      examName={`${exam.title}・${exam.periodLabel}`}
+      updatedAt={formatSavedAt(pendingSession.updatedAt)}
+      answered={Object.keys(pendingSession.answers).length}
+      total={questions.length}
+      currentLabel={`${questionPositionLabel(questions, pendingSession.currentQuestion)}${pendingSession.listeningPositionMs ? `・聴解 ${formatListeningPosition(pendingSession.listeningPositionMs)} から再開できます` : ''}`}
+      onContinue={continueSession}
+      onRestart={requestRestartSavedSession}
+      onCancel={exitExam}
+    />;
+
   if (!started) return <View style={styles.startScreen}><JlptExamHeader title={`${exam.level} · JLPT模擬試験`} subtitle="日本語能力試験" onBack={() => void exitExam()} /><ScrollView contentContainerStyle={styles.startPage}>
     <JlptPaper>
       <Text style={styles.examName}>{exam.title}</Text>
@@ -313,18 +330,8 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
       </View> : null}
     </JlptPaper>
   </ScrollView>
-    {pendingSession ? <JlptResumePrompt
-      visible={!restartConfirmationVisible}
-      examName={`${exam.title}・${exam.periodLabel}`}
-      updatedAt={formatSavedAt(pendingSession.updatedAt)}
-      answered={Object.keys(pendingSession.answers).length}
-      total={questions.length}
-      currentLabel={`${questionPositionLabel(questions, pendingSession.currentQuestion)}${pendingSession.listeningPositionMs ? `・聴解 ${formatListeningPosition(pendingSession.listeningPositionMs)} から再開できます` : ''}`}
-      onContinue={continueSession}
-      onRestart={requestRestartSavedSession}
-      onCancel={exitExam}
-    /> : null}
-    <JlptRestartConfirmation visible={restartConfirmationVisible} onCancel={() => setRestartConfirmationVisible(false)} onConfirm={confirmRestartSavedSession} />
+
+    {restartConfirmationVisible && <JlptRestartConfirmation visible={restartConfirmationVisible} onCancel={() => setRestartConfirmationVisible(false)} onConfirm={confirmRestartSavedSession} />}
   </View>;
 
   const written = questions.filter((question) => question.family !== 'listening');
@@ -350,7 +357,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
       <JlptActionButton kind="secondary" label="もう一度受験する" onPress={() => setRestartConfirmationVisible(true)} style={styles.resultAction} />
       <JlptActionButton kind="secondary" label="JLPT一覧へ戻る" onPress={exitExam} style={styles.resultAction} />
     </JlptPaper></ScrollView>
-    <JlptRestartConfirmation visible={restartConfirmationVisible} onCancel={() => setRestartConfirmationVisible(false)} onConfirm={confirmRestartSavedSession} />
+    {restartConfirmationVisible && <JlptRestartConfirmation visible={restartConfirmationVisible} onCancel={() => setRestartConfirmationVisible(false)} onConfirm={confirmRestartSavedSession} />}
   </View>;
 
   if (submitted && reviewing) {
@@ -406,8 +413,8 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
         <JlptActionButton label="答案を提出する" onPress={requestSubmit} style={styles.submit} />
       </JlptPaper>
     </ScrollView>
-    <JlptQuestionNavigator visible={navigatorVisible} labels={questions.map((question) => question.id)} answered={answeredIds} current={currentQuestion} onChoose={goToQuestion} onClose={() => setNavigatorVisible(false)} />
-    <JlptSubmitConfirmation visible={submitConfirmationVisible} total={questions.length} answered={answeredIds.size} onCancel={() => setSubmitConfirmationVisible(false)} onSubmit={submit} />
+    {navigatorVisible && <JlptQuestionNavigator visible={navigatorVisible} labels={questions.map((question) => question.id)} answered={answeredIds} current={currentQuestion} onChoose={goToQuestion} onClose={() => setNavigatorVisible(false)} />}
+    {submitConfirmationVisible && <JlptSubmitConfirmation visible={submitConfirmationVisible} total={questions.length} answered={answeredIds.size} onCancel={() => setSubmitConfirmationVisible(false)} onSubmit={submit} />}
   </View>;
 }
 

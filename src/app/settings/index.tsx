@@ -170,12 +170,12 @@ export default function SettingsScreen() {
                 </Pressable>
             </View>
 
-            <Modal
+            {modalVisible && <Modal
                 visible={
                     modalVisible
                 }
                 transparent
-                animationType="slide"
+                animationType="none"
                 onRequestClose={() =>
                     setModalVisible(
                         false
@@ -298,7 +298,7 @@ export default function SettingsScreen() {
                         </ScrollView>
                     </View>
                 </View>
-            </Modal>
+            </Modal>}
         </SafeAreaView>
     );
 }

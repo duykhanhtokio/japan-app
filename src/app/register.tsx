@@ -296,7 +296,7 @@ export default function RegisterScreen() {
 
             {/* LEVEL MODAL */}
 
-            <SelectionModal
+            {levelModalVisible && <SelectionModal
                 visible={
                     levelModalVisible
                 }
@@ -336,11 +336,11 @@ export default function RegisterScreen() {
                         </RoyalOptionRow>
                     )
                 )}
-            </SelectionModal>
+            </SelectionModal>}
 
             {/* LANGUAGE MODAL */}
 
-            <SelectionModal
+            {languageModalVisible && <SelectionModal
                 visible={
                     languageModalVisible
                 }
@@ -400,7 +400,7 @@ export default function RegisterScreen() {
                         </RoyalOptionRow>
                     )
                 )}
-            </SelectionModal>
+            </SelectionModal>}
         </ImageBackground>
     );
 }
@@ -424,11 +424,12 @@ function SelectionModal({
     React.ReactNode;
 }) {
     const royalPosition = useRoyalPositioning();
+    if (!visible) return null;
     return (
         <Modal
             visible={visible}
             transparent
-            animationType="slide"
+            animationType="none"
             onRequestClose={
                 onClose
             }

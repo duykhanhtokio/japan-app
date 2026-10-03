@@ -7,4 +7,4 @@ export default function RoyalPageBackground({children,tone='light',source,shadeO
   <View pointerEvents="none" style={[s.overlay,tone==='dark'?s.dark:s.light,shadeOpacity!==undefined&&{backgroundColor:`rgba(${tone==='dark'?'11,24,48':'255,255,255'},${shadeOpacity})`}]}/>{children}
  </ImageBackground>;
 }
-const s=StyleSheet.create({background:{flex:1,backgroundColor:'#142847'},overlay:{...StyleSheet.absoluteFillObject},light:{backgroundColor:'rgba(255,255,255,.45)'},dark:{backgroundColor:'rgba(11,24,48,.78)'}});
+const s=StyleSheet.create({background:{flex:1,backgroundColor:'#1e140c'},overlay:{...StyleSheet.absoluteFillObject},light:{backgroundColor:'rgba(255,255,255,.45)'},dark:{backgroundColor:'rgba(11,24,48,.78)'}});

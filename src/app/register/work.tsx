@@ -573,7 +573,7 @@ export default function RegistrationWorkScreen() {
                 GROUP MODAL
             ==================== */}
 
-            <TreeModal
+            {groupModalVisible && <TreeModal
                 visible={
                     groupModalVisible
                 }
@@ -638,13 +638,13 @@ export default function RegistrationWorkScreen() {
                         </RoyalOptionRow>
                     )
                 )}
-            </TreeModal>
+            </TreeModal>}
 
             {/* ====================
                 OCCUPATION MODAL
             ==================== */}
 
-            <TreeModal
+            {occupationModalVisible && <TreeModal
                 visible={
                     occupationModalVisible
                 }
@@ -711,13 +711,13 @@ export default function RegistrationWorkScreen() {
                         </RoyalOptionRow>
                     )
                 )}
-            </TreeModal>
+            </TreeModal>}
 
             {/* ====================
                 OPERATION MODAL
             ==================== */}
 
-            <TreeModal
+            {operationModalVisible && <TreeModal
                 visible={
                     operationModalVisible
                 }
@@ -797,7 +797,7 @@ export default function RegistrationWorkScreen() {
                         </RoyalOptionRow>
                     )
                 )}
-            </TreeModal>
+            </TreeModal>}
         </SafeAreaView>
         </ImageBackground>
     );
@@ -819,13 +819,14 @@ function TreeModal({
     React.ReactNode;
 }) {
     const royalPosition = useRoyalPositioning();
+    if (!visible) return null;
     return (
         <Modal
             visible={
                 visible
             }
             transparent
-            animationType="slide"
+            animationType="none"
             onRequestClose={
                 onClose
             }

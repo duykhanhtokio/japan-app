@@ -16,10 +16,10 @@ const PROGRESS_FRAMES=[
 export default function NpcRewardModal({visible,category,progress,isUnlock,onClose}:{visible:boolean;category:NpcCategory|null;progress:number;isUnlock:boolean;onClose:()=>void}){
  const reveal=useRef(new Animated.Value(0)).current;
  useEffect(()=>{if(!visible)return;reveal.setValue(0);Animated.spring(reveal,{toValue:1,speed:7,bounciness:9,useNativeDriver:true}).start()},[visible,reveal]);
- if(!category)return null;
+ if(!visible||!category)return null;
  const stars=isUnlock?5:Math.max(0,Math.min(5,progress));
  const revealed=isUnlock||stars>=5;
- return <Modal visible={visible} transparent animationType="fade" onRequestClose={onClose}><View style={s.backdrop}>
+ return <Modal visible={visible} transparent animationType="none" onRequestClose={onClose}><View style={s.backdrop}>
   <Text style={s.kicker}>{revealed?'おめでとう！':'課題達成！'}</Text><Text style={s.heading}>{revealed?'新しい仲間が加わりました！':'カードゲージが増えました！'}</Text>
   <Animated.View style={[s.card,{transform:[{perspective:1000},{rotateY:reveal.interpolate({inputRange:[0,.44,1],outputRange:['92deg','-9deg','0deg']})}],opacity:reveal}]}> 
    <Image source={PROGRESS_FRAMES[stars]} resizeMode="stretch" style={s.frame}/>

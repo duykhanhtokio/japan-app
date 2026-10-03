@@ -78,7 +78,8 @@ export function JlptReviewFeedback({ correct, answer, unanswered = false }: { co
 }
 
 export function JlptQuestionNavigator({ visible, labels, answered, current, onChoose, onClose }: { visible: boolean; labels: string[]; answered: Set<string>; current?: string; onChoose: (id: string) => void; onClose: () => void }) {
-  return <Modal visible={visible} transparent animationType="fade" onRequestClose={onClose}>
+  if (!visible) return null;
+  return <Modal visible={visible} transparent animationType="none" onRequestClose={onClose}>
     <View style={s.modalShade}><View style={s.navigator}>
       <View style={s.navigatorHeader}><Text style={s.navigatorTitle}>問題一覧</Text><Pressable accessibilityRole="button" onPress={onClose} style={s.close}><Text style={s.closeText}>閉じる</Text></Pressable></View>
       <View style={s.legend}><Text style={s.legendText}>□ 未回答</Text><Text style={s.legendText}>■ 回答済み</Text></View>
@@ -88,7 +89,8 @@ export function JlptQuestionNavigator({ visible, labels, answered, current, onCh
 }
 
 export function JlptResumePrompt({ visible, examName, updatedAt, answered, total, currentLabel, onContinue, onRestart, onCancel }: { visible: boolean; examName: string; updatedAt: string; answered: number; total: number; currentLabel: string; onContinue: () => void; onRestart: () => void; onCancel: () => void }) {
-  return <Modal visible={visible} animationType="none" statusBarTranslucent navigationBarTranslucent onRequestClose={onCancel}>
+  if (!visible) return null;
+  return <View style={{flex:1}}>
     <JlptStudyBackground><SafeAreaView style={{flex:1}}><ScrollView contentContainerStyle={{flexGrow:1,justifyContent:'center',padding:24}}><View accessibilityRole="alert" style={{width:'100%',maxWidth:460,alignSelf:'center'}}>
       <Text style={s.confirmTitle}>前回の続きがあります</Text>
       <Text style={s.resumeExam}>{examName}</Text>
@@ -99,7 +101,7 @@ export function JlptResumePrompt({ visible, examName, updatedAt, answered, total
       <ResumeRoyalAction label="最初からやり直す" onPress={onRestart} />
       <ResumeRoyalAction label="キャンセル" onPress={onCancel} />
     </View></ScrollView></SafeAreaView></JlptStudyBackground>
-  </Modal>;
+  </View>;
 }
 
 function ResumeRoyalAction({label,onPress}:{label:string;onPress:()=>void}) {
@@ -107,7 +109,8 @@ function ResumeRoyalAction({label,onPress}:{label:string;onPress:()=>void}) {
 }
 
 export function JlptRestartConfirmation({ visible, onCancel, onConfirm }: { visible: boolean; onCancel: () => void; onConfirm: () => void }) {
-  return <Modal visible={visible} transparent animationType="fade" onRequestClose={onCancel}>
+  if (!visible) return null;
+  return <Modal visible={visible} transparent animationType="none" onRequestClose={onCancel}>
     <View style={s.confirmShade}><View accessibilityRole="alert" style={s.confirmPanel}>
       <Text style={s.confirmTitle}>最初からやり直しますか</Text>
       <Text style={s.confirmLine}>この試験の保存中の回答だけが削除されます。</Text>
@@ -118,7 +121,8 @@ export function JlptRestartConfirmation({ visible, onCancel, onConfirm }: { visi
 
 export function JlptSubmitConfirmation({ visible, total, answered, onCancel, onSubmit }: { visible: boolean; total: number; answered: number; onCancel: () => void; onSubmit: () => void }) {
   const unanswered = Math.max(0, total - answered);
-  return <Modal visible={visible} transparent animationType="fade" onRequestClose={onCancel}>
+  if (!visible) return null;
+  return <Modal visible={visible} transparent animationType="none" onRequestClose={onCancel}>
     <View style={s.confirmShade}><View accessibilityRole="alert" style={s.confirmPanel}>
       <Text style={s.confirmTitle}>答案を提出しますか</Text>
       <Text style={s.confirmLine}>全問題：{total}</Text>
