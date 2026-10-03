@@ -162,3 +162,7 @@ Hitachiomiya, Naka, Chikusei: 24 additional individual Japanese drafts, 120 goal
 ## Cluster 09 — 2026-10-03 (Asia/Tokyo)
 
 Inashiki, Kasumigaura, Sakuragawa: 24 further individually authored Japanese drafts, 120 goals. Total 229/269 drafts, 1145 goals; 40 old drafts remain. Three whole-plot replacements after reading 23 complete lexical candidates and screening 1206 prior authored runtime scripts. All 269 slots covered without structural errors or exact dialogue/task/answer/title collisions. Screening and unresolved conceptual comparisons do not approve content. Evidence and current hashes: PRF-008_CLUSTER_09_REVIEW.json; initial retrieval PRF-008_CLUSTER_09_CANDIDATES.json. No CONTENT PASS, native certification or translation. Next Kamisu, Namegata, Hokota, then Tsukubamirai and Omitama after remote persistence.
+
+## Ibaraki full Japanese draft coverage — 2026-10-03
+
+PRF-008: 269/269 individually authored runtime exchanges and 1345 speaking goals. Source/canonical/runtime parity and structural coverage pass; all exact, normalized and near-duplicate screening groups are zero. No CONTENT PASS: final current-hash causal, location-role and closure review remains open. See content-qa/PRF-008_CHECKPOINT.md, PRF-008_CLUSTER_11_REVIEW.json and PRF-008_FINAL_REVIEW_QUEUE.json. Preserve other approved prefectures and UI; no translations or PRF-009 before the editorial gate.
