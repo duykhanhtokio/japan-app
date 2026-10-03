@@ -113,3 +113,8 @@ Full eleven-turn/five-goal reads and selected cross-corpus comparisons for 37 ta
 ### Systematic semantic continuation — Toride, Ushiku, Hitachinaka
 
 24 additional full scripts and cross-corpus comparison evidence in PRF-008_SEMANTIC_TORIDE_USHIKU_HITACHINAKA_2026-10-03.json. Coverage 157/269;112 remaining. No runtime edits. Toride03/Takikawa03 closed referral-envelope pair remains unresolved for synthesis. Preserve earlier ATM/letter-order pairs. CONTENT PASS false; no PRF-009 or translations. Persist and verify before advancing.
+
+
+### Systematic semantic continuation — Kashima, Itako, Moriya
+
+24 additional full scripts and selected cross-corpus comparisons in PRF-008_SEMANTIC_KASHIMA_ITAKO_MORIYA_2026-10-03.json. Coverage181/269;88 remaining. No runtime edits. Separate conditional fee applicability, money unit and participation count; annual payment timing from monthly preparation; actual object possession from incomplete instruction recall. Earlier open ATM, letter-order and referral pairs preserved. CONTENT PASS false; no PRF-009 or translations. Persist and verify before advancing.
