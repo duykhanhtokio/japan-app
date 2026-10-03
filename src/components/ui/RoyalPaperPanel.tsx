@@ -3,6 +3,7 @@ import { useState, type PropsWithChildren, type ReactNode } from 'react';
 import { Image, StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
 
 export const PAPER_FRAME_SLICES=[require('../../../assets/app/ui/royal-af/paper-slices/0-0.png'),require('../../../assets/app/ui/royal-af/paper-slices/0-1.png'),require('../../../assets/app/ui/royal-af/paper-slices/0-2.png'),require('../../../assets/app/ui/royal-af/paper-slices/1-0.png'),require('../../../assets/app/ui/royal-af/paper-slices/1-1.png'),require('../../../assets/app/ui/royal-af/paper-slices/1-2.png'),require('../../../assets/app/ui/royal-af/paper-slices/2-0.png'),require('../../../assets/app/ui/royal-af/paper-slices/2-1.png'),require('../../../assets/app/ui/royal-af/paper-slices/2-2.png')];
+export const OPEN_FRAME_SLICES=[require('../../../assets/app/ui/royal-af/open-slices/0-0.png'),require('../../../assets/app/ui/royal-af/open-slices/0-1.png'),require('../../../assets/app/ui/royal-af/open-slices/0-2.png'),require('../../../assets/app/ui/royal-af/open-slices/1-0.png'),require('../../../assets/app/ui/royal-af/open-slices/1-2.png'),require('../../../assets/app/ui/royal-af/open-slices/2-0.png'),require('../../../assets/app/ui/royal-af/open-slices/2-1.png'),require('../../../assets/app/ui/royal-af/open-slices/2-2.png')];
 const HUD_ART=require('../../../assets/app/ui/royal-af/farm-hud-plaque-v1.png');
 const ART = require('../../../assets/app/ui/royal-af/dialogue-frame-v1.png');
 const OPEN_ART = require('../../../assets/app/ui/royal-af/hud-energy-open-frame-v1.png');
@@ -13,7 +14,7 @@ export function royalOpenFrameGeometry(width:number,height:number) {
  return {cornerX:330*scale,cornerY:144*scale,left:140*scale,right:139*scale,top:68*scale,bottom:41*scale,radius:70*scale};
 }
 /** Nine raster slices: corners keep their proportions while straight edges extend. */
-export default function RoyalPaperPanel({children,style,tone='paper',borderOnly=false,underlay}:PropsWithChildren<{style?:StyleProp<ViewStyle>;tone?:'paper'|'hud';borderOnly?:boolean;underlay?:ReactNode}>) {
+export default function RoyalPaperPanel({children,style,tone='paper',borderOnly=false,immediateBorder=false,underlay}:PropsWithChildren<{style?:StyleProp<ViewStyle>;tone?:'paper'|'hud';borderOnly?:boolean;immediateBorder?:boolean;underlay?:ReactNode}>) {
  const [size,setSize]=useState({width:0,height:0});
  const hud=tone==='hud',source=borderOnly?OPEN_ART:hud?HUD_ART:ART,sourceWidth=borderOnly||hud?2172:1600,sourceHeight=borderOnly||hud?724:560;
  const sx=borderOnly?[0,330,1842,2172]:hud?[7,407,1766,2166]:[0,240,1360,1600],sy=borderOnly?[156,300,406,550]:hud?[73,273,428,628]:[68,228,328,488];
@@ -21,6 +22,13 @@ export default function RoyalPaperPanel({children,style,tone='paper',borderOnly=
  const open=royalOpenFrameGeometry(size.width,size.height);
  const cornerX=borderOnly?open.cornerX:(hud?30:36)*cornerScale,cornerY=borderOnly?open.cornerY:(hud?15:24)*cornerScale;
  const dx=[0,cornerX,Math.max(cornerX,size.width-cornerX),size.width],dy=[0,cornerY,Math.max(cornerY,size.height-cornerY),size.height];
+ // Open borders also mount once, without a delayed full-source image pass.
+ if(borderOnly&&immediateBorder)return <View pointerEvents="none" style={[s.panel,style,{backgroundColor:'transparent'}]}>{underlay}<View pointerEvents="none" style={StyleSheet.absoluteFillObject}>{OPEN_FRAME_SLICES.map((source,index)=>{
+  const cell=index<4?index:index+1,row=Math.floor(cell/3),col=cell%3;
+  const horizontal=col===0?{left:0,width:36}:col===2?{right:0,width:36}:{left:36,right:36};
+  const vertical=row===0?{top:0,height:144*36/330}:row===2?{bottom:0,height:144*36/330}:{top:144*36/330,bottom:144*36/330};
+  return <View key={cell} style={{position:'absolute',...horizontal,...vertical}}><CachedImage source={source} contentFit="fill" transition={0} cachePolicy="memory-disk" style={{width:'100%',height:'100%'}}/></View>;
+ })}</View>{children}</View>;
  // Paper corners/edges are positioned on the first render. Each source is
  // already cropped, so no onLayout -> state update -> oversized image pass.
  if(!borderOnly&&!hud)return <View style={[s.panel,style,{backgroundColor:'transparent'}]}>
