@@ -694,7 +694,7 @@ export default function FarmCosmeticPanel({
 
                     <View style={{flex:1,minHeight:0,flexDirection:compactLandscape?'row':'column',gap:compactLandscape?10:0}}>
                     <View style={compactLandscape?{width:'30%',maxWidth:300}:undefined}><FarmCosmeticPreview
-                        compact={compactLandscape}
+                        compact
                         target={
                             previewTarget
                         }

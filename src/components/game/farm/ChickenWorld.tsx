@@ -264,7 +264,7 @@ function ChickenSlot({
                     }}
                     style={styles.feedButton}
                     hitSlop={6}
-                ><FarmBadgeFrame/>
+                >
                     <View style={{flexDirection:"row",alignItems:"center",gap:3}}><FarmAreaIcon name="rice" size={16}/><Text numberOfLines={1} style={styles.feedText}>えさ</Text></View>
                 </Pressable>
             )}
@@ -422,7 +422,10 @@ const styles = StyleSheet.create({
     },
     feedText: {fontFamily: ROYAL_FONT.body,
 
-        color: '#4C2D14',
+        color: '#FFF4D6',
+        textShadowColor: '#251708',
+        textShadowOffset: { width: 0, height: 1 },
+        textShadowRadius: 3,
         fontSize: 11,
         fontWeight: '900',
         textAlign: 'center',
