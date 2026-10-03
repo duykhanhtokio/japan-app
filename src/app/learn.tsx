@@ -21,7 +21,7 @@ import { ROYAL_LAYOUT, ROYAL_FONT } from '@/components/ui/RoyalSurface';
 import { useUserProfile } from '@/hooks/useUserProfile';
 import { getGameProgress } from '@/services/progress-storage';
 import { getJlptProgress } from '@/services/jlpt-progress-storage';
-import { generatedGrammar, generatedVocabulary } from '@/data/jlpt-learning';
+import learningProgressIds from '@/data/generated/learning-progress-ids.json';
 import { RANK_COLORS, RANKS, type LearningEconomy } from '@/services/learning-economy';
 import { syncJlptQualification } from '@/services/sync-jlpt-qualification';
 
@@ -48,6 +48,10 @@ type LevelItem = {
     accentColor: string;
     bodyColor: string;
 };
+
+const LEVEL_CONTENT_IDS = Object.fromEntries(
+    Object.entries(learningProgressIds).map(([level, ids]) => [level, new Set(ids)]),
+) as Record<LevelItem['level'], Set<string>>;
 
 const levels: LevelItem[] = [
     {
@@ -163,10 +167,7 @@ export default function LearnScreen() {
             setEconomy(ledger);
             setStats({ xp: game.stats.xp, coins: game.stats.coins, conversationCredits: game.stats.conversationCredits });
             setRuntimeLevels(levels.map((item) => {
-                const levelIds = new Set([
-                    ...generatedVocabulary.filter((entry) => entry.jlpt === item.level).map((entry) => entry.id),
-                    ...generatedGrammar.filter((entry) => entry.jlpt === item.level).map((entry) => entry.id),
-                ]);
+                const levelIds = LEVEL_CONTENT_IDS[item.level];
                 const completed = learning.learnedIds.filter((id) => levelIds.has(id) || (item.level === 'N5' && id.startsWith('kana:'))).length;
                 const total = Number(item.progressText.split('/')[1]?.trim()) || 1;
                 return {

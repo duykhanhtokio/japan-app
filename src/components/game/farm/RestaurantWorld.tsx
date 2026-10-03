@@ -1,3 +1,4 @@
+import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
 import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
@@ -13,7 +14,7 @@ const STEPS = [
 
 export default function RestaurantWorld() {
     return (
-        <ScrollView style={styles.world} contentContainerStyle={styles.content}>
+        <RoyalPageBackground><ScrollView style={styles.world} contentContainerStyle={styles.content}>
             <RoyalContentPanel style={styles.panel}>
                 <Image source={RESTAURANT_ICON} resizeMode="contain" style={styles.heroIcon} />
                 <Text style={styles.title}>ファームレストラン</Text>
@@ -29,12 +30,12 @@ export default function RestaurantWorld() {
                 ))}
                 <Text style={styles.notice}>現在は案内のみ表示しています。料理・注文の操作は利用できません。</Text>
             </RoyalContentPanel>
-        </ScrollView>
+        </ScrollView></RoyalPageBackground>
     );
 }
 
 const styles = StyleSheet.create({
-    world: { flex: 1, backgroundColor: '#e8e2d6' },
+    world: { flex: 1, backgroundColor: 'transparent' },
     content: { flexGrow: 1, justifyContent: 'center', paddingHorizontal: 20, paddingTop: 100, paddingBottom: 32 },
     panel: { width: '100%', maxWidth: 520, alignSelf: 'center', padding: 22,     },
     heroIcon: { width: 110, height: 110, alignSelf: 'center' },

@@ -189,11 +189,7 @@ function CowSlot({
         slot.production?.readyAt ?? slot.readyAt,
         now
     );
-    const careIcon = careRequirement?.type === 'drink'
-        ? '💧'
-        : careRequirement?.type === 'feed'
-            ? '🌾'
-            : '❗';
+    const careLabel = careRequirement?.type === 'drink' ? '水' : '!';
 
     return (
         <Pressable
@@ -228,7 +224,7 @@ function CowSlot({
 
             {producing && !careRequired && remaining !== '' && (
                 <View pointerEvents="none" style={styles.timerBadge}><FarmBadgeFrame dark/>
-                    <Text style={styles.timerText}>⏱ {remaining}</Text>
+                    <Text style={styles.timerText}>{remaining}</Text>
                 </View>
             )}
 
@@ -241,7 +237,7 @@ function CowSlot({
                     style={styles.careButton}
                     hitSlop={8}
                 ><FarmBadgeFrame/>
-                    <Text style={styles.careIcon}>{careIcon === "🌾" ? <FarmAreaIcon name="rice" size={24}/> : careIcon}</Text>
+                    {careRequirement?.type === 'feed' ? <FarmAreaIcon name="rice" size={24}/> : <Text style={styles.careIcon}>{careLabel}</Text>}
                     <View style={styles.alertDot}>
                         <Text style={styles.alertText}>!</Text>
                     </View>

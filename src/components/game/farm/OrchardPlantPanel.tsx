@@ -1,6 +1,7 @@
 import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
-import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
+import { RoyalContentPanel, RoyalExplanationPanel } from '@/components/ui/RoyalPanels';
 import {
+    Image,
     Modal,
     Pressable,
     ScrollView,
@@ -46,37 +47,12 @@ type Props = {
     ) => void;
 };
 
-const TREE_ICONS:
-    Record<string, string> = {
-    apple:
-        '🍎',
-
-    grape:
-        '🍇',
-
-    mikan:
-        '🍊',
-
-    peach:
-        '🍑',
-
-    pear:
-        '🍐',
-
-    cherry:
-        '🍒',
-
-    persimmon:
-        '🟠',
-
-    lemon:
-        '🍋',
-
-    kiwi:
-        '🥝',
-
-    blueberry:
-        '🫐',
+const COIN_ICON = require('../../../../assets/app/ui/royal-af/hud-coin-v1.png');
+const LOCK_ICON = require('../../../../assets/app/ui/royal-af/lock-grape-v2.png');
+const CLOSE_ICON = require('../../../../assets/app/ui/royal-af/close-x-v2.png');
+const TREE_ARTWORK: Partial<Record<OrchardTreeId, number>> = {
+    apple: require('../../../../assets/game/farm/orchard/apple_tree.png'),
+    grape: require('../../../../assets/game/farm/orchard/grape_vine.png'),
 };
 
 export default function OrchardPlantPanel({
@@ -111,16 +87,11 @@ export default function OrchardPlantPanel({
                     }
                 />
 
-                <View
+                <RoyalContentPanel
                     style={
                         styles.sheet
                     }
                 >
-                    <View
-                        style={
-                            styles.handle
-                        }
-                    />
 
                     <View
                         style={
@@ -133,7 +104,7 @@ export default function OrchardPlantPanel({
                                     styles.title
                                 }
                             >
-                                🌳 植える木を選ぶ
+                                植える木を選ぶ
                             </Text>
 
                             <Text
@@ -150,21 +121,24 @@ export default function OrchardPlantPanel({
                                 styles.headerRight
                             }
                         >
-                            <View
+                            <RoyalContentPanel
                                 style={
                                     styles.goldBadge
                                 }
                             >
+                                <Image source={COIN_ICON} resizeMode="contain" style={styles.smallIcon} />
                                 <Text
                                     style={
                                         styles.goldText
                                     }
                                 >
-                                    🪙 {gold}
+                                    {gold}
                                 </Text>
-                            </View>
+                            </RoyalContentPanel>
 
                             <Pressable
+                                accessibilityRole="button"
+                                accessibilityLabel="閉じる"
                                 onPress={
                                     onClose
                                 }
@@ -172,18 +146,12 @@ export default function OrchardPlantPanel({
                                     styles.closeButton
                                 }
                             ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
-                                <Text
-                                    style={
-                                        styles.closeText
-                                    }
-                                >
-                                    ×
-                                </Text>
+                                <Image source={CLOSE_ICON} resizeMode="contain" style={{width:22,height:22}} />
                             </Pressable>
                         </View>
                     </View>
 
-                    <View
+                    <RoyalExplanationPanel
                         style={
                             styles.infoBar
                         }
@@ -196,7 +164,7 @@ export default function OrchardPlantPanel({
                             苗木を購入して、そのまま植えます
                         </Text>
 
-                        <View
+                        <RoyalContentPanel
                             style={
                                 styles.levelBadge
                             }
@@ -208,8 +176,8 @@ export default function OrchardPlantPanel({
                             >
                                 Lv.{farmLevel}
                             </Text>
-                        </View>
-                    </View>
+                        </RoyalContentPanel>
+                    </RoyalExplanationPanel>
 
                     <ScrollView
                         style={
@@ -242,7 +210,7 @@ export default function OrchardPlantPanel({
                             )
                         )}
                     </ScrollView>
-                </View>
+                </RoyalContentPanel>
             </View>
         </Modal>
     );
@@ -329,18 +297,7 @@ function TreeCard({
                     styles.iconBox
                 }
             >
-                <Text
-                    style={
-                        styles.treeIcon
-                    }
-                >
-                    {
-                        TREE_ICONS[
-                        tree.id
-                        ] ??
-                        '🌳'
-                    }
-                </Text>
+                {TREE_ARTWORK[tree.id] && <Image source={TREE_ARTWORK[tree.id]} resizeMode="contain" style={styles.treeArtwork} />}
             </View>
 
             <View
@@ -365,22 +322,23 @@ function TreeCard({
                     </Text>
 
                     {levelLocked && (
-                        <View
+                        <RoyalContentPanel
                             style={
                                 styles.lockBadge
                             }
                         >
+                                <Image source={LOCK_ICON} resizeMode="contain" style={styles.smallIcon} />
                             <Text
                                 style={
                                     styles.lockText
                                 }
                             >
-                                🔒 Lv.
+                                Lv.
                                 {
                                     tree.unlockFarmLevel
                                 }
                             </Text>
-                        </View>
+                        </RoyalContentPanel>
                     )}
                 </View>
 
@@ -420,7 +378,7 @@ function TreeCard({
                         styles.bottomRow
                     }
                 >
-                    <View
+                    <RoyalContentPanel
                         style={[
                             styles.priceBadge,
 
@@ -428,6 +386,7 @@ function TreeCard({
                             styles.priceBadgeInsufficient,
                         ]}
                     >
+                                <Image source={COIN_ICON} resizeMode="contain" style={styles.smallIcon} />
                         <Text
                             style={[
                                 styles.priceText,
@@ -436,12 +395,12 @@ function TreeCard({
                                 styles.priceTextInsufficient,
                             ]}
                         >
-                            🪙 {
+                            {
                                 price ??
                                 '---'
                             }
                         </Text>
-                    </View>
+                    </RoyalContentPanel>
 
                     <Pressable
                         disabled={
@@ -495,7 +454,7 @@ function Stat({
     string;
 }) {
     return (
-        <View
+        <RoyalContentPanel
             style={
                 styles.stat
             }
@@ -515,7 +474,7 @@ function Stat({
             >
                 {value}
             </Text>
-        </View>
+        </RoyalContentPanel>
     );
 }
 
@@ -556,77 +515,9 @@ const styles =
                 1,
         },
 
-        sheet: {
-            height:
-                '72%',
+        sheet: { height: '72%', paddingTop: 18, paddingHorizontal: 14, paddingBottom: 14 },
 
-            backgroundColor:
-                '#FFF4D4',
-
-            borderTopLeftRadius:
-                28,
-
-            borderTopRightRadius:
-                28,
-
-            borderWidth:
-                3,
-
-            borderBottomWidth:
-                0,
-
-            borderColor:
-                '#9A6329',
-
-            paddingHorizontal:
-                14,
-
-            paddingBottom:
-                14,
-
-            shadowColor:
-                '#000',
-
-            shadowOffset: {
-                width:
-                    0,
-
-                height:
-                    -4,
-            },
-
-            shadowOpacity:
-                0.2,
-
-            shadowRadius:
-                8,
-
-            elevation:
-                12,
-        },
-
-        handle: {
-            alignSelf:
-                'center',
-
-            width:
-                48,
-
-            height:
-                5,
-
-            borderRadius:
-                3,
-
-            marginTop:
-                8,
-
-            marginBottom:
-                8,
-
-            backgroundColor:
-                '#C79A5B',
-        },
+        handle: {  },
 
         header: {
             flexDirection:
@@ -683,31 +574,7 @@ const styles =
                 '800',
         },
 
-        goldBadge: {
-            minWidth:
-                82,
-
-            paddingHorizontal:
-                10,
-
-            paddingVertical:
-                7,
-
-            borderRadius:
-                12,
-
-            alignItems:
-                'center',
-
-            backgroundColor:
-                '#FFE09A',
-
-            borderWidth:
-                2,
-
-            borderColor:
-                '#D29A32',
-        },
+        goldBadge: { minHeight: 0, minWidth: 82, paddingHorizontal: 10, paddingVertical: 7, flexDirection: 'row', alignItems: 'center', gap: 4 },
 
         goldText: {
             fontFamily: ROYAL_FONT.body,
@@ -758,37 +625,7 @@ const styles =
                 '900',
         },
 
-        infoBar: {
-            flexDirection:
-                'row',
-
-            alignItems:
-                'center',
-
-            justifyContent:
-                'space-between',
-
-            marginBottom:
-                9,
-
-            paddingVertical:
-                7,
-
-            paddingHorizontal:
-                10,
-
-            borderRadius:
-                12,
-
-            backgroundColor:
-                '#F0D79E',
-
-            borderWidth:
-                1,
-
-            borderColor:
-                '#C89854',
-        },
+        infoBar: { minHeight: 0, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 9, paddingVertical: 10, paddingHorizontal: 14 },
 
         infoText: {
             fontFamily: ROYAL_FONT.body,
@@ -799,7 +636,7 @@ const styles =
                 8,
 
             color:
-                '#73502B',
+                '#f2db9b',
 
             fontSize:
                 11,
@@ -808,24 +645,12 @@ const styles =
                 '800',
         },
 
-        levelBadge: {
-            paddingHorizontal:
-                9,
-
-            paddingVertical:
-                4,
-
-            borderRadius:
-                10,
-
-            backgroundColor:
-                '#7FB44C',
-        },
+        levelBadge: { minHeight: 0, paddingHorizontal: 9, paddingVertical: 4 },
 
         levelText: {
             fontFamily: ROYAL_FONT.body,
             color:
-                '#FFFFFF',
+                '#142847',
 
             fontSize:
                 10,
@@ -896,11 +721,10 @@ const styles =
 
         },
 
-        treeIcon: {
-            fontFamily: ROYAL_FONT.body,
-            fontSize:
-                44,
-        },
+        treeIcon: {  },
+
+        smallIcon: { width: 18, height: 18 },
+        treeArtwork: { width: 64, height: 84 },
 
         cardBody: {
             flex:
@@ -942,24 +766,12 @@ const styles =
                 '900',
         },
 
-        lockBadge: {
-            paddingHorizontal:
-                6,
-
-            paddingVertical:
-                3,
-
-            borderRadius:
-                7,
-
-            backgroundColor:
-                '#746E63',
-        },
+        lockBadge: { minHeight: 0, paddingHorizontal: 6, paddingVertical: 3, flexDirection: 'row', alignItems: 'center', gap: 3 },
 
         lockText: {
             fontFamily: ROYAL_FONT.body,
             color:
-                '#FFFFFF',
+                '#142847',
 
             fontSize:
                 9,
@@ -979,23 +791,7 @@ const styles =
                 6,
         },
 
-        stat: {
-            fontFamily: ROYAL_FONT.body,
-            flex:
-                1,
-
-            alignItems:
-                'center',
-
-            paddingVertical:
-                4,
-
-            borderRadius:
-                8,
-
-            backgroundColor:
-                '#F3E6C4',
-        },
+        stat: { minHeight: 0, flex: 1, alignItems: 'center', paddingHorizontal: 4, paddingVertical: 6 },
 
         statLabel: {
             fontFamily: ROYAL_FONT.body,
@@ -1038,36 +834,9 @@ const styles =
                 8,
         },
 
-        priceBadge: {
-            flex:
-                1,
+        priceBadge: { minHeight: 0, flex: 1, paddingVertical: 7, paddingHorizontal: 10, flexDirection: 'row', alignItems: 'center', gap: 4 },
 
-            paddingVertical:
-                7,
-
-            paddingHorizontal:
-                10,
-
-            borderRadius:
-                9,
-
-            backgroundColor:
-                '#FFE5A6',
-
-            borderWidth:
-                1,
-
-            borderColor:
-                '#D9AA4D',
-        },
-
-        priceBadgeInsufficient: {
-            backgroundColor:
-                '#F3D7CF',
-
-            borderColor:
-                '#D29B8B',
-        },
+        priceBadgeInsufficient: {  },
 
         priceText: {fontFamily: ROYAL_FONT.body,
             color:
