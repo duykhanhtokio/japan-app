@@ -28,7 +28,7 @@ export default function RootLayout() {
     require('../../assets/app/home-cards/study-man.png'),
     require('../../assets/app/home-cards/conversation-three.png'),
     require('../../assets/app/home-cards/tokutei-engine-safety.png'),
-  ]).then(async assets=>{await CachedImage.prefetch(assets.slice(0,PAPER_FRAME_SLICES.length+OPEN_FRAME_SLICES.length+HUD_FRAME_SLICES.length+1).map(asset=>asset.localUri??asset.uri),{cachePolicy:'memory-disk'});}).catch(error=>console.log('Common artwork preload:',error)).finally(()=>{if(active)setArtworkReady(true)});return()=>{active=false};},[]);
+  ]).then(async assets=>{await CachedImage.prefetch(assets.map(asset=>asset.localUri??asset.uri),{cachePolicy:'memory-disk'});}).catch(error=>console.log('Common artwork preload:',error)).finally(()=>{if(active)setArtworkReady(true)});return()=>{active=false};},[]);
   const [fontsLoaded, fontError] = useFonts({
     'RoyalSerifJP-SemiBold': require('../../assets/app/fonts/NotoSerifJP-SemiBold.ttf'),
     'RoyalSansJP-Medium': require('../../assets/app/fonts/NotoSansJP-Medium.ttf'),
@@ -41,7 +41,7 @@ export default function RootLayout() {
   return (
     <LanguageProvider>
       <OnboardingMusic />
-      <Stack screenOptions={{ headerShown: false, animation: 'none', freezeOnBlur: true, contentStyle: { backgroundColor: '#142847' } }} />
+      <Stack screenOptions={{ headerShown: false, animation: 'none', freezeOnBlur: true, contentStyle: { backgroundColor: '#1e140c' } }} />
     </LanguageProvider>
   );
 }
