@@ -57,7 +57,7 @@ function DialogueScreen({id}:{id?:string}){
  const abortListening=speech.abortListening;
  const heardNpcIds=useRef(new Set<string>());
  const playerTurn=turn?.speaker==='PLAYER'?turn:null;
- const turnMotion=useRef(new NativeAnimated.Value(0)).current;
+ const turnMotion=useRef(new NativeAnimated.Value(1)).current;
  const transitionBusy=useRef(false);
  const [transitioning,setTransitioning]=useState(false);
  const advanceTurn=useCallback((next:number)=>{
@@ -66,14 +66,11 @@ function DialogueScreen({id}:{id?:string}){
   setTransitioning(true);
   abortListening();
   void Speech.stop();
-  NativeAnimated.timing(turnMotion,{toValue:-1,duration:220,useNativeDriver:true}).start(({finished})=>{
-   if(!finished)return;
-   setIndex(Math.max(0,Math.min(turns.length-1,next)));
-   turnMotion.setValue(1);
-   NativeAnimated.timing(turnMotion,{toValue:0,duration:220,useNativeDriver:true}).start(()=>{
-    transitionBusy.current=false;
-    setTransitioning(false);
-   });
+  turnMotion.setValue(0);
+  setIndex(Math.max(0,Math.min(turns.length-1,next)));
+  NativeAnimated.timing(turnMotion,{toValue:1,duration:320,useNativeDriver:true}).start(()=>{
+   transitionBusy.current=false;
+   setTransitioning(false);
   });
  },[abortListening,index,turnMotion,turns.length]);
  useEffect(()=>()=>turnMotion.stopAnimation(),[turnMotion]);
@@ -127,16 +124,14 @@ function DialogueScreen({id}:{id?:string}){
  const missionLines=copyLines(mission,missionWidth,missionFont);
  const headerHeight=insets.top+ROYAL_PLACEMENT.headerTop+44+4+12+(wide?20:36)+missionLines*missionLine;
  const conversationTop=Math.max(headerHeight+8,npcWaist);
- const visiblePanels=[turn];
+ const visiblePanels=turns.slice(Math.max(0,index-1),index+1);
  const availableHeight=Math.max(0,stageSize.height-conversationTop-controlsBottom-dockReserve);
- const panelWeight=(panel:typeof turn)=>{const hint=hintStages[panel.id]??0;const text=panel.speaker==='NPC'?(panel.npc?.textJa??'')+(hint>0?(panel.npc?.translations?.[language]??panel.npc?.translationVi??''):''):hint===1?(panel.player?getPlayerNativeHint(panel.player,language):'')??'':hint===2?panel.player?.recommendedAnswerJa??'':'';return Math.max(50,text.length+(panel.speaker!=='NPC'?speech.transcript.length:0));};
- const totalWeight=visiblePanels.reduce((sum,panel)=>sum+panelWeight(panel!),0)||1;
+ const slotHeight=Math.max(0,(availableHeight-40)/2);
  const renderPanel=(panel:typeof turn,context=false)=>{
   const isNpc=panel.speaker==='NPC',showText=context||revealedTurnIds.has(panel.id),hintStage=hintStages[panel.id]??0;
   const npcText=showText?panel.npc?.textJa??'':(panel.npc?.textJa??'').slice(0,spokenLengths[panel.id]??0);
   const npcTranslation=panel.npc?.translations?.[language]??(language==='vi'?panel.npc?.translationVi:null);
-  const weight=panelWeight(panel);
-  const budgetHeight=availableHeight*(.3/Math.max(1,visiblePanels.length)+.7*weight/totalWeight);
+  const budgetHeight=slotHeight;
   const copyWidth=Math.max(80,(wide?stageSize.width*.46:stageSize.width-20)-56);
   const fullNpc=panel.npc?.textJa??'';
   const panelCopy=isNpc?fullNpc:hintStage===1?(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language]:hintStage===2?panel.player?.recommendedAnswerJa??'':'';
@@ -163,12 +158,17 @@ function DialogueScreen({id}:{id?:string}){
  return <ImageBackground key={location?.id} source={background} resizeMode="cover" style={s.screen}><View style={s.safe}>
   <View style={[s.header,{paddingTop:insets.top+ROYAL_PLACEMENT.headerTop}]}><View style={s.headerRow}><RoyalBackButton onPress={()=>router.back()}/><View style={s.headerTitle}><View style={s.titleRow}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.title}>{location?displayLocationNameJa(location.nameJa,location.category):'会話練習'}</Text></View></View></View><View style={[s.missionCard,wide&&s.missionCardWide]}><RoyalNavyFrame style={s.missionLabel}><Text style={s.missionLabelText}>課題</Text></RoyalNavyFrame><RoyalReadingFrame explanation style={wide?{paddingVertical:10}:undefined}><Text maxFontSizeMultiplier={1} style={[s.missionText,{color:ROYAL.paleGold},wide&&{fontSize:12,lineHeight:16}]}>{mission}</Text></RoyalReadingFrame></View></View>
   <View testID="dialogue-npc" pointerEvents="none" style={[s.npcLayer,{left:stageSize.width*(wide?.02:.03),top:stageSize.height-controlsBottom-npcBoxHeight,width:npcBoxWidth,height:npcBoxHeight}]}><Image key={location?.category} fadeDuration={0} source={npcImage} resizeMode="contain" style={s.npcImage}/></View>
-  <NativeAnimated.View testID="dialogue-panels" pointerEvents={transitioning?'none':'auto'} style={[s.conversation,{top:conversationTop,bottom:controlsBottom+dockReserve,opacity:turnMotion.interpolate({inputRange:[-1,0,1],outputRange:[0,1,0]}),transform:[{translateY:turnMotion.interpolate({inputRange:[-1,0,1],outputRange:[-72,0,72]})}]},wide&&s.conversationWide]}>
-   {renderPanel(turn)}
-  </NativeAnimated.View>
+  <View testID="dialogue-panels" pointerEvents={transitioning?'none':'auto'} style={[s.conversation,{top:conversationTop,bottom:controlsBottom+dockReserve,overflow:'hidden'},wide&&s.conversationWide]}>
+   {visiblePanels.map((panel,slot)=>{
+    const previous=visiblePanels.length===2&&slot===0;
+    return <NativeAnimated.View key={panel.id} style={{position:'absolute',left:0,right:0,top:previous?0:slotHeight+16,transform:[{translateY:turnMotion.interpolate({inputRange:[0,1],outputRange:[slotHeight+16,0]})}]}}>
+     {renderPanel(panel,previous)}
+    </NativeAnimated.View>;
+   })}
+  </View>
   {playerTurn&&<View testID="dialogue-microphone" style={[s.microphoneDock,{bottom:controlsBottom+(wide?52:72),height:wide?44:48},wide&&s.conversationWide]}><PulsingMic disabled={transitioning||!speech.speechAvailable||(npcTurn&&!npcSpeechDone)} recording={speech.recognizing} onPress={()=>{if(speech.recognizing)speech.stopListening();else void speech.startListening()}}/></View>}
   <View style={[s.controls,{bottom:controlsBottom},wide&&s.controlsWide]}><RoyalButton contentStyle={wide?{paddingVertical:4}:undefined} disabled={transitioning||index===0} onPress={()=>move(index-1)} style={[s.control,wide&&{height:44,minHeight:44}]}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.controlText}>前へ</Text></RoyalButton><RoyalButton contentStyle={wide?{paddingVertical:4}:undefined} disabled={transitioning||finishing||(npcTurn&&!npcSpeechDone)} onPress={()=>index+1<turns.length?move(index+1):finish()} style={[s.control,wide&&{height:44,minHeight:44}]}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.controlText}>{index+1<turns.length?'次へ':finishing?'保存中…':npcTurn&&!npcSpeechDone?'再生中…':'終了'}</Text></RoyalButton></View>
-  <NpcRewardModal visible={rewardVisible} category={rewardCategory} progress={rewardProgress} isUnlock={isUnlock} onClose={()=>{if(scenario.locationId)router.dismissTo(`/world/location/${scenario.locationId}`);else router.back()}}/>
+  {rewardVisible&&<NpcRewardModal visible={rewardVisible} category={rewardCategory} progress={rewardProgress} isUnlock={isUnlock} onClose={()=>{if(scenario.locationId)router.dismissTo(`/world/location/${scenario.locationId}`);else router.back()}}/>}
  </View></ImageBackground>
 }
 
