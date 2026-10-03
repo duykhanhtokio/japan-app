@@ -134,15 +134,9 @@ export default function CropCarePanel({
                             styles.iconCircle
                         }
                     >
-                        <Text
-                            style={
-                                styles.icon
-                            }
-                        >
-                            {
-                                content.icon === "🌾" ? <FarmAreaIcon name="rice" size={40}/> : content.icon
-                            }
-                        </Text>
+                        {careType === 'feed'
+                            ? <FarmAreaIcon name="rice" size={40} />
+                             : null}
                     </View>
 
                     <Text
@@ -180,13 +174,11 @@ export default function CropCarePanel({
                             )
                         }
                     ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
-                        <Text
-                            style={
-                                styles.actionIcon
-                            }
-                        >
-                            💧
-                        </Text>
+                        <View style={{width: careType === 'feed' ? 42 : 0, alignItems: 'center'}}>
+                            {careType === 'feed'
+                                ? <FarmAreaIcon name="rice" size={27} />
+                                : null}
+                        </View>
 
                         <View
                             style={
@@ -227,13 +219,7 @@ export default function CropCarePanel({
                             )
                         }
                     ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
-                        <Text
-                            style={
-                                styles.actionIcon
-                            }
-                        >
-                            ⚡
-                        </Text>
+
 
                         <View
                             style={
@@ -274,13 +260,7 @@ export default function CropCarePanel({
                             )
                         }
                     ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
-                        <Text
-                            style={
-                                styles.actionIcon
-                            }
-                        >
-                            📺
-                        </Text>
+
 
                         <View
                             style={
@@ -367,37 +347,6 @@ const styles =
             paddingBottom:
                 18,
 
-            borderRadius:
-                24,
-
-            borderWidth:
-                3,
-
-            borderColor:
-                '#B77A2C',
-
-            backgroundColor:
-                '#FFF8E8',
-
-            shadowColor:
-                '#000000',
-
-            shadowOffset: {
-                width:
-                    0,
-
-                height:
-                    6,
-            },
-
-            shadowOpacity:
-                0.25,
-
-            shadowRadius:
-                10,
-
-            elevation:
-                10,
         },
 
         iconCircle: {
@@ -416,17 +365,6 @@ const styles =
             justifyContent:
                 'center',
 
-            borderRadius:
-                32,
-
-            backgroundColor:
-                '#EAF5D5',
-
-            borderWidth:
-                2,
-
-            borderColor:
-                '#9ABB63',
         },
 
         icon: {

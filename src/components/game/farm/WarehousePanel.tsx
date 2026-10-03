@@ -2,6 +2,7 @@ import FarmAreaIcon from './FarmAreaIcon';
 import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
 import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import {
+    Image,
     Modal,
     Pressable,
     ScrollView,
@@ -426,7 +427,7 @@ function ShopPreview() {
                             </Text>
                         </View>
 
-                        <View
+                        <RoyalContentPanel
                             style={
                                 styles.quantity
                             }
@@ -450,21 +451,22 @@ function ShopPreview() {
                             >
                                 ＋
                             </Text>
-                        </View>
+                        </RoyalContentPanel>
 
-                        <View
+                        <RoyalContentPanel
                             style={
                                 styles.price
                             }
                         >
+                            <Image source={require('../../../../assets/app/ui/royal-af/hud-coin-v1.png')} resizeMode="contain" style={{width:20,height:20}} />
                             <Text
                                 style={
                                     styles.priceText
                                 }
                             >
-                                🪙 {price}
+                                {price}
                             </Text>
-                        </View>
+                        </RoyalContentPanel>
                     </RoyalContentPanel>
                 )
             )}
@@ -846,32 +848,8 @@ const styles =
         },
 
         quantity: {
-            width:
-                76,
-
-            height:
-                34,
-
-            flexDirection:
-                'row',
-
-            alignItems:
-                'center',
-
-            justifyContent:
-                'space-around',
-
-            borderRadius:
-                9,
-
-            borderWidth:
-                1,
-
-            borderColor:
-                '#C89C4E',
-
-            backgroundColor:
-                '#142847',
+            width: 76, minHeight: 34, paddingHorizontal: 8, paddingVertical: 6,
+            flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around',
         },
 
         quantityValue: {
@@ -881,47 +859,13 @@ const styles =
         },
 
         plus: {
-            fontFamily: ROYAL_FONT.body,
-            color:
-                '#142847',
-
-            backgroundColor:
-                '#459A26',
-
-            padding:
-                5,
-
-            borderRadius:
-                5,
-
-            fontWeight:
-                '900',
+            fontFamily: ROYAL_FONT.body, color: '#142847', fontWeight: '900',
         },
 
         price: {
-            minWidth:
-                73,
-
-            marginLeft:
-                7,
-
-            paddingHorizontal:
-                7,
-
-            paddingVertical:
-                9,
-
-            borderRadius:
-                10,
-
-            backgroundColor:
-                '#FFB91F',
-
-            borderWidth:
-                2,
-
-            borderColor:
-                '#DD8A0D',
+            minWidth: 73, minHeight: 34, marginLeft: 7,
+            paddingHorizontal: 8, paddingVertical: 6,
+            flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 3,
         },
 
         priceText: {

@@ -17,7 +17,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import BottomNav from '@/components/app/BottomNav';
 import GameHeader from '@/components/app/GameHeader';
 import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
-import { ROYAL_LAYOUT, ROYAL_FONT, RoyalNavyFrame } from '@/components/ui/RoyalSurface';
+import { ROYAL_LAYOUT, ROYAL_FONT } from '@/components/ui/RoyalSurface';
 import { useUserProfile } from '@/hooks/useUserProfile';
 import { getGameProgress } from '@/services/progress-storage';
 import { getJlptProgress } from '@/services/jlpt-progress-storage';
@@ -469,8 +469,8 @@ const styles =
         helpGlyph:{color:'#263b55',fontSize:24,fontWeight:'700',lineHeight:30},
         helpBackdrop:{flex:1,justifyContent:'center',padding:20,backgroundColor:'rgba(4,15,31,.65)'},
         helpPanel:{maxHeight:'80%',maxWidth:560,width:'100%',alignSelf:'center',backgroundColor:'#fff8e8',borderWidth:3,borderColor:'#c9a361',borderRadius:22,padding:18},
-        helpContent:{gap:15,paddingBottom:12},helpTitle:{fontSize:22,fontWeight:'700',color:'#193551',textAlign:'center'},helpCopy:{fontSize:16,lineHeight:25,color:'#23384d'},
-        helpClose:{minHeight:48,alignItems:'center',justifyContent:'center',backgroundColor:'#223d5b',borderRadius:12},helpCloseText:{color:'#fff8e8',fontSize:17},
+        helpContent:{gap:15,paddingBottom:12},helpTitle:{fontFamily:ROYAL_FONT.heading,fontSize:22,fontWeight:'700',color:'#193551',textAlign:'center'},helpCopy:{fontSize:16,lineHeight:25,color:'#23384d'},
+        helpClose:{minHeight:48,alignItems:'center',justifyContent:'center',backgroundColor:'#223d5b',borderRadius:12},helpCloseText:{fontFamily:ROYAL_FONT.body,color:'#fff8e8',fontSize:17},
         background: {
             flex: 1,
             backgroundColor: '#e8e2d6',
@@ -588,6 +588,7 @@ const styles =
         },
 
         totalProgressTitle: {
+            fontFamily: ROYAL_FONT.body,
             color: '#50745c',
 
             fontSize: 13,
@@ -675,6 +676,7 @@ const styles =
         },
 
         levelTitleJa: {
+            fontFamily: ROYAL_FONT.body,
             color: '#24231f',
 
             fontSize: 17,
