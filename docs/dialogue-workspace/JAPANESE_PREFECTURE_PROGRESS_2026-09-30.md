@@ -166,3 +166,8 @@ Inashiki, Kasumigaura, Sakuragawa: 24 further individually authored Japanese dra
 ## Ibaraki full Japanese draft coverage — 2026-10-03
 
 PRF-008: 269/269 individually authored runtime exchanges and 1345 speaking goals. Source/canonical/runtime parity and structural coverage pass; all exact, normalized and near-duplicate screening groups are zero. No CONTENT PASS: final current-hash causal, location-role and closure review remains open. See content-qa/PRF-008_CHECKPOINT.md, PRF-008_CLUSTER_11_REVIEW.json and PRF-008_FINAL_REVIEW_QUEUE.json. Preserve other approved prefectures and UI; no translations or PRF-009 before the editorial gate.
+
+
+## Ibaraki final AI Japanese editorial decision — 2026-10-03
+
+PRF-008: AI CONTENT PASS for269current exchanges/1345speaking goals, hash-bound in content-qa/PRF-008_SEMANTIC_REVIEW.json. Current source/runtime/canonical parity verified. Fourteen explicit pairs, eleven legacy groups and broader motifs adjudicated; seven last-stage full replacements remove repeated causal sequences. Twelve changed historical causal hashes fully reread. No native/translation/location-policy/device approval; selected prior-prefecture comparisons are not an exhaustive read of all prior corpus. Preserve all UI and other prefectures. Next PRF-009 after remote persistence; translations remain deferred until all Japanese prefectures complete.
