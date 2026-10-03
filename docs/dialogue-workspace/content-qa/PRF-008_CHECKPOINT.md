@@ -68,3 +68,8 @@ Read 95 current full exchanges with all five goals across 36 selected comparison
 ### Final causal review batch 01 — 2026-10-03
 
 Read the full 11 turns and five goals of 61 current scripts: Mito 21, Tsukuba/Hitachi/Tsuchiura/Bando/Koga eight each. Hitachi bill wording now limits “only tea” to drinks. Hitachiota municipal forgotten-copy plot replaced with native-language explanatory-note clarification; its previous Kamaishi overlap is resolved by a new five-task trajectory. Runtime hashes are recorded in PRF-008_FINAL_BATCH_01_2026-10-03.json. CONTENT PASS remains false; remaining 208 scripts and cross-prefecture semantic reconciliation are pending.
+
+
+### Final causal review batch 02 — 2026-10-03
+
+Read all 11 turns and five goals for Ishioka and Yuki, 16 additional scripts (77/269 in this causal pass). Repaired Ishioka photo numbering so a numbered closed sleeve stays with each photograph and matches its explanatory sheet after shuffling. Removed the NPC learning-only-shop aside. CONTENT PASS remains false; 192 causal reads and cross-prefecture reconciliation remain.
