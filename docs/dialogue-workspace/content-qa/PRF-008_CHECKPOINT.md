@@ -133,3 +133,8 @@ Full eleven-turn/five-goal reads and selected cross-corpus comparisons for 37 ta
 ### Systematic semantic continuation — Kamisu, Namegata, Hokota
 
 24 additional full scripts and selected comparisons in PRF-008_SEMANTIC_KAMISU_NAMEGATA_HOKOTA_2026-10-03.json. Coverage253/269;16 remaining. No runtime edits. Missed-departure recovery, balance/transaction-field correction, recipe small-container and freezer-limit selection sequences remain open for synthesis. Prior pairs preserved. CONTENT PASS false; no PRF-009 or translations. Persist and verify before advancing.
+
+
+### Systematic semantic coverage complete — Tsukubamirai, Omitama
+
+Final16full scripts and selected comparisons in PRF-008_SEMANTIC_TSUKUBAMIRAI_OMITAMA_2026-10-03.json. Current target coverage269/269, unique269, target-hash mismatches0. Coverage reconciliation in PRF-008_SYSTEMATIC_SEMANTIC_COVERAGE_269_2026-10-03.json. Open semantic pairs: 14. No runtime edits in this unit. Ready-food preparation and own-container tare sequences newly retained for final decision; all previous pairs and broader motif synthesis remain open. Coverage completion is not CONTENT PASS. CONTENT PASS false; no PRF-009 or translations. Persist and verify before advancing.
