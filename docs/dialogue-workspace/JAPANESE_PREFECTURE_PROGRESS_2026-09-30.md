@@ -171,3 +171,8 @@ PRF-008: 269/269 individually authored runtime exchanges and 1345 speaking goals
 ## Ibaraki final AI Japanese editorial decision — 2026-10-03
 
 PRF-008: AI CONTENT PASS for269current exchanges/1345speaking goals, hash-bound in content-qa/PRF-008_SEMANTIC_REVIEW.json. Current source/runtime/canonical parity verified. Fourteen explicit pairs, eleven legacy groups and broader motifs adjudicated; seven last-stage full replacements remove repeated causal sequences. Twelve changed historical causal hashes fully reread. No native/translation/location-policy/device approval; selected prior-prefecture comparisons are not an exhaustive read of all prior corpus. Preserve all UI and other prefectures. Next PRF-009 after remote persistence; translations remain deferred until all Japanese prefectures complete.
+
+
+## Tochigi first authoring group — 2026-10-03
+
+Ibaraki 269-exchange AI CONTENT PASS remotely verified at 858fa7cf. Tochigi PRF-009: 37/125 individual Japanese drafts, 185 speaking goals (Utsunomiya 21, Nikko 8, Oyama 8); 88 old drafts remain. Two whole-plot replacements after selected full-dialogue comparison. Current source/runtime/canonical parity and identity/progression verified. Structural coverage 125/125, zero errors; 31 normalized groups and 88 near candidates remain in screening. No prefecture CONTENT PASS or translations. Open comparisons and current hashes: content-qa/PRF-009_CLUSTER_01_REVIEW.json. Next Ashikaga, Nasushiobara, Tochigi after remote persistence; whole-prefecture semantic review remains required. Preserve other changes and approved UI.
