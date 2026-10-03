@@ -146,3 +146,7 @@ Shimotsuma, Joso and Hitachiota: 24 additional individual Japanese drafts and 12
 ## Cluster 05 — 2026-10-03 (Asia/Tokyo)
 
 Takahagi, Kitaibaraki, Kasama: 24 further individual Japanese drafts and 120 goals. Total 133/269 drafts, 665 goals; 136 old drafts remain. Five full causal replacements after reading 23 complete prior candidates and screening 1110 prior authored scripts. Structural audit covers all 269 slots without errors or exact dialogue/task/answer/title collisions; 29 normalized groups and 332 near candidates remain in screening. Review scope, hashes and open conceptual comparisons: PRF-008_CLUSTER_05_REVIEW.json. Initial retrieval: PRF-008_CLUSTER_05_CANDIDATES.json. No CONTENT PASS, native certification or translation. Next Toride, Ushiku, Hitachinaka in canonical city order after remote persistence.
+
+## Cluster 06 — 2026-10-03 (Asia/Tokyo)
+
+Toride, Ushiku, Hitachinaka: 24 additional individual Japanese drafts, 120 goals. Total 157/269 drafts, 785 goals; 112 old drafts remain. Three full replacements after reading 23 complete lexical candidates and screening 1134 prior authored scripts. All 269 slots covered with zero structural errors and zero exact dialogue/task/answer/title collisions. Evidence and open conceptual comparisons: PRF-008_CLUSTER_06_REVIEW.json; initial retrieval PRF-008_CLUSTER_06_CANDIDATES.json. No CONTENT PASS, native certification or translation. Next Kashima, Itako, Moriya after remote persistence.
