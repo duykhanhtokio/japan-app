@@ -1,4 +1,3 @@
-import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import {
@@ -20,7 +19,9 @@ import {
     View,
 } from 'react-native';
 
-
+import {
+    SafeAreaView,
+} from 'react-native-safe-area-context';
 
 import GameRecordButton from '@/components/game/GameRecordButton';
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
@@ -530,7 +531,7 @@ export default function MissionScreen() {
                     }
                 >
                     {backgroundSource ? (
-                        <ImageBackground localScene
+                        <ImageBackground
                             source={
                                 backgroundSource
                             }

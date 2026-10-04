@@ -1,4 +1,3 @@
-import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import { replacePrepared } from '@/components/ui/prepareSceneRoute';
 import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import { prepareArtwork } from '@/components/ui/prepareArtwork';
@@ -31,7 +30,10 @@ import {
     useState,
 } from 'react';
 
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import {
+    SafeAreaView,
+    useSafeAreaInsets,
+} from 'react-native-safe-area-context';
 
 import CropCarePanel from '@/components/game/farm/CropCarePanel';
 

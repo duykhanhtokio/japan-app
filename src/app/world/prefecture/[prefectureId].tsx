@@ -1,9 +1,8 @@
-import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import { router, useLocalSearchParams } from 'expo-router';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { RoyalBackButton, RoyalCapsule, RoyalChevron, RoyalPlaceRow, RoyalTitlePanel, ROYAL, ROYAL_FONT, ROYAL_PLACEMENT, ROYAL_TEXT_FIT, resolveRoyalGrid, useRoyalPositioning } from '@/components/ui/RoyalSurface';
 import { cityImageById } from '@/components/world/city-images.generated';
 import { DepthPressable } from '@/components/world/WorldSurface';
@@ -28,7 +27,7 @@ export default function PrefectureScreen() {
   if (!prefecture) return <SafeAreaView style={s.empty}><Text>都道府県が見つかりません。</Text></SafeAreaView>;
   const totalLocations = cities.reduce((total, city) => total + getLifeLocationsByCity(city.id).length, 0);
 
-  return <ImageBackground sceneBackdrop source={cities[0] ? cityImageById[cities[0].id] : undefined} resizeMode="cover" blurRadius={10} style={s.screen}>
+  return <ImageBackground source={cities[0] ? cityImageById[cities[0].id] : undefined} resizeMode="cover" blurRadius={10} style={s.screen}>
 
     <SafeAreaView style={s.safe}>
       <WorldTitleHeader title={prefecture.nameJa} subtitle={`${cities.length}都市・全${totalLocations}か所`} onBack={() => router.back()}/>

@@ -1,11 +1,10 @@
-import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import JlptStudyBackground from '@/components/jlpt/JlptStudyBackground';
 import { generatedVocabulary } from '@/data/jlpt-learning';
 import { getJlptProgress, toggleLearnedId } from '@/services/jlpt-progress-storage';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { RoyalBackButton, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
 export default function VocabularyDetailScreen(){
  const p=useLocalSearchParams(); const id=Array.isArray(p.wordId)?p.wordId[0]:p.wordId; const word=generatedVocabulary.find(x=>x.id===id); const [learned,setLearned]=useState(false);

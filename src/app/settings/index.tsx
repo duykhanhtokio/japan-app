@@ -1,4 +1,3 @@
-import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import {
     router,
 } from 'expo-router';
@@ -13,7 +12,9 @@ import {
     View,
 } from 'react-native';
 
-
+import {
+    SafeAreaView,
+} from 'react-native-safe-area-context';
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
 
 import {

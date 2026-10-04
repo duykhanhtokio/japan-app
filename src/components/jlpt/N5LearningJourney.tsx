@@ -1,4 +1,3 @@
-import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import { Text } from '@/components/app/LocalizedText';
 import { useAppLanguage } from '@/context/LanguageContext';
@@ -25,7 +24,7 @@ import {
     StyleSheet,
     View,
 } from 'react-native';
-
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRoyalPositioning } from '@/components/ui/RoyalPositioning';
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
 
@@ -314,7 +313,7 @@ export default function N5LearningJourney({ mode, onBack, onOpenCharacters }: Pr
         Speech.speak(text, { language: 'ja-JP', rate: 0.68 });
     }
 
-    return <ImageBackground sceneBackdrop source={require('../../../assets/app/backgrounds/n5-journey.png')} style={styles.background} resizeMode="cover">
+    return <ImageBackground source={require('../../../assets/app/backgrounds/n5-journey.png')} style={styles.background} resizeMode="cover">
 
         <SafeAreaView style={styles.safe}>
             <ScrollView ref={scrollRef} contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>

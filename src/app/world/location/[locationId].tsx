@@ -1,9 +1,8 @@
-import { LegacySafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useMemo, useState } from 'react';
-import { Modal, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Modal, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { sceneForCategory } from '@/components/world/life-assets';
 import { locationBackground } from '@/components/world/location-backgrounds.generated';
 import { categoryLabelJa, displayLocationNameJa } from '@/components/world/world-ja';
@@ -29,7 +28,7 @@ export default function LocationScreen(){
  useEffect(()=>{if(!id)return;let active=true;setSelectedId(null);void nextLocationScenario(id,scenarios.map(x=>x.id)).then(next=>{if(active)setSelectedId(next)});return()=>{active=false}},[id,scenarios]);
  if(!location)return <SafeAreaView style={s.empty}><Text>ロケーションが見つかりません。</Text></SafeAreaView>;
  const activeScenario=scenarios.find(x=>x.id===selectedId),bg=locationBackground(location.id,location.category)??sceneForCategory(location.category),wide=royalPosition.isWide;
- return <ImageBackground sceneBackdrop source={bg} resizeMode="cover" style={s.screen}><SafeAreaView style={s.safe}>
+ return <ImageBackground source={bg} resizeMode="cover" style={s.screen}><SafeAreaView style={s.safe}>
   <View style={s.header}><RoyalBackButton onPress={()=>router.back()}/><View style={s.heading}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.kicker}>会話練習・{categoryLabelJa(location.category)}</Text><Text {...ROYAL_TEXT_FIT} numberOfLines={2} style={s.title}>{displayLocationNameJa(location.nameJa,location.category)}</Text><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.subtitle}>今回の課題</Text></View></View>
   <ScrollView contentContainerStyle={[s.content,wide&&s.contentWide]} showsVerticalScrollIndicator={false}>
    <RoyalButton onPress={()=>setGuideVisible(true)} compact style={s.guideButton}><Text style={s.playText}>会話の進め方</Text></RoyalButton>

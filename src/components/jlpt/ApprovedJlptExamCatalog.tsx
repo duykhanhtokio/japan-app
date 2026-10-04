@@ -1,5 +1,4 @@
-import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
-
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import JlptStudyBackground from './JlptStudyBackground';
 import { useEffect, useMemo, useRef, useState } from 'react';

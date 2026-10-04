@@ -1,4 +1,3 @@
-import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import { replacePrepared } from '@/components/ui/prepareSceneRoute';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
@@ -41,7 +40,9 @@ import {
     View,
 } from 'react-native';
 
-
+import {
+    SafeAreaView,
+} from 'react-native-safe-area-context';
 import { RoyalBackButton, RoyalButton, RoyalNavyFrame, ROYAL_LAYOUT, ROYAL, ROYAL_FONT } from '@/components/ui/RoyalSurface';
 import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 
@@ -1426,7 +1427,7 @@ export default function WorkConversationScreen() {
      */
 
     return (
-        <ImageBackground sceneBackdrop source={operationCode?.startsWith('1-')?require('../../../../assets/game/farm/background/vegetable_map_background_v2.png'):require('../../../../assets/app/life/location-backgrounds/construction-site/01-clear-morning.jpg')} resizeMode="cover" style={{flex:1}}><SafeAreaView
+        <ImageBackground source={operationCode?.startsWith('1-')?require('../../../../assets/game/farm/background/vegetable_map_background_v2.png'):require('../../../../assets/app/life/location-backgrounds/construction-site/01-clear-morning.jpg')} resizeMode="cover" style={{flex:1}}><SafeAreaView
             style={[styles.container,{backgroundColor:'transparent'}]}
             edges={[
                 'top',

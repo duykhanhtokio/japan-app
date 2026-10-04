@@ -1,4 +1,3 @@
-import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import {
     useCallback,
     useMemo,
@@ -20,7 +19,9 @@ import {
     useFocusEffect,
 } from 'expo-router';
 
-
+import {
+    SafeAreaView,
+} from 'react-native-safe-area-context';
 
 import BottomNav from '@/components/app/BottomNav';
 

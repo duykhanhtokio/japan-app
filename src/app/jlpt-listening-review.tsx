@@ -1,4 +1,3 @@
-import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import { useEffect, useState } from 'react';
 import { useLocalSearchParams, useRouter } from 'expo-router';
@@ -7,7 +6,7 @@ import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-
 import { REVIEW_SOURCES, type ReviewSource } from '@/data/jlpt-official/n4-n5-listening-review-sources';
 import { loadListeningSegmentCorrection, saveListeningSegmentCorrection } from '@/services/jlpt-listening-segment-review';
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
-
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const time = (milliseconds: number) => (milliseconds / 1000).toFixed(1);
 const milliseconds = (value: string) => Math.round(Number(value.replace(',', '.')) * 1000);

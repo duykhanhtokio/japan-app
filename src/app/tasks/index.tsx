@@ -1,4 +1,3 @@
-import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
@@ -14,7 +13,9 @@ import {
     type ImageSourcePropType,
 } from 'react-native';
 
-
+import {
+    SafeAreaView,
+} from 'react-native-safe-area-context';
 
 import BottomNav from '@/components/app/BottomNav';
 import GameHeader from '@/components/app/GameHeader';

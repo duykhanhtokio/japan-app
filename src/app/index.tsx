@@ -1,6 +1,3 @@
-import { useSceneBackdrop } from '@/components/ui/SceneBackdropContext';
-import DisplayedArtwork from '@/components/ui/DisplayedArtwork';
-import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import { useIsFocused } from '@react-navigation/native';
 import { Redirect, router } from 'expo-router';
@@ -15,7 +12,7 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ROYAL_FONT, useRoyalPositioning } from '@/components/ui/RoyalSurface';
 import { DEVELOPMENT_FEATURES } from '@/config/development-features';
 
@@ -187,17 +184,18 @@ function WelcomeContent() {
     return () => { cameraMove.stop(); buttonPulse.stop(); };
   }, [camera, pulse, focused]);
 
-  const welcomeArtwork = useMemo(() => ({ source: background, animated: true, contentFit: 'cover' as const,
-    style: [styles.backgroundContain, { transform: [
-      { scale: camera.interpolate({ inputRange: [0, 1], outputRange: [1.008, 1.02] }) },
-      { translateY: camera.interpolate({ inputRange: [0, 1], outputRange: [1.5, -1.5] }) },
-    ] }],
-  }), [background, camera]);
-  const managedWelcome = useSceneBackdrop(welcomeArtwork, true);
-
   return (
     <View style={styles.screen}>
-      {focused && !managedWelcome && <DisplayedArtwork {...welcomeArtwork} />}
+      {focused && <Animated.Image
+        source={background}
+        resizeMode="cover"
+        style={[styles.backgroundContain, {
+          transform: [
+            { scale: camera.interpolate({ inputRange: [0, 1], outputRange: [1.008, 1.02] }) },
+            { translateY: camera.interpolate({ inputRange: [0, 1], outputRange: [1.5, -1.5] }) },
+          ],
+        }]}
+      />}
 
       <View pointerEvents="none" style={StyleSheet.absoluteFill}>
         {focused && PETALS.map((petal, index) => <FallingPetal key={index} {...petal} />)}

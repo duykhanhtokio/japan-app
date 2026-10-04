@@ -1,4 +1,3 @@
-import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { Text } from '@/components/app/LocalizedText';
 import JmdictProvider from '@/components/jmdict/JmdictProvider';
@@ -17,7 +16,7 @@ import { ActivityIndicator,
     StyleSheet,
     View,
 } from 'react-native';
-
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const POS: Record<string,string> = {n:'Danh từ',adj_i:'Tính từ い',adj_na:'Tính từ な',adv:'Trạng từ',exp:'Cụm từ',prt:'Trợ từ',v1:'Động từ nhóm 2',v5u:'Động từ nhóm 1',v5k:'Động từ nhóm 1',v5g:'Động từ nhóm 1',v5s:'Động từ nhóm 1',v5t:'Động từ nhóm 1',v5n:'Động từ nhóm 1',v5b:'Động từ nhóm 1',v5m:'Động từ nhóm 1',v5r:'Động từ nhóm 1',vs:'Động từ する',vk:'Động từ 来る'};
 

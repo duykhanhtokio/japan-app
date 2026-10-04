@@ -1,4 +1,3 @@
-import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import { router } from 'expo-router';
@@ -17,7 +16,7 @@ import {
     View,
 } from 'react-native';
 
-
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { SakuraPetalField } from '@/components/ui/SakuraPetalField';
 import { RoyalBackButton, RoyalButton, RoyalChevron, RoyalField, RoyalOptionRow, RoyalSelectionMark, RoyalSelectionPanel, RoyalTitlePanel, ROYAL, ROYAL_CONTENT_GROUP, ROYAL_FONT, ROYAL_LAYOUT, ROYAL_PLACEMENT, ROYAL_TYPE, useRoyalPositioning } from '@/components/ui/RoyalSurface';
@@ -119,7 +118,7 @@ export default function RegisterScreen() {
     }
 
     return (
-        <ImageBackground sceneBackdrop
+        <ImageBackground
             source={require(
                 '../../assets/app/backgrounds/registration.png'
             )}

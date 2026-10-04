@@ -1,4 +1,3 @@
-import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { TextInput } from '@/components/app/LocalizedTextInput';
@@ -22,7 +21,7 @@ import { ActivityIndicator,
     StyleSheet,
     View,
 } from 'react-native';
-
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const PAGE_SIZE = 50;
 
