@@ -202,3 +202,10 @@ PRF-011 Saitama: 333/333 individual Japanese exchanges and 1665 speaking goals; 
 Source/runtime/canonical parity, one authoring owner per scenario, and preserved identity/order/next-link parity verified for all 333 against the recovered baseline. Dental goal alignment and final handoffs were repaired; two misplaced source entries were moved to the correct original city files. Evidence: content-qa/PRF-011_SEMANTIC_REVIEW.json, PRF-011_FINAL_COMPARISONS.json, PRF-011_SEMANTIC_CANDIDATES.json and PRF-011_JAPANESE_MASTER_LOCK.json. Earlier draft/pending review checkpoints are superseded by the final hash-bound decision.
 
 No native-speaker certification, new translations, UI modification, production deployment or device acceptance is implied. Next PRF-012 Chiba Japanese authoring only after verified remote WORK PERSISTENCE PASS. Continue whole-prefecture working units.
+
+
+## Chiba Japanese authoring checkpoint — 2026-10-04
+
+PRF-012 Chiba remains in progress: 85/309 individually authored Japanese drafts, 425 speaking goals, across 9/37 canonical cities. Source/runtime/override parity, unique source ownership and baseline identity/order/next-link parity pass for all 85. Selected full-exchange comparisons against prior corpus led to four whole-plot replacements; two related language skills retained distinct causal arcs. Retrieval scans 7128 runtimes for prioritization only. Evidence: content-qa/PRF-012_DRAFT_CHECKPOINT.json, PRF-012_REVIEW_CHECKPOINT.json and PRF-012_SEMANTIC_CANDIDATES.json.
+
+No prefecture CONTENT PASS, master lock, native review, new translations, production deployment or device acceptance is claimed. Continue with CTY-JP-12208 Noda and the remaining 224 scenarios, then finish whole-prefecture steps 1–10 before starting PRF-013. The prior 61-draft checkpoint was remote-verified with WORK PERSISTENCE PASS; this expanded checkpoint must pass the same persistence gate before advancing.
