@@ -1,3 +1,4 @@
+import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { router, useLocalSearchParams } from 'expo-router';
 import {
@@ -73,7 +74,7 @@ export default function LessonDetailScreen() {
                 <Pressable
                     style={styles.startButton}
                     onPress={() => {
-                        router.push({
+                        pushPrepared({
                             pathname: '/lesson/play/[lessonId]',
                             params: {
                                 lessonId: lesson.id,
@@ -116,7 +117,7 @@ export default function LessonDetailScreen() {
                                 key={word.id}
                                 style={styles.wordCard}
                                 onPress={() =>
-                                    router.push(
+                                    pushPrepared(
                                         `/${word.jlptLevel}/vocabulary/${word.id}`
                                     )
                                 }

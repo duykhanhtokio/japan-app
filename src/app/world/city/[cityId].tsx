@@ -1,3 +1,4 @@
+import { pushPrepared, replacePrepared } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
@@ -24,7 +25,7 @@ export default function CityScreen() {
 
   useEffect(() => {
     loadNpcCollection().then((state) => {
-      if (!state.starterCategoryId) router.replace('/npc-starter');
+      if (!state.starterCategoryId) replacePrepared('/npc-starter');
       else setUnlocked(state.unlockedCategoryIds);
     });
   }, []);
@@ -54,7 +55,7 @@ export default function CityScreen() {
           const category = normalizeNpcCategory(item.category);
           const categoryLabel = categoryLabelJa(item.category);
           const locked = !!category && !!unlocked && !unlocked.includes(category.id);
-          return <DepthPressable accessibilityLabel={displayLocationNameJa(item.nameJa,item.category)} onPress={() => { if (!locked) router.push(`/world/location/${item.id}`); }} style={[s.cardPress, { width: grid.cardWidth }]}>
+          return <DepthPressable accessibilityLabel={displayLocationNameJa(item.nameJa,item.category)} onPress={() => { if (!locked) pushPrepared(`/world/location/${item.id}`); }} style={[s.cardPress, { width: grid.cardWidth }]}>
             <RoyalLocationCard source={locationBackground(item.id,item.category) ?? sceneForCategory(item.category)} style={s.locationCard}>
               {locked && <View style={s.lockedShade} />}
               <RoyalCapsule label={categoryLabel} style={s.category} textStyle={{fontSize:Math.max(10,Math.min(15,Math.floor((grid.cardWidth*.82-32)/Array.from(categoryLabel).length))),lineHeight:18}} />

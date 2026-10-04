@@ -1,6 +1,6 @@
+import { replacePrepared } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
-import { router } from 'expo-router';
 import { useState } from 'react';
 import { FlatList, Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { npcCardById } from '@/components/world/npc-card-assets';
@@ -13,7 +13,7 @@ const cardFrame=require('../../assets/app/life/rewards/npc-card-frame-royal.png'
 
 export default function NpcStarterScreen(){
  const[saving,setSaving]=useState(false),royalPosition=useRoyalPositioning(),grid=resolveRoyalGrid(royalPosition.width,{phoneColumns:2,tabletColumns:4,desktopColumns:5,phoneInset:14,wideInset:14,gap:12}),station=NPC_CATEGORIES.find(item=>item.id==='station')??NPC_CATEGORIES[0];
- const start=async()=>{if(saving)return;setSaving(true);await chooseStarterNpc('station');router.replace('/home')};
+ const start=async()=>{if(saving)return;setSaving(true);await chooseStarterNpc('station');replacePrepared('/home')};
  return <RoyalPageBackground><View style={s.screen}><SafeAreaView style={s.safe}>
   <View style={s.header}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.kicker}>最初の相棒</Text><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.title}>最初の仲間</Text><Text {...ROYAL_TEXT_FIT} minimumFontScale={0.68} numberOfLines={3} style={s.guide}>{NPC_TEST_UNLOCK_ALL?'すべてのNPCで会話を試せます。':'駅員からスタートします。会話レッスンを達成すると、ほかのNPCカードが順番に解放されます。'}</Text></View>
   <FlatList initialNumToRender={Math.ceil(royalPosition.height/(grid.cardWidth/.667+12))*grid.columns} maxToRenderPerBatch={Math.ceil(royalPosition.height/(grid.cardWidth/.667+12))*grid.columns} updateCellsBatchingPeriod={0} data={NPC_CATEGORIES} numColumns={grid.columns} key={grid.columns} keyExtractor={item=>item.id} contentContainerStyle={[s.list,{paddingHorizontal:grid.horizontalInset}]} columnWrapperStyle={[s.row,{gap:grid.gap}]} renderItem={({item})=><View style={{width:grid.cardWidth}}><NpcStarterCard item={item} unlocked={NPC_TEST_UNLOCK_ALL||item.id==='station'}/></View>}/>

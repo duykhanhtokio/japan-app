@@ -1,6 +1,7 @@
+import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
-import { router, useFocusEffect } from 'expo-router';
+import { useFocusEffect } from 'expo-router';
 import { useCallback, useState } from 'react';
 import {
     Image,
@@ -543,7 +544,7 @@ export default function TasksScreen() {
                                         return;
                                     }
 
-                                    router.push(
+                                    pushPrepared(
                                         `/game/work/${workProfile.operationCode}` as any
                                     );
                                 }}

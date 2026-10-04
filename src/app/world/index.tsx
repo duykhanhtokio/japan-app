@@ -1,4 +1,4 @@
-import { router } from 'expo-router';
+import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 
 import ResponsiveWorldMap, { WorldMapItem } from '@/components/world/ResponsiveWorldMap';
 import { japanAssets, japanLandZones, japanRegions } from '@/data/world-map-config';
@@ -6,10 +6,10 @@ import { japanAssets, japanLandZones, japanRegions } from '@/data/world-map-conf
 export default function JapanWorldScreen() {
     const openRegion = (item: WorldMapItem) => {
         if (item.id === 'kansai') {
-            router.push('/world/kansai');
+            pushPrepared('/world/kansai');
             return;
         }
-        router.push(`/world/${item.id}` as never);
+        pushPrepared(`/world/${item.id}` as never);
     };
     return <ResponsiveWorldMap assets={japanAssets} items={japanRegions} landZones={japanLandZones} onItemPress={openRegion}
         regionLabel="地域を選択" title="日本地図"

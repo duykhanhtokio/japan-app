@@ -1,3 +1,4 @@
+import { replacePrepared } from '@/components/ui/prepareSceneRoute';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import {
@@ -1401,7 +1402,7 @@ export default function WorkConversationScreen() {
                             styles.finishButton
                         }
                         onPress={() => {
-                            router.replace(
+                            replacePrepared(
                                 '/tasks'
                             );
                         }}

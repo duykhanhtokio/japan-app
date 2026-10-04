@@ -1,3 +1,4 @@
+import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { router, useFocusEffect } from 'expo-router';
@@ -50,7 +51,7 @@ function ProfilePanel({children,style,kind='plain'}:PropsWithChildren<{style?:St
 
 export default function ProfileScreen() {
     const [detailsVisible,setDetailsVisible]=useState(false);
-    const navigate=(href:Parameters<typeof router.push>[0])=>{setDetailsVisible(false);router.push(href)};
+    const navigate=(href:Parameters<typeof router.push>[0])=>{setDetailsVisible(false);pushPrepared(href)};
     const [economy,setEconomy]=useState<LearningEconomy|null>(null);
     useFocusEffect(useCallback(()=>{let active=true;void syncJlptQualification().then(value=>{if(active)setEconomy(value)});return()=>{active=false}},[]));
     const {

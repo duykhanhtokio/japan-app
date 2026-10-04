@@ -1,6 +1,6 @@
+import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
-import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
 
 import {
@@ -191,7 +191,7 @@ export default function LearnScreen() {
             return;
         }
 
-        router.push(
+        pushPrepared(
             `/${item.level}`
         );
     }

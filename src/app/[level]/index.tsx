@@ -1,3 +1,4 @@
+import { pushPrepared, replacePrepared } from '@/components/ui/prepareSceneRoute';
 import JlptStudyBackground from '@/components/jlpt/JlptStudyBackground';
 import { router, useLocalSearchParams } from 'expo-router';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
@@ -40,7 +41,7 @@ export default function LevelScreen() {
     return (
         <JlptStudyBackground><SafeAreaView style={styles.container}>
             <View style={styles.content}>
-                <RoyalBackButton onPress={() => router.canGoBack() ? router.back() : router.replace('/learn')} />
+                <RoyalBackButton onPress={() => router.canGoBack() ? router.back() : replacePrepared('/learn')} />
 
                 <Text style={styles.level}>{levelName}</Text>
 
@@ -53,7 +54,7 @@ export default function LevelScreen() {
                 <ScrollView contentContainerStyle={styles.section} showsVerticalScrollIndicator={false}>
                     {isN5 && <Pressable
                         style={styles.card}
-                        onPress={() => router.push(`/${levelName}/characters`)}
+                        onPress={() => pushPrepared(`/${levelName}/characters`)}
                     >
                         <RoyalPaperPanel style={styles.paper}><View style={styles.cardRow}><Image source={require('../../../assets/app/ui/royal-af/learning-characters-v1.png')} resizeMode="contain" style={styles.cardIcon}/>
                         <View style={styles.cardCopy}>
@@ -68,7 +69,7 @@ export default function LevelScreen() {
                     <Pressable
                         style={styles.card}
                         onPress={() =>
-                            router.push(`/${levelName}/vocabulary`)
+                            pushPrepared(`/${levelName}/vocabulary`)
                         }
                     >
                         <RoyalPaperPanel style={styles.paper}><View style={styles.cardRow}><Image source={require('../../../assets/app/ui/royal-af/learning-vocabulary-v1.png')} resizeMode="contain" style={styles.cardIcon}/>
@@ -82,7 +83,7 @@ export default function LevelScreen() {
 
                     <Pressable
                         style={styles.card}
-                        onPress={() => router.push(`/${levelName}/grammar`)}
+                        onPress={() => pushPrepared(`/${levelName}/grammar`)}
                     >
                         <RoyalPaperPanel style={styles.paper}><View style={styles.cardRow}><Image source={require('../../../assets/app/ui/royal-af/learning-grammar-v1.png')} resizeMode="contain" style={styles.cardIcon}/>
                         <View style={styles.cardCopy}>
@@ -96,7 +97,7 @@ export default function LevelScreen() {
 
                     <Pressable
                         style={styles.card}
-                        onPress={() => router.push(`/${levelName}/test`)}
+                        onPress={() => pushPrepared(`/${levelName}/test`)}
                     >
                         <RoyalPaperPanel style={styles.paper}><View style={styles.cardRow}><Image source={require('../../../assets/app/ui/royal-af/learning-exam-v1.png')} resizeMode="contain" style={styles.cardIcon}/>
                         <View style={styles.cardCopy}>

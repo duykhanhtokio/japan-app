@@ -1,9 +1,10 @@
-import { Image as CachedImage } from 'expo-image';
+import { prepareArtwork } from '@/components/ui/prepareArtwork';
+import { prepareSceneRoute, cancelPreparedNavigation } from '@/components/ui/prepareSceneRoute';
+import { COMMON_UI_ARTWORK } from '@/components/ui/common-artwork';
 import { PAPER_FRAME_SLICES, OPEN_FRAME_SLICES, HUD_FRAME_SLICES } from '@/components/ui/RoyalPaperPanel';
 import { NAVY_FRAME_ART } from '@/components/ui/RoyalSurface';
-import { Asset } from 'expo-asset';
 import { useEffect, useState } from 'react';
-import { Stack, usePathname } from 'expo-router';
+import { Stack, usePathname, useNavigationContainerRef } from 'expo-router';
 import { AppBackdrop } from '@/components/ui/AppBackdrop';
 import * as SplashScreen from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
@@ -15,8 +16,11 @@ void SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const pathname = usePathname();
+  const navigation = useNavigationContainerRef();
+  useEffect(() => navigation.addListener('state', cancelPreparedNavigation), [navigation]);
   const [artworkReady,setArtworkReady]=useState(false);
-  useEffect(()=>{let active=true;void Asset.loadAsync([
+  useEffect(()=>{let active=true;void Promise.all([prepareSceneRoute(pathname), prepareArtwork([
+    ...COMMON_UI_ARTWORK,
     ...PAPER_FRAME_SLICES,...OPEN_FRAME_SLICES,...HUD_FRAME_SLICES,NAVY_FRAME_ART,
     require('../../assets/app/ui/royal-af/button-wide-v2.png'),
     require('../../assets/app/ui/royal-af/button-back-curved-a-v1.png'),
@@ -31,7 +35,7 @@ export default function RootLayout() {
     require('../../assets/app/home-cards/study-man.png'),
     require('../../assets/app/home-cards/conversation-three.png'),
     require('../../assets/app/home-cards/tokutei-engine-safety.png'),
-  ]).then(async assets=>{await CachedImage.prefetch(assets.map(asset=>asset.localUri??asset.uri),{cachePolicy:'memory-disk'});}).catch(error=>console.log('Common artwork preload:',error)).finally(()=>{if(active)setArtworkReady(true)});return()=>{active=false};},[]);
+  ])]).then(()=>{if(active)setArtworkReady(true)}).catch(error=>console.warn('Initial artwork preparation failed:',error));return()=>{active=false};},[]);
   const [fontsLoaded, fontError] = useFonts({
     'RoyalSerifJP-SemiBold': require('../../assets/app/fonts/NotoSerifJP-SemiBold.ttf'),
     'RoyalSansJP-Medium': require('../../assets/app/fonts/NotoSansJP-Medium.ttf'),

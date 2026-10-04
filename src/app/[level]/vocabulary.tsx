@@ -1,3 +1,4 @@
+import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import JlptStudyBackground from '@/components/jlpt/JlptStudyBackground';
 import { generatedVocabulary, isJlptLevel } from '@/data/jlpt-study-data';
@@ -15,7 +16,7 @@ export default function VocabularyScreen() {
   <Text style={s.level}>{level}</Text><Text style={s.title}>単語</Text><Text style={s.count}>{words.length} từ vựng</Text>
   <TextInput value={query} onChangeText={v=>{setQuery(v);setLimit(8);}} placeholder="Tra toàn bộ 8.350 từ: Nhật, cách đọc, nghĩa..." placeholderTextColor="#586373" selectionColor="#72501f" style={s.search}/>
   {!!query.trim()&&<Text style={s.searchNotice}>Đang tìm trong toàn bộ N5–N1 • {words.length} kết quả</Text>}
-  {words.slice(0,limit).map(x=><Pressable key={x.id} style={{marginBottom:12}} onPress={()=>router.push(`/${x.jlpt}/vocabulary/${x.id}`)}><RoyalContentPanel style={s.card}><View style={s.row}><View style={s.wordRow}><Text style={s.word}>{x.word}</Text><Text style={s.badge}>{x.jlpt}</Text></View><Text style={s.arrow}>›</Text></View><Text style={s.reading}>{x.reading}</Text><Text style={s.meaning}>{x.meaningVi}</Text>{!!x.exampleJa&&<View style={s.example}><Text style={{color:'#142847',fontFamily:ROYAL_FONT.body}}>{x.exampleJa}</Text><Text style={s.exampleVi}>{x.exampleVi}</Text></View>}</RoyalContentPanel></Pressable>)}
+  {words.slice(0,limit).map(x=><Pressable key={x.id} style={{marginBottom:12}} onPress={()=>pushPrepared(`/${x.jlpt}/vocabulary/${x.id}`)}><RoyalContentPanel style={s.card}><View style={s.row}><View style={s.wordRow}><Text style={s.word}>{x.word}</Text><Text style={s.badge}>{x.jlpt}</Text></View><Text style={s.arrow}>›</Text></View><Text style={s.reading}>{x.reading}</Text><Text style={s.meaning}>{x.meaningVi}</Text>{!!x.exampleJa&&<View style={s.example}><Text style={{color:'#142847',fontFamily:ROYAL_FONT.body}}>{x.exampleJa}</Text><Text style={s.exampleVi}>{x.exampleVi}</Text></View>}</RoyalContentPanel></Pressable>)}
   {limit<words.length&&<Pressable style={s.more} onPress={()=>setLimit(v=>v+PAGE_SIZE)}><Text style={s.moreText}>Xem thêm {PAGE_SIZE} từ</Text></Pressable>}
  </ScrollView></SafeAreaView></JlptStudyBackground>;
 }

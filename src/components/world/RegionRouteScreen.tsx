@@ -1,4 +1,4 @@
-import { router } from 'expo-router';
+import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import ResponsiveWorldMap, { WorldMapItem } from '@/components/world/ResponsiveWorldMap';
 import { RegionMapId, regionLandZones, regionMaps } from '@/data/world-map-config';
 import { regionLabelJa } from '@/components/world/world-ja';
@@ -14,7 +14,7 @@ export default function RegionRouteScreen({ region }: { region: RegionMapId }) {
     const config = regionMaps[region];
     const handlePress = (item: WorldMapItem) => {
         const prefectureId = prefectureIds[item.id];
-        if (prefectureId) router.push(`/world/prefecture/${prefectureId}`);
+        if (prefectureId) pushPrepared(`/world/prefecture/${prefectureId}`);
     };
     return <ResponsiveWorldMap assets={config.assets} items={config.items} landZones={regionLandZones[region]} onItemPress={handlePress}
         regionLabel="都道府県を選択" title={`${regionLabelJa(region)}地方`}

@@ -1,3 +1,4 @@
+import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { router, useLocalSearchParams } from 'expo-router';
 import {
@@ -111,7 +112,7 @@ export default function IndustryScreen() {
                             pressed && styles.cardPressed,
                         ]}
                         onPress={() => {
-                            router.push({
+                            pushPrepared({
                                 pathname: '/module/[moduleId]',
                                 params: {
                                     moduleId: module.id,

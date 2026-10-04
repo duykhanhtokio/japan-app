@@ -1,3 +1,4 @@
+import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { useCallback, useState } from 'react';
@@ -188,7 +189,7 @@ export default function ModuleScreen() {
                                     styles.cardPressed,
                                 ]}
                                 onPress={() => {
-                                    router.push({
+                                    pushPrepared({
                                         pathname:
                                             '/lesson/[lessonId]',
                                         params: {

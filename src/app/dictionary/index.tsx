@@ -1,3 +1,4 @@
+import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { TextInput } from '@/components/app/LocalizedTextInput';
 import {
@@ -79,7 +80,7 @@ function DictionaryContent() {
                 onEndReached={() => { if (hasMore && !loading) void load(false); }}
                 onEndReachedThreshold={0.5}
                 renderItem={({ item }) => (
-                    <Pressable style={s.card} onPress={() => router.push(`/dictionary/${item.seq}`)}>
+                    <Pressable style={s.card} onPress={() => pushPrepared(`/dictionary/${item.seq}`)}>
                         <View style={s.wordLine}>
                             <Text style={s.word}>{item.headword}</Text>
                             {!!item.common && <Text style={s.common}>COMMON</Text>}

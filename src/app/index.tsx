@@ -1,3 +1,4 @@
+import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import { useIsFocused } from '@react-navigation/native';
 import { Redirect, router } from 'expo-router';
 import { useEffect, useMemo, useRef } from 'react';
@@ -208,7 +209,7 @@ function WelcomeContent() {
       </SafeAreaView>
 
       <View style={[styles.bottomArea, { width: startWidth, left: startLeft, bottom: insets.bottom + (isLandscape ? 6 : 22) }]}>
-        <Pressable onPress={() => router.push('/portal')} style={({ pressed }) => [styles.startHitbox, pressed && styles.pressed]}>
+        <Pressable onPress={() => pushPrepared('/portal')} style={({ pressed }) => [styles.startHitbox, pressed && styles.pressed]}>
           <Animated.View style={[styles.startPulse, {
             opacity: pulse.interpolate({ inputRange: [0, 1], outputRange: [0.72, 1] }),
             transform: [{ scale: pulse.interpolate({ inputRange: [0, 1], outputRange: [0.99, 1.015] }) }],

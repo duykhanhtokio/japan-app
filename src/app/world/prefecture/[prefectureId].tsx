@@ -1,3 +1,4 @@
+import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import { router, useLocalSearchParams } from 'expo-router';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
@@ -36,7 +37,7 @@ export default function PrefectureScreen() {
           {cities.map((city) => {
             const locationCount = getLifeLocationsByCity(city.id).length;
             const dialogueCount = getLifeDialogueCountByCity(city.id);
-            return <DepthPressable key={city.id} accessibilityLabel={city.nameJa} onPress={() => router.push(`/world/city/${city.id}`)} style={{ width:grid.cardWidth,height:grid.cardWidth/3.2,maxWidth:'100%',minWidth:0,alignSelf:'center' }}>
+            return <DepthPressable key={city.id} accessibilityLabel={city.nameJa} onPress={() => pushPrepared(`/world/city/${city.id}`)} style={{ width:grid.cardWidth,height:grid.cardWidth/3.2,maxWidth:'100%',minWidth:0,alignSelf:'center' }}>
               <RoyalPlaceRow source={cityImageById[city.id]} style={s.card}>
                 <View style={s.copy}>
                   <View style={s.textColumn}>

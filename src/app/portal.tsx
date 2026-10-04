@@ -1,3 +1,4 @@
+import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import { router } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
@@ -23,10 +24,10 @@ const PORTALS: Portal[] = [
 function PortalCard({ portal, wide }: { portal: Portal; wide: boolean }) {
   const openPortal = () => {
     if (portal.learner) {
-      router.push('/register');
+      pushPrepared('/register');
       return;
     }
-    if (portal.route) router.push(portal.route);
+    if (portal.route) pushPrepared(portal.route);
   };
 
   return (

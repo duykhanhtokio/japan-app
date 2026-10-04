@@ -1,3 +1,4 @@
+import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import { useFocusEffect, router } from 'expo-router';
 import { useCallback, useState } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
@@ -29,7 +30,7 @@ export default function DialogueHistory() {
             {!items.length && <Text style={s.empty}>会話を終えると、ここで内容を見直せます。</Text>}
             {categories.map(category => <View key={category} style={s.group}>
                 <Text style={s.category}>{categoryLabelJa(category)}</Text>
-                {items.filter(x => x.category === category).map(item => <RoyalButton key={item.id} onPress={() => router.push(`/world/dialogue-history/${item.id}`)} style={s.item}>
+                {items.filter(x => x.category === category).map(item => <RoyalButton key={item.id} onPress={() => pushPrepared(`/world/dialogue-history/${item.id}`)} style={s.item}>
                     <Text style={s.itemText}>{item.location} · {item.title}</Text>
                 </RoyalButton>)}
             </View>)}

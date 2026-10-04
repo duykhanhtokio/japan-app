@@ -1,6 +1,7 @@
+import { replacePrepared } from '@/components/ui/prepareSceneRoute';
 import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
-import { Image as CachedImage } from 'expo-image';
-import { router, useFocusEffect } from 'expo-router';
+import { prepareArtwork } from '@/components/ui/prepareArtwork';
+import { useFocusEffect } from 'expo-router';
 
 import {
     careForAnimal,
@@ -28,7 +29,6 @@ import {
     useRef,
     useState,
 } from 'react';
-import { Asset } from 'expo-asset';
 
 import {
     SafeAreaView,
@@ -1263,9 +1263,7 @@ export default function FarmGameScreen() {
     ) {
         const token = ++transitionToken.current;
         try {
-            const assets = await Asset.loadAsync(AREA_ARTWORK[area]);
-            const cached = await CachedImage.prefetch(assets.map(asset => asset.localUri ?? asset.uri), {cachePolicy: "memory-disk"});
-            if (!cached) throw new Error("Farm artwork cache was not ready");
+            await prepareArtwork(AREA_ARTWORK[area]);
         } catch (error) {
             console.warn('Farm area artwork failed to load', area, error);
             return;
@@ -1518,7 +1516,7 @@ export default function FarmGameScreen() {
                     ]}
                 >
                     <FarmHud
-                        onBack={showFarmMap?()=>router.replace('/home'):handleReturnToFarmMap}
+                        onBack={showFarmMap?()=>replacePrepared('/home'):handleReturnToFarmMap}
                         level={
                             resolvedState
                                 .farmLevel
