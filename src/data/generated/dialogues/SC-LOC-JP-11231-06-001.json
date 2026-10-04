@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "振込額は請求書の金額でよろしいですか。",
+        "textJa": "お振込みは、こちらの二枚の請求書についてですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11231_06_001_goal_1",
         "requiredSemanticComponents": {
-          "goal": "手数料を差し引く希望を伝える"
+          "goal": "同じ相手への二件を合算したいと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "一万円ですが、手数料を引いた額にしたいです。",
+        "recommendedAnswerJa": "はい。同じ相手なので、二つの金額を足して一回で送りたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "手数料を差し引く希望を伝える。日本語で伝えてください。",
+        "hint": "同じ相手への二件を合算したいと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "手数料を差し引く希望を伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "同じ相手への二件を合算したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "相手へ一万円届く必要があるか、支払条件をご確認ください。",
+        "textJa": "支払いごとの指定は、何と書かれていますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11231_06_001_goal_2",
         "requiredSemanticComponents": {
-          "goal": "先方への着金額が減ると確認する"
+          "goal": "二つの請求番号が異なると説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "手数料は自動で別に払うだけだと思っていました。引けば先方への額が減るんですね。",
+        "recommendedAnswerJa": "それぞれ違う請求番号を、依頼人名に付けるように書いてあります。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "先方への着金額が減ると確認する。日本語で伝えてください。",
+        "hint": "二つの請求番号が異なると説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "先方への着金額が減ると確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "二つの請求番号が異なると説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。負担する人の指定が請求書にありますか。",
+        "textJa": "一回にまとめると、どちらの番号を使うか確認が必要ですね。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11231_06_001_goal_3",
         "requiredSemanticComponents": {
-          "goal": "負担指定を読み請求額を保つと決める"
+          "goal": "両番号を並べて入力すれば照合できるか尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "「振込手数料はお客様負担」とあります。では一万円を減らさず送ります。",
+        "recommendedAnswerJa": "両方の番号を続けて入れれば、先方で分かるでしょうか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "負担指定を読み請求額を保つと決める。日本語で伝えてください。",
+        "hint": "両番号を並べて入力すれば照合できるか尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "負担指定を読み請求額を保つと決める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "両番号を並べて入力すれば照合できるか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "手数料を加えた合計を、実行前にご案内します。",
+        "textJa": "先方で照合できるかは、こちらでは判断できません。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11231_06_001_goal_4",
         "requiredSemanticComponents": {
-          "goal": "手数料込みの合計と残高確認を頼む"
+          "goal": "合算可否と番号の入れ方を先方へ確認すると言う"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "お願いします。口座残高が足りるかも、その合計で確認したいです。",
+        "recommendedAnswerJa": "確認してみます。合算してよいかと、番号の入れ方を聞きます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "手数料込みの合計と残高確認を頼む。日本語で伝えてください。",
+        "hint": "合算可否と番号の入れ方を先方へ確認すると言う。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "手数料込みの合計と残高確認を頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "合算可否と番号の入れ方を先方へ確認すると言う。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "残高を確認できる方法をご案内します。",
+        "textJa": "はい。回答があるまで、送金は進めずにお待ちください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11231_06_001_goal_5",
         "requiredSemanticComponents": {
-          "goal": "十分な残高を確かめ記録を分ける"
+          "goal": "回答に従い請求書ごとに分けて送ると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "合計を払えると分かってから実行します。請求額と手数料を分けて控えます。",
+        "recommendedAnswerJa": "先方から、二件に分けるよう返事が来ました。請求書ごとに金額と番号を合わせます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "十分な残高を確かめ記録を分ける。日本語で伝えてください。",
+        "hint": "回答に従い請求書ごとに分けて送ると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "十分な残高を確かめ記録を分ける。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "回答に従い請求書ごとに分けて送ると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。最終画面で受取人と金額もご確認ください。",
+        "textJa": "承知しました。一件ずつ、振込先と入力内容を確認しましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-011-okegawa.json",
-    "premise": "銀行で請求額から手数料を引いて送ろうとする客が、先方に届く金額と自身の負担を確認する。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
+    "premise": "同じ相手から二件の請求を受けた利用者が、合算すると請求番号を伝えにくいことに気づく。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

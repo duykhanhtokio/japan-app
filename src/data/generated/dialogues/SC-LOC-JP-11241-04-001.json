@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "自転車についての相談ですか。",
+        "textJa": "なくなった自転車の写真をお持ちですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11241_04_001_goal_1",
         "requiredSemanticComponents": {
-          "goal": "貸出自転車が見当たらず利用中表示が残ると伝える"
+          "goal": "手元の写真と紛失車体の色が違うと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。返したはずの貸出自転車が見当たらず、アプリは利用中のままです。",
+        "recommendedAnswerJa": "はい、この赤い自転車です。ただ、今使っていたものは青でした。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "貸出自転車が見当たらず利用中表示が残ると伝える。日本語で伝えてください。",
+        "hint": "手元の写真と紛失車体の色が違うと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "貸出自転車が見当たらず利用中表示が残ると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "手元の写真と紛失車体の色が違うと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "返した場所と時間を覚えていますか。",
+        "textJa": "赤いものと青いものの関係を教えてください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11241_04_001_goal_2",
         "requiredSemanticComponents": {
-          "goal": "置いた時刻と写真を示す"
+          "goal": "私物は修理中で紛失品は代車だと説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "昨夜、駅の北側です。この写真も撮りました。",
+        "recommendedAnswerJa": "赤い私の自転車は修理店にあります。青いものは、その間借りた代車です。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "置いた時刻と写真を示す。日本語で伝えてください。",
+        "hint": "私物は修理中で紛失品は代車だと説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "置いた時刻と写真を示す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "私物は修理中で紛失品は代車だと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "写真に写っている看板は、貸出会社の返却場所の表示でしょうか。",
+        "textJa": "なくなったのは、借りていた青い自転車なのですね。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11241_04_001_goal_3",
         "requiredSemanticComponents": {
-          "goal": "写真の場所が指定返却場所か疑問を伝える"
+          "goal": "写真の誤提示を訂正し店へ車体番号を確認できると言う"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "よく見ると、別の駐輪場の名前です。返却が終わっていなかったかもしれません。",
+        "recommendedAnswerJa": "はい。自分の写真を出してしまいました。代車の番号は店に確認できます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "写真の場所が指定返却場所か疑問を伝える。日本語で伝えてください。",
+        "hint": "写真の誤提示を訂正し店へ車体番号を確認できると言う。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "写真の場所が指定返却場所か疑問を伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "写真の誤提示を訂正し店へ車体番号を確認できると言う。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "契約上の返却状況は貸出会社に確認してください。自転車がないことについても状況を伺います。",
+        "textJa": "借りた際の控えもありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11241_04_001_goal_4",
         "requiredSemanticComponents": {
-          "goal": "貸出会社への確認材料を尋ねる"
+          "goal": "貸出控えと未確認の番号を区別して示す"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "会社には、利用中の画面とこの写真を送ればいいですか。",
+        "recommendedAnswerJa": "あります。ここに店名と貸出日があり、車体番号はまだ分かりません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "貸出会社への確認材料を尋ねる。日本語で伝えてください。",
+        "hint": "貸出控えと未確認の番号を区別して示す。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "貸出会社への確認材料を尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "貸出控えと未確認の番号を区別して示す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "送信方法は会社の案内に従ってください。こちらには、置いた位置を説明してください。",
+        "textJa": "代車の特徴と、最後に置いた場所を伺います。店にも状況を伝えてください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11241_04_001_goal_5",
         "requiredSemanticComponents": {
-          "goal": "置いた位置と未確定の返却状況を正確に説明する"
+          "goal": "代車の場所を伝え私物まで紛失と扱わないと明示する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "自動販売機の左隣です。返却済みとは言い切らず、画面の状態も伝えます。",
+        "recommendedAnswerJa": "青い代車を駅前に置きました。修理中の赤い車体までなくなったとは伝えません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "置いた位置と未確定の返却状況を正確に説明する。日本語で伝えてください。",
+        "hint": "代車の場所を伝え私物まで紛失と扱わないと明示する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "置いた位置と未確定の返却状況を正確に説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "代車の場所を伝え私物まで紛失と扱わないと明示する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "その区別で伺います。分かっている事実を順に確認しましょう。",
+        "textJa": "承知しました。代車に関する情報を確認しながらお話を伺います。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-011-tsurugashima.json",
-    "premise": "貸出自転車を返したつもりの利用者が、アプリでは利用中のままなので相談する。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
+    "premise": "代車として借りた自転車がなくなった利用者が、自分の自転車の写真を誤って示す。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

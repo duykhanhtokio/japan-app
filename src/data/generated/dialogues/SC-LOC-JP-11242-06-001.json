@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "登録の電話番号を変更されますか。",
+        "textJa": "登録変更の控えをご確認ください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11242_06_001_goal_1",
         "requiredSemanticComponents": {
-          "goal": "会社代表番号を書いた理由を伝える"
+          "goal": "番号が一部見えず別口座か心配だと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。仕事が変わったので、新しい会社の代表番号を書きました。",
+        "recommendedAnswerJa": "住所は合っていますが、口座番号が全部見えません。別の口座の控えでしょうか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "会社代表番号を書いた理由を伝える。日本語で伝えてください。",
+        "hint": "番号が一部見えず別口座か心配だと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "会社代表番号を書いた理由を伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "番号が一部見えず別口座か心配だと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "変更したいのは勤務先の情報ですか、それともご本人の連絡先ですか。",
+        "textJa": "見えない部分があることだけでは、別口座とは判断できません。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11242_06_001_goal_2",
         "requiredSemanticComponents": {
-          "goal": "本人連絡先を変更するつもりだったと説明する"
+          "goal": "末尾が一致していることを示す"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "本人の連絡先です。でも昼は会社にいるので、その番号がよいと思いました。",
+        "recommendedAnswerJa": "最後の三桁は私の口座と同じです。省略した表示かもしれないんですね。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "本人連絡先を変更するつもりだったと説明する。日本語で伝えてください。",
+        "hint": "末尾が一致していることを示す。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "本人連絡先を変更するつもりだったと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "末尾が一致していることを示す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ご本人への連絡方法として使えるか、確認が必要です。",
+        "textJa": "対象となった口座と変更内容を、担当が確認します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11242_06_001_goal_3",
         "requiredSemanticComponents": {
-          "goal": "代表電話の取次ぎ事情を伝えて携帯番号との違いを尋ねる"
+          "goal": "控えを書き足さず原状で確認してもらうと言う"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "代表電話では、私の名前を言わないとつながりません。携帯番号のほうがよいでしょうか。",
+        "recommendedAnswerJa": "番号を全部書き足せば分かりやすいと思いましたが、控えには手を加えず見せます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "代表電話の取次ぎ事情を伝えて携帯番号との違いを尋ねる。日本語で伝えてください。",
+        "hint": "控えを書き足さず原状で確認してもらうと言う。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "代表電話の取次ぎ事情を伝えて携帯番号との違いを尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "控えを書き足さず原状で確認してもらうと言う。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "番号の扱いは申請欄の説明に沿って確認しましょう。勤務先欄とは別です。",
+        "textJa": "確認用にお持ちの通帳などはありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11242_06_001_goal_4",
         "requiredSemanticComponents": {
-          "goal": "本人の番号は変わっていないと気づいて伝える"
+          "goal": "通帳を提示し番号を読み上げず照合するよう頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "私の携帯番号は変わっていません。変わったのは勤務先だけでした。",
+        "recommendedAnswerJa": "この通帳です。口座全体の番号は人前で読み上げず、資料で照合していただきたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "本人の番号は変わっていないと気づいて伝える。日本語で伝えてください。",
+        "hint": "通帳を提示し番号を読み上げず照合するよう頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "本人の番号は変わっていないと気づいて伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "通帳を提示し番号を読み上げず照合するよう頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "それなら、今回どの情報を変更するか整理しましょう。",
+        "textJa": "承知しました。資料を使って対象を確認します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11242_06_001_goal_5",
         "requiredSemanticComponents": {
-          "goal": "勤務先情報だけの変更を相談する"
+          "goal": "対象確認後に保管し省略だけで漏れと判断しないと述べる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "本人の番号はそのままにして、勤務先情報の変更を相談します。",
+        "recommendedAnswerJa": "同じ口座の住所変更と確認できてから保管します。省略表示だけで変更漏れとは決めません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "勤務先情報だけの変更を相談する。日本語で伝えてください。",
+        "hint": "対象確認後に保管し省略だけで漏れと判断しないと述べる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "勤務先情報だけの変更を相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "対象確認後に保管し省略だけで漏れと判断しないと述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。記入前に該当する欄をご案内します。",
+        "textJa": "はい。対象と変更した項目を確認して結果をご説明します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-011-hidaka.json",
-    "premise": "銀行の電話番号変更で、利用者が会社の代表番号を本人の連絡先として記入しようとする。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
+    "premise": "登録変更後の控えを受け取った利用者が、伏せた口座番号を別口座のものと思い込みかける。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

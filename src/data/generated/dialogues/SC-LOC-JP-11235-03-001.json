@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "飲んでいるお薬の欄は、これで全部ですか。",
+        "textJa": "検査結果の用紙についてのご質問ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11235_03_001_goal_1",
         "requiredSemanticComponents": {
-          "goal": "毎日の薬だけ書いたと説明する"
+          "goal": "一つの陰性表示が全検査の判断を示すか尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "毎日の薬は全部です。痛い時だけ飲む物は書きませんでした。",
+        "recommendedAnswerJa": "はい。「陰性」とあります。全部の検査に問題がないという意味でしょうか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "毎日の薬だけ書いたと説明する。日本語で伝えてください。",
+        "hint": "一つの陰性表示が全検査の判断を示すか尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "毎日の薬だけ書いたと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "一つの陰性表示が全検査の判断を示すか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "必要な時だけ飲む頓服の薬も、分かる範囲でお知らせください。",
+        "textJa": "どの項目の結果かを確認する必要があります。診療上の説明は担当に伺いましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11235_03_001_goal_2",
         "requiredSemanticComponents": {
-          "goal": "頓服の意味を確かめ袋を示す"
+          "goal": "表示の項目と別の結果待ち欄を示す"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "頓服は毎日ではない薬なんですね。袋を持っているので出します。",
+        "recommendedAnswerJa": "上から三番目の項目です。別の欄には、まだ結果待ちと書いてありました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "頓服の意味を確かめ袋を示す。日本語で伝えてください。",
+        "hint": "表示の項目と別の結果待ち欄を示す。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "頓服の意味を確かめ袋を示す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "表示の項目と別の結果待ち欄を示す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "袋の名前と、最近飲んだ時刻を確認します。",
+        "textJa": "一つの結果と、まだ結果が出ていない項目を分けて確認しましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11235_03_001_goal_3",
         "requiredSemanticComponents": {
-          "goal": "最終服用時刻と今朝の未服用を答える"
+          "goal": "一語だけで検査全体終了と解釈しないと確認する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "昨夜九時に一回飲みました。今朝は飲んでいません。",
+        "recommendedAnswerJa": "この言葉だけで、すべて終わったと考えてはいけないんですね。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "最終服用時刻と今朝の未服用を答える。日本語で伝えてください。",
+        "hint": "一語だけで検査全体終了と解釈しないと確認する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "最終服用時刻と今朝の未服用を答える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "一語だけで検査全体終了と解釈しないと確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "回数や量は分かりますか。",
+        "textJa": "全体の判断や次の対応は、診療担当へ質問してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11235_03_001_goal_4",
         "requiredSemanticComponents": {
-          "goal": "量と効かなかった相談希望を話す"
+          "goal": "当該結果の意味と未確定項目の確認時期を質問する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "袋には一回一錠とあります。昨夜も一錠です。効かなかったので、今日の診察で相談したいです。",
+        "recommendedAnswerJa": "三番目の結果の意味と、結果待ちの項目をいつ確認するか、二つ聞きたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "量と効かなかった相談希望を話す。日本語で伝えてください。",
+        "hint": "当該結果の意味と未確定項目の確認時期を質問する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "量と効かなかった相談希望を話す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "当該結果の意味と未確定項目の確認時期を質問する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "その希望を看護師へ伝えます。今ここで追加量を判断することはできません。",
+        "textJa": "そのご質問を伝えます。用紙をそのままお持ちください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11235_03_001_goal_5",
         "requiredSemanticComponents": {
-          "goal": "自己判断で追加せず両方を申告する"
+          "goal": "用紙を保ち診療担当の説明を受けると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "追加で飲まず、先生に聞きます。毎日の薬と頓服を両方書きます。",
+        "recommendedAnswerJa": "結果待ちの欄を消さず、この用紙を見せて説明を受けます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "自己判断で追加せず両方を申告する。日本語で伝えてください。",
+        "hint": "用紙を保ち診療担当の説明を受けると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "自己判断で追加せず両方を申告する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "用紙を保ち診療担当の説明を受けると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ありがとうございます。袋も診察で見せてください。",
+        "textJa": "承知しました。担当の説明を確認してから、次の予定をご相談ください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-011-fujimi.json",
-    "premise": "病院で服薬状況を書く患者が必要時だけ飲む薬を記入から外しており、頻度と最終服用を補足する。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
+    "premise": "患者が検査結果の陰性という表示を見て、全検査に同じ結果が出たと解釈しそうになる。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

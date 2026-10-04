@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "カードについてのご相談ですね。",
+        "textJa": "カードの紛失についてですね。すでに連絡はされていますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11246_06_001_goal_1",
         "requiredSemanticComponents": {
-          "goal": "紛失したカードが財布から見つかったと伝える"
+          "goal": "連絡したつもりだが受付番号がないと説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。なくしたと思ったカードが、財布の別のポケットにありました。",
+        "recommendedAnswerJa": "昨日、ウェブで連絡したつもりです。ただ、受付の番号が見つかりません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "紛失したカードが財布から見つかったと伝える。日本語で伝えてください。",
+        "hint": "連絡したつもりだが受付番号がないと説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "紛失したカードが財布から見つかったと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "連絡したつもりだが受付番号がないと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "紛失後に、利用停止や再発行の手続きはしましたか。",
+        "textJa": "お持ちの画面を確認してもよろしいですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11246_06_001_goal_2",
         "requiredSemanticComponents": {
-          "goal": "再発行申込済みで旧カードを使えるか聞く"
+          "goal": "画面が下書きで送信不明だと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。昨日、再発行を申し込みました。見つかったのでこのカードを使えますか。",
+        "recommendedAnswerJa": "こちらです。今見ると「下書き」とあります。最後の送信はしていなかったかもしれません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "再発行申込済みで旧カードを使えるか聞く。日本語で伝えてください。",
+        "hint": "画面が下書きで送信不明だと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "再発行申込済みで旧カードを使えるか聞く。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "画面が下書きで送信不明だと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "見つかっただけでは、利用できる状態に戻ったとは判断できません。",
+        "textJa": "下書きの画面だけでは、紛失連絡の受付や停止の完了を確認できません。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11246_06_001_goal_3",
         "requiredSemanticComponents": {
-          "goal": "新カード未着なので旧カードを試せるか尋ねる"
+          "goal": "入力だけで停止したと誤解したことを訂正し対応を求める"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "新しいカードはまだ届いていません。古いものを試してもいいですか。",
+        "recommendedAnswerJa": "入力しただけで止まったと思っていました。現在の状態を調べて、必要な停止を相談したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "新カード未着なので旧カードを試せるか尋ねる。日本語で伝えてください。",
+        "hint": "入力だけで停止したと誤解したことを訂正し対応を求める。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "新カード未着なので旧カードを試せるか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "入力だけで停止したと誤解したことを訂正し対応を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "使う前に、手続きとカードの状態を確認しましょう。",
+        "textJa": "本人確認のうえ、担当が確認します。カードは今も見当たりませんか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11246_06_001_goal_4",
         "requiredSemanticComponents": {
-          "goal": "発見の届出と再発行の扱いを相談する"
+          "goal": "カード未発見と気づいた経過を述べる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "では、見つけたことを届けて、再発行の扱いも聞きたいです。",
+        "recommendedAnswerJa": "はい。まだありません。昨日使った後、夜にないことに気付きました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "発見の届出と再発行の扱いを相談する。日本語で伝えてください。",
+        "hint": "カード未発見と気づいた経過を述べる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "発見の届出と再発行の扱いを相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "カード未発見と気づいた経過を述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。昨日の手続きが分かる控えはありますか。",
+        "textJa": "その経過も伺います。画面は下書きのままお見せください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11246_06_001_goal_5",
         "requiredSemanticComponents": {
-          "goal": "控えを提示して状態確認まで旧カードを使わないと言う"
+          "goal": "停止済みと断言せず現状と結果を確認すると言う"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "こちらです。確認が終わるまで、古いカードは使わずに持っておきます。",
+        "recommendedAnswerJa": "分かりました。停止済みとは言わず、今の状態を確認して結果の案内を受けます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "控えを提示して状態確認まで旧カードを使わないと言う。日本語で伝えてください。",
+        "hint": "停止済みと断言せず現状と結果を確認すると言う。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "控えを提示して状態確認まで旧カードを使わないと言う。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "停止済みと断言せず現状と結果を確認すると言う。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。カードの取扱いも確認後にご案内します。",
+        "textJa": "承知しました。担当へおつなぎして、受付と停止の状況を確認します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-011-shiraoka.json",
-    "premise": "紛失したと思ったキャッシュカードを見つけた利用者が、既に再発行を申し込んだので扱いを確認する。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
+    "premise": "カード紛失のウェブ連絡をしたつもりの利用者が、送信未完了の画面を持って窓口へ来る。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
