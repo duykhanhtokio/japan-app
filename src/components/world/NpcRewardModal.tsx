@@ -1,5 +1,6 @@
+import ImageBackground from '@/components/ui/FocusedImageBackground';
 import { useEffect, useRef } from 'react';
-import { Animated, Image, ImageBackground, Modal, StyleSheet, Text, View } from 'react-native';
+import { Animated, Image, Modal, StyleSheet, Text, View } from 'react-native';
 import { npcForCategory, sceneForCategory } from '@/components/world/life-assets';
 import type { NpcCategory } from '@/data/npc-progression';
 import { RoyalButton, ROYAL, ROYAL_FONT } from '@/components/ui/RoyalSurface';
@@ -21,7 +22,7 @@ export default function NpcRewardModal({visible,category,progress,isUnlock,onClo
  const revealed=isUnlock||stars>=5;
  return <Modal visible={visible} transparent animationType="none" onRequestClose={onClose}><View style={s.backdrop}>
   <Text style={s.kicker}>{revealed?'おめでとう！':'課題達成！'}</Text><Text style={s.heading}>{revealed?'新しい仲間が加わりました！':'カードゲージが増えました！'}</Text>
-  <Animated.View style={[s.card,{transform:[{perspective:1000},{rotateY:reveal.interpolate({inputRange:[0,.44,1],outputRange:['92deg','-9deg','0deg']})}],opacity:reveal}]}> 
+  <Animated.View style={[s.card,{transform:[{perspective:1000},{rotateY:reveal.interpolate({inputRange:[0,.44,1],outputRange:['92deg','-9deg','0deg']})}],opacity:reveal}]}>
    <Image source={PROGRESS_FRAMES[stars]} resizeMode="stretch" style={s.frame}/>
    <View style={s.sceneWindow}><ImageBackground source={sceneForCategory(category.category)} resizeMode="cover" style={s.scene}><View style={s.characterWindow}><Image source={npcForCategory(category.category)} resizeMode="contain" style={[s.npc,!revealed&&s.lockedNpc]}/>{!revealed&&<Text style={s.lock}>?</Text>}</View></ImageBackground></View>
    <View style={s.namePlate}><Text style={s.job}>{revealed?category.ja:'？？？'}</Text><Text style={s.category}>{revealed?'仲間カード':'次の仲間'}</Text></View>

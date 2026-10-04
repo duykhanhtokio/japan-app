@@ -1,3 +1,4 @@
+import { useIsFocused } from '@react-navigation/native';
 import { Redirect, router } from 'expo-router';
 import { useEffect, useMemo, useRef } from 'react';
 import {
@@ -147,6 +148,7 @@ export default function WelcomeScreen() {
 }
 
 function WelcomeContent() {
+  const focused = useIsFocused();
   const royalPosition = useRoyalPositioning();
   const insets = useSafeAreaInsets();
   const { isLandscape } = royalPosition;
@@ -167,7 +169,7 @@ function WelcomeContent() {
   );
 
   useEffect(() => {
-    console.log('[ROYAL_LAYOUT] welcome-centered-frame-v17.8');
+    if (!focused) return;
     const cameraMove = Animated.loop(Animated.sequence([
       Animated.timing(camera, { toValue: 1, duration: 9000, easing: Easing.inOut(Easing.sin), useNativeDriver: true }),
       Animated.timing(camera, { toValue: 0, duration: 9000, easing: Easing.inOut(Easing.sin), useNativeDriver: true }),
@@ -179,36 +181,23 @@ function WelcomeContent() {
     cameraMove.start();
     buttonPulse.start();
     return () => { cameraMove.stop(); buttonPulse.stop(); };
-  }, [camera, pulse]);
+  }, [camera, pulse, focused]);
 
   return (
     <View style={styles.screen}>
       <Animated.Image
-        source={background}
+        source={focused ? background : undefined}
         resizeMode="cover"
-        blurRadius={16}
-        style={[styles.backgroundFill, {
-          transform: [
-            { scale: camera.interpolate({ inputRange: [0, 1], outputRange: [1.08, 1.12] }) },
-            { translateX: camera.interpolate({ inputRange: [0, 1], outputRange: [-2, 3] }) },
-            { translateY: camera.interpolate({ inputRange: [0, 1], outputRange: [2, -3] }) },
-          ],
-        }]}
-      />
-      <View pointerEvents="none" style={styles.backdropTint} />
-      <Animated.Image
-        source={background}
-        resizeMode="contain"
         style={[styles.backgroundContain, {
           transform: [
-            { scale: camera.interpolate({ inputRange: [0, 1], outputRange: [0.995, 1.008] }) },
+            { scale: camera.interpolate({ inputRange: [0, 1], outputRange: [1.008, 1.02] }) },
             { translateY: camera.interpolate({ inputRange: [0, 1], outputRange: [1.5, -1.5] }) },
           ],
         }]}
       />
       <View pointerEvents="none" style={styles.colorWash} />
       <View pointerEvents="none" style={StyleSheet.absoluteFill}>
-        {PETALS.map((petal, index) => <FallingPetal key={index} {...petal} />)}
+        {focused && PETALS.map((petal, index) => <FallingPetal key={index} {...petal} />)}
       </View>
 
       <SafeAreaView style={styles.safeArea}>
@@ -237,9 +226,7 @@ function WelcomeContent() {
 
 const styles = StyleSheet.create({
   screen: { flex: 1, overflow: 'hidden', backgroundColor: '#61b9e6' },
-  backgroundFill: { ...StyleSheet.absoluteFillObject, width: '100%', height: '100%', opacity: 0.8 },
   backgroundContain: { ...StyleSheet.absoluteFillObject, width: '100%', height: '100%' },
-  backdropTint: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(42,103,133,0.12)' },
   colorWash: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(24,75,97,0.025)' },
   safeArea: { flex: 1, justifyContent: 'space-between' },
   titleArea: { alignItems: 'center', paddingTop: 20, paddingHorizontal: 12 },

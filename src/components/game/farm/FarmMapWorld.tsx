@@ -1,4 +1,4 @@
-import { Image as CachedImage } from 'expo-image';
+import CachedImage from '@/components/ui/FocusedArtwork';
 import {
     Image,
     Pressable,

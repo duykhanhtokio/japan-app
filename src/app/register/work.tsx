@@ -1,3 +1,4 @@
+import ImageBackground from '@/components/ui/FocusedImageBackground';
 import {
     router,
     useLocalSearchParams,
@@ -7,7 +8,7 @@ import { useState } from 'react';
 
 import {
     Alert,
-    ImageBackground,
+
     Modal,
     Pressable,
     ScrollView,
@@ -290,11 +291,11 @@ export default function RegistrationWorkScreen() {
 
     return (
         <ImageBackground
-            source={require('../../../assets/app/registration/registration-bg.jpg')}
+            source={require('../../../assets/app/backgrounds/registration-work.png')}
             style={styles.background}
             resizeMode="cover"
         >
-        <View pointerEvents="none" style={styles.overlay} />
+
         <SakuraPetalField />
         <SafeAreaView
             style={
@@ -870,10 +871,6 @@ const styles =
     StyleSheet.create({
         background: { flex: 1 },
 
-        overlay: {
-            ...StyleSheet.absoluteFillObject,
-            backgroundColor: 'rgba(225,246,253,0.42)',
-        },
 
         container: {
             flex: 1,

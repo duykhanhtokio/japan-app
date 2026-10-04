@@ -1,5 +1,6 @@
+import ImageBackground from '@/components/ui/FocusedImageBackground';
 import { router } from 'expo-router';
-import { ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { SakuraPetalField } from '@/components/ui/SakuraPetalField';
 

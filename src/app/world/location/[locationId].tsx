@@ -1,6 +1,7 @@
+import ImageBackground from '@/components/ui/FocusedImageBackground';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useMemo, useState } from 'react';
-import { ImageBackground, Modal, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Modal, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { sceneForCategory } from '@/components/world/life-assets';
 import { locationBackground } from '@/components/world/location-backgrounds.generated';
 import { categoryLabelJa, displayLocationNameJa } from '@/components/world/world-ja';

@@ -1,5 +1,6 @@
+import ImageBackground from '@/components/ui/FocusedImageBackground';
 import { router } from 'expo-router';
-import { Image, ImageBackground, Pressable, StyleSheet, Text, View, useWindowDimensions, type ImageSourcePropType } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions, type ImageSourcePropType } from 'react-native';
 import { ROYAL, ROYAL_FONT, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
 
 const NAV_NAVY=require('../../../assets/app/ui/royal-af/button-wide-v2.png');

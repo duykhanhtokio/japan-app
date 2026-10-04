@@ -1,7 +1,8 @@
+import ImageBackground from '@/components/ui/FocusedImageBackground';
 import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 import {
     Image,
-    ImageBackground,
+
     ScrollView,
     StyleSheet,
     Text,

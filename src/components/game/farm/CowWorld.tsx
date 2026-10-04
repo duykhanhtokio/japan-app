@@ -1,7 +1,7 @@
 import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
 import FarmBadgeFrame from './FarmBadgeFrame';
 import FarmAreaIcon from './FarmAreaIcon';
-import { Image as CachedImage } from 'expo-image';
+import CachedImage from '@/components/ui/FocusedArtwork';
 import {
     Animated,
     Easing,

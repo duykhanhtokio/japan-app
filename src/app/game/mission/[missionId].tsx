@@ -1,3 +1,4 @@
+import ImageBackground from '@/components/ui/FocusedImageBackground';
 import {
     router,
     useLocalSearchParams,
@@ -10,7 +11,7 @@ import {
 
 import {
     Image,
-    ImageBackground,
+
     Pressable,
     StyleSheet,
     Text,

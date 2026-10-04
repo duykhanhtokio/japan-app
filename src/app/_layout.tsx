@@ -23,7 +23,7 @@ export default function RootLayout() {
     require('../../assets/app/ui/royal-af/microphone-v2.png'),
     require('../../assets/app/ui/royal-af/dialogue-frame-v1.png'),
     require('../../assets/app/ui/royal-af/farm-hud-plaque-v1.png'),
-    require('../../assets/app/life/location-backgrounds/cafe/01-clear-morning.jpg'),
+    require('../../assets/app/backgrounds/study-light.png'),
     require('../../assets/app/welcome/welcome-japan-landscape-v2.png'),
     require('../../assets/app/home-cards/study-man.png'),
     require('../../assets/app/home-cards/conversation-three.png'),
@@ -41,7 +41,7 @@ export default function RootLayout() {
   return (
     <LanguageProvider>
       <OnboardingMusic />
-      <Stack screenOptions={{ headerShown: false, animation: 'none', freezeOnBlur: true, contentStyle: { backgroundColor: '#1e140c' } }} />
+      <Stack screenOptions={{ headerShown: false, animation: 'none', freezeOnBlur: false, contentStyle: { backgroundColor: '#1e140c' } }} />
     </LanguageProvider>
   );
 }

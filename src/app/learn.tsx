@@ -1,9 +1,10 @@
+import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
 
 import {
     Image,
-    ImageBackground,
+
     Modal,
     Pressable,
     ScrollView,
@@ -195,11 +196,7 @@ export default function LearnScreen() {
     }
 
     return (
-        <ImageBackground source={require('../../assets/app/life/location-backgrounds/cafe/01-clear-morning.jpg')} blurRadius={40} resizeMode="cover" style={styles.background}>
-            <View
-                pointerEvents="none"
-                style={styles.overlay}
-            />
+        <RoyalPageBackground>
 
             <SafeAreaView
                 style={styles.container}
@@ -458,7 +455,7 @@ export default function LearnScreen() {
                 <BottomNav active="home" variant="approved" />
                 {helpVisible && <Modal visible={helpVisible} transparent animationType="none" onRequestClose={()=>setHelpVisible(false)}><View style={styles.helpBackdrop}><View style={styles.helpPanel}><ScrollView contentContainerStyle={styles.helpContent}><Text style={styles.helpTitle}>JLPT 認定の進め方</Text><Text style={styles.helpCopy}>Mỗi cấp cần 6 đề thi khác nhau đạt ít nhất 80% sau khi nộp bài. Thi lại đề chưa đạt được tính khi điểm mới đạt yêu cầu; làm một đề nhiều lần vẫn chỉ tính là một đề.</Text><Text style={styles.helpCopy}>Thanh x/6 cho biết số đề đã đạt tại cấp đó. Có thể thăng thẳng lên cấp cao khi đủ 6 đề tại cấp ấy. Cấp chính thức được hiển thị trong hồ sơ; tiến độ cấp thấp hơn sẽ ẩn sau khi đã được công nhận cấp cao.</Text></ScrollView><Pressable accessibilityRole="button" accessibilityLabel="閉じる" onPress={()=>setHelpVisible(false)} style={styles.helpClose}><Text style={styles.helpCloseText}>閉じる</Text></Pressable></View></View></Modal>}
             </SafeAreaView>
-        </ImageBackground>
+        </RoyalPageBackground>
     );
 }
 
@@ -477,17 +474,6 @@ const styles =
             backgroundColor: '#e8e2d6',
         },
 
-        overlay: {
-            position: 'absolute',
-
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0,
-
-            backgroundColor:
-                'rgba(255,255,255,.45)',
-        },
 
         container: {
             flex: 1,

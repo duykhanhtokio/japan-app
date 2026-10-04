@@ -1,6 +1,7 @@
+import ImageBackground from '@/components/ui/FocusedImageBackground';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { FlatList, ImageBackground, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { FlatList, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { RoyalBackButton, RoyalCapsule, RoyalChevron, RoyalLocationCard, RoyalLockCrest, RoyalTitlePanel, ROYAL, ROYAL_FONT, ROYAL_LAYOUT, ROYAL_PLACEMENT, ROYAL_TEXT_FIT, resolveRoyalGrid, useRoyalPositioning } from '@/components/ui/RoyalSurface';
 import { locationBackground } from '@/components/world/location-backgrounds.generated';
 import { cityImageById } from '@/components/world/city-images.generated';
@@ -60,7 +61,7 @@ export default function CityScreen() {
               {locked && <RoyalLockCrest style={s.lock} />}
               <View style={s.cardCopy}>
                 <View style={s.cardText}><Text allowFontScaling={false} numberOfLines={1} style={[s.location,{fontSize:Math.max(13,Math.min(17,Math.floor((grid.cardWidth*.77-28)/Array.from(displayLocationNameJa(item.nameJa,item.category)).length)))}]}>{displayLocationNameJa(item.nameJa,item.category)}</Text><Text {...ROYAL_TEXT_FIT} numberOfLines={1} minimumFontScale={0.8} style={s.reading}>{/bank/i.test(item.category??'')?'Bank counter':item.name}</Text><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.meta}>{locked ? '未解放' : `${count}会話`}</Text></View>
-                {!locked && <RoyalChevron variant="card"/>} 
+                {!locked && <RoyalChevron variant="card"/>}
               </View>
             </RoyalLocationCard>
           </DepthPressable>;

@@ -42,7 +42,7 @@ import {
     calculateCommunicationTitle,
 } from '@/services/progress-engine';
 const PROFILE_AVATAR = require('../../../assets/app/ui/royal-af/hud-player-medallion-v1.png');
-const PROFILE_ART=require('../../../assets/app/life/location-backgrounds/cafe/01-clear-morning.jpg');
+const PROFILE_ART=require('../../../assets/app/backgrounds/profile-details.png');
 const PROFILE_ICONS={work:require('../../../assets/app/ui/royal-af/mission-work-v1.png'),lock:require('../../../assets/app/ui/royal-af/lock-grape-v2.png'),book:require('../../../assets/app/ui/royal-af/learning-grammar-v1.png'),map:require('../../../assets/app/ui/royal-af/map-marker-fill-v1.png'),trophy:require('../../../assets/app/ui/royal-af/mission-trophy-v1.png'),key:require('../../../assets/app/ui/royal-af/mission-key-v1.png')};
 function ProfilePanel({children,style,kind='plain'}:PropsWithChildren<{style?:StyleProp<ViewStyle>;kind?:'profile'|'rating'|'plain'}>) {
  return <RoyalPaperPanel tone="hud" style={[style,{paddingHorizontal:22,paddingVertical:24,borderWidth:0,borderRadius:0,backgroundColor:'transparent'},kind==='rating'&&{alignItems:'center'}]}>{children}</RoyalPaperPanel>;
@@ -103,7 +103,7 @@ export default function ProfileScreen() {
         60;
 
     return (
-        <RoyalPageBackground source={require('../../../assets/app/welcome/welcome-japan-landscape-v2.png')}><SafeAreaView
+        <RoyalPageBackground source={require('../../../assets/app/backgrounds/profile-light.png')} enabled={!detailsVisible}><SafeAreaView
             style={
                 styles.container
             }
@@ -143,7 +143,7 @@ export default function ProfileScreen() {
                 </View>
             </ScrollView>
             {detailsVisible && <Modal visible={detailsVisible} animationType="none" onRequestClose={()=>setDetailsVisible(false)}>
-                <SafeAreaProvider><RoyalPageBackground source={PROFILE_ART} tone="dark" shadeOpacity={.50}><SafeAreaView style={styles.detailsPage}>
+                <SafeAreaProvider><RoyalPageBackground source={PROFILE_ART}><SafeAreaView style={styles.detailsPage}>
                     <View style={styles.detailsHeader}>
                         <Text style={styles.sectionTitle}>プロフィール · 詳細</Text>
                         <RoyalButton onPress={()=>setDetailsVisible(false)} style={styles.detailsClose}>

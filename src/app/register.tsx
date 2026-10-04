@@ -1,10 +1,11 @@
+import ImageBackground from '@/components/ui/FocusedImageBackground';
 import { router } from 'expo-router';
 
 import { useState } from 'react';
 
 import {
     Alert,
-    ImageBackground,
+
     Modal,
     Pressable,
     ScrollView,
@@ -118,15 +119,12 @@ export default function RegisterScreen() {
     return (
         <ImageBackground
             source={require(
-                '../../assets/app/registration/registration-bg.jpg'
+                '../../assets/app/backgrounds/registration.png'
             )}
             style={styles.background}
             resizeMode="cover"
         >
-            <View
-                pointerEvents="none"
-                style={styles.overlay}
-            />
+
 
             <SakuraPetalField />
 
@@ -481,18 +479,6 @@ const styles =
             flex: 1,
         },
 
-        overlay: {
-            position:
-                'absolute',
-
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0,
-
-            backgroundColor:
-                'rgba(5,20,35,0.09)',
-        },
 
         container: {
             flex: 1,

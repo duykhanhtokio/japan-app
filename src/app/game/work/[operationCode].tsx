@@ -1,3 +1,4 @@
+import ImageBackground from '@/components/ui/FocusedImageBackground';
 import {
     logWorkAnswerAiDebugStats,
 } from '@/services/work-answer-ai-debug';
@@ -29,7 +30,7 @@ import {
 
 import {
     Image,
-    ImageBackground,
+
     Pressable,
     ScrollView,
     StyleSheet,

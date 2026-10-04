@@ -1,3 +1,4 @@
+import ImageBackground from '@/components/ui/FocusedImageBackground';
 import { Text } from '@/components/app/LocalizedText';
 import { useAppLanguage } from '@/context/LanguageContext';
 import {
@@ -16,7 +17,7 @@ import { getJlptProgress, saveN5JourneyPosition, toggleLearnedId } from '@/servi
 import * as Speech from 'expo-speech';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import {
-    ImageBackground,
+
     Modal,
     Pressable,
     ScrollView,
@@ -312,8 +313,8 @@ export default function N5LearningJourney({ mode, onBack, onOpenCharacters }: Pr
         Speech.speak(text, { language: 'ja-JP', rate: 0.68 });
     }
 
-    return <ImageBackground source={require('../../../assets/app/learn/learn-bg.jpg')} style={styles.background} resizeMode="cover">
-        <View pointerEvents="none" style={styles.overlay}/>
+    return <ImageBackground source={require('../../../assets/app/backgrounds/n5-journey.png')} style={styles.background} resizeMode="cover">
+
         <SafeAreaView style={styles.safe}>
             <ScrollView ref={scrollRef} contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
                 <View style={styles.header}>
@@ -405,7 +406,7 @@ function GrammarCard({ item, learned, onToggle }: { item: GrammarEntry; learned:
 }
 
 const styles = StyleSheet.create({
-    background: { flex: 1 }, overlay: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(238,244,255,.46)' }, safe: { flex: 1 }, content: { padding: 16, paddingBottom: 70 },
+    background: { flex: 1 }, safe: { flex: 1 }, content: { padding: 16, paddingBottom: 70 },
     header: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: 'rgba(232,226,214,.94)', borderRadius: 22, padding: 14, marginBottom: 12, borderWidth: 1, borderColor: '#dbe4f0' },
     back: { width: 42, height: 42, borderRadius: 13, backgroundColor: '#e9effa', alignItems: 'center', justifyContent: 'center' }, backText: { fontSize: 30, color: '#315cb5', lineHeight: 32 }, headerCopy: { flex: 1 }, level: { color: '#4771c9', fontSize: 11, fontWeight: '900', letterSpacing: 1 }, title: { fontSize: 27, fontWeight: '900', color: '#1c2b42' }, subtitle: { color: '#69788d', fontSize: 11 }, totalProgress: { minWidth: 78, backgroundColor: '#244f9f', borderRadius: 13, padding: 10, alignItems: 'center' }, totalProgressLabel: { color: '#dce8ff', fontSize: 9 }, totalProgressValue: { color: '#fff', fontWeight: '900', fontSize: 16, marginTop: 2 },
     dashboard: { flexDirection: 'row', alignItems: 'flex-start', gap: 12 }, dashboardCompact: { flexDirection: 'column' }, calendar: { flex: 3, backgroundColor: 'rgba(232,226,214,.95)', borderRadius: 20, padding: 13, borderWidth: 1, borderColor: '#dce5f0' }, fullWidth: { width: '100%', flex: 0 },
