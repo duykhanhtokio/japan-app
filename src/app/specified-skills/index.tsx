@@ -15,7 +15,6 @@ import {
 } from 'expo-router';
 
 import {
-    SafeAreaView,
     useSafeAreaInsets,
 } from 'react-native-safe-area-context';
 import { RoyalBackButton, ROYAL_FONT, ROYAL_PLACEMENT } from '@/components/ui/RoyalSurface';
@@ -36,9 +35,8 @@ export default function SpecifiedSkillsScreen() {
     const { width } = useWindowDimensions();
     const navHeight = Math.round(76 * Math.max(.9, Math.min(1.18, width / 390)));
     return (
-        <ImageBackground inheritBackdrop source={require('../../../assets/app/home-cards/tokutei-engine-safety.png')} blurRadius={40} resizeMode="cover" style={{flex:1}}><SafeAreaView
-            edges={['top', 'left', 'right']}
-            style={[styles.container, { paddingBottom: navHeight + insets.bottom }]}
+        <ImageBackground inheritBackdrop source={require('../../../assets/app/home-cards/tokutei-engine-safety.png')} blurRadius={40} resizeMode="cover" style={{flex:1}}><View
+            style={[styles.container, { paddingTop: insets.top, paddingLeft: insets.left, paddingRight: insets.right, paddingBottom: navHeight + insets.bottom }]}
         >
             <View
                 style={
@@ -112,7 +110,7 @@ export default function SpecifiedSkillsScreen() {
                 )}
             </ScrollView>
 
-        </SafeAreaView>
+        </View>
         <View testID="tokutei-bottom-nav" style={[styles.bottomNav, { bottom: insets.bottom, left: insets.left, right: insets.right, height: navHeight }]}>
             <BottomNav
                 active="home"

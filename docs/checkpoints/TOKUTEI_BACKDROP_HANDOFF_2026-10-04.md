@@ -11,3 +11,9 @@ Checks: Expo web export passes; JLPT UI lock 10/10 and navigation contract pass.
 TypeScript retains the existing TS2352 at src/services/life-content-repository.ts:41 (SC-HKD-HAKODATE-001 missing type); no additional reported errors.
 
 Native iPhone/Android unavailable here. This is a targeted experiment, not confirmation that the reported iPhone flash is fixed. Test the exact Home tile → industry-list interval in Simulator after pulling this branch.
+
+## Follow-up: displaced text flash
+
+User reports the flash remains after the bitmap handoff and includes destination text temporarily above its final position. This disproves claiming bitmap handoff fixed the device issue. Tokutei used native SafeAreaView for header/list and JS useSafeAreaInsets for BottomNav. Fabric SafeAreaView applies inset state on didMoveToWindow/updateStateIfNecessary, so a pre-inset layout is a plausible source of the displaced-text frame (not device-confirmed).
+
+Narrow experiment: replace only Tokutei native SafeAreaView with ordinary View and explicit top/left/right padding from the same existing useSafeAreaInsets used for BottomNav. Final intended spacing is unchanged. No waiting for onLayout, concealment overlay, additional background, or header/card redesign. Web export and repeated 430×932 / 768×1024 navigation checks pass; web zero insets cannot verify the native safe-area timing issue. JLPT UI lock still 10/10. Native acceptance pending.
