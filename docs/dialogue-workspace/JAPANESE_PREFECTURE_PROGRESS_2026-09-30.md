@@ -216,3 +216,10 @@ No prefecture CONTENT PASS, master lock, native review, new translations, produc
 PRF-012 remains in progress: 157/309 individual Japanese drafts, 785 speaking goals, 18/37 cities. Added 72 exchanges across Noda, Mobara, Sakura, Togane, Asahi, Narashino, Katsuura, Ichihara and Nagareyama. Seven additional whole-plot replacements followed full selected-prior comparisons; cumulative replacements are eleven. Sixteen recorded current full comparisons include distinct retained arcs and an internal medical-note comparison. Corpus retrieval over 7128 runtimes is prioritization, not exhaustive semantic approval. Source/runtime/override parity, single source ownership and original IDs/order/next links pass for all 157.
 
 Whole-prefecture CONTENT PASS/master lock is still pending, with 152 old drafts remaining. No native certification, new translations, UI changes, production deployment or device testing. Resume at CTY-JP-12221 Yachiyo, then Abiko and the canonical remaining cities; complete steps 1–10 for all 309 before PRF-013. The 85-draft checkpoint was remote-verified; this continuation requires its own verified persistence gate.
+
+
+## Chiba continuation through Futtsu — 2026-10-04
+
+205/309 individually authored Japanese exchanges, 1,025 speaking goals and 24/37 cities. Added 48 exchanges across Yachiyo, Abiko, Kamogawa, Kamagaya, Kimitsu and Futtsu. Nine additional selected full-exchange comparisons led to four full plot replacements; cumulative selected comparisons: 25, replacements: 15. Fixed an unsupported purpose in Abiko's illuminated-device title. Source/runtime/override parity and original IDs/order/next links pass for all 205; audit has zero structural errors; UI lock passes 10/10. Corpus ranking covers 7,128 runtime packages and prioritizes review only.
+
+104 older drafts remain. Whole-prefecture semantic CONTENT PASS and master lock remain pending. No new translations, native certification, deployment or device test acceptance. Next CTY-JP-12227 Urayasu, then the remaining canonical Chiba cities; finish all 309 and steps 1–10 before PRF-013. This checkpoint must pass verified remote persistence.
