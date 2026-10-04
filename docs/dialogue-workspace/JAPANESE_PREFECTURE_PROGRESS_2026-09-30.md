@@ -193,3 +193,12 @@ PRF-009 Tochigi:125/125 individual Japanese exchanges,625speaking goals; AI CONT
 ## Gunma AI Japanese editorial decision — 2026-10-03
 
 PRF-010 Gunma:109/109 individually authored Japanese exchanges,545speaking goals; completed steps1–10 with AI CONTENT PASS and current-hash Japanese master lock. Preserved canonical identities/location links/turn chains and all other prefectures. Source/runtime/canonical parity verified. Whole-corpus retrieval7128 supports selected full-dialogue and goal-sequence editorial comparisons; it is not exhaustive semantic certification. Twenty-three distinct scenarios received whole-plot repairs. Evidence: content-qa/PRF-010_SEMANTIC_REVIEW.json, PRF-010_CANDIDATES.json and PRF-010_JAPANESE_MASTER_LOCK.json. No native certification, translations or UI changes. Next PRF-011 Saitama after verified remote persistence; retain whole-prefecture working units.
+
+
+## Saitama AI Japanese editorial decision — 2026-10-04
+
+PRF-011 Saitama: 333/333 individual Japanese exchanges and 1665 speaking goals; completed steps 1–10 with AI CONTENT PASS and a current-hash Japanese master lock. Read all current exchanges and goal chains. Forty-four distinct scenarios received whole-plot replacements; one was revised again after external comparison. Forty-nine selected current full-exchange comparisons cover 48 targets and include explicit reasons for retained shared skills. Corpus retrieval covers 7128 runtimes for prioritization; neither every prior exchange nor every retrieved pair was manually read, so this is not exhaustive semantic uniqueness certification.
+
+Source/runtime/canonical parity, one authoring owner per scenario, and preserved identity/order/next-link parity verified for all 333 against the recovered baseline. Dental goal alignment and final handoffs were repaired; two misplaced source entries were moved to the correct original city files. Evidence: content-qa/PRF-011_SEMANTIC_REVIEW.json, PRF-011_FINAL_COMPARISONS.json, PRF-011_SEMANTIC_CANDIDATES.json and PRF-011_JAPANESE_MASTER_LOCK.json. Earlier draft/pending review checkpoints are superseded by the final hash-bound decision.
+
+No native-speaker certification, new translations, UI modification, production deployment or device acceptance is implied. Next PRF-012 Chiba Japanese authoring only after verified remote WORK PERSISTENCE PASS. Continue whole-prefecture working units.

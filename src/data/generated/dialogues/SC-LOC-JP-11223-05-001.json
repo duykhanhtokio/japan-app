@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "不在票の受け取りについてですね。",
+        "textJa": "不在票についてのご相談ですね。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11223_05_001_goal_1",
         "requiredSemanticComponents": {
-          "goal": "保管期限を示す"
+          "goal": "自分の予定表への記入で保管延長になるか尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。保管期限が明日なので、明日の夜八時に来ようと思います。",
+        "recommendedAnswerJa": "はい。金曜までとありますが、私は予定表に月曜受取と書きました。延長したことになっていますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "保管期限を示す。日本語で伝えてください。",
+        "hint": "自分の予定表への記入で保管延長になるか尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "保管期限を示す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "自分の予定表への記入で保管延長になるか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "この受取窓口は、明日は夜七時までです。",
+        "textJa": "ご自身の予定表への記入と、担当への申込みは別ですね。何か連絡はされましたか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11223_05_001_goal_2",
         "requiredSemanticComponents": {
-          "goal": "期限日の夜に受け取りたいと伝える"
+          "goal": "担当へ未連絡で月曜は受付済みでなく希望だと訂正する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "日付が期限内でも、窓口が閉まった後では受け取れないんですね。",
+        "recommendedAnswerJa": "していません。書くだけで三日延びたと思っていました。月曜は私の希望で、受付された日ではありません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "期限日の夜に受け取りたいと伝える。日本語で伝えてください。",
+        "hint": "担当へ未連絡で月曜は受付済みでなく希望だと訂正する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "期限日の夜に受け取りたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "担当へ未連絡で月曜は受付済みでなく希望だと訂正する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。営業時間内の受け取りになります。",
+        "textJa": "現在の期限と荷物の状況を担当が確認します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11223_05_001_goal_3",
         "requiredSemanticComponents": {
-          "goal": "窓口の受付時刻を尋ねる"
+          "goal": "期限前に相談し延長前提にせず受取方法を聞く"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "仕事が終わるのは七時半です。別の受け取り方を相談できますか。",
+        "recommendedAnswerJa": "まだ金曜の前なので、今できる受取方法を相談したいです。延長できることを前提にせず聞きます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "窓口の受付時刻を尋ねる。日本語で伝えてください。",
+        "hint": "期限前に相談し延長前提にせず受取方法を聞く。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "窓口の受付時刻を尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "期限前に相談し延長前提にせず受取方法を聞く。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "配達物の状況を確認し、利用できる方法をご案内します。",
+        "textJa": "不在票の番号をお見せください。ご在宅になれる日はありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11223_05_001_goal_4",
         "requiredSemanticComponents": {
-          "goal": "時間に間に合わないと説明する"
+          "goal": "在宅候補日を伝え再配達も未申込だと明示する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "お願いします。期限を過ぎてから考えるのではなく、今日相談しておきたいです。",
+        "recommendedAnswerJa": "木曜の夜なら家にいます。ただ、再配達の申込みもまだしていません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "時間に間に合わないと説明する。日本語で伝えてください。",
+        "hint": "在宅候補日を伝え再配達も未申込だと明示する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "時間に間に合わないと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "在宅候補日を伝え再配達も未申込だと明示する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "不在票の番号を拝見します。",
+        "textJa": "希望枠の可否と手順を確認します。案内前に、木曜へ変更済みとは考えないでください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11223_05_001_goal_5",
         "requiredSemanticComponents": {
-          "goal": "期限内の別の受取方法を相談する"
+          "goal": "未確定の予定を訂正し申込後の受付結果で受取予定を決める"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "こちらです。期限と受け取れる時刻の両方に合う方法を聞いてから申し込みます。",
+        "recommendedAnswerJa": "分かりました。予定表の月曜は未確定と直します。案内された方法で申込み、受付結果を見てから受取予定を確定します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "期限内の別の受取方法を相談する。日本語で伝えてください。",
+        "hint": "未確定の予定を訂正し申込後の受付結果で受取予定を決める。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "期限内の別の受取方法を相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "未確定の予定を訂正し申込後の受付結果で受取予定を決める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。番号と保管状況を確認して、可能な受取方法をご案内します。",
+        "textJa": "承知しました。現在の保管期限と、ご希望の木曜の受取について担当へ確認します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-011-warabi.json",
-    "premise": "郵便局で不在票を持ち、期限日の夜に来ればよいか相談する。受取窓口の営業時間も確認する。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
+    "premise": "不在票の期限後の日を自分の予定表へ記入した利用者が、その書き込みで保管延長を申し込んだつもりになっている。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "振込先名義が気になりますか。",
+        "textJa": "お振込みの画面についてですね。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11240_06_001_goal_1",
         "requiredSemanticComponents": {
-          "goal": "店名と違う受取名義を変更すべきか尋ねる"
+          "goal": "予約受付の表示で相手へ着金したと言えるか尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。店名ではなく個人の名前が出ました。店名に直した方がいいですか。",
+        "recommendedAnswerJa": "はい。受付完了とあるので、今日もう相手へ届いたと伝えてよいですか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "店名と違う受取名義を変更すべきか尋ねる。日本語で伝えてください。",
+        "hint": "予約受付の表示で相手へ着金したと言えるか尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "店名と違う受取名義を変更すべきか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "予約受付の表示で相手へ着金したと言えるか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "画面を自己判断で書き換えず、請求先に確認してください。",
+        "textJa": "この画面は振込予約ですね。実行予定日はいつになっていますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11240_06_001_goal_2",
         "requiredSemanticComponents": {
-          "goal": "請求書にも個人名があると示す"
+          "goal": "翌週実行予定を読み今日の即時送金とは違うと確認する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "請求書にもこの個人名があります。ただ、店の名前とは違います。",
+        "recommendedAnswerJa": "来週の月曜です。今日は金曜なので、今すぐ送ったこととは違うんですね。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "請求書にも個人名があると示す。日本語で伝えてください。",
+        "hint": "翌週実行予定を読み今日の即時送金とは違うと確認する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "請求書にも個人名があると示す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "翌週実行予定を読み今日の即時送金とは違うと確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "個人名義の口座を使う場合もありますが、正しい相手かの確認は必要です。",
+        "textJa": "受付の状態と、実際の実行結果を分けて確認する必要があります。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11240_06_001_goal_3",
         "requiredSemanticComponents": {
-          "goal": "既知の店連絡先で確認し実行を待つ"
+          "goal": "相手へ予約受付という現在の状態だけ伝えると言う"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "請求書にある既知の電話で聞きます。画面はまだ実行しません。",
+        "recommendedAnswerJa": "相手には、月曜実行の予約を受け付けたとだけ伝えます。届いたという言い方はやめます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "既知の店連絡先で確認し実行を待つ。日本語で伝えてください。",
+        "hint": "相手へ予約受付という現在の状態だけ伝えると言う。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "既知の店連絡先で確認し実行を待つ。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "相手へ予約受付という現在の状態だけ伝えると言う。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "確認が済むまでお待ちください。",
+        "textJa": "はい。予約の内容と、実行後の結果をご確認ください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11240_06_001_goal_4",
         "requiredSemanticComponents": {
-          "goal": "口座の各情報が一致した結果を伝える"
+          "goal": "追加の即時振込は二重になり得るため操作を待つと述べる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "店から、その個人名の口座だと確認できました。銀行と支店と番号も一致します。",
+        "recommendedAnswerJa": "もう一度今すぐ振り込めば確実だと思いましたが、二重になるかもしれないので追加の操作は待ちます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "口座の各情報が一致した結果を伝える。日本語で伝えてください。",
+        "hint": "追加の即時振込は二重になり得るため操作を待つと述べる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "口座の各情報が一致した結果を伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "追加の即時振込は二重になり得るため操作を待つと述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "では、確認した内容でお手続きいただけます。",
+        "textJa": "別の振込みをする前に、今の予約の扱いを担当へ確認してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11240_06_001_goal_5",
         "requiredSemanticComponents": {
-          "goal": "名義を保ち金額確認後に振り込む"
+          "goal": "未着の連絡が来ても既存予約を確認してから対応すると言う"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "名義を店名へ変えず進めます。金額も請求書で見直してから実行します。",
+        "recommendedAnswerJa": "この予約画面で相談します。相手から未着と連絡があっても、新しい振込みを先に出さず、予約の状態を確かめます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "名義を保ち金額確認後に振り込む。日本語で伝えてください。",
+        "hint": "未着の連絡が来ても既存予約を確認してから対応すると言う。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "名義を保ち金額確認後に振り込む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "未着の連絡が来ても既存予約を確認してから対応すると言う。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "最終内容をご確認のうえお支払いください。",
+        "textJa": "承知しました。受付済みの予約内容を拝見し、変更や確認に必要な手順をご案内します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-011-satte.json",
-    "premise": "銀行で個人店へ振り込む客が画面の口座名義を店名へ書き換えようとしており、請求元へ照合する。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
+    "premise": "月曜実行の振込予約をした利用者が、金曜に表示された予約受付を見て、すでに相手へ着金したと連絡しようとしている。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "この乗り換えをお考えですか。接続まで三分の案内ですね。",
+        "textJa": "この列車にお乗りになる予定ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11210_01_001_goal_1",
         "requiredSemanticComponents": {
-          "goal": "短い接続時間への不安を伝える"
+          "goal": "列車時刻を改札到着時刻と思い同行者が未到着だと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。大きいスーツケースがあるのですが、三分で乗り換えられますか。",
+        "recommendedAnswerJa": "はい。十時二十分とあるので、その時刻に改札へ来ればよいと思いました。同行者はまだ駅へ来ていません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "短い接続時間への不安を伝える。日本語で伝えてください。",
+        "hint": "列車時刻を改札到着時刻と思い同行者が未到着だと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "短い接続時間への不安を伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "列車時刻を改札到着時刻と思い同行者が未到着だと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "乗換駅では、ホームを移るために連絡通路を通ります。",
+        "textJa": "十時二十分は列車の出発時刻です。改札からホームへの移動もありますね。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11210_01_001_goal_2",
         "requiredSemanticComponents": {
-          "goal": "乗換に通路移動があるか聞く"
+          "goal": "同行者の入口到着予定と列車出発は両立しないと確認する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "それなら急いで持ち運ぶのは難しいです。一つ後の接続を選びたいです。",
+        "recommendedAnswerJa": "同行者は、十時二十分に駅の入口へ着くと言っています。その列車を待たせることはできませんね。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "乗換に通路移動があるか聞く。日本語で伝えてください。",
+        "hint": "同行者の入口到着予定と列車出発は両立しないと確認する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "乗換に通路移動があるか聞く。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "同行者の入口到着予定と列車出発は両立しないと確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "後の列車は、乗換駅で約二十分待つ案内です。",
+        "textJa": "お二人がそろう時刻と、乗車する列車を分けて考えましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11210_01_001_goal_3",
         "requiredSemanticComponents": {
-          "goal": "荷物で急げないと説明する"
+          "goal": "先に乗らず改札外で合流し次の列車時刻を尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "二十分待てば、落ち着いて移動できますね。その場合、目的駅への到着も二十分ほど遅くなりますか。",
+        "recommendedAnswerJa": "私は先に乗らず、改札の外で合流します。次の列車の時刻を見せてください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "荷物で急げないと説明する。日本語で伝えてください。",
+        "hint": "先に乗らず改札外で合流し次の列車時刻を尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "荷物で急げないと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "先に乗らず改札外で合流し次の列車時刻を尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "この時刻表ではそのようになります。当日の運行状況もご確認ください。",
+        "textJa": "次は十時四十分の案内です。当日の運行表示もご確認ください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11210_01_001_goal_4",
         "requiredSemanticComponents": {
-          "goal": "次の接続の待ち時間を確認する"
+          "goal": "合流時刻と出発予定を分け具体的な入口も同行者へ伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "待ち合わせの相手には、後の接続を使う予定になったと連絡します。",
+        "recommendedAnswerJa": "同行者へ、十時二十分は待合せ時刻、列車は十時四十分の予定と伝えます。入口もこの東口と指定します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "次の接続の待ち時間を確認する。日本語で伝えてください。",
+        "hint": "合流時刻と出発予定を分け具体的な入口も同行者へ伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "次の接続の待ち時間を確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "合流時刻と出発予定を分け具体的な入口も同行者へ伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。乗換駅では行き先を確認し、通路を急がずお進みください。",
+        "textJa": "合流後は、余裕を持ってホームへお進みください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11210_01_001_goal_5",
         "requiredSemanticComponents": {
-          "goal": "到着が遅くなる連絡をすると伝える"
+          "goal": "合流が遅れた場合は乗車を確約せず表示を再確認すると言う"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "最初の三分の接続を追わず、次の列車を使います。荷物を持って移る時間を確保します。",
+        "recommendedAnswerJa": "合流が遅れたら十時四十分にも必ず乗れるとは言わず、そろってから表示を確認します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "到着が遅くなる連絡をすると伝える。日本語で伝えてください。",
+        "hint": "合流が遅れた場合は乗車を確約せず表示を再確認すると言う。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "到着が遅くなる連絡をすると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "合流が遅れた場合は乗車を確約せず表示を再確認すると言う。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "その計画でどうぞ。後の接続の時刻に印を付けた案内をお渡しします。",
+        "textJa": "承知しました。待合せと出発の時刻を区別して、お二人でご利用ください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-011-kazo.json",
-    "premise": "駅で乗換案内を見ると接続まで三分しかない。大きい荷物があるため、次の列車を選ぶ。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
+    "premise": "駅で同行者を待つ利用者は、時刻表の出発時刻に改札へ来れば間に合うと思い、まだ到着していない同行者との乗車計画を見直す。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
