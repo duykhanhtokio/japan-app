@@ -1,3 +1,4 @@
+import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import { router } from 'expo-router';
 
@@ -94,7 +95,7 @@ export default function RegisterScreen() {
             return;
         }
 
-        router.push({
+        pushPrepared({
             pathname:
                 '/register/work',
 

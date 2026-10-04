@@ -1,7 +1,8 @@
+import BackgroundArtwork from '@/components/ui/FocusedArtwork';
 import fontAdvances from './royal-font-advances.json';
 import { router } from 'expo-router';
 import { useMemo, useRef } from 'react';
-import { Animated, useWindowDimensions, Image, ImageSourcePropType, Pressable, StyleSheet, View } from 'react-native';
+import { Animated, useWindowDimensions, ImageSourcePropType, Pressable, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { RoyalMapPill, ROYAL, ROYAL_CONTENT_GROUP, ROYAL_FONT, ROYAL_LAYOUT, useRoyalGroupHeight } from '@/components/ui/RoyalSurface';
 import { WorldTitleHeader } from '@/components/world/WorldTitleHeader';
@@ -98,7 +99,7 @@ export default function ResponsiveWorldMap({assets,items,onItemPress,title,subti
   return chosen;
  },[cardWidths,insets.top,items,landZones,markerSizing.height,mode,size.height,size.width,title,headerHeight]);
  return <View style={s.screen}>
-  <Image source={assets[mode]} resizeMode="cover" style={s.background}/>
+  <BackgroundArtwork testID="world-map-backdrop" source={assets[mode]} contentFit="cover" style={s.background}/>
   {!!title&&<View style={[s.hero,{top:insets.top,left:insets.left,right:insets.right}]}>
    <WorldTitleHeader title={title} subtitle={regionLabel} detail={subtitle} onBack={()=>router.back()}/>
   </View>}

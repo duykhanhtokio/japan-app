@@ -1,4 +1,6 @@
-import { useIsFocused } from '@react-navigation/native';
+import { pushPrepared } from '@/components/ui/prepareSceneRoute';
+import StableArtwork from '@/components/ui/StableArtwork';
+import { useArtworkVisible } from '@/components/ui/ArtworkVisibility';
 import { Redirect, router } from 'expo-router';
 import { useEffect, useMemo, useRef } from 'react';
 import {
@@ -14,6 +16,8 @@ import {
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ROYAL_FONT, useRoyalPositioning } from '@/components/ui/RoyalSurface';
 import { DEVELOPMENT_FEATURES } from '@/config/development-features';
+
+const AnimatedArtwork = Animated.createAnimatedComponent(StableArtwork);
 
 const PETALS = [
   { x: 0.05, delay: 0, duration: 8200, size: 15 },
@@ -148,7 +152,7 @@ export default function WelcomeScreen() {
 }
 
 function WelcomeContent() {
-  const focused = useIsFocused();
+  const focused = useArtworkVisible();
   const royalPosition = useRoyalPositioning();
   const insets = useSafeAreaInsets();
   const { isLandscape } = royalPosition;
@@ -185,7 +189,7 @@ function WelcomeContent() {
 
   return (
     <View style={styles.screen}>
-      {focused && <Animated.Image
+      {focused && <AnimatedArtwork
         source={background}
         resizeMode="cover"
         style={[styles.backgroundContain, {
@@ -208,7 +212,7 @@ function WelcomeContent() {
       </SafeAreaView>
 
       <View style={[styles.bottomArea, { width: startWidth, left: startLeft, bottom: insets.bottom + (isLandscape ? 6 : 22) }]}>
-        <Pressable onPress={() => router.push('/portal')} style={({ pressed }) => [styles.startHitbox, pressed && styles.pressed]}>
+        <Pressable onPress={() => pushPrepared('/portal')} style={({ pressed }) => [styles.startHitbox, pressed && styles.pressed]}>
           <Animated.View style={[styles.startPulse, {
             opacity: pulse.interpolate({ inputRange: [0, 1], outputRange: [0.72, 1] }),
             transform: [{ scale: pulse.interpolate({ inputRange: [0, 1], outputRange: [0.99, 1.015] }) }],
