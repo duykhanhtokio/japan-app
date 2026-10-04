@@ -223,3 +223,10 @@ Whole-prefecture CONTENT PASS/master lock is still pending, with 152 old drafts 
 205/309 individually authored Japanese exchanges, 1,025 speaking goals and 24/37 cities. Added 48 exchanges across Yachiyo, Abiko, Kamogawa, Kamagaya, Kimitsu and Futtsu. Nine additional selected full-exchange comparisons led to four full plot replacements; cumulative selected comparisons: 25, replacements: 15. Fixed an unsupported purpose in Abiko's illuminated-device title. Source/runtime/override parity and original IDs/order/next links pass for all 205; audit has zero structural errors; UI lock passes 10/10. Corpus ranking covers 7,128 runtime packages and prioritizes review only.
 
 104 older drafts remain. Whole-prefecture semantic CONTENT PASS and master lock remain pending. No new translations, native certification, deployment or device test acceptance. Next CTY-JP-12227 Urayasu, then the remaining canonical Chiba cities; finish all 309 and steps 1–10 before PRF-013. This checkpoint must pass verified remote persistence.
+
+
+## Chiba continuation through Sodegaura — 2026-10-04
+
+229/309 individually authored Japanese exchanges, 1,145 speaking goals and 27/37 cities. Added 24 exchanges across Urayasu, Yotsukaido and Sodegaura after the remote-verified 205 checkpoint (71a198964de17e9dbb2b9bbf8e0efd52e3e4bb83). Eight additional full selected comparisons led to three full plot replacements; cumulative comparisons: 33, replacements: 18. Source/runtime/override parity, single source ownership and original IDs/order/next links pass for all 229. Audit has zero structural errors; UI lock passes 10/10. Rankings over 7,128 packages prioritize review only.
+
+80 older drafts across ten cities remain. Whole-prefecture CONTENT PASS/master lock is pending; no new translations, native certification, deployment or device test acceptance. Next CTY-JP-12230 Yachimata, then Inzai, Shiroi, Tomisato, Minamiboso, Sosa, Katori, Sanmu, Isumi and Oamishirasato. Complete all 309 and steps 1–10 before PRF-013. This checkpoint requires its own remote persistence gate.
