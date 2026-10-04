@@ -1,4 +1,3 @@
-import { navigateWithPreparedArtwork } from '@/components/ui/prepareSceneRoute';
 import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { router, useFocusEffect } from 'expo-router';
@@ -51,7 +50,7 @@ function ProfilePanel({children,style,kind='plain'}:PropsWithChildren<{style?:St
 
 export default function ProfileScreen() {
     const [detailsVisible,setDetailsVisible]=useState(false);
-    const navigate=(href:Parameters<typeof router.push>[0])=>{const path=typeof href==='string'?href:href.pathname;navigateWithPreparedArtwork(path,()=>{setDetailsVisible(false);router.push(href)})};
+    const navigate=(href:Parameters<typeof router.push>[0])=>{setDetailsVisible(false);router.push(href)};
     const [economy,setEconomy]=useState<LearningEconomy|null>(null);
     useFocusEffect(useCallback(()=>{let active=true;void syncJlptQualification().then(value=>{if(active)setEconomy(value)});return()=>{active=false}},[]));
     const {
@@ -104,7 +103,7 @@ export default function ProfileScreen() {
         60;
 
     return (
-        <RoyalPageBackground source={detailsVisible?PROFILE_ART:require('../../../assets/app/backgrounds/profile-light.png')}><SafeAreaView
+        <RoyalPageBackground source={require('../../../assets/app/backgrounds/profile-light.png')} enabled={!detailsVisible}><SafeAreaView
             style={
                 styles.container
             }
@@ -113,7 +112,7 @@ export default function ProfileScreen() {
                 'bottom',
             ]}
         >
-            {!detailsVisible && <><View style={styles.fixedHeader}>
+            <View style={styles.fixedHeader}>
                 <GameHeader variant="approved" name={profile.name?.trim()||'プレイヤー'} abilityLevel={economy?.officialRank??'N5'} abilityTarget={economy?.officialRank?RANKS[RANKS.indexOf(economy.officialRank)+1]??economy.officialRank:'N5'} qualifiedExams={Object.fromEntries(RANKS.map(rank=>[rank,Object.keys(economy?.passed[rank]??{}).length]))} conversationCredits={economy?.credits??100} coins={stats.coins}/>
             </View>
             <ScrollView
@@ -143,9 +142,8 @@ export default function ProfileScreen() {
                     </Pressable>
                 </View>
             </ScrollView>
-            </>}
-            {detailsVisible && <Modal visible={detailsVisible} transparent animationType="none" onRequestClose={()=>setDetailsVisible(false)}>
-                <SafeAreaProvider><View style={{flex:1}}><SafeAreaView style={styles.detailsPage}>
+            {detailsVisible && <Modal visible={detailsVisible} animationType="none" onRequestClose={()=>setDetailsVisible(false)}>
+                <SafeAreaProvider><RoyalPageBackground source={PROFILE_ART}><SafeAreaView style={styles.detailsPage}>
                     <View style={styles.detailsHeader}>
                         <Text style={styles.sectionTitle}>プロフィール · 詳細</Text>
                         <RoyalButton onPress={()=>setDetailsVisible(false)} style={styles.detailsClose}>
@@ -784,12 +782,12 @@ export default function ProfileScreen() {
                     </View>
                 </ProfilePanel>
                     </ScrollView>
-                </SafeAreaView></View></SafeAreaProvider>
+                </SafeAreaView></RoyalPageBackground></SafeAreaProvider>
             </Modal>}
 
-            {!detailsVisible && <BottomNav
+            <BottomNav
                 active="profile"
-            />}
+            />
         </SafeAreaView></RoyalPageBackground>
     );
 }

@@ -1,10 +1,8 @@
-import Image from '@/components/ui/StableArtwork';
-import { navigateWithPreparedArtwork } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import RoyalPaperPanel, { royalOpenFrameGeometry, royalOpenStrokeGeometry } from '@/components/ui/RoyalPaperPanel';
 import { router, useFocusEffect } from 'expo-router';
 import { useCallback, useMemo, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BottomNav from '@/components/app/BottomNav';
 import GameHeader from '@/components/app/GameHeader';
@@ -45,7 +43,7 @@ export default function HomeScreen(){
     <View><GameHeader variant="approved" name={profile.name?.trim()||'プレイヤー'} abilityLevel={ability.level} abilityTarget={ability.target} qualifiedExams={qualifiedExams} conversationCredits={economy?.credits??100} coins={stats.coins}/></View>
    <ScrollView style={styles.content} contentContainerStyle={styles.contentInner} showsVerticalScrollIndicator={false}>
     <View style={styles.headingArea}><RoyalNavyFrame style={styles.headingPlaque}><Text style={styles.heading}>学習モード</Text></RoyalNavyFrame><Text style={styles.headingVi}>Chọn nội dung bạn muốn học</Text></View>
-    <View style={[styles.cards,{gap:ROYAL_LAYOUT.homeModeGap}]}>{MODES.map(mode=><LearningImageCard key={mode.ja} {...mode} width={cardWidth} height={cardHeight} onPress={()=>{navigateWithPreparedArtwork(mode.route,()=>router.push(mode.route))}}/>)}</View>
+    <View style={[styles.cards,{gap:ROYAL_LAYOUT.homeModeGap}]}>{MODES.map(mode=><LearningImageCard key={mode.ja} {...mode} width={cardWidth} height={cardHeight} onPress={()=>router.push(mode.route)}/>)}</View>
    </ScrollView>
    <View><BottomNav active="home" variant="approved"/></View>
   </View>

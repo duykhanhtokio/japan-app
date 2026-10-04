@@ -898,6 +898,9 @@ const styles =
             flex: 1,
 
             overflow: 'hidden',
+
+            backgroundColor:
+                '#ddd1bc',
         },
 
         background: {

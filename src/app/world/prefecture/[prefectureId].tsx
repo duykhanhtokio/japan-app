@@ -1,5 +1,3 @@
-import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
-import { navigateWithPreparedArtwork } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import { router, useLocalSearchParams } from 'expo-router';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
@@ -25,7 +23,7 @@ export default function PrefectureScreen() {
     wideInset: 8,
   });
 
-  if (!prefecture) return <RoyalPageBackground><SafeAreaView style={s.empty}><Text>都道府県が見つかりません。</Text></SafeAreaView></RoyalPageBackground>;
+  if (!prefecture) return <SafeAreaView style={s.empty}><Text>都道府県が見つかりません。</Text></SafeAreaView>;
   const totalLocations = cities.reduce((total, city) => total + getLifeLocationsByCity(city.id).length, 0);
 
   return <ImageBackground source={cities[0] ? cityImageById[cities[0].id] : undefined} resizeMode="cover" blurRadius={10} style={s.screen}>
@@ -38,7 +36,7 @@ export default function PrefectureScreen() {
           {cities.map((city) => {
             const locationCount = getLifeLocationsByCity(city.id).length;
             const dialogueCount = getLifeDialogueCountByCity(city.id);
-            return <DepthPressable key={city.id} accessibilityLabel={city.nameJa} onPress={() => navigateWithPreparedArtwork(`/world/city/${city.id}`,()=>router.push(`/world/city/${city.id}`))} style={{ width:grid.cardWidth,height:grid.cardWidth/3.2,maxWidth:'100%',minWidth:0,alignSelf:'center' }}>
+            return <DepthPressable key={city.id} accessibilityLabel={city.nameJa} onPress={() => router.push(`/world/city/${city.id}`)} style={{ width:grid.cardWidth,height:grid.cardWidth/3.2,maxWidth:'100%',minWidth:0,alignSelf:'center' }}>
               <RoyalPlaceRow source={cityImageById[city.id]} style={s.card}>
                 <View style={s.copy}>
                   <View style={s.textColumn}>

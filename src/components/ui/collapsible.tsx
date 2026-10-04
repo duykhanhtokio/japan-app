@@ -10,7 +10,6 @@ import {
 import {
   Pressable,
   StyleSheet,
-  View,
 } from 'react-native';
 
 import Animated, {
@@ -49,7 +48,7 @@ export function Collapsible({
     useTheme();
 
   return (
-    <View>
+    <ThemedView>
       <Pressable
         style={({
           pressed,
@@ -117,7 +116,7 @@ export function Collapsible({
           </ThemedView>
         </Animated.View>
       )}
-    </View>
+    </ThemedView>
   );
 }
 

@@ -1,5 +1,5 @@
 import { createContext, useContext, type PropsWithChildren } from 'react';
-import Image from './DecodedArtwork';
+import { Image } from 'expo-image';
 import { StyleSheet, View } from 'react-native';
 
 const InheritedBackdrop = createContext(false);
@@ -10,8 +10,7 @@ export const useInheritedBackdrop = () => useContext(InheritedBackdrop);
 export function ownsSceneBackdrop(pathname: string) {
   return pathname === '/' || /^\/(home|profile|register|npc-starter)(\/|$)/.test(pathname)
     || pathname === '/portal' || pathname === '/specified-skills'
-    || /^\/game(?:$|\/work(?:\/|$))/.test(pathname)
-    || /^\/world(?:$|\/(?:hokkaido|tohoku|kanto|chubu|kansai|chugoku|shikoku|kyushu)$)/.test(pathname)
+    || /^\/game(?:$|\/(?:work|mission)(?:\/|$))/.test(pathname)
     || /^\/world\/(?:city|prefecture|location|dialogue)(?:\/|$)/.test(pathname);
 }
 export function AppBackdrop({ pathname, children }: PropsWithChildren<{ pathname: string }>) {

@@ -1,4 +1,3 @@
-import { replacePrepared } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import {
     router,
@@ -285,7 +284,7 @@ export default function RegistrationWorkScreen() {
                 new Date().toISOString(),
         });
 
-        replacePrepared(
+        router.replace(
             '/npc-starter'
         );
     }

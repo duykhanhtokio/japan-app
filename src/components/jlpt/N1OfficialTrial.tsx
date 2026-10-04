@@ -1,4 +1,3 @@
-import { Asset } from 'expo-asset';
 import JlptStudyBackground from './JlptStudyBackground';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AppState, Image, Pressable, ScrollView, StyleSheet, Text, View, type ImageSourcePropType, type LayoutChangeEvent, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
@@ -421,7 +420,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
 
 function QuestionBlock({ question, scale, selected, submitted, visualOptions, showProblemHeading = true, showInstruction = true, showPassage = true, onChoose, onLayout, onFocus }: { question: TrialQuestion; scale: number; selected?: string; submitted: boolean; visualOptions: Readonly<Record<number, ImageSourcePropType>>; showProblemHeading?: boolean; showInstruction?: boolean; showPassage?: boolean; onChoose: (questionId: string, optionId: string) => void; onLayout: (event: LayoutChangeEvent) => void; onFocus: () => void }) {
   const imageSource = question.visualOptionPage ? visualOptions[question.visualOptionPage] : undefined;
-  const imageSize = imageSource ? (typeof Image.resolveAssetSource === 'function' ? Image.resolveAssetSource(imageSource) : Asset.fromModule(imageSource as Parameters<typeof Asset.fromModule>[0])) : undefined;
+  const imageSize = imageSource ? Image.resolveAssetSource(imageSource) : undefined;
   return <View onLayout={onLayout} style={styles.questionBlock}>
     {showProblemHeading ? <JlptSectionHeading problem={problemLabel(question)} detail={familyLabel(question)} /> : null}
     {showInstruction ? <JlptInstruction scale={scale}>{question.instructionJa}</JlptInstruction> : null}

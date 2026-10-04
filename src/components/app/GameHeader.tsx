@@ -1,8 +1,6 @@
-import { navigateWithPreparedArtwork } from '@/components/ui/prepareSceneRoute';
-import Image from '@/components/ui/StableArtwork';
 import { OPEN_FRAME_SLICES, royalOpenFrameGeometry } from '@/components/ui/RoyalPaperPanel';
 import { router } from 'expo-router';
-import { Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { RoyalBackButton, ROYAL, ROYAL_FONT, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
 import { CREDIT_CAPACITY, RANK_COLORS, RANKS, type JlptRank } from '@/services/learning-economy';
 
@@ -18,7 +16,7 @@ const APPROVED_BAR_HEIGHT = 64 / 2;
 
 function goBackOrHome(){
  if(router.canGoBack()) router.back();
- else navigateWithPreparedArtwork('/home',()=>router.replace('/home'));
+ else router.replace('/home');
 }
 function coinDisplay(value:number){
  return value>=100000?`${Math.floor(value/10000).toLocaleString('ja-JP')}万`:value.toLocaleString('ja-JP');
@@ -49,7 +47,7 @@ export default function GameHeader({name='プレイヤー',abilityLevel='N5',abi
  if(variant==='study') return <View style={s.studyContainer}>
   <View style={s.studyTop}>
    <RoyalBackButton onPress={onBack??goBackOrHome}/>
-   <Pressable accessibilityRole="button" accessibilityLabel={`${name}のプロフィール`} onPress={()=>onProfile?onProfile():navigateWithPreparedArtwork('/profile',()=>router.push('/profile'))} style={s.studyIdentity}>
+   <Pressable accessibilityRole="button" accessibilityLabel={`${name}のプロフィール`} onPress={()=>onProfile?onProfile():router.push('/profile')} style={s.studyIdentity}>
     <Image source={HUD_PLAYER} resizeMode="contain" style={s.studyAvatar}/>
     <View style={s.studyIdentityText}><Text numberOfLines={1} style={s.studyName}>{name}</Text><Text style={s.studySubtitle}>学習状況</Text></View>
    </Pressable>
@@ -76,7 +74,7 @@ export default function GameHeader({name='プレイヤー',abilityLevel='N5',abi
 // Visible source bounds x=48..2017, y=168..516; one uniform scale preserves all ornaments.
 function ReferenceIdentity({name,coins,avatarSize,onProfile,onCoins}:Pick<Props,'onProfile'|'onCoins'>&{name:string;coins:number;avatarSize:number}){
  const artLeft=avatarSize*.45,maxArtWidth=(ROYAL_LAYOUT.homeHudTopRowHeight-16)*1969/348;
- const openProfile=()=>onProfile?onProfile():navigateWithPreparedArtwork('/profile',()=>router.push('/profile'));
+ const openProfile=()=>onProfile?onProfile():router.push('/profile');
  return <View style={s.referenceBody}>
   <View pointerEvents="box-none" style={{position:'absolute',left:artLeft,right:0,top:0,bottom:0,justifyContent:'center'}}>
    <View style={{width:'100%',maxWidth:maxArtWidth,aspectRatio:1969/348}}>

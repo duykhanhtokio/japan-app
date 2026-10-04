@@ -1,4 +1,3 @@
-import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import { router } from 'expo-router';
 import { useMemo, useState } from 'react';
 import { FlatList, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native';
@@ -20,7 +19,7 @@ export default function CitiesScreen() {
     <WorldTitleHeader title="全国の都市" subtitle={`${cities.length}都市`} onBack={() => router.back()}/>
     <RoyalField label="検索" style={s.searchFrame}><TextInput value={query} onChangeText={setQuery} placeholder="市区町村を検索" placeholderTextColor="#8290a3" style={s.search} /></RoyalField>
     <FlatList data={cities} keyExtractor={(item) => item.id} initialNumToRender={16} windowSize={7} contentContainerStyle={s.list} renderItem={({ item }) =>
-      <DepthPressable accessibilityLabel={item.nameJa} onPress={() => pushPrepared(`/world/city/${item.id}`)} style={s.cardPress}>
+      <DepthPressable accessibilityLabel={item.nameJa} onPress={() => router.push(`/world/city/${item.id}`)} style={s.cardPress}>
         <RoyalPlaceRow source={cityImageById[item.id]} style={s.card}>
           <View style={s.copy}>
             <View style={s.copyText}>
