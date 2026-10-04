@@ -1,4 +1,5 @@
 import { replacePrepared } from '@/components/ui/prepareSceneRoute';
+import { useIsFocused } from '@react-navigation/native';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions, type ImageSourcePropType } from 'react-native';
 import { ROYAL, ROYAL_FONT, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
@@ -15,6 +16,11 @@ const TABS:{id:BottomNavTab;icon:ImageSourcePropType;label:string;route:'/home'|
 export type BottomNavTab='home'|'game'|'tasks'|'profile';
 export default function BottomNav({active,variant='approved'}:{active:BottomNavTab;variant?:'royal'|'study'|'approved'}){
  const {width:screenWidth}=useWindowDimensions();
+ const focused=useIsFocused();
+ const approvedHeight=Math.round(76*Math.max(.9,Math.min(1.18,screenWidth/390)));
+ // Preserve the outgoing layout but release its tab imagery. Stack screens
+ // can remain mounted after navigation; only the focused screen owns tabs.
+ if(!focused)return <View pointerEvents="none" style={{height:variant==='approved'?approvedHeight:variant==='study'?ROYAL_LAYOUT.homeBalancedBottomNavHeight:ROYAL_LAYOUT.homeBottomNavHeight,width:'100%'}}/>;
  if(variant==='approved'){
   const scale=Math.max(.9,Math.min(1.18,screenWidth/390));
   const navHeight=Math.round(76*scale);
