@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "拾われた物をお届けいただいたのですね。",
+        "textJa": "拾った物についてのご相談ですね。お品物をお持ちですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11207_04_001_goal_1",
         "requiredSemanticComponents": {
-          "goal": "拾った場所と袋を示す"
+          "goal": "袋を持参しておらず相談先の住所を書いたと説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。公園のベンチの下に、この小袋がありました。口が閉じていたので、開けずに持ってきました。",
+        "recommendedAnswerJa": "いいえ。公園のベンチに袋がありました。拾得物の場所を聞かれたので、この交番の住所を書いてしまいました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "拾った場所と袋を示す。日本語で伝えてください。",
+        "hint": "袋を持参しておらず相談先の住所を書いたと説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "拾った場所と袋を示す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "袋を持参しておらず相談先の住所を書いたと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "中に何が入っているかは、まだご覧になっていないのですね。",
+        "textJa": "ここは相談に来られた場所ですね。袋を実際に見つけた所を確認しましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11207_04_001_goal_2",
         "requiredSemanticComponents": {
-          "goal": "開けていないと伝える"
+          "goal": "実際に見たベンチと置いたままの状態を伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。財布かと思いましたが、触っただけでは分からないので、中身の名前は言えません。",
+        "recommendedAnswerJa": "南の入口から二つ目のベンチです。私は袋を運んでおらず、そこに置いたままです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "開けていないと伝える。日本語で伝えてください。",
+        "hint": "実際に見たベンチと置いたままの状態を伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "開けていないと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "実際に見たベンチと置いたままの状態を伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "拾った時刻と、ベンチの位置を教えてください。",
+        "textJa": "現在この交番でお預かりしている物としては記録できません。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11207_04_001_goal_3",
         "requiredSemanticComponents": {
-          "goal": "発見時の状態を説明する"
+          "goal": "発見時刻を示し届出場所の記入を訂正したいと言う"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "午後一時ごろ、南側の入口に一番近いベンチです。袋は下の地面にあって、周囲に人はいませんでした。",
+        "recommendedAnswerJa": "私が届けたことにならないよう、場所の欄を直したいです。見たのは午後一時ごろです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "発見時の状態を説明する。日本語で伝えてください。",
+        "hint": "発見時刻を示し届出場所の記入を訂正したいと言う。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "発見時の状態を説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "発見時刻を示し届出場所の記入を訂正したいと言う。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ありがとうございます。袋の状態と発見状況を記録します。お届けいただいた方の連絡先も伺います。",
+        "textJa": "その時刻と、まだ持参していない状況を分けて伺います。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11207_04_001_goal_4",
         "requiredSemanticComponents": {
-          "goal": "届ける人の連絡情報を確認する"
+          "goal": "現在の所在は未確認で過去に見た情報だと区別する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "こちらに書けばいいですか。中身は、係の方に確認してもらいたいです。",
+        "recommendedAnswerJa": "今も同じ場所にあるかは分かりません。さっき見たという情報だけをお伝えします。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "届ける人の連絡情報を確認する。日本語で伝えてください。",
+        "hint": "現在の所在は未確認で過去に見た情報だと区別する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "届ける人の連絡情報を確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "現在の所在は未確認で過去に見た情報だと区別する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。連絡先はこちらです。内容は担当者が受け付けの手順に沿って確認します。",
+        "textJa": "承知しました。場所が分かる案内や写真はありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11207_04_001_goal_5",
         "requiredSemanticComponents": {
-          "goal": "中身の確認を係員に任せる"
+          "goal": "案内図で場所を示し戻る前に次の対応を相談する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "記入しました。拾った時から袋を開けておらず、今の状態でお渡しします。",
+        "recommendedAnswerJa": "公園の案内図でベンチを示せます。自分で戻る前に、今後どうするか伺いたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "中身の確認を係員に任せる。日本語で伝えてください。",
+        "hint": "案内図で場所を示し戻る前に次の対応を相談する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "中身の確認を係員に任せる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "案内図で場所を示し戻る前に次の対応を相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。袋をお預かりします。発見場所と未開封の状態もあわせて記録します。",
+        "textJa": "案内図で位置を確認し、現物をお預かりしていない相談として担当へ伝えます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-011-chichibu.json",
-    "premise": "警察へ、ベンチの下で拾った口の閉じた小袋を持参する。中身を知らない状態で拾得状況を説明する。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
+    "premise": "駅前で拾得物の相談をする利用者は袋を持参せず、見つけた公園のベンチへ置いたまま交番へ来ている。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

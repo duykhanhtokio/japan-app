@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こちらのかごの商品をお会計しますね。",
+        "textJa": "お会計はこちらの三点ですね。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11210_07_001_goal_1",
         "requiredSemanticComponents": {
-          "goal": "別店の会計済み品があると伝える"
+          "goal": "預かり札の番号を料金と思い会計に含めるか尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "お願いします。この白い袋は前の店で買った物です。今回の商品と一緒のかごに入れてしまいました。",
+        "recommendedAnswerJa": "はい。それと、この札に五百とあるので、その分も払うと思いました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "別店の会計済み品があると伝える。日本語で伝えてください。",
+        "hint": "預かり札の番号を料金と思い会計に含めるか尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "別店の会計済み品があると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "預かり札の番号を料金と思い会計に含めるか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "袋の中は、こちらの会計対象ではないのですね。",
+        "textJa": "その札は入口で荷物を預けた時に受け取った物ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11210_07_001_goal_2",
         "requiredSemanticComponents": {
-          "goal": "袋とレシートを示す"
+          "goal": "番号札と代金を取り違えたと訂正し預けた袋を説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。前の店のレシートもあります。白い袋をかごから出して、今回の品は手前にまとめます。",
+        "recommendedAnswerJa": "そうです。番号なのに五百円だと思っていました。預けた青い袋を受け取るための札ですね。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "袋とレシートを示す。日本語で伝えてください。",
+        "hint": "番号札と代金を取り違えたと訂正し預けた袋を説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "袋とレシートを示す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "番号札と代金を取り違えたと訂正し預けた袋を説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ありがとうございます。今回はこちらの三点ですね。",
+        "textJa": "料金の表示とは分けて、預かり場所の案内を確認しましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11210_07_001_goal_3",
         "requiredSemanticComponents": {
-          "goal": "今回買う商品を分ける"
+          "goal": "購入三点を示し引換札を受取まで保持すると言う"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい、牛乳と卵とりんごです。持参した袋には前の店の物も入れるので、入れる順を考えたいです。",
+        "recommendedAnswerJa": "買うのは牛乳と卵とりんごだけです。この札は会計へ渡さず、荷物を受け取るまで持っておきます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "今回買う商品を分ける。日本語で伝えてください。",
+        "hint": "購入三点を示し引換札を受取まで保持すると言う。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "今回買う商品を分ける。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "購入三点を示し引換札を受取まで保持すると言う。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "今の三点は、会計後に詰め台で入れていただけます。",
+        "textJa": "はい。商品の会計が済んだら、入口の担当へ札をお見せください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11210_07_001_goal_4",
         "requiredSemanticComponents": {
-          "goal": "持参袋へ入れる順を相談する"
+          "goal": "袋詰め後の受取希望とレジで返却できるか尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "分かりました。白い袋の中身はそのままにして、今回の卵がつぶれないよう別の位置へ入れます。",
+        "recommendedAnswerJa": "買った物を先に袋へ入れてから、青い袋を受け取りたいです。レジで預かり品も戻りますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "持参袋へ入れる順を相談する。日本語で伝えてください。",
+        "hint": "袋詰め後の受取希望とレジで返却できるか尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "持参袋へ入れる順を相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "袋詰め後の受取希望とレジで返却できるか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こちらの三点で合計はこちらです。袋は追加されますか。",
+        "textJa": "レジではお返しできません。受け取りは入口の担当へお願いします。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11210_07_001_goal_5",
         "requiredSemanticComponents": {
-          "goal": "今回の会計対象を確認する"
+          "goal": "商品会計と袋詰めの後で札を持ち入口へ受取に行くと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "追加は不要です。今回の三点だけの金額を確認しました。この金額で払います。",
+        "recommendedAnswerJa": "分かりました。三点の代金を払い、詰め台で整理してから、札を持って入口へ行きます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "今回の会計対象を確認する。日本語で伝えてください。",
+        "hint": "商品会計と袋詰めの後で札を持ち入口へ受取に行くと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "今回の会計対象を確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "商品会計と袋詰めの後で札を持ち入口へ受取に行くと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ありがとうございます。会計済みの三点と、最初にお持ちの白い袋を忘れずにお持ちください。",
+        "textJa": "ありがとうございます。会計のレシートと、荷物の引換札をそれぞれお忘れなく。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-011-kazo.json",
-    "premise": "スーパーで前の店の買い物袋をかごに入れていた。今回の未会計品と区別してレジ係へ伝える。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
+    "premise": "買い物の前に入口で荷物を預けた利用者は、引換用の番号札を商品値札だと思い、会計に出そうとしている。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "お弁当の表示で分からないところがありますか。",
+        "textJa": "どのような商品をお探しですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11242_07_001_goal_1",
         "requiredSemanticComponents": {
-          "goal": "製造日時が翌日の期限を示すか尋ねる"
+          "goal": "国内製造で原料も国内産と判断できるか尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。ここに今日の十時とあります。明日の十時まで食べられるという意味ですか。",
+        "recommendedAnswerJa": "国内の原料を使うものです。国内製造とあれば、それで合っていますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "製造日時が翌日の期限を示すか尋ねる。日本語で伝えてください。",
+        "hint": "国内製造で原料も国内産と判断できるか尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "製造日時が翌日の期限を示すか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "国内製造で原料も国内産と判断できるか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "その欄は製造日時です。消費期限は別の欄にあります。",
+        "textJa": "この商品の表示では、作った場所と原料の産地が別に書かれています。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11242_07_001_goal_2",
         "requiredSemanticComponents": {
-          "goal": "消費期限の欄を見つけて読み上げる"
+          "goal": "製造場所と原料欄の外国名を区別する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "こちらの今日の二十二時が、食べる期限なんですね。",
+        "recommendedAnswerJa": "原料の欄には外国の名前があります。国内で作ったことと、原料が国内のものということは別ですね。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "消費期限の欄を見つけて読み上げる。日本語で伝えてください。",
+        "hint": "製造場所と原料欄の外国名を区別する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "消費期限の欄を見つけて読み上げる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "製造場所と原料欄の外国名を区別する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。保存方法の表示も一緒にご覧ください。",
+        "textJa": "はい。ご希望の条件に関わる欄を確認してください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11242_07_001_goal_3",
         "requiredSemanticComponents": {
-          "goal": "冷蔵保存で表示期限を延ばせるか確認する"
+          "goal": "製造の一語だけで買わず原料表示を確認したいと言う"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "冷蔵庫に入れれば、明日の朝まで延ばせますか。",
+        "recommendedAnswerJa": "この一語だけで買わず、原料の表示も見たいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "冷蔵保存で表示期限を延ばせるか確認する。日本語で伝えてください。",
+        "hint": "製造の一語だけで買わず原料表示を確認したいと言う。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "冷蔵保存で表示期限を延ばせるか確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "製造の一語だけで買わず原料表示を確認したいと言う。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "表示の期限が延びるとはご案内できません。",
+        "textJa": "別の商品も、包装ごとに確認できます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11242_07_001_goal_4",
         "requiredSemanticComponents": {
-          "goal": "翌朝用の購入を見直すと伝える"
+          "goal": "別商品の読みにくい産地について資料確認を求める"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "では、明日の朝に食べるためにこの弁当を買うのはやめます。",
+        "recommendedAnswerJa": "こちらは原料の産地が見えにくいです。担当に確認できる資料があるか聞けますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "翌朝用の購入を見直すと伝える。日本語で伝えてください。",
+        "hint": "別商品の読みにくい産地について資料確認を求める。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "翌朝用の購入を見直すと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "別商品の読みにくい産地について資料確認を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ご予定に合う商品を、期限と保存方法を見てお選びください。",
+        "textJa": "確認します。はっきりしない部分を推測してはご案内しません。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_11242_07_001_goal_5",
         "requiredSemanticComponents": {
-          "goal": "期限と保存方法を確認して別の商品を選ぶと言う"
+          "goal": "確認できた原料情報で選ぶと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "この二つの欄を確認して、別の商品を探します。",
+        "recommendedAnswerJa": "ありがとうございます。原料の情報が確認できてから、希望に合う商品を選びます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "期限と保存方法を確認して別の商品を選ぶと言う。日本語で伝えてください。",
+        "hint": "確認できた原料情報で選ぶと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "期限と保存方法を確認して別の商品を選ぶと言う。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "確認できた原料情報で選ぶと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "分からない表示があれば、またお声がけください。",
+        "textJa": "承知しました。表示の資料があるか担当へ照会します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-011-hidaka.json",
-    "premise": "弁当を翌朝食べたい客が、製造日時を消費期限と取り違えている。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
+    "premise": "国内の原料を使う食品を探す客が、国内製造という表示だけで選びそうになる。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
