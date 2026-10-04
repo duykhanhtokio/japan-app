@@ -36,7 +36,7 @@ export default function SpecifiedSkillsScreen() {
     const { width } = useWindowDimensions();
     const navHeight = Math.round(76 * Math.max(.9, Math.min(1.18, width / 390)));
     return (
-        <ImageBackground source={require('../../../assets/app/home-cards/tokutei-engine-safety.png')} blurRadius={40} resizeMode="cover" style={{flex:1}}><SafeAreaView
+        <ImageBackground inheritBackdrop source={require('../../../assets/app/home-cards/tokutei-engine-safety.png')} blurRadius={40} resizeMode="cover" style={{flex:1}}><SafeAreaView
             edges={['top', 'left', 'right']}
             style={[styles.container, { paddingBottom: navHeight + insets.bottom }]}
         >

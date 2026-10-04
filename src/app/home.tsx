@@ -39,7 +39,7 @@ export default function HomeScreen(){
  const stroke=royalOpenStrokeGeometry(availableWidth,1000);
  const cardWidth=artworkWidth+stroke.left+stroke.right;
  const cardHeight=artworkWidth/3+stroke.top+stroke.bottom;
- return <ImageBackground fadeDuration={0} source={require('../../assets/app/welcome/welcome-japan-landscape-v2.png')} resizeMode="cover" blurRadius={40} style={styles.background}>
+ return <ImageBackground inheritBackdrop fadeDuration={0} source={require('../../assets/app/welcome/welcome-japan-landscape-v2.png')} resizeMode="cover" blurRadius={40} style={styles.background}>
   <View style={[styles.screen,{paddingTop:topInset,paddingBottom:bottomInset}]}>
     <View><GameHeader variant="approved" name={profile.name?.trim()||'プレイヤー'} abilityLevel={ability.level} abilityTarget={ability.target} qualifiedExams={qualifiedExams} conversationCredits={economy?.credits??100} coins={stats.coins}/></View>
    <ScrollView style={styles.content} contentContainerStyle={styles.contentInner} showsVerticalScrollIndicator={false}>
