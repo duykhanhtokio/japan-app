@@ -1,8 +1,9 @@
+import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import { router } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 import { SakuraPetalField } from '@/components/ui/SakuraPetalField';
 
 import { RoyalBackButton, RoyalButton, RoyalTitlePanel, ROYAL, ROYAL_FONT, ROYAL_LAYOUT, ROYAL_PLACEMENT, ROYAL_TEXT_FIT, useRoyalPositioning } from '@/components/ui/RoyalSurface';
@@ -56,7 +57,7 @@ export default function PortalSelectionScreen() {
     : royalPosition.contentWidth;
 
   return (
-    <ImageBackground source={require('../../assets/app/registration/registration-bg.jpg')} resizeMode="cover" style={styles.background}>
+    <ImageBackground sceneBackdrop source={require('../../assets/app/registration/registration-bg.jpg')} resizeMode="cover" style={styles.background}>
       <SakuraPetalField />
       <SafeAreaView style={styles.safeArea}>
         <View style={[styles.content, { width: frameWidth }]}>

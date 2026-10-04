@@ -1,6 +1,7 @@
+import { LegacySafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { RoyalBackButton, ROYAL, ROYAL_FONT } from '@/components/ui/RoyalSurface';
 import { useAppLanguage } from '@/context/LanguageContext';
 import { getLifeLocationById, getLifeScenarioById } from '@/services/life-content-repository';

@@ -1,3 +1,4 @@
+import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
@@ -16,10 +17,7 @@ import {
     type ViewStyle,
 } from 'react-native';
 
-import {
-    SafeAreaView,
-    SafeAreaProvider,
-} from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import BottomNav from '@/components/app/BottomNav';
 import GameHeader from '@/components/app/GameHeader';
@@ -106,7 +104,7 @@ export default function ProfileScreen() {
     return (
         <RoyalPageBackground source={require('../../../assets/app/backgrounds/profile-light.png')} enabled={!detailsVisible}><SafeAreaView
             style={
-                styles.container
+                [styles.container, detailsVisible && { opacity: 0 }]
             }
             edges={[
                 'top',
@@ -143,8 +141,8 @@ export default function ProfileScreen() {
                     </Pressable>
                 </View>
             </ScrollView>
-            {detailsVisible && <Modal visible={detailsVisible} animationType="none" onRequestClose={()=>setDetailsVisible(false)}>
-                <SafeAreaProvider><RoyalPageBackground source={PROFILE_ART}><SafeAreaView style={styles.detailsPage}>
+            {detailsVisible && <Modal transparent visible={detailsVisible} animationType="none" onRequestClose={()=>setDetailsVisible(false)}>
+                <SafeAreaProvider><RoyalPageBackground local source={PROFILE_ART}><SafeAreaView style={styles.detailsPage}>
                     <View style={styles.detailsHeader}>
                         <Text style={styles.sectionTitle}>プロフィール · 詳細</Text>
                         <RoyalButton onPress={()=>setDetailsVisible(false)} style={styles.detailsClose}>

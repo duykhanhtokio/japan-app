@@ -1,8 +1,9 @@
+import { LegacySafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import { pushPrepared, replacePrepared } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { FlatList, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { RoyalBackButton, RoyalCapsule, RoyalChevron, RoyalLocationCard, RoyalLockCrest, RoyalTitlePanel, ROYAL, ROYAL_FONT, ROYAL_LAYOUT, ROYAL_PLACEMENT, ROYAL_TEXT_FIT, resolveRoyalGrid, useRoyalPositioning } from '@/components/ui/RoyalSurface';
 import { locationBackground } from '@/components/world/location-backgrounds.generated';
 import { cityImageById } from '@/components/world/city-images.generated';
@@ -40,7 +41,7 @@ export default function CityScreen() {
     desktopAt: 1100,
   });
 
-  return <ImageBackground source={cityImageById[city.id]} resizeMode="cover" blurRadius={width > height ? 10 : 6} style={s.screen}>
+  return <ImageBackground sceneBackdrop source={cityImageById[city.id]} resizeMode="cover" blurRadius={width > height ? 10 : 6} style={s.screen}>
 
     <SafeAreaView style={s.safe}>
       <WorldTitleHeader title={city.nameJa} subtitle={`市内会話・全${locations.length}か所`} onBack={() => router.back()}/>

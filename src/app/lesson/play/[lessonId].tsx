@@ -1,3 +1,4 @@
+import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { lessonSteps } from '@/data/lesson-steps';
 import { lessons } from '@/data/lessons';
@@ -26,7 +27,7 @@ import {
     View,
 } from 'react-native';
 
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
 
 import {

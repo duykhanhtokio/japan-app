@@ -1,8 +1,9 @@
+import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { router } from 'expo-router';
 import { useMemo, useState } from 'react';
 import { Alert, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
 
 const PEOPLE = [

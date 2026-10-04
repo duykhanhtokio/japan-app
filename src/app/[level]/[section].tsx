@@ -1,9 +1,10 @@
+import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 import JlptStudyBackground from '@/components/jlpt/JlptStudyBackground';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useMemo, useState } from 'react';
 import { Image, NativeScrollEvent, NativeSyntheticEvent, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 import * as Speech from 'expo-speech';
 import {
     generatedGrammar, getKanaRomaji, hiraganaCombinationRows, hiraganaRows,

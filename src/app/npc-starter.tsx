@@ -1,8 +1,9 @@
+import { LegacySafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import { replacePrepared } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { useState } from 'react';
-import { FlatList, Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
 import { npcCardById } from '@/components/world/npc-card-assets';
 import { npcForCategory, sceneForCategory } from '@/components/world/life-assets';
 import { NPC_CATEGORIES, NPC_TEST_UNLOCK_ALL, type NpcCategory } from '@/data/npc-progression';

@@ -1,3 +1,4 @@
+import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import JlptStudyBackground from '@/components/jlpt/JlptStudyBackground';
@@ -5,7 +6,7 @@ import { generatedVocabulary, isJlptLevel } from '@/data/jlpt-study-data';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 import { RoyalBackButton, ROYAL_LAYOUT, ROYAL_FONT } from '@/components/ui/RoyalSurface';
 const PAGE_SIZE = 50;
 export default function VocabularyScreen() {

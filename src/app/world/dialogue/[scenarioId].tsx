@@ -1,9 +1,10 @@
+import { LegacySafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import * as Speech from 'expo-speech';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Animated as NativeAnimated, Image, Pressable, SafeAreaView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Animated as NativeAnimated, Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { npcPresentationForCategory, sceneForCategory } from '@/components/world/life-assets';
 import { locationBackground } from '@/components/world/location-backgrounds.generated';
@@ -167,7 +168,7 @@ function DialogueScreen({id}:{id?:string}){
    </RoyalReadingFrame><RoyalHintButton onPress={()=>nextHint(panel.id,isNpc)} color={isNpc?'gold':'red'} style={s.hintButton}/></View>
   </View>;
  };
- return <ImageBackground key={location?.id} source={background} resizeMode="cover" style={s.screen}><View style={s.safe}>
+ return <ImageBackground sceneBackdrop key={location?.id} source={background} resizeMode="cover" style={s.screen}><View style={s.safe}>
   <View style={[s.header,{paddingTop:insets.top+ROYAL_PLACEMENT.headerTop}]}><View style={s.headerRow}><RoyalBackButton onPress={()=>router.back()}/><View style={s.headerTitle}><View style={s.titleRow}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.title}>{location?displayLocationNameJa(location.nameJa,location.category):'会話練習'}</Text></View></View></View><View style={[s.missionCard,wide&&s.missionCardWide]}><RoyalNavyFrame style={s.missionLabel}><Text style={s.missionLabelText}>課題</Text></RoyalNavyFrame><RoyalReadingFrame explanation style={wide?{paddingVertical:10}:undefined}><Text maxFontSizeMultiplier={1} style={[s.missionText,{color:ROYAL.paleGold},wide&&{fontSize:12,lineHeight:16}]}>{mission}</Text></RoyalReadingFrame></View></View>
   <View testID="dialogue-npc" pointerEvents="none" style={[s.npcLayer,{left:stageSize.width*(wide?.02:.03),top:stageSize.height-controlsBottom-npcBoxHeight,width:npcBoxWidth,height:npcBoxHeight}]}><Image key={location?.category} fadeDuration={0} source={npcImage} resizeMode="contain" style={s.npcImage}/></View>
   <View testID="dialogue-panels" pointerEvents={transitioning?'none':'auto'} style={[s.conversation,{top:conversationTop,bottom:controlsBottom+dockReserve,overflow:'hidden'},wide&&s.conversationWide]}>

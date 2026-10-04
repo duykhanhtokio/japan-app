@@ -1,8 +1,11 @@
 import { useIsFocused } from '@react-navigation/native';
-import { Image, type ImageProps } from 'expo-image';
+import { type ImageProps } from 'expo-image';
+import { useSceneBackdrop } from './SceneBackdropContext';
+import DisplayedArtwork, { fullSceneArtworkStyle } from './DisplayedArtwork';
 
-// Farm scenes use expo-image rather than ImageBackground; apply the same rule.
-export default function FocusedArtwork({ source, ...props }: ImageProps) {
+// Existing callers are the five full-viewport farm scene backgrounds.
+export default function FocusedArtwork(props: ImageProps) {
   const focused = useIsFocused();
-  return focused ? <Image {...props} source={source} /> : null;
+  const managed = useSceneBackdrop({ ...props, style: fullSceneArtworkStyle }, true);
+  return focused && !managed ? <DisplayedArtwork {...props} /> : null;
 }

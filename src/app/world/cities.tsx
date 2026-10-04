@@ -1,7 +1,8 @@
+import { LegacySafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import { router } from 'expo-router';
 import { useMemo, useState } from 'react';
-import { FlatList, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { FlatList, StyleSheet, Text, TextInput, View } from 'react-native';
 import { RoyalBackButton, RoyalChevron, RoyalField, RoyalPlaceRow, RoyalTitlePanel, ROYAL, ROYAL_FONT, ROYAL_LAYOUT, ROYAL_PLACEMENT, ROYAL_TEXT_FIT, useRoyalPositioning } from '@/components/ui/RoyalSurface';
 import { cityImageById } from '@/components/world/city-images.generated';
 import { DepthPressable } from '@/components/world/WorldSurface';

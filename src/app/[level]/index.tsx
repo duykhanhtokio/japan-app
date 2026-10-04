@@ -1,8 +1,9 @@
+import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import { pushPrepared, replacePrepared } from '@/components/ui/prepareSceneRoute';
 import JlptStudyBackground from '@/components/jlpt/JlptStudyBackground';
 import { router, useLocalSearchParams } from 'expo-router';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 import { RoyalBackButton, ROYAL_LAYOUT, ROYAL, ROYAL_FONT } from '@/components/ui/RoyalSurface';
 

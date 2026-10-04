@@ -1,3 +1,4 @@
+import { StableSafeAreaView as SafeAreaView } from '@/components/ui/StableSafeAreaView';
 import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { router, useLocalSearchParams } from 'expo-router';
@@ -8,7 +9,7 @@ import {
     Text,
     View,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 import { lessons } from '@/data/lessons';
 import { vocabulary } from '@/data/vocabulary';
