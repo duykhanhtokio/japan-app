@@ -1,3 +1,4 @@
+import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import {
     router,
@@ -331,7 +332,7 @@ export default function MissionScreen() {
                 0);
 
         return (
-            <SafeAreaView
+            <RoyalPageBackground><SafeAreaView
                 style={
                     styles.container
                 }
@@ -433,7 +434,7 @@ export default function MissionScreen() {
                         </Text>
                     </Pressable>
                 </View>
-            </SafeAreaView>
+            </SafeAreaView></RoyalPageBackground>
         );
     }
 
@@ -539,11 +540,6 @@ export default function MissionScreen() {
                             }
                             resizeMode="cover"
                         >
-                            <View
-                                style={
-                                    styles.backgroundOverlay
-                                }
-                            />
 
                             {staffSprite && (
                                 <View
@@ -797,7 +793,7 @@ const styles =
         container: {
             flex: 1,
             backgroundColor:
-                '#ffffff',
+                'transparent',
         },
 
         game: {
@@ -919,7 +915,7 @@ const styles =
             flex: 1,
 
             backgroundColor:
-                '#ddd1bc',
+                'transparent',
 
             position: 'relative',
 
@@ -935,7 +931,7 @@ const styles =
             left: 0,
 
             backgroundColor:
-                'rgba(0,0,0,0.04)',
+                'transparent',
         },
 
         /*
@@ -1138,7 +1134,7 @@ const styles =
             paddingHorizontal: 24,
 
             backgroundColor:
-                '#ffffff',
+                'transparent',
         },
 
         completeEmoji: {

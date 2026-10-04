@@ -312,7 +312,7 @@ export default function CowWorld({
 }
 
 const styles = StyleSheet.create({
-    world: { flex: 1, overflow: 'hidden', backgroundColor: '#142847' },
+    world: { flex: 1, overflow: 'hidden', backgroundColor: 'transparent' },
     slot: {
         position: 'absolute',
         alignItems: 'center',

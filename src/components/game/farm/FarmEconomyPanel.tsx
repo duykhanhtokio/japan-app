@@ -323,7 +323,7 @@ const styles =
                 'center',
 
             backgroundColor:
-                'rgba(20, 35, 24, 0.48)',
+                'transparent',
 
             padding:
                 18,

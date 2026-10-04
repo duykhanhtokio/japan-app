@@ -309,7 +309,7 @@ const styles =
             flex: 1,
 
             backgroundColor:
-                '#101827',
+                'transparent',
         },
 
         header: {
@@ -417,7 +417,7 @@ const styles =
                 'flex-end',
 
             backgroundColor:
-                'rgba(0,0,0,0.58)',
+                'transparent',
         },
 
         modal: {

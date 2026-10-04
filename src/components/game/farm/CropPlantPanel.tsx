@@ -514,7 +514,7 @@ const styles =
                 'flex-end',
 
             backgroundColor:
-                'rgba(30, 25, 18, 0.48)',
+                'transparent',
         },
 
         panel: {

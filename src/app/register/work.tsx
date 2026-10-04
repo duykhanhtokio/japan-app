@@ -1046,7 +1046,7 @@ const styles =
                 'flex-end',
 
             backgroundColor:
-                'rgba(0,0,0,0.65)',
+                'transparent',
             paddingBottom: ROYAL_PLACEMENT.modalBottom,
         },
 

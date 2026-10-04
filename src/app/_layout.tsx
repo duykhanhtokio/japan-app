@@ -3,7 +3,8 @@ import { PAPER_FRAME_SLICES, OPEN_FRAME_SLICES, HUD_FRAME_SLICES } from '@/compo
 import { NAVY_FRAME_ART } from '@/components/ui/RoyalSurface';
 import { Asset } from 'expo-asset';
 import { useEffect, useState } from 'react';
-import { Stack } from 'expo-router';
+import { Stack, usePathname } from 'expo-router';
+import { AppBackdrop } from '@/components/ui/AppBackdrop';
 import * as SplashScreen from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
 
@@ -13,6 +14,7 @@ import { LanguageProvider } from '@/context/LanguageContext';
 void SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  const pathname = usePathname();
   const [artworkReady,setArtworkReady]=useState(false);
   useEffect(()=>{let active=true;void Asset.loadAsync([
     ...PAPER_FRAME_SLICES,...OPEN_FRAME_SLICES,...HUD_FRAME_SLICES,NAVY_FRAME_ART,
@@ -24,6 +26,7 @@ export default function RootLayout() {
     require('../../assets/app/ui/royal-af/dialogue-frame-v1.png'),
     require('../../assets/app/ui/royal-af/farm-hud-plaque-v1.png'),
     require('../../assets/app/backgrounds/study-light.png'),
+    require('../../assets/app/backgrounds/profile-details.png'),
     require('../../assets/app/welcome/welcome-japan-landscape-v2.png'),
     require('../../assets/app/home-cards/study-man.png'),
     require('../../assets/app/home-cards/conversation-three.png'),
@@ -41,7 +44,7 @@ export default function RootLayout() {
   return (
     <LanguageProvider>
       <OnboardingMusic />
-      <Stack screenOptions={{ headerShown: false, animation: 'none', freezeOnBlur: false, contentStyle: { backgroundColor: '#1e140c' } }} />
+      <AppBackdrop pathname={pathname}><Stack screenOptions={{ headerShown: false, animation: 'none', freezeOnBlur: false, contentStyle: { backgroundColor: 'transparent' } }} /></AppBackdrop>
     </LanguageProvider>
   );
 }

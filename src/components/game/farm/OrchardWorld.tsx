@@ -312,7 +312,7 @@ const styles =
             width: '100%',
             minHeight: 0,
             overflow: 'hidden',
-            backgroundColor: '#142847',
+            backgroundColor: 'transparent',
         },
 
         world: {
@@ -329,7 +329,7 @@ const styles =
                 'hidden',
 
             backgroundColor:
-                '#79BC4D',
+                'transparent',
         },
 
         plotPosition: {

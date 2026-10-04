@@ -419,7 +419,7 @@ const styles =
                 'hidden',
 
             backgroundColor:
-                '#142847',
+                'transparent',
         },
 
         hotspot: {

@@ -487,7 +487,7 @@ const styles =
                 'center',
 
             backgroundColor:
-                'rgba(38, 24, 10, 0.60)',
+                'transparent',
         },
 
         window: {

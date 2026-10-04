@@ -955,7 +955,7 @@ const styles =
             flex: 1,
 
             backgroundColor:
-                '#101827',
+                'transparent',
         },
 
         content: {

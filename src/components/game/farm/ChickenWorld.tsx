@@ -379,7 +379,7 @@ const styles = StyleSheet.create({
     world: {
         flex: 1,
         overflow: 'hidden',
-        backgroundColor: '#142847',
+        backgroundColor: 'transparent',
     },
     slot: {
         position: 'absolute',

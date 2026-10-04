@@ -1684,7 +1684,7 @@ const styles =
                 '#D8B56A',
 
             backgroundColor:
-                '#8FD16A',
+                'transparent',
         },
 
         world: {

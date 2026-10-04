@@ -119,7 +119,7 @@ function MapMarker({item,width,height,label,anchor,onPress}:{item:WorldMapItem;w
 }
 
 const s=StyleSheet.create({
- screen:{flex:1,overflow:'hidden',backgroundColor:'#1598e1'},background:{...StyleSheet.absoluteFillObject,width:'100%',height:'100%'},
+ screen:{flex:1,overflow:'hidden',backgroundColor:'transparent'},background:{...StyleSheet.absoluteFillObject,width:'100%',height:'100%'},
  hero:{position:'absolute',zIndex:20,alignItems:'center'},
  connector:{position:'absolute',height:2,borderRadius:1,transformOrigin:'left center',opacity:.92,zIndex:14,backgroundColor:ROYAL.gold,shadowColor:'#fff1b0',shadowOpacity:.8,shadowRadius:3},pin:{position:'absolute',width:10,height:10,borderRadius:5,backgroundColor:ROYAL.gold,zIndex:15,shadowColor:'#fff2a8',shadowOpacity:.9,shadowRadius:5},marker:{position:'absolute',zIndex:18,shadowColor:'#020713',shadowOffset:{width:0,height:6},shadowOpacity:.5,shadowRadius:8,elevation:12},markerButton:{flex:1,width:'100%'},markerCapsule:{width:'100%',minHeight:ROYAL_LAYOUT.mapMarkerHeight,minWidth:0},ja:{fontFamily:ROYAL_FONT.heading}
 });

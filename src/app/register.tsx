@@ -679,7 +679,7 @@ const styles =
                 'flex-end',
 
             backgroundColor:
-                'rgba(8,31,47,0.42)',
+                'transparent',
             paddingBottom: ROYAL_PLACEMENT.modalBottom,
         },
 

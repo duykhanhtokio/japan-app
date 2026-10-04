@@ -205,7 +205,7 @@ const styles =
                 'hidden',
 
             backgroundColor:
-                '#176AA7',
+                'transparent',
         },
 
         plot: {

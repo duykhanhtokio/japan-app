@@ -197,7 +197,7 @@ export default function AudioTestScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#e8e2d6',
+        backgroundColor: 'transparent',
         alignItems: 'center',
         justifyContent: 'center',
         padding: 24,

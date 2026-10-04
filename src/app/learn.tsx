@@ -1,3 +1,4 @@
+import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
@@ -453,7 +454,7 @@ export default function LearnScreen() {
                 </View>
 
                 <BottomNav active="home" variant="approved" />
-                {helpVisible && <Modal visible={helpVisible} transparent animationType="none" onRequestClose={()=>setHelpVisible(false)}><View style={styles.helpBackdrop}><View style={styles.helpPanel}><ScrollView contentContainerStyle={styles.helpContent}><Text style={styles.helpTitle}>JLPT 認定の進め方</Text><Text style={styles.helpCopy}>Mỗi cấp cần 6 đề thi khác nhau đạt ít nhất 80% sau khi nộp bài. Thi lại đề chưa đạt được tính khi điểm mới đạt yêu cầu; làm một đề nhiều lần vẫn chỉ tính là một đề.</Text><Text style={styles.helpCopy}>Thanh x/6 cho biết số đề đã đạt tại cấp đó. Có thể thăng thẳng lên cấp cao khi đủ 6 đề tại cấp ấy. Cấp chính thức được hiển thị trong hồ sơ; tiến độ cấp thấp hơn sẽ ẩn sau khi đã được công nhận cấp cao.</Text></ScrollView><Pressable accessibilityRole="button" accessibilityLabel="閉じる" onPress={()=>setHelpVisible(false)} style={styles.helpClose}><Text style={styles.helpCloseText}>閉じる</Text></Pressable></View></View></Modal>}
+                {helpVisible && <Modal visible={helpVisible} transparent animationType="none" onRequestClose={()=>setHelpVisible(false)}><View style={styles.helpBackdrop}><RoyalContentPanel style={styles.helpPanel}><ScrollView contentContainerStyle={styles.helpContent}><Text style={styles.helpTitle}>JLPT 認定の進め方</Text><Text style={styles.helpCopy}>Mỗi cấp cần 6 đề thi khác nhau đạt ít nhất 80% sau khi nộp bài. Thi lại đề chưa đạt được tính khi điểm mới đạt yêu cầu; làm một đề nhiều lần vẫn chỉ tính là một đề.</Text><Text style={styles.helpCopy}>Thanh x/6 cho biết số đề đã đạt tại cấp đó. Có thể thăng thẳng lên cấp cao khi đủ 6 đề tại cấp ấy. Cấp chính thức được hiển thị trong hồ sơ; tiến độ cấp thấp hơn sẽ ẩn sau khi đã được công nhận cấp cao.</Text></ScrollView><Pressable accessibilityRole="button" accessibilityLabel="閉じる" onPress={()=>setHelpVisible(false)} style={styles.helpClose}><Text style={styles.helpCloseText}>閉じる</Text></Pressable></RoyalContentPanel></View></Modal>}
             </SafeAreaView>
         </RoyalPageBackground>
     );
@@ -463,15 +464,15 @@ const styles =
     StyleSheet.create({
         headingTitleRow:{flexDirection:'row',alignItems:'center',justifyContent:'center',gap:10},
         headingPlaque:{flex:1,minWidth:0,maxWidth:420,height:58,paddingHorizontal:36,justifyContent:'center'},
-        helpButton:{width:42,height:42,borderRadius:21,borderWidth:2,borderColor:'#b68d47',backgroundColor:'#fff8e8',alignItems:'center',justifyContent:'center'},
+        helpButton:{width:42,height:42,borderRadius:21,borderWidth:2,borderColor:'#b68d47',backgroundColor:'transparent',alignItems:'center',justifyContent:'center'},
         helpGlyph:{color:'#263b55',fontSize:24,fontWeight:'700',lineHeight:30},
-        helpBackdrop:{flex:1,justifyContent:'center',padding:20,backgroundColor:'rgba(4,15,31,.65)'},
-        helpPanel:{maxHeight:'80%',maxWidth:560,width:'100%',alignSelf:'center',backgroundColor:'#fff8e8',borderWidth:3,borderColor:'#c9a361',borderRadius:22,padding:18},
+        helpBackdrop:{flex:1,justifyContent:'center',padding:20,backgroundColor:'transparent'},
+        helpPanel:{maxHeight:'80%',maxWidth:560,width:'100%',alignSelf:'center',backgroundColor:'transparent',borderWidth:0,borderRadius:0,padding:24},
         helpContent:{gap:15,paddingBottom:12},helpTitle:{fontFamily:ROYAL_FONT.heading,fontSize:22,fontWeight:'700',color:'#193551',textAlign:'center'},helpCopy:{fontSize:16,lineHeight:25,color:'#23384d'},
-        helpClose:{minHeight:48,alignItems:'center',justifyContent:'center',backgroundColor:'#223d5b',borderRadius:12},helpCloseText:{fontFamily:ROYAL_FONT.body,color:'#fff8e8',fontSize:17},
+        helpClose:{minHeight:48,alignItems:'center',justifyContent:'center',backgroundColor:'transparent',borderRadius:12},helpCloseText:{fontFamily:ROYAL_FONT.body,color:'#223d5b',fontSize:17},
         background: {
             flex: 1,
-            backgroundColor: '#e8e2d6',
+            backgroundColor: 'transparent',
         },
 
 
@@ -507,7 +508,7 @@ const styles =
             borderRadius: 20,
 
             backgroundColor:
-                'rgba(255,255,255,0.13)',
+                'transparent',
 
             alignItems: 'center',
             justifyContent: 'center',
@@ -755,7 +756,7 @@ const styles =
 
         openBadge: {
             backgroundColor:
-                '#50745c',
+                'transparent',
 
             paddingHorizontal: 7,
             paddingVertical: 3,

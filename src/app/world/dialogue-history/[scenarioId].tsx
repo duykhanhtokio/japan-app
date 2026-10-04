@@ -44,7 +44,7 @@ export default function CompletedDialogue() {
 }
 
 const s = StyleSheet.create({
-    screen: { flex: 1, backgroundColor: '#173747' },
+    screen: { flex: 1, backgroundColor: 'transparent' },
     header: { flexDirection: 'row', alignItems: 'center', padding: 16, gap: 14 },
     title: { flex: 1, color: ROYAL.paleGold, fontFamily: ROYAL_FONT.heading, fontSize: 19 },
     content: { padding: 16, paddingBottom: 42, gap: 12 },

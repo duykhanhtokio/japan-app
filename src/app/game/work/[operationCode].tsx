@@ -1,3 +1,4 @@
+import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import {
     logWorkAnswerAiDebugStats,
@@ -644,7 +645,7 @@ export default function WorkConversationScreen() {
         !currentNode
     ) {
         return (
-            <SafeAreaView
+            <RoyalPageBackground source={require('../../../../assets/app/backgrounds/profile-details.png')}><SafeAreaView
                 style={
                     styles.errorContainer
                 }
@@ -666,7 +667,7 @@ export default function WorkConversationScreen() {
                 </Text>
 
                 <RoyalBackButton onPress={() => router.back()} />
-            </SafeAreaView>
+            </SafeAreaView></RoyalPageBackground>
         );
     }
 
@@ -1259,7 +1260,7 @@ export default function WorkConversationScreen() {
         finished
     ) {
         return (
-            <SafeAreaView
+            <RoyalPageBackground source={require('../../../../assets/app/backgrounds/profile-details.png')}><SafeAreaView
                 style={
                     styles.resultContainer
                 }
@@ -1415,7 +1416,7 @@ export default function WorkConversationScreen() {
                     </RoyalButton>
                 </RoyalPaperPanel>
                 </ScrollView>
-            </SafeAreaView>
+            </SafeAreaView></RoyalPageBackground>
         );
     }
     /*
@@ -2255,7 +2256,7 @@ export default function WorkConversationScreen() {
 
 const styles =
     StyleSheet.create({
-        container: {flex:1,backgroundColor:ROYAL.lacquer},
+        container: {flex:1,backgroundColor:'transparent'},
         correctSubtext: {
             color:
                 '#14764a',
@@ -3051,7 +3052,7 @@ const styles =
             flex: 1,
 
             backgroundColor:
-                '#111827',
+                'transparent',
 
             alignItems:
                 'center',
@@ -3211,7 +3212,7 @@ const styles =
             flex: 1,
 
             backgroundColor:
-                '#111827',
+                'transparent',
 
             alignItems:
                 'center',

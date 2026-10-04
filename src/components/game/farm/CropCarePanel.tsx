@@ -330,7 +330,7 @@ const styles =
                 24,
 
             backgroundColor:
-                'rgba(30, 25, 18, 0.48)',
+                'transparent',
         },
 
         panel: {

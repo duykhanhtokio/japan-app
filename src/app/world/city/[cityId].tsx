@@ -40,7 +40,7 @@ export default function CityScreen() {
   });
 
   return <ImageBackground source={cityImageById[city.id]} resizeMode="cover" blurRadius={width > height ? 10 : 6} style={s.screen}>
-    <View style={s.wash} />
+
     <SafeAreaView style={s.safe}>
       <WorldTitleHeader title={city.nameJa} subtitle={`市内会話・全${locations.length}か所`} onBack={() => router.back()}/>
       <FlatList
@@ -72,7 +72,7 @@ export default function CityScreen() {
 }
 
 const s = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: ROYAL.ink }, wash: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(5,14,29,.34)' }, safe: { flex: 1 },
+  screen: { flex: 1, backgroundColor: 'transparent' }, wash: { ...StyleSheet.absoluteFillObject, backgroundColor: 'transparent' }, safe: { flex: 1 },
   header: { width:'100%',alignItems:'stretch' }, backRow:{height:52,paddingHorizontal:ROYAL_PLACEMENT.headerHorizontal,paddingTop:ROYAL_PLACEMENT.headerTop,alignItems:'flex-start'}, heading:{width:'100%',alignItems:'center'},
   titlePanel: { width:'100%', minHeight: 58 }, title: { width:'100%',color: ROYAL.white, fontFamily: ROYAL_FONT.heading, fontSize: 24, lineHeight: 29, textAlign: 'center',textAlignVertical:'center',includeFontPadding:false },
   subtitle: { width:'100%',color: ROYAL.paleGold, fontFamily: ROYAL_FONT.body, fontSize: 13, lineHeight: 18, textAlign: 'center',textAlignVertical:'center',includeFontPadding:false,marginTop:-3,textShadowColor:'#061020',textShadowOffset:{width:0,height:2},textShadowRadius:3 }, list: { paddingTop: 4, paddingBottom: 54 }, row: { gap: ROYAL_LAYOUT.cityGridGap, marginBottom: ROYAL_LAYOUT.cityGridGap },

@@ -35,7 +35,7 @@ export default function CitiesScreen() {
 }
 
 const s = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: ROYAL.ink }, header: { width:'100%',alignItems:'stretch' },backRow:{height:52,paddingHorizontal:ROYAL_PLACEMENT.headerHorizontal,paddingTop:ROYAL_PLACEMENT.headerTop,alignItems:'flex-start'},heading:{width:'100%',alignItems:'center'},
+  screen: { flex: 1, backgroundColor: 'transparent' }, header: { width:'100%',alignItems:'stretch' },backRow:{height:52,paddingHorizontal:ROYAL_PLACEMENT.headerHorizontal,paddingTop:ROYAL_PLACEMENT.headerTop,alignItems:'flex-start'},heading:{width:'100%',alignItems:'center'},
   titlePanel: { width:'100%', minHeight: 58 }, title: { width:'100%',color: ROYAL.white, fontFamily: ROYAL_FONT.heading, fontSize: 24, lineHeight: 29, textAlign: 'center',textAlignVertical:'center',includeFontPadding:false }, subtitle: { width:'100%',color: ROYAL.paleGold, fontFamily: ROYAL_FONT.body, fontSize: 13, lineHeight: 18, textAlign: 'center',textAlignVertical:'center',includeFontPadding:false,marginTop:-3 },
   searchFrame:{marginHorizontal:16,marginTop:6,marginBottom:2},search: { minHeight: 48, color: ROYAL.lacquer, paddingHorizontal: 8, fontFamily: ROYAL_FONT.body, fontSize: 16 },
   list: { width:'100%',alignItems:'center',paddingHorizontal:8,paddingTop:6, paddingBottom: 52, gap: ROYAL_LAYOUT.cityGridGap }, cardPress:{width:'100%',maxWidth:'100%',minWidth:0},card: { width: '100%' },

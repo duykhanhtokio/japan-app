@@ -38,7 +38,7 @@ export default function DialogueHistory() {
 }
 
 const s = StyleSheet.create({
-    screen: { flex: 1, backgroundColor: '#173747' },
+    screen: { flex: 1, backgroundColor: 'transparent' },
     header: { flexDirection: 'row', alignItems: 'center', padding: 16, gap: 16 },
     title: { color: ROYAL.paleGold, fontFamily: ROYAL_FONT.heading, fontSize: 22, flexShrink: 1 },
     content: { paddingHorizontal: 18, paddingBottom: 40, gap: 20 },

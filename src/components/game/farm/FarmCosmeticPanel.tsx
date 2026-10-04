@@ -865,7 +865,7 @@ const styles =
                 42,
 
             backgroundColor:
-                'rgba(25, 17, 10, 0.68)',
+                'transparent',
         },
 
         panel: {

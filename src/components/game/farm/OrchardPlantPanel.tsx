@@ -507,7 +507,7 @@ const styles =
                 'flex-end',
 
             backgroundColor:
-                'rgba(42, 28, 14, 0.38)',
+                'transparent',
         },
 
         dismissArea: {

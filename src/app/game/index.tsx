@@ -2080,7 +2080,7 @@ const styles =
                 1,
 
             backgroundColor:
-                '#89CBE8',
+                'transparent',
         },
 
         game: {

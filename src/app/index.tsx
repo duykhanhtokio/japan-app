@@ -185,8 +185,8 @@ function WelcomeContent() {
 
   return (
     <View style={styles.screen}>
-      <Animated.Image
-        source={focused ? background : undefined}
+      {focused && <Animated.Image
+        source={background}
         resizeMode="cover"
         style={[styles.backgroundContain, {
           transform: [
@@ -194,8 +194,8 @@ function WelcomeContent() {
             { translateY: camera.interpolate({ inputRange: [0, 1], outputRange: [1.5, -1.5] }) },
           ],
         }]}
-      />
-      <View pointerEvents="none" style={styles.colorWash} />
+      />}
+
       <View pointerEvents="none" style={StyleSheet.absoluteFill}>
         {focused && PETALS.map((petal, index) => <FallingPetal key={index} {...petal} />)}
       </View>
@@ -225,9 +225,9 @@ function WelcomeContent() {
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, overflow: 'hidden', backgroundColor: '#61b9e6' },
+  screen: { flex: 1, overflow: 'hidden', backgroundColor: 'transparent' },
   backgroundContain: { ...StyleSheet.absoluteFillObject, width: '100%', height: '100%' },
-  colorWash: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(24,75,97,0.025)' },
+  colorWash: { ...StyleSheet.absoluteFillObject, backgroundColor: 'transparent' },
   safeArea: { flex: 1, justifyContent: 'space-between' },
   titleArea: { alignItems: 'center', paddingTop: 20, paddingHorizontal: 12 },
   titleAreaLandscape: { paddingTop: 4 },

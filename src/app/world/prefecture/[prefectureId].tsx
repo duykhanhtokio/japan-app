@@ -27,7 +27,7 @@ export default function PrefectureScreen() {
   const totalLocations = cities.reduce((total, city) => total + getLifeLocationsByCity(city.id).length, 0);
 
   return <ImageBackground source={cities[0] ? cityImageById[cities[0].id] : undefined} resizeMode="cover" blurRadius={10} style={s.screen}>
-    <View style={s.wash} />
+
     <SafeAreaView style={s.safe}>
       <WorldTitleHeader title={prefecture.nameJa} subtitle={`${cities.length}都市・全${totalLocations}か所`} onBack={() => router.back()}/>
       <ScrollView contentContainerStyle={[s.content,{paddingHorizontal:grid.horizontalInset}]} showsVerticalScrollIndicator={false}>
@@ -56,7 +56,7 @@ export default function PrefectureScreen() {
 }
 
 const s = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: ROYAL.ink }, wash: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(5,14,29,.48)' }, safe: { flex: 1 }, empty: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  screen: { flex: 1, backgroundColor: 'transparent' }, wash: { ...StyleSheet.absoluteFillObject, backgroundColor: 'transparent' }, safe: { flex: 1 }, empty: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   backRow:{height:52,paddingHorizontal:ROYAL_PLACEMENT.headerHorizontal,paddingTop:ROYAL_PLACEMENT.headerTop,alignItems:'flex-start'},heading:{width:'100%',alignItems:'center'}, titlePanel: { width:'100%', minHeight:58 },
   title: { width:'100%',color: ROYAL.white, fontFamily: ROYAL_FONT.heading, fontSize: 24, lineHeight: 29, textAlign: 'center',textAlignVertical:'center',includeFontPadding:false }, subtitle: { width:'100%',color: ROYAL.paleGold, fontFamily: ROYAL_FONT.body, fontSize: 13, lineHeight: 18, textAlign: 'center',textAlignVertical:'center',includeFontPadding:false,marginTop:-3,textShadowColor:'#061020',textShadowOffset:{width:0,height:2},textShadowRadius:3 },
   content: { width:'100%',alignItems:'center',paddingTop:8,paddingBottom:64 }, sectionPill: { alignSelf:'flex-start',minWidth:136,marginBottom:6 }, grid: { width:'100%',alignItems:'center',flexDirection:'row',flexWrap:'wrap',justifyContent:'center' },
