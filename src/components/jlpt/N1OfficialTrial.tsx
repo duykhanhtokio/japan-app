@@ -1,5 +1,5 @@
 import JlptStudyBackground from './JlptStudyBackground';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { AppState, Image, Pressable, ScrollView, StyleSheet, Text, View, type ImageSourcePropType, type LayoutChangeEvent, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
 import { setAudioModeAsync, useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
 
@@ -30,12 +30,13 @@ import { loadJlptAttemptSummary, recordJlptAttempt } from '@/services/jlpt-exam-
 type Mode = 'exam' | 'practice';
 const CONTINUOUS_AUDIO_ID = '__full_listening_track__';
 const FONT_SCALES: readonly JlptFontScale[] = [0.9, 1, 1.1, 1.2, 1.3, 1.4];
-export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit: () => void; registerExit: (handler: (() => void) | null) => void; exam: ApprovedN1Exam }) {
+export default function N1OfficialTrial({ onExit, registerExit, exam, onStartedChange }: { onStartedChange?: (started: boolean) => void; onExit: () => void; registerExit: (handler: (() => void) | null) => void; exam: ApprovedN1Exam }) {
   const questions = exam.questions;
   const listening = questions.filter((question) => question.family === 'listening');
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
   const [started, setStarted] = useState(false);
+  useLayoutEffect(() => { onStartedChange?.(started); }, [onStartedChange, started]);
   const [sessionReady, setSessionReady] = useState(false);
   const [mode, setMode] = useState<Mode>('exam');
   const [fontScale, setFontScale] = useState<JlptFontScale>(1);
@@ -299,8 +300,8 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
     </View>;
   }
 
-  if (!sessionReady) return <JlptStudyBackground><JlptExamHeader title={`${exam.level} · JLPT模擬試験`} onBack={() => void exitExam()} /></JlptStudyBackground>;
-  if (!started && restartConfirmationVisible) return <JlptStudyBackground><JlptRestartConfirmation visible onCancel={() => setRestartConfirmationVisible(false)} onConfirm={confirmRestartSavedSession} /></JlptStudyBackground>;
+  if (!sessionReady) return <JlptStudyBackground><JlptExamHeader title={`${exam.level} · JLPT模擬試験`} transparent onBack={() => void exitExam()} /></JlptStudyBackground>;
+  if (!started && restartConfirmationVisible) return <JlptStudyBackground><JlptRestartConfirmation visible inline onCancel={() => setRestartConfirmationVisible(false)} onConfirm={confirmRestartSavedSession} /></JlptStudyBackground>;
   if (!started && pendingSession) return <JlptResumePrompt
       visible
       examName={`${exam.title}・${exam.periodLabel}`}
@@ -313,8 +314,8 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
       onCancel={exitExam}
     />;
 
-  if (!started) return <View style={styles.startScreen}><JlptExamHeader title={`${exam.level} · JLPT模擬試験`} subtitle="日本語能力試験" onBack={() => void exitExam()} /><ScrollView contentContainerStyle={styles.startPage}>
-    <JlptPaper>
+  if (!started) return <View style={styles.startScreen}><JlptExamHeader title={`${exam.level} · JLPT模擬試験`} subtitle="日本語能力試験" transparent onBack={() => void exitExam()} /><ScrollView contentContainerStyle={styles.startPage}>
+    <JlptPaper style={styles.startPaper}>
       <Text style={styles.examName}>{exam.title}</Text>
       <Text style={styles.trialName}>{exam.periodLabel}</Text>
       <View style={styles.rule} />
@@ -481,7 +482,7 @@ function displayQuestionNumber(question: TrialQuestion) {
 }
 
 const styles = StyleSheet.create({
-  screen:{flex:1,backgroundColor:JLPT_EXAM.color.page},startScreen:{flex:1,backgroundColor:JLPT_EXAM.color.page},startPage:{flexGrow:1,justifyContent:'center',padding:16,backgroundColor:JLPT_EXAM.color.page},examName:{fontFamily:JLPT_EXAM.font.content,fontSize:24,lineHeight:34,color:JLPT_EXAM.color.ink,textAlign:'center'},trialName:{fontFamily:JLPT_EXAM.font.interface,fontSize:15,lineHeight:22,color:JLPT_EXAM.color.secondaryInk,textAlign:'center',marginTop:4},rule:{height:2,backgroundColor:JLPT_EXAM.color.ink,marginVertical:20},startCopy:{fontFamily:JLPT_EXAM.font.content,fontSize:16,lineHeight:27,color:JLPT_EXAM.color.ink},modeLabel:{fontFamily:JLPT_EXAM.font.interface,fontSize:16,lineHeight:23,color:JLPT_EXAM.color.ink,marginTop:24,marginBottom:9},modeRow:{minHeight:70,flexDirection:'row',alignItems:'center',gap:12,padding:12,borderWidth:1,borderColor:JLPT_EXAM.color.divider,marginBottom:10},modeSelected:{borderColor:JLPT_EXAM.color.selected,backgroundColor:JLPT_EXAM.color.selectedFill},radio:{width:22,height:22,borderRadius:11,borderWidth:2,borderColor:JLPT_EXAM.color.secondaryInk},radioSelected:{borderWidth:6,borderColor:JLPT_EXAM.color.selected,backgroundColor:JLPT_EXAM.color.paper},modeCopy:{flex:1},modeTitle:{fontFamily:JLPT_EXAM.font.interface,fontSize:16,lineHeight:23,color:JLPT_EXAM.color.ink},modeDescription:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.secondaryInk,marginTop:3},startAction:{marginTop:14},
+  screen:{flex:1,backgroundColor:JLPT_EXAM.color.page},startScreen:{flex:1,backgroundColor:'transparent'},startPage:{flexGrow:1,justifyContent:'center',padding:16,backgroundColor:'transparent'},startPaper:{backgroundColor:'transparent'},examName:{fontFamily:JLPT_EXAM.font.content,fontSize:24,lineHeight:34,color:JLPT_EXAM.color.ink,textAlign:'center'},trialName:{fontFamily:JLPT_EXAM.font.interface,fontSize:15,lineHeight:22,color:JLPT_EXAM.color.secondaryInk,textAlign:'center',marginTop:4},rule:{height:2,backgroundColor:JLPT_EXAM.color.ink,marginVertical:20},startCopy:{fontFamily:JLPT_EXAM.font.content,fontSize:16,lineHeight:27,color:JLPT_EXAM.color.ink},modeLabel:{fontFamily:JLPT_EXAM.font.interface,fontSize:16,lineHeight:23,color:JLPT_EXAM.color.ink,marginTop:24,marginBottom:9},modeRow:{minHeight:70,flexDirection:'row',alignItems:'center',gap:12,padding:12,borderWidth:1,borderColor:JLPT_EXAM.color.divider,marginBottom:10},modeSelected:{borderColor:JLPT_EXAM.color.selected,backgroundColor:JLPT_EXAM.color.selectedFill},radio:{width:22,height:22,borderRadius:11,borderWidth:2,borderColor:JLPT_EXAM.color.secondaryInk},radioSelected:{borderWidth:6,borderColor:JLPT_EXAM.color.selected,backgroundColor:JLPT_EXAM.color.paper},modeCopy:{flex:1},modeTitle:{fontFamily:JLPT_EXAM.font.interface,fontSize:16,lineHeight:23,color:JLPT_EXAM.color.ink},modeDescription:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.secondaryInk,marginTop:3},startAction:{marginTop:14},
   toolRow:{minHeight:58,flexDirection:'row',alignItems:'center',justifyContent:'space-between',gap:8,paddingHorizontal:10,paddingVertical:7,backgroundColor:JLPT_EXAM.color.paper,borderBottomWidth:1,borderBottomColor:JLPT_EXAM.color.divider},progress:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:19,color:JLPT_EXAM.color.ink},modeIndicator:{fontFamily:JLPT_EXAM.font.interface,fontSize:12,lineHeight:17,color:JLPT_EXAM.color.secondaryInk},navigatorButton:{minWidth:68,minHeight:44,alignItems:'center',justifyContent:'center',paddingHorizontal:8,borderWidth:1,borderColor:JLPT_EXAM.color.divider},navigatorButtonText:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,color:JLPT_EXAM.color.ink},content:{width:'100%',paddingVertical:12,paddingHorizontal:8,backgroundColor:JLPT_EXAM.color.page},sectionTitle:{fontFamily:JLPT_EXAM.font.content,fontSize:JLPT_EXAM.type.sectionTitle,lineHeight:31,color:JLPT_EXAM.color.ink,marginBottom:22},questionBlock:{width:'100%',paddingBottom:28,marginBottom:26,borderBottomWidth:1,borderBottomColor:JLPT_EXAM.color.divider},questionNumber:{fontFamily:JLPT_EXAM.font.content,fontSize:19,lineHeight:27,color:JLPT_EXAM.color.ink,marginBottom:6},options:{width:'100%'},visualOptions:{width:'100%',maxWidth:'100%',alignSelf:'center',marginBottom:16},visualOptionsPage12:{aspectRatio:430/350},visualOptionsPage13:{aspectRatio:620/410},starQuestion:{letterSpacing:1.5},starNote:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,marginTop:-7,color:JLPT_EXAM.color.secondaryInk},majorDivider:{height:3,backgroundColor:JLPT_EXAM.color.ink,marginVertical:16},audioControls:{flexDirection:'row',flexWrap:'wrap',gap:8,marginBottom:22},stickyAudio:{backgroundColor:JLPT_EXAM.color.paper,paddingHorizontal:10,paddingTop:8},compactAudioButton:{flex:1,minWidth:0},audioError:{width:'100%',fontFamily:JLPT_EXAM.font.interface,fontSize:13,color:JLPT_EXAM.color.ink},submit:{marginTop:10},
   savedResult:{marginTop:24,paddingTop:20,borderTopWidth:1,borderTopColor:JLPT_EXAM.color.divider},savedResultTitle:{fontFamily:JLPT_EXAM.font.content,fontSize:18,lineHeight:27,color:JLPT_EXAM.color.ink},savedResultText:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.secondaryInk,marginVertical:8},savedResultAction:{marginTop:8},
   resultPage:{flexGrow:1,padding:16,backgroundColor:JLPT_EXAM.color.page},resultTitle:{fontFamily:JLPT_EXAM.font.content,fontSize:28,lineHeight:38,color:JLPT_EXAM.color.ink,textAlign:'center'},resultMode:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:22,color:JLPT_EXAM.color.secondaryInk,textAlign:'center',marginTop:5,marginBottom:20},scoreGrid:{flexDirection:'row',flexWrap:'wrap',gap:10},resultMetric:{flexGrow:1,flexBasis:'45%',minHeight:90,alignItems:'center',justifyContent:'center',borderWidth:1,borderColor:JLPT_EXAM.color.divider,padding:12},resultMetricLabel:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,color:JLPT_EXAM.color.secondaryInk},resultMetricValue:{fontFamily:JLPT_EXAM.font.content,fontSize:27,lineHeight:37,color:JLPT_EXAM.color.ink,marginTop:4},resultCorrect:{color:JLPT_EXAM.color.correct},resultWrong:{color:JLPT_EXAM.color.wrong},rawScore:{fontFamily:JLPT_EXAM.font.content,fontSize:18,lineHeight:27,color:JLPT_EXAM.color.ink,textAlign:'center',marginTop:18},notEligible:{marginTop:18,padding:16,borderLeftWidth:4,borderLeftColor:JLPT_EXAM.color.unanswered,backgroundColor:JLPT_EXAM.color.paper},notEligibleTitle:{fontFamily:JLPT_EXAM.font.content,fontSize:19,lineHeight:27,color:JLPT_EXAM.color.unanswered},notEligibleText:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:23,color:JLPT_EXAM.color.secondaryInk,marginTop:7},resultAction:{marginTop:10},

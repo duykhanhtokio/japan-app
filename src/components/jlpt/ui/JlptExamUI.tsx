@@ -108,15 +108,14 @@ function ResumeRoyalAction({label,onPress}:{label:string;onPress:()=>void}) {
  return <Pressable accessibilityRole="button" accessibilityLabel={label} onPress={onPress} style={({pressed})=>[{marginTop:12},pressed&&{opacity:.85}]}><RoyalContentPanel style={{minHeight:68,paddingVertical:20,alignItems:'center',justifyContent:'center'}}><Text style={s.resumeCancelText}>{label}</Text></RoyalContentPanel></Pressable>;
 }
 
-export function JlptRestartConfirmation({ visible, onCancel, onConfirm }: { visible: boolean; onCancel: () => void; onConfirm: () => void }) {
+export function JlptRestartConfirmation({ visible, onCancel, onConfirm, inline = false }: { visible: boolean; onCancel: () => void; onConfirm: () => void; inline?: boolean }) {
   if (!visible) return null;
-  return <Modal visible={visible} transparent animationType="none" onRequestClose={onCancel}>
-    <View style={s.confirmShade}><View accessibilityRole="alert" style={s.confirmPanel}>
-      <Text style={s.confirmTitle}>最初からやり直しますか</Text>
-      <Text style={s.confirmLine}>この試験の保存中の回答だけが削除されます。</Text>
-      <View style={s.confirmActions}><JlptActionButton kind="secondary" label="キャンセル" onPress={onCancel} style={s.confirmAction} /><JlptActionButton kind="danger" label="やり直す" onPress={onConfirm} style={s.confirmAction} /></View>
-    </View></View>
-  </Modal>;
+  const content = <View style={[s.confirmShade, inline && {backgroundColor:'transparent'}]}><View accessibilityRole="alert" style={[s.confirmPanel, inline && {backgroundColor:'transparent',borderWidth:0}]}>
+    <Text style={s.confirmTitle}>最初からやり直しますか</Text>
+    <Text style={s.confirmLine}>この試験の保存中の回答だけが削除されます。</Text>
+    <View style={s.confirmActions}><JlptActionButton kind="secondary" label="キャンセル" onPress={onCancel} style={s.confirmAction} /><JlptActionButton kind="danger" label="やり直す" onPress={onConfirm} style={s.confirmAction} /></View>
+  </View></View>;
+  return inline ? content : <Modal visible={visible} transparent animationType="none" onRequestClose={onCancel}>{content}</Modal>;
 }
 
 export function JlptSubmitConfirmation({ visible, total, answered, onCancel, onSubmit }: { visible: boolean; total: number; answered: number; onCancel: () => void; onSubmit: () => void }) {
