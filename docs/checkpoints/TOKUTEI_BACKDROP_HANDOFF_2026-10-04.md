@@ -17,3 +17,11 @@ Native iPhone/Android unavailable here. This is a targeted experiment, not confi
 User reports the flash remains after the bitmap handoff and includes destination text temporarily above its final position. This disproves claiming bitmap handoff fixed the device issue. Tokutei used native SafeAreaView for header/list and JS useSafeAreaInsets for BottomNav. Fabric SafeAreaView applies inset state on didMoveToWindow/updateStateIfNecessary, so a pre-inset layout is a plausible source of the displaced-text frame (not device-confirmed).
 
 Narrow experiment: replace only Tokutei native SafeAreaView with ordinary View and explicit top/left/right padding from the same existing useSafeAreaInsets used for BottomNav. Final intended spacing is unchanged. No waiting for onLayout, concealment overlay, additional background, or header/card redesign. Web export and repeated 430×932 / 768×1024 navigation checks pass; web zero insets cannot verify the native safe-area timing issue. JLPT UI lock still 10/10. Native acceptance pending.
+
+## Follow-up: white flash after safe-area fix
+
+User confirms displaced text is fixed, but a white-background flash remains. Found a concrete bug in the original handoff premise: RN 0.81 Fabric RCTImageComponentView.mm emits onLoad/onLoadEnd before dispatching asynchronous blur and assigning the blurred image. Earlier inspection of Paper RCTImageView.mm did not apply to Fabric. Thus removing outgoing artwork on RN Image onLoad can expose the root before the incoming bitmap is assigned.
+
+Replace only the Home/Tokutei handoff image renderer with existing expo-image dependency. Keep approved assets, blurRadius 40, cover, no transition and stable keys. Handoff uses onDisplay, not onLoad. Installed expo-image iOS ImageView.swift setImage assigns sdImageView.image before invoking onDisplay; blur uses the image transformer. No white masking layer or timer. Keep the confirmed safe-area fix intact.
+
+Expo web export and four navigation visits each at 430×932 and 768×1024 pass: 116 sampled frames, zero missing-loaded-background frames, unchanged BottomNav bounds and zero page errors. UI lock 10/10; diff check passes. TypeScript reports only the pre-existing life-content-repository.ts:41 TS2352. Native white-flash acceptance remains pending; browser results are not native compositor evidence.
