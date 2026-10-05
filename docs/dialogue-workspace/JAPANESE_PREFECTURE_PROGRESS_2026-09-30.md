@@ -275,3 +275,8 @@ Tokyo: 141/373 authored drafts, 705 speaking goals, 11/40 cities; 232 replacemen
 ## 2026-10-05 — Ota draft and Suginami comparison checkpoint
 
 Tokyo 149/373 drafts, 745 goals, 12/40 cities; 224 replacements remain. Added eight Ota scripts. Read eight Suginami top lexical counterparts and replaced its calligraphy plot completely after internal comparison. Selected/final semantic decisions remain pending; CONTENT PASS/master lock false. No UI or translations changed. Continue CTY-TKY-ITABASHI 板橋区, then remaining canonical Tokyo cities. Finish all 373 and steps 1–10 before CONTENT PASS/master lock or PRF-014. Translations deferred.
+
+
+## 2026-10-05 — Itabashi draft checkpoint
+
+Tokyo: 157/373 individual Japanese drafts, 785 speaking goals, 13/40 canonical cities; 216 replacements remain. Added eight Itabashi exchanges, read full turn/task sequences at individual draft level. Runtime/source/canonical parity and original chain identities verified. Counterpart and whole-prefecture semantic review remain pending; CONTENT PASS/master lock false. No translations or UI changes. Continue CTY-TKY-HACHIOJI 八王子市, then remaining canonical Tokyo cities. Finish all 373 and steps 1–10 before CONTENT PASS/master lock or PRF-014. Translations deferred.
