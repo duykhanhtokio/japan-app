@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "レシートについてのご相談でしょうか。",
+        "textJa": "レシートのどの金額についてお尋ねですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_12205_07_001_goal_1",
         "requiredSemanticComponents": {
-          "goal": "購入数とレシートの数の不一致を指摘する"
+          "goal": "レシートの二千円が想定総額より高いと相談する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい、りんごが三個になっていますが、かごに入れたのは二個です。",
+        "recommendedAnswerJa": "二千円と書いてあります。買い物は千二百円だと思ったので、多く払ったのか気になりました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "購入数とレシートの数の不一致を指摘する。日本語で伝えてください。",
+        "hint": "レシートの二千円が想定総額より高いと相談する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "購入数とレシートの数の不一致を指摘する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "レシートの二千円が想定総額より高いと相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "商品とレシートを一緒に確認します。袋の中を見せていただけますか。",
+        "textJa": "二千円は「お預り」の欄ですね。お支払いに出された現金はいくらでしたか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_12205_07_001_goal_2",
         "requiredSemanticComponents": {
-          "goal": "実物を示し原因は不明だと区別する"
+          "goal": "渡した現金の額と預り欄の意味を確認する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。二個ともこの袋です。片方のシールを二回読んだのかは、私には分かりません。",
+        "recommendedAnswerJa": "二千円を出しました。では、この欄は商品の合計ではなく、店へ渡した額なのですね。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "実物を示し原因は不明だと区別する。日本語で伝えてください。",
+        "hint": "渡した現金の額と預り欄の意味を確認する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "実物を示し原因は不明だと区別する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "渡した現金の額と預り欄の意味を確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "数を確認しました。お客様が機械の原因を特定する必要はありません。会計記録を照合します。",
+        "textJa": "はい。合計は千二百円、釣銭は八百円と記載されています。お返しした現金はまだ分けてありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_12205_07_001_goal_3",
         "requiredSemanticComponents": {
-          "goal": "確認対象を果物の一個分に絞る"
+          "goal": "釣銭を持参現金と分けていると伝え確認場所を尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "お願いします。ほかの商品は合っているので、りんごの一個分だけ確認したいです。",
+        "recommendedAnswerJa": "このトレーにあります。財布にもともとあった三百円とは混ぜていません。ここで八百円か数えてよいですか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "確認対象を果物の一個分に絞る。日本語で伝えてください。",
+        "hint": "釣銭を持参現金と分けていると伝え確認場所を尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "確認対象を果物の一個分に絞る。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "釣銭を持参現金と分けていると伝え確認場所を尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "この場面では一個多く会計されていました。差額の返金をご案内します。",
+        "textJa": "はい、机の上でご確認ください。違いがあれば、財布へ入れる前にお知らせください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_12205_07_001_goal_4",
         "requiredSemanticComponents": {
-          "goal": "会計訂正と商品返品を区別する"
+          "goal": "八百円の内訳と合計千二百円との関係を説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "ありがとうございます。二個を買ったことはそのままで、一個を返品する話ではないですね。",
+        "recommendedAnswerJa": "五百円一枚、百円三枚で八百円です。商品の合計と受け取った釣銭で、二千円になると分かりました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "会計訂正と商品返品を区別する。日本語で伝えてください。",
+        "hint": "八百円の内訳と合計千二百円との関係を説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "会計訂正と商品返品を区別する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "八百円の内訳と合計千二百円との関係を説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい、商品の返品ではなく会計個数の訂正です。訂正後の記録をお渡しします。",
+        "textJa": "ご確認ありがとうございます。商品の購入内容については変更をご希望ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_12205_07_001_goal_5",
         "requiredSemanticComponents": {
-          "goal": "返金額と訂正後の個数を確認すると伝える"
+          "goal": "購入変更や返金でなく表示確認だと伝え現金と記録を収納する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "分かりました。返金額とりんご二個の記録を確認してから帰ります。",
+        "recommendedAnswerJa": "変更はありません。返金の依頼ではなく金額の読み方の確認でした。釣銭とレシートをしまって帰ります。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "返金額と訂正後の個数を確認すると伝える。日本語で伝えてください。",
+        "hint": "購入変更や返金でなく表示確認だと伝え現金と記録を収納する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "返金額と訂正後の個数を確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "購入変更や返金でなく表示確認だと伝え現金と記録を収納する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。一個分の差額を返金し、訂正した記録をご確認いただきます。",
+        "textJa": "承知しました。レシートの合計、お預り、釣銭はそれぞれの欄でご確認ください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-012-cty-jp-12205.json",
-    "premise": "スーパーで、客は会計後のレシートに果物が三個とあり、購入した二個との差を店員と確認する。 架空の学習場面。設備、商品、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
+    "premise": "館山市の学習場面で、会計後の客がレシートの預り金を購入総額と読み、釣銭と持参現金を分けて支払い記録を確認する。 架空の学習場面。施設名、設備、日時、受付条件と職員の対応は教材の設定であり、実在施設の案内ではない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
