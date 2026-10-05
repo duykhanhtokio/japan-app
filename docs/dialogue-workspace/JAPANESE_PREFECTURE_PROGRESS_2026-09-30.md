@@ -258,3 +258,10 @@ PRF-013 Tokyo is in progress: 80/373 individual Japanese drafts, 400 speaking go
 ## 2026-10-05 — Ueno draft checkpoint
 
 Tokyo: 91/373 authored drafts, 455 speaking goals, 5/40 canonical cities; 282 replacements remain. Added eleven Ueno exchanges and read their full turn/task sequences. Runtime/canonical parity and original chain identities verified. Final whole-prefecture semantic review remains pending; CONTENT PASS and master lock remain false. No UI or translation changes. Continue CTY-TKY-TAITO 台東区, then remaining canonical Tokyo cities. Finish all 373 and steps 1–10 before CONTENT PASS/master lock or PRF-014. Translations deferred.
+
+
+## 2026-10-05 — Taito through Chuo checkpoint
+
+Tokyo: 133/373 individual Japanese drafts, 665 speaking goals, 10/40 canonical cities. Added 42 full eleven-turn/five-goal drafts: Taito 9, Minato 9, Bunkyo 8, Chiyoda 8, Chuo 8. All new sequences read; five whole plots replaced after comparisons. Selected evidence now contains 39 current hash-bound comparisons. Original IDs, order, speakers and next links preserved; runtime/source/canonical parity checked. All situations explicitly fictional.
+
+240 replacements and whole-prefecture final semantic steps 1–10 remain. CONTENT PASS and master lock remain false; no native/human certification, translations or UI changes. Continue CTY-TKY-SUGINAMI 杉並区, then remaining canonical Tokyo cities. Finish all 373 and steps 1–10 before CONTENT PASS/master lock or PRF-014. Translations deferred. Remote persistence verification is required for this checkpoint.
