@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "不在票を確認します。ほかにもお持ちですか。",
+        "textJa": "お荷物のどの案内についてのご相談ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "sc_loc_tky_itabashi_08_001_goal_1",
+        "communicativeIntent": "SC-LOC-TKY-ITABASHI-08-001-intent-01",
         "requiredSemanticComponents": {
-          "goal": "同日二票を一件として一番号で依頼できるか尋ねる"
+          "goal": "不在案内を再配達と思い郵便局へ戻ったと解釈したと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "二枚ありますが、同じ日に来たので一件と思いました。この番号だけで両方頼めますか。",
+        "recommendedAnswerJa": "この紙を見て再配達を頼みに来ました。不在だったので、荷物は郵便局へ戻ったと思いました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "同日二票を一件として一番号で依頼できるか尋ねる。日本語で伝えてください。",
+        "hint": "不在案内を再配達と思い郵便局へ戻ったと解釈したと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "同日二票を一件として一番号で依頼できるか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "不在案内を再配達と思い郵便局へ戻ったと解釈したと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "日付が同じでも別の荷物の場合があります。それぞれの番号と宛名を確認しましょう。",
+        "textJa": "この紙には宅配ボックスへ配達したとあります。ご自宅のボックスは確認しましたか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "sc_loc_tky_itabashi_08_001_goal_2",
+        "communicativeIntent": "SC-LOC-TKY-ITABASHI-08-001-intent-02",
         "requiredSemanticComponents": {
-          "goal": "異なる番号と自他の宛名に気づき説明する"
+          "goal": "配達済みと本人受取を区別しボックス位置確認を求める"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "番号が違い、一枚は私、もう一枚は同居人の名前でした。自分の二枚だと思っていました。",
+        "recommendedAnswerJa": "まだです。配達済みとあっても、私が手元で受け取ったわけではありません。まず置かれた場所を確認したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "異なる番号と自他の宛名に気づき説明する。日本語で伝えてください。",
+        "hint": "配達済みと本人受取を区別しボックス位置確認を求める。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "異なる番号と自他の宛名に気づき説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "配達済みと本人受取を区別しボックス位置確認を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ご自身の荷物と、同居人の方の荷物を分けてご相談ください。ご本人から依頼はありますか。",
+        "textJa": "ボックス番号と開けるための案内があります。お問い合わせ番号とは別の欄です。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "sc_loc_tky_itabashi_08_001_goal_3",
+        "communicativeIntent": "SC-LOC-TKY-ITABASHI-08-001-intent-03",
         "requiredSemanticComponents": {
-          "goal": "同居人の依頼なしと伝え本人へ票を渡す"
+          "goal": "追跡番号とボックス番号と開け方を読み分ける"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "ありません。勝手に同居人の再配達まで決めず、その票は本人へ渡します。",
+        "recommendedAnswerJa": "追跡用の番号を入力しようとしていました。ボックスの番号と開け方の案内を分けて読みます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "同居人の依頼なしと伝え本人へ票を渡す。日本語で伝えてください。",
+        "hint": "追跡番号とボックス番号と開け方を読み分ける。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "同居人の依頼なしと伝え本人へ票を渡す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "追跡番号とボックス番号と開け方を読み分ける。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "では、今はご自身の票の扱いを確認します。ご希望の受取り方法はありますか。",
+        "textJa": "ご自身の荷物について指定されたボックスだけを確認してください。開けられなければ、その状態をお知らせください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "sc_loc_tky_itabashi_08_001_goal_4",
+        "communicativeIntent": "SC-LOC-TKY-ITABASHI-08-001-intent-04",
         "requiredSemanticComponents": {
-          "goal": "自分だけ窓口受取を希望し該当番号で確認を求める"
+          "goal": "不鮮明な番号で別ボックスを試さず設備担当への確認を求める"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "自分の分は窓口受取りを希望します。二枚とも保管場所が同じと決めず、この番号で確認してください。",
+        "recommendedAnswerJa": "番号が読みにくいので、近くの別のボックスで試しません。建物の管理担当にも、開け方を確認する必要があるか聞きたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "自分だけ窓口受取を希望し該当番号で確認を求める。日本語で伝えてください。",
+        "hint": "不鮮明な番号で別ボックスを試さず設備担当への確認を求める。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "自分だけ窓口受取を希望し該当番号で確認を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "不鮮明な番号で別ボックスを試さず設備担当への確認を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "この番号の現在の扱いと、窓口受取りの条件を調べます。",
+        "textJa": "機械の操作は管理担当への確認が必要です。配送については、配達記録を担当へ照会できます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "sc_loc_tky_itabashi_08_001_goal_5",
+        "communicativeIntent": "SC-LOC-TKY-ITABASHI-08-001-intent-05",
         "requiredSemanticComponents": {
-          "goal": "本人分の条件後に手続きし同居人へ別票を知らせる"
+          "goal": "案内を保持し配送記録と設備操作の相談先を分ける"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "お願いします。自分の分の条件を聞いてから手続きし、同居人には別の番号の票が来たことを伝えます。",
+        "recommendedAnswerJa": "ではこの紙を残し、指定のボックスと操作案内を確認します。開けられない場合は、配送記録と設備の操作をそれぞれの担当へ相談します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "本人分の条件後に手続きし同居人へ別票を知らせる。日本語で伝えてください。",
+        "hint": "案内を保持し配送記録と設備操作の相談先を分ける。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "本人分の条件後に手続きし同居人へ別票を知らせる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "案内を保持し配送記録と設備操作の相談先を分ける。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "では、ご本人分を確認します。同居人の票はそのままお返しします。",
+        "textJa": "承知しました。今は再配達の申し込みとして処理せず、配達先のボックス情報を確認する相談として引き継ぎます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-013-itabashi.json",
-    "premise": "東京都板橋区の架空の学習場面。郵便局で同じ日に届いた二枚の不在票を持つ来訪者が番号を一つだけ示す。 設備、商品、日時、受付条件と職員の対応は教材の設定であり、実施設の運用を認定しない。",
+    "premise": "東京都の架空の学習場面。宅配ボックスへ配達された荷物の案内を、不在の再配達案内だと思って郵便局へ相談する。 設備、商品、日時、受付条件と職員の対応は教材の設定であり、実施設の運用を認定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }

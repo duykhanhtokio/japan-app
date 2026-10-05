@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "発送前に確認したいことがありますか。",
+        "textJa": "発送の前に確認したいことがありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -24,17 +24,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "sc_loc_jp_13214_05_001_goal_1",
+        "communicativeIntent": "SC-LOC-JP-13214-05-001-intent-01",
         "requiredSemanticComponents": {
-          "goal": "原本指定に対しコピーを入れたと伝える"
+          "goal": "厳封書類を名前確認で開け貼り直して送れるか尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "案内には原本を送るとありますが、封筒にはコピーを入れました。",
+        "recommendedAnswerJa": "この証明書は厳封とあります。名前を確かめるため開けましたが、のりで閉じ直せばそのまま送れますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "原本指定に対しコピーを入れたと伝える。日本語で伝えてください。",
+        "hint": "厳封書類を名前確認で開け貼り直して送れるか尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "原本指定に対しコピーを入れたと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "厳封書類を名前確認で開け貼り直して送れるか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "提出書類の条件は提出先に確認する必要があります。原本は手元にありますか。",
+        "textJa": "郵便の受付で、閉じ直した書類を未開封だったものとして認めることはできません。提出先の指定をご確認ください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -69,17 +69,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "sc_loc_jp_13214_05_001_goal_2",
+        "communicativeIntent": "SC-LOC-JP-13214-05-001-intent-02",
         "requiredSemanticComponents": {
-          "goal": "原本を控えにして送付側を逆にした経緯を説明する"
+          "goal": "貼り直しを未開封とせず提出先へ開封の事実を伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。控えを残すためにコピーを作り、送る方と逆にしてしまいました。",
+        "recommendedAnswerJa": "開けた事実は変わらないのですね。封を戻して未開封と説明せず、提出先に開封したことを伝えます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "原本を控えにして送付側を逆にした経緯を説明する。日本語で伝えてください。",
+        "hint": "貼り直しを未開封とせず提出先へ開封の事実を伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "原本を控えにして送付側を逆にした経緯を説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "貼り直しを未開封とせず提出先へ開封の事実を伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "封はまだ閉じていませんか。",
+        "textJa": "発行元にも、書類の扱いや再発行について相談できます。書類そのものを書き換えましたか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -114,17 +114,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "sc_loc_jp_13214_05_001_goal_3",
+        "communicativeIntent": "SC-LOC-JP-13214-05-001-intent-03",
         "requiredSemanticComponents": {
-          "goal": "未封で指定確認後に原本へ入れ替えると示す"
+          "goal": "中身未改変と開封状態を示し発行元へ再発行の要否を聞く"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "まだです。ここでコピーを出し、提出先の指定を確認して原本と入れ替えます。",
+        "recommendedAnswerJa": "いいえ、中身は書き換えていません。封を開けた状態を残して、発行元に取り直しが必要か聞きます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "未封で指定確認後に原本へ入れ替えると示す。日本語で伝えてください。",
+        "hint": "中身未改変と開封状態を示し発行元へ再発行の要否を聞く。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "未封で指定確認後に原本へ入れ替えると示す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "中身未改変と開封状態を示し発行元へ再発行の要否を聞く。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "発送方法にも指定がありますか。",
+        "textJa": "提出期限も相談するときに伝えてください。発送方法を速くするだけでは、書類の条件は確認できません。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -159,17 +159,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "sc_loc_jp_13214_05_001_goal_4",
+        "communicativeIntent": "SC-LOC-JP-13214-05-001-intent-04",
         "requiredSemanticComponents": {
-          "goal": "原本だから特定便必須と決めず発送指定を確認する"
+          "goal": "期限を伝え速い便では書類条件の問題を解消しないと説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "書類の案内を見ます。原本なら普通の郵便ではだめだと自分で決めず、指定を確認したいです。",
+        "recommendedAnswerJa": "期限は来週の月曜日です。速い便なら開封の問題も済むとは考えず、期限と書類の条件を先に相談します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "原本だから特定便必須と決めず発送指定を確認する。日本語で伝えてください。",
+        "hint": "期限を伝え速い便では書類条件の問題を解消しないと説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "原本だから特定便必須と決めず発送指定を確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "期限を伝え速い便では書類条件の問題を解消しないと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "指定が確認できれば、その方法の受付条件を説明できます。",
+        "textJa": "相談後に、発送する書類と指定の方法が決まれば、こちらで配送の受付条件をご説明します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -204,17 +204,17 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "sc_loc_jp_13214_05_001_goal_5",
+        "communicativeIntent": "SC-LOC-JP-13214-05-001-intent-05",
         "requiredSemanticComponents": {
-          "goal": "提出書類と配送条件の相談先を分けて頼む"
+          "goal": "発送を保留し提出先と発行元の返答後に配送を相談する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "お願いします。送る書類の条件は提出先、配送の条件はこちらで分けて確認します。",
+        "recommendedAnswerJa": "分かりました。今日はまだ差し出しません。提出先と発行元の返事を確認し、送る書類が整ってから発送方法を相談します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "提出書類と配送条件の相談先を分けて頼む。日本語で伝えてください。",
+        "hint": "発送を保留し提出先と発行元の返答後に配送を相談する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "提出書類と配送条件の相談先を分けて頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "発送を保留し提出先と発行元の返答後に配送を相談する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。封を閉じる前に書類を見直し、指定に合う送付方法をご相談ください。",
+        "textJa": "承知しました。今日は発送せずお持ち帰りください。相談の際には、厳封指定と開封済みであることを分けずにお伝えください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-013-kokubunji.json",
-    "premise": "東京都の架空の学習場面。郵便局で申請書の原本指定を見た人が、コピーだけを封筒へ入れたことに気付く。 設備、商品、日時、受付条件と職員の対応は教材の設定であり、実施設の運用を認定しない。",
+    "premise": "東京都の架空の学習場面。厳封指定の証明書を内容確認のため開けた人が、封を貼り直せば未開封として送れると思い郵便局で相談する。 設備、商品、日時、受付条件と職員の対応は教材の設定であり、実施設の運用を認定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
