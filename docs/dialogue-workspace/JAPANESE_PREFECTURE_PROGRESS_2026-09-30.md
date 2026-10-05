@@ -265,3 +265,8 @@ Tokyo: 91/373 authored drafts, 455 speaking goals, 5/40 canonical cities; 282 re
 Tokyo: 133/373 individual Japanese drafts, 665 speaking goals, 10/40 canonical cities. Added 42 full eleven-turn/five-goal drafts: Taito 9, Minato 9, Bunkyo 8, Chiyoda 8, Chuo 8. All new sequences read; five whole plots replaced after comparisons. Selected evidence now contains 39 current hash-bound comparisons. Original IDs, order, speakers and next links preserved; runtime/source/canonical parity checked. All situations explicitly fictional.
 
 240 replacements and whole-prefecture final semantic steps 1–10 remain. CONTENT PASS and master lock remain false; no native/human certification, translations or UI changes. Continue CTY-TKY-SUGINAMI 杉並区, then remaining canonical Tokyo cities. Finish all 373 and steps 1–10 before CONTENT PASS/master lock or PRF-014. Translations deferred. Remote persistence verification is required for this checkpoint.
+
+
+## 2026-10-05 — Suginami draft checkpoint
+
+Tokyo: 141/373 authored drafts, 705 speaking goals, 11/40 cities; 232 replacements remain. Added eight Suginami full exchanges and five individualized goals each, read at draft level. Runtime/source/canonical parity and original chain identities checked. Suginami candidate retrieval and counterpart comparisons remain pending; prior ranking still covers 133 targets. CONTENT PASS/master lock remain false. UI lock 10/10 preserved; no translation changes. Continue CTY-TKY-OTA 大田区, then remaining canonical Tokyo cities. Finish all 373 and steps 1–10 before CONTENT PASS/master lock or PRF-014. Translations deferred.
