@@ -295,3 +295,10 @@ User reaffirmed prefecture-sized completion: remain on Tokyo until all scripts a
 ## 2026-10-05 — Tokyo continuation through Sumida and Musashimurayama
 
 Tokyo remains the sole execution unit. 197/373 drafts, 985 speaking goals, 18/40 canonical cities; 176 replacements plus pending full-exchange review remain. Added sixteen individual exchanges; original chain identities and source/runtime/canonical parity verified. These city milestones do not complete the prefecture. CONTENT PASS/master lock false. No UI or translations changed. Remain on PRF-013 Tokyo. Continue CTY-JP-13202 立川市, then remaining Tokyo cities and pending full-exchange comparisons. Finish 373 and steps 1–10 before CONTENT PASS/master lock or PRF-014. Execution unit is the whole prefecture; city milestones are interim checkpoints only. Translations deferred.
+
+
+## 2026-10-05 — Tokyo continuation through Tachikawa, Musashino, Ome and Fuchu
+
+Tokyo remains the execution unit: 229/373 individual drafts, 1,145 speaking goals, 22/40 canonical cities. Added 32 full sequences read at draft level. 144 older drafts and pending full counterpart/final review remain. Runtime/source/canonical parity and baseline chain identities checked. No CONTENT PASS or master lock; no native/human certification. UI lock 10/10 preserved, no translations. Remain on PRF-013 Tokyo. Continue CTY-JP-13207 昭島市, then remaining Tokyo cities and pending full-exchange comparisons. Finish 373 and steps 1–10 before CONTENT PASS/master lock or PRF-014. Whole prefecture is the execution unit; city milestones are interim checkpoints only. Translations deferred.
+
+Selected review addendum: six full-exchange/five-goal comparisons for current high-ranked candidates recorded with current runtime hashes; selected evidence totals 46. Ranking refresh covers 229 targets. This is not a final prefecture decision.
