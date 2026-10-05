@@ -317,3 +317,10 @@ Tokyo: 261/373 individually authored Japanese drafts, 1305 speaking goals, 26/40
 ## 2026-10-05 — Hino through Kunitachi interim checkpoint
 
 Tokyo: 293/373 individual Japanese drafts, 1465 speaking goals, 30/40 canonical cities. Added 32 full exchanges. Three whole plots replaced after reading prior counterparts: food storage, family-voice fraud and split receipts were too similar; replaced with pooled cracked eggs, suspicious forwarding job and coupon threshold spending respectively. Selected current evidence now contains 54 hash-bound comparisons. Current lexical screening refreshed for 293/7128. All canonical identities and turn links preserved. No UI/JLPT/audio changes; 80 remaining drafts and full semantic steps 1–10 pending. CONTENT PASS/master lock/human/native review remain false. Next CTY-JP-13218 福生市; continue Tokyo only.
+
+
+## 2026-10-05 — Fussa through Kiyose interim checkpoint
+
+Tokyo: 325/373 individual Japanese drafts, 1625 speaking goals, 34/40 canonical cities. Added 32 full eleven-turn/five-goal exchanges for Fussa, Komae, Higashiyamato and Kiyose. Original canonical IDs and turn links preserved, runtime/source parity checked. Current counterpart comparisons pending for new group; full semantic steps 1–10 remain pending. No UI/JLPT/audio changes. CONTENT PASS/master lock/human/native review false. Next Higashikurume CTY-JP-13222; remain on Tokyo.
+
+Selected review update: 56 current hash-bound full-exchange comparisons. Komae food selection rewritten completely after comparison with Chofu: gift manufacturing place versus ingredient origin and actual recipient request. Current hashes refreshed; no whole-prefecture CONTENT PASS claim.
