@@ -230,3 +230,10 @@ Whole-prefecture CONTENT PASS/master lock is still pending, with 152 old drafts 
 229/309 individually authored Japanese exchanges, 1,145 speaking goals and 27/37 cities. Added 24 exchanges across Urayasu, Yotsukaido and Sodegaura after the remote-verified 205 checkpoint (71a198964de17e9dbb2b9bbf8e0efd52e3e4bb83). Eight additional full selected comparisons led to three full plot replacements; cumulative comparisons: 33, replacements: 18. Source/runtime/override parity, single source ownership and original IDs/order/next links pass for all 229. Audit has zero structural errors; UI lock passes 10/10. Rankings over 7,128 packages prioritize review only.
 
 80 older drafts across ten cities remain. Whole-prefecture CONTENT PASS/master lock is pending; no new translations, native certification, deployment or device test acceptance. Next CTY-JP-12230 Yachimata, then Inzai, Shiroi, Tomisato, Minamiboso, Sosa, Katori, Sanmu, Isumi and Oamishirasato. Complete all 309 and steps 1–10 before PRF-013. This checkpoint requires its own remote persistence gate.
+
+
+## Chiba full individual Japanese draft coverage — 2026-10-05
+
+309/309 individually authored exchanges, 1,545 speaking goals, 37/37 canonical cities. Continued from the remote-verified 229 checkpoint, adding the final 80 across Yachimata, Inzai, Shiroi, Tomisato, Minamiboso, Sosa, Katori, Sanmu, Isumi and Oamishirasato. Source/runtime/canonical parity and single source ownership pass; original IDs, order and next links are retained. All 7,128 shared packages pass structural validation. Chiba audit has zero structural errors, exact, normalized and near-duplicate groups. Current whole-corpus candidate retrieval covers 309 targets against 7,128 packages and is screening only.
+
+Whole-prefecture current-hash causal, location-role, closure and selected external comparison review remains pending. CONTENT PASS and Japanese master lock are not claimed. No translations or UI changes. Continue final steps 1–10 for Chiba before PRF-013. This checkpoint requires remote persistence verification.
