@@ -280,3 +280,8 @@ Tokyo 149/373 drafts, 745 goals, 12/40 cities; 224 replacements remain. Added ei
 ## 2026-10-05 — Itabashi draft checkpoint
 
 Tokyo: 157/373 individual Japanese drafts, 785 speaking goals, 13/40 canonical cities; 216 replacements remain. Added eight Itabashi exchanges, read full turn/task sequences at individual draft level. Runtime/source/canonical parity and original chain identities verified. Counterpart and whole-prefecture semantic review remain pending; CONTENT PASS/master lock false. No translations or UI changes. Continue CTY-TKY-HACHIOJI 八王子市, then remaining canonical Tokyo cities. Finish all 373 and steps 1–10 before CONTENT PASS/master lock or PRF-014. Translations deferred.
+
+
+## 2026-10-05 — Hachioji draft checkpoint
+
+Tokyo: 165/373 individual Japanese drafts, 825 speaking goals, 14/40 canonical cities; 208 replacements remain. Added eight Hachioji exchanges and read full turn/task sequences at individual draft level. Runtime/source/canonical parity and original chain identities verified. Counterpart and whole-prefecture semantic review remain pending; CONTENT PASS/master lock false. No translations or UI changes. Continue CTY-TKY-MACHIDA 町田市, then remaining canonical Tokyo cities. Finish all 373 and steps 1–10 before CONTENT PASS/master lock or PRF-014. Translations deferred.
