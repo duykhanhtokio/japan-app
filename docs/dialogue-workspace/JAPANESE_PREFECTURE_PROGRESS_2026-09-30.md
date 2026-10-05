@@ -312,3 +312,8 @@ Tokyo: 245/373 individually authored Japanese drafts, 1225 speaking goals, 24/40
 ## 2026-10-05 — Koganei and Kodaira interim checkpoint
 
 Tokyo: 261/373 individually authored Japanese drafts, 1305 speaking goals, 26/40 canonical cities. Added sixteen full eleven-turn/five-goal exchanges for Koganei and Kodaira. Individual sequences read; 112 remaining drafts and final semantic steps 1–10 pending. Current selected evidence contains 50 hash-bound full-exchange comparisons. Canonical scenario/turn IDs and links preserved; no UI/JLPT/audio changes. CONTENT PASS and master lock remain false. Next: CTY-JP-13212 日野市, continuing Tokyo only.
+
+
+## 2026-10-05 — Hino through Kunitachi interim checkpoint
+
+Tokyo: 293/373 individual Japanese drafts, 1465 speaking goals, 30/40 canonical cities. Added 32 full exchanges. Three whole plots replaced after reading prior counterparts: food storage, family-voice fraud and split receipts were too similar; replaced with pooled cracked eggs, suspicious forwarding job and coupon threshold spending respectively. Selected current evidence now contains 54 hash-bound comparisons. Current lexical screening refreshed for 293/7128. All canonical identities and turn links preserved. No UI/JLPT/audio changes; 80 remaining drafts and full semantic steps 1–10 pending. CONTENT PASS/master lock/human/native review remain false. Next CTY-JP-13218 福生市; continue Tokyo only.
