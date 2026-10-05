@@ -290,3 +290,8 @@ Tokyo: 165/373 individual Japanese drafts, 825 speaking goals, 14/40 canonical c
 ## 2026-10-05 — Tokyo prefecture continuation, Machida and Mitaka
 
 User reaffirmed prefecture-sized completion: remain on Tokyo until all scripts and steps 1–10 are done, do not treat a city checkpoint as completed prefecture. Tokyo 181/373 drafts, 905 goals, 16/40 cities; 192 replacements plus pending whole-prefecture comparisons remain. Added sixteen individual sequences, read at draft level. Runtime/source/canonical parity and chain identities verified. CONTENT PASS/master lock false. No translations or UI changes. Remain on PRF-013 Tokyo. Continue CTY-TKY-SUMIDA 墨田区, then remaining Tokyo cities and all pending comparisons. Finish 373 and steps 1–10 before CONTENT PASS/master lock or PRF-014. User reaffirmed prefecture-sized completion on 2026-10-05. Translations deferred.
+
+
+## 2026-10-05 — Tokyo continuation through Sumida and Musashimurayama
+
+Tokyo remains the sole execution unit. 197/373 drafts, 985 speaking goals, 18/40 canonical cities; 176 replacements plus pending full-exchange review remain. Added sixteen individual exchanges; original chain identities and source/runtime/canonical parity verified. These city milestones do not complete the prefecture. CONTENT PASS/master lock false. No UI or translations changed. Remain on PRF-013 Tokyo. Continue CTY-JP-13202 立川市, then remaining Tokyo cities and pending full-exchange comparisons. Finish 373 and steps 1–10 before CONTENT PASS/master lock or PRF-014. Execution unit is the whole prefecture; city milestones are interim checkpoints only. Translations deferred.
