@@ -6,7 +6,7 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "自転車が見当たりませんか。",
+        "textJa": "自転車について伺います。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -26,15 +26,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_14211_04_001_goal_1",
         "requiredSemanticComponents": {
-          "goal": "管理者移動の伝聞を伝える"
+          "goal": "車体は存在するが別の錠で動かせないと報告する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "管理者が移したと聞きました。移動先はまだ確認できていません。",
+        "recommendedAnswerJa": "自分の自転車はここにありますが、隣の自転車と同じ錠でつながっていて出せません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "管理者移動の伝聞を伝える。日本語で伝えてください。",
+        "hint": "車体は存在するが別の錠で動かせないと報告する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "管理者移動の伝聞を伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "車体は存在するが別の錠で動かせないと報告する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -51,7 +51,7 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "誰から聞きましたか。",
+        "textJa": "その錠はご自身の物ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -71,15 +71,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_14211_04_001_goal_2",
         "requiredSemanticComponents": {
-          "goal": "情報源を区別する"
+          "goal": "錠が自分の物でなく掛けた人物も未確認と示す"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "同じ駐車場の利用者です。管理者本人の返事ではありません。",
+        "recommendedAnswerJa": "違います。誰が掛けたかは見ていません。隣の車体の持ち主が掛けたとも決めません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "情報源を区別する。日本語で伝えてください。",
+        "hint": "錠が自分の物でなく掛けた人物も未確認と示す。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "情報源を区別する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "錠が自分の物でなく掛けた人物も未確認と示す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -96,7 +96,7 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "管理先へ照会できますか。",
+        "textJa": "自分の車体だと確認できる情報はありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -116,15 +116,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_14211_04_001_goal_3",
         "requiredSemanticComponents": {
-          "goal": "管理先へ識別情報で確認する"
+          "goal": "車体の所有情報と錠を外す権限を分ける"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。車体番号と駐車した列を伝えます。",
+        "recommendedAnswerJa": "登録番号の控えがあります。自分の車体を示せても、別の錠を外す権限まであるとは考えません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "管理先へ識別情報で確認する。日本語で伝えてください。",
+        "hint": "車体の所有情報と錠を外す権限を分ける。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "管理先へ識別情報で確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "車体の所有情報と錠を外す権限を分ける。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -141,7 +141,7 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "最後に見た時刻は。",
+        "textJa": "現場の様子は記録されていますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -161,15 +161,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_14211_04_001_goal_4",
         "requiredSemanticComponents": {
-          "goal": "最終確認と未目撃を示す"
+          "goal": "接続状態の写真と未切断未移動を伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "昨夜九時です。移動した場面は見ていません。",
+        "recommendedAnswerJa": "写真を撮りました。二台の位置と錠がどこを通っているかを残し、切ったり車体を引いたりしていません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "最終確認と未目撃を示す。日本語で伝えてください。",
+        "hint": "接続状態の写真と未切断未移動を伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "最終確認と未目撃を示す。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "接続状態の写真と未切断未移動を伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -186,7 +186,7 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "照会結果も記録できます。",
+        "textJa": "管理者にも連絡できますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -206,15 +206,15 @@
       "player": {
         "communicativeIntent": "sc_loc_jp_14211_04_001_goal_5",
         "requiredSemanticComponents": {
-          "goal": "実際の保管結果を求める"
+          "goal": "管理者への連絡と動かせない状態の相談を依頼する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "移動で見つかると決めず、実際の保管場所を確かめて相談します。",
+        "recommendedAnswerJa": "はい。持ち主へ連絡できるか管理者へ尋ねます。自分の鍵だけでは解決しないので、動かせない状態を相談したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "実際の保管結果を求める。日本語で伝えてください。",
+        "hint": "管理者への連絡と動かせない状態の相談を依頼する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "実際の保管結果を求める。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "evaluationNotes": "管理者への連絡と動かせない状態の相談を依頼する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
@@ -231,7 +231,7 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "伝聞と最後の確認を区別して伺います。管理者への照会結果が分かれば追加してください。",
+        "textJa": "車体の控えと現場の写真を確認します。管理者への連絡状況も伺い、別の錠が掛かっている状態について相談を受け付けます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
@@ -250,7 +250,7 @@
     "nativeSpeakerReviewed": false,
     "translationState": "deferred_until_all_japanese_complete",
     "editorialSource": "scripts/dialogue-authoring/prf-014-hadano.json",
-    "premise": "神奈川県の架空の学習場面。管理者から移動の話を聞くが場所未確認。 設備、商品、日時、受付条件と職員の対応は教材の設定であり、実施設の運用を認定しない。",
+    "premise": "神奈川県の架空の学習場面。自分の車体は見つかったが、隣の車体と別の錠でつながっていて動かせない。 設備、商品、日時、受付条件と職員の対応は教材の設定であり、実施設の運用を認定しない。",
     "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
     "contentPass": false
   }
