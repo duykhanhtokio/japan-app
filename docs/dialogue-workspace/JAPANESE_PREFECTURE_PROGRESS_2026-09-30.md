@@ -302,3 +302,13 @@ Tokyo remains the sole execution unit. 197/373 drafts, 985 speaking goals, 18/40
 Tokyo remains the execution unit: 229/373 individual drafts, 1,145 speaking goals, 22/40 canonical cities. Added 32 full sequences read at draft level. 144 older drafts and pending full counterpart/final review remain. Runtime/source/canonical parity and baseline chain identities checked. No CONTENT PASS or master lock; no native/human certification. UI lock 10/10 preserved, no translations. Remain on PRF-013 Tokyo. Continue CTY-JP-13207 昭島市, then remaining Tokyo cities and pending full-exchange comparisons. Finish 373 and steps 1–10 before CONTENT PASS/master lock or PRF-014. Whole prefecture is the execution unit; city milestones are interim checkpoints only. Translations deferred.
 
 Selected review addendum: six full-exchange/five-goal comparisons for current high-ranked candidates recorded with current runtime hashes; selected evidence totals 46. Ranking refresh covers 229 targets. This is not a final prefecture decision.
+
+
+## 2026-10-05 — Akishima and Chofu interim checkpoint
+
+Tokyo: 245/373 individually authored Japanese drafts, 1225 speaking goals, 24/40 cities. Added sixteen distinct eleven-turn/five-goal exchanges. Source/runtime/canonical parity and original IDs, speakers, order and next links preserved. All scenes explicitly fictional. Selected comparison evidence now contains 48 hash-bound full-exchange comparisons; lexical screening is prioritization only. 128 drafts and full-prefecture semantic steps 1–10 remain. CONTENT PASS, master lock and human/native review remain false. No UI, JLPT or audio changes. Remain on PRF-013 Tokyo. Continue CTY-JP-13210 小金井市, then remaining Tokyo cities and pending full-exchange comparisons. Finish 373 and steps 1–10 before CONTENT PASS/master lock or PRF-014. Whole prefecture is the execution unit; city milestones are interim checkpoints only. Translations deferred.
+
+
+## 2026-10-05 — Koganei and Kodaira interim checkpoint
+
+Tokyo: 261/373 individually authored Japanese drafts, 1305 speaking goals, 26/40 canonical cities. Added sixteen full eleven-turn/five-goal exchanges for Koganei and Kodaira. Individual sequences read; 112 remaining drafts and final semantic steps 1–10 pending. Current selected evidence contains 50 hash-bound full-exchange comparisons. Canonical scenario/turn IDs and links preserved; no UI/JLPT/audio changes. CONTENT PASS and master lock remain false. Next: CTY-JP-13212 日野市, continuing Tokyo only.
