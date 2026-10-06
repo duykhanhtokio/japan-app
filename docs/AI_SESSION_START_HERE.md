@@ -11,7 +11,7 @@ This file exists so a new AI session can continue work without asking the user t
 
 ## Active original JLPT authoring — mandatory reading
 
-For new JLPT content, read `docs/jlpt-workspace/JLPT_ORIGINAL_AUTHORING_RULES.md` completely before any authoring, then `docs/jlpt-workspace/JLPT_ORIGINAL_AUTHORING_CHECKPOINT.md` and `src/data/jlpt-original/voice-casting.json`. The original-content contract supersedes historical recovery instructions for this task. It requires independent authorship, approved per-type counts, balanced unpredictable answer positions, approximately 30-minute N5 listening with verified/confirmed pacing and mid-listening rest, and truthful review flags. Do not guess the rest location/duration or claim the 12-minute draft meets the target.
+For new JLPT content, read `docs/jlpt-workspace/JLPT_ORIGINAL_AUTHORING_RULES.md` completely before any authoring, then `docs/jlpt-workspace/JLPT_ORIGINAL_AUTHORING_CHECKPOINT.md` and `src/data/jlpt-original/voice-casting.json`. The original-content contract supersedes historical recovery instructions for this task. It requires independent authorship, approved per-type counts, balanced unpredictable answer positions, approximately 30-minute N5 listening with verified/confirmed pacing and mid-listening rest, and truthful review flags. Current authorized scope is six complete integrated exams per level N5–N1, using the per-level blueprint document/JSON. No pre-integration draft review is required. The fixed rest is 60000ms instrumental music after problem 2 and before problem 3, with spoken announcements before/after. Do not claim the old 12-minute recording meets the target.
 
 ## Current cross-exam scope — 2026-09-21
 

@@ -4,8 +4,8 @@ This is the active checkpoint for the new authoring task. The historical recover
 
 ## User decisions
 
-- Create 20 original exams per level N5–N1 (100 total).
-- First deliver one complete N5 pilot for publisher review.
+- Current phase: create six complete original exams per level N5–N1 (30 total), superseding the previous 20-per-level phase scope.
+- Complete and integrate N5 exam 01 first, then continue the six-per-level sequence without a draft-review gate. Publisher tests each completed exam directly in the app.
 - Publisher/user is the final reviewer; no completed human/native review may be inferred from that designation.
 - Retain approved UI and agreed N5 timing: vocabulary 20 minutes, grammar/reading 40 minutes, listening approximately 30 minutes.
 - Use the current N5 catalog 第3回 as the count-per-type reference. UI indexing and registry identify it as n5-2013-07-exam-03.
@@ -42,7 +42,7 @@ Author from learning objectives and independently conceived situations/data/solu
 
 Use independent IDs (proposed jpapp-n5-original-01-v1) and independent session keys. Drafts must be labelled AI-created/unreviewed. Actual publisher review and actual listening playback checks must be recorded before release claims.
 
-N5 pilot text master now contains 67 written items and 24 newly authored listening scripts, with objectives and option rationales. See src/data/jlpt-original/n5/01/master.ja.json and docs/jlpt-workspace/original/n5-01/PUBLISHER_REVIEW.md. Status: AI-authored draft, publisher review required. Five new illustration briefs are present; actual images do not exist yet. Draft audio generation is complete (see the audio checkpoint below); illustration generation, runtime integration, legacy removal, and progress migration have not been performed. Next: publisher academic review, then select rights-appropriate audio/image tools, generate assets and perform real playback QA before integration. Do not begin the next exam before the pilot is reviewed. Keep old content available only in the development state until the approved replacement gate; exclude it from the eventual production bundle/API/cache/fallback.
+N5 pilot text master now contains 67 written items and 24 newly authored listening scripts, with objectives and option rationales. See src/data/jlpt-original/n5/01/master.ja.json and docs/jlpt-workspace/original/n5-01/PUBLISHER_REVIEW.md. Status: existing AI-authored draft, publisher has not reviewed it; complete integration before publisher testing under the updated workflow. Five new illustration briefs are present; actual images do not exist yet. Draft audio generation is complete (see the audio checkpoint below); illustration generation, runtime integration, legacy removal, and progress migration have not been performed. Next: AI editorial checks, rights-appropriate asset generation, complete audio/images and runtime integration with technical playback QA; publisher tests the completed exam afterward. After completing, integrating and durably saving exam 01, continue the next exam without waiting for draft review. Keep old content available only in the development state until the approved replacement gate; exclude it from the eventual production bundle/API/cache/fallback.
 
 Do not initiate comparisons against old question content without separately confirming their purpose, scope, and separation with the user. Any ambiguity affecting counts, scoring, audio rights, or locked UI must be clarified rather than guessed.
 
@@ -57,7 +57,7 @@ User explicitly restored the earlier student voice in place of audition 7 and re
 | Young male | 玄野武宏 / ノーマル | 11 | 4 |
 | Adult male | 剣崎雌雄 / ノーマル | 21 | 8 |
 
-Use VOICEVOX 0.25.2, speedScale 0.9, mono 24000 Hz. Existing pause settings remain 1.2 seconds after the introduction, 0.5 seconds between dialogue turns, and 5 seconds for the answer pause. This records publisher voice selection, not native pronunciation review, complete-exam audio approval, or runtime integration. もち子さん (audition 7, engine speaker ID 20) is excluded from production casting.
+Use VOICEVOX 0.25.2, speedScale 0.9, mono 24000 Hz. Historical audition pauses were 1.2 seconds after the introduction, 0.5 seconds between dialogue turns, and 5 seconds for answering; they are not binding full-exam timing. This records publisher voice selection, not native pronunciation review, complete-exam audio approval, or runtime integration. もち子さん (audition 7, engine speaker ID 20) is excluded from production casting.
 
 The configuration includes credits and per-voice terms links. Display required credits before release. Use only independently authored scripts; character artwork rights are separate. Check current terms and actual playback before release. Complete-exam audio acceptance, illustrations, credits UI and exam runtime integration remain future work.
 
@@ -69,10 +69,20 @@ Measured continuous duration: **726456 milliseconds = 726.456 seconds**, approxi
 
 All 11 items in groups 3–4 include three spoken options; groups 1–2 repeat the question after the dialogue. The five group-3 original illustration briefs still need newly created images. No legacy audio is used. Technical PCM/encoding/hash checks passed; actual hearing review, native pronunciation review, publisher review, final rights/credit review and runtime integration remain incomplete. `AUDIO_REVIEW.md` provides the review index.
 
-Next: publisher review of the original text and draft audio, resolve the 12-minute-versus-30-minute listening shortfall, create the five original illustrations, then complete real playback QA and runtime integration. Do not start exam 02 before pilot review; do not delete legacy content until the replacement gate.
+Next: resolve the 12-minute-versus-30-minute listening shortfall, add the fixed one-minute musical intermission, create the five original illustrations, then complete playback QA and runtime integration; publisher tests afterward. Exam 02 follows completion/integration/persistence of exam 01; do not delete legacy content until the replacement gate.
 
 ## Mandatory authoring rules consolidated — 2026-10-06
 
 Read `docs/jlpt-workspace/JLPT_ORIGINAL_AUTHORING_RULES.md` fully before all new JLPT content. User added strict anti-pattern answer positions, structure-aligned approximately 30-minute N5 listening and mid-listening rest. The 80 four-choice items balance 20 per answer position; the 11 three-choice items balance 4/4/3, without repeating cycles or three identical consecutive answers. Current data/validator need an answer-pattern audit; existing QA does not prove these new checks.
 
-Mid-listening rest is required by the user; its exact location and duration remain unconfirmed. Use structural/timing-only reference analysis, never original scripts/answers/audio as authoring inputs. If the reference is ambiguous or differs from the requested rest, confirm specifics with the user before final generation. No new listening rewrite, pause value, answer shuffle, UI change or publisher approval is performed by this documentation-only checkpoint.
+Mid-listening rest is now fixed on every level: after 問題２ and before 問題３, announce the rest, play exactly 60000 ms of soft instrumental music, announce resumption, then start 問題３. Use structural/timing-only reference analysis, never original scripts/answers/audio as authoring inputs. No new listening rewrite, pause value, answer shuffle, UI change or publisher approval is performed by this documentation-only checkpoint.
+
+## Superseding publisher decisions — 2026-10-06 18:32 JST
+
+The publisher explicitly updated the workflow: **six complete exams per level N5–N1, total 30**. Follow `JLPT_ORIGINAL_AUTHORING_RULES.md` version 2 and `JLPT_LEVEL_BLUEPRINTS.md`; machine-readable metadata is `src/data/jlpt-original/authoring-blueprints.json`. Earlier draft-review-before-integration/pilot-before-exam-02 gates and unknown-break instructions are superseded. Author complete usable Japan App exams, create needed images using imagegen, generate full audio, integrate and validate each exam, persist it, then continue. The publisher tests completed exams in the app and requests per-exam corrections. Human-review flags must remain truthful; no claim of official JLPT certification.
+
+Every level has a publisher-defined intermission after the final response pause of listening problem 2 and before the instructions/examples of problem 3: spoken rest announcement, **exactly 60000ms soft instrumental music**, spoken resume announcement, then problem 3. Music must have suitable verified rights or be independently composed/synthesized. Count music and announcements inside that level's listening target by project implementation default; per-level targets remain 30/35/40/50/55 minutes for N5/N4/N3/N2/N1. This is app design, not a claim about an official JLPT intermission.
+
+Detailed count-per-type metadata uses the existing 第3回 at each level; only grouping/cardinality was extracted. N5 totals 91; N4 98; N3 102; N2 106; N1 106 response units. Several legacy sources are candidate/unverified: these are project structural references, not certified fixed counts of current official exams. No legacy question/audio/image content was used as new authoring input.
+
+This commit updates instructions and blueprint only. The existing 12m06s N5 audio has not been rebuilt, the music and five images have not yet been generated, and the new exam is not yet integrated. Next: complete N5 exam 01 against these rules, then advance after full per-exam integration and persistence.

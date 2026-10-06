@@ -1,0 +1,776 @@
+{
+  "schemaVersion": 2,
+  "updatedAt": "2026-10-06",
+  "initialExamsPerLevel": 6,
+  "initialTotalExams": 30,
+  "reviewWorkflow": "complete_authoring_and_full_runtime_integration_then_publisher_tests_each_exam",
+  "audioBreak": {
+    "afterProblem": 2,
+    "beforeProblem": 3,
+    "musicDurationMs": 60000,
+    "musicDurationFramesAt24000Hz": 1440000,
+    "instrumentalOnly": true,
+    "announcementBefore": "問題二はここまでです。これから一分間休みます。",
+    "announcementAfter": "休み時間は終わりです。問題三を始めます。",
+    "includeMusicAndAnnouncementsInListeningTarget": true,
+    "policy": "Publisher-defined app intermission, not an official JLPT break claim.",
+    "musicRights": "Independently composed/synthesized instrumental, or verified commercial app redistribution license; no copied protected melody."
+  },
+  "listeningTargetToleranceMs": 60000,
+  "toleranceRole": "Project implementation tolerance; not official JLPT rule.",
+  "levels": {
+    "n5": {
+      "structureReferenceId": "n5-2013-07-exam-03",
+      "referenceRole": "Existing 第3回 structure only, not certification of current official question counts.",
+      "referenceMetadataSources": [
+        {
+          "path": "src/data/jlpt-official/n5-2013-07/written.candidate.json",
+          "sha256": "593c921ffe7cdd396150a47aba42fd2a5ff46f084ad3daf10b5026eb2ec25a0d"
+        },
+        {
+          "path": "src/data/jlpt-official/n5-2013-07/listening.candidate.json",
+          "sha256": "0b219107c74fcee231495e2082491eec348ce0793c9e3f50a69dde094c0b49f9"
+        }
+      ],
+      "sectionTimeMinutes": {
+        "vocabulary": 20,
+        "grammarReading": 40,
+        "listening": 30
+      },
+      "writtenResponses": 67,
+      "listeningResponses": 24,
+      "totalResponses": 91,
+      "groups": [
+        {
+          "section": "vocabulary",
+          "problem": 1,
+          "skill": "漢字読み",
+          "responses": 12,
+          "choiceCount": 4
+        },
+        {
+          "section": "vocabulary",
+          "problem": 2,
+          "skill": "表記",
+          "responses": 8,
+          "choiceCount": 4
+        },
+        {
+          "section": "vocabulary",
+          "problem": 3,
+          "skill": "文脈規定",
+          "responses": 10,
+          "choiceCount": 4
+        },
+        {
+          "section": "vocabulary",
+          "problem": 4,
+          "skill": "言い換え類義",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "grammar_reading",
+          "problem": 1,
+          "skill": "文の文法1",
+          "responses": 16,
+          "choiceCount": 4
+        },
+        {
+          "section": "grammar_reading",
+          "problem": 2,
+          "skill": "文の文法2・並べ替え",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "grammar_reading",
+          "problem": 3,
+          "skill": "文章の文法",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "grammar_reading",
+          "problem": 4,
+          "skill": "内容理解・短文",
+          "responses": 3,
+          "choiceCount": 4
+        },
+        {
+          "section": "grammar_reading",
+          "problem": 5,
+          "skill": "内容理解・中文",
+          "responses": 2,
+          "choiceCount": 4
+        },
+        {
+          "section": "grammar_reading",
+          "problem": 6,
+          "skill": "情報検索",
+          "responses": 1,
+          "choiceCount": 4
+        },
+        {
+          "section": "listening",
+          "problem": 1,
+          "skill": "課題理解",
+          "responses": 7,
+          "choiceCount": 4
+        },
+        {
+          "section": "listening",
+          "problem": 2,
+          "skill": "ポイント理解",
+          "responses": 6,
+          "choiceCount": 4
+        },
+        {
+          "section": "listening",
+          "problem": 3,
+          "skill": "発話表現",
+          "responses": 5,
+          "choiceCount": 3
+        },
+        {
+          "section": "listening",
+          "problem": 4,
+          "skill": "即時応答",
+          "responses": 6,
+          "choiceCount": 3
+        }
+      ],
+      "answerBalancePools": {
+        "3": {
+          "responses": 11,
+          "minimumPerPosition": 3,
+          "maximumPerPosition": 4,
+          "extraPositions": 2
+        },
+        "4": {
+          "responses": 80,
+          "minimumPerPosition": 20,
+          "maximumPerPosition": 20,
+          "extraPositions": 0
+        }
+      }
+    },
+    "n4": {
+      "structureReferenceId": "n4-2013-07-exam-03",
+      "referenceRole": "Existing 第3回 structure only, not certification of current official question counts.",
+      "referenceMetadataSources": [
+        {
+          "path": "src/data/jlpt-official/n4-2013-07/exam.candidate.json",
+          "sha256": "b5bbf2c02d1a3b1a486c5e3373faa6d906dd95c19412819189120b9c1794c8fb"
+        }
+      ],
+      "sectionTimeMinutes": {
+        "vocabulary": 25,
+        "grammarReading": 55,
+        "listening": 35
+      },
+      "writtenResponses": 70,
+      "listeningResponses": 28,
+      "totalResponses": 98,
+      "groups": [
+        {
+          "section": "vocabulary",
+          "problem": 1,
+          "skill": "漢字読み",
+          "responses": 9,
+          "choiceCount": 4
+        },
+        {
+          "section": "vocabulary",
+          "problem": 2,
+          "skill": "表記",
+          "responses": 6,
+          "choiceCount": 4
+        },
+        {
+          "section": "vocabulary",
+          "problem": 3,
+          "skill": "文脈規定",
+          "responses": 10,
+          "choiceCount": 4
+        },
+        {
+          "section": "vocabulary",
+          "problem": 4,
+          "skill": "言い換え類義",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "vocabulary",
+          "problem": 5,
+          "skill": "用法",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "grammar-reading",
+          "problem": 1,
+          "skill": "文の文法1",
+          "responses": 15,
+          "choiceCount": 4
+        },
+        {
+          "section": "grammar-reading",
+          "problem": 2,
+          "skill": "文の文法2・並べ替え",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "grammar-reading",
+          "problem": 3,
+          "skill": "文章の文法",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "grammar-reading",
+          "problem": 4,
+          "skill": "内容理解・短文",
+          "responses": 4,
+          "choiceCount": 4
+        },
+        {
+          "section": "grammar-reading",
+          "problem": 5,
+          "skill": "内容理解・中文",
+          "responses": 4,
+          "choiceCount": 4
+        },
+        {
+          "section": "grammar-reading",
+          "problem": 6,
+          "skill": "情報検索",
+          "responses": 2,
+          "choiceCount": 4
+        },
+        {
+          "section": "listening",
+          "problem": 1,
+          "skill": "課題理解",
+          "responses": 8,
+          "choiceCount": 4
+        },
+        {
+          "section": "listening",
+          "problem": 2,
+          "skill": "ポイント理解",
+          "responses": 7,
+          "choiceCount": 4
+        },
+        {
+          "section": "listening",
+          "problem": 3,
+          "skill": "発話表現",
+          "responses": 5,
+          "choiceCount": 3
+        },
+        {
+          "section": "listening",
+          "problem": 4,
+          "skill": "即時応答",
+          "responses": 8,
+          "choiceCount": 3
+        }
+      ],
+      "answerBalancePools": {
+        "3": {
+          "responses": 13,
+          "minimumPerPosition": 4,
+          "maximumPerPosition": 5,
+          "extraPositions": 1
+        },
+        "4": {
+          "responses": 85,
+          "minimumPerPosition": 21,
+          "maximumPerPosition": 22,
+          "extraPositions": 1
+        }
+      }
+    },
+    "n3": {
+      "structureReferenceId": "n3-2013-07-exam-03",
+      "referenceRole": "Existing 第3回 structure only, not certification of current official question counts.",
+      "referenceMetadataSources": [
+        {
+          "path": "src/data/jlpt-official/n3-2013-07/exam.candidate.json",
+          "sha256": "dc5264db393809301764e87ce2a40243e99f9ca02b21a2f9c45ae6e1aa67038e"
+        }
+      ],
+      "sectionTimeMinutes": {
+        "vocabulary": 30,
+        "grammarReading": 70,
+        "listening": 40
+      },
+      "writtenResponses": 74,
+      "listeningResponses": 28,
+      "totalResponses": 102,
+      "groups": [
+        {
+          "section": "written",
+          "problem": 1,
+          "skill": "漢字読み",
+          "responses": 8,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 2,
+          "skill": "表記",
+          "responses": 6,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 3,
+          "skill": "文脈規定",
+          "responses": 11,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 4,
+          "skill": "言い換え類義",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 5,
+          "skill": "用法",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 6,
+          "skill": "文の文法1",
+          "responses": 13,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 7,
+          "skill": "文の文法2・並べ替え",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 8,
+          "skill": "文章の文法",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 9,
+          "skill": "内容理解・短文",
+          "responses": 4,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 10,
+          "skill": "内容理解・中文",
+          "responses": 6,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 11,
+          "skill": "内容理解・長文",
+          "responses": 4,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 12,
+          "skill": "情報検索",
+          "responses": 2,
+          "choiceCount": 4
+        },
+        {
+          "section": "listening",
+          "problem": 1,
+          "skill": "課題理解",
+          "responses": 6,
+          "choiceCount": 4
+        },
+        {
+          "section": "listening",
+          "problem": 2,
+          "skill": "ポイント理解",
+          "responses": 6,
+          "choiceCount": 4
+        },
+        {
+          "section": "listening",
+          "problem": 3,
+          "skill": "概要理解",
+          "responses": 3,
+          "choiceCount": 4
+        },
+        {
+          "section": "listening",
+          "problem": 4,
+          "skill": "発話表現",
+          "responses": 4,
+          "choiceCount": 3
+        },
+        {
+          "section": "listening",
+          "problem": 5,
+          "skill": "即時応答",
+          "responses": 9,
+          "choiceCount": 3
+        }
+      ],
+      "answerBalancePools": {
+        "3": {
+          "responses": 13,
+          "minimumPerPosition": 4,
+          "maximumPerPosition": 5,
+          "extraPositions": 1
+        },
+        "4": {
+          "responses": 89,
+          "minimumPerPosition": 22,
+          "maximumPerPosition": 23,
+          "extraPositions": 1
+        }
+      }
+    },
+    "n2": {
+      "structureReferenceId": "n2-2013-07-exam-03",
+      "referenceRole": "Existing 第3回 structure only, not certification of current official question counts.",
+      "referenceMetadataSources": [
+        {
+          "path": "src/data/jlpt-official/n2-2013-07/exam.candidate.json",
+          "sha256": "8228b99f9ad050f4aaa8061763df9267a1d4d1b57cb3dca45ec8c41d0e44da83"
+        }
+      ],
+      "sectionTimeMinutes": {
+        "languageKnowledgeReading": 105,
+        "listening": 50
+      },
+      "writtenResponses": 75,
+      "listeningResponses": 31,
+      "totalResponses": 106,
+      "groups": [
+        {
+          "section": "written",
+          "problem": 1,
+          "skill": "漢字読み",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 2,
+          "skill": "表記",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 3,
+          "skill": "語形成",
+          "responses": 7,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 4,
+          "skill": "文脈規定",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 5,
+          "skill": "言い換え類義",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 6,
+          "skill": "用法",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 7,
+          "skill": "文の文法1",
+          "responses": 12,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 8,
+          "skill": "文の文法2・並べ替え",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 9,
+          "skill": "文章の文法",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 10,
+          "skill": "内容理解・短文",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 11,
+          "skill": "内容理解・中文",
+          "responses": 9,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 12,
+          "skill": "統合理解",
+          "responses": 2,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 13,
+          "skill": "主張理解",
+          "responses": 3,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 14,
+          "skill": "情報検索",
+          "responses": 2,
+          "choiceCount": 4
+        },
+        {
+          "section": "listening",
+          "problem": 1,
+          "skill": "課題理解",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "listening",
+          "problem": 2,
+          "skill": "ポイント理解",
+          "responses": 6,
+          "choiceCount": 4
+        },
+        {
+          "section": "listening",
+          "problem": 3,
+          "skill": "概要理解",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "listening",
+          "problem": 4,
+          "skill": "即時応答",
+          "responses": 11,
+          "choiceCount": 3
+        },
+        {
+          "section": "listening",
+          "problem": 5,
+          "skill": "統合理解",
+          "responses": 4,
+          "choiceCount": 4
+        }
+      ],
+      "answerBalancePools": {
+        "3": {
+          "responses": 11,
+          "minimumPerPosition": 3,
+          "maximumPerPosition": 4,
+          "extraPositions": 2
+        },
+        "4": {
+          "responses": 95,
+          "minimumPerPosition": 23,
+          "maximumPerPosition": 24,
+          "extraPositions": 3
+        }
+      }
+    },
+    "n1": {
+      "structureReferenceId": "n1-2013-07-exam-03",
+      "referenceRole": "Existing 第3回 structure only, not certification of current official question counts.",
+      "referenceMetadataSources": [
+        {
+          "path": "src/data/jlpt-official/n1-2013-07/exam.verified.json",
+          "sha256": "33db998c4af7439d96e5782d756ac36fb548562d1362910cee08f4313813e857"
+        }
+      ],
+      "sectionTimeMinutes": {
+        "languageKnowledgeReading": 110,
+        "listening": 55
+      },
+      "writtenResponses": 70,
+      "listeningResponses": 36,
+      "totalResponses": 106,
+      "groups": [
+        {
+          "section": "written",
+          "problem": 1,
+          "skill": "漢字読み",
+          "responses": 6,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 2,
+          "skill": "文脈規定",
+          "responses": 7,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 3,
+          "skill": "言い換え類義",
+          "responses": 6,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 4,
+          "skill": "用法",
+          "responses": 6,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 5,
+          "skill": "文の文法1",
+          "responses": 10,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 6,
+          "skill": "文の文法2・並べ替え",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 7,
+          "skill": "文章の文法",
+          "responses": 5,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 8,
+          "skill": "内容理解・短文",
+          "responses": 4,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 9,
+          "skill": "内容理解・中文",
+          "responses": 9,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 10,
+          "skill": "内容理解・長文",
+          "responses": 4,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 11,
+          "skill": "統合理解",
+          "responses": 2,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 12,
+          "skill": "主張理解",
+          "responses": 4,
+          "choiceCount": 4
+        },
+        {
+          "section": "written",
+          "problem": 13,
+          "skill": "情報検索",
+          "responses": 2,
+          "choiceCount": 4
+        },
+        {
+          "section": "listening",
+          "problem": 1,
+          "skill": "課題理解",
+          "responses": 6,
+          "choiceCount": 4
+        },
+        {
+          "section": "listening",
+          "problem": 2,
+          "skill": "ポイント理解",
+          "responses": 6,
+          "choiceCount": 4
+        },
+        {
+          "section": "listening",
+          "problem": 3,
+          "skill": "概要理解",
+          "responses": 6,
+          "choiceCount": 4
+        },
+        {
+          "section": "listening",
+          "problem": 4,
+          "skill": "即時応答",
+          "responses": 14,
+          "choiceCount": 3
+        },
+        {
+          "section": "listening",
+          "problem": 5,
+          "skill": "統合理解",
+          "responses": 4,
+          "choiceCount": 4
+        }
+      ],
+      "answerBalancePools": {
+        "3": {
+          "responses": 14,
+          "minimumPerPosition": 4,
+          "maximumPerPosition": 5,
+          "extraPositions": 2
+        },
+        "4": {
+          "responses": 92,
+          "minimumPerPosition": 23,
+          "maximumPerPosition": 23,
+          "extraPositions": 0
+        }
+      }
+    }
+  }
+}

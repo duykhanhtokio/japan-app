@@ -1,10 +1,10 @@
 # HƯỚNG DẪN BẮT BUỘC — SOẠN NỘI DUNG JLPT MỚI CHO JAPAN APP
 
-Phiên bản 1 — yêu cầu tổng hợp của nhà phát hành, ngày 06/10/2026.
+Phiên bản 2 — yêu cầu tổng hợp của nhà phát hành, ngày 06/10/2026.
 
 ## 1. Phạm vi và thứ tự bắt buộc đọc
 
-AI phải đọc toàn bộ tài liệu này trước khi tạo hoặc sửa câu hỏi, bài đọc, kịch bản nghe, lựa chọn, đáp án, hình minh họa hoặc audio JLPT mới. Không chỉ đọc tiêu đề hoặc bản tóm tắt. Sau đó đọc checkpoint hiện hành, cấu hình giọng, master và QA của đúng đề đang làm.
+AI phải đọc toàn bộ tài liệu này trước khi tạo hoặc sửa câu hỏi, bài đọc, kịch bản nghe, lựa chọn, đáp án, hình minh họa hoặc audio JLPT mới. Không chỉ đọc tiêu đề hoặc bản tóm tắt. Sau đó đọc `JLPT_LEVEL_BLUEPRINTS.md`, `src/data/jlpt-original/authoring-blueprints.json`, checkpoint hiện hành, cấu hình giọng, master và QA của đúng đề đang làm.
 
 Repository: `duykhanhtokio/japan-app`. Nhánh: `recovery/jlpt-n3-n1`.
 
@@ -15,11 +15,11 @@ Yêu cầu trực tiếp mới nhất của người dùng có ưu tiên cao hơ
 ## 2. Mục tiêu, quy mô và trách nhiệm
 
 - Soạn đề mô phỏng độc lập cho N5–N1, có mục tiêu đo thời gian và luyện theo cấu trúc thi.
-- Quy mô đã duyệt: 20 đề mỗi cấp, 100 đề. Phương án 6 đề mỗi cấp mới được trao đổi, chưa thay thế quy mô đã duyệt.
-- Hoàn thiện thí điểm một đề N5 trước. Không tự bắt đầu đề 02 hoặc sản xuất hàng loạt khi thí điểm chưa được nhà phát hành kiểm duyệt.
+- Quyết định mới nhất: **tạo trước 6 đề mỗi cấp N5–N1, tổng 30 đề**. Mục tiêu 20 đề/cấp trước đây chỉ là hướng mở rộng tương lai, không phải khối lượng của đợt này.
+- Triển khai lần lượt N5 đề 01–06, N4 đề 01–06, N3 đề 01–06, N2 đề 01–06, N1 đề 01–06. Hoàn thành và lưu bền vững từng đề trước khi sang đề kế tiếp. Không chờ người dùng duyệt bản nháp giữa các bước hoặc trước đề 02.
 - Nhà phát hành/người quyết định cuối cùng: người dùng. Không diễn giải việc chọn giọng hoặc yêu cầu tiếp tục thành duyệt toàn bộ học thuật, quyền sử dụng hay bản phát hành.
-- AI phải làm đủ chất lượng từng câu; số file, số câu và kiểm tra kỹ thuật không thay thế kiểm duyệt nội dung.
-- Gắn nhãn nội dung AI biên soạn/chưa kiểm duyệt. Không tự nhận đây là đề chính thức hoặc đã được JLPT chứng nhận.
+- **Soạn bộ hoàn chỉnh dùng để làm bài và tích hợp luôn đủ câu hỏi, hình, audio, chấm điểm và kết quả**. Không dừng ở kịch bản hoặc tài nguyên nháp. Người dùng tự mở từng đề trên app để kiểm tra sau khi hoàn thành, sai đâu sửa đó. “Chính thức” ở đây là phiên bản hoàn chỉnh của Japan App, không phải đề thi chính thức của tổ chức JLPT.
+- Lưu provenance AI biên soạn và trạng thái kiểm duyệt trung thực trong dữ liệu nội bộ; không dùng gate duyệt bản nháp để chặn triển khai đã được cho phép. Trước kiểm tra của người dùng, publisherReviewed vẫn false. Không tự nhận đề được tổ chức JLPT chứng nhận.
 
 ## 3. Nguyên tắc soạn mới và giới hạn tham khảo
 
@@ -36,9 +36,11 @@ Chia tham khảo thành hai luồng:
 
 Không tự so sánh nội dung câu mới với câu cũ trong phiên biên soạn. Nếu cần kiểm tra tương đồng ngoài ý muốn, phải xác nhận trước mục đích/phạm vi và tách thành bước kiểm tra, không dùng kết quả để tái tạo câu gốc. Không đưa phần trăm tương đồng hoặc cam kết an toàn bản quyền khi chưa có căn cứ đo/kiểm tra phù hợp.
 
-## 4. Chuẩn cấu trúc đề N5 thí điểm
+## 4. Chuẩn cấu trúc triển khai toàn bộ N5–N1
 
-Mẫu cấu trúc đã chọn: N5「第３回」hiện tại, ID `n5-2013-07-exam-03`. Giữ số câu từng dạng, không chỉ giữ tổng số câu. Đây là chuẩn của dự án, không tự tuyên bố mọi kỳ thi hiện hành có cùng số câu.
+Bảng N5 dưới đây và các bảng N4–N1 trong `JLPT_LEVEL_BLUEPRINTS.md` là một bộ hướng dẫn chung. Metadata máy đọc: `src/data/jlpt-original/authoring-blueprints.json`. Dùng 第3回 hiện có của từng cấp làm chuẩn cấu trúc; sáu đề mới cùng cấp giữ nguyên blueprint đó. Chỉ đọc metadata, không dùng nội dung câu gốc.
+
+Mẫu cấu trúc N5 đã chọn: N5「第３回」hiện tại, ID `n5-2013-07-exam-03`. Giữ số câu từng dạng, không chỉ giữ tổng số câu. Đây là chuẩn của dự án, không tự tuyên bố mọi kỳ thi hiện hành có cùng số câu.
 
 | Phần | Dạng | Số câu | Kỹ năng |
 |---|---:|---:|---|
@@ -59,7 +61,7 @@ Mẫu cấu trúc đã chọn: N5「第３回」hiện tại, ID `n5-2013-07-exa
 
 Tổng: 35 từ vựng + 32 ngữ pháp/đọc + 24 nghe = **91 câu**. Câu viết có 4 lựa chọn; nghe dạng 1/2/3/4 lần lượt có **4/4/3/3** lựa chọn. Không áp số câu 120 từ yêu cầu phân bố đáp án trước đây vào đề 91 câu này.
 
-Trước khi soạn cấp khác, xác định và xác nhận bài mẫu/cấu trúc của cấp đó; không tự áp bảng N5 cho N4–N1.
+Bố cục chi tiết, đánh số 問題, số câu, số lựa chọn và mô tả kỹ năng cho **từng cấp N5–N1** đã chốt trong `JLPT_LEVEL_BLUEPRINTS.md`; không hỏi lại chuẩn cấp khác, không tự áp bảng N5 cho N4–N1. Tổng số câu chấm điểm lần lượt: N5 91, N4 98, N3 102, N2 106, N1 106. Nếu dữ liệu tham chiếu cấu trúc bị hỏng hoặc kiểm tra metadata cho thấy mâu thuẫn thật, báo đúng mâu thuẫn; không dùng nội dung cũ để giải quyết.
 
 ## 5. Tiêu chuẩn học thuật cho từng câu
 
@@ -91,9 +93,9 @@ Mục tiêu: người chơi phải hiểu nội dung, không thể đoán chuỗ
 
 N5: **20 phút từ vựng / 40 phút ngữ pháp–đọc / khoảng 30 phút nghe**.
 
-Mốc công bố JLPT hiện hành được kiểm tra ngày 06/10/2026: N4 25/55/35 phút; N3 30/70/40 phút; N2 kiến thức–đọc 105 phút, nghe 50 phút; N1 kiến thức–đọc 110 phút, nghe 55 phút. Trước khi làm cấp đó, xác minh lại nguồn và chuẩn người dùng yêu cầu. Không áp mục tiêu nghe 30 phút cho mọi cấp.
+Mốc công bố JLPT hiện hành được kiểm tra ngày 06/10/2026: N4 25/55/35 phút; N3 30/70/40 phút; N2 kiến thức–đọc 105 phút, nghe 50 phút; N1 kiến thức–đọc 110 phút, nghe 55 phút. Dùng bảng thời gian và cấu trúc đã chốt của từng cấp trong blueprint; chỉ cần báo khi nguồn thay đổi hoặc có mâu thuẫn thật. Không áp mục tiêu nghe 30 phút cho mọi cấp.
 
-Nguồn: https://www.jlpt.jp/e/guideline/testsections.html . Nguồn nêu thời lượng nghe có thể lệch nhẹ tùy bản ghi. Khoảng chấp nhận kỹ thuật của dự án chưa được người dùng chốt; nếu cần một ngưỡng cụ thể, phải xác nhận, không tự ghi 29–31 phút thành quyết định đã duyệt.
+Nguồn: https://www.jlpt.jp/e/guideline/testsections.html . Nguồn nêu thời lượng nghe có thể lệch nhẹ tùy bản ghi. Mặc định triển khai của dự án: nhắm đúng thời lượng mục tiêu của cấp; sai lệch tổng tối đa ±60 giây cho bản mô phỏng và phải báo thời lượng thực tế. Đây là dung sai kỹ thuật, không phải quy định chính thức JLPT. Đoạn nhạc nghỉ phải đúng 60 giây, không áp dung sai này cho nhạc nghỉ.
 
 ## 8. Thiết kế nghe N5 khoảng 30 phút
 
@@ -122,11 +124,20 @@ Phần nghe phải có nhịp nghỉ giữa bài để người làm bài ổn �
 
 Không coi năm loại này là cùng một khoảng; không tự thêm một nghỉ dài ở giữa từng câu.
 
-**Chưa xác nhận vị trí và số giây của nhịp nghỉ giữa bài.** Phải đo metadata từ bản mẫu chỉ cho mục đích nhịp/thời gian; lưu mốc và thời lượng, không trích lời thoại. Nếu bản mẫu không có nhịp nghỉ đó, không rõ chỗ nghỉ, hoặc “giải lao” có nghĩa nghỉ dài khác với chuyển dạng, hỏi người dùng vị trí/thời lượng mong muốn trước khi dựng bản cuối. Không tuyên bố JLPT thật bắt buộc có giải lao giữa phần nghe khi chưa có chứng cứ.
+**Đã chốt cho mọi cấp N5–N1:** ngay sau khi kết thúc câu cuối và thời gian trả lời của 問題２, trước mọi hướng dẫn/ví dụ/câu hỏi của 問題３. Trình tự bắt buộc:
 
-Có thể đề xuất khoảng nghỉ tại ranh giới dạng bài gần giữa phần nghe, nhưng đó là đề xuất, không phải quyết định đã duyệt. Nếu là nghỉ mô phỏng do dự án thêm, ghi rõ trong hồ sơ; không gọi là quy định chính thức.
+1. Báo nghỉ bằng giọng dẫn đã chốt, câu mới: `問題二はここまでです。これから一分間休みます。`
+2. Phát nhạc nhẹ **không lời đúng 60000 ms = 60 giây**. Không có giọng hát, lời nói, quảng cáo hoặc âm thanh gây giật mình; âm lượng dễ chịu và không lấn giọng thông báo.
+3. Khi nhạc kết thúc, báo tiếp tục: `休み時間は終わりです。問題三を始めます。`
+4. Bắt đầu hướng dẫn/ví dụ mới của 問題３ rồi vào câu chấm điểm.
 
-Lưu loại nghỉ, vị trí, thời lượng ms, căn cứ mẫu/duyệt người dùng và có được tính trong tổng khoảng 30 phút hay không. Audio cuối chạy liên tục, tự phát cả nhịp nghỉ; không tự đổi thao tác phát/tạm dừng của UI đã khóa.
+Không hỏi lại vị trí/thời lượng đã chốt, không chuyển nghỉ sang trước phần nghe hoặc sau 問題３. Nhạc đúng 60 giây không tính hai câu thông báo; hai câu thông báo có thời lượng đo riêng. Mặc định thiết kế của dự án: **cả nhạc nghỉ và hai thông báo nằm trong tổng thời lượng nghe mục tiêu của cấp**, không thêm 60 giây ngoài mốc. Phần còn lại phải có nội dung và nhịp làm bài đủ phù hợp để đạt tổng.
+
+Đây là đoạn nghỉ riêng do nhà phát hành yêu cầu cho app; không tuyên bố JLPT thật có nghỉ nhạc như vậy. Không cần tìm một đoạn nhạc từ đề gốc để sao chép. Tự sáng tác/tổng hợp nhạc không lời độc lập, hoặc dùng nguồn có giấy phép đã xác minh cho app thương mại và phân phối file âm thanh; không dùng giai điệu được bảo hộ, nhạc nghe miễn phí trên mạng hoặc giấy phép chỉ cho video nếu không bao phủ app. Lưu nguồn/quyền/credit và hash.
+
+Manifest phải lưu breakAfterProblem=2, breakBeforeProblem=3; mốc báo nghỉ, nhạc, báo tiếp tục; durationMs của nhạc chính xác 60000. Với PCM 24000 Hz, nhạc có 1440000 frame. Xác minh đầu/cuối sau ghép và mã hóa, không chỉ cắt nhạc theo tên file; tính cả giới hạn/padding của codec. Cần fade-in/out nằm bên trong 60 giây, không thêm vào ngoài.
+
+Các khoảng giữa lượt, quan sát/đọc, trả lời và chuyển dạng phải được thiết kế theo độ dài và kỹ năng từng câu; không dùng nghỉ nhạc 60 giây thay cho các khoảng đó. Lưu blueprint thời gian và chạy nghe liên tục tự phát hết nhạc rồi trở lại bài, không bắt người dùng bấm để tiếp tục.
 
 ## 10. Giọng đọc và tài nguyên mới
 
@@ -143,11 +154,13 @@ VOICEVOX 0.25.2; speedScale **0.9**; mono 24000 Hz. Gán vai rõ ràng, nhất q
 
 Giọng số 7 もち子さん đã bị loại khỏi phân vai chính thức do điều kiện sử dụng riêng. Không tự đưa lại giọng này.
 
-Các khoảng 1.2s sau mở đầu, 0.5s giữa thoại và 5s trả lời chỉ là cấu hình thử hiện tại, không phải chuẩn thời gian thi đã duyệt. Trước khi thay số để dựng bản cuối, trình bảng nhịp/thời gian và xác nhận các chỗ chưa rõ. Không đổi speedScale 0.9 để bù thời lượng.
+Các khoảng 1.2s sau mở đầu, 0.5s giữa thoại và 5s trả lời là cấu hình thử cũ, không phải chuẩn cố định cho 30 đề. AI được phép thiết kế lại các khoảng chuẩn bị/trả lời/chuyển dạng để phù hợp cấu trúc từng cấp và tổng thời lượng, phải ghi số đo và kiểm tra bằng nghe; không cần hỏi lại từng khoảng hợp lý. Riêng đoạn nhạc 60 giây cố định, giọng và speedScale 0.9 giữ nguyên. Không kéo im lặng vô lý hoặc đổi tốc độ để bù thời lượng.
 
 Kiểm tra phát âm/trọng âm tiếng Nhật chuẩn, tự nhiên và dễ phân biệt; không tự chứng nhận Kantō chuẩn bằng tên giọng hoặc kiểm tra file. TTS có thể cần chỉnh cách đọc.
 
 Credit bắt buộc theo điều khoản hiện hành, gồm `VOICEVOX:春日部つむぎ`, `VOICEVOX:夜語トバリ`, `VOICEVOX:玄野武宏(CV:ガロ)`, `VOICEVOX:剣崎雌雄`. Cần vị trí credit dễ tìm trong app trước phát hành. Quyền giọng, phần mềm, kịch bản và hình nhân vật là các quyền riêng; miễn phí không đồng nghĩa tự do mọi mục đích.
+
+**Bắt buộc dùng kỹ năng `imagegen` để tạo hình raster cần thiết trong bài thi**: đọc SKILL.md trước lần dùng đầu, tạo theo brief độc lập gắn question ID, kiểm tra hình thực tế, sửa sai bằng công cụ tạo/chỉnh ảnh và đưa file thật vào assets, manifest và adapter. Không dừng ở visualBrief/placeholder. Dùng bố cục dễ đọc trên điện thoại; không có chữ hoặc chi tiết vô tình lộ đáp án. Nếu là bảng, lịch, sơ đồ cần chữ/số chính xác, dựng lớp chữ/số chính xác bằng mã và đối chiếu dữ kiện; không tin chữ/số AI trong ảnh mà chưa kiểm tra.
 
 Mọi hình/audio phải tạo mới; không dùng tài nguyên đề cũ để lấp phần thiếu. Hình đúng tình huống, không lộ đáp án, đọc được trên điện thoại. Không tự lấy hình nhân vật của thư viện giọng cho NPC.
 
@@ -168,10 +181,10 @@ Mọi hình/audio phải tạo mới; không dùng tài nguyên đề cũ để 
 4. Xác nhận các điểm chưa hiểu; tiếp tục phần độc lập không cần câu trả lời. Không đoán cho đủ file.
 5. Soạn mới theo mục tiêu; tự kiểm tra logic, đáp án duy nhất và nhiễu.
 6. Hoán vị lựa chọn; kiểm tra quota và chuỗi; đồng bộ mọi dữ liệu/audio sau hoán vị.
-7. Nhà phát hành kiểm duyệt bản thí điểm. Không tự đặt các cờ duyệt con người thành true.
-8. Tạo tài nguyên nháp trong phạm vi đã được cho phép; việc cho phép tạo không đồng nghĩa duyệt phát hành. Đo và kiểm tra âm thanh/hình; sửa lỗi thực tế.
+7. AI tự kiểm tra học thuật, cấu trúc và logic; sửa đến khi bản hoàn chỉnh đủ để làm bài. **Không yêu cầu nhà phát hành duyệt nháp trước khi tích hợp hoặc trước đề kế tiếp.** Không tự đặt các cờ duyệt con người thành true.
+8. Tạo đủ hình bằng imagegen, audio bằng bốn giọng đã chốt, hướng dẫn/ví dụ mới và đoạn nghỉ nhạc đúng một phút cho mỗi đề. Đo và kiểm tra tài nguyên hoàn chỉnh; sửa lỗi thực tế. Việc cho phép tạo/tích hợp không đồng nghĩa người dùng đã duyệt phát hành.
 9. Kiểm tra cấu trúc, đáp án, phân bố, liên kết, hash, thời lượng, thứ tự lựa chọn được đọc và quyền/credit. Giữ các cờ chưa duyệt đúng thực tế.
-10. Chỉ tích hợp đề đạt các điều kiện được duyệt qua adapter dữ liệu tương thích UI; thử thật trên app và ghi bằng chứng.
+10. Tích hợp **toàn bộ đề hoàn chỉnh và phần nghe đầy đủ** qua adapter tương thích UI, registry/catalog, chấm điểm, resume, kết quả và tài nguyên. Kiểm tra trên app; người dùng mở được ngay từng đề để tự làm và báo lỗi. Không đưa một ô đề giả chỉ có lời hứa sẽ có audio. Giữ khóa UI; nếu có trở ngại thật cần sửa file khóa, nêu rõ trước khi sửa.
 11. Commit hẹp, đẩy bằng cập nhật không ghi đè, fetch, chạy `check-work-persistence.mjs`. Chỉ báo lưu bền vững khi PASS.
 12. Cập nhật checkpoint nội dung và phần còn thiếu trong chính commit công việc; không tạo commit riêng chỉ để ghi SHA.
 
@@ -183,8 +196,8 @@ Báo cáo tách rõ: hoàn thành kỹ thuật; kiểm duyệt học thuật; ng
 
 Không được tự xác nhận: tỷ lệ tương đồng; an toàn bản quyền 100%; độ khó tương đương đề thật; trọng âm chuẩn; nhà phát hành/người bản ngữ đã duyệt; đủ 30 phút; chạy đúng trên iPhone nếu chưa kiểm tra.
 
-## 14. Trạng thái thí điểm phải sửa trước khi nhân rộng
+## 14. Trạng thái hiện tại và thứ tự tiếp tục
 
 Hiện có 91 câu nháp, 24 audio riêng và bản liên tục **726456 ms ≈ 12 phút 06 giây**. Bản này chưa đạt khoảng 30 phút; 5 hình còn thiếu; độ khó/nhịp nghỉ/nghe thực tế chưa được duyệt. Validator hiện tại đã kiểm tra không có ba đáp án giống liên tiếp nhưng chưa chứng minh cân bằng theo hướng dẫn mới hoặc không có chu kỳ; cần bổ sung kiểm tra và sửa thứ tự lựa chọn nếu cần.
 
-Không dùng trạng thái cũ làm bằng chứng đạt hướng dẫn này. Bước tiếp theo: kiểm toán phân bố đáp án; đo blueprint nhịp bài mẫu; xác nhận vị trí/thời lượng nghỉ; phát triển lại bản nghe N5 theo blueprint; đồng bộ audio khi đổi lựa chọn; tạo hình và trình thí điểm để kiểm duyệt.
+Không dùng trạng thái cũ làm bằng chứng đạt hướng dẫn này. Hoàn thiện N5 đề 01 thành phiên bản được tích hợp đầy đủ: kiểm toán/sửa phân bố đáp án; phát triển nghe theo blueprint đạt khoảng 30 phút; thêm đoạn nghỉ đã chốt; đồng bộ audio khi đổi lựa chọn; tạo đủ hình bằng imagegen; tích hợp và kiểm tra kỹ thuật/thực tế. Sau khi lưu bền vững, tiếp tục N5 đề 02–06 rồi N4–N1 mỗi cấp 6 đề, không chờ duyệt bản nháp. Người dùng kiểm tra trực tiếp và sửa theo từng đề sau hoàn thành. Không xóa nội dung cũ trước gate thay thế toàn bộ và không tuyên bố bộ 30 đề đã xong khi mới có hướng dẫn.
