@@ -1,6 +1,7 @@
 import type { ImageSourcePropType } from 'react-native';
 import { categoryAssetKey } from './life-assets';
 import assignmentJson from '@/data/location-background-assignment.json';
+import { placeBackground } from './location-place-artwork';
 
 const backgrounds: Record<string, ImageSourcePropType> = {
   'laundry/base': require('../../../assets/app/life/location-backgrounds/laundry/01-clear-morning.png'),
@@ -263,6 +264,8 @@ const variants = ['01-clear-morning','02-sunny-midday','03-golden-hour','04-clea
 
 export function locationBackground(locationId?: string | null, category?: string | null): ImageSourcePropType | undefined {
   if (!locationId) return undefined;
+  const exact = placeBackground(locationId, category);
+  if (exact) return exact;
   // Dedicated laundry base: do not fall back to obsolete convenience-store assignments.
   if (categoryAssetKey(category)==='laundry') return backgrounds['laundry/base'];
   const assigned = backgroundByLocation.get(locationId);

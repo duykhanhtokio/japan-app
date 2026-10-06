@@ -20,7 +20,9 @@ function load(file, assets = false, dependencies = {}) {
 const repository = load('src/services/life-content-repository.ts');
 const artwork = load('src/components/world/life-assets.ts', true);
 const categories = load('src/data/npc-progression.ts').NPC_CATEGORIES;
-const backgrounds = load('src/components/world/location-backgrounds.generated.ts', true, { './life-assets': artwork, '@/data/location-background-assignment.json': read('src/data/location-background-assignment.json') });
+const placeMetadata = read('src/data/location-place-artwork.json');
+const places = load('src/components/world/location-place-artwork.ts', true, { '@/data/location-place-artwork.json': placeMetadata });
+const backgrounds = load('src/components/world/location-backgrounds.generated.ts', true, { './life-assets': artwork, './location-place-artwork': places, '@/data/location-background-assignment.json': read('src/data/location-background-assignment.json') });
 const cards = load('src/components/world/npc-card-assets.ts', true).npcCardById;
 const raw = read('src/data/generated/locations.json');
 const corrections = read('src/data/location-role-corrections.json');
@@ -50,6 +52,17 @@ for (const role of categories) {
   const scene = artwork.sceneForCategory(role.category);
   assert.equal(path.basename(path.dirname(scene)), artwork.categoryAssetKey(role.category));
 }
+for (const [id, metadata] of Object.entries(placeMetadata)) {
+  const location = repository.getLifeLocationById(id);
+  assert.equal(location.cityId, metadata.cityId);
+  assert.equal(location.nameJa, metadata.nameJa);
+  assert.equal(location.category, metadata.category);
+  const image = backgrounds.locationBackground(id, location.category);
+  assert.equal(path.basename(image), metadata.asset);
+  assert(fs.existsSync(image));
+}
+assert.notEqual(places.placeBackground('LOC-027-02'), places.placeBackground('LOC-027-03'));
+assert.equal(places.placeBackground('LOC-013-04', 'Landmark'), undefined);
 const laundries = raw.filter(location => location.nameJa.includes('コインランドリー'));
 assert.equal(laundries.length, 9);
 for (const location of laundries) {
