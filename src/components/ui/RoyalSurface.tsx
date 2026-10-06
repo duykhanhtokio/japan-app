@@ -139,8 +139,12 @@ export function RoyalOptionRow({children,onPress,style,contentStyle,sizingGroup}
 }
 
 export function RoyalLocationCard({source,children,style}:PropsWithChildren<{source:ImageSourcePropType;style?:StyleProp<ViewStyle>}>) {
+  // A static RN Image defaults to its source width. Clip a separately sized
+  // window and override both image dimensions so cover scales to the card.
   return <View style={[s.locationCard,style]}>
-    <Image fadeDuration={0} source={source} resizeMode="cover" style={s.locationCardScene}/>
+    <View testID="location-card-scene-window" style={s.locationCardScene}>
+      <Image testID="location-card-scene-image" fadeDuration={0} source={source} resizeMode="cover" style={s.locationCardSceneImage}/>
+    </View>
     <Image fadeDuration={0} source={LOCATION_CARD_FRAME} resizeMode="stretch" style={s.locationCardFrame}/>
     <View style={StyleSheet.absoluteFill}>{children}</View>
   </View>;
@@ -203,7 +207,7 @@ const s=StyleSheet.create({
   closeButton:{width:38,height:38,alignItems:'center',justifyContent:'center'},closePressed:{transform:[{translateY:2},{scale:.96}]},
   selectionPanel:{paddingHorizontal:44,paddingTop:52,paddingBottom:48},
   optionPressable:{width:'100%',minHeight:ROYAL_LAYOUT.selectorRowHeight},optionPressed:{opacity:.86,transform:[{translateY:2},{scale:.992}]},optionRow:{minHeight:ROYAL_LAYOUT.selectorRowHeight,flexDirection:'row',alignItems:'center',paddingHorizontal:ROYAL_SAFE_AREA.option.horizontal,paddingVertical:ROYAL_SAFE_AREA.option.vertical},
-  locationCard:{aspectRatio:1145/1374,shadowColor:'#020713',shadowOffset:{width:0,height:9},shadowOpacity:.52,shadowRadius:14,elevation:12},locationCardScene:{position:'absolute',left:'8%',right:'8%',top:'8%',height:'61%',borderRadius:12},locationCardFrame:{...StyleSheet.absoluteFillObject,width:'100%',height:'100%'},
+  locationCard:{aspectRatio:1145/1374,shadowColor:'#020713',shadowOffset:{width:0,height:9},shadowOpacity:.52,shadowRadius:14,elevation:12},locationCardScene:{position:'absolute',left:'8%',right:'8%',top:'8%',height:'61%',borderRadius:12,overflow:'hidden'},locationCardSceneImage:{...StyleSheet.absoluteFillObject,width:'100%',height:'100%'},locationCardFrame:{...StyleSheet.absoluteFillObject,width:'100%',height:'100%'},
   placeRow:{aspectRatio:3,shadowColor:'#020713',shadowOffset:{width:0,height:8},shadowOpacity:.5,shadowRadius:12,elevation:11},placeRowScene:{position:'absolute',left:'4.8%',top:'16%',width:'34.4%',height:'68%'},placeRowFrame:{...StyleSheet.absoluteFillObject,width:'100%',height:'100%'},
   fieldBody:{minHeight:55,justifyContent:'center',paddingTop:6,paddingHorizontal:7,minWidth:0},
   fieldBodyCompact:{paddingTop:4,paddingHorizontal:5},
