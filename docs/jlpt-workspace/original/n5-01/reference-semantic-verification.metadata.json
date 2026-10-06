@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "createdAt": "2026-10-06",
-  "status": "semantic_verification_blocked_by_missing_audio_perception_capability",
+  "status": "local_ASR_candidate_structure_and_representative_pause_roles_identified",
   "scope": "Isolated N5 reference structure/timing analysis only; no content authorship.",
   "sourceAudioPath": "assets/jlpt/n5/2013-07/audio/n5-2013-07.mp3",
   "sourceAudioSha256": "20e13bd0ce43c581c8f81cd1587e4b5ffa995f70754051339e138ebcd427d151",
   "localOcrMetadataPath": "docs/jlpt-workspace/source-packets/n5-2013-07.source-packet.json",
   "localOcrMetadataSha256": "84a3abf6fb755389f1929e2bf94a4e47bc7b503b6e422a911063f6c33f73aeb7",
   "evidenceMethod": [
-    "Available tool registry checked for audio perception or transcription capability: none exposed.",
-    "Local Python package and executable checks for ASR capability.",
-    "Internal inspection of existing local OCR instruction organization; source status ocr_unverified.",
-    "Existing signal metadata examined; not rerun and not promoted to semantic evidence."
+    "Isolated local faster-whisper small-model ASR, CPU int8; Japanese beam_size=5, word timestamps, no VAD, no previous-text conditioning.",
+    "Manual structural classification of temporary local ASR segments; no source prose exported.",
+    "Representative semantic endpoints compared with existing FFmpeg -35dB, minimum 250ms quiet-interval metadata.",
+    "Short extra ASR check of the problem-4 item-4/item-5 boundary anomaly."
   ],
   "capabilities": {
     "ffmpegAvailable": true,
@@ -21,7 +21,7 @@
       "whisper": false,
       "torch": false,
       "vosk": false,
-      "faster_whisper": false
+      "faster_whisper": true
     },
     "localAsrExecutables": {
       "whisper": false,
@@ -54,61 +54,249 @@
   "verificationByProblem": [
     {
       "problem": 1,
-      "orientationCount": null,
-      "exampleCount": null,
-      "replayCount": null,
-      "preparationPauseRoles": null,
+      "orientationCount": 1,
+      "exampleCount": 1,
+      "orientationWindowMs": [
+        91920,
+        207720
+      ],
+      "orientationWindowIncludes": [
+        "instructions",
+        "one_practice_example",
+        "answer_marking_demonstration",
+        "scored_start_transition"
+      ],
+      "exampleEvidenceWindowMs": [
+        130560,
+        170720
+      ],
+      "exampleCountConfidence": "ASR_candidate_high_explicit_practice_and_example_answer_marking_evidence",
+      "orientationConfidence": "ASR_candidate_high",
+      "exampleDialogueReplayCount": 0,
+      "exampleWholeItemReplayCount": 0,
+      "questionPresentedBeforeAndAfterDialogue": true,
+      "exampleReplayCountConfidence": "ASR_candidate_high_within_analyzed_orientation_only",
+      "scoredWholeItemReplayCount": null,
+      "scoredDialogueReplayCount": null,
+      "scoredRepresentativeWholeItemReplayCount": 0,
+      "scoredRepresentativeDialogueReplayCount": 0,
+      "replayLimitation": "Complete scored recording not recognized; no global zero-replay claim. Repeated question is not dialogue replay.",
+      "preparationPauseRoles": [
+        "brief_prompt_to_dialogue_lead_in"
+      ],
       "preparationPausesMs": null,
-      "answerPauseRoles": null,
+      "representativeLeadInQuietIntervalMs": [
+        219104,
+        221149
+      ],
+      "representativeLeadInQuietDurationMs": 2045,
+      "answerPauseRoles": [
+        "post_final_question_response_opportunity"
+      ],
       "answerPausesMs": null,
-      "confidence": "not_verified"
+      "representativeAnswerQuietIntervalMs": [
+        256991,
+        269165
+      ],
+      "representativeAnswerQuietDurationMs": 12174,
+      "representativeItemNumber": 1,
+      "pauseRoleConfidence": "ASR_candidate_semantics_plus_signal_anchor_medium_high",
+      "pauseDurationConfidence": "measured_signal_threshold_duration_not_exact_intended_silence",
+      "roundedDesignProposalMs": {
+        "briefLeadIn": 2000,
+        "answerOpportunity": 12000
+      },
+      "roundedDesignProposalStatus": "not_publisher_approved_do_not_change_audition_settings_without_confirmation",
+      "confidence": "candidate_not_human_or_perceptually_verified"
     },
     {
       "problem": 2,
-      "orientationCount": null,
-      "exampleCount": null,
-      "replayCount": null,
-      "preparationPauseRoles": null,
+      "orientationCount": 1,
+      "exampleCount": 1,
+      "orientationWindowMs": [
+        670760,
+        793820
+      ],
+      "orientationWindowIncludes": [
+        "instructions",
+        "one_practice_example",
+        "answer_marking_demonstration",
+        "scored_start_transition"
+      ],
+      "exampleEvidenceWindowMs": [
+        708960,
+        763200
+      ],
+      "exampleCountConfidence": "ASR_candidate_high_explicit_practice_and_example_answer_marking_evidence",
+      "orientationConfidence": "ASR_candidate_high",
+      "exampleDialogueReplayCount": 0,
+      "exampleWholeItemReplayCount": 0,
+      "questionPresentedBeforeAndAfterDialogue": true,
+      "exampleReplayCountConfidence": "ASR_candidate_high_within_analyzed_orientation_only",
+      "scoredWholeItemReplayCount": null,
+      "scoredDialogueReplayCount": null,
+      "scoredRepresentativeWholeItemReplayCount": 0,
+      "scoredRepresentativeDialogueReplayCount": 0,
+      "replayLimitation": "Complete scored recording not recognized; no global zero-replay claim. Repeated question is not dialogue replay.",
+      "preparationPauseRoles": [
+        "brief_prompt_to_dialogue_lead_in"
+      ],
       "preparationPausesMs": null,
-      "answerPauseRoles": null,
+      "representativeLeadInQuietIntervalMs": [
+        807114,
+        809169
+      ],
+      "representativeLeadInQuietDurationMs": 2055,
+      "answerPauseRoles": [
+        "post_final_question_response_opportunity"
+      ],
       "answerPausesMs": null,
-      "confidence": "not_verified"
+      "representativeAnswerQuietIntervalMs": [
+        835788,
+        847972
+      ],
+      "representativeAnswerQuietDurationMs": 12184,
+      "representativeItemNumber": 1,
+      "pauseRoleConfidence": "ASR_candidate_semantics_plus_signal_anchor_medium_high",
+      "pauseDurationConfidence": "measured_signal_threshold_duration_not_exact_intended_silence",
+      "roundedDesignProposalMs": {
+        "briefLeadIn": 2000,
+        "answerOpportunity": 12000
+      },
+      "roundedDesignProposalStatus": "not_publisher_approved_do_not_change_audition_settings_without_confirmation",
+      "confidence": "candidate_not_human_or_perceptually_verified"
     },
     {
       "problem": 3,
-      "orientationCount": null,
-      "exampleCount": null,
-      "replayCount": null,
-      "preparationPauseRoles": null,
+      "orientationCount": 1,
+      "exampleCount": 1,
+      "orientationWindowMs": [
+        1224740,
+        1319720
+      ],
+      "orientationWindowIncludes": [
+        "instructions",
+        "one_practice_example",
+        "answer_marking_demonstration",
+        "scored_start_transition"
+      ],
+      "exampleEvidenceWindowMs": [
+        1263000,
+        1288660
+      ],
+      "exampleCountConfidence": "ASR_candidate_high_explicit_practice_and_example_answer_marking_evidence",
+      "orientationConfidence": "ASR_candidate_high",
+      "exampleDialogueReplayCount": null,
+      "exampleWholeItemReplayCount": 0,
+      "questionPresentedBeforeAndAfterDialogue": null,
+      "exampleReplayCountConfidence": "ASR_candidate_high_within_analyzed_orientation_only",
+      "scoredWholeItemReplayCount": null,
+      "scoredDialogueReplayCount": null,
+      "scoredRepresentativeWholeItemReplayCount": 0,
+      "scoredRepresentativeDialogueReplayCount": null,
+      "replayLimitation": "Complete scored recording not recognized; no global zero-replay claim. Repeated question is not dialogue replay.",
+      "preparationPauseRoles": [
+        "brief_prompt_to_first_spoken_option_lead_in"
+      ],
       "preparationPausesMs": null,
-      "answerPauseRoles": null,
+      "representativeLeadInQuietIntervalMs": [
+        1326510,
+        1328530
+      ],
+      "representativeLeadInQuietDurationMs": 2020,
+      "answerPauseRoles": [
+        "post_final_spoken_option_response_opportunity"
+      ],
       "answerPausesMs": null,
-      "confidence": "not_verified"
+      "representativeAnswerQuietIntervalMs": [
+        1339240,
+        1349430
+      ],
+      "representativeAnswerQuietDurationMs": 10190,
+      "representativeItemNumber": 1,
+      "pauseRoleConfidence": "ASR_candidate_semantics_plus_signal_anchor_medium_high",
+      "pauseDurationConfidence": "measured_signal_threshold_duration_not_exact_intended_silence",
+      "roundedDesignProposalMs": {
+        "briefLeadIn": 2000,
+        "answerOpportunity": 10000
+      },
+      "roundedDesignProposalStatus": "not_publisher_approved_do_not_change_audition_settings_without_confirmation",
+      "confidence": "candidate_not_human_or_perceptually_verified"
     },
     {
       "problem": 4,
-      "orientationCount": null,
-      "exampleCount": null,
-      "replayCount": null,
-      "preparationPauseRoles": null,
+      "orientationCount": 1,
+      "exampleCount": 1,
+      "orientationWindowMs": [
+        1501100,
+        1583500
+      ],
+      "orientationWindowIncludes": [
+        "instructions",
+        "one_practice_example",
+        "answer_marking_demonstration",
+        "scored_start_transition"
+      ],
+      "exampleEvidenceWindowMs": [
+        1532220,
+        1549440
+      ],
+      "exampleCountConfidence": "ASR_candidate_high_explicit_practice_and_example_answer_marking_evidence",
+      "orientationConfidence": "ASR_candidate_high",
+      "exampleDialogueReplayCount": null,
+      "exampleWholeItemReplayCount": 0,
+      "questionPresentedBeforeAndAfterDialogue": null,
+      "exampleReplayCountConfidence": "ASR_candidate_high_within_analyzed_orientation_only",
+      "scoredWholeItemReplayCount": null,
+      "scoredDialogueReplayCount": null,
+      "scoredRepresentativeWholeItemReplayCount": 0,
+      "scoredRepresentativeDialogueReplayCount": null,
+      "replayLimitation": "Complete scored recording not recognized; no global zero-replay claim. Repeated question is not dialogue replay.",
+      "preparationPauseRoles": [
+        "brief_prompt_to_first_spoken_option_lead_in"
+      ],
       "preparationPausesMs": null,
-      "answerPauseRoles": null,
+      "representativeLeadInQuietIntervalMs": [
+        1588150,
+        1590190
+      ],
+      "representativeLeadInQuietDurationMs": 2040,
+      "answerPauseRoles": [
+        "post_final_spoken_option_response_opportunity"
+      ],
       "answerPausesMs": null,
-      "confidence": "not_verified"
+      "representativeAnswerQuietIntervalMs": [
+        1601760,
+        1609950
+      ],
+      "representativeAnswerQuietDurationMs": 8190,
+      "representativeItemNumber": 1,
+      "pauseRoleConfidence": "ASR_candidate_semantics_plus_signal_anchor_medium_high",
+      "pauseDurationConfidence": "measured_signal_threshold_duration_not_exact_intended_silence",
+      "roundedDesignProposalMs": {
+        "briefLeadIn": 2000,
+        "answerOpportunity": 8000
+      },
+      "roundedDesignProposalStatus": "not_publisher_approved_do_not_change_audition_settings_without_confirmation",
+      "confidence": "candidate_not_human_or_perceptually_verified"
     }
   ],
   "limitations": [
-    "No reference audio was heard or semantically recognized.",
-    "Existing OCR does not establish actual spoken orientation/example counts, replay policy, or pause roles/durations.",
-    "Absence of an OCR example/replay marker does not prove absence in the recording.",
-    "Signal-derived quiet intervals and candidate boundaries cannot establish semantic roles.",
-    "No example counts or replay policy may be inferred from window lengths."
+    "ASR is candidate evidence, not human listening, native review, or semantic certification.",
+    "Speech recognition can hallucinate over quiet/non-speech material; such segments were excluded from structural counts.",
+    "ASR timestamps and -35dB quiet boundaries are approximate semantic anchors, not sample-exact speech boundaries.",
+    "One example per problem is supported within each complete orientation window; full scored recording has not been semantically analyzed.",
+    "Whole-exam scored replay counts remain null. Repeated P1/P2 questions and initial sound-check repetition must not be mistaken for dialogue replay.",
+    "A brief ~2-second lead-in is evidenced; an explicitly scheduled paper-reading/preparation allowance is not established and remains null.",
+    "Observed signal durations and rounded proposed design durations are separate. The latter require publisher confirmation before changing existing audition pauses.",
+    "Candidate item-boundary anomalies are reported but original source metadata is not modified.",
+    "No new source wording, scenarios, options, answers, transcript, or audio clip enters the authoring context or Git."
   ],
-  "requiredNextEvidence": "A capable local audio perception/recognition workflow or a human structural annotation of the reference audio, returning only counts and timestamped role labels for orientation, examples, replays, preparation and answer pauses. External text/audio submission requires separate user-specific authorization.",
+  "requiredNextEvidence": "Publisher confirmation of the independently proposed preparation/answer pacing table; full local ASR or human review if global scored replay counts or exact interlude audio type are required. No additional N5 metadata-analysis authorization is requested.",
   "humanReviewed": false,
   "perceptualApproval": false,
   "audioPlaybackPerformed": false,
-  "semanticAudioClassificationPerformed": false,
+  "semanticAudioClassificationPerformed": true,
   "sourceContentIncluded": false,
   "sourceAudioExported": false,
   "cloudUploadPerformed": false,
@@ -117,5 +305,171 @@
     "modelConfigUrl": "https://huggingface.co/Systran/faster-whisper-small/resolve/main/config.json",
     "result": "connection_timed_out_after_10_seconds",
     "sourceAudioSubmitted": false
-  }
+  },
+  "previousCapabilityBlockerResolved": true,
+  "runtime": {
+    "pythonVersion": "3.12.14",
+    "venvPath": "/workspace/scratch/390af15284b4/jlpt-asr-venv",
+    "installationScope": "assistant Linux workspace only; not publisher Mac or app bundle",
+    "requiredPackage": "faster-whisper==1.2.1",
+    "dependencyVersions": {
+      "faster-whisper": "1.2.1",
+      "ctranslate2": "4.8.2",
+      "av": "19.0.1",
+      "onnxruntime": "1.30.0",
+      "numpy": "2.5.3",
+      "huggingface-hub": "1.33.0",
+      "tokenizers": "0.23.2"
+    },
+    "modelRepository": "Systran/faster-whisper-small",
+    "modelDownloadUrlPattern": "https://huggingface.co/Systran/faster-whisper-small/resolve/main/{filename}",
+    "modelRevisionPinned": false,
+    "modelContentPinnedBySha256": true,
+    "device": "cpu",
+    "requestedComputeType": "int8",
+    "effectiveComputeType": "int8_float32",
+    "localFilesOnly": true,
+    "networkRequestsDuringRecognition": false,
+    "modelFiles": {
+      "model.bin": {
+        "bytes": 483546902,
+        "sha256": "3e305921506d8872816023e4c273e75d2419fb89b24da97b4fe7bce14170d671"
+      },
+      "vocabulary.txt": {
+        "bytes": 459861,
+        "sha256": "34ce3fe1c5041027b3f8d42912270993f986dbc4bb34cf27f951e34a1e453913"
+      },
+      "tokenizer.json": {
+        "bytes": 2203239,
+        "sha256": "fb7b63191e9bb045082c79fd742a3106a12c99513ab30df4a0d47fa6cb6fd0ab"
+      },
+      "config.json": {
+        "bytes": 2370,
+        "sha256": "b55496ac7940a7ae47d2c01eab40edfd8701feec1229d9cce3b40014383fb828"
+      }
+    }
+  },
+  "analysisWindowsMs": [
+    [
+      0,
+      230000
+    ],
+    [
+      670000,
+      820000
+    ],
+    [
+      1220000,
+      1340000
+    ],
+    [
+      1490000,
+      1620000
+    ],
+    [
+      207000,
+      277000
+    ],
+    [
+      793000,
+      858000
+    ],
+    [
+      1100000,
+      1225000
+    ],
+    [
+      1319000,
+      1359000
+    ],
+    [
+      1583000,
+      1623000
+    ],
+    [
+      660000,
+      672000
+    ],
+    [
+      1670000,
+      1715000
+    ]
+  ],
+  "generalOrganization": {
+    "soundCheckBlockCount": 1,
+    "generalTestOrientationBlockCount": 1,
+    "soundCheckAndGeneralOrientationCandidateWindowMs": [
+      0,
+      91920
+    ],
+    "soundCheckRepeatedUtterancesPresent": true,
+    "soundCheckUtteranceRepetitionCount": null,
+    "soundCheckIsScoredItem": false,
+    "soundCheckIsProblemPracticeExample": false,
+    "confidence": "ASR_candidate_high_for_block_presence_not_human_verified"
+  },
+  "problem2FinalOutlier": {
+    "candidateWindowMs": [
+      1101140,
+      1224760
+    ],
+    "candidateWindowDurationMs": 123620,
+    "lastQuestionEndCandidateMs": 1167800,
+    "restAnnouncementCandidateMs": [
+      1179220,
+      1182960
+    ],
+    "resumeAnnouncementCandidateMs": [
+      1215800,
+      1218860
+    ],
+    "announcementToAnnouncementGapMs": 32840,
+    "restAndResumeSequenceThroughProblem3StartCandidateMs": [
+      1179220,
+      1224740
+    ],
+    "sequenceDurationCandidateMs": 45520,
+    "interludeSignalType": null,
+    "interludeMusicDurationMs": null,
+    "confidence": "ASR_candidate_high_for_spoken_rest_and_resume_presence_medium_for_endpoints",
+    "limitation": "Final candidate item contains response time plus a rest/resume sequence; candidate item median/max statistics must not treat the whole window as scored speech. Non-speech ASR hallucinations do not identify music type or exact duration."
+  },
+  "problem4BoundaryAnomaly": {
+    "affectedItems": [
+      4,
+      5
+    ],
+    "oldItem5CandidateStartMs": 1694500,
+    "recognizedItem5LabelStartCandidateMs": 1705600,
+    "offsetMs": 11100,
+    "mergedItem4AnswerQuietIntervalMs": [
+      1694380,
+      1702570
+    ],
+    "mergedItem4AnswerQuietDurationMs": 8190,
+    "confidence": "ASR_candidate_high_for_item-label_order_medium_for_timestamp",
+    "limitation": "Existing item-4 window stops in its answer pause; item-5 window contains the remainder. Original boundary metadata unchanged. Do not use the old item-4 short duration as a pacing template."
+  },
+  "pauseSignalPatternSupportingEvidence": {
+    "problem1QuietDurationRangeMs": [
+      12174,
+      12222
+    ],
+    "problem2QuietDurationRangeMs": [
+      12170,
+      12250
+    ],
+    "problem3QuietDurationRangeMs": [
+      10160,
+      10230
+    ],
+    "problem4QuietDurationRangeMs": [
+      8180,
+      8210
+    ],
+    "method": "Longest detected quiet interval in existing candidate item windows, with item-4/item-5 split interval recombined for problem 4.",
+    "semanticConfidence": "Only representative items and problem-2 final item semantically inspected; remaining intervals support the pattern but roles are inferred.",
+    "problem2FinalThresholdCaution": "The threshold interval overlaps ASR rest-announcement onset; it is not an exact intentional silence measurement."
+  },
+  "semanticClassificationStatus": "AI_ASR_candidate_only"
 }
