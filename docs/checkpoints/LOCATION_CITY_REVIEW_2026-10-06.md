@@ -51,3 +51,31 @@ Per-place official sources remain in the artwork registry. Additional source det
 - Sunroad service counter: https://www.sunroad.or.jp/servicecounter/
 
 Source-resolution generated images inspected. Native simulator/device portrait and landscape screenshots remain pending. No approved dialogue layout, NPC anchor, microphone, blur, route, or JLPT UI changes.
+
+## Morioka continuation — 2026-10-06
+
+CTY-003 artwork assignments cover all 21 locations: **10 individual place illustrations and 11 permitted shared service scenes**. The ten exact-ID mappings are Morioka Station east entrance, Morioka Castle Ruins Park, AEON Mall Morioka (Maegata), Iwate Bank Red Brick Building, Ishiwari-zakura, Hoonji Rakando, Tsunagi/Gosho lakeshore, Koiwai Farm, Iwayama Parkland, and Morioka Odori district. The characteristic-name rule correctly requires Odori imagery despite its Izakaya category. Whole-catalog review remains unfinished; the next city is **CTY-004 Sendai**, with 10 pending individual-review locations. Pending catalog total after this unit: 2,406.
+
+Six erroneous addresses corrected from official sources: AEON Maegata (前潟4丁目7番1号), Hoonji (名須川町31-5), Koiwai (雫石町丸谷地36-1), Iwayama (新庄16字貝田53-1), Kogensha (材木町2-18), and Iwate Medical University Hospital (矢巾町医大通2丁目1番1号). The farm and hospital are nearby destinations rather than places within Morioka city. Their displayed names now explicitly append 雫石町 and 矢巾町, descriptions explain this, and matching generated scenario name/situation references are updated. Existing authored dialogue, stable IDs and grouping/navigation are preserved; this is explicit nearby-destination grouping, not a claim that the administrative boundaries changed.
+
+Address sources:
+- https://morioka.aeonmall.jp/access
+- https://iwatetabi.jp/spots/4788/
+- https://www.koiwaifarm.com/guide/access/
+- https://iwatetabi.jp/spots/4689/
+- https://www.morioka-kogensya.sakura.ne.jp/
+- https://www.iwate-med.ac.jp/education/school_life/yahaba-campus/
+
+Built-in imagegen created ten original portrait 1024x1536 assets in `assets/app/life/location-backgrounds/places/`. Shared prompt: polished semi-realistic anime 2D/2.5D environment, natural proportions, full bleed, center-safe subject, empty lower foreground for the existing NPC, no people/UI/borders/watermarks or unrelated city landmarks. Per-asset subject prompts:
+- `morioka-station-east.png`: pale panel station facade, JR/盛岡駅 signs, FESAN, bus canopy and forecourt. Identity: JR East station 1565; dated feature reference https://commons.wikimedia.org/wiki/File:盛岡駅東口_2014-05-18_14-10.JPG .
+- `morioka-castle-ruins.png`: granite ramparts, stairs and park trees; prohibit a standing castle keep. https://www.city.morioka.iwate.jp/kurashi/midori/koen/1010491.html
+- `morioka-redbrick-bank.png`: red brick, white stone bands, slate roof and corner tower. First output had three storeys; edited and inspected to retain only two. https://www.iwagin-akarengakan.jp/redbrick/
+- `morioka-stone-splitting-cherry.png`: old pale-blossomed cherry growing from a split granite boulder at the district court. https://www.city.morioka.iwate.jp/kankou/kankou/1037103/1037212/sakura/1007959.html
+- `morioka-maegata-aeon.png`: low two-storey cream/grey mall, glass upper facade, curved canopy, AEON sign. Dated exterior feature reference https://deepacid.la.coocan.jp/travels/maegataaeonmall.html .
+- `morioka-hoonji-rakan.png`: timber Rakando visitor aisle, seated central Buddha and tiered rakan collection; illustration does not purport to reproduce/count all 499 statues. https://iwatetabi.jp/spots/4788/
+- `morioka-tsunagi-gosho.png`: Gosho Lake, wooded low ridges and lakeside resort area, not an invented private hotel bath. https://www.tsunagionsen.com/
+- `koiwai-farm-iwate.png`: Shizukuishi farm pasture, dairy cattle, white fences and broad Mount Iwate; prohibit Mount Fuji. https://www.koiwaifarm.com/guide/access/
+- `morioka-iwayama-parkland.png`: wooded hill setting and documented Ferris wheel/family dragon coaster; original viewpoint, not precise current ride-layout photography. https://iwatetabi.jp/spots/4689/
+- `morioka-odori.png`: open-to-sky local city street, awnings, restaurant signs, evening lighting. Removed first output's invented mountain and oversized billboards, changed cobbled alley to asphalt street. https://www.odori.or.jp/
+
+All selected source-resolution outputs were visually inspected. These are geographically informed illustrations, not surveys or exact current architectural/storefront replicas. Reference photographs are not shipped. Mapping/role checks PASS for all 7,112 locations; JLPT UI lock PASS 10/10. Device/browser runtime portrait/landscape visual acceptance remains pending. No dialogue layout, NPC anchoring, microphone, blur, transitions or JLPT UI files changed.

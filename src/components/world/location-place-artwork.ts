@@ -26,6 +26,16 @@ const artwork: Record<string, ImageSourcePropType> = {
   'LOC-002-14': require('../../../assets/app/life/location-backgrounds/places/aomori-gappo-park.png'),
   'LOC-002-19': require('../../../assets/app/life/location-backgrounds/places/aomori-showa-daibutsu.png'),
   'LOC-002-01': require('../../../assets/app/life/location-backgrounds/places/aomori-station-east.png'),
+  'LOC-003-01': require('../../../assets/app/life/location-backgrounds/places/morioka-station-east.png'),
+  'LOC-003-02': require('../../../assets/app/life/location-backgrounds/places/morioka-castle-ruins.png'),
+  'LOC-003-05': require('../../../assets/app/life/location-backgrounds/places/morioka-maegata-aeon.png'),
+  'LOC-003-11': require('../../../assets/app/life/location-backgrounds/places/morioka-redbrick-bank.png'),
+  'LOC-003-12': require('../../../assets/app/life/location-backgrounds/places/morioka-stone-splitting-cherry.png'),
+  'LOC-003-13': require('../../../assets/app/life/location-backgrounds/places/morioka-hoonji-rakan.png'),
+  'LOC-003-14': require('../../../assets/app/life/location-backgrounds/places/morioka-tsunagi-gosho.png'),
+  'LOC-003-15': require('../../../assets/app/life/location-backgrounds/places/koiwai-farm-iwate.png'),
+  'LOC-003-16': require('../../../assets/app/life/location-backgrounds/places/morioka-iwayama-parkland.png'),
+  'LOC-003-19': require('../../../assets/app/life/location-backgrounds/places/morioka-odori.png'),
 };
 
 // Geography belongs to the stable location ID, never a category or round-robin slot.
