@@ -29,11 +29,11 @@
       "groups1And2": "Record situation, dialogue, and the question; displayed choices are separate from the recording.",
       "group3": "Record the situation and three response choices; use the independently created illustration.",
       "group4": "Record the utterance and three response choices; do not expose printed response text during playback.",
-      "pauses": "Set after actual pilot playback; do not claim the script has a verified 30-minute duration.",
+      "pauses": "Existing audition pause settings retained for this content-focused revision; final preparation/answer/example organization still requires verification.",
       "voiceCasting": "Approved four roles are explicitly assigned per item in audio.manifest.json."
     },
     "manifestPath": "src/data/jlpt-original/n5/01/audio.manifest.json",
-    "durationMs": 796387,
+    "durationMs": 1307467,
     "durationMeasurement": "PCM frame count and gapless MP3 decode; technical measurement only",
     "targetDurationMatched": false
   },
@@ -2258,7 +2258,7 @@
         {
           "id": "3",
           "text": "タオルを 洗います。",
-          "rationale": "洗濯済みで洗う提案は否定された。"
+          "rationale": "タオルはすでに洗ってかわいており、洗い直す依頼ではない。"
         },
         {
           "id": "4",
@@ -2267,7 +2267,7 @@
         }
       ],
       "correctOptionId": "4",
-      "learningObjective": "依頼の訂正後の行動",
+      "learningObjective": "依頼内容と物の状態から次の行動を選ぶ",
       "script": [
         [
           "narrator",
@@ -2275,23 +2275,47 @@
         ],
         [
           "female",
-          "洗濯は おわりました。タオルだけ、まだ 外に あります。"
+          "洗濯機の中はもう空ですよ。シャツは部屋に入れましたが、タオルはまだ外にあります。"
         ],
         [
           "male",
-          "じゃあ、洗いますか。"
+          "タオルも今日洗ったんですか。まだぬれていますか。"
         ],
         [
           "female",
-          "いいえ、もう かわいていますから、中に 入れてください。"
+          "朝、シャツといっしょに洗いました。今は全部かわいていますよ。"
         ],
         [
           "male",
-          "はい。"
+          "じゃあ、このまま外に置いてもいいですか。夕方まで出かけませんから。"
+        ],
+        [
+          "female",
+          "でも、空が暗くなってきましたね。雨がふる前に、タオルも中に入れてください。"
+        ],
+        [
+          "male",
+          "わかりました。新しいタオルも買いますか。"
+        ],
+        [
+          "female",
+          "いいえ、買わなくていいです。今ある物で大丈夫です。"
+        ],
+        [
+          "male",
+          "はい。外のタオルを取ってきます。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
-      "playbackReviewed": false
+      "playbackReviewed": false,
+      "timingBudget": {
+        "targetDurationMs": 66000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 63404,
+        "deltaFromObjectiveMs": -2596,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-1-02",
@@ -2330,11 +2354,19 @@
         ],
         [
           "teacher",
-          "今日は 地図を 見て 勉強します。でも、まだ 地図は 開かないでください。はじめに、この 紙に 名前を 書いてください。そのあとで、地図を 出しましょう。"
+          "今日は町の地図を使います。みなさんのかばんの中に地図がありますね。でも、まだ開かないでください。今から小さい紙を一人に一枚ずつあげます。紙の上に名前を書くところがありますから、はじめにそこに自分の名前を書いてください。名前だけでいいです。住所や電話番号は書きません。名前を書いた人は、地図をかばんから出してください。それから、わたしといっしょに地図を開きます。学校と公園の場所を見ましょう。紙は授業の終わりに集めますから、今は先生に返さないで、机の上に置いてください。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
-      "playbackReviewed": false
+      "playbackReviewed": false,
+      "timingBudget": {
+        "targetDurationMs": 64000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 58901,
+        "deltaFromObjectiveMs": -5099,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-1-03",
@@ -2372,24 +2404,48 @@
           "女の 人と 男の 人が 話しています。男の 人は 何を 買いますか。"
         ],
         [
-          "female",
-          "お店へ 行くなら、卵を 買ってきて。"
-        ],
-        [
           "male",
-          "パンも いる？"
+          "今からお店へ行くけど、夕ごはんに何かいる？"
         ],
         [
           "female",
-          "パンは あるよ。あ、卵も 冷蔵庫に あった。じゃあ、牛乳だけ お願い。"
+          "卵を買ってきてくれる？あしたの朝ごはんにも使いたいの。"
         ],
         [
           "male",
-          "わかった。"
+          "わかった。パンも少なくなっていたね。パンと卵でいい？"
+        ],
+        [
+          "female",
+          "パンは今朝買ったから、台所の大きい袋に入っているよ。ちょっと冷蔵庫も見てみるね。"
+        ],
+        [
+          "male",
+          "じゃあ、玄関で待っているよ。牛乳はどう？"
+        ],
+        [
+          "female",
+          "あ、卵もまだたくさんあった。ごめん、卵は買わなくていいよ。牛乳はもうないね。"
+        ],
+        [
+          "male",
+          "牛乳だけ買えばいいんだね。"
+        ],
+        [
+          "female",
+          "うん、お願い。お金はこの財布に入っているよ。袋も持って行ってね。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
-      "playbackReviewed": false
+      "playbackReviewed": false,
+      "timingBudget": {
+        "targetDurationMs": 68000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 61324,
+        "deltaFromObjectiveMs": -6676,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-1-04",
@@ -2428,23 +2484,51 @@
         ],
         [
           "male",
-          "駅に 着いた？"
+          "もしもし。もう駅に着いた？ぼくはまだバスの中なんだ。"
         ],
         [
           "female",
-          "うん。入口の 前に いる。"
+          "うん、電車を降りたところ。今、駅の入口の前にいるよ。"
         ],
         [
           "male",
-          "ぼくは あと 五分 かかるよ。入口は 寒いから、中の 時計の 下で まっていて。"
+          "バスはあと五分ぐらいで着くよ。そこ、風が強くない？"
         ],
         [
           "female",
-          "わかった。中に 入るね。"
+          "寒いね。駅の外に店が見えるから、そこで待とうか。"
+        ],
+        [
+          "male",
+          "その店は今日は休みだったよ。駅の中に大きい時計があるのが見える？"
+        ],
+        [
+          "female",
+          "うん、入口から見えるよ。時計の下には人が少ないね。"
+        ],
+        [
+          "male",
+          "じゃあ、その下で待っていて。ぼくも駅に入って、そこへ行くから。"
+        ],
+        [
+          "female",
+          "わかった。入口の前から中に入るね。電話を切っても大丈夫？"
+        ],
+        [
+          "male",
+          "うん。あとで会おう。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
-      "playbackReviewed": false
+      "playbackReviewed": false,
+      "timingBudget": {
+        "targetDurationMs": 62000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 63947,
+        "deltaFromObjectiveMs": 1947,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-1-05",
@@ -2483,23 +2567,47 @@
         ],
         [
           "female",
-          "机の 本を 一さつ かばんに 入れてくれる？"
+          "あした学校に持って行く本を、かばんに入れてくれる？机の上に二冊あるでしょう。"
         ],
         [
           "male",
-          "赤い 本と 青い 本が あるね。どっち？"
+          "赤い本と青い本だね。赤いほうは大きくて、写真がたくさんあるよ。"
         ],
         [
           "female",
-          "赤い 本は 家で 読むから、青い 本を お願い。"
+          "そう。それは家で料理をするときに使う本なの。今夜も見たいから、机に置いておいて。"
         ],
         [
           "male",
-          "はい。"
+          "じゃあ、青い本を持って行くの？これは図書館の本かな。"
+        ],
+        [
+          "female",
+          "うん、学校の図書館から借りた本よ。あした返すから、それを一冊だけ入れてね。"
+        ],
+        [
+          "male",
+          "かばんの中にはもうノートが入っているけど、本も入るね。"
+        ],
+        [
+          "female",
+          "ありがとう。本の間の紙は取らないで。図書館のカードが入っているから。"
+        ],
+        [
+          "male",
+          "わかった。カードもそのままにしておくよ。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
-      "playbackReviewed": false
+      "playbackReviewed": false,
+      "timingBudget": {
+        "targetDurationMs": 65000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 69751,
+        "deltaFromObjectiveMs": 4751,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-1-06",
@@ -2537,24 +2645,52 @@
           "男の 人と 女の 人が あしたの ピクニックについて 話しています。女の 人は 何を 持って 行きますか。"
         ],
         [
-          "male",
-          "ぼくは おにぎりを 作って 持って 行くよ。"
-        ],
-        [
           "female",
-          "じゃあ、わたしは お茶を 持って 行こうか。"
+          "あしたのピクニック、何人で行くの？お昼ごはんはどうしようか。"
         ],
         [
           "male",
-          "お茶は 公園で 買えるから、みんなで 座る 大きい シートを お願い。"
+          "四人で行くよ。ぼくがおにぎりを作るから、ごはんは持ってこなくていいよ。"
         ],
         [
           "female",
-          "うん、それを 持って 行くね。"
+          "じゃあ、わたしはお茶を用意しようか。家に大きい水筒があるよ。"
+        ],
+        [
+          "male",
+          "公園の入口で飲み物を買えるから、お茶も大丈夫。それより、座る物がいるね。"
+        ],
+        [
+          "female",
+          "小さいシートならあるけど、四人は座れないと思う。"
+        ],
+        [
+          "male",
+          "先月、お姉さんと使った大きいシートは？あれならみんなで座れるでしょう。"
+        ],
+        [
+          "female",
+          "あ、それも家にあるよ。きれいに洗って、しまってある。"
+        ],
+        [
+          "male",
+          "じゃあ、それをお願い。おにぎりはぼくのかばんに全部入れるよ。"
+        ],
+        [
+          "female",
+          "うん。わたしは大きいシートを持って行くね。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
-      "playbackReviewed": false
+      "playbackReviewed": false,
+      "timingBudget": {
+        "targetDurationMs": 67000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 69376,
+        "deltaFromObjectiveMs": 2376,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-1-07",
@@ -2592,20 +2728,48 @@
           "店で 女の 人と 男の 人が 話しています。男の 人は どの 箱を 運びますか。"
         ],
         [
+          "male",
+          "この三つの箱は、全部外に出すんですか。大きい箱はずいぶん重いですね。"
+        ],
+        [
           "female",
-          "大きい 箱は 重いので、二人で あとから 運びましょう。今は 小さい 箱だけ、外に 出してください。"
+          "大きい箱にはお皿が入っています。落とすと困るので、それはあとから二人で運びましょう。"
         ],
         [
           "male",
-          "小さい 箱は 二つ ありますね。"
+          "今は小さい箱からですね。この一つを持って行きます。"
         ],
         [
           "female",
-          "はい、二つとも お願いします。"
+          "小さい箱は二つともお願いします。中は紙ですから、どちらも軽いですよ。"
+        ],
+        [
+          "male",
+          "外のどこに置きますか。車の中ですか。"
+        ],
+        [
+          "female",
+          "まだ車は来ていません。店の入口の右に置いてください。左はお客さんが歩きますから。"
+        ],
+        [
+          "male",
+          "わかりました。大きい箱はここに置いたままでいいですね。"
+        ],
+        [
+          "female",
+          "はい。わたしが戻ってから、いっしょに運びます。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
-      "playbackReviewed": false
+      "playbackReviewed": false,
+      "timingBudget": {
+        "targetDurationMs": 68000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 65793,
+        "deltaFromObjectiveMs": -2207,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-2-01",
@@ -2644,19 +2808,47 @@
         ],
         [
           "male",
-          "あしたの 電車は 九時だね。"
+          "あしたの電車は九時だね。駅に着いてから切符を買う？"
         ],
         [
           "female",
-          "うん。駅までは 二十分 かかるから、八時半に 家を 出るよ。"
+          "切符はもう買ったよ。でも、駅の店でお昼ごはんも買いたいな。"
         ],
         [
           "male",
-          "じゃあ、駅で 会おう。"
+          "じゃあ、少し早く来たほうがいいね。家から駅までは近いの？"
+        ],
+        [
+          "female",
+          "歩くと二十分かかるよ。だから八時半に家を出るつもり。"
+        ],
+        [
+          "male",
+          "そうすると、電車が出る十分前に着くね。雨ならバスにする？"
+        ],
+        [
+          "female",
+          "バスは駅の前まで行かないから、雨でも歩くよ。傘はもうかばんに入れた。"
+        ],
+        [
+          "male",
+          "ぼくは八時二十分に家を出るよ。駅の入口で待っているね。"
+        ],
+        [
+          "female",
+          "ありがとう。駅に着いたら電話するよ。時間があったら、いっしょにお店へ行こう。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
-      "playbackReviewed": false
+      "playbackReviewed": false,
+      "timingBudget": {
+        "targetDurationMs": 61000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 61921,
+        "deltaFromObjectiveMs": 921,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-2-02",
@@ -2695,19 +2887,39 @@
         ],
         [
           "female",
-          "今週も 土曜日は 休みですか。"
+          "今週の土曜日、いっしょに買い物に行きませんか。いつも土曜日はお休みですよね。"
         ],
         [
           "male",
-          "いいえ、今週は 土曜日も 日曜日も 仕事です。月曜日に 休みます。"
+          "いつもはそうですが、今週は店の仕事があるんです。新しい物がたくさん来ますから。"
         ],
         [
           "female",
-          "そうですか。"
+          "そうですか。日曜日なら大丈夫ですか。わたしは昼から時間があります。"
+        ],
+        [
+          "male",
+          "日曜日も朝から仕事です。そのかわり、月曜日は仕事に行きません。"
+        ],
+        [
+          "female",
+          "月曜日ですか。わたしはその日は学校があるので、いっしょに行けませんね。"
+        ],
+        [
+          "male",
+          "ええ。月曜日は家の掃除をして、午後に一人で買い物をしようと思っています。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
-      "playbackReviewed": false
+      "playbackReviewed": false,
+      "timingBudget": {
+        "targetDurationMs": 59000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 59833,
+        "deltaFromObjectiveMs": 833,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-2-03",
@@ -2746,19 +2958,47 @@
         ],
         [
           "male",
-          "この 店、よく 来るね。"
+          "この店にはよく来るの？家の近くにもごはんの店があるでしょう。"
         ],
         [
           "female",
-          "うん。家からは 遠いし、料理も 安くないけど、とても おいしいから。"
+          "うん。でも、ここが好きだから、電車に乗って来るんだ。"
         ],
         [
           "male",
-          "そうだね。店は 小さいけど、いいね。"
+          "駅からも少し歩くね。もっと近い店なら楽なのに。ここは安いの？"
+        ],
+        [
+          "female",
+          "ほかの店より少し高いよ。安いから来るんじゃないんだ。"
+        ],
+        [
+          "male",
+          "じゃあ、大きくて静かな店だからかな。今日は人が多いね。"
+        ],
+        [
+          "female",
+          "店は小さいし、いつもにぎやかだよ。でも、料理の味がとてもいいの。この魚もおいしいでしょう。"
+        ],
+        [
+          "male",
+          "本当だね。ごはんもおいしい。ぼくもまた来たいな。"
+        ],
+        [
+          "female",
+          "今度は違う料理も食べてみて。どれもおいしいよ。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
-      "playbackReviewed": false
+      "playbackReviewed": false,
+      "timingBudget": {
+        "targetDurationMs": 62000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 62871,
+        "deltaFromObjectiveMs": 871,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-2-04",
@@ -2797,15 +3037,47 @@
         ],
         [
           "female",
-          "きのう、お兄さんと 美術館へ 行ったんですか。"
+          "きのう美術館へ行ったんですよね。お兄さんもいっしょでしたか。"
         ],
         [
           "male",
-          "兄は 用事が あったので、妹と 行きました。友だちは 来週 行くそうです。"
+          "兄と行く予定でしたが、兄は家の用事で行けなくなったんです。"
+        ],
+        [
+          "female",
+          "それで、一人で見に行ったんですか。絵はどうでしたか。"
+        ],
+        [
+          "male",
+          "妹も絵が好きなので、妹を誘って、二人で行きました。二人とも楽しめましたよ。"
+        ],
+        [
+          "female",
+          "学校のお友だちも行きたいと言っていましたね。"
+        ],
+        [
+          "male",
+          "友だちはきのう仕事があったので、来週行くそうです。帰ってから電話で話しました。"
+        ],
+        [
+          "female",
+          "お兄さんは、今度は行けそうですか。"
+        ],
+        [
+          "male",
+          "ええ。兄は友だちと来週行くと言っていました。ぼくはもう一度妹と行きたいです。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
-      "playbackReviewed": false
+      "playbackReviewed": false,
+      "timingBudget": {
+        "targetDurationMs": 60000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 61761,
+        "deltaFromObjectiveMs": 1761,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-2-05",
@@ -2844,15 +3116,47 @@
         ],
         [
           "male",
-          "かぎは かばんの 中？"
+          "買い物に行こうと思うんだけど、家のかぎが見つからないんだ。かばんの中かな。"
         ],
         [
           "female",
-          "いいえ、帰った とき、台所の テーブルに 置いたよ。くつの 上にも、ドアの そばにも ないよ。"
+          "わたしが持って帰ったかぎ？かばんにはないよ。"
+        ],
+        [
+          "male",
+          "いつもドアのそばの小さい箱に置くでしょう。今日はその箱が空なんだ。"
+        ],
+        [
+          "female",
+          "今日は帰ってすぐ台所へ行ったの。買った物をテーブルに置いたとき、かぎもそこに置いたよ。"
+        ],
+        [
+          "male",
+          "そうか。くつの上にあるのは、自転車のかぎだね。"
+        ],
+        [
+          "female",
+          "うん、それは別のかぎ。家のかぎは台所を見てみて。買い物の袋のすぐ横よ。"
+        ],
+        [
+          "male",
+          "あった。ありがとう。"
+        ],
+        [
+          "female",
+          "使ったら、いつもの箱に戻してね。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
-      "playbackReviewed": false
+      "playbackReviewed": false,
+      "timingBudget": {
+        "targetDurationMs": 58000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 61783,
+        "deltaFromObjectiveMs": 3783,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-2-06",
@@ -2891,15 +3195,47 @@
         ],
         [
           "female",
-          "きのうも 二時間 勉強した？"
+          "きのうは試験の勉強をした？いつも二時間ぐらい勉強しているよね。"
         ],
         [
           "male",
-          "ううん。七時から 八時まで 勉強して、そのあとは 映画を 見たよ。今日は 二時間 勉強するつもり。"
+          "きのうは家に帰るのが少し遅かったんだ。晩ごはんを食べて、七時から始めたよ。"
+        ],
+        [
+          "female",
+          "じゃあ、九時まで勉強したの？わたしは九時に電話しようと思っていたの。"
+        ],
+        [
+          "male",
+          "ううん、八時に終わった。そのあと、見たい映画がテレビで始まったから。"
+        ],
+        [
+          "female",
+          "途中で休んだりしなかった？わたしは三十分で休んでしまうよ。"
+        ],
+        [
+          "male",
+          "七時から八時まではずっと勉強していたよ。映画は十時まで見たけどね。"
+        ],
+        [
+          "female",
+          "試験はあしただね。今日はどうする？"
+        ],
+        [
+          "male",
+          "今日は二時間やるよ。いっしょに勉強しよう。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
-      "playbackReviewed": false
+      "playbackReviewed": false,
+      "timingBudget": {
+        "targetDurationMs": 60000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 63575,
+        "deltaFromObjectiveMs": 3575,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-3-01",
@@ -2929,7 +3265,7 @@
       "script": [
         [
           "narrator",
-          "あなたは 店で 靴を はいてみたいです。店の 人に 何と 言いますか。"
+          "絵を見てください。あなたは靴の店にいます。気に入った靴がありましたが、大きさが合うか、まだわかりません。店の人に、靴をはいて確かめたいとき、何と言いますか。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
@@ -2938,7 +3274,15 @@
       "visualBrief": "A customer holds one shoe beside a seated fitting bench, addressing a shop assistant; show the shoe and bench, no written dialogue or answer labels.",
       "spokenOptions": true,
       "choicePresentation": "spoken_choices_with_new_situation_illustration",
-      "illustrationPath": "assets/jlpt-original/n5/01/images/problem-3-01.png"
+      "illustrationPath": "assets/jlpt-original/n5/01/images/problem-3-01.png",
+      "timingBudget": {
+        "targetDurationMs": 36000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 35355,
+        "deltaFromObjectiveMs": -645,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-3-02",
@@ -2968,7 +3312,7 @@
       "script": [
         [
           "narrator",
-          "友だちが あなたに ペンを 貸してくれました。ペンを 返す とき、何と 言いますか。"
+          "絵を見てください。あなたのペンは書けなくなったので、友だちのペンを借りました。そのペンで名前を書くことができました。今、ペンを友だちに返します。何と言いますか。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
@@ -2977,7 +3321,15 @@
       "visualBrief": "Two students at a desk; one returns a pen to the other. Neutral expressions, no speech bubbles or text.",
       "spokenOptions": true,
       "choicePresentation": "spoken_choices_with_new_situation_illustration",
-      "illustrationPath": "assets/jlpt-original/n5/01/images/problem-3-02.png"
+      "illustrationPath": "assets/jlpt-original/n5/01/images/problem-3-02.png",
+      "timingBudget": {
+        "targetDurationMs": 37000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 34853,
+        "deltaFromObjectiveMs": -2147,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-3-03",
@@ -3007,7 +3359,7 @@
       "script": [
         [
           "narrator",
-          "あなたは 友だちと 約束しましたが、少し 遅れます。電話で 何と 言いますか。"
+          "絵を見てください。友だちが約束の場所であなたを待っています。あなたはまだ途中にいて、約束の時間には着きません。友だちに電話をして、少し遅れることを伝えます。何と言いますか。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
@@ -3016,7 +3368,15 @@
       "visualBrief": "A person standing on a sidewalk phones a waiting friend shown in a small separate scene. No clock numerals or text.",
       "spokenOptions": true,
       "choicePresentation": "spoken_choices_with_new_situation_illustration",
-      "illustrationPath": "assets/jlpt-original/n5/01/images/problem-3-03.png"
+      "illustrationPath": "assets/jlpt-original/n5/01/images/problem-3-03.png",
+      "timingBudget": {
+        "targetDurationMs": 35000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 38149,
+        "deltaFromObjectiveMs": 3149,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-3-04",
@@ -3046,7 +3406,7 @@
       "script": [
         [
           "narrator",
-          "あなたは 電車で 座っています。お年寄りに 席を あげたいです。何と 言いますか。"
+          "絵を見てください。あなたは電車のいすに座っています。お年寄りが乗ってきましたが、空いている席がありません。あなたは立って、自分の席をその人にすすめたいです。何と言いますか。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
@@ -3055,7 +3415,15 @@
       "visualBrief": "A seated young adult offers their seat to an older adult standing in a train. No signs containing answer text.",
       "spokenOptions": true,
       "choicePresentation": "spoken_choices_with_new_situation_illustration",
-      "illustrationPath": "assets/jlpt-original/n5/01/images/problem-3-04.png"
+      "illustrationPath": "assets/jlpt-original/n5/01/images/problem-3-04.png",
+      "timingBudget": {
+        "targetDurationMs": 36000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 34715,
+        "deltaFromObjectiveMs": -1285,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-3-05",
@@ -3085,7 +3453,7 @@
       "script": [
         [
           "narrator",
-          "友だちの 家で ごはんを 食べました。帰る とき、友だちの お母さんに 何と 言いますか。"
+          "絵を見てください。あなたは友だちの家で、ごはんを食べました。友だちのお母さんが作ってくれた料理は、とてもおいしかったです。食事が終わって、今から家へ帰ります。お母さんに何と言いますか。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
@@ -3094,7 +3462,15 @@
       "visualBrief": "A visitor at a home entrance thanks the host after a meal; a cleared dining table can be visible behind them. No dialogue text.",
       "spokenOptions": true,
       "choicePresentation": "spoken_choices_with_new_situation_illustration",
-      "illustrationPath": "assets/jlpt-original/n5/01/images/problem-3-05.png"
+      "illustrationPath": "assets/jlpt-original/n5/01/images/problem-3-05.png",
+      "timingBudget": {
+        "targetDurationMs": 36000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 38405,
+        "deltaFromObjectiveMs": 2405,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-4-01",
@@ -3128,13 +3504,21 @@
         ],
         [
           "friend",
-          "明日、いっしょに 図書館へ 行かない？"
+          "図書館に新しい本があるよ。ぼくは明日の午後なら時間があるんだ。いっしょに見に行かない？"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
       "playbackReviewed": false,
       "presentation": "audio_only",
-      "spokenOptions": true
+      "spokenOptions": true,
+      "timingBudget": {
+        "targetDurationMs": 32000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 29956,
+        "deltaFromObjectiveMs": -2044,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-4-02",
@@ -3168,13 +3552,21 @@
         ],
         [
           "clerk",
-          "お飲み物は 何に なさいますか。"
+          "こちらがメニューです。食事といっしょに飲み物もいかがですか。お茶とジュースがありますが、何になさいますか。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
       "playbackReviewed": false,
       "presentation": "audio_only",
-      "spokenOptions": true
+      "spokenOptions": true,
+      "timingBudget": {
+        "targetDurationMs": 34000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 30937,
+        "deltaFromObjectiveMs": -3063,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-4-03",
@@ -3208,13 +3600,21 @@
         ],
         [
           "friend",
-          "その ノート、ちょっと 見せて。"
+          "きのうの授業を休んだんだ。先生がどんなことを話したか、知りたいんだけど。そのノート、ちょっと見せて。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
       "playbackReviewed": false,
       "presentation": "audio_only",
-      "spokenOptions": true
+      "spokenOptions": true,
+      "timingBudget": {
+        "targetDurationMs": 33000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 33007,
+        "deltaFromObjectiveMs": 7,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-4-04",
@@ -3248,13 +3648,21 @@
         ],
         [
           "teacher",
-          "今日は どうして 遅れましたか。"
+          "授業は九時からですよ。みんなはもう教室に来ています。今日はどうして遅れましたか。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
       "playbackReviewed": false,
       "presentation": "audio_only",
-      "spokenOptions": true
+      "spokenOptions": true,
+      "timingBudget": {
+        "targetDurationMs": 34000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 29391,
+        "deltaFromObjectiveMs": -4609,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-4-05",
@@ -3288,13 +3696,21 @@
         ],
         [
           "friend",
-          "この 荷物、重いね。手伝おうか。"
+          "この荷物、重いね。駅までまだ少し歩くよ。ぼくはかばんが軽いから、それを持とうか。"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
       "playbackReviewed": false,
       "presentation": "audio_only",
-      "spokenOptions": true
+      "spokenOptions": true,
+      "timingBudget": {
+        "targetDurationMs": 34000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 33209,
+        "deltaFromObjectiveMs": -791,
+        "editingObjectiveMet": true
+      }
     },
     {
       "id": "jpapp-n5-original-01-v1-listening-4-06",
@@ -3328,19 +3744,29 @@
         ],
         [
           "friend",
-          "この 写真の 人は だれ？"
+          "写真の中のこれは君だね。となりに写っている人もよく似ているね。この人はだれ？"
         ]
       ],
       "audioStatus": "generated_draft_unreviewed",
       "playbackReviewed": false,
       "presentation": "audio_only",
-      "spokenOptions": true
+      "spokenOptions": true,
+      "timingBudget": {
+        "targetDurationMs": 33000,
+        "role": "Independent authoring objective from aggregate group timing, not copied per-source-item timings or publisher acceptance tolerance.",
+        "speechRevisionRequired": false,
+        "actualDurationMs": 28633,
+        "deltaFromObjectiveMs": -4367,
+        "editingObjectiveMet": true
+      }
     }
   ],
   "limitations": [
-    "Publisher/native/rights review has not been completed.",
-    "Listening structure verification, full-duration audio and app registration remain unfinished."
+    "Human/native/rights review has not been completed.",
+    "Scored-item durations revised; full listening is still short because instruction/example organization is not verified.",
+    "Final preparation/answer schedule, complete target duration and app registration remain unfinished."
   ],
   "authoringRulesVersion": 5,
-  "writtenAuthoringStatus": "ai_editorial_checked"
+  "writtenAuthoringStatus": "ai_editorial_checked",
+  "listeningAuthoringStatus": "24_items_revised_and_recorded_against_per_type_timing_objectives"
 }
