@@ -1,8 +1,8 @@
 # N5 第01回 — Bản thí điểm để nhà phát hành kiểm duyệt
 
-**Bản nháp do AI biên soạn; chưa được nhà phát hành duyệt. Chưa có audio hoặc hình minh họa, chưa tích hợp để thi trong app.**
+**Bản nháp do AI biên soạn; chưa được nhà phát hành duyệt. Đã có 24 file nghe nháp và bản nghe liên tục; chưa có hình minh họa, chưa tích hợp để thi trong app.**
 
-Cấu trúc: 35 từ vựng + 32 ngữ pháp/đọc + 24 nghe = 91 câu. Thời gian đã duyệt: 20/40/30 phút; thời lượng nghe chưa được xác minh bằng bản thu.
+Cấu trúc: 35 từ vựng + 32 ngữ pháp/đọc + 24 nghe = 91 câu. Thời gian đã duyệt: 20/40/30 phút; bản nghe nháp đo được 12 phút 06 giây, chưa đạt mục tiêu khoảng 30 phút.
 
 Chỉ dùng số câu và số lựa chọn của N5「第3回」làm căn cứ cấu trúc. Không sử dụng nội dung đề cũ làm đầu vào viết đề. Đây không phải chứng nhận pháp lý hoặc kết quả kiểm duyệt của người bản ngữ.
 
@@ -13,8 +13,8 @@ Tài liệu này dành cho người kiểm duyệt, có đáp án và lý do. Kh
 - Tiếng Nhật tự nhiên, mức độ phù hợp N5, một đáp án tốt nhất cho mỗi câu.
 - Phương án nhiễu hợp lý; loại hoặc viết lại câu quá dễ, mơ hồ hay chỉ đoán bằng hình thức.
 - Thứ tự câu sắp xếp, dữ kiện bài đọc và các vai trong hội thoại nghe.
-- Chọn công cụ/giọng đọc và công cụ hình ảnh có quyền dùng phù hợp trước khi tạo tài nguyên.
-- Sau khi có audio: kiểm tra bằng nghe thực tế, tốc độ, khoảng nghỉ và tổng thời lượng.
+- Bốn giọng VOICEVOX đã được chọn; kiểm tra điều khoản hiện hành trước phát hành. Công cụ và hình ảnh còn cần hoàn thiện.
+- Nghe 24 mẫu nháp, kiểm tra phát âm/trọng âm, vai, tốc độ và khoảng nghỉ. Phát triển thêm nội dung nghe để tiến tới thời lượng mục tiêu; không kéo dài bằng im lặng cho đủ 30 phút.
 - Chưa đánh dấu bất kỳ bước kiểm duyệt con người nào là hoàn tất.
 
 ## vocabulary — 問題1 漢字の読み

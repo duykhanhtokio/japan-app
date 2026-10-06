@@ -19,8 +19,26 @@ assert.equal(exam.releaseReady, false);
 assert.equal(exam.runtimeIntegrated, false);
 assert.equal(exam.publisherReviewed, false);
 assert.equal(exam.reviewedByNativeSpeaker, false);
-assert.equal(exam.audio.status, 'not_generated');
-assert.equal(exam.audio.actualDurationVerified, false);
+const generatedAudio = exam.audio.status === 'generated_draft_unreviewed';
+assert.ok(generatedAudio || exam.audio.status === 'not_generated');
+assert.equal(exam.audio.actualDurationVerified, generatedAudio);
+let audioManifest;
+if (generatedAudio) {
+  audioManifest = JSON.parse(readFileSync(new URL('src/data/jlpt-original/n5/01/audio.manifest.json', root)));
+  assert.equal(audioManifest.examId, exam.examId);
+  assert.equal(audioManifest.masterSha256, createHash('sha256').update(bytes).digest('hex'));
+  assert.equal(audioManifest.items.length, 24);
+  assert.equal(audioManifest.perceptualApproval, false);
+  assert.equal(audioManifest.nativeReviewCompleted, false);
+  assert.equal(audioManifest.rightsReleaseReviewCompleted, false);
+  assert.equal(audioManifest.durationMeasuredFromPcm, true);
+  assert.equal(audioManifest.settings.speedScale, 0.9);
+  assert.equal(audioManifest.settings.afterIntroSeconds * 1000, 1200);
+  assert.equal(audioManifest.settings.betweenTurnsSeconds * 1000, 500);
+  assert.equal(audioManifest.settings.answerPauseSeconds * 1000, 5000);
+  const continuous = readFileSync(new URL(audioManifest.continuousAudioPath, root));
+  assert.equal(createHash('sha256').update(continuous).digest('hex'), audioManifest.continuousSha256);
+}
 assert.equal(exam.audio.rightsVerified, false);
 assert.deepEqual(exam.sectionTimeMinutes, {vocabulary: 20, grammar_reading: 40, listening: 30});
 assert.equal(qa.masterSha256, createHash('sha256').update(bytes).digest('hex'));
@@ -56,7 +74,21 @@ for (const q of exam.questions) {
     scripts++;
     assert.ok(q.script.length >= 1);
     q.script.forEach(turn => assert.ok(turn.length === 2 && turn[0].trim() && turn[1].trim()));
-    assert.equal(q.audioStatus, 'not_generated');
+    assert.equal(q.audioStatus, generatedAudio ? 'generated_draft_unreviewed' : 'not_generated');
+    if (generatedAudio) {
+      const item = audioManifest.items.find(item => item.questionId === q.id);
+      assert.ok(item, `${q.id}: missing draft recording`);
+      assert.equal(item.group, q.group);
+      assert.equal(item.number, q.number);
+      assert.ok(item.startMs >= 0 && item.endMs > item.startMs && item.endMs <= audioManifest.durationMs);
+      assert.ok(Math.abs(item.endMs - item.startMs - item.durationMs) <= 1);
+      assert.equal(item.playbackReviewed, false);
+      const audio = readFileSync(new URL(item.path, root));
+      assert.equal(createHash('sha256').update(audio).digest('hex'), item.sha256);
+      if (q.group >= 3) assert.equal(item.turns.filter(turn => turn.actor.startsWith('option-')).length, 3);
+      const voices = JSON.parse(readFileSync(new URL('src/data/jlpt-original/voice-casting.json', root)));
+      assert.ok(item.turns.every(turn => Object.hasOwn(voices.roles, turn.role)));
+    }
     assert.equal(q.playbackReviewed, false);
     if (q.group >= 3) assert.equal(q.spokenOptions, true);
     if (q.group === 3) {
@@ -75,4 +107,4 @@ for (let i = 0; i < 3; i++) {
     assert.ok(!(positions[j].correctOptionId === positions[j-1].correctOptionId && positions[j].correctOptionId === positions[j-2].correctOptionId), 'Three repeated answer positions');
   }
 }
-console.log('N5 ORIGINAL PILOT STRUCTURE PASS: 91 unique items, approved group/choice counts, complete passage links and answer keys, 24 scripts, 5 illustration briefs. Academic, audio, rights and publisher approval remain pending.');
+console.log('N5 ORIGINAL PILOT STRUCTURE PASS: 91 unique items, approved group/choice counts, complete passage links and answer keys, 24 scripts, 5 illustration briefs. Academic, perceptual audio, rights and publisher approval remain pending.');
