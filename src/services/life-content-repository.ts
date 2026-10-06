@@ -1,5 +1,6 @@
 import citiesJson from '@/data/generated/cities.json';
 import locationsJson from '@/data/generated/locations.json';
+import locationRoleCorrectionsJson from '@/data/location-role-corrections.json';
 import scenarioIndexJson from '@/data/generated/scenario-index.json';
 import scenariosJson from '@/data/generated/scenarios.json';
 import scenarioOverridesJson from '@/data/dialogue-content/scenario-overrides.json';
@@ -21,8 +22,13 @@ import type {
 const cities =
     citiesJson as LifeCity[];
 
-const locations =
-    locationsJson as LifeLocation[];
+// Correct documented source misclassifications before any screen, artwork
+// preparation or NPC reward code consumes a location. Keep stable location IDs.
+const locationRoleCorrections = locationRoleCorrectionsJson as Record<string, { category: string; npcJob: string }>;
+const locations = (locationsJson as LifeLocation[]).map(location => {
+    const correction = locationRoleCorrections[location.id];
+    return correction ? { ...location, category: correction.category, npcJob: correction.npcJob } : location;
+});
 
 const scenarioOverrides = scenarioOverridesJson as LifeScenario[];
 const scenarioOverrideById = new Map(scenarioOverrides.map(scenario => [scenario.id, scenario]));
