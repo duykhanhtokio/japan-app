@@ -182,7 +182,14 @@ function DialogueScreen({id}:{id?:string}){
   </View>
   {playerTurn&&<View testID="dialogue-microphone" style={[s.microphoneDock,{bottom:controlsBottom+(wide?52:72),height:wide?44:48},wide&&s.conversationWide]}><PulsingMic disabled={transitioning||!speech.speechAvailable||(npcTurn&&!npcSpeechDone)} recording={speech.recognizing} onPress={()=>{if(speech.recognizing)speech.stopListening();else void speech.startListening()}}/></View>}
   <View style={[s.controls,{bottom:controlsBottom},wide&&s.controlsWide]}><RoyalButton contentStyle={wide?{paddingVertical:4}:undefined} disabled={transitioning||index===0} onPress={()=>move(index-1)} style={[s.control,wide&&{height:44,minHeight:44}]}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.controlText}>前へ</Text></RoyalButton><RoyalButton contentStyle={wide?{paddingVertical:4}:undefined} disabled={transitioning||finishing||(npcTurn&&!npcSpeechDone)} onPress={()=>index+1<turns.length?move(index+1):finish()} style={[s.control,wide&&{height:44,minHeight:44}]}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.controlText}>{index+1<turns.length?'次へ':finishing?'保存中…':npcTurn&&!npcSpeechDone?'再生中…':'終了'}</Text></RoyalButton></View>
-  {rewardVisible&&<NpcRewardModal visible={rewardVisible} category={rewardCategory} progress={rewardProgress} isUnlock={isUnlock} onClose={()=>{if(scenario.locationId)dismissToPrepared(`/world/location/${scenario.locationId}`);else backPrepared()}}/>}
+  {rewardVisible&&<NpcRewardModal visible={rewardVisible} category={rewardCategory} progress={rewardProgress} isUnlock={isUnlock} onClose={()=>{
+   const cityId=location?.cityId??scenario.cityId;
+   // Return to this city's location cards after collecting the reward.
+   // Keep the modal covering the dialogue until destination artwork is ready.
+   if(cityId)void dismissToPrepared(`/world/city/${encodeURIComponent(cityId)}`);
+   else if(scenario.locationId)void dismissToPrepared(`/world/location/${encodeURIComponent(scenario.locationId)}`);
+   else void backPrepared();
+  }}/>}
  </View></ImageBackground>
 }
 
