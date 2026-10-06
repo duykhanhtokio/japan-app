@@ -14,7 +14,6 @@ import { useGameSpeech } from '@/hooks/useGameSpeech';
 import { useUserProfile } from '@/hooks/useUserProfile';
 import { loadDialogueTurns } from '@/services/dialogue-content-loader';
 import { getLifeLocationById, getLifeScenarioById } from '@/services/life-content-repository';
-import WaitingSpeechDots from '@/components/world/WaitingSpeechDots';
 import JapaneseRuby from '@/components/world/JapaneseRuby';
 import RoyalReadingFrame from '@/components/world/RoyalReadingFrame';
 import NpcRewardModal from '@/components/world/NpcRewardModal';
@@ -124,7 +123,7 @@ function DialogueScreen({id}:{id?:string}){
   return()=>{active=false;void Speech.stop()};
  },[turn?.id,turn?.speaker,turn?.npc?.textJa,abortListening,index,turns,advanceTurn]);
  if(!scenario||!turn)return <RoyalPageBackground source={require('../../../../assets/app/backgrounds/profile-details.png')}><SafeAreaView style={s.emptyScreen}><Text style={s.empty}>会話データがありません。</Text></SafeAreaView></RoyalPageBackground>;
- const nextHint=(turnId:string,isNpc:boolean)=>{if(isNpc)setHintStages(previous=>({...previous,[turnId]:previous[turnId]?0:1}));else setHintStages(previous=>({...previous,[turnId]:Math.min(2,(previous[turnId]??0)+1)}))},move=(next:number)=>advanceTurn(next);
+ const nextHint=(turnId:string,isNpc:boolean)=>{if(isNpc)setHintStages(previous=>({...previous,[turnId]:previous[turnId]?0:1}));else setHintStages(previous=>({...previous,[turnId]:previous[turnId]?0:1}))},move=(next:number)=>advanceTurn(next);
  const finish=async()=>{if(finishing)return;const category=normalizeNpcCategory(location?.category);if(!category){backPrepared();return}setFinishing(true);const result=await recordNpcScenario(scenario.id,category.id);const unlocked=result.unlockedCategoryId?npcCategoryById(result.unlockedCategoryId):null;setRewardCategory(unlocked??category);setRewardProgress(result.progress);setIsUnlock(!!unlocked);setRewardVisible(true);setFinishing(false)};
  const npcRatio=npcPresentation.width/npcPresentation.height;
  const npcBoxHeight=stageSize.height*(wide?.82:.72),npcBoxWidth=stageSize.width*(wide?.48:.94);
@@ -135,7 +134,7 @@ function DialogueScreen({id}:{id?:string}){
  const missionFont=wide?12:ROYAL_TYPE.explanation,missionLine=wide?16:ROYAL_TYPE.explanationLine;
  const missionLines=copyLines(mission,missionWidth,missionFont);
  const headerHeight=insets.top+ROYAL_PLACEMENT.headerTop+44+4+12+(wide?20:36)+missionLines*missionLine;
- const conversationTop=Math.max(headerHeight+8,npcWaist);
+ const conversationTop=playerTurn?headerHeight+8:Math.max(headerHeight+8,npcWaist);
  const visiblePanels=turns.slice(Math.max(0,index-1),index+1);
  const availableHeight=Math.max(0,stageSize.height-conversationTop-controlsBottom-dockReserve);
  const slotHeight=Math.max(0,(availableHeight-40)/2);
@@ -145,23 +144,23 @@ function DialogueScreen({id}:{id?:string}){
   const npcTranslation=panel.npc?.translations?.[language]??(language==='vi'?panel.npc?.translationVi:null);
   const panelTranscript=isNpc?'':context?playerTranscripts[panel.id]??'':speech.transcript;
   const panelRecognizing=!isNpc&&!context&&speech.recognizing;
-  const budgetHeight=slotHeight;
+  const budgetHeight=playerTurn?(context?100:Math.max(140,availableHeight-128)):slotHeight;
   const copyWidth=Math.max(80,(wide?stageSize.width*.46:stageSize.width-20)-56);
   const fullNpc=panel.npc?.textJa??'';
-  const panelCopy=isNpc?fullNpc:hintStage===1?(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language]:hintStage===2?panel.player?.recommendedAnswerJa??'':'';
-  const copyPixels=(size:number)=>copyLines(panelCopy,copyWidth,size)*size*(isNpc?1.15:hintStage===2?1.9:1.15)+(isNpc&&hintStage>0&&language!=='ja'?3+copyLines(npcTranslation??missingHint[language],copyWidth,size)*size*1.15:0)+(!isNpc&&panelTranscript?copyLines(panelTranscript,copyWidth,size)*size*1.15:0);
+  const panelCopy=isNpc?fullNpc:hintStage>0?panel.player?.recommendedAnswerJa??'':(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language];
+  const copyPixels=(size:number)=>copyLines(panelCopy,copyWidth,size)*size*(isNpc?1.15:hintStage>0?3.2:1.15)+(isNpc&&hintStage>0&&language!=='ja'?3+copyLines(npcTranslation??missingHint[language],copyWidth,size)*size*1.15:0)+(!isNpc&&panelTranscript?copyLines(panelTranscript,copyWidth,size)*size*1.15:0);
   const panelInsets=wide?40:60;
   // Last NPC hugs the complete sentence, including revealed translation.
   // Reserve against full copy so speech boundary events never resize the panel.
   const allocatedHeight=Math.min(budgetHeight,Math.max(isNpc?100:140,copyPixels(17)+panelInsets));
   const copyHeight=Math.max(20,allocatedHeight-panelInsets);
   let fontSize=17;
-  while(fontSize>6&&copyPixels(fontSize)>copyHeight)fontSize-=.5;
+  while(fontSize>(isNpc?6:14)&&copyPixels(fontSize)>copyHeight)fontSize-=.5;
   const fit={fontSize,lineHeight:fontSize*1.15};
   return <View key={panel.id} style={[s.bubbleWrap,{height:allocatedHeight}]}>
    <RoyalNavyFrame style={s.speakerPlate}><Text numberOfLines={1} adjustsFontSizeToFit maxFontSizeMultiplier={1} style={s.speakerName}>{isNpc?npcName:playerName}</Text></RoyalNavyFrame>
    <View style={[s.bubbleDepth,{flex:1}]}><RoyalReadingFrame style={[{flex:1},wide&&{paddingVertical:8,paddingHorizontal:22}]}>
-    {!isNpc?hintStage===0?context?<View/>:<WaitingSpeechDots/>:hintStage===1?<Text maxFontSizeMultiplier={1} style={[s.guidance,fit,{color:theme.text}]}>{(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language]}</Text>:<JapaneseRuby fontSize={fontSize} text={panel.player?.recommendedAnswerJa??''} segments={panel.player?.recommendedAnswerRuby}/>:<>
+    {!isNpc?hintStage===0?<Text maxFontSizeMultiplier={1} style={[s.guidance,fit,{color:theme.text}]}>{(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language]}</Text>:<JapaneseRuby fontSize={fontSize} text={panel.player?.recommendedAnswerJa??''} segments={panel.player?.recommendedAnswerRuby}/>:<>
      <Text maxFontSizeMultiplier={1} style={[s.japanese,fit,{color:theme.text}]}>{npcText||' '}</Text>
      {hintStage>0&&language!=='ja'&&<Text maxFontSizeMultiplier={1} style={[s.translation,fit,{color:theme.reading}]}>{npcTranslation??missingHint[language]}</Text>}
     </>}
@@ -175,7 +174,7 @@ function DialogueScreen({id}:{id?:string}){
   <View testID="dialogue-panels" pointerEvents={transitioning?'none':'auto'} style={[s.conversation,{top:conversationTop,bottom:controlsBottom+dockReserve,overflow:'hidden'},wide&&s.conversationWide]}>
    {visiblePanels.map((panel,slot)=>{
     const previous=visiblePanels.length===2&&slot===0;
-    return <NativeAnimated.View key={panel.id} style={{position:'absolute',left:0,right:0,top:previous?0:slotHeight+16,transform:[{translateY:turnMotion.interpolate({inputRange:[0,1],outputRange:[slotHeight+16,0]})}]}}>
+    return <NativeAnimated.View key={panel.id} style={{position:'absolute',left:0,right:0,top:previous?0:playerTurn?128:slotHeight+16,transform:[{translateY:turnMotion.interpolate({inputRange:[0,1],outputRange:[slotHeight+16,0]})}]}}>
      {renderPanel(panel,previous)}
     </NativeAnimated.View>;
    })}
