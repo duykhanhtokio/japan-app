@@ -34,3 +34,20 @@ Identity/feature references:
 - Mall facade feature reference (2012): https://commons.wikimedia.org/wiki/File:AEON_MALL_Sapporo_Hassamu.jpg
 
 All 21 Sapporo locations now have an assigned place illustration or an allowed shared service scene. This means artwork assignment coverage, not on-device visual acceptance or exact reproduction of every architectural detail. Source-resolution new images were inspected. Native simulator verification remains pending. No dialogue layout, NPC anchoring, microphone, blur, transitions or JLPT files were edited. Whole-catalog work remains incomplete; next city is CTY-002 Aomori, starting with its pending individual-review rows in the companion JSON.
+
+## Aomori continuation — 2026-10-06
+
+Ten original portrait 1024x1536 illustrated scenes are assigned to Aomori's individually reviewed locations: Aomori Station east entrance (&LOVINA / 2024 east building), Nebuta Museum Wa Rasse, A-FACTORY, Sunroad Aomori, Aomori Gyosai Center, ASPAM, Asamushi coast/Yunoshima, Hakkoda summit wetlands boardwalk, Gappo Park coast, and Showa Daibutsu at Seiryuji. Remaining eleven ordinary service locations retain shared service backgrounds. This is artwork assignment coverage, not exact photography or native-device acceptance. The entire catalog remains unfinished; next city is CTY-003 Morioka.
+
+Geography correction: LOC-002-06 previously named AEON Mall Shimoda, whose official address is Oirase rather than Aomori city. It now represents Sunroad Aomori at 青森市緑3丁目9-2, preserving the stable location and scenario IDs. The canonical location name/address/description/hours and its two generated scenario place-name mentions are corrected. Existing authored dialogue remains unchanged. The audit now recognizes 魚菜センター as a characteristic market name even when its category is Restaurant.
+
+Built-in imagegen prompts specify each site's architecture or geographical features, an empty dialogue foreground, portrait full-bleed composition and semi-realistic anime environment style. Wa Rasse uses its red ribbon facade; ASPAM its triangular mass; A-FACTORY its six gabled units and Aomori Bay Bridge; Sunroad its silver sloping panel and sunburst tower; Gyosai its seafood-topping market aisle; Asamushi its wooded offshore Yunoshima; Hakkoda its rounded ridges/wetland boardwalk; Gappo its coastal pines/cherry trees; Showa Daibutsu its crowned bronze seated figure with hands resting together in the lap. A-FACTORY's missing bridge and the Buddha's initially incorrect raised hands were corrected before integration. Station facade follows JR East's dated architectural plan; the illustration is not a claim of a current photographic storefront survey. Reference photos/plans are used for feature inspection only and are not shipped with the app.
+
+Per-place official sources remain in the artwork registry. Additional source details:
+- Station exterior plan: https://prtimes.jp/a/?c=17557&f=d17557-689-705d9328a1758afb1b6720c17a606efa.pdf&r=689
+- Station opening identity: https://www.jreast.co.jp/press/2023/morioka/20240226_mr01.pdf
+- Shimoda municipality: https://www.aeonmall.com/facility/detail/1221/
+- Sunroad address/hours: https://www.sunroad.or.jp/sunroad.html
+- Sunroad service counter: https://www.sunroad.or.jp/servicecounter/
+
+Source-resolution generated images inspected. Native simulator/device portrait and landscape screenshots remain pending. No approved dialogue layout, NPC anchor, microphone, blur, route, or JLPT UI changes.

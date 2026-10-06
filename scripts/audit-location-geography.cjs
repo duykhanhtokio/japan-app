@@ -8,7 +8,7 @@ const cities = read('src/data/generated/cities.json');
 const corrections = read('src/data/location-role-corrections.json');
 const places = read('src/data/location-place-artwork.json');
 // A restaurant category can also contain a famous restaurant district.
-const characteristicName = /横丁|商店街|市場|居酒屋街|通り|道頓堀|すすきの|中華街|温泉郷|温泉街/;
+const characteristicName = /横丁|商店街|市場|魚菜センター|居酒屋街|通り|道頓堀|すすきの|中華街|温泉郷|温泉街/;
 const uniqueCategories = new Set(['Landmark', 'Castle', 'Shrine / Temple', 'Nature', 'Park', 'Amusement Park']);
 const sharedCategories = new Set(['Restaurant', 'Cafe', 'Laundry', 'Convenience Store', 'Ramen Shop', 'Izakaya', 'Bank', 'Hospital', 'Supermarket', 'Post Office', 'Police Station', 'Government Office', 'Tax Office', 'Construction Site', 'Hotel']);
 const byCity = new Map(cities.map(city => [city.id, { cityId: city.id, nameJa: city.nameJa, locations: [] }]));

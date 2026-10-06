@@ -16,6 +16,16 @@ const artwork: Record<string, ImageSourcePropType> = {
   'LOC-001-03': require('../../../assets/app/life/location-backgrounds/places/sapporo-clock-tower.png'),
   'LOC-027-02': require('../../../assets/app/life/location-backgrounds/places/osaka-tsutenkaku.png'),
   'LOC-027-03': require('../../../assets/app/life/location-backgrounds/places/osaka-dotonbori.png'),
+  'LOC-002-02': require('../../../assets/app/life/location-backgrounds/places/aomori-warasse.png'),
+  'LOC-002-03': require('../../../assets/app/life/location-backgrounds/places/aomori-a-factory.png'),
+  'LOC-002-06': require('../../../assets/app/life/location-backgrounds/places/aomori-sunroad.png'),
+  'LOC-002-10': require('../../../assets/app/life/location-backgrounds/places/aomori-gyosai-center.png'),
+  'LOC-002-11': require('../../../assets/app/life/location-backgrounds/places/aomori-aspam.png'),
+  'LOC-002-12': require('../../../assets/app/life/location-backgrounds/places/aomori-asamushi.png'),
+  'LOC-002-13': require('../../../assets/app/life/location-backgrounds/places/aomori-hakkoda.png'),
+  'LOC-002-14': require('../../../assets/app/life/location-backgrounds/places/aomori-gappo-park.png'),
+  'LOC-002-19': require('../../../assets/app/life/location-backgrounds/places/aomori-showa-daibutsu.png'),
+  'LOC-002-01': require('../../../assets/app/life/location-backgrounds/places/aomori-station-east.png'),
 };
 
 // Geography belongs to the stable location ID, never a category or round-robin slot.
