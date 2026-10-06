@@ -341,3 +341,7 @@ Không được tự xác nhận: tỷ lệ tương đồng; an toàn bản quy�
 
 
 AI sửa lỗi đã biết và kiểm tra từng đề trước khi nạp; sau khi đủ 30 đề, người dùng test toàn bộ và báo các điểm cần chỉnh sửa. Sửa theo đề và theo lỗi, giữ ID/phiên bản phù hợp để người dùng kiểm tra lại. Không tự ghi là đã hoàn tất 30 đề nếu mới có hướng dẫn, dữ liệu nháp hoặc tài nguyên chưa tích hợp. Tiến độ cụ thể nằm trong checkpoint hiện hành, không chép mốc tiến độ cũ vào yêu cầu lâu dài.
+
+## Nhịp nghe N5 đã được nhà phát hành chốt — 06/10/2026 21:10 JST
+
+Áp dụng cho N5: 2 giây sau lời mở đầu mỗi câu; giữa lượt thoại giữ 0.5 giây; trả lời sau 問題１/２/３/４ lần lượt 12/12/10/8 giây. Bốn giọng và speedScale 0.9 giữ nguyên. Đây là quyết định thiết kế app từ bảng nhịp đã trình, không phải xác nhận bản nghe nguồn bởi con người. Cấu hình thử 1.2/.5/5 giây được giữ làm lịch sử/default cho cấp chưa có nhịp chốt; N5 dùng override `voice-casting.json.levelPacing.n5`. Không áp tự động lịch N5 cho N4–N1. Khoảng chấp nhận thời lượng tổng vẫn chưa có tolerance cố định; phải đo và báo thời lượng thật.

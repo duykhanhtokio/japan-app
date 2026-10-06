@@ -1,3 +1,4 @@
+import { N5_ORIGINAL_01_SESSION_KEY, N5_ORIGINAL_01_TRIAL, N5_ORIGINAL_01_VISUALS, N5_ORIGINAL_01_REGISTRATION_READY } from '@/data/jlpt-original/n5/01/formal-trial';
 import type { ImageSourcePropType } from 'react-native';
 
 import { N1_2012_07_AUDIO } from '@/data/jlpt-mock/n1-2012-07-official';
@@ -184,6 +185,14 @@ const listeningQuestions: TrialQuestion[] = LISTENING.questions.map((question) =
 const N1_2012_12_QUESTIONS = [...writtenQuestions, ...listeningQuestions];
 
 export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
+  ...(N5_ORIGINAL_01_REGISTRATION_READY ? [{
+    id: 'jpapp-n5-original-01-v1', level: 'N5' as const,
+    title: 'Japan App N5・AI作成模擬試験', periodLabel: '新作・第1回',
+    startLabel: '試験を始める', storageKey: N5_ORIGINAL_01_SESSION_KEY,
+    questions: N5_ORIGINAL_01_TRIAL, visualOptions: N5_ORIGINAL_01_VISUALS,
+    audioSource: require('../../../assets/jlpt-original/n5/01/audio/n5-original-01-listening-draft.mp3'),
+  }] : []),
+
   {
     id: 'n1-2012-07-exam-01', level: 'N1', title: '日本語能力試験 N1', periodLabel: '2012年7月・第1回',
     startLabel: '第1回を始める', storageKey: N1_2012_07_SESSION_KEY, questions: N1_2012_07_TRIAL,

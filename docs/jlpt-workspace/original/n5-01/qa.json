@@ -1,6 +1,6 @@
 {
   "examId": "jpapp-n5-original-01-v1",
-  "status": "authoring_in_progress",
+  "status": "formal_ai_authored_registered_pending_runtime_review",
   "questionCounts": [
     {
       "section": "vocabulary",
@@ -73,7 +73,7 @@
       "count": 6
     }
   ],
-  "masterSha256": "286833da938bea6bda75ee9a5684fa2d87cfd550716b58631b22652d0c8123e8",
+  "masterSha256": "55823e42cbcc0c42b972ef3d3e24ea6c695f02951811203ba553d4dd97adf3d8",
   "authoredResponses": 91,
   "publisherReviewed": false,
   "nativeReviewCompleted": false,
@@ -92,7 +92,6 @@
     "No three consecutive identical answer positions within a section",
     "Approved UI lock 10/10",
     "git diff --check",
-    "24 original-script draft audio files and continuous recording; audio hashes match manifest",
     "Spoken options included for all listening groups 3 and 4",
     "PCM mono 24000Hz/16-bit and nonzero signal for every synthesized turn",
     "Explicit seconds-to-milliseconds checks; all review flags remain false",
@@ -100,19 +99,25 @@
     "Regenerated 24 recordings after option permutation; spoken options match current master",
     "After-problem-2 break: spoken announcement, original instrumental music exactly 1440000 decoded PCM frames, resumption before problem 3",
     "24 newly rendered item recordings after content-duration revision; scripts/spoken choices match master.",
-    "Scored items assessed against independent per-type budgets; no speed change, pause inflation, dialogue replay or silence padding.",
-    "All 24 item MP3s and continuous MP3 decode to manifest PCM durations; music decodes to exactly 1440000 frames."
+    "All 24 item MP3s and continuous MP3 decode to manifest PCM durations; music decodes to exactly 1440000 frames.",
+    "Approved N5 2s lead-in and 12/12/10/8s answer schedule; each scored recording length change matches baseline by the exact planned pause increment.",
+    "Four independent ungraded examples, opening/sound check, concise instructions and closing rendered into continuous audio.",
+    "Practice instructions never request selecting a graded response during example playback.",
+    "Continuous audio measures 1809729ms, approximately 30 minutes; no fixed publisher tolerance inferred."
   ],
   "releaseReady": false,
-  "draftAudioGenerated": true,
+  "draftAudioGenerated": false,
   "recordingsGenerated": 24,
-  "continuousAudioDurationMs": 1307467,
-  "listeningThirtyMinuteTargetMet": false,
+  "continuousAudioDurationMs": 1809729,
+  "listeningThirtyMinuteTargetMet": true,
   "answerPositionAuditPath": "docs/jlpt-workspace/original/n5-01/answer-position-audit.json",
   "originalIllustrationsGenerated": 5,
   "writtenAuthoringStatus": "ai_editorial_checked",
-  "adapterExecutionCheck": "PASS: execute actual TypeScript adapter after Node type stripping; 91 IDs/answers, contextual prompts, passage/star mapping, 5 real image paths, no spoken-option text or transcript leaks.",
+  "adapterExecutionCheck": "PASS: actual TypeScript adapter executed after Node type stripping, 91 IDs/keys, five asset mappings, four ungraded practice instructions, spoken options/transcripts hidden. Full project TypeScript/device check not claimed.",
   "fullTypeScriptCheck": "NOT RUN SUCCESSFULLY: workspace has no installed TypeScript dependency; npx resolved an unrelated tsc package. No typecheck pass claimed.",
   "deviceRuntimeCheck": "not_performed",
-  "runtimeIntegrated": false
+  "runtimeIntegrated": true,
+  "audioGenerated": true,
+  "nonScoredExamples": 4,
+  "originalPracticeSheetGenerated": true
 }

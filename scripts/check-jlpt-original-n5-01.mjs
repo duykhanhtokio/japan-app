@@ -16,10 +16,10 @@ assert.equal(exam.examId, 'jpapp-n5-original-01-v1');
 assert.equal(exam.questions.length, 91);
 assert.equal(new Set(exam.questions.map(q => q.id)).size, 91);
 assert.equal(exam.releaseReady, false);
-assert.equal(exam.runtimeIntegrated, false);
+assert.equal(exam.runtimeIntegrated, true);
 assert.equal(exam.publisherReviewed, false);
 assert.equal(exam.reviewedByNativeSpeaker, false);
-const generatedAudio = exam.audio.status === 'generated_draft_unreviewed';
+const generatedAudio = exam.audio.status === 'generated_ai_unreviewed';
 assert.ok(generatedAudio || ['not_generated','pending_regeneration_after_option_changes'].includes(exam.audio.status));
 assert.equal(exam.audio.actualDurationVerified, generatedAudio);
 let audioManifest;
@@ -33,9 +33,10 @@ if (generatedAudio) {
   assert.equal(audioManifest.rightsReleaseReviewCompleted, false);
   assert.equal(audioManifest.durationMeasuredFromPcm, true);
   assert.equal(audioManifest.settings.speedScale, 0.9);
-  assert.equal(audioManifest.settings.afterIntroSeconds * 1000, 1200);
+  assert.equal(audioManifest.settings.afterIntroSeconds * 1000, 2000);
   assert.equal(audioManifest.settings.betweenTurnsSeconds * 1000, 500);
-  assert.equal(audioManifest.settings.answerPauseSeconds * 1000, 5000);
+  assert.deepEqual(audioManifest.settings.answerPauseSecondsByProblem, {'1':12,'2':12,'3':10,'4':8});
+  assert.equal(audioManifest.examplesCount, 4);
   const continuous = readFileSync(new URL(audioManifest.continuousAudioPath, root));
   assert.equal(createHash('sha256').update(continuous).digest('hex'), audioManifest.continuousSha256);
 }
@@ -74,10 +75,10 @@ for (const q of exam.questions) {
     scripts++;
     assert.ok(q.script.length >= 1);
     q.script.forEach(turn => assert.ok(turn.length === 2 && turn[0].trim() && turn[1].trim()));
-    assert.equal(q.audioStatus, generatedAudio ? 'generated_draft_unreviewed' : 'not_generated');
+    assert.equal(q.audioStatus, generatedAudio ? 'generated_ai_unreviewed' : 'not_generated');
     if (generatedAudio) {
       const item = audioManifest.items.find(item => item.questionId === q.id);
-      assert.ok(item, `${q.id}: missing draft recording`);
+      assert.ok(item, `${q.id}: missing recording`);
       assert.equal(item.group, q.group);
       assert.equal(item.number, q.number);
       assert.ok(item.startMs >= 0 && item.endMs > item.startMs && item.endMs <= audioManifest.durationMs);

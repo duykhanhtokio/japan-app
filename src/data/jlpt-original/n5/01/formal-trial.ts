@@ -13,13 +13,19 @@ type OriginalMaster = {
   passages: Record<string, string>;
 };
 const master = require('./master.ja.json') as OriginalMaster;
+const organization = require('./listening-organization.ja.json') as { groups: { problem: number; example: { options: {id: string; text: string}[] } }[] };
+function practiceInstruction(q: OriginalQuestion): string {
+  if (q.section !== 'listening' || q.number !== 1) return '';
+  if (q.group <= 2) return '\n練習（採点なし・選択操作不要）：\n' + organization.groups.find(g => g.problem === q.group)!.example.options.map(o => o.id + ' ' + o.text).join('\n');
+  return q.group === 3 ? '\n最初は画像の左側「練習」を見てください。本問１番は右側です。練習は採点しません。練習中は選択ボタンを押しません。' : '\n音声の練習は採点しません。練習中は選択ボタンを押しません。練習中は選択ボタンを押しません。';
+}
 const audio = require('./audio.manifest.json') as { durationMs: number; matchesThirtyMinuteTarget: boolean };
 
 export const N5_ORIGINAL_01_SESSION_KEY = 'jlpt:jpapp:n5:original:01:v1';
 // Adapter is prepared, but deliberately not registered until full listening is ready.
 export const N5_ORIGINAL_01_REGISTRATION_READY = master.runtimeIntegrated && audio.matchesThirtyMinuteTarget;
 export const N5_ORIGINAL_01_VISUALS: Readonly<Record<number, ImageSourcePropType>> = {
-  301: require('../../../../../assets/jlpt-original/n5/01/images/problem-3-01.png'),
+  301: require('../../../../../assets/jlpt-original/n5/01/images/problem-3-practice-and-01.png'),
   302: require('../../../../../assets/jlpt-original/n5/01/images/problem-3-02.png'),
   303: require('../../../../../assets/jlpt-original/n5/01/images/problem-3-03.png'),
   304: require('../../../../../assets/jlpt-original/n5/01/images/problem-3-04.png'),
@@ -43,9 +49,9 @@ export const N5_ORIGINAL_01_TRIAL: readonly TrialQuestion[] = master.questions.m
     questionNumber: q.number,
     family,
     label: `${heading}／問題${q.group}／${q.number}`,
-    instructionJa: spokenOnly ? '音声の選択肢を聞いて、一つ選んでください。'
+    instructionJa: (spokenOnly ? '音声の選択肢を聞いて、一つ選んでください。'
       : ordering ? '四つのことばを並べて、★に入るものを選んでください。'
-      : `${listening ? '話を聞いて、' : ''}いちばんいいものを一つ選んでください。`,
+      : `${listening ? '話を聞いて、' : ''}いちばんいいものを一つ選んでください。`) + practiceInstruction(q),
     promptJa: ordering ? `${q.prefix}${slots}${q.suffix}\n${q.prompt}` : q.prompt,
     passageId: q.passageId,
     passageJa: q.passageId ? master.passages[q.passageId] : undefined,

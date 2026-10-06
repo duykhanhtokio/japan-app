@@ -1,13 +1,13 @@
 {
   "examId": "jpapp-n5-original-01-v1",
-  "status": "generated_draft_unreviewed",
-  "masterSha256": "286833da938bea6bda75ee9a5684fa2d87cfd550716b58631b22652d0c8123e8",
-  "voiceCastingSha256": "82e43773815210ce554a787d32fcd9c00420bbd8da4401f56a47dbf0961cbfe8",
+  "status": "generated_ai_unreviewed",
+  "masterSha256": "55823e42cbcc0c42b972ef3d3e24ea6c695f02951811203ba553d4dd97adf3d8",
+  "voiceCastingSha256": "e81eb2861ed7e9f85fdf442547c4db64644cc37703aeab18d1e9f8e8e6433bad",
   "continuousAudioPath": "assets/jlpt-original/n5/01/audio/n5-original-01-listening-draft.mp3",
-  "continuousSha256": "31d21cee624116357770aa08653c5e6789839a948e395586c50a219cf71fa71c",
-  "durationMs": 1307467,
+  "continuousSha256": "36b1915926d332023dd8a1076c07d049545fe11d2ea24b1a6771bcca89624970",
+  "durationMs": 1809729,
   "targetDurationMs": 1800000,
-  "matchesThirtyMinuteTarget": false,
+  "matchesThirtyMinuteTarget": true,
   "durationMeasuredFromPcm": true,
   "publisherReviewed": false,
   "nativeReviewCompleted": false,
@@ -16,30 +16,97 @@
   "break": {
     "afterProblem": 2,
     "beforeProblem": 3,
-    "announcementStartMs": 847021,
-    "musicStartMs": 851597,
-    "musicEndMs": 911597,
+    "announcementStartMs": 1176989,
+    "musicStartMs": 1181565,
+    "musicEndMs": 1241565,
     "musicDurationMs": 60000,
-    "resumeAnnouncementEndMs": 915864,
+    "resumeAnnouncementEndMs": 1245832,
     "musicPcmFrames": 1440000,
     "path": "assets/jlpt-original/n5/01/audio/original-instrumental-rest-60s.mp3",
-    "sha256": "e3eaa1b3e48adee91800c15542726be867cbdf8a3b11aeb4c5781c6b2be01cc9",
+    "sha256": "74515f2e0c400fd27256b24625d19e61f3d16fea3c84ad3796a82b9c964c230b",
     "source": "Original procedural score in this generation script; no external recording or melody input.",
     "publisherReviewed": false
   },
+  "organizationSha256": "1d160fcdc4fb1d236baae2d2f46f1402f2526d441c4671ae8956bce4aa3e29a6",
+  "orientationSegments": [
+    {
+      "role": "opening_sound_check_and_general_instructions",
+      "startMs": 1000,
+      "endMs": 56739
+    },
+    {
+      "role": "problem_instructions_example_demonstration",
+      "problem": 1,
+      "startMs": 56739,
+      "endMs": 158855,
+      "exampleId": "jpapp-n5-original-01-practice-1",
+      "exampleStartMs": 76727,
+      "exampleEndMs": 139615,
+      "exampleCount": 1,
+      "scored": false
+    },
+    {
+      "role": "problem_instructions_example_demonstration",
+      "problem": 2,
+      "startMs": 665951,
+      "endMs": 758445,
+      "exampleId": "jpapp-n5-original-01-practice-2",
+      "exampleStartMs": 685363,
+      "exampleEndMs": 737744,
+      "exampleCount": 1,
+      "scored": false
+    },
+    {
+      "role": "problem_instructions_example_demonstration",
+      "problem": 3,
+      "startMs": 1245832,
+      "endMs": 1322301,
+      "exampleId": "jpapp-n5-original-01-practice-3",
+      "exampleStartMs": 1267399,
+      "exampleEndMs": 1303531,
+      "exampleCount": 1,
+      "scored": false
+    },
+    {
+      "role": "problem_instructions_example_demonstration",
+      "problem": 4,
+      "startMs": 1532779,
+      "endMs": 1592368,
+      "exampleId": "jpapp-n5-original-01-practice-4",
+      "exampleStartMs": 1551508,
+      "exampleEndMs": 1575677,
+      "exampleCount": 1,
+      "scored": false
+    },
+    {
+      "role": "closing",
+      "startMs": 1800301,
+      "endMs": 1809729
+    }
+  ],
+  "examplesCount": 4,
   "instructions": {
-    "1": "問題一です。話を聞いて、これから何をするかを考えてください。答えを一つ選んでください。",
-    "2": "問題二です。話の中から、質問の答えを探してください。答えを一つ選んでください。",
-    "3": "問題三です。絵と話から、場面に合う言い方を考えてください。三つの言い方を聞いて、一つ選んでください。",
-    "4": "問題四です。短い言葉を聞いてください。そのあと、三つの返事を聞いて、一番合うものを選んでください。"
+    "1": "問題一は七問です。質問を聞いてから、話を聞きます。話のあと、質問をもう一度聞きます。人がこれから何をするか、四つの答えから選んでください。答える時間は十二秒です。まず練習です。",
+    "2": "問題二は六問です。質問を聞いてから、話を聞きます。話のあとでもう一度質問を聞きます。聞かれたことを、画面の四つの答えから選んでください。答える時間は十二秒です。まず練習します。",
+    "3": "問題三は五問です。絵と話から、人が何と言うかを考えます。三つの言い方を聞いて、番号を一つ選びます。答える時間は十秒です。最初の画像の左、練習の絵を見てください。右の絵は本当の一番です。",
+    "4": "問題四は六問です。短いことばと、三つの返事を聞きます。いちばん自然な返事の番号を選んでください。絵や返事のことばは画面に出ません。答える時間は八秒です。では、練習です。"
   },
   "settings": {
     "speedScale": 0.9,
     "outputSamplingRate": 24000,
     "outputStereo": false,
-    "afterIntroSeconds": 1.2,
+    "afterIntroSeconds": 2,
     "betweenTurnsSeconds": 0.5,
-    "answerPauseSeconds": 5
+    "status": "publisher_approved",
+    "approvedAt": "2026-10-06T21:10:38+09:00",
+    "answerPauseSecondsByProblem": {
+      "1": 12,
+      "2": 12,
+      "3": 10,
+      "4": 8
+    },
+    "scope": "N5 only; other levels retain unconfirmed audition defaults.",
+    "sourceRole": "Publisher-selected independent timing design informed by isolated candidate metadata; not official timing certification."
   },
   "credits": [
     "VOICEVOX:春日部つむぎ",
@@ -53,10 +120,10 @@
       "group": 1,
       "number": 1,
       "path": "assets/jlpt-original/n5/01/audio/problem-1-01.mp3",
-      "startMs": 12163,
-      "endMs": 75567,
-      "durationMs": 63404,
-      "sha256": "dd9b60cfd84298e06aecd635eecc4ff53cebf7a4a133a9e6fe6451f6639ea6f6",
+      "startMs": 158855,
+      "endMs": 230059,
+      "durationMs": 71204,
+      "sha256": "1f20e11c7d111045ac8506e4bdeb6d3b26519f0eb185e6896be4142b2c2a280e",
       "playbackReviewed": false,
       "turns": [
         {
@@ -111,10 +178,10 @@
       "group": 1,
       "number": 2,
       "path": "assets/jlpt-original/n5/01/audio/problem-1-02.mp3",
-      "startMs": 75567,
-      "endMs": 134468,
-      "durationMs": 58901,
-      "sha256": "cda8d9f1fe3cb118f8bc3e9e7621c0f120c989a749d82fda7e9ab81613159248",
+      "startMs": 230059,
+      "endMs": 296760,
+      "durationMs": 66701,
+      "sha256": "2d528e24c1a777609b8933b67b286b30413e4717a6be5e3b3b51db770b7b108f",
       "playbackReviewed": false,
       "turns": [
         {
@@ -134,10 +201,10 @@
       "group": 1,
       "number": 3,
       "path": "assets/jlpt-original/n5/01/audio/problem-1-03.mp3",
-      "startMs": 134468,
-      "endMs": 195792,
-      "durationMs": 61324,
-      "sha256": "0e05dc03b9dee8bb7792cb68396ab3d74045462fc05e4d874aaef4cc554a59f7",
+      "startMs": 296760,
+      "endMs": 365884,
+      "durationMs": 69124,
+      "sha256": "c10a649ab943194d1fbaa37a985b82dc0382f757975d1fe9608fa773da7e882b",
       "playbackReviewed": false,
       "turns": [
         {
@@ -192,10 +259,10 @@
       "group": 1,
       "number": 4,
       "path": "assets/jlpt-original/n5/01/audio/problem-1-04.mp3",
-      "startMs": 195792,
-      "endMs": 259739,
-      "durationMs": 63947,
-      "sha256": "696f537820a64f06d9e17d58d748b2793217e5b6c8f85261fdb0cb7db8c715fc",
+      "startMs": 365884,
+      "endMs": 437631,
+      "durationMs": 71747,
+      "sha256": "b99ad7249864ab4c4b25daae95618beaff8d47cc693002fdcf2721e1707f0184",
       "playbackReviewed": false,
       "turns": [
         {
@@ -255,10 +322,10 @@
       "group": 1,
       "number": 5,
       "path": "assets/jlpt-original/n5/01/audio/problem-1-05.mp3",
-      "startMs": 259739,
-      "endMs": 329489,
-      "durationMs": 69751,
-      "sha256": "cf4624c1f5379c32543c61e3ef1fc099f32dd3666e00b6d64f9932b7587abbe7",
+      "startMs": 437631,
+      "endMs": 515181,
+      "durationMs": 77551,
+      "sha256": "ec23e24bbf28397dd1564fd29b23dcfd332dc95abca76487f595c45bacdb20a5",
       "playbackReviewed": false,
       "turns": [
         {
@@ -313,10 +380,10 @@
       "group": 1,
       "number": 6,
       "path": "assets/jlpt-original/n5/01/audio/problem-1-06.mp3",
-      "startMs": 329489,
-      "endMs": 398865,
-      "durationMs": 69376,
-      "sha256": "2aac5ccd8b0ca00c28a3a197d9140b74c01da2d72dce407ffe934866a2ef6df7",
+      "startMs": 515181,
+      "endMs": 592357,
+      "durationMs": 77176,
+      "sha256": "a47072062f4bc64a5a7e821326ef88f45b13d37cea9a753415b3b8e8daf691b4",
       "playbackReviewed": false,
       "turns": [
         {
@@ -376,10 +443,10 @@
       "group": 1,
       "number": 7,
       "path": "assets/jlpt-original/n5/01/audio/problem-1-07.mp3",
-      "startMs": 398865,
-      "endMs": 464659,
-      "durationMs": 65793,
-      "sha256": "1cf3b2295d78b8441a3ce47e08d2bb9e30c430acbe42cd81d8821c3b5b9b0355",
+      "startMs": 592357,
+      "endMs": 665951,
+      "durationMs": 73593,
+      "sha256": "55dcc434a3dd5d065cef0caca1797f593fa95a904aae0cb6e073b84684e94e0f",
       "playbackReviewed": false,
       "turns": [
         {
@@ -434,10 +501,10 @@
       "group": 2,
       "number": 1,
       "path": "assets/jlpt-original/n5/01/audio/problem-2-01.mp3",
-      "startMs": 475277,
-      "endMs": 537199,
-      "durationMs": 61921,
-      "sha256": "e1768d59060b11f307a19c78d838e727d34b099422491e5e970efefbb1b43b97",
+      "startMs": 758445,
+      "endMs": 828167,
+      "durationMs": 69721,
+      "sha256": "6d9f3ade9eea78953a218acd2537e8fcfb9385ce7db1f3dab4c86251d39be920",
       "playbackReviewed": false,
       "turns": [
         {
@@ -492,10 +559,10 @@
       "group": 2,
       "number": 2,
       "path": "assets/jlpt-original/n5/01/audio/problem-2-02.mp3",
-      "startMs": 537199,
-      "endMs": 597032,
-      "durationMs": 59833,
-      "sha256": "42237e0ffe1702ef9d56859d7f327969ecb8ee4384ffa30d792cf4bbc9d0673d",
+      "startMs": 828167,
+      "endMs": 895800,
+      "durationMs": 67633,
+      "sha256": "1e578adba104869d34012421e028dfd2d32dd4a4c762fdf7a841dc601a5bab31",
       "playbackReviewed": false,
       "turns": [
         {
@@ -540,10 +607,10 @@
       "group": 2,
       "number": 3,
       "path": "assets/jlpt-original/n5/01/audio/problem-2-03.mp3",
-      "startMs": 597032,
-      "endMs": 659903,
-      "durationMs": 62871,
-      "sha256": "c6134a29aa9af17b4109417c119b6db99f0d27b91686fe1187e88ed1bb5be033",
+      "startMs": 895800,
+      "endMs": 966471,
+      "durationMs": 70671,
+      "sha256": "20c0b3431b6fd38f782175345bade1867202e33dfe227a9bc24c349a6539d053",
       "playbackReviewed": false,
       "turns": [
         {
@@ -598,10 +665,10 @@
       "group": 2,
       "number": 4,
       "path": "assets/jlpt-original/n5/01/audio/problem-2-04.mp3",
-      "startMs": 659903,
-      "endMs": 721664,
-      "durationMs": 61761,
-      "sha256": "d7b4327facdd3bb2e7f7f843135969d87904e257b5e1d16d6ef39d985b679a02",
+      "startMs": 966471,
+      "endMs": 1036032,
+      "durationMs": 69561,
+      "sha256": "a3e9a94270e8ee28b5978e90c765738fe376c2dae0257ab62cdd56340a6ff95f",
       "playbackReviewed": false,
       "turns": [
         {
@@ -656,10 +723,10 @@
       "group": 2,
       "number": 5,
       "path": "assets/jlpt-original/n5/01/audio/problem-2-05.mp3",
-      "startMs": 721664,
-      "endMs": 783447,
-      "durationMs": 61783,
-      "sha256": "3ed1e549a6784080adb61ebc52dc0e9dbec1e6c87ba887908167acfec239244c",
+      "startMs": 1036032,
+      "endMs": 1105615,
+      "durationMs": 69583,
+      "sha256": "5cce9bbff9421a4d6cf22de6ed77718f411d0399ffda044e962f05b39b31f915",
       "playbackReviewed": false,
       "turns": [
         {
@@ -714,10 +781,10 @@
       "group": 2,
       "number": 6,
       "path": "assets/jlpt-original/n5/01/audio/problem-2-06.mp3",
-      "startMs": 783447,
-      "endMs": 847021,
-      "durationMs": 63575,
-      "sha256": "82dca740be586d4a04a30c70aa1502ff2d5aa01421cd303cfbb22700bad83b9d",
+      "startMs": 1105615,
+      "endMs": 1176989,
+      "durationMs": 71375,
+      "sha256": "84160f0b88307e061501bcb152739b3ab763d891c692a50c3809137c52dc879e",
       "playbackReviewed": false,
       "turns": [
         {
@@ -772,10 +839,10 @@
       "group": 3,
       "number": 1,
       "path": "assets/jlpt-original/n5/01/audio/problem-3-01.mp3",
-      "startMs": 928424,
-      "endMs": 963779,
-      "durationMs": 35355,
-      "sha256": "084e020954eb77c4110b735768e357a7ed000fc22a0977e0b759954ae5f2ed6c",
+      "startMs": 1322301,
+      "endMs": 1363456,
+      "durationMs": 41155,
+      "sha256": "6705b5b707c972f7c5ea7f1c123cfd4b511b3f4534b444cfb32e82d1238471b3",
       "playbackReviewed": false,
       "turns": [
         {
@@ -805,10 +872,10 @@
       "group": 3,
       "number": 2,
       "path": "assets/jlpt-original/n5/01/audio/problem-3-02.mp3",
-      "startMs": 963779,
-      "endMs": 998632,
-      "durationMs": 34853,
-      "sha256": "fd04649628430706ffa68d30fcb512593cdd1995aef921c0aac9013e8fd839c3",
+      "startMs": 1363456,
+      "endMs": 1404109,
+      "durationMs": 40653,
+      "sha256": "6f2e66c9c291101f6424d6f2b161eee2f2d060098a9184ac0a590eff1dc796b4",
       "playbackReviewed": false,
       "turns": [
         {
@@ -838,10 +905,10 @@
       "group": 3,
       "number": 3,
       "path": "assets/jlpt-original/n5/01/audio/problem-3-03.mp3",
-      "startMs": 998632,
-      "endMs": 1036781,
-      "durationMs": 38149,
-      "sha256": "a243387c01095d8fd2a0ce635d201f7569a06110c6f6833946a14712ccb39c72",
+      "startMs": 1404109,
+      "endMs": 1448059,
+      "durationMs": 43949,
+      "sha256": "3604c5e8c36f13b5c83b512829191e596de399560dd578076143fdfc740178c3",
       "playbackReviewed": false,
       "turns": [
         {
@@ -871,10 +938,10 @@
       "group": 3,
       "number": 4,
       "path": "assets/jlpt-original/n5/01/audio/problem-3-04.mp3",
-      "startMs": 1036781,
-      "endMs": 1071496,
-      "durationMs": 34715,
-      "sha256": "7bddf22021e94252a0395f4be539a7e5c735844758e81f13176feef91e7fd06c",
+      "startMs": 1448059,
+      "endMs": 1488573,
+      "durationMs": 40515,
+      "sha256": "ea43968ac095eb0662dbbc6f06a295b941261c423948a2d51aa8230c5dcc4205",
       "playbackReviewed": false,
       "turns": [
         {
@@ -904,10 +971,10 @@
       "group": 3,
       "number": 5,
       "path": "assets/jlpt-original/n5/01/audio/problem-3-05.mp3",
-      "startMs": 1071496,
-      "endMs": 1109901,
-      "durationMs": 38405,
-      "sha256": "bf5542dcc2cd8f2c91a1a677dc919cc55fedfd7e5e695ba0dc6dca59eb5c3b4e",
+      "startMs": 1488573,
+      "endMs": 1532779,
+      "durationMs": 44205,
+      "sha256": "a483a2af5300714dd4bdbeccfe81c1a38f5a1572e77eca1338780f5c5600e6e0",
       "playbackReviewed": false,
       "turns": [
         {
@@ -937,10 +1004,10 @@
       "group": 4,
       "number": 1,
       "path": "assets/jlpt-original/n5/01/audio/problem-4-01.mp3",
-      "startMs": 1122333,
-      "endMs": 1152289,
-      "durationMs": 29956,
-      "sha256": "a2d7db67274f9402a88ba72b783531698c697c70fecd83544aebce7f2f2bb8bf",
+      "startMs": 1592368,
+      "endMs": 1626124,
+      "durationMs": 33756,
+      "sha256": "fb2b5f530a819139ff5886e1e0a1ca9cae39c5edb5702eafa5ebbeac289795df",
       "playbackReviewed": false,
       "turns": [
         {
@@ -975,10 +1042,10 @@
       "group": 4,
       "number": 2,
       "path": "assets/jlpt-original/n5/01/audio/problem-4-02.mp3",
-      "startMs": 1152289,
-      "endMs": 1183227,
-      "durationMs": 30937,
-      "sha256": "a08e66a74a0b1fb2c832474288b8ec8d8ac497a9f5683d8751a724965c350719",
+      "startMs": 1626124,
+      "endMs": 1660861,
+      "durationMs": 34737,
+      "sha256": "b0187f69907acc7b69487a326f2071545b9cc385c42adbaa0ce595f6a30483fa",
       "playbackReviewed": false,
       "turns": [
         {
@@ -1013,10 +1080,10 @@
       "group": 4,
       "number": 3,
       "path": "assets/jlpt-original/n5/01/audio/problem-4-03.mp3",
-      "startMs": 1183227,
-      "endMs": 1216233,
-      "durationMs": 33007,
-      "sha256": "c1bb69b634481bc824d4e1a534028ef5198cb3a6dde53055f5a0fadc00628760",
+      "startMs": 1660861,
+      "endMs": 1697668,
+      "durationMs": 36807,
+      "sha256": "80046c24207648ac2fc9883cd14f530f7950842dcb0caa7d1b29c58ad9e6ab7c",
       "playbackReviewed": false,
       "turns": [
         {
@@ -1051,10 +1118,10 @@
       "group": 4,
       "number": 4,
       "path": "assets/jlpt-original/n5/01/audio/problem-4-04.mp3",
-      "startMs": 1216233,
-      "endMs": 1245624,
-      "durationMs": 29391,
-      "sha256": "a514e9f9bcb7509d27c01a94f11f3bd37cb2627e0e0969bc0689f537c72f7def",
+      "startMs": 1697668,
+      "endMs": 1730859,
+      "durationMs": 33191,
+      "sha256": "9b3c3cbc506cfaa6fe204e87e74c4310f290b3394b48b986f24927ac3b875a7f",
       "playbackReviewed": false,
       "turns": [
         {
@@ -1089,10 +1156,10 @@
       "group": 4,
       "number": 5,
       "path": "assets/jlpt-original/n5/01/audio/problem-4-05.mp3",
-      "startMs": 1245624,
-      "endMs": 1278833,
-      "durationMs": 33209,
-      "sha256": "04a567359eb4b4a9e0bb27fec6849f0fba659ce99d0589744563807f1be635c0",
+      "startMs": 1730859,
+      "endMs": 1767868,
+      "durationMs": 37009,
+      "sha256": "ff675c0e99c76e2047a86582f5b7527b7557620e849692e9c4e0a4c1a733bdcb",
       "playbackReviewed": false,
       "turns": [
         {
@@ -1127,10 +1194,10 @@
       "group": 4,
       "number": 6,
       "path": "assets/jlpt-original/n5/01/audio/problem-4-06.mp3",
-      "startMs": 1278833,
-      "endMs": 1307467,
-      "durationMs": 28633,
-      "sha256": "77250f4f3796eefcf1373215060377ba6f0ae1bacd51817ade2f094003ff4afa",
+      "startMs": 1767868,
+      "endMs": 1800301,
+      "durationMs": 32433,
+      "sha256": "b8c7c9e5111b49f481160294e611985d2e70cfaa79de475a17abcea1c97e7aeb",
       "playbackReviewed": false,
       "turns": [
         {
@@ -1161,8 +1228,12 @@
       ]
     }
   ],
+  "targetDeviationMs": 9729,
+  "targetMatchAssessment": "Measured 30m09.729s: approximately the nominal 30-minute design; editorial assessment only, not a fixed acceptance tolerance or publisher playback approval.",
+  "fullOrganizationComplete": true,
+  "pacingPublisherApproved": true,
   "masterProvenanceUpdate": {
-    "reason": "Only generated status and measured timing diagnostics updated after rendering; all recorded scripts/options match master.",
+    "reason": "Only recording status/measured timing and registration fields updated; all scored scripts/options unchanged and recorded organization hash matches.",
     "audioRegenerated": true
   }
 }
