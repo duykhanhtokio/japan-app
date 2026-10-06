@@ -36,6 +36,17 @@ const artwork: Record<string, ImageSourcePropType> = {
   'LOC-003-15': require('../../../assets/app/life/location-backgrounds/places/koiwai-farm-iwate.png'),
   'LOC-003-16': require('../../../assets/app/life/location-backgrounds/places/morioka-iwayama-parkland.png'),
   'LOC-003-19': require('../../../assets/app/life/location-backgrounds/places/morioka-odori.png'),
+  'LOC-004-01': require('../../../assets/app/life/location-backgrounds/places/sendai-station-west.png'),
+  'LOC-004-02': require('../../../assets/app/life/location-backgrounds/places/sendai-jozenji-dori.png'),
+  'LOC-004-03': require('../../../assets/app/life/location-backgrounds/places/sendai-aoba-castle-ruins.png'),
+  'LOC-004-04': require('../../../assets/app/life/location-backgrounds/places/sendai-zuihoden.png'),
+  'LOC-004-07': require('../../../assets/app/life/location-backgrounds/places/sendai-nagamachi-mall.png'),
+  'LOC-004-08': require('../../../assets/app/life/location-backgrounds/places/sendai-asaichi.png'),
+  'LOC-004-13': require('../../../assets/app/life/location-backgrounds/places/sendai-kokubuncho.png'),
+  'LOC-004-15': require('../../../assets/app/life/location-backgrounds/places/sendai-uminomori.png'),
+  'LOC-004-17': require('../../../assets/app/life/location-backgrounds/places/sendai-akiu-rairaikyo.png'),
+  'LOC-004-18': require('../../../assets/app/life/location-backgrounds/places/sendai-akiu-great-falls.png'),
+  'LOC-004-19': require('../../../assets/app/life/location-backgrounds/places/sendai-mediatheque.png'),
 };
 
 // Geography belongs to the stable location ID, never a category or round-robin slot.

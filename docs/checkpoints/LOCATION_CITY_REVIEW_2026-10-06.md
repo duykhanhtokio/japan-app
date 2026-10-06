@@ -79,3 +79,32 @@ Built-in imagegen created ten original portrait 1024x1536 assets in `assets/app/
 - `morioka-odori.png`: open-to-sky local city street, awnings, restaurant signs, evening lighting. Removed first output's invented mountain and oversized billboards, changed cobbled alley to asphalt street. https://www.odori.or.jp/
 
 All selected source-resolution outputs were visually inspected. These are geographically informed illustrations, not surveys or exact current architectural/storefront replicas. Reference photographs are not shipped. Mapping/role checks PASS for all 7,112 locations; JLPT UI lock PASS 10/10. Device/browser runtime portrait/landscape visual acceptance remains pending. No dialogue layout, NPC anchoring, microphone, blur, transitions or JLPT UI files changed.
+
+## Sendai continuation — 2026-10-06
+
+CTY-004 artwork assignments now cover all 21 locations: **11 individual place illustrations and 10 permitted shared service scenes**. Exact-ID assets cover Sendai Station west facade, Jozenji-dori, Sendai Castle ruins / Date Masamune equestrian statue, Zuihoden, THE MALL Sendai Nagamachi, Sendai Asaichi, Kokubuncho, Umino-Mori Aquarium main tank, Akiu Onsen / Rairaikyo public gorge, Akiu Great Falls and Sendai Mediatheque. Asaichi is a named geographic market, not an ordinary interchangeable supermarket. Added 朝市 to the characteristic-name matcher; ordinary services remain shared. Whole catalog: 44 place mappings, 4,672 shared services, **2,396 still pending**. Next city: **CTY-005 Akita**. Several Akita names are visibly corrupted; verify identities before generating imagery.
+
+Recovered unfinished Sendai location/scenario corrections and image outputs from the prior session, preserving that source workspace. Corrected 定禪寺通 to 定禅寺通; the stated 長町7-20-3 address belongs to ザ・モール仙台長町 (not an AEON mall), with specialty-shop hours 10:00–21:00. Police address: 五橋1丁目3番19号. Tax office: 若林区卸町3丁目8番5号. Mediatheque: 春日町2-1. Falls: 秋保町馬場大滝地内; aquarium: 中野4丁目6番地. Ambiguous Chinese-labelled cafe becomes the explicit generic scene 仙台のカフェ with no invented branch/address/hours. East-station construction is an illustrative work scene with no unsupported current redevelopment/address claim. Removed uniform bathing hours for the entire Akiu area. Scenario place-name references are synchronized; existing dialogue text and stable IDs remain preserved.
+
+References for metadata corrections:
+- https://themallsendai.com/
+- https://www.police.pref.miyagi.jp/tyuou/
+- https://www.nta.go.jp/about/organization/sendai/location/miyagi/naka/index.htm
+- https://www.smt.jp/
+- https://www.miyagi-kankou.or.jp/theme/detail.php?id=9815
+- https://www.uminomori.jp/umino/
+
+Final original artwork is stored under `assets/app/life/location-backgrounds/places/`; all eleven selected files are 1024x1536 portrait full-bleed. Built-in Imagegen was used in the previous/current sessions. Common prompt: polished semi-realistic anime 2D/2.5D environment, fine lines, soft shading, identifying subject and empty lower foreground for existing NPC, no characters/UI/borders/watermarks or unrelated city landmarks. Subject prompt set:
+- `sendai-station-west.png`: broad brown/orange tiled JR west facade, horizontal glazing, station lettering and facade clock, pedestrian deck; no separate clock tower. Rejected the new grey generic station output; recovered the inspected prior brown facade. Dated exterior feature reference: https://note.com/yamabuki_archi/n/n0179e068671b .
+- `sendai-jozenji-dori.png`: zelkova-lined central median promenade with roads and Sendai city blocks at both sides. https://www.sentabi.jp/spots/83
+- `sendai-aoba-castle-ruins.png`: bronze Date Masamune equestrian statue with crescent helmet on stone pedestal, ruins terrace and Sendai panorama, no standing castle keep. https://www.sentabi.jp/spots/60
+- `sendai-zuihoden.png`: small black lacquer, gold and polychrome mausoleum among tall cedars, stone steps. https://www.zuihoden.com/
+- `sendai-nagamachi-mall.png`: beige mall with angular glazed corner and horizontal parking floors, green THE MALL lettering and SEIYU; corrected the prior rounded corner/red-sign output. Dated exterior feature reference: https://commons.wikimedia.org/wiki/Category:The_Mall_Sendai_Nagamachi .
+- `sendai-asaichi.png`: open-air urban produce/seafood market street and awnings, not a supermarket aisle. https://sendaiasaichi.com/
+- `sendai-kokubuncho.png`: open-to-sky asphalt nightlife street, medium-rise restaurants/bars, warm signs at blue hour; no invented overhead gate/canal/Osaka billboard. https://www.sentabi.jp/nightlife
+- `sendai-uminomori.png`: documented main tank いのちきらめくうみ, silver sardine school, rays and rocky Sanriku marine environment, empty visitor hall foreground. https://www.uminomori.jp/umino/guide/1f.html
+- `sendai-akiu-rairaikyo.png`: public rocky Natori River gorge, wooded slopes and hot-spring settlement, not an invented private hotel bath. https://www.akiuonsenkumiai.com/areainfo/
+- `sendai-akiu-great-falls.png`: narrow concentrated vertical waterfall, wooded rocky gorge and pool, not a broad cascade. https://www.miyagi-kankou.or.jp/theme/detail.php?id=9815
+- `sendai-mediatheque.png`: seven-storey transparent glass cube, thin floor plates and irregular lattice tube supports, zelkova sidewalk. https://www.smt.jp/info/about/character/
+
+Source-resolution selected illustrations inspected. These are geographically informed illustrations, not exact current photographic architecture/storefront surveys. Reference photographs are not shipped. Mapping/role and byte-lock verification are required before publication; native simulator/browser runtime portrait/landscape acceptance remains pending. Approved dialogue layout, NPC anchoring, microphone, blur and routes are unchanged.
