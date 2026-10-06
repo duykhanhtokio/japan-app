@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-06",
+  "status": "semantic_verification_blocked_by_missing_audio_perception_capability",
+  "scope": "Isolated N5 reference structure/timing analysis only; no content authorship.",
+  "sourceAudioPath": "assets/jlpt/n5/2013-07/audio/n5-2013-07.mp3",
+  "sourceAudioSha256": "20e13bd0ce43c581c8f81cd1587e4b5ffa995f70754051339e138ebcd427d151",
+  "localOcrMetadataPath": "docs/jlpt-workspace/source-packets/n5-2013-07.source-packet.json",
+  "localOcrMetadataSha256": "84a3abf6fb755389f1929e2bf94a4e47bc7b503b6e422a911063f6c33f73aeb7",
+  "evidenceMethod": [
+    "Available tool registry checked for audio perception or transcription capability: none exposed.",
+    "Local Python package and executable checks for ASR capability.",
+    "Internal inspection of existing local OCR instruction organization; source status ocr_unverified.",
+    "Existing signal metadata examined; not rerun and not promoted to semantic evidence."
+  ],
+  "capabilities": {
+    "ffmpegAvailable": true,
+    "ffprobeAvailable": true,
+    "audioPerceptionToolAvailable": false,
+    "localAsrPackages": {
+      "whisper": false,
+      "torch": false,
+      "vosk": false,
+      "faster_whisper": false
+    },
+    "localAsrExecutables": {
+      "whisper": false,
+      "vosk-transcriber": false
+    }
+  },
+  "candidateOrganization": [
+    {
+      "problem": 1,
+      "questionBeforeDialogue": true,
+      "choiceCount": 4
+    },
+    {
+      "problem": 2,
+      "questionBeforeDialogue": true,
+      "choiceCount": 4
+    },
+    {
+      "problem": 3,
+      "imageBased": true,
+      "choiceCount": 3
+    },
+    {
+      "problem": 4,
+      "audioOnly": true,
+      "choiceCount": 3
+    }
+  ],
+  "candidateOrganizationConfidence": "unverified_local_OCR_only_not_audio_verified",
+  "verificationByProblem": [
+    {
+      "problem": 1,
+      "orientationCount": null,
+      "exampleCount": null,
+      "replayCount": null,
+      "preparationPauseRoles": null,
+      "preparationPausesMs": null,
+      "answerPauseRoles": null,
+      "answerPausesMs": null,
+      "confidence": "not_verified"
+    },
+    {
+      "problem": 2,
+      "orientationCount": null,
+      "exampleCount": null,
+      "replayCount": null,
+      "preparationPauseRoles": null,
+      "preparationPausesMs": null,
+      "answerPauseRoles": null,
+      "answerPausesMs": null,
+      "confidence": "not_verified"
+    },
+    {
+      "problem": 3,
+      "orientationCount": null,
+      "exampleCount": null,
+      "replayCount": null,
+      "preparationPauseRoles": null,
+      "preparationPausesMs": null,
+      "answerPauseRoles": null,
+      "answerPausesMs": null,
+      "confidence": "not_verified"
+    },
+    {
+      "problem": 4,
+      "orientationCount": null,
+      "exampleCount": null,
+      "replayCount": null,
+      "preparationPauseRoles": null,
+      "preparationPausesMs": null,
+      "answerPauseRoles": null,
+      "answerPausesMs": null,
+      "confidence": "not_verified"
+    }
+  ],
+  "limitations": [
+    "No reference audio was heard or semantically recognized.",
+    "Existing OCR does not establish actual spoken orientation/example counts, replay policy, or pause roles/durations.",
+    "Absence of an OCR example/replay marker does not prove absence in the recording.",
+    "Signal-derived quiet intervals and candidate boundaries cannot establish semantic roles.",
+    "No example counts or replay policy may be inferred from window lengths."
+  ],
+  "requiredNextEvidence": "A capable local audio perception/recognition workflow or a human structural annotation of the reference audio, returning only counts and timestamped role labels for orientation, examples, replays, preparation and answer pauses. External text/audio submission requires separate user-specific authorization.",
+  "humanReviewed": false,
+  "perceptualApproval": false,
+  "audioPlaybackPerformed": false,
+  "semanticAudioClassificationPerformed": false,
+  "sourceContentIncluded": false,
+  "sourceAudioExported": false,
+  "cloudUploadPerformed": false,
+  "authoringOrExamAudioChanged": false,
+  "localModelDownloadProbe": {
+    "modelConfigUrl": "https://huggingface.co/Systran/faster-whisper-small/resolve/main/config.json",
+    "result": "connection_timed_out_after_10_seconds",
+    "sourceAudioSubmitted": false
+  }
+}
