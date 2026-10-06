@@ -1,15 +1,15 @@
 # HƯỚNG DẪN BẮT BUỘC — SOẠN NỘI DUNG JLPT MỚI CHO JAPAN APP
 
-Phiên bản 4 — bản chính thức tổng hợp theo nội dung nhà phát hành gửi ngày 06/10/2026. Thay thế các phiên bản trước trong mã nguồn.
+Phiên bản 5 — bản chính thức tổng hợp theo nội dung nhà phát hành gửi ngày 06/10/2026. Thay thế các phiên bản trước trong mã nguồn.
 
-**Mỗi khi bắt đầu một phiên soạn JLPT mới, AI phải đọc lại toàn bộ bản hiện hành này trước khi soạn. Không dùng trí nhớ phiên trước thay cho việc đọc.**
+**Mỗi khi bắt đầu một phiên soạn JLPT mới, AI phải đọc lại toàn bộ bản hiện hành này và `JLPT_LEVEL_BLUEPRINTS.md` trước khi soạn. Không dùng trí nhớ phiên trước thay cho việc đọc.**
 
 
 ## 1. Phạm vi và thứ tự bắt buộc đọc
 
-AI phải đọc toàn bộ tài liệu này trước khi tạo hoặc sửa câu hỏi, bài đọc, kịch bản nghe, lựa chọn, đáp án, hình minh họa hoặc audio JLPT mới. Không chỉ đọc tiêu đề hoặc bản tóm tắt. Đây là bản hướng dẫn chính duy nhất. Sau đó đọc `src/data/jlpt-original/authoring-blueprints.json`, checkpoint hiện hành, cấu hình giọng, master và QA của đúng đề đang làm. Metadata máy phải đồng bộ với bản này; checkpoint chỉ ghi tiến độ, không được dùng chỉ dẫn lịch sử để thay bản hiện hành.
+AI phải đọc toàn bộ tài liệu này trước khi tạo hoặc sửa câu hỏi, bài đọc, kịch bản nghe, lựa chọn, đáp án, hình minh họa hoặc audio JLPT mới. Không chỉ đọc tiêu đề hoặc bản tóm tắt. Đây là bản quy tắc biên soạn chính; phải đọc đồng thời toàn bộ `docs/jlpt-workspace/JLPT_LEVEL_BLUEPRINTS.md` trong mỗi phiên. Hai tài liệu đều bắt buộc, không dùng một bản thay cho bản còn lại. Nếu có mâu thuẫn ảnh hưởng đến triển khai, dừng phần liên quan và xác nhận với nhà phát hành; không tự đoán. Sau đó đọc `src/data/jlpt-original/authoring-blueprints.json`, checkpoint hiện hành, cấu hình giọng, master và QA của đúng đề đang làm. Metadata máy phải đồng bộ với bản này; checkpoint chỉ ghi tiến độ, không được dùng chỉ dẫn lịch sử để thay bản hiện hành.
 Repository: duykhanhtokio/japan-app. Nhánh: recovery/jlpt-n3-n1.
-Thứ tự: docs/AI_SESSION_START_HERE.md → AGENTS.md → tài liệu này → JLPT_ORIGINAL_AUTHORING_CHECKPOINT.md → quy tắc khóa UI và bản khóa mới nhất → dữ liệu/checkpoint của đề đang xử lý. Quy định biên soạn mới này thay thế quy trình phục hồi/chép đề gốc đối với công việc hiện tại. Không tự chạy vòng phục hồi đề cũ.
+Thứ tự: docs/AI_SESSION_START_HERE.md → AGENTS.md → tài liệu này → JLPT_LEVEL_BLUEPRINTS.md → JLPT_ORIGINAL_AUTHORING_CHECKPOINT.md → quy tắc khóa UI và bản khóa mới nhất → dữ liệu/checkpoint của đề đang xử lý. Quy định biên soạn mới này thay thế quy trình phục hồi/chép đề gốc đối với công việc hiện tại. Không tự chạy vòng phục hồi đề cũ.
 Yêu cầu trực tiếp mới nhất của người dùng có ưu tiên cao hơn tài liệu. Khi có mâu thuẫn hoặc chưa rõ, nêu chính xác và xác nhận; không suy đoán thành quyết định của người dùng.
 
 ## 2. Mục tiêu, quy mô và trách nhiệm

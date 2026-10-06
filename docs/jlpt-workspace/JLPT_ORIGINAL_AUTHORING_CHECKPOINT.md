@@ -110,3 +110,9 @@ Publisher supplied a revised written request and instructed replacing the offici
 Five 第3回 structure tables, metadata-only source restrictions, imagegen requirement, four voices, exact 60000ms musical break and truthful flags remain in the single contract. Fixed ±60s tolerance is removed: acceptance tolerance remains unconfirmed. Audition pauses are not final standards; present the timing table and confirm unresolved details before changing them. The authorized isolated N5 timing analysis remains valid. Historical per-exam publisher-review wording is superseded. This update changes the contract and matching machine policy only; exam content/audio/integration status is unchanged.
 
 Supplied text SHA-256: 11d40fdeb9c83a33fdb8650416f215cd2a155bb219b9b29e17c1566c4e668b70
+
+## 2026-10-06 — Bắt buộc đọc đồng thời quy tắc và cấu trúc
+
+Đã lưu đầy đủ bản `JLPT_LEVEL_BLUEPRINTS.md` nhà phát hành gửi, thay bản chuyển hướng. Quy tắc chính phiên bản 5 và bản cấu trúc đều bắt buộc đọc toàn bộ ở đầu mỗi phiên, cùng `docs/AI_SESSION_START_HERE.md` và `AGENTS.md`; trí nhớ hoặc đọc một bản không đủ. Đồng bộ yêu cầu trong các điểm vào phiên và JSON. Giữ nguyên bảng cấu trúc, giới hạn metadata, 6 đề/cấp, giọng và nghỉ 60 giây; không bổ sung quyền lấy nội dung đề gốc. Mâu thuẫn có ảnh hưởng phải xác nhận, không tự đoán. Thay đổi này chỉ cập nhật tài liệu và metadata, không tạo đề hoặc audio mới.
+
+SHA-256 tệp cấu trúc nhà phát hành gửi: `053a4c3093a716170bf1a11a01fcd8fcc4151571a43439b8b530628afe3462b0`.
