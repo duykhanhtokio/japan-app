@@ -86,3 +86,7 @@ Every level has a publisher-defined intermission after the final response pause 
 Detailed count-per-type metadata uses the existing 第3回 at each level; only grouping/cardinality was extracted. N5 totals 91; N4 98; N3 102; N2 106; N1 106 response units. Several legacy sources are candidate/unverified: these are project structural references, not certified fixed counts of current official exams. No legacy question/audio/image content was used as new authoring input.
 
 This commit updates instructions and blueprint only. The existing 12m06s N5 audio has not been rebuilt, the music and five images have not yet been generated, and the new exam is not yet integrated. Next: complete N5 exam 01 against these rules, then advance after full per-exam integration and persistence.
+
+## Consolidated single contract — 2026-10-06
+
+Version 3 of `JLPT_ORIGINAL_AUTHORING_RULES.md` is the sole complete content-authoring contract, including all N5–N1 tables. `JLPT_LEVEL_BLUEPRINTS.md` now redirects there. Source URLs are metadata-only; linked PDFs, scripts, answers, illustrations and recordings are excluded from authoring inputs. Historical checkpoint instructions never override the current contract. This update changes guidance only, not generated exam assets or runtime integration.

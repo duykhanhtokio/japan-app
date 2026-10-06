@@ -1,10 +1,10 @@
 # HƯỚNG DẪN BẮT BUỘC — SOẠN NỘI DUNG JLPT MỚI CHO JAPAN APP
 
-Phiên bản 2 — yêu cầu tổng hợp của nhà phát hành, ngày 06/10/2026.
+Phiên bản 3 — yêu cầu tổng hợp của nhà phát hành, ngày 06/10/2026.
 
 ## 1. Phạm vi và thứ tự bắt buộc đọc
 
-AI phải đọc toàn bộ tài liệu này trước khi tạo hoặc sửa câu hỏi, bài đọc, kịch bản nghe, lựa chọn, đáp án, hình minh họa hoặc audio JLPT mới. Không chỉ đọc tiêu đề hoặc bản tóm tắt. Sau đó đọc `JLPT_LEVEL_BLUEPRINTS.md`, `src/data/jlpt-original/authoring-blueprints.json`, checkpoint hiện hành, cấu hình giọng, master và QA của đúng đề đang làm.
+AI phải đọc toàn bộ tài liệu này trước khi tạo hoặc sửa câu hỏi, bài đọc, kịch bản nghe, lựa chọn, đáp án, hình minh họa hoặc audio JLPT mới. Không chỉ đọc tiêu đề hoặc bản tóm tắt. Đây là bản hướng dẫn chính duy nhất, chứa toàn bộ yêu cầu và bảng cấu trúc N5–N1. Sau đó đọc metadata máy `src/data/jlpt-original/authoring-blueprints.json`, checkpoint hiện hành, cấu hình giọng, master và QA của đúng đề đang làm. Checkpoint chỉ mô tả tiến độ; không được dùng quyết định lịch sử trong checkpoint để thay thế bản này. Nếu metadata máy khác bản này, dừng phần liên quan, báo mâu thuẫn và sửa đồng bộ trước khi soạn.
 
 Repository: `duykhanhtokio/japan-app`. Nhánh: `recovery/jlpt-n3-n1`.
 
@@ -36,32 +36,179 @@ Chia tham khảo thành hai luồng:
 
 Không tự so sánh nội dung câu mới với câu cũ trong phiên biên soạn. Nếu cần kiểm tra tương đồng ngoài ý muốn, phải xác nhận trước mục đích/phạm vi và tách thành bước kiểm tra, không dùng kết quả để tái tạo câu gốc. Không đưa phần trăm tương đồng hoặc cam kết an toàn bản quyền khi chưa có căn cứ đo/kiểm tra phù hợp.
 
+### 3.1. Hai nguồn công khai — chỉ dùng metadata
+
+- `https://www.jlpt.jp/e/guideline/testsections.html`: chỉ lấy bảng thời lượng, tên các phần và bảng kỹ năng theo cấp.
+- `https://www.jlpt.jp/e/samples/sampleindex.html`: chỉ lấy bảng phân loại dạng nghe và cấp độ áp dụng trên trang HTML. Trang này cũng liên kết đề mẫu, đáp án, transcript và audio có bản quyền; việc dẫn URL không cho phép sử dụng các nội dung đó.
+- Không mở/tải PDF câu hỏi, đáp án, bài đọc, kịch bản, hình hoặc audio được liên kết trên hai trang để đưa vào đầu vào soạn mới. Không dùng công cụ tìm kiếm để trích các nội dung ấy thay cho tải trực tiếp.
+- Nguồn 第3回 trong repo cũng chỉ được đọc bằng bộ trích metadata có danh sách trường cho phép: cấp, phần, dạng, số câu, số lựa chọn, cách hiển thị/đọc và thống kê thời lượng. Không in toàn bộ JSON/PDF, prompt, lựa chọn, đáp án, transcript hoặc hình cũ vào ngữ cảnh tác giả.
+- Đầu vào tác giả gồm mục tiêu kỹ năng, mức độ, cấu trúc và thống kê tổng hợp đã tách sạch nội dung. Không đưa câu mẫu làm ví dụ cho AI bắt chước, không ánh xạ câu mới một-một theo câu gốc.
+- Nếu chưa có metadata nhịp nghe/hiển thị đủ đáng tin, ghi phần thiếu và xác nhận cách xử lý; không tự mở audio/transcript cũ để suy ra nội dung. Việc phân tích nguồn cũ riêng để tạo thêm metadata cần xác nhận phạm vi trước, giữ tách khỏi phiên tác giả.
+- Lưu đường dẫn nguồn, ngày đối chiếu, trường đã lấy và hash khi có; nguồn tham khảo không phải giấy phép tái sử dụng. Không tuyên bố tỷ lệ sao chép bằng 0 hoặc bảo đảm pháp lý chỉ vì dùng AI.
+
 ## 4. Chuẩn cấu trúc triển khai toàn bộ N5–N1
 
-Bảng N5 dưới đây và các bảng N4–N1 trong `JLPT_LEVEL_BLUEPRINTS.md` là một bộ hướng dẫn chung. Metadata máy đọc: `src/data/jlpt-original/authoring-blueprints.json`. Dùng 第3回 hiện có của từng cấp làm chuẩn cấu trúc; sáu đề mới cùng cấp giữ nguyên blueprint đó. Chỉ đọc metadata, không dùng nội dung câu gốc.
+Dùng metadata cấu trúc 第3回 hiện có của từng cấp; sáu đề cùng cấp giữ số câu từng dạng, không chỉ tổng số câu. Đây là chuẩn dự án, không phải tuyên bố mọi kỳ JLPT có số câu cố định. Metadata máy phải đồng bộ với các bảng dưới đây. Không áp số câu 120 của yêu cầu cũ cho các đề có tổng khác.
 
-Mẫu cấu trúc N5 đã chọn: N5「第３回」hiện tại, ID `n5-2013-07-exam-03`. Giữ số câu từng dạng, không chỉ giữ tổng số câu. Đây là chuẩn của dự án, không tự tuyên bố mọi kỳ thi hiện hành có cùng số câu.
+Đếm đơn vị chấm điểm, không đếm file audio. Với N1/N2 統合理解, một hội thoại tổng hợp có thể phục vụ nhiều câu phụ; giữ quan hệ hội thoại và ID/đáp án riêng, không biến thành các câu ngắn độc lập để đủ số lượng.
 
-| Phần | Dạng | Số câu | Kỹ năng |
-|---|---:|---:|---|
-| Từ vựng | 1 | 12 | Đọc chữ Hán |
-| Từ vựng | 2 | 8 | Chọn cách viết |
-| Từ vựng | 3 | 10 | Từ vựng theo ngữ cảnh |
-| Từ vựng | 4 | 5 | Diễn đạt tương đương |
-| Ngữ pháp/đọc | 1 | 16 | Chọn ngữ pháp |
-| Ngữ pháp/đọc | 2 | 5 | Sắp xếp câu |
-| Ngữ pháp/đọc | 3 | 5 | Ngữ pháp trong văn bản |
-| Ngữ pháp/đọc | 4 | 3 | Đọc ngắn |
-| Ngữ pháp/đọc | 5 | 2 | Đọc vừa |
-| Ngữ pháp/đọc | 6 | 1 | Tìm thông tin |
-| Nghe | 1 | 7 | Hiểu nhiệm vụ |
-| Nghe | 2 | 6 | Nắm thông tin chính |
-| Nghe | 3 | 5 | Phát ngôn theo tình huống |
-| Nghe | 4 | 6 | Phản hồi nhanh |
+### N5
 
-Tổng: 35 từ vựng + 32 ngữ pháp/đọc + 24 nghe = **91 câu**. Câu viết có 4 lựa chọn; nghe dạng 1/2/3/4 lần lượt có **4/4/3/3** lựa chọn. Không áp số câu 120 từ yêu cầu phân bố đáp án trước đây vào đề 91 câu này.
+Thời gian: vocabulary 20 phút / grammarReading 40 phút / listening 30 phút. Tổng 67 câu viết + 24 câu nghe = **91 câu chấm điểm**.
 
-Bố cục chi tiết, đánh số 問題, số câu, số lựa chọn và mô tả kỹ năng cho **từng cấp N5–N1** đã chốt trong `JLPT_LEVEL_BLUEPRINTS.md`; không hỏi lại chuẩn cấp khác, không tự áp bảng N5 cho N4–N1. Tổng số câu chấm điểm lần lượt: N5 91, N4 98, N3 102, N2 106, N1 106. Nếu dữ liệu tham chiếu cấu trúc bị hỏng hoặc kiểm tra metadata cho thấy mâu thuẫn thật, báo đúng mâu thuẫn; không dùng nội dung cũ để giải quyết.
+| Phần | 問題 | Kỹ năng | Số câu chấm điểm | Lựa chọn/câu |
+|---|---:|---|---:|---:|
+| vocabulary | 1 | 漢字読み | 12 | 4 |
+| vocabulary | 2 | 表記 | 8 | 4 |
+| vocabulary | 3 | 文脈規定 | 10 | 4 |
+| vocabulary | 4 | 言い換え類義 | 5 | 4 |
+| grammar_reading | 1 | 文の文法1 | 16 | 4 |
+| grammar_reading | 2 | 文の文法2・並べ替え | 5 | 4 |
+| grammar_reading | 3 | 文章の文法 | 5 | 4 |
+| grammar_reading | 4 | 内容理解・短文 | 3 | 4 |
+| grammar_reading | 5 | 内容理解・中文 | 2 | 4 |
+| grammar_reading | 6 | 情報検索 | 1 | 4 |
+| listening | 1 | 課題理解 | 7 | 4 |
+| listening | 2 | ポイント理解 | 6 | 4 |
+| listening | 3 | 発話表現 | 5 | 3 |
+| listening | 4 | 即時応答 | 6 | 3 |
+
+Dữ liệu tham chiếu cấu trúc: `src/data/jlpt-official/n5-2013-07/written.candidate.json`, `src/data/jlpt-official/n5-2013-07/listening.candidate.json`.
+
+### N4
+
+Thời gian: vocabulary 25 phút / grammarReading 55 phút / listening 35 phút. Tổng 70 câu viết + 28 câu nghe = **98 câu chấm điểm**.
+
+| Phần | 問題 | Kỹ năng | Số câu chấm điểm | Lựa chọn/câu |
+|---|---:|---|---:|---:|
+| vocabulary | 1 | 漢字読み | 9 | 4 |
+| vocabulary | 2 | 表記 | 6 | 4 |
+| vocabulary | 3 | 文脈規定 | 10 | 4 |
+| vocabulary | 4 | 言い換え類義 | 5 | 4 |
+| vocabulary | 5 | 用法 | 5 | 4 |
+| grammar-reading | 1 | 文の文法1 | 15 | 4 |
+| grammar-reading | 2 | 文の文法2・並べ替え | 5 | 4 |
+| grammar-reading | 3 | 文章の文法 | 5 | 4 |
+| grammar-reading | 4 | 内容理解・短文 | 4 | 4 |
+| grammar-reading | 5 | 内容理解・中文 | 4 | 4 |
+| grammar-reading | 6 | 情報検索 | 2 | 4 |
+| listening | 1 | 課題理解 | 8 | 4 |
+| listening | 2 | ポイント理解 | 7 | 4 |
+| listening | 3 | 発話表現 | 5 | 3 |
+| listening | 4 | 即時応答 | 8 | 3 |
+
+Dữ liệu tham chiếu cấu trúc: `src/data/jlpt-official/n4-2013-07/exam.candidate.json`.
+
+### N3
+
+Số 問題 viết trong bảng là chỉ số metadata liên tục: 1–5 thuộc vocabulary, 6–12 thuộc grammar/reading. Khi dựng phiên thi, tách đúng hai phần thời gian; giữ ánh xạ ID rõ ràng.
+
+Thời gian: vocabulary 30 phút / grammarReading 70 phút / listening 40 phút. Tổng 74 câu viết + 28 câu nghe = **102 câu chấm điểm**.
+
+| Phần | 問題 | Kỹ năng | Số câu chấm điểm | Lựa chọn/câu |
+|---|---:|---|---:|---:|
+| written | 1 | 漢字読み | 8 | 4 |
+| written | 2 | 表記 | 6 | 4 |
+| written | 3 | 文脈規定 | 11 | 4 |
+| written | 4 | 言い換え類義 | 5 | 4 |
+| written | 5 | 用法 | 5 | 4 |
+| written | 6 | 文の文法1 | 13 | 4 |
+| written | 7 | 文の文法2・並べ替え | 5 | 4 |
+| written | 8 | 文章の文法 | 5 | 4 |
+| written | 9 | 内容理解・短文 | 4 | 4 |
+| written | 10 | 内容理解・中文 | 6 | 4 |
+| written | 11 | 内容理解・長文 | 4 | 4 |
+| written | 12 | 情報検索 | 2 | 4 |
+| listening | 1 | 課題理解 | 6 | 4 |
+| listening | 2 | ポイント理解 | 6 | 4 |
+| listening | 3 | 概要理解 | 3 | 4 |
+| listening | 4 | 発話表現 | 4 | 3 |
+| listening | 5 | 即時応答 | 9 | 3 |
+
+Dữ liệu tham chiếu cấu trúc: `src/data/jlpt-official/n3-2013-07/exam.candidate.json`.
+
+### N2
+
+Phần viết dùng chung một phiên thời gian: 問題1–6 từ vựng, 7–9 ngữ pháp, 10–14 đọc hiểu.
+
+Thời gian: languageKnowledgeReading 105 phút / listening 50 phút. Tổng 75 câu viết + 31 câu nghe = **106 câu chấm điểm**.
+
+| Phần | 問題 | Kỹ năng | Số câu chấm điểm | Lựa chọn/câu |
+|---|---:|---|---:|---:|
+| written | 1 | 漢字読み | 5 | 4 |
+| written | 2 | 表記 | 5 | 4 |
+| written | 3 | 語形成 | 7 | 4 |
+| written | 4 | 文脈規定 | 5 | 4 |
+| written | 5 | 言い換え類義 | 5 | 4 |
+| written | 6 | 用法 | 5 | 4 |
+| written | 7 | 文の文法1 | 12 | 4 |
+| written | 8 | 文の文法2・並べ替え | 5 | 4 |
+| written | 9 | 文章の文法 | 5 | 4 |
+| written | 10 | 内容理解・短文 | 5 | 4 |
+| written | 11 | 内容理解・中文 | 9 | 4 |
+| written | 12 | 統合理解 | 2 | 4 |
+| written | 13 | 主張理解 | 3 | 4 |
+| written | 14 | 情報検索 | 2 | 4 |
+| listening | 1 | 課題理解 | 5 | 4 |
+| listening | 2 | ポイント理解 | 6 | 4 |
+| listening | 3 | 概要理解 | 5 | 4 |
+| listening | 4 | 即時応答 | 11 | 3 |
+| listening | 5 | 統合理解 | 4 | 4 |
+
+Dữ liệu tham chiếu cấu trúc: `src/data/jlpt-official/n2-2013-07/exam.candidate.json`.
+
+### N1
+
+Phần viết dùng chung một phiên thời gian: 問題1–4 từ vựng, 5–7 ngữ pháp, 8–13 đọc hiểu.
+
+Thời gian: languageKnowledgeReading 110 phút / listening 55 phút. Tổng 70 câu viết + 36 câu nghe = **106 câu chấm điểm**.
+
+| Phần | 問題 | Kỹ năng | Số câu chấm điểm | Lựa chọn/câu |
+|---|---:|---|---:|---:|
+| written | 1 | 漢字読み | 6 | 4 |
+| written | 2 | 文脈規定 | 7 | 4 |
+| written | 3 | 言い換え類義 | 6 | 4 |
+| written | 4 | 用法 | 6 | 4 |
+| written | 5 | 文の文法1 | 10 | 4 |
+| written | 6 | 文の文法2・並べ替え | 5 | 4 |
+| written | 7 | 文章の文法 | 5 | 4 |
+| written | 8 | 内容理解・短文 | 4 | 4 |
+| written | 9 | 内容理解・中文 | 9 | 4 |
+| written | 10 | 内容理解・長文 | 4 | 4 |
+| written | 11 | 統合理解 | 2 | 4 |
+| written | 12 | 主張理解 | 4 | 4 |
+| written | 13 | 情報検索 | 2 | 4 |
+| listening | 1 | 課題理解 | 6 | 4 |
+| listening | 2 | ポイント理解 | 6 | 4 |
+| listening | 3 | 概要理解 | 6 | 4 |
+| listening | 4 | 即時応答 | 14 | 3 |
+| listening | 5 | 統合理解 | 4 | 4 |
+
+Dữ liệu tham chiếu cấu trúc: `src/data/jlpt-official/n1-2013-07/exam.verified.json`.
+
+### Mức độ theo cấp
+
+- N5: tình huống quen thuộc, câu đơn giản, thông tin cụ thể, hội thoại ngắn rõ ràng; không kéo thành hội thoại cao cấp chỉ để đủ phút.
+- N4: tình huống đời sống thường ngày, trình tự/điều kiện cơ bản, các đoạn đọc và nghe dài hơn N5 nhưng vẫn có mạch rõ.
+- N3: kết nối thông tin đời sống, phân biệt ý chính/chi tiết, theo dõi lý do và diễn biến, đọc dài và nghe khái quát.
+- N2: văn bản và hội thoại tự nhiên về đời sống/xã hội/công việc, sắc thái và quan hệ lập luận, tích hợp nhiều nguồn hoặc nhiều người.
+- N1: văn bản phức tạp, trừu tượng, hàm ý, lập luận, mục đích và sắc thái; nghe tổng hợp với diễn biến/lựa chọn cần kết nối thông tin. Không dùng ngôn ngữ khó tùy tiện hoặc tình huống đánh đố.
+
+### Cách tổ chức kỹ năng nghe
+
+- 課題理解: xác định hành động/nhiệm vụ tiếp theo từ diễn biến, điều kiện, thay đổi ý.
+- ポイント理解: tìm thông tin cụ thể được hỏi, phân biệt thông tin liên quan với thông tin phụ.
+- 概要理解: nghe toàn đoạn để hiểu chủ đề, mục đích hoặc ý chính; không thay bằng câu chỉ tìm số/tên.
+- 発話表現: hình/tình huống giao tiếp và các phát ngôn; tạo hình mới bằng kỹ năng tạo ảnh.
+- 即時応答: một phát ngôn và các phản hồi nghe, chọn phản hồi tự nhiên.
+- 統合理解: nối thông tin giữa người nói/điều kiện/quyết định, bao gồm các đơn vị câu hỏi phụ theo mẫu.
+
+Tùy dạng, phương án có thể được in hoặc chỉ đọc. Lập bản đồ hiển thị/đọc từ metadata tổ chức mẫu trước khi xuất đề; không hiện nội dung lựa chọn vốn chỉ nghe trong UI trước khi người chơi trả lời. Không tự thêm lượt phát lại.
+
+### Phân bố đáp án cho mỗi cấp
+
+Cân bằng riêng tập câu có 3 và 4 lựa chọn; mỗi vị trí nhận floor(n/k) hoặc ceil(n/k). Phần dư luân chuyển giữa các đề, không cố định. Toàn bộ yêu cầu chống quy luật trong tài liệu hướng dẫn chính vẫn áp dụng. Cân bằng theo phần khi khả thi, không làm sai quota toàn tập và không áp một quota N5 cho các cấp khác.
+
 
 ## 5. Tiêu chuẩn học thuật cho từng câu
 
@@ -97,11 +244,11 @@ Mốc công bố JLPT hiện hành được kiểm tra ngày 06/10/2026: N4 25/5
 
 Nguồn: https://www.jlpt.jp/e/guideline/testsections.html . Nguồn nêu thời lượng nghe có thể lệch nhẹ tùy bản ghi. Mặc định triển khai của dự án: nhắm đúng thời lượng mục tiêu của cấp; sai lệch tổng tối đa ±60 giây cho bản mô phỏng và phải báo thời lượng thực tế. Đây là dung sai kỹ thuật, không phải quy định chính thức JLPT. Đoạn nhạc nghỉ phải đúng 60 giây, không áp dung sai này cho nhạc nghỉ.
 
-## 8. Thiết kế nghe N5 khoảng 30 phút
+## 8. Thiết kế nghe cho toàn bộ N5–N1
 
-Phải bám cấu trúc bài mẫu cả về trình tự và nhịp làm bài, đồng thời tạo nội dung độc lập. Tổng thời lượng gồm hướng dẫn mới, ví dụ mới nếu cấu trúc mẫu có ví dụ, câu hỏi, hội thoại, đọc lựa chọn, thời gian quan sát/đọc, thời gian trả lời, chuyển dạng và nghỉ giữa bài đã xác định. Ví dụ không tính thêm vào 24 câu chấm điểm.
+Phải bám cấu trúc bài mẫu cả về trình tự và nhịp làm bài, đồng thời tạo nội dung độc lập. Tổng thời lượng gồm hướng dẫn mới, ví dụ mới nếu cấu trúc mẫu có ví dụ, câu hỏi, hội thoại, đọc lựa chọn, thời gian quan sát/đọc, thời gian trả lời, chuyển dạng và nghỉ giữa bài đã xác định. Ví dụ không tính vào số câu chấm điểm của bất kỳ cấp nào. Các gạch đầu dòng dạng 1–4 dưới đây mô tả N5/N4; N3 có 概要理解 tại 問題３, 発話表現 tại 問題４ và 即時応答 tại 問題５; N2/N1 có 概要理解 tại 問題３, 即時応答 tại 問題４ và 統合理解 tại 問題５. Không áp mô tả hình của 問題３ N5 cho 問題３ N3–N1.
 
-Trước khi viết bản cuối, lập bảng ngân sách thời gian cho từng dạng và từng câu. Mỗi thành phần phải có mục đích; tổng cần tiến tới 1800 giây = 1800000 ms. Ước lượng chỉ là kế hoạch; đo bản thu hoàn chỉnh mới là bằng chứng thời lượng.
+Trước khi viết bản cuối, lập bảng ngân sách thời gian cho từng dạng và từng câu. Mỗi thành phần phải có mục đích; tổng cần tiến tới đúng mốc của cấp: N5 1800000 ms; N4 2100000 ms; N3 2400000 ms; N2 3000000 ms; N1 3300000 ms. Ước lượng chỉ là kế hoạch; đo bản thu hoàn chỉnh mới là bằng chứng thời lượng.
 
 - Dạng 1–2: tổ chức câu hỏi trước/sau hội thoại và khoảng chuẩn bị theo cấu trúc mẫu được xác minh. Không đọc thêm phương án vốn chỉ xuất hiện trên giấy nếu mẫu không yêu cầu.
 - Dạng 3: đủ hình mới, hướng dẫn tình huống và ba phát ngôn được đọc. Đảm bảo hình không viết sẵn đáp án.
@@ -190,14 +337,14 @@ Mọi hình/audio phải tạo mới; không dùng tài nguyên đề cũ để 
 
 ## 13. Điều kiện nghiệm thu và cách báo cáo
 
-Một đề hoàn thiện phải có đủ câu/hình/audio, đáp án duy nhất, nhiễu hợp lý, phân bố không dễ đoán, thời lượng/nhịp nghỉ đạt chuẩn đã xác nhận, kiểm duyệt thực tế, quyền/credit phù hợp và tích hợp được kiểm tra.
+Một đề hoàn thiện để người dùng làm thử phải có đủ câu/hình/audio, đáp án duy nhất, nhiễu hợp lý, phân bố không dễ đoán, thời lượng/nhịp nghỉ đạt chuẩn dự án và tích hợp được kiểm tra. AI phải tự kiểm tra trước khi giao. Kiểm duyệt của người dùng/người bản ngữ và kiểm tra quyền phát hành là các trạng thái riêng; không đòi duyệt nháp để tích hợp và không đánh dấu đã duyệt khi chưa có bằng chứng.
 
 Báo cáo tách rõ: hoàn thành kỹ thuật; kiểm duyệt học thuật; nghe thực tế; quyền phát hành; tích hợp app. Không đánh đồng “có file” với “đạt”.
 
 Không được tự xác nhận: tỷ lệ tương đồng; an toàn bản quyền 100%; độ khó tương đương đề thật; trọng âm chuẩn; nhà phát hành/người bản ngữ đã duyệt; đủ 30 phút; chạy đúng trên iPhone nếu chưa kiểm tra.
 
-## 14. Trạng thái hiện tại và thứ tự tiếp tục
+## 14. Mốc tiếp tục — dữ kiện tại ngày 06/10/2026
 
-Hiện có 91 câu nháp, 24 audio riêng và bản liên tục **726456 ms ≈ 12 phút 06 giây**. Bản này chưa đạt khoảng 30 phút; 5 hình còn thiếu; độ khó/nhịp nghỉ/nghe thực tế chưa được duyệt. Validator hiện tại đã kiểm tra không có ba đáp án giống liên tiếp nhưng chưa chứng minh cân bằng theo hướng dẫn mới hoặc không có chu kỳ; cần bổ sung kiểm tra và sửa thứ tự lựa chọn nếu cần.
+Mốc tiến độ được ghi nhận khi ban hành phiên bản này: có 91 câu nháp, 24 audio riêng và bản liên tục **726456 ms ≈ 12 phút 06 giây**. Bản này chưa đạt khoảng 30 phút; 5 hình còn thiếu; độ khó/nhịp nghỉ/nghe thực tế chưa được duyệt. Validator hiện tại đã kiểm tra không có ba đáp án giống liên tiếp nhưng chưa chứng minh cân bằng theo hướng dẫn mới hoặc không có chu kỳ; cần bổ sung kiểm tra và sửa thứ tự lựa chọn nếu cần.
 
 Không dùng trạng thái cũ làm bằng chứng đạt hướng dẫn này. Hoàn thiện N5 đề 01 thành phiên bản được tích hợp đầy đủ: kiểm toán/sửa phân bố đáp án; phát triển nghe theo blueprint đạt khoảng 30 phút; thêm đoạn nghỉ đã chốt; đồng bộ audio khi đổi lựa chọn; tạo đủ hình bằng imagegen; tích hợp và kiểm tra kỹ thuật/thực tế. Sau khi lưu bền vững, tiếp tục N5 đề 02–06 rồi N4–N1 mỗi cấp 6 đề, không chờ duyệt bản nháp. Người dùng kiểm tra trực tiếp và sửa theo từng đề sau hoàn thành. Không xóa nội dung cũ trước gate thay thế toàn bộ và không tuyên bố bộ 30 đề đã xong khi mới có hướng dẫn.
