@@ -14,7 +14,7 @@ import {
     View,
 } from 'react-native';
 
-import { SafeAreaView } from 'react-native-safe-area-context';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
 
 import BottomNav from '@/components/app/BottomNav';
 import GameHeader from '@/components/app/GameHeader';

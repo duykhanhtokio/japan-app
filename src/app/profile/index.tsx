@@ -1,3 +1,4 @@
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
@@ -17,7 +18,6 @@ import {
 } from 'react-native';
 
 import {
-    SafeAreaView,
     SafeAreaProvider,
 } from 'react-native-safe-area-context';
 

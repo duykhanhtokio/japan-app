@@ -1,3 +1,4 @@
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import { replacePrepared } from '@/components/ui/prepareSceneRoute';
 import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import { prepareArtwork } from '@/components/ui/prepareArtwork';
@@ -31,7 +32,6 @@ import {
 } from 'react';
 
 import {
-    SafeAreaView,
     useSafeAreaInsets,
 } from 'react-native-safe-area-context';
 
