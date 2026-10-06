@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "examId": "jpapp-n5-original-01-v1",
+  "createdAt": "2026-10-06",
+  "status": "aggregate_authoring_budget_not_recorded_duration",
+  "inputPolicy": "Aggregate numerical timing metadata only; no legacy content or per-item template supplied.",
+  "targetDurationMs": 1800000,
+  "includesRestAndAnnouncements": true,
+  "blocks": [
+    {
+      "kind": "opening_and_problem_1_orientation",
+      "budgetMs": 210000,
+      "semanticSplitVerified": false
+    },
+    {
+      "kind": "problem_1_scored_items",
+      "responses": 7,
+      "budgetMs": 460000
+    },
+    {
+      "kind": "problem_2_orientation",
+      "budgetMs": 120000,
+      "semanticSplitVerified": false
+    },
+    {
+      "kind": "problem_2_scored_items",
+      "responses": 6,
+      "budgetMs": 360000
+    },
+    {
+      "kind": "publisher_intermission",
+      "budgetMs": 70000,
+      "fixedMusicMs": 60000,
+      "announcementBudgetMs": 10000
+    },
+    {
+      "kind": "problem_3_orientation",
+      "budgetMs": 100000,
+      "semanticSplitVerified": false
+    },
+    {
+      "kind": "problem_3_scored_items",
+      "responses": 5,
+      "budgetMs": 180000
+    },
+    {
+      "kind": "problem_4_orientation",
+      "budgetMs": 100000,
+      "semanticSplitVerified": false
+    },
+    {
+      "kind": "problem_4_scored_items",
+      "responses": 6,
+      "budgetMs": 200000
+    }
+  ],
+  "constraints": [
+    "Budget is an estimate for independent authoring, not measured completion.",
+    "Orientation budgets do not prove reference example counts or permit arbitrary repetitions.",
+    "Quiet intervals have to serve preparation, choosing and marking answers; never stretch them to consume remaining budget.",
+    "Keep approved voices/speed. Rewrite or extend only independently authored content within N5 level.",
+    "Measure final PCM/decoded audio and update budget with actual values.",
+    "Candidate boundary anomalies must not be copied into the new exam."
+  ]
+}
