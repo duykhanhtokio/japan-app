@@ -1,5 +1,5 @@
 import { createContext, useContext, useLayoutEffect, useRef, useState, type Dispatch, type SetStateAction, type PropsWithChildren } from 'react';
-import { StyleSheet, View, useWindowDimensions, type ImageSourcePropType } from 'react-native';
+import { Platform, StyleSheet, View, useWindowDimensions, type ImageSourcePropType } from 'react-native';
 import { preparedRouteBackdrop } from './prepareSceneRoute';
 
 import { useIsFocused, DefaultTheme, ThemeProvider } from '@react-navigation/native';
@@ -39,7 +39,9 @@ export function AppBackdrop({ pathname, children }: PropsWithChildren<{ pathname
   const prepared = preparedRouteBackdrop(pathname);
   const scene = sceneOverride?.pathname === pathname ? sceneOverride : undefined;
   const source = scene?.source ?? prepared?.source ?? (dark ? require('../../../assets/app/backgrounds/profile-details.png') : require('../../../assets/app/backgrounds/study-light.png'));
-  const blurRadius = scene?.blurRadius ?? (prepared?.city ? width > height ? 10 : 6 : prepared?.blurRadius ?? 40);
+  // expo-image halves blurRadius on iOS. Restore the city scene's
+  // former RN Image blur without changing clear dialogue backgrounds.
+  const blurRadius = scene?.blurRadius ?? (prepared?.city ? (width > height ? 10 : 6) * (Platform.OS === 'ios' ? 2 : 1) : prepared?.blurRadius ?? 40);
   const key = `${typeof source === 'number' ? source : JSON.stringify(source)}:${blurRadius}`;
   return <SceneBackdropWriter.Provider value={setSceneOverride}><InheritedBackdrop.Provider value={shared}><RootBackdropSource.Provider value={shared ? source : undefined}><View style={s.root}>
     {shared && <HomeTokuteiBackdrop target={{ key, source, blurRadius }} />}

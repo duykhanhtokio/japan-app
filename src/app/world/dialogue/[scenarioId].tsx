@@ -134,7 +134,7 @@ function DialogueScreen({id}:{id?:string}){
  const missionFont=wide?12:ROYAL_TYPE.explanation,missionLine=wide?16:ROYAL_TYPE.explanationLine;
  const missionLines=copyLines(mission,missionWidth,missionFont);
  const headerHeight=insets.top+ROYAL_PLACEMENT.headerTop+44+4+12+(wide?20:36)+missionLines*missionLine;
- const conversationTop=playerTurn?headerHeight+8:Math.max(headerHeight+8,npcWaist);
+ const conversationTop=Math.max(headerHeight+8,npcWaist);
  const visiblePanels=turns.slice(Math.max(0,index-1),index+1);
  const availableHeight=Math.max(0,stageSize.height-conversationTop-controlsBottom-dockReserve);
  const slotHeight=Math.max(0,(availableHeight-40)/2);
@@ -144,7 +144,7 @@ function DialogueScreen({id}:{id?:string}){
   const npcTranslation=panel.npc?.translations?.[language]??(language==='vi'?panel.npc?.translationVi:null);
   const panelTranscript=isNpc?'':context?playerTranscripts[panel.id]??'':speech.transcript;
   const panelRecognizing=!isNpc&&!context&&speech.recognizing;
-  const budgetHeight=playerTurn?(context?100:Math.max(140,availableHeight-128)):slotHeight;
+  const budgetHeight=slotHeight;
   const copyWidth=Math.max(80,(wide?stageSize.width*.46:stageSize.width-20)-56);
   const fullNpc=panel.npc?.textJa??'';
   const panelCopy=isNpc?fullNpc:hintStage>0?panel.player?.recommendedAnswerJa??'':(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language];
@@ -174,7 +174,7 @@ function DialogueScreen({id}:{id?:string}){
   <View testID="dialogue-panels" pointerEvents={transitioning?'none':'auto'} style={[s.conversation,{top:conversationTop,bottom:controlsBottom+dockReserve,overflow:'hidden'},wide&&s.conversationWide]}>
    {visiblePanels.map((panel,slot)=>{
     const previous=visiblePanels.length===2&&slot===0;
-    return <NativeAnimated.View key={panel.id} style={{position:'absolute',left:0,right:0,top:previous?0:playerTurn?128:slotHeight+16,transform:[{translateY:turnMotion.interpolate({inputRange:[0,1],outputRange:[slotHeight+16,0]})}]}}>
+    return <NativeAnimated.View key={panel.id} style={{position:'absolute',left:0,right:0,top:previous?0:slotHeight+16,transform:[{translateY:turnMotion.interpolate({inputRange:[0,1],outputRange:[slotHeight+16,0]})}]}}>
      {renderPanel(panel,previous)}
     </NativeAnimated.View>;
    })}
