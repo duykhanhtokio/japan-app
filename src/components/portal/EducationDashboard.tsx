@@ -1,7 +1,9 @@
+import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
-import { router } from 'expo-router';
+
 import { Alert, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 import { useRoyalPositioning } from '@/components/ui/RoyalPositioning';
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
 
@@ -11,7 +13,7 @@ function ClassCard({ item, wide }: { item: EducationClass; wide: boolean }) {
   const present = item.students.filter((student) => student.present);
   const absent = item.students.filter((student) => !student.present);
   return (
-    <Pressable onPress={() => item.online ? router.push('/portal/education/classroom') : Alert.alert(item.name, 'クラス詳細と次回授業の準備を開きます。')} style={({ pressed }) => [styles.classCard, wide && styles.classCardWide, item.online ? styles.classOnline : styles.classOffline, pressed && styles.pressed]}>
+    <Pressable onPress={() => item.online ? pushPrepared('/portal/education/classroom') : Alert.alert(item.name, 'クラス詳細と次回授業の準備を開きます。')} style={({ pressed }) => [styles.classCard, wide && styles.classCardWide, item.online ? styles.classOnline : styles.classOffline, pressed && styles.pressed]}>
       <View style={styles.classTop}>
         <View style={[styles.liveLamp, { backgroundColor: item.online ? '#39b676' : '#667078' }]} />
         <Text style={[styles.liveText, { color: item.online ? '#278a5b' : '#647078' }]}>{item.online ? 'オンライン授業中' : 'オフライン'}</Text>
@@ -44,9 +46,9 @@ export function EducationDashboard() {
   return (
     <RoyalPageBackground><View style={styles.screen}>
       <SafeAreaView style={styles.safe} edges={['top', 'left', 'right']}>
-        <View style={styles.topBar}><RoyalBackButton onPress={() => router.back()} /><Text style={styles.screenTitle}>日本語教育機関</Text><View style={styles.teacherBadge}><Text style={styles.teacherBadgeText}>教師</Text></View></View>
+        <View style={styles.topBar}><RoyalBackButton onPress={() => backPrepared()} /><Text style={styles.screenTitle}>日本語教育機関</Text><View style={styles.teacherBadge}><Text style={styles.teacherBadgeText}>教師</Text></View></View>
         <ScrollView contentContainerStyle={[styles.content, wide && styles.contentWide]} showsVerticalScrollIndicator={false}>
-          <Pressable onPress={() => router.push('/portal/education/new-class')} style={({ pressed }) => [styles.createClass, pressed && styles.createPressed]}>
+          <Pressable onPress={() => pushPrepared('/portal/education/new-class')} style={({ pressed }) => [styles.createClass, pressed && styles.createPressed]}>
             <View style={styles.createIcon}><Text style={styles.createPlus}>＋</Text></View><View style={styles.createCopy}><Text style={styles.createTitle}>新しいクラスを作成</Text><Text style={styles.createDescription}>レベル・授業・教材・学生を選択してオンライン教室を準備</Text><Text style={styles.clickText}>クリックして作成を始める</Text></View><Text style={styles.createArrow}>›</Text>
           </Pressable>
 
@@ -56,7 +58,7 @@ export function EducationDashboard() {
           <View style={styles.sectionHeading}><View><Text style={styles.sectionTitle}>業務スペース</Text><Text style={styles.sectionDescription}>レベルを選択して、修了までの日程と毎日の教材を確認</Text></View></View>
           <View style={styles.levelGrid}>{['N5', 'N4', 'N3', 'N2', 'N1'].map((level, index) => {
             const enabled = level === 'N5';
-            return <Pressable key={level} onPress={() => enabled ? router.push('/portal/education/n5') : Alert.alert(level, 'N5の設計承認後に作成します。')} style={({ pressed }) => [styles.levelCard, { backgroundColor: ['#e9f7ef', '#edf5fb', '#f4effb', '#fff4e9', '#fff0f1'][index], borderBottomColor: ['#3d9b69', '#4386b1', '#8063ad', '#bc783b', '#b65463'][index] }, pressed && styles.pressed]}>
+            return <Pressable key={level} onPress={() => enabled ? pushPrepared('/portal/education/n5') : Alert.alert(level, 'N5の設計承認後に作成します。')} style={({ pressed }) => [styles.levelCard, { backgroundColor: ['#e9f7ef', '#edf5fb', '#f4effb', '#fff4e9', '#fff0f1'][index], borderBottomColor: ['#3d9b69', '#4386b1', '#8063ad', '#bc783b', '#b65463'][index] }, pressed && styles.pressed]}>
               <Text style={[styles.levelName, { color: ['#2f8057', '#316f99', '#684a98', '#9c5f2d', '#93404f'][index] }]}>{level}</Text><Text style={styles.levelSub}>{enabled ? '60日カリキュラム' : 'カリキュラム'}</Text><Text style={styles.levelLink}>{enabled ? '時間割を見る' : '準備中'}　›</Text>
             </Pressable>;
           })}</View>

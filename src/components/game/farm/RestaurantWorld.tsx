@@ -16,12 +16,12 @@ export default function RestaurantWorld() {
     return (
         <RoyalPageBackground><ScrollView style={styles.world} contentContainerStyle={styles.content}>
             <RoyalContentPanel style={styles.panel}>
-                <Image source={RESTAURANT_ICON} resizeMode="contain" style={styles.heroIcon} />
+                <Image fadeDuration={0} source={RESTAURANT_ICON} resizeMode="contain" style={styles.heroIcon} />
                 <Text style={styles.title}>ファームレストラン</Text>
                 <Text style={styles.intro}>このエリアの遊び方</Text>
                 {STEPS.map((step, index) => (
                     <View key={step.title} style={styles.step}>
-                        <Image source={CHECK_ICON} resizeMode="contain" style={styles.stepIcon} />
+                        <Image fadeDuration={0} source={CHECK_ICON} resizeMode="contain" style={styles.stepIcon} />
                         <View style={styles.stepCopy}>
                             <Text style={styles.stepTitle}>{index + 1}. {step.title}</Text>
                             <Text style={styles.stepDetail}>{step.detail}</Text>

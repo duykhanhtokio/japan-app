@@ -1,6 +1,7 @@
-import { pushPrepared } from '@/components/ui/prepareSceneRoute';
-import { router, useLocalSearchParams } from 'expo-router';
-import { FlatList, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
+import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
+import { useLocalSearchParams } from 'expo-router';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { RoyalBackButton, RoyalChevron, RoyalPlaceRow, RoyalTitlePanel, ROYAL, ROYAL_FONT, ROYAL_PLACEMENT, ROYAL_TEXT_FIT, resolveRoyalGrid, useRoyalPositioning } from '@/components/ui/RoyalSurface';
 import { DepthPressable } from '@/components/world/WorldSurface';
 import { WorldTitleHeader } from '@/components/world/WorldTitleHeader';
@@ -22,7 +23,7 @@ export default function RegionScreen() {
     wideInset: 12,
   });
   return <SafeAreaView style={s.screen}>
-    <WorldTitleHeader title={`${regionLabelJa(id)}地方`} subtitle={`${items.length}都道府県`} onBack={() => router.back()}/>
+    <WorldTitleHeader title={`${regionLabelJa(id)}地方`} subtitle={`${items.length}都道府県`} onBack={() => backPrepared()}/>
     <FlatList data={items} key={grid.columns} numColumns={grid.columns} keyExtractor={(item) => item[0]} contentContainerStyle={[s.list,{paddingHorizontal:grid.horizontalInset}]} columnWrapperStyle={[s.row,{gap:grid.gap}]} renderItem={({ item }) =>
       <DepthPressable accessibilityLabel={item[1]} onPress={() => pushPrepared(`/world/prefecture/${item[0]}`)} style={[s.press,{width:grid.cardWidth}]}>
         <RoyalPlaceRow source={cityImageById[getLifeCitiesByPrefecture(item[0])[0]?.id]} style={s.card}>

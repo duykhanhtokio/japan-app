@@ -1,10 +1,12 @@
 import { prepareArtwork } from '@/components/ui/prepareArtwork';
-import { prepareSceneRoute, cancelPreparedNavigation } from '@/components/ui/prepareSceneRoute';
+import { prepareSceneRoute, cancelPreparedNavigation, registerNavigationStateReader, backPrepared } from '@/components/ui/prepareSceneRoute';
 import { COMMON_UI_ARTWORK } from '@/components/ui/common-artwork';
 import { PAPER_FRAME_SLICES, OPEN_FRAME_SLICES, HUD_FRAME_SLICES } from '@/components/ui/RoyalPaperPanel';
 import { NAVY_FRAME_ART } from '@/components/ui/RoyalSurface';
 import { useEffect, useState } from 'react';
 import { Stack, usePathname, useNavigationContainerRef } from 'expo-router';
+import { BackHandler } from 'react-native';
+import { SafeAreaProvider, initialWindowMetrics } from 'react-native-safe-area-context';
 import { AppBackdrop } from '@/components/ui/AppBackdrop';
 import * as SplashScreen from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
@@ -18,6 +20,18 @@ export default function RootLayout() {
   const pathname = usePathname();
   const navigation = useNavigationContainerRef();
   useEffect(() => navigation.addListener('state', cancelPreparedNavigation), [navigation]);
+  useEffect(() => registerNavigationStateReader(() => navigation.getRootState()), [navigation]);
+  // Registered while the splash is still active. Screen-level Back handlers
+  // (including the JLPT exit/save guard) register later and retain precedence.
+  useEffect(() => {
+    const subscription = BackHandler.addEventListener('hardwareBackPress', () => {
+      const state = navigation.getRootState();
+      if (!state || !navigation.canGoBack()) return false;
+      void backPrepared();
+      return true;
+    });
+    return () => subscription.remove();
+  }, [navigation]);
   const [artworkReady,setArtworkReady]=useState(false);
   useEffect(()=>{let active=true;void Promise.all([prepareSceneRoute(pathname), prepareArtwork([
     ...COMMON_UI_ARTWORK,
@@ -46,9 +60,9 @@ export default function RootLayout() {
   if ((!fontsLoaded && !fontError)||!artworkReady) return null;
 
   return (
-    <LanguageProvider>
+    <SafeAreaProvider initialMetrics={initialWindowMetrics}><LanguageProvider>
       <OnboardingMusic />
-      <AppBackdrop pathname={pathname}><Stack screenOptions={{ headerShown: false, animation: 'none', freezeOnBlur: false, contentStyle: { backgroundColor: 'transparent' } }} /></AppBackdrop>
-    </LanguageProvider>
+      <AppBackdrop pathname={pathname}><Stack screenOptions={{ headerShown: false, animation: 'none', gestureEnabled: false, freezeOnBlur: false, contentStyle: { backgroundColor: 'transparent' } }} /></AppBackdrop>
+    </LanguageProvider></SafeAreaProvider>
   );
 }

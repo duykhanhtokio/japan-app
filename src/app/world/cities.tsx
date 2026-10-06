@@ -1,7 +1,8 @@
-import { pushPrepared } from '@/components/ui/prepareSceneRoute';
-import { router } from 'expo-router';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
+import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
+
 import { useMemo, useState } from 'react';
-import { FlatList, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { FlatList, StyleSheet, Text, TextInput, View } from 'react-native';
 import { RoyalBackButton, RoyalChevron, RoyalField, RoyalPlaceRow, RoyalTitlePanel, ROYAL, ROYAL_FONT, ROYAL_LAYOUT, ROYAL_PLACEMENT, ROYAL_TEXT_FIT, useRoyalPositioning } from '@/components/ui/RoyalSurface';
 import { cityImageById } from '@/components/world/city-images.generated';
 import { DepthPressable } from '@/components/world/WorldSurface';
@@ -17,7 +18,7 @@ export default function CitiesScreen() {
   }, [query]);
 
   return <SafeAreaView style={s.screen}>
-    <WorldTitleHeader title="全国の都市" subtitle={`${cities.length}都市`} onBack={() => router.back()}/>
+    <WorldTitleHeader title="全国の都市" subtitle={`${cities.length}都市`} onBack={() => backPrepared()}/>
     <RoyalField label="検索" style={s.searchFrame}><TextInput value={query} onChangeText={setQuery} placeholder="市区町村を検索" placeholderTextColor="#8290a3" style={s.search} /></RoyalField>
     <FlatList data={cities} keyExtractor={(item) => item.id} initialNumToRender={16} windowSize={7} contentContainerStyle={s.list} renderItem={({ item }) =>
       <DepthPressable accessibilityLabel={item.nameJa} onPress={() => pushPrepared(`/world/city/${item.id}`)} style={s.cardPress}>

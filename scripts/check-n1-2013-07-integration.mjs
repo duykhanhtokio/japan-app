@@ -34,8 +34,8 @@ for (const audio of segments) {
 }
 
 const trialSource = fs.readFileSync('src/components/jlpt/N1OfficialTrial.tsx', 'utf8');
-if (!/\{submitted \? <><JlptReviewFeedback/.test(trialSource)) failures.push('review feedback is not gated by submitted state');
-if (!/showTranscript && question\.audio\?\.transcriptJa/.test(trialSource)) failures.push('transcript review gate missing');
+if (!/\{submitted \? (?:<>)?<JlptReviewFeedback/.test(trialSource)) failures.push('review feedback is not gated by submitted state');
+if (/question\.audio\?\.transcriptJa/.test(trialSource)) failures.push('transcript rendered in locked exam UI');
 if (/submitted=\{false\}[^\n]*showTranscript=\{true\}/.test(trialSource)) failures.push('transcript reachable before submission');
 
 if (failures.length) {

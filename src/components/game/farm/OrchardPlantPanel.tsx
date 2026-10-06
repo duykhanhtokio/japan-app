@@ -126,7 +126,7 @@ export default function OrchardPlantPanel({
                                     styles.goldBadge
                                 }
                             >
-                                <Image source={COIN_ICON} resizeMode="contain" style={styles.smallIcon} />
+                                <Image fadeDuration={0} source={COIN_ICON} resizeMode="contain" style={styles.smallIcon} />
                                 <Text
                                     style={
                                         styles.goldText
@@ -146,7 +146,7 @@ export default function OrchardPlantPanel({
                                     styles.closeButton
                                 }
                             ><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><RoyalContentPanel style={{...StyleSheet.absoluteFillObject,padding:0,minHeight:0}}/></View>
-                                <Image source={CLOSE_ICON} resizeMode="contain" style={{width:22,height:22}} />
+                                <Image fadeDuration={0} source={CLOSE_ICON} resizeMode="contain" style={{width:22,height:22}} />
                             </Pressable>
                         </View>
                     </View>
@@ -297,7 +297,7 @@ function TreeCard({
                     styles.iconBox
                 }
             >
-                {TREE_ARTWORK[tree.id] && <Image source={TREE_ARTWORK[tree.id]} resizeMode="contain" style={styles.treeArtwork} />}
+                {TREE_ARTWORK[tree.id] && <Image fadeDuration={0} source={TREE_ARTWORK[tree.id]} resizeMode="contain" style={styles.treeArtwork} />}
             </View>
 
             <View
@@ -327,7 +327,7 @@ function TreeCard({
                                 styles.lockBadge
                             }
                         >
-                                <Image source={LOCK_ICON} resizeMode="contain" style={styles.smallIcon} />
+                                <Image fadeDuration={0} source={LOCK_ICON} resizeMode="contain" style={styles.smallIcon} />
                             <Text
                                 style={
                                     styles.lockText
@@ -386,7 +386,7 @@ function TreeCard({
                             styles.priceBadgeInsufficient,
                         ]}
                     >
-                                <Image source={COIN_ICON} resizeMode="contain" style={styles.smallIcon} />
+                                <Image fadeDuration={0} source={COIN_ICON} resizeMode="contain" style={styles.smallIcon} />
                         <Text
                             style={[
                                 styles.priceText,

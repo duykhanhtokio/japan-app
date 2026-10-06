@@ -1,6 +1,7 @@
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import { useIsFocused } from '@react-navigation/native';
-import { Redirect, router } from 'expo-router';
+import { Redirect } from 'expo-router';
 import { useEffect, useMemo, useRef } from 'react';
 import {
   Animated,
@@ -12,7 +13,7 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
-import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ROYAL_FONT, useRoyalPositioning } from '@/components/ui/RoyalSurface';
 import { DEVELOPMENT_FEATURES } from '@/config/development-features';
 
@@ -42,7 +43,7 @@ function FallingPetal({ x, delay, duration, size }: (typeof PETALS)[number]) {
   }, [delay, duration, fall]);
 
   return (
-    <Animated.Image
+    <Animated.Image fadeDuration={0}
       source={require('../../assets/app/welcome/sakura-petal-welcome-v2.png')}
       style={{
         position: 'absolute',
@@ -186,7 +187,7 @@ function WelcomeContent() {
 
   return (
     <View style={styles.screen}>
-      {focused && <Animated.Image
+      {focused && <Animated.Image fadeDuration={0}
         source={background}
         resizeMode="cover"
         style={[styles.backgroundContain, {
@@ -214,7 +215,7 @@ function WelcomeContent() {
             opacity: pulse.interpolate({ inputRange: [0, 1], outputRange: [0.72, 1] }),
             transform: [{ scale: pulse.interpolate({ inputRange: [0, 1], outputRange: [0.99, 1.015] }) }],
           }]}>
-            <Image source={require('../../assets/app/ui/royal-af/button-wide-v2.png')} resizeMode="stretch" style={styles.startFrame} />
+            <Image fadeDuration={0} source={require('../../assets/app/ui/royal-af/button-wide-v2.png')} resizeMode="stretch" style={styles.startFrame} />
             <View pointerEvents="none" style={styles.startContent}>
               <Text style={styles.startText}><Text style={styles.red}>PRESS</Text><Text style={styles.coral}> TO </Text><Text style={styles.gold}>ST</Text><Text style={styles.sky}>AR</Text><Text style={styles.red}>T</Text></Text>
             </View>

@@ -1,3 +1,5 @@
+import { backPrepared } from '@/components/ui/prepareSceneRoute';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { lessonSteps } from '@/data/lesson-steps';
 import { lessons } from '@/data/lessons';
@@ -14,7 +16,7 @@ import type {
 import type { QuizQuestion } from '@/types/quiz';
 import type { VocabularyItem } from '@/types/vocabulary';
 
-import { router, useLocalSearchParams } from 'expo-router';
+import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
 
 import {
@@ -26,7 +28,7 @@ import {
     View,
 } from 'react-native';
 
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
 
 import {
@@ -74,7 +76,7 @@ export default function LessonPlayerScreen() {
                         レッスンデータが見つかりません。
                     </Text>
 
-                    <RoyalBackButton onPress={() => router.back()} />
+                    <RoyalBackButton onPress={() => backPrepared()} />
                 </View>
             </SafeAreaView></RoyalPageBackground>
         );
@@ -192,7 +194,7 @@ export default function LessonPlayerScreen() {
 
                         onPress:
                             () =>
-                                router.back(),
+                                backPrepared(),
                     },
                 ]
             );
@@ -219,7 +221,7 @@ export default function LessonPlayerScreen() {
                 <View style={styles.topBar}>
                     <Pressable
                         onPress={() =>
-                            router.back()
+                            backPrepared()
                         }
                     >
                         <Text style={styles.close}>

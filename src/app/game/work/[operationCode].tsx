@@ -1,4 +1,5 @@
-import { replacePrepared } from '@/components/ui/prepareSceneRoute';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
+import { replacePrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import {
@@ -19,10 +20,7 @@ import {
 import {
     evaluateWorkAnswerPipeline,
 } from '@/services/work-answer-evaluation-pipeline';
-import {
-    router,
-    useLocalSearchParams,
-} from 'expo-router';
+import { useLocalSearchParams } from 'expo-router';
 
 import {
     useEffect,
@@ -40,9 +38,7 @@ import {
     View,
 } from 'react-native';
 
-import {
-    SafeAreaView,
-} from 'react-native-safe-area-context';
+
 import { RoyalBackButton, RoyalButton, RoyalNavyFrame, ROYAL_LAYOUT, ROYAL, ROYAL_FONT } from '@/components/ui/RoyalSurface';
 import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 
@@ -667,7 +663,7 @@ export default function WorkConversationScreen() {
                     Work dialogue data has not been created for this job yet.
                 </Text>
 
-                <RoyalBackButton onPress={() => router.back()} />
+                <RoyalBackButton onPress={() => backPrepared()} />
             </SafeAreaView></RoyalPageBackground>
         );
     }
@@ -1268,7 +1264,7 @@ export default function WorkConversationScreen() {
             >
                 <ScrollView style={{width:'100%'}} contentContainerStyle={{flexGrow:1,alignItems:'center',justifyContent:'center',paddingVertical:12}}>
                 <RoyalPaperPanel tone="hud" style={styles.resultCard}>
-                    <Image
+                    <Image fadeDuration={0}
                         source={missionFailed
                             ? require('../../../../assets/app/ui/royal-af/learning-grammar-v1.png')
                             : require('../../../../assets/app/ui/royal-af/mission-trophy-v1.png')}
@@ -1394,7 +1390,7 @@ export default function WorkConversationScreen() {
                                 ? 0
                                 : activeScenario.rewardCoins
                         }{' '}
-                        <Image source={require('../../../../assets/app/ui/royal-af/hud-coin-v1.png')} style={{width:20,height:20}} resizeMode="contain"/>
+                        <Image fadeDuration={0} source={require('../../../../assets/app/ui/royal-af/hud-coin-v1.png')} style={{width:20,height:20}} resizeMode="contain"/>
                     </Text>
 
                     <RoyalButton
@@ -1441,7 +1437,7 @@ export default function WorkConversationScreen() {
                     styles.header
                 }
             >
-                <RoyalBackButton onPress={() => router.back()} />
+                <RoyalBackButton onPress={() => backPrepared()} />
 
                 <RoyalPaperPanel tone="hud" style={styles.headerContent}>
                     <Text
@@ -1569,7 +1565,7 @@ export default function WorkConversationScreen() {
                     styles.characterArea
                 }
             >
-                <Image source={operationCode?.startsWith('1-')?require('../../../../assets/app/ui/royal-af/work-farm-supervisor-v1.png'):require('../../../../assets/app/life/npcs/construction-site.png')} resizeMode="contain" style={styles.characterSprite}/>
+                <Image fadeDuration={0} source={operationCode?.startsWith('1-')?require('../../../../assets/app/ui/royal-af/work-farm-supervisor-v1.png'):require('../../../../assets/app/life/npcs/construction-site.png')} resizeMode="contain" style={styles.characterSprite}/>
                 <Text
                     style={
                         styles.npcName
@@ -2110,7 +2106,7 @@ export default function WorkConversationScreen() {
                                         handleHint
                                     }
                                 >
-                                    <Image source={require('../../../../assets/app/ui/royal-af/hint-gold-grape-v1.png')} resizeMode="contain" style={{width:28,height:32}}/>
+                                    <Image fadeDuration={0} source={require('../../../../assets/app/ui/royal-af/hint-gold-grape-v1.png')} resizeMode="contain" style={{width:28,height:32}}/>
                                     <Text
                                         style={
                                             styles.hintButtonText
@@ -2143,7 +2139,7 @@ export default function WorkConversationScreen() {
                                         : handleMic
                                 }
                             >
-                                <Image source={require('../../../../assets/app/ui/royal-af/microphone-v2.png')} resizeMode="contain" style={{width:38,height:38}}/>
+                                <Image fadeDuration={0} source={require('../../../../assets/app/ui/royal-af/microphone-v2.png')} resizeMode="contain" style={{width:38,height:38}}/>
                             </Pressable>
 
                             {(playerAnswer ||
@@ -2187,7 +2183,7 @@ export default function WorkConversationScreen() {
                                 revealAnswer
                             }
                         >
-                            <Image source={require('../../../../assets/app/ui/royal-af/hint-red-lantern-v2.png')} resizeMode="contain" style={{width:38,height:48}}/>
+                            <Image fadeDuration={0} source={require('../../../../assets/app/ui/royal-af/hint-red-lantern-v2.png')} resizeMode="contain" style={{width:38,height:48}}/>
                             <Text
                                 style={
                                     styles.giveUpText

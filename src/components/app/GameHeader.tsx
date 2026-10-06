@@ -1,4 +1,4 @@
-import { pushPrepared, replacePrepared } from '@/components/ui/prepareSceneRoute';
+import { pushPrepared, replacePrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
 import { OPEN_FRAME_SLICES, royalOpenFrameGeometry } from '@/components/ui/RoyalPaperPanel';
 import { router } from 'expo-router';
 import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
@@ -16,7 +16,7 @@ const ROYAL_BAR_HEIGHT = (ROYAL_LAYOUT.homeHudHeight - ROYAL_LAYOUT.homeHudTopRo
 const APPROVED_BAR_HEIGHT = 64 / 2;
 
 function goBackOrHome(){
- if(router.canGoBack()) router.back();
+ if(router.canGoBack()) backPrepared();
  else replacePrepared('/home');
 }
 function coinDisplay(value:number){
@@ -49,10 +49,10 @@ export default function GameHeader({name='プレイヤー',abilityLevel='N5',abi
   <View style={s.studyTop}>
    <RoyalBackButton onPress={onBack??goBackOrHome}/>
    <Pressable accessibilityRole="button" accessibilityLabel={`${name}のプロフィール`} onPress={()=>onProfile?onProfile():pushPrepared('/profile')} style={s.studyIdentity}>
-    <Image source={HUD_PLAYER} resizeMode="contain" style={s.studyAvatar}/>
+    <Image fadeDuration={0} source={HUD_PLAYER} resizeMode="contain" style={s.studyAvatar}/>
     <View style={s.studyIdentityText}><Text numberOfLines={1} style={s.studyName}>{name}</Text><Text style={s.studySubtitle}>学習状況</Text></View>
    </Pressable>
-   <View accessibilityLabel={`コイン ${coins}`} style={s.studyCoins}><Image source={HUD_COIN} resizeMode="contain" style={s.studyCoinIcon}/><Text numberOfLines={1} style={s.studyCoinValue}>{coins.toLocaleString()}</Text></View>
+   <View accessibilityLabel={`コイン ${coins}`} style={s.studyCoins}><Image fadeDuration={0} source={HUD_COIN} resizeMode="contain" style={s.studyCoinIcon}/><Text numberOfLines={1} style={s.studyCoinValue}>{coins.toLocaleString()}</Text></View>
   </View>
   <View style={s.studyMetrics}>
    <StudyMetric label="CREDIT" value={`${conversationCredits} / ${conversationCreditMax}`} ratio={creditRatio}/>
@@ -81,10 +81,10 @@ function ReferenceIdentity({name,coins,avatarSize,onProfile,onCoins}:Pick<Props,
    <View style={{width:'100%',maxWidth:maxArtWidth,aspectRatio:1969/348}}>
     <View pointerEvents="none" style={[StyleSheet.absoluteFillObject,{overflow:'hidden'}]}><Image fadeDuration={0} source={HUD_IDENTITY} resizeMode="stretch" style={{position:'absolute',left:`${-48/1969*100}%`,top:`${-168/348*100}%`,width:`${2078/1969*100}%`,height:`${757/348*100}%`}}/></View>
     <Pressable accessibilityRole="button" accessibilityLabel={name} onPress={openProfile} hitSlop={8} style={[s.referenceName,{left:avatarSize-artLeft+3,right:'34.5%',top:0,bottom:0}]}><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.7} maxFontSizeMultiplier={1} style={s.approvedName}>{name}</Text></Pressable>
-    <Pressable accessibilityRole="button" accessibilityLabel={`コイン ${coins}`} onPress={onCoins} hitSlop={8} style={[s.referenceCoin,{left:'73%',width:'17.5%',top:0,bottom:0}]}><Image source={HUD_COIN} resizeMode="contain" style={{width:16,height:16,flexShrink:0}}/><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.65} maxFontSizeMultiplier={1} style={s.approvedCoinValue}>{coinDisplay(coins)}</Text></Pressable>
+    <Pressable accessibilityRole="button" accessibilityLabel={`コイン ${coins}`} onPress={onCoins} hitSlop={8} style={[s.referenceCoin,{left:'73%',width:'17.5%',top:0,bottom:0}]}><Image fadeDuration={0} source={HUD_COIN} resizeMode="contain" style={{width:16,height:16,flexShrink:0}}/><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.65} maxFontSizeMultiplier={1} style={s.approvedCoinValue}>{coinDisplay(coins)}</Text></Pressable>
    </View>
   </View>
-  <Pressable accessibilityRole="button" accessibilityLabel={`${name}のプロフィール`} onPress={openProfile} style={[s.referenceAvatar,{width:avatarSize,height:avatarSize}]}><Image source={HUD_PLAYER} resizeMode="contain" style={{width:'100%',height:'100%'}}/></Pressable>
+  <Pressable accessibilityRole="button" accessibilityLabel={`${name}のプロフィール`} onPress={openProfile} style={[s.referenceAvatar,{width:avatarSize,height:avatarSize}]}><Image fadeDuration={0} source={HUD_PLAYER} resizeMode="contain" style={{width:'100%',height:'100%'}}/></Pressable>
  </View>;
 }
 

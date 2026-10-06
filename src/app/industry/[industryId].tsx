@@ -1,6 +1,7 @@
-import { pushPrepared } from '@/components/ui/prepareSceneRoute';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
+import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
-import { router, useLocalSearchParams } from 'expo-router';
+import { useLocalSearchParams } from 'expo-router';
 import {
     Pressable,
     ScrollView,
@@ -8,7 +9,7 @@ import {
     Text,
     View,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 import { industries } from '@/data/industries';
 import { modules } from '@/data/modules';
@@ -58,7 +59,7 @@ export default function IndustryScreen() {
         <RoyalPageBackground><SafeAreaView style={styles.container}>
             <ScrollView contentContainerStyle={styles.content}>
 
-                <RoyalBackButton onPress={() => router.back()} />
+                <RoyalBackButton onPress={() => backPrepared()} />
 
                 <Text style={styles.label}>
                     業種

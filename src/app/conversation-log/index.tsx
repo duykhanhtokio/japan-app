@@ -1,3 +1,4 @@
+import { backPrepared } from '@/components/ui/prepareSceneRoute';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import {
     useCallback,
@@ -15,10 +16,7 @@ import {
 } from 'react-native';
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
 
-import {
-    router,
-    useFocusEffect,
-} from 'expo-router';
+import { useFocusEffect } from 'expo-router';
 
 
 import BottomNav from '@/components/app/BottomNav';
@@ -435,7 +433,7 @@ export default function ConversationLogScreen() {
                         styles.header
                     }
                 >
-                    <RoyalBackButton onPress={() => router.back()} />
+                    <RoyalBackButton onPress={() => backPrepared()} />
 
                     <View>
                         <Text

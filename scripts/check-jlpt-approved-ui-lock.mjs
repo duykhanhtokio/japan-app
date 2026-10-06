@@ -5,14 +5,14 @@ import path from 'node:path';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const locked = new Map([
-  ['src/app/[level]/[section].tsx', '83ad6544a560bda8b08eaa83e25dc2a51d9246cf980e92b4edfa025973c2e5bf'],
-  ['src/components/jlpt/N1OfficialTrial.tsx', 'b007dce70ab8a5a5ce5160e804614f326c87b31c1c1d0f0c7324faf542629daf'],
+  ['src/app/[level]/[section].tsx', '8766dd0457955ae2c110a6f1dbe6d61ec1d35e5fc126c6ab04bff9df7c953acf'],
+  ['src/components/jlpt/N1OfficialTrial.tsx', '65f584d660cc852cbd2a37deddec4a088c414d44aa40335686d91dfcade9b943'],
   ['src/components/jlpt/N1ExamPicker.tsx', '6c8676b97d12d3da6fe36f5fde28adb1833bcb7208628c00dc61f1b9c5c55098'],
-  ['src/components/jlpt/ui/JlptExamUI.tsx', 'fe165bc8c31b96251b932e60d53836d63cfa450cfbd5641fb0f40b108b502c1b'],
+  ['src/components/jlpt/ui/JlptExamUI.tsx', '5bdfbf27a8653d8d9153c4211987f8c100d5b72f611e1bdb7343d44bfa6545e6'],
   ['src/services/jlpt-trial-session-storage.ts', 'ea21a8b371feeea3453cd10c5247bcb072c92f2ef5b4c5309d83df3392d1d7e1'],
   ['src/theme/jlpt-exam-design-system.ts', '9d8276e32e5b1b25485d84cbe961acd5cbca5b106ee2dd95e6fbaadd9d2b9bb7'],
-  ['src/components/jlpt/ApprovedJlptExamCatalog.tsx', '24de357c855e5e22f52965309f3602778ac6e5a67c2638ac3d7dc7eb1bb2349e'],
-  ['src/components/jlpt/ApprovedScannedExam.tsx', 'efa9b3abdcd3097b96415ecf731fe1400433dbdd53e38b606d3a6324aba728a9'],
+  ['src/components/jlpt/ApprovedJlptExamCatalog.tsx', '5d937daad922ea391203d17d727cccfcf876d33e65a3258914407ca3f207b3bf'],
+  ['src/components/jlpt/ApprovedScannedExam.tsx', 'e3e7a158bb11815af53a0658df0513efb2fda12bca823eee1067456c9cf0dd5d'],
   ['src/components/jlpt/ApprovedMockExam.tsx', '56ff95e19597865e480b650eae5e0077c3c8cf3c26566f3ead0cf31c69feef2a'],
   ['src/data/jlpt-official/approved-scanned-exams.generated.ts', '1e7baa59e6939929a46487fd9d91915217f1c7c2ba322f94c2ba72d93ecac0aa'],
 ]);

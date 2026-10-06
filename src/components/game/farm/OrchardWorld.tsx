@@ -213,7 +213,7 @@ function OrchardPlot({
             >
                 {plot.treeId ? (
                     <>
-                        <Image source={treeArtwork} resizeMode="contain" style={styles.treeSprite} />
+                        <Image fadeDuration={0} source={treeArtwork} resizeMode="contain" style={styles.treeSprite} />
 
                         <Text
                             numberOfLines={
@@ -245,7 +245,7 @@ function OrchardPlot({
                     </>
                 ) : (
                     <>
-                        <Image source={treeArtwork} resizeMode="contain" style={styles.emptySprite} />
+                        <Image fadeDuration={0} source={treeArtwork} resizeMode="contain" style={styles.emptySprite} />
 
                         <Text
                             style={

@@ -1,4 +1,5 @@
-import { pushPrepared } from '@/components/ui/prepareSceneRoute';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
+import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
 import { useEffect, useState } from 'react';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
@@ -6,7 +7,7 @@ import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-
 import { REVIEW_SOURCES, type ReviewSource } from '@/data/jlpt-official/n4-n5-listening-review-sources';
 import { loadListeningSegmentCorrection, saveListeningSegmentCorrection } from '@/services/jlpt-listening-segment-review';
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 const time = (milliseconds: number) => (milliseconds / 1000).toFixed(1);
 const milliseconds = (value: string) => Math.round(Number(value.replace(',', '.')) * 1000);
@@ -51,7 +52,7 @@ function Editor({ source }: { source: ReviewSource }) {
       setNotice('Đã lưu trên thiết bị; chưa đồng bộ GitHub hoặc sửa đề gốc.');
     } catch { setNotice('Không lưu được.'); }
   }
-  return <SafeAreaView style={styles.screen}><View style={styles.header}><RoyalBackButton onPress={() => { player.pause(); router.back(); }} /></View><ScrollView contentContainerStyle={styles.page}>
+  return <SafeAreaView style={styles.screen}><View style={styles.header}><RoyalBackButton onPress={() => { player.pause(); backPrepared(); }} /></View><ScrollView contentContainerStyle={styles.page}>
     <Text style={styles.title}>Chỉnh nghe · {source.id}</Text>
     <Text>Timing ứng viên chưa được duyệt. Bản sửa được lưu riêng trên thiết bị.</Text>
     <Text style={styles.heading}>Câu {index + 1}/{source.segments.length}: {segment.label}</Text>
@@ -84,7 +85,7 @@ export default function JlptListeningReview() {
   const { examId } = useLocalSearchParams<{ examId?: string }>();
   const source = REVIEW_SOURCES.find(item => item.id === examId || `${item.id}-exam-06` === examId);
   if (source) return <Editor key={source.id} source={source} />;
-  return <SafeAreaView style={styles.screen}><View style={styles.header}><RoyalBackButton onPress={() => router.back()} /></View><ScrollView contentContainerStyle={styles.page}>
+  return <SafeAreaView style={styles.screen}><View style={styles.header}><RoyalBackButton onPress={() => backPrepared()} /></View><ScrollView contentContainerStyle={styles.page}>
     <Text style={styles.title}>Rà soát nghe N4/N5</Text>
     <Text>Chọn đề có mốc nghe ứng viên để chỉnh từng câu. Các đề chưa có mốc sẽ bổ sung sau.</Text>
     {REVIEW_SOURCES.map(item => <Pressable key={item.id} style={styles.button} onPress={() => pushPrepared({ pathname: '/jlpt-listening-review', params: { examId: item.id } })}><Text>{item.id} · {item.segments.length} câu</Text></Pressable>)}

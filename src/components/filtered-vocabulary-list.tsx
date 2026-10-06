@@ -1,5 +1,7 @@
+import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
-import { router } from 'expo-router';
+
 import {
     Pressable,
     ScrollView,
@@ -7,7 +9,7 @@ import {
     Text,
     View,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 import type { VocabularyItem } from '@/types/vocabulary';
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
@@ -27,7 +29,7 @@ export function FilteredVocabularyList({
 }: Props) {
     return (
         <RoyalPageBackground><SafeAreaView style={styles.container}>
-            <View style={styles.header}><RoyalBackButton onPress={() => router.back()} /></View>
+            <View style={styles.header}><RoyalBackButton onPress={() => backPrepared()} /></View>
             <ScrollView contentContainerStyle={styles.content}>
 
                 <Text style={styles.smallTitle}>
@@ -51,7 +53,7 @@ export function FilteredVocabularyList({
                         key={item.id}
                         style={styles.card}
                         onPress={() =>
-                            router.push(
+                            pushPrepared(
                                 `/${item.jlptLevel}/vocabulary/${item.id}`
                             )
                         }

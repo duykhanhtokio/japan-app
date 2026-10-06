@@ -19,6 +19,8 @@ import {
 
 import {
     SafeAreaProvider,
+    useSafeAreaInsets,
+    useSafeAreaFrame,
 } from 'react-native-safe-area-context';
 
 import BottomNav from '@/components/app/BottomNav';
@@ -50,8 +52,10 @@ function ProfilePanel({children,style,kind='plain'}:PropsWithChildren<{style?:St
 }
 
 export default function ProfileScreen() {
+    const modalInsets = useSafeAreaInsets();
+    const modalFrame = useSafeAreaFrame();
     const [detailsVisible,setDetailsVisible]=useState(false);
-    const navigate=(href:Parameters<typeof router.push>[0])=>{setDetailsVisible(false);pushPrepared(href)};
+    const navigate=(href:Parameters<typeof router.push>[0])=>{void pushPrepared(href, () => setDetailsVisible(false));};
     const [economy,setEconomy]=useState<LearningEconomy|null>(null);
     useFocusEffect(useCallback(()=>{let active=true;void syncJlptQualification().then(value=>{if(active)setEconomy(value)});return()=>{active=false}},[]));
     const {
@@ -131,10 +135,10 @@ export default function ProfileScreen() {
 
                 <View style={styles.identity}>
                     <Text style={styles.identityTitle}>プロフィール</Text>
-                    <Image source={PROFILE_AVATAR} resizeMode="contain" style={styles.identityAvatar}/>
+                    <Image fadeDuration={0} source={PROFILE_AVATAR} resizeMode="contain" style={styles.identityAvatar}/>
                     <Text style={styles.identityName}>{profile.name?.trim() || 'プレイヤー'}</Text>
                     <Text style={styles.identityRank}>JLPT · {economy?.officialRank ?? 'N5'}</Text>
-                    <Image source={PROFILE_ICONS.work} resizeMode="contain" style={{width:40,height:40,marginTop:12}}/><Text style={styles.identityOccupation}> {occupation?.titleJa ?? 'その他'} / {occupation?.titleVi ?? 'Công việc khác'}</Text>
+                    <Image fadeDuration={0} source={PROFILE_ICONS.work} resizeMode="contain" style={{width:40,height:40,marginTop:12}}/><Text style={styles.identityOccupation}> {occupation?.titleJa ?? 'その他'} / {occupation?.titleVi ?? 'Công việc khác'}</Text>
                     <RoyalButton style={styles.identityEdit} onPress={()=>navigate('/register')}>
                         <Text style={styles.editText}>編集 · Chỉnh sửa</Text>
                     </RoyalButton>
@@ -144,7 +148,7 @@ export default function ProfileScreen() {
                 </View>
             </ScrollView>
             {detailsVisible && <Modal visible={detailsVisible} animationType="none" onRequestClose={()=>setDetailsVisible(false)}>
-                <SafeAreaProvider><RoyalPageBackground source={PROFILE_ART}><SafeAreaView style={styles.detailsPage}>
+                <SafeAreaProvider initialMetrics={{ insets: modalInsets, frame: modalFrame }}><RoyalPageBackground source={PROFILE_ART}><SafeAreaView style={styles.detailsPage}>
                     <View style={styles.detailsHeader}>
                         <Text style={styles.sectionTitle}>プロフィール · 詳細</Text>
                         <RoyalButton onPress={()=>setDetailsVisible(false)} style={styles.detailsClose}>
@@ -335,7 +339,7 @@ export default function ProfileScreen() {
                             styles.workHeader
                         }
                     >
-                        <Image source={PROFILE_ICONS.work} resizeMode="contain" style={{width:32,height:36}}/>
+                        <Image fadeDuration={0} source={PROFILE_ICONS.work} resizeMode="contain" style={{width:32,height:36}}/>
 
                         <View
                             style={
@@ -533,7 +537,7 @@ export default function ProfileScreen() {
                             </Text>
                         </View>
 
-                        <Image source={PROFILE_ICONS.lock} resizeMode="contain" style={{width:32,height:36}}/>
+                        <Image fadeDuration={0} source={PROFILE_ICONS.lock} resizeMode="contain" style={{width:32,height:36}}/>
                     </View>
                 </ProfilePanel>
 
@@ -771,7 +775,7 @@ export default function ProfileScreen() {
                             styles.certificateEmpty
                         }
                     >
-                        <Image source={PROFILE_ICONS.lock} resizeMode="contain" style={{width:32,height:36}}/>
+                        <Image fadeDuration={0} source={PROFILE_ICONS.lock} resizeMode="contain" style={{width:32,height:36}}/>
 
                         <Text
                             style={
@@ -985,7 +989,7 @@ function Achievement({
                 styles.achievementLocked,
             ]}
         >
-            <Image source={unlocked?icon:PROFILE_ICONS.lock} resizeMode="contain" style={{width:38,height:38,marginBottom:8}}/>
+            <Image fadeDuration={0} source={unlocked?icon:PROFILE_ICONS.lock} resizeMode="contain" style={{width:38,height:38,marginBottom:8}}/>
 
             <Text
                 style={

@@ -1,8 +1,10 @@
+import { backPrepared } from '@/components/ui/prepareSceneRoute';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
-import { router } from 'expo-router';
+
 import { useMemo, useState } from 'react';
 import { Alert, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
 
 const PEOPLE = [
@@ -24,7 +26,7 @@ export function WorkerProgressDashboard() {
     <RoyalPageBackground><View style={styles.screen}>
       <SafeAreaView style={styles.safe} edges={['top', 'left', 'right']}>
         <View style={styles.topBar}>
-          <RoyalBackButton onPress={() => router.back()} />
+          <RoyalBackButton onPress={() => backPrepared()} />
           <View style={styles.sharedBadge}><Text style={styles.sharedBadgeText}>企業・監理団体 共通データ</Text></View>
         </View>
         <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>

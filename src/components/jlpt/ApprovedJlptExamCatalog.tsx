@@ -1,9 +1,13 @@
-import { SafeAreaView } from 'react-native-safe-area-context';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
+
 import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import JlptStudyBackground from './JlptStudyBackground';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { BackHandler, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from 'expo-router';
+import { isArtworkSource } from '@/components/ui/prepareArtwork';
+import { navigateWithPreparedArtwork } from '@/components/ui/prepareSceneRoute';
+import { loadJlptTrialSession, type N1TrialSession } from '@/services/jlpt-trial-session-storage';
 
 import N1OfficialTrial from '@/components/jlpt/N1OfficialTrial';
 import { JlptExamHeader, JlptPaper } from '@/components/jlpt/ui/JlptExamUI';
@@ -12,7 +16,7 @@ import { APPROVED_N1_EXAMS, type ApprovedN1Exam } from '@/data/jlpt-official/app
 import { JLPT_EXAM } from '@/theme/jlpt-exam-design-system';
 import { loadJlptAttemptSummary, type JlptAttemptSummary } from '@/services/jlpt-exam-attempt-history';
 
-type Choice = { kind: 'structured'; exam: ApprovedN1Exam; label: string };
+type Choice = { kind: 'structured'; exam: ApprovedN1Exam; label: string; session?: N1TrialSession | null };
 
 export default function ApprovedJlptExamCatalog({ level, onBack }: { level: JlptLevel; onBack: () => void }) {
   const navigation = useNavigation();
@@ -53,7 +57,7 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
     else setSelected(null);
   }), [navigation, selected]);
 
-  return <JlptStudyBackground>{selected?.kind === 'structured' ? <SafeAreaView testID="jlpt-exam-safe-area" style={styles.examScreen}><N1OfficialTrial exam={selected.exam} onExit={() => { activeExamExit.current = null; setSelected(null); }} registerExit={(handler) => { activeExamExit.current = handler; }} /></SafeAreaView> : <SafeAreaView style={styles.screen}><JlptExamHeader title={`${level} · 模擬試験一覧`} subtitle="受験する試験を選択" transparent onBack={onBack} /><ScrollView contentContainerStyle={styles.content}><JlptPaper style={styles.catalogPaper}><Text style={styles.heading}>模擬試験一覧</Text><Text style={styles.description}>受験する試験を選んでください。</Text>{choices.map((choice) => {
+  return <JlptStudyBackground>{selected?.kind === 'structured' ? <SafeAreaView testID="jlpt-exam-safe-area" style={styles.examScreen}><N1OfficialTrial exam={selected.exam} initialSession={selected.session} onExit={() => { activeExamExit.current = null; setSelected(null); }} registerExit={(handler) => { activeExamExit.current = handler; }} /></SafeAreaView> : <SafeAreaView style={styles.screen}><JlptExamHeader title={`${level} · 模擬試験一覧`} subtitle="受験する試験を選択" transparent onBack={onBack} /><ScrollView contentContainerStyle={styles.content}><JlptPaper style={styles.catalogPaper}><Text style={styles.heading}>模擬試験一覧</Text><Text style={styles.description}>受験する試験を選んでください。</Text>{choices.map((choice) => {
     const count = choice.kind === 'structured' ? choice.exam.questions.length : undefined;
     const summary = summaries[choice.exam.id];
     const percent = summary?.latestTotal ? Math.round(summary.latestCorrect / summary.latestTotal * 100) : null;
@@ -61,7 +65,12 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
     const submittedDate = submittedAt && Number.isFinite(Date.parse(submittedAt))
       ? new Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }).format(new Date(submittedAt))
       : '—';
-    return <Pressable key={choice.exam.id} accessibilityRole="button" onPress={() => { setSelected(choice); }} style={({ pressed }) => [pressed && styles.pressed]}><RoyalContentPanel style={styles.examRow}>
+    return <Pressable key={choice.exam.id} accessibilityRole="button" onPress={() => {
+      let session: N1TrialSession | null = null;
+      void navigateWithPreparedArtwork(`/${level}/test`, () => setSelected({ ...choice, session }),
+        Object.values(choice.exam.visualOptions).flatMap(source => isArtworkSource(source) ? [source] : []),
+        async () => { session = await loadJlptTrialSession(choice.exam.storageKey); });
+    }} style={({ pressed }) => [pressed && styles.pressed]}><RoyalContentPanel style={styles.examRow}>
       <View style={styles.copy}>
         <Text style={styles.examTitle}>{choice.label}</Text>
         <Text style={styles.count}>全{count}問</Text>

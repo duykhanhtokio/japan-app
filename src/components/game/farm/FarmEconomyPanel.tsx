@@ -160,7 +160,7 @@ export default function FarmEconomyPanel({
                                 styles.goldText
                             }
                         >
-                            <Image source={require("../../../../assets/app/ui/royal-af/hud-coin-v1.png")} resizeMode="contain" style={{width:20,height:20}}/> {state.gold}
+                            <Image fadeDuration={0} source={require("../../../../assets/app/ui/royal-af/hud-coin-v1.png")} resizeMode="contain" style={{width:20,height:20}}/> {state.gold}
                         </Text>
                     </View>
 
@@ -260,7 +260,7 @@ export default function FarmEconomyPanel({
                                                             styles.price
                                                         }
                                                     >
-                                                        <Image source={require("../../../../assets/app/ui/royal-af/hud-coin-v1.png")} resizeMode="contain" style={{width:18,height:18}}/>{" "}
+                                                        <Image fadeDuration={0} source={require("../../../../assets/app/ui/royal-af/hud-coin-v1.png")} resizeMode="contain" style={{width:18,height:18}}/>{" "}
                                                         {isShop
                                                             ? item.shopPrice
                                                             : item.baseSellPrice}

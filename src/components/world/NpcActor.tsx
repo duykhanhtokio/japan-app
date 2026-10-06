@@ -65,12 +65,12 @@ export function NpcActor({idle,talk,finish,state}:Props){
   return <View pointerEvents="none" style={styles.root}>
     <View style={styles.shadow}/>
     {usesDedicatedPoses?<>
-      <Animated.Image source={idle} resizeMode="contain" style={[styles.layer,layerStyle,{opacity:idleOpacity}]}/>
-      <Animated.Image source={talk} resizeMode="contain" style={[styles.layer,layerStyle,{opacity:talkOpacity}]}/>
-      <Animated.Image source={finish} resizeMode="contain" style={[styles.layer,layerStyle,{opacity:finishOpacity}]}/>
+      <Animated.Image fadeDuration={0} source={idle} resizeMode="contain" style={[styles.layer,layerStyle,{opacity:idleOpacity}]}/>
+      <Animated.Image fadeDuration={0} source={talk} resizeMode="contain" style={[styles.layer,layerStyle,{opacity:talkOpacity}]}/>
+      <Animated.Image fadeDuration={0} source={finish} resizeMode="contain" style={[styles.layer,layerStyle,{opacity:finishOpacity}]}/>
     </>:<>
       <View style={[styles.lowerClip,{width:actorWidth,height:actorHeight*.46}]}>
-        <Animated.Image source={idle} resizeMode="contain" style={[styles.splitImage,layerStyle]}/>
+        <Animated.Image fadeDuration={0} source={idle} resizeMode="contain" style={[styles.splitImage,layerStyle]}/>
       </View>
       <Animated.View style={[
         styles.upperClip,
@@ -81,7 +81,7 @@ export function NpcActor({idle,talk,finish,state}:Props){
           {scaleY:bow.interpolate({inputRange:[0,1],outputRange:[1,.975]})},
         ]},
       ]}>
-        <Animated.Image source={idle} resizeMode="contain" style={[styles.splitImage,layerStyle,{bottom:-actorHeight*.46}]}/>
+        <Animated.Image fadeDuration={0} source={idle} resizeMode="contain" style={[styles.splitImage,layerStyle,{bottom:-actorHeight*.46}]}/>
       </Animated.View>
     </>}
     {!usesDedicatedTalkPose&&<Animated.View style={[

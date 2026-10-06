@@ -2,6 +2,7 @@ import JlptStudyBackground from './JlptStudyBackground';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AppState, Image, Pressable, ScrollView, StyleSheet, Text, View, type ImageSourcePropType, type LayoutChangeEvent, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
 import { setAudioModeAsync, useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
+import { Asset } from 'expo-asset';
 
 import {
   JlptActionButton,
@@ -30,20 +31,21 @@ import { loadJlptAttemptSummary, recordJlptAttempt } from '@/services/jlpt-exam-
 type Mode = 'exam' | 'practice';
 const CONTINUOUS_AUDIO_ID = '__full_listening_track__';
 const FONT_SCALES: readonly JlptFontScale[] = [0.9, 1, 1.1, 1.2, 1.3, 1.4];
-export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit: () => void; registerExit: (handler: (() => void) | null) => void; exam: ApprovedN1Exam }) {
+export default function N1OfficialTrial({ onExit, registerExit, exam, initialSession }: { onExit: () => void; registerExit: (handler: (() => void) | null) => void; exam: ApprovedN1Exam; initialSession?: N1TrialSession | null }) {
   const questions = exam.questions;
   const listening = questions.filter((question) => question.family === 'listening');
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
   const [started, setStarted] = useState(false);
-  const [sessionReady, setSessionReady] = useState(false);
+  const [sessionReady, setSessionReady] = useState(initialSession !== undefined);
   const [mode, setMode] = useState<Mode>('exam');
   const [fontScale, setFontScale] = useState<JlptFontScale>(1);
   const [navigatorVisible, setNavigatorVisible] = useState(false);
   const [submitConfirmationVisible, setSubmitConfirmationVisible] = useState(false);
   const [restartConfirmationVisible, setRestartConfirmationVisible] = useState(false);
-  const [pendingSession, setPendingSession] = useState<N1TrialSession | null>(null);
-  const [completedSession, setCompletedSession] = useState<N1TrialSession | null>(null);
+  const savedCompleted = initialSession?.started && (initialSession.status === 'submitted' || initialSession.status === 'reviewing' || initialSession.submitted);
+  const [pendingSession, setPendingSession] = useState<N1TrialSession | null>(initialSession?.started && !savedCompleted ? initialSession : null);
+  const [completedSession, setCompletedSession] = useState<N1TrialSession | null>(savedCompleted ? initialSession ?? null : null);
   const [reviewing, setReviewing] = useState(false);
   const [reviewFilter, setReviewFilter] = useState<'all' | 'wrong' | 'unanswered'>('all');
   const [submittedAt, setSubmittedAt] = useState<string | null>(null);
@@ -79,6 +81,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
   const answeredIds = useMemo(() => new Set(Object.keys(answers)), [answers]);
 
   useEffect(() => {
+    if (initialSession !== undefined) return;
     let active = true;
     void loadJlptTrialSession(exam.storageKey).then((session) => {
       if (!active || !session || !session.started) return;
@@ -86,7 +89,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
       else setPendingSession(session);
     }).catch((error) => { console.warn('Load JLPT session:', error); }).finally(() => { if (active) setSessionReady(true); });
     return () => { active = false; };
-  }, [exam.storageKey]);
+  }, [exam.storageKey, initialSession]);
 
   latestExit.current = () => { void exitExam(); };
   latestBackgroundPause.current = () => { if (audioPlaying) pauseListening(); };
@@ -420,14 +423,16 @@ export default function N1OfficialTrial({ onExit, registerExit, exam }: { onExit
 
 function QuestionBlock({ question, scale, selected, submitted, visualOptions, showProblemHeading = true, showInstruction = true, showPassage = true, onChoose, onLayout, onFocus }: { question: TrialQuestion; scale: number; selected?: string; submitted: boolean; visualOptions: Readonly<Record<number, ImageSourcePropType>>; showProblemHeading?: boolean; showInstruction?: boolean; showPassage?: boolean; onChoose: (questionId: string, optionId: string) => void; onLayout: (event: LayoutChangeEvent) => void; onFocus: () => void }) {
   const imageSource = question.visualOptionPage ? visualOptions[question.visualOptionPage] : undefined;
-  const imageSize = imageSource ? Image.resolveAssetSource(imageSource) : undefined;
+  const imageSize = imageSource ? typeof Image.resolveAssetSource === 'function' ? Image.resolveAssetSource(imageSource)
+    : typeof imageSource === 'number' ? Asset.fromModule(imageSource)
+      : Array.isArray(imageSource) ? imageSource[0] : imageSource : undefined;
   return <View onLayout={onLayout} style={styles.questionBlock}>
     {showProblemHeading ? <JlptSectionHeading problem={problemLabel(question)} detail={familyLabel(question)} /> : null}
     {showInstruction ? <JlptInstruction scale={scale}>{question.instructionJa}</JlptInstruction> : null}
     {showPassage && question.passageJa ? <JlptReadingPassage scale={scale}>{question.passageJa}</JlptReadingPassage> : null}
     <Text style={styles.questionNumber}>{displayQuestionNumber(question)}</Text>
     <JlptQuestionText scale={scale} style={question.family === 'sentenceComposition' ? styles.starQuestion : undefined}>{question.promptJa}</JlptQuestionText>
-    {imageSource ? <Image source={imageSource} resizeMode="contain" style={[styles.visualOptions, question.visualOptionPage && question.visualOptionPage >= 101 && imageSize?.width && imageSize?.height ? { aspectRatio: imageSize.width / imageSize.height } : question.visualOptionPage === 12 ? styles.visualOptionsPage12 : styles.visualOptionsPage13]} accessibilityLabel={`${question.label}の選択肢図`} /> : null}
+    {imageSource ? <Image fadeDuration={0} source={imageSource} resizeMode="contain" style={[styles.visualOptions, question.visualOptionPage && question.visualOptionPage >= 101 && imageSize?.width && imageSize?.height ? { aspectRatio: imageSize.width / imageSize.height } : question.visualOptionPage === 12 ? styles.visualOptionsPage12 : styles.visualOptionsPage13]} accessibilityLabel={`${question.label}の選択肢図`} /> : null}
     {question.family === 'sentenceComposition' ? <Text style={styles.starNote}>★ に入るものを一つ選んでください。</Text> : null}
     <View accessibilityRole="radiogroup" onTouchStart={onFocus} style={styles.options}>
       {question.options.map((option) => <JlptAnswerOption key={option.id} number={option.id} selected={selected === option.id} disabled={submitted} scale={scale} onPress={() => { onFocus(); onChoose(question.id, option.id); }}>{option.textJa}</JlptAnswerOption>)}

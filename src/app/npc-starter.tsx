@@ -1,8 +1,9 @@
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import { replacePrepared } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { useState } from 'react';
-import { FlatList, Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
 import { npcCardById } from '@/components/world/npc-card-assets';
 import { npcForCategory, sceneForCategory } from '@/components/world/life-assets';
 import { NPC_CATEGORIES, NPC_TEST_UNLOCK_ALL, type NpcCategory } from '@/data/npc-progression';
@@ -23,9 +24,9 @@ export default function NpcStarterScreen(){
 
 function NpcStarterCard({item,unlocked}:{item:NpcCategory;unlocked:boolean}){
  return <View accessibilityLabel={`${item.ja} ${unlocked?'利用可能':'ロック中'}`} style={[s.miniCard,unlocked&&s.unlocked]}>
-  {unlocked?<Image source={npcCardById[item.id]} resizeMode="cover" style={s.completeCard}/>:<ImageBackground source={sceneForCategory(item.category)} resizeMode="cover" style={s.lockedScene}>
-   <View style={s.characterWindow}><Image source={npcForCategory(item.category)} resizeMode="contain" style={s.lockedNpc}/><Text style={s.question}>?</Text></View>
-   <Image source={cardFrame} resizeMode="stretch" style={s.frame}/><View style={s.lockedGlass}/><RoyalLockCrest style={s.lockCrest}/>
+  {unlocked?<Image fadeDuration={0} source={npcCardById[item.id]} resizeMode="cover" style={s.completeCard}/>:<ImageBackground source={sceneForCategory(item.category)} resizeMode="cover" style={s.lockedScene}>
+   <View style={s.characterWindow}><Image fadeDuration={0} source={npcForCategory(item.category)} resizeMode="contain" style={s.lockedNpc}/><Text style={s.question}>?</Text></View>
+   <Image fadeDuration={0} source={cardFrame} resizeMode="stretch" style={s.frame}/><View style={s.lockedGlass}/><RoyalLockCrest style={s.lockCrest}/>
   </ImageBackground>}
   {unlocked&&<RoyalCapsule label="利用可能" style={s.startPill}/>}
  </View>

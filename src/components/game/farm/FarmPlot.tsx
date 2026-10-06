@@ -355,7 +355,7 @@ export default function FarmPlot({
             </View>
 
             {locked ? (
-                <Image source={LOCK_ICON} resizeMode="contain" style={{ width: 32, height: 32 }} />
+                <Image fadeDuration={0} source={LOCK_ICON} resizeMode="contain" style={{ width: 32, height: 32 }} />
             ) : visual.icon === '🌾' || visual.icon === '🌱' ? (
                 <FarmAreaIcon name="rice" size={37} />
             ) : (

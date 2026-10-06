@@ -1,8 +1,9 @@
-import { pushPrepared } from '@/components/ui/prepareSceneRoute';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
+import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
-import { router } from 'expo-router';
+
 import { StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 import { SakuraPetalField } from '@/components/ui/SakuraPetalField';
 
 import { RoyalBackButton, RoyalButton, RoyalTitlePanel, ROYAL, ROYAL_FONT, ROYAL_LAYOUT, ROYAL_PLACEMENT, ROYAL_TEXT_FIT, useRoyalPositioning } from '@/components/ui/RoyalSurface';
@@ -56,11 +57,11 @@ export default function PortalSelectionScreen() {
     : royalPosition.contentWidth;
 
   return (
-    <ImageBackground source={require('../../assets/app/registration/registration-bg.jpg')} resizeMode="cover" style={styles.background}>
+    <ImageBackground inheritBackdrop source={require('../../assets/app/registration/registration-bg.jpg')} resizeMode="cover" style={styles.background}>
       <SakuraPetalField />
       <SafeAreaView style={styles.safeArea}>
         <View style={[styles.content, { width: frameWidth }]}>
-          <View style={styles.topRow}><RoyalBackButton onPress={() => router.back()} /></View>
+          <View style={styles.topRow}><RoyalBackButton onPress={() => backPrepared()} /></View>
           <RoyalTitlePanel style={[styles.heading,royalPosition.fullWidthStyle]}>
             <Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={styles.title}>利用目的を選択</Text>
             <Text maxFontSizeMultiplier={1} numberOfLines={2} style={styles.titleEn}>Choose how you will use the app</Text>

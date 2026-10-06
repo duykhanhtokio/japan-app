@@ -1,3 +1,4 @@
+import { backPrepared } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 import {
@@ -10,9 +11,7 @@ import {
     useWindowDimensions,
 } from 'react-native';
 
-import {
-    router,
-} from 'expo-router';
+
 
 import {
     useSafeAreaInsets,
@@ -43,7 +42,7 @@ export default function SpecifiedSkillsScreen() {
                     styles.header
                 }
             >
-                <RoyalBackButton onPress={() => router.back()} />
+                <RoyalBackButton onPress={() => backPrepared()} />
 
                 <View>
                     <Text
@@ -79,7 +78,7 @@ export default function SpecifiedSkillsScreen() {
                             }
                         >
                             <RoyalPaperPanel style={styles.cardArtwork}>
-                            <Image
+                            <Image fadeDuration={0}
                                 source={icon}
                                 resizeMode="cover"
                                 style={

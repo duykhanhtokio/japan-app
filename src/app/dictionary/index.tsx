@@ -1,4 +1,5 @@
-import { pushPrepared } from '@/components/ui/prepareSceneRoute';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
+import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { TextInput } from '@/components/app/LocalizedTextInput';
 import {
@@ -9,7 +10,7 @@ import {
     getJmdictMetadata,
     JmdictEntry,
     searchJmdict } from '@/services/jmdict';
-import { router } from 'expo-router';
+
 import { useSQLiteContext } from 'expo-sqlite';
 import { useCallback,
     useEffect,
@@ -21,7 +22,7 @@ import { ActivityIndicator,
     StyleSheet,
     View,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 const PAGE_SIZE = 50;
 
@@ -60,7 +61,7 @@ function DictionaryContent() {
     return (
         <RoyalPageBackground><SafeAreaView style={s.container}>
             <View style={s.header}>
-                <RoyalBackButton onPress={() => router.back()} />
+                <RoyalBackButton onPress={() => backPrepared()} />
                 <Text style={s.title}>日本語辞書</Text>
                 <Text style={s.subtitle}>Tra cứu toàn bộ {Number(metadata.entryCount || 0).toLocaleString()} mục JMdict</Text>
                 <TextInput

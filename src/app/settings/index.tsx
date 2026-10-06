@@ -1,7 +1,6 @@
+import { backPrepared } from '@/components/ui/prepareSceneRoute';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
-import {
-    router,
-} from 'expo-router';
+
 
 import {
     Alert,
@@ -82,7 +81,7 @@ export default function SettingsScreen() {
                     styles.header
                 }
             >
-                <RoyalBackButton onPress={() => router.back()} />
+                <RoyalBackButton onPress={() => backPrepared()} />
 
                 <Text
                     style={

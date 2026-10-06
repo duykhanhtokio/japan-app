@@ -1,8 +1,10 @@
+import { backPrepared } from '@/components/ui/prepareSceneRoute';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
-import { router } from 'expo-router';
+
 import { useState } from 'react';
 import { Alert, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 import { useRoyalPositioning } from '@/components/ui/RoyalPositioning';
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
 
@@ -22,7 +24,7 @@ export function N5Curriculum() {
 
   return (
     <RoyalPageBackground><View style={styles.screen}><SafeAreaView style={styles.safe} edges={['top', 'left', 'right']}>
-      <View style={styles.topBar}><RoyalBackButton onPress={() => router.back()} /><Text style={styles.topTitle}>N5 カリキュラム</Text><View style={styles.levelBadge}><Text style={styles.levelText}>N5</Text></View></View>
+      <View style={styles.topBar}><RoyalBackButton onPress={() => backPrepared()} /><Text style={styles.topTitle}>N5 カリキュラム</Text><View style={styles.levelBadge}><Text style={styles.levelText}>N5</Text></View></View>
       <ScrollView contentContainerStyle={[styles.content, wide && styles.contentWide]} showsVerticalScrollIndicator={false}>
         <View style={styles.summary}>
           <View style={styles.summaryTop}><View><Text style={styles.eyebrow}>4か月標準コース</Text><Text style={styles.title}>N5 修了までの学習計画</Text></View><View style={styles.totalHours}><Text style={styles.totalHoursValue}>160</Text><Text style={styles.totalHoursLabel}>総学習時間</Text></View></View>

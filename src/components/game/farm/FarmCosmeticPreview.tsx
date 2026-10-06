@@ -192,7 +192,7 @@ export default function FarmCosmeticPreview({
             >
                 <Stage {...(compact?{style:{width:'100%',height:sceneHeight,alignItems:'center',justifyContent:'center',transform:[{scale:110/sceneHeight}]}}:{})}>
                 {effectAsset && (
-                    <Image
+                    <Image fadeDuration={0}
                         source={
                             effectAsset
                         }
@@ -204,7 +204,7 @@ export default function FarmCosmeticPreview({
                 )}
 
                 {isAnimal && (
-                    <Image
+                    <Image fadeDuration={0}
                         source={
                             avatarAsset ??
                             (
@@ -229,7 +229,7 @@ export default function FarmCosmeticPreview({
 
                 {isAnimal &&
                     faceAsset && (
-                    <Image
+                    <Image fadeDuration={0}
                         source={
                             faceAsset
                         }
@@ -243,7 +243,7 @@ export default function FarmCosmeticPreview({
 
                 {isAnimal &&
                     headAsset && (
-                    <Image
+                    <Image fadeDuration={0}
                         source={
                             headAsset
                         }
@@ -260,7 +260,7 @@ export default function FarmCosmeticPreview({
                 )}
 
                 {decorationAsset && (
-                    <Image
+                    <Image fadeDuration={0}
                         source={
                             decorationAsset
                         }

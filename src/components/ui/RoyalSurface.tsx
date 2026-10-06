@@ -108,23 +108,23 @@ export function RoyalMapPill({primary,secondary,color,style}: {primary:string;se
 }
 
 export function RoyalLockCrest({style}:{style?:StyleProp<ViewStyle>}) {
-  return <View pointerEvents="none" style={[s.lockCrest,style]}><Image source={LOCK_CREST} resizeMode="contain" style={s.fillImage}/></View>;
+  return <View pointerEvents="none" style={[s.lockCrest,style]}><Image fadeDuration={0} source={LOCK_CREST} resizeMode="contain" style={s.fillImage}/></View>;
 }
 
 export function RoyalChevron({style,direction='right',variant='navigation'}:{style?:StyleProp<ViewStyle>;direction?:'right'|'down';variant?:'navigation'|'selector'|'card'}) {
-  return <View pointerEvents="none" style={[s.chevronBox,variant==='selector'&&s.chevronSelector,variant==='card'&&s.chevronCard,style]}><Image source={CHEVRON} resizeMode="contain" style={[s.fillImage,direction==='down'&&s.chevronDown]}/></View>;
+  return <View pointerEvents="none" style={[s.chevronBox,variant==='selector'&&s.chevronSelector,variant==='card'&&s.chevronCard,style]}><Image fadeDuration={0} source={CHEVRON} resizeMode="contain" style={[s.fillImage,direction==='down'&&s.chevronDown]}/></View>;
 }
 
 export function RoyalHintButton({onPress,style,color='gold'}:{onPress:()=>void;style?:StyleProp<ViewStyle>;color?:'gold'|'red'}) {
-  return <Pressable accessibilityRole="button" accessibilityLabel="ヒント" hitSlop={8} onPress={onPress} style={({pressed})=>[s.hintAsset,style,pressed&&s.hintPressed]}><Image source={color==='red'?RED_HINT_LANTERN:HINT_LANTERN} resizeMode="contain" style={s.fillImage}/></Pressable>;
+  return <Pressable accessibilityRole="button" accessibilityLabel="ヒント" hitSlop={8} onPress={onPress} style={({pressed})=>[s.hintAsset,style,pressed&&s.hintPressed]}><Image fadeDuration={0} source={color==='red'?RED_HINT_LANTERN:HINT_LANTERN} resizeMode="contain" style={s.fillImage}/></Pressable>;
 }
 
 export function RoyalSelectionMark({style}:{style?:StyleProp<ViewStyle>}) {
-  return <View pointerEvents="none" style={[s.selectionMark,style]}><Image source={CHECKMARK} resizeMode="contain" style={s.fillImage}/></View>;
+  return <View pointerEvents="none" style={[s.selectionMark,style]}><Image fadeDuration={0} source={CHECKMARK} resizeMode="contain" style={s.fillImage}/></View>;
 }
 
 export function RoyalCloseButton({onPress,style}:{onPress:()=>void;style?:StyleProp<ViewStyle>}) {
-  return <Pressable accessibilityRole="button" accessibilityLabel="閉じる" onPress={onPress} style={({pressed})=>[s.closeButton,style,pressed&&s.closePressed]}><Image source={CLOSE_X} resizeMode="contain" style={s.fillImage}/></Pressable>;
+  return <Pressable accessibilityRole="button" accessibilityLabel="閉じる" onPress={onPress} style={({pressed})=>[s.closeButton,style,pressed&&s.closePressed]}><Image fadeDuration={0} source={CLOSE_X} resizeMode="contain" style={s.fillImage}/></Pressable>;
 }
 
 export function RoyalSelectionPanel({children,style}:PropsWithChildren<{style?:StyleProp<ViewStyle>}>) {
@@ -140,16 +140,16 @@ export function RoyalOptionRow({children,onPress,style,contentStyle,sizingGroup}
 
 export function RoyalLocationCard({source,children,style}:PropsWithChildren<{source:ImageSourcePropType;style?:StyleProp<ViewStyle>}>) {
   return <View style={[s.locationCard,style]}>
-    <Image source={source} resizeMode="cover" style={s.locationCardScene}/>
-    <Image source={LOCATION_CARD_FRAME} resizeMode="stretch" style={s.locationCardFrame}/>
+    <Image fadeDuration={0} source={source} resizeMode="cover" style={s.locationCardScene}/>
+    <Image fadeDuration={0} source={LOCATION_CARD_FRAME} resizeMode="stretch" style={s.locationCardFrame}/>
     <View style={StyleSheet.absoluteFill}>{children}</View>
   </View>;
 }
 
 export function RoyalPlaceRow({source,children,style}:PropsWithChildren<{source?:ImageSourcePropType;style?:StyleProp<ViewStyle>}>) {
   return <View style={[s.placeRow,style]}>
-    {!!source&&<Image source={source} resizeMode="cover" style={s.placeRowScene}/>} 
-    <Image source={PLACE_ROW_FRAME} resizeMode="stretch" style={s.placeRowFrame}/>
+    {!!source&&<Image fadeDuration={0} source={source} resizeMode="cover" style={s.placeRowScene}/>}
+    <Image fadeDuration={0} source={PLACE_ROW_FRAME} resizeMode="stretch" style={s.placeRowFrame}/>
     <View style={StyleSheet.absoluteFill}>{children}</View>
   </View>;
 }

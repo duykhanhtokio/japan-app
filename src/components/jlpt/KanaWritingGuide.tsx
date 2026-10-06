@@ -60,7 +60,7 @@ export default function KanaWritingGuide({ kana, learned, onClose, onToggleLearn
         Speech.speak(kana!, { language: 'ja-JP', rate: 0.62 });
     }
 
-    return <Modal visible animationType="fade" transparent onRequestClose={onClose}>
+    return <Modal visible animationType="none" transparent onRequestClose={onClose}>
         <Pressable style={styles.shade} onPress={onClose}>
             <Pressable style={styles.sheet} onPress={(event) => event.stopPropagation()}>
                 <View style={styles.header}>
@@ -68,7 +68,7 @@ export default function KanaWritingGuide({ kana, learned, onClose, onToggleLearn
                 </View>
 
                 <View style={styles.guideImage}>
-                    {strokeAsset ? <Image source={strokeAsset} resizeMode="contain" style={styles.strokeImage}/> : <Text style={styles.fallbackKana}>{kana}</Text>}
+                    {strokeAsset ? <Image fadeDuration={0} source={strokeAsset} resizeMode="contain" style={styles.strokeImage}/> : <Text style={styles.fallbackKana}>{kana}</Text>}
                 </View>
 
                 <Text style={styles.instruction}>数字の順に、●の太い始点から細い終点へ書いてください。</Text>

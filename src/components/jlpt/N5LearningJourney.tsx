@@ -1,3 +1,4 @@
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import { Text } from '@/components/app/LocalizedText';
 import { useAppLanguage } from '@/context/LanguageContext';
@@ -24,7 +25,7 @@ import {
     StyleSheet,
     View,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 import { useRoyalPositioning } from '@/components/ui/RoyalPositioning';
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
 
@@ -375,7 +376,7 @@ export default function N5LearningJourney({ mode, onBack, onOpenCharacters }: Pr
             </ScrollView>
         </SafeAreaView>
 
-        {reviewOpen && <Modal visible animationType="slide" transparent onRequestClose={() => setReviewOpen(false)}>
+        {reviewOpen && <Modal visible animationType="none" transparent onRequestClose={() => setReviewOpen(false)}>
             <View style={styles.modalShade}><View style={styles.modalSheet}>
                 <View style={styles.modalHeader}><View><Text style={styles.modalTitle}>{copy.reviewByDay}</Text><Text style={styles.modalSubtitle}>{unlearned.length} {copy.unlearned}</Text></View><Pressable onPress={() => setReviewOpen(false)} style={styles.closeButton}><Text style={styles.closeText}>×</Text></Pressable></View>
                 <ScrollView contentContainerStyle={styles.modalContent}>{weekDays.map((group) => {

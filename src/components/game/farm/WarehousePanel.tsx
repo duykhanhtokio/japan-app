@@ -458,7 +458,7 @@ function ShopPreview() {
                                 styles.price
                             }
                         >
-                            <Image source={require('../../../../assets/app/ui/royal-af/hud-coin-v1.png')} resizeMode="contain" style={{width:20,height:20}} />
+                            <Image fadeDuration={0} source={require('../../../../assets/app/ui/royal-af/hud-coin-v1.png')} resizeMode="contain" style={{width:20,height:20}} />
                             <Text
                                 style={
                                     styles.priceText

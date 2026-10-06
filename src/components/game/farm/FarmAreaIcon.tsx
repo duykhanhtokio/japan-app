@@ -11,5 +11,5 @@ const ICONS = {
 };
 
 export default function FarmAreaIcon({ name, size = 36, style }: { name: FarmAreaIconName; size?: number; style?: StyleProp<ImageStyle> }) {
-    return <Image source={ICONS[name]} resizeMode="contain" style={[{ width: size, height: size }, style]} />;
+    return <Image fadeDuration={0} source={ICONS[name]} resizeMode="contain" style={[{ width: size, height: size }, style]} />;
 }

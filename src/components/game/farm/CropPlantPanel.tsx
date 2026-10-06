@@ -211,7 +211,7 @@ export default function CropPlantPanel({
                                 styles.goldBadge
                             }
                         >
-                            <Image source={COIN_ICON} resizeMode="contain" style={styles.goldIcon} />
+                            <Image fadeDuration={0} source={COIN_ICON} resizeMode="contain" style={styles.goldIcon} />
                             <Text
                                 style={
                                     styles.goldText
@@ -409,7 +409,7 @@ export default function CropPlantPanel({
                                         >
                                             {locked ? (
                                                 <>
-                                                    <Image source={LOCK_ICON} resizeMode="contain" style={{width:26,height:26}} />
+                                                    <Image fadeDuration={0} source={LOCK_ICON} resizeMode="contain" style={{width:26,height:26}} />
 
                                                     <Text
                                                         style={
@@ -432,7 +432,7 @@ export default function CropPlantPanel({
                                                 </Text>
                                             ) : (
                                                 <>
-                                                    <Image source={COIN_ICON} resizeMode="contain" style={{width:18,height:18}} />
+                                                    <Image fadeDuration={0} source={COIN_ICON} resizeMode="contain" style={{width:18,height:18}} />
                                                     <Text
                                                         style={[
                                                             styles.price,

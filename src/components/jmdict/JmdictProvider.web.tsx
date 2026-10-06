@@ -1,6 +1,13 @@
+import { SQLiteProvider } from 'expo-sqlite';
 import type { PropsWithChildren } from 'react';
 
-/** Dictionary database is native-only; web previews render without SQLite. */
 export default function JmdictProvider({ children }: PropsWithChildren) {
-    return children;
+    return (
+        <SQLiteProvider
+            databaseName="jmdict.db"
+            assetSource={{ assetId: require('../../../assets/jmdict/jmdict.db') }}
+        >
+            {children}
+        </SQLiteProvider>
+    );
 }

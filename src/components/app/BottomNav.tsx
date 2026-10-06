@@ -28,17 +28,17 @@ export default function BottomNav({active,variant='approved'}:{active:BottomNavT
   const barHeight=navHeight;
   const imageTop=(navHeight-barHeight)/2-navHeight*195/336;
   return <View style={[styles.approvedContainer,{height:navHeight}]}>
-   <View pointerEvents="none" style={[styles.approvedArtwork,{width:'100%',height:imageHeight,top:imageTop}]}><Image source={NAV_COMPOSITE_NAVY} resizeMode="stretch" style={styles.approvedArtworkImage}/></View>
+   <View pointerEvents="none" style={[styles.approvedArtwork,{width:'100%',height:imageHeight,top:imageTop}]}><Image fadeDuration={0} source={NAV_COMPOSITE_NAVY} resizeMode="stretch" style={styles.approvedArtworkImage}/></View>
    {TABS.map((tab,index)=><View key={tab.id} style={{position:'absolute',top:0,bottom:0,left:`${[105,590,1085,1575][index]/2172*100}%`,width:`${[485,495,490,495][index]/2172*100}%`}}><ApprovedTab tab={tab} active={active===tab.id} scale={scale}/></View>)}
   </View>;
  }
- return <View style={[styles.container,variant==='study'&&styles.studyContainer]}>{TABS.map(tab=><Pressable key={tab.id} accessibilityRole="button" accessibilityLabel={tab.label} accessibilityState={{selected:active===tab.id}} onPress={()=>{if(active!==tab.id)replacePrepared(tab.route)}} style={({pressed})=>[styles.item,variant==='study'&&styles.studyItem,pressed&&styles.pressed]}>{variant==='study'?<View style={[styles.studyFrame,active===tab.id&&styles.studyFrameActive]}><Image source={tab.icon} resizeMode="contain" style={styles.studyIcon}/><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.85} style={[styles.studyLabel,active===tab.id&&styles.studyLabelActive]}>{tab.label}</Text></View>:<ImageBackground source={active===tab.id?NAV_IVORY:NAV_NAVY} resizeMode="stretch" style={styles.frame}><Image source={tab.icon} resizeMode="contain" style={styles.icon}/><Text numberOfLines={1} adjustsFontSizeToFit maxFontSizeMultiplier={1} minimumFontScale={.7} style={[styles.label,active===tab.id&&styles.labelActive]}>{tab.label}</Text></ImageBackground>}</Pressable>)}</View>;
+ return <View style={[styles.container,variant==='study'&&styles.studyContainer]}>{TABS.map(tab=><Pressable key={tab.id} accessibilityRole="button" accessibilityLabel={tab.label} accessibilityState={{selected:active===tab.id}} onPress={()=>{if(active!==tab.id)replacePrepared(tab.route)}} style={({pressed})=>[styles.item,variant==='study'&&styles.studyItem,pressed&&styles.pressed]}>{variant==='study'?<View style={[styles.studyFrame,active===tab.id&&styles.studyFrameActive]}><Image fadeDuration={0} source={tab.icon} resizeMode="contain" style={styles.studyIcon}/><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.85} style={[styles.studyLabel,active===tab.id&&styles.studyLabelActive]}>{tab.label}</Text></View>:<ImageBackground source={active===tab.id?NAV_IVORY:NAV_NAVY} resizeMode="stretch" style={styles.frame}><Image fadeDuration={0} source={tab.icon} resizeMode="contain" style={styles.icon}/><Text numberOfLines={1} adjustsFontSizeToFit maxFontSizeMultiplier={1} minimumFontScale={.7} style={[styles.label,active===tab.id&&styles.labelActive]}>{tab.label}</Text></ImageBackground>}</Pressable>)}</View>;
 }
 function ApprovedTab({tab,active,scale}:{tab:typeof TABS[number];active:boolean;scale:number}){
  return <View style={styles.approvedItem}>
   <Pressable accessibilityRole="button" accessibilityLabel={tab.label} accessibilityState={{selected:active}} onPress={()=>{if(!active)replacePrepared(tab.route)}} style={({pressed})=>[styles.approvedTouch,pressed&&{opacity:.9}]}>
 
-   <Image source={tab.icon} resizeMode="contain" style={[styles.approvedIcon,{width:27*scale,height:27*scale}]}/>
+   <Image fadeDuration={0} source={tab.icon} resizeMode="contain" style={[styles.approvedIcon,{width:27*scale,height:27*scale}]}/>
    <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.8} maxFontSizeMultiplier={1} style={[styles.approvedLabel,{fontSize:12*scale,lineHeight:17*scale},active&&styles.approvedLabelActive]}>{tab.label}</Text>
   </Pressable>
  </View>;

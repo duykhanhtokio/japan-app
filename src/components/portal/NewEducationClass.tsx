@@ -1,8 +1,10 @@
+import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
-import { router } from 'expo-router';
+
 import { useMemo, useState } from 'react';
 import { Alert, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 import { ALL_STUDENTS, N5_LESSONS, N5_MATERIAL_LIBRARY } from '@/data/education-portal';
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
@@ -24,7 +26,7 @@ export function NewEducationClass() {
 
   return (
     <RoyalPageBackground><View style={styles.screen}><SafeAreaView style={styles.safe} edges={['top', 'left', 'right']}>
-      <View style={styles.topBar}><RoyalBackButton onPress={() => router.back()} /><Text style={styles.title}>新しいクラスを作成</Text><View style={styles.stepBadge}><Text style={styles.stepText}>設定</Text></View></View>
+      <View style={styles.topBar}><RoyalBackButton onPress={() => backPrepared()} /><Text style={styles.title}>新しいクラスを作成</Text><View style={styles.stepBadge}><Text style={styles.stepText}>設定</Text></View></View>
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
         <View style={styles.notice}><Text style={styles.noticeTitle}>必要な項目にチェックを入れてください</Text><Text style={styles.noticeText}>選択した教材はクラスの共同ライブラリとホワイトボードへ自動的に準備されます。</Text></View>
         <View style={styles.section}><Text style={styles.number}>1</Text><View style={styles.sectionCopy}><Text style={styles.sectionTitle}>学習レベル</Text><Text style={styles.sectionSub}>クラスの目標レベルを一つ選択</Text></View></View>
@@ -40,7 +42,7 @@ export function NewEducationClass() {
         {!studentQuery.trim() ? <Text style={styles.searchGuide}>氏名を入力すると、生年月日・性別・国籍を含む候補が表示されます。</Text> : null}
         <View style={styles.studentList}>{studentResults.map((student) => <Pressable key={student.id} onPress={() => toggle(student.id, students, setStudents)} style={[styles.student, students.includes(student.id) && styles.studentSelected]}><View style={[styles.avatar, students.includes(student.id) && styles.avatarSelected]}><Text style={[styles.avatarText, students.includes(student.id) && styles.avatarTextSelected]}>{student.name.slice(0, 1)}</Text></View><View style={styles.studentCopy}><Text style={styles.studentName}>{student.name}</Text><Text style={styles.studentDetails}>生年月日 {student.birth}　・　{student.gender}　・　{student.nationality}</Text><Text style={styles.studentId}>学生ID：{student.id.toUpperCase()}</Text></View><View style={[styles.checkbox, students.includes(student.id) && styles.checkboxSelected]}><Text style={styles.check}>{students.includes(student.id) ? '✓' : ''}</Text></View></Pressable>)}</View>
         <View style={styles.summary}><Text style={styles.summaryTitle}>作成内容</Text><Text style={styles.summaryText}>{level}・{lesson}　／　教材 {materials.length}点　／　学生 {students.length}名</Text><Text style={styles.summaryText}>オンライン教室・共同ホワイトボード・自動出席を有効化</Text></View>
-        <Pressable onPress={() => Alert.alert('クラスを作成しました', `${level} ${lesson}\n学生 ${students.length}名・教材 ${materials.length}点`, [{ text: '教室を開く', onPress: () => router.push('/portal/education/classroom') }])} style={({ pressed }) => [styles.createButton, pressed && styles.buttonPressed]}><Text style={styles.createButtonText}>✓　この内容でクラスを作成</Text></Pressable>
+        <Pressable onPress={() => Alert.alert('クラスを作成しました', `${level} ${lesson}\n学生 ${students.length}名・教材 ${materials.length}点`, [{ text: '教室を開く', onPress: () => pushPrepared('/portal/education/classroom') }])} style={({ pressed }) => [styles.createButton, pressed && styles.buttonPressed]}><Text style={styles.createButtonText}>✓　この内容でクラスを作成</Text></Pressable>
       </ScrollView>
     </SafeAreaView></View></RoyalPageBackground>
   );

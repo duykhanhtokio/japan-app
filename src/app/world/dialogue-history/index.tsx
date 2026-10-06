@@ -1,7 +1,8 @@
-import { pushPrepared } from '@/components/ui/prepareSceneRoute';
-import { useFocusEffect, router } from 'expo-router';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
+import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
+import { useFocusEffect } from 'expo-router';
 import { useCallback, useState } from 'react';
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { RoyalBackButton, RoyalButton, ROYAL, ROYAL_FONT } from '@/components/ui/RoyalSurface';
 import { categoryLabelJa, displayLocationNameJa } from '@/components/world/world-ja';
 import { getLifeLocationById, getLifeScenarioById } from '@/services/life-content-repository';
@@ -25,7 +26,7 @@ export default function DialogueHistory() {
     }, []));
     const categories = [...new Set(items.map(x => x.category))];
     return <SafeAreaView style={s.screen}>
-        <View style={s.header}><RoyalBackButton onPress={() => router.back()} /><Text style={s.title}>学習した会話</Text></View>
+        <View style={s.header}><RoyalBackButton onPress={() => backPrepared()} /><Text style={s.title}>学習した会話</Text></View>
         <ScrollView contentContainerStyle={s.content}>
             {!items.length && <Text style={s.empty}>会話を終えると、ここで内容を見直せます。</Text>}
             {categories.map(category => <View key={category} style={s.group}>

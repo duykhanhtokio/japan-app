@@ -1,6 +1,7 @@
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
-import { replacePrepared } from '@/components/ui/prepareSceneRoute';
+import { replacePrepared, prepareSceneRoute } from '@/components/ui/prepareSceneRoute';
 import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
+import { usePreparedSceneBackdrop } from '@/components/ui/AppBackdrop';
 import { prepareArtwork } from '@/components/ui/prepareArtwork';
 import { useFocusEffect } from 'expo-router';
 
@@ -18,6 +19,8 @@ import type {
 } from '@/game/core/game-types';
 import {
     Alert,
+    BackHandler,
+    useWindowDimensions,
     Pressable,
     StyleSheet,
     Text,
@@ -26,6 +29,7 @@ import {
 
 import {
     useCallback,
+    useEffect,
     useMemo,
     useRef,
     useState,
@@ -198,6 +202,26 @@ export default function FarmGameScreen() {
         useState<FarmAreaId>(
             'vegetable'
         );
+
+    const viewport = useWindowDimensions();
+    const landscape = viewport.width > viewport.height;
+    const mapArtwork = landscape
+        ? viewport.width / viewport.height < 1.55
+            ? require('../../../assets/game/farm/background/farm_map_tablet_landscape_v1.png')
+            : require('../../../assets/game/farm/background/farm_map_landscape_v1.png')
+        : require('../../../assets/game/farm/background/farm_map_master.png');
+    const sceneArtwork = showFarmMap ? mapArtwork : selectedArea === 'restaurant'
+        ? require('../../../assets/app/backgrounds/study-light.png')
+        : AREA_ARTWORK[selectedArea][landscape ? 1 : 0];
+    usePreparedSceneBackdrop('/game', sceneArtwork, !showFarmMap && selectedArea === 'restaurant' ? 40 : 0);
+    useEffect(() => {
+        const subscription = BackHandler.addEventListener('hardwareBackPress', () => {
+            if (showFarmMap) return false;
+            void handleReturnToFarmMap();
+            return true;
+        });
+        return () => subscription.remove();
+    });
 
     /*
      * =====================================================
@@ -1345,8 +1369,11 @@ export default function FarmGameScreen() {
         );
     }
 
-    function handleReturnToFarmMap() {
-        transitionToken.current += 1;
+    async function handleReturnToFarmMap() {
+        const token = ++transitionToken.current;
+        try { await prepareSceneRoute('/game'); }
+        catch (error) { console.warn('Farm map artwork failed to load', error); return; }
+        if (token !== transitionToken.current) return;
         setShowFarmMap(
             true
         );

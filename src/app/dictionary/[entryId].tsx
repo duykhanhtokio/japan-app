@@ -1,3 +1,5 @@
+import { backPrepared } from '@/components/ui/prepareSceneRoute';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import { Text } from '@/components/app/LocalizedText';
 import JmdictProvider from '@/components/jmdict/JmdictProvider';
@@ -5,8 +7,7 @@ import { RoyalBackButton } from '@/components/ui/RoyalSurface';
 import {
     getJmdictEntry,
     JmdictEntry } from '@/services/jmdict';
-import { router,
-    useLocalSearchParams } from 'expo-router';
+import { useLocalSearchParams } from 'expo-router';
 import { useSQLiteContext } from 'expo-sqlite';
 import { useEffect,
     useState } from 'react';
@@ -16,7 +17,7 @@ import { ActivityIndicator,
     StyleSheet,
     View,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 const POS: Record<string,string> = {n:'Danh từ',adj_i:'Tính từ い',adj_na:'Tính từ な',adv:'Trạng từ',exp:'Cụm từ',prt:'Trợ từ',v1:'Động từ nhóm 2',v5u:'Động từ nhóm 1',v5k:'Động từ nhóm 1',v5g:'Động từ nhóm 1',v5s:'Động từ nhóm 1',v5t:'Động từ nhóm 1',v5n:'Động từ nhóm 1',v5b:'Động từ nhóm 1',v5m:'Động từ nhóm 1',v5r:'Động từ nhóm 1',vs:'Động từ する',vk:'Động từ 来る'};
 
@@ -28,9 +29,9 @@ function EntryContent() {
     const [entry, setEntry] = useState<JmdictEntry | null>();
     useEffect(() => { void getJmdictEntry(db, seq).then(setEntry); }, [db, seq]);
     if (entry === undefined) return <RoyalPageBackground><SafeAreaView style={s.container}><ActivityIndicator style={s.loading} /></SafeAreaView></RoyalPageBackground>;
-    if (!entry) return <RoyalPageBackground><SafeAreaView style={s.container}><View style={s.content}><RoyalBackButton onPress={() => router.back()} /><Text style={s.missing}>単語が見つかりません。</Text></View></SafeAreaView></RoyalPageBackground>;
+    if (!entry) return <RoyalPageBackground><SafeAreaView style={s.container}><View style={s.content}><RoyalBackButton onPress={() => backPrepared()} /><Text style={s.missing}>単語が見つかりません。</Text></View></SafeAreaView></RoyalPageBackground>;
     return <RoyalPageBackground><SafeAreaView style={s.container}><ScrollView contentContainerStyle={s.content}>
-        <RoyalBackButton onPress={() => router.back()} />
+        <RoyalBackButton onPress={() => backPrepared()} />
         {!!entry.common&&<Text style={s.common}>よく使う言葉・Common</Text>}
         <Text style={s.word}>{entry.headword}</Text><Text style={s.reading}>{entry.reading}</Text>
         <Section title="意味・English meanings">{entry.glosses.map((x,i)=><Text key={i} style={s.gloss}>{i+1}. {x}</Text>)}</Section>

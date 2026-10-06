@@ -471,7 +471,7 @@ export default function TasksScreen() {
                                 styles.workHeader
                             }
                         >
-                            <Image source={MISSION_ICONS.work} resizeMode="contain" style={styles.workIcon} accessibilityLabel="仕事会話" />
+                            <Image fadeDuration={0} source={MISSION_ICONS.work} resizeMode="contain" style={styles.workIcon} accessibilityLabel="仕事会話" />
 
                             <View
                                 style={
@@ -624,7 +624,7 @@ export default function TasksScreen() {
 
                                     <View style={styles.rewardAmount}>
                                         <Text style={styles.rewardValue}>+{workMission.rewardXp} XP　+{workMission.rewardCoins}</Text>
-                                        <Image source={MISSION_ICONS.coin} resizeMode="contain" style={styles.rewardCoin} accessibilityLabel="コイン" />
+                                        <Image fadeDuration={0} source={MISSION_ICONS.coin} resizeMode="contain" style={styles.rewardCoin} accessibilityLabel="コイン" />
                                     </View>
                                 </View>
                             </Pressable>
@@ -650,7 +650,7 @@ export default function TasksScreen() {
                     {/* GOLDEN KEY */}
 
                     <RoyalPaperPanel tone="hud" style={[styles.goldenCard,{backgroundColor:'transparent',borderWidth:0,paddingHorizontal:24,paddingVertical:24}]}>
-                        <Image source={MISSION_ICONS.key} resizeMode="contain" style={styles.goldenKey} accessibilityLabel="ゴールデンキー" />
+                        <Image fadeDuration={0} source={MISSION_ICONS.key} resizeMode="contain" style={styles.goldenKey} accessibilityLabel="ゴールデンキー" />
 
                         <View
                             style={{
@@ -676,7 +676,7 @@ export default function TasksScreen() {
                             </Text>
                         </View>
 
-                        <Image source={MISSION_ICONS.lock} resizeMode="contain" style={styles.goldenLock} accessibilityLabel="ロック中" />
+                        <Image fadeDuration={0} source={MISSION_ICONS.lock} resizeMode="contain" style={styles.goldenLock} accessibilityLabel="ロック中" />
                     </RoyalPaperPanel>
                 </ScrollView>
             </View>
@@ -712,7 +712,7 @@ function MissionSection({
                     styles.sectionHeader
                 }
             >
-                <Image source={icon} resizeMode="contain" style={styles.sectionIcon} accessibilityLabel={title} />
+                <Image fadeDuration={0} source={icon} resizeMode="contain" style={styles.sectionIcon} accessibilityLabel={title} />
 
                 <View
                     style={{

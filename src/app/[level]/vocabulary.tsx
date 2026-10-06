@@ -1,18 +1,19 @@
-import { pushPrepared } from '@/components/ui/prepareSceneRoute';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
+import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
 import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import JlptStudyBackground from '@/components/jlpt/JlptStudyBackground';
 import { generatedVocabulary, isJlptLevel } from '@/data/jlpt-study-data';
-import { router, useLocalSearchParams } from 'expo-router';
+import { useLocalSearchParams } from 'expo-router';
 import { useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 import { RoyalBackButton, ROYAL_LAYOUT, ROYAL_FONT } from '@/components/ui/RoyalSurface';
 const PAGE_SIZE = 50;
 export default function VocabularyScreen() {
  const params=useLocalSearchParams(); const raw=Array.isArray(params.level)?params.level[0]:params.level; const level=isJlptLevel(raw)?raw:'N5';
  const [query,setQuery]=useState(''); const [limit,setLimit]=useState(8);
  const words=useMemo(()=>{const q=query.trim().toLocaleLowerCase(); return generatedVocabulary.filter(x=>x.status!=='Rejected'&&(q?`${x.word} ${x.reading} ${x.meaningVi} ${x.meaningEn??''}`.toLocaleLowerCase().includes(q):x.jlpt===level));},[level,query]);
- return <JlptStudyBackground><SafeAreaView style={s.container}><View style={s.header}><RoyalBackButton onPress={()=>router.back()} /></View><ScrollView contentContainerStyle={s.content} keyboardShouldPersistTaps="handled">
+ return <JlptStudyBackground><SafeAreaView style={s.container}><View style={s.header}><RoyalBackButton onPress={()=>backPrepared()} /></View><ScrollView contentContainerStyle={s.content} keyboardShouldPersistTaps="handled">
   <Text style={s.level}>{level}</Text><Text style={s.title}>単語</Text><Text style={s.count}>{words.length} từ vựng</Text>
   <TextInput value={query} onChangeText={v=>{setQuery(v);setLimit(8);}} placeholder="Tra toàn bộ 8.350 từ: Nhật, cách đọc, nghĩa..." placeholderTextColor="#586373" selectionColor="#72501f" style={s.search}/>
   {!!query.trim()&&<Text style={s.searchNotice}>Đang tìm trong toàn bộ N5–N1 • {words.length} kết quả</Text>}

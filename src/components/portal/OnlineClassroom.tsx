@@ -1,7 +1,9 @@
-import { router } from 'expo-router';
+import { backPrepared } from '@/components/ui/prepareSceneRoute';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
+
 import { useState } from 'react';
 import { Alert, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 import { useRoyalPositioning } from '@/components/ui/RoyalPositioning';
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
 
@@ -15,7 +17,7 @@ export function OnlineClassroom(){
  const [videos,setVideos]=useState(true); const [materials,setMaterials]=useState(wide); const [presenting,setPresenting]=useState(false); const [tools,setTools]=useState(true);
  return <View style={s.screen}><SafeAreaView style={s.safe} edges={['top','left','right']}>
   <View style={s.header}>
-   <RoyalBackButton onPress={()=>router.back()} />
+   <RoyalBackButton onPress={()=>backPrepared()} />
    <View style={s.classInfo}><Text style={s.classTitle}>N5 基礎クラス A</Text><Text style={s.classLesson}>第14課・て形と依頼表現</Text></View>
    <View style={s.live}><View style={s.liveDot}/><Text style={s.liveText}>授業中 00:42:18</Text></View>
   </View>

@@ -448,7 +448,7 @@ export default function FarmCosmeticPanel({
                     }
                 >
                     {locked
-                        ? <Image source={LOCK_ICON} resizeMode="contain" style={styles.previewAsset} />
+                        ? <Image fadeDuration={0} source={LOCK_ICON} resizeMode="contain" style={styles.previewAsset} />
                         : getFarmCosmeticAsset(item.assetKey) ? <FarmCosmeticArtwork assetKey={item.assetKey} width={64} height={64} /> : <Text style={{color:"#142847"}}>画像未登録</Text>}
                 </View>
 
@@ -525,7 +525,7 @@ export default function FarmCosmeticPanel({
                                     styles.price
                                 }
                             >
-                                <Image source={item.currency === "gold" ? require("../../../../assets/app/ui/royal-af/hud-coin-v1.png") : require("../../../../assets/app/ui/royal-af/hud-diamond-v1.png")} resizeMode="contain" style={{width:18,height:18}}/>{' '}
+                                <Image fadeDuration={0} source={item.currency === "gold" ? require("../../../../assets/app/ui/royal-af/hud-coin-v1.png") : require("../../../../assets/app/ui/royal-af/hud-diamond-v1.png")} resizeMode="contain" style={{width:18,height:18}}/>{' '}
                                 {item.price}
                             </Text>
 
@@ -797,7 +797,7 @@ export default function FarmCosmeticPanel({
                                 styles.balanceText
                             }
                         >
-                            <Image source={require("../../../../assets/app/ui/royal-af/hud-coin-v1.png")} resizeMode="contain" style={{width:20,height:20}}/> {state.gold}
+                            <Image fadeDuration={0} source={require("../../../../assets/app/ui/royal-af/hud-coin-v1.png")} resizeMode="contain" style={{width:20,height:20}}/> {state.gold}
                         </Text>
 
                         <Text
@@ -805,7 +805,7 @@ export default function FarmCosmeticPanel({
                                 styles.balanceText
                             }
                         >
-                            <Image source={require("../../../../assets/app/ui/royal-af/hud-diamond-v1.png")} resizeMode="contain" style={{width:20,height:20}}/> {state.diamonds}
+                            <Image fadeDuration={0} source={require("../../../../assets/app/ui/royal-af/hud-diamond-v1.png")} resizeMode="contain" style={{width:20,height:20}}/> {state.diamonds}
                         </Text>
                     </View>
 

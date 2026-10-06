@@ -185,7 +185,7 @@ export default function FarmAreaBar({
                             </Text>
 
                             {locked && (
-                                <Image source={LOCK_ICON} resizeMode="contain" style={styles.lock} />
+                                <Image fadeDuration={0} source={LOCK_ICON} resizeMode="contain" style={styles.lock} />
                             )}
                         </Pressable>
                     );

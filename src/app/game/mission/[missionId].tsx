@@ -1,9 +1,8 @@
+import { backPrepared } from '@/components/ui/prepareSceneRoute';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
-import {
-    router,
-    useLocalSearchParams,
-} from 'expo-router';
+import { useLocalSearchParams } from 'expo-router';
 
 import {
     useEffect,
@@ -19,9 +18,7 @@ import {
     View,
 } from 'react-native';
 
-import {
-    SafeAreaView,
-} from 'react-native-safe-area-context';
+
 
 import GameRecordButton from '@/components/game/GameRecordButton';
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
@@ -134,7 +131,7 @@ export default function MissionScreen() {
                         ミッションが見つかりません。
                     </Text>
 
-                    <RoyalBackButton onPress={() => router.back()} />
+                    <RoyalBackButton onPress={() => backPrepared()} />
                 </View>
             </SafeAreaView>
         );
@@ -194,7 +191,7 @@ export default function MissionScreen() {
                         }
                     </Text>
 
-                    <RoyalBackButton onPress={() => router.back()} />
+                    <RoyalBackButton onPress={() => backPrepared()} />
                 </View>
             </SafeAreaView>
         );
@@ -422,7 +419,7 @@ export default function MissionScreen() {
                             styles.finishButton
                         }
                         onPress={() =>
-                            router.back()
+                            backPrepared()
                         }
                     >
                         <Text
@@ -471,7 +468,7 @@ export default function MissionScreen() {
                             styles.closeButton
                         }
                         onPress={() =>
-                            router.back()
+                            backPrepared()
                         }
                     >
                         <Text
@@ -547,7 +544,7 @@ export default function MissionScreen() {
                                         styles.satoContainer
                                     }
                                 >
-                                    <Image
+                                    <Image fadeDuration={0}
                                         source={
                                             staffSprite
                                         }
@@ -571,7 +568,7 @@ export default function MissionScreen() {
                                         styles.satoContainer
                                     }
                                 >
-                                    <Image
+                                    <Image fadeDuration={0}
                                         source={
                                             staffSprite
                                         }

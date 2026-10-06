@@ -135,7 +135,7 @@ function CowSprite({ producing, index }: { producing: boolean; index: number }) 
                 { transform: [{ translateY }, { rotate }] },
             ]}
         >
-            <Image source={COW.idle} resizeMode="contain" style={styles.sprite} />
+            <Image fadeDuration={0} source={COW.idle} resizeMode="contain" style={styles.sprite} />
         </Animated.View>
     );
 }
@@ -247,7 +247,7 @@ function CowSlot({
                     style={styles.milkButton}
                     hitSlop={8}
                 >
-                    <Image source={COW.milk} resizeMode="contain" style={styles.milk} />
+                    <Image fadeDuration={0} source={COW.milk} resizeMode="contain" style={styles.milk} />
                     <View style={styles.collectBadge}><FarmBadgeFrame/><Text numberOfLines={1} style={styles.collectText}>搾乳</Text></View>
                 </Pressable>
             )}

@@ -15,7 +15,7 @@ export default function FarmHud({level,xpCurrent,xpMax,gold,diamonds,keys,onBack
   <View style={s.frames}>
    <RoyalPaperPanel tone="hud" style={s.playerFrame}>
     <View accessibilityLabel={`レベル ${level}、EXP ${xpCurrent}/${xpMax}`} style={s.player}>
-     <Image source={AVATAR} resizeMode="contain" style={s.avatar}/>
+     <Image fadeDuration={0} source={AVATAR} resizeMode="contain" style={s.avatar}/>
      <View style={s.playerCopy}><Text numberOfLines={1} adjustsFontSizeToFit style={s.level}>Lv.{level}</Text><Text numberOfLines={1} style={s.xp}>EXP {Math.floor(xpRatio*100)}%</Text><View accessibilityRole="progressbar" accessibilityLabel="EXP" accessibilityValue={{min:0,max:xpMax,now:xpCurrent}} style={s.xpTrack}><View style={[s.xpFill,{width:`${xpRatio*100}%`}]}/></View></View>
     </View>
    </RoyalPaperPanel>
@@ -28,7 +28,7 @@ export default function FarmHud({level,xpCurrent,xpMax,gold,diamonds,keys,onBack
  </View>;
 }
 function Resource({label,value,icon,onPress}:{label:string;value:number;icon:number;onPress?:()=>void}){
- const content=<><Image source={icon} resizeMode="contain" style={s.icon}/><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.7} style={s.value}>{value>=1000000?`${(value/1000000).toFixed(2)}M`:value>=10000?`${(value/1000).toFixed(1)}K`:value.toLocaleString()}</Text></>;
+ const content=<><Image fadeDuration={0} source={icon} resizeMode="contain" style={s.icon}/><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.7} style={s.value}>{value>=1000000?`${(value/1000000).toFixed(2)}M`:value>=10000?`${(value/1000).toFixed(1)}K`:value.toLocaleString()}</Text></>;
  return onPress?<Pressable accessibilityRole="button" accessibilityLabel={`${label} ${value}、追加`} onPress={onPress} style={({pressed})=>[s.cell,pressed&&{opacity:.7}]}>{content}</Pressable>:<View accessibilityLabel={`${label} ${value}`} style={s.cell}>{content}</View>;
 }
 const s=StyleSheet.create({

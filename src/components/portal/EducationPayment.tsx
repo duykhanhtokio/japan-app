@@ -1,8 +1,10 @@
+import { replacePrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
-import { router } from 'expo-router';
+
 import { useState } from 'react';
 import { Alert, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
 
 type Plan={id:string;name:string;en:string;monthly:number;annual:number;hours:number;teachers:number;learners:number;staff:number;profiles:string;tone:string;trial?:boolean;recommended?:boolean};
@@ -22,9 +24,9 @@ export function EducationPayment(){
  const [selected,setSelected]=useState('teacher');
  const plan=PLANS.find(p=>p.id===selected)!;
  const amount=cycle==='monthly'?plan.monthly:plan.annual;
- const pay=()=>plan.trial?router.replace('/portal/education/welcome?mode=register'):Alert.alert('お申し込み内容の確認',`${plan.name}（${cycle==='monthly'?'月払い':'年払い'}）\n${yen(amount)}`,[{text:'キャンセル',style:'cancel'},{text:'支払いへ進む',onPress:()=>router.replace('/portal/education/welcome?mode=register')}]);
+ const pay=()=>plan.trial?replacePrepared('/portal/education/welcome?mode=register'):Alert.alert('お申し込み内容の確認',`${plan.name}（${cycle==='monthly'?'月払い':'年払い'}）\n${yen(amount)}`,[{text:'キャンセル',style:'cancel'},{text:'支払いへ進む',onPress:()=>replacePrepared('/portal/education/welcome?mode=register')}]);
  return <RoyalPageBackground><View style={s.screen}><SafeAreaView style={s.safe}><ScrollView contentContainerStyle={s.content} showsVerticalScrollIndicator={false} stickyHeaderIndices={[4]}>
-  <RoyalBackButton onPress={()=>router.back()} />
+  <RoyalBackButton onPress={()=>backPrepared()} />
   <Text style={s.eyebrow}>日本語教育機関向け</Text><Text style={s.title}>教室の規模に合うプラン</Text><Text style={s.sub}>全ての有料プランで教材・ホワイトボード・出席・学習管理を利用できます。教室ごとの人数は固定せず、同時に授業する教師数と参加中の学習者総数で管理します。</Text>
   <View style={s.stickyCycle}><View style={s.cycle}><Pressable onPress={()=>setCycle('monthly')} style={[s.cycleButton,cycle==='monthly'&&s.cycleActive]}><Text style={[s.cycleText,cycle==='monthly'&&s.cycleTextActive]}>月払い</Text></Pressable><Pressable onPress={()=>setCycle('annual')} style={[s.cycleButton,cycle==='annual'&&s.cycleActive]}><Text style={[s.cycleText,cycle==='annual'&&s.cycleTextActive]}>年払い　5% OFF</Text></Pressable></View></View>
   <View style={s.planList}>{PLANS.map(p=>{const active=selected===p.id;const price=cycle==='monthly'?p.monthly:p.annual;return <Pressable key={p.id} onPress={()=>setSelected(p.id)} style={[s.plan,active&&{borderColor:p.tone,borderBottomColor:p.tone,backgroundColor:`${p.tone}0d`}]}>

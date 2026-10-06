@@ -1,8 +1,10 @@
+import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
-import { router } from 'expo-router';
+
 import { useState } from 'react';
 import { KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
 
 export function EducationAccess() {
@@ -10,10 +12,10 @@ export function EducationAccess() {
   const [form, setForm] = useState({ school: '', address: '', phone: '', email: '', manager: '' });
   const update = (key: keyof typeof form, value: string) => setForm((current) => ({ ...current, [key]: value }));
   const complete = Object.values(form).every((value) => value.trim().length > 0);
-  const submit = () => mode === 'register' ? router.push('/portal/education/payment') : router.push('/portal/education/welcome?mode=login');
+  const submit = () => mode === 'register' ? pushPrepared('/portal/education/payment') : pushPrepared('/portal/education/welcome?mode=login');
 
   return <RoyalPageBackground><View style={styles.screen}><SafeAreaView style={styles.safe}><KeyboardAvoidingView style={styles.safe} behavior={Platform.OS === 'ios' ? 'padding' : undefined}><ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
-    <RoyalBackButton onPress={() => router.back()} />
+    <RoyalBackButton onPress={() => backPrepared()} />
     <Text style={styles.title}>日本語教育機関</Text><Text style={styles.subtitle}>教育管理サービスを利用する機関情報を入力してください</Text>
     <View style={styles.tabs}><Pressable onPress={() => setMode('register')} style={[styles.tab, mode === 'register' && styles.tabActive]}><Text style={[styles.tabText, mode === 'register' && styles.tabTextActive]}>新規登録</Text></Pressable><Pressable onPress={() => setMode('login')} style={[styles.tab, mode === 'login' && styles.tabActive]}><Text style={[styles.tabText, mode === 'login' && styles.tabTextActive]}>ログイン</Text></Pressable></View>
     <View style={styles.form}>{[

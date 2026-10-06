@@ -17,7 +17,7 @@ function SourcePages({ pages, label }: { pages: readonly ImageSourcePropType[]; 
   const pageWidth = Math.min(920, width - 36);
   return <View style={styles.pages}>{pages.map((source, index) => <View key={`${label}-${index}`} style={styles.pageWrap}>
     <Text style={styles.pageLabel}>{label} · {index + 1}/{pages.length}</Text>
-    <Image source={source} resizeMode="contain" style={{ width: pageWidth, height: pageWidth * 1.4142 }} />
+    <Image fadeDuration={0} source={source} resizeMode="contain" style={{ width: pageWidth, height: pageWidth * 1.4142 }} />
   </View>)}</View>;
 }
 

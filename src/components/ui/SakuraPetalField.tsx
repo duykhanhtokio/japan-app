@@ -22,7 +22,7 @@ function Petal({ x, delay, duration, size, height, width }: (typeof PETALS)[numb
     run.start();
     return () => run.stop();
   }, [delay, duration, progress]);
-  return <Animated.Image source={require('../../../assets/app/registration/sakura-petal-v2.png')} style={{
+  return <Animated.Image fadeDuration={0} source={require('../../../assets/app/registration/sakura-petal-v2.png')} style={{
     position: 'absolute', left: x * width, top: -28, width: size, height: size,
     opacity: progress.interpolate({ inputRange: [0, 0.08, 0.9, 1], outputRange: [0, 0.82, 0.74, 0] }),
     transform: [

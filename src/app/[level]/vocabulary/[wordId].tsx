@@ -1,16 +1,18 @@
+import { backPrepared } from '@/components/ui/prepareSceneRoute';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import JlptStudyBackground from '@/components/jlpt/JlptStudyBackground';
 import { generatedVocabulary } from '@/data/jlpt-learning';
 import { getJlptProgress, toggleLearnedId } from '@/services/jlpt-progress-storage';
-import { router, useLocalSearchParams } from 'expo-router';
+import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
 import { RoyalBackButton, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
 export default function VocabularyDetailScreen(){
  const p=useLocalSearchParams(); const id=Array.isArray(p.wordId)?p.wordId[0]:p.wordId; const word=generatedVocabulary.find(x=>x.id===id); const [learned,setLearned]=useState(false);
  useEffect(()=>{if(id)void getJlptProgress().then(v=>setLearned(v.learnedIds.includes(id)));},[id]);
- if(!word)return <JlptStudyBackground><SafeAreaView style={s.container}><View style={s.content}><RoyalBackButton onPress={()=>router.back()} /><Text>単語が見つかりません。</Text></View></SafeAreaView></JlptStudyBackground>;
+ if(!word)return <JlptStudyBackground><SafeAreaView style={s.container}><View style={s.content}><RoyalBackButton onPress={()=>backPrepared()} /><Text>単語が見つかりません。</Text></View></SafeAreaView></JlptStudyBackground>;
  async function toggle(){const next=await toggleLearnedId(word!.id);setLearned(next.learnedIds.includes(word!.id));}
- return <JlptStudyBackground><SafeAreaView style={s.container}><View style={s.header}><RoyalBackButton onPress={()=>router.back()} /></View><ScrollView contentContainerStyle={s.content}><Text style={s.level}>{word.jlpt}</Text><Text style={s.word}>{word.word}</Text><Text style={s.reading}>{word.reading}</Text><View style={s.section}><Text style={s.label}>意味・Nghĩa</Text><Text style={s.meaning}>{word.meaningVi}</Text>{!!word.meaningEn&&<Text style={s.english}>{word.meaningEn}</Text>}</View>{!!word.exampleJa&&<View style={s.section}><Text style={s.label}>例文・Ví dụ</Text><View style={s.example}><Text style={s.exampleJa}>{word.exampleJa}</Text><Text>{word.exampleVi}</Text></View></View>}<Pressable style={[s.button,learned&&s.done]} onPress={()=>void toggle()}><Text style={s.buttonText}>{learned?'✓ Đã thuộc':'Đánh dấu đã học'}</Text></Pressable></ScrollView></SafeAreaView></JlptStudyBackground>;
+ return <JlptStudyBackground><SafeAreaView style={s.container}><View style={s.header}><RoyalBackButton onPress={()=>backPrepared()} /></View><ScrollView contentContainerStyle={s.content}><Text style={s.level}>{word.jlpt}</Text><Text style={s.word}>{word.word}</Text><Text style={s.reading}>{word.reading}</Text><View style={s.section}><Text style={s.label}>意味・Nghĩa</Text><Text style={s.meaning}>{word.meaningVi}</Text>{!!word.meaningEn&&<Text style={s.english}>{word.meaningEn}</Text>}</View>{!!word.exampleJa&&<View style={s.section}><Text style={s.label}>例文・Ví dụ</Text><View style={s.example}><Text style={s.exampleJa}>{word.exampleJa}</Text><Text>{word.exampleVi}</Text></View></View>}<Pressable style={[s.button,learned&&s.done]} onPress={()=>void toggle()}><Text style={s.buttonText}>{learned?'✓ Đã thuộc':'Đánh dấu đã học'}</Text></Pressable></ScrollView></SafeAreaView></JlptStudyBackground>;
 }
 const s=StyleSheet.create({container:{flex:1,backgroundColor:'transparent'},header:{paddingHorizontal:ROYAL_LAYOUT.screenGutter,paddingTop:ROYAL_LAYOUT.backSafeTop,paddingBottom:6,backgroundColor:'transparent'},content:{padding:22,paddingBottom:60,backgroundColor:'transparent'},back:{fontSize:16,marginBottom:24},level:{color:'#50745c',fontSize:18,fontWeight:'800'},word:{fontSize:44,fontWeight:'900',marginTop:8,color:'#24231f'},reading:{fontSize:21,color:'#625f57',marginTop:5},section:{marginTop:28},label:{fontWeight:'800',color:'#625f57',marginBottom:9},meaning:{fontSize:23,fontWeight:'700',color:'#24231f'},english:{color:'#625f57',marginTop:5},example:{backgroundColor:'transparent',borderWidth:1,borderColor:'#b8b1a5',padding:17,borderRadius:14},exampleJa:{fontSize:19,fontWeight:'600',marginBottom:8,color:'#24231f'},button:{borderWidth:1,borderColor:'#b8b1a5',backgroundColor:'transparent',padding:16,borderRadius:14,alignItems:'center',marginTop:32},done:{backgroundColor:'transparent',borderColor:'#3f6b4f',borderWidth:2},buttonText:{color:'#24231f',fontWeight:'800',fontSize:16}});

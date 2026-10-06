@@ -698,7 +698,7 @@ function AnimatedAnimal({
                     ],
                 }}
             >
-                <Image
+                <Image fadeDuration={0}
                     source={
                         source
                     }
@@ -731,7 +731,7 @@ function AnimatedAnimal({
                     ],
                 }}
             >
-                <Image
+                <Image fadeDuration={0}
                     source={
                         COW_ASSETS.idle
                     }

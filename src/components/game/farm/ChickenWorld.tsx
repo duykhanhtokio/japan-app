@@ -175,7 +175,7 @@ function ChickenSprite({
                 { transform: [{ translateY }] },
             ]}
         >
-            <Image source={source}
+            <Image fadeDuration={0} source={source}
                 resizeMode="contain"
                 style={styles.sprite}
             />
@@ -300,7 +300,7 @@ function ChickenSlot({
                     style={styles.eggButton}
                     hitSlop={8}
                 >
-                    <Image
+                    <Image fadeDuration={0}
                         source={CHICKEN.egg}
                         resizeMode="contain"
                         style={styles.egg}

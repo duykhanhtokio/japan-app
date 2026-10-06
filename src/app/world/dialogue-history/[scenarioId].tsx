@@ -1,6 +1,8 @@
-import { router, useLocalSearchParams } from 'expo-router';
+import { backPrepared } from '@/components/ui/prepareSceneRoute';
+import SafeAreaView from '@/components/ui/StableSafeAreaView';
+import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { RoyalBackButton, ROYAL, ROYAL_FONT } from '@/components/ui/RoyalSurface';
 import { useAppLanguage } from '@/context/LanguageContext';
 import { getLifeLocationById, getLifeScenarioById } from '@/services/life-content-repository';
@@ -23,7 +25,7 @@ export default function CompletedDialogue() {
     const turns = completed && id ? loadDialogueTurns(id) : [];
     const { language } = useAppLanguage();
     return <SafeAreaView style={s.screen}>
-        <View style={s.header}><RoyalBackButton onPress={() => router.back()} /><Text style={s.title}>{location ? displayLocationNameJa(location.nameJa,location.category) : '会話'} · {scenario?.name ?? ''}</Text></View>
+        <View style={s.header}><RoyalBackButton onPress={() => backPrepared()} /><Text style={s.title}>{location ? displayLocationNameJa(location.nameJa,location.category) : '会話'} · {scenario?.name ?? ''}</Text></View>
         <ScrollView contentContainerStyle={s.content}>
             {!turns.length && <Text style={s.empty}>会話データがありません。</Text>}
             {turns.map((turn, index) => {
