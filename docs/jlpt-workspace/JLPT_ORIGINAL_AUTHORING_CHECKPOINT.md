@@ -70,3 +70,9 @@ Measured continuous duration: **726456 milliseconds = 726.456 seconds**, approxi
 All 11 items in groups 3–4 include three spoken options; groups 1–2 repeat the question after the dialogue. The five group-3 original illustration briefs still need newly created images. No legacy audio is used. Technical PCM/encoding/hash checks passed; actual hearing review, native pronunciation review, publisher review, final rights/credit review and runtime integration remain incomplete. `AUDIO_REVIEW.md` provides the review index.
 
 Next: publisher review of the original text and draft audio, resolve the 12-minute-versus-30-minute listening shortfall, create the five original illustrations, then complete real playback QA and runtime integration. Do not start exam 02 before pilot review; do not delete legacy content until the replacement gate.
+
+## Mandatory authoring rules consolidated — 2026-10-06
+
+Read `docs/jlpt-workspace/JLPT_ORIGINAL_AUTHORING_RULES.md` fully before all new JLPT content. User added strict anti-pattern answer positions, structure-aligned approximately 30-minute N5 listening and mid-listening rest. The 80 four-choice items balance 20 per answer position; the 11 three-choice items balance 4/4/3, without repeating cycles or three identical consecutive answers. Current data/validator need an answer-pattern audit; existing QA does not prove these new checks.
+
+Mid-listening rest is required by the user; its exact location and duration remain unconfirmed. Use structural/timing-only reference analysis, never original scripts/answers/audio as authoring inputs. If the reference is ambiguous or differs from the requested rest, confirm specifics with the user before final generation. No new listening rewrite, pause value, answer shuffle, UI change or publisher approval is performed by this documentation-only checkpoint.

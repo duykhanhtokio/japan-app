@@ -9,6 +9,10 @@ LAST UPDATED: 2026-09-21
 
 This file exists so a new AI session can continue work without asking the user to reconstruct prior decisions. Chat history is supporting context only. The current project files, checksums, checkpoints, and validation scripts are authoritative.
 
+## Active original JLPT authoring — mandatory reading
+
+For new JLPT content, read `docs/jlpt-workspace/JLPT_ORIGINAL_AUTHORING_RULES.md` completely before any authoring, then `docs/jlpt-workspace/JLPT_ORIGINAL_AUTHORING_CHECKPOINT.md` and `src/data/jlpt-original/voice-casting.json`. The original-content contract supersedes historical recovery instructions for this task. It requires independent authorship, approved per-type counts, balanced unpredictable answer positions, approximately 30-minute N5 listening with verified/confirmed pacing and mid-listening rest, and truthful review flags. Do not guess the rest location/duration or claim the 12-minute draft meets the target.
+
 ## Current cross-exam scope — 2026-09-21
 
 **V1 review policy updated 2026-09-27; catalog and restart updated 2026-09-28:** The user explicitly removed detailed explanations and listening transcripts from every JLPT exam's app review, including exams that already had explanations. The post-submission review shows correct/incorrect/unanswered status and the correct option only. Stop authoring/translating explanations for V1. Preserve source and translation files as historical data. `docs/checkpoints/JLPT_APPROVED_EXAM_UI_LOCKED_V10.md` and the current UI-lock script supersede older hashes and historical explanation-rendering descriptions below.

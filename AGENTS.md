@@ -6,6 +6,10 @@ Before planning, editing, restoring, integrating, or reporting project work, rea
 
 Exception: a child session launched by `scripts/run-jlpt-simple-loop.sh` must use the compact reading list embedded in that script. It must not reread the full startup document on every exam iteration.
 
+## Mandatory original JLPT authoring contract
+
+Before creating or editing any new JLPT content, read `docs/jlpt-workspace/JLPT_ORIGINAL_AUTHORING_RULES.md` in full, then the current original-authoring checkpoint and approved voice configuration. This applies to prompts, options, answers, passages, scripts, images and audio. Original authoring uses structural/timing-only reference metadata, never legacy question content. Follow the answer-position balancing/anti-pattern requirements and measured listening timing/break blueprint. Do not invoke the historical recovery loop for this task. Unknown break durations or other consequential ambiguities must be confirmed with the publisher, not invented.
+
 ## Default JLPT recovery process
 
 The default unattended process is now the single foreground loop:
