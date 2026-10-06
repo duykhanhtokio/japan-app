@@ -33,6 +33,7 @@ for (const item of audio.items) {
  assert.deepEqual(item.turns.slice(0,q.script.length).map(t => [t.actor,t.text]), q.script, q.id + ': script');
  assert.ok(item.turns.every(t => Object.hasOwn(casting.roles, t.role)));
  if (q.group >= 3) assert.deepEqual(item.turns.filter(t => t.actor.startsWith('option-')).map(t => [t.actor.slice(7),t.text]), q.options.map(o => [o.id,o.text]));
+ if (q.optionVoiceRole) assert.ok(item.turns.filter(t => t.actor.startsWith('option-')).every(t => t.role === q.optionVoiceRole), q.id + ': requested option speaker role');
  assert.ok(item.startMs >= previousEnd && item.endMs <= audio.durationMs);
  previousEnd = item.endMs;
  assert.equal(item.playbackReviewed, false);

@@ -58,6 +58,8 @@ def original_rest_music():
  cells=[(60,64,67),(57,60,64),(62,65,69),(55,59,62),(60,65,69),(57,62,65),(59,62,67),(55,60,64),(62,67,71),(57,60,65),(55,59,64),(60,64,67)]
  if args.exam_number==2:
   cells=[(60,65,69),(62,65,69),(55,60,64),(57,60,65),(60,64,69),(55,59,64),(62,67,71),(59,64,67),(57,62,66),(60,65,67),(55,60,67),(60,64,67)]
+ if args.exam_number==3:
+  cells=[(57,60,64),(60,64,67),(55,59,62),(62,65,69),(57,62,65),(60,65,69),(59,62,67),(62,67,71),(55,60,64),(60,64,69),(57,60,65),(60,64,67)]
  samples=array.array('h')
  for i in range(1440000):
   t=i/24000;cell=int(t//5);local=t-cell*5
@@ -92,7 +94,7 @@ try:
     frames.extend(synth(text,role));frames.extend(silence(settings['afterIntroSeconds'] if i==0 else settings['betweenTurnsSeconds']));turns.append({'actor':actor,'role':role,'text':text})
    if group<=2:frames.extend(synth(q['prompt'],'adultFemale'))
    else:
-    answer_role=('femaleStudent' if q['number']%2 else 'youngMale') if group==3 else {'4-01':'femaleStudent','4-02':'youngMale','4-03':'youngMale','4-04':'femaleStudent','4-05':'femaleStudent','4-06':'youngMale'}[key]
+    answer_role=q.get('optionVoiceRole') or (('femaleStudent' if q['number']%2 else 'youngMale') if group==3 else {'4-01':'femaleStudent','4-02':'youngMale','4-03':'youngMale','4-04':'femaleStudent','4-05':'femaleStudent','4-06':'youngMale'}[key])
     for opt in q['options']:
      frames.extend(synth(opt['id']+'。','adultFemale'));frames.extend(silence(.3));frames.extend(synth(opt['text'],answer_role));frames.extend(silence(.8));turns.append({'actor':'option-'+opt['id'],'role':answer_role,'text':opt['text']})
    frames.extend(silence(settings['answerPauseSecondsByProblem'][str(group)]));mp=save('problem-'+key,frames)
