@@ -381,3 +381,8 @@ PRF-013 Tokyo:373/373 individually authored exchanges,1865 distinct player tasks
 ## 2026-10-05 — Kanagawa PRF-014 Japanese master complete
 
 163/163 individually authored exchanges, 815 speaking goals, all 19 canonical cities. All eleven-turn scripts and their five-goal chains authored/read; current city inventories and closures reviewed. 27 selected full-script comparison records cover all 19 city groups and targeted prior-corpus/high-ranked pairs. Seven whole-plot replacements and two focused title/closure corrections completed. Lexical retrieval covers 163 targets against 7,128 scripts and is candidate evidence only, not exhaustive corpus reading or uniqueness certification. Separate AI editorial decision and master lock bind all current runtime/source SHA-256 hashes. Native/human review and translations remain absent. UI/JLPT/audio unchanged; existing identity, order and next links preserved. Require exact-tree remote persistence verification before advancing. Next: PRF-015 Niigata, one whole prefecture at a time.
+
+
+## 2026-10-06 — Niigata individual authoring 53/173
+
+53 independent eleven-turn exchanges, 265 speaking goals; 5/20 city groups. Source/runtime/canonical identities and next links preserved and parity verified. Translations deferred, UI/JLPT unchanged. CONTENT PASS/master lock/native/human review false. Remain PRF-015. Continue SC-LOC-JP-15205-01-001; finish all 173 and semantic steps 1–10 before master lock or PRF-016.
