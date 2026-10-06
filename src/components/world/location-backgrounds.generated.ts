@@ -3,6 +3,7 @@ import { categoryAssetKey } from './life-assets';
 import assignmentJson from '@/data/location-background-assignment.json';
 
 const backgrounds: Record<string, ImageSourcePropType> = {
+  'laundry/base': require('../../../assets/app/life/location-backgrounds/laundry/01-clear-morning.png'),
   'variants/amusement-park/01-clear-morning.jpg': require('../../../assets/app/life/location-backgrounds/amusement-park/01-clear-morning.jpg'),
   'variants/amusement-park/02-sunny-midday.jpg': require('../../../assets/app/life/location-backgrounds/amusement-park/02-sunny-midday.jpg'),
   'variants/amusement-park/03-golden-hour.jpg': require('../../../assets/app/life/location-backgrounds/amusement-park/03-golden-hour.jpg'),
@@ -262,6 +263,8 @@ const variants = ['01-clear-morning','02-sunny-midday','03-golden-hour','04-clea
 
 export function locationBackground(locationId?: string | null, category?: string | null): ImageSourcePropType | undefined {
   if (!locationId) return undefined;
+  // Dedicated laundry base: do not fall back to obsolete convenience-store assignments.
+  if (categoryAssetKey(category)==='laundry') return backgrounds['laundry/base'];
   const assigned = backgroundByLocation.get(locationId);
   if (assigned && (!category || assigned.background.split('/')[1]===categoryAssetKey(category))) return backgrounds[assigned.background];
   // Later generated locations have no assignment row. Keep their artwork in

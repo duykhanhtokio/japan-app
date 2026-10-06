@@ -2,6 +2,7 @@ import type { ImageSourcePropType } from 'react-native';
 import type { NpcCategoryId } from '@/data/npc-progression';
 
 export const npcCardById:Record<NpcCategoryId,ImageSourcePropType>={
+ laundry:require('../../../assets/app/life/rewards/cards/laundry.png'),
  'station':require('../../../assets/app/life/rewards/cards/station.png'),
  'convenience-store':require('../../../assets/app/life/rewards/cards/convenience-store.png'),
  'cafe':require('../../../assets/app/life/rewards/cards/cafe.png'),

@@ -28,6 +28,8 @@ export const NPC_CATEGORIES = [
   { id:'park', category:'Park', ja:'公園スタッフ', icon:'🌳' },
   { id:'nature', category:'Nature', ja:'自然ガイド', icon:'🏔️' },
   { id:'construction-site', category:'Construction Site', ja:'建設スタッフ', icon:'👷' },
+  // Append new roles to preserve the established unlock order.
+  { id:'laundry', category:'Laundry', ja:'ランドリー店員', icon:'🧺' },
 ] as const;
 
 export type NpcCategoryId = typeof NPC_CATEGORIES[number]['id'];

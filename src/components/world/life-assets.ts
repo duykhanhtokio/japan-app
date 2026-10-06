@@ -1,5 +1,6 @@
 import type { ImageSourcePropType } from 'react-native';
 const assets:Record<string,ImageSourcePropType>={
+ laundry:require('../../../assets/app/life/location-backgrounds/laundry/01-clear-morning.png'),
  amusement:require('../../../assets/app/life/location-backgrounds/amusement-park/01-clear-morning.jpg'),
  shopping:require('../../../assets/app/life/location-backgrounds/shopping/01-clear-morning.jpg'),
  tax:require('../../../assets/app/life/location-backgrounds/tax-office/01-clear-morning.jpg'),
@@ -28,7 +29,7 @@ const assets:Record<string,ImageSourcePropType>={
 };
 export function categoryAssetKey(category?:string|null){return (category??'').trim().toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
 const sceneCategories:Record<string,string>={
- 'amusement-park':'amusement',station:'station',cafe:'cafe','ramen-shop':'ramen',izakaya:'izakaya',restaurant:'restaurant',hotel:'hotel',onsen:'onsen',
+ laundry:'laundry','amusement-park':'amusement',station:'station',cafe:'cafe','ramen-shop':'ramen',izakaya:'izakaya',restaurant:'restaurant',hotel:'hotel',onsen:'onsen',
  'convenience-store':'convenience',pharmacy:'pharmacy',hospital:'hospital','police-station':'police','government-office':'government','tax-office':'tax',bank:'bank','post-office':'post',supermarket:'supermarket',shopping:'shopping','construction-site':'construction',museum:'museum','shrine-temple':'shrine',castle:'castle',park:'park',nature:'nature',landmark:'sightseeing',
 };
 export function sceneForCategory(category?:string|null):ImageSourcePropType{return assets[sceneCategories[categoryAssetKey(category)]??'sightseeing'];}
@@ -36,6 +37,7 @@ export function sceneForCategory(category?:string|null):ImageSourcePropType{retu
 const list=Object.values(assets);export const cityScene=(seed:number)=>list[Math.abs(seed)%list.length];
 
 const npcAssets: Record<string, ImageSourcePropType> = {
+  laundry: require('../../../assets/app/life/npcs/laundry.png'),
   'amusement park': require('../../../assets/app/life/npcs/amusement-park.png'),
   bank: require('../../../assets/app/life/npcs/bank.png'),
   cafe: require('../../../assets/app/life/npcs/cafe.png'),
@@ -68,5 +70,5 @@ export function npcForCategory(category?: string | null): ImageSourcePropType {
 }
 
 // Source-space waist landmarks, not one screen-height ratio for every NPC.
-const npcWaistY:Record<string,number>={"amusement park": 614, "bank": 686, "cafe": 548, "castle": 702, "construction site": 603, "convenience store": 702, "government office": 576, "hospital": 680, "hotel": 691, "izakaya": 576, "landmark": 625, "museum": 625, "nature": 603, "onsen": 565, "park": 603, "pharmacy": 625, "police station": 631, "post office": 697, "ramen shop": 576, "restaurant": 576, "shopping": 603, "shrine / temple": 620, "station": 631, "supermarket": 614, "tax office": 614};
+const npcWaistY:Record<string,number>={"laundry": 580, "amusement park": 614, "bank": 686, "cafe": 548, "castle": 702, "construction site": 603, "convenience store": 702, "government office": 576, "hospital": 680, "hotel": 691, "izakaya": 576, "landmark": 625, "museum": 625, "nature": 603, "onsen": 565, "park": 603, "pharmacy": 625, "police station": 631, "post office": 697, "ramen shop": 576, "restaurant": 576, "shopping": 603, "shrine / temple": 620, "station": 631, "supermarket": 614, "tax office": 614};
 export function npcPresentationForCategory(category?:string|null){const key=Object.keys(npcWaistY).find(key=>categoryAssetKey(key)===categoryAssetKey(category))??'landmark';return {source:npcForCategory(category),width:1024,height:1536,waistY:npcWaistY[key]??npcWaistY.landmark};}
