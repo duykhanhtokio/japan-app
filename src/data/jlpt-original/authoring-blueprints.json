@@ -1,9 +1,9 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "updatedAt": "2026-10-06",
   "initialExamsPerLevel": 6,
   "initialTotalExams": 30,
-  "reviewWorkflow": "complete_authoring_and_full_runtime_integration_then_publisher_tests_each_exam",
+  "reviewWorkflow": "complete_and_integrate_all_30_exams_then_publisher_tests_entire_collection",
   "audioBreak": {
     "afterProblem": 2,
     "beforeProblem": 3,
@@ -14,10 +14,11 @@
     "announcementAfter": "休み時間は終わりです。問題三を始めます。",
     "includeMusicAndAnnouncementsInListeningTarget": true,
     "policy": "Publisher-defined app intermission, not an official JLPT break claim.",
-    "musicRights": "Independently composed/synthesized instrumental, or verified commercial app redistribution license; no copied protected melody."
+    "musicRights": "Independently composed/synthesized instrumental, or verified commercial app redistribution license; no copied protected melody.",
+    "totalTargetAccountingStatus": "existing_project_implementation_not_separately_publisher_confirmed"
   },
-  "listeningTargetToleranceMs": 60000,
-  "toleranceRole": "Project implementation tolerance; not official JLPT rule.",
+  "listeningTargetToleranceMs": null,
+  "toleranceRole": "Unconfirmed by publisher; do not infer a fixed 29–31 minute acceptance range.",
   "levels": {
     "n5": {
       "structureReferenceId": "n5-2013-07-exam-03",
@@ -772,5 +773,7 @@
         }
       }
     }
-  }
+  },
+  "authoringRulesVersion": 4,
+  "pauseSettingsPolicy": "Audition defaults only. Present timing table and confirm unresolved pacing details before changing settings for final recordings."
 }
