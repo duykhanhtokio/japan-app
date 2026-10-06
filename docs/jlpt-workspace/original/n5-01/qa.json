@@ -73,14 +73,14 @@
       "count": 6
     }
   ],
-  "masterSha256": "0a852684d9f757c2e39275054eff0bcaac8afffc4ea8c4cbfd69642ce22b5235",
+  "masterSha256": "e6dadfadb42c38d2d0e5e4297ebe710662ae65f7abf49d896bc07326d7145d08",
   "authoredResponses": 91,
   "publisherReviewed": false,
   "nativeReviewCompleted": false,
   "listeningPlaybackCompleted": false,
   "rightsReviewCompleted": false,
   "officialCalibrationCompleted": false,
-  "academicAssessment": "AI editorial corrections; publisher tests after complete integration.",
+  "academicAssessment": "AI review of the pre-existing independently authored master; 20 contextualized targets and 7 items with corrected distractors. Human review remains false.",
   "checksCompleted": [
     "91 unique item IDs and approved per-type counts",
     "Choice cardinality 4/4/3/3 in listening; four written choices",
@@ -98,7 +98,8 @@
     "Explicit seconds-to-milliseconds checks; all review flags remain false",
     "Balanced option pools and no three-position repetition or period 2–4 repeated three times across all 91 items",
     "Regenerated 24 recordings after option permutation; spoken options match current master",
-    "After-problem-2 break: spoken announcement, original instrumental music exactly 1440000 decoded PCM frames, resumption before problem 3"
+    "After-problem-2 break: spoken announcement, original instrumental music exactly 1440000 decoded PCM frames, resumption before problem 3",
+    "Listening data unchanged after written-only corrections; existing audio/option order preserved."
   ],
   "releaseReady": false,
   "draftAudioGenerated": true,
@@ -106,5 +107,10 @@
   "continuousAudioDurationMs": 796387,
   "listeningThirtyMinuteTargetMet": false,
   "answerPositionAuditPath": "docs/jlpt-workspace/original/n5-01/answer-position-audit.json",
-  "originalIllustrationsGenerated": 5
+  "originalIllustrationsGenerated": 5,
+  "writtenAuthoringStatus": "ai_editorial_checked",
+  "adapterExecutionCheck": "PASS: execute actual TypeScript adapter after Node type stripping; 91 IDs/answers, contextual prompts, passage/star mapping, 5 real image paths, no spoken-option text or transcript leaks.",
+  "fullTypeScriptCheck": "NOT RUN SUCCESSFULLY: workspace has no installed TypeScript dependency; npx resolved an unrelated tsc package. No typecheck pass claimed.",
+  "deviceRuntimeCheck": "not_performed",
+  "runtimeIntegrated": false
 }

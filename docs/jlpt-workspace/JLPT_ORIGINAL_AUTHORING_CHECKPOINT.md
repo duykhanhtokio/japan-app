@@ -116,3 +116,15 @@ Supplied text SHA-256: 11d40fdeb9c83a33fdb8650416f215cd2a155bb219b9b29e17c1566c4
 Đã lưu đầy đủ bản `JLPT_LEVEL_BLUEPRINTS.md` nhà phát hành gửi, thay bản chuyển hướng. Quy tắc chính phiên bản 5 và bản cấu trúc đều bắt buộc đọc toàn bộ ở đầu mỗi phiên, cùng `docs/AI_SESSION_START_HERE.md` và `AGENTS.md`; trí nhớ hoặc đọc một bản không đủ. Đồng bộ yêu cầu trong các điểm vào phiên và JSON. Giữ nguyên bảng cấu trúc, giới hạn metadata, 6 đề/cấp, giọng và nghỉ 60 giây; không bổ sung quyền lấy nội dung đề gốc. Mâu thuẫn có ảnh hưởng phải xác nhận, không tự đoán. Thay đổi này chỉ cập nhật tài liệu và metadata, không tạo đề hoặc audio mới.
 
 SHA-256 tệp cấu trúc nhà phát hành gửi: `053a4c3093a716170bf1a11a01fcd8fcc4151571a43439b8b530628afe3462b0`.
+
+## 2026-10-06 — Bắt đầu nội dung chính thức, hoàn thiện phần viết N5 01
+
+Đã đọc lại các hướng dẫn bắt buộc phiên bản 5 và cấu trúc N5–N1. Tiếp tục master độc lập hiện có thay vì lấy nội dung đề gốc. Bổ sung ngữ cảnh hiển thị cho 20 câu đọc/viết chữ (đặc biệt 何人 cần ngữ cảnh đếm người); sửa phương án nhiễu ở 7 câu để bỏ dạng từ tùy tiện hoặc kết hợp phi lý. Giữ nguyên ID, số câu và vị trí đáp án. Toàn bộ 24 câu nghe, scripts và thứ tự lựa chọn không đổi; master provenance hash trong manifest được cập nhật cho thay đổi phần viết, không giả nhận đã tạo audio mới.
+
+Đã chuẩn bị `src/data/jlpt-original/n5/01/formal-trial.ts`: ánh xạ 91 câu vào kiểu runner hiện có, đủ ngữ cảnh chữ, đoạn đọc, dấu sao, 5 ảnh thật, ẩn nội dung lựa chọn chỉ nghe và transcript. Adapter chưa đăng ký vào catalog; không nạp audio 13m16s như đề hoàn chỉnh. Registry và UI khóa giữ nguyên. Validator cấu trúc và thực thi adapter PASS; UI lock 10/10 PASS. TypeScript đầy đủ chưa chạy thành công do workspace thiếu dependency TypeScript; không nhận đã typecheck hoặc test thiết bị.
+
+Nhà phát hành chọn **xác minh cấu trúc mẫu trước**, chưa chọn phương án thiết kế một ví dụ mỗi dạng hay lịch pause đề xuất. Bộ trích mới chỉ xuất nhãn/số lượng từ hồ sơ nguồn, lưu `reference-structure.metadata.json`. Các nhãn OCR chưa kiểm chứng không đủ chứng minh số ví dụ/số lượt phát hoặc vai trò khoảng nghỉ; các trường này vẫn null. Phân tích tín hiệu được phép trước đó cũng không chứng minh ngữ nghĩa. Không đổi pause, speed, thêm ví dụ/lặp audio hoặc bù phút bằng im lặng. Mục tiêu 30 phút, nghỉ nhạc đúng 60s và bốn giọng đã chốt giữ nguyên.
+
+Sự cố đã báo nhà phát hành: một lệnh kiểm tra đã in toàn bộ source packet, vô tình đưa một phần nội dung cũ vào ngữ cảnh. Sau đó không soạn tình huống/kịch bản/câu mới trong ngữ cảnh này; chỉ kiểm tra/chỉnh phần dữ liệu đã soạn độc lập và chuẩn bị adapter. Bộ trích sau chỉ xuất metadata theo whitelist. Phiên soạn mới tiếp theo phải có ngữ cảnh chỉ chứa hướng dẫn, master độc lập và metadata; không mang nội dung cũ bị in nhầm vào đầu vào.
+
+Phần chưa xong: xác minh riêng tổ chức ví dụ/nhịp chuẩn bị–trả lời để hoàn thiện audio N5, dựng/đo/nghe bản đầy đủ rồi tích hợp và test app. Không chuyển sang đề 02 khi đề 01 chưa đạt gate đầy đủ; không chờ duyệt nháp của nhà phát hành. Không có cờ human/native/perceptual/release nào được bật. Quy mô vẫn 30 đề.
