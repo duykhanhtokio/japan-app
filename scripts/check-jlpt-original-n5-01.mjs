@@ -20,7 +20,7 @@ assert.equal(exam.runtimeIntegrated, false);
 assert.equal(exam.publisherReviewed, false);
 assert.equal(exam.reviewedByNativeSpeaker, false);
 const generatedAudio = exam.audio.status === 'generated_draft_unreviewed';
-assert.ok(generatedAudio || exam.audio.status === 'not_generated');
+assert.ok(generatedAudio || ['not_generated','pending_regeneration_after_option_changes'].includes(exam.audio.status));
 assert.equal(exam.audio.actualDurationVerified, generatedAudio);
 let audioManifest;
 if (generatedAudio) {
@@ -108,3 +108,29 @@ for (let i = 0; i < 3; i++) {
   }
 }
 console.log('N5 ORIGINAL PILOT STRUCTURE PASS: 91 unique items, approved group/choice counts, complete passage links and answer keys, 24 scripts, 5 illustration briefs. Academic, perceptual audio, rights and publisher approval remain pending.');
+
+const allPositions = exam.questions.map(q => q.correctOptionId);
+for (let i = 2; i < allPositions.length; i++) assert.ok(!(allPositions[i] === allPositions[i-1] && allPositions[i] === allPositions[i-2]), 'Full-exam triple repeat');
+for (let period = 2; period <= 4; period++) for (let i = 0; i + period * 3 <= allPositions.length; i++) {
+ const cell = allPositions.slice(i, i + period).join('');
+ assert.notEqual(allPositions.slice(i, i + period * 3).join(''), cell.repeat(3), `Predictable period ${period} at ${i}`);
+}
+for (const cardinality of [3,4]) {
+ const counts = Array.from({length:cardinality}, (_, i) => exam.questions.filter(q => q.options.length === cardinality && q.correctOptionId === String(i+1)).length);
+ assert.ok(Math.max(...counts)-Math.min(...counts) <= 1, 'Unbalanced whole-exam option pool');
+}
+const illustrations = JSON.parse(readFileSync(new URL('src/data/jlpt-original/n5/01/images.manifest.json', root)));
+assert.equal(illustrations.items.length, 5);
+for (const item of illustrations.items) {
+ assert.equal(createHash('sha256').update(readFileSync(new URL(item.path, root))).digest('hex'), item.sha256);
+ assert.equal(exam.questions.find(q => q.id === item.questionId).illustrationPath, item.path);
+}
+if (generatedAudio) {
+ assert.equal(audioManifest.break.afterProblem,2); assert.equal(audioManifest.break.beforeProblem,3);
+ assert.equal(audioManifest.break.musicDurationMs,60000);
+ assert.equal(audioManifest.break.musicEndMs-audioManifest.break.musicStartMs,60000);
+ assert.equal(audioManifest.break.musicPcmFrames,1440000);
+ assert.ok(audioManifest.items.filter(q=>q.group===2).every(q=>q.endMs<=audioManifest.break.announcementStartMs));
+ assert.ok(audioManifest.items.filter(q=>q.group===3).every(q=>q.startMs>=audioManifest.break.resumeAnnouncementEndMs));
+}
+console.log('N5 AUTHORING ADVANCE PASS: balanced pools, no short repeated cycles, 5 mapped image hashes; fixed musical break when audio regenerated. Full-duration integration remains a separate check.');

@@ -90,3 +90,9 @@ This commit updates instructions and blueprint only. The existing 12m06s N5 audi
 ## Consolidated single contract — 2026-10-06
 
 Version 3 of `JLPT_ORIGINAL_AUTHORING_RULES.md` is the sole complete content-authoring contract, including all N5–N1 tables. `JLPT_LEVEL_BLUEPRINTS.md` now redirects there. Source URLs are metadata-only; linked PDFs, scripts, answers, illustrations and recordings are excluded from authoring inputs. Historical checkpoint instructions never override the current contract. This update changes guidance only, not generated exam assets or runtime integration.
+
+## Authoring resumed under version 3 — 2026-10-06
+
+Every new JLPT authoring session must reread the entire current contract; AGENTS and session startup now say this explicitly. N5 exam 01 now has five independently generated imagegen assets (visually inspected, manifests mapped), balanced answer positions (four-choice 20/20/20/20; three-choice 4/4/3), no full-sequence triple repetition, and no period 2–4 repeated three times. Two weak listening distractors were corrected. All 24 recordings were regenerated to synchronize spoken option order. The original instrumental rest decodes to exactly 1440000 frames at 24000 Hz, correctly between problem 2 and problem 3 with announcements.
+
+Current measured listening duration is 796387 ms, approximately 13m16s, NOT 30 minutes. Current assets are work in progress, not a finished exam. No registry integration, legacy deletion or human approval occurred. Continue developing natural N5 listening and verified preparation/answer timing; do not use silence to pad. The current metadata blueprint contains counts and total targets but lacks detailed reference timing/example metadata. Under contract section 3.1, any additional isolated analysis of legacy recordings requires confirmation of scope; no old audio/transcript content has been read into the authoring context. Preserve all valid authored content/assets.

@@ -2,7 +2,7 @@
 Usage: python scripts/generate-jlpt-original-audio.py --engine /path/to/engine/run
 No external text service; no legacy exam inputs. Generated audio requires human review.
 """
-import argparse,array,hashlib,io,json,subprocess,time,urllib.parse,urllib.request,wave
+import argparse,array,hashlib,io,json,math,subprocess,time,urllib.parse,urllib.request,wave
 from pathlib import Path
 ap=argparse.ArgumentParser();ap.add_argument('--engine',required=True);args=ap.parse_args()
 root=Path(__file__).resolve().parent.parent;master=root/'src/data/jlpt-original/n5/01/master.ja.json';exam=json.loads(master.read_text());casting=json.loads((root/'src/data/jlpt-original/voice-casting.json').read_text());settings=casting['settings'];roles=casting['roles']
@@ -49,8 +49,20 @@ def save(name,pcm):
  wp=work/(name+'.wav');mp=out/(name+'.mp3')
  with wave.open(str(wp),'wb') as w:w.setnchannels(1);w.setsampwidth(2);w.setframerate(24000);w.writeframes(pcm)
  subprocess.run(['ffmpeg','-v','error','-y','-i',str(wp),'-codec:a','libmp3lame','-b:a','96k','-metadata','artist='+credits,'-metadata','comment=Independently authored N5 pilot; draft audio; human playback review pending',str(mp)],check=True);wp.unlink();return mp
+def original_rest_music():
+ # Original procedural instrumental pad; no recorded source or copied melody.
+ # 12 independently chosen five-second harmonic cells, soft sine harmonics.
+ cells=[(60,64,67),(57,60,64),(62,65,69),(55,59,62),(60,65,69),(57,62,65),(59,62,67),(55,60,64),(62,67,71),(57,60,65),(55,59,64),(60,64,67)]
+ samples=array.array('h')
+ for i in range(1440000):
+  t=i/24000;cell=int(t//5);local=t-cell*5
+  envelope=min(1,local/.8,(5-local)/.8)*min(1,t/2,(60-t)/2)
+  value=sum(math.sin(2*math.pi*(440*2**((note-69)/12))*t)+.12*math.sin(2*math.pi*(880*2**((note-69)/12))*t) for note in cells[cell])
+  samples.append(round(950*max(0,envelope)*value))
+ assert len(samples)==1440000
+ return samples.tobytes()
 try:
- start();album=bytearray(silence(1));segments=[];used=[]
+ start();album=bytearray(silence(1));segments=[];used=[];break_manifest=None
  for group in range(1,5):
   album.extend(synth(plan[group],'adultFemale'));album.extend(silence(2))
   for q in [q for q in exam['questions'] if q['section']=='listening' and q['group']==group]:
@@ -68,7 +80,13 @@ try:
    segments.append({'questionId':q['id'],'group':group,'number':q['number'],'path':str(mp.relative_to(root)),'startMs':begin,'endMs':end,'durationMs':round(len(frames)/48),'sha256':hashlib.sha256(mp.read_bytes()).hexdigest(),'playbackReviewed':False,'turns':turns})
    print(f'{len(segments)}/24 problem {key}',flush=True)
    if len(segments)%6==0 and len(segments)<24:stop();start()
+  if group==2:
+   before=round(len(album)/48);album.extend(synth('問題二はここまでです。これから一分間休みます。','adultFemale'))
+   music_start=round(len(album)/48);music=original_rest_music();music_file=save('original-instrumental-rest-60s',music);album.extend(music);music_end=round(len(album)/48)
+   assert music_end-music_start==60000
+   album.extend(synth('休み時間は終わりです。問題三を始めます。','adultFemale'));resume_end=round(len(album)/48)
+   break_manifest={'afterProblem':2,'beforeProblem':3,'announcementStartMs':before,'musicStartMs':music_start,'musicEndMs':music_end,'musicDurationMs':60000,'resumeAnnouncementEndMs':resume_end,'musicPcmFrames':1440000,'path':str(music_file.relative_to(root)),'sha256':hashlib.sha256(music_file.read_bytes()).hexdigest(),'source':'Original procedural score in this generation script; no external recording or melody input.','publisherReviewed':False}
  mp=save('n5-original-01-listening-draft',album)
- manifest={'examId':exam['examId'],'status':'generated_draft_unreviewed','masterSha256':hashlib.sha256(master.read_bytes()).hexdigest(),'voiceCastingSha256':hashlib.sha256((root/'src/data/jlpt-original/voice-casting.json').read_bytes()).hexdigest(),'continuousAudioPath':str(mp.relative_to(root)),'continuousSha256':hashlib.sha256(mp.read_bytes()).hexdigest(),'durationMs':round(len(album)/48),'targetDurationMs':1800000,'matchesThirtyMinuteTarget':False,'durationMeasuredFromPcm':True,'publisherReviewed':False,'nativeReviewCompleted':False,'perceptualApproval':False,'rightsReleaseReviewCompleted':False,'instructions':plan,'settings':settings,'credits':[v['credit'] for v in roles.values()],'items':segments}
+ manifest={'examId':exam['examId'],'status':'generated_draft_unreviewed','masterSha256':hashlib.sha256(master.read_bytes()).hexdigest(),'voiceCastingSha256':hashlib.sha256((root/'src/data/jlpt-original/voice-casting.json').read_bytes()).hexdigest(),'continuousAudioPath':str(mp.relative_to(root)),'continuousSha256':hashlib.sha256(mp.read_bytes()).hexdigest(),'durationMs':round(len(album)/48),'targetDurationMs':1800000,'matchesThirtyMinuteTarget':False,'durationMeasuredFromPcm':True,'publisherReviewed':False,'nativeReviewCompleted':False,'perceptualApproval':False,'rightsReleaseReviewCompleted':False,'break':break_manifest,'instructions':plan,'settings':settings,'credits':[v['credit'] for v in roles.values()],'items':segments}
  (root/'src/data/jlpt-original/n5/01/audio.manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'count':24,'durationSeconds':len(album)/48000,'complete':True}),flush=True)
 finally:stop();log.close()
