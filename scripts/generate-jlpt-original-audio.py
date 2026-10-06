@@ -4,8 +4,8 @@ No external text service; no legacy exam inputs. Generated audio requires human 
 """
 import argparse,array,hashlib,io,json,math,subprocess,time,urllib.parse,urllib.request,wave
 from pathlib import Path
-ap=argparse.ArgumentParser();ap.add_argument('--engine',required=True);ap.add_argument('--exam-number',type=int,choices=range(1,7),default=1);ap.add_argument('--cache-dir');ap.add_argument('--port',type=int,default=50128);ap.add_argument('--continuous-bitrate',choices=['48k','96k'],default='96k');args=ap.parse_args();exam_number=f'{args.exam_number:02d}'
-root=Path(__file__).resolve().parent.parent;master=root/f'src/data/jlpt-original/n5/{exam_number}/master.ja.json';exam=json.loads(master.read_text());casting=json.loads((root/'src/data/jlpt-original/voice-casting.json').read_text());settings={**casting['settings'],**casting.get('levelPacing',{}).get('n5',{})};roles=casting['roles'];organization=json.loads((root/f'src/data/jlpt-original/n5/{exam_number}/listening-organization.ja.json').read_text())
+ap=argparse.ArgumentParser();ap.add_argument('--engine',required=True);ap.add_argument('--exam-number',type=int,choices=range(1,7),default=1);ap.add_argument('--cache-dir');ap.add_argument('--continuous-bitrate-kbps',type=int,choices=[48,64,96],default=96);args=ap.parse_args();exam_number=f'{args.exam_number:02d}'
+root=Path(__file__).resolve().parent.parent;master=root/f'src/data/jlpt-original/n5/{exam_number}/master.ja.json';master_bytes=master.read_bytes();exam=json.loads(master_bytes);casting=json.loads((root/'src/data/jlpt-original/voice-casting.json').read_text());settings={**casting['settings'],**casting.get('levelPacing',{}).get('n5',{})};roles=casting['roles'];organization_path=root/f'src/data/jlpt-original/n5/{exam_number}/listening-organization.ja.json';organization_bytes=organization_path.read_bytes();organization=json.loads(organization_bytes)
 out=root/f'assets/jlpt-original/n5/{exam_number}/audio';out.mkdir(parents=True,exist_ok=True)
 work=root/f'docs/jlpt-workspace/original/n5-{exam_number}/audio';work.mkdir(parents=True,exist_ok=True)
 settings.pop('answerPauseSeconds',None)
@@ -24,7 +24,7 @@ actors={
 http=urllib.request.build_opener(urllib.request.ProxyHandler({}));proc=None;log=open(work/'generation.log','w')
 def start():
  global proc
- proc=subprocess.Popen([args.engine,'--host','127.0.0.1','--port',str(args.port),'--cpu_num_threads','2'],cwd=str(Path(args.engine).parent),stdout=log,stderr=log)
+ proc=subprocess.Popen([args.engine,'--host','127.0.0.1','--port','50128','--cpu_num_threads','2'],cwd=str(Path(args.engine).parent),stdout=log,stderr=log)
  for _ in range(80):
   try: req('/speakers');return
   except Exception:
@@ -33,7 +33,7 @@ def start():
  raise RuntimeError('Startup timeout')
 def stop():
  if proc and proc.poll() is None:proc.terminate();proc.wait(timeout=15)
-def req(path,data=None):return http.open(urllib.request.Request(f'http://127.0.0.1:{args.port}'+path,data=data,headers={'Content-Type':'application/json'}),timeout=120).read()
+def req(path,data=None):return http.open(urllib.request.Request('http://127.0.0.1:50128'+path,data=data,headers={'Content-Type':'application/json'}),timeout=120).read()
 def silence(sec):return b'\0'*round(24000*sec)*2
 cache=Path(args.cache_dir) if args.cache_dir else work/'turn-cache';cache.mkdir(parents=True,exist_ok=True);new_synthesis_count=0
 def synth(text,role):
@@ -50,12 +50,14 @@ def synth(text,role):
 credits='; '.join(v['credit'] for v in roles.values())
 def save(name,pcm):
  mp=out/(name+'.mp3')
- subprocess.run(['ffmpeg','-v','error','-y','-f','s16le','-ar','24000','-ac','1','-i','pipe:0','-codec:a','libmp3lame','-b:a',args.continuous_bitrate if name.endswith('listening-draft') else '96k','-metadata','artist='+credits,'-metadata','comment=Independently authored N5; human playback review pending',str(mp)],input=pcm,check=True)
+ subprocess.run(['ffmpeg','-v','error','-y','-f','s16le','-ar','24000','-ac','1','-i','pipe:0','-codec:a','libmp3lame','-b:a',str(args.continuous_bitrate_kbps)+'k' if name.endswith('-listening-draft') else '96k','-metadata','artist='+credits,'-metadata','comment=Independently authored N5; human playback review pending',str(mp)],input=pcm,check=True)
  return mp
 def original_rest_music():
  # Original procedural instrumental pad; no recorded source or copied melody.
  # 12 independently chosen five-second harmonic cells, soft sine harmonics.
  cells=[(60,64,67),(57,60,64),(62,65,69),(55,59,62),(60,65,69),(57,62,65),(59,62,67),(55,60,64),(62,67,71),(57,60,65),(55,59,64),(60,64,67)]
+ if args.exam_number==2:
+  cells=[(60,65,69),(62,65,69),(55,60,64),(57,60,65),(60,64,69),(55,59,64),(62,67,71),(59,64,67),(57,62,66),(60,65,67),(55,60,67),(60,64,67)]
  samples=array.array('h')
  for i in range(1440000):
   t=i/24000;cell=int(t//5);local=t-cell*5
@@ -105,7 +107,9 @@ try:
    album.extend(synth('休み時間は終わりです。問題三を始めます。','adultFemale'));resume_end=round(len(album)/48)
    break_manifest={'afterProblem':2,'beforeProblem':3,'announcementStartMs':before,'musicStartMs':music_start,'musicEndMs':music_end,'musicDurationMs':60000,'resumeAnnouncementEndMs':resume_end,'musicPcmFrames':1440000,'path':str(music_file.relative_to(root)),'sha256':hashlib.sha256(music_file.read_bytes()).hexdigest(),'source':'Original procedural score in this generation script; no external recording or melody input.','publisherReviewed':False}
  closing_start=round(len(album)/48);narration(organization['closingJa']);orientation_segments.append({'role':'closing','startMs':closing_start,'endMs':round(len(album)/48)})
+ assert master.read_bytes()==master_bytes, 'Master changed during synthesis; regenerate from the new snapshot.'
+ assert organization_path.read_bytes()==organization_bytes, 'Organization changed during synthesis; regenerate from the new snapshot.'
  mp=save(f'n5-original-{exam_number}-listening-draft',album)
- manifest={'examId':exam['examId'],'status':'generated_ai_unreviewed','masterSha256':hashlib.sha256(master.read_bytes()).hexdigest(),'voiceCastingSha256':hashlib.sha256((root/'src/data/jlpt-original/voice-casting.json').read_bytes()).hexdigest(),'continuousAudioPath':str(mp.relative_to(root)),'continuousSha256':hashlib.sha256(mp.read_bytes()).hexdigest(),'durationMs':round(len(album)/48),'targetDurationMs':1800000,'matchesThirtyMinuteTarget':False,'durationMeasuredFromPcm':True,'publisherReviewed':False,'nativeReviewCompleted':False,'perceptualApproval':False,'rightsReleaseReviewCompleted':False,'break':break_manifest,'organizationSha256':hashlib.sha256((root/f'src/data/jlpt-original/n5/{exam_number}/listening-organization.ja.json').read_bytes()).hexdigest(),'orientationSegments':orientation_segments,'examplesCount':4,'instructions':plan,'settings':settings,'credits':[v['credit'] for v in roles.values()],'items':segments}
+ manifest={'examId':exam['examId'],'status':'generated_ai_unreviewed','masterSha256':hashlib.sha256(master_bytes).hexdigest(),'voiceCastingSha256':hashlib.sha256((root/'src/data/jlpt-original/voice-casting.json').read_bytes()).hexdigest(),'continuousAudioPath':str(mp.relative_to(root)),'continuousSha256':hashlib.sha256(mp.read_bytes()).hexdigest(),'durationMs':round(len(album)/48),'targetDurationMs':1800000,'matchesThirtyMinuteTarget':False,'durationMeasuredFromPcm':True,'continuousBitrateKbps':args.continuous_bitrate_kbps,'publisherReviewed':False,'nativeReviewCompleted':False,'perceptualApproval':False,'rightsReleaseReviewCompleted':False,'break':break_manifest,'organizationSha256':hashlib.sha256(organization_bytes).hexdigest(),'orientationSegments':orientation_segments,'examplesCount':4,'instructions':plan,'settings':settings,'credits':[v['credit'] for v in roles.values()],'items':segments}
  (root/f'src/data/jlpt-original/n5/{exam_number}/audio.manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'count':24,'durationSeconds':len(album)/48000,'complete':True}),flush=True)
 finally:stop();log.close()

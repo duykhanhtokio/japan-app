@@ -9,3 +9,7 @@ Adapter/catalog đã đăng ký, session riêng, audio start 0ms. Cấu trúc/ha
 Bộ nháp khác cùng ID của commit ac47373 được bảo toàn đầy đủ trong previous-draft-ac47373/, kèm handoff cũ tại SESSION_HANDOFF-at-3dcbe26.md. EDITORIAL_PROGRESS.json và validation.json cũ mô tả bộ nháp đó, không mô tả bản tích hợp hiện tại. Không ghép hai bộ câu/hình/kịch bản/audio khác nhau.
 
 Bước kế tiếp: xác minh fetch và scripts/check-work-persistence.mjs, rồi soạn N5 03 đầy đủ nội dung/hình/audio, kiểm tra và lưu từng đề. Còn 28 đề trong phạm vi 30 đề. Không đặt cổng duyệt nháp; người dùng test khi đủ bộ. Giữ UI, đề cũ và các cờ phê duyệt con người false; không xóa đề cũ trước gate thay thế.
+
+## Current consolidation
+
+The active final N5 02 is the 1811532ms version with QA in qa.json. The b27fc9d1 completed variant is preserved under concurrent-complete-b27fc9d1; it overlaps this exam and is not a new exam. The different unused ac473732 draft is preserved under concurrent-draft-ac473732 and may be reviewed and allocated to N5 03 only after durable persistence. Four selected VOICEVOX models are working at /dev/shm/jlpt-voicevox-test/engine/run in this temporary session; rediscover or reinstall if absent later.

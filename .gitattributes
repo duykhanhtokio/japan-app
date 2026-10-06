@@ -112,3 +112,14 @@ docs/jlpt-workspace/original/n5-02/runtime-2026-10-06/*.png -filter -diff -merge
 
 # Preserve the concurrent independent draft snapshot directly.
 docs/jlpt-workspace/original/n5-02/previous-draft-ac47373/** -filter -diff -merge
+
+# Independently generated N5 02 assets are stored directly with their content manifests.
+assets/jlpt-original/n5/02/**/*.png -filter -diff -merge -text
+assets/jlpt-original/n5/02/**/*.mp3 -filter -diff -merge -text
+docs/jlpt-workspace/original/n5-02/runtime-2026-10-06/*.png -filter -diff -merge -text
+
+# Preserve independently authored concurrent draft raster evidence directly.
+docs/jlpt-workspace/original/n5-02/concurrent-draft-ac473732/**/*.png -filter -diff -merge -text
+
+# Preserve the concurrent completed variant as exact noncompiled evidence.
+docs/jlpt-workspace/original/n5-02/concurrent-complete-b27fc9d1/** -filter -diff -merge -text

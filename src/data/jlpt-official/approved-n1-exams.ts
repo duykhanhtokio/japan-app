@@ -186,19 +186,19 @@ const listeningQuestions: TrialQuestion[] = LISTENING.questions.map((question) =
 const N1_2012_12_QUESTIONS = [...writtenQuestions, ...listeningQuestions];
 
 export const APPROVED_N1_EXAMS: readonly ApprovedN1Exam[] = [
-  ...(N5_ORIGINAL_02_REGISTRATION_READY ? [{
-    id: 'jpapp-n5-original-02-v1', level: 'N5' as const,
-    title: 'Japan App N5・AI作成模擬試験', periodLabel: '新作・第2回',
-    startLabel: '試験を始める', storageKey: N5_ORIGINAL_02_SESSION_KEY,
-    questions: N5_ORIGINAL_02_TRIAL, visualOptions: N5_ORIGINAL_02_VISUALS,
-    audioSource: require('../../../assets/jlpt-original/n5/02/audio/n5-original-02-listening-draft.mp3'),
-  }] : []),
   ...(N5_ORIGINAL_01_REGISTRATION_READY ? [{
     id: 'jpapp-n5-original-01-v1', level: 'N5' as const,
     title: 'Japan App N5・AI作成模擬試験', periodLabel: '新作・第1回',
     startLabel: '試験を始める', storageKey: N5_ORIGINAL_01_SESSION_KEY,
     questions: N5_ORIGINAL_01_TRIAL, visualOptions: N5_ORIGINAL_01_VISUALS,
     audioSource: require('../../../assets/jlpt-original/n5/01/audio/n5-original-01-listening-draft.mp3'),
+  }] : []),
+  ...(N5_ORIGINAL_02_REGISTRATION_READY ? [{
+    id: 'jpapp-n5-original-02-v1', level: 'N5' as const,
+    title: 'Japan App N5・AI作成模擬試験', periodLabel: '新作・第2回',
+    startLabel: '試験を始める', storageKey: N5_ORIGINAL_02_SESSION_KEY,
+    questions: N5_ORIGINAL_02_TRIAL, visualOptions: N5_ORIGINAL_02_VISUALS,
+    audioSource: require('../../../assets/jlpt-original/n5/02/audio/n5-original-02-listening-draft.mp3'),
   }] : []),
 
   {
