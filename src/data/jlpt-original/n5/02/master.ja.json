@@ -1,38 +1,51 @@
 {
   "examId": "jpapp-n5-original-02-v1",
-  "title": "Japan App N5・AI作成模擬試験 第2回",
+  "title": "Japan App オリジナル模擬試験 N5 第02回",
   "level": "N5",
   "version": 1,
-  "status": "formal_ai_authored_in_progress",
+  "status": "ai_authored_integrated_candidate",
   "generatedBy": "AI",
   "publisherReviewed": false,
   "reviewedByNativeSpeaker": false,
-  "referencePolicy": "Structure, level skills and aggregate timing metadata only. No legacy prompts, options, answers, scripts, recordings or drawings used as authoring inputs.",
-  "structureReference": "n5-2013-07-exam-03",
+  "releaseReady": false,
+  "runtimeIntegrated": true,
+  "referencePolicy": "Independent learning objectives and situations; structural/timing metadata only. No legacy questions, scripts, answers, images or audio supplied as authoring inputs.",
   "sectionTimeMinutes": {
     "vocabulary": 20,
-    "grammarReading": 40,
+    "grammar_reading": 40,
     "listening": 30
   },
   "audio": {
-    "status": "not_generated",
+    "status": "generated_ai_unreviewed",
+    "actualDurationVerified": true,
     "continuousPlayback": true,
-    "rightsVerified": false
+    "rightsVerified": false,
+    "recordingPlan": {
+      "voiceCasting": "src/data/jlpt-original/voice-casting.json",
+      "pacing": "publisher-approved N5 override; speedScale 0.9; 2s intro, .5s dialogue, answer 12/12/10/8s",
+      "breakAfterProblem": 2,
+      "musicDurationMs": 60000,
+      "nonScoredExamples": 4,
+      "targetDurationMs": 1800000,
+      "durationStatus": "unmeasured_plan_only"
+    },
+    "targetDurationMatched": true,
+    "actualDurationMs": 1824002,
+    "targetAssessment": "Measured approximately 30 minutes; fixed publisher tolerance remains unconfirmed.",
+    "durationMeasurement": "Decoded PCM; 1ms rounding/padding difference from generation buffer."
   },
   "illustrations": {
-    "required": 5,
-    "status": "generated_ai_unreviewed",
-    "manifestPath": "src/data/jlpt-original/n5/02/images.manifest.json"
+    "status": "generated_ai_inspected",
+    "rightsVerified": false
   },
-  "releaseReady": false,
-  "runtimeIntegrated": false,
   "passages": {
-    "grammar-bicycle": "日曜日、父と自転車の店に行きました。わたしの自転車は古く（１）、よく止まります。父は「新しい自転車を買いましょう」と（２）。店には自転車がたくさんありました。青い自転車と赤い自転車を見ました。青いほうが安かった（３）、青い自転車を買いました。店の人に、自転車のかぎの使い方を教えて（４）。その日の午後、家の近くの公園まで乗りました。これからも大切に（５）。",
-    "short-letter": "美香さんへ\nあした、わたしの家でお昼ごはんを食べましょう。十二時に来てください。ごはんとスープを作ります。飲み物もあります。美香さんは何も持って来なくていいです。\nゆり",
-    "short-library": "図書館からのお知らせ\n今週の木曜日は、本の棚を直すため、図書館を休みます。返す本は入口の箱に入れてください。ただし、ＣＤは箱に入れないでください。ＣＤは金曜日にカウンターへ持って来てください。",
-    "short-cat": "うちのねこは、外で遊ぶのが好きです。でも、きょうは雨です。ねこは窓の前に座って、外を見ています。わたしがねこのおもちゃを持って来ましたが、ねこは遊びません。雨がやむのを待っているようです。",
-    "medium-garden": "わたしの学校には小さい畑があります。四月、先生と学生がいっしょに野菜を植えました。わたしは野菜を育てたことがありませんでした。最初は、毎日たくさん水をあげました。でも、先生は「土がぬれているときは、水をあげなくていいですよ」と言いました。それから、水をあげる前に、土を見ています。\n七月、野菜が大きくなりました。授業でみんなと取って、サラダを作りました。わたしは店の野菜をあまり食べませんでしたが、自分で育てた野菜はたくさん食べました。冬にも畑で何か育てたいです。",
-    "search-pool": "さくらプール\nＡ：月・水　９：００〜１０：００　大人の水泳　初心者向け\nＢ：火・木　１８：００〜１９：００　大人の水泳　泳げる人向け\nＣ：土　１０：００〜１１：００　子どもの水泳　初心者向け\nＤ：日　１５：００〜１６：００　大人の水泳　初心者向け\n各コース、入口のカウンターで申し込んでください。"
+    "text-grammar-01": "先週、わたしの 家の となりに 新しい 家族【1】来ました。男の人は 大きい 箱を 持っていました。箱が 重そうだった【2】、わたしも 手伝いました。わたしは「【3】」と 言って、軽い 箱を 一つ 運びました。\n夕方、その 家族が うちに 来ました。庭で 作った トマトを くれました。わたしたちは その トマトを 晩ごはんに【4】。とても おいしかったです。母は その 家族に「あしたも、うちへ【5】」と 言いました。",
+    "short-01": "たくさんへ\n青い かさを 借りました。ありがとう。かさは 玄関の 中に 置きました。ぬれていたので、まだ 閉じていません。明日の 朝まで そのままに しておいてください。\nしおり",
+    "short-02": "バスの 中に かばんを 忘れた方へ\n今日の 十時ごろ、白い 小さい かばんが 見つかりました。かばんは バスの 営業所に あります。駅の 案内所には ありません。受け取る ときは、かばんの 中の 物を 説明してください。",
+    "short-03": "火曜日の 夜、うちの 電気が 消えました。父は ろうそくを 探しましたが、見つかりませんでした。姉が 小さい 電池の ライトを 持って来たので、みんなで その そばに 座りました。しばらくして 電気が つきました。",
+    "medium-01": "わたしは 毎週、水曜日に 町の 教室で 日本語を 勉強しています。先生は 授業の 前に、みんなに 最近の ことを 聞きます。はじめは 日本語で 話すのが 恥ずかしくて、いつも「何も ありません」と 答えていました。\n先週、近所の 人と いっしょに 犬を 探しました。犬は 公園の ベンチの 下に いました。教室で その 話を すると、先生だけでなく、ほかの 人も いろいろ 質問してくれました。わたしは 知っている ことばで 答えました。長い 文は 話せませんでしたが、みんなが 聞いてくれて、うれしかったです。次の 授業でも、何か 話してみたいです。",
+    "medium-02": "弟は 先月から、お店で 使わなくなった 箱を 集めています。わたしは はじめ、ごみを 集めていると 思いました。でも、弟は 箱を 切って、窓や ドアを 作っていました。小さい 町を 作りたいそうです。\n昨日、弟は わたしに「青い 紙が ない？」と 聞きました。川を 作るためです。うちには 青い 紙が なかったので、わたしは 白い 紙に 青い 色を ぬりました。弟は それを 道の 横に 置きました。まだ 店と 橋が ありません。弟は「今度の 休みに 二人で 作ろう」と 言いました。わたしも 楽しみです。",
+    "information-01": "町の 料理の 練習会\nA　火曜日 18:00〜19:00　野菜を 切る 練習　300円　持ち物なし\nB　水曜日 18:00〜19:00　卵の 料理　200円　エプロン\nC　土曜日 10:00〜11:00　スープを 作る　200円　おわん\nD　日曜日 10:00〜11:00　おにぎりを 作る　300円　持ち物なし\n一回だけでも 参加できます。前の日の 午後四時までに 電話で 申し込んでください。"
   },
   "questions": [
     {
@@ -40,2257 +53,2214 @@
       "section": "vocabulary",
       "group": 1,
       "number": 1,
-      "prompt": "駅の【西】に大きい公園があります。\n【 】のことばは、どう読みますか。",
+      "prompt": "毎【朝】、早く 起きます。\n【　】の ことばの 読み方を 選んでください。",
+      "learningObjective": "文脈の中の「朝」の基本的な読み。",
       "options": [
         {
           "id": "1",
-          "text": "ひがし",
-          "rationale": "Phương án «ひがし» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «にし»."
+          "text": "あし",
+          "rationale": "この文の「朝」の読み「あさ」とは音または読みの意味が異なる。"
         },
         {
           "id": "2",
-          "text": "にし",
-          "rationale": "Đúng: 文中の漢字の読み; にし"
+          "text": "あめ",
+          "rationale": "この文の「朝」の読み「あさ」とは音または読みの意味が異なる。"
         },
         {
           "id": "3",
-          "text": "みなみ",
-          "rationale": "Phương án «みなみ» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «にし»."
+          "text": "あさ",
+          "rationale": "この文の「朝」は「あさ」と読む。"
         },
         {
           "id": "4",
-          "text": "きた",
-          "rationale": "Phương án «きた» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «にし»."
+          "text": "あき",
+          "rationale": "この文の「朝」の読み「あさ」とは音または読みの意味が異なる。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "文中の漢字の読み",
-      "sentence": "駅の【西】に大きい公園があります。",
-      "target": "西"
+      "correctOptionId": "3"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-1-02",
       "section": "vocabulary",
       "group": 1,
       "number": 2,
-      "prompt": "このへやには【窓】が二つあります。\n【 】のことばは、どう読みますか。",
+      "prompt": "【水】を コップに 入れます。\n【　】の ことばの 読み方を 選んでください。",
+      "learningObjective": "文脈の中の「水」の基本的な読み。",
       "options": [
         {
           "id": "1",
-          "text": "ゆか",
-          "rationale": "Phương án «ゆか» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «まど»."
+          "text": "みせ",
+          "rationale": "この文の「水」の読み「みず」とは音または読みの意味が異なる。"
         },
         {
           "id": "2",
-          "text": "いす",
-          "rationale": "Phương án «いす» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «まど»."
+          "text": "みみ",
+          "rationale": "この文の「水」の読み「みず」とは音または読みの意味が異なる。"
         },
         {
           "id": "3",
-          "text": "かべ",
-          "rationale": "Phương án «かべ» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «まど»."
+          "text": "みち",
+          "rationale": "この文の「水」の読み「みず」とは音または読みの意味が異なる。"
         },
         {
           "id": "4",
-          "text": "まど",
-          "rationale": "Đúng: 文中の漢字の読み; まど"
+          "text": "みず",
+          "rationale": "この文の「水」は「みず」と読む。"
         }
       ],
-      "correctOptionId": "4",
-      "learningObjective": "文中の漢字の読み",
-      "sentence": "このへやには【窓】が二つあります。",
-      "target": "窓"
+      "correctOptionId": "4"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-1-03",
       "section": "vocabulary",
       "group": 1,
       "number": 3,
-      "prompt": "あしたは【九日】です。\n【 】のことばは、どう読みますか。",
+      "prompt": "【右】の かばんは わたしのです。\n【　】の ことばの 読み方を 選んでください。",
+      "learningObjective": "文脈の中の「右」の基本的な読み。",
       "options": [
         {
           "id": "1",
-          "text": "ここのか",
-          "rationale": "Đúng: 文中の漢字の読み; ここのか"
+          "text": "うえ",
+          "rationale": "この文の「右」の読み「みぎ」とは音または読みの意味が異なる。"
         },
         {
           "id": "2",
-          "text": "くにち",
-          "rationale": "Phương án «くにち» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «ここのか»."
+          "text": "みぎ",
+          "rationale": "この文の「右」は「みぎ」と読む。"
         },
         {
           "id": "3",
-          "text": "きゅうにち",
-          "rationale": "Phương án «きゅうにち» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «ここのか»."
+          "text": "みち",
+          "rationale": "この文の「右」の読み「みぎ」とは音または読みの意味が異なる。"
         },
         {
           "id": "4",
-          "text": "ここのにち",
-          "rationale": "Phương án «ここのにち» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «ここのか»."
+          "text": "ひだり",
+          "rationale": "この文の「右」の読み「みぎ」とは音または読みの意味が異なる。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "文中の漢字の読み",
-      "sentence": "あしたは【九日】です。",
-      "target": "九日"
+      "correctOptionId": "2"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-1-04",
       "section": "vocabulary",
       "group": 1,
       "number": 4,
-      "prompt": "【新しい】くつで学校へ行きます。\n【 】のことばは、どう読みますか。",
+      "prompt": "【出口】で 友だちを 待ちます。\n【　】の ことばの 読み方を 選んでください。",
+      "learningObjective": "文脈の中の「出口」の基本的な読み。",
       "options": [
         {
           "id": "1",
-          "text": "あたらしい",
-          "rationale": "Đúng: 文中の漢字の読み; あたらしい"
+          "text": "いりぐち",
+          "rationale": "この文の「出口」の読み「でぐち」とは音または読みの意味が異なる。"
         },
         {
           "id": "2",
-          "text": "あだらしい",
-          "rationale": "Phương án «あだらしい» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «あたらしい»."
+          "text": "でぐつ",
+          "rationale": "この文の「出口」の読み「でぐち」とは音または読みの意味が異なる。"
         },
         {
           "id": "3",
-          "text": "あたらじい",
-          "rationale": "Phương án «あたらじい» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «あたらしい»."
+          "text": "でぐち",
+          "rationale": "この文の「出口」は「でぐち」と読む。"
         },
         {
           "id": "4",
-          "text": "あたらし",
-          "rationale": "Phương án «あたらし» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «あたらしい»."
+          "text": "でくち",
+          "rationale": "この文の「出口」の読み「でぐち」とは音または読みの意味が異なる。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "文中の漢字の読み",
-      "sentence": "【新しい】くつで学校へ行きます。",
-      "target": "新しい"
+      "correctOptionId": "3"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-1-05",
       "section": "vocabulary",
       "group": 1,
       "number": 5,
-      "prompt": "バスはここで【止まります】。\n【 】のことばは、どう読みますか。",
+      "prompt": "【学校】まで 自転車で 行きます。\n【　】の ことばの 読み方を 選んでください。",
+      "learningObjective": "文脈の中の「学校」の基本的な読み。",
       "options": [
         {
           "id": "1",
-          "text": "とめます",
-          "rationale": "Phương án «とめます» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «とまります»."
+          "text": "かっこう",
+          "rationale": "この文の「学校」の読み「がっこう」とは音または読みの意味が異なる。"
         },
         {
           "id": "2",
-          "text": "とまります",
-          "rationale": "Đúng: 文中の漢字の読み; とまります"
+          "text": "がっこ",
+          "rationale": "この文の「学校」の読み「がっこう」とは音または読みの意味が異なる。"
         },
         {
           "id": "3",
-          "text": "すわります",
-          "rationale": "Phương án «すわります» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «とまります»."
+          "text": "がこう",
+          "rationale": "この文の「学校」の読み「がっこう」とは音または読みの意味が異なる。"
         },
         {
           "id": "4",
-          "text": "とります",
-          "rationale": "Phương án «とります» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «とまります»."
+          "text": "がっこう",
+          "rationale": "この文の「学校」は「がっこう」と読む。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "文中の漢字の読み",
-      "sentence": "バスはここで【止まります】。",
-      "target": "止まります"
+      "correctOptionId": "4"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-1-06",
       "section": "vocabulary",
       "group": 1,
       "number": 6,
-      "prompt": "朝、この道を【歩きます】。\n【 】のことばは、どう読みますか。",
+      "prompt": "【毎日】、犬と 散歩します。\n【　】の ことばの 読み方を 選んでください。",
+      "learningObjective": "文脈の中の「毎日」の基本的な読み。",
       "options": [
         {
           "id": "1",
-          "text": "あるきます",
-          "rationale": "Đúng: 文中の漢字の読み; あるきます"
+          "text": "まいひ",
+          "rationale": "この文の「毎日」の読み「まいにち」とは音または読みの意味が異なる。"
         },
         {
           "id": "2",
-          "text": "あるけます",
-          "rationale": "Phương án «あるけます» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «あるきます»."
+          "text": "まいじつ",
+          "rationale": "この文の「毎日」の読み「まいにち」とは音または読みの意味が異なる。"
         },
         {
           "id": "3",
-          "text": "あそびます",
-          "rationale": "Phương án «あそびます» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «あるきます»."
+          "text": "まえにち",
+          "rationale": "この文の「毎日」の読み「まいにち」とは音または読みの意味が異なる。"
         },
         {
           "id": "4",
-          "text": "あらきます",
-          "rationale": "Phương án «あらきます» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «あるきます»."
+          "text": "まいにち",
+          "rationale": "この文の「毎日」は「まいにち」と読む。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "文中の漢字の読み",
-      "sentence": "朝、この道を【歩きます】。",
-      "target": "歩きます"
+      "correctOptionId": "4"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-1-07",
       "section": "vocabulary",
       "group": 1,
       "number": 7,
-      "prompt": "兄は【会社】で働いています。\n【 】のことばは、どう読みますか。",
+      "prompt": "ここに 【名前】を 書いてください。\n【　】の ことばの 読み方を 選んでください。",
+      "learningObjective": "文脈の中の「名前」の基本的な読み。",
       "options": [
         {
           "id": "1",
-          "text": "かいしょ",
-          "rationale": "Phương án «かいしょ» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «かいしゃ»."
+          "text": "なめえ",
+          "rationale": "この文の「名前」の読み「なまえ」とは音または読みの意味が異なる。"
         },
         {
           "id": "2",
-          "text": "かいしゃ",
-          "rationale": "Đúng: 文中の漢字の読み; かいしゃ"
+          "text": "なまえ",
+          "rationale": "この文の「名前」は「なまえ」と読む。"
         },
         {
           "id": "3",
-          "text": "がいしゃ",
-          "rationale": "Phương án «がいしゃ» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «かいしゃ»."
+          "text": "なまい",
+          "rationale": "この文の「名前」の読み「なまえ」とは音または読みの意味が異なる。"
         },
         {
           "id": "4",
-          "text": "かいじゃ",
-          "rationale": "Phương án «かいじゃ» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «かいしゃ»."
+          "text": "なまへ",
+          "rationale": "この文の「名前」の読み「なまえ」とは音または読みの意味が異なる。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "文中の漢字の読み",
-      "sentence": "兄は【会社】で働いています。",
-      "target": "会社"
+      "correctOptionId": "2"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-1-08",
       "section": "vocabulary",
       "group": 1,
       "number": 8,
-      "prompt": "パンを【半分】食べました。\n【 】のことばは、どう読みますか。",
+      "prompt": "会は 来月の 【八日】です。\n【　】の ことばの 読み方を 選んでください。",
+      "learningObjective": "文脈の中の「八日」の基本的な読み。",
       "options": [
         {
           "id": "1",
-          "text": "はぶん",
-          "rationale": "Phương án «はぶん» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «はんぶん»."
+          "text": "ようか",
+          "rationale": "この文の「八日」は「ようか」と読む。"
         },
         {
           "id": "2",
-          "text": "はんぶん",
-          "rationale": "Đúng: 文中の漢字の読み; はんぶん"
+          "text": "よっか",
+          "rationale": "この文の「八日」の読み「ようか」とは音または読みの意味が異なる。"
         },
         {
           "id": "3",
-          "text": "はんぷん",
-          "rationale": "Phương án «はんぷん» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «はんぶん»."
+          "text": "はちにち",
+          "rationale": "この文の「八日」の読み「ようか」とは音または読みの意味が異なる。"
         },
         {
           "id": "4",
-          "text": "はんふん",
-          "rationale": "Phương án «はんふん» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «はんぶん»."
+          "text": "やっか",
+          "rationale": "この文の「八日」の読み「ようか」とは音または読みの意味が異なる。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "文中の漢字の読み",
-      "sentence": "パンを【半分】食べました。",
-      "target": "半分"
+      "correctOptionId": "1"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-1-09",
       "section": "vocabulary",
       "group": 1,
       "number": 9,
-      "prompt": "水を【入れて】ください。\n【 】のことばは、どう読みますか。",
+      "prompt": "姉は 絵が 【上手】です。\n【　】の ことばの 読み方を 選んでください。",
+      "learningObjective": "文脈の中の「上手」の基本的な読み。",
       "options": [
         {
           "id": "1",
-          "text": "はいって",
-          "rationale": "Phương án «はいって» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «いれて»."
+          "text": "うえて",
+          "rationale": "この文の「上手」の読み「じょうず」とは音または読みの意味が異なる。"
         },
         {
           "id": "2",
-          "text": "いれって",
-          "rationale": "Phương án «いれって» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «いれて»."
+          "text": "じょうす",
+          "rationale": "この文の「上手」の読み「じょうず」とは音または読みの意味が異なる。"
         },
         {
           "id": "3",
-          "text": "いれて",
-          "rationale": "Đúng: 文中の漢字の読み; いれて"
+          "text": "じょうず",
+          "rationale": "この文の「上手」は「じょうず」と読む。"
         },
         {
           "id": "4",
-          "text": "いって",
-          "rationale": "Phương án «いって» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «いれて»."
+          "text": "じょず",
+          "rationale": "この文の「上手」の読み「じょうず」とは音または読みの意味が異なる。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "文中の漢字の読み",
-      "sentence": "水を【入れて】ください。",
-      "target": "入れて"
+      "correctOptionId": "3"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-1-10",
       "section": "vocabulary",
       "group": 1,
       "number": 10,
-      "prompt": "ここに名前を【書いて】ください。\n【 】のことばは、どう読みますか。",
+      "prompt": "この ペンは 【百円】です。\n【　】の ことばの 読み方を 選んでください。",
+      "learningObjective": "文脈の中の「百円」の基本的な読み。",
       "options": [
         {
           "id": "1",
-          "text": "かきて",
-          "rationale": "Phương án «かきて» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «かいて»."
+          "text": "ひゃくえん",
+          "rationale": "この文の「百円」は「ひゃくえん」と読む。"
         },
         {
           "id": "2",
-          "text": "きいて",
-          "rationale": "Phương án «きいて» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «かいて»."
+          "text": "ひゃっえん",
+          "rationale": "この文の「百円」の読み「ひゃくえん」とは音または読みの意味が異なる。"
         },
         {
           "id": "3",
-          "text": "かいて",
-          "rationale": "Đúng: 文中の漢字の読み; かいて"
+          "text": "ひゃけん",
+          "rationale": "この文の「百円」の読み「ひゃくえん」とは音または読みの意味が異なる。"
         },
         {
           "id": "4",
-          "text": "かって",
-          "rationale": "Phương án «かって» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «かいて»."
+          "text": "びゃくえん",
+          "rationale": "この文の「百円」の読み「ひゃくえん」とは音または読みの意味が異なる。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "文中の漢字の読み",
-      "sentence": "ここに名前を【書いて】ください。",
-      "target": "書いて"
+      "correctOptionId": "1"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-1-11",
       "section": "vocabulary",
       "group": 1,
       "number": 11,
-      "prompt": "今週は【忙しい】です。\n【 】のことばは、どう読みますか。",
+      "prompt": "【弟】は 今、六歳です。\n【　】の ことばの 読み方を 選んでください。",
+      "learningObjective": "文脈の中の「弟」の基本的な読み。",
       "options": [
         {
           "id": "1",
-          "text": "いそがしい",
-          "rationale": "Đúng: 文中の漢字の読み; いそがしい"
+          "text": "おとと",
+          "rationale": "この文の「弟」の読み「おとうと」とは音または読みの意味が異なる。"
         },
         {
           "id": "2",
-          "text": "いぞがしい",
-          "rationale": "Phương án «いぞがしい» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «いそがしい»."
+          "text": "おとうと",
+          "rationale": "この文の「弟」は「おとうと」と読む。"
         },
         {
           "id": "3",
-          "text": "いそがし",
-          "rationale": "Phương án «いそがし» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «いそがしい»."
+          "text": "おとおと",
+          "rationale": "この文の「弟」の読み「おとうと」とは音または読みの意味が異なる。"
         },
         {
           "id": "4",
-          "text": "いそかしい",
-          "rationale": "Phương án «いそかしい» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «いそがしい»."
+          "text": "おとう",
+          "rationale": "この文の「弟」の読み「おとうと」とは音または読みの意味が異なる。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "文中の漢字の読み",
-      "sentence": "今週は【忙しい】です。",
-      "target": "忙しい"
+      "correctOptionId": "2"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-1-12",
       "section": "vocabulary",
       "group": 1,
       "number": 12,
-      "prompt": "きょうは空が【青い】です。\n【 】のことばは、どう読みますか。",
+      "prompt": "寒いので、部屋に 【入ります】。\n【　】の ことばの 読み方を 選んでください。",
+      "learningObjective": "文脈の中の「入ります」の基本的な読み。",
       "options": [
         {
           "id": "1",
-          "text": "あおいろ",
-          "rationale": "Phương án «あおいろ» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «あおい»."
+          "text": "はります",
+          "rationale": "この文の「入ります」の読み「はいります」とは音または読みの意味が異なる。"
         },
         {
           "id": "2",
-          "text": "あおい",
-          "rationale": "Đúng: 文中の漢字の読み; あおい"
+          "text": "いります",
+          "rationale": "この文の「入ります」の読み「はいります」とは音または読みの意味が異なる。"
         },
         {
           "id": "3",
-          "text": "あかい",
-          "rationale": "Phương án «あかい» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «あおい»."
+          "text": "はいります",
+          "rationale": "この文の「入ります」は「はいります」と読む。"
         },
         {
           "id": "4",
-          "text": "あお",
-          "rationale": "Phương án «あお» không phù hợp 文中の漢字の読み; dữ kiện/quy tắc yêu cầu «あおい»."
+          "text": "はいれます",
+          "rationale": "この文の「入ります」の読み「はいります」とは音または読みの意味が異なる。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "文中の漢字の読み",
-      "sentence": "きょうは空が【青い】です。",
-      "target": "青い"
+      "correctOptionId": "3"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-2-01",
       "section": "vocabulary",
       "group": 2,
       "number": 1,
-      "prompt": "テーブルの【した】にねこがいます。\n【 】のことばを漢字で書くと、どれですか。",
+      "prompt": "父は 【くるま】で 仕事に 行きます。\n【　】の ことばは、どう 書きますか。",
+      "learningObjective": "基本語「くるま」の表記。",
       "options": [
         {
           "id": "1",
-          "text": "中",
-          "rationale": "Phương án «中» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «下»."
+          "text": "車",
+          "rationale": "自動車を表す車。ほかは乗り物の種類が異なる。"
         },
         {
           "id": "2",
-          "text": "上",
-          "rationale": "Phương án «上» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «下»."
+          "text": "汽車",
+          "rationale": "この選択肢は「くるま」の表記ではない。自動車を表す車。ほかは乗り物の種類が異なる。"
         },
         {
           "id": "3",
-          "text": "外",
-          "rationale": "Phương án «外» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «下»."
+          "text": "電車",
+          "rationale": "この選択肢は「くるま」の表記ではない。自動車を表す車。ほかは乗り物の種類が異なる。"
         },
         {
           "id": "4",
-          "text": "下",
-          "rationale": "Đúng: かなから文に合う漢字表記; 下"
+          "text": "自転車",
+          "rationale": "この選択肢は「くるま」の表記ではない。自動車を表す車。ほかは乗り物の種類が異なる。"
         }
       ],
-      "correctOptionId": "4",
-      "learningObjective": "かなから文に合う漢字表記",
-      "sentence": "テーブルの【した】にねこがいます。",
-      "target": "した"
+      "correctOptionId": "1"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-2-02",
       "section": "vocabulary",
       "group": 2,
       "number": 2,
-      "prompt": "駅まで【くるま】で行きます。\n【 】のことばを漢字で書くと、どれですか。",
+      "prompt": "夜、友だちに 【でんわ】を かけます。\n【　】の ことばは、どう 書きますか。",
+      "learningObjective": "基本語「でんわ」の表記。",
       "options": [
         {
           "id": "1",
-          "text": "道",
-          "rationale": "Phương án «道» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «車»."
+          "text": "電池",
+          "rationale": "この選択肢は「でんわ」の表記ではない。「かける」と組み合わせる電話。ほかは電力・天候・電池。"
         },
         {
           "id": "2",
-          "text": "車",
-          "rationale": "Đúng: かなから文に合う漢字表記; 車"
+          "text": "電気",
+          "rationale": "この選択肢は「でんわ」の表記ではない。「かける」と組み合わせる電話。ほかは電力・天候・電池。"
         },
         {
           "id": "3",
-          "text": "電",
-          "rationale": "Phương án «電» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «車»."
+          "text": "電話",
+          "rationale": "「かける」と組み合わせる電話。ほかは電力・天候・電池。"
         },
         {
           "id": "4",
-          "text": "門",
-          "rationale": "Phương án «門» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «車»."
+          "text": "天気",
+          "rationale": "この選択肢は「でんわ」の表記ではない。「かける」と組み合わせる電話。ほかは電力・天候・電池。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "かなから文に合う漢字表記",
-      "sentence": "駅まで【くるま】で行きます。",
-      "target": "くるま"
+      "correctOptionId": "3"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-2-03",
       "section": "vocabulary",
       "group": 2,
       "number": 3,
-      "prompt": "この【やま】に雪があります。\n【 】のことばを漢字で書くと、どれですか。",
+      "prompt": "今日は 【そら】が 青いです。\n【　】の ことばは、どう 書きますか。",
+      "learningObjective": "基本語「そら」の表記。",
       "options": [
         {
           "id": "1",
-          "text": "田",
-          "rationale": "Phương án «田» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «山»."
+          "text": "空",
+          "rationale": "空はそら。海はうみ、雨はあめ、雲はくも。"
         },
         {
           "id": "2",
-          "text": "雨",
-          "rationale": "Phương án «雨» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «山»."
+          "text": "海",
+          "rationale": "この選択肢は「そら」の表記ではない。空はそら。海はうみ、雨はあめ、雲はくも。"
         },
         {
           "id": "3",
-          "text": "川",
-          "rationale": "Phương án «川» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «山»."
+          "text": "雲",
+          "rationale": "この選択肢は「そら」の表記ではない。空はそら。海はうみ、雨はあめ、雲はくも。"
         },
         {
           "id": "4",
-          "text": "山",
-          "rationale": "Đúng: かなから文に合う漢字表記; 山"
+          "text": "雨",
+          "rationale": "この選択肢は「そら」の表記ではない。空はそら。海はうみ、雨はあめ、雲はくも。"
         }
       ],
-      "correctOptionId": "4",
-      "learningObjective": "かなから文に合う漢字表記",
-      "sentence": "この【やま】に雪があります。",
-      "target": "やま"
+      "correctOptionId": "1"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-2-04",
       "section": "vocabulary",
       "group": 2,
       "number": 4,
-      "prompt": "パンを【みっつ】買いました。\n【 】のことばを漢字で書くと、どれですか。",
+      "prompt": "【ともだち】と 昼ごはんを 食べました。\n【　】の ことばは、どう 書きますか。",
+      "learningObjective": "基本語「ともだち」の表記。",
       "options": [
         {
           "id": "1",
-          "text": "三つ",
-          "rationale": "Đúng: かなから文に合う漢字表記; 三つ"
+          "text": "家族",
+          "rationale": "この選択肢は「ともだち」の表記ではない。友達はともだち。ほかは親族や先生。"
         },
         {
           "id": "2",
-          "text": "四つ",
-          "rationale": "Phương án «四つ» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «三つ»."
+          "text": "兄弟",
+          "rationale": "この選択肢は「ともだち」の表記ではない。友達はともだち。ほかは親族や先生。"
         },
         {
           "id": "3",
-          "text": "六つ",
-          "rationale": "Phương án «六つ» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «三つ»."
+          "text": "先生",
+          "rationale": "この選択肢は「ともだち」の表記ではない。友達はともだち。ほかは親族や先生。"
         },
         {
           "id": "4",
-          "text": "二つ",
-          "rationale": "Phương án «二つ» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «三つ»."
+          "text": "友達",
+          "rationale": "友達はともだち。ほかは親族や先生。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "かなから文に合う漢字表記",
-      "sentence": "パンを【みっつ】買いました。",
-      "target": "みっつ"
+      "correctOptionId": "4"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-2-05",
       "section": "vocabulary",
       "group": 2,
       "number": 5,
-      "prompt": "このかばんは【たかい】です。\n【 】のことばを漢字で書くと、どれですか。",
+      "prompt": "パンを 【しろい】 お皿に のせます。\n【　】の ことばは、どう 書きますか。",
+      "learningObjective": "基本語「しろい」の表記。",
       "options": [
         {
           "id": "1",
-          "text": "安い",
-          "rationale": "Phương án «安い» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «高い»."
+          "text": "青い",
+          "rationale": "この選択肢は「しろい」の表記ではない。白いはしろい。ほかは違う色。"
         },
         {
           "id": "2",
-          "text": "長い",
-          "rationale": "Phương án «長い» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «高い»."
+          "text": "赤い",
+          "rationale": "この選択肢は「しろい」の表記ではない。白いはしろい。ほかは違う色。"
         },
         {
           "id": "3",
-          "text": "高い",
-          "rationale": "Đúng: かなから文に合う漢字表記; 高い"
+          "text": "黒い",
+          "rationale": "この選択肢は「しろい」の表記ではない。白いはしろい。ほかは違う色。"
         },
         {
           "id": "4",
-          "text": "早い",
-          "rationale": "Phương án «早い» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «高い»."
+          "text": "白い",
+          "rationale": "白いはしろい。ほかは違う色。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "かなから文に合う漢字表記",
-      "sentence": "このかばんは【たかい】です。",
-      "target": "たかい"
+      "correctOptionId": "4"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-2-06",
       "section": "vocabulary",
       "group": 2,
       "number": 6,
-      "prompt": "【そと】でサッカーをしましょう。\n【 】のことばを漢字で書くと、どれですか。",
+      "prompt": "母の 【かいしゃ】は 駅の 近くです。\n【　】の ことばは、どう 書きますか。",
+      "learningObjective": "基本語「かいしゃ」の表記。",
       "options": [
         {
           "id": "1",
-          "text": "前",
-          "rationale": "Phương án «前» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «外»."
+          "text": "会話",
+          "rationale": "この選択肢は「かいしゃ」の表記ではない。働く場所は会社。会話・社会・会議は読みも意味も異なる。"
         },
         {
           "id": "2",
-          "text": "右",
-          "rationale": "Phương án «右» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «外»."
+          "text": "社会",
+          "rationale": "この選択肢は「かいしゃ」の表記ではない。働く場所は会社。会話・社会・会議は読みも意味も異なる。"
         },
         {
           "id": "3",
-          "text": "外",
-          "rationale": "Đúng: かなから文に合う漢字表記; 外"
+          "text": "会社",
+          "rationale": "働く場所は会社。会話・社会・会議は読みも意味も異なる。"
         },
         {
           "id": "4",
-          "text": "内",
-          "rationale": "Phương án «内» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «外»."
+          "text": "会議",
+          "rationale": "この選択肢は「かいしゃ」の表記ではない。働く場所は会社。会話・社会・会議は読みも意味も異なる。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "かなから文に合う漢字表記",
-      "sentence": "【そと】でサッカーをしましょう。",
-      "target": "そと"
+      "correctOptionId": "3"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-2-07",
       "section": "vocabulary",
       "group": 2,
       "number": 7,
-      "prompt": "【まいにち】日記を書きます。\n【 】のことばを漢字で書くと、どれですか。",
+      "prompt": "帰る 【じかん】を 決めましょう。\n【　】の ことばは、どう 書きますか。",
+      "learningObjective": "基本語「じかん」の表記。",
       "options": [
         {
           "id": "1",
-          "text": "休日",
-          "rationale": "Phương án «休日» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «毎日»."
+          "text": "週間",
+          "rationale": "この選択肢は「じかん」の表記ではない。時間はじかん。ほかはとけい・しゅうかん・きかん。"
         },
         {
           "id": "2",
-          "text": "今日",
-          "rationale": "Phương án «今日» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «毎日»."
+          "text": "時計",
+          "rationale": "この選択肢は「じかん」の表記ではない。時間はじかん。ほかはとけい・しゅうかん・きかん。"
         },
         {
           "id": "3",
-          "text": "毎月",
-          "rationale": "Phương án «毎月» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «毎日»."
+          "text": "時間",
+          "rationale": "時間はじかん。ほかはとけい・しゅうかん・きかん。"
         },
         {
           "id": "4",
-          "text": "毎日",
-          "rationale": "Đúng: かなから文に合う漢字表記; 毎日"
+          "text": "期間",
+          "rationale": "この選択肢は「じかん」の表記ではない。時間はじかん。ほかはとけい・しゅうかん・きかん。"
         }
       ],
-      "correctOptionId": "4",
-      "learningObjective": "かなから文に合う漢字表記",
-      "sentence": "【まいにち】日記を書きます。",
-      "target": "まいにち"
+      "correctOptionId": "3"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-2-08",
       "section": "vocabulary",
       "group": 2,
       "number": 8,
-      "prompt": "きょうは【げつようび】です。\n【 】のことばを漢字で書くと、どれですか。",
+      "prompt": "今日は 店の 【やすみ】です。\n【　】の ことばは、どう 書きますか。",
+      "learningObjective": "基本語「やすみ」の表記。",
       "options": [
         {
           "id": "1",
-          "text": "土曜日",
-          "rationale": "Phương án «土曜日» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «月曜日»."
+          "text": "休み",
+          "rationale": "休みはやすみ。ほかの語はたのしみ・いたみ・このみ。"
         },
         {
           "id": "2",
-          "text": "木曜日",
-          "rationale": "Phương án «木曜日» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «月曜日»."
+          "text": "楽しみ",
+          "rationale": "この選択肢は「やすみ」の表記ではない。休みはやすみ。ほかの語はたのしみ・いたみ・このみ。"
         },
         {
           "id": "3",
-          "text": "火曜日",
-          "rationale": "Phương án «火曜日» không phù hợp かなから文に合う漢字表記; dữ kiện/quy tắc yêu cầu «月曜日»."
+          "text": "好み",
+          "rationale": "この選択肢は「やすみ」の表記ではない。休みはやすみ。ほかの語はたのしみ・いたみ・このみ。"
         },
         {
           "id": "4",
-          "text": "月曜日",
-          "rationale": "Đúng: かなから文に合う漢字表記; 月曜日"
+          "text": "痛み",
+          "rationale": "この選択肢は「やすみ」の表記ではない。休みはやすみ。ほかの語はたのしみ・いたみ・このみ。"
         }
       ],
-      "correctOptionId": "4",
-      "learningObjective": "かなから文に合う漢字表記",
-      "sentence": "きょうは【げつようび】です。",
-      "target": "げつようび"
+      "correctOptionId": "1"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-3-01",
       "section": "vocabulary",
       "group": 3,
       "number": 1,
-      "prompt": "牛乳を冷たくしたいです。（　）に入れます。",
+      "prompt": "この 紙は（　）ので、二枚 いっしょに 使ってください。",
+      "learningObjective": "紙の厚さが足りず重ねる。",
       "options": [
         {
           "id": "1",
-          "text": "れいぞうこ",
-          "rationale": "Đúng: 物の用途; れいぞうこ"
+          "text": "長い",
+          "rationale": "長さを二枚重ねても変えられない。"
         },
         {
           "id": "2",
-          "text": "せんたくき",
-          "rationale": "Phương án «せんたくき» không phù hợp 物の用途; dữ kiện/quy tắc yêu cầu «れいぞうこ»."
+          "text": "広い",
+          "rationale": "面積が広いことは重ねる必要と結びつかない。"
         },
         {
           "id": "3",
-          "text": "ストーブ",
-          "rationale": "Phương án «ストーブ» không phù hợp 物の用途; dữ kiện/quy tắc yêu cầu «れいぞうこ»."
+          "text": "丸い",
+          "rationale": "丸い形は重ねる理由にならない。"
         },
         {
           "id": "4",
-          "text": "ほんだな",
-          "rationale": "Phương án «ほんだな» không phù hợp 物の用途; dữ kiện/quy tắc yêu cầu «れいぞうこ»."
+          "text": "うすい",
+          "rationale": "厚さが少ないので二枚重ねる。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "物の用途"
+      "correctOptionId": "4"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-3-02",
       "section": "vocabulary",
       "group": 3,
       "number": 2,
-      "prompt": "夜は暗いですから、へやの（　）をつけます。",
+      "prompt": "駅は 家から（　）です。歩くと 一時間 かかります。",
+      "learningObjective": "所要時間から距離を判断。",
       "options": [
         {
           "id": "1",
-          "text": "まど",
-          "rationale": "Phương án «まど» không phù hợp 生活動作; dữ kiện/quy tắc yêu cầu «でんき»."
+          "text": "近い",
+          "rationale": "近いは長い徒歩時間と合わない。"
         },
         {
           "id": "2",
-          "text": "かぎ",
-          "rationale": "Phương án «かぎ» không phù hợp 生活動作; dữ kiện/quy tắc yêu cầu «でんき»."
+          "text": "遠い",
+          "rationale": "一時間歩く距離なので遠い。"
         },
         {
           "id": "3",
-          "text": "でんき",
-          "rationale": "Đúng: 生活動作; でんき"
+          "text": "暗い",
+          "rationale": "暗いは明るさの説明。"
         },
         {
           "id": "4",
-          "text": "みず",
-          "rationale": "Phương án «みず» không phù hợp 生活動作; dữ kiện/quy tắc yêu cầu «でんき»."
+          "text": "狭い",
+          "rationale": "狭いは幅の説明。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "生活動作"
+      "correctOptionId": "2"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-3-03",
       "section": "vocabulary",
       "group": 3,
       "number": 3,
-      "prompt": "かぜです。今日は学校を（　）。",
+      "prompt": "食べる 前に、手を 石けんで（　）。",
+      "learningObjective": "手と石けんに対応する動詞。",
       "options": [
         {
           "id": "1",
-          "text": "やすみます",
-          "rationale": "Đúng: 休むの用法; やすみます"
+          "text": "切ります",
+          "rationale": "切るはこの衛生場面に合わない。"
         },
         {
           "id": "2",
-          "text": "はじまります",
-          "rationale": "Phương án «はじまります» không phù hợp 休むの用法; dữ kiện/quy tắc yêu cầu «やすみます»."
+          "text": "持ちます",
+          "rationale": "持つは石けんによる清潔の行為ではない。"
         },
         {
           "id": "3",
-          "text": "つくります",
-          "rationale": "Phương án «つくります» không phù hợp 休むの用法; dữ kiện/quy tắc yêu cầu «やすみます»."
+          "text": "入れます",
+          "rationale": "入れるには入れる先が必要。"
         },
         {
           "id": "4",
-          "text": "ならいます",
-          "rationale": "Phương án «ならいます» không phù hợp 休むの用法; dữ kiện/quy tắc yêu cầu «やすみます»."
+          "text": "洗います",
+          "rationale": "石けんで手を洗う。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "休むの用法"
+      "correctOptionId": "4"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-3-04",
       "section": "vocabulary",
       "group": 3,
       "number": 4,
-      "prompt": "紙を半分に（　）、かばんに入れました。",
+      "prompt": "忘れたので、友だちに ペンを（　）。あとで 返します。",
+      "learningObjective": "返す主体から貸借方向。",
       "options": [
         {
           "id": "1",
-          "text": "つけて",
-          "rationale": "Sai tại vị trí được hỏi: つけて; đáp án theo dữ kiện/ngữ pháp: おって"
+          "text": "売ります",
+          "rationale": "売るならあとで返さない。"
         },
         {
           "id": "2",
-          "text": "あらって",
-          "rationale": "Sai tại vị trí được hỏi: あらって; đáp án theo dữ kiện/ngữ pháp: おって"
+          "text": "借ります",
+          "rationale": "自分が受け取り返すので借りる。"
         },
         {
           "id": "3",
-          "text": "おって",
-          "rationale": "Đúng: おって; đáp án theo dữ kiện/ngữ pháp: おって"
+          "text": "貸します",
+          "rationale": "貸すは自分から相手へ渡す。"
         },
         {
           "id": "4",
-          "text": "のんで",
-          "rationale": "Sai tại vị trí được hỏi: のんで; đáp án theo dữ kiện/ngữ pháp: おって"
+          "text": "送ります",
+          "rationale": "送るは配送する。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "紙と動詞"
+      "correctOptionId": "2"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-3-05",
       "section": "vocabulary",
       "group": 3,
       "number": 5,
-      "prompt": "えんぴつの字を消します。（　）を使います。",
+      "prompt": "階段では 走らないで、（　）歩いてください。",
+      "learningObjective": "速度を調整する副詞。",
       "options": [
         {
           "id": "1",
-          "text": "てぶくろ",
-          "rationale": "Phương án «てぶくろ» không phù hợp 文房具; dữ kiện/quy tắc yêu cầu «けしゴム»."
+          "text": "ゆっくり",
+          "rationale": "走らず速度を落とす。"
         },
         {
           "id": "2",
-          "text": "けしゴム",
-          "rationale": "Đúng: 文房具; けしゴム"
+          "text": "いちばん",
+          "rationale": "いちばんは比較の順位。"
         },
         {
           "id": "3",
-          "text": "はし",
-          "rationale": "Phương án «はし» không phù hợp 文房具; dữ kiện/quy tắc yêu cầu «けしゴム»."
+          "text": "すぐに",
+          "rationale": "すぐには開始時点。"
         },
         {
           "id": "4",
-          "text": "くつした",
-          "rationale": "Phương án «くつした» không phù hợp 文房具; dữ kiện/quy tắc yêu cầu «けしゴム»."
+          "text": "いつも",
+          "rationale": "いつもは頻度。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "文房具"
+      "correctOptionId": "1"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-3-06",
       "section": "vocabulary",
       "group": 3,
       "number": 6,
-      "prompt": "ごはんの前に手を（　）ください。",
+      "prompt": "部屋が 暗いですね。電気を（　）ください。",
+      "learningObjective": "明暗と照明操作。",
       "options": [
         {
           "id": "1",
-          "text": "あらって",
-          "rationale": "Đúng: 手を洗う; あらって"
+          "text": "止めて",
+          "rationale": "止めるはここで照明を点灯する表現ではない。"
         },
         {
           "id": "2",
-          "text": "かいて",
-          "rationale": "Phương án «かいて» không phù hợp 手を洗う; dữ kiện/quy tắc yêu cầu «あらって»."
+          "text": "消して",
+          "rationale": "消すと暗いまま。"
         },
         {
           "id": "3",
-          "text": "のんで",
-          "rationale": "Phương án «のんで» không phù hợp 手を洗う; dữ kiện/quy tắc yêu cầu «あらって»."
+          "text": "つけて",
+          "rationale": "照明をつけると明るくなる。"
         },
         {
           "id": "4",
-          "text": "たべて",
-          "rationale": "Phương án «たべて» không phù hợp 手を洗う; dữ kiện/quy tắc yêu cầu «あらって»."
+          "text": "開けて",
+          "rationale": "開けるは窓や戸の操作。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "手を洗う"
+      "correctOptionId": "3"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-3-07",
       "section": "vocabulary",
       "group": 3,
       "number": 7,
-      "prompt": "きょうは風が（　）です。帽子が飛びました。",
+      "prompt": "全部は 食べられません。ごはんを（　）だけ ください。",
+      "learningObjective": "量を少なく指定。",
       "options": [
         {
           "id": "1",
-          "text": "ひくい",
-          "rationale": "Phương án «ひくい» không phù hợp 風の強さ; dữ kiện/quy tắc yêu cầu «つよい»."
+          "text": "とても",
+          "rationale": "とてもは量の名詞として使えない。"
         },
         {
           "id": "2",
-          "text": "ほそい",
-          "rationale": "Phương án «ほそい» không phù hợp 風の強さ; dữ kiện/quy tắc yêu cầu «つよい»."
+          "text": "よく",
+          "rationale": "よくは頻度や程度でごはんの量にならない。"
         },
         {
           "id": "3",
-          "text": "つよい",
-          "rationale": "Đúng: 風の強さ; つよい"
+          "text": "少し",
+          "rationale": "少しだけは量を少なくする。"
         },
         {
           "id": "4",
-          "text": "あまい",
-          "rationale": "Phương án «あまい» không phù hợp 風の強さ; dữ kiện/quy tắc yêu cầu «つよい»."
+          "text": "いつも",
+          "rationale": "いつもは時間的な頻度。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "風の強さ"
+      "correctOptionId": "3"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-3-08",
       "section": "vocabulary",
       "group": 3,
       "number": 8,
-      "prompt": "入口でくつを（　）から、へやに入ります。",
+      "prompt": "授業は 四時から 五時までです。授業は 五時に（　）。そのあと 家へ 帰ります。",
+      "learningObjective": "その後の行動から終了。",
       "options": [
         {
           "id": "1",
-          "text": "ぬいで",
-          "rationale": "Đúng: 靴の動作; ぬいで"
+          "text": "始まります",
+          "rationale": "始まる直後に帰るのではない。"
         },
         {
           "id": "2",
-          "text": "あけて",
-          "rationale": "Phương án «あけて» không phù hợp 靴の動作; dữ kiện/quy tắc yêu cầu «ぬいで»."
+          "text": "終わります",
+          "rationale": "授業の後に帰るので終了。"
         },
         {
           "id": "3",
-          "text": "きいて",
-          "rationale": "Phương án «きいて» không phù hợp 靴の動作; dữ kiện/quy tắc yêu cầu «ぬいで»."
+          "text": "集まります",
+          "rationale": "集まるは人が集合する。"
         },
         {
           "id": "4",
-          "text": "かして",
-          "rationale": "Phương án «かして» không phù hợp 靴の動作; dữ kiện/quy tắc yêu cầu «ぬいで»."
+          "text": "休みます",
+          "rationale": "休むなら授業そのものが終わったとは言えない。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "靴の動作"
+      "correctOptionId": "2"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-3-09",
       "section": "vocabulary",
       "group": 3,
       "number": 9,
-      "prompt": "友だちに本を（　）。来週返してもらいます。",
+      "prompt": "レジの 前で、ほかの お客さんの 後ろに（　）ください。",
+      "learningObjective": "列に入る行為。",
       "options": [
         {
           "id": "1",
-          "text": "かりました",
-          "rationale": "Phương án «かりました» không phù hợp 貸すと借りる; dữ kiện/quy tắc yêu cầu «かしました»."
+          "text": "置いて",
+          "rationale": "置くには置く物が必要。"
         },
         {
           "id": "2",
-          "text": "かしました",
-          "rationale": "Đúng: 貸すと借りる; かしました"
+          "text": "並んで",
+          "rationale": "他の客の後ろに順に並ぶ。"
         },
         {
           "id": "3",
-          "text": "わすれました",
-          "rationale": "Phương án «わすれました» không phù hợp 貸すと借りる; dữ kiện/quy tắc yêu cầu «かしました»."
+          "text": "座って",
+          "rationale": "座るための席は示されていない。"
         },
         {
           "id": "4",
-          "text": "よみました",
-          "rationale": "Phương án «よみました» không phù hợp 貸すと借りる; dữ kiện/quy tắc yêu cầu «かしました»."
+          "text": "呼んで",
+          "rationale": "呼ぶは人を呼び寄せる。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "貸すと借りる"
+      "correctOptionId": "2"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-3-10",
       "section": "vocabulary",
       "group": 3,
       "number": 10,
-      "prompt": "この道を（　）行くと、駅があります。曲がりません。",
+      "prompt": "次の バス停で バスを（　）。そこで 友だちが 待っています。",
+      "learningObjective": "目的の停留所で下車。",
       "options": [
         {
           "id": "1",
-          "text": "たくさん",
-          "rationale": "Phương án «たくさん» không phù hợp 方向を表す副詞; dữ kiện/quy tắc yêu cầu «まっすぐ»."
+          "text": "降ります",
+          "rationale": "友人がいる停留所で下車する。"
         },
         {
           "id": "2",
-          "text": "ゆっくり",
-          "rationale": "Phương án «ゆっくり» không phù hợp 方向を表す副詞; dữ kiện/quy tắc yêu cầu «まっすぐ»."
+          "text": "曲がります",
+          "rationale": "曲がるは曲がる場所の動き。"
         },
         {
           "id": "3",
-          "text": "いっしょに",
-          "rationale": "Phương án «いっしょに» không phù hợp 方向を表す副詞; dữ kiện/quy tắc yêu cầu «まっすぐ»."
+          "text": "乗ります",
+          "rationale": "乗るならバスにではなくバスをとの助詞が合わない。"
         },
         {
           "id": "4",
-          "text": "まっすぐ",
-          "rationale": "Đúng: 方向を表す副詞; まっすぐ"
+          "text": "渡ります",
+          "rationale": "渡るは道などを横切る。"
         }
       ],
-      "correctOptionId": "4",
-      "learningObjective": "方向を表す副詞"
+      "correctOptionId": "1"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-4-01",
       "section": "vocabulary",
       "group": 4,
       "number": 1,
-      "prompt": "このへやは【広い】です。\n同じ意味の文はどれですか。",
+      "prompt": "【おなかが すきました】。\n【　】と だいたい 同じ 意味は どれですか。",
+      "learningObjective": "空腹を表す言い換え。",
       "options": [
         {
           "id": "1",
-          "text": "このへやは高い所にあります。",
-          "rationale": "Phương án «このへやは高い所にあります。» không phù hợp 文脈に合う言い換え; dữ kiện/quy tắc yêu cầu «このへやは大きくて、人がたくさん入れます。»."
+          "text": "何か 飲みたいです。",
+          "rationale": "飲むだけでは空腹の意味にならない。"
         },
         {
           "id": "2",
-          "text": "このへやは人が少なくて静かです。",
-          "rationale": "Phương án «このへやは人が少なくて静かです。» không phù hợp 文脈に合う言い換え; dữ kiện/quy tắc yêu cầu «このへやは大きくて、人がたくさん入れます。»."
+          "text": "何か 食べたいです。",
+          "rationale": "空腹なので食べたい。"
         },
         {
           "id": "3",
-          "text": "このへやは明るくて、よく見えます。",
-          "rationale": "Phương án «このへやは明るくて、よく見えます。» không phù hợp 文脈に合う言い換え; dữ kiện/quy tắc yêu cầu «このへやは大きくて、人がたくさん入れます。»."
+          "text": "外へ 出たいです。",
+          "rationale": "外出希望は空腹を表さない。"
         },
         {
           "id": "4",
-          "text": "このへやは大きくて、人がたくさん入れます。",
-          "rationale": "Đúng: 文脈に合う言い換え; このへやは大きくて、人がたくさん入れます。"
+          "text": "少し 休みたいです。",
+          "rationale": "休むのは疲れたとき。"
         }
       ],
-      "correctOptionId": "4",
-      "learningObjective": "文脈に合う言い換え"
+      "correctOptionId": "2"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-4-02",
       "section": "vocabulary",
       "group": 4,
       "number": 2,
-      "prompt": "駅は家から【遠い】です。\n同じ意味の文はどれですか。",
+      "prompt": "時間が ないので、【急いで】駅へ 行きます。\n【　】と だいたい 同じ 意味は どれですか。",
+      "learningObjective": "急ぐと速度の関係。",
       "options": [
         {
           "id": "1",
-          "text": "家を出ると、すぐ駅に着きます。",
-          "rationale": "Phương án «家を出ると、すぐ駅に着きます。» không phù hợp 文脈に合う言い換え; dữ kiện/quy tắc yêu cầu «家から駅まで、たくさん歩きます。»."
+          "text": "早く 駅へ 行きます。",
+          "rationale": "急ぐは早く行動する。"
         },
         {
           "id": "2",
-          "text": "駅の中には、たくさん人がいます。",
-          "rationale": "Phương án «駅の中には、たくさん人がいます。» không phù hợp 文脈に合う言い換え; dữ kiện/quy tắc yêu cầu «家から駅まで、たくさん歩きます。»."
+          "text": "一人で 駅へ 行きます。",
+          "rationale": "一人では人数。"
         },
         {
           "id": "3",
-          "text": "家から駅まで、たくさん歩きます。",
-          "rationale": "Đúng: 文脈に合う言い換え; 家から駅まで、たくさん歩きます。"
+          "text": "何度も 駅へ 行きます。",
+          "rationale": "何度もは回数。"
         },
         {
           "id": "4",
-          "text": "駅は家より、新しいです。",
-          "rationale": "Phương án «駅は家より、新しいです。» không phù hợp 文脈に合う言い換え; dữ kiện/quy tắc yêu cầu «家から駅まで、たくさん歩きます。»."
+          "text": "ゆっくり 駅へ 行きます。",
+          "rationale": "ゆっくりは逆。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "文脈に合う言い換え"
+      "correctOptionId": "1"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-4-03",
       "section": "vocabulary",
       "group": 4,
       "number": 3,
-      "prompt": "きょうは【ひま】です。\n同じ意味の文はどれですか。",
+      "prompt": "この 町には 店が【たくさん】あります。\n【　】と だいたい 同じ 意味は どれですか。",
+      "learningObjective": "数量を表す言い換え。",
       "options": [
         {
           "id": "1",
-          "text": "きょうは友だちが来ません。",
-          "rationale": "Phương án «きょうは友だちが来ません。» không phù hợp 文脈に合う言い換え; dữ kiện/quy tắc yêu cầu «きょうはしなければならないことがありません。»."
+          "text": "店が 多いです。",
+          "rationale": "多数あるので多い。"
         },
         {
           "id": "2",
-          "text": "きょうはしなければならないことがありません。",
-          "rationale": "Đúng: 文脈に合う言い換え; きょうはしなければならないことがありません。"
+          "text": "店が 遠いです。",
+          "rationale": "遠いは距離。"
         },
         {
           "id": "3",
-          "text": "きょうはすることがたくさんあります。",
-          "rationale": "Phương án «きょうはすることがたくさんあります。» không phù hợp 文脈に合う言い換え; dữ kiện/quy tắc yêu cầu «きょうはしなければならないことがありません。»."
+          "text": "店が 大きいです。",
+          "rationale": "大きいは規模。"
         },
         {
           "id": "4",
-          "text": "きょうは体の調子がよくありません。",
-          "rationale": "Phương án «きょうは体の調子がよくありません。» không phù hợp 文脈に合う言い換え; dữ kiện/quy tắc yêu cầu «きょうはしなければならないことがありません。»."
+          "text": "店が 古いです。",
+          "rationale": "古いは時間。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "文脈に合う言い換え"
+      "correctOptionId": "1"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-4-04",
       "section": "vocabulary",
       "group": 4,
       "number": 4,
-      "prompt": "妹は【まだ寝ています】。\n同じ意味の文はどれですか。",
+      "prompt": "この スープは【とても】おいしいです。\n【　】と だいたい 同じ 意味は どれですか。",
+      "learningObjective": "強い程度の肯定。",
       "options": [
         {
           "id": "1",
-          "text": "妹はもう起きました。",
-          "rationale": "Phương án «妹はもう起きました。» không phù hợp 文脈に合う言い換え; dữ kiện/quy tắc yêu cầu «妹は今も寝ています。»."
+          "text": "あまり おいしくないです。",
+          "rationale": "あまり～ないは否定。"
         },
         {
           "id": "2",
-          "text": "妹は寝ませんでした。",
-          "rationale": "Phương án «妹は寝ませんでした。» không phù hợp 文脈に合う言い換え; dữ kiện/quy tắc yêu cầu «妹は今も寝ています。»."
+          "text": "おいしくないです。",
+          "rationale": "おいしくないは逆。"
         },
         {
           "id": "3",
-          "text": "妹は今から寝ます。",
-          "rationale": "Phương án «妹は今から寝ます。» không phù hợp 文脈に合う言い換え; dữ kiện/quy tắc yêu cầu «妹は今も寝ています。»."
+          "text": "少し おいしいです。",
+          "rationale": "少しは弱い程度。"
         },
         {
           "id": "4",
-          "text": "妹は今も寝ています。",
-          "rationale": "Đúng: 文脈に合う言い換え; 妹は今も寝ています。"
+          "text": "たいへん おいしいです。",
+          "rationale": "たいへんは強い程度。"
         }
       ],
-      "correctOptionId": "4",
-      "learningObjective": "文脈に合う言い換え"
+      "correctOptionId": "4"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-4-05",
       "section": "vocabulary",
       "group": 4,
       "number": 5,
-      "prompt": "この本を【もう一度】読みたいです。\n同じ意味の文はどれですか。",
+      "prompt": "宿題は【まだ 終わっていません】。\n【　】と だいたい 同じ 意味は どれですか。",
+      "learningObjective": "未完了と継続。",
       "options": [
         {
           "id": "1",
-          "text": "この本を初めて読みたいです。",
-          "rationale": "Phương án «この本を初めて読みたいです。» không phù hợp 文脈に合う言い換え; dữ kiện/quy tắc yêu cầu «この本をまた読みたいです。»."
+          "text": "宿題を しなくて いいです。",
+          "rationale": "免除とは言っていない。"
         },
         {
           "id": "2",
-          "text": "この本をすぐ返したいです。",
-          "rationale": "Phương án «この本をすぐ返したいです。» không phù hợp 文脈に合う言い換え; dữ kiện/quy tắc yêu cầu «この本をまた読みたいです。»."
+          "text": "宿題を 全部は していません。",
+          "rationale": "まだ終わっていないとは、宿題を全部はしていないという意味。今後の予定は推測しない。"
         },
         {
           "id": "3",
-          "text": "この本をまた読みたいです。",
-          "rationale": "Đúng: 文脈に合う言い換え; この本をまた読みたいです。"
+          "text": "宿題を 全部 しました。",
+          "rationale": "全部したなら完了。"
         },
         {
           "id": "4",
-          "text": "この本を全部読みたいです。",
-          "rationale": "Phương án «この本を全部読みたいです。» không phù hợp 文脈に合う言い換え; dữ kiện/quy tắc yêu cầu «この本をまた読みたいです。»."
+          "text": "宿題が ありません。",
+          "rationale": "ないとは言っていない。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "文脈に合う言い換え"
+      "correctOptionId": "2"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-1-01",
       "section": "grammar_reading",
       "group": 1,
       "number": 1,
-      "prompt": "この写真は友だち（　）もらいました。",
+      "prompt": "この バスは 空港（　）行きます。",
+      "learningObjective": "移動先",
       "options": [
         {
           "id": "1",
-          "text": "に",
-          "rationale": "Đúng: 授受の相手; に"
+          "text": "を",
+          "rationale": "をはこの行き先の助詞ではない。"
         },
         {
           "id": "2",
-          "text": "と",
-          "rationale": "Phương án «と» không phù hợp 授受の相手; dữ kiện/quy tắc yêu cầu «に»."
+          "text": "へ",
+          "rationale": "行き先をへで示す。"
         },
         {
           "id": "3",
           "text": "で",
-          "rationale": "Phương án «で» không phù hợp 授受の相手; dữ kiện/quy tắc yêu cầu «に»."
+          "rationale": "では空港で行う動作。"
         },
         {
           "id": "4",
-          "text": "を",
-          "rationale": "Phương án «を» không phù hợp 授受の相手; dữ kiện/quy tắc yêu cầu «に»."
+          "text": "と",
+          "rationale": "とは相手・引用。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "授受の相手"
+      "correctOptionId": "2"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-1-02",
       "section": "grammar_reading",
       "group": 1,
       "number": 2,
-      "prompt": "冷蔵庫（　）牛乳があります。",
+      "prompt": "弟は 毎晩、牛乳（　）飲みます。",
+      "learningObjective": "動作の対象",
       "options": [
         {
           "id": "1",
-          "text": "を",
-          "rationale": "Phương án «を» không phù hợp 存在場所; dữ kiện/quy tắc yêu cầu «に»."
+          "text": "が",
+          "rationale": "この能動文ではがは主語。"
         },
         {
           "id": "2",
-          "text": "に",
-          "rationale": "Đúng: 存在場所; に"
+          "text": "へ",
+          "rationale": "へは方向。"
         },
         {
           "id": "3",
-          "text": "と",
-          "rationale": "Phương án «と» không phù hợp 存在場所; dữ kiện/quy tắc yêu cầu «に»."
+          "text": "に",
+          "rationale": "には相手など。"
         },
         {
           "id": "4",
-          "text": "で",
-          "rationale": "Phương án «で» không phù hợp 存在場所; dữ kiện/quy tắc yêu cầu «に»."
+          "text": "を",
+          "rationale": "飲む対象ををで示す。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "存在場所"
+      "correctOptionId": "4"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-1-03",
       "section": "grammar_reading",
       "group": 1,
       "number": 3,
-      "prompt": "妹はわたし（　）背が低いです。",
+      "prompt": "駅から タクシー（　）帰りました。",
+      "learningObjective": "移動手段",
       "options": [
         {
           "id": "1",
-          "text": "より",
-          "rationale": "Đúng: 比較; より"
+          "text": "で",
+          "rationale": "タクシーで手段を示す。"
         },
         {
           "id": "2",
-          "text": "まで",
-          "rationale": "Phương án «まで» không phù hợp 比較; dữ kiện/quy tắc yêu cầu «より»."
+          "text": "を",
+          "rationale": "をはこの手段を示さない。"
         },
         {
           "id": "3",
-          "text": "から",
-          "rationale": "Phương án «から» không phù hợp 比較; dữ kiện/quy tắc yêu cầu «より»."
+          "text": "へ",
+          "rationale": "へは方向。"
         },
         {
           "id": "4",
-          "text": "だけ",
-          "rationale": "Phương án «だけ» không phù hợp 比較; dữ kiện/quy tắc yêu cầu «より»."
+          "text": "に",
+          "rationale": "にでは乗るときの乗り物。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "比較"
+      "correctOptionId": "1"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-1-04",
       "section": "grammar_reading",
       "group": 1,
       "number": 4,
-      "prompt": "きのうは日曜日でしたから、学校へ（　）。",
+      "prompt": "あの 店は 九時（　）開いています。九時の 前には 入れません。",
+      "learningObjective": "開始時刻",
       "options": [
         {
           "id": "1",
-          "text": "行きます",
-          "rationale": "Phương án «行きます» không phù hợp 過去否定; dữ kiện/quy tắc yêu cầu «行きませんでした»."
+          "text": "だけ",
+          "rationale": "だけなら時刻の限定で営業開始にならない。"
         },
         {
           "id": "2",
-          "text": "行きません",
-          "rationale": "Phương án «行きません» không phù hợp 過去否定; dữ kiện/quy tắc yêu cầu «行きませんでした»."
+          "text": "まで",
+          "rationale": "「まで」は終点。八時はまだ開いていないので合わない。"
         },
         {
           "id": "3",
-          "text": "行きませんでした",
-          "rationale": "Đúng: 過去否定; 行きませんでした"
+          "text": "より",
+          "rationale": "よりは比較で開店を示さない。"
         },
         {
           "id": "4",
-          "text": "行ってください",
-          "rationale": "Phương án «行ってください» không phù hợp 過去否定; dữ kiện/quy tắc yêu cầu «行きませんでした»."
+          "text": "から",
+          "rationale": "八時はまだ閉店、九時が開店の起点なので「から」。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "過去否定"
+      "correctOptionId": "4"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-1-05",
       "section": "grammar_reading",
       "group": 1,
       "number": 5,
-      "prompt": "このりんごはあまり（　）。",
+      "prompt": "この かばんは あの かばん（　）軽いです。",
+      "learningObjective": "比較の基準",
       "options": [
         {
           "id": "1",
-          "text": "甘いくないです",
-          "rationale": "Phương án «甘いくないです» không phù hợp い形容詞否定; dữ kiện/quy tắc yêu cầu «甘くないです»."
+          "text": "から",
+          "rationale": "からは起点。"
         },
         {
           "id": "2",
-          "text": "甘くないです",
-          "rationale": "Đúng: い形容詞否定; 甘くないです"
+          "text": "まで",
+          "rationale": "までは範囲。"
         },
         {
           "id": "3",
-          "text": "甘いでした",
-          "rationale": "Phương án «甘いでした» không phù hợp い形容詞否定; dữ kiện/quy tắc yêu cầu «甘くないです»."
+          "text": "より",
+          "rationale": "よりで軽さを比較。"
         },
         {
           "id": "4",
-          "text": "甘くです",
-          "rationale": "Phương án «甘くです» không phù hợp い形容詞否定; dữ kiện/quy tắc yêu cầu «甘くないです»."
+          "text": "へ",
+          "rationale": "へは方向。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "い形容詞否定"
+      "correctOptionId": "3"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-1-06",
       "section": "grammar_reading",
       "group": 1,
       "number": 6,
-      "prompt": "田中さんの部屋は（　）きれいです。",
+      "prompt": "日曜日は 母（　）買い物を します。",
+      "learningObjective": "共同の相手",
       "options": [
         {
           "id": "1",
-          "text": "静かに",
-          "rationale": "Phương án «静かに» không phù hợp な形容詞接続; dữ kiện/quy tắc yêu cầu «静かで»."
+          "text": "と",
+          "rationale": "母と一緒にする。"
         },
         {
           "id": "2",
-          "text": "静かで",
-          "rationale": "Đúng: な形容詞接続; 静かで"
+          "text": "が",
+          "rationale": "がは主語で文のつながりが合わない。"
         },
         {
           "id": "3",
-          "text": "静かな",
-          "rationale": "Phương án «静かな» không phù hợp な形容詞接続; dữ kiện/quy tắc yêu cầu «静かで»."
+          "text": "を",
+          "rationale": "をなら母が動作の対象。"
         },
         {
           "id": "4",
-          "text": "静かだ",
-          "rationale": "Phương án «静かだ» không phù hợp な形容詞接続; dữ kiện/quy tắc yêu cầu «静かで»."
+          "text": "で",
+          "rationale": "でなら母が手段になり不自然。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "な形容詞接続"
+      "correctOptionId": "1"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-1-07",
       "section": "grammar_reading",
       "group": 1,
       "number": 7,
-      "prompt": "あそこにいる人は（　）ですか。",
+      "prompt": "この へやには テレビが（　）。",
+      "learningObjective": "無生物の不存在",
       "options": [
         {
           "id": "1",
-          "text": "いつ",
-          "rationale": "Phương án «いつ» không phù hợp 人の疑問詞; dữ kiện/quy tắc yêu cầu «だれ»."
+          "text": "ありません",
+          "rationale": "テレビは物なのでありません。"
         },
         {
           "id": "2",
-          "text": "どれ",
-          "rationale": "Phương án «どれ» không phù hợp 人の疑問詞; dữ kiện/quy tắc yêu cầu «だれ»."
+          "text": "ではありません",
+          "rationale": "ではありませんは名詞述語の否定。"
         },
         {
           "id": "3",
-          "text": "だれ",
-          "rationale": "Đúng: 人の疑問詞; だれ"
+          "text": "いません",
+          "rationale": "いませんは人や動物。"
         },
         {
           "id": "4",
-          "text": "どこ",
-          "rationale": "Phương án «どこ» không phù hợp 人の疑問詞; dữ kiện/quy tắc yêu cầu «だれ»."
+          "text": "じゃありません",
+          "rationale": "じゃありませんも存在の否定に接続しない。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "人の疑問詞"
+      "correctOptionId": "1"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-1-08",
       "section": "grammar_reading",
       "group": 1,
       "number": 8,
-      "prompt": "今、友だちを（　）います。",
+      "prompt": "姉は いつも 静か（　）場所で 勉強します。",
+      "learningObjective": "な形容詞の連体形",
       "options": [
         {
           "id": "1",
-          "text": "待ち",
-          "rationale": "Phương án «待ち» không phù hợp ている; dữ kiện/quy tắc yêu cầu «待って»."
+          "text": "く",
+          "rationale": "くはここで静かに接続しない。"
         },
         {
           "id": "2",
-          "text": "待つ",
-          "rationale": "Phương án «待つ» không phù hợp ている; dữ kiện/quy tắc yêu cầu «待って»."
+          "text": "に",
+          "rationale": "には動詞の修飾。"
         },
         {
           "id": "3",
-          "text": "待った",
-          "rationale": "Phương án «待った» không phù hợp ている; dữ kiện/quy tắc yêu cầu «待って»."
+          "text": "の",
+          "rationale": "静かの場所にはしない。"
         },
         {
           "id": "4",
-          "text": "待って",
-          "rationale": "Đúng: ている; 待って"
+          "text": "な",
+          "rationale": "静かな場所と接続。"
         }
       ],
-      "correctOptionId": "4",
-      "learningObjective": "ている"
+      "correctOptionId": "4"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-1-09",
       "section": "grammar_reading",
       "group": 1,
       "number": 9,
-      "prompt": "わたしはコーヒーを飲みますが、弟は（　）。",
+      "prompt": "入口で 名前を 書い（　）、中に 入ってください。",
+      "learningObjective": "動作の順序",
       "options": [
         {
           "id": "1",
-          "text": "飲みません",
-          "rationale": "Đúng: 対比と丁寧否定; 飲みません"
+          "text": "た",
+          "rationale": "書いた、中には文がつながらない。"
         },
         {
           "id": "2",
-          "text": "飲みではありません",
-          "rationale": "Phương án «飲みではありません» không phù hợp 対比と丁寧否定; dữ kiện/quy tắc yêu cầu «飲みません»."
+          "text": "て",
+          "rationale": "書いて次の動作へつなぐ。"
         },
         {
           "id": "3",
-          "text": "飲むでした",
-          "rationale": "Phương án «飲むでした» không phù hợp 対比と丁寧否定; dữ kiện/quy tắc yêu cầu «飲みません»."
+          "text": "ない",
+          "rationale": "書いないとは活用しない。"
         },
         {
           "id": "4",
-          "text": "飲まないでした",
-          "rationale": "Phương án «飲まないでした» không phù hợp 対比と丁寧否定; dữ kiện/quy tắc yêu cầu «飲みません»."
+          "text": "ます",
+          "rationale": "書いますとは活用しない。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "対比と丁寧否定"
+      "correctOptionId": "2"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-1-10",
       "section": "grammar_reading",
       "group": 1,
       "number": 10,
-      "prompt": "ここで写真を（　）もいいですか。",
+      "prompt": "きのうは 時間が なかったので、本を（　）。",
+      "learningObjective": "過去の否定",
       "options": [
         {
           "id": "1",
-          "text": "撮り",
-          "rationale": "Phương án «撮り» không phù hợp 許可; dữ kiện/quy tắc yêu cầu «撮って»."
+          "text": "読みます",
+          "rationale": "ますはここで昨日の否定にならない。"
         },
         {
           "id": "2",
-          "text": "撮る",
-          "rationale": "Phương án «撮る» không phù hợp 許可; dữ kiện/quy tắc yêu cầu «撮って»."
+          "text": "読みましょう",
+          "rationale": "ましょうは勧誘。"
         },
         {
           "id": "3",
-          "text": "撮った",
-          "rationale": "Phương án «撮った» không phù hợp 許可; dữ kiện/quy tắc yêu cầu «撮って»."
+          "text": "読みません",
+          "rationale": "読みませんは過去を表さない。"
         },
         {
           "id": "4",
-          "text": "撮って",
-          "rationale": "Đúng: 許可; 撮って"
+          "text": "読みませんでした",
+          "rationale": "昨日の行為の否定。"
         }
       ],
-      "correctOptionId": "4",
-      "learningObjective": "許可"
+      "correctOptionId": "4"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-1-11",
       "section": "grammar_reading",
       "group": 1,
       "number": 11,
-      "prompt": "このドアを（　）ください。",
+      "prompt": "A「いっしょに お茶を（　）。」\nB「いいですね。飲みましょう。」",
+      "learningObjective": "丁寧な誘い",
       "options": [
         {
           "id": "1",
-          "text": "開けます",
-          "rationale": "Phương án «開けます» không phù hợp 依頼; dữ kiện/quy tắc yêu cầu «開けて»."
+          "text": "飲まないでください",
+          "rationale": "禁止は一緒にの誘いと合わない。"
         },
         {
           "id": "2",
-          "text": "開けた",
-          "rationale": "Phương án «開けた» không phù hợp 依頼; dữ kiện/quy tắc yêu cầu «開けて»."
+          "text": "飲んでいました",
+          "rationale": "過去の継続は勧誘ではない。"
         },
         {
           "id": "3",
-          "text": "開けて",
-          "rationale": "Đúng: 依頼; 開けて"
+          "text": "飲みませんか",
+          "rationale": "一緒に飲む提案。"
         },
         {
           "id": "4",
-          "text": "開ける",
-          "rationale": "Phương án «開ける» không phù hợp 依頼; dữ kiện/quy tắc yêu cầu «開けて»."
+          "text": "飲みませんでした",
+          "rationale": "過去の否定は勧誘ではない。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "依頼"
+      "correctOptionId": "3"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-1-12",
       "section": "grammar_reading",
       "group": 1,
       "number": 12,
-      "prompt": "かばんに本が三（　）あります。",
+      "prompt": "今日は 寒い（　）、コートを 着ます。",
+      "learningObjective": "理由",
       "options": [
         {
           "id": "1",
-          "text": "台",
-          "rationale": "Phương án «台» không phù hợp 本の助数詞; dữ kiện/quy tắc yêu cầu «冊»."
+          "text": "より",
+          "rationale": "よりは比較。"
         },
         {
           "id": "2",
-          "text": "枚",
-          "rationale": "Phương án «枚» không phù hợp 本の助数詞; dữ kiện/quy tắc yêu cầu «冊»."
+          "text": "から",
+          "rationale": "寒いから着るという理由。"
         },
         {
           "id": "3",
-          "text": "冊",
-          "rationale": "Đúng: 本の助数詞; 冊"
+          "text": "まで",
+          "rationale": "までは期限。"
         },
         {
           "id": "4",
-          "text": "人",
-          "rationale": "Phương án «人» không phù hợp 本の助数詞; dữ kiện/quy tắc yêu cầu «冊»."
+          "text": "だけ",
+          "rationale": "だけは限定。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "本の助数詞"
+      "correctOptionId": "2"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-1-13",
       "section": "grammar_reading",
       "group": 1,
       "number": 13,
-      "prompt": "友だちは毎朝七時（　）起きます。",
+      "prompt": "あそこに ある 赤い 車は、山田さん（　）です。",
+      "learningObjective": "所有の代名詞化",
       "options": [
         {
           "id": "1",
-          "text": "に",
-          "rationale": "Đúng: 時刻; に"
+          "text": "を",
+          "rationale": "をだけでは名詞述語につながらない。"
         },
         {
           "id": "2",
-          "text": "と",
-          "rationale": "Phương án «と» không phù hợp 時刻; dữ kiện/quy tắc yêu cầu «に»."
+          "text": "の",
+          "rationale": "山田さんの車をのですで表す。"
         },
         {
           "id": "3",
-          "text": "を",
-          "rationale": "Phương án «を» không phù hợp 時刻; dữ kiện/quy tắc yêu cầu «に»."
+          "text": "が",
+          "rationale": "がだけでは所有にならない。"
         },
         {
           "id": "4",
-          "text": "が",
-          "rationale": "Phương án «が» không phù hợp 時刻; dữ kiện/quy tắc yêu cầu «に»."
+          "text": "に",
+          "rationale": "にだけでは所有にならない。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "時刻"
+      "correctOptionId": "2"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-1-14",
       "section": "grammar_reading",
       "group": 1,
       "number": 14,
-      "prompt": "この映画は（　）おもしろいです。",
+      "prompt": "写真を（　）前に、カメラの 電池を 見ます。",
+      "learningObjective": "前にの接続",
       "options": [
         {
           "id": "1",
-          "text": "あまり",
-          "rationale": "Phương án «あまり» không phù hợp 程度副詞; dữ kiện/quy tắc yêu cầu «とても»."
+          "text": "とった",
+          "rationale": "とった前にでは順序の表現にならない。"
         },
         {
           "id": "2",
-          "text": "もう",
-          "rationale": "Phương án «もう» không phù hợp 程度副詞; dữ kiện/quy tắc yêu cầu «とても»."
+          "text": "とります",
+          "rationale": "ます形は前にへ直接接続しない。"
         },
         {
           "id": "3",
-          "text": "まだ",
-          "rationale": "Phương án «まだ» không phù hợp 程度副詞; dữ kiện/quy tắc yêu cầu «とても»."
+          "text": "とる",
+          "rationale": "辞書形とる前に。"
         },
         {
           "id": "4",
-          "text": "とても",
-          "rationale": "Đúng: 程度副詞; とても"
+          "text": "とって",
+          "rationale": "て形は前にへ接続しない。"
         }
       ],
-      "correctOptionId": "4",
-      "learningObjective": "程度副詞"
+      "correctOptionId": "3"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-1-15",
       "section": "grammar_reading",
       "group": 1,
       "number": 15,
-      "prompt": "Ａ「いっしょに昼ごはんを食べませんか。」Ｂ「ええ、（　）。」",
+      "prompt": "この 花には 水を たくさん（　）ください。水は 少しだけで いいです。",
+      "learningObjective": "ないでくださいの禁止",
       "options": [
         {
           "id": "1",
-          "text": "食べないでください",
-          "rationale": "Phương án «食べないでください» không phù hợp 誘いへの応答; dữ kiện/quy tắc yêu cầu «食べましょう»."
+          "text": "あげないで",
+          "rationale": "多量の水は不要なので与えないで。"
         },
         {
           "id": "2",
-          "text": "食べなくて",
-          "rationale": "Phương án «食べなくて» không phù hợp 誘いへの応答; dữ kiện/quy tắc yêu cầu «食べましょう»."
+          "text": "あげて",
+          "rationale": "あげては次の少量の条件と反する。"
         },
         {
           "id": "3",
-          "text": "食べましょう",
-          "rationale": "Đúng: 誘いへの応答; 食べましょう"
+          "text": "あげます",
+          "rationale": "あげますくださいとは言わない。"
         },
         {
           "id": "4",
-          "text": "食べませんでした",
-          "rationale": "Phương án «食べませんでした» không phù hợp 誘いへの応答; dữ kiện/quy tắc yêu cầu «食べましょう»."
+          "text": "あげた",
+          "rationale": "あげたくださいとは言わない。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "誘いへの応答"
+      "correctOptionId": "1"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-1-16",
       "section": "grammar_reading",
       "group": 1,
       "number": 16,
-      "prompt": "駅へ行く（　）、手紙を出しました。",
+      "prompt": "新しい くつが（　）です。古い くつは 小さく なりました。",
+      "learningObjective": "希望のい形容詞",
       "options": [
         {
           "id": "1",
-          "text": "前と",
-          "rationale": "Phương án «前と» không phù hợp 辞書形＋前に; dữ kiện/quy tắc yêu cầu «前に»."
+          "text": "ほしさ",
+          "rationale": "ほしさですはこの名詞の希望を述べない。"
         },
         {
           "id": "2",
-          "text": "前で",
-          "rationale": "Phương án «前で» không phù hợp 辞書形＋前に; dữ kiện/quy tắc yêu cầu «前に»."
+          "text": "ほしい",
+          "rationale": "ほしいですと希望を述べる。"
         },
         {
           "id": "3",
-          "text": "前を",
-          "rationale": "Phương án «前を» không phù hợp 辞書形＋前に; dữ kiện/quy tắc yêu cầu «前に»."
+          "text": "ほしく",
+          "rationale": "ほしくですとは言わない。"
         },
         {
           "id": "4",
-          "text": "前に",
-          "rationale": "Đúng: 辞書形＋前に; 前に"
+          "text": "ほしくて",
+          "rationale": "ほしくては文がまだ続く形。"
         }
       ],
-      "correctOptionId": "4",
-      "learningObjective": "辞書形＋前に"
+      "correctOptionId": "2"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-2-01",
       "section": "grammar_reading",
       "group": 2,
       "number": 1,
-      "prompt": "★に入ることばはどれですか。",
+      "prompt": "★に 入る ことばを 選んでください。",
+      "learningObjective": "駅からの徒歩所要時間を連体句にまとめる。",
       "options": [
         {
           "id": "1",
-          "text": "とても",
-          "rationale": "Phương án «とても» không phù hợp 文のまとまりと語順; dữ kiện/quy tắc yêu cầu «思い»."
+          "text": "駅から",
+          "rationale": "正しい順序は「ここは、駅から歩いて五分の店です。」。この位置の役割を確認する。"
         },
         {
           "id": "2",
-          "text": "思い",
-          "rationale": "Đúng: 文のまとまりと語順; 思い"
+          "text": "歩いて",
+          "rationale": "正しい順序は「ここは、駅から歩いて五分の店です。」。この位置の役割を確認する。"
         },
         {
           "id": "3",
-          "text": "おいしいと",
-          "rationale": "Phương án «おいしいと» không phù hợp 文のまとまりと語順; dữ kiện/quy tắc yêu cầu «思い»."
+          "text": "の店です。",
+          "rationale": "正しい順序は「ここは、駅から歩いて五分の店です。」。この位置の役割を確認する。"
         },
         {
           "id": "4",
-          "text": "ます",
-          "rationale": "Phương án «ます» không phù hợp 文のまとまりと語順; dữ kiện/quy tắc yêu cầu «思い»."
+          "text": "五分",
+          "rationale": "正しい順序は「ここは、駅から歩いて五分の店です。」。この位置の役割を確認する。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "文のまとまりと語順",
-      "prefix": "このスープは ",
-      "suffix": "。",
+      "correctOptionId": "4",
+      "prefix": "ここは、",
+      "suffix": "",
       "slots": 4,
       "starSlot": 3,
-      "completedSentence": "このスープは とてもおいしいと思います。",
       "solutionOrder": [
         1,
-        3,
         2,
-        4
-      ]
+        4,
+        3
+      ],
+      "completedSentence": "ここは、駅から歩いて五分の店です。"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-2-02",
       "section": "grammar_reading",
       "group": 2,
       "number": 2,
-      "prompt": "★に入ることばはどれですか。",
+      "prompt": "★に 入る ことばを 選んでください。",
+      "learningObjective": "昨日買ったがかさを修飾する。",
       "options": [
         {
           "id": "1",
-          "text": "ほしい",
-          "rationale": "Đúng: 文のまとまりと語順; ほしい"
+          "text": "持って行きます。",
+          "rationale": "正しい順序は「あしたは、昨日買ったかさを持って行きます。」。この位置の役割を確認する。"
         },
         {
           "id": "2",
-          "text": "青い",
-          "rationale": "Phương án «青い» không phù hợp 文のまとまりと語順; dữ kiện/quy tắc yêu cầu «ほしい»."
+          "text": "昨日",
+          "rationale": "正しい順序は「あしたは、昨日買ったかさを持って行きます。」。この位置の役割を確認する。"
         },
         {
           "id": "3",
-          "text": "かばんが",
-          "rationale": "Phương án «かばんが» không phù hợp 文のまとまりと語順; dữ kiện/quy tắc yêu cầu «ほしい»."
+          "text": "買った",
+          "rationale": "正しい順序は「あしたは、昨日買ったかさを持って行きます。」。この位置の役割を確認する。"
         },
         {
           "id": "4",
-          "text": "です",
-          "rationale": "Phương án «です» không phù hợp 文のまとまりと語順; dữ kiện/quy tắc yêu cầu «ほしい»."
+          "text": "かさを",
+          "rationale": "正しい順序は「あしたは、昨日買ったかさを持って行きます。」。この位置の役割を確認する。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "文のまとまりと語順",
-      "prefix": "わたしは ",
-      "suffix": "。",
+      "correctOptionId": "3",
+      "prefix": "あしたは、",
+      "suffix": "",
       "slots": 4,
-      "starSlot": 3,
-      "completedSentence": "わたしは 青いかばんがほしいです。",
+      "starSlot": 2,
       "solutionOrder": [
         2,
         3,
-        1,
-        4
-      ]
+        4,
+        1
+      ],
+      "completedSentence": "あしたは、昨日買ったかさを持って行きます。"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-2-03",
       "section": "grammar_reading",
       "group": 2,
       "number": 3,
-      "prompt": "★に入ることばはどれですか。",
+      "prompt": "★に 入る ことばを 選んでください。",
+      "learningObjective": "動詞の名詞化ことが好き。",
       "options": [
         {
           "id": "1",
-          "text": "一人で",
-          "rationale": "Phương án «一人で» không phù hợp 文のまとまりと語順; dữ kiện/quy tắc yêu cầu «読むことが»."
+          "text": "好きです。",
+          "rationale": "正しい順序は「わたしは、写真をとることが好きです。」。この位置の役割を確認する。"
         },
         {
           "id": "2",
-          "text": "この漢字を",
-          "rationale": "Phương án «この漢字を» không phù hợp 文のまとまりと語順; dữ kiện/quy tắc yêu cầu «読むことが»."
+          "text": "とること",
+          "rationale": "正しい順序は「わたしは、写真をとることが好きです。」。この位置の役割を確認する。"
         },
         {
           "id": "3",
-          "text": "読むことが",
-          "rationale": "Đúng: 文のまとまりと語順; 読むことが"
+          "text": "写真を",
+          "rationale": "正しい順序は「わたしは、写真をとることが好きです。」。この位置の役割を確認する。"
         },
         {
           "id": "4",
-          "text": "できます",
-          "rationale": "Phương án «できます» không phù hợp 文のまとまりと語順; dữ kiện/quy tắc yêu cầu «読むことが»."
+          "text": "が",
+          "rationale": "正しい順序は「わたしは、写真をとることが好きです。」。この位置の役割を確認する。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "文のまとまりと語順",
-      "prefix": "妹は ",
-      "suffix": "。",
+      "correctOptionId": "4",
+      "prefix": "わたしは、",
+      "suffix": "",
       "slots": 4,
       "starSlot": 3,
-      "completedSentence": "妹は 一人でこの漢字を読むことができます。",
       "solutionOrder": [
-        1,
-        2,
         3,
-        4
-      ]
+        2,
+        4,
+        1
+      ],
+      "completedSentence": "わたしは、写真をとることが好きです。"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-2-04",
       "section": "grammar_reading",
       "group": 2,
       "number": 4,
-      "prompt": "★に入ることばはどれですか。",
+      "prompt": "★に 入る ことばを 選んでください。",
+      "learningObjective": "前にで時間を示し、目的語と副詞を動詞につなぐ。",
       "options": [
         {
           "id": "1",
-          "text": "いちばん",
-          "rationale": "Phương án «いちばん» không phù hợp 文のまとまりと語順; dữ kiện/quy tắc yêu cầu «食べ物は»."
+          "text": "ください。",
+          "rationale": "「食べる前に手を洗ってください。」の順でつなぎ、★の位置を確認する。"
         },
         {
           "id": "2",
-          "text": "食べ物は",
-          "rationale": "Đúng: 文のまとまりと語順; 食べ物は"
+          "text": "手を",
+          "rationale": "「食べる前に手を洗ってください。」の順でつなぎ、★の位置を確認する。"
         },
         {
           "id": "3",
-          "text": "好きな",
-          "rationale": "Phương án «好きな» không phù hợp 文のまとまりと語順; dữ kiện/quy tắc yêu cầu «食べ物は»."
+          "text": "前に",
+          "rationale": "「食べる前に手を洗ってください。」の順でつなぎ、★の位置を確認する。"
         },
         {
           "id": "4",
-          "text": "魚です",
-          "rationale": "Phương án «魚です» không phù hợp 文のまとまりと語順; dữ kiện/quy tắc yêu cầu «食べ物は»."
+          "text": "洗って",
+          "rationale": "「食べる前に手を洗ってください。」の順でつなぎ、★の位置を確認する。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "文のまとまりと語順",
-      "prefix": "兄の ",
-      "suffix": "。",
+      "correctOptionId": "1",
+      "prefix": "食べる",
+      "suffix": "",
       "slots": 4,
-      "starSlot": 3,
-      "completedSentence": "兄の いちばん好きな食べ物は魚です。",
+      "starSlot": 4,
       "solutionOrder": [
-        1,
         3,
         2,
-        4
-      ]
+        4,
+        1
+      ],
+      "completedSentence": "食べる前に手を洗ってください。"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-2-05",
       "section": "grammar_reading",
       "group": 2,
       "number": 5,
-      "prompt": "★に入ることばはどれですか。",
+      "prompt": "★に 入る ことばを 選んでください。",
+      "learningObjective": "わたしが作ったがいすを修飾する。",
       "options": [
         {
           "id": "1",
-          "text": "母が",
-          "rationale": "Sai tại vị trí được hỏi: 母が; đáp án theo dữ kiện/ngữ pháp: 料理を"
+          "text": "座りました。",
+          "rationale": "正しい順序は「父は、わたしが作ったいすに座りました。」。この位置の役割を確認する。"
         },
         {
           "id": "2",
-          "text": "料理を",
-          "rationale": "Đúng: 料理を; đáp án theo dữ kiện/ngữ pháp: 料理を"
+          "text": "わたしが",
+          "rationale": "正しい順序は「父は、わたしが作ったいすに座りました。」。この位置の役割を確認する。"
         },
         {
           "id": "3",
           "text": "作った",
-          "rationale": "Sai tại vị trí được hỏi: 作った; đáp án theo dữ kiện/ngữ pháp: 料理を"
+          "rationale": "正しい順序は「父は、わたしが作ったいすに座りました。」。この位置の役割を確認する。"
         },
         {
           "id": "4",
-          "text": "食べました",
-          "rationale": "Sai tại vị trí được hỏi: 食べました; đáp án theo dữ kiện/ngữ pháp: 料理を"
+          "text": "いすに",
+          "rationale": "正しい順序は「父は、わたしが作ったいすに座りました。」。この位置の役割を確認する。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "文のまとまりと語順",
-      "prefix": "きのう、",
-      "suffix": "。",
+      "correctOptionId": "3",
+      "prefix": "父は、",
+      "suffix": "",
       "slots": 4,
-      "starSlot": 3,
-      "completedSentence": "きのう、母が作った料理を食べました。",
+      "starSlot": 2,
       "solutionOrder": [
-        1,
-        3,
         2,
-        4
-      ]
+        3,
+        4,
+        1
+      ],
+      "completedSentence": "父は、わたしが作ったいすに座りました。"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-3-01",
       "section": "grammar_reading",
       "group": 3,
       "number": 1,
-      "prompt": "文章の（1）に入るものはどれですか。",
+      "prompt": "文章の【1】に 入るものを 選んでください。",
+      "learningObjective": "来る家族が主語。",
       "options": [
         {
           "id": "1",
-          "text": "な",
-          "rationale": "Phương án «な» không phù hợp い形容詞接続; dữ kiện/quy tắc yêu cầu «て»."
+          "text": "を",
+          "rationale": "来る対象ををでは示さない。"
         },
         {
           "id": "2",
-          "text": "に",
-          "rationale": "Phương án «に» không phù hợp い形容詞接続; dữ kiện/quy tắc yêu cầu «て»."
+          "text": "で",
+          "rationale": "場所のでは家族を主語にしない。"
         },
         {
           "id": "3",
-          "text": "て",
-          "rationale": "Đúng: い形容詞接続; て"
+          "text": "が",
+          "rationale": "主語のが。"
         },
         {
           "id": "4",
-          "text": "で",
-          "rationale": "Phương án «で» không phù hợp い形容詞接続; dữ kiện/quy tắc yêu cầu «て»."
+          "text": "へ",
+          "rationale": "方向のへでは主語にしない。"
         }
       ],
       "correctOptionId": "3",
-      "learningObjective": "い形容詞接続",
-      "passageId": "grammar-bicycle"
+      "passageId": "text-grammar-01"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-3-02",
       "section": "grammar_reading",
       "group": 3,
       "number": 2,
-      "prompt": "文章の（2）に入るものはどれですか。",
+      "prompt": "文章の【2】に 入るものを 選んでください。",
+      "learningObjective": "手伝う理由。",
       "options": [
         {
           "id": "1",
-          "text": "言います",
-          "rationale": "Phương án «言います» không phù hợp 過去の発言; dữ kiện/quy tắc yêu cầu «言いました»."
+          "text": "だけ",
+          "rationale": "だけでは手伝う理由がつながらない。"
         },
         {
           "id": "2",
-          "text": "言ってください",
-          "rationale": "Phương án «言ってください» không phù hợp 過去の発言; dữ kiện/quy tắc yêu cầu «言いました»."
+          "text": "より",
+          "rationale": "よりは比較の相手が必要。"
         },
         {
           "id": "3",
-          "text": "言いましょう",
-          "rationale": "Phương án «言いましょう» không phù hợp 過去の発言; dữ kiện/quy tắc yêu cầu «言いました»."
+          "text": "まで",
+          "rationale": "まででは理由にならない。"
         },
         {
           "id": "4",
-          "text": "言いました",
-          "rationale": "Đúng: 過去の発言; 言いました"
+          "text": "から",
+          "rationale": "重そうだったから手伝う。"
         }
       ],
       "correctOptionId": "4",
-      "learningObjective": "過去の発言",
-      "passageId": "grammar-bicycle"
+      "passageId": "text-grammar-01"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-3-03",
       "section": "grammar_reading",
       "group": 3,
       "number": 3,
-      "prompt": "文章の（3）に入るものはどれですか。",
+      "prompt": "文章の【3】に 入るものを 選んでください。",
+      "learningObjective": "箱を運ぶ前の申し出。",
       "options": [
         {
           "id": "1",
-          "text": "でも",
-          "rationale": "Phương án «でも» không phù hợp 理由と結果; dữ kiện/quy tắc yêu cầu «ので»."
+          "text": "お手伝いしましょうか",
+          "rationale": "手伝う申し出が後の行動と合う。"
         },
         {
           "id": "2",
-          "text": "ので",
-          "rationale": "Đúng: 理由と結果; ので"
+          "text": "お大事に",
+          "rationale": "病気の人への声かけ。"
         },
         {
           "id": "3",
-          "text": "のに",
-          "rationale": "Phương án «のに» không phù hợp 理由と結果; dữ kiện/quy tắc yêu cầu «ので»."
+          "text": "いただきます",
+          "rationale": "食事前のあいさつ。"
         },
         {
           "id": "4",
-          "text": "まで",
-          "rationale": "Phương án «まで» không phù hợp 理由と結果; dữ kiện/quy tắc yêu cầu «ので»."
+          "text": "ごちそうさまでした",
+          "rationale": "食事後のあいさつ。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "理由と結果",
-      "passageId": "grammar-bicycle"
+      "correctOptionId": "1",
+      "passageId": "text-grammar-01"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-3-04",
       "section": "grammar_reading",
       "group": 3,
       "number": 4,
-      "prompt": "文章の（4）に入るものはどれですか。",
+      "prompt": "文章の【4】に 入るものを 選んでください。",
+      "learningObjective": "昨日の夕食の回想。",
       "options": [
         {
           "id": "1",
-          "text": "あげました",
-          "rationale": "Phương án «あげました» không phù hợp 教えてもらう; dữ kiện/quy tắc yêu cầu «もらいました»."
+          "text": "食べましょう",
+          "rationale": "提案で回想の内容にならない。"
         },
         {
           "id": "2",
-          "text": "くれました",
-          "rationale": "Phương án «くれました» không phù hợp 教えてもらう; dữ kiện/quy tắc yêu cầu «もらいました»."
+          "text": "食べてください",
+          "rationale": "依頼で回想の内容にならない。"
         },
         {
           "id": "3",
-          "text": "いました",
-          "rationale": "Phương án «いました» không phù hợp 教えてもらう; dữ kiện/quy tắc yêu cầu «もらいました»."
+          "text": "食べませんか",
+          "rationale": "誘いで回想の内容にならない。"
         },
         {
           "id": "4",
-          "text": "もらいました",
-          "rationale": "Đúng: 教えてもらう; もらいました"
+          "text": "食べました",
+          "rationale": "おいしかったので実際に食べた過去。"
         }
       ],
       "correctOptionId": "4",
-      "learningObjective": "教えてもらう",
-      "passageId": "grammar-bicycle"
+      "passageId": "text-grammar-01"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-3-05",
       "section": "grammar_reading",
       "group": 3,
       "number": 5,
-      "prompt": "文章の（5）に入るものはどれですか。",
+      "prompt": "文章の【5】に 入るものを 選んでください。",
+      "learningObjective": "翌日の招待。",
       "options": [
         {
           "id": "1",
-          "text": "使いたいです",
-          "rationale": "Đúng: 今後の希望; 使いたいです"
+          "text": "来る前でした",
+          "rationale": "来る前でしたは招待ではない。"
         },
         {
           "id": "2",
-          "text": "使いでした",
-          "rationale": "Phương án «使いでした» không phù hợp 今後の希望; dữ kiện/quy tắc yêu cầu «使いたいです»."
+          "text": "来たくなかった",
+          "rationale": "来たくなかったは過去の希望の否定。"
         },
         {
           "id": "3",
-          "text": "使ったでした",
-          "rationale": "Phương án «使ったでした» không phù hợp 今後の希望; dữ kiện/quy tắc yêu cầu «使いたいです»."
+          "text": "来てください",
+          "rationale": "来てくださいは招待。"
         },
         {
           "id": "4",
-          "text": "使うくないです",
-          "rationale": "Phương án «使うくないです» không phù hợp 今後の希望; dữ kiện/quy tắc yêu cầu «使いたいです»."
+          "text": "来ませんでした",
+          "rationale": "未来のあしたと過去の否定が合わない。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "今後の希望",
-      "passageId": "grammar-bicycle"
+      "correctOptionId": "3",
+      "passageId": "text-grammar-01"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-4-01",
       "section": "grammar_reading",
       "group": 4,
       "number": 1,
-      "prompt": "美香さんはあした、どうしますか。",
+      "prompt": "しおりさんは、かさを どうしましたか。",
+      "learningObjective": "短い文章の具体的な行動・条件を理解する。",
       "options": [
         {
           "id": "1",
-          "text": "何も持たないで、十二時にゆりさんの家へ行きます。",
-          "rationale": "Đúng: 短文の明示情報と状況; 何も持たないで、十二時にゆりさんの家へ行きます。"
+          "text": "借りる 前に かわかしました。",
+          "rationale": "使った後ぬれている。"
         },
         {
           "id": "2",
-          "text": "飲み物を買って、十二時に来てもらいます。",
-          "rationale": "Phương án «飲み物を買って、十二時に来てもらいます。» không phù hợp 短文の明示情報と状況; dữ kiện/quy tắc yêu cầu «何も持たないで、十二時にゆりさんの家へ行きます。»."
+          "text": "玄関の 中で 開いたままに しました。",
+          "rationale": "閉じず玄関の中に置いた。"
         },
         {
           "id": "3",
-          "text": "スープを作って、ゆりさんの家へ行きます。",
-          "rationale": "Phương án «スープを作って、ゆりさんの家へ行きます。» không phù hợp 短文の明示情報と状況; dữ kiện/quy tắc yêu cầu «何も持たないで、十二時にゆりさんの家へ行きます。»."
+          "text": "玄関の 外で 閉じました。",
+          "rationale": "外でも閉じてもいない。"
         },
         {
           "id": "4",
-          "text": "ゆりさんに家へ来てもらって、ごはんを作ります。",
-          "rationale": "Phương án «ゆりさんに家へ来てもらって、ごはんを作ります。» không phù hợp 短文の明示情報と状況; dữ kiện/quy tắc yêu cầu «何も持たないで、十二時にゆりさんの家へ行きます。»."
+          "text": "明日の 朝 返すことに しました。",
+          "rationale": "すでに置いて返している。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "短文の明示情報と状況",
-      "passageId": "short-letter"
+      "correctOptionId": "2",
+      "passageId": "short-01"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-4-02",
       "section": "grammar_reading",
       "group": 4,
       "number": 2,
-      "prompt": "木曜日に本とＣＤを返したい人は、どうしますか。",
+      "prompt": "白い かばんを 受け取るには、どうしますか。",
+      "learningObjective": "短い文章の具体的な行動・条件を理解する。",
       "options": [
         {
           "id": "1",
-          "text": "本もＣＤも入口の箱に入れます。",
-          "rationale": "Phương án «本もＣＤも入口の箱に入れます。» không phù hợp 短文の明示情報と状況; dữ kiện/quy tắc yêu cầu «本は入口の箱に入れて、ＣＤは金曜日に返します。»."
+          "text": "バスの 中で、名前を 書きます。",
+          "rationale": "車内受け取りや記名の説明はない。"
         },
         {
           "id": "2",
-          "text": "本もＣＤも木曜日にカウンターで返します。",
-          "rationale": "Phương án «本もＣＤも木曜日にカウンターで返します。» không phù hợp 短文の明示情報と状況; dữ kiện/quy tắc yêu cầu «本は入口の箱に入れて、ＣＤは金曜日に返します。»."
+          "text": "営業所で、中の 物を 説明します。",
+          "rationale": "営業所と内容説明が両方必要。"
         },
         {
           "id": "3",
-          "text": "本は入口の箱に入れて、ＣＤは金曜日に返します。",
-          "rationale": "Đúng: 短文の明示情報と状況; 本は入口の箱に入れて、ＣＤは金曜日に返します。"
+          "text": "営業所で、新しい かばんを 買います。",
+          "rationale": "買い替えではなく忘れ物受け取り。"
         },
         {
           "id": "4",
-          "text": "本は金曜日、ＣＤは木曜日に返します。",
-          "rationale": "Phương án «本は金曜日、ＣＤは木曜日に返します。» không phù hợp 短文の明示情報と状況; dữ kiện/quy tắc yêu cầu «本は入口の箱に入れて、ＣＤは金曜日に返します。»."
+          "text": "駅で、バスの 切符を 見せます。",
+          "rationale": "駅にはなく切符も条件ではない。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "短文の明示情報と状況",
-      "passageId": "short-library"
+      "correctOptionId": "2",
+      "passageId": "short-02"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-4-03",
       "section": "grammar_reading",
       "group": 4,
       "number": 3,
-      "prompt": "きょうのねこは、何をしていますか。",
+      "prompt": "暗い とき、家族は 何を 使いましたか。",
+      "learningObjective": "短い文章の具体的な行動・条件を理解する。",
       "options": [
         {
           "id": "1",
-          "text": "窓の前でわたしと遊んでいます。",
-          "rationale": "Phương án «窓の前でわたしと遊んでいます。» không phù hợp 短文の明示情報と状況; dữ kiện/quy tắc yêu cầu «窓の前で雨がやむのを待っています。»."
+          "text": "母の 携帯電話",
+          "rationale": "携帯電話は本文にない。"
         },
         {
           "id": "2",
-          "text": "外でおもちゃを使って遊んでいます。",
-          "rationale": "Phương án «外でおもちゃを使って遊んでいます。» không phù hợp 短文の明示情報と状況; dữ kiện/quy tắc yêu cầu «窓の前で雨がやむのを待っています。»."
+          "text": "父が 見つけた ろうそく",
+          "rationale": "ろうそくは見つからない。"
         },
         {
           "id": "3",
-          "text": "雨の中で座ってわたしを待っています。",
-          "rationale": "Phương án «雨の中で座ってわたしを待っています。» không phù hợp 短文の明示情報と状況; dữ kiện/quy tắc yêu cầu «窓の前で雨がやむのを待っています。»."
+          "text": "姉の 小さい ライト",
+          "rationale": "姉がライトを持参。"
         },
         {
           "id": "4",
-          "text": "窓の前で雨がやむのを待っています。",
-          "rationale": "Đúng: 短文の明示情報と状況; 窓の前で雨がやむのを待っています。"
+          "text": "外に あった 電気",
+          "rationale": "外の電気を使っていない。"
         }
       ],
-      "correctOptionId": "4",
-      "learningObjective": "短文の明示情報と状況",
-      "passageId": "short-cat"
+      "correctOptionId": "3",
+      "passageId": "short-03"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-5-01",
       "section": "grammar_reading",
       "group": 5,
       "number": 1,
-      "prompt": "今、わたしは水をあげる前に、何をしますか。",
+      "prompt": "この 人は、どうして うれしかったのですか。",
+      "learningObjective": "段落をつないで理由・協力の内容を理解する。",
       "options": [
         {
           "id": "1",
-          "text": "土がぬれているか見ます。",
-          "rationale": "Đúng: 文章内の行動の変化; 土がぬれているか見ます。"
+          "text": "みんなが 自分の 話を 聞いてくれたから。",
+          "rationale": "皆が話を聞いたことが喜びの理由。"
         },
         {
           "id": "2",
-          "text": "野菜を全部取ります。",
-          "rationale": "Phương án «野菜を全部取ります。» không phù hợp 文章内の行動の変化; dữ kiện/quy tắc yêu cầu «土がぬれているか見ます。»."
+          "text": "先生が 犬を 探してくれたから。",
+          "rationale": "犬を探したのは近所の人と本人。"
         },
         {
           "id": "3",
-          "text": "サラダを作ります。",
-          "rationale": "Phương án «サラダを作ります。» không phù hợp 文章内の行動の変化; dữ kiện/quy tắc yêu cầu «土がぬれているか見ます。»."
+          "text": "質問を しないで 授業が 終わったから。",
+          "rationale": "実際に質問があった。"
         },
         {
           "id": "4",
-          "text": "先生に毎日電話します。",
-          "rationale": "Phương án «先生に毎日電話します。» không phù hợp 文章内の行動の変化; dữ kiện/quy tắc yêu cầu «土がぬれているか見ます。»."
+          "text": "長い 日本語の 文を 全部 言えたから。",
+          "rationale": "長い文は話せなかった。"
         }
       ],
       "correctOptionId": "1",
-      "learningObjective": "文章内の行動の変化",
-      "passageId": "medium-garden"
+      "passageId": "medium-01"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-5-02",
       "section": "grammar_reading",
       "group": 5,
       "number": 2,
-      "prompt": "この人は畑の野菜を食べて、どう思っていますか。",
+      "prompt": "昨日、この 人は 弟を どう 手伝いましたか。",
+      "learningObjective": "段落をつないで理由・協力の内容を理解する。",
       "options": [
         {
           "id": "1",
-          "text": "もう畑の野菜を食べたくないです。",
-          "rationale": "Phương án «もう畑の野菜を食べたくないです。» không phù hợp 結びの希望; dữ kiện/quy tắc yêu cầu «また自分で何か育てたいです。»."
+          "text": "箱で 橋を 作りました。",
+          "rationale": "橋はまだない。"
         },
         {
           "id": "2",
-          "text": "野菜には毎日たくさん水が必要です。",
-          "rationale": "Phương án «野菜には毎日たくさん水が必要です。» không phù hợp 結びの希望; dữ kiện/quy tắc yêu cầu «また自分で何か育てたいです。»."
+          "text": "白い 紙を 青く しました。",
+          "rationale": "青い紙がなく白紙を青く塗った。"
         },
         {
           "id": "3",
-          "text": "これからは店の野菜だけ食べたいです。",
-          "rationale": "Phương án «これからは店の野菜だけ食べたいです。» không phù hợp 結びの希望; dữ kiện/quy tắc yêu cầu «また自分で何か育てたいです。»."
+          "text": "箱を ごみとして 捨てました。",
+          "rationale": "箱を捨てていない。"
         },
         {
           "id": "4",
-          "text": "また自分で何か育てたいです。",
-          "rationale": "Đúng: 結びの希望; また自分で何か育てたいです。"
+          "text": "青い 紙を 店で 買いました。",
+          "rationale": "購入していない。"
         }
       ],
-      "correctOptionId": "4",
-      "learningObjective": "結びの希望",
-      "passageId": "medium-garden"
+      "correctOptionId": "2",
+      "passageId": "medium-02"
     },
     {
       "id": "jpapp-n5-original-02-v1-grammar_reading-6-01",
       "section": "grammar_reading",
       "group": 6,
       "number": 1,
-      "prompt": "森さんは大人です。まだ泳げません。平日は仕事があるので、週末に習いたいです。どのコースがいいですか。",
+      "prompt": "アンさんは 土曜日の 午前に 参加したいです。250円まで 使えます。どの 練習会に 申し込みますか。",
+      "learningObjective": "曜日・時間・料金の条件を照合する。",
       "options": [
         {
           "id": "1",
-          "text": "Ｂ",
-          "rationale": "Phương án «Ｂ» không phù hợp 条件に合う情報検索; dữ kiện/quy tắc yêu cầu «Ｄ»."
+          "text": "C",
+          "rationale": "土曜午前かつ200円。"
         },
         {
           "id": "2",
-          "text": "Ｄ",
-          "rationale": "Đúng: 条件に合う情報検索; Ｄ"
+          "text": "D",
+          "rationale": "日曜日で300円。"
         },
         {
           "id": "3",
-          "text": "Ａ",
-          "rationale": "Phương án «Ａ» không phù hợp 条件に合う情報検索; dữ kiện/quy tắc yêu cầu «Ｄ»."
+          "text": "A",
+          "rationale": "平日の夜で300円。"
         },
         {
           "id": "4",
-          "text": "Ｃ",
-          "rationale": "Phương án «Ｃ» không phù hợp 条件に合う情報検索; dữ kiện/quy tắc yêu cầu «Ｄ»."
+          "text": "B",
+          "rationale": "200円だが水曜夜。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "条件に合う情報検索",
-      "passageId": "search-pool"
+      "correctOptionId": "1",
+      "passageId": "information-01"
     },
     {
       "id": "jpapp-n5-original-02-v1-listening-1-01",
       "section": "listening",
       "group": 1,
       "number": 1,
-      "prompt": "女の学生は、まず何をしますか。",
+      "prompt": "女の人は、まず 何を しますか。",
+      "learningObjective": "優先する準備と後の作業を区別する。",
       "options": [
         {
           "id": "1",
-          "text": "機械のボタンをもう一度押します。",
-          "rationale": "Phương án «機械のボタンをもう一度押します。» không phù hợp 機器の状態から次の行動; dữ kiện/quy tắc yêu cầu «職員室で紙をもらいます。»."
+          "text": "洗剤を 買います。",
+          "rationale": "洗剤は機械内にある。"
         },
         {
           "id": "2",
-          "text": "隣の教室で紙をもらいます。",
-          "rationale": "Phương án «隣の教室で紙をもらいます。» không phù hợp 機器の状態から次の行動; dữ kiện/quy tắc yêu cầu «職員室で紙をもらいます。»."
+          "text": "洗濯機に 服を 入れます。",
+          "rationale": "服を入れるのはかごを運んだ後。"
         },
         {
           "id": "3",
-          "text": "職員室で紙をもらいます。",
-          "rationale": "Đúng: 機器の状態から次の行動; 職員室で紙をもらいます。"
+          "text": "床を ふきます。",
+          "rationale": "床は店員がふいた。"
         },
         {
           "id": "4",
-          "text": "先生に写真を渡します。",
-          "rationale": "Phương án «先生に写真を渡します。» không phù hợp 機器の状態から次の行動; dữ kiện/quy tắc yêu cầu «職員室で紙をもらいます。»."
+          "text": "かごを 入口へ 運びます。",
+          "rationale": "空の青いかごを先に運ぶ。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "機器の状態から次の行動",
+      "correctOptionId": "4",
       "script": [
         [
           "narrator",
-          "学校で女の学生と男の学生が話しています。 女の学生は、まず何をしますか。"
+          "コインランドリーで、店の人と女の人が話しています。女の人は、まず何をしますか。"
         ],
         [
-          "female",
-          "写真を印刷したいんだけど、この機械、動かないね。ボタンを押しても何も出ないよ。"
+          "femaleStudent",
+          "すみません。今から、この洗濯機を使ってもいいですか。かごに、洗う服を入れて持ってきました。"
         ],
         [
-          "male",
-          "ああ、紙がないんだ。さっきぼくが最後の紙を使ったよ。新しい紙は教室にはないんだ。"
+          "adultMale",
+          "はい、大丈夫です。でも、服を入れる前に、この空のかごを入口の棚まで運んでいただけますか。"
         ],
         [
-          "female",
-          "そうなんだ。隣の教室にもらいに行けばいい？"
+          "femaleStudent",
+          "入口の棚ですね。"
         ],
         [
-          "male",
-          "今日は隣の教室も使っているから、職員室でもらって。機械はそのあと使えるよ。"
+          "adultMale",
+          "ええ、その青いかごです。となりの白いかごは、そのまま置いてください。"
         ],
         [
-          "female",
-          "わかった。写真は五枚だけだから、少しもらって来るね。"
+          "femaleStudent",
+          "わかりました。それから服を入れます。洗剤は自分で入れるんでしょうか。"
         ],
         [
-          "male",
-          "先生に、写真用の紙がほしいって言ってね。普通の紙だと写真がきれいに出ないから。"
+          "adultMale",
+          "いいえ、この機械は洗剤が中にあります。買わなくていいですよ。床も今ふいたところです。"
         ],
         [
-          "female",
-          "うん。紙をもらってから、ここに戻って来るね。"
+          "femaleStudent",
+          "そうですか。では、青いかごを入口に持っていってから、洗濯を始めます。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {
-        "female": "adultFemale",
-        "male": "youngMale"
-      },
       "timingBudget": {
-        "targetMs": 72800,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 73000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 74811
       }
     },
     {
@@ -2298,78 +2268,75 @@
       "section": "listening",
       "group": 1,
       "number": 2,
-      "prompt": "男の学生は、まず何をしますか。",
+      "prompt": "男の人は、まず どこへ 行きますか。",
+      "learningObjective": "入場手続きの例外条件を理解する。",
       "options": [
         {
           "id": "1",
-          "text": "じゃがいもを洗います。",
-          "rationale": "Đúng: 準備の順序; じゃがいもを洗います。"
+          "text": "一階の 店",
+          "rationale": "店は帰りでもよい。"
         },
         {
           "id": "2",
-          "text": "玉ねぎを切ります。",
-          "rationale": "Phương án «玉ねぎを切ります。» không phù hợp 準備の順序; dữ kiện/quy tắc yêu cầu «じゃがいもを洗います。»."
+          "text": "駅の 改札",
+          "rationale": "駅では使わない。"
         },
         {
           "id": "3",
-          "text": "お湯を用意します。",
-          "rationale": "Phương án «お湯を用意します。» không phù hợp 準備の順序; dữ kiện/quy tắc yêu cầu «じゃがいもを洗います。»."
+          "text": "入口の 切符売り場",
+          "rationale": "ここで買うのは普通の切符の人。"
         },
         {
           "id": "4",
-          "text": "じゃがいもの皮を取ります。",
-          "rationale": "Phương án «じゃがいもの皮を取ります。» không phù hợp 準備の順序; dữ kiện/quy tắc yêu cầu «じゃがいもを洗います。»."
+          "text": "二階の 案内所",
+          "rationale": "紙を持つ人は先に二階。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "準備の順序",
+      "correctOptionId": "4",
       "script": [
         [
           "narrator",
-          "料理の教室で先生と男の学生が話しています。 男の学生は、まず何をしますか。"
+          "建物の入口で、男の人が係の女の人に聞いています。男の人は、まずどこへ行きますか。"
         ],
         [
-          "male",
-          "先生、野菜を切ってもいいですか。包丁を持って来ました。"
+          "youngMale",
+          "今日は中の写真を見に来ました。切符は、ここで買えばいいですか。"
         ],
         [
-          "female",
-          "ちょっと待ってください。玉ねぎはもう切りました。そちらのじゃがいもをお願いします。"
+          "adultFemale",
+          "普通の切符はここで買えますが、その紙を持っている方は、先に二階の案内所へ行ってください。"
         ],
         [
-          "male",
-          "じゃがいもですね。このまま、小さく切ればいいですか。"
+          "youngMale",
+          "学校でもらった紙です。"
         ],
         [
-          "female",
-          "その前に、よく洗ってください。まだ土がついていますから。洗ったら、大きい皿に置いてください。"
+          "adultFemale",
+          "それで大丈夫です。二階でその紙を見せると、今日の切符をもらえます。ここではお金を払わなくていいですよ。"
         ],
         [
-          "male",
-          "はい。それから、皮を取りますか。"
+          "youngMale",
+          "二階ですね。"
         ],
         [
-          "female",
-          "今日は皮も使います。洗ってから切りましょう。お湯はわたしが用意します。"
+          "adultFemale",
+          "この奥の階段を使ってください。一階のお店は帰りにも寄れます。"
         ],
         [
-          "male",
-          "わかりました。じゃがいもは全部洗いますね。小さいのも同じですか。"
+          "youngMale",
+          "わかりました。駅の改札でもこの紙を見せるのかと思っていました。"
         ],
         [
-          "female",
-          "ええ、全部お願いします。切る大きさは、洗ったあとで教えます。"
+          "adultFemale",
+          "駅では使いません。案内所で切符を受け取ったら、またこの入口に戻ってください。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {
-        "female": "adultFemale",
-        "male": "youngMale"
-      },
       "timingBudget": {
-        "targetMs": 72800,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 73000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 75588
       }
     },
     {
@@ -2377,78 +2344,67 @@
       "section": "listening",
       "group": 1,
       "number": 3,
-      "prompt": "男の人は、まず何をしますか。",
+      "prompt": "女の人は、まず 何を しますか。",
+      "learningObjective": "機器操作前の指示を聞き取る。",
       "options": [
         {
           "id": "1",
-          "text": "犬を散歩に連れて行きます。",
-          "rationale": "Phương án «犬を散歩に連れて行きます。» không phù hợp 必要条件を満たす行動; dữ kiện/quy tắc yêu cầu «犬の水の皿を洗います。»."
+          "text": "携帯電話の 電源を 切ります。",
+          "rationale": "先に電源を切る指示。"
         },
         {
           "id": "2",
-          "text": "犬の水の皿を洗います。",
-          "rationale": "Đúng: 必要条件を満たす行動; 犬の水の皿を洗います。"
+          "text": "電池を 外します。",
+          "rationale": "自分で電池を外せない。"
         },
         {
           "id": "3",
-          "text": "犬の体を洗います。",
-          "rationale": "Phương án «犬の体を洗います。» không phù hợp 必要条件を満たす行動; dữ kiện/quy tắc yêu cầu «犬の水の皿を洗います。»."
+          "text": "充電の 線を 買います。",
+          "rationale": "線の購入はまだ不要。"
         },
         {
           "id": "4",
-          "text": "犬にごはんをあげます。",
-          "rationale": "Phương án «犬にごはんをあげます。» không phù hợp 必要条件を満たす行動; dữ kiện/quy tắc yêu cầu «犬の水の皿を洗います。»."
+          "text": "電話を かけます。",
+          "rationale": "電話をかけるのは後。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "必要条件を満たす行動",
+      "correctOptionId": "1",
       "script": [
         [
           "narrator",
-          "家で女の人と男の人が犬について話しています。 男の人は、まず何をしますか。"
+          "家で、男の人と女の人が携帯電話について話しています。女の人は、まず何をしますか。"
         ],
         [
-          "male",
-          "犬のごはん、もうあげた？ぼくがあげようと思っていたんだけど。"
+          "femaleStudent",
+          "ねえ、携帯電話が熱くなっているんだけど、このまま充電しても大丈夫かな。"
         ],
         [
-          "female",
-          "うん、さっき食べたよ。でも、水の皿が汚れているの。"
+          "youngMale",
+          "ずっと動画を見ていたからじゃないかな。今は充電しないで、先に電話の電源を切っておこう。"
         ],
         [
-          "male",
-          "じゃあ、新しい水を入れようか。"
+          "femaleStudent",
+          "電源を切るのね。電池を外したほうがいい？前の電話は、外から電池を取れたよ。"
         ],
         [
-          "female",
-          "入れる前に、皿を洗ってくれる？朝、外で遊んだときに土が入ったみたい。"
+          "youngMale",
+          "この電話の電池は自分で外せないよ。そのまま触らないで、電源を切ってから少し待ってみよう。"
         ],
         [
-          "male",
-          "そうか。水は外の水道でいい？"
+          "femaleStudent",
+          "わかった。お母さんに電話をかけようと思っていたけど、あとにするね。"
         ],
         [
-          "female",
-          "皿は台所で洗って。そのあと冷たすぎない水を入れてね。"
-        ],
-        [
-          "male",
-          "わかった。犬の散歩はどうする？"
-        ],
-        [
-          "female",
-          "今は外が暑いから、夕方に行こう。まず、きれいな皿を用意してあげて。"
+          "youngMale",
+          "うん。熱くなくなってから、もう一度使ってみて。それでも熱かったら、店で見てもらおう。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {
-        "female": "adultFemale",
-        "male": "adultMale"
-      },
       "timingBudget": {
-        "targetMs": 72800,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 73000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 70919
       }
     },
     {
@@ -2456,78 +2412,71 @@
       "section": "listening",
       "group": 1,
       "number": 4,
-      "prompt": "女の学生は、まず何をしますか。",
+      "prompt": "男の人は、まず 何を しますか。",
+      "learningObjective": "既に済んだ作業と次の手順を分ける。",
       "options": [
         {
           "id": "1",
-          "text": "先生にかぎを返します。",
-          "rationale": "Phương án «先生にかぎを返します。» không phù hợp 依頼された先行動作; dữ kiện/quy tắc yêu cầu «部屋の電気を消します。»."
+          "text": "ふたを ごみ箱に 入れます。",
+          "rationale": "ふたの仕分けは女性が後で行う。"
         },
         {
           "id": "2",
-          "text": "椅子を元の場所に戻します。",
-          "rationale": "Phương án «椅子を元の場所に戻します。» không phù hợp 依頼された先行動作; dữ kiện/quy tắc yêu cầu «部屋の電気を消します。»."
+          "text": "水で びんを 洗います。",
+          "rationale": "ふたは既に取り、次に洗う。"
         },
         {
           "id": "3",
-          "text": "部屋の電気を消します。",
-          "rationale": "Đúng: 依頼された先行動作; 部屋の電気を消します。"
+          "text": "紙を びんに 貼ります。",
+          "rationale": "紙を貼る必要なし。"
         },
         {
           "id": "4",
-          "text": "楽器を箱に入れます。",
-          "rationale": "Phương án «楽器を箱に入れます。» không phù hợp 依頼された先行動作; dữ kiện/quy tắc yêu cầu «部屋の電気を消します。»."
+          "text": "袋を 外に 出します。",
+          "rationale": "びんを出すのは明日。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "依頼された先行動作",
+      "correctOptionId": "2",
       "script": [
         [
           "narrator",
-          "音楽の練習のあと、女の学生と男の学生が話しています。 女の学生は、まず何をしますか。"
+          "家で、女の人と男の人が空のびんを片づけています。男の人は、まず何をしますか。"
         ],
         [
-          "female",
-          "もう五時だね。この部屋、閉めてもいいかな。"
+          "youngMale",
+          "このびん、どうしたらいいかな。中にジュースが少し残っているよ。ふたはもう取ったけど。"
         ],
         [
-          "male",
-          "うん。ぼくは楽器を箱に入れたよ。窓も閉めた。"
+          "adultFemale",
+          "そうね。びんは水で洗ってから、こっちのかごに入れて。ふたは違うごみだから、私があとで分けるよ。"
         ],
         [
-          "female",
-          "じゃあ、かぎを先生に返して来るね。"
+          "youngMale",
+          "洗ったら、すぐ外に出してもいいの？今日は、ごみを出す日だったよね。"
         ],
         [
-          "male",
-          "その前に、部屋の電気を消して。まだついているよ。先生は今、会議中だから、かぎは受付に返せばいいんだって。"
+          "adultFemale",
+          "普通のごみは今日だけど、びんは明日だよ。今日は家の中に置いておいてね。"
         ],
         [
-          "female",
-          "受付は一階だよね。電気を消したら、かばんを持って下に行くね。"
+          "youngMale",
+          "この袋は、びんを入れるためのもの？"
         ],
         [
-          "male",
-          "お願い。ぼくは椅子を元の場所に戻すから。かばんは入口の机に置いてあるよ。"
+          "adultFemale",
+          "その袋は紙のごみ用。びんはかごで大丈夫だよ。紙を貼ったり、袋に入れたりしなくていい。"
         ],
         [
-          "female",
-          "ありがとう。受付では、この部屋のかぎですって言えばいいね。"
-        ],
-        [
-          "male",
-          "うん。部屋の中をもう一度見てから出よう。"
+          "youngMale",
+          "じゃあ、台所に持っていって、水で中をきれいにするね。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {
-        "female": "femaleStudent",
-        "male": "youngMale"
-      },
       "timingBudget": {
-        "targetMs": 72800,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 73000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 73979
       }
     },
     {
@@ -2535,78 +2484,75 @@
       "section": "listening",
       "group": 1,
       "number": 5,
-      "prompt": "男の客は、まず何をしますか。",
+      "prompt": "女の人は、どの 卵を 買いますか。",
+      "learningObjective": "人数と不足分から購入品を決める。",
       "options": [
         {
           "id": "1",
-          "text": "住所を書き直します。",
-          "rationale": "Phương án «住所を書き直します。» không phù hợp 梱包の問題への対処; dữ kiện/quy tắc yêu cầu «箱の下にテープを貼ります。»."
+          "text": "大きい 六個入り",
+          "rationale": "大きさが希望と異なる。"
         },
         {
           "id": "2",
-          "text": "荷物を箱から出します。",
-          "rationale": "Phương án «荷物を箱から出します。» không phù hợp 梱包の問題への対処; dữ kiện/quy tắc yêu cầu «箱の下にテープを貼ります。»."
+          "text": "小さい 六個入り",
+          "rationale": "家に二個あり、六個必要、小さい指定。"
         },
         {
           "id": "3",
-          "text": "箱の下にテープを貼ります。",
-          "rationale": "Đúng: 梱包の問題への対処; 箱の下にテープを貼ります。"
+          "text": "大きい 十個入り",
+          "rationale": "個数も大きさも条件と異なる。"
         },
         {
           "id": "4",
-          "text": "新しい箱を買います。",
-          "rationale": "Phương án «新しい箱を買います。» không phù hợp 梱包の問題への対処; dữ kiện/quy tắc yêu cầu «箱の下にテープを貼ります。»."
+          "text": "小さい 十個入り",
+          "rationale": "四個余り残したくない。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "梱包の問題への対処",
+      "correctOptionId": "2",
       "script": [
         [
           "narrator",
-          "荷物を送る店で女の店員と男の客が話しています。 男の客は、まず何をしますか。"
+          "店で、男の人と女の人が卵を選んでいます。女の人は、どの卵を買いますか。"
         ],
         [
-          "male",
-          "この箱を送りたいんですが、このままで大丈夫ですか。"
+          "youngMale",
+          "明日の朝、みんなで卵の料理を作るんだったね。家には何個残っているかな。"
         ],
         [
-          "female",
-          "重さは大丈夫です。住所もはっきり書いてありますね。ただ、箱の下のところが少し開いています。"
+          "femaleStudent",
+          "二個あるよ。八人分だから、あと六個あればいいね。一人一個ずつ使うつもり。"
         ],
         [
-          "male",
-          "あ、本当ですね。新しい箱を買ったほうがいいですか。"
+          "youngMale",
+          "大きい卵の六個入りもあるけど、どうする？見たところ、こっちのほうが安いよ。"
         ],
         [
-          "female",
-          "箱はまだ使えます。下のところにテープをもう少し貼ってください。荷物が落ちないようにしましょう。"
+          "femaleStudent",
+          "安いのはいいけど、小さい卵を使いたいな。"
         ],
         [
-          "male",
-          "テープはどこにありますか。"
+          "youngMale",
+          "じゃあ、小さい卵の十個入りは？残った分を、夜に使えばいいんじゃないかな。"
         ],
         [
-          "female",
-          "そちらの机にあります。使っていいですよ。貼ったら、こちらに持って来てください。"
+          "femaleStudent",
+          "夜は外で食べるよ。それに、あさってから旅行に行くので、卵を残したくないの。"
         ],
         [
-          "male",
-          "わかりました。住所は書き直さなくてもいいですね。"
+          "youngMale",
+          "そうだった。では、小さいほうで、六個入っている箱を一つにしようか。"
         ],
         [
-          "female",
-          "はい、そのままで大丈夫です。"
+          "femaleStudent",
+          "うん。これを買おう。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {
-        "female": "adultFemale",
-        "male": "adultMale"
-      },
       "timingBudget": {
-        "targetMs": 72800,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 73000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 74831
       }
     },
     {
@@ -2614,78 +2560,67 @@
       "section": "listening",
       "group": 1,
       "number": 6,
-      "prompt": "女の学生は、家で何をしますか。",
+      "prompt": "男の人は、まず 何を しますか。",
+      "learningObjective": "表示内容から最初の操作を判断する。",
       "options": [
         {
           "id": "1",
-          "text": "ぶどうを洗って、入れ物に入れます。",
-          "rationale": "Đúng: 場所の制約と準備; ぶどうを洗って、入れ物に入れます。"
+          "text": "コピーを 十枚 取ります。",
+          "rationale": "十枚の入力・コピーはサイズ後。"
         },
         {
           "id": "2",
-          "text": "ぶどうを洗わないで、かばんに入れます。",
-          "rationale": "Phương án «ぶどうを洗わないで、かばんに入れます。» không phù hợp 場所の制約と準備; dữ kiện/quy tắc yêu cầu «ぶどうを洗って、入れ物に入れます。»."
+          "text": "店員を 呼びます。",
+          "rationale": "店員は既に説明中。"
         },
         {
           "id": "3",
-          "text": "おにぎりを作って、入れ物に入れます。",
-          "rationale": "Phương án «おにぎりを作って、入れ物に入れます。» không phù hợp 場所の制約と準備; dữ kiện/quy tắc yêu cầu «ぶどうを洗って、入れ物に入れます。»."
+          "text": "お金を 入れます。",
+          "rationale": "お金は入れ済み。"
         },
         {
           "id": "4",
-          "text": "ぶどうを切って、袋に入れます。",
-          "rationale": "Phương án «ぶどうを切って、袋に入れます。» không phù hợp 場所の制約と準備; dữ kiện/quy tắc yêu cầu «ぶどうを洗って、入れ物に入れます。»."
+          "text": "紙の サイズを 変えます。",
+          "rationale": "画面の紙サイズを先に変更。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "場所の制約と準備",
+      "correctOptionId": "4",
       "script": [
         [
           "narrator",
-          "公園へ行く前に女の学生と男の学生が話しています。 女の学生は、家で何をしますか。"
+          "店で、男の人が女の店員にコピーの取り方を聞いています。男の人は、まず何をしますか。"
         ],
         [
-          "female",
-          "公園で食べる果物、ぶどうを買ったよ。かばんに入れて持って行けばいい？"
+          "youngMale",
+          "この紙を十枚コピーしたいんですが、どのボタンを押せばいいですか。お金はもう入れました。"
         ],
         [
-          "male",
-          "公園の水道、今使えないんだ。だから、家で洗ってから持って行こう。"
+          "adultFemale",
+          "今、画面に大きい紙のサイズが出ていますね。お持ちの紙は小さいので、先にサイズを変えましょう。"
         ],
         [
-          "female",
-          "じゃあ、洗ったら袋に入れるね。"
+          "youngMale",
+          "なるほど。この下のボタンですか。十枚という数字も、今入れたほうがいいですか。"
         ],
         [
-          "male",
-          "袋だとつぶれるかもしれないよ。ふたのある入れ物に入れたらどうかな。"
+          "adultFemale",
+          "数字はサイズのあとで大丈夫です。小さい紙のボタンを押してから、十枚と入れてください。"
         ],
         [
-          "female",
-          "小さい入れ物があるから、それを使うね。ナイフも持って行く？"
+          "youngMale",
+          "わかりました。お金が足りるか、ちょっと心配なんですが。あとで足せますか。"
         ],
         [
-          "male",
-          "ぶどうは切らなくていいよ。ぼくはおにぎりを作って持って行くね。"
-        ],
-        [
-          "female",
-          "ありがとう。ぶどうを洗って、入れ物に入れてから出るね。"
-        ],
-        [
-          "male",
-          "うん。公園では、木の下の机でいっしょに食べよう。"
+          "adultFemale",
+          "はい、足りなくなったら画面に出ます。今入れたお金なら、十枚は取れると思いますよ。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {
-        "female": "femaleStudent",
-        "male": "youngMale"
-      },
       "timingBudget": {
-        "targetMs": 72800,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 73000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 73223
       }
     },
     {
@@ -2693,78 +2628,71 @@
       "section": "listening",
       "group": 1,
       "number": 7,
-      "prompt": "女の学生は、まず何をしますか。",
+      "prompt": "女の人は、まず 何を 持って来ますか。",
+      "learningObjective": "作業する場所に合う道具を選ぶ。",
       "options": [
         {
           "id": "1",
-          "text": "入口の掲示板からポスターを取ります。",
-          "rationale": "Phương án «入口の掲示板からポスターを取ります。» không phù hợp 掲示前の手続き; dữ kiện/quy tắc yêu cầu «事務室でポスターを見せます。»."
+          "text": "水の バケツ",
+          "rationale": "床の水拭きは済んでいる。"
         },
         {
           "id": "2",
-          "text": "ポスターに先生の名前を書きます。",
-          "rationale": "Phương án «ポスターに先生の名前を書きます。» không phù hợp 掲示前の手続き; dữ kiện/quy tắc yêu cầu «事務室でポスターを見せます。»."
+          "text": "小さい ぞうきん",
+          "rationale": "椅子に乗る拭き方はやめる。"
         },
         {
           "id": "3",
-          "text": "廊下の壁にポスターを貼ります。",
-          "rationale": "Phương án «廊下の壁にポスターを貼ります。» không phù hợp 掲示前の手続き; dữ kiện/quy tắc yêu cầu «事務室でポスターを見せます。»."
+          "text": "白い ごみ袋",
+          "rationale": "袋はごみを落とした後に使う。"
         },
         {
           "id": "4",
-          "text": "事務室でポスターを見せます。",
-          "rationale": "Đúng: 掲示前の手続き; 事務室でポスターを見せます。"
+          "text": "長い ほうき",
+          "rationale": "上部に届く長いほうきを先に取る。"
         }
       ],
       "correctOptionId": "4",
-      "learningObjective": "掲示前の手続き",
       "script": [
         [
           "narrator",
-          "学校のクラブで女の学生と男の先生が話しています。 女の学生は、まず何をしますか。"
+          "学校で、先生と女の人が掃除について話しています。女の人は、まず何を持って来ますか。"
         ],
         [
-          "female",
-          "先生、クラブのポスターができました。廊下の壁に貼ってもいいですか。"
+          "adultMale",
+          "床はもうきれいですが、窓の上にごみが見えますね。"
         ],
         [
-          "male",
-          "廊下の壁はだめです。入口の掲示板を使ってください。でも、貼る前に事務室の人に見せてくださいね。"
+          "femaleStudent",
+          "あ、本当ですね。いすに乗って、ぞうきんでふきましょうか。台所に小さいぞうきんがあります。"
         ],
         [
-          "female",
-          "事務室ですね。先生の名前は書いてあります。これで大丈夫ですか。"
+          "adultMale",
+          "いすに乗るのは危ないので、やめましょう。長いほうきなら、下から窓の上まで届きますよ。"
         ],
         [
-          "male",
-          "名前はいいです。事務室の人に、貼ってもいいか聞いてください。掲示板には決まりがありますから。"
+          "femaleStudent",
+          "長いほうきは、どこにありますか。"
         ],
         [
-          "female",
-          "わかりました。許可をもらったら、入口に貼ります。"
+          "adultMale",
+          "長いものは、廊下の奥の棚にあります。まずそれを持ってきてください。短いものでは届きません。"
         ],
         [
-          "male",
-          "ええ。それから、終わったら自分でポスターを取ってくださいね。"
+          "femaleStudent",
+          "水のバケツは、あとで使いますか。床もふいたほうがいいと思っていました。"
         ],
         [
-          "female",
-          "はい。クラブの集まりは来週ですから、そのあと取ります。"
-        ],
-        [
-          "male",
-          "では、ポスターを持って事務室へ行ってください。"
+          "adultMale",
+          "床はさっきふいたので、水はいりません。窓の上のごみが取れたら、白い袋に入れて終わりましょう。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {
-        "female": "femaleStudent",
-        "male": "adultMale"
-      },
       "timingBudget": {
-        "targetMs": 72800,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 73000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 76059
       }
     },
     {
@@ -2772,78 +2700,75 @@
       "section": "listening",
       "group": 2,
       "number": 1,
-      "prompt": "女の学生は、教室へ何で行きますか。",
+      "prompt": "女の人は、どうして この 店に よく 来ますか。",
+      "learningObjective": "複数の店の特徴から主な利用理由を理解する。",
       "options": [
         {
           "id": "1",
-          "text": "自転車",
-          "rationale": "Phương án «自転車» không phù hợp 往路と復路を区別; dữ kiện/quy tắc yêu cầu «バス»."
+          "text": "遅い 時間でも 開いているから。",
+          "rationale": "仕事後も営業している点が主理由。"
         },
         {
           "id": "2",
-          "text": "電車",
-          "rationale": "Phương án «電車» không phù hợp 往路と復路を区別; dữ kiện/quy tắc yêu cầu «バス»."
+          "text": "友だちが 働いているから。",
+          "rationale": "知人は働いていない。"
         },
         {
           "id": "3",
-          "text": "車",
-          "rationale": "Phương án «車» không phù hợp 往路と復路を区別; dữ kiện/quy tắc yêu cầu «バス»."
+          "text": "家から とても 近いから。",
+          "rationale": "家は徒歩二十分で近くない。"
         },
         {
           "id": "4",
-          "text": "バス",
-          "rationale": "Đúng: 往路と復路を区別; バス"
+          "text": "パンが いちばん 安いから。",
+          "rationale": "価格は普通で近所が安い場合もある。"
         }
       ],
-      "correctOptionId": "4",
-      "learningObjective": "往路と復路を区別",
+      "correctOptionId": "1",
       "script": [
         [
           "narrator",
-          "女の学生と男の学生が音楽の教室について話しています。 女の学生は、教室へ何で行きますか。"
+          "男の人と女の人がパンの店について話しています。女の人は、どうしてこの店によく来ますか。"
         ],
         [
-          "male",
-          "土曜日、音楽の教室へ行くんだよね。駅で会って、いっしょに電車に乗らない？"
+          "youngMale",
+          "いつもここで買っているの？家はこの近くなのかな。"
         ],
         [
-          "female",
-          "ううん、教室へ行くときはバスを使うんだ。家の前から出るバスが、教室の近くまで行くから。"
+          "femaleStudent",
+          "家は駅の反対側だよ。歩くと二十分ぐらいかかるから、近いとは言えないね。"
         ],
         [
-          "male",
-          "そうなんだ。いつも自転車で行っていると思っていたよ。"
+          "youngMale",
+          "そうなんだ。この店は特に安いのかな。"
         ],
         [
-          "female",
-          "学校へは自転車だけど、音楽の教室は遠いからね。バスなら、楽器を持っていても楽なんだ。"
+          "femaleStudent",
+          "値段は普通だと思う。家の近くの店のほうが、少し安いものもあるよ。"
         ],
         [
-          "male",
-          "帰りもバスに乗るの？夜になるよね。"
+          "youngMale",
+          "でも、ずいぶんよく来ているんだね。ここに知っている人が働いているとか？"
         ],
         [
-          "female",
-          "帰りは父が車で迎えに来るよ。父の仕事が終わる時間と同じだから。"
+          "femaleStudent",
+          "知っている人はいないよ。私は仕事が終わるのが遅いでしょう。近所の店は、その時間には閉まっているの。"
         ],
         [
-          "male",
-          "じゃあ、教室で会おう。ぼくは電車で行くね。"
+          "youngMale",
+          "ああ、ここは夜まで開いているから、帰りに買えるんだね。"
         ],
         [
-          "female",
-          "うん。また土曜日にね。"
+          "femaleStudent",
+          "そう。それが一番助かるの。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {
-        "female": "femaleStudent",
-        "male": "youngMale"
-      },
       "timingBudget": {
-        "targetMs": 69800,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 72000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 72612
       }
     },
     {
@@ -2851,78 +2776,67 @@
       "section": "listening",
       "group": 2,
       "number": 2,
-      "prompt": "男の人は、何のＤＶＤを借りましたか。",
+      "prompt": "男の人は、何曜日に 休みますか。",
+      "learningObjective": "取り消された予定と決定した曜日。",
       "options": [
         {
           "id": "1",
-          "text": "電車",
-          "rationale": "Phương án «電車» không phù hợp 借りたものと希望を区別; dữ kiện/quy tắc yêu cầu «海の魚»."
+          "text": "月曜日",
+          "rationale": "通常の月曜は荷物受取で変更。"
         },
         {
           "id": "2",
-          "text": "海の魚",
-          "rationale": "Đúng: 借りたものと希望を区別; 海の魚"
+          "text": "水曜日",
+          "rationale": "水曜は他の人の代わりに勤務。"
         },
         {
           "id": "3",
-          "text": "犬や猫",
-          "rationale": "Phương án «犬や猫» không phù hợp 借りたものと希望を区別; dữ kiện/quy tắc yêu cầu «海の魚»."
+          "text": "木曜日",
+          "rationale": "最終的な休みは木曜日。"
         },
         {
           "id": "4",
-          "text": "空の星",
-          "rationale": "Phương án «空の星» không phù hợp 借りたものと希望を区別; dữ kiện/quy tắc yêu cầu «海の魚»."
+          "text": "金曜日",
+          "rationale": "金曜は会議。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "借りたものと希望を区別",
+      "correctOptionId": "3",
       "script": [
         [
           "narrator",
-          "女の人と男の人が図書館のＤＶＤについて話しています。 男の人は、何のＤＶＤを借りましたか。"
+          "女の人と男の人が今週の休みについて話しています。男の人は、何曜日に休みますか。"
         ],
         [
-          "female",
-          "図書館に行ったんですね。おもしろいＤＶＤはありましたか。"
+          "adultFemale",
+          "今週はいつ休むの？月曜日に一緒に買い物に行こうと思っていたんだけど。"
         ],
         [
-          "male",
-          "ええ。空の星のＤＶＤを探したんですが、だれかが借りていて、ありませんでした。"
+          "adultMale",
+          "月曜日は店に荷物が届くから、休めなくなったんだ。いつもは月曜日なんだけどね。"
         ],
         [
-          "female",
-          "そうですか。動物のＤＶＤもたくさんありますよね。"
+          "adultFemale",
+          "じゃあ、水曜日はどう？私は午前中なら時間があるよ。雨も降らないみたい。"
         ],
         [
-          "male",
-          "犬や猫のものは家にあるので、今日は借りませんでした。海の中の魚のＤＶＤがあったので、それを借りました。"
+          "adultMale",
+          "水曜日も、ほかの人がお休みなので、僕が店にいることになったよ。"
         ],
         [
-          "female",
-          "海の魚、きれいでしょうね。いつ見ますか。"
+          "adultFemale",
+          "それなら金曜日？金曜日は買いたいものが安くなるって、お店の紙に書いてあったよ。"
         ],
         [
-          "male",
-          "今夜、子どもといっしょに見ます。子どもは電車のＤＶＤを見たがっていましたが、今度にします。"
-        ],
-        [
-          "female",
-          "いろいろな魚が見られるといいですね。"
-        ],
-        [
-          "male",
-          "はい。知らない魚がたくさん出てきそうです。"
+          "adultMale",
+          "金曜日は午後から会議があるんだ。結局、今週は木曜日に休むことにした。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {
-        "female": "adultFemale",
-        "male": "adultMale"
-      },
       "timingBudget": {
-        "targetMs": 69800,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 72000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 71303
       }
     },
     {
@@ -2930,78 +2844,75 @@
       "section": "listening",
       "group": 2,
       "number": 3,
-      "prompt": "女の学生は、今、何曜日に働いていますか。",
+      "prompt": "女の人は、どこで 男の人を 待ちますか。",
+      "learningObjective": "待ち合わせ場所の変更を追う。",
       "options": [
         {
           "id": "1",
-          "text": "金曜日と土曜日",
-          "rationale": "Phương án «金曜日と土曜日» không phù hợp 現在と以前の勤務日; dữ kiện/quy tắc yêu cầu «水曜日と金曜日»."
+          "text": "駅の 中の 店の 前",
+          "rationale": "店前は作業中で使えない。"
         },
         {
           "id": "2",
-          "text": "水曜日と金曜日",
-          "rationale": "Đúng: 現在と以前の勤務日; 水曜日と金曜日"
+          "text": "ホームの 階段の 横",
+          "rationale": "最初の場所から移動する。"
         },
         {
           "id": "3",
-          "text": "月曜日と水曜日",
-          "rationale": "Phương án «月曜日と水曜日» không phù hợp 現在と以前の勤務日; dữ kiện/quy tắc yêu cầu «水曜日と金曜日»."
+          "text": "駅の 外の 時計の 下",
+          "rationale": "最後に合意した時計の下。"
         },
         {
           "id": "4",
-          "text": "月曜日と金曜日",
-          "rationale": "Phương án «月曜日と金曜日» không phù hợp 現在と以前の勤務日; dữ kiện/quy tắc yêu cầu «水曜日と金曜日»."
+          "text": "バス停の 屋根の 下",
+          "rationale": "バス停案は採用しない。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "現在と以前の勤務日",
+      "correctOptionId": "3",
       "script": [
         [
           "narrator",
-          "女の学生と男の学生がアルバイトについて話しています。 女の学生は、今、何曜日に働いていますか。"
+          "電話で、男の人と女の人が待ち合わせについて話しています。女の人は、どこで男の人を待ちますか。"
         ],
         [
-          "male",
-          "新しい店のアルバイト、どう？週に何日ぐらい働いているの？"
+          "youngMale",
+          "ごめん、電車が少し遅れているんだ。今、どこにいる？"
         ],
         [
-          "female",
-          "今は水曜日と金曜日の二日だよ。前の店では月曜日にも働いていたけどね。"
+          "femaleStudent",
+          "ホームにいるよ。前に約束した階段の横で待っている。ここ、風が強いね。"
         ],
         [
-          "male",
-          "月曜日はもう行かないんだ。授業があるの？"
+          "youngMale",
+          "そこは寒いから、駅の中のお店の前に行っていてもいいよ。あそこは椅子もあるよね。"
         ],
         [
-          "female",
-          "うん、今は月曜日の午後に日本語の授業があるんだ。だから、店の人に水曜日と金曜日だけにしてもらったの。"
+          "femaleStudent",
+          "今日はお店の前で何か作業していて、椅子が使えないみたい。人も多いよ。"
         ],
         [
-          "male",
-          "土曜日も店は開いているよね。土曜日はどうするの？"
+          "youngMale",
+          "それなら外に出て、大きい時計の下にいてくれる？"
         ],
         [
-          "female",
-          "土曜日は部屋の掃除をしたり、友だちと会ったりするから、働いていないよ。"
+          "femaleStudent",
+          "時計の下ね。バス停の屋根の下のほうが、わかりやすくない？"
         ],
         [
-          "male",
-          "そうなんだ。じゃあ、水曜日と金曜日に店に行けば会えるね。"
+          "youngMale",
+          "バス停は駅から少し遠いから、時計の下にしよう。"
         ],
         [
-          "female",
-          "うん。夕方六時までいるよ。"
+          "femaleStudent",
+          "わかった。時計のところへ行くね。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {
-        "female": "femaleStudent",
-        "male": "youngMale"
-      },
       "timingBudget": {
-        "targetMs": 69800,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 72000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 72740
       }
     },
     {
@@ -3009,78 +2920,71 @@
       "section": "listening",
       "group": 2,
       "number": 4,
-      "prompt": "男の人は、なぜ今朝パンを食べませんでしたか。",
+      "prompt": "女の人が 男の人に あげる ものは 何ですか。",
+      "learningObjective": "相手の生活条件による贈り物選択。",
       "options": [
         {
           "id": "1",
-          "text": "きのうパンを買うのを忘れたから",
-          "rationale": "Đúng: 理由の特定; きのうパンを買うのを忘れたから"
+          "text": "青い タオル",
+          "rationale": "タオルは多数持っている。"
         },
         {
           "id": "2",
-          "text": "牛乳がなかったから",
-          "rationale": "Phương án «牛乳がなかったから» không phù hợp 理由の特定; dữ kiện/quy tắc yêu cầu «きのうパンを買うのを忘れたから»."
+          "text": "あたたかい 手ぶくろ",
+          "rationale": "手が冷たいため暖かい手袋に決定。"
         },
         {
           "id": "3",
-          "text": "パンを焼く機械が壊れたから",
-          "rationale": "Phương án «パンを焼く機械が壊れたから» không phù hợp 理由の特定; dữ kiện/quy tắc yêu cầu «きのうパンを買うのを忘れたから»."
+          "text": "新しい コップ",
+          "rationale": "コップは気に入った物がある。"
         },
         {
           "id": "4",
-          "text": "朝ごはんを食べる時間がなかったから",
-          "rationale": "Phương án «朝ごはんを食べる時間がなかったから» không phù hợp 理由の特定; dữ kiện/quy tắc yêu cầu «きのうパンを買うのを忘れたから»."
+          "text": "小さい かばん",
+          "rationale": "かばんは今年の選択ではない。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "理由の特定",
+      "correctOptionId": "2",
       "script": [
         [
           "narrator",
-          "朝、女の人と男の人が話しています。 男の人は、なぜ今朝パンを食べませんでしたか。"
+          "男の人と女の人が誕生日の贈り物について話しています。女の人が男の人にあげるものは何ですか。"
         ],
         [
-          "female",
-          "今朝はパンを食べなかったんですか。いつもパンを焼いていますよね。"
+          "adultFemale",
+          "来週の誕生日、何か欲しいものある？お店で青いタオルを見たんだけど。"
         ],
         [
-          "male",
-          "そうなんです。きのう、買うのを忘れてしまって、家にパンがなかったんです。"
+          "youngMale",
+          "ありがとう。でも、タオルは家にたくさんあるんだ。"
         ],
         [
-          "female",
-          "焼く機械が壊れたんじゃなかったんですね。"
+          "adultFemale",
+          "そうか。新しいコップはどう？毎朝、家でコーヒーを飲んでいるよね。"
         ],
         [
-          "male",
-          "機械は大丈夫です。時間もありましたから、卵を焼いて食べました。牛乳も飲みましたよ。"
+          "youngMale",
+          "コップも気に入ったのがあるから、まだ買い替えなくていいと思っているよ。"
         ],
         [
-          "female",
-          "朝、店へ買いに行けばよかったですね。"
+          "adultFemale",
+          "いつも自転車で仕事に行くから、手が寒いんじゃない？"
         ],
         [
-          "male",
-          "朝早くて、近くの店はまだ開いていませんでした。今日は帰りに買って帰ります。"
+          "youngMale",
+          "うん、今の手ぶくろは薄いので、朝は指が冷たくなるんだ。もっとあたたかいものがあったら、うれしいな。"
         ],
         [
-          "female",
-          "じゃあ、あしたはパンが食べられますね。"
-        ],
-        [
-          "male",
-          "はい。忘れないように、かばんにメモを入れておきます。"
+          "adultFemale",
+          "わかった。それを探すね。小さいかばんも便利そうだけど、今年は手ぶくろにする。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {
-        "female": "adultFemale",
-        "male": "youngMale"
-      },
       "timingBudget": {
-        "targetMs": 69800,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 72000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 74181
       }
     },
     {
@@ -3088,78 +2992,75 @@
       "section": "listening",
       "group": 2,
       "number": 5,
-      "prompt": "男の学生は、妹に何をあげますか。",
+      "prompt": "会は 何時から 始まりますか。",
+      "learningObjective": "受付・開始・終了時刻を区別する。",
       "options": [
         {
           "id": "1",
-          "text": "かばん",
-          "rationale": "Phương án «かばん» không phù hợp 今回の贈り物; dữ kiện/quy tắc yêu cầu «色えんぴつ»."
+          "text": "二時半",
+          "rationale": "改訂された開始は二時半。"
         },
         {
           "id": "2",
-          "text": "花",
-          "rationale": "Phương án «花» không phù hợp 今回の贈り物; dữ kiện/quy tắc yêu cầu «色えんぴつ»."
+          "text": "二時",
+          "rationale": "二時は旧開始・集合時刻。"
         },
         {
           "id": "3",
-          "text": "本",
-          "rationale": "Phương án «本» không phù hợp 今回の贈り物; dữ kiện/quy tắc yêu cầu «色えんぴつ»."
+          "text": "三時",
+          "rationale": "三時は女性の用事。"
         },
         {
           "id": "4",
-          "text": "色えんぴつ",
-          "rationale": "Đúng: 今回の贈り物; 色えんぴつ"
+          "text": "一時",
+          "rationale": "一時は受付開始。"
         }
       ],
-      "correctOptionId": "4",
-      "learningObjective": "今回の贈り物",
+      "correctOptionId": "1",
       "script": [
         [
           "narrator",
-          "女の人と男の学生が誕生日について話しています。 男の学生は、妹に何をあげますか。"
+          "男の人と女の人が町の歌の会について話しています。会は何時から始まりますか。"
         ],
         [
-          "female",
-          "妹さんの誕生日は来週でしたね。何か買いましたか。"
+          "youngMale",
+          "日曜日の歌の会、一緒に行かない？"
         ],
         [
-          "male",
-          "はい。妹は絵を描くのが好きなので、色えんぴつを買いました。いろいろな色が入っています。"
+          "adultFemale",
+          "いいね。午後だったよね。前に見た紙には、二時からと書いてあったと思うけど。"
         ],
         [
-          "female",
-          "いいですね。去年はかばんをあげたと言っていましたよね。"
+          "youngMale",
+          "その紙は古いものだね。出る人が増えたので、始まる時間が二時半に変わったそうだよ。"
         ],
         [
-          "male",
-          "ええ。かばんは今も学校へ持って行っています。今年は本も考えたんですが、何を読んだか分からなかったので、やめました。"
+          "adultFemale",
+          "そうなんだ。受付の時間も変わった？"
         ],
         [
-          "female",
-          "妹さんは花も好きでしょう。花はあげないんですか。"
+          "youngMale",
+          "受付は一時からのままだよ。二時までに着くと、歌う人の練習が少し見られるって。"
         ],
         [
-          "male",
-          "花は母が用意するそうです。ぼくは色えんぴつに、カードをつけて渡します。"
+          "adultFemale",
+          "私は二時ごろ着くと思う。三時には用事があるけど、最初の歌ぐらいは聞けるよね。"
         ],
         [
-          "female",
-          "きっと喜びますね。カードも自分で書きますか。"
+          "youngMale",
+          "うん。途中で帰っても大丈夫だよ。"
         ],
         [
-          "male",
-          "はい。妹の好きな猫の絵も描こうと思っています。"
+          "adultFemale",
+          "楽しみだね。じゃあ、二時ごろ入口で会おう。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {
-        "female": "adultFemale",
-        "male": "youngMale"
-      },
       "timingBudget": {
-        "targetMs": 69800,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 72000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 70916
       }
     },
     {
@@ -3167,78 +3068,71 @@
       "section": "listening",
       "group": 2,
       "number": 6,
-      "prompt": "二人は、どこで昼ごはんを食べますか。",
+      "prompt": "男の人は、今日は どうやって 会社へ 行きますか。",
+      "learningObjective": "普段の交通手段と今日の例外。",
       "options": [
         {
           "id": "1",
-          "text": "教室",
-          "rationale": "Phương án «教室» không phù hợp 最終決定の場所; dữ kiện/quy tắc yêu cầu «二階の休み時間に使う部屋»."
+          "text": "自転車で 行きます。",
+          "rationale": "普段の手段。"
         },
         {
           "id": "2",
-          "text": "庭",
-          "rationale": "Phương án «庭» không phù hợp 最終決定の場所; dữ kiện/quy tắc yêu cầu «二階の休み時間に使う部屋»."
+          "text": "電車で 行きます。",
+          "rationale": "駅が遠いため採用しない。"
         },
         {
           "id": "3",
-          "text": "食堂",
-          "rationale": "Phương án «食堂» không phù hợp 最終決定の場所; dữ kiện/quy tắc yêu cầu «二階の休み時間に使う部屋»."
+          "text": "バスで 行きます。",
+          "rationale": "今日は強い雨でバスを選択。"
         },
         {
           "id": "4",
-          "text": "二階の休み時間に使う部屋",
-          "rationale": "Đúng: 最終決定の場所; 二階の休み時間に使う部屋"
+          "text": "歩いて 行きます。",
+          "rationale": "徒歩は帰路の提案で朝の決定ではない。"
         }
       ],
-      "correctOptionId": "4",
-      "learningObjective": "最終決定の場所",
+      "correctOptionId": "3",
       "script": [
         [
           "narrator",
-          "女の学生と男の学生が昼休みについて話しています。 二人は、どこで昼ごはんを食べますか。"
+          "女の人と男の人が朝、家で話しています。男の人は、今日はどうやって会社へ行きますか。"
         ],
         [
-          "male",
-          "お昼、食堂に行く？今日はカレーの日だよ。"
+          "adultFemale",
+          "今日は早く起きたね。自転車で行くの？"
         ],
         [
-          "female",
-          "お弁当を持って来たから、食堂には行かないよ。外の庭で食べようと思っていたんだけど、雨が降って来たね。"
+          "adultMale",
+          "いつもは自転車だけど、今日は雨が強いから、バスにするよ。ぬれた服で働くのは嫌だから。"
         ],
         [
-          "male",
-          "ぼくもお弁当があるよ。じゃあ、教室で食べようか。"
+          "adultFemale",
+          "電車のほうが時間が決まっているし、道が混んでも遅れないんじゃないかな。"
         ],
         [
-          "female",
-          "教室は今、掃除をしているよ。図書館では食べられないし、どうしよう。"
+          "adultMale",
+          "駅までが遠いよ。バス停は家の前にあるし、会社のすぐ近くまで行くから、今日はバスが便利だと思う。"
         ],
         [
-          "male",
-          "二階の休み時間に使う部屋なら、食べてもいいんだって。机も椅子もあるよ。"
+          "adultFemale",
+          "なるほど。雨がやんだら、帰りは歩くこともできるね。"
         ],
         [
-          "female",
-          "ああ、階段のとなりの部屋だね。そこに行こう。"
+          "adultMale",
+          "歩くには少し遠いかな。帰りのことはまだ決めていないけど、朝はバスで行くよ。"
         ],
         [
-          "male",
-          "うん。飲み物を買ってから、いっしょに二階へ行こう。"
-        ],
-        [
-          "female",
-          "お弁当を持って待っているね。"
+          "adultFemale",
+          "わかった。じゃあ、傘を忘れないでね。玄関の横に置いてあるよ。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {
-        "female": "femaleStudent",
-        "male": "youngMale"
-      },
       "timingBudget": {
-        "targetMs": 69800,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 72000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 75227
       }
     },
     {
@@ -3246,40 +3140,41 @@
       "section": "listening",
       "group": 3,
       "number": 1,
-      "prompt": "絵を見て、音声の選択肢から一つ選んでください。",
+      "prompt": "絵を 見て、音声の 選択肢から 一つ 選んでください。",
+      "learningObjective": "落とし物をした相手への知らせ。",
       "options": [
         {
           "id": "1",
-          "text": "すみません、かばんを忘れました。",
-          "rationale": "Phương án «すみません、かばんを忘れました。» không phù hợp 相手の荷物を動かす依頼; dữ kiện/quy tắc yêu cầu «すみません、かばんを少し動かしてもらえますか。»."
+          "text": "すみません、その 手ぶくろを 貸してください。",
+          "rationale": "借りる状況ではない。"
         },
         {
           "id": "2",
-          "text": "すみません、このかばんを買ってもいいですか。",
-          "rationale": "Phương án «すみません、このかばんを買ってもいいですか。» không phù hợp 相手の荷物を動かす依頼; dữ kiện/quy tắc yêu cầu «すみません、かばんを少し動かしてもらえますか。»."
+          "text": "すみません、手ぶくろを 落としましたよ。",
+          "rationale": "落としたことを知らせる。"
         },
         {
           "id": "3",
-          "text": "すみません、かばんを少し動かしてもらえますか。",
-          "rationale": "Đúng: 相手の荷物を動かす依頼; すみません、かばんを少し動かしてもらえますか。"
+          "text": "すみません、手ぶくろを 買いに 行きませんか。",
+          "rationale": "買い物への誘いではない。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "相手の荷物を動かす依頼",
+      "correctOptionId": "2",
       "script": [
         [
           "narrator",
-          "電車の中です。男の人は座りたいですが、席の上に、隣の人のかばんがあります。隣の人に何と言いますか。"
+          "公園で、前を歩いている人が手ぶくろを落としました。気づいていません。何と言いますか。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {},
-      "visualBrief": "Empty train seat with passenger bag; young man politely asks seated passenger.",
-      "illustrationPath": "assets/jlpt-original/n5/02/images/problem-3-01.png",
+      "spokenOptions": true,
+      "visualBrief": "Black-and-white exam illustration: park path, a person walking away whose glove just fell behind them, another person notices and calls out. Show the fallen glove clearly, no words or arrows.",
+      "illustrationPath": "assets/jlpt-original/n5/02/images/problem-3-practice-and-01.png",
       "timingBudget": {
-        "targetMs": 42000,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 43000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 36451
       }
     },
     {
@@ -3287,40 +3182,41 @@
       "section": "listening",
       "group": 3,
       "number": 2,
-      "prompt": "絵を見て、音声の選択肢から一つ選んでください。",
+      "prompt": "絵を 見て、音声の 選択肢から 一つ 選んでください。",
+      "learningObjective": "支払いの置き場所を確認する。",
       "options": [
         {
           "id": "1",
-          "text": "消しゴムを貸してくれる？",
-          "rationale": "Đúng: 道具を借りる依頼; 消しゴムを貸してくれる？"
+          "text": "この パンを 温めてもらえますか。",
+          "rationale": "温めを求める場面ではない。"
         },
         {
           "id": "2",
-          "text": "消しゴムを持って来たよ。",
-          "rationale": "Phương án «消しゴムを持って来たよ。» không phù hợp 道具を借りる依頼; dữ kiện/quy tắc yêu cầu «消しゴムを貸してくれる？»."
+          "text": "ここに お金を 置けば いいですか。",
+          "rationale": "金銭とトレーの関係を確認。"
         },
         {
           "id": "3",
-          "text": "消しゴムを返してくれる？",
-          "rationale": "Phương án «消しゴムを返してくれる？» không phù hợp 道具を借りる依頼; dữ kiện/quy tắc yêu cầu «消しゴムを貸してくれる？»."
+          "text": "この トレーを 買っても いいですか。",
+          "rationale": "トレーの商品購入ではない。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "道具を借りる依頼",
+      "correctOptionId": "2",
       "script": [
         [
           "narrator",
-          "教室です。女の学生は書いた字を消したいですが、消しゴムがありません。隣の学生に何と言いますか。"
+          "パンの店です。お金を払うところです。店の人の前に小さいトレーがあります。お金を置く場所を確かめます。何と言いますか。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {},
-      "visualBrief": "Student with pencil notebook asks classmate whose eraser is on desk.",
+      "spokenOptions": true,
+      "visualBrief": "Black-and-white bakery counter: customer holding coins toward cashier, cashier gestures to an empty payment tray, bread bag on counter. No prices or words; no answer hint.",
       "illustrationPath": "assets/jlpt-original/n5/02/images/problem-3-02.png",
       "timingBudget": {
-        "targetMs": 42000,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 43000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 36099
       }
     },
     {
@@ -3328,40 +3224,41 @@
       "section": "listening",
       "group": 3,
       "number": 3,
-      "prompt": "絵を見て、音声の選択肢から一つ選んでください。",
+      "prompt": "絵を 見て、音声の 選択肢から 一つ 選んでください。",
+      "learningObjective": "手が塞がった相手に援助を申し出る。",
       "options": [
         {
           "id": "1",
-          "text": "袋を捨ててもいいですか。",
-          "rationale": "Phương án «袋を捨ててもいいですか。» không phù hợp 袋を求める; dữ kiện/quy tắc yêu cầu «袋を一枚ください。»."
+          "text": "私が ドアを 開けましょうか。",
+          "rationale": "自分がドアを開ける申し出。"
         },
         {
           "id": "2",
-          "text": "袋は一枚持っています。",
-          "rationale": "Phương án «袋は一枚持っています。» không phù hợp 袋を求める; dữ kiện/quy tắc yêu cầu «袋を一枚ください。»."
+          "text": "その 箱を ここで 開けませんか。",
+          "rationale": "箱を開ける必要はない。"
         },
         {
           "id": "3",
-          "text": "袋を一枚ください。",
-          "rationale": "Đúng: 袋を求める; 袋を一枚ください。"
+          "text": "ドアを 開けてくれませんか。",
+          "rationale": "両手の塞がった人へ依頼するのは場面に合わない。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "袋を求める",
+      "correctOptionId": "1",
       "script": [
         [
           "narrator",
-          "店のレジです。男の人は買った物を入れる袋を持っていません。店員に何と言いますか。"
+          "友だちが大きい箱を持っていて、ドアを開けられません。あなたの手には何もありません。何と言いますか。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {},
-      "visualBrief": "Shopper with groceries asks cashier; folded plain bags by till.",
+      "spokenOptions": true,
+      "visualBrief": "Black-and-white building doorway: friend holding a large box with both hands, closed door, second person empty-handed reaching toward door handle to help. No words.",
       "illustrationPath": "assets/jlpt-original/n5/02/images/problem-3-03.png",
       "timingBudget": {
-        "targetMs": 42000,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 43000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 33517
       }
     },
     {
@@ -3369,40 +3266,41 @@
       "section": "listening",
       "group": 3,
       "number": 4,
-      "prompt": "絵を見て、音声の選択肢から一つ選んでください。",
+      "prompt": "絵を 見て、音声の 選択肢から 一つ 選んでください。",
+      "learningObjective": "変化した友人をほめる。",
       "options": [
         {
           "id": "1",
-          "text": "これはあなたの本ですか。",
-          "rationale": "Đúng: 所有者を確認; これはあなたの本ですか。"
+          "text": "髪を 長く しても いいですか。",
+          "rationale": "自分が髪を伸ばす許可ではない。"
         },
         {
           "id": "2",
-          "text": "あなたは本をどこで買いましたか。",
-          "rationale": "Phương án «あなたは本をどこで買いましたか。» không phù hợp 所有者を確認; dữ kiện/quy tắc yêu cầu «これはあなたの本ですか。»."
+          "text": "私の 髪を 短く してください。",
+          "rationale": "相手に散髪を頼む場面ではない。"
         },
         {
           "id": "3",
-          "text": "この本を読んでもいいですか。",
-          "rationale": "Phương án «この本を読んでもいいですか。» không phù hợp 所有者を確認; dữ kiện/quy tắc yêu cầu «これはあなたの本ですか。»."
+          "text": "その 髪、とても いいですね。",
+          "rationale": "友人の新しい髪型を評価。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "所有者を確認",
+      "correctOptionId": "3",
       "script": [
         [
           "narrator",
-          "学校です。先生は、廊下で本を見つけました。学生の本かどうか聞きたいです。何と言いますか。"
+          "友だちが、今日、髪を短くしました。とても似合っています。何と言いますか。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {},
-      "visualBrief": "Teacher holds found book and asks student in hallway.",
+      "spokenOptions": true,
+      "visualBrief": "Black-and-white street meeting: two friends facing each other, one has a visibly short neat haircut and lightly touches it; other smiles approvingly. No salon tools, words or speech bubbles.",
       "illustrationPath": "assets/jlpt-original/n5/02/images/problem-3-04.png",
       "timingBudget": {
-        "targetMs": 42000,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 43000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 32792
       }
     },
     {
@@ -3410,40 +3308,41 @@
       "section": "listening",
       "group": 3,
       "number": 5,
-      "prompt": "絵を見て、音声の選択肢から一つ選んでください。",
+      "prompt": "絵を 見て、音声の 選択肢から 一つ 選んでください。",
+      "learningObjective": "空席を使う許可を求める。",
       "options": [
         {
           "id": "1",
-          "text": "かさを借りてもいいですか。",
-          "rationale": "Đúng: 許可を伴う借用依頼; かさを借りてもいいですか。"
+          "text": "ここで 寝ても いいですか。",
+          "rationale": "睡眠の許可ではない。"
         },
         {
           "id": "2",
-          "text": "かさを返しに来ました。",
-          "rationale": "Phương án «かさを返しに来ました。» không phù hợp 許可を伴う借用依頼; dữ kiện/quy tắc yêu cầu «かさを借りてもいいですか。»."
+          "text": "ここに 座っても いいですか。",
+          "rationale": "空席に座る許可。"
         },
         {
           "id": "3",
-          "text": "かさを使わないでください。",
-          "rationale": "Phương án «かさを使わないでください。» không phù hợp 許可を伴う借用依頼; dữ kiện/quy tắc yêu cầu «かさを借りてもいいですか。»."
+          "text": "ここから 出ても いいですか。",
+          "rationale": "出口への移動ではない。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "許可を伴う借用依頼",
+      "correctOptionId": "2",
       "script": [
         [
           "narrator",
-          "会社の入口です。外は雨です。女の人はかさを持っていません。かさを貸してほしいです。男の人に何と言いますか。"
+          "病院の待つところです。椅子が一つ空いています。隣の人に、その椅子を使っていいか聞きます。何と言いますか。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {},
-      "visualBrief": "Office entrance, rain visible, woman without umbrella speaks to man beside spare umbrella.",
+      "spokenOptions": true,
+      "visualBrief": "Black-and-white clinic waiting area: one seated person beside an empty chair, standing person points politely to the empty seat. Clinic setting indicated by simple reception counter and medical cross, no text or numbers.",
       "illustrationPath": "assets/jlpt-original/n5/02/images/problem-3-05.png",
       "timingBudget": {
-        "targetMs": 42000,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 43000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 34040
       }
     },
     {
@@ -3451,44 +3350,39 @@
       "section": "listening",
       "group": 4,
       "number": 1,
-      "prompt": "音声を聞いて、自然な返事を一つ選んでください。",
+      "prompt": "音声を 聞いて、自然な 返事を 一つ 選んでください。",
+      "learningObjective": "未完了の食事への返答。",
       "options": [
         {
           "id": "1",
-          "text": "はい、上野で乗りました。",
-          "rationale": "Sai tại vị trí được hỏi: はい、上野で乗りました。; đáp án theo dữ kiện/ngữ pháp: はい、次の駅が上野です。"
+          "text": "いいえ、その お皿は 私のでは ありません。",
+          "rationale": "皿の所有の質問ではない。"
         },
         {
           "id": "2",
-          "text": "いいえ、上野から来ました。",
-          "rationale": "Sai tại vị trí được hỏi: いいえ、上野から来ました。; đáp án theo dữ kiện/ngữ pháp: はい、次の駅が上野です。"
+          "text": "いいえ、あしたは 朝早く 行きます。",
+          "rationale": "翌日の出発は質問に答えない。"
         },
         {
           "id": "3",
-          "text": "はい、次の駅が上野です。",
-          "rationale": "Đúng: はい、次の駅が上野です。; đáp án theo dữ kiện/ngữ pháp: はい、次の駅が上野です。"
+          "text": "いいえ、まだです。いっしょに 食べましょう。",
+          "rationale": "まだ食べず一緒に食べる提案。"
         }
       ],
       "correctOptionId": "3",
-      "learningObjective": "列車の停車確認",
       "script": [
         [
-          "narrator",
-          "男の人の話を聞いてください。"
-        ],
-        [
-          "speaker",
-          "すみません、この電車は上野に止まりますか。"
+          "adultMale",
+          "もう昼ごはんを食べましたか。私はこれからですが、どうですか。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {
-        "speaker": "youngMale"
-      },
+      "spokenOptions": true,
       "timingBudget": {
-        "targetMs": 34600,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 35000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 32701
       }
     },
     {
@@ -3496,44 +3390,39 @@
       "section": "listening",
       "group": 4,
       "number": 2,
-      "prompt": "音声を聞いて、自然な返事を一つ選んでください。",
+      "prompt": "音声を 聞いて、自然な 返事を 一つ 選んでください。",
+      "learningObjective": "許可への自然な応答。",
       "options": [
         {
           "id": "1",
-          "text": "ううん、学校に行くよ。",
-          "rationale": "Phương án «ううん、学校に行くよ。» không phù hợp 完了状況への応答; dữ kiện/quy tắc yêu cầu «ううん、あと一つあるんだ。»."
+          "text": "はい、どうぞ。私も 少し 寒いです。",
+          "rationale": "閉める許可と理由への同意。"
         },
         {
           "id": "2",
-          "text": "ううん、あと一つあるんだ。",
-          "rationale": "Đúng: 完了状況への応答; ううん、あと一つあるんだ。"
+          "text": "はい、窓から よく 見えますね。",
+          "rationale": "眺めの説明では許可に答えない。"
         },
         {
           "id": "3",
-          "text": "うん、明日から始まるよ。",
-          "rationale": "Phương án «うん、明日から始まるよ。» không phù hợp 完了状況への応答; dữ kiện/quy tắc yêu cầu «ううん、あと一つあるんだ。»."
+          "text": "はい、昨日は とても 暑かったです。",
+          "rationale": "昨日の天候は現在の許可に答えない。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "完了状況への応答",
+      "correctOptionId": "1",
       "script": [
         [
-          "narrator",
-          "女の人の話を聞いてください。"
-        ],
-        [
-          "speaker",
-          "もう宿題は終わった？"
+          "femaleStudent",
+          "ちょっと寒いですね。この窓を閉めてもいいですか。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {
-        "speaker": "femaleStudent"
-      },
+      "spokenOptions": true,
       "timingBudget": {
-        "targetMs": 34600,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 35000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 29139
       }
     },
     {
@@ -3541,44 +3430,39 @@
       "section": "listening",
       "group": 4,
       "number": 3,
-      "prompt": "音声を聞いて、自然な返事を一つ選んでください。",
+      "prompt": "音声を 聞いて、自然な 返事を 一つ 選んでください。",
+      "learningObjective": "所有者の問い。",
       "options": [
         {
           "id": "1",
-          "text": "ありがとうございます。持って来ました。",
-          "rationale": "Phương án «ありがとうございます。持って来ました。» không phù hợp 申し出を受ける; dữ kiện/quy tắc yêu cầu «ありがとうございます。お願いします。»."
+          "text": "私のです。そこに 置いておきました。",
+          "rationale": "自分の物と答える。"
         },
         {
           "id": "2",
-          "text": "ありがとうございます。重くなります。",
-          "rationale": "Phương án «ありがとうございます。重くなります。» không phù hợp 申し出を受ける; dữ kiện/quy tắc yêu cầu «ありがとうございます。お願いします。»."
+          "text": "そうです。とても かるい かばんですね。",
+          "rationale": "評価は所有者に答えない。"
         },
         {
           "id": "3",
-          "text": "ありがとうございます。お願いします。",
-          "rationale": "Đúng: 申し出を受ける; ありがとうございます。お願いします。"
+          "text": "何でも いいです。小さいのを ください。",
+          "rationale": "購入希望の場面ではない。"
         }
       ],
-      "correctOptionId": "3",
-      "learningObjective": "申し出を受ける",
+      "correctOptionId": "1",
       "script": [
         [
-          "narrator",
-          "女の人の話を聞いてください。"
-        ],
-        [
-          "speaker",
-          "荷物、重そうですね。持ちましょうか。"
+          "adultMale",
+          "この黒いかばん、どなたのですか。さっきからここにありますね。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {
-        "speaker": "adultFemale"
-      },
+      "spokenOptions": true,
       "timingBudget": {
-        "targetMs": 34600,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 35000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 29576
       }
     },
     {
@@ -3586,44 +3470,39 @@
       "section": "listening",
       "group": 4,
       "number": 4,
-      "prompt": "音声を聞いて、自然な返事を一つ選んでください。",
+      "prompt": "音声を 聞いて、自然な 返事を 一つ 選んでください。",
+      "learningObjective": "注意への謝意と安全な選択。",
       "options": [
         {
           "id": "1",
-          "text": "ええ、気をつけて帰ってください。",
-          "rationale": "Đúng: 許可への応答; ええ、気をつけて帰ってください。"
+          "text": "すみません。雨は あしたから 降ります。",
+          "rationale": "今の雨を否定する情報は与えられていない。"
         },
         {
           "id": "2",
-          "text": "ええ、早い電車でした。",
-          "rationale": "Phương án «ええ、早い電車でした。» không phù hợp 許可への応答; dữ kiện/quy tắc yêu cầu «ええ、気をつけて帰ってください。»."
+          "text": "わかりました。自転車は とても 新しいです。",
+          "rationale": "新しさは注意への応答にならない。"
         },
         {
           "id": "3",
-          "text": "ええ、きのう帰りました。",
-          "rationale": "Phương án «ええ、きのう帰りました。» không phù hợp 許可への応答; dữ kiện/quy tắc yêu cầu «ええ、気をつけて帰ってください。»."
+          "text": "ありがとうございます。今日は バスで 行きます。",
+          "rationale": "忠告に感謝し交通を変更。"
         }
       ],
-      "correctOptionId": "1",
-      "learningObjective": "許可への応答",
+      "correctOptionId": "3",
       "script": [
         [
-          "narrator",
-          "女の人の話を聞いてください。"
-        ],
-        [
-          "speaker",
-          "先生、今日は早く帰ってもいいですか。"
+          "femaleStudent",
+          "今日は雨ですね。自転車では危ないので、気をつけてくださいね。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {
-        "speaker": "femaleStudent"
-      },
+      "spokenOptions": true,
       "timingBudget": {
-        "targetMs": 34600,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 35000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 31752
       }
     },
     {
@@ -3631,44 +3510,39 @@
       "section": "listening",
       "group": 4,
       "number": 5,
-      "prompt": "音声を聞いて、自然な返事を一つ選んでください。",
+      "prompt": "音声を 聞いて、自然な 返事を 一つ 選んでください。",
+      "learningObjective": "物の提供を求める依頼。",
       "options": [
         {
           "id": "1",
-          "text": "このスプーン、きのう買ったよ。",
-          "rationale": "Phương án «このスプーン、きのう買ったよ。» không phù hợp 方法への応答; dữ kiện/quy tắc yêu cầu «この小さいスプーンを使うといいよ。»."
+          "text": "はい、どうぞ。こちらを 使ってください。",
+          "rationale": "紙を渡して使わせる。"
         },
         {
           "id": "2",
-          "text": "この小さいスプーンを使うといいよ。",
-          "rationale": "Đúng: 方法への応答; この小さいスプーンを使うといいよ。"
+          "text": "はい、昨日 その 名前を 聞きました。",
+          "rationale": "名前を聞いた話では依頼に答えない。"
         },
         {
           "id": "3",
-          "text": "この料理、初めて作ったよ。",
-          "rationale": "Phương án «この料理、初めて作ったよ。» không phù hợp 方法への応答; dữ kiện/quy tắc yêu cầu «この小さいスプーンを使うといいよ。»."
+          "text": "はい、あしたまで 書かないでください。",
+          "rationale": "記入禁止は依頼への提供にならない。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "方法への応答",
+      "correctOptionId": "1",
       "script": [
         [
-          "narrator",
-          "男の人の話を聞いてください。"
-        ],
-        [
-          "speaker",
-          "この料理、初めて食べるんだけど、どうやって食べるの？"
+          "adultMale",
+          "その紙、私にも一枚もらえますか。名前を書きたいんです。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {
-        "speaker": "youngMale"
-      },
+      "spokenOptions": true,
       "timingBudget": {
-        "targetMs": 34600,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 35000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 31485
       }
     },
     {
@@ -3676,51 +3550,40 @@
       "section": "listening",
       "group": 4,
       "number": 6,
-      "prompt": "音声を聞いて、自然な返事を一つ選んでください。",
+      "prompt": "音声を 聞いて、自然な 返事を 一つ 選んでください。",
+      "learningObjective": "予定が合わない誘いの断り。",
       "options": [
         {
           "id": "1",
-          "text": "いいえ、もう閉まっていますよ。",
-          "rationale": "Sai tại vị trí được hỏi: いいえ、もう閉まっていますよ。; đáp án theo dữ kiện/ngữ pháp: はい、ちょっと寒いですからね。"
+          "text": "ごめんなさい。映画は とても 長かったです。",
+          "rationale": "過去の感想は来週の誘いへの返答ではない。"
         },
         {
           "id": "2",
-          "text": "はい、ちょっと寒いですからね。",
-          "rationale": "Đúng: はい、ちょっと寒いですからね。; đáp án theo dữ kiện/ngữ pháp: はい、ちょっと寒いですからね。"
+          "text": "ごめんなさい。その 切符は どこに ありますか。",
+          "rationale": "切符の所在は参加可否に答えない。"
         },
         {
           "id": "3",
-          "text": "はい、ドアは開けておきますね。",
-          "rationale": "Sai tại vị trí được hỏi: はい、ドアは開けておきますね。; đáp án theo dữ kiện/ngữ pháp: はい、ちょっと寒いですからね。"
+          "text": "ごめんなさい。その 日は 仕事が あります。",
+          "rationale": "仕事で参加できない理由。"
         }
       ],
-      "correctOptionId": "2",
-      "learningObjective": "窓を閉める許可",
+      "correctOptionId": "3",
       "script": [
         [
-          "narrator",
-          "男の人の話を聞いてください。"
-        ],
-        [
-          "speaker",
-          "ちょっと寒いですね。すみません、窓を閉めてもいいですか。"
+          "femaleStudent",
+          "来週の金曜日、一緒に映画を見ませんか。夕方からの映画です。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
-      "voiceRoles": {
-        "speaker": "adultMale"
-      },
+      "spokenOptions": true,
       "timingBudget": {
-        "targetMs": 34600,
-        "role": "Independent authoring objective; not publisher acceptance tolerance."
+        "plannedDurationMs": 35000,
+        "role": "Editorial per-type estimate, including publisher-approved response pause; not a measured duration or publisher acceptance tolerance.",
+        "actualDurationMs": 31805
       }
     }
-  ],
-  "limitations": [
-    "Human/native/perceptual/release review not performed.",
-    "Full listening must be generated, measured and checked before registration."
-  ],
-  "authoringRulesVersion": 5,
-  "authoringComplete": false
+  ]
 }

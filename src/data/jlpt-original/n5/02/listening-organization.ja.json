@@ -1,216 +1,218 @@
 {
   "examId": "jpapp-n5-original-02-v1",
   "generatedBy": "AI",
-  "sourcePolicy": "New independent examples from skill objectives; no legacy exam content.",
+  "sourcePolicy": "Independent skill-objective authorship using structural metadata only; no legacy wording or per-item mapping.",
   "publisherReviewed": false,
   "nativeReviewCompleted": false,
-  "openingJa": "聞く問題の第二回を始めます。はじめに、声が聞こえるか確かめてください。今から二人の声が流れます。聞きにくいときは、音の大きさを調節してください。",
+  "openingJa": "これから、聞く問題を始めます。音が聞こえるか、先に確かめましょう。音が大きすぎるときや、小さすぎるときは、今、音の大きさを変えてください。",
   "soundCheck": [
     {
-      "role": "youngMale",
-      "text": "こんにちは。わたしは今日、図書館へ行きます。青い自転車で行きます。"
+      "role": "adultMale",
+      "text": "こんにちは。今日は図書館へ行きます。外は少し寒いです。"
     },
     {
-      "role": "femaleStudent",
-      "text": "わたしも図書館へ行きます。読みたい本が二冊あります。"
+      "role": "adultFemale",
+      "text": "私は暖かいコートを着ました。図書館の前で会いましょう。"
     }
   ],
-  "generalInstructionsJa": "ここまでの話は、音を確かめるためのものです。答える必要はありません。本当の問題は二十四問あります。問題一と問題二では、画面に四つの答えが出ます。問題三と問題四では、三つの答えを声で聞きます。それぞれ一つ選んでください。問題二が終わったら、一分間、音楽を聞きながら休みます。そのあと、自動で問題三が始まります。各問題の前に練習があります。練習は点数に入りません。",
+  "generalInstructionsJa": "音の確認は終わりです。この話には答えません。本当の問題は全部で二十四問です。音声は続けて流れます。問題二のあと、一分間休みます。休みの音楽が終わると、問題三が始まります。練習では、画面に答えを入れません。本当の問題が始まったら、答えを選びます。",
   "groups": [
     {
       "problem": 1,
-      "instructionsJa": "問題1は7問です。話を聞いて、これからすることを選びます。質問は話の前とあとに聞きます。画面の四つの答えを見てください。答える時間は12秒です。まず練習を聞いてください。",
+      "instructionsJa": "問題一は七問です。質問を聞いてから、話を聞きます。話のあと、質問をもう一度聞きます。人がこれから何をするか、四つの答えから選んでください。答える時間は十二秒です。まず練習です。",
       "example": {
         "id": "jpapp-n5-original-02-practice-1",
         "prompt": "女の人は、まず何をしますか。",
         "script": [
           [
             "adultFemale",
-            "家で、女の人と男の人が晩ごはんについて話しています。女の人は、まず何をしますか。"
+            "料理の教室で、女の人と男の人が話しています。女の人は、まず何をしますか。"
+          ],
+          [
+            "femaleStudent",
+            "先生、今日は野菜のスープを作るんですね。野菜はこの袋に入っています。先に切りましょうか。"
           ],
           [
             "adultMale",
-            "ごはんはもうできたよ。お皿もテーブルに置いたから、食べよう。"
+            "その前に、流しで野菜を洗ってください。土が少しついています。包丁とお皿は、もう洗ってあります。"
           ],
           [
-            "adultFemale",
-            "ありがとう。あ、手を洗って来るね。そのあとで座るよ。"
-          ],
-          [
-            "adultMale",
-            "うん。飲み物は、水とお茶、どちらがいい？"
-          ],
-          [
-            "adultFemale",
-            "お茶がいいな。でも、わたしが戻ってから入れて。まだ熱いから。"
+            "femaleStudent",
+            "野菜を洗うんですね。この大きいお皿に入れてから、洗えばいいですか。"
           ],
           [
             "adultMale",
-            "わかった。お皿はこのままでいいね。"
+            "流しの中で洗ってから、お皿に置きましょう。お湯は使いません。冷たい水で大丈夫ですよ。"
           ],
           [
-            "adultFemale",
-            "うん。いただきますは、二人で座ってから言おう。"
+            "femaleStudent",
+            "わかりました。袋から出して、水で洗います。野菜を切るときは、この包丁を使ってもいいですか。"
+          ],
+          [
+            "adultMale",
+            "はい。でも、切り方はあとでみんなに説明します。まず、洗った野菜をここに置いて待っていてください。"
+          ],
+          [
+            "femaleStudent",
+            "はい。野菜は私が洗います。友だちには、お皿を机に並べてもらいます。"
           ]
         ],
         "options": [
           {
             "id": "1",
-            "text": "ごはんを作ります。"
+            "text": "野菜を切ります。"
           },
           {
             "id": "2",
-            "text": "お茶を入れます。"
+            "text": "野菜を洗います。"
           },
           {
             "id": "3",
-            "text": "手を洗います。"
+            "text": "包丁を洗います。"
           },
           {
             "id": "4",
-            "text": "お皿を運びます。"
-          }
-        ],
-        "correctOptionId": "3",
-        "answerExplanationJa": "練習の答えは三です。女の人は食べる前に手を洗います。ごはんとお皿は、もう用意できています。お茶を入れるのは、女の人が戻ったあとです。",
-        "scored": false,
-        "interactionPolicy": "Mental practice; no graded answer selection during examples."
-      },
-      "scoredStartJa": "練習はここまでです。問題1の一番から、答えを選んでください。"
-    },
-    {
-      "problem": 2,
-      "instructionsJa": "問題2は6問です。質問を聞いてから、話の中の必要な情報を探します。質問は話のあとにも聞きます。画面の四つの答えから選びます。答える時間は12秒です。まず練習を聞いてください。",
-      "example": {
-        "id": "jpapp-n5-original-02-practice-2",
-        "prompt": "二人は、何時に会いますか。",
-        "script": [
-          [
-            "adultFemale",
-            "友だち二人が、日曜日の約束について話しています。二人は、何時に会いますか。"
-          ],
-          [
-            "femaleStudent",
-            "日曜日、一緒に映画を見ない？映画は二時からだよ。"
-          ],
-          [
-            "youngMale",
-            "いいね。一時に駅で会って、お昼を食べようか。"
-          ],
-          [
-            "femaleStudent",
-            "ごめん、一時までは家の仕事があるの。お昼は家で食べるね。"
-          ],
-          [
-            "youngMale",
-            "そうか。じゃあ、一時半はどう？駅から映画館までは十分だから、大丈夫だよ。"
-          ],
-          [
-            "femaleStudent",
-            "うん、一時半なら行けるよ。駅の時計の下で待っていてね。"
-          ],
-          [
-            "youngMale",
-            "わかった。映画が終わってから、お茶を飲もう。"
-          ]
-        ],
-        "options": [
-          {
-            "id": "1",
-            "text": "一時"
-          },
-          {
-            "id": "2",
-            "text": "一時半"
-          },
-          {
-            "id": "3",
-            "text": "二時"
-          },
-          {
-            "id": "4",
-            "text": "二時半"
+            "text": "お湯を入れます。"
           }
         ],
         "correctOptionId": "2",
-        "answerExplanationJa": "練習の答えは二です。最初に一時という話が出ましたが、予定を変えました。映画が始まるのは二時です。会う時間は、一時半です。",
+        "answerExplanationJa": "答えは二番です。野菜に土がついているので、切る前に水で洗います。包丁とお皿はもうきれいです。切り方はあとで聞きます。最初にすることは、野菜を洗うことです。",
         "scored": false,
-        "interactionPolicy": "Mental practice; no graded answer selection during examples."
+        "interactionPolicy": "Listen and view only; do not answer a scored question during practice."
       },
-      "scoredStartJa": "練習はここまでです。問題2の一番から、答えを選んでください。"
+      "scoredStartJa": "練習は終わりです。本当の一番を始めます。"
     },
     {
-      "problem": 3,
-      "instructionsJa": "問題3は5問です。絵を見て、話の人が何と言うか考えます。そのあと、三つの言い方を聞きます。ことばは画面に出ません。答える時間は10秒です。まず練習を聞いてください。最初の画像の左が練習、右が本当の一番です。",
+      "problem": 2,
+      "instructionsJa": "問題二は六問です。質問を聞いてから、話を聞きます。話のあとでもう一度質問を聞きます。聞かれたことを、画面の四つの答えから選んでください。答える時間は十二秒です。まず練習します。",
       "example": {
-        "id": "jpapp-n5-original-02-practice-3",
-        "prompt": "女の人は、何と言いますか。",
+        "id": "jpapp-n5-original-02-practice-2",
+        "prompt": "女の人の猫は、どこにいますか。",
         "script": [
           [
             "adultFemale",
-            "画像の左の絵を見てください。カフェです。女の人は、コーヒーを一杯買いたいです。店員に頼みます。何と言いますか。"
-          ]
-        ],
-        "options": [
-          {
-            "id": "1",
-            "text": "コーヒーを一杯ください。"
-          },
-          {
-            "id": "2",
-            "text": "コーヒーを一杯飲みました。"
-          },
-          {
-            "id": "3",
-            "text": "コーヒーは一杯あります。"
-          }
-        ],
-        "correctOptionId": "1",
-        "answerExplanationJa": "練習の答えは一です。女の人は店員にコーヒーを頼みます。一杯くださいと言います。二は飲んだこと、三はコーヒーがあることを話しています。",
-        "scored": false,
-        "interactionPolicy": "Mental practice; no graded answer selection during examples.",
-        "visualStatus": "generated_ai_unreviewed",
-        "visualSheetPath": "assets/jlpt-original/n5/02/images/problem-3-01.png"
-      },
-      "scoredStartJa": "練習はここまでです。画像の右、一番の絵を見て答えてください。"
-    },
-    {
-      "problem": 4,
-      "instructionsJa": "問題4は6問です。短いことばを聞いて、それに合う返事を選びます。三つの返事も声で聞きます。画面には番号だけが出ます。答える時間は8秒です。まず練習を聞いてください。",
-      "example": {
-        "id": "jpapp-n5-original-02-practice-4",
-        "prompt": "",
-        "script": [
+            "女の人と男の人が猫について話しています。女の人の猫は、どこにいますか。"
+          ],
           [
             "adultFemale",
-            "男の人のことばを聞いて、返事を選んでください。"
+            "うちの猫を見なかった？朝は窓のそばで寝ていたけど、今はいないの。"
           ],
           [
             "youngMale",
-            "すみません、この席、だれか使っていますか。"
+            "さっき玄関の前を歩いていたよ。でも、外には出ていないと思う。ドアは閉まっていたから。"
+          ],
+          [
+            "adultFemale",
+            "台所にはいなかったわ。ごはんをお皿に入れたのに、食べに来ないのよ。"
+          ],
+          [
+            "youngMale",
+            "あ、机の下を見て。白い足が見えるよ。箱の中に入っているんじゃないかな。"
+          ],
+          [
+            "adultFemale",
+            "本当だ。ここで寝ていたのね。箱に小さいタオルを入れておいたから、暖かいのかもしれないわ。"
+          ],
+          [
+            "youngMale",
+            "机の上にはいないけど、机の下の箱にいたね。猫は狭いところが好きなんだね。"
+          ],
+          [
+            "adultFemale",
+            "ええ。ごはんはあとで食べるでしょう。今は起こさないで、このまま寝かせておくわ。"
           ]
         ],
         "options": [
           {
             "id": "1",
-            "text": "はい、あちらへ行きます。"
+            "text": "窓のそば"
           },
           {
             "id": "2",
-            "text": "はい、ここで買えます。"
+            "text": "玄関の外"
           },
           {
             "id": "3",
-            "text": "いいえ、空いていますよ。"
+            "text": "机の下の箱"
+          },
+          {
+            "id": "4",
+            "text": "台所のお皿のそば"
           }
         ],
         "correctOptionId": "3",
-        "answerExplanationJa": "練習の答えは三です。男の人は、席が空いているか聞いています。いいえ、空いていますよと答えると、座れることがわかります。場所や買い物の返事ではありません。",
+        "answerExplanationJa": "答えは三番です。朝は窓のそばにいました。さっき玄関を歩いていましたが、今は机の下の箱で寝ています。質問は今いる場所です。",
         "scored": false,
-        "interactionPolicy": "Mental practice; no graded answer selection during examples."
+        "interactionPolicy": "Listen and view only; do not answer a scored question during practice."
       },
-      "scoredStartJa": "練習はここまでです。問題4の一番から、答えを選んでください。"
+      "scoredStartJa": "練習は終わりです。問題二の一番を聞いてください。"
+    },
+    {
+      "problem": 3,
+      "instructionsJa": "問題三は五問です。絵と話から、人が何と言うかを考えます。三つの言い方を聞いて、番号を一つ選びます。答える時間は十秒です。最初の画像の左、練習の絵を見てください。右の絵は本当の一番です。",
+      "example": {
+        "id": "jpapp-n5-original-02-practice-3",
+        "prompt": "お客さんは何と言いますか。",
+        "script": [
+          [
+            "adultFemale",
+            "友だちの家に来ました。お手洗いへ行きたいですが、どこにあるかわかりません。友だちに聞きます。何と言いますか。"
+          ]
+        ],
+        "options": [
+          {
+            "id": "1",
+            "text": "この家はいくらですか。"
+          },
+          {
+            "id": "2",
+            "text": "今、何時ですか。"
+          },
+          {
+            "id": "3",
+            "text": "お手洗いはどこですか。"
+          }
+        ],
+        "correctOptionId": "3",
+        "answerExplanationJa": "練習の答えは三です。お手洗いの場所を知りたいので、どこにあるかを聞きます。家の値段や時間を聞いているのではありません。",
+        "scored": false,
+        "interactionPolicy": "Listen and view only; do not answer a scored question during practice."
+      },
+      "scoredStartJa": "練習は終わりです。今度は画像の右、一番を見てください。"
+    },
+    {
+      "problem": 4,
+      "instructionsJa": "問題四は六問です。短いことばと、三つの返事を聞きます。いちばん自然な返事の番号を選んでください。絵や返事のことばは画面に出ません。答える時間は八秒です。では、練習です。",
+      "example": {
+        "id": "jpapp-n5-original-02-practice-4",
+        "prompt": "返事を選んでください。",
+        "script": [
+          [
+            "adultMale",
+            "すみません、駅へ行くバスは、ここで待てばいいですか。"
+          ]
+        ],
+        "options": [
+          {
+            "id": "1",
+            "text": "はい、駅で買いました。"
+          },
+          {
+            "id": "2",
+            "text": "はい、ここに来ます。あと五分ですよ。"
+          },
+          {
+            "id": "3",
+            "text": "はい、昨日はバスで帰りました。"
+          }
+        ],
+        "correctOptionId": "2",
+        "answerExplanationJa": "答えは二番です。男の人は、ここでバスを待っていいか聞いています。ここにバスが来ると教える返事が合います。昨日どうしたかや、駅で何を買ったかは聞いていません。",
+        "scored": false,
+        "interactionPolicy": "Listen and view only; do not answer a scored question during practice."
+      },
+      "scoredStartJa": "練習は終わりです。問題四の一番を聞いてください。"
     }
   ],
-  "closingJa": "聞く問題は、これで終わりです。答えを確かめてから、提出してください。提出するまでは、結果は出ません。"
+  "closingJa": "聞く問題はこれで終わりです。画面で答えを確かめて、答えを送ってください。おつかれさまでした。"
 }
