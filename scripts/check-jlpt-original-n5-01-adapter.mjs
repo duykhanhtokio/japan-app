@@ -16,6 +16,14 @@ assert.equal((registry.match(/id: 'jpapp-n5-original-01-v1'/g)||[]).length,1);
 assert.ok(registry.includes("...(N5_ORIGINAL_01_REGISTRATION_READY ? [{"));
 assert.equal(questions.length,91);assert.equal(new Set(questions.map(q=>q.id)).size,91);
 assert.ok(key.includes('original:01'));
+// New recordings include their own opening; the legacy 6.5s fallback would cut it off.
+const starts=JSON.parse(readFileSync(resolve(root,'src/data/jlpt-official/listening-start-overrides.json'),'utf8'));
+assert.equal(starts['jpapp-n5-original-01-v1'],0);
+const startService=stripTypeScriptTypes(readFileSync(resolve(root,'src/services/jlpt-listening-start-storage.ts'),'utf8'))
+ .replace(/^import savedStarts.*$/m,'').replace(/export /g,'');
+const startContext={savedStarts:starts,result:null};
+vm.runInNewContext(startService+"\nresult={original:getJlptListeningStart('jpapp-n5-original-01-v1'),fallback:getJlptListeningStart('unknown-exam')};",startContext);
+assert.equal(startContext.result.original,0);assert.equal(startContext.result.fallback,6500);
 const master=JSON.parse(readFileSync(resolve(root,'src/data/jlpt-original/n5/01/master.ja.json'),'utf8'));
 for(const q of questions){
  const original=master.questions.find(x=>x.id===q.id);assert.equal(q.correctOptionId,original.correctOptionId);
@@ -24,6 +32,7 @@ for(const q of questions){
   assert.equal(q.audio.transcriptJa,'');assert.equal(q.audio.startMs,0);assert.ok(q.audio.endMs>0);
   if(q.problemNumber>=3)for(const o of q.options)assert.equal(o.textJa,`音声の選択肢 ${o.id}`);
   if(q.questionNumber===1)assert.ok(q.instructionJa.includes('練習'));
+  assert.ok(!q.instructionJa.includes('練習中は選択ボタンを押しません。練習中は選択ボタンを押しません。'));
  }
  if(q.visualOptionPage)assert.ok(images[q.visualOptionPage]);
 }

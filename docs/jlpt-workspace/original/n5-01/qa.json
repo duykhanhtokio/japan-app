@@ -103,7 +103,10 @@
     "Approved N5 2s lead-in and 12/12/10/8s answer schedule; each scored recording length change matches baseline by the exact planned pause increment.",
     "Four independent ungraded examples, opening/sound check, concise instructions and closing rendered into continuous audio.",
     "Practice instructions never request selecting a graded response during example playback.",
-    "Continuous audio measures 1809729ms, approximately 30 minutes; no fixed publisher tolerance inferred."
+    "Continuous audio measures 1809729ms, approximately 30 minutes; no fixed publisher tolerance inferred.",
+    "Executed actual listening-start service: original N5 01 starts at 0ms, unknown exam still defaults to 6500ms.",
+    "49 historical saved listening positions match their protected checksum.",
+    "Removed duplicated problem-4 practice instruction; all 91 adapter items still pass."
   ],
   "releaseReady": false,
   "draftAudioGenerated": false,
@@ -114,10 +117,12 @@
   "originalIllustrationsGenerated": 5,
   "writtenAuthoringStatus": "ai_editorial_checked",
   "adapterExecutionCheck": "PASS: actual TypeScript adapter executed after Node type stripping, 91 IDs/keys, five asset mappings, four ungraded practice instructions, spoken options/transcripts hidden. Full project TypeScript/device check not claimed.",
-  "fullTypeScriptCheck": "NOT RUN SUCCESSFULLY: workspace has no installed TypeScript dependency; npx resolved an unrelated tsc package. No typecheck pass claimed.",
+  "fullTypeScriptCheck": "FAIL: installed project TypeScript 5.9.2 executed; one existing TS2352 at src/services/life-content-repository.ts:47 (index record SC-HKD-HAKODATE-001 lacks required type). No JLPT diagnostic. Not a project-wide PASS.",
   "deviceRuntimeCheck": "not_performed",
   "runtimeIntegrated": true,
   "audioGenerated": true,
   "nonScoredExamples": 4,
-  "originalPracticeSheetGenerated": true
+  "originalPracticeSheetGenerated": true,
+  "browserAudioCheck": "BLOCKED: /tmp/chromium is an empty file; browser launch failed. Playwright browser download returned an empty/invalid ZIP. Browser audio script syntax checked only; no playback PASS claimed.",
+  "runtimeStartOverrideMs": 0
 }

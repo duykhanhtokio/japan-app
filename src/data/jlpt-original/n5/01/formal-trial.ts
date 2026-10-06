@@ -17,12 +17,12 @@ const organization = require('./listening-organization.ja.json') as { groups: { 
 function practiceInstruction(q: OriginalQuestion): string {
   if (q.section !== 'listening' || q.number !== 1) return '';
   if (q.group <= 2) return '\n練習（採点なし・選択操作不要）：\n' + organization.groups.find(g => g.problem === q.group)!.example.options.map(o => o.id + ' ' + o.text).join('\n');
-  return q.group === 3 ? '\n最初は画像の左側「練習」を見てください。本問１番は右側です。練習は採点しません。練習中は選択ボタンを押しません。' : '\n音声の練習は採点しません。練習中は選択ボタンを押しません。練習中は選択ボタンを押しません。';
+  return q.group === 3 ? '\n最初は画像の左側「練習」を見てください。本問１番は右側です。練習は採点しません。練習中は選択ボタンを押しません。' : '\n音声の練習は採点しません。練習中は選択ボタンを押しません。';
 }
 const audio = require('./audio.manifest.json') as { durationMs: number; matchesThirtyMinuteTarget: boolean };
 
 export const N5_ORIGINAL_01_SESSION_KEY = 'jlpt:jpapp:n5:original:01:v1';
-// Adapter is prepared, but deliberately not registered until full listening is ready.
+// Register only when the master is integrated and the complete listening track is ready.
 export const N5_ORIGINAL_01_REGISTRATION_READY = master.runtimeIntegrated && audio.matchesThirtyMinuteTarget;
 export const N5_ORIGINAL_01_VISUALS: Readonly<Record<number, ImageSourcePropType>> = {
   301: require('../../../../../assets/jlpt-original/n5/01/images/problem-3-practice-and-01.png'),
