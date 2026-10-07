@@ -1,0 +1,13 @@
+# N5 04 — handoff, 2026-10-07
+
+Mandatory full authoring contracts, session entry, AGENTS, checkpoint, voice configuration and level metadata must be read before further authorship. Next unit after verified persistence: **N5 05**. No old JLPT source content was loaded for this exam.
+
+Fresh independent N5 04 contains 67 written and 24 listening items, seven original passages, four unscored practice examples and five new imagegen illustrations. Quotas: four options 20/20/20/20, three options 4/4/3; section counts differ by at most one, no triple repeat or period 2–4 repeated three times. AI review tightened ordering fragments/slot rationales, walking paraphrase and one immediate-response price question to remove ambiguity. Correct option positions remained fixed.
+
+Final MP3 decodes to **1798375ms = 29:58.375**, −1625ms from nominal 1800000ms. No fixed acceptance tolerance was invented. Four approved VOICEVOX voices, speed .9 and N5 2/.5s plus 12/12/10/8s pauses remain. Original procedural score for this exam is distinct, exactly 1440000 frames at 24000Hz = 60000ms, after problem 2 response pause and before all problem 3 instructions with both announcements. Explicit practice optionVoiceRole and generation turn records now verify adult female practice responses; defaults remain compatible with earlier exams. Audio metadata status flags were updated after runtime checks without changing scripts or choice order, and the master hash refreshed.
+
+Conditional data registration, independent storage key jlpt:jpapp:n5:original:04:v1 and 0ms start are present. Structure/keys, options, script/casting sync, decoded durations, five image hashes, adapter and UI lock pass. Real Chromium asset checks pass opening/pause/resume/music boundary and five image decodes. Unchanged production runner/shared UI passes selection/save, Back/reopen/resume and color, submit, 0 correct/1 wrong/90 unanswered, review; no pageerror. Final 430x932 answer/listening-sheet/result screenshots inspected. Harness uses real Expo audio/asset/image and AsyncStorage, with QA focus/backdrop and image-metadata resolver, not full Expo Router/native/iPhone/perceptual approval. Detailed scope and reproduction source are here.
+
+TypeScript rerun: one pre-existing TS2352 in life-content-repository.ts:47, SC-HKD-HAKODATE-001 lacks type. A new duplicate image-key typo in adapter preparation was fixed, then no JLPT diagnostic remained. Do not modify unrelated dialogue records for this task. Human/native/perceptual/rights/release flags remain false; old content stays until replacement gate.
+
+Durable proof requires publish/fetch and WORK PERSISTENCE PASS, never a local edit or commit alone. No SHA-only follow-up commit.

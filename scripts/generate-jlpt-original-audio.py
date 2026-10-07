@@ -60,6 +60,8 @@ def original_rest_music():
   cells=[(60,65,69),(62,65,69),(55,60,64),(57,60,65),(60,64,69),(55,59,64),(62,67,71),(59,64,67),(57,62,66),(60,65,67),(55,60,67),(60,64,67)]
  if args.exam_number==3:
   cells=[(57,60,64),(60,64,67),(55,59,62),(62,65,69),(57,62,65),(60,65,69),(59,62,67),(62,67,71),(55,60,64),(60,64,69),(57,60,65),(60,64,67)]
+ if args.exam_number==4:
+  cells=[(62,65,69),(57,62,65),(60,64,67),(55,60,64),(59,62,67),(60,65,69),(57,60,64),(62,67,71),(55,59,64),(57,60,65),(60,64,69),(62,65,69)]
  samples=array.array('h')
  for i in range(1440000):
   t=i/24000;cell=int(t//5);local=t-cell*5
@@ -77,16 +79,17 @@ try:
   album.extend(synth(check['text'],check['role']));album.extend(silence(settings['betweenTurnsSeconds']))
  narration(organization['generalInstructionsJa']);orientation_segments.append({'role':'opening_sound_check_and_general_instructions','startMs':opening_start,'endMs':round(len(album)/48)})
  for group in range(1,5):
-  orientation_start=round(len(album)/48);narration(plan[group]);org=next(g for g in organization['groups'] if g['problem']==group);practice=org['example'];practice_start=round(len(album)/48)
+  orientation_start=round(len(album)/48);narration(plan[group]);org=next(g for g in organization['groups'] if g['problem']==group);practice=org['example'];practice_start=round(len(album)/48);practice_turns=[]
   for i,(role,text) in enumerate(practice['script']):
-   album.extend(synth(text,role));album.extend(silence(settings['afterIntroSeconds'] if i==0 else settings['betweenTurnsSeconds']))
+   album.extend(synth(text,role));album.extend(silence(settings['afterIntroSeconds'] if i==0 else settings['betweenTurnsSeconds']));practice_turns.append({'actor':role,'role':role,'text':text})
   if group<=2:album.extend(synth(practice['prompt'],'adultFemale'))
   else:
    for opt in practice['options']:
-    album.extend(synth(opt['id']+'。','adultFemale'));album.extend(silence(.3));album.extend(synth(opt['text'],'femaleStudent' if group==3 else 'youngMale'));album.extend(silence(.8))
+    practice_answer_role=practice.get('optionVoiceRole') or ('femaleStudent' if group==3 else 'youngMale')
+    album.extend(synth(opt['id']+'。','adultFemale'));album.extend(silence(.3));album.extend(synth(opt['text'],practice_answer_role));album.extend(silence(.8));practice_turns.append({'actor':'option-'+opt['id'],'role':practice_answer_role,'text':opt['text']})
   album.extend(silence(settings['answerPauseSecondsByProblem'][str(group)]));practice_end=round(len(album)/48)
   narration(practice['answerExplanationJa']);narration(org['scoredStartJa'])
-  orientation_segments.append({'role':'problem_instructions_example_demonstration','problem':group,'startMs':orientation_start,'endMs':round(len(album)/48),'exampleId':practice['id'],'exampleStartMs':practice_start,'exampleEndMs':practice_end,'exampleCount':1,'scored':False})
+  orientation_segments.append({'role':'problem_instructions_example_demonstration','problem':group,'startMs':orientation_start,'endMs':round(len(album)/48),'exampleId':practice['id'],'exampleStartMs':practice_start,'exampleEndMs':practice_end,'exampleCount':1,'exampleTurns':practice_turns,'scored':False})
   for q in [q for q in exam['questions'] if q['section']=='listening' and q['group']==group]:
    key=f'{group}-{q["number"]:02d}';frames=bytearray(synth(str(q['number'])+'番です。','adultFemale'));frames.extend(silence(.5));turns=[]
    for i,(actor,text) in enumerate(q['script']):

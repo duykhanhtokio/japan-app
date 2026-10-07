@@ -52,6 +52,14 @@ for (const group of org.groups) {
  assert.equal(e.options.filter(o => o.id === e.correctOptionId).length,1);
  const orientation = audio.orientationSegments.find(s => s.problem === group.problem);
  assert.equal(orientation.exampleId,e.id); assert.equal(orientation.scored,false);
+ if (e.optionVoiceRole) {
+  assert.ok(Object.hasOwn(casting.roles, e.optionVoiceRole));
+  assert.ok(orientation.exampleTurns, 'Explicit practice casting needs a generation record');
+  assert.deepEqual(orientation.exampleTurns.slice(0,e.script.length).map(t=>[t.actor,t.text]),e.script);
+  const options=orientation.exampleTurns.filter(t=>t.actor.startsWith('option-'));
+  assert.deepEqual(options.map(t=>[t.actor.slice(7),t.text]),e.options.map(o=>[o.id,o.text]));
+  assert.ok(options.every(t=>t.role===e.optionVoiceRole));
+ }
  assert.ok(orientation.exampleStartMs < orientation.exampleEndMs && orientation.exampleEndMs <= orientation.endMs);
  assert.ok(orientation.endMs <= audio.items.find(s => s.group === group.problem).startMs);
 }
