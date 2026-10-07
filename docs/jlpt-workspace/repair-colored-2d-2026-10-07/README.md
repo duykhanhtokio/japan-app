@@ -19,3 +19,5 @@ Workspace files unexpectedly disappeared during connector upload. Current indepe
 Publisher, native-speaker, perceptual audio, rights-release and release-ready approvals remain false. Next authoring checkpoint remains14/30 technical integrations; next new original is N3 03. Session versions were advanced for revised content so old saved answers cannot be silently applied to changed questions. See JLPT_IMAGE_AND_UNIQUENESS_STANDARD.md for the mandatory future image/context policy.
 
 Full-project TypeScript check reports an existing TS2352 in `src/services/life-content-repository.ts:47`, outside the JLPT repair. The42 focused checks and real runner harness pass; no full-project TypeScript pass is claimed.
+
+Runtime screenshots in this repair directory are stored as ordinary Git blobs via a scoped attribute exception so their evidence is directly retrievable without unpublished LFS objects.
