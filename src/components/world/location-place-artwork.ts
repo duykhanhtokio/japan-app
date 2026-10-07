@@ -3,6 +3,13 @@ import metadataJson from '@/data/location-place-artwork.json';
 
 const metadata = metadataJson as Record<string, { category: string }>;
 const artwork: Record<string, ImageSourcePropType> = {
+  'LOC-005-13': require('../../../assets/app/life/location-backgrounds/places/akita-aeon-mall.png'),
+  'LOC-005-10': require('../../../assets/app/life/location-backgrounds/places/akita-neburi-nagashi.png'),
+  'LOC-005-01': require('../../../assets/app/life/location-backgrounds/places/akita-komachi-platform.png'),
+  'LOC-005-18': require('../../../assets/app/life/location-backgrounds/places/akita-komachi-platform.png'),
+  'LOC-005-17': require('../../../assets/app/life/location-backgrounds/places/akita-museum-water-garden.png'),
+  'LOC-005-16': require('../../../assets/app/life/location-backgrounds/places/akita-kawabata.png'),
+  'LOC-005-15': require('../../../assets/app/life/location-backgrounds/places/akita-kanto-avenue.png'),
   'LOC-005-09': require('../../../assets/app/life/location-backgrounds/places/oga-namahage-museum.png'),
   'LOC-005-08': require('../../../assets/app/life/location-backgrounds/places/akita-senshu-kubota-gate.png'),
   'LOC-001-15': require('../../../assets/app/life/location-backgrounds/places/sapporo-maruyama-zoo.png'),
