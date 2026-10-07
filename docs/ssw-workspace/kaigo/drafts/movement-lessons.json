@@ -264,7 +264,34 @@
             "releaseReady": false
           }
         }
-      ]
+      ],
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "npcPracticeVi": "Nghe/đọc mẫu, luyện lại theo ý định, thử một cách diễn đạt khác và nhận phản hồi. Không dùng một lần đọc kịch bản để khẳng định đã đủ 10 phút.",
+        "durationStatus": "planned_not_measured"
+      }
     },
     {
       "id": "kaigo-move-02",
@@ -524,7 +551,34 @@
             "releaseReady": false
           }
         }
-      ]
+      ],
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "npcPracticeVi": "Nghe/đọc mẫu, luyện lại theo ý định, thử một cách diễn đạt khác và nhận phản hồi. Không dùng một lần đọc kịch bản để khẳng định đã đủ 10 phút.",
+        "durationStatus": "planned_not_measured"
+      }
     },
     {
       "id": "kaigo-move-03",
@@ -785,14 +839,941 @@
             "releaseReady": false
           }
         }
-      ]
+      ],
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "npcPracticeVi": "Nghe/đọc mẫu, luyện lại theo ý định, thử một cách diễn đạt khác và nhận phản hồi. Không dùng một lần đọc kịch bản để khẳng định đã đủ 10 phút.",
+        "durationStatus": "planned_not_measured"
+      }
+    },
+    {
+      "id": "kaigo-move-04",
+      "titleVi": "Xác nhận kế hoạch khi nhận việc thay đồng nghiệp",
+      "curriculumDay": 17,
+      "npcId": "kaigo-npc-care-lead",
+      "playerRoleVi": "Nhân viên chăm sóc",
+      "contextVi": "Người học lần đầu hỗ trợ Hasebe trong ca này. Chưa thực hiện đứng dậy, đi bộ hoặc chuyển người; phải xác nhận kế hoạch và gọi người đã được phân công.",
+      "objectivesVi": [
+        "Hỏi nguồn thông tin chính thức",
+        "Xác nhận nhân viên cùng hỗ trợ",
+        "Giải thích việc chờ xác nhận cho người sử dụng"
+      ],
+      "knowledgeVi": [
+        "Hỏi và xác nhận trước khi hỗ trợ; phương thức hỗ trợ theo kế hoạch riêng.",
+        "Phân biệt sự việc quan sát, lời người sử dụng và thông tin chưa xác nhận."
+      ],
+      "sourceRefs": [
+        {
+          "printedPage": 129,
+          "pdfPage": 131,
+          "purpose": "condition check, consent, support independence"
+        },
+        {
+          "printedPage": 118,
+          "pdfPage": 120,
+          "purpose": "reporting and consultation"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-move-01",
+        "kaigo-vocab-move-02",
+        "kaigo-vocab-move-03"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "今日は長谷部さんの移動を担当できますか。",
+          "meaningVi": "Hôm nay bạn phụ trách việc di chuyển của bác Hasebe được không?"
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "担当できますが、この時間の支援方法をまだ確認していません。計画を一緒に見ていただけますか。",
+          "meaningVi": "Tôi có thể phụ trách, nhưng chưa xác nhận cách hỗ trợ ở thời điểm này. Anh xem kế hoạch cùng tôi được không?"
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "はい。この時間は、担当の二人で支援することになっています。",
+          "meaningVi": "Được. Thời điểm này được bố trí hai nhân viên phụ trách cùng hỗ trợ."
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "二人ですね。もう一人の担当者はどなたですか。",
+          "meaningVi": "Hai người đúng không. Nhân viên còn lại là ai?"
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "岸本さんです。今の状態も確認してから始めてください。",
+          "meaningVi": "Là Kishimoto. Hãy kiểm tra tình trạng hiện tại trước khi bắt đầu."
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "岸本さんに声をかけます。長谷部さんには、二人で確認してからご案内すると説明します。",
+          "meaningVi": "Tôi sẽ gọi Kishimoto. Tôi giải thích với bác rằng hai nhân viên sẽ xác nhận rồi mới hướng dẫn."
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "お願いします。計画と違う状態があれば、始める前に知らせてください。",
+          "meaningVi": "Nhờ bạn. Nếu tình trạng khác với kế hoạch, hãy báo trước khi bắt đầu."
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "承知しました。一人で始めず、必要な確認を済ませます。",
+          "meaningVi": "Tôi hiểu. Tôi sẽ không bắt đầu một mình mà hoàn thành các xác nhận cần thiết."
+        }
+      ],
+      "responsePolicy": {
+        "requiredIntents": [
+          "ask_plan",
+          "confirm_partner",
+          "check_current_condition"
+        ],
+        "acceptableVariantsJa": [
+          "計画の確認をお願いできますか。",
+          "もう一人の職員と確認してから始めます。"
+        ],
+        "unsafeOrIncompleteIntents": [
+          "ignore_resident_preference",
+          "guess_unconfirmed_support",
+          "perform_unapproved_transfer"
+        ],
+        "fallbackJa": "確認できていることから、もう一度伝えてください。",
+        "scope": "Communication only; physical assistance follows individual care plan and facility training."
+      },
+      "reading": {
+        "textJa": "本日の連絡\n長谷部さんの移動は、この時間帯は岸本職員と担当職員の二人で支援する。開始前に現在の状態を確認する。計画と異なる点があれば、川瀬職員へ相談する。",
+        "meaningVi": "Thông tin hôm nay: trong khung giờ này, Kishimoto và nhân viên phụ trách cùng hỗ trợ di chuyển Hasebe. Xác nhận tình trạng trước khi bắt đầu; trao đổi với Kawase nếu có điểm khác kế hoạch. Quy định hai người thuộc tình huống này, không phải quy tắc chung."
+      },
+      "questions": [
+        {
+          "id": "move-q16",
+          "kind": "reading",
+          "promptJa": "この時間帯に支援する職員は何人ですか。",
+          "optionsJa": [
+            "一人。",
+            "三人。",
+            "人数は決まっていない。",
+            "二人。"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: không theo thông báo.",
+            "Sai: không có ba người.",
+            "Sai: tình huống ghi rõ số người.",
+            "Đúng: thông báo yêu cầu hai người ở thời điểm này."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "move-q17",
+          "kind": "reading",
+          "promptJa": "計画と異なる点があったら、誰へ相談しますか。",
+          "optionsJa": [
+            "川瀬職員。",
+            "ほかの利用者。",
+            "来訪者。",
+            "受付の業者。"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: thông báo chỉ định Kawase.",
+            "Sai: không phải người phụ trách.",
+            "Sai: không được chỉ định.",
+            "Sai: không được chỉ định."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "move-q18",
+          "kind": "knowledge",
+          "promptJa": "この連絡から言えることはどれですか。",
+          "optionsJa": [
+            "すべての利用者は必ず二人で支援する。",
+            "長谷部さんのこの時間の支援には二人が必要である。",
+            "計画があれば状態確認は不要である。",
+            "一人で先に始めてよい。"
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: không khái quát kế hoạch cá nhân thành quy tắc chung.",
+            "Đúng: giới hạn đúng người và thời điểm.",
+            "Sai: vẫn phải kiểm tình trạng.",
+            "Sai: trái kế hoạch tình huống."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        }
+      ],
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "npcPracticeVi": "Nghe/đọc mẫu, luyện lại theo ý định, thử một cách diễn đạt khác và nhận phản hồi. Không dùng một lần đọc kịch bản để khẳng định đã đủ 10 phút.",
+        "durationStatus": "planned_not_measured"
+      }
+    },
+    {
+      "id": "kaigo-move-05",
+      "titleVi": "Tìm hiểu lý do người sử dụng chưa muốn tới phòng sinh hoạt",
+      "curriculumDay": 19,
+      "npcId": "kaigo-npc-resident-c",
+      "playerRoleVi": "Nhân viên chăm sóc",
+      "contextVi": "Onodera đã ngồi ổn định. Đây là hoạt động tự chọn; không có yêu cầu di chuyển khẩn cấp. Người học không ép tham gia hoặc tự đổi kế hoạch chăm sóc.",
+      "objectivesVi": [
+        "Tiếp nhận từ chối",
+        "Hỏi lý do không gây áp lực",
+        "Chốt lựa chọn và báo người phụ trách hoạt động"
+      ],
+      "knowledgeVi": [
+        "Hỏi và xác nhận trước khi hỗ trợ; phương thức hỗ trợ theo kế hoạch riêng.",
+        "Phân biệt sự việc quan sát, lời người sử dụng và thông tin chưa xác nhận."
+      ],
+      "sourceRefs": [
+        {
+          "printedPage": 129,
+          "pdfPage": 131,
+          "purpose": "condition check, consent, support independence"
+        },
+        {
+          "printedPage": 118,
+          "pdfPage": 120,
+          "purpose": "reporting and consultation"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-move-01",
+        "kaigo-vocab-move-02",
+        "kaigo-vocab-move-03"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "今は交流室に行きたくありません。",
+          "meaningVi": "Bây giờ tôi không muốn tới phòng giao lưu."
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "今日は参加を見合わせたいのですね。よろしければ、理由を聞かせていただけますか。",
+          "meaningVi": "Hôm nay bác muốn tạm không tham gia đúng không. Nếu được, bác cho tôi biết lý do nhé?"
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "妹から電話が来る予定なので、ここで待ちたいんです。",
+          "meaningVi": "Em gái tôi dự định gọi nên tôi muốn đợi ở đây."
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "電話を待ちたいのですね。活動の担当者に、今は参加しないと伝えてもよろしいですか。",
+          "meaningVi": "Bác muốn chờ điện thoại đúng không. Tôi báo người phụ trách hoạt động rằng bây giờ bác chưa tham gia được không?"
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "はい。電話が終わったら、まだ参加できるか知りたいです。",
+          "meaningVi": "Được. Sau cuộc gọi tôi muốn biết còn tham gia được không."
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "途中から参加できるか確認してきます。わかり次第、お伝えします。",
+          "meaningVi": "Tôi sẽ xác nhận có thể tham gia giữa buổi không. Biết kết quả tôi sẽ báo ngay."
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "ありがとう。確認するまでは、ここで待ちます。",
+          "meaningVi": "Cảm ơn. Tôi sẽ đợi ở đây cho tới khi xác nhận xong."
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "承りました。移動するかどうかは、確認した内容をお伝えしてから決めましょう。",
+          "meaningVi": "Tôi hiểu. Sau khi tôi báo kết quả xác nhận, mình quyết định có di chuyển hay không nhé."
+        }
+      ],
+      "responsePolicy": {
+        "requiredIntents": [
+          "acknowledge_refusal",
+          "ask_reason_respectfully",
+          "confirm_followup"
+        ],
+        "acceptableVariantsJa": [
+          "お電話を待っていらっしゃるのですね。",
+          "途中参加できるか、担当者に確認します。"
+        ],
+        "unsafeOrIncompleteIntents": [
+          "ignore_resident_preference",
+          "guess_unconfirmed_support",
+          "perform_unapproved_transfer"
+        ],
+        "fallbackJa": "確認できていることから、もう一度伝えてください。",
+        "scope": "Communication only; physical assistance follows individual care plan and facility training."
+      },
+      "reading": {
+        "textJa": "活動への参加希望\n小野寺さんは妹からの電話を待つため、現在は交流室へ行かないことを希望している。活動担当者への連絡には同意を得た。電話後に途中参加できるかは未確認。",
+        "meaningVi": "Nguyện vọng tham gia: Onodera muốn chưa tới phòng giao lưu vì đợi điện thoại từ em gái. Đã đồng ý báo người phụ trách hoạt động. Chưa xác nhận có được tham gia giữa buổi sau cuộc gọi hay không."
+      },
+      "questions": [
+        {
+          "id": "move-q19",
+          "kind": "reading",
+          "promptJa": "小野寺さんが今は行かない理由は何ですか。",
+          "optionsJa": [
+            "部屋の入口が閉まっているから。",
+            "職員が足りないから。",
+            "妹からの電話を待っているから。",
+            "活動が中止になったから。"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: không có thông tin đóng cửa.",
+            "Sai: không có thông tin thiếu nhân viên.",
+            "Đúng: đợi điện thoại từ em gái.",
+            "Sai: không có thông tin hủy."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "move-q20",
+          "kind": "reading",
+          "promptJa": "まだ確認していないことは何ですか。",
+          "optionsJa": [
+            "電話を待ちたいか。",
+            "連絡に同意したか。",
+            "現在は行かない希望があるか。",
+            "電話後に途中参加できるか。"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: nguyện vọng này đã rõ.",
+            "Sai: đã được đồng ý.",
+            "Sai: đã được nói rõ.",
+            "Đúng: điều này chưa xác nhận."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "move-q21",
+          "kind": "knowledge",
+          "promptJa": "活動が任意の場合、適切な対応はどれですか。",
+          "optionsJa": [
+            "希望を聞き、必要な情報を確認する。",
+            "断ったことを責める。",
+            "理由を聞かず連れて行く。",
+            "途中参加できると確認せず約束する。"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: tôn trọng lựa chọn và xác minh thông tin.",
+            "Sai: gây áp lực.",
+            "Sai: bỏ qua từ chối.",
+            "Sai: hứa khi chưa biết điều kiện."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        }
+      ],
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "npcPracticeVi": "Nghe/đọc mẫu, luyện lại theo ý định, thử một cách diễn đạt khác và nhận phản hồi. Không dùng một lần đọc kịch bản để khẳng định đã đủ 10 phút.",
+        "durationStatus": "planned_not_measured"
+      }
+    },
+    {
+      "id": "kaigo-move-06",
+      "titleVi": "Bàn giao mong muốn và kết quả đã xác nhận",
+      "curriculumDay": 20,
+      "npcId": "kaigo-npc-care-peer",
+      "playerRoleVi": "Nhân viên chăm sóc",
+      "contextVi": "Bàn giao sau tình huống hoạt động tự chọn. Không có triệu chứng cấp cứu; không ghi nguyên nhân sức khỏe vì không có dữ kiện.",
+      "objectivesVi": [
+        "Phân biệt lý do đã nghe và suy đoán",
+        "Truyền đạt kết quả xác nhận",
+        "Chỉ rõ việc cần hỏi tiếp"
+      ],
+      "knowledgeVi": [
+        "Hỏi và xác nhận trước khi hỗ trợ; phương thức hỗ trợ theo kế hoạch riêng.",
+        "Phân biệt sự việc quan sát, lời người sử dụng và thông tin chưa xác nhận."
+      ],
+      "sourceRefs": [
+        {
+          "printedPage": 129,
+          "pdfPage": 131,
+          "purpose": "condition check, consent, support independence"
+        },
+        {
+          "printedPage": 118,
+          "pdfPage": 120,
+          "purpose": "reporting and consultation"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-move-01",
+        "kaigo-vocab-move-02",
+        "kaigo-vocab-move-03"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "小野寺さんの予定について、引き継ぐことはありますか。",
+          "meaningVi": "Có điều gì cần bàn giao về kế hoạch của bác Onodera không?"
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "午後二時の活動には、今は参加されません。妹さんからの電話を待ちたいと話されました。",
+          "meaningVi": "Hiện bác chưa tham gia hoạt động lúc hai giờ. Bác nói muốn đợi điện thoại từ em gái."
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "電話が終わった後は、どうする予定ですか。",
+          "meaningVi": "Sau khi điện thoại xong, dự định thế nào?"
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "活動担当者に確認したところ、二時半までは途中参加できます。ご本人にも伝えました。",
+          "meaningVi": "Tôi xác nhận với người phụ trách: có thể tham gia giữa buổi tới hai giờ rưỡi. Tôi đã báo cho bác."
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "参加することは、もう決まりましたか。",
+          "meaningVi": "Bác đã quyết định tham gia chưa?"
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "まだ決まっていません。電話の後に、ご本人の希望をもう一度聞く予定です。",
+          "meaningVi": "Chưa quyết định. Dự kiến hỏi lại mong muốn của bác sau cuộc gọi."
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "では、私が電話の後に確認します。記録はどこにありますか。",
+          "meaningVi": "Vậy tôi sẽ hỏi sau cuộc gọi. Ghi chép ở đâu?"
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "今日の活動記録に書きました。途中参加できる期限と、ご本人の希望が未確認であることを分けて記載しています。",
+          "meaningVi": "Tôi ghi trong sổ hoạt động hôm nay. Tôi tách rõ hạn được tham gia và việc chưa xác nhận lựa chọn của bác."
+        }
+      ],
+      "responsePolicy": {
+        "requiredIntents": [
+          "report_confirmed_deadline",
+          "state_decision_pending",
+          "handover_next_task"
+        ],
+        "acceptableVariantsJa": [
+          "参加希望は、電話の後に確認することになっています。",
+          "期限は十四時三十分です。"
+        ],
+        "unsafeOrIncompleteIntents": [
+          "ignore_resident_preference",
+          "guess_unconfirmed_support",
+          "perform_unapproved_transfer"
+        ],
+        "fallbackJa": "確認できていることから、もう一度伝えてください。",
+        "scope": "Communication only; physical assistance follows individual care plan and facility training."
+      },
+      "reading": {
+        "textJa": "活動の申し送り\n14:05　小野寺さんへ、14:30までは途中参加できると伝えた。参加するかどうかは電話終了後に再確認する。岸本職員が確認を引き継ぐ。電話が終わる時刻は未定。",
+        "meaningVi": "Bàn giao hoạt động: 14:05 đã báo Onodera rằng có thể tham gia tới 14:30. Hỏi lại lựa chọn sau cuộc gọi; Kishimoto tiếp nhận việc hỏi. Chưa biết lúc cuộc gọi kết thúc."
+      },
+      "questions": [
+        {
+          "id": "move-q22",
+          "kind": "reading",
+          "promptJa": "次に参加希望を確認する職員は誰ですか。",
+          "optionsJa": [
+            "川瀬職員。",
+            "岸本職員。",
+            "藤野看護職。",
+            "三浦調理員。"
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: không được giao trong ghi chép.",
+            "Đúng: Kishimoto tiếp nhận xác nhận.",
+            "Sai: không được giao.",
+            "Sai: không được giao."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "move-q23",
+          "kind": "reading",
+          "promptJa": "申し送りに合う内容はどれですか。",
+          "optionsJa": [
+            "参加することは決まっている。",
+            "電話は14:30に終わる。",
+            "電話後の参加希望は再確認する。",
+            "途中参加はできない。"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: lựa chọn chưa chốt.",
+            "Sai: giờ kết thúc cuộc gọi chưa biết.",
+            "Đúng: ghi chép yêu cầu hỏi lại.",
+            "Sai: có thể tham gia tới hạn đã ghi."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "move-q24",
+          "kind": "knowledge",
+          "promptJa": "この時点で決めつけてはいけないことはどれですか。",
+          "optionsJa": [
+            "途中参加の期限が14:30であること。",
+            "岸本職員が引き継ぐこと。",
+            "14:05に情報を伝えたこと。",
+            "本人が必ず活動へ参加すること。"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: đây là thông tin đã xác nhận.",
+            "Sai: đây là nhiệm vụ đã bàn giao.",
+            "Sai: đây là sự việc đã ghi.",
+            "Đúng: lựa chọn chưa xác nhận."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        }
+      ],
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "npcPracticeVi": "Nghe/đọc mẫu, luyện lại theo ý định, thử một cách diễn đạt khác và nhận phản hồi. Không dùng một lần đọc kịch bản để khẳng định đã đủ 10 phút.",
+        "durationStatus": "planned_not_measured"
+      }
+    },
+    {
+      "id": "kaigo-move-07",
+      "titleVi": "Ôn tổng hợp: giờ sinh hoạt và thông tin trên bảng chưa thống nhất",
+      "curriculumDay": 21,
+      "npcId": "kaigo-npc-care-lead",
+      "playerRoleVi": "Nhân viên chăm sóc",
+      "contextVi": "Người sử dụng đã hỏi về buổi sinh hoạt. Bảng in và thông báo nội bộ khác giờ; người học xác minh trước hứa hoặc sắp xếp di chuyển.",
+      "objectivesVi": [
+        "Nhận ra thông tin mâu thuẫn",
+        "Xác nhận nguồn mới nhất",
+        "Báo lại giờ và giữ quyền lựa chọn"
+      ],
+      "knowledgeVi": [
+        "Hỏi và xác nhận trước khi hỗ trợ; phương thức hỗ trợ theo kế hoạch riêng.",
+        "Phân biệt sự việc quan sát, lời người sử dụng và thông tin chưa xác nhận."
+      ],
+      "sourceRefs": [
+        {
+          "printedPage": 129,
+          "pdfPage": 131,
+          "purpose": "condition check, consent, support independence"
+        },
+        {
+          "printedPage": 118,
+          "pdfPage": 120,
+          "purpose": "reporting and consultation"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-move-01",
+        "kaigo-vocab-move-02",
+        "kaigo-vocab-move-03"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "午後の予定で、確認したいことがありますか。",
+          "meaningVi": "Có điều gì về lịch chiều bạn muốn xác nhận không?"
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "掲示には二時開始とありますが、連絡には二時二十分とあります。どちらが最新ですか。",
+          "meaningVi": "Bảng ghi bắt đầu hai giờ nhưng thông báo ghi hai giờ hai mươi. Thông tin nào mới nhất?"
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "二時二十分が最新です。会場の準備で変更になりました。",
+          "meaningVi": "Hai giờ hai mươi là mới nhất. Đã đổi vì chuẩn bị phòng."
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "承知しました。長谷部さんには、確認してからお知らせするとお伝えしています。",
+          "meaningVi": "Tôi hiểu. Tôi đã báo bác Hasebe rằng sẽ thông tin sau khi xác nhận."
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "では、新しい時刻を伝えてください。掲示も担当者が直します。",
+          "meaningVi": "Vậy hãy báo giờ mới. Người phụ trách sẽ sửa bảng."
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "参加の希望と、その時間の支援計画も確認してから移動の準備をします。",
+          "meaningVi": "Tôi sẽ xác nhận mong muốn tham gia và kế hoạch hỗ trợ ở thời điểm đó rồi chuẩn bị di chuyển."
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "お願いします。移動方法に不明な点があれば、私に相談してください。",
+          "meaningVi": "Nhờ bạn. Có điểm chưa rõ về cách di chuyển thì trao đổi với tôi."
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "はい。開始時刻が二時二十分に変わったことから説明し、確認した内容を記録します。",
+          "meaningVi": "Vâng. Tôi sẽ giải thích trước rằng giờ bắt đầu đã đổi sang hai giờ hai mươi rồi ghi nội dung đã xác nhận."
+        }
+      ],
+      "responsePolicy": {
+        "requiredIntents": [
+          "identify_conflict",
+          "confirm_latest_time",
+          "confirm_preference_and_plan"
+        ],
+        "acceptableVariantsJa": [
+          "最新の予定を確認させてください。",
+          "変更後の時刻をご本人に伝えます。"
+        ],
+        "unsafeOrIncompleteIntents": [
+          "ignore_resident_preference",
+          "guess_unconfirmed_support",
+          "perform_unapproved_transfer"
+        ],
+        "fallbackJa": "確認できていることから、もう一度伝えてください。",
+        "scope": "Communication only; physical assistance follows individual care plan and facility training."
+      },
+      "reading": {
+        "textJa": "午後の活動・更新連絡\n交流室の開始は14:00から14:20へ変更。掲示の修正は担当者が行う。利用者には最新の開始時刻を伝え、参加希望を確認する。移動の支援方法は、それぞれの計画を確認する。",
+        "meaningVi": "Thông báo cập nhật: hoạt động phòng giao lưu đổi từ 14:00 sang 14:20. Người phụ trách sửa bảng. Báo giờ mới và hỏi mong muốn tham gia; xác nhận cách hỗ trợ di chuyển theo kế hoạch từng người."
+      },
+      "questions": [
+        {
+          "id": "move-q25",
+          "kind": "reading",
+          "promptJa": "更新後の開始時刻はいつですか。",
+          "optionsJa": [
+            "14:20。",
+            "14:00。",
+            "14:30。",
+            "13:40。"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: giờ cập nhật 14:20.",
+            "Sai: giờ cũ.",
+            "Sai: không có trong thông báo.",
+            "Sai: không có trong thông báo."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "move-q26",
+          "kind": "reading",
+          "promptJa": "移動方法について、連絡は何を求めていますか。",
+          "optionsJa": [
+            "全員を同じ方法で支援する。",
+            "それぞれの計画を確認する。",
+            "時刻が変われば確認しない。",
+            "掲示の時刻だけで決める。"
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: kế hoạch theo từng người.",
+            "Đúng: thông báo yêu cầu kiểm kế hoạch cá nhân.",
+            "Sai: đổi giờ không bỏ kiểm tra.",
+            "Sai: giờ không xác định phương pháp hỗ trợ."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "move-q27",
+          "kind": "knowledge",
+          "promptJa": "異なる開始時刻を見つけたとき、最初の対応として適切なものはどれですか。",
+          "optionsJa": [
+            "好きな時刻を選ぶ。",
+            "両方とも正しいと言う。",
+            "担当者に最新情報を確認する。",
+            "利用者へ確認せず移動を始める。"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: không chọn theo ý thích.",
+            "Sai: cần giải quyết mâu thuẫn.",
+            "Đúng: xác minh thông tin mới nhất.",
+            "Sai: bắt đầu khi chưa rõ lịch và mong muốn."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        }
+      ],
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "npcPracticeVi": "Nghe/đọc mẫu, luyện lại theo ý định, thử một cách diễn đạt khác và nhận phản hồi. Không dùng một lần đọc kịch bản để khẳng định đã đủ 10 phút.",
+        "durationStatus": "planned_not_measured"
+      }
     }
   ],
   "assetStatus": "not_created",
   "mockStatus": "these are lesson checks, not a 45 or 15 question full mock",
   "similarityReview": {
     "status": "ai_manual_check_not_rights_certification",
-    "scope": "New situations: activity schedule and seating preference; obstacle-route coordination; fact-based reporting of requested rest. No source dialogue expanded or renamed. Common professional formulas may overlap.",
+    "scope": "New situations: activity schedule and seating preference; obstacle-route coordination; fact-based reporting of requested rest. No source dialogue expanded or renamed. Common professional formulas may overlap. Added: individual support-plan confirmation; voluntary activity refusal due to anticipated family call; factual activity handover; conflicting schedule verification. No physical maneuver instructions.",
     "humanReviewed": false
   }
 }
