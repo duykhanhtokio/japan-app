@@ -298,3 +298,10 @@ Registered compatible adapter, independent session jlpt:jpapp:n4:original:01:v1,
 After publish/fetch and WORK PERSISTENCE PASS, N5 01–06+N4 01 =7/30; next N4 02. Details original/n4-01/qa.json, HANDOFF.md and runtime evidence. Do not rerun initial scratch authoring scripts; they precede editorial revisions. No legacy removal before full replacement gate.
 
 N4 01 transport: direct PCM continuous encode at40kbps mono24kHz fits connector body limit; individual questions96kbps. Re-decoded duration2113752ms unchanged and playback rechecked. Remote updates214107f7 (other app work and an alternative N4 written draft) preserved via fast-forward; canonical N4 master/audio remain coherent. Alternative draft is not counted as a completed exam.
+
+
+## 2026-10-07 — N4 02 new independent draft and image assets
+
+Resumed after remote-verified N4 01. Independently authored98responses (70written+28listening),8passages,4unscored examples,5new imagegen illustrations visually inspected. Corrected ordering ambiguity and dialogue/option role mapping. Structural/answer/ordering reconstruction validator PASS; pools21/22/21/21 and4/5/4, no triples/short cycles. Human/native/perceptual/rights/release flagsfalse.
+
+N4-approved .9speed,2/.5s and12/12/10/8s unchanged;35minute budget planned,60s music fixed afterproblem2. Recording is underway locally with reusable turn cache; no complete audio/duration/runtime approval yet. Unregistered adapter prepared only. Completed integrated remains7/30; continue N4 02 from original/n4-02/HANDOFF.md, never regenerate from initial scratch authoring scripts. A checkpoint does not certify a running process in later sessions.
