@@ -3,6 +3,15 @@ import metadataJson from '@/data/location-place-artwork.json';
 
 const metadata = metadataJson as Record<string, { category: string }>;
 const artwork: Record<string, ImageSourcePropType> = {
+  'LOC-006-01': require('../../../assets/app/life/location-backgrounds/places/yamagata-station-tsubasa.png'),
+  'LOC-006-13': require('../../../assets/app/life/location-backgrounds/places/yamagata-spal-entrance.png'),
+  'LOC-006-08': require('../../../assets/app/life/location-backgrounds/places/yamagata-yamadera-godaido.png'),
+  'LOC-006-09': require('../../../assets/app/life/location-backgrounds/places/yamagata-kajo-moat.png'),
+  'LOC-006-10': require('../../../assets/app/life/location-backgrounds/places/yamagata-zao-onsen.png'),
+  'LOC-006-16': require('../../../assets/app/life/location-backgrounds/places/yamagata-nanokamachi-gotenzeki.png'),
+  'LOC-006-17': require('../../../assets/app/life/location-backgrounds/places/yamagata-prefectural-museum.png'),
+  'LOC-006-18': require('../../../assets/app/life/location-backgrounds/places/yamagata-yamako-bus-terminal.png'),
+  'LOC-006-15': require('../../../assets/app/life/location-backgrounds/places/yamagata-zao-juhyo.png'),
   'LOC-005-13': require('../../../assets/app/life/location-backgrounds/places/akita-aeon-mall.png'),
   'LOC-005-10': require('../../../assets/app/life/location-backgrounds/places/akita-neburi-nagashi.png'),
   'LOC-005-01': require('../../../assets/app/life/location-backgrounds/places/akita-komachi-platform.png'),

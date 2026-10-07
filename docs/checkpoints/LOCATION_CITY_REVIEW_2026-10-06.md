@@ -143,3 +143,27 @@ The optional fictional-location choice returned no answer. For the unidentifiabl
 `akita-aeon-mall.png`: built-in Imagegen using an operator-published facade photo for architecture reference only, original closer pedestrian viewpoint, portrait anime environment. Preserved cream/peach low-rise mass, triangular-gabled arched glazing, broad glass entrance and round blue clock/emblem. Selected source-resolution output inspected; reference photo is not shipped. Source: https://space-media.aeonmall.com/buildings/akita .
 
 Akita artwork assignment now covers all 20 retained city locations: 8 exact-ID place illustrations and 12 allowed shared service scenes. LOC-005-09 is now correctly assigned and illustrated in Oga, not omitted. Whole-catalog remediation remains incomplete. This is mapping/illustration coverage, not exact photographic reproduction or native visual acceptance. Next city: CTY-006 Yamagata.
+
+## Yamagata CTY-006 — 2026-10-07
+
+Reviewed all 21 locations: 9 place-specific illustrations integrated, 12 generic service interiors retained. Full catalog remains incomplete: 62 mapped place IDs, 4,672 shared-service-permitted rows, 2,378 pending individual reviews. Shared permission is not an assertion that every venue name is verified.
+
+| ID | Place | Artwork / authoritative reference |
+| --- | --- | --- |
+| LOC-006-01 | 山形駅 | yamagata-station-tsubasa.png; JR East Yamagata Shinkansen route https://www.jreast.co.jp/multi/routemaps/yamagatashinkansen.html; illustrated platform, no claim of exact platform layout |
+| LOC-006-08 | 山寺（立石寺） | yamagata-yamadera-godaido.png; https://yamagatakanko.com/attractions/detail_2352.html; Godaido interior reference photo 2352_4_m.jpg |
+| LOC-006-09 | 霞城公園（山形城跡） | yamagata-kajo-moat.png; https://keikan.pref.yamagata.jp/vp_062/; stone rampart, moat, blossom and adjacent rail corridor, no invented castle keep |
+| LOC-006-10 | 蔵王温泉 | yamagata-zao-onsen.png; https://yamagatakanko.com/attractions/detail_2766.html; hillside winter neighborhood reference 2766_3_m.jpg |
+| LOC-006-13 | エスパル山形 | yamagata-spal-entrance.png; https://www.s-pal.jp/wp-content/uploads/2017/11/345631c92564ef486c68b36955cc8a50.pdf; 2017 operator entrance rendering, original illustrated interpretation, not current tenant layout |
+| LOC-006-15 | 蔵王スキー場 | yamagata-zao-juhyo.png; https://yamagatakanko.com/attractions/detail_11062.html; Zao juhyo snow-covered firs and ropeway |
+| LOC-006-16 | 七日町商店街 | yamagata-nanokamachi-gotenzeki.png; https://yamagatakanko.com/attractions/detail_2280.html; actual Gotenzeki shopping quarter, not Bunshokan grounds mislabeled as street |
+| LOC-006-17 | 山形県立博物館 | yamagata-prefectural-museum.png; https://www.yamagata-museum.jp/about/outline; outline1.jpg is MAIN modern concrete museum, not Western-style branch outline2.jpg |
+| LOC-006-18 | 山交ビルバスターミナル | yamagata-yamako-bus-terminal.png; https://www.yamako.co.jp/ybill/; official main-img01.jpg reference, vertical facade fins and red terminal canopy |
+
+All final assets inspected before activation. All are original semi-realistic anime illustrations with clear lower foreground and portrait framing; official photographs were reference-only and are not shipped. Rejected first Yamadera exterior for invented roof cupola; replaced with verified timber lookout interior. Reframed first museum landscape output into portrait.
+
+Corrected corrupted LOC-006-19 label to 山形いも煮専門店 and synchronized two scenario mentions; kept generic restaurant image. Resolved ambiguous 山形バスターミナル to verified 山交ビルバスターミナル (same stable ID), address 山形県山形市香澄町3-2-1, synchronized two scenario mentions. No changes to dialogue waist placement, microphone, city blur, or approved JLPT UI.
+
+Generation specifications: original 1024×1536 portrait, detailed soft semi-realistic anime travel background, no people/UI/watermark; preserve source-confirmed defining architecture; leave lower standing space for existing NPC overlay; exclude Tokyo landmarks and invented castle keeps. Museum portrait generation retained the verified central entrance/low roof planes. Station is a regional Tsubasa platform illustration, not a survey of present station equipment.
+
+Actual RoyalLocationCard and placeBackground browser fixture passed for 9 cards at 390×844, 430×932, 768×1024, 1024×768 and 1366×768: all scene/frame images decoded, image bounds matched clipped scene windows, and no page errors. Inspected phone and tablet screenshots: defining features retained, no stretched imagery or blank scene bands. Preview fixture lacks Japanese fonts (labels display missing glyph boxes), so text typography is not validated by this fixture. Native simulator and full app route validation remain pending.
