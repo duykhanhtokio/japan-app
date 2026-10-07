@@ -252,3 +252,13 @@ Bản đầu 1806747ms; cuối PCM/MP3 decode **1806117ms = 30 phút 06.117 giâ
 Adapter/registry riêng, session jlpt:jpapp:n5:original:05:v1, mốc 0ms. PASS cấu trúc/đáp án/hash/script/voice/decoded music và thời lượng, adapter, khóa UI10/10. Browser audio thật và runner/shared UI nguyên vẹn với Expo/AsyncStorage thật PASS chọn/lưu, Back/reopen/resume, phát từ đầu/pause, nộp thiếu, kết quả 0 đúng/1 sai/90 chưa trả lời, review; không pageerror. Ba ảnh 430×932 đã kiểm tra. Không nhận full-router/native/iPhone/perceptual approval; TypeScript chỉ có lỗi TS2352 có sẵn life-content-repository.ts:47. Metadata master cập nhật sau QA không đổi câu hỏi hoặc audio text; hash đồng bộ. Cờ human/native/perceptual/rights/release giữ false.
 
 Tiến độ tích hợp **N5 01–05, 5/30** theo phạm vi kỹ thuật đã ghi. Đơn vị chỉ lưu bền vững sau publish/fetch và WORK PERSISTENCE PASS; kế tiếp **N5 06**, không chờ duyệt nháp. Chi tiết original/n5-05/qa.json và HANDOFF.md.
+
+## 2026-10-07 — N5 06 resumed and integrated
+
+Resumed existing draft after remote-verified N5 05 b6af56bb. Preserved IDs and created no legacy-source derivative. AI editorial correction resolves an ambiguous ordering item; rationale and starred answer updated together. Complete91 questions, seven passages, four unscored examples and five independent imagegen images. Pools20/20/20/20 and3/4/4, no triples or repeated short cycles.
+
+Measured PCM/decoded MP3 1803780ms, delta+3780ms from nominal; no fixed tolerance invented. Approved voices/speed/pause unchanged; music exactly60000ms/1440000frames after problem2 before all problem3 instructions, announcements present.
+
+Structure, audio/script/options/casting/hash, adapter, UI-lock10/10 and actual Chromium asset/production-runner harness checks PASS: choose/save, opening/pause, Back/reopen/resume, incomplete-submit, score0/1/90 and review, no pageerror. Evidence and inspected430x932 screenshots original/n5-06/runtime-2026-10-07. Not full-router/native/iPhone/perceptual approval; publisher/native/perceptual/rights/release flags false.
+
+After publish/fetch and WORK PERSISTENCE PASS, N5 01–06=6/30; next N4 01. N4 final pacing requires its own confirmation; no automatic N5 timing inheritance.
