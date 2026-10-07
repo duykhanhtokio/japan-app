@@ -337,3 +337,14 @@ Independent key jlpt:jpapp:n4:original:03:v1, audio0ms, spoken choices/transcrip
 ## 2026-10-07 — N4 04 independent draft checkpoint
 
 Authored98responses (70written+28listening),8passages,4new unscored examples,5imagegen illustrations inspected. Corrected vocabulary infinitive chain and ordering2/3/5 to constrain dependencies. Draft validator PASS counts/keys/reconstruction, pools22/21/21/21 and5/4/4, no triples/short cycles; differs from previous9original patterns. No legacy content used. N4 four approved voices,.9,2/.5s,12/12/10/8s unchanged; independent35minute content budget and new exact60s musical score. Audio synthesis started locally, duration/runtime still pending; no human/native/perceptual/rights/release approval. Completed integrated9/30. Resume original/n4-04/HANDOFF.md; never rerun initial scratch scripts.
+
+
+## 2026-10-07 — N4 04 technically completed and integrated
+
+Completed independent98responses,8passages,4new unscored examples,5imagegen illustrations inspected. Corrected 待ってから, continuation/weight contexts, ordering2/3/5 dependencies, grammar distractors and per-option Japanese internal evidence. Pools22/21/21/21 and5/4/4; no triples/short cycles; differs from previous9original patterns. No legacy content read/reused.
+
+First full2173319ms; removed six redundant trailing turns from task1items1/4/8, retaining explicit instructions and all keyed choices. Final PCM/MP3 decode **2111001ms=35:11.001**, nominal delta+11001ms, approximate35minute judgment without fixed tolerance. New procedural music differs fromN4 01–03; exactly60000ms/1440000frames afterproblem2 before allproblem3orientation, both announcements included. Four approved voices,.9speed,N4 2/.5s,12/12/10/8s unchanged. Written/rationale/generation metadata refinements preserve speech inputs; recording/current snapshot hashes retained.
+
+PASS content/audio script/choices/roles/hash/decode, adapter, UI10/10, actual Chromium audio0/pause/resume/music boundary/fiveimages and unmodified production runner/sharedUI RN-web harness: select/save, Back/reopen/resume selectedcolor, incomplete submit97, score0/1/97of98, review, no pageerror. Three430x932screenshots inspected. FullTS still only existing unrelated TS2352 life-content-repository.ts:47; no JLPTdiagnostic. No native/iPhone/full-router/perceptual/human/rights/release approval.
+
+Independent session jlpt:jpapp:n4:original:04:v1, audio0ms, spoken choices/transcripts/detailedexplanations hidden. After publish/fetch and WORK PERSISTENCE PASS, N5 01–06+N4 01–04=10/30; nextN4 05. Resume original/n4-04/HANDOFF.md; do not rerun scratch scripts. No legacy removal before full replacement gate.
