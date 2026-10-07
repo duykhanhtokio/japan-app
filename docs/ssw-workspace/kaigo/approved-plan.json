@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 3,
   "approvedAt": "2026-10-07",
   "timezone": "Asia/Tokyo",
   "sector": "介護",
@@ -39,26 +39,52 @@
         "check": 5
       },
       "measured": false
+    },
+    "firstMockPolicy": {
+      "approvedAt": "2026-10-07",
+      "skillsLanguage": "ja",
+      "japaneseLanguage": "ja",
+      "supportLanguage": "vi_after_submission",
+      "furigana": "all_kanji_editorial_readings_need_native_review",
+      "scoring": {
+        "correct": 1,
+        "incorrect": 0,
+        "unanswered": 0,
+        "scope": "training_raw_score_not_official_weighted_score"
+      },
+      "answerPositions": {
+        "maxCountDifference": 1,
+        "maxIdenticalRun": 2,
+        "arrangement": "balanced_static_editorial_shuffle_frozen_per_form"
+      },
+      "resume": {
+        "currentQuestion": true,
+        "answers": true,
+        "remainingTime": true,
+        "countTimeOnlyWhenActive": true,
+        "freezeQuestionAndOptionOrder": true
+      },
+      "submission": {
+        "confirmEarly": true,
+        "autoSubmitAtExpiry": true,
+        "reviewAfterSubmissionOnly": true
+      },
+      "runtimeImplemented": false
     }
   },
   "notYetDecided": [
     "exact NPC roster/count/art",
-    "skills mock language",
-    "furigana display",
-    "answer-position algorithm",
-    "mock scoring implementation",
-    "resume/submission behavior",
     "total later mock count"
   ],
   "production": {
-    "lessonsAuthored": 49,
+    "lessonsAuthored": 54,
     "npcsCreated": 0,
     "skillsMocksCompleted": 0,
     "japaneseMocksCompleted": 0,
     "runtimeIntegrated": false,
     "npcProfilesDrafted": 8,
     "selectedVocabularyReadingsChecked": 76,
-    "lessonQuestionsAuthored": 245,
+    "lessonQuestionsAuthored": 270,
     "curriculumDaysPlanned": 56,
     "foundationVocabularyDrafted": 21,
     "weeklyEditorialDraftsCompleted": [
@@ -68,15 +94,16 @@
       4,
       5,
       6,
-      7
+      7,
+      8
     ],
     "batchPolicy": "whole_week_with_QA_and_remote_verification",
     "week2VocabularyDrafted": 24,
     "movementSupplementalVocabularyDrafted": 8,
     "knowledgeModulesRevised": 21,
     "conceptGlossaryEntriesDrafted": 14,
-    "scenarioAssessmentCasesAuthored": 196,
-    "transferCasesAuthored": 49,
+    "scenarioAssessmentCasesAuthored": 216,
+    "transferCasesAuthored": 54,
     "editorialRevision": 2,
     "week4VocabularyDrafted": 20,
     "week4KnowledgeModulesAuthored": 7,
@@ -86,6 +113,11 @@
     "week6KnowledgeModulesAuthored": 7,
     "week7VocabularyDrafted": 18,
     "week7KnowledgeModulesAuthored": 7,
-    "week7VisuallyCheckedSourceReadings": 18
+    "week7VisuallyCheckedSourceReadings": 18,
+    "skillsMockDraftsAuthored": 1,
+    "japaneseMockDraftsAuthored": 1,
+    "mockQuestionsAuthored": 60,
+    "mockFiguresDrafted": 5,
+    "week8KnowledgeModulesAuthored": 5
   }
 }

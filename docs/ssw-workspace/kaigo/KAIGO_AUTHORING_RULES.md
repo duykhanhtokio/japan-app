@@ -1,6 +1,6 @@
 # Hướng dẫn chính thức — Tokutei Gino 介護
 
-Phiên bản: 2. Ngày duyệt: 2026-10-07 (Asia/Tokyo).
+Phiên bản: 3. Ngày duyệt: 2026-10-07 (Asia/Tokyo).
 Trạng thái: CHỦ DỰ ÁN ĐÃ DUYỆT PHƯƠNG ÁN BIÊN SOẠN.
 Repository: duykhanhtokio/japan-app. Nhánh: recovery/jlpt-n3-n1.
 Đây là hợp đồng biên soạn; duyệt phương án không chứng nhận nội dung chưa được tạo, kiểm duyệt hoặc tích hợp.
@@ -143,3 +143,7 @@ Checkpoint phải ghi hoàn thành/còn dở/blocker/bước tiếp; có/không 
 ## 12. Điều chỉnh đã được chủ dự án duyệt — 2026-10-07
 
 Hoàn thiện trọn tuần1–3 và sửa lỗi báo cáo trước khi viết tuần4. Giữ8tuần,30phút/ngày; phân bổ lại buổi trong tuần1–3 thành3phút ôn,8phút kiến thức,5phút từ/cách nói,9phút giao tiếp NPC,5phút đọc/câu hỏi. Đây là phân bổ hoạt động chưa đo trên người học. Mỗi bài có giải thích khái niệm, đối chiếu case đúng/sai, bài chuyển giao,5câu kiểm tra và rubric tách ý bắt buộc. Các ngày5–7 dùng lại từ, không đặt chỉ tiêu từ mới. Thay đổi này thay phân bổ cũ5/5/5/10/5 cho ba tuần được sửa; không tự đổi các ngày thi đủ thời gian. Duyệt sửa không thay kiểm chuyên môn, bản ngữ, quyền hoặc runtime.
+
+## 13. Thi thử đầu tiên — quyết định chủ dự án ngày2026-10-07
+
+Trong phiên tiếp tục tuần8, chủ dự án chọn: đề kỹ năng tiếng Nhật; đề Nhật tiếng Nhật; dịch/giải thích Việt chỉ sau nộp. Furigana cho toàn bộ kanji trong nội dung đề và lựa chọn, cần rà từng cách đọc. Chấm luyện tập đúng1điểm, sai/bỏtrống0; đây là cách chấm của app luyện tập, không khẳng định trọng số kỳ thi chính thức. Cân bằng vị trí đáp án với chênh lệch tối đa1 và không3vị trí giống liên tiếp; thứ tự sắp trước lượt thi, không đổi khi resume. Lưu đúng câu, đáp án và thời gian còn lại; thời gian đếm khi lượt đang hoạt động, tạm dừng khi rời lượt. Nộp sớm cần xác nhận; chữa bài sau nộp; khi hết giờ, khóa lượt và nộp các đáp án đã lưu. Không mở đáp án trước nộp. Đặc tả cần kiểm runtime trước phát hành; chưa cho phép đổi UI JLPT.
