@@ -252,15 +252,150 @@
       ],
       "transferPractice": {
         "id": "kaigo-gap-care-process-01-transfer",
-        "contextVi": "Kế hoạch ghi bác chọn một bài nhạc và nghe cùng nhóm nếu muốn. Bác chọn bài rồi nói muốn nghe riêng; nhóm không được tổ chức sau đó.",
-        "taskVi": "Báo riêng việc chọn bài, mong muốn mới và phần nghe nhóm không diễn ra; nhờ xem lại kế hoạch cùng bác/nhóm.",
+        "contextVi": "Kế hoạch luyện ghi chọn bài nhạc và nghe cùng nhóm nếu bác muốn. Bác đã chọn bài; buổi nhóm chưa bắt đầu. Bác chỉ muốn tham gia nếu có người hỗ trợ về phòng lúc 14:25; phương án hỗ trợ và giờ có thể về chưa xác nhận. Bác muốn biết kết quả rồi mới quyết định, nếu giờ không phù hợp thì không tham gia.",
+        "taskVi": "Hỏi lại bác về giờ và hỗ trợ lúc rời sớm, rồi báo phụ trách điều kiện tham gia để kiểm phương án trước bắt đầu. Khi có kết quả, báo lại bác và hỏi quyết định; phân biệt chọn bài với tham gia và không tự duyệt kế hoạch mới.",
         "expectedMeaningVi": [
-          "Đã chọn bài khác với đã nghe cùng nhóm.",
-          "Giữ mong muốn nghe riêng.",
-          "Đề nghị xem lại, chưa tự đổi kế hoạch."
+          "Hỏi lại giờ về và hỗ trợ; giữ điều kiện 14:25 cùng lựa chọn không tham gia nếu không phù hợp.",
+          "Chưa xác nhận hỗ trợ/giờ, chưa bắt đầu buổi; trao đổi phụ trách rồi báo kết quả để bác quyết định.",
+          "Đã chọn bài nhưng chưa tham gia; chia sẻ dữ kiện để xem lại cùng bác/nhóm, không tự duyệt kế hoạch."
         ],
-        "modelJa": "曲は選びましたが、一人で聴きたいとの希望があり、集団で聴く活動は行っていません。今の希望に合う支援について、本人とチームで確認したいです。",
-        "method": "bounded_editorial_rehearsal_not_runtime_evaluator"
+        "modelJa": "森川さんは、十四時二十五分に部屋へ戻る支援を確認してから、参加するか決めたいと話しています。時刻が合わなければ参加しない希望です。支援と戻れる時刻は未確認なので、開始前に相談します。結果を本人に伝えて、参加するか改めて伺います。曲は選びましたが、集団の活動はまだ始まっていません。必要な見直しは本人とチームで相談し、私だけで計画を承認しません。",
+        "method": "bounded_editorial_rehearsal_not_runtime_evaluator",
+        "responseRoleVi": "Bước 1 nói với bác Morikawa; bước 2 báo Kawase, người phụ trách. Câu mẫu modelJa là bước 2.",
+        "residentConfirmation": {
+          "promptVi": "Hỏi lại điều kiện rời sớm bằng tiếng Nhật; dùng dữ kiện cố định trong context, không tạo câu trả lời NPC mới.",
+          "modelJa": "十四時二十五分にお部屋へ戻る時の支援を確認してから、参加を決めたいということでしょうか。",
+          "acceptableJa": [
+            "戻る時刻とお手伝いが決まってから、参加するかお決めになりたいのですね。ご希望の時刻は十四時二十五分でよろしいですか。"
+          ],
+          "feedbackAfterAttempt": true
+        },
+        "sourceRefs": [
+          {
+            "sourceId": "kaigo-textbook-2025-03",
+            "printedPage": 12,
+            "pdfPage": 14
+          },
+          {
+            "sourceId": "kaigo-textbook-2025-03",
+            "printedPage": 16,
+            "pdfPage": 18
+          },
+          {
+            "sourceId": "kaigo-textbook-2025-03",
+            "printedPage": 115,
+            "pdfPage": 117
+          },
+          {
+            "sourceId": "kaigo-textbook-2025-03",
+            "printedPage": 118,
+            "pdfPage": 120
+          }
+        ],
+        "rubric": {
+          "id": "kaigo-gap-care-process-01-transfer-rubric-04",
+          "requiredMeanings": [
+            {
+              "id": "kaigo-gap-care-process-01-transfer-meaning-04-1",
+              "vi": "Bước 1 hỏi lại giờ và hỗ trợ rời sớm với bác.",
+              "responseTarget": "resident_confirmation"
+            },
+            {
+              "id": "kaigo-gap-care-process-01-transfer-meaning-04-2",
+              "vi": "Giữ điều kiện về lúc 14:25.",
+              "responseTarget": "care_lead_report"
+            },
+            {
+              "id": "kaigo-gap-care-process-01-transfer-meaning-04-3",
+              "vi": "Giữ lựa chọn không tham gia nếu giờ không phù hợp.",
+              "responseTarget": "care_lead_report"
+            },
+            {
+              "id": "kaigo-gap-care-process-01-transfer-meaning-04-4",
+              "vi": "Báo phụ trách giờ/hỗ trợ chưa xác nhận trước bắt đầu.",
+              "responseTarget": "care_lead_report"
+            },
+            {
+              "id": "kaigo-gap-care-process-01-transfer-meaning-04-5",
+              "vi": "Báo kết quả cho bác rồi hỏi quyết định tham gia.",
+              "responseTarget": "care_lead_report"
+            },
+            {
+              "id": "kaigo-gap-care-process-01-transfer-meaning-04-6",
+              "vi": "Tách đã chọn bài với chưa bắt đầu tham gia.",
+              "responseTarget": "care_lead_report"
+            },
+            {
+              "id": "kaigo-gap-care-process-01-transfer-meaning-04-7",
+              "vi": "Xem lại cùng bác/nhóm, không tự phê duyệt kế hoạch.",
+              "responseTarget": "care_lead_report"
+            }
+          ],
+          "acceptableJa": [
+            "森川さんは、十四時二十五分に部屋へ戻る支援を確認してから、参加するか決めたいと話しています。時刻が合わなければ参加しない希望です。支援と戻れる時刻は未確認なので、開始前に相談します。結果を本人に伝えて、参加するか改めて伺います。曲は選びましたが、集団の活動はまだ始まっていません。必要な見直しは本人とチームで相談し、私だけで計画を承認しません。",
+            "十四時二十五分に部屋へ戻る支援が決まってから参加を決めたいそうです。その時刻に戻れないなら参加しない希望です。戻る時刻と支援は未確認ですので、開始前に担当者へ確認し、結果を本人に伝えて希望を伺います。選曲は済んでいますが、集団活動は未開始です。見直しは本人とチームで相談し、私だけでは承認しません。"
+          ],
+          "unsafeOrContradictoryJa": [
+            "選曲は済んだので参加は決まりました。帰る支援は始まってから確認します。"
+          ],
+          "feedbackVi": "Chỉ rõ ý còn thiếu hoặc suy luận vượt dữ kiện rồi nói lại. Chấp nhận câu khác mẫu đúng nghĩa; không bỏ phần chưa xác nhận.",
+          "evaluationPolicy": {
+            "meaningBased": true,
+            "exactStringMatchRequired": false,
+            "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+            "missingMeaning": "clarify_before_advance",
+            "unsafeMeaning": "correct_before_advance",
+            "runtimeImplemented": false
+          },
+          "assessmentCases": [
+            {
+              "id": "kaigo-gap-care-process-01-transfer-case-04-accept",
+              "inputJa": "十四時二十五分に部屋へ戻る支援が決まってから参加を決めたいそうです。その時刻に戻れないなら参加しない希望です。戻る時刻と支援は未確認ですので、開始前に担当者へ確認し、結果を本人に伝えて希望を伺います。選曲は済んでいますが、集団活動は未開始です。見直しは本人とチームで相談し、私だけでは承認しません。",
+              "expected": "accept_meaning",
+              "specOnly": true,
+              "inputResidentJa": "十四時二十五分にお部屋へ戻る時の支援を確認してから、参加を決めたいということでしょうか。",
+              "coverageVi": "inputResidentJa thể hiện hỏi lại giờ/hỗ trợ; inputJa là báo phụ trách đủ các ý còn lại."
+            },
+            {
+              "id": "kaigo-gap-care-process-01-transfer-case-04-clarify",
+              "inputJa": "帰る時の支援を担当者に確認します.",
+              "expected": "clarify_missing_information",
+              "specOnly": true,
+              "inputResidentJa": "参加したいのですね。"
+            },
+            {
+              "id": "kaigo-gap-care-process-01-transfer-case-04-reject",
+              "inputJa": "選曲は済んだので参加は決まりました。帰る支援は始まってから確認します。",
+              "expected": "correct_before_advance",
+              "specOnly": true,
+              "inputResidentJa": "十四時二十五分にお部屋へ戻る時の支援を確認してから、参加を決めたいということでしょうか。"
+            }
+          ],
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          },
+          "responseTargets": [
+            "resident_confirmation",
+            "care_lead_report"
+          ],
+          "acceptableResidentJa": [
+            "十四時二十五分にお部屋へ戻る時の支援を確認してから、参加を決めたいということでしょうか。",
+            "戻る時刻とお手伝いが決まってから、参加するかお決めになりたいのですね。ご希望の時刻は十四時二十五分でよろしいですか。"
+          ]
+        },
+        "feedbackAfterAttempt": true,
+        "sameDaySlot": {
+          "activity": "npc_practice",
+          "mode": "replace_existing_transfer_rehearsal_not_append",
+          "additionalMandatoryMinutes": 0,
+          "durationMeasured": false
+        }
       },
       "questions": [
         {
@@ -410,26 +545,26 @@
         {
           "id": "kaigo-gap-care-process-01-q05",
           "kind": "transfer",
-          "promptJa": "本人が活動の途中で希望を変えました。計画について適切なのはどれですか。",
-          "promptVi": "Bác thay đổi mong muốn giữa hoạt động. Cách xử lý kế hoạch phù hợp là gì?",
+          "promptJa": "森川さんは、十四時二十五分に部屋へ戻る支援を確認してから参加を決めたいと話しています。支援は未確認です。開始前の対応はどれですか。",
+          "promptVi": "Bác Morikawa muốn xác nhận hỗ trợ về phòng lúc 14:25 rồi mới quyết định tham gia. Hỗ trợ chưa được xác nhận. Trước bắt đầu cần làm gì?",
           "optionsJa": [
-            "次の勤務者だけに任せ、今回の記録は残さない。",
-            "変化と結果を共有し、本人とチームで見直しを相談する。",
-            "今の担当職員だけで、新しい目標を承認する。",
-            "計画があるので、本人の新しい希望は扱わない。"
+            "曲を選んだので参加は決定と記録し、戻る時刻と支援の結果を後で本人に伝える。",
+            "戻る時刻と支援を担当者に確認し、結果を本人に伝えて参加の希望を改めて聞く。",
+            "担当職員が計画を変更し、支援の確認は後にして十四時二十五分に戻れると伝える。",
+            "本人には活動の終了時刻を説明し、途中で戻る支援は活動が始まってから確認する。"
           ],
           "optionsVi": [
-            "Để ca sau tự lo và không ghi lần này.",
-            "Chia sẻ thay đổi/kết quả, cùng bác và nhóm trao đổi xem lại.",
-            "Nhân viên hiện tại tự phê duyệt mục tiêu mới.",
-            "Có kế hoạch thì không xét mong muốn mới."
+            "Đã chọn bài nên ghi bác đã quyết định tham gia; sau đó báo kết quả giờ về/hỗ trợ cho bác.",
+            "Kiểm giờ về và hỗ trợ với phụ trách, báo kết quả cho bác rồi hỏi lại mong muốn tham gia.",
+            "Nhân viên phụ trách đổi kế hoạch, để sau mới kiểm hỗ trợ và báo chắc chắn về được lúc 14:25.",
+            "Giải thích giờ kết thúc hoạt động; bắt đầu rồi mới kiểm hỗ trợ rời sớm."
           ],
           "correctIndex": 1,
           "rationalesVi": [
-            "Sai: Thiếu thông tin cho phối hợp.",
-            "Đúng: Thông tin mới liên kết lại quá trình.",
-            "Sai: Vượt quyền phê duyệt.",
-            "Sai: Bỏ thông tin của bác."
+            "Sai: Chọn bài chưa là quyết định tham gia có điều kiện.",
+            "Đúng: Kiểm cả thời điểm và hỗ trợ trước bắt đầu; giữ quyền quyết định sau khi bác biết kết quả.",
+            "Sai: Chưa có xác nhận và người học không tự phê duyệt phương án.",
+            "Sai: Giờ kết thúc chung chưa đáp ứng điều kiện rời sớm cần kiểm trước khi bác quyết định."
           ],
           "feedbackAfterAttempt": true,
           "practiceScope": "lesson_check_not_full_mock",
@@ -504,7 +639,8 @@
           "Đọc văn bản, làm năm câu trước chữa; ghi phần chưa xong."
         ],
         "replacementAuditRef": "reviews/priority-gap-replacement-audit-03.json",
-        "replacementReady": false
+        "replacementReady": false,
+        "appliedRepairRef": "reviews/priority-gap-applied-repair-04.json"
       },
       "responseRubricIds": [
         "kaigo-gap-care-process-01-rubric-01",
@@ -1530,6 +1666,13 @@
     "revisionDate": "2026-10-08",
     "auditRef": "reviews/priority-gap-replacement-audit-03.json",
     "scope": "replacement_equivalence_metadata_and_existing_vocabulary_links_only",
+    "replacementReady": false
+  },
+  "editorialAppliedRepair": {
+    "date": "2026-10-08",
+    "baselineRemoteCommit": "20bb09b3726a7ca0242c57f9c5b5776b66281d70",
+    "evidenceRef": "reviews/priority-gap-applied-repair-04.json",
+    "scope": "one_transfer_and_q05_per_target_module; other_content_unchanged",
     "replacementReady": false
   }
 }

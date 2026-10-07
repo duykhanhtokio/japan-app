@@ -963,15 +963,123 @@
       ],
       "transferPractice": {
         "id": "kaigo-gap-infection-01-transfer",
-        "contextVi": "Ở lần luyện khác, nhân viên xác nhận đã chạm cạnh màn hình bằng găng đã dùng; chưa ai xử lý màn hình.",
-        "taskVi": "Báo chính xác vùng đã chạm, giữ việc sạch chưa tiếp tục và yêu cầu xử lý theo quy trình. Không hứa thay găng là đủ.",
+        "contextVi": "Trong lần luyện khác, bác chỉ cho phép kiểm hộp riêng để tìm lược có dấu; đã kiểm hộp trước việc thu đồ vải, không thấy lược, còn nơi khác chưa kiểm. Có một lược chưa rõ chủ nên chưa dùng, tóc chưa chỉnh. Sau đó người học chạm cạnh màn hình bằng găng đã dùng; màn hình chưa được xử lý.",
+        "taskVi": "Báo phụ trách hai việc riêng: nơi đã kiểm và trạng thái tìm lược, rồi vùng màn hình đã chạm và việc xử lý còn chờ. Không kết luận mất lược hoặc đã chỉnh tóc; không dùng lược chưa rõ chủ.",
         "expectedMeaningVi": [
-          "Đã chạm cạnh màn hình bằng găng đã dùng.",
-          "Chưa tiếp tục dùng cho việc sạch.",
-          "Báo phụ trách và kiểm xử lý thiết bị theo quy trình."
+          "Lược có dấu chưa thấy trong hộp được phép kiểm; nơi khác chưa kiểm, chưa kết luận mất.",
+          "Lược chưa rõ chủ không được dùng; tóc chưa chỉnh, cần trao đổi cách tìm trong phạm vi bác cho phép.",
+          "Đã chạm cạnh màn hình bằng găng đã dùng; chưa tiếp tục việc sạch, cần báo và xác nhận xử lý theo quy trình."
         ],
-        "modelJa": "使った手袋で画面の端に触れました。そのまま使い続けず、担当者に場所を報告して、施設の手順で対応を確認します。",
-        "method": "bounded_editorial_rehearsal_not_runtime_evaluator"
+        "modelJa": "印のあるくしは、本人が確認を認めた箱の中にはありませんでした。他の場所は未確認で、紛失とは決めていません。持ち主不明のくしは使わず、髪もまだ整えていません。探し方を相談したいです。また、使った手袋で画面の端に触れました。清潔な物を扱う作業は進めず、画面への対応を施設の手順で確認します。",
+        "method": "bounded_editorial_rehearsal_not_runtime_evaluator",
+        "responseRoleVi": "Người học báo người phụ trách; không phát ngôn thay bác hoặc tự xử lý màn hình.",
+        "sourceRefs": [
+          {
+            "sourceId": "kaigo-textbook-2025-03",
+            "printedPage": 12,
+            "pdfPage": 14
+          },
+          {
+            "sourceId": "kaigo-textbook-2025-03",
+            "printedPage": 16,
+            "pdfPage": 18
+          },
+          {
+            "sourceId": "kaigo-textbook-2025-03",
+            "printedPage": 115,
+            "pdfPage": 117
+          },
+          {
+            "sourceId": "kaigo-textbook-2025-03",
+            "printedPage": 118,
+            "pdfPage": 120
+          },
+          {
+            "sourceId": "mhlw-infection-2023",
+            "locator": "contact precaution: used gloves/environment contact; official text rechecked, no fresh visual page-offset certification"
+          }
+        ],
+        "rubric": {
+          "id": "kaigo-gap-infection-01-transfer-rubric-04",
+          "requiredMeanings": [
+            {
+              "id": "kaigo-gap-infection-01-transfer-meaning-04-1",
+              "vi": "Giới hạn nơi đã kiểm trong hộp được bác cho phép."
+            },
+            {
+              "id": "kaigo-gap-infection-01-transfer-meaning-04-2",
+              "vi": "Không kết luận lược mất khi nơi khác chưa kiểm."
+            },
+            {
+              "id": "kaigo-gap-infection-01-transfer-meaning-04-3",
+              "vi": "Không dùng lược chưa rõ chủ; tóc chưa chỉnh."
+            },
+            {
+              "id": "kaigo-gap-infection-01-transfer-meaning-04-4",
+              "vi": "Trao đổi cách tìm trong phạm vi cho phép."
+            },
+            {
+              "id": "kaigo-gap-infection-01-transfer-meaning-04-5",
+              "vi": "Báo đã chạm cạnh màn hình bằng găng đã dùng."
+            },
+            {
+              "id": "kaigo-gap-infection-01-transfer-meaning-04-6",
+              "vi": "Chưa tiếp tục việc sạch, xác nhận xử lý màn hình theo quy trình."
+            }
+          ],
+          "acceptableJa": [
+            "印のあるくしは、本人が確認を認めた箱の中にはありませんでした。他の場所は未確認で、紛失とは決めていません。持ち主不明のくしは使わず、髪もまだ整えていません。探し方を相談したいです。また、使った手袋で画面の端に触れました。清潔な物を扱う作業は進めず、画面への対応を施設の手順で確認します。",
+            "本人の許可を得た箱には印のあるくしが見つかりませんでした。他の場所は未確認なので、紛失とは断定しません。持ち主不明のくしは使わず、整髪もまだです。探し方を相談します。使用済みの手袋で画面の端に触れたことも報告します。清潔な物を扱う前に、画面への対応を施設の手順で確認します。"
+          ],
+          "unsafeOrContradictoryJa": [
+            "箱にないので紛失です。手袋を替えたので画面への対応は不要です。"
+          ],
+          "feedbackVi": "Chỉ rõ ý còn thiếu hoặc suy luận vượt dữ kiện rồi nói lại. Chấp nhận câu khác mẫu đúng nghĩa; không bỏ phần chưa xác nhận.",
+          "evaluationPolicy": {
+            "meaningBased": true,
+            "exactStringMatchRequired": false,
+            "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+            "missingMeaning": "clarify_before_advance",
+            "unsafeMeaning": "correct_before_advance",
+            "runtimeImplemented": false
+          },
+          "assessmentCases": [
+            {
+              "id": "kaigo-gap-infection-01-transfer-case-04-accept",
+              "inputJa": "本人の許可を得た箱には印のあるくしが見つかりませんでした。他の場所は未確認なので、紛失とは断定しません。持ち主不明のくしは使わず、整髪もまだです。探し方を相談します。使用済みの手袋で画面の端に触れたことも報告します。清潔な物を扱う前に、画面への対応を施設の手順で確認します。",
+              "expected": "accept_meaning",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-gap-infection-01-transfer-case-04-clarify",
+              "inputJa": "使った手袋で画面の端に触れました。対応を確認します。",
+              "expected": "clarify_missing_information",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-gap-infection-01-transfer-case-04-reject",
+              "inputJa": "箱にないので紛失です。手袋を替えたので画面への対応は不要です。",
+              "expected": "correct_before_advance",
+              "specOnly": true
+            }
+          ],
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        "feedbackAfterAttempt": true,
+        "sameDaySlot": {
+          "activity": "npc_practice",
+          "mode": "replace_existing_transfer_rehearsal_not_append",
+          "additionalMandatoryMinutes": 0,
+          "durationMeasured": false
+        }
       },
       "questions": [
         {
@@ -1117,26 +1225,26 @@
         {
           "id": "kaigo-gap-infection-01-q05",
           "kind": "transfer",
-          "promptJa": "使用した手袋で画面の端に触れたと分かりました。適切なのはどれですか。",
-          "promptVi": "Đã xác nhận chạm cạnh màn hình bằng găng đã dùng. Điều phù hợp là gì?",
+          "promptJa": "本人が確認を認めた箱にくしがなく、他の場所は未確認です。また、使った手袋で画面の端に触れました。適切な報告はどれですか。",
+          "promptVi": "Không thấy lược trong hộp bác cho phép kiểm, nơi khác chưa kiểm. Đồng thời đã chạm cạnh màn hình bằng găng đã dùng. Báo thế nào phù hợp?",
           "optionsJa": [
-            "手袋を替えたので、画面も清潔になったと伝える。",
-            "次の職員に知らせず、そのまま使ってもらう。",
-            "触れた場所を報告し、画面への対応を手順で確認する。",
-            "拭く薬剤を自己判断で混ぜ、すぐ画面に使う。"
+            "箱にないのでくしは紛失したと報告し、画面に触れた場所と対応を担当者に確認する。",
+            "くしの確認範囲と画面に触れた場所を報告し、手袋を替えたので画面への対応は不要と伝える。",
+            "くしの確認範囲と画面に触れた場所を報告し、探し方と画面への対応を確認する。",
+            "くしの確認範囲と探し方を担当者に報告し、画面に触れたことは次の勤務まで伝えない。"
           ],
           "optionsVi": [
-            "Thay găng nên báo màn hình cũng sạch.",
-            "Không báo và để người tiếp theo dùng.",
-            "Báo vùng đã chạm, kiểm xử lý màn hình theo quy trình.",
-            "Tự trộn hóa chất rồi dùng ngay trên màn hình."
+            "Hộp không có nên báo lược đã mất; kiểm vùng màn hình đã chạm và cách xử lý với phụ trách.",
+            "Báo phạm vi tìm lược và vùng màn hình đã chạm; đã thay găng nên nói không cần xử lý màn hình.",
+            "Báo phạm vi tìm lược và vùng màn hình đã chạm; kiểm cách tìm và xử lý màn hình.",
+            "Báo phạm vi tìm và cách tìm lược với phụ trách; để ca sau mới báo đã chạm màn hình."
           ],
           "correctIndex": 2,
           "rationalesVi": [
-            "Sai: Thay găng không xử lý màn hình.",
-            "Sai: Giấu dữ kiện khiến người sau không biết nguy cơ.",
-            "Đúng: Phối hợp theo dữ kiện, chưa tuyên bố khử khuẩn.",
-            "Sai: Không tự chọn/trộn hóa chất."
+            "Sai: Chỉ kiểm một hộp chưa đủ kết luận lược đã mất, dù có kiểm xử lý màn hình.",
+            "Sai: Báo đúng nơi tìm nhưng thay găng không xử lý màn hình đã chạm.",
+            "Đúng: Tách sự thật với kết luận chưa đủ bằng chứng và phối hợp cả hai việc còn chờ.",
+            "Sai: Giữ đúng phạm vi tìm nhưng bỏ dữ kiện màn hình cần báo để phối hợp xử lý."
           ],
           "feedbackAfterAttempt": true,
           "review": {
@@ -1215,7 +1323,8 @@
         "conceptTermLearningMode": "recognition_with_inline_explanation_not_new_memorization_quota",
         "retainedCoverageStatus": "audit_03_partial_mapping_not_equivalent",
         "replacementAuditRef": "reviews/priority-gap-replacement-audit-03.json",
-        "replacementReady": false
+        "replacementReady": false,
+        "appliedRepairRef": "reviews/priority-gap-applied-repair-04.json"
       },
       "responseRubricIds": [
         "kaigo-gap-infection-01-rubric-01",
@@ -1736,6 +1845,13 @@
     "revisionDate": "2026-10-08",
     "auditRef": "reviews/priority-gap-replacement-audit-03.json",
     "scope": "replacement_equivalence_metadata_and_existing_vocabulary_links_only",
+    "replacementReady": false
+  },
+  "editorialAppliedRepair": {
+    "date": "2026-10-08",
+    "baselineRemoteCommit": "20bb09b3726a7ca0242c57f9c5b5776b66281d70",
+    "evidenceRef": "reviews/priority-gap-applied-repair-04.json",
+    "scope": "one_transfer_and_q05_per_target_module; other_content_unchanged",
     "replacementReady": false
   }
 }
