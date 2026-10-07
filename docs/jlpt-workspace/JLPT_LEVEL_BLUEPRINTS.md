@@ -172,3 +172,8 @@ Cân bằng riêng tập câu có 3 và 4 lựa chọn; mỗi vị trí nhận f
 ## Nhịp nghe N4 đã chốt — 07/10/2026
 
 Nhà phát hành đã chọn lịch đề xuất trong phiên tiếp tục N4: sau giới thiệu 2 giây; giữa lượt thoại 0.5 giây; trả lời 問題１/２/３/４ lần lượt 12/12/10/8 giây. Giữ speedScale 0.9 và bốn giọng. Override N4 trong voice-casting.json là cấu hình hiện hành cho N4; ghi chú N4 chưa chốt trước đây là lịch sử. Quyết định này là thiết kế app, không phải xác minh nhịp nguồn hay tolerance thời lượng. Không tự áp cho N3–N1.
+
+
+## Nhịp nghe N3 đã chốt — 07/10/2026
+
+Nhà phát hành đã chọn trực tiếp trong phiên kiểm tra checkpoint: sau giới thiệu 2 giây; giữa lượt thoại 0,5 giây; trả lời 問題１/２/３/４/５ lần lượt 12/12/12/10/8 giây. 問題３ là 概要理解, 問題４ là 発話表現, 問題５ là 即時応答. Giữ bốn giọng, speedScale 0.9, mục tiêu nghe 2400000 ms (40 phút), nhạc không lời đúng 60000 ms sau問題２ trước問題３ và hai thông báo. Đây là nhịp thiết kế app được nhà phát hành chọn, không chứng nhận nhịp nguồn hoặc tolerance. Không tự áp cho N2/N1.

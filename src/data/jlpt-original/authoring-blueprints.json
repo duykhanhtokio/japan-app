@@ -474,6 +474,21 @@
           "maximumPerPosition": 23,
           "extraPositions": 1
         }
+      },
+      "listeningPacing": {
+        "status": "publisher_approved",
+        "approvedAt": "2026-10-07",
+        "afterIntroSeconds": 2,
+        "betweenTurnsSeconds": 0.5,
+        "answerPauseSecondsByProblem": {
+          "1": 12,
+          "2": 12,
+          "3": 12,
+          "4": 10,
+          "5": 8
+        },
+        "scope": "N3 only; explicitly selected by publisher in resumed checkpoint session on 2026-10-07.",
+        "sourceRole": "Independent app pacing; not official source timing certification."
       }
     },
     "n2": {
@@ -803,7 +818,7 @@
     }
   },
   "authoringRulesVersion": 5,
-  "pauseSettingsPolicy": "N5 publisher approved 2s lead-in and 12/12/10/8s answer on 2026-10-06; between-turns .5s. Other levels still require their own verified/confirmed pacing.",
+  "pauseSettingsPolicy": "N5, N4 and N3 have publisher-approved per-level overrides; N2/N1 require their own confirmed pacing.",
   "mandatoryAuthoringDocuments": [
     "docs/jlpt-workspace/JLPT_ORIGINAL_AUTHORING_RULES.md",
     "docs/jlpt-workspace/JLPT_LEVEL_BLUEPRINTS.md"

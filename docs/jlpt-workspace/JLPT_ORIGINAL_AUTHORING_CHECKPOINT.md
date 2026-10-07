@@ -375,3 +375,8 @@ First full1961536ms; added10task-relevant turns in task1items1–5. Final PCM/MP
 PASS content/audio scripts/options/roles/hash/decode, adapter, UI10/10, actual Chromium audio0/pause/resume/music-end boundary/fiveimages and unchanged production-runner/sharedUI harness: select/save, Back/reopen/resume selectedcolor, incomplete submit97, score0/1/97of98, review, no pageerror. Three430x932screenshots inspected. Existing unrelated TS2352 life-content-repository.ts:47 only. No full-router/native/iPhone/perceptual/human/rights/release approval. Fixed initial fifth-image reference and re-encoded optional question1-03 sidecar from cached snapshot, waveform matched against continuous track.
 
 Session jlpt:jpapp:n4:original:06:v1,audio0ms; spoken alternatives/transcripts/internal explanations hidden. After final publish/fetch and WORK PERSISTENCE PASS, N5 01–06+N4 01–06=12/30; nextN3 01. N3 pacing requires its own publisher decision, not silent inheritance of N4. Resume original/n4-06/HANDOFF.md. No legacy removal before full replacement gate.
+
+
+## 2026-10-07 — N4 06 local completion; N3 pacing decision
+
+N4 06 complete-content and adapter validators PASS, UI lock10/10. Completion commit remains local: automatic approval review rejected GitHub push for lack of explicit payload/destination sharing confirmation. No WORK PERSISTENCE PASS and no durable12/30 claim. Preserve the complete N4 work; obtain requested push confirmation before progressing to N3 content. Publisher directly selected N3 2/.5s and answer12/12/12/10/8s; synchronized both mandatory guides, casting and machine blueprint. N3 content/audio not authored by this checkpoint session.
