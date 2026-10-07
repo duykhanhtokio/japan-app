@@ -6,7 +6,7 @@ type OriginalQuestion = {
   group: number; number: number; prompt: string;
   options: { id: TrialOption['id']; text: string }[];
   correctOptionId: TrialOption['id']; passageId?: string;
-  ordering?: { prefix: string; suffix: string; starSlot: number; solutionOptionIds: string[]; completedSentence: string }; 
+  ordering?: { prefix: string; suffix: string; starSlot: number; solutionOptionIds: string[]; completedSentence: string };
 };
 type OriginalMaster = {
   examId: string; runtimeIntegrated: boolean; questions: OriginalQuestion[];
