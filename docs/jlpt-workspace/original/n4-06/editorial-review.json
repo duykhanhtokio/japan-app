@@ -1,5 +1,5 @@
 {
-  "status": "AI_editorial_review_draft",
+  "status": "AI_editorial_review_complete_pending_human",
   "scope": "All 98 independently authored items reviewed for intended key and distractor evidence; not native or publisher approval",
   "reviewedResponses": 98,
   "orderingReview": "Five completed sentences reconstructed; ambiguous movable adverbial and comparison distractors revised before audio snapshot",
@@ -19,13 +19,18 @@
   "listening": "Each task has explicit action/reason/decision evidence; actor and answer voice roles explicit. Problem 2 item 5 includes spoken agreement, no narrated fictional reported reply.",
   "illustrations": "Five actual imagegen outputs inspected: bag, open window, box/stairs, returned book, found glove. No text or answer caption.",
   "remaining": [
-    "Complete and decode audio, measure near 35-minute target",
-    "Verify original rest PCM exact 60000ms",
-    "Integrate only after full audio",
-    "Run browser harness and inspect screenshots"
+    "Native/publisher/perceptual/rights-release review; not an authoring/integration gate"
   ],
   "publisherReviewed": false,
   "nativeReviewed": false,
   "perceptualApproval": false,
-  "releaseReady": false
+  "releaseReady": false,
+  "knownIntegrationIssueFixed": "Initial adapter reuse replaced suffix 05 too broadly, producing missing fifth image path. Scoped ID/path substitutions restore slot305 to problem-3-05.png before integration; harness build now passes.",
+  "finalChanges": [
+    "Three written prompt clarifications, including duplicate sentence replacement",
+    "Four usage distractor groups refined, key positions unchanged",
+    "Ten task-relevant turns added in five next-action scenarios",
+    "Fifth image reference corrected before integration",
+    "Question1-03 optional MP3 rebuilt from exact cache and waveform matched against continuous recording"
+  ]
 }

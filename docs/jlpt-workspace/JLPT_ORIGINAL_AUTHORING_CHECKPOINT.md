@@ -364,3 +364,14 @@ Independent session jlpt:jpapp:n4:original:05:v1, audio0ms, spoken choices/trans
 ## 2026-10-07 — N4 06 independent content draft
 
 Resumed remote N4 05 commit88b39996. Independently authored98responses (70written+28listening),8passages,4unscored examples and5actual imagegen illustrations inspected. AI revised movable ordering fragments, comparison distractor and explicit appointment agreement. Draft structural validator PASS; pools21/21/22/21 and4/4/5, no triples/short cycles. No legacy content used. Four approved voices,.9speed,N4 2/.5s and12/12/10/8s unchanged. Full recording/duration/integration/browser checks pending. Human/native/perceptual/rights/release flagsfalse. Completed integrated remains11/30; resume original/n4-06/HANDOFF.md.
+
+
+## 2026-10-07 — N4 06 technically completed and integrated
+
+Completed98independent responses,8passages,4unscored examples,5imagegen illustrations inspected. AI clarified three written prompts, four usage groups, five constrained ordering solutions and explicit appointment agreement; keys remain pools21/21/22/21 and4/4/5, no triples/short cycles. No legacy content read/reused.
+
+First full1961536ms; added10task-relevant turns in task1items1–5. Final PCM/MP3decode2086312ms=34:46.312, nominal−13688ms, approximately35minute judgment without fixed tolerance. New procedural instrumental60000ms/1440000frames afterproblem2 beforeproblem3, both announcements. Four approved voices,.9speed,N4 2/.5s,12/12/10/8s unchanged. No silence padding.
+
+PASS content/audio scripts/options/roles/hash/decode, adapter, UI10/10, actual Chromium audio0/pause/resume/music-end boundary/fiveimages and unchanged production-runner/sharedUI harness: select/save, Back/reopen/resume selectedcolor, incomplete submit97, score0/1/97of98, review, no pageerror. Three430x932screenshots inspected. Existing unrelated TS2352 life-content-repository.ts:47 only. No full-router/native/iPhone/perceptual/human/rights/release approval. Fixed initial fifth-image reference and re-encoded optional question1-03 sidecar from cached snapshot, waveform matched against continuous track.
+
+Session jlpt:jpapp:n4:original:06:v1,audio0ms; spoken alternatives/transcripts/internal explanations hidden. After final publish/fetch and WORK PERSISTENCE PASS, N5 01–06+N4 01–06=12/30; nextN3 01. N3 pacing requires its own publisher decision, not silent inheritance of N4. Resume original/n4-06/HANDOFF.md. No legacy removal before full replacement gate.

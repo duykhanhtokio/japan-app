@@ -29,7 +29,7 @@ export const N4_ORIGINAL_06_VISUALS: Readonly<Record<number, ImageSourcePropType
   302: require('../../../../../assets/jlpt-original/n4/06/images/problem-3-02.png'),
   303: require('../../../../../assets/jlpt-original/n4/06/images/problem-3-03.png'),
   304: require('../../../../../assets/jlpt-original/n4/06/images/problem-3-04.png'),
-  306: require('../../../../../assets/jlpt-original/n4/06/images/problem-3-06.png'),
+  305: require('../../../../../assets/jlpt-original/n4/06/images/problem-3-05.png'),
 };
 
 export const N4_ORIGINAL_06_TRIAL: readonly TrialQuestion[] = master.questions.map(q => {
