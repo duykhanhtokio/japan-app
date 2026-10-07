@@ -238,3 +238,27 @@ Ten original portrait illustrations follow established detailed semi-realistic a
 Actual RoyalLocationCard + placeBackground fixture passed 10 Utsunomiya/Nikko cards at 390×844, 430×932, 768×1024, 1024×768 and 1366×768: images decode, scene dimensions match clipped windows, no browser errors. Phone and landscape-tablet screenshots inspected; no stretching/blank bands, defining scene features visible despite permitted edge crops. Japanese fixture font absent, so typography is not validated. Native/full-app route validation remains pending. Routing/NPC checks pass all 7,112 locations; approved JLPT UI byte lock remains 10/10.
 
 Final zoo artwork revised after actual card inspection cropped its head: zoomed out and moved the whole giraffe head to central vertical range. Rebuilt/reran the same 10-card, 5-viewport fixture; pass. Final phone screenshot confirms face/ears/ossicones visible. Prior generated asset backed up; only revised PNG activated.
+
+## Maebashi CTY-010 / Shibukawa / Takasaki — 2026-10-07
+
+Reviewed all original 21 Maebashi rows. Maebashi retains 19 locations: seven exact-place illustrations and 12 permitted shared-service interiors. Both moved venues also receive exact-place artwork. Moved LOC-010-10 伊香保神社 to CTY-GNM-SHIBUKAWA (伊香保町伊香保2), and LOC-010-17 群馬県立歴史博物館 to CTY-GNM-TAKASAKI (綿貫町992-1). IDs preserved; canonical city membership, scenarios and scenario-index synchronized. These moves do not finish all locations in destination cities.
+
+| ID | Correct place / city | Asset | Primary reference |
+| --- | --- | --- | --- |
+| LOC-010-08 | 敷島公園門倉テクノばら園 / CTY-010 | maebashi-shikishima-rose.png | https://www.maebashi-cvb.com/spot/1004 |
+| LOC-010-09 | アーツ前橋 / CTY-010 | maebashi-arts-museum.png | https://www.maebashi-cvb.com/spot/1013 |
+| LOC-010-10 | 伊香保神社 / CTY-GNM-SHIBUKAWA | shibukawa-ikaho-shrine.png | https://www.ikaho-kankou.com/sightseeing/ikaho/ |
+| LOC-010-13 | けやきウォーク前橋 / CTY-010 | maebashi-keyaki-walk.png | https://walk-uny.com/keyaki-walk/about/ |
+| LOC-010-15 | スノーピークランドステーション赤城 / CTY-010 | maebashi-akagi-landstation.png | https://www.snowpeak.co.jp/landstation/akagi/ |
+| LOC-010-16 | 前橋中央通り商店街 / CTY-010 | maebashi-chuo-arcade.png | https://www.maebashi-cvb.com/spot/8951 |
+| LOC-010-17 | 群馬県立歴史博物館 / CTY-GNM-TAKASAKI | takasaki-gunma-history-museum.png | https://gunma-kanko.jp/spots/1273 |
+
+Replaced corrupt rose-garden label with verified 敷島公園門倉テクノばら園 at 敷島町262, not 前橋公園. Replaced unidentified 群馬理科大学穏綀博物館 with verified アーツ前橋 at 千代田町5-1-16, and unidentified ケイヨースーパー前橋店 with けやきウォーク前橋 at 文京町2-1-1. These are explicit venue replacements, not claims the old names were valid. Updated scenario mentions. Corrected Keyaki Walk role from supermarket to Shopping / Shop Staff. Identified central covered arcade as 前橋中央通り商店街.
+
+Updated former 赤城山訪問者センター to スノーピークランドステーション赤城 at 富士見町赤城山33-1: operator announcement https://www.snowpeak.co.jp/news/p20260917/ and tourism https://www.maebashi-cvb.com/spot/8967 confirm opening 2026-09-19. Geometry reference for this new center is the official architectural rendering, not an as-built photo; artwork preserves that design without asserting exact current landscaping or signage. Other six non-station venue illustrations use actual official local reference photographs: rose arch/statuettes, curved perforated museum facade, modest Ikaho shrine, Keyaki Walk atrium, flat-grid covered arcade, and asymmetrical glass museum. All final PNGs inspected locally. No dialogue, mic, blur or layout changes.
+
+Actual RoyalLocationCard + placeBackground fixture passed all nine cards at five viewports (390×844, 430×932, 768×1024, 1024×768, 1366×768); phone and landscape tablet screenshots inspected. All images decode, scene bounds match clipped windows, no browser errors or stretching/blank bands. Fixture Japanese font is absent; typography and native/full-app routes remain unvalidated. Routing/NPC checks pass all 7,112 locations; approved JLPT UI byte lock 10/10. Global audit remains incomplete and --require-complete must fail until all pending geography reviews are resolved.
+
+Station illustrations: LOC-010-01 maebashi-station-north.png uses actual north entrance louvres/cross braces and semicircular ground-floor arches; LOC-010-18 maebashi-shin-station-east.png preserves the distinctive triangular glass east-entrance roof and clock. Both are in Maebashi, with JR East station pages 1417 / 881 verifying identity/address. Architectural reference photographs by Mister0124 (own work, 2021): https://commons.wikimedia.org/wiki/File:JR_Ryomo_Line_Maebashi_Station_North_Exit.jpg and https://commons.wikimedia.org/wiki/File:JR_Joetsu_Line・Ryomo_Line_Shim-Maebashi_Station_East_Exit.jpg. New painted portrait compositions derived for app use. These two station PNGs are distributed under CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/), credit Mister0124 / Wikimedia Commons; generated painted adaptation and reframing by Japan App. Reference photos themselves are not shipped.
+
+After Maebashi integration: 100 exact-place IDs, 4,670 shared-service-permitted, 2,342 pending individual geography reviews across 814 cities / 7,112 locations. Nine-card fixture rerun at all five viewports passed; final phone/tablet images inspected with station roofs and identifying facades visible. Native/full-app route testing remains pending.

@@ -3,6 +3,15 @@ import metadataJson from '@/data/location-place-artwork.json';
 
 const metadata = metadataJson as Record<string, { category: string }>;
 const artwork: Record<string, ImageSourcePropType> = {
+  'LOC-010-18': require('../../../assets/app/life/location-backgrounds/places/maebashi-shin-station-east.png'),
+  'LOC-010-01': require('../../../assets/app/life/location-backgrounds/places/maebashi-station-north.png'),
+  'LOC-010-17': require('../../../assets/app/life/location-backgrounds/places/takasaki-gunma-history-museum.png'),
+  'LOC-010-16': require('../../../assets/app/life/location-backgrounds/places/maebashi-chuo-arcade.png'),
+  'LOC-010-15': require('../../../assets/app/life/location-backgrounds/places/maebashi-akagi-landstation.png'),
+  'LOC-010-13': require('../../../assets/app/life/location-backgrounds/places/maebashi-keyaki-walk.png'),
+  'LOC-010-10': require('../../../assets/app/life/location-backgrounds/places/shibukawa-ikaho-shrine.png'),
+  'LOC-010-09': require('../../../assets/app/life/location-backgrounds/places/maebashi-arts-museum.png'),
+  'LOC-010-08': require('../../../assets/app/life/location-backgrounds/places/maebashi-shikishima-rose.png'),
   'LOC-008-01': require('../../../assets/app/life/location-backgrounds/places/mito-station-hitachi.png'),
   'LOC-008-18': require('../../../assets/app/life/location-backgrounds/places/mito-kairakuen-seasonal-station.png'),
   'LOC-008-08': require('../../../assets/app/life/location-backgrounds/places/mito-kairakuen-kobuntei.png'),
