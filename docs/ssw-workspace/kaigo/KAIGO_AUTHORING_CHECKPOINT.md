@@ -77,3 +77,11 @@ Soạn trọn7 bài: hỏi vị trí khó chịu; báo tư thế đã quan sát;
 Giới hạn: chỉ giao tiếp và báo cáo,không chẩn đoán/thuốc/thao tác đổi tư thế/triage. Khẩn cấp không theo kịch bản hỏi dài mà gọi hỗ trợ theo cơ sở. Toàn cụm chờ domain/native/rights review; chưa hình/audio/runtime;210phút dự kiến,chưa đo. Tổng21 bài,69 câu ôn,không phải đề đầy đủ.
 
 Sau lưu bền: tuần3 có7 bản thảo di chuyển và31 rubric từ trước; rà hoàn thiện hồ sơ toàn tuần3 theo mức cụm tuần1–2 trước tuần4. Không làm lại hội thoại đã lưu. Sau đó soạn trọn tuần4 ăn uống theo nguồn và giới hạn nuốt/an toàn.
+
+## Cụm tuần3 — hoàn thiện hồ sơ toàn tuần
+
+Giữ7 hội thoại đã có (ngày15–21),62 lượt,7 bài đọc,27 câu hỏi và31rubric. Bổ sung14cách nói,liên kết từ chủ động và từ nhận biết,tái sử dụng ID kho từ nền tảng. Kho movement24mục:16cách đọc đã kiểm hình nguồn từ trước,8từ giao tiếp mới chỉ AI rà. Thuật ngữ dụng cụ/tư thế chỉ nhận biết,không là dạy thao tác. Lịch210phút dự kiến,chưa đo.
+
+week-03-manifest.json và scripts/check-kaigo-week3-draft.mjs kiểm toàn cụm,liên kết rubric,NPC,từ,ngày,đáp án/giải thích,trùng lời giữa các tuần và trạng thái kiểm duyệt. Nguồn đã đọc lại trang115/PDF117,118/PDF120,120/PDF122,129/PDF131,208/PDF210. Không đổi hội thoại để đạt số lượng.
+
+Tổng3cụm tuần được tổ chức đầy đủ ở mức bản thảo biên tập;21bài,69câu ôn.Không có assets/runtime hoặc đề đầy đủ.Mọi domain/native/rights/release gate còn chờ. Điểm tiếp theo sau lưu bền: soạn trọn tuần4 ăn uống (ngày22–28) sau đọc nguồn,đặc biệt giới hạn kiến thức nuốt/an toàn.Ngôn ngữ/chấm điểm/furigana/resume đề vẫn chưa chốt.
