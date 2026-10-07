@@ -332,3 +332,8 @@ PCM/decoded MP3 **2090321ms=34:50.321**, nominal delta−9679ms; approximate35mi
 PASS structure, audio script/options/roles/hash/decode, adapter, UI10/10, real Chromium playback from0/pause/resume/automaticmusicboundary/5images and unmodified production runner/sharedUI RN-web harness: select/save, Back/reopen/resume with selectedcolor, incomplete submit97, score0/1/97of98, review, no pageerror. Three430x932screenshots inspected. Existing unrelated TS2352 life-content-repository.ts:47 persists; no JLPTdiagnostic. No native/iPhone/full-router/perceptual/human/rights/release approval.
 
 Independent key jlpt:jpapp:n4:original:03:v1, audio0ms, spoken choices/transcripts hidden. After publish/fetch and WORK PERSISTENCE PASS, N5 01–06+N4 01–03=9/30; nextN4 04. Resume original/n4-03/HANDOFF.md; do not regenerate from initial scratch scripts. No legacy removal before full replacement gate.
+
+
+## 2026-10-07 — N4 04 independent draft checkpoint
+
+Authored98responses (70written+28listening),8passages,4new unscored examples,5imagegen illustrations inspected. Corrected vocabulary infinitive chain and ordering2/3/5 to constrain dependencies. Draft validator PASS counts/keys/reconstruction, pools22/21/21/21 and5/4/4, no triples/short cycles; differs from previous9original patterns. No legacy content used. N4 four approved voices,.9,2/.5s,12/12/10/8s unchanged; independent35minute content budget and new exact60s musical score. Audio synthesis started locally, duration/runtime still pending; no human/native/perceptual/rights/release approval. Completed integrated9/30. Resume original/n4-04/HANDOFF.md; never rerun initial scratch scripts.
