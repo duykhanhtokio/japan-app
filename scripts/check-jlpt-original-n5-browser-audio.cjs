@@ -7,9 +7,10 @@ const { chromium } = require(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES
   ? path.join(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES, 'playwright') : 'playwright');
 const root = path.resolve(__dirname, '..');
 const number = process.argv[2] || '01';
+const level=process.argv[3] || 'n5'; assert.ok(['n5','n4'].includes(level));
 assert.ok(/^(0[1-6])$/.test(number), 'Expected N5 exam number 01–06');
-const manifest = JSON.parse(fs.readFileSync(path.join(root, `src/data/jlpt-original/n5/${number}/audio.manifest.json`)));
-const images = JSON.parse(fs.readFileSync(path.join(root, `src/data/jlpt-original/n5/${number}/images.manifest.json`)));
+const manifest = JSON.parse(fs.readFileSync(path.join(root, `src/data/jlpt-original/${level}/${number}/audio.manifest.json`)));
+const images = JSON.parse(fs.readFileSync(path.join(root, `src/data/jlpt-original/${level}/${number}/images.manifest.json`)));
 const paths = new Map([['/audio', manifest.continuousAudioPath], ...images.items.map((x, i) => [`/image-${i}`, x.path])]);
 const server = http.createServer((req, res) => {
   if (req.url === '/') {

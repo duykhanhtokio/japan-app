@@ -4,16 +4,18 @@ import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 const number = process.argv[2] || '01';
+const level=process.argv[3] || 'n5'; assert.ok(['n5','n4'].includes(level));
+const expectedCount=level==='n4'?28:24;
 assert.match(number, /^0[1-6]$/);
 const root = new URL('../', import.meta.url);
 const read = p => JSON.parse(readFileSync(new URL(p, root)));
 const sha = p => createHash('sha256').update(readFileSync(new URL(p, root))).digest('hex');
-const base = `src/data/jlpt-original/n5/${number}/`;
+const base = `src/data/jlpt-original/${level}/${number}/`;
 const exam = read(base + 'master.ja.json');
 const audio = read(base + 'audio.manifest.json');
 const org = read(base + 'listening-organization.ja.json');
 const casting = read('src/data/jlpt-original/voice-casting.json');
-const settings = {...casting.settings, ...casting.levelPacing.n5}; delete settings.answerPauseSeconds;
+const settings = {...casting.settings, ...casting.levelPacing[level]}; delete settings.answerPauseSeconds;
 assert.deepEqual(audio.settings, settings);
 assert.equal(audio.masterSha256, sha(base + 'master.ja.json'));
 assert.equal(audio.organizationSha256, sha(base + 'listening-organization.ja.json'));
@@ -38,7 +40,7 @@ for (const item of audio.items) {
  previousEnd = item.endMs;
  assert.equal(item.playbackReviewed, false);
 }
-assert.equal(audio.items.length, 24);
+assert.equal(audio.items.length, expectedCount);
 assert.equal(Math.round(frames(audio.continuousAudioPath)/24), audio.durationMs);
 assert.equal(frames(audio.break.path), 1440000);
 assert.equal(audio.break.musicDurationMs,60000);
@@ -65,4 +67,4 @@ for (const group of org.groups) {
 }
 for (const flag of ['publisherReviewed','nativeReviewCompleted','perceptualApproval','rightsReleaseReviewCompleted']) assert.equal(audio[flag],false);
 assert.equal(exam.releaseReady,false);
-console.log(`N5 ${number} AUDIO PASS: 24 decoded recordings, scripts/spoken choices, four ungraded examples, complete track ${audio.durationMs}ms and exact 60000ms music. No perceptual/native/release claim.`);
+console.log(`${level.toUpperCase()} ${number} AUDIO PASS: ${expectedCount} decoded recordings, scripts/spoken choices, four ungraded examples, complete track ${audio.durationMs}ms and exact 60000ms music. No perceptual/native/release claim.`);

@@ -5,8 +5,9 @@ const path='src/data/jlpt-original/n4/01/master.ja.json';
 const bytes=fs.readFileSync(path),m=JSON.parse(bytes);
 const blueprint=JSON.parse(fs.readFileSync('src/data/jlpt-original/authoring-blueprints.json')).levels.n4;
 assert.equal(m.questions.length,98);
-assert.equal(m.runtimeIntegrated,false);
-assert.equal(m.authoringComplete,false);
+const complete=process.argv.includes('--complete');
+assert.equal(m.runtimeIntegrated,complete);
+assert.equal(m.authoringComplete,complete);
 for(const field of ['publisherReviewed','reviewedByNativeSpeaker','releaseReady'])assert.equal(m[field],false);
 assert.equal(new Set(m.questions.map(q=>q.id)).size,98);
 for(const g of blueprint.groups){
@@ -31,7 +32,7 @@ for(const g of blueprint.groups){
    assert.ok(q.listening&&Array.isArray(q.listening.turns));
    const roles=['femaleStudent','adultFemale','youngMale','adultMale'];
    q.listening.turns.forEach(t=>assert.ok(roles.includes(t.role)&&t.text));
-   if(g.problem===3)assert.ok(q.visualBrief&&q.illustrationStatus==='not_generated');
+   if(g.problem===3)assert.ok(q.visualBrief&&['not_generated','generated_ai_unreviewed'].includes(q.illustrationStatus));
   }
  });
 }
@@ -53,7 +54,9 @@ for(const period of [2,3,4])for(let i=0;i<=keys.length-3*period;i++){
  const a=keys.slice(i,i+period).join(',');
  assert.ok(!(a===keys.slice(i+period,i+2*period).join(',')&&a===keys.slice(i+2*period,i+3*period).join(',')),`cycle ${i}/${period}`);
 }
-assert.equal(m.audio.actualDurationVerified,false);assert.equal(m.audio.pacingStatus,'awaiting_N4_specific_confirmation');
-const report={status:'PASS_draft_structure_only',examId:m.examId,masterSha256:crypto.createHash('sha256').update(bytes).digest('hex'),writtenResponses:70,listeningScriptResponses:28,passages:Object.keys(m.passages).length,answerPositionPools:pools,ordering:'Stored solution reconstruction and star alignment checked; grammatical uniqueness needs editorial review, not certified by this validator.',audioGenerated:false,illustrationsGenerated:false,runtimeIntegrated:false,publisherReviewed:false,reviewedByNativeSpeaker:false,releaseReady:false};
+assert.equal(m.audio.actualDurationVerified,complete);assert.equal(m.audio.pacingStatus,'publisher_approved_n4');
+const images=JSON.parse(fs.readFileSync('src/data/jlpt-original/n4/01/images.manifest.json'));assert.equal(images.items.length,5);
+for(const image of images.items)assert.equal(crypto.createHash('sha256').update(fs.readFileSync(image.path)).digest('hex'),image.sha256);
+const report={status:complete?'PASS_integrated_content_structure':'PASS_draft_structure_only',examId:m.examId,masterSha256:crypto.createHash('sha256').update(bytes).digest('hex'),writtenResponses:70,listeningScriptResponses:28,passages:Object.keys(m.passages).length,answerPositionPools:pools,ordering:'Stored solution reconstruction and star alignment checked; grammatical uniqueness needs editorial review, not certified by this validator.',audioGenerated:complete,illustrationsGenerated:true,runtimeIntegrated:complete,publisherReviewed:false,reviewedByNativeSpeaker:false,releaseReady:false};
 if(process.argv.includes('--write-report'))fs.writeFileSync('docs/jlpt-workspace/original/n4-01/draft-validation.json',JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report,null,2));

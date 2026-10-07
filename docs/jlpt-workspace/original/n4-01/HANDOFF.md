@@ -1,22 +1,17 @@
-# N4 01 — independent content draft
+# N4 01 — technically integrated, human review pending
 
-98 scored responses authored: vocabulary 35, grammar/reading 35, listening scripts 28. Eight original passages, per-option rationales, five ordering solutions and five illustration briefs are in the master. Source content is AI-created and unreviewed; only approved structural metadata and public official timing/type metadata were consulted. No legacy questions, answer keys, passages, scripts, recordings or pictures were authoring inputs.
+98 independent scored responses: vocabulary35, grammar/reading35, listening28. Eight passages, five new imagegen illustrations, four original unscored examples, per-option rationales and ordering solutions. No legacy question/script/answer/image/audio content used. AI editorial corrections and limitations: EDITORIAL_REVIEW.md.
 
-Draft checker validates counts by type, stable independent IDs, option keys/rationales, passage links, stored ordering reconstruction/star alignment, balanced answer positions per choice pool and section, and absence of triples/periods 2–4 repeated three times. It does not prove linguistic uniqueness, native proficiency or perceptual quality. AI editorial pass corrected an ambiguous ability question, chronology distractors and the first ordering chain before saving.
+Publisher explicitly chose N4 timing2/.5s and answer12/12/10/8s, plus independent app organization of one example per type, question before/after dialogue in1–2 with printed alternatives, spoken alternatives in3–4, no dialogue replay. This is an app design approval, not independent verification of N4 reference organization. Voice roles/engine .9/mono24kHz unchanged.
 
-No runtime registration or UI change. N5 01–06 remain the six technically integrated exams; this draft does not increase the completed 6/30 count.
+First complete recording2192679ms. Removed repeated closing confirmations and orientation content; final PCM/MP3 decoded **2113752ms =35:13.752**, +13752ms from nominal. AI editorial assessment approximately35 minutes, no fixed tolerance invented. New instrumental music decodes to exactly1440000frames/60000ms, with announcements immediately after problem2 and before all problem3 orientation. No speed/pause changes, repeated dialogue or silent padding to consume time.
 
-Next actions in order:
+PASS: per-type counts, stable keys, rationale/passage/ordering links, pools21/21/21/22 and5/4/4, per-section balance, no triples/short cycles, scripts/spoken choices/roles/hash/decode, adapter, UI lock10/10, actual Chromium asset playback and isolated unmodified production-runner/shared-UI QA. All three430x932 screenshots inspected. Runner selected/saved, Back/reopened/resumed with selection color, submitted incompletely, scored0/1/97 of98 and entered review; no pageerror. Evidence runtime-2026-10-07/. No full-router/native/iPhone/perceptual approval. Existing full TS2352 is recorded. Shared audio checker compatibility against N5 06 is checked separately.
 
-1. Review/expand N4 listening scripts against an independent 35-minute budget; current scripts are a content skeleton, not a full-duration recording.
-2. Author new opening, sound check, verified organization, unscored examples and closing. Do not infer N4 organization from N5 or read legacy content.
-3. Resolve N4-specific pacing: the suggested 2s lead-in/.5s turn gaps/12,12,10,8s answer schedule remains unconfirmed. Never copy N5 approval into N4.
-4. Generate five actual raster scenes with imagegen and inspect them; briefs are not image assets. Add independent example assets if the verified organization needs them.
-5. Use selected four VOICEVOX roles at speed .9/24kHz mono; synthesize new instrumental break exactly 60000ms after problem 2 before any problem 3 instruction. Include announcements/music within nominal 2100000ms target; do not pad silence or repeat dialogue to fill time.
-6. Measure/decode full audio, integrate via data/adapter without changing locked UI, perform technical browser/runner checks, persist and then proceed to N4 02.
+Registry/session jlpt:jpapp:n4:original:01:v1 and listening start0ms; spoken alternatives and transcripts stay hidden. UI, old exams and other app content preserved. Publisher/native/perceptual/rights/release flags false.
 
-Publisher/native/perceptual/rights/release approvals remain pending. No native/iPhone, audio playback or final duration claim exists for N4 01.
-
-Official metadata checked 2026-10-07: https://www.jlpt.jp/e/guideline/testsections.html (N4 25/55/35 minutes; types only). Detailed source PDFs/audio were not opened.
+After publish/fetch and WORK PERSISTENCE PASS, technically integrated count becomes N5 01–06 plus N4 01 =7/30. Next: N4 02, with the newly approved N4 pacing/app organization and rotation of surplus answer positions. No draft-review gate.
 
 Concurrent-session reconciliation: retained this98-response master from7199c587 unchanged. An independently authored/editorially checked70-written-response alternative is preserved under alternative-written-draft/; do not combine or substitute without fresh whole-exam review/balance checks. Detailed proposed N4-only pacing and required confirmation quote: N4_PACING_PROPOSAL.md.
+
+Transport: continuous MP3 exported directly from cached PCM at40kbps/24kHz mono to fit connector16MiB body limit; individual questions remain96kbps. No speed/pause/script/duration change. Encoding technical playback rechecked; no perceptual-quality approval.

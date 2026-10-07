@@ -168,3 +168,7 @@ Cân bằng riêng tập câu có 3 và 4 lựa chọn; mỗi vị trí nhận f
 ## Nhịp nghe N5 đã được nhà phát hành chốt — 06/10/2026 21:10 JST
 
 Áp dụng cho N5: 2 giây sau lời mở đầu mỗi câu; giữa lượt thoại giữ 0.5 giây; trả lời sau 問題１/２/３/４ lần lượt 12/12/10/8 giây. Bốn giọng và speedScale 0.9 giữ nguyên. Đây là quyết định thiết kế app từ bảng nhịp đã trình, không phải xác nhận bản nghe nguồn bởi con người. Cấu hình thử 1.2/.5/5 giây được giữ làm lịch sử/default cho cấp chưa có nhịp chốt; N5 dùng override `voice-casting.json.levelPacing.n5`. Không áp tự động lịch N5 cho N4–N1. Khoảng chấp nhận thời lượng tổng vẫn chưa có tolerance cố định; phải đo và báo thời lượng thật.
+
+## Nhịp nghe N4 đã chốt — 07/10/2026
+
+Nhà phát hành đã chọn lịch đề xuất trong phiên tiếp tục N4: sau giới thiệu 2 giây; giữa lượt thoại 0.5 giây; trả lời 問題１/２/３/４ lần lượt 12/12/10/8 giây. Giữ speedScale 0.9 và bốn giọng. Override N4 trong voice-casting.json là cấu hình hiện hành cho N4; ghi chú N4 chưa chốt trước đây là lịch sử. Quyết định này là thiết kế app, không phải xác minh nhịp nguồn hay tolerance thời lượng. Không tự áp cho N3–N1.
