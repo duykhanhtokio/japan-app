@@ -551,6 +551,834 @@
         ],
         "runtimeImplemented": false
       }
+    },
+    {
+      "id": "kaigo-foundation-04",
+      "curriculumDay": 4,
+      "titleVi": "Riêng tư, bảo mật",
+      "npcId": "kaigo-npc-resident-a",
+      "playerRoleVi": "Nhân viên chăm sóc Tanaka",
+      "contextVi": "Bác muốn nói chuyện gia đình trong phòng, không cần nêu chi tiết nội dung riêng tư.",
+      "knowledgeVi": [
+        "Không hỏi nội dung riêng tư tại nơi người khác nghe được.",
+        "Không suy rằng người nhà được phép nhận mọi thông tin. Bài này là tình huống trao đổi thường, không mô tả ngoại lệ pháp lý/khẩn cấp."
+      ],
+      "sourceRefs": [
+        {
+          "filename": "介護ー特定技能ーベトナム語.pdf",
+          "edition": "March 2025 second revision",
+          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+          "pages": [
+            {
+              "printed": 16,
+              "pdf": 18
+            },
+            {
+              "printed": 104,
+              "pdf": 106
+            },
+            {
+              "printed": 105,
+              "pdf": 107
+            },
+            {
+              "printed": 10,
+              "pdf": 12
+            }
+          ],
+          "verification": "text layer and printed labels checked; no full visual certification"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-foundation-02",
+        "kaigo-vocab-foundation-06",
+        "kaigo-vocab-foundation-11"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "家族のことで相談したいのですが、廊下では話したくありません。",
+          "meaningVi": "Tôi muốn trao đổi chuyện gia đình nhưng không muốn nói ở hành lang."
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "ここでは詳しいことを伺いません。お部屋でお話ししてもよろしいですか。",
+          "meaningVi": "Tôi sẽ không hỏi chi tiết ở đây. Mình nói trong phòng bác được không?"
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "はい。娘にも、今は知らせないでください。",
+          "meaningVi": "Được. Bây giờ cũng đừng báo cho con gái tôi."
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "今は娘さんに伝えたくないのですね。まず、ご希望を伺います。",
+          "meaningVi": "Bây giờ bác chưa muốn báo con gái đúng không. Trước hết tôi sẽ nghe mong muốn của bác."
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "相談に必要なら、担当の職員には伝えてもいいです。",
+          "meaningVi": "Nếu cần cho việc trao đổi thì có thể báo nhân viên phụ trách."
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "担当職員に伝える必要が出たら、どの内容を共有するか、先に一緒に確認しましょう。",
+          "meaningVi": "Nếu cần báo nhân viên phụ trách, mình cùng xác nhận trước nội dung sẽ chia sẻ nhé."
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "それなら安心です。部屋で話します。",
+          "meaningVi": "Như vậy tôi yên tâm. Tôi sẽ nói trong phòng."
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "では、お部屋で伺います。廊下で内容が聞こえないようにしましょう。",
+          "meaningVi": "Vậy tôi nghe bác trong phòng. Mình tránh để người ở hành lang nghe nội dung nhé."
+        }
+      ],
+      "reading": {
+        "textJa": "森川さんは家族について相談したいと話されました。廊下で詳しい内容は聞かず、お部屋で話すことを確認しました。娘さんへの連絡は今は希望されていません。担当職員への共有が必要な場合は、共有内容を先に本人と確認します。",
+        "meaningVi": "Bác Morikawa muốn trao đổi chuyện gia đình. Đã thống nhất nói trong phòng, không hỏi chi tiết ở hành lang. Hiện bác không muốn liên lạc con gái. Nếu cần chia sẻ với nhân viên phụ trách, xác nhận trước nội dung với bác."
+      },
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "questions": [
+        {
+          "id": "kaigo-foundation-04-q01",
+          "promptJa": "どこで詳しい話を聞きますか。",
+          "optionsJa": [
+            "廊下",
+            "本人の部屋",
+            "食堂の入口",
+            "人の多い受付"
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: bác không muốn nói ở hành lang.",
+            "Đúng: nơi đã thống nhất là phòng bác.",
+            "Sai: chưa thống nhất nơi này.",
+            "Sai: có người khác nghe được."
+          ]
+        },
+        {
+          "id": "kaigo-foundation-04-q02",
+          "promptJa": "娘さんへの連絡について、今の希望はどれですか。",
+          "optionsJa": [
+            "すぐ連絡する",
+            "SNSで知らせる",
+            "今は知らせない",
+            "ほかの家族に任せる"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: trái mong muốn hiện tại.",
+            "Sai: không có phép đăng mạng.",
+            "Đúng: bác chưa muốn báo con gái.",
+            "Sai: không có yêu cầu này."
+          ]
+        },
+        {
+          "id": "kaigo-foundation-04-q03",
+          "promptJa": "担当職員への共有が必要になったらどうしますか。",
+          "optionsJa": [
+            "先に共有内容を本人と確認する",
+            "相談の全内容を全員に送る",
+            "廊下で大声で説明する",
+            "本人への確認は省く"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: đúng cách đã thống nhất.",
+            "Sai: vượt phạm vi trao đổi.",
+            "Sai: lộ chuyện riêng.",
+            "Sai: bỏ bước đã hứa."
+          ]
+        }
+      ],
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "durationMeasured": false,
+        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
+        "plannedActivitiesVi": [
+          "5 phút nhắc lại bài trước",
+          "5 phút nguyên tắc",
+          "5 phút từ/cách nói",
+          "10 phút đọc vai, nói lại, sửa ý thiếu",
+          "5 phút bài đọc và kiểm tra"
+        ]
+      },
+      "responsePolicy": {
+        "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
+        "fallbackJa": "確認したいことを、もう一度教えていただけますか。",
+        "unsafeVi": [
+          "Ép thực hiện điều đã từ chối",
+          "Chia sẻ quá phạm vi đã đồng ý",
+          "Bịa dữ kiện chưa được xác nhận"
+        ],
+        "runtimeImplemented": false
+      },
+      "responseTargetsVi": [
+        {
+          "playerTurn": 2,
+          "meaningTargetVi": "Tôi sẽ không hỏi chi tiết ở đây. Mình nói trong phòng bác được không?",
+          "hintJa": "ここでは詳しいことを伺いません。お部屋でお話ししてもよろしいですか。",
+          "policy": "Accept equivalent meaning; clarify missing parts, do not require exact match."
+        },
+        {
+          "playerTurn": 4,
+          "meaningTargetVi": "Bây giờ bác chưa muốn báo con gái đúng không. Trước hết tôi sẽ nghe mong muốn của bác.",
+          "hintJa": "今は娘さんに伝えたくないのですね。まず、ご希望を伺います。",
+          "policy": "Accept equivalent meaning; clarify missing parts, do not require exact match."
+        },
+        {
+          "playerTurn": 6,
+          "meaningTargetVi": "Nếu cần báo nhân viên phụ trách, mình cùng xác nhận trước nội dung sẽ chia sẻ nhé.",
+          "hintJa": "担当職員に伝える必要が出たら、どの内容を共有するか、先に一緒に確認しましょう。",
+          "policy": "Accept equivalent meaning; clarify missing parts, do not require exact match."
+        },
+        {
+          "playerTurn": 8,
+          "meaningTargetVi": "Vậy tôi nghe bác trong phòng. Mình tránh để người ở hành lang nghe nội dung nhé.",
+          "hintJa": "では、お部屋で伺います。廊下で内容が聞こえないようにしましょう。",
+          "policy": "Accept equivalent meaning; clarify missing parts, do not require exact match."
+        }
+      ]
+    },
+    {
+      "id": "kaigo-foundation-05",
+      "curriculumDay": 5,
+      "titleVi": "Từ chối và thương lượng",
+      "npcId": "kaigo-npc-resident-c",
+      "playerRoleVi": "Nhân viên chăm sóc Tanaka",
+      "contextVi": "Hoạt động trồng hoa tự chọn có chụp ảnh. Bác muốn tham gia nhưng không muốn xuất hiện trong ảnh.",
+      "knowledgeVi": [
+        "Phân biệt từ chối chụp ảnh với từ chối cả hoạt động.",
+        "Không hứa có nơi tránh ảnh hoặc tự cho rằng ảnh không đăng mạng thì được chụp."
+      ],
+      "sourceRefs": [
+        {
+          "filename": "介護ー特定技能ーベトナム語.pdf",
+          "edition": "March 2025 second revision",
+          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+          "pages": [
+            {
+              "printed": 16,
+              "pdf": 18
+            },
+            {
+              "printed": 104,
+              "pdf": 106
+            },
+            {
+              "printed": 105,
+              "pdf": 107
+            },
+            {
+              "printed": 10,
+              "pdf": 12
+            }
+          ],
+          "verification": "text layer and printed labels checked; no full visual certification"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-foundation-02",
+        "kaigo-vocab-foundation-06",
+        "kaigo-vocab-foundation-11"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "花植えには参加したいですが、写真に写りたくありません。",
+          "meaningVi": "Tôi muốn tham gia trồng hoa nhưng không muốn có mặt trong ảnh."
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "参加はしたいけれど、撮影は希望されないのですね。",
+          "meaningVi": "Bác muốn tham gia nhưng không muốn được chụp ảnh đúng không."
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "はい。写真を撮られない場所はありますか。",
+          "meaningVi": "Vâng. Có chỗ không bị chụp ảnh không?"
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "今はわかりません。活動の担当者に確認してもよろしいですか。",
+          "meaningVi": "Hiện tôi chưa biết. Tôi hỏi người phụ trách hoạt động được không?"
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "お願いします。私の希望だけ伝えてください。",
+          "meaningVi": "Nhờ bạn. Chỉ truyền đạt mong muốn của tôi thôi."
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "撮影を希望されないことを伝え、参加できる方法を確認します。まだ参加方法は決まっていません。",
+          "meaningVi": "Tôi sẽ báo bác không muốn được chụp ảnh và hỏi cách tham gia phù hợp. Hiện cách tham gia chưa được quyết định."
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "では、返事を聞いてから決めます。",
+          "meaningVi": "Vậy tôi quyết định sau khi nghe câu trả lời."
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "確認した内容をお伝えします。その後、ご希望をもう一度伺います。",
+          "meaningVi": "Tôi sẽ báo kết quả xác nhận. Sau đó tôi hỏi lại mong muốn của bác."
+        }
+      ],
+      "reading": {
+        "textJa": "小野寺さんは花植えへの参加を希望していますが、撮影は希望していません。活動担当者に参加方法を確認することについて、本人の同意を得ました。方法は未確認で、参加の最終決定は回答後です。",
+        "meaningVi": "Bác Onodera muốn trồng hoa nhưng không muốn được chụp ảnh. Bác đồng ý cho hỏi người phụ trách về cách tham gia. Cách tham gia chưa được xác nhận; quyết định cuối cùng sau khi có câu trả lời."
+      },
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "questions": [
+        {
+          "id": "kaigo-foundation-05-q01",
+          "promptJa": "小野寺さんが希望しないことはどれですか。",
+          "optionsJa": [
+            "花植え",
+            "担当者への確認",
+            "回答を待つこと",
+            "写真に写ること"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: bác muốn trồng hoa.",
+            "Sai: bác cho phép hỏi.",
+            "Sai: bác muốn chờ trả lời.",
+            "Đúng: bác không muốn xuất hiện trong ảnh."
+          ]
+        },
+        {
+          "id": "kaigo-foundation-05-q02",
+          "promptJa": "参加方法について、今わかっていることはどれですか。",
+          "optionsJa": [
+            "まだ確認できていない",
+            "撮影しない席が確定した",
+            "参加を取り消した",
+            "本人が撮影を許可した"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: cách tham gia chưa rõ.",
+            "Sai: chưa kiểm tra.",
+            "Sai: chưa hủy quyết định.",
+            "Sai: bác từ chối chụp."
+          ]
+        },
+        {
+          "id": "kaigo-foundation-05-q03",
+          "promptJa": "担当者に伝える内容はどれですか。",
+          "optionsJa": [
+            "家族の詳しい事情",
+            "撮影を希望しないこと",
+            "病気の推測",
+            "住所と年齢"
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: không được yêu cầu.",
+            "Đúng: thông tin cần cho cách tham gia.",
+            "Sai: không có dữ kiện bệnh.",
+            "Sai: không cần cho tình huống này."
+          ]
+        }
+      ],
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "durationMeasured": false,
+        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
+        "plannedActivitiesVi": [
+          "5 phút nhắc lại bài trước",
+          "5 phút nguyên tắc",
+          "5 phút từ/cách nói",
+          "10 phút đọc vai, nói lại, sửa ý thiếu",
+          "5 phút bài đọc và kiểm tra"
+        ]
+      },
+      "responsePolicy": {
+        "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
+        "fallbackJa": "確認したいことを、もう一度教えていただけますか。",
+        "unsafeVi": [
+          "Ép thực hiện điều đã từ chối",
+          "Chia sẻ quá phạm vi đã đồng ý",
+          "Bịa dữ kiện chưa được xác nhận"
+        ],
+        "runtimeImplemented": false
+      },
+      "responseTargetsVi": [
+        {
+          "playerTurn": 2,
+          "meaningTargetVi": "Bác muốn tham gia nhưng không muốn được chụp ảnh đúng không.",
+          "hintJa": "参加はしたいけれど、撮影は希望されないのですね。",
+          "policy": "Accept equivalent meaning; clarify missing parts, do not require exact match."
+        },
+        {
+          "playerTurn": 4,
+          "meaningTargetVi": "Hiện tôi chưa biết. Tôi hỏi người phụ trách hoạt động được không?",
+          "hintJa": "今はわかりません。活動の担当者に確認してもよろしいですか。",
+          "policy": "Accept equivalent meaning; clarify missing parts, do not require exact match."
+        },
+        {
+          "playerTurn": 6,
+          "meaningTargetVi": "Tôi sẽ báo bác không muốn được chụp ảnh và hỏi cách tham gia phù hợp. Hiện cách tham gia chưa được quyết định.",
+          "hintJa": "撮影を希望されないことを伝え、参加できる方法を確認します。まだ参加方法は決まっていません。",
+          "policy": "Accept equivalent meaning; clarify missing parts, do not require exact match."
+        },
+        {
+          "playerTurn": 8,
+          "meaningTargetVi": "Tôi sẽ báo kết quả xác nhận. Sau đó tôi hỏi lại mong muốn của bác.",
+          "hintJa": "確認した内容をお伝えします。その後、ご希望をもう一度伺います。",
+          "policy": "Accept equivalent meaning; clarify missing parts, do not require exact match."
+        }
+      ]
+    },
+    {
+      "id": "kaigo-foundation-06",
+      "curriculumDay": 6,
+      "titleVi": "Nghe, hỏi lại, xác nhận",
+      "npcId": "kaigo-npc-care-peer",
+      "playerRoleVi": "Nhân viên chăm sóc Tanaka",
+      "contextVi": "Đồng nghiệp bàn giao hai việc khác nhau; người học chưa nghe rõ phần trả sách.",
+      "knowledgeVi": [
+        "Hỏi lại từng việc và nhắc lại điều đã hiểu.",
+        "Tách dữ kiện xác nhận, chưa xác nhận và người chịu trách nhiệm tiếp theo."
+      ],
+      "sourceRefs": [
+        {
+          "filename": "介護ー特定技能ーベトナム語.pdf",
+          "edition": "March 2025 second revision",
+          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+          "pages": [
+            {
+              "printed": 16,
+              "pdf": 18
+            },
+            {
+              "printed": 104,
+              "pdf": 106
+            },
+            {
+              "printed": 105,
+              "pdf": 107
+            },
+            {
+              "printed": 10,
+              "pdf": 12
+            }
+          ],
+          "verification": "text layer and printed labels checked; no full visual certification"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-foundation-02",
+        "kaigo-vocab-foundation-06",
+        "kaigo-vocab-foundation-11"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "長谷部さんへの伝言をお願いします。図書室の予定と、本の返却についてです。",
+          "meaningVi": "Nhờ bạn truyền lời cho bác Hasebe: lịch phòng sách và trả sách."
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "すみません。二つの用件を、一つずつ教えていただけますか。",
+          "meaningVi": "Xin lỗi. Bạn nói từng việc trong hai việc được không?"
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "図書室は今日は三時までです。返却は今日でなくてもかまいません。",
+          "meaningVi": "Hôm nay phòng sách mở tới ba giờ. Không nhất thiết phải trả sách hôm nay."
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "図書室は三時までで、本は今日返さなくてもよい、ということですね。",
+          "meaningVi": "Phòng sách tới ba giờ, còn sách không phải trả hôm nay, đúng không?"
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "はい。ただ、返却の期限はまだ調べていません。",
+          "meaningVi": "Đúng. Nhưng tôi chưa kiểm tra hạn trả."
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "期限は未確認ですね。今日返さなくてもよいことと、期限が未確認なことを分けて伝えます。",
+          "meaningVi": "Hạn chưa rõ đúng không. Tôi sẽ tách việc hôm nay chưa phải trả và việc chưa xác nhận hạn."
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "お願いします。期限は私が確認して、あとで知らせます。",
+          "meaningVi": "Nhờ bạn. Tôi sẽ kiểm tra hạn và báo sau."
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "では、期限の確認は岸本さんが担当されるのですね。確認後の連絡をお待ちします。",
+          "meaningVi": "Vậy Kishimoto phụ trách kiểm tra hạn đúng không. Tôi sẽ đợi thông tin sau khi bạn xác nhận."
+        }
+      ],
+      "reading": {
+        "textJa": "本日の図書室は十五時までです。本は今日返却しなくてもかまいませんが、返却期限は未確認です。岸本職員が期限を確認し、その後に連絡します。",
+        "meaningVi": "Hôm nay phòng sách mở tới 15 giờ. Chưa cần trả sách hôm nay nhưng hạn trả chưa rõ. Nhân viên Kishimoto sẽ kiểm tra rồi báo."
+      },
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "questions": [
+        {
+          "id": "kaigo-foundation-06-q01",
+          "promptJa": "図書室は今日は何時までですか。",
+          "optionsJa": [
+            "十四時",
+            "十六時",
+            "十五時",
+            "十七時"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: không phải14h.",
+            "Sai: không phải16h.",
+            "Đúng: ba giờ chiều là15h.",
+            "Sai: không phải17h."
+          ]
+        },
+        {
+          "id": "kaigo-foundation-06-q02",
+          "promptJa": "返却期限について正しいものはどれですか。",
+          "optionsJa": [
+            "今日で確定",
+            "明日で確定",
+            "期限はない",
+            "まだ未確認"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: hôm nay chưa cần trả không nghĩa là hạn hôm nay.",
+            "Sai: không có dữ kiện ngày mai.",
+            "Sai: chưa rõ không nghĩa là không có hạn.",
+            "Đúng: đồng nghiệp nói chưa kiểm tra."
+          ]
+        },
+        {
+          "id": "kaigo-foundation-06-q03",
+          "promptJa": "期限を確認するのは誰ですか。",
+          "optionsJa": [
+            "岸本職員",
+            "長谷部さん",
+            "家族",
+            "図書室の利用者全員"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: Kishimoto nhận việc kiểm tra.",
+            "Sai: không giao bác việc này.",
+            "Sai: không có người nhà tham gia.",
+            "Sai: không giao cho mọi người."
+          ]
+        }
+      ],
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "durationMeasured": false,
+        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
+        "plannedActivitiesVi": [
+          "5 phút nhắc lại bài trước",
+          "5 phút nguyên tắc",
+          "5 phút từ/cách nói",
+          "10 phút đọc vai, nói lại, sửa ý thiếu",
+          "5 phút bài đọc và kiểm tra"
+        ]
+      },
+      "responsePolicy": {
+        "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
+        "fallbackJa": "確認したいことを、もう一度教えていただけますか。",
+        "unsafeVi": [
+          "Ép thực hiện điều đã từ chối",
+          "Chia sẻ quá phạm vi đã đồng ý",
+          "Bịa dữ kiện chưa được xác nhận"
+        ],
+        "runtimeImplemented": false
+      },
+      "responseTargetsVi": [
+        {
+          "playerTurn": 2,
+          "meaningTargetVi": "Xin lỗi. Bạn nói từng việc trong hai việc được không?",
+          "hintJa": "すみません。二つの用件を、一つずつ教えていただけますか。",
+          "policy": "Accept equivalent meaning; clarify missing parts, do not require exact match."
+        },
+        {
+          "playerTurn": 4,
+          "meaningTargetVi": "Phòng sách tới ba giờ, còn sách không phải trả hôm nay, đúng không?",
+          "hintJa": "図書室は三時までで、本は今日返さなくてもよい、ということですね。",
+          "policy": "Accept equivalent meaning; clarify missing parts, do not require exact match."
+        },
+        {
+          "playerTurn": 6,
+          "meaningTargetVi": "Hạn chưa rõ đúng không. Tôi sẽ tách việc hôm nay chưa phải trả và việc chưa xác nhận hạn.",
+          "hintJa": "期限は未確認ですね。今日返さなくてもよいことと、期限が未確認なことを分けて伝えます。",
+          "policy": "Accept equivalent meaning; clarify missing parts, do not require exact match."
+        },
+        {
+          "playerTurn": 8,
+          "meaningTargetVi": "Vậy Kishimoto phụ trách kiểm tra hạn đúng không. Tôi sẽ đợi thông tin sau khi bạn xác nhận.",
+          "hintJa": "では、期限の確認は岸本さんが担当されるのですね。確認後の連絡をお待ちします。",
+          "policy": "Accept equivalent meaning; clarify missing parts, do not require exact match."
+        }
+      ]
+    },
+    {
+      "id": "kaigo-foundation-07",
+      "curriculumDay": 7,
+      "titleVi": "Ôn tuần 1",
+      "npcId": "kaigo-npc-resident-b",
+      "playerRoleVi": "Nhân viên chăm sóc Tanaka",
+      "contextVi": "Bác đổi kế hoạch chiều: không nghe nhạc, muốn tự đọc sách, chỉ cần giúp tìm trang đánh dấu.",
+      "knowledgeVi": [
+        "Phối hợp hỏi mong muốn, hỗ trợ đúng phạm vi và truyền thông tin cần thiết.",
+        "Không ép tham gia hoặc đọc thay khi bác muốn tự đọc."
+      ],
+      "sourceRefs": [
+        {
+          "filename": "介護ー特定技能ーベトナム語.pdf",
+          "edition": "March 2025 second revision",
+          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+          "pages": [
+            {
+              "printed": 16,
+              "pdf": 18
+            },
+            {
+              "printed": 104,
+              "pdf": 106
+            },
+            {
+              "printed": 105,
+              "pdf": 107
+            },
+            {
+              "printed": 10,
+              "pdf": 12
+            }
+          ],
+          "verification": "text layer and printed labels checked; no full visual certification"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-foundation-06",
+        "kaigo-vocab-foundation-11",
+        "kaigo-vocab-foundation-16"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "今日は音楽の時間に行かず、ここで本を読みたいです。",
+          "meaningVi": "Hôm nay tôi không tới giờ nghe nhạc mà muốn đọc sách ở đây."
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "今日はお部屋で読書をしたいのですね。何かお手伝いすることはありますか。",
+          "meaningVi": "Hôm nay bác muốn đọc sách trong phòng đúng không. Có việc gì tôi giúp được không?"
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "読むのは自分でできます。昨日の続きのページだけ探してください。",
+          "meaningVi": "Tôi tự đọc được. Chỉ giúp tìm trang đọc tiếp từ hôm qua."
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "続きのページを探すお手伝いですね。目印は何かありますか。",
+          "meaningVi": "Tôi giúp tìm trang tiếp theo đúng không. Có dấu gì không ạ?"
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "青いしおりを挟んでいます。活動の担当者には欠席を伝えてください。",
+          "meaningVi": "Tôi kẹp dấu sách màu xanh. Hãy báo người phụ trách hoạt động là tôi vắng."
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "青いしおりのページを開きます。担当者には今日参加しないことだけを伝えますね。",
+          "meaningVi": "Tôi mở trang có dấu xanh. Tôi chỉ báo người phụ trách rằng hôm nay bác không tham gia nhé."
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "はい。それでお願いします。読み終わるまでは静かに過ごしたいです。",
+          "meaningVi": "Vâng, nhờ bạn như vậy. Tôi muốn yên tĩnh tới khi đọc xong."
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "承りました。ページを開いた後は、ご自分で読んでいただきます。ほかに必要なことがあれば、お呼びください。",
+          "meaningVi": "Tôi hiểu. Sau khi mở trang, bác tự đọc nhé. Cần việc gì khác bác hãy gọi tôi."
+        }
+      ],
+      "reading": {
+        "textJa": "長谷部さんは今日の音楽活動に参加せず、部屋で読書を希望しています。読むことは自分で行います。職員への依頼は、青いしおりのページを探すことと、活動担当者に今日の欠席を伝えることです。",
+        "meaningVi": "Bác Hasebe muốn đọc sách trong phòng, không tham gia nghe nhạc hôm nay. Bác tự đọc. Việc nhờ nhân viên là tìm trang có dấu xanh và báo vắng hôm nay cho người phụ trách."
+      },
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "questions": [
+        {
+          "id": "kaigo-foundation-07-q01",
+          "promptJa": "本人が自分で行うことはどれですか。",
+          "optionsJa": [
+            "活動担当者への連絡",
+            "本を読むこと",
+            "しおりのページ探し",
+            "音楽会の運営"
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: nhờ nhân viên báo vắng.",
+            "Đúng: bác nói tự đọc.",
+            "Sai: nhờ nhân viên tìm trang.",
+            "Sai: không có nhiệm vụ này."
+          ]
+        },
+        {
+          "id": "kaigo-foundation-07-q02",
+          "promptJa": "職員が探す目印はどれですか。",
+          "optionsJa": [
+            "赤い封筒",
+            "黄色い付箋",
+            "青いしおり",
+            "白いタオル"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: không có phong bì đỏ.",
+            "Sai: không phải giấy vàng.",
+            "Đúng: dấu sách xanh.",
+            "Sai: không có khăn trắng."
+          ]
+        },
+        {
+          "id": "kaigo-foundation-07-q03",
+          "promptJa": "今日の対応として適切なのはどれですか。",
+          "optionsJa": [
+            "音楽へ連れていく",
+            "職員が全部読み上げる",
+            "本人の希望を取り消す",
+            "依頼された部分を手伝う"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: trái mong muốn ở phòng.",
+            "Sai: bác muốn tự đọc.",
+            "Sai: không tôn trọng lựa chọn.",
+            "Đúng: giúp đúng phạm vi bác nhờ."
+          ]
+        }
+      ],
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "durationMeasured": false,
+        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
+        "plannedActivitiesVi": [
+          "5 phút nhắc lại bài trước",
+          "5 phút nguyên tắc",
+          "5 phút từ/cách nói",
+          "10 phút đọc vai, nói lại, sửa ý thiếu",
+          "5 phút bài đọc và kiểm tra"
+        ]
+      },
+      "responsePolicy": {
+        "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
+        "fallbackJa": "確認したいことを、もう一度教えていただけますか。",
+        "unsafeVi": [
+          "Ép thực hiện điều đã từ chối",
+          "Chia sẻ quá phạm vi đã đồng ý",
+          "Bịa dữ kiện chưa được xác nhận"
+        ],
+        "runtimeImplemented": false
+      },
+      "responseTargetsVi": [
+        {
+          "playerTurn": 2,
+          "meaningTargetVi": "Hôm nay bác muốn đọc sách trong phòng đúng không. Có việc gì tôi giúp được không?",
+          "hintJa": "今日はお部屋で読書をしたいのですね。何かお手伝いすることはありますか。",
+          "policy": "Accept equivalent meaning; clarify missing parts, do not require exact match."
+        },
+        {
+          "playerTurn": 4,
+          "meaningTargetVi": "Tôi giúp tìm trang tiếp theo đúng không. Có dấu gì không ạ?",
+          "hintJa": "続きのページを探すお手伝いですね。目印は何かありますか。",
+          "policy": "Accept equivalent meaning; clarify missing parts, do not require exact match."
+        },
+        {
+          "playerTurn": 6,
+          "meaningTargetVi": "Tôi mở trang có dấu xanh. Tôi chỉ báo người phụ trách rằng hôm nay bác không tham gia nhé.",
+          "hintJa": "青いしおりのページを開きます。担当者には今日参加しないことだけを伝えますね。",
+          "policy": "Accept equivalent meaning; clarify missing parts, do not require exact match."
+        },
+        {
+          "playerTurn": 8,
+          "meaningTargetVi": "Tôi hiểu. Sau khi mở trang, bác tự đọc nhé. Cần việc gì khác bác hãy gọi tôi.",
+          "hintJa": "承りました。ページを開いた後は、ご自分で読んでいただきます。ほかに必要なことがあれば、お呼びください。",
+          "policy": "Accept equivalent meaning; clarify missing parts, do not require exact match."
+        }
+      ]
     }
   ],
   "similarityReview": "not certified; independent new scenes, no source dialogue imported",

@@ -51,3 +51,11 @@ Thêm 3 bản thảo: giới thiệu đúng vai trò và cách xưng hô; xin ph
 Nguồn kiến thức đã đọc trang in10,12,13,102,103 (PDF12,14,15,104,105), hash khớp bản chuẩn. Không dùng hội thoại ví dụ nguồn để viết lại. Chưa duyệt chuyên môn/ngôn ngữ/quyền, chưa hình/audio/runtime; thời lượng30phút là kế hoạch. Tiếp sau lưu bền: ngày4–7 (riêng tư, từ chối, hỏi lại, ôn tuần); đọc nguồn liên quan trước soạn.
 
 Lưu trực tiếp bằng kết nối GitHub; không yêu cầu tải bundle khi kết nối ghi hoạt động. Bản đánh giá31 lượt đã lưu trên remote40f2324c; SHA nội dung mới lấy từ Git sau công bố, không tạo commit chỉ để ghi SHA.
+
+## Nền tảng ngày4–7 — tuần1 đã đủ bản thảo
+
+Thêm bốn tình huống mới: giữ kín chuyện gia đình; từ chối chụp ảnh nhưng muốn tham gia; hỏi lại hai việc bàn giao; lựa chọn đọc sách và hỗ trợ đúng phần cần. 32 lượt,4 bài đọc,12 câu hỏi có lý do từng lựa chọn. Ngày4–7 liên kết với bài/NPC; ngày5–7 dùng lại từ, không ép thêm từ mới. Nguồn đọc trang in16/PDF18,104/PDF106,105/PDF107.
+
+Tổng nền tảng7 bài,58 lượt,7 bài đọc,21 câu. Tổng cùng di chuyển14 bài,48 câu ôn. Vẫn là bản nháp AI, chưa chứng nhận chuyên môn/ngôn ngữ/quyền, chưa assets/runtime/thi đầy đủ. Ngày4–7 có đích nghĩa từng lượt; chưa là bộ chấm tự do thực thi. Cần bổ sung từ/cách nói ngày4 và biến thể phản hồi của toàn tuần trước tích hợp.
+
+Điểm tiếp theo sau lưu bền: hoàn thiện hồ sơ từ/cách nói và phản hồi tuần1, sau đó soạn tuần2 hoặc cụm ăn uống sau đọc nguồn. Các lựa chọn thi chưa chốt vẫn giữ nguyên.
