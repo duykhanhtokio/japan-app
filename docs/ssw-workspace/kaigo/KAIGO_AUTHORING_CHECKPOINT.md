@@ -125,3 +125,15 @@ Tìnhhuống: nhu cầu nói kín; quan sát/cáchgọi chưa chốt; báo lo09:
 Validator tuần1–5PASS; báo cáoWEEK_05_EDITORIAL_REPORT.md và similarity415trường/cửasổ60ký tự/0trườngtrùng. Sànglọc khôngchứngnhậnquyền. Chưa thao tác chuyểnngười/dụngcụ/thaytã/vệsinh/kiểmsoátnhiễmkhuẩn: ghi coveragegap,khôngtuyênbốđủtoànphạmvi. Human/domain/native/publisher/rights/runtime/releasefalse; chưaassets/audio/thiđầyđủ/đothờilượng/bộchấmnghĩa.
 
 Sau commit hẹp,push/fetch/WORKPERSISTENCEPASS: tiếp trọn tuần6 ngày36–42 về chỉnhtrang,tắm,vệsinh; đọc170–197,224–237 vàkiểmtảihọc/giớihạnkỹthuật. Không phát hành bảnthảo hoặc tựchốtcáclựachọnđềthicònmở.
+
+## 2026-10-07 — Tuần 6, ngày 36–42, chỉnh trang/tắm/vệ sinh
+
+Chủ dự án cho phép công bố `4458493` rồi tiếp tuần 6. Git thiếu credential và remote đã tiến thêm JLPT; công bố đúng 12 blob tuần 5 trên đầu nhánh hiện tại bằng kết nối GitHub ở `6212ce09`, đối chiếu từng blob với local. Không force/reset hoặc ghi đè JLPT. Xác minh bằng connector read/blob SHA; không gọi đó là script WORK PERSISTENCE PASS.
+
+Đọc lại hướng dẫn/plan/checkpoint, source hash khớp. Đọc trang in 170–197/PDF172–199, 224–237/PDF226–239, 10/12/16/115/118; xem ảnh hai trang từ224/230. Thêm hygiene-lessons/vocabulary/response-rubrics, week-06-manifest, validator và báo cáo WEEK_06_EDITORIAL_REPORT: 7 bài, 56 lượt Nhật–Việt, 7 mô-đun, 7 bài đọc, 35 câu/140 lý do, 20 từ (19 cách đọc visual,1 AI-only), 14 cách nói, 28 rubric/28 ca đặc tả, 7 transfer. Tổng42bài/210câu, không phải bộ đề đầy đủ.
+
+Bối cảnh riêng: tay áo cho đọc thơ; thân/nắp hộp răng giả; rèm/sàn trước tiếp nhận tắm; lời bác về móng chưa nhìn; từ chối toàn thân muốn mặt; hai hoạt động14:20/15:00; lược cá nhân chưa thấy tại một nơi. Rà từng đáp án, biến thể/ý rubric, mốc giờ/chủ thể và Nhật–Việt; sửa lời NPC quá giáo huấn, liên kết từ trước bài ôn, chủ thể hỗ trợ ngày41 và nhiễu quá xa. Không biến chưa quan sát thành không đau/bình thường, lịch/đồng ý thành đã thực hiện, chưa thấy thành mất hoặc rửa mặt thành đồng ý toàn thân.
+
+Lịch5/5/5/10/5, 210phút chưa đo; từ mới5/4/7/4 ngày36–39, ngày40–42 dùng lại. Kiểm tải hai nhóm chủ đề và ghi chưa đo, không khẳng định vừa30phút. Sàng lọc text-layer toàn276trang theo cửa sổ60ký tự và so bối cảnh AI, không chứng nhận quyền. Rubric/28ca chưa là evaluator/runtime. Chưa đủ kỹ thuật mặc/cởi/miệng/móng/tắm/lau/vùng kín/khử khuẩn; không xóa gap hoặc tuyên bố đủ phạm vi thi. Human/domain/native/publisher/rights/runtime/release false; chưa assets/audio/app/thi đầy đủ.
+
+Lưu bằng connector commit trên đầu nhánh hiện tại, xác minh blob từng file sau cập nhật ref; không tạo commit chỉ để chép SHA. Điểm tiếp theo sau lưu tuần6: trọn tuần7 ngày43–49, việc nhà/văn bản/thông báo/bàn giao, đọc198–203/238–243 và trang đọc tương ứng trước soạn. Không tự chốt các quyết định đề thi còn mở hoặc phát hành.
