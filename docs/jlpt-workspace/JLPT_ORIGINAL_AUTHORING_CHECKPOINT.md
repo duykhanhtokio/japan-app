@@ -359,3 +359,8 @@ First full2266055ms; removed16redundant trailing confirmation/secondary-topic tu
 PASS content/audio scripts/options/roles/hash/decode, adapter, UI10/10, actual Chromium assets and unchanged production-runner/sharedUI RN-web harness: select/save, audio0/pause, Back/reopen/resume selectedcolor, incomplete submit97, score0/1/97of98, review, no pageerror. Three430x932screenshots inspected. FullTS retains existing unrelated TS2352 life-content-repository.ts:47 only; no JLPTdiagnostic. No native/iPhone/full-router/perceptual/human/rights/release approval.
 
 Independent session jlpt:jpapp:n4:original:05:v1, audio0ms, spoken choices/transcripts/internalexplanations hidden. After final publish/fetch and WORK PERSISTENCE PASS, N5 01–06+N4 01–05=11/30; nextN4 06. Resume original/n4-05/HANDOFF.md; never rerun initial scratch scripts. No legacy removal before full replacement gate.
+
+
+## 2026-10-07 — N4 06 independent content draft
+
+Resumed remote N4 05 commit88b39996. Independently authored98responses (70written+28listening),8passages,4unscored examples and5actual imagegen illustrations inspected. AI revised movable ordering fragments, comparison distractor and explicit appointment agreement. Draft structural validator PASS; pools21/21/22/21 and4/4/5, no triples/short cycles. No legacy content used. Four approved voices,.9speed,N4 2/.5s and12/12/10/8s unchanged. Full recording/duration/integration/browser checks pending. Human/native/perceptual/rights/release flagsfalse. Completed integrated remains11/30; resume original/n4-06/HANDOFF.md.
