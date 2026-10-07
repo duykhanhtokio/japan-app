@@ -213,3 +213,28 @@ Corrected corrupted Kairakuen, Tokiwa shrine, Art Tower Mito and seasonal Kairak
 Nine original portrait PNGs follow the established semi-realistic anime travel style, no people/UI, with room for the existing NPC overlay. Final artwork inspected; Art Tower composition revised to preserve the full faceted tower inside square card cropping. Defining architecture checked against primary references, no Tokyo landmark reuse. Geography inventory now 81 exact place IDs, 4,671 shared-service-permitted and 2,360 pending individual reviews across 814 cities / 7,112 locations. Shared permission does not assert every generic service name is a real surveyed venue. No dialogue, mic, blur or layout changes.
 
 Actual RoyalLocationCard + placeBackground browser fixture passed all 9 Mito/Bando cards at 390×844, 430×932, 768×1024, 1024×768 and 1366×768: every image decoded, scene bounds match clipping windows, no page errors. Phone and tablet screenshots inspected, defining features retained without stretching or blank scene bands. Fixture lacks Japanese font; typography is not validated. Native/full-app route testing remains pending. Routing/NPC checks pass all 7,112 locations; git diff whitespace check passes.
+
+## Utsunomiya CTY-009 / Nikko CTY-TCG-NIKKO — 2026-10-07
+
+Reviewed all original 21 Utsunomiya rows. Moved LOC-009-18 鬼怒川温泉 to actual 日光市, preserving ID and synchronizing canonical city membership, scenarios and scenario-index. Utsunomiya retains 20 rows: 9 exact-place illustrations and 11 permitted shared-service interiors. This does not complete all Nikko rows.
+
+| ID | Correct place / city | Asset | Primary reference |
+| --- | --- | --- | --- |
+| LOC-009-01 | 宇都宮駅 / CTY-009 | utsu-station-west.png | https://www.utsunomiya-cvb.org/spot/detail_30044.html |
+| LOC-009-02 | 餃子像 / CTY-009 | utsu-gyoza-statue.png | https://www.utsunomiya-cvb.org/spot/detail_10016.html |
+| LOC-009-03 | 宇都宮二荒山神社 / CTY-009 | utsu-futaarayama-shrine.png | https://www.utsunomiya-cvb.org/spot/detail_10002.html |
+| LOC-009-06 | ベルモール / CTY-009 | utsu-bell-mall.png | https://www.utsunomiya-cvb.org/spot/detail_10082.html |
+| LOC-009-14 | 大谷資料館 / CTY-009 | utsu-oya-history.png | https://www.utsunomiya-cvb.org/spot/detail_10001.html |
+| LOC-009-15 | 八幡山公園 / CTY-009 | utsu-hachimanyama.png | https://www.utsunomiya-cvb.org/spot/detail_10005.html |
+| LOC-009-17 | 宇都宮動物園 / CTY-009 | utsu-zoo-giraffe.png | https://www.utsunomiya-cvb.org/spot/detail_10008.html |
+| LOC-009-11 | オリオン通り商店街 / CTY-009 | utsu-orion-arcade.png | https://www.utsunomiya-cvb.org/spot/detail_10030.html |
+| LOC-009-13 | 宇都宮城址公園 / CTY-009 | utsu-castle-ruins.png | https://www.utsunomiya-cvb.org/spot/detail_10010.html |
+| LOC-009-18 | 鬼怒川温泉 / CTY-TCG-NIKKO | nikko-kinugawa-tateiwa.png | https://www.nikko-kankou.org/spot/41/ |
+
+Replaced unverified イオンモール宇都宮 with verified ベルモール at 陽東6-2-1; AEON official Tochigi mall directory lists Sano/Oyama, not Utsunomiya (https://www.aeon.com/store/list/ショッピングセンター/関東地方/栃木県/). Bell Mall location and hours verified against https://www.bellmall.co.jp/access/. This is an explicit venue replacement, not a claim the old mall existed. Updated name and scenario mentions. Disambiguated 二荒山神社 to 宇都宮二荒山神社 (not Nikko shrine) and corrected 馬場通り1-1-1; updated scenarios. Identified Orion-dori as actual covered shopping arcade, retaining existing restaurant/izakaya function and NPC. Corrected Hachimanyama address 塙田5-1-1 and zoo 上金井町552-2. Kinugawa address corrected 日光市鬼怒川温泉大原・滝.
+
+Ten original portrait illustrations follow established detailed semi-realistic anime style. Official geometry references preserve: Oya-stone gyoza Venus statue, orange torii/stone stairs, west station banded façade/yellow bus shelters, Bell Mall sign tower, triangular glazed Orion arcade roof, modest restored castle turret (no fictional tall keep), rectangular excavated Oya quarry hall, local red-white Utsunomiya Tower amid azaleas, actual zoo giraffe feeding enclosure, and Kinu Tateiwa suspension bridge/onsen valley. Photos serve as references only; current storefront tenants, exact equipment and seasonal events are not asserted. All final PNGs inspected locally before integration. No dialogue/mic/blur/layout changes. Full catalog 91 exact place IDs, 4,671 shared-service-permitted, 2,350 pending individual geography reviews across 814 cities / 7,112 locations.
+
+Actual RoyalLocationCard + placeBackground fixture passed 10 Utsunomiya/Nikko cards at 390×844, 430×932, 768×1024, 1024×768 and 1366×768: images decode, scene dimensions match clipped windows, no browser errors. Phone and landscape-tablet screenshots inspected; no stretching/blank bands, defining scene features visible despite permitted edge crops. Japanese fixture font absent, so typography is not validated. Native/full-app route validation remains pending. Routing/NPC checks pass all 7,112 locations; approved JLPT UI byte lock remains 10/10.
+
+Final zoo artwork revised after actual card inspection cropped its head: zoomed out and moved the whole giraffe head to central vertical range. Rebuilt/reran the same 10-card, 5-viewport fixture; pass. Final phone screenshot confirms face/ears/ossicones visible. Prior generated asset backed up; only revised PNG activated.

@@ -84,6 +84,16 @@ const artwork: Record<string, ImageSourcePropType> = {
   'LOC-004-19': require('../../../assets/app/life/location-backgrounds/places/sendai-mediatheque.png'),
   'LOC-008-10': require('../../../assets/app/life/location-backgrounds/places/mito-art-tower.png'),
   'LOC-008-16': require('../../../assets/app/life/location-backgrounds/places/mito-izumicho-keisei.png'),
+  'LOC-009-01': require('../../../assets/app/life/location-backgrounds/places/utsu-station-west.png'),
+  'LOC-009-02': require('../../../assets/app/life/location-backgrounds/places/utsu-gyoza-statue.png'),
+  'LOC-009-03': require('../../../assets/app/life/location-backgrounds/places/utsu-futaarayama-shrine.png'),
+  'LOC-009-06': require('../../../assets/app/life/location-backgrounds/places/utsu-bell-mall.png'),
+  'LOC-009-14': require('../../../assets/app/life/location-backgrounds/places/utsu-oya-history.png'),
+  'LOC-009-15': require('../../../assets/app/life/location-backgrounds/places/utsu-hachimanyama.png'),
+  'LOC-009-17': require('../../../assets/app/life/location-backgrounds/places/utsu-zoo-giraffe.png'),
+  'LOC-009-11': require('../../../assets/app/life/location-backgrounds/places/utsu-orion-arcade.png'),
+  'LOC-009-13': require('../../../assets/app/life/location-backgrounds/places/utsu-castle-ruins.png'),
+  'LOC-009-18': require('../../../assets/app/life/location-backgrounds/places/nikko-kinugawa-tateiwa.png'),
 };
 
 // Geography belongs to the stable location ID, never a category or round-robin slot.
