@@ -1,0 +1,798 @@
+{
+  "status": "ai_editorially_checked_draft_not_release",
+  "lessons": [
+    {
+      "id": "kaigo-move-01",
+      "titleVi": "Xác nhận mong muốn trước khi tới buổi sinh hoạt",
+      "curriculumDay": 15,
+      "npcId": "kaigo-npc-resident-a",
+      "playerRoleVi": "Nhân viên chăm sóc",
+      "contextVi": "Người sử dụng đang ngồi ổn định trên xe lăn, có kế hoạch cá nhân dùng xe lăn tới buổi sinh hoạt; không luyện thao tác chuyển người.",
+      "objectivesVi": [
+        "Xác nhận giờ và nhu cầu",
+        "Giải thích hỗ trợ, xin phép",
+        "Tiếp nhận lo ngại và mong muốn chỗ ngồi"
+      ],
+      "knowledgeVi": [
+        "Tôn trọng lựa chọn của người sử dụng trong phạm vi kế hoạch cá nhân.",
+        "Không tự đổi phương thức hỗ trợ vì muốn đi nhanh; hỏi người phụ trách khi chưa rõ."
+      ],
+      "sourceRefs": [
+        {
+          "printedPage": 120,
+          "pdfPage": 122,
+          "purpose": "movement and participation"
+        },
+        {
+          "printedPage": 129,
+          "pdfPage": 131,
+          "purpose": "check condition and obtain consent"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-move-01",
+        "kaigo-vocab-move-02",
+        "kaigo-vocab-move-03",
+        "kaigo-vocab-move-04",
+        "kaigo-vocab-move-11"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "午後の集まりに行きたいけれど、部屋を出る前に時間を確かめたいです。",
+          "meaningVi": "Tôi muốn tới buổi sinh hoạt chiều, nhưng muốn kiểm tra giờ trước khi ra khỏi phòng."
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "予定表を一緒に見ましょう。始まるのは二時で、まだ十五分あります。",
+          "meaningVi": "Mình cùng xem lịch. Bắt đầu lúc hai giờ, vẫn còn mười lăm phút."
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "そんなに急がなくていいんですね。今日は車いすで行く予定でしたね。",
+          "meaningVi": "Vậy không cần vội. Hôm nay tôi dự định đi bằng xe lăn phải không?"
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "はい。今の支援計画では車いすで移動します。行く前に気になることはありますか。",
+          "meaningVi": "Vâng. Theo kế hoạch hỗ trợ hiện tại, mình di chuyển bằng xe lăn. Trước khi đi bác có điều gì lo không?"
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "入口で人とぶつからないか、少し心配です。",
+          "meaningVi": "Tôi hơi lo va vào người khác ở lối vào."
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "入口の様子を確認します。人が多ければ、少し待ってから入りましょう。",
+          "meaningVi": "Tôi sẽ kiểm tra lối vào. Nếu đông thì mình đợi một chút rồi vào."
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "わかりました。着いたら窓の近くがいいです。",
+          "meaningVi": "Tôi hiểu rồi. Tới đó tôi muốn ngồi gần cửa sổ."
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "窓の近くの席を確認します。これから移動してもよろしいですか。",
+          "meaningVi": "Tôi sẽ kiểm tra chỗ gần cửa sổ. Bây giờ bắt đầu di chuyển được không ạ?"
+        },
+        {
+          "turn": 9,
+          "speaker": "npc",
+          "textJa": "はい、お願いします。",
+          "meaningVi": "Vâng, nhờ bạn."
+        },
+        {
+          "turn": 10,
+          "speaker": "player",
+          "textJa": "では、入口までご一緒します。途中で止まりたいときは教えてください。",
+          "meaningVi": "Vậy tôi sẽ đi cùng bác tới lối vào. Nếu muốn dừng giữa đường bác hãy nói với tôi."
+        }
+      ],
+      "responsePolicy": {
+        "requiredIntents": [
+          "confirm_schedule",
+          "ask_concerns",
+          "respect_preference",
+          "obtain_consent"
+        ],
+        "acceptableVariantsJa": [
+          "何か心配なことはありますか。",
+          "今から行ってもよろしいでしょうか。"
+        ],
+        "unsafeOrIncompleteIntents": [
+          "ignore_refusal",
+          "change_support_plan_without_confirmation"
+        ],
+        "fallbackJa": "どの点を確認したいですか。もう少し教えてください。"
+      },
+      "reading": {
+        "textJa": "交流室の予定\n開始：午後二時\n午後一時四十分から入室できます。入口が混み合う場合は、担当職員の案内を待ってください。",
+        "meaningVi": "Lịch phòng giao lưu: bắt đầu 14 giờ; có thể vào từ 13 giờ 40. Khi lối vào đông, đợi nhân viên phụ trách hướng dẫn."
+      },
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "questions": [
+        {
+          "id": "move-q01",
+          "kind": "knowledge",
+          "promptJa": "利用者が窓の近くの席を希望しました。対応として最も適切なものはどれですか。",
+          "optionsJa": [
+            "希望を聞き、席と必要な支援を確認する。",
+            "本人に聞かず、いつもと同じ席へ連れて行く。",
+            "職員の好みで席を決める。",
+            "希望を伝えたことを注意する。"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: tiếp nhận mong muốn và kiểm tra điều kiện.",
+            "Sai: bỏ qua lựa chọn của người sử dụng.",
+            "Sai: sở thích nhân viên không thay lựa chọn của người sử dụng.",
+            "Sai: không trách người sử dụng vì bày tỏ mong muốn."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "move-q02",
+          "kind": "knowledge",
+          "promptJa": "支援計画の移動方法がわからないとき、どうしますか。",
+          "optionsJa": [
+            "早く終わる方法を選ぶ。",
+            "本人に知らせず変更する。",
+            "担当者に確認する。",
+            "ほかの利用者と同じ方法にする。"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: tốc độ không đủ để lựa chọn phương pháp.",
+            "Sai: tự đổi và không thông báo.",
+            "Đúng: xác nhận kế hoạch với người phụ trách.",
+            "Sai: kế hoạch cần phù hợp cá nhân."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "move-q03",
+          "kind": "knowledge",
+          "promptJa": "移動前の声かけとして適切なものはどれですか。",
+          "optionsJa": [
+            "今すぐ行かなければ困ります。",
+            "これから行ってもよろしいですか。",
+            "説明は後でします。",
+            "希望は聞かなくてもわかります。"
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: gây áp lực.",
+            "Đúng: xác nhận sự đồng ý.",
+            "Sai: trì hoãn giải thích tới sau hành động.",
+            "Sai: suy đoán thay hỏi mong muốn."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "move-q04",
+          "kind": "reading",
+          "promptJa": "交流室には何時から入れますか。",
+          "optionsJa": [
+            "午後一時。",
+            "午後二時十五分。",
+            "午後二時からだけ。",
+            "午後一時四十分。"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: sớm hơn thông báo.",
+            "Sai: không phải giờ mở cửa.",
+            "Sai: bắt đầu hoạt động không phải giờ được vào.",
+            "Đúng: bài đọc ghi 13:40."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "move-q05",
+          "kind": "reading",
+          "promptJa": "入口が混んでいる場合、予定表は何を求めていますか。",
+          "optionsJa": [
+            "担当職員の案内を待つ。",
+            "人の間を急いで進む。",
+            "予定をすべて中止する。",
+            "ほかの利用者に道を空けるよう命令する。"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: đúng chỉ dẫn trong bài đọc.",
+            "Sai: không theo thông báo.",
+            "Sai: không có chỉ dẫn hủy toàn bộ.",
+            "Sai: không phải nội dung được yêu cầu."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "kaigo-move-02",
+      "titleVi": "Xác nhận đường đi khi gặp vật cản",
+      "curriculumDay": 16,
+      "npcId": "kaigo-npc-care-peer",
+      "playerRoleVi": "Nhân viên chăm sóc",
+      "contextVi": "Nhờ đồng nghiệp xác nhận đường thay thế. Xe lăn chưa đi vào vùng vật cản; không dùng hội thoại làm hướng dẫn thao tác xe lăn.",
+      "objectivesVi": [
+        "Nêu vị trí và quan sát cụ thể",
+        "Hỏi hỗ trợ trước tự quyết",
+        "Lặp lại đường đi và thông báo thay đổi"
+      ],
+      "knowledgeVi": [
+        "Phân biệt điều quan sát được với đánh giá của bản thân.",
+        "Khi phân vân, trao đổi với đồng nghiệp; không cố đi qua lối chưa kiểm tra."
+      ],
+      "sourceRefs": [
+        {
+          "printedPage": 118,
+          "pdfPage": 120,
+          "purpose": "reporting facts and consultation"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-move-01",
+        "kaigo-vocab-move-02",
+        "kaigo-vocab-move-04",
+        "kaigo-vocab-move-05",
+        "kaigo-vocab-move-06"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "交流室へ向かう廊下に荷物があります。別の道を使ってもいいですか。",
+          "meaningVi": "Hành lang tới phòng giao lưu đang có đồ. Tôi dùng đường khác được không?"
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "まず、どの場所に荷物があるか教えてください。",
+          "meaningVi": "Trước hết hãy cho tôi biết đồ nằm ở vị trí nào."
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "エレベーターの前です。車いすが通るには狭いと思います。",
+          "meaningVi": "Ở trước thang máy. Tôi nghĩ hơi hẹp cho xe lăn đi qua."
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "狭い所を無理に通らないでください。今、私が通路を確認します。",
+          "meaningVi": "Đừng cố đi qua chỗ hẹp. Bây giờ tôi sẽ kiểm tra lối đi."
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "森川さんには、確認が終わるまでお待ちいただいています。",
+          "meaningVi": "Tôi đang nhờ bác Morikawa đợi tới khi kiểm tra xong."
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "わかりました。確認しましたが、右側の通路なら荷物がなく、交流室へ行けます。",
+          "meaningVi": "Tôi hiểu. Tôi đã kiểm tra: lối bên phải không có đồ và dẫn tới phòng giao lưu."
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "右側ですね。移動する前に、森川さんへ道が変わることを説明します。",
+          "meaningVi": "Lối bên phải đúng không. Trước khi di chuyển tôi sẽ giải thích cho bác rằng đường đi thay đổi."
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "お願いします。到着したら、部屋の担当者にも伝えてください。",
+          "meaningVi": "Nhờ bạn. Tới nơi hãy báo cho người phụ trách phòng."
+        },
+        {
+          "turn": 9,
+          "speaker": "npc",
+          "textJa": "到着後に伝えます。ほかに確認することはありますか。",
+          "meaningVi": "Tôi sẽ báo sau khi tới. Còn điều gì cần xác nhận không?"
+        },
+        {
+          "turn": 10,
+          "speaker": "player",
+          "textJa": "今のところありません。新しい問題があれば、その場で確認してください。",
+          "meaningVi": "Hiện không. Nếu có vấn đề mới thì hãy xác nhận ngay khi gặp."
+        }
+      ],
+      "responsePolicy": {
+        "requiredIntents": [
+          "specify_location",
+          "report_observation",
+          "confirm_alternative_route",
+          "inform_resident"
+        ],
+        "acceptableVariantsJa": [
+          "エレベーター前の通路です。",
+          "右の通路を使うということでよろしいですか。"
+        ],
+        "unsafeOrIncompleteIntents": [
+          "force_through_obstacle",
+          "move_without_route_confirmation"
+        ],
+        "fallbackJa": "荷物の場所と、今の状況を教えてください。"
+      },
+      "reading": {
+        "textJa": "通路の連絡\n午後一時五十分、エレベーター前に運搬用の荷物が置かれていた。岸本職員が右側の通路を確認した。移動前に利用者へ経路の変更を説明する。",
+        "meaningVi": "Thông tin lối đi: 13 giờ 50 có đồ vận chuyển trước thang máy. Nhân viên Kishimoto kiểm tra lối bên phải. Trước di chuyển giải thích đổi đường cho người sử dụng."
+      },
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "questions": [
+        {
+          "id": "move-q06",
+          "kind": "knowledge",
+          "promptJa": "荷物の報告で、場所が具体的なものはどれですか。",
+          "optionsJa": [
+            "どこかが危ないです。",
+            "エレベーターの前に荷物があります。",
+            "いつもどおりです。",
+            "みんな困っています。"
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: không rõ vị trí.",
+            "Đúng: nêu rõ chỗ có đồ.",
+            "Sai: không phản ánh quan sát.",
+            "Sai: nhận định chung không cho biết vị trí."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "move-q07",
+          "kind": "knowledge",
+          "promptJa": "まだ確認していない通路を使う前に、何をしますか。",
+          "optionsJa": [
+            "車いすが通れるはずだと考える。",
+            "利用者へ説明せず進む。",
+            "通路の状態を確認する。",
+            "荷物にぶつかってから相談する。"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: suy đoán thay kiểm tra.",
+            "Sai: thiếu kiểm tra và giải thích.",
+            "Đúng: kiểm tình trạng trước.",
+            "Sai: chờ xảy ra sự cố."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "move-q08",
+          "kind": "knowledge",
+          "promptJa": "同僚の説明を確認する返事はどれですか。",
+          "optionsJa": [
+            "話を聞かなくてもできます。",
+            "あとで考えます。",
+            "どの道でも同じですね。",
+            "右側の通路を使うのですね。"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: bỏ xác nhận.",
+            "Sai: không xác nhận thông tin vừa nhận.",
+            "Sai: không đúng chỉ dẫn cụ thể.",
+            "Đúng: lặp lại lối đi để xác nhận."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "move-q09",
+          "kind": "reading",
+          "promptJa": "記録では、誰が右側の通路を確認しましたか。",
+          "optionsJa": [
+            "岸本職員。",
+            "森川さんの家族。",
+            "利用者全員。",
+            "調理員。"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: ghi rõ Kishimoto.",
+            "Sai: không có dữ kiện này.",
+            "Sai: không được ghi.",
+            "Sai: không được ghi."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "move-q10",
+          "kind": "reading",
+          "promptJa": "経路が変わることは、いつ利用者へ説明しますか。",
+          "optionsJa": [
+            "移動が全部終わってから。",
+            "移動する前。",
+            "説明しない。",
+            "翌日の面会時。"
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: quá muộn trong tình huống.",
+            "Đúng: bài đọc yêu cầu trước di chuyển.",
+            "Sai: bỏ giải thích.",
+            "Sai: không đúng thời điểm."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "kaigo-move-03",
+      "titleVi": "Báo cáo khi người sử dụng muốn nghỉ",
+      "curriculumDay": 18,
+      "npcId": "kaigo-npc-nurse",
+      "playerRoleVi": "Nhân viên chăm sóc",
+      "contextVi": "Luyện báo cáo cho điều dưỡng, không chẩn đoán mệt hoặc quyết định điều trị.",
+      "objectivesVi": [
+        "Nêu thời điểm, lời người sử dụng và hành động đã làm",
+        "Phân biệt chưa xác nhận với không có",
+        "Xác nhận bước phối hợp tiếp theo"
+      ],
+      "knowledgeVi": [
+        "Truyền đạt ngắn gọn, phân biệt sự thật và suy đoán.",
+        "Tình huống thay đổi phải được đánh giá theo tình trạng và quy trình cơ sở, không dùng kịch bản này làm quy trình khẩn cấp."
+      ],
+      "sourceRefs": [
+        {
+          "printedPage": 118,
+          "pdfPage": 120,
+          "purpose": "reporting and consultation"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-move-01",
+        "kaigo-vocab-move-03",
+        "kaigo-vocab-move-02",
+        "kaigo-vocab-move-09",
+        "kaigo-vocab-move-04"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "森川さんの移動について、何か変わったことがありましたか。",
+          "meaningVi": "Việc di chuyển của bác Morikawa có gì thay đổi không?"
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "一時五十五分に入口へ着いたとき、森川さんが「少し休みたい」と話されました。",
+          "meaningVi": "Lúc tới lối vào vào 13 giờ 55, bác nói muốn nghỉ một chút."
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "その後、どうしましたか。",
+          "meaningVi": "Sau đó bạn làm gì?"
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "移動をいったん止め、担当職員に連絡しました。森川さんは座ったまま待っておられます。",
+          "meaningVi": "Tôi tạm dừng di chuyển và liên lạc nhân viên phụ trách. Bác đang ngồi đợi."
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "痛みや息苦しさについては、話されていましたか。",
+          "meaningVi": "Bác có nói về đau hoặc khó thở không?"
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "その訴えは聞いていません。ただ、まだ詳しく確認できていません。",
+          "meaningVi": "Tôi chưa nghe bác nói như vậy, nhưng chưa xác nhận kỹ."
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "確認できていないことを、ないと決めつけないのは大切ですね。今から一緒に状態を確認しましょう。",
+          "meaningVi": "Không kết luận là không có khi chưa xác nhận là điều quan trọng. Bây giờ cùng kiểm tra tình trạng nhé."
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "はい。移動は再開せず、お待ちしています。",
+          "meaningVi": "Vâng. Tôi sẽ đợi và chưa tiếp tục di chuyển."
+        },
+        {
+          "turn": 9,
+          "speaker": "npc",
+          "textJa": "確認した内容と時刻も記録してください。必要な対応は、状態を見て判断します。",
+          "meaningVi": "Hãy ghi nội dung đã xác nhận và giờ. Tôi sẽ đánh giá tình trạng để quyết định hỗ trợ cần thiết."
+        },
+        {
+          "turn": 10,
+          "speaker": "player",
+          "textJa": "わかりました。確認した事実と、ご本人の言葉を分けて記録します。",
+          "meaningVi": "Tôi hiểu. Tôi sẽ phân biệt sự việc đã xác nhận và lời của bác trong ghi chép."
+        }
+      ],
+      "responsePolicy": {
+        "requiredIntents": [
+          "report_time_and_statement",
+          "report_action",
+          "state_unconfirmed_information",
+          "confirm_next_step"
+        ],
+        "acceptableVariantsJa": [
+          "詳しい状態はまだ確認できていません。",
+          "看護職に連絡して、移動を止めています。"
+        ],
+        "unsafeOrIncompleteIntents": [
+          "diagnose_cause",
+          "assert_no_symptom_without_check",
+          "resume_without_required_assessment"
+        ],
+        "fallbackJa": "わかっている事実と、まだ確認していないことを分けて伝えてください。"
+      },
+      "reading": {
+        "textJa": "移動の記録\n13:55　交流室入口で、利用者が休憩を希望した。移動を中断し、担当職員へ連絡。痛みや息苦しさについては未確認。看護職と状態を確認する予定。",
+        "meaningVi": "Ghi chép di chuyển: 13:55 người sử dụng muốn nghỉ tại lối vào phòng giao lưu. Tạm dừng và báo nhân viên phụ trách. Chưa xác nhận đau hoặc khó thở. Dự kiến cùng điều dưỡng kiểm tra."
+      },
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "questions": [
+        {
+          "id": "move-q11",
+          "kind": "knowledge",
+          "promptJa": "確認していない情報を正確に報告する表現はどれですか。",
+          "optionsJa": [
+            "問題は絶対にありません。",
+            "原因はわかっています。",
+            "その点はまだ確認できていません。",
+            "報告する必要はありません。"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: khẳng định khi chưa kiểm.",
+            "Sai: tự nhận biết nguyên nhân.",
+            "Đúng: ghi rõ giới hạn thông tin.",
+            "Sai: thiếu dữ kiện không phải lý do bỏ báo cáo."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "move-q12",
+          "kind": "knowledge",
+          "promptJa": "記録で事実と推測を分けたものはどれですか。",
+          "optionsJa": [
+            "本人はきっと怠けています。",
+            "原因は年齢です。",
+            "疲れたに違いありません。",
+            "13:55、本人が「休みたい」と話した。"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: đánh giá chủ quan.",
+            "Sai: tự kết luận nguyên nhân.",
+            "Sai: suy đoán được trình bày như chắc chắn.",
+            "Đúng: thời điểm và lời người sử dụng."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "move-q13",
+          "kind": "knowledge",
+          "promptJa": "報告する内容として適切な組み合わせはどれですか。",
+          "optionsJa": [
+            "時刻、本人の言葉、行った対応。",
+            "職員の好みだけ。",
+            "確認していない診断だけ。",
+            "次の予定だけ。"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: đủ dữ kiện chính của sự việc.",
+            "Sai: không mô tả sự việc.",
+            "Sai: vượt dữ kiện và vai.",
+            "Sai: thiếu thay đổi và xử lý đã làm."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "move-q14",
+          "kind": "reading",
+          "promptJa": "記録の時点で、痛みや息苦しさについて何がわかっていますか。",
+          "optionsJa": [
+            "両方ないと確認済み。",
+            "まだ確認されていない。",
+            "痛みだけが確認済み。",
+            "医師が原因を決めた。"
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: 未確認 không phải không có.",
+            "Đúng: bài đọc ghi chưa xác nhận.",
+            "Sai: không có dữ kiện.",
+            "Sai: không có bác sĩ hoặc chẩn đoán trong ghi chép."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "move-q15",
+          "kind": "reading",
+          "promptJa": "記録では、次に誰と状態を確認する予定ですか。",
+          "optionsJa": [
+            "利用者の家族。",
+            "調理員。",
+            "看護職。",
+            "ほかの利用者。"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: không được ghi.",
+            "Sai: không phải vai trong kế hoạch.",
+            "Đúng: bài đọc nêu điều dưỡng.",
+            "Sai: không được ghi."
+          ],
+          "review": {
+            "aiEditorialReviewed": true,
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "releaseReady": false
+          }
+        }
+      ]
+    }
+  ],
+  "assetStatus": "not_created",
+  "mockStatus": "these are lesson checks, not a 45 or 15 question full mock",
+  "similarityReview": {
+    "status": "ai_manual_check_not_rights_certification",
+    "scope": "New situations: activity schedule and seating preference; obstacle-route coordination; fact-based reporting of requested rest. No source dialogue expanded or renamed. Common professional formulas may overlap.",
+    "humanReviewed": false
+  }
+}
