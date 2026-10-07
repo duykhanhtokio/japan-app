@@ -173,3 +173,17 @@ Tuần8 đã đọc lại21/21blob trênremotec42c0a5a;local68c9642sạch. Phiê
 reviews/WHOLE_COURSE_REVIEW_PACKAGE.md,coverage-audit,objective-repairs,review-worklist,similarity-screen vàscripts/check-kaigo-course-review-package.mjs lưubằngchứng.114đơnvị duyệt54bài+60câu đều tên/ngày/quyếtđịnhtrống;12kiểmxuyênđơnvịpending,khônggửi ai hoặc tựký. Màn text-layer toànkhóa12.102trường/2.830dài>=60/0hit,khôngchứngnhậnquyền hoặc kiểmtrùngý/hình. Kếhoạch1710phútchưađo;mọihuman/domain/native/rights/runtime/releasefalse.
 
 Bước tiếp: xử lý độbao phủ/chiềusâu vànhiễu hai form tronglịch8tuần, kiểmnguồn/chuyênmôn/bảnngữ/tải học;không tựtuần9/đềmới/tíchhợpchưagate. Tiếp tục nghiêncứu/soạnnháp đãđượcphép;khôngđánhđồngkýnháp/validatorPASSvớiđạtchuyênmôn. Lưu hẹpconnector vàđọcSHA từngblobtrênnhánh trước báođãlưu;khôngclaimWORKPERSISTENCEscriptPASS.
+
+## 2026-10-07 — Hai đề đầu tiên, bản thảo sửa đổi 2
+
+Baseline remote audit e5384a6282c129b89cf85b47881c8c46350f4a50; local 96858bc giữ đúng nội dung cụm audit. Tracking local cũ không được coi là HEAD remote. Phiên tiếp tục đọc đủ hướng dẫn/plan/checkpoint/biểu đạt độc lập; kiểm SHA nguồn và đoạn text-layer phụ thuộc, đọc lại phần bị cắt. Kiểm riêng MHLW bản hướng dẫn nhiễm khuẩn thứ ba, trang in 28/PDF30, về vệ sinh tay sau tháo găng. Không dùng câu hỏi gốc hoặc công bố PDF nguồn.
+
+Rà AI cả60câu; sửa thân/lựa chọn57câu:42kỹ năng và15Nhật. Ba câu kỹ năng q15/q16/q22 giữ nội dung; sửa furigana 一時的 ở q15. Giữ ID, thứ tự, correctIndex, điểm1/0, thời gian/quota và chính sách đã chốt. q03 chuyển sang đánh giá quá trình, q05 vệ sinh tay, q33 chức năng quần áo, q40 giặt theo chất liệu/ký hiệu. Nhiễu q07/q14/q23/q26/q38 cùng nhóm khái niệm; Nhật q10 đọc thứ tự, q14 thực đơn dự kiến tự soạn, q15 phân công. Giảm cụm năng lực lặp, chưa xóa mọi lặp hoặc đo độ phân biệt.
+
+Dài nhất duy nhất từ27/45và12/15 còn10/45và5/15; ngắn nhất duy nhất4/45và4/15, cũng được kiểm để tránh dấu hiệu đoán mới. Không đổi khóa đáp án để đạt số này. Đối chiếu60câu/240lựa chọn/240lý do Nhật–Việt; sửa 食器 thành đồ đựng và các lý do còn theo nhiễu cũ. Furigana inventory638surface đã ràAI ngữ cảnh, khóa cụm ngày29tháng10/一時的/使用後 và tên người; chưa native approval.
+
+reviews/MOCK_REVISION_02_REPORT.md, mock-revision-02-changes.json và scripts/check-kaigo-mock-revision-02.mjs lưu phạm vi sửa, trước/sau/hash và baseline chính sách.30hash nội dung giữ nguyên gồm bài học và5SVG; không claim render lại hình. Validator tuần8, sửa đề2 và gói review toàn khóa PASS ở mức cấu trúc/hash/liên kết/giới hạn duyệt; diff whitespace kiểm trước commit. Ma trận/screen khóa snapshot mới:12.162trường/2.890dài>=60/0khớp60ký tự; không kiểm trùng ý/hình/quyền. Toàn khóa vẫn54bài/270kiểm bài+60câu đề,114đơn vị chưa ký; không thêm bài hoặc đề.
+
+Human/domain/native/publisher/rights/runtime/release false. Đặc tả resume cần khóa version/snapshot trước tích hợp; chưa app thực thi và chưa đo60/30phút hoặc tổng1710phút. Không đổi UI/src/JLPT. Lưu hẹp lên HEAD remote mới nhất bằng connector với lease, đọc SHA từng blob trên nhánh trước báo đã lưu; không gọi đó là WORKPERSISTENCE script PASS.
+
+Bước tiếp: xử lý khoảng trống kiến thức/chiều sâu ưu tiên trong lịch8tuần, kiểm nguồn/chuyên môn/bản ngữ/tải học. Một câu mới về quá trình hoặc vệ sinh tay không thay bài học/chuyển giao; nhiễm khuẩn, sức khỏe nhân viên, dịch vụ/khẩn cấp và kỹ thuật hỗ trợ vẫn chưa đủ. Không tự tuần9/đề mới/tích hợp/phát hành; không hỏi lại những quyết định đã chốt.

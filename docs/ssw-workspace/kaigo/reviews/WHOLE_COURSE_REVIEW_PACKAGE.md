@@ -1,10 +1,12 @@
 # Rà phạm vi toàn khóa Kaigo và gói kiểm duyệt — 2026-10-07
 
+**Cập nhật sau audit: hai đề đã được sửa thành bản thảo 2.** Xem [báo cáo sửa đề](MOCK_REVISION_02_REPORT.md) và `mock-revision-02-changes.json`: 57 câu sửa, bản dịch/furigana đồng bộ; số dài nhất duy nhất hiện tại là 10/45 và 5/15. Coverage/similarity JSON đã khóa snapshot mới. Các số và phát hiện trong phần audit bên dưới mô tả bản trước; những gap chưa có bài riêng và mọi cổng duyệt vẫn mở. Screen hiện tại: 12.162 trường/2.890 trường dài từ 60 ký tự/0 khớp, không chứng nhận quyền.
+
 Kết luận: **NOT_READY_FOR_INTEGRATION**. Đủ56ngày ở mức bản thảo không đồng nghĩa đủ kiến thức/kỹ thuật thi hoặc đủ điều kiện phát hành. Toàn khóa có54bài thường/270câu kiểm bài,434lượt thoại và hai đề đầu tiên60câu. Không thêm tuần9 hay đề mới trong cụm này.
 
 ## Đã sửa cụ thể
 
-33mục đầu của `objectivesVi` trong tuần4–8 đã được đổi từ đáp án mẫu phụ thuộc câu hỏi (ví dụ “Không. ...”) thành mục tiêu quan sát được: phân biệt, mô tả, đối chiếu, báo cáo hoặc xác định phần cần kiểm. Hai mục tiêu còn lại của mỗi bài giữ nguyên. `whole-course-objective-repairs.json` lưu đủ trước/sau,ID,ngày,trường và lý do. Validator so dữ liệu với commit nền68c9642, chỉ cho phép33thay đổi này; kiến thức, thoại, văn bản, câu hỏi/đáp án, rubric, lịch và trạng thái duyệt giữ nguyên.
+33mục đầu của `objectivesVi` trong tuần4–8 đã được đổi từ đáp án mẫu phụ thuộc câu hỏi (ví dụ “Không. ...”) thành mục tiêu quan sát được: phân biệt, mô tả, đối chiếu, báo cáo hoặc xác định phần cần kiểm. Hai mục tiêu còn lại của mỗi bài giữ nguyên. `whole-course-objective-repairs.json` lưu đủ trước/sau,ID,ngày,trường và lý do. Validator kiểm hash canonical sau che đúng trường sửa, được ghi từ baseline; không phụ thuộc commit local tạm thời. Trong cụm sửa mục tiêu đó, kiến thức, thoại, văn bản, câu hỏi/đáp án, rubric, lịch và trạng thái duyệt giữ nguyên.
 
 ## Audit thực sự đã làm
 
