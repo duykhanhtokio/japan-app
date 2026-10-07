@@ -4,7 +4,7 @@ No external text service; no legacy exam inputs. Generated audio requires human 
 """
 import argparse,array,hashlib,io,json,math,subprocess,time,urllib.parse,urllib.request,wave
 from pathlib import Path
-ap=argparse.ArgumentParser();ap.add_argument('--level',choices=['n5','n4'],default='n5');ap.add_argument('--port',type=int,default=50128);ap.add_argument('--cpu-threads',type=int,default=2);ap.add_argument('--engine',required=True);ap.add_argument('--exam-number',type=int,choices=range(1,7),default=1);ap.add_argument('--cache-dir');ap.add_argument('--continuous-bitrate-kbps',type=int,choices=[40,48,64,96],default=96);args=ap.parse_args();level=args.level;exam_number=f'{args.exam_number:02d}'
+ap=argparse.ArgumentParser();ap.add_argument('--level',choices=['n5','n4','n3'],default='n5');ap.add_argument('--port',type=int,default=50128);ap.add_argument('--cpu-threads',type=int,default=2);ap.add_argument('--engine',required=True);ap.add_argument('--exam-number',type=int,choices=range(1,7),default=1);ap.add_argument('--cache-dir');ap.add_argument('--continuous-bitrate-kbps',type=int,choices=[40,48,64,96],default=96);args=ap.parse_args();level=args.level;exam_number=f'{args.exam_number:02d}'
 root=Path(__file__).resolve().parent.parent;master=root/f'src/data/jlpt-original/{level}/{exam_number}/master.ja.json';master_bytes=master.read_bytes();exam=json.loads(master_bytes);casting=json.loads((root/'src/data/jlpt-original/voice-casting.json').read_text());settings={**casting['settings'],**casting.get('levelPacing',{}).get(level,{})};roles=casting['roles'];organization_path=root/f'src/data/jlpt-original/{level}/{exam_number}/listening-organization.ja.json';organization_bytes=organization_path.read_bytes();organization=json.loads(organization_bytes)
 out=root/f'assets/jlpt-original/{level}/{exam_number}/audio';out.mkdir(parents=True,exist_ok=True)
 work=root/f'docs/jlpt-workspace/original/{level}-{exam_number}/audio';work.mkdir(parents=True,exist_ok=True)
@@ -76,6 +76,8 @@ def original_rest_music():
    cells=[(59,62,67),(64,67,71),(60,64,69),(57,62,66),(62,66,69),(55,60,64),(60,65,69),(64,69,72),(57,60,65),(62,67,71),(59,64,67),(59,62,67)]
   if args.exam_number==6:
    cells=[(60,65,69),(57,60,64),(62,65,70),(55,59,64),(59,64,67),(60,64,69),(57,62,65),(62,67,71),(55,60,65),(59,62,67),(60,65,67),(60,65,69)]
+ if level=='n3':
+  cells=[(65,69,74),(62,65,69),(60,65,69),(57,62,65),(64,67,72),(62,67,71),(59,64,67),(60,64,69),(57,60,65),(64,69,72),(62,65,70),(65,69,74)]
  samples=array.array('h')
  for i in range(1440000):
   t=i/24000;cell=int(t//5);local=t-cell*5
@@ -92,12 +94,12 @@ try:
  for check in organization['soundCheck']:
   album.extend(synth(check['text'],check['role']));album.extend(silence(settings['betweenTurnsSeconds']))
  narration(organization['generalInstructionsJa']);orientation_segments.append({'role':'opening_sound_check_and_general_instructions','startMs':opening_start,'endMs':round(len(album)/48)})
- for group in range(1,5):
+ for group in range(1,len(organization['groups'])+1):
   orientation_start=round(len(album)/48);narration(plan[group]);org=next(g for g in organization['groups'] if g['problem']==group);practice=org['example'];practice_start=round(len(album)/48);practice_turns=[]
   for i,(role,text) in enumerate(practice['script']):
    album.extend(synth(text,role));album.extend(silence(settings['afterIntroSeconds'] if i==0 else settings['betweenTurnsSeconds']));practice_turns.append({'actor':role,'role':role,'text':text})
-  if group<=2:album.extend(synth(practice['prompt'],'adultFemale'))
-  else:
+  if org.get('readQuestionAfterDialogue',group<=2):album.extend(synth(practice['prompt'],'adultFemale'))
+  if org.get('readChoices',group>2):
    for opt in practice['options']:
     practice_answer_role=practice.get('optionVoiceRole') or ('femaleStudent' if group==3 else 'youngMale')
     album.extend(synth(opt['id']+'。','adultFemale'));album.extend(silence(.3));album.extend(synth(opt['text'],practice_answer_role));album.extend(silence(.8));practice_turns.append({'actor':'option-'+opt['id'],'role':practice_answer_role,'text':opt['text']})
@@ -109,8 +111,8 @@ try:
    for i,(actor,text) in enumerate(q['script']):
     role='adultFemale' if actor=='narrator' else (actor if actor in roles else actors[key][actor])
     frames.extend(synth(text,role));frames.extend(silence(settings['afterIntroSeconds'] if i==0 else settings['betweenTurnsSeconds']));turns.append({'actor':actor,'role':role,'text':text})
-   if group<=2:frames.extend(synth(q['prompt'],'adultFemale'))
-   else:
+   if org.get('readQuestionAfterDialogue',group<=2):frames.extend(synth(q['prompt'],'adultFemale'))
+   if org.get('readChoices',group>2):
     answer_role=q.get('optionVoiceRole') or (('femaleStudent' if q['number']%2 else 'youngMale') if group==3 else {'4-01':'femaleStudent','4-02':'youngMale','4-03':'youngMale','4-04':'femaleStudent','4-05':'femaleStudent','4-06':'youngMale'}[key])
     for opt in q['options']:
      frames.extend(synth(opt['id']+'。','adultFemale'));frames.extend(silence(.3));frames.extend(synth(opt['text'],answer_role));frames.extend(silence(.8));turns.append({'actor':'option-'+opt['id'],'role':answer_role,'text':opt['text']})
@@ -129,6 +131,6 @@ try:
  assert master.read_bytes()==master_bytes, 'Master changed during synthesis; regenerate from the new snapshot.'
  assert organization_path.read_bytes()==organization_bytes, 'Organization changed during synthesis; regenerate from the new snapshot.'
  mp=save(f'{level}-original-{exam_number}-listening-draft',album)
- manifest={'examId':exam['examId'],'status':'generated_ai_unreviewed','masterSha256':hashlib.sha256(master_bytes).hexdigest(),'voiceCastingSha256':hashlib.sha256((root/'src/data/jlpt-original/voice-casting.json').read_bytes()).hexdigest(),'continuousAudioPath':str(mp.relative_to(root)),'continuousSha256':hashlib.sha256(mp.read_bytes()).hexdigest(),'durationMs':round(len(album)/48),'targetDurationMs':1800000 if level=='n5' else 2100000,'matchesThirtyMinuteTarget':False,'durationMeasuredFromPcm':True,'continuousBitrateKbps':args.continuous_bitrate_kbps,'publisherReviewed':False,'nativeReviewCompleted':False,'perceptualApproval':False,'rightsReleaseReviewCompleted':False,'break':break_manifest,'organizationSha256':hashlib.sha256(organization_bytes).hexdigest(),'orientationSegments':orientation_segments,'examplesCount':4,'instructions':plan,'settings':settings,'credits':[v['credit'] for v in roles.values()],'items':segments}
+ manifest={'examId':exam['examId'],'status':'generated_ai_unreviewed','masterSha256':hashlib.sha256(master_bytes).hexdigest(),'voiceCastingSha256':hashlib.sha256((root/'src/data/jlpt-original/voice-casting.json').read_bytes()).hexdigest(),'continuousAudioPath':str(mp.relative_to(root)),'continuousSha256':hashlib.sha256(mp.read_bytes()).hexdigest(),'durationMs':round(len(album)/48),'targetDurationMs':{'n5':1800000,'n4':2100000,'n3':2400000}[level],'matchesThirtyMinuteTarget':False,'durationMeasuredFromPcm':True,'continuousBitrateKbps':args.continuous_bitrate_kbps,'publisherReviewed':False,'nativeReviewCompleted':False,'perceptualApproval':False,'rightsReleaseReviewCompleted':False,'break':break_manifest,'organizationSha256':hashlib.sha256(organization_bytes).hexdigest(),'orientationSegments':orientation_segments,'examplesCount':len(organization['groups']),'instructions':plan,'settings':settings,'credits':[v['credit'] for v in roles.values()],'items':segments}
  (root/f'src/data/jlpt-original/{level}/{exam_number}/audio.manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'count':len(segments),'durationSeconds':len(album)/48000,'complete':True}),flush=True)
 finally:stop();log.close()

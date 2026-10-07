@@ -379,3 +379,8 @@ Mandatory joint reading: reread this session entry guide, AGENTS.md, both full J
 ## Mandatory Tokutei Gino 介護 authoring contract — approved 2026-10-07
 
 Before EVERY new 介護 authoring session, read `docs/ssw-workspace/kaigo/KAIGO_AUTHORING_RULES.md` completely, then `KAIGO_AUTHORING_CHECKPOINT.md` and `approved-plan.json` in that directory, plus the source pages for the current unit. Memory or a prior-session read is insufficient. The publisher approved independent new expression/assets based on verified knowledge/terms, 8 weeks at 30 minutes/day, Japanese dialogue with Vietnamese support, approximately 6–12 turns, reviewed bounded-response scenarios, and one initial skills mock plus one Japanese mock for review. Create enough stable-role NPCs for all required contexts; do not limit the system to one universal NPC. This sector-specific contract does not authorize UI redesign, deletion, source redistribution or release of unreviewed content.
+
+
+## 2026-10-07 — N3 listening organization selected by publisher
+
+Independent five-skill design: one new unscored example per group. Groups1–2 question before and after dialogue, printed alternatives not spoken. Group3 no advance question; question and four alternatives spoken after the story, no printed alternatives. Groups4–5 three spoken alternatives, no printed alternatives. No whole-dialogue replay. This is a publisher-selected independent organization, not certification of legacy source semantics. Existing approved N3 speed/pauses and approximately40minute target unchanged.

@@ -4,8 +4,8 @@ import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 const number = process.argv[2] || '01';
-const level=process.argv[3] || 'n5'; assert.ok(['n5','n4'].includes(level));
-const expectedCount=level==='n4'?28:24;
+const level=process.argv[3] || 'n5'; assert.ok(['n5','n4','n3'].includes(level));
+const expectedCount=level==='n5'?24:28;
 assert.match(number, /^0[1-6]$/);
 const root = new URL('../', import.meta.url);
 const read = p => JSON.parse(readFileSync(new URL(p, root)));
@@ -20,9 +20,9 @@ assert.deepEqual(audio.settings, settings);
 assert.equal(audio.masterSha256, sha(base + 'master.ja.json'));
 assert.equal(audio.organizationSha256, sha(base + 'listening-organization.ja.json'));
 assert.equal(audio.continuousSha256, sha(audio.continuousAudioPath));
-assert.equal(audio.examplesCount, 4);
-assert.equal(org.groups.length, 4);
-assert.equal(new Set(org.groups.map(g => g.example.id)).size, 4);
+assert.equal(audio.examplesCount, level==='n3'?5:4);
+assert.equal(org.groups.length, level==='n3'?5:4);
+assert.equal(new Set(org.groups.map(g => g.example.id)).size, org.groups.length);
 function frames(p) {
  const pcm = execFileSync('ffmpeg', ['-v','error','-i',fileURLToPath(new URL(p, root)), '-f','s16le','-ar','24000','-ac','1','-'], {maxBuffer:128*1024*1024});
  assert.equal(pcm.length % 2, 0); return pcm.length/2;
@@ -50,7 +50,7 @@ assert.ok(audio.items.filter(q => q.group === 2).at(-1).endMs <= audio.break.ann
 assert.ok(audio.break.resumeAnnouncementEndMs <= audio.orientationSegments.find(s => s.problem === 3).startMs);
 for (const group of org.groups) {
  const e = group.example; assert.equal(e.scored,false);
- assert.equal(e.options.length, group.problem <= 2 ? 4 : 3);
+ assert.equal(e.options.length, group.problem <= (level==='n3'?3:2) ? 4 : 3);
  assert.equal(e.options.filter(o => o.id === e.correctOptionId).length,1);
  const orientation = audio.orientationSegments.find(s => s.problem === group.problem);
  assert.equal(orientation.exampleId,e.id); assert.equal(orientation.scored,false);
@@ -67,4 +67,4 @@ for (const group of org.groups) {
 }
 for (const flag of ['publisherReviewed','nativeReviewCompleted','perceptualApproval','rightsReleaseReviewCompleted']) assert.equal(audio[flag],false);
 assert.equal(exam.releaseReady,false);
-console.log(`${level.toUpperCase()} ${number} AUDIO PASS: ${expectedCount} decoded recordings, scripts/spoken choices, four ungraded examples, complete track ${audio.durationMs}ms and exact 60000ms music. No perceptual/native/release claim.`);
+console.log(`${level.toUpperCase()} ${number} AUDIO PASS: ${expectedCount} decoded recordings, scripts/spoken choices, ${org.groups.length} ungraded examples, complete track ${audio.durationMs}ms and exact 60000ms music. No perceptual/native/release claim.`);

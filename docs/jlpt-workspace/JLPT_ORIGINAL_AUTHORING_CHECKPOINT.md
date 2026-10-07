@@ -380,3 +380,10 @@ Session jlpt:jpapp:n4:original:06:v1,audio0ms; spoken alternatives/transcripts/i
 ## 2026-10-07 — N4 06 local completion; N3 pacing decision
 
 N4 06 complete-content and adapter validators PASS, UI lock10/10. Completion commit remains local: automatic approval review rejected GitHub push for lack of explicit payload/destination sharing confirmation. No WORK PERSISTENCE PASS and no durable12/30 claim. Preserve the complete N4 work; obtain requested push confirmation before progressing to N3 content. Publisher directly selected N3 2/.5s and answer12/12/12/10/8s; synchronized both mandatory guides, casting and machine blueprint. N3 content/audio not authored by this checkpoint session.
+
+
+## 2026-10-07 — authorized publication verified; N3 01 authored
+
+User explicitly authorized the two outstanding payloads to duykhanhtokio/japan-app, recovery/jlpt-n3-n1. N4 completion tree exactly matches remote6807d7f3; pacing payload published edbd9069. Concurrent Kaigo commit6212ce09 preserved. Full checkout fetched remote6212ce09; WORK PERSISTENCE PASS. Integrated12/30 is durable. Historical push blocker above is resolved.
+
+N3 01 independently authored102responses (74written+28listening),10passages,5new unscored examples and4imagegen illustrations inspected. Content structure PASS, pools23/22/22/22 and5/4/4, no triples/short cycles. Publisher selected five-skill independent listening organization; source semantic verificationfalse. AI corrected ordering dependencies, benefactive viewpoint, ambiguous usage distractor and practice-image speaker casting. Approved .9speed,2/.5s,12/12/12/10/8s; new60second instrumental afterproblem2 before allproblem3orientation. Audio generation underway; duration/adapter/runtime not yet complete. No human/native/perceptual/rights/release claim. Integrated remains12/30 until completed N3 technical integration and durable publication. Resume original/n3-01/HANDOFF.md; do not rerun scratch authoring scripts.
