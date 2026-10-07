@@ -113,3 +113,15 @@ Giữ5/5/5/10/5phút của tuần4 trong ma trận; điều chỉnh3/8/5/9/5đư
 Rà AI từng nhóm nội dung/đáp án/rubric/biến thể; sửa nguồn dẫn, tiêu chí gộp và7phương án sai quá xa chủ đề. Có validator tuần4 và báo cáo WEEK_04_EDITORIAL_REPORT.md, evidence similarity711trường/cửa sổ60ký tự/0trườngkhớp. Sàng lọc và so tình huống AI không chứng nhận quyền. Bộ chấm ngữ nghĩa chưa chạy; human/domain/native/publisher/rights/runtime/releaseflagsfalse. Không hình/audio/app/mock/đo tải học.
 
 Sau khi commit hẹp,push/fetch vàWORK PERSISTENCE PASS: tiếp tục trọn tuần5 ngày29–35, đọc lại nguồn bài tiết152–169 và từ/hội thoại219–223. Giữ các lựa chọn đề thi còn mở; chỉ hỏi khi làm phần phụ thuộc. Đạt bản thảo đã rà AI, chưa đạt gatepháthành; không tự nâng trạng thái.
+
+## 2026-10-07 — Tuần5, nguyên cụm bài tiết ngày29–35
+
+Phiên mới đọc hướng dẫn/plan/checkpoint/biểuđạtđộclập, fetch/fastforwardHEAD2f1d7331 vàWORKPERSISTENCEPASStrướcsoạn. Không lặp hoặc sửa nội dung tuần1–4. Nguồn chuẩn khớphash; đọc152–169/PDF154–171,219–223/PDF221–225,16/115/118vàkiểmhìnhtừ219.
+
+Thêm excretion-lessons/vocabulary/response-rubrics.json,week-05-manifest.json và validator tuần5:7bài,56lượt,7bàiđọc,35câu với lý do4phương án,20từ mới (12cáchđọc visual,8AIonly),14cáchnói,28rubric tách ý,28ca phản hồi đặc tả,7casechuyểngiao. Liên kết đủ ngày29–35,NPCvaiổnđịnh; tổng35bài/175câu ôn, không là đềđầyđủ. Phânbổ5/5/5/10/5,210phút chưađo; ngày33–35ônlại.
+
+Tìnhhuống: nhu cầu nói kín; quan sát/cáchgọi chưa chốt; báo lo09:10 với ca09:00; đồ chuẩn bị khác kế hoạch; quầnướt nguyênnhânchưabiết; nhầmngày trongphiếu; nhu cầu hỗtrợ chưa xác nhận thực hiện. RàAInguồn/đápán/biếnthể/diễnbiến,vàtách ýrubric. Không hứa bỏquan sát chỉ vì có nút; không tựghi失禁,便秘,khôngbàitiếthoặchỗtrợxong khi chưa đủ dữkiện.
+
+Validator tuần1–5PASS; báo cáoWEEK_05_EDITORIAL_REPORT.md và similarity415trường/cửasổ60ký tự/0trườngtrùng. Sànglọc khôngchứngnhậnquyền. Chưa thao tác chuyểnngười/dụngcụ/thaytã/vệsinh/kiểmsoátnhiễmkhuẩn: ghi coveragegap,khôngtuyênbốđủtoànphạmvi. Human/domain/native/publisher/rights/runtime/releasefalse; chưaassets/audio/thiđầyđủ/đothờilượng/bộchấmnghĩa.
+
+Sau commit hẹp,push/fetch/WORKPERSISTENCEPASS: tiếp trọn tuần6 ngày36–42 về chỉnhtrang,tắm,vệsinh; đọc170–197,224–237 vàkiểmtảihọc/giớihạnkỹthuật. Không phát hành bảnthảo hoặc tựchốtcáclựachọnđềthicònmở.
