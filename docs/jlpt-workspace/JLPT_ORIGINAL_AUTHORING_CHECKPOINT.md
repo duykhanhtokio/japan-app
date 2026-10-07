@@ -348,3 +348,14 @@ First full2173319ms; removed six redundant trailing turns from task1items1/4/8, 
 PASS content/audio script/choices/roles/hash/decode, adapter, UI10/10, actual Chromium audio0/pause/resume/music boundary/fiveimages and unmodified production runner/sharedUI RN-web harness: select/save, Back/reopen/resume selectedcolor, incomplete submit97, score0/1/97of98, review, no pageerror. Three430x932screenshots inspected. FullTS still only existing unrelated TS2352 life-content-repository.ts:47; no JLPTdiagnostic. No native/iPhone/full-router/perceptual/human/rights/release approval.
 
 Independent session jlpt:jpapp:n4:original:04:v1, audio0ms, spoken choices/transcripts/detailedexplanations hidden. After publish/fetch and WORK PERSISTENCE PASS, N5 01–06+N4 01–04=10/30; nextN4 05. Resume original/n4-04/HANDOFF.md; do not rerun scratch scripts. No legacy removal before full replacement gate.
+
+
+## 2026-10-07 — N4 05 technically completed and integrated
+
+Completed independent98responses,8passages,4new unscored examples,5actual imagegen illustrations inspected. AI corrected ordering dependencies, numeric distractor typo, express-train/conditional contexts, usage distraction and short-notice wording; furniture reading avoids unnecessary からこそ. Pools21/22/21/21 and4/5/4; no triples/short cycles, differs from previous10original answer patterns. No legacy content read/reused.
+
+First full2266055ms; removed16redundant trailing confirmation/secondary-topic turns from eight task1dialogues, retaining explicit instructions/keys. Final PCM/MP3decode **2094215ms=34:54.215**, nominal delta−5785ms, approximately35minute editorial judgment without invented fixed tolerance. New procedural music differs from priorN4scores, exactly60000ms/1440000frames afterproblem2 before allproblem3orientation, announcements before/after. Four approved voices,.9speed,N4 2/.5s,12/12/10/8s unchanged; no silence padding. Recording/current snapshot hashes retained.
+
+PASS content/audio scripts/options/roles/hash/decode, adapter, UI10/10, actual Chromium assets and unchanged production-runner/sharedUI RN-web harness: select/save, audio0/pause, Back/reopen/resume selectedcolor, incomplete submit97, score0/1/97of98, review, no pageerror. Three430x932screenshots inspected. FullTS retains existing unrelated TS2352 life-content-repository.ts:47 only; no JLPTdiagnostic. No native/iPhone/full-router/perceptual/human/rights/release approval.
+
+Independent session jlpt:jpapp:n4:original:05:v1, audio0ms, spoken choices/transcripts/internalexplanations hidden. After final publish/fetch and WORK PERSISTENCE PASS, N5 01–06+N4 01–05=11/30; nextN4 06. Resume original/n4-05/HANDOFF.md; never rerun initial scratch scripts. No legacy removal before full replacement gate.
