@@ -20,15 +20,22 @@
     "rightsVerified": false,
     "actualDurationVerified": true,
     "continuousAudioPath": "assets/jlpt-original/n5/06/audio/n5-original-06-listening-draft.mp3",
-    "durationMs": 1802127,
+    "durationMs": 1793465,
     "targetDurationMs": 1800000,
     "matchesThirtyMinuteTarget": true,
-    "perceptualApproval": false
+    "perceptualApproval": false,
+    "actualDurationMs": 1793465,
+    "targetDeviationMs": -6535,
+    "durationAssessment": "Approximately 30 minutes: 29:53.465. AI editorial assessment of the complete content, without fixed target tolerance. Approved pacing unchanged; no silence padding. Technical PCM/decode checks are separate from perceptual approval."
   },
   "illustrations": {
     "required": 5,
-    "status": "generated_ai_unreviewed",
-    "manifestPath": "src/data/jlpt-original/n5/06/images.manifest.json"
+    "status": "generated_ai_visually_inspected",
+    "manifestPath": "src/data/jlpt-original/n5/06/images.manifest.json",
+    "style": "colored_2d",
+    "tool": "built-in image_gen",
+    "rightsVerified": false,
+    "styleStandard": "docs/jlpt-workspace/JLPT_IMAGE_AND_UNIQUENESS_STANDARD.md"
   },
   "releaseReady": false,
   "runtimeIntegrated": true,
@@ -120,33 +127,33 @@
       "section": "vocabulary",
       "group": 1,
       "number": 3,
-      "prompt": "紙に【名前】を書いてください。\n【 】のことばは、どう読みますか。",
+      "prompt": "夏の【休み】に、祖母に会いに行きます。\n【 】のことばは、どう読みますか。",
       "options": [
         {
           "id": "1",
-          "text": "なまえ",
-          "rationale": "Đúng: 名前 đọc là なまえ."
+          "text": "やすみ",
+          "rationale": "正解。休みの読みを識別する。"
         },
         {
           "id": "2",
-          "text": "なめえ",
-          "rationale": "Sai: なめえ khác cách đọc なまえ; chú ý âm và trường âm."
+          "text": "やつみ",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "3",
-          "text": "なめい",
-          "rationale": "Sai: なめい khác cách đọc なまえ; chú ý âm và trường âm."
+          "text": "ゆすみ",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "4",
-          "text": "なまい",
-          "rationale": "Sai: なまい khác cách đọc なまえ; chú ý âm và trường âm."
+          "text": "やすめ",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         }
       ],
       "correctOptionId": "1",
-      "learningObjective": "漢字の文脈読み",
-      "sentence": "紙に【名前】を書いてください。",
-      "target": "名前"
+      "learningObjective": "休みの読みを識別する。",
+      "sentence": "夏の【休み】に、祖母に会いに行きます。",
+      "target": "休み"
     },
     {
       "id": "jpapp-n5-original-06-v1-vocabulary-1-04",
@@ -1055,31 +1062,31 @@
       "section": "vocabulary",
       "group": 4,
       "number": 2,
-      "prompt": "あしたの午後は暇です。\n同じ意味の文を選んでください。",
+      "prompt": "授業は、あと五分で終わります。\n同じ意味の文を選んでください。",
       "options": [
         {
           "id": "1",
-          "text": "あしたの午後は仕事があって、忙しいです。",
-          "rationale": "Sai: Bận làm việc trái rảnh."
+          "text": "授業は、五分前に終わりました。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「今から五分たつと、授業が終わります。」という意味ではない。"
         },
         {
           "id": "2",
-          "text": "あしたの午後は用事がなく、時間があります。",
-          "rationale": "Đúng: 暇 là không có việc phải làm và có thời gian."
+          "text": "今から五分たつと、授業が終わります。",
+          "rationale": "正解。あと五分は今から五分後。終わると始まるを区別する。"
         },
         {
           "id": "3",
-          "text": "あしたの午後は用事が多く、時間がありません。",
-          "rationale": "Sai: Nhiều việc không có thời gian trái rảnh."
+          "text": "今から五分たつと、授業が始まります。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「今から五分たつと、授業が終わります。」という意味ではない。"
         },
         {
           "id": "4",
-          "text": "あしたの午後は学校にいて、授業があります。",
-          "rationale": "Sai: Đang có tiết học không diễn tả rảnh."
+          "text": "授業は、五分前に始まりました。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「今から五分たつと、授業が終わります。」という意味ではない。"
         }
       ],
       "correctOptionId": "2",
-      "learningObjective": "生活語彙の言い換え"
+      "learningObjective": "あと五分は今から五分後。終わると始まるを区別する。"
     },
     {
       "id": "jpapp-n5-original-06-v1-vocabulary-4-03",
@@ -1396,31 +1403,31 @@
       "section": "grammar_reading",
       "group": 1,
       "number": 8,
-      "prompt": "図書館では（　）話してください。",
+      "prompt": "この箱は重いですから、二人（　）運びましょう。",
       "options": [
         {
           "id": "1",
-          "text": "静かな",
-          "rationale": "Sai: 静かな bổ nghĩa danh từ, không 話す."
+          "text": "に",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "2",
-          "text": "静かで",
-          "rationale": "Sai: 静かで nối mệnh đề, không yêu cầu cách nói."
+          "text": "を",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "3",
-          "text": "静かだ",
-          "rationale": "Sai: 静かだ là vị ngữ, không bổ nghĩa 話す."
+          "text": "が",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "4",
-          "text": "静かに",
-          "rationale": "Đúng: 静かに bổ nghĩa cách nói."
+          "text": "で",
+          "rationale": "正解。共同で行う人の範囲を、助詞でで示す。"
         }
       ],
       "correctOptionId": "4",
-      "learningObjective": "基本助詞・時制・接続"
+      "learningObjective": "共同で行う人の範囲を、助詞「で」で示す。"
     },
     {
       "id": "jpapp-n5-original-06-v1-grammar_reading-1-09",
@@ -3207,8 +3214,10 @@
         "role": "Initial estimate, not acceptance tolerance"
       },
       "optionVoiceRole": "youngMale",
-      "visualBrief": "Right scored panel: young man leaving hospital visit, turns with caring expression to resting male friend in bed. Left practice: adult woman on sidewalk holding wallet she saw man drop; man walking away, she calls to him. No answer text.",
-      "illustrationPath": "assets/jlpt-original/n5/06/images/problem-3-01.png"
+      "visualBrief": "TWO equal side-by-side panels with a narrow cream gutter, LEFT is practice: Sidewalk: adult woman with bare wrists asks middle-aged male passerby who wears plain wristwatch for current time; watch face unreadable, no lost wallet. RIGHT is scored:  young man leaving hospital visit, turns with caring expression to resting male friend in bed. ",
+      "illustrationPath": "assets/jlpt-original/n5/06/images/problem-3-01.png",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n5/06/images/problem-3-01.png"
     },
     {
       "id": "jpapp-n5-original-06-v1-listening-3-02",
@@ -3250,7 +3259,9 @@
       },
       "optionVoiceRole": "adultMale",
       "visualBrief": "Adult male host at open doorway welcoming woman guest inside with inviting open-hand gesture. No waiting chair or departure cue, no text.",
-      "illustrationPath": "assets/jlpt-original/n5/06/images/problem-3-02.png"
+      "illustrationPath": "assets/jlpt-original/n5/06/images/problem-3-02.png",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n5/06/images/problem-3-02.png"
     },
     {
       "id": "jpapp-n5-original-06-v1-listening-3-03",
@@ -3292,37 +3303,39 @@
       },
       "optionVoiceRole": "femaleStudent",
       "visualBrief": "Female student points to an unreadable marked word in open book and asks adult male teacher beside desk, confused expression, teacher listening. No readable word, no text.",
-      "illustrationPath": "assets/jlpt-original/n5/06/images/problem-3-03.png"
+      "illustrationPath": "assets/jlpt-original/n5/06/images/problem-3-03.png",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n5/06/images/problem-3-03.png"
     },
     {
       "id": "jpapp-n5-original-06-v1-listening-3-04",
       "section": "listening",
       "group": 3,
       "number": 4,
-      "prompt": "男の学生は、何と言いますか。",
+      "prompt": "男の人は、何と言いますか。",
       "options": [
         {
           "id": "1",
-          "text": "いただきます。",
-          "rationale": "Sai: 食べる前の言葉で、皿は空."
+          "text": "ごはんを多くしてください。",
+          "rationale": "不正解。量を増やす依頼で逆。"
         },
         {
           "id": "2",
-          "text": "ごちそうさまでした。",
-          "rationale": "Đúng: 食べ終わって感謝する言葉."
+          "text": "ごはんを少なくしてください。",
+          "rationale": "正解。食べられる量に減らす依頼。"
         },
         {
           "id": "3",
-          "text": "いってきます。",
-          "rationale": "Sai: 出かけるときの言葉で、食後の感謝ではない."
+          "text": "ごはんをもう一つください。",
+          "rationale": "不正解。追加を求めており減らしていない。"
         }
       ],
       "correctOptionId": "2",
-      "learningObjective": "食後のあいさつ",
+      "learningObjective": "場面の目的に合う発話を選ぶ：食べられる量に減らす依頼。",
       "script": [
         [
           "narrator",
-          "絵を見てください。男の学生は、食堂でごはんを全部食べました。作ってくれた人に、食事のお礼を言いたいです。何と言いますか。"
+          "絵を見てください。男の学生は、食堂でごはんをもらいます。でも、たくさんは食べられません。ごはんを少なくしてほしいです。料理を出す人に何と言いますか。"
         ]
       ],
       "spokenOptions": true,
@@ -3333,8 +3346,10 @@
         "role": "Initial estimate, not acceptance tolerance"
       },
       "optionVoiceRole": "youngMale",
-      "visualBrief": "Male student in school cafeteria finishes meal, empty tray and bowls, hands together thanking adult female cook across counter. No words or numbers.",
-      "illustrationPath": "assets/jlpt-original/n5/06/images/problem-3-04.png"
+      "visualBrief": "Adult male student at cafeteria counter with empty tray asks middle-aged female cook holding rice scoop above bowl, rice not yet served; no finished meal.",
+      "illustrationPath": "assets/jlpt-original/n5/06/images/problem-3-04.png",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n5/06/images/problem-3-04.png"
     },
     {
       "id": "jpapp-n5-original-06-v1-listening-3-05",
@@ -3375,15 +3390,17 @@
         "role": "Initial estimate, not acceptance tolerance"
       },
       "optionVoiceRole": "adultFemale",
-      "visualBrief": "Woman shopper outside closed shop door, male staff member with keys outside beside door, she politely asks him. Door contains no readable sign, no calendar or price, no text.",
-      "illustrationPath": "assets/jlpt-original/n5/06/images/problem-3-05.png"
+      "visualBrief": "Woman shopper with short layered brown hair and navy clothes, outside closed shop door, politely asks male store employee carrying keys beside door about tomorrow's business. No sign, calendar, text, digits or symbols.",
+      "illustrationPath": "assets/jlpt-original/n5/06/images/problem-3-05.png",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n5/06/images/problem-3-05.png"
     },
     {
       "id": "jpapp-n5-original-06-v1-listening-4-01",
       "section": "listening",
       "group": 4,
       "number": 1,
-      "prompt": "音声を聞いて、返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3427,7 +3444,7 @@
       "section": "listening",
       "group": 4,
       "number": 2,
-      "prompt": "音声を聞いて、返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3471,7 +3488,7 @@
       "section": "listening",
       "group": 4,
       "number": 3,
-      "prompt": "音声を聞いて、返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3515,7 +3532,7 @@
       "section": "listening",
       "group": 4,
       "number": 4,
-      "prompt": "音声を聞いて、返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3559,7 +3576,7 @@
       "section": "listening",
       "group": 4,
       "number": 5,
-      "prompt": "音声を聞いて、返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3603,7 +3620,7 @@
       "section": "listening",
       "group": 4,
       "number": 6,
-      "prompt": "音声を聞いて、返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3643,5 +3660,6 @@
       "optionVoiceRole": "adultMale"
     }
   ],
-  "aiEditorialReviewed": true
+  "aiEditorialReviewed": true,
+  "contentRevision": 2
 }

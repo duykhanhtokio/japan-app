@@ -25,11 +25,20 @@
     "actualDurationVerified": true,
     "rightsVerified": false,
     "perceptualApproval": false,
-    "durationMs": 2094215
+    "durationMs": 2126748,
+    "continuousAudioPath": "assets/jlpt-original/n4/05/audio/n4-original-05-listening-draft.mp3",
+    "actualDurationMs": 2126748,
+    "targetDeviationMs": 26748,
+    "durationAssessment": "Approximately 35 minutes: 35:26.748. AI editorial assessment of the complete content, without fixed target tolerance. Approved pacing unchanged; no silence padding. Technical PCM/decode checks are separate from perceptual approval."
   },
   "illustrations": {
     "required": 5,
-    "status": "generated_ai_unreviewed"
+    "status": "generated_ai_visually_inspected",
+    "style": "colored_2d",
+    "tool": "built-in image_gen",
+    "rightsVerified": false,
+    "manifestPath": "src/data/jlpt-original/n4/05/images.manifest.json",
+    "styleStandard": "docs/jlpt-workspace/JLPT_IMAGE_AND_UNIQUENESS_STANDARD.md"
   },
   "passages": {
     "text-grammar": "私は先月から、駅前の花屋でアルバイトをしています。花の名前をほとんど知らなかった（１）、初めはお客さんの話がよくわかりませんでした。\n店長に相談すると、毎日一つだけ名前を覚えることにしようと言われました。たくさん覚えようとすると忘れてしまいますが、一つなら（２）。その日の花をノートに描いて、名前と色を書きました。\nある日、お客さんに花の場所を聞かれました。前の日に覚えた花だったので、すぐに案内できました。お客さんが笑顔で「ありがとう」と（３）、少し自信がつきました。\n今も知らない花は多いです。（４）、名前を聞いたとき、わからないままにせず、その場で確かめるようになりました。これからも、働き（５）覚えていきたいです。",
@@ -852,31 +861,31 @@
       "section": "vocabulary",
       "group": 4,
       "number": 1,
-      "prompt": "私はたいてい七時に起きます。",
+      "prompt": "この仕事はめったにしません。\n同じ意味の文を選んでください。",
       "options": [
         {
           "id": "1",
-          "text": "私は一度だけ七時に起きました。",
-          "rationale": "この文脈・接続では「私は一度だけ七時に起きました。」を選べない。たいていは通常・多くの日。例外を許すので必ずではない。"
+          "text": "この仕事をすることがよくあります。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「この仕事をすることはほとんどありません。」という意味ではない。"
         },
         {
           "id": "2",
-          "text": "私は七時には起きたことがありません。",
-          "rationale": "この文脈・接続では「私は七時には起きたことがありません。」を選べない。たいていは通常・多くの日。例外を許すので必ずではない。"
+          "text": "この仕事は昨日だけしませんでした。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「この仕事をすることはほとんどありません。」という意味ではない。"
         },
         {
           "id": "3",
-          "text": "私は毎日必ず七時に起きます。",
-          "rationale": "この文脈・接続では「私は毎日必ず七時に起きます。」を選べない。たいていは通常・多くの日。例外を許すので必ずではない。"
+          "text": "この仕事をこれから毎日する予定です。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「この仕事をすることはほとんどありません。」という意味ではない。"
         },
         {
           "id": "4",
-          "text": "私はほとんど毎日、七時に起きます。",
-          "rationale": "正解。たいていは通常・多くの日。例外を許すので必ずではない。"
+          "text": "この仕事をすることはほとんどありません。",
+          "rationale": "正解。めったにしないは行う頻度がとても低いこと。"
         }
       ],
       "correctOptionId": "4",
-      "learningObjective": "たいていは通常・多くの日。例外を許すので必ずではない。"
+      "learningObjective": "めったにしないは行う頻度がとても低いこと。"
     },
     {
       "id": "jpapp-n4-original-05-v1-vocabulary-4-02",
@@ -3579,123 +3588,144 @@
       "section": "listening",
       "group": 3,
       "number": 1,
-      "prompt": "学校へ行く途中で、あなたは遅れそうになりました。先生に電話して、少し遅れることを伝えます。何と言いますか。",
+      "prompt": "女の人は、何と言いますか。",
       "options": [
         {
           "id": "1",
-          "text": "すみません。少し早く来てください。",
-          "rationale": "この文脈・接続では「すみません。少し早く来てください。」を選べない。電話で自分の遅刻を知らせる。相手への早着依頼や早退許可ではない。"
+          "text": "二冊頼んだのですが、三冊届いてしまいました。",
+          "rationale": "不正解。注文数と到着数が逆。"
         },
         {
           "id": "2",
-          "text": "すみません。少し遅れます。",
-          "rationale": "正解。電話で自分の遅刻を知らせる。相手への早着依頼や早退許可ではない。"
+          "text": "三冊頼んだのですが、二冊しか届いていません。",
+          "rationale": "正解。注文三冊と到着二冊の不足を伝える。"
         },
         {
           "id": "3",
-          "text": "すみません。先に帰ってもいいですか。",
-          "rationale": "この文脈・接続では「すみません。先に帰ってもいいですか。」を選べない。電話で自分の遅刻を知らせる。相手への早着依頼や早退許可ではない。"
+          "text": "三冊届いたので、一冊返してもよろしいですか。",
+          "rationale": "不正解。三冊届いておらず返品希望ではない。"
         }
       ],
       "correctOptionId": "2",
-      "learningObjective": "電話で自分の遅刻を知らせる。相手への早着依頼や早退許可ではない。",
+      "learningObjective": "場面の目的に合う発話を選ぶ：注文三冊と到着二冊の不足を伝える。",
       "listening": {
         "intro": "学校へ行く途中で、あなたは遅れそうになりました。先生に電話して、少し遅れることを伝えます。何と言いますか。",
-        "turns": [],
+        "turns": [
+          {
+            "role": "adultFemale",
+            "text": "絵を見てください。女の人は、店に三冊の本を注文しました。でも、届いた箱には二冊しかありません。店へ電話して、一冊足りないと伝えたいです。何と言いますか。"
+          }
+        ],
         "question": "学校へ行く途中で、あなたは遅れそうになりました。先生に電話して、少し遅れることを伝えます。何と言いますか。"
       },
       "script": [
         [
           "narrator",
-          "学校へ行く途中で、あなたは遅れそうになりました。先生に電話して、少し遅れることを伝えます。何と言いますか。"
+          "絵を見てください。女の人は、店に三冊の本を注文しました。でも、届いた箱には二冊しかありません。店へ電話して、一冊足りないと伝えたいです。何と言いますか。"
         ]
       ],
       "audioStatus": "generated_ai_unreviewed",
-      "optionVoiceRole": "femaleStudent",
-      "visualBrief": "A female student outdoors with school bag holds a mobile phone to her ear and glances at her wristwatch, apologetic expression. Single scene, no readable time, numbers, text, speech bubbles or signs.",
-      "illustrationStatus": "generated_ai_unreviewed"
+      "optionVoiceRole": "adultFemale",
+      "visualBrief": "Adult woman at home beside open delivery box containing exactly two plain books, phones shop with concerned expression; no wristwatch or late-arrival cue.",
+      "illustrationStatus": "generated_ai_unreviewed",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n4/05/images/problem-3-01.png"
     },
     {
       "id": "jpapp-n4-original-05-v1-listening-3-02",
       "section": "listening",
       "group": 3,
       "number": 2,
-      "prompt": "スーパーで、あなたは袋に入ったりんごを買いたいです。値段が見つからないので、店員に聞きます。何と言いますか。",
+      "prompt": "女の人は、何と言いますか。",
       "options": [
         {
           "id": "1",
-          "text": "このりんごは、一袋いくらですか。",
-          "rationale": "正解。一袋の価格を尋ねる。販売終了時刻・食べた個数ではない。"
+          "text": "袋ではなく、一個ずつ買えますか。",
+          "rationale": "正解。袋単位ではなく一個単位の販売を確認する。"
         },
         {
           "id": "2",
-          "text": "このりんごは、いくつ食べましたか。",
-          "rationale": "この文脈・接続では「このりんごは、いくつ食べましたか。」を選べない。一袋の価格を尋ねる。販売終了時刻・食べた個数ではない。"
+          "text": "一袋の値段を教えていただけますか。",
+          "rationale": "不正解。価格ではなく販売単位を知りたい。"
         },
         {
           "id": "3",
-          "text": "このりんごは、何時まで売っていますか。",
-          "rationale": "この文脈・接続では「このりんごは、何時まで売っていますか。」を選べない。一袋の価格を尋ねる。販売終了時刻・食べた個数ではない。"
+          "text": "二袋とも同じ値段で買えますか。",
+          "rationale": "不正解。二袋の値段比較ではない。"
         }
       ],
       "correctOptionId": "1",
-      "learningObjective": "一袋の価格を尋ねる。販売終了時刻・食べた個数ではない。",
+      "learningObjective": "場面の目的に合う発話を選ぶ：袋単位ではなく一個単位の販売を確認する。",
       "listening": {
         "intro": "スーパーで、あなたは袋に入ったりんごを買いたいです。値段が見つからないので、店員に聞きます。何と言いますか。",
-        "turns": [],
+        "turns": [
+          {
+            "role": "adultFemale",
+            "text": "絵を見てください。女の人はスーパーでりんごを買います。袋には五個入っていますが、一個だけほしいです。一個ずつ買えるか、店員に聞きます。何と言いますか。"
+          }
+        ],
         "question": "スーパーで、あなたは袋に入ったりんごを買いたいです。値段が見つからないので、店員に聞きます。何と言いますか。"
       },
       "script": [
         [
           "narrator",
-          "スーパーで、あなたは袋に入ったりんごを買いたいです。値段が見つからないので、店員に聞きます。何と言いますか。"
+          "絵を見てください。女の人はスーパーでりんごを買います。袋には五個入っていますが、一個だけほしいです。一個ずつ買えるか、店員に聞きます。何と言いますか。"
         ]
       ],
       "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "adultFemale",
-      "visualBrief": "An adult woman shopper points at a bag of apples on a supermarket produce counter while asking an adult male employee. Bags have no labels and displays no price tags or words.",
-      "illustrationStatus": "generated_ai_unreviewed"
+      "visualBrief": "Supermarket female shopper points toward bagged apples while speaking to male employee; one clear bag of five apples, no price tags or printed labels.",
+      "illustrationStatus": "generated_ai_unreviewed",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n4/05/images/problem-3-02.png"
     },
     {
       "id": "jpapp-n4-original-05-v1-listening-3-03",
       "section": "listening",
       "group": 3,
       "number": 3,
-      "prompt": "職場で、あなたは図に線を引きたいですが、定規を持っていません。同僚が定規を持っています。何と言いますか。",
+      "prompt": "男の人は、何と言いますか。",
       "options": [
         {
           "id": "1",
-          "text": "定規を貸してもらえますか。",
-          "rationale": "正解。自分が借りる依頼。自分が貸す申出や過去の返却ではない。"
+          "text": "この線は、引き直した方がいいでしょうか。",
+          "rationale": "正解。自分の既存の線を修正すべきか確認する。"
         },
         {
           "id": "2",
-          "text": "定規を返してもらいました。",
-          "rationale": "この文脈・接続では「定規を返してもらいました。」を選べない。自分が借りる依頼。自分が貸す申出や過去の返却ではない。"
+          "text": "この線は、もう直していただいたのでしょうか。",
+          "rationale": "不正解。まだ誰も直していない。"
         },
         {
           "id": "3",
-          "text": "定規を貸してあげましょうか。",
-          "rationale": "この文脈・接続では「定規を貸してあげましょうか。」を選べない。自分が借りる依頼。自分が貸す申出や過去の返却ではない。"
+          "text": "この線は、これから引いていただけるでしょうか。",
+          "rationale": "不正解。最初から相手へ作業を依頼する場面ではない。"
         }
       ],
       "correctOptionId": "1",
-      "learningObjective": "自分が借りる依頼。自分が貸す申出や過去の返却ではない。",
+      "learningObjective": "場面の目的に合う発話を選ぶ：自分の既存の線を修正すべきか確認する。",
       "listening": {
         "intro": "職場で、あなたは図に線を引きたいですが、定規を持っていません。同僚が定規を持っています。何と言いますか。",
-        "turns": [],
+        "turns": [
+          {
+            "role": "adultFemale",
+            "text": "絵を見てください。男の人は仕事で線を引きましたが、少し曲がっています。このままでは使えないかもしれません。線を引き直した方がいいか、同僚に聞きます。何と言いますか。"
+          }
+        ],
         "question": "職場で、あなたは図に線を引きたいですが、定規を持っていません。同僚が定規を持っています。何と言いますか。"
       },
       "script": [
         [
           "narrator",
-          "職場で、あなたは図に線を引きたいですが、定規を持っていません。同僚が定規を持っています。何と言いますか。"
+          "絵を見てください。男の人は仕事で線を引きましたが、少し曲がっています。このままでは使えないかもしれません。線を引き直した方がいいか、同僚に聞きます。何と言いますか。"
         ]
       ],
       "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "youngMale",
-      "visualBrief": "A young male office worker at a desk with a blank geometric sketch asks an adult female coworker who is holding a ruler. Simple office, no text, arrows or labels.",
-      "illustrationStatus": "generated_ai_unreviewed"
+      "visualBrief": "Young male office worker points to a visibly slightly crooked single line on otherwise blank large paper; adult female colleague examines it; ruler lies unused nearby, no borrowing gesture.",
+      "illustrationStatus": "generated_ai_unreviewed",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n4/05/images/problem-3-03.png"
     },
     {
       "id": "jpapp-n4-original-05-v1-listening-3-04",
@@ -3736,55 +3766,64 @@
       "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "femaleStudent",
       "visualBrief": "A female student visitor holds a small camera lowered at chest level and politely asks an adult male museum attendant beside a plain abstract painting. No photographing yet, no prohibition symbols or words.",
-      "illustrationStatus": "generated_ai_unreviewed"
+      "illustrationStatus": "generated_ai_unreviewed",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n4/05/images/problem-3-04.png"
     },
     {
       "id": "jpapp-n4-original-05-v1-listening-3-05",
       "section": "listening",
       "group": 3,
       "number": 5,
-      "prompt": "道で、自転車を直している人を見ました。あなたは何か手伝えることがあるか、聞きたいです。何と言いますか。",
+      "prompt": "男の人は、何と言いますか。",
       "options": [
         {
           "id": "1",
-          "text": "何か手伝ってください。",
-          "rationale": "この文脈・接続では「何か手伝ってください。」を選べない。通行人として手助けを申し出る。自分への手助け依頼ではない。"
+          "text": "修理にはいくら払えばいいですか。",
+          "rationale": "不正解。費用ではなく時間を知りたい。"
         },
         {
           "id": "2",
-          "text": "何か手伝ってくれましたか。",
-          "rationale": "この文脈・接続では「何か手伝ってくれましたか。」を選べない。通行人として手助けを申し出る。自分への手助け依頼ではない。"
+          "text": "修理にはどんな道具を使いますか。",
+          "rationale": "不正解。道具の種類を知りたいのではない。"
         },
         {
           "id": "3",
-          "text": "何か手伝いましょうか。",
-          "rationale": "正解。通行人として手助けを申し出る。自分への手助け依頼ではない。"
+          "text": "修理は何時ごろ終わりそうですか。",
+          "rationale": "正解。予定に合わせるため終了時刻を尋ねる。"
         }
       ],
       "correctOptionId": "3",
-      "learningObjective": "通行人として手助けを申し出る。自分への手助け依頼ではない。",
+      "learningObjective": "場面の目的に合う発話を選ぶ：予定に合わせるため終了時刻を尋ねる。",
       "listening": {
         "intro": "道で、自転車を直している人を見ました。あなたは何か手伝えることがあるか、聞きたいです。何と言いますか。",
-        "turns": [],
+        "turns": [
+          {
+            "role": "adultFemale",
+            "text": "絵を見てください。男の人は、自転車の店で修理を頼みました。このあと予定があるので、何時ごろ終わるか、修理する人に聞きたいです。何と言いますか。"
+          }
+        ],
         "question": "道で、自転車を直している人を見ました。あなたは何か手伝えることがあるか、聞きたいです。何と言いますか。"
       },
       "script": [
         [
           "narrator",
-          "道で、自転車を直している人を見ました。あなたは何か手伝えることがあるか、聞きたいです。何と言いますか。"
+          "絵を見てください。男の人は、自転車の店で修理を頼みました。このあと予定があるので、何時ごろ終わるか、修理する人に聞きたいです。何と言いますか。"
         ]
       ],
       "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "youngMale",
-      "visualBrief": "A young male passerby offers help with an open-hand gesture to an adult male cyclist bent beside a bicycle with a visibly loose chain. Plain roadside, no words, symbols or speech bubbles.",
-      "illustrationStatus": "generated_ai_unreviewed"
+      "visualBrief": "Bicycle repair shop young male customer addresses middle-aged male mechanic next to bicycle on repair stand, tools neatly nearby; no passerby assistance scene or clock digits.",
+      "illustrationStatus": "generated_ai_unreviewed",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n4/05/images/problem-3-05.png"
     },
     {
       "id": "jpapp-n4-original-05-v1-listening-4-01",
       "section": "listening",
       "group": 4,
       "number": 1,
-      "prompt": "先週借りた本、まだ使ってる？",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3823,7 +3862,7 @@
       "section": "listening",
       "group": 4,
       "number": 2,
-      "prompt": "この書類は今日中に出してください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3862,7 +3901,7 @@
       "section": "listening",
       "group": 4,
       "number": 3,
-      "prompt": "熱いので気をつけてください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3901,7 +3940,7 @@
       "section": "listening",
       "group": 4,
       "number": 4,
-      "prompt": "新しい住所を教えてもらえますか。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3940,7 +3979,7 @@
       "section": "listening",
       "group": 4,
       "number": 5,
-      "prompt": "今晩は、もう何か予定がある？",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3979,7 +4018,7 @@
       "section": "listening",
       "group": 4,
       "number": 6,
-      "prompt": "具合が悪いので、明日の練習を休みます。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -4018,7 +4057,7 @@
       "section": "listening",
       "group": 4,
       "number": 7,
-      "prompt": "すみません、ここは禁煙です。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -4057,7 +4096,7 @@
       "section": "listening",
       "group": 4,
       "number": 8,
-      "prompt": "その箱、一人で運べる？",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -4091,5 +4130,6 @@
       "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "femaleStudent"
     }
-  ]
+  ],
+  "contentRevision": 2
 }

@@ -359,3 +359,7 @@ Nhà phát hành đã chọn trực tiếp trong phiên kiểm tra checkpoint: s
 ## 2026-10-07 — N3 listening organization selected by publisher
 
 Independent five-skill design: one new unscored example per group. Groups1–2 question before and after dialogue, printed alternatives not spoken. Group3 no advance question; question and four alternatives spoken after the story, no printed alternatives. Groups4–5 three spoken alternatives, no printed alternatives. No whole-dialogue replay. This is a publisher-selected independent organization, not certification of legacy source semantics. Existing approved N3 speed/pauses and approximately40minute target unchanged.
+
+## Mandatory colored 2D and content uniqueness standard — 2026-10-07
+
+Apply [JLPT_IMAGE_AND_UNIQUENESS_STANDARD.md](JLPT_IMAGE_AND_UNIQUENESS_STANDARD.md) to every independent original and subsequent exam. Publisher requested all illustrations colored 2D and a semantic duplicate audit; different names or nouns alone do not create an independent situation.

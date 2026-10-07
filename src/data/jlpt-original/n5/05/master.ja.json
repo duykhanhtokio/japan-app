@@ -20,15 +20,22 @@
     "rightsVerified": false,
     "actualDurationVerified": true,
     "continuousAudioPath": "assets/jlpt-original/n5/05/audio/n5-original-05-listening-draft.mp3",
-    "durationMs": 1806117,
+    "durationMs": 1778621,
     "targetDurationMs": 1800000,
     "matchesThirtyMinuteTarget": true,
-    "perceptualApproval": false
+    "perceptualApproval": false,
+    "actualDurationMs": 1778621,
+    "targetDeviationMs": -21379,
+    "durationAssessment": "Approximately 30 minutes: 29:38.621. AI editorial assessment of the complete content, without fixed target tolerance. Approved pacing unchanged; no silence padding. Technical PCM/decode checks are separate from perceptual approval."
   },
   "illustrations": {
     "required": 5,
-    "status": "generated_ai_unreviewed",
-    "manifestPath": "src/data/jlpt-original/n5/05/images.manifest.json"
+    "status": "generated_ai_visually_inspected",
+    "manifestPath": "src/data/jlpt-original/n5/05/images.manifest.json",
+    "style": "colored_2d",
+    "tool": "built-in image_gen",
+    "rightsVerified": false,
+    "styleStandard": "docs/jlpt-workspace/JLPT_IMAGE_AND_UNIQUENESS_STANDARD.md"
   },
   "releaseReady": false,
   "runtimeIntegrated": true,
@@ -278,33 +285,33 @@
       "section": "vocabulary",
       "group": 1,
       "number": 8,
-      "prompt": "このパンは【半分】食べました。\n【 】のことばは、どう読みますか。",
+      "prompt": "毎週【火曜日】に、ピアノを習います。\n【 】のことばは、どう読みますか。",
       "options": [
         {
           "id": "1",
-          "text": "はんぷん",
-          "rationale": "Sai: «はんぷん» không đáp ứng: 半分 đọc là はんぶん"
+          "text": "かよび",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "2",
-          "text": "ばんぷん",
-          "rationale": "Sai: «ばんぷん» không đáp ứng: 半分 đọc là はんぶん"
+          "text": "ひようび",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "3",
-          "text": "はんぶん",
-          "rationale": "Đúng: 半分 đọc là はんぶん"
+          "text": "かようび",
+          "rationale": "正解。火曜日の読みを識別する。"
         },
         {
           "id": "4",
-          "text": "ばんぶん",
-          "rationale": "Sai: «ばんぶん» không đáp ứng: 半分 đọc là はんぶん"
+          "text": "かようにち",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         }
       ],
       "correctOptionId": "3",
-      "learningObjective": "文中の漢字読み",
-      "sentence": "このパンは【半分】食べました。",
-      "target": "半分"
+      "learningObjective": "火曜日の読みを識別する。",
+      "sentence": "毎週【火曜日】に、ピアノを習います。",
+      "target": "火曜日"
     },
     {
       "id": "jpapp-n5-original-05-v1-vocabulary-1-09",
@@ -1048,31 +1055,31 @@
       "section": "vocabulary",
       "group": 4,
       "number": 2,
-      "prompt": "この駅はいつも人が多いです。\n同じ意味の文を選んでください。",
+      "prompt": "今日は仕事が休みです。\n同じ意味の文を選んでください。",
       "options": [
         {
           "id": "1",
-          "text": "この駅はいつもこんでいます。",
-          "rationale": "Đúng: こんでいる=đông người, tương đương 人が多い."
+          "text": "今日は仕事をしません。",
+          "rationale": "正解。仕事が休みの日は、その仕事をしない日。"
         },
         {
           "id": "2",
-          "text": "この駅はいつも閉まっています。",
-          "rationale": "Sai: Đóng cửa khác với đông người."
+          "text": "今日は仕事を始めます。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「今日は仕事をしません。」という意味ではない。"
         },
         {
           "id": "3",
-          "text": "この駅はいつもきれいです。",
-          "rationale": "Sai: Sạch khác với đông người."
+          "text": "今日は仕事を探します。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「今日は仕事をしません。」という意味ではない。"
         },
         {
           "id": "4",
-          "text": "この駅はいつも静かです。",
-          "rationale": "Sai: Yên tĩnh khác với đông người."
+          "text": "今日は仕事に遅れます。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「今日は仕事をしません。」という意味ではない。"
         }
       ],
       "correctOptionId": "1",
-      "learningObjective": "基本語彙の言い換え"
+      "learningObjective": "仕事が休みの日は、その仕事をしない日。"
     },
     {
       "id": "jpapp-n5-original-05-v1-vocabulary-4-03",
@@ -3200,8 +3207,10 @@
         "role": "Independent plan, not tolerance"
       },
       "optionVoiceRole": "adultFemale",
-      "visualBrief": "Two female visitors pose together in park; one offers smartphone to a passerby for group photo; no text.",
-      "illustrationPath": "assets/jlpt-original/n5/05/images/problem-3-01.png"
+      "visualBrief": "TWO equal side-by-side panels with a narrow cream gutter, LEFT is practice: Adult female student seated with friend before eating: untouched lunch dishes on table, hands together for meal-start greeting. RIGHT is scored: Two female visitors pose together in park; one offers smartphone to a passerby for group photo; no text.",
+      "illustrationPath": "assets/jlpt-original/n5/05/images/problem-3-01.png",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n5/05/images/problem-3-01.png"
     },
     {
       "id": "jpapp-n5-original-05-v1-listening-3-02",
@@ -3243,7 +3252,9 @@
       },
       "optionVoiceRole": "adultMale",
       "visualBrief": "Male shop clerk shows one small bag to female customer, several similar bags on display, no written prices.",
-      "illustrationPath": "assets/jlpt-original/n5/05/images/problem-3-02.png"
+      "illustrationPath": "assets/jlpt-original/n5/05/images/problem-3-02.png",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n5/05/images/problem-3-02.png"
     },
     {
       "id": "jpapp-n5-original-05-v1-listening-3-03",
@@ -3284,8 +3295,10 @@
         "role": "Independent plan, not tolerance"
       },
       "optionVoiceRole": "femaleStudent",
-      "visualBrief": "Female student hurries arriving toward male student waiting at meeting place, girl bows apologetically, boy holding phone; no clock numbers or words.",
-      "illustrationPath": "assets/jlpt-original/n5/05/images/problem-3-03.png"
+      "visualBrief": "Outside meeting place a young woman arrives late and bows apologetically to male friend who is waiting on bench with phone. Woman with braided dark hair, burnt orange jacket, trousers. No comic sweat drops, no symbols.",
+      "illustrationPath": "assets/jlpt-original/n5/05/images/problem-3-03.png",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n5/05/images/problem-3-03.png"
     },
     {
       "id": "jpapp-n5-original-05-v1-listening-3-04",
@@ -3296,26 +3309,26 @@
       "options": [
         {
           "id": "1",
-          "text": "ここに座ってもいいですか。",
-          "rationale": "Đúng: てもいいですか xin phép bản thân ngồi vào ghế trống."
+          "text": "すみません、通してください。",
+          "rationale": "正解。降りるため通り道をあけてもらう。"
         },
         {
           "id": "2",
-          "text": "ここに座ってください。",
-          "rationale": "Sai: 座ってください mời người khác ngồi, khác ý định tự ngồi."
+          "text": "すみません、ここで待ってください。",
+          "rationale": "不正解。相手を待たせるのではなく通りたい。"
         },
         {
           "id": "3",
-          "text": "ここに座っていますか。",
-          "rationale": "Sai: 座っていますか hỏi hiện đang ngồi, không xin phép."
+          "text": "すみません、先に座ってください。",
+          "rationale": "不正解。席を勧めたい場面ではない。"
         }
       ],
       "correctOptionId": "1",
-      "learningObjective": "座席利用の許可",
+      "learningObjective": "場面の目的に合う発話を選ぶ：降りるため通り道をあけてもらう。",
       "script": [
         [
           "narrator",
-          "絵を見てください。バスの中です。男の人は、空いている席に座りたいです。隣の人に、座ってもいいか聞きます。何と言いますか。"
+          "絵を見てください。男の人は、次のバス停で降ります。ドアの前に人がいて、通れません。その人に道をあけてほしいです。何と言いますか。"
         ]
       ],
       "spokenOptions": true,
@@ -3326,8 +3339,10 @@
         "role": "Independent plan, not tolerance"
       },
       "optionVoiceRole": "youngMale",
-      "visualBrief": "Young man standing in bus gestures toward empty seat beside seated adult woman, polite posture, no signage or text.",
-      "illustrationPath": "assets/jlpt-original/n5/05/images/problem-3-04.png"
+      "visualBrief": "Inside bus young adult man with shoulder bag stands behind another standing adult close to exit, politely trying to pass; visible door, no empty-seat emphasis.",
+      "illustrationPath": "assets/jlpt-original/n5/05/images/problem-3-04.png",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n5/05/images/problem-3-04.png"
     },
     {
       "id": "jpapp-n5-original-05-v1-listening-3-05",
@@ -3369,14 +3384,16 @@
       },
       "optionVoiceRole": "adultFemale",
       "visualBrief": "Female restaurant server reaches politely for customer’s empty plate after meal, customer seated, no soap or sink, no text.",
-      "illustrationPath": "assets/jlpt-original/n5/05/images/problem-3-05.png"
+      "illustrationPath": "assets/jlpt-original/n5/05/images/problem-3-05.png",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n5/05/images/problem-3-05.png"
     },
     {
       "id": "jpapp-n5-original-05-v1-listening-4-01",
       "section": "listening",
       "group": 4,
       "number": 1,
-      "prompt": "音声を聞いて、返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3420,7 +3437,7 @@
       "section": "listening",
       "group": 4,
       "number": 2,
-      "prompt": "音声を聞いて、返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3464,7 +3481,7 @@
       "section": "listening",
       "group": 4,
       "number": 3,
-      "prompt": "音声を聞いて、返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3508,7 +3525,7 @@
       "section": "listening",
       "group": 4,
       "number": 4,
-      "prompt": "音声を聞いて、返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3552,34 +3569,30 @@
       "section": "listening",
       "group": 4,
       "number": 5,
-      "prompt": "音声を聞いて、返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
-          "text": "ありがとうございます。お帰りなさい。",
-          "rationale": "Sai: お帰りなさい dùng chào người về nhà, không nhận giúp đỡ."
+          "text": "まだ三枚ありますよ。",
+          "rationale": "不正解。話し手の目的・条件・時点と一致しない。"
         },
         {
           "id": "2",
-          "text": "ありがとうございます。お願いします。",
-          "rationale": "Đúng: お願いします nhận lời nhờ mang hộ hành lý."
+          "text": "紙は、あの白い箱に入れてください。",
+          "rationale": "正解。紙袋の捨て場所を尋ねる質問に答える。"
         },
         {
           "id": "3",
-          "text": "ありがとうございます。いただきます。",
-          "rationale": "Sai: いただきます dùng trước ăn, không nhận giúp mang hành lý."
+          "text": "これは、昨日買った袋です。",
+          "rationale": "不正解。話し手の目的・条件・時点と一致しない。"
         }
       ],
       "correctOptionId": "2",
-      "learningObjective": "援助の申し出への応答",
+      "learningObjective": "紙袋の捨て場所を尋ねる質問に答える。",
       "script": [
         [
-          "narrator",
-          "ことばを聞いて、それに合う返事を選んでください。"
-        ],
-        [
           "youngMale",
-          "荷物を運びましょうか。重そうですね。"
+          "紙の袋なんですが、どこに捨てますか。"
         ]
       ],
       "spokenOptions": true,
@@ -3596,34 +3609,30 @@
       "section": "listening",
       "group": 4,
       "number": 6,
-      "prompt": "音声を聞いて、返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
-          "text": "あ、赤いペンです。",
-          "rationale": "Sai: Màu đỏ không trả lời chủ sở hữu."
+          "text": "いいえ、それは田中さんのです。",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "2",
-          "text": "あ、わたしのです。",
-          "rationale": "Đúng: わたしの xác định cây bút của mình."
+          "text": "はい、引き出しにありますよ。",
+          "rationale": "正解。使えない道具の代わりを探す質問に答える。"
         },
         {
           "id": "3",
-          "text": "あ、机の上です。",
-          "rationale": "Sai: Vị trí trên bàn không trả lời cây bút của ai."
+          "text": "はい、きのう書きました。",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         }
       ],
       "correctOptionId": "2",
-      "learningObjective": "所有者を尋ねる質問",
+      "learningObjective": "使えない道具の代わりを探す質問に答える。",
       "script": [
         [
-          "narrator",
-          "ことばを聞いて、それに合う返事を選んでください。"
-        ],
-        [
           "adultFemale",
-          "このペンは、だれのですか。机の下に落ちていましたよ。"
+          "このペン、書けませんね。新しいペンはありますか。"
         ]
       ],
       "spokenOptions": true,
@@ -3643,5 +3652,6 @@
   ],
   "authoringRulesVersion": 5,
   "authoringComplete": true,
-  "aiEditorialReviewed": true
+  "aiEditorialReviewed": true,
+  "contentRevision": 2
 }

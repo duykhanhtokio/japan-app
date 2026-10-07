@@ -21,14 +21,24 @@
   "audio": {
     "status": "generated_ai_unreviewed",
     "targetDurationMs": 2400000,
-    "actualDurationMs": 2400241,
+    "actualDurationMs": 2438215,
     "actualDurationVerified": true,
     "pacingStatus": "publisher_approved_n3",
-    "durationAssessment": "Approximately40minutes:40:00.241, AI editorial judgment without fixed tolerance. No silence padding or approved pause/speed change."
+    "durationAssessment": "Approximately 40 minutes: 40:38.215. AI editorial assessment of the complete content, without fixed target tolerance. Approved pacing unchanged; no silence padding. Technical PCM/decode checks are separate from perceptual approval.",
+    "continuousAudioPath": "assets/jlpt-original/n3/01/audio/n3-original-01-listening-draft.mp3",
+    "durationMs": 2438215,
+    "targetDeviationMs": 38215,
+    "perceptualApproval": false,
+    "rightsVerified": false
   },
   "illustrations": {
     "required": 4,
-    "status": "generated_ai_visually_inspected"
+    "status": "generated_ai_visually_inspected",
+    "style": "colored_2d",
+    "tool": "built-in image_gen",
+    "rightsVerified": false,
+    "manifestPath": "src/data/jlpt-original/n3/01/images.manifest.json",
+    "styleStandard": "docs/jlpt-workspace/JLPT_IMAGE_AND_UNIQUENESS_STANDARD.md"
   },
   "passages": {
     "text-grammar": "私の町には、使わなくなった道具を持ち寄る「道具の交換会」がある。以前は、まだ使える物でも、置く場所がないと捨ててしまっていた。（１）、今は欲しい人に渡せるので、ごみが減った。\n最初に参加したとき、私は古い鍋を持っていった。傷はあったが、料理には問題なく使えた。受付の人は、状態を（２）、持ち主の名前を小さな紙に書いた。この紙は、使い方を聞きたい人が持ち主を探せるようにする（３）そうだ。\n会場で私は、畑で採れた野菜を運ぶためのかごを見つけた。持ち主に尋ねると、底の一部を直したことがある（４）、重い物を入れるときは気をつけてほしいと言われた。私は直した場所を確認し、軽い野菜だけを入れることにした。\n交換会では、物を受け取るだけでなく、使っていた人の経験も聞ける。買うときには分からない情報が、（５）あるのだ。",
@@ -882,31 +892,31 @@
       "section": "vocabulary",
       "group": 4,
       "number": 2,
-      "prompt": "「この箱は空です。」と同じ意味の文を選んでください。",
+      "prompt": "その計画を見直すことになりました。\n同じ意味の文を選んでください。",
       "options": [
         {
           "id": "1",
-          "text": "この箱は外に置いてあります。",
-          "rationale": "不正解。置いてある場所の話ではない。"
+          "text": "その計画を予定どおり始めることになりました。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「その計画をもう一度検討することになりました。」という意味ではない。"
         },
         {
           "id": "2",
-          "text": "この箱には何も入っていません。",
-          "rationale": "正解。空は中に物がない状態。"
+          "text": "その計画をもう一度検討することになりました。",
+          "rationale": "正解。見直すは内容を改めて検討すること。"
         },
         {
           "id": "3",
-          "text": "この箱には空気も入っていません。",
-          "rationale": "不正解。日常語の空は真空を意味しない。"
+          "text": "その計画をほかの人に知らせることになりました。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「その計画をもう一度検討することになりました。」という意味ではない。"
         },
         {
           "id": "4",
-          "text": "この箱は軽い材料でできています。",
-          "rationale": "不正解。材料や重さは示されていない。"
+          "text": "その計画を今後変えないことになりました。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「その計画をもう一度検討することになりました。」という意味ではない。"
         }
       ],
       "correctOptionId": "2",
-      "learningObjective": "空の容器の状態を理解する。"
+      "learningObjective": "見直すは内容を改めて検討すること。"
     },
     {
       "id": "jpapp-n3-original-01-v1-vocabulary-4-03",
@@ -3905,40 +3915,42 @@
       "options": [
         {
           "id": "1",
-          "text": "こちらの資料を一部返していただけますか。",
-          "rationale": "不正解。貸した資料の返却を求める状況ではない。"
+          "text": "こちらの資料を、電子版から印刷していただけますか。",
+          "rationale": "不正解。紙を増やさない目的に反して印刷を依頼する。"
         },
         {
           "id": "2",
-          "text": "こちらの資料を一部お預かりしましょうか。",
-          "rationale": "不正解。相手の物を預かる申し出で、もらう依頼ではない。"
+          "text": "こちらの資料は、紙のまま保存しておけばよいですか。",
+          "rationale": "不正解。保存方法ではなく電子版で読めるかを知りたい。"
         },
         {
           "id": "3",
-          "text": "こちらの資料を一部いただいてもよろしいですか。",
-          "rationale": "正解。受付で手元の配布資料を一部もらう丁寧な依頼。"
+          "text": "こちらの資料は、電子版でも読めますか。",
+          "rationale": "正解。同じ内容の電子版の有無を確認する。"
         }
       ],
       "correctOptionId": "3",
-      "learningObjective": "配布物を受け取る丁寧な依頼。",
+      "learningObjective": "場面の目的に合う発話を選ぶ：同じ内容の電子版の有無を確認する。",
       "script": [
         [
           "adultFemale",
-          "展示会の受付です。女の人は、受付の机にある資料を一部もらいたいと思っています。受付の人に何と言いますか。"
+          "展示会の受付です。女の人は配布資料を見ました。紙の資料を増やしたくないので、同じ内容を電子版で読めるか、受付の人に聞きたいと思っています。何と言いますか。"
         ]
       ],
       "listening": {
         "turns": [
           {
             "role": "adultFemale",
-            "text": "展示会の受付です。女の人は、受付の机にある資料を一部もらいたいと思っています。受付の人に何と言いますか。"
+            "text": "展示会の受付です。女の人は配布資料を見ました。紙の資料を増やしたくないので、同じ内容を電子版で読めるか、受付の人に聞きたいと思っています。何と言いますか。"
           }
         ]
       },
       "audioStatus": "not_generated",
       "optionVoiceRole": "adultFemale",
-      "visualBrief": "Independent educational illustration, landscape. Japanese exhibition reception. Adult woman visitor at left, receptionist at right behind a counter. A neatly arranged stack of identical blank-cover brochures sits on counter near receptionist. Visitor looks toward stack, hands free; polite conversational pose. No documents already held by visitor. No text, letters, numbers, speech bubbles, logos or arrows. Clear outlines, restrained colors, uncluttered scene.",
-      "illustrationStatus": "generated_ai_visually_inspected"
+      "visualBrief": "Exhibition reception adult woman visitor points toward stack of plain brochures while holding unmarked smartphone at waist, adult male receptionist behind counter; no brochure handed over yet.",
+      "illustrationStatus": "generated_ai_visually_inspected",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n3/01/images/problem-4-01.png"
     },
     {
       "id": "jpapp-n3-original-01-v1-listening-4-02",
@@ -3949,40 +3961,42 @@
       "options": [
         {
           "id": "1",
-          "text": "私の仕事も代わりにやっておいてください。",
-          "rationale": "不正解。自分の仕事を依頼する状況ではない。"
+          "text": "こちらは新しい版なので、机の上の古い資料も配ってください。",
+          "rationale": "不正解。手元が古い版という事実と逆。"
         },
         {
           "id": "2",
-          "text": "手が空いたので、残りを一緒に運びましょうか。",
-          "rationale": "正解。作業を終えた人が荷物運びを手伝う申し出。"
+          "text": "こちらは古い版なので、机の上の新しい資料に差し替えてください。",
+          "rationale": "正解。古い配布物を用意済の新版へ交換する指示。"
         },
         {
           "id": "3",
-          "text": "運び終わるまで、こちらで待っていただけますか。",
-          "rationale": "不正解。相手に待つ依頼で、手伝いの申し出ではない。"
+          "text": "こちらは古い版ですが、新しい資料はあとで捨てておいてください。",
+          "rationale": "不正解。新版を使いたい目的と逆。"
         }
       ],
       "correctOptionId": "2",
-      "learningObjective": "同僚の作業を手伝う申し出。",
+      "learningObjective": "場面の目的に合う発話を選ぶ：古い配布物を用意済の新版へ交換する指示。",
       "script": [
         [
           "adultFemale",
-          "男の人は自分の仕事が終わりました。隣では、同僚がまだ段ボール箱を運んでいます。男の人は手伝おうと思っています。何と言いますか。"
+          "男の人は、会議の準備をしています。配られた資料が古い版だと気づきました。新しい版は机の上にあります。同僚に、新しい資料へ差し替えるよう伝えたいと思っています。何と言いますか。"
         ]
       ],
       "listening": {
         "turns": [
           {
             "role": "adultFemale",
-            "text": "男の人は自分の仕事が終わりました。隣では、同僚がまだ段ボール箱を運んでいます。男の人は手伝おうと思っています。何と言いますか。"
+            "text": "男の人は、会議の準備をしています。配られた資料が古い版だと気づきました。新しい版は机の上にあります。同僚に、新しい資料へ差し替えるよう伝えたいと思っています。何と言いますか。"
           }
         ]
       },
       "audioStatus": "not_generated",
       "optionVoiceRole": "youngMale",
-      "visualBrief": "Independent learning illustration landscape. Office moving supplies: young adult Japanese man left with empty hands and relaxed ready-to-help posture, coworker adult man right carefully carrying one cardboard box. Two remaining boxes on floor next to cart. Flat floor, no stairs. No worker shown hurt or distressed. No text, numbers, arrows, speech bubbles or logos; clean line art, clear hands and boxes, easy to see on phone.",
-      "illustrationStatus": "generated_ai_visually_inspected"
+      "visualBrief": "Meeting preparation: young adult man holding thin plain stapled handout speaks to middle-aged male colleague, separate thicker stack of blank-cover papers on table; no carrying boxes or carts.",
+      "illustrationStatus": "generated_ai_visually_inspected",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n3/01/images/problem-4-02.png"
     },
     {
       "id": "jpapp-n3-original-01-v1-listening-4-03",
@@ -3993,40 +4007,42 @@
       "options": [
         {
           "id": "1",
-          "text": "これを落とされませんでしたか。",
-          "rationale": "正解。前を歩く人に落とした手袋を確認する。"
+          "text": "あのベンチで、少し休んでから行きませんか。",
+          "rationale": "正解。足が痛い友人へ途中休憩を提案する。"
         },
         {
           "id": "2",
-          "text": "これを少し貸していただけませんか。",
-          "rationale": "不正解。借りたいのではなく落とし物を返す意図。"
+          "text": "あのベンチは空いていますが、そのまま歩き続けませんか。",
+          "rationale": "不正解。休ませたい意図と逆。"
         },
         {
           "id": "3",
-          "text": "これを捨てておいていただけますか。",
-          "rationale": "不正解。処分を依頼する状況ではない。"
+          "text": "あのベンチに荷物だけ置いて、走って行きませんか。",
+          "rationale": "不正解。足が痛い友人に走る提案は目的に合わない。"
         }
       ],
       "correctOptionId": "1",
-      "learningObjective": "見知らぬ人への落とし物の確認。",
+      "learningObjective": "場面の目的に合う発話を選ぶ：足が痛い友人へ途中休憩を提案する。",
       "script": [
         [
           "adultFemale",
-          "女の人は、前を歩いていた人が落とした手袋を拾いました。その人に声をかけようと思っています。何と言いますか。"
+          "女の人は、友人と長い道を歩いています。友人は疲れて、足が痛くなってきたと言いました。少し先に空いているベンチが見えます。そこに座って休むことを提案したいと思っています。何と言いますか。"
         ]
       ],
       "listening": {
         "turns": [
           {
             "role": "adultFemale",
-            "text": "女の人は、前を歩いていた人が落とした手袋を拾いました。その人に声をかけようと思っています。何と言いますか。"
+            "text": "女の人は、友人と長い道を歩いています。友人は疲れて、足が痛くなってきたと言いました。少し先に空いているベンチが見えます。そこに座って休むことを提案したいと思っています。何と言いますか。"
           }
         ]
       },
       "audioStatus": "not_generated",
       "optionVoiceRole": "adultFemale",
-      "visualBrief": "Independent educational illustration landscape, Japanese outdoor pedestrian walkway. Adult woman in foreground holds a single glove she just picked up, looking and gently calling toward adult man a few steps ahead who is turning back. Man wears matching single glove on other hand, one bare hand visible. Winter coats. Clear simple action. No text, logos, bubbles or arrows; not photo, restrained color line art; glove recognizable at phone size.",
-      "illustrationStatus": "generated_ai_visually_inspected"
+      "visualBrief": "Park walking path adult woman looks with concern at middle-aged male friend lightly touching aching leg, empty bench a short distance ahead; no fallen objects, no medical emergency.",
+      "illustrationStatus": "generated_ai_visually_inspected",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n3/01/images/problem-4-03.png"
     },
     {
       "id": "jpapp-n3-original-01-v1-listening-4-04",
@@ -4037,47 +4053,49 @@
       "options": [
         {
           "id": "1",
-          "text": "窓を閉めておいたので、寒くありませんか。",
-          "rationale": "不正解。まだ閉めておらず、事後報告ではない。"
+          "text": "予約を取り消しましたので、このまま使っていただけますか。",
+          "rationale": "不正解。予約は取り消していない。"
         },
         {
           "id": "2",
-          "text": "少し寒くなってきたので、窓を閉めてもいいですか。",
-          "rationale": "正解。共同室で相手に許可を尋ねて閉める依頼。"
+          "text": "予約の時間になりましたので、部屋を空けていただけますか。",
+          "rationale": "正解。自分の予約開始に合わせ前の利用者へ退出を依頼する。"
         },
         {
           "id": "3",
-          "text": "窓を開けたまま帰ってもらえますか。",
-          "rationale": "不正解。相手に退室を依頼する意図はない。"
+          "text": "予約の時間はまだ先ですので、もう少し待っていただけますか。",
+          "rationale": "不正解。既に開始時刻になっており待たせる側ではない。"
         }
       ],
       "correctOptionId": "2",
-      "learningObjective": "共有空間での許可の依頼。",
+      "learningObjective": "場面の目的に合う発話を選ぶ：自分の予約開始に合わせ前の利用者へ退出を依頼する。",
       "script": [
         [
           "adultFemale",
-          "男の人は、二人で使っている部屋にいます。開いた窓から冷たい風が入るので、窓を閉めたいと思っています。隣の人に何と言いますか。"
+          "男の人は、予約した会議室に来ました。前の人たちがまだ使っています。予約の時間になったので、部屋を空けてもらいたいと思っています。使っている人に何と言いますか。"
         ]
       ],
       "listening": {
         "turns": [
           {
             "role": "adultFemale",
-            "text": "男の人は、二人で使っている部屋にいます。開いた窓から冷たい風が入るので、窓を閉めたいと思っています。隣の人に何と言いますか。"
+            "text": "男の人は、予約した会議室に来ました。前の人たちがまだ使っています。予約の時間になったので、部屋を空けてもらいたいと思っています。使っている人に何と言いますか。"
           }
         ]
       },
       "audioStatus": "not_generated",
       "optionVoiceRole": "youngMale",
-      "visualBrief": "Independent educational illustration landscape. Two adults at separate desks in shared study room. Young man near a clearly OPEN casement window, shoulders slightly hunched from cool breeze, turns toward seated adult woman at other desk to speak. Window still open, no one closing it yet; slight curtain movement. No writing, numbers, speech bubbles, arrows, logos. Clear line art, muted colors, uncluttered visible room.",
-      "illustrationStatus": "generated_ai_visually_inspected"
+      "visualBrief": "Young adult man with plain folder stands at open meeting-room doorway addressing two adults still seated at table; calm polite posture, no open-window motif or printed reservation sign.",
+      "illustrationStatus": "generated_ai_visually_inspected",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n3/01/images/problem-4-04.png"
     },
     {
       "id": "jpapp-n3-original-01-v1-listening-5-01",
       "section": "listening",
       "group": 5,
       "number": 1,
-      "prompt": "音声を聞いて、いちばんいい返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -4119,7 +4137,7 @@
       "section": "listening",
       "group": 5,
       "number": 2,
-      "prompt": "音声を聞いて、いちばんいい返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -4161,12 +4179,12 @@
       "section": "listening",
       "group": 5,
       "number": 3,
-      "prompt": "音声を聞いて、いちばんいい返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
-          "text": "この書類、コピーを取ってから返してもいいですか。",
-          "rationale": "不正解。相手の許可依頼をそのまま繰り返し、応答になっていない。"
+          "text": "はい。そのコピーは、明日借りる予定です。",
+          "rationale": "不正解。許可への返事ではなく、将来借りる予定を述べる。"
         },
         {
           "id": "2",
@@ -4203,7 +4221,7 @@
       "section": "listening",
       "group": 5,
       "number": 4,
-      "prompt": "音声を聞いて、いちばんいい返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -4245,7 +4263,7 @@
       "section": "listening",
       "group": 5,
       "number": 5,
-      "prompt": "音声を聞いて、いちばんいい返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -4287,39 +4305,41 @@
       "section": "listening",
       "group": 5,
       "number": 6,
-      "prompt": "音声を聞いて、いちばんいい返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
-          "text": "助かります。では、この袋をお願いできますか。",
-          "rationale": "正解。手伝いの申し出を受け、具体的に頼む。"
+          "text": "では、準備の順番を変えたほうがよさそうですね。",
+          "rationale": "正解。納品遅延を受けて作業計画の変更を提案する。"
         },
         {
           "id": "2",
-          "text": "分かりました。駅では売っていませんね。",
-          "rationale": "不正解。荷物を持つ申し出を商品の販売と取り違える。"
+          "text": "では、昨日届いた荷物を返しましょう。",
+          "rationale": "不正解。話し手の目的・条件・時点と一致しない。"
         },
         {
           "id": "3",
-          "text": "はい、もう駅から帰ってきました。",
-          "rationale": "不正解。これから駅に向かう場面に合わない。"
+          "text": "そうですか。荷物の数は予定どおり増えましたね。",
+          "rationale": "不正解。話し手の目的・条件・時点と一致しない。"
         }
       ],
       "correctOptionId": "1",
-      "learningObjective": "支援の申し出を受ける。",
+      "learningObjective": "納品遅延を受けて作業計画の変更を提案する。",
       "script": [
         [
           "youngMale",
-          "荷物が多いですね。駅まで一緒に持ちましょうか。"
+          "荷物は明日届く予定でしたが、一日遅れるそうです。"
         ]
       ],
       "listening": {
+        "intro": "荷物は明日届く予定でしたが、一日遅れるそうです。",
         "turns": [
           {
             "role": "youngMale",
-            "text": "荷物が多いですね。駅まで一緒に持ちましょうか。"
+            "text": "荷物は明日届く予定でしたが、一日遅れるそうです。"
           }
-        ]
+        ],
+        "question": "荷物は明日届く予定でしたが、一日遅れるそうです。"
       },
       "audioStatus": "not_generated",
       "optionVoiceRole": "femaleStudent"
@@ -4329,7 +4349,7 @@
       "section": "listening",
       "group": 5,
       "number": 7,
-      "prompt": "音声を聞いて、いちばんいい返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -4371,7 +4391,7 @@
       "section": "listening",
       "group": 5,
       "number": 8,
-      "prompt": "音声を聞いて、いちばんいい返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -4413,7 +4433,7 @@
       "section": "listening",
       "group": 5,
       "number": 9,
-      "prompt": "音声を聞いて、いちばんいい返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -4451,5 +4471,6 @@
       "optionVoiceRole": "youngMale"
     }
   ],
-  "answerOrderStatus": "balanced_stable"
+  "answerOrderStatus": "balanced_stable",
+  "contentRevision": 2
 }

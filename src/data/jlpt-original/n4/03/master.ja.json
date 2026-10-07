@@ -26,13 +26,20 @@
     "rightsVerified": false,
     "perceptualApproval": false,
     "continuousAudioPath": "assets/jlpt-original/n4/03/audio/n4-original-03-listening-draft.mp3",
-    "durationMs": 2090321,
-    "matchesLevelDurationTarget": true
+    "durationMs": 2113201,
+    "matchesLevelDurationTarget": true,
+    "actualDurationMs": 2113201,
+    "targetDeviationMs": 13201,
+    "durationAssessment": "Approximately 35 minutes: 35:13.201. AI editorial assessment of the complete content, without fixed target tolerance. Approved pacing unchanged; no silence padding. Technical PCM/decode checks are separate from perceptual approval."
   },
   "illustrations": {
     "required": 5,
-    "status": "generated_ai_unreviewed",
-    "manifestPath": "src/data/jlpt-original/n4/03/images.manifest.json"
+    "status": "generated_ai_visually_inspected",
+    "manifestPath": "src/data/jlpt-original/n4/03/images.manifest.json",
+    "style": "colored_2d",
+    "tool": "built-in image_gen",
+    "rightsVerified": false,
+    "styleStandard": "docs/jlpt-workspace/JLPT_IMAGE_AND_UNIQUENESS_STANDARD.md"
   },
   "passages": {
     "text-grammar": "私は町のパン屋で働いています。働き始めた（１）は、パンの名前を覚えるのが大変でした。名前を書いた紙をポケットに入れて、仕事の前に毎日（２）。今は紙を見なくても、お客さんに説明できます。\n先週、小さな子供がお母さんと来ました。子供はパンを一つ選びましたが、棚が高くて（３）。そこで私が取って渡すと、子供は「ありがとう」と言いました。私はパンを売る（４）、お客さんが買いやすいように手伝うことも大切だと思いました。これからも、一人一人のお客さんをよく（５）、必要なときに声をかけたいです。",
@@ -1356,31 +1363,31 @@
       "section": "grammar_reading",
       "group": 1,
       "number": 7,
-      "prompt": "雨が降りそう（　）、傘を持っていきます。",
+      "prompt": "今日は休み（　）、駅の近くの店は閉まっています。",
       "options": [
         {
           "id": "1",
           "text": "なので",
-          "rationale": "Use the context to select なので."
+          "rationale": "正解。名詞「休み」に「なので」を付けて理由を表す。"
         },
         {
           "id": "2",
           "text": "だのに",
-          "rationale": "Does not match: Use the context to select なので."
+          "rationale": "名詞に接続して理由を表す形になっていない。"
         },
         {
           "id": "3",
           "text": "なまで",
-          "rationale": "Does not match: Use the context to select なので."
+          "rationale": "名詞に接続して理由を表す形になっていない。"
         },
         {
           "id": "4",
           "text": "だながら",
-          "rationale": "Does not match: Use the context to select なので."
+          "rationale": "名詞に接続して理由を表す形になっていない。"
         }
       ],
       "correctOptionId": "1",
-      "learningObjective": "Use the context to select なので."
+      "learningObjective": "名詞に「なので」を付けて休業の理由を示す。"
     },
     {
       "id": "jpapp-n4-original-03-v1-grammar_reading-1-08",
@@ -3710,42 +3717,48 @@
       "section": "listening",
       "group": 3,
       "number": 1,
-      "prompt": "電車で、あなたは座っています。杖を持ったお年寄りが立っています。席を譲りたいです。何と言いますか。",
+      "prompt": "男の人は、何と言いますか。",
       "options": [
         {
           "id": "1",
-          "text": "ここに座っていただきました。",
-          "rationale": "Does not match: Offer your seat."
+          "text": "次の駅で乗ってきましたか。",
+          "rationale": "不正解。これから着く駅で既に乗ったとは尋ねない。"
         },
         {
           "id": "2",
-          "text": "こちらにお座りください。",
-          "rationale": "Offer your seat."
+          "text": "次の駅で降りますか。",
+          "rationale": "正解。目の前の乗客が次の駅で降りる予定か確認する。"
         },
         {
           "id": "3",
-          "text": "ここに座ってもいいですか。",
-          "rationale": "Does not match: Offer your seat."
+          "text": "次の駅まで迎えに来ますか。",
+          "rationale": "不正解。車内の相手へ迎えを頼む状況ではない。"
         }
       ],
       "correctOptionId": "2",
-      "learningObjective": "Offer your seat.",
+      "learningObjective": "場面の目的に合う発話を選ぶ：目の前の乗客が次の駅で降りる予定か確認する。",
       "listening": {
         "intro": "電車で、あなたは座っています。杖を持ったお年寄りが立っています。席を譲りたいです。何と言いますか。",
-        "turns": [],
+        "turns": [
+          {
+            "role": "adultFemale",
+            "text": "絵を見てください。電車が次の駅に着く前です。男の人はドアの近くにいます。前に立っている人も次の駅で降りるかどうか、聞きたいです。何と言いますか。"
+          }
+        ],
         "question": "電車で、あなたは座っています。杖を持ったお年寄りが立っています。席を譲りたいです。何と言いますか。"
       },
       "script": [
         [
           "narrator",
-          "電車で、あなたは座っています。杖を持ったお年寄りが立っています。席を譲りたいです。何と言いますか。"
+          "絵を見てください。電車が次の駅に着く前です。男の人はドアの近くにいます。前に立っている人も次の駅で降りるかどうか、聞きたいです。何と言いますか。"
         ]
       ],
       "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "youngMale",
-      "visualBrief": "A young male passenger seated on a train offers his seat with an open hand to an elderly woman standing with a walking cane. White background, black and white clean line illustration. No text.",
+      "visualBrief": "Two adult male passengers standing near train exit, younger man behind speaks to middle-aged man ahead; no offered seat or elderly person.",
       "illustrationStatus": "generated_ai_unreviewed",
-      "visualSheetPath": "assets/jlpt-original/n4/03/images/problem-3-01.png"
+      "visualSheetPath": "assets/jlpt-original/n4/03/images/problem-3-01.png",
+      "imageStyle": "colored_2d"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-3-02",
@@ -3787,7 +3800,8 @@
       "optionVoiceRole": "femaleStudent",
       "visualBrief": "A female student in a library reaches toward one book on a high shelf, fingertips clearly below it. Adult male librarian nearby. No labels or writing.",
       "illustrationStatus": "generated_ai_unreviewed",
-      "visualSheetPath": "assets/jlpt-original/n4/03/images/problem-3-02.png"
+      "visualSheetPath": "assets/jlpt-original/n4/03/images/problem-3-02.png",
+      "imageStyle": "colored_2d"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-3-03",
@@ -3829,49 +3843,56 @@
       "optionVoiceRole": "adultFemale",
       "visualBrief": "Adult woman customer shows a plain shirt with one empty button position to a shop assistant at a counter. Other buttons visible, no brand or words.",
       "illustrationStatus": "generated_ai_unreviewed",
-      "visualSheetPath": "assets/jlpt-original/n4/03/images/problem-3-03.png"
+      "visualSheetPath": "assets/jlpt-original/n4/03/images/problem-3-03.png",
+      "imageStyle": "colored_2d"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-3-04",
       "section": "listening",
       "group": 3,
       "number": 4,
-      "prompt": "会社で、あなたは同僚からペンを借りたいです。何と言いますか。",
+      "prompt": "男の人は、何と言いますか。",
       "options": [
         {
           "id": "1",
-          "text": "ペンを借りておいてください。",
-          "rationale": "Does not match: Request loan from colleague."
+          "text": "この書類は、どなたが渡してくださいましたか。",
+          "rationale": "不正解。預かった相手は目の前の同僚で既知。"
         },
         {
           "id": "2",
-          "text": "ペンを貸してもらえますか。",
-          "rationale": "Request loan from colleague."
+          "text": "この書類は、どなたに渡せばいいですか。",
+          "rationale": "正解。これから届ける相手を確認する。"
         },
         {
           "id": "3",
-          "text": "ペンを返していただきました。",
-          "rationale": "Does not match: Request loan from colleague."
+          "text": "この書類は、どなたに返してもらいましたか。",
+          "rationale": "不正解。返却済の過去の話ではない。"
         }
       ],
       "correctOptionId": "2",
-      "learningObjective": "Request loan from colleague.",
+      "learningObjective": "場面の目的に合う発話を選ぶ：これから届ける相手を確認する。",
       "listening": {
         "intro": "会社で、あなたは同僚からペンを借りたいです。何と言いますか。",
-        "turns": [],
+        "turns": [
+          {
+            "role": "adultFemale",
+            "text": "絵を見てください。男の人は、同僚から書類を預かりました。会議室へ届けますが、誰に渡すのかわかりません。同僚に何と言いますか。"
+          }
+        ],
         "question": "会社で、あなたは同僚からペンを借りたいです。何と言いますか。"
       },
       "script": [
         [
           "narrator",
-          "会社で、あなたは同僚からペンを借りたいです。何と言いますか。"
+          "絵を見てください。男の人は、同僚から書類を預かりました。会議室へ届けますが、誰に渡すのかわかりません。同僚に何と言いますか。"
         ]
       ],
       "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "youngMale",
-      "visualBrief": "A young male office worker with a blank form and no pen gestures politely to an adult female coworker holding a pen beside a desk. No writing.",
+      "visualBrief": "Young male office worker holding plain sealed document envelope asks adult female colleague beside meeting-room entrance; no pen or borrowing tools.",
       "illustrationStatus": "generated_ai_unreviewed",
-      "visualSheetPath": "assets/jlpt-original/n4/03/images/problem-3-04.png"
+      "visualSheetPath": "assets/jlpt-original/n4/03/images/problem-3-04.png",
+      "imageStyle": "colored_2d"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-3-05",
@@ -3913,14 +3934,15 @@
       "optionVoiceRole": "femaleStudent",
       "visualBrief": "A female student guest holding a shoulder bag stands near the doorway of a home, host woman gestures toward a dining table. Calm friendly scene. No text.",
       "illustrationStatus": "generated_ai_unreviewed",
-      "visualSheetPath": "assets/jlpt-original/n4/03/images/problem-3-05.png"
+      "visualSheetPath": "assets/jlpt-original/n4/03/images/problem-3-05.png",
+      "imageStyle": "colored_2d"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-4-01",
       "section": "listening",
       "group": 4,
       "number": 1,
-      "prompt": "この荷物、持ってもらえる？",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3959,7 +3981,7 @@
       "section": "listening",
       "group": 4,
       "number": 2,
-      "prompt": "今日の授業、何時に終わるの？",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3998,7 +4020,7 @@
       "section": "listening",
       "group": 4,
       "number": 3,
-      "prompt": "すみません、注文を変えてもいいですか。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -4037,35 +4059,40 @@
       "section": "listening",
       "group": 4,
       "number": 4,
-      "prompt": "一緒に駅まで歩こうか。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
-          "text": "うん、歩いてきたんだね。",
-          "rationale": "Does not match: Select a natural relevant reply to the spoken utterance."
+          "text": "では、昨日の会議に出ましょう。",
+          "rationale": "不正解。話し手の目的・条件・時点と一致しない。"
         },
         {
           "id": "2",
-          "text": "うん、駅で待っていたよ。",
-          "rationale": "Does not match: Select a natural relevant reply to the spoken utterance."
+          "text": "それはよかったですね。早く着けましたね。",
+          "rationale": "不正解。話し手の目的・条件・時点と一致しない。"
         },
         {
           "id": "3",
-          "text": "うん、行こう。",
-          "rationale": "Select a natural relevant reply to the spoken utterance."
+          "text": "では、会社に電話して伝えたほうがいいですね。",
+          "rationale": "正解。交通障害による遅刻の可能性へ、連絡を勧める。"
         }
       ],
       "correctOptionId": "3",
-      "learningObjective": "Select a natural relevant reply to the spoken utterance.",
+      "learningObjective": "交通障害による遅刻の可能性へ、連絡を勧める。",
       "listening": {
-        "intro": "一緒に駅まで歩こうか。",
-        "turns": [],
-        "question": "一緒に駅まで歩こうか。"
+        "intro": "電車が止まっているので、会議に間に合わないかもしれません。",
+        "turns": [
+          {
+            "role": "adultFemale",
+            "text": "電車が止まっているので、会議に間に合わないかもしれません。"
+          }
+        ],
+        "question": "電車が止まっているので、会議に間に合わないかもしれません。"
       },
       "script": [
         [
-          "narrator",
-          "一緒に駅まで歩こうか。"
+          "adultFemale",
+          "電車が止まっているので、会議に間に合わないかもしれません。"
         ]
       ],
       "audioStatus": "generated_ai_unreviewed",
@@ -4076,7 +4103,7 @@
       "section": "listening",
       "group": 4,
       "number": 5,
-      "prompt": "そのかばん、重そうだね。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -4115,7 +4142,7 @@
       "section": "listening",
       "group": 4,
       "number": 6,
-      "prompt": "遅くなって、ごめん。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -4154,35 +4181,40 @@
       "section": "listening",
       "group": 4,
       "number": 7,
-      "prompt": "この書類は、誰に渡せばいいですか。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
-          "text": "受付の山田さんにお願いします。",
-          "rationale": "Select a natural relevant reply to the spoken utterance."
+          "text": "そのままでも食べられますが、温めるとおいしいですよ。",
+          "rationale": "正解。食べ方の相談に、任意の加熱という助言で答える。"
         },
         {
           "id": "2",
-          "text": "山田さんと書きました。",
-          "rationale": "Does not match: Select a natural relevant reply to the spoken utterance."
+          "text": "パンを焼く前に、全部食べました。",
+          "rationale": "不正解。話し手の目的・条件・時点と一致しない。"
         },
         {
           "id": "3",
-          "text": "山田さんからもらいました。",
-          "rationale": "Does not match: Select a natural relevant reply to the spoken utterance."
+          "text": "そのパンは、いつ食べたんですか。",
+          "rationale": "不正解。話し手の目的・条件・時点と一致しない。"
         }
       ],
       "correctOptionId": "1",
-      "learningObjective": "Select a natural relevant reply to the spoken utterance.",
+      "learningObjective": "食べ方の相談に、任意の加熱という助言で答える。",
       "listening": {
-        "intro": "この書類は、誰に渡せばいいですか。",
-        "turns": [],
-        "question": "この書類は、誰に渡せばいいですか。"
+        "intro": "このパン、焼いてから食べたほうがいいですか。",
+        "turns": [
+          {
+            "role": "adultFemale",
+            "text": "このパン、焼いてから食べたほうがいいですか。"
+          }
+        ],
+        "question": "このパン、焼いてから食べたほうがいいですか。"
       },
       "script": [
         [
-          "narrator",
-          "この書類は、誰に渡せばいいですか。"
+          "adultFemale",
+          "このパン、焼いてから食べたほうがいいですか。"
         ]
       ],
       "audioStatus": "generated_ai_unreviewed",
@@ -4193,7 +4225,7 @@
       "section": "listening",
       "group": 4,
       "number": 8,
-      "prompt": "お茶、もう一杯いかがですか。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -4232,5 +4264,6 @@
     "Human/native/perceptual/rights/release review pending.",
     "Approved independent N4 app organization; legacy N4 semantic organization unverified.",
     "Web technical checks do not certify native/iPhone or full router."
-  ]
+  ],
+  "contentRevision": 2
 }

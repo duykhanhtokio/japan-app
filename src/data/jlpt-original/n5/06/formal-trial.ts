@@ -21,7 +21,7 @@ function practiceInstruction(q: OriginalQuestion): string {
 }
 const audio = require('./audio.manifest.json') as { durationMs: number; matchesThirtyMinuteTarget: boolean };
 
-export const N5_ORIGINAL_06_SESSION_KEY = 'jlpt:jpapp:n5:original:06:v1';
+export const N5_ORIGINAL_06_SESSION_KEY = 'jlpt:jpapp:n5:original:06:v2';
 // Register only when the master is integrated and the complete listening track is ready.
 export const N5_ORIGINAL_06_REGISTRATION_READY = master.runtimeIntegrated && audio.matchesThirtyMinuteTarget;
 export const N5_ORIGINAL_06_VISUALS: Readonly<Record<number, ImageSourcePropType>> = {

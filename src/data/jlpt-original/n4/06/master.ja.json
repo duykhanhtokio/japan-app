@@ -25,16 +25,25 @@
     "actualDurationVerified": true,
     "rightsVerified": false,
     "perceptualApproval": false,
-    "durationMs": 2086312
+    "durationMs": 2137428,
+    "continuousAudioPath": "assets/jlpt-original/n4/06/audio/n4-original-06-listening-draft.mp3",
+    "actualDurationMs": 2137428,
+    "targetDeviationMs": 37428,
+    "durationAssessment": "Approximately 35 minutes: 35:37.428. AI editorial assessment of the complete content, without fixed target tolerance. Approved pacing unchanged; no silence padding. Technical PCM/decode checks are separate from perceptual approval."
   },
   "illustrations": {
     "required": 5,
-    "status": "generated_ai_unreviewed"
+    "status": "generated_ai_visually_inspected",
+    "style": "colored_2d",
+    "tool": "built-in image_gen",
+    "rightsVerified": false,
+    "manifestPath": "src/data/jlpt-original/n4/06/images.manifest.json",
+    "styleStandard": "docs/jlpt-workspace/JLPT_IMAGE_AND_UNIQUENESS_STANDARD.md"
   },
   "passages": {
     "text-grammar": "先週、町の写真教室に参加しました。私はカメラを買ったばかりで、使い方が【1】。教室では、まず先生が窓の近くに花を置きました。そして、光の方向を変えると写真も変わる【2】を教えてくれました。私は同じ花を何枚も撮りましたが、暗い写真が多くなりました。【3】、先生に設定を見てもらいました。先生が直してくれると、花の色がはっきり写りました。休み時間には、隣に座っていた人と写真を見せ合いました。その人も私と同じように、最近カメラを【4】そうです。次の教室では外で撮るので、それまでに家で練習して【5】と思っています。",
     "short-1": "佐藤さんへ\n頼まれていた本は、受付の机に置くつもりでしたが、受付の人が帰っていたので、会議室の棚に入れました。青い袋に入っています。私はもう帰ります。\n山田",
-    "short-2": "店のお知らせ\n今週は入口の工事をしています。店の横の小さいドアからお入りください。売り場はいつもどおり開いています。荷物の配達は裏の入口で受け付けます。",
+    "short-2": "店からのお知らせ\n今週はレジの機械を取り替えているため、クレジットカードは使えません。現金でお支払いください。カードでのお支払いは来週月曜日からできます。商品を選んで、月曜日まで店に置いておくことはできますが、品物を持ち帰れるのは、お支払いが終わってからです。店は今週もいつもの時間に開いています。",
     "short-3": "明日は掃除の日です。朝9時に庭へ集まってください。雨の場合は建物の中を掃除します。その場合も集合時刻は変わりません。道具は学校で用意します。",
     "short-4": "昨日、近所の小さな公園で本を読みました。家だと洗濯や料理のことが気になりますが、外では本だけに集中できました。ただ、風が強くなって寒くなったので、一時間ほどで帰りました。",
     "medium-1": "私は先月から、毎週土曜日に町の食堂で手伝いをしています。始める前は、料理が下手な私にはできないと思っていました。しかし、責任者の人に聞くと、食器を並べたり、客を席へ案内したりする仕事もあると言われました。初日は、客に料理の内容を聞かれて、すぐに答えられませんでした。料理を作っている人に聞くと、材料を書いた紙を見せてくれました。その日の仕事が終わってから、私は料理の名前と材料をノートに書きました。今は、分からないことは確認しながら、前より落ち着いて案内できます。来月からは、新しく来る人に食器の置き場所を教えることになりました。自分も助けてもらったので、今度は誰かの役に立ちたいです。",
@@ -852,62 +861,62 @@
       "section": "vocabulary",
       "group": 4,
       "number": 1,
-      "prompt": "「そろそろ出かけましょう」と言いました。\n近い意味の文を選んでください。",
+      "prompt": "雨で服がすっかりぬれました。\n同じ意味の文を選んでください。",
       "options": [
         {
           "id": "1",
-          "text": "もう出かけました。",
-          "rationale": "過去の完了に変えている。"
+          "text": "雨で服の一部だけぬれました。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「雨で服が全部ぬれました。」という意味ではない。"
         },
         {
           "id": "2",
-          "text": "何度も出かけましょう。",
-          "rationale": "回数を増やす意味ではない。"
+          "text": "雨のあとで服が全部乾きました。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「雨で服が全部ぬれました。」という意味ではない。"
         },
         {
           "id": "3",
-          "text": "もうすぐ出かけましょう。",
-          "rationale": "正解。そろそろは出発する時が近いこと。"
+          "text": "雨で服が全部ぬれました。",
+          "rationale": "正解。すっかりは全体にその状態になったこと。"
         },
         {
           "id": "4",
-          "text": "まだ出かけないでください。",
-          "rationale": "出発の勧めと逆。"
+          "text": "雨の前に服を着替えました。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「雨で服が全部ぬれました。」という意味ではない。"
         }
       ],
       "correctOptionId": "3",
-      "learningObjective": "そろそろは出発する時が近いこと。"
+      "learningObjective": "すっかりは全体にその状態になったこと。"
     },
     {
       "id": "jpapp-n4-original-06-v1-vocabulary-4-02",
       "section": "vocabulary",
       "group": 4,
       "number": 2,
-      "prompt": "この建物は、とても丈夫です。\n近い意味の文を選んでください。",
+      "prompt": "会場に着いたら、すでに発表が始まっていました。\n同じ意味の文を選んでください。",
       "options": [
         {
           "id": "1",
-          "text": "この建物は、簡単には壊れません。",
-          "rationale": "正解。丈夫は壊れにくいこと。"
+          "text": "私が着く前に、発表が始まっていました。",
+          "rationale": "正解。すでに始まっていたは到着より前に開始済だったこと。"
         },
         {
           "id": "2",
-          "text": "この建物は、とても広いです。",
-          "rationale": "強度と面積は別。"
+          "text": "私が着くまで、発表は始まっていませんでした。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「私が着く前に、発表が始まっていました。」という意味ではない。"
         },
         {
           "id": "3",
-          "text": "この建物は、簡単に見つかります。",
-          "rationale": "強度と見つけやすさは別。"
+          "text": "私が着いた時、発表はちょうど終わりました。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「私が着く前に、発表が始まっていました。」という意味ではない。"
         },
         {
           "id": "4",
-          "text": "この建物は、とても新しいです。",
-          "rationale": "強度と築年数は別。"
+          "text": "私が着く前に、発表は取りやめになりました。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「私が着く前に、発表が始まっていました。」という意味ではない。"
         }
       ],
       "correctOptionId": "1",
-      "learningObjective": "丈夫は壊れにくいこと。"
+      "learningObjective": "すでに始まっていたは到着より前に開始済だったこと。"
     },
     {
       "id": "jpapp-n4-original-06-v1-vocabulary-4-03",
@@ -945,31 +954,31 @@
       "section": "vocabulary",
       "group": 4,
       "number": 4,
-      "prompt": "週末はたいてい家にいます。\n近い意味の文を選んでください。",
+      "prompt": "靴がぬれたまま家に入りました。\n同じ意味の文を選んでください。",
       "options": [
         {
           "id": "1",
-          "text": "週末は必ず外にいます。",
-          "rationale": "場所も頻度の確実性も異なる。"
+          "text": "靴を乾かしてから家に入りました。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「靴を乾かさずに家に入りました。」という意味ではない。"
         },
         {
           "id": "2",
-          "text": "週末はほとんどいつも家にいます。",
-          "rationale": "正解。たいていは大部分の場合。"
+          "text": "靴を乾かさずに家に入りました。",
+          "rationale": "正解。ぬれたままはぬれた状態を変えずに行動したこと。"
         },
         {
           "id": "3",
-          "text": "週末は一度も家にいません。",
-          "rationale": "頻度が逆。"
+          "text": "靴を脱いでから家に入りました。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「靴を乾かさずに家に入りました。」という意味ではない。"
         },
         {
           "id": "4",
-          "text": "週末だけ家にいます。",
-          "rationale": "他の日に家にいないとは言っていない。"
+          "text": "靴を取り替えてから家に入りました。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「靴を乾かさずに家に入りました。」という意味ではない。"
         }
       ],
       "correctOptionId": "2",
-      "learningObjective": "たいていは大部分の場合。"
+      "learningObjective": "ぬれたままはぬれた状態を変えずに行動したこと。"
     },
     {
       "id": "jpapp-n4-original-06-v1-vocabulary-4-05",
@@ -1291,31 +1300,31 @@
       "section": "grammar_reading",
       "group": 1,
       "number": 5,
-      "prompt": "電車に乗ってから、財布を忘れた（　）気がつきました。",
+      "prompt": "先生に何度聞い（　）、答えが分かりませんでした。",
       "options": [
         {
           "id": "1",
-          "text": "ことに",
-          "rationale": "正解。忘れたことに気がつく。"
+          "text": "ても",
+          "rationale": "正解。繰り返し試しても結果が変わらないことを、てもで表す。"
         },
         {
           "id": "2",
-          "text": "ことを",
-          "rationale": "気がつくの対象はに。"
+          "text": "ながら",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "3",
-          "text": "ことが",
-          "rationale": "この構文でことが気がつくとはしない。"
+          "text": "から",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "4",
-          "text": "ことと",
-          "rationale": "気づいた内容はとでは示さない。"
+          "text": "まで",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         }
       ],
       "correctOptionId": "1",
-      "learningObjective": "忘れたことに気がつく。"
+      "learningObjective": "繰り返し試しても結果が変わらないことを、てもで表す。"
     },
     {
       "id": "jpapp-n4-original-06-v1-grammar_reading-1-06",
@@ -1353,31 +1362,31 @@
       "section": "grammar_reading",
       "group": 1,
       "number": 7,
-      "prompt": "私は兄（　）背が高くありません。",
+      "prompt": "この料理は、思っていた（　）辛くありません。",
       "options": [
         {
           "id": "1",
-          "text": "だけ",
-          "rationale": "兄だけ背が高くないでは主語の比較を作れない。"
+          "text": "より",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "2",
-          "text": "までに",
-          "rationale": "期限表現では身長比較を作れない。"
+          "text": "まで",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "3",
           "text": "しか",
-          "rationale": "兄しか背が高くないは私についての比較ではない。"
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "4",
           "text": "ほど",
-          "rationale": "正解。兄ほど高くないは兄に達しない比較。"
+          "rationale": "正解。ほどと否定で、辛さが予想した程度に達しないことを表す。"
         }
       ],
       "correctOptionId": "4",
-      "learningObjective": "兄ほど高くないは兄に達しない比較。"
+      "learningObjective": "ほどと否定で、辛さが予想した程度に達しないことを表す。"
     },
     {
       "id": "jpapp-n4-original-06-v1-grammar_reading-1-08",
@@ -1446,31 +1455,31 @@
       "section": "grammar_reading",
       "group": 1,
       "number": 10,
-      "prompt": "今、食事をしている（　）です。あとで電話します。",
+      "prompt": "使えるのは今週だけです。来週からは使えません。この切符は、日曜日（　）使えます。",
       "options": [
         {
           "id": "1",
-          "text": "ため",
-          "rationale": "現在進行の段階を表さない。"
+          "text": "から",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "2",
-          "text": "つもり",
-          "rationale": "しているつもりは思い込みで食事中の段階ではない。"
+          "text": "を",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "3",
-          "text": "ように",
-          "rationale": "ようにですとは接続しない。"
+          "text": "で",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "4",
-          "text": "ところ",
-          "rationale": "正解。しているところは動作進行中。"
+          "text": "まで",
+          "rationale": "正解。利用可能な期間の終点をまでで示す。"
         }
       ],
       "correctOptionId": "4",
-      "learningObjective": "しているところは動作進行中。"
+      "learningObjective": "利用可能な期間の終点をまでで示す。"
     },
     {
       "id": "jpapp-n4-original-06-v1-grammar_reading-1-11",
@@ -2039,31 +2048,31 @@
       "section": "grammar_reading",
       "group": 4,
       "number": 2,
-      "prompt": "買い物に来た人は、どこから入りますか。",
+      "prompt": "今週選んだ商品を、カードで払って持ち帰りたい人は、どうしますか。",
       "options": [
         {
           "id": "1",
-          "text": "いつもの入口",
-          "rationale": "工事中。"
+          "text": "今週カードを店に預けて商品を持ち帰る",
+          "rationale": "不正解。本文の期限・条件に合わない。"
         },
         {
           "id": "2",
-          "text": "どの入口からも入れない",
-          "rationale": "売り場は営業中。"
+          "text": "今週は電話でカードの番号を知らせる",
+          "rationale": "不正解。本文の期限・条件に合わない。"
         },
         {
           "id": "3",
-          "text": "裏の入口",
-          "rationale": "配達用。"
+          "text": "月曜日より前に商品だけ受け取る",
+          "rationale": "不正解。本文の期限・条件に合わない。"
         },
         {
           "id": "4",
-          "text": "店の横の小さいドア",
-          "rationale": "正解。客と配達の入口を区別する。"
+          "text": "月曜日にカードで払ってから受け取る",
+          "rationale": "正解。本文の期限・条件と一致する。"
         }
       ],
       "correctOptionId": "4",
-      "learningObjective": "客と配達の入口を区別する。",
+      "learningObjective": "営業継続と支払手段の制限を区別し、受取の条件を読む。",
       "passageId": "short-2"
     },
     {
@@ -3555,41 +3564,48 @@
       "section": "listening",
       "group": 3,
       "number": 1,
-      "prompt": "あなたは、店で買った物を持ち帰りたいです。店員に紙の袋を一枚もらいます。何と言いますか。",
+      "prompt": "男の人は、何と言いますか。",
       "options": [
         {
           "id": "1",
-          "text": "この袋を捨てていただけますか。",
-          "rationale": "処分を頼んでいる。"
+          "text": "値札を外さずに、見えるように包んでいただけますか。",
+          "rationale": "不正解。価格を見せたくない意図と逆。"
         },
         {
           "id": "2",
-          "text": "袋を一枚お預かりしましょうか。",
-          "rationale": "店員側の預かる申し出。"
+          "text": "贈り物ですが、値段を相手に教えていただけますか。",
+          "rationale": "不正解。相手へ価格を伝える依頼ではない。"
         },
         {
           "id": "3",
-          "text": "紙の袋を一枚いただけますか。",
-          "rationale": "正解。客が袋を丁寧に求める。"
+          "text": "贈り物なので、値札を外していただけますか。",
+          "rationale": "正解。贈る相手に価格を見せないため値札を除く。"
         }
       ],
       "correctOptionId": "3",
-      "learningObjective": "客が袋を丁寧に求める。",
+      "learningObjective": "場面の目的に合う発話を選ぶ：贈る相手に価格を見せないため値札を除く。",
       "listening": {
         "intro": "あなたは、店で買った物を持ち帰りたいです。店員に紙の袋を一枚もらいます。何と言いますか。",
-        "turns": [],
+        "turns": [
+          {
+            "role": "adultFemale",
+            "text": "絵を見てください。男の人は、友達への贈り物にカップを買いました。値段を見せたくないので、値札を外してほしいです。店員に何と言いますか。"
+          }
+        ],
         "question": "あなたは、店で買った物を持ち帰りたいです。店員に紙の袋を一枚もらいます。何と言いますか。"
       },
       "script": [
         [
           "narrator",
-          "あなたは、店で買った物を持ち帰りたいです。店員に紙の袋を一枚もらいます。何と言いますか。"
+          "絵を見てください。男の人は、友達への贈り物にカップを買いました。値段を見せたくないので、値札を外してほしいです。店員に何と言いますか。"
         ]
       ],
       "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "youngMale",
-      "visualBrief": "A male customer at a small shop counter holds a purchased unbranded ceramic cup while looking politely at a female clerk. A stack of plain paper shopping bags behind clerk. No text, no speech bubble. Focus on request for a bag.",
-      "illustrationStatus": "generated_ai_unreviewed"
+      "visualBrief": "Male customer at gift shop counter addresses female clerk beside intact plain ceramic cup with small blank tag attached; gift wrapping paper and reusable shopper bag visible, no written price.",
+      "illustrationStatus": "generated_ai_unreviewed",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n4/06/images/problem-3-01.png"
     },
     {
       "id": "jpapp-n4-original-06-v1-listening-3-02",
@@ -3630,170 +3646,193 @@
       "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "femaleStudent",
       "visualBrief": "A young female visitor seated beside an open window in a friend’s living room hugs her arms from cold and looks towards her female friend. Curtain moves gently from outside breeze. No text or symbols.",
-      "illustrationStatus": "generated_ai_unreviewed"
+      "illustrationStatus": "generated_ai_unreviewed",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n4/06/images/problem-3-02.png"
     },
     {
       "id": "jpapp-n4-original-06-v1-listening-3-03",
       "section": "listening",
       "group": 3,
       "number": 3,
-      "prompt": "あなたは、階段で重い箱を運んでいる人を見ました。手伝うと言います。何と言いますか。",
+      "prompt": "男の人は、何と言いますか。",
       "options": [
         {
           "id": "1",
-          "text": "その箱を一人で運んでください。",
-          "rationale": "協力しない指示。"
+          "text": "間違えないように、私のかばんを持って来てください。",
+          "rationale": "不正解。これから相手へ運搬を依頼する話ではない。"
         },
         {
           "id": "2",
-          "text": "その箱を運んでいただけますか。",
-          "rationale": "自分の箱を運んでもらう依頼。"
+          "text": "同じかばんですが、これは私の物なので返してください。",
+          "rationale": "不正解。目の前のかばんは同僚の物と確認できている。"
         },
         {
           "id": "3",
-          "text": "その箱、一緒に運びましょうか。",
-          "rationale": "正解。他人の運搬を手伝う申し出。"
+          "text": "間違えて、あなたのかばんを持って来てしまいました。",
+          "rationale": "正解。本人の取り違えを報告する。"
         }
       ],
       "correctOptionId": "3",
-      "learningObjective": "他人の運搬を手伝う申し出。",
+      "learningObjective": "場面の目的に合う発話を選ぶ：本人の取り違えを報告する。",
       "listening": {
         "intro": "あなたは、階段で重い箱を運んでいる人を見ました。手伝うと言います。何と言いますか。",
-        "turns": [],
+        "turns": [
+          {
+            "role": "adultFemale",
+            "text": "絵を見てください。男の人は、同僚と同じ形のかばんを使っています。自分の物だと思って持って来ましたが、開けると同僚の物でした。間違えたと同僚に伝えます。何と言いますか。"
+          }
+        ],
         "question": "あなたは、階段で重い箱を運んでいる人を見ました。手伝うと言います。何と言いますか。"
       },
       "script": [
         [
           "narrator",
-          "あなたは、階段で重い箱を運んでいる人を見ました。手伝うと言います。何と言いますか。"
+          "絵を見てください。男の人は、同僚と同じ形のかばんを使っています。自分の物だと思って持って来ましたが、開けると同僚の物でした。間違えたと同僚に伝えます。何と言いますか。"
         ]
       ],
       "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "youngMale",
-      "visualBrief": "A young man notices an adult man carefully holding a heavy closed cardboard box at the bottom of indoor stairs. Young man extends empty hands to offer help, box still supported by adult. No text, logos, numbers.",
-      "illustrationStatus": "generated_ai_unreviewed"
+      "visualBrief": "Young male office worker holds open plain shoulder bag containing unfamiliar blank folder, apologetic to middle-aged male coworker with matching bag beside desk; no boxes or stairs.",
+      "illustrationStatus": "generated_ai_unreviewed",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n4/06/images/problem-3-03.png"
     },
     {
       "id": "jpapp-n4-original-06-v1-listening-3-04",
       "section": "listening",
       "group": 3,
       "number": 4,
-      "prompt": "あなたは、先生から借りた本を返します。借りられて助かったと伝えます。何と言いますか。",
+      "prompt": "女の人は、何と言いますか。",
       "options": [
         {
           "id": "1",
-          "text": "借りてくださって、ありがとうございました。",
-          "rationale": "貸し手と借り手が逆。"
+          "text": "同じ本を買いましたので、こちらも貸していただけますか。",
+          "rationale": "不正解。追加の借用を頼む場面ではない。"
         },
         {
           "id": "2",
-          "text": "貸してくださって、ありがとうございました。",
-          "rationale": "正解。貸してくれた先生へ感謝。"
+          "text": "水をこぼしてしまって、すみません。同じ本を買ってお返しします。",
+          "rationale": "正解。損傷を謝り同じ本で補う申し出。"
         },
         {
           "id": "3",
-          "text": "返してくださって、ありがとうございました。",
-          "rationale": "返すのは話者。"
+          "text": "水をこぼしたのですが、そのまま持っていてもよろしいですか。",
+          "rationale": "不正解。傷めた本を保持する許可ではなく弁償したい。"
         }
       ],
       "correctOptionId": "2",
-      "learningObjective": "貸してくれた先生へ感謝。",
+      "learningObjective": "場面の目的に合う発話を選ぶ：損傷を謝り同じ本で補う申し出。",
       "listening": {
         "intro": "あなたは、先生から借りた本を返します。借りられて助かったと伝えます。何と言いますか。",
-        "turns": [],
+        "turns": [
+          {
+            "role": "adultFemale",
+            "text": "絵を見てください。女の学生は、先生から借りた本に水をこぼしてしまいました。先生に謝って、新しい本を買って返したいと伝えます。何と言いますか。"
+          }
+        ],
         "question": "あなたは、先生から借りた本を返します。借りられて助かったと伝えます。何と言いますか。"
       },
       "script": [
         [
           "narrator",
-          "あなたは、先生から借りた本を返します。借りられて助かったと伝えます。何と言いますか。"
+          "絵を見てください。女の学生は、先生から借りた本に水をこぼしてしまいました。先生に謝って、新しい本を買って返したいと伝えます。何と言いますか。"
         ]
       ],
       "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "femaleStudent",
-      "visualBrief": "A female student returns a closed unbranded book with both hands to an adult male teacher at a desk, polite grateful posture. Teacher reaches to receive book. No text on cover or signs.",
-      "illustrationStatus": "generated_ai_unreviewed"
+      "visualBrief": "Adult female student shows plain water-damaged book with gently warped pages to middle-aged male teacher at desk, apologetic face; closed water bottle beside her; no simple grateful return gesture.",
+      "illustrationStatus": "generated_ai_unreviewed",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n4/06/images/problem-3-04.png"
     },
     {
       "id": "jpapp-n4-original-06-v1-listening-3-05",
       "section": "listening",
       "group": 3,
       "number": 5,
-      "prompt": "あなたは、電車の中で、隣の人が落とした手袋を拾いました。その人に渡します。何と言いますか。",
+      "prompt": "女の人は、何と言いますか。",
       "options": [
         {
           "id": "1",
-          "text": "これ、拾っていただけますか。",
-          "rationale": "話者は既に拾っている。"
+          "text": "ここから出発しますよ。このまま待ちましょう。",
+          "rationale": "不正解。終点到着を出発と取り違える。"
         },
         {
           "id": "2",
-          "text": "これ、私に貸してください。",
-          "rationale": "借用の依頼ではない。"
+          "text": "次の駅が終点ですよ。もう少し乗りましょう。",
+          "rationale": "不正解。今いる駅が終点で次へ行かない。"
         },
         {
           "id": "3",
-          "text": "これ、落とされましたよ。",
-          "rationale": "正解。拾った物を落とし主へ知らせる。"
+          "text": "ここが終点ですよ。降りましょう。",
+          "rationale": "正解。到着済の終点で降車を促す。"
         }
       ],
       "correctOptionId": "3",
-      "learningObjective": "拾った物を落とし主へ知らせる。",
+      "learningObjective": "場面の目的に合う発話を選ぶ：到着済の終点で降車を促す。",
       "listening": {
         "intro": "あなたは、電車の中で、隣の人が落とした手袋を拾いました。その人に渡します。何と言いますか。",
-        "turns": [],
+        "turns": [
+          {
+            "role": "adultFemale",
+            "text": "絵を見てください。電車が終点に着きました。女の人は降りますが、隣の人はまだ座っています。終点なので降りる必要があると知らせたいです。何と言いますか。"
+          }
+        ],
         "question": "あなたは、電車の中で、隣の人が落とした手袋を拾いました。その人に渡します。何と言いますか。"
       },
       "script": [
         [
           "narrator",
-          "あなたは、電車の中で、隣の人が落とした手袋を拾いました。その人に渡します。何と言いますか。"
+          "絵を見てください。電車が終点に着きました。女の人は降りますが、隣の人はまだ座っています。終点なので降りる必要があると知らせたいです。何と言いますか。"
         ]
       ],
       "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "adultFemale",
-      "visualBrief": "Inside a train a seated adult woman holds out a single glove she picked up toward another seated woman who reaches toward it. Other matching glove on recipient’s lap. No text, signs or speech bubbles.",
-      "illustrationStatus": "generated_ai_unreviewed"
+      "visualBrief": "Inside stationary train adult woman stands with bag and addresses seated adult woman near open exit; platform visible; no glove or dropped item, no station name.",
+      "illustrationStatus": "generated_ai_unreviewed",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n4/06/images/problem-3-05.png"
     },
     {
       "id": "jpapp-n4-original-06-v1-listening-4-01",
       "section": "listening",
       "group": 4,
       "number": 1,
-      "prompt": "音声を聞いて、合う返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
-          "text": "明日、届くと思います。",
-          "rationale": "置き場所の答えではない。"
+          "text": "明日、名前のない荷物が届きました。",
+          "rationale": "不正解。話し手の目的・条件・時点と一致しない。"
         },
         {
           "id": "2",
-          "text": "入口の横にお願いします。",
-          "rationale": "正解。場所を尋ねる質問へ具体的な場所。"
+          "text": "あ、書き忘れました。すぐ書きます。",
+          "rationale": "正解。宛名の書き忘れの指摘に、修正する返事をする。"
         },
         {
           "id": "3",
-          "text": "重くて持てませんでした。",
-          "rationale": "重量で場所を答えない。"
+          "text": "その名前は、もう読み終わりました。",
+          "rationale": "不正解。話し手の目的・条件・時点と一致しない。"
         }
       ],
       "correctOptionId": "2",
-      "learningObjective": "場所を尋ねる質問へ具体的な場所。",
+      "learningObjective": "宛名の書き忘れの指摘に、修正する返事をする。",
       "listening": {
-        "intro": "この荷物、どこに置けばいいですか。",
+        "intro": "この荷物、送り先の名前が書いてありませんね。",
         "turns": [
           {
             "role": "youngMale",
-            "text": "この荷物、どこに置けばいいですか。"
+            "text": "この荷物、送り先の名前が書いてありませんね。"
           }
         ],
-        "question": "この荷物、どこに置けばいいですか。"
+        "question": "この荷物、送り先の名前が書いてありませんね。"
       },
       "script": [
         [
           "youngMale",
-          "この荷物、どこに置けばいいですか。"
+          "この荷物、送り先の名前が書いてありませんね。"
         ]
       ],
       "audioStatus": "generated_ai_unreviewed",
@@ -3804,7 +3843,7 @@
       "section": "listening",
       "group": 4,
       "number": 2,
-      "prompt": "音声を聞いて、合う返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3848,7 +3887,7 @@
       "section": "listening",
       "group": 4,
       "number": 3,
-      "prompt": "音声を聞いて、合う返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3892,40 +3931,40 @@
       "section": "listening",
       "group": 4,
       "number": 4,
-      "prompt": "音声を聞いて、合う返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
-          "text": "いいですね。いつにしましょうか。",
-          "rationale": "正解。誘いを受けて日程を相談する。"
+          "text": "じゃあ、小さいバスに変えたほうがいいね。",
+          "rationale": "正解。参加者減少に応じた交通手段の調整を提案する。"
         },
         {
           "id": "2",
-          "text": "はい、先に帰りました。",
-          "rationale": "過去の帰宅で誘いへ応答しない。"
+          "text": "じゃあ、昨日参加した人に会おう。",
+          "rationale": "不正解。話し手の目的・条件・時点と一致しない。"
         },
         {
           "id": "3",
-          "text": "いいえ、温泉を出ません。",
-          "rationale": "出ることを尋ねていない。"
+          "text": "いいね。人数が増えたから大きいバスが必要だね。",
+          "rationale": "不正解。話し手の目的・条件・時点と一致しない。"
         }
       ],
       "correctOptionId": "1",
-      "learningObjective": "誘いを受けて日程を相談する。",
+      "learningObjective": "参加者減少に応じた交通手段の調整を提案する。",
       "listening": {
-        "intro": "今度、一緒に温泉へ行きませんか。",
+        "intro": "来週の温泉旅行、参加する人が思ったより少ないね。",
         "turns": [
           {
             "role": "adultMale",
-            "text": "今度、一緒に温泉へ行きませんか。"
+            "text": "来週の温泉旅行、参加する人が思ったより少ないね。"
           }
         ],
-        "question": "今度、一緒に温泉へ行きませんか。"
+        "question": "来週の温泉旅行、参加する人が思ったより少ないね。"
       },
       "script": [
         [
           "adultMale",
-          "今度、一緒に温泉へ行きませんか。"
+          "来週の温泉旅行、参加する人が思ったより少ないね。"
         ]
       ],
       "audioStatus": "generated_ai_unreviewed",
@@ -3936,7 +3975,7 @@
       "section": "listening",
       "group": 4,
       "number": 5,
-      "prompt": "音声を聞いて、合う返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3980,40 +4019,40 @@
       "section": "listening",
       "group": 4,
       "number": 6,
-      "prompt": "音声を聞いて、合う返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
-          "text": "いいえ、明日待つつもりでした。",
-          "rationale": "今の待ち合わせと時間が違う。"
+          "text": "いいえ、昨日は十分待っていました。",
+          "rationale": "不正解。話し手の目的・条件・時点と一致しない。"
         },
         {
           "id": "2",
-          "text": "いいえ、私も今来たところです。",
-          "rationale": "正解。遅れて来た相手の気遣いへ負担を軽くする。"
+          "text": "はい、待っていますので、お願いします。",
+          "rationale": "正解。提供までの待ち時間への同意を伝える。"
         },
         {
           "id": "3",
-          "text": "はい、もう帰ってしまいました。",
-          "rationale": "対面の返答で帰宅済みは不自然。"
+          "text": "はい、注文はもう全部作ってあげました。",
+          "rationale": "不正解。話し手の目的・条件・時点と一致しない。"
         }
       ],
       "correctOptionId": "2",
-      "learningObjective": "遅れて来た相手の気遣いへ負担を軽くする。",
+      "learningObjective": "提供までの待ち時間への同意を伝える。",
       "listening": {
-        "intro": "お待たせしました。ずいぶん待ちましたか。",
+        "intro": "ご注文の物は、あと十分ほどかかりますが、よろしいですか。",
         "turns": [
           {
             "role": "youngMale",
-            "text": "お待たせしました。ずいぶん待ちましたか。"
+            "text": "ご注文の物は、あと十分ほどかかりますが、よろしいですか。"
           }
         ],
-        "question": "お待たせしました。ずいぶん待ちましたか。"
+        "question": "ご注文の物は、あと十分ほどかかりますが、よろしいですか。"
       },
       "script": [
         [
           "youngMale",
-          "お待たせしました。ずいぶん待ちましたか。"
+          "ご注文の物は、あと十分ほどかかりますが、よろしいですか。"
         ]
       ],
       "audioStatus": "generated_ai_unreviewed",
@@ -4024,40 +4063,40 @@
       "section": "listening",
       "group": 4,
       "number": 7,
-      "prompt": "音声を聞いて、合う返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
-          "text": "ありがとうございます。でも、もう十分です。",
-          "rationale": "正解。飲み物の追加を丁寧に断る。"
+          "text": "それは大変ですね。少し手伝いましょうか。",
+          "rationale": "正解。予想に反する負担の訴えに共感し、援助を申し出る。"
         },
         {
           "id": "2",
-          "text": "ありがとうございます。では、こちらで注文を伺います。",
-          "rationale": "勧められた客の立場と違う。"
+          "text": "お帰りなさい。早かったですね。",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "3",
-          "text": "ありがとうございます。昨日、入れておきました。",
-          "rationale": "昨日の行為は追加の勧めへ答えない。"
+          "text": "仕事がないなら、もう帰れますね。",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         }
       ],
       "correctOptionId": "1",
-      "learningObjective": "飲み物の追加を丁寧に断る。",
+      "learningObjective": "予想に反する負担の訴えに共感し、援助を申し出る。",
       "listening": {
-        "intro": "もう一杯、コーヒーはいかがですか。",
+        "intro": "今日は早く帰れると思っていたのに、仕事が増えました。",
         "turns": [
           {
             "role": "adultFemale",
-            "text": "もう一杯、コーヒーはいかがですか。"
+            "text": "今日は早く帰れると思っていたのに、仕事が増えました。"
           }
         ],
-        "question": "もう一杯、コーヒーはいかがですか。"
+        "question": "今日は早く帰れると思っていたのに、仕事が増えました。"
       },
       "script": [
         [
           "adultFemale",
-          "もう一杯、コーヒーはいかがですか。"
+          "今日は早く帰れると思っていたのに、仕事が増えました。"
         ]
       ],
       "audioStatus": "generated_ai_unreviewed",
@@ -4068,7 +4107,7 @@
       "section": "listening",
       "group": 4,
       "number": 8,
-      "prompt": "音声を聞いて、合う返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -4107,5 +4146,6 @@
       "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "adultFemale"
     }
-  ]
+  ],
+  "contentRevision": 2
 }

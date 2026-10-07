@@ -1,0 +1,11 @@
+# Colored 2D illustration and independent-content standard
+
+Applies to all current independent JLPT originals and every subsequent exam. Publisher requested this correction on 2026-10-07.
+
+Every question illustration uses colored 2D line art, crisp outlines, natural flat colors, gentle cel shadows, natural adult proportions and simplified backgrounds. Photographs, realistic people, 3D and monochrome assets are excluded. The current independent-original reference is for style only: do not copy its people, clothing, setting, props or composition. Vary faces, poses, outfits and scene framing while retaining common line weight and rendering. No readable text, labels, answers, numbered clocks, logos, arrows or speech balloons. Scene essentials, intended speaker, action and gender must match the listening situation and approved option voice. N5 first-image practice remains left and scored item right; keep both coherent with their own scripts. Use built-in imagegen and inspect every output; reject and repair wrong cues. Record prompts, hashes, dimensions, role/gender and inspection. AI visual inspection does not imply publisher/native/rights approval.
+
+Audit all independent masters, options, reading passages, completed ordering sentences, listening scripts and unscored practice examples. Exact normalized matches and lexical near matches are candidates, not automatic semantic decisions. Review shared task, evidence, intended response and distractor logic. Replacing names, nouns or locations alone does not make a cloned situation independent. Create a different objective or independent situation with its own decisive evidence and plausible alternatives. Reusing level vocabulary or a grammar point is acceptable when context, tested function or solution logic is materially different. Generic instructions can repeat. Do not compare against legacy question content.
+
+Keep stable IDs and answer-position balancing; update saved-session revision when scored content changes. Regenerate every affected recording and verify scripts, options, actor roles, approved pacing, measured PCM duration and the exact 60000ms musical break. Preserve locked UI. All native, publisher, perceptual, rights and release approval flags remain false until actual approval.
+
+Repair evidence: [2026-10-07 report](repair-colored-2d-2026-10-07/README.md).

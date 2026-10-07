@@ -19,12 +19,22 @@
     "continuousPlayback": true,
     "rightsVerified": false,
     "actualDurationVerified": true,
-    "continuousAudioPath": "assets/jlpt-original/n5/04/audio/n5-original-04-listening-draft.mp3"
+    "continuousAudioPath": "assets/jlpt-original/n5/04/audio/n5-original-04-listening-draft.mp3",
+    "durationMs": 1795677,
+    "actualDurationMs": 1795677,
+    "targetDurationMs": 1800000,
+    "targetDeviationMs": -4323,
+    "durationAssessment": "Approximately 30 minutes: 29:55.677. AI editorial assessment of the complete content, without fixed target tolerance. Approved pacing unchanged; no silence padding. Technical PCM/decode checks are separate from perceptual approval.",
+    "perceptualApproval": false
   },
   "illustrations": {
     "required": 5,
-    "status": "generated_ai_unreviewed",
-    "manifestPath": "src/data/jlpt-original/n5/04/images.manifest.json"
+    "status": "generated_ai_visually_inspected",
+    "manifestPath": "src/data/jlpt-original/n5/04/images.manifest.json",
+    "style": "colored_2d",
+    "tool": "built-in image_gen",
+    "rightsVerified": false,
+    "styleStandard": "docs/jlpt-workspace/JLPT_IMAGE_AND_UNIQUENESS_STANDARD.md"
   },
   "releaseReady": false,
   "runtimeIntegrated": true,
@@ -208,33 +218,33 @@
       "section": "vocabulary",
       "group": 1,
       "number": 6,
-      "prompt": "ここに名前を【書いて】ください。\n【 】のことばは、どう読みますか。",
+      "prompt": "学校で、【午前】は日本語を勉強します。\n【 】のことばは、どう読みますか。",
       "options": [
         {
           "id": "1",
-          "text": "はいて",
-          "rationale": "Sai: «はいて» không phù hợp dữ kiện/quy tắc: 書いて đọc là かいて"
+          "text": "ごげん",
+          "rationale": "不正解。午前はごぜんと読み、この音ではない。"
         },
         {
           "id": "2",
-          "text": "かいて",
-          "rationale": "Đúng: 書いて đọc là かいて"
+          "text": "ごぜん",
+          "rationale": "正解。午前の読みはごぜん。"
         },
         {
           "id": "3",
-          "text": "きいて",
-          "rationale": "Sai: «きいて» không phù hợp dữ kiện/quy tắc: 書いて đọc là かいて"
+          "text": "ごせん",
+          "rationale": "不正解。午前はごぜんと読み、この音ではない。"
         },
         {
           "id": "4",
-          "text": "さいて",
-          "rationale": "Sai: «さいて» không phù hợp dữ kiện/quy tắc: 書いて đọc là かいて"
+          "text": "ごねん",
+          "rationale": "不正解。午前はごぜんと読み、この音ではない。"
         }
       ],
       "correctOptionId": "2",
-      "learningObjective": "文脈内の漢字読み",
-      "sentence": "ここに名前を【書いて】ください。",
-      "target": "書いて"
+      "learningObjective": "午前の漢字読み",
+      "sentence": "学校で、【午前】は日本語を勉強します。",
+      "target": "午前"
     },
     {
       "id": "jpapp-n5-original-04-v1-vocabulary-1-07",
@@ -373,33 +383,33 @@
       "section": "vocabulary",
       "group": 1,
       "number": 11,
-      "prompt": "この部屋には【窓】が二つあります。\n【 】のことばは、どう読みますか。",
+      "prompt": "【去年】、家族と海へ行きました。\n【 】のことばは、どう読みますか。",
       "options": [
         {
           "id": "1",
-          "text": "まく",
-          "rationale": "Sai: «まく» không phù hợp dữ kiện/quy tắc: 窓 đọc là まど"
+          "text": "きょうねん",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "2",
-          "text": "かど",
-          "rationale": "Sai: «かど» không phù hợp dữ kiện/quy tắc: 窓 đọc là まど"
+          "text": "きょね",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "3",
-          "text": "もど",
-          "rationale": "Sai: «もど» không phù hợp dữ kiện/quy tắc: 窓 đọc là まど"
+          "text": "きょにん",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "4",
-          "text": "まど",
-          "rationale": "Đúng: 窓 đọc là まど"
+          "text": "きょねん",
+          "rationale": "正解。去年の読みを識別する。"
         }
       ],
       "correctOptionId": "4",
-      "learningObjective": "文脈内の漢字読み",
-      "sentence": "この部屋には【窓】が二つあります。",
-      "target": "窓"
+      "learningObjective": "去年の読みを識別する。",
+      "sentence": "【去年】、家族と海へ行きました。",
+      "target": "去年"
     },
     {
       "id": "jpapp-n5-original-04-v1-vocabulary-1-12",
@@ -765,31 +775,31 @@
       "section": "vocabulary",
       "group": 3,
       "number": 3,
-      "prompt": "部屋が暗いので、電気を（　）ください。",
+      "prompt": "電車に間に合わないので、駅まで（　）ましょう。",
       "options": [
         {
           "id": "1",
-          "text": "しめて",
-          "rationale": "Sai: «しめて» không phù hợp dữ kiện/quy tắc: 暗い nên bật đèn; 電気をつける."
+          "text": "洗い",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "2",
-          "text": "つけて",
-          "rationale": "Đúng: 暗い nên bật đèn; 電気をつける."
+          "text": "走り",
+          "rationale": "正解。急いで移動する行動の語彙を選ぶ。"
         },
         {
           "id": "3",
-          "text": "けして",
-          "rationale": "Sai: «けして» không phù hợp dữ kiện/quy tắc: 暗い nên bật đèn; 電気をつける."
+          "text": "脱ぎ",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "4",
-          "text": "あけて",
-          "rationale": "Sai: «あけて» không phù hợp dữ kiện/quy tắc: 暗い nên bật đèn; 電気をつける."
+          "text": "閉め",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         }
       ],
       "correctOptionId": "2",
-      "learningObjective": "生活語彙の文脈適合"
+      "learningObjective": "急いで移動する行動の語彙を選ぶ。"
     },
     {
       "id": "jpapp-n5-original-04-v1-vocabulary-3-04",
@@ -1075,31 +1085,31 @@
       "section": "vocabulary",
       "group": 4,
       "number": 3,
-      "prompt": "【もう一度】名前を言ってください。\n同じ意味の文を選んでください。",
+      "prompt": "このシャツは安くなりました。\n同じ意味の文を選んでください。",
       "options": [
         {
           "id": "1",
-          "text": "名前を早く言ってください。",
-          "rationale": "Sai: «名前を早く言ってください。» không phù hợp dữ kiện/quy tắc: もう一度 = thêm một lần."
+          "text": "このシャツの値段は前と同じです。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「このシャツの値段は前より低いです。」という意味ではない。"
         },
         {
           "id": "2",
-          "text": "名前を先に言ってください。",
-          "rationale": "Sai: «名前を先に言ってください。» không phù hợp dữ kiện/quy tắc: もう一度 = thêm một lần."
+          "text": "このシャツの値段は前より高いです。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「このシャツの値段は前より低いです。」という意味ではない。"
         },
         {
           "id": "3",
-          "text": "名前を大きい声で言ってください。",
-          "rationale": "Sai: «名前を大きい声で言ってください。» không phù hợp dữ kiện/quy tắc: もう一度 = thêm một lần."
+          "text": "このシャツを前より多く買いました。",
+          "rationale": "不正解。元の文の行動・時点・状態を変えてしまう。「このシャツの値段は前より低いです。」という意味ではない。"
         },
         {
           "id": "4",
-          "text": "名前をもう一回言ってください。",
-          "rationale": "Đúng: もう一度 = thêm một lần."
+          "text": "このシャツの値段は前より低いです。",
+          "rationale": "正解。安くなるは値段が前より低くなること。量が増えることではない。"
         }
       ],
       "correctOptionId": "4",
-      "learningObjective": "言い換え"
+      "learningObjective": "安くなるは値段が前より低くなること。量が増えることではない。"
     },
     {
       "id": "jpapp-n5-original-04-v1-vocabulary-4-04",
@@ -1478,31 +1488,31 @@
       "section": "grammar_reading",
       "group": 1,
       "number": 11,
-      "prompt": "ここで写真を（　）もいいですか。",
+      "prompt": "田中さんは、日本語を（　）ことができます。",
       "options": [
         {
           "id": "1",
-          "text": "撮る",
-          "rationale": "Sai: «撮る» không phù hợp dữ kiện/quy tắc: て +もいい."
+          "text": "話した",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "2",
-          "text": "撮った",
-          "rationale": "Sai: «撮った» không phù hợp dữ kiện/quy tắc: て +もいい."
+          "text": "話して",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "3",
-          "text": "撮って",
-          "rationale": "Đúng: て +もいい."
+          "text": "話す",
+          "rationale": "正解。辞書形とことができるで能力を表す。"
         },
         {
           "id": "4",
-          "text": "撮り",
-          "rationale": "Sai: «撮り» không phù hợp dữ kiện/quy tắc: て +もいい."
+          "text": "話します",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         }
       ],
       "correctOptionId": "3",
-      "learningObjective": "N5基礎文法を文脈で選択"
+      "learningObjective": "辞書形とことができるで能力を表す。"
     },
     {
       "id": "jpapp-n5-original-04-v1-grammar_reading-1-12",
@@ -3162,26 +3172,26 @@
       "options": [
         {
           "id": "1",
-          "text": "この傘、お返しします。",
-          "rationale": "Sai: «この傘、お返しします。» không phù hợp dữ kiện/quy tắc: 雨の中に出るため友人の傘を借りたい."
+          "text": "傘を返しに行きます。",
+          "rationale": "不正解。借りた傘を返す話ではない。"
         },
         {
           "id": "2",
-          "text": "この傘、借りてもいいですか。",
-          "rationale": "Đúng: 雨の中に出るため友人の傘を借りたい."
+          "text": "傘を取りに帰ります。",
+          "rationale": "正解。家にある自分の傘を取りに戻る。"
         },
         {
           "id": "3",
-          "text": "この傘、忘れないでください。",
-          "rationale": "Sai: «この傘、忘れないでください。» không phù hợp dữ kiện/quy tắc: 雨の中に出るため友人の傘を借りたい."
+          "text": "傘を買いに行きます。",
+          "rationale": "不正解。家に自分の傘があり、新しく買う予定ではない。"
         }
       ],
       "correctOptionId": "2",
-      "learningObjective": "借用を申し出る",
+      "learningObjective": "場面の目的に合う発話を選ぶ：家にある自分の傘を取りに戻る。",
       "script": [
         [
           "narrator",
-          "右の絵を見てください。外は雨です。女の人は傘を持っていません。友だちの傘を借りて、近くの店へ行きたいです。友だちに何と言いますか。"
+          "右の絵を見てください。女の人は、友だちと外へ出ようとしました。でも、雨が降っていて、自分の傘は家にあります。家へ戻って傘を持って来ます。友だちに何と言いますか。"
         ]
       ],
       "audioStatus": "not_generated",
@@ -3192,8 +3202,10 @@
         "role": "Independent timing plan, not acceptance tolerance"
       },
       "optionVoiceRole": "adultFemale",
-      "visualBrief": "Two adults indoors at open door; rain outside; woman empty-handed looks at umbrella held by female friend. No text.",
-      "illustrationPath": "assets/jlpt-original/n5/04/images/problem-3-01.png"
+      "visualBrief": "TWO equal side-by-side panels with a narrow cream gutter, LEFT is practice: Female guest with shoulder bag politely leaving female friend’s home, host stays inside; no meal or umbrellas. RIGHT is scored:  adult woman empty-handed turns toward rainy exit of a friend’s home and speaks to female friend; she will return to her own home for umbrella, no umbrella offered by friend.",
+      "illustrationPath": "assets/jlpt-original/n5/04/images/problem-3-01.png",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n5/04/images/problem-3-01.png"
     },
     {
       "id": "jpapp-n5-original-04-v1-listening-3-02",
@@ -3235,7 +3247,9 @@
       },
       "optionVoiceRole": "youngMale",
       "visualBrief": "Young male student points at notebook on school desk while asking older male teacher; simple blank page, no readable writing.",
-      "illustrationPath": "assets/jlpt-original/n5/04/images/problem-3-02.png"
+      "illustrationPath": "assets/jlpt-original/n5/04/images/problem-3-02.png",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n5/04/images/problem-3-02.png"
     },
     {
       "id": "jpapp-n5-original-04-v1-listening-3-03",
@@ -3246,26 +3260,26 @@
       "options": [
         {
           "id": "1",
-          "text": "ごちそうさまでした。",
-          "rationale": "Đúng: 友人が作った食事を食べ終えた."
+          "text": "この犬の名前は何ですか。",
+          "rationale": "正解。初めて会った犬の名前を尋ねる。"
         },
         {
           "id": "2",
-          "text": "お待たせしました。",
-          "rationale": "Sai: «お待たせしました。» không phù hợp dữ kiện/quy tắc: 友人が作った食事を食べ終えた."
+          "text": "この犬は何歳ですか。",
+          "rationale": "不正解。年齢を尋ねており名前ではない。"
         },
         {
           "id": "3",
-          "text": "いただきます。",
-          "rationale": "Sai: «いただきます。» không phù hợp dữ kiện/quy tắc: 友人が作った食事を食べ終えた."
+          "text": "この犬はどこにいますか。",
+          "rationale": "不正解。目の前にいる犬の場所は尋ねていない。"
         }
       ],
       "correctOptionId": "1",
-      "learningObjective": "食後の挨拶",
+      "learningObjective": "場面の目的に合う発話を選ぶ：初めて会った犬の名前を尋ねる。",
       "script": [
         [
           "narrator",
-          "絵を見てください。女の人は、友だちの家で昼ごはんを食べ終わりました。友だちが作った料理は、とてもおいしかったです。友だちに何と言いますか。"
+          "絵を見てください。女の人は、友だちの家で、小さい犬を見ました。初めて会った犬です。犬の名前を友だちに聞きたいです。何と言いますか。"
         ]
       ],
       "audioStatus": "not_generated",
@@ -3276,8 +3290,10 @@
         "role": "Independent timing plan, not acceptance tolerance"
       },
       "optionVoiceRole": "adultFemale",
-      "visualBrief": "Woman at dining table with empty dishes after meal, hands together thanking smiling female host. No food being served, no text.",
-      "illustrationPath": "assets/jlpt-original/n5/04/images/problem-3-03.png"
+      "visualBrief": "Woman visiting female friend in home, looking at one small puppy sitting between them; visitor curious, host listening. No dining table.",
+      "illustrationPath": "assets/jlpt-original/n5/04/images/problem-3-03.png",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n5/04/images/problem-3-03.png"
     },
     {
       "id": "jpapp-n5-original-04-v1-listening-3-04",
@@ -3319,7 +3335,9 @@
       },
       "optionVoiceRole": "youngMale",
       "visualBrief": "Young man with open book, finger near lips, looks at two chatting friends beside him at library table; shelves behind, no words or speech bubbles.",
-      "illustrationPath": "assets/jlpt-original/n5/04/images/problem-3-04.png"
+      "illustrationPath": "assets/jlpt-original/n5/04/images/problem-3-04.png",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n5/04/images/problem-3-04.png"
     },
     {
       "id": "jpapp-n5-original-04-v1-listening-3-05",
@@ -3361,41 +3379,39 @@
       },
       "optionVoiceRole": "femaleStudent",
       "visualBrief": "School hallway, older woman teacher carrying tall stack of books, young female student reaching to help; no text.",
-      "illustrationPath": "assets/jlpt-original/n5/04/images/problem-3-05.png"
+      "illustrationPath": "assets/jlpt-original/n5/04/images/problem-3-05.png",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n5/04/images/problem-3-05.png"
     },
     {
       "id": "jpapp-n5-original-04-v1-listening-4-01",
       "section": "listening",
       "group": 4,
       "number": 1,
-      "prompt": "音声を聞いて、返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
-          "text": "いいですね。一緒に行きましょう。",
-          "rationale": "Đúng: 散歩の誘いに同意."
+          "text": "はい、すぐ小さくします。",
+          "rationale": "正解。音量を下げる依頼に答える。"
         },
         {
           "id": "2",
-          "text": "そうですか。お大事に。",
-          "rationale": "Sai: «そうですか。お大事に。» không phù hợp dữ kiện/quy tắc: 散歩の誘いに同意."
+          "text": "はい、きのう聞きました。",
+          "rationale": "不正解。話し手の目的・条件・時点と一致しない。"
         },
         {
           "id": "3",
-          "text": "ありがとうございます。いただきます。",
-          "rationale": "Sai: «ありがとうございます。いただきます。» không phù hợp dữ kiện/quy tắc: 散歩の誘いに同意."
+          "text": "はい、とても小さい部屋です。",
+          "rationale": "不正解。話し手の目的・条件・時点と一致しない。"
         }
       ],
       "correctOptionId": "1",
-      "learningObjective": "誘いへの応答",
+      "learningObjective": "音量を下げる依頼に答える。",
       "script": [
         [
-          "narrator",
-          "男の人のことばを聞いて、返事を選んでください。"
-        ],
-        [
           "youngMale",
-          "きょうは天気がいいですね。午後、一緒に公園を散歩しませんか。"
+          "すみません。音楽が大きいですね。少し小さくしてください。"
         ]
       ],
       "audioStatus": "not_generated",
@@ -3412,7 +3428,7 @@
       "section": "listening",
       "group": 4,
       "number": 2,
-      "prompt": "音声を聞いて、返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3456,7 +3472,7 @@
       "section": "listening",
       "group": 4,
       "number": 3,
-      "prompt": "音声を聞いて、返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3500,7 +3516,7 @@
       "section": "listening",
       "group": 4,
       "number": 4,
-      "prompt": "音声を聞いて、返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3544,7 +3560,7 @@
       "section": "listening",
       "group": 4,
       "number": 5,
-      "prompt": "音声を聞いて、返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
@@ -3588,12 +3604,12 @@
       "section": "listening",
       "group": 4,
       "number": 6,
-      "prompt": "音声を聞いて、返事を選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "options": [
         {
           "id": "1",
-          "text": "はい、次の角を右です。",
-          "rationale": "Đúng: 郵便局への方向確認に次の角右と応答."
+          "text": "次の角を右に曲がってください。",
+          "rationale": "正解。郵便局への道順を示す。"
         },
         {
           "id": "2",
@@ -3632,5 +3648,6 @@
     "Human/native/perceptual/rights/release reviews pending."
   ],
   "authoringRulesVersion": 5,
-  "authoringComplete": true
+  "authoringComplete": true,
+  "contentRevision": 2
 }

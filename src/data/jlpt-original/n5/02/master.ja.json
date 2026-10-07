@@ -31,11 +31,20 @@
     },
     "targetDurationMatched": true,
     "continuousAudioPath": "assets/jlpt-original/n5/02/audio/n5-original-02-listening-draft.mp3",
-    "durationMs": 1811532
+    "durationMs": 1815745,
+    "actualDurationMs": 1815745,
+    "targetDurationMs": 1800000,
+    "targetDeviationMs": 15745,
+    "durationAssessment": "Approximately 30 minutes: 30:15.745. AI editorial assessment of the complete content, without fixed target tolerance. Approved pacing unchanged; no silence padding. Technical PCM/decode checks are separate from perceptual approval.",
+    "perceptualApproval": false
   },
   "illustrations": {
     "status": "generated_ai_visually_inspected",
-    "rightsVerified": false
+    "rightsVerified": false,
+    "style": "colored_2d",
+    "tool": "built-in image_gen",
+    "manifestPath": "src/data/jlpt-original/n5/02/images.manifest.json",
+    "styleStandard": "docs/jlpt-workspace/JLPT_IMAGE_AND_UNIQUENESS_STANDARD.md"
   },
   "passages": {
     "text-grammar-01": "先週、わたしの 家の となりに 新しい 家族【1】来ました。男の人は 大きい 箱を 持っていました。箱が 重かった【2】、わたしも 手伝いました。わたしは「【3】」と 言って、軽い 箱を 一つ 運びました。\n夕方、その 家族が うちに 来ました。庭で 作った トマトを くれました。わたしたちは その トマトを 晩ごはんに【4】。とても おいしかったです。母は その 家族に「あしたも、うちへ【5】」と 言いました。",
@@ -83,31 +92,32 @@
       "section": "vocabulary",
       "group": 1,
       "number": 2,
-      "prompt": "【水】を コップに 入れます。\n【　】の ことばの 読み方を 選んでください。",
-      "learningObjective": "文脈の中の「水」の基本的な読み。",
+      "prompt": "夏は【海】で泳ぎます。\n【 】のことばは、どう読みますか。",
+      "learningObjective": "海の読みを識別する。",
       "options": [
         {
           "id": "1",
-          "text": "みせ",
-          "rationale": "この文の「水」の読み「みず」とは音または読みの意味が異なる。"
+          "text": "かわ",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "2",
-          "text": "みみ",
-          "rationale": "この文の「水」の読み「みず」とは音または読みの意味が異なる。"
+          "text": "いけ",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "3",
-          "text": "みち",
-          "rationale": "この文の「水」の読み「みず」とは音または読みの意味が異なる。"
+          "text": "そら",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "4",
-          "text": "みず",
-          "rationale": "この文の「水」は「みず」と読む。"
+          "text": "うみ",
+          "rationale": "正解。海の読みを識別する。"
         }
       ],
-      "correctOptionId": "4"
+      "correctOptionId": "4",
+      "target": "海"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-1-03",
@@ -238,31 +248,32 @@
       "section": "vocabulary",
       "group": 1,
       "number": 7,
-      "prompt": "ここに 【名前】を 書いてください。\n【　】の ことばの 読み方を 選んでください。",
-      "learningObjective": "文脈の中の「名前」の基本的な読み。",
+      "prompt": "兄の【名前】は、健です。\n【 】のことばは、どう読みますか。",
+      "learningObjective": "人名を紹介する文で名前の読みを識別する。",
       "options": [
         {
           "id": "1",
-          "text": "なめえ",
-          "rationale": "この文の「名前」の読み「なまえ」とは音または読みの意味が異なる。"
+          "text": "なまい",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "2",
           "text": "なまえ",
-          "rationale": "この文の「名前」は「なまえ」と読む。"
+          "rationale": "正解。人名を紹介する文で名前の読みを識別する。"
         },
         {
           "id": "3",
-          "text": "なまい",
-          "rationale": "この文の「名前」の読み「なまえ」とは音または読みの意味が異なる。"
+          "text": "めいまえ",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         },
         {
           "id": "4",
-          "text": "なまへ",
-          "rationale": "この文の「名前」の読み「なまえ」とは音または読みの意味が異なる。"
+          "text": "なめ",
+          "rationale": "不正解。文脈・質問の目的と一致しない。"
         }
       ],
-      "correctOptionId": "2"
+      "correctOptionId": "2",
+      "target": "名前"
     },
     {
       "id": "jpapp-n5-original-02-v1-vocabulary-1-08",
@@ -3207,7 +3218,7 @@
       "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
       "spokenOptions": true,
-      "visualBrief": "Black-and-white exam illustration: park path, a person walking away whose glove just fell behind them, another person notices and calls out. Show the fallen glove clearly, no words or arrows.",
+      "visualBrief": "TWO equal side-by-side panels with a narrow cream gutter, LEFT is practice: Friend’s home: woman guest with used empty teacup offers to wash it, female host beside small kitchen sink; no restroom scene. RIGHT is scored: 2D colored exam illustration: park path, a person walking away whose glove just fell behind them, another person notices and calls out. Show the fallen glove clearly, no words or arrows.",
       "illustrationPath": "assets/jlpt-original/n5/02/images/problem-3-practice-and-01.png",
       "timingBudget": {
         "nominalQuestionTargetMs": 40000,
@@ -3216,7 +3227,10 @@
         "betweenTurnsMs": 500,
         "answerPauseMs": 10000,
         "actualDurationMs": 36451
-      }
+      },
+      "optionVoiceRole": "youngMale",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n5/02/images/problem-3-practice-and-01.png"
     },
     {
       "id": "jpapp-n5-original-02-v1-listening-3-02",
@@ -3252,7 +3266,7 @@
       "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
       "spokenOptions": true,
-      "visualBrief": "Black-and-white bakery counter: customer holding coins toward cashier, cashier gestures to an empty payment tray, bread bag on counter. No prices or words; no answer hint.",
+      "visualBrief": "2D colored bakery counter: customer holding coins toward cashier, cashier gestures to an empty payment tray, bread bag on counter. No prices or words; no answer hint.",
       "illustrationPath": "assets/jlpt-original/n5/02/images/problem-3-02.png",
       "timingBudget": {
         "nominalQuestionTargetMs": 40000,
@@ -3261,7 +3275,10 @@
         "betweenTurnsMs": 500,
         "answerPauseMs": 10000,
         "actualDurationMs": 36099
-      }
+      },
+      "optionVoiceRole": "adultFemale",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n5/02/images/problem-3-02.png"
     },
     {
       "id": "jpapp-n5-original-02-v1-listening-3-03",
@@ -3297,7 +3314,7 @@
       "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
       "spokenOptions": true,
-      "visualBrief": "Black-and-white building doorway: friend holding a large box with both hands, closed door, second person empty-handed reaching toward door handle to help. No words.",
+      "visualBrief": "2D colored building doorway: friend holding a large box with both hands, closed door, second person empty-handed reaching toward door handle to help. No words.",
       "illustrationPath": "assets/jlpt-original/n5/02/images/problem-3-03.png",
       "timingBudget": {
         "nominalQuestionTargetMs": 40000,
@@ -3306,7 +3323,10 @@
         "betweenTurnsMs": 500,
         "answerPauseMs": 10000,
         "actualDurationMs": 33517
-      }
+      },
+      "optionVoiceRole": "youngMale",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n5/02/images/problem-3-03.png"
     },
     {
       "id": "jpapp-n5-original-02-v1-listening-3-04",
@@ -3342,7 +3362,7 @@
       "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
       "spokenOptions": true,
-      "visualBrief": "Black-and-white street meeting: two friends facing each other, one has a visibly short neat haircut and lightly touches it; other smiles approvingly. No salon tools, words or speech bubbles.",
+      "visualBrief": "2D colored street meeting: two friends facing each other, one has a visibly short neat haircut and lightly touches it; other smiles approvingly. No salon tools, words or speech bubbles.",
       "illustrationPath": "assets/jlpt-original/n5/02/images/problem-3-04.png",
       "timingBudget": {
         "nominalQuestionTargetMs": 40000,
@@ -3351,7 +3371,10 @@
         "betweenTurnsMs": 500,
         "answerPauseMs": 10000,
         "actualDurationMs": 32792
-      }
+      },
+      "optionVoiceRole": "femaleStudent",
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n5/02/images/problem-3-04.png"
     },
     {
       "id": "jpapp-n5-original-02-v1-listening-3-05",
@@ -3387,7 +3410,7 @@
       "audioStatus": "generated_ai_unreviewed",
       "playbackReviewed": false,
       "spokenOptions": true,
-      "visualBrief": "Black-and-white clinic waiting area: one seated person beside an empty chair, standing person points politely to the empty seat. Clinic setting indicated by simple reception counter and medical cross, no text or numbers.",
+      "visualBrief": "2D colored clinic waiting area: one seated person beside an empty chair, standing person points politely to the empty seat. Clinic setting indicated by simple reception counter and medical cross, no text or numbers.",
       "illustrationPath": "assets/jlpt-original/n5/02/images/problem-3-05.png",
       "timingBudget": {
         "nominalQuestionTargetMs": 40000,
@@ -3396,14 +3419,17 @@
         "betweenTurnsMs": 500,
         "answerPauseMs": 10000,
         "actualDurationMs": 33507
-      }
+      },
+      "imageStyle": "colored_2d",
+      "visualSheetPath": "assets/jlpt-original/n5/02/images/problem-3-05.png",
+      "optionVoiceRole": "femaleStudent"
     },
     {
       "id": "jpapp-n5-original-02-v1-listening-4-01",
       "section": "listening",
       "group": 4,
       "number": 1,
-      "prompt": "音声を 聞いて、自然な 返事を 一つ 選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "learningObjective": "未完了の食事への返答。",
       "options": [
         {
@@ -3446,7 +3472,7 @@
       "section": "listening",
       "group": 4,
       "number": 2,
-      "prompt": "音声を 聞いて、自然な 返事を 一つ 選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "learningObjective": "許可への自然な応答。",
       "options": [
         {
@@ -3489,7 +3515,7 @@
       "section": "listening",
       "group": 4,
       "number": 3,
-      "prompt": "音声を 聞いて、自然な 返事を 一つ 選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "learningObjective": "所有者の問い。",
       "options": [
         {
@@ -3532,7 +3558,7 @@
       "section": "listening",
       "group": 4,
       "number": 4,
-      "prompt": "音声を 聞いて、自然な 返事を 一つ 選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "learningObjective": "注意への謝意と安全な選択。",
       "options": [
         {
@@ -3575,7 +3601,7 @@
       "section": "listening",
       "group": 4,
       "number": 5,
-      "prompt": "音声を 聞いて、自然な 返事を 一つ 選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "learningObjective": "物の提供を求める依頼。",
       "options": [
         {
@@ -3618,7 +3644,7 @@
       "section": "listening",
       "group": 4,
       "number": 6,
-      "prompt": "音声を 聞いて、自然な 返事を 一つ 選んでください。",
+      "prompt": "音声を聞いて、いちばんよい返事を選んでください。",
       "learningObjective": "予定が合わない誘いの断り。",
       "options": [
         {
@@ -3656,5 +3682,6 @@
         "actualDurationMs": 31805
       }
     }
-  ]
+  ],
+  "contentRevision": 2
 }
