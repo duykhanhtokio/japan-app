@@ -1,0 +1,19 @@
+# N3 03 — technical integration complete
+
+102 independently authored responses (74 written + 28 listening), 10 passages, five new unscored examples, four colored 2D imagegen assets visually inspected. Stable keys: four-choice 22/22/22/23, three-choice 4/4/5, separately section-balanced, no triples/short cycles, distinct from all 14 earlier original patterns. Independent content only; no legacy content inputs.
+
+AI editorial review replaced five duplicate/near semantic motifs and clarified written ambiguity and option-specific rationales. Final candidate audit across 15 independent masters: 1440 scored responses, 119 passages, 63 examples, zero normalized exact duplicates. All 22 prior lexical near candidates have identical texts/scores and retain their recorded AI judgments; none involve N3 03. This does not certify exhaustive semantic uniqueness or native quality.
+
+First track 44:37.688. Removed 24 repeated concluding turns from groups 1–2, retaining deciding evidence and contrasts, and recorded semantic replacements. Final PCM/decode **40:17.603 (2417603ms)**, approximately 40 minutes by AI editorial judgment; no fixed tolerance or padding. Approved VOICEVOX 0.25.2 four voices, .9 speed, 2/.5-second timing and 12/12/12/10/8-second windows unchanged. New original procedural score exactly 60000ms/1440000frames after problem2 before all problem3 orientation, with announcements. Recorded/current master hashes retained; post-recording edits written-only and metadata.
+
+Content, audio 28 sidecars + continuous track/scripts/spoken choices/roles/hashes/examples/music, adapter and UI10/10 PASS. Real Chromium decoder opening/pause/resume/music boundary/four images PASS. Unmodified production runner/shared UI RN-web harness passes select/save, back/reopen/resume, incomplete submit101, score0 correct/1 wrong/101 unanswered of102, review, no pageerror. Three430x932 screenshots visually inspected. Full TypeScript only existing unrelated TS2352 life-content-repository.ts:47. Harness supplies focus/backdrop contexts; not full router, native/iPhone, human listening or release approval.
+
+Session `jlpt:jpapp:n3:original:03:v1`, start0ms. Spoken choices/transcripts/internal explanations and group3 advance question hidden. Runtime integrated; human/native/perceptual/publisher/rights/release flags false. Completed count becomes15/30 only after narrow commit publication and WORK PERSISTENCE PASS. Next N3 04. Preserve all earlier work; no legacy deletion before full30 replacement gate. Do not rerun scratch initial authoring/permutation scripts.
+
+## Publication blocked by automatic approval review
+
+The completed N3 03 narrow commit is local only. Automatic approval review rejected GitHub push because the continuation request was not accepted as explicit authorization to export this content/media/report payload to duykhanhtokio/japan-app on recovery/jlpt-n3-n1. Remote observed at20bb09b3726a7ca0242c57f9c5b5776b66281d70, incorporating concurrent Kaigo work preserved by rebase. User confirmation for this exact payload/destination requested. Do not bypass rejection, claim durable15/30, or accumulate N3 04 before publication/fetch/WORK PERSISTENCE PASS. Durable integrated count remains14/30.
+
+## 2026-10-08 — publisher authorized complete N3 03 publication
+
+Publisher explicitly authorized all exam content, images, audio and reports to duykhanhtokio/japan-app, recovery/jlpt-n3-n1. Prior automatic approval blocker is resolved. Direct Git push has no HTTPS credentials in this runtime; using the connected GitHub API to publish the same validated narrow tree while preserving concurrent Kaigo work. Require exact tree verification, fetch and WORK PERSISTENCE PASS before advancing to N3 04; completed technical count becomes15/30 after verified publication. Human/native/perceptual/rights/release flags remainfalse.
