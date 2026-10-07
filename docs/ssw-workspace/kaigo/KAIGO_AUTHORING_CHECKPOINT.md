@@ -163,3 +163,13 @@ XácminhMHLW cấu trúc hiện hành,CBT vàngưỡngtổngđiểm;metadata4l�
 Có WEEK_08_EDITORIAL_REPORT,validator tuần8,similarity/furigana/official-structure evidence. Rubric/20ca và chínhsáchthi là đặctả,chưa evaluator/resume/scoringappchạy. Mọihuman/domain/native/publisher-content/rights/runtime/releasefalse;không hình/voiceNPC,không UI/src/JLPT đổi. Đủquota khônglà đủmọichủđề/kỹthuật,độkhó/time/chứngnhậnđỗ. Coveragegap tuầntrước vẫn giữ,cần map/bổsung/duyệt trước tíchhợp.
 
 Lưu nguyêncụm bằngconnector trênHEADremote mới nhất vàđọc lại từngblob trước báođãlưu;không gọi scriptWORKPERSISTENCEPASS hoặc committhứhai chỉghiSHA. Bước tiếp saulưubền:ràgap theo tiêu chuẩn vàchuẩnbị gói duyệt chuyênmôn/bảnngữ/quyền/hình/thờilượng cho cảlộtrình/haiđề. Chỉ tíchhợp saugate;không tự“tuần9”,mởrộngđề hoặcpháthành. Khônghỏi lại quyếtđịnh ngônngữ/furigana/chấmđiểm/resumeđãchốt.
+
+## 2026-10-07 — Rà toàn khóa và gói duyệt chưa ký
+
+Tuần8 đã đọc lại21/21blob trênremotec42c0a5a;local68c9642sạch. Phiên đọc lại đầy đủSTART_HERE/AGENTS/rules/plan/checkpoint/biểuđạtđộc lập;remote vẫn c42c0a5a,trackinglocal cũ6807d7f3, không coi bằng nhau. Connector kiểmbaseline6filetrước sửa vàleaseparenttrước côngbố; bảo toànJLPT,khôngforce/reset. NguồnPDFchuẩn hashkhớp;đọc lại trangconcept in10/16/24/42/98/120/144/152/170/186/198 theoPDF+2. Không tạo kiến thức kỹ thuật mới trongcụm này.
+
+Đã sửa33mục đầuobjectivesVi tuần4–8 từđápán mẫu thành mục tiêu hành động;kiểm so local68c9642 khôngchođổi phần khác. Khôngthêm bài/câu hoặc đổicờ. Rà54mục tiêu/tóm tắtkiếnthức/giớihạn,đọc đủ4đoạn tuần1–3,toàn60stem/240lựachọn đề;khôngclaimauditlạisâu mọi đoạn/thoại/rubric8tuần. Đốichiếu tiêu chuẩnMHLW4trang vàlập28nhóm tổnghợpAI,khônggọi làfullinventorychínhthức. Gắn54bài/60câu/link/hash;ghi rõ thiếu nhiễmkhuẩn,sứckhỏenhânviên/cơhọccơthể,dịchvụ,khẩn cấp,cơchế và kỹthuật hỗtrợ. Lặp nănglực/nhiễu dễ và dấuhiệuđộdài đượcgắnIDcâu;chưa sửaform trongcụm này.
+
+reviews/WHOLE_COURSE_REVIEW_PACKAGE.md,coverage-audit,objective-repairs,review-worklist,similarity-screen vàscripts/check-kaigo-course-review-package.mjs lưubằngchứng.114đơnvị duyệt54bài+60câu đều tên/ngày/quyếtđịnhtrống;12kiểmxuyênđơnvịpending,khônggửi ai hoặc tựký. Màn text-layer toànkhóa12.102trường/2.830dài>=60/0hit,khôngchứngnhậnquyền hoặc kiểmtrùngý/hình. Kếhoạch1710phútchưađo;mọihuman/domain/native/rights/runtime/releasefalse.
+
+Bước tiếp: xử lý độbao phủ/chiềusâu vànhiễu hai form tronglịch8tuần, kiểmnguồn/chuyênmôn/bảnngữ/tải học;không tựtuần9/đềmới/tíchhợpchưagate. Tiếp tục nghiêncứu/soạnnháp đãđượcphép;khôngđánhđồngkýnháp/validatorPASSvớiđạtchuyênmôn. Lưu hẹpconnector vàđọcSHA từngblobtrênnhánh trước báođãlưu;khôngclaimWORKPERSISTENCEscriptPASS.
