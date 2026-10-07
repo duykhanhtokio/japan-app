@@ -1,0 +1,488 @@
+{
+  "version": 1,
+  "status": "draft_ai_editorial_only",
+  "runtimeIntegrated": false,
+  "domainHumanReviewed": false,
+  "nativeLanguageReviewed": false,
+  "publisherReviewed": false,
+  "policy": {
+    "evaluation": "Meaning and context, not exact-string or keyword matching. These are editorial specifications, not an executable classifier.",
+    "asrUncertain": "Ask for repetition or editable text; do not assign a care error from uncertain recognition.",
+    "priority": "Unsafe action requires correction regardless of language fluency. Missing meaning permits clarification; no automatic next NPC turn.",
+    "accepted": "Both authored model and independent alternative may satisfy criteria; partial answer needs only missing meaning.",
+    "scope": "No diagnosis, medication advice, physical transfer instructions or unconstrained new facts.",
+    "feedback": "State achieved meaning, one missing/unsafe point, give the authored hint and retry.",
+    "pronunciationScoringImplemented": false
+  },
+  "lessons": [
+    {
+      "lessonId": "kaigo-move-01",
+      "turns": [
+        {
+          "id": "kaigo-move-01-response-02",
+          "playerTurn": 2,
+          "promptTurn": 1,
+          "criteriaVi": "Nêu giờ bắt đầu 14:00, còn 15 phút; cùng kiểm lịch.",
+          "acceptedExamplesJa": [
+            "予定表を一緒に見ましょう。始まるのは二時で、まだ十五分あります。",
+            "予定表では十四時からです。あと十五分あります。一緒に確認しましょう。"
+          ],
+          "repairHintJa": "予定表を一緒に見ましょう。始まるのは二時で、まだ十五分あります。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Nêu giờ bắt đầu 14:00, còn 15 phút; cùng kiểm lịch.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 3
+        },
+        {
+          "id": "kaigo-move-01-response-04",
+          "playerTurn": 4,
+          "promptTurn": 3,
+          "criteriaVi": "Xác nhận xe lăn theo kế hoạch hiện tại và hỏi điều lo lắng.",
+          "acceptedExamplesJa": [
+            "はい。今の支援計画では車いすで移動します。行く前に気になることはありますか。",
+            "計画では車いすを使います。気になることはございますか。"
+          ],
+          "repairHintJa": "はい。今の支援計画では車いすで移動します。行く前に気になることはありますか。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Xác nhận xe lăn theo kế hoạch hiện tại và hỏi điều lo lắng.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 5
+        },
+        {
+          "id": "kaigo-move-01-response-06",
+          "playerTurn": 6,
+          "promptTurn": 5,
+          "criteriaVi": "Kiểm tra lối vào; nếu đông sẽ chờ, không bảo đảm ngay lối thông.",
+          "acceptedExamplesJa": [
+            "入口の様子を確認します。人が多ければ、少し待ってから入りましょう。",
+            "入口を見てきます。混んでいたら、少し待ちましょう。"
+          ],
+          "repairHintJa": "入口の様子を確認します。人が多ければ、少し待ってから入りましょう。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Kiểm tra lối vào; nếu đông sẽ chờ, không bảo đảm ngay lối thông.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 7
+        },
+        {
+          "id": "kaigo-move-01-response-08",
+          "playerTurn": 8,
+          "promptTurn": 7,
+          "criteriaVi": "Kiểm tra ghế gần cửa sổ và hỏi đồng ý di chuyển bây giờ.",
+          "acceptedExamplesJa": [
+            "窓の近くの席を確認します。これから移動してもよろしいですか。",
+            "窓側の席を確かめます。今からご一緒してもよろしいでしょうか。"
+          ],
+          "repairHintJa": "窓の近くの席を確認します。これから移動してもよろしいですか。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Kiểm tra ghế gần cửa sổ và hỏi đồng ý di chuyển bây giờ.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 9
+        },
+        {
+          "id": "kaigo-move-01-response-10",
+          "playerTurn": 10,
+          "promptTurn": 9,
+          "criteriaVi": "Đi cùng tới lối vào, mời báo khi muốn dừng.",
+          "acceptedExamplesJa": [
+            "では、入口までご一緒します。途中で止まりたいときは教えてください。",
+            "入口まで付き添います。止まりたくなったら、お知らせください。"
+          ],
+          "repairHintJa": "では、入口までご一緒します。途中で止まりたいときは教えてください。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Đi cùng tới lối vào, mời báo khi muốn dừng.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": null
+        }
+      ]
+    },
+    {
+      "lessonId": "kaigo-move-02",
+      "turns": [
+        {
+          "id": "kaigo-move-02-response-02",
+          "playerTurn": 2,
+          "promptTurn": 1,
+          "criteriaVi": "Hỏi vị trí đồ, chưa tự suy nơi bị chắn.",
+          "acceptedExamplesJa": [
+            "まず、どの場所に荷物があるか教えてください。",
+            "荷物は廊下のどの辺りにありますか。"
+          ],
+          "repairHintJa": "まず、どの場所に荷物があるか教えてください。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Hỏi vị trí đồ, chưa tự suy nơi bị chắn.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 3
+        },
+        {
+          "id": "kaigo-move-02-response-04",
+          "playerTurn": 4,
+          "promptTurn": 3,
+          "criteriaVi": "Không cố qua chỗ hẹp, sẽ kiểm tra lối đi.",
+          "acceptedExamplesJa": [
+            "狭い所を無理に通らないでください。今、私が通路を確認します。",
+            "無理に進まず、通路の確認を待ってください。"
+          ],
+          "repairHintJa": "狭い所を無理に通らないでください。今、私が通路を確認します。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Không cố qua chỗ hẹp, sẽ kiểm tra lối đi.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 5
+        },
+        {
+          "id": "kaigo-move-02-response-06",
+          "playerTurn": 6,
+          "promptTurn": 5,
+          "criteriaVi": "Báo kết quả đã kiểm: lối phải không đồ, tới phòng giao lưu.",
+          "acceptedExamplesJa": [
+            "わかりました。確認しましたが、右側の通路なら荷物がなく、交流室へ行けます。",
+            "右の通路を確認しました。荷物はなく、交流室まで通れます。"
+          ],
+          "repairHintJa": "わかりました。確認しましたが、右側の通路なら荷物がなく、交流室へ行けます。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Báo kết quả đã kiểm: lối phải không đồ, tới phòng giao lưu.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 7
+        },
+        {
+          "id": "kaigo-move-02-response-08",
+          "playerTurn": 8,
+          "promptTurn": 7,
+          "criteriaVi": "Nhờ giải thích thay đổi đường và báo người phụ trách sau khi tới.",
+          "acceptedExamplesJa": [
+            "お願いします。到着したら、部屋の担当者にも伝えてください。",
+            "道の変更を説明してください。着いたら担当の方にも知らせてください。"
+          ],
+          "repairHintJa": "お願いします。到着したら、部屋の担当者にも伝えてください。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Nhờ giải thích thay đổi đường và báo người phụ trách sau khi tới.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 9
+        },
+        {
+          "id": "kaigo-move-02-response-10",
+          "playerTurn": 10,
+          "promptTurn": 9,
+          "criteriaVi": "Hiện không yêu cầu thêm; vấn đề mới cần xác nhận.",
+          "acceptedExamplesJa": [
+            "今のところありません。新しい問題があれば、その場で確認してください。",
+            "今はそれで大丈夫です。別の問題が出たら、改めて確認しましょう。"
+          ],
+          "repairHintJa": "今のところありません。新しい問題があれば、その場で確認してください。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Hiện không yêu cầu thêm; vấn đề mới cần xác nhận.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": null
+        }
+      ]
+    },
+    {
+      "lessonId": "kaigo-move-03",
+      "turns": [
+        {
+          "id": "kaigo-move-03-response-02",
+          "playerTurn": 2,
+          "promptTurn": 1,
+          "criteriaVi": "Báo 13:55 tại lối vào, lời bác muốn nghỉ; không gán nguyên nhân.",
+          "acceptedExamplesJa": [
+            "一時五十五分に入口へ着いたとき、森川さんが「少し休みたい」と話されました。",
+            "十三時五十五分、入口で森川さんから少し休みたいとのお話がありました。"
+          ],
+          "repairHintJa": "一時五十五分に入口へ着いたとき、森川さんが「少し休みたい」と話されました。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Báo 13:55 tại lối vào, lời bác muốn nghỉ; không gán nguyên nhân.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 3
+        },
+        {
+          "id": "kaigo-move-03-response-04",
+          "playerTurn": 4,
+          "promptTurn": 3,
+          "criteriaVi": "Báo đã dừng, liên lạc nhân viên phụ trách; bác ngồi đợi.",
+          "acceptedExamplesJa": [
+            "移動をいったん止め、担当職員に連絡しました。森川さんは座ったまま待っておられます。",
+            "移動を中断して担当者に連絡しました。ご本人は座って待っておられます。"
+          ],
+          "repairHintJa": "移動をいったん止め、担当職員に連絡しました。森川さんは座ったまま待っておられます。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Báo đã dừng, liên lạc nhân viên phụ trách; bác ngồi đợi.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 5
+        },
+        {
+          "id": "kaigo-move-03-response-06",
+          "playerTurn": 6,
+          "promptTurn": 5,
+          "criteriaVi": "Chưa nghe than đau/khó thở khác với đã xác nhận không có.",
+          "acceptedExamplesJa": [
+            "その訴えは聞いていません。ただ、まだ詳しく確認できていません。",
+            "そのお話は聞いていませんが、詳しい確認はまだです。"
+          ],
+          "repairHintJa": "その訴えは聞いていません。ただ、まだ詳しく確認できていません。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Chưa nghe than đau/khó thở khác với đã xác nhận không có.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 7
+        },
+        {
+          "id": "kaigo-move-03-response-08",
+          "playerTurn": 8,
+          "promptTurn": 7,
+          "criteriaVi": "Chưa tiếp tục di chuyển, đợi kiểm tra cùng điều dưỡng.",
+          "acceptedExamplesJa": [
+            "はい。移動は再開せず、お待ちしています。",
+            "わかりました。確認まで移動を再開しません。"
+          ],
+          "repairHintJa": "はい。移動は再開せず、お待ちしています。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Chưa tiếp tục di chuyển, đợi kiểm tra cùng điều dưỡng.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 9
+        },
+        {
+          "id": "kaigo-move-03-response-10",
+          "playerTurn": 10,
+          "promptTurn": 9,
+          "criteriaVi": "Ghi sự việc xác nhận, lời bác và giờ; không thêm chẩn đoán.",
+          "acceptedExamplesJa": [
+            "わかりました。確認した事実と、ご本人の言葉を分けて記録します。",
+            "時刻と確認した事実、ご本人のお話を区別して記録します。"
+          ],
+          "repairHintJa": "わかりました。確認した事実と、ご本人の言葉を分けて記録します。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Ghi sự việc xác nhận, lời bác và giờ; không thêm chẩn đoán.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": null
+        }
+      ]
+    },
+    {
+      "lessonId": "kaigo-move-04",
+      "turns": [
+        {
+          "id": "kaigo-move-04-response-02",
+          "playerTurn": 2,
+          "promptTurn": 1,
+          "criteriaVi": "Có thể phụ trách nhưng cách hỗ trợ chưa rõ, nhờ cùng xem kế hoạch.",
+          "acceptedExamplesJa": [
+            "担当できますが、この時間の支援方法をまだ確認していません。計画を一緒に見ていただけますか。",
+            "担当します。まだ支援方法がわからないので、計画を確認させてください。"
+          ],
+          "repairHintJa": "担当できますが、この時間の支援方法をまだ確認していません。計画を一緒に見ていただけますか。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Có thể phụ trách nhưng cách hỗ trợ chưa rõ, nhờ cùng xem kế hoạch.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 3
+        },
+        {
+          "id": "kaigo-move-04-response-04",
+          "playerTurn": 4,
+          "promptTurn": 3,
+          "criteriaVi": "Nhắc lại hai nhân viên trong kế hoạch này và hỏi người còn lại.",
+          "acceptedExamplesJa": [
+            "二人ですね。もう一人の担当者はどなたですか。",
+            "この時間は二人での支援ですね。相手の担当者を教えてください。"
+          ],
+          "repairHintJa": "二人ですね。もう一人の担当者はどなたですか。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Nhắc lại hai nhân viên trong kế hoạch này và hỏi người còn lại.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 5
+        },
+        {
+          "id": "kaigo-move-04-response-06",
+          "playerTurn": 6,
+          "promptTurn": 5,
+          "criteriaVi": "Liên lạc Kishimoto; giải thích hai người xác nhận rồi hướng dẫn.",
+          "acceptedExamplesJa": [
+            "岸本さんに声をかけます。長谷部さんには、二人で確認してからご案内すると説明します。",
+            "岸本さんと確認してからご案内することを、長谷部さんにお伝えします。"
+          ],
+          "repairHintJa": "岸本さんに声をかけます。長谷部さんには、二人で確認してからご案内すると説明します。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Liên lạc Kishimoto; giải thích hai người xác nhận rồi hướng dẫn.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 7
+        },
+        {
+          "id": "kaigo-move-04-response-08",
+          "playerTurn": 8,
+          "promptTurn": 7,
+          "criteriaVi": "Không bắt đầu một mình; hoàn tất kiểm tra, báo khác biệt trước khi bắt đầu.",
+          "acceptedExamplesJa": [
+            "承知しました。一人で始めず、必要な確認を済ませます。",
+            "必要な確認をして、計画と違えば先に報告します。一人では始めません。"
+          ],
+          "repairHintJa": "承知しました。一人で始めず、必要な確認を済ませます。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Không bắt đầu một mình; hoàn tất kiểm tra, báo khác biệt trước khi bắt đầu.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": null
+        }
+      ]
+    },
+    {
+      "lessonId": "kaigo-move-05",
+      "turns": [
+        {
+          "id": "kaigo-move-05-response-02",
+          "playerTurn": 2,
+          "promptTurn": 1,
+          "criteriaVi": "Tôn trọng chưa tham gia bây giờ; hỏi lý do tùy ý, không bắt buộc trả lời.",
+          "acceptedExamplesJa": [
+            "今日は参加を見合わせたいのですね。よろしければ、理由を聞かせていただけますか。",
+            "今は参加しないのですね。差し支えなければ、お気持ちを聞かせてください。"
+          ],
+          "repairHintJa": "今日は参加を見合わせたいのですね。よろしければ、理由を聞かせていただけますか。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Tôn trọng chưa tham gia bây giờ; hỏi lý do tùy ý, không bắt buộc trả lời.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 3
+        },
+        {
+          "id": "kaigo-move-05-response-04",
+          "playerTurn": 4,
+          "promptTurn": 3,
+          "criteriaVi": "Nhắc mong muốn chờ cuộc gọi; xin phép báo chưa tham gia hiện tại.",
+          "acceptedExamplesJa": [
+            "電話を待ちたいのですね。活動の担当者に、今は参加しないと伝えてもよろしいですか。",
+            "お電話を待つのですね。今は参加されないと担当者に伝えてもいいですか。"
+          ],
+          "repairHintJa": "電話を待ちたいのですね。活動の担当者に、今は参加しないと伝えてもよろしいですか。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Nhắc mong muốn chờ cuộc gọi; xin phép báo chưa tham gia hiện tại.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 5
+        },
+        {
+          "id": "kaigo-move-05-response-06",
+          "playerTurn": 6,
+          "promptTurn": 5,
+          "criteriaVi": "Sẽ hỏi khả năng tham gia giữa buổi, báo khi có kết quả; chưa hứa được tham gia.",
+          "acceptedExamplesJa": [
+            "途中から参加できるか確認してきます。わかり次第、お伝えします。",
+            "途中参加について担当者に聞いて、確認できたらお知らせします。"
+          ],
+          "repairHintJa": "途中から参加できるか確認してきます。わかり次第、お伝えします。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Sẽ hỏi khả năng tham gia giữa buổi, báo khi có kết quả; chưa hứa được tham gia.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 7
+        },
+        {
+          "id": "kaigo-move-05-response-08",
+          "playerTurn": 8,
+          "promptTurn": 7,
+          "criteriaVi": "Sau khi báo kết quả mới hỏi lựa chọn di chuyển, không quyết thay.",
+          "acceptedExamplesJa": [
+            "承りました。移動するかどうかは、確認した内容をお伝えしてから決めましょう。",
+            "確認結果をお伝えした後で、行くかどうかお聞きします。"
+          ],
+          "repairHintJa": "承りました。移動するかどうかは、確認した内容をお伝えしてから決めましょう。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Sau khi báo kết quả mới hỏi lựa chọn di chuyển, không quyết thay.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": null
+        }
+      ]
+    },
+    {
+      "lessonId": "kaigo-move-06",
+      "turns": [
+        {
+          "id": "kaigo-move-06-response-02",
+          "playerTurn": 2,
+          "promptTurn": 1,
+          "criteriaVi": "Hiện chưa tham gia hoạt động 14:00, lời bác muốn chờ điện thoại em gái.",
+          "acceptedExamplesJa": [
+            "午後二時の活動には、今は参加されません。妹さんからの電話を待ちたいと話されました。",
+            "十四時の活動には今は参加されず、妹さんのお電話を待ちたいそうです。"
+          ],
+          "repairHintJa": "午後二時の活動には、今は参加されません。妹さんからの電話を待ちたいと話されました。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Hiện chưa tham gia hoạt động 14:00, lời bác muốn chờ điện thoại em gái.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 3
+        },
+        {
+          "id": "kaigo-move-06-response-04",
+          "playerTurn": 4,
+          "promptTurn": 3,
+          "criteriaVi": "Đã xác nhận được tham gia tới 14:30 và đã báo cho bác.",
+          "acceptedExamplesJa": [
+            "活動担当者に確認したところ、二時半までは途中参加できます。ご本人にも伝えました。",
+            "担当者から十四時三十分まで参加できると聞き、ご本人にもお伝えしました。"
+          ],
+          "repairHintJa": "活動担当者に確認したところ、二時半までは途中参加できます。ご本人にも伝えました。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Đã xác nhận được tham gia tới 14:30 và đã báo cho bác.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 5
+        },
+        {
+          "id": "kaigo-move-06-response-06",
+          "playerTurn": 6,
+          "promptTurn": 5,
+          "criteriaVi": "Chưa quyết tham gia, hỏi lại mong muốn sau cuộc gọi.",
+          "acceptedExamplesJa": [
+            "まだ決まっていません。電話の後に、ご本人の希望をもう一度聞く予定です。",
+            "参加するかは未定です。お電話が終わってから希望を確認します。"
+          ],
+          "repairHintJa": "まだ決まっていません。電話の後に、ご本人の希望をもう一度聞く予定です。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Chưa quyết tham gia, hỏi lại mong muốn sau cuộc gọi.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 7
+        },
+        {
+          "id": "kaigo-move-06-response-08",
+          "playerTurn": 8,
+          "promptTurn": 7,
+          "criteriaVi": "Sổ hoạt động hôm nay; tách hạn đã xác nhận và mong muốn chưa rõ.",
+          "acceptedExamplesJa": [
+            "今日の活動記録に書きました。途中参加できる期限と、ご本人の希望が未確認であることを分けて記載しています。",
+            "本日の活動記録です。参加期限と、希望が未確認なことを別々に書いています。"
+          ],
+          "repairHintJa": "今日の活動記録に書きました。途中参加できる期限と、ご本人の希望が未確認であることを分けて記載しています。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Sổ hoạt động hôm nay; tách hạn đã xác nhận và mong muốn chưa rõ.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": null
+        }
+      ]
+    },
+    {
+      "lessonId": "kaigo-move-07",
+      "turns": [
+        {
+          "id": "kaigo-move-07-response-02",
+          "playerTurn": 2,
+          "promptTurn": 1,
+          "criteriaVi": "Nêu xung đột bảng14:00/thông báo14:20, hỏi thông tin mới nhất.",
+          "acceptedExamplesJa": [
+            "掲示には二時開始とありますが、連絡には二時二十分とあります。どちらが最新ですか。",
+            "掲示は十四時、連絡は十四時二十分です。新しい予定はどちらでしょうか。"
+          ],
+          "repairHintJa": "掲示には二時開始とありますが、連絡には二時二十分とあります。どちらが最新ですか。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Nêu xung đột bảng14:00/thông báo14:20, hỏi thông tin mới nhất.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 3
+        },
+        {
+          "id": "kaigo-move-07-response-04",
+          "playerTurn": 4,
+          "promptTurn": 3,
+          "criteriaVi": "Xác nhận đã hiểu; trước đó chỉ hứa báo Hasebe sau khi kiểm, chưa báo giờ mới.",
+          "acceptedExamplesJa": [
+            "承知しました。長谷部さんには、確認してからお知らせするとお伝えしています。",
+            "わかりました。長谷部さんには確認後にお知らせすると伝えてあります。"
+          ],
+          "repairHintJa": "承知しました。長谷部さんには、確認してからお知らせするとお伝えしています。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Xác nhận đã hiểu; trước đó chỉ hứa báo Hasebe sau khi kiểm, chưa báo giờ mới.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 5
+        },
+        {
+          "id": "kaigo-move-07-response-06",
+          "playerTurn": 6,
+          "promptTurn": 5,
+          "criteriaVi": "Xác nhận mong muốn và kế hoạch hỗ trợ thời điểm đó trước chuẩn bị.",
+          "acceptedExamplesJa": [
+            "参加の希望と、その時間の支援計画も確認してから移動の準備をします。",
+            "希望と、その時間の支援計画を確かめてから準備します。"
+          ],
+          "repairHintJa": "参加の希望と、その時間の支援計画も確認してから移動の準備をします。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Xác nhận mong muốn và kế hoạch hỗ trợ thời điểm đó trước chuẩn bị.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": 7
+        },
+        {
+          "id": "kaigo-move-07-response-08",
+          "playerTurn": 8,
+          "promptTurn": 7,
+          "criteriaVi": "Báo thay đổi sang14:20, ghi những gì xác nhận; điểm chưa rõ hỏi phụ trách.",
+          "acceptedExamplesJa": [
+            "はい。開始時刻が二時二十分に変わったことから説明し、確認した内容を記録します。",
+            "まず十四時二十分への変更を説明します。確認したことを記録し、不明点は相談します。"
+          ],
+          "repairHintJa": "はい。開始時刻が二時二十分に変わったことから説明し、確認した内容を記録します。",
+          "feedbackMissingVi": "Bạn hãy bổ sung ý còn thiếu: Báo thay đổi sang14:20, ghi những gì xác nhận; điểm chưa rõ hỏi phụ trách.",
+          "unsafeOrUnsupportedVi": "Không ép di chuyển, tự đổi kế hoạch, tự chẩn đoán, hoặc khẳng định thông tin chưa kiểm tra. Chỉ dùng dữ kiện đã xuất hiện đến lượt này.",
+          "nextNpcTurn": null
+        }
+      ]
+    }
+  ]
+}

@@ -37,3 +37,9 @@ Commit local không chứng minh GitHub đã lưu. Lấy SHA từ Git; chỉ bá
 Bốn bài mới: xác nhận kế hoạch với người phụ trách (ngày17), tiếp nhận từ chối hoạt động tự chọn (ngày19), bàn giao sự việc/lựa chọn chưa xác nhận (ngày20), xác minh giờ hoạt động mâu thuẫn (ngày21). Liên kết đúng NPC/lessonId trong curriculum. Mỗi bài có blocks30phút dự kiến, không khẳng định đo thực tế. Không dạy thủ thuật di chuyển cơ thể. Nguồn đọc thêm: trang in115/PDF117 về ghi chép; 129/PDF131 về đồng ý/tự lập; 118/PDF120 về báo cáo.
 
 PASS cấu trúc, ID/link, lượt thoại, trùng lời người học, lựa chọn/lý do; AI rà nội dung và giới hạn. Mọi human/domain/rights/runtime/release flags vẫn false. Các bài chưa có bộ đánh giá phản hồi runtime theo từng lượt; expected intents hiện ở cấp scenario, cần hoàn thiện trước tích hợp.
+
+## Bổ sung đánh giá phản hồi theo lượt
+
+Remote trước chỉnh sửa đã kiểm chứng PASS tại 24bceaa0, chứa cụm di chuyển bảy ngày. Thêm drafts/movement-response-rubrics.json: 31 lượt người học của 7 bài, mỗi lượt có tiêu chí nghĩa Việt, câu mẫu và biến thể Nhật, gợi ý sửa, liên kết prompt/next turn. Không so khớp chuỗi tuyệt đối; không tự chuyển lượt khi thiếu ý hoặc có hành động không phù hợp. ASR không chắc thì yêu cầu nói lại/sửa văn bản.
+
+Đây là đặc tả biên tập, chưa có bộ phân loại/chấm điểm thực thi. Chưa kiểm tiếng nói/runtime hoặc duyệt chuyên môn/ngôn ngữ/quyền bằng con người. Đặc tả cần được kiểm duyệt cùng bài trước tích hợp. Điểm tiếp theo sau lưu bền: soạn nền tảng tuần 1 theo nguồn, rồi cụm ăn uống; quyết định đề thi chưa chốt vẫn giữ nguyên.
