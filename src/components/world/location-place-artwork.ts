@@ -3,6 +3,16 @@ import metadataJson from '@/data/location-place-artwork.json';
 
 const metadata = metadataJson as Record<string, { category: string }>;
 const artwork: Record<string, ImageSourcePropType> = {
+  'LOC-007-18': require('../../../assets/app/life/location-backgrounds/places/fukushima-iizaka-station.png'),
+  'LOC-007-01': require('../../../assets/app/life/location-backgrounds/places/fukushima-station-yamabiko.png'),
+  'LOC-007-13': require('../../../assets/app/life/location-backgrounds/places/fukushima-aeon-food-court.png'),
+  'LOC-007-16': require('../../../assets/app/life/location-backgrounds/places/fukushima-nakacho-yamada.png'),
+  'LOC-007-08': require('../../../assets/app/life/location-backgrounds/places/fukushima-hanamiyama.png'),
+  'LOC-007-10': require('../../../assets/app/life/location-backgrounds/places/fukushima-inari-shrine.png'),
+  'LOC-007-09': require('../../../assets/app/life/location-backgrounds/places/fukushima-iizaka-sabakoyu.png'),
+  'LOC-007-15': require('../../../assets/app/life/location-backgrounds/places/aizuwakamatsu-tsurugajo.png'),
+  'LOC-007-17': require('../../../assets/app/life/location-backgrounds/places/aizuwakamatsu-fukushima-museum.png'),
+  'LOC-FKS-AIZUWAKAMATSU-01': require('../../../assets/app/life/location-backgrounds/places/aizuwakamatsu-tsurugajo.png'),
   'LOC-006-01': require('../../../assets/app/life/location-backgrounds/places/yamagata-station-tsubasa.png'),
   'LOC-006-13': require('../../../assets/app/life/location-backgrounds/places/yamagata-spal-entrance.png'),
   'LOC-006-08': require('../../../assets/app/life/location-backgrounds/places/yamagata-yamadera-godaido.png'),
