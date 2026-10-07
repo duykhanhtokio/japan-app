@@ -67,3 +67,13 @@ Theo chỉ đạo mới: làm theo cụm tuần, không chia thành các lượt
 week-01-manifest.json ghi phạm vi cụm và gate; scripts/check-kaigo-week1-draft.mjs kiểm toàn cụm, có thể chạy lại. Không tăng trạng thái thành nội dung phát hành: cách đọc mới vẫn AI rà; domain/native/rights/runtime/release chưa được duyệt. Rubric là đặc tả ý nghĩa, không phải bộ chấm chạy trong app. Chưa đo thời lượng hoặc có assets.
 
 Điểm tiếp theo sau lưu bền: soạn trọn tuần2 (ngày8–14) gồm kiến thức/từ/cách nói,NPC,bài đọc,câu hỏi,rubric,QA trong một cụm. Đọc nguồn riêng của từng chủ đề trước viết; không áp quy tắc11lượt hoặc nghe JLPT. Các quyết định đề thi còn chưa chốt phải trình khi tới phần phụ thuộc.
+
+## Cụm tuần2 — ngày8–14
+
+Soạn trọn7 bài: hỏi vị trí khó chịu; báo tư thế đã quan sát; điều chỉnh giao tiếp theo cá nhân; mô tả vị trí cho người khó nhìn; tiếp nhận lo lắng trong hồ sơ sa sút trí tuệ; báo nguy cơ sàn ướt; báo cáo tổng hợp.56 lượt Nhật–Việt,7 bài đọc,21 câu hỏi có lý do từng lựa chọn,24 từ bản nháp,14 cách nói,28 rubric có biến thể. NPC giữ vai cư dân/đồng nghiệp/phụ trách/điều dưỡng; không tự gán bệnh cho toàn roster.
+
+Đã đọc nguồn kiến thức trang in24–25,42,68–70,88,93–95,108–109,118,129 và trang thuật ngữ204,206–207; nhãn trang được kiểm qua text, chưa chứng nhận trực quan cách đọc mới. Lời thoại, bài đọc/câu hỏi tự viết; không sao chép hội thoại nguồn. Một số từ là từ giao tiếp tự chọn, không tuyên bố tất cả lấy từ kho từ Nhật đã kiểm.
+
+Giới hạn: chỉ giao tiếp và báo cáo,không chẩn đoán/thuốc/thao tác đổi tư thế/triage. Khẩn cấp không theo kịch bản hỏi dài mà gọi hỗ trợ theo cơ sở. Toàn cụm chờ domain/native/rights review; chưa hình/audio/runtime;210phút dự kiến,chưa đo. Tổng21 bài,69 câu ôn,không phải đề đầy đủ.
+
+Sau lưu bền: tuần3 có7 bản thảo di chuyển và31 rubric từ trước; rà hoàn thiện hồ sơ toàn tuần3 theo mức cụm tuần1–2 trước tuần4. Không làm lại hội thoại đã lưu. Sau đó soạn trọn tuần4 ăn uống theo nguồn và giới hạn nuốt/an toàn.

@@ -1,0 +1,1622 @@
+{
+  "status": "complete_week_editorial_draft_pending_review",
+  "lessons": [
+    {
+      "id": "kaigo-week2-01",
+      "curriculumDay": 8,
+      "titleVi": "Cơ thể và vị trí khó chịu",
+      "npcId": "kaigo-npc-resident-b",
+      "playerRoleVi": "Nhân viên chăm sóc Tanaka",
+      "contextVi": "Bác đang ngồi trong phòng, báo khó chịu ở vai. Không có đánh giá y tế trong kịch bản.",
+      "knowledgeVi": [
+        "Phân biệt vị trí bên phải/bên trái và mốc thời gian.",
+        "Báo lời người sử dụng; không suy đoán nguyên nhân hoặc coi đau là bình thường vì tuổi."
+      ],
+      "sourceRefs": [
+        {
+          "filename": "介護ー特定技能ーベトナム語.pdf",
+          "edition": "March 2025 second revision",
+          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+          "pages": [
+            {
+              "printed": 24,
+              "pdf": 26
+            },
+            {
+              "printed": 118,
+              "pdf": 120
+            },
+            {
+              "printed": 129,
+              "pdf": 131
+            },
+            {
+              "printed": 204,
+              "pdf": 206
+            },
+            {
+              "printed": 207,
+              "pdf": 209
+            }
+          ],
+          "verification": "knowledge text and printed labels checked; vocabulary readings not visually certified"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-week2-01",
+        "kaigo-vocab-week2-02",
+        "kaigo-vocab-week2-03",
+        "kaigo-vocab-week2-04",
+        "kaigo-vocab-week2-05",
+        "kaigo-vocab-week2-06"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "肩が気になります。",
+          "meaningVi": "Tôi thấy khó chịu ở vai."
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "どちらの肩が気になりますか。今感じていることを教えてください。",
+          "meaningVi": "Vai bên nào khó chịu ạ? Bác cho tôi biết cảm giác hiện tại nhé."
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "右です。朝から少し痛いんです。",
+          "meaningVi": "Bên phải. Từ sáng hơi đau."
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "右の肩が朝から少し痛むのですね。担当職員にすぐ伝えてもよろしいですか。",
+          "meaningVi": "Vai phải hơi đau từ sáng đúng không. Tôi báo ngay nhân viên phụ trách được không?"
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "お願いします。原因は何でしょうね。",
+          "meaningVi": "Nhờ bạn. Nguyên nhân là gì nhỉ?"
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "私には原因を判断できません。お話をそのまま伝え、必要な確認を担当者にお願いします。",
+          "meaningVi": "Tôi không thể đánh giá nguyên nhân. Tôi sẽ truyền lại đúng lời bác và nhờ phụ trách xác nhận việc cần thiết."
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "わかりました。今はここにいます。",
+          "meaningVi": "Tôi hiểu. Bây giờ tôi ở đây."
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "はい。今の様子も含めて報告します。変化があれば、すぐ教えてください。",
+          "meaningVi": "Vâng. Tôi báo cả tình trạng hiện tại. Có thay đổi bác hãy báo ngay."
+        }
+      ],
+      "reading": {
+        "textJa": "長谷部さんは右肩が朝から少し痛いと話されました。職員は本人の言葉と現在の様子を担当者へ報告します。痛みの原因は判断していません。",
+        "meaningVi": "Bác Hasebe nói vai phải hơi đau từ sáng. Nhân viên báo lời bác và tình trạng hiện tại cho người phụ trách. Chưa đánh giá nguyên nhân đau."
+      },
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "questions": [
+        {
+          "id": "kaigo-week2-01-q01",
+          "promptJa": "気になる肩はどちらですか。",
+          "optionsJa": [
+            "左",
+            "右",
+            "両方と確認済み",
+            "肩ではない"
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: bác nói bên phải.",
+            "Đúng: phải.",
+            "Sai: chưa nói cả hai.",
+            "Sai: bác nói vai."
+          ]
+        },
+        {
+          "id": "kaigo-week2-01-q02",
+          "promptJa": "痛みはいつからですか。",
+          "optionsJa": [
+            "先週から",
+            "夕方から",
+            "朝から",
+            "昨日の夜から"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: không có tuần trước.",
+            "Sai: không phải chiều.",
+            "Đúng: từ sáng.",
+            "Sai: không có tối qua."
+          ]
+        },
+        {
+          "id": "kaigo-week2-01-q03",
+          "promptJa": "原因について適切なのはどれですか。",
+          "optionsJa": [
+            "ここでは判断できないと伝える",
+            "年齢のせいだと断定する",
+            "薬を選ぶ",
+            "報告せず終える"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: không tự đánh giá nguyên nhân.",
+            "Sai: không có bằng chứng.",
+            "Sai: ngoài vai và dữ kiện.",
+            "Sai: bỏ báo cáo thay đổi."
+          ]
+        }
+      ],
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "durationMeasured": false,
+        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "practiceModes": [
+          "guided",
+          "bounded_roleplay",
+          "reduced_hints"
+        ],
+        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
+        "newVocabularyPolicy": "Ngày8–11 học6 từ/bài,ngày12–14 tái sử dụng từ và luyện mục tiêu mới; thuật ngữ nhận biết của chủ đề được giải thích trong kiến thức."
+      },
+      "responsePolicy": {
+        "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
+        "fallbackJa": "確認したいことを、もう一度教えていただけますか。",
+        "unsafeVi": [
+          "Tự chẩn đoán/đổi thuốc",
+          "Kết luận thông tin chưa kiểm",
+          "Ép/chạm không xác nhận mong muốn",
+          "Dùng câu hỏi dài để trì hoãn hỗ trợ trong khẩn cấp"
+        ],
+        "runtimeImplemented": false
+      },
+      "responseRubricId": "kaigo-week2-01",
+      "responseRubricFile": "week2-response-rubrics.json",
+      "expressions": [
+        {
+          "id": "kaigo-week2-01-expression-01",
+          "textJa": "どちらの肩が気になりますか。今感じていることを教えてください。",
+          "meaningVi": "Vai bên nào khó chịu ạ? Bác cho tôi biết cảm giác hiện tại nhé."
+        },
+        {
+          "id": "kaigo-week2-01-expression-02",
+          "textJa": "私には原因を判断できません。お話をそのまま伝え、必要な確認を担当者にお願いします。",
+          "meaningVi": "Tôi không thể đánh giá nguyên nhân. Tôi sẽ truyền lại đúng lời bác và nhờ phụ trách xác nhận việc cần thiết."
+        }
+      ],
+      "objectivesVi": [
+        "Phân biệt vị trí bên phải/bên trái và mốc thời gian.",
+        "Báo lời người sử dụng; không suy đoán nguyên nhân hoặc coi đau là bình thường vì tuổi."
+      ],
+      "scopeLimitsVi": [
+        "Luyện giao tiếp/quan sát; không phải hướng dẫn chẩn đoán, thuốc, kỹ thuật chuyển tư thế hoặc xử trí cấp cứu.",
+        "Khẩn cấp/thay đổi cấp tính không đi theo lượt hỏi dài của bài; gọi hỗ trợ ngay theo quy trình cơ sở.",
+        "Chờ duyệt chuyên môn/ngôn ngữ/quyền; chưa runtime/hình/audio."
+      ]
+    },
+    {
+      "id": "kaigo-week2-02",
+      "curriculumDay": 9,
+      "titleVi": "Tư thế và quan sát",
+      "npcId": "kaigo-npc-nurse",
+      "playerRoleVi": "Nhân viên chăm sóc Tanaka",
+      "contextVi": "Bàn giao mô tả tư thế; người học quan sát tư thế ngồi, không tự thực hiện chuyển tư thế.",
+      "knowledgeVi": [
+        "Mô tả tư thế thực sự thấy, không đoán tư thế chưa quan sát.",
+        "Ghi rõ thông tin còn thiếu và xin xác nhận hỗ trợ trước thay đổi."
+      ],
+      "sourceRefs": [
+        {
+          "filename": "介護ー特定技能ーベトナム語.pdf",
+          "edition": "March 2025 second revision",
+          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+          "pages": [
+            {
+              "printed": 24,
+              "pdf": 26
+            },
+            {
+              "printed": 118,
+              "pdf": 120
+            },
+            {
+              "printed": 206,
+              "pdf": 208
+            }
+          ],
+          "verification": "knowledge text and printed labels checked; vocabulary readings not visually certified"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-week2-07",
+        "kaigo-vocab-week2-08",
+        "kaigo-vocab-week2-09",
+        "kaigo-vocab-week2-10",
+        "kaigo-vocab-week2-11",
+        "kaigo-vocab-week2-12"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "森川さんの今の様子を教えてください。",
+          "meaningVi": "Hãy cho tôi biết tình trạng hiện tại của bác Morikawa."
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "十時に伺ったときは、椅子に座っておられました。立っているところは見ていません。",
+          "meaningVi": "Khi tôi tới lúc 10 giờ, bác đang ngồi ghế. Tôi chưa thấy bác đứng."
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "座っているとき、どのようなお話がありましたか。",
+          "meaningVi": "Khi ngồi bác nói gì?"
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "背中のクッションの位置が気になると話されました。痛みについては、まだ伺っていません。",
+          "meaningVi": "Bác nói vị trí đệm sau lưng làm bác bận tâm. Tôi chưa hỏi về đau."
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "クッションは動かしましたか。",
+          "meaningVi": "Bạn đã chuyển đệm chưa?"
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "いいえ。支援方法を確認してから対応したいので、ご相談しました。",
+          "meaningVi": "Chưa. Tôi muốn xác nhận cách hỗ trợ trước nên trao đổi với chị."
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "では、本人の希望と状態を一緒に確認しましょう。",
+          "meaningVi": "Vậy cùng xác nhận mong muốn và tình trạng của bác nhé."
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "お願いします。見たことと、本人から聞いたことを分けて記録します。",
+          "meaningVi": "Nhờ chị. Tôi ghi tách điều quan sát và lời bác nói."
+        }
+      ],
+      "reading": {
+        "textJa": "十時、森川さんは椅子に座っていました。背中のクッションの位置について希望がありましたが、痛みの有無は未確認です。位置は変更せず、看護職へ相談しました。",
+        "meaningVi": "Lúc10 giờ bác ngồi ghế. Bác có ý kiến về vị trí đệm sau lưng; chưa hỏi có đau không. Chưa thay vị trí, đã trao đổi điều dưỡng."
+      },
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "questions": [
+        {
+          "id": "kaigo-week2-02-q01",
+          "promptJa": "十時に観察した姿勢はどれですか。",
+          "optionsJa": [
+            "立っていた",
+            "床に寝ていた",
+            "歩いていた",
+            "椅子に座っていた"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: chưa quan sát đứng.",
+            "Sai: không có nằm sàn.",
+            "Sai: không có đi.",
+            "Đúng: ngồi ghế."
+          ]
+        },
+        {
+          "id": "kaigo-week2-02-q02",
+          "promptJa": "痛みについてわかっていることはどれですか。",
+          "optionsJa": [
+            "有無は未確認",
+            "痛みはないと確認済み",
+            "強い痛みと確認済み",
+            "原因も確定"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: chưa hỏi có đau.",
+            "Sai: thiếu dữ kiện không là không đau.",
+            "Sai: không báo đau mạnh.",
+            "Sai: không đánh giá nguyên nhân."
+          ]
+        },
+        {
+          "id": "kaigo-week2-02-q03",
+          "promptJa": "クッションはどうしましたか。",
+          "optionsJa": [
+            "勝手に動かした",
+            "変更せず相談した",
+            "捨てた",
+            "本人に知らせず交換した"
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: chưa chuyển.",
+            "Đúng: chưa đổi, hỏi điều dưỡng.",
+            "Sai: không vứt.",
+            "Sai: chưa đổi."
+          ]
+        }
+      ],
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "durationMeasured": false,
+        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "practiceModes": [
+          "guided",
+          "bounded_roleplay",
+          "reduced_hints"
+        ],
+        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
+        "newVocabularyPolicy": "Ngày8–11 học6 từ/bài,ngày12–14 tái sử dụng từ và luyện mục tiêu mới; thuật ngữ nhận biết của chủ đề được giải thích trong kiến thức."
+      },
+      "responsePolicy": {
+        "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
+        "fallbackJa": "確認したいことを、もう一度教えていただけますか。",
+        "unsafeVi": [
+          "Tự chẩn đoán/đổi thuốc",
+          "Kết luận thông tin chưa kiểm",
+          "Ép/chạm không xác nhận mong muốn",
+          "Dùng câu hỏi dài để trì hoãn hỗ trợ trong khẩn cấp"
+        ],
+        "runtimeImplemented": false
+      },
+      "responseRubricId": "kaigo-week2-02",
+      "responseRubricFile": "week2-response-rubrics.json",
+      "expressions": [
+        {
+          "id": "kaigo-week2-02-expression-01",
+          "textJa": "十時に伺ったときは、椅子に座っておられました。立っているところは見ていません。",
+          "meaningVi": "Khi tôi tới lúc 10 giờ, bác đang ngồi ghế. Tôi chưa thấy bác đứng."
+        },
+        {
+          "id": "kaigo-week2-02-expression-02",
+          "textJa": "いいえ。支援方法を確認してから対応したいので、ご相談しました。",
+          "meaningVi": "Chưa. Tôi muốn xác nhận cách hỗ trợ trước nên trao đổi với chị."
+        }
+      ],
+      "objectivesVi": [
+        "Mô tả tư thế thực sự thấy, không đoán tư thế chưa quan sát.",
+        "Ghi rõ thông tin còn thiếu và xin xác nhận hỗ trợ trước thay đổi."
+      ],
+      "scopeLimitsVi": [
+        "Luyện giao tiếp/quan sát; không phải hướng dẫn chẩn đoán, thuốc, kỹ thuật chuyển tư thế hoặc xử trí cấp cứu.",
+        "Khẩn cấp/thay đổi cấp tính không đi theo lượt hỏi dài của bài; gọi hỗ trợ ngay theo quy trình cơ sở.",
+        "Chờ duyệt chuyên môn/ngôn ngữ/quyền; chưa runtime/hình/audio."
+      ]
+    },
+    {
+      "id": "kaigo-week2-03",
+      "curriculumDay": 10,
+      "titleVi": "Lão hóa, khác biệt cá nhân",
+      "npcId": "kaigo-npc-resident-a",
+      "playerRoleVi": "Nhân viên chăm sóc Tanaka",
+      "contextVi": "Bác không thích bị nói lớn chỉ vì tuổi; hỏi cách nói phù hợp riêng với bác.",
+      "knowledgeVi": [
+        "Lão hóa có khác biệt cá nhân; không gán cùng khả năng cho mọi người.",
+        "Điều chỉnh âm lượng/tốc độ theo lời người sử dụng, xác nhận lại hiệu quả."
+      ],
+      "sourceRefs": [
+        {
+          "filename": "介護ー特定技能ーベトナム語.pdf",
+          "edition": "March 2025 second revision",
+          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+          "pages": [
+            {
+              "printed": 68,
+              "pdf": 70
+            },
+            {
+              "printed": 69,
+              "pdf": 71
+            },
+            {
+              "printed": 70,
+              "pdf": 72
+            },
+            {
+              "printed": 102,
+              "pdf": 104
+            },
+            {
+              "printed": 105,
+              "pdf": 107
+            }
+          ],
+          "verification": "knowledge text and printed labels checked; vocabulary readings not visually certified"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-week2-13",
+        "kaigo-vocab-week2-14",
+        "kaigo-vocab-week2-15",
+        "kaigo-vocab-week2-16",
+        "kaigo-vocab-week2-17",
+        "kaigo-vocab-week2-18"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "そんなに大きな声でなくても聞こえますよ。",
+          "meaningVi": "Không cần nói lớn như vậy tôi vẫn nghe được."
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "失礼しました。どのくらいの声が聞きやすいですか。",
+          "meaningVi": "Xin lỗi bác. Âm lượng thế nào dễ nghe ạ?"
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "今より少し小さく、ゆっくり話してくれると助かります。",
+          "meaningVi": "Nói nhỏ hơn chút và chậm thì tốt."
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "声を少し小さくして、ゆっくりお話しします。今の話し方はいかがですか。",
+          "meaningVi": "Tôi nói nhỏ hơn chút và chậm nhé. Cách nói bây giờ thế nào ạ?"
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "はい、それで大丈夫です。年だけで決めないでくださいね。",
+          "meaningVi": "Được rồi. Đừng quyết chỉ dựa vào tuổi nhé."
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "おっしゃるとおりです。晴子さんに合う方法を確認してからお話しします。",
+          "meaningVi": "Bác nói đúng. Tôi sẽ xác nhận cách phù hợp với Haruko-san rồi nói chuyện."
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "ありがとう。予定は一つずつ説明してください。",
+          "meaningVi": "Cảm ơn. Hãy giải thích lịch từng việc một."
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "では、最初の予定から説明します。聞き直したいところがあれば、教えてください。",
+          "meaningVi": "Vậy tôi giải thích lịch đầu tiên. Cần nghe lại phần nào bác hãy nói."
+        }
+      ],
+      "reading": {
+        "textJa": "森川さんは大きな声を必要としていません。少し小さい声でゆっくり話し、予定を一つずつ説明する方法を希望しています。職員は本人に聞きやすさを確認しました。",
+        "meaningVi": "Bác Morikawa không cần nói lớn. Bác muốn giọng nhỏ hơn chút, chậm và lịch từng việc. Nhân viên đã hỏi cách nghe có phù hợp không."
+      },
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "questions": [
+        {
+          "id": "kaigo-week2-03-q01",
+          "promptJa": "森川さんが希望する話し方はどれですか。",
+          "optionsJa": [
+            "さらに大きい声",
+            "速い話し方",
+            "少し小さい声でゆっくり",
+            "すべて筆談"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: bác không muốn lớn hơn.",
+            "Sai: muốn chậm.",
+            "Đúng: nhỏ hơn chút và chậm.",
+            "Sai: không yêu cầu chỉ viết."
+          ]
+        },
+        {
+          "id": "kaigo-week2-03-q02",
+          "promptJa": "年齢だけで判断してよいですか。",
+          "optionsJa": [
+            "必ずよい",
+            "本人への確認は不要",
+            "全員同じ方法にする",
+            "個人の希望を確認する"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: cần khác biệt cá nhân.",
+            "Sai: cần hỏi bác.",
+            "Sai: không áp một cách cho mọi người.",
+            "Đúng: xác nhận theo từng người."
+          ]
+        },
+        {
+          "id": "kaigo-week2-03-q03",
+          "promptJa": "予定の説明はどうしますか。",
+          "optionsJa": [
+            "一つずつ",
+            "全部同時に速く",
+            "説明しない",
+            "返事を待たず繰り返す"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: đúng yêu cầu.",
+            "Sai: trái yêu cầu.",
+            "Sai: không hỗ trợ hiểu.",
+            "Sai: không dành cơ hội đáp."
+          ]
+        }
+      ],
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "durationMeasured": false,
+        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "practiceModes": [
+          "guided",
+          "bounded_roleplay",
+          "reduced_hints"
+        ],
+        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
+        "newVocabularyPolicy": "Ngày8–11 học6 từ/bài,ngày12–14 tái sử dụng từ và luyện mục tiêu mới; thuật ngữ nhận biết của chủ đề được giải thích trong kiến thức."
+      },
+      "responsePolicy": {
+        "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
+        "fallbackJa": "確認したいことを、もう一度教えていただけますか。",
+        "unsafeVi": [
+          "Tự chẩn đoán/đổi thuốc",
+          "Kết luận thông tin chưa kiểm",
+          "Ép/chạm không xác nhận mong muốn",
+          "Dùng câu hỏi dài để trì hoãn hỗ trợ trong khẩn cấp"
+        ],
+        "runtimeImplemented": false
+      },
+      "responseRubricId": "kaigo-week2-03",
+      "responseRubricFile": "week2-response-rubrics.json",
+      "expressions": [
+        {
+          "id": "kaigo-week2-03-expression-01",
+          "textJa": "失礼しました。どのくらいの声が聞きやすいですか。",
+          "meaningVi": "Xin lỗi bác. Âm lượng thế nào dễ nghe ạ?"
+        },
+        {
+          "id": "kaigo-week2-03-expression-02",
+          "textJa": "おっしゃるとおりです。晴子さんに合う方法を確認してからお話しします。",
+          "meaningVi": "Bác nói đúng. Tôi sẽ xác nhận cách phù hợp với Haruko-san rồi nói chuyện."
+        }
+      ],
+      "objectivesVi": [
+        "Lão hóa có khác biệt cá nhân; không gán cùng khả năng cho mọi người.",
+        "Điều chỉnh âm lượng/tốc độ theo lời người sử dụng, xác nhận lại hiệu quả."
+      ],
+      "scopeLimitsVi": [
+        "Luyện giao tiếp/quan sát; không phải hướng dẫn chẩn đoán, thuốc, kỹ thuật chuyển tư thế hoặc xử trí cấp cứu.",
+        "Khẩn cấp/thay đổi cấp tính không đi theo lượt hỏi dài của bài; gọi hỗ trợ ngay theo quy trình cơ sở.",
+        "Chờ duyệt chuyên môn/ngôn ngữ/quyền; chưa runtime/hình/audio."
+      ]
+    },
+    {
+      "id": "kaigo-week2-04",
+      "curriculumDay": 11,
+      "titleVi": "Khuyết tật và cách giao tiếp phù hợp",
+      "npcId": "kaigo-npc-resident-c",
+      "playerRoleVi": "Nhân viên chăm sóc Tanaka",
+      "contextVi": "Hồ sơ tình huống: bác khó nhìn chữ nhỏ; không suy giảm trí tuệ. Cần biết vị trí hộp thư, không hướng dẫn đi một mình.",
+      "knowledgeVi": [
+        "Khó nhìn không có nghĩa khó hiểu; giải thích cụ thể thay vì chỉ tay/nói ở kia.",
+        "Xưng tên, lên tiếng và hỏi mong muốn trước chạm; không tự kéo tay."
+      ],
+      "sourceRefs": [
+        {
+          "filename": "介護ー特定技能ーベトナム語.pdf",
+          "edition": "March 2025 second revision",
+          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+          "pages": [
+            {
+              "printed": 108,
+              "pdf": 110
+            },
+            {
+              "printed": 109,
+              "pdf": 111
+            },
+            {
+              "printed": 102,
+              "pdf": 104
+            }
+          ],
+          "verification": "knowledge text and printed labels checked; vocabulary readings not visually certified"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-week2-19",
+        "kaigo-vocab-week2-20",
+        "kaigo-vocab-week2-21",
+        "kaigo-vocab-week2-22",
+        "kaigo-vocab-week2-23",
+        "kaigo-vocab-week2-24"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "手紙を入れる箱は、どこにありますか。小さい表示が見えません。",
+          "meaningVi": "Hộp bỏ thư ở đâu? Tôi không nhìn rõ bảng chữ nhỏ."
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "小野寺さん、介護職員の田中です。場所を言葉で説明してもよろしいですか。",
+          "meaningVi": "Bác Onodera, tôi là Tanaka nhân viên chăm sóc. Tôi giải thích vị trí bằng lời được không?"
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "お願いします。「あそこ」ではわからないんです。",
+          "meaningVi": "Nhờ bạn. Nói ở kia thì tôi không biết."
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "箱は受付のカウンターの右端にあります。今いるお部屋の中ではありません。",
+          "meaningVi": "Hộp ở đầu bên phải quầy tiếp tân. Không ở trong phòng hiện tại."
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "受付ですね。今すぐ行くつもりではないので、場所だけ知りたいです。",
+          "meaningVi": "Ở tiếp tân đúng không. Tôi không định đi ngay, chỉ muốn biết chỗ."
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "場所の確認だけですね。必要なときは、ご希望の案内方法を相談しましょう。",
+          "meaningVi": "Chỉ xác nhận vị trí đúng không. Khi cần mình trao đổi cách hướng dẫn bác muốn nhé."
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "はい。勝手に腕を引かないでください。",
+          "meaningVi": "Vâng. Đừng tự kéo tay tôi."
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "身体に触れる前には、声をかけてご希望を確認します。",
+          "meaningVi": "Trước khi chạm vào người, tôi sẽ lên tiếng và hỏi mong muốn của bác."
+        }
+      ],
+      "reading": {
+        "textJa": "小野寺さんは表示の小さい文字が見えにくいと話しています。職員は手紙を入れる箱が受付カウンターの右端にあると説明しました。本人は今すぐ移動せず、場所だけの確認を希望しています。",
+        "meaningVi": "Bác nói khó nhìn chữ nhỏ. Nhân viên giải thích hộp thư ở đầu phải quầy tiếp tân. Bác chưa đi ngay mà chỉ hỏi vị trí."
+      },
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "questions": [
+        {
+          "id": "kaigo-week2-04-q01",
+          "promptJa": "箱はどこですか。",
+          "optionsJa": [
+            "部屋の中",
+            "受付カウンターの右端",
+            "受付の左端",
+            "食堂の床"
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: nói không ở phòng hiện tại.",
+            "Đúng: đầu phải quầy tiếp tân.",
+            "Sai: không bên trái.",
+            "Sai: không phòng ăn."
+          ]
+        },
+        {
+          "id": "kaigo-week2-04-q02",
+          "promptJa": "本人は今、何を希望していますか。",
+          "optionsJa": [
+            "すぐに連れていくこと",
+            "腕を引くこと",
+            "場所だけの確認",
+            "表示を捨てること"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: bác chưa đi ngay.",
+            "Sai: không muốn kéo tay.",
+            "Đúng: chỉ hỏi vị trí.",
+            "Sai: không nhờ bỏ bảng."
+          ]
+        },
+        {
+          "id": "kaigo-week2-04-q03",
+          "promptJa": "触れる前の対応はどれですか。",
+          "optionsJa": [
+            "黙って腕を引く",
+            "理解できないと決める",
+            "説明を省く",
+            "声をかけて希望を確認する"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: không đồng ý kéo tay.",
+            "Sai: khó nhìn không đồng nghĩa khó hiểu.",
+            "Sai: cần báo trước.",
+            "Đúng: lên tiếng và hỏi mong muốn."
+          ]
+        }
+      ],
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "durationMeasured": false,
+        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "practiceModes": [
+          "guided",
+          "bounded_roleplay",
+          "reduced_hints"
+        ],
+        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
+        "newVocabularyPolicy": "Ngày8–11 học6 từ/bài,ngày12–14 tái sử dụng từ và luyện mục tiêu mới; thuật ngữ nhận biết của chủ đề được giải thích trong kiến thức."
+      },
+      "responsePolicy": {
+        "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
+        "fallbackJa": "確認したいことを、もう一度教えていただけますか。",
+        "unsafeVi": [
+          "Tự chẩn đoán/đổi thuốc",
+          "Kết luận thông tin chưa kiểm",
+          "Ép/chạm không xác nhận mong muốn",
+          "Dùng câu hỏi dài để trì hoãn hỗ trợ trong khẩn cấp"
+        ],
+        "runtimeImplemented": false
+      },
+      "responseRubricId": "kaigo-week2-04",
+      "responseRubricFile": "week2-response-rubrics.json",
+      "expressions": [
+        {
+          "id": "kaigo-week2-04-expression-01",
+          "textJa": "小野寺さん、介護職員の田中です。場所を言葉で説明してもよろしいですか。",
+          "meaningVi": "Bác Onodera, tôi là Tanaka nhân viên chăm sóc. Tôi giải thích vị trí bằng lời được không?"
+        },
+        {
+          "id": "kaigo-week2-04-expression-02",
+          "textJa": "場所の確認だけですね。必要なときは、ご希望の案内方法を相談しましょう。",
+          "meaningVi": "Chỉ xác nhận vị trí đúng không. Khi cần mình trao đổi cách hướng dẫn bác muốn nhé."
+        }
+      ],
+      "objectivesVi": [
+        "Khó nhìn không có nghĩa khó hiểu; giải thích cụ thể thay vì chỉ tay/nói ở kia.",
+        "Xưng tên, lên tiếng và hỏi mong muốn trước chạm; không tự kéo tay."
+      ],
+      "scopeLimitsVi": [
+        "Luyện giao tiếp/quan sát; không phải hướng dẫn chẩn đoán, thuốc, kỹ thuật chuyển tư thế hoặc xử trí cấp cứu.",
+        "Khẩn cấp/thay đổi cấp tính không đi theo lượt hỏi dài của bài; gọi hỗ trợ ngay theo quy trình cơ sở.",
+        "Chờ duyệt chuyên môn/ngôn ngữ/quyền; chưa runtime/hình/audio."
+      ]
+    },
+    {
+      "id": "kaigo-week2-05",
+      "curriculumDay": 12,
+      "titleVi": "Sa sút trí tuệ: tiếp nhận cảm xúc",
+      "npcId": "kaigo-npc-care-lead",
+      "playerRoleVi": "Nhân viên chăm sóc Tanaka",
+      "contextVi": "Hồ sơ riêng của bài ghi một người sử dụng có chẩn đoán sa sút trí tuệ từ chuyên môn; người học không chẩn đoán. Bàn giao lời lo lắng, không gán hồ sơ này cho cả roster.",
+      "knowledgeVi": [
+        "Không suy chẩn đoán chỉ từ quên hoặc lặp câu; chỉ hồ sơ chuyên môn xác nhận chẩn đoán.",
+        "Tiếp nhận cảm xúc không đồng nghĩa xác nhận điều chưa có thật; hỏi rõ, kiểm lịch và phối hợp."
+      ],
+      "sourceRefs": [
+        {
+          "filename": "介護ー特定技能ーベトナム語.pdf",
+          "edition": "March 2025 second revision",
+          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+          "pages": [
+            {
+              "printed": 42,
+              "pdf": 44
+            },
+            {
+              "printed": 88,
+              "pdf": 90
+            },
+            {
+              "printed": 93,
+              "pdf": 95
+            },
+            {
+              "printed": 94,
+              "pdf": 96
+            },
+            {
+              "printed": 95,
+              "pdf": 97
+            },
+            {
+              "printed": 102,
+              "pdf": 104
+            }
+          ],
+          "verification": "knowledge text and printed labels checked; vocabulary readings not visually certified"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-week2-05",
+        "kaigo-vocab-week2-06",
+        "kaigo-vocab-week2-15",
+        "kaigo-vocab-week2-19",
+        "kaigo-vocab-week2-22",
+        "kaigo-vocab-week2-24"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "さきほどのご本人のお話を、教えてください。",
+          "meaningVi": "Hãy cho tôi biết lời người sử dụng vừa nói."
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "「約束を忘れたかもしれない」と、何度か心配そうに話されました。",
+          "meaningVi": "Bác nhiều lần lo lắng nói có lẽ đã quên cuộc hẹn."
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "どのようにお返事をしましたか。",
+          "meaningVi": "Bạn đã trả lời thế nào?"
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "心配されていることを受け止め、何の約束が気になるか、ゆっくり伺いました。",
+          "meaningVi": "Tôi tiếp nhận sự lo lắng và hỏi chậm bác đang bận tâm cuộc hẹn nào."
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "約束の内容は、わかりましたか。",
+          "meaningVi": "Bạn đã biết nội dung cuộc hẹn chưa?"
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "まだ確認できていません。「約束はない」とは言わず、担当者と予定を確認するとお伝えしました。",
+          "meaningVi": "Chưa rõ. Tôi không nói không có hẹn mà báo sẽ kiểm lịch cùng phụ trách."
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "確認した情報を使って、本人に説明しましょう。気持ちを否定しないことも大切です。",
+          "meaningVi": "Hãy dùng thông tin đã kiểm để giải thích cho bác. Không phủ nhận cảm xúc cũng quan trọng."
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "はい。確認できたことだけをお伝えし、不明な点は引き続き相談します。",
+          "meaningVi": "Vâng. Tôi chỉ báo điều đã xác nhận, điểm chưa rõ tiếp tục trao đổi."
+        }
+      ],
+      "reading": {
+        "textJa": "本人は約束を忘れたかもしれないと心配しています。約束の内容は未確認です。職員は気持ちを受け止め、予定を担当者と確認すると説明しました。未確認の予定を「ない」とは伝えていません。",
+        "meaningVi": "Bác lo có thể quên cuộc hẹn. Chưa biết nội dung. Nhân viên tiếp nhận cảm xúc, báo sẽ kiểm lịch cùng phụ trách. Không nói cuộc hẹn chưa rõ là không có."
+      },
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "questions": [
+        {
+          "id": "kaigo-week2-05-q01",
+          "promptJa": "約束の内容は確認できましたか。",
+          "optionsJa": [
+            "まだ未確認",
+            "約束はないと確定",
+            "時間も確定",
+            "相手も確定"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: chưa rõ.",
+            "Sai: không được kết luận không có.",
+            "Sai: không rõ giờ.",
+            "Sai: không rõ người hẹn."
+          ]
+        },
+        {
+          "id": "kaigo-week2-05-q02",
+          "promptJa": "職員が受け止めたものは何ですか。",
+          "optionsJa": [
+            "薬の指示",
+            "本人の心配",
+            "診断結果の変更",
+            "家族の許可"
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: không có thuốc.",
+            "Đúng: cảm xúc lo của bác.",
+            "Sai: không đổi chẩn đoán.",
+            "Sai: không có người nhà."
+          ]
+        },
+        {
+          "id": "kaigo-week2-05-q03",
+          "promptJa": "適切な説明はどれですか。",
+          "optionsJa": [
+            "約束はないと断言する",
+            "心配を笑う",
+            "確認できた情報を伝える",
+            "忘れたことを責める"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: thiếu bằng chứng.",
+            "Sai: phủ nhận cảm xúc.",
+            "Đúng: dùng dữ kiện đã xác nhận.",
+            "Sai: trách bác không hỗ trợ."
+          ]
+        }
+      ],
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "durationMeasured": false,
+        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "practiceModes": [
+          "guided",
+          "bounded_roleplay",
+          "reduced_hints"
+        ],
+        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
+        "newVocabularyPolicy": "Ngày8–11 học6 từ/bài,ngày12–14 tái sử dụng từ và luyện mục tiêu mới; thuật ngữ nhận biết của chủ đề được giải thích trong kiến thức."
+      },
+      "responsePolicy": {
+        "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
+        "fallbackJa": "確認したいことを、もう一度教えていただけますか。",
+        "unsafeVi": [
+          "Tự chẩn đoán/đổi thuốc",
+          "Kết luận thông tin chưa kiểm",
+          "Ép/chạm không xác nhận mong muốn",
+          "Dùng câu hỏi dài để trì hoãn hỗ trợ trong khẩn cấp"
+        ],
+        "runtimeImplemented": false
+      },
+      "responseRubricId": "kaigo-week2-05",
+      "responseRubricFile": "week2-response-rubrics.json",
+      "expressions": [
+        {
+          "id": "kaigo-week2-05-expression-01",
+          "textJa": "「約束を忘れたかもしれない」と、何度か心配そうに話されました。",
+          "meaningVi": "Bác nhiều lần lo lắng nói có lẽ đã quên cuộc hẹn."
+        },
+        {
+          "id": "kaigo-week2-05-expression-02",
+          "textJa": "まだ確認できていません。「約束はない」とは言わず、担当者と予定を確認するとお伝えしました。",
+          "meaningVi": "Chưa rõ. Tôi không nói không có hẹn mà báo sẽ kiểm lịch cùng phụ trách."
+        }
+      ],
+      "objectivesVi": [
+        "Không suy chẩn đoán chỉ từ quên hoặc lặp câu; chỉ hồ sơ chuyên môn xác nhận chẩn đoán.",
+        "Tiếp nhận cảm xúc không đồng nghĩa xác nhận điều chưa có thật; hỏi rõ, kiểm lịch và phối hợp."
+      ],
+      "scopeLimitsVi": [
+        "Luyện giao tiếp/quan sát; không phải hướng dẫn chẩn đoán, thuốc, kỹ thuật chuyển tư thế hoặc xử trí cấp cứu.",
+        "Khẩn cấp/thay đổi cấp tính không đi theo lượt hỏi dài của bài; gọi hỗ trợ ngay theo quy trình cơ sở.",
+        "Chờ duyệt chuyên môn/ngôn ngữ/quyền; chưa runtime/hình/audio."
+      ]
+    },
+    {
+      "id": "kaigo-week2-06",
+      "curriculumDay": 13,
+      "titleVi": "An toàn và báo cáo thay đổi",
+      "npcId": "kaigo-npc-care-peer",
+      "playerRoleVi": "Nhân viên chăm sóc Tanaka",
+      "contextVi": "Hành lang gần phòng sinh hoạt có nước trên sàn. Chưa ai té; người học đã báo và phối hợp ngăn đi vào vùng ướt theo quy trình cơ sở.",
+      "knowledgeVi": [
+        "Báo vị trí/thời gian và phối hợp xử lý mối nguy theo cơ sở.",
+        "Không có báo cáo thương tích khác với đã kiểm chứng không ai bị thương."
+      ],
+      "sourceRefs": [
+        {
+          "filename": "介護ー特定技能ーベトナム語.pdf",
+          "edition": "March 2025 second revision",
+          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+          "pages": [
+            {
+              "printed": 24,
+              "pdf": 26
+            },
+            {
+              "printed": 25,
+              "pdf": 27
+            },
+            {
+              "printed": 118,
+              "pdf": 120
+            }
+          ],
+          "verification": "knowledge text and printed labels checked; vocabulary readings not visually certified"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-week2-01",
+        "kaigo-vocab-week2-05",
+        "kaigo-vocab-week2-11",
+        "kaigo-vocab-week2-12",
+        "kaigo-vocab-week2-19",
+        "kaigo-vocab-week2-24"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "何を確認しましたか。",
+          "meaningVi": "Bạn đã kiểm tra gì?"
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "十一時十分、交流室前の床に水があるのを見つけました。原因はまだわかりません。",
+          "meaningVi": "Lúc11:10 tôi thấy nước trên sàn trước phòng giao lưu. Chưa biết nguyên nhân."
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "その場所を通る方はいらっしゃいますか。",
+          "meaningVi": "Có người đi qua chỗ đó không?"
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "森川さんが近づいておられたので、濡れた場所に入らないようお伝えし、担当者へ連絡しました。",
+          "meaningVi": "Bác Morikawa đang tới gần nên tôi báo tránh vào chỗ ướt và liên lạc phụ trách."
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "私が施設の手順に沿って清掃と通行の対応を確認します。",
+          "meaningVi": "Tôi sẽ xác nhận việc lau và lưu thông theo quy trình cơ sở."
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "ありがとうございます。床の状態を確認するまで、この場所への通行を再開しないよう連携します。",
+          "meaningVi": "Cảm ơn. Tôi sẽ phối hợp để chưa cho đi qua chỗ này khi chưa kiểm trạng thái sàn."
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "けがをした方について、何か情報はありますか。",
+          "meaningVi": "Có thông tin về người bị thương không?"
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "今のところ、けがの報告は受けていません。誰もけがをしていないと断定せず、確認した事実を記録します。",
+          "meaningVi": "Hiện tôi chưa nhận báo cáo bị thương. Tôi không kết luận không ai bị thương mà ghi sự việc đã xác nhận."
+        }
+      ],
+      "reading": {
+        "textJa": "十一時十分、交流室前の床に水を確認しました。近づいた森川さんに濡れた場所へ入らないよう伝え、担当者へ連絡しました。水の原因と、けがの有無を全員について確認したわけではありません。",
+        "meaningVi": "Lúc11:10 thấy nước trên sàn trước phòng giao lưu. Báo bác đang tới tránh chỗ ướt, liên lạc phụ trách. Chưa rõ nguyên nhân và chưa xác nhận có thương tích đối với tất cả mọi người."
+      },
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "questions": [
+        {
+          "id": "kaigo-week2-06-q01",
+          "promptJa": "水を確認した時刻はいつですか。",
+          "optionsJa": [
+            "十時十分",
+            "十二時十分",
+            "十一時五十分",
+            "十一時十分"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: không10:10.",
+            "Sai: không12:10.",
+            "Sai: không11:50.",
+            "Đúng:11:10."
+          ]
+        },
+        {
+          "id": "kaigo-week2-06-q02",
+          "promptJa": "水の原因はどうなっていますか。",
+          "optionsJa": [
+            "まだ不明",
+            "本人がこぼしたと確定",
+            "清掃職員のミスと確定",
+            "雨と確定"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: chưa biết.",
+            "Sai: không gán lỗi bác.",
+            "Sai: chưa xác minh người gây.",
+            "Sai: không có mưa."
+          ]
+        },
+        {
+          "id": "kaigo-week2-06-q03",
+          "promptJa": "けがについて正しいものはどれですか。",
+          "optionsJa": [
+            "全員無事と確認済み",
+            "報告はまだ受けていない",
+            "必ずけががある",
+            "確認せず断定してよい"
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: chưa kiểm toàn bộ.",
+            "Đúng: chưa nhận báo cáo.",
+            "Sai: không có bằng chứng.",
+            "Sai: không kết luận khi chưa kiểm."
+          ]
+        }
+      ],
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "durationMeasured": false,
+        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "practiceModes": [
+          "guided",
+          "bounded_roleplay",
+          "reduced_hints"
+        ],
+        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
+        "newVocabularyPolicy": "Ngày8–11 học6 từ/bài,ngày12–14 tái sử dụng từ và luyện mục tiêu mới; thuật ngữ nhận biết của chủ đề được giải thích trong kiến thức."
+      },
+      "responsePolicy": {
+        "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
+        "fallbackJa": "確認したいことを、もう一度教えていただけますか。",
+        "unsafeVi": [
+          "Tự chẩn đoán/đổi thuốc",
+          "Kết luận thông tin chưa kiểm",
+          "Ép/chạm không xác nhận mong muốn",
+          "Dùng câu hỏi dài để trì hoãn hỗ trợ trong khẩn cấp"
+        ],
+        "runtimeImplemented": false
+      },
+      "responseRubricId": "kaigo-week2-06",
+      "responseRubricFile": "week2-response-rubrics.json",
+      "expressions": [
+        {
+          "id": "kaigo-week2-06-expression-01",
+          "textJa": "十一時十分、交流室前の床に水があるのを見つけました。原因はまだわかりません。",
+          "meaningVi": "Lúc11:10 tôi thấy nước trên sàn trước phòng giao lưu. Chưa biết nguyên nhân."
+        },
+        {
+          "id": "kaigo-week2-06-expression-02",
+          "textJa": "ありがとうございます。床の状態を確認するまで、この場所への通行を再開しないよう連携します。",
+          "meaningVi": "Cảm ơn. Tôi sẽ phối hợp để chưa cho đi qua chỗ này khi chưa kiểm trạng thái sàn."
+        }
+      ],
+      "objectivesVi": [
+        "Báo vị trí/thời gian và phối hợp xử lý mối nguy theo cơ sở.",
+        "Không có báo cáo thương tích khác với đã kiểm chứng không ai bị thương."
+      ],
+      "scopeLimitsVi": [
+        "Luyện giao tiếp/quan sát; không phải hướng dẫn chẩn đoán, thuốc, kỹ thuật chuyển tư thế hoặc xử trí cấp cứu.",
+        "Khẩn cấp/thay đổi cấp tính không đi theo lượt hỏi dài của bài; gọi hỗ trợ ngay theo quy trình cơ sở.",
+        "Chờ duyệt chuyên môn/ngôn ngữ/quyền; chưa runtime/hình/audio."
+      ]
+    },
+    {
+      "id": "kaigo-week2-07",
+      "curriculumDay": 14,
+      "titleVi": "Ôn tuần 2",
+      "npcId": "kaigo-npc-nurse",
+      "playerRoleVi": "Nhân viên chăm sóc Tanaka",
+      "contextVi": "Ôn báo cáo triệu chứng và lựa chọn nghỉ sinh hoạt. Bác đã được liên lạc điều dưỡng; đây không phải kịch bản cấp cứu.",
+      "knowledgeVi": [
+        "Ôn: lời bác, mốc giờ, mong muốn, thông tin chưa rõ và người kiểm tiếp.",
+        "Không biến báo cáo giao tiếp thành chẩn đoán hoặc hướng dẫn chờ trong cấp cứu."
+      ],
+      "sourceRefs": [
+        {
+          "filename": "介護ー特定技能ーベトナム語.pdf",
+          "edition": "March 2025 second revision",
+          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+          "pages": [
+            {
+              "printed": 24,
+              "pdf": 26
+            },
+            {
+              "printed": 68,
+              "pdf": 70
+            },
+            {
+              "printed": 102,
+              "pdf": 104
+            },
+            {
+              "printed": 118,
+              "pdf": 120
+            }
+          ],
+          "verification": "knowledge text and printed labels checked; vocabulary readings not visually certified"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-week2-01",
+        "kaigo-vocab-week2-04",
+        "kaigo-vocab-week2-05",
+        "kaigo-vocab-week2-06",
+        "kaigo-vocab-week2-11",
+        "kaigo-vocab-week2-12"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "小野寺さんについて、確認できたことを順に伝えてください。",
+          "meaningVi": "Hãy báo theo thứ tự những gì đã xác nhận về bác Onodera."
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "午後一時、ご本人から「今日はいつもより疲れる」とのお話がありました。体温などの数値はまだ確認していません。",
+          "meaningVi": "Lúc13 giờ bác nói hôm nay mệt hơn thường ngày. Tôi chưa xác nhận số đo như nhiệt độ."
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "今、本人はどうしたいと話されていますか。",
+          "meaningVi": "Bây giờ bác nói muốn làm gì?"
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "今日の作品づくりには参加せず、休みたいと希望されています。担当職員にその希望を伝えました。",
+          "meaningVi": "Bác muốn không làm đồ thủ công hôm nay mà nghỉ. Tôi đã báo mong muốn đó cho phụ trách."
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "疲れる理由について、判断しましたか。",
+          "meaningVi": "Bạn đã đánh giá nguyên nhân mệt chưa?"
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "判断していません。年齢のせいと決めず、本人の言葉と普段との違いを報告しています。",
+          "meaningVi": "Chưa. Tôi không kết luận vì tuổi mà báo lời bác và khác biệt thường ngày."
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "これから状態を確認します。変化があればすぐ知らせてください。",
+          "meaningVi": "Bây giờ tôi sẽ kiểm tình trạng. Có thay đổi báo ngay nhé."
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "承知しました。新しい変化はすぐ報告し、確認した時刻と内容を記録します。",
+          "meaningVi": "Tôi hiểu. Tôi báo ngay thay đổi mới, ghi thời gian và nội dung đã xác nhận."
+        }
+      ],
+      "reading": {
+        "textJa": "十三時、小野寺さんは今日はいつもより疲れると話されました。制作活動に参加せず休みたいという希望を担当職員へ伝えました。測定値と原因は未確認です。看護職が状態を確認します。",
+        "meaningVi": "Lúc13 giờ bác nói mệt hơn thường ngày. Đã báo mong muốn nghỉ thay vì làm đồ thủ công cho phụ trách. Chưa rõ số đo và nguyên nhân. Điều dưỡng sẽ kiểm tình trạng."
+      },
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "questions": [
+        {
+          "id": "kaigo-week2-07-q01",
+          "promptJa": "疲れると話したのは何時ですか。",
+          "optionsJa": [
+            "十二時",
+            "十四時",
+            "十三時",
+            "十五時"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: không12h.",
+            "Sai: không14h.",
+            "Đúng:13h.",
+            "Sai: không15h."
+          ]
+        },
+        {
+          "id": "kaigo-week2-07-q02",
+          "promptJa": "本人の希望はどれですか。",
+          "optionsJa": [
+            "制作に必ず参加",
+            "運動を増やす",
+            "職員が理由を決める",
+            "制作を見合わせて休む"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: bác muốn nghỉ.",
+            "Sai: không yêu cầu vận động.",
+            "Sai: không nhờ quyết nguyên nhân.",
+            "Đúng: không tham gia, muốn nghỉ."
+          ]
+        },
+        {
+          "id": "kaigo-week2-07-q03",
+          "promptJa": "今後の報告はどうしますか。",
+          "optionsJa": [
+            "変化をすぐ知らせる",
+            "年齢だけで原因を決める",
+            "数値を作って記録する",
+            "変化を知らせない"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: báo ngay thay đổi.",
+            "Sai: không tự kết luận.",
+            "Sai: không bịa số đo.",
+            "Sai: bỏ thông tin cần cho đánh giá."
+          ]
+        }
+      ],
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "durationMeasured": false,
+        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "practiceModes": [
+          "guided",
+          "bounded_roleplay",
+          "reduced_hints"
+        ],
+        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
+        "newVocabularyPolicy": "Ngày8–11 học6 từ/bài,ngày12–14 tái sử dụng từ và luyện mục tiêu mới; thuật ngữ nhận biết của chủ đề được giải thích trong kiến thức."
+      },
+      "responsePolicy": {
+        "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
+        "fallbackJa": "確認したいことを、もう一度教えていただけますか。",
+        "unsafeVi": [
+          "Tự chẩn đoán/đổi thuốc",
+          "Kết luận thông tin chưa kiểm",
+          "Ép/chạm không xác nhận mong muốn",
+          "Dùng câu hỏi dài để trì hoãn hỗ trợ trong khẩn cấp"
+        ],
+        "runtimeImplemented": false
+      },
+      "responseRubricId": "kaigo-week2-07",
+      "responseRubricFile": "week2-response-rubrics.json",
+      "expressions": [
+        {
+          "id": "kaigo-week2-07-expression-01",
+          "textJa": "午後一時、ご本人から「今日はいつもより疲れる」とのお話がありました。体温などの数値はまだ確認していません。",
+          "meaningVi": "Lúc13 giờ bác nói hôm nay mệt hơn thường ngày. Tôi chưa xác nhận số đo như nhiệt độ."
+        },
+        {
+          "id": "kaigo-week2-07-expression-02",
+          "textJa": "判断していません。年齢のせいと決めず、本人の言葉と普段との違いを報告しています。",
+          "meaningVi": "Chưa. Tôi không kết luận vì tuổi mà báo lời bác và khác biệt thường ngày."
+        }
+      ],
+      "objectivesVi": [
+        "Ôn: lời bác, mốc giờ, mong muốn, thông tin chưa rõ và người kiểm tiếp.",
+        "Không biến báo cáo giao tiếp thành chẩn đoán hoặc hướng dẫn chờ trong cấp cứu."
+      ],
+      "scopeLimitsVi": [
+        "Luyện giao tiếp/quan sát; không phải hướng dẫn chẩn đoán, thuốc, kỹ thuật chuyển tư thế hoặc xử trí cấp cứu.",
+        "Khẩn cấp/thay đổi cấp tính không đi theo lượt hỏi dài của bài; gọi hỗ trợ ngay theo quy trình cơ sở.",
+        "Chờ duyệt chuyên môn/ngôn ngữ/quyền; chưa runtime/hình/audio."
+      ]
+    }
+  ],
+  "similarityReview": "not certified; new independent scenarios and expressions",
+  "assetStatus": "none",
+  "runtimeIntegrated": false
+}
