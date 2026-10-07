@@ -35,6 +35,9 @@ for(const g of blueprint.groups){
 assert.equal(Object.keys(m.passages).length,10);
 assert.equal(org.groups.length,5);assert.equal(new Set(org.groups.map(g=>g.example.id)).size,5);
 org.groups.forEach(g=>{assert.equal(g.example.scored,false);assert.equal(g.example.options.length,g.problem<=3?4:3);assert.ok(g.example.options.some(o=>o.id===g.example.correctOptionId));assert.equal(g.choicesDisplay,g.problem<=2?'printed':'audio_only');assert.equal(g.readQuestionAfterDialogue,g.problem<=3);assert.equal(g.readChoices,g.problem>=3);assert.equal(g.replayWholeDialogue,false);});
+const illustrations=JSON.parse(fs.readFileSync(base+'images.manifest.json'));
+assert.equal(illustrations.items.length,4);
+for(const item of illustrations.items){assert.ok(m.questions.some(q=>q.id===item.questionId&&q.section==='listening'&&q.group===4));assert.equal(crypto.createHash('sha256').update(fs.readFileSync(item.path)).digest('hex'),item.sha256);assert.equal(item.publisherReviewed,false);}
 const pools={},sections={};
 for(const k of [3,4]){
  const qs=m.questions.filter(q=>q.options.length===k);const counts=Array.from({length:k},(_,i)=>qs.filter(q=>q.correctOptionId===String(i+1)).length);assert.ok(Math.max(...counts)-Math.min(...counts)<=1);pools[k]=counts;
@@ -43,6 +46,13 @@ for(const k of [3,4]){
 const keys=m.questions.map(q=>q.correctOptionId);
 for(let i=0;i<keys.length-2;i++)assert.ok(!(keys[i]===keys[i+1]&&keys[i]===keys[i+2]),'Three equal positions');
 for(const p of [2,3,4])for(let i=0;i+3*p<=keys.length;i++)assert.ok(!(keys.slice(i,i+p).join()===keys.slice(i+p,i+2*p).join()&&keys.slice(i,i+p).join()===keys.slice(i+2*p,i+3*p).join()),'Repeated short cycle');
-const report={status:'PASS_content_structure_only',examId:m.examId,masterSha256:crypto.createHash('sha256').update(bytes).digest('hex'),written:74,listeningScripts:28,passages:10,unscoredExamples:5,requiredImages:4,answerPools:pools,answerBySection:sections,noTriples:true,noRepeatedShortCycles:true,ordering:'Stored solution and star alignment checked; uniqueness subject to AI editorial and later human review.',audioMeasured:!!m.audio.actualDurationVerified,runtimeIntegrated:m.runtimeIntegrated,publisherReviewed:false,reviewedByNativeSpeaker:false,releaseReady:false};
+const independentPatterns=[];
+for(const level of ['n5','n4'])for(let n=1;n<=6;n++){
+ const p=`src/data/jlpt-original/${level}/${String(n).padStart(2,'0')}/master.ja.json`;
+ if(!fs.existsSync(p))continue;
+ const previous=JSON.parse(fs.readFileSync(p)).questions.map(q=>q.correctOptionId).join('');
+ assert.notEqual(keys.join(''),previous,'Independent answer sequence must differ');independentPatterns.push(`${level}-${n}`);
+}
+const report={status:'PASS_content_structure_only',examId:m.examId,masterSha256:crypto.createHash('sha256').update(bytes).digest('hex'),written:74,listeningScripts:28,passages:10,unscoredExamples:5,requiredImages:4,answerPools:pools,answerBySection:sections,noTriples:true,noRepeatedShortCycles:true,distinctFromIndependentPatterns:independentPatterns,ordering:'Stored solution and star alignment checked; uniqueness subject to AI editorial and later human review.',audioMeasured:!!m.audio.actualDurationVerified,runtimeIntegrated:m.runtimeIntegrated,publisherReviewed:false,reviewedByNativeSpeaker:false,releaseReady:false};
 if(process.argv.includes('--write-report'))fs.writeFileSync('docs/jlpt-workspace/original/n3-01/content-validation.json',JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report,null,2));
