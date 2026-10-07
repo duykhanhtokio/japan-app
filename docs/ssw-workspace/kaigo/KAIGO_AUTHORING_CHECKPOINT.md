@@ -187,3 +187,17 @@ reviews/MOCK_REVISION_02_REPORT.md, mock-revision-02-changes.json và scripts/ch
 Human/domain/native/publisher/rights/runtime/release false. Đặc tả resume cần khóa version/snapshot trước tích hợp; chưa app thực thi và chưa đo60/30phút hoặc tổng1710phút. Không đổi UI/src/JLPT. Lưu hẹp lên HEAD remote mới nhất bằng connector với lease, đọc SHA từng blob trên nhánh trước báo đã lưu; không gọi đó là WORKPERSISTENCE script PASS.
 
 Bước tiếp: xử lý khoảng trống kiến thức/chiều sâu ưu tiên trong lịch8tuần, kiểm nguồn/chuyên môn/bản ngữ/tải học. Một câu mới về quá trình hoặc vệ sinh tay không thay bài học/chuyển giao; nhiễm khuẩn, sức khỏe nhân viên, dịch vụ/khẩn cấp và kỹ thuật hỗ trợ vẫn chưa đủ. Không tự tuần9/đề mới/tích hợp/phát hành; không hỏi lại những quyết định đã chốt.
+
+## 2026-10-07 — Khoảng trống ưu tiên 1: sức khỏe nhân viên và nhiễm khuẩn
+
+Tiếp từ remote a52c5664185f5a570e71093ad962a029a4b9fd59, bản sửa hai đề đã xác minh12/12blob. Local a8a9ddd sạch; tracking6807d7f3 cũ, không coi ngang remote. Đọc hướng dẫn/checkpoint/plan/biểu đạt độc lập và nguồn phần phụ thuộc trong cùng phiên; PDF chuẩn khớphash. Text trang in24–40, xem hình in29/34/39. Đối chiếu MHLW infectionguide3 và trang phòng đau lưng; không dùng nội dung câu hỏi gốc.
+
+drafts/priority-gap-supplements-01.json có hai candidate thay khối ôn ngày14/42, không thêm ngày:8đoạnkiếnthức,18lượtNhật–Việt,2văn bản,10câu/40lýdo,4cách nói,2transfer,8rubric/24cađặc tả. Sáu thuật ngữ khái niệm mới là nhận biết có giải thích, không quota học từ mới ngày ôn; đọcAIonly. Giữ30phút và phân bổ3/8/5/9/5 cho ngày14,5/5/5/10/5 cho42; chưađo. Chưa chọn trongcurriculum; không giao cả bài gốc vàcandidate cùng ngày. Bài gốc bảo toàn, mapping năng lực giữ ởbài khác là sơbộ, chưa chứng nhận độbao phủ/tải học.
+
+Đính chính metadata câu kỹ năngq05: MHLW trangin27/PDF30, khôngphảiin28/PDF30. Tài liệuMHLW cóoffset3, sáchchuẩnoffset2; kiểmnhãn/trangPDFtừ1. Không đổi nội dung/đáp án/ID/chínhsách đề; cậpnhậthash và evidence bản2. Checkpointcũ ghi28giữlịchsử, đoạn này là đínhchính. Không phát hành lại đề chỉcho metadata.
+
+RàAI nội dung/biếnthể/đápán/dịchvàtimeline; validator cụm mới, bản sửađề2,gói review toànkhóa kiểmhash/liênkết/giớihạn. Screen phầnmới341trường/58dài>=60/0khớpcửasổ60ký tự với sách chuẩn; khôngkiểmtrùngý/hình/nguồnkhác/quyền. 30hashnội dunggốcgiữ nguyên. reviews/PRIORITY_GAP_SUPPLEMENTS_01_REPORT.md và evidenceghi nguồn, phạmvi,haiworklistchưaký. Toànkhóagốc54bài/270câuôn/60câuđề;10câucandidatekhôngcộngquota. Worklistcũ114đơnvịvẫngiữ.
+
+C04/C05 chỉ bổsung mộtphần khái niệm/giao tiếp; thao táccơhọccơthể/dụngcụ/PPE/vệsinhtay/khửkhuẩn/ổdịch/thiêntai cònthiếu. Human/domain/native/publisher/rights/runtime/release false;chưacóassets/evaluator/đothời gian. Không đổiUI/src/JLPT hoặcapproved-plan/curriculum. Lưu hẹp lênHEADremote mớinhất bằngconnector cólease vàđọcSHA từngblob, không gọi WORKPERSISTENCEscriptPASS.
+
+Bước tiếp: C03quátrìnhchămsóc/dịchvụ trong8tuần; ràma trận nănglực đượcgiữ khi chọn phươngánthay ôn. Chưa được tựchọntíchhợp/pháthành,thêm tuần9hoặcđềmới; tiếp tụcbiênsoạn/kiểmnguồnđãđượcphép.

@@ -101,7 +101,7 @@ for (const [text, reading] of Object.entries(inventory.criticalPhraseOverrides))
   assert(matches.length > 0, text);
   matches.forEach(r => assert.equal(r.readingKana, reading, text));
 }
-assert.equal(byId.get('kaigo-skills-mock-01-q05').additionalKnowledgeSources[0].printedPage, 28);
+assert.equal(byId.get('kaigo-skills-mock-01-q05').additionalKnowledgeSources[0].printedPage, 27);
 assert.equal(byId.get('kaigo-skills-mock-01-q05').additionalKnowledgeSources[0].pdfPage, 30);
 for (const item of [...manifest.currentFileHashes, ...manifest.unchangedContentEvidence]) assert.equal(sha(fs.readFileSync(item.path)), item.sha256, item.path);
 const lessons = fs.readdirSync(base + 'drafts').filter(f => f.endsWith('-lessons.json')).flatMap(f => read(base + 'drafts/' + f).lessons);

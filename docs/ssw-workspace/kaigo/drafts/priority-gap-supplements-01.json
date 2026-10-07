@@ -1,0 +1,1731 @@
+{
+  "version": 1,
+  "date": "2026-10-07",
+  "baselineRemoteCommit": "a52c5664185f5a570e71093ad962a029a4b9fd59",
+  "status": "NOT_READY_FOR_INTEGRATION",
+  "kind": "two_candidate_replacements_not_extra_days",
+  "coreCountsUnchanged": {
+    "lessons": 54,
+    "lessonQuestions": 270,
+    "mockQuestions": 60
+  },
+  "candidateCounts": {
+    "modules": 2,
+    "questions": 10,
+    "dialogueTurns": 18,
+    "playerRubrics": 8,
+    "assessmentCaseSpecs": 24
+  },
+  "sources": [
+    {
+      "id": "kaigo-textbook-2025-03",
+      "filename": "介護ー特定技能ーベトナム語.pdf",
+      "edition": "second revision March 2025",
+      "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+      "accessedAt": "2026-10-07",
+      "publishSourceBytes": false
+    },
+    {
+      "id": "mhlw-infection-2023",
+      "title": "介護現場における感染対策の手引き 第3版",
+      "publisher": "MHLW",
+      "edition": "September 2023",
+      "url": "https://www.mhlw.go.jp/content/12300000/001155694.pdf",
+      "accessedAt": "2026-10-07",
+      "pages": [
+        {
+          "printedPage": 12,
+          "pdfPage": 15
+        },
+        {
+          "printedPage": 24,
+          "pdfPage": 27
+        },
+        {
+          "printedPage": 26,
+          "pdfPage": 29
+        },
+        {
+          "printedPage": 27,
+          "pdfPage": 30
+        },
+        {
+          "printedPage": 28,
+          "pdfPage": 31
+        }
+      ],
+      "verification": "official_primary_text_and_pdf_page_index_checked_not_human_domain_review"
+    },
+    {
+      "id": "mhlw-worker-back",
+      "title": "保健衛生業における腰痛の予防",
+      "publisher": "MHLW",
+      "url": "https://www.mhlw.go.jp/stf/newpage_31197.html",
+      "accessedAt": "2026-10-07",
+      "locator": "腰痛予防対策; 職場における腰痛予防対策指針の改訂",
+      "verification": "official_primary_current_page_read_not_human_domain_review"
+    }
+  ],
+  "newConceptTerms": [
+    {
+      "id": "kaigo-gap-term-01",
+      "termJa": "腰痛",
+      "readingKana": "ようつう",
+      "meaningVi": "đau vùng lưng dưới",
+      "readingVerification": "AI_context_checked_not_native_or_visual_Japanese_source_review",
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    },
+    {
+      "id": "kaigo-gap-term-02",
+      "termJa": "疲労",
+      "readingKana": "ひろう",
+      "meaningVi": "mệt mỏi",
+      "readingVerification": "AI_context_checked_not_native_or_visual_Japanese_source_review",
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    },
+    {
+      "id": "kaigo-gap-term-03",
+      "termJa": "手指衛生",
+      "readingKana": "しゅしえいせい",
+      "meaningVi": "vệ sinh tay",
+      "readingVerification": "AI_context_checked_not_native_or_visual_Japanese_source_review",
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    },
+    {
+      "id": "kaigo-gap-term-04",
+      "termJa": "手袋",
+      "readingKana": "てぶくろ",
+      "meaningVi": "găng tay",
+      "readingVerification": "AI_context_checked_not_native_or_visual_Japanese_source_review",
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    },
+    {
+      "id": "kaigo-gap-term-05",
+      "termJa": "標準予防策",
+      "readingKana": "ひょうじゅんよぼうさく",
+      "meaningVi": "phòng ngừa chuẩn",
+      "readingVerification": "AI_context_checked_not_native_or_visual_Japanese_source_review",
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    },
+    {
+      "id": "kaigo-gap-term-06",
+      "termJa": "感染経路",
+      "readingKana": "かんせんけいろ",
+      "meaningVi": "đường lây nhiễm",
+      "readingVerification": "AI_context_checked_not_native_or_visual_Japanese_source_review",
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    }
+  ],
+  "modules": [
+    {
+      "id": "kaigo-gap-worker-health-01",
+      "baseLessonId": "kaigo-week2-07",
+      "curriculumDay": 14,
+      "coverageRowIds": [
+        "C04"
+      ],
+      "titleVi": "Sức khỏe người chăm sóc: báo đau lưng trước hỗ trợ",
+      "npcId": "kaigo-npc-care-lead",
+      "playerRoleVi": "Nhân viên chăm sóc",
+      "contextVi": "Phòng trực trước công việc hỗ trợ chuyển người theo kế hoạch. Người học có đau vùng lưng dưới từ sáng, chưa bắt đầu hỗ trợ; người sử dụng đang nghỉ ở vị trí ổn định với đồng nghiệp được phân công. Người phụ trách nhận báo cáo và kiểm phương án/nhân sự. Không có mô tả cấp cứu; không dạy chuyển người hoặc xử trí đau.",
+      "objectivesVi": [
+        "Giải thích vì sao sức khỏe nhân viên liên quan tới an toàn chăm sóc và vì sao cần báo trước nhiệm vụ có nguy cơ.",
+        "Phân biệt nguyên tắc giảm tải, dụng cụ và đào tạo với việc tự chọn cách nâng người.",
+        "Báo tình trạng, việc chưa bắt đầu và đề nghị kiểm phân công mà không tự chẩn đoán."
+      ],
+      "knowledgeModule": {
+        "id": "kaigo-gap-worker-health-01-knowledge",
+        "sections": [
+          {
+            "id": "H1",
+            "titleVi": "An toàn gồm cả người chăm sóc",
+            "explanationVi": "Đau hoặc mệt của nhân viên có thể ảnh hưởng khả năng làm việc. Báo sớm giúp người phụ trách điều phối nhiệm vụ; đây không phải tự xác nhận đủ sức hay đưa chẩn đoán. Trong case này, cần nói đau từ lúc nào và công việc hỗ trợ chưa bắt đầu.",
+            "sourceRefs": [
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 34,
+                "pdfPage": 36,
+                "verification": "printed_label_checked"
+              },
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 39,
+                "pdfPage": 41,
+                "verification": "printed_label_checked"
+              }
+            ]
+          },
+          {
+            "id": "H2",
+            "titleVi": "Giảm tải cần phương án phù hợp",
+            "explanationVi": "Cơ học cơ thể giúp hiểu tải lên cơ, khớp và vùng lưng, nhưng chỉ đổi tư thế không bảo đảm một lần chuyển người an toàn. Cần xem năng lực người sử dụng, công việc, dụng cụ, môi trường và nhân sự. Với người cần hỗ trợ hoàn toàn, hướng dẫn MHLW ưu tiên dụng cụ phù hợp và nguyên tắc không nâng người bằng sức người. Người học báo và yêu cầu kiểm kế hoạch; không tự chọn máy, dây đai hoặc số người hỗ trợ.",
+            "sourceRefs": [
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 34,
+                "pdfPage": 36,
+                "verification": "printed_label_checked"
+              },
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 35,
+                "pdfPage": 37,
+                "verification": "printed_label_checked"
+              },
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 38,
+                "pdfPage": 40,
+                "verification": "printed_label_checked"
+              },
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 39,
+                "pdfPage": 41,
+                "verification": "printed_label_checked"
+              },
+              {
+                "sourceId": "mhlw-worker-back",
+                "claimIds": [
+                  "H2"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "H3",
+            "titleVi": "Đào tạo và điều phối",
+            "explanationVi": "Có dụng cụ ở cơ sở không chứng minh nhân viên đã được đào tạo hoặc dụng cụ phù hợp với người sử dụng. Cách dùng cần được hướng dẫn và kiểm trực tiếp. Chưa rõ phương án thì chưa tự bắt đầu hỗ trợ; liên hệ người phụ trách để bố trí nhiệm vụ an toàn và giữ người sử dụng có hỗ trợ cần thiết. Không chuyển trách nhiệm cho người sử dụng hoặc bỏ họ chờ một mình.",
+            "sourceRefs": [
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 39,
+                "pdfPage": 41,
+                "verification": "printed_label_checked"
+              },
+              {
+                "sourceId": "mhlw-worker-back",
+                "claimIds": [
+                  "H3"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "H4",
+            "titleVi": "Theo dõi sức khỏe và nhờ hỗ trợ",
+            "explanationVi": "Giấc ngủ, ăn uống, nghỉ ngơi và trao đổi khi lo lắng là phần quản lý sức khỏe. Chúng không thay kiểm nguy cơ tại công việc hay đánh giá y tế khi cần. Báo cáo phải giữ đúng điều biết: đau từ sáng, chưa xác định nguyên nhân, chưa hỗ trợ. Nói đã báo khác với được phân công lại; ghi kết quả sau khi người phụ trách xác nhận.",
+            "sourceRefs": [
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 39,
+                "pdfPage": 41,
+                "verification": "printed_label_checked"
+              }
+            ]
+          }
+        ],
+        "retrievalCheck": {
+          "promptVi": "Biết tư thế cơ thể có đủ để tự nâng một người cần hỗ trợ hoàn toàn không?",
+          "expectedVi": "Không; cần phương án phù hợp, dụng cụ và nhân sự được kiểm cùng đào tạo; không tự bắt đầu nâng người.",
+          "feedbackAfterAttempt": true
+        },
+        "review": {
+          "domainHumanReviewed": false,
+          "nativeLanguageReviewed": false,
+          "publisherReviewed": false,
+          "rightsReviewed": false,
+          "runtimeIntegrated": false,
+          "appIntegrationReady": false,
+          "releaseReady": false
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "kaigo-textbook-2025-03",
+          "printedPage": 34,
+          "pdfPage": 36,
+          "verification": "printed_label_checked"
+        },
+        {
+          "sourceId": "kaigo-textbook-2025-03",
+          "printedPage": 35,
+          "pdfPage": 37,
+          "verification": "printed_label_checked"
+        },
+        {
+          "sourceId": "kaigo-textbook-2025-03",
+          "printedPage": 38,
+          "pdfPage": 40,
+          "verification": "printed_label_checked"
+        },
+        {
+          "sourceId": "kaigo-textbook-2025-03",
+          "printedPage": 39,
+          "pdfPage": 41,
+          "verification": "printed_label_checked"
+        },
+        {
+          "sourceId": "mhlw-worker-back",
+          "claimIds": [
+            "H2",
+            "H3"
+          ]
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-week2-04",
+        "kaigo-vocab-week2-05",
+        "kaigo-vocab-week2-07",
+        "kaigo-gap-term-01",
+        "kaigo-gap-term-02"
+      ],
+      "newTermIds": [
+        "kaigo-gap-term-01",
+        "kaigo-gap-term-02"
+      ],
+      "expressions": [
+        {
+          "ja": "作業を始める前に、体調について相談したいです。",
+          "vi": "Tôi muốn trao đổi tình trạng sức khỏe trước khi bắt đầu công việc."
+        },
+        {
+          "ja": "担当と方法を確認していただけますか。",
+          "vi": "Anh kiểm tra giúp người phụ trách và phương án được không?"
+        }
+      ],
+      "dialogue": [
+        {
+          "id": "kaigo-gap-worker-health-01-t01",
+          "speaker": "npc",
+          "ja": "移乗介助の前に、体調について何か相談はありますか。",
+          "vi": "Trước hỗ trợ chuyển người, bạn có muốn trao đổi điều gì về sức khỏe không?"
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-t02",
+          "speaker": "player",
+          "ja": "今朝から腰が痛いので、作業を始める前に相談したいです。",
+          "vi": "Tôi đau vùng lưng dưới từ sáng nên muốn trao đổi trước khi bắt đầu công việc."
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-t03",
+          "speaker": "npc",
+          "ja": "分かりました。介助はもう始めていますか。",
+          "vi": "Tôi hiểu rồi. Bạn đã bắt đầu hỗ trợ chưa?"
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-t04",
+          "speaker": "player",
+          "ja": "まだ始めていません。利用者さんは、担当の職員と安全な場所で休んでいます。",
+          "vi": "Tôi chưa bắt đầu. Bác đang nghỉ ở chỗ an toàn cùng nhân viên được phân công."
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-t05",
+          "speaker": "npc",
+          "ja": "方法と担当を確認します。痛みの原因については、何か確認できていますか。",
+          "vi": "Tôi sẽ kiểm phương án và người phụ trách. Về nguyên nhân đau, bạn đã xác nhận được gì chưa?"
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-t06",
+          "speaker": "player",
+          "ja": "原因は分かりません。痛みがあることをお伝えして、無理のない担当を相談したいです。",
+          "vi": "Tôi chưa biết nguyên nhân. Tôi muốn báo tình trạng đau và trao đổi nhiệm vụ không gây quá sức."
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-t07",
+          "speaker": "npc",
+          "ja": "確認が終わるまでは、自分で介助方法を変えずに待ってください。別の担当を調整します。",
+          "vi": "Trong lúc chờ kiểm xong, bạn đừng tự đổi cách hỗ trợ. Tôi sẽ điều phối nhân viên khác."
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-t08",
+          "speaker": "player",
+          "ja": "承知しました。介助は始めず、担当と方法が確認できた後で、自分の役割をもう一度確認します。",
+          "vi": "Tôi hiểu. Tôi sẽ chưa bắt đầu hỗ trợ; sau khi kiểm được người phụ trách và phương án, tôi sẽ xác nhận lại vai trò của mình."
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-t09",
+          "speaker": "npc",
+          "ja": "調整できたら伝えます。体調に変化があれば、すぐ知らせてください。",
+          "vi": "Khi điều phối xong, tôi sẽ báo. Nếu sức khỏe thay đổi, hãy báo ngay."
+        }
+      ],
+      "reading": {
+        "ja": "勤務前の相談記録：八時二十分、職員は「今朝から腰が痛い」と川瀬に伝えた。移乗介助はまだ開始していない。利用者は担当職員と休んでいる。川瀬は方法と担当を確認中で、変更後の役割はまだ決まっていない。",
+        "vi": "Ghi nhận trao đổi trước công việc: 8:20, nhân viên báo Kawase rằng đau vùng lưng dưới từ sáng. Hỗ trợ chuyển người chưa bắt đầu. Người sử dụng đang nghỉ cùng nhân viên được phân công. Kawase đang kiểm phương án và người phụ trách; vai trò sau thay đổi chưa được quyết định."
+      },
+      "scopeLimitsVi": [
+        "Nhận biết và giao tiếp trước nhiệm vụ; không thực hành nâng/chuyển người, đòn bẩy hoặc vận hành thiết bị.",
+        "Không chẩn đoán, kê thuốc hoặc xác nhận đủ sức làm việc; tình trạng khẩn cấp theo quy trình cơ sở, không hỏi dài.",
+        "Đề nghị điều phối không đồng nghĩa đã có người thay hoặc có phương án được phê duyệt."
+      ],
+      "transferPractice": {
+        "id": "kaigo-gap-worker-health-01-transfer",
+        "contextVi": "Trước khi hỗ trợ theo kế hoạch, bạn nhận thấy mệt sau một đêm ngủ kém. Bác đang có đồng nghiệp được phân công ở cùng. Bạn chưa bắt đầu nhiệm vụ.",
+        "taskVi": "Báo tình trạng và công việc chưa bắt đầu; nhờ người phụ trách kiểm phân công, không suy nguyên nhân bệnh hoặc tự thay cách chuyển người.",
+        "expectedMeaningVi": [
+          "Mệt và ngủ kém là dữ kiện báo, không phải chẩn đoán.",
+          "Chưa bắt đầu và bác đang có đồng nghiệp.",
+          "Nhờ xác nhận nhiệm vụ/phương án trước làm."
+        ],
+        "modelJa": "昨夜あまり眠れず、今は疲れを感じています。介助はまだ始めていません。担当と方法を確認していただけますか。",
+        "method": "bounded_editorial_rehearsal_not_runtime_evaluator"
+      },
+      "questions": [
+        {
+          "id": "kaigo-gap-worker-health-01-q01",
+          "kind": "concept",
+          "promptJa": "職員が腰の痛みを感じ、予定の介助はまだ始めていません。まず相談する内容として適切なのはどれですか。",
+          "promptVi": "Nhân viên đau vùng lưng dưới, chưa bắt đầu hỗ trợ theo lịch. Nội dung cần trao đổi trước phù hợp là gì?",
+          "optionsJa": [
+            "痛みを伏せて、予定どおり担当すると伝える。",
+            "痛みと未開始の作業を伝え、担当を相談する。",
+            "原因の病名を自分で決め、治療を依頼する。",
+            "利用者に、別の職員を探すよう頼む。"
+          ],
+          "optionsVi": [
+            "Giấu đau, báo vẫn phụ trách theo lịch.",
+            "Báo đau, việc chưa bắt đầu và trao đổi phân công.",
+            "Tự quyết tên bệnh rồi yêu cầu điều trị.",
+            "Nhờ người sử dụng đi tìm nhân viên khác."
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: Bỏ dữ kiện ảnh hưởng an toàn.",
+            "Đúng: Thông tin đủ cho điều phối, chưa suy bệnh hoặc bỏ trách nhiệm.",
+            "Sai: Không có dữ kiện chẩn đoán.",
+            "Sai: Điều phối là trách nhiệm của cơ sở."
+          ],
+          "feedbackAfterAttempt": true,
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-q02",
+          "kind": "concept",
+          "promptJa": "全介助が必要な人の移乗介助について、適切な考え方はどれですか。",
+          "promptVi": "Với hỗ trợ chuyển người cần hỗ trợ hoàn toàn, cách hiểu phù hợp là gì?",
+          "optionsJa": [
+            "姿勢を覚えれば、人力で抱え上げてよい。",
+            "二人いれば、用具や方法の確認は不要である。",
+            "本人が急げば、説明を後にして持ち上げる。",
+            "状態に合う機器と方法を、訓練を含め確認する。"
+          ],
+          "optionsVi": [
+            "Nhớ tư thế là có thể nâng bằng sức người.",
+            "Có hai người thì không cần kiểm dụng cụ/phương án.",
+            "Bác muốn nhanh thì nâng trước, giải thích sau.",
+            "Kiểm dụng cụ và phương án theo tình trạng, cùng yêu cầu đào tạo."
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: Tư thế không thay phương án giảm tải.",
+            "Sai: Số người không tự bảo đảm phương án phù hợp.",
+            "Sai: Mong muốn nhanh không bỏ kiểm an toàn/đồng ý.",
+            "Đúng: Nhận biết nguyên tắc, chưa hướng dẫn thao tác nâng."
+          ],
+          "feedbackAfterAttempt": true,
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-q03",
+          "kind": "concept",
+          "promptJa": "職員の健康管理について適切なのはどれですか。",
+          "promptVi": "Điều nào phù hợp về quản lý sức khỏe nhân viên?",
+          "optionsJa": [
+            "休息や相談に加え、作業の負担も見直す。",
+            "睡眠時間が十分なら、作業の危険はなくなる。",
+            "不安は隠し、同僚への相談を控える。",
+            "経験が長ければ、用具の訓練は省ける。"
+          ],
+          "optionsVi": [
+            "Ngoài nghỉ ngơi/trao đổi, còn xem lại tải công việc.",
+            "Ngủ đủ thì nguy cơ công việc hết.",
+            "Giấu lo lắng và tránh trao đổi đồng nghiệp.",
+            "Có kinh nghiệm thì bỏ đào tạo dụng cụ."
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: Sức khỏe và tổ chức công việc cần cùng được xem.",
+            "Sai: Nghỉ ngơi không xóa nguy cơ tại công việc.",
+            "Sai: Hỗ trợ tinh thần không phải tự giữ lo lắng.",
+            "Sai: Kinh nghiệm không thay đào tạo phù hợp."
+          ],
+          "feedbackAfterAttempt": true,
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-q04",
+          "kind": "reading",
+          "promptJa": "相談記録から、まだ決まっていないことはどれですか。",
+          "promptVi": "Theo ghi nhận trao đổi, điều gì chưa được quyết định?",
+          "optionsJa": [
+            "相談した時刻。",
+            "職員が伝えた症状。",
+            "変更後の職員の役割。",
+            "介助が未開始であること。"
+          ],
+          "optionsVi": [
+            "Giờ trao đổi.",
+            "Triệu chứng nhân viên đã báo.",
+            "Vai trò nhân viên sau thay đổi.",
+            "Việc hỗ trợ chưa bắt đầu."
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: Có 8:20.",
+            "Sai: Có lời báo đau từ sáng.",
+            "Đúng: Ghi rõ đang kiểm, vai trò chưa chốt.",
+            "Sai: Ghi rõ chưa bắt đầu."
+          ],
+          "feedbackAfterAttempt": true,
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-q05",
+          "kind": "transfer",
+          "promptJa": "用具は施設にありますが、使い方の訓練を受けていません。適切なのはどれですか。",
+          "promptVi": "Cơ sở có dụng cụ nhưng bạn chưa được đào tạo cách dùng. Điều phù hợp là gì?",
+          "optionsJa": [
+            "説明書を見ながら、利用者で試す。",
+            "自分で使い始めず、担当者に訓練と方法を確認する。",
+            "前の担当者を見たので、同じ条件だと扱う。",
+            "急ぐ場合は、用具を使わず人力で持ち上げる。"
+          ],
+          "optionsVi": [
+            "Thử trên người sử dụng khi đọc hướng dẫn.",
+            "Chưa tự bắt đầu dùng; xác nhận đào tạo và phương án với phụ trách.",
+            "Từng nhìn người khác dùng nên coi điều kiện giống nhau.",
+            "Gấp thì bỏ dụng cụ và nâng bằng sức người."
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: Không thử thao tác chưa được đào tạo trên người sử dụng.",
+            "Đúng: Có dụng cụ không đồng nghĩa biết dùng đúng hoặc phù hợp.",
+            "Sai: Quan sát lần khác không xác minh điều kiện hiện tại.",
+            "Sai: Thời gian không bỏ nguyên tắc giảm tải."
+          ],
+          "feedbackAfterAttempt": true,
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        }
+      ],
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      },
+      "editorialStatus": "AI_draft_for_review_not_selected_in_curriculum",
+      "assetStatus": {
+        "npcArt": "not_created",
+        "voice": "not_created",
+        "runtime": "not_integrated"
+      },
+      "replacementPlan": {
+        "status": "candidate_pending_domain_native_load_review",
+        "mode": "replace_blocks_not_append_minutes",
+        "originalLessonRetained": true,
+        "originalMandatoryBlocksAlsoAssigned": false,
+        "baseLessonId": "kaigo-week2-07",
+        "candidateLessonId": "kaigo-gap-worker-health-01",
+        "day": 14,
+        "selectedInCurriculum": false,
+        "durationMeasured": false,
+        "plannedMinutes": 30,
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 3
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 8
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 9
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "activitiesVi": [
+          "Ôn một phản hồi/giới hạn từ bài gốc trước khi luyện tình huống mới.",
+          "Đọc bốn phần kiến thức, trả lời câu gợi nhớ và giải thích lại một hiểu nhầm.",
+          "Ôn từ cũ; đọc nghĩa các thuật ngữ được giải thích, không ép nhớ để đủ quota.",
+          "Đóng vai mẫu, nói lại ít gợi ý, luyện tình huống chuyển giao và sửa một ý thiếu.",
+          "Đọc văn bản mới, làm năm câu trước chữa; nếu chưa xong thì ghi phần còn dở."
+        ],
+        "loadLimitVi": "Phân bổ là giả thuyết thiết kế, chưa đo; không gán cả bài gốc và candidate thành hai bài bắt buộc cùng ngày.",
+        "retainedCoverageLessonIds": [
+          "kaigo-week2-01",
+          "kaigo-week2-03",
+          "kaigo-week2-06",
+          "kaigo-move-06"
+        ],
+        "newMandatoryVocabularyCount": 0,
+        "conceptTermLearningMode": "recognition_with_inline_explanation_not_new_memorization_quota",
+        "retainedCoverageStatus": "AI_concept_mapping_pending_reviewer_and_load_confirmation"
+      },
+      "responseRubricIds": [
+        "kaigo-gap-worker-health-01-rubric-01",
+        "kaigo-gap-worker-health-01-rubric-02",
+        "kaigo-gap-worker-health-01-rubric-03",
+        "kaigo-gap-worker-health-01-rubric-04"
+      ]
+    },
+    {
+      "id": "kaigo-gap-infection-01",
+      "baseLessonId": "kaigo-hygiene-07",
+      "curriculumDay": 42,
+      "coverageRowIds": [
+        "C05"
+      ],
+      "titleVi": "Ngăn lây qua tay: phân biệt găng đã dùng và đồ sạch",
+      "npcId": "kaigo-npc-care-peer",
+      "playerRoleVi": "Nhân viên chăm sóc",
+      "contextVi": "Buổi luyện tình huống với đồng nghiệp tại khu bàn giao sau nhận đồ vải đã dùng. Đây là mô phỏng, không thực hiện chăm sóc hoặc xử lý đồ nhiễm bẩn. Trong tình huống, người học còn đeo găng đã dùng và chưa chạm màn hình chung; đồng nghiệp đang có tay sạch và nhận nhập dữ kiện. Người học cần giữ trình tự trước/sau, xác nhận vùng đã chạm và phối hợp vệ sinh tay đúng quy trình.",
+      "objectivesVi": [
+        "Nhận biết tay và đồ vật có thể là đường truyền, kể cả khi chưa có chẩn đoán nhiễm bệnh.",
+        "Phân biệt găng bảo vệ với tay sạch; nêu thời điểm vệ sinh tay và nguy cơ chạm đồ chung bằng găng đã dùng.",
+        "Phối hợp việc ghi nhận mà không che giấu tiếp xúc hoặc khẳng định vô nhiễm."
+      ],
+      "knowledgeModule": {
+        "id": "kaigo-gap-infection-01-knowledge",
+        "sections": [
+          {
+            "id": "I1",
+            "titleVi": "Nguy cơ không nhìn bằng mắt là đủ",
+            "explanationVi": "Tác nhân gây bệnh có thể truyền qua tay hoặc đồ vật rồi tới người khác. Chưa được chẩn đoán nhiễm bệnh không có nghĩa đồ vải đã dùng được xem là sạch. Phòng ngừa chuẩn áp dụng theo nguy cơ tiếp xúc của công việc, không chỉ khi có nhãn bệnh. Case này dừng ở nhận biết nguy cơ và phối hợp; không xác định người nào đang nhiễm.",
+            "sourceRefs": [
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 27,
+                "pdfPage": 29,
+                "verification": "printed_label_checked"
+              },
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 28,
+                "pdfPage": 30,
+                "verification": "printed_label_checked"
+              },
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 29,
+                "pdfPage": 31,
+                "verification": "printed_label_checked"
+              },
+              {
+                "sourceId": "mhlw-infection-2023",
+                "claimIds": [
+                  "I1"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "I2",
+            "titleVi": "Găng và vệ sinh tay khác nhau",
+            "explanationVi": "Găng có thể giúp bảo vệ khi tiếp xúc, nhưng mặt ngoài sau dùng có thể mang bẩn; đeo găng không thay vệ sinh tay. Găng đã dùng không đi tiếp sang đồ sạch hoặc người sử dụng khác. Sau tháo găng cần vệ sinh tay đúng quy trình; khi tay có bẩn nhìn thấy, cần rửa bằng xà phòng lỏng và nước chảy. Cách làm cụ thể, thời lượng và sản phẩm phải được đào tạo, không chỉ học qua lời thoại.",
+            "sourceRefs": [
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 29,
+                "pdfPage": 31,
+                "verification": "printed_label_checked"
+              },
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 30,
+                "pdfPage": 32,
+                "verification": "printed_label_checked"
+              },
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 31,
+                "pdfPage": 33,
+                "verification": "printed_label_checked"
+              },
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 33,
+                "pdfPage": 35,
+                "verification": "printed_label_checked"
+              },
+              {
+                "sourceId": "mhlw-infection-2023",
+                "claimIds": [
+                  "I2"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "I3",
+            "titleVi": "Tách việc sạch khỏi việc đã dùng",
+            "explanationVi": "Màn hình dùng chung có thể trở thành chỗ truyền bẩn nếu chạm bằng găng đã dùng. Nếu chưa chạm, nói rõ chưa chạm và phối hợp người có tay sạch nhập thông tin. Nếu đã chạm, báo đúng vật và nơi đã tiếp xúc để cơ sở thực hiện xử lý phù hợp; không chỉ thay găng rồi coi màn hình đã sạch. Không tự pha dung dịch hoặc tuyên bố đã khử khuẩn.",
+            "sourceRefs": [
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 28,
+                "pdfPage": 30,
+                "verification": "printed_label_checked"
+              },
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 29,
+                "pdfPage": 31,
+                "verification": "printed_label_checked"
+              },
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 30,
+                "pdfPage": 32,
+                "verification": "printed_label_checked"
+              },
+              {
+                "sourceId": "mhlw-infection-2023",
+                "claimIds": [
+                  "I3"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "I4",
+            "titleVi": "Kiểm soát theo công việc",
+            "explanationVi": "Loại bảo hộ phụ thuộc nguy cơ của công việc: có thể liên quan găng, khẩu trang, áo/tạp dề hoặc bảo vệ mắt. Đây là nhận biết, không là bộ lựa chọn bảo hộ cho mọi tình huống. Khi chưa rõ quy trình, hỏi phụ trách; bảo hộ được mang đúng vẫn không bỏ vệ sinh tay và xử lý dụng cụ. Báo đủ dữ kiện tiếp xúc để quyết định theo quy trình, không đánh giá bệnh từ lời kể.",
+            "sourceRefs": [
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 29,
+                "pdfPage": 31,
+                "verification": "printed_label_checked"
+              },
+              {
+                "sourceId": "mhlw-infection-2023",
+                "claimIds": [
+                  "I4"
+                ]
+              }
+            ]
+          }
+        ],
+        "retrievalCheck": {
+          "promptVi": "Găng đã dùng còn nguyên vẹn có cho phép chạm màn hình chung không?",
+          "expectedVi": "Không; mặt ngoài có thể bẩn, cần giữ trình tự bỏ găng và vệ sinh tay đúng quy trình trước việc sạch. Nếu đã chạm, phải báo và xử lý thiết bị theo cơ sở.",
+          "feedbackAfterAttempt": true
+        },
+        "review": {
+          "domainHumanReviewed": false,
+          "nativeLanguageReviewed": false,
+          "publisherReviewed": false,
+          "rightsReviewed": false,
+          "runtimeIntegrated": false,
+          "appIntegrationReady": false,
+          "releaseReady": false
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "kaigo-textbook-2025-03",
+          "printedPage": 27,
+          "pdfPage": 29,
+          "verification": "printed_label_checked"
+        },
+        {
+          "sourceId": "kaigo-textbook-2025-03",
+          "printedPage": 28,
+          "pdfPage": 30,
+          "verification": "printed_label_checked"
+        },
+        {
+          "sourceId": "kaigo-textbook-2025-03",
+          "printedPage": 29,
+          "pdfPage": 31,
+          "verification": "printed_label_checked"
+        },
+        {
+          "sourceId": "kaigo-textbook-2025-03",
+          "printedPage": 30,
+          "pdfPage": 32,
+          "verification": "printed_label_checked"
+        },
+        {
+          "sourceId": "kaigo-textbook-2025-03",
+          "printedPage": 31,
+          "pdfPage": 33,
+          "verification": "printed_label_checked"
+        },
+        {
+          "sourceId": "kaigo-textbook-2025-03",
+          "printedPage": 33,
+          "pdfPage": 35,
+          "verification": "printed_label_checked"
+        },
+        {
+          "sourceId": "mhlw-infection-2023",
+          "claimIds": [
+            "I1",
+            "I2",
+            "I3",
+            "I4"
+          ]
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-hygiene-19",
+        "kaigo-vocab-week2-23",
+        "kaigo-gap-term-03",
+        "kaigo-gap-term-04",
+        "kaigo-gap-term-05",
+        "kaigo-gap-term-06"
+      ],
+      "newTermIds": [
+        "kaigo-gap-term-03",
+        "kaigo-gap-term-04",
+        "kaigo-gap-term-05",
+        "kaigo-gap-term-06"
+      ],
+      "expressions": [
+        {
+          "ja": "使用した手袋のままでは触りません。",
+          "vi": "Tôi sẽ không chạm khi vẫn đeo găng đã dùng."
+        },
+        {
+          "ja": "触れた場所を、正確に伝えます。",
+          "vi": "Tôi sẽ báo chính xác chỗ đã chạm."
+        }
+      ],
+      "dialogue": [
+        {
+          "id": "kaigo-gap-infection-01-t01",
+          "speaker": "npc",
+          "ja": "記録は私が入力します。使った手袋で、この画面には触っていませんか。",
+          "vi": "Tôi sẽ nhập ghi nhận. Bạn đã chạm màn hình này bằng găng đã dùng chưa?"
+        },
+        {
+          "id": "kaigo-gap-infection-01-t02",
+          "speaker": "player",
+          "ja": "まだ触っていません。使用した手袋のままでは、画面を操作しません。",
+          "vi": "Tôi chưa chạm. Tôi sẽ không thao tác màn hình khi vẫn đeo găng đã dùng."
+        },
+        {
+          "id": "kaigo-gap-infection-01-t03",
+          "speaker": "npc",
+          "ja": "入力する内容を、口頭で教えてください。",
+          "vi": "Bạn cho tôi biết bằng lời nội dung cần nhập nhé."
+        },
+        {
+          "id": "kaigo-gap-infection-01-t04",
+          "speaker": "player",
+          "ja": "九時四十分に使用済みの布を受け取りました。次の作業には、まだ進んでいません。",
+          "vi": "Tôi nhận đồ vải đã dùng lúc 9:40. Tôi chưa chuyển sang việc tiếp theo."
+        },
+        {
+          "id": "kaigo-gap-infection-01-t05",
+          "speaker": "npc",
+          "ja": "入力しました。手袋を外した後の手指衛生も、施設の手順で行ってください。",
+          "vi": "Tôi đã nhập. Sau tháo găng, bạn cũng cần vệ sinh tay theo quy trình cơ sở."
+        },
+        {
+          "id": "kaigo-gap-infection-01-t06",
+          "speaker": "player",
+          "ja": "はい。手袋を外した後に手指衛生を行い、それから清潔な物に触れます。",
+          "vi": "Vâng. Sau tháo găng, tôi sẽ vệ sinh tay rồi mới chạm đồ sạch."
+        },
+        {
+          "id": "kaigo-gap-infection-01-t07",
+          "speaker": "npc",
+          "ja": "もし使った手袋で周りの物に触れていたら、どう伝えますか。",
+          "vi": "Nếu đã chạm đồ xung quanh bằng găng đã dùng, bạn sẽ báo thế nào?"
+        },
+        {
+          "id": "kaigo-gap-infection-01-t08",
+          "speaker": "player",
+          "ja": "触れた物と場所を報告して、施設の手順で対応を確認します。手袋を替えただけで、物も清潔になったとは考えません。",
+          "vi": "Tôi sẽ báo vật và chỗ đã chạm, xác nhận xử lý theo quy trình cơ sở. Tôi không coi đồ vật đã sạch chỉ vì thay găng."
+        },
+        {
+          "id": "kaigo-gap-infection-01-t09",
+          "speaker": "npc",
+          "ja": "その区別を大切にしてください。分からない手順は、担当者に確認しましょう。",
+          "vi": "Hãy giữ rõ sự khác biệt đó. Quy trình chưa rõ thì cùng kiểm với người phụ trách."
+        }
+      ],
+      "reading": {
+        "ja": "練習用の記録：九時四十分、使用済みの布を受け取った。使用した手袋で共用画面には触れていない。手が清潔な岸本職員が内容を入力した。次の作業はまだ開始していない。手指衛生を終えた記録は、まだない。",
+        "vi": "Ghi nhận dùng để luyện: 9:40 đã nhận đồ vải đã dùng. Chưa chạm màn hình chung bằng găng đã dùng. Nhân viên Kishimoto có tay sạch đã nhập nội dung. Việc tiếp theo chưa bắt đầu. Chưa có ghi nhận đã hoàn tất vệ sinh tay."
+      },
+      "scopeLimitsVi": [
+        "Mô phỏng quyết định/giao tiếp, không thao tác nhận đồ vải nhiễm bẩn, tháo găng hoặc rửa tay trên người thật.",
+        "Không chọn hóa chất/nồng độ/thời gian tiếp xúc, xác định loại bệnh hoặc thay chỉ dẫn đào tạo PPE tại cơ sở.",
+        "Chưa có ghi nhận vệ sinh tay không chứng minh chưa làm; cần xác nhận trước kết luận.",
+        "Nhận biết đường lây không chứng minh đã nhiễm hoặc bảo đảm loại trừ mọi nguy cơ."
+      ],
+      "transferPractice": {
+        "id": "kaigo-gap-infection-01-transfer",
+        "contextVi": "Ở lần luyện khác, nhân viên xác nhận đã chạm cạnh màn hình bằng găng đã dùng; chưa ai xử lý màn hình.",
+        "taskVi": "Báo chính xác vùng đã chạm, giữ việc sạch chưa tiếp tục và yêu cầu xử lý theo quy trình. Không hứa thay găng là đủ.",
+        "expectedMeaningVi": [
+          "Đã chạm cạnh màn hình bằng găng đã dùng.",
+          "Chưa tiếp tục dùng cho việc sạch.",
+          "Báo phụ trách và kiểm xử lý thiết bị theo quy trình."
+        ],
+        "modelJa": "使った手袋で画面の端に触れました。そのまま使い続けず、担当者に場所を報告して、施設の手順で対応を確認します。",
+        "method": "bounded_editorial_rehearsal_not_runtime_evaluator"
+      },
+      "questions": [
+        {
+          "id": "kaigo-gap-infection-01-q01",
+          "kind": "concept",
+          "promptJa": "使用した手袋を着けたまま、共用画面に触ろうとしています。適切なのはどれですか。",
+          "promptVi": "Đang định chạm màn hình chung khi còn đeo găng đã dùng. Điều phù hợp là gì?",
+          "optionsJa": [
+            "破れていないので、そのまま操作する。",
+            "画面に触れた後で、手袋だけを替える。",
+            "その手袋では触れず、手順に沿って手指衛生を行う。",
+            "手袋の外側を紙で拭き、そのまま操作する。"
+          ],
+          "optionsVi": [
+            "Găng chưa rách nên thao tác luôn.",
+            "Chạm xong chỉ thay găng.",
+            "Không chạm bằng găng đó; vệ sinh tay theo quy trình.",
+            "Lau mặt ngoài găng bằng giấy rồi thao tác."
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: Găng nguyên không có nghĩa mặt ngoài sạch.",
+            "Sai: Thay sau chạm không xử lý đồ đã tiếp xúc.",
+            "Đúng: Giữ ranh giới trước việc sạch và vệ sinh tay.",
+            "Sai: Lau giấy không biến găng đã dùng thành sạch."
+          ],
+          "feedbackAfterAttempt": true,
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-gap-infection-01-q02",
+          "kind": "concept",
+          "promptJa": "標準予防策の考え方として適切なのはどれですか。",
+          "promptVi": "Cách hiểu phù hợp về phòng ngừa chuẩn là gì?",
+          "optionsJa": [
+            "感染症の診断がなくても、接触の危険に応じて対策する。",
+            "診断名が付いた人にだけ、対策を行う。",
+            "見た目がきれいなら、体液は安全と扱う。",
+            "手袋があれば、手指衛生の確認を省く。"
+          ],
+          "optionsVi": [
+            "Dù chưa chẩn đoán, vẫn đối phó theo nguy cơ tiếp xúc.",
+            "Chỉ làm với người có tên chẩn đoán.",
+            "Dịch cơ thể nhìn sạch thì coi an toàn.",
+            "Có găng thì bỏ kiểm vệ sinh tay."
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: Không chờ chẩn đoán mới kiểm nguy cơ tiếp xúc.",
+            "Sai: Phòng ngừa chuẩn không giới hạn người đã chẩn đoán.",
+            "Sai: Nhìn không đủ loại trừ tác nhân.",
+            "Sai: Găng không thay vệ sinh tay."
+          ],
+          "feedbackAfterAttempt": true,
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-gap-infection-01-q03",
+          "kind": "concept",
+          "promptJa": "手に目で見える汚れがある時、適切なのはどれですか。",
+          "promptVi": "Khi tay có bẩn nhìn thấy, điều phù hợp là gì?",
+          "optionsJa": [
+            "乾いた紙だけで拭いて、次のケアへ進む。",
+            "新しい手袋を着けて、手洗いを省く。",
+            "アルコールを付ければ、汚れを落とす必要はない。",
+            "液体石けんと流水で、手順に沿って洗う。"
+          ],
+          "optionsVi": [
+            "Chỉ lau giấy khô rồi sang việc chăm sóc tiếp.",
+            "Đeo găng mới và bỏ rửa tay.",
+            "Có cồn là không cần loại bẩn.",
+            "Rửa bằng xà phòng lỏng/nước chảy theo quy trình."
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: Không thay rửa tay phù hợp.",
+            "Sai: Găng không bỏ vệ sinh tay.",
+            "Sai: Bẩn nhìn thấy cần rửa, không chỉ dùng cồn.",
+            "Đúng: Đúng nguyên tắc; kỹ thuật phải được đào tạo trực tiếp."
+          ],
+          "feedbackAfterAttempt": true,
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-gap-infection-01-q04",
+          "kind": "reading",
+          "promptJa": "練習用の記録から、確認が必要なことはどれですか。",
+          "promptVi": "Từ ghi nhận dùng để luyện, điều gì cần xác nhận thêm?",
+          "optionsJa": [
+            "布を受け取った時刻。",
+            "手指衛生が終わったかどうか。",
+            "画面を入力した職員。",
+            "次の作業が未開始であること。"
+          ],
+          "optionsVi": [
+            "Giờ nhận đồ vải.",
+            "Đã hoàn tất vệ sinh tay hay chưa.",
+            "Nhân viên đã nhập màn hình.",
+            "Việc tiếp theo chưa bắt đầu."
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: Có 9:40.",
+            "Đúng: Chưa có ghi nhận, cần kiểm; không tự suy chưa làm.",
+            "Sai: Có Kishimoto.",
+            "Sai: Ghi rõ chưa bắt đầu."
+          ],
+          "feedbackAfterAttempt": true,
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-gap-infection-01-q05",
+          "kind": "transfer",
+          "promptJa": "使用した手袋で画面の端に触れたと分かりました。適切なのはどれですか。",
+          "promptVi": "Đã xác nhận chạm cạnh màn hình bằng găng đã dùng. Điều phù hợp là gì?",
+          "optionsJa": [
+            "手袋を替えたので、画面も清潔になったと伝える。",
+            "次の職員に知らせず、そのまま使ってもらう。",
+            "触れた場所を報告し、画面への対応を手順で確認する。",
+            "拭く薬剤を自己判断で混ぜ、すぐ画面に使う。"
+          ],
+          "optionsVi": [
+            "Thay găng nên báo màn hình cũng sạch.",
+            "Không báo và để người tiếp theo dùng.",
+            "Báo vùng đã chạm, kiểm xử lý màn hình theo quy trình.",
+            "Tự trộn hóa chất rồi dùng ngay trên màn hình."
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: Thay găng không xử lý màn hình.",
+            "Sai: Giấu dữ kiện khiến người sau không biết nguy cơ.",
+            "Đúng: Phối hợp theo dữ kiện, chưa tuyên bố khử khuẩn.",
+            "Sai: Không tự chọn/trộn hóa chất."
+          ],
+          "feedbackAfterAttempt": true,
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        }
+      ],
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      },
+      "editorialStatus": "AI_draft_for_review_not_selected_in_curriculum",
+      "assetStatus": {
+        "npcArt": "not_created",
+        "voice": "not_created",
+        "runtime": "not_integrated"
+      },
+      "replacementPlan": {
+        "status": "candidate_pending_domain_native_load_review",
+        "mode": "replace_blocks_not_append_minutes",
+        "originalLessonRetained": true,
+        "originalMandatoryBlocksAlsoAssigned": false,
+        "baseLessonId": "kaigo-hygiene-07",
+        "candidateLessonId": "kaigo-gap-infection-01",
+        "day": 42,
+        "selectedInCurriculum": false,
+        "durationMeasured": false,
+        "plannedMinutes": 30,
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "activitiesVi": [
+          "Ôn một phản hồi/giới hạn từ bài gốc trước khi luyện tình huống mới.",
+          "Đọc bốn phần kiến thức, trả lời câu gợi nhớ và giải thích lại một hiểu nhầm.",
+          "Ôn từ cũ; đọc nghĩa các thuật ngữ được giải thích, không ép nhớ để đủ quota.",
+          "Đóng vai mẫu, nói lại ít gợi ý, luyện tình huống chuyển giao và sửa một ý thiếu.",
+          "Đọc văn bản mới, làm năm câu trước chữa; nếu chưa xong thì ghi phần còn dở."
+        ],
+        "loadLimitVi": "Phân bổ là giả thuyết thiết kế, chưa đo; không gán cả bài gốc và candidate thành hai bài bắt buộc cùng ngày.",
+        "retainedCoverageLessonIds": [
+          "kaigo-hygiene-01",
+          "kaigo-hygiene-02",
+          "kaigo-hygiene-05"
+        ],
+        "newMandatoryVocabularyCount": 0,
+        "conceptTermLearningMode": "recognition_with_inline_explanation_not_new_memorization_quota",
+        "retainedCoverageStatus": "AI_concept_mapping_pending_reviewer_and_load_confirmation"
+      },
+      "responseRubricIds": [
+        "kaigo-gap-infection-01-rubric-01",
+        "kaigo-gap-infection-01-rubric-02",
+        "kaigo-gap-infection-01-rubric-03",
+        "kaigo-gap-infection-01-rubric-04"
+      ]
+    }
+  ],
+  "responseRubrics": [
+    {
+      "id": "kaigo-gap-worker-health-01-rubric-01",
+      "moduleId": "kaigo-gap-worker-health-01",
+      "playerTurnId": "kaigo-gap-worker-health-01-t02",
+      "promptTurnId": "kaigo-gap-worker-health-01-t01",
+      "nextTurnId": "kaigo-gap-worker-health-01-t03",
+      "requiredMeanings": [
+        {
+          "id": "kaigo-gap-worker-health-01-rubric-01-meaning-1",
+          "vi": "Báo đau từ sáng."
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-rubric-01-meaning-2",
+          "vi": "Đề nghị trao đổi trước việc."
+        }
+      ],
+      "acceptableJa": [
+        "今朝から腰が痛いので、作業を始める前に相談したいです。",
+        "朝から腰に痛みがあります。始める前に相談させてください。"
+      ],
+      "unsafeOrContradictoryJa": [
+        "少し痛いですが、一人で持ち上げます。"
+      ],
+      "feedbackVi": "Giữ dữ kiện và thời điểm của tình huống; bổ sung đúng ý còn thiếu, không tự thêm hành động hoặc kết quả. Thử nói lại bằng cách của bạn.",
+      "evaluationPolicy": {
+        "meaningBased": true,
+        "exactStringMatchRequired": false,
+        "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+        "missingMeaning": "clarify_before_advance",
+        "unsafeMeaning": "correct_before_advance",
+        "runtimeImplemented": false
+      },
+      "assessmentCases": [
+        {
+          "id": "kaigo-gap-worker-health-01-rubric-01-case-accept",
+          "inputJa": "朝から腰に痛みがあります。始める前に相談させてください。",
+          "expected": "accept_meaning",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-rubric-01-case-clarify",
+          "inputJa": "確認させてください。",
+          "expected": "clarify_missing_information",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-rubric-01-case-reject",
+          "inputJa": "少し痛いですが、一人で持ち上げます。",
+          "expected": "correct_before_advance",
+          "specOnly": true
+        }
+      ],
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    },
+    {
+      "id": "kaigo-gap-worker-health-01-rubric-02",
+      "moduleId": "kaigo-gap-worker-health-01",
+      "playerTurnId": "kaigo-gap-worker-health-01-t04",
+      "promptTurnId": "kaigo-gap-worker-health-01-t03",
+      "nextTurnId": "kaigo-gap-worker-health-01-t05",
+      "requiredMeanings": [
+        {
+          "id": "kaigo-gap-worker-health-01-rubric-02-meaning-1",
+          "vi": "Báo chưa bắt đầu."
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-rubric-02-meaning-2",
+          "vi": "Bác đang có nhân viên được phân công."
+        }
+      ],
+      "acceptableJa": [
+        "まだ始めていません。利用者さんは、担当の職員と安全な場所で休んでいます。",
+        "介助はまだです。利用者さんには担当職員が付き添っています。"
+      ],
+      "unsafeOrContradictoryJa": [
+        "もう介助を終えました。"
+      ],
+      "feedbackVi": "Giữ dữ kiện và thời điểm của tình huống; bổ sung đúng ý còn thiếu, không tự thêm hành động hoặc kết quả. Thử nói lại bằng cách của bạn.",
+      "evaluationPolicy": {
+        "meaningBased": true,
+        "exactStringMatchRequired": false,
+        "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+        "missingMeaning": "clarify_before_advance",
+        "unsafeMeaning": "correct_before_advance",
+        "runtimeImplemented": false
+      },
+      "assessmentCases": [
+        {
+          "id": "kaigo-gap-worker-health-01-rubric-02-case-accept",
+          "inputJa": "介助はまだです。利用者さんには担当職員が付き添っています。",
+          "expected": "accept_meaning",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-rubric-02-case-clarify",
+          "inputJa": "確認させてください。",
+          "expected": "clarify_missing_information",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-rubric-02-case-reject",
+          "inputJa": "もう介助を終えました。",
+          "expected": "correct_before_advance",
+          "specOnly": true
+        }
+      ],
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    },
+    {
+      "id": "kaigo-gap-worker-health-01-rubric-03",
+      "moduleId": "kaigo-gap-worker-health-01",
+      "playerTurnId": "kaigo-gap-worker-health-01-t06",
+      "promptTurnId": "kaigo-gap-worker-health-01-t05",
+      "nextTurnId": "kaigo-gap-worker-health-01-t07",
+      "requiredMeanings": [
+        {
+          "id": "kaigo-gap-worker-health-01-rubric-03-meaning-1",
+          "vi": "Chưa biết nguyên nhân."
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-rubric-03-meaning-2",
+          "vi": "Nhờ kiểm nhiệm vụ phù hợp."
+        }
+      ],
+      "acceptableJa": [
+        "原因は分かりません。痛みがあることをお伝えして、無理のない担当を相談したいです。",
+        "原因はまだ分かりません。今の体調に合わせて担当を確認したいです。"
+      ],
+      "unsafeOrContradictoryJa": [
+        "病名は自分で決めました。"
+      ],
+      "feedbackVi": "Giữ dữ kiện và thời điểm của tình huống; bổ sung đúng ý còn thiếu, không tự thêm hành động hoặc kết quả. Thử nói lại bằng cách của bạn.",
+      "evaluationPolicy": {
+        "meaningBased": true,
+        "exactStringMatchRequired": false,
+        "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+        "missingMeaning": "clarify_before_advance",
+        "unsafeMeaning": "correct_before_advance",
+        "runtimeImplemented": false
+      },
+      "assessmentCases": [
+        {
+          "id": "kaigo-gap-worker-health-01-rubric-03-case-accept",
+          "inputJa": "原因はまだ分かりません。今の体調に合わせて担当を確認したいです。",
+          "expected": "accept_meaning",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-rubric-03-case-clarify",
+          "inputJa": "確認させてください。",
+          "expected": "clarify_missing_information",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-rubric-03-case-reject",
+          "inputJa": "病名は自分で決めました。",
+          "expected": "correct_before_advance",
+          "specOnly": true
+        }
+      ],
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    },
+    {
+      "id": "kaigo-gap-worker-health-01-rubric-04",
+      "moduleId": "kaigo-gap-worker-health-01",
+      "playerTurnId": "kaigo-gap-worker-health-01-t08",
+      "promptTurnId": "kaigo-gap-worker-health-01-t07",
+      "nextTurnId": "kaigo-gap-worker-health-01-t09",
+      "requiredMeanings": [
+        {
+          "id": "kaigo-gap-worker-health-01-rubric-04-meaning-1",
+          "vi": "Chưa tự hỗ trợ hoặc đổi phương án."
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-rubric-04-meaning-2",
+          "vi": "Xác nhận vai sau điều phối."
+        }
+      ],
+      "acceptableJa": [
+        "承知しました。介助は始めず、担当と方法が確認できた後で、自分の役割をもう一度確認します。",
+        "方法を自分で変更せず、確認後に担当する内容を確かめます。"
+      ],
+      "unsafeOrContradictoryJa": [
+        "確認せず、今から別の方法で介助します。"
+      ],
+      "feedbackVi": "Giữ dữ kiện và thời điểm của tình huống; bổ sung đúng ý còn thiếu, không tự thêm hành động hoặc kết quả. Thử nói lại bằng cách của bạn.",
+      "evaluationPolicy": {
+        "meaningBased": true,
+        "exactStringMatchRequired": false,
+        "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+        "missingMeaning": "clarify_before_advance",
+        "unsafeMeaning": "correct_before_advance",
+        "runtimeImplemented": false
+      },
+      "assessmentCases": [
+        {
+          "id": "kaigo-gap-worker-health-01-rubric-04-case-accept",
+          "inputJa": "方法を自分で変更せず、確認後に担当する内容を確かめます。",
+          "expected": "accept_meaning",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-rubric-04-case-clarify",
+          "inputJa": "確認させてください。",
+          "expected": "clarify_missing_information",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-worker-health-01-rubric-04-case-reject",
+          "inputJa": "確認せず、今から別の方法で介助します。",
+          "expected": "correct_before_advance",
+          "specOnly": true
+        }
+      ],
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    },
+    {
+      "id": "kaigo-gap-infection-01-rubric-01",
+      "moduleId": "kaigo-gap-infection-01",
+      "playerTurnId": "kaigo-gap-infection-01-t02",
+      "promptTurnId": "kaigo-gap-infection-01-t01",
+      "nextTurnId": "kaigo-gap-infection-01-t03",
+      "requiredMeanings": [
+        {
+          "id": "kaigo-gap-infection-01-rubric-01-meaning-1",
+          "vi": "Chưa chạm màn hình."
+        },
+        {
+          "id": "kaigo-gap-infection-01-rubric-01-meaning-2",
+          "vi": "Không thao tác bằng găng đã dùng."
+        }
+      ],
+      "acceptableJa": [
+        "まだ触っていません。使用した手袋のままでは、画面を操作しません。",
+        "画面には触っていません。使った手袋で操作するのは避けます。"
+      ],
+      "unsafeOrContradictoryJa": [
+        "使った手袋のまま入力します。"
+      ],
+      "feedbackVi": "Giữ dữ kiện và thời điểm của tình huống; bổ sung đúng ý còn thiếu, không tự thêm hành động hoặc kết quả. Thử nói lại bằng cách của bạn.",
+      "evaluationPolicy": {
+        "meaningBased": true,
+        "exactStringMatchRequired": false,
+        "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+        "missingMeaning": "clarify_before_advance",
+        "unsafeMeaning": "correct_before_advance",
+        "runtimeImplemented": false
+      },
+      "assessmentCases": [
+        {
+          "id": "kaigo-gap-infection-01-rubric-01-case-accept",
+          "inputJa": "画面には触っていません。使った手袋で操作するのは避けます。",
+          "expected": "accept_meaning",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-infection-01-rubric-01-case-clarify",
+          "inputJa": "確認させてください。",
+          "expected": "clarify_missing_information",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-infection-01-rubric-01-case-reject",
+          "inputJa": "使った手袋のまま入力します。",
+          "expected": "correct_before_advance",
+          "specOnly": true
+        }
+      ],
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    },
+    {
+      "id": "kaigo-gap-infection-01-rubric-02",
+      "moduleId": "kaigo-gap-infection-01",
+      "playerTurnId": "kaigo-gap-infection-01-t04",
+      "promptTurnId": "kaigo-gap-infection-01-t03",
+      "nextTurnId": "kaigo-gap-infection-01-t05",
+      "requiredMeanings": [
+        {
+          "id": "kaigo-gap-infection-01-rubric-02-meaning-1",
+          "vi": "Báo giờ/đồ đã nhận."
+        },
+        {
+          "id": "kaigo-gap-infection-01-rubric-02-meaning-2",
+          "vi": "Việc tiếp theo chưa bắt đầu."
+        }
+      ],
+      "acceptableJa": [
+        "九時四十分に使用済みの布を受け取りました。次の作業には、まだ進んでいません。",
+        "使用済みの布は九時四十分に受け取り、次の作業はまだです。"
+      ],
+      "unsafeOrContradictoryJa": [
+        "時刻は覚えていないので、受け取った時刻を作って記録します。"
+      ],
+      "feedbackVi": "Giữ dữ kiện và thời điểm của tình huống; bổ sung đúng ý còn thiếu, không tự thêm hành động hoặc kết quả. Thử nói lại bằng cách của bạn.",
+      "evaluationPolicy": {
+        "meaningBased": true,
+        "exactStringMatchRequired": false,
+        "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+        "missingMeaning": "clarify_before_advance",
+        "unsafeMeaning": "correct_before_advance",
+        "runtimeImplemented": false
+      },
+      "assessmentCases": [
+        {
+          "id": "kaigo-gap-infection-01-rubric-02-case-accept",
+          "inputJa": "使用済みの布は九時四十分に受け取り、次の作業はまだです。",
+          "expected": "accept_meaning",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-infection-01-rubric-02-case-clarify",
+          "inputJa": "確認させてください。",
+          "expected": "clarify_missing_information",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-infection-01-rubric-02-case-reject",
+          "inputJa": "時刻は覚えていないので、受け取った時刻を作って記録します。",
+          "expected": "correct_before_advance",
+          "specOnly": true
+        }
+      ],
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    },
+    {
+      "id": "kaigo-gap-infection-01-rubric-03",
+      "moduleId": "kaigo-gap-infection-01",
+      "playerTurnId": "kaigo-gap-infection-01-t06",
+      "promptTurnId": "kaigo-gap-infection-01-t05",
+      "nextTurnId": "kaigo-gap-infection-01-t07",
+      "requiredMeanings": [
+        {
+          "id": "kaigo-gap-infection-01-rubric-03-meaning-1",
+          "vi": "Vệ sinh tay sau tháo găng."
+        },
+        {
+          "id": "kaigo-gap-infection-01-rubric-03-meaning-2",
+          "vi": "Rồi mới chạm đồ sạch."
+        }
+      ],
+      "acceptableJa": [
+        "はい。手袋を外した後に手指衛生を行い、それから清潔な物に触れます。",
+        "手袋を脱いだら手指衛生をしてから、きれいな物に触れます。"
+      ],
+      "unsafeOrContradictoryJa": [
+        "新しい手袋に替えたので手指衛生はしません。"
+      ],
+      "feedbackVi": "Giữ dữ kiện và thời điểm của tình huống; bổ sung đúng ý còn thiếu, không tự thêm hành động hoặc kết quả. Thử nói lại bằng cách của bạn.",
+      "evaluationPolicy": {
+        "meaningBased": true,
+        "exactStringMatchRequired": false,
+        "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+        "missingMeaning": "clarify_before_advance",
+        "unsafeMeaning": "correct_before_advance",
+        "runtimeImplemented": false
+      },
+      "assessmentCases": [
+        {
+          "id": "kaigo-gap-infection-01-rubric-03-case-accept",
+          "inputJa": "手袋を脱いだら手指衛生をしてから、きれいな物に触れます。",
+          "expected": "accept_meaning",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-infection-01-rubric-03-case-clarify",
+          "inputJa": "確認させてください。",
+          "expected": "clarify_missing_information",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-infection-01-rubric-03-case-reject",
+          "inputJa": "新しい手袋に替えたので手指衛生はしません。",
+          "expected": "correct_before_advance",
+          "specOnly": true
+        }
+      ],
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    },
+    {
+      "id": "kaigo-gap-infection-01-rubric-04",
+      "moduleId": "kaigo-gap-infection-01",
+      "playerTurnId": "kaigo-gap-infection-01-t08",
+      "promptTurnId": "kaigo-gap-infection-01-t07",
+      "nextTurnId": "kaigo-gap-infection-01-t09",
+      "requiredMeanings": [
+        {
+          "id": "kaigo-gap-infection-01-rubric-04-meaning-1",
+          "vi": "Nếu đã chạm thì báo vật/vùng tiếp xúc."
+        },
+        {
+          "id": "kaigo-gap-infection-01-rubric-04-meaning-2",
+          "vi": "Kiểm xử lý đồ theo quy trình, không chỉ thay găng."
+        }
+      ],
+      "acceptableJa": [
+        "触れた物と場所を報告して、施設の手順で対応を確認します。手袋を替えただけで、物も清潔になったとは考えません。",
+        "使った手袋で触れた所を知らせ、物への対応を確認します。手袋の交換だけで済ませません。"
+      ],
+      "unsafeOrContradictoryJa": [
+        "手袋を替えれば画面もきれいになるので、報告しません。"
+      ],
+      "feedbackVi": "Giữ dữ kiện và thời điểm của tình huống; bổ sung đúng ý còn thiếu, không tự thêm hành động hoặc kết quả. Thử nói lại bằng cách của bạn.",
+      "evaluationPolicy": {
+        "meaningBased": true,
+        "exactStringMatchRequired": false,
+        "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+        "missingMeaning": "clarify_before_advance",
+        "unsafeMeaning": "correct_before_advance",
+        "runtimeImplemented": false
+      },
+      "assessmentCases": [
+        {
+          "id": "kaigo-gap-infection-01-rubric-04-case-accept",
+          "inputJa": "使った手袋で触れた所を知らせ、物への対応を確認します。手袋の交換だけで済ませません。",
+          "expected": "accept_meaning",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-infection-01-rubric-04-case-clarify",
+          "inputJa": "確認させてください。",
+          "expected": "clarify_missing_information",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-infection-01-rubric-04-case-reject",
+          "inputJa": "手袋を替えれば画面もきれいになるので、報告しません。",
+          "expected": "correct_before_advance",
+          "specOnly": true
+        }
+      ],
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    }
+  ],
+  "review": {
+    "domainHumanReviewed": false,
+    "nativeLanguageReviewed": false,
+    "publisherReviewed": false,
+    "rightsReviewed": false,
+    "runtimeIntegrated": false,
+    "appIntegrationReady": false,
+    "releaseReady": false
+  }
+}

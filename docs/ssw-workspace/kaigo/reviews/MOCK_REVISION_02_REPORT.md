@@ -31,7 +31,7 @@ Những câu còn lại được sửa lựa chọn để bám cùng ngữ cản
 
 ## Nguồn, bản dịch và cách đọc
 
-PDF giáo trình tháng 3/2025 khớp SHA-256 `997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54`. Đọc text-layer các đoạn khái niệm phụ thuộc của câu; đọc lại phần bị thiếu do hiển thị batch bị cắt. Trang in/PDF giữ chênh +2. Không ghi đã xem hình toàn bộ sách hoặc dùng bộ câu hỏi gốc. Câu q05 còn đối chiếu [hướng dẫn MHLW bản thứ ba, tháng 9/2023](https://www.mhlw.go.jp/content/12300000/001155694.pdf), trang in 28/PDF 30; metadata lưu URL, ngày truy cập và phạm vi sử dụng.
+PDF giáo trình tháng 3/2025 khớp SHA-256 `997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54`. Đọc text-layer các đoạn khái niệm phụ thuộc của câu; đọc lại phần bị thiếu do hiển thị batch bị cắt. Trang in/PDF giữ chênh +2. Không ghi đã xem hình toàn bộ sách hoặc dùng bộ câu hỏi gốc. Câu q05 còn đối chiếu [hướng dẫn MHLW bản thứ ba, tháng 9/2023](https://www.mhlw.go.jp/content/12300000/001155694.pdf), trang in 27/PDF 30; metadata lưu URL, ngày truy cập và phạm vi sử dụng.
 
 Đối chiếu toàn bộ 60 câu Nhật–Việt, 240 lựa chọn và 240 lý do theo đúng vị trí. Sửa 食器 ở q27 thành “đồ đựng”, sửa những lý do không còn khớp nhiễu và trình bày lại các đoạn đọc Việt. Dịch, lý do và chú giải chỉ được hiển thị sau nộp theo đặc tả; chưa có app kiểm cổng hiển thị.
 
