@@ -85,3 +85,8 @@ Giữ7 hội thoại đã có (ngày15–21),62 lượt,7 bài đọc,27 câu h�
 week-03-manifest.json và scripts/check-kaigo-week3-draft.mjs kiểm toàn cụm,liên kết rubric,NPC,từ,ngày,đáp án/giải thích,trùng lời giữa các tuần và trạng thái kiểm duyệt. Nguồn đã đọc lại trang115/PDF117,118/PDF120,120/PDF122,129/PDF131,208/PDF210. Không đổi hội thoại để đạt số lượng.
 
 Tổng3cụm tuần được tổ chức đầy đủ ở mức bản thảo biên tập;21bài,69câu ôn.Không có assets/runtime hoặc đề đầy đủ.Mọi domain/native/rights/release gate còn chờ. Điểm tiếp theo sau lưu bền: soạn trọn tuần4 ăn uống (ngày22–28) sau đọc nguồn,đặc biệt giới hạn kiến thức nuốt/an toàn.Ngôn ngữ/chấm điểm/furigana/resume đề vẫn chưa chốt.
+
+
+## 2026-10-07 — Audit weeks 1–3 completed; quality gate NOT_READY
+
+Full editorial audit covers21lessons,176turns,21readings,69questions,88response rubrics and69vocabulary entries. See reviews/WEEKS_01_03_CONTENT_AUDIT_2026-10-07.md and JSON evidence. Structural validators PASS; this is not quality certification. Open errors: day16 actor mismatch; day19 now/today scope; literal Unicode escapes day18/20; day13 information perspective; day11 reference frame. Knowledge depth, distractors, rubric assessment and measured30minutes remain incomplete. No lesson content changed in audit; no human/native/rights/runtime flags promoted. Do not proceed to week4 under a claim weeks1–3 are quality approved. Present repair/rebalancing decisions to user first.
