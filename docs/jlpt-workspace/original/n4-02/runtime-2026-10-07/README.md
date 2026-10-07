@@ -1,0 +1,1 @@
+Unmodified production runner/shared UI in RN-web harness, with real Expo audio/image/assets and AsyncStorage. Navigation focus/backdrop context supplied. Passed selection/save, opening audio/pause, Back/reopen/resume, incomplete submit,0/1/97 of98 and review. No pageerror. Three430x932 screenshots visually inspected. Not full-router/native/iPhone/perceptual approval.

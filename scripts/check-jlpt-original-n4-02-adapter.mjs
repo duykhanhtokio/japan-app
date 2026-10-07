@@ -31,6 +31,10 @@ for(const q of questions){
  if(q.family==='listening'){
   assert.equal(q.audio.transcriptJa,'');assert.equal(q.audio.startMs,0);assert.ok(q.audio.endMs>0);
   if(q.problemNumber>=3)for(const o of q.options)assert.equal(o.textJa,`音声の選択肢 ${o.id}`);
+  if(q.problemNumber===4){
+   assert.notEqual(q.promptJa,original.prompt,'Immediate-response utterances must remain audio-only');
+   assert.ok(q.promptJa.includes('音声の短い言葉'));
+  }
   if(q.questionNumber===1)assert.ok(q.instructionJa.includes('練習'));
   assert.ok(!q.instructionJa.includes('練習中は選択ボタンを押しません。練習中は選択ボタンを押しません。'));
  }

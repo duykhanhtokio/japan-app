@@ -52,7 +52,9 @@ export const N4_ORIGINAL_02_TRIAL: readonly TrialQuestion[] = master.questions.m
     instructionJa: (spokenOnly ? '音声の選択肢を聞いて、一つ選んでください。'
       : ordering ? '四つのことばを並べて、★に入るものを選んでください。'
       : `${listening ? '話を聞いて、' : ''}いちばんいいものを一つ選んでください。`) + practiceInstruction(q),
-    promptJa: q.prompt,
+    promptJa: listening && q.group === 4
+      ? '音声の短い言葉を聞いて、合う返事の番号を一つ選んでください。'
+      : q.prompt,
     passageId: q.passageId,
     passageJa: q.passageId ? master.passages[q.passageId] : undefined,
     // Spoken alternatives must not become printed hints in the exam UI.

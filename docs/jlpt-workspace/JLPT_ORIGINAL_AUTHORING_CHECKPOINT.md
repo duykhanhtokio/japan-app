@@ -305,3 +305,14 @@ N4 01 transport: direct PCM continuous encode at40kbps mono24kHz fits connector 
 Resumed after remote-verified N4 01. Independently authored98responses (70written+28listening),8passages,4unscored examples,5new imagegen illustrations visually inspected. Corrected ordering ambiguity and dialogue/option role mapping. Structural/answer/ordering reconstruction validator PASS; pools21/22/21/21 and4/5/4, no triples/short cycles. Human/native/perceptual/rights/release flagsfalse.
 
 N4-approved .9speed,2/.5s and12/12/10/8s unchanged;35minute budget planned,60s music fixed afterproblem2. Recording is underway locally with reusable turn cache; no complete audio/duration/runtime approval yet. Unregistered adapter prepared only. Completed integrated remains7/30; continue N4 02 from original/n4-02/HANDOFF.md, never regenerate from initial scratch authoring scripts. A checkpoint does not certify a running process in later sessions.
+
+
+## 2026-10-07 — N4 02 technically completed and integrated
+
+Continued independent98-item draft,5imagegen illustrations and4unscored examples. Corrected after-meal grammar and ordering ambiguity, role/gender casting and usage distractors, without changing keyed answer positions. Pools21/22/21/21 and4/5/4; no triples/short cycles; differs from previous7original exam patterns.
+
+First full2242505ms. Removed18trailing confirmation/secondary-topic turns in9dialogues, retaining explicit solution evidence. Final PCM/MP3 decode2100225ms =35:00.225, +225ms; no fixed acceptance tolerance invented. VOICEVOX0.25.2, four approved voices, .9speed, N4 2/.5s and12/12/10/8s unchanged. Original music exactly60000ms/1440000frames afterproblem2, announcements beforeproblem3.
+
+PASS structure, audio scripts/options/roles/hash/decode, adapter, UI10/10, actual Chromium assets and unmodified production-runner/shared-UI harness: select/save, opening/pause, Back/reopen/resume, incomplete submit,0correct/1wrong/97unanswered of98 and review; no pageerror. Three430x932 screenshots inspected. Full TS still has pre-existing TS2352 life-content-repository.ts:47 only; no JLPT diagnostic. No full-router/native/iPhone/perceptual/human/rights/release approval.
+
+Independent session jlpt:jpapp:n4:original:02:v1, audio0ms; spoken alternatives/transcripts hidden. Metadata/rationale/written refinements after recording keep script/choice/role input unchanged, with original/current snapshot hashes recorded. After publish/fetch and WORK PERSISTENCE PASS, N5 01–06+N4 01–02 =8/30; next N4 03. Resume original/n4-02/HANDOFF.md; do not rerun initial scratch authoring scripts. Old exams not removed before replacement gate.
