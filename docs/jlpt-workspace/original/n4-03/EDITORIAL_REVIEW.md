@@ -1,7 +1,5 @@
 # N4 03 AI editorial review
 
-All content authored independently from language skills and everyday situations. No legacy question content loaded. 70written+28listening,8passages. Correct-option surplus rotates to3 in both choice pools. Fixed subject prefixes in ordering1/5; further ordering4/5 refinement pending after audio snapshot finishes.
+Independent98responses and8passages; no legacy content used. Correct-option surplus rotates to3 in both pools. Ordering1/4/5 fixed prefixes/dependency chains remove movable subject/adverb and swapped-event readings. Benefactive grammar11 explicitly identifies knowledgeable giver and sister needing assistance; no keyed position changed. Usage distractors replaced with plausible case/aspect/collocation errors. Dialogue alternatives have internal contradiction evidence; all questions retain explicit answer evidence. Scripts/choice order/casting unchanged after initial synthesis.
 
-Listening1 requires next action or prerequisite; listening2 targets reasons, decisions, facilities and communication channel. All correct answers have explicit dialogue evidence. Five illustrations inspected. No text or response clues in images; roles match gender/age.
-
-Human/native/perceptual/release review remains pending.
+Five imagegen illustrations inspected, roles match characters; no printed answer words. Four new examples scoredfalse. Final34:50.321 is an approximate35minute editorial judgment, no invented fixed tolerance. No dialogue padding/expansion was needed. New N4 03 procedural musical score has different hash from previousN4exams. Human/native/perceptual/rights/release reviews pending.

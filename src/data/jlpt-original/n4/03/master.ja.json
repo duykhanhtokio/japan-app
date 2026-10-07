@@ -3,13 +3,13 @@
   "title": "Japan App N4・AI作成模擬試験 第3回",
   "level": "N4",
   "version": 1,
-  "status": "AI_authored_draft_human_review_pending",
+  "status": "AI_authored_integrated_human_review_pending",
   "generatedBy": "AI",
   "publisherReviewed": false,
   "reviewedByNativeSpeaker": false,
   "releaseReady": false,
-  "runtimeIntegrated": false,
-  "authoringComplete": false,
+  "runtimeIntegrated": true,
+  "authoringComplete": true,
   "authoringRulesVersion": 5,
   "referencePolicy": "Independent objectives and situations; no legacy question content.",
   "structureReference": "n4-2013-07-exam-03",
@@ -19,16 +19,20 @@
     "listening": 35
   },
   "audio": {
-    "status": "not_generated",
+    "status": "generated_ai_unreviewed",
     "targetDurationMs": 2100000,
     "pacingStatus": "publisher_approved_n4",
-    "actualDurationVerified": false,
+    "actualDurationVerified": true,
     "rightsVerified": false,
-    "perceptualApproval": false
+    "perceptualApproval": false,
+    "continuousAudioPath": "assets/jlpt-original/n4/03/audio/n4-original-03-listening-draft.mp3",
+    "durationMs": 2090321,
+    "matchesLevelDurationTarget": true
   },
   "illustrations": {
     "required": 5,
-    "status": "not_generated"
+    "status": "generated_ai_unreviewed",
+    "manifestPath": "src/data/jlpt-original/n4/03/images.manifest.json"
   },
   "passages": {
     "text-grammar": "私は町のパン屋で働いています。働き始めた（１）は、パンの名前を覚えるのが大変でした。名前を書いた紙をポケットに入れて、仕事の前に毎日（２）。今は紙を見なくても、お客さんに説明できます。\n先週、小さな子供がお母さんと来ました。子供はパンを一つ選びましたが、棚が高くて（３）。そこで私が取って渡すと、子供は「ありがとう」と言いました。私はパンを売る（４）、お客さんが買いやすいように手伝うことも大切だと思いました。これからも、一人一人のお客さんをよく（５）、必要なときに声をかけたいです。",
@@ -1476,31 +1480,31 @@
       "section": "grammar_reading",
       "group": 1,
       "number": 11,
-      "prompt": "田中さんは、妹に宿題を（　）います。",
+      "prompt": "妹はこの問題が解けません。私は解き方を知っています。妹に解き方を（　）。",
       "options": [
         {
           "id": "1",
-          "text": "教えたあげて",
-          "rationale": "Does not match: Use the context to select 教えてあげて."
+          "text": "教えてもらいました",
+          "rationale": "Giver viewpoint specified by 私; the sister is unable to solve it."
         },
         {
           "id": "2",
-          "text": "教えたもらって",
-          "rationale": "Does not match: Use the context to select 教えてあげて."
+          "text": "教えてくれました",
+          "rationale": "Giver viewpoint specified by 私; the sister is unable to solve it."
         },
         {
           "id": "3",
-          "text": "教えてあげて",
-          "rationale": "Use the context to select 教えてあげて."
+          "text": "教えてあげました",
+          "rationale": "Giver viewpoint specified by 私; the sister is unable to solve it."
         },
         {
           "id": "4",
-          "text": "教えるあげて",
-          "rationale": "Does not match: Use the context to select 教えてあげて."
+          "text": "教わりました",
+          "rationale": "Giver viewpoint specified by 私; the sister is unable to solve it."
         }
       ],
       "correctOptionId": "3",
-      "learningObjective": "Use the context to select 教えてあげて."
+      "learningObjective": "The knowledgeable speaker gives help to a sister unable to solve the problem; use てあげる."
     },
     {
       "id": "jpapp-n4-original-03-v1-grammar_reading-1-12",
@@ -1760,40 +1764,40 @@
       "section": "grammar_reading",
       "group": 2,
       "number": 4,
-      "prompt": "これは ＿＿ ＿＿ ★ ＿＿ 文です。",
+      "prompt": "これは何度 ＿＿ ＿＿ ★ ＿＿ です。",
       "options": [
         {
           "id": "1",
-          "text": "わからない",
-          "rationale": "Does not match: Reconstruct the dependent clause and identify the third slot."
+          "text": "読んでも",
+          "rationale": "Unique dependency chain: これは何度読んでも意味がわからない文です。"
         },
         {
           "id": "2",
-          "text": "意味が",
-          "rationale": "Reconstruct the dependent clause and identify the third slot."
+          "text": "わからない",
+          "rationale": "Unique dependency chain: これは何度読んでも意味がわからない文です。"
         },
         {
           "id": "3",
-          "text": "読んでも",
-          "rationale": "Does not match: Reconstruct the dependent clause and identify the third slot."
+          "text": "意味が",
+          "rationale": "Unique dependency chain: これは何度読んでも意味がわからない文です。"
         },
         {
           "id": "4",
-          "text": "何度",
-          "rationale": "Does not match: Reconstruct the dependent clause and identify the third slot."
+          "text": "文",
+          "rationale": "Unique dependency chain: これは何度読んでも意味がわからない文です。"
         }
       ],
       "correctOptionId": "2",
       "learningObjective": "Reconstruct the dependent clause and identify the third slot.",
       "ordering": {
-        "prefix": "これは",
-        "suffix": "文です。",
+        "prefix": "これは何度",
+        "suffix": "です。",
         "starSlot": 3,
         "solutionOptionIds": [
-          "4",
+          "1",
           "3",
           "2",
-          "1"
+          "4"
         ],
         "completedSentence": "これは何度読んでも意味がわからない文です。"
       }
@@ -1803,34 +1807,34 @@
       "section": "grammar_reading",
       "group": 2,
       "number": 5,
-      "prompt": "母は私が ＿＿ ＿＿ ★ ＿＿ ことが多いです。",
+      "prompt": "母は私が学校に ＿＿ ＿＿ ★ ＿＿ です。",
       "options": [
         {
           "id": "1",
-          "text": "前に",
-          "rationale": "Part of 母は私が学校に行く前に起きることが多いです。"
+          "text": "起きる",
+          "rationale": "Unique dependency chain: 母は私が学校に行く前に起きることが多いです。"
         },
         {
           "id": "2",
-          "text": "学校に",
-          "rationale": "Part of 母は私が学校に行く前に起きることが多いです。"
+          "text": "行く",
+          "rationale": "Unique dependency chain: 母は私が学校に行く前に起きることが多いです。"
         },
         {
           "id": "3",
-          "text": "行く",
-          "rationale": "Part of 母は私が学校に行く前に起きることが多いです。"
+          "text": "前に",
+          "rationale": "Unique dependency chain: 母は私が学校に行く前に起きることが多いです。"
         },
         {
           "id": "4",
-          "text": "起きる",
-          "rationale": "Part of 母は私が学校に行く前に起きることが多いです。"
+          "text": "ことが多い",
+          "rationale": "Unique dependency chain: 母は私が学校に行く前に起きることが多いです。"
         }
       ],
       "correctOptionId": "1",
       "learningObjective": "Reconstruct the dependent clause and identify the third slot.",
       "ordering": {
-        "prefix": "母は私が",
-        "suffix": "ことが多いです。",
+        "prefix": "母は私が学校に",
+        "suffix": "です。",
         "starSlot": 3,
         "solutionOptionIds": [
           "2",
@@ -2331,22 +2335,22 @@
         {
           "id": "1",
           "text": "タイヤに空気を入れる",
-          "rationale": "Does not match: Separate customer first task from mechanic work."
+          "rationale": "Rejected choice: タイヤに空気を入れる. Evidence: Air inflation repeats the failed remedy; customer is instructed to retrieve the bag first. Mechanic carries the bicycle, not customer. No evening call is requested; retrieval precedes diagnosis."
         },
         {
           "id": "2",
           "text": "自転車のかごから袋を取る",
-          "rationale": "Separate customer first task from mechanic work."
+          "rationale": "Explicit dialogue evidence supports: 自転車のかごから袋を取る. Separate customer first task from mechanic work."
         },
         {
           "id": "3",
           "text": "夕方、店に電話する",
-          "rationale": "Does not match: Separate customer first task from mechanic work."
+          "rationale": "Rejected choice: 夕方、店に電話する. Evidence: Air inflation repeats the failed remedy; customer is instructed to retrieve the bag first. Mechanic carries the bicycle, not customer. No evening call is requested; retrieval precedes diagnosis."
         },
         {
           "id": "4",
           "text": "自転車を店の中に運ぶ",
-          "rationale": "Does not match: Separate customer first task from mechanic work."
+          "rationale": "Rejected choice: 自転車を店の中に運ぶ. Evidence: Air inflation repeats the failed remedy; customer is instructed to retrieve the bag first. Mechanic carries the bicycle, not customer. No evening call is requested; retrieval precedes diagnosis."
         }
       ],
       "correctOptionId": "2",
@@ -2411,7 +2415,7 @@
           "穴が小さければ三十分くらいです。まず荷物を取ってきてください。そのあと、自転車を見て、終わる時間をお伝えします。"
         ]
       ],
-      "audioStatus": "not_generated"
+      "audioStatus": "generated_ai_unreviewed"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-1-02",
@@ -2423,22 +2427,22 @@
         {
           "id": "1",
           "text": "写真を三枚印刷する",
-          "rationale": "Does not match: Follow ordered tasks after defective print."
+          "rationale": "Rejected choice: 写真を三枚印刷する. Evidence: Editing the ending is assigned while teacher prints, after the email. Only two defective pictures must be emailed; student does not print three. Teacher operates the other printer; student does not repair it."
         },
         {
           "id": "2",
           "text": "発表の最後の文を直す",
-          "rationale": "Does not match: Follow ordered tasks after defective print."
+          "rationale": "Rejected choice: 発表の最後の文を直す. Evidence: Editing the ending is assigned while teacher prints, after the email. Only two defective pictures must be emailed; student does not print three. Teacher operates the other printer; student does not repair it."
         },
         {
           "id": "3",
           "text": "先生に写真を二枚送る",
-          "rationale": "Follow ordered tasks after defective print."
+          "rationale": "Explicit dialogue evidence supports: 先生に写真を二枚送る. Follow ordered tasks after defective print."
         },
         {
           "id": "4",
           "text": "職員室の機械を直す",
-          "rationale": "Does not match: Follow ordered tasks after defective print."
+          "rationale": "Rejected choice: 職員室の機械を直す. Evidence: Editing the ending is assigned while teacher prints, after the email. Only two defective pictures must be emailed; student does not print three. Teacher operates the other printer; student does not repair it."
         }
       ],
       "correctOptionId": "3",
@@ -2503,7 +2507,7 @@
           "では、二枚目と三枚目だけ送ってください。届いたら私が印刷します。あなたはその間に、文章を短くしておいてください。"
         ]
       ],
-      "audioStatus": "not_generated"
+      "audioStatus": "generated_ai_unreviewed"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-1-03",
@@ -2515,22 +2519,22 @@
         {
           "id": "1",
           "text": "床の本を棚に戻す",
-          "rationale": "Track prerequisite before cleaning."
+          "rationale": "Explicit dialogue evidence supports: 床の本を棚に戻す. Track prerequisite before cleaning."
         },
         {
           "id": "2",
           "text": "床に掃除機をかける",
-          "rationale": "Does not match: Track prerequisite before cleaning."
+          "rationale": "Rejected choice: 床に掃除機をかける. Evidence: Futons are taken in later; floor books precede vacuuming. Chair has already been moved. Vacuuming follows clearing the books."
         },
         {
           "id": "3",
           "text": "布団をベランダから取り込む",
-          "rationale": "Does not match: Track prerequisite before cleaning."
+          "rationale": "Rejected choice: 布団をベランダから取り込む. Evidence: Futons are taken in later; floor books precede vacuuming. Chair has already been moved. Vacuuming follows clearing the books."
         },
         {
           "id": "4",
           "text": "椅子を廊下に出す",
-          "rationale": "Does not match: Track prerequisite before cleaning."
+          "rationale": "Rejected choice: 椅子を廊下に出す. Evidence: Futons are taken in later; floor books precede vacuuming. Chair has already been moved. Vacuuming follows clearing the books."
         }
       ],
       "correctOptionId": "1",
@@ -2595,7 +2599,7 @@
           "客の部屋の棚でいいよ。私があとで並べるから、今は空いている所へ入れておいて。終わったら掃除機をお願い。"
         ]
       ],
-      "audioStatus": "not_generated"
+      "audioStatus": "generated_ai_unreviewed"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-1-04",
@@ -2607,22 +2611,22 @@
         {
           "id": "1",
           "text": "みかんの値段を下げる",
-          "rationale": "Does not match: Distinguish buying price and selling price, task order."
+          "rationale": "Rejected choice: みかんの値段を下げる. Evidence: Counter has already been wiped. Mandarin selling price is unchanged; box price is purchase price. Display follows confirming price and making label."
         },
         {
           "id": "2",
           "text": "入口の台を拭く",
-          "rationale": "Does not match: Distinguish buying price and selling price, task order."
+          "rationale": "Rejected choice: 入口の台を拭く. Evidence: Counter has already been wiped. Mandarin selling price is unchanged; box price is purchase price. Display follows confirming price and making label."
         },
         {
           "id": "3",
           "text": "りんごを入口に並べる",
-          "rationale": "Does not match: Distinguish buying price and selling price, task order."
+          "rationale": "Rejected choice: りんごを入口に並べる. Evidence: Counter has already been wiped. Mandarin selling price is unchanged; box price is purchase price. Display follows confirming price and making label."
         },
         {
           "id": "4",
           "text": "ノートでりんごの値段を確認する",
-          "rationale": "Distinguish buying price and selling price, task order."
+          "rationale": "Explicit dialogue evidence supports: ノートでりんごの値段を確認する. Distinguish buying price and selling price, task order."
         }
       ],
       "correctOptionId": "4",
@@ -2687,7 +2691,7 @@
           "そうです。まず値段を見てください。札ができたら、箱からりんごを出して並べましょう。みかんは私があとで運びます。"
         ]
       ],
-      "audioStatus": "not_generated"
+      "audioStatus": "generated_ai_unreviewed"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-1-05",
@@ -2699,22 +2703,22 @@
         {
           "id": "1",
           "text": "玄関の幅を測る",
-          "rationale": "Measure before conditional moving."
+          "rationale": "Explicit dialogue evidence supports: 玄関の幅を測る. Measure before conditional moving."
         },
         {
           "id": "2",
           "text": "配達の会社へ行く",
-          "rationale": "Does not match: Measure before conditional moving."
+          "rationale": "Rejected choice: 配達の会社へ行く. Evidence: Shoe shelf moves only if width is insufficient, after measuring. Receiver need not go to delivery company. Parcel has not yet been delivered."
         },
         {
           "id": "3",
           "text": "荷物の箱を開ける",
-          "rationale": "Does not match: Measure before conditional moving."
+          "rationale": "Rejected choice: 荷物の箱を開ける. Evidence: Shoe shelf moves only if width is insufficient, after measuring. Receiver need not go to delivery company. Parcel has not yet been delivered."
         },
         {
           "id": "4",
           "text": "靴の棚を動かす",
-          "rationale": "Does not match: Measure before conditional moving."
+          "rationale": "Rejected choice: 靴の棚を動かす. Evidence: Shoe shelf moves only if width is insufficient, after measuring. Receiver need not go to delivery company. Parcel has not yet been delivered."
         }
       ],
       "correctOptionId": "1",
@@ -2779,7 +2783,7 @@
           "まず幅を測ってください。八十センチ以上あれば、靴の棚は動かさなくて大丈夫です。測ったら、もう一度こちらにお電話ください。"
         ]
       ],
-      "audioStatus": "not_generated"
+      "audioStatus": "generated_ai_unreviewed"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-1-06",
@@ -2791,22 +2795,22 @@
         {
           "id": "1",
           "text": "鍋に水を入れる",
-          "rationale": "Does not match: Follow preparation before cooking."
+          "rationale": "Rejected choice: 鍋に水を入れる. Evidence: Boiling follows frying and cleared work space. Frying follows washing tools. Teacher prepares oil, after participant washes tools."
         },
         {
           "id": "2",
           "text": "フライパンに油を入れる",
-          "rationale": "Does not match: Follow preparation before cooking."
+          "rationale": "Rejected choice: フライパンに油を入れる. Evidence: Boiling follows frying and cleared work space. Frying follows washing tools. Teacher prepares oil, after participant washes tools."
         },
         {
           "id": "3",
           "text": "包丁とまな板を洗う",
-          "rationale": "Follow preparation before cooking."
+          "rationale": "Explicit dialogue evidence supports: 包丁とまな板を洗う. Follow preparation before cooking."
         },
         {
           "id": "4",
           "text": "野菜を炒める",
-          "rationale": "Does not match: Follow preparation before cooking."
+          "rationale": "Rejected choice: 野菜を炒める. Evidence: Boiling follows frying and cleared work space. Frying follows washing tools. Teacher prepares oil, after participant washes tools."
         }
       ],
       "correctOptionId": "3",
@@ -2871,7 +2875,7 @@
           "そうしてください。包丁とまな板を洗ったら、ここへ戻ってきてください。炒めるときの火の強さを一緒に確認しましょう。"
         ]
       ],
-      "audioStatus": "not_generated"
+      "audioStatus": "generated_ai_unreviewed"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-1-07",
@@ -2883,22 +2887,22 @@
         {
           "id": "1",
           "text": "紙に電車の情報と連絡先を書く",
-          "rationale": "Report information before search."
+          "rationale": "Explicit dialogue evidence supports: 紙に電車の情報と連絡先を書く. Report information before search."
         },
         {
           "id": "2",
           "text": "中央駅に電話する",
-          "rationale": "Does not match: Report information before search."
+          "rationale": "Rejected choice: 中央駅に電話する. Evidence: Staff says there is no need to chase train. Passenger cannot access the departed train shelf now. Station staff contacts terminus after report."
         },
         {
           "id": "3",
           "text": "席の棚を探す",
-          "rationale": "Does not match: Report information before search."
+          "rationale": "Rejected choice: 席の棚を探す. Evidence: Staff says there is no need to chase train. Passenger cannot access the departed train shelf now. Station staff contacts terminus after report."
         },
         {
           "id": "4",
           "text": "終点へ電車で行く",
-          "rationale": "Does not match: Report information before search."
+          "rationale": "Rejected choice: 終点へ電車で行く. Evidence: Staff says there is no need to chase train. Passenger cannot access the departed train shelf now. Station staff contacts terminus after report."
         }
       ],
       "correctOptionId": "1",
@@ -2963,7 +2967,7 @@
           "その情報で調べられます。紙には、わかることだけ書いてください。帽子が見つかったら、どこで受け取れるかご案内します。"
         ]
       ],
-      "audioStatus": "not_generated"
+      "audioStatus": "generated_ai_unreviewed"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-1-08",
@@ -2975,22 +2979,22 @@
         {
           "id": "1",
           "text": "先生に薬の写真を見せる",
-          "rationale": "Does not match: Complete intake before waiting and consultation."
+          "rationale": "Rejected choice: 先生に薬の写真を見せる. Evidence: Medication photo is shown during consultation later. Wait for name call after returning form. Unknown medication name is not required on intake form."
         },
         {
           "id": "2",
           "text": "紙に症状を書く",
-          "rationale": "Complete intake before waiting and consultation."
+          "rationale": "Explicit dialogue evidence supports: 紙に症状を書く. Complete intake before waiting and consultation."
         },
         {
           "id": "3",
           "text": "家に薬の名前を聞く",
-          "rationale": "Does not match: Complete intake before waiting and consultation."
+          "rationale": "Rejected choice: 家に薬の名前を聞く. Evidence: Medication photo is shown during consultation later. Wait for name call after returning form. Unknown medication name is not required on intake form."
         },
         {
           "id": "4",
           "text": "診察室に入る",
-          "rationale": "Does not match: Complete intake before waiting and consultation."
+          "rationale": "Rejected choice: 診察室に入る. Evidence: Medication photo is shown during consultation later. Wait for name call after returning form. Unknown medication name is not required on intake form."
         }
       ],
       "correctOptionId": "2",
@@ -3055,7 +3059,7 @@
           "紙を書いて受付に出したあと、名前を呼ぶまで椅子でお待ちください。今、前の方を診ていますので、少しお待ちいただきます。"
         ]
       ],
-      "audioStatus": "not_generated"
+      "audioStatus": "generated_ai_unreviewed"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-2-01",
@@ -3067,22 +3071,22 @@
         {
           "id": "1",
           "text": "鳥の姿を探すこと",
-          "rationale": "Does not match: Find explicitly strongest preference."
+          "rationale": "Rejected choice: 鳥の姿を探すこと. Evidence: She did not remember many tree names. Birds were not visible and search tired her neck. Lunch was inside, not outdoors."
         },
         {
           "id": "2",
           "text": "外で弁当を食べること",
-          "rationale": "Does not match: Find explicitly strongest preference."
+          "rationale": "Rejected choice: 外で弁当を食べること. Evidence: She did not remember many tree names. Birds were not visible and search tired her neck. Lunch was inside, not outdoors."
         },
         {
           "id": "3",
           "text": "木の名前を覚えること",
-          "rationale": "Does not match: Find explicitly strongest preference."
+          "rationale": "Rejected choice: 木の名前を覚えること. Evidence: She did not remember many tree names. Birds were not visible and search tired her neck. Lunch was inside, not outdoors."
         },
         {
           "id": "4",
           "text": "葉の模様を紙に出すこと",
-          "rationale": "Find explicitly strongest preference."
+          "rationale": "Explicit dialogue evidence supports: 葉の模様を紙に出すこと. Find explicitly strongest preference."
         }
       ],
       "correctOptionId": "4",
@@ -3147,7 +3151,7 @@
           "お弁当は持っていったけど、風が強くなったから建物の中で食べた。昼食のあとにも葉を集めたかったけど、午後は木の説明だけだった。"
         ]
       ],
-      "audioStatus": "not_generated"
+      "audioStatus": "generated_ai_unreviewed"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-2-02",
@@ -3159,22 +3163,22 @@
         {
           "id": "1",
           "text": "ほかの店より値段が安いから",
-          "rationale": "Does not match: Find motive despite distance tradeoff."
+          "rationale": "Rejected choice: ほかの店より値段が安いから. Evidence: It is ten minutes away rather than next door. Price is about the same. Only two dishes, few choices."
         },
         {
           "id": "2",
           "text": "料理の種類がとても多いから",
-          "rationale": "Does not match: Find motive despite distance tradeoff."
+          "rationale": "Rejected choice: 料理の種類がとても多いから. Evidence: It is ten minutes away rather than next door. Price is about the same. Only two dishes, few choices."
         },
         {
           "id": "3",
           "text": "料理を長く待たずに食べられるから",
-          "rationale": "Find motive despite distance tradeoff."
+          "rationale": "Explicit dialogue evidence supports: 料理を長く待たずに食べられるから. Find motive despite distance tradeoff."
         },
         {
           "id": "4",
           "text": "会社のすぐ隣にあるから",
-          "rationale": "Does not match: Find motive despite distance tradeoff."
+          "rationale": "Rejected choice: 会社のすぐ隣にあるから. Evidence: It is ten minutes away rather than next door. Price is about the same. Only two dishes, few choices."
         }
       ],
       "correctOptionId": "3",
@@ -3239,7 +3243,7 @@
           "種類は少ない。日によって料理が二つあるだけだよ。でも、食べ終わって余裕を持って会社に戻れる。それが一番大事なんだ。"
         ]
       ],
-      "audioStatus": "not_generated"
+      "audioStatus": "generated_ai_unreviewed"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-2-03",
@@ -3251,22 +3255,22 @@
         {
           "id": "1",
           "text": "乾かす機械",
-          "rationale": "Does not match: Distinguish free loan from paid facilities."
+          "rationale": "Rejected choice: 乾かす機械. Evidence: Bicycle costs1000yen/day. Washing costs300yen including detergent. Drying costs100yen separately."
         },
         {
           "id": "2",
           "text": "傘",
-          "rationale": "Distinguish free loan from paid facilities."
+          "rationale": "Explicit dialogue evidence supports: 傘. Distinguish free loan from paid facilities."
         },
         {
           "id": "3",
           "text": "洗濯機",
-          "rationale": "Does not match: Distinguish free loan from paid facilities."
+          "rationale": "Rejected choice: 洗濯機. Evidence: Bicycle costs1000yen/day. Washing costs300yen including detergent. Drying costs100yen separately."
         },
         {
           "id": "4",
           "text": "自転車",
-          "rationale": "Does not match: Distinguish free loan from paid facilities."
+          "rationale": "Rejected choice: 自転車. Evidence: Bicycle costs1000yen/day. Washing costs300yen including detergent. Drying costs100yen separately."
         }
       ],
       "correctOptionId": "2",
@@ -3331,7 +3335,7 @@
           "わかった。では、傘は持っていかなくても大丈夫そうだね。服は少なめにして、洗濯の料金を用意していこう。"
         ]
       ],
-      "audioStatus": "not_generated"
+      "audioStatus": "generated_ai_unreviewed"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-2-04",
@@ -3343,22 +3347,22 @@
         {
           "id": "1",
           "text": "客を教室へ案内する係",
-          "rationale": "Track final role and rejected constraints."
+          "rationale": "Explicit dialogue evidence supports: 客を教室へ案内する係. Track final role and rejected constraints."
         },
         {
           "id": "2",
           "text": "会場を飾る係",
-          "rationale": "Does not match: Track final role and rejected constraints."
+          "rationale": "Rejected choice: 会場を飾る係. Evidence: Photography requires camera she lacks. Decoration happens the day before when she is unavailable. Food preparation starts too early for her."
         },
         {
           "id": "3",
           "text": "食べ物を売る係",
-          "rationale": "Does not match: Track final role and rejected constraints."
+          "rationale": "Rejected choice: 食べ物を売る係. Evidence: Photography requires camera she lacks. Decoration happens the day before when she is unavailable. Food preparation starts too early for her."
         },
         {
           "id": "4",
           "text": "写真を撮る係",
-          "rationale": "Does not match: Track final role and rejected constraints."
+          "rationale": "Rejected choice: 写真を撮る係. Evidence: Photography requires camera she lacks. Decoration happens the day before when she is unavailable. Food preparation starts too early for her."
         }
       ],
       "correctOptionId": "1",
@@ -3423,7 +3427,7 @@
           "あれは朝から準備があるから無理なの。私は十時から行って、案内をする。迷う人が出ないように、教室の場所をよく覚えておくつもり。"
         ]
       ],
-      "audioStatus": "not_generated"
+      "audioStatus": "generated_ai_unreviewed"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-2-05",
@@ -3435,22 +3439,22 @@
         {
           "id": "1",
           "text": "紙の本の文字が大きいから",
-          "rationale": "Does not match: Find sharing motive rather than price or readability."
+          "rationale": "Rejected choice: 紙の本の文字が大きいから. Evidence: Both formats have the same price. Phone is needed daily, not broken. Reading size is not a problem in either format."
         },
         {
           "id": "2",
           "text": "電子の本より安かったから",
-          "rationale": "Does not match: Find sharing motive rather than price or readability."
+          "rationale": "Rejected choice: 電子の本より安かったから. Evidence: Both formats have the same price. Phone is needed daily, not broken. Reading size is not a problem in either format."
         },
         {
           "id": "3",
           "text": "読み終わったら姉に貸したいから",
-          "rationale": "Find sharing motive rather than price or readability."
+          "rationale": "Explicit dialogue evidence supports: 読み終わったら姉に貸したいから. Find sharing motive rather than price or readability."
         },
         {
           "id": "4",
           "text": "携帯電話が壊れているから",
-          "rationale": "Does not match: Find sharing motive rather than price or readability."
+          "rationale": "Rejected choice: 携帯電話が壊れているから. Evidence: Both formats have the same price. Phone is needed daily, not broken. Reading size is not a problem in either format."
         }
       ],
       "correctOptionId": "3",
@@ -3515,7 +3519,7 @@
           "この本はどちらも同じ値段だった。文字の大きさも読みやすさも、私には問題ない。読み終わって姉に渡せることが、選んだ理由なんだ。"
         ]
       ],
-      "audioStatus": "not_generated"
+      "audioStatus": "generated_ai_unreviewed"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-2-06",
@@ -3527,22 +3531,22 @@
         {
           "id": "1",
           "text": "今日届くメール",
-          "rationale": "Does not match: Identify updated authoritative communication channel."
+          "rationale": "Rejected choice: 今日届くメール. Evidence: Last week paper gives obsolete gate location. No email will be sent this time. Students should check website; no updated gate notice is mentioned."
         },
         {
           "id": "2",
           "text": "先週もらった紙",
-          "rationale": "Does not match: Identify updated authoritative communication channel."
+          "rationale": "Rejected choice: 先週もらった紙. Evidence: Last week paper gives obsolete gate location. No email will be sent this time. Students should check website; no updated gate notice is mentioned."
         },
         {
           "id": "3",
           "text": "学校の門の掲示",
-          "rationale": "Does not match: Identify updated authoritative communication channel."
+          "rationale": "Rejected choice: 学校の門の掲示. Evidence: Last week paper gives obsolete gate location. No email will be sent this time. Students should check website; no updated gate notice is mentioned."
         },
         {
           "id": "4",
           "text": "学校のホームページ",
-          "rationale": "Identify updated authoritative communication channel."
+          "rationale": "Explicit dialogue evidence supports: 学校のホームページ. Identify updated authoritative communication channel."
         }
       ],
       "correctOptionId": "4",
@@ -3607,7 +3611,7 @@
           "集合の時間は同じで、八時半。変わるのは場所だけだよ。午後にホームページを確認すれば、新しい地図も見られるそうだよ。"
         ]
       ],
-      "audioStatus": "not_generated"
+      "audioStatus": "generated_ai_unreviewed"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-2-07",
@@ -3619,22 +3623,22 @@
         {
           "id": "1",
           "text": "重さが軽くなったこと",
-          "rationale": "Does not match: Separate improved feature from unchanged or worse ones."
+          "rationale": "Rejected choice: 重さが軽くなったこと. Evidence: Weight is almost the same. Dust collection is about the same. Operating time is shorter, not longer."
         },
         {
           "id": "2",
           "text": "音が小さくなったこと",
-          "rationale": "Separate improved feature from unchanged or worse ones."
+          "rationale": "Explicit dialogue evidence supports: 音が小さくなったこと. Separate improved feature from unchanged or worse ones."
         },
         {
           "id": "3",
           "text": "使える時間が長くなったこと",
-          "rationale": "Does not match: Separate improved feature from unchanged or worse ones."
+          "rationale": "Rejected choice: 使える時間が長くなったこと. Evidence: Weight is almost the same. Dust collection is about the same. Operating time is shorter, not longer."
         },
         {
           "id": "4",
           "text": "ごみが前より多く取れること",
-          "rationale": "Does not match: Separate improved feature from unchanged or worse ones."
+          "rationale": "Rejected choice: ごみが前より多く取れること. Evidence: Weight is almost the same. Dust collection is about the same. Operating time is shorter, not longer."
         }
       ],
       "correctOptionId": "2",
@@ -3699,7 +3703,7 @@
           "使える時間は少し短くなった。でもうちは部屋が少ないから大丈夫。音を気にしなくていいほうが、私にはうれしいな。"
         ]
       ],
-      "audioStatus": "not_generated"
+      "audioStatus": "generated_ai_unreviewed"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-3-01",
@@ -3737,10 +3741,11 @@
           "電車で、あなたは座っています。杖を持ったお年寄りが立っています。席を譲りたいです。何と言いますか。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "youngMale",
       "visualBrief": "A young male passenger seated on a train offers his seat with an open hand to an elderly woman standing with a walking cane. White background, black and white clean line illustration. No text.",
-      "illustrationStatus": "not_generated"
+      "illustrationStatus": "generated_ai_unreviewed",
+      "visualSheetPath": "assets/jlpt-original/n4/03/images/problem-3-01.png"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-3-02",
@@ -3778,10 +3783,11 @@
           "図書館で、あなたは高い棚の本に手が届きません。係の人に取ってほしいです。何と言いますか。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "femaleStudent",
       "visualBrief": "A female student in a library reaches toward one book on a high shelf, fingertips clearly below it. Adult male librarian nearby. No labels or writing.",
-      "illustrationStatus": "not_generated"
+      "illustrationStatus": "generated_ai_unreviewed",
+      "visualSheetPath": "assets/jlpt-original/n4/03/images/problem-3-02.png"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-3-03",
@@ -3819,10 +3825,11 @@
           "店で、あなたは買った服のボタンが一つないことに気づきました。別のものに交換したいです。何と言いますか。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "adultFemale",
       "visualBrief": "Adult woman customer shows a plain shirt with one empty button position to a shop assistant at a counter. Other buttons visible, no brand or words.",
-      "illustrationStatus": "not_generated"
+      "illustrationStatus": "generated_ai_unreviewed",
+      "visualSheetPath": "assets/jlpt-original/n4/03/images/problem-3-03.png"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-3-04",
@@ -3860,10 +3867,11 @@
           "会社で、あなたは同僚からペンを借りたいです。何と言いますか。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "youngMale",
       "visualBrief": "A young male office worker with a blank form and no pen gestures politely to an adult female coworker holding a pen beside a desk. No writing.",
-      "illustrationStatus": "not_generated"
+      "illustrationStatus": "generated_ai_unreviewed",
+      "visualSheetPath": "assets/jlpt-original/n4/03/images/problem-3-04.png"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-3-05",
@@ -3901,10 +3909,11 @@
           "友達の家で、あなたは帰ろうとしています。友達が夕食も食べていくように誘います。今夜は家族と食べるので断りたいです。何と言いますか。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "femaleStudent",
       "visualBrief": "A female student guest holding a shoulder bag stands near the doorway of a home, host woman gestures toward a dining table. Calm friendly scene. No text.",
-      "illustrationStatus": "not_generated"
+      "illustrationStatus": "generated_ai_unreviewed",
+      "visualSheetPath": "assets/jlpt-original/n4/03/images/problem-3-05.png"
     },
     {
       "id": "jpapp-n4-original-03-v1-listening-4-01",
@@ -3942,7 +3951,7 @@
           "この荷物、持ってもらえる？"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "youngMale"
     },
     {
@@ -3981,7 +3990,7 @@
           "今日の授業、何時に終わるの？"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "femaleStudent"
     },
     {
@@ -4020,7 +4029,7 @@
           "すみません、注文を変えてもいいですか。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "adultMale"
     },
     {
@@ -4059,7 +4068,7 @@
           "一緒に駅まで歩こうか。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "femaleStudent"
     },
     {
@@ -4098,7 +4107,7 @@
           "そのかばん、重そうだね。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "youngMale"
     },
     {
@@ -4137,7 +4146,7 @@
           "遅くなって、ごめん。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "femaleStudent"
     },
     {
@@ -4176,7 +4185,7 @@
           "この書類は、誰に渡せばいいですか。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "adultFemale"
     },
     {
@@ -4215,8 +4224,13 @@
           "お茶、もう一杯いかがですか。"
         ]
       ],
-      "audioStatus": "not_generated",
+      "audioStatus": "generated_ai_unreviewed",
       "optionVoiceRole": "youngMale"
     }
+  ],
+  "limitations": [
+    "Human/native/perceptual/rights/release review pending.",
+    "Approved independent N4 app organization; legacy N4 semantic organization unverified.",
+    "Web technical checks do not certify native/iPhone or full router."
   ]
 }

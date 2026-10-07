@@ -321,3 +321,14 @@ Independent session jlpt:jpapp:n4:original:02:v1, audio0ms; spoken alternatives/
 ## 2026-10-07 — N4 03 independent draft checkpoint
 
 Authored98responses (70written+28listening),8passages,4new unscored examples and5imagegen illustrations inspected. Draft validator PASS IDs/counts/keys/ordering reconstruction, pools21/21/22/21 and4/4/5, no triples/short cycles. N4 .9speed/2/.5s and12/12/10/8s unchanged. Audio synthesis underway locally; no complete duration or integration/runtime claim. Further editorial review and target35minute measurement remain. No legacy content used. Human/native/perceptual/rights/release flagsfalse. Completed integrated remains8/30; continue N4 03 from original/n4-03/HANDOFF.md.
+
+
+## 2026-10-07 — N4 03 technically completed and integrated
+
+Completed independent98responses,8passages,5imagegen illustrations,4new unscored examples. AI revised ordering1/4/5 to constrain clause dependencies and benefactive grammar viewpoint, improved usage distractors and internal listening evidence. Pools21/21/22/21 and4/4/5; no triples/short cycles, differs from previous8original exams. No legacy content read/reused.
+
+PCM/decoded MP3 **2090321ms=34:50.321**, nominal delta−9679ms; approximate35minute editorial assessment without fixed tolerance. Initial content already near target; no dialogue expansion/trimming or silence padding. Written-only revisions do not change speech. New procedural music forN4 03 differs fromN4 01/02; exactly60000ms/1440000frames afterproblem2 before allproblem3orientation. Four approved voices,.9speed,N4 2/.5s,12/12/10/8s unchanged.
+
+PASS structure, audio script/options/roles/hash/decode, adapter, UI10/10, real Chromium playback from0/pause/resume/automaticmusicboundary/5images and unmodified production runner/sharedUI RN-web harness: select/save, Back/reopen/resume with selectedcolor, incomplete submit97, score0/1/97of98, review, no pageerror. Three430x932screenshots inspected. Existing unrelated TS2352 life-content-repository.ts:47 persists; no JLPTdiagnostic. No native/iPhone/full-router/perceptual/human/rights/release approval.
+
+Independent key jlpt:jpapp:n4:original:03:v1, audio0ms, spoken choices/transcripts hidden. After publish/fetch and WORK PERSISTENCE PASS, N5 01–06+N4 01–03=9/30; nextN4 04. Resume original/n4-03/HANDOFF.md; do not regenerate from initial scratch scripts. No legacy removal before full replacement gate.
