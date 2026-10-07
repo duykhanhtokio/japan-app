@@ -1,6 +1,6 @@
 const fs=require('fs'),path=require('path');
 const esbuild=require('./node_modules/esbuild');
-const root='/workspace/scratch/61ecab301466/japan-app';
+const root='/workspace/scratch/cdf2722e73e1/japan-app';
 const out=path.join(__dirname,'www06');fs.mkdirSync(out,{recursive:true});
 const assets=new Map();
 esbuild.build({entryPoints:[path.join(__dirname,'entry06.tsx')],outdir:out,bundle:true,platform:'browser',format:'iife',banner:{js:"var process={env:{NODE_ENV:'development'},nextTick:(fn,...args)=>queueMicrotask(()=>fn(...args))};var global=globalThis;"},jsx:'automatic',mainFields:['browser','module','main'],conditions:['browser','default'],resolveExtensions:['.web.tsx','.web.ts','.web.js','.tsx','.ts','.js','.json'],nodePaths:[path.join(root,'node_modules')],define:{'process.env.NODE_ENV':'"development"','__DEV__':'true'},plugins:[{name:'harness-context-and-assets',setup(b){

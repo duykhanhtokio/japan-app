@@ -6,7 +6,7 @@ Fresh question bodies, passages, listening situations, examples and illustration
 
 Self-review corrections prepared/applied before final audio:
 
-- Retained the concurrent editorial repair: fixed prefix 旅行の, fragments 前に / 買った / 靴は / とても and fixed suffix 軽いです。 form a unique relative-clause sentence. Key/star mapping retained and rationales rebuilt.
+- Moved the flexible travel-time phrase into the fixed ordering prefix; adjective/object/desire/copula fragments now have one complete order. Key/star mapping retained and rationales rebuilt.
 - Simplified sibling definition to an explicitly older female sibling.
 - Replaced しか grammar target with simple existence particle; the museum dialogue also states coins absent without しか.
 - Changed text completion alternatives from competing past-continuous/past-negative interpretations to tense/form contrasts; completion of all notes is explicit.
@@ -15,8 +15,8 @@ Self-review corrections prepared/applied before final audio:
 - Simplified hospital visit narration without the specialized word 見舞い.
 - Per-choice rationales distinguish passage facts, scheduling, duties, vehicle route, item properties, ordering slot and conversational function.
 
-Ordering reviewed as complete sentences: light shoes purchased before a trip; father’s gifted watch; sister’s cake; song-listening before sleep; mother cooking on arrival. SolutionOrder, shuffled key and star slot are checked mechanically after editorial review. The earlier travel-sentence variant was ambiguous and is not final content.
+Ordering reviewed as complete sentences: wanting new shoes before a trip; father’s gifted watch; sister’s cake; song-listening before sleep; mother cooking on arrival. SolutionOrder, shuffled key and star slot are checked mechanically after editorial review. The earlier travel-sentence variant was ambiguous and is not final content.
 
 Images reviewed for speaker role, action and absence of written answers. Cafeteria tray initially appeared unsupported; built-in image edit placed it on an unambiguous counter. Practice/scored first sheet uses exact labels only. No generation artifacts are treated as human/native/perceptual or release approval.
 
-Concurrent written ordering repair arrived during synthesis; generator snapshot assertion stopped the mix. The repaired source was preserved and reconciled in a separate clone on the same mandatory branch. A locally prepared alternative with an inherited extra suffix was discarded before integration. Regenerated from the stable reconciled snapshot using cached utterances; no source content lost or second exam counted.
+Timing correction: first full track measured 1850489ms. Shortened repeated general instructions and two practice explanations without changing graded speech, casting, speed, response pauses or music. Final PCM/MP3 is 1803780ms (30:03.780). The private QA harness was copied into /tmp/n506-resume-browser and explicitly bound to this checkout after identifying a shared temporary harness path had changed to another checkout. Only final report with duration1803.78s and local screenshot paths is accepted as evidence.

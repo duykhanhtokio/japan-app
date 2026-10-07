@@ -31,11 +31,11 @@ Approved speed .9, intro 2 s, between turns .5 s, response pauses12/12/10/8 s. M
 | 4-05 | 33000 | 使用順序を譲る |
 | 4-06 | 33000 | 会計時の金額確認 |
 
-## Complete measurements
+## Complete-track measurement
 
-Initial shared-folder synthesis stopped at source snapshot assertion after a concurrent ordering repair; no complete mismatched track was accepted. First complete stable reconciled track1849572ms. Shortened redundant opening/general instructions and practice explanations while retaining example answers, distractor reasons, format, pauses and break. Final generation PCM and decoded MP3 **1802127ms =30:02.127**, delta+2127ms from nominal. AI editorial assessment: approximately30minutes, no fixed tolerance established. No speed change, response-pause extension, padding or full-dialogue repeat.
+PCM and decoded MP3: 1803780 ms, delta +3780 ms from nominal. AI editorial assessment of approximately 30 minutes; no fixed acceptance tolerance is established. Speed .9 and approved pauses unchanged, no silent padding or repeated full dialogue.
 
-| Item | Actual ms |
+| Item | Measured ms |
 |---|---:|
 | 1-01 | 64379 |
 | 1-02 | 70555 |
@@ -50,7 +50,7 @@ Initial shared-folder synthesis stopped at source snapshot assertion after a con
 | 2-04 | 58981 |
 | 2-05 | 66800 |
 | 2-06 | 66288 |
-| 3-01 | 36461 |
+| 3-01 | 35875 |
 | 3-02 | 37912 |
 | 3-03 | 38424 |
 | 3-04 | 34125 |
@@ -58,17 +58,8 @@ Initial shared-folder synthesis stopped at source snapshot assertion after a con
 | 4-01 | 32348 |
 | 4-02 | 35356 |
 | 4-03 | 34353 |
-| 4-04 | 35089 |
-| 4-05 | 35079 |
+| 4-04 | 35676 |
+| 4-05 | 35996 |
 | 4-06 | 33041 |
 
-| Orientation | Start ms | End ms |
-|---|---:|---:|
-| opening_sound_check_and_general_instructions  | 1000 | 63672 |
-| problem_instructions_example_demonstration 1 | 63672 | 179408 |
-| problem_instructions_example_demonstration 2 | 644885 | 765367 |
-| problem_instructions_example_demonstration 3 | 1212599 | 1310188 |
-| problem_instructions_example_demonstration 4 | 1497401 | 1583677 |
-| closing  | 1788944 | 1802127 |
-
-Music 1148332–1208332ms =60000ms/1440000frames at24kHz; announcements outside music and within full-track budget.
+Music 1135052–1195052 ms; exactly 1440000 frames/24000Hz. Announcements separate from the 60000ms music and included in total.

@@ -262,3 +262,15 @@ Measured PCM/decoded MP3 1803780ms, delta+3780ms from nominal; no fixed toleranc
 Structure, audio/script/options/casting/hash, adapter, UI-lock10/10 and actual Chromium asset/production-runner harness checks PASS: choose/save, opening/pause, Back/reopen/resume, incomplete-submit, score0/1/90 and review, no pageerror. Evidence and inspected430x932 screenshots original/n5-06/runtime-2026-10-07. Not full-router/native/iPhone/perceptual approval; publisher/native/perceptual/rights/release flags false.
 
 After publish/fetch and WORK PERSISTENCE PASS, N5 01–06=6/30; next N4 01. N4 final pacing requires its own confirmation; no automatic N5 timing inheritance.
+
+## 2026-10-07 — Hoàn thiện và tích hợp N5 06, đủ nhóm N5
+
+Sau WORK PERSISTENCE PASS của N5 05 tại b6af56bb, tiếp tục soạn mới độc lập91câu (67viết+24nghe), bảy bài đọc, bốn ví dụ không tính điểm, năm hình imagegen. Quota20/20/20/20 và3/4/4; cân bằng theo phần, không ba đáp án liên tiếp, chu kỳ ngắn lặp ba lần hoặc trùng chuỗi toàn đề trước. AI sửa câu sắp xếp nhiều nghiệm, định nghĩa chị gái, lựa chọn ngữ pháp đoạn văn, câu nhường dùng máy hút bụi và đề nghị giải thích lại; hình khay ăn sửa để đặt đúng trên quầy.
+
+Một chỉnh sửa sắp xếp đồng thời đã đổi master trong lúc thu, generator dừng đúng tại snapshot assertion. Giữ sửa hợp lệ 旅行の前に買った靴はとても軽いです。, chuyển sang clone riêng **/workspace/scratch/61ecab301466/japan-app**, vẫn nhánh recovery/jlpt-n3-n1, giữ thư mục chia sẻ cũ. Bản đầy đủ ổn định đầu1849572ms; rút ý lặp trong mở đầu/hướng dẫn/giải thích ví dụ. Cuối PCM/MP3 decode **1802127ms=30phút02.127giây**, +2127ms, không tự đặt tolerance. Giữ .9 và nhịp2/.5s,12/12/10/8s; không im lặng bù, kéo pause hoặc lặp thoại. Nhạc riêng đúng60000ms/1440000frame sau問題２ trước mọi hướng dẫn問題３; đủ báo nghỉ/tiếp tục. VOICEVOX0.25.2, bốn giọng đã chốt.
+
+Adapter/registry riêng, key jlpt:jpapp:n5:original:06:v1 và audio0ms. PASS cấu trúc, đáp án/phân bố/nghiệm, script/voice/hash/decode, adapter, UI10/10. Browser/runner thật với Expo/AsyncStorage PASS chọn/lưu, phát đầu/pause, Back/reopen/resume, nộp thiếu, kết quả0đúng1sai90chưa trả lời, review; không pageerror; ba ảnh430×932 đã kiểm tra. Không nhận full-router/native/iPhone/perceptual approval. Full TS chỉ lỗi có sẵn TS2352 life-content-repository.ts:47. Cập nhật audioStatus từng câu và metadata sau QA, lời thoại/lựa chọn/role/thứ tự không đổi; hash master đồng bộ. Cờhuman/native/perceptual/rights/release giữfalse.
+
+Tiến độ sau publish/fetch và WORK PERSISTENCE PASS: **N5 01–06, 6/30**, tổng546câu chấm điểm,30hình và24ví dụ luyện tập. Kế tiếp **N4 01**; xác minh thời gian và metadata N4 trước soạn, không áp mốc30phút N5 cho cấp khác, không chờ duyệt nháp. Chi tiết original/n5-06/qa.json và HANDOFF.md.
+
+Nhánh đồng thời đã lưu biến thể N5 06 tại 4a0f06bf (1803780ms). Giữ đúng các file khác biệt trong original/n5-06/concurrent-complete-4a0f06bf/ với manifest; file giống nhau có tại commit gốc. Bản hiện hành hợp nhất dùng các sửa phát thoại/sibling đã kiểm tra và 1802127ms; không đếm biến thể trùng thành đề mới. Giữ lịch sử fast-forward từ commit đồng thời; active clone riêng đã ghi ở trên.
