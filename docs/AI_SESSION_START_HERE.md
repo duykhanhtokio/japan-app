@@ -375,3 +375,7 @@ At startup, report only concise verified facts:
 Never state “completed” solely because TypeScript passes, a ZIP was created, a local commit exists, or a checkpoint was written. Completion requires verified remote persistence.
 
 Mandatory joint reading: reread this session entry guide, AGENTS.md, both full JLPT authoring documents, then the current checkpoint and machine metadata before each new JLPT authoring session. Neither a summary nor reading only one document satisfies this requirement. If the two documents or machine metadata conflict materially, stop the affected work and ask the publisher; do not guess.
+
+## Mandatory Tokutei Gino 介護 authoring contract — approved 2026-10-07
+
+Before EVERY new 介護 authoring session, read `docs/ssw-workspace/kaigo/KAIGO_AUTHORING_RULES.md` completely, then `KAIGO_AUTHORING_CHECKPOINT.md` and `approved-plan.json` in that directory, plus the source pages for the current unit. Memory or a prior-session read is insufficient. The publisher approved independent new expression/assets based on verified knowledge/terms, 8 weeks at 30 minutes/day, Japanese dialogue with Vietnamese support, approximately 6–12 turns, reviewed bounded-response scenarios, and one initial skills mock plus one Japanese mock for review. Create enough stable-role NPCs for all required contexts; do not limit the system to one universal NPC. This sector-specific contract does not authorize UI redesign, deletion, source redistribution or release of unreviewed content.
