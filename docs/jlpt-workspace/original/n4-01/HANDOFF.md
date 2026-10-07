@@ -18,3 +18,5 @@ Next actions in order:
 Publisher/native/perceptual/rights/release approvals remain pending. No native/iPhone, audio playback or final duration claim exists for N4 01.
 
 Official metadata checked 2026-10-07: https://www.jlpt.jp/e/guideline/testsections.html (N4 25/55/35 minutes; types only). Detailed source PDFs/audio were not opened.
+
+Concurrent-session reconciliation: retained this98-response master from7199c587 unchanged. An independently authored/editorially checked70-written-response alternative is preserved under alternative-written-draft/; do not combine or substitute without fresh whole-exam review/balance checks. Detailed proposed N4-only pacing and required confirmation quote: N4_PACING_PROPOSAL.md.
