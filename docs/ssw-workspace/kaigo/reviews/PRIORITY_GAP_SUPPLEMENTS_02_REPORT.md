@@ -1,0 +1,22 @@
+# Priority gap supplements 02 — process and services
+
+Date: 2026-10-08 (Asia/Tokyo). Status: NOT_READY_FOR_INTEGRATION.
+Baseline remote: 34ed6a4ee8e671bfdd832f60541232a572d670a3. Repo: duykhanhtokio/japan-app, recovery/jlpt-n3-n1.
+
+Two independently authored candidates address C03: care-process assessment/planning/implementation/evaluation, and the general distinction between home visits, day services and facility residence. They replace proposed review blocks on days 50/49 only if later approved. Curriculum, original lessons, plan, mocks, UI and JLPT are unchanged. No extra week or form.
+
+Draft: 2 modules, 8 knowledge sections, 18 JA/VI dialogue turns, 2 readings, 10 questions with 40 option rationales, 4 expressions, 2 transfer cases, 8 response rubrics and 24 accept/clarify/correct case specifications. Eight local concept notes are recognition aids, not new canonical vocabulary records or mandatory memorization. NPC care-lead and family retain roster roles. Each day retains planned 5/5/5/10/5 minutes; timing is unmeasured.
+
+The process case separates staff preparation, the resident's book choice, a subsequent wish to read alone and nonimplementation of sharing. Sharing is conditional on the resident's continuing wish; nonparticipation is not labeled a failure or noncooperation. Evaluation compares evidence and suitability, followed by consultation with the resident/team; the worker does not approve a changed plan. The service case explains general categories without disclosing personal records, selecting a provider, promising eligibility/cost/start date, or registering on behalf of the resident.
+
+The evidence contains a two-row retained-capability matrix: conditional participation remains in foundation-05, changed choice/bounded help in foundation-07, and effective-notice/application distinctions in housework-03. The candidates also preserve choice and incomplete decision status. This is AI concept mapping, not a finding of equivalent depth; the specific return-support and book-collection variants require review before replacement. Both candidates remain unselected.
+
+Primary source: identified March 2025 second-revision textbook, printed12/PDF14,21/PDF23,22/PDF24,23/PDF25, read through Library page text in this session. Expected source SHA-256 is recorded; current PDF bytes/hash were not recomputed because the command runtime is unavailable. Japanese readings received AI context review only. MHLW home/day-service and care-process search excerpts corroborate concepts, but direct opens returned403/timeout; no full-page official verification is claimed. No source bytes, OCR, images or answers are committed.
+
+Pure JavaScript integrity checks ran in the session's V8 environment: counts, unique IDs, target/day and base vocabulary links, NPC existence, preserved30minute blocks, question choices/keys/rationales, rubric adjacency/coverage, gate flags and spec-only cases. Key counts3/3/2/2; no three-position run. Four negative controls correctly rejected an unknown NPC, promoted release flag, wrong rubric link and doubled mandatory load. The saved Node entry point was not executed; the repo validator suite, app tests, semantic evaluator, audio and learner timing did not run.
+
+Bounded lexical screen: 342 authored fields, 59 at least60 Unicode codepoints, no60-codepoint exact-window matches after NFKC/whitespace normalization against textbook printed22–23/PDF24–25 only. Full276page screen is unavailable in this session. This does not certify semantic independence or rights. AI reviewed all newly authored dialogue, readings, questions/rationales and response variants; no human/domain/native/rights/publisher approval is claimed.
+
+Core quota remains54ordinary lessons,270lesson checks and60mock questions; candidate checks are not added to quota. Existing114unit whole-course review worklist remains unchanged. Two unsigned candidate review rows are in this batch evidence. Every domain/native/publisher/rights/runtime/release flag remainsfalse. No art/voice/runtime integration.
+
+Next: review all four candidates' retained-capability mapping and load before selecting any; then continue remaining audit gaps, with source verification and dedicated original scenarios. C03 is still an open integration gap. C02 abuse/restraint identification, C06 emergency response and physical-care mechanisms/techniques remain open. No automatic integration or release.

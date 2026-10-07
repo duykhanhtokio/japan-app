@@ -201,3 +201,16 @@ RàAI nội dung/biếnthể/đápán/dịchvàtimeline; validator cụm mới, 
 C04/C05 chỉ bổsung mộtphần khái niệm/giao tiếp; thao táccơhọccơthể/dụngcụ/PPE/vệsinhtay/khửkhuẩn/ổdịch/thiêntai cònthiếu. Human/domain/native/publisher/rights/runtime/release false;chưacóassets/evaluator/đothời gian. Không đổiUI/src/JLPT hoặcapproved-plan/curriculum. Lưu hẹp lênHEADremote mớinhất bằngconnector cólease vàđọcSHA từngblob, không gọi WORKPERSISTENCEscriptPASS.
 
 Bước tiếp: C03quátrìnhchămsóc/dịchvụ trong8tuần; ràma trận nănglực đượcgiữ khi chọn phươngánthay ôn. Chưa được tựchọntíchhợp/pháthành,thêm tuần9hoặcđềmới; tiếp tụcbiênsoạn/kiểmnguồnđãđượcphép.
+
+
+## 2026-10-08 — Khoảng trống ưu tiên 2: quá trình chăm sóc và loại dịch vụ
+
+Tiếp từ remote 34ed6a4ee8e671bfdd832f60541232a572d670a3; cụm01 đã lưu bbbd46980226084ba01be90f42a99a1eb7455418. Đọc lại hướng dẫn/plan/checkpoint/biểu đạt độc lập và nguồn liên quan. Môi trường chạy lệnh không mở được; dùng connector GitHub và kiểm JS trong phiên, không claim localgit/Node/repo suite/WORKPERSISTENCEscriptPASS. PDF nguồn được đọc bằng trang Library đúng file/bản; chưa recompute bytes/hash trong phiên này. MHLW kết quả tìm kiếm chính thức chỉ là excerpt bổ trợ, directopen403/timeout, không ghi fullpageverified.
+
+Thêm drafts/priority-gap-supplements-02.json: hai candidate thay ôn ngày50/49,8phần kiến thức,18lượtNhật–Việt,2bài đọc,10câu/40lýdo,4cáchnói,2transfer,8rubric/24caspec. Quá trình phân biệt assessment/kế hoạch/thực hiện/đánh giá và mong muốn đọc riêng; dịch vụ phân biệt nhân viên đếnnhà/bác đếncơsởbanngày/sốngtạicơsở,không chọn/đăngký/hứađiềukiện. Támghi chúkháiniệm nhậnbiết,không tạo bảnghitừchung mới/quota học mới. NPCgiữvai;phân bổ5/5/5/10/5,30phútchưađo;chưa chọn trongcurriculum vàkhông giao cảgốc+candidate.
+
+Evidence có ma trận giữnănglực2hàng dựavào foundation05/07,housework03 vàcandidate. RàAIsơbộ,khôngchứngnhận tươngđươngchiềusâu; cácriêng vềhỗtrợvềphòng/thu sách vẫn cầnkiểmtrướcthay. Không sửa audit lịch sử thành C03đãđóng. Bốn candidate hai cụm vẫn ngoàiquotalõi54bài/270câuôn/60câuđề,khônggọi58bàihoặcđủphạmvi.
+
+JSintegrityPASS và4negativecontrols từchối NPCsai/cờrelease/linkrubricsai/tảigấpđôi. Nodeentrypoint đượclưu nhưngchưachạy;khôngapp/evaluator/timing. Screen342trường/59dài>=60/0exact60window với2trangin22–23/PDF24–25;full276pagesimilarityunavailable,khôngchứngnhậnquyền. Báocáo/evidenceghi giới hạn và2worklistchưaký;human/domain/native/publisher/rights/runtime/releasefalse,chưaart/voice.
+
+Lưu hẹp5file bằng GitHubtree/commit/ref cólease trênHEAD hiện tại vàđọcSHA từngblob trước báođãlưu; không đổiUI/JLPT/plan/curriculum/mock. Bước tiếp: kiểm ma trận giữnănglực/tải củacả4candidate trước chọn; tiếp gapC02lạm dụng/hạnchếthânthể,C06khẩn cấp vàcơchế/kỹthuật theo nguồn phùhợp. Không tựtuần9/đềmới/tíchhợp/pháthành.
