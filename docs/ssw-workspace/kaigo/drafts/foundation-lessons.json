@@ -167,7 +167,36 @@
       "dailyPractice": {
         "plannedMinutes": 30,
         "durationMeasured": false,
-        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện."
+        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "practiceModes": [
+          "guided",
+          "bounded_roleplay",
+          "reduced_hints"
+        ],
+        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
+        "newVocabularyPolicy": "Ngày1–4 học từ mới theo danh sách; ngày5–7 nhắc lại, không áp chỉ tiêu từ mới."
       },
       "responsePolicy": {
         "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
@@ -178,7 +207,32 @@
           "Suy đoán năng lực/chẩn đoán từ tuổi"
         ],
         "runtimeImplemented": false
-      }
+      },
+      "responseRubricId": "kaigo-foundation-01",
+      "responseRubricFile": "foundation-response-rubrics.json",
+      "expressions": [
+        {
+          "id": "kaigo-foundation-01-expression-01",
+          "textJa": "はい、介護職員の田中です。今日はこちらのお部屋を担当します。よろしくお願いします。",
+          "meaningVi": "Vâng, tôi là Tanaka, nhân viên chăm sóc. Hôm nay tôi phụ trách phòng này. Mong bác giúp đỡ.",
+          "functionVi": "Cách nói theo mục tiêu tình huống; có thể thay bằng câu tương đương đúng ý."
+        },
+        {
+          "id": "kaigo-foundation-01-expression-02",
+          "textJa": "はい、介護職員です。看護師へのご相談があれば、担当の方につなぎます。",
+          "meaningVi": "Vâng, tôi là nhân viên chăm sóc. Nếu bác cần hỏi điều dưỡng, tôi sẽ liên lạc người phụ trách.",
+          "functionVi": "Cách nói theo mục tiêu tình huống; có thể thay bằng câu tương đương đúng ý."
+        }
+      ],
+      "objectivesVi": [
+        "Tự giới thiệu rõ vai trò; hỏi cách xưng hô người sử dụng muốn, không tự dùng tên thân mật.",
+        "Hoàn thành các ý giao tiếp trong rubric; sửa phần chưa rõ thay vì học thuộc duy nhất một câu."
+      ],
+      "scopeLimitsVi": [
+        "Tình huống thường, không xử lý khẩn cấp hay quy định ngoại lệ pháp lý.",
+        "Không tự chẩn đoán, tư vấn thuốc hoặc dạy thao tác chuyển người.",
+        "Chưa hình/audio/runtime; chưa người duyệt chuyên môn/ngôn ngữ/quyền."
+      ]
     },
     {
       "id": "kaigo-foundation-02",
@@ -359,7 +413,36 @@
       "dailyPractice": {
         "plannedMinutes": 30,
         "durationMeasured": false,
-        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện."
+        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "practiceModes": [
+          "guided",
+          "bounded_roleplay",
+          "reduced_hints"
+        ],
+        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
+        "newVocabularyPolicy": "Ngày1–4 học từ mới theo danh sách; ngày5–7 nhắc lại, không áp chỉ tiêu từ mới."
       },
       "responsePolicy": {
         "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
@@ -370,7 +453,32 @@
           "Suy đoán năng lực/chẩn đoán từ tuổi"
         ],
         "runtimeImplemented": false
-      }
+      },
+      "responseRubricId": "kaigo-foundation-02",
+      "responseRubricFile": "foundation-response-rubrics.json",
+      "expressions": [
+        {
+          "id": "kaigo-foundation-02-expression-01",
+          "textJa": "新聞はお読みになるのですね。拭く間、どこに置けばよろしいですか。",
+          "meaningVi": "Bác còn đọc báo đúng không. Trong lúc lau, đặt báo ở đâu được ạ?",
+          "functionVi": "Cách nói theo mục tiêu tình huống; có thể thay bằng câu tương đương đúng ý."
+        },
+        {
+          "id": "kaigo-foundation-02-expression-02",
+          "textJa": "新聞と眼鏡は隣の椅子ですね。そこに移してから、テーブルを拭いてもよろしいですか。",
+          "meaningVi": "Báo và kính để ghế bên cạnh đúng không. Tôi chuyển tới đó rồi lau bàn được không?",
+          "functionVi": "Cách nói theo mục tiêu tình huống; có thể thay bằng câu tương đương đúng ý."
+        }
+      ],
+      "objectivesVi": [
+        "Hỏi nhu cầu trước; xác nhận nơi đặt đồ và xin phép trước khi thực hiện.",
+        "Hoàn thành các ý giao tiếp trong rubric; sửa phần chưa rõ thay vì học thuộc duy nhất một câu."
+      ],
+      "scopeLimitsVi": [
+        "Tình huống thường, không xử lý khẩn cấp hay quy định ngoại lệ pháp lý.",
+        "Không tự chẩn đoán, tư vấn thuốc hoặc dạy thao tác chuyển người.",
+        "Chưa hình/audio/runtime; chưa người duyệt chuyên môn/ngôn ngữ/quyền."
+      ]
     },
     {
       "id": "kaigo-foundation-03",
@@ -539,7 +647,36 @@
       "dailyPractice": {
         "plannedMinutes": 30,
         "durationMeasured": false,
-        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện."
+        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "practiceModes": [
+          "guided",
+          "bounded_roleplay",
+          "reduced_hints"
+        ],
+        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
+        "newVocabularyPolicy": "Ngày1–4 học từ mới theo danh sách; ngày5–7 nhắc lại, không áp chỉ tiêu từ mới."
       },
       "responsePolicy": {
         "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
@@ -550,7 +687,32 @@
           "Suy đoán năng lực/chẩn đoán từ tuổi"
         ],
         "runtimeImplemented": false
-      }
+      },
+      "responseRubricId": "kaigo-foundation-03",
+      "responseRubricFile": "foundation-response-rubrics.json",
+      "expressions": [
+        {
+          "id": "kaigo-foundation-03-expression-01",
+          "textJa": "いいですね。ご自分で書きたいところと、お手伝いが必要なところを教えていただけますか。",
+          "meaningVi": "Hay quá. Bác cho tôi biết phần muốn tự viết và phần cần giúp được không?",
+          "functionVi": "Cách nói theo mục tiêu tình huống; có thể thay bằng câu tương đương đúng ý."
+        },
+        {
+          "id": "kaigo-foundation-03-expression-02",
+          "textJa": "文章はご自分で書かれるのですね。住所を読むお手伝いだけでよろしいですか。",
+          "meaningVi": "Nội dung bác tự viết đúng không. Tôi chỉ giúp đọc địa chỉ được không?",
+          "functionVi": "Cách nói theo mục tiêu tình huống; có thể thay bằng câu tương đương đúng ý."
+        }
+      ],
+      "objectivesVi": [
+        "Hỏi phần muốn tự làm và phần cần giúp; không làm thay toàn bộ chỉ vì nhanh hơn.",
+        "Hoàn thành các ý giao tiếp trong rubric; sửa phần chưa rõ thay vì học thuộc duy nhất một câu."
+      ],
+      "scopeLimitsVi": [
+        "Tình huống thường, không xử lý khẩn cấp hay quy định ngoại lệ pháp lý.",
+        "Không tự chẩn đoán, tư vấn thuốc hoặc dạy thao tác chuyển người.",
+        "Chưa hình/audio/runtime; chưa người duyệt chuyên môn/ngôn ngữ/quyền."
+      ]
     },
     {
       "id": "kaigo-foundation-04",
@@ -590,9 +752,11 @@
         }
       ],
       "vocabularyIds": [
-        "kaigo-vocab-foundation-02",
-        "kaigo-vocab-foundation-06",
-        "kaigo-vocab-foundation-11"
+        "kaigo-vocab-foundation-17",
+        "kaigo-vocab-foundation-18",
+        "kaigo-vocab-foundation-19",
+        "kaigo-vocab-foundation-20",
+        "kaigo-vocab-foundation-21"
       ],
       "dialogue": [
         {
@@ -720,7 +884,36 @@
           "5 phút từ/cách nói",
           "10 phút đọc vai, nói lại, sửa ý thiếu",
           "5 phút bài đọc và kiểm tra"
-        ]
+        ],
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "practiceModes": [
+          "guided",
+          "bounded_roleplay",
+          "reduced_hints"
+        ],
+        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
+        "newVocabularyPolicy": "Ngày1–4 học từ mới theo danh sách; ngày5–7 nhắc lại, không áp chỉ tiêu từ mới."
       },
       "responsePolicy": {
         "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
@@ -757,6 +950,32 @@
           "hintJa": "では、お部屋で伺います。廊下で内容が聞こえないようにしましょう。",
           "policy": "Accept equivalent meaning; clarify missing parts, do not require exact match."
         }
+      ],
+      "responseRubricId": "kaigo-foundation-04",
+      "responseRubricFile": "foundation-response-rubrics.json",
+      "expressions": [
+        {
+          "id": "kaigo-foundation-04-expression-01",
+          "textJa": "ここでは詳しいことを伺いません。お部屋でお話ししてもよろしいですか。",
+          "meaningVi": "Tôi sẽ không hỏi chi tiết ở đây. Mình nói trong phòng bác được không?",
+          "functionVi": "Cách nói theo mục tiêu tình huống; có thể thay bằng câu tương đương đúng ý."
+        },
+        {
+          "id": "kaigo-foundation-04-expression-02",
+          "textJa": "今は娘さんに伝えたくないのですね。まず、ご希望を伺います。",
+          "meaningVi": "Bây giờ bác chưa muốn báo con gái đúng không. Trước hết tôi sẽ nghe mong muốn của bác.",
+          "functionVi": "Cách nói theo mục tiêu tình huống; có thể thay bằng câu tương đương đúng ý."
+        }
+      ],
+      "objectivesVi": [
+        "Không hỏi nội dung riêng tư tại nơi người khác nghe được.",
+        "Không suy rằng người nhà được phép nhận mọi thông tin. Bài này là tình huống trao đổi thường, không mô tả ngoại lệ pháp lý/khẩn cấp.",
+        "Hoàn thành các ý giao tiếp trong rubric; sửa phần chưa rõ thay vì học thuộc duy nhất một câu."
+      ],
+      "scopeLimitsVi": [
+        "Tình huống thường, không xử lý khẩn cấp hay quy định ngoại lệ pháp lý.",
+        "Không tự chẩn đoán, tư vấn thuốc hoặc dạy thao tác chuyển người.",
+        "Chưa hình/audio/runtime; chưa người duyệt chuyên môn/ngôn ngữ/quyền."
       ]
     },
     {
@@ -799,7 +1018,9 @@
       "vocabularyIds": [
         "kaigo-vocab-foundation-02",
         "kaigo-vocab-foundation-06",
-        "kaigo-vocab-foundation-11"
+        "kaigo-vocab-foundation-11",
+        "kaigo-vocab-foundation-17",
+        "kaigo-vocab-foundation-20"
       ],
       "dialogue": [
         {
@@ -927,7 +1148,36 @@
           "5 phút từ/cách nói",
           "10 phút đọc vai, nói lại, sửa ý thiếu",
           "5 phút bài đọc và kiểm tra"
-        ]
+        ],
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "practiceModes": [
+          "guided",
+          "bounded_roleplay",
+          "reduced_hints"
+        ],
+        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
+        "newVocabularyPolicy": "Ngày1–4 học từ mới theo danh sách; ngày5–7 nhắc lại, không áp chỉ tiêu từ mới."
       },
       "responsePolicy": {
         "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
@@ -964,6 +1214,32 @@
           "hintJa": "確認した内容をお伝えします。その後、ご希望をもう一度伺います。",
           "policy": "Accept equivalent meaning; clarify missing parts, do not require exact match."
         }
+      ],
+      "responseRubricId": "kaigo-foundation-05",
+      "responseRubricFile": "foundation-response-rubrics.json",
+      "expressions": [
+        {
+          "id": "kaigo-foundation-05-expression-01",
+          "textJa": "参加はしたいけれど、撮影は希望されないのですね。",
+          "meaningVi": "Bác muốn tham gia nhưng không muốn được chụp ảnh đúng không.",
+          "functionVi": "Cách nói theo mục tiêu tình huống; có thể thay bằng câu tương đương đúng ý."
+        },
+        {
+          "id": "kaigo-foundation-05-expression-02",
+          "textJa": "今はわかりません。活動の担当者に確認してもよろしいですか。",
+          "meaningVi": "Hiện tôi chưa biết. Tôi hỏi người phụ trách hoạt động được không?",
+          "functionVi": "Cách nói theo mục tiêu tình huống; có thể thay bằng câu tương đương đúng ý."
+        }
+      ],
+      "objectivesVi": [
+        "Phân biệt từ chối chụp ảnh với từ chối cả hoạt động.",
+        "Không hứa có nơi tránh ảnh hoặc tự cho rằng ảnh không đăng mạng thì được chụp.",
+        "Hoàn thành các ý giao tiếp trong rubric; sửa phần chưa rõ thay vì học thuộc duy nhất một câu."
+      ],
+      "scopeLimitsVi": [
+        "Tình huống thường, không xử lý khẩn cấp hay quy định ngoại lệ pháp lý.",
+        "Không tự chẩn đoán, tư vấn thuốc hoặc dạy thao tác chuyển người.",
+        "Chưa hình/audio/runtime; chưa người duyệt chuyên môn/ngôn ngữ/quyền."
       ]
     },
     {
@@ -998,6 +1274,10 @@
             {
               "printed": 10,
               "pdf": 12
+            },
+            {
+              "printed": 118,
+              "pdf": 120
             }
           ],
           "verification": "text layer and printed labels checked; no full visual certification"
@@ -1005,8 +1285,10 @@
       ],
       "vocabularyIds": [
         "kaigo-vocab-foundation-02",
-        "kaigo-vocab-foundation-06",
-        "kaigo-vocab-foundation-11"
+        "kaigo-vocab-foundation-11",
+        "kaigo-vocab-foundation-19",
+        "kaigo-vocab-foundation-20",
+        "kaigo-vocab-foundation-21"
       ],
       "dialogue": [
         {
@@ -1134,7 +1416,36 @@
           "5 phút từ/cách nói",
           "10 phút đọc vai, nói lại, sửa ý thiếu",
           "5 phút bài đọc và kiểm tra"
-        ]
+        ],
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "practiceModes": [
+          "guided",
+          "bounded_roleplay",
+          "reduced_hints"
+        ],
+        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
+        "newVocabularyPolicy": "Ngày1–4 học từ mới theo danh sách; ngày5–7 nhắc lại, không áp chỉ tiêu từ mới."
       },
       "responsePolicy": {
         "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
@@ -1171,6 +1482,32 @@
           "hintJa": "では、期限の確認は岸本さんが担当されるのですね。確認後の連絡をお待ちします。",
           "policy": "Accept equivalent meaning; clarify missing parts, do not require exact match."
         }
+      ],
+      "responseRubricId": "kaigo-foundation-06",
+      "responseRubricFile": "foundation-response-rubrics.json",
+      "expressions": [
+        {
+          "id": "kaigo-foundation-06-expression-01",
+          "textJa": "すみません。二つの用件を、一つずつ教えていただけますか。",
+          "meaningVi": "Xin lỗi. Bạn nói từng việc trong hai việc được không?",
+          "functionVi": "Cách nói theo mục tiêu tình huống; có thể thay bằng câu tương đương đúng ý."
+        },
+        {
+          "id": "kaigo-foundation-06-expression-02",
+          "textJa": "図書室は三時までで、本は今日返さなくてもよい、ということですね。",
+          "meaningVi": "Phòng sách tới ba giờ, còn sách không phải trả hôm nay, đúng không?",
+          "functionVi": "Cách nói theo mục tiêu tình huống; có thể thay bằng câu tương đương đúng ý."
+        }
+      ],
+      "objectivesVi": [
+        "Hỏi lại từng việc và nhắc lại điều đã hiểu.",
+        "Tách dữ kiện xác nhận, chưa xác nhận và người chịu trách nhiệm tiếp theo.",
+        "Hoàn thành các ý giao tiếp trong rubric; sửa phần chưa rõ thay vì học thuộc duy nhất một câu."
+      ],
+      "scopeLimitsVi": [
+        "Tình huống thường, không xử lý khẩn cấp hay quy định ngoại lệ pháp lý.",
+        "Không tự chẩn đoán, tư vấn thuốc hoặc dạy thao tác chuyển người.",
+        "Chưa hình/audio/runtime; chưa người duyệt chuyên môn/ngôn ngữ/quyền."
       ]
     },
     {
@@ -1211,9 +1548,11 @@
         }
       ],
       "vocabularyIds": [
+        "kaigo-vocab-foundation-02",
         "kaigo-vocab-foundation-06",
         "kaigo-vocab-foundation-11",
-        "kaigo-vocab-foundation-16"
+        "kaigo-vocab-foundation-16",
+        "kaigo-vocab-foundation-21"
       ],
       "dialogue": [
         {
@@ -1341,7 +1680,36 @@
           "5 phút từ/cách nói",
           "10 phút đọc vai, nói lại, sửa ý thiếu",
           "5 phút bài đọc và kiểm tra"
-        ]
+        ],
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "practiceModes": [
+          "guided",
+          "bounded_roleplay",
+          "reduced_hints"
+        ],
+        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
+        "newVocabularyPolicy": "Ngày1–4 học từ mới theo danh sách; ngày5–7 nhắc lại, không áp chỉ tiêu từ mới."
       },
       "responsePolicy": {
         "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
@@ -1378,6 +1746,32 @@
           "hintJa": "承りました。ページを開いた後は、ご自分で読んでいただきます。ほかに必要なことがあれば、お呼びください。",
           "policy": "Accept equivalent meaning; clarify missing parts, do not require exact match."
         }
+      ],
+      "responseRubricId": "kaigo-foundation-07",
+      "responseRubricFile": "foundation-response-rubrics.json",
+      "expressions": [
+        {
+          "id": "kaigo-foundation-07-expression-01",
+          "textJa": "今日はお部屋で読書をしたいのですね。何かお手伝いすることはありますか。",
+          "meaningVi": "Hôm nay bác muốn đọc sách trong phòng đúng không. Có việc gì tôi giúp được không?",
+          "functionVi": "Cách nói theo mục tiêu tình huống; có thể thay bằng câu tương đương đúng ý."
+        },
+        {
+          "id": "kaigo-foundation-07-expression-02",
+          "textJa": "続きのページを探すお手伝いですね。目印は何かありますか。",
+          "meaningVi": "Tôi giúp tìm trang tiếp theo đúng không. Có dấu gì không ạ?",
+          "functionVi": "Cách nói theo mục tiêu tình huống; có thể thay bằng câu tương đương đúng ý."
+        }
+      ],
+      "objectivesVi": [
+        "Phối hợp hỏi mong muốn, hỗ trợ đúng phạm vi và truyền thông tin cần thiết.",
+        "Không ép tham gia hoặc đọc thay khi bác muốn tự đọc.",
+        "Hoàn thành các ý giao tiếp trong rubric; sửa phần chưa rõ thay vì học thuộc duy nhất một câu."
+      ],
+      "scopeLimitsVi": [
+        "Tình huống thường, không xử lý khẩn cấp hay quy định ngoại lệ pháp lý.",
+        "Không tự chẩn đoán, tư vấn thuốc hoặc dạy thao tác chuyển người.",
+        "Chưa hình/audio/runtime; chưa người duyệt chuyên môn/ngôn ngữ/quyền."
       ]
     }
   ],

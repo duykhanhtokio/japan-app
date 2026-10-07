@@ -1,0 +1,448 @@
+{
+  "version": 1,
+  "status": "draft_ai_editorial_only",
+  "runtimeIntegrated": false,
+  "humanReviewed": false,
+  "evaluationPolicy": {
+    "method": "Semantic criteria, not exact-match/keyword-only scoring. The file is an editorial specification, not executable AI scoring.",
+    "incomplete": "Identify missing meaning and ask for clarification before advancing.",
+    "unsupported": "Do not invent facts beyond the current dialogue prefix.",
+    "asrUncertain": "Request repetition or text editing; no care penalty from uncertain recognition.",
+    "feedback": "Mention achieved meaning, one point to repair, a hint, then retry.",
+    "separateDimensions": [
+      "situation comprehension",
+      "communication task",
+      "care appropriateness",
+      "Japanese expression"
+    ],
+    "pronunciation": "not assessed without verified audio implementation"
+  },
+  "lessons": [
+    {
+      "lessonId": "kaigo-foundation-01",
+      "unsafeExampleJa": "私は看護師なので、診断もできます。",
+      "unsafeExplanationVi": "Sai vai và tự nhận thẩm quyền chẩn đoán.",
+      "turns": [
+        {
+          "id": "kaigo-foundation-01-response-02",
+          "promptTurn": 1,
+          "playerTurn": 2,
+          "criteriaVi": "Vâng, tôi là Tanaka, nhân viên chăm sóc. Hôm nay tôi phụ trách phòng này. Mong bác giúp đỡ.",
+          "acceptedExamplesJa": [
+            "はい、介護職員の田中です。今日はこちらのお部屋を担当します。よろしくお願いします。",
+            "田中と申します。介護職員として、今日はこのお部屋を担当します。どうぞよろしくお願いいたします。"
+          ],
+          "repairHintJa": "はい、介護職員の田中です。今日はこちらのお部屋を担当します。よろしくお願いします。",
+          "nextNpcTurn": 3,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Vâng, tôi là Tanaka, nhân viên chăm sóc. Hôm nay tôi phụ trách phòng này. Mong bác giúp đỡ."
+        },
+        {
+          "id": "kaigo-foundation-01-response-04",
+          "promptTurn": 3,
+          "playerTurn": 4,
+          "criteriaVi": "Vâng, tôi là nhân viên chăm sóc. Nếu bác cần hỏi điều dưỡng, tôi sẽ liên lạc người phụ trách.",
+          "acceptedExamplesJa": [
+            "はい、介護職員です。看護師へのご相談があれば、担当の方につなぎます。",
+            "私は介護職員です。看護師に相談されたい場合は、担当者へ連絡します。"
+          ],
+          "repairHintJa": "はい、介護職員です。看護師へのご相談があれば、担当の方につなぎます。",
+          "nextNpcTurn": 5,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Vâng, tôi là nhân viên chăm sóc. Nếu bác cần hỏi điều dưỡng, tôi sẽ liên lạc người phụ trách."
+        },
+        {
+          "id": "kaigo-foundation-01-response-06",
+          "promptTurn": 5,
+          "playerTurn": 6,
+          "criteriaVi": "Haruko-san đúng không. Tôi sẽ gọi như vậy. Bây giờ nói chuyện một chút được không ạ?",
+          "acceptedExamplesJa": [
+            "晴子さんですね。そのようにお呼びします。今、少しお話ししてもよろしいですか。",
+            "では、晴子さんとお呼びしますね。少しだけお話ししてもいいですか。"
+          ],
+          "repairHintJa": "晴子さんですね。そのようにお呼びします。今、少しお話ししてもよろしいですか。",
+          "nextNpcTurn": 7,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Haruko-san đúng không. Tôi sẽ gọi như vậy. Bây giờ nói chuyện một chút được không ạ?"
+        },
+        {
+          "id": "kaigo-foundation-01-response-08",
+          "promptTurn": 7,
+          "playerTurn": 8,
+          "criteriaVi": "Tôi hiểu. Hôm nay tôi chỉ chào hỏi thôi. Mình nói chuyện lại lúc bác thuận tiện nhé.",
+          "acceptedExamplesJa": [
+            "承知しました。今日は挨拶だけにします。またご都合のよいときにお話ししましょう。",
+            "今日はご挨拶だけにして、お話はご都合のよいときに伺います。"
+          ],
+          "repairHintJa": "承知しました。今日は挨拶だけにします。またご都合のよいときにお話ししましょう。",
+          "nextNpcTurn": null,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi hiểu. Hôm nay tôi chỉ chào hỏi thôi. Mình nói chuyện lại lúc bác thuận tiện nhé."
+        }
+      ]
+    },
+    {
+      "lessonId": "kaigo-foundation-02",
+      "unsafeExampleJa": "新聞は邪魔なので捨てます。",
+      "unsafeExplanationVi": "Trái yêu cầu giữ báo và di chuyển đồ không được đồng ý.",
+      "turns": [
+        {
+          "id": "kaigo-foundation-02-response-02",
+          "promptTurn": 1,
+          "playerTurn": 2,
+          "criteriaVi": "Tôi lau bàn nhé, hay để sau ạ?",
+          "acceptedExamplesJa": [
+            "テーブルを拭きましょうか。それとも、あとにしますか。",
+            "今、テーブルをお拭きしてもいいですか。後のほうがよければ、お知らせください。"
+          ],
+          "repairHintJa": "テーブルを拭きましょうか。それとも、あとにしますか。",
+          "nextNpcTurn": 3,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi lau bàn nhé, hay để sau ạ?"
+        },
+        {
+          "id": "kaigo-foundation-02-response-04",
+          "promptTurn": 3,
+          "playerTurn": 4,
+          "criteriaVi": "Bác còn đọc báo đúng không. Trong lúc lau, đặt báo ở đâu được ạ?",
+          "acceptedExamplesJa": [
+            "新聞はお読みになるのですね。拭く間、どこに置けばよろしいですか。",
+            "まだ新聞を読まれるのですね。清掃中の置き場所を教えていただけますか。"
+          ],
+          "repairHintJa": "新聞はお読みになるのですね。拭く間、どこに置けばよろしいですか。",
+          "nextNpcTurn": 5,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Bác còn đọc báo đúng không. Trong lúc lau, đặt báo ở đâu được ạ?"
+        },
+        {
+          "id": "kaigo-foundation-02-response-06",
+          "promptTurn": 5,
+          "playerTurn": 6,
+          "criteriaVi": "Báo và kính để ghế bên cạnh đúng không. Tôi chuyển tới đó rồi lau bàn được không?",
+          "acceptedExamplesJa": [
+            "新聞と眼鏡は隣の椅子ですね。そこに移してから、テーブルを拭いてもよろしいですか。",
+            "二つとも隣の椅子へ置いてから拭く、ということでよろしいでしょうか。"
+          ],
+          "repairHintJa": "新聞と眼鏡は隣の椅子ですね。そこに移してから、テーブルを拭いてもよろしいですか。",
+          "nextNpcTurn": 7,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Báo và kính để ghế bên cạnh đúng không. Tôi chuyển tới đó rồi lau bàn được không?"
+        },
+        {
+          "id": "kaigo-foundation-02-response-08",
+          "promptTurn": 7,
+          "playerTurn": 8,
+          "criteriaVi": "Tôi hiểu. Lau xong tôi trả báo lại. Kính cũng trả về chỗ cũ được không?",
+          "acceptedExamplesJa": [
+            "わかりました。拭き終わったら新聞を戻します。眼鏡も元の場所に戻してよろしいですか。",
+            "終わったら新聞を戻します。眼鏡も元に戻していいでしょうか。"
+          ],
+          "repairHintJa": "わかりました。拭き終わったら新聞を戻します。眼鏡も元の場所に戻してよろしいですか。",
+          "nextNpcTurn": 9,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi hiểu. Lau xong tôi trả báo lại. Kính cũng trả về chỗ cũ được không?"
+        },
+        {
+          "id": "kaigo-foundation-02-response-10",
+          "promptTurn": 9,
+          "playerTurn": 10,
+          "criteriaVi": "Tôi hiểu. Vậy tôi bắt đầu bây giờ.",
+          "acceptedExamplesJa": [
+            "承りました。では、今から始めます。",
+            "では、確認したとおりに始めさせていただきます。"
+          ],
+          "repairHintJa": "承りました。では、今から始めます。",
+          "nextNpcTurn": null,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi hiểu. Vậy tôi bắt đầu bây giờ."
+        }
+      ]
+    },
+    {
+      "lessonId": "kaigo-foundation-03",
+      "unsafeExampleJa": "私が全部書けば早いので、任せてください。",
+      "unsafeExplanationVi": "Làm thay phần người sử dụng muốn tự làm.",
+      "turns": [
+        {
+          "id": "kaigo-foundation-03-response-02",
+          "promptTurn": 1,
+          "playerTurn": 2,
+          "criteriaVi": "Hay quá. Bác cho tôi biết phần muốn tự viết và phần cần giúp được không?",
+          "acceptedExamplesJa": [
+            "いいですね。ご自分で書きたいところと、お手伝いが必要なところを教えていただけますか。",
+            "どの部分はご自分で行い、どこを私が手伝えばよいでしょうか。"
+          ],
+          "repairHintJa": "いいですね。ご自分で書きたいところと、お手伝いが必要なところを教えていただけますか。",
+          "nextNpcTurn": 3,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Hay quá. Bác cho tôi biết phần muốn tự viết và phần cần giúp được không?"
+        },
+        {
+          "id": "kaigo-foundation-03-response-04",
+          "promptTurn": 3,
+          "playerTurn": 4,
+          "criteriaVi": "Nội dung bác tự viết đúng không. Tôi chỉ giúp đọc địa chỉ được không?",
+          "acceptedExamplesJa": [
+            "文章はご自分で書かれるのですね。住所を読むお手伝いだけでよろしいですか。",
+            "文章はご自分で、私は住所を読むだけですね。"
+          ],
+          "repairHintJa": "文章はご自分で書かれるのですね。住所を読むお手伝いだけでよろしいですか。",
+          "nextNpcTurn": 5,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Nội dung bác tự viết đúng không. Tôi chỉ giúp đọc địa chỉ được không?"
+        },
+        {
+          "id": "kaigo-foundation-03-response-06",
+          "promptTurn": 5,
+          "playerTurn": 6,
+          "criteriaVi": "Tôi hiểu. Tôi sẽ đọc từng phần thay vì đọc hết một lần. Muốn nghe lại bác hãy nói nhé.",
+          "acceptedExamplesJa": [
+            "承知しました。一度に全部ではなく、区切って読みますね。もう一度聞きたいときは教えてください。",
+            "少しずつ区切って読みます。聞き直したいところがあれば、言ってください。"
+          ],
+          "repairHintJa": "承知しました。一度に全部ではなく、区切って読みますね。もう一度聞きたいときは教えてください。",
+          "nextNpcTurn": 7,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi hiểu. Tôi sẽ đọc từng phần thay vì đọc hết một lần. Muốn nghe lại bác hãy nói nhé."
+        },
+        {
+          "id": "kaigo-foundation-03-response-08",
+          "promptTurn": 7,
+          "playerTurn": 8,
+          "criteriaVi": "Vâng. Bác cũng tự kiểm đúng không. Khi cần bác hãy gọi tôi nhé.",
+          "acceptedExamplesJa": [
+            "はい。確認もご自分でされるのですね。必要になったら、またお声がけください。",
+            "ご自身で確認されるのですね。ほかに手助けが必要ならお知らせください。"
+          ],
+          "repairHintJa": "はい。確認もご自分でされるのですね。必要になったら、またお声がけください。",
+          "nextNpcTurn": null,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Vâng. Bác cũng tự kiểm đúng không. Khi cần bác hãy gọi tôi nhé."
+        }
+      ]
+    },
+    {
+      "lessonId": "kaigo-foundation-04",
+      "unsafeExampleJa": "娘さんには全部伝えておきます。",
+      "unsafeExplanationVi": "Trái lựa chọn hiện tại và quá phạm vi chia sẻ.",
+      "turns": [
+        {
+          "id": "kaigo-foundation-04-response-02",
+          "promptTurn": 1,
+          "playerTurn": 2,
+          "criteriaVi": "Tôi sẽ không hỏi chi tiết ở đây. Mình nói trong phòng bác được không?",
+          "acceptedExamplesJa": [
+            "ここでは詳しいことを伺いません。お部屋でお話ししてもよろしいですか。",
+            "詳しいお話は廊下で聞かず、お部屋で伺ってもよろしいでしょうか。"
+          ],
+          "repairHintJa": "ここでは詳しいことを伺いません。お部屋でお話ししてもよろしいですか。",
+          "nextNpcTurn": 3,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi sẽ không hỏi chi tiết ở đây. Mình nói trong phòng bác được không?"
+        },
+        {
+          "id": "kaigo-foundation-04-response-04",
+          "promptTurn": 3,
+          "playerTurn": 4,
+          "criteriaVi": "Bây giờ bác chưa muốn báo con gái đúng không. Trước hết tôi sẽ nghe mong muốn của bác.",
+          "acceptedExamplesJa": [
+            "今は娘さんに伝えたくないのですね。まず、ご希望を伺います。",
+            "娘さんへの連絡は今は希望されないのですね。まずお話を伺います。"
+          ],
+          "repairHintJa": "今は娘さんに伝えたくないのですね。まず、ご希望を伺います。",
+          "nextNpcTurn": 5,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Bây giờ bác chưa muốn báo con gái đúng không. Trước hết tôi sẽ nghe mong muốn của bác."
+        },
+        {
+          "id": "kaigo-foundation-04-response-06",
+          "promptTurn": 5,
+          "playerTurn": 6,
+          "criteriaVi": "Nếu cần báo nhân viên phụ trách, mình cùng xác nhận trước nội dung sẽ chia sẻ nhé.",
+          "acceptedExamplesJa": [
+            "担当職員に伝える必要が出たら、どの内容を共有するか、先に一緒に確認しましょう。",
+            "担当者と共有する必要があるときは、その内容をご本人と先に確認します。"
+          ],
+          "repairHintJa": "担当職員に伝える必要が出たら、どの内容を共有するか、先に一緒に確認しましょう。",
+          "nextNpcTurn": 7,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Nếu cần báo nhân viên phụ trách, mình cùng xác nhận trước nội dung sẽ chia sẻ nhé."
+        },
+        {
+          "id": "kaigo-foundation-04-response-08",
+          "promptTurn": 7,
+          "playerTurn": 8,
+          "criteriaVi": "Vậy tôi nghe bác trong phòng. Mình tránh để người ở hành lang nghe nội dung nhé.",
+          "acceptedExamplesJa": [
+            "では、お部屋で伺います。廊下で内容が聞こえないようにしましょう。",
+            "お部屋でお話ししましょう。廊下に内容が聞こえないよう配慮します。"
+          ],
+          "repairHintJa": "では、お部屋で伺います。廊下で内容が聞こえないようにしましょう。",
+          "nextNpcTurn": null,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Vậy tôi nghe bác trong phòng. Mình tránh để người ở hành lang nghe nội dung nhé."
+        }
+      ]
+    },
+    {
+      "lessonId": "kaigo-foundation-05",
+      "unsafeExampleJa": "写真に写らない席は必ずあります。",
+      "unsafeExplanationVi": "Hứa thông tin chưa xác nhận.",
+      "turns": [
+        {
+          "id": "kaigo-foundation-05-response-02",
+          "promptTurn": 1,
+          "playerTurn": 2,
+          "criteriaVi": "Bác muốn tham gia nhưng không muốn được chụp ảnh đúng không.",
+          "acceptedExamplesJa": [
+            "参加はしたいけれど、撮影は希望されないのですね。",
+            "花植えには参加したいけれど、写真には写りたくないということですね。"
+          ],
+          "repairHintJa": "参加はしたいけれど、撮影は希望されないのですね。",
+          "nextNpcTurn": 3,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Bác muốn tham gia nhưng không muốn được chụp ảnh đúng không."
+        },
+        {
+          "id": "kaigo-foundation-05-response-04",
+          "promptTurn": 3,
+          "playerTurn": 4,
+          "criteriaVi": "Hiện tôi chưa biết. Tôi hỏi người phụ trách hoạt động được không?",
+          "acceptedExamplesJa": [
+            "今はわかりません。活動の担当者に確認してもよろしいですか。",
+            "参加できる方法はまだ確認していません。担当者に聞いてもいいですか。"
+          ],
+          "repairHintJa": "今はわかりません。活動の担当者に確認してもよろしいですか。",
+          "nextNpcTurn": 5,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Hiện tôi chưa biết. Tôi hỏi người phụ trách hoạt động được không?"
+        },
+        {
+          "id": "kaigo-foundation-05-response-06",
+          "promptTurn": 5,
+          "playerTurn": 6,
+          "criteriaVi": "Tôi sẽ báo bác không muốn được chụp ảnh và hỏi cách tham gia phù hợp. Hiện cách tham gia chưa được quyết định.",
+          "acceptedExamplesJa": [
+            "撮影を希望されないことを伝え、参加できる方法を確認します。まだ参加方法は決まっていません。",
+            "撮影を希望しないことを伝えて方法を聞きます。今の時点では方法は未定です。"
+          ],
+          "repairHintJa": "撮影を希望されないことを伝え、参加できる方法を確認します。まだ参加方法は決まっていません。",
+          "nextNpcTurn": 7,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi sẽ báo bác không muốn được chụp ảnh và hỏi cách tham gia phù hợp. Hiện cách tham gia chưa được quyết định."
+        },
+        {
+          "id": "kaigo-foundation-05-response-08",
+          "promptTurn": 7,
+          "playerTurn": 8,
+          "criteriaVi": "Tôi sẽ báo kết quả xác nhận. Sau đó tôi hỏi lại mong muốn của bác.",
+          "acceptedExamplesJa": [
+            "確認した内容をお伝えします。その後、ご希望をもう一度伺います。",
+            "回答をお知らせしてから、参加するかどうかお伺いします。"
+          ],
+          "repairHintJa": "確認した内容をお伝えします。その後、ご希望をもう一度伺います。",
+          "nextNpcTurn": null,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi sẽ báo kết quả xác nhận. Sau đó tôi hỏi lại mong muốn của bác."
+        }
+      ]
+    },
+    {
+      "lessonId": "kaigo-foundation-06",
+      "unsafeExampleJa": "返却期限は明日ですね。",
+      "unsafeExplanationVi": "Suy đoán hạn trả chưa rõ.",
+      "turns": [
+        {
+          "id": "kaigo-foundation-06-response-02",
+          "promptTurn": 1,
+          "playerTurn": 2,
+          "criteriaVi": "Xin lỗi. Bạn nói từng việc trong hai việc được không?",
+          "acceptedExamplesJa": [
+            "すみません。二つの用件を、一つずつ教えていただけますか。",
+            "聞き漏らしたので、図書室と返却の件を分けて説明していただけますか。"
+          ],
+          "repairHintJa": "すみません。二つの用件を、一つずつ教えていただけますか。",
+          "nextNpcTurn": 3,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Xin lỗi. Bạn nói từng việc trong hai việc được không?"
+        },
+        {
+          "id": "kaigo-foundation-06-response-04",
+          "promptTurn": 3,
+          "playerTurn": 4,
+          "criteriaVi": "Phòng sách tới ba giờ, còn sách không phải trả hôm nay, đúng không?",
+          "acceptedExamplesJa": [
+            "図書室は三時までで、本は今日返さなくてもよい、ということですね。",
+            "開室は十五時までで、今日の返却は必須ではないのですね。"
+          ],
+          "repairHintJa": "図書室は三時までで、本は今日返さなくてもよい、ということですね。",
+          "nextNpcTurn": 5,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Phòng sách tới ba giờ, còn sách không phải trả hôm nay, đúng không?"
+        },
+        {
+          "id": "kaigo-foundation-06-response-06",
+          "promptTurn": 5,
+          "playerTurn": 6,
+          "criteriaVi": "Hạn chưa rõ đúng không. Tôi sẽ tách việc hôm nay chưa phải trả và việc chưa xác nhận hạn.",
+          "acceptedExamplesJa": [
+            "期限は未確認ですね。今日返さなくてもよいことと、期限が未確認なことを分けて伝えます。",
+            "返却期限はまだ不明ですね。その点と、今日返さなくてもよい点を区別して伝えます。"
+          ],
+          "repairHintJa": "期限は未確認ですね。今日返さなくてもよいことと、期限が未確認なことを分けて伝えます。",
+          "nextNpcTurn": 7,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Hạn chưa rõ đúng không. Tôi sẽ tách việc hôm nay chưa phải trả và việc chưa xác nhận hạn."
+        },
+        {
+          "id": "kaigo-foundation-06-response-08",
+          "promptTurn": 7,
+          "playerTurn": 8,
+          "criteriaVi": "Vậy Kishimoto phụ trách kiểm tra hạn đúng không. Tôi sẽ đợi thông tin sau khi bạn xác nhận.",
+          "acceptedExamplesJa": [
+            "では、期限の確認は岸本さんが担当されるのですね。確認後の連絡をお待ちします。",
+            "期限は岸本さんが調べるのですね。わかったら連絡をお願いします。"
+          ],
+          "repairHintJa": "では、期限の確認は岸本さんが担当されるのですね。確認後の連絡をお待ちします。",
+          "nextNpcTurn": null,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Vậy Kishimoto phụ trách kiểm tra hạn đúng không. Tôi sẽ đợi thông tin sau khi bạn xác nhận."
+        }
+      ]
+    },
+    {
+      "lessonId": "kaigo-foundation-07",
+      "unsafeExampleJa": "本は後にして、音楽の時間へ行きましょう。",
+      "unsafeExplanationVi": "Ép thay lựa chọn của người sử dụng.",
+      "turns": [
+        {
+          "id": "kaigo-foundation-07-response-02",
+          "promptTurn": 1,
+          "playerTurn": 2,
+          "criteriaVi": "Hôm nay bác muốn đọc sách trong phòng đúng không. Có việc gì tôi giúp được không?",
+          "acceptedExamplesJa": [
+            "今日はお部屋で読書をしたいのですね。何かお手伝いすることはありますか。",
+            "お部屋で本を読みたいのですね。私にできるお手伝いはありますか。"
+          ],
+          "repairHintJa": "今日はお部屋で読書をしたいのですね。何かお手伝いすることはありますか。",
+          "nextNpcTurn": 3,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Hôm nay bác muốn đọc sách trong phòng đúng không. Có việc gì tôi giúp được không?"
+        },
+        {
+          "id": "kaigo-foundation-07-response-04",
+          "promptTurn": 3,
+          "playerTurn": 4,
+          "criteriaVi": "Tôi giúp tìm trang tiếp theo đúng không. Có dấu gì không ạ?",
+          "acceptedExamplesJa": [
+            "続きのページを探すお手伝いですね。目印は何かありますか。",
+            "続きを探せばよいのですね。ページに何か印はありますか。"
+          ],
+          "repairHintJa": "続きのページを探すお手伝いですね。目印は何かありますか。",
+          "nextNpcTurn": 5,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi giúp tìm trang tiếp theo đúng không. Có dấu gì không ạ?"
+        },
+        {
+          "id": "kaigo-foundation-07-response-06",
+          "promptTurn": 5,
+          "playerTurn": 6,
+          "criteriaVi": "Tôi mở trang có dấu xanh. Tôi chỉ báo người phụ trách rằng hôm nay bác không tham gia nhé.",
+          "acceptedExamplesJa": [
+            "青いしおりのページを開きます。担当者には今日参加しないことだけを伝えますね。",
+            "青いしおりの所を開きます。今日欠席されることだけ、担当者に伝えます。"
+          ],
+          "repairHintJa": "青いしおりのページを開きます。担当者には今日参加しないことだけを伝えますね。",
+          "nextNpcTurn": 7,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi mở trang có dấu xanh. Tôi chỉ báo người phụ trách rằng hôm nay bác không tham gia nhé."
+        },
+        {
+          "id": "kaigo-foundation-07-response-08",
+          "promptTurn": 7,
+          "playerTurn": 8,
+          "criteriaVi": "Tôi hiểu. Sau khi mở trang, bác tự đọc nhé. Cần việc gì khác bác hãy gọi tôi.",
+          "acceptedExamplesJa": [
+            "承りました。ページを開いた後は、ご自分で読んでいただきます。ほかに必要なことがあれば、お呼びください。",
+            "では、ページを開くところまでお手伝いします。あとはご自身で読まれるのですね。必要なときはお呼びください。"
+          ],
+          "repairHintJa": "承りました。ページを開いた後は、ご自分で読んでいただきます。ほかに必要なことがあれば、お呼びください。",
+          "nextNpcTurn": null,
+          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi hiểu. Sau khi mở trang, bác tự đọc nhé. Cần việc gì khác bác hãy gọi tôi."
+        }
+      ]
+    }
+  ]
+}

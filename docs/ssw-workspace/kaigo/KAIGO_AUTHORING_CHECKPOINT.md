@@ -59,3 +59,11 @@ Thêm bốn tình huống mới: giữ kín chuyện gia đình; từ chối ch�
 Tổng nền tảng7 bài,58 lượt,7 bài đọc,21 câu. Tổng cùng di chuyển14 bài,48 câu ôn. Vẫn là bản nháp AI, chưa chứng nhận chuyên môn/ngôn ngữ/quyền, chưa assets/runtime/thi đầy đủ. Ngày4–7 có đích nghĩa từng lượt; chưa là bộ chấm tự do thực thi. Cần bổ sung từ/cách nói ngày4 và biến thể phản hồi của toàn tuần trước tích hợp.
 
 Điểm tiếp theo sau lưu bền: hoàn thiện hồ sơ từ/cách nói và phản hồi tuần1, sau đó soạn tuần2 hoặc cụm ăn uống sau đọc nguồn. Các lựa chọn thi chưa chốt vẫn giữ nguyên.
+
+## Cụm tuần1 — hồ sơ biên tập đầy đủ, chờ kiểm duyệt
+
+Theo chỉ đạo mới: làm theo cụm tuần, không chia thành các lượt vài bài. Đã hoàn thiện hồ sơ cho cả7 bài tuần1:58 lượt,7 bài đọc,21 câu kiểm tra,21 mục từ bản nháp (5 mục thêm cho ngày4),14 cách nói,29 rubric lượt người học có biến thể và phản hồi sửa. Lịch210phút là dự kiến; mỗi ngày đủ blocks30phút, ngày5–7 ôn lại từ, không ép học mới.
+
+week-01-manifest.json ghi phạm vi cụm và gate; scripts/check-kaigo-week1-draft.mjs kiểm toàn cụm, có thể chạy lại. Không tăng trạng thái thành nội dung phát hành: cách đọc mới vẫn AI rà; domain/native/rights/runtime/release chưa được duyệt. Rubric là đặc tả ý nghĩa, không phải bộ chấm chạy trong app. Chưa đo thời lượng hoặc có assets.
+
+Điểm tiếp theo sau lưu bền: soạn trọn tuần2 (ngày8–14) gồm kiến thức/từ/cách nói,NPC,bài đọc,câu hỏi,rubric,QA trong một cụm. Đọc nguồn riêng của từng chủ đề trước viết; không áp quy tắc11lượt hoặc nghe JLPT. Các quyết định đề thi còn chưa chốt phải trình khi tới phần phụ thuộc.
