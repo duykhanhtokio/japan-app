@@ -31,7 +31,7 @@ const allCoreQuestions = lessons.flatMap(l => l.questions);
 const allMockQuestions = ['skills', 'japanese'].flatMap(k => read(`drafts/kaigo-${k}-mock-01.json`).questions);
 assert.equal(allMockQuestions.length, 60);
 const stems = new Set([...allCoreQuestions, ...allMockQuestions].map(q => q.promptJa));
-const playerLines = new Set(lessons.flatMap(l => l.dialogue.filter(t => t.speaker === 'player').map(t => t.ja)));
+const playerLines = new Set(lessons.flatMap(l => l.dialogue.filter(t => t.speaker === 'player').map(t => t.ja ?? t.textJa)));
 for (const m of bundle.modules) {
   const original = byId.get(m.baseLessonId);
   assert(original);

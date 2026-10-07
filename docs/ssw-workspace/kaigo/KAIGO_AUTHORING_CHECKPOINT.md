@@ -214,3 +214,16 @@ Evidence có ma trận giữnănglực2hàng dựavào foundation05/07,housework
 JSintegrityPASS và4negativecontrols từchối NPCsai/cờrelease/linkrubricsai/tảigấpđôi. Nodeentrypoint đượclưu nhưngchưachạy;khôngapp/evaluator/timing. Screen342trường/59dài>=60/0exact60window với2trangin22–23/PDF24–25;full276pagesimilarityunavailable,khôngchứngnhậnquyền. Báocáo/evidenceghi giới hạn và2worklistchưaký;human/domain/native/publisher/rights/runtime/releasefalse,chưaart/voice.
 
 Lưu hẹp5file bằng GitHubtree/commit/ref cólease trênHEAD hiện tại vàđọcSHA từngblob trước báođãlưu; không đổiUI/JLPT/plan/curriculum/mock. Bước tiếp: kiểm ma trận giữnănglực/tải củacả4candidate trước chọn; tiếp gapC02lạm dụng/hạnchếthânthể,C06khẩn cấp vàcơchế/kỹthuật theo nguồn phùhợp. Không tựtuần9/đềmới/tíchhợp/pháthành.
+
+
+## 2026-10-08 — replacement audit 03
+
+- Baseline remote commit: `99c5aa6bf03df5e9c1ebd242c9339ea574f46ce4`.
+- Audited all four unselected gap candidates: 15 capability rows cover all 11 original objectives. All four remain NOT_READY_FOR_REPLACEMENT. Two applied practices are not retained: not-found versus lost, and assistance/time for early departure; other mappings remain partial. Future-day practice is not prior retrieval.
+- Saved reviews/priority-gap-replacement-audit-03.json, reviews/priority-gap-timing-protocol-03.json, and reviews/PRIORITY_GAP_REPLACEMENT_AUDIT_03_REPORT.md. Timing templates are unexecuted with no observed learner data.
+- Repaired existing-vocabulary links in batch 02, audit metadata in both bundles, core textJa duplicate detection in batch 01, and canonical-ID validation in batch 02. Candidate teaching prose/questions/keys/rubrics/term explanations unchanged.
+- Knowledge text is 29–57% longer by VI whitespace tokens; reading/check JA text is 24–41% longer by normalized code points. These are not time estimates or proof of a 30-minute overrun.
+- Shell is available again. Executed both candidate validators and the new audit validator on an isolated exact GitHub snapshot, not a local git checkout. All PASS; 37 immutable input hashes checked; three negative controls rejected. No full-repository/app/runtime/persistence or learner timing test ran.
+- Recomputed the supplied source PDF SHA-256: matches the recorded 997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54; 276 pages. Full primary-source lexical screen: 665 fields, 117 eligible, zero exact normalized 60-character-window hits. No external-source semantic/rights/native approval is implied; no private PDF/text/image is published.
+- Core 54 lessons/270 lesson questions/60 mock questions unchanged. All four candidates remain outside curriculum; all human/domain/native/publisher/rights/runtime/release approval flags false.
+- Next: retain or repair missing applied capabilities, resolve partial mappings and measure learner timing before replacement selection; then continue C02 abuse/restraint original material with source checks. No week 9, extra mocks, or automatic app integration.

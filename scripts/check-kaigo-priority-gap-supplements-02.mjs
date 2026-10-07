@@ -2,8 +2,9 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
-export function validateCandidateBatch(a, bases, npcIds) {
+export function validateCandidateBatch(a, bases, npcIds, canonicalVocabularyIds) {
   const require = (ok, message) => { if (!ok) throw new Error(message); };
+  require(Array.isArray(canonicalVocabularyIds), 'canonical vocabulary registry required');
   const ids = new Set();
   const visit = v => {
     if (Array.isArray(v)) return v.forEach(visit);
@@ -22,7 +23,7 @@ export function validateCandidateBatch(a, bases, npcIds) {
     const b = bases.find(x => x.id === m.baseLessonId);
     require(b && b.curriculumDay === m.curriculumDay, 'replacement target/day');
     require(npcIds.includes(m.npcId), 'unknown NPC');
-    require(JSON.stringify(m.vocabularyIds) === JSON.stringify(b.vocabularyIds), 'base vocabulary links');
+    require(new Set(m.vocabularyIds).size === m.vocabularyIds.length && m.vocabularyIds.every(id=>canonicalVocabularyIds.includes(id)), 'canonical vocabulary links');
     require(m.knowledgeModule.sections.length === 4 && m.expressions.length === 2, 'knowledge/expressions');
     require(m.dialogue.length >= 6 && m.dialogue.length <= 12, 'turn range');
     require(m.questions.length === 5, 'question count');
@@ -72,5 +73,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
   const read = name => JSON.parse(readFileSync(root + name, 'utf8'));
   const bases = [...read('review-lessons.json').lessons, ...read('housework-lessons.json').lessons];
   const npcs = read('npc-roster.json').npcs.map(x=>x.id);
-  console.log(JSON.stringify(validateCandidateBatch(read('priority-gap-supplements-02.json'), bases, npcs), null, 2));
+  const vocabFiles=['foundation-vocabulary.json','week2-vocabulary.json','movement-vocabulary.json','eating-vocabulary.json','excretion-vocabulary.json','hygiene-vocabulary.json','housework-vocabulary.json','knowledge-glossary.json'];
+  const canonicalIds = vocabFiles.flatMap(name=>{const d=read(name);return (d.entries??d.vocabulary).map(x=>x.id);});
+  console.log(JSON.stringify(validateCandidateBatch(read('priority-gap-supplements-02.json'), bases, npcs, canonicalIds), null, 2));
 }
