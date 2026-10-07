@@ -27,55 +27,161 @@
           "id": "kaigo-foundation-01-response-02",
           "promptTurn": 1,
           "playerTurn": 2,
-          "criteriaVi": "Vâng, tôi là Tanaka, nhân viên chăm sóc. Hôm nay tôi phụ trách phòng này. Mong bác giúp đỡ.",
+          "criteriaVi": "Tên Tanaka; Vai nhân viên chăm sóc; Phụ trách phòng hôm nay",
           "acceptedExamplesJa": [
             "はい、介護職員の田中です。今日はこちらのお部屋を担当します。よろしくお願いします。",
             "田中と申します。介護職員として、今日はこのお部屋を担当します。どうぞよろしくお願いいたします。"
           ],
-          "repairHintJa": "はい、介護職員の田中です。今日はこちらのお部屋を担当します。よろしくお願いします。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 3,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Vâng, tôi là Tanaka, nhân viên chăm sóc. Hôm nay tôi phụ trách phòng này. Mong bác giúp đỡ."
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Tên Tanaka",
+            "Vai nhân viên chăm sóc",
+            "Phụ trách phòng hôm nay"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-01-response-04",
           "promptTurn": 3,
           "playerTurn": 4,
-          "criteriaVi": "Vâng, tôi là nhân viên chăm sóc. Nếu bác cần hỏi điều dưỡng, tôi sẽ liên lạc người phụ trách.",
+          "criteriaVi": "Xác nhận vai chăm sóc; Chuyển yêu cầu điều dưỡng tới người phụ trách",
           "acceptedExamplesJa": [
             "はい、介護職員です。看護師へのご相談があれば、担当の方につなぎます。",
             "私は介護職員です。看護師に相談されたい場合は、担当者へ連絡します。"
           ],
-          "repairHintJa": "はい、介護職員です。看護師へのご相談があれば、担当の方につなぎます。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 5,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Vâng, tôi là nhân viên chăm sóc. Nếu bác cần hỏi điều dưỡng, tôi sẽ liên lạc người phụ trách."
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Xác nhận vai chăm sóc",
+            "Chuyển yêu cầu điều dưỡng tới người phụ trách"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-01-response-06",
           "promptTurn": 5,
           "playerTurn": 6,
-          "criteriaVi": "Haruko-san đúng không. Tôi sẽ gọi như vậy. Bây giờ nói chuyện một chút được không ạ?",
+          "criteriaVi": "Gọi Haruko theo mong muốn; Xin phép nói một chút bây giờ",
           "acceptedExamplesJa": [
             "晴子さんですね。そのようにお呼びします。今、少しお話ししてもよろしいですか。",
             "では、晴子さんとお呼びしますね。少しだけお話ししてもいいですか。"
           ],
-          "repairHintJa": "晴子さんですね。そのようにお呼びします。今、少しお話ししてもよろしいですか。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 7,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Haruko-san đúng không. Tôi sẽ gọi như vậy. Bây giờ nói chuyện một chút được không ạ?"
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Gọi Haruko theo mong muốn",
+            "Xin phép nói một chút bây giờ"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-01-response-08",
           "promptTurn": 7,
           "playerTurn": 8,
-          "criteriaVi": "Tôi hiểu. Hôm nay tôi chỉ chào hỏi thôi. Mình nói chuyện lại lúc bác thuận tiện nhé.",
+          "criteriaVi": "Chỉ chào ngắn hôm nay; Để dịp thuận tiện mới nói tiếp",
           "acceptedExamplesJa": [
             "承知しました。今日は挨拶だけにします。またご都合のよいときにお話ししましょう。",
             "今日はご挨拶だけにして、お話はご都合のよいときに伺います。"
           ],
-          "repairHintJa": "承知しました。今日は挨拶だけにします。またご都合のよいときにお話ししましょう。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": null,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi hiểu. Hôm nay tôi chỉ chào hỏi thôi. Mình nói chuyện lại lúc bác thuận tiện nhé."
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Chỉ chào ngắn hôm nay",
+            "Để dịp thuận tiện mới nói tiếp"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         }
-      ]
+      ],
+      "scenarioAssessmentCases": [
+        {
+          "id": "kaigo-foundation-01-case-complete",
+          "playerTurn": 6,
+          "inputJa": "では、晴子さんとお呼びしますね。少しだけお話ししてもいいですか。",
+          "expected": "complete_semantic_variant",
+          "advance": true,
+          "feedbackVi": "Đã truyền đạt đủ ý của lượt trong phạm vi tình huống; chấp nhận dù khác câu mẫu.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-01-case-partial",
+          "playerTurn": 6,
+          "inputJa": "晴子さんですね。",
+          "expected": "partial_retry",
+          "advance": false,
+          "feedbackVi": "Tên gọi đã đúng nhưng còn thiếu xin phép nói chuyện.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-01-case-unsafe",
+          "playerTurn": 6,
+          "inputJa": "今日は全部お話しください。",
+          "expected": "unsafe_or_unsupported_retry",
+          "advance": false,
+          "feedbackVi": "Câu này thêm thông tin chưa kiểm hoặc bỏ qua lựa chọn/kế hoạch. Hãy sửa theo ý bắt buộc của lượt.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-01-case-clarify",
+          "playerTurn": 6,
+          "inputJa": "今は話したくありません。",
+          "expected": "bounded_clarification",
+          "advance": false,
+          "evaluationVi": "NPC đặt câu hỏi hoặc đổi yêu cầu tại điểm này; người học dùng phản hồi được viết để luyện. Tôn trọng kết quả nhánh, không ép trở lại nhiệm vụ bác đã từ chối. Đây là ca biên tập chưa được thử runtime.",
+          "inputSpeaker": "npc",
+          "expectedPlayerReplyJa": "承知しました。ご挨拶だけにして、またご都合のよいときに伺います。",
+          "branchOutcome": "finish_respecting_no_conversation"
+        }
+      ],
+      "assessmentCaseStatus": "AI_editorial_cases_not_runtime_test_results"
     },
     {
       "lessonId": "kaigo-foundation-02",
@@ -86,68 +192,187 @@
           "id": "kaigo-foundation-02-response-02",
           "promptTurn": 1,
           "playerTurn": 2,
-          "criteriaVi": "Tôi lau bàn nhé, hay để sau ạ?",
+          "criteriaVi": "Hỏi lau bây giờ hay để sau",
           "acceptedExamplesJa": [
             "テーブルを拭きましょうか。それとも、あとにしますか。",
             "今、テーブルをお拭きしてもいいですか。後のほうがよければ、お知らせください。"
           ],
-          "repairHintJa": "テーブルを拭きましょうか。それとも、あとにしますか。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 3,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi lau bàn nhé, hay để sau ạ?"
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Hỏi lau bây giờ hay để sau"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-02-response-04",
           "promptTurn": 3,
           "playerTurn": 4,
-          "criteriaVi": "Bác còn đọc báo đúng không. Trong lúc lau, đặt báo ở đâu được ạ?",
+          "criteriaVi": "Xác nhận bác vẫn đọc báo; Hỏi nơi đặt tạm",
           "acceptedExamplesJa": [
             "新聞はお読みになるのですね。拭く間、どこに置けばよろしいですか。",
             "まだ新聞を読まれるのですね。清掃中の置き場所を教えていただけますか。"
           ],
-          "repairHintJa": "新聞はお読みになるのですね。拭く間、どこに置けばよろしいですか。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 5,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Bác còn đọc báo đúng không. Trong lúc lau, đặt báo ở đâu được ạ?"
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Xác nhận bác vẫn đọc báo",
+            "Hỏi nơi đặt tạm"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-02-response-06",
           "promptTurn": 5,
           "playerTurn": 6,
-          "criteriaVi": "Báo và kính để ghế bên cạnh đúng không. Tôi chuyển tới đó rồi lau bàn được không?",
+          "criteriaVi": "Nhắc cả báo và kính ở ghế bên cạnh; Xin phép chuyển rồi lau",
           "acceptedExamplesJa": [
             "新聞と眼鏡は隣の椅子ですね。そこに移してから、テーブルを拭いてもよろしいですか。",
             "二つとも隣の椅子へ置いてから拭く、ということでよろしいでしょうか。"
           ],
-          "repairHintJa": "新聞と眼鏡は隣の椅子ですね。そこに移してから、テーブルを拭いてもよろしいですか。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 7,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Báo và kính để ghế bên cạnh đúng không. Tôi chuyển tới đó rồi lau bàn được không?"
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Nhắc cả báo và kính ở ghế bên cạnh",
+            "Xin phép chuyển rồi lau"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-02-response-08",
           "promptTurn": 7,
           "playerTurn": 8,
-          "criteriaVi": "Tôi hiểu. Lau xong tôi trả báo lại. Kính cũng trả về chỗ cũ được không?",
+          "criteriaVi": "Trả báo sau lau; Hỏi có trả kính về chỗ cũ không",
           "acceptedExamplesJa": [
             "わかりました。拭き終わったら新聞を戻します。眼鏡も元の場所に戻してよろしいですか。",
             "終わったら新聞を戻します。眼鏡も元に戻していいでしょうか。"
           ],
-          "repairHintJa": "わかりました。拭き終わったら新聞を戻します。眼鏡も元の場所に戻してよろしいですか。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 9,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi hiểu. Lau xong tôi trả báo lại. Kính cũng trả về chỗ cũ được không?"
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Trả báo sau lau",
+            "Hỏi có trả kính về chỗ cũ không"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-02-response-10",
           "promptTurn": 9,
           "playerTurn": 10,
-          "criteriaVi": "Tôi hiểu. Vậy tôi bắt đầu bây giờ.",
+          "criteriaVi": "Xác nhận bắt đầu theo đồng ý",
           "acceptedExamplesJa": [
             "承りました。では、今から始めます。",
             "では、確認したとおりに始めさせていただきます。"
           ],
-          "repairHintJa": "承りました。では、今から始めます。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": null,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi hiểu. Vậy tôi bắt đầu bây giờ."
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Xác nhận bắt đầu theo đồng ý"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         }
-      ]
+      ],
+      "scenarioAssessmentCases": [
+        {
+          "id": "kaigo-foundation-02-case-complete",
+          "playerTurn": 6,
+          "inputJa": "二つとも隣の椅子へ置いてから拭く、ということでよろしいでしょうか。",
+          "expected": "complete_semantic_variant",
+          "advance": true,
+          "feedbackVi": "Đã truyền đạt đủ ý của lượt trong phạm vi tình huống; chấp nhận dù khác câu mẫu.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-02-case-partial",
+          "playerTurn": 6,
+          "inputJa": "新聞は隣の椅子ですね。",
+          "expected": "partial_retry",
+          "advance": false,
+          "feedbackVi": "Đã nhắc nơi đặt báo nhưng thiếu kính và đồng ý trước chuyển/lau.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-02-case-unsafe",
+          "playerTurn": 6,
+          "inputJa": "机を拭くので、眼鏡は別の部屋へ持っていきます。",
+          "expected": "unsafe_or_unsupported_retry",
+          "advance": false,
+          "feedbackVi": "Câu này thêm thông tin chưa kiểm hoặc bỏ qua lựa chọn/kế hoạch. Hãy sửa theo ý bắt buộc của lượt.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-02-case-clarify",
+          "playerTurn": 6,
+          "inputJa": "眼鏡はここに置いたままでお願いします。",
+          "expected": "bounded_clarification",
+          "advance": false,
+          "evaluationVi": "NPC đặt câu hỏi hoặc đổi yêu cầu tại điểm này; người học dùng phản hồi được viết để luyện. Tôn trọng kết quả nhánh, không ép trở lại nhiệm vụ bác đã từ chối. Đây là ca biên tập chưa được thử runtime.",
+          "inputSpeaker": "npc",
+          "expectedPlayerReplyJa": "眼鏡は動かさず、新聞だけ隣の椅子へ置いてから拭いてよろしいですか。",
+          "branchOutcome": "reconfirm_changed_request"
+        }
+      ],
+      "assessmentCaseStatus": "AI_editorial_cases_not_runtime_test_results"
     },
     {
       "lessonId": "kaigo-foundation-03",
@@ -158,55 +383,160 @@
           "id": "kaigo-foundation-03-response-02",
           "promptTurn": 1,
           "playerTurn": 2,
-          "criteriaVi": "Hay quá. Bác cho tôi biết phần muốn tự viết và phần cần giúp được không?",
+          "criteriaVi": "Hỏi phần muốn tự viết; Hỏi phần cần trợ giúp",
           "acceptedExamplesJa": [
             "いいですね。ご自分で書きたいところと、お手伝いが必要なところを教えていただけますか。",
             "どの部分はご自分で行い、どこを私が手伝えばよいでしょうか。"
           ],
-          "repairHintJa": "いいですね。ご自分で書きたいところと、お手伝いが必要なところを教えていただけますか。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 3,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Hay quá. Bác cho tôi biết phần muốn tự viết và phần cần giúp được không?"
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Hỏi phần muốn tự viết",
+            "Hỏi phần cần trợ giúp"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-03-response-04",
           "promptTurn": 3,
           "playerTurn": 4,
-          "criteriaVi": "Nội dung bác tự viết đúng không. Tôi chỉ giúp đọc địa chỉ được không?",
+          "criteriaVi": "Người sử dụng tự viết nội dung; Xác nhận chỉ giúp đọc địa chỉ",
           "acceptedExamplesJa": [
             "文章はご自分で書かれるのですね。住所を読むお手伝いだけでよろしいですか。",
             "文章はご自分で、私は住所を読むだけですね。"
           ],
-          "repairHintJa": "文章はご自分で書かれるのですね。住所を読むお手伝いだけでよろしいですか。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 5,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Nội dung bác tự viết đúng không. Tôi chỉ giúp đọc địa chỉ được không?"
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Người sử dụng tự viết nội dung",
+            "Xác nhận chỉ giúp đọc địa chỉ"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-03-response-06",
           "promptTurn": 5,
           "playerTurn": 6,
-          "criteriaVi": "Tôi hiểu. Tôi sẽ đọc từng phần thay vì đọc hết một lần. Muốn nghe lại bác hãy nói nhé.",
+          "criteriaVi": "Đọc từng phần; Cho nghe lại khi cần",
           "acceptedExamplesJa": [
             "承知しました。一度に全部ではなく、区切って読みますね。もう一度聞きたいときは教えてください。",
             "少しずつ区切って読みます。聞き直したいところがあれば、言ってください。"
           ],
-          "repairHintJa": "承知しました。一度に全部ではなく、区切って読みますね。もう一度聞きたいときは教えてください。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 7,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi hiểu. Tôi sẽ đọc từng phần thay vì đọc hết một lần. Muốn nghe lại bác hãy nói nhé."
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Đọc từng phần",
+            "Cho nghe lại khi cần"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-03-response-08",
           "promptTurn": 7,
           "playerTurn": 8,
-          "criteriaVi": "Vâng. Bác cũng tự kiểm đúng không. Khi cần bác hãy gọi tôi nhé.",
+          "criteriaVi": "Người sử dụng tự kiểm; Mời gọi khi cần giúp",
           "acceptedExamplesJa": [
             "はい。確認もご自分でされるのですね。必要になったら、またお声がけください。",
             "ご自身で確認されるのですね。ほかに手助けが必要ならお知らせください。"
           ],
-          "repairHintJa": "はい。確認もご自分でされるのですね。必要になったら、またお声がけください。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": null,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Vâng. Bác cũng tự kiểm đúng không. Khi cần bác hãy gọi tôi nhé."
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Người sử dụng tự kiểm",
+            "Mời gọi khi cần giúp"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         }
-      ]
+      ],
+      "scenarioAssessmentCases": [
+        {
+          "id": "kaigo-foundation-03-case-complete",
+          "playerTurn": 4,
+          "inputJa": "文章はご自分で、私は住所を読むだけですね。",
+          "expected": "complete_semantic_variant",
+          "advance": true,
+          "feedbackVi": "Đã truyền đạt đủ ý của lượt trong phạm vi tình huống; chấp nhận dù khác câu mẫu.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-03-case-partial",
+          "playerTurn": 4,
+          "inputJa": "文章はご自分で書かれるのですね。",
+          "expected": "partial_retry",
+          "advance": false,
+          "feedbackVi": "Đã giữ phần tự viết nhưng chưa xác nhận mức trợ giúp đọc.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-03-case-unsafe",
+          "playerTurn": 4,
+          "inputJa": "早く終わるように私が全部書きます。",
+          "expected": "unsafe_or_unsupported_retry",
+          "advance": false,
+          "feedbackVi": "Câu này thêm thông tin chưa kiểm hoặc bỏ qua lựa chọn/kế hoạch. Hãy sửa theo ý bắt buộc của lượt.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-03-case-clarify",
+          "playerTurn": 4,
+          "inputJa": "住所も自分で読んでみたいです。",
+          "expected": "bounded_clarification",
+          "advance": false,
+          "evaluationVi": "NPC đặt câu hỏi hoặc đổi yêu cầu tại điểm này; người học dùng phản hồi được viết để luyện. Tôn trọng kết quả nhánh, không ép trở lại nhiệm vụ bác đã từ chối. Đây là ca biên tập chưa được thử runtime.",
+          "inputSpeaker": "npc",
+          "expectedPlayerReplyJa": "では、まずご自分で読まれるのですね。読みにくい所があればお知らせください。",
+          "branchOutcome": "reconfirm_changed_request"
+        }
+      ],
+      "assessmentCaseStatus": "AI_editorial_cases_not_runtime_test_results"
     },
     {
       "lessonId": "kaigo-foundation-04",
@@ -217,55 +547,159 @@
           "id": "kaigo-foundation-04-response-02",
           "promptTurn": 1,
           "playerTurn": 2,
-          "criteriaVi": "Tôi sẽ không hỏi chi tiết ở đây. Mình nói trong phòng bác được không?",
+          "criteriaVi": "Không hỏi chi tiết ở hành lang; Xin phép chuyển vào phòng",
           "acceptedExamplesJa": [
             "ここでは詳しいことを伺いません。お部屋でお話ししてもよろしいですか。",
             "詳しいお話は廊下で聞かず、お部屋で伺ってもよろしいでしょうか。"
           ],
-          "repairHintJa": "ここでは詳しいことを伺いません。お部屋でお話ししてもよろしいですか。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 3,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi sẽ không hỏi chi tiết ở đây. Mình nói trong phòng bác được không?"
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Không hỏi chi tiết ở hành lang",
+            "Xin phép chuyển vào phòng"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-04-response-04",
           "promptTurn": 3,
           "playerTurn": 4,
-          "criteriaVi": "Bây giờ bác chưa muốn báo con gái đúng không. Trước hết tôi sẽ nghe mong muốn của bác.",
+          "criteriaVi": "Hiện chưa muốn báo con gái; Nghe mong muốn trước",
           "acceptedExamplesJa": [
             "今は娘さんに伝えたくないのですね。まず、ご希望を伺います。",
             "娘さんへの連絡は今は希望されないのですね。まずお話を伺います。"
           ],
-          "repairHintJa": "今は娘さんに伝えたくないのですね。まず、ご希望を伺います。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 5,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Bây giờ bác chưa muốn báo con gái đúng không. Trước hết tôi sẽ nghe mong muốn của bác."
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Hiện chưa muốn báo con gái",
+            "Nghe mong muốn trước"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-04-response-06",
           "promptTurn": 5,
           "playerTurn": 6,
-          "criteriaVi": "Nếu cần báo nhân viên phụ trách, mình cùng xác nhận trước nội dung sẽ chia sẻ nhé.",
+          "criteriaVi": "Nếu cần chia sẻ với phụ trách thì xác nhận nội dung với bác trước",
           "acceptedExamplesJa": [
             "担当職員に伝える必要が出たら、どの内容を共有するか、先に一緒に確認しましょう。",
             "担当者と共有する必要があるときは、その内容をご本人と先に確認します。"
           ],
-          "repairHintJa": "担当職員に伝える必要が出たら、どの内容を共有するか、先に一緒に確認しましょう。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 7,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Nếu cần báo nhân viên phụ trách, mình cùng xác nhận trước nội dung sẽ chia sẻ nhé."
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Nếu cần chia sẻ với phụ trách thì xác nhận nội dung với bác trước"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-04-response-08",
           "promptTurn": 7,
           "playerTurn": 8,
-          "criteriaVi": "Vậy tôi nghe bác trong phòng. Mình tránh để người ở hành lang nghe nội dung nhé.",
+          "criteriaVi": "Nghe trong phòng; Tránh người ở hành lang nghe nội dung",
           "acceptedExamplesJa": [
             "では、お部屋で伺います。廊下で内容が聞こえないようにしましょう。",
             "お部屋でお話ししましょう。廊下に内容が聞こえないよう配慮します。"
           ],
-          "repairHintJa": "では、お部屋で伺います。廊下で内容が聞こえないようにしましょう。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": null,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Vậy tôi nghe bác trong phòng. Mình tránh để người ở hành lang nghe nội dung nhé."
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Nghe trong phòng",
+            "Tránh người ở hành lang nghe nội dung"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         }
-      ]
+      ],
+      "scenarioAssessmentCases": [
+        {
+          "id": "kaigo-foundation-04-case-complete",
+          "playerTurn": 6,
+          "inputJa": "担当者と共有する必要があるときは、その内容をご本人と先に確認します。",
+          "expected": "complete_semantic_variant",
+          "advance": true,
+          "feedbackVi": "Đã truyền đạt đủ ý của lượt trong phạm vi tình huống; chấp nhận dù khác câu mẫu.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-04-case-partial",
+          "playerTurn": 6,
+          "inputJa": "担当者に伝えることもあります。",
+          "expected": "partial_retry",
+          "advance": false,
+          "feedbackVi": "Chưa nêu sẽ xác nhận nội dung với bác trước chia sẻ.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-04-case-unsafe",
+          "playerTurn": 6,
+          "inputJa": "家族なら相談内容を全部伝えてよいですね。",
+          "expected": "unsafe_or_unsupported_retry",
+          "advance": false,
+          "feedbackVi": "Câu này thêm thông tin chưa kiểm hoặc bỏ qua lựa chọn/kế hoạch. Hãy sửa theo ý bắt buộc của lượt.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-04-case-clarify",
+          "playerTurn": 6,
+          "inputJa": "担当者には何を伝えるのですか。",
+          "expected": "bounded_clarification",
+          "advance": false,
+          "evaluationVi": "NPC đặt câu hỏi hoặc đổi yêu cầu tại điểm này; người học dùng phản hồi được viết để luyện. Tôn trọng kết quả nhánh, không ép trở lại nhiệm vụ bác đã từ chối. Đây là ca biên tập chưa được thử runtime.",
+          "inputSpeaker": "npc",
+          "expectedPlayerReplyJa": "必要な内容を一緒に確認してから伝えます。今は詳しい内容を決めていません。",
+          "branchOutcome": "clarify_then_resume_current_goal"
+        }
+      ],
+      "assessmentCaseStatus": "AI_editorial_cases_not_runtime_test_results"
     },
     {
       "lessonId": "kaigo-foundation-05",
@@ -276,55 +710,161 @@
           "id": "kaigo-foundation-05-response-02",
           "promptTurn": 1,
           "playerTurn": 2,
-          "criteriaVi": "Bác muốn tham gia nhưng không muốn được chụp ảnh đúng không.",
+          "criteriaVi": "Muốn tham gia; Không muốn được chụp ảnh",
           "acceptedExamplesJa": [
             "参加はしたいけれど、撮影は希望されないのですね。",
             "花植えには参加したいけれど、写真には写りたくないということですね。"
           ],
-          "repairHintJa": "参加はしたいけれど、撮影は希望されないのですね。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 3,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Bác muốn tham gia nhưng không muốn được chụp ảnh đúng không."
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Muốn tham gia",
+            "Không muốn được chụp ảnh"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-05-response-04",
           "promptTurn": 3,
           "playerTurn": 4,
-          "criteriaVi": "Hiện tôi chưa biết. Tôi hỏi người phụ trách hoạt động được không?",
+          "criteriaVi": "Phương án chưa rõ; Xin phép hỏi phụ trách",
           "acceptedExamplesJa": [
             "今はわかりません。活動の担当者に確認してもよろしいですか。",
             "参加できる方法はまだ確認していません。担当者に聞いてもいいですか。"
           ],
-          "repairHintJa": "今はわかりません。活動の担当者に確認してもよろしいですか。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 5,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Hiện tôi chưa biết. Tôi hỏi người phụ trách hoạt động được không?"
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Phương án chưa rõ",
+            "Xin phép hỏi phụ trách"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-05-response-06",
           "promptTurn": 5,
           "playerTurn": 6,
-          "criteriaVi": "Tôi sẽ báo bác không muốn được chụp ảnh và hỏi cách tham gia phù hợp. Hiện cách tham gia chưa được quyết định.",
+          "criteriaVi": "Báo mong muốn không chụp; Kiểm cách tham gia; Phương án chưa được quyết định",
           "acceptedExamplesJa": [
             "撮影を希望されないことを伝え、参加できる方法を確認します。まだ参加方法は決まっていません。",
             "撮影を希望しないことを伝えて方法を聞きます。今の時点では方法は未定です。"
           ],
-          "repairHintJa": "撮影を希望されないことを伝え、参加できる方法を確認します。まだ参加方法は決まっていません。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 7,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi sẽ báo bác không muốn được chụp ảnh và hỏi cách tham gia phù hợp. Hiện cách tham gia chưa được quyết định."
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Báo mong muốn không chụp",
+            "Kiểm cách tham gia",
+            "Phương án chưa được quyết định"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-05-response-08",
           "promptTurn": 7,
           "playerTurn": 8,
-          "criteriaVi": "Tôi sẽ báo kết quả xác nhận. Sau đó tôi hỏi lại mong muốn của bác.",
+          "criteriaVi": "Báo kết quả kiểm; Hỏi lại mong muốn sau kết quả",
           "acceptedExamplesJa": [
             "確認した内容をお伝えします。その後、ご希望をもう一度伺います。",
             "回答をお知らせしてから、参加するかどうかお伺いします。"
           ],
-          "repairHintJa": "確認した内容をお伝えします。その後、ご希望をもう一度伺います。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": null,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi sẽ báo kết quả xác nhận. Sau đó tôi hỏi lại mong muốn của bác."
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Báo kết quả kiểm",
+            "Hỏi lại mong muốn sau kết quả"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         }
-      ]
+      ],
+      "scenarioAssessmentCases": [
+        {
+          "id": "kaigo-foundation-05-case-complete",
+          "playerTurn": 4,
+          "inputJa": "参加できる方法はまだ確認していません。担当者に聞いてもいいですか。",
+          "expected": "complete_semantic_variant",
+          "advance": true,
+          "feedbackVi": "Đã truyền đạt đủ ý của lượt trong phạm vi tình huống; chấp nhận dù khác câu mẫu.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-05-case-partial",
+          "playerTurn": 4,
+          "inputJa": "担当者に聞きます。",
+          "expected": "partial_retry",
+          "advance": false,
+          "feedbackVi": "Có ý kiểm nhưng thiếu xin phép và trạng thái chưa rõ.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-05-case-unsafe",
+          "playerTurn": 4,
+          "inputJa": "写真に写らない席は必ずあります。",
+          "expected": "unsafe_or_unsupported_retry",
+          "advance": false,
+          "feedbackVi": "Câu này thêm thông tin chưa kiểm hoặc bỏ qua lựa chọn/kế hoạch. Hãy sửa theo ý bắt buộc của lượt.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-05-case-clarify",
+          "playerTurn": 4,
+          "inputJa": "参加できると決まったのですか。",
+          "expected": "bounded_clarification",
+          "advance": false,
+          "evaluationVi": "NPC đặt câu hỏi hoặc đổi yêu cầu tại điểm này; người học dùng phản hồi được viết để luyện. Tôn trọng kết quả nhánh, không ép trở lại nhiệm vụ bác đã từ chối. Đây là ca biên tập chưa được thử runtime.",
+          "inputSpeaker": "npc",
+          "expectedPlayerReplyJa": "まだ方法は確認できていません。確認してからお伝えします。",
+          "branchOutcome": "clarify_then_resume_current_goal"
+        }
+      ],
+      "assessmentCaseStatus": "AI_editorial_cases_not_runtime_test_results"
     },
     {
       "lessonId": "kaigo-foundation-06",
@@ -335,55 +875,159 @@
           "id": "kaigo-foundation-06-response-02",
           "promptTurn": 1,
           "playerTurn": 2,
-          "criteriaVi": "Xin lỗi. Bạn nói từng việc trong hai việc được không?",
+          "criteriaVi": "Đề nghị giải thích hai việc riêng",
           "acceptedExamplesJa": [
             "すみません。二つの用件を、一つずつ教えていただけますか。",
             "聞き漏らしたので、図書室と返却の件を分けて説明していただけますか。"
           ],
-          "repairHintJa": "すみません。二つの用件を、一つずつ教えていただけますか。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 3,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Xin lỗi. Bạn nói từng việc trong hai việc được không?"
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Đề nghị giải thích hai việc riêng"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-06-response-04",
           "promptTurn": 3,
           "playerTurn": 4,
-          "criteriaVi": "Phòng sách tới ba giờ, còn sách không phải trả hôm nay, đúng không?",
+          "criteriaVi": "Phòng sách tới15giờ; Không cần trả sách hôm nay",
           "acceptedExamplesJa": [
             "図書室は三時までで、本は今日返さなくてもよい、ということですね。",
             "開室は十五時までで、今日の返却は必須ではないのですね。"
           ],
-          "repairHintJa": "図書室は三時までで、本は今日返さなくてもよい、ということですね。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 5,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Phòng sách tới ba giờ, còn sách không phải trả hôm nay, đúng không?"
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Phòng sách tới15giờ",
+            "Không cần trả sách hôm nay"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-06-response-06",
           "promptTurn": 5,
           "playerTurn": 6,
-          "criteriaVi": "Hạn chưa rõ đúng không. Tôi sẽ tách việc hôm nay chưa phải trả và việc chưa xác nhận hạn.",
+          "criteriaVi": "Hạn trả chưa rõ; Giữ riêng không phải trả hôm nay và chưa biết hạn",
           "acceptedExamplesJa": [
             "期限は未確認ですね。今日返さなくてもよいことと、期限が未確認なことを分けて伝えます。",
             "返却期限はまだ不明ですね。その点と、今日返さなくてもよい点を区別して伝えます。"
           ],
-          "repairHintJa": "期限は未確認ですね。今日返さなくてもよいことと、期限が未確認なことを分けて伝えます。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 7,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Hạn chưa rõ đúng không. Tôi sẽ tách việc hôm nay chưa phải trả và việc chưa xác nhận hạn."
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Hạn trả chưa rõ",
+            "Giữ riêng không phải trả hôm nay và chưa biết hạn"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-06-response-08",
           "promptTurn": 7,
           "playerTurn": 8,
-          "criteriaVi": "Vậy Kishimoto phụ trách kiểm tra hạn đúng không. Tôi sẽ đợi thông tin sau khi bạn xác nhận.",
+          "criteriaVi": "Kishimoto nhận kiểm hạn; Chờ thông báo kết quả",
           "acceptedExamplesJa": [
             "では、期限の確認は岸本さんが担当されるのですね。確認後の連絡をお待ちします。",
             "期限は岸本さんが調べるのですね。わかったら連絡をお願いします。"
           ],
-          "repairHintJa": "では、期限の確認は岸本さんが担当されるのですね。確認後の連絡をお待ちします。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": null,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Vậy Kishimoto phụ trách kiểm tra hạn đúng không. Tôi sẽ đợi thông tin sau khi bạn xác nhận."
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Kishimoto nhận kiểm hạn",
+            "Chờ thông báo kết quả"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         }
-      ]
+      ],
+      "scenarioAssessmentCases": [
+        {
+          "id": "kaigo-foundation-06-case-complete",
+          "playerTurn": 6,
+          "inputJa": "返却期限はまだ不明ですね。その点と、今日返さなくてもよい点を区別して伝えます。",
+          "expected": "complete_semantic_variant",
+          "advance": true,
+          "feedbackVi": "Đã truyền đạt đủ ý của lượt trong phạm vi tình huống; chấp nhận dù khác câu mẫu.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-06-case-partial",
+          "playerTurn": 6,
+          "inputJa": "今日返さなくてもよいのですね。",
+          "expected": "partial_retry",
+          "advance": false,
+          "feedbackVi": "Giữ việc hôm nay chưa phải trả nhưng thiếu hạn chưa biết.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-06-case-unsafe",
+          "playerTurn": 6,
+          "inputJa": "返却期限は明日と伝えます。",
+          "expected": "unsafe_or_unsupported_retry",
+          "advance": false,
+          "feedbackVi": "Câu này thêm thông tin chưa kiểm hoặc bỏ qua lựa chọn/kế hoạch. Hãy sửa theo ý bắt buộc của lượt.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-06-case-clarify",
+          "playerTurn": 6,
+          "inputJa": "期限はもうわかったのですか。",
+          "expected": "bounded_clarification",
+          "advance": false,
+          "evaluationVi": "NPC đặt câu hỏi hoặc đổi yêu cầu tại điểm này; người học dùng phản hồi được viết để luyện. Tôn trọng kết quả nhánh, không ép trở lại nhiệm vụ bác đã từ chối. Đây là ca biên tập chưa được thử runtime.",
+          "inputSpeaker": "npc",
+          "expectedPlayerReplyJa": "まだ未確認です。岸本さんが調べてから知らせます。",
+          "branchOutcome": "clarify_then_resume_current_goal"
+        }
+      ],
+      "assessmentCaseStatus": "AI_editorial_cases_not_runtime_test_results"
     },
     {
       "lessonId": "kaigo-foundation-07",
@@ -394,55 +1038,162 @@
           "id": "kaigo-foundation-07-response-02",
           "promptTurn": 1,
           "playerTurn": 2,
-          "criteriaVi": "Hôm nay bác muốn đọc sách trong phòng đúng không. Có việc gì tôi giúp được không?",
+          "criteriaVi": "Xác nhận muốn đọc trong phòng hôm nay; Hỏi cần hỗ trợ gì",
           "acceptedExamplesJa": [
             "今日はお部屋で読書をしたいのですね。何かお手伝いすることはありますか。",
             "お部屋で本を読みたいのですね。私にできるお手伝いはありますか。"
           ],
-          "repairHintJa": "今日はお部屋で読書をしたいのですね。何かお手伝いすることはありますか。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 3,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Hôm nay bác muốn đọc sách trong phòng đúng không. Có việc gì tôi giúp được không?"
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Xác nhận muốn đọc trong phòng hôm nay",
+            "Hỏi cần hỗ trợ gì"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-07-response-04",
           "promptTurn": 3,
           "playerTurn": 4,
-          "criteriaVi": "Tôi giúp tìm trang tiếp theo đúng không. Có dấu gì không ạ?",
+          "criteriaVi": "Giúp tìm trang tiếp; Hỏi dấu trang",
           "acceptedExamplesJa": [
             "続きのページを探すお手伝いですね。目印は何かありますか。",
             "続きを探せばよいのですね。ページに何か印はありますか。"
           ],
-          "repairHintJa": "続きのページを探すお手伝いですね。目印は何かありますか。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 5,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi giúp tìm trang tiếp theo đúng không. Có dấu gì không ạ?"
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Giúp tìm trang tiếp",
+            "Hỏi dấu trang"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-07-response-06",
           "promptTurn": 5,
           "playerTurn": 6,
-          "criteriaVi": "Tôi mở trang có dấu xanh. Tôi chỉ báo người phụ trách rằng hôm nay bác không tham gia nhé.",
+          "criteriaVi": "Mở trang có dấu xanh; Chỉ báo vắng hoạt động hôm nay",
           "acceptedExamplesJa": [
             "青いしおりのページを開きます。担当者には今日参加しないことだけを伝えますね。",
             "青いしおりの所を開きます。今日欠席されることだけ、担当者に伝えます。"
           ],
-          "repairHintJa": "青いしおりのページを開きます。担当者には今日参加しないことだけを伝えますね。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": 7,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi mở trang có dấu xanh. Tôi chỉ báo người phụ trách rằng hôm nay bác không tham gia nhé."
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Mở trang có dấu xanh",
+            "Chỉ báo vắng hoạt động hôm nay"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         },
         {
           "id": "kaigo-foundation-07-response-08",
           "promptTurn": 7,
           "playerTurn": 8,
-          "criteriaVi": "Tôi hiểu. Sau khi mở trang, bác tự đọc nhé. Cần việc gì khác bác hãy gọi tôi.",
+          "criteriaVi": "Chỉ giúp mở trang; Người sử dụng tự đọc; Mời gọi khi cần",
           "acceptedExamplesJa": [
             "承りました。ページを開いた後は、ご自分で読んでいただきます。ほかに必要なことがあれば、お呼びください。",
             "では、ページを開くところまでお手伝いします。あとはご自身で読まれるのですね。必要なときはお呼びください。"
           ],
-          "repairHintJa": "承りました。ページを開いた後は、ご自分で読んでいただきます。ほかに必要なことがあれば、お呼びください。",
+          "repairHintJa": "大切な点を一つ補って、もう一度伝えてください。",
           "nextNpcTurn": null,
-          "missingFeedbackVi": "Bổ sung ý còn thiếu trong mục tiêu: Tôi hiểu. Sau khi mở trang, bác tự đọc nhé. Cần việc gì khác bác hãy gọi tôi."
+          "missingFeedbackVi": "Đã nêu: {achievedMeaning}. Còn thiếu: {firstMissingMeaning}. Hãy bổ sung ý đó rồi thử lại.",
+          "requiredMeaningVi": [
+            "Chỉ giúp mở trang",
+            "Người sử dụng tự đọc",
+            "Mời gọi khi cần"
+          ],
+          "optionalMeaningVi": [
+            "Chào, cảm ơn hoặc kính ngữ phù hợp; không thay thế ý bắt buộc."
+          ],
+          "repairHintVi": "Nhắc một ý còn thiếu; không đưa ngay toàn câu mẫu.",
+          "assessmentVi": {
+            "complete": "Đủ ý bắt buộc, không thêm thông tin sai hoặc vượt thẩm quyền; chấp nhận diễn đạt khác mẫu.",
+            "partial": "Có một số ý đúng; nêu ý đạt, hỏi một ý thiếu, giữ nguyên lượt.",
+            "unsafe": "Có chẩn đoán/suy đoán hoặc làm trái đồng ý/kế hoạch; giải thích điểm sai, cho sửa trước chuyển lượt.",
+            "clarification": "Hỏi lại trong phạm vi: trả lời bằng dữ kiện đã duyệt hoặc nói chưa rõ; không coi là sai và không tự chuyển lượt.",
+            "asrUncertain": "Yêu cầu nói lại hoặc sửa văn bản; không phạt chăm sóc từ nhận dạng chưa chắc."
+          },
+          "matchingPolicy": "semantic_specification_only_not_exact_string_match"
         }
-      ]
+      ],
+      "scenarioAssessmentCases": [
+        {
+          "id": "kaigo-foundation-07-case-complete",
+          "playerTurn": 6,
+          "inputJa": "青いしおりの所を開きます。今日欠席されることだけ、担当者に伝えます。",
+          "expected": "complete_semantic_variant",
+          "advance": true,
+          "feedbackVi": "Đã truyền đạt đủ ý của lượt trong phạm vi tình huống; chấp nhận dù khác câu mẫu.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-07-case-partial",
+          "playerTurn": 6,
+          "inputJa": "青いしおりを探します。",
+          "expected": "partial_retry",
+          "advance": false,
+          "feedbackVi": "Có dấu trang nhưng còn thiếu giới hạn liên lạc hoạt động.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-07-case-unsafe",
+          "playerTurn": 6,
+          "inputJa": "私が読んでおきますから活動に参加してください。",
+          "expected": "unsafe_or_unsupported_retry",
+          "advance": false,
+          "feedbackVi": "Câu này thêm thông tin chưa kiểm hoặc bỏ qua lựa chọn/kế hoạch. Hãy sửa theo ý bắt buộc của lượt.",
+          "inputSpeaker": "player"
+        },
+        {
+          "id": "kaigo-foundation-07-case-clarify",
+          "playerTurn": 6,
+          "inputJa": "欠席の理由は詳しく言わないでください。",
+          "expected": "bounded_clarification",
+          "advance": false,
+          "evaluationVi": "NPC đặt câu hỏi hoặc đổi yêu cầu tại điểm này; người học dùng phản hồi được viết để luyện. Tôn trọng kết quả nhánh, không ép trở lại nhiệm vụ bác đã từ chối. Đây là ca biên tập chưa được thử runtime.",
+          "inputSpeaker": "npc",
+          "expectedPlayerReplyJa": "承知しました。今日欠席されることだけを担当者に伝えます。",
+          "branchOutcome": "clarify_then_resume_current_goal"
+        }
+      ],
+      "assessmentCaseStatus": "AI_editorial_cases_not_runtime_test_results"
     }
-  ]
+  ],
+  "revision": 2
 }

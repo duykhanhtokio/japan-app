@@ -9,36 +9,35 @@
       "playerRoleVi": "Nhân viên chăm sóc Tanaka",
       "contextVi": "Phòng ở, lần đầu nhân viên mới gặp bác Morikawa. Nhân viên là người chăm sóc, không phải điều dưỡng.",
       "knowledgeVi": [
-        "Tự giới thiệu rõ vai trò; hỏi cách xưng hô người sử dụng muốn, không tự dùng tên thân mật."
+        "Tôn nghiêm nghĩa là người cần trợ giúp vẫn được đối xử như một cá nhân có lựa chọn và đời sống riêng. Cách gọi tên, thời điểm trò chuyện và việc có muốn nói chuyện đều cần xác nhận; thân thiện không đồng nghĩa tự cho phép dùng tên thân mật.",
+        "Nhân viên chăm sóc hỗ trợ sinh hoạt, quan sát thay đổi và phối hợp với các nghề khác. Điều dưỡng và bác sĩ có trách nhiệm chuyên môn khác; giới thiệu rõ vai trò giúp người sử dụng biết ai đang hỗ trợ và tránh hiểu rằng người chăm sóc có thể chẩn đoán.",
+        "Trong bài này, lời đề nghị nói chuyện là một lựa chọn, không phải mệnh lệnh. Khi bác chỉ muốn chào ngắn, kết quả phù hợp là hoàn thành chào hỏi và hẹn dịp thuận tiện; không kéo dài cuộc nói chuyện chỉ để hoàn thành nhiệm vụ học.",
+        "Tự kiểm: nêu được tên và vai trò, xác nhận cách xưng hô, phân biệt yêu cầu về sinh hoạt với yêu cầu cần chuyển đúng chuyên môn. Không kết luận bệnh, điều trị hoặc hứa thay người phụ trách."
       ],
       "sourceRefs": [
         {
-          "filename": "介護ー特定技能ーベトナム語.pdf",
-          "edition": "March 2025 second revision",
-          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
-          "pages": [
-            {
-              "printed": 10,
-              "pdf": 12
-            },
-            {
-              "printed": 12,
-              "pdf": 14
-            },
-            {
-              "printed": 13,
-              "pdf": 15
-            },
-            {
-              "printed": 102,
-              "pdf": 104
-            },
-            {
-              "printed": 103,
-              "pdf": 105
-            }
-          ],
-          "verification": "text layer and printed labels checked; no full visual certification"
+          "printedPage": 10,
+          "pdfPage": 12,
+          "purpose": "Tôn nghiêm và vai trò",
+          "verification": "text layer and printed labels checked; human review pending"
+        },
+        {
+          "printedPage": 16,
+          "pdfPage": 18,
+          "purpose": "Tôn nghiêm và vai trò",
+          "verification": "text layer and printed labels checked; human review pending"
+        },
+        {
+          "printedPage": 20,
+          "pdfPage": 22,
+          "purpose": "Tôn nghiêm và vai trò",
+          "verification": "text layer and printed labels checked; human review pending"
+        },
+        {
+          "printedPage": 102,
+          "pdfPage": 104,
+          "purpose": "Tôn nghiêm và vai trò",
+          "verification": "text layer and printed labels checked; human review pending"
         }
       ],
       "vocabularyIds": [
@@ -76,7 +75,7 @@
         {
           "turn": 5,
           "speaker": "npc",
-          "textJa": "わかりました。名前は森川ですが、晴子さんと呼んでください。",
+          "textJa": "わかりました。森川です。晴子さんと呼んでください。",
           "meaningVi": "Tôi hiểu. Tôi họ Morikawa, nhưng hãy gọi tôi là Haruko-san."
         },
         {
@@ -116,66 +115,125 @@
           "id": "kaigo-foundation-01-q01",
           "promptJa": "田中さんの役割はどれですか。",
           "optionsJa": [
+            "家族",
             "看護師",
             "介護職員",
-            "家族",
             "活動の講師"
           ],
-          "correctIndex": 1,
+          "correctIndex": 2,
           "rationalesVi": [
+            "Sai: không phải người nhà.",
             "Sai: nhân viên đã nói không phải điều dưỡng.",
             "Đúng: Tanaka giới thiệu là nhân viên chăm sóc.",
-            "Sai: không phải người nhà.",
             "Sai: không có vai giảng viên."
-          ]
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         },
         {
           "id": "kaigo-foundation-01-q02",
           "promptJa": "森川さんが希望する呼び方はどれですか。",
           "optionsJa": [
-            "おばあちゃん",
-            "森川ちゃん",
             "晴子さん",
+            "森川ちゃん",
+            "おばあちゃん",
             "晴子ちゃん"
           ],
-          "correctIndex": 2,
+          "correctIndex": 0,
           "rationalesVi": [
-            "Sai: không phải cách bác yêu cầu.",
-            "Sai: tự đổi sang cách gọi thân mật.",
             "Đúng: đúng cách xưng hô bác yêu cầu.",
+            "Sai: tự đổi sang cách gọi thân mật.",
+            "Sai: không phải cách bác yêu cầu.",
             "Sai: bác yêu cầu さん, không phải ちゃん."
-          ]
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         },
         {
           "id": "kaigo-foundation-01-q03",
           "promptJa": "今日はどのように対応しますか。",
           "optionsJa": [
             "短い挨拶にする",
-            "長く話し続ける",
-            "返事を待たずに質問する",
-            "本人の希望を取り消す"
+            "呼び方だけ確認して、長い説明を続ける",
+            "本人が休みたい理由を先に詳しく聞く",
+            "家族が来るまで会話の終了を待つ"
           ],
           "correctIndex": 0,
           "rationalesVi": [
             "Đúng: phù hợp mong muốn nói ngắn.",
-            "Sai: trái yêu cầu để chuyện dài sau.",
-            "Sai: không dành cơ hội trả lời.",
-            "Sai: không tôn trọng mong muốn."
-          ]
+            "Sai: Cách gọi đúng nhưng không giữ mong muốn chỉ chào ngắn.",
+            "Sai: Không cần bắt giải thích lý do để được chào ngắn.",
+            "Sai: Chưa có yêu cầu chờ người nhà để dừng nói chuyện."
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "distractorRevision": "nearby_misunderstandings_with_specific_explanations",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
+        },
+        {
+          "id": "kaigo-foundation-01-revision-q01",
+          "kind": "knowledge_application",
+          "promptJa": "利用者が「姓で呼んでください」と希望しました。最も適切な返事はどれですか。",
+          "optionsJa": [
+            "ご家族に呼び方を決めていただきます。",
+            "では、お名前で呼ぶほうが親しみやすいですね。",
+            "以前の職員と同じ呼び方にします。",
+            "ご希望の姓でお呼びします。"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: Không có lý do chuyển quyền chọn sang gia đình.",
+            "Sai: Sự thân thiện không cho phép đổi cách gọi đã được yêu cầu.",
+            "Sai: Cách trước đây không thay thế mong muốn hiện tại.",
+            "Đúng: Tôn trọng cách xưng hô người sử dụng chọn."
+          ],
+          "rationalesJa": [
+            "本人の選択を家族へ移す理由がない。",
+            "親しさは本人の希望を変更する根拠にならない。",
+            "以前の方法より現在の希望を確認する。",
+            "本人が選んだ呼び方を尊重する。"
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
+        },
+        {
+          "id": "kaigo-foundation-01-revision-q02",
+          "kind": "knowledge_application",
+          "promptJa": "介護職員に病気の診断を求められました。役割に合う対応はどれですか。",
+          "optionsJa": [
+            "症状を一つ聞いて病名を伝える。",
+            "介護の経験から原因だけを決める。",
+            "本人の話を聞き、医療の専門職へつなぐ。",
+            "相談内容は生活に関係しないと考える。"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: Không đủ cơ sở chẩn đoán từ một triệu chứng.",
+            "Sai: Kinh nghiệm chăm sóc không thay thẩm quyền xác định nguyên nhân.",
+            "Đúng: Tiếp nhận lời nói và chuyển đến đúng chuyên môn.",
+            "Sai: Không bỏ qua khó khăn chỉ vì cần chuyên môn khác."
+          ],
+          "rationalesJa": [
+            "一つの症状で診断しない。",
+            "経験だけで原因判断を代行しない。",
+            "話を受け止めて適切な専門職へつなぐ。",
+            "困りごとを切り捨てる対応ではない。"
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         }
       ],
       "dailyPractice": {
         "plannedMinutes": 30,
         "durationMeasured": false,
-        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
+        "durationStatus": "planned_activities_not_learner_measured",
         "blocks": [
           {
             "activity": "review",
-            "minutes": 5
+            "minutes": 3
           },
           {
             "activity": "knowledge",
-            "minutes": 5
+            "minutes": 8
           },
           {
             "activity": "terms_and_expressions",
@@ -183,11 +241,80 @@
           },
           {
             "activity": "npc_practice",
-            "minutes": 10
+            "minutes": 9
           },
           {
             "activity": "check",
             "minutes": 5
+          }
+        ],
+        "activities": [
+          {
+            "activity": "review",
+            "minutes": 3,
+            "instructionVi": "Không nhìn mẫu: trả lời câu gợi nhớ dưới đây; nói lại một ý bị thiếu ở bài gần nhất. Ngày1 dùng câu hỏi đầu vào, không yêu cầu kiến thức bài chưa học.",
+            "promptVi": "Tôn nghiêm thể hiện ở cách gọi và lựa chọn nào?",
+            "expectedVi": "Người sử dụng được chọn cách gọi và lúc muốn trò chuyện; nhân viên giới thiệu vai trò rõ."
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 8,
+            "stepsVi": [
+              "3 phút đọc bốn phần giải thích, đánh dấu khái niệm chưa hiểu",
+              "2 phút so sánh việc phù hợp và việc vượt phạm vi trong case mới",
+              "2 phút giải thích lý do bằng lời của mình",
+              "1 phút trả lời câu gợi nhớ và sửa một hiểu nhầm"
+            ],
+            "knowledgeId": "kaigo-foundation-01-knowledge"
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5,
+            "stepsVi": [
+              "2 phút đọc từ đã liên kết và hai cách nói, kiểm nghĩa trong tình huống",
+              "2 phút che mẫu và nói lại theo ý; không bắt dùng từ ngoài mục tiêu",
+              "1 phút chọn một từ/cách nói còn yếu để ôn tiếp"
+            ],
+            "vocabularyIds": [
+              "kaigo-vocab-foundation-01",
+              "kaigo-vocab-foundation-02",
+              "kaigo-vocab-foundation-03",
+              "kaigo-vocab-foundation-04",
+              "kaigo-vocab-foundation-05"
+            ]
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 9,
+            "stepsVi": [
+              "2 phút đọc/đóng vai mẫu và xác định việc phải hỏi",
+              "3 phút nói lại ít gợi ý, kiểm từng ý bắt buộc của lượt",
+              "2 phút luyện nhánh hỏi lại đã viết trong rubric, rồi trở về nhiệm vụ",
+              "2 phút luyện trường hợp chuyển giao dưới đây và sửa một điểm thiếu"
+            ],
+            "transferId": "kaigo-foundation-01-transfer",
+            "practiceModes": [
+              "guided",
+              "bounded_roleplay",
+              "reduced_hints"
+            ]
+          },
+          {
+            "activity": "check",
+            "minutes": 5,
+            "stepsVi": [
+              "1 phút đọc văn bản mới của bài",
+              "3 phút trả lời năm câu trước xem đáp án",
+              "1 phút xem lý do sai, ghi một mục ôn lại; nếu chưa xong, đánh dấu phần cần tiếp tục, không tự coi đạt"
+            ],
+            "questionIds": [
+              "kaigo-foundation-01-q01",
+              "kaigo-foundation-01-q02",
+              "kaigo-foundation-01-q03",
+              "kaigo-foundation-01-revision-q01",
+              "kaigo-foundation-01-revision-q02"
+            ],
+            "feedbackAfterAttempt": true
           }
         ],
         "practiceModes": [
@@ -195,8 +322,9 @@
           "bounded_roleplay",
           "reduced_hints"
         ],
-        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
-        "newVocabularyPolicy": "Ngày1–4 học từ mới theo danh sách; ngày5–7 nhắc lại, không áp chỉ tiêu từ mới."
+        "reviewPlanVi": "Nhắc mục sai sau1,3,7,14,30ngày; là thiết kế chưa có scheduler runtime.",
+        "newVocabularyPolicy": "Giữ từ đã có theo mục tiêu; thuật ngữ khái niệm được giải thích tại bài, không ép học mới để đủ số.",
+        "timingVi": "30phút là phân bổ hoạt động, chưa có thời lượng người học thực tế; không tính đọc một lần là đủ khối NPC."
       },
       "responsePolicy": {
         "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
@@ -232,7 +360,145 @@
         "Tình huống thường, không xử lý khẩn cấp hay quy định ngoại lệ pháp lý.",
         "Không tự chẩn đoán, tư vấn thuốc hoặc dạy thao tác chuyển người.",
         "Chưa hình/audio/runtime; chưa người duyệt chuyên môn/ngôn ngữ/quyền."
-      ]
+      ],
+      "knowledgeModule": {
+        "id": "kaigo-foundation-01-knowledge",
+        "titleVi": "Tôn nghiêm và vai trò",
+        "summaryJa": "役割を伝え、呼び方と話す時間を確認します。",
+        "sections": [
+          {
+            "id": "kaigo-foundation-01-concept-1",
+            "explanationVi": "Tôn nghiêm nghĩa là người cần trợ giúp vẫn được đối xử như một cá nhân có lựa chọn và đời sống riêng. Cách gọi tên, thời điểm trò chuyện và việc có muốn nói chuyện đều cần xác nhận; thân thiện không đồng nghĩa tự cho phép dùng tên thân mật.",
+            "sourcePages": [
+              {
+                "printed": 10,
+                "pdf": 12
+              },
+              {
+                "printed": 16,
+                "pdf": 18
+              },
+              {
+                "printed": 20,
+                "pdf": 22
+              },
+              {
+                "printed": 102,
+                "pdf": 104
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-01-concept-2",
+            "explanationVi": "Nhân viên chăm sóc hỗ trợ sinh hoạt, quan sát thay đổi và phối hợp với các nghề khác. Điều dưỡng và bác sĩ có trách nhiệm chuyên môn khác; giới thiệu rõ vai trò giúp người sử dụng biết ai đang hỗ trợ và tránh hiểu rằng người chăm sóc có thể chẩn đoán.",
+            "sourcePages": [
+              {
+                "printed": 10,
+                "pdf": 12
+              },
+              {
+                "printed": 16,
+                "pdf": 18
+              },
+              {
+                "printed": 20,
+                "pdf": 22
+              },
+              {
+                "printed": 102,
+                "pdf": 104
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-01-concept-3",
+            "explanationVi": "Trong bài này, lời đề nghị nói chuyện là một lựa chọn, không phải mệnh lệnh. Khi bác chỉ muốn chào ngắn, kết quả phù hợp là hoàn thành chào hỏi và hẹn dịp thuận tiện; không kéo dài cuộc nói chuyện chỉ để hoàn thành nhiệm vụ học.",
+            "sourcePages": [
+              {
+                "printed": 10,
+                "pdf": 12
+              },
+              {
+                "printed": 16,
+                "pdf": 18
+              },
+              {
+                "printed": 20,
+                "pdf": 22
+              },
+              {
+                "printed": 102,
+                "pdf": 104
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-01-concept-4",
+            "explanationVi": "Tự kiểm: nêu được tên và vai trò, xác nhận cách xưng hô, phân biệt yêu cầu về sinh hoạt với yêu cầu cần chuyển đúng chuyên môn. Không kết luận bệnh, điều trị hoặc hứa thay người phụ trách.",
+            "sourcePages": [
+              {
+                "printed": 10,
+                "pdf": 12
+              },
+              {
+                "printed": 16,
+                "pdf": 18
+              },
+              {
+                "printed": 20,
+                "pdf": 22
+              },
+              {
+                "printed": 102,
+                "pdf": 104
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          }
+        ],
+        "scope": "Concepts and communication; no physical-procedure instruction, diagnosis or treatment",
+        "retrievalCheck": {
+          "promptVi": "Tôn nghiêm thể hiện ở cách gọi và lựa chọn nào?",
+          "expectedVi": "Người sử dụng được chọn cách gọi và lúc muốn trò chuyện; nhân viên giới thiệu vai trò rõ.",
+          "visibleAfterAttempt": true
+        },
+        "caseContrastVi": {
+          "case": "Người sử dụng muốn được gọi bằng họ, chỉ có hai phút trước khi nhận điện thoại.",
+          "correctPrinciple": "Giới thiệu vai trò, xác nhận cách gọi và giới hạn thời gian.",
+          "overreachToAvoid": "Chưa được yêu cầu tư vấn chuyên môn."
+        },
+        "conceptTermIds": [
+          "kaigo-concept-01",
+          "kaigo-concept-03"
+        ],
+        "conceptGlossaryFile": "knowledge-glossary.json"
+      },
+      "revision": 2,
+      "editorialStatus": "revised_pending_human_review",
+      "transferPractice": {
+        "id": "kaigo-foundation-01-transfer",
+        "contextVi": "Người sử dụng muốn được gọi bằng họ, chỉ có hai phút trước khi nhận điện thoại.",
+        "taskVi": "Giới thiệu vai trò, xác nhận cách gọi và giới hạn thời gian.",
+        "boundaryVi": "Chưa được yêu cầu tư vấn chuyên môn.",
+        "expectedMeaningVi": [
+          "Nêu đúng dữ kiện của trường hợp mới",
+          "Giới thiệu vai trò, xác nhận cách gọi và giới hạn thời gian.",
+          "Chưa được yêu cầu tư vấn chuyên môn."
+        ],
+        "method": "bounded_rehearsal_no_generated_unreviewed_NPC_reply",
+        "completionVi": "Giải thích lựa chọn, nói một phản hồi Nhật phù hợp, tự kiểm ý thiếu; không cần trùng câu mẫu."
+      },
+      "sourceMetadata": {
+        "filename": "介護ー特定技能ーベトナム語.pdf",
+        "edition": "second revision March 2025",
+        "pdfPages": 276,
+        "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+        "libraryFileId": "libfile_30516fe27c688191907d48df8b3fb8df",
+        "publishSourceBytes": false
+      }
     },
     {
       "id": "kaigo-foundation-02",
@@ -242,36 +508,35 @@
       "playerRoleVi": "Nhân viên chăm sóc Tanaka",
       "contextVi": "Bàn trong phòng bác Hasebe có báo và kính. Người học muốn lau bàn; không tự cất đồ cá nhân.",
       "knowledgeVi": [
-        "Hỏi nhu cầu trước; xác nhận nơi đặt đồ và xin phép trước khi thực hiện."
+        "Quyền tự quyết thể hiện ở những lựa chọn nhỏ trong sinh hoạt, như lúc lau bàn và nơi để đồ. Đồ nằm trong phòng người sử dụng không trở thành đồ nhân viên có thể tự di chuyển; cần hỏi việc muốn làm và ảnh hưởng của việc đó.",
+        "Câu hỏi đóng hữu ích khi cần xác nhận một lựa chọn cụ thể; câu hỏi mở giúp biết nhu cầu chưa đoán được. Hỏi có muốn lau bây giờ không và hỏi muốn đặt đồ ở đâu thực hiện hai nhiệm vụ khác nhau. Chỉ hỏi có/không có thể bỏ sót nhu cầu.",
+        "Đồng ý lau bàn không tự bao gồm đồng ý bỏ báo hoặc cất kính nơi khác. Xác nhận cả đồ cần chuyển, vị trí tạm và việc trả lại giúp tránh mỗi người hiểu một cách. Khi người sử dụng muốn để sau, cần điều chỉnh việc thường thay vì xem đó là không hợp tác.",
+        "Tự kiểm: mô tả phạm vi đã được đồng ý, phần còn cần hỏi và kết quả sau công việc. Luyện giải thích lại khi người sử dụng thay đổi lựa chọn trước lúc bắt đầu. Tình huống này không nói về sự cố khẩn cấp."
       ],
       "sourceRefs": [
         {
-          "filename": "介護ー特定技能ーベトナム語.pdf",
-          "edition": "March 2025 second revision",
-          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
-          "pages": [
-            {
-              "printed": 10,
-              "pdf": 12
-            },
-            {
-              "printed": 12,
-              "pdf": 14
-            },
-            {
-              "printed": 13,
-              "pdf": 15
-            },
-            {
-              "printed": 102,
-              "pdf": 104
-            },
-            {
-              "printed": 103,
-              "pdf": 105
-            }
-          ],
-          "verification": "text layer and printed labels checked; no full visual certification"
+          "printedPage": 10,
+          "pdfPage": 12,
+          "purpose": "Đồng ý có phạm vi",
+          "verification": "text layer and printed labels checked; human review pending"
+        },
+        {
+          "printedPage": 12,
+          "pdfPage": 14,
+          "purpose": "Đồng ý có phạm vi",
+          "verification": "text layer and printed labels checked; human review pending"
+        },
+        {
+          "printedPage": 13,
+          "pdfPage": 15,
+          "purpose": "Đồng ý có phạm vi",
+          "verification": "text layer and printed labels checked; human review pending"
+        },
+        {
+          "printedPage": 103,
+          "pdfPage": 105,
+          "purpose": "Đồng ý có phạm vi",
+          "verification": "text layer and printed labels checked; human review pending"
         }
       ],
       "vocabularyIds": [
@@ -363,65 +628,124 @@
           "promptJa": "清掃中、新聞はどこに置きますか。",
           "optionsJa": [
             "棚の下",
+            "隣の椅子",
             "ごみ箱",
-            "別の部屋",
-            "隣の椅子"
+            "別の部屋"
           ],
-          "correctIndex": 3,
+          "correctIndex": 1,
           "rationalesVi": [
             "Sai: bác dặn không cất dưới kệ.",
+            "Đúng: bác chỉ định ghế bên cạnh.",
             "Sai: báo vẫn đang được đọc.",
-            "Sai: không được yêu cầu chuyển phòng.",
-            "Đúng: bác chỉ định ghế bên cạnh."
-          ]
+            "Sai: không được yêu cầu chuyển phòng."
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         },
         {
           "id": "kaigo-foundation-02-q02",
           "promptJa": "清掃後はどうしますか。",
           "optionsJa": [
-            "新聞と眼鏡を元に戻す",
             "新聞だけ捨てる",
             "両方を棚にしまう",
+            "新聞と眼鏡を元に戻す",
             "眼鏡だけ持ち帰る"
           ],
-          "correctIndex": 0,
+          "correctIndex": 2,
           "rationalesVi": [
-            "Đúng: bác xác nhận trả cả hai về chỗ cũ.",
             "Sai: không có đồng ý bỏ báo.",
             "Sai: không được yêu cầu cất kệ.",
+            "Đúng: bác xác nhận trả cả hai về chỗ cũ.",
             "Sai: không được mang đồ cá nhân đi."
-          ]
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         },
         {
           "id": "kaigo-foundation-02-q03",
           "promptJa": "物を動かす前に大切なのはどれですか。",
           "optionsJa": [
-            "職員の好みで決める",
-            "置き場所と本人の同意を確認する",
-            "本人に知らせず片づける",
-            "新聞を読めないと決めつける"
+            "同意はあるので、置き場所は職員が選ぶ",
+            "物の置き場所だけ確認して、清掃はすぐ始める",
+            "前回の清掃と同じなら、物は先に移す",
+            "置き場所と本人の同意を確認する"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: Đồng ý làm việc không thay xác nhận chỗ đồ.",
+            "Sai: Cần giữ cả đồng ý về công việc và vị trí đồ.",
+            "Sai: Lần trước không quyết định mong muốn hiện tại.",
+            "Đúng: hỏi nơi đặt và xin phép trước thực hiện."
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "distractorRevision": "nearby_misunderstandings_with_specific_explanations",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
+        },
+        {
+          "id": "kaigo-foundation-02-revision-q01",
+          "kind": "knowledge_application",
+          "promptJa": "机を拭くことには同意がありますが、書類の置き場所は未確認です。始める前に何をしますか。",
+          "optionsJa": [
+            "邪魔にならない場所を職員が選ぶ。",
+            "書類は家族の部屋へ運ぶ。",
+            "以前の置き場所へ戻してから拭く。",
+            "書類をどこへ置くか本人に聞く。"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: Vị trí đồ cá nhân chưa được người sử dụng xác nhận.",
+            "Sai: Không có đồng ý chuyển sang phòng người nhà.",
+            "Sai: Nơi đặt trước đây chưa chắc là lựa chọn hiện tại.",
+            "Đúng: Tách đồng ý làm việc khỏi đồng ý vị trí đồ."
+          ],
+          "rationalesJa": [
+            "職員の判断で本人の物を動かす条件が未確認。",
+            "家族へ運ぶ同意はない。",
+            "以前の情報は現在の希望を保証しない。",
+            "作業への同意と移動先への同意を分ける。"
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
+        },
+        {
+          "id": "kaigo-foundation-02-revision-q02",
+          "kind": "knowledge_application",
+          "promptJa": "希望を知るための開かれた質問はどれですか。",
+          "optionsJa": [
+            "新聞はこの場所に戻しますか。",
+            "今の部屋で、どのように過ごしたいですか。",
+            "この椅子でよいですか。",
+            "清掃は今にしますか、午後にしますか。"
           ],
           "correctIndex": 1,
           "rationalesVi": [
-            "Sai: lựa chọn của nhân viên không thay mong muốn bác.",
-            "Đúng: hỏi nơi đặt và xin phép trước thực hiện.",
-            "Sai: bỏ qua mong muốn và sự đồng ý.",
-            "Sai: không có dữ kiện để kết luận năng lực."
-          ]
+            "Sai: Câu hỏi xác nhận một vị trí cụ thể.",
+            "Đúng: Người sử dụng có thể tự do mô tả mong muốn.",
+            "Sai: Đây là câu xác nhận có/không.",
+            "Sai: Đây là hai lựa chọn được đưa sẵn."
+          ],
+          "rationalesJa": [
+            "特定の場所への同意を確認している。",
+            "本人が自由に希望を説明できる。",
+            "はい／いいえで答える確認質問。",
+            "提示された二択の確認。"
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         }
       ],
       "dailyPractice": {
         "plannedMinutes": 30,
         "durationMeasured": false,
-        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
+        "durationStatus": "planned_activities_not_learner_measured",
         "blocks": [
           {
             "activity": "review",
-            "minutes": 5
+            "minutes": 3
           },
           {
             "activity": "knowledge",
-            "minutes": 5
+            "minutes": 8
           },
           {
             "activity": "terms_and_expressions",
@@ -429,11 +753,81 @@
           },
           {
             "activity": "npc_practice",
-            "minutes": 10
+            "minutes": 9
           },
           {
             "activity": "check",
             "minutes": 5
+          }
+        ],
+        "activities": [
+          {
+            "activity": "review",
+            "minutes": 3,
+            "instructionVi": "Không nhìn mẫu: trả lời câu gợi nhớ dưới đây; nói lại một ý bị thiếu ở bài gần nhất. Ngày1 dùng câu hỏi đầu vào, không yêu cầu kiến thức bài chưa học.",
+            "promptVi": "Đồng ý lau bàn có đồng ý chuyển mọi đồ không?",
+            "expectedVi": "Không; cần hỏi phần đồ, vị trí và phạm vi thao tác."
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 8,
+            "stepsVi": [
+              "3 phút đọc bốn phần giải thích, đánh dấu khái niệm chưa hiểu",
+              "2 phút so sánh việc phù hợp và việc vượt phạm vi trong case mới",
+              "2 phút giải thích lý do bằng lời của mình",
+              "1 phút trả lời câu gợi nhớ và sửa một hiểu nhầm"
+            ],
+            "knowledgeId": "kaigo-foundation-02-knowledge"
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5,
+            "stepsVi": [
+              "2 phút đọc từ đã liên kết và hai cách nói, kiểm nghĩa trong tình huống",
+              "2 phút che mẫu và nói lại theo ý; không bắt dùng từ ngoài mục tiêu",
+              "1 phút chọn một từ/cách nói còn yếu để ôn tiếp"
+            ],
+            "vocabularyIds": [
+              "kaigo-vocab-foundation-06",
+              "kaigo-vocab-foundation-07",
+              "kaigo-vocab-foundation-08",
+              "kaigo-vocab-foundation-09",
+              "kaigo-vocab-foundation-10",
+              "kaigo-vocab-foundation-11"
+            ]
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 9,
+            "stepsVi": [
+              "2 phút đọc/đóng vai mẫu và xác định việc phải hỏi",
+              "3 phút nói lại ít gợi ý, kiểm từng ý bắt buộc của lượt",
+              "2 phút luyện nhánh hỏi lại đã viết trong rubric, rồi trở về nhiệm vụ",
+              "2 phút luyện trường hợp chuyển giao dưới đây và sửa một điểm thiếu"
+            ],
+            "transferId": "kaigo-foundation-02-transfer",
+            "practiceModes": [
+              "guided",
+              "bounded_roleplay",
+              "reduced_hints"
+            ]
+          },
+          {
+            "activity": "check",
+            "minutes": 5,
+            "stepsVi": [
+              "1 phút đọc văn bản mới của bài",
+              "3 phút trả lời năm câu trước xem đáp án",
+              "1 phút xem lý do sai, ghi một mục ôn lại; nếu chưa xong, đánh dấu phần cần tiếp tục, không tự coi đạt"
+            ],
+            "questionIds": [
+              "kaigo-foundation-02-q01",
+              "kaigo-foundation-02-q02",
+              "kaigo-foundation-02-q03",
+              "kaigo-foundation-02-revision-q01",
+              "kaigo-foundation-02-revision-q02"
+            ],
+            "feedbackAfterAttempt": true
           }
         ],
         "practiceModes": [
@@ -441,8 +835,9 @@
           "bounded_roleplay",
           "reduced_hints"
         ],
-        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
-        "newVocabularyPolicy": "Ngày1–4 học từ mới theo danh sách; ngày5–7 nhắc lại, không áp chỉ tiêu từ mới."
+        "reviewPlanVi": "Nhắc mục sai sau1,3,7,14,30ngày; là thiết kế chưa có scheduler runtime.",
+        "newVocabularyPolicy": "Giữ từ đã có theo mục tiêu; thuật ngữ khái niệm được giải thích tại bài, không ép học mới để đủ số.",
+        "timingVi": "30phút là phân bổ hoạt động, chưa có thời lượng người học thực tế; không tính đọc một lần là đủ khối NPC."
       },
       "responsePolicy": {
         "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
@@ -478,7 +873,145 @@
         "Tình huống thường, không xử lý khẩn cấp hay quy định ngoại lệ pháp lý.",
         "Không tự chẩn đoán, tư vấn thuốc hoặc dạy thao tác chuyển người.",
         "Chưa hình/audio/runtime; chưa người duyệt chuyên môn/ngôn ngữ/quyền."
-      ]
+      ],
+      "knowledgeModule": {
+        "id": "kaigo-foundation-02-knowledge",
+        "titleVi": "Đồng ý có phạm vi",
+        "summaryJa": "同意した内容と、まだ聞く必要があることを分けます。",
+        "sections": [
+          {
+            "id": "kaigo-foundation-02-concept-1",
+            "explanationVi": "Quyền tự quyết thể hiện ở những lựa chọn nhỏ trong sinh hoạt, như lúc lau bàn và nơi để đồ. Đồ nằm trong phòng người sử dụng không trở thành đồ nhân viên có thể tự di chuyển; cần hỏi việc muốn làm và ảnh hưởng của việc đó.",
+            "sourcePages": [
+              {
+                "printed": 10,
+                "pdf": 12
+              },
+              {
+                "printed": 12,
+                "pdf": 14
+              },
+              {
+                "printed": 13,
+                "pdf": 15
+              },
+              {
+                "printed": 103,
+                "pdf": 105
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-02-concept-2",
+            "explanationVi": "Câu hỏi đóng hữu ích khi cần xác nhận một lựa chọn cụ thể; câu hỏi mở giúp biết nhu cầu chưa đoán được. Hỏi có muốn lau bây giờ không và hỏi muốn đặt đồ ở đâu thực hiện hai nhiệm vụ khác nhau. Chỉ hỏi có/không có thể bỏ sót nhu cầu.",
+            "sourcePages": [
+              {
+                "printed": 10,
+                "pdf": 12
+              },
+              {
+                "printed": 12,
+                "pdf": 14
+              },
+              {
+                "printed": 13,
+                "pdf": 15
+              },
+              {
+                "printed": 103,
+                "pdf": 105
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-02-concept-3",
+            "explanationVi": "Đồng ý lau bàn không tự bao gồm đồng ý bỏ báo hoặc cất kính nơi khác. Xác nhận cả đồ cần chuyển, vị trí tạm và việc trả lại giúp tránh mỗi người hiểu một cách. Khi người sử dụng muốn để sau, cần điều chỉnh việc thường thay vì xem đó là không hợp tác.",
+            "sourcePages": [
+              {
+                "printed": 10,
+                "pdf": 12
+              },
+              {
+                "printed": 12,
+                "pdf": 14
+              },
+              {
+                "printed": 13,
+                "pdf": 15
+              },
+              {
+                "printed": 103,
+                "pdf": 105
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-02-concept-4",
+            "explanationVi": "Tự kiểm: mô tả phạm vi đã được đồng ý, phần còn cần hỏi và kết quả sau công việc. Luyện giải thích lại khi người sử dụng thay đổi lựa chọn trước lúc bắt đầu. Tình huống này không nói về sự cố khẩn cấp.",
+            "sourcePages": [
+              {
+                "printed": 10,
+                "pdf": 12
+              },
+              {
+                "printed": 12,
+                "pdf": 14
+              },
+              {
+                "printed": 13,
+                "pdf": 15
+              },
+              {
+                "printed": 103,
+                "pdf": 105
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          }
+        ],
+        "scope": "Concepts and communication; no physical-procedure instruction, diagnosis or treatment",
+        "retrievalCheck": {
+          "promptVi": "Đồng ý lau bàn có đồng ý chuyển mọi đồ không?",
+          "expectedVi": "Không; cần hỏi phần đồ, vị trí và phạm vi thao tác.",
+          "visibleAfterAttempt": true
+        },
+        "caseContrastVi": {
+          "case": "Người sử dụng đồng ý lau bàn nhưng muốn giữ kính ở chỗ hiện tại.",
+          "correctPrinciple": "Nhắc phạm vi đồng ý mới và hỏi cách lau không tự di chuyển kính.",
+          "overreachToAvoid": "Đồng ý lau không đồng ý chuyển mọi đồ."
+        },
+        "conceptTermIds": [
+          "kaigo-concept-03",
+          "kaigo-concept-04"
+        ],
+        "conceptGlossaryFile": "knowledge-glossary.json"
+      },
+      "revision": 2,
+      "editorialStatus": "revised_pending_human_review",
+      "transferPractice": {
+        "id": "kaigo-foundation-02-transfer",
+        "contextVi": "Người sử dụng đồng ý lau bàn nhưng muốn giữ kính ở chỗ hiện tại.",
+        "taskVi": "Nhắc phạm vi đồng ý mới và hỏi cách lau không tự di chuyển kính.",
+        "boundaryVi": "Đồng ý lau không đồng ý chuyển mọi đồ.",
+        "expectedMeaningVi": [
+          "Nêu đúng dữ kiện của trường hợp mới",
+          "Nhắc phạm vi đồng ý mới và hỏi cách lau không tự di chuyển kính.",
+          "Đồng ý lau không đồng ý chuyển mọi đồ."
+        ],
+        "method": "bounded_rehearsal_no_generated_unreviewed_NPC_reply",
+        "completionVi": "Giải thích lựa chọn, nói một phản hồi Nhật phù hợp, tự kiểm ý thiếu; không cần trùng câu mẫu."
+      },
+      "sourceMetadata": {
+        "filename": "介護ー特定技能ーベトナム語.pdf",
+        "edition": "second revision March 2025",
+        "pdfPages": 276,
+        "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+        "libraryFileId": "libfile_30516fe27c688191907d48df8b3fb8df",
+        "publishSourceBytes": false
+      }
     },
     {
       "id": "kaigo-foundation-03",
@@ -488,36 +1021,29 @@
       "playerRoleVi": "Nhân viên chăm sóc Tanaka",
       "contextVi": "Bác Onodera muốn viết thiệp. Không có dữ kiện về bệnh hay năng lực vận động; không suy đoán từ tuổi.",
       "knowledgeVi": [
-        "Hỏi phần muốn tự làm và phần cần giúp; không làm thay toàn bộ chỉ vì nhanh hơn."
+        "Tự lập trong chăm sóc gồm khả năng thực hiện hoạt động và khả năng tự chọn cách sống. Một người cần người khác đọc chữ nhỏ vẫn có thể tự chọn nội dung thư và tự viết; cần trợ giúp một phần không đồng nghĩa mất quyền quyết định toàn bộ.",
+        "Hỗ trợ tự lập bắt đầu bằng hỏi việc người sử dụng muốn làm, việc hiện làm được và phần cần giúp. Nhân viên làm thay vì nhanh hơn có thể làm mất cơ hội sử dụng khả năng còn có; hoàn thành nhanh không phải tiêu chí duy nhất của hỗ trợ tốt.",
+        "Trong tình huống viết thiệp, đọc địa chỉ và viết lời nhắn là hai nhiệm vụ khác nhau. Đọc từng phần theo tốc độ người nghe, cho nghe lại và để họ tự kiểm là cách phối hợp theo nhu cầu, không phải bài kiểm tra xem họ có làm được như người khác không.",
+        "Tự kiểm: chỉ ra phần nhân viên giúp và phần người sử dụng giữ quyền thực hiện. Nếu yêu cầu đổi từ đọc sang viết hộ, phải xác nhận yêu cầu mới, không suy từ lần đồng ý trước. Chỉ luyện hỗ trợ đọc/viết, không hướng dẫn thao tác cơ thể."
       ],
       "sourceRefs": [
         {
-          "filename": "介護ー特定技能ーベトナム語.pdf",
-          "edition": "March 2025 second revision",
-          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
-          "pages": [
-            {
-              "printed": 10,
-              "pdf": 12
-            },
-            {
-              "printed": 12,
-              "pdf": 14
-            },
-            {
-              "printed": 13,
-              "pdf": 15
-            },
-            {
-              "printed": 102,
-              "pdf": 104
-            },
-            {
-              "printed": 103,
-              "pdf": 105
-            }
-          ],
-          "verification": "text layer and printed labels checked; no full visual certification"
+          "printedPage": 12,
+          "pdfPage": 14,
+          "purpose": "Tự lập thể chất và tự quyết",
+          "verification": "text layer and printed labels checked; human review pending"
+        },
+        {
+          "printedPage": 13,
+          "pdfPage": 15,
+          "purpose": "Tự lập thể chất và tự quyết",
+          "verification": "text layer and printed labels checked; human review pending"
+        },
+        {
+          "printedPage": 129,
+          "pdfPage": 131,
+          "purpose": "Tự lập thể chất và tự quyết",
+          "verification": "text layer and printed labels checked; human review pending"
         }
       ],
       "vocabularyIds": [
@@ -596,66 +1122,125 @@
           "id": "kaigo-foundation-03-q01",
           "promptJa": "職員に頼まれたことはどれですか。",
           "optionsJa": [
+            "はがきを捨てる",
             "文章を全部書く",
             "住所を変更する",
-            "住所をゆっくり読む",
-            "はがきを捨てる"
+            "住所をゆっくり読む"
           ],
-          "correctIndex": 2,
+          "correctIndex": 3,
           "rationalesVi": [
+            "Sai: trái mong muốn gửi thiệp.",
             "Sai: bác muốn tự viết.",
             "Sai: bác không nhờ đổi địa chỉ.",
-            "Đúng: đúng phạm vi bác nhờ giúp.",
-            "Sai: trái mong muốn gửi thiệp."
-          ]
+            "Đúng: đúng phạm vi bác nhờ giúp."
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         },
         {
           "id": "kaigo-foundation-03-q02",
           "promptJa": "書き終わった後、誰が確認しますか。",
           "optionsJa": [
-            "友達だけ",
             "看護師だけ",
             "家族だけ",
-            "小野寺さん本人"
+            "小野寺さん本人",
+            "友達だけ"
           ],
-          "correctIndex": 3,
+          "correctIndex": 2,
           "rationalesVi": [
-            "Sai: không nói bạn kiểm.",
             "Sai: không có điều dưỡng trong việc này.",
             "Sai: không có yêu cầu người nhà kiểm.",
-            "Đúng: bác nói sẽ tự kiểm."
-          ]
+            "Đúng: bác nói sẽ tự kiểm.",
+            "Sai: không nói bạn kiểm."
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         },
         {
           "id": "kaigo-foundation-03-q03",
           "promptJa": "支援として適切なのはどれですか。",
           "optionsJa": [
-            "必要な部分だけ手伝う",
-            "早く終えるため全部代わる",
-            "年齢だけでできないと判断する",
-            "質問せずに作業を始める"
+            "本人が書いた部分を職員が全部書き直す",
+            "本人に任せ、住所の読み取りも手伝わない",
+            "一部を手伝うなら文章も職員が決める",
+            "必要な部分だけ手伝う"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: Chưa có yêu cầu sửa phần người sử dụng làm.",
+            "Sai: Bỏ phần trợ giúp đã được yêu cầu.",
+            "Sai: Hỗ trợ một phần không chuyển quyền chọn nội dung.",
+            "Đúng: giúp phần cần và giữ phần bác muốn tự làm."
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "distractorRevision": "nearby_misunderstandings_with_specific_explanations",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
+        },
+        {
+          "id": "kaigo-foundation-03-revision-q01",
+          "kind": "knowledge_application",
+          "promptJa": "本人は予定を書くことができ、細かい日付だけ読み取りにくいと言います。自立を支える対応はどれですか。",
+          "optionsJa": [
+            "読めるようになるまで援助を待つ。",
+            "読みにくいので予定作成を中止する。",
+            "職員が予定をすべて記入する。",
+            "日付を本人の希望する速さで読み、記入は本人が行う。"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: Tự lập không có nghĩa tuyệt đối không nhận trợ giúp.",
+            "Sai: Mất cơ hội tiếp tục bằng hỗ trợ một phần.",
+            "Sai: Làm thay cả phần viết mà người sử dụng có khả năng thực hiện.",
+            "Đúng: Chỉ bù phần cần hỗ trợ, giữ hoạt động người sử dụng muốn tự làm."
+          ],
+          "rationalesJa": [
+            "自立は援助を一切受けない意味ではない。",
+            "部分援助で続けられる機会を失う。",
+            "できる記入まで代行している。",
+            "必要な部分だけ補い、本人の能力を生かす。"
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
+        },
+        {
+          "id": "kaigo-foundation-03-revision-q02",
+          "kind": "knowledge_application",
+          "promptJa": "身体の動作に介助が必要な人の自己決定について、適切な理解はどれですか。",
+          "optionsJa": [
+            "動作の援助が必要でも、本人の選択を確認する。",
+            "介助量が多いと希望は職員が決める。",
+            "動作ができる人にだけ選択肢を示す。",
+            "家族がいると本人には聞かない。"
           ],
           "correctIndex": 0,
           "rationalesVi": [
-            "Đúng: giúp phần cần và giữ phần bác muốn tự làm.",
-            "Sai: nhanh hơn không phải lý do tước phần tự làm.",
-            "Sai: không đánh giá khả năng chỉ từ tuổi.",
-            "Sai: cần xác nhận mong muốn trước."
-          ]
+            "Đúng: Xác nhận lựa chọn dù cần hỗ trợ vận động.",
+            "Sai: Không đồng nhất khó khăn động tác với mất quyền tự chọn.",
+            "Sai: Không giới hạn quyền lựa chọn chỉ cho người làm được động tác.",
+            "Sai: Có người nhà không phải lý do bỏ hỏi người sử dụng."
+          ],
+          "rationalesJa": [
+            "身体の自立と意思決定の支援を区別する。",
+            "動作と意思決定を混同している。",
+            "能力の一部だけで選択を制限しない。",
+            "家族の存在だけで本人の意思を除外しない。"
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         }
       ],
       "dailyPractice": {
         "plannedMinutes": 30,
         "durationMeasured": false,
-        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
+        "durationStatus": "planned_activities_not_learner_measured",
         "blocks": [
           {
             "activity": "review",
-            "minutes": 5
+            "minutes": 3
           },
           {
             "activity": "knowledge",
-            "minutes": 5
+            "minutes": 8
           },
           {
             "activity": "terms_and_expressions",
@@ -663,11 +1248,81 @@
           },
           {
             "activity": "npc_practice",
-            "minutes": 10
+            "minutes": 9
           },
           {
             "activity": "check",
             "minutes": 5
+          }
+        ],
+        "activities": [
+          {
+            "activity": "review",
+            "minutes": 3,
+            "instructionVi": "Không nhìn mẫu: trả lời câu gợi nhớ dưới đây; nói lại một ý bị thiếu ở bài gần nhất. Ngày1 dùng câu hỏi đầu vào, không yêu cầu kiến thức bài chưa học.",
+            "promptVi": "Nhận trợ giúp đọc có mất quyền tự viết không?",
+            "expectedVi": "Không; xác nhận riêng phần tự làm và phần cần hỗ trợ."
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 8,
+            "stepsVi": [
+              "3 phút đọc bốn phần giải thích, đánh dấu khái niệm chưa hiểu",
+              "2 phút so sánh việc phù hợp và việc vượt phạm vi trong case mới",
+              "2 phút giải thích lý do bằng lời của mình",
+              "1 phút trả lời câu gợi nhớ và sửa một hiểu nhầm"
+            ],
+            "knowledgeId": "kaigo-foundation-03-knowledge"
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5,
+            "stepsVi": [
+              "2 phút đọc từ đã liên kết và hai cách nói, kiểm nghĩa trong tình huống",
+              "2 phút che mẫu và nói lại theo ý; không bắt dùng từ ngoài mục tiêu",
+              "1 phút chọn một từ/cách nói còn yếu để ôn tiếp"
+            ],
+            "vocabularyIds": [
+              "kaigo-vocab-foundation-11",
+              "kaigo-vocab-foundation-12",
+              "kaigo-vocab-foundation-13",
+              "kaigo-vocab-foundation-14",
+              "kaigo-vocab-foundation-15",
+              "kaigo-vocab-foundation-16"
+            ]
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 9,
+            "stepsVi": [
+              "2 phút đọc/đóng vai mẫu và xác định việc phải hỏi",
+              "3 phút nói lại ít gợi ý, kiểm từng ý bắt buộc của lượt",
+              "2 phút luyện nhánh hỏi lại đã viết trong rubric, rồi trở về nhiệm vụ",
+              "2 phút luyện trường hợp chuyển giao dưới đây và sửa một điểm thiếu"
+            ],
+            "transferId": "kaigo-foundation-03-transfer",
+            "practiceModes": [
+              "guided",
+              "bounded_roleplay",
+              "reduced_hints"
+            ]
+          },
+          {
+            "activity": "check",
+            "minutes": 5,
+            "stepsVi": [
+              "1 phút đọc văn bản mới của bài",
+              "3 phút trả lời năm câu trước xem đáp án",
+              "1 phút xem lý do sai, ghi một mục ôn lại; nếu chưa xong, đánh dấu phần cần tiếp tục, không tự coi đạt"
+            ],
+            "questionIds": [
+              "kaigo-foundation-03-q01",
+              "kaigo-foundation-03-q02",
+              "kaigo-foundation-03-q03",
+              "kaigo-foundation-03-revision-q01",
+              "kaigo-foundation-03-revision-q02"
+            ],
+            "feedbackAfterAttempt": true
           }
         ],
         "practiceModes": [
@@ -675,8 +1330,9 @@
           "bounded_roleplay",
           "reduced_hints"
         ],
-        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
-        "newVocabularyPolicy": "Ngày1–4 học từ mới theo danh sách; ngày5–7 nhắc lại, không áp chỉ tiêu từ mới."
+        "reviewPlanVi": "Nhắc mục sai sau1,3,7,14,30ngày; là thiết kế chưa có scheduler runtime.",
+        "newVocabularyPolicy": "Giữ từ đã có theo mục tiêu; thuật ngữ khái niệm được giải thích tại bài, không ép học mới để đủ số.",
+        "timingVi": "30phút là phân bổ hoạt động, chưa có thời lượng người học thực tế; không tính đọc một lần là đủ khối NPC."
       },
       "responsePolicy": {
         "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
@@ -712,7 +1368,129 @@
         "Tình huống thường, không xử lý khẩn cấp hay quy định ngoại lệ pháp lý.",
         "Không tự chẩn đoán, tư vấn thuốc hoặc dạy thao tác chuyển người.",
         "Chưa hình/audio/runtime; chưa người duyệt chuyên môn/ngôn ngữ/quyền."
-      ]
+      ],
+      "knowledgeModule": {
+        "id": "kaigo-foundation-03-knowledge",
+        "titleVi": "Tự lập thể chất và tự quyết",
+        "summaryJa": "できることと、手伝ってほしいことを確認します。",
+        "sections": [
+          {
+            "id": "kaigo-foundation-03-concept-1",
+            "explanationVi": "Tự lập trong chăm sóc gồm khả năng thực hiện hoạt động và khả năng tự chọn cách sống. Một người cần người khác đọc chữ nhỏ vẫn có thể tự chọn nội dung thư và tự viết; cần trợ giúp một phần không đồng nghĩa mất quyền quyết định toàn bộ.",
+            "sourcePages": [
+              {
+                "printed": 12,
+                "pdf": 14
+              },
+              {
+                "printed": 13,
+                "pdf": 15
+              },
+              {
+                "printed": 129,
+                "pdf": 131
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-03-concept-2",
+            "explanationVi": "Hỗ trợ tự lập bắt đầu bằng hỏi việc người sử dụng muốn làm, việc hiện làm được và phần cần giúp. Nhân viên làm thay vì nhanh hơn có thể làm mất cơ hội sử dụng khả năng còn có; hoàn thành nhanh không phải tiêu chí duy nhất của hỗ trợ tốt.",
+            "sourcePages": [
+              {
+                "printed": 12,
+                "pdf": 14
+              },
+              {
+                "printed": 13,
+                "pdf": 15
+              },
+              {
+                "printed": 129,
+                "pdf": 131
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-03-concept-3",
+            "explanationVi": "Trong tình huống viết thiệp, đọc địa chỉ và viết lời nhắn là hai nhiệm vụ khác nhau. Đọc từng phần theo tốc độ người nghe, cho nghe lại và để họ tự kiểm là cách phối hợp theo nhu cầu, không phải bài kiểm tra xem họ có làm được như người khác không.",
+            "sourcePages": [
+              {
+                "printed": 12,
+                "pdf": 14
+              },
+              {
+                "printed": 13,
+                "pdf": 15
+              },
+              {
+                "printed": 129,
+                "pdf": 131
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-03-concept-4",
+            "explanationVi": "Tự kiểm: chỉ ra phần nhân viên giúp và phần người sử dụng giữ quyền thực hiện. Nếu yêu cầu đổi từ đọc sang viết hộ, phải xác nhận yêu cầu mới, không suy từ lần đồng ý trước. Chỉ luyện hỗ trợ đọc/viết, không hướng dẫn thao tác cơ thể.",
+            "sourcePages": [
+              {
+                "printed": 12,
+                "pdf": 14
+              },
+              {
+                "printed": 13,
+                "pdf": 15
+              },
+              {
+                "printed": 129,
+                "pdf": 131
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          }
+        ],
+        "scope": "Concepts and communication; no physical-procedure instruction, diagnosis or treatment",
+        "retrievalCheck": {
+          "promptVi": "Nhận trợ giúp đọc có mất quyền tự viết không?",
+          "expectedVi": "Không; xác nhận riêng phần tự làm và phần cần hỗ trợ.",
+          "visibleAfterAttempt": true
+        },
+        "caseContrastVi": {
+          "case": "Người sử dụng muốn tự ghi lịch, chỉ cần đọc ngày vì chữ nhỏ.",
+          "correctPrinciple": "Hỏi phần tự làm, đọc từng phần và cho hỏi lại.",
+          "overreachToAvoid": "Không thay nội dung hoặc tự ghi toàn bộ."
+        },
+        "conceptTermIds": [
+          "kaigo-concept-02",
+          "kaigo-concept-03"
+        ],
+        "conceptGlossaryFile": "knowledge-glossary.json"
+      },
+      "revision": 2,
+      "editorialStatus": "revised_pending_human_review",
+      "transferPractice": {
+        "id": "kaigo-foundation-03-transfer",
+        "contextVi": "Người sử dụng muốn tự ghi lịch, chỉ cần đọc ngày vì chữ nhỏ.",
+        "taskVi": "Hỏi phần tự làm, đọc từng phần và cho hỏi lại.",
+        "boundaryVi": "Không thay nội dung hoặc tự ghi toàn bộ.",
+        "expectedMeaningVi": [
+          "Nêu đúng dữ kiện của trường hợp mới",
+          "Hỏi phần tự làm, đọc từng phần và cho hỏi lại.",
+          "Không thay nội dung hoặc tự ghi toàn bộ."
+        ],
+        "method": "bounded_rehearsal_no_generated_unreviewed_NPC_reply",
+        "completionVi": "Giải thích lựa chọn, nói một phản hồi Nhật phù hợp, tự kiểm ý thiếu; không cần trùng câu mẫu."
+      },
+      "sourceMetadata": {
+        "filename": "介護ー特定技能ーベトナム語.pdf",
+        "edition": "second revision March 2025",
+        "pdfPages": 276,
+        "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+        "libraryFileId": "libfile_30516fe27c688191907d48df8b3fb8df",
+        "publishSourceBytes": false
+      }
     },
     {
       "id": "kaigo-foundation-04",
@@ -722,33 +1500,29 @@
       "playerRoleVi": "Nhân viên chăm sóc Tanaka",
       "contextVi": "Bác muốn nói chuyện gia đình trong phòng, không cần nêu chi tiết nội dung riêng tư.",
       "knowledgeVi": [
-        "Không hỏi nội dung riêng tư tại nơi người khác nghe được.",
-        "Không suy rằng người nhà được phép nhận mọi thông tin. Bài này là tình huống trao đổi thường, không mô tả ngoại lệ pháp lý/khẩn cấp."
+        "Riêng tư liên quan đến không gian và việc người khác nhìn hoặc nghe được; bảo mật liên quan đến phạm vi người nhận thông tin. Chuyển vào phòng kín giúp giảm người nghe ngoài ý muốn nhưng chưa trả lời câu hỏi ai được nhận nội dung sau đó.",
+        "Thông tin về sức khỏe, gia đình hoặc mong muốn cá nhân cần được xử lý theo sự đồng ý và trách nhiệm công việc. Quan hệ người nhà không tự chứng minh người sử dụng muốn chia sẻ mọi điều. Cần hỏi nội dung, người nhận và mục đích khi có nhu cầu trao đổi.",
+        "Trong cuộc trò chuyện thường của bài, người sử dụng chưa muốn báo con gái. Nhân viên nghe mong muốn và xác nhận phần cần chia sẻ trước khi liên hệ; không hứa giữ kín tuyệt đối trong mọi hoàn cảnh vì bài không bao phủ nghĩa vụ hoặc tình huống khẩn cấp.",
+        "Tự kiểm: tách nơi nói chuyện, người được nhận và nội dung được phép truyền đạt. Khi chưa rõ quy trình, trao đổi với phụ trách thay vì tự kết luận ngoại lệ. Không đăng dữ liệu người sử dụng lên mạng hoặc dùng việc không nêu tên để suy rằng không còn thông tin riêng."
       ],
       "sourceRefs": [
         {
-          "filename": "介護ー特定技能ーベトナム語.pdf",
-          "edition": "March 2025 second revision",
-          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
-          "pages": [
-            {
-              "printed": 16,
-              "pdf": 18
-            },
-            {
-              "printed": 104,
-              "pdf": 106
-            },
-            {
-              "printed": 105,
-              "pdf": 107
-            },
-            {
-              "printed": 10,
-              "pdf": 12
-            }
-          ],
-          "verification": "text layer and printed labels checked; no full visual certification"
+          "printedPage": 16,
+          "pdfPage": 18,
+          "purpose": "Riêng tư và bảo mật",
+          "verification": "text layer and printed labels checked; human review pending"
+        },
+        {
+          "printedPage": 102,
+          "pdfPage": 104,
+          "purpose": "Riêng tư và bảo mật",
+          "verification": "text layer and printed labels checked; human review pending"
+        },
+        {
+          "printedPage": 104,
+          "pdfPage": 106,
+          "purpose": "Riêng tư và bảo mật",
+          "verification": "text layer and printed labels checked; human review pending"
         }
       ],
       "vocabularyIds": [
@@ -826,73 +1600,125 @@
           "id": "kaigo-foundation-04-q01",
           "promptJa": "どこで詳しい話を聞きますか。",
           "optionsJa": [
-            "廊下",
+            "人の多い受付",
             "本人の部屋",
             "食堂の入口",
-            "人の多い受付"
+            "廊下"
           ],
           "correctIndex": 1,
           "rationalesVi": [
-            "Sai: bác không muốn nói ở hành lang.",
+            "Sai: có người khác nghe được.",
             "Đúng: nơi đã thống nhất là phòng bác.",
             "Sai: chưa thống nhất nơi này.",
-            "Sai: có người khác nghe được."
-          ]
+            "Sai: bác không muốn nói ở hành lang."
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         },
         {
           "id": "kaigo-foundation-04-q02",
           "promptJa": "娘さんへの連絡について、今の希望はどれですか。",
           "optionsJa": [
-            "すぐ連絡する",
             "SNSで知らせる",
             "今は知らせない",
-            "ほかの家族に任せる"
+            "ほかの家族に任せる",
+            "すぐ連絡する"
           ],
-          "correctIndex": 2,
+          "correctIndex": 1,
           "rationalesVi": [
-            "Sai: trái mong muốn hiện tại.",
             "Sai: không có phép đăng mạng.",
             "Đúng: bác chưa muốn báo con gái.",
-            "Sai: không có yêu cầu này."
-          ]
+            "Sai: không có yêu cầu này.",
+            "Sai: trái mong muốn hiện tại."
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         },
         {
           "id": "kaigo-foundation-04-q03",
           "promptJa": "担当職員への共有が必要になったらどうしますか。",
           "optionsJa": [
+            "部屋で聞いた内容なら、担当者にはすべて共有する",
+            "家族への連絡と担当者への共有は同じ範囲にする",
             "先に共有内容を本人と確認する",
-            "相談の全内容を全員に送る",
-            "廊下で大声で説明する",
-            "本人への確認は省く"
+            "共有後に本人へ内容を説明する"
           ],
-          "correctIndex": 0,
+          "correctIndex": 2,
           "rationalesVi": [
+            "Sai: Đổi nơi nghe không cho phép chia sẻ mọi nội dung.",
+            "Sai: Hai người nhận có thể khác phạm vi, cần xác nhận riêng.",
             "Đúng: đúng cách đã thống nhất.",
-            "Sai: vượt phạm vi trao đổi.",
-            "Sai: lộ chuyện riêng.",
-            "Sai: bỏ bước đã hứa."
-          ]
+            "Sai: Xác nhận sau chia sẻ không đáp ứng lời hứa xác nhận trước."
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "distractorRevision": "nearby_misunderstandings_with_specific_explanations",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
+        },
+        {
+          "id": "kaigo-foundation-04-revision-q01",
+          "kind": "knowledge_application",
+          "promptJa": "個人的な相談を廊下で受けました。場所と共有について最も適切なのはどれですか。",
+          "optionsJa": [
+            "声を小さくすれば共有相手は確認しなくてよい。",
+            "部屋へ移れば家族には全部伝えてよい。",
+            "話す場所を配慮し、共有相手と内容も確認する。",
+            "家族への連絡を決めてから本人に説明する。"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: Giảm âm lượng không thay việc xác nhận người nhận thông tin.",
+            "Sai: Đổi nơi nói chuyện không đồng nghĩa đồng ý chia sẻ tất cả.",
+            "Đúng: Phân biệt riêng tư về nơi trao đổi và bảo mật khi chia sẻ.",
+            "Sai: Cần hỏi phạm vi trước khi quyết định nội dung gửi."
+          ],
+          "rationalesJa": [
+            "音量への配慮だけでは共有の確認を代行しない。",
+            "場所の配慮と共有の同意は別。",
+            "二種類の配慮を区別している。",
+            "本人と先に内容を確認する必要がある。"
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
+        },
+        {
+          "id": "kaigo-foundation-04-revision-q02",
+          "kind": "knowledge_application",
+          "promptJa": "本人が「娘には、面会時間の変更だけ知らせてください」と言いました。通常の連絡で伝える内容はどれですか。",
+          "optionsJa": [
+            "変更と職員が想像した理由。",
+            "面会時間の変更。",
+            "変更と最近の家族への不満。",
+            "変更と相談内容のすべて。"
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: Không thêm suy đoán của nhân viên.",
+            "Đúng: Giữ phạm vi thông tin đã được yêu cầu truyền.",
+            "Sai: Chưa được yêu cầu chia sẻ bất mãn về gia đình.",
+            "Sai: Không có đồng ý chia sẻ toàn bộ lời tư vấn."
+          ],
+          "rationalesJa": [
+            "推測を追加しない。",
+            "この場で確認された範囲を守る。",
+            "不満の共有は依頼されていない。",
+            "相談全体への同意ではない。"
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         }
       ],
       "dailyPractice": {
         "plannedMinutes": 30,
         "durationMeasured": false,
-        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
-        "plannedActivitiesVi": [
-          "5 phút nhắc lại bài trước",
-          "5 phút nguyên tắc",
-          "5 phút từ/cách nói",
-          "10 phút đọc vai, nói lại, sửa ý thiếu",
-          "5 phút bài đọc và kiểm tra"
-        ],
+        "durationStatus": "planned_activities_not_learner_measured",
         "blocks": [
           {
             "activity": "review",
-            "minutes": 5
+            "minutes": 3
           },
           {
             "activity": "knowledge",
-            "minutes": 5
+            "minutes": 8
           },
           {
             "activity": "terms_and_expressions",
@@ -900,11 +1726,80 @@
           },
           {
             "activity": "npc_practice",
-            "minutes": 10
+            "minutes": 9
           },
           {
             "activity": "check",
             "minutes": 5
+          }
+        ],
+        "activities": [
+          {
+            "activity": "review",
+            "minutes": 3,
+            "instructionVi": "Không nhìn mẫu: trả lời câu gợi nhớ dưới đây; nói lại một ý bị thiếu ở bài gần nhất. Ngày1 dùng câu hỏi đầu vào, không yêu cầu kiến thức bài chưa học.",
+            "promptVi": "Đổi nơi nói chuyện có quyết định người nhận thông tin không?",
+            "expectedVi": "Không; địa điểm và phạm vi chia sẻ cần xác nhận riêng."
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 8,
+            "stepsVi": [
+              "3 phút đọc bốn phần giải thích, đánh dấu khái niệm chưa hiểu",
+              "2 phút so sánh việc phù hợp và việc vượt phạm vi trong case mới",
+              "2 phút giải thích lý do bằng lời của mình",
+              "1 phút trả lời câu gợi nhớ và sửa một hiểu nhầm"
+            ],
+            "knowledgeId": "kaigo-foundation-04-knowledge"
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5,
+            "stepsVi": [
+              "2 phút đọc từ đã liên kết và hai cách nói, kiểm nghĩa trong tình huống",
+              "2 phút che mẫu và nói lại theo ý; không bắt dùng từ ngoài mục tiêu",
+              "1 phút chọn một từ/cách nói còn yếu để ôn tiếp"
+            ],
+            "vocabularyIds": [
+              "kaigo-vocab-foundation-17",
+              "kaigo-vocab-foundation-18",
+              "kaigo-vocab-foundation-19",
+              "kaigo-vocab-foundation-20",
+              "kaigo-vocab-foundation-21"
+            ]
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 9,
+            "stepsVi": [
+              "2 phút đọc/đóng vai mẫu và xác định việc phải hỏi",
+              "3 phút nói lại ít gợi ý, kiểm từng ý bắt buộc của lượt",
+              "2 phút luyện nhánh hỏi lại đã viết trong rubric, rồi trở về nhiệm vụ",
+              "2 phút luyện trường hợp chuyển giao dưới đây và sửa một điểm thiếu"
+            ],
+            "transferId": "kaigo-foundation-04-transfer",
+            "practiceModes": [
+              "guided",
+              "bounded_roleplay",
+              "reduced_hints"
+            ]
+          },
+          {
+            "activity": "check",
+            "minutes": 5,
+            "stepsVi": [
+              "1 phút đọc văn bản mới của bài",
+              "3 phút trả lời năm câu trước xem đáp án",
+              "1 phút xem lý do sai, ghi một mục ôn lại; nếu chưa xong, đánh dấu phần cần tiếp tục, không tự coi đạt"
+            ],
+            "questionIds": [
+              "kaigo-foundation-04-q01",
+              "kaigo-foundation-04-q02",
+              "kaigo-foundation-04-q03",
+              "kaigo-foundation-04-revision-q01",
+              "kaigo-foundation-04-revision-q02"
+            ],
+            "feedbackAfterAttempt": true
           }
         ],
         "practiceModes": [
@@ -912,8 +1807,9 @@
           "bounded_roleplay",
           "reduced_hints"
         ],
-        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
-        "newVocabularyPolicy": "Ngày1–4 học từ mới theo danh sách; ngày5–7 nhắc lại, không áp chỉ tiêu từ mới."
+        "reviewPlanVi": "Nhắc mục sai sau1,3,7,14,30ngày; là thiết kế chưa có scheduler runtime.",
+        "newVocabularyPolicy": "Giữ từ đã có theo mục tiêu; thuật ngữ khái niệm được giải thích tại bài, không ép học mới để đủ số.",
+        "timingVi": "30phút là phân bổ hoạt động, chưa có thời lượng người học thực tế; không tính đọc một lần là đủ khối NPC."
       },
       "responsePolicy": {
         "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
@@ -976,7 +1872,129 @@
         "Tình huống thường, không xử lý khẩn cấp hay quy định ngoại lệ pháp lý.",
         "Không tự chẩn đoán, tư vấn thuốc hoặc dạy thao tác chuyển người.",
         "Chưa hình/audio/runtime; chưa người duyệt chuyên môn/ngôn ngữ/quyền."
-      ]
+      ],
+      "knowledgeModule": {
+        "id": "kaigo-foundation-04-knowledge",
+        "titleVi": "Riêng tư và bảo mật",
+        "summaryJa": "話す場所と、共有する相手・内容を確認します。",
+        "sections": [
+          {
+            "id": "kaigo-foundation-04-concept-1",
+            "explanationVi": "Riêng tư liên quan đến không gian và việc người khác nhìn hoặc nghe được; bảo mật liên quan đến phạm vi người nhận thông tin. Chuyển vào phòng kín giúp giảm người nghe ngoài ý muốn nhưng chưa trả lời câu hỏi ai được nhận nội dung sau đó.",
+            "sourcePages": [
+              {
+                "printed": 16,
+                "pdf": 18
+              },
+              {
+                "printed": 102,
+                "pdf": 104
+              },
+              {
+                "printed": 104,
+                "pdf": 106
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-04-concept-2",
+            "explanationVi": "Thông tin về sức khỏe, gia đình hoặc mong muốn cá nhân cần được xử lý theo sự đồng ý và trách nhiệm công việc. Quan hệ người nhà không tự chứng minh người sử dụng muốn chia sẻ mọi điều. Cần hỏi nội dung, người nhận và mục đích khi có nhu cầu trao đổi.",
+            "sourcePages": [
+              {
+                "printed": 16,
+                "pdf": 18
+              },
+              {
+                "printed": 102,
+                "pdf": 104
+              },
+              {
+                "printed": 104,
+                "pdf": 106
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-04-concept-3",
+            "explanationVi": "Trong cuộc trò chuyện thường của bài, người sử dụng chưa muốn báo con gái. Nhân viên nghe mong muốn và xác nhận phần cần chia sẻ trước khi liên hệ; không hứa giữ kín tuyệt đối trong mọi hoàn cảnh vì bài không bao phủ nghĩa vụ hoặc tình huống khẩn cấp.",
+            "sourcePages": [
+              {
+                "printed": 16,
+                "pdf": 18
+              },
+              {
+                "printed": 102,
+                "pdf": 104
+              },
+              {
+                "printed": 104,
+                "pdf": 106
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-04-concept-4",
+            "explanationVi": "Tự kiểm: tách nơi nói chuyện, người được nhận và nội dung được phép truyền đạt. Khi chưa rõ quy trình, trao đổi với phụ trách thay vì tự kết luận ngoại lệ. Không đăng dữ liệu người sử dụng lên mạng hoặc dùng việc không nêu tên để suy rằng không còn thông tin riêng.",
+            "sourcePages": [
+              {
+                "printed": 16,
+                "pdf": 18
+              },
+              {
+                "printed": 102,
+                "pdf": 104
+              },
+              {
+                "printed": 104,
+                "pdf": 106
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          }
+        ],
+        "scope": "Concepts and communication; no physical-procedure instruction, diagnosis or treatment",
+        "retrievalCheck": {
+          "promptVi": "Đổi nơi nói chuyện có quyết định người nhận thông tin không?",
+          "expectedVi": "Không; địa điểm và phạm vi chia sẻ cần xác nhận riêng.",
+          "visibleAfterAttempt": true
+        },
+        "caseContrastVi": {
+          "case": "Người sử dụng chỉ đồng ý báo con gái giờ thăm đổi, không kể nội dung chuyện riêng.",
+          "correctPrinciple": "Xác nhận người nhận/nội dung và chọn nơi trao đổi kín.",
+          "overreachToAvoid": "Không chia sẻ cả cuộc trò chuyện."
+        },
+        "conceptTermIds": [
+          "kaigo-concept-01",
+          "kaigo-concept-04"
+        ],
+        "conceptGlossaryFile": "knowledge-glossary.json"
+      },
+      "revision": 2,
+      "editorialStatus": "revised_pending_human_review",
+      "transferPractice": {
+        "id": "kaigo-foundation-04-transfer",
+        "contextVi": "Người sử dụng chỉ đồng ý báo con gái giờ thăm đổi, không kể nội dung chuyện riêng.",
+        "taskVi": "Xác nhận người nhận/nội dung và chọn nơi trao đổi kín.",
+        "boundaryVi": "Không chia sẻ cả cuộc trò chuyện.",
+        "expectedMeaningVi": [
+          "Nêu đúng dữ kiện của trường hợp mới",
+          "Xác nhận người nhận/nội dung và chọn nơi trao đổi kín.",
+          "Không chia sẻ cả cuộc trò chuyện."
+        ],
+        "method": "bounded_rehearsal_no_generated_unreviewed_NPC_reply",
+        "completionVi": "Giải thích lựa chọn, nói một phản hồi Nhật phù hợp, tự kiểm ý thiếu; không cần trùng câu mẫu."
+      },
+      "sourceMetadata": {
+        "filename": "介護ー特定技能ーベトナム語.pdf",
+        "edition": "second revision March 2025",
+        "pdfPages": 276,
+        "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+        "libraryFileId": "libfile_30516fe27c688191907d48df8b3fb8df",
+        "publishSourceBytes": false
+      }
     },
     {
       "id": "kaigo-foundation-05",
@@ -986,33 +2004,35 @@
       "playerRoleVi": "Nhân viên chăm sóc Tanaka",
       "contextVi": "Hoạt động trồng hoa tự chọn có chụp ảnh. Bác muốn tham gia nhưng không muốn xuất hiện trong ảnh.",
       "knowledgeVi": [
-        "Phân biệt từ chối chụp ảnh với từ chối cả hoạt động.",
-        "Không hứa có nơi tránh ảnh hoặc tự cho rằng ảnh không đăng mạng thì được chụp."
+        "Từ chối chụp ảnh khác với từ chối tham gia hoạt động. Cần tách từng mong muốn để không bỏ luôn cơ hội tham gia chỉ vì một điều kiện chưa phù hợp. Việc người sử dụng giải thích lựa chọn không biến thành nghĩa vụ phải đồng ý với nhân viên.",
+        "Lắng nghe tích cực là tiếp nhận và nhắc lại đúng phạm vi lời nói. Nhắc lại không được thêm rằng người sử dụng ghét hoạt động hoặc chắc chắn đổi ý. Khi thông tin về cách tham gia chưa rõ, câu trả lời trung thực là sẽ kiểm tra với người phụ trách.",
+        "Phương án chưa được xác nhận không được dùng như lời bảo đảm. Ví dụ, muốn ngồi ngoài vùng chụp không chứng minh có chỗ phù hợp; phải kiểm điều kiện, báo kết quả rồi hỏi lại lựa chọn. Thông tin cần truyền cho phụ trách là mong muốn liên quan đến việc tổ chức.",
+        "Tự kiểm: phân biệt lựa chọn đã rõ, điều kiện chưa rõ và người cần xác nhận. Không coi đồng ý tham gia là đồng ý chụp hoặc đăng ảnh. Bài luyện thương lượng hoạt động tự chọn, không xây dựng quy tắc pháp lý đầy đủ về hình ảnh."
       ],
       "sourceRefs": [
         {
-          "filename": "介護ー特定技能ーベトナム語.pdf",
-          "edition": "March 2025 second revision",
-          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
-          "pages": [
-            {
-              "printed": 16,
-              "pdf": 18
-            },
-            {
-              "printed": 104,
-              "pdf": 106
-            },
-            {
-              "printed": 105,
-              "pdf": 107
-            },
-            {
-              "printed": 10,
-              "pdf": 12
-            }
-          ],
-          "verification": "text layer and printed labels checked; no full visual certification"
+          "printedPage": 10,
+          "pdfPage": 12,
+          "purpose": "Từ chối một phần và thương lượng",
+          "verification": "text layer and printed labels checked; human review pending"
+        },
+        {
+          "printedPage": 12,
+          "pdfPage": 14,
+          "purpose": "Từ chối một phần và thương lượng",
+          "verification": "text layer and printed labels checked; human review pending"
+        },
+        {
+          "printedPage": 16,
+          "pdfPage": 18,
+          "purpose": "Từ chối một phần và thương lượng",
+          "verification": "text layer and printed labels checked; human review pending"
+        },
+        {
+          "printedPage": 104,
+          "pdfPage": 106,
+          "purpose": "Từ chối một phần và thương lượng",
+          "verification": "text layer and printed labels checked; human review pending"
         }
       ],
       "vocabularyIds": [
@@ -1090,73 +2110,125 @@
           "id": "kaigo-foundation-05-q01",
           "promptJa": "小野寺さんが希望しないことはどれですか。",
           "optionsJa": [
-            "花植え",
-            "担当者への確認",
             "回答を待つこと",
-            "写真に写ること"
+            "写真に写ること",
+            "花植え",
+            "担当者への確認"
           ],
-          "correctIndex": 3,
+          "correctIndex": 1,
           "rationalesVi": [
-            "Sai: bác muốn trồng hoa.",
-            "Sai: bác cho phép hỏi.",
             "Sai: bác muốn chờ trả lời.",
-            "Đúng: bác không muốn xuất hiện trong ảnh."
-          ]
+            "Đúng: bác không muốn xuất hiện trong ảnh.",
+            "Sai: bác muốn trồng hoa.",
+            "Sai: bác cho phép hỏi."
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         },
         {
           "id": "kaigo-foundation-05-q02",
           "promptJa": "参加方法について、今わかっていることはどれですか。",
           "optionsJa": [
             "まだ確認できていない",
-            "撮影しない席が確定した",
             "参加を取り消した",
+            "撮影しない席が確定した",
             "本人が撮影を許可した"
           ],
           "correctIndex": 0,
           "rationalesVi": [
             "Đúng: cách tham gia chưa rõ.",
-            "Sai: chưa kiểm tra.",
             "Sai: chưa hủy quyết định.",
+            "Sai: chưa kiểm tra.",
             "Sai: bác từ chối chụp."
-          ]
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         },
         {
           "id": "kaigo-foundation-05-q03",
           "promptJa": "担当者に伝える内容はどれですか。",
           "optionsJa": [
-            "家族の詳しい事情",
             "撮影を希望しないこと",
-            "病気の推測",
-            "住所と年齢"
+            "写真に写らない席を職員が確保済みであること",
+            "本人が活動そのものを希望していないこと",
+            "方法は未確認だが本人は参加を決定したこと"
           ],
-          "correctIndex": 1,
+          "correctIndex": 0,
           "rationalesVi": [
-            "Sai: không được yêu cầu.",
             "Đúng: thông tin cần cho cách tham gia.",
-            "Sai: không có dữ kiện bệnh.",
-            "Sai: không cần cho tình huống này."
-          ]
+            "Sai: Chưa xác nhận phương án hoặc chỗ ngồi.",
+            "Sai: Sai phạm vi: muốn tham gia nhưng không chụp.",
+            "Sai: Muốn biết phương án không có nghĩa chốt tham gia với điều kiện chưa rõ."
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "distractorRevision": "nearby_misunderstandings_with_specific_explanations",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
+        },
+        {
+          "id": "kaigo-foundation-05-revision-q01",
+          "kind": "knowledge_application",
+          "promptJa": "本人は活動に参加したいが撮影は希望しません。撮影しない場所があるか未確認です。適切な説明はどれですか。",
+          "optionsJa": [
+            "撮影を断ったので活動も欠席にします。",
+            "参加するなら撮影にも同意したことになります。",
+            "席を端にすれば写真には写りません。",
+            "参加方法を担当者に確認してからお伝えします。"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: Tự hủy mong muốn tham gia của người sử dụng.",
+            "Sai: Đồng ý tham gia và đồng ý chụp ảnh là hai lựa chọn.",
+            "Sai: Chưa biết chỗ đó bảo đảm không xuất hiện trong ảnh.",
+            "Đúng: Nói rõ bước xác nhận điều kiện thay vì hứa kết quả."
+          ],
+          "rationalesJa": [
+            "参加希望を勝手に取り消している。",
+            "二つの選択を一つにしている。",
+            "写らない保証はまだない。",
+            "実現条件を確認する段階を明示する。"
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
+        },
+        {
+          "id": "kaigo-foundation-05-revision-q02",
+          "kind": "knowledge_application",
+          "promptJa": "確認後に、撮影を避ける参加方法があるとわかりました。次に何を確認しますか。",
+          "optionsJa": [
+            "条件を伝え、その方法で参加したいか本人に聞く。",
+            "その方法で参加すると職員が決定する。",
+            "撮影を断った理由を詳しく説明させる。",
+            "方法があるので以前の同意だけで開始する。"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: Cung cấp điều kiện mới rồi hỏi lựa chọn của người sử dụng.",
+            "Sai: Có phương án không chứng minh người sử dụng đã chọn.",
+            "Sai: Không buộc giải thích lý do để được tham gia.",
+            "Sai: Lần trước điều kiện tham gia vẫn chưa rõ."
+          ],
+          "rationalesJa": [
+            "新しい条件の下で希望を確認する。",
+            "可能な方法と本人の選択は別。",
+            "理由の説明を参加条件にしない。",
+            "以前は条件が未確認だった。"
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         }
       ],
       "dailyPractice": {
         "plannedMinutes": 30,
         "durationMeasured": false,
-        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
-        "plannedActivitiesVi": [
-          "5 phút nhắc lại bài trước",
-          "5 phút nguyên tắc",
-          "5 phút từ/cách nói",
-          "10 phút đọc vai, nói lại, sửa ý thiếu",
-          "5 phút bài đọc và kiểm tra"
-        ],
+        "durationStatus": "planned_activities_not_learner_measured",
         "blocks": [
           {
             "activity": "review",
-            "minutes": 5
+            "minutes": 3
           },
           {
             "activity": "knowledge",
-            "minutes": 5
+            "minutes": 8
           },
           {
             "activity": "terms_and_expressions",
@@ -1164,11 +2236,80 @@
           },
           {
             "activity": "npc_practice",
-            "minutes": 10
+            "minutes": 9
           },
           {
             "activity": "check",
             "minutes": 5
+          }
+        ],
+        "activities": [
+          {
+            "activity": "review",
+            "minutes": 3,
+            "instructionVi": "Không nhìn mẫu: trả lời câu gợi nhớ dưới đây; nói lại một ý bị thiếu ở bài gần nhất. Ngày1 dùng câu hỏi đầu vào, không yêu cầu kiến thức bài chưa học.",
+            "promptVi": "Muốn tham gia nhưng không chụp có phải từ chối cả hoạt động không?",
+            "expectedVi": "Không; kiểm phương án phù hợp rồi hỏi lại lựa chọn."
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 8,
+            "stepsVi": [
+              "3 phút đọc bốn phần giải thích, đánh dấu khái niệm chưa hiểu",
+              "2 phút so sánh việc phù hợp và việc vượt phạm vi trong case mới",
+              "2 phút giải thích lý do bằng lời của mình",
+              "1 phút trả lời câu gợi nhớ và sửa một hiểu nhầm"
+            ],
+            "knowledgeId": "kaigo-foundation-05-knowledge"
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5,
+            "stepsVi": [
+              "2 phút đọc từ đã liên kết và hai cách nói, kiểm nghĩa trong tình huống",
+              "2 phút che mẫu và nói lại theo ý; không bắt dùng từ ngoài mục tiêu",
+              "1 phút chọn một từ/cách nói còn yếu để ôn tiếp"
+            ],
+            "vocabularyIds": [
+              "kaigo-vocab-foundation-02",
+              "kaigo-vocab-foundation-06",
+              "kaigo-vocab-foundation-11",
+              "kaigo-vocab-foundation-17",
+              "kaigo-vocab-foundation-20"
+            ]
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 9,
+            "stepsVi": [
+              "2 phút đọc/đóng vai mẫu và xác định việc phải hỏi",
+              "3 phút nói lại ít gợi ý, kiểm từng ý bắt buộc của lượt",
+              "2 phút luyện nhánh hỏi lại đã viết trong rubric, rồi trở về nhiệm vụ",
+              "2 phút luyện trường hợp chuyển giao dưới đây và sửa một điểm thiếu"
+            ],
+            "transferId": "kaigo-foundation-05-transfer",
+            "practiceModes": [
+              "guided",
+              "bounded_roleplay",
+              "reduced_hints"
+            ]
+          },
+          {
+            "activity": "check",
+            "minutes": 5,
+            "stepsVi": [
+              "1 phút đọc văn bản mới của bài",
+              "3 phút trả lời năm câu trước xem đáp án",
+              "1 phút xem lý do sai, ghi một mục ôn lại; nếu chưa xong, đánh dấu phần cần tiếp tục, không tự coi đạt"
+            ],
+            "questionIds": [
+              "kaigo-foundation-05-q01",
+              "kaigo-foundation-05-q02",
+              "kaigo-foundation-05-q03",
+              "kaigo-foundation-05-revision-q01",
+              "kaigo-foundation-05-revision-q02"
+            ],
+            "feedbackAfterAttempt": true
           }
         ],
         "practiceModes": [
@@ -1176,8 +2317,9 @@
           "bounded_roleplay",
           "reduced_hints"
         ],
-        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
-        "newVocabularyPolicy": "Ngày1–4 học từ mới theo danh sách; ngày5–7 nhắc lại, không áp chỉ tiêu từ mới."
+        "reviewPlanVi": "Nhắc mục sai sau1,3,7,14,30ngày; là thiết kế chưa có scheduler runtime.",
+        "newVocabularyPolicy": "Giữ từ đã có theo mục tiêu; thuật ngữ khái niệm được giải thích tại bài, không ép học mới để đủ số.",
+        "timingVi": "30phút là phân bổ hoạt động, chưa có thời lượng người học thực tế; không tính đọc một lần là đủ khối NPC."
       },
       "responsePolicy": {
         "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
@@ -1240,7 +2382,145 @@
         "Tình huống thường, không xử lý khẩn cấp hay quy định ngoại lệ pháp lý.",
         "Không tự chẩn đoán, tư vấn thuốc hoặc dạy thao tác chuyển người.",
         "Chưa hình/audio/runtime; chưa người duyệt chuyên môn/ngôn ngữ/quyền."
-      ]
+      ],
+      "knowledgeModule": {
+        "id": "kaigo-foundation-05-knowledge",
+        "titleVi": "Từ chối một phần và thương lượng",
+        "summaryJa": "参加の希望と撮影の希望は、別々に確認します。",
+        "sections": [
+          {
+            "id": "kaigo-foundation-05-concept-1",
+            "explanationVi": "Từ chối chụp ảnh khác với từ chối tham gia hoạt động. Cần tách từng mong muốn để không bỏ luôn cơ hội tham gia chỉ vì một điều kiện chưa phù hợp. Việc người sử dụng giải thích lựa chọn không biến thành nghĩa vụ phải đồng ý với nhân viên.",
+            "sourcePages": [
+              {
+                "printed": 10,
+                "pdf": 12
+              },
+              {
+                "printed": 12,
+                "pdf": 14
+              },
+              {
+                "printed": 16,
+                "pdf": 18
+              },
+              {
+                "printed": 104,
+                "pdf": 106
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-05-concept-2",
+            "explanationVi": "Lắng nghe tích cực là tiếp nhận và nhắc lại đúng phạm vi lời nói. Nhắc lại không được thêm rằng người sử dụng ghét hoạt động hoặc chắc chắn đổi ý. Khi thông tin về cách tham gia chưa rõ, câu trả lời trung thực là sẽ kiểm tra với người phụ trách.",
+            "sourcePages": [
+              {
+                "printed": 10,
+                "pdf": 12
+              },
+              {
+                "printed": 12,
+                "pdf": 14
+              },
+              {
+                "printed": 16,
+                "pdf": 18
+              },
+              {
+                "printed": 104,
+                "pdf": 106
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-05-concept-3",
+            "explanationVi": "Phương án chưa được xác nhận không được dùng như lời bảo đảm. Ví dụ, muốn ngồi ngoài vùng chụp không chứng minh có chỗ phù hợp; phải kiểm điều kiện, báo kết quả rồi hỏi lại lựa chọn. Thông tin cần truyền cho phụ trách là mong muốn liên quan đến việc tổ chức.",
+            "sourcePages": [
+              {
+                "printed": 10,
+                "pdf": 12
+              },
+              {
+                "printed": 12,
+                "pdf": 14
+              },
+              {
+                "printed": 16,
+                "pdf": 18
+              },
+              {
+                "printed": 104,
+                "pdf": 106
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-05-concept-4",
+            "explanationVi": "Tự kiểm: phân biệt lựa chọn đã rõ, điều kiện chưa rõ và người cần xác nhận. Không coi đồng ý tham gia là đồng ý chụp hoặc đăng ảnh. Bài luyện thương lượng hoạt động tự chọn, không xây dựng quy tắc pháp lý đầy đủ về hình ảnh.",
+            "sourcePages": [
+              {
+                "printed": 10,
+                "pdf": 12
+              },
+              {
+                "printed": 12,
+                "pdf": 14
+              },
+              {
+                "printed": 16,
+                "pdf": 18
+              },
+              {
+                "printed": 104,
+                "pdf": 106
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          }
+        ],
+        "scope": "Concepts and communication; no physical-procedure instruction, diagnosis or treatment",
+        "retrievalCheck": {
+          "promptVi": "Muốn tham gia nhưng không chụp có phải từ chối cả hoạt động không?",
+          "expectedVi": "Không; kiểm phương án phù hợp rồi hỏi lại lựa chọn.",
+          "visibleAfterAttempt": true
+        },
+        "caseContrastVi": {
+          "case": "Người sử dụng muốn dự buổi làm đồ thủ công nếu có cách tránh chụp; cách tổ chức chưa rõ.",
+          "correctPrinciple": "Tiếp nhận hai mong muốn và xin phép kiểm điều kiện, không hứa chỗ riêng.",
+          "overreachToAvoid": "Khả năng tham gia và đồng ý chụp là hai việc."
+        },
+        "conceptTermIds": [
+          "kaigo-concept-03",
+          "kaigo-concept-04"
+        ],
+        "conceptGlossaryFile": "knowledge-glossary.json"
+      },
+      "revision": 2,
+      "editorialStatus": "revised_pending_human_review",
+      "transferPractice": {
+        "id": "kaigo-foundation-05-transfer",
+        "contextVi": "Người sử dụng muốn dự buổi làm đồ thủ công nếu có cách tránh chụp; cách tổ chức chưa rõ.",
+        "taskVi": "Tiếp nhận hai mong muốn và xin phép kiểm điều kiện, không hứa chỗ riêng.",
+        "boundaryVi": "Khả năng tham gia và đồng ý chụp là hai việc.",
+        "expectedMeaningVi": [
+          "Nêu đúng dữ kiện của trường hợp mới",
+          "Tiếp nhận hai mong muốn và xin phép kiểm điều kiện, không hứa chỗ riêng.",
+          "Khả năng tham gia và đồng ý chụp là hai việc."
+        ],
+        "method": "bounded_rehearsal_no_generated_unreviewed_NPC_reply",
+        "completionVi": "Giải thích lựa chọn, nói một phản hồi Nhật phù hợp, tự kiểm ý thiếu; không cần trùng câu mẫu."
+      },
+      "sourceMetadata": {
+        "filename": "介護ー特定技能ーベトナム語.pdf",
+        "edition": "second revision March 2025",
+        "pdfPages": 276,
+        "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+        "libraryFileId": "libfile_30516fe27c688191907d48df8b3fb8df",
+        "publishSourceBytes": false
+      }
     },
     {
       "id": "kaigo-foundation-06",
@@ -1250,37 +2530,29 @@
       "playerRoleVi": "Nhân viên chăm sóc Tanaka",
       "contextVi": "Đồng nghiệp bàn giao hai việc khác nhau; người học chưa nghe rõ phần trả sách.",
       "knowledgeVi": [
-        "Hỏi lại từng việc và nhắc lại điều đã hiểu.",
-        "Tách dữ kiện xác nhận, chưa xác nhận và người chịu trách nhiệm tiếp theo."
+        "Bàn giao dễ sai khi hai thông tin gần nhau bị gộp thành một: giờ phòng sách đóng cửa và hạn trả sách là hai mốc khác. Nhắc lại để người nói sửa hiểu nhầm giúp cả người phát và người nhận cùng xác định công việc.",
+        "Dữ kiện có thể thuộc ba trạng thái: đã xác nhận, chưa xác nhận và đang giao người kiểm tra. Chưa cần trả hôm nay không chứng minh hạn là ngày mai. Chưa rõ hạn cũng không làm mất thông tin đã biết về giờ phòng sách.",
+        "Báo cáo ngắn gọn cần giữ các điều kiện quan trọng và nêu ai làm bước tiếp theo. Khi đồng nghiệp nhận kiểm hạn, người học nhắc lại việc đó và chờ kết quả; không tự điền một mốc để câu bàn giao nghe đầy đủ hơn.",
+        "Tự kiểm: nói lại hai việc riêng, giữ trạng thái chưa biết và xác nhận người tiếp tục. Chuyển kỹ năng này sang giờ hoạt động hoặc bàn giao ca, nhưng chỉ dùng dữ kiện của tình huống mới. Ghi thời gian và việc đã kiểm khi cần lưu hồ sơ."
       ],
       "sourceRefs": [
         {
-          "filename": "介護ー特定技能ーベトナム語.pdf",
-          "edition": "March 2025 second revision",
-          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
-          "pages": [
-            {
-              "printed": 16,
-              "pdf": 18
-            },
-            {
-              "printed": 104,
-              "pdf": 106
-            },
-            {
-              "printed": 105,
-              "pdf": 107
-            },
-            {
-              "printed": 10,
-              "pdf": 12
-            },
-            {
-              "printed": 118,
-              "pdf": 120
-            }
-          ],
-          "verification": "text layer and printed labels checked; no full visual certification"
+          "printedPage": 104,
+          "pdfPage": 106,
+          "purpose": "Nghe lại và trách nhiệm tiếp theo",
+          "verification": "text layer and printed labels checked; human review pending"
+        },
+        {
+          "printedPage": 115,
+          "pdfPage": 117,
+          "purpose": "Nghe lại và trách nhiệm tiếp theo",
+          "verification": "text layer and printed labels checked; human review pending"
+        },
+        {
+          "printedPage": 118,
+          "pdfPage": 120,
+          "purpose": "Nghe lại và trách nhiệm tiếp theo",
+          "verification": "text layer and printed labels checked; human review pending"
         }
       ],
       "vocabularyIds": [
@@ -1358,73 +2630,125 @@
           "id": "kaigo-foundation-06-q01",
           "promptJa": "図書室は今日は何時までですか。",
           "optionsJa": [
-            "十四時",
-            "十六時",
             "十五時",
-            "十七時"
+            "十六時",
+            "十七時",
+            "十四時"
           ],
-          "correctIndex": 2,
+          "correctIndex": 0,
           "rationalesVi": [
-            "Sai: không phải14h.",
-            "Sai: không phải16h.",
             "Đúng: ba giờ chiều là15h.",
-            "Sai: không phải17h."
-          ]
+            "Sai: không phải16h.",
+            "Sai: không phải17h.",
+            "Sai: không phải14h."
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         },
         {
           "id": "kaigo-foundation-06-q02",
           "promptJa": "返却期限について正しいものはどれですか。",
           "optionsJa": [
             "今日で確定",
-            "明日で確定",
             "期限はない",
-            "まだ未確認"
+            "まだ未確認",
+            "明日で確定"
           ],
-          "correctIndex": 3,
+          "correctIndex": 2,
           "rationalesVi": [
             "Sai: hôm nay chưa cần trả không nghĩa là hạn hôm nay.",
-            "Sai: không có dữ kiện ngày mai.",
             "Sai: chưa rõ không nghĩa là không có hạn.",
-            "Đúng: đồng nghiệp nói chưa kiểm tra."
-          ]
+            "Đúng: đồng nghiệp nói chưa kiểm tra.",
+            "Sai: không có dữ kiện ngày mai."
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         },
         {
           "id": "kaigo-foundation-06-q03",
           "promptJa": "期限を確認するのは誰ですか。",
           "optionsJa": [
             "岸本職員",
-            "長谷部さん",
-            "家族",
-            "図書室の利用者全員"
+            "図書室へ行く長谷部さん",
+            "返却を受ける家族",
+            "伝言を頼まれた職員"
           ],
           "correctIndex": 0,
           "rationalesVi": [
             "Đúng: Kishimoto nhận việc kiểm tra.",
-            "Sai: không giao bác việc này.",
-            "Sai: không có người nhà tham gia.",
-            "Sai: không giao cho mọi người."
-          ]
+            "Sai: Không có phân công Hasebe kiểm hạn.",
+            "Sai: Không có dữ kiện giao người nhà việc này.",
+            "Sai: Kishimoto đã nhận kiểm hạn, không phải mặc nhiên người truyền lời."
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "distractorRevision": "nearby_misunderstandings_with_specific_explanations",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
+        },
+        {
+          "id": "kaigo-foundation-06-revision-q01",
+          "kind": "knowledge_application",
+          "promptJa": "連絡に「会場は16時まで使える。活動の終了時刻は確認中」とあります。正確な伝達はどれですか。",
+          "optionsJa": [
+            "活動は16時より前に終わると決まりました。",
+            "活動は16時に終わります。",
+            "会場は16時まで使えますが、活動終了は確認中です。",
+            "終了時刻は不明なので会場の時刻も伝えません。"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: Chưa xác nhận cả việc kết thúc trước 16 giờ.",
+            "Sai: Nhầm giờ được dùng phòng với giờ hoạt động kết thúc.",
+            "Đúng: Giữ riêng dữ kiện và trạng thái kiểm tra của từng mốc.",
+            "Sai: Không nên bỏ dữ kiện đã xác nhận chỉ vì một điểm khác chưa rõ."
+          ],
+          "rationalesJa": [
+            "前に終わることも確定していない。",
+            "会場使用時間を活動終了と混同した。",
+            "二つの情報の確認状態を分けている。",
+            "確認済み情報まで捨てている。"
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
+        },
+        {
+          "id": "kaigo-foundation-06-revision-q02",
+          "kind": "knowledge_application",
+          "promptJa": "同僚が「時刻を私が調べます」と言いました。引き継ぎを確かめる返事はどれですか。",
+          "optionsJa": [
+            "時刻の確認はあなたが担当するのですね。結果を知らせてください。",
+            "私が時刻を決めて利用者に伝えます。",
+            "では確認済みとして記録します。",
+            "時刻以外の予定も決まったのですね。"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: Nhắc lại ai kiểm và yêu cầu báo kết quả.",
+            "Sai: Thay việc xác nhận bằng mốc tự quyết định.",
+            "Sai: Nhận kiểm không có nghĩa đã kiểm xong.",
+            "Sai: Tự suy thêm phạm vi thông tin đã được xác nhận."
+          ],
+          "rationalesJa": [
+            "担当と結果連絡を確認している。",
+            "担当者の確認を任意の決定へ変えている。",
+            "確認の約束は確認完了ではない。",
+            "範囲を広げて推測している。"
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         }
       ],
       "dailyPractice": {
         "plannedMinutes": 30,
         "durationMeasured": false,
-        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
-        "plannedActivitiesVi": [
-          "5 phút nhắc lại bài trước",
-          "5 phút nguyên tắc",
-          "5 phút từ/cách nói",
-          "10 phút đọc vai, nói lại, sửa ý thiếu",
-          "5 phút bài đọc và kiểm tra"
-        ],
+        "durationStatus": "planned_activities_not_learner_measured",
         "blocks": [
           {
             "activity": "review",
-            "minutes": 5
+            "minutes": 3
           },
           {
             "activity": "knowledge",
-            "minutes": 5
+            "minutes": 8
           },
           {
             "activity": "terms_and_expressions",
@@ -1432,11 +2756,80 @@
           },
           {
             "activity": "npc_practice",
-            "minutes": 10
+            "minutes": 9
           },
           {
             "activity": "check",
             "minutes": 5
+          }
+        ],
+        "activities": [
+          {
+            "activity": "review",
+            "minutes": 3,
+            "instructionVi": "Không nhìn mẫu: trả lời câu gợi nhớ dưới đây; nói lại một ý bị thiếu ở bài gần nhất. Ngày1 dùng câu hỏi đầu vào, không yêu cầu kiến thức bài chưa học.",
+            "promptVi": "Chưa cần trả hôm nay có chứng minh hạn là mai không?",
+            "expectedVi": "Không; hạn vẫn chưa kiểm và cần xác định người tiếp tục."
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 8,
+            "stepsVi": [
+              "3 phút đọc bốn phần giải thích, đánh dấu khái niệm chưa hiểu",
+              "2 phút so sánh việc phù hợp và việc vượt phạm vi trong case mới",
+              "2 phút giải thích lý do bằng lời của mình",
+              "1 phút trả lời câu gợi nhớ và sửa một hiểu nhầm"
+            ],
+            "knowledgeId": "kaigo-foundation-06-knowledge"
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5,
+            "stepsVi": [
+              "2 phút đọc từ đã liên kết và hai cách nói, kiểm nghĩa trong tình huống",
+              "2 phút che mẫu và nói lại theo ý; không bắt dùng từ ngoài mục tiêu",
+              "1 phút chọn một từ/cách nói còn yếu để ôn tiếp"
+            ],
+            "vocabularyIds": [
+              "kaigo-vocab-foundation-02",
+              "kaigo-vocab-foundation-11",
+              "kaigo-vocab-foundation-19",
+              "kaigo-vocab-foundation-20",
+              "kaigo-vocab-foundation-21"
+            ]
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 9,
+            "stepsVi": [
+              "2 phút đọc/đóng vai mẫu và xác định việc phải hỏi",
+              "3 phút nói lại ít gợi ý, kiểm từng ý bắt buộc của lượt",
+              "2 phút luyện nhánh hỏi lại đã viết trong rubric, rồi trở về nhiệm vụ",
+              "2 phút luyện trường hợp chuyển giao dưới đây và sửa một điểm thiếu"
+            ],
+            "transferId": "kaigo-foundation-06-transfer",
+            "practiceModes": [
+              "guided",
+              "bounded_roleplay",
+              "reduced_hints"
+            ]
+          },
+          {
+            "activity": "check",
+            "minutes": 5,
+            "stepsVi": [
+              "1 phút đọc văn bản mới của bài",
+              "3 phút trả lời năm câu trước xem đáp án",
+              "1 phút xem lý do sai, ghi một mục ôn lại; nếu chưa xong, đánh dấu phần cần tiếp tục, không tự coi đạt"
+            ],
+            "questionIds": [
+              "kaigo-foundation-06-q01",
+              "kaigo-foundation-06-q02",
+              "kaigo-foundation-06-q03",
+              "kaigo-foundation-06-revision-q01",
+              "kaigo-foundation-06-revision-q02"
+            ],
+            "feedbackAfterAttempt": true
           }
         ],
         "practiceModes": [
@@ -1444,8 +2837,9 @@
           "bounded_roleplay",
           "reduced_hints"
         ],
-        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
-        "newVocabularyPolicy": "Ngày1–4 học từ mới theo danh sách; ngày5–7 nhắc lại, không áp chỉ tiêu từ mới."
+        "reviewPlanVi": "Nhắc mục sai sau1,3,7,14,30ngày; là thiết kế chưa có scheduler runtime.",
+        "newVocabularyPolicy": "Giữ từ đã có theo mục tiêu; thuật ngữ khái niệm được giải thích tại bài, không ép học mới để đủ số.",
+        "timingVi": "30phút là phân bổ hoạt động, chưa có thời lượng người học thực tế; không tính đọc một lần là đủ khối NPC."
       },
       "responsePolicy": {
         "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
@@ -1508,7 +2902,126 @@
         "Tình huống thường, không xử lý khẩn cấp hay quy định ngoại lệ pháp lý.",
         "Không tự chẩn đoán, tư vấn thuốc hoặc dạy thao tác chuyển người.",
         "Chưa hình/audio/runtime; chưa người duyệt chuyên môn/ngôn ngữ/quyền."
-      ]
+      ],
+      "knowledgeModule": {
+        "id": "kaigo-foundation-06-knowledge",
+        "titleVi": "Nghe lại và trách nhiệm tiếp theo",
+        "summaryJa": "二つの用件と、未確認の情報を分けて伝えます。",
+        "sections": [
+          {
+            "id": "kaigo-foundation-06-concept-1",
+            "explanationVi": "Bàn giao dễ sai khi hai thông tin gần nhau bị gộp thành một: giờ phòng sách đóng cửa và hạn trả sách là hai mốc khác. Nhắc lại để người nói sửa hiểu nhầm giúp cả người phát và người nhận cùng xác định công việc.",
+            "sourcePages": [
+              {
+                "printed": 104,
+                "pdf": 106
+              },
+              {
+                "printed": 115,
+                "pdf": 117
+              },
+              {
+                "printed": 118,
+                "pdf": 120
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-06-concept-2",
+            "explanationVi": "Dữ kiện có thể thuộc ba trạng thái: đã xác nhận, chưa xác nhận và đang giao người kiểm tra. Chưa cần trả hôm nay không chứng minh hạn là ngày mai. Chưa rõ hạn cũng không làm mất thông tin đã biết về giờ phòng sách.",
+            "sourcePages": [
+              {
+                "printed": 104,
+                "pdf": 106
+              },
+              {
+                "printed": 115,
+                "pdf": 117
+              },
+              {
+                "printed": 118,
+                "pdf": 120
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-06-concept-3",
+            "explanationVi": "Báo cáo ngắn gọn cần giữ các điều kiện quan trọng và nêu ai làm bước tiếp theo. Khi đồng nghiệp nhận kiểm hạn, người học nhắc lại việc đó và chờ kết quả; không tự điền một mốc để câu bàn giao nghe đầy đủ hơn.",
+            "sourcePages": [
+              {
+                "printed": 104,
+                "pdf": 106
+              },
+              {
+                "printed": 115,
+                "pdf": 117
+              },
+              {
+                "printed": 118,
+                "pdf": 120
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-06-concept-4",
+            "explanationVi": "Tự kiểm: nói lại hai việc riêng, giữ trạng thái chưa biết và xác nhận người tiếp tục. Chuyển kỹ năng này sang giờ hoạt động hoặc bàn giao ca, nhưng chỉ dùng dữ kiện của tình huống mới. Ghi thời gian và việc đã kiểm khi cần lưu hồ sơ.",
+            "sourcePages": [
+              {
+                "printed": 104,
+                "pdf": 106
+              },
+              {
+                "printed": 115,
+                "pdf": 117
+              },
+              {
+                "printed": 118,
+                "pdf": 120
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          }
+        ],
+        "scope": "Concepts and communication; no physical-procedure instruction, diagnosis or treatment",
+        "retrievalCheck": {
+          "promptVi": "Chưa cần trả hôm nay có chứng minh hạn là mai không?",
+          "expectedVi": "Không; hạn vẫn chưa kiểm và cần xác định người tiếp tục.",
+          "visibleAfterAttempt": true
+        },
+        "caseContrastVi": {
+          "case": "Phòng hoạt động được dùng tới16giờ nhưng giờ kết thúc chương trình vẫn đang được kiểm.",
+          "correctPrinciple": "Báo hai mốc riêng, hỏi ai kiểm giờ kết thúc và khi nào báo kết quả.",
+          "overreachToAvoid": "Không chuyển giờ dùng phòng thành giờ chương trình kết thúc."
+        },
+        "conceptTermIds": [],
+        "conceptGlossaryFile": "knowledge-glossary.json"
+      },
+      "revision": 2,
+      "editorialStatus": "revised_pending_human_review",
+      "transferPractice": {
+        "id": "kaigo-foundation-06-transfer",
+        "contextVi": "Phòng hoạt động được dùng tới16giờ nhưng giờ kết thúc chương trình vẫn đang được kiểm.",
+        "taskVi": "Báo hai mốc riêng, hỏi ai kiểm giờ kết thúc và khi nào báo kết quả.",
+        "boundaryVi": "Không chuyển giờ dùng phòng thành giờ chương trình kết thúc.",
+        "expectedMeaningVi": [
+          "Nêu đúng dữ kiện của trường hợp mới",
+          "Báo hai mốc riêng, hỏi ai kiểm giờ kết thúc và khi nào báo kết quả.",
+          "Không chuyển giờ dùng phòng thành giờ chương trình kết thúc."
+        ],
+        "method": "bounded_rehearsal_no_generated_unreviewed_NPC_reply",
+        "completionVi": "Giải thích lựa chọn, nói một phản hồi Nhật phù hợp, tự kiểm ý thiếu; không cần trùng câu mẫu."
+      },
+      "sourceMetadata": {
+        "filename": "介護ー特定技能ーベトナム語.pdf",
+        "edition": "second revision March 2025",
+        "pdfPages": 276,
+        "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+        "libraryFileId": "libfile_30516fe27c688191907d48df8b3fb8df",
+        "publishSourceBytes": false
+      }
     },
     {
       "id": "kaigo-foundation-07",
@@ -1518,33 +3031,41 @@
       "playerRoleVi": "Nhân viên chăm sóc Tanaka",
       "contextVi": "Bác đổi kế hoạch chiều: không nghe nhạc, muốn tự đọc sách, chỉ cần giúp tìm trang đánh dấu.",
       "knowledgeVi": [
-        "Phối hợp hỏi mong muốn, hỗ trợ đúng phạm vi và truyền thông tin cần thiết.",
-        "Không ép tham gia hoặc đọc thay khi bác muốn tự đọc."
+        "Một lựa chọn thường đi cùng nhiều nhiệm vụ: không tham gia âm nhạc, muốn đọc sách, cần tìm trang và cần báo vắng. Nhân viên cần tách nhiệm vụ để hỗ trợ đúng phần được yêu cầu thay vì coi không tham gia là không muốn nhận trợ giúp nào.",
+        "Tôn trọng tự lập không phải bỏ mặc. Người sử dụng tự đọc nhưng cần giúp tìm dấu trang vẫn có thể nhận hỗ trợ; việc hỗ trợ cần dựa vào phần khó thực hiện và mong muốn hiện tại. Không đọc hộ toàn bộ nếu chưa được yêu cầu.",
+        "Chia sẻ trong nhóm phục vụ công việc nên giữ đúng phạm vi đã xác nhận. Báo vắng hoạt động không cần thêm chi tiết chuyện riêng nếu không liên quan. Nói lại việc sẽ làm giúp người sử dụng kiểm tra hiểu đúng trước khi nhân viên bắt đầu.",
+        "Tự kiểm bằng một tình huống chưa thấy: đánh dấu lựa chọn, khả năng, phần cần giúp và nội dung bàn giao. Giải thích vì sao một hành động có ý tốt vẫn có thể làm quá yêu cầu. Sau trả lời, luyện lại phần thiếu ý thay vì học thuộc cả mẫu."
       ],
       "sourceRefs": [
         {
-          "filename": "介護ー特定技能ーベトナム語.pdf",
-          "edition": "March 2025 second revision",
-          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
-          "pages": [
-            {
-              "printed": 16,
-              "pdf": 18
-            },
-            {
-              "printed": 104,
-              "pdf": 106
-            },
-            {
-              "printed": 105,
-              "pdf": 107
-            },
-            {
-              "printed": 10,
-              "pdf": 12
-            }
-          ],
-          "verification": "text layer and printed labels checked; no full visual certification"
+          "printedPage": 10,
+          "pdfPage": 12,
+          "purpose": "Ôn tổng hợp: lựa chọn và mức hỗ trợ",
+          "verification": "text layer and printed labels checked; human review pending"
+        },
+        {
+          "printedPage": 12,
+          "pdfPage": 14,
+          "purpose": "Ôn tổng hợp: lựa chọn và mức hỗ trợ",
+          "verification": "text layer and printed labels checked; human review pending"
+        },
+        {
+          "printedPage": 13,
+          "pdfPage": 15,
+          "purpose": "Ôn tổng hợp: lựa chọn và mức hỗ trợ",
+          "verification": "text layer and printed labels checked; human review pending"
+        },
+        {
+          "printedPage": 16,
+          "pdfPage": 18,
+          "purpose": "Ôn tổng hợp: lựa chọn và mức hỗ trợ",
+          "verification": "text layer and printed labels checked; human review pending"
+        },
+        {
+          "printedPage": 118,
+          "pdfPage": 120,
+          "purpose": "Ôn tổng hợp: lựa chọn và mức hỗ trợ",
+          "verification": "text layer and printed labels checked; human review pending"
         }
       ],
       "vocabularyIds": [
@@ -1623,72 +3144,124 @@
           "promptJa": "本人が自分で行うことはどれですか。",
           "optionsJa": [
             "活動担当者への連絡",
-            "本を読むこと",
             "しおりのページ探し",
-            "音楽会の運営"
+            "音楽会の運営",
+            "本を読むこと"
           ],
-          "correctIndex": 1,
+          "correctIndex": 3,
           "rationalesVi": [
             "Sai: nhờ nhân viên báo vắng.",
-            "Đúng: bác nói tự đọc.",
             "Sai: nhờ nhân viên tìm trang.",
-            "Sai: không có nhiệm vụ này."
-          ]
+            "Sai: không có nhiệm vụ này.",
+            "Đúng: bác nói tự đọc."
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         },
         {
           "id": "kaigo-foundation-07-q02",
           "promptJa": "職員が探す目印はどれですか。",
           "optionsJa": [
             "赤い封筒",
+            "白いタオル",
             "黄色い付箋",
-            "青いしおり",
-            "白いタオル"
+            "青いしおり"
           ],
-          "correctIndex": 2,
+          "correctIndex": 3,
           "rationalesVi": [
             "Sai: không có phong bì đỏ.",
+            "Sai: không có khăn trắng.",
             "Sai: không phải giấy vàng.",
-            "Đúng: dấu sách xanh.",
-            "Sai: không có khăn trắng."
-          ]
+            "Đúng: dấu sách xanh."
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         },
         {
           "id": "kaigo-foundation-07-q03",
           "promptJa": "今日の対応として適切なのはどれですか。",
           "optionsJa": [
-            "音楽へ連れていく",
-            "職員が全部読み上げる",
-            "本人の希望を取り消す",
-            "依頼された部分を手伝う"
+            "ページを開いた後、本文も職員が読む",
+            "本人が自分で読むので、ページを探す援助もしない",
+            "依頼された部分を手伝う",
+            "読書より活動を優先して希望を変更する"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: Bác muốn tự đọc; chỉ cần giúp tìm trang.",
+            "Sai: Tự đọc vẫn có thể cần hỗ trợ tìm trang.",
+            "Đúng: giúp đúng phạm vi bác nhờ.",
+            "Sai: Không đổi lựa chọn của bác vì ưu tiên của nhân viên."
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "distractorRevision": "nearby_misunderstandings_with_specific_explanations",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
+        },
+        {
+          "id": "kaigo-foundation-07-revision-q01",
+          "kind": "knowledge_application",
+          "promptJa": "本人は自分でパズルを解きたいが、箱だけ開けてほしいと言います。適切な援助はどれですか。",
+          "optionsJa": [
+            "活動を変更して簡単な問題だけ渡す。",
+            "難しい問題も先に解いておく。",
+            "自分でするなら箱も一人で開けてもらう。",
+            "箱を開ける援助を確認し、問題は本人に任せる。"
           ],
           "correctIndex": 3,
           "rationalesVi": [
-            "Sai: trái mong muốn ở phòng.",
-            "Sai: bác muốn tự đọc.",
-            "Sai: không tôn trọng lựa chọn.",
-            "Đúng: giúp đúng phạm vi bác nhờ."
-          ]
+            "Sai: Chưa hỏi mong muốn thay đổi độ khó.",
+            "Sai: Giải thay nội dung không được yêu cầu hỗ trợ.",
+            "Sai: Nhầm tự lập thành không được nhận trợ giúp.",
+            "Đúng: Giúp mở hộp và để người sử dụng tự giải theo mong muốn."
+          ],
+          "rationalesJa": [
+            "問題変更の希望は確認していない。",
+            "頼まれていない内容まで代行する。",
+            "自立を援助なしと誤解している。",
+            "希望と必要な援助を区別する。"
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
+        },
+        {
+          "id": "kaigo-foundation-07-revision-q02",
+          "kind": "knowledge_application",
+          "promptJa": "活動欠席の連絡を本人に頼まれました。本人の私的な相談内容は欠席連絡と関係ありません。適切なのはどれですか。",
+          "optionsJa": [
+            "相談の全内容を欠席理由として送る。",
+            "職員の推測を添えて送る。",
+            "相談があるので欠席連絡もしない。",
+            "欠席することを確認された範囲で伝える。"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: Thêm nội dung riêng tư không cần cho liên lạc vắng mặt.",
+            "Sai: Không dùng suy đoán làm lý do.",
+            "Sai: Việc tư vấn riêng không phải lý do bỏ yêu cầu báo vắng.",
+            "Đúng: Thực hiện liên lạc cần thiết trong phạm vi đã xác nhận."
+          ],
+          "rationalesJa": [
+            "不要な私的情報を加える。",
+            "推測を理由にしない。",
+            "別の依頼まで止める理由はない。",
+            "仕事に必要な連絡を範囲内で行う。"
+          ],
+          "practiceScope": "lesson_check_not_full_mock",
+          "choiceOrderStatus": "one_time_editorial_arrangement_for_lesson_practice_not_mock_policy"
         }
       ],
       "dailyPractice": {
         "plannedMinutes": 30,
         "durationMeasured": false,
-        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện.",
-        "plannedActivitiesVi": [
-          "5 phút nhắc lại bài trước",
-          "5 phút nguyên tắc",
-          "5 phút từ/cách nói",
-          "10 phút đọc vai, nói lại, sửa ý thiếu",
-          "5 phút bài đọc và kiểm tra"
-        ],
+        "durationStatus": "planned_activities_not_learner_measured",
         "blocks": [
           {
             "activity": "review",
-            "minutes": 5
+            "minutes": 3
           },
           {
             "activity": "knowledge",
-            "minutes": 5
+            "minutes": 8
           },
           {
             "activity": "terms_and_expressions",
@@ -1696,11 +3269,80 @@
           },
           {
             "activity": "npc_practice",
-            "minutes": 10
+            "minutes": 9
           },
           {
             "activity": "check",
             "minutes": 5
+          }
+        ],
+        "activities": [
+          {
+            "activity": "review",
+            "minutes": 3,
+            "instructionVi": "Không nhìn mẫu: trả lời câu gợi nhớ dưới đây; nói lại một ý bị thiếu ở bài gần nhất. Ngày1 dùng câu hỏi đầu vào, không yêu cầu kiến thức bài chưa học.",
+            "promptVi": "Hỗ trợ tự lập có đồng nghĩa không giúp bất kỳ phần nào không?",
+            "expectedVi": "Không; hỗ trợ phần được yêu cầu và giữ phần người sử dụng tự làm."
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 8,
+            "stepsVi": [
+              "3 phút đọc bốn phần giải thích, đánh dấu khái niệm chưa hiểu",
+              "2 phút so sánh việc phù hợp và việc vượt phạm vi trong case mới",
+              "2 phút giải thích lý do bằng lời của mình",
+              "1 phút trả lời câu gợi nhớ và sửa một hiểu nhầm"
+            ],
+            "knowledgeId": "kaigo-foundation-07-knowledge"
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5,
+            "stepsVi": [
+              "2 phút đọc từ đã liên kết và hai cách nói, kiểm nghĩa trong tình huống",
+              "2 phút che mẫu và nói lại theo ý; không bắt dùng từ ngoài mục tiêu",
+              "1 phút chọn một từ/cách nói còn yếu để ôn tiếp"
+            ],
+            "vocabularyIds": [
+              "kaigo-vocab-foundation-02",
+              "kaigo-vocab-foundation-06",
+              "kaigo-vocab-foundation-11",
+              "kaigo-vocab-foundation-16",
+              "kaigo-vocab-foundation-21"
+            ]
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 9,
+            "stepsVi": [
+              "2 phút đọc/đóng vai mẫu và xác định việc phải hỏi",
+              "3 phút nói lại ít gợi ý, kiểm từng ý bắt buộc của lượt",
+              "2 phút luyện nhánh hỏi lại đã viết trong rubric, rồi trở về nhiệm vụ",
+              "2 phút luyện trường hợp chuyển giao dưới đây và sửa một điểm thiếu"
+            ],
+            "transferId": "kaigo-foundation-07-transfer",
+            "practiceModes": [
+              "guided",
+              "bounded_roleplay",
+              "reduced_hints"
+            ]
+          },
+          {
+            "activity": "check",
+            "minutes": 5,
+            "stepsVi": [
+              "1 phút đọc văn bản mới của bài",
+              "3 phút trả lời năm câu trước xem đáp án",
+              "1 phút xem lý do sai, ghi một mục ôn lại; nếu chưa xong, đánh dấu phần cần tiếp tục, không tự coi đạt"
+            ],
+            "questionIds": [
+              "kaigo-foundation-07-q01",
+              "kaigo-foundation-07-q02",
+              "kaigo-foundation-07-q03",
+              "kaigo-foundation-07-revision-q01",
+              "kaigo-foundation-07-revision-q02"
+            ],
+            "feedbackAfterAttempt": true
           }
         ],
         "practiceModes": [
@@ -1708,8 +3350,9 @@
           "bounded_roleplay",
           "reduced_hints"
         ],
-        "reviewPlanVi": "Ôn lại sau 1,3,7,14,30 ngày; thay đổi theo lỗi thực tế. Đây là lịch thiết kế, chưa có bộ lập lịch runtime.",
-        "newVocabularyPolicy": "Ngày1–4 học từ mới theo danh sách; ngày5–7 nhắc lại, không áp chỉ tiêu từ mới."
+        "reviewPlanVi": "Nhắc mục sai sau1,3,7,14,30ngày; là thiết kế chưa có scheduler runtime.",
+        "newVocabularyPolicy": "Giữ từ đã có theo mục tiêu; thuật ngữ khái niệm được giải thích tại bài, không ép học mới để đủ số.",
+        "timingVi": "30phút là phân bổ hoạt động, chưa có thời lượng người học thực tế; không tính đọc một lần là đủ khối NPC."
       },
       "responsePolicy": {
         "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
@@ -1772,7 +3415,161 @@
         "Tình huống thường, không xử lý khẩn cấp hay quy định ngoại lệ pháp lý.",
         "Không tự chẩn đoán, tư vấn thuốc hoặc dạy thao tác chuyển người.",
         "Chưa hình/audio/runtime; chưa người duyệt chuyên môn/ngôn ngữ/quyền."
-      ]
+      ],
+      "knowledgeModule": {
+        "id": "kaigo-foundation-07-knowledge",
+        "titleVi": "Ôn tổng hợp: lựa chọn và mức hỗ trợ",
+        "summaryJa": "希望・できること・頼まれたことを区別します。",
+        "sections": [
+          {
+            "id": "kaigo-foundation-07-concept-1",
+            "explanationVi": "Một lựa chọn thường đi cùng nhiều nhiệm vụ: không tham gia âm nhạc, muốn đọc sách, cần tìm trang và cần báo vắng. Nhân viên cần tách nhiệm vụ để hỗ trợ đúng phần được yêu cầu thay vì coi không tham gia là không muốn nhận trợ giúp nào.",
+            "sourcePages": [
+              {
+                "printed": 10,
+                "pdf": 12
+              },
+              {
+                "printed": 12,
+                "pdf": 14
+              },
+              {
+                "printed": 13,
+                "pdf": 15
+              },
+              {
+                "printed": 16,
+                "pdf": 18
+              },
+              {
+                "printed": 118,
+                "pdf": 120
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-07-concept-2",
+            "explanationVi": "Tôn trọng tự lập không phải bỏ mặc. Người sử dụng tự đọc nhưng cần giúp tìm dấu trang vẫn có thể nhận hỗ trợ; việc hỗ trợ cần dựa vào phần khó thực hiện và mong muốn hiện tại. Không đọc hộ toàn bộ nếu chưa được yêu cầu.",
+            "sourcePages": [
+              {
+                "printed": 10,
+                "pdf": 12
+              },
+              {
+                "printed": 12,
+                "pdf": 14
+              },
+              {
+                "printed": 13,
+                "pdf": 15
+              },
+              {
+                "printed": 16,
+                "pdf": 18
+              },
+              {
+                "printed": 118,
+                "pdf": 120
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-07-concept-3",
+            "explanationVi": "Chia sẻ trong nhóm phục vụ công việc nên giữ đúng phạm vi đã xác nhận. Báo vắng hoạt động không cần thêm chi tiết chuyện riêng nếu không liên quan. Nói lại việc sẽ làm giúp người sử dụng kiểm tra hiểu đúng trước khi nhân viên bắt đầu.",
+            "sourcePages": [
+              {
+                "printed": 10,
+                "pdf": 12
+              },
+              {
+                "printed": 12,
+                "pdf": 14
+              },
+              {
+                "printed": 13,
+                "pdf": 15
+              },
+              {
+                "printed": 16,
+                "pdf": 18
+              },
+              {
+                "printed": 118,
+                "pdf": 120
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          },
+          {
+            "id": "kaigo-foundation-07-concept-4",
+            "explanationVi": "Tự kiểm bằng một tình huống chưa thấy: đánh dấu lựa chọn, khả năng, phần cần giúp và nội dung bàn giao. Giải thích vì sao một hành động có ý tốt vẫn có thể làm quá yêu cầu. Sau trả lời, luyện lại phần thiếu ý thay vì học thuộc cả mẫu.",
+            "sourcePages": [
+              {
+                "printed": 10,
+                "pdf": 12
+              },
+              {
+                "printed": 12,
+                "pdf": 14
+              },
+              {
+                "printed": 13,
+                "pdf": 15
+              },
+              {
+                "printed": 16,
+                "pdf": 18
+              },
+              {
+                "printed": 118,
+                "pdf": 120
+              }
+            ],
+            "verification": "private_text_and_printed_labels_checked_AI_editorial"
+          }
+        ],
+        "scope": "Concepts and communication; no physical-procedure instruction, diagnosis or treatment",
+        "retrievalCheck": {
+          "promptVi": "Hỗ trợ tự lập có đồng nghĩa không giúp bất kỳ phần nào không?",
+          "expectedVi": "Không; hỗ trợ phần được yêu cầu và giữ phần người sử dụng tự làm.",
+          "visibleAfterAttempt": true
+        },
+        "caseContrastVi": {
+          "case": "Người sử dụng muốn tự giải ô chữ, chỉ nhờ lấy bút và báo vắng hoạt động.",
+          "correctPrinciple": "Xác nhận phần hỗ trợ và giữ nội dung liên lạc ở phạm vi cần thiết.",
+          "overreachToAvoid": "Không giải ô chữ thay hoặc ép tham gia hoạt động."
+        },
+        "conceptTermIds": [
+          "kaigo-concept-02",
+          "kaigo-concept-03"
+        ],
+        "conceptGlossaryFile": "knowledge-glossary.json"
+      },
+      "revision": 2,
+      "editorialStatus": "revised_pending_human_review",
+      "transferPractice": {
+        "id": "kaigo-foundation-07-transfer",
+        "contextVi": "Người sử dụng muốn tự giải ô chữ, chỉ nhờ lấy bút và báo vắng hoạt động.",
+        "taskVi": "Xác nhận phần hỗ trợ và giữ nội dung liên lạc ở phạm vi cần thiết.",
+        "boundaryVi": "Không giải ô chữ thay hoặc ép tham gia hoạt động.",
+        "expectedMeaningVi": [
+          "Nêu đúng dữ kiện của trường hợp mới",
+          "Xác nhận phần hỗ trợ và giữ nội dung liên lạc ở phạm vi cần thiết.",
+          "Không giải ô chữ thay hoặc ép tham gia hoạt động."
+        ],
+        "method": "bounded_rehearsal_no_generated_unreviewed_NPC_reply",
+        "completionVi": "Giải thích lựa chọn, nói một phản hồi Nhật phù hợp, tự kiểm ý thiếu; không cần trùng câu mẫu."
+      },
+      "sourceMetadata": {
+        "filename": "介護ー特定技能ーベトナム語.pdf",
+        "edition": "second revision March 2025",
+        "pdfPages": 276,
+        "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+        "libraryFileId": "libfile_30516fe27c688191907d48df8b3fb8df",
+        "publishSourceBytes": false
+      }
     }
   ],
   "similarityReview": "not certified; independent new scenes, no source dialogue imported",

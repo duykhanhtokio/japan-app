@@ -90,3 +90,12 @@ Tổng3cụm tuần được tổ chức đầy đủ ở mức bản thảo bi�
 ## 2026-10-07 — Audit weeks 1–3 completed; quality gate NOT_READY
 
 Full editorial audit covers21lessons,176turns,21readings,69questions,88response rubrics and69vocabulary entries. See reviews/WEEKS_01_03_CONTENT_AUDIT_2026-10-07.md and JSON evidence. Structural validators PASS; this is not quality certification. Open errors: day16 actor mismatch; day19 now/today scope; literal Unicode escapes day18/20; day13 information perspective; day11 reference frame. Knowledge depth, distractors, rubric assessment and measured30minutes remain incomplete. No lesson content changed in audit; no human/native/rights/runtime flags promoted. Do not proceed to week4 under a claim weeks1–3 are quality approved. Present repair/rebalancing decisions to user first.
+
+
+## 2026-10-07 — Publisher-authorized whole-three-week revision2
+
+User approved fixing and completing weeks1–3 before continuation, retaining30minutes/day and rebalancing knowledge/communication/review. Contract v2 documents3/8/5/9/5minute activities. Completed21distinct four-section knowledge modules,21transfer cases,105lesson questions (35perweek),88atomic response rubrics and84scenario assessment cases;176dialogue turns remain. Day12 now directly addresses resident-a; curriculum/NPC links updated.14shared concept terms added with AI reading status only.
+
+A01–A05 repaired across relevant JA/VI/readings/questions/rubrics. Further reread corrected day10 question-command mismatch, day11 VI direction reference, and day16 scenario-policy role drift. Added bounded integrity validator and final revision report; original audit retained. One-time lesson-choice reordering is editorial practice data, not adoption of a mock/runtime answer algorithm.
+
+Scenario assessment cases are specifications, not executed semantic-evaluator tests. Human/domain/native/rights/runtime/release flags remain false;30minute activities not measured; no images/audio/app integration or complete mocks. See reviews/WEEKS_01_03_REVISION_02_REPORT.md and revision-integrity/similarity-screen JSON. Next: obtain required reviews and timing/runtime evidence before release; do not claim publication readiness or silently proceed to week4 in this repair unit. Mock-language/furigana/scoring/resume decisions remain open. Persist and verify this complete revision before a new unit.

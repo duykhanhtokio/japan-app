@@ -30,7 +30,7 @@ for(const [index,l] of lessons.entries()){
  assert(l.reading.textJa&&l.reading.meaningVi);assert.equal(l.expressions.length,2);
  turns+=l.dialogue.length;checks+=l.questions.length;responses+=rubric.turns.length;expressions+=l.expressions.length;
 }
-assert.equal(turns,62);assert.equal(checks,27);assert.equal(responses,31);assert.equal(expressions,14);
+assert.equal(turns,62);assert.equal(checks,35);assert.equal(responses,31);assert.equal(expressions,14);
 assert.equal(manifest.playerTurnRubrics,responses);assert.equal(manifest.movementVocabularyRecords,24);assert.equal(manifest.releaseReady,false);assert.equal(rubrics.runtimeIntegrated,false);
 const result={status:'PASS structural only',lessons:7,dialogueTurns:turns,readings:7,questions:checks,vocabularyDrafted:vocab.length,playerTurnRubrics:responses,expressions,daysCovered:[15,16,17,18,19,20,21],humanReviewed:false,runtimeIntegrated:false,durationMeasured:false,checks:['IDs and foreign keys','seven day links','alternating 6–12 turns','no duplicate player lines','options and rationale consistency','per-turn rubric coverage and variants','planned 30-minute blocks','truthful review flags'],limits:['Native reading and domain review pending','Rights/similarity review not certified','No executable semantic evaluator','No assets/runtime','Duration not measured']};
 if(process.argv.includes('--write-report'))fs.writeFileSync(root+'week3-validation.json',JSON.stringify(result,null,2)+'\n');

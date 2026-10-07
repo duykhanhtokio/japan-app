@@ -1,6 +1,6 @@
 # Hướng dẫn chính thức — Tokutei Gino 介護
 
-Phiên bản: 1. Ngày duyệt: 2026-10-07 (Asia/Tokyo).
+Phiên bản: 2. Ngày duyệt: 2026-10-07 (Asia/Tokyo).
 Trạng thái: CHỦ DỰ ÁN ĐÃ DUYỆT PHƯƠNG ÁN BIÊN SOẠN.
 Repository: duykhanhtokio/japan-app. Nhánh: recovery/jlpt-n3-n1.
 Đây là hợp đồng biên soạn; duyệt phương án không chứng nhận nội dung chưa được tạo, kiểm duyệt hoặc tích hợp.
@@ -138,3 +138,8 @@ Kiểm tương đồng không chứng nhận quyền pháp lý; ghi nguồn đã
 5. Chỉ tích hợp nội dung đạt gate, qua schema app đã kiểm. Không tự đổi UI hoặc xóa nội dung khác.
 6. Lưu checkpoint và commit hẹp, push/fetch, kiểm chứng remote trước đơn vị tiếp theo. Không sửa hướng dẫn đã duyệt âm thầm; ghi phiên bản và thay đổi mới.
 Checkpoint phải ghi hoàn thành/còn dở/blocker/bước tiếp; có/không có ảnh/audio/runtime; không tự nâng trạng thái.
+
+
+## 12. Điều chỉnh đã được chủ dự án duyệt — 2026-10-07
+
+Hoàn thiện trọn tuần1–3 và sửa lỗi báo cáo trước khi viết tuần4. Giữ8tuần,30phút/ngày; phân bổ lại buổi trong tuần1–3 thành3phút ôn,8phút kiến thức,5phút từ/cách nói,9phút giao tiếp NPC,5phút đọc/câu hỏi. Đây là phân bổ hoạt động chưa đo trên người học. Mỗi bài có giải thích khái niệm, đối chiếu case đúng/sai, bài chuyển giao,5câu kiểm tra và rubric tách ý bắt buộc. Các ngày5–7 dùng lại từ, không đặt chỉ tiêu từ mới. Thay đổi này thay phân bổ cũ5/5/5/10/5 cho ba tuần được sửa; không tự đổi các ngày thi đủ thời gian. Duyệt sửa không thay kiểm chuyên môn, bản ngữ, quyền hoặc runtime.
