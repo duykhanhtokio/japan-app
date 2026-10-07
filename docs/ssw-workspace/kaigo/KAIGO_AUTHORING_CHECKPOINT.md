@@ -99,3 +99,17 @@ User approved fixing and completing weeks1–3 before continuation, retaining30m
 A01–A05 repaired across relevant JA/VI/readings/questions/rubrics. Further reread corrected day10 question-command mismatch, day11 VI direction reference, and day16 scenario-policy role drift. Added bounded integrity validator and final revision report; original audit retained. One-time lesson-choice reordering is editorial practice data, not adoption of a mock/runtime answer algorithm.
 
 Scenario assessment cases are specifications, not executed semantic-evaluator tests. Human/domain/native/rights/runtime/release flags remain false;30minute activities not measured; no images/audio/app integration or complete mocks. See reviews/WEEKS_01_03_REVISION_02_REPORT.md and revision-integrity/similarity-screen JSON. Next: obtain required reviews and timing/runtime evidence before release; do not claim publication readiness or silently proceed to week4 in this repair unit. Mock-language/furigana/scoring/resume decisions remain open. Persist and verify this complete revision before a new unit.
+
+## 2026-10-07 — Tuần4, nguyên cụm ăn uống ngày22–28
+
+Chủ dự án yêu cầu tiếp tục sau cụm sửa tuần1–3 đã lưu bền. Phiên mới đọc lại hướng dẫn/plan/checkpoint/biểu đạt độc lập, kiểmHEADremote7c58d7b3 và nguồn chuẩn khớphash. Không lặp hoặc đổi nội dung tuần1–3.
+
+Thêm eating-lessons/vocabulary/response-rubrics.json và week-04-manifest.json:7bài,56lượt,7mô-đun4phần,7bài đọc,35câu với lý do đủ4lựa chọn,14cách nói,28rubric ý nghĩa nguyên tử,28ca phản hồi biên tập,7case chuyển giao.20từ chọn mới;11cách đọc kiểm trực quan nguồn213–214/PDF215–216,9AIonly. ID từ chung dùng lại, không tạo bản ghi trùng.
+
+Tình huống khác nhau: hiểu thực đơn; nhãn khay/dạng chưa rõ; tự ăn/chỉnh bát; mô tả khay theo hướng bác/nhiệt độ; muốn nghỉ; báo đã ăn và dữ kiện chưa kiểm; bảng chung/kế hoạch riêng khác nhau. NPC giữ vai, nhân viên bếp được dùng đúng vai. Không chỉ định kết cấu, làm sánh, đút ăn/tư thế hoặc chẩn đoán. Ngày26 chỉ nói sau ngừng nhai; ngày27 không biến chưa kiểm thành không uống; ngày28phân côngKawasekiểm/người họcbáobếp.
+
+Giữ5/5/5/10/5phút của tuần4 trong ma trận; điều chỉnh3/8/5/9/5được ghi duyệt cho sửa ba tuần trước, không tự áp rộng.210phút chưa đo. Ngày26–28dùng lại từ, không ép thêm mới. Cập nhật liên kết đủ7ngày và production28bài/140câu; không tính là bộ thi đầy đủ.
+
+Rà AI từng nhóm nội dung/đáp án/rubric/biến thể; sửa nguồn dẫn, tiêu chí gộp và7phương án sai quá xa chủ đề. Có validator tuần4 và báo cáo WEEK_04_EDITORIAL_REPORT.md, evidence similarity711trường/cửa sổ60ký tự/0trườngkhớp. Sàng lọc và so tình huống AI không chứng nhận quyền. Bộ chấm ngữ nghĩa chưa chạy; human/domain/native/publisher/rights/runtime/releaseflagsfalse. Không hình/audio/app/mock/đo tải học.
+
+Sau khi commit hẹp,push/fetch vàWORK PERSISTENCE PASS: tiếp tục trọn tuần5 ngày29–35, đọc lại nguồn bài tiết152–169 và từ/hội thoại219–223. Giữ các lựa chọn đề thi còn mở; chỉ hỏi khi làm phần phụ thuộc. Đạt bản thảo đã rà AI, chưa đạt gatepháthành; không tự nâng trạng thái.
