@@ -3,6 +3,13 @@ import metadataJson from '@/data/location-place-artwork.json';
 
 const metadata = metadataJson as Record<string, { category: string }>;
 const artwork: Record<string, ImageSourcePropType> = {
+  'LOC-008-01': require('../../../assets/app/life/location-backgrounds/places/mito-station-hitachi.png'),
+  'LOC-008-18': require('../../../assets/app/life/location-backgrounds/places/mito-kairakuen-seasonal-station.png'),
+  'LOC-008-08': require('../../../assets/app/life/location-backgrounds/places/mito-kairakuen-kobuntei.png'),
+  'LOC-008-09': require('../../../assets/app/life/location-backgrounds/places/mito-tokiwa-shrine.png'),
+  'LOC-008-13': require('../../../assets/app/life/location-backgrounds/places/mito-uchihara-aeon-mall.png'),
+  'LOC-008-15': require('../../../assets/app/life/location-backgrounds/places/mito-history-mitsukaido-school.png'),
+  'LOC-008-17': require('../../../assets/app/life/location-backgrounds/places/bando-ibaraki-nature-museum.png'),
   'LOC-007-18': require('../../../assets/app/life/location-backgrounds/places/fukushima-iizaka-station.png'),
   'LOC-007-01': require('../../../assets/app/life/location-backgrounds/places/fukushima-station-yamabiko.png'),
   'LOC-007-13': require('../../../assets/app/life/location-backgrounds/places/fukushima-aeon-food-court.png'),
@@ -75,6 +82,8 @@ const artwork: Record<string, ImageSourcePropType> = {
   'LOC-004-17': require('../../../assets/app/life/location-backgrounds/places/sendai-akiu-rairaikyo.png'),
   'LOC-004-18': require('../../../assets/app/life/location-backgrounds/places/sendai-akiu-great-falls.png'),
   'LOC-004-19': require('../../../assets/app/life/location-backgrounds/places/sendai-mediatheque.png'),
+  'LOC-008-10': require('../../../assets/app/life/location-backgrounds/places/mito-art-tower.png'),
+  'LOC-008-16': require('../../../assets/app/life/location-backgrounds/places/mito-izumicho-keisei.png'),
 };
 
 // Geography belongs to the stable location ID, never a category or round-robin slot.

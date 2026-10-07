@@ -191,3 +191,25 @@ Audit characteristic-name rule now catches a name ending in 温泉 so 飯坂温�
 Generation instructions for these 9 new assets: original 1024×1536 portrait in established detailed semi-realistic anime travel style; authoritative visual references for defining architecture; clear lower standing space for NPC; no people/UI/watermark; exclude Tokyo landmarks and invented towers. References only, exact generated PNG bytes integrated. All final images inspected before activation. Routing/NPC checks pass all 7,112 locations; native full-app testing remains pending.
 
 Fukushima/Aizuwakamatsu isolated actual-component browser fixture passed 10 cards at 390×844, 430×932, 768×1024, 1024×768 and 1366×768: all frame/scene images decoded, scene image bounds matched clipped windows, zero page errors. Inspected phone screenshot: actual shrine, bathhouse, castle, museum, shop and station identities remain visible; no stretching/blank scene bands. Japanese fixture font is absent, so labels show missing-glyph boxes and typography is not claimed validated. Native/full-app route validation remains pending.
+
+## Mito CTY-008 / Bando CTY-IBR-BANDO — 2026-10-07
+
+Reviewed all 21 original Mito rows. Moved LOC-008-17 茨城県自然博物館 to actual 坂東市, 大崎700; preserved stable ID and synchronized cities, scenarios and scenario-index. Mito retains 20 rows: 8 exact-place images and 12 permitted shared-service interiors. Bando and the full catalog remain incomplete.
+
+| ID | Correct place / city | Asset | Primary reference |
+| --- | --- | --- | --- |
+| LOC-008-08 | 偕楽園 / CTY-008 | mito-kairakuen-kobuntei.png | https://www.ibarakiguide.jp/spot.php?code=660&mode=detail |
+| LOC-008-09 | 常磐神社 / CTY-008 | mito-tokiwa-shrine.png | https://www.ibarakiguide.jp/spot.php?code=686&mode=detail |
+| LOC-008-13 | イオンモール水戸内原 / CTY-008 | mito-uchihara-aeon-mall.png | https://space-media.aeonmall.com/buildings/mitouchihara |
+| LOC-008-15 | 茨城県立歴史館 / CTY-008 | mito-history-mitsukaido-school.png | https://rekishikan-ibk.jp/guide/mitsukaido-school/ |
+| LOC-008-17 | 茨城県自然博物館 / CTY-IBR-BANDO | bando-ibaraki-nature-museum.png | https://www.ibarakiguide.jp/spot.php?code=220&mode=detail |
+| LOC-008-01 | 水戸駅 / CTY-008 | mito-station-hitachi.png | https://www.jreast.co.jp/train/express/hitachi_tokiwa.html |
+| LOC-008-18 | 偕楽園駅（臨時駅） / CTY-008 | mito-kairakuen-seasonal-station.png | https://www.jreast.co.jp/press/2025/mito/20251114_mt03.pdf |
+| LOC-008-10 | 水戸芸術館 / CTY-008 | mito-art-tower.png | https://www.arttowermito.or.jp/tower/ |
+| LOC-008-16 | 泉町商業地区（京成百貨店前） / CTY-008 | mito-izumicho-keisei.png | https://www.city.mito.lg.jp/page/79938.html |
+
+Corrected corrupted Kairakuen, Tokiwa shrine, Art Tower Mito and seasonal Kairakuen station names; replaced ambiguous AEON Mito with actual AEON MALL Mito Uchihara. Synchronized scenario mentions. Replaced unidentified 水戸中央商店街 with verified 泉町商業地区（京成百貨店前）, explicitly a venue replacement rather than a claimed decoding. Historical museum artwork depicts the relocated Ex-Mitsukaido Primary School within the museum grounds, not its modern main building. Nature museum artwork depicts static dinosaur exhibits inside the actual Bando museum. Station illustrations identify regional E657 Hitachi service, not Shinkansen, and do not claim exact current platform equipment. Seasonal station source confirms the temporary downbound platform.
+
+Nine original portrait PNGs follow the established semi-realistic anime travel style, no people/UI, with room for the existing NPC overlay. Final artwork inspected; Art Tower composition revised to preserve the full faceted tower inside square card cropping. Defining architecture checked against primary references, no Tokyo landmark reuse. Geography inventory now 81 exact place IDs, 4,671 shared-service-permitted and 2,360 pending individual reviews across 814 cities / 7,112 locations. Shared permission does not assert every generic service name is a real surveyed venue. No dialogue, mic, blur or layout changes.
+
+Actual RoyalLocationCard + placeBackground browser fixture passed all 9 Mito/Bando cards at 390×844, 430×932, 768×1024, 1024×768 and 1366×768: every image decoded, scene bounds match clipping windows, no page errors. Phone and tablet screenshots inspected, defining features retained without stretching or blank scene bands. Fixture lacks Japanese font; typography is not validated. Native/full-app route testing remains pending. Routing/NPC checks pass all 7,112 locations; git diff whitespace check passes.
