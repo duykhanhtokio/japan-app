@@ -43,3 +43,11 @@ PASS cấu trúc, ID/link, lượt thoại, trùng lời người học, lựa c
 Remote trước chỉnh sửa đã kiểm chứng PASS tại 24bceaa0, chứa cụm di chuyển bảy ngày. Thêm drafts/movement-response-rubrics.json: 31 lượt người học của 7 bài, mỗi lượt có tiêu chí nghĩa Việt, câu mẫu và biến thể Nhật, gợi ý sửa, liên kết prompt/next turn. Không so khớp chuỗi tuyệt đối; không tự chuyển lượt khi thiếu ý hoặc có hành động không phù hợp. ASR không chắc thì yêu cầu nói lại/sửa văn bản.
 
 Đây là đặc tả biên tập, chưa có bộ phân loại/chấm điểm thực thi. Chưa kiểm tiếng nói/runtime hoặc duyệt chuyên môn/ngôn ngữ/quyền bằng con người. Đặc tả cần được kiểm duyệt cùng bài trước tích hợp. Điểm tiếp theo sau lưu bền: soạn nền tảng tuần 1 theo nguồn, rồi cụm ăn uống; quyết định đề thi chưa chốt vẫn giữ nguyên.
+
+## Nền tảng ngày 1–3
+
+Thêm 3 bản thảo: giới thiệu đúng vai trò và cách xưng hô; xin phép lau bàn/chuyển đồ cá nhân; hỗ trợ đọc địa chỉ để người sử dụng tự viết thiệp. 26 lượt Nhật–Việt, 3 bài đọc mới, 9 câu kiểm tra kèm lý do từng lựa chọn. Liên kết ngày1–3 và 16 mục từ mới tự chọn; cách đọc chỉ AI rà, chưa kiểm trực quan kho từ Nhật nguồn hoặc người bản ngữ. Tổng hiện10 bài,36 câu ôn; chưa có bộ đề đầy đủ.
+
+Nguồn kiến thức đã đọc trang in10,12,13,102,103 (PDF12,14,15,104,105), hash khớp bản chuẩn. Không dùng hội thoại ví dụ nguồn để viết lại. Chưa duyệt chuyên môn/ngôn ngữ/quyền, chưa hình/audio/runtime; thời lượng30phút là kế hoạch. Tiếp sau lưu bền: ngày4–7 (riêng tư, từ chối, hỏi lại, ôn tuần); đọc nguồn liên quan trước soạn.
+
+Lưu trực tiếp bằng kết nối GitHub; không yêu cầu tải bundle khi kết nối ghi hoạt động. Bản đánh giá31 lượt đã lưu trên remote40f2324c; SHA nội dung mới lấy từ Git sau công bố, không tạo commit chỉ để ghi SHA.

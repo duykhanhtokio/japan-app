@@ -1,0 +1,559 @@
+{
+  "status": "draft_ai_editorial_only",
+  "lessons": [
+    {
+      "id": "kaigo-foundation-01",
+      "curriculumDay": 1,
+      "titleVi": "Chào hỏi, giới thiệu vai trò",
+      "npcId": "kaigo-npc-resident-a",
+      "playerRoleVi": "Nhân viên chăm sóc Tanaka",
+      "contextVi": "Phòng ở, lần đầu nhân viên mới gặp bác Morikawa. Nhân viên là người chăm sóc, không phải điều dưỡng.",
+      "knowledgeVi": [
+        "Tự giới thiệu rõ vai trò; hỏi cách xưng hô người sử dụng muốn, không tự dùng tên thân mật."
+      ],
+      "sourceRefs": [
+        {
+          "filename": "介護ー特定技能ーベトナム語.pdf",
+          "edition": "March 2025 second revision",
+          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+          "pages": [
+            {
+              "printed": 10,
+              "pdf": 12
+            },
+            {
+              "printed": 12,
+              "pdf": 14
+            },
+            {
+              "printed": 13,
+              "pdf": 15
+            },
+            {
+              "printed": 102,
+              "pdf": 104
+            },
+            {
+              "printed": 103,
+              "pdf": 105
+            }
+          ],
+          "verification": "text layer and printed labels checked; no full visual certification"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-foundation-01",
+        "kaigo-vocab-foundation-02",
+        "kaigo-vocab-foundation-03",
+        "kaigo-vocab-foundation-04",
+        "kaigo-vocab-foundation-05"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "今日から来た方ですか。",
+          "meaningVi": "Bạn mới tới từ hôm nay phải không?"
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "はい、介護職員の田中です。今日はこちらのお部屋を担当します。よろしくお願いします。",
+          "meaningVi": "Vâng, tôi là Tanaka, nhân viên chăm sóc. Hôm nay tôi phụ trách phòng này. Mong bác giúp đỡ."
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "看護師さんとは違うんですね。",
+          "meaningVi": "Vậy bạn không phải điều dưỡng đúng không?"
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "はい、介護職員です。看護師へのご相談があれば、担当の方につなぎます。",
+          "meaningVi": "Vâng, tôi là nhân viên chăm sóc. Nếu bác cần hỏi điều dưỡng, tôi sẽ liên lạc người phụ trách."
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "わかりました。名前は森川ですが、晴子さんと呼んでください。",
+          "meaningVi": "Tôi hiểu. Tôi họ Morikawa, nhưng hãy gọi tôi là Haruko-san."
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "晴子さんですね。そのようにお呼びします。今、少しお話ししてもよろしいですか。",
+          "meaningVi": "Haruko-san đúng không. Tôi sẽ gọi như vậy. Bây giờ nói chuyện một chút được không ạ?"
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "はい。でも、長い話はあとにしてください。",
+          "meaningVi": "Được. Nhưng chuyện dài thì để sau nhé."
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "承知しました。今日は挨拶だけにします。またご都合のよいときにお話ししましょう。",
+          "meaningVi": "Tôi hiểu. Hôm nay tôi chỉ chào hỏi thôi. Mình nói chuyện lại lúc bác thuận tiện nhé."
+        }
+      ],
+      "reading": {
+        "textJa": "本日の担当は介護職員の田中です。森川さんは「晴子さん」と呼ばれることを希望されています。今日は短い挨拶のみを希望されました。",
+        "meaningVi": "Người phụ trách hôm nay là nhân viên chăm sóc Tanaka. Bác Morikawa muốn được gọi Haruko-san. Hôm nay bác chỉ muốn chào hỏi ngắn."
+      },
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "questions": [
+        {
+          "id": "kaigo-foundation-01-q01",
+          "promptJa": "田中さんの役割はどれですか。",
+          "optionsJa": [
+            "看護師",
+            "介護職員",
+            "家族",
+            "活動の講師"
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: nhân viên đã nói không phải điều dưỡng.",
+            "Đúng: Tanaka giới thiệu là nhân viên chăm sóc.",
+            "Sai: không phải người nhà.",
+            "Sai: không có vai giảng viên."
+          ]
+        },
+        {
+          "id": "kaigo-foundation-01-q02",
+          "promptJa": "森川さんが希望する呼び方はどれですか。",
+          "optionsJa": [
+            "おばあちゃん",
+            "森川ちゃん",
+            "晴子さん",
+            "晴子ちゃん"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: không phải cách bác yêu cầu.",
+            "Sai: tự đổi sang cách gọi thân mật.",
+            "Đúng: đúng cách xưng hô bác yêu cầu.",
+            "Sai: bác yêu cầu さん, không phải ちゃん."
+          ]
+        },
+        {
+          "id": "kaigo-foundation-01-q03",
+          "promptJa": "今日はどのように対応しますか。",
+          "optionsJa": [
+            "短い挨拶にする",
+            "長く話し続ける",
+            "返事を待たずに質問する",
+            "本人の希望を取り消す"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: phù hợp mong muốn nói ngắn.",
+            "Sai: trái yêu cầu để chuyện dài sau.",
+            "Sai: không dành cơ hội trả lời.",
+            "Sai: không tôn trọng mong muốn."
+          ]
+        }
+      ],
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "durationMeasured": false,
+        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện."
+      },
+      "responsePolicy": {
+        "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
+        "fallbackJa": "確認したいことを、もう一度教えていただけますか。",
+        "unsafeVi": [
+          "Tự nhận vai chuyên môn không có",
+          "Làm thay hoặc chuyển đồ khi chưa đồng ý",
+          "Suy đoán năng lực/chẩn đoán từ tuổi"
+        ],
+        "runtimeImplemented": false
+      }
+    },
+    {
+      "id": "kaigo-foundation-02",
+      "curriculumDay": 2,
+      "titleVi": "Hỏi mong muốn, xin phép",
+      "npcId": "kaigo-npc-resident-b",
+      "playerRoleVi": "Nhân viên chăm sóc Tanaka",
+      "contextVi": "Bàn trong phòng bác Hasebe có báo và kính. Người học muốn lau bàn; không tự cất đồ cá nhân.",
+      "knowledgeVi": [
+        "Hỏi nhu cầu trước; xác nhận nơi đặt đồ và xin phép trước khi thực hiện."
+      ],
+      "sourceRefs": [
+        {
+          "filename": "介護ー特定技能ーベトナム語.pdf",
+          "edition": "March 2025 second revision",
+          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+          "pages": [
+            {
+              "printed": 10,
+              "pdf": 12
+            },
+            {
+              "printed": 12,
+              "pdf": 14
+            },
+            {
+              "printed": 13,
+              "pdf": 15
+            },
+            {
+              "printed": 102,
+              "pdf": 104
+            },
+            {
+              "printed": 103,
+              "pdf": 105
+            }
+          ],
+          "verification": "text layer and printed labels checked; no full visual certification"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-foundation-06",
+        "kaigo-vocab-foundation-07",
+        "kaigo-vocab-foundation-08",
+        "kaigo-vocab-foundation-09",
+        "kaigo-vocab-foundation-10",
+        "kaigo-vocab-foundation-11"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "テーブルの上が少し汚れていますね。",
+          "meaningVi": "Mặt bàn hơi bẩn nhỉ."
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "テーブルを拭きましょうか。それとも、あとにしますか。",
+          "meaningVi": "Tôi lau bàn nhé, hay để sau ạ?"
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "今、お願いします。でも新聞はまだ読んでいます。",
+          "meaningVi": "Nhờ bạn lau bây giờ. Nhưng tôi vẫn đang đọc báo."
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "新聞はお読みになるのですね。拭く間、どこに置けばよろしいですか。",
+          "meaningVi": "Bác còn đọc báo đúng không. Trong lúc lau, đặt báo ở đâu được ạ?"
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "棚の下には入れず、隣の椅子に置いてください。眼鏡もその横に。",
+          "meaningVi": "Đừng cất dưới kệ; hãy đặt trên ghế bên cạnh. Kính để cạnh báo."
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "新聞と眼鏡は隣の椅子ですね。そこに移してから、テーブルを拭いてもよろしいですか。",
+          "meaningVi": "Báo và kính để ghế bên cạnh đúng không. Tôi chuyển tới đó rồi lau bàn được không?"
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "はい。終わったら新聞を戻してください。",
+          "meaningVi": "Được. Xong thì trả báo lại nhé."
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "わかりました。拭き終わったら新聞を戻します。眼鏡も元の場所に戻してよろしいですか。",
+          "meaningVi": "Tôi hiểu. Lau xong tôi trả báo lại. Kính cũng trả về chỗ cũ được không?"
+        },
+        {
+          "turn": 9,
+          "speaker": "npc",
+          "textJa": "ええ、両方お願いします。",
+          "meaningVi": "Vâng, cả hai nhé."
+        },
+        {
+          "turn": 10,
+          "speaker": "player",
+          "textJa": "承りました。では、今から始めます。",
+          "meaningVi": "Tôi hiểu. Vậy tôi bắt đầu bây giờ."
+        }
+      ],
+      "reading": {
+        "textJa": "長谷部さんからテーブル清掃の依頼がありました。新聞と眼鏡は清掃中、隣の椅子に置きます。清掃後は両方を元の場所に戻すことを、ご本人と確認しました。",
+        "meaningVi": "Bác Hasebe nhờ lau bàn. Trong lúc lau, báo và kính đặt trên ghế bên cạnh. Đã xác nhận với bác rằng xong sẽ trả cả hai về chỗ cũ."
+      },
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "questions": [
+        {
+          "id": "kaigo-foundation-02-q01",
+          "promptJa": "清掃中、新聞はどこに置きますか。",
+          "optionsJa": [
+            "棚の下",
+            "ごみ箱",
+            "別の部屋",
+            "隣の椅子"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: bác dặn không cất dưới kệ.",
+            "Sai: báo vẫn đang được đọc.",
+            "Sai: không được yêu cầu chuyển phòng.",
+            "Đúng: bác chỉ định ghế bên cạnh."
+          ]
+        },
+        {
+          "id": "kaigo-foundation-02-q02",
+          "promptJa": "清掃後はどうしますか。",
+          "optionsJa": [
+            "新聞と眼鏡を元に戻す",
+            "新聞だけ捨てる",
+            "両方を棚にしまう",
+            "眼鏡だけ持ち帰る"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: bác xác nhận trả cả hai về chỗ cũ.",
+            "Sai: không có đồng ý bỏ báo.",
+            "Sai: không được yêu cầu cất kệ.",
+            "Sai: không được mang đồ cá nhân đi."
+          ]
+        },
+        {
+          "id": "kaigo-foundation-02-q03",
+          "promptJa": "物を動かす前に大切なのはどれですか。",
+          "optionsJa": [
+            "職員の好みで決める",
+            "置き場所と本人の同意を確認する",
+            "本人に知らせず片づける",
+            "新聞を読めないと決めつける"
+          ],
+          "correctIndex": 1,
+          "rationalesVi": [
+            "Sai: lựa chọn của nhân viên không thay mong muốn bác.",
+            "Đúng: hỏi nơi đặt và xin phép trước thực hiện.",
+            "Sai: bỏ qua mong muốn và sự đồng ý.",
+            "Sai: không có dữ kiện để kết luận năng lực."
+          ]
+        }
+      ],
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "durationMeasured": false,
+        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện."
+      },
+      "responsePolicy": {
+        "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
+        "fallbackJa": "確認したいことを、もう一度教えていただけますか。",
+        "unsafeVi": [
+          "Tự nhận vai chuyên môn không có",
+          "Làm thay hoặc chuyển đồ khi chưa đồng ý",
+          "Suy đoán năng lực/chẩn đoán từ tuổi"
+        ],
+        "runtimeImplemented": false
+      }
+    },
+    {
+      "id": "kaigo-foundation-03",
+      "curriculumDay": 3,
+      "titleVi": "Tự lập và mức hỗ trợ",
+      "npcId": "kaigo-npc-resident-c",
+      "playerRoleVi": "Nhân viên chăm sóc Tanaka",
+      "contextVi": "Bác Onodera muốn viết thiệp. Không có dữ kiện về bệnh hay năng lực vận động; không suy đoán từ tuổi.",
+      "knowledgeVi": [
+        "Hỏi phần muốn tự làm và phần cần giúp; không làm thay toàn bộ chỉ vì nhanh hơn."
+      ],
+      "sourceRefs": [
+        {
+          "filename": "介護ー特定技能ーベトナム語.pdf",
+          "edition": "March 2025 second revision",
+          "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+          "pages": [
+            {
+              "printed": 10,
+              "pdf": 12
+            },
+            {
+              "printed": 12,
+              "pdf": 14
+            },
+            {
+              "printed": 13,
+              "pdf": 15
+            },
+            {
+              "printed": 102,
+              "pdf": 104
+            },
+            {
+              "printed": 103,
+              "pdf": 105
+            }
+          ],
+          "verification": "text layer and printed labels checked; no full visual certification"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-foundation-11",
+        "kaigo-vocab-foundation-12",
+        "kaigo-vocab-foundation-13",
+        "kaigo-vocab-foundation-14",
+        "kaigo-vocab-foundation-15",
+        "kaigo-vocab-foundation-16"
+      ],
+      "dialogue": [
+        {
+          "turn": 1,
+          "speaker": "npc",
+          "textJa": "友達へのはがきを書きたいんです。",
+          "meaningVi": "Tôi muốn viết thiệp cho bạn."
+        },
+        {
+          "turn": 2,
+          "speaker": "player",
+          "textJa": "いいですね。ご自分で書きたいところと、お手伝いが必要なところを教えていただけますか。",
+          "meaningVi": "Hay quá. Bác cho tôi biết phần muốn tự viết và phần cần giúp được không?"
+        },
+        {
+          "turn": 3,
+          "speaker": "npc",
+          "textJa": "文章は自分で書きます。住所だけ、小さい字なので読んでほしいです。",
+          "meaningVi": "Nội dung tôi tự viết. Địa chỉ chữ nhỏ nên muốn bạn đọc giúp."
+        },
+        {
+          "turn": 4,
+          "speaker": "player",
+          "textJa": "文章はご自分で書かれるのですね。住所を読むお手伝いだけでよろしいですか。",
+          "meaningVi": "Nội dung bác tự viết đúng không. Tôi chỉ giúp đọc địa chỉ được không?"
+        },
+        {
+          "turn": 5,
+          "speaker": "npc",
+          "textJa": "はい。この紙に書いてある住所です。ゆっくり読んでください。",
+          "meaningVi": "Vâng. Địa chỉ trên tờ giấy này. Hãy đọc chậm nhé."
+        },
+        {
+          "turn": 6,
+          "speaker": "player",
+          "textJa": "承知しました。一度に全部ではなく、区切って読みますね。もう一度聞きたいときは教えてください。",
+          "meaningVi": "Tôi hiểu. Tôi sẽ đọc từng phần thay vì đọc hết một lần. Muốn nghe lại bác hãy nói nhé."
+        },
+        {
+          "turn": 7,
+          "speaker": "npc",
+          "textJa": "お願いします。書き終わったら、自分で確かめます。",
+          "meaningVi": "Nhờ bạn. Viết xong tôi sẽ tự kiểm."
+        },
+        {
+          "turn": 8,
+          "speaker": "player",
+          "textJa": "はい。確認もご自分でされるのですね。必要になったら、またお声がけください。",
+          "meaningVi": "Vâng. Bác cũng tự kiểm đúng không. Khi cần bác hãy gọi tôi nhé."
+        }
+      ],
+      "reading": {
+        "textJa": "小野寺さんは、はがきの文章を自分で書き、記入後も自分で確認することを希望しています。職員に依頼されたのは、紙にある住所をゆっくり読むことです。",
+        "meaningVi": "Bác Onodera muốn tự viết nội dung thiệp và tự kiểm sau khi viết. Việc bác nhờ nhân viên là đọc chậm địa chỉ trên giấy."
+      },
+      "review": {
+        "aiEditorialReviewed": true,
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "releaseReady": false
+      },
+      "questions": [
+        {
+          "id": "kaigo-foundation-03-q01",
+          "promptJa": "職員に頼まれたことはどれですか。",
+          "optionsJa": [
+            "文章を全部書く",
+            "住所を変更する",
+            "住所をゆっくり読む",
+            "はがきを捨てる"
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: bác muốn tự viết.",
+            "Sai: bác không nhờ đổi địa chỉ.",
+            "Đúng: đúng phạm vi bác nhờ giúp.",
+            "Sai: trái mong muốn gửi thiệp."
+          ]
+        },
+        {
+          "id": "kaigo-foundation-03-q02",
+          "promptJa": "書き終わった後、誰が確認しますか。",
+          "optionsJa": [
+            "友達だけ",
+            "看護師だけ",
+            "家族だけ",
+            "小野寺さん本人"
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: không nói bạn kiểm.",
+            "Sai: không có điều dưỡng trong việc này.",
+            "Sai: không có yêu cầu người nhà kiểm.",
+            "Đúng: bác nói sẽ tự kiểm."
+          ]
+        },
+        {
+          "id": "kaigo-foundation-03-q03",
+          "promptJa": "支援として適切なのはどれですか。",
+          "optionsJa": [
+            "必要な部分だけ手伝う",
+            "早く終えるため全部代わる",
+            "年齢だけでできないと判断する",
+            "質問せずに作業を始める"
+          ],
+          "correctIndex": 0,
+          "rationalesVi": [
+            "Đúng: giúp phần cần và giữ phần bác muốn tự làm.",
+            "Sai: nhanh hơn không phải lý do tước phần tự làm.",
+            "Sai: không đánh giá khả năng chỉ từ tuổi.",
+            "Sai: cần xác nhận mong muốn trước."
+          ]
+        }
+      ],
+      "dailyPractice": {
+        "plannedMinutes": 30,
+        "durationMeasured": false,
+        "practiceVi": "Đọc hiểu, đổi vai, nói lại không nhìn mẫu, hỏi lại và sửa phần còn thiếu; 10 phút NPC là khối dự kiến gồm nhiều lần luyện."
+      },
+      "responsePolicy": {
+        "evaluation": "Đánh giá ý nghĩa theo từng câu hỏi, không so khớp chuỗi tuyệt đối.",
+        "fallbackJa": "確認したいことを、もう一度教えていただけますか。",
+        "unsafeVi": [
+          "Tự nhận vai chuyên môn không có",
+          "Làm thay hoặc chuyển đồ khi chưa đồng ý",
+          "Suy đoán năng lực/chẩn đoán từ tuổi"
+        ],
+        "runtimeImplemented": false
+      }
+    }
+  ],
+  "similarityReview": "not certified; independent new scenes, no source dialogue imported",
+  "assetStatus": "none",
+  "runtimeIntegrated": false
+}
