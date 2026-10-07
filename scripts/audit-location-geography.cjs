@@ -7,6 +7,13 @@ const locations = read('src/data/generated/locations.json');
 const cities = read('src/data/generated/cities.json');
 const corrections = read('src/data/location-role-corrections.json');
 const places = read('src/data/location-place-artwork.json');
+const locationById = new Map(locations.map(location => [location.id, location]));
+for (const city of cities) {
+  for (const id of city.locationIds) {
+    const location = locationById.get(id);
+    if (!location || location.cityId !== city.id) throw new Error('Wrong city membership: ' + city.id + '/' + id);
+  }
+}
 // A restaurant category can also contain a famous restaurant district.
 const characteristicName = /横丁|商店街|市場|魚菜センター|朝市|居酒屋街|通り|道頓堀|すすきの|中華街|温泉郷|温泉街/;
 const uniqueCategories = new Set(['Landmark', 'Castle', 'Shrine / Temple', 'Nature', 'Park', 'Amusement Park']);

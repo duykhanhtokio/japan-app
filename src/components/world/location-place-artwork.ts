@@ -3,6 +3,8 @@ import metadataJson from '@/data/location-place-artwork.json';
 
 const metadata = metadataJson as Record<string, { category: string }>;
 const artwork: Record<string, ImageSourcePropType> = {
+  'LOC-005-09': require('../../../assets/app/life/location-backgrounds/places/oga-namahage-museum.png'),
+  'LOC-005-08': require('../../../assets/app/life/location-backgrounds/places/akita-senshu-kubota-gate.png'),
   'LOC-001-15': require('../../../assets/app/life/location-backgrounds/places/sapporo-maruyama-zoo.png'),
   'LOC-001-07': require('../../../assets/app/life/location-backgrounds/places/sapporo-hassamu-mall.png'),
   'LOC-001-01': require('../../../assets/app/life/location-backgrounds/places/sapporo-station-south.png'),

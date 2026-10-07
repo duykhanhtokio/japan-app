@@ -108,3 +108,22 @@ Final original artwork is stored under `assets/app/life/location-backgrounds/pla
 - `sendai-mediatheque.png`: seven-storey transparent glass cube, thin floor plates and irregular lattice tube supports, zelkova sidewalk. https://www.smt.jp/info/about/character/
 
 Source-resolution selected illustrations inspected. These are geographically informed illustrations, not exact current photographic architecture/storefront surveys. Reference photographs are not shipped. Mapping/role and byte-lock verification are required before publication; native simulator/browser runtime portrait/landscape acceptance remains pending. Approved dialogue layout, NPC anchoring, microphone, blur and routes are unchanged.
+
+
+## Akita continuation — 2026-10-07, in progress
+
+Recovered the latest remote branch after the transient workspace expired; preserved its 44 existing place mappings rather than replacing completed Sapporo/Aomori/Morioka/Sendai work. An unused regenerated Nijo market preview is not integrated because the remote already contains the selected scene.
+
+LOC-005-08 now has `akita-senshu-kubota-gate.png`, generated with built-in Imagegen: portrait 1024x1536 polished semi-realistic anime environment, Kubota Castle reconstructed two-storey timber main gate, dark tiled roof, white plaster panels, stairs, leafy Akita garden and open foreground. No invented main castle keep, Osaka/Matsumoto/Himeji tower or Tokyo skyline. Source-resolution image inspected. Identity reference: https://www.akita-yulala.jp/selection/5000014051 .
+
+Geographic/name repairs preserve stable location/scenario IDs:
+- LOC-005-09 corrupted 男鹼館 / English Namahage Museum becomes なまはげ館 and moves from Akita city to CTY-JP-05206 Oga. Canonical city membership, scenario city and scenario index are synchronized. Official address: 秋田県男鹿市北浦真山字水喰沢. https://namahage.co.jp/namahagekan/information/ .
+- LOC-005-15 mixes Akita with Aomori Nebuta; corrected to 秋田竿燈まつり会場（竿燈大通り）. https://www.akita-yulala.jp/festival/335 .
+- LOC-005-16 corrected to 川反, the Akita entertainment district, not an invented 川端 shopping street. https://www.akita-yulala.jp/see/691 .
+- LOC-005-19 typo corrected to きりたんぽ鍋専門店, retaining the generic restaurant scene.
+
+LOCAL unresolved identity: LOC-005-10, corrupted 秋田カンティール賢郸寝屋 / English Akita Sake Museum Yamatake-ya. Exact-name searches did not establish a corresponding real venue. Do not generate or mark this place verified from a guessed interpretation. Continue other locations.
+
+City-membership verification covers every city's location list. All current 7,112 role/scene mapping checks pass. Two pre-existing unrelated scenario city mismatches were observed for SC-TKY-CON-001 and SC-TKY-CON-002; they are not silently fixed by this patch. Akita and whole-catalog remediation remain incomplete. Native visual acceptance remains pending.
+
+`oga-namahage-museum.png` generated using built-in Imagegen and inspected: Oga Namahage museum exhibit row, varied red/blue folk masks, straw cloaks on museum mannequins, warm timber hall and empty visitor foreground; same portrait anime environment style, no Aomori Nebuta floats or unrelated landmarks. Collection reference https://namahage.co.jp/namahagekan/exhibits/ . Layout/count are illustrative rather than a current survey.
