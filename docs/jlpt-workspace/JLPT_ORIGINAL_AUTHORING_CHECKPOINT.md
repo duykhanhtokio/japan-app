@@ -316,3 +316,8 @@ First full2242505ms. Removed18trailing confirmation/secondary-topic turns in9dia
 PASS structure, audio scripts/options/roles/hash/decode, adapter, UI10/10, actual Chromium assets and unmodified production-runner/shared-UI harness: select/save, opening/pause, Back/reopen/resume, incomplete submit,0correct/1wrong/97unanswered of98 and review; no pageerror. Three430x932 screenshots inspected. Full TS still has pre-existing TS2352 life-content-repository.ts:47 only; no JLPT diagnostic. No full-router/native/iPhone/perceptual/human/rights/release approval.
 
 Independent session jlpt:jpapp:n4:original:02:v1, audio0ms; spoken alternatives/transcripts hidden. Metadata/rationale/written refinements after recording keep script/choice/role input unchanged, with original/current snapshot hashes recorded. After publish/fetch and WORK PERSISTENCE PASS, N5 01–06+N4 01–02 =8/30; next N4 03. Resume original/n4-02/HANDOFF.md; do not rerun initial scratch authoring scripts. Old exams not removed before replacement gate.
+
+
+## 2026-10-07 — N4 03 independent draft checkpoint
+
+Authored98responses (70written+28listening),8passages,4new unscored examples and5imagegen illustrations inspected. Draft validator PASS IDs/counts/keys/ordering reconstruction, pools21/21/22/21 and4/4/5, no triples/short cycles. N4 .9speed/2/.5s and12/12/10/8s unchanged. Audio synthesis underway locally; no complete duration or integration/runtime claim. Further editorial review and target35minute measurement remain. No legacy content used. Human/native/perceptual/rights/release flagsfalse. Completed integrated remains8/30; continue N4 03 from original/n4-03/HANDOFF.md.
