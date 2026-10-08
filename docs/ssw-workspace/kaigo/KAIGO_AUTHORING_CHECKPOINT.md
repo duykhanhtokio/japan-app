@@ -299,3 +299,14 @@ Lưu hẹp5file bằng GitHubtree/commit/ref cólease trênHEAD hiện tại và
 - Validator07 PASSintegrity/link/metric/20immutableblob/core54/270/60/23objective/8ngàyđộcnhất/6negativecontrols. Tổngcandidate68mainturn/8reading/40câu/32mainrubric96caspec/8transferrubric24caspec;120caspecchưaevaluator,khôngcộngquotacore. Khôngsửabundle/bàigốc/lịch/plan/đề/UI/JLPT.
 - Hồ sơreviews/priority-gap-consolidated-audit-07.json,priority-gap-timing-sheets-07.json,PRIORITY_GAP_CONSOLIDATED_AUDIT_07_REPORT.md;scripts/check-kaigo-consolidated-audit-07.mjs. Mọihuman/domain/native/publisher/rights/runtime/releasefalse;khôngapp/fullrepo/timing/evaluator/thiếtbị/nguồnvisualmới.
 - Bước tiếpcụthể:sửatransferinfection01sangkhăn/phạmvilau với quyếtđịnh/dữkiệnkhác,khôngnounswap;rồicare-process01thẻkếtquả→báobác/hỏiquyếtđịnh. Giữ8tuần,khôngtựthêmđề/tíchhợp/pháthành.
+
+## 2026-10-08 — transfer proposals08: khăn và kết quả tham gia
+
+- Baselinec1de4ae6d6a9025f3517275eefddc32699ba4ce3 đọc lại START/AGENTS/rules/checkpoint/plan/quy tắc độc lập đầy đủ. Snapshot không gitcheckout; công bốconnector cólease và kiểmremote, khôngclaimWORKPERSISTENCEscriptPASS.
+- Soạn hai phương án transfer chưa ghép tại drafts/priority-gap-transfer-proposals-08.json. Ngày42: chỉ hỗ trợ mặt/tay bác tự làm, hỏi khăn, chưa thấy trong giỏ/chưa rõ chủ/chọn chờ/báo phụ trách; không coi mặt là toàn thân. Ngày50: thẻ Kawase xác nhận Kishimoto/14:25→báo Morikawa/hỏi→bác vẫn từ chối→báo Kawase. Thẻ14:35 thay thế cho lần luyện riêng, không cộng hai nhánh bắt buộc.
+- 16lượtNhật–Việt/8rubric/24caspec chưaevaluator;0bài/câu/đề/từ/NPC bắtbuộcthêm. Bundle01–04/bài gốc/lịch/quota54/270/60 và audit07/timing07 nguyênhash. Támcandidatechưa chọn, gap07 chưa tựđóng vì đềxuất08 chưaápdụng.
+- Giữ worklist ghép: không xóa lược/xinphéptìm/mànhình-găng; giữ hỏi14:25/hỗtrợ và báophụtrách trước bắtđầu. Phải đồngbộq05/rubric/lineage khi áp dụng; không cộngtransfercũ+mới trong slotNPC10phút. Planned30chưađo; không dùng sheet07cho08.
+- Validator08PASScấu trúc/link/22immutableblob/16turn/8rubric/24caspec/7negativecontrols. Rà AI toàn lời/biếnthể/case/thẻ vànguờinhận; không semantic/app/fullrepo/thiếtbị/timing. MẫuJAtoànthoại384/349,player258/241,thẻthay83/84codepoint khôngphút.
+- Nguồn276trangSHAkhớp;đọctext/xemảnhin12/16/115/118/196/197 PDF14/18/117/120/198/199,khôngkỹthuậtmới. Screen148languagefields/61eligible/0exact60window;8playermodelkhôngexactmatch với8core+4candidate,khôngsemantic/hình/external/quyền. Privatebyteskhôngcôngbố,mọihuman/domain/native/publisher/rights/runtime/releasefalse.
+- Hồ sơreviews/priority-gap-transfer-proposals-08-evidence.json,PRIORITY_GAP_TRANSFER_PROPOSALS_08_REPORT.md;scripts/check-kaigo-transfer-proposals-08.mjs. Lưu5filehẹp,khôngUI/JLPT/plan/curriculum/mock đổi.
+- Bước tiếp:ghép hai đềxuất vào transfer cógiữ nănglực cũ,tối giản tải,đồngbộq05/rubric/lineage,rà snapshotmới; chưachọn thay bài. Khôngtựtuần9/đềmới/tíchhợp/pháthành.

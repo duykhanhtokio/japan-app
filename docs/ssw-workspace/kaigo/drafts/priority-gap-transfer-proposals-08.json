@@ -1,0 +1,889 @@
+{
+  "version": 1,
+  "date": "2026-10-08",
+  "timezone": "Asia/Tokyo",
+  "baselineRemoteCommit": "c1de4ae6d6a9025f3517275eefddc32699ba4ce3",
+  "status": "UNAPPLIED_TRANSFER_REPLACEMENT_PROPOSALS_NOT_APPROVED",
+  "kind": "two_bounded_transfer_variants_not_new_lessons",
+  "review": {
+    "domainHumanReviewed": false,
+    "nativeLanguageReviewed": false,
+    "publisherReviewed": false,
+    "rightsReviewed": false,
+    "runtimeIntegrated": false,
+    "appIntegrationReady": false,
+    "releaseReady": false
+  },
+  "selectedInCurriculum": false,
+  "replacementReady": false,
+  "appliedToCandidateBundles": false,
+  "quotaAddition": {
+    "lessons": 0,
+    "questions": 0,
+    "mocks": 0
+  },
+  "source": {
+    "sourceId": "kaigo-textbook-2025-03",
+    "edition": "second revision March 2025",
+    "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+    "pdfPages": 276,
+    "privateBytesPublished": false,
+    "checkedPages": [
+      {
+        "printed": 12,
+        "pdf": 14
+      },
+      {
+        "printed": 16,
+        "pdf": 18
+      },
+      {
+        "printed": 115,
+        "pdf": 117
+      },
+      {
+        "printed": 118,
+        "pdf": 120
+      },
+      {
+        "printed": 196,
+        "pdf": 198
+      },
+      {
+        "printed": 197,
+        "pdf": 199
+      }
+    ],
+    "claimsVi": [
+      "Quyền tự lựa chọn và quyết định: in12.",
+      "Giữ riêng tư và phối hợp hỗ trợ cuộc sống mong muốn: in16.",
+      "Tách lời bác, quan sát và kết quả đã kiểm; thảo luận khi chưa rõ: in115/118.",
+      "Có phân biệt lau một phần/toàn thân: in196. Không đưa kỹ thuật lau, nhiệt độ, thứ tự hay áp lực vào bài."
+    ]
+  },
+  "limitationsVi": [
+    "Các dữ kiện nhân vật/thời gian/kết quả là hư cấu do dự án viết; nguồn không xác nhận các dữ kiện này.",
+    "Đây là hai phương án thay slot transfer để rà biên tập; chưa sửa bundle01/02, audit07 và các timing sheet cũ vẫn là snapshot trước đề xuất.",
+    "Không giao cả transfer cũ và mới cùng ngày. Chưa đo, chưa xác nhận tương đương năng lực; không tự chọn thay bài.",
+    "Phần lược/xin phép tìm và màn hình/găng của bản cũ vẫn được giữ trong bundle01. Khi ghép phải kiểm lại những ý này, không đơn giản xóa để thêm khăn.",
+    "Phần quá trình chăm sóc vẫn giữ xác nhận điều kiện và báo phụ trách trước bắt đầu trong bundle02; thẻ kết quả mới chỉ dùng sau các bước đó."
+  ],
+  "proposals": [
+    {
+      "id": "kaigo-transfer-cloth-scope-08",
+      "targetModuleId": "kaigo-gap-infection-01",
+      "targetBundlePath": "docs/ssw-workspace/kaigo/drafts/priority-gap-supplements-01.json",
+      "targetBundleGitBlob": "5ebd71e0bf3e19e7ac6df731cf15b288e13a0911",
+      "baseLessonId": "kaigo-hygiene-07",
+      "day": 42,
+      "objectiveVi": "Hỏi khăn mong muốn và đúng phần hỗ trợ; tách chưa thấy với mất, chưa rõ chủ với đồ được phép dùng; báo phối hợp và giữ lựa chọn chờ.",
+      "contextVi": "Trước việc đồ vải/găng của bài chính, bác Hasebe muốn tự lau tay và nhờ hỗ trợ mặt. Chưa bắt đầu lau. Chỉ giỏ cạnh bàn được bác cho phép kiểm; không kiểm nơi khác. Giỏ có khăn không viền, chưa rõ chủ; khăn viền xanh bác muốn chưa thấy. Đây là tập giao tiếp, không thực hiện kỹ thuật lau.",
+      "facts": {
+        "supportRequested": "face_only",
+        "hands": "resident_wants_to_do_self",
+        "careStarted": false,
+        "permittedSearchScope": "basket_beside_table_only",
+        "preferredCloth": "resident_blue_border_cloth",
+        "preferredClothFound": false,
+        "otherPlacesChecked": false,
+        "plainClothOwnerKnown": false,
+        "residentFinalChoice": "wait_do_not_use_plain_cloth",
+        "clothLostConfirmed": false
+      },
+      "staging": [
+        {
+          "beforeTurn": 1,
+          "cardVi": "Chỉ cho biết nhu cầu mặt/tay và phạm vi được phép kiểm. Lựa chọn khăn chưa hỏi."
+        },
+        {
+          "beforeTurn": 4,
+          "cardVi": "Sau lời bác ở lượt3, kiểm đúng giỏ được phép: chưa thấy khăn viền xanh; khăn không viền chưa rõ chủ; nơi khác chưa kiểm. Không phải khăn đã mất."
+        },
+        {
+          "beforeTurn": 6,
+          "cardVi": "Chuyển người nhận sang Kawase; báo lời bác, kết quả kiểm, chưa bắt đầu và lựa chọn chờ."
+        }
+      ],
+      "dialogue": [
+        {
+          "id": "kaigo-transfer-cloth-scope-08-t01",
+          "speaker": "npc",
+          "npcId": "kaigo-npc-resident-b",
+          "ja": "手は自分で拭きたいけれど、顔は手伝ってほしいです。",
+          "vi": "Tôi muốn tự lau tay, còn mặt thì muốn được giúp."
+        },
+        {
+          "id": "kaigo-transfer-cloth-scope-08-t02",
+          "speaker": "player",
+          "npcId": "kaigo-npc-resident-b",
+          "ja": "お手伝いはお顔だけですね。使いたいタオルはどれですか。",
+          "vi": "Cháu chỉ hỗ trợ phần mặt, đúng không ạ? Bác muốn dùng khăn nào?"
+        },
+        {
+          "id": "kaigo-transfer-cloth-scope-08-t03",
+          "speaker": "npc",
+          "npcId": "kaigo-npc-resident-b",
+          "ja": "青い縁のある、私のタオルがいいです。",
+          "vi": "Tôi muốn khăn của mình có viền xanh."
+        },
+        {
+          "id": "kaigo-transfer-cloth-scope-08-t04",
+          "speaker": "player",
+          "npcId": "kaigo-npc-resident-b",
+          "ja": "お許しをいただいたかごでは、まだ見つかりません。縁のない物は、どなたの物か分かりません。ご希望のタオルを確認するまで待ちますか。",
+          "vi": "Trong giỏ bác đã cho phép kiểm, cháu chưa thấy. Khăn không viền chưa rõ của ai. Bác muốn chờ xác nhận khăn mình muốn không ạ?"
+        },
+        {
+          "id": "kaigo-transfer-cloth-scope-08-t05",
+          "speaker": "npc",
+          "npcId": "kaigo-npc-resident-b",
+          "ja": "待ちます。今あるタオルは使わないでください。",
+          "vi": "Tôi sẽ chờ. Đừng dùng khăn đang có."
+        },
+        {
+          "id": "kaigo-transfer-cloth-scope-08-t06",
+          "speaker": "player",
+          "npcId": "kaigo-npc-care-lead",
+          "ja": "長谷部さんは顔だけの手伝いを希望し、手はご自分で拭きたいそうです。青い縁のタオルは、許可されたかごでは見つからず、他の場所は未確認です。縁のない物は持ち主が不明で、使わずに待つご希望です。まだ拭いていません。",
+          "vi": "Bác Hasebe chỉ muốn hỗ trợ mặt và muốn tự lau tay. Trong giỏ được phép chưa thấy khăn viền xanh; nơi khác chưa kiểm. Khăn không viền chưa rõ chủ và bác muốn chờ, không dùng khăn đó. Chưa lau."
+        },
+        {
+          "id": "kaigo-transfer-cloth-scope-08-t07",
+          "speaker": "npc",
+          "npcId": "kaigo-npc-care-lead",
+          "ja": "希望と確認した範囲が分かりました。タオルの所在と持ち主を確認します。なくなったと決めず、今ある物も使わないで待ちましょう。",
+          "vi": "Tôi đã rõ mong muốn và phạm vi đã kiểm. Tôi sẽ kiểm nơi để khăn và chủ của khăn. Chưa kết luận mất; hãy chờ và chưa dùng khăn đang có."
+        },
+        {
+          "id": "kaigo-transfer-cloth-scope-08-t08",
+          "speaker": "player",
+          "npcId": "kaigo-npc-care-lead",
+          "ja": "分かりました。確認できたことを長谷部さんに伝え、使うタオルと顔の手伝いを改めて伺います。全身を拭くことへの同意とは扱いません。",
+          "vi": "Tôi hiểu. Sẽ báo điều đã xác nhận cho bác Hasebe, hỏi lại khăn sẽ dùng và hỗ trợ phần mặt. Không coi đây là đồng ý lau toàn thân."
+        }
+      ],
+      "outcome": {
+        "careCompleted": false,
+        "alternativeClothAuthorized": false,
+        "searchElsewhereAuthorized": false,
+        "coordinationRequested": true,
+        "resultOfLeadCheck": null
+      },
+      "sameDaySlot": {
+        "activity": "npc_practice",
+        "mode": "proposal_to_replace_existing_transfer_not_append",
+        "additionalMandatoryMinutes": 0,
+        "durationMeasured": false,
+        "measuredSeconds": null,
+        "plannedDailyMinutes": 30,
+        "plannedBlocks": [
+          5,
+          5,
+          5,
+          10,
+          5
+        ],
+        "measurementRequiredVi": "Đo cả thẻ đầu vào, lượt hỏi/báo, suy nghĩ, retry và feedback sau khi ghép vào slot. Không cộng transfer cũ+đề xuất mới bắt buộc."
+      },
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      },
+      "responseRubrics": [
+        {
+          "id": "kaigo-transfer-cloth-scope-08-r1",
+          "playerTurnId": "kaigo-transfer-cloth-scope-08-t02",
+          "responseNpcId": "kaigo-npc-resident-b",
+          "requiredMeanings": [
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r1-m1",
+              "vi": "Xác nhận chỉ hỗ trợ mặt, không thay bác tự lau tay."
+            },
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r1-m2",
+              "vi": "Hỏi bác muốn khăn nào."
+            }
+          ],
+          "acceptableJa": [
+            "お手伝いはお顔だけですね。使いたいタオルはどれですか。",
+            "お顔だけのお手伝いですね。タオルはどれをお使いになりたいですか。"
+          ],
+          "unsafeOrContradictoryJa": [
+            "全身を拭きます。手も私が拭きます。"
+          ],
+          "feedbackVi": "Giữ đúng người nhận và dữ kiện đã mở ở giai đoạn này. Bổ sung một ý thiếu hoặc sửa suy luận vượt dữ kiện, rồi nói lại bằng cách của bạn.",
+          "evaluationPolicy": {
+            "meaningBased": true,
+            "exactStringMatchRequired": false,
+            "runtimeImplemented": false,
+            "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+            "missingMeaning": "clarify_before_advance",
+            "unsafeMeaning": "correct_before_advance"
+          },
+          "assessmentCases": [
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r1-case-accept",
+              "inputJa": "お顔だけのお手伝いですね。タオルはどれをお使いになりたいですか。",
+              "expected": "accept_meaning",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r1-case-clarify",
+              "inputJa": "タオルはどれですか。",
+              "expected": "clarify_missing_information",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r1-case-reject",
+              "inputJa": "全身を拭きます。手も私が拭きます。",
+              "expected": "correct_before_advance",
+              "specOnly": true
+            }
+          ],
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-transfer-cloth-scope-08-r2",
+          "playerTurnId": "kaigo-transfer-cloth-scope-08-t04",
+          "responseNpcId": "kaigo-npc-resident-b",
+          "requiredMeanings": [
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r2-m1",
+              "vi": "Chưa thấy tại đúng giỏ được phép, không kết luận mất."
+            },
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r2-m2",
+              "vi": "Khăn không viền chưa rõ chủ."
+            },
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r2-m3",
+              "vi": "Hỏi lựa chọn chờ, không tự dùng khăn khác."
+            }
+          ],
+          "acceptableJa": [
+            "お許しをいただいたかごでは、まだ見つかりません。縁のない物は、どなたの物か分かりません。ご希望のタオルを確認するまで待ちますか。",
+            "許可されたかごでは、まだ見つかりません。縁のないタオルは持ち主が未確認です。確認できるまで、お待ちになりますか。"
+          ],
+          "unsafeOrContradictoryJa": [
+            "タオルはなくなりました。今ある物を使います。"
+          ],
+          "feedbackVi": "Giữ đúng người nhận và dữ kiện đã mở ở giai đoạn này. Bổ sung một ý thiếu hoặc sửa suy luận vượt dữ kiện, rồi nói lại bằng cách của bạn.",
+          "evaluationPolicy": {
+            "meaningBased": true,
+            "exactStringMatchRequired": false,
+            "runtimeImplemented": false,
+            "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+            "missingMeaning": "clarify_before_advance",
+            "unsafeMeaning": "correct_before_advance"
+          },
+          "assessmentCases": [
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r2-case-accept",
+              "inputJa": "許可されたかごでは、まだ見つかりません。縁のないタオルは持ち主が未確認です。確認できるまで、お待ちになりますか。",
+              "expected": "accept_meaning",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r2-case-clarify",
+              "inputJa": "まだ見つかりません。",
+              "expected": "clarify_missing_information",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r2-case-reject",
+              "inputJa": "タオルはなくなりました。今ある物を使います。",
+              "expected": "correct_before_advance",
+              "specOnly": true
+            }
+          ],
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-transfer-cloth-scope-08-r3",
+          "playerTurnId": "kaigo-transfer-cloth-scope-08-t06",
+          "responseNpcId": "kaigo-npc-care-lead",
+          "requiredMeanings": [
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r3-m1",
+              "vi": "Báo phụ trách: mặt cần hỗ trợ, tay bác muốn tự làm."
+            },
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r3-m2",
+              "vi": "Khăn viền xanh chưa thấy trong giỏ được phép, nơi khác chưa kiểm."
+            },
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r3-m3",
+              "vi": "Khăn không viền chưa rõ chủ."
+            },
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r3-m4",
+              "vi": "Bác chọn chờ và không dùng khăn đó; chưa lau."
+            }
+          ],
+          "acceptableJa": [
+            "長谷部さんは顔だけの手伝いを希望し、手はご自分で拭きたいそうです。青い縁のタオルは、許可されたかごでは見つからず、他の場所は未確認です。縁のない物は持ち主が不明で、使わずに待つご希望です。まだ拭いていません。",
+            "顔の手伝いだけを希望され、手はご自分で拭きたいそうです。青い縁のタオルは許可されたかごに見当たらず、他は未確認です。縁のない物は持ち主が分からず、使わずに待ちたいそうです。拭くことは未開始です。"
+          ],
+          "unsafeOrContradictoryJa": [
+            "顔を拭きたいと言ったので全身を拭き終えました。"
+          ],
+          "feedbackVi": "Giữ đúng người nhận và dữ kiện đã mở ở giai đoạn này. Bổ sung một ý thiếu hoặc sửa suy luận vượt dữ kiện, rồi nói lại bằng cách của bạn.",
+          "evaluationPolicy": {
+            "meaningBased": true,
+            "exactStringMatchRequired": false,
+            "runtimeImplemented": false,
+            "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+            "missingMeaning": "clarify_before_advance",
+            "unsafeMeaning": "correct_before_advance"
+          },
+          "assessmentCases": [
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r3-case-accept",
+              "inputJa": "顔の手伝いだけを希望され、手はご自分で拭きたいそうです。青い縁のタオルは許可されたかごに見当たらず、他は未確認です。縁のない物は持ち主が分からず、使わずに待ちたいそうです。拭くことは未開始です。",
+              "expected": "accept_meaning",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r3-case-clarify",
+              "inputJa": "タオルが見つからないと伝えます。",
+              "expected": "clarify_missing_information",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r3-case-reject",
+              "inputJa": "顔を拭きたいと言ったので全身を拭き終えました。",
+              "expected": "correct_before_advance",
+              "specOnly": true
+            }
+          ],
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-transfer-cloth-scope-08-r4",
+          "playerTurnId": "kaigo-transfer-cloth-scope-08-t08",
+          "responseNpcId": "kaigo-npc-care-lead",
+          "requiredMeanings": [
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r4-m1",
+              "vi": "Báo kết quả đã kiểm cho bác rồi hỏi lại khăn và hỗ trợ mặt."
+            },
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r4-m2",
+              "vi": "Không suy đồng ý lau toàn thân hoặc dùng khăn thay thế."
+            }
+          ],
+          "acceptableJa": [
+            "分かりました。確認できたことを長谷部さんに伝え、使うタオルと顔の手伝いを改めて伺います。全身を拭くことへの同意とは扱いません。",
+            "確認した結果を本人にお伝えし、使うタオルと顔の手伝いをもう一度確かめます。全身を拭いてよいとは考えません。"
+          ],
+          "unsafeOrContradictoryJa": [
+            "確認できたら、本人には聞かずに別のタオルで全身を拭きます。"
+          ],
+          "feedbackVi": "Giữ đúng người nhận và dữ kiện đã mở ở giai đoạn này. Bổ sung một ý thiếu hoặc sửa suy luận vượt dữ kiện, rồi nói lại bằng cách của bạn.",
+          "evaluationPolicy": {
+            "meaningBased": true,
+            "exactStringMatchRequired": false,
+            "runtimeImplemented": false,
+            "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+            "missingMeaning": "clarify_before_advance",
+            "unsafeMeaning": "correct_before_advance"
+          },
+          "assessmentCases": [
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r4-case-accept",
+              "inputJa": "確認した結果を本人にお伝えし、使うタオルと顔の手伝いをもう一度確かめます。全身を拭いてよいとは考えません。",
+              "expected": "accept_meaning",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r4-case-clarify",
+              "inputJa": "結果を伝えます。",
+              "expected": "clarify_missing_information",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-transfer-cloth-scope-08-r4-case-reject",
+              "inputJa": "確認できたら、本人には聞かずに別のタオルで全身を拭きます。",
+              "expected": "correct_before_advance",
+              "specOnly": true
+            }
+          ],
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        }
+      ],
+      "integrationDecision": {
+        "selected": false,
+        "decision": null,
+        "reviewer": null,
+        "date": null,
+        "ready": false,
+        "requiresMergedPracticeReview": true
+      }
+    },
+    {
+      "id": "kaigo-transfer-return-result-08",
+      "targetModuleId": "kaigo-gap-care-process-01",
+      "targetBundlePath": "docs/ssw-workspace/kaigo/drafts/priority-gap-supplements-02.json",
+      "targetBundleGitBlob": "4abbf7d2dc0a712d160081494fa47f49df442137",
+      "baseLessonId": "kaigo-review-01",
+      "day": 50,
+      "objectiveVi": "Dùng kết quả đã kiểm để báo bác và hỏi quyết định; điều kiện đáp ứng không tự động thành đồng ý; báo lựa chọn thực tế cho phụ trách.",
+      "contextVi": "Nhánh diễn tập sau xác nhận điều kiện 14:25 và báo Kawase trước buổi nhóm, như transfer hiện có. Morikawa đã chọn bài nhạc, chưa bắt đầu hoạt động và chưa quyết định tham gia. Thẻ hư cấu cho biết Kawase đã xác nhận Kishimoto hỗ trợ về đến phòng lúc14:25. Đây là phương án đã xác nhận, không phải đã đưa bác về. Dù điều kiện phù hợp, bác vẫn có quyền không tham gia.",
+      "resultCard": {
+        "id": "kaigo-transfer-return-result-08-result-fit",
+        "revealedBeforeTurn": 1,
+        "checkedWithNpcId": "kaigo-npc-care-lead",
+        "supportNpcId": "kaigo-npc-care-peer",
+        "requestedRoomArrival": "14:25",
+        "confirmedRoomArrival": "14:25",
+        "supportConfirmed": true,
+        "activityStarted": false,
+        "returnCompleted": false,
+        "participationDecided": false,
+        "ja": "川瀬が確認済み：岸本が十四時二十五分に部屋へ戻る支援を担当する。活動はまだ始まっていない。",
+        "vi": "Kawase đã kiểm: Kishimoto phụ trách hỗ trợ về phòng lúc14:25. Hoạt động chưa bắt đầu."
+      },
+      "dialogue": [
+        {
+          "id": "kaigo-transfer-return-result-08-t01",
+          "speaker": "npc",
+          "npcId": "kaigo-npc-resident-a",
+          "ja": "部屋に戻る時のことは、確認できましたか。",
+          "vi": "Việc về phòng đã xác nhận được chưa?"
+        },
+        {
+          "id": "kaigo-transfer-return-result-08-t02",
+          "speaker": "player",
+          "npcId": "kaigo-npc-resident-a",
+          "ja": "川瀬さんに確認できました。岸本さんが十四時二十五分にお部屋へ戻るお手伝いをします。活動はまだ始まっていません。この内容で、参加なさいますか。",
+          "vi": "Cháu đã xác nhận với Kawase. Kishimoto sẽ hỗ trợ bác về phòng lúc14:25. Hoạt động chưa bắt đầu. Với phương án này, bác có muốn tham gia không ạ?"
+        },
+        {
+          "id": "kaigo-transfer-return-result-08-t03",
+          "speaker": "npc",
+          "npcId": "kaigo-npc-resident-a",
+          "ja": "時間は合っていますね。でも、今日は参加を見送ろうかな。",
+          "vi": "Giờ phù hợp rồi. Nhưng hôm nay có lẽ tôi sẽ không tham gia."
+        },
+        {
+          "id": "kaigo-transfer-return-result-08-t04",
+          "speaker": "player",
+          "npcId": "kaigo-npc-resident-a",
+          "ja": "今日は参加しないご希望でしょうか。選んだ曲はそのままにしておきますか。",
+          "vi": "Hôm nay bác muốn không tham gia, đúng không ạ? Bác muốn giữ bài nhạc đã chọn như vậy không?"
+        },
+        {
+          "id": "kaigo-transfer-return-result-08-t05",
+          "speaker": "npc",
+          "npcId": "kaigo-npc-resident-a",
+          "ja": "はい。曲は選んだけれど、今日は参加しません。",
+          "vi": "Đúng. Tôi đã chọn bài nhạc nhưng hôm nay không tham gia."
+        },
+        {
+          "id": "kaigo-transfer-return-result-08-t06",
+          "speaker": "player",
+          "npcId": "kaigo-npc-resident-a",
+          "ja": "承知しました。今日は参加しないというご希望を、川瀬さんに伝えます。",
+          "vi": "Cháu hiểu. Cháu sẽ báo Kawase rằng hôm nay bác muốn không tham gia."
+        },
+        {
+          "id": "kaigo-transfer-return-result-08-t07",
+          "speaker": "npc",
+          "npcId": "kaigo-npc-care-lead",
+          "ja": "森川さんには確認した結果を伝えましたか。参加について、どうおっしゃいましたか。",
+          "vi": "Đã báo kết quả xác nhận cho bác Morikawa chưa? Bác nói thế nào về việc tham gia?"
+        },
+        {
+          "id": "kaigo-transfer-return-result-08-t08",
+          "speaker": "player",
+          "npcId": "kaigo-npc-care-lead",
+          "ja": "岸本さんの支援と十四時二十五分に戻る予定をお伝えしました。森川さんは、曲は選んだものの今日は参加しないと決めました。活動はまだ始まっていません。選曲だけで目標達成とはせず、見直しは本人とチームで相談します。",
+          "vi": "Tôi đã báo về hỗ trợ của Kishimoto và dự kiến về lúc14:25. Bác Morikawa quyết định hôm nay không tham gia dù đã chọn bài. Hoạt động chưa bắt đầu. Không coi chỉ chọn bài là đạt mục tiêu; việc xem lại sẽ trao đổi cùng bác và nhóm."
+        }
+      ],
+      "alternateResultPractice": {
+        "id": "kaigo-transfer-return-result-08-result-mismatch",
+        "mode": "choose_one_result_card_per_rehearsal_not_both_mandatory",
+        "requestedRoomArrival": "14:25",
+        "confirmedRoomArrival": "14:35",
+        "supportNpcId": "kaigo-npc-care-peer",
+        "ja": "川瀬の確認結果：岸本の支援で部屋へ戻れるのは十四時三十五分。希望の十四時二十五分には戻れない。活動は未開始。",
+        "vi": "Kết quả Kawase kiểm: có hỗ trợ Kishimoto thì về phòng14:35, không đáp ứng14:25 bác muốn. Hoạt động chưa bắt đầu.",
+        "modelToResidentJa": "確認したところ、岸本さんのお手伝いで戻れるのは十四時三十五分です。ご希望の十四時二十五分には戻れません。今日は参加を見送りますか、それとも、もう一度相談したいですか。",
+        "fixedResidentReplyJa": "その時刻なら、今日は参加しません。",
+        "fixedResidentReplyVi": "Nếu là giờ đó thì hôm nay tôi không tham gia.",
+        "modelToLeadJa": "戻れる時刻が十四時三十五分で、ご希望の十四時二十五分には合わないとお伝えしました。森川さんは今日は参加しないと決めました。活動は未開始で、私だけで計画を変えていません。",
+        "notAllowedVi": "Không thay 14:35 thành14:25, không nói đã về, không bắt đầu rồi kiểm sau, không mặc định bác phải chấp nhận giờ muộn.",
+        "supportConfirmed": true
+      },
+      "outcome": {
+        "residentChoice": "decline_today",
+        "activityStarted": false,
+        "returnCompleted": false,
+        "goalAchievementConfirmed": false,
+        "planApprovedByLearner": false,
+        "leadInformed": true
+      },
+      "staging": [
+        {
+          "beforeTurn": 1,
+          "cardVi": "Chỉ mở thẻ kết quả sau xác nhận điều kiện và trao đổi phụ trách ở transfer hiện có."
+        },
+        {
+          "beforeTurn": 7,
+          "cardVi": "Chuyển người nhận sang Kawase; báo kết quả đã nói với bác và quyết định thực tế."
+        }
+      ],
+      "sameDaySlot": {
+        "activity": "npc_practice",
+        "mode": "proposal_to_replace_existing_transfer_not_append",
+        "additionalMandatoryMinutes": 0,
+        "durationMeasured": false,
+        "measuredSeconds": null,
+        "plannedDailyMinutes": 30,
+        "plannedBlocks": [
+          5,
+          5,
+          5,
+          10,
+          5
+        ],
+        "measurementRequiredVi": "Đo cả thẻ đầu vào, lượt hỏi/báo, suy nghĩ, retry và feedback sau khi ghép vào slot. Không cộng transfer cũ+đề xuất mới bắt buộc."
+      },
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      },
+      "responseRubrics": [
+        {
+          "id": "kaigo-transfer-return-result-08-r1",
+          "playerTurnId": "kaigo-transfer-return-result-08-t02",
+          "responseNpcId": "kaigo-npc-resident-a",
+          "requiredMeanings": [
+            {
+              "id": "kaigo-transfer-return-result-08-r1-m1",
+              "vi": "Báo kết quả đã kiểm với Kawase, Kishimoto phụ trách hỗ trợ."
+            },
+            {
+              "id": "kaigo-transfer-return-result-08-r1-m2",
+              "vi": "Giữ giờ về phòng14:25, không nói đã về."
+            },
+            {
+              "id": "kaigo-transfer-return-result-08-r1-m3",
+              "vi": "Hoạt động chưa bắt đầu."
+            },
+            {
+              "id": "kaigo-transfer-return-result-08-r1-m4",
+              "vi": "Hỏi bác quyết định tham gia, không tự quyết."
+            }
+          ],
+          "acceptableJa": [
+            "川瀬さんに確認できました。岸本さんが十四時二十五分にお部屋へ戻るお手伝いをします。活動はまだ始まっていません。この内容で、参加なさいますか。",
+            "川瀬さんへの確認が済み、岸本さんが十四時二十五分にお部屋へ戻る支援を担当します。活動は未開始です。この予定で参加されますか。"
+          ],
+          "unsafeOrContradictoryJa": [
+            "岸本さんが十四時三十五分に戻る支援をします。もう参加することに決めました。"
+          ],
+          "feedbackVi": "Giữ đúng người nhận và dữ kiện đã mở ở giai đoạn này. Bổ sung một ý thiếu hoặc sửa suy luận vượt dữ kiện, rồi nói lại bằng cách của bạn.",
+          "evaluationPolicy": {
+            "meaningBased": true,
+            "exactStringMatchRequired": false,
+            "runtimeImplemented": false,
+            "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+            "missingMeaning": "clarify_before_advance",
+            "unsafeMeaning": "correct_before_advance"
+          },
+          "assessmentCases": [
+            {
+              "id": "kaigo-transfer-return-result-08-r1-case-accept",
+              "inputJa": "川瀬さんへの確認が済み、岸本さんが十四時二十五分にお部屋へ戻る支援を担当します。活動は未開始です。この予定で参加されますか。",
+              "expected": "accept_meaning",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-transfer-return-result-08-r1-case-clarify",
+              "inputJa": "お手伝いは決まりました。",
+              "expected": "clarify_missing_information",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-transfer-return-result-08-r1-case-reject",
+              "inputJa": "岸本さんが十四時三十五分に戻る支援をします。もう参加することに決めました。",
+              "expected": "correct_before_advance",
+              "specOnly": true
+            }
+          ],
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-transfer-return-result-08-r2",
+          "playerTurnId": "kaigo-transfer-return-result-08-t04",
+          "responseNpcId": "kaigo-npc-resident-a",
+          "requiredMeanings": [
+            {
+              "id": "kaigo-transfer-return-result-08-r2-m1",
+              "vi": "Hỏi lại lựa chọn chưa dứt khoát: hôm nay không tham gia."
+            },
+            {
+              "id": "kaigo-transfer-return-result-08-r2-m2",
+              "vi": "Tách lựa chọn bài nhạc khỏi tham gia, hỏi giữ lựa chọn bài."
+            }
+          ],
+          "acceptableJa": [
+            "今日は参加しないご希望でしょうか。選んだ曲はそのままにしておきますか。",
+            "今日は参加を見送るということでよろしいですか。選んだ曲は、そのままにしておきますか。"
+          ],
+          "unsafeOrContradictoryJa": [
+            "時間が合うので参加しなければなりません。"
+          ],
+          "feedbackVi": "Giữ đúng người nhận và dữ kiện đã mở ở giai đoạn này. Bổ sung một ý thiếu hoặc sửa suy luận vượt dữ kiện, rồi nói lại bằng cách của bạn.",
+          "evaluationPolicy": {
+            "meaningBased": true,
+            "exactStringMatchRequired": false,
+            "runtimeImplemented": false,
+            "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+            "missingMeaning": "clarify_before_advance",
+            "unsafeMeaning": "correct_before_advance"
+          },
+          "assessmentCases": [
+            {
+              "id": "kaigo-transfer-return-result-08-r2-case-accept",
+              "inputJa": "今日は参加を見送るということでよろしいですか。選んだ曲は、そのままにしておきますか。",
+              "expected": "accept_meaning",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-transfer-return-result-08-r2-case-clarify",
+              "inputJa": "どうしますか。",
+              "expected": "clarify_missing_information",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-transfer-return-result-08-r2-case-reject",
+              "inputJa": "時間が合うので参加しなければなりません。",
+              "expected": "correct_before_advance",
+              "specOnly": true
+            }
+          ],
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-transfer-return-result-08-r3",
+          "playerTurnId": "kaigo-transfer-return-result-08-t06",
+          "responseNpcId": "kaigo-npc-resident-a",
+          "requiredMeanings": [
+            {
+              "id": "kaigo-transfer-return-result-08-r3-m1",
+              "vi": "Tôn trọng bác đã quyết định không tham gia hôm nay."
+            },
+            {
+              "id": "kaigo-transfer-return-result-08-r3-m2",
+              "vi": "Thông báo sẽ báo đúng lựa chọn cho Kawase, không nhận đã báo."
+            }
+          ],
+          "acceptableJa": [
+            "承知しました。今日は参加しないというご希望を、川瀬さんに伝えます。",
+            "分かりました。今日は参加しないご希望を川瀬さんにお伝えします。"
+          ],
+          "unsafeOrContradictoryJa": [
+            "希望は伝えず、参加したことにしておきます。"
+          ],
+          "feedbackVi": "Giữ đúng người nhận và dữ kiện đã mở ở giai đoạn này. Bổ sung một ý thiếu hoặc sửa suy luận vượt dữ kiện, rồi nói lại bằng cách của bạn.",
+          "evaluationPolicy": {
+            "meaningBased": true,
+            "exactStringMatchRequired": false,
+            "runtimeImplemented": false,
+            "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+            "missingMeaning": "clarify_before_advance",
+            "unsafeMeaning": "correct_before_advance"
+          },
+          "assessmentCases": [
+            {
+              "id": "kaigo-transfer-return-result-08-r3-case-accept",
+              "inputJa": "分かりました。今日は参加しないご希望を川瀬さんにお伝えします。",
+              "expected": "accept_meaning",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-transfer-return-result-08-r3-case-clarify",
+              "inputJa": "分かりました。",
+              "expected": "clarify_missing_information",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-transfer-return-result-08-r3-case-reject",
+              "inputJa": "希望は伝えず、参加したことにしておきます。",
+              "expected": "correct_before_advance",
+              "specOnly": true
+            }
+          ],
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-transfer-return-result-08-r4",
+          "playerTurnId": "kaigo-transfer-return-result-08-t08",
+          "responseNpcId": "kaigo-npc-care-lead",
+          "requiredMeanings": [
+            {
+              "id": "kaigo-transfer-return-result-08-r4-m1",
+              "vi": "Báo phụ trách kết quả đã nói với bác: Kishimoto/14:25."
+            },
+            {
+              "id": "kaigo-transfer-return-result-08-r4-m2",
+              "vi": "Bác đã chọn bài nhưng quyết định không tham gia hôm nay."
+            },
+            {
+              "id": "kaigo-transfer-return-result-08-r4-m3",
+              "vi": "Hoạt động chưa bắt đầu, không báo hoàn thành về phòng."
+            },
+            {
+              "id": "kaigo-transfer-return-result-08-r4-m4",
+              "vi": "Không coi chọn bài là đạt mục tiêu; xem lại cùng bác/nhóm."
+            }
+          ],
+          "acceptableJa": [
+            "岸本さんの支援と十四時二十五分に戻る予定をお伝えしました。森川さんは、曲は選んだものの今日は参加しないと決めました。活動はまだ始まっていません。選曲だけで目標達成とはせず、見直しは本人とチームで相談します。",
+            "岸本さんの支援と十四時二十五分に戻る予定は本人に伝えました。選曲は済みましたが、今日は参加しないと決められました。活動は未開始です。選曲だけで目標を達成したとは考えず、見直しは本人とチームで相談します。"
+          ],
+          "unsafeOrContradictoryJa": [
+            "曲を選んだので目標を達成し、参加して部屋へ戻り終えました。計画は私が承認しました。"
+          ],
+          "feedbackVi": "Giữ đúng người nhận và dữ kiện đã mở ở giai đoạn này. Bổ sung một ý thiếu hoặc sửa suy luận vượt dữ kiện, rồi nói lại bằng cách của bạn.",
+          "evaluationPolicy": {
+            "meaningBased": true,
+            "exactStringMatchRequired": false,
+            "runtimeImplemented": false,
+            "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+            "missingMeaning": "clarify_before_advance",
+            "unsafeMeaning": "correct_before_advance"
+          },
+          "assessmentCases": [
+            {
+              "id": "kaigo-transfer-return-result-08-r4-case-accept",
+              "inputJa": "岸本さんの支援と十四時二十五分に戻る予定は本人に伝えました。選曲は済みましたが、今日は参加しないと決められました。活動は未開始です。選曲だけで目標を達成したとは考えず、見直しは本人とチームで相談します。",
+              "expected": "accept_meaning",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-transfer-return-result-08-r4-case-clarify",
+              "inputJa": "本人に結果を伝えました。",
+              "expected": "clarify_missing_information",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-transfer-return-result-08-r4-case-reject",
+              "inputJa": "曲を選んだので目標を達成し、参加して部屋へ戻り終えました。計画は私が承認しました。",
+              "expected": "correct_before_advance",
+              "specOnly": true
+            }
+          ],
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        }
+      ],
+      "integrationDecision": {
+        "selected": false,
+        "decision": null,
+        "reviewer": null,
+        "date": null,
+        "ready": false,
+        "requiresMergedPracticeReview": true
+      }
+    }
+  ],
+  "integrationWorklist": [
+    {
+      "targetModuleId": "kaigo-gap-infection-01",
+      "status": "pending_merge_and_load_review",
+      "mustRetainVi": [
+        "Lược mong muốn và xin phép tìm phạm vi cụ thể trước mở đồ; đây là mục tiêu riêng, chưa thay bằng việc xác nhận khăn.",
+        "Chưa thấy ở một nơi khác kết luận mất; không tự dùng đồ chưa rõ chủ.",
+        "Sự việc màn hình/găng sau đồ vải, báo vùng đã chạm và cách xử lý còn chờ, không giả xử lý xong."
+      ],
+      "constraintVi": "Không nối cả hai transfer thành bài bắt buộc dài hơn. Phải ghép hoặc chọn điều kiện luyện và đo tải, rồi kiểm rubric/q05 đồng bộ."
+    },
+    {
+      "targetModuleId": "kaigo-gap-care-process-01",
+      "status": "pending_merge_and_load_review",
+      "mustRetainVi": [
+        "Hỏi lại14:25 và hỗ trợ rời sớm; báo phụ trách trước buổi bắt đầu.",
+        "Báo kết quả thật cho bác và hỏi quyết định sau kiểm, không chỉ nói sẽ làm.",
+        "Chọn bài không đồng nghĩa tham gia/đạt mục tiêu; không tự phê duyệt kế hoạch."
+      ],
+      "constraintVi": "Chỉ chọn một thẻ kết quả phù hợp hoặc không phù hợp trong một lần luyện; ghép thay nội dung, không cộng bắt buộc."
+    }
+  ]
+}
