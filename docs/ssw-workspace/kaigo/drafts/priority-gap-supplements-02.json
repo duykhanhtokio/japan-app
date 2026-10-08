@@ -1414,6 +1414,356 @@
           "mode": "replace_existing_transfer_rehearsal_not_append",
           "additionalMandatoryMinutes": 0,
           "durationMeasured": false
+        },
+        "rehearsalPlan10": {
+          "mode": "choose_one_variant_per_rehearsal_not_append_required_practice",
+          "defaultVariantId": "kaigo-gap-services-01-appointment-variant-10",
+          "defaultVariant": {
+            "kind": "embedded_staged_flow",
+            "flow": {
+              "id": "kaigo-gap-services-01-appointment-variant-10",
+              "contextVi": "Case trao đổi vật liệu thủ công, không phải hẹn khám hay đăng ký dịch vụ. Megumi đã nhờ lập phiếu cùng mẹ Morikawa; phiếu tên đồ nhận đến17/10, trao đổi với bác từ18/10, chưa nhận vật liệu. Trước lượt1, thẻ Kawase cho biết có thể bố trí cuộc trao đổi18/10 lúc10:30, chỉ là giờ đề xuất; chưa hỏi bác. Bác chưa chọn đồ, chưa giao nhận, mong muốn/điều kiện/ngày bắt đầu dịch vụ đến nhà chưa xác nhận và chưa đăng ký. Không coi hẹn tư vấn là đồng ý nhận đồ hoặc sử dụng dịch vụ.",
+              "factsBefore": {
+                "proposedDate": "10-18",
+                "proposedTime": "10:30",
+                "proposalNpcId": "kaigo-npc-care-lead",
+                "residentConsent": false,
+                "itemsSelected": false,
+                "goodsTransferred": false,
+                "serviceApplicationMade": false,
+                "serviceStartDateConfirmed": false
+              },
+              "factsAfterStep2": {
+                "confirmedAvailableDate": "10-19",
+                "confirmedAvailableTime": "10:30",
+                "availabilityNpcId": "kaigo-npc-care-lead",
+                "residentConsent": false
+              },
+              "outcome": {
+                "appointmentDate": "10-19",
+                "appointmentTime": "10:30",
+                "residentAcceptedAppointmentOnly": true,
+                "residentRequestedFamilyAbsent": true,
+                "leadInformed": true,
+                "itemsSelected": false,
+                "goodsTransferred": false,
+                "serviceApplicationMade": false,
+                "serviceStartDateConfirmed": false
+              },
+              "steps": [
+                {
+                  "id": "kaigo-gap-services-01-followup10-step-1",
+                  "responseTarget": "resident_appointment_proposal",
+                  "npcId": "kaigo-npc-resident-a",
+                  "promptVi": "Nêu với Morikawa giờ đề xuất từ Kawase và hỏi bác, không gán lời Megumi thành bác đồng ý.",
+                  "modelJa": "森川さん、恵さんから相談票を一緒に作りたいと伺いました。川瀬さんは、十月十八日十時三十分に持ち物の相談ができると伝えています。この日時はいかがですか。まだ物を選んだり受け取ったりする段階ではありません。",
+                  "modelVi": "Bác Morikawa, Megumi nhờ lập phiếu cùng bác. Kawase cho biết có thể trao đổi đồ dùng18/10 lúc10:30. Bác thấy giờ đó thế nào? Hiện chưa là bước chọn hoặc nhận đồ.",
+                  "afterAttemptCard": {
+                    "ja": "十八日は都合が悪い。十九日の十時三十分なら話せる。恵は呼ばず、まず私と話してほしい。",
+                    "vi": "Ngày18 tôi không tiện. Ngày19 lúc10:30 tôi có thể nói chuyện. Đừng gọi Megumi, trước hết hãy nói với tôi.",
+                    "revealAfterAttempt": true
+                  },
+                  "rubric": {
+                    "id": "kaigo-gap-services-01-followup10-step-1-rubric",
+                    "requiredMeanings": [
+                      {
+                        "id": "kaigo-gap-services-01-followup10-step-1-rubric-meaning-1",
+                        "vi": "Megumi đã nhờ, giờ18/10 10:30 do Kawase đề xuất; chưa coi bác đồng ý."
+                      },
+                      {
+                        "id": "kaigo-gap-services-01-followup10-step-1-rubric-meaning-2",
+                        "vi": "Hỏi bác về giờ; trao đổi khác chọn/nhận đồ."
+                      }
+                    ],
+                    "acceptableJa": [
+                      "森川さん、恵さんから相談票を一緒に作りたいと伺いました。川瀬さんは、十月十八日十時三十分に持ち物の相談ができると伝えています。この日時はいかがですか。まだ物を選んだり受け取ったりする段階ではありません。",
+                      "恵さんのご依頼を受け、川瀬さんから十月十八日の十時三十分を提案されています。森川さんはその時間でよろしいですか。品物の選定や受取りはまだです。"
+                    ],
+                    "unsafeJa": [
+                      "恵さんが決めたので、十八日に全ての材料を受け取ります。"
+                    ],
+                    "feedbackVi": "Kiểm các mục ý và nguồn dữ kiện; cho nói lại phần thiếu trước chuyển bước. Không đòi trùng từng chữ.",
+                    "evaluationPolicy": {
+                      "exactStringMatchRequired": false,
+                      "runtimeImplemented": false
+                    },
+                    "assessmentCases": [
+                      {
+                        "id": "kaigo-gap-services-01-followup10-step-1-rubric-case-1",
+                        "inputJa": "森川さん、恵さんから相談票を一緒に作りたいと伺いました。川瀬さんは、十月十八日十時三十分に持ち物の相談ができると伝えています。この日時はいかがですか。まだ物を選んだり受け取ったりする段階ではありません。",
+                        "expected": "accept_meaning",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-services-01-followup10-step-1-rubric-case-2",
+                        "inputJa": "十八日はいかがですか。",
+                        "expected": "clarify_missing_information",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-services-01-followup10-step-1-rubric-case-3",
+                        "inputJa": "恵さんが決めたので、十八日に全ての材料を受け取ります。",
+                        "expected": "correct_before_advance",
+                        "specOnly": true
+                      }
+                    ],
+                    "review": {
+                      "domainHumanReviewed": false,
+                      "nativeLanguageReviewed": false,
+                      "publisherReviewed": false,
+                      "rightsReviewed": false,
+                      "runtimeIntegrated": false,
+                      "appIntegrationReady": false,
+                      "releaseReady": false
+                    }
+                  }
+                },
+                {
+                  "id": "kaigo-gap-services-01-followup10-step-2",
+                  "responseTarget": "care_lead_changed_request",
+                  "npcId": "kaigo-npc-care-lead",
+                  "promptVi": "Báo lời bác muốn đổi ngày và chưa có người xác nhận19/10; giữ mong muốn không mời người nhà.",
+                  "modelJa": "森川さんは十八日は都合が悪く、十九日の十時三十分なら話せるので、恵さんを呼ばず、まずご本人と話してほしいと希望しました。十九日の対応が可能か確認をお願いします。選定、受渡し、訪問サービスの申込みはしていません。",
+                  "modelVi": "Bác nói18 không tiện,19 lúc10:30 có thể nói chuyện; muốn trước hết trao đổi với bác, không mời Megumi. Xin kiểm có thể bố trí19 không. Chưa chọn, giao nhận hay đăng ký dịch vụ đến nhà.",
+                  "afterAttemptCard": {
+                    "ja": "十九日の十時三十分に相談の時間を確保できます。恵さんは呼びません。ご本人にこの結果を伝え、その日時でよいか確かめてください。品物やサービスの決定ではありません。",
+                    "vi": "Có thể bố trí giờ trao đổi19 lúc10:30, không mời Megumi. Hãy báo kết quả này cho bác và hỏi lại bác có đồng ý giờ đó không. Đây chưa là quyết định về đồ hoặc dịch vụ.",
+                    "revealAfterAttempt": true
+                  },
+                  "rubric": {
+                    "id": "kaigo-gap-services-01-followup10-step-2-rubric",
+                    "requiredMeanings": [
+                      {
+                        "id": "kaigo-gap-services-01-followup10-step-2-rubric-meaning-1",
+                        "vi": "Lời bác đổi18 sang19/10 10:30, muốn nói riêng trước không mời Megumi."
+                      },
+                      {
+                        "id": "kaigo-gap-services-01-followup10-step-2-rubric-meaning-2",
+                        "vi": "19 mới là yêu cầu cần kiểm với phụ trách; chưa chọn/giao/đăng ký."
+                      }
+                    ],
+                    "acceptableJa": [
+                      "森川さんは十八日は都合が悪く、十九日の十時三十分なら話せるので、恵さんを呼ばず、まずご本人と話してほしいと希望しました。十九日の対応が可能か確認をお願いします。選定、受渡し、訪問サービスの申込みはしていません。",
+                      "ご本人は十月十九日十時三十分への変更と、恵さんなしでの相談を希望しています。対応できるかお願いします。物品の選定と受渡し、訪問サービスの申込みはまだです。"
+                    ],
+                    "unsafeJa": [
+                      "家族の希望を優先して十八日に決定し、サービスも登録しました。"
+                    ],
+                    "feedbackVi": "Kiểm các mục ý và nguồn dữ kiện; cho nói lại phần thiếu trước chuyển bước. Không đòi trùng từng chữ.",
+                    "evaluationPolicy": {
+                      "exactStringMatchRequired": false,
+                      "runtimeImplemented": false
+                    },
+                    "assessmentCases": [
+                      {
+                        "id": "kaigo-gap-services-01-followup10-step-2-rubric-case-1",
+                        "inputJa": "森川さんは十八日は都合が悪く、十九日の十時三十分なら話せるので、恵さんを呼ばず、まずご本人と話してほしいと希望しました。十九日の対応が可能か確認をお願いします。選定、受渡し、訪問サービスの申込みはしていません。",
+                        "expected": "accept_meaning",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-services-01-followup10-step-2-rubric-case-2",
+                        "inputJa": "十九日に変更できますか。",
+                        "expected": "clarify_missing_information",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-services-01-followup10-step-2-rubric-case-3",
+                        "inputJa": "家族の希望を優先して十八日に決定し、サービスも登録しました。",
+                        "expected": "correct_before_advance",
+                        "specOnly": true
+                      }
+                    ],
+                    "review": {
+                      "domainHumanReviewed": false,
+                      "nativeLanguageReviewed": false,
+                      "publisherReviewed": false,
+                      "rightsReviewed": false,
+                      "runtimeIntegrated": false,
+                      "appIntegrationReady": false,
+                      "releaseReady": false
+                    }
+                  }
+                },
+                {
+                  "id": "kaigo-gap-services-01-followup10-step-3",
+                  "responseTarget": "resident_confirm_available_result",
+                  "npcId": "kaigo-npc-resident-a",
+                  "promptVi": "Báo kết quả Kawase có thể bố trí19/10 10:30 và hỏi bác quyết định, không tuyên bố đã đồng ý từ trước.",
+                  "modelJa": "川瀬さんに確認できました。十月十九日十時三十分に、恵さんを呼ばず、森川さんと持ち物について相談できます。この日時でよろしいですか。今回は相談の約束で、品物の受渡しや訪問サービスの開始を決めたものではありません。",
+                  "modelVi": "Tôi đã kiểm với Kawase: có thể trao đổi đồ dùng cùng bác19/10 lúc10:30, không mời Megumi. Bác có đồng ý giờ này không? Đây là hẹn trao đổi, chưa quyết định giao nhận hoặc bắt đầu dịch vụ đến nhà.",
+                  "afterAttemptCard": {
+                    "ja": "その時間でお願いします。相談することには同意します。でも、どの物にするかや訪問サービスを使うかは、まだ決めていません。",
+                    "vi": "Xin hẹn giờ đó. Tôi đồng ý trao đổi, nhưng chưa quyết đồ nào hoặc có dùng dịch vụ đến nhà không.",
+                    "revealAfterAttempt": true
+                  },
+                  "rubric": {
+                    "id": "kaigo-gap-services-01-followup10-step-3-rubric",
+                    "requiredMeanings": [
+                      {
+                        "id": "kaigo-gap-services-01-followup10-step-3-rubric-meaning-1",
+                        "vi": "Kết quả Kawase xác nhận19/10 10:30 và không mời Megumi; báo bác và hỏi lại sự đồng ý."
+                      },
+                      {
+                        "id": "kaigo-gap-services-01-followup10-step-3-rubric-meaning-2",
+                        "vi": "Chỉ hẹn trao đổi, không là giao nhận/bắt đầu dịch vụ."
+                      }
+                    ],
+                    "acceptableJa": [
+                      "川瀬さんに確認できました。十月十九日十時三十分に、恵さんを呼ばず、森川さんと持ち物について相談できます。この日時でよろしいですか。今回は相談の約束で、品物の受渡しや訪問サービスの開始を決めたものではありません。",
+                      "十月十九日の十時三十分を川瀬さんが確保できました。恵さんなしで相談する日時としてよろしいでしょうか。物の受渡しや訪問サービス開始の決定とは別です。"
+                    ],
+                    "unsafeJa": [
+                      "十九日から訪問サービスが始まり、材料も全て受け取ります。"
+                    ],
+                    "feedbackVi": "Kiểm các mục ý và nguồn dữ kiện; cho nói lại phần thiếu trước chuyển bước. Không đòi trùng từng chữ.",
+                    "evaluationPolicy": {
+                      "exactStringMatchRequired": false,
+                      "runtimeImplemented": false
+                    },
+                    "assessmentCases": [
+                      {
+                        "id": "kaigo-gap-services-01-followup10-step-3-rubric-case-1",
+                        "inputJa": "川瀬さんに確認できました。十月十九日十時三十分に、恵さんを呼ばず、森川さんと持ち物について相談できます。この日時でよろしいですか。今回は相談の約束で、品物の受渡しや訪問サービスの開始を決めたものではありません。",
+                        "expected": "accept_meaning",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-services-01-followup10-step-3-rubric-case-2",
+                        "inputJa": "川瀬さんが十九日の時間を確保できました。",
+                        "expected": "clarify_missing_information",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-services-01-followup10-step-3-rubric-case-3",
+                        "inputJa": "十九日から訪問サービスが始まり、材料も全て受け取ります。",
+                        "expected": "correct_before_advance",
+                        "specOnly": true
+                      }
+                    ],
+                    "review": {
+                      "domainHumanReviewed": false,
+                      "nativeLanguageReviewed": false,
+                      "publisherReviewed": false,
+                      "rightsReviewed": false,
+                      "runtimeIntegrated": false,
+                      "appIntegrationReady": false,
+                      "releaseReady": false
+                    }
+                  }
+                },
+                {
+                  "id": "kaigo-gap-services-01-followup10-step-4",
+                  "responseTarget": "care_lead_appointment_result",
+                  "npcId": "kaigo-npc-care-lead",
+                  "promptVi": "Báo quyết định bác sau thẻ3 cho Kawase; giữ đăng ký, mong muốn/điều kiện sử dụng và giao nhận chưa xong.",
+                  "modelJa": "森川さんは、恵さんを呼ばず十月十九日十時三十分に相談することに同意しました。品物の選定や受渡しはまだです。職員がご自宅へ伺う訪問サービスについても、利用の希望と条件、開始日は未確認で、申込みはしていません。",
+                  "modelVi": "Bác đồng ý trao đổi19/10 lúc10:30 không mời Megumi. Chưa chọn/giao đồ. Với dịch vụ nhân viên đến nhà, mong muốn sử dụng, điều kiện và ngày bắt đầu vẫn chưa xác nhận, chưa đăng ký.",
+                  "afterAttemptCard": {
+                    "ja": "ご本人が同意した相談日時として記録します。物品の決定や受渡し、訪問サービスの利用決定とは分けて、未確認事項を引き継ぎます。",
+                    "vi": "Tôi ghi đây là giờ trao đổi mà bác đã đồng ý. Tôi bàn giao phần chưa kiểm, tách khỏi quyết định/giao đồ hoặc quyết định dùng dịch vụ.",
+                    "revealAfterAttempt": true
+                  },
+                  "rubric": {
+                    "id": "kaigo-gap-services-01-followup10-step-4-rubric",
+                    "requiredMeanings": [
+                      {
+                        "id": "kaigo-gap-services-01-followup10-step-4-rubric-meaning-1",
+                        "vi": "Bác đã đồng ý giờ19/10 10:30, không mời Megumi; nguồn là bác sau được báo kết quả."
+                      },
+                      {
+                        "id": "kaigo-gap-services-01-followup10-step-4-rubric-meaning-2",
+                        "vi": "Chưa chọn/giao đồ; dịch vụ nhân viên đến nhà còn mong muốn/điều kiện/ngày bắt đầu chưa kiểm và chưa đăng ký."
+                      }
+                    ],
+                    "acceptableJa": [
+                      "森川さんは、恵さんを呼ばず十月十九日十時三十分に相談することに同意しました。品物の選定や受渡しはまだです。職員がご自宅へ伺う訪問サービスについても、利用の希望と条件、開始日は未確認で、申込みはしていません。",
+                      "ご本人に結果を伝え、恵さんなしで十月十九日十時三十分に話す同意を得ました。物品は未選定で、受渡しもありません。職員が自宅へ訪問するサービスの希望、条件、開始日は未確認で、申込みもまだです。"
+                    ],
+                    "unsafeJa": [
+                      "相談の約束をしたので、品物もサービスの利用も全て同意済みです。"
+                    ],
+                    "feedbackVi": "Kiểm các mục ý và nguồn dữ kiện; cho nói lại phần thiếu trước chuyển bước. Không đòi trùng từng chữ.",
+                    "evaluationPolicy": {
+                      "exactStringMatchRequired": false,
+                      "runtimeImplemented": false
+                    },
+                    "assessmentCases": [
+                      {
+                        "id": "kaigo-gap-services-01-followup10-step-4-rubric-case-1",
+                        "inputJa": "森川さんは、恵さんを呼ばず十月十九日十時三十分に相談することに同意しました。品物の選定や受渡しはまだです。職員がご自宅へ伺う訪問サービスについても、利用の希望と条件、開始日は未確認で、申込みはしていません。",
+                        "expected": "accept_meaning",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-services-01-followup10-step-4-rubric-case-2",
+                        "inputJa": "森川さんは十九日に相談することに同意しました。",
+                        "expected": "clarify_missing_information",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-services-01-followup10-step-4-rubric-case-3",
+                        "inputJa": "相談の約束をしたので、品物もサービスの利用も全て同意済みです。",
+                        "expected": "correct_before_advance",
+                        "specOnly": true
+                      }
+                    ],
+                    "review": {
+                      "domainHumanReviewed": false,
+                      "nativeLanguageReviewed": false,
+                      "publisherReviewed": false,
+                      "rightsReviewed": false,
+                      "runtimeIntegrated": false,
+                      "appIntegrationReady": false,
+                      "releaseReady": false
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "retainedVariant": {
+            "id": "kaigo-gap-services-01-legacy-variant-10",
+            "kind": "legacy_transfer_fields_of_this_object",
+            "contentFields": [
+              "id",
+              "contextVi",
+              "taskVi",
+              "expectedMeaningVi",
+              "modelJa",
+              "method",
+              "responseRoleVi",
+              "familyExplanation",
+              "sourceRefs",
+              "rubric",
+              "feedbackAfterAttempt",
+              "sameDaySlot"
+            ],
+            "usageVi": "Luyện nhánh cũ ở lần riêng khi cần ôn. Một lần chỉ chọn một variant; chưa chứng minh luân phiên đủ năng lực trong30 phút.",
+            "coversQuestionIds": [
+              "kaigo-gap-services-01-q04",
+              "kaigo-gap-services-01-q05"
+            ]
+          },
+          "selectionGate": {
+            "candidateSelected": false,
+            "runtimeImplemented": false,
+            "additionalMandatoryMinutes": 0,
+            "plannedDailyMinutes": 30,
+            "durationMeasured": false,
+            "observedLearnerData": null,
+            "maximumRequiredVariantsPerRehearsal": 1
+          },
+          "coverageVi": "Thêm lượt nhận dữ kiện/kết quả rồi báo đúng người. Giữ tất cả legacy, bài/câu cũ và nhánh09; tương đương và tải vẫn partial.",
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
         }
       },
       "questions": [
@@ -1659,7 +2009,8 @@
         ],
         "replacementAuditRef": "reviews/priority-gap-replacement-audit-03.json",
         "replacementReady": false,
-        "partialRepairRef": "reviews/priority-gap-partial-repair-05.json"
+        "partialRepairRef": "reviews/priority-gap-partial-repair-05.json",
+        "followupRepairRef": "reviews/priority-gap-followup-10.json"
       },
       "responseRubricIds": [
         "kaigo-gap-services-01-rubric-01",
@@ -2222,6 +2573,13 @@
     "date": "2026-10-08",
     "evidenceRef": "reviews/priority-gap-transfer-merge-09.json",
     "scope": "add_transfer_rehearsal_plan_only_preserve_legacy_fields",
+    "status": "APPLIED_TO_DRAFT_VARIANTS_NOT_CURRICULUM_OR_APP",
+    "replacementReady": false
+  },
+  "editorialFollowup10": {
+    "date": "2026-10-08",
+    "evidenceRef": "reviews/priority-gap-followup-10.json",
+    "scope": "add_followup_plan_only_preserve_all_previous_fields",
     "status": "APPLIED_TO_DRAFT_VARIANTS_NOT_CURRICULUM_OR_APP",
     "replacementReady": false
   }

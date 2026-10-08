@@ -322,3 +322,17 @@ Lưu hẹp5file bằng GitHubtree/commit/ref cólease trênHEAD hiện tại và
 - Nguồn276trangSHAchuẩnkhớp,rereadtextin12/16/115/118/196/197,xemảnh12/118/196; khôngkỹthuậtmới/nguồngoàimới/privatebytes. Screen126trường52eligible0exact60window,chưa semantic/hình/external/quyền. Mọihuman/domain/native/publisher/rights/runtime/releasefalse.
 - Hồ sơreviews/priority-gap-transfer-merge-09.json/PRIORITY_GAP_TRANSFER_MERGE_09_REPORT.md;scripts/kaigo-transfer-merge-09-lineage.mjs/check-kaigo-transfer-merge-09.mjs. Côngbố10filehẹp,khôngUI/JLPT/plan/curriculum/mockđổi.
 - Hai gap códirectpractice trongcandidate nháp,tươngđương/tải vẫnpartial/NOT_READY. Bước tiếp:partialkhác(worker báo saukiểm,serviceshẹntraođổi,C02mốcngày,C06dữkiệnchưarõ),ràma trậncurrent;đo/duyệttrướcchọn. Khôngtựtuần9/đềmới/tíchhợp/pháthành.
+
+
+## 2026-10-08 — follow-up10: báo sau hỏi bác và kết quả hẹn
+
+- Baseline7aab6562764e6367b8406e3585501bcc25e85fab; đọc đầy đủ START/AGENTS/rules/checkpoint/plan/quy tắc độc lập. Snapshot không gitcheckout, lưuconnectorlease/remoteexactblob; không WORKPERSISTENCEscriptPASS.
+- Workerday14: báo9:15/chưa hỏi đau→hỏi9:20→báo lời bác không đau/mệt không đổi/muốn nghỉ→nhắc lại đã liên lạc Fujino/chưa đến, số đo/nguyên nhân/phân công chưa kiểm. Không gộp staffmệt với lời bác hoặc sửa dữ kiện9:15 thành đã hỏi; không kỹ thuật khám/chẩn đoán/chờ cấp cứu.
+- Servicesday49: đề xuất18/10 10:30→bác muốn19/10 không mời Megumi→Kawase xác nhận khả năng19/10→báo bác/hỏi lại→bác đồng ý hẹn→báo Kawase. Hẹn khác chọn/giao vật liệu/đăng ký/bắt đầu dịch vụ; lời Megumi khác bác đồng ý.
+- Hai bundle chỉ thêm rehearsalPlan10/ref/marker; exactprojection phục dựng09blob1b60463b7af66d5b9403fd29924d81dd831e0639/7c354e19832f981f4ab89e8090d7d3e864bdb898. Knowledge/main/readings/vocab/20câu/legacy và infection/care09 nguyênbyte. Q04/q05 cũ giữ phạm vi, flow mới dùng rubric riêng.
+-16phát ngôn/8rubric/18ý/24caspec chưa evaluator,0bài/câu/đề/từ/NPC thêm. Librarytransfer24rubric72caspec (8legacy+8variant09+8variant10),main96caspec,total168chưa chạy; không giao tất cả/không sửa count07.8candidate chưa chọn,core54/270/60/curriculum56ngày nguyên.
+- Validator10PASS343ID/51immutableblob/2projection/13negativecontrols/2sheetnull;50baselineblob đối chiếu remote và evidence09pin.8checker lịch sử09/06/05/04/C02/C06/07/08PASSexactreplay, không rà nội dung10 bằng lịch sử. Helper10→09→predecessor;09output historicalSnapshotValidationtrue. Khôngfullrepo/app/runtime/device/evaluator/timing.
+- JAall/playerworker597/389,services656/414codepoint,khôngphút. Sheet10pinbundleafterblob/defaultvariant,ngày14giữ3/8/5/9/5,ngày49giữ5/5/5/10/5,total30chưađo. Mộtvariant/lần,0phútcộngchỉbốtrí,phảiđo thẻ/thinking/retry/feedback và ôn legacytrước chọn.
+- Nguồn276trangSHAchuẩnrecompute;đọctextin12/16/115/118,xemảnh12/115/118;khôngkỹthuậtmới/nguồngoàimới/privatebytes. Screen120field77eligible0exact60window,khôngsemantic/hình/external/quyền. Mọihuman/domain/native/publisher/rights/runtime/releasefalse.
+- Hồ sơreviews/priority-gap-followup-10.json/PRIORITY_GAP_FOLLOWUP_10_REPORT.md;scriptkaigo-followup-10-lineage/check-kaigo-followup-10;2helper/checker09sửa đểreplay.9filehẹp,khôngUI/JLPT/plan/curriculum/mockđổi. Worker/services códirectfollowupnháp, equivalence/tảivẫnpartial/NOT_READY.
+- Bước tiếp:C02mốc treo/hiệu lực và thôngbáophápđịnh,C06 dữ kiện riêng/khẩn cấp,rà ma trận current;đo/duyệt trướcchọn. Không tựtuần9/đềmới/tíchhợp/pháthành.

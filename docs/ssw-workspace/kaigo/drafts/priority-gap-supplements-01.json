@@ -542,6 +542,365 @@
           "mode": "replace_existing_transfer_rehearsal_not_append",
           "additionalMandatoryMinutes": 0,
           "durationMeasured": false
+        },
+        "rehearsalPlan10": {
+          "mode": "choose_one_variant_per_rehearsal_not_append_required_practice",
+          "defaultVariantId": "kaigo-gap-worker-health-01-followup-variant-10",
+          "defaultVariant": {
+            "kind": "embedded_staged_flow",
+            "flow": {
+              "id": "kaigo-gap-worker-health-01-followup-variant-10",
+              "contextVi": "Tình huống báo cáo offline riêng, không nhập với ví dụ đau lưng nhân viên lúc8:20 của bài chính. Bạn ngủ kém và mệt, chưa làm hỗ trợ; đồng nghiệp được phân công đang ở cùng bác Onodera. Lúc9:15 bác nói toàn thân mệt hơn thường ngày, muốn nghỉ, không làm thiệp; chưa hỏi đau, số đo và nguyên nhân chưa kiểm. Từng thẻ chỉ mở sau lượt đáp, không dùng dữ kiện của thẻ sau để báo sớm. Chuỗi là luyện giao tiếp, không chỉ dẫn kiểm khám hoặc trì hoãn gọi hỗ trợ khi khẩn cấp.",
+              "factsBefore": {
+                "staffFatigueReported": true,
+                "residentNpcId": "kaigo-npc-resident-c",
+                "residentReportTime": "09:15",
+                "painAsked": false,
+                "measurementsKnown": false,
+                "causeKnown": false,
+                "careStarted": false,
+                "assignedColleaguePresent": true
+              },
+              "factsAfterStep2": {
+                "residentReplyTime": "09:20",
+                "painAsked": true,
+                "residentSaysPain": false,
+                "residentSaysFatigueUnchanged": true,
+                "residentWantsRest": true,
+                "measurementsKnown": false,
+                "causeKnown": false
+              },
+              "outcome": {
+                "followupReported": true,
+                "leadAcknowledged": true,
+                "nurseContacted": true,
+                "nurseArrived": false,
+                "measurementsKnown": false,
+                "causeKnown": false,
+                "careStarted": false,
+                "staffRoleConfirmed": false
+              },
+              "steps": [
+                {
+                  "id": "kaigo-gap-worker-health-01-followup10-step-1",
+                  "responseTarget": "care_lead_initial_report",
+                  "npcId": "kaigo-npc-care-lead",
+                  "promptVi": "Báo Kawase tình trạng nhân viên riêng với lời bác9:15 và các điểm chưa xác nhận.",
+                  "modelJa": "昨夜はよく眠れず、私も疲れています。介助は未開始で、小野寺さんには担当職員が付いています。九時十五分に、ご本人は全身がいつもよりだるく、カード作りをせず休みたいと話しました。痛み、測定値、原因は未確認です。状態の確認と職員の担当について相談します。",
+                  "modelVi": "Đêm qua tôi ngủ kém, tôi cũng mệt. Chưa hỗ trợ, bác Onodera có nhân viên phụ trách. Lúc9:15 bác nói toàn thân mệt hơn thường ngày, muốn nghỉ không làm thiệp. Đau, số đo, nguyên nhân chưa xác nhận; tôi xin trao đổi kiểm tình trạng và phân công.",
+                  "afterAttemptCard": {
+                    "ja": "報告を受けました。ご本人に、痛みと今のだるさ、休みたいお気持ちを尋ねて、分かったことと未確認のことを分けて報告してください。",
+                    "vi": "Tôi đã nhận báo cáo. Hãy hỏi bác về đau, cảm giác mệt hiện tại và mong muốn nghỉ; báo riêng điều biết được và điều chưa xác nhận.",
+                    "revealAfterAttempt": true
+                  },
+                  "rubric": {
+                    "id": "kaigo-gap-worker-health-01-followup10-step-1-rubric",
+                    "requiredMeanings": [
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-1-rubric-meaning-1",
+                        "vi": "Tách nhân viên ngủ kém/mệt khỏi tình trạng bác; chưa làm, bác có người phụ trách."
+                      },
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-1-rubric-meaning-2",
+                        "vi": "Giữ9:15, toàn thân, hơn thường ngày và mong muốn nghỉ/không làm thiệp theo lời bác."
+                      },
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-1-rubric-meaning-3",
+                        "vi": "Đau, số đo, nguyên nhân chưa kiểm; phối hợp kiểm tình trạng và phân công."
+                      }
+                    ],
+                    "acceptableJa": [
+                      "昨夜はよく眠れず、私も疲れています。介助は未開始で、小野寺さんには担当職員が付いています。九時十五分に、ご本人は全身がいつもよりだるく、カード作りをせず休みたいと話しました。痛み、測定値、原因は未確認です。状態の確認と職員の担当について相談します。",
+                      "私は寝不足で疲れていますが、これは私の状態です。介助はまだで、ご本人には担当者が付いています。九時十五分、ご本人は全身が普段よりだるく、カード作りより休みたいと話しました。痛みも測定値も原因も未確認なので、確認と担当を相談します。"
+                    ],
+                    "unsafeJa": [
+                      "私の寝不足が原因で小野寺さんもだるくなりました。痛みはありません。"
+                    ],
+                    "feedbackVi": "Kiểm các mục ý và nguồn dữ kiện; cho nói lại phần thiếu trước chuyển bước. Không đòi trùng từng chữ.",
+                    "evaluationPolicy": {
+                      "exactStringMatchRequired": false,
+                      "runtimeImplemented": false
+                    },
+                    "assessmentCases": [
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-1-rubric-case-1",
+                        "inputJa": "昨夜はよく眠れず、私も疲れています。介助は未開始で、小野寺さんには担当職員が付いています。九時十五分に、ご本人は全身がいつもよりだるく、カード作りをせず休みたいと話しました。痛み、測定値、原因は未確認です。状態の確認と職員の担当について相談します。",
+                        "expected": "accept_meaning",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-1-rubric-case-2",
+                        "inputJa": "小野寺さんは休みたいと話しました。",
+                        "expected": "clarify_missing_information",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-1-rubric-case-3",
+                        "inputJa": "私の寝不足が原因で小野寺さんもだるくなりました。痛みはありません。",
+                        "expected": "correct_before_advance",
+                        "specOnly": true
+                      }
+                    ],
+                    "review": {
+                      "domainHumanReviewed": false,
+                      "nativeLanguageReviewed": false,
+                      "publisherReviewed": false,
+                      "rightsReviewed": false,
+                      "runtimeIntegrated": false,
+                      "appIntegrationReady": false,
+                      "releaseReady": false
+                    }
+                  }
+                },
+                {
+                  "id": "kaigo-gap-worker-health-01-followup10-step-2",
+                  "responseTarget": "resident_followup_question",
+                  "npcId": "kaigo-npc-resident-c",
+                  "promptVi": "Thẻ thời điểm9:20: hỏi bác về đau, mệt hiện tại và mong muốn; chưa có câu trả lời.",
+                  "modelJa": "小野寺さん、今、痛いところはありますか。全身のだるさは先ほどと比べてどうですか。今も休みたいお気持ちですか。",
+                  "modelVi": "Bác Onodera, hiện có chỗ nào đau không? Toàn thân mệt so với lúc nãy thế nào? Hiện bác vẫn muốn nghỉ chứ?",
+                  "afterAttemptCard": {
+                    "ja": "九時二十分。痛いところはないよ。全身のだるさはさっきと同じ。カード作りはせず、休みたい。",
+                    "vi": "9:20. Tôi không có chỗ đau. Toàn thân mệt như lúc nãy. Tôi muốn nghỉ, không làm thiệp.",
+                    "revealAfterAttempt": true
+                  },
+                  "rubric": {
+                    "id": "kaigo-gap-worker-health-01-followup10-step-2-rubric",
+                    "requiredMeanings": [
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-2-rubric-meaning-1",
+                        "vi": "Hỏi không áp đặt câu trả lời về đau."
+                      },
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-2-rubric-meaning-2",
+                        "vi": "Hỏi so sánh mệt toàn thân với lúc nãy và mong muốn nghỉ hiện tại."
+                      }
+                    ],
+                    "acceptableJa": [
+                      "小野寺さん、今、痛いところはありますか。全身のだるさは先ほどと比べてどうですか。今も休みたいお気持ちですか。",
+                      "今の痛みについて教えていただけますか。全身のだるさは先ほどから変わりましたか。今はどう過ごしたいですか。"
+                    ],
+                    "unsafeJa": [
+                      "痛くないですよね。年齢のせいなのでカード作りをしましょう。"
+                    ],
+                    "feedbackVi": "Kiểm các mục ý và nguồn dữ kiện; cho nói lại phần thiếu trước chuyển bước. Không đòi trùng từng chữ.",
+                    "evaluationPolicy": {
+                      "exactStringMatchRequired": false,
+                      "runtimeImplemented": false
+                    },
+                    "assessmentCases": [
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-2-rubric-case-1",
+                        "inputJa": "小野寺さん、今、痛いところはありますか。全身のだるさは先ほどと比べてどうですか。今も休みたいお気持ちですか。",
+                        "expected": "accept_meaning",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-2-rubric-case-2",
+                        "inputJa": "今も休みたいですか。",
+                        "expected": "clarify_missing_information",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-2-rubric-case-3",
+                        "inputJa": "痛くないですよね。年齢のせいなのでカード作りをしましょう。",
+                        "expected": "correct_before_advance",
+                        "specOnly": true
+                      }
+                    ],
+                    "review": {
+                      "domainHumanReviewed": false,
+                      "nativeLanguageReviewed": false,
+                      "publisherReviewed": false,
+                      "rightsReviewed": false,
+                      "runtimeIntegrated": false,
+                      "appIntegrationReady": false,
+                      "releaseReady": false
+                    }
+                  }
+                },
+                {
+                  "id": "kaigo-gap-worker-health-01-followup10-step-3",
+                  "responseTarget": "care_lead_followup_report",
+                  "npcId": "kaigo-npc-care-lead",
+                  "promptVi": "Báo dữ kiện mới nhận9:20 cho Kawase, phân biệt lời bác với số đo/chẩn đoán.",
+                  "modelJa": "九時二十分に小野寺さんへ尋ねました。ご本人は痛いところはなく、全身のだるさは先ほどと同じで、カード作りをせず休みたいと話しました。九時十五分には痛みをまだ尋ねていませんでした。測定値と原因は引き続き未確認です。介助は未開始で、担当職員が付いています。",
+                  "modelVi": "Lúc9:20 tôi đã hỏi bác. Bác nói không có chỗ đau, toàn thân mệt như lúc nãy, muốn nghỉ không làm thiệp. 9:15 còn chưa hỏi đau. Số đo và nguyên nhân vẫn chưa kiểm. Chưa hỗ trợ, nhân viên phụ trách ở cùng bác.",
+                  "afterAttemptCard": {
+                    "ja": "九時二十分のご本人の言葉として受けました。藤野看護師には連絡しましたが、まだ到着していません。あなたの担当変更も未確定です。",
+                    "vi": "Tôi nhận đây là lời bác lúc9:20. Tôi đã liên lạc điều dưỡng Fujino, nhưng chị chưa đến. Việc đổi phân công của bạn cũng chưa chốt.",
+                    "revealAfterAttempt": true
+                  },
+                  "rubric": {
+                    "id": "kaigo-gap-worker-health-01-followup10-step-3-rubric",
+                    "requiredMeanings": [
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-3-rubric-meaning-1",
+                        "vi": "9:20 đã hỏi, không đau là lời bác lúc mới này;9:15 chưa hỏi, không sửa thành đã xác nhận."
+                      },
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-3-rubric-meaning-2",
+                        "vi": "Theo lời bác: mệt toàn thân không đổi, muốn nghỉ và không làm thiệp."
+                      },
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-3-rubric-meaning-3",
+                        "vi": "Số đo/nguyên nhân vẫn chưa kiểm; chưa hỗ trợ và vẫn có người phụ trách."
+                      }
+                    ],
+                    "acceptableJa": [
+                      "九時二十分に小野寺さんへ尋ねました。ご本人は痛いところはなく、全身のだるさは先ほどと同じで、カード作りをせず休みたいと話しました。九時十五分には痛みをまだ尋ねていませんでした。測定値と原因は引き続き未確認です。介助は未開始で、担当職員が付いています。",
+                      "九時二十分、ご本人は痛みがなく、全身のだるさは変わらず、カード作りより休みたいと話しました。九時十五分の時点では痛みを聞いていません。測定値と原因は未確認のままで、介助はまだです。担当者がそばにいます。"
+                    ],
+                    "unsafeJa": [
+                      "九時十五分から痛みはなく、検査も正常なので原因は年齢です。"
+                    ],
+                    "feedbackVi": "Kiểm các mục ý và nguồn dữ kiện; cho nói lại phần thiếu trước chuyển bước. Không đòi trùng từng chữ.",
+                    "evaluationPolicy": {
+                      "exactStringMatchRequired": false,
+                      "runtimeImplemented": false
+                    },
+                    "assessmentCases": [
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-3-rubric-case-1",
+                        "inputJa": "九時二十分に小野寺さんへ尋ねました。ご本人は痛いところはなく、全身のだるさは先ほどと同じで、カード作りをせず休みたいと話しました。九時十五分には痛みをまだ尋ねていませんでした。測定値と原因は引き続き未確認です。介助は未開始で、担当職員が付いています。",
+                        "expected": "accept_meaning",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-3-rubric-case-2",
+                        "inputJa": "九時二十分、ご本人は痛くないと話しました。",
+                        "expected": "clarify_missing_information",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-3-rubric-case-3",
+                        "inputJa": "九時十五分から痛みはなく、検査も正常なので原因は年齢です。",
+                        "expected": "correct_before_advance",
+                        "specOnly": true
+                      }
+                    ],
+                    "review": {
+                      "domainHumanReviewed": false,
+                      "nativeLanguageReviewed": false,
+                      "publisherReviewed": false,
+                      "rightsReviewed": false,
+                      "runtimeIntegrated": false,
+                      "appIntegrationReady": false,
+                      "releaseReady": false
+                    }
+                  }
+                },
+                {
+                  "id": "kaigo-gap-worker-health-01-followup10-step-4",
+                  "responseTarget": "care_lead_readback_pending",
+                  "npcId": "kaigo-npc-care-lead",
+                  "promptVi": "Nhắc lại kết quả liên lạc và phần còn chưa xong với Kawase; không biến đã liên lạc thành đã kiểm.",
+                  "modelJa": "藤野看護師には連絡済みで、まだ到着していないのですね。測定値と原因、私の担当変更は未確認のままとして申し送ります。ご本人の休みたいお気持ちも伝え、介助はまだ始めていません。",
+                  "modelVi": "Điều dưỡng Fujino đã được liên lạc nhưng chưa đến, đúng không? Tôi bàn giao rằng số đo, nguyên nhân và đổi phân công vẫn chưa xác nhận; cũng chuyển mong muốn nghỉ của bác. Tôi chưa bắt đầu hỗ trợ.",
+                  "afterAttemptCard": {
+                    "ja": "はい、その内容で受けました。看護師への連絡と確認の完了は分けて記録してください。",
+                    "vi": "Vâng, tôi nhận nội dung đó. Hãy ghi tách việc đã liên lạc điều dưỡng và đã kiểm xong.",
+                    "revealAfterAttempt": true
+                  },
+                  "rubric": {
+                    "id": "kaigo-gap-worker-health-01-followup10-step-4-rubric",
+                    "requiredMeanings": [
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-4-rubric-meaning-1",
+                        "vi": "Đã liên lạc Fujino, chưa đến khác đã kiểm xong."
+                      },
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-4-rubric-meaning-2",
+                        "vi": "Số đo/nguyên nhân/đổi phân công chưa xác nhận; chưa hỗ trợ và giữ mong muốn nghỉ."
+                      }
+                    ],
+                    "acceptableJa": [
+                      "藤野看護師には連絡済みで、まだ到着していないのですね。測定値と原因、私の担当変更は未確認のままとして申し送ります。ご本人の休みたいお気持ちも伝え、介助はまだ始めていません。",
+                      "看護師への連絡は済みましたが、到着と確認はまだです。測定値、原因、私の担当変更は未確認として伝えます。ご本人は休みたいと話しており、介助は未開始です。"
+                    ],
+                    "unsafeJa": [
+                      "看護師に連絡したので確認は終わり、私が介助を再開します。"
+                    ],
+                    "feedbackVi": "Kiểm các mục ý và nguồn dữ kiện; cho nói lại phần thiếu trước chuyển bước. Không đòi trùng từng chữ.",
+                    "evaluationPolicy": {
+                      "exactStringMatchRequired": false,
+                      "runtimeImplemented": false
+                    },
+                    "assessmentCases": [
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-4-rubric-case-1",
+                        "inputJa": "藤野看護師には連絡済みで、まだ到着していないのですね。測定値と原因、私の担当変更は未確認のままとして申し送ります。ご本人の休みたいお気持ちも伝え、介助はまだ始めていません。",
+                        "expected": "accept_meaning",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-4-rubric-case-2",
+                        "inputJa": "看護師には連絡済みです。",
+                        "expected": "clarify_missing_information",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-worker-health-01-followup10-step-4-rubric-case-3",
+                        "inputJa": "看護師に連絡したので確認は終わり、私が介助を再開します。",
+                        "expected": "correct_before_advance",
+                        "specOnly": true
+                      }
+                    ],
+                    "review": {
+                      "domainHumanReviewed": false,
+                      "nativeLanguageReviewed": false,
+                      "publisherReviewed": false,
+                      "rightsReviewed": false,
+                      "runtimeIntegrated": false,
+                      "appIntegrationReady": false,
+                      "releaseReady": false
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "retainedVariant": {
+            "id": "kaigo-gap-worker-health-01-legacy-variant-10",
+            "kind": "legacy_transfer_fields_of_this_object",
+            "contentFields": [
+              "id",
+              "contextVi",
+              "taskVi",
+              "expectedMeaningVi",
+              "modelJa",
+              "method",
+              "responseRoleVi",
+              "sourceRefs",
+              "rubric",
+              "feedbackAfterAttempt",
+              "sameDaySlot"
+            ],
+            "usageVi": "Luyện nhánh cũ ở lần riêng khi cần ôn. Một lần chỉ chọn một variant; chưa chứng minh luân phiên đủ năng lực trong30 phút.",
+            "coversQuestionIds": [
+              "kaigo-gap-worker-health-01-q04",
+              "kaigo-gap-worker-health-01-q05"
+            ]
+          },
+          "selectionGate": {
+            "candidateSelected": false,
+            "runtimeImplemented": false,
+            "additionalMandatoryMinutes": 0,
+            "plannedDailyMinutes": 30,
+            "durationMeasured": false,
+            "observedLearnerData": null,
+            "maximumRequiredVariantsPerRehearsal": 1
+          },
+          "coverageVi": "Thêm lượt nhận dữ kiện/kết quả rồi báo đúng người. Giữ tất cả legacy, bài/câu cũ và nhánh09; tương đương và tải vẫn partial.",
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
         }
       },
       "questions": [
@@ -788,7 +1147,8 @@
         "retainedCoverageStatus": "audit_03_partial_mapping_not_equivalent",
         "replacementAuditRef": "reviews/priority-gap-replacement-audit-03.json",
         "replacementReady": false,
-        "partialRepairRef": "reviews/priority-gap-partial-repair-05.json"
+        "partialRepairRef": "reviews/priority-gap-partial-repair-05.json",
+        "followupRepairRef": "reviews/priority-gap-followup-10.json"
       },
       "responseRubricIds": [
         "kaigo-gap-worker-health-01-rubric-01",
@@ -2132,6 +2492,13 @@
     "date": "2026-10-08",
     "evidenceRef": "reviews/priority-gap-transfer-merge-09.json",
     "scope": "add_transfer_rehearsal_plan_only_preserve_legacy_fields",
+    "status": "APPLIED_TO_DRAFT_VARIANTS_NOT_CURRICULUM_OR_APP",
+    "replacementReady": false
+  },
+  "editorialFollowup10": {
+    "date": "2026-10-08",
+    "evidenceRef": "reviews/priority-gap-followup-10.json",
+    "scope": "add_followup_plan_only_preserve_all_previous_fields",
     "status": "APPLIED_TO_DRAFT_VARIANTS_NOT_CURRICULUM_OR_APP",
     "replacementReady": false
   }

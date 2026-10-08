@@ -3,11 +3,13 @@ import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
 import {resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {restoreFollowup10Bundle} from './kaigo-followup-10-lineage.mjs';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const evidencePath='docs/ssw-workspace/kaigo/reviews/priority-gap-transfer-merge-09.json';
 const serial=x=>JSON.stringify(x,null,2)+'\n';
 const blob=s=>{const b=Buffer.from(s);return crypto.createHash('sha1').update('blob '+b.length+'\0').update(b).digest('hex');};
 export function restoreMerge09Bundle(bundle,filePath){
+ bundle=restoreFollowup10Bundle(bundle,filePath);
  if(!bundle.editorialTransferMerge)return structuredClone(bundle);
  const e=JSON.parse(fs.readFileSync(resolve(root,evidencePath),'utf8'));
  const c=e.changes.find(c=>filePath.replaceAll('\\','/').endsWith(c.path));

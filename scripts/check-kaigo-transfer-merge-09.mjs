@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
 import {restoreMerge09Bundles} from './kaigo-transfer-merge-09-lineage.mjs';
+import {restoreFollowup10Bundles} from './kaigo-followup-10-lineage.mjs';
 const dir='docs/ssw-workspace/kaigo/';
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const blob=s=>{const b=Buffer.from(s);return crypto.createHash('sha1').update('blob '+b.length+'\0').update(b).digest('hex');};
@@ -52,7 +53,9 @@ export function validateMerge09(bundles){
  restoreMerge09Bundles(bundles);
  return {newVariantTurns:cloth.dialogue.length+flow.steps.length*2,newVariantRubrics:cloth.responseRubrics.length+flow.steps.length,newVariantCaseSpecs:cloth.responseRubrics.reduce((n,r)=>n+r.assessmentCases.length,0)+flow.steps.reduce((n,s)=>n+s.rubric.assessmentCases.length,0),legacyTransferFieldsPreserved:true,IDsChecked:ids.size};
 }
-const bundles=['01','02'].map(n=>read(dir+'drafts/priority-gap-supplements-'+n+'.json'));
+const rawBundles=['01','02'].map(n=>read(dir+'drafts/priority-gap-supplements-'+n+'.json'));
+const historicalSnapshotValidation=rawBundles.some(b=>b.editorialFollowup10);
+const bundles=restoreFollowup10Bundles(rawBundles);
 const result=validateMerge09(bundles);
  assert.equal(evidence.timingSheets.length,2,'current timing sheets');
  for(const sheet of evidence.timingSheets){
@@ -89,4 +92,4 @@ const controls=[
  [x=>x[0].modules[0].knowledgeModule.sections[0].explanationVi+=' changed',/merge09 current bundle identity/]
 ];
 for(const [mutate,reason] of controls){const x=structuredClone(bundles);mutate(x);assert.throws(()=>validateMerge09(x),reason);}
-console.log(JSON.stringify({status:'PASS_DRAFT_VARIANT_LINKS_FROZEN_PROJECTION_NOT_QUALITY_APPROVAL',...result,immutableInputs:evidence.immutableInputs.length,negativeControlsRejected:controls.length,loadMetrics:metrics,semanticEvaluatorExecuted:false,learnerTimingExecuted:false,coreLessons:54,coreQuestions:270,mockQuestions:60}));
+console.log(JSON.stringify({status:'PASS_DRAFT_VARIANT_LINKS_FROZEN_PROJECTION_NOT_QUALITY_APPROVAL',...result,historicalSnapshotValidation,immutableInputs:evidence.immutableInputs.length,negativeControlsRejected:controls.length,loadMetrics:metrics,semanticEvaluatorExecuted:false,learnerTimingExecuted:false,coreLessons:54,coreQuestions:270,mockQuestions:60}));
