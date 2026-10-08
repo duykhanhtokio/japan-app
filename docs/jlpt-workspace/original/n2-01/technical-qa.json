@@ -1,0 +1,49 @@
+{
+  "examId": "jpapp-n2-original-01-v1",
+  "status": "technical_integration_complete_pending_remote_persistence",
+  "written": 75,
+  "listeningResponses": 31,
+  "uniqueDialogueFiles": 30,
+  "sharedDialogueResponses": 2,
+  "passages": 12,
+  "unscoredExamples": 5,
+  "requiredImages": 0,
+  "reasonImagesNotRequired": "Independent N2 text-only task/printed alternatives; N2 blueprint has no verbal-expression illustration group.",
+  "decodedAudioDurationMs": 3008969,
+  "musicDurationMs": 60000,
+  "musicPcmFrames": 1440000,
+  "contentAndAdapterChecks": "PASS",
+  "uiLock": "PASS 10/10",
+  "continuousPlaybackAndAutomaticMusicBoundary": "PASS actual Chromium",
+  "runnerActions": [
+    "Start",
+    "Select/save",
+    "Shared dialogue responses3/4 save independent answers",
+    "Audio begins at opening",
+    "Pause",
+    "Back/reopen/resume",
+    "Incomplete submit",
+    "Score",
+    "Review"
+  ],
+  "runnerResult": {
+    "correct": 0,
+    "wrong": 3,
+    "unanswered": 103,
+    "total": 106
+  },
+  "screenshotsVisuallyInspected": [
+    "runner-answer-430x932.png",
+    "runner-integrated-430x932.png",
+    "runner-result-430x932.png"
+  ],
+  "assetRepair": "Two sidecars initially truncated; restored exact expected hashes/PCM from unchanged speech cache, no fresh voice/model/content; all 31 response mappings and 30 files decoded and verified afterwards.",
+  "typeScript": "Only existing unrelated TS2352 in src/services/life-content-repository.ts:47; no JLPT diagnostic.",
+  "runtimeScope": "Unmodified production runner/shared UI in isolated RN-web harness. Supplied focus/backdrop contexts and scratch NotoSansJP because approved font/royal art remain LFS placeholders here; layout/interaction QA, not exact font/art/full-router/native device approval.",
+  "nativeSpeakerReviewed": false,
+  "perceptualApproval": false,
+  "publisherReviewed": false,
+  "rightsReleaseReviewCompleted": false,
+  "releaseReady": false,
+  "transportRecovery": "Transport recovery: GitHub connector rejects request bodies above16MiB. Continuous MP3 re-encoded directly from the unchanged original24kHz mono speech PCM cache at32kbps; no MP3-to-MP3 conversion or fresh synthesis. Same3008969ms timeline, original96kbps sidecars/music retained. Decoder and Chromium playback rechecked; perceptual approval remainsfalse."
+}

@@ -181,3 +181,7 @@ Nhà phát hành đã chọn trực tiếp trong phiên kiểm tra checkpoint: s
 ## Mandatory colored 2D and content uniqueness standard — 2026-10-07
 
 Apply [JLPT_IMAGE_AND_UNIQUENESS_STANDARD.md](JLPT_IMAGE_AND_UNIQUENESS_STANDARD.md) to every independent original and subsequent exam. Publisher requested all illustrations colored 2D and a semantic duplicate audit; different names or nouns alone do not create an independent situation.
+
+## Nhịp nghe N2 đã chốt — 08/10/2026
+
+Nhà phát hành trả lời “đồng ý” cho bảng nhịp N2: sau giới thiệu 2 giây; giữa lượt thoại 0,5 giây; trả lời 問題１/２/３/４/５ lần lượt 12/12/12/8/15 giây mỗi đơn vị chấm điểm. Giữ bốn giọng, speedScale 0.9, mục tiêu nghe khoảng 50 phút (3000000ms), nhạc không lời đúng 60000ms sau問題２ trước問題３ và hai thông báo. Đây là nhịp thiết kế app, không xác minh nhịp đề nguồn hoặc tolerance. Không tự áp cho N1.

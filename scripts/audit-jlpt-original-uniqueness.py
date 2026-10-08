@@ -12,13 +12,14 @@ for p in sorted((R/'src/data/jlpt-original').glob('n*/??/master.ja.json')):
  for q in d['questions']:
   text=q.get('completedSentence') or q.get('ordering',{}).get('completedSentence') or q.get('sentence') or q['prompt']
   if q['section']=='listening':text=spoken([t for t in q['script'] if not (t[0] in ['narrator','adultFemale'] and re.fullmatch(r'(?:短い言葉|ことば).*返事を選んでください。',t[1]))])
-  if q['section']=='vocabulary' and q['group']==5:text='\n'.join(o['text'] for o in q['options'])
+  if q['section']=='vocabulary' and q['group']==({'N2':6,'N1':4}.get(d['level'],5)):text='\n'.join(o['text'] for o in q['options'])
+  if d['level'] in ['N2','N1'] and q['section']=='vocabulary' and q['group']==({'N2':5,'N1':3}[d['level']]):text=text.split('\n',1)[-1]
   text=re.sub(r'\n(?:【.*?】のことば.*|.*読み方.*|.*漢字.*どれですか。)$','',text)
   if q['section']!='listening' and not q.get('passageId') and not (q['section']=='vocabulary' and q['group']==5):
    quoted=re.search(r'「(.*?)」',text)
    text=quoted.group(1) if quoted and q['section']=='vocabulary' and q['group'] in [1,2,4] else text.split('\n')[0]
   if q.get('passageId'):text=d['passages'][q['passageId']]+'\n'+text
-  units.append({'id':q['id'],'text':text,'kind':'question','passage':q.get('passageId'),'exam':d['examId']});counts['questions']+=1
+  units.append({'id':q['id'],'text':text,'kind':'question','passage':q.get('passageId'),'sharedDialogue':q.get('sharedDialogueId'),'exam':d['examId']});counts['questions']+=1
  org=json.loads(p.with_name('listening-organization.ja.json').read_text())
  for g in org['groups']:
   e=g['example'];units.append({'id':e['id'],'text':spoken(e['script']),'kind':'example'});counts['examples']+=1
@@ -26,6 +27,7 @@ for u in units:u['norm']=norm(u['text']);u['grams']=set(u['norm'][i:i+3] for i i
 exact=[];near=[]
 for a,b in itertools.combinations(units,2):
  if a.get('passage') and a.get('exam')==b.get('exam') and a.get('passage')==b.get('passage'):continue
+ if a.get('sharedDialogue') and a.get('exam')==b.get('exam') and a.get('sharedDialogue')==b.get('sharedDialogue'):continue
  if min(len(a['norm']),len(b['norm']))<12:continue
  if a['norm']==b['norm']:exact.append({'a':a['id'],'b':b['id'],'aText':a['text'],'bText':b['text']});continue
  if not a['grams'] or not b['grams']:continue
