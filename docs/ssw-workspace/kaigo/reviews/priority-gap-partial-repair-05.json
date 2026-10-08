@@ -1,0 +1,536 @@
+{
+  "version": 1,
+  "date": "2026-10-08",
+  "timezone": "Asia/Tokyo",
+  "status": "PARTIAL_MAPPING_DRAFT_REPAIR_NOT_REPLACEMENT_APPROVAL",
+  "baselineRemoteCommit": "39be36b3e9fd36ee074f1e045966057952aaa47c",
+  "previousAuditRef": "reviews/priority-gap-applied-repair-04.json",
+  "historicalReplacementAuditRef": "reviews/priority-gap-replacement-audit-03.json",
+  "files": [
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/priority-gap-supplements-01.json",
+      "beforeGitBlobSha": "dfdfe9df879b07c42935a0593dc0a8fced6cf0f0",
+      "beforeSha256": "bb5184c5e1c2c9ab1eedc582d34ea0c6610c11fd6c0e661d7a59cd758664f62b",
+      "afterSha256": "8d6b873f092ab852f06b84100e012fc35fac15262322cc6b2f1191664e35eb1b",
+      "moduleId": "kaigo-gap-worker-health-01",
+      "correctIndices": [
+        1,
+        3,
+        0,
+        2,
+        1
+      ],
+      "readingJaBefore": 97,
+      "readingJaAfter": 107,
+      "transferJaBefore": 52,
+      "transferJaAfter": 147,
+      "questionJaBefore": 520,
+      "questionJaAfter": 633,
+      "q04OptionLengths": [
+        36,
+        40,
+        35,
+        32
+      ],
+      "previousAppliedModuleId": "kaigo-gap-infection-01",
+      "previousAppliedModuleSha256": "c4ba55486894063bbe9a11215d0626915f094ba48c9b176fe015538889a3f314"
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/priority-gap-supplements-02.json",
+      "beforeGitBlobSha": "845c6b824e0c11fa8bd61b7be26f93e3ddd3080e",
+      "beforeSha256": "f04727e04eec10df565cb4d650d1a35949a58f4618f5879d904f4ad85af62762",
+      "afterSha256": "5c16deb97c174a2d8421112a8b5cabf76bff8b7aa2731f7a7e43902a72a1b34f",
+      "moduleId": "kaigo-gap-services-01",
+      "correctIndices": [
+        0,
+        2,
+        1,
+        3,
+        0
+      ],
+      "readingJaBefore": 139,
+      "readingJaAfter": 178,
+      "transferJaBefore": 76,
+      "transferJaAfter": 239,
+      "questionJaBefore": 511,
+      "questionJaAfter": 610,
+      "q04OptionLengths": [
+        39,
+        30,
+        31,
+        35
+      ],
+      "previousAppliedModuleId": "kaigo-gap-care-process-01",
+      "previousAppliedModuleSha256": "6ef9bcc28b8fc305da74fce5d058772e50e12890b075663b3afc938236c5d2da"
+    }
+  ],
+  "changes": [
+    {
+      "moduleId": "kaigo-gap-worker-health-01",
+      "path": "docs/ssw-workspace/kaigo/drafts/priority-gap-supplements-01.json",
+      "before": {
+        "reading": {
+          "ja": "勤務前の相談記録：八時二十分、職員は「今朝から腰が痛い」と川瀬に伝えた。移乗介助はまだ開始していない。利用者は担当職員と休んでいる。川瀬は方法と担当を確認中で、変更後の役割はまだ決まっていない。",
+          "vi": "Ghi nhận trao đổi trước công việc: 8:20, nhân viên báo Kawase rằng đau vùng lưng dưới từ sáng. Hỗ trợ chuyển người chưa bắt đầu. Người sử dụng đang nghỉ cùng nhân viên được phân công. Kawase đang kiểm phương án và người phụ trách; vai trò sau thay đổi chưa được quyết định."
+        },
+        "q04": {
+          "id": "kaigo-gap-worker-health-01-q04",
+          "kind": "reading",
+          "promptJa": "相談記録から、まだ決まっていないことはどれですか。",
+          "promptVi": "Theo ghi nhận trao đổi, điều gì chưa được quyết định?",
+          "optionsJa": [
+            "相談した時刻。",
+            "職員が伝えた症状。",
+            "変更後の職員の役割。",
+            "介助が未開始であること。"
+          ],
+          "optionsVi": [
+            "Giờ trao đổi.",
+            "Triệu chứng nhân viên đã báo.",
+            "Vai trò nhân viên sau thay đổi.",
+            "Việc hỗ trợ chưa bắt đầu."
+          ],
+          "correctIndex": 2,
+          "rationalesVi": [
+            "Sai: Có 8:20.",
+            "Sai: Có lời báo đau từ sáng.",
+            "Đúng: Ghi rõ đang kiểm, vai trò chưa chốt.",
+            "Sai: Ghi rõ chưa bắt đầu."
+          ],
+          "feedbackAfterAttempt": true,
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        "transferPractice": {
+          "id": "kaigo-gap-worker-health-01-transfer",
+          "contextVi": "Trước khi hỗ trợ theo kế hoạch, bạn nhận thấy mệt sau một đêm ngủ kém. Bác đang có đồng nghiệp được phân công ở cùng. Bạn chưa bắt đầu nhiệm vụ.",
+          "taskVi": "Báo tình trạng và công việc chưa bắt đầu; nhờ người phụ trách kiểm phân công, không suy nguyên nhân bệnh hoặc tự thay cách chuyển người.",
+          "expectedMeaningVi": [
+            "Mệt và ngủ kém là dữ kiện báo, không phải chẩn đoán.",
+            "Chưa bắt đầu và bác đang có đồng nghiệp.",
+            "Nhờ xác nhận nhiệm vụ/phương án trước làm."
+          ],
+          "modelJa": "昨夜あまり眠れず、今は疲れを感じています。介助はまだ始めていません。担当と方法を確認していただけますか。",
+          "method": "bounded_editorial_rehearsal_not_runtime_evaluator"
+        }
+      }
+    },
+    {
+      "moduleId": "kaigo-gap-services-01",
+      "path": "docs/ssw-workspace/kaigo/drafts/priority-gap-supplements-02.json",
+      "before": {
+        "reading": {
+          "ja": "一般相談メモ：森川恵さんに、職員が自宅を訪問する形、本人が日中に施設へ通う形、施設で生活する形の違いを説明した。恵さんは日中の交流を考えているが、母親の希望はまだ聞いていない。相談窓口につなぐ方法を担当者に確認する予定。サービスの選択、利用条件の確認、申込みはまだ行っていない。",
+          "vi": "Phiếu hỏi thông tin chung: Đã giải thích cho Megumi Morikawa sự khác nhau giữa nhân viên đến nhà, bác đến cơ sở ban ngày, và sống tại cơ sở. Megumi đang nghĩ về giao lưu ban ngày nhưng chưa hỏi mong muốn của mẹ. Dự kiến xác nhận với phụ trách cách liên hệ đầu mối tư vấn. Chưa chọn dịch vụ, kiểm điều kiện sử dụng hay đăng ký."
+        },
+        "q04": {
+          "id": "kaigo-gap-services-01-q04",
+          "kind": "reading",
+          "promptJa": "相談メモから、今後確認する予定なのはどれですか。",
+          "promptVi": "Theo phiếu, dự kiến sẽ xác nhận điều gì?",
+          "optionsJa": [
+            "三つの形の違い。",
+            "恵さんが日中の交流を考えていること。",
+            "母親の希望をまだ聞いていないこと。",
+            "相談窓口につなぐ方法。"
+          ],
+          "optionsVi": [
+            "Sự khác nhau giữa ba hình thức.",
+            "Megumi đang nghĩ về giao lưu ban ngày.",
+            "Việc chưa hỏi mong muốn của mẹ.",
+            "Cách liên hệ đầu mối tư vấn."
+          ],
+          "correctIndex": 3,
+          "rationalesVi": [
+            "Sai: Phiếu ghi đã giải thích.",
+            "Sai: Phiếu đã ghi mong muốn Megumi.",
+            "Sai: Phiếu đã ghi chưa hỏi mẹ; đây là trạng thái đã biết.",
+            "Đúng: Phiếu ghi dự kiến kiểm cách liên hệ."
+          ],
+          "feedbackAfterAttempt": true,
+          "practiceScope": "lesson_check_not_full_mock",
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        "transferPractice": {
+          "id": "kaigo-gap-services-01-transfer",
+          "contextVi": "Người nhà nói bác muốn nhân viên đến nhà vì không muốn đi cơ sở, rồi hỏi bạn có bảo đảm ngày mai sử dụng được không. Chưa kiểm người cung cấp và điều kiện.",
+          "taskVi": "Nhắc đúng hướng nhân viên đến nhà; không hứa ngày bắt đầu hoặc đủ điều kiện; chuyển tư vấn phù hợp.",
+          "expectedMeaningVi": [
+            "Nhân viên đến nhà khác bác đến cơ sở.",
+            "Chưa xác nhận khả năng/ngày bắt đầu.",
+            "Hỏi tư vấn và mong muốn bác, chưa đăng ký."
+          ],
+          "modelJa": "職員がご自宅を訪問する形についてのご相談ですね。明日から利用できるかは未確認です。ご本人の希望と利用の条件を、相談窓口で確認していただく必要があります。",
+          "method": "bounded_editorial_rehearsal_not_runtime_evaluator"
+        }
+      }
+    }
+  ],
+  "scopeVi": "Thay bài đọc, q04 và transfer của worker-health/services; giữ nguyên toàn bộ module infection/care-process đã sửa04 và các phần khác. before trong changes là nội dung tự soạn của dự án để tái dựng snapshot04, không phải nguồn bên thứ ba.",
+  "capabilityFollowup": [
+    {
+      "rowId": "replacement-capability-01",
+      "moduleId": "kaigo-gap-worker-health-01",
+      "status": "explicit_applied_draft_added_pending_review",
+      "locator": "transfer resident/staff report"
+    },
+    {
+      "rowId": "replacement-capability-02",
+      "moduleId": "kaigo-gap-worker-health-01",
+      "status": "explicit_applied_draft_added_pending_review",
+      "locator": "transfer resident/staff report"
+    },
+    {
+      "rowId": "replacement-capability-03",
+      "moduleId": "kaigo-gap-worker-health-01",
+      "status": "explicit_applied_draft_added_pending_review",
+      "locator": "transfer resident/staff report"
+    },
+    {
+      "rowId": "replacement-capability-04",
+      "moduleId": "kaigo-gap-worker-health-01",
+      "status": "explicit_applied_draft_added_pending_review",
+      "locator": "reading separate examples + q04 + transfer pain-not-asked"
+    },
+    {
+      "rowId": "replacement-capability-14",
+      "moduleId": "kaigo-gap-services-01",
+      "status": "explicit_applied_draft_added_pending_review",
+      "locator": "reading staged notice + q04 + familyExplanation"
+    },
+    {
+      "rowId": "replacement-capability-15",
+      "moduleId": "kaigo-gap-services-01",
+      "status": "explicit_applied_draft_added_pending_review",
+      "locator": "transfer care-lead report; appointment/selection/handover pending"
+    }
+  ],
+  "remainingCapabilityVi": "Row08 đã có phạm vi tìm được cho phép trong transfer04, nhưng chưa đủ lượt hỏi riêng đồ mong muốn/xin phép bác; các nguyên tắc giữ ở bài khác không được nâng thành tương đương đã duyệt. Các ca quá trình04 vẫn cần rà chuyên môn/ngôn ngữ và đo tải.",
+  "counts": {
+    "modules": 4,
+    "mainDialogueTurns": 36,
+    "candidateQuestions": 20,
+    "mainResponseRubrics": 16,
+    "mainSpecCases": 48,
+    "newTransferRubrics": 2,
+    "newTransferMeaningItems": 17,
+    "newTransferSpecCases": 6,
+    "totalTransferRubricsAfter04And05": 4,
+    "totalTransferSpecCasesAfter04And05": 12,
+    "coreLessons": 54,
+    "coreLessonQuestions": 270,
+    "mockQuestions": 60
+  },
+  "immutableInputs": [
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/curriculum-56-days.json",
+      "gitBlobSha": "8f3c15ee099fa1fd762303b72a24548d449188d3",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/foundation-lessons.json",
+      "gitBlobSha": "9596a17f3d7724a0e07b773d5e4fb1ce71948f35",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/week2-lessons.json",
+      "gitBlobSha": "56cca6b1df57fe2f2889277cb645592d7520dc87",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/movement-lessons.json",
+      "gitBlobSha": "4cc9e1b8de45097a2b49c86fe67a657c00d0f510",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/eating-lessons.json",
+      "gitBlobSha": "1eca79920fd9d79fed9f749be347595e81bacf1c",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/excretion-lessons.json",
+      "gitBlobSha": "957f760ebb126faafc52d5a1e80ae467dacece74",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/hygiene-lessons.json",
+      "gitBlobSha": "61e3ef13ae03bee59e66bd2d4c665cb8f6d66c25",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/housework-lessons.json",
+      "gitBlobSha": "9d9e72d566117eae8e2b79e441f0978047c25c62",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/review-lessons.json",
+      "gitBlobSha": "4a081a5e279ec7c3769093202ef622763f9369ea",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/npc-roster.json",
+      "gitBlobSha": "ef6343c38570d29f261a2026534f2aaa9f1c05d2",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/reviews/priority-gap-supplements-02-evidence.json",
+      "gitBlobSha": "ac0364a3b6a2ab8b00121763942c247c0281bf57",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/reviews/whole-course-coverage-audit.json",
+      "gitBlobSha": "a77e5d9f118f3a66ac7e2d350c3d9cefa7d6f056",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/KAIGO_AUTHORING_RULES.md",
+      "gitBlobSha": "c35f2a3959665ed6b5ddae467c27003c3ec8f02f",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/approved-plan.json",
+      "gitBlobSha": "b793fcb9dd9f8cbf401dde7349483a2b2e82fa14",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/foundation-vocabulary.json",
+      "gitBlobSha": "7b319819ac54a646581b2b236edcc00b5f9f47f8",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/week2-vocabulary.json",
+      "gitBlobSha": "bc9d2ba08f9d7ecc4d8aa49401376c511c5a9d05",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/movement-vocabulary.json",
+      "gitBlobSha": "e8951712f6c6ed43139a3b7ea223228ac138a660",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/eating-vocabulary.json",
+      "gitBlobSha": "1c6af5ed8823527286455d309792769557839373",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/excretion-vocabulary.json",
+      "gitBlobSha": "b9b27d3d26f8b5df8f8ecf9a38f730ff567c5a01",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/hygiene-vocabulary.json",
+      "gitBlobSha": "0ef01a57cc659738f29f41f32a547bc88fe90370",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/housework-vocabulary.json",
+      "gitBlobSha": "2eb41b16b4ec83cdd02d5d70d099a5f44ca18611",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/knowledge-glossary.json",
+      "gitBlobSha": "7fc1cdacc8182eaba2be5b4dba5daae075258a0c",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/eating-response-rubrics.json",
+      "gitBlobSha": "950c6aaab7d0366db0008993d0dad1997753ad7c",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/excretion-response-rubrics.json",
+      "gitBlobSha": "9d41166950b6d0d6e08cb587fa4845e990c5ee41",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/foundation-response-rubrics.json",
+      "gitBlobSha": "b33069ade611d563f9c83d821268324541a66d8b",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/housework-response-rubrics.json",
+      "gitBlobSha": "64ad5f0333af292b744891d16deb419690ea8b4d",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/hygiene-response-rubrics.json",
+      "gitBlobSha": "35ef1c787a73361edf4f20d7f09427482969bd46",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/mock-figures/skills-practical-01.svg",
+      "gitBlobSha": "7a6bd0c1c74453512c7075b11bb28d8e2974e047",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/mock-figures/skills-practical-02.svg",
+      "gitBlobSha": "ebdd373cc0cae2ed6599eaef843abd05c446b665",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/mock-figures/skills-practical-03.svg",
+      "gitBlobSha": "f4cf7c2c1f29b69b8690aa0af95edd9e577c545c",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/mock-figures/skills-practical-04.svg",
+      "gitBlobSha": "1c4ff77caaca429491d49ddc999b50f5aa72e15f",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/mock-figures/skills-practical-05.svg",
+      "gitBlobSha": "3fe409e9386aabd7c53129c881a653a41b0ca666",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/movement-response-rubrics.json",
+      "gitBlobSha": "875185e8cce5df92e3cbdc629011b5554f5f4651",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/review-response-rubrics.json",
+      "gitBlobSha": "196417a75491eb7bcadac7003252447e5ce600f7",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/week2-response-rubrics.json",
+      "gitBlobSha": "0ff7e42196ddac8577475f450afc1a71f12f63de",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/kaigo-skills-mock-01.json",
+      "gitBlobSha": "f0f2d46f9c2ede5a2260347c31727ff30e676acf",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/drafts/kaigo-japanese-mock-01.json",
+      "gitBlobSha": "1a1a6a26539889c26b8bb5e0d5cfc513ab55f301",
+      "mutableInThisUnit": false
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/reviews/priority-gap-replacement-audit-03.json",
+      "gitBlobSha": "5748e27f62136cd9731b06686d67bf32cbb02060"
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/reviews/priority-gap-applied-repair-04.json",
+      "gitBlobSha": "4b56804d5e765d5ac804d4d8ceecdb886f26f4e1"
+    }
+  ],
+  "sourceVerification": {
+    "primarySha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+    "hashRecomputed": true,
+    "pdfPages": 276,
+    "textPairsRead": [
+      [
+        12,
+        14
+      ],
+      [
+        16,
+        18
+      ],
+      [
+        115,
+        117
+      ],
+      [
+        118,
+        120
+      ]
+    ],
+    "visualPairsChecked": [
+      [
+        115,
+        117
+      ]
+    ],
+    "scopeVi": "Chỉ lấy nguyên tắc tự quyết, sự thật/lời bác, ghi chép và báo cáo nhóm. Thông báo/ví dụ luyện do dự án viết; không rút từ bài đọc/câu hỏi nguồn.",
+    "officialSupplement": {
+      "url": "https://www.mhlw.go.jp/stf/newpage_31197.html",
+      "verification": "official page text retrieved, worker-back prevention context rechecked; existing technical sections and equipment question unchanged"
+    }
+  },
+  "similarity": {
+    "date": "2026-10-08",
+    "sourceSha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+    "sourcePages": 276,
+    "method": "NFKC_strip_whitespace_60_Unicode_codepoint_windows_within_each_source_page",
+    "fields": 744,
+    "fieldsAtLeast60Codepoints": 178,
+    "matchedFields": 0,
+    "matches": [],
+    "scope": "both_candidate_bundles_authored_JA_VI_fields_only_primary_textbook_not_external_sources",
+    "semanticAndImageSimilarityChecked": false,
+    "rightsCertified": false
+  },
+  "load": {
+    "durationMeasured": false,
+    "learnerSessionExecuted": false,
+    "additionalMandatoryMinutes": 0,
+    "method": "NFKC_nonwhitespace_Unicode_codepoints_not_time_or_linguistic_words",
+    "allocationPolicy": "replace existing reading/q04/transfer in same blocks; no second mandatory lesson",
+    "protocolRef": "reviews/priority-gap-timing-protocol-03.json",
+    "limitationsVi": "Mẫu nói dài hơn; services tính cả giải thích cho người nhà và báo phụ trách. Không chứng minh vừa30phút, không giả dữ liệu đo. Kiểm riêng điều kiện còn bỏ sót, retry và feedback."
+  },
+  "validation": {
+    "execution": "Node on isolated remote-blob snapshot; not a git checkout",
+    "scopeVi": "Current validators01/02/03 and new05 on current data; validator04 first validates05 lineage, then reconstructs only the two authorized changed areas to replay its exact predecessor snapshot. No historical audit data rewritten.",
+    "semanticEvaluatorExecuted": false,
+    "appTestsExecuted": false,
+    "fullRepositorySuiteExecuted": false,
+    "workPersistenceScriptExecuted": false,
+    "learnerTimingExecuted": false,
+    "results": [
+      {
+        "path": "scripts/check-kaigo-priority-gap-supplements.mjs",
+        "result": "PASS",
+        "mode": "current_snapshot"
+      },
+      {
+        "path": "scripts/check-kaigo-priority-gap-supplements-02.mjs",
+        "result": "PASS",
+        "mode": "current_snapshot"
+      },
+      {
+        "path": "scripts/check-kaigo-priority-gap-replacement-audit.mjs",
+        "result": "PASS",
+        "mode": "current_snapshot"
+      },
+      {
+        "path": "scripts/check-kaigo-priority-gap-applied-repair.mjs",
+        "result": "PASS",
+        "mode": "validated_current_05_lineage_then_exact_04_predecessor_replay"
+      },
+      {
+        "path": "scripts/check-kaigo-priority-gap-partial-repair.mjs",
+        "result": "PASS",
+        "mode": "current_snapshot"
+      }
+    ],
+    "newNegativeControlsPassed": 4
+  },
+  "review": {
+    "domainHumanReviewed": false,
+    "nativeLanguageReviewed": false,
+    "publisherReviewed": false,
+    "rightsReviewed": false,
+    "runtimeIntegrated": false,
+    "appIntegrationReady": false,
+    "releaseReady": false
+  }
+}

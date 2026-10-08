@@ -84,10 +84,19 @@ export function validateRepairs(bundles,evidence){
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
  const read=p=>JSON.parse(fs.readFileSync(root+p,'utf8'));
- const bundles=['01','02'].map(n=>read('drafts/priority-gap-supplements-'+n+'.json'));
+ let bundles=['01','02'].map(n=>read('drafts/priority-gap-supplements-'+n+'.json'));
+ let predecessorReplay=false;
+ if(bundles.some(b=>b.editorialPartialRepair)){
+  const successor=read('reviews/priority-gap-partial-repair-05.json');
+  const {validatePartialRepair,restoreBaseline}=await import('./check-kaigo-priority-gap-partial-repair.mjs');
+  validatePartialRepair(bundles,successor);
+  for(const f of successor.files)assert.equal(sha(fs.readFileSync(f.path)),f.afterSha256);
+  bundles=restoreBaseline(bundles,successor);
+  predecessorReplay=true;
+ }
  const e=read('reviews/priority-gap-applied-repair-04.json');
  const result=validateRepairs(bundles,e);
- e.files.forEach(f=>assert.equal(sha(fs.readFileSync(f.path)),f.afterSha256,f.path));
+ e.files.forEach((f,n)=>assert.equal(sha(predecessorReplay?JSON.stringify(bundles[n],null,2)+'\n':fs.readFileSync(f.path)),f.afterSha256,f.path));
  for(const f of e.immutableInputs){
   const bytes=fs.readFileSync(f.path);
   const blob=crypto.createHash('sha1').update('blob '+bytes.length+'\0').update(bytes).digest('hex');
@@ -104,5 +113,5 @@ if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).hr
  assert.throws(()=>validateRepairs(missing,e),/resident confirmation/);
  const changed=structuredClone(bundles);changed[0].modules[1].knowledgeModule.sections[0].explanationVi+=' changed';
  assert.throws(()=>validateRepairs(changed,e),/unchanged content projection/);
- console.log(JSON.stringify({...result,immutableInputs:e.immutableInputs.length,negativeControls:3,learnerTimingExecuted:false,appTestsExecuted:false},null,2));
+ console.log(JSON.stringify({...result,predecessorReplay,immutableInputs:e.immutableInputs.length,negativeControls:3,learnerTimingExecuted:false,appTestsExecuted:false},null,2));
 }

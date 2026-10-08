@@ -867,8 +867,8 @@
         }
       ],
       "reading": {
-        "ja": "一般相談メモ：森川恵さんに、職員が自宅を訪問する形、本人が日中に施設へ通う形、施設で生活する形の違いを説明した。恵さんは日中の交流を考えているが、母親の希望はまだ聞いていない。相談窓口につなぐ方法を担当者に確認する予定。サービスの選択、利用条件の確認、申込みはまだ行っていない。",
-        "vi": "Phiếu hỏi thông tin chung: Đã giải thích cho Megumi Morikawa sự khác nhau giữa nhân viên đến nhà, bác đến cơ sở ban ngày, và sống tại cơ sở. Megumi đang nghĩ về giao lưu ban ngày nhưng chưa hỏi mong muốn của mẹ. Dự kiến xác nhận với phụ trách cách liên hệ đầu mối tư vấn. Chưa chọn dịch vụ, kiểm điều kiện sử dụng hay đăng ký."
+        "ja": "サービス相談メモ：訪問・通所・入所の違いを説明済み。本人の希望、利用条件と開始日は未確認。申込みはしていない。\n持ち物相談の案内（練習用）：十月十七日までは手芸材料の品名を書いた相談票だけを受け付ける。十八日以降に本人と相談し、対象を選ぶ。物品は持参しない。\n恵さんは母と相談票を作りたいと依頼した。相談日時は未定。母親は対象をまだ選んでおらず、受渡しもない。",
+        "vi": "Phiếu hỏi dịch vụ: Đã giải thích đến nhà/đến cơ sở ban ngày/sống tại cơ sở. Chưa xác nhận mong muốn bác, điều kiện và ngày bắt đầu; chưa đăng ký.\nThông báo tư vấn đồ dùng để luyện: Đến17/10 chỉ nhận phiếu ghi tên vật liệu thủ công. Từ18/10 trao đổi với chủ đồ rồi chọn đối tượng. Không mang đồ tới.\nMegumi nhờ chuyển mong muốn lập phiếu cùng mẹ. Giờ trao đổi chưa định; mẹ chưa chọn đối tượng, chưa giao nhận đồ."
       },
       "scopeLimitsVi": [
         "Giải thích nhóm khái quát, không quyết định đủ điều kiện, mức chăm sóc, chi phí, nơi cung cấp hoặc đăng ký.",
@@ -877,15 +877,154 @@
       ],
       "transferPractice": {
         "id": "kaigo-gap-services-01-transfer",
-        "contextVi": "Người nhà nói bác muốn nhân viên đến nhà vì không muốn đi cơ sở, rồi hỏi bạn có bảo đảm ngày mai sử dụng được không. Chưa kiểm người cung cấp và điều kiện.",
-        "taskVi": "Nhắc đúng hướng nhân viên đến nhà; không hứa ngày bắt đầu hoặc đủ điều kiện; chuyển tư vấn phù hợp.",
+        "contextVi": "Megumi hỏi liệu nhân viên có đến nhà mẹ từ ngày mai được không; chưa kiểm mong muốn bác, điều kiện hoặc ngày bắt đầu. Chị cũng muốn mang toàn bộ vật liệu thủ công của mẹ đến theo thông báo trong bài đọc. Đợt hiện tại chỉ nhận phiếu tên đồ đến17/10, trao đổi cùng bác từ18/10. Chị nhờ chuyển mong muốn lập phiếu cùng mẹ; ngày giờ trao đổi chưa định, bác chưa chọn đồ, chưa có giao nhận.",
+        "taskVi": "Giải thích với Megumi hướng đến nhà và các điểm chưa xác nhận; nêu đúng giai đoạn phiếu, không nhận đồ hoặc coi người nhà đã quyết thay mẹ. Sau đó bàn giao lời nhờ cùng ngày giờ/chọn đồ/giao nhận chưa xong cho Kawase.",
         "expectedMeaningVi": [
-          "Nhân viên đến nhà khác bác đến cơ sở.",
-          "Chưa xác nhận khả năng/ngày bắt đầu.",
-          "Hỏi tư vấn và mong muốn bác, chưa đăng ký."
+          "Đến nhà là nhân viên đến; ngày mai/điều kiện/mong muốn bác chưa kiểm, chưa đăng ký.",
+          "Đến17/10 chỉ phiếu tên đồ; từ18/10 mới trao đổi cùng bác, chưa nhận/giao đồ.",
+          "Bàn giao lời nhờ lập phiếu của Megumi với giờ chưa định, bác chưa chọn; kiểm cùng bác/phụ trách."
         ],
-        "modelJa": "職員がご自宅を訪問する形についてのご相談ですね。明日から利用できるかは未確認です。ご本人の希望と利用の条件を、相談窓口で確認していただく必要があります。",
-        "method": "bounded_editorial_rehearsal_not_runtime_evaluator"
+        "modelJa": "恵さんから、お母さまと相談票を作りたいとの依頼を受けました。本人の同意は未確認です。相談日時は未定で、本人による選定や受渡しはまだありません。訪問サービスの希望と条件、開始日も未確認です。本人に確認する機会と相談先への案内について、担当者に相談します。",
+        "method": "bounded_editorial_rehearsal_not_runtime_evaluator",
+        "responseRoleVi": "Bước1 giải thích với Megumi; bước2 báo Kawase. modelJa là bước2, không phải lời nói trực tiếp với bác vắng mặt.",
+        "familyExplanation": {
+          "promptVi": "Nói với Megumi dựa trên dữ kiện cố định; không tạo lời đáp mới của NPC.",
+          "modelJa": "訪問は職員がご自宅へ伺う形ですが、明日から利用できるか、ご本人の希望や条件は未確認で、申込みもしていません。今は十七日まで相談票だけを受け付け、十八日以降にお母さまと対象を相談します。材料そのものはお持ちにならないでください。",
+          "acceptableJa": [
+            "ご自宅へ職員が訪問する形ですね。開始日や条件、ご本人の希望は未確認で、申込みもしていません。十七日までは品名の相談票のみで、十八日以降に本人と対象を決めます。今は物品を受け付けていません。"
+          ],
+          "feedbackAfterAttempt": true
+        },
+        "sourceRefs": [
+          {
+            "sourceId": "kaigo-textbook-2025-03",
+            "printedPage": 12,
+            "pdfPage": 14
+          },
+          {
+            "sourceId": "kaigo-textbook-2025-03",
+            "printedPage": 16,
+            "pdfPage": 18
+          },
+          {
+            "sourceId": "kaigo-textbook-2025-03",
+            "printedPage": 115,
+            "pdfPage": 117
+          },
+          {
+            "sourceId": "kaigo-textbook-2025-03",
+            "printedPage": 118,
+            "pdfPage": 120
+          }
+        ],
+        "rubric": {
+          "id": "kaigo-gap-services-01-transfer-rubric-05",
+          "requiredMeanings": [
+            {
+              "id": "kaigo-gap-services-01-transfer-rubric-05-meaning-1",
+              "vi": "Giải thích nhân viên đến nhà, không phải bác đến cơ sở.",
+              "responseTarget": "family_explanation"
+            },
+            {
+              "id": "kaigo-gap-services-01-transfer-rubric-05-meaning-2",
+              "vi": "Ngày mai/điều kiện/mong muốn bác chưa kiểm, chưa đăng ký.",
+              "responseTarget": "family_explanation"
+            },
+            {
+              "id": "kaigo-gap-services-01-transfer-rubric-05-meaning-3",
+              "vi": "Giải thích phiếu đến17/10, cùng bác chọn từ18/10; không nhận vật liệu ngay.",
+              "responseTarget": "family_explanation"
+            },
+            {
+              "id": "kaigo-gap-services-01-transfer-rubric-05-meaning-4",
+              "vi": "Báo đã nhận lời nhờ của Megumi, không coi mẹ đã đồng ý.",
+              "responseTarget": "care_lead_report"
+            },
+            {
+              "id": "kaigo-gap-services-01-transfer-rubric-05-meaning-5",
+              "vi": "Giờ trao đổi chưa định.",
+              "responseTarget": "care_lead_report"
+            },
+            {
+              "id": "kaigo-gap-services-01-transfer-rubric-05-meaning-6",
+              "vi": "Bác chưa chọn đối tượng.",
+              "responseTarget": "care_lead_report"
+            },
+            {
+              "id": "kaigo-gap-services-01-transfer-rubric-05-meaning-7",
+              "vi": "Chưa giao nhận đồ.",
+              "responseTarget": "care_lead_report"
+            },
+            {
+              "id": "kaigo-gap-services-01-transfer-rubric-05-meaning-8",
+              "vi": "Trao đổi phụ trách về cơ hội hỏi bác và nơi tư vấn.",
+              "responseTarget": "care_lead_report"
+            }
+          ],
+          "acceptableJa": [
+            "恵さんから、お母さまと相談票を作りたいとの依頼を受けました。本人の同意は未確認です。相談日時は未定で、本人による選定や受渡しはまだありません。訪問サービスの希望と条件、開始日も未確認です。本人に確認する機会と相談先への案内について、担当者に相談します。",
+            "恵さんはお母さまと相談票を作りたいとのことです。本人の同意は未確認です。日時はまだ決まらず、本人は対象を選んでいません。物品の受渡しも未実施です。訪問サービスの本人の希望や条件、開始日は未確認です。本人への確認と相談窓口への案内を担当者に相談します。"
+          ],
+          "unsafeOrContradictoryJa": [
+            "恵さんの依頼があるので、本人の選定と受渡しは完了しました。訪問も明日から開始できます。"
+          ],
+          "feedbackVi": "Nêu một ý đúng, chỉ rõ một điểm thiếu hoặc suy luận vượt dữ kiện, rồi luyện lại. Câu khác mẫu đúng ý vẫn được chấp nhận.",
+          "evaluationPolicy": {
+            "meaningBased": true,
+            "exactStringMatchRequired": false,
+            "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+            "missingMeaning": "clarify_before_advance",
+            "unsafeMeaning": "correct_before_advance",
+            "runtimeImplemented": false
+          },
+          "assessmentCases": [
+            {
+              "id": "kaigo-gap-services-01-transfer-rubric-05-accept",
+              "inputJa": "恵さんはお母さまと相談票を作りたいとのことです。本人の同意は未確認です。日時はまだ決まらず、本人は対象を選んでいません。物品の受渡しも未実施です。訪問サービスの本人の希望や条件、開始日は未確認です。本人への確認と相談窓口への案内を担当者に相談します。",
+              "expected": "accept_meaning",
+              "specOnly": true,
+              "inputFamilyJa": "訪問は職員がご自宅へ伺う形ですが、明日から利用できるか、ご本人の希望や条件は未確認で、申込みもしていません。今は十七日まで相談票だけを受け付け、十八日以降にお母さまと対象を相談します。材料そのものはお持ちにならないでください。"
+            },
+            {
+              "id": "kaigo-gap-services-01-transfer-rubric-05-clarify",
+              "inputJa": "恵さんから相談票を作りたいとの希望を聞きました。担当者に伝えます。",
+              "expected": "clarify_missing_information",
+              "specOnly": true,
+              "inputFamilyJa": "訪問は職員がご自宅へ伺う形です。"
+            },
+            {
+              "id": "kaigo-gap-services-01-transfer-rubric-05-reject",
+              "inputJa": "恵さんの依頼があるので、本人の選定と受渡しは完了しました。訪問も明日から開始できます。",
+              "expected": "correct_before_advance",
+              "specOnly": true,
+              "inputFamilyJa": "訪問は職員がご自宅へ伺う形ですが、明日から利用できるか、ご本人の希望や条件は未確認で、申込みもしていません。今は十七日まで相談票だけを受け付け、十八日以降にお母さまと対象を相談します。材料そのものはお持ちにならないでください。"
+            }
+          ],
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          },
+          "responseTargets": [
+            "family_explanation",
+            "care_lead_report"
+          ],
+          "acceptableFamilyJa": [
+            "訪問は職員がご自宅へ伺う形ですが、明日から利用できるか、ご本人の希望や条件は未確認で、申込みもしていません。今は十七日まで相談票だけを受け付け、十八日以降にお母さまと対象を相談します。材料そのものはお持ちにならないでください。",
+            "ご自宅へ職員が訪問する形ですね。開始日や条件、ご本人の希望は未確認で、申込みもしていません。十七日までは品名の相談票のみで、十八日以降に本人と対象を決めます。今は物品を受け付けていません。"
+          ]
+        },
+        "feedbackAfterAttempt": true,
+        "sameDaySlot": {
+          "activity": "npc_practice",
+          "mode": "replace_existing_transfer_rehearsal_not_append",
+          "additionalMandatoryMinutes": 0,
+          "durationMeasured": false
+        }
       },
       "questions": [
         {
@@ -999,26 +1138,26 @@
         {
           "id": "kaigo-gap-services-01-q04",
           "kind": "reading",
-          "promptJa": "相談メモから、今後確認する予定なのはどれですか。",
-          "promptVi": "Theo phiếu, dự kiến sẽ xác nhận điều gì?",
+          "promptJa": "持ち物相談の案内と恵さんの依頼から、十月十七日までの段階として適切なのはどれですか。",
+          "promptVi": "Theo thông báo và lời nhờ Megumi, giai đoạn đến17/10 là gì?",
           "optionsJa": [
-            "三つの形の違い。",
-            "恵さんが日中の交流を考えていること。",
-            "母親の希望をまだ聞いていないこと。",
-            "相談窓口につなぐ方法。"
+            "母親の材料を全て受け取り、本人との相談や受渡しの日時も決まったものとして扱う。",
+            "相談票を受け取る段階なので、母親の対象選びも完了したと扱う。",
+            "対象を選ぶ相談は十八日以降なので、相談票も十八日から受け取る。",
+            "品名の相談票だけを受け取り、母親との対象選びや物品の受渡しとは分ける。"
           ],
           "optionsVi": [
-            "Sự khác nhau giữa ba hình thức.",
-            "Megumi đang nghĩ về giao lưu ban ngày.",
-            "Việc chưa hỏi mong muốn của mẹ.",
-            "Cách liên hệ đầu mối tư vấn."
+            "Nhận hết vật liệu của mẹ; coi giờ trao đổi và giao nhận với bác đã định.",
+            "Đang nhận phiếu nên coi mẹ đã chọn xong đối tượng.",
+            "Trao đổi chọn đối tượng từ18/10 nên đến18 mới nhận phiếu.",
+            "Chỉ nhận phiếu tên đồ; tách với chọn đối tượng cùng mẹ và giao nhận đồ."
           ],
           "correctIndex": 3,
           "rationalesVi": [
-            "Sai: Phiếu ghi đã giải thích.",
-            "Sai: Phiếu đã ghi mong muốn Megumi.",
-            "Sai: Phiếu đã ghi chưa hỏi mẹ; đây là trạng thái đã biết.",
-            "Đúng: Phiếu ghi dự kiến kiểm cách liên hệ."
+            "Sai: Thông báo chưa nhận đồ, và giờ trao đổi với bác chưa định; không có căn cứ ghi giao nhận đã sắp xếp.",
+            "Sai: Nhận phiếu không chứng minh bác đã chọn vật cần giao.",
+            "Sai: Hạn nhận phiếu là17/10; giai đoạn trao đổi bắt đầu từ18/10.",
+            "Đúng: Giữ đúng giai đoạn, không biến lời nhờ của người nhà thành chọn/giao xong."
           ],
           "feedbackAfterAttempt": true,
           "practiceScope": "lesson_check_not_full_mock",
@@ -1129,7 +1268,8 @@
           "Đọc văn bản, làm năm câu trước chữa; ghi phần chưa xong."
         ],
         "replacementAuditRef": "reviews/priority-gap-replacement-audit-03.json",
-        "replacementReady": false
+        "replacementReady": false,
+        "partialRepairRef": "reviews/priority-gap-partial-repair-05.json"
       },
       "responseRubricIds": [
         "kaigo-gap-services-01-rubric-01",
@@ -1674,5 +1814,18 @@
     "evidenceRef": "reviews/priority-gap-applied-repair-04.json",
     "scope": "one_transfer_and_q05_per_target_module; other_content_unchanged",
     "replacementReady": false
+  },
+  "editorialPartialRepair": {
+    "date": "2026-10-08",
+    "baselineRemoteCommit": "39be36b3e9fd36ee074f1e045966057952aaa47c",
+    "evidenceRef": "reviews/priority-gap-partial-repair-05.json",
+    "scope": "worker-health/services reading,q04,transfer only; previous infection/care-process repairs unchanged",
+    "replacementReady": false,
+    "counts": {
+      "legacyCandidateCountsScope": "main_dialogue_player_rubrics_and_their_spec_cases",
+      "transferRubricsTotal": 2,
+      "transferAssessmentCaseSpecsTotal": 6,
+      "transferSpecsExecuted": false
+    }
   }
 }

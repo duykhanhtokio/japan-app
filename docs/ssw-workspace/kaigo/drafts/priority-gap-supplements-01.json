@@ -399,8 +399,8 @@
         }
       ],
       "reading": {
-        "ja": "勤務前の相談記録：八時二十分、職員は「今朝から腰が痛い」と川瀬に伝えた。移乗介助はまだ開始していない。利用者は担当職員と休んでいる。川瀬は方法と担当を確認中で、変更後の役割はまだ決まっていない。",
-        "vi": "Ghi nhận trao đổi trước công việc: 8:20, nhân viên báo Kawase rằng đau vùng lưng dưới từ sáng. Hỗ trợ chuyển người chưa bắt đầu. Người sử dụng đang nghỉ cùng nhân viên được phân công. Kawase đang kiểm phương án và người phụ trách; vai trò sau thay đổi chưa được quyết định."
+        "ja": "勤務前の相談：八時二十分、職員は腰の痛みを川瀬に報告。介助は未開始で、利用者には担当職員が付いている。変更後の役割は未定。\n別々の練習例：記録Aは「本人が痛くないと話した」。記録Bは「痛みについてまだ尋ねていない」。",
+        "vi": "Trao đổi trước công việc: 8:20, nhân viên báo đau vùng lưng dưới cho Kawase. Chưa bắt đầu hỗ trợ, người sử dụng đang có nhân viên phụ trách ở cùng. Vai trò sau thay đổi chưa định.\nHai ví dụ luyện riêng biệt: A ghi bác nói không đau. B ghi chưa hỏi về đau; không phải hai ghi nhận của cùng một lần quan sát."
       },
       "scopeLimitsVi": [
         "Nhận biết và giao tiếp trước nhiệm vụ; không thực hành nâng/chuyển người, đòn bẩy hoặc vận hành thiết bị.",
@@ -409,15 +409,140 @@
       ],
       "transferPractice": {
         "id": "kaigo-gap-worker-health-01-transfer",
-        "contextVi": "Trước khi hỗ trợ theo kế hoạch, bạn nhận thấy mệt sau một đêm ngủ kém. Bác đang có đồng nghiệp được phân công ở cùng. Bạn chưa bắt đầu nhiệm vụ.",
-        "taskVi": "Báo tình trạng và công việc chưa bắt đầu; nhờ người phụ trách kiểm phân công, không suy nguyên nhân bệnh hoặc tự thay cách chuyển người.",
+        "contextVi": "Tình huống luyện riêng: bạn ngủ kém đêm trước và đang mệt; chưa bắt đầu hỗ trợ, bác Onodera có đồng nghiệp được phân công ở cùng. Lúc 9:15 bác nói toàn thân mệt hơn thường ngày và muốn nghỉ, không tham gia làm thiệp. Bạn chưa kiểm số đo, chưa hỏi đau, chưa biết nguyên nhân. Đây là luyện báo cáo, không là kịch bản cấp cứu hoặc hướng dẫn chờ.",
+        "taskVi": "Báo Kawase riêng tình trạng nhân viên và lời/mong muốn của bác. Giữ mốc giờ, vùng toàn thân, khác thường ngày và các điểm chưa kiểm; nhờ phối hợp kiểm tình trạng bác và phân công trước làm. Không gán nguyên nhân cho tuổi hoặc ghi không đau.",
         "expectedMeaningVi": [
-          "Mệt và ngủ kém là dữ kiện báo, không phải chẩn đoán.",
-          "Chưa bắt đầu và bác đang có đồng nghiệp.",
-          "Nhờ xác nhận nhiệm vụ/phương án trước làm."
+          "Nhân viên mệt sau ngủ kém; chưa bắt đầu, bác đang có đồng nghiệp phụ trách.",
+          "Bác nói lúc9:15 toàn thân mệt hơn thường ngày, muốn nghỉ thay làm thiệp.",
+          "Số đo/đau/nguyên nhân chưa kiểm; không chẩn đoán, phối hợp kiểm tình trạng và phân công."
         ],
-        "modelJa": "昨夜あまり眠れず、今は疲れを感じています。介助はまだ始めていません。担当と方法を確認していただけますか。",
-        "method": "bounded_editorial_rehearsal_not_runtime_evaluator"
+        "modelJa": "昨夜はよく眠れず、私も疲れています。介助は未開始で、小野寺さんには担当職員が付いています。九時十五分に、ご本人は全身がいつもよりだるく、カード作りには参加せず休みたいと話しました。測定値と原因は未確認で、痛みはまだ尋ねていません。年齢のせいとは決めず、状態の確認と職員の担当について相談します。",
+        "method": "bounded_editorial_rehearsal_not_runtime_evaluator",
+        "responseRoleVi": "Nhân viên báo người phụ trách Kawase; không nói thay bác hoặc ra chỉ định điều trị.",
+        "sourceRefs": [
+          {
+            "sourceId": "kaigo-textbook-2025-03",
+            "printedPage": 12,
+            "pdfPage": 14
+          },
+          {
+            "sourceId": "kaigo-textbook-2025-03",
+            "printedPage": 16,
+            "pdfPage": 18
+          },
+          {
+            "sourceId": "kaigo-textbook-2025-03",
+            "printedPage": 115,
+            "pdfPage": 117
+          },
+          {
+            "sourceId": "kaigo-textbook-2025-03",
+            "printedPage": 118,
+            "pdfPage": 120
+          }
+        ],
+        "rubric": {
+          "id": "kaigo-gap-worker-health-01-transfer-rubric-05",
+          "requiredMeanings": [
+            {
+              "id": "kaigo-gap-worker-health-01-transfer-rubric-05-meaning-1",
+              "vi": "Nêu nhân viên ngủ kém và mệt, không gán nguyên nhân bệnh.",
+              "responseTarget": "care_lead_report"
+            },
+            {
+              "id": "kaigo-gap-worker-health-01-transfer-rubric-05-meaning-2",
+              "vi": "Hỗ trợ chưa bắt đầu.",
+              "responseTarget": "care_lead_report"
+            },
+            {
+              "id": "kaigo-gap-worker-health-01-transfer-rubric-05-meaning-3",
+              "vi": "Bác đang có đồng nghiệp phụ trách.",
+              "responseTarget": "care_lead_report"
+            },
+            {
+              "id": "kaigo-gap-worker-health-01-transfer-rubric-05-meaning-4",
+              "vi": "Lời bác lúc9:15 về vùng toàn thân.",
+              "responseTarget": "care_lead_report"
+            },
+            {
+              "id": "kaigo-gap-worker-health-01-transfer-rubric-05-meaning-5",
+              "vi": "So sánh theo lời bác với thường ngày.",
+              "responseTarget": "care_lead_report"
+            },
+            {
+              "id": "kaigo-gap-worker-health-01-transfer-rubric-05-meaning-6",
+              "vi": "Giữ mong muốn nghỉ, không tham gia làm thiệp.",
+              "responseTarget": "care_lead_report"
+            },
+            {
+              "id": "kaigo-gap-worker-health-01-transfer-rubric-05-meaning-7",
+              "vi": "Số đo và nguyên nhân chưa kiểm, không gán do tuổi.",
+              "responseTarget": "care_lead_report"
+            },
+            {
+              "id": "kaigo-gap-worker-health-01-transfer-rubric-05-meaning-8",
+              "vi": "Chưa hỏi đau khác bác nói không đau.",
+              "responseTarget": "care_lead_report"
+            },
+            {
+              "id": "kaigo-gap-worker-health-01-transfer-rubric-05-meaning-9",
+              "vi": "Trao đổi kiểm tình trạng bác và phân công trước làm.",
+              "responseTarget": "care_lead_report"
+            }
+          ],
+          "acceptableJa": [
+            "昨夜はよく眠れず、私も疲れています。介助は未開始で、小野寺さんには担当職員が付いています。九時十五分に、ご本人は全身がいつもよりだるく、カード作りには参加せず休みたいと話しました。測定値と原因は未確認で、痛みはまだ尋ねていません。年齢のせいとは決めず、状態の確認と職員の担当について相談します。",
+            "昨日あまり眠れず、私は疲れを感じています。介助はまだ始めず、小野寺さんには担当職員が付いています。九時十五分に、ご本人は全身のだるさが普段より強いと話し、カード作りではなく休むことを希望しました。測定値と原因は未確認で、痛みも未質問です。年齢のせいとは判断せず、状態の確認と担当の調整を相談します。"
+          ],
+          "unsafeOrContradictoryJa": [
+            "本人は高齢なので疲れています。痛みは聞いていませんが、痛みなしと記録します。"
+          ],
+          "feedbackVi": "Nêu một ý đúng, chỉ rõ một điểm thiếu hoặc suy luận vượt dữ kiện, rồi luyện lại. Câu khác mẫu đúng ý vẫn được chấp nhận.",
+          "evaluationPolicy": {
+            "meaningBased": true,
+            "exactStringMatchRequired": false,
+            "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+            "missingMeaning": "clarify_before_advance",
+            "unsafeMeaning": "correct_before_advance",
+            "runtimeImplemented": false
+          },
+          "assessmentCases": [
+            {
+              "id": "kaigo-gap-worker-health-01-transfer-rubric-05-accept",
+              "inputJa": "昨日あまり眠れず、私は疲れを感じています。介助はまだ始めず、小野寺さんには担当職員が付いています。九時十五分に、ご本人は全身のだるさが普段より強いと話し、カード作りではなく休むことを希望しました。測定値と原因は未確認で、痛みも未質問です。年齢のせいとは判断せず、状態の確認と担当の調整を相談します。",
+              "expected": "accept_meaning",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-gap-worker-health-01-transfer-rubric-05-clarify",
+              "inputJa": "私は眠れず疲れています。介助はまだです。担当を確認してください。",
+              "expected": "clarify_missing_information",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-gap-worker-health-01-transfer-rubric-05-reject",
+              "inputJa": "本人は高齢なので疲れています。痛みは聞いていませんが、痛みなしと記録します。",
+              "expected": "correct_before_advance",
+              "specOnly": true
+            }
+          ],
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        "feedbackAfterAttempt": true,
+        "sameDaySlot": {
+          "activity": "npc_practice",
+          "mode": "replace_existing_transfer_rehearsal_not_append",
+          "additionalMandatoryMinutes": 0,
+          "durationMeasured": false
+        }
       },
       "questions": [
         {
@@ -528,26 +653,26 @@
         {
           "id": "kaigo-gap-worker-health-01-q04",
           "kind": "reading",
-          "promptJa": "相談記録から、まだ決まっていないことはどれですか。",
-          "promptVi": "Theo ghi nhận trao đổi, điều gì chưa được quyết định?",
+          "promptJa": "別々の練習例である記録Aと記録Bについて、適切な説明はどれですか。",
+          "promptVi": "Với hai ví dụ luyện riêng biệt A và B, cách giải thích phù hợp là gì?",
           "optionsJa": [
-            "相談した時刻。",
-            "職員が伝えた症状。",
-            "変更後の職員の役割。",
-            "介助が未開始であること。"
+            "AもBも痛みがないことを本人に確認した記録なので、追加の確認は必要ない。",
+            "Aは職員が観察して痛みなしと判断した記録で、Bは本人が痛みを否定した記録である。",
+            "Aは本人が痛くないと話した記録で、Bは痛みについてまだ確認していない。",
+            "AもBも本人の発言を記録したものなので、同じ内容として報告する。"
           ],
           "optionsVi": [
-            "Giờ trao đổi.",
-            "Triệu chứng nhân viên đã báo.",
-            "Vai trò nhân viên sau thay đổi.",
-            "Việc hỗ trợ chưa bắt đầu."
+            "A và B đều đã hỏi bác và xác nhận không đau, không cần kiểm thêm.",
+            "A là nhân viên quan sát rồi kết luận không đau; B là bác phủ nhận đau.",
+            "A ghi lời bác nói không đau; B chưa xác nhận về đau.",
+            "A và B đều ghi lời bác nên báo như cùng nội dung."
           ],
           "correctIndex": 2,
           "rationalesVi": [
-            "Sai: Có 8:20.",
-            "Sai: Có lời báo đau từ sáng.",
-            "Đúng: Ghi rõ đang kiểm, vai trò chưa chốt.",
-            "Sai: Ghi rõ chưa bắt đầu."
+            "Sai: B chưa hỏi, không đủ để ghi không đau.",
+            "Sai: A là lời bác, còn B không có lời phủ nhận của bác.",
+            "Đúng: Nguồn và mức bằng chứng khác nhau; B cần hỏi hoặc phối hợp xác nhận, không điền kết quả giả.",
+            "Sai: B không có phát ngôn về đau nên không đồng nhất với A."
           ],
           "feedbackAfterAttempt": true,
           "review": {
@@ -662,7 +787,8 @@
         "conceptTermLearningMode": "recognition_with_inline_explanation_not_new_memorization_quota",
         "retainedCoverageStatus": "audit_03_partial_mapping_not_equivalent",
         "replacementAuditRef": "reviews/priority-gap-replacement-audit-03.json",
-        "replacementReady": false
+        "replacementReady": false,
+        "partialRepairRef": "reviews/priority-gap-partial-repair-05.json"
       },
       "responseRubricIds": [
         "kaigo-gap-worker-health-01-rubric-01",
@@ -1853,5 +1979,18 @@
     "evidenceRef": "reviews/priority-gap-applied-repair-04.json",
     "scope": "one_transfer_and_q05_per_target_module; other_content_unchanged",
     "replacementReady": false
+  },
+  "editorialPartialRepair": {
+    "date": "2026-10-08",
+    "baselineRemoteCommit": "39be36b3e9fd36ee074f1e045966057952aaa47c",
+    "evidenceRef": "reviews/priority-gap-partial-repair-05.json",
+    "scope": "worker-health/services reading,q04,transfer only; previous infection/care-process repairs unchanged",
+    "replacementReady": false,
+    "counts": {
+      "legacyCandidateCountsScope": "main_dialogue_player_rubrics_and_their_spec_cases",
+      "transferRubricsTotal": 2,
+      "transferAssessmentCaseSpecsTotal": 6,
+      "transferSpecsExecuted": false
+    }
   }
 }
