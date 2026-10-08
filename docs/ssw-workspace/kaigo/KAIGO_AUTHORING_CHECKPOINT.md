@@ -1,3 +1,18 @@
+# Checkpoint hiện hành — nâng chiều sâu kiến thức 2026-10-08
+
+- Chủ dự án yêu cầu viết mới toàn phần kiến thức còn thiếu/nông để học thi, giữ sự kiện/thuật ngữ đúng nhưng không sao chép biểu đạt nguồn. Phạm vi chuẩn vẫn sách Tokutei 3/2025; không claim hết 713 câu sách quốc gia.
+- Thêm drafts/knowledge-depth-2026-10-08.json: 41 mục sâu, 41 ca tự giải thích, 3 sơ đồ nhận diện tự vẽ; rải 31 ngày, tối đa 2 mục/ngày. Bảng cơ bản 159/159 có nội dung, 0 thiếu/0 nông theo định nghĩa nhận biết–giải thích; không chứng nhận mọi chi tiết/mức làm chủ/thao tác/đỗ thi.
+- Audit hiện hành reviews/knowledge-depth-coverage-2026-10-08.json; bảng cũ 118 đủ/41 nông giữ nguyên snapshot. Báo cáo đầy đủ 159 dòng ở KNOWLEDGE_DEPTH_UPGRADE_2026-10-08.md.
+- Runtime 54 bài/270 câu cũ, 121 câu kiến thức cũ +41 mới, 52 thẻ Nhật, 369 ID từ, 8 NPC, 2 đề/60 câu. Giữ 56 ngày, 30 phút ngày thường; đề kỹ năng 60/JP30, tổng1710. Tải chữ đọc 350–568 VI whitespace units trên ngày tăng sâu, không phải phút đo thực tế.
+- Thời gian đọc/suy nghĩ nằm trong khối kiến thức12phút, không cộng hết mọi câu hiển thị vào một buổi; week6 rải nằm/móng/mỹ phẩm sang42/50/51. Chưa đo với người học.
+- Bảo toàn 54 practiceRevision và 54 knowledgeRevision đúng checkpoint fd53264; câu sâu lưu với fingerprint riêng. Browser thực sự phục hồi câu kiến thức và thẻ Nhật từ khóa cũ, kiểm lưu câu mới/sửa đóng đáp án.
+- PASS 41 mục ở31ngày, schema/liên kết/4negativecontrols, 48inputhash/26hành vi, TypeScript Kaigo/RN Web3viewports/phóng to sơ đồ/khôngJSerror hoặc overflow, JLPT10/10 và whitespace. Native chưa kiểm; không claim fullrepo TypeScript hết lỗi Life.
+- Reread nguồn phụ thuộc, hashPDF khớp; sửa6liên kết trang. Screen287trường/246eligible/0exact60charhit toàn276trang text-layer, đã rà ca/hình mới ở mức AI biên tập, không rights certification. PDF/OCR/hình nguồn không công bố.
+- Parent remote đã xác minh fd53264154a4e0166ce81109c85b103080f5ebac. Lưu patch riêng với lease, đọc lại mọi blob trước báo lưu; không force/reset hoặc chạm JLPT. Local history khác connector, không claim WORK PERSISTENCE PASS.
+- Human/domain/native/rights/releaseReady còn false. Bước tiếp: chuyên môn/bản ngữ, thử tải học/người học và kiểm native; kiến thức cơ bản đã có bản mới, không lấy thiếu quan sát thao tác làm lý do thiếu nội dung lý thuyết.
+
+---
+
 # Checkpoint hiện hành 介護 — đối chiếu từng mục 2026-10-08
 
 Chủ dự án yêu cầu đối chiếu tài liệu, đánh dấu đủ–thiếu–nông, bổ sung và cân đối 30 phút/ngày. Kế hoạch runtime hiện hành là overlay drafts/chapter-revision-2026-10-08.json; giữ bản thảo và các quyết định lịch sử phía dưới để truy vết.

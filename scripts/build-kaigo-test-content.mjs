@@ -41,6 +41,10 @@ const support=read('kaigo-mock-review-support-vi.json');
 const mocks=['skills','japanese'].map(kind=>{const m=read('kaigo-'+kind+'-mock-01.json');return {id:m.id,version:m.version,titleVi:kind==='skills'?'Thi thử kỹ năng':'Thi thử tiếng Nhật',durationMs:m.durationMs,questions:m.questions.map(q=>{const vi=support.entries.find(x=>x.questionId===q.id);assert(vi,'mock Vietnamese review');const x={...question(q),promptVi:vi.promptVi,optionsVi:vi.optionsVi,passageJa:q.passageJa??'',passageVi:vi.passageVi??'',figureDescriptionJa:q.figureDescriptionJa??'',figureDescriptionVi:vi.figureDescriptionVi??'',figureKey:q.figurePath?path.basename(q.figurePath,'.svg'):null,furigana:q.furigana};if(q.figurePath){const p=dir+q.figurePath;inputs.set(p,hash(fs.readFileSync(path.join(root,p))));}return x;})};});
 const revision=read('chapter-revision-2026-10-08.json');
 const vocabulary=read('source-vocabulary-inventory-2026-10-08.json');
+const depth=read('knowledge-depth-2026-10-08.json');
+for(const f of depth.figures){
+ for(const p of [dir+'depth-figures/'+f.key+'.svg','assets/kaigo/depth/'+f.key+'.png'])inputs.set(p,hash(fs.readFileSync(path.join(root,p))));
+}
 const oldTermIds=new Set(terms.map(t=>t.id));
 const vocabularyLinks=new Map();
 for(const [i,t] of vocabulary.entries.entries()){
@@ -66,15 +70,19 @@ for(const l of lessons){
  const linked=vocabulary.entries.filter(t=>t.suggestedDay===l.day).map(t=>vocabularyLinks.get(t.id));
  l.activeTermIds=[...new Set([...original,...linked])].slice(0,8);
  l.referenceTermIds=l.termIds.filter(id=>!l.activeTermIds.includes(id));
+ l.knowledgeDepthUnits=depth.units.filter(u=>u.lessonId===l.id).map(u=>({id:u.id,titleVi:u.titleVi,knowledgeVi:u.knowledgeVi,methodVi:u.methodVi,mistakesVi:u.mistakesVi,probe:{id:u.probe.id,promptVi:u.probe.promptVi,expectedVi:u.probe.expectedVi,stateRevision:hash(serial(u))},figures:u.figures,limitsVi:u.limitsVi}));
  l.timeBlocks=revision.schedule.ordinaryMinutes;
  l.studyPlanVi='2 phút ôn · 12 phút kiến thức (7 đọc, 5 tự giải thích) · 4 phút từ · 6 phút một nhánh thoại · 2 phút đọc thẻ · 4 phút kiểm tra. Nếu chưa xong, giữ phần còn lại cho buổi ôn.';
+ const {knowledgeDepthUnits,...previousKnowledgeLesson}=l;
+ l.knowledgeRevision=hash(serial(previousKnowledgeLesson));
 }
+for(const l of lessons)if(l.knowledgeDepthUnits.length)l.studyPlanVi='2 phút ôn · 12 phút kiến thức (3 nối ý nền, 4 đọc mục sâu, 3 giải thích ca, 2 ôn cơ chế) · 4 phút từ · 6 phút một nhánh thoại · 2 phút thẻ đọc · 4 phút kiểm tra.';
 const days=read('curriculum-56-days.json').days.map(d=>({day:d.day,week:d.week,titleVi:d.titleVi,plannedMinutes:d.plannedMinutes,lessonId:d.lessonId??null,mockId:d.mockId??null,timeBlocks:d.mockId?{exam:d.plannedMinutes}:revision.schedule.ordinaryMinutes,knowledgeTitleVi:revision.modules.find(m=>m.day===d.day)?.titleVi??''}));
 for(const l of [...lessons,...candidates])l.contentRevision=hash(serial(l));
 for(const m of mocks)m.contentRevision=hash(serial(m));
 assert.equal(lessons.length,54);assert.equal(lessons.flatMap(l=>l.questions).length,270);assert.equal(candidates.length,8);assert.equal(mocks.flatMap(m=>m.questions).length,60);assert.equal(days.length,56);
-const content={version:2,mode:'publisher_requested_test_only',humanReviewed:false,releaseReady:false,days,lessons,candidates,terms,npcs,mocks,schedule:{...revision.schedule}};
+const content={version:3,mode:'publisher_requested_test_only',humanReviewed:false,releaseReady:false,days,lessons,candidates,terms,npcs,mocks,schedule:{...revision.schedule}};
 const out='src/data/kaigo/content.json';fs.mkdirSync(path.dirname(path.join(root,out)),{recursive:true});const bytes=serial(content);fs.writeFileSync(path.join(root,out),bytes);
-const manifest={version:2,date:'2026-10-08',authorizationVi:'Chủ dự án yêu cầu hoàn thiện, lưu GitHub và đưa vào app để kiểm tra; chỉ nội bộ kiểm thử, không chứng nhận human review hoặc phát hành.',baselineRemoteCommit:'9842189204f8a5637db76ce5509933ad37e7aa96',output:{path:out,sha256:hash(bytes)},inputs:[...inputs].map(([path,sha256])=>({path,sha256})),counts:{days:56,lessons:54,lessonQuestions:270,optionalCandidates:8,optionalCandidateQuestions:40,mocks:2,mockQuestions:60,npcs:npcs.length,terms:terms.length,knowledgeSupplements:revision.modules.length,knowledgeProbes:revision.modules.flatMap(m=>m.retrievalProbes).length,languageTransferTasks:revision.languageTasks.length,sourceLexicalRecords:vocabulary.entries.length},candidateSelectionChanged:false,curriculumChanged:true,humanReviewed:false,releaseReady:false};
+const manifest={version:3,date:'2026-10-08',authorizationVi:'Chủ dự án yêu cầu hoàn thiện, lưu GitHub và đưa vào app để kiểm tra; chỉ nội bộ kiểm thử, không chứng nhận human review hoặc phát hành.',baselineRemoteCommit:'9842189204f8a5637db76ce5509933ad37e7aa96',output:{path:out,sha256:hash(bytes)},inputs:[...inputs].map(([path,sha256])=>({path,sha256})),counts:{days:56,lessons:54,lessonQuestions:270,optionalCandidates:8,optionalCandidateQuestions:40,mocks:2,mockQuestions:60,npcs:npcs.length,terms:terms.length,knowledgeSupplements:revision.modules.length,knowledgeProbes:revision.modules.flatMap(m=>m.retrievalProbes).length,languageTransferTasks:revision.languageTasks.length,sourceLexicalRecords:vocabulary.entries.length,knowledgeDepthUnits:depth.units.length,knowledgeDepthCases:depth.units.length,knowledgeDepthFigures:depth.figures.length},candidateSelectionChanged:false,curriculumChanged:true,humanReviewed:false,releaseReady:false};
 fs.writeFileSync(path.join(root,'docs/ssw-workspace/kaigo/reviews/app-test-content-manifest.json'),serial(manifest));
 console.log(JSON.stringify({status:'EXPORTED_TEST_CONTENT',...manifest.counts,bytes:Buffer.byteLength(bytes)}));
