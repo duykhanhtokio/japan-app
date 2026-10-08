@@ -1,0 +1,1885 @@
+{
+  "version": 1,
+  "date": "2026-10-08",
+  "timezone": "Asia/Tokyo",
+  "baselineRemoteCommit": "fea42df198862ee0774204ac290cd48dc47ac88f",
+  "status": "AI_editorial_draft_NOT_READY_FOR_REPLACEMENT",
+  "kind": "C02_unselected_replacement_candidates_no_new_curriculum_days",
+  "coreCountsUnchanged": {
+    "ordinaryLessons": 54,
+    "lessonQuestions": 270,
+    "mockQuestions": 60
+  },
+  "candidateCounts": {
+    "modules": 2,
+    "knowledgeSections": 8,
+    "dialogueTurns": 16,
+    "readings": 2,
+    "questions": 10,
+    "optionRationales": 40,
+    "expressions": 4,
+    "mainRubrics": 8,
+    "mainAssessmentCaseSpecs": 24,
+    "transferRubrics": 2,
+    "transferAssessmentCaseSpecs": 6,
+    "newMandatoryVocabulary": 0
+  },
+  "sources": [
+    {
+      "id": "kaigo-textbook-2025-03",
+      "edition": "second revision March2025",
+      "pdfPages": 276,
+      "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+      "accessedAt": "2026-10-08",
+      "sha256Recomputed": true,
+      "pagesChecked": [
+        {
+          "printed": 16,
+          "pdf": 18,
+          "visual": false
+        },
+        {
+          "printed": 17,
+          "pdf": 19,
+          "visual": true
+        },
+        {
+          "printed": 18,
+          "pdf": 20,
+          "visual": true
+        },
+        {
+          "printed": 19,
+          "pdf": 21,
+          "visual": false
+        }
+      ],
+      "publishSourceBytes": false
+    },
+    {
+      "id": "elder-abuse-law",
+      "title": "高齢者虐待防止法",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=82aa7582&dataType=0&pageNo=1",
+      "accessedAt": "2026-10-08",
+      "locators": [
+        "2(5)",
+        "21(1)",
+        "21(6)"
+      ],
+      "verification": "official_HTML_text_checked_not_independent_legal_review",
+      "publishSourceBytes": false
+    },
+    {
+      "id": "elder-abuse-manual-2026",
+      "title": "市町村・都道府県における高齢者虐待への対応と養護者支援について",
+      "edition": "March2026 as listed on current MHLW landing page",
+      "url": "https://www.mhlw.go.jp/content/12304250/001683365.pdf",
+      "accessedAt": "2026-10-08",
+      "locators": [
+        {
+          "printedPage": 95,
+          "pdfPage": 3
+        },
+        {
+          "printedPage": 99,
+          "pdfPage": 7
+        },
+        {
+          "printedPage": 100,
+          "pdfPage": 8
+        }
+      ],
+      "verification": "official_web_PDF_text_and_printed_labels_checked_not_visual",
+      "publishSourceBytes": false
+    },
+    {
+      "id": "restraint-guide-2025",
+      "title": "介護施設・事業所等で働く方々への身体拘束廃止・防止の手引き",
+      "edition": "March2025; linked by current March2026 manual page",
+      "url": "https://www.mhlw.go.jp/content/12304250/001643323.pdf",
+      "accessedAt": "2026-10-08",
+      "pdfPages": 44,
+      "locators": [
+        {
+          "printedPage": 6,
+          "pdfPage": 7
+        },
+        {
+          "printedPage": 22,
+          "pdfPage": 23
+        },
+        {
+          "printedPage": 23,
+          "pdfPage": 24
+        },
+        {
+          "printedPage": 24,
+          "pdfPage": 25
+        },
+        {
+          "printedPage": 25,
+          "pdfPage": 26
+        },
+        {
+          "printedPage": 26,
+          "pdfPage": 27
+        }
+      ],
+      "verification": "official_web_text_and_printed_labels_checked; screenshot_requested_but_image_not_inspected",
+      "publishSourceBytes": false
+    }
+  ],
+  "newConceptTerms": [],
+  "inlineConceptNotePolicy": "7 AI-reading recognition notes; no shared vocabulary records or new memorization quota",
+  "modules": [
+    {
+      "id": "kaigo-gap-abuse-report-01",
+      "baseLessonId": "kaigo-review-02",
+      "curriculumDay": 51,
+      "coverageRowIds": [
+        "C02"
+      ],
+      "titleVi": "Nghi ngờ lạm dụng: báo sự việc và thông báo đúng nơi",
+      "npcId": "kaigo-npc-care-lead",
+      "playerRoleVi": "Nhân viên chăm sóc",
+      "contextVi": "Ví dụ hư cấu tại cơ sở chăm sóc người cao tuổi: 10:05 ở phòng sinh hoạt, người học nghe một nhân viên nói với bác Hasebe rằng nếu gọi nữa sẽ không được ăn trưa. Bác nói sợ và muốn có người ở cùng. Người học đã gọi hỗ trợ tại chỗ; đồng nghiệp khác hiện ở cùng bác. Chưa kiểm thương tích hay biết bữa trưa có bị giữ lại không. Bây giờ báo Kawase; chưa thông báo市町村. Nhân viên có lời đe dọa không phải NPC đồng nghiệp trong roster.",
+      "objectivesVi": [
+        "Nhận biết dấu hiệu có thể liên quan lạm dụng, không cần tự kết luận để tìm hỗ trợ.",
+        "Báo riêng lời nghe trực tiếp, lời bác, việc đã làm và phần chưa kiểm.",
+        "Phân biệt báo nội bộ với thông báo市町村 trong phạm vi Điều21(1); không chờ phụ trách cho phép hoặc đủ chứng cứ."
+      ],
+      "knowledgeModule": {
+        "id": "kaigo-gap-abuse-report-01-knowledge",
+        "sections": [
+          {
+            "id": "kaigo-gap-abuse-report-01-section-1",
+            "titleVi": "Nhìn vào hành vi và quyền của bác",
+            "explanationVi": "Lạm dụng không chỉ là gây thương tích. Có thể liên quan thân thể, tâm lý, bỏ bê chăm sóc, tình dục hoặc tài sản. Một dấu hiệu chưa đủ cho người học kết luận toàn bộ vụ việc; vẫn cần báo để bảo vệ bác. Case dùng lời đe dọa bữa ăn làm dấu hiệu đáng lo, không tự ghi đã bỏ bữa.",
+            "sourceRefs": [
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 18,
+                "pdfPage": 20,
+                "verification": "text_and_page_image_checked"
+              },
+              {
+                "sourceId": "elder-abuse-law",
+                "locator": "Articles 2(5),21(1),(6); MHLW HTML"
+              }
+            ]
+          },
+          {
+            "id": "kaigo-gap-abuse-report-01-section-2",
+            "titleVi": "Tách nguồn thông tin",
+            "explanationVi": "Ghi giờ/nơi, người nói và điều thực sự nghe; lời bác được ghi là lời bác, không biến thành quan sát thương tích. Báo hỗ trợ đã gọi, ai hiện ở cùng bác và việc còn chưa kiểm. Không hỏi dồn để buộc bác lặp lại chuyện hoặc tự điều tra người bị nghi. Nếu nguy hiểm đang diễn ra, tìm hỗ trợ an toàn ngay; không kéo dài bài thoại để thay xử lý tại chỗ.",
+            "sourceRefs": [
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 16,
+                "pdfPage": 18,
+                "verification": "text_and_page_image_checked"
+              },
+              {
+                "sourceId": "elder-abuse-manual-2026",
+                "printedPage": 95,
+                "pdfPage": 3
+              }
+            ]
+          },
+          {
+            "id": "kaigo-gap-abuse-report-01-section-3",
+            "titleVi": "Báo nội bộ và thông báo pháp định",
+            "explanationVi": "Điều21(1) áp dụng khi nhân viên phát hiện người được cho là bị nhân viên tại cơ sở/doanh nghiệp chăm sóc thuộc phạm vi luật của mình lạm dụng. Phải thông báo nhanh cho市町村, không chỉ báo cấp trên. Chưa kết luận, chưa đủ hồ sơ hoặc cấp trên yêu cầu chờ không biến nghĩa vụ này thành tùy chọn. Luyện nêu rõ phần chưa biết; không bịa sự việc để thông báo.",
+            "sourceRefs": [
+              {
+                "sourceId": "elder-abuse-law",
+                "locator": "Articles 2(5),21(1),(6); MHLW HTML"
+              },
+              {
+                "sourceId": "elder-abuse-manual-2026",
+                "printedPages": [
+                  99,
+                  100
+                ],
+                "pdfPages": [
+                  7,
+                  8
+                ]
+              }
+            ]
+          },
+          {
+            "id": "kaigo-gap-abuse-report-01-section-4",
+            "titleVi": "Bảo mật có phạm vi, không hứa giữ kín tuyệt đối",
+            "explanationVi": "Thông báo theo luật khác việc gửi ảnh/hồ sơ cho người nhà hay đăng mạng. Quy định bảo mật không ngăn thông báo theo Điều21; dùng thông tin cần cho kênh xử lý, tránh lan truyền chuyện. Đối với chia sẻ thông thường, vẫn kiểm nội dung, người nhận và phương thức đồng ý. Không lấy đồng ý buổi gặp làm đồng ý thu âm hoặc gửi ảnh qua tin nhắn cá nhân.",
+            "sourceRefs": [
+              {
+                "sourceId": "elder-abuse-law",
+                "locator": "Articles 2(5),21(1),(6); MHLW HTML"
+              },
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 16,
+                "pdfPage": 18,
+                "verification": "text_and_page_image_checked"
+              }
+            ]
+          }
+        ],
+        "review": {
+          "domainHumanReviewed": false,
+          "nativeLanguageReviewed": false,
+          "publisherReviewed": false,
+          "rightsReviewed": false,
+          "runtimeIntegrated": false,
+          "appIntegrationReady": false,
+          "releaseReady": false
+        },
+        "retrievalCheck": {
+          "promptVi": "Báo Kawase đã thay thông báo市町村 chưa? Có phải đợi chứng minh bữa trưa bị giữ không?",
+          "expectedVi": "Chưa thay. Trong phạm vi Điều21(1), thông báo nhanh khi cho rằng có lạm dụng; nói rõ điều chưa kiểm.",
+          "feedbackAfterAttempt": true
+        },
+        "caseContrastVi": {
+          "appropriate": "Báo lời đe dọa, lời bác, hỗ trợ và điểm chưa kiểm; thông báo市町村 nhanh.",
+          "inappropriate": "Chờ chứng minh bỏ bữa hoặc chỉ báo nội bộ rồi coi xong."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "kaigo-textbook-2025-03",
+          "printedPage": 18,
+          "pdfPage": 20,
+          "verification": "text_and_page_image_checked"
+        },
+        {
+          "sourceId": "elder-abuse-law",
+          "locator": "Articles 2(5),21(1),(6); MHLW HTML"
+        },
+        {
+          "sourceId": "restraint-guide-2025",
+          "printedPages": [
+            6,
+            22,
+            23,
+            24,
+            25,
+            26
+          ],
+          "pdfPages": [
+            7,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          "verification": "official_web_text_and_printed_labels_checked_not_visual"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-foundation-01",
+        "kaigo-vocab-foundation-02",
+        "kaigo-vocab-foundation-11",
+        "kaigo-vocab-foundation-19",
+        "kaigo-vocab-housework-16"
+      ],
+      "newTermIds": [],
+      "inlineConceptNotes": [
+        {
+          "ja": "虐待",
+          "kana": "ぎゃくたい",
+          "vi": "lạm dụng/xâm hại; nhận biết khái niệm",
+          "readingVerification": "AI_context_checked_not_native_review"
+        },
+        {
+          "ja": "通報",
+          "kana": "つうほう",
+          "vi": "thông báo cho cơ quan có thẩm quyền",
+          "readingVerification": "AI_context_checked_not_native_review"
+        },
+        {
+          "ja": "市町村",
+          "kana": "しちょうそん",
+          "vi": "chính quyền địa phương cấp thành phố/thị trấn/làng",
+          "readingVerification": "AI_context_checked_not_native_review"
+        }
+      ],
+      "expressions": [
+        {
+          "ja": "私が聞いた言葉と、ご本人から聞いたことを分けて伝えます。",
+          "vi": "Tôi báo riêng lời mình nghe và điều bác nói."
+        },
+        {
+          "ja": "市町村への通報は、内部の報告とは別に速やかに行います。",
+          "vi": "Thông báo cho chính quyền địa phương được thực hiện nhanh, riêng với báo nội bộ."
+        }
+      ],
+      "dialogue": [
+        {
+          "id": "kaigo-gap-abuse-report-01-t01",
+          "speaker": "npc",
+          "npcId": "kaigo-npc-care-lead",
+          "ja": "連絡を受けました。長谷部さんについて、どこで何を聞きましたか。",
+          "vi": "Tôi đã nhận báo. Về bác Hasebe, bạn nghe gì ở đâu?"
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-t02",
+          "speaker": "player",
+          "ja": "十時五分、談話室で、職員が長谷部さんに、また呼んだら昼食を出さないと言うのを聞きました。",
+          "vi": "10:05 tại phòng sinh hoạt, tôi nghe nhân viên nói nếu bác gọi nữa sẽ không đưa bữa trưa."
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-t03",
+          "speaker": "npc",
+          "npcId": "kaigo-npc-care-lead",
+          "ja": "長谷部さんは何と話していますか。今は誰が一緒にいますか。",
+          "vi": "Bác Hasebe nói gì? Bây giờ ai đang ở cùng bác?"
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-t04",
+          "speaker": "player",
+          "ja": "ご本人は怖いので誰かにいてほしいと話しました。応援を呼び、今は別の職員が一緒にいます。",
+          "vi": "Bác nói sợ, muốn có người ở cùng. Tôi gọi hỗ trợ, hiện một nhân viên khác ở cùng bác."
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-t05",
+          "speaker": "npc",
+          "npcId": "kaigo-npc-care-lead",
+          "ja": "確認できていないことも教えてください。",
+          "vi": "Hãy báo cả phần chưa kiểm."
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-t06",
+          "speaker": "player",
+          "ja": "けがの有無と、実際に昼食が出されなかったかは未確認です。私が見ていないことを、確認済みとは記録しません。",
+          "vi": "Chưa kiểm có thương tích hay thực sự không đưa bữa trưa không. Điều tôi chưa thấy không ghi đã xác nhận."
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-t07",
+          "speaker": "npc",
+          "npcId": "kaigo-npc-care-lead",
+          "ja": "ご本人の安全を確認します。内部の報告だけで終わらせず、市町村への通報も速やかに行う必要があります。",
+          "vi": "Chúng ta kiểm an toàn của bác. Không kết thúc ở báo nội bộ; cần nhanh chóng thông báo cho địa phương."
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-t08",
+          "speaker": "player",
+          "ja": "市町村への通報はまだです。今、速やかに通報します。聞いた言葉、ご本人の話、対応と未確認の点を分けて伝えます。",
+          "vi": "Tôi chưa thông báo địa phương. Tôi sẽ làm nhanh ngay bây giờ, tách lời nghe, lời bác, xử lý và phần chưa kiểm."
+        }
+      ],
+      "questions": [
+        {
+          "id": "kaigo-gap-abuse-report-01-q01",
+          "kind": "knowledge",
+          "promptJa": "職員の言葉で利用者が怖いと話しています。けがは未確認です。虐待の疑いについて適切な理解はどれですか。",
+          "promptVi": "Bác nói sợ trước lời nhân viên, chưa kiểm thương tích. Hiểu thế nào về nghi lạm dụng?",
+          "optionsJa": [
+            "けがが未確認でも、心理面の虐待が疑われる場合がある。",
+            "けがが確認されるまでは、虐待に関する情報として扱わない。",
+            "怖いとの話があれば、食事の提供もなかったと確定できる。",
+            "職員の目的が食事の準備なら、言葉の内容を確認する必要はない。"
+          ],
+          "optionsVi": [
+            "Dù chưa kiểm thương tích, vẫn có thể nghi lạm dụng tâm lý.",
+            "Chưa kiểm thương tích thì không coi là thông tin về lạm dụng.",
+            "Bác nói sợ thì có thể kết luận không cung cấp bữa ăn.",
+            "Nếu mục đích nhân viên là chuẩn bị ăn thì không cần kiểm lời nói."
+          ],
+          "rationalesVi": [
+            "Đúng: Không giới hạn lạm dụng ở thương tích.",
+            "Sai: Loại bỏ dấu hiệu tâm lý.",
+            "Sai: Lời bác không xác nhận việc ăn.",
+            "Sai: Mục đích không xóa dấu hiệu đáng lo."
+          ],
+          "correctIndex": 0,
+          "feedbackAfterAttempt": true,
+          "practiceScope": "candidate_lesson_check_excluded_from_core_quota",
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-q02",
+          "kind": "case",
+          "promptJa": "談話室の事例で、確認済みの情報として報告できるのはどれですか。",
+          "promptVi": "Trong case phòng sinh hoạt, có thể báo dữ kiện nào đã xác nhận?",
+          "optionsJa": [
+            "昼食が提供されず、けがもないことを確認した。",
+            "本人は昼食を断り、一人でいたいと希望した。",
+            "職員の言葉と、本人が怖いと話したことを聞いた。",
+            "職員の意図を確認し、虐待ではないと判断した。"
+          ],
+          "optionsVi": [
+            "Đã kiểm không cung cấp trưa và không có thương tích.",
+            "Bác từ chối trưa, muốn ở một mình.",
+            "Đã nghe lời nhân viên và nghe bác nói sợ.",
+            "Đã hỏi ý nhân viên và kết luận không lạm dụng."
+          ],
+          "rationalesVi": [
+            "Sai: Cả hai chưa kiểm.",
+            "Sai: Không có hai dữ kiện này.",
+            "Đúng: Giữ đúng hai nguồn thông tin.",
+            "Sai: Không có điều tra/kết luận."
+          ],
+          "correctIndex": 2,
+          "feedbackAfterAttempt": true,
+          "practiceScope": "candidate_lesson_check_excluded_from_core_quota",
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-q03",
+          "kind": "communication",
+          "promptJa": "自分の施設の職員による虐待を受けたと思われる高齢者を発見しました。内部の報告は済んでいます。次の理解はどれですか。",
+          "promptVi": "Phát hiện người cao tuổi được cho là bị nhân viên ở cơ sở mình lạm dụng. Đã báo nội bộ. Hiểu bước tiếp thế nào?",
+          "optionsJa": [
+            "内部の報告があれば、市町村への通報も完了したと扱う。",
+            "事実と未確認の点を分け、市町村へ速やかに通報する。",
+            "施設内の調査で虐待と確定した後に、市町村へ通報する。",
+            "上司が通報を認めるまでは、本人の話を記録するだけにする。"
+          ],
+          "optionsVi": [
+            "Đã báo nội bộ thì coi thông báo địa phương đã xong.",
+            "Tách dữ kiện và phần chưa kiểm, nhanh chóng thông báo địa phương.",
+            "Sau điều tra nội bộ kết luận mới thông báo địa phương.",
+            "Trước khi cấp trên cho phép thì chỉ ghi lời bác."
+          ],
+          "rationalesVi": [
+            "Sai: Hai hành động khác.",
+            "Đúng: Trong phạm vi Điều21(1), không chờ kết luận.",
+            "Sai: Đặt thêm điều kiện trì hoãn.",
+            "Sai: Cấp trên không là cửa duyệt nghĩa vụ."
+          ],
+          "correctIndex": 1,
+          "feedbackAfterAttempt": true,
+          "practiceScope": "candidate_lesson_check_excluded_from_core_quota",
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-q04",
+          "kind": "reading",
+          "promptJa": "通常の相談の記録で、本人の同意が確認されている範囲はどれですか。",
+          "promptVi": "Trong ghi nhận trao đổi thông thường, phạm vi đồng ý nào được kiểm?",
+          "optionsJa": [
+            "娘への写真送信と、面談を録音すること。",
+            "活動の記録を、娘の個人メッセージへ送ること。",
+            "面談の説明と、その説明を録音して渡すこと。",
+            "担当者との面談で、活動の記録を説明すること。"
+          ],
+          "optionsVi": [
+            "Gửi ảnh con gái và thu âm buổi gặp.",
+            "Gửi ghi chép hoạt động qua tin nhắn cá nhân con gái.",
+            "Giải thích buổi gặp và thu âm đưa lại.",
+            "Giải thích ghi chép hoạt động trong buổi gặp phụ trách."
+          ],
+          "rationalesVi": [
+            "Sai: Cả hai chưa kiểm.",
+            "Sai: Kênh gửi chưa kiểm.",
+            "Sai: Ghép thêm thu âm.",
+            "Đúng: Giữ nội dung/người nhận/phương thức hiện có."
+          ],
+          "correctIndex": 3,
+          "feedbackAfterAttempt": true,
+          "practiceScope": "candidate_lesson_check_excluded_from_core_quota",
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-q05",
+          "kind": "transfer",
+          "promptJa": "娘が通常の面談を録音したいと頼みました。直接説明への同意しか確認できません。返答はどれですか。",
+          "promptVi": "Con gái nhờ thu âm buổi gặp thông thường; chỉ có đồng ý giải thích trực tiếp. Đáp thế nào?",
+          "optionsJa": [
+            "説明への同意があるので、録音してから本人に知らせます。",
+            "録音への同意と手続きを確認します。今は録音しません。",
+            "市町村への通報と同じなので、録音の同意は不要です。",
+            "娘が内容を知っているか確認し、知っていれば録音します。"
+          ],
+          "optionsVi": [
+            "Đã đồng ý giải thích nên thu rồi báo bác.",
+            "Kiểm đồng ý và thủ tục thu âm; hiện không thu.",
+            "Giống thông báo địa phương nên không cần đồng ý thu.",
+            "Kiểm con gái biết nội dung chưa; biết thì thu."
+          ],
+          "rationalesVi": [
+            "Sai: Hành động riêng chưa kiểm.",
+            "Đúng: Giữ hành động riêng chưa xác nhận.",
+            "Sai: Lẫn ngoại lệ thông báo với chia sẻ thông thường.",
+            "Sai: Biết nội dung không thay đồng ý thu âm."
+          ],
+          "correctIndex": 1,
+          "feedbackAfterAttempt": true,
+          "practiceScope": "candidate_lesson_check_excluded_from_core_quota",
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        }
+      ],
+      "responseRubricIds": [
+        "kaigo-gap-abuse-report-01-rubric-01",
+        "kaigo-gap-abuse-report-01-rubric-02",
+        "kaigo-gap-abuse-report-01-rubric-03",
+        "kaigo-gap-abuse-report-01-rubric-04"
+      ],
+      "scopeLimitsVi": [
+        "Phạm vi nghĩa vụ được dạy là nghi lạm dụng bởi nhân viên trong cơ sở/doanh nghiệp thuộc Điều21(1); không suy quy tắc này cho mọi hoàn cảnh gia đình.",
+        "Không điều tra, quy kết, chẩn đoán, chọn biện pháp bảo vệ hoặc hứa giữ kín tuyệt đối; cấp trên không là cửa duyệt thông báo.",
+        "Thoại bắt đầu sau khi đã gọi hỗ trợ tại chỗ; không dùng kịch bản dài khi nguy hiểm đang diễn ra."
+      ],
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      },
+      "editorialStatus": "AI_draft_for_review_not_selected_in_curriculum",
+      "assetStatus": {
+        "npcArt": "not_created",
+        "voice": "not_created",
+        "runtime": "not_integrated"
+      },
+      "replacementPlan": {
+        "status": "NOT_READY_FOR_REPLACEMENT",
+        "mode": "replace_blocks_not_append_minutes",
+        "originalLessonRetained": true,
+        "originalMandatoryBlocksAlsoAssigned": false,
+        "baseLessonId": "kaigo-review-02",
+        "candidateLessonId": "kaigo-gap-abuse-report-01",
+        "day": 51,
+        "selectedInCurriculum": false,
+        "replacementReady": false,
+        "durationMeasured": false,
+        "plannedMinutes": 30,
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "newMandatoryVocabularyCount": 0,
+        "retainedCoverageStatus": "partial_editorial_mapping_not_equivalence",
+        "loadLimitVi": "Bố trí thay khối ôn chưa được chọn; không học bắt buộc cả gốc và candidate. Phải đo đọc, hai lượt luyện, retry và feedback trước chọn."
+      },
+      "reading": {
+        "ja": "練習用記録：十時五分、談話室で、職員が長谷部さんに、また呼んだら昼食を出さないと言うのを聞いた。本人は怖いので誰かにいてほしいと話した。応援を呼び、別の職員が付き添っている。けがと昼食の提供状況は未確認。川瀬への報告済み、市町村への通報は未実施。\n別の通常の相談：森川さんは、担当者との面談で活動の記録を説明することには同意している。娘への写真送信と面談の録音は未確認。送信・録音はしていない。",
+        "vi": "Ghi nhận luyện tập:10:05 ở phòng sinh hoạt, nghe nhân viên đe dọa không đưa bữa trưa nếu bác Hasebe gọi nữa. Bác nói sợ, muốn có người ở cùng. Đã gọi hỗ trợ, nhân viên khác ở cùng. Thương tích và cung cấp bữa trưa chưa kiểm. Đã báo Kawase, chưa thông báo địa phương.\nMột trao đổi thông thường khác: Morikawa đồng ý giải thích ghi chép hoạt động trong buổi gặp phụ trách. Gửi ảnh cho con gái và thu âm buổi gặp chưa kiểm; chưa gửi/thu âm.",
+        "fictional": true,
+        "separateCases": true
+      },
+      "transferPractice": {
+        "id": "kaigo-gap-abuse-report-01-transfer",
+        "contextVi": "Case thông thường riêng, không nghi lạm dụng: Megumi muốn thu âm buổi gặp về ghi chép hoạt động rồi nhận bản ảnh qua tin nhắn cá nhân. Phiếu chỉ ghi Morikawa đồng ý để phụ trách giải thích ghi chép trong buổi gặp; chưa kiểm thu âm hoặc gửi ảnh, chưa thực hiện. Chị muốn phụ trách hỏi lại bác và báo kết quả trong buổi gặp.",
+        "taskVi": "Giải thích trực tiếp với Megumi phạm vi đã đồng ý, hai hành động chưa kiểm, không làm trước; nêu sẽ chuyển phụ trách kiểm với bác và báo kết quả tại buổi gặp.",
+        "expectedMeaningVi": [
+          "Đã đồng ý phụ trách giải thích ghi chép trong buổi gặp.",
+          "Thu âm chưa kiểm.",
+          "Gửi ảnh qua tin nhắn cá nhân chưa kiểm.",
+          "Chưa gửi/thu âm, không hứa làm.",
+          "Chuyển phụ trách kiểm với bác và báo kết quả trong buổi gặp."
+        ],
+        "modelJa": "担当者との面談で記録を説明する同意は確認できています。録音と個人メッセージへの写真送信は未確認で、どちらもしていません。今は実施を約束せず、担当者から本人に確認し、結果を面談でお伝えするよう依頼します。",
+        "method": "bounded_editorial_rehearsal_not_runtime_evaluator",
+        "responseRoleVi": "Theo dữ kiện cố định, nói với người nhận được chỉ rõ; không sinh lời NPC tự do.",
+        "feedbackAfterAttempt": true,
+        "sameDaySlot": {
+          "activity": "npc_practice",
+          "mode": "replace_existing_transfer_rehearsal_not_append",
+          "additionalMandatoryMinutes": 0,
+          "durationMeasured": false
+        },
+        "rubric": {
+          "id": "kaigo-gap-abuse-report-01-transfer-rubric",
+          "requiredMeanings": [
+            {
+              "id": "kaigo-gap-abuse-report-01-transfer-rubric-meaning-1",
+              "vi": "Đã đồng ý phụ trách giải thích ghi chép trong buổi gặp."
+            },
+            {
+              "id": "kaigo-gap-abuse-report-01-transfer-rubric-meaning-2",
+              "vi": "Thu âm chưa kiểm."
+            },
+            {
+              "id": "kaigo-gap-abuse-report-01-transfer-rubric-meaning-3",
+              "vi": "Gửi ảnh qua tin nhắn cá nhân chưa kiểm."
+            },
+            {
+              "id": "kaigo-gap-abuse-report-01-transfer-rubric-meaning-4",
+              "vi": "Chưa gửi/thu âm, không hứa làm."
+            },
+            {
+              "id": "kaigo-gap-abuse-report-01-transfer-rubric-meaning-5",
+              "vi": "Chuyển phụ trách kiểm với bác và báo kết quả trong buổi gặp."
+            }
+          ],
+          "acceptableJa": [
+            "担当者との面談で記録を説明する同意は確認できています。録音と個人メッセージへの写真送信は未確認で、どちらもしていません。今は実施を約束せず、担当者から本人に確認し、結果を面談でお伝えするよう依頼します。",
+            "面談で担当者が記録を説明することには同意があります。録音と、個人のメッセージで写真を送ることは未確認・未実施です。今は約束できません。担当者に本人への確認を頼み、結果は面談でお知らせするよう伝えます。"
+          ],
+          "unsafeOrContradictoryJa": [
+            "面談への同意があるので、今から録音し、写真も送ります。"
+          ],
+          "feedbackVi": "Kiểm từng ý, sửa một phần thiếu rồi nói lại; không chấm theo chuỗi mẫu.",
+          "evaluationPolicy": {
+            "meaningBased": true,
+            "exactStringMatchRequired": false,
+            "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+            "missingMeaning": "clarify_before_advance",
+            "unsafeMeaning": "correct_before_advance",
+            "runtimeImplemented": false
+          },
+          "assessmentCases": [
+            {
+              "id": "kaigo-gap-abuse-report-01-transfer-rubric-accept",
+              "inputJa": "面談で担当者が記録を説明することには同意があります。録音と、個人のメッセージで写真を送ることは未確認・未実施です。今は約束できません。担当者に本人への確認を頼み、結果は面談でお知らせするよう伝えます。",
+              "expected": "accept_meaning",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-gap-abuse-report-01-transfer-rubric-clarify",
+              "inputJa": "録音は確認してからにします。",
+              "expected": "clarify_missing_information",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-gap-abuse-report-01-transfer-rubric-reject",
+              "inputJa": "面談への同意があるので、今から録音し、写真も送ります。",
+              "expected": "correct_before_advance",
+              "specOnly": true
+            }
+          ],
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        }
+      }
+    },
+    {
+      "id": "kaigo-gap-restraint-01",
+      "baseLessonId": "kaigo-review-03",
+      "curriculumDay": 52,
+      "coverageRowIds": [
+        "C02"
+      ],
+      "titleVi": "Hạn chế thân thể: không lấy yêu cầu gia đình làm căn cứ",
+      "npcId": "kaigo-npc-care-lead",
+      "playerRoleVi": "Nhân viên chăm sóc",
+      "contextVi": "Ví dụ hư cấu tại cơ sở: 13:40 Megumi đề nghị từ tối nay khóa cửa phòng mẹ Morikawa để mẹ không đi ra. Đây chỉ là lời đề nghị, cửa chưa khóa. Chưa hỏi mong muốn của bác, chưa có thông tin nguy hiểm cụ thể, chưa xem xét biện pháp thay thế hoặc quyết định theo thủ tục cơ sở. Người học báo Kawase; không thực hiện khóa, không cam kết chấp nhận. Bác không được tự gán sa sút trí tuệ.",
+      "objectivesVi": [
+        "Nhận biết hạn chế tự do theo mục đích và tác động, không chỉ theo tên dụng cụ.",
+        "Phân biệt lời đề nghị, quyết định có thủ tục và việc thực tế đã làm.",
+        "Nêu ba điều kiện cùng thủ tục tổ chức ở mức khái niệm; chuyển xem xét an toàn và cách hỗ trợ không hạn chế."
+      ],
+      "knowledgeModule": {
+        "id": "kaigo-gap-restraint-01-knowledge",
+        "sections": [
+          {
+            "id": "kaigo-gap-restraint-01-section-1",
+            "titleVi": "Không chỉ có buộc dây",
+            "explanationVi": "Xem hành động có ngăn bác tự do di chuyển hay không. Đề nghị khóa phòng để bác không ra là đề nghị hạn chế, dù gọi là giữ an toàn. Không suy mọi cửa đóng hay mọi thanh chắn giường đều có cùng kết luận: phải biết mục đích, tình trạng thực tế và tác động. Case xác định rõ mục đích ngăn mẹ đi ra, nhưng chưa thực hiện.",
+            "sourceRefs": [
+              {
+                "sourceId": "kaigo-textbook-2025-03",
+                "printedPage": 17,
+                "pdfPage": 19,
+                "verification": "text_and_page_image_checked"
+              },
+              {
+                "sourceId": "restraint-guide-2025",
+                "printedPages": [
+                  6,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26
+                ],
+                "pdfPages": [
+                  7,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27
+                ],
+                "verification": "official_web_text_and_printed_labels_checked_not_visual"
+              }
+            ]
+          },
+          {
+            "id": "kaigo-gap-restraint-01-section-2",
+            "titleVi": "Lời người nhà không cấp quyền thực hiện",
+            "explanationVi": "Gia đình lo lắng cần được lắng nghe. Chỉ có lời yêu cầu hay đồng ý của gia đình không làm hạn chế thân thể được phép. Không hứa khóa cửa, tự tăng thuốc, thay dụng cụ hoặc tháo một hạn chế đang có theo bài này. Báo nhu cầu và phần chưa biết để nhóm kiểm an toàn, mong muốn bác và cách chăm sóc không hạn chế.",
+            "sourceRefs": [
+              {
+                "sourceId": "restraint-guide-2025",
+                "printedPages": [
+                  6,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26
+                ],
+                "pdfPages": [
+                  7,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27
+                ],
+                "verification": "official_web_text_and_printed_labels_checked_not_visual"
+              }
+            ]
+          },
+          {
+            "id": "kaigo-gap-restraint-01-section-3",
+            "titleVi": "Ngoại lệ không phải ba ô tự đánh dấu",
+            "explanationVi": "Nguyên tắc là không hạn chế thân thể. Trường hợp khẩn cấp không thể tránh đòi hỏi đồng thời切迫性 (nguy cơ đối với mạng/thân thể rất cao),非代替性 (không còn cách thay thế),一時性 (chỉ tạm thời). Cần tổ chức xem xét thận trọng, giải thích, ghi nhận, quan sát và đánh giá lại; không để một nhân viên tự duyệt. Khi không còn đáp ứng điều kiện phải解除 kịp thời theo xử lý của nhóm; bài này không dạy thao tác tháo hay quyết định lâm sàng.",
+            "sourceRefs": [
+              {
+                "sourceId": "restraint-guide-2025",
+                "printedPages": [
+                  6,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26
+                ],
+                "pdfPages": [
+                  7,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27
+                ],
+                "verification": "official_web_text_and_printed_labels_checked_not_visual"
+              }
+            ]
+          },
+          {
+            "id": "kaigo-gap-restraint-01-section-4",
+            "titleVi": "Báo đúng trạng thái, tiếp tục tìm cách hỗ trợ",
+            "explanationVi": "Báo ai đề nghị, lúc nào, muốn áp dụng từ khi nào và đã thực hiện chưa. Nêu dữ kiện nguy cơ chưa có, ý bác và cách thay thế chưa kiểm; nhờ cùng bác/nhóm tìm cách hỗ trợ. Nếu phát hiện hạn chế không đúng thủ tục và nghi lạm dụng, không khép xử lý trong nội bộ: dùng nguyên tắc thông báo đã học. Thông báo đổi đầu mối ngày mai không phải lý do đợi đến ngày mai mới báo nguy cơ hôm nay.",
+            "sourceRefs": [
+              {
+                "sourceId": "restraint-guide-2025",
+                "printedPages": [
+                  6,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26
+                ],
+                "pdfPages": [
+                  7,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27
+                ],
+                "verification": "official_web_text_and_printed_labels_checked_not_visual"
+              },
+              {
+                "sourceId": "elder-abuse-law",
+                "locator": "Articles 2(5),21(1),(6); MHLW HTML"
+              }
+            ]
+          }
+        ],
+        "review": {
+          "domainHumanReviewed": false,
+          "nativeLanguageReviewed": false,
+          "publisherReviewed": false,
+          "rightsReviewed": false,
+          "runtimeIntegrated": false,
+          "appIntegrationReady": false,
+          "releaseReady": false
+        },
+        "retrievalCheck": {
+          "promptVi": "Gia đình yêu cầu và nói chỉ khóa tối nay đã đủ chưa?",
+          "expectedVi": "Chưa. Không có quyền tự duyệt; ba điều kiện phải đồng thời, cùng thủ tục tổ chức và theo dõi.",
+          "feedbackAfterAttempt": true
+        },
+        "caseContrastVi": {
+          "appropriate": "Báo đề nghị chưa thực hiện và nhờ xem xét hỗ trợ không hạn chế.",
+          "inappropriate": "Ghi đã được phép chỉ vì có lời gia đình."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "kaigo-textbook-2025-03",
+          "printedPage": 17,
+          "pdfPage": 19,
+          "verification": "text_and_page_image_checked"
+        },
+        {
+          "sourceId": "elder-abuse-law",
+          "locator": "Articles 2(5),21(1),(6); MHLW HTML"
+        },
+        {
+          "sourceId": "restraint-guide-2025",
+          "printedPages": [
+            6,
+            22,
+            23,
+            24,
+            25,
+            26
+          ],
+          "pdfPages": [
+            7,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          "verification": "official_web_text_and_printed_labels_checked_not_visual"
+        }
+      ],
+      "vocabularyIds": [
+        "kaigo-vocab-foundation-06",
+        "kaigo-vocab-foundation-11",
+        "kaigo-vocab-foundation-17",
+        "kaigo-vocab-housework-09",
+        "kaigo-vocab-housework-18"
+      ],
+      "newTermIds": [],
+      "inlineConceptNotes": [
+        {
+          "ja": "身体拘束",
+          "kana": "しんたいこうそく",
+          "vi": "hạn chế thân thể/hành vi",
+          "readingVerification": "AI_context_checked_not_native_review"
+        },
+        {
+          "ja": "切迫性",
+          "kana": "せっぱくせい",
+          "vi": "nguy cơ đối với mạng hoặc thân thể rất cao",
+          "readingVerification": "AI_context_checked_not_native_review"
+        },
+        {
+          "ja": "非代替性",
+          "kana": "ひだいたいせい",
+          "vi": "không có cách thay thế cho hạn chế",
+          "readingVerification": "AI_context_checked_not_native_review"
+        },
+        {
+          "ja": "一時性",
+          "kana": "いちじせい",
+          "vi": "chỉ giới hạn tạm thời",
+          "readingVerification": "AI_context_checked_not_native_review"
+        }
+      ],
+      "expressions": [
+        {
+          "ja": "ご家族からの依頼ですが、実施した事実はありません。",
+          "vi": "Đây là đề nghị của gia đình, chưa thực hiện."
+        },
+        {
+          "ja": "行動を制限しない支援について、本人と関係職種で検討したいです。",
+          "vi": "Tôi muốn cùng bác và các nghề liên quan xem xét hỗ trợ không hạn chế hành vi."
+        }
+      ],
+      "dialogue": [
+        {
+          "id": "kaigo-gap-restraint-01-t01",
+          "speaker": "npc",
+          "npcId": "kaigo-npc-care-lead",
+          "ja": "恵さんから、今夜、お母さまの部屋の鍵をかけてほしいと聞きました。どのような依頼ですか。",
+          "vi": "Tôi nghe Megumi muốn khóa phòng mẹ tối nay. Đây là đề nghị thế nào?"
+        },
+        {
+          "id": "kaigo-gap-restraint-01-t02",
+          "speaker": "player",
+          "ja": "十三時四十分に、外へ出ないよう、今夜から部屋の鍵をかけてほしいとの依頼がありました。まだ実施していません。",
+          "vi": "Lúc13:40 chị đề nghị khóa cửa phòng từ tối nay để mẹ không ra ngoài. Chưa thực hiện."
+        },
+        {
+          "id": "kaigo-gap-restraint-01-t03",
+          "speaker": "npc",
+          "npcId": "kaigo-npc-care-lead",
+          "ja": "ご本人の希望や、具体的な危険については分かっていますか。",
+          "vi": "Bạn biết mong muốn của bác và nguy hiểm cụ thể chưa?"
+        },
+        {
+          "id": "kaigo-gap-restraint-01-t04",
+          "speaker": "player",
+          "ja": "ご本人の希望と具体的な危険は未確認です。鍵をかける以外の支援も、まだ検討していません。",
+          "vi": "Chưa kiểm mong muốn bác và nguy hiểm cụ thể. Chưa xem hỗ trợ ngoài khóa cửa."
+        },
+        {
+          "id": "kaigo-gap-restraint-01-t05",
+          "speaker": "npc",
+          "npcId": "kaigo-npc-care-lead",
+          "ja": "ご家族の依頼だけで、行動を制限してよいことにはなりません。本人と一緒に支援を考えましょう。",
+          "vi": "Chỉ lời đề nghị gia đình không cho phép hạn chế hành vi. Hãy cùng bác nghĩ cách hỗ trợ."
+        },
+        {
+          "id": "kaigo-gap-restraint-01-t06",
+          "speaker": "player",
+          "ja": "恵さんの心配を伝え、ご本人の希望と安全を確認します。行動を制限しない支援を関係職種に相談したいです。",
+          "vi": "Tôi chuyển nỗi lo Megumi, kiểm mong muốn và an toàn bác. Tôi muốn trao đổi các nghề liên quan về hỗ trợ không hạn chế."
+        },
+        {
+          "id": "kaigo-gap-restraint-01-t07",
+          "speaker": "npc",
+          "npcId": "kaigo-npc-care-lead",
+          "ja": "緊急やむを得ない場合かどうかは、必要な要件と手続きを踏まえ、組織として慎重に検討します。",
+          "vi": "Việc có thuộc trường hợp khẩn cấp không thể tránh phải được tổ chức xem xét thận trọng theo điều kiện và thủ tục."
+        },
+        {
+          "id": "kaigo-gap-restraint-01-t08",
+          "speaker": "player",
+          "ja": "私一人で決めず、鍵をかける約束はしません。依頼と未実施の状況、未確認の情報を分けて記録し、相談を続けます。",
+          "vi": "Tôi không quyết một mình, không hứa khóa cửa. Ghi riêng đề nghị, trạng thái chưa làm và thông tin chưa kiểm, tiếp tục trao đổi."
+        }
+      ],
+      "questions": [
+        {
+          "id": "kaigo-gap-restraint-01-q01",
+          "kind": "knowledge",
+          "promptJa": "家族は、本人が部屋から出ないよう鍵をかけてほしいと頼みました。何に着目しますか。",
+          "promptVi": "Gia đình nhờ khóa để bác không ra phòng. Xem điểm gì?",
+          "optionsJa": [
+            "鍵の名前が安全用なら、本人の動きを確認しなくてよい。",
+            "家族が使う鍵なら、施設での判断は必要なくなる。",
+            "本人の意思で出られなくなるという、行動への制限を見る。",
+            "室内で過ごす予定があれば、鍵をかけても制限にはならない。"
+          ],
+          "optionsVi": [
+            "Tên khóa là loại an toàn thì không cần kiểm hành vi bác.",
+            "Khóa gia đình dùng thì cơ sở không cần xem xét.",
+            "Xem việc bác không thể tự ra theo ý mình, tức tác động hạn chế.",
+            "Dự định ở phòng thì khóa không là hạn chế."
+          ],
+          "rationalesVi": [
+            "Sai: Tên không quyết tác động.",
+            "Sai: Nguồn dụng cụ không cấp quyền.",
+            "Đúng: Case cho mục đích và tác động cụ thể.",
+            "Sai: Dự định không xóa quyền tự ra."
+          ],
+          "correctIndex": 2,
+          "feedbackAfterAttempt": true,
+          "practiceScope": "candidate_lesson_check_excluded_from_core_quota",
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-gap-restraint-01-q02",
+          "kind": "case",
+          "promptJa": "恵さんの依頼だけがあり、危険や代替方法は未確認です。対応はどれですか。",
+          "promptVi": "Chỉ có đề nghị Megumi, nguy hiểm/cách thay thế chưa kiểm. Làm gì?",
+          "optionsJa": [
+            "実施を約束せず、本人の希望と制限しない支援を相談する。",
+            "家族の希望を優先し、今夜だけ鍵をかけると約束する。",
+            "家族に同意書を書いてもらえば、職員一人で実施を決める。",
+            "代替方法は実施後に検討し、今は依頼どおりに準備する。"
+          ],
+          "optionsVi": [
+            "Không hứa thực hiện, trao đổi mong muốn bác và hỗ trợ không hạn chế.",
+            "Ưu tiên gia đình, hứa chỉ khóa tối nay.",
+            "Gia đình ký thì một nhân viên quyết thực hiện.",
+            "Làm rồi xem cách thay thế, hiện chuẩn bị theo đề nghị."
+          ],
+          "rationalesVi": [
+            "Đúng: Giữ giới hạn, tiếp tục tìm hỗ trợ.",
+            "Sai: Yêu cầu và thời gian ngắn chưa đủ.",
+            "Sai: Đồng ý không là căn cứ cấp quyền.",
+            "Sai: Đảo thứ tự và coi đề nghị đã được duyệt."
+          ],
+          "correctIndex": 0,
+          "feedbackAfterAttempt": true,
+          "practiceScope": "candidate_lesson_check_excluded_from_core_quota",
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-gap-restraint-01-q03",
+          "kind": "communication",
+          "promptJa": "緊急やむを得ない場合について、適切な理解はどれですか。",
+          "promptVi": "Hiểu đúng trường hợp khẩn cấp không thể tránh?",
+          "optionsJa": [
+            "切迫性があれば、非代替性と一時性は確認しなくてよい。",
+            "短時間なら、本人の危険や代替の支援に関係なく認められる。",
+            "三要件を担当者が確認すれば、組織での手続きは省略できる。",
+            "三要件すべてと組織の判断・記録・再検討が必要となる。"
+          ],
+          "optionsVi": [
+            "Có tính cấp bách thì không cần hai điều kiện kia.",
+            "Ngắn thì được bất kể nguy hiểm/cách thay thế.",
+            "Nhân viên kiểm ba điều kiện thì bỏ thủ tục tổ chức.",
+            "Xem đủ ba điều kiện, tổ chức thận trọng quyết/ghi/xem lại."
+          ],
+          "rationalesVi": [
+            "Sai: Phải đồng thời.",
+            "Sai: Ngắn không đủ.",
+            "Sai: Không là quyền tự duyệt.",
+            "Đúng: Không rút thành ba ô cho cá nhân tự duyệt."
+          ],
+          "correctIndex": 3,
+          "feedbackAfterAttempt": true,
+          "practiceScope": "candidate_lesson_check_excluded_from_core_quota",
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-gap-restraint-01-q04",
+          "kind": "reading",
+          "promptJa": "十月二十六日の掲示と相談票から、読み取れるのはどれですか。",
+          "promptVi": "Đọc thông báo và phiếu ngày26/10, hiểu gì?",
+          "optionsJa": [
+            "掲示が二十六日に出たので、今日から提出先は相談室である。",
+            "相談室になるまで、安全に関する連絡も翌日に回す。",
+            "今日の通常の提出先は職員室で、依頼はまだ実施されていない。",
+            "明日の提出先が決まったので、鍵をかける支援も決定している。"
+          ],
+          "optionsVi": [
+            "Treo26 nên hôm nay nộp phòng tư vấn.",
+            "Đợi phòng tư vấn áp dụng, việc an toàn cũng để ngày sau.",
+            "Nơi nộp thường hôm nay là phòng nhân viên, đề nghị chưa thực hiện.",
+            "Đã chốt nơi nộp ngày mai thì hỗ trợ khóa cũng chốt."
+          ],
+          "rationalesVi": [
+            "Sai: Treo và hiệu lực khác ngày.",
+            "Sai: Thông báo không trì hoãn báo an toàn.",
+            "Đúng: Giữ ngày hiệu lực và trạng thái việc.",
+            "Sai: Hai việc độc lập."
+          ],
+          "correctIndex": 2,
+          "feedbackAfterAttempt": true,
+          "practiceScope": "candidate_lesson_check_excluded_from_core_quota",
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        },
+        {
+          "id": "kaigo-gap-restraint-01-q05",
+          "kind": "transfer",
+          "promptJa": "日曜日の票は職員室、掲示は月曜日から相談室です。提出先を申し送る文はどれですか。",
+          "promptVi": "Phiếu chủ nhật phòng nhân viên, thông báo từ thứ hai phòng tư vấn. Bàn giao nơi nộp thế nào?",
+          "optionsJa": [
+            "掲示が新しいので、日曜日の票も相談室に変更します。",
+            "日曜日は職員室、月曜日から相談室です。不明な指示は確認します。",
+            "どちらも相談室と伝え、違っていたら後で訂正します。",
+            "日曜日の票を優先し、月曜日も職員室と申し送ります。"
+          ],
+          "optionsVi": [
+            "Thông báo mới nên sửa phiếu chủ nhật sang tư vấn.",
+            "Chủ nhật phòng nhân viên, từ thứ hai tư vấn; chỉ dẫn chưa rõ sẽ kiểm.",
+            "Báo cả hai tư vấn, sai thì sửa sau.",
+            "Ưu tiên phiếu chủ nhật, bàn giao thứ hai cũng phòng nhân viên."
+          ],
+          "rationalesVi": [
+            "Sai: Bỏ mốc hiệu lực.",
+            "Đúng: Gắn từng ngày/nơi, không tự sửa.",
+            "Sai: Bỏ dữ kiện rõ.",
+            "Sai: Bỏ hiệu lực thứ hai."
+          ],
+          "correctIndex": 1,
+          "feedbackAfterAttempt": true,
+          "practiceScope": "candidate_lesson_check_excluded_from_core_quota",
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        }
+      ],
+      "responseRubricIds": [
+        "kaigo-gap-restraint-01-rubric-01",
+        "kaigo-gap-restraint-01-rubric-02",
+        "kaigo-gap-restraint-01-rubric-03",
+        "kaigo-gap-restraint-01-rubric-04"
+      ],
+      "scopeLimitsVi": [
+        "Không dạy thực hiện/tháo hạn chế, kê thuốc, đánh giá nguy cơ hay tự quyết ngoại lệ.",
+        "Không khẳng định mọi dụng cụ cùng loại là hạn chế; kiểm mục đích và tác động thực tế.",
+        "Không biến lời đề nghị thành hạn chế đã thực hiện hoặc đã được duyệt."
+      ],
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      },
+      "editorialStatus": "AI_draft_for_review_not_selected_in_curriculum",
+      "assetStatus": {
+        "npcArt": "not_created",
+        "voice": "not_created",
+        "runtime": "not_integrated"
+      },
+      "replacementPlan": {
+        "status": "NOT_READY_FOR_REPLACEMENT",
+        "mode": "replace_blocks_not_append_minutes",
+        "originalLessonRetained": true,
+        "originalMandatoryBlocksAlsoAssigned": false,
+        "baseLessonId": "kaigo-review-03",
+        "candidateLessonId": "kaigo-gap-restraint-01",
+        "day": 52,
+        "selectedInCurriculum": false,
+        "replacementReady": false,
+        "durationMeasured": false,
+        "plannedMinutes": 30,
+        "blocks": [
+          {
+            "activity": "review",
+            "minutes": 5
+          },
+          {
+            "activity": "knowledge",
+            "minutes": 5
+          },
+          {
+            "activity": "terms_and_expressions",
+            "minutes": 5
+          },
+          {
+            "activity": "npc_practice",
+            "minutes": 10
+          },
+          {
+            "activity": "check",
+            "minutes": 5
+          }
+        ],
+        "newMandatoryVocabularyCount": 0,
+        "retainedCoverageStatus": "partial_editorial_mapping_not_equivalence",
+        "loadLimitVi": "Bố trí thay khối ôn chưa được chọn; không học bắt buộc cả gốc và candidate. Phải đo đọc, hai lượt luyện, retry và feedback trước chọn."
+      },
+      "reading": {
+        "ja": "練習用相談票（十月二十六日）：十三時四十分、恵さんから、母が外へ出ないよう今夜から部屋の鍵をかけてほしいとの依頼。未実施。本人の希望、具体的な危険、代替の支援は未確認。川瀬に相談中。\n練習用掲示（十月二十六日掲示）：通常の相談票の提出先は、二十七日から相談室。二十六日は職員室のまま。今日の安全に関する連絡を翌日まで待つ指示ではない。",
+        "vi": "Phiếu luyện tập ngày26/10:13:40 Megumi đề nghị khóa phòng mẹ từ tối nay để mẹ không ra. Chưa thực hiện; mong muốn bác, nguy hiểm cụ thể, hỗ trợ thay thế chưa kiểm. Đang trao đổi Kawase.\nThông báo luyện tập treo26/10: nơi nộp phiếu tư vấn thông thường từ27 là phòng tư vấn; ngày26 vẫn phòng nhân viên. Không phải chỉ dẫn đợi đến ngày sau mới báo việc an toàn hôm nay.",
+        "fictional": true
+      },
+      "transferPractice": {
+        "id": "kaigo-gap-restraint-01-transfer",
+        "contextVi": "Case văn bản thường riêng: hôm nay chủ nhật. Phiếu hôm nay nơi nộp phòng nhân viên, thông báo treo hôm nay ghi từ thứ hai chuyển sang phòng tư vấn. Một tờ bổ sung không ghi ngày áp dụng; chưa rõ tờ này thay phiếu hôm nay không. Việc an toàn hôm nay vẫn báo ngay, không chờ đầu mối mới.",
+        "taskVi": "Bàn giao cho đồng nghiệp ngày/nơi rõ và tờ bổ sung chưa rõ cần hỏi phụ trách; không tự sửa phiếu chủ nhật, không trì hoãn báo an toàn.",
+        "expectedMeaningVi": [
+          "Chủ nhật/phòng nhân viên.",
+          "Từ thứ hai/phòng tư vấn.",
+          "Tờ bổ sung thiếu ngày, kiểm phụ trách.",
+          "Không tự sửa phiếu hôm nay.",
+          "Báo việc an toàn hôm nay ngay, không đợi ngày mai."
+        ],
+        "modelJa": "今日の日曜日の提出先は職員室で、月曜日から相談室です。追加の紙には適用日がないため、担当者に確認します。今日の票は勝手に変更せず、安全に関する連絡は今日すぐ行います。",
+        "method": "bounded_editorial_rehearsal_not_runtime_evaluator",
+        "responseRoleVi": "Theo dữ kiện cố định, nói với người nhận được chỉ rõ; không sinh lời NPC tự do.",
+        "feedbackAfterAttempt": true,
+        "sameDaySlot": {
+          "activity": "npc_practice",
+          "mode": "replace_existing_transfer_rehearsal_not_append",
+          "additionalMandatoryMinutes": 0,
+          "durationMeasured": false
+        },
+        "rubric": {
+          "id": "kaigo-gap-restraint-01-transfer-rubric",
+          "requiredMeanings": [
+            {
+              "id": "kaigo-gap-restraint-01-transfer-rubric-meaning-1",
+              "vi": "Chủ nhật/phòng nhân viên."
+            },
+            {
+              "id": "kaigo-gap-restraint-01-transfer-rubric-meaning-2",
+              "vi": "Từ thứ hai/phòng tư vấn."
+            },
+            {
+              "id": "kaigo-gap-restraint-01-transfer-rubric-meaning-3",
+              "vi": "Tờ bổ sung thiếu ngày, kiểm phụ trách."
+            },
+            {
+              "id": "kaigo-gap-restraint-01-transfer-rubric-meaning-4",
+              "vi": "Không tự sửa phiếu hôm nay."
+            },
+            {
+              "id": "kaigo-gap-restraint-01-transfer-rubric-meaning-5",
+              "vi": "Báo việc an toàn hôm nay ngay, không đợi ngày mai."
+            }
+          ],
+          "acceptableJa": [
+            "今日の日曜日の提出先は職員室で、月曜日から相談室です。追加の紙には適用日がないため、担当者に確認します。今日の票は勝手に変更せず、安全に関する連絡は今日すぐ行います。",
+            "日曜は職員室、月曜以降は相談室と申し送ります。適用日のない追加指示は担当者に確かめ、今日の票を自分で書き換えません。安全の連絡は明日を待たずに行います。"
+          ],
+          "unsafeOrContradictoryJa": [
+            "新しい掲示を優先し、今日の票も相談室に直して、安全の連絡は明日まで待ちます。"
+          ],
+          "feedbackVi": "Kiểm từng ý, sửa một phần thiếu rồi nói lại; không chấm theo chuỗi mẫu.",
+          "evaluationPolicy": {
+            "meaningBased": true,
+            "exactStringMatchRequired": false,
+            "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+            "missingMeaning": "clarify_before_advance",
+            "unsafeMeaning": "correct_before_advance",
+            "runtimeImplemented": false
+          },
+          "assessmentCases": [
+            {
+              "id": "kaigo-gap-restraint-01-transfer-rubric-accept",
+              "inputJa": "日曜は職員室、月曜以降は相談室と申し送ります。適用日のない追加指示は担当者に確かめ、今日の票を自分で書き換えません。安全の連絡は明日を待たずに行います。",
+              "expected": "accept_meaning",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-gap-restraint-01-transfer-rubric-clarify",
+              "inputJa": "提出先が変わるので確認します。",
+              "expected": "clarify_missing_information",
+              "specOnly": true
+            },
+            {
+              "id": "kaigo-gap-restraint-01-transfer-rubric-reject",
+              "inputJa": "新しい掲示を優先し、今日の票も相談室に直して、安全の連絡は明日まで待ちます。",
+              "expected": "correct_before_advance",
+              "specOnly": true
+            }
+          ],
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
+        }
+      }
+    }
+  ],
+  "responseRubrics": [
+    {
+      "id": "kaigo-gap-abuse-report-01-rubric-01",
+      "moduleId": "kaigo-gap-abuse-report-01",
+      "playerTurnId": "kaigo-gap-abuse-report-01-t02",
+      "promptTurnId": "kaigo-gap-abuse-report-01-t01",
+      "nextTurnId": "kaigo-gap-abuse-report-01-t03",
+      "requiredMeanings": [
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-01-meaning-1",
+          "vi": "10:05 tại phòng sinh hoạt."
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-01-meaning-2",
+          "vi": "Mình nghe nhân viên nói với Hasebe nếu gọi nữa sẽ không đưa trưa."
+        }
+      ],
+      "acceptableJa": [
+        "十時五分、談話室で、職員が長谷部さんに、また呼んだら昼食を出さないと言うのを聞きました。",
+        "十時五分、談話室で長谷部さんに対し、職員が、また呼ぶと昼食を出さないと話すのを直接聞きました。"
+      ],
+      "unsafeOrContradictoryJa": [
+        "長谷部さんは食事を断ったので、昼食は不要です。"
+      ],
+      "feedbackVi": "Chỉ ra một ý đã đúng và một ý thiếu hoặc vượt dữ kiện, gợi ý nói lại. Chấp nhận câu khác mẫu đúng nghĩa.",
+      "evaluationPolicy": {
+        "meaningBased": true,
+        "exactStringMatchRequired": false,
+        "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+        "missingMeaning": "clarify_before_advance",
+        "unsafeMeaning": "correct_before_advance",
+        "runtimeImplemented": false
+      },
+      "assessmentCases": [
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-01-accept",
+          "inputJa": "十時五分、談話室で長谷部さんに対し、職員が、また呼ぶと昼食を出さないと話すのを直接聞きました。",
+          "expected": "accept_meaning",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-01-clarify",
+          "inputJa": "職員の言葉を聞きました。",
+          "expected": "clarify_missing_information",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-01-reject",
+          "inputJa": "長谷部さんは食事を断ったので、昼食は不要です。",
+          "expected": "correct_before_advance",
+          "specOnly": true
+        }
+      ],
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    },
+    {
+      "id": "kaigo-gap-abuse-report-01-rubric-02",
+      "moduleId": "kaigo-gap-abuse-report-01",
+      "playerTurnId": "kaigo-gap-abuse-report-01-t04",
+      "promptTurnId": "kaigo-gap-abuse-report-01-t03",
+      "nextTurnId": "kaigo-gap-abuse-report-01-t05",
+      "requiredMeanings": [
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-02-meaning-1",
+          "vi": "Lời bác sợ và muốn có người ở cùng."
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-02-meaning-2",
+          "vi": "Đã gọi hỗ trợ."
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-02-meaning-3",
+          "vi": "Hiện nhân viên khác ở cùng."
+        }
+      ],
+      "acceptableJa": [
+        "ご本人は怖いので誰かにいてほしいと話しました。応援を呼び、今は別の職員が一緒にいます。",
+        "本人から、怖いから誰かにそばにいてほしいと聞きました。応援を呼び、別の職員が今付き添っています。"
+      ],
+      "unsafeOrContradictoryJa": [
+        "誰も来ていませんが、本人は一人で大丈夫です。"
+      ],
+      "feedbackVi": "Chỉ ra một ý đã đúng và một ý thiếu hoặc vượt dữ kiện, gợi ý nói lại. Chấp nhận câu khác mẫu đúng nghĩa.",
+      "evaluationPolicy": {
+        "meaningBased": true,
+        "exactStringMatchRequired": false,
+        "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+        "missingMeaning": "clarify_before_advance",
+        "unsafeMeaning": "correct_before_advance",
+        "runtimeImplemented": false
+      },
+      "assessmentCases": [
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-02-accept",
+          "inputJa": "本人から、怖いから誰かにそばにいてほしいと聞きました。応援を呼び、別の職員が今付き添っています。",
+          "expected": "accept_meaning",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-02-clarify",
+          "inputJa": "怖いと話しています。",
+          "expected": "clarify_missing_information",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-02-reject",
+          "inputJa": "誰も来ていませんが、本人は一人で大丈夫です。",
+          "expected": "correct_before_advance",
+          "specOnly": true
+        }
+      ],
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    },
+    {
+      "id": "kaigo-gap-abuse-report-01-rubric-03",
+      "moduleId": "kaigo-gap-abuse-report-01",
+      "playerTurnId": "kaigo-gap-abuse-report-01-t06",
+      "promptTurnId": "kaigo-gap-abuse-report-01-t05",
+      "nextTurnId": "kaigo-gap-abuse-report-01-t07",
+      "requiredMeanings": [
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-03-meaning-1",
+          "vi": "Có thương tích chưa kiểm."
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-03-meaning-2",
+          "vi": "Bữa trưa thực tế bị giữ chưa kiểm."
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-03-meaning-3",
+          "vi": "Không ghi việc chưa thấy thành xác nhận."
+        }
+      ],
+      "acceptableJa": [
+        "けがの有無と、実際に昼食が出されなかったかは未確認です。私が見ていないことを、確認済みとは記録しません。",
+        "けががあるか、昼食が実際に出なかったかは、まだ確認していません。見ていないことを確認したとは書きません。"
+      ],
+      "unsafeOrContradictoryJa": [
+        "けがはなく、昼食も普通に出たと記録します。"
+      ],
+      "feedbackVi": "Chỉ ra một ý đã đúng và một ý thiếu hoặc vượt dữ kiện, gợi ý nói lại. Chấp nhận câu khác mẫu đúng nghĩa.",
+      "evaluationPolicy": {
+        "meaningBased": true,
+        "exactStringMatchRequired": false,
+        "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+        "missingMeaning": "clarify_before_advance",
+        "unsafeMeaning": "correct_before_advance",
+        "runtimeImplemented": false
+      },
+      "assessmentCases": [
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-03-accept",
+          "inputJa": "けががあるか、昼食が実際に出なかったかは、まだ確認していません。見ていないことを確認したとは書きません。",
+          "expected": "accept_meaning",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-03-clarify",
+          "inputJa": "未確認の点があります。",
+          "expected": "clarify_missing_information",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-03-reject",
+          "inputJa": "けがはなく、昼食も普通に出たと記録します。",
+          "expected": "correct_before_advance",
+          "specOnly": true
+        }
+      ],
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    },
+    {
+      "id": "kaigo-gap-abuse-report-01-rubric-04",
+      "moduleId": "kaigo-gap-abuse-report-01",
+      "playerTurnId": "kaigo-gap-abuse-report-01-t08",
+      "promptTurnId": "kaigo-gap-abuse-report-01-t07",
+      "nextTurnId": null,
+      "requiredMeanings": [
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-04-meaning-1",
+          "vi": "Chưa thông báo市町村."
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-04-meaning-2",
+          "vi": "Thông báo nhanh ngay, không chờ duyệt nội bộ."
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-04-meaning-3",
+          "vi": "Tách lời nghe/lời bác/xử lý/chưa kiểm."
+        }
+      ],
+      "acceptableJa": [
+        "市町村への通報はまだです。今、速やかに通報します。聞いた言葉、ご本人の話、対応と未確認の点を分けて伝えます。",
+        "市町村には未通報です。今すぐ通報し、私が聞いた発言、本人の話、呼んだ応援と未確認事項を区別して伝えます。"
+      ],
+      "unsafeOrContradictoryJa": [
+        "上司の許可が出るまで、市町村には通報しません。"
+      ],
+      "feedbackVi": "Chỉ ra một ý đã đúng và một ý thiếu hoặc vượt dữ kiện, gợi ý nói lại. Chấp nhận câu khác mẫu đúng nghĩa.",
+      "evaluationPolicy": {
+        "meaningBased": true,
+        "exactStringMatchRequired": false,
+        "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+        "missingMeaning": "clarify_before_advance",
+        "unsafeMeaning": "correct_before_advance",
+        "runtimeImplemented": false
+      },
+      "assessmentCases": [
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-04-accept",
+          "inputJa": "市町村には未通報です。今すぐ通報し、私が聞いた発言、本人の話、呼んだ応援と未確認事項を区別して伝えます。",
+          "expected": "accept_meaning",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-04-clarify",
+          "inputJa": "市町村へ伝えます。",
+          "expected": "clarify_missing_information",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-abuse-report-01-rubric-04-reject",
+          "inputJa": "上司の許可が出るまで、市町村には通報しません。",
+          "expected": "correct_before_advance",
+          "specOnly": true
+        }
+      ],
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    },
+    {
+      "id": "kaigo-gap-restraint-01-rubric-01",
+      "moduleId": "kaigo-gap-restraint-01",
+      "playerTurnId": "kaigo-gap-restraint-01-t02",
+      "promptTurnId": "kaigo-gap-restraint-01-t01",
+      "nextTurnId": "kaigo-gap-restraint-01-t03",
+      "requiredMeanings": [
+        {
+          "id": "kaigo-gap-restraint-01-rubric-01-meaning-1",
+          "vi": "13:40 Megumi đề nghị khóa phòng từ tối nay."
+        },
+        {
+          "id": "kaigo-gap-restraint-01-rubric-01-meaning-2",
+          "vi": "Mục đích ngăn mẹ ra."
+        },
+        {
+          "id": "kaigo-gap-restraint-01-rubric-01-meaning-3",
+          "vi": "Chưa thực hiện."
+        }
+      ],
+      "acceptableJa": [
+        "十三時四十分に、外へ出ないよう、今夜から部屋の鍵をかけてほしいとの依頼がありました。まだ実施していません。",
+        "十三時四十分、恵さんが、お母さまが出ないよう今夜から居室を施錠してほしいと依頼しました。実施はしていません。"
+      ],
+      "unsafeOrContradictoryJa": [
+        "家族の依頼なので、今夜の施錠は実施済みです。"
+      ],
+      "feedbackVi": "Chỉ ra một ý đã đúng và một ý thiếu hoặc vượt dữ kiện, gợi ý nói lại. Chấp nhận câu khác mẫu đúng nghĩa.",
+      "evaluationPolicy": {
+        "meaningBased": true,
+        "exactStringMatchRequired": false,
+        "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+        "missingMeaning": "clarify_before_advance",
+        "unsafeMeaning": "correct_before_advance",
+        "runtimeImplemented": false
+      },
+      "assessmentCases": [
+        {
+          "id": "kaigo-gap-restraint-01-rubric-01-accept",
+          "inputJa": "十三時四十分、恵さんが、お母さまが出ないよう今夜から居室を施錠してほしいと依頼しました。実施はしていません。",
+          "expected": "accept_meaning",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-restraint-01-rubric-01-clarify",
+          "inputJa": "鍵をかけてほしいそうです。",
+          "expected": "clarify_missing_information",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-restraint-01-rubric-01-reject",
+          "inputJa": "家族の依頼なので、今夜の施錠は実施済みです。",
+          "expected": "correct_before_advance",
+          "specOnly": true
+        }
+      ],
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    },
+    {
+      "id": "kaigo-gap-restraint-01-rubric-02",
+      "moduleId": "kaigo-gap-restraint-01",
+      "playerTurnId": "kaigo-gap-restraint-01-t04",
+      "promptTurnId": "kaigo-gap-restraint-01-t03",
+      "nextTurnId": "kaigo-gap-restraint-01-t05",
+      "requiredMeanings": [
+        {
+          "id": "kaigo-gap-restraint-01-rubric-02-meaning-1",
+          "vi": "Mong muốn bác chưa kiểm."
+        },
+        {
+          "id": "kaigo-gap-restraint-01-rubric-02-meaning-2",
+          "vi": "Nguy hiểm cụ thể chưa kiểm."
+        },
+        {
+          "id": "kaigo-gap-restraint-01-rubric-02-meaning-3",
+          "vi": "Hỗ trợ thay khóa chưa xem."
+        }
+      ],
+      "acceptableJa": [
+        "ご本人の希望と具体的な危険は未確認です。鍵をかける以外の支援も、まだ検討していません。",
+        "本人の希望も、何が危険なのかも未確認です。施錠しない支援についても未検討です。"
+      ],
+      "unsafeOrContradictoryJa": [
+        "危険と代替方法を確認したので、鍵をかける以外ありません。"
+      ],
+      "feedbackVi": "Chỉ ra một ý đã đúng và một ý thiếu hoặc vượt dữ kiện, gợi ý nói lại. Chấp nhận câu khác mẫu đúng nghĩa.",
+      "evaluationPolicy": {
+        "meaningBased": true,
+        "exactStringMatchRequired": false,
+        "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+        "missingMeaning": "clarify_before_advance",
+        "unsafeMeaning": "correct_before_advance",
+        "runtimeImplemented": false
+      },
+      "assessmentCases": [
+        {
+          "id": "kaigo-gap-restraint-01-rubric-02-accept",
+          "inputJa": "本人の希望も、何が危険なのかも未確認です。施錠しない支援についても未検討です。",
+          "expected": "accept_meaning",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-restraint-01-rubric-02-clarify",
+          "inputJa": "本人の希望は分かりません。",
+          "expected": "clarify_missing_information",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-restraint-01-rubric-02-reject",
+          "inputJa": "危険と代替方法を確認したので、鍵をかける以外ありません。",
+          "expected": "correct_before_advance",
+          "specOnly": true
+        }
+      ],
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    },
+    {
+      "id": "kaigo-gap-restraint-01-rubric-03",
+      "moduleId": "kaigo-gap-restraint-01",
+      "playerTurnId": "kaigo-gap-restraint-01-t06",
+      "promptTurnId": "kaigo-gap-restraint-01-t05",
+      "nextTurnId": "kaigo-gap-restraint-01-t07",
+      "requiredMeanings": [
+        {
+          "id": "kaigo-gap-restraint-01-rubric-03-meaning-1",
+          "vi": "Chuyển nỗi lo gia đình."
+        },
+        {
+          "id": "kaigo-gap-restraint-01-rubric-03-meaning-2",
+          "vi": "Kiểm mong muốn và an toàn bác."
+        },
+        {
+          "id": "kaigo-gap-restraint-01-rubric-03-meaning-3",
+          "vi": "Trao đổi nghề liên quan về hỗ trợ không hạn chế."
+        }
+      ],
+      "acceptableJa": [
+        "恵さんの心配を伝え、ご本人の希望と安全を確認します。行動を制限しない支援を関係職種に相談したいです。",
+        "ご家族の心配を共有し、本人の希望と安全を確かめます。制限をしない支援について、多職種に相談したいです。"
+      ],
+      "unsafeOrContradictoryJa": [
+        "家族の安心のため、本人の希望は確認せず部屋から出さないようにします。"
+      ],
+      "feedbackVi": "Chỉ ra một ý đã đúng và một ý thiếu hoặc vượt dữ kiện, gợi ý nói lại. Chấp nhận câu khác mẫu đúng nghĩa.",
+      "evaluationPolicy": {
+        "meaningBased": true,
+        "exactStringMatchRequired": false,
+        "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+        "missingMeaning": "clarify_before_advance",
+        "unsafeMeaning": "correct_before_advance",
+        "runtimeImplemented": false
+      },
+      "assessmentCases": [
+        {
+          "id": "kaigo-gap-restraint-01-rubric-03-accept",
+          "inputJa": "ご家族の心配を共有し、本人の希望と安全を確かめます。制限をしない支援について、多職種に相談したいです。",
+          "expected": "accept_meaning",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-restraint-01-rubric-03-clarify",
+          "inputJa": "担当者に相談します。",
+          "expected": "clarify_missing_information",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-restraint-01-rubric-03-reject",
+          "inputJa": "家族の安心のため、本人の希望は確認せず部屋から出さないようにします。",
+          "expected": "correct_before_advance",
+          "specOnly": true
+        }
+      ],
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    },
+    {
+      "id": "kaigo-gap-restraint-01-rubric-04",
+      "moduleId": "kaigo-gap-restraint-01",
+      "playerTurnId": "kaigo-gap-restraint-01-t08",
+      "promptTurnId": "kaigo-gap-restraint-01-t07",
+      "nextTurnId": null,
+      "requiredMeanings": [
+        {
+          "id": "kaigo-gap-restraint-01-rubric-04-meaning-1",
+          "vi": "Không tự quyết/hứa khóa."
+        },
+        {
+          "id": "kaigo-gap-restraint-01-rubric-04-meaning-2",
+          "vi": "Ghi đề nghị và chưa thực hiện riêng."
+        },
+        {
+          "id": "kaigo-gap-restraint-01-rubric-04-meaning-3",
+          "vi": "Ghi thông tin chưa kiểm, tiếp tục trao đổi."
+        }
+      ],
+      "acceptableJa": [
+        "私一人で決めず、鍵をかける約束はしません。依頼と未実施の状況、未確認の情報を分けて記録し、相談を続けます。",
+        "一人で判断せず、施錠するとは約束しません。依頼はあったが未実施であることと未確認事項を分けて記録し、相談を続けます。"
+      ],
+      "unsafeOrContradictoryJa": [
+        "三つの要件を私が判断し、家族が希望すれば実施します。"
+      ],
+      "feedbackVi": "Chỉ ra một ý đã đúng và một ý thiếu hoặc vượt dữ kiện, gợi ý nói lại. Chấp nhận câu khác mẫu đúng nghĩa.",
+      "evaluationPolicy": {
+        "meaningBased": true,
+        "exactStringMatchRequired": false,
+        "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+        "missingMeaning": "clarify_before_advance",
+        "unsafeMeaning": "correct_before_advance",
+        "runtimeImplemented": false
+      },
+      "assessmentCases": [
+        {
+          "id": "kaigo-gap-restraint-01-rubric-04-accept",
+          "inputJa": "一人で判断せず、施錠するとは約束しません。依頼はあったが未実施であることと未確認事項を分けて記録し、相談を続けます。",
+          "expected": "accept_meaning",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-restraint-01-rubric-04-clarify",
+          "inputJa": "記録して相談します。",
+          "expected": "clarify_missing_information",
+          "specOnly": true
+        },
+        {
+          "id": "kaigo-gap-restraint-01-rubric-04-reject",
+          "inputJa": "三つの要件を私が判断し、家族が希望すれば実施します。",
+          "expected": "correct_before_advance",
+          "specOnly": true
+        }
+      ],
+      "review": {
+        "domainHumanReviewed": false,
+        "nativeLanguageReviewed": false,
+        "publisherReviewed": false,
+        "rightsReviewed": false,
+        "runtimeIntegrated": false,
+        "appIntegrationReady": false,
+        "releaseReady": false
+      }
+    }
+  ],
+  "review": {
+    "domainHumanReviewed": false,
+    "nativeLanguageReviewed": false,
+    "publisherReviewed": false,
+    "rightsReviewed": false,
+    "runtimeIntegrated": false,
+    "appIntegrationReady": false,
+    "releaseReady": false
+  }
+}
+
