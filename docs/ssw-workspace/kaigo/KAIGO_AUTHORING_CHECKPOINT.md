@@ -288,3 +288,14 @@ Lưu hẹp5file bằng GitHubtree/commit/ref cólease trênHEAD hiện tại và
 - Mẫubáo143→179codepoint;haicâuhỏi46/thẻlờibác48codepoint,khôngthờigian. Thayslottransfercũ/0phútcộngchỉbốtrí,total30chưađo;phảiđo hỏi/thẻ/báo/retry/feedback. Human/domain/native/publisher/rights/runtime/releasefalse,chưaassets.
 - Hồ sơreviews/priority-gap-partial-repair-06.json,PRIORITY_GAP_PARTIAL_REPAIR_06_REPORT.md;scripts/check-kaigo-priority-gap-permission-repair.mjs. Támcandidatechưa chọn,gốcbảotoàn,khôngUI/JLPT/plan/curriculum/mockđổi.
 - Bước tiếp:ràhợpnhấtpartialmapping/độsâucảtámcandidate,tảithựctếtrướcchọn;C06/kỹthuậthỗtrợ cầnchuyênmôn. Khôngtựtuần9/đềmới/tíchhợp/pháthành.
+
+## 2026-10-08 — consolidated audit07: tám candidate và tải học
+
+- Baseline835adc7fb19f97d8774e42529281094db53eb953;đọc lại START/AGENTS/rules/checkpoint/plan. Rà snapshot dự án,không gitcheckout hoặcclaimWORKPERSISTENCEscriptPASS. Không viết kiến thức kỹ thuật mới/claimđọc hoặcquét nguồn mới.
+- Hợp nhất8candidate01–04 qua23mục tiêu gốc,23rowtrỏ pointerchứngcứ,8quyếtđịnhNOT_READY_FOR_REPLACEMENT. Đọc mục tiêu/main/reading/transfer vàmụcýtransfer của8cặp,không audit lại mọi câu/rubric/vocab/nguồn. Mọirowpartial,chưaequivalence/humanapproval;không dùngcandidatechưachọn hoặc ngày tươnglai nhưđãhọc.
+- Còn sâu:infection cólược nhưng chưa transferkhăn/phạmvilau;care-process mớinêu sẽbákếtquả,hỏi quyếtđịnh chưa cóthẻ kếtquả;serviceshẹn traođổi cònkếhoạch;workerthiếulượt saukiểm/đổitìnhtrạng;C02cầnkiểm tách thôngbáophápđịnh với chia sẻthường/mốcngàythôngbáo;C06giữsựcố/vịtrí ởcase riêng,chưađủkỹthuật.
+- TảiJA bảngexactcodepoint:reading85→107/114→96/77→124/119→178/83→196/66→166/103→223/69→208;5câu394→633/385→617/385→617/400→610/423→710/312→704/394→507/364→544. 7readingdàihơngốc,8cụmcâuhỏidàihơn;khôngsuyphúthoặcvượt30. KhôngtínhđủVI/biếnthể/suynghĩ/retry/feedback.
+- 8timingsheetkhóaexactblob,5khối,khôngthêmphút/bài;mốcngày14giữ3/8/5/9/5,còn lại5/5/5/10/5. Mọisốliệuđo/ngườithamgia/quyếtđịnhnull,chưađo. Cầnsửađộsâu/đothựctếtrướcchọn,khônggiaobắtbuộcgốc+candidate.
+- Validator07 PASSintegrity/link/metric/20immutableblob/core54/270/60/23objective/8ngàyđộcnhất/6negativecontrols. Tổngcandidate68mainturn/8reading/40câu/32mainrubric96caspec/8transferrubric24caspec;120caspecchưaevaluator,khôngcộngquotacore. Khôngsửabundle/bàigốc/lịch/plan/đề/UI/JLPT.
+- Hồ sơreviews/priority-gap-consolidated-audit-07.json,priority-gap-timing-sheets-07.json,PRIORITY_GAP_CONSOLIDATED_AUDIT_07_REPORT.md;scripts/check-kaigo-consolidated-audit-07.mjs. Mọihuman/domain/native/publisher/rights/runtime/releasefalse;khôngapp/fullrepo/timing/evaluator/thiếtbị/nguồnvisualmới.
+- Bước tiếpcụthể:sửatransferinfection01sangkhăn/phạmvilau với quyếtđịnh/dữkiệnkhác,khôngnounswap;rồicare-process01thẻkếtquả→báobác/hỏiquyếtđịnh. Giữ8tuần,khôngtựthêmđề/tíchhợp/pháthành.
