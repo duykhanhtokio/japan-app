@@ -395,6 +395,395 @@
           "mode": "replace_existing_transfer_rehearsal_not_append",
           "additionalMandatoryMinutes": 0,
           "durationMeasured": false
+        },
+        "rehearsalPlan09": {
+          "id": "kaigo-gap-care-process-01-rehearsal-plan-09",
+          "mode": "choose_one_variant_per_rehearsal_not_append_required_practice",
+          "defaultVariantId": "kaigo-gap-care-process-01-merged-transfer-09",
+          "defaultVariant": {
+            "kind": "embedded_staged_flow",
+            "flow": {
+              "id": "kaigo-gap-care-process-01-merged-transfer-09",
+              "contextVi": "Morikawa đã chọn bài nhạc, chưa tham gia; chỉ muốn quyết định sau kiểm hỗ trợ về đến phòng14:25, nếu không phù hợp thì không tham gia. Mở từng thẻ sau câu trả lời; không đưa kết quả tương lai vào lời báo trước kiểm.",
+              "sourceProposalRef": {
+                "path": "docs/ssw-workspace/kaigo/drafts/priority-gap-transfer-proposals-08.json",
+                "gitBlobSha": "164c80c09e34bc3f0a7931715c9660ba0ec084b1",
+                "pointer": "/proposals/1"
+              },
+              "steps": [
+                {
+                  "id": "kaigo-gap-care-process-01-merged-transfer-09-step-1",
+                  "responseTarget": "resident_confirmation",
+                  "npcId": "kaigo-npc-resident-a",
+                  "promptVi": "Hỏi bác về điều kiện, chưa biết câu trả lời.",
+                  "modelJa": "十四時二十五分にお部屋へ戻る時のお手伝いを確認してから、参加を決めたいということでしょうか。",
+                  "modelVi": "Bác muốn xác nhận hỗ trợ về phòng lúc14:25 rồi mới quyết định tham gia, đúng không ạ?",
+                  "afterAttemptCard": {
+                    "ja": "はい。その時間に戻れないなら、今日は参加しません。",
+                    "vi": "Đúng. Nếu không về được giờ đó thì hôm nay tôi không tham gia.",
+                    "revealAfterAttempt": true
+                  },
+                  "rubric": {
+                    "id": "kaigo-gap-care-process-01-merged-transfer-09-step-1-rubric",
+                    "requiredMeanings": [
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-1-meaning-1",
+                        "vi": "Hỏi lại hỗ trợ về phòng và giờ14:25."
+                      },
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-1-meaning-2",
+                        "vi": "Giữ quyền quyết định sau khi kiểm, không coi đã chọn bài là đồng ý tham gia."
+                      }
+                    ],
+                    "acceptableJa": [
+                      "十四時二十五分にお部屋へ戻る時のお手伝いを確認してから、参加を決めたいということでしょうか。",
+                      "お部屋に十四時二十五分に戻る支援を確認した後で、参加するかお決めになりたいのですね。"
+                    ],
+                    "unsafeOrContradictoryJa": [
+                      "曲を選んだので、もう参加すると決まっています。"
+                    ],
+                    "feedbackVi": "Giữ dữ kiện và người nhận của bước hiện tại; sửa một ý thiếu hoặc suy luận vượt dữ kiện rồi nói lại.",
+                    "evaluationPolicy": {
+                      "meaningBased": true,
+                      "exactStringMatchRequired": false,
+                      "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+                      "missingMeaning": "clarify_before_advance",
+                      "unsafeMeaning": "correct_before_advance",
+                      "runtimeImplemented": false
+                    },
+                    "assessmentCases": [
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-1-accept",
+                        "inputJa": "お部屋に十四時二十五分に戻る支援を確認した後で、参加するかお決めになりたいのですね。",
+                        "expected": "accept_meaning",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-1-clarify",
+                        "inputJa": "参加したいのですね。",
+                        "expected": "clarify_missing_information",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-1-reject",
+                        "inputJa": "曲を選んだので、もう参加すると決まっています。",
+                        "expected": "correct_before_advance",
+                        "specOnly": true
+                      }
+                    ],
+                    "review": {
+                      "domainHumanReviewed": false,
+                      "nativeLanguageReviewed": false,
+                      "publisherReviewed": false,
+                      "rightsReviewed": false,
+                      "runtimeIntegrated": false,
+                      "appIntegrationReady": false,
+                      "releaseReady": false
+                    }
+                  }
+                },
+                {
+                  "id": "kaigo-gap-care-process-01-merged-transfer-09-step-2",
+                  "responseTarget": "care_lead_before_start",
+                  "npcId": "kaigo-npc-care-lead",
+                  "promptVi": "Báo phụ trách trước bắt đầu; hỗ trợ/giờ còn chưa xác nhận.",
+                  "modelJa": "森川さんは十四時二十五分に戻る支援を確認してから参加を決めたいそうです。その時刻に戻れなければ参加しないご希望です。支援と戻る時刻は未確認で、活動はまだ始まっていません。確認をお願いします。",
+                  "modelVi": "Bác Morikawa muốn xác nhận hỗ trợ về lúc14:25 rồi quyết định. Nếu không về được giờ đó, bác muốn không tham gia. Hỗ trợ và giờ về chưa được xác nhận; hoạt động chưa bắt đầu. Nhờ xác nhận.",
+                  "afterAttemptCard": {
+                    "ja": "確認できました。岸本が十四時二十五分に部屋へ戻る支援を担当します。まだ本人の参加の返事は聞いていません。",
+                    "vi": "Đã xác nhận: Kishimoto phụ trách hỗ trợ về phòng lúc14:25. Chưa hỏi câu trả lời của bác về tham gia.",
+                    "revealAfterAttempt": true
+                  },
+                  "rubric": {
+                    "id": "kaigo-gap-care-process-01-merged-transfer-09-step-2-rubric",
+                    "requiredMeanings": [
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-2-meaning-1",
+                        "vi": "Báo điều kiện14:25 và hỗ trợ, giờ chưa xác nhận trước bắt đầu."
+                      },
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-2-meaning-2",
+                        "vi": "Bác không tham gia nếu điều kiện không phù hợp."
+                      },
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-2-meaning-3",
+                        "vi": "Nhờ phụ trách xác nhận, không tự hứa giờ hoặc đổi kế hoạch."
+                      }
+                    ],
+                    "acceptableJa": [
+                      "森川さんは十四時二十五分に戻る支援を確認してから参加を決めたいそうです。その時刻に戻れなければ参加しないご希望です。支援と戻る時刻は未確認で、活動はまだ始まっていません。確認をお願いします。",
+                      "十四時二十五分に戻る支援と時刻はまだ未確認です。その時刻に戻れないなら参加しないという森川さんの希望があります。活動は未開始ですので、確認をお願いします。"
+                    ],
+                    "unsafeOrContradictoryJa": [
+                      "先に活動を始めます。支援は未確認ですが、十四時二十五分に戻れると本人に伝えました。"
+                    ],
+                    "feedbackVi": "Giữ dữ kiện và người nhận của bước hiện tại; sửa một ý thiếu hoặc suy luận vượt dữ kiện rồi nói lại.",
+                    "evaluationPolicy": {
+                      "meaningBased": true,
+                      "exactStringMatchRequired": false,
+                      "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+                      "missingMeaning": "clarify_before_advance",
+                      "unsafeMeaning": "correct_before_advance",
+                      "runtimeImplemented": false
+                    },
+                    "assessmentCases": [
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-2-accept",
+                        "inputJa": "十四時二十五分に戻る支援と時刻はまだ未確認です。その時刻に戻れないなら参加しないという森川さんの希望があります。活動は未開始ですので、確認をお願いします。",
+                        "expected": "accept_meaning",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-2-clarify",
+                        "inputJa": "帰る時の支援を確認してください。",
+                        "expected": "clarify_missing_information",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-2-reject",
+                        "inputJa": "先に活動を始めます。支援は未確認ですが、十四時二十五分に戻れると本人に伝えました。",
+                        "expected": "correct_before_advance",
+                        "specOnly": true
+                      }
+                    ],
+                    "review": {
+                      "domainHumanReviewed": false,
+                      "nativeLanguageReviewed": false,
+                      "publisherReviewed": false,
+                      "rightsReviewed": false,
+                      "runtimeIntegrated": false,
+                      "appIntegrationReady": false,
+                      "releaseReady": false
+                    }
+                  }
+                },
+                {
+                  "id": "kaigo-gap-care-process-01-merged-transfer-09-step-3",
+                  "responseTarget": "resident_result_and_choice",
+                  "npcId": "kaigo-npc-resident-a",
+                  "promptVi": "Sau thẻ kết quả bước2, báo bác và hỏi quyết định.",
+                  "modelJa": "川瀬さんに確認できました。岸本さんが十四時二十五分にお部屋へ戻るお手伝いをします。活動はまだ始まっていません。この内容で、参加なさいますか。",
+                  "modelVi": "Cháu đã xác nhận với Kawase. Kishimoto sẽ hỗ trợ bác về phòng lúc14:25. Hoạt động chưa bắt đầu. Với phương án này, bác có muốn tham gia không ạ?",
+                  "afterAttemptCard": {
+                    "ja": "時間は合いますが、今日は参加しません。曲だけ選んでおきます。",
+                    "vi": "Giờ phù hợp nhưng hôm nay tôi không tham gia. Tôi chỉ chọn bài nhạc.",
+                    "revealAfterAttempt": true
+                  },
+                  "rubric": {
+                    "id": "kaigo-gap-care-process-01-merged-transfer-09-step-3-rubric",
+                    "requiredMeanings": [
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-3-meaning-1",
+                        "vi": "Báo hỗ trợ Kishimoto và giờ về14:25 đã kiểm với Kawase."
+                      },
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-3-meaning-2",
+                        "vi": "Tách phương án tương lai với đã về; hoạt động chưa bắt đầu."
+                      },
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-3-meaning-3",
+                        "vi": "Hỏi bác quyết định, không coi điều kiện phù hợp là đồng ý."
+                      }
+                    ],
+                    "acceptableJa": [
+                      "川瀬さんに確認できました。岸本さんが十四時二十五分にお部屋へ戻るお手伝いをします。活動はまだ始まっていません。この内容で、参加なさいますか。",
+                      "川瀬さんへの確認が済み、岸本さんが十四時二十五分にお部屋へ戻る支援を担当します。活動は未開始です。この予定で参加されますか。"
+                    ],
+                    "unsafeOrContradictoryJa": [
+                      "時間が合うので、参加すると決めておきました。"
+                    ],
+                    "feedbackVi": "Giữ dữ kiện và người nhận của bước hiện tại; sửa một ý thiếu hoặc suy luận vượt dữ kiện rồi nói lại.",
+                    "evaluationPolicy": {
+                      "meaningBased": true,
+                      "exactStringMatchRequired": false,
+                      "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+                      "missingMeaning": "clarify_before_advance",
+                      "unsafeMeaning": "correct_before_advance",
+                      "runtimeImplemented": false
+                    },
+                    "assessmentCases": [
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-3-accept",
+                        "inputJa": "川瀬さんへの確認が済み、岸本さんが十四時二十五分にお部屋へ戻る支援を担当します。活動は未開始です。この予定で参加されますか。",
+                        "expected": "accept_meaning",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-3-clarify",
+                        "inputJa": "戻る支援は決まりました。",
+                        "expected": "clarify_missing_information",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-3-reject",
+                        "inputJa": "時間が合うので、参加すると決めておきました。",
+                        "expected": "correct_before_advance",
+                        "specOnly": true
+                      }
+                    ],
+                    "review": {
+                      "domainHumanReviewed": false,
+                      "nativeLanguageReviewed": false,
+                      "publisherReviewed": false,
+                      "rightsReviewed": false,
+                      "runtimeIntegrated": false,
+                      "appIntegrationReady": false,
+                      "releaseReady": false
+                    }
+                  }
+                },
+                {
+                  "id": "kaigo-gap-care-process-01-merged-transfer-09-step-4",
+                  "responseTarget": "care_lead_resident_decision",
+                  "npcId": "kaigo-npc-care-lead",
+                  "promptVi": "Sau lời bác bước3, báo đúng lựa chọn với phụ trách.",
+                  "modelJa": "岸本さんの支援と十四時二十五分に戻る予定を本人に伝えました。森川さんは曲を選びましたが、今日は参加しないと決めました。活動は未開始です。選曲だけで目標達成とはせず、見直しは本人とチームで相談します。",
+                  "modelVi": "Tôi đã báo bác về hỗ trợ của Kishimoto và dự kiến về14:25. Bác Morikawa đã chọn bài nhưng quyết định hôm nay không tham gia. Hoạt động chưa bắt đầu. Không coi chỉ chọn bài là đạt mục tiêu; việc xem lại trao đổi cùng bác và nhóm.",
+                  "afterAttemptCard": {
+                    "ja": "参加しないという本人の希望が分かりました。曲を選んだことと参加しないことを分けて共有しましょう。計画の見直しが必要かは、本人とチームで相談します。",
+                    "vi": "Tôi đã rõ bác muốn không tham gia. Hãy chia sẻ riêng việc chọn bài và không tham gia. Việc có cần xem lại kế hoạch hay không sẽ trao đổi cùng bác và nhóm.",
+                    "revealAfterAttempt": true
+                  },
+                  "rubric": {
+                    "id": "kaigo-gap-care-process-01-merged-transfer-09-step-4-rubric",
+                    "requiredMeanings": [
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-4-meaning-1",
+                        "vi": "Báo kết quả đã nói với bác: Kishimoto hỗ trợ/giờ14:25."
+                      },
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-4-meaning-2",
+                        "vi": "Bác đã chọn bài nhưng quyết định không tham gia hôm nay."
+                      },
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-4-meaning-3",
+                        "vi": "Hoạt động chưa bắt đầu, không nói đã về phòng."
+                      },
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-4-meaning-4",
+                        "vi": "Không coi chọn bài là đạt mục tiêu hoặc tự phê duyệt kế hoạch."
+                      }
+                    ],
+                    "acceptableJa": [
+                      "岸本さんの支援と十四時二十五分に戻る予定を本人に伝えました。森川さんは曲を選びましたが、今日は参加しないと決めました。活動は未開始です。選曲だけで目標達成とはせず、見直しは本人とチームで相談します。",
+                      "本人に岸本さんの支援と十四時二十五分に戻る予定を伝えました。選曲は済みましたが、今日は参加しないと決められました。活動は未開始です。選曲だけでは目標達成と判断せず、見直しは本人とチームで相談します。"
+                    ],
+                    "unsafeOrContradictoryJa": [
+                      "曲を選び、参加して部屋に戻ったので目標は達成しました。計画の変更は私が承認しました。"
+                    ],
+                    "feedbackVi": "Giữ dữ kiện và người nhận của bước hiện tại; sửa một ý thiếu hoặc suy luận vượt dữ kiện rồi nói lại.",
+                    "evaluationPolicy": {
+                      "meaningBased": true,
+                      "exactStringMatchRequired": false,
+                      "asrUncertain": "repeat_or_edit_no_knowledge_penalty",
+                      "missingMeaning": "clarify_before_advance",
+                      "unsafeMeaning": "correct_before_advance",
+                      "runtimeImplemented": false
+                    },
+                    "assessmentCases": [
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-4-accept",
+                        "inputJa": "本人に岸本さんの支援と十四時二十五分に戻る予定を伝えました。選曲は済みましたが、今日は参加しないと決められました。活動は未開始です。選曲だけでは目標達成と判断せず、見直しは本人とチームで相談します。",
+                        "expected": "accept_meaning",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-4-clarify",
+                        "inputJa": "本人に確認結果を伝えました。",
+                        "expected": "clarify_missing_information",
+                        "specOnly": true
+                      },
+                      {
+                        "id": "kaigo-gap-care-process-01-merged-transfer-09-step-4-reject",
+                        "inputJa": "曲を選び、参加して部屋に戻ったので目標は達成しました。計画の変更は私が承認しました。",
+                        "expected": "correct_before_advance",
+                        "specOnly": true
+                      }
+                    ],
+                    "review": {
+                      "domainHumanReviewed": false,
+                      "nativeLanguageReviewed": false,
+                      "publisherReviewed": false,
+                      "rightsReviewed": false,
+                      "runtimeIntegrated": false,
+                      "appIntegrationReady": false,
+                      "releaseReady": false
+                    }
+                  }
+                }
+              ],
+              "stagingPolicy": "attempt_then_reveal_fixed_reply_not_runtime",
+              "factsBefore": {
+                "requestedRoomArrival": "14:25",
+                "supportConfirmed": false,
+                "activityStarted": false,
+                "participationDecided": false
+              },
+              "factsAfterStep2": {
+                "confirmedRoomArrival": "14:25",
+                "supportNpcId": "kaigo-npc-care-peer",
+                "supportConfirmed": true,
+                "returnCompleted": false,
+                "activityStarted": false,
+                "participationDecided": false
+              },
+              "outcome": {
+                "residentChoice": "decline_today",
+                "leadInformed": true,
+                "returnCompleted": false,
+                "activityStarted": false,
+                "goalAchievementConfirmed": false,
+                "planApprovedByLearner": false
+              },
+              "alternateResultRef": {
+                "path": "docs/ssw-workspace/kaigo/drafts/priority-gap-transfer-proposals-08.json",
+                "pointer": "/proposals/1/alternateResultPractice",
+                "mode": "optional_instead_of_fit_result_not_both_required"
+              },
+              "review": {
+                "domainHumanReviewed": false,
+                "nativeLanguageReviewed": false,
+                "publisherReviewed": false,
+                "rightsReviewed": false,
+                "runtimeIntegrated": false,
+                "appIntegrationReady": false,
+                "releaseReady": false
+              }
+            }
+          },
+          "retainedVariant": {
+            "id": "kaigo-gap-care-process-01-legacy-transfer-09",
+            "kind": "legacy_transfer_fields_of_this_object",
+            "contentFields": [
+              "contextVi",
+              "taskVi",
+              "expectedMeaningVi",
+              "modelJa",
+              "rubric",
+              "residentConfirmation"
+            ],
+            "usageVi": "Giữ thẻ luyện ít gợi ý cũ như nhánh thay thế, không luyện cả cũ và mặc định trong một lần.",
+            "coversQuestionId": "kaigo-gap-care-process-01-q05"
+          },
+          "selectionGate": {
+            "candidateSelected": false,
+            "runtimeImplemented": false,
+            "additionalMandatoryMinutes": 0,
+            "plannedDailyMinutes": 30,
+            "durationMeasured": false,
+            "observedLearnerData": null,
+            "maximumRequiredVariantsPerRehearsal": 1
+          },
+          "coverageVi": "Bốn bước mặc định giữ điều kiện/trao đổi trước bắt đầu rồi thực sự luyện báo kết quả và quyết định.",
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
         }
       },
       "questions": [
@@ -640,7 +1029,8 @@
         ],
         "replacementAuditRef": "reviews/priority-gap-replacement-audit-03.json",
         "replacementReady": false,
-        "appliedRepairRef": "reviews/priority-gap-applied-repair-04.json"
+        "appliedRepairRef": "reviews/priority-gap-applied-repair-04.json",
+        "transferMergeRef": "reviews/priority-gap-transfer-merge-09.json"
       },
       "responseRubricIds": [
         "kaigo-gap-care-process-01-rubric-01",
@@ -1827,5 +2217,12 @@
       "transferAssessmentCaseSpecsTotal": 6,
       "transferSpecsExecuted": false
     }
+  },
+  "editorialTransferMerge": {
+    "date": "2026-10-08",
+    "evidenceRef": "reviews/priority-gap-transfer-merge-09.json",
+    "scope": "add_transfer_rehearsal_plan_only_preserve_legacy_fields",
+    "status": "APPLIED_TO_DRAFT_VARIANTS_NOT_CURRICULUM_OR_APP",
+    "replacementReady": false
   }
 }

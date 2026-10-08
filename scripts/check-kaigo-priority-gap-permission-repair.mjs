@@ -1,3 +1,4 @@
+import {historicalBytes09,restoreMerge09Bundles} from './kaigo-transfer-merge-09-lineage.mjs';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
@@ -8,6 +9,7 @@ const blob=s=>{const b=Buffer.from(s);return crypto.createHash('sha1').update('b
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 const serial=x=>JSON.stringify(x,null,2)+'\n';
 export function restorePermissionBaseline(bundles,e){
+ bundles=restoreMerge09Bundles(bundles);
  const r=structuredClone(bundles);
  assert.equal(bundles.length,2);
  const b=r[0],m=b.modules.find(x=>x.id==='kaigo-gap-infection-01');
@@ -20,6 +22,7 @@ export function restorePermissionBaseline(bundles,e){
  return r;
 }
 export function verifyHistoricalInput(path,bytes,expected,e){
+ bytes=historicalBytes09(path,bytes);
  if(blob(bytes)===expected)return;
  assert.equal(path,e.file.path,'unsupported historical input');
  assert.equal(sha(bytes),e.file.afterSha256,'repair06 current bundle identity');
@@ -31,6 +34,7 @@ export function verifyHistoricalInput(path,bytes,expected,e){
  assert.equal(blob(serial(b)),expected,'requested historical Gitblob');
 }
 export function validatePermissionRepair(bundles,e){
+ bundles=restoreMerge09Bundles(bundles);
  assert.equal(e.status,'PARTIAL_MAPPING_DRAFT_REPAIR_NOT_REPLACEMENT_APPROVAL');
  const m=bundles[0].modules.find(x=>x.id==='kaigo-gap-infection-01'),t=m.transferPractice,r=t.rubric,c=t.residentConfirmation;
  for(const b of bundles)for(const x of b.modules){
@@ -78,10 +82,10 @@ export function validatePermissionRepair(bundles,e){
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
  const read=p=>JSON.parse(fs.readFileSync(dir+p,'utf8'));
- const b=['01','02'].map(n=>read('drafts/priority-gap-supplements-'+n+'.json'));
+ const b=restoreMerge09Bundles(['01','02'].map(n=>read('drafts/priority-gap-supplements-'+n+'.json')));
  const e=read('reviews/priority-gap-partial-repair-06.json');
  const result=validatePermissionRepair(b,e);
- for(const f of e.immutableInputs)assert.equal(blob(fs.readFileSync(f.path)),f.gitBlobSha,'immutable '+f.path);
+ for(const f of e.immutableInputs)assert.equal(blob(historicalBytes09(f.path,fs.readFileSync(f.path))),f.gitBlobSha,'immutable '+f.path);
  const names=['foundation','week2','movement','eating','excretion','hygiene','housework','review'];
  const core=names.flatMap(n=>read('drafts/'+n+'-lessons.json').lessons);
  assert.equal(core.length,54);assert.equal(core.flatMap(x=>x.questions).length,270);
@@ -95,5 +99,5 @@ if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).hr
   [x=>x[0].modules[0].knowledgeModule.sections[0].explanationVi+=' changed',/exact predecessor Gitblob/]
  ];
  for(const [mutate,reason]of cases){const x=structuredClone(b);mutate(x);assert.throws(()=>validatePermissionRepair(x,e),reason);}
- console.log(JSON.stringify({...result,immutableInputBlobs:e.immutableInputs.length,negativeControlsRejected:cases.length,coreLessons:54,coreQuestions:270,mockQuestions:60,learnerTimingExecuted:false,semanticEvaluatorExecuted:false}));
+ console.log(JSON.stringify({...result,historicalSnapshotValidation:true,immutableInputBlobs:e.immutableInputs.length,negativeControlsRejected:cases.length,coreLessons:54,coreQuestions:270,mockQuestions:60,learnerTimingExecuted:false,semanticEvaluatorExecuted:false}));
 }

@@ -1,3 +1,4 @@
+import {historicalBytes09} from './kaigo-transfer-merge-09-lineage.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -53,9 +54,9 @@ export function validateProposal(d){
 const d=read(base+'drafts/priority-gap-transfer-proposals-08.json');
 const e=read(base+'reviews/priority-gap-transfer-proposals-08-evidence.json');
 const counts=validateProposal(d);
-for(const f of e.inputSnapshot){const b=fs.readFileSync(path.join(root,f.path));gate(blob(b)===f.gitBlobSha,'immutable_input:'+f.path);}
+for(const f of e.inputSnapshot){const b=historicalBytes09(f.path,fs.readFileSync(path.join(root,f.path)));gate(blob(b)===f.gitBlobSha,'immutable_input:'+f.path);}
 for(const p of d.proposals){
- const b=fs.readFileSync(path.join(root,p.targetBundlePath));gate(blob(b)===p.targetBundleGitBlob,'target_bundle_pin');
+ const b=historicalBytes09(p.targetBundlePath,fs.readFileSync(path.join(root,p.targetBundlePath)));gate(blob(b)===p.targetBundleGitBlob,'target_bundle_pin');
  const module=JSON.parse(b).modules.find(m=>m.id===p.targetModuleId);
  gate(module.replacementPlan.baseLessonId===p.baseLessonId&&module.replacementPlan.day===p.day&&module.replacementPlan.selectedInCurriculum===false,'base_target_link');
 }
@@ -73,4 +74,4 @@ const controls=[
  ['rubric_link',x=>x.proposals[1].responseRubrics[0].responseNpcId='kaigo-npc-care-lead']
 ];
 for(const [label,mutate] of controls){const x=structuredClone(d);mutate(x);let reason;try{validateProposal(x);}catch(error){reason=error.message;}gate(reason===label,'negative_control:'+label);}
-console.log(JSON.stringify({status:'PASS_STRUCTURE_LINKS_FACT_CONSISTENCY_NOT_SEMANTIC_APPROVAL',immutableInputs:e.inputSnapshot.length,counts,negativeControlsRejected:controls.length,loadMetrics:metrics,semanticEvaluatorExecuted:false,learnerTimingExecuted:false}));
+console.log(JSON.stringify({status:'PASS_STRUCTURE_LINKS_FACT_CONSISTENCY_NOT_SEMANTIC_APPROVAL',historicalSnapshotValidation:true,immutableInputs:e.inputSnapshot.length,counts,negativeControlsRejected:controls.length,loadMetrics:metrics,semanticEvaluatorExecuted:false,learnerTimingExecuted:false}));

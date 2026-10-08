@@ -1284,6 +1284,55 @@
             "vi": "Đã kiểm hộp được phép nhưng chưa thấy lược; nơi khác chưa kiểm."
           },
           "runtimeImplemented": false
+        },
+        "rehearsalPlan09": {
+          "id": "kaigo-gap-infection-01-rehearsal-plan-09",
+          "mode": "choose_one_variant_per_rehearsal_not_append_required_practice",
+          "defaultVariantId": "kaigo-gap-infection-01-cloth-variant-09",
+          "defaultVariant": {
+            "kind": "linked_reviewed_draft_flow",
+            "ref": {
+              "id": "kaigo-gap-infection-01-cloth-variant-09",
+              "path": "docs/ssw-workspace/kaigo/drafts/priority-gap-transfer-proposals-08.json",
+              "gitBlobSha": "164c80c09e34bc3f0a7931715c9660ba0ec084b1",
+              "pointer": "/proposals/0",
+              "dialoguePointer": "/proposals/0/dialogue",
+              "rubricsPointer": "/proposals/0/responseRubrics"
+            }
+          },
+          "retainedVariant": {
+            "id": "kaigo-gap-infection-01-legacy-transfer-09",
+            "kind": "legacy_transfer_fields_of_this_object",
+            "contentFields": [
+              "contextVi",
+              "taskVi",
+              "expectedMeaningVi",
+              "modelJa",
+              "rubric",
+              "residentConfirmation"
+            ],
+            "usageVi": "Giữ nguyên nhánh lược/xin phép hộp/màn hình-găng; chọn nhánh này thay vì nhánh khăn khi cần ôn năng lực đó.",
+            "coversQuestionId": "kaigo-gap-infection-01-q05"
+          },
+          "selectionGate": {
+            "candidateSelected": false,
+            "runtimeImplemented": false,
+            "additionalMandatoryMinutes": 0,
+            "plannedDailyMinutes": 30,
+            "durationMeasured": false,
+            "observedLearnerData": null,
+            "maximumRequiredVariantsPerRehearsal": 1
+          },
+          "coverageVi": "Nhánh khăn mặc định có lựa chọn/phạm vi; nhánh lược vẫn đầy đủ dữ kiện/permission/màn hình riêng. Có nhiều nhánh trong dữ liệu chưa chứng minh năng lực được luyện đủ trong slot; còn phải kiểm retrieval/tải trước chọn thay.",
+          "review": {
+            "domainHumanReviewed": false,
+            "nativeLanguageReviewed": false,
+            "publisherReviewed": false,
+            "rightsReviewed": false,
+            "runtimeIntegrated": false,
+            "appIntegrationReady": false,
+            "releaseReady": false
+          }
         }
       },
       "questions": [
@@ -1530,7 +1579,8 @@
         "replacementAuditRef": "reviews/priority-gap-replacement-audit-03.json",
         "replacementReady": false,
         "appliedRepairRef": "reviews/priority-gap-applied-repair-04.json",
-        "permissionRepairRef": "reviews/priority-gap-partial-repair-06.json"
+        "permissionRepairRef": "reviews/priority-gap-partial-repair-06.json",
+        "transferMergeRef": "reviews/priority-gap-transfer-merge-09.json"
       },
       "responseRubricIds": [
         "kaigo-gap-infection-01-rubric-01",
@@ -2077,5 +2127,12 @@
     "date": "2026-10-08",
     "evidenceRef": "reviews/priority-gap-partial-repair-06.json",
     "status": "PARTIAL_MAPPING_DRAFT_REPAIR_NOT_REPLACEMENT_APPROVAL"
+  },
+  "editorialTransferMerge": {
+    "date": "2026-10-08",
+    "evidenceRef": "reviews/priority-gap-transfer-merge-09.json",
+    "scope": "add_transfer_rehearsal_plan_only_preserve_legacy_fields",
+    "status": "APPLIED_TO_DRAFT_VARIANTS_NOT_CURRICULUM_OR_APP",
+    "replacementReady": false
   }
 }

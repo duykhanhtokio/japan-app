@@ -1,8 +1,9 @@
+import {historicalBytes09} from './kaigo-transfer-merge-09-lineage.mjs';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
 const dir='docs/ssw-workspace/kaigo/';
-const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+const read=p=>JSON.parse(historicalBytes09(p,fs.readFileSync(p,'utf8')));
 const cp=s=>[...s.normalize('NFKC').replace(/\s+/gu,'')].length;
 const qc=m=>m.questions.reduce((n,q)=>n+cp(q.promptJa??q.textJa??'')+q.optionsJa.reduce((s,x)=>s+cp(x),0),0);
 const git=b=>crypto.createHash('sha1').update('blob '+b.length+'\0').update(b).digest('hex');
@@ -71,7 +72,7 @@ function validate(a,t){
  assert.equal(['skills','japanese'].reduce((s,n)=>s+read(dir+'drafts/kaigo-'+n+'-mock-01.json').questions.length,0),60);
  return counts;
 }
-for(const f of audit.inputSnapshot)assert.equal(git(fs.readFileSync(f.path)),f.gitBlobSha,'immutable '+f.path);
+for(const f of audit.inputSnapshot)assert.equal(git(historicalBytes09(f.path,fs.readFileSync(f.path))),f.gitBlobSha,'immutable '+f.path);
 const result=validate(audit,timing);
 const controls=[
  [a=>a.retentionRows.pop(),null,/all original objectives/],
@@ -82,4 +83,4 @@ const controls=[
  [null,t=>t.sheets[0].totalObservedSeconds=1800,/unobserved timing/]
 ];
 for(const [ma,mt,reason]of controls){const a=structuredClone(audit),t=structuredClone(timing);ma?.(a);mt?.(t);assert.throws(()=>validate(a,t),reason);}
-console.log(JSON.stringify({status:'PASS_integrity_links_metrics_not_quality_approval',...result,immutableInputBlobs:audit.inputSnapshot.length,negativeControlsRejected:controls.length,timingSessionsExecuted:0,semanticEvaluatorExecuted:false}));
+console.log(JSON.stringify({status:'PASS_integrity_links_metrics_not_quality_approval',...result,historicalSnapshotValidation:true,immutableInputBlobs:audit.inputSnapshot.length,negativeControlsRejected:controls.length,timingSessionsExecuted:0,semanticEvaluatorExecuted:false}));
