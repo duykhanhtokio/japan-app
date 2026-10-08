@@ -33,7 +33,7 @@ for(const u of depth.units){
 assert.equal(audit.knowledgeItems.length,159);assert(audit.knowledgeItems.every(x=>x.after==='đủ'&&x.humanReviewed===false&&x.domainReviewed===false));
 assert.equal(audit.counts.canonicalBasicKnowledgeDraftComplete,true);assert.equal(audit.counts.allSourceKnowledgeFullyCovered,false);assert.equal(audit.nationalSource.full713QuestionsAudited,false);
 assert.equal(content.lessons.flatMap(l=>l.knowledgeDepthUnits).length,41);assert.equal(content.lessons.flatMap(l=>l.knowledgeProbes).length,121);
-assert.equal(content.lessons.flatMap(l=>l.languageTasks).length,52);assert.equal(content.lessons.flatMap(l=>l.questions).length,270);assert.equal(content.mocks.flatMap(m=>m.questions).length,60);
+assert.equal(content.lessons.flatMap(l=>l.languageTasks).length,52);assert.equal(content.lessons.flatMap(l=>l.questions).length,270);assert.equal(content.mocks.flatMap(m=>m.questions).length,180);
 assert.equal(manifest.counts.knowledgeDepthFigures,3);
 for(const f of depth.figures){assert(depth.units.some(u=>u.figures.some(x=>x.key===f.key)));for(const ext of ['svg','png']){const p=ext==='svg'?base+'drafts/depth-figures/'+f.key+'.svg':'assets/kaigo/depth/'+f.key+'.png';assert.equal(hash(fs.readFileSync(p)),manifest.inputs.find(x=>x.path===p)?.sha256);}}
 for(const l of content.lessons){assert(/^[a-f0-9]{64}$/.test(l.practiceRevision));assert(/^[a-f0-9]{64}$/.test(l.knowledgeRevision));assert(l.knowledgeDepthUnits.length<=2);}

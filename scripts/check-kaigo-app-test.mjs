@@ -9,7 +9,7 @@ const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 assert.equal(hash(fs.readFileSync(manifest.output.path)),manifest.output.sha256,'runtime bytes');
 for(const f of manifest.inputs)assert.equal(hash(fs.readFileSync(f.path)),f.sha256,'frozen authoring input '+f.path);
 assert.equal(course.humanReviewed,false);assert.equal(course.releaseReady,false);assert.equal(course.mode,'publisher_requested_test_only');
-assert.equal(course.days.length,56);assert.equal(course.lessons.length,54);assert.equal(course.lessons.flatMap(l=>l.questions).length,270);assert.equal(course.candidates.length,8);assert.equal(course.candidates.flatMap(l=>l.questions).length,40);assert.equal(course.mocks.length,2);assert.equal(course.mocks.flatMap(l=>l.questions).length,60);
+assert.equal(course.days.length,56);assert.equal(course.lessons.length,54);assert.equal(course.lessons.flatMap(l=>l.questions).length,270);assert.equal(course.candidates.length,8);assert.equal(course.candidates.flatMap(l=>l.questions).length,40);assert.equal(course.mocks.length,6);assert.equal(course.mocks.flatMap(l=>l.questions).length,180);
 const ids=new Set(),add=id=>{assert(id&&!ids.has(id),'unique IDs '+id);ids.add(id);};
 const terms=new Set(course.terms.map(x=>x.id)),npcs=new Set(course.npcs.map(x=>x.id));
 for(const t of course.terms){add(t.id);assert(t.termJa&&t.readingJa&&t.meaningVi,'complete term');}for(const n of course.npcs)add(n.id);

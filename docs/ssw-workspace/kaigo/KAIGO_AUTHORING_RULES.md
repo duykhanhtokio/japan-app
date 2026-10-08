@@ -1,6 +1,6 @@
 # Hướng dẫn chính thức — Tokutei Gino 介護
 
-Phiên bản: 3. Ngày duyệt: 2026-10-07 (Asia/Tokyo).
+Phiên bản: 4. Ngày duyệt: 2026-10-08 (Asia/Tokyo).
 Trạng thái: CHỦ DỰ ÁN ĐÃ DUYỆT PHƯƠNG ÁN BIÊN SOẠN.
 Repository: duykhanhtokio/japan-app. Nhánh: recovery/jlpt-n3-n1.
 Đây là hợp đồng biên soạn; duyệt phương án không chứng nhận nội dung chưa được tạo, kiểm duyệt hoặc tích hợp.
@@ -147,3 +147,7 @@ Hoàn thiện trọn tuần1–3 và sửa lỗi báo cáo trước khi viết t
 ## 13. Thi thử đầu tiên — quyết định chủ dự án ngày2026-10-07
 
 Trong phiên tiếp tục tuần8, chủ dự án chọn: đề kỹ năng tiếng Nhật; đề Nhật tiếng Nhật; dịch/giải thích Việt chỉ sau nộp. Furigana cho toàn bộ kanji trong nội dung đề và lựa chọn, cần rà từng cách đọc. Chấm luyện tập đúng1điểm, sai/bỏtrống0; đây là cách chấm của app luyện tập, không khẳng định trọng số kỳ thi chính thức. Cân bằng vị trí đáp án với chênh lệch tối đa1 và không3vị trí giống liên tiếp; thứ tự sắp trước lượt thi, không đổi khi resume. Lưu đúng câu, đáp án và thời gian còn lại; thời gian đếm khi lượt đang hoạt động, tạm dừng khi rời lượt. Nộp sớm cần xác nhận; chữa bài sau nộp; khi hết giờ, khóa lượt và nộp các đáp án đã lưu. Không mở đáp án trước nộp. Đặc tả cần kiểm runtime trước phát hành; chưa cho phép đổi UI JLPT.
+
+## 14. Tổng 6 đề — yêu cầu chủ dự án ngày2026-10-08
+
+Chủ dự án yêu cầu nâng tổng lên6đề và áp dụng nguyên tắc đã duyệt để sửa chính xác. Phạm vi hiện hành:3đề kỹ năng (45câu/60phút mỗi đề),3đề Nhật (15câu/30phút mỗi đề), tổng180câu. Mục13 tiếp tục áp dụng cho cả6đề; số lượng ban đầu1+1 là lịch sử và đã được mở rộng. Bốn đề mới phải có nội dung độc lập, không dùng mẫu thay danh từ hoặc chép/viết lại câu thi nguồn. Chỉ dùng nguồn để kiểm kiến thức/thuật ngữ, tự tạo văn bản và hình. Giữ2đề cũ cùng fingerprint/lưu lượt nếu không có lỗi cần sửa; thêm đề02/03 vào danh mục với lưu lượt riêng. Không tự tăng nhiệm vụ bắt buộc trong lịch56ngày. Việc tích hợp để kiểm tra nội bộ đã được cho phép; không đồng nghĩa duyệt chuyên môn, bản ngữ, quyền sử dụng hoặc phát hành.

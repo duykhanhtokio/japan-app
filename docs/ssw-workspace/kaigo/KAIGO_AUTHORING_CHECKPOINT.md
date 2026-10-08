@@ -1,3 +1,20 @@
+# Checkpoint hiện hành — 6 đề thi thử, 2026-10-08
+
+Phần này thay thế số lượng2đề/60câu và câu hỏi số đề bổ sung chưa duyệt trong lịch sử phía dưới. Chủ dự án đã yêu cầu nâng tổng lên6đề, sửa theo nguyên tắc đã duyệt và tiếp tục hoàn thiện/lưuGitHub/đưa vàoappkiểmtra.
+
+- Hiện hành3kỹ năng×45câu/60phút +3Nhật×15câu/30phút =6đề/180câu. Thêm4đề độc lập120câu,480lý giải,10hình tự tạo. Không dùng nguồn thi hoặc mẫu đổi danh từ; kiến thức đối chiếu PDFchuẩn276trang/hash997bf386.
+- `drafts/mock-collection.json` là danh mục hiện hành;4filemock02/03 vàsupportexpandedVi. `approved-plan.json`/rulesv4 ghi quyết định mới, giữquytắcmục13:furigana,Vi chỉ sau nộp,đúng1/sai0/bỏtrống0,cân bằng,không3liên tiếp,lưu lượt vàthời gian,nộp sớm/hết giờ.
+- Runtime có6đề từ danh mục riêng trongmàn介護. Giữ56ngày,54bài/270câu,8nhánh bổ sung,từ/NPC/lịch;2đề01/fingerprint/lưu lượt cũ khớpbaseline32450858. Các đề mới là luyện bổ sung, không tự tăng nhiệm vụ bắt buộc trong8tuần.
+- Đã ràfurigana/ngữcảnh/đápán/bảnVi,làmrõ yêu cầu nhận/hoànthànhvàgiảithích–đồngý–hỗtrợ,sửa2stemtrùngbàihọc;10hình đã sửa lỗi thiếuglyph vàxem trựcquan. Tổng180đápán cân45/45/45/45; từngđềchênh≤1.
+- PASS6đề/180câu/720lýgiải/15hình/8negativecontrols,79inputhash/74hànhvi; oldmockrevision02/chương/chiềusâu/tuần8snapshot/TypeScriptKaigo/JLPT10/10/whitespace. RNWeb thực hiện cả6đề,180clickđúng,khôi phục/hủy/chữabài,3viewports,0pageerror/overflow; khôngfullExpoRouter/native.
+- Báo cáo `reviews/MOCK_EXPANSION_06_REPORT.md`, QA/baseline/furigana/figures/originalityscreen JSON; browser evidence vàảnhở`runtime-tests/2026-10-08-six-mocks`. Exact30charscreen3187windows/0match chỉsàngchữ, khôngrightscertification.
+- Baseline nội dung đã xác minh: 324508584c587e5e20638e120f092e6712e2ec2d. Trong lúc lưu, remote tiến tới 4ee70e7e97a02652d87b62d302d9cfdf2648f56e (N2 exam 03); đã đối chiếu 67 đường dẫn thay đổi, không trùng 55 tệp Kaigo. Patch được ghép trên cây mới này để bảo toàn công việc đồng thời. Lưu atomicpatchlease, xácminhhead vàmọiblob; khôngforce/reset hoặcchạmJLPT. KhôngghiSHAcommitmới bằng mộtcommitphụ.
+- Human/domain/native/rights/releaseReadyfalse. Bướctiếp:duyệt chuyên môn/bảnngữ,thửngườihọc/native; không tự tăng đề hoặcđổi lịch nếu chưa cóyêucầu mới.
+
+---
+
+## Lịch sử trước mở rộng sáu đề (giữ nguyên)
+
 # Checkpoint hiện hành — nâng chiều sâu kiến thức 2026-10-08
 
 - Chủ dự án yêu cầu viết mới toàn phần kiến thức còn thiếu/nông để học thi, giữ sự kiện/thuật ngữ đúng nhưng không sao chép biểu đạt nguồn. Phạm vi chuẩn vẫn sách Tokutei 3/2025; không claim hết 713 câu sách quốc gia.
