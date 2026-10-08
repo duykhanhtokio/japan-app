@@ -31,7 +31,7 @@ export async function prepareSceneRoute(path: string) {
       : require('../../../assets/game/farm/background/farm_map_master.png'))
     : path === '/profile' ? require('../../../assets/app/backgrounds/profile-light.png')
     : path === '/home' ? require('../../../assets/app/welcome/welcome-japan-landscape-v2.png')
-    : path === '/specified-skills' ? require('../../../assets/app/home-cards/tokutei-engine-safety.png')
+    : /^\/specified-skills(?:\/|$)/.test(path) ? require('../../../assets/app/home-cards/tokutei-engine-safety.png')
     : path === '/portal' ? require('../../../assets/app/registration/registration-bg.jpg')
     : path === '/register/work' ? require('../../../assets/app/backgrounds/registration-work.png')
     : path === '/register' ? require('../../../assets/app/backgrounds/registration.png')
@@ -86,6 +86,7 @@ export async function prepareSceneRoute(path: string) {
   if (artwork !== undefined) await prepareArtwork(artwork as Parameters<typeof prepareArtwork>[0]);
   await prepareArtwork(additional);
   const ownsPreparedFullScreen = /^\/(?:game|home|profile|specified-skills|register(?:\/work)?|portal)$/.test(path)
+    || /^\/specified-skills\//.test(path)
     || /^\/world\/(?:prefecture|city|location|dialogue)\//.test(path);
   const backdrop = ownsPreparedFullScreen ? artwork
     : /^\/(?:world|settings|conversation-log|lesson|portal)(?:\/|$)/.test(path)

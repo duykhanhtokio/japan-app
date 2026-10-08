@@ -1,0 +1,10 @@
+export type RubyToken = {text:string;readingKana?:string};
+export type Question = {id:string;promptJa:string;promptVi:string;optionsJa:string[];optionsVi:string[];correctIndex:number;rationalesVi:string[];rationalesJa:string[]};
+export type MockQuestion = Question & {passageJa:string;passageVi:string;figureKey:string|null;figureDescriptionJa:string;figureDescriptionVi:string;furigana:{prompt:RubyToken[];options:RubyToken[][];passage?:RubyToken[];figureDescription?:RubyToken[]}};
+export type MockForm = {id:string;version:number;contentRevision:string;titleVi:string;durationMs:number;questions:MockQuestion[]};
+export type TransferStep = {id:string;npcId:string;promptVi:string;promptJa:string;promptMeaningVi:string;modelJa:string;modelVi:string;meaningsVi:string[];alternativesJa:string[];replyJa:string;replyVi:string};
+export type TransferVariant = {id:string;titleVi:string;contextVi:string;boundaryVi:string;steps:TransferStep[]};
+export type DialogueTurn = {id:string;speaker:'npc'|'player';npcId:string;textJa:string;meaningVi:string;meaningsVi:string[];alternativesJa:string[]};
+export type Term = {id?:string;termJa:string;readingJa:string;meaningVi:string};
+export type Lesson = {id:string;contentRevision:string;day:number;titleVi:string;npcId:string;playerRoleVi:string;contextVi:string;candidate:boolean;baseLessonId:string;objectivesVi:string[];knowledgeSummaryJa:string;knowledgeSectionsVi:string[];retrieval:{promptVi:string;expectedVi:string}|null;contrast:{case?:string;correctPrinciple?:string;overreachToAvoid?:string}|null;termIds:string[];inlineNotes:Term[];expressions:{textJa:string;meaningVi:string}[];dialogue:DialogueTurn[];transfers:TransferVariant[];readingJa:string;readingVi:string;questions:Question[];plannedMinutes:number};
+export type Course = {version:number;mode:string;humanReviewed:false;releaseReady:false;days:{day:number;week:number;titleVi:string;plannedMinutes:number;lessonId:string|null;mockId:string|null}[];lessons:Lesson[];candidates:Lesson[];terms:Term[];npcs:{id:string;nameJa:string;roleVi:string}[];mocks:MockForm[]};

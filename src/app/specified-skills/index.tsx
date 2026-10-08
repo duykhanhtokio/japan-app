@@ -1,8 +1,9 @@
-import { backPrepared } from '@/components/ui/prepareSceneRoute';
+import { backPrepared, pushPrepared } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 import {
     Image,
+    Pressable,
 
     ScrollView,
     StyleSheet,
@@ -71,8 +72,12 @@ export default function SpecifiedSkillsScreen() {
             >
                 {sectors.map(
                     ({ icon, ja, vi }) => (
-                        <View
+                        <Pressable
                             key={ja}
+                            accessibilityRole={ja==='介護'&&__DEV__?'button':undefined}
+                            accessibilityLabel={ja==='介護'&&__DEV__?'介護 — mở bản kiểm tra nội bộ':ja}
+                            disabled={ja!=='介護'||!__DEV__}
+                            onPress={()=>{void pushPrepared('/specified-skills/kaigo');}}
                             style={
                                 styles.card
                             }
@@ -104,7 +109,7 @@ export default function SpecifiedSkillsScreen() {
                                 </Text>
                             </View>
                             </RoyalPaperPanel>
-                        </View>
+                        </Pressable>
                     )
                 )}
             </ScrollView>
