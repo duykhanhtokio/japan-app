@@ -1,3 +1,22 @@
+# Checkpoint hiện hành 介護 — đối chiếu từng mục 2026-10-08
+
+Chủ dự án yêu cầu đối chiếu tài liệu, đánh dấu đủ–thiếu–nông, bổ sung và cân đối 30 phút/ngày. Kế hoạch runtime hiện hành là overlay drafts/chapter-revision-2026-10-08.json; giữ bản thảo và các quyết định lịch sử phía dưới để truy vết.
+
+- Đối chiếu 159 đơn vị/14 chương kiến thức chuẩn: trước 32 đủ, 57 nông, 70 thiếu; sau 118 đủ cơ bản, 41 nông. Chưa bao phủ đủ mọi chi tiết/thao tác, không claim 100%.
+- 54 mô-đun kiến thức mới; 121 câu tự giải thích, 52 thẻ Nhật mới (29 hội thoại/23 văn bản). 13 trang từ được kiểm trực quan: 279 dòng nguồn, 287 bản ghi mở alias/ngữ cảnh; runtime 369 ID, không phải số khái niệm đã thuộc.
+- Buổi thường: 2 ôn + 12 kiến thức + 4 từ + 8 luyện/đọc (6 một nhánh, 2 thẻ) + 4 kiểm = 30 phút. Tối đa 8 từ ưu tiên, kho còn lại tra cứu. Đề ngày 54 giữ 60 phút; ngày 55 giữ 30. Tổng 1710 phút, tuần 8 240 phút, chưa đo với người học.
+- Giữ nguyên 54 kịch bản lõi, 270 câu cũ và 2 đề/60 câu. practiceRevision khớp 54 fingerprint baseline để không mất tiến trình luyện/kiểm cũ; câu tự giải thích và thẻ đọc mới lưu riêng, chỉ mở đối chiếu sau câu trả lời.
+- Chi tiết đủ/thiếu/nông trước–sau, nguồn/trang, liên kết bài và phần còn lại: reviews/CHAPTER_COVERAGE_2026-10-08.md và reviews/chapter-coverage-2026-10-08.json.
+- Tài liệu Hỏi và đáp là 12 chương/713 câu kỳ thi quốc gia: đã kiểm lời mở đầu/mục lục, ghi phần giao nhau và ngoài chuẩn Tokutei. Chưa audit từng 713 câu, không claim đã chắt lọc hết sách quốc gia.
+- PASS dữ liệu 41 input hash, 26 kiểm hành vi, ma trận/thời lượng, TypeScript Kaigo, RN Web ba kích thước và khóa JLPT 10/10. Toàn repo TypeScript vẫn lỗi LifeScenarioIndexItem có trước. Chưa native/human/domain approval.
+- Runtime vẫn bản dev/internal test, humanReviewed=false/releaseReady=false. PDF, OCR và hình nguồn không xuất bản. Không sửa JLPT.
+- Baseline nội dung 98421892; remote đã có commit N2 b73c3016 là hậu duệ trực tiếp. Xuất bản patch Kaigo riêng trên cây remote mới nhất bằng connector và lease, giữ thay đổi JLPT đồng thời. Không claim WORK PERSISTENCE PASS vì checkout local và commit connector có SHA khác; chỉ claim lưu sau xác minh mọi blob trên GitHub.
+- Điểm tiếp tục: 41 mục nông còn thiếu chi tiết/hình/luyện thao tác được liệt kê riêng; thử tải học thật và duyệt chuyên môn/bản ngữ trước mở release. Không chuyển đủ bằng đếm thuật ngữ.
+
+---
+
+## Lịch sử checkpoint (giữ nguyên)
+
 # Checkpoint 介護 — 2026-10-07
 
 ## Quyết định
