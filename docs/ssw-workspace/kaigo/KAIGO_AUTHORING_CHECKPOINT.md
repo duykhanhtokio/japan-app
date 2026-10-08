@@ -276,3 +276,15 @@ Lưu hẹp5file bằng GitHubtree/commit/ref cólease trênHEAD hiện tại và
 - Reading103→223/69→208;5câu394→507/364→544;transfer98/102codepoint,khôngthờigian. Khối5/5/5/10/5,total30chưađo,0phútcộng chỉbốtrí; cần đo thẻ/đọc/hailượtluyện/retry/feedback. Domain/native/publisher/rights/runtime/releasefalse,chưaassets.
 - Hồ sơreviews/priority-gap-supplements-04-evidence.json,source-screen.json,PRIORITY_GAP_SUPPLEMENTS_04_REPORT.md;scripts/check-kaigo-priority-gap-supplements-04.mjs. Támcandidate01–04 đều chưa chọn,khônggọi62bài hoặc đủ kỹ thuật.
 - Bước tiếp: partialmappingcònmở,đặcbiệtrow08hỏiđồmongmuốn/xinphéptìmtrựctiếp,vàreviewđộsâu/tảihọc trướcchọn;kiểmchuyênmônC06. Khôngtựtuần9/đềmới/tíchhợp/pháthành. Bài gốc bảo toàn.
+
+## 2026-10-08 — partial mapping repair06: hỏi bác và xin phép tìm đồ
+
+- Baseline e18a5fb76b8bab2dab06459a8b90c7d1a0547f90 đã xác minh; đọc đầy đủ START/AGENTS/rules/checkpoint/plan/quy tắc độc lập trong phiên. Snapshot không git checkout,lưu connector có lease/remote exactblob,khôngclaimWORKPERSISTENCEscriptPASS.
+- Sửa duy nhất transferPracticeinfection01:hai lượt hỏi trực tiếp Hasebe (lược mong muốn→xin phép hộp) rồi thẻ giới hạn/kết quả và báo Kawase. Kishimoto giữvaiNPCmain. Thẻ trảlời cốđịnh sauđáp,chưa runtime; không tựmởngăn khác/không dùng nhờ phụ trách thay phép bác. Giữ chưathấy≠mất/chưa chỉnhtóc và việc màn hình sau đồvải.
+- Một transferrubric6→9mụcý (2hỏibác/7báo),3caspec thay3caspeccũ,chưa evaluator;2thẻlờibác,0mainturn/0câu/0candidate thêm. Row08có directpractice nháp,chưa equivalence;transferkhăn/cácpartialkhác còn cần kiểm.
+- Knowledge/main/reading/expressions/vocab/toàn20câu/16mainrubric01–02 và3modulekhác bấtbiến;bundle02Gitblob nguyên. Validator06khôi phụcđúng predecessor01Gitblob5d2417e76fc36dfeeb89c48c1998d8adbaa19213;4validator04/05/C02/C06thêmreplay06,khôngsửaevidence lịch sử.
+- SáuNodecheckerPASSstructure/hash/link/lineage;06kiểm47immutableinput/127ID/core54/270/60/5negativecontrols bịbác đúnglýdo. Khôngfullrepo/app/runtime/evaluator/timing/persistencescript.
+- Nguồn276trangSHAchuẩnkhớp,đọc/xemảnhin12/16PDF14/18 vềtựlựa chọn/riêngtư;hộp-onlylàdữkiệncase,khônglawclaim/khôngkỹthuậtmới. Screen771fields/181eligible/0exact60window cho01/02,khôngsemantic/hình/external/quyền.
+- Mẫubáo143→179codepoint;haicâuhỏi46/thẻlờibác48codepoint,khôngthờigian. Thayslottransfercũ/0phútcộngchỉbốtrí,total30chưađo;phảiđo hỏi/thẻ/báo/retry/feedback. Human/domain/native/publisher/rights/runtime/releasefalse,chưaassets.
+- Hồ sơreviews/priority-gap-partial-repair-06.json,PRIORITY_GAP_PARTIAL_REPAIR_06_REPORT.md;scripts/check-kaigo-priority-gap-permission-repair.mjs. Támcandidatechưa chọn,gốcbảotoàn,khôngUI/JLPT/plan/curriculum/mockđổi.
+- Bước tiếp:ràhợpnhấtpartialmapping/độsâucảtámcandidate,tảithựctếtrướcchọn;C06/kỹthuậthỗtrợ cầnchuyênmôn. Khôngtựtuần9/đềmới/tíchhợp/pháthành.

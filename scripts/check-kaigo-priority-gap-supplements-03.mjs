@@ -49,7 +49,11 @@ export function validateC02(bundle,core,curriculum,npcs,vocabulary,evidence){
 }
 if(process.argv[1]===fileURLToPath(import.meta.url)){
  const b=read(dir+'drafts/priority-gap-supplements-03.json'),e=read(dir+'reviews/priority-gap-supplements-03-evidence.json');
- for(const f of e.inputSnapshot){const bytes=fs.readFileSync(path.join(root,f.path));assert.equal(gitSha(bytes),f.gitBlobSha,'baseline '+f.path)}
+ const permissionPath=path.join(root,dir+'reviews/priority-gap-partial-repair-06.json');
+ const permission=fs.existsSync(permissionPath)?read(dir+'reviews/priority-gap-partial-repair-06.json'):null;
+ const {verifyHistoricalInput}=await import('./check-kaigo-priority-gap-permission-repair.mjs');
+ for(const f of e.inputSnapshot){const bytes=fs.readFileSync(path.join(root,f.path));if(permission)verifyHistoricalInput(f.path,bytes,f.gitBlobSha,permission);else assert.equal(gitSha(bytes),f.gitBlobSha,'baseline '+f.path);}
+
  const names=['foundation','week2','movement','eating','excretion','hygiene','housework','review'];
  const core=names.flatMap(n=>read(dir+'drafts/'+n+'-lessons.json').lessons);
  assert.equal(core.length,54);assert.equal(core.reduce((s,l)=>s+l.questions.length,0),270);

@@ -96,10 +96,17 @@ export function validatePartialRepair(bundles,e){
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
  const read=p=>JSON.parse(fs.readFileSync(root+p,'utf8'));
- const bundles=['01','02'].map(n=>read('drafts/priority-gap-supplements-'+n+'.json'));
+ let bundles=['01','02'].map(n=>read('drafts/priority-gap-supplements-'+n+'.json'));
+ let permissionReplay=false;
+ if(bundles[0].editorialPermissionRepair){
+  const permission=read('reviews/priority-gap-partial-repair-06.json');
+  const {validatePermissionRepair,restorePermissionBaseline}=await import('./check-kaigo-priority-gap-permission-repair.mjs');
+  validatePermissionRepair(bundles,permission);
+  bundles=restorePermissionBaseline(bundles,permission);permissionReplay=true;
+ }
  const e=read('reviews/priority-gap-partial-repair-05.json');
  const result=validatePartialRepair(bundles,e);
- for(const f of e.files)assert.equal(sha(fs.readFileSync(f.path)),f.afterSha256);
+ for(const [i,f]of e.files.entries())assert.equal(sha(permissionReplay?JSON.stringify(bundles[i],null,2)+'\n':fs.readFileSync(f.path)),f.afterSha256);
  for(const f of e.immutableInputs){
   const bytes=fs.readFileSync(f.path);
   const git=crypto.createHash('sha1').update('blob '+bytes.length+'\0').update(bytes).digest('hex');

@@ -1089,16 +1089,16 @@
       ],
       "transferPractice": {
         "id": "kaigo-gap-infection-01-transfer",
-        "contextVi": "Trong lần luyện khác, bác chỉ cho phép kiểm hộp riêng để tìm lược có dấu; đã kiểm hộp trước việc thu đồ vải, không thấy lược, còn nơi khác chưa kiểm. Có một lược chưa rõ chủ nên chưa dùng, tóc chưa chỉnh. Sau đó người học chạm cạnh màn hình bằng găng đã dùng; màn hình chưa được xử lý.",
-        "taskVi": "Báo phụ trách hai việc riêng: nơi đã kiểm và trạng thái tìm lược, rồi vùng màn hình đã chạm và việc xử lý còn chờ. Không kết luận mất lược hoặc đã chỉnh tóc; không dùng lược chưa rõ chủ.",
+        "contextVi": "Bài diễn tập riêng theo thẻ tuần tự. Trước thu đồ vải, bác Hasebe muốn chỉnh tóc; chưa hỏi lược mong muốn và chưa được phép mở đồ cá nhân. Có một hộp trước mặt, các ngăn khác đóng. Sau câu hỏi1, thẻ lời bác cho biết muốn lược riêng có dấu trên cán. Sau câu xin phép2, thẻ lời bác chỉ cho kiểm hộp này, không các ngăn khác. Thẻ kết quả sau kiểm:không thấy lược trong hộp, nơi khác chưa kiểm; lược khác chưa rõ chủ không dùng, tóc chưa chỉnh. Sau đó, ở việc đồ vải riêng, đã chạm cạnh màn hình bằng găng đã dùng, chưa xử lý màn hình/chưa tiếp tục việc sạch.",
+        "taskVi": "Luyện hai câu hỏi với Hasebe theo thẻ: hỏi lược mong muốn trước xem câu trả lời, rồi xin phép chỉ kiểm hộp trước thao tác. Đọc thẻ giới hạn/kết quả để báo Kawase riêng lựa chọn bác, phạm vi đã cho phép, chưa thấy/không kết luận mất, chưa dùng đồ chưa rõ chủ/chưa chỉnh tóc và việc màn hình còn chờ. Không tự mở thêm ngăn. Hai phần nói với hai người khác nhau, thay transfer cũ, không thêm bài bắt buộc.",
         "expectedMeaningVi": [
-          "Lược có dấu chưa thấy trong hộp được phép kiểm; nơi khác chưa kiểm, chưa kết luận mất.",
-          "Lược chưa rõ chủ không được dùng; tóc chưa chỉnh, cần trao đổi cách tìm trong phạm vi bác cho phép.",
-          "Đã chạm cạnh màn hình bằng găng đã dùng; chưa tiếp tục việc sạch, cần báo và xác nhận xử lý theo quy trình."
+          "Hỏi trực tiếp lược bác muốn và xin phép chỉ kiểm hộp trước làm; thẻ bác cho phép hộp, không ngăn khác.",
+          "Báo lựa chọn có dấu trên cán, hộp đã kiểm chưa thấy/nơi khác chưa kiểm, không kết luận mất; chưa dùng lược không rõ chủ/tóc chưa chỉnh.",
+          "Báo cạnh màn hình đã chạm bằng găng đã dùng; chưa tiếp tục việc sạch, kiểm xử lý theo quy trình. Muốn tìm thêm thì hỏi lại bác trước."
         ],
-        "modelJa": "印のあるくしは、本人が確認を認めた箱の中にはありませんでした。他の場所は未確認で、紛失とは決めていません。持ち主不明のくしは使わず、髪もまだ整えていません。探し方を相談したいです。また、使った手袋で画面の端に触れました。清潔な物を扱う作業は進めず、画面への対応を施設の手順で確認します。",
+        "modelJa": "長谷部さんは柄に印のある自分のくしを希望し、この箱の中だけの確認を認めました。箱には見当たらず、他の場所は未確認です。紛失とは決めず、持ち主不明のくしは使わず、髪もまだ整えていません。探し方を相談し、別の場所を確認する前には本人の許可を改めて伺います。また、使った手袋で画面の端に触れました。清潔な物を扱う作業は進めず、画面への対応を施設の手順で確認します。",
         "method": "bounded_editorial_rehearsal_not_runtime_evaluator",
-        "responseRoleVi": "Người học báo người phụ trách; không phát ngôn thay bác hoặc tự xử lý màn hình.",
+        "responseRoleVi": "Phần hỏi nói với Hasebe (resident-b); phần báo nói với Kawase (care-lead). NPC main Kishimoto giữ vai đồng nghiệp; thẻ bác cố định, không sinh lời tự do.",
         "sourceRefs": [
           {
             "sourceId": "kaigo-textbook-2025-03",
@@ -1129,38 +1129,59 @@
           "id": "kaigo-gap-infection-01-transfer-rubric-04",
           "requiredMeanings": [
             {
-              "id": "kaigo-gap-infection-01-transfer-meaning-04-1",
-              "vi": "Giới hạn nơi đã kiểm trong hộp được bác cho phép."
+              "id": "kaigo-gap-infection-01-transfer-meaning-06-1",
+              "vi": "Hỏi lược bác mong muốn, không tự chọn.",
+              "responseTarget": "resident_confirmation"
             },
             {
-              "id": "kaigo-gap-infection-01-transfer-meaning-04-2",
-              "vi": "Không kết luận lược mất khi nơi khác chưa kiểm."
+              "id": "kaigo-gap-infection-01-transfer-meaning-06-2",
+              "vi": "Xin phép chỉ kiểm hộp trước thao tác.",
+              "responseTarget": "resident_confirmation"
             },
             {
-              "id": "kaigo-gap-infection-01-transfer-meaning-04-3",
-              "vi": "Không dùng lược chưa rõ chủ; tóc chưa chỉnh."
+              "id": "kaigo-gap-infection-01-transfer-meaning-06-3",
+              "vi": "Báo lời bác muốn lược riêng có dấu trên cán.",
+              "responseTarget": "care_lead_report"
             },
             {
-              "id": "kaigo-gap-infection-01-transfer-meaning-04-4",
-              "vi": "Trao đổi cách tìm trong phạm vi cho phép."
+              "id": "kaigo-gap-infection-01-transfer-meaning-06-4",
+              "vi": "Báo bác chỉ cho kiểm hộp, không các ngăn khác.",
+              "responseTarget": "care_lead_report"
             },
             {
-              "id": "kaigo-gap-infection-01-transfer-meaning-04-5",
-              "vi": "Báo đã chạm cạnh màn hình bằng găng đã dùng."
+              "id": "kaigo-gap-infection-01-transfer-meaning-06-5",
+              "vi": "Đã kiểm hộp chưa thấy; nơi khác chưa kiểm, không kết luận mất.",
+              "responseTarget": "care_lead_report"
             },
             {
-              "id": "kaigo-gap-infection-01-transfer-meaning-04-6",
-              "vi": "Chưa tiếp tục việc sạch, xác nhận xử lý màn hình theo quy trình."
+              "id": "kaigo-gap-infection-01-transfer-meaning-06-6",
+              "vi": "Không dùng lược chưa rõ chủ; tóc chưa chỉnh.",
+              "responseTarget": "care_lead_report"
+            },
+            {
+              "id": "kaigo-gap-infection-01-transfer-meaning-06-7",
+              "vi": "Tham khảo cách tìm, muốn kiểm nơi khác phải hỏi lại bác trước.",
+              "responseTarget": "care_lead_report"
+            },
+            {
+              "id": "kaigo-gap-infection-01-transfer-meaning-06-8",
+              "vi": "Đã chạm cạnh màn hình bằng găng đã dùng.",
+              "responseTarget": "care_lead_report"
+            },
+            {
+              "id": "kaigo-gap-infection-01-transfer-meaning-06-9",
+              "vi": "Chưa tiếp tục việc sạch, xác nhận xử lý màn hình theo quy trình.",
+              "responseTarget": "care_lead_report"
             }
           ],
           "acceptableJa": [
-            "印のあるくしは、本人が確認を認めた箱の中にはありませんでした。他の場所は未確認で、紛失とは決めていません。持ち主不明のくしは使わず、髪もまだ整えていません。探し方を相談したいです。また、使った手袋で画面の端に触れました。清潔な物を扱う作業は進めず、画面への対応を施設の手順で確認します。",
-            "本人の許可を得た箱には印のあるくしが見つかりませんでした。他の場所は未確認なので、紛失とは断定しません。持ち主不明のくしは使わず、整髪もまだです。探し方を相談します。使用済みの手袋で画面の端に触れたことも報告します。清潔な物を扱う前に、画面への対応を施設の手順で確認します。"
+            "長谷部さんは柄に印のある自分のくしを希望し、この箱の中だけの確認を認めました。箱には見当たらず、他の場所は未確認です。紛失とは決めず、持ち主不明のくしは使わず、髪もまだ整えていません。探し方を相談し、別の場所を確認する前には本人の許可を改めて伺います。また、使った手袋で画面の端に触れました。清潔な物を扱う作業は進めず、画面への対応を施設の手順で確認します。",
+            "ご本人は柄に印の付いた自分のくしを使いたいと話しました。許可はこの箱だけで、箱にくしは見つかりませんでした。他は未確認で、なくなったとは断定しません。持ち主不明の物は使わず、整髪は未実施です。探し方を相談し、他の場所を見るには本人に再度許可を尋ねます。使用済みの手袋で画面の端に触れたことも報告し、清潔な物を扱う前に画面への対応を施設の手順で確認します。"
           ],
           "unsafeOrContradictoryJa": [
-            "箱にないので紛失です。手袋を替えたので画面への対応は不要です。"
+            "箱にないので紛失です。別の引き出しも許可なしで調べます。手袋を替えたので画面への対応は不要です。"
           ],
-          "feedbackVi": "Chỉ rõ ý còn thiếu hoặc suy luận vượt dữ kiện rồi nói lại. Chấp nhận câu khác mẫu đúng nghĩa; không bỏ phần chưa xác nhận.",
+          "feedbackVi": "Kiểm phần hỏi bác trước: có hỏi lựa chọn và xin phép phạm vi, chưa tự làm không? Sau thẻ mới kiểm phần báo phụ trách. Nêu một ý đúng và một ý thiếu/vượt quyền, cho luyện lại; không coi đã nhờ phụ trách là được phép mở thêm. Đây là đặc tả chưa chạy evaluator.",
           "evaluationPolicy": {
             "meaningBased": true,
             "exactStringMatchRequired": false,
@@ -1171,20 +1192,23 @@
           },
           "assessmentCases": [
             {
-              "id": "kaigo-gap-infection-01-transfer-case-04-accept",
-              "inputJa": "本人の許可を得た箱には印のあるくしが見つかりませんでした。他の場所は未確認なので、紛失とは断定しません。持ち主不明のくしは使わず、整髪もまだです。探し方を相談します。使用済みの手袋で画面の端に触れたことも報告します。清潔な物を扱う前に、画面への対応を施設の手順で確認します。",
+              "id": "kaigo-gap-infection-01-transfer-case-06-accept",
+              "inputResidentJa": "髪を整えるとき、使いたいくしを教えていただけますか。\nご希望のくしを探したいのですが、この箱の中だけ見てもよろしいでしょうか。",
+              "inputJa": "ご本人は柄に印の付いた自分のくしを使いたいと話しました。許可はこの箱だけで、箱にくしは見つかりませんでした。他は未確認で、なくなったとは断定しません。持ち主不明の物は使わず、整髪は未実施です。探し方を相談し、他の場所を見るには本人に再度許可を尋ねます。使用済みの手袋で画面の端に触れたことも報告し、清潔な物を扱う前に画面への対応を施設の手順で確認します。",
               "expected": "accept_meaning",
               "specOnly": true
             },
             {
-              "id": "kaigo-gap-infection-01-transfer-case-04-clarify",
-              "inputJa": "使った手袋で画面の端に触れました。対応を確認します。",
+              "id": "kaigo-gap-infection-01-transfer-case-06-clarify",
+              "inputResidentJa": "この箱を見てもいいですか。",
+              "inputJa": "画面の端に触れました。対応を確認します。",
               "expected": "clarify_missing_information",
               "specOnly": true
             },
             {
-              "id": "kaigo-gap-infection-01-transfer-case-04-reject",
-              "inputJa": "箱にないので紛失です。手袋を替えたので画面への対応は不要です。",
+              "id": "kaigo-gap-infection-01-transfer-case-06-reject",
+              "inputResidentJa": "このくしを使います。箱も他の引き出しも開けます。",
+              "inputJa": "箱にないので紛失です。別の引き出しも許可なしで調べます。手袋を替えたので画面への対応は不要です。",
               "expected": "correct_before_advance",
               "specOnly": true
             }
@@ -1197,7 +1221,20 @@
             "runtimeIntegrated": false,
             "appIntegrationReady": false,
             "releaseReady": false
-          }
+          },
+          "responseTargets": [
+            "resident_confirmation",
+            "care_lead_report"
+          ],
+          "acceptableResidentJa": [
+            "今日は、どのくしを使いたいですか。\nそのくしを探すため、この箱の中を確認してもよろしいですか。",
+            "髪を整えるとき、使いたいくしを教えていただけますか。\nご希望のくしを探したいのですが、この箱の中だけ見てもよろしいでしょうか。"
+          ],
+          "unsafeOrContradictoryResidentJa": [
+            "このくしを使います。箱も他の引き出しも開けます。"
+          ],
+          "revision": 2,
+          "editorialRepairRef": "reviews/priority-gap-partial-repair-06.json"
         },
         "feedbackAfterAttempt": true,
         "sameDaySlot": {
@@ -1205,6 +1242,48 @@
           "mode": "replace_existing_transfer_rehearsal_not_append",
           "additionalMandatoryMinutes": 0,
           "durationMeasured": false
+        },
+        "residentConfirmation": {
+          "npcId": "kaigo-npc-resident-b",
+          "reportNpcId": "kaigo-npc-care-lead",
+          "modelJa": "今日は、どのくしを使いたいですか。\nそのくしを探すため、この箱の中を確認してもよろしいですか。",
+          "modelVi": "Hôm nay bác muốn dùng lược nào?\nĐể tìm lược đó, cháu kiểm bên trong hộp này được không?",
+          "steps": [
+            {
+              "id": "kaigo-gap-infection-01-resident-step-06-1",
+              "goalVi": "Hỏi lựa chọn, không tự chọn hoặc giả rằng đã biết.",
+              "promptCardVi": "Bác muốn chỉnh tóc; lược mong muốn chưa hỏi.",
+              "modelJa": "今日は、どのくしを使いたいですか。",
+              "acceptableJa": [
+                "今日は、どのくしを使いたいですか。",
+                "髪を整えるとき、使いたいくしを教えていただけますか。"
+              ],
+              "afterAttemptCard": {
+                "ja": "柄に印のある自分のくしを使いたい。",
+                "vi": "Tôi muốn dùng lược riêng có dấu trên cán."
+              }
+            },
+            {
+              "id": "kaigo-gap-infection-01-resident-step-06-2",
+              "goalVi": "Xin phép phạm vi cụ thể trước kiểm.",
+              "promptCardVi": "Đã biết lược bác muốn; hộp trước mặt chưa được phép mở.",
+              "modelJa": "そのくしを探すため、この箱の中を確認してもよろしいですか。",
+              "acceptableJa": [
+                "そのくしを探すため、この箱の中を確認してもよろしいですか。",
+                "ご希望のくしを探したいのですが、この箱の中だけ見てもよろしいでしょうか。"
+              ],
+              "afterAttemptCard": {
+                "ja": "その箱の中だけ見てください。他の引き出しは開けないでください。",
+                "vi": "Chỉ xem trong hộp đó. Đừng mở các ngăn khác."
+              }
+            }
+          ],
+          "stagingPolicy": "attempt_then_reveal_fixed_reply_then_next_prompt_not_runtime_implemented",
+          "outcomeCard": {
+            "ja": "許可された箱を確認したが、くしは見当たらない。他の場所は未確認。",
+            "vi": "Đã kiểm hộp được phép nhưng chưa thấy lược; nơi khác chưa kiểm."
+          },
+          "runtimeImplemented": false
         }
       },
       "questions": [
@@ -1450,7 +1529,8 @@
         "retainedCoverageStatus": "audit_03_partial_mapping_not_equivalent",
         "replacementAuditRef": "reviews/priority-gap-replacement-audit-03.json",
         "replacementReady": false,
-        "appliedRepairRef": "reviews/priority-gap-applied-repair-04.json"
+        "appliedRepairRef": "reviews/priority-gap-applied-repair-04.json",
+        "permissionRepairRef": "reviews/priority-gap-partial-repair-06.json"
       },
       "responseRubricIds": [
         "kaigo-gap-infection-01-rubric-01",
@@ -1992,5 +2072,10 @@
       "transferAssessmentCaseSpecsTotal": 6,
       "transferSpecsExecuted": false
     }
+  },
+  "editorialPermissionRepair": {
+    "date": "2026-10-08",
+    "evidenceRef": "reviews/priority-gap-partial-repair-06.json",
+    "status": "PARTIAL_MAPPING_DRAFT_REPAIR_NOT_REPLACEMENT_APPROVAL"
   }
 }

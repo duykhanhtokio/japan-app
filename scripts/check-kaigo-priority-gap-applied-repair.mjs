@@ -85,12 +85,19 @@ export function validateRepairs(bundles,evidence){
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
  const read=p=>JSON.parse(fs.readFileSync(root+p,'utf8'));
  let bundles=['01','02'].map(n=>read('drafts/priority-gap-supplements-'+n+'.json'));
+ let permissionReplay=false;
+ if(bundles[0].editorialPermissionRepair){
+  const permission=read('reviews/priority-gap-partial-repair-06.json');
+  const {validatePermissionRepair,restorePermissionBaseline}=await import('./check-kaigo-priority-gap-permission-repair.mjs');
+  validatePermissionRepair(bundles,permission);
+  bundles=restorePermissionBaseline(bundles,permission);permissionReplay=true;
+ }
  let predecessorReplay=false;
  if(bundles.some(b=>b.editorialPartialRepair)){
   const successor=read('reviews/priority-gap-partial-repair-05.json');
   const {validatePartialRepair,restoreBaseline}=await import('./check-kaigo-priority-gap-partial-repair.mjs');
   validatePartialRepair(bundles,successor);
-  for(const f of successor.files)assert.equal(sha(fs.readFileSync(f.path)),f.afterSha256);
+  for(const [i,f]of successor.files.entries())assert.equal(sha(permissionReplay?JSON.stringify(bundles[i],null,2)+'\n':fs.readFileSync(f.path)),f.afterSha256);
   bundles=restoreBaseline(bundles,successor);
   predecessorReplay=true;
  }
