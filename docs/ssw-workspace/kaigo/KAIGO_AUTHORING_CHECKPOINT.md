@@ -264,3 +264,15 @@ Lưu hẹp5file bằng GitHubtree/commit/ref cólease trênHEAD hiện tại và
 - reviews/priority-gap-supplements-03-evidence.json có6row giữ năng lực cũ đềupartial,2worklist chưa ký và metric chữ khônglàthờigian. Giữ5/5/5/10/5,total30chưađo; không bắt buộc gốc+candidate. Hai candidate chưa chọn/NOT_READY_FOR_REPLACEMENT; cảsáucandidate ngoàiquotalõi,khônggọi60bàihoặcđủmọikỹthuật. Human/domain/native/publisher/rights/runtime/releasefalse,chưaassets.
 - Bước tiếp: C06khẩn cấp ởmức nhận biết/gọi hỗ trợ vàphânbiệt dữkiện theo nguồn trong8tuần; kiểm giữnănglực/tải trướcchọn bấtkỳcandidate. Không tựtuần9/đềmới/tíchhợp/pháthành. Các partial của04/05 vẫn mở,bài gốc bảo toàn.
 
+
+## 2026-10-08 — C06 bổ sung04: nhận biết và gọi hỗ trợ khẩn cấp
+
+- Baseline remote31403b511e00f6d0a64ebf710db285c0909c3cb3; đọc đầy đủ startup/AGENTS/rules/plan/checkpoint/quy tắc độc lập. Snapshot không git checkout; công bố connector có lease/đọc lại remote, không claim WORK PERSISTENCE script PASS.
+- Hai candidate ngày47/53, housework05/review04:8phần kiến thức,16lượt Nhật–Việt,2reading,10câu/40lýdo,4cáchnói,8mainrubric/24caspec và2transferrubric/6caspec;0từ bắt buộc mới/4ghi chú cách đọc AIonly. Chưa chọn/NOT_READY_FOR_REPLACEMENT,không giao bắt buộc gốc+candidate,quotalõi54/270/60 giữ nguyên.
+- Khó thở đột ngột/yếu một bên đột ngột: gọi ngay không đợi chẩn đoán/hồ sơ/người phụ trách; tiếp tục theo hướng dẫn sơ cứu. Thoại bàn giao sau gọi hoặc thẻ offline,không là cửa trước gọi. Chưa kết nối khác đã báo; đã báo khác xử lý xong. NPC điều dưỡng/đồng nghiệp đúng vai; địa chỉ/cơ sở hư cấu,không gọi thử119.
+- Case riêng sách rơi giữ giờ/tầm nhìn/biện pháp đã kiểm/nguyên nhân chưa rõ; miệng/cổ giữ hỏi không dẫn,lời bác khác quan sát/chưa nhìn không là bình thường. Sáu dòng đối chiếu năng lực gốc vẫnpartial;C06 chưa hoàn tất kỹ thuật khẩn cấp.
+- Nguồn276trang SHA chuẩn khớp; đọc in24/26/40/115/118,PDF26/28/42/117/120,xem hìnhin24/40. FDMA ambulancePDF tháng12/2025,9trang,kiểmtextPDF2/6; HTML MHLWurgencyelderly/firstaid vàFDMA119connectionfailure/no-test/generalquestions. Khôngclaim hashweb/ảnhdấuhiệuweb.
+- Validator04 PASS structural/hash/link/99ID/18baselineblob/core54/270/60/5negativecontrols,30caspecchưa chạy evaluator. Screen350fields/67eligible/0exact60window với sách chuẩn,khôngexternallexical/semantic/hình/quyền. Khôngfullrepo/app/runtime/persistence/timing.
+- Reading103→223/69→208;5câu394→507/364→544;transfer98/102codepoint,khôngthờigian. Khối5/5/5/10/5,total30chưađo,0phútcộng chỉbốtrí; cần đo thẻ/đọc/hailượtluyện/retry/feedback. Domain/native/publisher/rights/runtime/releasefalse,chưaassets.
+- Hồ sơreviews/priority-gap-supplements-04-evidence.json,source-screen.json,PRIORITY_GAP_SUPPLEMENTS_04_REPORT.md;scripts/check-kaigo-priority-gap-supplements-04.mjs. Támcandidate01–04 đều chưa chọn,khônggọi62bài hoặc đủ kỹ thuật.
+- Bước tiếp: partialmappingcònmở,đặcbiệtrow08hỏiđồmongmuốn/xinphéptìmtrựctiếp,vàreviewđộsâu/tảihọc trướcchọn;kiểmchuyênmônC06. Khôngtựtuần9/đềmới/tíchhợp/pháthành. Bài gốc bảo toàn.
