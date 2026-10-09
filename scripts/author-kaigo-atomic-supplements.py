@@ -840,6 +840,48 @@ deepen('record-handover',[
  'Thảo luận là tìm lời khuyên từ đồng nghiệp hoặc chuyên môn khi có vấn đề hay phần chưa hiểu. Nêu điều chưa chắc và hỏi đúng người; không tự quyết vượt phạm vi chỉ vì muốn hoàn tất nhanh.'
 ])
 
+unit('movement-body-labels',[122],15,'Nhận diện vùng cơ thể khi báo khó vận động',[
+ 'Vận động dùng cơ cùng xương và khớp. Ở thân, phân biệt đầu, cổ, ngực, bụng, lưng, eo và vùng mông; nói vị trí giúp người nhận báo cáo hiểu phần đang khó chịu.',
+ 'Ở tay, vai, cánh tay, khuỷu và cổ tay là các mốc khác nhau. Lòng bàn tay khác mu bàn tay; cần nói cả bên trái hay phải của chính người dùng.',
+ 'Ở chân, phân biệt vùng chân, đầu gối, cổ chân, gót và lòng bàn chân. Lòng bàn chân là mặt dưới bàn chân, không phải vùng gót riêng.',
+ 'Biết tên vùng giúp quan sát và trao đổi, chưa đủ chọn kỹ thuật chuyển người. Hỏi đau, khả năng tự làm và điều kiện hỗ trợ; không kéo một chi chỉ vì nhận diện đúng tên.'
+ ],'Báo cáo ghi “đau tay” trong khi người dùng chỉ vào mặt ngoài bàn tay phải. Cần làm rõ điều gì?',
+ 'Xác nhận vị trí người dùng chỉ, ghi mu bàn tay phải nếu đúng, thời điểm và điều họ kể; tách quan sát với suy đoán nguyên nhân. Không tự thử kéo tay để xác định bệnh.')
+unit('visual-guided-walking',[136],16,'Dẫn đường theo nhịp của người khó nhìn',[
+ 'Người dẫn điều chỉnh tốc độ theo người dùng, không kéo đi theo nhịp riêng. Thỏa thuận cách nhận hỗ trợ và đánh giá đường đi, dụng cụ cùng khả năng trước khi di chuyển.',
+ 'Thông báo bằng lời trước khi gặp bậc, góc rẽ hoặc thay đổi tình huống. Nêu rõ điều sắp đến để người dùng có thời gian điều chỉnh, không đợi đã bước vào chỗ thay đổi mới giải thích.',
+ 'Tư thế dẫn trong hình là một mẫu trao đổi và tiếp xúc có thỏa thuận, không buộc mọi người dùng theo cùng cách. Theo hướng dẫn được huấn luyện và phản hồi người dùng; dừng khi điều kiện không an toàn.'
+ ],'Người dẫn thấy sắp rẽ nhưng chỉ báo sau khi đã kéo người dùng sang bên. Cần thay đổi thế nào?',
+ 'Báo trước góc rẽ bằng lời cụ thể, theo nhịp người dùng và cách hỗ trợ đã thống nhất. Tránh kéo bất ngờ; hỏi phản hồi và dừng nếu đường hoặc khả năng hỗ trợ không phù hợp.')
+deepen('posture-names',[
+ 'Đứng, ngồi và nằm là ba nhóm tư thế theo cách cơ thể được nâng đỡ. Nằm ngửa có vùng tiếp xúc rộng trong ví dụ nhưng không tự là tư thế tốt nhất cho mọi hô hấp, đau hoặc nguy cơ tì đè.',
+ 'Mẫu nghiêng phải còn có đệm dưới chân phải và giữa hai chân cùng đệm phía trước ngực. Với nửa ngồi, phần giường nâng chân hoặc đệm dưới gối hỗ trợ tư thế; vị trí và dụng cụ phải được kiểm theo cơ thể, da và kế hoạch.'
+])
+deepen('disuse',[
+ 'Ít hoạt động kéo dài có thể đi cùng hạ huyết áp khi đứng, hồi hộp hoặc hụt hơi, dinh dưỡng kém và giảm năng lực hoạt động. Đây là các vấn đề cần đánh giá, không tự quy triệu chứng mới đều do ít hoạt động.',
+ 'Sau nâng đầu giường, thao tác giảm kéo căng hoặc trượt vùng lưng trong hình nhằm giảm lực lên da. Chỉ hiểu mục đích chưa đủ thực hiện nâng người; dùng phương án và dụng cụ đã được huấn luyện, không tự kéo hoặc nhấc cơ thể.',
+ 'Quan sát da khi thay áo hoặc tắm giúp nhận ra đỏ và thay đổi ở vùng chịu lực. Báo chuyên môn khi thấy bất thường, không đợi thành vết loét; lịch đổi tư thế và cơ hội rời giường theo đánh giá cá nhân.'
+])
+deepen('movement-devices',[
+ 'Các phần xe lăn còn gồm tựa lưng, đệm ngồi, gác tay, tựa cẳng chân và bánh trước. Bánh sau đi cùng vành đẩy nhưng là hai phần khác; bàn để chân khác tựa cẳng chân.',
+ 'Phanh giữ khi dừng khác bộ phanh hỗ trợ ở tay đẩy trong hình. Thanh nâng cân bằng giúp thao tác theo thiết kế; biết vị trí không cho phép thử nâng bánh khi chưa được huấn luyện hoặc dùng khác hướng dẫn xe.'
+])
+deepen('turning-sitting',[
+ 'Ở mẫu trở mình, thu gọn bằng gập gối tạo thuận lợi chuyển tư thế, rồi chỉnh hông ra sau và chân tới chỗ thoải mái để diện tiếp xúc khi nghiêng ổn định hơn. Thu gọn và tăng diện tựa là hai thời điểm với mục đích khác, không phải hai chỉ dẫn mâu thuẫn.',
+ 'Nếu sức khỏe không phù hợp trước thao tác, báo chuyên môn thay vì cố làm. Điều chỉnh độ cao giường vừa giảm tải lưng nhân viên vừa cần đúng mục tiêu: lúc ngồi, hai lòng bàn chân có điểm tựa; để người dùng làm phần có thể.'
+])
+deepen('standing-cane',[
+ 'Mẫu đứng còn cho ngồi tiến gần mép, chân khỏe lùi để nhận trọng lượng và thân nghiêng trước; người hỗ trợ ở phía yếu phòng gối khuỵu. Không tự ép người dùng theo mẫu khi sức chịu tải hoặc khớp không phù hợp.',
+ 'Trong mẫu đi gậy, người hỗ trợ đứng phía sau bên yếu, hỗ trợ thân và eo khi cần theo huấn luyện. Chân yếu bước trước trong nhịp mẫu để bên khỏe giữ tải lúc bắt đầu; so ổn định hai nhịp và ba nhịp cần xét khả năng thật.'
+])
+deepen('wheelchair-transfer',[
+ 'Mẫu chuyển dùng tay khỏe vịn gác tay phía xa rồi phối hợp nghiêng thân, đứng, xoay và ngồi sâu; sau đó kiểm nâng đỡ chân và cảm giác. Không dùng trình tự này thay đánh giá chuyển người hoặc tự xoay khi họ không chịu tải được.',
+ 'Trong mẫu đẩy, tay khỏe có thể vịn gác tay còn tay yếu giữ phía trong để tránh bánh sau; chân ở bàn để chân. Kiểm tay, quần áo và chân trước nhả phanh, nói trước khi xe bắt đầu di chuyển.'
+])
+deepen('wheelchair-curb',[
+ 'Hình lên và xuống bậc đều cho chân người hỗ trợ tiếp xúc chắc thanh nâng, tay đẩy hướng nghiêng xuống để kiểm soát nghiêng xe. Hạ bánh phải từ từ; chiều bánh trước/sau khác theo đi lên hay đi lùi xuống, không tăng lực để vượt một bậc không phù hợp.'
+])
+
 bundle=dict(version=1,date='2026-10-09',scopeVi='Bổ sung các ý chi tiết đã đọc trong khối cơ thể/người cần chăm sóc và một số chú thích thao tác; chưa chứng nhận toàn tài liệu.',
     units=units,allSourceKnowledgeFullyCovered=False,humanReviewed=False,releaseReady=False)
 out=ROOT/'docs/ssw-workspace/kaigo/drafts/atomic-supplements-2026-10-09.json'

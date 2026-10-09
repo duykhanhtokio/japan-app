@@ -472,3 +472,15 @@ Lưu hẹp5file bằng GitHubtree/commit/ref cólease trênHEAD hiện tại và
 - Chuẩn bị tiếp: đọc toàn23trang120–142 và xem bốn contact sheet. Chưa tác giả khối tiếp theo trước lưu đợt hiện tại.
 
 - Kiểm thực thi bản446ý:85kế hoạch/52văn bản Nhật/2804dòng báo cáo, bộ lọc và đề chia buổi khôi phục đúng,0lỗi JS; ba kích thước không tràn. Kiểm ảnh ngày141 mở ở đầu. Sàng lọc701trường/0trùng chuỗi60ký tự; dữ liệu/5negativecontrols/4negativeatomic PASS; JLPTlock10/10PASS. Toàn sách vẫn chưa hoàn tất. Đã đọc/xem thêm8trang144–151, chỉ chuẩn bị nguồn.
+
+
+## 2026-10-09 — di chuyển trang120–142
+- Bắt đầu sau WORK PERSISTENCE PASS6c5da18741e500523e1984e94c2591d735c1c647/treeb53c129c8895a4e8e224348b42999041e46ebb2b; báo cáo version6 đã lưu.
+- Đọc toàn23trang và xem bốn contact sheet. Thêm21ý/2thẻ/2ca, tổng467ý/87thẻ/87ca; lịch144ngày×30=4320phút dự kiến. Ngày143–144 là nhãn cơ thể và dẫn người khó nhìn, mọi ID/ngày cũ giữ nguyên.
+- Movement-source-atoms251bản ghi; năm phạm vi hiện1650bản ghi, không là mẫu số toàn sách. So sánh ADL/IADL, tên20vùng, tư thế/đệm, khiếm dụng/tì đè, máy nâng, nhãn xe, từng quan hệ và chú thích mẫu đổi tư thế/gậy/bậc/xe được nối văn bản/ngày. Không chứng nhận độc lập exhaustive; ba chi tiết31/40/72 vẫn mở; %null và human/domain/native/releasefalse.
+- Primary NICEcg179/WHOwheelchair2023 xác nhận đánh giá cá nhân, đổi tư thế và huấn luyện phù hợp; không biến hình thao tác thành phép tự thử. Đã xem lại close-up31/40 nhưng chưa gán chắc mọi vùng màu hay đồ không nhãn.
+- Chuẩn bị tiếp: đã đọc và xem8trang144–151,18trang152–169 (ba contact sheet); chỉ chuẩn bị nguồn, chưa tác giả khối sau trước lưu đợt này.
+
+- Chuẩn bị nguồn thêm: đã đọc toàn15trang170–184 và xem ba contact sheet; đã đọc12trang186–197 và5trang198–202, xem ba contact sheet. Cùng8trang144–151 và18trang152–169,58trang kỹ năng còn lại đã được đọc/xem, chưa lập danh mục ý trong đợt này. Không dùng bước chuẩn bị làm bằng chứng đã hoàn thành đối chiếu.
+
+- Kiểm thực thi467ý/87kế hoạch/52văn bản Nhật/3078dòng báo cáo, bộ lọc và đề chia buổi khôi phục đúng,0lỗi JS; ba kích thước không tràn, ngày143 mở đầu. Sàng lọc728trường/0trùng60ký tự; dữ liệu/5negativecontrols/4negativeatomic PASS; JLPTlock10/10PASS, Foundation --require-browser PASS. Chưa hoàn tất toàn sách.
