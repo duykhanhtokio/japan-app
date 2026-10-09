@@ -5,15 +5,14 @@ const path='src/data/jlpt-original/n2/04/master.ja.json';
 const bytes=fs.readFileSync(path),m=JSON.parse(bytes);
 const blueprint=JSON.parse(fs.readFileSync('src/data/jlpt-original/authoring-blueprints.json')).levels.n2;
 assert.equal(m.examId,'jpapp-n2-original-04-v1');
-assert.equal(m.questions.length,75);
+assert.equal(m.questions.filter(q=>q.section!=='listening').length,75);
 assert.equal(Object.keys(m.passages).length,12);
-assert.equal(new Set(m.questions.map(q=>q.id)).size,75);
-for(const flag of ['runtimeIntegrated','authoringComplete','publisherReviewed','reviewedByNativeSpeaker','releaseReady'])assert.equal(m[flag],false);
-assert.equal(m.audio.actualDurationVerified,false);
-assert.equal(m.audio.status,'not_generated');
+assert.equal(new Set(m.questions.filter(q=>q.section!=='listening').map(q=>q.id)).size,75);
+for(const flag of ['publisherReviewed','reviewedByNativeSpeaker','releaseReady'])assert.equal(m[flag],false);
+
 assert.deepEqual(m.sectionTimeMinutes,blueprint.sectionTimeMinutes);
 for(const g of blueprint.groups.filter(g=>g.section==='written')){
- const qs=m.questions.filter(q=>q.group===g.problem);
+ const qs=m.questions.filter(q=>q.section!=='listening'&&q.group===g.problem);
  assert.equal(qs.length,g.responses);
  assert.deepEqual(qs.map(q=>q.number),Array.from({length:g.responses},(_,i)=>i+1));
  for(const q of qs){
@@ -33,7 +32,7 @@ for(const g of blueprint.groups.filter(g=>g.section==='written')){
   }
  }
 }
-const seq=m.questions.map(q=>q.correctOptionId),counts={};
+const seq=m.questions.filter(q=>q.section!=='listening').map(q=>q.correctOptionId),counts={};
 for(const section of ['vocabulary','grammar_reading']){
  const qs=m.questions.filter(q=>q.section===section);
  counts[section]=[1,2,3,4].map(i=>qs.filter(q=>q.correctOptionId===String(i)).length);
@@ -41,6 +40,6 @@ for(const section of ['vocabulary','grammar_reading']){
 }
 for(let i=0;i+2<seq.length;i++)assert.ok(!(seq[i]===seq[i+1]&&seq[i]===seq[i+2]));
 for(const k of [2,3,4])for(let i=0;i+3*k<=seq.length;i++)assert.ok(!(seq.slice(i,i+k).join()===seq.slice(i+k,i+2*k).join()&&seq.slice(i,i+k).join()===seq.slice(i+2*k,i+3*k).join()));
-const report={status:'PASS_partial_written_structure_only',examId:m.examId,masterSha256:crypto.createHash('sha256').update(bytes).digest('hex'),written:75,targetTotal:106,remainingListening:31,passages:12,orderingSolutions:5,answerBySection:counts,noWrittenTriples:true,noWrittenShortCycles:true,listeningNotAuthored:true,runtimeIntegrated:false,authoringComplete:false,publisherReviewed:false,reviewedByNativeSpeaker:false,releaseReady:false};
+const report={status:'PASS_written_structure',examId:m.examId,masterSha256:crypto.createHash('sha256').update(bytes).digest('hex'),written:75,targetTotal:106,remainingListening:31-m.questions.filter(q=>q.section==='listening').length,passages:12,orderingSolutions:5,answerBySection:counts,noWrittenTriples:true,noWrittenShortCycles:true,listeningNotAuthored:m.questions.filter(q=>q.section==='listening').length===0,runtimeIntegrated:m.runtimeIntegrated,authoringComplete:m.authoringComplete,publisherReviewed:false,reviewedByNativeSpeaker:false,releaseReady:false};
 if(process.argv.includes('--write-report'))fs.writeFileSync('docs/jlpt-workspace/original/n2-04/written-validation.json',JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report));

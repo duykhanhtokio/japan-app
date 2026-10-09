@@ -4,7 +4,7 @@ No external text service; no legacy exam inputs. Generated audio requires human 
 """
 import argparse,array,hashlib,io,json,math,subprocess,time,urllib.parse,urllib.request,wave
 from pathlib import Path
-ap=argparse.ArgumentParser();ap.add_argument('--level',choices=['n2'],default='n2');ap.add_argument('--port',type=int,default=50128);ap.add_argument('--cpu-threads',type=int,default=2);ap.add_argument('--engine',required=True);ap.add_argument('--exam-number',type=int,choices=range(1,7),default=1);ap.add_argument('--cache-dir');ap.add_argument('--continuous-bitrate-kbps',type=int,choices=[32,40,48,64,96],default=96);args=ap.parse_args();level=args.level;exam_number=f'{args.exam_number:02d}'
+ap=argparse.ArgumentParser();ap.add_argument('--level',choices=['n2'],default='n2');ap.add_argument('--port',type=int,default=50128);ap.add_argument('--cpu-threads',type=int,default=2);ap.add_argument('--engine',required=True);ap.add_argument('--exam-number',type=int,choices=range(1,7),default=1);ap.add_argument('--cache-dir');ap.add_argument('--cache-only',action='store_true',help='Reassemble approved cached speech without starting or calling VOICEVOX');ap.add_argument('--continuous-bitrate-kbps',type=int,choices=[32,40,48,64,96],default=96);args=ap.parse_args();level=args.level;exam_number=f'{args.exam_number:02d}'
 root=Path(__file__).resolve().parent.parent;master=root/f'src/data/jlpt-original/{level}/{exam_number}/master.ja.json';master_bytes=master.read_bytes();exam=json.loads(master_bytes);casting=json.loads((root/'src/data/jlpt-original/voice-casting.json').read_text());settings={**casting['settings'],**casting.get('levelPacing',{}).get(level,{})};roles=casting['roles'];organization_path=root/f'src/data/jlpt-original/{level}/{exam_number}/listening-organization.ja.json';organization_bytes=organization_path.read_bytes();organization=json.loads(organization_bytes)
 out=root/f'assets/jlpt-original/{level}/{exam_number}/audio';out.mkdir(parents=True,exist_ok=True)
 work=root/f'docs/jlpt-workspace/original/{level}-{exam_number}/audio';work.mkdir(parents=True,exist_ok=True)
@@ -14,6 +14,7 @@ plan={g['problem']:g['instructionsJa'] for g in organization['groups']}
 http=urllib.request.build_opener(urllib.request.ProxyHandler({}));proc=None;log=open(work/'generation.log','w')
 def start():
  global proc
+ if args.cache_only:return
  proc=subprocess.Popen([args.engine,'--host','127.0.0.1','--port',str(args.port),'--cpu_num_threads',str(args.cpu_threads)],cwd=str(Path(args.engine).parent),stdout=log,stderr=log)
  for _ in range(80):
   try: req('/speakers');return
@@ -30,6 +31,7 @@ def synth(text,role):
  global new_synthesis_count
  sid=roles[role]['speakerId'];text=text.replace(' ','');key=hashlib.sha256(json.dumps([text,sid,settings['speedScale']],ensure_ascii=False).encode()).hexdigest();p=cache/(key+'.wav')
  if not p.exists():
+  if args.cache_only:raise RuntimeError("Missing cached speech for "+role+": "+key)
   if new_synthesis_count and new_synthesis_count%6==0:stop();start()
   q=json.loads(req('/audio_query?'+urllib.parse.urlencode({'speaker':sid,'text':text}),b''));q.update(speedScale=settings['speedScale'],outputSamplingRate=24000,outputStereo=False)
   p.write_bytes(req('/synthesis?speaker='+str(sid),json.dumps(q).encode()));new_synthesis_count+=1
@@ -40,7 +42,9 @@ def synth(text,role):
 credits='; '.join(v['credit'] for v in roles.values())
 def save(name,pcm):
  mp=out/(name+'.mp3')
- subprocess.run(['ffmpeg','-v','error','-y','-f','s16le','-ar','24000','-ac','1','-i','pipe:0','-codec:a','libmp3lame','-b:a',str(args.continuous_bitrate_kbps)+'k' if name.endswith('-listening-draft') else '96k','-metadata','artist='+credits,'-metadata','comment=Independently authored '+level.upper()+'; human playback review pending',str(mp)],input=pcm,check=True)
+ temporary=work/(name+'.complete.mp3')
+ subprocess.run(['ffmpeg','-v','error','-y','-f','s16le','-ar','24000','-ac','1','-i','pipe:0','-codec:a','libmp3lame','-b:a',str(args.continuous_bitrate_kbps)+'k' if name.endswith('-listening-draft') else '96k','-metadata','artist='+credits,'-metadata','comment=Independently authored '+level.upper()+'; human playback review pending',str(temporary)],input=pcm,check=True)
+ temporary.replace(mp)
  return mp
 def original_rest_music():
  # Original procedural instrumental pad; no recorded source or copied melody.
