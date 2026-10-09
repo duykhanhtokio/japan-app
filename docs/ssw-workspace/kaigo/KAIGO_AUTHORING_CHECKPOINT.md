@@ -429,3 +429,12 @@ Lưu hẹp5file bằng GitHubtree/commit/ref cólease trênHEAD hiện tại và
 - Whole-document HTML/JSON now includes the partial atom table; visual spot-check page count94. Correct meanings rather than copy source absolutes, including risk-based PPE, pull/friction and conditional restraint effects. MHLW3/2025 restraint guide and WHO hand hygiene primary material read for corroboration. Exact normalized60-character screen588fields/0matches; not human/semantic/rights certification.
 - Focused RN Web build and data checks pass; fresh actual browser and report tests verify current points and retained behavior before upload. Evidence files provide executed counts; do not infer installed Android/iOS or fullExpoRouter. Domain/human/native/release flags false. New scripts build-kaigo-foundation-atoms.py and check-kaigo-foundation-atoms.mjs. Unrelated Life TypeScript limitation remains historical; not re-certified as fixed.
 - Next: resolve two visual details, inventory printed42–66 atoms (source text read through66), fill exact missing labels/relations, then continue every remaining chapter. Never announce100% from page registration or rendered authored-point counts. Persist narrow unit with lease and remote verification, preserving concurrent JLPT changes.
+
+
+## Tiếp tục khối cơ thể — 2026-10-09
+- Đọc lại nguồn và hình trang in 42–66; chưa chứng nhận danh mục mọi ý của toàn khối.
+- Bổ sung 12 ý độc lập: bốn buồng tim, hai đường tuần hoàn và tên mạch; bể thận/niệu quản/niệu đạo; cảm xúc, nhu cầu, bốn dấu hiệu sinh tồn, trao đổi khí và hướng tín hiệu thần kinh.
+- Tổng 363 ý / 79 thẻ / 40 buổi bổ sung; 56 buổi nền và sáu đề giữ nguyên.
+- 40 liên kết ý nguồn mới trong body-gap-source-atoms-2026-10-09.json; giữ 309 ý nền tảng và hai chi tiết hình còn mở. Không dùng 349 liên kết làm mẫu số kiến thức toàn sách.
+- Tham khảo kiểm tra đường máu: NHLBI /health/heart/blood-flow; đường tiết niệu: NIDDK /health-information/urologic-diseases/urinary-tract-how-it-works.
+- Tỷ lệ kiến thức gốc vẫn null; duyệt người/chuyên môn, native và releaseReady vẫn false.

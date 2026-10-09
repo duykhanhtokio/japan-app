@@ -38,3 +38,7 @@ Duyệt con người, chuyên môn, Nhật/bản ngữ, tải học thực tế 
 ## Điểm tiếp tục
 
 Khép hai chi tiết hình còn mở bằng kiểm trực quan từng vùng/vật, sau đó phân rã khối tinh thần/cơ thể trang 42–66 và tiếp mọi phần còn lại. Chỉ tính tỷ lệ toàn sách sau khi có mẫu số toàn bộ ý gốc và bằng chứng app cho từng ý. Quyền đẩy lên nhánh GitHub đã được người dùng xác nhận; không mở lại yêu cầu quyền cho phạm vi này.
+
+
+### Đợt tiếp tục phần cơ thể
+Đã bổ sung 12 ý, nâng tổng lên 363. Có 40 liên kết dữ kiện/quan hệ nguồn mới, ngoài 309 liên kết nền tảng. Đây là phần thiếu vừa xử lý, chưa là danh mục đầy đủ trang 42–66. Hai chi tiết hình trang 31 và 40 vẫn mở. Chưa tính được phần trăm kiến thức gốc. Kiểm hiển thị bản mới được ghi riêng trong final-projection-evidence.json; kiểm ba viewport, lưu và bài nền trước đó là bằng chứng lịch sử.

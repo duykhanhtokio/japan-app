@@ -638,6 +638,35 @@ deepen('body-mechanics',[
  'Cơ học cơ thể xét cách xương, khớp và cơ phối hợp tạo vận động. Mục tiêu hỗ trợ là bảo vệ người dùng và giảm lực, tải lên nhân viên; không dùng một hình tư thế làm bảo đảm an toàn cho mọi ca.'
 ])
 
+
+# Body figure gaps: independently explained labels and relationships, 2026-10-09.
+deepen('circulation',[
+ 'Tim có bốn buồng: tâm nhĩ phải, tâm thất phải, tâm nhĩ trái và tâm thất trái. Nhĩ nhận máu về; thất đẩy máu đi. Hai phía phối hợp trong cùng vòng tuần hoàn, không phải hai tim độc lập.',
+ 'Theo đường máu trở về từ cơ thể: tĩnh mạch chủ trên nhận máu từ vùng trên và tĩnh mạch chủ dưới nhận máu từ vùng dưới; máu vào tâm nhĩ phải, sang tâm thất phải rồi đi qua động mạch phổi tới phổi.',
+ 'Sau trao đổi khí ở phổi, máu theo tĩnh mạch phổi về tâm nhĩ trái, sang tâm thất trái rồi được đẩy vào động mạch chủ để phân phối tới cơ thể. Hãy tự kể đường đi từ nơi nhận tới nơi đẩy, thay vì chỉ nhớ màu sơ đồ.',
+ 'Động mạch được gọi theo chiều đi ra khỏi tim, tĩnh mạch theo chiều về tim. Vì thế động mạch phổi mang máu ít oxy và tĩnh mạch phổi mang máu giàu oxy; không dùng một quy tắc màu để gọi tên mọi mạch.'
+])
+deepen('urination-volume',[
+ 'Bể thận là vùng thu nhận nước tiểu trong thận trước khi nước tiểu đi xuống niệu quản. Niệu quản dẫn tới bàng quang; niệu đạo dẫn từ bàng quang ra ngoài. Hai tên gần giống chỉ hai đoạn có nhiệm vụ khác nhau.',
+ 'Thận tạo nước tiểu để thải nước và chất cần loại bỏ; bàng quang chứa tạm nước tiểu trước khi đi tiểu. Đừng gán chức năng tạo nước tiểu cho bàng quang chỉ vì thấy cơ quan này đầy lên.'
+])
+deepen('stress',[
+ 'Trải nghiệm sống và giáo dục có thể ảnh hưởng tính cách, suy nghĩ và cách biểu lộ cảm xúc. Tuổi cũng có thể đi cùng thay đổi, nhưng không đủ để đoán một người nghĩ gì; hỏi chính người đó và đối chiếu thói quen riêng.',
+ 'Vui, giận, buồn và cảm giác thích thú là các ví dụ biểu lộ cảm xúc. Căng thẳng có thể là phản ứng của cả cơ thể và tâm lý trước tác động; ngay sự phấn khích cũng có thể làm cơ thể căng lên, không chỉ trải nghiệm khó chịu.'
+])
+deepen('needs',[
+ 'Nhu cầu là điều người ta mong muốn hoặc thấy cần cho đời sống. Trong cách nhóm đang học, sinh lý và an toàn là hai nhóm cơ bản; gắn bó, được công nhận và tự thực hiện là ba nhóm liên quan đời sống xã hội. Cách phân nhóm giúp hỏi đủ nhu cầu, không xếp giá trị con người.'
+])
+deepen('temperature',[
+ 'Bốn dấu hiệu sinh tồn đang học gồm nhiệt độ, nhịp thở, mạch và huyết áp. Chúng cung cấp thông tin về trạng thái cơ thể; cần xem cùng triệu chứng và mức thường ngày, không chọn một chỉ số để thay mọi đánh giá.'
+])
+deepen('breathing',[
+ 'Khi trao đổi khí, oxy từ không khí đi vào máu còn carbon dioxide từ máu được đưa ra ngoài qua hô hấp. Nhịp thở thường được điều hòa tự động; quan sát thay đổi và khó thở vẫn cần thiết dù người dùng không phải nghĩ về từng lần thở.'
+])
+deepen('nerves',[
+ 'Não tiếp nhận và xử lý thông tin, tham gia nhận định rồi phát tín hiệu điều khiển đáp ứng. Có đường thông tin đi vào và đường lệnh đi ra; không đọc mũi tên thần kinh như chỉ truyền một chiều từ não xuống.'
+])
+
 bundle=dict(version=1,date='2026-10-09',scopeVi='Bổ sung các ý chi tiết đã đọc trong khối cơ thể/người cần chăm sóc và một số chú thích thao tác; chưa chứng nhận toàn tài liệu.',
     units=units,allSourceKnowledgeFullyCovered=False,humanReviewed=False,releaseReady=False)
 out=ROOT/'docs/ssw-workspace/kaigo/drafts/atomic-supplements-2026-10-09.json'
