@@ -49,3 +49,9 @@ Lịch hiện hành:136 ngày dự kiến,30phút/ngày,4080phút. Ngày cuối 
 377ý giải thích/79thẻ/79ca. Bảng phần cơ thể42–66 có368dòng,ngoài309dòng nền;40dòng body-gap là lịch sử có trùng phạm vi.108trang đã xem chọn lọc. Không chứng nhận toàn bộ ý sách hoặc tính phần trăm. Hai chi tiết hình31/40 vẫn mở.
 
 - Kiểm thực thi cuối: browser hiển thị đủ377ý/79ngày chi tiết/52nhiệm vụ tiếng Nhật, báo cáo2006dòng; đề chia hai buổi khôi phục câu và đáp án đã chọn; ba kích thước màn hình không tràn,0lỗi JS. Foundation --require-browser PASS309liên kết với hash hiện tại. Đây là bằng chứng hiển thị, không phải chứng nhận toàn sách hoặc chuyên môn.
+
+
+Đợt người cần chăm sóc: thêm50ý và4thẻ/ca, tổng427ý/83thẻ/83ca; lịch140ngày, mỗi ngày30phút. Bảng488đối chiếu trang68–95, chưa chứng nhận toàn ý độc lập; hướng thao tác hình72 còn mở. Toàn sách chưa hoàn tất, không suy tỷ lệ từ1165bản ghi đã tách trong ba phạm vi.
+
+- Kiểm thực thi:427ý/83kế hoạch/52văn bản Nhật,2549dòng HTML, bộ lọc hoạt động, đề chia hai buổi giữ câu và đáp án,0lỗi JS. Foundation --require-browser PASS. Sàng lọc676trường/0chuỗi60ký tự trùng; không chứng nhận quyền/ý nghĩa. JLPTlock10/10PASS.
+- Kiểm ảnh phát hiện khung RNWeb thiếu flex trên root nên cửa sổ giữ vị trí ở cuối; sửa harness mô phỏng vùng cuộn, thêm key theo màn để ScrollView bài mới khởi đầu. Kiểm tập trung bản dựng mới trên390×844/768×1024/844×390 xác nhận scrollTop0,Ngày137 ở đầu và không tràn; xem ảnh mới. Không chạy lại toàn427ý vì dữ liệu không đổi sau sửa vùng cuộn.

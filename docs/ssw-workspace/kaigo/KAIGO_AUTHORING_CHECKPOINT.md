@@ -450,3 +450,15 @@ Lưu hẹp5file bằng GitHubtree/commit/ref cólease trênHEAD hiện tại và
 - Kiểm hình mới phát hiện harness web chưa nạp đúng tên font RoyalSansJP/RoyalSerifJP; đã sửa riêng harness dùng hai font thật, dựng lại và xem ảnh. Không đổi font hay UI JLPT trong sản phẩm.
 
 - Kiểm thực thi cuối: browser hiển thị đủ377ý/79ngày chi tiết/52nhiệm vụ tiếng Nhật, báo cáo2006dòng; đề chia hai buổi khôi phục câu và đáp án đã chọn; ba kích thước màn hình không tràn,0lỗi JS. Foundation --require-browser PASS309liên kết với hash hiện tại. Đây là bằng chứng hiển thị, không phải chứng nhận toàn sách hoặc chuyên môn.
+
+
+## 2026-10-09 — khối lão hóa, khuyết tật, sa sút trí tuệ
+- Bắt đầu sau WORK PERSISTENCE PASS tại3bec67830dc53b02e13886a7722e43743ae15d5a, tree26171edc73082fe5b10a3c4bb8a42f0c3879009a. Lịch136/ngày30 và báo cáo version4 đã lưu; không giới hạn8tuần.
+- Đọc toàn văn và xem28trang in68–95. Thêm4thẻ độc lập ICF/vận động/thính giác/mất ngôn ngữ cùng ca mới; thêm50ý cả thẻ mới và phần sâu hơn. Tổng83thẻ/427ý/83ca/83ngày chi tiết; lịch140ngày×30=4200phút dự kiến, chưa chốt tổng ngày toàn sách. ID và thứ tự79thẻ cũ không đổi.
+- Danh mục aging-source-atoms488bản ghi nối điểm/văn bản/ngày;309nền+368cơ thể+488người cần chăm sóc=1165bản ghi trong ba phạm vi, không phải mẫu số toàn sách. body-gap40là tập cũ trùng phạm vi, không cộng thêm. Mọi danh mục chưa chứng nhận độc lập tính đầy đủ, mẫu số/%toàn sách null.
+- Đưa nghĩa nhãn, mũi tên, chú thích vào lời mới; không công bố nguồn OCR/PDF/hình. Hiệu chỉnh mô hình ICF, Lewy/alpha-synuclein, đường lọc máu, oxy khác thông khí, mạng vị/khứu giác và bảng quên; primary WHO/NIDCD/NIDDK/NIA được kiểm. Ca không tái tạo bếp/ví/côn trùng nguồn.
+- Chi tiết hướng thao tác xoa bụng trang72 vẫn mở có ghi rõ; không biến hình thành chỉ định tự thao tác. Hai chi tiết31/40 tiếp tục mở.
+- Đọc tiếp toàn21trang98–118 và xem bốn contact sheet; chỉ chuẩn bị nguồn, chưa tác giả nội dung khối này. Tiếp theo sau lưu khối hiện tại: đối chiếu giao tiếp, rồi toàn kỹ năng và phần tiếng Nhật.
+
+- Kiểm thực thi:427ý/83kế hoạch/52văn bản Nhật,2549dòng HTML, bộ lọc hoạt động, đề chia hai buổi giữ câu và đáp án,0lỗi JS. Foundation --require-browser PASS. Sàng lọc676trường/0chuỗi60ký tự trùng; không chứng nhận quyền/ý nghĩa. JLPTlock10/10PASS.
+- Kiểm ảnh phát hiện khung RNWeb thiếu flex trên root nên cửa sổ giữ vị trí ở cuối; sửa harness mô phỏng vùng cuộn, thêm key theo màn để ScrollView bài mới khởi đầu. Kiểm tập trung bản dựng mới trên390×844/768×1024/844×390 xác nhận scrollTop0,Ngày137 ở đầu và không tràn; xem ảnh mới. Không chạy lại toàn427ý vì dữ liệu không đổi sau sửa vùng cuộn.

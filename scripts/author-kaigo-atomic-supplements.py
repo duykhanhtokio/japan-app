@@ -701,6 +701,113 @@ deepen('sleep',[
  'Thức dậy do nhu cầu đi tiểu hoặc tiếng động là các tình huống cần tìm hiểu khi giấc ngủ bị gián đoạn. Ghi nguyên nhân người dùng kể, môi trường và thay đổi so với thường ngày; không mặc định mọi thức giấc ở tuổi cao đều vô hại.'
 ])
 
+unit('icf',[80,81],13,'ICF: khả năng sống trong bối cảnh thực tế',[
+ 'ICF là cách mô tả chức năng, khuyết tật và sức khỏe. Tình trạng sức khỏe được xét cùng chức năng và cấu trúc cơ thể, hoạt động và tham gia; không chỉ ghi tên bệnh rồi suy mọi khả năng.',
+ 'Chức năng cơ thể là hoạt động sinh lý, còn cấu trúc là các bộ phận giải phẫu. Hoạt động là thực hiện việc cụ thể như mặc áo hoặc quản lý việc nhà; tham gia là góp mặt trong tình huống sống như sinh hoạt cộng đồng hoặc làm việc.',
+ 'Yếu tố môi trường gồm nơi ở, người hỗ trợ, cộng đồng, dịch vụ và thái độ. Một đặc điểm môi trường có thể giúp hoặc cản hoạt động; yếu tố cá nhân gồm tuổi, trải nghiệm, tính cách và giá trị riêng.',
+ 'Các mũi tên hai chiều trong mô hình diễn tả tương tác. Khả năng cơ thể ảnh hưởng hoạt động nhưng môi trường và cơ hội tham gia cũng tác động tới cách một người thực hiện việc; mô hình không là chuỗi nguyên nhân chỉ đi một chiều.',
+ 'Lối tiếp cận có độ dốc phù hợp và đường đi thông thoáng có thể giúp người dùng phương tiện hỗ trợ tiếp cận giao thông. Rào cản không chỉ nằm ở cơ thể; cần hỏi mục tiêu và khả năng hiện có để chọn cách hỗ trợ.'
+ ],'Một người muốn tham gia nhóm đọc sách nhưng cửa phòng khó mở khi dùng xe lăn. Chỉ ghi “không tự đi được” đã đủ chưa?',
+ 'Chưa. Phân biệt chức năng cơ thể, việc di chuyển và mục tiêu tham gia; ghi cửa là rào cản môi trường, hỏi cách hỗ trợ và lối tiếp cận phù hợp thay vì bỏ mục tiêu của người đó.')
+unit('motor-disability',[81],13,'Khó vận động: bộ phận, nguyên nhân và khả năng còn lại',[
+ 'Khó vận động có thể ở tay chân hoặc thân mình, liên quan bệnh hay tai nạn. Tổn thương não hoặc tủy sống, biến dạng xương khớp và co rút khớp là những nhóm cần phân biệt; không dùng một tên chung để đoán cách chuyển người.',
+ 'Mức ảnh hưởng và vùng ảnh hưởng khác nhau giữa các cá nhân. Một người có thể đồng thời có khó khăn nhận thức, nhưng khó vận động tự nó không chứng minh khả năng hiểu bị giảm.',
+ 'Gậy, xe lăn và bộ phận giả là các dạng hỗ trợ khác nhau. Lựa chọn, điều chỉnh và huấn luyện sử dụng phải phù hợp mục tiêu, sức khỏe, khả năng và môi trường; có dụng cụ không tự chứng minh dùng an toàn.'
+ ],'Người có khó vận động bàn tay trả lời rõ nhưng nhân viên chỉ hỏi người nhà. Cần sửa điều gì?',
+ 'Trao đổi trực tiếp với người dùng, tạo cách trả lời phù hợp. Khó vận động bàn tay không phải bằng chứng không hiểu; đánh giá riêng từng khả năng và hỏi khi họ muốn người nhà hỗ trợ.')
+unit('hearing-disability',[83],11,'Thính giác và lựa chọn đường giao tiếp',[
+ 'Khó nghe có thể liên quan phần tiếp nhận âm thanh, đường truyền hoặc xử lý tín hiệu. Vị trí ảnh hưởng, mức độ và thời điểm xuất hiện khác nhau; chỉ biết tuổi hoặc thấy đeo máy không đủ để biết người đó nghe gì.',
+ 'Máy trợ thính hỗ trợ nghe trong điều kiện phù hợp, không khôi phục hoàn toàn mọi âm thanh hay tự bảo đảm hiểu lời nói. Cần kiểm môi trường và hỏi người dùng cách giao tiếp hữu ích.',
+ 'Viết, ngôn ngữ ký hiệu và quan sát khẩu hình là những lựa chọn có thể phối hợp. Chọn theo kỹ năng, thị giác, ngôn ngữ và mong muốn người dùng; không mặc định ai khó nghe cũng đọc được khẩu hình hoặc biết ký hiệu.'
+ ],'Bác đeo máy trợ thính nhưng chưa hiểu thông báo trong phòng ồn. Nhân viên định chỉ tăng giọng. Nên điều chỉnh thế nào?',
+ 'Hỏi cách bác muốn tiếp nhận, giảm tiếng ồn và dùng lời rõ với hỗ trợ phù hợp như văn bản nếu bác đọc được. Máy trợ thính không là bằng chứng thông báo đã được hiểu.')
+unit('aphasia',[84],11,'Mất ngôn ngữ: đánh giá từng khả năng giao tiếp',[
+ 'Mất ngôn ngữ liên quan tổn thương hệ thống ngôn ngữ đã phát triển, thường sau tổn thương não như đột quỵ. Khó khăn có thể ảnh hưởng hiểu lời, nói, đọc và viết với mức khác nhau.',
+ 'Khó tạo lời không đồng nghĩa không hiểu, không muốn nói hay mất mọi khả năng nhận thức. Cũng không xem đây chỉ là yếu cơ phát âm; cần phân biệt các khó khăn giao tiếp qua đánh giá phù hợp.',
+ 'Hình, cử chỉ, bảng lựa chọn, viết hoặc thiết bị hỗ trợ có thể tạo đường trao đổi. Viết không luôn phù hợp vì chính đọc hoặc viết cũng có thể bị ảnh hưởng; thử cách theo khả năng còn lại và kế hoạch chuyên môn.',
+ 'Dành thời gian trả lời, hỏi từng ý và xác nhận điều người đó muốn truyền đạt. Không tự điền mong muốn chỉ vì họ nói chậm; hỗ trợ nhằm giữ sự tham gia của chính người dùng.'
+ ],'Người dùng nói ít sau đột quỵ; khi thử hai hình hoạt động, họ chọn nhất quán một hình. Có thể kết luận không hiểu vì nói ít không?',
+ 'Không. Ghi riêng đáp ứng với lời và hình, xác nhận lựa chọn bằng cách phù hợp và phối hợp đánh giá chuyên môn. Dùng khả năng còn lại để họ tham gia; không coi một lần chọn hình là đánh giá toàn bộ ngôn ngữ.')
+deepen('aging',[
+ 'Lão hóa diễn ra ở mọi người nhưng mức độ khác nhau, chịu ảnh hưởng sức khỏe và lối sống. Các nhóm giai đoạn đời gồm trẻ nhỏ, tuổi học đường, trưởng thành, trung niên và tuổi cao; tên giai đoạn không quyết định khả năng của từng người.',
+ 'Thời đại và môi trường sống góp phần tạo lịch sử riêng. Mất bạn đời hoặc bạn bè, thay đổi vai trò và làm việc từng quen trở nên khó có thể gây buồn, sốt ruột hoặc bất lực; hỏi trải nghiệm thay vì mặc định mọi người cao tuổi đều trầm cảm.',
+ 'Các triệu chứng thường được nhắc cùng tuổi cao còn có mất nước, sốt, táo bón, phù, mất ngủ, suy giảm do ít hoạt động và tổn thương do tì đè. Chúng cần nhận diện riêng, không coi là điều phải chấp nhận chỉ vì tuổi.'
+])
+deepen('dehydration',[
+ 'Mất nước có thể đi cùng tăng nhiệt độ; tình trạng nặng có thể nguy hiểm tính mạng và cần điều trị. Ghi các dấu hiệu thật, gọi hỗ trợ theo mức khẩn và không trì hoãn vì người đó không kể khát.',
+ 'Trước và sau vận động hoặc tắm, xem cơ hội uống và nhiệt độ môi trường theo kế hoạch cá nhân. Nhu cầu nước phải xét giới hạn dịch hoặc khó nuốt; không áp một lượng chung cho mọi người.'
+])
+deepen('fever-constipation',[
+ 'Ăn kém, đau bụng hoặc buồn nôn có thể đi cùng táo bón nhưng cũng có nguyên nhân khác. Báo thay đổi và dấu hiệu đáng lo, không chỉ đếm ngày để tự kết luận.',
+ 'Hình xoa bụng diễn tả tác động theo vùng đại tràng. Nhận biết mục đích của hình không phải chỉ định tự xoa; đau bụng mới, bệnh nền và chống chỉ định cần đánh giá, chỉ thực hiện khi có hướng dẫn phù hợp.'
+])
+deepen('edema-itch',[
+ 'Ở người liệt một bên, phía đó có thể dễ phù do giảm vận động và các yếu tố khác. So hai bên và theo dõi cân nặng cùng vị trí, mức phù; không suy mọi sưng một bên đều do liệt.'
+])
+deepen('heart-diseases',[
+ 'Hoại tử là tế bào hoặc mô chết. Nhồi máu cơ tim liên quan thiếu máu gây tổn thương cơ tim; đau thắt ngực và nhồi máu không thể phân biệt chắc chỉ qua lời kể mức đau.',
+ 'Đau đầu, chóng mặt, buồn nôn, thay đổi ý thức, cảm giác hoặc hô hấp có thể xuất hiện trong bệnh mạch não nhưng không phải dấu hiệu riêng chỉ của bệnh đó. Khi có thay đổi cấp, ưu tiên gọi trợ giúp; kế hoạch ăn và vận động là phần quản lý sau đánh giá, không xử trí cấp.',
+ 'Tư thế ngồi nghiêng về trước trong hình nhằm gợi một cách có thể giảm khó chịu hô hấp. Không ép mọi người có suy tim theo tư thế đó; hỗ trợ tư thế họ chịu được và theo chỉ dẫn, đồng thời báo khó thở.'
+])
+deepen('skeleton-labels',[
+ 'Loãng xương làm xương dễ gãy hơn; ít vận động kéo dài, dinh dưỡng và thay đổi hormone là các yếu tố liên quan. Phụ nữ có thể có nguy cơ cao sau mãn kinh nhưng nam giới cũng có thể mắc.',
+ 'Lưng cong, giảm chiều cao hoặc đau vùng lưng có thể là dữ kiện cần đánh giá, không đủ tự chẩn đoán. Dinh dưỡng có canxi, hoạt động và cơ hội tiếp xúc ánh sáng phù hợp phải theo nhu cầu cá nhân; bảo vệ khỏi ngã là phần quan trọng.'
+])
+deepen('internal-disability',[
+ 'Trong chạy thận nhân tạo, máu đi qua đường ra tới bộ lọc, một phần chất thải và nước dư được loại, rồi máu trở lại cơ thể. Bảo vệ đường vào mạch theo chỉ dẫn; lịch tắm, lượng nước và muối phải theo kế hoạch điều trị chứ không suy trực tiếp từ hình.',
+ 'Hình thiết bị hô hấp gồm bình oxy mang theo và máy tạo oxy cá nhân. Cấp oxy không đồng nghĩa máy thông khí hỗ trợ thở; không tự đổi lưu lượng. Theo hướng dẫn phòng cháy, nguồn dự phòng và phòng nhiễm trùng.',
+ 'Lỗ mở đưa phân hoặc nước tiểu ra thành bụng có vị trí khác theo loại phẫu thuật; túi thu nhận cần thao tác theo huấn luyện. Không phải mọi rối loạn bàng quang đều có lỗ mở; đỏ, loét, rò hoặc thay đổi bất thường cần báo.'
+])
+deepen('brain-lobes',[
+ 'Sơ đồ còn nối thùy trán với hành vi, cảm xúc, động lực và ý định. Khứu giác và vị giác có mạng lưới xử lý liên quan nhiều vùng; không hiểu nhãn mùi ở vùng trán hay vị ở vùng đỉnh như mỗi giác quan chỉ có một trung tâm duy nhất.',
+ 'Nhận thức gồm ghi nhớ, dùng ngôn ngữ, thực hiện hành động, nhận biết và lên kế hoạch theo thứ tự. Mất một mặt không chứng minh mọi mặt mất; xem người đó đang cần hỗ trợ ở khâu nào.'
+])
+deepen('forgetting',[
+ 'Chăm sóc sa sút trí tuệ cần giữ cách sống quen, khả năng còn lại và động lực của người đó. Làm hoạt động cùng nhau và giữ nhịp ngày phù hợp có thể giúp giảm lo; không đổi phòng hoặc đồ quen chỉ để tiện nhân viên.',
+ 'Lắng nghe trải nghiệm và cảm xúc, dùng lời ngắn dễ theo, dành thời gian và trấn an. Không tranh cãi để buộc người đó thừa nhận sai; thấu cảm không đòi xác nhận một niềm tin chưa có căn cứ là sự thật.'
+])
+deepen('dementia-types',[
+ 'Thể Lewy liên quan tích tụ bất thường protein alpha-synuclein trong não. Không học cách giải thích chỉ là teo vùng chẩm; biểu hiện nhận thức, vận động, giấc ngủ và cảm xúc cần được đánh giá cùng nhau.',
+ 'Biểu hiện và đáp ứng điều trị thay đổi giữa các cá nhân. Không gán người Alzheimer luôn vui hay người thoái hóa trán–thái dương luôn hung hăng; thuốc và tác dụng được bác sĩ đánh giá, không hứa mọi loại thuốc đều làm chậm mọi dạng bệnh.'
+])
+deepen('dementia-symptoms',[
+ 'Tên triệu chứng cốt lõi và biểu hiện hành vi/tâm lý giúp nhóm điều cần tìm hiểu, không xếp mức quan trọng. Bệnh lý, khó khăn nhận thức, sức khỏe cơ thể, môi trường và quan hệ có thể cùng ảnh hưởng; không quy mọi hành vi cho tính cách hoặc môi trường riêng lẻ.',
+ 'Khó định hướng có thể liên quan giờ, nơi hoặc người; khó lập kế hoạch ảnh hưởng chuỗi thao tác, còn khó phán đoán có thể ảnh hưởng quyết định tiền bạc. Những ví dụ này gợi quan sát, không phải mỗi khó khăn đều có ở mọi người.'
+])
+
+deepen('aging',[
+ 'Hình thay đổi theo hệ còn chỉ giảm bảo vệ miễn dịch và hô hấp, thay đổi chức năng thận cùng đi tiểu nhiều lần, thành mạch thay đổi liên quan huyết áp và ruột vận động kém liên quan táo bón. Đây là các xu hướng có thể gặp, không khẳng định mọi thay đổi đều bình thường ở tuổi cao.'
+])
+deepen('pressure-organs',[
+ 'Huyết áp cao kéo dài cần được đánh giá cùng tình trạng tim, thận, mạch và lối sống. Đau đầu hoặc hồi hộp có thể xảy ra nhưng nhiều người không có triệu chứng; kế hoạch muối, vận động và thuốc theo đội điều trị, không tự dừng thuốc khi thấy khỏe.'
+])
+deepen('fever-constipation',[
+ 'Thời điểm đi vệ sinh sau bữa ăn, hoạt động vừa khả năng và thức ăn có chất xơ là những yếu tố cần xem trong kế hoạch táo bón. Phối hợp nước theo khả năng nuốt và giới hạn dịch; không buộc một giờ hoặc một chế độ ăn cho mọi người.'
+])
+deepen('pneumonia',[
+ 'Viêm phổi có thể liên quan vi khuẩn hoặc virus. Viêm phổi do hít sặc có thể xảy ra khi chất từ miệng, kể cả nước bọt mang vi khuẩn, đi vào đường thở; vì vậy vệ sinh miệng có vai trò ngay cả khi không quan sát thấy sặc thức ăn.'
+])
+deepen('visual-patterns',[
+ 'Khó nhìn có thể có từ sớm hoặc xuất hiện do bệnh, tai nạn hay tuổi. Thị lực và trường nhìn là hai mặt khác nhau; mất hoàn toàn khả năng nhìn, chỉ còn nhận sáng hoặc trường nhìn bị thu hẹp cần cách hỗ trợ riêng.'
+])
+deepen('brain-lobes',[
+ 'Sa sút trí tuệ là suy giảm chức năng nhận thức ảnh hưởng sinh hoạt hoặc tham gia xã hội, với nhiều nguyên nhân khác nhau. Không đồng nhất mọi quên đơn lẻ với bệnh, cũng không dùng tuổi cao để bỏ qua suy giảm mới.'
+])
+
+deepen('icf',[
+ 'Đặc điểm cá nhân trong sơ đồ còn có giới tính cùng tuổi và giá trị sống. Ghi đặc điểm có liên quan với sự đồng ý phù hợp; không dùng giới tính hay tuổi để gán sở thích hoặc mức tự lập.'
+])
+deepen('mental-health',[
+ 'Khuyết tật trí tuệ liên quan phát triển và thích nghi, vẫn cần tôn trọng người trưởng thành như người trưởng thành. Khó khăn tâm thần có thể ảnh hưởng phán đoán hoặc kiểm soát hành động ở một số giai đoạn; không đồng nghĩa người đó luôn thiếu năng lực hoặc gây nguy hiểm.',
+ 'Tâm thần phân liệt và các rối loạn khí sắc là những nhóm bệnh khác nhau. Cần hiểu triệu chứng đang có và hỗ trợ theo kế hoạch, không dùng tên bệnh để đoán mọi hành vi của người dùng.'
+])
+deepen('dementia-types',[
+ 'Tổn thương mạch não có thể đi cùng liệt một bên hoặc mất ngôn ngữ; các khả năng có thể không giảm đồng đều. Alzheimer liên quan thay đổi bệnh lý não tiến triển, còn nhóm trán–thái dương có thoái hóa ở các vùng tương ứng; mô tả teo não không thay đánh giá nguyên nhân và chức năng.'
+])
+deepen('aging',[
+ 'Khi nhiều bệnh cùng tồn tại, biến chứng và điều trị có thể tương tác. Ghi toàn cảnh theo kế hoạch chăm sóc, không xử lý một triệu chứng như tách rời mọi bệnh và thuốc khác.'
+])
+
 bundle=dict(version=1,date='2026-10-09',scopeVi='Bổ sung các ý chi tiết đã đọc trong khối cơ thể/người cần chăm sóc và một số chú thích thao tác; chưa chứng nhận toàn tài liệu.',
     units=units,allSourceKnowledgeFullyCovered=False,humanReviewed=False,releaseReady=False)
 out=ROOT/'docs/ssw-workspace/kaigo/drafts/atomic-supplements-2026-10-09.json'
