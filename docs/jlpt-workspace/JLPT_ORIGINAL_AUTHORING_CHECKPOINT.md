@@ -605,3 +605,12 @@ Content/written/audio/adapter/focused TypeScript and UI lock checks recorded sep
 Session jlpt:jpapp:n1:original:02:v1; listening0ms. Spoken alternatives, advance gist/integrated questions, transcripts and internal explanations hidden. Registry gated by complete audio/runtime metadata. Preserve all other25 originals and concurrent Kaigo updates. Do not rerun initial scratch authorship/permutation scripts or remove legacy resources before the full30replacement gate.
 
 After narrow publication/fetch and WORK PERSISTENCE PASS, technical integrations26/30: N5/N4/N3/N2 allsix, N1 01–02. Next N1 03. User authorized exam/media/report publication to duykhanhtokio/japan-app recovery/jlpt-n3-n1. Read startup/AGENTS/both full authoring documents/current checkpoint/casting at every new authoring session. Engine /tmp/jlpt-voicevox-0.25.2/linux-cpu-x64/run owns same-context subprocess and restarts every6new syntheses. Temp speech cache/logs excluded; generator --level n1 --continuous-bitrate-kbps24. No SHA-only follow-up commit.
+
+
+## 2026-10-09 — N1 03 partial original continuation
+
+Startup remote96c95bdd verified clean with WORK PERSISTENCE PASS; UI10/10. N1 03 now contains70written+14 immediate-response listening drafts,12passages and5 checked ordering solutions. 84of106 drafted responses; remaining22listening and5new unscored examples. No audio/adapter/registration/runtime completion yet; technical integrations remain26/30. Written keys6/6/6/7 and12/11/11/11; three-choice4/5/5. Remaining four-choice listening quota5/6/6/5 yields final23/23/23/23. Stable IDs/positions; recheck all group seams after remaining authoring.
+
+AI editorial corrections remove a grammar ambiguity, refine usage alternatives and replace three adjacent reading themes with independently developed evidence/solution structures. Partial written/content validation and original-corpus lexical audit:0exact,22unchanged prior near candidates,0newN1 03 candidates. Not native semantic/difficulty or rights certification. All human/native/perceptual/release flagsfalse. Full details and next group counts, casting/pacing/break/runtime gates in original/n1-03/HANDOFF.md. New N1 03 opening must say 第三回. A prior N1 02 opening metadata mismatch 第一回 versus 第2回 is recorded there for targeted audio verification/correction.
+
+After narrow publication/fetch and WORK PERSISTENCE PASS, continue SAME N1 03 from remaining22listening+5examples, not N1 04. User publication permission remains active. Preserve prior originals/concurrent Kaigo/UI and legacy resources until full30replacement gate.
