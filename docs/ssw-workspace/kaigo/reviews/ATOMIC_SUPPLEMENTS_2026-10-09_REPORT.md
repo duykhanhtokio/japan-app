@@ -1,44 +1,40 @@
-# Kaigo: traceability and independently authored detail supplements
+# Kaigo — đối chiếu dữ kiện và nội dung tự viết
 
-The 276-page canonical PDF is registered page by page. This is a traceability ledger, **not a completed inventory of every original fact, label or caption**. The original-knowledge percentage remains unknown; `allSourceKnowledgeFullyCovered` remains false. Linking all pages or rendering all authored cards does not prove full knowledge coverage.
+Chưa chứng nhận đủ mọi kiến thức của tài liệu 276 trang. Tỷ lệ kiến thức gốc vẫn chưa xác định vì danh mục từng dữ kiện toàn sách chưa hoàn tất. Không dùng số trang, số thẻ hoặc số nội dung hiện trong app làm tỷ lệ kiến thức gốc.
 
-Added 79 independently authored explanation cards containing 314 grouped teaching points and 79 original explanation cases. They address the detailed gaps found in the partial audit and broaden physiology, aging, disability, communication, daily support, safety and hygiene. Each has a scope limit, a related existing lesson and a content-versioned saved answer. Forty additional 30-minute planned sessions follow the existing 56-session core. Study duration is estimated, not measured with learners.
+## Phần bổ sung hiện hành
 
-The HTML and JSON ledger include 276 page rows, 159 existing section links, 52 language-objective links, 287 source lexical records and 314 new teaching-point rows. Some old section references drifted from the actual PDF; the new ledger corrects those references without rewriting the historical report. Lexical records include aliases and are not 287 distinct concepts. The 47 previously inspected source rows have a separate follow-up map. Their scope cannot be extrapolated to the whole book.
+79 thẻ gồm 351 ý giải thích và 79 ca tự giải thích, rải trong 40 buổi bổ sung dự kiến 30 phút. Đợt tiếp tục bổ sung 37 ý vào các thẻ nền tảng, giữ mã các ý trước và giữ 40 buổi. Nội dung đã đổi có revision riêng, nên phần tự kiểm của thẻ đổi được lưu theo revision mới; bài lõi và các lượt thi cũ giữ nguyên.
 
-## Originality and content limits
+Các bổ sung gồm tác hại hạn chế thân thể, vai nha sĩ và phối hợp gia đình, tên ví dụ dịch vụ, vòng phản hồi chăm sóc, dữ kiện quan sát và phanh, hướng kiểm soát lây, nguồn/phơi nhiễm/PPE, động tác tiếp cận từng vùng tay, cơ học/dụng cụ/sức khỏe nhân viên và nhóm đồ chuẩn bị thảm họa. Có giới hạn áp dụng; không biến ví dụ thành chỉ dẫn chung cho mọi người.
 
-Explanations and cases were authored independently. No PDF bytes, extracted source text, source figures, printed-page metadata or source URLs were added to runtime data. The same source knowledge can be taught using different text and examples; a source statement that is simplified, ambiguous or conditional is qualified rather than copied as an absolute instruction. Examples include autonomic effects, diabetes types, approximate urinary measurements, equipment-dependent grooming and individual care procedures.
+## Bảng ý nhỏ
 
-A normalized exact 60-character-window screen checked 551 new fields against the private source extraction and found zero matches. This detects long identical text, not semantic imitation, visual resemblance or rights compliance. Human originality, domain and Japanese review remain pending; no rights or production readiness certification is claimed. New supplements use existing app styling and do not reproduce the source diagrams.
+`foundation-source-atoms-2026-10-09.json` đăng ký 309 dữ kiện/nhãn/quan hệ ở trang in 10–40 và nối từng dòng với mã ý, trường nội dung và buổi trong app. 53 dòng ghi điều kiện hoặc hiệu chỉnh khái quát nguồn. Đây là đánh giá nghĩa ở mức AI biên tập, chưa là xác nhận chuyên môn.
 
-Primary educational cross-checks used for specific qualifications:
+31 trang nền tảng đã xem trực quan; trang 15 không có nội dung dạy mới. Tổng số trang có bằng chứng xem hình chọn lọc trong sổ toàn tài liệu tăng từ 63 lên 94. Hai chi tiết còn mở: ranh giới từng vùng màu với hai mức bỏ sót trên hình tay trang 31; xác nhận từng vật không nhãn trong hình đồ thảm họa trang 40. Đã dạy các vùng tay và nhóm chức năng đồ dùng, nhưng không dùng điều đó để tự đóng hai mục này.
 
-- [NIDDK: diabetes symptoms and causes](https://www.niddk.nih.gov/health-information/diabetes/overview/symptoms-causes)
-- [NIDDK: type 1 diabetes](https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/type-1-diabetes)
-- [NIDDK: urinary tract](https://www.niddk.nih.gov/health-information/urologic-diseases/urinary-tract-how-it-works)
-- [NIA: memory and aging](https://www.nia.nih.gov/health/memory-loss-and-forgetfulness/memory-forgetfulness-and-aging-whats-normal-and-whats-not)
-- [Alzheimers.gov: Lewy body dementia](https://www.alzheimers.gov/alzheimers-dementias/lewy-body-dementia)
+Sổ toàn tài liệu có 276 dòng trang, 159 liên kết mục, 52 mục tiêu ngôn ngữ, 287 bản ghi từ nguồn, 351 dòng ý giải thích, 309 dòng đối chiếu nhỏ và hai mục hình còn mở. Bản ghi từ có alias, không phải 287 khái niệm độc lập. Các trang ngoài phạm vi ý nhỏ nêu trên vẫn cần phân rã và chứng minh tương đương từng dữ kiện.
 
-## Verification
+## Biểu đạt mới và nguồn kiểm bổ trợ
 
-Data validation checks unique identifiers, exact editorial/runtime point and case projection, valid related lessons, all unit-to-day assignments, 30-minute supplemental sessions and revision hashes. Four deliberately broken inputs are rejected. Existing `content.json` is byte-identical to commit `49e6f67a07ed37ffd08f22f2a8442e2edcebdc50`: core lessons, old progress revisions and six mock forms remain unchanged.
+Tự viết giải thích và ca học, dùng giao diện app hiện có. Không đưa PDF, văn bản trích xuất hoặc hình nguồn vào app/repo. Những điểm khái quát chưa đúng ở mọi hoàn cảnh được giới hạn hoặc hiệu chỉnh, thay vì sao chép tuyệt đối: kéo/ma sát, găng cho mọi việc, đối giao cảm/mồ hôi, động mạch và lượng oxy, NREM/REM, tuổi và nguy cơ sức khỏe.
 
-The actual KaigoCourse is tested through the focused React Native Web harness, using the existing Royal components. Browser evidence and screenshots are in `runtime-tests/2026-10-09-atomic`. This scope does not include full Expo Router or an installed Android/iOS binary. The web inspection revealed the panel background painted over the static text area; Kaigo's input now uses relative positioning so it is visible above that background. Shared JLPT components were not edited.
+Sàng lọc 588 trường bằng cửa sổ đúng 60 ký tự đã chuẩn hóa với bản trích xuất riêng: không có khớp. Kết quả này chỉ kiểm giống chữ, không chứng nhận bản quyền hoặc duyệt chuyên môn/ngôn ngữ.
 
-Focused ESLint has no errors or warnings. Kaigo data/session, knowledge-depth and six-form invariant checks pass. All ten locked JLPT UI files pass their byte-lock check. Repository TypeScript still reports the pre-existing unrelated Life scenario-index TS2352 at `src/services/life-content-repository.ts:47`; no Kaigo diagnostics were reported.
+Nguồn chính thức bổ trợ đã đọc cho các điểm mới:
 
-## Work still required to meet the user's complete-knowledge criterion
+- [MHLW — hướng dẫn ngăn hạn chế thân thể, tháng 3/2025](https://www.mhlw.go.jp/content/12304250/001643323.pdf): nguy cơ cho chức năng và tình trạng tinh thần, cách tiếp cận người sa sút trí tuệ.
+- [WHO — kỹ thuật vệ sinh tay](https://cdn.who.int/media/docs/default-source/integrated-health-services-%28ihs%29/infection-prevention-and-control/hand-hygiene/gpsc-handrub-wash.pdf): bao phủ các bề mặt, ngón cái/đầu ngón, xả/làm khô hoặc chà tới khô. Không sao chép hình hay bố cục WHO.
 
-1. Enumerate every original fact, figure label, arrow and caption separately, including pages outside the 63 recorded visual spot checks.
-2. Verify a meaning-preserving app equivalent for each source atom; a page-level or section-level link is insufficient.
-3. Calculate a coverage percentage only from that completed original inventory, with exceptions and missing items visible.
-4. Complete professional/Japanese review and native-device tests before production release.
+## Kiểm chứng và giới hạn
 
-The separate 155-page national-exam reference containing 713 questions has not been audited in full and is not the denominator for this canonical 276-page audit.
+Bộ kiểm dữ liệu bổ sung, liên kết ý nhỏ, bài lõi/session, chiều sâu, sáu đề và khóa giao diện JLPT đều đạt kiểm cấu trúc/hành vi tương ứng. `content.json` byte nguyên so baseline: 56 ngày lõi, 54 bài, 270 câu, sáu đề/180 câu giữ nguyên. Không sửa UI JLPT.
 
-## Final executed evidence and persistence
+Bằng chứng chạy trình duyệt nằm tại `runtime-tests/2026-10-09-atomic`: KaigoCourse thật qua React Native Web, mọi ý so đúng văn bản, đáp án ẩn trước trả lời, mở đối chiếu, lưu sau tải lại, bài liên quan, bài lõi và thẻ Nhật, ba kích thước màn hình. Bộ kiểm projection xác minh cả bảng HTML và lọc. Đây không phải bản cài Android/iOS hay kiểm toàn Expo Router. Không suy kiểm hiển thị thành chứng minh hiểu đủ kiến thức nguồn.
 
-The browser checked 79 cards / 314 new points, reveal gating, saved answers after reload, all 54 core lesson explanations and depth blocks, 52 language task prompts and all linked terms (287 source lexical records). Final projection smoke additionally checked all 40 study-plan strings and all 52 Japanese task texts against the rebuilt runtime, plus 1088 HTML rows and the report filter. No page errors occurred.
+Duyệt con người, chuyên môn, Nhật/bản ngữ, tải học thực tế và native chưa hoàn tất; `releaseReady=false`. Tài liệu quốc gia 155 trang/713 câu chưa đối chiếu toàn bộ và không là mẫu số của sách chính.
 
-The local implementation was rebased onto remote N2-05 commit d68ed64a. Push was blocked by automatic approval review because it did not find explicit authorization for the complete code/audit payload and GitHub destination. No workaround or retry occurred. Remote persistence has not been verified for these changes.
+## Điểm tiếp tục
+
+Khép hai chi tiết hình còn mở bằng kiểm trực quan từng vùng/vật, sau đó phân rã khối tinh thần/cơ thể trang 42–66 và tiếp mọi phần còn lại. Chỉ tính tỷ lệ toàn sách sau khi có mẫu số toàn bộ ý gốc và bằng chứng app cho từng ý. Quyền đẩy lên nhánh GitHub đã được người dùng xác nhận; không mở lại yêu cầu quyền cho phạm vi này.

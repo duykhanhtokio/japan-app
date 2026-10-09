@@ -566,6 +566,78 @@ unit('partial-perineal-wash',[194,195],38,'Vệ sinh một phần và vùng kín
  ],'Nhân viên đeo găng nhưng dùng cùng mặt khăn lau từ sau ra trước. Găng đã xử lý được nguy cơ này chưa?',
  'Chưa. Cần giữ hướng và mặt lau sạch, thay theo quy trình, vệ sinh tay và quan sát da; găng không thay kiểm soát lây nhiễm giữa các vùng.')
 
+
+# Foundation detail follow-up: append stable point IDs; preserve existing cases and sessions.
+def deepen(key, facts):
+    u=next(u for u in units if u['id']=='kaigo-atomic-'+key)
+    for fact in facts:
+        u['points'].append(dict(id=u['id']+'-'+str(len(u['points'])+1),explanationVi=fact))
+deepen('dignity',[
+ 'Quốc gia, văn hóa, phong tục, kinh nghiệm và khả năng làm việc nhà có thể ảnh hưởng cách sống. Hỏi từng người thay vì lấy thói quen của nhân viên làm chuẩn.',
+ 'Một ngày có thể gồm thay đồ, rửa mặt, bài tiết, đi dạo và giờ uống trà bên cạnh ăn, ngủ, tắm. Mốc sáng/tối trong sơ đồ chỉ minh họa nhịp sống; hỗ trợ phải theo lịch và lựa chọn cá nhân.',
+ 'Khi cần giúp đỡ, người dùng có thể giảm chủ động. Tìm việc có ý nghĩa và phần họ muốn tự làm để nâng động lực, đồng thời kiểm an toàn; không mặc định mọi người cần chăm sóc đều bi quan.'
+])
+deepen('privacy-abuse',[
+ 'Hạn chế vận động có thể làm suy giảm chức năng cơ thể. Ở người sa sút trí tuệ, ép buộc còn có thể tăng bất an, lú lẫn hoặc biểu hiện hành vi khó chịu; không coi ngăn cử động là bảo đảm tình trạng tốt hơn.',
+ 'Thông tin cá nhân không được đưa lên mạng hoặc chia sẻ tùy tiện. Phải xác nhận căn cứ, phạm vi và người nhận phù hợp; sự đồng ý cho một việc không là đồng ý cho mọi ảnh hoặc mọi kênh.',
+ 'Gây đau bằng bạo lực thuộc nguy cơ lạm dụng thân thể; lời đe dọa hoặc sỉ nhục gây tổn thương tâm lý. Bỏ bữa ăn hay bỏ hỗ trợ cần thiết là bỏ chăm sóc; chiếm tài sản và hành vi tình dục không được chấp nhận là hai nhóm khác.'
+])
+deepen('team-roles',[
+ 'Nha sĩ là vai y tế trong nhóm, liên quan đánh giá và điều trị răng miệng. Khi răng giả gây đau hoặc có tổn thương miệng, người chăm sóc báo dữ kiện và phối hợp khám; không tự mài hay sửa răng giả.',
+ 'Điều phối dịch vụ có cả trao đổi với người dùng và liên hệ gia đình theo phạm vi phù hợp. Ý kiến gia đình là thông tin hỗ trợ, không tự thay mong muốn của người dùng.',
+ 'Chuyên gia dinh dưỡng cân nhắc cân bằng dưỡng chất, năng lượng và dạng bữa theo nhu cầu. Người chăm sóc chuyển thông tin ăn uống thực tế, không tự đổi mức năng lượng hoặc kết cấu đã được chỉ định.'
+])
+deepen('care-process',[
+ 'Các ví dụ tên dịch vụ cần nối với nơi chăm sóc: trợ giúp tại nhà thuộc nhóm thăm nhà; chăm sóc trong ngày thuộc nhóm đến cơ sở ban ngày; nhà dưỡng lão đặc biệt là ví dụ cơ sở cư trú. Tên nhóm không tự xác định một người đủ điều kiện dùng dịch vụ.',
+ 'Mục tiêu và việc hỗ trợ cụ thể cần được ghi cho từng người. Đánh giá có thể quay lại thu thập thông tin và sửa kế hoạch; bốn khâu là vòng phản hồi hướng tới cuộc sống người dùng mong muốn.'
+])
+deepen('risk-observation',[
+ 'Quan sát cần ghi lại và chuyển dữ kiện cho nhóm chăm sóc để điều chỉnh hỗ trợ. Cảm giác nóng khi chạm không thay số nhiệt độ; không ghi đã đo khi chỉ mới dự định đo.',
+ 'Trong một ca xe lăn suýt trượt, nếu thực sự xác minh phanh chưa được cài thì ghi điều đó và tổ chức kiểm phanh trước chuyển. Khi chưa xác minh, giữ nguyên phần nguyên nhân chưa rõ; biện pháp cần được chia sẻ để phòng lặp.'
+])
+deepen('infection-chain',[
+ 'Kiểm soát lây nhiễm phải xét cả hướng vào cơ sở, hướng ra ngoài và lan giữa người hoặc khu vực bên trong. Vệ sinh tay, xử lý đồ và phối hợp theo quy trình nhằm tránh mang tác nhân vào, đem tác nhân ra hoặc phát tán tại nơi chăm sóc.',
+ 'Nguồn có thể là vi sinh vật hoặc vật liệu mang tác nhân; tay, đồ vật và thức ăn có thể tham gia đường truyền. Túc chủ có thể là người hoặc động vật. Cắt một mắt xích là mục tiêu của biện pháp, không phải đợi xử lý đủ ba mới làm.',
+ 'Máu, nước bọt, dịch mũi, chất nôn, nước tiểu và phân là các ví dụ cần xét nguy cơ phơi nhiễm. Chú ý cả da tổn thương và niêm mạc; người chưa có triệu chứng vẫn cần phòng ngừa chuẩn theo công việc.',
+ 'Kính bảo hộ giúp bảo vệ mắt khi có nguy cơ bắn; tạp dề bảo vệ trang phục theo nguy cơ. Mũ là vật dụng có thể gặp trong bộ bảo hộ, không mặc định phải đeo ở mọi ca; chọn từng món theo công việc và quy trình.',
+ 'Găng dùng một lần phải thay theo lần chăm sóc, người dùng và lúc chuyển công việc bẩn sang sạch theo quy trình; không mang một đôi đi qua nhiều người. Sau tháo găng vẫn vệ sinh tay.',
+ 'Sinh hoạt tập thể tạo nhiều cơ hội tiếp xúc nên cần tổ chức kiểm soát lây. Sức đề kháng yếu làm tăng nguy cơ, nhưng khỏe mạnh không có nghĩa miễn nhiễm hoặc được bỏ biện pháp phòng ngừa.'
+])
+deepen('hand-coverage',[
+ 'Để kiểm vùng rộng: hai lòng tay tiếp xúc nhau; dùng lòng tay này chà mu tay kia và đổi bên. Bọt hay dung dịch chỉ nằm ở lòng tay chưa chứng minh mu tay đã được xử lý.',
+ 'Kẽ ngón được tiếp cận bằng đan các ngón và chà; mặt sau ngón cũng cần tiếp xúc. Kiểm cả hai tay, tránh chỉ làm tay thuận.',
+ 'Ngón cái cần được bàn tay đối diện bao quanh và chà xoay; đầu ngón cùng vùng móng được chà vào lòng tay đối diện. Đổi bên để xử lý đủ hai bộ ngón.',
+ 'Cổ tay cần được chà riêng theo quy trình đang dùng. Với xà phòng, kết thúc bằng xả kỹ rồi dùng khăn giấy phù hợp để làm khô; với dung dịch chà tay, không xả nước mà tiếp tục chà tới khô theo hướng dẫn sản phẩm.',
+ 'Khum tay giúp giữ lượng dung dịch được lấy; phải đủ để phủ các vùng theo nhãn. Nhẫn và đồng hồ có thể che bề mặt cần xử lý, nên chuẩn bị theo chính sách cơ sở trước vệ sinh tay; không coi rửa quanh trang sức là luôn đủ.'
+])
+deepen('body-mechanics',[
+ 'Một điểm gậy tiếp xúc sàn có thể mở rộng vùng nâng đỡ khi dụng cụ và cách dùng phù hợp. Đây là quan hệ giữa điểm tiếp xúc và chân đế, không là bảo đảm người dùng sẽ không ngã.',
+ 'Thu gọn tay/chân theo khả năng có thể giúp cơ thể được hỗ trợ gọn hơn; không buộc hoặc ép khớp để tạo tư thế. Dịch chuyển ngang và dùng toàn thân là ý giảm tải, không bỏ qua đánh giá da, đau và khả năng chịu lực.',
+ 'Điểm tựa giúp tạo mô-men theo nguyên lý đòn bẩy; khoảng cách từ lực tới điểm tựa ảnh hưởng tác dụng. Biết nguyên lý chưa đủ để tự chọn điểm tì trên cơ thể hoặc thực hiện chuyển người.',
+ 'Bảo vệ lưng cần đồng thời dùng khả năng còn lại của người dùng, dụng cụ phù hợp và cách phối hợp đã huấn luyện. Tư thế tốt không thay nghỉ ngơi, ăn uống, vận động vừa sức hoặc việc báo khi bản thân không đủ khỏe.',
+ 'Giải tỏa căng thẳng nên theo cách phù hợp bản thân, giữ nhịp ăn/ngủ và trao đổi với đồng nghiệp hoặc người có kinh nghiệm. Không giữ mọi lo lắng một mình hoặc cố làm việc vượt sức.'
+])
+deepen('disaster',[
+ 'Nhóm đồ chuẩn bị có thể gồm nước và thực phẩm, thuốc hoặc vật tư theo nhu cầu, bộ sơ cứu, đèn chiếu sáng, radio và pin, đồ giữ ấm, quần áo, vật dụng vệ sinh và bảo vệ đầu. Danh sách phải theo kế hoạch, hạn dùng và nhu cầu thật; không coi hình minh họa là danh sách đủ cho mọi người.',
+ 'Diễn tập cần kiểm ai hỗ trợ, cách liên lạc và cách di chuyển người cần giúp khi đường thường dùng không khả dụng. Chuẩn bị lúc bình thường giúp giảm lúng túng; không đợi có cháy hoặc động đất mới phân công.'
+])
+deepen('dignity',[
+ 'Người chăm sóc có chuyên môn hỗ trợ sinh hoạt cho người gặp khó khăn do tuổi cao hoặc khuyết tật; hỗ trợ nhằm duy trì khả năng và cuộc sống riêng của họ.',
+ 'Người có và không có khuyết tật cần cơ hội hỗ trợ lẫn nhau, cùng sống trong cộng đồng mà giữ cách sống riêng. Bình thường hóa chống định kiến, không xóa khác biệt cá nhân.'
+])
+deepen('privacy-abuse',[
+ 'Lạm dụng xâm hại nhân quyền. Nhận diện nhóm hành vi để bảo vệ người dùng và báo đúng đường, không dùng tên nhóm để tự thay kết luận pháp lý.'
+])
+deepen('team-roles',[
+ 'Care manager và công tác xã hội phối hợp kế hoạch hỗ trợ khi dùng dịch vụ, dựa trên trao đổi với người dùng và các bên phù hợp. Kế hoạch điều phối không tự chứng minh dịch vụ đã được cung cấp.'
+])
+deepen('risk-observation',[
+ 'Tuổi cao hoặc khuyết tật có thể đi cùng nguy cơ tai nạn khác nhau cần đánh giá cá nhân. Đi lại, di chuyển trong tư thế ngồi hoặc nằm và chuyển giữa giường với phương tiện hỗ trợ đều cần xét nguy cơ; không mặc định người ngồi hoặc nằm thì không thể té.'
+])
+deepen('body-mechanics',[
+ 'Cơ học cơ thể xét cách xương, khớp và cơ phối hợp tạo vận động. Mục tiêu hỗ trợ là bảo vệ người dùng và giảm lực, tải lên nhân viên; không dùng một hình tư thế làm bảo đảm an toàn cho mọi ca.'
+])
+
 bundle=dict(version=1,date='2026-10-09',scopeVi='Bổ sung các ý chi tiết đã đọc trong khối cơ thể/người cần chăm sóc và một số chú thích thao tác; chưa chứng nhận toàn tài liệu.',
     units=units,allSourceKnowledgeFullyCovered=False,humanReviewed=False,releaseReady=False)
 out=ROOT/'docs/ssw-workspace/kaigo/drafts/atomic-supplements-2026-10-09.json'
