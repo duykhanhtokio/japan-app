@@ -438,3 +438,15 @@ Lưu hẹp5file bằng GitHubtree/commit/ref cólease trênHEAD hiện tại và
 - 40 liên kết ý nguồn mới trong body-gap-source-atoms-2026-10-09.json; giữ 309 ý nền tảng và hai chi tiết hình còn mở. Không dùng 349 liên kết làm mẫu số kiến thức toàn sách.
 - Tham khảo kiểm tra đường máu: NHLBI /health/heart/blood-flow; đường tiết niệu: NIDDK /health-information/urologic-diseases/urinary-tract-how-it-works.
 - Tỷ lệ kiến thức gốc vẫn null; duyệt người/chuyên môn, native và releaseReady vẫn false.
+
+
+## 2026-10-09 — bỏ giới hạn tám tuần và đối chiếu phần cơ thể
+- Chủ dự án yêu cầu: mỗi ngày 30 phút, đủ toàn bộ kiến thức của tài liệu; không cần giữ 8 tuần. Rules v5/plan v6 và startup được cập nhật công khai, các giới hạn cũ là lịch sử.
+- Lịch hiện tại 136 ngày ×30 phút =4080 phút dự kiến:57 ngày nền (đề kỹ năng01 chia hai buổi luyện30 với cùng lượt lưu) và79 ngày kiến thức chi tiết, một thẻ/ngày. Không phải số ngày hoàn tất toàn sách; không ép mọi kiến thức còn thiếu vào số này. Giữ nguyên ID bài, điểm và lượt cũ; đề đầy đủ60phút vẫn ở danh mục, luyện ngắt quãng không gọi mô phỏng liên tục.
+- Đọc lại toàn văn và xem toàn25trang42–66; hash nguồn chuẩn khớp. Thêm14ý độc lập, tổng377ý/79thẻ/79ca. body-source-atoms có368 bản ghi khái niệm/nhãn/chú thích/quan hệ,66 dòng hiệu chỉnh/giới hạn;309 bản ghi nền10–40 được giữ.40 dòng body-gap trước đây trùng phạm vi, không cộng chúng để tạo tổng677+40.
+- Hiệu chỉnh cách hiểu NREM/REM, tuổi và mạch, miễn dịch; bổ sung thủy tinh thể/võng mạc/vỏ não thính giác, nhóm xương, nội môi và hai pha huyết áp. Tham khảo primary NIH/NEI/NHLBI/MedlinePlus trong hồ sơ. Không công bố PDF/OCR/hình nguồn.
+- Mẫu số toàn sách và phần trăm vẫn null; toàn bộ kiến thức chưa hoàn tất. Hai chi tiết hình31/40 vẫn mở. Danh mục ý42–66 là AI biên tập, chưa chứng nhận độc lập đầy đủ; giữ human/domain/native/release false.
+- Lịch/dữ liệu/các liên kết có kiểm5negativecontrols; mànKaigo dùngdaily-plan thay lịch56ngày để mọi dòng ngày đều30. UI JLPT không thay đổi. Tiếp theo kiểmbrowser bản mới, lưu hẹp vớilease vàxácminhremote, rồi tiếp mọi khối còn lại.
+- Kiểm hình mới phát hiện harness web chưa nạp đúng tên font RoyalSansJP/RoyalSerifJP; đã sửa riêng harness dùng hai font thật, dựng lại và xem ảnh. Không đổi font hay UI JLPT trong sản phẩm.
+
+- Kiểm thực thi cuối: browser hiển thị đủ377ý/79ngày chi tiết/52nhiệm vụ tiếng Nhật, báo cáo2006dòng; đề chia hai buổi khôi phục câu và đáp án đã chọn; ba kích thước màn hình không tràn,0lỗi JS. Foundation --require-browser PASS309liên kết với hash hiện tại. Đây là bằng chứng hiển thị, không phải chứng nhận toàn sách hoặc chuyên môn.

@@ -1,6 +1,6 @@
 # Hướng dẫn chính thức — Tokutei Gino 介護
 
-Phiên bản: 4. Ngày duyệt: 2026-10-08 (Asia/Tokyo).
+Phiên bản: 5. Ngày duyệt: 2026-10-09 (Asia/Tokyo).
 Trạng thái: CHỦ DỰ ÁN ĐÃ DUYỆT PHƯƠNG ÁN BIÊN SOẠN.
 Repository: duykhanhtokio/japan-app. Nhánh: recovery/jlpt-n3-n1.
 Đây là hợp đồng biên soạn; duyệt phương án không chứng nhận nội dung chưa được tạo, kiểm duyệt hoặc tích hợp.
@@ -20,7 +20,7 @@ Nếu thiếu nguồn, chỉ dừng phần phụ thuộc nguồn đó; tiếp t�
 
 - Giữ kiến thức và thuật ngữ; tự viết mới hội thoại, bài đọc, câu hỏi, giải thích và hình.
 - Tạo đủ số NPC cho mọi vai/bối cảnh cần thiết. KHÔNG giới hạn một NPC xuyên suốt hoặc để một nhân vật đổi vai không rõ ràng.
-- Lộ trình 8 tuần; mặc định 30 phút/ngày.
+- Mỗi ngày 30 phút; không giới hạn số tuần. Đủ toàn bộ kiến thức tài liệu chuẩn là mục tiêu bắt buộc.
 - Hội thoại tiếng Nhật; hỗ trợ, dịch và giải thích tiếng Việt. Tách trường ngôn ngữ, không trộn vào một câu thoại Nhật.
 - Hội thoại khoảng 6–12 lượt theo mục tiêu. Không áp quy tắc 11 lượt của nhánh hội thoại khác.
 - Bắt đầu bằng tình huống đã kiểm duyệt, lựa chọn tự do có giới hạn.
@@ -68,7 +68,7 @@ Trước khi viết lập hồ sơ mục tiêu, phạm vi thi, nguồn, giới h
 Không chia kho từ/hội thoại/thi hoàn toàn rời nhau; dùng ID liên kết. Một thuật ngữ dùng nhiều bài chỉ có bản ghi chung, trừ trường hợp đa nghĩa cần phân biệt.
 Kiến thức quyết định cách giao tiếp: hỏi mong muốn, xin phép, xác nhận mức hỗ trợ và báo cáo thay đổi. Không chỉ dạy tiếng Nhật mà bỏ nguyên tắc chăm sóc.
 
-## 6. Kế hoạch 8 tuần, 30 phút/ngày
+## 6. Lịch nền lịch sử và kế hoạch 30 phút/ngày hiện hành
 
 | Tuần | Trọng tâm |
 |---|---|
@@ -158,3 +158,8 @@ Chủ dự án yêu cầu nâng tổng lên6đề và áp dụng nguyên tắc �
 Chủ dự án yêu cầu hoàn tất đối chiếu mọi ý nhỏ, chú thích, dữ kiện; bổ sung mới các phần thiếu/nông và kiểm hiển thị app. Mục tiêu là đủ kiến thức của PDF chính 276 trang, không phải chép văn bản, câu thi hoặc hình. Giữ học khoảng 30 phút/ngày và cho phép tăng tổng buổi thay vì ép toàn bộ vào 8 tuần. Bản nền 56 ngày được giữ; 40 buổi bổ sung hiện là lịch dự kiến, chưa đo người học. Đây là tích hợp kiểm thử nội bộ được yêu cầu, chưa phát hành sản phẩm.
 
 Bảng cấp trang/mục chỉ là liên kết. Không báo 100% kiến thức từ tỷ lệ trang có liên kết, số thẻ hiển thị hoặc kiểm tự động. Chỉ tính % khi đã có mẫu số gồm mọi ý gốc và bằng chứng tương đương từng ý; hiện chưa có mẫu số đó. Mọi trạng thái chưa kiểm, chuyên môn/bản ngữ/quyền và giới hạn kiểm native phải ghi rõ. Không đổi UI JLPT đã khóa. Nội dung bổ sung dùng giải thích và ca mới độc lập, ghi giới hạn khi mốc số hoặc thao tác nguồn phụ thuộc người/thiết bị.
+
+
+## 16. Quyết định mới: bỏ giới hạn 8 tuần — 2026-10-09
+Chủ dự án yêu cầu duy nhất về lịch là mỗi ngày 30 phút và đủ toàn bộ kiến thức trong tài liệu. Mọi giới hạn 8 tuần/56 ngày trong quyết định cũ chỉ là lịch sử. Giữ ID bài và tiến trình đã có; được tách ngày, thêm ngày và phân bổ lại để không ép nội dung. Mỗi chủ đề chi tiết có một buổi riêng; có thể tách tiếp khi tải thực tế cần. Lịch hiện tại không phải số ngày cuối cùng.
+Đề kỹ năng vẫn 45 câu/60 phút theo cấu trúc. Lịch học đặt hai ngày luyện 30 phút, cùng lượt được lưu khi trở ra; không gọi hai buổi ngắt quãng là thi mô phỏng liên tục. Đề đầy đủ vẫn có trong danh mục riêng. Chưa đo tải học thì ghi dự kiến, không hứa hoàn tất mọi mục trong đúng 30 phút.

@@ -4,3 +4,6 @@ import supplements from './atomic-supplements.json';
 export const kaigoCourse = data as Course;
 export const kaigoAtomicKnowledge = supplements as AtomicKnowledgeCourse;
 export const KAIGO_TEST_ONLY = true;
+
+import dailyPlan from './daily-plan.json';
+export const kaigoDailyPlan = dailyPlan;

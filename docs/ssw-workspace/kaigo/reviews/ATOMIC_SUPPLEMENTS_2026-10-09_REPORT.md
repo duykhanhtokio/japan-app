@@ -42,3 +42,10 @@ Khép hai chi tiết hình còn mở bằng kiểm trực quan từng vùng/vậ
 
 ### Đợt tiếp tục phần cơ thể
 Đã bổ sung 12 ý, nâng tổng lên 363. Có 40 liên kết dữ kiện/quan hệ nguồn mới, ngoài 309 liên kết nền tảng. Đây là phần thiếu vừa xử lý, chưa là danh mục đầy đủ trang 42–66. Hai chi tiết hình trang 31 và 40 vẫn mở. Chưa tính được phần trăm kiến thức gốc. Kiểm hiển thị bản mới được ghi riêng trong final-projection-evidence.json; kiểm ba viewport, lưu và bài nền trước đó là bằng chứng lịch sử.
+
+
+### Quyết định bỏ giới hạn tám tuần và phần cơ thể
+Lịch hiện hành:136 ngày dự kiến,30phút/ngày,4080phút. Ngày cuối sẽ tăng theo nội dung thiếu; đây chưa là thời gian đủ toàn tài liệu. Một thẻ kiến thức chi tiết mỗi ngày,79buổi. Đề kỹ năng trong lịch chia hai buổi30,tiếp tục cùng lượt; không xem là thi mô phỏng60phút liên tục.
+377ý giải thích/79thẻ/79ca. Bảng phần cơ thể42–66 có368dòng,ngoài309dòng nền;40dòng body-gap là lịch sử có trùng phạm vi.108trang đã xem chọn lọc. Không chứng nhận toàn bộ ý sách hoặc tính phần trăm. Hai chi tiết hình31/40 vẫn mở.
+
+- Kiểm thực thi cuối: browser hiển thị đủ377ý/79ngày chi tiết/52nhiệm vụ tiếng Nhật, báo cáo2006dòng; đề chia hai buổi khôi phục câu và đáp án đã chọn; ba kích thước màn hình không tràn,0lỗi JS. Foundation --require-browser PASS309liên kết với hash hiện tại. Đây là bằng chứng hiển thị, không phải chứng nhận toàn sách hoặc chuyên môn.

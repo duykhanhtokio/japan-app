@@ -667,6 +667,40 @@ deepen('nerves',[
  'Não tiếp nhận và xử lý thông tin, tham gia nhận định rồi phát tín hiệu điều khiển đáp ứng. Có đường thông tin đi vào và đường lệnh đi ra; không đọc mũi tên thần kinh như chỉ truyền một chiều từ não xuống.'
 ])
 
+
+deepen('temperature',[
+ 'Nhiệt độ thường thấp hơn trong giai đoạn ngủ ban đêm và cao hơn vào ban ngày; nhịp cụ thể có thể khác theo giờ ngủ, hoạt động và người. So sánh nên dùng mức thường ngày và điều kiện đo tương ứng.'
+])
+deepen('pulse',[
+ 'Nhánh động mạch ở bên đầu trong hình là động mạch thái dương nông. Điểm ở cổ tay được mô tả phía mặt trong, tại động mạch quay; chỉ nhận diện vị trí không thay huấn luyện kỹ thuật đo.',
+ 'Trẻ nhỏ thường có mạch nhanh hơn người trưởng thành. Ở người cao tuổi, nhịp còn phụ thuộc sức khỏe, thuốc và vận động; không kết luận tuổi càng cao thì mạch luôn càng chậm.'
+])
+deepen('pressure-context',[
+ 'Trong một chu kỳ tim, áp lực động mạch đạt mức tâm thu khi tim đẩy máu và mức tâm trương khi tim giãn giữa các lần đập. Nhãn tối đa/tối thiểu nói về hai mức trong chu kỳ, không tự có nghĩa mắc bệnh huyết áp cao/thấp.',
+ 'Huyết áp biến đổi trong ngày. Muốn hiểu thay đổi cần ghi giờ, tư thế, hoạt động và trạng thái lúc đo; không xem một số đo là mức cố định suốt ngày.'
+])
+deepen('nerves',[
+ 'Khi đọc sơ đồ dọc cơ thể, phân biệt vùng đầu, vùng ngực và vùng eo với tên các cơ quan thần kinh. Nhãn vùng chỉ vị trí trên hình; không dùng nó như tên một đôi dây thần kinh.'
+])
+deepen('autonomic-heart',[
+ 'Hoạt động, lo lắng, tức giận hoặc căng thẳng có thể đi cùng đáp ứng giao cảm; nghỉ và ngủ thường có vai trò đối giao cảm nổi bật. Điều hòa tự chủ bị rối loạn có thể ảnh hưởng cả thể chất và tâm trạng, nhưng các biểu hiện riêng lẻ không đủ để tự chẩn đoán.'
+])
+deepen('skeleton-functions',[
+ 'Bộ xương gồm nhiều xương lớn và nhỏ liên kết thành khung nâng đỡ toàn thân. Cơ, khớp và xương phối hợp khi vận động; không chỉ xương dài ở tay chân mới có nhiệm vụ.'
+])
+deepen('senses',[
+ 'Thủy tinh thể là cấu trúc trong suốt có hai mặt cong, giúp điều chỉnh hội tụ. Võng mạc là lớp mô nhạy sáng ở phía sau mắt; tín hiệu từ đây theo thần kinh thị giác tới não. Hình cắt hai chiều biểu diễn dạng cong, không phải quả bóng nằm trong mắt.',
+ 'Đích xử lý âm thanh có vỏ não thính giác trong đại não. Cần phân biệt bước truyền rung ở màng nhĩ/xương con với bước chuyển thành tín hiệu ở ốc tai và đường thần kinh đưa tín hiệu tới não.'
+])
+deepen('digestive',[
+ 'Hệ tiêu hóa gồm ống liên tục từ miệng tới hậu môn cùng các cơ quan tiết dịch và enzyme hỗ trợ phân giải thức ăn. Hấp thu và thải phần còn lại là hai nhiệm vụ khác nhau; đại tràng chủ yếu thu hồi thêm nước, không thay ruột non hấp thu phần lớn dinh dưỡng.'
+])
+deepen('sleep',[
+ 'Nghỉ ngơi là giảm hoặc dừng hoạt động để cơ thể và tinh thần thư giãn; ngủ là trạng thái sinh học khác, trong đó não vẫn hoạt động theo các giai đoạn. Nghỉ phù hợp và ngủ có chất lượng giúp phục hồi mệt mỏi, hỗ trợ trí nhớ, cảm xúc và chức năng miễn dịch.',
+ 'Trong REM, hoạt động não có nét giống lúc thức nhưng người vẫn đang ngủ. Giấc mơ thường gặp ở REM, cũng có thể xảy ra ngoài REM; không dùng cách nói “não không ngủ” để hiểu rằng REM là tỉnh táo.',
+ 'Thức dậy do nhu cầu đi tiểu hoặc tiếng động là các tình huống cần tìm hiểu khi giấc ngủ bị gián đoạn. Ghi nguyên nhân người dùng kể, môi trường và thay đổi so với thường ngày; không mặc định mọi thức giấc ở tuổi cao đều vô hại.'
+])
+
 bundle=dict(version=1,date='2026-10-09',scopeVi='Bổ sung các ý chi tiết đã đọc trong khối cơ thể/người cần chăm sóc và một số chú thích thao tác; chưa chứng nhận toàn tài liệu.',
     units=units,allSourceKnowledgeFullyCovered=False,humanReviewed=False,releaseReady=False)
 out=ROOT/'docs/ssw-workspace/kaigo/drafts/atomic-supplements-2026-10-09.json'
@@ -676,7 +710,7 @@ for u in units:
     x={k:v for k,v in u.items() if k not in ['sourcePrintedPages','humanReviewed','domainReviewed','releaseReady']}
     x['contentRevision']=hashlib.sha256(json.dumps(x,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
     runtime.append(x)
-days=[dict(day=57+i//2,plannedMinutes=30,unitIds=[u['id'] for u in runtime[i:i+2]],
-           studyPlanVi='30 phút dự kiến: 14 phút đọc các mục · 10 phút tự giải thích ca · 6 phút đối chiếu và sửa ý. Nếu chưa xong, tiếp tục phần còn lại ở buổi sau.') for i in range(0,len(runtime),2)]
+days=[dict(day=58+i,plannedMinutes=30,unitIds=[u['id']],
+           studyPlanVi='30 phút dự kiến: 3 phút nối ý đã học · 14 phút đọc một chủ đề · 8 phút tự giải thích ca · 5 phút đối chiếu và sửa. Dừng khi hết 30 phút, giữ phần chưa xong cho ngày sau.') for i,u in enumerate(runtime)]
 (ROOT/'src/data/kaigo/atomic-supplements.json').write_text(json.dumps(dict(version=1,units=runtime,days=days,humanReviewed=False,releaseReady=False),ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(dict(units=len(units),atomicPoints=sum(len(u['points']) for u in units),additionalDays=len(days)),ensure_ascii=False))

@@ -5,7 +5,7 @@ function check(d){
  assert.equal(d.humanReviewed,false);assert.equal(d.releaseReady,false);
  assert.equal(d.units.length,draft.units.length);assert.equal(new Set(d.units.map(u=>u.id)).size,d.units.length);
  const assigned=d.days.flatMap(x=>x.unitIds);assert.equal(assigned.length,d.units.length);assert.equal(new Set(assigned).size,d.units.length);
- for(const [i,day] of d.days.entries()){assert.equal(day.day,57+i);assert.equal(day.plannedMinutes,30);assert(day.unitIds.length>0&&day.unitIds.length<=2);}
+ for(const [i,day] of d.days.entries()){assert.equal(day.day,58+i);assert.equal(day.plannedMinutes,30);assert(day.unitIds.length===1);}
  for(const u of d.units){assert(base.lessons.some(l=>l.day===u.parentDay));assert(assigned.includes(u.id));const original=draft.units.find(x=>x.id===u.id);assert(original);assert.deepEqual(u.points,original.points);assert.deepEqual(u.probe,original.probe);assert(u.points.length>=3);assert(u.probe.promptVi&&u.probe.expectedVi&&u.limitsVi);const {contentRevision,...content}=u;assert.equal(contentRevision,createHash('sha256').update(JSON.stringify(sort(content))).digest('hex'));}
  const raw=JSON.stringify(d);assert(!/sourcePrintedPages|sourceSha256|https?:|\.pdf|=== PDF/.test(raw));
 }

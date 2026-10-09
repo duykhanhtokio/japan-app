@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "approvedAt": "2026-10-07",
   "timezone": "Asia/Tokyo",
   "sector": "介護",
@@ -15,7 +15,7 @@
   "approved": {
     "originalExpressionsAndAssets": true,
     "npcPolicy": "Enough stable-role NPCs for all dialogue contexts; not one universal NPC",
-    "weeks": 8,
+    "weeks": null,
     "defaultDailyMinutes": 30,
     "dialogueLanguage": "ja",
     "supportLanguage": "vi",
@@ -82,6 +82,17 @@
       "preserveExistingCurriculumAndResume": true,
       "supersedesInitialMockCountOnly": true,
       "policies": "same as firstMockPolicy; internal test only"
+    },
+    "dailyMinutes": 30,
+    "completionPolicyVi": "Đủ toàn bộ kiến thức trong tài liệu chuẩn; số ngày không giới hạn. 30 phút/ngày là ngân sách, chưa đo thời gian người học.",
+    "dailyPlan": {
+      "policy": "30_minutes_every_day_no_week_limit",
+      "currentPlannedDays": 136,
+      "currentPlannedMinutes": 4080,
+      "finalCompletionDays": null,
+      "learnerTimeMeasured": false,
+      "coreSourceIdsPreserved": true,
+      "skillsMockPractice": "two_30_minute_days_same_saved_attempt_not_continuous_exam"
     }
   },
   "notYetDecided": [
@@ -168,6 +179,15 @@
       "fullAtomicCoverageVerified": false,
       "originalKnowledgeCoveragePercent": null,
       "internalTestIntegrationAuthorized": true,
+      "releaseReady": false
+    },
+    {
+      "date": "2026-10-09",
+      "userRequestVi": "Không cần giữ 8 tuần. Mỗi ngày 30 phút và đủ toàn bộ kiến thức trong tài liệu.",
+      "maxWeeks": null,
+      "dailyMinutes": 30,
+      "fullSourceKnowledgeRequired": true,
+      "sourceInventoryComplete": false,
       "releaseReady": false
     }
   ]

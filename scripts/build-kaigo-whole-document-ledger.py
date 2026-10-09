@@ -31,7 +31,8 @@ for x in v['entries']:
  if not matches:matches=[t for t in c['terms'] if t['termJa']==x['termJa']]
  ids=[t.get('id') for t in matches];lessons=[l for l in c['lessons'] if any(i in l['termIds'] for i in ids)]
  terms.append(dict(id=x['id'],sourcePrintedPages=pages(x['sourcePrintedPages']),termJa=x['termJa'],readingJa=x['readingJa'],meaningVi=x['meaningVi'],runtimeTermIds=ids,days=[l['day'] for l in lessons],status='runtime-linked' if lessons else 'runtime-mapping-missing',humanReviewed=False))
-visual=list(range(10,41))+[47,49,51,53,54,55,56,57,58,61,63,70,79,80,82,88,90,92,125,126,127,134,135,136,137,138,139,140,141,142,145,146,147,148,156,162,163,164,165,166,167,168,169,172,173,174,175,176,177,178,179,181,182,183,184,188,191,192,193,194,195,196,197]
+visual=list(range(10,41))+list(range(42,67))+[47,49,51,53,54,55,56,57,58,61,63,70,79,80,82,88,90,92,125,126,127,134,135,136,137,138,139,140,141,142,145,146,147,148,156,162,163,164,165,166,167,168,169,172,173,174,175,176,177,178,179,181,182,183,184,188,191,192,193,194,195,196,197]
+visual=sorted(set(visual))
 pageRows=[]
 for pdf in range(1,277):
  p=pdf-2;ks=[x['id'] for x in sections if p in x['sourcePrintedPages']];ls=[x['id'] for x in langs if p in x['sourcePrintedPages']];ts=[x['id'] for x in terms if p in x['sourcePrintedPages']];us=[u['id'] for u in a['units'] if p in u['sourcePrintedPages']]
@@ -68,6 +69,14 @@ body+=table('52 mục tiêu ngôn ngữ',['Mã','Mục tiêu','Trang','Ngày','T
 gaps=json.loads((folder/'body-gap-source-atoms-2026-10-09.json').read_text())
 body+=table('Các ý thiếu đã bổ sung trong phần cơ thể · chưa chứng nhận toàn khối',['Mã','Trang in / PDF','Khái niệm','Mã app','Buổi','Biểu đạt mới'],[(x['id'],str(x['printedPage'])+' / '+str(x['pdfPage']),x['conceptVi'],x['runtimePointId'],x['runtimeDay'],x['appEquivalentVi']) for x in gaps['atoms']])
 report['bodyGapAudit']=dict(atomCount=len(gaps['atoms']),fullScopeAtomInventoryCertified=False)
+(folder/'whole-document-ledger-2026-10-09.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+bodyAtoms=read('docs/ssw-workspace/kaigo/reviews/body-source-atoms-2026-10-09.json')
+body+=table('Đối chiếu phần cơ thể · trang in 42–66 · chưa chứng nhận độc lập tính đầy đủ',['Mã','Trang in / PDF','Loại','Khái niệm','Mã app','Ngày','Biểu đạt mới','Giới hạn'],[(x['id'],str(x['printedPage'])+' / '+str(x['pdfPage']),x['kind'],x['conceptVi'],x['runtimePointId'],x['runtimeDay'],x['appEquivalentVi'],x['qualificationVi'] or 'Chưa duyệt chuyên môn/con người') for x in bodyAtoms['atoms']])
+plan=read('src/data/kaigo/daily-plan.json')
+report['bodyAtomAudit']=dict(atomCount=len(bodyAtoms['atoms']),fullScopeAtomInventoryCertified=False)
+report['dailyPlan']=dict(totalDays=plan['totalDays'],dailyMinutes=30,maxWeeks=None,finalCompletionDays=None,learnerTimeMeasured=False)
+calendar=[(d['day'],30,d['titleVi'],d['studyPlanVi']) for d in plan['baseDays']]+[(d['day'],30,' · '.join(u['titleVi'] for u in rt['units'] if u['id'] in d['unitIds']),d['studyPlanVi']) for d in rt['days']]
+body+=table('Lịch học mở · mọi ngày 30 phút · số ngày còn tăng theo nội dung',['Ngày','Phút dự kiến','Nội dung','Phân bổ'],calendar)
 (folder/'whole-document-ledger-2026-10-09.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 body+=table('287 bản ghi từ nguồn → kho từ app',['Mã','Trang','Từ','Cách đọc','Nghĩa mới','Mã app','Ngày liên quan','Trạng thái'],[(x['id'],x['sourcePrintedPages'],x['termJa'],x['readingJa'],x['meaningVi'],x['runtimeTermIds'],x['days'],x['status']) for x in terms])
 body+='<h2>Phần còn phải hoàn tất</h2><ul>'+''.join('<li>'+h(x)+'</li>' for x in report['remainingVi'])+'</ul><p>Phạm vi: PDF chính 276 trang. Tài liệu bộ câu hỏi quốc gia 155 trang / 713 câu chưa được đối chiếu toàn bộ.</p>'
