@@ -151,3 +151,10 @@ Trong phiên tiếp tục tuần8, chủ dự án chọn: đề kỹ năng tiế
 ## 14. Tổng 6 đề — yêu cầu chủ dự án ngày2026-10-08
 
 Chủ dự án yêu cầu nâng tổng lên6đề và áp dụng nguyên tắc đã duyệt để sửa chính xác. Phạm vi hiện hành:3đề kỹ năng (45câu/60phút mỗi đề),3đề Nhật (15câu/30phút mỗi đề), tổng180câu. Mục13 tiếp tục áp dụng cho cả6đề; số lượng ban đầu1+1 là lịch sử và đã được mở rộng. Bốn đề mới phải có nội dung độc lập, không dùng mẫu thay danh từ hoặc chép/viết lại câu thi nguồn. Chỉ dùng nguồn để kiểm kiến thức/thuật ngữ, tự tạo văn bản và hình. Giữ2đề cũ cùng fingerprint/lưu lượt nếu không có lỗi cần sửa; thêm đề02/03 vào danh mục với lưu lượt riêng. Không tự tăng nhiệm vụ bắt buộc trong lịch56ngày. Việc tích hợp để kiểm tra nội bộ đã được cho phép; không đồng nghĩa duyệt chuyên môn, bản ngữ, quyền sử dụng hoặc phát hành.
+
+
+## 15. Đối chiếu toàn tài liệu và buổi kiến thức chi tiết — 2026-10-09
+
+Chủ dự án yêu cầu hoàn tất đối chiếu mọi ý nhỏ, chú thích, dữ kiện; bổ sung mới các phần thiếu/nông và kiểm hiển thị app. Mục tiêu là đủ kiến thức của PDF chính 276 trang, không phải chép văn bản, câu thi hoặc hình. Giữ học khoảng 30 phút/ngày và cho phép tăng tổng buổi thay vì ép toàn bộ vào 8 tuần. Bản nền 56 ngày được giữ; 40 buổi bổ sung hiện là lịch dự kiến, chưa đo người học. Đây là tích hợp kiểm thử nội bộ được yêu cầu, chưa phát hành sản phẩm.
+
+Bảng cấp trang/mục chỉ là liên kết. Không báo 100% kiến thức từ tỷ lệ trang có liên kết, số thẻ hiển thị hoặc kiểm tự động. Chỉ tính % khi đã có mẫu số gồm mọi ý gốc và bằng chứng tương đương từng ý; hiện chưa có mẫu số đó. Mọi trạng thái chưa kiểm, chuyên môn/bản ngữ/quyền và giới hạn kiểm native phải ghi rõ. Không đổi UI JLPT đã khóa. Nội dung bổ sung dùng giải thích và ca mới độc lập, ghi giới hạn khi mốc số hoặc thao tác nguồn phụ thuộc người/thiết bị.
