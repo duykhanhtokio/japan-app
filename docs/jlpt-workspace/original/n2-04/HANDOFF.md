@@ -1,0 +1,13 @@
+# N2 04 — partial written checkpoint
+
+N2 04 is NOT a complete exam and is NOT registered or runnable. Integrated progress remains 21/30. Preserve the 21 earlier forms and concurrent Kaigo work.
+
+Current master: 75 independently authored written items in the exact N2 groups 1–14, including 12 passages and five ordering items. Vocabulary keys 8/8/8/8; grammar-reading 11/11/11/10. The 75 written positions contain no triples or threefold short cycles. Answer positions are stable. Do not rerun scratch initial-authoring scripts.
+
+AI editorial work repaired 15 implausible usage distractors, one overly elementary context item, a text-grammar competing negative expression, an ordering-prefix error, five visible star-slot alignments, and one counterfactual temporal context. Rights/native/publisher/level calibration remain unreviewed. Lexical candidate audit includes the partial draft and only independent originals; zero exact matches, 22 unchanged earlier near candidates and zero new N2 04 candidates. This is not exhaustive semantic certification.
+
+Next: complete 31 listening responses, five independent unscored examples and the listening organization; integrated dialogue 3 must serve two separate responses with matching scripts and distinct IDs. Retain N2-approved four voices, speed .9, 2/.5s pauses and 12/12/12/8/15s answer windows. Include the exactly 60000ms original instrumental intermission after group2 before all group3 orientation, announced on both sides. Target approximately 50min; no invented fixed tolerance or silence padding. Final answer pool must balance 95 four-choice items and 11 three-choice items while preserving the written positions, section balance and no triples/short cycles across the boundary.
+
+VOICEVOX 0.25.2 CPU engine was downloaded and all four speaker IDs 8/118/11/21 produced 24000Hz mono PCM in a same-process preflight. Temporary runtime path: /tmp/jlpt-voicevox-0.25.2/linux-cpu-x64/run. Recheck availability on resumption; this path is not durable. Start the engine within the same execution context as the generator, as localhost from separate exec cells did not reach the standalone server. No exam audio was generated. Required generator: scripts/generate-jlpt-original-n2-audio.py --exam-number 4.
+
+Reread startup, AGENTS, both full authoring documents, this checkpoint, voice configuration, blueprint and image/uniqueness standard before editing. Continue existing data; do not regenerate prior completed exams. Complete audio/content/adapter/runtime QA and final uniqueness review before registering this form. Keep all human/perceptual/rights/release flags false. No legacy deletion before the full30 replacement gate.
