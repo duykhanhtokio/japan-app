@@ -55,3 +55,13 @@ Lịch hiện hành:136 ngày dự kiến,30phút/ngày,4080phút. Ngày cuối 
 
 - Kiểm thực thi:427ý/83kế hoạch/52văn bản Nhật,2549dòng HTML, bộ lọc hoạt động, đề chia hai buổi giữ câu và đáp án,0lỗi JS. Foundation --require-browser PASS. Sàng lọc676trường/0chuỗi60ký tự trùng; không chứng nhận quyền/ý nghĩa. JLPTlock10/10PASS.
 - Kiểm ảnh phát hiện khung RNWeb thiếu flex trên root nên cửa sổ giữ vị trí ở cuối; sửa harness mô phỏng vùng cuộn, thêm key theo màn để ScrollView bài mới khởi đầu. Kiểm tập trung bản dựng mới trên390×844/768×1024/844×390 xác nhận scrollTop0,Ngày137 ở đầu và không tràn; xem ảnh mới. Không chạy lại toàn427ý vì dữ liệu không đổi sau sửa vùng cuộn.
+
+
+## 2026-10-09 — giao tiếp trang98–118
+- Bắt đầu sau WORK PERSISTENCE PASS6c8d059e9dd635e47d04e1e4408ac6444a97ca9b/treec1548e585e3cba28404dd523900348ef6d723078. Giữ cập nhật JLPT863085d9 khi lưu trước đó. Báo cáo version5 đã lưu.
+- Đọc toàn21trang98–118 và xem bốn contact sheet. Thêm19ý,2thẻ/ca độc lập về tín hiệu không lời và hồ sơ; tổng446ý/85thẻ/85ca, lịch142ngày×30=4260phút dự kiến. Hai thẻ mới ở ngày141–142, giữ mọi ID/ngày cũ.
+- Thêm234bản ghi ý nguồn giao tiếp, nối chính xác văn bản/ngày/điểm; bốn danh mục10–40/42–66/68–95/98–118 có1399bản ghi, chưa mẫu số toàn sách, chưa chứng nhận độc lập exhaustive.40body-gap là tập trùng cũ, không cộng thêm. Các hình đã đọc được biểu đạt bằng ý nghĩa, không tái tạo ca nguồn hoặc đưa hình nguồn lên app.
+- Làm rõ gật đầu không tự là đồng ý; không ép nhìn mắt/chạm; xu hướng văn hóa không thay mong muốn người dùng; trợ thính khác ký hiệu; ghi kịp thời, nguồn kết luận, trao đổi hai chiều. Chuyên môn/con người/native/release vẫn false, ba chi tiết hình31/40/72 tiếp tục mở.
+- Chuẩn bị tiếp: đọc toàn23trang120–142 và xem bốn contact sheet. Chưa tác giả khối tiếp theo trước lưu đợt hiện tại.
+
+- Kiểm thực thi bản446ý:85kế hoạch/52văn bản Nhật/2804dòng báo cáo, bộ lọc và đề chia buổi khôi phục đúng,0lỗi JS; ba kích thước không tràn. Kiểm ảnh ngày141 mở ở đầu. Sàng lọc701trường/0trùng chuỗi60ký tự; dữ liệu/5negativecontrols/4negativeatomic PASS; JLPTlock10/10PASS. Toàn sách vẫn chưa hoàn tất. Đã đọc/xem thêm8trang144–151, chỉ chuẩn bị nguồn.

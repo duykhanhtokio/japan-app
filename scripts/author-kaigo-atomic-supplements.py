@@ -808,6 +808,38 @@ deepen('aging',[
  'Khi nhiều bệnh cùng tồn tại, biến chứng và điều trị có thể tương tác. Ghi toàn cảnh theo kế hoạch chăm sóc, không xử lý một triệu chứng như tách rời mọi bệnh và thuốc khác.'
 ])
 
+unit('nonverbal-dialogue',[104,105,106],14,'Tín hiệu lắng nghe và ranh giới khi tiếp xúc',[
+ 'Quan sát nét mặt và động tác giúp chọn cách trao đổi, nhưng ý nghĩa cần hỏi và kiểm với người đó. Tránh suy một biểu cảm là bằng chứng chắc về cảm xúc hoặc sự đồng ý.',
+ 'Hướng mặt tới người nói và điều chỉnh tầm nhìn ngang nhau có thể giảm cảm giác bị nhìn từ trên xuống. Giao tiếp bằng mắt theo mức người đó thấy dễ chịu; không ép nhìn mắt để chứng minh họ lắng nghe.',
+ 'Giọng nhẹ, nhịp chậm và khoảng chờ cho người kia thời gian xử lý, trả lời. Gật đầu hoặc lời hưởng ứng có thể báo mình đang theo dõi, nhưng không dùng một cái gật để kết luận người dùng đã hiểu hay đã đồng ý chăm sóc.',
+ 'Khoanh tay, bắt chéo chân hoặc ngả xa có thể tạo cảm giác đóng lại trong một tình huống, song ý nghĩa cử chỉ thay đổi theo văn hóa và cá nhân. Hướng tới người dùng với tư thế thoải mái; không xếp một tư thế thành tính cách.',
+ 'Khoảng cách gần có thể thân mật với người này nhưng khó chịu với người khác. Một xu hướng văn hóa về khoảng cách không thay việc hỏi mong muốn của chính người dùng.',
+ 'Ý nghĩa tiếp xúc còn phụ thuộc thời điểm, lực và tần suất. Trước khi chạm, hỏi hoặc giải thích theo khả năng giao tiếp, quan sát phản ứng và dừng khi không được chấp nhận; nắm tay nhẹ là một lựa chọn có điều kiện.'
+ ],'Bác lùi lại khi nhân viên đứng sát; nhân viên cho rằng “ở đây ai cũng thích thân mật”. Cần làm gì?',
+ 'Lùi tới khoảng cách bác thấy dễ chịu và hỏi cách bác muốn trao đổi. Xem phản ứng cá nhân, không lấy giả định văn hóa thay lựa chọn; nếu cần chạm để hỗ trợ thì giải thích và xác nhận phù hợp.')
+unit('shared-care-records',[114,115,116,118],48,'Hồ sơ để người tiếp theo hiểu và tiếp tục chăm sóc',[
+ 'Chia sẻ thông tin chăm sóc và y tế trong nhóm hỗ trợ phối hợp giữa người chăm sóc với các chuyên môn khác. Mục đích gồm nâng chất lượng và bảo đảm chăm sóc theo nhóm, không chỉ hoàn thành một tờ ghi.',
+ 'Bản kế hoạch xác định hỗ trợ dự định, hồ sơ trường hợp ghi diễn biến và sổ bàn giao truyền điều người tiếp theo cần biết. Họp hoặc trao đổi trực tiếp bổ sung thảo luận; lời nói không tự thay phần hồ sơ cần lưu.',
+ 'Ghi trong ngày và càng kịp thời càng tốt theo quy trình để tránh mất chi tiết; ghi đúng thời điểm sự việc và thời điểm ghi nếu có khác biệt. Tách tình trạng người dùng, hỗ trợ đã thực hiện và phản ứng sau hỗ trợ.',
+ 'Đối chiếu dữ kiện chủ quan với quan sát hoặc số đo; nếu kết luận đến từ chuyên môn khác, ghi nguồn kết luận. Người nhận bàn giao ghi chú, lặp lại phần trọng tâm và hỏi điều chưa rõ; trao đổi hai chiều giúp phát hiện thiếu thông tin.'
+ ],'Ca sau đọc “mọi việc ổn” nhưng không biết người dùng đã nhận hỗ trợ gì và có đáp ứng ra sao. Cần bổ sung thế nào?',
+ 'Ghi thời điểm, tình trạng thực, hỗ trợ đã làm và phản ứng được quan sát hoặc người dùng kể; tách nguồn kết luận chuyên môn nếu có. Bàn giao phần cần theo dõi và xác nhận người nhận hiểu, không thêm số đo chưa có.')
+deepen('communication',[
+ 'Mỗi bên đều có thể gửi và nhận thông tin, chia sẻ suy nghĩ và cảm xúc. Sơ đồ hai chiều biểu diễn phản hồi; người chăm sóc cần học cách trao đổi để xây dựng tin cậy với người dùng, gia đình và các chuyên môn.',
+ 'Thời đại lớn lên và môi trường sống góp phần tạo giá trị riêng. Tôn trọng cảm xúc, suy nghĩ và giá trị, dùng lời lịch sự phù hợp người trưởng thành; không thay lựa chọn bằng điều nhân viên cho là tốt.'
+])
+deepen('accessible-talk',[
+ 'Khi thông tin nhìn không đủ, vị trí hoặc khoảng cách có thể khó xác định. Giải thích đặc điểm đồ vật cụ thể, nêu mốc theo phía người dùng hoặc âm thanh đã thống nhất; có thể cho sờ vật để nhận biết khi họ muốn và an toàn.',
+ 'Ngôn ngữ ký hiệu có thể kết hợp tay, ngón tay, biểu cảm khuôn mặt và chuyển động đầu/cổ theo hệ ngôn ngữ. Máy trợ thính thu âm qua micro, xử lý hoặc khuếch đại rồi đưa âm tới tai; đây là đường hỗ trợ khác với chữ hoặc ký hiệu.',
+ 'Khó tiếp nhận âm thanh có thể làm người dùng cảm thấy bị bỏ ngoài cuộc, cô đơn hoặc mất mát. Hỏi trải nghiệm, hỗ trợ tâm lý và cơ hội tham gia; không mặc định mọi người khiếm thính đều có cùng cảm xúc.',
+ 'Công nghệ thông tin và truyền thông có thể hỗ trợ trao đổi, nhưng phải chọn theo khó khăn cụ thể, kỹ năng và mong muốn. Kiểm người đó thực sự sử dụng và hiểu được phương tiện, không chỉ đưa thiết bị là đủ.'
+])
+deepen('record-handover',[
+ 'Giữ bí mật và bảo vệ dữ liệu là trách nhiệm nghề nghiệp. Làm rõ mục đích, phạm vi và sự đồng ý hoặc căn cứ phù hợp trước khi chia sẻ; ảnh chụp và thông tin nơi làm việc cũng không được đăng hoặc kể tùy tiện.',
+ 'Tình trạng công việc của chính nhân viên và điều nhận thấy khi tiếp xúc người dùng cũng có thể cần báo cho nhóm. Chọn thời gian, nơi trao đổi bảo vệ thông tin; tình huống khẩn báo ngay theo quy trình.',
+ 'Thảo luận là tìm lời khuyên từ đồng nghiệp hoặc chuyên môn khi có vấn đề hay phần chưa hiểu. Nêu điều chưa chắc và hỏi đúng người; không tự quyết vượt phạm vi chỉ vì muốn hoàn tất nhanh.'
+])
+
 bundle=dict(version=1,date='2026-10-09',scopeVi='Bổ sung các ý chi tiết đã đọc trong khối cơ thể/người cần chăm sóc và một số chú thích thao tác; chưa chứng nhận toàn tài liệu.',
     units=units,allSourceKnowledgeFullyCovered=False,humanReviewed=False,releaseReady=False)
 out=ROOT/'docs/ssw-workspace/kaigo/drafts/atomic-supplements-2026-10-09.json'
