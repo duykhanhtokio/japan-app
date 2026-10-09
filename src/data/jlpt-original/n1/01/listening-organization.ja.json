@@ -1,0 +1,258 @@
+{
+  "examId": "jpapp-n1-original-01-v1",
+  "status": "independent_ai_unreviewed",
+  "openingJa": "これから、ジャパンアプリの独自模擬試験、エヌ一、第一回の聴解を始めます。音声と画面を使って答えてください。",
+  "soundCheck": [
+    {
+      "role": "femaleStudent",
+      "text": "音声を確認しています。私の声が聞こえますか。"
+    },
+    {
+      "role": "adultFemale",
+      "text": "この声で、説明と質問を案内します。"
+    },
+    {
+      "role": "youngMale",
+      "text": "話す人が変わることも、聞き分けてください。"
+    },
+    {
+      "role": "adultMale",
+      "text": "無理のない音量に調整してから始めましょう。"
+    }
+  ],
+  "generalInstructionsJa": "採点する答えは三十六個です。練習は採点しません。話は一度だけ流れ、問題二の後に一分間の音楽の休みがあります。休みの後は自動で問題三へ進みます。音声だけの答えは、内容を聞いて番号を選んでください。",
+  "closingJa": "これで聴解は終わりです。答えの番号を確かめ、準備ができたら提出してください。",
+  "groups": [
+    {
+      "problem": 1,
+      "instructionsJa": "問題一では、次にする作業を考えます。質問を先に聞き、話の後でもう一度確かめます。画面にある四つの候補から答えてください。練習で進め方を確認します。",
+      "choicesDisplay": "printed",
+      "readQuestionAfterDialogue": true,
+      "readChoices": false,
+      "replayWholeDialogue": false,
+      "scoredStartJa": "練習はここまでです。問題1の採点する話に進みます。",
+      "example": {
+        "id": "jpapp-n1-original-01-practice-1",
+        "scored": false,
+        "prompt": "実験室で、女性は次に何をしますか。",
+        "script": [
+          [
+            "adultFemale",
+            "実験室で、女性は次に何をしますか。"
+          ],
+          [
+            "adultMale",
+            "試料に番号を付ける前に、採った場所との対応を一覧にしておこう。番号だけでは後で追えなくなる。"
+          ],
+          [
+            "femaleStudent",
+            "では、容器を並べ直すより先に、採取場所と仮の容器名を記録します。ラベルは一覧ができた後に貼ります。"
+          ]
+        ],
+        "options": [
+          {
+            "id": "1",
+            "text": "採取場所と容器の対応を記録する"
+          },
+          {
+            "id": "2",
+            "text": "全容器に新しい番号を貼る"
+          },
+          {
+            "id": "3",
+            "text": "試料を別の容器に移す"
+          },
+          {
+            "id": "4",
+            "text": "一覧を作らず容器を並べ直す"
+          }
+        ],
+        "correctOptionId": "1",
+        "answerExplanationJa": "場所と容器の対応を先に残すと言っているので、一番です。"
+      }
+    },
+    {
+      "problem": 2,
+      "instructionsJa": "問題二では、質問に関係する要点を聞き取ります。質問は話の前と後に流れます。四つの候補は画面で読み、音声では読みません。まず採点しない練習です。",
+      "choicesDisplay": "printed",
+      "readQuestionAfterDialogue": true,
+      "readChoices": false,
+      "replayWholeDialogue": false,
+      "scoredStartJa": "練習はここまでです。問題2の採点する話に進みます。",
+      "example": {
+        "id": "jpapp-n1-original-01-practice-2",
+        "scored": false,
+        "prompt": "男性が連絡方法を変えた理由は何ですか。",
+        "script": [
+          [
+            "adultFemale",
+            "男性が連絡方法を変えた理由は何ですか。"
+          ],
+          [
+            "femaleStudent",
+            "報告を電話から文書にしたのは、連絡する回数を減らすためですか。"
+          ],
+          [
+            "adultMale",
+            "回数は変わりません。判断の条件が後から確かめられるようにしたかったんです。聞いた人の記憶だけに頼ると、何を前提にしたかが残りませんから。"
+          ]
+        ],
+        "options": [
+          {
+            "id": "1",
+            "text": "判断の前提を後から確認できるようにするため"
+          },
+          {
+            "id": "2",
+            "text": "連絡する回数を減らすため"
+          },
+          {
+            "id": "3",
+            "text": "電話で話す時間を延ばすため"
+          },
+          {
+            "id": "4",
+            "text": "相手の返事を不要にするため"
+          }
+        ],
+        "correctOptionId": "1",
+        "answerExplanationJa": "理由は判断の条件を記録として残すことで、一番です。"
+      }
+    },
+    {
+      "problem": 3,
+      "instructionsJa": "問題三では、話全体の中心や話し手の意図を考えます。先に質問は示しません。話の後に質問と四つの答えを音声で流します。画面には答えの内容を表示しません。練習を聞いてください。",
+      "choicesDisplay": "audio_only",
+      "readQuestionAfterDialogue": true,
+      "readChoices": true,
+      "replayWholeDialogue": false,
+      "scoredStartJa": "練習はここまでです。問題3の採点する話に進みます。",
+      "example": {
+        "id": "jpapp-n1-original-01-practice-3",
+        "scored": false,
+        "prompt": "話し手の主な考えは何ですか。",
+        "script": [
+          [
+            "adultFemale",
+            "短い意見を聞いて、中心となる考えを選びます。"
+          ],
+          [
+            "adultMale",
+            "規則の例外を説明すると、規則が弱くなると言う人がいます。しかし、例外が認められる条件を明らかにしなければ、担当者ごとに違う判断をしてしまう。例外の説明は規則をなくすためではなく、適用の根拠を共有するためです。"
+          ]
+        ],
+        "options": [
+          {
+            "id": "1",
+            "text": "例外の条件を示すことで判断の根拠を共有したい"
+          },
+          {
+            "id": "2",
+            "text": "例外を一切認めず規則を強くしたい"
+          },
+          {
+            "id": "3",
+            "text": "担当者が自由に規則を変えるべきだ"
+          },
+          {
+            "id": "4",
+            "text": "規則自体を廃止すればよい"
+          }
+        ],
+        "correctOptionId": "1",
+        "answerExplanationJa": "例外を説明する目的は根拠の共有で、一番です。"
+      }
+    },
+    {
+      "problem": 4,
+      "instructionsJa": "問題四では、短い発言を一度聞いて、返事を三つ聞きます。発言の含みや相手との関係に合う返事の番号を選びます。返事の文章は画面には出ません。まず練習します。",
+      "choicesDisplay": "audio_only",
+      "readQuestionAfterDialogue": false,
+      "readChoices": true,
+      "replayWholeDialogue": false,
+      "scoredStartJa": "練習はここまでです。問題4の採点する話に進みます。",
+      "example": {
+        "id": "jpapp-n1-original-01-practice-4",
+        "scored": false,
+        "prompt": "適切な返事を選んでください。",
+        "script": [
+          [
+            "adultFemale",
+            "前の案が駄目だと言っているわけではないんです。"
+          ]
+        ],
+        "options": [
+          {
+            "id": "1",
+            "text": "どの点を残したいのか、聞かせてください。"
+          },
+          {
+            "id": "2",
+            "text": "全て駄目なら、すぐ案を捨てます。"
+          },
+          {
+            "id": "3",
+            "text": "では、修正する必要は全くありませんね。"
+          }
+        ],
+        "correctOptionId": "1",
+        "answerExplanationJa": "全面否定ではない発言を受け、残す点を尋ねる一番です。"
+      }
+    },
+    {
+      "problem": 5,
+      "instructionsJa": "問題五では、説明と相談を結び付けて答えます。質問は話の後に読み、答えは画面の四つから選びます。最後の一つの話には二つの質問があります。話は繰り返さず、質問ごとに答える時間があります。まず練習です。",
+      "choicesDisplay": "printed",
+      "readQuestionAfterDialogue": true,
+      "readChoices": false,
+      "replayWholeDialogue": false,
+      "scoredStartJa": "練習はここまでです。問題5の採点する話に進みます。",
+      "example": {
+        "id": "jpapp-n1-original-01-practice-5",
+        "scored": false,
+        "prompt": "二人はどの作業を行いますか。",
+        "script": [
+          [
+            "adultFemale",
+            "活動の条件を聞いた後で二人が相談します。"
+          ],
+          [
+            "adultMale",
+            "記録係は過去の参加経験が必要です。受付係には経験の条件はありませんが、二人一組で担当してください。会場設営は重い物を運べる人が担当します。"
+          ],
+          [
+            "femaleStudent",
+            "二人とも初参加だし、私は重い物を運べない。受付なら二人一緒にできるね。"
+          ],
+          [
+            "youngMale",
+            "そうしよう。経験がなくてもできて、組になれる役割だね。"
+          ]
+        ],
+        "options": [
+          {
+            "id": "1",
+            "text": "受付"
+          },
+          {
+            "id": "2",
+            "text": "記録"
+          },
+          {
+            "id": "3",
+            "text": "会場設営"
+          },
+          {
+            "id": "4",
+            "text": "今回は参加しない"
+          }
+        ],
+        "correctOptionId": "1",
+        "answerExplanationJa": "経験不要で二人一組という条件に合う受付、一番です。"
+      }
+    }
+  ],
+  "publisherReviewed": false,
+  "nativeReviewCompleted": false,
+  "perceptualApproval": false
+}

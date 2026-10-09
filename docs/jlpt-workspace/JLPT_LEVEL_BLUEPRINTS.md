@@ -185,3 +185,8 @@ Apply [JLPT_IMAGE_AND_UNIQUENESS_STANDARD.md](JLPT_IMAGE_AND_UNIQUENESS_STANDARD
 ## Nhịp nghe N2 đã chốt — 08/10/2026
 
 Nhà phát hành trả lời “đồng ý” cho bảng nhịp N2: sau giới thiệu 2 giây; giữa lượt thoại 0,5 giây; trả lời 問題１/２/３/４/５ lần lượt 12/12/12/8/15 giây mỗi đơn vị chấm điểm. Giữ bốn giọng, speedScale 0.9, mục tiêu nghe khoảng 50 phút (3000000ms), nhạc không lời đúng 60000ms sau問題２ trước問題３ và hai thông báo. Đây là nhịp thiết kế app, không xác minh nhịp đề nguồn hoặc tolerance. Không tự áp cho N1.
+
+
+## Nhịp nghe N1 đã chốt — 09/10/2026
+
+Nhà phát hành yêu cầu “chốt nhịp N1 đó và tiếp tục tạo đề”: sau giới thiệu 2 giây, giữa lượt thoại 0,5 giây; trả lời 問題１/２/３/４/５ lần lượt 12/12/12/8/15 giây mỗi đơn vị chấm điểm. Giữ bốn giọng đã duyệt và speedScale 0.9. Mục tiêu khoảng 55 phút (3300000ms); nhạc không lời đúng 60000ms sau問題２, trước mọi hướng dẫn問題３, có hai thông báo. Đây là thiết kế app được chọn, không xác minh nhịp nguồn hay tolerance cố định. Đo bản thu thật; các cờ duyệt nghe/người bản ngữ/phát hành vẫn false.

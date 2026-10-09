@@ -4,7 +4,7 @@ No external text service; no legacy exam inputs. Generated audio requires human 
 """
 import argparse,array,hashlib,io,json,math,subprocess,time,urllib.parse,urllib.request,wave
 from pathlib import Path
-ap=argparse.ArgumentParser();ap.add_argument('--level',choices=['n2'],default='n2');ap.add_argument('--port',type=int,default=50128);ap.add_argument('--cpu-threads',type=int,default=2);ap.add_argument('--engine',required=True);ap.add_argument('--exam-number',type=int,choices=range(1,7),default=1);ap.add_argument('--cache-dir');ap.add_argument('--cache-only',action='store_true',help='Reassemble approved cached speech without starting or calling VOICEVOX');ap.add_argument('--continuous-bitrate-kbps',type=int,choices=[32,40,48,64,96],default=96);args=ap.parse_args();level=args.level;exam_number=f'{args.exam_number:02d}'
+ap=argparse.ArgumentParser();ap.add_argument('--level',choices=['n2','n1'],default='n2');ap.add_argument('--port',type=int,default=50128);ap.add_argument('--cpu-threads',type=int,default=2);ap.add_argument('--engine',required=True);ap.add_argument('--exam-number',type=int,choices=range(1,7),default=1);ap.add_argument('--cache-dir');ap.add_argument('--cache-only',action='store_true',help='Reassemble approved cached speech without starting or calling VOICEVOX');ap.add_argument('--continuous-bitrate-kbps',type=int,choices=[24,32,40,48,64,96],default=96);args=ap.parse_args();level=args.level;exam_number=f'{args.exam_number:02d}'
 root=Path(__file__).resolve().parent.parent;master=root/f'src/data/jlpt-original/{level}/{exam_number}/master.ja.json';master_bytes=master.read_bytes();exam=json.loads(master_bytes);casting=json.loads((root/'src/data/jlpt-original/voice-casting.json').read_text());settings={**casting['settings'],**casting.get('levelPacing',{}).get(level,{})};roles=casting['roles'];organization_path=root/f'src/data/jlpt-original/{level}/{exam_number}/listening-organization.ja.json';organization_bytes=organization_path.read_bytes();organization=json.loads(organization_bytes)
 out=root/f'assets/jlpt-original/{level}/{exam_number}/audio';out.mkdir(parents=True,exist_ok=True)
 work=root/f'docs/jlpt-workspace/original/{level}-{exam_number}/audio';work.mkdir(parents=True,exist_ok=True)
@@ -54,6 +54,9 @@ def original_rest_music():
   offset=(args.exam_number-1)*2
   cells=cells[offset:]+cells[:offset]
   cells=[tuple(note+args.exam_number-1 for note in cell) for cell in cells]
+ if level=='n1':
+  cells=cells[3:]+cells[:3]
+  cells=[tuple(note+3 for note in cell) for cell in cells]
  samples=array.array('h')
  for i in range(1440000):
   t=i/24000;cell=int(t//5);local=t-cell*5
@@ -123,6 +126,6 @@ try:
  assert master.read_bytes()==master_bytes, 'Master changed during synthesis; regenerate from the new snapshot.'
  assert organization_path.read_bytes()==organization_bytes, 'Organization changed during synthesis; regenerate from the new snapshot.'
  mp=save(f'{level}-original-{exam_number}-listening-draft',album)
- manifest={'examId':exam['examId'],'status':'generated_ai_unreviewed','masterSha256':hashlib.sha256(master_bytes).hexdigest(),'voiceCastingSha256':hashlib.sha256((root/'src/data/jlpt-original/voice-casting.json').read_bytes()).hexdigest(),'continuousAudioPath':str(mp.relative_to(root)),'continuousSha256':hashlib.sha256(mp.read_bytes()).hexdigest(),'durationMs':round(len(album)/48),'targetDurationMs':3000000,'matchesThirtyMinuteTarget':False,'durationMeasuredFromPcm':True,'continuousBitrateKbps':args.continuous_bitrate_kbps,'publisherReviewed':False,'nativeReviewCompleted':False,'perceptualApproval':False,'rightsReleaseReviewCompleted':False,'break':break_manifest,'organizationSha256':hashlib.sha256(organization_bytes).hexdigest(),'orientationSegments':orientation_segments,'examplesCount':len(organization['groups']),'instructions':plan,'settings':settings,'credits':[v['credit'] for v in roles.values()],'items':segments}
+ manifest={'examId':exam['examId'],'status':'generated_ai_unreviewed','masterSha256':hashlib.sha256(master_bytes).hexdigest(),'voiceCastingSha256':hashlib.sha256((root/'src/data/jlpt-original/voice-casting.json').read_bytes()).hexdigest(),'continuousAudioPath':str(mp.relative_to(root)),'continuousSha256':hashlib.sha256(mp.read_bytes()).hexdigest(),'durationMs':round(len(album)/48),'targetDurationMs':3300000 if level=='n1' else 3000000,'matchesThirtyMinuteTarget':False,'durationMeasuredFromPcm':True,'continuousBitrateKbps':args.continuous_bitrate_kbps,'publisherReviewed':False,'nativeReviewCompleted':False,'perceptualApproval':False,'rightsReleaseReviewCompleted':False,'break':break_manifest,'organizationSha256':hashlib.sha256(organization_bytes).hexdigest(),'orientationSegments':orientation_segments,'examplesCount':len(organization['groups']),'instructions':plan,'settings':settings,'credits':[v['credit'] for v in roles.values()],'items':segments}
  (root/f'src/data/jlpt-original/{level}/{exam_number}/audio.manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'count':len(segments),'durationSeconds':len(album)/48000,'complete':True}),flush=True)
 finally:stop();log.close()
