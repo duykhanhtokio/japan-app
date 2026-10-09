@@ -1,0 +1,22 @@
+const fs=require('fs'),path=require('path');
+const esbuild=require('/tmp/n204-harness-deps/node_modules/esbuild');
+const root=path.resolve(__dirname,'../../../../../..');
+const out=process.env.JLPT_QA_WWW||'/tmp/n102-qa-www';fs.mkdirSync(out,{recursive:true});
+const assets=new Map();
+esbuild.build({entryPoints:[path.join(__dirname,'entry02.tsx')],outdir:out,bundle:true,platform:'browser',format:'iife',banner:{js:"var process={env:{NODE_ENV:'development'},nextTick:(fn,...args)=>queueMicrotask(()=>fn(...args))};var global=globalThis;"},jsx:'automatic',mainFields:['browser','module','main'],conditions:['browser','default'],resolveExtensions:['.web.tsx','.web.ts','.web.js','.tsx','.ts','.js','.json'],nodePaths:[path.join(root,'node_modules')],define:{'process.env.NODE_ENV':'"development"','__DEV__':'true'},plugins:[{name:'harness-context-and-assets',setup(b){
+ b.onResolve({filter:/^react-native$/},()=>({path:path.join(root,'node_modules/react-native-web/dist/index.js')}));
+ b.onResolve({filter:/^@\//},a=>({path:path.join(root,'src',a.path.slice(2))+(['.tsx','.ts','.json','.js'].find(ext=>fs.existsSync(path.join(root,'src',a.path.slice(2))+ext))||'')}));
+ b.onResolve({filter:/AppBackdrop$/},()=>({path:'backdrop-context',namespace:'qa'}));
+ b.onResolve({filter:/^@react-navigation\/native$/},()=>({path:'navigation-focus',namespace:'qa'}));
+ b.onLoad({filter:/.*/,namespace:'qa'},a=>({contents:a.path==='backdrop-context'?'export const useInheritedBackdrop=()=>true;export const useRootBackdropSource=()=>undefined;':'export const useIsFocused=()=>true;',loader:'js'}));
+ b.onResolve({filter:/\.(png|jpg|jpeg|mp3|ttf)$/},a=>({path:path.isAbsolute(a.path)?a.path:path.resolve(a.resolveDir,a.path),namespace:'qa-asset'}));
+ b.onLoad({filter:/.*/,namespace:'qa-asset'},a=>{const key='/assets/'+assets.size+path.extname(a.path);assets.set(key,a.path);const metadata={uri:key};const actual=assets.get(key);const header=fs.readFileSync(actual);if(header.subarray(1,4).toString()==='PNG'){metadata.__qaWidth=header.readUInt32BE(16);metadata.__qaHeight=header.readUInt32BE(20)}return {contents:'module.exports='+JSON.stringify(metadata),loader:'js'}});
+}}]}).then(()=>{
+ fs.writeFileSync(path.join(out,'assets.json'),JSON.stringify([...assets]));
+ const font=process.env.JLPT_QA_FONT||path.join(root,'assets/app/fonts/NotoSansJP-Medium.ttf');
+ if(fs.readFileSync(font).subarray(0,8).toString()==='version ')throw new Error('Materialize the approved font or provide JLPT_QA_FONT for isolated layout QA.');
+ fs.copyFileSync(font,path.join(out,'font.ttf'));
+
+ fs.writeFileSync(path.join(out,'index.html'),'<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>@font-face{font-family:NotoSansJP;src:url(/font.ttf)}*{font-family:NotoSansJP,sans-serif!important}html,body,#root{margin:0;height:100%}#root{display:flex;flex-direction:column;background:#f4f0e5}</style></head><body><div id="root"></div><script src="/entry02.js"></script></body></html>');
+ console.log('QA harness built; production runner and shared UI unchanged.');
+}).catch(e=>{console.error(e);process.exitCode=1});
