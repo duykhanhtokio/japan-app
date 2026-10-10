@@ -99,7 +99,7 @@ function CourseCatalog({onSelect,last,ready,state,setState}:{onSelect:(next:Stud
  const [showWeeks,setShowWeeks]=useState(false);
  const {view,query,topic,page}=state,setView=(view:CatalogPreferences['view'])=>setState(s=>({...s,view})),setQuery=(query:string)=>setState(s=>({...s,query})),setTopic=(topic:TopicId|null)=>setState(s=>({...s,topic})),setPage=(page:number)=>setState(s=>({...s,page}));
  const entries=searchCatalog(kaigoCatalog.filter(e=>view!=='topics'||!topic||e.topicId===topic),query),pages=Math.max(1,Math.ceil(entries.length/7)),current=Math.min(page,pages-1),slice=entries.slice(current*7,current*7+7);
- const lastEntry=last&&kaigoCatalog.find(e=>e.kind===last.kind&&e.id===last.id),lastTitle=lastEntry?.titleVi??(last?.kind==='mock'?kaigoCourse.mocks.find(m=>m.id===last.id)?.titleVi:kaigoCourse.candidates.find(l=>l.id===last?.id)?.titleVi);
+ const lastEntry=last&&kaigoCatalog.find(e=>e.kind===last.kind&&e.id===last.id&&(last.day===undefined||e.day===last.day)),lastTitle=lastEntry?.titleVi??(last?.kind==='mock'?kaigoCourse.mocks.find(m=>m.id===last.id)?.titleVi:kaigoCourse.candidates.find(l=>l.id===last?.id)?.titleVi);
  const changeView=(next:typeof view)=>{setView(next);setPage(0);setQuery('');};
  const byWeek=view==='calendar'&&!query;
  const currentWeek=kaigoWeeks[current];
