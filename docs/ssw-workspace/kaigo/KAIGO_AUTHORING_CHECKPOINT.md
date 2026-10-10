@@ -1,3 +1,15 @@
+# Current checkpoint · 2026-10-11 · Day1 section-specific 2D art
+
+Published the exact content tree of local85b3ceb via the authorized GitHub connection as6a7ff216; fetched and WORK PERSISTENCE PASS before new work. Local85b3ceb retained on checkpoint/kaigo-85b3ceb. Commit SHA differs because connector publication creates new commit metadata; tree7fab45c3cc07b39559bcd63e6a4902348a3bb1c4 is identical.
+
+Added9original section-specific colored2D assets to day1; preserved existing team image. Day1 has10/10section images; current total10/866specific images,856pending. Registry/inventory/prompt metadata updated without reusing covers as specific coverage. Built-in image_gen, project-produced choice-v1 style-only reference; no source-book pictures/layouts. All9new images visually inspected; WEBPquality90 encoding only, actual original dimensions/aspect ratios retained. Character recurrence within the same connected day is intentional; events and compositions are separately reviewed. No clinical procedure illustrated or knowledge newly authored.
+
+Focused actualKaigoCourse RNWeb browser PASS at390x844/768x1024/844x390:10section images each,30decoded-image/ratio checks,landscape height limit,no horizontal overflow,0pageErrors. All9screenshots viewed. FocusedTypeScript/calendar model/JLPT UIlock10/10/whitespace PASS. Seven existing runtime JSON hashes,question data,progress IDs/revisions and UI/controllers unchanged. First build used wrong font fallback path; corrected build uses checkout fonts and passed. No native/fullExpoRouter/fullrepoTypeScript/human/domain/rights/release certification. Whole-source knowledge percentage remainsnull.
+
+Report reviews/DAY1_PARAGRAPH_ART_2026-10-11.md; evidence and asset-review at runtime-tests/2026-10-11-day1-art. Continue day2pending section artwork in inventory order, read authored content and inspect each new scene, integrate/check devices/persist before next unit. Next source second-pass remains printed51-70 after layout/art; no new-source coverage claim. Source195clinical interpretation remains unresolved.
+
+---
+
 # Current checkpoint · 2026-10-10 · 26-week calendar and manual completion
 
 Publisher clarified26weeks/176active days/6disabled blanks177–182. New exported KaigoCourse uses WeeklyKaigo:26visible ordered tiles,7day rows below selected week,continuous one-paper reader with authored bold headings and ornaments; no input/check cards inside reading. Completion is voluntary after reaching page end; weekly assessment requires answering all questions and submitting, then manual Complete with no score threshold. Separate persisted day/assessment✓; week✓requires all active days plus assessment. Last active day shows weekly assessment status. Selected week reloads. No inferred completion from old attempts.
