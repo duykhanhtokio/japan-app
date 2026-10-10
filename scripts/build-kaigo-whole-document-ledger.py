@@ -31,7 +31,7 @@ for x in v['entries']:
  if not matches:matches=[t for t in c['terms'] if t['termJa']==x['termJa']]
  ids=[t.get('id') for t in matches];lessons=[l for l in c['lessons'] if any(i in l['termIds'] for i in ids)]
  terms.append(dict(id=x['id'],sourcePrintedPages=pages(x['sourcePrintedPages']),termJa=x['termJa'],readingJa=x['readingJa'],meaningVi=x['meaningVi'],runtimeTermIds=ids,days=[l['day'] for l in lessons],status='runtime-linked' if lessons else 'runtime-mapping-missing',humanReviewed=False))
-visual=list(range(10,41))+list(range(42,67))+list(range(68,96))+list(range(98,119))+list(range(120,143))+[47,49,51,53,54,55,56,57,58,61,63,70,79,80,82,88,90,92,125,126,127,134,135,136,137,138,139,140,141,142,145,146,147,148,156,162,163,164,165,166,167,168,169,172,173,174,175,176,177,178,179,181,182,183,184,188,191,192,193,194,195,196,197]
+visual=list(range(10,41))+list(range(42,67))+list(range(68,96))+list(range(98,119))+list(range(120,143))+list(range(144,152))+[47,49,51,53,54,55,56,57,58,61,63,70,79,80,82,88,90,92,125,126,127,134,135,136,137,138,139,140,141,142,145,146,147,148,156,162,163,164,165,166,167,168,169,172,173,174,175,176,177,178,179,181,182,183,184,188,191,192,193,194,195,196,197]
 visual=sorted(set(visual))
 pageRows=[]
 for pdf in range(1,277):
@@ -82,6 +82,9 @@ body+=table('Đối chiếu giao tiếp · trang 98–118',['Mã','Trang in / PD
 movement=read('docs/ssw-workspace/kaigo/reviews/movement-source-atoms-2026-10-09.json')
 report['movementAtomAudit']=dict(atomCount=len(movement['atoms']),scopePrintedPages=movement['scopePrintedPages'],fullScopeAtomInventoryCertified=False)
 body+=table('Đối chiếu di chuyển · trang 120–142',['Mã','Trang in / PDF','Loại','Khái niệm','Mã app','Ngày','Biểu đạt mới','Giới hạn'],[(x['id'],str(x['printedPage'])+' / '+str(x['pdfPage']),x['kind'],x['conceptVi'],x['runtimePointId'],x['runtimeDay'],x['appEquivalentVi'],x['qualificationVi'] or 'Chưa duyệt chuyên môn/con người') for x in movement['atoms']])
+eating=read('docs/ssw-workspace/kaigo/reviews/eating-source-atoms-2026-10-10.json')
+report['eatingAtomAudit']=dict(atomCount=len(eating['atoms']),scopePrintedPages=eating['scopePrintedPages'],fullScopeAtomInventoryCertified=False)
+body+=table('Đối chiếu ăn uống · trang 144–151 · chưa chứng nhận độc lập tính đầy đủ',['Mã','Trang in / PDF','Loại','Khái niệm','Mã app','Ngày','Biểu đạt mới','Giới hạn'],[(x['id'],str(x['printedPage'])+' / '+str(x['pdfPage']),x['kind'],x['conceptVi'],x['runtimePointId'],x['runtimeDay'],x['appEquivalentVi'],x['qualificationVi'] or 'Chưa duyệt chuyên môn/con người') for x in eating['atoms']])
 plan=read('src/data/kaigo/daily-plan.json')
 report['bodyAtomAudit']=dict(atomCount=len(bodyAtoms['atoms']),fullScopeAtomInventoryCertified=False)
 report['dailyPlan']=dict(totalDays=plan['totalDays'],dailyMinutes=30,maxWeeks=None,finalCompletionDays=None,learnerTimeMeasured=False)
