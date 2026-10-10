@@ -1,3 +1,19 @@
+# Clarification checkpoint · 2026-10-10 · 31/40/195
+
+Read-only clarification of learning/source ambiguity; no runtime or curriculum changes. Current totals170days×30min/5100min/85planned hours;97supplemental units/567points/97probes;104reading cards/369terms/12mock forms/360questions. These remain planned, not measured learner completion.
+
+Downloaded official Japanese second-revision March2025 PDF directly from MHLW:20912846bytes,276pages,SHA2562fa47d80d4167c5173e9f24c93178d90fdcf5e6cc45ca574360364f9820325af. Cover/colophon and official Japan Care Worker Guide link confirm identity. Visually compared printed31/40/195(PDF33/42/197) to canonical Vietnamese997bf386. PDF/images/extracts stay private and are not published.
+
+31: verified two-level legend, dorsal/palm views and source-named five hand regions. Teaching meaning is clear, not a quantitative cleanliness map. Exact minor color boundaries are not anatomical region labels and are not certified. Existing hand-coverage/hand-legend units retain their IDs/revisions.
+40: enlarged cylindrical object above BANK book is identified with high visual confidence as a personal seal; pink rectangle with metal top as a lighter. Tokyo official disaster-list corroborates both names, not the exact source illustration. No author caption confirmation; retain that distinction. No universal mandate or fire-use procedure derived.
+195: Japanese wording now read and verified; no longer missing-Japanese-source blocker. However it remains terse/ambiguous about the area behind the testes and stretching/straightening. It does NOT establish pulling the testes or retracting foreskin, nor define safe technique. Original Japanese also needs professional interpretation; do not blame Vietnamese translation alone. Clinical action stays unresolved pending specialist/publisher clarification. Existing anatomy-terms unit retained; no action protocol added.
+
+Superseding report: reviews/clarification-summary-2026-10-10.json. Historical open-item records remain snapshots. No full-source atom denominator or percentage; no human/domain/native/rights/release certification. Browser evidence belongs to the previous foundation-depth batch; this report-only task does not claim a new app/browser test. All6runtime JSON hashes preserved.
+
+Next: resolve195with specialist/publisher explanation if obtainable; continue second-pass31–50. Do not copy source wording/images into app or inflate coverage.
+
+---
+
 # Current checkpoint · 2026-10-10 · Foundation second-pass depth
 
 Completed a second-pass depth review of printed10–30 / PDF12–32:21 consecutive pages, including blank15. Read source text and visually checked all21 at full page scale in seven3-page contacts. Canonical source SHA256997bf386 verified. These are previously processed pages, not21additional unique source pages; the book tail was already finished for document role only. Never inflate source coverage from this review.
