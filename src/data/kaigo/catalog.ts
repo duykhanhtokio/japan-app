@@ -1,6 +1,6 @@
 import {kaigoCourse,kaigoAtomicKnowledge,kaigoDailyPlan,kaigoLanguageSupplements} from './index';
 
-export type StudySelection={kind:'lesson'|'mock'|'atomic'|'language';id:string};
+export type StudySelection={kind:'lesson'|'mock'|'atomic'|'language';id:string;day?:number};
 export const kaigoTopics=[
  {id:'dignity',titleVi:'Tôn nghiêm và tự lập',guideVi:'Hỏi mong muốn → xin phép → xác nhận phần hỗ trợ; ôn chất lượng sống và quyền lựa chọn.'},
  {id:'safety',titleVi:'An toàn và nhiễm khuẩn',guideVi:'Nhận diện nguy cơ → bảo vệ người liên quan → báo và kiểm lại; ôn vệ sinh tay, sức khỏe nhân viên và dự phòng.'},
@@ -33,9 +33,9 @@ export function topicFor(parentDay:number,title:string):TopicId{
  if(parentDay<=48)return 'handoff';
  return 'review';
 }
-export type CatalogEntry=StudySelection&{day:number;parentDay:number;titleVi:string;topicId:TopicId;typeVi:string;practiceTitleVi?:string;testID:string;searchText:string};
+export type CatalogEntry=StudySelection&{day:number;parentDay:number;titleVi:string;topicId:TopicId;typeVi:string;practiceTitleVi?:string;mockPart?:number;mockParts?:number;testID:string;searchText:string};
 export const kaigoCatalog:CatalogEntry[]=[
- ...kaigoDailyPlan.baseDays.map(d=>({kind:d.mockId?'mock':'lesson',id:(d.mockId??d.lessonId)!,day:d.day,parentDay:d.baseDay,titleVi:d.titleVi+(d.parts>1?` · phần ${d.part}/${d.parts}`:''),topicId:d.mockId?'review':topicFor(d.baseDay,d.titleVi),typeVi:d.mockId?'Luyện đề · lượt được lưu':'Bài nền',practiceTitleVi:kaigoCourse.lessons.find(l=>l.id===d.lessonId)?.titleVi,testID:d.part===1?`kaigo-day-${d.baseDay}`:`kaigo-day-${d.baseDay}-part-${d.part}`})),
+ ...kaigoDailyPlan.baseDays.map(d=>({kind:d.mockId?'mock':'lesson',id:(d.mockId??d.lessonId)!,day:d.day,parentDay:d.baseDay,titleVi:d.titleVi+(d.parts>1?` · phần ${d.part}/${d.parts}`:''),topicId:d.mockId?'review':topicFor(d.baseDay,d.titleVi),typeVi:d.mockId?'Thi thử':d.baseDay===56?'Chữa đề và ôn lỗi':'Bài học',mockPart:d.mockId?d.part:undefined,mockParts:d.mockId?d.parts:undefined,practiceTitleVi:kaigoCourse.lessons.find(l=>l.id===d.lessonId)?.titleVi,testID:d.part===1?`kaigo-day-${d.baseDay}`:`kaigo-day-${d.baseDay}-part-${d.part}`})),
  ...kaigoAtomicKnowledge.days.map(d=>{const units=d.unitIds.map(id=>kaigoAtomicKnowledge.units.find(u=>u.id===id)!);return {kind:'atomic',id:String(d.day),day:d.day,parentDay:units[0].parentDay,titleVi:units.map(u=>u.titleVi).join(' · '),topicId:topicFor(units[0].parentDay,units[0].titleVi),typeVi:'Kiến thức chi tiết',testID:`kaigo-atomic-day-${d.day}`};}),
  ...kaigoLanguageSupplements.days.map(d=>{const g=kaigoLanguageSupplements.groups.find(g=>g.id===d.groupId)!;return {kind:'language',id:String(d.day),day:d.day,parentDay:g.parentDay,titleVi:g.titleVi,topicId:topicFor(g.parentDay,g.titleVi),typeVi:'Đọc hiểu tình huống',testID:`kaigo-language-day-${d.day}`};}),
 ].map(d=>({...d,searchText:norm(`${d.titleVi} ${d.typeVi} ${kaigoTopics.find(t=>t.id===d.topicId)?.titleVi} ${d.day} ${kaigoCourse.lessons.find(l=>l.day===d.parentDay)?.titleVi??''}`)} as CatalogEntry)).sort((a,b)=>a.day-b.day);
@@ -44,3 +44,9 @@ export function validSelection(value:unknown):value is StudySelection{
  if(!value||typeof value!=='object')return false;const x=value as StudySelection;
  return kaigoCatalog.some(e=>e.kind===x.kind&&e.id===x.id)||(x.kind==='mock'&&kaigoCourse.mocks.some(m=>m.id===x.id))||(x.kind==='lesson'&&kaigoCourse.candidates.some(l=>l.id===x.id));
 }
+
+export function activityLabel(entry:CatalogEntry){return entry.kind==='mock'?'THI':entry.typeVi==='Chữa đề và ôn lỗi'?'CHỮA ĐỀ':'HỌC';}
+export const kaigoWeeks=Array.from({length:Math.ceil(kaigoCatalog.length/7)},(_,i)=>{
+ const entries=kaigoCatalog.slice(i*7,i*7+7);
+ return {week:i+1,firstDay:entries[0].day,lastDay:entries[entries.length-1].day,entries,studyCount:entries.filter(e=>activityLabel(e)==='HỌC').length,examCount:entries.filter(e=>e.kind==='mock').length,reviewCount:entries.filter(e=>activityLabel(e)==='CHỮA ĐỀ').length,topics:kaigoTopics.filter(t=>entries.some(e=>e.topicId===t.id)).map(t=>t.titleVi)};
+});
