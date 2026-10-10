@@ -1,6 +1,6 @@
 # Hướng dẫn chính thức — Tokutei Gino 介護
 
-Phiên bản: 8. Ngày duyệt: 2026-10-10 (Asia/Tokyo).
+Phiên bản: 9. Ngày duyệt: 2026-10-10 (Asia/Tokyo).
 Trạng thái: CHỦ DỰ ÁN ĐÃ DUYỆT PHƯƠNG ÁN BIÊN SOẠN.
 Repository: duykhanhtokio/japan-app. Nhánh: recovery/jlpt-n3-n1.
 Đây là hợp đồng biên soạn; duyệt phương án không chứng nhận nội dung chưa được tạo, kiểm duyệt hoặc tích hợp.
@@ -176,3 +176,10 @@ Số trang xử lý không phải số ngày học: tiếp tục giữ 30 phút/
 
 ## 19. Danh mục học và minh hoạ mới — yêu cầu2026-10-10
 Chủ dự án yêu cầu hoàn thiện kiến thức, tổ chức lại danh mục Kaigo và thêm hình mới đồng bộ phong cách2D màu phần JLPT. Cho phép thay danh mục Kaigo để học theo lịch, ôn chủ đề, tìm bài và mở lại bài gần nhất; giữ ID/revision/khóa câu trả lời và lượt thi. Không đổi UIJLPT đã khóa. Hình tự tạo từ bối cảnh mới, chỉ dùng hình JLPT do dự án sáng tác để tham chiếu phong cách; không dùng/truy theo hình tài liệu. Chú thích nối hình với mục tiêu học, không dùng hình tình huống làm quy trình kỹ thuật. Rà liên tục20trang31–50 là rà sâu lần hai, không tăng số trang nguồn duy nhất. Sáu mục vận dụng mới không được gọi18sự kiện nguồn trước đây hoàn toàn thiếu. Chưa mẫu số mọi ý gốc thì tỷ lệnull; chuyên môn/bảnngữ/quyền/native/pháthành vẫn chờ.
+
+
+## 20. Lịch 26 tuần và hoàn thành do người học xác nhận — 2026-10-10
+Chủ dự án chốt:26ô tuần luôn hiện theo thứ tự; giữ176buổi, sáu ngày177–182không có nội dung làm mờ và không bấm được. Chọn tuần hiện bảng7ngày bên dưới. Chọn ngày mở trang học liền mạch, đề mục lớn/in đậm, hoa văn phân đoạn; không chia mỗi ý thành một ô và không chèn kiểm tra nhập chữ vào bài. Giữ toàn bộ nội dung cũ, gồm8tình huống bổ sung; không đổi dữ liệu/ID/revision/lượt thi cũ.
+Đánh giá gom riêng cuối mỗi tuần; mỗi câu4lựa chọn, không gõ chữ. Sau trả lời đủ câu và nộp, người học bấm Hoàn thành kiểm tra; không đặt ngưỡng điểm để ghi dấu. Mỗi ngày có nút Hoàn thành ở cuối bài, dùng sau khi xem tới cuối trang. Dấu✓xanh lưu riêng cho ngày học và đánh giá tuần; đánh giá gắn với ngày cuối có nội dung của tuần. Tuần có✓khi mọi ngày có nội dung và đánh giá đều được xác nhận. Ngày trống không tính là nhiệm vụ. Không dùng mở bài, điểm số hoặc thao tác tự kiểm cũ để tự nâng dấu hoàn thành.
+Giữ12đề thi đủ cấu trúc trong mục Thi thử riêng. Chuyển các ca/tự giải thích do dự án viết sang nhận diện4phương án bằng giải thích thuộc các bối cảnh khác; không tự bịa hướng dẫn y tế sai làm nhiễu. Cách đánh giá mới không chứng nhận năng lực sản xuất câu nói tự do hay tương đương kỳ thi. Khối câu hỏi tuần là phần riêng, chưa đo tải người học; không gọi687câu là687câu thi mới hoàn toàn độc lập.
+Phong cách lịch dùng chính khung giấy/viền vàng/nền navy/font hoàng gia đang có trong app. Minh hoạ2D màu tự tạo theo từng đoạn; không coi ảnh bìa cũ dùng lại là hoàn thành ảnh riêng mọi đoạn. Lập bảng kiểm đủ đoạn và ghi phần còn thiếu. Ảnh giữ tỷ lệ gốc, trong màn hình ngang giới hạn kích thước theo chiều cao để xem đủ ảnh, không méo/cắt chủ thể để lấp khung. JLPT UI giữ nguyên.

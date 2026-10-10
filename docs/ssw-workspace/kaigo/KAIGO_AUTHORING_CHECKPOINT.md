@@ -1,3 +1,17 @@
+# Current checkpoint · 2026-10-10 · 26-week calendar and manual completion
+
+Publisher clarified26weeks/176active days/6disabled blanks177–182. New exported KaigoCourse uses WeeklyKaigo:26visible ordered tiles,7day rows below selected week,continuous one-paper reader with authored bold headings and ornaments; no input/check cards inside reading. Completion is voluntary after reaching page end; weekly assessment requires answering all questions and submitting, then manual Complete with no score threshold. Separate persisted day/assessment✓; week✓requires all active days plus assessment. Last active day shows weekly assessment status. Selected week reloads. No inferred completion from old attempts.
+
+Preserved all7old runtime JSON byte hashes and12full mocks;8candidate scenarios now included inline in their associated day readers. 176readers/866sections;687weekly4-option questions (310existing project-authored lesson/candidate questions plus377recognition conversions of existing probes/readings). These are not687new independently authored exam questions. Distractors are explanations from different project-authored contexts, not invented false clinical instructions. No equivalence-to-free-production, measured workload, source-similarity or human/domain/native/release claims. New section-headings contains231editorial headings; old content/revisions/state keys untouched.
+
+Focused TypeScript PASS andJLPT UI lock10/10PASS. Browser execution validates176ordered active days,6disabled blanks,day/end guard/completion/selected-week reload,weekly answers reload,manual assessment completion even with wrong answer,all866sections and12mock availability. Three viewport portrait/tablet/landscape checks; final evidence in runtime-tests/2026-10-10-weekly-calendar. Native/fullExpoRouter not tested.
+
+Original illustration request NOT complete:1new paragraph-specific2D color team asset,10prior cover images retained. Full paragraph art inventory has866unique section IDs;865still pending specific art. Do not mark all sections covered from reused covers. New image source/prompt/encoding recorded in reviews/paragraph-art-prompts-2026-10-10.json; no source-book picture used. Continue generating/visually checking section-specific images, then update registry/inventory and image runtime evidence before claiming complete.
+
+This is a UI/recognition-conversion batch, not new source-knowledge coverage. No new20source pages claimed; next source second-pass remains51–70 after this layout/art task. Source195clinical interpretation unresolved; denominator/coverage percentage stillnull.
+
+---
+
 # Current checkpoint · 2026-10-10 · Catalog, completeness and original 2D art
 
 Supersedes current totals:176 planned days ×30min /5280min/88planned hours;103supplemental units/585points/103probes;104reading cards/369terms/12mock forms/360questions. Reviewed20consecutive printed31–50, text and visuals, canonical SHA verified. Previously processed pages; no unique-source coverage inflation. Six original practice-depth units/18points/6cases appended as days171–176, all linked to existing concepts. Five old content JSON byte-preserved.

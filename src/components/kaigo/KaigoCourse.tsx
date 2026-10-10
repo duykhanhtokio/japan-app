@@ -1,3 +1,4 @@
+import {WeeklyKaigo} from './WeeklyKaigo';
 import {useCallback,useEffect,useRef,useState} from 'react';
 import {AppState,Image,Modal,Pressable,ScrollView,StyleSheet,Text,TextInput,View} from 'react-native';
 import {RoyalContentPanel,RoyalExplanationPanel} from '@/components/ui/RoyalPanels';
@@ -116,7 +117,7 @@ function CourseCatalog({onSelect,last,ready,state,setState}:{onSelect:(next:Stud
 
  <Text style={s.light}>Nội dung chờ duyệt chuyên môn và bản ngữ.</Text></View>;
 }
-export function KaigoCourse({onBack,active=true}:{onBack:()=>void;active?:boolean}){
+function LegacyKaigoCourse({onBack,active=true}:{onBack:()=>void;active?:boolean}){
  const [scheduledDay,setScheduledDay]=useState<number|undefined>();
  const [selection,setSelection]=useState<StudySelection|null>(null),[catalog,setCatalog]=useState<CatalogPreferences>({view:'calendar',query:'',topic:null,page:0});
  const last=useStored<StudySelection|null>('@japan_app_kaigo_catalog:last-opened:v1',null,raw=>{try{const x=JSON.parse(raw??'null');return validSelection(x)?{kind:x.kind,id:x.id,day:kaigoCatalog.some(e=>e.kind===x.kind&&e.id===x.id&&e.day===x.day)?x.day:undefined}:null;}catch{return null;}});
@@ -128,3 +129,5 @@ export function KaigoCourse({onBack,active=true}:{onBack:()=>void;active?:boolea
  </ScrollView></View>;
 }
 const s=StyleSheet.create({root:{flex:1},header:{flexDirection:'row',gap:14,paddingHorizontal:18,paddingTop:10,paddingBottom:12},headerText:{flex:1},title:{fontFamily:ROYAL_FONT.heading,fontSize:26,color:'#fff3cf'},subtitle:{fontFamily:ROYAL_FONT.body,fontSize:15,color:'#fffdf7'},content:{padding:18,paddingBottom:40,gap:10},heading:{fontFamily:ROYAL_FONT.heading,fontSize:20,color:'#142335',lineHeight:28,marginVertical:8},panel:{paddingHorizontal:26,paddingVertical:24,marginBottom:14},body:{fontFamily:ROYAL_FONT.body,color:'#26364c',fontSize:16,lineHeight:25,marginVertical:5},small:{fontFamily:ROYAL_FONT.body,color:'#43536b',fontSize:14,lineHeight:22,marginVertical:5},ja:{fontFamily:ROYAL_FONT.body,color:'#142335',fontSize:20,lineHeight:32,marginVertical:6},light:{fontFamily:ROYAL_FONT.body,fontSize:16,lineHeight:25,color:'#fff3cf'},button:{backgroundColor:'#1b3153',borderColor:'#c99c51',borderWidth:1,borderRadius:10,paddingHorizontal:14,paddingVertical:12,marginVertical:5,alignItems:'center',justifyContent:'center'},buttonText:{fontFamily:ROYAL_FONT.body,color:'#fff3cf',fontSize:16,lineHeight:23,textAlign:'center'},disabled:{opacity:.45},pressed:{opacity:.7},row:{flexDirection:'row',flexWrap:'wrap',gap:12},wrap:{flexDirection:'row',flexWrap:'wrap',gap:8,marginBottom:10},input:{position:'relative',fontFamily:ROYAL_FONT.body,color:'#142335',backgroundColor:'#fffdf4',borderColor:'#61718b',borderWidth:1,borderRadius:8,padding:12,minHeight:95,fontSize:18,lineHeight:28,textAlignVertical:'top',marginVertical:10},check:{paddingVertical:6},option:{borderWidth:1,borderColor:'#8792a3',borderRadius:8,padding:12,marginVertical:6},selected:{borderColor:'#c08e25',borderWidth:2,backgroundColor:'#fff0c4'},rubyRow:{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',marginVertical:4},rubyWord:{alignItems:'center',paddingHorizontal:1},rubyKana:{fontFamily:ROYAL_FONT.body,fontSize:10,lineHeight:15,color:'#43536b'},rubyText:{fontFamily:ROYAL_FONT.body,fontSize:20,lineHeight:30,color:'#142335'},figure:{width:'100%',aspectRatio:800/420,maxHeight:260,marginVertical:10},modalBackdrop:{flex:1,backgroundColor:'rgba(0,0,0,.65)',alignItems:'center',justifyContent:'center',padding:20},modalCard:{maxWidth:480,width:'100%',padding:24,borderRadius:14,backgroundColor:'#fff6df'}});
+
+export function KaigoCourse({onBack,active=true}:{onBack:()=>void;active?:boolean}){return <WeeklyKaigo onBack={onBack} renderMock={form=><MockExam key={form.id} form={form} active={active}/>}/>;}
