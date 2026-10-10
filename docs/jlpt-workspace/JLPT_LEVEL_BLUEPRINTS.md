@@ -190,3 +190,5 @@ Nhà phát hành trả lời “đồng ý” cho bảng nhịp N2: sau giới t
 ## Nhịp nghe N1 đã chốt — 09/10/2026
 
 Nhà phát hành yêu cầu “chốt nhịp N1 đó và tiếp tục tạo đề”: sau giới thiệu 2 giây, giữa lượt thoại 0,5 giây; trả lời 問題１/２/３/４/５ lần lượt 12/12/12/8/15 giây mỗi đơn vị chấm điểm. Giữ bốn giọng đã duyệt và speedScale 0.9. Mục tiêu khoảng 55 phút (3300000ms); nhạc không lời đúng 60000ms sau問題２, trước mọi hướng dẫn問題３, có hai thông báo. Đây là thiết kế app được chọn, không xác minh nhịp nguồn hay tolerance cố định. Đo bản thu thật; các cờ duyệt nghe/người bản ngữ/phát hành vẫn false.
+
+Publisher update2026-10-10: full alternative text must be visible on all30original forms, including formerly audio-only groups. Examples and scored images display separately. This supersedes earlier alternative hiding only; counts, keys, recorded order/timing unchanged.

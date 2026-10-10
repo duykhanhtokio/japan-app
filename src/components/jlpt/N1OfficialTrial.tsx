@@ -421,25 +421,29 @@ export default function N1OfficialTrial({ onExit, registerExit, exam, initialSes
   </View>;
 }
 
+function renderOriginalImage(source: ImageSourcePropType, aspectRatio: number, panel: 'left' | 'right' | undefined, label: string) {
+  // Each N5 panel is a separate UI image, clipped from the existing independently
+  // authored two-panel artwork; preserve the recording's left/right references.
+  return <View style={styles.originalIllustration}><View accessibilityLabel={label} style={{ width: '100%', aspectRatio: panel ? aspectRatio / 2 : aspectRatio, overflow: 'hidden' }}><Image fadeDuration={0} source={source} resizeMode="contain" style={{ position: 'absolute', top: 0, left: panel === 'right' ? '-100%' : 0, width: panel ? '200%' : '100%', height: '100%' }} /></View></View>;
+}
+
 function QuestionBlock({ question, scale, selected, submitted, visualOptions, showProblemHeading = true, showInstruction = true, showPassage = true, onChoose, onLayout, onFocus }: { question: TrialQuestion; scale: number; selected?: string; submitted: boolean; visualOptions: Readonly<Record<number, ImageSourcePropType>>; showProblemHeading?: boolean; showInstruction?: boolean; showPassage?: boolean; onChoose: (questionId: string, optionId: string) => void; onLayout: (event: LayoutChangeEvent) => void; onFocus: () => void }) {
   const imageSource = question.visualOptionPage ? visualOptions[question.visualOptionPage] : undefined;
   const imageSize = imageSource ? typeof Image.resolveAssetSource === 'function' ? Image.resolveAssetSource(imageSource)
     : typeof imageSource === 'number' ? Asset.fromModule(imageSource)
       : Array.isArray(imageSource) ? imageSource[0] : imageSource : undefined;
   const originalIllustration = question.id.startsWith('jpapp-') && Boolean(imageSource);
+  const practiceOptions = (question as TrialQuestion & { practiceOptions?: { id: string; text: string }[] }).practiceOptions;
   const practicePair = originalIllustration && question.id.includes('-n5-') && question.visualOptionPage === 301;
   return <View onLayout={onLayout} style={styles.questionBlock}>
     {showProblemHeading ? <JlptSectionHeading problem={problemLabel(question)} detail={familyLabel(question)} /> : null}
     {showInstruction ? <JlptInstruction scale={scale}>{question.instructionJa}</JlptInstruction> : null}
     {showPassage && question.passageJa ? <JlptReadingPassage scale={scale}>{question.passageJa}</JlptReadingPassage> : null}
+    {originalIllustration && imageSource && practiceOptions ? <View testID="original-unscored-example" style={{ marginBottom: 24 }}><Text style={styles.illustrationLabel}>練習（採点なし・選択操作不要）</Text>{renderOriginalImage(imageSource, imageSize?.width && imageSize?.height ? imageSize.width / imageSize.height : 3 / 2, practicePair ? 'left' : undefined, `${question.label}の練習図`)}{practiceOptions.map(option => <Text key={option.id} style={styles.starNote}>{option.id}　{option.text}</Text>)}</View> : null}
+    {originalIllustration && practiceOptions ? <Text style={styles.illustrationLabel}>本問（採点対象）</Text> : null}
     <Text style={styles.questionNumber}>{displayQuestionNumber(question)}</Text>
     <JlptQuestionText scale={scale} style={question.family === 'sentenceComposition' ? styles.starQuestion : undefined}>{question.promptJa}</JlptQuestionText>
-    {originalIllustration && imageSource ? <View style={styles.originalIllustration}>
-      {practicePair ? <View style={styles.illustrationLabels}><Text style={styles.illustrationLabel}>練習（採点なし）</Text><Text style={styles.illustrationLabel}>本問１番</Text></View> : null}
-      <View style={{ width: '100%', aspectRatio: imageSize?.width && imageSize?.height ? imageSize.width / imageSize.height : 3 / 2, overflow: 'hidden' }}>
-        <Image fadeDuration={0} source={imageSource} resizeMode="contain" style={[StyleSheet.absoluteFillObject, { width: '100%', height: '100%' }]} accessibilityLabel={`${question.label}の選択肢図`} />
-      </View>
-    </View> : imageSource ? <Image fadeDuration={0} source={imageSource} resizeMode="contain" style={[styles.visualOptions, question.visualOptionPage && question.visualOptionPage >= 101 && imageSize?.width && imageSize?.height ? { aspectRatio: imageSize.width / imageSize.height } : question.visualOptionPage === 12 ? styles.visualOptionsPage12 : styles.visualOptionsPage13]} accessibilityLabel={`${question.label}の選択肢図`} /> : null}
+    {originalIllustration && imageSource ? renderOriginalImage(imageSource, imageSize?.width && imageSize?.height ? imageSize.width / imageSize.height : 3 / 2, practicePair ? 'right' : undefined, `${question.label}の選択肢図`) : imageSource ? <Image fadeDuration={0} source={imageSource} resizeMode="contain" style={[styles.visualOptions, question.visualOptionPage && question.visualOptionPage >= 101 && imageSize?.width && imageSize?.height ? { aspectRatio: imageSize.width / imageSize.height } : question.visualOptionPage === 12 ? styles.visualOptionsPage12 : styles.visualOptionsPage13]} accessibilityLabel={`${question.label}の選択肢図`} /> : null}
     {question.family === 'sentenceComposition' ? <Text style={styles.starNote}>★ に入るものを一つ選んでください。</Text> : null}
     <View accessibilityRole="radiogroup" onTouchStart={onFocus} style={styles.options}>
       {question.options.map((option) => <JlptAnswerOption key={option.id} number={option.id} selected={selected === option.id} disabled={submitted} scale={scale} onPress={() => { onFocus(); onChoose(question.id, option.id); }}>{option.textJa}</JlptAnswerOption>)}

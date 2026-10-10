@@ -16,7 +16,7 @@ const master=JSON.parse(readFileSync(resolve(root,'src/data/jlpt-original/n2/04/
 for(const q of questions){const o=master.questions.find(x=>x.id===q.id);assert.equal(q.correctOptionId,o.correctOptionId);assert.equal(q.options.length,o.options.length);assert.equal(q.problemNumber,o.group);
  if(q.family==='listening'){
   assert.equal(q.audio.transcriptJa,'');assert.equal(q.audio.startMs,0);assert.ok(q.audio.endMs>0);
-  if([3,4].includes(q.problemNumber))for(const opt of q.options)assert.equal(opt.textJa,`音声の選択肢 ${opt.id}`);
+  for(const opt of q.options)assert.equal(opt.textJa,o.options.find(x=>x.id===opt.id).text);
   if([3,4,5].includes(q.problemNumber))assert.notEqual(q.promptJa,o.prompt,'No advance gist/integrated question or printed immediate-response utterance');
   if(q.questionNumber===1)assert.ok(q.instructionJa.includes('練習'));
  }else assert.equal(q.sectionId,'language-knowledge-reading','N2 written uses one combined 105-minute section');

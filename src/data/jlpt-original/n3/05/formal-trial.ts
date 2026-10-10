@@ -58,9 +58,10 @@ export const N3_ORIGINAL_05_TRIAL: readonly TrialQuestion[] = master.questions.m
       : q.prompt,
     passageId: q.passageId,
     passageJa: q.passageId ? master.passages[q.passageId] : undefined,
-    // Spoken alternatives must not become printed hints in the exam UI.
-    options: q.options.map(o => ({ id: o.id, textJa: spokenOnly ? `音声の選択肢 ${o.id}` : o.text })),
+    // Publisher request: display full selectable alternatives, including spoken choices.
+    options: q.options.map(o => ({ id: o.id, textJa: o.text })),
     correctOptionId: q.correctOptionId,
+    practiceOptions: listening && q.group === 4 && q.number === 1 ? organization.groups.find(g => g.problem === q.group)!.example.options : undefined,
     sourcePage: 0, // Independent authoring has no source-paper page.
     visualOptionPage: listening && q.group === 4 ? 400 + q.number : undefined,
     explanationStatus: 'missing',

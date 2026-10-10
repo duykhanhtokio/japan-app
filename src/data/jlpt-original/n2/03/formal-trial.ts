@@ -27,7 +27,7 @@ export const N2_ORIGINAL_03_TRIAL:readonly TrialQuestion[]=master.questions.map(
   instructionJa:(spokenOnly?'音声の選択肢を聞いて、一つ選んでください。':ordering?'四つのことばを並べて、★に入るものを選んでください。':`${listening?'話を聞いて、':''}いちばんいいものを一つ選んでください。`)+practiceInstruction(q),
   promptJa:listening&&q.group===3?'話を最後まで聞いて、音声の質問に答えてください。':listening&&q.group===4?'音声の短い言葉を聞いて、合う返事の番号を一つ選んでください。':listening&&q.group===5?'複数の条件を聞き、音声の質問に答えてください。'+(q.number===3?'続く二つの質問は同じ話を使います。話は一度だけ再生されます。':''):q.prompt,
   passageId:q.passageId,passageJa:q.passageId?master.passages[q.passageId]:undefined,
-  options:q.options.map(o=>({id:o.id,textJa:spokenOnly?`音声の選択肢 ${o.id}`:o.text})),correctOptionId:q.correctOptionId,
+  options:q.options.map(o=>({id:o.id,textJa:o.text})),correctOptionId:q.correctOptionId,
   sourcePage:0,explanationStatus:'missing',generatedExplanationStatus:'not_generated',
   audio:listening?{segmentId:q.sharedDialogueId?`${master.examId}-${q.sharedDialogueId}`:`${master.examId}-continuous`,startMs:0,endMs:audio.durationMs,transcriptJa:''}:undefined,
  };

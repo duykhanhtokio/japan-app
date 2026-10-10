@@ -17,7 +17,7 @@ const organization = require('./listening-organization.ja.json') as { groups: { 
 function practiceInstruction(q: OriginalQuestion): string {
   if (q.section !== 'listening' || q.number !== 1) return '';
   if (q.group <= 2) return '\n練習（採点なし・選択操作不要）：\n' + organization.groups.find(g => g.problem === q.group)!.example.options.map(o => o.id + ' ' + o.text).join('\n');
-  return q.group === 3 ? '\n最初は画像の左側「練習」を見てください。本問１番は右側です。練習は採点しません。練習中は選択ボタンを押しません。' : '\n音声の練習は採点しません。練習中は選択ボタンを押しません。';
+  return q.group === 3 ? '\n練習と本問の画像は別々に表示します。音声の「左側」は練習、「右側」は本問１番を指します。練習は採点しません。練習中は選択ボタンを押しません。' : '\n音声の練習は採点しません。練習中は選択ボタンを押しません。';
 }
 const audio = require('./audio.manifest.json') as { durationMs: number; matchesThirtyMinuteTarget: boolean };
 
@@ -55,9 +55,10 @@ export const N5_ORIGINAL_05_TRIAL: readonly TrialQuestion[] = master.questions.m
     promptJa: ordering ? `${q.prefix}${slots}${q.suffix}\n${q.prompt}` : q.prompt,
     passageId: q.passageId,
     passageJa: q.passageId ? master.passages[q.passageId] : undefined,
-    // Spoken alternatives must not become printed hints in the exam UI.
-    options: q.options.map(o => ({ id: o.id, textJa: spokenOnly ? `音声の選択肢 ${o.id}` : o.text })),
+    // Publisher request: display full selectable alternatives, including spoken choices.
+    options: q.options.map(o => ({ id: o.id, textJa: o.text })),
     correctOptionId: q.correctOptionId,
+    practiceOptions: listening && q.group === 3 && q.number === 1 ? organization.groups.find(g => g.problem === q.group)!.example.options : undefined,
     sourcePage: 0, // Independent authoring has no source-paper page.
     visualOptionPage: listening && q.group === 3 ? 300 + q.number : undefined,
     explanationStatus: 'missing',
