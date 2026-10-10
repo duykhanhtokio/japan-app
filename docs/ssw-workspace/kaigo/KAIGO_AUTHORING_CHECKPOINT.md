@@ -1,3 +1,15 @@
+# Current checkpoint · 2026-10-10 · Catalog, completeness and original 2D art
+
+Supersedes current totals:176 planned days ×30min /5280min/88planned hours;103supplemental units/585points/103probes;104reading cards/369terms/12mock forms/360questions. Reviewed20consecutive printed31–50, text and visuals, canonical SHA verified. Previously processed pages; no unique-source coverage inflation. Six original practice-depth units/18points/6cases appended as days171–176, all linked to existing concepts. Five old content JSON byte-preserved.
+
+User authorized Kaigo catalog organization:4tabs/11topics/12cards per page/search/recent reopen/parent-related links. JLPT UI unchanged and lock10/10PASS. Created10 original colored2D images via built-in image_gen, project-authored JLPT style-only reference; no source book images/tracing. Ten WEBPs reused on173study screens +8candidates, total181illustrated screens. Promptset, asset hashes and assignments in reviews.
+
+Final focused actual RN Web browser PASS:176calendar order,11topic union,173+8image screens,585rendered points,6new probes and old attempts reload/edit-hide,reading/mocks resume;30viewport checks no overflow,0page errors. All9final screenshots manually viewed. No native/fullExpoRouter/fullrepoTypeScript/human/domain/rights/release certification. Full source denominator unverified, percentage null. Ambiguity195 still needs specialist/publisher clinical interpretation;31minor color boundaries not certified;40objects inferred with high confidence, not author-caption confirmed.
+
+Detailed report: reviews/CATALOG_KNOWLEDGE_AND_ART_REPORT_2026-10-10.md. Next second-pass printed51–70 (20consecutive pages), no source-copying or coverage inflation. Historical entries below remain snapshots.
+
+---
+
 # Clarification checkpoint · 2026-10-10 · 31/40/195
 
 Read-only clarification of learning/source ambiguity; no runtime or curriculum changes. Current totals170days×30min/5100min/85planned hours;97supplemental units/567points/97probes;104reading cards/369terms/12mock forms/360questions. These remain planned, not measured learner completion.

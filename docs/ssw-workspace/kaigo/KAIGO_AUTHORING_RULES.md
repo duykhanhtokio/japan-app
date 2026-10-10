@@ -1,6 +1,6 @@
 # Hướng dẫn chính thức — Tokutei Gino 介護
 
-Phiên bản: 7. Ngày duyệt: 2026-10-10 (Asia/Tokyo).
+Phiên bản: 8. Ngày duyệt: 2026-10-10 (Asia/Tokyo).
 Trạng thái: CHỦ DỰ ÁN ĐÃ DUYỆT PHƯƠNG ÁN BIÊN SOẠN.
 Repository: duykhanhtokio/japan-app. Nhánh: recovery/jlpt-n3-n1.
 Đây là hợp đồng biên soạn; duyệt phương án không chứng nhận nội dung chưa được tạo, kiểm duyệt hoặc tích hợp.
@@ -172,3 +172,7 @@ Chủ dự án yêu cầu tiếp tục khối sau và tăng số bài thi để 
 ## 18. Cụm liên tục tối thiểu 20 trang — yêu cầu 2026-10-10
 Chủ dự án yêu cầu mỗi lần tiếp tục xử lý liền ít nhất 20 trang in. Đợt hiện hành 209–228: đọc văn bản và kiểm trực quan đủ 20 trang, tự viết tình huống/câu hỏi/ý đối chiếu mới, kiểm trong app rồi xác minh GitHub trước bàn giao. Không đưa nội dung nguồn trực tiếp vào app, không thay tên hoặc danh từ để phóng tác nguyên cốt truyện. Dùng nguồn để kiểm thuật ngữ và mục tiêu; kiểm riêng sự khác biệt về vai, hành động, điều kiện, trình tự và kết quả. Nếu phần cuối tài liệu còn dưới 20 trang thì hoàn tất toàn phần còn lại và ghi rõ số trang thực tế; không lặp trang đã xong để tăng số.
 Số trang xử lý không phải số ngày học: tiếp tục giữ 30 phút/ngày và tăng số ngày khi cần. Các thẻ đọc hiểu bổ sung có ID và phiên bản lưu riêng; không đổi phiên bản của bài, điểm kiến thức hoặc đề cũ chỉ để thêm thẻ mới. Đợt 209–228 thêm bốn buổi dự kiến, không tuyên bố đã đo thời gian hay đủ kiến thức toàn sách.
+
+
+## 19. Danh mục học và minh hoạ mới — yêu cầu2026-10-10
+Chủ dự án yêu cầu hoàn thiện kiến thức, tổ chức lại danh mục Kaigo và thêm hình mới đồng bộ phong cách2D màu phần JLPT. Cho phép thay danh mục Kaigo để học theo lịch, ôn chủ đề, tìm bài và mở lại bài gần nhất; giữ ID/revision/khóa câu trả lời và lượt thi. Không đổi UIJLPT đã khóa. Hình tự tạo từ bối cảnh mới, chỉ dùng hình JLPT do dự án sáng tác để tham chiếu phong cách; không dùng/truy theo hình tài liệu. Chú thích nối hình với mục tiêu học, không dùng hình tình huống làm quy trình kỹ thuật. Rà liên tục20trang31–50 là rà sâu lần hai, không tăng số trang nguồn duy nhất. Sáu mục vận dụng mới không được gọi18sự kiện nguồn trước đây hoàn toàn thiếu. Chưa mẫu số mọi ý gốc thì tỷ lệnull; chuyên môn/bảnngữ/quyền/native/pháthành vẫn chờ.
