@@ -500,3 +500,11 @@ Lưu hẹp5file bằng GitHubtree/commit/ref cólease trênHEAD hiện tại và
 - RNWeb bảnthật kiểm479ý/87kếhoạch/52vănbảnNhật/3229dòngHTML/bộlọc/lưuđề chia buổi,0lỗiJS;3kíchthước khôngtràn. Kiểm riêngngày110 ở3kíchthước và xemảnhđầu/cuối:ýmới hiện đủ. Native/fullExpoRouter/chuyênmôn/bảnngữ/quyền chưakiểmduyệt. Các hashinventorycũ chỉ cập nhật theo runtime, không thêm claim kiểm nguồn cũ.
 - BrowserdownloadPlaywright bịtrảgóihỏng; dùngChromium từpackage đểkiểm. Đợtchạy đầu treo khởiđộng; đợt cóargsphùhợp đã ghi bằng chứng hash479,splitMockResume=true và0lỗi. KhôngdùngđợtfailedlàPASS. BáocáoHTML hiện cậpnhật479ý, có139dòngăn uống; reportmd vàevidence mớiởruntime-tests/2026-10-10-eating.
 - Tiếp theo saulưu: đối chiếu bài tiết152–169 rồi các khối còn lại. Toàn sách vẫn chưa hoàn tất; %null, ba chi tiết31/40/72 vẫn mở;human/domain/native/rights/releasefalse.
+
+## 2026-10-10 — bài tiết trang152–169
+- Đợt ăn uống đã lưu d2ea20b85565c6950c1097ac8b646c7e5baeb2b9; kiểm31blob khớp và giữ9tệp cập nhật đồng thời. CLIpush thiếucredential; kết nốiGitHub đãđượcủyquyền lưu lease, khôngforce.
+- Đọc lớp văn bản18trang, xem3contactsheet;270bản ghi excretion-source-atoms nốiý/nhãn/chúthích/quan hệ tớiđiểm và ngày. AIbiêntập, khôngchứngnhậnindependentexhaustive. PDF hashbyte997bf386 đãxác minh trongphiên, nguồn/ảnh riêng khôngupload.
+- Thêm18ý vào5thẻ, tổng497ý/87thẻ/87ca; lịch144×30 giữnguyên, ID/479ýcũ/ca/ngày/core/sáuđề khôngđổi. Thẻurine-reference đổi titlebao gồmphân, metadata thêm156. Generatorchính táidựngbảnmới;revisionhash/draft khớp.
+- Kiểm4negativecontrolsđốichiếu,5lịch,JLPTlock10/10PASS. Sànglọc758trường/0trùng60kýtự; khôngchứngnhậnsemantic/quyền. RNWebkiểm18ýthật,3viewportskhôngtràn,0JSerrors; đãxem3ảnhdetail. Khôngdùngsnapshot479làmkiểmtoànbản497. Native/fullExpoRouter chưa kiểm.
+- LedgerJSON/HTML cậpnhật497và270dòngbàitiết;hashinventorycũ chỉcậpnhậtthamchiếu runtime, khôngthêmclaimnguồncũ. NIDDK/CDC kiểmgiớihạn nhịpphân vàgăng/vệsinhtay; duyệtconngười/chuyênmôn/bảnngữ/quyền/release vẫnfalse.
+- Kếtiếp: trang170–184 (diệnmạo/quầnáo/miệng), rồi186–202. Ba chi tiếthình31/40/72 cònmở; mẫu số/%toànsáchnull.

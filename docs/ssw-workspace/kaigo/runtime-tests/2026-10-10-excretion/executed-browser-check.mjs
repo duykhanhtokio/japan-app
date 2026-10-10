@@ -1,0 +1,14 @@
+import fs from 'node:fs';import http from 'node:http';import assert from 'node:assert/strict';import crypto from 'node:crypto';
+const {default:c}=await import(process.env.KAIGO_CHROMIUM_MODULE);
+const {chromium}=await import(process.env.KAIGO_PLAYWRIGHT_MODULE);
+const root=fs.realpathSync(new URL('../../../../../',import.meta.url)),publicDir=process.env.KAIGO_BROWSER_PUBLIC,out=root+'/docs/ssw-workspace/kaigo/runtime-tests/2026-10-10-excretion';fs.mkdirSync(out,{recursive:true});
+const s=http.createServer((q,r)=>{const p=publicDir+(q.url==='/'?'/index.html':q.url);try{r.setHeader('Content-Type',p.endsWith('.js')?'application/javascript':p.endsWith('.ttf')?'font/ttf':'text/html');r.end(fs.readFileSync(p));}catch{r.writeHead(404);r.end();}});await new Promise(r=>s.listen(8792,'127.0.0.1',r));
+const b=await chromium.launch({executablePath:process.env.KAIGO_CHROMIUM_PATH,args:c.args,headless:true});const p=await b.newPage();const errors=[];p.on('pageerror',e=>errors.push(e.message));const views=[];
+const runtime=JSON.parse(fs.readFileSync(root+'/src/data/kaigo/atomic-supplements.json'));
+const oldLengths={'digestive':5,'urine-reference':4,'continence-types':7,'toilet-environment':6,'diaper-fit':3};let newPointsChecked=0;
+await p.goto('http://127.0.0.1:8792');
+for(const [key,n] of Object.entries(oldLengths)){const unit=runtime.units.find(u=>u.id==='kaigo-atomic-'+key);const day=runtime.days.find(d=>d.unitIds.includes(unit.id));await p.getByTestId('kaigo-atomic-day-'+day.day).click();for(const point of unit.points.slice(n)){assert.equal(await p.getByTestId(point.id).innerText(),point.explanationVi);newPointsChecked++;}await p.getByRole('button',{name:'戻る',exact:true}).click();}
+assert.equal(newPointsChecked,18);
+const unit=runtime.units.find(u=>u.id==='kaigo-atomic-toilet-environment');const day=runtime.days.find(d=>d.unitIds.includes(unit.id));
+for(const [width,height] of [[390,844],[768,1024],[844,390]]){await p.setViewportSize({width,height});await p.goto('http://127.0.0.1:8792');await p.getByTestId('kaigo-atomic-day-'+day.day).click();await p.getByTestId('kaigo-atomic-toilet-environment-12').scrollIntoViewIfNeeded();assert(!await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2));await p.screenshot({path:out+'/excretion-'+width+'-detail.png'});views.push({width,height,horizontalOverflow:false,detailVisible:await p.getByTestId('kaigo-atomic-toilet-environment-12').isVisible()});}
+assert.deepEqual(errors,[]);fs.writeFileSync(out+'/evidence.json',JSON.stringify({date:'2026-10-10',status:'PASS_FOCUSED_RN_WEB',runtimeSha256:crypto.createHash('sha256').update(fs.readFileSync(root+'/src/data/kaigo/atomic-supplements.json')).digest('hex'),newPointsChecked,totalPoints:runtime.units.reduce((n,u)=>n+u.points.length,0),views,pageErrors:errors,nativeDeviceTested:false},null,2)+'\n');console.log(JSON.stringify({status:'PASS',views,pageErrors:errors}));await b.close();s.close();
