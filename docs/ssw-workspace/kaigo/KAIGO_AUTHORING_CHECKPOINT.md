@@ -1,3 +1,23 @@
+# Current checkpoint · 2026-10-10 · Foundation second-pass depth
+
+Completed a second-pass depth review of printed10–30 / PDF12–32:21 consecutive pages, including blank15. Read source text and visually checked all21 at full page scale in seven3-page contacts. Canonical source SHA256997bf386 verified. These are previously processed pages, not21additional unique source pages; the book tail was already finished for document role only. Never inflate source coverage from this review.
+
+Added6 original knowledge/application units,18 explanations,6 cases/probes and6 planned30-minute days165–170 in depth-supplements.json. Total170days/5100minutes,97supplemental knowledge units/567points/97probes;104reading cards,369terms,12mock forms/360questions. No final completion duration, measured learner load, or pass guarantee.
+
+Finding: the major concepts in10–30 are already linked; current213recorded atom rows are retained. Depth gaps concern direct self-check of QOL outcomes, contribution/community participation, service location, actual goal attainment, multidisciplinary handoff and observed versus inferred facts. New units explicitly link existing point IDs; this is deeper practice, not18previously absent source facts. Source illustration/dialogue plots and answer content were not reused. Exact45-character normalized scan of new points/prompts/expected responses against extracted10–30 prose:0flags; scan is not semantic or rights certification. AI editorial scenario review recorded; human/domain/native/rights/release still false.
+
+Preserved all bytes of content.json, atomic-supplements.json, language-supplements.json and gap-supplements.json, including prior IDs, revisions and saved-attempt keys. New bundle merges through existing Kaigo atomic UI; no UI redesign. Prior4gap units and historical audit files remain intact. Validators updated to allow the extended calendar and write separate gap prefix revalidation; old gap validation remains a snapshot.
+
+PASS: foundation-depth schema/source-page joins/revisions/preservation/5negative controls; tail-gap prefix revalidation for2844recorded rows; daily-plan170contiguous30-minute days; language249prefix; JLPT UI lock10/10. Focused actual Kaigo/Royal RN Web build:6units/18points/6probes render, reveal/reload/edit-hide; old atomic, gap161 and reading145/149/154 responses reload;12mock catalog forms;18unit/view checks at390×844,768×1024,844×390 without horizontal overflow;0pageerrors;18filtered new-point report rows. Three screenshots manually viewed. No native/fullExpoRouter/fullrepoTypeScript verification. Limited environment warns about missing expo/tsconfig.base. The old atomic check's49e6f67content comparison remains historically inapplicable; baseline hashes are used, not a claim that script passes.
+
+Remote observed af31eeb3d4adf9f1a2997ff73aaf978bf815099f, one JLPT-only commit ahead of preceding Kaigo a6b027c262f884c522dcd235a3964e134e036b44; compare showed5disjoint JLPT paths. Publish narrow Kaigo patch on fresh current remote tree using expected-head lease, preserve concurrent JLPT work, verify all own Git blob SHAs/modes and parent/tree after update. Do not claim WORKPERSISTENCEPASS from divergent local/GitAPI history. Do not upload source PDFs/text/images/private contacts or dependencies.
+
+Still open: fine hand-map color boundaries31; two small unlabelled objects40; ambiguous male washing action195. This batch does not resolve those or author a clinical action from unclear wording. Full source-atom denominator and semantic equivalence of every fact/label remain unverified; coverage percentage stays null.
+
+Next: second-pass31–50 (20pages) for remaining source details and practice gaps, with specialist verification of clinical interpretations where possible; independently author only verified concepts. Keep existing IDs/revisions and review flags honest.
+
+---
+
 # Checkpoint · 2026-10-10 · Tail roles and knowledge gaps
 
 Current runtime: 164 planned days × 30 minutes = 4920 minutes, no week limit. 91 supplemental knowledge units / 549 teaching points / 91 probes; 104 reading cards; 369 terms; 12 mock forms / 360 questions. Four new days 161–164 contain 13 original teaching points and four independently authored cases. Existing base, atomic and language JSON bytes, IDs and revisions remain unchanged. Gap units integrate through the existing atomic study UI.

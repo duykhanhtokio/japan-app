@@ -10,6 +10,10 @@ gapAudit=read('docs/ssw-workspace/kaigo/reviews/tail-gap-review-2026-10-10.json'
 gapRuntime=read('src/data/kaigo/gap-supplements.json')
 a={**a,'units':a['units']+gapAudit['units']}
 rt={**rt,'units':rt['units']+gapRuntime['units'],'days':rt['days']+gapRuntime['days']}
+depthAudit=read('docs/ssw-workspace/kaigo/reviews/foundation-depth-review-2026-10-10.json')
+depthRuntime=read('src/data/kaigo/depth-supplements.json')
+a={**a,'units':a['units']+depthAudit['units']}
+rt={**rt,'units':rt['units']+depthRuntime['units'],'days':rt['days']+depthRuntime['days']}
 def pages(value):
  if isinstance(value,list):return value
  result=[]
@@ -127,7 +131,7 @@ plan=read('src/data/kaigo/daily-plan.json')
 report['bodyAtomAudit']=dict(atomCount=len(bodyAtoms['atoms']),fullScopeAtomInventoryCertified=False)
 report['tailGapAudit']=gapAudit
 report['remainingVi']+=gapAudit['remainingVi']
-body+='<p><strong>Rà phần cuối và khoảng trống:</strong> 5 trang in 270–274 được kiểm vai trò; trang 271 chỉ kiểm tiêu đề, loại trừ nội dung đáp án. Thêm 4 buổi / 13 ý / 4 ca độc lập. Hiện có 164 ngày × 30 phút, 549 ý bổ sung, 104 thẻ đọc và 12 đề. 2844 hàng trong 12 danh mục đã ghi có liên kết hợp lệ; chưa chứng nhận danh mục ý gốc đầy đủ.</p>'
+body+='<p><strong>Rà phần cuối và khoảng trống:</strong> 5 trang in 270–274 được kiểm vai trò; trang 271 chỉ kiểm tiêu đề, loại trừ nội dung đáp án. Thêm 4 buổi / 13 ý / 4 ca độc lập. Tại đợt rà phần cuối: 164 ngày × 30 phút, 549 ý bổ sung, 104 thẻ đọc và 12 đề. 2844 hàng trong 12 danh mục đã ghi có liên kết hợp lệ; chưa chứng nhận danh mục ý gốc đầy đủ.</p>'
 gapEvidencePath=R/'docs/ssw-workspace/kaigo/runtime-tests/2026-10-10-tail-gaps/evidence.json'
 if gapEvidencePath.exists():
  gapEvidence=json.loads(gapEvidencePath.read_text())
@@ -139,6 +143,16 @@ body+=table('Ý mới lấp khoảng trống',['Mã ý','Ngày','Giải thích m
 body+=table('Phần cuối sách',['Trang in / PDF','Vai trò','Phạm vi xem'],[(str(x['printedPage'])+' / '+str(x['pdfPage']),x['role'],x['reviewScope']) for x in gapAudit['tailPages']])
 report['dailyPlan']=dict(totalDays=plan['totalDays'],dailyMinutes=30,maxWeeks=None,finalCompletionDays=None,learnerTimeMeasured=False)
 calendar=[(d['day'],30,d['titleVi'],d['studyPlanVi']) for d in plan['baseDays']]+[(d['day'],30,' · '.join(u['titleVi'] for u in rt['units'] if u['id'] in d['unitIds']),d['studyPlanVi']) for d in rt['days']]+[(d['day'],30,next(g['titleVi'] for g in languageRuntime['groups'] if g['id']==d['groupId']),d['studyPlanVi']) for d in languageRuntime['days']]
+report['foundationDepthAudit']=depthAudit
+foundationEvidencePath=R/'docs/ssw-workspace/kaigo/runtime-tests/2026-10-10-foundation-depth/evidence.json'
+if foundationEvidencePath.exists():
+ foundationEvidence=json.loads(foundationEvidencePath.read_text())
+ if foundationEvidence.get('depthRuntimeSha256')==hashlib.sha256((R/'src/data/kaigo/depth-supplements.json').read_bytes()).hexdigest():
+  report['foundationDepthBrowserEvidence']=foundationEvidence
+  body+='<p>Kiểm bản luyện vận dụng:6buổi/18ý/6ca; lưu–tải lại–sửa ẩn đáp án; lượt kiến thức,ca lấp khoảng trống và3cụm đọc cũ tiếp tục được.18lượt xem theo3kích thước không tràn ngang,0lỗi JavaScript; chưa kiểm native/toàn Expo Router.</p>'
+body+='<p><strong>Rà sâu trang10–30:</strong> đọc và kiểm trực quan21trang đã xử lý, gồm1trang trống; không tính là21trang nguồn mới. Bổ sung6buổi /18ý /6ca vận dụng độc lập cho các mục tiêu tự kiểm còn nông. Hiện có170ngày×30phút,567ý bổ sung,104thẻ đọc và12đề. Không chứng nhận mọi ý nguyên bản đã đủ.</p>'
+body+=table('Ý luyện vận dụng mới · rà sâu nền tảng',['Mã ý','Ngày','Giải thích mới'],[(p['id'],u['runtimeDay'],p['explanationVi']) for u in depthAudit['units'] for p in u['points']])
+body+=table('Phạm vi rà sâu nền tảng',['Trang in / PDF','Vai trò','Mục bổ sung','Kết quả'],[(str(x['printedPage'])+' / '+str(x['pdfPage']),x['role'],x['newUnitIds'],x['resultVi']) for x in depthAudit['pageRows']])
 calendar.sort(key=lambda row:row[0])
 body+=table('Lịch học mở · mọi ngày 30 phút · số ngày còn tăng theo nội dung',['Ngày','Phút dự kiến','Nội dung','Phân bổ'],calendar)
 (folder/'whole-document-ledger-2026-10-09.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
