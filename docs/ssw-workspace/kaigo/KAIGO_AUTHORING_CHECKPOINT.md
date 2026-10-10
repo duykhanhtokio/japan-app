@@ -1,3 +1,17 @@
+# Checkpoint hiện hành — 21 trang249–269 · 2026-10-10
+
+- Đã đọc và xem đủ21trang in249–269/PDF251–271, nguồn SHA256997bf386 khớp. Tiếp theo phần cuối270–274 chỉ còn5trang: kiểm metadata/vai trò theo ngoại lệ cuối sách, không dùng bảng đáp án làm đầu vào sáng tác; rồi kiểm gaptoàn sách31/40/72/195 và mọi ý thiếu/nông. Không coi tới269là đủ100%kiến thức.
+- Tự viết21bài đọc Nhật,furigana,prompt/ý đối chiếu Việt;7buổi154–160×30phút nối bài nền10/16/38/45/46/47/48. Tổng104thẻ đọc=52nền+52bổ sung;160ngày/4800phút dự kiến, chưa đo người học. Quan hệ bảng viết thành dòng nhãn riêng, dữ kiện/diễn biến độc lập; không bảng/chuỗi/hình/đáp án nguồn.
+- Giữ exact31thẻ bổ sung cũ/ID/stateRevision/furigana/9nhóm/ngày,57base+87atomicdays,bytehashcontent.json/atomic-supplements.json.369từ/536ý/87mục/87ca/12đề360Qkhông đổi. Newcards córevision/khóa riêng. Giới hạn migrationatomic203–208vẫn mở.
+- PASSlanguage249schema/link/privacy/furigana/preservation/6negativecontrols; previous229prefix9nhóm/6controls;209prefix4nhóm/5controls;dailyplan/5controls;JLPTlock10/10. Historicalvalidation/evidence229giữ nguyên, checker229ghi riêngprefix-revalidation. BuildactualKaigoCourseRoyalRNWebPASS; khôngfullrepoTypeScript/fullExpoRouter/native.
+- Browser cuối:21cards attempted/revealed/reloaded/edithide; previous209+229reading vàatomicanswerreload;12mockcatalog;7groups×3views khônghorizontaloverflow/0pageErrors;52supplementalHTMLrows.3screenshotsđãxem. Lần đầu literalrows31trong evidence dùassert52vàghi chú Việt thiếu tự nhiên đãsửa; chạy lại đầyđủ lấybản cuối gắncurrenthash.
+- ReviewsLANGUAGE249_BATCH_REPORT,language249-source-review/originality-review/editorial-review/validation,language229-prefix-revalidation; runtime-tests/2026-10-10-language249. Ledger104readings/160days/253visualpages; khôngexhaustiveinventory/%knowledge.0exact35charhit21đoạn/0exactduplicate83thẻ trước; manualsceneAIreview, khôngsemantic/rights certification. Human/domain/native/rights/releasefalse. Warningexpo/tsconfig.basevàhistorical6formvalidatorlimitationđãghi.
+- Remote baseline1bd19da5af62d535ddf11cc36d7ab16374bdde00,localb36abff kháchistory. Chủ dự án cho phépuploadcode/reports/authored-appscreenshots; publishnarrowexpected-headlease, verifyref/committree/allpatchblobSHA/mode, giữmọiJLPTconcurrentchanges. Khôngforce/reset/private-source/dependencies upload,khôngclaimWORKPERSISTENCEPASS hoặcSHA-onlycommit.
+
+---
+
+## Lịch sử trước cụm249–269
+
 # Checkpoint hiện hành — cụm20trang229–248 · 2026-10-10
 
 - Điểm tiếp tục mới nhất:249–269 (21trang bài đọc), rồi phần cuối sách và các gap mở. Khối229–248 đã đọc và xem20trang/PDF231–250 đúng SHA256997bf386. Trang244 là phân chương, không tăng số bài học.

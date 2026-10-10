@@ -1,0 +1,23 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';
+const read=p=>JSON.parse(fs.readFileSync(p)),sha=b=>createHash('sha256').update(b).digest('hex');
+const d=read('src/data/kaigo/language-supplements.json'),a=read('docs/ssw-workspace/kaigo/reviews/language249-source-review-2026-10-10.json'),base=read('src/data/kaigo/content.json'),plan=read('src/data/kaigo/daily-plan.json');
+function check(data,audit){
+ assert.deepEqual(audit.scopePrintedPages,Array.from({length:21},(_,i)=>249+i));assert.deepEqual(audit.visualPagesChecked,audit.scopePrintedPages);assert.equal(audit.sourceSha256,'997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54');
+ for(const flag of ['humanReviewed','domainReviewed','nativeReviewed','releaseReady'])assert.equal(data[flag],false);assert.equal(audit.fullScopeAtomInventoryCertified,false);assert.equal(audit.originalKnowledgeCoveragePercent,null);
+ assert.equal(data.groups.length,16);assert.equal(data.days.length,16);assert.equal(sha(JSON.stringify(data.groups.slice(0,9))),audit.priorGroupsSha256);
+ const ids=new Set(base.lessons.flatMap(l=>(l.languageTasks??[]).map(t=>t.id))),texts=new Set(base.lessons.flatMap(l=>(l.languageTasks??[]).map(t=>t.textJa)));
+ for(const g of data.groups)for(const t of g.tasks){assert(!ids.has(t.id));assert(!texts.has(t.textJa));ids.add(t.id);texts.add(t.textJa);}
+ const groups=data.groups.slice(9),days=data.days.slice(9);assert.equal(audit.cards.length,21);assert.deepEqual(audit.cards.map(x=>x.printedPage),audit.scopePrintedPages);
+ for(const [i,g] of groups.entries()){
+  assert(base.lessons.some(l=>l.day===g.parentDay));assert.equal(g.tasks.length,3);assert(g.notesVi.length>=3);assert.equal(days[i].day,154+i);assert.equal(days[i].plannedMinutes,30);assert.equal(days[i].groupId,g.id);assert.deepEqual(g.referenceTermIds,[]);
+  for(const t of g.tasks){assert(t.promptVi.length>45);assert(t.expectedVi.length>120);assert(t.textJa.split('\n').length>=4);assert(/^reading20-[a-f0-9]{16}$/.test(t.stateRevision));assert.equal(t.furigana.map(x=>x.text).join(''),t.textJa);for(const x of t.furigana)if(/[一-龯]/u.test(x.text))assert(/^[ぁ-ゖー]+$/u.test(x.readingKana??''),x.text);const link=audit.cards.find(x=>x.runtimeTaskId===t.id);assert(link);assert.equal(link.runtimeDay,days[i].day);assert.equal(link.pdfPage,link.printedPage+2);assert.equal(link.kind,'prose');assert(link.independentSceneReview.length>80);}
+ }
+ assert.deepEqual(audit.lexicalRecords,[]);assert.deepEqual(audit.dividerPages,[]);
+ // Reading practice must not silently become a transfer, medical, or fire operating protocol.
+ assert(groups[1].tasks[1].textJa.includes('利用者は乗りません'));assert(groups[1].tasks[2].textJa.includes('訓練用'));assert(groups[3].tasks[2].textJa.includes('動作手順はありません'));
+}
+check(d,a);assert.equal(sha(fs.readFileSync('src/data/kaigo/language-supplements.json')),a.runtimeSha256);assert.equal(sha(JSON.stringify({...d,groups:d.groups.slice(0,9),days:d.days.slice(0,9)},null,2)+'\n'),a.previousRuntimeSha256);
+for(const [p,h] of Object.entries(a.preservationSha256))assert.equal(sha(fs.readFileSync(p)),h);assert.equal(sha(JSON.stringify(plan.baseDays)),a.priorBaseDaysSha256);assert.deepEqual(plan.languageDays,d.days);assert.equal(plan.totalDays,160);assert.equal(plan.plannedMinutes,4800);assert.equal(base.terms.length,369);assert.equal(base.mocks.length,12);
+function noSource(v){if(Array.isArray(v))return v.forEach(noSource);if(v&&typeof v==='object')for(const [k,x] of Object.entries(v)){assert(!/sourceRefs|sourcePages|sourceMetadata|libraryFileId|sourceSha/.test(k));if(typeof x==='string')assert(!/libfile_|https?:\/\/|\.pdf\b/.test(x));noSource(x);}}noSource(d);
+let rejected=0;for(const mutate of [(d)=>d.groups[9].tasks[0].furigana[0].text='wrong',(d)=>d.groups[9].tasks[0].id=d.groups[0].tasks[0].id,(d)=>d.days[9].plannedMinutes=60,(_,a)=>a.cards[0].runtimeTaskId='missing',(_,a)=>a.cards[20].printedPage=268,(d)=>d.groups[10].tasks[1].textJa=d.groups[10].tasks[1].textJa.replace('利用者は乗りません','利用者が乗ります')]){const x=structuredClone(d),y=structuredClone(a);mutate(x,y);assert.throws(()=>check(x,y));rejected++;}
+const result={status:'PASS_21_PAGE_ORIGINAL_DRAFT_LINKS_AND_PRESERVATION',printedPages:21,newProseCards:21,totalReadingCards:104,plannedDays:160,dailyMinutes:30,prior31CardsAndRevisionsPreserved:true,baseAndAtomicRuntimeByteIdentical:true,negativeControlsRejected:rejected,humanReviewed:false,nativeReviewed:false,releaseReady:false};fs.writeFileSync('docs/ssw-workspace/kaigo/reviews/language249-validation-2026-10-10.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
