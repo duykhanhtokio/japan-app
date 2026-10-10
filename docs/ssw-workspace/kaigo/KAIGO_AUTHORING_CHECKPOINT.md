@@ -1,3 +1,15 @@
+# Checkpoint hiện hành — tắm và vệ sinh trên giường, 2026-10-10
+
+- Tiếp tục yêu cầu của chủ dự án: phần kế tiếp trang in 186–197 (PDF 188–199). Đã đọc chữ và xem đủ 12 trang; tạo 239 bản ghi liên kết nguồn–ý kiến thức. Thêm 12 ý, tổng 517 ý/87 mục/87 ca; giữ nguyên 505 ý cũ, ID, câu tự giải thích, 144 ngày × 30 phút.
+- Bộ 12 đề/360 câu giữ nguyên byte; không thay giao diện JLPT. Luyện đề thêm vẫn tùy chọn. Không dùng số đề hoặc số ý làm chứng nhận hiệu quả/đỗ thi.
+- Báo cáo: `reviews/BATHING_186_197_REPORT_2026-10-10.md`; inventory `reviews/bathing-source-atoms-2026-10-10.json`; append audit và evidence tại `runtime-tests/2026-10-10-bathing`. Không đưa PDF/chữ/hình nguồn vào git.
+- Câu nguồn nam ở trang 195 có diễn đạt Việt chưa rõ; không suy thành kéo tinh hoàn/thủ thuật xâm lấn. Ghi diễn giải chuyên môn chờ duyệt. Human/domain/native/rights/release vẫn false; wholeDocumentCoveragePercent null.
+- Bước tiếp: trang in 198–202, hỗ trợ công việc trong nhà; tiếp tục bảo toàn kiến thức/ID/lịch/12 đề và rà chuyên môn, bản ngữ, người học, thiết bị. Không tự diễn giải phần đã đối chiếu thành toàn sách hoàn tất.
+
+---
+
+## Lịch sử trước phần tắm
+
 # Checkpoint hiện hành — chỉnh trang và 12 đề, 2026-10-10
 
 Yêu cầu mới của chủ dự án: tiếp tục phần kế tiếp và tăng số đề để ôn tập hiệu quả. Rules v6/approved-plan v7 ghi nhận việc tăng; lựa chọn biên tập hiện hành là **12 đề/360 câu**, gồm 6 kỹ năng và 6 Nhật. Lịch 144 ngày × 30 phút giữ nguyên; luyện thêm là tùy chọn. Không diễn giải số đề thành chứng nhận hiệu quả/đỗ thi.

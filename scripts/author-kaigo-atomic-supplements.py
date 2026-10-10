@@ -903,6 +903,30 @@ deepen('clothing-bed',['Vị trí nhân viên trong mẫu thay áo nằm khác m
 deepen('face-hair-makeup',['Rửa mặt buổi sáng có thể giúp loại bỏ chất bẩn và tạo cảm giác tỉnh táo; nếu dùng khăn ấm phải kiểm nhiệt và khả năng chịu đựng. Làm sạch và giữ ẩm là hai mục tiêu khác nhau, cần chọn cách và sản phẩm theo da.'])
 deepen('oral-details',['Răng giả thay thế răng đã mất nhưng vẫn có thể giữ thức ăn và mảng bám. Tháo và làm sạch theo kế hoạch sau ăn, dùng bàn chải và nước theo vật liệu; răng thật còn lại và mô miệng cần chăm riêng, không chỉ rửa phần tháo ra.', 'Vị trí hỗ trợ ngang tầm và đầu được nâng đỡ nhằm tránh buộc người dùng ngửa cằm hoặc mất ổn định. Đây là mục đích của hình trước/sau, không bảo đảm phòng rối loạn nuốt. Nếu súc hoặc dùng dụng cụ mút, làm theo đánh giá miệng–nuốt và đào tạo; kiểm miếng mút còn nguyên theo dụng cụ.'])
 
+# Bathing continuation, 2026-10-10: append facts; preserve prior probes and day IDs.
+deepen('skin-structure',[
+ 'Trong lát cắt da, biểu bì phủ ngoài, lớp bì ở dưới và mô mỡ ở sâu hơn. Chân tóc cùng các tuyến có phần nằm dưới bề mặt; tuyến bã liên quan nang tóc, còn đường dẫn của tuyến mồ hôi đưa chất tiết ra ngoài. Vị trí nhãn giúp phân biệt cơ quan tiết với chất đang ở trên da.',
+ 'Mồ hôi và bã nhờn có thể góp tạo chất bẩn trên bề mặt. Tỏa nhiệt nhờ mồ hôi không có nghĩa da ẩm kéo dài luôn có lợi; vùng da áp nhau cần làm sạch nhẹ và thấm khô. Mùi còn liên quan vi sinh phân giải chất tiết, không chỉ tên tuyến hoặc lượng mồ hôi.'
+])
+deepen('bath-environment',[
+ 'Cần tách mục tiêu sạch và thư giãn khỏi các tác động tuần hoàn, chuyển hóa, cơ–khớp và ăn uống. Làm ấm cơ thể có thể thay đổi điều hòa nhiệt và tuần hoàn; lợi ích về cảm giác, vận động hoặc ăn uống phụ thuộc cá nhân. Không coi tắm là cách bảo đảm phục hồi khớp, chức năng dạ dày hoặc điều chỉnh chuyển hóa ở mọi người.',
+ 'Trước và trong chăm sóc vệ sinh, hỏi cảm giác và quan sát da trong phạm vi đã đồng ý. Đỏ, đau, trợt hoặc thay đổi bất thường cần được ghi và báo chuyên môn theo tình huống; kiểm sức khỏe chung không thay việc nhìn vùng da đang chăm sóc. Giải thích cách che và mức hỗ trợ để người dùng tiếp tục lựa chọn.',
+ 'Đồ thay và khăn cần được chuẩn bị sẵn, với quần áo do người dùng chọn khi có thể. Hỏi nhu cầu đi vệ sinh trước buổi tắm vì nhu cầu có thể xuất hiện trong khi tắm; không buộc mọi người phải bài tiết. Vị trí ngồi, chỗ đặt đồ và mức trợ giúp phải phù hợp khả năng đã đánh giá.'
+])
+deepen('bath-sequence',[
+ 'Trong mẫu hỗ trợ người yếu một bên tới khu tắm, nhân viên ở phía yếu để bảo vệ thăng bằng, trong khi phần làm quen với nước có thể bắt đầu phía khỏe. Phía người hỗ trợ đứng và phía bắt đầu rửa là hai quyết định khác nhau; phương án thật phải theo đánh giá, huấn luyện và dụng cụ.',
+ 'Chuẩn bị gội gồm làm ướt tóc và phân bố dầu gội phù hợp trước khi làm sạch nhẹ bằng đầu ngón tay. Giữ nước và sản phẩm khỏi mắt, xả phần dư theo hướng dẫn và hỏi khó chịu; không dùng móng để cào da đầu hoặc chọn sản phẩm chỉ vì tạo nhiều bọt.',
+ 'Sau khi thấm khô, kiểm vùng da khô hoặc dễ kích ứng và dùng sản phẩm giữ ẩm phù hợp kế hoạch nếu cần. Dưỡng ẩm khác với để nước đọng trong nếp da; nếp gấp vẫn cần được làm khô nhẹ. Không tự bôi sản phẩm mới lên vùng tổn thương hoặc coi kem dưỡng thay việc báo bất thường.'
+])
+deepen('partial-perineal-wash',[
+ 'Ngâm tay có thể dùng chậu phù hợp tầm với; ngâm chân cần đồ chứa đủ chỗ cho bàn chân và tư thế vững. Người dùng có thể làm phần còn khả năng trong tư thế ngồi hoặc tại giường theo phương án hỗ trợ. Tên “ngâm tay” và “ngâm chân” chỉ phạm vi rửa, không cho phép dùng chung nước, dụng cụ bẩn hoặc bỏ việc xả và thấm khô.'
+])
+deepen('bed-wash-figures',[
+ 'Lau tại giường là một phương án làm sạch khi tắm bồn hoặc vòi sen chưa phù hợp. Lau toàn thân và lau một phần khác nhau về phạm vi đã thống nhất, không phải mức sạch tự động đạt được. Chuẩn bị khăn, chất làm sạch phù hợp, đồ thay và cách giữ ấm; hỏi lại khi người dùng chỉ muốn chăm một vùng.',
+ 'Khi đọc hướng lau, phân biệt kiểu động tác với lực: nét ngang ở vùng vai, nét tròn tại ngực, bụng hoặc mông và nét dài ở lưng/cạnh thân biểu thị các vùng và chuyển động khác nhau. Dữ kiện hướng giúp không bỏ sót, nhưng không tự xác định lực, số lượt hoặc cho phép áp lên da tổn thương. Vùng mắt, sau tai, cổ và quanh khớp cần được chú ý riêng.',
+ 'Nước trong đồ chứa, khăn sau làm ướt và nhiệt ở da là ba điểm kiểm khác nhau khi lau. Nước chuẩn bị có thể mất nhiệt nhanh; việc dự trữ nước nóng để điều chỉnh không có nghĩa dùng trực tiếp lên người. Kiểm nhiệt lúc tiếp xúc theo phương tiện và kế hoạch, tránh bưng nước nóng qua người đang nằm; sau mỗi vùng cần loại dư, thấm khô rồi che.'
+])
+
 bundle=dict(version=1,date='2026-10-09',scopeVi='Bổ sung các ý chi tiết đã đọc trong khối cơ thể/người cần chăm sóc và một số chú thích thao tác; chưa chứng nhận toàn tài liệu.',
     units=units,allSourceKnowledgeFullyCovered=False,humanReviewed=False,releaseReady=False)
 out=ROOT/'docs/ssw-workspace/kaigo/drafts/atomic-supplements-2026-10-09.json'
