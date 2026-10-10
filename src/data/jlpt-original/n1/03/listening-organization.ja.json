@@ -1,6 +1,291 @@
 {
-  "status": "not_authored",
-  "groups": [],
+  "examId": "jpapp-n1-original-03-v1",
+  "status": "independent_ai_unreviewed",
+  "openingJa": "これから、ジャパンアプリの独自模擬試験、エヌ一、第三回の聴解を始めます。聞き取った内容に基づいて答えてください。",
+  "soundCheck": [
+    {
+      "role": "femaleStudent",
+      "text": "音量を確かめましょう。この声は聞こえますか。"
+    },
+    {
+      "role": "adultFemale",
+      "text": "説明と質問は、この声で案内します。"
+    },
+    {
+      "role": "youngMale",
+      "text": "会話では、話し手が交代することがあります。"
+    },
+    {
+      "role": "adultMale",
+      "text": "聞き取りやすい音量に調整してください。"
+    }
+  ],
+  "generalInstructionsJa": "採点する答えは三十六個です。各問題の練習は採点しません。話は一度だけ聞きます。問題二の後は、一分間の音楽の休みです。音楽が終わると、自動で問題三へ進みます。答えが音声だけの場合は、番号を選んでください。",
+  "closingJa": "聴解はここで終了します。記入した答えを確認し、準備ができたら提出してください。",
+  "groups": [
+    {
+      "problem": 1,
+      "instructionsJa": "問題一では、話の流れから、指定された人が次に行うことを選びます。質問を先に聞き、話のあとでもう一度聞きます。四つの答えは画面で読みます。まず練習です。",
+      "choicesDisplay": "printed",
+      "readQuestionAfterDialogue": true,
+      "readChoices": false,
+      "replayWholeDialogue": false,
+      "scoredStartJa": "練習を終え、問題一の採点する話へ進みます。",
+      "example": {
+        "id": "jpapp-n1-original-03-v1-practice-1",
+        "scored": false,
+        "prompt": "男の人は、このあと何をしますか。",
+        "script": [
+          [
+            "adultFemale",
+            "男の人は、このあと何をしますか。"
+          ],
+          [
+            "adultFemale",
+            "講師の講演録を冊子にする予定ですが、届いた原稿に図の説明がありません。図を外せば今日中に印刷所へ送れますが、それでは文章の意味が変わります。"
+          ],
+          [
+            "youngMale",
+            "図をこちらで描き直して、説明を付けましょうか。元のデータは共有フォルダーにあります。"
+          ],
+          [
+            "adultFemale",
+            "説明の内容を決めるのは講師です。本人が夕方に確認できると言っていますから、印刷は一日待ちます。あなたは説明が必要な図の番号と、その図を参照している本文を一つの一覧にしてください。連絡は私がします。"
+          ],
+          [
+            "youngMale",
+            "では、図はまだ直さず、該当箇所を一覧にまとめます。印刷所へ遅れを伝えるのもお願いしていいですか。"
+          ],
+          [
+            "adultFemale",
+            "ええ、そちらも私が担当します。"
+          ]
+        ],
+        "options": [
+          {
+            "id": "1",
+            "text": "図を外して印刷用の原稿を送る",
+            "rationale": "本文の意味が変わるため採用していない。"
+          },
+          {
+            "id": "2",
+            "text": "説明が必要な図と本文の箇所を一覧にする",
+            "rationale": "男性に割り当てられた作業。"
+          },
+          {
+            "id": "3",
+            "text": "講師に電話して図の説明を依頼する",
+            "rationale": "講師連絡は女性担当。"
+          },
+          {
+            "id": "4",
+            "text": "共有データから図を描き直す",
+            "rationale": "説明内容の確認前に図を直す案は採用しない。"
+          }
+        ],
+        "correctOptionId": "2",
+        "answerExplanationJa": "二番です。講師と印刷所への連絡は女の人が担当し、男の人は必要な箇所を一覧にします。"
+      }
+    },
+    {
+      "problem": 2,
+      "instructionsJa": "問題二では、質問が尋ねる理由や特徴を聞き分けます。質問は話の前と後に流れます。四つの答えは画面だけに表示します。採点しない例を聞いてください。",
+      "choicesDisplay": "printed",
+      "readQuestionAfterDialogue": true,
+      "readChoices": false,
+      "replayWholeDialogue": false,
+      "scoredStartJa": "練習はここまでです。問題二の採点する話を始めます。",
+      "example": {
+        "id": "jpapp-n1-original-03-v1-practice-2",
+        "scored": false,
+        "prompt": "女の人は、商品を横向きに置いた理由は何だと言っていますか。",
+        "script": [
+          [
+            "adultFemale",
+            "女の人は、商品を横向きに置いた理由は何だと言っていますか。"
+          ],
+          [
+            "adultFemale",
+            "展示台で瓶を横にしたのは、空間を広く見せるためではありません。今回は中の液体が保存中にどう分かれるかを紹介しています。立てると底の方が台の縁に隠れるので、状態が見えにくいんです。横にすると、分かれた部分を正面から確かめられます。"
+          ],
+          [
+            "adultFemale",
+            "実際の保管方法を示していると誤解されないよう、説明には展示用の置き方だと書きました。商品は通常立てて保存します。見た目の珍しさよりも、紹介する現象を確かめられることを優先しました。"
+          ]
+        ],
+        "options": [
+          {
+            "id": "1",
+            "text": "売り場の空間を広く見せるため",
+            "rationale": "空間を広く見せる目的を否定。"
+          },
+          {
+            "id": "2",
+            "text": "実際の保管方法を紹介するため",
+            "rationale": "通常は立てて保管する。"
+          },
+          {
+            "id": "3",
+            "text": "瓶のデザインを珍しく見せるため",
+            "rationale": "珍しさが主目的ではない。"
+          },
+          {
+            "id": "4",
+            "text": "中身が分かれた状態を見やすくするため",
+            "rationale": "台に隠れない配置で現象を見せる。"
+          }
+        ],
+        "correctOptionId": "4",
+        "answerExplanationJa": "四番です。横向きは保管方法ではなく、液体の状態を確かめやすくする展示上の工夫です。"
+      }
+    },
+    {
+      "problem": 3,
+      "instructionsJa": "問題三では、話を全体として捉え、中心となる考えを選びます。先に質問は読みません。話の後で質問と四つの答えを読みます。答えの文章は画面に出ません。まず練習します。",
+      "choicesDisplay": "audio_only",
+      "readQuestionAfterDialogue": true,
+      "readChoices": true,
+      "replayWholeDialogue": false,
+      "scoredStartJa": "練習を終えました。問題三の採点する話に進みます。",
+      "example": {
+        "id": "jpapp-n1-original-03-v1-practice-3",
+        "scored": false,
+        "prompt": "男の人が最も伝えたいことは何ですか。",
+        "script": [
+          [
+            "adultMale",
+            "案内板を増やしたのに、来館者が道に迷うという相談を受けました。調べると、板の数が足りないのではなく、分かれ道を通り過ぎてから案内が出ていました。文字を大きくしたり、同じ板を増やしたりしても、選ぶ場所で情報がなければ役に立ちません。"
+          ],
+          [
+            "adultMale",
+            "必要なのは、情報をたくさん置いたという実績より、人が判断する場面を確かめることです。歩く人の動きを見て、曲がる前に案内を置き直したところ、少ない板でも迷う人が減りました。"
+          ]
+        ],
+        "options": [
+          {
+            "id": "1",
+            "text": "情報は量だけでなく、判断する場面に合う位置で示すことが重要だ",
+            "rationale": "判断前の位置と情報提供の機能が主張。"
+          },
+          {
+            "id": "2",
+            "text": "案内板の数を増やせば、置く場所は問題にならない",
+            "rationale": "数ではなく判断場面が重要という話と逆。"
+          },
+          {
+            "id": "3",
+            "text": "来館者が迷うのは、文字が小さすぎる場合に限られる",
+            "rationale": "分岐後の掲示が原因の例。"
+          },
+          {
+            "id": "4",
+            "text": "案内板を減らせば、どんな建物でも道が分かりやすくなる",
+            "rationale": "減数そのものが万能とは言っていない。"
+          }
+        ],
+        "correctOptionId": "1",
+        "answerExplanationJa": "一番です。案内を判断する前の場所に置くことが大切だと話しています。",
+        "optionVoiceRole": "adultFemale"
+      }
+    },
+    {
+      "problem": 4,
+      "instructionsJa": "問題四では、一つの発言と三つの返事を聞きます。相手の意図や言い方に合う返事を選んでください。返事は音声だけです。最初に採点しない練習を行います。",
+      "choicesDisplay": "audio_only",
+      "readQuestionAfterDialogue": false,
+      "readChoices": true,
+      "replayWholeDialogue": false,
+      "scoredStartJa": "ここから問題四の採点する発言です。",
+      "example": {
+        "id": "jpapp-n1-original-03-v1-practice-4",
+        "scored": false,
+        "prompt": "この段階で約束してしまうのは、ちょっと気が引けます。",
+        "script": [
+          [
+            "adultFemale",
+            "この段階で約束してしまうのは、ちょっと気が引けます。"
+          ]
+        ],
+        "options": [
+          {
+            "id": "1",
+            "text": "では、もう約束を守ってくださったんですね。",
+            "rationale": "未約束へのためらいを既履行と取り違える。"
+          },
+          {
+            "id": "2",
+            "text": "では、確かな見通しが立ってからお返事をいただけますか。",
+            "rationale": "今の約束へのためらいを受け、判断を待つ。"
+          },
+          {
+            "id": "3",
+            "text": "では、気分を変えれば今すぐ決まるということですね。",
+            "rationale": "条件未確定の留保を単なる気分と矮小化する。"
+          }
+        ],
+        "correctOptionId": "2",
+        "answerExplanationJa": "二番です。まだ約束しづらいというためらいを受け止め、見通しが立つまで待つ返事です。",
+        "optionVoiceRole": "adultMale"
+      }
+    },
+    {
+      "problem": 5,
+      "instructionsJa": "問題五では、条件の説明と、その後の相談を結び付けて答えます。質問は話のあとに読み、四つの答えは画面に表示します。最後の話には二つの質問があり、話を繰り返さず、それぞれ答える時間を取ります。まず練習です。",
+      "choicesDisplay": "printed",
+      "readQuestionAfterDialogue": true,
+      "readChoices": false,
+      "replayWholeDialogue": false,
+      "scoredStartJa": "練習は終了です。問題五の採点する相談に進みます。",
+      "example": {
+        "id": "jpapp-n1-original-03-v1-practice-5",
+        "scored": false,
+        "prompt": "二人は、試料をどのように運ぶことにしましたか。",
+        "script": [
+          [
+            "adultFemale",
+            "試料は午後二時までに検査室へ届けます。容器は立てたまま、温度を五度以下に保つ必要があります。通常の自転車便は午前に来ますが、保冷箱は付きません。保冷便は午後三時の到着です。専用車なら午前に届けられ、固定具と保冷箱を備えています。"
+          ],
+          [
+            "youngMale",
+            "自転車便にこちらの保冷箱を渡せば使えませんか。専用車は料金が高いですね。"
+          ],
+          [
+            "adultMale",
+            "自転車便は大きい箱を積めません。試料の容器が入る箱は規定の大きさを超えます。保冷便は到着が遅いので、今回は専用車ですね。"
+          ],
+          [
+            "youngMale",
+            "分かりました。時間と温度、それに容器を立てて固定する条件を満たす方を選びます。"
+          ]
+        ],
+        "options": [
+          {
+            "id": "1",
+            "text": "通常の自転車便で、容器だけを運ぶ",
+            "rationale": "保冷条件を満たさない。"
+          },
+          {
+            "id": "2",
+            "text": "自転車便へ大きな保冷箱を渡して運ぶ",
+            "rationale": "積載規定を超えるため不可。"
+          },
+          {
+            "id": "3",
+            "text": "専用車で、容器を固定して保冷して運ぶ",
+            "rationale": "時間・温度・立位の条件を満たす。"
+          },
+          {
+            "id": "4",
+            "text": "午後三時に着く保冷便で運ぶ",
+            "rationale": "午後二時の締切を超える。"
+          }
+        ],
+        "correctOptionId": "3",
+        "answerExplanationJa": "三番です。専用車だけが、到着時刻、保冷、容器を立てる条件を同時に満たします。"
+      }
+    }
+  ],
   "publisherReviewed": false,
-  "runtimeIntegrated": false
+  "nativeReviewCompleted": false,
+  "perceptualApproval": false
 }
