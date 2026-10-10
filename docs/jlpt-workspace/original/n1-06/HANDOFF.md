@@ -1,0 +1,5 @@
+# N1 06 — written draft checkpoint
+
+70 written responses and12passages authored; structure validator PASS. Independent exam jpapp-n1-original-06-v1. Combined written110minutes. Vocabulary6/6/7/6; grammar-reading12/11/11/11. Five stored ordering solutions checked, no written triples or short cycles. AI editorial corrected one grammar distractor and one ordering suffix. Draft not integrated; publisher/native/releasefalse.
+
+Continue SAME06: author36listening responses and five independent unscored examples under approved N1 casting/pacing, generate actual full audio with exact60s music afterproblem2beforeproblem3, perform editorial/corpus/audio/runtime checks, then additive integration and persistence. Current integrated count29/30. Preserve ALL historical real exams and29originals, lockedUI and concurrentKaigo. Approved engine available at /tmp/jlpt-voicevox-0.25.2/linux-cpu-x64/run in this environment. GitHub connector write access verified; shell push credentials unavailable, use narrow tree/commit/ref publication and then fetch plus persistence validator. No fake audio or completion claims.
