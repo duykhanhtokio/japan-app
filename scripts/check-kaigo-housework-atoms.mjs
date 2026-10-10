@@ -3,9 +3,10 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const path='src/data/kaigo/atomic-supplements.json',r=read(path),d=read('docs/ssw-workspace/kaigo/drafts/atomic-supplements-2026-10-09.json');
-const a=read('docs/ssw-workspace/kaigo/reviews/bathing-source-atoms-2026-10-10.json');
+const a=read('docs/ssw-workspace/kaigo/reviews/housework-source-atoms-2026-10-10.json');
 const sorted=x=>Array.isArray(x)?x.map(sorted):x&&typeof x==='object'?Object.fromEntries(Object.keys(x).sort().map(k=>[k,sorted(x[k])])):x;
 function check(a){
+ assert.deepEqual(a.scopePrintedPages,[198,199,200,201,202]);assert.equal(a.atoms.length,95);
  assert.equal(a.sourceSha256,'997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54');
  assert.equal(a.runtimeSha256,createHash('sha256').update(fs.readFileSync(path)).digest('hex'));
  assert.equal(a.wholeDocumentCoveragePercent,null);assert.equal(a.fullScopeAtomInventoryCertified,false);assert.equal(a.humanReviewed,false);assert.equal(a.releaseReady,false);
@@ -21,7 +22,7 @@ function check(a){
   assert.deepEqual(u.points,d.units.find(v=>v.id===u.id).points);
   const {contentRevision,...content}=u;assert.equal(contentRevision,createHash('sha256').update(JSON.stringify(sorted(content))).digest('hex'));
  }
- assert.equal(r.units.length,87);assert(r.units.reduce((n,u)=>n+u.points.length,0)>=517);
+ assert.equal(r.units.length,87);assert(r.units.reduce((n,u)=>n+u.points.length,0)>=524);
  assert.equal(read('src/data/kaigo/daily-plan.json').totalDays,144);
  assert(!/sourceSha256|sourcePrintedPages|https?:|\.pdf/.test(JSON.stringify(r)));
 }
@@ -29,4 +30,4 @@ check(a);let negativeControlsRejected=0;
 for(const mutate of [x=>x.atoms[0].runtimePointId='missing',x=>x.atoms[0].appEquivalentVi='wrong',x=>x.atoms[0].pdfPage=1,x=>x.visualPagesChecked.pop()]){
  const x=structuredClone(a);mutate(x);assert.throws(()=>check(x));negativeControlsRejected++;
 }
-console.log(JSON.stringify({status:'PASS_LINKS_NOT_FULL_SOURCE_CERTIFICATION',bathingAtoms:a.atoms.length,pages:12,points:r.units.reduce((n,u)=>n+u.points.length,0),units:87,days:144,negativeControlsRejected,fullSourceCoverage:false,nativeDeviceTested:false}));
+console.log(JSON.stringify({status:'PASS_LINKS_NOT_FULL_SOURCE_CERTIFICATION',houseworkAtoms:a.atoms.length,pages:5,points:r.units.reduce((n,u)=>n+u.points.length,0),units:87,days:144,negativeControlsRejected,fullSourceCoverage:false,nativeDeviceTested:false}));

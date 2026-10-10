@@ -927,6 +927,19 @@ deepen('bed-wash-figures',[
  'Nước trong đồ chứa, khăn sau làm ướt và nhiệt ở da là ba điểm kiểm khác nhau khi lau. Nước chuẩn bị có thể mất nhiệt nhanh; việc dự trữ nước nóng để điều chỉnh không có nghĩa dùng trực tiếp lên người. Kiểm nhiệt lúc tiếp xúc theo phương tiện và kế hoạch, tránh bưng nước nóng qua người đang nằm; sau mỗi vùng cần loại dư, thấm khô rồi che.'
 ])
 
+# Housework continuation, 2026-10-10: independent explanations; existing IDs/cases/days preserved.
+deepen('adl-iadl',[
+ 'IADL là nhóm hoạt động tổ chức đời sống hằng ngày: chuẩn bị bữa, dọn nhà, giặt và sắp quần áo, mua sắm, liên lạc, dùng phương tiện công cộng hoặc quản lý tiền. Các việc này giúp duy trì cách sống riêng; cùng tên công việc nhưng thói quen, ưu tiên và phần cần trợ giúp có thể khác. Nhận ra người dùng còn làm được phần nào trước khi làm thay.'
+])
+deepen('home-environment',[
+ 'Bữa ăn cần vừa cung cấp dinh dưỡng vừa được người dùng ăn được và chấp nhận. Chế biến làm thay đổi trạng thái, cách dùng và khả năng ăn thực phẩm; không phải cứ nấu lâu hơn là hấp thu tốt hơn. Cân nhắc tình trạng cơ thể, bệnh và dị ứng khi chọn món, nguyên liệu và cách làm theo kế hoạch đã xác nhận, không tự sửa chế độ điều trị.',
+ 'Hỏi người dùng thích cách nêm và món quen nào, kể cả khi họ cùng quốc tịch hoặc vùng quê. Bữa ăn theo mùa và dịp lễ có thể mang ý nghĩa riêng; osechi là một ví dụ bữa năm mới ở Nhật. Giữ ý nghĩa văn hóa khi điều chỉnh theo nhu cầu cá nhân, không coi mọi món osechi đều phù hợp hoặc buộc người dùng theo khẩu vị của nhân viên.',
+ 'Dọn nhà cần loại rác, bụi và vết bẩn nhưng cũng giữ nơi ở quen thuộc, an toàn và dễ chịu. Khi gặp đồ vật có giá trị chưa rõ, hỏi chủ đồ muốn giữ, chuyển hay bỏ và thống nhất vị trí trước khi thay đổi. Người dùng ngồi xe lăn vẫn có thể hướng dẫn lựa chọn; hình trao đổi khi dọn nhắc tới quyền quyết định chứ không trao quyền bỏ đồ cho nhân viên.',
+ 'Phạm vi giặt gồm cả quần áo lẫn đồ dùng ngủ như ga và chăn. Thu gom, chọn cách giặt theo vật liệu/nhãn, làm khô rồi cất lại là các phần khác nhau của việc giữ đồ sạch để sử dụng. Hình giặt tay và phơi mô tả hai công việc, không bắt mọi chất liệu phải giặt tay hoặc chứng minh phơi ngoài trời tự khử khuẩn.',
+ 'Với đồ có phân, chất nôn hoặc máu, cần nhận diện nguy cơ và thu gom, xử lý theo quy trình riêng phù hợp; không chờ có chẩn đoán nhiễm mới lưu ý phòng ngừa. Tách luồng đồ bẩn khỏi đồ sạch, hạn chế giũ đồ bẩn và dùng bảo hộ, vệ sinh tay theo công việc. Không tự chọn nồng độ hóa chất hoặc nhiệt giặt từ hình minh họa; cách xử lý phải theo hướng dẫn của cơ sở và vật liệu.',
+ 'Môi trường phù hợp phải xét khả năng vận động lẫn trạng thái tinh thần, cảm giác yên tâm và riêng tư. Hành lang, cầu thang, phòng tắm và nhà vệ sinh cần có lối tiếp cận, chống trượt và tay vịn phù hợp; đồ hỗ trợ nhằm mở khả năng hoạt động. Hình một người vấp mép thảm cho thấy đồ đặt trên sàn có thể tạo nguy cơ dù phòng sạch: kiểm mép, độ cố định và đường đi, trao đổi phương án an toàn với người dùng.'
+])
+
 bundle=dict(version=1,date='2026-10-09',scopeVi='Bổ sung các ý chi tiết đã đọc trong khối cơ thể/người cần chăm sóc và một số chú thích thao tác; chưa chứng nhận toàn tài liệu.',
     units=units,allSourceKnowledgeFullyCovered=False,humanReviewed=False,releaseReady=False)
 out=ROOT/'docs/ssw-workspace/kaigo/drafts/atomic-supplements-2026-10-09.json'

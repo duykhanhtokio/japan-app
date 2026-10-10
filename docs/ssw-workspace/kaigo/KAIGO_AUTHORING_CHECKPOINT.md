@@ -1,3 +1,16 @@
+# Checkpoint hiện hành — việc nhà và môi trường sống, 2026-10-10
+
+- Tiếp tục phần kế tiếp theo yêu cầu chủ dự án: trang in 198–202/PDF 200–204. Đã đọc chữ, xem đủ năm trang và lập 95 bản ghi đối chiếu, gồm nhãn IADL, chuỗi nấu ăn, osechi, trao đổi khi dọn đồ, giặt/phơi và quan hệ chân–mép thảm.
+- Thêm 7 ý (adl-iadl 1; home-environment 6), tổng 524 ý/87 mục/87 ca. Giữ nguyên 517 ý cũ, ID/ca/lịch, component và 12 đề/360 câu. Lịch 144 ngày × 30 phút; tải học chưa đo thực tế, người học dừng và tiếp tục khi hết 30 phút.
+- PASS validator housework/4 đối chứng, append audit, daily plan/5 đối chứng, JLPT lock 10/10. RNWeb thật kiểm 15 ý gồm đủ 7 ý mới, danh mục 12 đề, ẩn/hiện/lưu câu tự trả lời, 95 dòng HTML và ba kích thước không tràn ngang/pageerror; đã xem ba ảnh. Không full Expo Router/native.
+- Báo cáo `reviews/HOUSEWORK_198_202_REPORT_2026-10-10.md`; inventory/append audit và evidence tại `runtime-tests/2026-10-10-housework`. 785 trường sàng chữ/0 exact60char hit; không quyền/chuyên môn/độc lập ngữ nghĩa được chứng nhận.
+- Đồ bẩn xử lý theo nguy cơ, không chờ chẩn đoán; hình giặt tay/phơi không suy thành quy trình khử khuẩn. Nguồn CDC chỉ kiểm nguyên tắc chung cho cơ sở, không coi quy định Hoa Kỳ là luật Nhật hoặc quy trình tại nhà. Human/domain/native/rights/release vẫn false; tỷ lệ kiến thức toàn sách null. Điểm diễn giải trang 195 và hình cũ 31/40/72 chưa đóng.
+- Bước tiếp: phần tiếng Nhật chăm sóc, trang in 203–208 (mở đầu, cơ thể/tư thế/bệnh và từ di chuyển); đọc nguồn, đối chiếu kho từ và bài hiện hành trước khi thêm. Viết ví dụ/giải thích độc lập, không tái dùng câu hội thoại nguồn. Giữ UI JLPT khóa và 12 đề hiện có.
+
+---
+
+## Lịch sử trước phần việc nhà
+
 # Checkpoint hiện hành — tắm và vệ sinh trên giường, 2026-10-10
 
 - Tiếp tục yêu cầu của chủ dự án: phần kế tiếp trang in 186–197 (PDF 188–199). Đã đọc chữ và xem đủ 12 trang; tạo 239 bản ghi liên kết nguồn–ý kiến thức. Thêm 12 ý, tổng 517 ý/87 mục/87 ca; giữ nguyên 505 ý cũ, ID, câu tự giải thích, 144 ngày × 30 phút.
