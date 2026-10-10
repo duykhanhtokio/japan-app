@@ -24,4 +24,4 @@ for(const q of questions){const o=master.questions.find(x=>x.id===q.id);assert.e
  if(o.passageId)assert.equal(q.passageJa,master.passages[o.passageId]);
 }
 const shared=questions.filter(q=>q.id.includes('-listening-5-0')&&[3,4].includes(q.questionNumber));assert.equal(shared.length,2);assert.equal(shared[0].audio.segmentId,shared[1].audio.segmentId);assert.notEqual(shared[0].id,shared[1].id);
-console.log('ORIGINAL N1 02 ADAPTER PASS: 106 unique scored items, combined written section, shared dialogue with independent answer IDs, spoken choices/transcripts/advance questions hidden.');
+console.log('ORIGINAL N1 03 ADAPTER PASS: 106 unique scored items, combined written section, shared dialogue with independent answer IDs, spoken choices/transcripts/advance questions hidden.');

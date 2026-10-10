@@ -29,6 +29,16 @@
       "id": "listening-1/2 lead turns",
       "finding": "Generator reads scripts, not introJa.",
       "action": "Inserted independently authored introduction and advance question in script; kept gist/integrated questions after the story only."
+    },
+    {
+      "id": "duration",
+      "finding": "First measured track3631777ms exceeds approximate55minutes.",
+      "action": "Removed repeated exposition and shortened independent integrated scenes/examples with all decisive conditions, options and keys retained; second actual decode3314731ms."
+    },
+    {
+      "id": "listening-start",
+      "finding": "New exam inherited6500ms default.",
+      "action": "Added explicit0ms override; production runner play-call instrumentation verifies opening start0."
     }
   ],
   "targetedPriorComparison": [
@@ -39,11 +49,13 @@
     }
   ],
   "limitations": [
-    "Lexical candidates do not certify semantic independence or rights.",
+    "Lexical candidate checks do not certify semantic independence or rights.",
     "No native/publisher/perceptual review.",
-    "Actual audio duration and pacing await full measured PCM and playback."
+    "Runtime checks use an isolated RN-web harness; full router and native playback remain unverified."
   ],
   "nativeReviewed": false,
   "publisherReviewed": false,
-  "perceptualApproval": false
+  "perceptualApproval": false,
+  "finalDurationMs": 3314731,
+  "technicalChecks": "PASS; see integration-validation, audio-validation and runtime reports"
 }

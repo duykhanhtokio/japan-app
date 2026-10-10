@@ -43,3 +43,4 @@ for(const k of [2,3,4])for(let i=0;i+3*k<=seq.length;i++)assert.ok(!(seq.slice(i
 const report={status:'PASS_written_structure',examId:m.examId,masterSha256:crypto.createHash('sha256').update(bytes).digest('hex'),written:70,targetTotal:106,remainingListening:36-m.questions.filter(q=>q.section==='listening').length,passages:12,orderingSolutions:5,answerBySection:counts,noWrittenTriples:true,noWrittenShortCycles:true,listeningNotAuthored:m.questions.filter(q=>q.section==='listening').length===0,runtimeIntegrated:m.runtimeIntegrated,authoringComplete:m.authoringComplete,publisherReviewed:false,reviewedByNativeSpeaker:false,releaseReady:false};
 if(process.argv.includes('--write-report'))fs.writeFileSync('docs/jlpt-workspace/original/n1-03/written-validation.json',JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report));
+
