@@ -1,3 +1,21 @@
+# Checkpoint · 2026-10-10 · Tail roles and knowledge gaps
+
+Current runtime: 164 planned days × 30 minutes = 4920 minutes, no week limit. 91 supplemental knowledge units / 549 teaching points / 91 probes; 104 reading cards; 369 terms; 12 mock forms / 360 questions. Four new days 161–164 contain 13 original teaching points and four independently authored cases. Existing base, atomic and language JSON bytes, IDs and revisions remain unchanged. Gap units integrate through the existing atomic study UI.
+
+The remaining five printed pages 270–274 (PDF272–276) were reviewed for document role. This is the tail exception to minimum20-page batches. Page271 answer-bearing body was excluded: header/role only. The tail contains an answer divider/key, a blank response sheet, learning-resource information and publication metadata; no lessons or answer content copied from it.
+
+Reviewed all12 existing source-atom inventories: 2844 recorded rows (with overlap), zero missing/mismatched runtime point/term/text/day links. This checks recorded mappings, not all-source semantic completeness. Revisited source figures31,40,72,195 and historical open items. New material covers two-level handwashing legend interpretation; functional and individual emergency reserves; patient-side orientation of colon anatomy; distinguishing scrotum/testis/foreskin before interpreting care wording. Original explanations/probes and boundaries are in gap-supplements.json; primary source references stay in the audit, outside the app.
+
+Remaining: exact small color boundaries31; two small unlabelled objects40; ambiguous male washing action195, not resolved by anatomy definitions. No universal massage/intimate-care protocol authored. Full original-atom denominator, specialist/native review, native/full Expo Router test and learner timing remain unverified. Coverage percent null, all review/release flags false. Historical source audits kept unchanged; current superseding findings in tail-gap-review-2026-10-10.json.
+
+Validation: tail-gap/daily-plan/language249-prefix/foundation/care-Japanese/language20/language229 validators pass, with preservation/negative controls. Twelve-mock validation passes with the already available private asset fallback. Legacy atomic validator passes unit/revision/assignment checks but its later content equality assertion against49e6f67 fails: current base predates this batch and differs from that old commit. This batch instead verifies baseline SHA256 of all three old runtime JSON files. Do not claim the full legacy atomic script passed.
+
+Browser verification PASS: all4 units/13 points rendered; all4 probes reveal/reload/edit-hide; old atomic and reading145/149/154 responses reload; 12 catalog mock forms; 12 unit/view checks without overflow; 0 JavaScript errors. Browser evidence: runtime-tests/2026-10-10-tail-gaps/evidence.json; actual focused Kaigo/Royal React Native Web harness, not native or full Expo Router. Three screenshot viewports390×844,768×1024,844×390 manually inspected. No source PDF, extracted text or source images published. Repo JLPT UI untouched.
+
+Next: progressively verify all original knowledge atoms and unresolved diagram labels; resolve page195 from a trustworthy Japanese edition with specialist review before authoring any action. Never infer100% from row/page/card totals.
+
+---
+
 # Checkpoint hiện hành — 21 trang249–269 · 2026-10-10
 
 - Đã đọc và xem đủ21trang in249–269/PDF251–271, nguồn SHA256997bf386 khớp. Tiếp theo phần cuối270–274 chỉ còn5trang: kiểm metadata/vai trò theo ngoại lệ cuối sách, không dùng bảng đáp án làm đầu vào sáng tác; rồi kiểm gaptoàn sách31/40/72/195 và mọi ý thiếu/nông. Không coi tới269là đủ100%kiến thức.

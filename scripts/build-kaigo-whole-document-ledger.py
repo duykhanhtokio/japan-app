@@ -6,6 +6,10 @@ def read(p):return json.loads((R/p).read_text())
 old=read('docs/ssw-workspace/kaigo/reviews/knowledge-depth-coverage-2026-10-08.json')
 a=read('docs/ssw-workspace/kaigo/drafts/atomic-supplements-2026-10-09.json')
 rt=read('src/data/kaigo/atomic-supplements.json');c=read('src/data/kaigo/content.json');v=read('docs/ssw-workspace/kaigo/drafts/source-vocabulary-inventory-2026-10-08.json')
+gapAudit=read('docs/ssw-workspace/kaigo/reviews/tail-gap-review-2026-10-10.json')
+gapRuntime=read('src/data/kaigo/gap-supplements.json')
+a={**a,'units':a['units']+gapAudit['units']}
+rt={**rt,'units':rt['units']+gapRuntime['units'],'days':rt['days']+gapRuntime['days']}
 def pages(value):
  if isinstance(value,list):return value
  result=[]
@@ -45,7 +49,9 @@ for pdf in range(1,277):
  elif p>=271:role='answer-sheet-resource-or-publication-information'
  elif p<9:role='cover-preface-toc-or-orientation'
  else:role='unmapped-page-requires-review'
- pageRows.append(dict(pdfPage=pdf,printedPage=p if p>0 else None,role=role,sectionIds=ks,languageIds=ls,termIds=ts,newUnitIds=us,visualSpotCheck=p in visual,supplementalTaskIds=[x['runtimeTaskId'] for x in language20['cards']+language229['cards']+language249['cards'] if x['printedPage']==p],allLabelsCaptionsFactsCertified=False,status='NOT_FULLY_ATOMIC_CERTIFIED'))
+ tail=next((x for x in gapAudit['tailPages'] if x['printedPage']==p),None)
+ if tail:role=tail['role']
+ pageRows.append(dict(tailRoleReview=tail['reviewScope'] if tail else None,pdfPage=pdf,printedPage=p if p>0 else None,role=role,sectionIds=ks,languageIds=ls,termIds=ts,newUnitIds=us,visualSpotCheck=p in visual,supplementalTaskIds=[x['runtimeTaskId'] for x in language20['cards']+language229['cards']+language249['cards'] if x['printedPage']==p],allLabelsCaptionsFactsCertified=False,status='NOT_FULLY_ATOMIC_CERTIFIED'))
 report=dict(version=1,date='2026-10-09',canonicalSource=old['canonicalSource'],baselineCommit='49e6f67a07ed37ffd08f22f2a8442e2edcebdc50',scopeVi='Toàn 276 trang được đăng ký; liên kết cấp mục, từ, mục tiêu ngôn ngữ và ý mới. Chưa là danh mục từng ý gốc đầy đủ.',allSourceKnowledgeFullyCovered=False,originalKnowledgeCoveragePercent=None,percentageReasonVi='Chưa có mẫu số gồm mọi ý, nhãn, chú thích và dữ kiện gốc; không dùng số trang hay số thẻ làm tỷ lệ kiến thức.',counts=dict(pdfPages=276,sections=len(sections),languageObjectives=len(langs),sourceLexicalRecords=len(terms),newUnits=len(a['units']),newTeachingPoints=len(points),newCases=len(a['units']),newStudyDays=len(rt['days']),visualSpotCheckPages=len(visual)),pageRows=pageRows,sections=sections,newTeachingPoints=points,languageObjectives=langs,lexicalRecords=terms,remainingVi=['Tách và kiểm mọi nhãn/hướng mũi tên/chú thích ở các hình chưa kiểm trực quan.', 'Phân rã mọi mục gốc thành ý nhỏ và kiểm tính tương đương từng ý; liên kết cấp trang hoặc cấp mục chưa chứng minh đủ.', 'Duyệt chuyên môn và bản ngữ vẫn chưa thực hiện; kiểm bản cài native chưa chạy.'],humanReviewed=False,domainReviewed=False,releaseReady=False)
 folder=R/'docs/ssw-workspace/kaigo/reviews';folder.mkdir(exist_ok=True)
 (folder/'whole-document-ledger-2026-10-09.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
@@ -119,8 +125,21 @@ body+='<p><strong>Đợt 249–269:</strong> đọc và xem21trang; tự viết2
 body+=table('Đọc hiểu mới · 249–269 · văn bản và dữ kiện độc lập',['Trang in / PDF','Mã thẻ app','Ngày','Mục tiêu','Rà khác biệt'],[(str(x['printedPage'])+' / '+str(x['pdfPage']),x['runtimeTaskId'],x['runtimeDay'],x['goalVi'],x['independentSceneReview']) for x in language249['cards']])
 plan=read('src/data/kaigo/daily-plan.json')
 report['bodyAtomAudit']=dict(atomCount=len(bodyAtoms['atoms']),fullScopeAtomInventoryCertified=False)
+report['tailGapAudit']=gapAudit
+report['remainingVi']+=gapAudit['remainingVi']
+body+='<p><strong>Rà phần cuối và khoảng trống:</strong> 5 trang in 270–274 được kiểm vai trò; trang 271 chỉ kiểm tiêu đề, loại trừ nội dung đáp án. Thêm 4 buổi / 13 ý / 4 ca độc lập. Hiện có 164 ngày × 30 phút, 549 ý bổ sung, 104 thẻ đọc và 12 đề. 2844 hàng trong 12 danh mục đã ghi có liên kết hợp lệ; chưa chứng nhận danh mục ý gốc đầy đủ.</p>'
+gapEvidencePath=R/'docs/ssw-workspace/kaigo/runtime-tests/2026-10-10-tail-gaps/evidence.json'
+if gapEvidencePath.exists():
+ gapEvidence=json.loads(gapEvidencePath.read_text())
+ if gapEvidence.get('gapRuntimeSha256')==hashlib.sha256((R/'src/data/kaigo/gap-supplements.json').read_bytes()).hexdigest():
+  report['tailGapBrowserEvidence']=gapEvidence
+  body+='<p>Kiểm trình duyệt bản hiện tại: 4 buổi / 13 ý / 4 ca; lưu–tải lại–sửa ẩn đáp án, giữ lượt ôn kiến thức và đọc cũ; 12 lượt xem ở 3 kích thước không tràn ngang, 0 lỗi JavaScript. Chưa kiểm native hoặc toàn bộ Expo Router.</p>'
+body+=table('Điểm thiếu/nông đã rà lại',['Trang in','Kết quả và phần còn mở'],[(x['printedPage'],x['status']) for x in gapAudit['findings']])
+body+=table('Ý mới lấp khoảng trống',['Mã ý','Ngày','Giải thích mới'],[(p['id'],u['runtimeDay'],p['explanationVi']) for u in gapAudit['units'] for p in u['points']])
+body+=table('Phần cuối sách',['Trang in / PDF','Vai trò','Phạm vi xem'],[(str(x['printedPage'])+' / '+str(x['pdfPage']),x['role'],x['reviewScope']) for x in gapAudit['tailPages']])
 report['dailyPlan']=dict(totalDays=plan['totalDays'],dailyMinutes=30,maxWeeks=None,finalCompletionDays=None,learnerTimeMeasured=False)
 calendar=[(d['day'],30,d['titleVi'],d['studyPlanVi']) for d in plan['baseDays']]+[(d['day'],30,' · '.join(u['titleVi'] for u in rt['units'] if u['id'] in d['unitIds']),d['studyPlanVi']) for d in rt['days']]+[(d['day'],30,next(g['titleVi'] for g in languageRuntime['groups'] if g['id']==d['groupId']),d['studyPlanVi']) for d in languageRuntime['days']]
+calendar.sort(key=lambda row:row[0])
 body+=table('Lịch học mở · mọi ngày 30 phút · số ngày còn tăng theo nội dung',['Ngày','Phút dự kiến','Nội dung','Phân bổ'],calendar)
 (folder/'whole-document-ledger-2026-10-09.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 body+=table('287 bản ghi từ nguồn → kho từ app',['Mã','Trang','Từ','Cách đọc','Nghĩa mới','Mã app','Ngày liên quan','Trạng thái'],[(x['id'],x['sourcePrintedPages'],x['termJa'],x['readingJa'],x['meaningVi'],x['runtimeTermIds'],x['days'],x['status']) for x in terms])
