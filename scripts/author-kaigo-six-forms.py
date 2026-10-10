@@ -6,6 +6,8 @@ import json, hashlib, random, re, copy
 from fugashi import Tagger
 ROOT=Path(__file__).resolve().parents[1]
 D=ROOT/'docs/ssw-workspace/kaigo/drafts'
+if (D/'mock-collection.json').exists() and len(json.loads((D/'mock-collection.json').read_text()).get('forms',[]))>6:
+    raise SystemExit('Historical six-form generator cannot replace the expanded collection; use author-kaigo-twelve-forms.py.')
 tagger=Tagger()
 forms={}
 def q(kind,n,section,pages,stem,vi,*options,passage='',passage_vi='',figure=None):

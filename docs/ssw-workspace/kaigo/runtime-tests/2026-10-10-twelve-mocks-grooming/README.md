@@ -1,0 +1,7 @@
+# Executed checks: twelve-form catalog and six new forms
+
+The harness is `../2026-10-08-six-mocks/build.cjs`; it bundles the actual KaigoCourse and Royal components. Set `KAIGO_ESBUILD_MODULE`, `KAIGO_ASSET_FALLBACK_ROOT` (only for a sparse checkout), and `KAIGO_BROWSER_PUBLIC`, then run that build script. Set `KAIGO_PLAYWRIGHT_MODULE`, `KAIGO_CHROMIUM_MODULE`, `KAIGO_CHROMIUM_PATH`, and the same `KAIGO_BROWSER_PUBLIC`, then run `node docs/ssw-workspace/kaigo/runtime-tests/2026-10-10-twelve-mocks-grooming/executed-browser-check.cjs`.
+
+Chromium module supplies the Lambda-compatible arguments; executable path is explicit. The test opens localhost:8789, checks the 12-form catalog at 393×852, 768×1024 and 1280×800, completes each new form 04–06, restores all six sessions, cancels early submission, then confirms submission and scores. It checks all 720 new rationales, the loading of all 15 new figures, eight new atomic explanations and the revised denture explanation. Three catalog screenshots and one representative figure screenshot are retained; all 15 authored PNGs were separately viewed in a contact sheet.
+
+`browser-evidence.json` is generated only after all assertions pass. No page errors or horizontal overflow were observed. This is focused React Native Web, with expo-image mapped to RN Image. Full Expo Router and installed Android/iOS binary are not tested. No native-device, human-review or release certification is implied.

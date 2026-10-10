@@ -1,6 +1,6 @@
 # Hướng dẫn chính thức — Tokutei Gino 介護
 
-Phiên bản: 5. Ngày duyệt: 2026-10-09 (Asia/Tokyo).
+Phiên bản: 6. Ngày duyệt: 2026-10-09 (Asia/Tokyo).
 Trạng thái: CHỦ DỰ ÁN ĐÃ DUYỆT PHƯƠNG ÁN BIÊN SOẠN.
 Repository: duykhanhtokio/japan-app. Nhánh: recovery/jlpt-n3-n1.
 Đây là hợp đồng biên soạn; duyệt phương án không chứng nhận nội dung chưa được tạo, kiểm duyệt hoặc tích hợp.
@@ -163,3 +163,7 @@ Bảng cấp trang/mục chỉ là liên kết. Không báo 100% kiến thức t
 ## 16. Quyết định mới: bỏ giới hạn 8 tuần — 2026-10-09
 Chủ dự án yêu cầu duy nhất về lịch là mỗi ngày 30 phút và đủ toàn bộ kiến thức trong tài liệu. Mọi giới hạn 8 tuần/56 ngày trong quyết định cũ chỉ là lịch sử. Giữ ID bài và tiến trình đã có; được tách ngày, thêm ngày và phân bổ lại để không ép nội dung. Mỗi chủ đề chi tiết có một buổi riêng; có thể tách tiếp khi tải thực tế cần. Lịch hiện tại không phải số ngày cuối cùng.
 Đề kỹ năng vẫn 45 câu/60 phút theo cấu trúc. Lịch học đặt hai ngày luyện 30 phút, cùng lượt được lưu khi trở ra; không gọi hai buổi ngắt quãng là thi mô phỏng liên tục. Đề đầy đủ vẫn có trong danh mục riêng. Chưa đo tải học thì ghi dự kiến, không hứa hoàn tất mọi mục trong đúng 30 phút.
+
+
+## 17. Mở rộng phục vụ ôn tập — yêu cầu 2026-10-10
+Chủ dự án yêu cầu tiếp tục khối sau và tăng số bài thi để ôn hiệu quả. Đợt này lựa chọn biên tập nâng lên12đề:6kỹ năng×45câu/60phút,6Nhật×15câu/30phút, tổng360câu; không phải12cặp. Thêm6đề04–06,180câu và15sơ đồ độc lập, giữ6đề/180câu đã có cùngID/fingerprint/lưu lượt. Không phóng tác câu nguồn hoặc chỉ đổi danh từ. Mục13 về đáp án,furigana,dịch sau nộp,resume tiếp tục áp dụng. Các đề bổ sung ởdanh mục, khôngép vào144ngày học hiện có. Kỹ năng có thể luyện2buổi30phút cùng lượt lưu; khônggọi đó là mô phỏng liên tục60phút. Sau mỗi lượt, dànhbuổi riêng30phút chữa câu sai/bỏtrống, tự giải thích lý do và ôn chủ đề; ưu tiên một đề chưa làm trước khi thi lại đề cũ. Chưa đo độkhó/tải hoặc dữ liệu người học, không tuyênbố12đề bảođảm hiệu quả hay đỗ. Tích hợp kiểm tra nội bộ; human/domain/native/rights/release vẫn chờ.

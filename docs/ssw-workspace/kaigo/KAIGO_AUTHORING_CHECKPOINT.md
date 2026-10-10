@@ -1,3 +1,18 @@
+# Checkpoint hiện hành — chỉnh trang và 12 đề, 2026-10-10
+
+Yêu cầu mới của chủ dự án: tiếp tục phần kế tiếp và tăng số đề để ôn tập hiệu quả. Rules v6/approved-plan v7 ghi nhận việc tăng; lựa chọn biên tập hiện hành là **12 đề/360 câu**, gồm 6 kỹ năng và 6 Nhật. Lịch 144 ngày × 30 phút giữ nguyên; luyện thêm là tùy chọn. Không diễn giải số đề thành chứng nhận hiệu quả/đỗ thi.
+
+- Trang in 170–184: đã đọc và xem hình 15 trang, 195 bản ghi đối chiếu; thêm 8 ý thành 505 ý/87 mục/87 ca. Sửa duy nhất ý cũ oral-details-6 về bảo quản răng giả theo vật liệu/hướng dẫn nha khoa; giữ các ID/ca/lịch khác.
+- Sáu đề 04–06 thêm 180 câu độc lập/720 lý giải/15 hình tự vẽ. Giữ nguyên toàn bộ sáu đề cũ, khóa tiến độ và trường ngoài mock; furigana có ở các thành phần cần đọc. Việt/giải thích sau nộp; đáp án tổng bộ 90/90/90/90.
+- Validator bộ 12 đề + 8 đối chứng lỗi; grooming + 4 đối chứng; daily plan + 5; khóa JLPT 10/10 đạt. RNWeb thực hiện 180 câu mới, lưu/tiếp tục/hủy/nộp/chấm/chữa; tải 15 hình, đối chiếu 720 lý giải và 8 ý mới/1 ý sửa; ba kích thước không tràn ngang/lỗi trang. Không full Expo Router/native.
+- Báo cáo hiện hành: `reviews/GROOMING_AND_TWELVE_MOCKS_2026-10-10.md`; baseline/QA/furigana/originality/append audit; evidence ở `runtime-tests/2026-10-10-twelve-mocks-grooming`. Human/domain/native/rights/release vẫn false. Không tỷ lệ toàn sách.
+- Lưu patch trên cây remote mới nhất, bảo toàn JLPT đồng thời; đối chiếu blob và ref lease, không force/reset hoặc đưa nguồn riêng vào git. Không ghi SHA mới bằng commit phụ.
+- Bước tiếp: trang in 186–197; tiếp tục rà chuyên môn/bản ngữ và thử người học/thiết bị. Generator lịch sử sáu đề không được hạ danh mục 12 đề.
+
+---
+
+## Lịch sử trước mở rộng 12 đề
+
 # Checkpoint hiện hành — 6 đề thi thử, 2026-10-08
 
 Phần này thay thế số lượng2đề/60câu và câu hỏi số đề bổ sung chưa duyệt trong lịch sử phía dưới. Chủ dự án đã yêu cầu nâng tổng lên6đề, sửa theo nguyên tắc đã duyệt và tiếp tục hoàn thiện/lưuGitHub/đưa vàoappkiểmtra.

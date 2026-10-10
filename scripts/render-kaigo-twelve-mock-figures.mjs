@@ -1,0 +1,4 @@
+import fs from 'node:fs';const {chromium}=await import(process.env.KAIGO_PLAYWRIGHT_MODULE);const {default:c}=await import(process.env.KAIGO_CHROMIUM_MODULE);
+const root=fs.realpathSync(new URL('../',import.meta.url));fs.mkdirSync(root+'/assets/kaigo/practical',{recursive:true});
+const browser=await chromium.launch({executablePath:process.env.KAIGO_CHROMIUM_PATH,args:c.args,headless:true});const p=await browser.newPage({viewport:{width:500,height:340},deviceScaleFactor:2});
+for(const n of [4,5,6])for(let j=1;j<=5;j++){const key=`s0${n}-judgement-0${j}`;await p.setContent('<style>body{margin:0}</style>'+fs.readFileSync(root+'/docs/ssw-workspace/kaigo/drafts/mock-figures/'+key+'.svg','utf8'));await p.screenshot({path:root+'/assets/kaigo/practical/'+key+'.png'});}await browser.close();console.log('RASTERIZED_15');
