@@ -51,4 +51,3 @@ const priorN103=JSON.parse(fs.readFileSync('src/data/jlpt-original/n1/03/master.
 const report={status:'PASS_content_structure',examId:m.examId,masterSha256:crypto.createHash('sha256').update(bytes).digest('hex'),written:70,listeningResponses:36,independentDialogueRecordings:35,sharedDialogueScoredUnits:2,passages:12,unscoredExamples:5,requiredImages:0,answerPools:pools,answerBySection:sections,noTriples:true,noRepeatedShortCycles:true,distinctFromPriorPatterns:patterns,ordering:'Stored solution and star alignment checked; individual AI editorial review recorded separately, not native certification.',runtimeIntegrated:m.runtimeIntegrated,publisherReviewed:false,reviewedByNativeSpeaker:false,releaseReady:false};
 if(process.argv.includes('--write-report'))fs.writeFileSync('docs/jlpt-workspace/original/n1-04/content-validation.json',JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report,null,2));
-
