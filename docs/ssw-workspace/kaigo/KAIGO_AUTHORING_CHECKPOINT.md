@@ -1,3 +1,18 @@
+# Checkpoint hiện hành — cụm20trang229–248 · 2026-10-10
+
+- Điểm tiếp tục mới nhất:249–269 (21trang bài đọc), rồi phần cuối sách và các gap mở. Khối229–248 đã đọc và xem20trang/PDF231–250 đúng SHA256997bf386. Trang244 là phân chương, không tăng số bài học.
+- Tự viết13hội thoại6lượt+2prose,furigana/câu hỏi/ý đối chiếu Việt;15thẻ mới có ID và stateRevision riêng.5nhóm/buổi149–153 nối bài nền37/38/43/44/48;153ngày×30=4590phút dự kiến, không đo tải. Tổng83thẻ đọc hiểu=52nền+16trước+15mới.
+-82liên kết từ đã có ở230/238/245/246 (19/19/21/23), kho369mục không thêm bản sao. Khái niệm và mục tiêu lấy để kiểm kiến thức; tình huống, diễn biến, câu hỏi và lời giải mới. Không dùng bảng đáp án hoặc hình nguồn; source-review ghi khác biệt từng bài và vai trò trang244.
+- Bytehash content.json/atomic-supplements.json bất biến;536points/87units/87cases và12mocks/360Q giữ.16thẻ/furigana/ID/revision+4buổi209–228 và57base+87atomicdays giữ nguyên. Validator20trước kiểm prefix chính xác và hash snapshot cũ; evidence lịch sử không sửa thành kiểm bản mới.
+- QA dữ liệu/liên kết/furigana/preservation/privacy PASS/6negativecontrols; daily-planPASS/5negativecontrols; prior16prefixPASS/5negativecontrols; JLPTlock10/10PASS. Focused actualKaigoCourse/Royal RNWeb build/browserPASS:15cards/82lexical-links, hidden/reveal/reload/edit-hide, priorreading+atomicanswerreload,12formcatalog,5groups×3views,31supplementalHTMLrows,0pageErrors/overflow.3screenshots visually inspected.
+- Báo cáo LANGUAGE229_BATCH_REPORT_2026-10-10.md; language229-source-review/originality-review/validation; runtime-tests/2026-10-10-language229/evidence.json và3ảnh. LedgerJSON/HTML cập nhật31supplemental+52base=83readingcards,232visualpages và153planned days; không là mẫu số đầy đủ hoặc %toàn sách.
+- Screen15đoạn Nhật mới/0exact35char hit,0exactduplicate với thẻ trước; manualAIscene-review có ghi từng bài, không semantic/rights certification. Human/domain/native/rights/releasefalse. Không fullExpoRouter/native/fullrepoTypeScript; buildwarningexpo/tsconfig.base không thay typecheck. Giữ các gap31/40/72/195 và hạn chế migrationatomic revision203–208.
+- Parentremote trước soạn95dc1372512e7366370a96f98688ac68c5b7bb7e; localHEADeb75e866 khác lịch sửGitAPI nhưng payload đã xác minh ở đợt trước. Lưu cụm hẹp bằng Gitblob/tree/commit/ref expected-head lease trên đầu nhánh hiện tại, đọc lại ref/tree và so toàn bộ Gitblobsha; khôngforce/ghiđèJLPT,không gọi đây là scriptWORKPERSISTENCEPASS hoặc tạo commitchỉchépSHA.
+
+---
+
+## Lịch sử trước cụm229–248
+
 # Checkpoint hiện hành — tiếng Nhật chăm sóc 203–208, 2026-10-10
 
 - Đọc chữ và xem đủ sáu trang 203–208/PDF 205–210; các ô Nhật bị thiếu khi trích font đã đọc trên ảnh. Đối chiếu 110 bản ghi từ có sẵn: Nhật/kana khớp; 16 nghĩa app có diễn đạt khác/rộng hơn nhưng tương đương theo ngữ cảnh đã rà ở mức AI. Không tạo từ trùng, kho vẫn 369 mục.
