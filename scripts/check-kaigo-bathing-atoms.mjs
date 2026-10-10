@@ -22,7 +22,7 @@ function check(a){
   const {contentRevision,...content}=u;assert.equal(contentRevision,createHash('sha256').update(JSON.stringify(sorted(content))).digest('hex'));
  }
  assert.equal(r.units.length,87);assert(r.units.reduce((n,u)=>n+u.points.length,0)>=517);
- assert.equal(read('src/data/kaigo/daily-plan.json').totalDays,144);
+ assert(read('src/data/kaigo/daily-plan.json').totalDays>=144);
  assert(!/sourceSha256|sourcePrintedPages|https?:|\.pdf/.test(JSON.stringify(r)));
 }
 check(a);let negativeControlsRejected=0;

@@ -31,8 +31,10 @@ for x in v['entries']:
  if not matches:matches=[t for t in c['terms'] if t['termJa']==x['termJa']]
  ids=[t.get('id') for t in matches];lessons=[l for l in c['lessons'] if any(i in l['termIds'] for i in ids)]
  terms.append(dict(id=x['id'],sourcePrintedPages=pages(x['sourcePrintedPages']),termJa=x['termJa'],readingJa=x['readingJa'],meaningVi=x['meaningVi'],runtimeTermIds=ids,days=[l['day'] for l in lessons],status='runtime-linked' if lessons else 'runtime-mapping-missing',humanReviewed=False))
-visual=list(range(10,41))+list(range(42,67))+list(range(68,96))+list(range(98,119))+list(range(120,143))+list(range(144,152))+list(range(152,170))+list(range(170,185))+list(range(186,198))+list(range(198,203))+list(range(203,209))+[47,49,51,53,54,55,56,57,58,61,63,70,79,80,82,88,90,92,125,126,127,134,135,136,137,138,139,140,141,142,145,146,147,148,156,162,163,164,165,166,167,168,169,172,173,174,175,176,177,178,179,181,182,183,184,188,191,192,193,194,195,196,197]
+visual=list(range(10,41))+list(range(42,67))+list(range(68,96))+list(range(98,119))+list(range(120,143))+list(range(144,152))+list(range(152,170))+list(range(170,185))+list(range(186,198))+list(range(198,203))+list(range(203,229))+[47,49,51,53,54,55,56,57,58,61,63,70,79,80,82,88,90,92,125,126,127,134,135,136,137,138,139,140,141,142,145,146,147,148,156,162,163,164,165,166,167,168,169,172,173,174,175,176,177,178,179,181,182,183,184,188,191,192,193,194,195,196,197]
 visual=sorted(set(visual))
+language20=read('docs/ssw-workspace/kaigo/reviews/language20-source-review-2026-10-10.json')
+languageRuntime=read('src/data/kaigo/language-supplements.json')
 pageRows=[]
 for pdf in range(1,277):
  p=pdf-2;ks=[x['id'] for x in sections if p in x['sourcePrintedPages']];ls=[x['id'] for x in langs if p in x['sourcePrintedPages']];ts=[x['id'] for x in terms if p in x['sourcePrintedPages']];us=[u['id'] for u in a['units'] if p in u['sourcePrintedPages']]
@@ -41,7 +43,7 @@ for pdf in range(1,277):
  elif p>=271:role='answer-sheet-resource-or-publication-information'
  elif p<9:role='cover-preface-toc-or-orientation'
  else:role='unmapped-page-requires-review'
- pageRows.append(dict(pdfPage=pdf,printedPage=p if p>0 else None,role=role,sectionIds=ks,languageIds=ls,termIds=ts,newUnitIds=us,visualSpotCheck=p in visual,allLabelsCaptionsFactsCertified=False,status='NOT_FULLY_ATOMIC_CERTIFIED'))
+ pageRows.append(dict(pdfPage=pdf,printedPage=p if p>0 else None,role=role,sectionIds=ks,languageIds=ls,termIds=ts,newUnitIds=us,visualSpotCheck=p in visual,supplementalTaskIds=[x['runtimeTaskId'] for x in language20['cards'] if x['printedPage']==p],allLabelsCaptionsFactsCertified=False,status='NOT_FULLY_ATOMIC_CERTIFIED'))
 report=dict(version=1,date='2026-10-09',canonicalSource=old['canonicalSource'],baselineCommit='49e6f67a07ed37ffd08f22f2a8442e2edcebdc50',scopeVi='Toàn 276 trang được đăng ký; liên kết cấp mục, từ, mục tiêu ngôn ngữ và ý mới. Chưa là danh mục từng ý gốc đầy đủ.',allSourceKnowledgeFullyCovered=False,originalKnowledgeCoveragePercent=None,percentageReasonVi='Chưa có mẫu số gồm mọi ý, nhãn, chú thích và dữ kiện gốc; không dùng số trang hay số thẻ làm tỷ lệ kiến thức.',counts=dict(pdfPages=276,sections=len(sections),languageObjectives=len(langs),sourceLexicalRecords=len(terms),newUnits=len(a['units']),newTeachingPoints=len(points),newCases=len(a['units']),newStudyDays=len(rt['days']),visualSpotCheckPages=len(visual)),pageRows=pageRows,sections=sections,newTeachingPoints=points,languageObjectives=langs,lexicalRecords=terms,remainingVi=['Tách và kiểm mọi nhãn/hướng mũi tên/chú thích ở các hình chưa kiểm trực quan.', 'Phân rã mọi mục gốc thành ý nhỏ và kiểm tính tương đương từng ý; liên kết cấp trang hoặc cấp mục chưa chứng minh đủ.', 'Duyệt chuyên môn và bản ngữ vẫn chưa thực hiện; kiểm bản cài native chưa chạy.'],humanReviewed=False,domainReviewed=False,releaseReady=False)
 folder=R/'docs/ssw-workspace/kaigo/reviews';folder.mkdir(exist_ok=True)
 (folder/'whole-document-ledger-2026-10-09.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
@@ -100,10 +102,16 @@ body+=table('Việc nhà và môi trường sống · trang 198–202 · chưa c
 careJapanese=read('docs/ssw-workspace/kaigo/reviews/care-japanese-source-atoms-2026-10-10.json')
 report['careJapaneseAtomAudit']=dict(atomCount=len(careJapanese['atoms']),existingLexicalRecords=110,scopePrintedPages=careJapanese['scopePrintedPages'],fullScopeAtomInventoryCertified=False)
 body+=table('Tiếng Nhật chăm sóc · trang 203–208 · từ hiện có và quan hệ cần phân biệt',['Mã','Trang in / PDF','Loại','Khái niệm hoặc từ','Mã app','Ngày','Biểu đạt app','Giới hạn'],[(x['id'],str(x['printedPage'])+' / '+str(x['pdfPage']),x['kind'],x.get('conceptVi',x.get('termJa','')),x.get('runtimePointId',x.get('runtimeTermId','')),x.get('runtimeDay',x.get('runtimeDays',[])),x['appEquivalentVi'],x['qualificationVi'] or 'Chưa duyệt chuyên môn/con người') for x in careJapanese['atoms']])
+report['language20Audit']=dict(counts=language20['counts'],scopePrintedPages=language20['scopePrintedPages'],existingRuntimePreserved=True,fullScopeAtomInventoryCertified=False)
+report['counts']['supplementalReadingCards']=16
+report['counts']['totalRuntimeReadingCards']=68
+body+='<p><strong>Đợt 209–228:</strong> đã đọc và xem 20 trang; tự viết 16 thẻ đọc hiểu khác bối cảnh, 4 buổi mới, 95 liên kết từ hiện có. Tổng 68 thẻ đọc hiểu; 369 từ, 536 ý chi tiết và 12 đề được giữ. Chưa có duyệt chuyên môn/bản ngữ; chưa kiểm native.</p>'
+body+=table('Đọc hiểu mới · 20 trang 209–228 · biểu đạt độc lập',['Trang in / PDF','Mã thẻ app','Ngày','Mục tiêu tự giải thích','Rà khác biệt tình huống'],[(str(x['printedPage'])+' / '+str(x['pdfPage']),x['runtimeTaskId'],x['runtimeDay'],x['goalVi'],x['independentSceneReview']) for x in language20['cards']])
+body+=table('Từ trong cụm 20 trang · liên kết hiện có, không tăng số từ',['Mã liên kết','Trang in / PDF','Mã từ app','Từ / đọc','Nghĩa tự biên soạn','Ngày ôn','Điều chỉnh liên kết'],[(x['sourceLexicalId'],str(x['printedPage'])+' / '+str(x['pdfPage']),x['runtimeTermId'],x['termJa']+' / '+x['readingJa'],x['meaningVi'],x['runtimeDay'],x['correction'] or '') for x in language20['lexicalRecords']])
 plan=read('src/data/kaigo/daily-plan.json')
 report['bodyAtomAudit']=dict(atomCount=len(bodyAtoms['atoms']),fullScopeAtomInventoryCertified=False)
 report['dailyPlan']=dict(totalDays=plan['totalDays'],dailyMinutes=30,maxWeeks=None,finalCompletionDays=None,learnerTimeMeasured=False)
-calendar=[(d['day'],30,d['titleVi'],d['studyPlanVi']) for d in plan['baseDays']]+[(d['day'],30,' · '.join(u['titleVi'] for u in rt['units'] if u['id'] in d['unitIds']),d['studyPlanVi']) for d in rt['days']]
+calendar=[(d['day'],30,d['titleVi'],d['studyPlanVi']) for d in plan['baseDays']]+[(d['day'],30,' · '.join(u['titleVi'] for u in rt['units'] if u['id'] in d['unitIds']),d['studyPlanVi']) for d in rt['days']]+[(d['day'],30,next(g['titleVi'] for g in languageRuntime['groups'] if g['id']==d['groupId']),d['studyPlanVi']) for d in languageRuntime['days']]
 body+=table('Lịch học mở · mọi ngày 30 phút · số ngày còn tăng theo nội dung',['Ngày','Phút dự kiến','Nội dung','Phân bổ'],calendar)
 (folder/'whole-document-ledger-2026-10-09.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 body+=table('287 bản ghi từ nguồn → kho từ app',['Mã','Trang','Từ','Cách đọc','Nghĩa mới','Mã app','Ngày liên quan','Trạng thái'],[(x['id'],x['sourcePrintedPages'],x['termJa'],x['readingJa'],x['meaningVi'],x['runtimeTermIds'],x['days'],x['status']) for x in terms])

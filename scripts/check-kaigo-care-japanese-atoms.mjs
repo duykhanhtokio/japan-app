@@ -21,7 +21,7 @@ function check(a){
   else{const u=r.units.find(u=>u.points.some(p=>p.id===x.runtimePointId));assert(u);assert.equal(u.points.find(p=>p.id===x.runtimePointId).explanationVi,x.appEquivalentVi);assert(r.days.some(day=>day.day===x.runtimeDay&&day.unitIds.includes(u.id)));}
  }
  for(const u of r.units){assert.deepEqual(u.points,d.units.find(v=>v.id===u.id).points);const {contentRevision,...content}=u;assert.equal(contentRevision,createHash('sha256').update(JSON.stringify(sorted(content))).digest('hex'));}
- assert.equal(r.units.length,87);assert(r.units.reduce((n,u)=>n+u.points.length,0)>=536);assert.equal(c.terms.length,369);assert.equal(c.mocks.length,12);assert.equal(read('src/data/kaigo/daily-plan.json').totalDays,144);
+ assert.equal(r.units.length,87);assert(r.units.reduce((n,u)=>n+u.points.length,0)>=536);assert.equal(c.terms.length,369);assert.equal(c.mocks.length,12);assert(read('src/data/kaigo/daily-plan.json').totalDays>=144);
  assert(!/sourceSha256|sourcePrintedPages|https?:|\.pdf/.test(JSON.stringify(r)));
 }
 check(a);let negativeControlsRejected=0;

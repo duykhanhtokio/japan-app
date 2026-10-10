@@ -3,10 +3,12 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 const read=p=>JSON.parse(fs.readFileSync(p));
 const plan=read('src/data/kaigo/daily-plan.json'),base=read('src/data/kaigo/content.json'),rt=read('src/data/kaigo/atomic-supplements.json');
+const language=read('src/data/kaigo/language-supplements.json');
 const atoms=read('docs/ssw-workspace/kaigo/reviews/body-source-atoms-2026-10-09.json');
 function check(p,a){
  assert.equal(p.dailyMinutes,30);assert.equal(p.maxWeeks,null);assert.equal(p.completeSourceInventory,false);assert.equal(p.learnerTimeMeasured,false);
- const days=[...p.baseDays,...rt.days];assert.equal(p.totalDays,days.length);assert.equal(p.plannedMinutes,days.length*30);
+ assert.deepEqual(p.languageDays,language.days);
+ const days=[...p.baseDays,...rt.days,...p.languageDays];assert.equal(p.totalDays,days.length);assert.equal(p.plannedMinutes,days.length*30);
  days.forEach((d,i)=>{assert.equal(d.day,i+1);assert.equal(d.plannedMinutes,30);});
  for(const d of base.days){const parts=p.baseDays.filter(x=>x.baseDay===d.day);assert.equal(parts.length,d.plannedMinutes/30);parts.forEach((x,i)=>{assert.equal(x.lessonId,d.lessonId);assert.equal(x.mockId,d.mockId);assert.equal(x.part,i+1);assert.equal(x.parts,parts.length);});}
  assert.equal(a.runtimeSha256,createHash('sha256').update(fs.readFileSync('src/data/kaigo/atomic-supplements.json')).digest('hex'));

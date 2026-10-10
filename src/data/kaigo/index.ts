@@ -7,3 +7,7 @@ export const KAIGO_TEST_ONLY = true;
 
 import dailyPlan from './daily-plan.json';
 export const kaigoDailyPlan = dailyPlan;
+
+import languageSupplements from "./language-supplements.json";
+import type {LanguageSupplementCourse} from "./types";
+export const kaigoLanguageSupplements=languageSupplements as LanguageSupplementCourse;

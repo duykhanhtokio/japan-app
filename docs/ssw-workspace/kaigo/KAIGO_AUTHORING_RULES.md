@@ -1,6 +1,6 @@
 # Hướng dẫn chính thức — Tokutei Gino 介護
 
-Phiên bản: 6. Ngày duyệt: 2026-10-09 (Asia/Tokyo).
+Phiên bản: 7. Ngày duyệt: 2026-10-10 (Asia/Tokyo).
 Trạng thái: CHỦ DỰ ÁN ĐÃ DUYỆT PHƯƠNG ÁN BIÊN SOẠN.
 Repository: duykhanhtokio/japan-app. Nhánh: recovery/jlpt-n3-n1.
 Đây là hợp đồng biên soạn; duyệt phương án không chứng nhận nội dung chưa được tạo, kiểm duyệt hoặc tích hợp.
@@ -167,3 +167,8 @@ Chủ dự án yêu cầu duy nhất về lịch là mỗi ngày 30 phút và đ
 
 ## 17. Mở rộng phục vụ ôn tập — yêu cầu 2026-10-10
 Chủ dự án yêu cầu tiếp tục khối sau và tăng số bài thi để ôn hiệu quả. Đợt này lựa chọn biên tập nâng lên12đề:6kỹ năng×45câu/60phút,6Nhật×15câu/30phút, tổng360câu; không phải12cặp. Thêm6đề04–06,180câu và15sơ đồ độc lập, giữ6đề/180câu đã có cùngID/fingerprint/lưu lượt. Không phóng tác câu nguồn hoặc chỉ đổi danh từ. Mục13 về đáp án,furigana,dịch sau nộp,resume tiếp tục áp dụng. Các đề bổ sung ởdanh mục, khôngép vào144ngày học hiện có. Kỹ năng có thể luyện2buổi30phút cùng lượt lưu; khônggọi đó là mô phỏng liên tục60phút. Sau mỗi lượt, dànhbuổi riêng30phút chữa câu sai/bỏtrống, tự giải thích lý do và ôn chủ đề; ưu tiên một đề chưa làm trước khi thi lại đề cũ. Chưa đo độkhó/tải hoặc dữ liệu người học, không tuyênbố12đề bảođảm hiệu quả hay đỗ. Tích hợp kiểm tra nội bộ; human/domain/native/rights/release vẫn chờ.
+
+
+## 18. Cụm liên tục tối thiểu 20 trang — yêu cầu 2026-10-10
+Chủ dự án yêu cầu mỗi lần tiếp tục xử lý liền ít nhất 20 trang in. Đợt hiện hành 209–228: đọc văn bản và kiểm trực quan đủ 20 trang, tự viết tình huống/câu hỏi/ý đối chiếu mới, kiểm trong app rồi xác minh GitHub trước bàn giao. Không đưa nội dung nguồn trực tiếp vào app, không thay tên hoặc danh từ để phóng tác nguyên cốt truyện. Dùng nguồn để kiểm thuật ngữ và mục tiêu; kiểm riêng sự khác biệt về vai, hành động, điều kiện, trình tự và kết quả. Nếu phần cuối tài liệu còn dưới 20 trang thì hoàn tất toàn phần còn lại và ghi rõ số trang thực tế; không lặp trang đã xong để tăng số.
+Số trang xử lý không phải số ngày học: tiếp tục giữ 30 phút/ngày và tăng số ngày khi cần. Các thẻ đọc hiểu bổ sung có ID và phiên bản lưu riêng; không đổi phiên bản của bài, điểm kiến thức hoặc đề cũ chỉ để thêm thẻ mới. Đợt 209–228 thêm bốn buổi dự kiến, không tuyên bố đã đo thời gian hay đủ kiến thức toàn sách.
