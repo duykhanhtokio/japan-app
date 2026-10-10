@@ -384,3 +384,8 @@ Before EVERY new 介護 authoring session, read `docs/ssw-workspace/kaigo/KAIGO_
 ## 2026-10-07 — N3 listening organization selected by publisher
 
 Independent five-skill design: one new unscored example per group. Groups1–2 question before and after dialogue, printed alternatives not spoken. Group3 no advance question; question and four alternatives spoken after the story, no printed alternatives. Groups4–5 three spoken alternatives, no printed alternatives. No whole-dialogue replay. This is a publisher-selected independent organization, not certification of legacy source semantics. Existing approved N3 speed/pauses and approximately40minute target unchanged.
+
+
+## 2026-10-10 — Latest publisher instruction: complete 30/30 and retain historical exams
+
+The publisher explicitly instructed: “lưu lên nhánh rồi tiếp tục. Yêu cầu hoàn thành đủ 30/30 đề, đẩy lên app và giữ nguyên những đề thi cũ (những đề thi thật những năm trước)”. Complete and integrate the remaining independent N1 05 and 06, with full audio and runtime validation, and persist each unit on recovery/jlpt-n3-n1. Preserve ALL historical real exams, catalog entries, source data, audio, assets, saved sessions and fallbacks. The new 30 original forms are additive. This instruction supersedes every historical replacement/removal gate, including after reaching 30/30. Do not delete or hide old exams. The current verified remote checkpoint is 28/30; N1 05/06 remain unfinished. Preserve locked UI and concurrent unrelated work; retain truthful review flags.

@@ -308,7 +308,7 @@ Mọi hình/audio phải tạo mới; không dùng tài nguyên đề cũ để 
 - Khi nộp bài, chỉ hiện trạng thái đúng/sai/chưa trả lời và phương án đúng theo chính sách V1. Không tự bật giải thích/transcript.
 - Điểm luyện tập không được gọi là điểm chuẩn hóa chính thức JLPT khi chưa có mô hình phù hợp.
 - Giữ điều kiện lên cấp: sáu đề khác nhau cùng cấp đạt ít nhất 80%.
-- App đang sản xuất: không cần giữ tiến độ đề cũ. Chỉ xóa toàn bộ đề/tài nguyên cũ khỏi bundle, API, cache và fallback khi bộ thay thế hoàn thiện theo gate đã duyệt; không xóa trước để che phần thiếu. Không động tới dữ liệu game/học khác hoặc viết lại lịch sử Git.
+- Yêu cầu nhà phát hành ngày 10/10/2026: giữ nguyên toàn bộ đề thi thật các năm trước, dữ liệu, audio, tài nguyên, catalog, phiên làm bài và fallback. Bộ 30 đề mới được thêm vào app; không xóa hoặc ẩn đề cũ kể cả sau khi đủ 30/30. Chỉ dẫn này thay thế gate xóa/thay thế cũ. Không động tới dữ liệu game/học khác hoặc viết lại lịch sử Git.
 
 ## 12. Quy trình làm việc bắt buộc
 
@@ -372,3 +372,8 @@ Nhà phát hành trả lời “đồng ý” cho bảng nhịp N2: sau giới t
 ## Nhịp nghe N1 đã chốt — 09/10/2026
 
 Nhà phát hành yêu cầu “chốt nhịp N1 đó và tiếp tục tạo đề”: sau giới thiệu 2 giây, giữa lượt thoại 0,5 giây; trả lời 問題１/２/３/４/５ lần lượt 12/12/12/8/15 giây mỗi đơn vị chấm điểm. Giữ bốn giọng đã duyệt và speedScale 0.9. Mục tiêu khoảng 55 phút (3300000ms); nhạc không lời đúng 60000ms sau問題２, trước mọi hướng dẫn問題３, có hai thông báo. Đây là thiết kế app được chọn, không xác minh nhịp nguồn hay tolerance cố định. Đo bản thu thật; các cờ duyệt nghe/người bản ngữ/phát hành vẫn false.
+
+
+## 2026-10-10 — Latest publisher instruction: complete 30/30 and retain historical exams
+
+The publisher explicitly instructed: “lưu lên nhánh rồi tiếp tục. Yêu cầu hoàn thành đủ 30/30 đề, đẩy lên app và giữ nguyên những đề thi cũ (những đề thi thật những năm trước)”. Complete and integrate the remaining independent N1 05 and 06, with full audio and runtime validation, and persist each unit on recovery/jlpt-n3-n1. Preserve ALL historical real exams, catalog entries, source data, audio, assets, saved sessions and fallbacks. The new 30 original forms are additive. This instruction supersedes every historical replacement/removal gate, including after reaching 30/30. Do not delete or hide old exams. The current verified remote checkpoint is 28/30; N1 05/06 remain unfinished. Preserve locked UI and concurrent unrelated work; retain truthful review flags.
