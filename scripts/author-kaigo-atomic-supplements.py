@@ -940,6 +940,28 @@ deepen('home-environment',[
  'Môi trường phù hợp phải xét khả năng vận động lẫn trạng thái tinh thần, cảm giác yên tâm và riêng tư. Hành lang, cầu thang, phòng tắm và nhà vệ sinh cần có lối tiếp cận, chống trượt và tay vịn phù hợp; đồ hỗ trợ nhằm mở khả năng hoạt động. Hình một người vấp mép thảm cho thấy đồ đặt trên sàn có thể tạo nguy cơ dù phòng sạch: kiểm mép, độ cố định và đường đi, trao đổi phương án an toàn với người dùng.'
 ])
 
+# Care Japanese continuation, 2026-10-10: clarify existing vocabulary, no duplicate terms.
+deepen('body-regions',[
+ '目頭（めがしら）là khóe mắt phía gần mũi; 目尻（めじり）là phía ngoài. 額（ひたい）ở trán, 顎（あご）ở cằm; 首（くび）chỉ vùng cổ, còn 喉（のど）chỉ họng. Khi người dùng chỉ một chỗ, xác nhận đúng vùng thay vì đổi các tên này cho nhau.',
+ '腕（うで）là cánh tay, 手首（てくび）là cổ tay; 指（ゆび）khác 指先（ゆびさき）ở đầu ngón. 手のひら（てのひら）là lòng bàn tay và 手の甲（てのこう）là mu bàn tay. Ở chân, 足首（あしくび）là cổ chân, つま先（つまさき）là phần đầu bàn chân, 踵（かかと）là gót; 足底（そくてい）và 足の裏（あしのうら）cùng chỉ mặt dưới bàn chân.',
+ '腰（こし）là vùng thắt lưng, không đồng nghĩa toàn bộ 背中（せなか）ở lưng. 臀部（でんぶ）và 尻（しり）là hai cách gọi vùng mông. 患側（かんそく）chỉ bên bị ảnh hưởng, 健側（けんそく）chỉ bên không bị ảnh hưởng trong tình huống; hai từ này không tự có nghĩa trái hay phải và không bảo đảm bên còn lại hoàn toàn khỏe.'
+])
+deepen('posture-names',[
+ 'Ba cặp tên cùng nhận diện hướng nằm: 仰臥位（ぎょうがい）／あおむけ là ngửa, 側臥位（そくがい）／よこむき là nghiêng, 腹臥位（ふくがい）／うつぶせ là sấp. Hình mặt hướng lên, hướng sang bên hoặc xuống giúp phân biệt; biết tên không tự cho phép chọn tư thế phù hợp cho người dùng.',
+ '端座位（たんざい）là ngồi ở mép giường thả chân, 椅座位（いざい）là ngồi trên ghế và 立位（りつい）là đứng. 体位（たいい）gọi tư thế cơ thể, 体位変換（たいいへんかん）là việc đổi tư thế, còn 姿勢（しせい）nói về dáng hoặc tư thế. Tên trạng thái đang có khác hành động chuyển sang trạng thái khác.'
+])
+deepen('risk-observation',[
+ '健康（けんこう）nói về sức khỏe nói chung; 体調（たいちょう）hướng tới tình trạng cơ thể hiện tại, 顔色（かおいろ）là sắc mặt. バイタルサイン（ばいたるさいん）là nhóm dấu hiệu sinh tồn cần quan sát hoặc đo theo quy trình. Nhìn sắc mặt khác ghi số đã đo; câu hỏi về tình trạng không tự xác nhận chẩn đoán.',
+ '吐き気（はきけ）là cảm giác buồn nôn, 嘔吐（おうと）là nôn; hình có chất nôn ra minh họa điều đã xảy ra, không chỉ cảm giác muốn nôn. 発汗（はっかん）là ra mồ hôi, 発熱（はつねつ）là sốt: hình lau mồ hôi không chứng minh số nhiệt. はれる chỉ sưng, むくむ chỉ phù; khi báo cần mô tả vùng và diễn biến thay vì tự kết luận nguyên nhân.',
+ '拘縮（こうしゅく）là co rút làm hạn chế vận động khớp, không chỉ một lần cơ gồng cứng. 褥瘡（じょくそう）là loét tì đè, không chỉ gặp ở người nằm liệt giường. 熱中症（ねっちゅうしょう）là bệnh do nóng, không đồng nghĩa mọi sốc nhiệt do chênh nhiệt phòng. Các nghĩa này giúp dùng đúng từ; đánh giá và xử trí theo chuyên môn.',
+ '痛い（いたい）nói đau; 苦しい（くるしい）có thể chỉ khó chịu, khổ sở hoặc khó thở tùy lời người dùng. 症状（しょうじょう）là triệu chứng, 発作（ほっさ）là một cơn phát bệnh. Hỏi thêm và ghi lời đã nghe; không biến một tên triệu chứng như 咳（せき）, めまい hoặc しびれる thành kết luận bệnh trong bảng từ.'
+])
+deepen('movement-devices',[
+ '移乗（いじょう）là chuyển người giữa các chỗ nâng đỡ, khác 移動（いどう）là di chuyển nói chung. 起き上がる（おきあがる）là ngồi dậy từ nằm; 寝返り（ねがえり）là trở mình; 臥床（がしょう）là nằm giường và 離床（りしょう）là rời giường. Không gọi mọi đổi vị trí là cùng một hành động.',
+ '移動用リフト（いどうようリフト）nâng chuyển người, スライディングシート giúp trượt chuyển, 歩行器（ほこうき）là khung tập đi; chúng có cách hỗ trợ khác nhau. シルバーカー／高齢者用手押し車（こうれいしゃようておしぐるま）hỗ trợ sinh hoạt cho người còn tự đi được, không mặc định thay khung tập đi. 白杖（はくじょう）là gậy trắng cho người khó nhìn; hình gậy trắng không phải ví dụ chọn gậy chịu lực theo số chân.',
+ 'Trong ngữ cảnh dụng cụ, ブレーキをかける là cài phanh, 杖（つえ）をつく là chống gậy; không dịch かける hoặc つく chỉ từ nghĩa rời. つかまる là bám/vịn, 握る（にぎる）là nắm, 支える（ささえる）là nâng đỡ. 声かけ（こえかけ）là lên tiếng trao đổi và 誘導（ゆうどう）là hướng dẫn tới nơi; biết từ không thay giải thích, đồng ý hoặc huấn luyện sử dụng dụng cụ.'
+])
+
 bundle=dict(version=1,date='2026-10-09',scopeVi='Bổ sung các ý chi tiết đã đọc trong khối cơ thể/người cần chăm sóc và một số chú thích thao tác; chưa chứng nhận toàn tài liệu.',
     units=units,allSourceKnowledgeFullyCovered=False,humanReviewed=False,releaseReady=False)
 out=ROOT/'docs/ssw-workspace/kaigo/drafts/atomic-supplements-2026-10-09.json'

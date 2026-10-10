@@ -1,3 +1,17 @@
+# Checkpoint hiện hành — tiếng Nhật chăm sóc 203–208, 2026-10-10
+
+- Đọc chữ và xem đủ sáu trang 203–208/PDF 205–210; các ô Nhật bị thiếu khi trích font đã đọc trên ảnh. Đối chiếu 110 bản ghi từ có sẵn: Nhật/kana khớp; 16 nghĩa app có diễn đạt khác/rộng hơn nhưng tương đương theo ngữ cảnh đã rà ở mức AI. Không tạo từ trùng, kho vẫn 369 mục.
+- Thêm 12 ý phân biệt từ/ngữ cảnh (body-regions 3, posture-names 2, risk-observation 4, movement-devices 3), tổng 536 ý/87 mục/87 ca. Giữ nguyên 524 ý trước, ID/ca/lịch, content.json và component; vẫn 12 đề/360 câu và 144 ngày × 30 phút.
+- 216 bản ghi nguồn–từ/ý/nhãn/quan hệ; 203 là chỉ dẫn nhóm nội dung, đoạn văn/đáp án là tổ chức tài liệu. Không tái dùng câu thi/hội thoại hoặc ảnh nguồn. Validator 5 đối chứng, append audit, daily plan 5 đối chứng và JLPT lock 10/10 đạt.
+- RNWeb thật kiểm 32 ý gồm 12 mới, 110 từ/kana/nghĩa qua bài nền nhóm 2/3, 12 đề trong danh mục, tự trả lời ẩn/hiện/lưu/tải lại, 216 dòng HTML, ba kích thước không tràn ngang/pageerror; đã xem ảnh. Không full Expo Router/native. Lần harness đầu chưa chọn nhóm nền trước mở ngày 8, đã sửa điều hướng và chạy lại đạt.
+- Báo cáo `reviews/CARE_JAPANESE_203_208_REPORT_2026-10-10.md`, source-atoms/append-audit và evidence tại `runtime-tests/2026-10-10-care-japanese`. Sàng chữ 797 trường/0 exact60char hit, không chứng nhận độc lập ngữ nghĩa/quyền. Human/domain/native/rights/release false; tỷ lệ toàn sách null; điểm 195 và hình cũ 31/40/72 chưa đóng.
+- Giới hạn lưu: bốn mục có contentRevision mới; AtomicStudy hiện dùng revision mục cho khóa ca, nên câu trả lời revision cũ không tự hiện ở bản mới (khóa cũ không xóa). Kiểm tải lại chỉ chứng minh bản mới. Không báo di trú tiến trình ca cũ đã kiểm; bài nền/đề giữ fingerprint.
+- Bước tiếp: trang in 209–212, mục tiêu đọc hiểu/nghe hiểu chăm sóc di chuyển. Phân tích dữ kiện và chức năng ngôn ngữ, đối chiếu bài/thẻ hiện có, tạo ca và diễn đạt độc lập; không lấy tên, tình huống, câu/đáp án nguồn làm đề app. Giữ UI JLPT khóa và lịch mở 30 phút/ngày.
+
+---
+
+## Lịch sử trước phần tiếng Nhật
+
 # Checkpoint hiện hành — việc nhà và môi trường sống, 2026-10-10
 
 - Tiếp tục phần kế tiếp theo yêu cầu chủ dự án: trang in 198–202/PDF 200–204. Đã đọc chữ, xem đủ năm trang và lập 95 bản ghi đối chiếu, gồm nhãn IADL, chuỗi nấu ăn, osechi, trao đổi khi dọn đồ, giặt/phơi và quan hệ chân–mép thảm.
