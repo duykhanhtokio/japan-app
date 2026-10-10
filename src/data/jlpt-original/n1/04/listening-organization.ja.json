@@ -1,0 +1,278 @@
+{
+  "examId": "jpapp-n1-original-04-v1",
+  "status": "independent_ai_unreviewed",
+  "openingJa": "これから、ジャパンアプリの独自模擬試験、エヌ一、第四回の聴解を始めます。話の内容から、最も合う答えを選んでください。",
+  "soundCheck": [
+    {
+      "role": "femaleStudent",
+      "text": "聞き取りやすい音量か、確かめてください。"
+    },
+    {
+      "role": "adultFemale",
+      "text": "案内と質問は、この声で読みます。"
+    },
+    {
+      "role": "youngMale",
+      "text": "話し手の交代にも注意して聞きましょう。"
+    },
+    {
+      "role": "adultMale",
+      "text": "準備ができたら、練習から始めます。"
+    }
+  ],
+  "generalInstructionsJa": "答えは三十六個です。各問題の練習は採点しません。話は一度だけ聞きます。問題二の後は一分間、音楽が流れます。終わると自動で問題三に進みます。音声だけの答えは、番号を選んでください。",
+  "closingJa": "これで聴解は終わりです。答えの記入を確かめてから提出してください。",
+  "groups": [
+    {
+      "problem": 1,
+      "instructionsJa": "問題一では、次に行うことを選びます。質問は話の前と後に読み、四つの答えは画面に出ます。練習を聞きましょう。",
+      "choicesDisplay": "printed",
+      "readQuestionAfterDialogue": true,
+      "readChoices": false,
+      "replayWholeDialogue": false,
+      "scoredStartJa": "練習はここまでです。これから問題一の採点する話を始めます。",
+      "example": {
+        "id": "jpapp-n1-original-04-v1-practice-1",
+        "scored": false,
+        "prompt": "男の人は、このあと何をしますか。",
+        "script": [
+          [
+            "adultFemale",
+            "男の人は、このあと何をしますか。"
+          ],
+          [
+            "adultFemale",
+            "倉庫の棚に新しい番号を付けます。動かす箱はもう決まりましたが、今ある表示が一部読めません。"
+          ],
+          [
+            "youngMale",
+            "箱を移してから番号を付け直しますか。"
+          ],
+          [
+            "adultFemale",
+            "移したら元の位置が分からなくなります。あなたは読める表示と箱の位置を写真に残してください。番号の一覧は私が作り、移動は午後の班に頼みます。"
+          ],
+          [
+            "youngMale",
+            "では、箱はそのままで、表示と位置を記録します。"
+          ]
+        ],
+        "options": [
+          {
+            "id": "1",
+            "text": "新しい番号の一覧を作る",
+            "rationale": "一覧は女性担当。"
+          },
+          {
+            "id": "2",
+            "text": "箱を棚から移す",
+            "rationale": "午後の班が担当。"
+          },
+          {
+            "id": "3",
+            "text": "現在の表示と箱の位置を撮影する",
+            "rationale": "移動前に記録する男性の仕事。"
+          },
+          {
+            "id": "4",
+            "text": "読めない表示を先に剥がす",
+            "rationale": "表示を剥がす指示はない。"
+          }
+        ],
+        "correctOptionId": "3",
+        "answerExplanationJa": "三番です。移す前に、今の表示と箱の位置を写真に残します。"
+      }
+    },
+    {
+      "problem": 2,
+      "instructionsJa": "問題二では、理由や特徴などを聞き分けます。質問は話の前と後に読み、答えは画面で示します。まず練習です。",
+      "choicesDisplay": "printed",
+      "readQuestionAfterDialogue": true,
+      "readChoices": false,
+      "replayWholeDialogue": false,
+      "scoredStartJa": "練習はここまでです。これから問題二の採点する話を始めます。",
+      "example": {
+        "id": "jpapp-n1-original-04-v1-practice-2",
+        "scored": false,
+        "prompt": "女の人は、紙の地図を渡す理由を何だと言っていますか。",
+        "script": [
+          [
+            "adultFemale",
+            "女の人は、紙の地図を渡す理由を何だと言っていますか。"
+          ],
+          [
+            "youngMale",
+            "会場案内はスマートフォンでも見られるのに、紙も配るんですね。"
+          ],
+          [
+            "adultFemale",
+            "画面を開くと操作の途中で別のページへ戻る方がいました。紙なら道順を見たまま歩けます。会場の電波は十分で、地図の内容も同じです。利用者が操作に慣れていなくても参照し続けられる方法を用意したいんです。"
+          ]
+        ],
+        "options": [
+          {
+            "id": "1",
+            "text": "電波が届かない場所が多いから",
+            "rationale": "電波は十分。"
+          },
+          {
+            "id": "2",
+            "text": "地図を開いた状態を保ちやすいから",
+            "rationale": "操作で画面が替わる問題を避ける。"
+          },
+          {
+            "id": "3",
+            "text": "紙の方が新しい道を示しているから",
+            "rationale": "内容は同じ。"
+          },
+          {
+            "id": "4",
+            "text": "スマートフォンの利用を禁止するから",
+            "rationale": "禁止しない。"
+          }
+        ],
+        "correctOptionId": "2",
+        "answerExplanationJa": "二番です。操作せずに道順を見続けられるよう、紙も用意します。"
+      }
+    },
+    {
+      "problem": 3,
+      "instructionsJa": "問題三は、話全体の中心を捉えます。質問と四つの答えは話の後に読み、答えの文は画面に出ません。練習を聞いてください。",
+      "choicesDisplay": "audio_only",
+      "readQuestionAfterDialogue": true,
+      "readChoices": true,
+      "replayWholeDialogue": false,
+      "scoredStartJa": "練習はここまでです。これから問題三の採点する話を始めます。",
+      "example": {
+        "id": "jpapp-n1-original-04-v1-practice-3",
+        "scored": false,
+        "prompt": "話し手が最も言いたいことは何ですか。",
+        "script": [
+          [
+            "adultMale",
+            "会話の練習では、すぐに言葉が出ないことがあります。その間をすべて失敗と数えると、難しい言い方を試すことも避けてしまいます。相手を待たせた時間だけでなく、その後に伝えられたことを見てください。もちろん、間が長ければ理由を振り返る必要はあります。止まらないことだけを目標にせず、表現を組み立てる試みも練習の成果として扱いたいのです。"
+          ]
+        ],
+        "options": [
+          {
+            "id": "1",
+            "text": "会話の練習では間を必ずなくす",
+            "rationale": "間だけを問題にしない。"
+          },
+          {
+            "id": "2",
+            "text": "難しい表現は練習から除く",
+            "rationale": "試みを残す。"
+          },
+          {
+            "id": "3",
+            "text": "相手を待たせても振り返りは不要だ",
+            "rationale": "理由を振返る。"
+          },
+          {
+            "id": "4",
+            "text": "間の長さだけでなく表現を試した成果も見る",
+            "rationale": "中心的主張。"
+          }
+        ],
+        "correctOptionId": "4",
+        "answerExplanationJa": "四番です。止まらず話すことだけでなく、何を伝えられたかを見ます。"
+      }
+    },
+    {
+      "problem": 4,
+      "instructionsJa": "問題四は、短い言葉に合う返事を選びます。三つの返事も音声だけです。練習で確かめましょう。",
+      "choicesDisplay": "audio_only",
+      "readQuestionAfterDialogue": false,
+      "readChoices": true,
+      "replayWholeDialogue": false,
+      "scoredStartJa": "練習はここまでです。これから問題四の採点する話を始めます。",
+      "example": {
+        "id": "jpapp-n1-original-04-v1-practice-4",
+        "scored": false,
+        "prompt": "その説明、もう少し具体的にしていただけますか。",
+        "script": [
+          [
+            "adultMale",
+            "その説明、もう少し具体的にしていただけますか。"
+          ]
+        ],
+        "options": [
+          {
+            "id": "1",
+            "text": "はい、実際の例を挙げて説明します。",
+            "rationale": "具体化の依頼を受ける。"
+          },
+          {
+            "id": "2",
+            "text": "具体的だから聞かないでください。",
+            "rationale": "依頼を不自然に拒絶。"
+          },
+          {
+            "id": "3",
+            "text": "説明はもう少し前でした。",
+            "rationale": "時間の説明ではない。"
+          }
+        ],
+        "correctOptionId": "1",
+        "answerExplanationJa": "一番です。具体的にしてほしいという依頼に、例を使うと答えます。"
+      }
+    },
+    {
+      "problem": 5,
+      "instructionsJa": "問題五では、説明と相談をまとめて聞き、決定や担当を選びます。質問は話の後に読み、答えは画面に出ます。最後の話には質問が二つあります。練習から始めます。",
+      "choicesDisplay": "printed",
+      "readQuestionAfterDialogue": true,
+      "readChoices": false,
+      "replayWholeDialogue": false,
+      "scoredStartJa": "練習はここまでです。これから問題五の採点する話を始めます。",
+      "example": {
+        "id": "jpapp-n1-original-04-v1-practice-5",
+        "scored": false,
+        "prompt": "二人は、どの組合せで荷物を運びますか。",
+        "script": [
+          [
+            "adultFemale",
+            "展示用の荷物は長い板一枚と、小箱二つです。板は普通の車に入りません。貸出の小型車は無料ですが板が入らず、大型車は千円で全部入ります。台車は無料で全部載りますが、坂では使えません。会場までの道には長い坂があります。費用は千円までです。"
+          ],
+          [
+            "youngMale",
+            "小箱だけ小型車で先に運び、板を台車で運べますか。"
+          ],
+          [
+            "adultMale",
+            "坂があるので台車は使えません。大型車一台なら荷物も費用も条件に合いますね。分ける必要はありません。"
+          ],
+          [
+            "youngMale",
+            "では、大型車を借りてまとめて運びましょう。"
+          ]
+        ],
+        "options": [
+          {
+            "id": "1",
+            "text": "小箱を小型車、板を台車で運ぶ",
+            "rationale": "台車は坂で不可。"
+          },
+          {
+            "id": "2",
+            "text": "小型車一台で全部運ぶ",
+            "rationale": "板が入らない。"
+          },
+          {
+            "id": "3",
+            "text": "大型車一台で全部運ぶ",
+            "rationale": "全荷物、千円、坂条件に合う。"
+          },
+          {
+            "id": "4",
+            "text": "台車一台で全部運ぶ",
+            "rationale": "坂で不可。"
+          }
+        ],
+        "correctOptionId": "3",
+        "answerExplanationJa": "三番です。大型車一台で全部運べて、予算にも収まります。"
+      }
+    }
+  ]
+}
