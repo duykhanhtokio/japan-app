@@ -1,3 +1,9 @@
+# Current checkpoint · 2026-10-11 · Day 2 artwork
+
+Publisher requested all remaining section images. Added10day2 images, now20/866specific artworks and846pending. This is an intermediate unit, not completion. Built-in image_gen, individual authored-context prompts, no source book images. All10visually inspected, WEBPquality90 encoding only, originaldimensions retained. ActualRNWeb3viewports/30decoded-image checks/9inspected screenshots PASS; focusedTypeScript PASS. No clinical procedures or new knowledge authored. Full prompts/hashes/captions in reviews inventory; day2report/evidence in corresponding reviews/runtime-tests folders. Human/domain/rights/native/fullrouter review remainsfalse. Continue day3 then allpending; source second-pass51–70 remains after art.
+
+---
+
 # Current checkpoint · 2026-10-11 · Day1 section-specific 2D art
 
 Published the exact content tree of local85b3ceb via the authorized GitHub connection as6a7ff216; fetched and WORK PERSISTENCE PASS before new work. Local85b3ceb retained on checkpoint/kaigo-85b3ceb. Commit SHA differs because connector publication creates new commit metadata; tree7fab45c3cc07b39559bcd63e6a4902348a3bb1c4 is identical.
