@@ -484,3 +484,10 @@ Lưu hẹp5file bằng GitHubtree/commit/ref cólease trênHEAD hiện tại và
 - Chuẩn bị nguồn thêm: đã đọc toàn15trang170–184 và xem ba contact sheet; đã đọc12trang186–197 và5trang198–202, xem ba contact sheet. Cùng8trang144–151 và18trang152–169,58trang kỹ năng còn lại đã được đọc/xem, chưa lập danh mục ý trong đợt này. Không dùng bước chuẩn bị làm bằng chứng đã hoàn thành đối chiếu.
 
 - Kiểm thực thi467ý/87kế hoạch/52văn bản Nhật/3078dòng báo cáo, bộ lọc và đề chia buổi khôi phục đúng,0lỗi JS; ba kích thước không tràn, ngày143 mở đầu. Sàng lọc728trường/0trùng60ký tự; dữ liệu/5negativecontrols/4negativeatomic PASS; JLPTlock10/10PASS, Foundation --require-browser PASS. Chưa hoàn tất toàn sách.
+
+## 2026-10-10 — tiếp tục ăn uống trang in144–151
+- Baseline WORK PERSISTENCE PASS4706a3bb95649ff25bea1d3f58a74558cd157057 trong checkout mới. Đọc lại hướng dẫn/plan/checkpoint/quy tắc độc lập và nguồn Library PDF146–153. Nguồn đọc trả text nhưng ảnh trang không khả dụng; chưa recompute hash byte nguồn trong phiên, không claim kiểm hình mới.
+- Thêm6ý độc lập vào3thẻ hiện hữu: chuỗi tự ăn, đói/giác quan, hai nhóm chức năng dụng cụ, quan sát nhịp ăn và thời điểm trao đổi. Tổng473ý/87thẻ, lịch144ngày×30 giữ nguyên. Giữ467ý cũ/ID/ngày/ca và corecontent/sáuđề nguyênbyte; ba contentRevision cập nhật cho nội dung mới.
+- Kiểm thực thi dữ liệu: append-only6ý,3revisionhash đúng, draft/runtime đồng nhất, ID/ngày/case vàcore/mocks bất biến; metadata nguồn không vào runtime. Chưa kiểm browser/native bản473ý; báo cáo HTML cũ vẫn là snapshot467ý, không dùng làm bằng chứng hiện tại. Chưa quét text-layer toàn sách hoặc chứng nhận tương đồng/chuyên môn/bản ngữ.
+- Script continue-kaigo-eating-detail.py là bước bổ sung sau author-kaigo-atomic-supplements.py khi tái dựng; idempotent, không chạy riêng generator cũ rồi coi đã có473ý. Evidence eating-detail-2026-10-10.json. Mẫu số/%toàn sách vẫn null; human/domain/release false.
+- Tiếp theo: nhận lại ảnh nguồn để kiểm nhãn/mũi tên, hoàn tất danh mục từng ý ăn uống rồi bài tiết152–169 và các khối còn lại. Không coi sáu ý thêm là hoàn tất khối hoặc toàn tài liệu.
