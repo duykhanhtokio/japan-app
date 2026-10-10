@@ -655,3 +655,12 @@ After narrow publication/fetch/raw-file-hash verification and WORK PERSISTENCE P
 ## 2026-10-10 — Latest publisher instruction: complete 30/30 and retain historical exams
 
 The publisher explicitly instructed: “lưu lên nhánh rồi tiếp tục. Yêu cầu hoàn thành đủ 30/30 đề, đẩy lên app và giữ nguyên những đề thi cũ (những đề thi thật những năm trước)”. Complete and integrate the remaining independent N1 05 and 06, with full audio and runtime validation, and persist each unit on recovery/jlpt-n3-n1. Preserve ALL historical real exams, catalog entries, source data, audio, assets, saved sessions and fallbacks. The new 30 original forms are additive. This instruction supersedes every historical replacement/removal gate, including after reaching 30/30. Do not delete or hide old exams. The current verified remote checkpoint is 28/30; N1 05/06 remain unfinished. Preserve locked UI and concurrent unrelated work; retain truthful review flags.
+
+
+## 2026-10-10 — N1 05 text complete; actual audio/runtime pending
+
+70 written+36listening=106 independent scored responses,12passages and5new unscored examples. Written110minutes combined. Four-choice23/23/23/23;three-choice5/4/5. Written/content structure PASS, section balance/no triples/no short cycles/distinct28prior patterns. Corpus29masters/2912questions/281passages/133examples:0exact,22unchanged baseline near candidates,0new05. AI editorial replaces two adjacent prior themes, checks ordering and integrated arithmetic, repairs natural wording and option-length cues; not native semantic/difficulty/rights certification. No legacy content/assets input.
+
+VOICEVOX0.25.2 actual generation is pending completion; text snapshot frozen at0d13ebc2f4508bc94c756fb7dca4f7b02ada012b91a77879c5e0bb93bc9bf3c5. Approved N1 voices8/118/11/21,speed0.9,intro2s,turns0.5s,answers12/12/12/8/15s unchanged. Actual duration must be measured; exact60second original music/rest announcements/runtime gates remain. Count stays28/30 until05audio/runtime technically complete and persisted. Continue SAME05, then06 to full30/30. HANDOFF.md contains concrete continuation. Do not rerun initial scratch authorship/revision scripts.
+
+Preserve ALL old real historical exams and resources/cat­alog/sessions/fallbacks even after30/30; originals are additive. Newest user instruction supersedes historical removal gate. Preserve concurrent Kaigo,lockedUI and28originals. Publisher/native/perceptual/rights/releaseflagsfalse. Known N1 02 first/second opening mismatch separately pending.
