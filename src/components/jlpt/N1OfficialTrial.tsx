@@ -436,8 +436,8 @@ function QuestionBlock({ question, scale, selected, submitted, visualOptions, sh
     <JlptQuestionText scale={scale} style={question.family === 'sentenceComposition' ? styles.starQuestion : undefined}>{question.promptJa}</JlptQuestionText>
     {originalIllustration && imageSource ? <View style={styles.originalIllustration}>
       {practicePair ? <View style={styles.illustrationLabels}><Text style={styles.illustrationLabel}>練習（採点なし）</Text><Text style={styles.illustrationLabel}>本問１番</Text></View> : null}
-      <View style={{ width: '100%', aspectRatio: imageSize?.width && imageSize?.height ? imageSize.width / imageSize.height : 3 / 2 }}>
-        <Image fadeDuration={0} source={imageSource} resizeMode="contain" style={StyleSheet.absoluteFillObject} accessibilityLabel={`${question.label}の選択肢図`} />
+      <View style={{ width: '100%', aspectRatio: imageSize?.width && imageSize?.height ? imageSize.width / imageSize.height : 3 / 2, overflow: 'hidden' }}>
+        <Image fadeDuration={0} source={imageSource} resizeMode="contain" style={[StyleSheet.absoluteFillObject, { width: '100%', height: '100%' }]} accessibilityLabel={`${question.label}の選択肢図`} />
       </View>
     </View> : imageSource ? <Image fadeDuration={0} source={imageSource} resizeMode="contain" style={[styles.visualOptions, question.visualOptionPage && question.visualOptionPage >= 101 && imageSize?.width && imageSize?.height ? { aspectRatio: imageSize.width / imageSize.height } : question.visualOptionPage === 12 ? styles.visualOptionsPage12 : styles.visualOptionsPage13]} accessibilityLabel={`${question.label}の選択肢図`} /> : null}
     {question.family === 'sentenceComposition' ? <Text style={styles.starNote}>★ に入るものを一つ選んでください。</Text> : null}
