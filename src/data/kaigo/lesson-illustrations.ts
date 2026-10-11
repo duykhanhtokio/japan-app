@@ -1,6 +1,8 @@
 import type {ImageSourcePropType} from 'react-native';
 import {topicFor} from './catalog';
+import {paragraphIllustrations} from './paragraph-illustrations';
 
+const week2Covers=Object.fromEntries(Array.from({length:7},(_,i)=>[i+8,paragraphIllustrations[`kaigo-week2-0${i+1}-summary`]]));
 const assets={
  roles:require('../../../assets/kaigo/paragraphs/foundation-01-overview-v1.webp'),
  dignity:require('../../../assets/kaigo/paragraphs/foundation-02-dignity-overview-v1.webp'),
@@ -35,8 +37,10 @@ const descriptions={
  infection:'Nhân viên làm khô tay bằng giấy sau rửa, vùng cổ tay không bị trang sức che. Hình nhắc một điểm kiểm; không mô tả đầy đủ quy trình vệ sinh tay.',
  observation:'Bác chỉ vị trí ở vai của chính mình; nhân viên nghe và ghi. Lời bác, vị trí đã xác nhận và điều quan sát cần được phân biệt với chẩn đoán.',
 };
-export type LessonIllustration={key:keyof typeof assets;source:ImageSourcePropType;captionVi:string;aspectRatio:number};
+export type LessonIllustration={key:keyof typeof assets|'week2';source:ImageSourcePropType;captionVi:string;aspectRatio:number};
 export function illustrationFor(parentDay:number,title:string):LessonIllustration{
+ const week2=week2Covers[parentDay];
+ if(week2)return {key:'week2',...week2};
  const topic=topicFor(parentDay,title);const t=title.toLowerCase();
  const key:keyof typeof assets=parentDay===1?'roles':parentDay===2?'dignity':parentDay===3?'autonomy':parentDay===4?'privacy':parentDay===5?'services':parentDay===6?'infection':parentDay===7?'staff-health':/trí nhớ/.test(t)?'daily-life':/cảm xúc|động lực|căng thẳng/.test(t)?'communication':/ăn uống|thực đơn|khay|tự ăn|ép ăn|nhịp ăn/.test(t)?'meals':/vệ sinh tay|rửa tay|găng|nhiễm khuẩn|khử khuẩn/.test(t)?'infection':
   /bàn giao|phân công|diễn tập|số đo|trí nhớ|giảm tải|sức khỏe nhân viên/.test(t)?'handoff':

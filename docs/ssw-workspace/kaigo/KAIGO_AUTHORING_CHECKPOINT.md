@@ -1,3 +1,15 @@
+# Current checkpoint · 2026-10-11 · Tuần 2 hoàn chỉnh / ảnh theo tuần
+
+Tuần 2 ngày 8–14 đủ 90/90 ảnh đoạn (11/11/14/12/10/12/20); giữ 73 ảnh tuần 1. Tổng 163/866, còn 703 pending, fullParagraphArtComplete=false. Đơn vị bàn giao vẫn là một tuần lịch hoàn chỉnh. Bước tiếp theo tuần 3 sau khi xác minh remote.
+
+55 ảnh đã tạo ở phiên trước được phục hồi và đối chiếu với nội dung; 35 ảnh mới hoàn thiện phần còn thiếu. 16 sửa có mục tiêu: nhân vật Onodera/Morikawa, vai phải và hình hô hấp. Mỗi sectionId có tệp riêng, chú thích Việt cụ thể, WEBP quality90 chỉ mã hóa, giữ kích thước/tỷ lệ. Ảnh mở đầu ngày 8–14 dùng lại ảnh summary của chính ngày, không cộng số ảnh. Không thay kiến thức/câu hỏi/ID/revision/UI/state hoặc bảy runtime JSON.
+
+Final actual WeeklyKaigo/RoyalPanels RNWeb harness: 3 viewports 390x844/768x1024/844x390, 270 decoded-image/dimension/ratio/caption checks cho 90 ảnh, 21 cover checks, không overflow, 0 pageErrors, 21 screenshots inspected. Calendar model và JLPT UI lock 10/10 PASS; whitespace PASS. Không native/full ExpoRouter/human/domain/rights/release approval. Validator catalog-art cũ đã lỗi trên baseline do inventory không gồm các cover được thêm từ tuần 1; không dùng validator đó để chứng nhận tuần 2.
+
+Report reviews/WEEK2_PARAGRAPH_ART_2026-10-11.md; prompt/coverage và runtime-tests/2026-10-11-week2-art chứa exact inputs/hashes/evidence. Bắt buộc commit/fetch/WORK PERSISTENCE PASS trước bàn giao. Rà nguồn sâu 51–70 và source195 clinical ambiguity vẫn là công việc riêng chưa hoàn tất.
+
+---
+
 # Current checkpoint · 2026-10-11 · Tuần 1 hoàn chỉnh / ảnh theo tuần
 
 Theo yêu cầu mới, đơn vị hoàn tất ảnh là một tuần lịch, không dừng sau cụm10. Tuần1ngày1–7đủ73/73ảnh đoạn: giữ40cũ và thêm33ngày5–7 (10/12/11). Tổng73/866,793pending,fullParagraphArtComplete=false. Quy tắc v10/planv15 lưu batchUnit one_complete_calendar_week; giữ mọi ảnh đã hoàn tất. Bước kế tiếp tuần2chỉ sau remote verification, tiếp tục trọn tuần theo số đoạn thực tế.
