@@ -1,30 +1,23 @@
-# 建設 — checkpoint khởi động 2026-10-11
+# 建設 — checkpoint 2026-10-11, nguồn đã nhận
 
-## Công việc thực sự đã làm
+Chủ dự án xác nhận bảy PDF vừa tải lên dùng làm lý thuyết chung cho cả 1号/2号 và ba mảng ライフライン・設備、建築、土木. Quyết định này thay điều kiện chờ xác nhận phạm vi trong checkpoint trước. Biên soạn một bộ dữ liệu rồi liên kết sáu lộ trình; tiến độ vẫn tách theo người học/cấp/mảng/buổi. Không tuyên bố bảy file đủ toàn bộ yêu cầu chứng chỉ hai cấp.
 
-Đọc toàn bộ hướng dẫn chủ dự án gửi; AGENTS.md; AI_SESSION_START_HERE.md; quy tắc Tokutei Gino độc lập; chỉ mục nguồn; Kaigo rules v10. Đọc Stage A handoff, Stage B2 handoff, báo cáo xác minh B1 và tự kiểm B2 trực tiếp từ repo xây dựng. Kiểm cây repo xây dựng main bằng GitHub: không có PDF nguồn. Các số B1 trong báo cáo có ngày kiểm 2026-09-23, chưa tái xác minh trong phiên này, không phải chứng nhận hiện hành.
+## Kết quả thực hiện
 
-Repo app kiểm trước thay đổi: recovery/jlpt-n3-n1; HEAD và remote được quảng bá cùng là 5b052d9a5dffdfd89d72b551a2e995e5aff6d1b0. UI Lock PASS 10/10. Bảo toàn thay đổi Kaigo đang có; chỉ thêm hồ sơ trong thư mục kensetsu.
+Kiểm kê byte/hash/số trang của cả 7 PDF: 193 trang, không trùng hash. Đây là kiểm kê tập tải lên; chưa xác nhận là toàn bộ hai thư mục gốc. Hai bìa text1l/text5l ghi Ver.20220908. Đọc văn bản toàn bộ text1l, 12 trang PDF; đã kiểm trực quan trang PDF 6 (trang in 1), bao gồm sơ đồ. Các trang khác chưa được kiểm hết hình/bảng, không báo đã đọc hoàn chỉnh bằng OCR. Nội dung nguồn chỉ dùng riêng để kiểm, không tải PDF/OCR vào GitHub/app.
 
-Mục 建設 trong src/app/specified-skills/index.tsx đang disabled. Không tìm thấy route hay giáo trình 建設 chuyên biệt trong src. Không mở nội dung chưa kiểm duyệt vào app. Catalog B2 đọc được ghi sample_draft, appIntegrationReady false; hồ sơ tự kiểm cho biết 30 bài cũ còn nông và chưa duyệt. Không tạo lại hoặc tính chúng là bài đã hoàn tất.
+Đã soạn mới shared-session-001.json: một buổi dự kiến 30 phút, 5 cụm Nhật–Việt, 7 thuật ngữ/cách đọc; mục tiêu phân biệt vai trò, phối hợp và bàn giao. Ví dụ phòng nghỉ/nhóm lắp tủ–gắn biển do dự án tạo mới. Đây là bản nháp biên tập, chưa gắn vào runtime; không phải một buổi đã hoàn tất. Các liên kết draftSessionIds không phải lessonIds phát hành.
 
-## Hồ sơ mới
+Nguồn buổi mẫu: text1l PDF 6–7/trang in 1–2, mục 1.1–1.2. Nguồn đã đọc thêm CCUS/朝礼 nhưng chưa viết thành bài. Không dùng mốc CCUS 645 ngày hoặc khẳng định pháp lý/thao tác an toàn năm 2022 như quy tắc hiện hành chưa kiểm. Mẫu số kiến thức toàn phạm vi còn null; không báo tỷ lệ bao phủ.
 
-Hướng dẫn được lưu nguyên byte. authoring-plan.json xác lập đúng sáu ID lộ trình; lịch, số tuần và mẫu số kiến thức để trống chờ kiểm kê. source-inventory.json ghi nguồn chưa truy cập; knowledge-coverage.csv là cấu trúc đối chiếu, chưa có hàng kiến thức. Đây là khung biên soạn, không phải giáo trình đã tạo.
+## QA và phần còn thiếu
 
-## Blocker cụ thể
+Kiểm JSON/ID/thời lượng dự kiến/bản dịch Việt theo paragraph ID bằng script: đã chạy. Chưa kiểm chuyên gia, bản ngữ, quyền, tương đồng đầy đủ, hình minh họa hoặc runtime. 11 locale khác ngoài tiếng Việt/chính Nhật chưa có bản dịch của buổi này. appIntegrationReady false. Không tạo thi/câu hỏi chấm điểm. Không sửa UI JLPT/Kaigo.
 
-- SRC-1: chưa truy cập được Nội dung đưa vào app/Tokuteigino-kensetsu/01-特定技能1号.
-- SRC-2: chưa truy cập được Nội dung đưa vào app/Tokuteigino-kensetsu/02特定技能2号.
+## Tiếp tục
 
-Đã tìm thư mục trong /workspace và tìm tên/nội dung liên quan trong Library; chưa có kết quả xác định được hai kho. Không suy ra kho rỗng. Cần cung cấp hai thư mục qua upload hoặc một kết nối có quyền đọc; nếu chỉ nằm trên Mac, thực hiện phiên trong Codex tại máy đó. Không dùng chỉ mục/handoff thay cho đọc trang thật.
+Rà trực quan các trang còn lại text1l; đọc sáu file tiếp theo và tách từng ý, gồm nhãn/bảng/chú thích; ghi ma trận kiến thức riêng theo ý thay vì lấy số trang làm tỷ lệ. Kiểm khẳng định vai trò/thuật ngữ với nguồn chính thức và B1; đối chiếu diễn đạt buổi mẫu; hoàn thiện bản dịch theo locale phát hành, hình mới và runtime trước đánh dấu hoàn tất. Cập nhật lịch sau phân tích toàn nguồn, không áp số tuần Kaigo.
 
-## Trạng thái QA
+## Lưu
 
-Chưa đọc trang nguồn, chưa kiểm trực quan hình/bảng. Chưa sản xuất bài Nhật, bản dịch, ảnh hoặc runtime. Chuyên môn/bản ngữ/quyền/tương đồng: chưa kiểm. Chưa đạt cổng tích hợp/phát hành. Không tính tỷ lệ bao phủ. 13 locale app đã xác định từ src/i18n/languages.ts; phạm vi ngôn ngữ phát hành chưa đạt nên releaseLocales rỗng. Không sản xuất phần thi.
-
-## Bước tiếp theo
-
-Khi SRC-1/SRC-2 mở được: kiểm kê byte/hash/phiên bản/trang và trùng bản; đọc nguồn đầy đủ, phân rã từng ý gồm nhãn hình/bảng/chú thích; đối chiếu bản nháp B2 trước khi sửa; lập kế hoạch khoảng 30 phút/buổi riêng cho sáu lộ trình; làm buổi mẫu trọn Nhật–dịch–ảnh trước mở rộng. Mọi hướng dẫn an toàn phải qua gate tương ứng trước phát hành.
-
-Commit chứa hồ sơ này không ghi SHA của chính nó. Xác minh push/fetch/WORK PERSISTENCE trong bằng chứng thực thi, không tạo commit chỉ để cập nhật SHA.
+Nội dung lưu trong commit hẹp chỉ dưới docs/ssw-workspace/kensetsu; nguồn PDF không lưu repo. Bằng chứng remote được kiểm qua GitHub trong phiên; không tự ghi WORK PERSISTENCE PASS khi clone dùng chung vẫn có thay đổi Kaigo của phiên khác.
