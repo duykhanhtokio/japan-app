@@ -17,3 +17,9 @@ Sessions015–021: 28clusters/56paragraphs, safety/health, harassment, minimum w
 
 ## Week004 Japanese batch
 Sessions022–028: 28clusters/56paragraphs. Construction employment/skill development, construction and building regulation, waste/recycling, asbestos, noise/vibration. Source-derived details still outstanding; not exhaustive legal training. Next: Japanese water/sewage/fire/gas/electricity/communications/radio/aviation/parking law batch with official checks. Source2 full visual audit still pending.
+
+## Week005 Japanese batch
+Sessions029–035: 28clusters/56paragraphs, water/sewage, fire/water supply, gas/electricity, communications/radio, aviation lights/drone and parking. Basic law overview written, NOT complete source knowledge coverage. No claim all seven PDFs authored. Next Japanese content: source3 construction types; source2 visual and detailed legal gap audit remains pending.
+
+## Structural QA across five weeks
+35 draft sessions, 281 Japanese paragraphs, 144 teaching/application coverage rows. Referential and exact-paragraph uniqueness checks passed. These rows are NOT a complete source-idea denominator. Durations are unmeasured and may require regrouping after timing. Source2 reading remains mixed full-page/excerpts and incomplete visual review; source3–7 still not authored.
