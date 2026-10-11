@@ -4,6 +4,7 @@ import {paragraphIllustrations} from './paragraph-illustrations';
 
 const week2Covers=Object.fromEntries(Array.from({length:7},(_,i)=>[i+8,paragraphIllustrations[`kaigo-week2-0${i+1}-summary`]]));
 const week3Covers=Object.fromEntries(['kaigo-move-01','kaigo-move-02','kaigo-move-04','kaigo-move-03','kaigo-move-05','kaigo-move-06','kaigo-move-07'].map((id,i)=>[i+15,paragraphIllustrations[`${id}-summary`]]));
+const week4Covers=Object.fromEntries(Array.from({length:7},(_,i)=>[i+22,paragraphIllustrations[`kaigo-eating-0${i+1}-summary`]]));
 const assets={
  roles:require('../../../assets/kaigo/paragraphs/foundation-01-overview-v1.webp'),
  dignity:require('../../../assets/kaigo/paragraphs/foundation-02-dignity-overview-v1.webp'),
@@ -38,8 +39,10 @@ const descriptions={
  infection:'Nhân viên làm khô tay bằng giấy sau rửa, vùng cổ tay không bị trang sức che. Hình nhắc một điểm kiểm; không mô tả đầy đủ quy trình vệ sinh tay.',
  observation:'Bác chỉ vị trí ở vai của chính mình; nhân viên nghe và ghi. Lời bác, vị trí đã xác nhận và điều quan sát cần được phân biệt với chẩn đoán.',
 };
-export type LessonIllustration={key:keyof typeof assets|'week2'|'week3';source:ImageSourcePropType;captionVi:string;aspectRatio:number};
+export type LessonIllustration={key:keyof typeof assets|'week2'|'week3'|'week4';source:ImageSourcePropType;captionVi:string;aspectRatio:number};
 export function illustrationFor(parentDay:number,title:string):LessonIllustration{
+ const week4=week4Covers[parentDay];
+ if(week4)return {key:'week4',...week4};
  const week3=week3Covers[parentDay];
  if(week3)return {key:'week3',...week3};
  const week2=week2Covers[parentDay];

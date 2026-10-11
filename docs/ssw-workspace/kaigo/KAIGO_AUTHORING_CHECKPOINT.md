@@ -1,3 +1,15 @@
+# Current checkpoint · 2026-10-11 · Tuần 4 hoàn chỉnh / ảnh theo tuần
+
+Tuần 4 ngày 22–28 đủ 75/75 ảnh đoạn (11/11/11/11/11/10/10); giữ nguyên 243 ảnh/metadata tuần 1–3. Tổng 318/866, còn 548 pending, fullParagraphArtComplete=false. Tuần tiếp theo là tuần 5 sau xác minh remote.
+
+75 ảnh 2D màu mới; bảy sửa có mục tiêu về chữ, radio chưa chỉnh, đậu phụ và góc nhìn món ăn, sách tuần hoàn đóng. Đã xem từng ảnh và năm bảng ảnh cuối. Exact sectionId + chú thích Việt; WEBP quality90 chỉ mã hóa, không resize/crop; toàn bộ hashes/decode đã kiểm sau batch. Cover ngày 22–28 dùng summary đúng ngày, không cộng số ảnh. Không thay bài/câu hỏi/ID/revision/UI/state/bảy runtime JSON; không ảnh sách, sự kiện lâm sàng mới hoặc kết quả đo học tập.
+
+Actual WeeklyKaigo/RoyalPanels focused RNWeb PASS 390x844/768x1024/844x390: 225 decoded-image/dimension/ratio/caption checks, 21 cover-caption checks, không overflow, trở về lịch và không input trong bài đọc, 0 pageErrors; 21 screenshots đã xem. Calendar model PASS và JLPT UI lock 10/10; whitespace PASS. Kiểm độc lập giữ 243 asset bytes/metadata, approved-plan chỉ currentWeek 3→4. Không native/full ExpoRouter/full-repo TypeScript/human/domain/rights/release approval; catalog-art validator cũ lỗi baseline riêng.
+
+Report reviews/WEEK4_PARAGRAPH_ART_2026-10-11.md; prompts/coverage và runtime-tests/2026-10-11-week4-art chứa inputs/hashes/evidence. Publication trên remote mới nhất giữ thay đổi Kensetsu độc lập, expected-head lease/fetch/blob verification/WORK PERSISTENCE PASS bắt buộc trước bàn giao. Rà nguồn sâu 51–70 và source195 clinical ambiguity vẫn chưa hoàn tất riêng.
+
+---
+
 # Current checkpoint · 2026-10-11 · Tuần 3 hoàn chỉnh / ảnh theo tuần
 
 Tuần 3 ngày 15–21 đủ 80/80 ảnh đoạn (11/11/12/12/11/12/11); giữ nguyên 163 ảnh tuần 1–2. Tổng 243/866, còn 623 pending, fullParagraphArtComplete=false. Đơn vị bàn giao một tuần lịch hoàn chỉnh. Tuần tiếp theo là tuần 4 sau xác minh remote.

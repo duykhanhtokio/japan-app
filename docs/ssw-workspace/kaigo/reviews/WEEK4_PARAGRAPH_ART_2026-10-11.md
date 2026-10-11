@@ -1,0 +1,15 @@
+# Tuần 4 · 75 ảnh đoạn hoàn chỉnh
+
+Ngày 22–28 đủ 75 ảnh riêng, lần lượt 11/11/11/11/11/10/10. Giữ nguyên 243 ảnh và metadata tuần 1–3; tổng 318/866 đoạn có ảnh riêng, còn 548 đoạn chờ. Tuần tiếp theo là tuần 5.
+
+75 ảnh 2D màu mới được tạo bằng công cụ imagegen tích hợp, từ nội dung bài hiện có. Bảy sửa có mục tiêu đã được xem lại: bỏ chữ trong lịch, giữ tay nhân viên rời radio chưa chỉnh, thay cá bằng đậu phụ ở cảnh chờ, chỉnh ba góc nhìn đậu phụ phía xa và cơm bên phải của bác, đóng sách để bỏ sơ đồ tuần hoàn ngoài yêu cầu. Đã xem từng ảnh và năm bảng ảnh cuối. Prompt gốc và prompt sửa thực tế, hashes nguồn PNG/WEBP, kích thước và chú thích Việt nằm trong inventory. Mỗi sectionId có một file riêng, không dùng lại ảnh để tăng số lượng.
+
+Không dùng ảnh sách nguồn hoặc thêm sự kiện lâm sàng/quy trình kỹ thuật mới. Không tuyên bố đã đối chiếu lại toàn bộ sách. Chú thích phân biệt phần đã biết và chưa xác nhận: dạng thức ăn theo kế hoạch hôm nay, quyền tự ăn, món nóng cần chờ và kiểm lại, tạm nghỉ khác kết thúc, lượng đã ăn khác phần còn lại, kế hoạch bữa riêng chưa kiểm. Các hình gợi bối cảnh học, không thay sơ đồ chính xác hay hướng dẫn thực hành lâm sàng. Không có kết quả đo hiệu quả học tập.
+
+WEBP quality90 chỉ mã hóa, giữ kích thước/tỷ lệ thật, không resize/crop. Ghi tạm rồi thay tệp và kiểm toàn bộ 75 decode/kích thước/hash sau batch. Registry exact sectionId, tỷ lệ và chú thích từng đoạn. Cover ngày 22–28 dùng lại summary cùng ngày, không cộng số ảnh. Kiến thức/câu hỏi/ID/revision/UI/state và bảy runtime JSON giữ nguyên.
+
+Actual WeeklyKaigo/RoyalPanels focused RNWeb harness PASS 390×844, 768×1024, 844×390: 225 lượt giải mã/đối chiếu kích thước/tỷ lệ/chú thích; 21 kiểm tra cover-caption; không tràn ngang, không input/textarea trong bài đọc, điều hướng trở về lịch hoạt động, 0 pageErrors. 21 screenshot đã xem qua bảng và ảnh nguyên kích thước đại diện mỗi viewport. Harness dùng expo-image shim sang RN Image, storage shim và fonts/Royal assets thật; không phải full ExpoRouter/native device.
+
+Calendar model PASS 26 tuần/182 ô/176 ngày/6 ô trống/687 câu hỏi/866 đoạn; bảy runtime JSON giữ nguyên và năm negative completion fixtures bị từ chối đúng. JLPT approved UI lock 10/10; whitespace PASS. Kiểm độc lập xác nhận 243 artwork records/metadata/exact Git asset bytes được giữ; approved-plan chỉ đổi currentWeek 3→4. Focused build cảnh báo thiếu expo/tsconfig.base, không chứng nhận full-repo TypeScript. Validator catalog-art cũ lỗi baseline cover inventory, không dùng chứng nhận tuần 4.
+
+Bằng chứng: runtime-tests/2026-10-11-week4-art/{asset-review.json,evidence.json,executed-browser-check.mjs}; assets/kaigo/paragraphs và hai registry; reviews/paragraph-art-{coverage,prompts}-2026-10-10.json. Human/domain/rights/release approval và fullParagraphArtComplete vẫn false. Publication dùng expected-head lease trên remote mới nhất, giữ thay đổi Kensetsu độc lập; fetch/đối chiếu blobs và WORK PERSISTENCE phải PASS trước bàn giao. Rà nguồn sâu 51–70 và source195 clinical ambiguity còn riêng chưa hoàn tất.
