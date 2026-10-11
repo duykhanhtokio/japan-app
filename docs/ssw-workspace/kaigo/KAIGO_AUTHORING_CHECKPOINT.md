@@ -1,3 +1,13 @@
+# Current checkpoint · 2026-10-11 · Day4 section artwork
+
+Added10original section-specific colored2D images to day4, now40/866specific images,826pending. All10visually inspected;1targeted clothing edit maintains connected-character appearance. WEBPquality90 encoding only, originaldimensions retained. ExactsectionIDs and Vietnamese learning captions in registry. Corrected day4cover selection to existingprivacy image (not counted as newsection art). Existing knowledge/questions/calendar/UI/revisions/state unchanged; no clinical protocol or sourcebook imagery newly authored/copied. No measured learner-memory result.
+
+Final actualWeeklyKaigo/RoyalPanels RNWeb focused harness:3viewports390x844/768x1024/844x390,30decoded-image dimension/ratio checks,nooverflow,0pageErrors,9screenshots inspected;privacy covercaption presence and formerchoicecaption absence checked. Harness expo-image shim via RNWebImage, originalfonts/backimage LFS-hash verified; not fullExpoRouter/native. Calendar model PASS26weeks/176days/6blanks/687questions/866sections and7runtimeJSONhashes;JLPTlock10/10PASS;whitespacePASS. Intermediate failed cover check and0byte vocabWEBP are documented in report; regenerated from originalPNG and checked all10assetdecode/hashes before finalPASS. No fullrepoTypeScript/human/domain/rights/release claim.
+
+Report reviews/DAY4_PARAGRAPH_ART_2026-10-11.md;prompts/coverage inventory and runtime-tests/2026-10-11-day4-art contain exactinputs/hashes/captions/evidence. Concurrent unrelated JLPT changes retained by fetch/fast-forward. AuthorizedGitHub connection saves with expected-head lease, fetch and persistence verification required. Continue day5only after durability verification; all826pending remain in scope. Separate source secondpass51–70 remains after art; source195clinical ambiguity unresolved.
+
+---
+
 # Current checkpoint · 2026-10-11 · Day3 section artwork
 
 Added10original section-specific colored2D images to day3, now30/866specific images,836pending. All10visually inspected;5targeted edits remove confusing writing/painting cues and maintain connected-character clothing. WEBPquality90 encoding only, originaldimensions retained. Registry maps exactsectionIDs with learning-focused Vietnamese captions. Existing authored knowledge/questions/calendar/UI/revisions/state unchanged; no clinical protocol or sourcebook imagery authored/copied.

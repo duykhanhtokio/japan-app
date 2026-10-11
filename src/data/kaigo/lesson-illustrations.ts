@@ -28,7 +28,7 @@ const descriptions={
 export type LessonIllustration={key:keyof typeof assets;source:ImageSourcePropType;captionVi:string;aspectRatio:number};
 export function illustrationFor(parentDay:number,title:string):LessonIllustration{
  const topic=topicFor(parentDay,title);const t=title.toLowerCase();
- const key:keyof typeof assets=/trí nhớ/.test(t)?'daily-life':/cảm xúc|động lực|căng thẳng/.test(t)?'communication':/ăn uống|thực đơn|khay|tự ăn|ép ăn|nhịp ăn/.test(t)?'meals':/vệ sinh tay|rửa tay|găng|nhiễm khuẩn|khử khuẩn/.test(t)?'infection':
+ const key:keyof typeof assets=parentDay===4?'privacy':/trí nhớ/.test(t)?'daily-life':/cảm xúc|động lực|căng thẳng/.test(t)?'communication':/ăn uống|thực đơn|khay|tự ăn|ép ăn|nhịp ăn/.test(t)?'meals':/vệ sinh tay|rửa tay|găng|nhiễm khuẩn|khử khuẩn/.test(t)?'infection':
   /bàn giao|phân công|diễn tập|số đo|trí nhớ|giảm tải|sức khỏe nhân viên/.test(t)?'handoff':
   /trang phục|chỉnh trang|việc nhà/.test(t)?'daily-life':
   topic==='dignity'?'choice':topic==='body'?'observation':topic==='excretion'||topic==='hygiene'?'privacy':topic==='review'?'handoff':topic;
