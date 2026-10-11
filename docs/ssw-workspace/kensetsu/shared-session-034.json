@@ -29,11 +29,13 @@
     }
   ],
   "officialReferences": [
-    "https://www.mlit.go.jp/koku/koku_fr10_000042.html",
-    "https://www.mlit.go.jp/koku/koku_fr10_000041.html"
+    "https://www.mlit.go.jp/koku/koku_ua_registration.html",
+    "https://www.mlit.go.jp/koku/content/001443264.pdf",
+    "https://www.mlit.go.jp/koku/koku_fr10_000041.html",
+    "https://www.mlit.go.jp/koku/koku_fr10_000042.html"
   ],
   "verificationDate": "2026-10-11",
-  "verificationStatus": "partial AI source comparison; claim-by-claim/domain/native pending",
+  "verificationStatus": "Claim-linked official AI comparison2026-10-11; technical/domain/native/rights approval pending",
   "translationStatus": "deferred",
   "illustrationStatus": "deferred",
   "clusters": [
@@ -49,9 +51,13 @@
         {
           "id": "kensetsu-common-session-034-cluster-1-p2",
           "ja": "測量に使うからという目的だけで、飛行ルールの対象外になるわけではありません。業務で使う場合にも、場所、方法、機体などの条件を確認します。"
+        },
+        {
+          "id": "kensetsu-common-session-034-cluster-1-p3",
+          "ja": "測量担当が機体一覧を準備する例です。百グラム以上の対象機体を屋外で飛行させるには、無人航空機の登録を確認します。登録は機体の情報に関する手続きであり、特定の場所や方法で飛行してよいという許可・承認ではありません。登録記号と対象機体の対応、登録の状態を確認し、測量という業務目的だけで規制の対象外にしません。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "無人航空機の登録と飛行許可・承認について、機体情報と飛行条件の違いを説明してください。",
       "graded": false
     },
     {
@@ -66,9 +72,13 @@
         {
           "id": "kensetsu-common-session-034-cluster-2-p2",
           "ja": "許可・承認や、機体認証・技能証明等により、条件を満たして扱う区分があります。登録済み、資格保有、許可取得を一つの言葉でまとめず、何の要件を満たしたかを分けます。"
+        },
+        {
+          "id": "kensetsu-common-session-034-cluster-2-p3",
+          "ja": "測量計画では空域と飛行方法を別に読みます。空港周辺、緊急用務空域、地表又は水面から百五十メートル以上、人口集中地区などの空域の条件と、夜間、目視外、人や物件から三十メートル未満等の方法の条件は同じ欄にまとめません。必要な許可・承認や適用する例外を担当者が確認します。技能証明があるだけで、すべての特定飛行が手続き不要になるものではありません。緊急用務空域は、他の空域の通常の飛行許可があっても飛行できるわけではありません。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "空域の条件と飛行方法の条件を分け、資格だけでは確認できない項目を挙げてください。",
       "graded": false
     },
     {
@@ -83,9 +93,13 @@
         {
           "id": "kensetsu-common-session-034-cluster-3-p2",
           "ja": "教材用の例として、予定場所に別の班が入ることになった場面を考えます。予定が変わっても飛行条件がそのまま成立するかを、担当者が確認する必要があります。操縦技術を教える場面ではありません。"
+        },
+        {
+          "id": "kensetsu-common-session-034-cluster-3-p3",
+          "ja": "飛行予定の区域へ別の作業班が入ることになった例です。立入管理措置は、飛行経路下への第三者の立入りを制限するための措置で、予定の変更によって確認し直す条件があります。酒や薬物の影響を受けた状態で飛行しないこと、飛行前の確認、衝突予防、他人へ迷惑を及ぼす危険な飛行をしないことも、許可の有無と別に守る事項です。変更は飛行担当へ伝え、前日の準備だけで当日の確認を終えません。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "予定区域へ別の班が入る場合、立入管理措置と当日の安全確認はどこを見直しますか。",
       "graded": false
     },
     {
@@ -100,13 +114,52 @@
         {
           "id": "kensetsu-common-session-034-cluster-4-p2",
           "ja": "古い資料の短い禁止の列挙を、そのまま現在の全制度の説明にしません。自分が分からない条件を具体的に挙げ、確認する担当者につなげる練習をします。"
+        },
+        {
+          "id": "kensetsu-common-session-034-cluster-4-p3",
+          "ja": "飛行計画の通報や飛行日誌は、特定飛行に関係する情報です。登録、技能証明、機体認証、飛行の許可・承認、当日の運用記録を別に整理します。航空法上の手続き以外にも、土地・施設の利用条件、他法令や条例等を確認する必要があります。この学習で自分の飛行可否を決めず、どの確認が不足しているかを担当者へ説明します。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "登録・認証・許可・計画通報と土地等の条件を分け、未確認の項目を引き継いでください。",
       "graded": false
     }
   ],
   "dailyMinutesTarget": 30,
   "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
-  "editorialAuditStatus": "pending_substantive_audit"
+  "editorialAuditStatus": "substantive_AI_revision_human_reviews_pending",
+  "keyTerms": [
+    {
+      "term": "無人航空機",
+      "reading": "むじんこうくうき"
+    },
+    {
+      "term": "特定飛行",
+      "reading": "とくていひこう"
+    },
+    {
+      "term": "目視外",
+      "reading": "もくしがい"
+    },
+    {
+      "term": "立入管理措置",
+      "reading": "たちいりかんりそち"
+    },
+    {
+      "term": "機体認証",
+      "reading": "きたいにんしょう"
+    },
+    {
+      "term": "飛行日誌",
+      "reading": "ひこうにっし"
+    }
+  ],
+  "contentRevision": 3,
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "similarityReviewed": false,
+    "runtimeVerified": true
+  },
+  "runtimeVerificationScope": "Real reader via documented browser image/storage adapters;35sessions/396paragraphs; native device not tested"
 }

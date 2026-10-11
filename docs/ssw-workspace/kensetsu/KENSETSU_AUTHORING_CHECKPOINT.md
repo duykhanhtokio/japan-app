@@ -90,3 +90,20 @@ Current comparison includes11th2026–2030 employment plan, building-law purpose
 Verification:35sessions/368paragraphs rendered through actual reader with documented browser image/storage adapters. Scroll/click completion, reload and learner/level/field isolation passed; three viewport captures retained and inspected. No exact duplicate Japanese paragraphs or week004 prompts. Contiguous22character source screen found zero matches, not semantic or rights clearance. JLPT UI lock10/10passed. Native devices not tested.
 
 Next substantive batch:week005 only after this narrow commit is remotely persisted and WORK PERSISTENCE PASS is observed. No new weeks or illustration production before week005 audit; keep all earlier source gaps.
+
+
+## Week005 substantive Japanese revision — 2026-10-11
+
+Week004 persisted at269f5277ad20df4823b17b508293fa2f6be08759. Beforeweek005, fast-forwarded concurrent Kaigo updates to d6aa05b55e66cb288d97284b5a96d22cca2025a3 and observed WORK PERSISTENCE PASS. Publisher requested week005. Concurrent work retained; no Kaigo content edits.
+
+Revised sessions029–035:7sessions/28clusters/84Japanese paragraphs,28additional independent applications,28distinct reflections,42contextual readings. ContentRevision3; existing IDs and revision2 completion keys retained. All35sessions now396paragraphs. No reader/UI source changes, exams, new artwork or translations.
+
+Source2 SHA verified;PDF14–18/printed21–25 read and visually inspected, restricted to2.8–2.17 after the noise/vibration boundary. Scoped pages contain text/bullets, no illustration assets.132atomic audit rows and28cluster official mappings distinguish source concepts, corrected historical overgeneralisations, current supplements and explicit partial/deferred ideas. All18source2pages now read/visually inspected; this is not complete knowledge coverage. Earlier week gaps remain.
+
+Current comparison separates water/sewer destinations, pH ranges, six sewer risks, water technical roles, three fire purpose groups, four electrical regulatory roles, conditional terminal connection exceptions, radio conformity/licensing/registration, aviation60m scope,100g drone registration versus flight authorisation, emergency airspace and parking500sqm/urban-area/charge criteria. METI painting CO notice only official search excerpt retrieved; direct notice and regional page403, not full technical review. Pump selection, neutralisation procedures, full numerical/qualification/exemption tables and specialist/native/rights approval remain pending.
+
+Verification: actual reader with documented browser image/storage adapters rendered35sessions/396paragraphs and all reflections; completion scroll/click, reload and learner/level/field isolation passed. Three retained captures visually inspected. No exact duplicate paragraphs/prompts; contiguous22character source wording screen zero matches, not semantic or rights clearance. Native device and real30minute timing not tested. JLPT UI lock and remote persistence outcomes recorded by checks before final delivery.
+
+Next: preserve this batch remotely and require WORK PERSISTENCE PASS. Consolidate remaining atomic gaps acrossweeks001–005, then process unprocessed uploaded sources through the full knowledge matrix. Japanese content before illustrations/translations; no full-course/release completion claim.
+
+Final pre-publication checks: KENSETSU APP TEST DATA PASS, unique/stable ID and release-gate checks PASS, JLPT APPROVED UI LOCK PASS (10/10), git diff whitespace check PASS.

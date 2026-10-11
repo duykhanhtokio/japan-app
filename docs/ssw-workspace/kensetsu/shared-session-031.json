@@ -29,10 +29,16 @@
     }
   ],
   "officialReferences": [
-    "https://www.meti.go.jp/policy/safety_security/industrial_safety/index.html"
+    "https://laws.e-gov.go.jp/api/1/lawdata/329AC0000000051",
+    "https://www.meti.go.jp/policy/safety_security/industrial_safety/oshirase/2026/03/20260305-02.html",
+    "https://laws.e-gov.go.jp/api/1/lawdata/339AC0000000170",
+    "https://laws.e-gov.go.jp/api/1/lawdata/336AC0000000234",
+    "https://laws.e-gov.go.jp/api/1/lawdata/335AC0000000139",
+    "https://laws.e-gov.go.jp/api/1/lawdata/345AC1000000096",
+    "https://laws.e-gov.go.jp/api/1/lawdata/409M50000400052"
   ],
   "verificationDate": "2026-10-11",
-  "verificationStatus": "partial AI source comparison; claim-by-claim/domain/native pending",
+  "verificationStatus": "Claim-linked official AI comparison2026-10-11; technical/domain/native/rights approval pending",
   "translationStatus": "deferred",
   "illustrationStatus": "deferred",
   "clusters": [
@@ -48,9 +54,13 @@
         {
           "id": "kensetsu-common-session-031-cluster-1-p2",
           "ja": "設備の種類と供給の仕組みを特定し、必要な管理を確認します。漏れや換気の問題は重大な事故につながるため、教材の文章だけで点検や修理を行う技術にはなりません。"
+        },
+        {
+          "id": "kensetsu-common-session-031-cluster-1-p3",
+          "ja": "設備図面にガス設備と書かれていても、供給方式は別に確かめます。導管による都市ガスと容器等から供給するLPガスでは、確認する法令や担当が異なります。ガス事業法は事業の運営、使用者の利益、ガス工作物の工事・維持・運用等の保安に関係します。一つの法令名でガスの全設備を扱わず、燃料・供給方式・対象設備を対応させます。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "都市ガスとLPガスを確認するとき、法令名より先にどの設備情報を調べますか。",
       "graded": false
     },
     {
@@ -65,9 +75,13 @@
         {
           "id": "kensetsu-common-session-031-cluster-2-p2",
           "ja": "教材用の場面として、工事で設備の周囲が変わると聞いた場合を考えます。影響が未確認なら、その範囲を担当者に伝えます。読者が排気管などを自分で加工するための例ではありません。"
+        },
+        {
+          "id": "kensetsu-common-session-031-cluster-2-p3",
+          "ja": "外壁の塗装準備で、ガス機器の給気部や排気部が覆われる可能性を担当者が確認する例です。給気は燃焼等に必要な空気を取り入れること、排気は燃焼ガス等を出すことです。これらが妨げられると一酸化炭素中毒等の危険につながるため、機器が動くことを安全確認の代わりにしません。覆い方や機器の停止・再使用は専門担当の管理で決めます。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "給気と排気の役割を区別し、塗装準備の変更を担当者にどう伝えますか。",
       "graded": false
     },
     {
@@ -77,14 +91,18 @@
       "paragraphs": [
         {
           "id": "kensetsu-common-session-031-cluster-3-p1",
-          "ja": "電気事業法は、電気事業の運営と、電気工作物の工事・維持・運用等の安全に関わります。電気設備技術基準、電気用品安全法、電気工事士法、電気工事業法なども、役割の異なる制度です。"
+          "ja": "電気事業法は、事業の運営と、電気工作物の工事・維持・運用等の安全に関わります。電気設備技術基準は設備の条件を示します。電気工事士法と電気工事業法は、個人の資格と事業の管理を別々に扱い、電気用品安全法は対象となる製品の安全に関わります。"
         },
         {
           "id": "kensetsu-common-session-031-cluster-3-p2",
           "ja": "電気工事士の資格と、事業の登録・届出、設備の技術上の条件を分けます。一つの資格や表示があれば、すべての工事条件が満たされるとは限りません。"
+        },
+        {
+          "id": "kensetsu-common-session-031-cluster-3-p3",
+          "ja": "設備会社の資料に、電気工事士の免状、会社の登録・届出、製品の表示が載る例です。電気工事士法は作業に必要な資格等、電気工事業法は事業の登録・業務規制、電気用品安全法は対象製品の安全、電気設備技術基準は設備の技術上の条件に関わります。電気事業法による公共の安全や環境保全と合わせて、それぞれ誰・何を確認する制度かを分けます。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "免状、事業登録・届出、製品表示、設備の技術基準は、それぞれ何の確認ですか。",
       "graded": false
     },
     {
@@ -99,13 +117,52 @@
         {
           "id": "kensetsu-common-session-031-cluster-4-p2",
           "ja": "何の設備か、見聞きした異常、場所と時刻を整理して報告する練習をします。測定器の使用、活線作業、遮断や復電の技術的手順は、専用の資格教育と現場の管理で扱います。"
+        },
+        {
+          "id": "kensetsu-common-session-031-cluster-4-p3",
+          "ja": "電気設備付近で異音と焦げたようなにおいを感じたという架空の報告を考えます。見聞きした現象、場所、時刻を定められた連絡先へ伝え、漏電等の原因を自分で確定しません。危険の報告ができることと、測定や修理を担当できることは別です。緊急時の対応は現場の教育に従い、この事例から電源の遮断・復電手順を作りません。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "異音やにおいについて、観察した事実と原因の判断をどう分けて報告しますか。",
       "graded": false
     }
   ],
   "dailyMinutesTarget": 30,
   "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
-  "editorialAuditStatus": "pending_substantive_audit"
+  "editorialAuditStatus": "substantive_AI_revision_human_reviews_pending",
+  "keyTerms": [
+    {
+      "term": "都市ガス",
+      "reading": "としがす"
+    },
+    {
+      "term": "LPガス",
+      "reading": "えるぴーがす"
+    },
+    {
+      "term": "給気",
+      "reading": "きゅうき"
+    },
+    {
+      "term": "排気",
+      "reading": "はいき"
+    },
+    {
+      "term": "電気工事士",
+      "reading": "でんきこうじし"
+    },
+    {
+      "term": "保安",
+      "reading": "ほあん"
+    }
+  ],
+  "contentRevision": 3,
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "similarityReviewed": false,
+    "runtimeVerified": true
+  },
+  "runtimeVerificationScope": "Real reader via documented browser image/storage adapters;35sessions/396paragraphs; native device not tested"
 }

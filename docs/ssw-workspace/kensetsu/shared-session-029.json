@@ -33,10 +33,14 @@
     }
   ],
   "officialReferences": [
-    "https://www.mlit.go.jp/notice/noticedata/sgml/036/76000280/76000280.html"
+    "https://laws.e-gov.go.jp/api/1/lawdata/345AC0000000138",
+    "https://laws.e-gov.go.jp/api/1/lawdata/333AC0000000079",
+    "https://www.city.kagoshima.lg.jp/suido/gesuido/gesuisyori/gesuido/shikumi/shiyo/2shiyo.html",
+    "https://www.cbr.mlit.go.jp/shitara/06question_answer/a2_4.html",
+    "https://www.env.go.jp/water/impure/haisui.html"
   ],
   "verificationDate": "2026-10-11",
-  "verificationStatus": "partial AI source comparison; claim-by-claim/domain/native pending",
+  "verificationStatus": "Claim-linked official AI comparison2026-10-11; technical/domain/native/rights approval pending",
   "translationStatus": "deferred",
   "illustrationStatus": "deferred",
   "clusters": [
@@ -52,9 +56,13 @@
         {
           "id": "kensetsu-common-session-029-cluster-1-p2",
           "ja": "同じ現場の水でも、川へ出す場合と下水道へ出す場合を同じ手続きとして扱いません。配管があることだけで排水してよいと判断せず、行き先と担当者を確認します。"
+        },
+        {
+          "id": "kensetsu-common-session-029-cluster-1-p3",
+          "ja": "土木現場の排水計画に「近くのますへ送る」とだけ書かれた例です。担当者は、そのますが公共下水道へつながるのか、雨水系統を通じて河川等へ出るのかを図面と管理者の情報で確認します。水質汚濁防止法の排水規制と、下水道へ入れる水の排除基準を分けて調べます。下水道の整備も、都市の健全な発達、公衆衛生、公共用水域の保全に関係します。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "ますの位置だけでは排水先が分からない理由と、川への排水と下水道への排除で調べる条件の違いを説明してください。",
       "graded": false
     },
     {
@@ -69,9 +77,13 @@
         {
           "id": "kensetsu-common-session-029-cluster-2-p2",
           "ja": "排水に何が含まれるか、他の水と混ざると何が起こり得るかを、必要な調査や管理につなげます。教材の例だけで、混合や放流の判断をするものではありません。"
+        },
+        {
+          "id": "kensetsu-common-session-029-cluster-2-p3",
+          "ja": "改修で器具を洗った水と、別の工程の排水が集まる例です。混ざった水は、設備の腐食や閉塞だけでなく、有毒ガス、管内で働く人への危険、処理場の生物処理や汚泥の処理にも影響し得ます。生物処理は微生物の働きを使うため、排水が管を通れば確認終了という意味ではありません。見た目から混合の安全を判断せず、発生工程を担当者へ知らせます。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "排水が管を通ること以外に、作業者・処理場・汚泥へのどの影響を確認しますか。",
       "graded": false
     },
     {
@@ -86,9 +98,13 @@
         {
           "id": "kensetsu-common-session-029-cluster-3-p2",
           "ja": "コンクリートに接した水は高アルカリとなることがあります。必要な処理は水質と排水先の条件で確認します。薬品の種類や量を読者が自己判断するための中和手順は、この教材では示しません。"
+        },
+        {
+          "id": "kensetsu-common-session-029-cluster-3-p3",
+          "ja": "基礎工事の記録では、洗浄水と地下水をくみ上げた水を別にします。バッチャープラントはコンクリートの製造設備で、ウェルポイント排水やディープウェル排水は地下水位の低下に関わる排水です。コンクリートに接した水はアルカリ性の確認が必要で、担当者が水質や排水先に合わせて中和等の処理を検討します。地下水や雨水という名前だけで清浄とせず、採取場所と測定の情報を対応させます。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "洗浄水、雨水、地下水を区別し、測定記録と対応させる発生源の情報を挙げてください。",
       "graded": false
     },
     {
@@ -103,13 +119,52 @@
         {
           "id": "kensetsu-common-session-029-cluster-4-p2",
           "ja": "学習では、発生源、排水先、確認項目、担当者の四つを分けて説明します。測定値がないのに見た目だけで適合としないことと、未確認の水を勝手に流さないことを理解します。"
+        },
+        {
+          "id": "kensetsu-common-session-029-cluster-4-p3",
+          "ja": "測定記録のpHは水の酸性・アルカリ性を表す指標で、浮遊物質量はSSとも書きます。基準には上限だけでなく範囲もあるため、「値が低ければ常に適合」とは読みません。カドミウム、鉛、クロム、銅、亜鉛等は別の確認項目です。採取日時、場所、単位、適用する基準を照合し、一項目の結果を排水全体の適合へ読み替えません。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "pHの範囲、SS等の上限、採取条件をどう読み分けますか。一項目だけで適合とできない理由を述べてください。",
       "graded": false
     }
   ],
   "dailyMinutesTarget": 30,
   "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
-  "editorialAuditStatus": "pending_substantive_audit"
+  "editorialAuditStatus": "substantive_AI_revision_human_reviews_pending",
+  "keyTerms": [
+    {
+      "term": "排水先",
+      "reading": "はいすいさき"
+    },
+    {
+      "term": "水質汚濁",
+      "reading": "すいしつおだく"
+    },
+    {
+      "term": "浮遊物質",
+      "reading": "ふゆうぶっしつ"
+    },
+    {
+      "term": "中和",
+      "reading": "ちゅうわ"
+    },
+    {
+      "term": "pH",
+      "reading": "ぴーえいち"
+    },
+    {
+      "term": "排除基準",
+      "reading": "はいじょきじゅん"
+    }
+  ],
+  "contentRevision": 3,
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "similarityReviewed": false,
+    "runtimeVerified": true
+  },
+  "runtimeVerificationScope": "Real reader via documented browser image/storage adapters;35sessions/396paragraphs; native device not tested"
 }

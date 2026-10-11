@@ -29,11 +29,16 @@
     }
   ],
   "officialReferences": [
-    "https://www.mlit.go.jp/toshi/toshi_gairo_tk_000072.html",
-    "https://laws.e-gov.go.jp/law/332AC0000000106?occasion_date=20260618"
+    "https://laws.e-gov.go.jp/api/1/lawdata/332AC0000000106",
+    "https://laws.e-gov.go.jp/api/1/lawdata/332AC0000000177",
+    "https://laws.e-gov.go.jp/api/1/lawdata/323AC1000000186",
+    "https://laws.e-gov.go.jp/api/1/lawdata/359AC0000000086",
+    "https://laws.e-gov.go.jp/api/1/lawdata/339AC0000000170",
+    "https://laws.e-gov.go.jp/api/1/lawdata/327AC0000000231",
+    "https://www.mlit.go.jp/koku/content/001443264.pdf"
   ],
   "verificationDate": "2026-10-11",
-  "verificationStatus": "partial AI source comparison; claim-by-claim/domain/native pending",
+  "verificationStatus": "Claim-linked official AI comparison2026-10-11; technical/domain/native/rights approval pending",
   "translationStatus": "deferred",
   "illustrationStatus": "deferred",
   "clusters": [
@@ -49,9 +54,13 @@
         {
           "id": "kensetsu-common-session-035-cluster-1-p2",
           "ja": "路外駐車場では、一般の利用に供するものか、駐車部分の面積、地域、料金の徴収などの条件を確認します。専用駐車場と公共の利用に供する駐車場を名前だけで混ぜません。"
+        },
+        {
+          "id": "kensetsu-common-session-035-cluster-1-p3",
+          "ja": "会社の専用駐車場と、一般の人が利用する時間貸し駐車場を比べて考えます。駐車場法の路外駐車場は、道路の路面外に設け、一般公共の利用に供する施設です。都市の駐車施設を整え、道路交通の流れと公衆の利便、都市機能につなげる目的があります。看板に駐車場とあるだけでは区分が分からないため、実際の利用対象を担当者が確認します。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "会社専用と一般公共の利用に供する駐車場は、看板以外の何を見て区別しますか。",
       "graded": false
     },
     {
@@ -66,9 +75,13 @@
         {
           "id": "kensetsu-common-session-035-cluster-2-p2",
           "ja": "建築基準やバリアフリー等も関係する場合があります。一つの届出をしたら、他の全ての確認が不要になるわけではありません。施工に入る前に、必要な確認と担当を整理します。"
+        },
+        {
+          "id": "kensetsu-common-session-035-cluster-2-p3",
+          "ja": "一般公共の利用に供する路外駐車場では、駐車に用いる部分が五百平方メートル以上なら、構造・設備の技術的基準が関係します。そのうち都市計画区域内で料金を徴収するものの設置等は、あらかじめ都道府県知事等への届出が必要です。通路等も含む敷地全体の面積を、そのまま駐車部分の面積にしません。無料なら全ての技術的確認が不要とも考えません。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "駐車部分の面積、都市計画区域、料金徴収を分け、技術基準と届出の条件を説明してください。",
       "graded": false
     },
     {
@@ -83,9 +96,13 @@
         {
           "id": "kensetsu-common-session-035-cluster-3-p2",
           "ja": "同じ場所の変更でも、設備の機能、水質、接続、避難、交通という目的が異なります。確認済みと未確認を明示して引き継ぐという学びを、複数の設備に応用します。"
+        },
+        {
+          "id": "kensetsu-common-session-035-cluster-3-p3",
+          "ja": "架空の配送拠点改修では、駐車場の出入口、洗浄水の排水先、給水管、警報設備、電気・通信に変更があります。交通、水質、給水、消防、設備保安、接続という目的ごとに図面の変更箇所を整理します。図面を受け取ったことと、専門担当が変更条件を確認したことを分けて引き継ぎます。駐車場の届出一つで設備の全確認を済ませません。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "配送拠点改修の変更を目的別に整理し、資料受領と専門担当の確認をどう区別しますか。",
       "graded": false
     },
     {
@@ -99,14 +116,53 @@
         },
         {
           "id": "kensetsu-common-session-035-cluster-4-p2",
-          "ja": "これで法令の基礎を一巡しましたが、数値の全条件や例外、資格対応を全て教え終えたという意味ではありません。未確認の詳細は対照表に残し、専門の単位で追加していきます。週末試験は作りません。"
+          "ja": "制度の基礎を学んでも、すべての数値条件や例外、資格の対応を理解し終えたわけではありません。分からない対象や条件を具体的に挙げ、該当する説明や公式案内へ戻って確かめます。"
+        },
+        {
+          "id": "kensetsu-common-session-035-cluster-4-p3",
+          "ja": "今週の振返りでは、数値を覚えた項目にも対象と条件を添えます。例えば、六十メートルは物件と航空障害灯、百グラムは対象機体の登録、五百平方メートルは一般公共の利用に供する路外駐車場の駐車部分に関係します。数値が一致しても別制度の条件へ移せません。法令名、守る対象、資料、確認する担当を自分の言葉で結び付け、説明できない条件を次の学習に残します。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "六十メートル、百グラム、五百平方メートルの対象と条件を、別制度と混ぜずに説明してください。",
       "graded": false
     }
   ],
   "dailyMinutesTarget": 30,
   "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
-  "editorialAuditStatus": "pending_substantive_audit"
+  "editorialAuditStatus": "substantive_AI_revision_human_reviews_pending",
+  "keyTerms": [
+    {
+      "term": "路外駐車場",
+      "reading": "ろがいちゅうしゃじょう"
+    },
+    {
+      "term": "都市計画区域",
+      "reading": "としけいかくくいき"
+    },
+    {
+      "term": "料金徴収",
+      "reading": "りょうきんちょうしゅう"
+    },
+    {
+      "term": "技術的基準",
+      "reading": "ぎじゅつてききじゅん"
+    },
+    {
+      "term": "駐車部分",
+      "reading": "ちゅうしゃぶぶん"
+    },
+    {
+      "term": "届出",
+      "reading": "とどけで"
+    }
+  ],
+  "contentRevision": 3,
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "similarityReviewed": false,
+    "runtimeVerified": true
+  },
+  "runtimeVerificationScope": "Real reader via documented browser image/storage adapters;35sessions/396paragraphs; native device not tested"
 }

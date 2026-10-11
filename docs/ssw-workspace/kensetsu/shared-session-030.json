@@ -31,11 +31,12 @@
     }
   ],
   "officialReferences": [
-    "https://www.mhlw.go.jp/web/t_doc?dataId=79044000",
-    "https://www.fdma.go.jp/mission/prevention/post-1.html"
+    "https://laws.e-gov.go.jp/api/1/lawdata/332AC0000000177",
+    "https://laws.e-gov.go.jp/api/1/lawdata/323AC1000000186",
+    "https://laws.e-gov.go.jp/api/1/lawdata/336CO0000000037"
   ],
   "verificationDate": "2026-10-11",
-  "verificationStatus": "partial AI source comparison; claim-by-claim/domain/native pending",
+  "verificationStatus": "Claim-linked official AI comparison2026-10-11; technical/domain/native/rights approval pending",
   "translationStatus": "deferred",
   "illustrationStatus": "deferred",
   "clusters": [
@@ -46,14 +47,18 @@
       "paragraphs": [
         {
           "id": "kensetsu-common-session-030-cluster-1-p1",
-          "ja": "水道法は、水道の布設や管理、基盤の強化を通じ、清潔で十分な水を供給し、公衆衛生や生活環境の改善につなげる制度です。単に管をつなぐことと、安全な供給が確保されることを分けます。"
+          "ja": "水道法は、水道の布設や管理、基盤の強化を通じ、清潔な水を十分な量、低廉に供給することを目指し、公衆衛生や生活環境の改善につなげる制度です。単に管をつなぐことと、安全な供給が確保されることを分けます。"
         },
         {
           "id": "kensetsu-common-session-030-cluster-1-p2",
           "ja": "水道の技術管理、給水装置の工事などには、それぞれ役割や資格の条件があります。水に関わる作業がすべて同じ資格条件だと考えず、対象の設備と担当を特定します。"
+        },
+        {
+          "id": "kensetsu-common-session-030-cluster-1-p3",
+          "ja": "給水管の更新では、水道技術管理者と給水装置工事主任技術者の名称を分けます。前者は水道の管理に係る技術業務、後者は指定給水装置工事事業者の事業所で工事の技術上の管理や指導監督等を担います。作業者は該当する主任技術者の職務上の指導に従います。法律が目指す清潔さ、供給量、低廉さを、特定の現場の料金や供給を保証する言葉として使いません。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "水道技術管理者と給水装置工事主任技術者は、対象と職務のどこが違いますか。",
       "graded": false
     },
     {
@@ -68,9 +73,13 @@
         {
           "id": "kensetsu-common-session-030-cluster-2-p2",
           "ja": "設備が置かれている状態と、必要な点検や管理が行われている状態は別です。この週は制度と設備の目的を学び、火災時の実技や設備の設計は専用の教育で確認します。"
+        },
+        {
+          "id": "kensetsu-common-session-030-cluster-2-p3",
+          "ja": "建物の用途を変える計画で、既存の消防用設備の一覧が渡された例です。消防法は火災の予防・警戒・鎮圧と生命・身体・財産の保護に加え、火災や地震等の被害軽減、災害等による傷病者の適切な搬送にも関わります。設備は設置後も必要な性能を維持するための管理が必要です。用途の変更で確認する条件を担当者へ伝え、既存設備があるだけで十分とは判断しません。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "消防法の目的を設備の設置以外にも広げ、用途変更で担当者に伝える情報を挙げてください。",
       "graded": false
     },
     {
@@ -85,9 +94,13 @@
         {
           "id": "kensetsu-common-session-030-cluster-3-p2",
           "ja": "教材用の例として、事務所の案内で設備名を聞いた場面を考えます。それが何を助ける設備かを整理し、操作や点検が必要な場合は、現場の教育と担当者の確認を受けます。"
+        },
+        {
+          "id": "kensetsu-common-session-030-cluster-3-p3",
+          "ja": "改修の打合せ資料を、知らせる設備、消火に用いる設備、避難を助ける設備に分けて読みます。警報設備は火災を知らせ、消火器・屋内消火栓・スプリンクラーは消火に関わり、避難はしご等は避難を助けます。火災を知らせる設備と、避難に用いる器具も役割が異なります。名前の整理は操作訓練の代わりではないため、必要な扱い方は定められた教育で学びます。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "警報設備、消火設備、避難はしごの役割を分けて説明してください。",
       "graded": false
     },
     {
@@ -102,13 +115,52 @@
         {
           "id": "kensetsu-common-session-030-cluster-4-p2",
           "ja": "供給する水、火災を知らせる設備、消火や避難の設備を、それぞれ目的から説明してみましょう。具体的な接続や停止、復旧の操作を、この短い説明から実施しないようにします。"
+        },
+        {
+          "id": "kensetsu-common-session-030-cluster-4-p3",
+          "ja": "配管班が、予定の取付位置と消防設備の範囲が重なる可能性に気づいた例です。位置、設備名、図面の版、予定する変更を管理担当へ伝えます。工事のための一時停止と、その間の安全確保、復旧後の性能確認は別の確認事項です。誰が確認したか、どの状態まで確認できたかを引き継ぎ、独断で停止や移設をしません。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "工事による設備停止の予定、停止中の管理、復旧確認を分け、引継ぎに残す情報を述べてください。",
       "graded": false
     }
   ],
   "dailyMinutesTarget": 30,
   "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
-  "editorialAuditStatus": "pending_substantive_audit"
+  "editorialAuditStatus": "substantive_AI_revision_human_reviews_pending",
+  "keyTerms": [
+    {
+      "term": "水道技術管理者",
+      "reading": "すいどうぎじゅつかんりしゃ"
+    },
+    {
+      "term": "給水装置工事主任技術者",
+      "reading": "きゅうすいそうちこうじしゅにんぎじゅつしゃ"
+    },
+    {
+      "term": "消防用設備",
+      "reading": "しょうぼうようせつび"
+    },
+    {
+      "term": "屋内消火栓",
+      "reading": "おくないしょうかせん"
+    },
+    {
+      "term": "警報設備",
+      "reading": "けいほうせつび"
+    },
+    {
+      "term": "避難はしご",
+      "reading": "ひなんはしご"
+    }
+  ],
+  "contentRevision": 3,
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "similarityReviewed": false,
+    "runtimeVerified": true
+  },
+  "runtimeVerificationScope": "Real reader via documented browser image/storage adapters;35sessions/396paragraphs; native device not tested"
 }

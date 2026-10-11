@@ -31,10 +31,11 @@
     }
   ],
   "officialReferences": [
-    "https://www.cab.mlit.go.jp/wcab/measure/sign.html"
+    "https://laws.e-gov.go.jp/api/1/lawdata/327AC0000000231",
+    "https://www.cab.mlit.go.jp/tcab/about/safety-rules/obstacle-lights-and-wind-turbines.html"
   ],
   "verificationDate": "2026-10-11",
-  "verificationStatus": "partial AI source comparison; claim-by-claim/domain/native pending",
+  "verificationStatus": "Claim-linked official AI comparison2026-10-11; technical/domain/native/rights approval pending",
   "translationStatus": "deferred",
   "illustrationStatus": "deferred",
   "clusters": [
@@ -50,9 +51,13 @@
         {
           "id": "kensetsu-common-session-033-cluster-1-p2",
           "ja": "地表や水面からの高さと、物件自体の長さを混ぜません。敷地の条件や使用状態により、航空への影響について担当者が必要な確認をします。"
+        },
+        {
+          "id": "kensetsu-common-session-033-cluster-1-p3",
+          "ja": "建築現場で使うクレーンの計画には、機械の寸法と、地表又は水面からの高さを分けて記録します。高い物件は工事関係者以外の航空機にも影響し得ます。設置位置や空港周辺の制限表面を確認する担当へ、予定状態と変更後の状態を渡します。敷地内の作業許可だけで航空上の条件まで確認済みとしません。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "クレーン自体の寸法と地表等からの高さを、設置位置と合わせてどう伝えますか。",
       "graded": false
     },
     {
@@ -67,9 +72,13 @@
         {
           "id": "kensetsu-common-session-033-cluster-2-p2",
           "ja": "六十メートル未満なら一切の航空上の確認が不要、と読みません。灯火の種類や配置、免除の判断は専門の制度に従います。作業者が一つの数字だけで設置の要否を決める教材ではありません。"
+        },
+        {
+          "id": "kensetsu-common-session-033-cluster-2-p3",
+          "ja": "航空障害灯は航空機から物件を認識するための灯火です。地表又は水面から六十メートル以上の物件は、国土交通大臣の許可による免除等を除き設置の対象になります。六十メートル未満でも、空港周辺の区域や航行への危険に関する規定があります。高さ、位置、灯火の設置者・管理者を分け、実際の要否や仕様は担当者が公式条件と照合します。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "六十メートルという数値だけで航空障害灯の要否を決められない理由を、位置と例外から説明してください。",
       "graded": false
     },
     {
@@ -84,9 +93,13 @@
         {
           "id": "kensetsu-common-session-033-cluster-3-p2",
           "ja": "工事計画の変更で高さや配置が変わる場合、必要な確認を担当者へつなげます。教材で示す用語を、機器の購入や設置の仕様書として使わないようにします。"
+        },
+        {
+          "id": "kensetsu-common-session-033-cluster-3-p3",
+          "ja": "昼間障害標識は、昼間に航空機から見えにくい煙突・鉄塔等の物件を認識しやすくするための表示です。灯火とは目的と対象条件が異なり、夜間の灯火があるだけで昼間の条件を満たすとは限りません。設置した航空障害標識の届出や、その機能を保つ管理も別の確認事項です。物件の図面と視認条件を専門担当へ渡し、教材から色や配置を決めません。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "航空障害灯と昼間障害標識の目的を分け、設置後に残る確認も挙げてください。",
       "graded": false
     },
     {
@@ -101,13 +114,52 @@
         {
           "id": "kensetsu-common-session-033-cluster-4-p2",
           "ja": "まとめとして、物件の高さ、設置位置、灯火や標識、担当者の確認を別々に説明します。実際の航空制限や空港周辺の条件は、該当する公式案内で確認する事項です。"
+        },
+        {
+          "id": "kensetsu-common-session-033-cluster-4-p3",
+          "ja": "工程変更でクレーンの位置や高さ、使用期間が変わる例です。変更内容を以前の資料と対照し、航空の確認が新しい計画を対象にしているかを担当者へ尋ねます。「前の計画は確認済み、変更案との対応は未確認」と状態を分けて伝えます。必要な灯火や標識を、予定を急ぐため独断で省略しません。"
         }
       ],
-      "applicationPromptJa": "目的、条件、担当と未確認の情報を分けて説明する。",
+      "applicationPromptJa": "高さ・位置・使用期間が変わった場合、以前の確認と新しい計画をどう照合しますか。",
       "graded": false
     }
   ],
   "dailyMinutesTarget": 30,
   "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
-  "editorialAuditStatus": "pending_substantive_audit"
+  "editorialAuditStatus": "substantive_AI_revision_human_reviews_pending",
+  "keyTerms": [
+    {
+      "term": "航空障害灯",
+      "reading": "こうくうしょうがいとう"
+    },
+    {
+      "term": "昼間障害標識",
+      "reading": "ちゅうかんしょうがいひょうしき"
+    },
+    {
+      "term": "地表",
+      "reading": "ちひょう"
+    },
+    {
+      "term": "視認",
+      "reading": "しにん"
+    },
+    {
+      "term": "制限表面",
+      "reading": "せいげんひょうめん"
+    },
+    {
+      "term": "免除",
+      "reading": "めんじょ"
+    }
+  ],
+  "contentRevision": 3,
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "similarityReviewed": false,
+    "runtimeVerified": true
+  },
+  "runtimeVerificationScope": "Real reader via documented browser image/storage adapters;35sessions/396paragraphs; native device not tested"
 }
