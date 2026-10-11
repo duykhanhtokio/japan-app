@@ -14,3 +14,6 @@ Seven additional Japanese-only drafts, sessions008–014, 28clusters/56paragraph
 
 ## Week003 Japanese batch
 Sessions015–021: 28clusters/56paragraphs, safety/health, harassment, minimum wage and insurance. Current official comparisons are partial, not expert approval; outstanding ideas and evidence are explicit. No technical procedures or images produced in this batch. Next Japanese batch: employment development and construction/environment/infrastructure laws, with full current verification first.
+
+## Week004 Japanese batch
+Sessions022–028: 28clusters/56paragraphs. Construction employment/skill development, construction and building regulation, waste/recycling, asbestos, noise/vibration. Source-derived details still outstanding; not exhaustive legal training. Next: Japanese water/sewage/fire/gas/electricity/communications/radio/aviation/parking law batch with official checks. Source2 full visual audit still pending.
