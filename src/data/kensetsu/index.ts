@@ -76,6 +76,13 @@ import session074 from '../../../docs/ssw-workspace/kensetsu/shared-session-074.
 import session075 from '../../../docs/ssw-workspace/kensetsu/shared-session-075.json';
 import session076 from '../../../docs/ssw-workspace/kensetsu/shared-session-076.json';
 import session077 from '../../../docs/ssw-workspace/kensetsu/shared-session-077.json';
+import session078 from '../../../docs/ssw-workspace/kensetsu/shared-session-078.json';
+import session079 from '../../../docs/ssw-workspace/kensetsu/shared-session-079.json';
+import session080 from '../../../docs/ssw-workspace/kensetsu/shared-session-080.json';
+import session081 from '../../../docs/ssw-workspace/kensetsu/shared-session-081.json';
+import session082 from '../../../docs/ssw-workspace/kensetsu/shared-session-082.json';
+import session083 from '../../../docs/ssw-workspace/kensetsu/shared-session-083.json';
+import session084 from '../../../docs/ssw-workspace/kensetsu/shared-session-084.json';
 import week001 from '../../../docs/ssw-workspace/kensetsu/shared-week-001.json';
 import week002 from '../../../docs/ssw-workspace/kensetsu/shared-week-002.json';
 import week003 from '../../../docs/ssw-workspace/kensetsu/shared-week-003.json';
@@ -94,6 +101,8 @@ import week010 from '../../../docs/ssw-workspace/kensetsu/shared-week-010.json';
 
 import week011 from '../../../docs/ssw-workspace/kensetsu/shared-week-011.json';
 
+import week012 from '../../../docs/ssw-workspace/kensetsu/shared-week-012.json';
+
 export type Level='1'|'2';
 export type Field='utilities'|'building'|'civil';
 export type Paragraph={id:string;ja:string};
@@ -102,8 +111,8 @@ export type Session={id:string;revision:number;titleJa:string;clusters:Cluster[]
 export type Week={id:string;titleJa:string;sessionIds:string[]};
 export const fields:{id:Field;title:string}[]=[{id:'utilities',title:'ライフライン・設備'},{id:'building',title:'建築'},{id:'civil',title:'土木'}];
 
-export const sessions:Session[]=[session001,session002,session003,session004,session005,session006,session007,session008,session009,session010,session011,session012,session013,session014,session015,session016,session017,session018,session019,session020,session021,session022,session023,session024,session025,session026,session027,session028,session029,session030,session031,session032,session033,session034,session035,session036,session037,session038,session039,session040,session041,session042,session043,session044,session045,session046,session047,session048,session049,session050,session051,session052,session053,session054,session055,session056,session057,session058,session059,session060,session061,session062,session063,session064,session065,session066,session067,session068,session069,session070,session071,session072,session073,session074,session075,session076,session077] as unknown as Session[];
-export const weeks:Week[]=[week001,week002,week003,week004,week005,week006,week007,week008,week009,week010,week011];
+export const sessions:Session[]=[session001,session002,session003,session004,session005,session006,session007,session008,session009,session010,session011,session012,session013,session014,session015,session016,session017,session018,session019,session020,session021,session022,session023,session024,session025,session026,session027,session028,session029,session030,session031,session032,session033,session034,session035,session036,session037,session038,session039,session040,session041,session042,session043,session044,session045,session046,session047,session048,session049,session050,session051,session052,session053,session054,session055,session056,session057,session058,session059,session060,session061,session062,session063,session064,session065,session066,session067,session068,session069,session070,session071,session072,session073,session074,session075,session076,session077,session078,session079,session080,session081,session082,session083,session084] as unknown as Session[];
+export const weeks:Week[]=[week001,week002,week003,week004,week005,week006,week007,week008,week009,week010,week011,week012];
 
 export const sessionById=new Map(sessions.map(s=>[s.id,s]));
 export const illustrations:Record<string,ImageSourcePropType>={
