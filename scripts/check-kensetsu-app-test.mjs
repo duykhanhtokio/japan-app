@@ -16,7 +16,7 @@ weeks.forEach((w,i)=>assert.deepEqual(w.sessionIds,sessions.slice(i*7,i*7+7).map
 const reader=fs.readFileSync('src/components/kensetsu/KensetsuCourse.tsx','utf8');
 assert(reader.includes('!reachedEnd||done'));assert(reader.includes('AsyncStorage.setItem(key'));
 assert(reader.includes('completionKey(learner,level,field)'));
-assert(reader.includes('translation===c.id'));assert(!reader.includes('p.translations'));
+assert(!reader.includes('translation===c.id'));assert(reader.includes('kensetsu-reflections'));assert(reader.includes('resizeMode="contain"'));assert(!reader.slice(reader.indexOf('function Reader('),reader.indexOf('function Calendar(')).includes('RoyalContentPanel'));assert(!reader.includes('p.translations'));
 assert(fs.readFileSync('src/app/specified-skills/kensetsu.tsx','utf8').includes('if(!__DEV__)'));
 const entry=fs.readFileSync('src/app/specified-skills/index.tsx','utf8');assert(entry.includes("'/specified-skills/kensetsu'"));
 console.log('KENSETSU APP TEST DATA PASS: 5 weeks / 35 sessions / 281 paragraphs; shared canonical imports; 3 image files; development gate; native runtime not tested.');
