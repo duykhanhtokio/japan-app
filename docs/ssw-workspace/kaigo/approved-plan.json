@@ -150,13 +150,15 @@
     "supplementalTeachingPointsAuthored": 585,
     "paragraphArtBatchPolicy": {
       "approvedAt": "2026-10-11",
-      "unit": "one_complete_calendar_week",
-      "currentWeek": 5,
+      "unit": "redistribute_existing_images_across_all_26_weeks",
+      "currentWeek": null,
       "preserveCompletedArt": true,
-      "allWeekSectionsRequired": true,
+      "allWeekSectionsRequired": false,
       "visualAndRuntimeQARequired": true,
       "remoteVerificationBeforeHandoff": true,
-      "technicalSubBatchesAreNotHandoffs": true
+      "technicalSubBatchesAreNotHandoffs": true,
+      "newImageGenerationAllowed": false,
+      "imagesPerStudyDay": 1
     }
   },
   "amendments": [
@@ -355,6 +357,19 @@
       "internalTestIntegrationAuthorized": true,
       "humanReviewed": false,
       "nativeDeviceTested": false,
+      "releaseReady": false
+    },
+    {
+      "date": "2026-10-11",
+      "userRequestVi": "Dừng tạo ảnh Kaigo vì quá nhiều ảnh trùng; phân bố ảnh đã tạo đồng đều cho đủ số tuần đã có.",
+      "newImageGenerationAllowed": false,
+      "calendarWeeks": 26,
+      "studyDays": 176,
+      "contextImagesPerDay": 1,
+      "preserveAllExistingImages": true,
+      "allocationPath": "src/data/kaigo/weekly-art-allocation.json",
+      "internalTestIntegrationAuthorized": true,
+      "humanReviewed": false,
       "releaseReady": false
     }
   ]
