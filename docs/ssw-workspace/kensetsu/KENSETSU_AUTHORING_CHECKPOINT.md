@@ -173,3 +173,20 @@ Verification:732unique paragraphs,28unique newprompts,all42terms used in body. S
 Next: remotely persist this narrowbatch andrequire WORK PERSISTENCE PASS,then source3PDF18section3.2.8piles andfollowing specialistwork. Keep atomicpartialgaps andallreleasegates. No whole-source/course completion claim.
 
 Finalprepublication: KENSETSU APP TEST DATA PASS;JLPT APPROVED UI LOCK PASS10/10;stableold56lesson/228coveragepreservation PASS. No Kaigo orUIasset content changes.
+
+
+## Week010 independent Japanese structural-work batch — 2026-10-12 Asia/Tokyo
+
+Started from remotely verifiede3c1ef7e2fd7eb97d06e0e98b0c5a4e46e52a6f0 withclean tree andWORK PERSISTENCE PASS. Added sessions064–070:7sessions/28clusters/84Japanese paragraphs,28ungradedreflections,42contextualreadings. Total70sessions/816paragraphs. Prior63sessionbytes/IDs/revisions/completion keys and256coverage rows unchanged. Sixseparate routes reference shared introductory structural/equipment interfaces, not advanced2号 competence. No UI changes, exams, illustrations or translations.
+
+Source3 SHAverified;PDF18from3.2.8throughPDF24/printed43–49 text/visuals inspected, preceding3.2.7onPDF18notrecounted. Scope:piles,tobi,steel,rebar,joints,welding,formwork. One6-shape diagram,14photos andonefabricationdrawing checked. Fabricationdrawing enlarged4x:individualdimensions/notes stillblurred, exactgap recorded; no numbersguessed or completefigurecoverage claimed. Source lap-labelledgridphoto not accepted asproofeverycrossing islapsplice.197atomicrows/28clusterevidence mappings; allsourceassets/OCRexcludedfromrepo. PDF25textpreviewonly,outsidevisual/taughtscope;PDF26onwardunread.
+
+Currentofficialindex confirms R07building specification2025-05-12. Localofficial selectedexcerpts ofpiles/rebar/formwork/steel/weld/erection used, notfull330pages; contractualpublicbuilding scope notuniversal law. R08Marchcivilrebar selectedcrossingties/cover/lapsplices/jointrecords retrieved. MHLWjobtag/scaffold/education pages, JWESfusion/pressure/brazing selectedpage/QA andprimaryiron-steel/manufacturer roledefinitions retrieved. Historicalpile/scaffold andcurrent2026temporary-support notice searchexcerpts only, full technical/safetyreviewpending. No current-allcompliance assertion.
+
+Corrected/qualified allpileshardlayer/allheavybuildingspiles, factorypilealwaysdriven, rigidframeearthquakeguarantee, crane/erectionfixedsequence, allconcretewithrebar/allformworkafterallrebar, universal12mrebarmaximum, lapalwaysarcwelded/crossingislap, allmechanicaljointsthreaded, weldalwaysfast/light/airtight, brazingas solventadhesive, allformworkwood/allshoringpipes, removalonlywholebuildingcompletion.18partialitems appended;149knownunresolved items, notexhaustivedenominator orpercent. Detailednumericdesign/operating/qualification tables, fullPPE/fume/supportsafety, blurredfabricationnotes, specialist/native/rights/semanticapproval, newimages/translations, native runtime andreal30minutetiming remainpending;releaseReadyfalse.
+
+Verification:816uniqueparagraphs,28uniquepromptsinnewbatch,all42termsoccurinbody. Prior63lessons and256coverage rows preserved;allIDsunique,6routes70sessions/10weeks. Source22charcontiguousscreenPDF18–24zero matches; not semantic/rights approval. Independentfictional position/material/force/state examples compared against source description/photos; oldfoundation/joint/formwork introductory knowledge extended, not recreated. Actualreader with documented web image/storage adapters rendered70sessions/all816paragraphs/reflections;scroll/click completion,newday64andoldday1reloadpersistence,learner/level/fieldisolation,3viewports andzero browsererrors. Japanesefontloaded assertion passed;3retainedcaptures visuallyinspected for Japanese/back/wrapping/completionbutton. Native nottested.
+
+Next: remotelypersistthis narrowbatch andrequire WORK PERSISTENCE PASS,thensource3PDF25section3.2.15concretepump andfollowing specialistwork. Preserveallatomicgaps andhumanreleasegates;no wholecourse/sourcecompletionclaim.
+
+Finalprepublication: KENSETSU APP TEST DATA PASS;JLPT APPROVED UI LOCK PASS10/10; whitespace/stabledata checks PASS. No Kaigo orUIassetcontent changes.
