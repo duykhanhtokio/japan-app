@@ -156,3 +156,20 @@ Verification:648unique paragraphs,28newunique reflections,42terms all used in bo
 Next: remotely persist with WORK PERSISTENCE PASS, then week009source3PDF13section3.2specialist work; retain all historical/new atomic gaps. No whole-course/release completion claim.
 
 Finalprepublication: KENSETSU APP TEST DATA PASS; JLPT APPROVED UI LOCK PASS10/10; whitespace/stableID/old49lesson preservation PASS. Existingfont/back exactLFScontent retained, zero staged asset changes. Allhuman gates false.
+
+
+## Week009 independent Japanese specialist-work batch — 2026-10-12 Asia/Tokyo
+
+Started from remote-verified e7d5723eae926775ec49c06d9267cefaa5b36345 with clean tree and WORK PERSISTENCE PASS. Added sessions057–063:7sessions/28clusters/84Japanese paragraphs,28ungraded reflection prompts,42contextual readings. Total63sessions/732paragraphs; prior56session bytes/stableIDs/progressrevisions and228coverage rows unchanged. Shared introductory interfaces referenced by six separate routes, not advanced2号 competence. ReaderUI unchanged; no exams, new illustrations or translations.
+
+Source3 exactSHA verified;PDF13–18/printed38–43 text and visuals read. Taught only3.2.1–3.2.7:earthworks,pushpipe,marine,well-drilling,groundwater lowering,pavement,machineearthwork. Alltwo diagram labels/arrows,one machine illustration andeight photos in this scope inspected. Pile3.2.8beginninglowerPDF18 seen but excluded;PDF19–20textpreview only.193atomic rows and28cluster evidence maps record conditions, corrections andpartialknowledge. No source assets/OCR included in repo.
+
+Current official AI comparison includes retrieved MHLW qualification overview/supported scheme, MOE onsen permission/confirmation distinction, available R06 groundwater/settlement information, official port functions and2025Sakata structure example. Previously downloaded R07building specificationPDF19–20re-read; webopenfailedthisturn. Regionalroad124pagePDF downloaded thisturn, selected1–3,17,26read; notwholemanual. Historical waterworks/groundwater guidance and search-excerpt-only sources explicitly limited; no all-currenttechnical/compliance assertion. Wellpoint component configurations remaintechnicalverificationpending.
+
+Qualified source flat-only earthworks, zero-settlement compaction, all-wave exclusion/caisson structure, fixedhotwater/geothermal depths andrelative skillhierarchy, universal10mwellpoint boundary/economy/stability, fixedsubgradeexcavation/sand/twolayers, universalwater-impermeable surface andsameeducationfor allmachines.16partialtechnical concepts appended;131knownunresolved items now, not exhaustive denominator or completionpercentage. Previous gaps retained. Human specialist/native/rights/semanticapproval, illustrations, translations, native device andreal30minute learning time remainpending;releaseReadyfalse.
+
+Verification:732unique paragraphs,28unique newprompts,all42terms used in body. Source22character contiguouswordingscreenPDF13–18zero matches;not semantic/rightsapproval. Fictional plan/location/material/state examples independently composed; shaft/pipe/workstate mapping extends earlier introductorytunnelknowledge rather than just repeats it. Actualreader through documented webadapters rendered63sessions/732paragraphs/allreflections,scroll-and-clickcompletion,newday57+oldday1reloadpersistence,learner/field/level isolation andthreeviewports;zero browsererrors. Japanese fontloaded assertion passed. Three finalcaptures inspected for Japanese,backcontrol,wrapping andcompletionbutton. Native devicesnot tested.
+
+Next: remotely persist this narrowbatch andrequire WORK PERSISTENCE PASS,then source3PDF18section3.2.8piles andfollowing specialistwork. Keep atomicpartialgaps andallreleasegates. No whole-source/course completion claim.
+
+Finalprepublication: KENSETSU APP TEST DATA PASS;JLPT APPROVED UI LOCK PASS10/10;stableold56lesson/228coveragepreservation PASS. No Kaigo orUIasset content changes.
