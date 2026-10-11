@@ -2,7 +2,16 @@ const fs=require('fs'),path=require('path');
 const esbuild=require('esbuild');
 const root=path.resolve(__dirname,'../../..');
 const out=process.env.JLPT_QA_WWW||'/tmp/jlpt-legacy-qa';fs.mkdirSync(out,{recursive:true});
-const assets=new Map();
+const assets=new Map();const jpegSizes=JSON.parse(require('child_process').execFileSync('python',['-c',`from pathlib import Path
+from PIL import Image
+import json,sys
+sizes={}
+for p in Path(sys.argv[1]).rglob('*'):
+ if p.suffix.lower() in ['.jpg','.jpeg']:
+  try:
+   with Image.open(p) as im:sizes[str(p.resolve())]=im.size
+  except Exception:pass
+print(json.dumps(sizes))`,path.join(root,'assets')],{encoding:'utf8',maxBuffer:4*1024*1024}));
 esbuild.build({entryPoints:[path.join(__dirname,'entry.tsx')],outdir:out,bundle:true,platform:'browser',format:'iife',banner:{js:"var process={env:{NODE_ENV:'development'},nextTick:(fn,...args)=>queueMicrotask(()=>fn(...args))};var global=globalThis;"},jsx:'automatic',mainFields:['browser','module','main'],conditions:['browser','default'],resolveExtensions:['.web.tsx','.web.ts','.web.js','.tsx','.ts','.js','.json'],nodePaths:[path.join(root,'node_modules')],define:{'process.env.NODE_ENV':'"development"','__DEV__':'true'},plugins:[{name:'harness-context-and-assets',setup(b){
  b.onLoad({filter:/N1OfficialTrial\.tsx$/},a=>({contents:fs.readFileSync(a.path,'utf8')+'\nexport { QuestionBlock };',loader:'tsx'}));
  b.onResolve({filter:/^react-native$/},()=>({path:path.join(root,'node_modules/react-native-web/dist/index.js')}));
@@ -11,7 +20,7 @@ esbuild.build({entryPoints:[path.join(__dirname,'entry.tsx')],outdir:out,bundle:
  b.onResolve({filter:/^@react-navigation\/native$/},()=>({path:'navigation-focus',namespace:'qa'}));
  b.onLoad({filter:/.*/,namespace:'qa'},a=>({contents:a.path==='backdrop-context'?'export const useInheritedBackdrop=()=>true;export const useRootBackdropSource=()=>undefined;':'export const useIsFocused=()=>true;',loader:'js'}));
  b.onResolve({filter:/\.(png|jpg|jpeg|mp3|m4a|ttf)$/},a=>({path:path.isAbsolute(a.path)?a.path:path.resolve(a.resolveDir,a.path),namespace:'qa-asset'}));
- b.onLoad({filter:/.*/,namespace:'qa-asset'},a=>{const key='/assets/'+assets.size+path.extname(a.path);const actualPath=a.path.includes('/assets/app/')?path.join(process.env.JLPT_QA_ASSET_ROOT||path.join(root,'assets/app'),a.path.split('/assets/app/')[1]):a.path;assets.set(key,actualPath);const metadata={uri:key};const actual=assets.get(key);const header=fs.readFileSync(actual);if(header.subarray(1,4).toString()==='PNG'){metadata.__qaWidth=header.readUInt32BE(16);metadata.__qaHeight=header.readUInt32BE(20);metadata.width=metadata.__qaWidth;metadata.height=metadata.__qaHeight}if(/\.jpe?g$/.test(actual)){const size=JSON.parse(require('child_process').execFileSync('python',['-c','from PIL import Image;import sys,json;im=Image.open(sys.argv[1]);print(json.dumps(im.size))',actual],{encoding:'utf8'}));metadata.width=metadata.__qaWidth=size[0];metadata.height=metadata.__qaHeight=size[1];}return {contents:'module.exports='+JSON.stringify(metadata),loader:'js'}});
+ b.onLoad({filter:/.*/,namespace:'qa-asset'},a=>{const key='/assets/'+assets.size+path.extname(a.path);const actualPath=a.path.includes('/assets/app/')?path.join(process.env.JLPT_QA_ASSET_ROOT||path.join(root,'assets/app'),a.path.split('/assets/app/')[1]):a.path;assets.set(key,actualPath);const metadata={uri:key};const actual=assets.get(key);const header=Buffer.alloc(24);const fd=fs.openSync(actual,'r');fs.readSync(fd,header,0,24,0);fs.closeSync(fd);if(header.subarray(1,4).toString()==='PNG'){metadata.__qaWidth=header.readUInt32BE(16);metadata.__qaHeight=header.readUInt32BE(20);metadata.width=metadata.__qaWidth;metadata.height=metadata.__qaHeight}if(/\.jpe?g$/.test(actual)){const size=jpegSizes[actual];if(!size)throw new Error("Missing JPEG metadata "+actual);metadata.width=metadata.__qaWidth=size[0];metadata.height=metadata.__qaHeight=size[1];}return {contents:'module.exports='+JSON.stringify(metadata),loader:'js'}});
 }}]}).then(()=>{
  fs.writeFileSync(path.join(out,'assets.json'),JSON.stringify([...assets]));
  const font=process.env.JLPT_QA_FONT||path.join(process.env.JLPT_QA_ASSET_ROOT||path.join(root,'assets/app'),'fonts/NotoSansJP-Medium.ttf');

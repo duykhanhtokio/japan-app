@@ -27,4 +27,6 @@ export const LEGACY_COLOR_VISUALS: Readonly<Record<string, ImageSourcePropType>>
   'n4-2021-12-listening-p3-q5': require('../../../assets/jlpt-legacy-color/n4-2021-12-listening-p3-q5.png'),
   'n4-2021-12-listening-p1-q6': require('../../../assets/jlpt-legacy-color/n4-2021-12-listening-p1-q6.png'),
   'n4-2021-12-listening-p3-q1': require('../../../assets/jlpt-legacy-color/n4-2021-12-listening-p3-q1.png'),
+  'n1-2012-07-l-p1-q01': require('../../../assets/jlpt-legacy-color/n1-2012-07-l-p1-q01.png'),
+  'n1-2012-07-l-p1-q06': require('../../../assets/jlpt-legacy-color/n1-2012-07-l-p1-q06.png'),
 };
