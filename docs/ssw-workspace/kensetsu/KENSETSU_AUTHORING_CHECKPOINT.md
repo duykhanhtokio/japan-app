@@ -68,3 +68,10 @@ Source2 SHA verified; PDF2,4–9/printed9,11–16 read and visually inspected in
 Next: audit week004 then005 before new weeks/images. Runtime and persistence outcomes follow QA evidence.
 
 Verification: real reader browser adapter rendered35 sessions/337 paragraphs; scroll/click completion, reload and learner/level/field isolation passed. Phone/tablet/landscape captures retained; phone body and landscape reflections inspected. No exact duplicate paragraphs or week003 prompts. Source2 pages2,4–9 contiguous wording screen found no22-character match (longest11); not rights/semantic approval. JLPT10/10 UI lock passed. Native device not tested.
+
+
+## Week003 reconciliation before week004 — 2026-10-11
+
+Publisher requested saving the local additions before continuing. Reconciled local06485a7c with remote505b98a4: retained the existing construction examples, added fuller explanations/applications and77-row source audit, and retained insured-month11days/80hours and necessary-treatment distinctions. ContentRevision4; stable IDs/revision2 completion keys unchanged. Both predecessor histories remain preserved. Runtime validation must be rerun against this combined content; no native/specialist/rights release approval. Next:week004 only after remote persistence verification.
+
+Combined-batch runtime passed35sessions/337paragraphs,completion gating/reload/route isolation; three inspected screenshots in week003-reconciled. Existing remote runtime evidence retained as history.

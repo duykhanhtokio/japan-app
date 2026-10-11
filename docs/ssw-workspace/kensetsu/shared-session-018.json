@@ -30,15 +30,15 @@
     }
   ],
   "officialReferences": [
-    "https://anzeninfo.mhlw.go.jp/yougo/yougo01_1.html",
     "https://www.mhlw.go.jp/stf/newpage_11389.html",
+    "https://www.mhlw.go.jp/web/t_doc?dataId=74001000&dataType=0&pageNo=1",
+    "https://www.mhlw.go.jp/web/t_doc?dataId=74001000&dataType=0&pageNo=2",
     "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=2",
-    "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
-    "https://www.check-roudou.mhlw.go.jp/study/roudousya_stresscheck.html",
-    "https://kokoro.mhlw.go.jp/etc/small-sc/"
+    "https://kokoro.mhlw.go.jp/etc/small-sc/",
+    "https://www.mhlw.go.jp/web/t_doc?dataId=00tc1015&dataType=1&pageNo=1"
   ],
   "verificationDate": "2026-10-11",
-  "verificationStatus": "AI cluster-linked official comparison; native/legal/safety human review pending",
+  "verificationStatus": "AI official comparison recorded per cluster; not human legal/safety approval",
   "translationStatus": "deferred",
   "illustrationStatus": "deferred",
   "clusters": [
@@ -49,7 +49,7 @@
       "paragraphs": [
         {
           "id": "kensetsu-common-session-018-cluster-1-p1",
-          "ja": "KYは作業前などに危険を予測して共有する活動です。リスクアセスメントは、危険性や有害性を特定し、リスクを見積もって低減措置を検討する仕組みです。関連はありますが、朝礼で話したことだけで全ての評価を済ませたとはいえません。"
+          "ja": "KYは危険予知のことで、作業前などに危険を予測して共有する活動です。リスクアセスメントでは、危険性や有害性を特定し、災害の起こりやすさや被害の程度などからリスクを見積もり、低減措置を検討します。対策の優先順位や実施後の確認も必要です。朝礼で発言したことだけで全ての評価を済ませたとはいえません。"
         },
         {
           "id": "kensetsu-common-session-018-cluster-1-p2",
@@ -57,15 +57,11 @@
         },
         {
           "id": "kensetsu-common-session-018-cluster-1-p3",
-          "ja": "リスクは、起こり得るけがや健康障害の重大さと、起こる可能性を合わせて考えます。評価では危険・有害な要因を特定し、低減措置を検討して実施し、その情報を関係者へ伝えます。KYで気づいた変化は、その確認につなげる情報にもなります。"
+          "ja": "内装工事で使用材料が変わったとき、前日のKYの発言をそのまま使わず、材料の情報と今日の作業条件を担当者と照合する例です。危険を挙げる段階、起こりやすさや被害の程度を考える段階、低減措置を検討する段階を分けます。対策後にも残る危険の情報を共有します。"
         }
       ],
-      "applicationPromptJa": "朝礼で共有した危険と、評価に必要な材料・作業条件の情報を分けてください。重大さと可能性は何を表しますか。",
-      "graded": false,
-      "learningActivity": {
-        "ja": "朝礼で共有した危険と、評価に必要な材料・作業条件の情報を分けてください。重大さと可能性は何を表しますか。",
-        "graded": false
-      }
+      "applicationPromptJa": "材料変更の例で、危険を挙げること、リスクを見積もること、低減措置を検討することを分けて説明してください。",
+      "graded": false
     },
     {
       "id": "kensetsu-common-session-018-cluster-2",
@@ -82,15 +78,11 @@
         },
         {
           "id": "kensetsu-common-session-018-cluster-2-p3",
-          "ja": "法令で必要な措置は、評価結果が低いからといって省略できません。そのうえで、危険の除去・低減、設備、管理、保護具の対策を区別して検討します。化学物質の対象範囲などにより義務が異なるため、すべて努力義務という説明では足りません。"
+          "ja": "設備工事の打合せで「保護具を追加すればよい」とだけ提案された場面です。危険をなくせるか、設備や作業管理で減らせるかも専門の担当者が検討します。法令で定められた措置は、リスクを低いと見積もったことだけで省略できません。作業者が勝手に材料や設備を変更する説明ではありません。"
         }
       ],
-      "applicationPromptJa": "保護具の配布以外に、どの種類の対策を確認しますか。評価結果と法令で必要な措置の関係も説明してください。",
-      "graded": false,
-      "learningActivity": {
-        "ja": "保護具の配布以外に、どの種類の対策を確認しますか。評価結果と法令で必要な措置の関係も説明してください。",
-        "graded": false
-      }
+      "applicationPromptJa": "保護具だけで検討を終えない理由を説明してください。法令で定められた措置と、リスクの見積りの関係も整理してください。",
+      "graded": false
     },
     {
       "id": "kensetsu-common-session-018-cluster-3",
@@ -107,15 +99,11 @@
         },
         {
           "id": "kensetsu-common-session-018-cluster-3-p3",
-          "ja": "一般の定期健康診断と、特定の有害な業務などに対応する健康診断は対象や間隔が異なります。雇入れ時の健診を受けたから、その後の定期健診がずっと不要になるわけではありません。受診、結果の確認、医師の意見を踏まえた措置を一つずつ区別します。"
+          "ja": "健診後に追加の確認を案内された人は、受診日だけでなく、どの窓口へ結果の相談をするかを確認します。異常所見がある対象者については、必要な措置に関する医師等の意見を聴き、その意見や実情を踏まえた就業上の対応が関わります。結果の数字を同僚同士で判定し、配置を決めるものではありません。"
         }
       ],
-      "applicationPromptJa": "受診の記録と、その後の対応の記録は何が違いますか。一般の定期健診と業務に応じた健診も区別してください。",
-      "graded": false,
-      "learningActivity": {
-        "ja": "受診の記録と、その後の対応の記録は何が違いますか。一般の定期健診と業務に応じた健診も区別してください。",
-        "graded": false
-      }
+      "applicationPromptJa": "健診の受診、医師等の意見、必要な就業上の対応を区別してください。結果を受け取った後、何を確認しますか。",
+      "graded": false
     },
     {
       "id": "kensetsu-common-session-018-cluster-4",
@@ -132,31 +120,26 @@
         },
         {
           "id": "kensetsu-common-session-018-cluster-4-p3",
-          "ja": "2026年時点では、常時五十人以上の労働者を使用する事業場で年一回の実施が義務です。五十人未満への拡大は施行時点を区別します。個人の結果は本人へ通知され、本人の同意なく事業者へ提供されません。会社の説明を読むときは、実施対象と情報の扱いを別々に確認します。"
+          "ja": "勤務先から検査の案内を受けた人は、個人結果の通知先と相談方法を確認します。個人結果を本人の同意なしに事業者へ提供してよい制度ではありません。高ストレスとされた対象者が申出をする医師の面接指導も、結果票を受け取るだけの行為と異なります。制度の対象人数と施行日を確認してから案内を読みます。"
         }
       ],
-      "applicationPromptJa": "資料の日付と施行日を見比べる理由を説明してください。実施対象の確認と個人結果の扱いを分けて述べてください。",
-      "graded": false,
-      "learningActivity": {
-        "ja": "資料の日付と施行日を見比べる理由を説明してください。実施対象の確認と個人結果の扱いを分けて述べてください。",
-        "graded": false
-      }
+      "applicationPromptJa": "個人結果の扱いと医師の面接指導を区別してください。2026年の義務と2028年施行の改正を読む際、何を確認しますか。",
+      "graded": false
     }
   ],
   "review": {
     "domain": false,
     "nativeJapanese": false,
-    "runtime": "pending_recheck_after_content_revision"
+    "runtime": "pending_updated_content_test"
   },
   "dailyMinutesTarget": 30,
   "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
-  "editorialAuditStatus": "AI_substantive_revision_source_and_current_official_comparison; human_review_pending",
-  "contentRevision": 3,
-  "contentRevisionNote": "Substantive week003 audit; completion revision2 and all prior IDs retained. Reading acknowledgement is not qualification or mastery.",
+  "editorialAuditStatus": "AI_substantive_revision; human_domain_native_rights_timing_pending",
+  "contentRevision": 4,
   "keyTerms": [
     {
-      "term": "危険予知",
-      "reading": "きけんよち"
+      "term": "危険性",
+      "reading": "きけんせい"
     },
     {
       "term": "有害性",
@@ -167,28 +150,16 @@
       "reading": "ていげんそち"
     },
     {
-      "term": "定期健康診断",
-      "reading": "ていきけんこうしんだん"
+      "term": "保護具",
+      "reading": "ほごぐ"
     },
     {
-      "term": "就業上の措置",
-      "reading": "しゅうぎょうじょうのそち"
+      "term": "異常所見",
+      "reading": "いじょうしょけん"
     },
     {
-      "term": "施行日",
-      "reading": "しこうび"
+      "term": "面接指導",
+      "reading": "めんせつしどう"
     }
-  ],
-  "officialVerification": {
-    "date": "2026-10-11",
-    "urls": [
-      "https://anzeninfo.mhlw.go.jp/yougo/yougo01_1.html",
-      "https://www.mhlw.go.jp/stf/newpage_11389.html",
-      "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=2",
-      "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
-      "https://www.check-roudou.mhlw.go.jp/study/roudousya_stresscheck.html",
-      "https://kokoro.mhlw.go.jp/etc/small-sc/"
-    ],
-    "scope": "Cluster-linked claims in week-003-claim-evidence.json; AI editorial comparison, not professional approval"
-  }
+  ]
 }

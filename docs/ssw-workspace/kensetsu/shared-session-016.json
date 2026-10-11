@@ -30,11 +30,12 @@
     }
   ],
   "officialReferences": [
-    "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
+    "https://www.mhlw.go.jp/web/t_doc?dataId=74001000&dataType=0&pageNo=1",
+    "https://www.mhlw.go.jp/web/t_doc?dataId=74001000&dataType=0&pageNo=2",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/roudoukijun/anzeneisei10/qualificaton_education.html"
   ],
   "verificationDate": "2026-10-11",
-  "verificationStatus": "AI cluster-linked official comparison; native/legal/safety human review pending",
+  "verificationStatus": "AI official comparison recorded per cluster; not human legal/safety approval",
   "translationStatus": "deferred",
   "illustrationStatus": "deferred",
   "clusters": [
@@ -53,15 +54,11 @@
         },
         {
           "id": "kensetsu-common-session-016-cluster-1-p3",
-          "ja": "安全はけがなどの危険、衛生は粉じんなどによる健康障害にも関わります。労働者も、災害を防ぐために必要な事項を守り、事業者などが行う防止措置に協力する役割があります。会社の措置と労働者の協力は、どちらか一方で済む関係ではありません。"
+          "ja": "資材置場で、安全第一の掲示を見た人が、通路の変更について担当者へ確認する場面です。掲示の役割は意識を共有することです。労働者も災害防止に必要な事項を守り、関係者の防止措置に協力するよう努めます。気づいた変更を伝えることと、自分の判断で設備を直すことは別です。"
         }
       ],
-      "applicationPromptJa": "旗の表示、会社が実施する措置、労働者の協力は、それぞれ何を示しますか。表示だけでは分からないことを挙げてください。",
-      "graded": false,
-      "learningActivity": {
-        "ja": "旗の表示、会社が実施する措置、労働者の協力は、それぞれ何を示しますか。表示だけでは分からないことを挙げてください。",
-        "graded": false
-      }
+      "applicationPromptJa": "安全第一の掲示があることと、実際の防止措置が整っていることを分けて説明してください。労働者の協力にはどのような情報共有が考えられますか。",
+      "graded": false
     },
     {
       "id": "kensetsu-common-session-016-cluster-2",
@@ -78,15 +75,11 @@
         },
         {
           "id": "kensetsu-common-session-016-cluster-2-p3",
-          "ja": "雇入れ時と作業内容変更時の教育は、実際に従事する業務に関係する安全・衛生を理解するためのものです。教育の名称だけでなく、内容が今回の担当に対応しているかを確認します。朝礼に出席したという記録と、必要な教育を受けたという記録も同じとは限りません。"
+          "ja": "土木会社で材料の運搬担当から別の作業へ移る人は、担当変更の説明に加えて、受ける教育の内容と日時を確認します。「前の現場で聞いた」という記憶だけでは、今回の業務を学んだか分かりません。経験年数ではなく、変更点とそれに対応する教育を整理します。"
         }
       ],
-      "applicationPromptJa": "資材整理から別の工程へ移る人は、過去の教育記録と新しい担当の何を照合しますか。朝礼出席と教育の確認も区別してください。",
-      "graded": false,
-      "learningActivity": {
-        "ja": "資材整理から別の工程へ移る人は、過去の教育記録と新しい担当の何を照合しますか。朝礼出席と教育の確認も区別してください。",
-        "graded": false
-      }
+      "applicationPromptJa": "担当変更時に、前の経験だけでは確認できない情報を挙げてください。どの教育をいつ受けるか、どう尋ねますか。",
+      "graded": false
     },
     {
       "id": "kensetsu-common-session-016-cluster-3",
@@ -103,15 +96,11 @@
         },
         {
           "id": "kensetsu-common-session-016-cluster-3-p3",
-          "ja": "免許、技能講習の修了、特別教育は、必要な業務と法令上の位置付けが異なります。一つを持っていれば、他の業務をすべて担当できるという関係ではありません。能力の境界値や機種ごとの対応は、今回の業務を特定して公式資料と責任者の説明で確認します。"
+          "ja": "現場の配置表に「運転」と「玉掛け」が別々に書かれている例です。同じ揚重作業に関係していても担当業務は異なります。機械の名称・能力、担当する行為、証明書の対象業務を照合します。ここでは具体的な能力区分や操作を決めず、必要条件を責任者に確認する情報をそろえます。"
         }
       ],
-      "applicationPromptJa": "「クレーンの資格」という説明を具体化するため、機械・担当業務・証明書について何を尋ねますか。",
-      "graded": false,
-      "learningActivity": {
-        "ja": "「クレーンの資格」という説明を具体化するため、機械・担当業務・証明書について何を尋ねますか。",
-        "graded": false
-      }
+      "applicationPromptJa": "同じ揚重作業でも、運転と玉掛けを一つの資格名で済ませられない理由を説明してください。確認に必要な情報を三つ挙げてください。",
+      "graded": false
     },
     {
       "id": "kensetsu-common-session-016-cluster-4",
@@ -128,27 +117,22 @@
         },
         {
           "id": "kensetsu-common-session-016-cluster-4-p3",
-          "ja": "法定教育の修了と、この現場での配置・指示の理解は別の確認です。アプリの完了表示は学習内容を読んだ記録であり、免許や修了証の代わりにはなりません。条件が不明なら、証明書の名称、機械、担当業務を示して、作業前の確認につなげます。"
+          "ja": "配管班へ応援に来た人は、修了証を提示した後、今日の担当と連絡する相手を確認します。証明書を持っていることだけで、現場の全作業を任されるわけではありません。不明な担当をそのまま引き受けず、「この証明書の対象と今日の業務が一致するか確認したいです」と伝えます。"
         }
       ],
-      "applicationPromptJa": "修了証があっても担当表と指示を確認する理由を説明してください。アプリの完了表示が証明する範囲は何ですか。",
-      "graded": false,
-      "learningActivity": {
-        "ja": "修了証があっても担当表と指示を確認する理由を説明してください。アプリの完了表示が証明する範囲は何ですか。",
-        "graded": false
-      }
+      "applicationPromptJa": "証明書、担当業務、現場の指示について、作業前に何を照合しますか。教材の完了表示で法定教育を代替できない理由も述べてください。",
+      "graded": false
     }
   ],
   "review": {
     "domain": false,
     "nativeJapanese": false,
-    "runtime": "pending_recheck_after_content_revision"
+    "runtime": "pending_updated_content_test"
   },
   "dailyMinutesTarget": 30,
   "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
-  "editorialAuditStatus": "AI_substantive_revision_source_and_current_official_comparison; human_review_pending",
-  "contentRevision": 3,
-  "contentRevisionNote": "Substantive week003 audit; completion revision2 and all prior IDs retained. Reading acknowledgement is not qualification or mastery.",
+  "editorialAuditStatus": "AI_substantive_revision; human_domain_native_rights_timing_pending",
+  "contentRevision": 4,
   "keyTerms": [
     {
       "term": "安全衛生",
@@ -167,20 +151,12 @@
       "reading": "とくべつきょういく"
     },
     {
-      "term": "就業制限",
-      "reading": "しゅうぎょうせいげん"
-    },
-    {
       "term": "修了証",
       "reading": "しゅうりょうしょう"
+    },
+    {
+      "term": "玉掛け",
+      "reading": "たまかけ"
     }
-  ],
-  "officialVerification": {
-    "date": "2026-10-11",
-    "urls": [
-      "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/roudoukijun/anzeneisei10/qualificaton_education.html"
-    ],
-    "scope": "Cluster-linked claims in week-003-claim-evidence.json; AI editorial comparison, not professional approval"
-  }
+  ]
 }
