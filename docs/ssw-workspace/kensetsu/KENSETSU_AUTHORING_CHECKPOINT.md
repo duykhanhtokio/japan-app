@@ -30,3 +30,10 @@ Sessions029–035: 28clusters/56paragraphs, water/sewage, fire/water supply, gas
 Week 001 revised as a whole batch. Replaced two detached examples with original construction coordination cases, differentiated change coordination from handover, and supplied 29 section-specific ungraded prompts. Existing translations of edited Japanese paragraphs are stale and require later revision. A 40-row chapter-one source audit records explained, partial and blocked items; it is an editorial checklist, not the full-source knowledge denominator.
 
 All 35 sessions and five week batches now have null duration estimates; 30 minutes per day and 210 per week remain targets only. Cluster minute allocations were withdrawn. Weeks are provisional authoring groups and must be regrouped if source coverage and learner timing require it. Japanese priority remains in effect. Do not add new weeks or images before substantively auditing weeks 002–005. No native, specialist, rights, source-similarity, learner-timing or app-runtime pass is claimed.
+
+
+## Publisher requested app test — 2026-10-11
+
+Integrated all five provisional batches (35 sessions, 281 Japanese paragraphs) in the development-only /specified-skills/kensetsu route and enabled 建設 beside 介護 in the sector selector. Both levels and all three fields retain independent learner/route completion state and reference the same canonical content. Completion requires reaching the end and pressing 完了; it is saved before the green check appears. Existing three illustrations are mapped, including the inline illustration in session 001. Translation panels show a pending notice; incomplete/stale drafts stay out of the reader. No exam is enabled.
+
+Browser-adapted component checks rendered every source paragraph and verified completion gating, reload persistence and learner/level/field isolation. Phone/tablet/landscape screenshots are retained. Native simulator not tested. Four touched TypeScript files lint clean; global TypeScript has existing TS2352 at src/services/life-content-repository.ts:47, outside Kensetsu. JLPT UI lock 10/10 passed. Test availability is not content approval or release readiness.

@@ -1,0 +1,43 @@
+import {useEffect,useRef,useState} from 'react';
+import {Image,Pressable,ScrollView,StyleSheet,Text,View,type NativeScrollEvent,type NativeSyntheticEvent} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {RoyalContentPanel,RoyalExplanationPanel} from '@/components/ui/RoyalPanels';
+import {RoyalBackButton,ROYAL_FONT} from '@/components/ui/RoyalSurface';
+import {completionId,completionKey,fields,illustrations,restoreProgress,sessionById,weeks,type Field,type Level,type Session} from '@/data/kensetsu';
+function Action({title,onPress,disabled=false,selected=false,testID}:{title:string;onPress:()=>void;disabled?:boolean;selected?:boolean;testID?:string}){
+ return <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={title} accessibilityState={{disabled,selected}} disabled={disabled} onPress={onPress} style={[s.button,selected&&s.selected,disabled&&{opacity:.45}]}><Text style={s.buttonText}>{title}</Text></Pressable>;
+}
+function Reader({session,done,ready,saving,onComplete}:{session:Session;done:boolean;ready:boolean;saving:boolean;onComplete:()=>void}){
+ const [reachedEnd,setReachedEnd]=useState(false),[translation,setTranslation]=useState<string|null>(null);const geometry=useRef({height:0,content:0,y:0});
+ const check=()=>{const g=geometry.current;if(g.height>0&&g.content>0&&g.y+g.height>=g.content-16)setReachedEnd(true);};
+ const onScroll=(e:NativeSyntheticEvent<NativeScrollEvent>)=>{const n=e.nativeEvent;geometry.current={height:n.layoutMeasurement.height,content:n.contentSize.height,y:n.contentOffset.y};check();};
+ const pictures=session.illustrations??[];
+ const art=(items:typeof pictures)=>items.map((a,i)=>illustrations[a.path]?<View key={a.path+':'+i}><Image source={illustrations[a.path]} accessibilityLabel={a.altJa} resizeMode="cover" fadeDuration={0} style={s.image}/><Text style={s.meta}>{a.altJa}</Text></View>:null);
+ return <ScrollView testID="kensetsu-reader" scrollEventThrottle={80} onScroll={onScroll} onLayout={e=>{geometry.current.height=e.nativeEvent.layout.height;check();}} onContentSizeChange={(_,height)=>{geometry.current.content=height;check();}} contentContainerStyle={s.content}>
+ <RoyalContentPanel style={s.paper}><Text style={s.heading}>{session.titleJa}</Text>{art(pictures.filter(a=>!a.clusterId))}
+ {session.clusters.map((c,i)=><View key={c.id} testID={`kensetsu-section-${c.id}`} style={s.section}><Text style={s.heading}>{i+1}. {c.titleJa}</Text>{art(pictures.filter(a=>a.clusterId===c.id))}{c.illustration&&art([{path:c.illustration.assetPath,altJa:c.illustration.captionJa}])}{c.paragraphs.map(p=><Text selectable key={p.id} style={s.japanese}>{p.ja}</Text>)}<Action title={translation===c.id?'翻訳を閉じる':'翻訳'} testID={`kensetsu-translation-${i+1}`} onPress={()=>setTranslation(translation===c.id?null:c.id)}/>{translation===c.id&&<Text style={s.body}>翻訳は準備中です。日本語本文の確認後に追加します。</Text>}{c.applicationPromptJa&&<View style={s.reflection}><Text style={s.meta}>振り返り · 採点なし</Text><Text style={s.body}>{c.applicationPromptJa}</Text></View>}</View>)}
+ {!!session.keyTerms?.length&&<View><Text style={s.heading}>ことば</Text>{session.keyTerms.map(t=><Text key={t.term} style={s.body}>{t.term}（{t.reading}）</Text>)}</View>}
+ </RoyalContentPanel>
+ <Action testID="kensetsu-complete" title={done?'✓ 学習済み':saving?'保存中…':'完了'} disabled={!ready||saving||!reachedEnd||done} onPress={onComplete}/>{!done&&!reachedEnd&&<Text style={s.light}>本文を最後まで読んでから「完了」を押してください。</Text>}
+ </ScrollView>;
+}
+function Calendar({level,field,learner,onBack}:{level:Level;field:Field;learner:string;onBack:()=>void}){
+ const key=completionKey(learner,level,field);const [progress,setProgress]=useState<Record<string,true>>({}),[ready,setReady]=useState(false),[error,setError]=useState(false),[saving,setSaving]=useState(false),[week,setWeek]=useState(0),[lesson,setLesson]=useState<Session|null>(null);
+ useEffect(()=>{let live=true;void AsyncStorage.getItem(key).then(raw=>{if(live){setProgress(restoreProgress(raw));setReady(true);setError(false);}}).catch(()=>{if(live)setError(true);});return()=>{live=false;};},[key]);
+ const load=()=>{void AsyncStorage.getItem(key).then(raw=>{setProgress(restoreProgress(raw));setReady(true);setError(false);}).catch(()=>setError(true));};
+ const complete=async()=>{if(!lesson||!ready||saving)return;const next={...progress,[completionId(lesson)]:true as const};setSaving(true);try{await AsyncStorage.setItem(key,JSON.stringify(next));setProgress(next);setError(false);}catch{setError(true);}finally{setSaving(false);}};
+ return <View style={s.root}><View style={s.header}><RoyalBackButton onPress={()=>lesson?setLesson(null):onBack()}/><View style={{flex:1}}><Text style={s.title}>建設 · {level}号</Text><Text style={s.light}>{fields.find(f=>f.id===field)?.title}</Text></View></View>
+ {error&&<View style={s.error}><Text style={s.light}>進捗を保存・読み込みできませんでした。</Text><Action title="再試行" onPress={()=>{if(ready&&lesson)void complete();else load();}}/></View>}
+ {lesson?<Reader key={lesson.id} session={lesson} done={!!progress[completionId(lesson)]} ready={ready} saving={saving} onComplete={()=>void complete()}/>:<ScrollView contentContainerStyle={s.content} testID="kensetsu-calendar">
+ <RoyalExplanationPanel style={s.info}><Text style={s.light}>テスト版 · 5週間の下書きです。学習時間は未計測です。週2〜5は内容の見直し中です。</Text></RoyalExplanationPanel>
+ <View style={s.row}>{weeks.map((w,i)=>{const count=w.sessionIds.filter(id=>{const d=sessionById.get(id);return d&&progress[completionId(d)];}).length;return <Action key={w.id} title={`第${i+1}週  ${count}/7${count===7?' ✓':''}`} selected={week===i} testID={`kensetsu-week-${i+1}`} onPress={()=>setWeek(i)}/>;})}</View>
+ <RoyalContentPanel style={s.paper}><Text style={s.heading}>第{week+1}週 · {weeks[week].titleJa}</Text>{weeks[week].sessionIds.map((id,i)=>{const d=sessionById.get(id);return d?<View key={id} style={s.day}><Text style={s.body}>{progress[completionId(d)]&&<Text style={s.tick}>✓ </Text>}第{i+1}日 · {d.titleJa}</Text><Action title="学習を開く" testID={`kensetsu-day-${week*7+i+1}`} onPress={()=>setLesson(d)}/></View>:null;})}<Text style={s.meta}>週末の試験は準備中です。</Text></RoyalContentPanel>
+ </ScrollView>}
+ </View>;
+}
+export function KensetsuCourse({learner,onBack}:{learner:string;onBack:()=>void}){
+ const [level,setLevel]=useState<Level>('1'),[field,setField]=useState<Field|null>(null);
+ if(field)return <Calendar key={`${learner}:${level}:${field}`} learner={learner} level={level} field={field} onBack={()=>setField(null)}/>;
+ return <View style={s.root}><View style={s.header}><RoyalBackButton onPress={onBack}/><Text style={s.title}>建設</Text></View><ScrollView contentContainerStyle={s.content}><RoyalExplanationPanel style={s.info}><Text style={s.light}>日本語の学習内容を確認するテスト版です。1号・2号、三つの分野で共通の理論を学びます。</Text></RoyalExplanationPanel><View style={s.row}>{(['1','2'] as const).map(l=><Action key={l} title={`特定技能${l}号`} selected={level===l} testID={`kensetsu-level-${l}`} onPress={()=>setLevel(l)}/>)}</View>{fields.map(f=><RoyalContentPanel key={f.id} style={s.paper}><Text style={s.heading}>{f.title}</Text><Action title="学習カレンダー" testID={`kensetsu-field-${f.id}`} onPress={()=>setField(f.id)}/></RoyalContentPanel>)}</ScrollView></View>;
+}
+const s=StyleSheet.create({root:{flex:1},header:{flexDirection:'row',alignItems:'center',gap:14,paddingHorizontal:18,paddingVertical:12},title:{fontFamily:ROYAL_FONT.heading,fontSize:25,color:'#fff3cf'},content:{padding:18,paddingBottom:40},paper:{paddingHorizontal:26,paddingVertical:24,marginBottom:16},info:{paddingHorizontal:26,paddingVertical:24,marginBottom:16},heading:{fontFamily:ROYAL_FONT.heading,fontSize:20,lineHeight:30,color:'#142335',marginVertical:8},japanese:{fontFamily:ROYAL_FONT.body,fontSize:19,lineHeight:32,color:'#142335',marginVertical:7},body:{fontFamily:ROYAL_FONT.body,fontSize:16,lineHeight:26,color:'#26364c'},meta:{fontFamily:ROYAL_FONT.body,fontSize:14,lineHeight:23,color:'#43536b',marginVertical:7},light:{fontFamily:ROYAL_FONT.body,fontSize:16,lineHeight:25,color:'#fff3cf'},button:{backgroundColor:'#1b3153',borderWidth:1,borderColor:'#c99c51',borderRadius:10,padding:12,marginVertical:6,minHeight:48},selected:{backgroundColor:'#395477',borderWidth:2},buttonText:{fontFamily:ROYAL_FONT.body,fontSize:16,lineHeight:24,color:'#fff3cf',textAlign:'center'},row:{flexDirection:'row',flexWrap:'wrap',gap:10,marginBottom:12},section:{borderTopWidth:1,borderTopColor:'#dbc99c',paddingTop:16,marginTop:16},reflection:{paddingTop:8},day:{paddingVertical:12,borderBottomWidth:1,borderBottomColor:'#dbc99c'},tick:{color:'#238445',fontSize:23,fontWeight:'700'},image:{width:'100%',aspectRatio:1672/941,marginVertical:12,borderRadius:10},error:{paddingHorizontal:18}});

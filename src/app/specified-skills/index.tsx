@@ -74,10 +74,10 @@ export default function SpecifiedSkillsScreen() {
                     ({ icon, ja, vi }) => (
                         <Pressable
                             key={ja}
-                            accessibilityRole={ja==='介護'&&__DEV__?'button':undefined}
-                            accessibilityLabel={ja==='介護'&&__DEV__?'介護 — mở bản kiểm tra nội bộ':ja}
-                            disabled={ja!=='介護'||!__DEV__}
-                            onPress={()=>{void pushPrepared('/specified-skills/kaigo');}}
+                            accessibilityRole={(ja==='介護'||ja==='建設')&&__DEV__?'button':undefined}
+                            accessibilityLabel={(ja==='介護'||ja==='建設')&&__DEV__?`${ja} — mở bản kiểm tra nội bộ`:ja}
+                            disabled={(ja!=='介護'&&ja!=='建設')||!__DEV__}
+                            onPress={()=>{void pushPrepared(ja==='建設'?'/specified-skills/kensetsu':'/specified-skills/kaigo');}}
                             style={
                                 styles.card
                             }
