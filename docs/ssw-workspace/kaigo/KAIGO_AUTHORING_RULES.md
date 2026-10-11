@@ -1,6 +1,6 @@
 # Hướng dẫn chính thức — Tokutei Gino 介護
 
-Phiên bản: 10. Ngày duyệt: 2026-10-11 (Asia/Tokyo).
+Phiên bản: 11. Ngày duyệt: 2026-10-11 (Asia/Tokyo).
 Trạng thái: CHỦ DỰ ÁN ĐÃ DUYỆT PHƯƠNG ÁN BIÊN SOẠN.
 Repository: duykhanhtokio/japan-app. Nhánh: recovery/jlpt-n3-n1.
 Đây là hợp đồng biên soạn; duyệt phương án không chứng nhận nội dung chưa được tạo, kiểm duyệt hoặc tích hợp.
@@ -189,3 +189,7 @@ Phong cách lịch dùng chính khung giấy/viền vàng/nền navy/font hoàng
 Chủ dự án yêu cầu tiếp tục nhưng không chỉ làm cụm10ảnh mỗi lần; nâng thành làm từng tuần. Mỗi đợt hoàn tất mọi mục còn thiếu của một tuần theo lịch26tuần, rà từng ảnh, gắn đúngIDmục, kiểm hiển thị cả tuần và lưu/xác minh GitHub trước bàn giao hoặc chuyển tuần. Số ảnh do số mục thực tế quyết định, không áp quota10. Tuần đang dở được hoàn tất phần thiếu, không tạo lại ảnh đã kiểm chứng chỉ để đủ một tuần mới. Trình tạo có thể chạy nhóm nhỏ kỹ thuật bên trong đợt; nhóm nhỏ không phải đơn vị bàn giao.
 
 Lưu chính sách vào approved-plan.json và checkpoint. Theo dõi số mục/ảnh riêng của từng tuần và tổng866mục; ảnh bìa dùng lại không được tính thêm. Giữ phong cách2D màu, chú thích nối hành động với ý học, tỷ lệ gốc và các giới hạn chuyên môn/native/quyền/phát hành. Đợt tiếp nối hiện tại: hoàn tất tuần1ngày1–7; sau xác minh remote mới sang tuần2.
+
+## 22. Dừng tạo ảnh và phân bổ lại ảnh hiện có — yêu cầu 2026-10-11
+
+Chủ dự án yêu cầu dừng tạo ảnh Kaigo vì quá nhiều ảnh trùng; phân bố ảnh đã tạo đều cho đủ số tuần hiện có. Quyết định này thay yêu cầu tạo đủ ảnh từng đoạn ở mục21. Không gọi trình tạo ảnh, không tạo thêm để đủ quota. Giữ nguyên396ảnh và mã gốc; chọn ảnh phù hợp mục tiêu, một ảnh ngữ cảnh mỗi buổi trong176buổi/26tuần. Tuần1–25 có7ảnh/7buổi; tuần26có1ảnh/1buổi, sáu ngày trống giữ nguyên. Không lặp ảnh trong cùng tuần hoặc giữa bìa và đoạn; ảnh có thể dùng lại ở tuần khác khi cùng mục tiêu. Giữ hình kỹ thuật hiện có trong nội dung, không dùng cảnh ngữ cảnh thay sơ đồ/quy trình. Bản phân bổ ở src/data/kaigo/weekly-art-allocation.json; QA sự phù hợp, tỷ lệ, số lượng và bảo toàn dữ liệu/lượt học. Không chứng nhận chuyên môn hoặc phát hành.
