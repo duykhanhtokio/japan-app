@@ -190,3 +190,20 @@ Verification:816uniqueparagraphs,28uniquepromptsinnewbatch,all42termsoccurinbody
 Next: remotelypersistthis narrowbatch andrequire WORK PERSISTENCE PASS,thensource3PDF25section3.2.15concretepump andfollowing specialistwork. Preserveallatomicgaps andhumanreleasegates;no wholecourse/sourcecompletionclaim.
 
 Finalprepublication: KENSETSU APP TEST DATA PASS;JLPT APPROVED UI LOCK PASS10/10; whitespace/stabledata checks PASS. No Kaigo orUIassetcontent changes.
+
+
+## Week011 independent Japanese finish/specialist-work batch — 2026-10-12 Asia/Tokyo
+
+Started from remotely verified b97847648305a37677f52050eb81894aed088eb3 with clean tree and WORK PERSISTENCE PASS. Added sessions071–077:7sessions/28clusters/84Japanese paragraphs,28ungraded reflections and42contextual readings. Total77sessions/900paragraphs. Prior70session bytes/stableIDs/progress revisions and284coverage rows unchanged. Six separate routes use shared introductory interfaces, not advanced2号 proficiency. No reader UI changes, exams, illustrations or translations.
+
+Source3 exact SHAverified;PDF25–31/printed50–56 text and visuals read. Taught only3.2.15–3.2.21:concrete transport/pumping,painting,landscaping,plastering,carpentry,roofing,sheetmetal. Sixteen photos and their labels inspected in this scope;no diagrams/tables. PDF31 tile/interior text/photos excluded from teaching,PDF32textpreview only.202atomic audit rows and28cluster source mappings. No source PDF/images/OCR bundled.
+
+Selected current R07 public-building specification excerpts compare concrete equipment/placement/compaction,wood/roof,plaster,painting,planting and rooftop-greening conditions. Current mechanical index and selected duct excerpt distinguish ordinary air transport and smoke exhaust. MHLW occupation descriptions and work-specific pump education scope compared. Artificial-stone official search excerpt only; roof-renovation direct open failed and search excerpt explicitly limited. No whole-manual,current-all-law or numerical/operating approval claimed.
+
+Corrected/qualified cement versus concrete, modern wheelbarrow alternatives, all-air removal, three roles versus exact staffing, brush always better, rooftop versus wall greening, plaster versus paint/material guarantees, artificial-stone grinding versus natural-stone-only account, temple longevity guarantees, universal carpenter duties, alltilesclay, allleaksplaster, allroofpaintwaterproofing and generator combustion exhaust versus ordinary ventilation/fire smoke.16partial specialist concepts appended;165known unresolved items, not exhaustive knowledge denominator or percentage. All prior gaps retained. Specialist/native/rights/semantic approval, new illustrations/translations,native devices and real30minute learning timing pending;releaseReadyfalse.
+
+Verification:900uniqueparagraphs,28unique new reflection prompts,42terms present in prose. Prior70lessons/284coverage rows preserved; all IDs unique and six routes77sessions/11weeks.22character contiguous source wording screenPDF25–31zero matches; not semantic/rights clearance. Fictional delivery/surface/planting/finish/component/roof-interface examples independently composed and compared against source text/photo labels. Actual reader web-adapter test rendered all77sessions/900paragraphs/reflections;scroll-and-click completion,newday71andoldday1persist together after reload,learner/field/level isolation and three viewports;zero browser errors. Japanese font-loaded assertion passed. Three retained final captures visually inspected for Japanese/back/wrapping/completion. Native device not tested; isolated web build warns absentexpo/tsconfig.base and is not a complete native build check.
+
+Next: remotely persist narrow batch and require WORK PERSISTENCE PASS; then source3PDF31section3.2.22 tile and3.2.23 interior onward. Retain atomic gaps and all human/release gates; no whole-course/source completion claim.
+
+Finalprepublication: KENSETSU APP TEST DATA PASS;JLPT APPROVED UI LOCK PASS10/10;whitespace/stabledata checks PASS. No Kaigo or UIassetcontent changes.
