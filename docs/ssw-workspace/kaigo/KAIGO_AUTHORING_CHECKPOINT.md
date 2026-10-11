@@ -1,3 +1,13 @@
+# Current checkpoint · 2026-10-11 · Day3 section artwork
+
+Added10original section-specific colored2D images to day3, now30/866specific images,836pending. All10visually inspected;5targeted edits remove confusing writing/painting cues and maintain connected-character clothing. WEBPquality90 encoding only, originaldimensions retained. Registry maps exactsectionIDs with learning-focused Vietnamese captions. Existing authored knowledge/questions/calendar/UI/revisions/state unchanged; no clinical protocol or sourcebook imagery authored/copied.
+
+ActualWeeklyKaigo/RoyalPanels RNWeb focused harness:3viewports390x844/768x1024/844x390,30decoded-image dimension/ratio checks,nooverflow,0pageErrors,9screenshots inspected. Harness expo-image shim via RNWebImage, originalfonts LFS-hash verified; not fullExpoRouter/native. Calendar model PASS26weeks/176days/6blanks/687questions/866sections and7runtimeJSONhashes;JLPTlock10/10PASS;whitespacePASS. Failed initial QA environment attempts are not used as PASS. No fullrepoTypeScript/human/domain/rights/release claim or measured memory benefit.
+
+Report reviews/DAY3_PARAGRAPH_ART_2026-10-11.md;prompts/coverage inventory and runtime-tests/2026-10-11-day3-art contain exactinputs/hashes/captions/evidence. GitCLIwritecredential absent; authorizedGitHub connection saves with expected-head lease, fetch and persistence verification required. Continue day4only after durability verification; all836pending remain in scope. Separate source secondpass51–70 remains after art; source195clinical ambiguity unresolved.
+
+---
+
 # Current checkpoint · 2026-10-11 · Day 2 artwork
 
 Publisher requested all remaining section images. Added10day2 images, now20/866specific artworks and846pending. This is an intermediate unit, not completion. Built-in image_gen, individual authored-context prompts, no source book images. All10visually inspected, WEBPquality90 encoding only, originaldimensions retained. ActualRNWeb3viewports/30decoded-image checks/9inspected screenshots PASS; focusedTypeScript PASS. No clinical procedures or new knowledge authored. Full prompts/hashes/captions in reviews inventory; day2report/evidence in corresponding reviews/runtime-tests folders. Human/domain/rights/native/fullrouter review remainsfalse. Continue day3 then allpending; source second-pass51–70 remains after art.
