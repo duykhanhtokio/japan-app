@@ -122,3 +122,18 @@ Verification:480unique paragraphs,28unique week006reflections, all42contextual t
 Next: remotely persist and require WORK PERSISTENCE PASS, then source3PDF6building systems. Retain all atomic gaps; do not claim full-course completion or release approval.
 
 Final pre-publication: KENSETSU APP TEST DATA PASS; JLPT APPROVED UI LOCK PASS10/10; whitespace PASS. Runtime review flag applies only to the documented browser adapter.
+
+
+## Week007 independent Japanese building batch — 2026-10-11
+
+Started from remotely verified65bdeb3d5a0cf4f210a9835233db79861d235df3; WORK PERSISTENCE PASS and clean tree. Added sessions043–049:7sessions/28clusters/84Japanese paragraphs,28distinct ungraded reflections and42contextual readings. Total49sessions/564paragraphs; prior42session JSONbytes/IDs/revisions and172coverage rows retained. Shared introductory building/civil/utilities interfaces referenced by six separate routes, not advanced2号 proficiency. Reader UI unchanged; no exams, images or translations authored.
+
+Source3 SHAverified;PDF6–9/printed31–34 read and visually inspected including eight photo labels. Taught scope3.1.2only; next3.1.3starts midwayPDF9 and is not counted covered. PDF10–11text preview only.154atomic audit rows and28cluster evidence mappings. Corrected/qualified source all-pile bearing-layer rule, all-large-building steel rule, fixed3floor grouping, seismic intensity guarantee/all-three-method requirement, notation and exhaustive2anchor/every-install claims. Current ministry2025public-building specification reviewed selected excerpts only, not330pages; historical2005seismicQA used only scoped aims, current ministry damage caution also checked. Primary MHLW/JCAA pages support existing asbestos/renovation scope and nonexhaustive anchor kinds.
+
+Added15explicit partial specialist concepts to retained remaining register;103known unresolved items now, not exhaustive knowledge denominator or completion percentage. Whole structural/design tables, excavation/retention/machine operations, pile/joint/concrete/steel conditions, finish performance, seismic design/device details, conversion/accessibility permissions, asbestos detailed exceptions/procedures and anchor specifications remain pending. Source3PDF9from3.1.3 onward and sources4–7 to continue. Japanese first; illustrations/translations/human specialist/native/rights approval and measured30minute timing pending.
+
+Verification:564unique Japanese paragraphs,28unique new reflections,42contextual terms all occur in new prose. Contiguous22character source screen PDF6–9zero matches; not semantic/rights certification. AI scenario comparison records independently organised plan/role/function examples against source descriptions/photos; no source narrative transformed. Actual reader via documented browser image/storage adapters rendered49sessions/564paragraphs/allreflections. Newday43 andoldday1 persistence afterreload, scroll-and-click completion, learner/field/level isolation and three viewports passed; zero browser errors. Three retained captures visually inspected. Native device not tested.
+
+Next: remotely persist this narrow batch and require WORK PERSISTENCE PASS, then week008utilities fromsource3PDF9section3.1.3. Keep all atomic gaps and gates; no full-source/full-course/release completion claim.
+
+Final pre-publication: KENSETSU APP TEST DATA PASS; JLPT APPROVED UI LOCK PASS10/10; whitespace and stable-ID/old42lesson preservation PASS. All human gates remain false.
