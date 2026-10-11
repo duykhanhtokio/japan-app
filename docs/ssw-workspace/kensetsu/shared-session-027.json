@@ -30,10 +30,12 @@
   ],
   "officialReferences": [
     "https://www.env.go.jp/air/noise/low-gaiyo.html",
-    "https://www.env.go.jp/air/sindo/low-gaiyo.html"
+    "https://www.env.go.jp/air/sindo/low-gaiyo.html",
+    "https://www.env.go.jp/info/one-stop/27/008.html",
+    "https://www.env.go.jp/info/one-stop/28/009.html"
   ],
   "verificationDate": "2026-10-11",
-  "verificationStatus": "AI partial comparison; complete evidence/domain/native review pending",
+  "verificationStatus": "Claim-linked official AI comparison2026-10-11; technical/domain/native/rights approval pending",
   "translationStatus": "deferred",
   "illustrationStatus": "deferred",
   "clusters": [
@@ -49,9 +51,13 @@
         {
           "id": "kensetsu-common-session-027-cluster-1-p2",
           "ja": "耳で感じる音と、地盤や建物等を通じて感じる振動は同じものではありません。一方の対策をしただけで、もう一方の確認が不要になるとは考えません。"
+        },
+        {
+          "id": "kensetsu-common-session-027-cluster-1-p3",
+          "ja": "道路工事の相談記録には、「音が聞こえる」という話と「室内で振動を感じる」という話を分けて残します。騒音と振動は、それぞれ対象作業や基準を確認する制度です。工事の音・振動と、道路交通に関する規制も区分が異なります。周辺の健康や生活環境への影響を考え、工事関係者の耳に小さく感じることだけで判断しません。"
         }
       ],
-      "applicationPromptJa": "制度の目的、必要な情報、未確認の条件を分けて説明する。",
+      "applicationPromptJa": "騒音と振動の相談内容をどう分けますか。工事の規制と道路交通の規制も区別してください。",
       "graded": false
     },
     {
@@ -66,9 +72,13 @@
         {
           "id": "kensetsu-common-session-027-cluster-2-p2",
           "ja": "別の現場と同じ機械を使う場合も、新しい地域の条件を確認します。工事の名称だけでなく、実際の作業と設備を明らかにする必要があります。必要な届出の担当も確かめます。"
+        },
+        {
+          "id": "kensetsu-common-session-027-cluster-2-p3",
+          "ja": "指定地域内の対象となる特定建設作業では、原則として開始七日前までの市町村長への届出が関わります。騒音と振動の対象はそれぞれ確認します。予定を変更した現場では、作業の種類、場所、期間、対象機械と地域の条件を担当者へ渡します。緊急時等の例外があることを、通常工事の届出を省く理由にしません。"
         }
       ],
-      "applicationPromptJa": "制度の目的、必要な情報、未確認の条件を分けて説明する。",
+      "applicationPromptJa": "届出を確認するとき、地域・作業・開始日・提出先のどの情報が必要ですか。",
       "graded": false
     },
     {
@@ -83,9 +93,13 @@
         {
           "id": "kensetsu-common-session-027-cluster-3-p2",
           "ja": "防音設備を置いたという事実だけで、基準を満たすと断定しません。効果の確認と管理が必要です。現場の計画を、作業者が独自に変更するための指示ではありません。"
+        },
+        {
+          "id": "kensetsu-common-session-027-cluster-3-p3",
+          "ja": "近隣に病院がある改修現場では、担当者が周辺条件に合わせ、施工法、機械の種類、時間・工程、配置、防音施設等を検討します。低騒音型の機械でも、施工法や時間帯の確認は残ります。振動は音の対策と同じ効果とは限らないため、両方の低減計画を確認します。工程変更や機械の移動を作業者が独断で行うための例ではありません。"
         }
       ],
-      "applicationPromptJa": "制度の目的、必要な情報、未確認の条件を分けて説明する。",
+      "applicationPromptJa": "低騒音型機械を用意した後も残る計画上の確認を、配置や工程を含めて挙げてください。",
       "graded": false
     },
     {
@@ -100,13 +114,52 @@
         {
           "id": "kensetsu-common-session-027-cluster-4-p2",
           "ja": "規制の確認、現場の対策、周辺への説明は、それぞれ担当があります。自分で約束を広げず、必要な情報を正確に伝えるという週一の学びを、この場面につなげます。"
+        },
+        {
+          "id": "kensetsu-common-session-027-cluster-4-p3",
+          "ja": "住民から「昨日の午前、室内で振動を感じた」と連絡を受けたとします。受けた言葉、日時、場所と、分かる作業状況を担当者へ伝えます。測定結果を持たないまま違反や無問題を断定せず、現場の記録との照合につなげます。受付担当が工法変更や補償を約束せず、次に誰が確認・説明するかを明確にします。"
         }
       ],
-      "applicationPromptJa": "制度の目的、必要な情報、未確認の条件を分けて説明する。",
+      "applicationPromptJa": "周辺から振動の連絡があった場合、確認済みの事実と未確認の評価をどう分けて引き継ぎますか。",
       "graded": false
     }
   ],
   "dailyMinutesTarget": 30,
   "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
-  "editorialAuditStatus": "pending_substantive_audit"
+  "editorialAuditStatus": "substantive_AI_revision_human_reviews_pending",
+  "contentRevision": 3,
+  "keyTerms": [
+    {
+      "term": "騒音",
+      "reading": "そうおん"
+    },
+    {
+      "term": "振動",
+      "reading": "しんどう"
+    },
+    {
+      "term": "指定地域",
+      "reading": "していちいき"
+    },
+    {
+      "term": "特定建設作業",
+      "reading": "とくていけんせつさぎょう"
+    },
+    {
+      "term": "防音施設",
+      "reading": "ぼうおんしせつ"
+    },
+    {
+      "term": "低減",
+      "reading": "ていげん"
+    }
+  ],
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "similarityReviewed": false,
+    "runtimeVerified": true,
+    "runtimeScope": "web adapted actual reader, native device not tested"
+  }
 }
