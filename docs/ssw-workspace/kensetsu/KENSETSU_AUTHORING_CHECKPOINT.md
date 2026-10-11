@@ -8,3 +8,6 @@ Source scope: chapter 1, first PDF, pages 6–12 visually reviewed. Remaining si
 
 ## Publisher priority update
 Japanese content → illustrations → multilingual translations. Added 24 Japanese explanation/application paragraphs and contextual readings across sessions 002–007. Existing Vietnamese drafts are frozen and incomplete relative to Japanese revision. No claim that Vietnamese alone satisfies learner languages. Japanese remains an editorial draft pending specialist/native review.
+
+## Week 002 Japanese batch
+Seven additional Japanese-only drafts, sessions008–014, 28clusters/56paragraphs. Scope is labour-standard foundations section2.1.1, not all chapter2. Updated historical rule descriptions against official sources. Expert/native/visual full-page/claim-by-claim checks remain pending. No images or translations yet by publisher priority. Next: verify remaining law sections, especially safety amendments, before drafting following weekly batch.
