@@ -34,12 +34,17 @@
     }
   ],
   "officialReferences": [
-    "https://www.mhlw.go.jp/stf/houdou/2r98520000016ahx.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000166858.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000154453.html",
+    "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudoukijun/hoken/tokusetusaito/about.html",
+    "https://jsite.mhlw.go.jp/tokyo-roudoukyoku/hourei_seido_tetsuzuki/rousai_hoken/tuukin.html",
+    "https://www.mhlw.go.jp/web/t_doc?dataId=00ta2475&dataType=1&pageNo=1",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000154479.html",
-    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000166858.html"
+    "https://www.mhlw.go.jp/general/seido/roudou/rousai/5.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000166851.html"
   ],
   "verificationDate": "2026-10-11",
-  "verificationStatus": "AI comparison partial; claim-by-claim audit and human review pending",
+  "verificationStatus": "AI cluster-linked official comparison; native/legal/safety human review pending",
   "translationStatus": "deferred",
   "illustrationStatus": "deferred",
   "clusters": [
@@ -50,15 +55,23 @@
       "paragraphs": [
         {
           "id": "kensetsu-common-session-020-cluster-1-p1",
-          "ja": "労災保険は、仕事や通勤に関係する傷病等について、要件に応じた給付を行う制度です。労働者の保険料は事業主が負担します。現場でけがをしたという一言だけで、給付の内容まで確定するわけではありません。"
+          "ja": "労災保険は、業務災害や通勤災害などの傷病等について、要件に応じた給付を行う制度です。労災保険料は全額事業主が負担します。仕事との関係、通勤の条件、必要な給付はそれぞれ確認するため、現場でけがをしたという一言だけでは内容まで確定しません。"
         },
         {
           "id": "kensetsu-common-session-020-cluster-1-p2",
-          "ja": "事故が起きたときの場所、時刻、作業、経緯を整理します。まず必要な救援や医療につなげ、記録のために救援を遅らせないようにします。具体的な救助技術は、この説明の対象ではありません。"
+          "ja": "資材置場でけがをした人について、班の担当者が救援につなげた後、場所、時刻、何の作業だったかを整理する場面です。現場内だったという情報だけでは、仕事との関係や必要な給付は分かりません。見た経緯と、後から聞いた話を区別して説明します。"
+        },
+        {
+          "id": "kensetsu-common-session-020-cluster-1-p3",
+          "ja": "労災保険料は全額事業主が負担します。療養の給付は必要な治療を支える制度ですが、どの支出でも無条件に全額対象になるという意味ではありません。業務との関係や給付の要件を監督署などが確認します。事故の記録のために救援や受診を遅らせないことを優先します。"
         }
       ],
-      "applicationPromptJa": "この節の条件と、混同してはいけない情報を自分の言葉で説明してください。",
-      "graded": false
+      "applicationPromptJa": "現場の場所だけでは分からない、作業と事故の情報を挙げてください。保険料の負担と療養の給付は何が違いますか。",
+      "graded": false,
+      "learningActivity": {
+        "ja": "現場の場所だけでは分からない、作業と事故の情報を挙げてください。保険料の負担と療養の給付は何が違いますか。",
+        "graded": false
+      }
     },
     {
       "id": "kensetsu-common-session-020-cluster-2",
@@ -71,11 +84,19 @@
         },
         {
           "id": "kensetsu-common-session-020-cluster-2-p2",
-          "ja": "教材用の例として、普段は電車の人が、交通事情により別の合理的な経路を使った場面を考えます。変更したという事実と、移動の目的・経路の合理性を分けます。この短い例だけで認定するものではありません。"
+          "ja": "土木作業員が、通勤路の工事で別の道を通った場面です。会社に届けた道と違うという一点で結論を出さず、出発地と就業場所、変更理由、実際の経路と時刻を整理します。移動の目的と合理性を確認する例であり、この短い説明だけで給付の認定をするものではありません。"
+        },
+        {
+          "id": "kensetsu-common-session-020-cluster-2-p3",
+          "ja": "通勤には、住居と就業場所の往復のほか、条件を満たす就業場所間の移動などもあります。通勤に関係のない逸脱・中断がある場合、その間とその後は原則として対象から外れます。日常生活上必要な一定の行為をやむを得ず最小限行う例外では、経路に戻った後の扱いを別に確認します。"
         }
       ],
-      "applicationPromptJa": "この節の条件と、混同してはいけない情報を自分の言葉で説明してください。",
-      "graded": false
+      "applicationPromptJa": "道路工事による経路変更について、届出との違い以外に何を説明しますか。逸脱・中断中と、経路に戻った後の扱いも区別してください。",
+      "graded": false,
+      "learningActivity": {
+        "ja": "道路工事による経路変更について、届出との違い以外に何を説明しますか。逸脱・中断中と、経路に戻った後の扱いも区別してください。",
+        "graded": false
+      }
     },
     {
       "id": "kensetsu-common-session-020-cluster-3",
@@ -88,11 +109,19 @@
         },
         {
           "id": "kensetsu-common-session-020-cluster-3-p2",
-          "ja": "給付の名称を見て、治療費なのか、休業中の支援なのか、障害や介護に関する支援なのかを分けます。金額や支給日数は、該当する条件と申請時点の公式資料で確認します。"
+          "ja": "負傷した設備作業員の家族が、治療費、働けない期間、介護について相談したいと考えています。三つは同じ給付ではありません。療養の状況、働けない理由と賃金の有無、必要な介護の状態を分けて整理します。療養が一年六か月続いたという事実だけで、介護の給付を決めません。"
+        },
+        {
+          "id": "kensetsu-common-session-020-cluster-3-p3",
+          "ja": "療養、休業、障害、遺族、葬祭、介護の給付は、それぞれ対象の状況が違います。介護の給付では、対象となる障害・傷病の年金と、常時又は随時介護を必要とする状態、実際の介護などを確認します。休業の給付も初日から自動的に支給されるものではなく、要件を満たす休業の四日目からという区分があります。"
         }
       ],
-      "applicationPromptJa": "この節の条件と、混同してはいけない情報を自分の言葉で説明してください。",
-      "graded": false
+      "applicationPromptJa": "治療費・休業・介護の相談で、必要な情報を分けてください。一年六か月という期間だけで介護給付を決められない理由も説明してください。",
+      "graded": false,
+      "learningActivity": {
+        "ja": "治療費・休業・介護の相談で、必要な情報を分けてください。一年六か月という期間だけで介護給付を決められない理由も説明してください。",
+        "graded": false
+      }
     },
     {
       "id": "kensetsu-common-session-020-cluster-4",
@@ -105,19 +134,69 @@
         },
         {
           "id": "kensetsu-common-session-020-cluster-4-p2",
-          "ja": "会社が協力しない場合にも、労働基準監督署へ相談できます。一人親方など、通常の労働者とは異なる立場には特別加入制度がありますが、自動的な加入とは限りません。自分の立場と加入状況を確認します。"
+          "ja": "建築現場の事故後、「会社の報告を出したので全部終わった」と説明された場面です。本人は、労働者死傷病報告のことか、給付請求のことかを尋ねます。自分の請求の状況を別に確認し、会社が協力しない場合にも監督署へ相談します。仕事中の事故を別の原因に変えて伝えません。"
+        },
+        {
+          "id": "kensetsu-common-session-020-cluster-4-p3",
+          "ja": "事業者が提出する死傷病報告と、被災者などの給付請求は、目的と手続きが異なります。報告の対象や期限は休業日数などにより確認します。一人親方などには特別加入の制度がありますが、雇用労働者の加入と同じではありません。自分の立場、加入手続き、対象業務を確認します。"
         }
       ],
-      "applicationPromptJa": "この節の条件と、混同してはいけない情報を自分の言葉で説明してください。",
-      "graded": false
+      "applicationPromptJa": "会社の報告と本人の給付請求について、何を別々に確かめますか。一人親方の場合の追加確認も挙げてください。",
+      "graded": false,
+      "learningActivity": {
+        "ja": "会社の報告と本人の給付請求について、何を別々に確かめますか。一人親方の場合の追加確認も挙げてください。",
+        "graded": false
+      }
     }
   ],
   "review": {
     "domain": false,
     "nativeJapanese": false,
-    "runtime": "not_run"
+    "runtime": "pending_recheck_after_content_revision"
   },
   "dailyMinutesTarget": 30,
   "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
-  "editorialAuditStatus": "pending_substantive_audit"
+  "editorialAuditStatus": "AI_substantive_revision_source_and_current_official_comparison; human_review_pending",
+  "contentRevision": 3,
+  "contentRevisionNote": "Substantive week003 audit; completion revision2 and all prior IDs retained. Reading acknowledgement is not qualification or mastery.",
+  "keyTerms": [
+    {
+      "term": "業務災害",
+      "reading": "ぎょうむさいがい"
+    },
+    {
+      "term": "通勤災害",
+      "reading": "つうきんさいがい"
+    },
+    {
+      "term": "合理的な経路",
+      "reading": "ごうりてきなけいろ"
+    },
+    {
+      "term": "逸脱",
+      "reading": "いつだつ"
+    },
+    {
+      "term": "給付請求",
+      "reading": "きゅうふせいきゅう"
+    },
+    {
+      "term": "特別加入",
+      "reading": "とくべつかにゅう"
+    }
+  ],
+  "officialVerification": {
+    "date": "2026-10-11",
+    "urls": [
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000166858.html",
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000154453.html",
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudoukijun/hoken/tokusetusaito/about.html",
+      "https://jsite.mhlw.go.jp/tokyo-roudoukyoku/hourei_seido_tetsuzuki/rousai_hoken/tuukin.html",
+      "https://www.mhlw.go.jp/web/t_doc?dataId=00ta2475&dataType=1&pageNo=1",
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000154479.html",
+      "https://www.mhlw.go.jp/general/seido/roudou/rousai/5.html",
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000166851.html"
+    ],
+    "scope": "Cluster-linked claims in week-003-claim-evidence.json; AI editorial comparison, not professional approval"
+  }
 }

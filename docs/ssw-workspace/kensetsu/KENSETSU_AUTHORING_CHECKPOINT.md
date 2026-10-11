@@ -55,3 +55,16 @@ Source2 hash verified; PDF1–4/printed8–11 read and visually inspected. A46-r
 Next substantive Japanese batch:week003 sessions015–021, followed by004–005. Do not create week006 or images before those audits. Runtime/evidence outcomes are recorded in week-002-qa.json after verification.
 
 Verification:35 sessions/309 Japanese paragraphs rendered in real reader via browser adapter; completion gating/reload/learner-level-field isolation passed. Three viewport captures retained; phone reader and landscape reflections inspected. Native not tested. No exact duplicate paragraphs or week002 reflection prompts; source wording span screen found no22-character matches, which is not semantic/legal clearance. UI source unchanged; completion keys preserved.
+
+
+## Week003 substantive Japanese revision — 2026-10-11
+
+Week002 saved via authenticated GitHub at41ac53dbf2c99cf9485b360717e4cd0f11a9eef9 and remote verified before continuing. Local502229e5 is retained on local-preserved-502229e5; its logical content was preserved, with screenshot bytes stored as ordinary Git objects and a scoped attributes override. Git HTTPS push lacked credentials; connector created a different commit.
+
+Revised sessions015–021 as a complete seven-session Japanese editorial batch:28 clusters/84 paragraphs,28 original construction applications/reflections and42 contextual readings. Existing session/cluster/paragraph IDs and revision2 progress retained; contentRevision3 added. Current UI unchanged. No exams, images or translations authored. All35 lessons now contain337 Japanese paragraphs.
+
+Source2 SHA verified; PDF2,4–9/printed9,11–16 read and visually inspected including safety flag label and section boundaries. Week003 source-concept audit records explained and deferred items;28-cluster official evidence map checked2026-10-11. Historical accident totals, scaffolds/fall-arrest applicability, full benefit schedules, immigration consequences and two-business framework remain explicit gaps. No native/legal/safety/rights approval or30minute timing claimed.
+
+Next: audit week004 then005 before new weeks/images. Runtime and persistence outcomes follow QA evidence.
+
+Verification: real reader browser adapter rendered35 sessions/337 paragraphs; scroll/click completion, reload and learner/level/field isolation passed. Phone/tablet/landscape captures retained; phone body and landscape reflections inspected. No exact duplicate paragraphs or week003 prompts. Source2 pages2,4–9 contiguous wording screen found no22-character match (longest11); not rights/semantic approval. JLPT10/10 UI lock passed. Native device not tested.

@@ -32,11 +32,15 @@
     }
   ],
   "officialReferences": [
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000147331.html",
+    "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudoukijun/hoken/tokusetusaito/about.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000108634.html",
+    "https://www.hellowork.mhlw.go.jp/insurance/insurance_basicbenefit.html",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000139508.html",
-    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000147331.html"
+    "https://www.moj.go.jp/isa/policies/ssw/chuui.html"
   ],
   "verificationDate": "2026-10-11",
-  "verificationStatus": "AI comparison partial; claim-by-claim audit and human review pending",
+  "verificationStatus": "AI cluster-linked official comparison; native/legal/safety human review pending",
   "translationStatus": "deferred",
   "illustrationStatus": "deferred",
   "clusters": [
@@ -51,11 +55,19 @@
         },
         {
           "id": "kensetsu-common-session-021-cluster-1-p2",
-          "ja": "雇用保険被保険者証は、加入に関する情報です。労災保険や健康保険の書類と混ぜません。給与明細の控除と書類を照合し、分からない情報は会社やハローワークで確認します。"
+          "ja": "設備会社で雇用契約を確認する人が、週の所定時間と雇用の見込みを読みます。繁忙期の残業を加えた実働時間を、所定時間として使いません。被保険者証の情報と給与明細の控除は、同じ書類ではありません。書類の名称や加入日が分からなければ、会社やハローワークへ確認します。"
+        },
+        {
+          "id": "kensetsu-common-session-021-cluster-1-p3",
+          "ja": "加入は、会社が呼ぶ「アルバイト」などの名称だけで決まりません。週二十時間以上と三十一日以上の雇用見込みなど、両方の条件と適用除外を確認します。雇用保険料は労働者と事業主が負担し、労災保険料の全額事業主負担と区別します。料率は年度や事業の区分によるので、古い率を固定しません。"
         }
       ],
-      "applicationPromptJa": "この節の条件と、混同してはいけない情報を自分の言葉で説明してください。",
-      "graded": false
+      "applicationPromptJa": "所定時間と残業を含む実働時間を区別してください。被保険者証と控除の記録、労災との保険料負担の違いも説明してください。",
+      "graded": false,
+      "learningActivity": {
+        "ja": "所定時間と残業を含む実働時間を区別してください。被保険者証と控除の記録、労災との保険料負担の違いも説明してください。",
+        "graded": false
+      }
     },
     {
       "id": "kensetsu-common-session-021-cluster-2",
@@ -68,11 +80,19 @@
         },
         {
           "id": "kensetsu-common-session-021-cluster-2-p2",
-          "ja": "病気などで直ちに働けない場合には、受給期間の延長など別の確認が必要になることがあります。状況を伝えて窓口で確認します。教材を読んで、自分の受給資格を確定しないようにします。"
+          "ja": "建築会社を離職した人が、すぐに次の仕事を探せる状態かを相談する場面です。就職する意思、働ける状態、求職活動の状況を伝えます。病気で当面働けない事情があれば、それも隠さず説明し、基本手当と受給期間の延長などの確認を分けます。"
+        },
+        {
+          "id": "kensetsu-common-session-021-cluster-2-p3",
+          "ja": "基本手当は、離職した人全員に無条件で支給されるものではありません。受給資格の確認と、求職の申込みや失業の認定などの手続きがあります。病気などで直ちに働けない場合の扱いも個別に確認します。教材の例は、自分の資格を確定する判定表ではありません。"
         }
       ],
-      "applicationPromptJa": "この節の条件と、混同してはいけない情報を自分の言葉で説明してください。",
-      "graded": false
+      "applicationPromptJa": "離職した事実に加え、働く意思・能力・求職活動について何を伝えますか。病気で働けない場合の相談も分けて説明してください。",
+      "graded": false,
+      "learningActivity": {
+        "ja": "離職した事実に加え、働く意思・能力・求職活動について何を伝えますか。病気で働けない場合の相談も分けて説明してください。",
+        "graded": false
+      }
     },
     {
       "id": "kensetsu-common-session-021-cluster-3",
@@ -81,15 +101,23 @@
       "paragraphs": [
         {
           "id": "kensetsu-common-session-021-cluster-3-p1",
-          "ja": "基本手当の被保険者期間は、原則として離職前二年間に十二か月以上です。倒産や解雇等の該当する理由では、離職前一年間に六か月以上という条件があります。暦の在籍月数と、制度上の被保険者期間は同じ数え方とは限りません。"
+          "ja": "基本手当の被保険者期間は、原則として離職前二年間に十二か月以上です。特定受給資格者や特定理由離職者は、離職前一年間に六か月以上という区分もあります。理由の名称だけでなく制度上の該当性を確認します。暦の在籍月数と、被保険者期間は同じ数え方とは限りません。"
         },
         {
           "id": "kensetsu-common-session-021-cluster-3-p2",
-          "ja": "金額や所定給付日数は年齢、離職理由、期間などによって変わります。古い資料の率や日数の幅を全員に当てはめません。離職票の理由が自分の理解と違うときも、その事実と資料を持って相談します。"
+          "ja": "土木会社を離職した人が、離職票の理由と自分の理解が違うことに気づきました。雇用期間の書類と、離職に至ったやり取りの記録を持ってハローワークへ相談します。在籍していた暦の月数をそのまま被保険者期間として数えず、賃金支払の基礎となる日数や時間も確認します。"
+        },
+        {
+          "id": "kensetsu-common-session-021-cluster-3-p3",
+          "ja": "原則の十二か月と、特定受給資格者・特定理由離職者の六か月という区分は、該当する離職理由の確認が必要です。被保険者期間の一か月は、原則として賃金支払基礎日数十一日以上又は八十時間以上の月で数えます。基本手当の額や日数は、年齢・期間・離職理由などにより異なります。"
         }
       ],
-      "applicationPromptJa": "この節の条件と、混同してはいけない情報を自分の言葉で説明してください。",
-      "graded": false
+      "applicationPromptJa": "離職理由が記録と違うとき、どの資料を持って何を相談しますか。暦の在籍月数と被保険者期間を区別する理由も述べてください。",
+      "graded": false,
+      "learningActivity": {
+        "ja": "離職理由が記録と違うとき、どの資料を持って何を相談しますか。暦の在籍月数と被保険者期間を区別する理由も述べてください。",
+        "graded": false
+      }
     },
     {
       "id": "kensetsu-common-session-021-cluster-4",
@@ -102,19 +130,67 @@
         },
         {
           "id": "kensetsu-common-session-021-cluster-4-p2",
-          "ja": "今週のまとめとして、事故への備え、健康管理、賃金の基準、労災、雇用保険を別々に説明してみましょう。同じ「保険」という言葉でも、目的と確認先が異なります。試験や合格判定は行いません。"
+          "ja": "設備会社を離れた人が、給付の相談先と在留手続きの相談先を分けてメモします。雇用保険についてはハローワーク、在留資格については出入国在留管理庁の案内を確認します。給付の相談をしたことだけで、別の制度の届出まで済んだと考えません。"
+        },
+        {
+          "id": "kensetsu-common-session-021-cluster-4-p3",
+          "ja": "雇用保険は失業時の基本手当だけでなく、再就職や教育訓練などの支援にも関係します。それぞれの給付には別の条件があります。今週は、健康管理、最低賃金、労災、雇用保険を、目的・資料・相談先で整理しました。制度名が似ていても、確認する条件を取り替えないことが大切です。"
         }
       ],
-      "applicationPromptJa": "この節の条件と、混同してはいけない情報を自分の言葉で説明してください。",
-      "graded": false
+      "applicationPromptJa": "給付と在留の相談先を分けて説明してください。健康診断、賃金明細、事故記録、離職票はそれぞれどの確認に使いますか。",
+      "graded": false,
+      "learningActivity": {
+        "ja": "給付と在留の相談先を分けて説明してください。健康診断、賃金明細、事故記録、離職票はそれぞれどの確認に使いますか。",
+        "graded": false
+      }
     }
   ],
   "review": {
     "domain": false,
     "nativeJapanese": false,
-    "runtime": "not_run"
+    "runtime": "pending_recheck_after_content_revision"
   },
   "dailyMinutesTarget": 30,
   "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
-  "editorialAuditStatus": "pending_substantive_audit"
+  "editorialAuditStatus": "AI_substantive_revision_source_and_current_official_comparison; human_review_pending",
+  "contentRevision": 3,
+  "contentRevisionNote": "Substantive week003 audit; completion revision2 and all prior IDs retained. Reading acknowledgement is not qualification or mastery.",
+  "keyTerms": [
+    {
+      "term": "雇用保険",
+      "reading": "こようほけん"
+    },
+    {
+      "term": "被保険者証",
+      "reading": "ひほけんしゃしょう"
+    },
+    {
+      "term": "基本手当",
+      "reading": "きほんてあて"
+    },
+    {
+      "term": "離職票",
+      "reading": "りしょくひょう"
+    },
+    {
+      "term": "被保険者期間",
+      "reading": "ひほけんしゃきかん"
+    },
+    {
+      "term": "受給期間",
+      "reading": "じゅきゅうきかん"
+    }
+  ],
+  "officialVerification": {
+    "date": "2026-10-11",
+    "urls": [
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000147331.html",
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudoukijun/hoken/tokusetusaito/about.html",
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000108634.html",
+      "https://www.hellowork.mhlw.go.jp/insurance/insurance_basicbenefit.html",
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000139508.html",
+      "https://www.moj.go.jp/isa/policies/ssw/chuui.html"
+    ],
+    "scope": "Cluster-linked claims in week-003-claim-evidence.json; AI editorial comparison, not professional approval"
+  }
 }

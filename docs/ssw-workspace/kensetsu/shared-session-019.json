@@ -30,11 +30,16 @@
     }
   ],
   "officialReferences": [
-    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/chingin/newpage_43899.html",
-    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/chingin/newpage_43898.html"
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/chingin/newpage_43886.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/chingin/newpage_43885.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/chingin/newpage_43880.html",
+    "https://www.check-roudou.mhlw.go.jp/qa/roudousya/chingin/q7.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/minimumichiran/",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/chingin/newpage_43898.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/chingin/newpage_43899.html"
   ],
   "verificationDate": "2026-10-11",
-  "verificationStatus": "AI comparison partial; claim-by-claim audit and human review pending",
+  "verificationStatus": "AI cluster-linked official comparison; native/legal/safety human review pending",
   "translationStatus": "deferred",
   "illustrationStatus": "deferred",
   "clusters": [
@@ -49,11 +54,19 @@
         },
         {
           "id": "kensetsu-common-session-019-cluster-1-p2",
-          "ja": "複数の最低賃金が適用される場合には高い方を確かめます。認められた減額特例等は別に条件を確認します。本人が同意したという理由だけで、最低賃金未満を自由に設定できる制度ではありません。"
+          "ja": "建築会社の採用説明で、「外国人の研修期間だから最低額は関係ない」と聞いた教材例です。雇用形態や国籍だけで地域別最低賃金の対象外にはなりません。減額の特例という説明があるなら、会社が必要な許可を受けているかを確認します。同意書への署名だけでは、その確認の代わりになりません。"
+        },
+        {
+          "id": "kensetsu-common-session-019-cluster-1-p3",
+          "ja": "地域別の額は時間額で定められ、一定の産業には特定最低賃金もあります。両方の適用対象となる場合は高い額を使います。ただし、特定最低賃金には産業ごとの対象条件があるため、業種名だけで全員への適用を決めません。基準を下回る賃金の約束は、その部分が無効になります。"
         }
       ],
-      "applicationPromptJa": "この節の条件と、混同してはいけない情報を自分の言葉で説明してください。",
-      "graded": false
+      "applicationPromptJa": "国籍、研修という名称、減額の許可は、それぞれどの確認に関わりますか。二種類の最低賃金がある場合の読み方も説明してください。",
+      "graded": false,
+      "learningActivity": {
+        "ja": "国籍、研修という名称、減額の許可は、それぞれどの確認に関わりますか。二種類の最低賃金がある場合の読み方も説明してください。",
+        "graded": false
+      }
     },
     {
       "id": "kensetsu-common-session-019-cluster-2",
@@ -66,11 +79,19 @@
         },
         {
           "id": "kensetsu-common-session-019-cluster-2-p2",
-          "ja": "給与計算期間に改定日がある場合も、どの日から新しい額が適用されるかを確認します。会社の所在地だけでなく、適用する地域や事業場の事情を必要に応じて確かめます。"
+          "ja": "設備会社の給与担当者が、月の途中に最低賃金の発効日がある期間を確認しています。明細の支払日だけを見て新旧の額を決めず、どの日の労働にどの額を適用するかを確かめます。以前保存した案内ではなく、適用する都道府県の発効日付きの公式表を読みます。"
+        },
+        {
+          "id": "kensetsu-common-session-019-cluster-2-p3",
+          "ja": "改定された額の発効日は、都道府県ごとに確認が必要です。全国一律の日付と決めつけません。働く事業場や、派遣の場合の適用地域などにより確認事項もあります。自分の事情が不明なときは、勤務先と勤務場所、対象期間を示して労働局などへ確認します。"
         }
       ],
-      "applicationPromptJa": "この節の条件と、混同してはいけない情報を自分の言葉で説明してください。",
-      "graded": false
+      "applicationPromptJa": "給与の支払日と最低賃金の発効日は何が違いますか。月途中の改定について、どの期間と地域の情報を照合しますか。",
+      "graded": false,
+      "learningActivity": {
+        "ja": "給与の支払日と最低賃金の発効日は何が違いますか。月途中の改定について、どの期間と地域の情報を照合しますか。",
+        "graded": false
+      }
     },
     {
       "id": "kensetsu-common-session-019-cluster-3",
@@ -79,15 +100,23 @@
       "paragraphs": [
         {
           "id": "kensetsu-common-session-019-cluster-3-p1",
-          "ja": "最低賃金と比較する賃金からは、賞与など一か月を超える期間ごとの賃金、臨時の賃金、時間外等の割増賃金、通勤手当、家族手当、精皆勤手当などを除きます。明細の総支給額をそのまま使わないようにします。"
+          "ja": "最低賃金との比較では、通常の労働に対する対象賃金を確認します。賞与など一か月を超える期間ごとの賃金、臨時の賃金、所定時間を超える労働や所定労働日以外の労働の賃金、深夜の上乗せ分、通勤・家族・精皆勤手当などは除きます。総支給額をそのまま使いません。"
         },
         {
           "id": "kensetsu-common-session-019-cluster-3-p2",
-          "ja": "名前が手当であれば、全部除くわけではありません。職務手当など対象となる賃金もあります。手当の性質を確認し、比較に入る項目と除く項目を分けます。"
+          "ja": "配管会社の明細に、基本給、職務手当、通勤手当、時間外の賃金があります。比較する額を整理するとき、通勤手当を除き、職務手当はその内容を確認します。「手当」という名前が付いている項目を全部除いたり、総支給額をそのまま使ったりしません。"
+        },
+        {
+          "id": "kensetsu-common-session-019-cluster-3-p3",
+          "ja": "除く項目には、臨時の賃金、一か月を超える期間ごとの賃金、所定時間を超える労働や所定労働日以外の労働に対する賃金、深夜の上乗せ分、精皆勤・通勤・家族手当があります。時間外については割増部分だけを除けばよいと読みません。明細で分かれない場合、項目の内容を給与担当者へ確認します。"
         }
       ],
-      "applicationPromptJa": "この節の条件と、混同してはいけない情報を自分の言葉で説明してください。",
-      "graded": false
+      "applicationPromptJa": "基本給・職務手当・通勤手当・時間外の賃金を、比較対象としてどう整理しますか。時間外の割増部分だけを除くと何を取り違えますか。",
+      "graded": false,
+      "learningActivity": {
+        "ja": "基本給・職務手当・通勤手当・時間外の賃金を、比較対象としてどう整理しますか。時間外の割増部分だけを除くと何を取り違えますか。",
+        "graded": false
+      }
     },
     {
       "id": "kensetsu-common-session-019-cluster-4",
@@ -96,23 +125,72 @@
       "paragraphs": [
         {
           "id": "kensetsu-common-session-019-cluster-4-p1",
-          "ja": "月給の場合は、対象となる月給額を一か月平均所定労働時間数で割って比較します。日給は一日の所定労働時間で割ります。支払方式が混ざる場合は、それぞれ時間額にして合計します。"
+          "ja": "月給は対象となる月給額を一か月平均所定労働時間数で、日給は一日の所定労働時間数で割って、時間額に換算します。月給・日給・時間給の組合せなら、それぞれの時間額を合計します。出来高払いなどの賃金は、対応する別の換算方法を確認します。"
         },
         {
           "id": "kensetsu-common-session-019-cluster-4-p2",
-          "ja": "算式を覚えるだけでなく、対象賃金と所定時間という入力を確かめます。残業を多くした月の総支給を使って、通常の賃金の不足を見えなくしないことが大切です。採点問題ではなく、明細の情報整理として学びます。"
+          "ja": "教材だけの架空の例で、比較対象の月給が20万8千円、一か月平均所定労働時間が160時間なら、時間額は1300円です。これは実際の最低賃金額を示す数字ではありません。計算した時間額を、該当する地域・発効日の公式の額と比較するところまでが確認です。"
+        },
+        {
+          "id": "kensetsu-common-session-019-cluster-4-p3",
+          "ja": "月給の計算では、残業を含むその月の実働時間ではなく、一か月平均所定労働時間を使います。月給と日給・時間給が組み合わされる場合は、それぞれ対応する時間額に直して合計します。出来高払いなどは別の換算が必要なので、同じ算式を無条件に当てはめません。"
         }
       ],
-      "applicationPromptJa": "この節の条件と、混同してはいけない情報を自分の言葉で説明してください。",
-      "graded": false
+      "applicationPromptJa": "架空の月給例で、比較対象額と分母を説明してください。計算結果だけで基準以上と判断できない理由は何ですか。",
+      "graded": false,
+      "learningActivity": {
+        "ja": "架空の月給例で、比較対象額と分母を説明してください。計算結果だけで基準以上と判断できない理由は何ですか。",
+        "graded": false
+      }
     }
   ],
   "review": {
     "domain": false,
     "nativeJapanese": false,
-    "runtime": "not_run"
+    "runtime": "pending_recheck_after_content_revision"
   },
   "dailyMinutesTarget": 30,
   "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
-  "editorialAuditStatus": "pending_substantive_audit"
+  "editorialAuditStatus": "AI_substantive_revision_source_and_current_official_comparison; human_review_pending",
+  "contentRevision": 3,
+  "contentRevisionNote": "Substantive week003 audit; completion revision2 and all prior IDs retained. Reading acknowledgement is not qualification or mastery.",
+  "keyTerms": [
+    {
+      "term": "地域別最低賃金",
+      "reading": "ちいきべつさいていちんぎん"
+    },
+    {
+      "term": "特定最低賃金",
+      "reading": "とくていさいていちんぎん"
+    },
+    {
+      "term": "発効日",
+      "reading": "はっこうび"
+    },
+    {
+      "term": "精皆勤手当",
+      "reading": "せいかいきんてあて"
+    },
+    {
+      "term": "時間額",
+      "reading": "じかんがく"
+    },
+    {
+      "term": "所定労働時間",
+      "reading": "しょていろうどうじかん"
+    }
+  ],
+  "officialVerification": {
+    "date": "2026-10-11",
+    "urls": [
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/chingin/newpage_43886.html",
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/chingin/newpage_43885.html",
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/chingin/newpage_43880.html",
+      "https://www.check-roudou.mhlw.go.jp/qa/roudousya/chingin/q7.html",
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/minimumichiran/",
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/chingin/newpage_43898.html",
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/chingin/newpage_43899.html"
+    ],
+    "scope": "Cluster-linked claims in week-003-claim-evidence.json; AI editorial comparison, not professional approval"
+  }
 }
