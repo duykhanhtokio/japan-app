@@ -1,0 +1,11 @@
+# Historical question illustration conversion — 2026-10-11
+
+IN PROGRESS. Publisher authorized reviewing every old black-and-white 2D illustration and recreating it in the new colorful 2D style, preserving all answer-relevant facts and asking about uncertain details. This is historical transformation, isolated from independent original authoring.
+
+Scope: 80 existing files referenced by 99 question IDs across 9 historical exams. 25 N4 question-specific color illustrations are integrated in this checkpoint. N1/N5 conversion remains pending. Original sources, question wording, IDs, choices, answer keys, audio and saved sessions remain unchanged. Text-only screenshots retain literal source text; no invented scenes.
+
+Publisher confirmations: N4 July 2021 problem1 q5 object is gloves; q8 is a bag. N4 December 2021 problem3 q1 utensils are a bowl and ladle. Rejected cloth/teaspoon/lid interpretations were not integrated. December problem1 q6 preserves the open-legged rear table and numeric leader endpoints. N4 December multi-question sources now have separate artwork per question. N4 December 2011 dark-room scene and necklace preserve dialogue-relevant facts.
+
+Built-in imagegen was used for colorful educational illustrations. Common prompt contract: preserve question-specific people, sides, roles, actions, essential objects, choice order, arrows, labels and all answer data; use clean Japanese educational 2D linework, warm natural colors and gentle shading matching original N5/02 colorful assets; frame every essential detail fully; exclude neighboring questions and answer hints. Targeted edits replace folded cloth with a pair of five-finger gloves, correct kitchen utensils to bowl+ladle, and restore rear table legs without moving diagram labels.
+
+User-authorized runner change: choose legacy replacement by stable question ID, then render all images in intrinsic aspect wrappers with explicit 100% image width and height. This removes hard-coded legacy page ratios while preserving original N5 example/scored panel separation. Old runner SHA256 dca7ec762986c88f1ec64d20f3ce7687f3f6ad948161106d84c42ecccfb591a1; new SHA256 79e2a9f066232aab1c4485e060eb247dba8f573d22c7cc09f3c5087125c02f5e. Lock updated only for this requested image fix. Native simulator/device visual approval is pending; browser QA is not native evidence.

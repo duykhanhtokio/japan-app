@@ -22,6 +22,7 @@ import {
   JlptProgressBar,
 } from '@/components/jlpt/ui/JlptExamUI';
 import type { ApprovedN1Exam } from '@/data/jlpt-official/approved-n1-exams';
+import { LEGACY_COLOR_VISUALS } from '@/data/jlpt-official/legacy-color-visuals';
 import type { TrialQuestion } from '@/data/jlpt-official/n1-2012-07-trial';
 import { JLPT_EXAM, type JlptFontScale } from '@/theme/jlpt-exam-design-system';
 import { clearJlptTrialSession, loadJlptTrialSession, saveJlptTrialSession, type N1TrialSession } from '@/services/jlpt-trial-session-storage';
@@ -428,7 +429,7 @@ function renderOriginalImage(source: ImageSourcePropType, aspectRatio: number, p
 }
 
 function QuestionBlock({ question, scale, selected, submitted, visualOptions, showProblemHeading = true, showInstruction = true, showPassage = true, onChoose, onLayout, onFocus }: { question: TrialQuestion; scale: number; selected?: string; submitted: boolean; visualOptions: Readonly<Record<number, ImageSourcePropType>>; showProblemHeading?: boolean; showInstruction?: boolean; showPassage?: boolean; onChoose: (questionId: string, optionId: string) => void; onLayout: (event: LayoutChangeEvent) => void; onFocus: () => void }) {
-  const imageSource = question.visualOptionPage ? visualOptions[question.visualOptionPage] : undefined;
+  const imageSource = LEGACY_COLOR_VISUALS[question.id] ?? (question.visualOptionPage ? visualOptions[question.visualOptionPage] : undefined);
   const imageSize = imageSource ? typeof Image.resolveAssetSource === 'function' ? Image.resolveAssetSource(imageSource)
     : typeof imageSource === 'number' ? Asset.fromModule(imageSource)
       : Array.isArray(imageSource) ? imageSource[0] : imageSource : undefined;
@@ -443,7 +444,7 @@ function QuestionBlock({ question, scale, selected, submitted, visualOptions, sh
     {originalIllustration && practiceOptions ? <Text style={styles.illustrationLabel}>本問（採点対象）</Text> : null}
     <Text style={styles.questionNumber}>{displayQuestionNumber(question)}</Text>
     <JlptQuestionText scale={scale} style={question.family === 'sentenceComposition' ? styles.starQuestion : undefined}>{question.promptJa}</JlptQuestionText>
-    {originalIllustration && imageSource ? renderOriginalImage(imageSource, imageSize?.width && imageSize?.height ? imageSize.width / imageSize.height : 3 / 2, practicePair ? 'right' : undefined, `${question.label}の選択肢図`) : imageSource ? <Image fadeDuration={0} source={imageSource} resizeMode="contain" style={[styles.visualOptions, question.visualOptionPage && question.visualOptionPage >= 101 && imageSize?.width && imageSize?.height ? { aspectRatio: imageSize.width / imageSize.height } : question.visualOptionPage === 12 ? styles.visualOptionsPage12 : styles.visualOptionsPage13]} accessibilityLabel={`${question.label}の選択肢図`} /> : null}
+    {imageSource ? renderOriginalImage(imageSource, imageSize?.width && imageSize?.height ? imageSize.width / imageSize.height : 3 / 2, practicePair ? 'right' : undefined, `${question.label}の選択肢図`) : null}
     {question.family === 'sentenceComposition' ? <Text style={styles.starNote}>★ に入るものを一つ選んでください。</Text> : null}
     <View accessibilityRole="radiogroup" onTouchStart={onFocus} style={styles.options}>
       {question.options.map((option) => <JlptAnswerOption key={option.id} number={option.id} selected={selected === option.id} disabled={submitted} scale={scale} onPress={() => { onFocus(); onChoose(question.id, option.id); }}>{option.textJa}</JlptAnswerOption>)}

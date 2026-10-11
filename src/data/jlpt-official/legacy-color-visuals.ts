@@ -1,0 +1,30 @@
+import type { ImageSourcePropType } from 'react-native';
+
+// Stable question IDs select one complete illustration, never a whole source page.
+export const LEGACY_COLOR_VISUALS: Readonly<Record<string, ImageSourcePropType>> = {
+  'n4-2021-07-listening-p3-q1': require('../../../assets/jlpt-legacy-color/n4-2021-07-listening-p3-q1.png'),
+  'n4-2021-07-listening-p3-q2': require('../../../assets/jlpt-legacy-color/n4-2021-07-listening-p3-q2.png'),
+  'n4-2021-07-listening-p3-q3': require('../../../assets/jlpt-legacy-color/n4-2021-07-listening-p3-q3.png'),
+  'n4-2021-07-listening-p3-q4': require('../../../assets/jlpt-legacy-color/n4-2021-07-listening-p3-q4.png'),
+  'n4-2021-07-listening-p3-q5': require('../../../assets/jlpt-legacy-color/n4-2021-07-listening-p3-q5.png'),
+  'n4-2021-07-listening-p1-q1': require('../../../assets/jlpt-legacy-color/n4-2021-07-listening-p1-q1.png'),
+  'n4-2021-07-listening-p1-q3': require('../../../assets/jlpt-legacy-color/n4-2021-07-listening-p1-q3.png'),
+  'n4-2021-07-listening-p1-q6': require('../../../assets/jlpt-legacy-color/n4-2021-07-listening-p1-q6.png'),
+  'n4-2021-07-listening-p1-q8': require('../../../assets/jlpt-legacy-color/n4-2021-07-listening-p1-q8.png'),
+  'n4-2021-07-listening-p1-q5': require('../../../assets/jlpt-legacy-color/n4-2021-07-listening-p1-q5.png'),
+  'n4-2011-12-listening-p3-q1': require('../../../assets/jlpt-legacy-color/n4-2011-12-listening-p3-q1.png'),
+  'n4-2011-12-listening-p3-q2': require('../../../assets/jlpt-legacy-color/n4-2011-12-listening-p3-q2.png'),
+  'n4-2011-12-listening-p3-q4': require('../../../assets/jlpt-legacy-color/n4-2011-12-listening-p3-q4.png'),
+  'n4-2011-12-listening-p3-q3': require('../../../assets/jlpt-legacy-color/n4-2011-12-listening-p3-q3.png'),
+  'n4-2011-12-listening-p3-q5': require('../../../assets/jlpt-legacy-color/n4-2011-12-listening-p3-q5.png'),
+  'n4-2011-12-listening-p1-q1': require('../../../assets/jlpt-legacy-color/n4-2011-12-listening-p1-q1.png'),
+  'n4-2021-12-listening-p1-q2': require('../../../assets/jlpt-legacy-color/n4-2021-12-listening-p1-q2.png'),
+  'n4-2021-12-listening-p1-q3': require('../../../assets/jlpt-legacy-color/n4-2021-12-listening-p1-q3.png'),
+  'n4-2021-12-listening-p1-q4': require('../../../assets/jlpt-legacy-color/n4-2021-12-listening-p1-q4.png'),
+  'n4-2021-12-listening-p3-q2': require('../../../assets/jlpt-legacy-color/n4-2021-12-listening-p3-q2.png'),
+  'n4-2021-12-listening-p3-q3': require('../../../assets/jlpt-legacy-color/n4-2021-12-listening-p3-q3.png'),
+  'n4-2021-12-listening-p3-q4': require('../../../assets/jlpt-legacy-color/n4-2021-12-listening-p3-q4.png'),
+  'n4-2021-12-listening-p3-q5': require('../../../assets/jlpt-legacy-color/n4-2021-12-listening-p3-q5.png'),
+  'n4-2021-12-listening-p1-q6': require('../../../assets/jlpt-legacy-color/n4-2021-12-listening-p1-q6.png'),
+  'n4-2021-12-listening-p3-q1': require('../../../assets/jlpt-legacy-color/n4-2021-12-listening-p3-q1.png'),
+};
