@@ -1,3 +1,16 @@
+# Current checkpoint · 2026-10-11 · Tuần 5 đã tích hợp / dừng tạo ảnh
+
+Tuần 5 ngày 29–35 đủ 78/78 ảnh đoạn (11/12/11/12/11/11/10); giữ 318 ảnh/metadata tuần 1–4. Tổng 396/866, còn 470 pending, fullParagraphArtComplete=false. Dừng tạo ảnh theo yêu cầu người dùng: nhiều ảnh trùng bố cục/cảnh trao đổi. Lưu phần đã tích hợp; chưa được người dùng chấp nhận chất lượng bố cục. Không tiếp tục tuần 6 hoặc tạo ảnh mới khi chưa có chỉ đạo mới.
+
+78 ảnh anime 2D màu mới, exact sectionId + chú thích Việt; đã xem từng output/sửa có mục tiêu và sáu bảng ảnh cuối. Sửa bản nháp thừa nhân vật/không gian công cộng, hướng toilet bên phải, cổ tay phải ngứa, và thùng thu gom tách xe sạch. WEBP quality90 không resize/crop; 78 hash/decode/kích thước được kiểm. Cover ngày 29–35 dùng summary đúng ngày. Không đổi bài/câu hỏi/ID/revision/UI/state hoặc bảy runtime JSON.
+
+Đã đọc/xem nguồn canonical PDF pages154–171 (printed152–169), SHA256 997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54; đọc sau 13 bản nháp đầu rồi đối chiếu lại. Không ảnh/layout sách, PDF/OCR trong repo, không kiến thức/quy trình/sự kiện lâm sàng mới. Chuẩn bị khác thực hiện, chưa kiểm khác không có, bố trí khác hoàn tất được giữ rõ.
+
+Actual WeeklyKaigo/RoyalPanels focused RNWeb PASS 390x844/768x1024/844x390: 234 decoded-image/dimension/ratio/caption checks, 21 cover-caption checks, 21 screenshots đã xem, không overflow/input, trở về lịch, 0 pageErrors. Calendar model PASS, JLPT UI lock10/10, whitespace PASS; preservation318 artwork/metadata và approved-plan chỉ currentWeek4→5. Không native/full ExpoRouter/full-repo TypeScript/human/domain/rights/release approval; validator catalog-art cũ lỗi baseline riêng.
+
+Report reviews/WEEK5_PARAGRAPH_ART_2026-10-11.md và runtime-tests/2026-10-11-week5-art chứa exact inputs/hashes/evidence. Publication giữ thay đổi Kensetsu độc lập; expected-head lease, fetch/blob verification và WORK PERSISTENCE PASS bắt buộc trước bàn giao. Rà nguồn sâu51–70 và source195 clinical ambiguity còn riêng chưa hoàn tất.
+
+---
 # Current checkpoint · 2026-10-11 · Tuần 4 hoàn chỉnh / ảnh theo tuần
 
 Tuần 4 ngày 22–28 đủ 75/75 ảnh đoạn (11/11/11/11/11/10/10); giữ nguyên 243 ảnh/metadata tuần 1–3. Tổng 318/866, còn 548 pending, fullParagraphArtComplete=false. Tuần tiếp theo là tuần 5 sau xác minh remote.
