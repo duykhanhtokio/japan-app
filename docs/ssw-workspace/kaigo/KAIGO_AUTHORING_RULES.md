@@ -1,6 +1,6 @@
 # Hướng dẫn chính thức — Tokutei Gino 介護
 
-Phiên bản: 9. Ngày duyệt: 2026-10-10 (Asia/Tokyo).
+Phiên bản: 10. Ngày duyệt: 2026-10-11 (Asia/Tokyo).
 Trạng thái: CHỦ DỰ ÁN ĐÃ DUYỆT PHƯƠNG ÁN BIÊN SOẠN.
 Repository: duykhanhtokio/japan-app. Nhánh: recovery/jlpt-n3-n1.
 Đây là hợp đồng biên soạn; duyệt phương án không chứng nhận nội dung chưa được tạo, kiểm duyệt hoặc tích hợp.
@@ -183,3 +183,9 @@ Chủ dự án chốt:26ô tuần luôn hiện theo thứ tự; giữ176buổi, 
 Đánh giá gom riêng cuối mỗi tuần; mỗi câu4lựa chọn, không gõ chữ. Sau trả lời đủ câu và nộp, người học bấm Hoàn thành kiểm tra; không đặt ngưỡng điểm để ghi dấu. Mỗi ngày có nút Hoàn thành ở cuối bài, dùng sau khi xem tới cuối trang. Dấu✓xanh lưu riêng cho ngày học và đánh giá tuần; đánh giá gắn với ngày cuối có nội dung của tuần. Tuần có✓khi mọi ngày có nội dung và đánh giá đều được xác nhận. Ngày trống không tính là nhiệm vụ. Không dùng mở bài, điểm số hoặc thao tác tự kiểm cũ để tự nâng dấu hoàn thành.
 Giữ12đề thi đủ cấu trúc trong mục Thi thử riêng. Chuyển các ca/tự giải thích do dự án viết sang nhận diện4phương án bằng giải thích thuộc các bối cảnh khác; không tự bịa hướng dẫn y tế sai làm nhiễu. Cách đánh giá mới không chứng nhận năng lực sản xuất câu nói tự do hay tương đương kỳ thi. Khối câu hỏi tuần là phần riêng, chưa đo tải người học; không gọi687câu là687câu thi mới hoàn toàn độc lập.
 Phong cách lịch dùng chính khung giấy/viền vàng/nền navy/font hoàng gia đang có trong app. Minh hoạ2D màu tự tạo theo từng đoạn; không coi ảnh bìa cũ dùng lại là hoàn thành ảnh riêng mọi đoạn. Lập bảng kiểm đủ đoạn và ghi phần còn thiếu. Ảnh giữ tỷ lệ gốc, trong màn hình ngang giới hạn kích thước theo chiều cao để xem đủ ảnh, không méo/cắt chủ thể để lấp khung. JLPT UI giữ nguyên.
+
+## 21. Đơn vị hoàn tất ảnh theo tuần — yêu cầu 2026-10-11
+
+Chủ dự án yêu cầu tiếp tục nhưng không chỉ làm cụm10ảnh mỗi lần; nâng thành làm từng tuần. Mỗi đợt hoàn tất mọi mục còn thiếu của một tuần theo lịch26tuần, rà từng ảnh, gắn đúngIDmục, kiểm hiển thị cả tuần và lưu/xác minh GitHub trước bàn giao hoặc chuyển tuần. Số ảnh do số mục thực tế quyết định, không áp quota10. Tuần đang dở được hoàn tất phần thiếu, không tạo lại ảnh đã kiểm chứng chỉ để đủ một tuần mới. Trình tạo có thể chạy nhóm nhỏ kỹ thuật bên trong đợt; nhóm nhỏ không phải đơn vị bàn giao.
+
+Lưu chính sách vào approved-plan.json và checkpoint. Theo dõi số mục/ảnh riêng của từng tuần và tổng866mục; ảnh bìa dùng lại không được tính thêm. Giữ phong cách2D màu, chú thích nối hành động với ý học, tỷ lệ gốc và các giới hạn chuyên môn/native/quyền/phát hành. Đợt tiếp nối hiện tại: hoàn tất tuần1ngày1–7; sau xác minh remote mới sang tuần2.

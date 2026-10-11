@@ -2,6 +2,11 @@ import type {ImageSourcePropType} from 'react-native';
 import {topicFor} from './catalog';
 
 const assets={
+ roles:require('../../../assets/kaigo/paragraphs/foundation-01-overview-v1.webp'),
+ dignity:require('../../../assets/kaigo/paragraphs/foundation-02-dignity-overview-v1.webp'),
+ autonomy:require('../../../assets/kaigo/paragraphs/foundation-03-autonomy-overview-v1.webp'),
+ 'staff-health':require('../../../assets/kaigo/paragraphs/foundation-07-staff-health-preparation-v1.webp'),
+ services:require('../../../assets/kaigo/paragraphs/foundation-05-service-plan-v1.webp'),
  choice:require('../../../assets/kaigo/lessons/choice-v1.webp'),
  safety:require('../../../assets/kaigo/lessons/safety-v1.webp'),
  communication:require('../../../assets/kaigo/lessons/communication-v1.webp'),
@@ -14,6 +19,11 @@ const assets={
  observation:require('../../../assets/kaigo/lessons/observation-v1.webp'),
 };
 const descriptions={
+ roles:'Người sử dụng nêu lựa chọn; nhân viên lắng nghe và phối hợp với nhóm chuyên môn trong phạm vi vai trò của mình.',
+ dignity:'Điều kiện tham gia và hỗ trợ phù hợp giúp giữ sự tôn trọng và hoạt động có ý nghĩa với từng người.',
+ autonomy:'Bác giữ phần muốn tự làm; nhân viên hỏi nhu cầu và chỉ hỗ trợ phần đã thống nhất.',
+ 'staff-health':'Nhân viên trao đổi sức khỏe, giới hạn hỗ trợ và điều kiện chuẩn bị trước khi làm việc.',
+ services:'Bác cùng nhân viên và người phụ trách trao đổi kế hoạch dịch vụ, bắt đầu từ mong muốn và phần bác muốn tham gia.',
  choice:'Bác cân nhắc vẽ màu hoặc nghe âm thanh; nhân viên lắng nghe để bác tự chọn. Cần hỗ trợ thao tác vẫn có thể giữ quyền lựa chọn.',
  safety:'Vùng sàn ướt được đánh dấu và báo cho đồng nghiệp. Nhận ra nguy cơ cần đi cùng việc bảo vệ người liên quan và kiểm lại kết quả.',
  communication:'Bác chỉ vào thẻ có hình chiếc cốc; nhân viên xác nhận ý thay vì đoán. Có thể phối hợp lời nói, hình và cử chỉ theo từng người.',
@@ -28,9 +38,9 @@ const descriptions={
 export type LessonIllustration={key:keyof typeof assets;source:ImageSourcePropType;captionVi:string;aspectRatio:number};
 export function illustrationFor(parentDay:number,title:string):LessonIllustration{
  const topic=topicFor(parentDay,title);const t=title.toLowerCase();
- const key:keyof typeof assets=parentDay===4?'privacy':/trí nhớ/.test(t)?'daily-life':/cảm xúc|động lực|căng thẳng/.test(t)?'communication':/ăn uống|thực đơn|khay|tự ăn|ép ăn|nhịp ăn/.test(t)?'meals':/vệ sinh tay|rửa tay|găng|nhiễm khuẩn|khử khuẩn/.test(t)?'infection':
+ const key:keyof typeof assets=parentDay===1?'roles':parentDay===2?'dignity':parentDay===3?'autonomy':parentDay===4?'privacy':parentDay===5?'services':parentDay===6?'infection':parentDay===7?'staff-health':/trí nhớ/.test(t)?'daily-life':/cảm xúc|động lực|căng thẳng/.test(t)?'communication':/ăn uống|thực đơn|khay|tự ăn|ép ăn|nhịp ăn/.test(t)?'meals':/vệ sinh tay|rửa tay|găng|nhiễm khuẩn|khử khuẩn/.test(t)?'infection':
   /bàn giao|phân công|diễn tập|số đo|trí nhớ|giảm tải|sức khỏe nhân viên/.test(t)?'handoff':
   /trang phục|chỉnh trang|việc nhà/.test(t)?'daily-life':
   topic==='dignity'?'choice':topic==='body'?'observation':topic==='excretion'||topic==='hygiene'?'privacy':topic==='review'?'handoff':topic;
- return {key,source:assets[key],captionVi:descriptions[key],aspectRatio:1619/(key==='safety'||key==='daily-life'?971:972)};
+ return {key,source:assets[key],captionVi:descriptions[key],aspectRatio:1619/(key==='safety'||key==='daily-life'||key==='dignity'||key==='autonomy'?971:972)};
 }

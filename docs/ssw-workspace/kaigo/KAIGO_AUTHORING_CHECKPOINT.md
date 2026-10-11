@@ -1,3 +1,15 @@
+# Current checkpoint · 2026-10-11 · Tuần 1 hoàn chỉnh / ảnh theo tuần
+
+Theo yêu cầu mới, đơn vị hoàn tất ảnh là một tuần lịch, không dừng sau cụm10. Tuần1ngày1–7đủ73/73ảnh đoạn: giữ40cũ và thêm33ngày5–7 (10/12/11). Tổng73/866,793pending,fullParagraphArtComplete=false. Quy tắc v10/planv15 lưu batchUnit one_complete_calendar_week; giữ mọi ảnh đã hoàn tất. Bước kế tiếp tuần2chỉ sau remote verification, tiếp tục trọn tuần theo số đoạn thực tế.
+
+33ảnh 2D màu tự tạo từ nội dung ngày5–7đã có, xem từng ảnh và bảng ảnh,4sửa có mục tiêu,WEBPquality90giữ kích thước/tỷ lệ. Registry exactsectionId+Vietnamesecaption; nguồn ảnh mở đầu tuần1khớp chủ đề (dùng lại, không cộng sốảnh). Không thay câu hỏi/kiến thức/ID/revision/UI/state; không ảnh sách/quy trình kỹ thuật mới hoặc kết quả đo ghi nhớ.
+
+Final WeeklyKaigo/RoyalPanels RNWeb harness:3viewports390x844/768x1024/844x390,219decodedimagechecks cho73ảnh,7covercaptionchecks mỗi viewport,nooverflow,0pageErrors,27screenshots inspected. Calendar26weeks/176days/6blanks/687questions/866sections giữ7runtimeJSON;JLPTlock10/10PASS. Không fullExpoRouter/native/fullrepoTypeScript hoặc human/domain/rights/releaseapproval. Lỗi manifest captionVi cũ thiếu đã sửa bằng registry; chỉ evidence cuối dùng nghiệm thu.
+
+Report reviews/WEEK1_PARAGRAPH_ART_2026-10-11.md;prompt/coverage và runtime-tests/2026-10-11-week1-art chứa exactinputs/hashes/evidence. Commit/fetch/WORK PERSISTENCE PASS bắt buộc trước bàn giao; không suy từ dữ liệu local. Công việc JLPT đồng thời giữ qua fast-forward. Rà sâu nguồn51–70và source195clinicalambiguity vẫn còn riêng sau ảnh.
+
+---
+
 # Current checkpoint · 2026-10-11 · Day4 section artwork
 
 Added10original section-specific colored2D images to day4, now40/866specific images,826pending. All10visually inspected;1targeted clothing edit maintains connected-character appearance. WEBPquality90 encoding only, originaldimensions retained. ExactsectionIDs and Vietnamese learning captions in registry. Corrected day4cover selection to existingprivacy image (not counted as newsection art). Existing knowledge/questions/calendar/UI/revisions/state unchanged; no clinical protocol or sourcebook imagery newly authored/copied. No measured learner-memory result.
