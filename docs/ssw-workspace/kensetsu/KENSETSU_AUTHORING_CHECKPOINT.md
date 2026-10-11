@@ -11,3 +11,6 @@ Japanese content → illustrations → multilingual translations. Added 24 Japan
 
 ## Week 002 Japanese batch
 Seven additional Japanese-only drafts, sessions008–014, 28clusters/56paragraphs. Scope is labour-standard foundations section2.1.1, not all chapter2. Updated historical rule descriptions against official sources. Expert/native/visual full-page/claim-by-claim checks remain pending. No images or translations yet by publisher priority. Next: verify remaining law sections, especially safety amendments, before drafting following weekly batch.
+
+## Week003 Japanese batch
+Sessions015–021: 28clusters/56paragraphs, safety/health, harassment, minimum wage and insurance. Current official comparisons are partial, not expert approval; outstanding ideas and evidence are explicit. No technical procedures or images produced in this batch. Next Japanese batch: employment development and construction/environment/infrastructure laws, with full current verification first.
