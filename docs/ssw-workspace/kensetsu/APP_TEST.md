@@ -2,7 +2,7 @@
 
 Mở 特定技能学習 → 建設 → chọn 1号/2号 → chọn ライフライン・設備、建築 hoặc 土木 → tuần → ngày. Bản test chỉ mở trong Expo development / Simulator, giống phần 介護. Có 5 tuần nháp, 35 bài tiếng Nhật; lịch chưa xác nhận thời lượng 30 phút/ngày.
 
-Đọc tới cuối và bấm 完了 để lưu dấu ✓. Đổi mảng hoặc 1号/2号 để kiểm tra tiến độ được tách riêng. Nút dịch đang ẩn trong khi bản dịch chưa sẵn sàng. Tuần 2–3 đã được rà biên tập AI; tuần 4–5 còn chờ rà sâu; phần thi chưa được thiết kế.
+Đọc tới cuối và bấm 完了 để lưu dấu ✓. Đổi mảng hoặc 1号/2号 để kiểm tra tiến độ được tách riêng. Nút dịch đang ẩn trong khi bản dịch chưa sẵn sàng. Tuần 1–4 đã được rà biên tập AI; tuần 5 còn chờ rà sâu; phần thi chưa được thiết kế.
 
 Trong clone trên Mac:
 
@@ -14,3 +14,5 @@ npx expo start --clear
 ```
 
 Nếu Git báo có thay đổi cục bộ, giữ chúng và xử lý thông báo đó trước khi pull; không reset. Màn hình được kiểm tra bằng browser adapter, chưa chạy Simulator trong phiên này. TypeScript toàn dự án hiện có lỗi có sẵn TS2352 tại life-content-repository.ts:47; không có diagnostic ở các file 建設 mới.
+
+Tuần 4: 7 bài/28 cụm/87 đoạn tiếng Nhật. Bản test có tổng 368 đoạn; kiểm tra reader qua browser adapter đạt ở ba kích thước, gồm điều kiện đọc hết và bấm hoàn tất, tải lại và tách tiến độ người học/cấp độ/mảng. Có bằng chứng nguồn theo cụm và danh sách thiếu/rà một phần; chưa có duyệt chuyên gia, tiếng Nhật bản ngữ, quyền sử dụng hay kiểm tra thiết bị native.

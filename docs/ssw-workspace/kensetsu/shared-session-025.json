@@ -31,11 +31,13 @@
     }
   ],
   "officialReferences": [
-    "https://www.env.go.jp/recycle/waste_law/kaisei2010/qa.html",
+    "https://www.env.go.jp/content/900479498.pdf",
+    "https://www.env.go.jp/content/000248953.pdf",
+    "https://www.env.go.jp/content/000271536.pdf",
     "https://www.env.go.jp/recycle/build/gaiyo.html"
   ],
   "verificationDate": "2026-10-11",
-  "verificationStatus": "AI partial comparison; complete evidence/domain/native review pending",
+  "verificationStatus": "Claim-linked official AI comparison2026-10-11; technical/domain/native/rights approval pending",
   "translationStatus": "deferred",
   "illustrationStatus": "deferred",
   "clusters": [
@@ -51,9 +53,13 @@
         {
           "id": "kensetsu-common-session-025-cluster-1-p2",
           "ja": "建設現場で何が廃棄されるか、どの工事から生じたかを把握します。見た目が似ているものを、確認せずに同じ容器へ入れると、適切な処理が難しくなる場合があります。"
+        },
+        {
+          "id": "kensetsu-common-session-025-cluster-1-p3",
+          "ja": "改修現場の廃材置場では、材料名と発生した工事、廃棄物の分類、保管する容器を照合します。例えば木くずは発生する業種等の条件も分類に関わります。色が似た容器や空いている場所へ自己判断で入れず、現場の分別表示と担当者の説明を確認します。処理法の目的は、発生を抑え、適正な処理で生活環境や公衆衛生を守ることです。"
         }
       ],
-      "applicationPromptJa": "制度の目的、必要な情報、未確認の条件を分けて説明する。",
+      "applicationPromptJa": "廃材の見た目だけで分類できない理由と、保管場所を確認するための情報を挙げてください。",
       "graded": false
     },
     {
@@ -68,9 +74,13 @@
         {
           "id": "kensetsu-common-session-025-cluster-2-p2",
           "ja": "下請による運搬には、許可や委託の条件、一定の例外などの確認が必要です。ここでは例外を利用するための手順を教えず、誰の廃棄物を誰が運ぶのかという関係を整理します。"
+        },
+        {
+          "id": "kensetsu-common-session-025-cluster-2-p3",
+          "ja": "元請会社が自社の建設廃棄物を運ぶ場合と、別会社へ運搬を委託する場合を分けます。自己運搬には収集運搬業の許可が不要でも、処理基準等の遵守は必要です。下請が現場内で保管するときも保管基準が適用されます。元請の処理責任と、下請の保管上の役割を一方にまとめません。例外を使う判断は担当者が条件を確認します。"
         }
       ],
-      "applicationPromptJa": "制度の目的、必要な情報、未確認の条件を分けて説明する。",
+      "applicationPromptJa": "元請の自己運搬、運搬の委託、下請の現場内保管を分け、それぞれどの条件を確認しますか。",
       "graded": false
     },
     {
@@ -80,14 +90,18 @@
       "paragraphs": [
         {
           "id": "kensetsu-common-session-025-cluster-3-p1",
-          "ja": "産業廃棄物の処理を委託する際には、マニフェスト等で運搬や処分の状況を確認します。紙を作ったことだけで処理が適切に終了したとはいえません。委託先や処理の完了を確認する情報が必要です。"
+          "ja": "産業廃棄物の処理を委託する際には、原則として紙又は電子のマニフェストで運搬や処分・再生の状況を確認します。発行したことだけで処理終了とはいえません。排出から処理終了までを把握するための情報管理で、特定の処分方法を指す書類ではありません。"
         },
         {
           "id": "kensetsu-common-session-025-cluster-3-p2",
           "ja": "現場の人は、分別や保管、搬出について決められた方法を確認します。マニフェストという書類と、現場での保管表示を混ぜずに理解します。具体的な記載や保存要件は担当者の業務に応じて確認します。"
+        },
+        {
+          "id": "kensetsu-common-session-025-cluster-3-p3",
+          "ja": "搬出後の管理表に運搬終了の情報だけがある例です。運ばれたことと、処分・再生まで確認できたことは別です。紙のマニフェスト又は電子情報で処理の流れを確認し、必要な終了情報が戻っているかを担当者が確かめます。再生も含めた処理の確認と、埋立等の処分方法を同じ言葉で一括しません。保管表示もこの情報管理の代わりにはなりません。"
         }
       ],
-      "applicationPromptJa": "制度の目的、必要な情報、未確認の条件を分けて説明する。",
+      "applicationPromptJa": "運搬終了の情報だけでは何が未確認ですか。マニフェストと保管表示の役割を区別してください。",
       "graded": false
     },
     {
@@ -102,13 +116,52 @@
         {
           "id": "kensetsu-common-session-025-cluster-4-p2",
           "ja": "再利用できそうという個人の判断と、適切な処理が確認されたことは別です。発生を抑えること、分別すること、再資源化や処分の流れを確認することを分けて説明してみましょう。"
+        },
+        {
+          "id": "kensetsu-common-session-025-cluster-4-p3",
+          "ja": "建設リサイクル法の対象工事では、特定建設資材の使用等に加えて規模を確認します。基準は建築物解体が床面積80平方メートル以上、新築・増築が500平方メートル以上、修繕等が請負代金一億円以上、建築物以外の工作物の工事が500万円以上です。発注者による着手七日前までの届出と、受注者等の分別解体・再資源化の実施を分けます。これらは他法令の調査や処理義務を不要にする境界ではありません。"
         }
       ],
-      "applicationPromptJa": "制度の目的、必要な情報、未確認の条件を分けて説明する。",
+      "applicationPromptJa": "建設リサイクル法では、工事の種類ごとに面積と代金のどちらを確認しますか。届出と分別の担当を分けてください。",
       "graded": false
     }
   ],
   "dailyMinutesTarget": 30,
   "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
-  "editorialAuditStatus": "pending_substantive_audit"
+  "editorialAuditStatus": "substantive_AI_revision_human_reviews_pending",
+  "contentRevision": 3,
+  "keyTerms": [
+    {
+      "term": "排出事業者",
+      "reading": "はいしゅつじぎょうしゃ"
+    },
+    {
+      "term": "産業廃棄物",
+      "reading": "さんぎょうはいきぶつ"
+    },
+    {
+      "term": "自己運搬",
+      "reading": "じこうんぱん"
+    },
+    {
+      "term": "委託",
+      "reading": "いたく"
+    },
+    {
+      "term": "分別解体",
+      "reading": "ぶんべつかいたい"
+    },
+    {
+      "term": "再資源化",
+      "reading": "さいしげんか"
+    }
+  ],
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "similarityReviewed": false,
+    "runtimeVerified": true,
+    "runtimeScope": "web adapted actual reader, native device not tested"
+  }
 }

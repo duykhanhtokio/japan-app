@@ -75,3 +75,18 @@ Verification: real reader browser adapter rendered35 sessions/337 paragraphs; sc
 Publisher requested saving the local additions before continuing. Reconciled local06485a7c with remote505b98a4: retained the existing construction examples, added fuller explanations/applications and77-row source audit, and retained insured-month11days/80hours and necessary-treatment distinctions. ContentRevision4; stable IDs/revision2 completion keys unchanged. Both predecessor histories remain preserved. Runtime validation must be rerun against this combined content; no native/specialist/rights release approval. Next:week004 only after remote persistence verification.
 
 Combined-batch runtime passed35sessions/337paragraphs,completion gating/reload/route isolation; three inspected screenshots in week003-reconciled. Existing remote runtime evidence retained as history.
+
+
+## Week004 substantive Japanese revision — 2026-10-11
+
+Week003 reconciled content remotely persisted at99db649d6ede5e15c53d122fe80ebc2feba6e81a; WORK PERSISTENCE PASS before this batch. Publisher authorised saving branch and continuing.
+
+Revised all seven sessions022–028:28clusters/87Japanese paragraphs,31additional paragraphs,28distinct application prompts and42contextual readings. ContentRevision3; stable existing IDs and revision2 completion keys retained. Total35sessions/368paragraphs. UI sources unchanged; no exams, new artwork or translations.
+
+Verified source2 SHA and read/visually inspectedPDF9–14/printed16–21, restricted to2.1.6–2.7; preceding employment benefits and following water/fire outside this batch.133atomic audit rows and28cluster official evidence mappings distinguish historical source concepts, current supplements, partial teaching and deferred gaps. All29permit names introduced; comprehensive per-category boundaries remain partial. Skills grades/count mapping, technical staff/permit conditions, collective geographical exceptions, waste administrative requirements, asbestos removal and numeric environmental limits remain explicit gaps.
+
+Current comparison includes11th2026–2030 employment plan, building-law purpose/area definitions via official XML, waste self versus entrusted transport, four recycling scale thresholds, certain work-structure survey qualifications from2026-01-01, scoped14day asbestos notice and municipal seven-day noise/vibration notices. Official-reference failures are recorded; an unavailable Ibaraki FAQ was replaced with retrieved ministry interpretation. No expert/native/rights approval, whole-source coverage percentage or measured30minute schedule.
+
+Verification:35sessions/368paragraphs rendered through actual reader with documented browser image/storage adapters. Scroll/click completion, reload and learner/level/field isolation passed; three viewport captures retained and inspected. No exact duplicate Japanese paragraphs or week004 prompts. Contiguous22character source screen found zero matches, not semantic or rights clearance. JLPT UI lock10/10passed. Native devices not tested.
+
+Next substantive batch:week005 only after this narrow commit is remotely persisted and WORK PERSISTENCE PASS is observed. No new weeks or illustration production before week005 audit; keep all earlier source gaps.

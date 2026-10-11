@@ -34,9 +34,19 @@
       "section": "2.2–2.7"
     }
   ],
-  "officialReferences": [],
+  "officialReferences": [
+    "https://www.mlit.go.jp/totikensangyo/const/content/001859191.pdf",
+    "https://laws.e-gov.go.jp/api/1/lawdata/325AC0000000201",
+    "https://www.env.go.jp/content/900479498.pdf",
+    "https://www.env.go.jp/air/asbestos/litter_ctrl/index.html",
+    "https://www.env.go.jp/air/noise/low-gaiyo.html",
+    "https://www.env.go.jp/air/sindo/low-gaiyo.html",
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/ability_skill/ginoukentei/index.html",
+    "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000080.html",
+    "https://www.env.go.jp/content/000271536.pdf"
+  ],
   "verificationDate": "2026-10-11",
-  "verificationStatus": "AI partial comparison; complete evidence/domain/native review pending",
+  "verificationStatus": "Claim-linked official AI comparison2026-10-11; technical/domain/native/rights approval pending",
   "translationStatus": "deferred",
   "illustrationStatus": "deferred",
   "clusters": [
@@ -52,9 +62,13 @@
         {
           "id": "kensetsu-common-session-028-cluster-1-p2",
           "ja": "担当会社は施工体制、建物の変更は建築上の条件、材料は事前調査、廃棄物は処理の責任、音や振動は地域と作業の条件に関わります。法令ごとの目的を整理します。"
+        },
+        {
+          "id": "kensetsu-common-session-028-cluster-1-p3",
+          "ja": "架空の店舗改修で、配管更新、間仕切りの変更、廃材搬出が予定されています。会社と担当範囲は施工体制、間仕切りは建物の条件、既存材料は事前調査、搬出は廃棄物処理、音・振動は地域と作業の条件へ結び付けます。制度名を並べるだけでなく、各情報がどの確認のために必要かを読む練習です。"
         }
       ],
-      "applicationPromptJa": "制度の目的、必要な情報、未確認の条件を分けて説明する。",
+      "applicationPromptJa": "店舗改修の五つの情報を、施工体制・建物・材料・廃棄物・周辺環境のどの確認へ結び付けますか。",
       "graded": false
     },
     {
@@ -69,9 +83,13 @@
         {
           "id": "kensetsu-common-session-028-cluster-2-p2",
           "ja": "情報を引き継ぐときは、担当者が次に何を確認する必要があるか分かるように伝えます。この場面で工事を開始してよいかを判定するのではなく、確認事項を読み取る練習です。"
+        },
+        {
+          "id": "kensetsu-common-session-028-cluster-2-p3",
+          "ja": "引継ぎメモに「材料調査の記録は受領、対象範囲との照合は未完了」「運搬先の確認は担当者へ依頼中」と書く例です。資料の受領、内容の確認、必要な手続きの終了を同じ「済」にしません。担当者、次の確認、回答の期限を別に残すと、次の班が不足を見つけやすくなります。このメモ自体は工事開始を認める書類ではありません。"
         }
       ],
-      "applicationPromptJa": "制度の目的、必要な情報、未確認の条件を分けて説明する。",
+      "applicationPromptJa": "資料受領、内容確認、手続き終了を区別し、次の班へ残す未確認事項を説明してください。",
       "graded": false
     },
     {
@@ -86,9 +104,13 @@
         {
           "id": "kensetsu-common-session-028-cluster-3-p2",
           "ja": "実際の担当と責任は、その現場の体制と必要な条件で確認します。教材上の役割は、読者が自分で資格や管理者の配置を決める根拠にはなりません。"
+        },
+        {
+          "id": "kensetsu-common-session-028-cluster-3-p3",
+          "ja": "同じ人の名が調査者と工程調整の欄にあっても、各業務の担当条件を別に確認します。調査資格、施工の技術上の管理、職長の作業連絡、廃棄物処理の責任は、経験年数だけで代替できません。兼務の可否を教材で決めるのではなく、現場の配置資料と適用条件を担当者が照合することを学びます。"
         }
       ],
-      "applicationPromptJa": "制度の目的、必要な情報、未確認の条件を分けて説明する。",
+      "applicationPromptJa": "一人が複数の役割を担う場合も、それぞれの資格や担当範囲を別に確認する理由を述べてください。",
       "graded": false
     },
     {
@@ -103,13 +125,52 @@
         {
           "id": "kensetsu-common-session-028-cluster-4-p2",
           "ja": "これは採点する週末試験ではありません。説明しにくい箇所を読み直し、今後の水質、設備、通信、航空などの制度と混同しないための整理を残します。"
+        },
+        {
+          "id": "kensetsu-common-session-028-cluster-4-p3",
+          "ja": "制度を目的と記録で整理します。技能検定は技能の評価、許可や施工体制は請負・施工の仕組み、建築基準は建物と周辺、マニフェストは処理の流れ、事前調査は材料の確認、騒音・振動は地域と作業に関係します。「届出済み」という一語を見たら、どの制度で誰が何を届けたかを問い直します。別の制度の完了に読み替えません。"
         }
       ],
-      "applicationPromptJa": "制度の目的、必要な情報、未確認の条件を分けて説明する。",
+      "applicationPromptJa": "「届出済み」と聞いたら、制度、提出者、内容についてどの追加情報を尋ねますか。",
       "graded": false
     }
   ],
   "dailyMinutesTarget": 30,
   "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
-  "editorialAuditStatus": "pending_substantive_audit"
+  "editorialAuditStatus": "substantive_AI_revision_human_reviews_pending",
+  "contentRevision": 3,
+  "keyTerms": [
+    {
+      "term": "改修",
+      "reading": "かいしゅう"
+    },
+    {
+      "term": "担当範囲",
+      "reading": "たんとうはんい"
+    },
+    {
+      "term": "照合",
+      "reading": "しょうごう"
+    },
+    {
+      "term": "引継ぎ",
+      "reading": "ひきつぎ"
+    },
+    {
+      "term": "確認済み",
+      "reading": "かくにんずみ"
+    },
+    {
+      "term": "未確認",
+      "reading": "みかくにん"
+    }
+  ],
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "similarityReviewed": false,
+    "runtimeVerified": true,
+    "runtimeScope": "web adapted actual reader, native device not tested"
+  }
 }
