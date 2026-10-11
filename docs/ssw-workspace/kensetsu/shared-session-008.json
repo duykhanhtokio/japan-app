@@ -36,12 +36,12 @@
   "officialVerification": {
     "date": "2026-10-11",
     "urls": [
-      "https://www.mhlw.go.jp/web/t_doc?dataId=73022000",
-      "https://muki.mhlw.go.jp/rule.html",
-      "https://kensetsu-roudou-jikan.mhlw.go.jp/kensetsu_overtime.html",
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/keiyaku/index.html"
+      "https://www.mhlw.go.jp/web/t_doc?dataId=73022000&dataType=0",
+      "https://www.mhlw.go.jp/stf/newpage_21917.html",
+      "https://www.mhlw.go.jp/stf/newpage_32105.html",
+      "https://www.mhlw.go.jp/bunya/roudoukijun/faq_kijyunhou_4.html"
     ],
-    "scope": "AI source comparison; human legal review pending"
+    "scope": "Specific cluster evidence in week-002-claim-evidence.json; AI comparison, not human legal approval"
   },
   "clusters": [
     {
@@ -51,17 +51,22 @@
       "paragraphs": [
         {
           "id": "kensetsu-common-session-008-cluster-1-p1",
-          "ja": "労働法という言葉は、働くことに関係する法律をまとめて指します。労働基準法は、賃金や労働時間などの最低基準を定めます。会社と約束したからといって、法律の最低基準を下回る条件がそのまま有効になるわけではありません。"
+          "ja": "労働法は、働くことに関わる法律の総称です。労働基準法は、賃金や労働時間などについて最低基準を定めます。契約書に署名したことだけを理由に、その基準を下回る条件まで有効になるわけではありません。安全衛生、災害補償や寄宿舎など、働く際の待遇に関わる事項も、適用される規定を確認します。"
         },
         {
           "id": "kensetsu-common-session-008-cluster-1-p2",
-          "ja": "労働条件を読むときは、契約の約束と法律の基準を分けます。たとえば始業時刻は契約で確かめ、休憩の最低基準は法律でも確認します。「会社の決まりだから」で確認を終えず、何を根拠にする条件かを整理します。"
+          "ja": "設備会社で働くリオさんは、会社の説明と労働条件通知書を並べて読みます。説明には「休憩は現場に合わせる」とありますが、休憩を設けなくてよいという意味にはなりません。勤務の長さと休憩の扱いを担当者に尋ね、契約の約束と最低基準の両方を確認します。"
+        },
+        {
+          "id": "kensetsu-common-session-008-cluster-1-p3",
+          "ja": "法律の基準に届かない契約条件は、その部分が無効となり、法律の基準に置き換わります。契約全体が自動的になくなるという意味ではありません。また、最低基準を理由に、すでに決めたより有利な条件を当然に引き下げてよいわけでもありません。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "会社の約束と法律の最低基準を、それぞれ何で確かめるか説明してください。基準を下回る一項目があった場合、契約全体との関係も整理してください。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "会社の約束と法律の最低基準を、それぞれ何で確かめるか説明してください。基準を下回る一項目があった場合、契約全体との関係も整理してください。"
     },
     {
       "id": "kensetsu-common-session-008-cluster-2",
@@ -74,13 +79,18 @@
         },
         {
           "id": "kensetsu-common-session-008-cluster-2-p2",
-          "ja": "教材用の例として、ナムさんが契約書の終了日と更新欄を別々に読んでいます。終了日が書かれていても、必ず更新されるという意味ではありません。分からない記載を、そのまま予想で埋めず説明を求めます。"
+          "ja": "内装の仕事を始めるサミさんの通知書には、契約期間と更新を判断する条件が別の欄にあります。現場の予定が一年であっても、雇用契約の期間が一年とは限りません。工事の期間、雇用契約の期間、更新の判断を別々に読み取ります。"
+        },
+        {
+          "id": "kensetsu-common-session-008-cluster-2-p3",
+          "ja": "無期契約は契約の終了日をあらかじめ定めない契約です。有期契約の更新と無期転換も異なります。原則として同じ使用者との有期契約が通算五年を超えて更新された場合、労働者の申込みにより無期契約へ転換する仕組みがあります。特例等があるため、通算期間だけで判断せず、契約の履歴と適用条件を確認します。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "工事の完成予定日と雇用契約の終了日が違うとき、どちらの欄を読みますか。更新と無期転換の違いも説明してください。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "工事の完成予定日と雇用契約の終了日が違うとき、どちらの欄を読みますか。更新と無期転換の違いも説明してください。"
     },
     {
       "id": "kensetsu-common-session-008-cluster-3",
@@ -93,13 +103,18 @@
         },
         {
           "id": "kensetsu-common-session-008-cluster-3-p2",
-          "ja": "「今はA現場」と「勤務場所の変更の範囲はB地域」という記載は、同じ情報ではありません。この例だけで異動が適法かを判定するのではなく、契約に何が示されているかを読み取る練習をします。"
+          "ja": "配管工のアディさんは、採用直後の現場名と「変更の範囲」の記載を見比べます。翌月の応援先が決まったため、場所だけが変わるのか、担当する業務も変わるのかを尋ねます。現場での口頭指示と、契約上示された範囲を区別することが読み取りの目的です。"
+        },
+        {
+          "id": "kensetsu-common-session-008-cluster-3-p3",
+          "ja": "就業場所と業務の変更の範囲は、2024年4月以降、契約を結ぶときと有期契約を更新するときに明示する事項です。記載された範囲は、変更命令がどのような場合でも有効だと保証するものではありません。変更の適否は契約や個別の事情を含めて確認します。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "応援先の説明を受けたら、場所・業務・変更の範囲について、どの三つの情報を照合しますか。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "応援先の説明を受けたら、場所・業務・変更の範囲について、どの三つの情報を照合しますか。"
     },
     {
       "id": "kensetsu-common-session-008-cluster-4",
@@ -112,21 +127,54 @@
         },
         {
           "id": "kensetsu-common-session-008-cluster-4-p2",
-          "ja": "有期契約には更新上限の有無と内容など、該当する場合に追加して明示する事項もあります。無期転換申込権が発生する更新時には、その申込機会と転換後の労働条件の明示も必要です。更新欄の読み方を、契約期間だけの確認で終えないようにします。"
+          "ja": "土木会社の事務担当者は、メイさんに勤務時間、賃金計算、支払日、退職の条件を順に説明しました。メイさんは「始業の時刻が分かりました。賃金の締め日も、この書面のどこにあるか教えてください」と尋ねます。一つの説明を理解しても、他の欄を読み終えたことにはなりません。"
+        },
+        {
+          "id": "kensetsu-common-session-008-cluster-4-p3",
+          "ja": "契約期間、就業場所・業務、勤務時間や休日、賃金の計算・支払、退職などの主要事項は、原則として書面で受け取ります。労働者が希望し、書面に出力できる方法なら電子メール等による明示も可能です。昇給は明示事項ですが、法律上必ず書面交付する事項とは区別されます。有期契約では更新上限、無期転換申込権が生じる更新時の申込機会と転換後の条件も確認します。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "勤務時間の欄だけで足りない理由を説明し、賃金と退職の欄で確認したい情報を挙げてください。電子交付の条件も確認してください。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "勤務時間の欄だけで足りない理由を説明し、賃金と退職の欄で確認したい情報を挙げてください。電子交付の条件も確認してください。"
     }
   ],
   "review": {
     "domain": false,
     "nativeJapanese": false,
-    "runtime": "not_run"
+    "runtime": "PASS_WEB_ADAPTED_COMPONENT_TEST; native_device_not_tested"
   },
   "dailyMinutesTarget": 30,
   "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
-  "editorialAuditStatus": "pending_substantive_audit"
+  "editorialAuditStatus": "AI_substantive_revision_source_and_current_official_comparison; human_review_pending",
+  "contentRevision": 3,
+  "contentRevisionNote": "Week002 substantive additions; stable revision2 completion IDs retained. Prior checks remain reading acknowledgements, not knowledge certification.",
+  "keyTerms": [
+    {
+      "term": "労働条件",
+      "reading": "ろうどうじょうけん"
+    },
+    {
+      "term": "明示",
+      "reading": "めいじ"
+    },
+    {
+      "term": "有期契約",
+      "reading": "ゆうきけいやく"
+    },
+    {
+      "term": "無期契約",
+      "reading": "むきけいやく"
+    },
+    {
+      "term": "更新",
+      "reading": "こうしん"
+    },
+    {
+      "term": "変更の範囲",
+      "reading": "へんこうのはんい"
+    }
+  ]
 }

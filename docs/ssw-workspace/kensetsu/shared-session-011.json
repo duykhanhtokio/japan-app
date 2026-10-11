@@ -34,12 +34,11 @@
   "officialVerification": {
     "date": "2026-10-11",
     "urls": [
-      "https://www.mhlw.go.jp/web/t_doc?dataId=73022000",
-      "https://muki.mhlw.go.jp/rule.html",
-      "https://kensetsu-roudou-jikan.mhlw.go.jp/kensetsu_overtime.html",
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/keiyaku/index.html"
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/chushoukigyou/joken_kankyou_rule.html",
+      "https://jsite.mhlw.go.jp/osaka-roudoukyoku/hourei_seido_tetsuzuki/roudoukijun_keiyaku/hourei_seido/jikan2/kokuji/kokuji2.html",
+      "https://www.mhlw.go.jp/web/t_doc?dataId=73022000&dataType=0"
     ],
-    "scope": "AI source comparison; human legal review pending"
+    "scope": "Specific cluster evidence in week-002-claim-evidence.json; AI comparison, not human legal approval"
   },
   "clusters": [
     {
@@ -53,13 +52,18 @@
         },
         {
           "id": "kensetsu-common-session-011-cluster-1-p2",
-          "ja": "例えば所定7時間の勤務に1時間が追加された場面では、所定時間との差と法定基準との差を別々に考えます。週の合計や適用される制度も必要なので、この一日だけで割増賃金を決めません。"
+          "ja": "通常の労働時間制で所定7時間、週の合計も40時間以内の人が、ある日1時間追加して働いた例です。その日の実働は8時間で、所定時間は超えますが、一日8時間の法定基準は超えません。この一時間の賃金をどう払うかは、契約上の扱いも確認します。"
+        },
+        {
+          "id": "kensetsu-common-session-011-cluster-1-p3",
+          "ja": "変形労働時間制など、法定時間の判断方法が通常と異なる制度があります。長い勤務日を見ただけで制度を推測せず、どの制度が適用され、どう設定されているかを確認します。「月の平均が短い」という説明だけで、普通の勤務の時間外労働が消えるわけではありません。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "通常の制度で所定7時間の人が8時間働いた場合、所定超過と法定超過をどう区別しますか。週の合計を調べる理由も説明してください。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "通常の制度で所定7時間の人が8時間働いた場合、所定超過と法定超過をどう区別しますか。週の合計を調べる理由も説明してください。"
     },
     {
       "id": "kensetsu-common-session-011-cluster-2",
@@ -68,17 +72,22 @@
       "paragraphs": [
         {
           "id": "kensetsu-common-session-011-cluster-2-p1",
-          "ja": "労働時間が6時間を超えるときは少なくとも45分、8時間を超えるときは少なくとも1時間の休憩を、勤務の途中に設ける基準があります。「超える」という条件を読み落とさないことが大切です。"
+          "ja": "労働時間が6時間を超える場合は少なくとも45分、8時間を超える場合は少なくとも1時間の休憩が必要です。ここで比べるのは、休憩を除いた実際の労働時間です。始業から終業までの長さだけで、基準を決めないようにします。"
         },
         {
           "id": "kensetsu-common-session-011-cluster-2-p2",
-          "ja": "休憩は、仕事から離れて自由に利用できる時間として考えます。指示があればすぐ仕事に戻らなければならない待機を、名前だけで休憩と決めません。一斉付与の原則と、労使協定等による例外の扱いも分けます。"
+          "ja": "内装現場で実働がちょうど6時間なら、6時間を超える場合の45分という基準には達していません。6時間15分なら45分以上、実働がちょうど8時間なら45分以上、8時間15分なら1時間以上が必要です。会社がより長い休憩を決めている場合、その約束も確認します。"
+        },
+        {
+          "id": "kensetsu-common-session-011-cluster-2-p3",
+          "ja": "休憩は勤務の途中に与え、原則として一斉に付与し、自由に使える必要があります。一斉付与には労使協定等による例外があります。荷物が来たら対応するよう命じられ、仕事から離れられない待機は、「休憩」と表示されていても、その実態を確認する必要があります。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "実働8時間と8時間15分では、最低休憩時間はどう違いますか。休憩中の待機が指示されたら、何を確認しますか。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "実働8時間と8時間15分では、最低休憩時間はどう違いますか。休憩中の待機が指示されたら、何を確認しますか。"
     },
     {
       "id": "kensetsu-common-session-011-cluster-3",
@@ -91,13 +100,18 @@
         },
         {
           "id": "kensetsu-common-session-011-cluster-3-p2",
-          "ja": "会社の休日の指定と勤務予定を確認します。「日曜に働いた」という事実に加え、どの日が法定休日か、時間の合計はどうかという情報が必要です。休日と休暇という言葉も区別して読みます。"
+          "ja": "土日を休む予定の会社で、日曜を法定休日と定めている例です。土曜日に応援作業をする場合、土曜という曜日だけで35％の法定休日割増と決まりません。日曜の指定と、その週の実働合計を確認して、休日労働と時間外労働を分けます。"
+        },
+        {
+          "id": "kensetsu-common-session-011-cluster-3-p3",
+          "ja": "毎週一日という基本のほか、四週間を通じ四日以上の休日を与える制度もあります。休日は労働義務のない日、休暇は本来働く日に労働義務を免れる仕組みです。休日の指定を変える制度の詳細は別に確認し、後から休んだことだけで過去の勤務区分を決めません。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "日曜を法定休日とする会社で土曜に働いたとき、曜日以外に何を確認しますか。休日と休暇の違いも説明してください。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "日曜を法定休日とする会社で土曜に働いたとき、曜日以外に何を確認しますか。休日と休暇の違いも説明してください。"
     },
     {
       "id": "kensetsu-common-session-011-cluster-4",
@@ -110,21 +124,54 @@
         },
         {
           "id": "kensetsu-common-session-011-cluster-4-p2",
-          "ja": "始業・終業と休憩を別々に記録し、作業名だけで時間を除外しないようにします。この教材の読み取り例は、個別の移動時間を一律に労働時間と判定するものではありません。"
+          "ja": "会社から7時50分の資材確認、8時からの作業、17時から17時15分までの片付けを指示された教材例です。資材確認と片付けが使用者の指示による業務なら、8時から17時という予定表だけで時間を数えません。実際の開始、終了、途中の休憩を確認します。"
+        },
+        {
+          "id": "kensetsu-common-session-011-cluster-4-p3",
+          "ja": "指示された準備、後片付け、参加が義務付けられた研修等は労働時間に当たります。現場間の移動や待機は、指示や拘束、自由利用の実態によって判断します。記録は作業の名前だけでなく、時間と指示の内容を残すことが大切です。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "資材確認と片付けを除いて記録すると、何が抜けますか。移動や待機の扱いを確認するため、どのような情報を残しますか。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "資材確認と片付けを除いて記録すると、何が抜けますか。移動や待機の扱いを確認するため、どのような情報を残しますか。"
     }
   ],
   "review": {
     "domain": false,
     "nativeJapanese": false,
-    "runtime": "not_run"
+    "runtime": "PASS_WEB_ADAPTED_COMPONENT_TEST; native_device_not_tested"
   },
   "dailyMinutesTarget": 30,
   "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
-  "editorialAuditStatus": "pending_substantive_audit"
+  "editorialAuditStatus": "AI_substantive_revision_source_and_current_official_comparison; human_review_pending",
+  "contentRevision": 3,
+  "contentRevisionNote": "Week002 substantive additions; stable revision2 completion IDs retained. Prior checks remain reading acknowledgements, not knowledge certification.",
+  "keyTerms": [
+    {
+      "term": "所定労働時間",
+      "reading": "しょていろうどうじかん"
+    },
+    {
+      "term": "法定労働時間",
+      "reading": "ほうていろうどうじかん"
+    },
+    {
+      "term": "休憩",
+      "reading": "きゅうけい"
+    },
+    {
+      "term": "法定休日",
+      "reading": "ほうていきゅうじつ"
+    },
+    {
+      "term": "待機",
+      "reading": "たいき"
+    },
+    {
+      "term": "指揮命令",
+      "reading": "しきめいれい"
+    }
+  ]
 }

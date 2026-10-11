@@ -34,12 +34,10 @@
   "officialVerification": {
     "date": "2026-10-11",
     "urls": [
-      "https://www.mhlw.go.jp/web/t_doc?dataId=73022000",
-      "https://muki.mhlw.go.jp/rule.html",
-      "https://kensetsu-roudou-jikan.mhlw.go.jp/kensetsu_overtime.html",
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/keiyaku/index.html"
+      "https://www.mhlw.go.jp/web/t_doc?dataId=73022000&dataType=0",
+      "https://jsite.mhlw.go.jp/osaka-roudoukyoku/hourei_seido_tetsuzuki/roudoukijun_keiyaku/hourei_seido/jikan2/kokuji/kokuji2.html"
     ],
-    "scope": "AI source comparison; human legal review pending"
+    "scope": "Specific cluster evidence in week-002-claim-evidence.json; AI comparison, not human legal approval"
   },
   "clusters": [
     {
@@ -49,17 +47,22 @@
       "paragraphs": [
         {
           "id": "kensetsu-common-session-010-cluster-1-p1",
-          "ja": "賃金の支払いには、通貨、直接、全額、毎月一回以上、一定期日という原則があります。基本の仕組みを理解した上で、認められる例外を別に確認します。原則だけを読んで、銀行振込がすべて禁止されると考えないようにします。"
+          "ja": "賃金支払の基本は、通貨で、労働者本人へ、全額を、毎月一回以上、一定の期日に支払うという五つの原則です。それぞれの原則が何を確認するためのものかを理解し、法律上認められる例外は別に整理します。"
         },
         {
           "id": "kensetsu-common-session-010-cluster-1-p2",
-          "ja": "銀行振込などは、労働者の同意などの要件を満たす取扱いがあります。ここでは個別の口座や支払方法を設定するのではなく、給与の支払いがどのように説明されているかを契約と照合します。"
+          "ja": "建設会社の給与説明を読む場面です。振込先を本人名義の口座にする説明と、現場の班長がまとめて受け取り配る説明は同じではありません。受け取る人、方法、支払日をそれぞれ確認し、直接払いと通貨払いのどの原則に関わる話かを整理します。"
+        },
+        {
+          "id": "kensetsu-common-session-010-cluster-1-p3",
+          "ja": "直接払いは労働者本人への支払を基本とし、全額払いは根拠のない控除を避けるための原則です。通貨払いには、本人の同意などの要件を満たす銀行振込等の例外があります。名前の違う支払方法を見たら、例外の要件が示されているかを確かめます。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "班長にまとめて渡す説明と本人の口座への振込を、受取人と支払方法の観点で区別してください。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "班長にまとめて渡す説明と本人の口座への振込を、受取人と支払方法の観点で区別してください。"
     },
     {
       "id": "kensetsu-common-session-010-cluster-2",
@@ -72,13 +75,18 @@
         },
         {
           "id": "kensetsu-common-session-010-cluster-2-p2",
-          "ja": "明細で確認する情報を、総支給、控除項目、差引支給に分けます。分からない控除は、名称だけで判断せず、何の費用で、どの根拠により控除するのかを尋ねる材料にします。"
+          "ja": "足場の仕事をするベンさんの明細に、税、保険料、名称だけでは分からない費用が並んでいます。税と同じ欄にあるからといって、別の費用にも同じ根拠があるとは限りません。「この費用の内容と、控除の根拠を説明してください」と、項目を指定して尋ねます。"
+        },
+        {
+          "id": "kensetsu-common-session-010-cluster-2-p3",
+          "ja": "法令に基づく控除と、労働者の過半数で組織する労働組合または過半数代表者との書面による労使協定に基づく控除を区別します。会社内の口頭の決まりだけで何でも控除できるわけではありません。控除の根拠に加え、負担する費用の内容や金額がどう決められているかも確認します。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "明細の税の項目と名称不明の費用を、同じ理由で説明できないのはなぜですか。費用について質問する内容を二つ挙げてください。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "明細の税の項目と名称不明の費用を、同じ理由で説明できないのはなぜですか。費用について質問する内容を二つ挙げてください。"
     },
     {
       "id": "kensetsu-common-session-010-cluster-3",
@@ -91,13 +99,18 @@
         },
         {
           "id": "kensetsu-common-session-010-cluster-3-p2",
-          "ja": "教材用の例として、月末締め、翌月の決まった日払いの説明を考えます。月末の勤務がどの給与に含まれるかを、契約の記載と照合します。この例は実際の会社の締め日や支払日を指定するものではありません。"
+          "ja": "教材の架空の会社では、20日締め、翌月5日払いとします。6月21日から7月20日までの勤務は、8月5日支払分の対象です。7月21日の作業を同じ明細に探すと、対象期間を取り違えます。まず計算期間を区切り、その期間の勤務記録を並べます。"
+        },
+        {
+          "id": "kensetsu-common-session-010-cluster-3-p3",
+          "ja": "毎月一回以上、決まった期日に支払う原則は、通常の賃金に関する基本です。法律上、臨時に支払う賃金や賞与等には、この二つの原則の例外があります。通常の給与の支払日が不明確な状態を、賞与の例外と混同しないようにします。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "20日締め・翌月5日払いの例で、7月21日の勤務はどの支払分に入りますか。締め日と支払日の役割を説明してください。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "20日締め・翌月5日払いの例で、7月21日の勤務はどの支払分に入りますか。締め日と支払日の役割を説明してください。"
     },
     {
       "id": "kensetsu-common-session-010-cluster-4",
@@ -110,21 +123,54 @@
         },
         {
           "id": "kensetsu-common-session-010-cluster-4-p2",
-          "ja": "「給与が少ない」という感想だけでなく、「記録した時間と明細の時間が違う」と分けて説明する練習をします。賃金額や控除の適否は、必要な資料をそろえて個別に確認する事項です。"
+          "ja": "現場の終業後に指示された資材整理が、手元の記録にはあるのに、明細の時間に含まれていないと気づいた場面です。対象日、整理を始めた時刻と終えた時刻、誰の指示だったかを示して確認します。口座に入った金額だけでは、この時間の扱いは分かりません。"
+        },
+        {
+          "id": "kensetsu-common-session-010-cluster-4-p3",
+          "ja": "総支給は控除前の合計、差引支給は控除後に受け取る額です。仮に総支給30万円、控除4万円なら差引支給は26万円です。これは計算の教材例で、適正な給与水準や控除額を示すものではありません。時間数の照合と金額の照合を分けて行います。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "勤務記録・給与明細・振込記録は、それぞれ何を確かめる資料ですか。資材整理の時間について、どの日の何を説明しますか。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "勤務記録・給与明細・振込記録は、それぞれ何を確かめる資料ですか。資材整理の時間について、どの日の何を説明しますか。"
     }
   ],
   "review": {
     "domain": false,
     "nativeJapanese": false,
-    "runtime": "not_run"
+    "runtime": "PASS_WEB_ADAPTED_COMPONENT_TEST; native_device_not_tested"
   },
   "dailyMinutesTarget": 30,
   "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
-  "editorialAuditStatus": "pending_substantive_audit"
+  "editorialAuditStatus": "AI_substantive_revision_source_and_current_official_comparison; human_review_pending",
+  "contentRevision": 3,
+  "contentRevisionNote": "Week002 substantive additions; stable revision2 completion IDs retained. Prior checks remain reading acknowledgements, not knowledge certification.",
+  "keyTerms": [
+    {
+      "term": "通貨",
+      "reading": "つうか"
+    },
+    {
+      "term": "直接払い",
+      "reading": "ちょくせつばらい"
+    },
+    {
+      "term": "全額払い",
+      "reading": "ぜんがくばらい"
+    },
+    {
+      "term": "控除",
+      "reading": "こうじょ"
+    },
+    {
+      "term": "締め日",
+      "reading": "しめび"
+    },
+    {
+      "term": "差引支給",
+      "reading": "さしひきしきゅう"
+    }
+  ]
 }

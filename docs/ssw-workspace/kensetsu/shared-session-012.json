@@ -34,12 +34,11 @@
   "officialVerification": {
     "date": "2026-10-11",
     "urls": [
-      "https://www.mhlw.go.jp/web/t_doc?dataId=73022000",
-      "https://muki.mhlw.go.jp/rule.html",
+      "https://www.mhlw.go.jp/web/t_doc?dataId=73022000&dataType=0",
       "https://kensetsu-roudou-jikan.mhlw.go.jp/kensetsu_overtime.html",
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/keiyaku/index.html"
+      "https://www.mhlw.go.jp/content/001179482.pdf"
     ],
-    "scope": "AI source comparison; human legal review pending"
+    "scope": "Specific cluster evidence in week-002-claim-evidence.json; AI comparison, not human legal approval"
   },
   "clusters": [
     {
@@ -53,13 +52,18 @@
         },
         {
           "id": "kensetsu-common-session-012-cluster-1-p2",
-          "ja": "協定があること、勤務の実態が協定の範囲内であること、必要な割増賃金が支払われることを別々に考えます。個別の残業指示の有効性を、協定の有無だけで決めません。"
+          "ja": "設備工事の納期が近づき、班長から残業予定が伝えられた場面です。給与担当者に割増率を聞くことと、会社に36協定の対象や時間の範囲を確認することは、別の確認です。手当が付くという説明だけでは、残業の手続きが整っているかは分かりません。"
+        },
+        {
+          "id": "kensetsu-common-session-012-cluster-1-p3",
+          "ja": "36協定は、使用者と過半数労働組合または過半数代表者が結び、労働基準監督署に届け出る協定です。時間外・休日労働をさせられる範囲を定めるもので、個々の労働者と結ぶ雇用契約とは異なります。協定があっても、定めた時間や法令の上限を超えてよいわけではありません。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "36協定、個人の労働契約、割増賃金は、それぞれ何を確認するものですか。手当の説明だけで残業を判断できない理由を述べてください。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "36協定、個人の労働契約、割増賃金は、それぞれ何を確認するものですか。手当の説明だけで残業を判断できない理由を述べてください。"
     },
     {
       "id": "kensetsu-common-session-012-cluster-2",
@@ -72,13 +76,18 @@
         },
         {
           "id": "kensetsu-common-session-012-cluster-2-p2",
-          "ja": "2022年の資料にある「2024年から始まる」という説明は、その時点の記述です。現在の教材では、すでに適用されている規制として学びます。古い年の説明と、現在の適用状態を区別します。"
+          "ja": "通常の限度時間が適用される会社で、今月の時間外労働を確認します。月だけ見れば45時間以内でも、年の合計が360時間を超える可能性があります。月の欄と年の欄の両方を確認し、一つの数字だけで予定を立てないようにします。"
+        },
+        {
+          "id": "kensetsu-common-session-012-cluster-2-p3",
+          "ja": "建設業の上限規制は2024年4月から適用済みです。一年単位の変形労働時間制で対象期間が三か月を超える場合、原則の限度時間は月42時間・年320時間となります。契約や協定でこれより短い時間を定めていれば、その範囲も守る必要があります。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "月の時間外が45時間以内であっても、年間合計を確認する理由を説明してください。42時間・320時間の区分になる条件は何ですか。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "月の時間外が45時間以内であっても、年間合計を確認する理由を説明してください。42時間・320時間の区分になる条件は何ですか。"
     },
     {
       "id": "kensetsu-common-session-012-cluster-3",
@@ -87,17 +96,22 @@
       "paragraphs": [
         {
           "id": "kensetsu-common-session-012-cluster-3-p1",
-          "ja": "臨時的な特別の事情に対応する特別条項があっても、通常の建設事業では、時間外労働は年720時間以内、月45時間を超える月は年6回までです。時間外と休日労働の合計は月100時間未満、二〜六か月平均80時間以内という条件もあります。"
+          "ja": "通常の建設事業の特別条項でも、時間外労働は年720時間以内です。原則の限度時間が月45時間の区分では、それを超える月は年六か月までです。時間外と法定休日労働を合わせて月100時間未満、二〜六か月の各平均80時間以内という条件も同時に確認します。"
         },
         {
           "id": "kensetsu-common-session-012-cluster-3-p2",
-          "ja": "年720時間に休日労働を含めない一方、月100時間未満と複数月平均には休日労働を含めます。「未満」と「以内」も同じではありません。一般の上限規制を、恒常的に長時間働くための予定表として使うものではありません。"
+          "ja": "通常の建設事業で、ある月の時間外70時間と法定休日労働15時間を集計する例です。月の合計を見るときは85時間になります。年720時間の集計と同じ欄だけで済ませず、休日労働を含む月の合計、直近二〜六か月の平均、限度時間を超えた月の回数を別に確認します。"
+        },
+        {
+          "id": "kensetsu-common-session-012-cluster-3-p3",
+          "ja": "特別条項の事情は一時的・突発的なものを具体的に定める必要があります。いつも忙しいという理由で恒常的に限度時間を超える制度ではありません。通常の月45時間・年360時間の区分では、特別条項を用いても年720時間以内、月45時間を超えるのは年六か月まで、時間外と休日の合計は月100時間未満・二〜六か月平均80時間以内です。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "時間外70時間・法定休日15時間の例で、月の上限確認に使う合計を説明してください。それ以外にどの期間と回数を確認しますか。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "時間外70時間・法定休日15時間の例で、月の上限確認に使う合計を説明してください。それ以外にどの期間と回数を確認しますか。"
     },
     {
       "id": "kensetsu-common-session-012-cluster-4",
@@ -110,21 +124,54 @@
         },
         {
           "id": "kensetsu-common-session-012-cluster-4-p2",
-          "ja": "復旧・復興事業の一部の上限適用除外を、「残業の規制がすべてなくなる」と読みません。緊急対応に関する別制度も、許可や届出等の条件があります。現場名だけで判断せず、適用制度と手続きを確かめます。"
+          "ja": "大雨の後、道路を復旧する工事と、雨で遅れた通常の工事を同じ「雨の影響」と呼んだ場面です。名称だけでは適用制度は決まりません。どの事業が災害の復旧・復興に当たり、会社がどの根拠と手続きで対応するのかを確認します。"
+        },
+        {
+          "id": "kensetsu-common-session-012-cluster-4-p3",
+          "ja": "災害の復旧・復興事業では、月100時間未満と二〜六か月平均80時間以内という二つの上限が適用されない特例があります。これを年720時間等もなくなるという意味に広げません。一方、災害等による臨時の必要に対応する労働基準法33条の制度は、許可・事後届出等を伴う別の仕組みです。工期の遅れだけで、どちらも自由に使えるわけではありません。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "災害の復旧工事と雨で遅れた通常工事を区別するため、どの説明を求めますか。復旧・復興の特例から外れる二つの上限も述べてください。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "災害の復旧工事と雨で遅れた通常工事を区別するため、どの説明を求めますか。復旧・復興の特例から外れる二つの上限も述べてください。"
     }
   ],
   "review": {
     "domain": false,
     "nativeJapanese": false,
-    "runtime": "not_run"
+    "runtime": "PASS_WEB_ADAPTED_COMPONENT_TEST; native_device_not_tested"
   },
   "dailyMinutesTarget": 30,
   "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
-  "editorialAuditStatus": "pending_substantive_audit"
+  "editorialAuditStatus": "AI_substantive_revision_source_and_current_official_comparison; human_review_pending",
+  "contentRevision": 3,
+  "contentRevisionNote": "Week002 substantive additions; stable revision2 completion IDs retained. Prior checks remain reading acknowledgements, not knowledge certification.",
+  "keyTerms": [
+    {
+      "term": "36協定",
+      "reading": "さぶろくきょうてい"
+    },
+    {
+      "term": "届出",
+      "reading": "とどけで"
+    },
+    {
+      "term": "限度時間",
+      "reading": "げんどじかん"
+    },
+    {
+      "term": "特別条項",
+      "reading": "とくべつじょうこう"
+    },
+    {
+      "term": "復旧",
+      "reading": "ふっきゅう"
+    },
+    {
+      "term": "復興",
+      "reading": "ふっこう"
+    }
+  ]
 }

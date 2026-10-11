@@ -42,3 +42,16 @@ Browser-adapted component checks rendered every source paragraph and verified co
 ## Reader layout v2 — publisher review requested
 
 Removed Royal frame from lesson reader only; calendar and sector selection retained. Light continuous reading surface, 16px phone margins and 760px maximum article width; 18px Japanese body with 29px line height. Existing sections and all 281 paragraphs preserved. Reflections grouped at lesson end, followed by manual completion. Translation controls hidden until complete reviewed translation is available. Three existing 1672×941 images retain original aspect ratio and contain sizing, capped at 620px and by landscape height, with tap-to-enlarge and close. No new lesson content or illustration authored. Browser-adapted tests cover all 35 sessions, persistence and independent route keys, image modal, and phone/tablet/landscape screenshots. Native Simulator remains for publisher test. Layout approval is pending; do not author more before publisher decision.
+
+
+## Publisher resumed production — week002 substantive revision, 2026-10-11
+
+Publisher instructed continuation of construction content after reader v2. Continue Japanese-first in complete weekly batches; keep current UI. This instruction resumes content work but is not recorded as an explicit final layout approval.
+
+Revised all seven sessions008–014 as one batch:28 clusters,84 Japanese paragraphs (28 added),28 distinct ungraded reflections,42 contextual terms/readings. Preserved session/cluster/paragraph IDs and revision2 completion keys; contentRevision3 records substantive additions. Previous completion remains a reading acknowledgement, not mastery certification. New fictional examples cover construction contracts, records, wage periods, overtime totals, leave entitlement and employment termination. Corrected underspecified limits and strengthened condition/exception distinctions. No exam, illustration or translation added.
+
+Source2 hash verified; PDF1–4/printed8–11 read and visually inspected. A46-row source-concept audit and28-cluster official claim map now document this scope; neither is the whole-book knowledge denominator. Source page2 harassment prevention links to week003 and remains awaiting substantive audit. Source page4 safety flag is outside section2.1.1 and will be handled with week003. Official comparisons checked2026-10-11. Native Japanese, legal/domain, rights, full similarity and learner timing approvals remain pending. No30-minute completion claim.
+
+Next substantive Japanese batch:week003 sessions015–021, followed by004–005. Do not create week006 or images before those audits. Runtime/evidence outcomes are recorded in week-002-qa.json after verification.
+
+Verification:35 sessions/309 Japanese paragraphs rendered in real reader via browser adapter; completion gating/reload/learner-level-field isolation passed. Three viewport captures retained; phone reader and landscape reflections inspected. Native not tested. No exact duplicate paragraphs or week002 reflection prompts; source wording span screen found no22-character matches, which is not semantic/legal clearance. UI source unchanged; completion keys preserved.

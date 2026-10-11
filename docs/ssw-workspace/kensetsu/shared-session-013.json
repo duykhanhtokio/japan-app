@@ -36,12 +36,13 @@
   "officialVerification": {
     "date": "2026-10-11",
     "urls": [
-      "https://www.mhlw.go.jp/web/t_doc?dataId=73022000",
-      "https://muki.mhlw.go.jp/rule.html",
-      "https://kensetsu-roudou-jikan.mhlw.go.jp/kensetsu_overtime.html",
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/keiyaku/index.html"
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/chushoukigyou/joken_kankyou_rule.html",
+      "https://www.mhlw.go.jp/content/000930914.pdf",
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/faq/kijyunhou_6_00001.html",
+      "https://www.startup-roudou.mhlw.go.jp/qa/zigyonushi/yukyu/q1.html",
+      "https://www.check-roudou.mhlw.go.jp/qa/roudousya/yukyu/q4.html"
     ],
-    "scope": "AI source comparison; human legal review pending"
+    "scope": "Specific cluster evidence in week-002-claim-evidence.json; AI comparison, not human legal approval"
   },
   "clusters": [
     {
@@ -51,17 +52,22 @@
       "paragraphs": [
         {
           "id": "kensetsu-common-session-013-cluster-1-p1",
-          "ja": "基本の最低割増率は、法定時間外労働が25％、法定休日労働が35％、深夜労働が25％です。深夜は原則として22時から翌5時です。月60時間を超える法定時間外労働には50％以上の割増率が適用されます。"
+          "ja": "基本の最低割増率は、法定時間外労働が25％以上、法定休日労働が35％以上、深夜労働が25％以上です。深夜は原則として22時から翌5時です。月60時間を超えた法定時間外の部分には、50％以上の割増率が適用されます。"
         },
         {
           "id": "kensetsu-common-session-013-cluster-1-p2",
-          "ja": "時間外と深夜が重なる場合は、それぞれの割増を合わせて考えます。休日と深夜が重なる場合も同様です。契約で定める率が法定の最低率より高い場合もあるので、給与の確認には勤務区分と契約の記載が必要です。"
+          "ja": "法定時間外がその月60時間以下の範囲で、23時に一時間働いた例では、時間外の25％以上と深夜の25％以上を合わせ、50％以上の割増となります。法定休日の23時なら休日35％以上と深夜25％以上を合わせ60％以上です。曜日だけでなく、その時間の勤務区分を確かめます。"
+        },
+        {
+          "id": "kensetsu-common-session-013-cluster-1-p3",
+          "ja": "割増率は通常の賃金に加える割合です。25％以上の割増なら通常賃金の125％以上という意味です。月60時間を超える法定時間外には50％以上、その超えた部分が深夜なら75％以上の割増となります。60時間の集計には法定休日労働を含めません。実際の金額は算定基礎や契約の率も確認します。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "25％割増と賃金の25％だけを払う説明は、何が違いますか。法定休日と深夜が重なる場合の率も説明してください。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "25％割増と賃金の25％だけを払う説明は、何が違いますか。法定休日と深夜が重なる場合の率も説明してください。"
     },
     {
       "id": "kensetsu-common-session-013-cluster-2",
@@ -74,13 +80,18 @@
         },
         {
           "id": "kensetsu-common-session-013-cluster-2-p2",
-          "ja": "例として、入社日だけは分かっている人が自分の付与日数を確認する場面を考えます。継続勤務、出勤率、所定の勤務日数等を確認し、付与の区分を見ます。自分の契約と勤怠の情報が必要です。"
+          "ja": "舗装会社で働く人の年休を確認する場面です。入社から六か月という情報だけでなく、その期間の出勤率と所定の勤務日数・時間を確認します。パートという呼び方だけで年休がないとは考えず、通常付与か比例付与かを判断する情報をそろえます。"
+        },
+        {
+          "id": "kensetsu-common-session-013-cluster-2-p3",
+          "ja": "通常付与は六か月の継続勤務と全労働日の八割以上の出勤を満たすと10日です。週所定労働時間が30時間未満で、週所定労働日数が四日以下等の人には比例付与の区分があります。例えば週四日・週28時間で要件を満たす最初の付与は7日です。週四日でも週32時間なら、その比例付与区分とは異なります。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "週四日・28時間の人と週四日・32時間の人について、週の日数だけで付与区分を決められない理由を説明してください。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "週四日・28時間の人と週四日・32時間の人について、週の日数だけで付与区分を決められない理由を説明してください。"
     },
     {
       "id": "kensetsu-common-session-013-cluster-3",
@@ -89,17 +100,22 @@
       "paragraphs": [
         {
           "id": "kensetsu-common-session-013-cluster-3-p1",
-          "ja": "通常の付与日数は、六か月で10日、その後の各年に11、12、14、16、18、20日となります。付与された日数と実際に使った日数を分けて管理します。年十日以上付与される労働者には、年五日の取得を確実にする仕組みもあります。"
+          "ja": "年休は、今回付与された日数、以前からの繰越、使った日数を分けて読みます。通常付与で勤続年数に応じて増えるのは、各回の付与日数です。残り日数が自動的に20日までという意味ではありません。出勤率の要件と、利用できる期間も確認します。"
         },
         {
           "id": "kensetsu-common-session-013-cluster-3-p2",
-          "ja": "取得時季については労働者の請求が基本ですが、事業の正常な運営を妨げる場合の時季変更権などもあります。「会社がいつでも拒否できる」「申請すればどんな条件でもその日になる」という両方の読み違いを避けます。"
+          "ja": "通常付与で勤続3年6か月の人が、今回14日付与された教材例です。14日は今回の付与数で、前から残る日数と同じ情報ではありません。本人は休暇の記録で、今回の付与、繰越、すでに使った日数を分けて確認します。数字を足す前に、それぞれの対象期間を確かめます。"
+        },
+        {
+          "id": "kensetsu-common-session-013-cluster-3-p3",
+          "ja": "通常付与の日数は、勤続六か月で10日、一年六か月で11日、二年六か月で12日、三年六か月で14日、四年六か月で16日、五年六か月で18日、六年六か月以上で20日です。各付与には対応する出勤率等の要件があります。年10日以上付与される人には、基準日から一年以内に5日を取得させる義務が使用者にあります。本人が取得した日や計画年休は、この5日に算入できます。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "勤続3年6か月の通常付与14日と、休暇の残り日数を区別してください。年5日の取得義務の対象と期間も説明してください。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "勤続3年6か月の通常付与14日と、休暇の残り日数を区別してください。年5日の取得義務の対象と期間も説明してください。"
     },
     {
       "id": "kensetsu-common-session-013-cluster-4",
@@ -112,21 +128,54 @@
         },
         {
           "id": "kensetsu-common-session-013-cluster-4-p2",
-          "ja": "資料の「買い取りは違法」という一文を、法定を超える日数や消滅した休暇なども含めた全場面の断定として広げません。ここでは法定休暇を確保する基本を学び、個別の精算条件は別に確認します。"
+          "ja": "設備の点検日に年休を取りたい人が、希望日を会社に伝えます。人員調整の相談と、法定休暇を金銭に置き換えて休ませない説明を混同しません。もし別の日が提案されたら、希望日の扱いと代わりの時季を確認し、取得そのものを取り消されたのかを分けて考えます。"
+        },
+        {
+          "id": "kensetsu-common-session-013-cluster-4-p3",
+          "ja": "年休は労働者が請求する時季に与えることが基本で、事業の正常な運営を妨げる場合には使用者の時季変更権があります。買い取りを前もって決め、それを理由に法定年休の日数を減らしたり、請求した日数を与えなかったりすることは認められません。法定外の休暇や消滅した権利の精算等は同じ問題と断定せず、別に条件を確認します。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "取得の時季を変えることと、休暇の権利を買い取りで減らすことの違いを説明してください。希望日を変更すると言われたとき、何を確認しますか。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "取得の時季を変えることと、休暇の権利を買い取りで減らすことの違いを説明してください。希望日を変更すると言われたとき、何を確認しますか。"
     }
   ],
   "review": {
     "domain": false,
     "nativeJapanese": false,
-    "runtime": "not_run"
+    "runtime": "PASS_WEB_ADAPTED_COMPONENT_TEST; native_device_not_tested"
   },
   "dailyMinutesTarget": 30,
   "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
-  "editorialAuditStatus": "pending_substantive_audit"
+  "editorialAuditStatus": "AI_substantive_revision_source_and_current_official_comparison; human_review_pending",
+  "contentRevision": 3,
+  "contentRevisionNote": "Week002 substantive additions; stable revision2 completion IDs retained. Prior checks remain reading acknowledgements, not knowledge certification.",
+  "keyTerms": [
+    {
+      "term": "割増賃金",
+      "reading": "わりましちんぎん"
+    },
+    {
+      "term": "深夜労働",
+      "reading": "しんやろうどう"
+    },
+    {
+      "term": "年次有給休暇",
+      "reading": "ねんじゆうきゅうきゅうか"
+    },
+    {
+      "term": "比例付与",
+      "reading": "ひれいふよ"
+    },
+    {
+      "term": "基準日",
+      "reading": "きじゅんび"
+    },
+    {
+      "term": "時季変更権",
+      "reading": "じきへんこうけん"
+    }
+  ]
 }

@@ -34,12 +34,13 @@
   "officialVerification": {
     "date": "2026-10-11",
     "urls": [
-      "https://www.mhlw.go.jp/web/t_doc?dataId=73022000",
-      "https://muki.mhlw.go.jp/rule.html",
-      "https://kensetsu-roudou-jikan.mhlw.go.jp/kensetsu_overtime.html",
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/keiyaku/index.html"
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/keiyaku/index.html",
+      "https://www.check-roudou.mhlw.go.jp/qa/roudousya/kaiko/q3.html",
+      "https://www.check-roudou.mhlw.go.jp/qa/roudousya/kaiko/q2.html",
+      "https://www.mhlw.go.jp/web/t_doc?dataId=73022000&dataType=0",
+      "https://www.mhlw.go.jp/stf/newpage_32105.html"
     ],
-    "scope": "AI source comparison; human legal review pending"
+    "scope": "Specific cluster evidence in week-002-claim-evidence.json; AI comparison, not human legal approval"
   },
   "clusters": [
     {
@@ -53,13 +54,18 @@
         },
         {
           "id": "kensetsu-common-session-014-cluster-1-p2",
-          "ja": "同じ「来月から来なくてよい」という説明でも、無期契約の解雇なのか、有期契約の途中なのか、更新時の話なのかで確認事項が異なります。まず書面の期間と説明の日時を整理します。"
+          "ja": "建築会社から「この現場が終わるので、来月は来なくてよい」と言われた教材例です。現場が終わる日と雇用契約が終わる日は同じとは限りません。無期契約、有期契約の途中、契約満了時の更新拒否のどれに当たる説明なのかを、通知書と更新履歴で確認します。"
+        },
+        {
+          "id": "kensetsu-common-session-014-cluster-1-p3",
+          "ja": "有期契約の途中の解雇には、やむを得ない事由が必要とされるなど、期間の定めのない契約とは異なるルールがあります。雇止めも、更新の経緯や更新への合理的な期待などによって、労働契約法の規定が問題になります。終了日の記載だけで、すべての雇止めが自由にできるとは考えません。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "現場の終了と雇用の終了を分けるため、契約の期間と更新の経緯をどのように調べますか。有期契約の途中か満了時かも整理してください。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "現場の終了と雇用の終了を分けるため、契約の期間と更新の経緯をどのように調べますか。有期契約の途中か満了時かも整理してください。"
     },
     {
       "id": "kensetsu-common-session-014-cluster-2",
@@ -72,13 +78,18 @@
         },
         {
           "id": "kensetsu-common-session-014-cluster-2-p2",
-          "ja": "労働契約法には、客観的に合理的な理由と社会通念上の相当性に関するルールがあります。手続きの条件と、解雇そのものの有効性を分けて学びます。教材内の短い場面だけで結論を出しません。"
+          "ja": "予告の適用除外がない場面で、解雇日の20日前に予告された例なら、足りない10日分の平均賃金に相当する予告手当が必要です。月給を単純に30で割った数字を、必ず平均賃金とするわけではありません。予告の日数と平均賃金の計算根拠を分けて確認します。"
+        },
+        {
+          "id": "kensetsu-common-session-014-cluster-2-p3",
+          "ja": "予告や手当のルールと、解雇に合理的な理由があり社会通念上相当かという判断は別です。解雇予告の例外には、監督署長の認定が必要な場合等があり、会社が「懲戒だから」と呼ぶだけで予告が不要になるわけではありません。実際の適用条件を確認します。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "20日前の予告の例では、どの日数に対応する手当を確認しますか。手当が払われても解雇の有効性が別問題である理由を説明してください。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "20日前の予告の例では、どの日数に対応する手当を確認しますか。手当が払われても解雇の有効性が別問題である理由を説明してください。"
     },
     {
       "id": "kensetsu-common-session-014-cluster-3",
@@ -91,13 +102,18 @@
         },
         {
           "id": "kensetsu-common-session-014-cluster-3-p2",
-          "ja": "「病気になった」という事実だけで、業務上の療養休業かは分かりません。傷病の原因、休業期間、会社からの説明を分けます。必要な資料を整理し、適用される条件を専門の相談先で確認します。"
+          "ja": "現場での負傷により療養のため休業している人と、業務外の病気で休んでいる人を比べる場面です。どちらも病気やけがという言葉を使いますが、業務上の療養休業に関する解雇制限を同じように当てはめることはできません。原因と休業の性質を確認します。"
+        },
+        {
+          "id": "kensetsu-common-session-014-cluster-3-p3",
+          "ja": "業務上の傷病による療養休業中とその後30日間、産前産後の休業中とその後30日間には、原則として解雇制限があります。業務上傷病について三年経過後の打切補償など、法律上の例外もあります。天災事変等で事業継続が不可能となる例外には監督署長の認定が必要です。例外名だけで個別の解雇を判断しません。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "療養休業の解雇制限について、傷病の原因、休業期間、復帰後の期間のどこを確認しますか。すべての病気に同じ規定を当てはめられない理由を述べてください。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "療養休業の解雇制限について、傷病の原因、休業期間、復帰後の期間のどこを確認しますか。すべての病気に同じ規定を当てはめられない理由を述べてください。"
     },
     {
       "id": "kensetsu-common-session-014-cluster-4",
@@ -110,21 +126,54 @@
         },
         {
           "id": "kensetsu-common-session-014-cluster-4-p2",
-          "ja": "採点する試験は行いません。自分が読みにくかった用語を選び、その意味と確認に必要な資料を説明します。現実の相談では、個別の事実と最新の制度の確認が必要です。"
+          "ja": "今週の教材例を振り返るため、会社の通知書、勤務記録、給与明細、年休記録、雇用終了の説明を机に並べる場面を想像します。給与明細は支給額の資料ですが、更新の判断基準は通知書で確認します。書類の名前だけを覚えるより、疑問ごとに使う資料を選ぶことが大切です。"
+        },
+        {
+          "id": "kensetsu-common-session-014-cluster-4-p3",
+          "ja": "口頭説明と書面が違うと感じたら、違う箇所、説明の日時、相手、対象期間を具体化します。相談のために情報を整理する練習で、他人の個人情報を集める課題ではありません。自分の資料でも、相談先に必要な部分を選び、無関係な人に広めないようにします。"
         }
       ],
       "learningActivity": {
-        "ja": "用語と適用条件を確認し、区別する情報を自分の言葉で説明する。",
+        "ja": "契約更新、片付け時間、給与の控除、年休の残り日数について、それぞれ最初に読む資料を選び、何を確認するか説明してください。",
         "graded": false
-      }
+      },
+      "applicationPromptJa": "契約更新、片付け時間、給与の控除、年休の残り日数について、それぞれ最初に読む資料を選び、何を確認するか説明してください。"
     }
   ],
   "review": {
     "domain": false,
     "nativeJapanese": false,
-    "runtime": "not_run"
+    "runtime": "PASS_WEB_ADAPTED_COMPONENT_TEST; native_device_not_tested"
   },
   "dailyMinutesTarget": 30,
   "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
-  "editorialAuditStatus": "pending_substantive_audit"
+  "editorialAuditStatus": "AI_substantive_revision_source_and_current_official_comparison; human_review_pending",
+  "contentRevision": 3,
+  "contentRevisionNote": "Week002 substantive additions; stable revision2 completion IDs retained. Prior checks remain reading acknowledgements, not knowledge certification.",
+  "keyTerms": [
+    {
+      "term": "解雇",
+      "reading": "かいこ"
+    },
+    {
+      "term": "雇止め",
+      "reading": "やといどめ"
+    },
+    {
+      "term": "解雇予告手当",
+      "reading": "かいこよこくてあて"
+    },
+    {
+      "term": "平均賃金",
+      "reading": "へいきんちんぎん"
+    },
+    {
+      "term": "療養",
+      "reading": "りょうよう"
+    },
+    {
+      "term": "打切補償",
+      "reading": "うちきりほしょう"
+    }
+  ]
 }
