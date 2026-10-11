@@ -23,3 +23,10 @@ Sessions029–035: 28clusters/56paragraphs, water/sewage, fire/water supply, gas
 
 ## Structural QA across five weeks
 35 draft sessions, 281 Japanese paragraphs, 144 teaching/application coverage rows. Referential and exact-paragraph uniqueness checks passed. These rows are NOT a complete source-idea denominator. Durations are unmeasured and may require regrouping after timing. Source2 reading remains mixed full-page/excerpts and incomplete visual review; source3–7 still not authored.
+
+
+## Editorial correction — 2026-10-11
+
+Week 001 revised as a whole batch. Replaced two detached examples with original construction coordination cases, differentiated change coordination from handover, and supplied 29 section-specific ungraded prompts. Existing translations of edited Japanese paragraphs are stale and require later revision. A 40-row chapter-one source audit records explained, partial and blocked items; it is an editorial checklist, not the full-source knowledge denominator.
+
+All 35 sessions and five week batches now have null duration estimates; 30 minutes per day and 210 per week remain targets only. Cluster minute allocations were withdrawn. Weeks are provisional authoring groups and must be regrouped if source coverage and learner timing require it. Japanese priority remains in effect. Do not add new weeks or images before substantively auditing weeks 002–005. No native, specialist, rights, source-similarity, learner-timing or app-runtime pass is claimed.
