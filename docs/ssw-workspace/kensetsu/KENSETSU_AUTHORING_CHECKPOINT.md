@@ -21,3 +21,7 @@ Rà trực quan các trang còn lại text1l; đọc sáu file tiếp theo và t
 ## Lưu
 
 Nội dung lưu trong commit hẹp chỉ dưới docs/ssw-workspace/kensetsu; nguồn PDF không lưu repo. Bằng chứng remote được kiểm qua GitHub trong phiên; không tự ghi WORK PERSISTENCE PASS khi clone dùng chung vẫn có thay đổi Kaigo của phiên khác.
+
+## Tiếp nối 2026-10-11: bản mẫu revision 2
+
+Đã kiểm trực quan PDF 6–12 (trang in 1–7) file đầu tiên; rà hình CCUS, ảnh 朝礼, tám nhãn kiểm tra, biểu mẫu KY và nội dung tiếp nối. Đã tạo một minh họa mới 2D màu cho ví dụ bàn giao, gắn vào cluster example cùng chú thích Nhật–Việt, giữ tỷ lệ 1672×941. Bổ sung dịch tiêu đề từng cụm; giới hạn định nghĩa 工事監理 vào bối cảnh kiến trúc sau đối chiếu trang MLIT chính thức. session-001-qa.json lưu bằng chứng và gate còn thiếu. Chưa tích hợp app, chưa có kiểm native/chuyên gia.
