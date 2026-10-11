@@ -107,3 +107,18 @@ Verification: actual reader with documented browser image/storage adapters rende
 Next: preserve this batch remotely and require WORK PERSISTENCE PASS. Consolidate remaining atomic gaps acrossweeks001–005, then process unprocessed uploaded sources through the full knowledge matrix. Japanese content before illustrations/translations; no full-course/release completion claim.
 
 Final pre-publication checks: KENSETSU APP TEST DATA PASS, unique/stable ID and release-gate checks PASS, JLPT APPROVED UI LOCK PASS (10/10), git diff whitespace check PASS.
+
+
+## Week006 independent Japanese batch — 2026-10-11
+
+Started from remotely verified052b14315e28b0b318f5c720bb932f3988222cf8 with WORK PERSISTENCE PASS. Added sessions036–042,7sessions/28clusters/84Japanese paragraphs,28distinct ungraded reflections and42contextual readings. Total42sessions/480paragraphs; previous35session JSON bytes and completion IDs/revisions unchanged. Six routes reference shared introductory knowledge with explicit cross-field rationale, not advanced2号 competence. No exams, artwork or translations added. Calendar disclaimer derives week count from data; no layout/style change.
+
+Source3 SHA verified;PDF1–5/printed26–30 text read and visually inspected including all photo labels. Scope: civil infrastructure, dams/rivers/coasts, roads, four introductory tunnel methods, bridges, ports/marine, rail/water/disaster/other civil works. PDF6–8 text preview only, outside taught/visual scope.147atomic audit rows and28cluster mappings record functions, conditions, label concepts, excluded historical dam count and10partial specialist topics. Corrected all-dams power, hard-rock-only mountain tunnel and foundation-only lower bridge work. References distinguish current ministry categories, historical basic examples, scoped selected pages and three search-excerpt-only sources; no full-current technical/operational review claimed.
+
+Consolidated79historical gap/link items: one power-harassment link already explained in session015 clusters1/3 was reconciled to AI-only resolved, without removing its historical audit.78other historical items plus10week006partial items remain known gaps, not exhaustive denominator. Source3PDF6–52 and sources4–7 remain to atomically audit. New images/translations, specialist/native/rights review, native runtime and measured learning time pending.
+
+Verification:480unique paragraphs,28unique week006reflections, all42contextual terms used in prose; previous35sessions unchanged. Source contiguous22character screen initially found standard pipe-name chain; rewrote explanation to avoid source ordering; final matches zero, not semantic/rights clearance. Actual reader web-adapter test renders42sessions and all480paragraphs/reflections, scroll-and-click completion, newday36/oldday1 together after reload, route/learner isolation, three viewports and no browser errors. Native device not tested. Three final captures inspected and retained.
+
+Next: remotely persist and require WORK PERSISTENCE PASS, then source3PDF6building systems. Retain all atomic gaps; do not claim full-course completion or release approval.
+
+Final pre-publication: KENSETSU APP TEST DATA PASS; JLPT APPROVED UI LOCK PASS10/10; whitespace PASS. Runtime review flag applies only to the documented browser adapter.
