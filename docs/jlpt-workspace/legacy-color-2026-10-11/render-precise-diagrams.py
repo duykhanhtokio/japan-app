@@ -57,5 +57,38 @@ def flyer_2011():
     for y,text in [(1107,'月・火　くだもの、魚、ジュース'),(1170,'水・木　とうふ、にく、やさい'),(1233,'金・土　パン、ぎゅうにゅう、魚、やさい')]:
         d.text((485,y),text,font=f(32),fill='#263d49',anchor='lm')
     im.save(ROOT/'assets/jlpt-legacy-color/n5-2011-12-grammar-reading-p6-q1.png')
+
+
+def party_2012():
+    im=Image.new('RGB',(1440,1260),'#fffaf1');d=ImageDraw.Draw(im)
+    f=lambda n:ImageFont.truetype(str(FONT),n)
+    ink='#263d49';line='#967d53'
+    def t(text,x,y,size=34,anchor='lm'):
+        d.text((x,y),text,font=f(size),fill=ink,anchor=anchor)
+    d.rounded_rectangle((25,25,1415,1235),18,fill='#fffdf8',outline=line,width=4)
+    t('はじめましてパーティー',720,90,47,'mm')
+    t('来週「はじめましてパーティー」を します。',80,176,36)
+    t('みなさん、来て ください！',80,230,36)
+    d.rectangle((80,295,1360,1080),fill='#fff6e2',outline=line,width=3)
+    d.line((345,295,345,1080),fill=line,width=3)
+    for y in [410,595]:d.line((80,y,1360,y),fill=line,width=3)
+    for txt,y in [('時間',353),('ところ',505),('持ってくるもの',835)]:t(txt,211,y,36,'mm')
+    t('4月20日（金）午後5時～7時',851,352,39,'mm')
+    t('水口日本語学校 302きょうしつ',851,478,36,'mm')
+    t('※3階の いちばん 大きい へやです。',851,544,34,'mm')
+    t('300円ぐらいの 食べ物',851,650,38,'mm')
+    d.rectangle((470,715,1260,970),outline=line,width=3)
+    d.line((850,715,850,970),fill=line,width=3)
+    d.line((470,780,1260,780),fill=line,width=3)
+    d.line((850,842,1260,842),fill=line,width=3)
+    d.line((470,905,1260,905),fill=line,width=3)
+    t('食べ物',660,748,34,'mm');t('クラス',1055,748,34,'mm')
+    t('おかし',660,843,38,'mm');t('くだもの',660,938,36,'mm')
+    for txt,y in [('Aクラス の人',812),('Bクラス の人',875),('Cクラス の人',938)]:t(txt,1055,y,34,'mm')
+    t('※飲み物は 学校が 買います。',851,1030,34,'mm')
+    t('みんなで じこしょうかいを してから、',80,1130,33)
+    t('話したり 歌ったり しましょう。',80,1185,33)
+    t('水口日本語学校',1300,1185,30,'rm')
+    im.save(ROOT/'assets/jlpt-legacy-color/n5-2012-12-grammar-reading-p6-q1.png')
 if __name__=='__main__':
-    toc();flyer_2011()
+    toc();flyer_2011();party_2012()
