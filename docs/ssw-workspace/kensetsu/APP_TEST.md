@@ -1,8 +1,8 @@
 # 建設 — bản test trong app
 
-Mở 特定技能学習 → 建設 → chọn 1号/2号 → chọn ライフライン・設備、建築 hoặc 土木 → tuần → ngày. Bản test chỉ mở trong Expo development / Simulator, giống phần 介護. Có 7 tuần nháp, 49 bài tiếng Nhật; lịch chưa xác nhận thời lượng 30 phút/ngày.
+Mở 特定技能学習 → 建設 → chọn 1号/2号 → chọn ライフライン・設備、建築 hoặc 土木 → tuần → ngày. Bản test chỉ mở trong Expo development / Simulator, giống phần 介護. Có 8 tuần nháp, 56 bài tiếng Nhật; lịch chưa xác nhận thời lượng 30 phút/ngày.
 
-Đọc tới cuối và bấm 完了 để lưu dấu ✓. Đổi mảng hoặc 1号/2号 để kiểm tra tiến độ được tách riêng. Nút dịch đang ẩn trong khi bản dịch chưa sẵn sàng. Tuần 1–7 đã được rà biên tập AI; các mục thiếu và duyệt chuyên gia vẫn được ghi riêng; phần thi chưa được thiết kế.
+Đọc tới cuối và bấm 完了 để lưu dấu ✓. Đổi mảng hoặc 1号/2号 để kiểm tra tiến độ được tách riêng. Nút dịch đang ẩn trong khi bản dịch chưa sẵn sàng. Tuần 1–8 đã được rà biên tập AI; các mục thiếu và duyệt chuyên gia vẫn được ghi riêng; phần thi chưa được thiết kế.
 
 Trong clone trên Mac:
 
@@ -22,3 +22,5 @@ Tuần 5: 7 bài/28 cụm/84 đoạn tiếng Nhật; tổng 35 bài/396 đoạn.
 Tuần 6: 7 bài mới/28 cụm/84 đoạn tiếng Nhật, tổng 42 bài/480 đoạn. Bảng đối chiếu có 147 mục nguồn và 28 cụm bằng chứng, giới hạn ở tài liệu 3 trang PDF1–5/trang in26–30. Một liên kết thiếu lịch sử tuần2 đã được đối chiếu với bài015 tuần3; các mục cần rà chuyên môn vẫn được giữ. Danh mục hiển thị số tuần từ dữ liệu. Kiểm reader qua browser adapter gồm bài36 lưu cùng tiến độ bài1; chưa kiểm native, duyệt chuyên gia/bản ngữ/quyền hoặc đo thời gian học.
 
 Tuần 7: 7 bài mới/28 cụm/84 đoạn tiếng Nhật về kết cấu và công trình xây dựng, tổng49bài/564đoạn.154mục đối chiếu nguồn,28cụm bằng chứng,15mục còn rà sâu; nguồn3PDF6–9 giới hạn ở3.1.2 trước phần thiết bị. Reader qua browser adapter kiểm toàn49bài và564đoạn, hoàn tất bài43/lưu cùng bài1 sau reload, tách người học/cấp/mảng, ba kích thước và không lỗi browser. Ba ảnh kiểm trực quan. Chưa kiểm native, duyệt chuyên gia/bản ngữ/quyền hoặc đo30phút học.
+
+Tuần8:7bài/28cụm/84đoạn mới vềライフライン・設備; tổng56bài/648đoạn.154mục đối chiếu nguồn và28cụm bằng chứng,12mục còn rà sâu. Nguồn3PDF9từ3.1.3đếnPDF12, không tính phần bảo trì trước đó. Reader web-adapter kiểm toàn56bài/648đoạn, bài50lưu cùngbài1sau reload, tách người học/cấp/mảng, ba kích thước; fontNhật xác nhận nạp vàbaảnh kiểm trực quan. Chưa kiểm native, đo thời lượng30phút hoặc duyệt chuyên gia/bản ngữ/quyền.

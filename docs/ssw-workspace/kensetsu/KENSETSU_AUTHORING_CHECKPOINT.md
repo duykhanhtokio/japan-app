@@ -137,3 +137,22 @@ Verification:564unique Japanese paragraphs,28unique new reflections,42contextual
 Next: remotely persist this narrow batch and require WORK PERSISTENCE PASS, then week008utilities fromsource3PDF9section3.1.3. Keep all atomic gaps and gates; no full-source/full-course/release completion claim.
 
 Final pre-publication: KENSETSU APP TEST DATA PASS; JLPT APPROVED UI LOCK PASS10/10; whitespace and stable-ID/old42lesson preservation PASS. All human gates remain false.
+
+
+## Week008 independent Japanese utilities/equipment batch — 2026-10-12 Asia/Tokyo
+
+Recovered fresh remote checkout after former worktree was absent. Verified branch head a255dc9b364dbeaa8d4a7b80992d7c24f4ee4c00 and WORK PERSISTENCE PASS before authoring.21Kaigo week5 PNGs were byte-identical toHEAD but affected by historical LFSattributes; only local info/attributes overrides applied, no tracked Kaigo modifications. Source3 materialized from known Library file and SHAmatched. Existing font/back artwork restored from matchingLFSbytes for readerQA, no asset redesign or tracked content changes.
+
+Added sessions050–056:7sessions/28clusters/84Japanese paragraphs,28ungraded reflections/42contextual readings. Total56sessions/648paragraphs, prior49session bytes/IDs/revisions and200coverage rows unchanged. Allsixseparate routes reference shared introductory system literacy with cross-field rationale, not advanced2号 proficiency. No readerUI modifications, exams, artwork or translations.
+
+Source3PDF9from3.1.3throughPDF12/printed34–37 text read and visually inspected, gasflow diagram/arrows and eight photos included. Previous3.1.2onPDF9excluded. PDF13–14text preview only.154atomic audit rows and28cluster primary-source mappings. Corrected LNGbase-vaporisation before gas distribution, nonuniversalholder route/shape, groundwater treatment beyond universal disinfection-only, conditional backup power, equipment/frame staging, internalalarm versus119auto-call, commonclosed-head sprinkler versus allsystem types.
+
+Mechanical current R07repair2025-11-05PDFreviewed selected11/70/120/204/280excerpts only, not354pages. Operator and local authority examples limited to stated schemes; no source quantities, technical operating sequences or allbuilding requirements transplanted. Closed-head FDMA15MBPDF direct webretrieval too large; primary excerpt/TFDintro used, not fulltechnical review. General heat-flow reference excerpt only. Unavailable directwateroverview replaced with retrieved officialguidePDF3–4andremoval-equipment explanation.
+
+12partial technical items appended to retained register;115known unresolved items, not exhaustive denominator. Electric/gas operation and qualifications, water-treatment/drilling/discharge conditions, fulltelecom architecture/entry/backuppower, HVAC commissioning, insulationdesign, alarm/autocall andsprinkler/pump specification remain pending specialist scope. New images/translations, native Japanese/rights/specialist approvals, native runtime and measured30minute schedule also pending.
+
+Verification:648unique paragraphs,28newunique reflections,42terms all used in body, unique/stableIDs andall6routes56sessions/8weeks. Source22character wording screenPDF9–12zero matches; not semantic/rights certification. Originalfictional system-boundary/state examples checked against source description/diagram, not noun-swapped source stories. Actual reader web-adapters rendered56sessions/648paragraphs andallreflections, scroll/click completion, newday50/oldday1persistence afterreload, learner/level/field isolation andthreeviewports, nobrowsererrors. Initialcapturefont/backendasset load failure corrected with verified existingassets; finalfontloaded assertion passed andthreefinalcaptures visually inspected. Native device not tested.
+
+Next: remotely persist with WORK PERSISTENCE PASS, then week009source3PDF13section3.2specialist work; retain all historical/new atomic gaps. No whole-course/release completion claim.
+
+Finalprepublication: KENSETSU APP TEST DATA PASS; JLPT APPROVED UI LOCK PASS10/10; whitespace/stableID/old49lesson preservation PASS. Existingfont/back exactLFScontent retained, zero staged asset changes. Allhuman gates false.
