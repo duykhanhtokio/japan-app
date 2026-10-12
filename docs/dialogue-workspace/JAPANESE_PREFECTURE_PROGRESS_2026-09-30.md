@@ -477,3 +477,9 @@ Rechecked 85 final NPC turns and read all eleven existing turns of the 53 affect
 ## Yamanashi Kai and Uenohara continuation — 2026-10-12
 
 96/112 individual Japanese rewrites,1056turns,480goals;16old drafts remain. Added16and preserved earlier80. Selected full-turn and thematic comparison scope/hashes: content-qa/PRF-019_KAI_UENOHARA_REVIEW.json. Whole-prefecture causal/closure review remains pending; no CONTENT PASS or translations. Next Koshu after exact remote persistence.
+
+## Koshu and Chuo continuation — 2026-10-12
+
+112/112 individual Japanese rewrites integrated:1232turns,560goals. This continuation adds16exchanges,176turns,80goals across Koshu and Chuo; earlier96runtime files remain byte-for-byte unchanged. All112IDs,roles,order and next links match the durable baseline. Seven full plot variants across6scenario IDs rejected, including a second bank recruitment replacement. One exact NPC opening collision repaired. Selected16full comparisons and5additional thematic full reads with current source/runtime hashes: PRF-019_KOSHU_CHUO_REVIEW.json.
+
+Structural,exact,normalized,near-duplicate,task,answer,title and recipe screens have no open groups. Exact utterance collision check for the new16across7128sharedscripts passes. This is screening plus selected AI comparisons, NOT whole-prefecture CONTENT PASS. The final full-prefecture causal/task/closure review and hash-bound Japanese master lock remain pending; native/device/translation review not performed. Resume whole-prefecture review at Kofu, preserve all112drafts; do not begin PRF-020or translation before final QA and remote persistence.
