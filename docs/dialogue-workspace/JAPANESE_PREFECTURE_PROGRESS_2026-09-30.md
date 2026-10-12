@@ -441,3 +441,11 @@ PRF-015 Niigata: 173/173 individually authored Japanese exchanges, 865 speaking 
 ## 2026-10-06 — Ishikawa PRF-017 Japanese master editorial decision
 
 101/101 individually authored Japanese exchanges, 505 speaking goals, 11/11 canonical cities. All final full exchanges, goals and closures authored/reviewed. 27 distinct scripts received whole-plot replacements after semantic comparison; 52 selected full comparisons span all eleven cities, including eight repaired-target follow-ups. Retrieval spans 7128 scripts and is not exhaustive manual reading or proof of universal uniqueness. Source/runtime/canonical parity and identity/order/next-link preservation verified. Separate AI CONTENT PASS and Japanese master lock bind current SHA-256 hashes; human/native review remains false. All actual operational/facility rules are simulated premises. Translation deferred; UI/JLPT unchanged. Evidence: PRF-017_SEMANTIC_REVIEW.json, PRF-017_SELECTED_REVIEW.json, PRF-017_SEMANTIC_CANDIDATES.json and PRF-017_JAPANESE_MASTER_LOCK.json. Exact remote persistence required before PRF-018 Fukui.
+
+
+
+## 2026-10-12 — Fukui PRF-018 recovered and AI editorially reviewed
+
+85/85 current Japanese exchanges,935turns,425Player goals,9cities. The earlier local-only85/85claim was not remotely durable; recovered8source drafts, recreated77 and replaced2recovered entries after comparison. Ten distinct scripts received twelve whole-plot replacements.35explicit full comparisons are recorded; lexical/goal retrieval covers357prior authoring files,3449source variants and3049distinct IDs, not an exhaustive human read of all7128current runtimes.
+
+Current source/runtime/canonical parity and original ID/order/next-link preservation pass;7043other canonical rows unchanged. Hash-bound AI CONTENT PASS/master lock only; no native/human/geography/real-policy/rights/device certification. No translations, images or UI changed. Source-only recovery checkpoints are superseded. Exact remote persistence required before PRF-019Yamanashi.
