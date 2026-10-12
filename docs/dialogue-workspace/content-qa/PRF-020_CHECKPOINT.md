@@ -21,3 +21,9 @@ Whole Nagano screening still has34normalized and296near candidates among remaini
 29/173 individual Japanese rewrites,319turns,145Player goals. Added8Matsumoto scripts;144old drafts remain. Rejected2initial plots and replaced all11turns/5goals for each before integration. Current8selected counterparts read in full; hash-bound review in PRF-020_MATSUMOTO_REVIEW.json. No exact new utterance collisions; all173IDs/roles/orders/nextlinks preserved; other165runtime files and Yamanashi master unchanged. Venue premises explicitly simulated; no clinical/financial/postal or other real-policy certification. No UI changes.
 
 Screening:33normalized duplicate groups,280near candidates among remaining drafts. NOT whole-prefecture CONTENT PASS; native/human/device review pending. Resume SC-NGN-KARUIZAWA-001 after remote persistence; translations deferred.
+
+## Karuizawa eight — 2026-10-12
+
+37/173individual Japanese rewrites,407turns,185Player goals. Added8Karuizawa scripts;136old drafts remain. Two initial plots replaced in full after prior-corpus overlap;8selected full counterparts and4thematic full reads recorded in PRF-020_KARUIZAWA_REVIEW.json. One line naturalized. Six canonical location types aligned with current runtime roles, including hotel cleaning Hotel and postal counter Post Office. All173ID/role/order/nextlinks preserved,other165Nagano runtime files and7120othercanonical rows unchanged; Yamanashi master preserved. No new exact utterance collisions. Premises simulated, no native/human/device or real-policy certification.
+
+Actual repository category/actor alignment8/8PASS. Remaining-draft screening31normalized groups/270near candidates. Whole-prefecture CONTENT PASS pending. Resume SC-NGN-UEDA-001 after remote persistence. Japanese-only; translations deferred.
