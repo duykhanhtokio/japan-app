@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-12",
+  "scope": "Current13Nagano-city dialogue venues09–21. Source facts limited to naming/address/basic venue kind; not operating services.",
+  "sources": [
+    {
+      "url": "https://www.nagano-mwave.co.jp/m_wave/about/floor.php",
+      "finding": "Arena includes sports/event space; use facility guide role, no invented actual event timetable."
+    },
+    {
+      "url": "https://jigokudani-yaenkoen.co.jp/contact/",
+      "finding": "Official address is Yamanouchi town, not Nagano city; preserve canonical slot as explicitly simulated Nagano nature area instead of falsely geolocating this venue."
+    },
+    {
+      "url": "https://nagano.art.museum/museum",
+      "finding": "Current official museum name Nagano Prefectural Art Museum."
+    },
+    {
+      "url": "https://okura.com/ja/japan/nagano/hotel-jal-city-nagano/",
+      "finding": "Hotel JAL City Nagano exists, but ambiguous raw JA hotel label does not prove this identity; no silent mapping to that business."
+    }
+  ],
+  "unresolvedLabels": [
+    {
+      "raw": "東宝長野店",
+      "decision": "Scoped search did not identify a current retailer reliably; this does not prove absence. Use explicit simulated shop."
+    },
+    {
+      "raw": "JAホテル長野",
+      "decision": "Identity remains unconfirmed; use explicit simulated hotel."
+    }
+  ],
+  "locationLabelChanges": [
+    {
+      "locationId": "LOC-020-13",
+      "before": {
+        "name": "Toho Department Store Nagano",
+        "nameJa": "東宝長野店",
+        "description": "Trung tâm mua sắm lớn cạnh ga Nagano"
+      },
+      "after": {
+        "name": "Nagano simulated shop",
+        "nameJa": "長野市の商店（学習用）",
+        "description": "実在店舗の特定が未確認のため、長野市を背景とする架空の買物場面。"
+      },
+      "cityIdPreserved": "CTY-020"
+    },
+    {
+      "locationId": "LOC-020-14",
+      "before": {
+        "name": "JA Hotel Nagano",
+        "nameJa": "JAホテル長野",
+        "description": "Khách sạn gần ga Nagano, phục vụ du khách Olympic và tham quan chùa Zenko-ji"
+      },
+      "after": {
+        "name": "Nagano simulated hotel",
+        "nameJa": "長野市のホテル（学習用）",
+        "description": "JAホテル長野の実在施設への対応が未確認のため、架空の宿泊場面として扱う。"
+      },
+      "cityIdPreserved": "CTY-020"
+    },
+    {
+      "locationId": "LOC-020-15",
+      "before": {
+        "name": "Jigokudani Snow Monkey Park",
+        "nameJa": "地獄谷野猿公園",
+        "description": "Công viên khỉ tuyết Jigokudani nổi tiếng toàn thế giới, khỉ ngồi onsen"
+      },
+      "after": {
+        "name": "Nagano simulated nature observation area",
+        "nameJa": "長野市の自然観察エリア（学習用）",
+        "description": "地獄谷野猿公苑は山ノ内町に所在するため、長野市の当枠では架空の自然観察場面を使用する。"
+      },
+      "cityIdPreserved": "CTY-020"
+    },
+    {
+      "locationId": "LOC-020-17",
+      "before": {
+        "name": "Nagano Prefectural Shinano Art Museum",
+        "nameJa": "長野県信濃美術館",
+        "description": "Bảo tàng mỹ thuật Shinano có khu Higashiyama Kaii trưng bày danh họa hiện đại"
+      },
+      "after": {
+        "name": "Nagano Prefectural Art Museum",
+        "nameJa": "長野県立美術館",
+        "description": "長野県立美術館を背景にした鑑賞の学習場面。展示作品と受付の発話は教材上の架空設定。"
+      },
+      "cityIdPreserved": "CTY-020"
+    }
+  ],
+  "roleChanges": {
+    "LOC-020-09": "Landmark/Guide",
+    "LOC-020-17": "Museum/Museum Guide"
+  },
+  "stableIdsCityIdsOrderPreserved": true,
+  "actualVenuePoliciesCertified": false
+}

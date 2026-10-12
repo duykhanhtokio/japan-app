@@ -495,3 +495,11 @@ Previous112drafts were persisted at dfc6125242a61488d9680f3a4ba5d792dfb5c6c8,con
 ## Nagano first eight continuation — 2026-10-12
 
 8/173individual rewrites,88turns,40goals;165old drafts remain. First8Nagano-city venues integrated with selected full comparison evidence. Six scenario role labels aligned; missing pharmacy runtime role correction added while preserving existing role layer. ID/order/next-link/source/canonical checks pass; no exact new utterance collisions; Yamanashi master unchanged. Full-prefecture CONTENT QA pending. Resume M-Wave SC-LOC-020-09-001 after durable verification. No translations or device/native approval.
+
+## Nagano-city remaining thirteen — 2026-10-12
+
+21/173individual Japanese rewrites,231turns,105Player goals. Added13and preserved the earlier8runtime files.152old drafts remain. Three rejected plot variants across2IDs underwent whole11turn/5goal replacement before integration. One title and one NPC closure clarified. No exact new Player/NPC utterance collisions across7128sharedscripts.173ID/role/order/next-link parity and source/canonical/runtime parity pass. Yamanashi master unchanged.
+
+Current13full selected comparisons and rejection evidence: PRF-020_NAGANO_REST_REVIEW.json. Location evidence: PRF-020_NAGANO_LOCATION_REVIEW.json. Corrected outdated museum label to長野県立美術館 and role toMuseum/Museum Guide; M-Wave usesLandmark/Guide. Unverified shop/hotel labels now explicitly simulated. Jigokudani is officially inYamanouchi,so the Nagano-city slot is now an explicitly simulated nature area rather than false city attribution. Alllocation IDs/citybindings/order remain unchanged,with no named-artwork dependencies for the4changed labels. Actual runtime repository check passes13scenario/category alignments and the updated roles. No full asset/device/native or real-policy approval.
+
+Whole Nagano screening still has34normalized and296near candidates among remaining drafts. NOT whole-prefecture CONTENT PASS. Resume SC-NGN-MATSUMOTO-001 after remote persistence. Japanese-only first pass; translations deferred.
