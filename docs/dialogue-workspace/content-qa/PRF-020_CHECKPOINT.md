@@ -33,3 +33,11 @@ Actual repository category/actor alignment8/8PASS. Remaining-draft screening31no
 45/173individual Japanese rewrites,495turns,225Player goals. Added8Ueda scripts;128old drafts remain. Three initial plots rejected and replaced in full;8selected current full counterparts and4thematic full comparisons in PRF-020_UEDA_REVIEW.json. Two closures clarified. Five scenario types aligned with runtime roles, including Nature/Farmer, Onsen, Park and Pharmacy. All173ID/role/order/nextlinks preserved;other165Nagano runtime files and7120canonical rows unchanged;Yamanashi master preserved. No new exact utterance collisions. Actual repository actor/category alignment8/8PASS. Remaining drafts:29normalized duplicate groups/256near candidates. Whole-prefecture CONTENT PASS pending;no native/human/device or real-policy certification.
 
 Resume SC-NGN-SUWA-001 after remote persistence. Japanese-only;translations deferred.
+
+## Suwa eight — 2026-10-12
+
+53/173individual Japanese rewrites,583turns,265Player goals. Added8Suwa scripts;120old drafts remain. Two whole-plot replacements;8current selected full comparisons and3thematic full reads in PRF-020_SUWA_REVIEW.json. Corrected8kanji location labels from 諼訪 to 諏訪;precision inspection is Factory/Factory Worker and calligraphy is Classroom/Teacher. Six canonical location types aligned. All173ID/role/order/nextlinks preserved;other165Nagano runtime files and7120canonical rows unchanged;Yamanashi master preserved. Allglobal location IDs/citybindings/order preserved. No new exact utterance collisions. Actual repository metadata alignment8/8PASS.
+
+IMPORTANT open art limitation:Factory/Classroom have no dedicated scene or NPC entries in life-assets.ts and currently use Landmark fallback. No named Suwa place-artwork mapping. Data correction is not completed visual integration; dedicated correct scenes/NPCs and device review remain pending.
+
+Remaining drafts:29normalized groups/252near candidates. Whole-prefecture CONTENT PASS pending;no native/human/device or actual insurance/tax/facility/technical approval. Resume SC-LOC-JP-20204-01-001 after remote persistence. Japanese-only;translations deferred.
