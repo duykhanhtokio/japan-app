@@ -461,3 +461,7 @@ Rechecked 85 final NPC turns and read all eleven existing turns of the 53 affect
 ## Yamanashi Otsuki continuation — 2026-10-12
 
 40/112 individual Japanese rewrites,440turns,200goals;72old drafts remain. Eight current selected full comparisons and one rejected entire castle plot recorded in content-qa/PRF-019_OTSUKI_REVIEW.json. Preserve earlier32. Whole-prefecture semantic review remains pending; no CONTENT PASS or translations. Next Fujiyoshida after verified remote persistence.
+
+## Yamanashi Fujiyoshida continuation — 2026-10-12
+
+48/112 individual Japanese rewrites,528turns,240goals;64old drafts remain. Three complete plot replacements and eight current selected comparisons recorded in content-qa/PRF-019_FUJIYOSHIDA_REVIEW.json. Earlier40preserved. Whole-prefecture QA pending, no CONTENT PASS or translations. Next Tsuru after verified remote persistence.

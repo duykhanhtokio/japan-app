@@ -13,3 +13,7 @@ Thematic title review identified an additional bank invoice story that repeated 
 ## Otsuki continuation — 2026-10-12
 
 40/112 individually rewritten Japanese dialogues,440turns,200speaking goals. Otsuki adds8full exchanges;72old drafts remain. Initial castle restoration-image plot discarded after full counterpart read and replaced with family-paced group-tour departure. Current8selected full comparisons, source/runtime hashes and pending scope: PRF-019_OTSUKI_REVIEW.json. No whole-prefecture CONTENT PASS, translation or device review. Resume Fujiyoshida SC-LOC-JP-19202-01-001 after exact remote persistence. Earlier32remain unchanged.
+
+## Fujiyoshida continuation — 2026-10-12
+
+48/112 independent Japanese exchanges,528turns,240goals;64old drafts remain. Three whole plots replaced after full counterpart reads (interpreter support, vehicle eyewitness, split groceries). Eight current full comparisons/hash evidence: PRF-019_FUJIYOSHIDA_REVIEW.json. Earlier40preserved. Whole-prefecture CONTENT PASS/native/device/translation review remain false. Resume Tsuru SC-LOC-JP-19204-01-001 after exact remote verification.
