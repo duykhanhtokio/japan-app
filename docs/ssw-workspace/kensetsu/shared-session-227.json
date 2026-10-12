@@ -1,0 +1,147 @@
+{
+  "id": "kensetsu-common-session-227",
+  "weekId": "kensetsu-common-week-033",
+  "titleJa": "不活性ガス消火設備と防護区画",
+  "revision": 1,
+  "contentRevision": 1,
+  "status": "editorial_draft",
+  "estimatedMinutes": null,
+  "durationMeasured": false,
+  "appIntegrationReady": false,
+  "applicableLevels": [
+    "1",
+    "2"
+  ],
+  "applicableFields": [
+    "utilities",
+    "building",
+    "civil"
+  ],
+  "sourceReferences": [
+    {
+      "sourceId": "kensetsu-src-05",
+      "pdfPages": [
+        22
+      ],
+      "printedPages": [
+        117
+      ],
+      "section": "5.1.8"
+    }
+  ],
+  "officialReferences": [
+    "https://shosoko.or.jp/equipment/gasu.php",
+    "https://www.tfd.metro.tokyo.lg.jp/lfe/office_adv/tenken_houkoku_license.html"
+  ],
+  "verificationDate": "2026-10-12",
+  "verificationStatus": "Scoped primary AI function/role comparison; no operational/legal/safety or human approval",
+  "translationStatus": "deferred",
+  "illustrationStatus": "deferred",
+  "dailyMinutesTarget": 30,
+  "timingStatus": "unmeasured; provisional editorial grouping",
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "similarityReviewed": false,
+    "runtimeVerified": true
+  },
+  "scopeRationale": "Shared introductory component literacy in six independent development routes; not advanced2号 competency",
+  "keyTerms": [
+    {
+      "term": "不活性ガス消火設備",
+      "reading": "ふかっせいがすしょうかせつび"
+    },
+    {
+      "term": "酸素濃度",
+      "reading": "さんそのうど"
+    },
+    {
+      "term": "窒素",
+      "reading": "ちっそ"
+    },
+    {
+      "term": "二酸化炭素",
+      "reading": "にさんかたんそ"
+    },
+    {
+      "term": "防護区画",
+      "reading": "ぼうごくかく"
+    },
+    {
+      "term": "貯蔵容器",
+      "reading": "ちょぞうようき"
+    }
+  ],
+  "clusters": [
+    {
+      "id": "kensetsu-common-session-227-cluster-1",
+      "titleJa": "酸素の濃度を下げる",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-227-cluster-1-p1",
+          "ja": "不活性ガス消火設備には、防護区画内へ消火剤を放出し、酸素濃度を下げて消火する構成があります。窒素や混合ガス、二酸化炭素などの種類があります。全てのガスを同じ薬剤や同じ作用の割合として説明しません。"
+        },
+        {
+          "id": "kensetsu-common-session-227-cluster-1-p2",
+          "ja": "機器一覧でガス系とだけ記されていたら、薬剤の種類と対象の区画を別に照合します。ガスという物理的な形だけでは、同じ濃度条件や制御の構成で使えることは分かりません。"
+        }
+      ],
+      "applicationPromptJa": "ガス系という共通名だけの設備に、薬剤と対象の何を追加しますか。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-227-cluster-2",
+      "titleJa": "防護する区画を読む",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-227-cluster-2-p1",
+          "ja": "防護区画は、対象設備で防護する空間の範囲として理解します。電気室や精密機器を扱う施設などの用途の例があっても、用途名だけで全ての設備の区画が決まるわけではありません。隣室との関係も別の情報です。"
+        },
+        {
+          "id": "kensetsu-common-session-227-cluster-2-p2",
+          "ja": "架空の平面図では区画番号と対象設備の番号を一組にできます。容器の置かれた室と薬剤を放出する区画を同じと推定せず、配管や制御の資料で対応を読みます。"
+        }
+      ],
+      "applicationPromptJa": "貯蔵容器のある室を、そのまま放出対象の区画と読めない理由は何ですか。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-227-cluster-3",
+      "titleJa": "汚損と人への危険を分ける",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-227-cluster-3-p1",
+          "ja": "薬剤による汚損が少ないという特性と、人が安全に在室できることは別です。特に二酸化炭素の放出は人命への危険を伴います。不活性という言葉を人体に無害という説明へ置き換えません。"
+        },
+        {
+          "id": "kensetsu-common-session-227-cluster-3-p2",
+          "ja": "資料を読む場合、対象物への影響と人への危険に関する欄を別にします。区画内への立入りや放出後の再入場、救助の判断を、汚損が少ないという語だけから決める例は作りません。"
+        }
+      ],
+      "applicationPromptJa": "汚損が少ないという説明を、人の在室安全の根拠にできない理由は何ですか。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-227-cluster-4",
+      "titleJa": "供給と感知・制御",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-227-cluster-4-p1",
+          "ja": "貯蔵容器、配管、噴射部、感知器、制御や警報などは異なる役割を持つ構成です。容器の一覧を受け取ったことだけで、対象区画の設備全体を確認したことにはなりません。"
+        },
+        {
+          "id": "kensetsu-common-session-227-cluster-4-p2",
+          "ja": "報告は「容器表示と設備番号は受領済み。防護区画と感知・制御の対応資料は未照合」とできます。濃度、時間、起動、停止、弁操作や点検の方法は指定せず、専門確認が必要な事項として残します。"
+        }
+      ],
+      "applicationPromptJa": "容器一覧だけある設備を、区画と制御も確認済みと誤解させない報告にしてください。",
+      "graded": false
+    }
+  ],
+  "runtimeVerificationScope": "Real reader in isolated web adapters; all231sessions/2580paragraphs/reflections, scroll/manual completion, persistence, learner/level/field isolation; not native/content/human/release approval"
+}
