@@ -17,3 +17,7 @@ Thematic title review identified an additional bank invoice story that repeated 
 ## Fujiyoshida continuation — 2026-10-12
 
 48/112 independent Japanese exchanges,528turns,240goals;64old drafts remain. Three whole plots replaced after full counterpart reads (interpreter support, vehicle eyewitness, split groceries). Eight current full comparisons/hash evidence: PRF-019_FUJIYOSHIDA_REVIEW.json. Earlier40preserved. Whole-prefecture CONTENT PASS/native/device/translation review remain false. Resume Tsuru SC-LOC-JP-19204-01-001 after exact remote verification.
+
+## Tsuru and Yamanashi city continuation — 2026-10-12
+
+64/112 independent Japanese exchanges,704turns,320goals;48old drafts remain. Added16full exchanges across Tsuru and Yamanashi city, preserving earlier48. Three complete causal replacements after selected/thematic full counterpart reads remove obsolete address, unconfirmed balance, and work-marker shortcut reuse. Current16selected full comparisons plus5thematic full reads and hash evidence: PRF-019_TSURU_YAMANASHI_REVIEW.json. NOT whole-prefecture CONTENT PASS; no native/translation/device certification. Resume Nirasaki SC-LOC-JP-19207-01-001 after exact remote persistence.

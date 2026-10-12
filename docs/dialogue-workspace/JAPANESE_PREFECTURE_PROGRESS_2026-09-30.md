@@ -465,3 +465,7 @@ Rechecked 85 final NPC turns and read all eleven existing turns of the 53 affect
 ## Yamanashi Fujiyoshida continuation — 2026-10-12
 
 48/112 individual Japanese rewrites,528turns,240goals;64old drafts remain. Three complete plot replacements and eight current selected comparisons recorded in content-qa/PRF-019_FUJIYOSHIDA_REVIEW.json. Earlier40preserved. Whole-prefecture QA pending, no CONTENT PASS or translations. Next Tsuru after verified remote persistence.
+
+## Yamanashi Tsuru and Yamanashi city continuation — 2026-10-12
+
+64/112 individually rewritten Japanese dialogues,704turns,320goals;48old drafts remain. Added16exchanges, preserving earlier48. Three full replacements and16selected full comparisons plus5thematic full reads documented in content-qa/PRF-019_TSURU_YAMANASHI_REVIEW.json. Full-prefecture semantic QA pending; no CONTENT PASS or translations. Next Nirasaki after exact remote verification.
