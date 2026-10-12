@@ -9,3 +9,7 @@ Canonical titles/premises/initial goals match source and runtime;11turns, roles,
 Resume at Otsuki — SC-YMN-OTSUKI-001. Preserve these32drafts; finish remaining80, then review all112and bind any final decision to current hashes. No PRF-020or translations before full-prefecture QA and durable verification.
 
 Thematic title review identified an additional bank invoice story that repeated the prior paper/electronic tax notice development; all11turns and5goals were replaced. Current bank story concerns optional product information separate from the existing passbook service. Only the current authored version is runtime.
+
+## Otsuki continuation — 2026-10-12
+
+40/112 individually rewritten Japanese dialogues,440turns,200speaking goals. Otsuki adds8full exchanges;72old drafts remain. Initial castle restoration-image plot discarded after full counterpart read and replaced with family-paced group-tour departure. Current8selected full comparisons, source/runtime hashes and pending scope: PRF-019_OTSUKI_REVIEW.json. No whole-prefecture CONTENT PASS, translation or device review. Resume Fujiyoshida SC-LOC-JP-19202-01-001 after exact remote persistence. Earlier32remain unchanged.

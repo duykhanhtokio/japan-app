@@ -457,3 +457,7 @@ Rechecked 85 final NPC turns and read all eleven existing turns of the 53 affect
 ## Yamanashi first four cities — 2026-10-12
 
 32/112 individual Japanese rewrites integrated: Kofu, Fujikawaguchiko, Hokuto, Fuefuki;352turns and160speaking goals. Five integrated whole-plot replacements and an additional pre-integration amulet rejection remove selected prior-source/same-batch development reuse. Canonical/source/runtime identity and task parity checked. No new exact Player or NPC utterance collisions across current runtime.80old drafts remain; NOT CONTENT PASS. Full comparison scope and current hashes: content-qa/PRF-019_SEMANTIC_REVIEW.json. Next Otsuki SC-YMN-OTSUKI-001 after checkpoint persistence. No translations or next prefecture.
+
+## Yamanashi Otsuki continuation — 2026-10-12
+
+40/112 individual Japanese rewrites,440turns,200goals;72old drafts remain. Eight current selected full comparisons and one rejected entire castle plot recorded in content-qa/PRF-019_OTSUKI_REVIEW.json. Preserve earlier32. Whole-prefecture semantic review remains pending; no CONTENT PASS or translations. Next Fujiyoshida after verified remote persistence.
