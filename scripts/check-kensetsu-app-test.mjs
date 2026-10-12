@@ -1,11 +1,11 @@
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 const dir='docs/ssw-workspace/kensetsu/';
-const sessions=Array.from({length:336},(_,i)=>JSON.parse(fs.readFileSync(dir+`shared-session-${String(i+1).padStart(3,'0')}.json`)));
-const weeks=Array.from({length:48},(_,i)=>JSON.parse(fs.readFileSync(dir+`shared-week-${String(i+1).padStart(3,'0')}.json`)));
+const sessions=Array.from({length:343},(_,i)=>JSON.parse(fs.readFileSync(dir+`shared-session-${String(i+1).padStart(3,'0')}.json`)));
+const weeks=Array.from({length:49},(_,i)=>JSON.parse(fs.readFileSync(dir+`shared-week-${String(i+1).padStart(3,'0')}.json`)));
 const runtime=fs.readFileSync('src/data/kensetsu/index.ts','utf8');
 const paragraphs=sessions.flatMap(s=>s.clusters.flatMap(c=>c.paragraphs));
-assert.equal(paragraphs.length,3420);
+assert.equal(paragraphs.length,3476);
 for(const [i,s] of sessions.entries()){
  assert(runtime.includes(`import session${String(i+1).padStart(3,'0')}`));
  assert.equal(s.appIntegrationReady,false);assert.equal(s.durationMeasured,false);
@@ -19,4 +19,4 @@ assert(reader.includes('completionKey(learner,level,field)'));
 assert(!reader.includes('translation===c.id'));assert(reader.includes('kensetsu-reflections'));assert(reader.includes('resizeMode="contain"'));assert(!reader.slice(reader.indexOf('function Reader('),reader.indexOf('function Calendar(')).includes('RoyalContentPanel'));assert(!reader.includes('p.translations'));
 assert(fs.readFileSync('src/app/specified-skills/kensetsu.tsx','utf8').includes('if(!__DEV__)'));
 const entry=fs.readFileSync('src/app/specified-skills/index.tsx','utf8');assert(entry.includes("'/specified-skills/kensetsu'"));
-console.log('KENSETSU APP TEST DATA PASS: 48 weeks / 336 sessions / 3420 paragraphs; shared canonical imports; 3 image files; development gate; native runtime not tested.');
+console.log('KENSETSU APP TEST DATA PASS: 49 weeks / 343 sessions / 3476 paragraphs; shared canonical imports; 3 image files; development gate; native runtime not tested.');
