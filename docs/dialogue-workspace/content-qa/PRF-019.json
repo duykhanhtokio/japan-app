@@ -7,48 +7,11 @@
   "exactDuplicateGroups": [],
   "placeQuantityNormalizedDuplicateGroups": [
     [
-      "SC-LOC-JP-19210-08-001",
-      "SC-LOC-JP-19212-08-001",
       "SC-LOC-JP-19213-08-001",
       "SC-LOC-JP-19214-08-001"
     ]
   ],
   "nearDuplicateCandidates": [
-    {
-      "a": "SC-LOC-JP-19210-08-001",
-      "b": "SC-LOC-JP-19212-08-001",
-      "normalizedSimilarity": 1.0,
-      "fourGramJaccard": 1.0,
-      "review": "pending"
-    },
-    {
-      "a": "SC-LOC-JP-19210-08-001",
-      "b": "SC-LOC-JP-19213-08-001",
-      "normalizedSimilarity": 1.0,
-      "fourGramJaccard": 1.0,
-      "review": "pending"
-    },
-    {
-      "a": "SC-LOC-JP-19210-08-001",
-      "b": "SC-LOC-JP-19214-08-001",
-      "normalizedSimilarity": 1.0,
-      "fourGramJaccard": 1.0,
-      "review": "pending"
-    },
-    {
-      "a": "SC-LOC-JP-19212-08-001",
-      "b": "SC-LOC-JP-19213-08-001",
-      "normalizedSimilarity": 1.0,
-      "fourGramJaccard": 1.0,
-      "review": "pending"
-    },
-    {
-      "a": "SC-LOC-JP-19212-08-001",
-      "b": "SC-LOC-JP-19214-08-001",
-      "normalizedSimilarity": 1.0,
-      "fourGramJaccard": 1.0,
-      "review": "pending"
-    },
     {
       "a": "SC-LOC-JP-19213-08-001",
       "b": "SC-LOC-JP-19214-08-001",
@@ -62,61 +25,11 @@
   "canonicalTitleDuplicateGroups": [],
   "intentStructureCandidates": [
     [
-      "SC-LOC-JP-19210-08-001",
-      "SC-LOC-JP-19212-08-001",
       "SC-LOC-JP-19213-08-001",
       "SC-LOC-JP-19214-08-001"
     ]
   ],
   "recipeReuseGroups": {
-    "station-route": [
-      "SC-LOC-JP-19210-01-001"
-    ],
-    "gov-certificate": [
-      "SC-LOC-JP-19210-02-001"
-    ],
-    "hospital-language": [
-      "SC-LOC-JP-19210-03-001"
-    ],
-    "police-safety": [
-      "SC-LOC-JP-19210-04-001"
-    ],
-    "post-parcel": [
-      "SC-LOC-JP-19210-05-001"
-    ],
-    "bank-transfer": [
-      "SC-LOC-JP-19210-06-001"
-    ],
-    "supermarket-checkout": [
-      "SC-LOC-JP-19210-07-001"
-    ],
-    "park-walk": [
-      "SC-LOC-JP-19210-08-001",
-      "SC-LOC-JP-19212-08-001",
-      "SC-LOC-JP-19213-08-001",
-      "SC-LOC-JP-19214-08-001"
-    ],
-    "station-delay": [
-      "SC-LOC-JP-19212-01-001"
-    ],
-    "gov-appointment": [
-      "SC-LOC-JP-19212-02-001"
-    ],
-    "hospital-document": [
-      "SC-LOC-JP-19212-03-001"
-    ],
-    "police-lost": [
-      "SC-LOC-JP-19212-04-001"
-    ],
-    "post-redelivery": [
-      "SC-LOC-JP-19212-05-001"
-    ],
-    "bank-card": [
-      "SC-LOC-JP-19212-06-001"
-    ],
-    "supermarket-return": [
-      "SC-LOC-JP-19212-07-001"
-    ],
     "station-ticket": [
       "SC-LOC-JP-19213-01-001"
     ],
@@ -137,6 +50,10 @@
     ],
     "supermarket-label": [
       "SC-LOC-JP-19213-07-001"
+    ],
+    "park-walk": [
+      "SC-LOC-JP-19213-08-001",
+      "SC-LOC-JP-19214-08-001"
     ],
     "station-access": [
       "SC-LOC-JP-19214-01-001"
@@ -1689,18 +1606,18 @@
       "locationNameJa": "甲斐駅",
       "cityId": "CTY-JP-19210",
       "path": "src/data/generated/dialogues/SC-LOC-JP-19210-01-001.json",
-      "sha256": "02595e789681a32d19f3bc534b173ba0bdef20dc267596f25e179e5775a8fdf7",
+      "sha256": "dd4029f17248ba7f1440d4c12a31f29020c5e59fa37173cd1235d39d0ac1960f",
       "turnCount": 11,
       "playerIntents": [
-        "station-route_response_1",
-        "station-route_response_2",
-        "station-route_response_3",
-        "station-route_response_4",
-        "station-route_response_5"
+        "sc_loc_jp_19210_01_001_goal_1",
+        "sc_loc_jp_19210_01_001_goal_2",
+        "sc_loc_jp_19210_01_001_goal_3",
+        "sc_loc_jp_19210_01_001_goal_4",
+        "sc_loc_jp_19210_01_001_goal_5"
       ],
-      "recipe": "station-route",
+      "recipe": null,
       "structuralErrors": [],
-      "editorialReview": "pending"
+      "editorialReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending"
     },
     {
       "scenarioId": "SC-LOC-JP-19210-02-001",
@@ -1708,18 +1625,18 @@
       "locationNameJa": "甲斐市役所",
       "cityId": "CTY-JP-19210",
       "path": "src/data/generated/dialogues/SC-LOC-JP-19210-02-001.json",
-      "sha256": "b7c213c1b17d80faee1db14c1635e02ecabf3081497f95ad12024563158d2179",
+      "sha256": "4a26c3676d318eeb2e3b2da9852102094c701649034a91204136ed6025c4bcc6",
       "turnCount": 11,
       "playerIntents": [
-        "gov-certificate_response_1",
-        "gov-certificate_response_2",
-        "gov-certificate_response_3",
-        "gov-certificate_response_4",
-        "gov-certificate_response_5"
+        "sc_loc_jp_19210_02_001_goal_1",
+        "sc_loc_jp_19210_02_001_goal_2",
+        "sc_loc_jp_19210_02_001_goal_3",
+        "sc_loc_jp_19210_02_001_goal_4",
+        "sc_loc_jp_19210_02_001_goal_5"
       ],
-      "recipe": "gov-certificate",
+      "recipe": null,
       "structuralErrors": [],
-      "editorialReview": "pending"
+      "editorialReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending"
     },
     {
       "scenarioId": "SC-LOC-JP-19210-03-001",
@@ -1727,18 +1644,18 @@
       "locationNameJa": "甲斐病院",
       "cityId": "CTY-JP-19210",
       "path": "src/data/generated/dialogues/SC-LOC-JP-19210-03-001.json",
-      "sha256": "acd1d0347acdc9b9e963f6902d8062971d6378f5306e7f3488c99ad102e02331",
+      "sha256": "8b32d717830aa7584f769abbed21c88bc3006e599885006808c0b5dfbdb62940",
       "turnCount": 11,
       "playerIntents": [
-        "hospital-language_response_1",
-        "hospital-language_response_2",
-        "hospital-language_response_3",
-        "hospital-language_response_4",
-        "hospital-language_response_5"
+        "sc_loc_jp_19210_03_001_goal_1",
+        "sc_loc_jp_19210_03_001_goal_2",
+        "sc_loc_jp_19210_03_001_goal_3",
+        "sc_loc_jp_19210_03_001_goal_4",
+        "sc_loc_jp_19210_03_001_goal_5"
       ],
-      "recipe": "hospital-language",
+      "recipe": null,
       "structuralErrors": [],
-      "editorialReview": "pending"
+      "editorialReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending"
     },
     {
       "scenarioId": "SC-LOC-JP-19210-04-001",
@@ -1746,18 +1663,18 @@
       "locationNameJa": "甲斐警察署",
       "cityId": "CTY-JP-19210",
       "path": "src/data/generated/dialogues/SC-LOC-JP-19210-04-001.json",
-      "sha256": "91d243bf57bb7aa37e95cc0f7bef66919366348d881427cf2103fc4aea0c3c39",
+      "sha256": "abc5008d2f18baaee73983f9eddeeed1b5d2328ce4b4297f681773684ebb0807",
       "turnCount": 11,
       "playerIntents": [
-        "police-safety_response_1",
-        "police-safety_response_2",
-        "police-safety_response_3",
-        "police-safety_response_4",
-        "police-safety_response_5"
+        "sc_loc_jp_19210_04_001_goal_1",
+        "sc_loc_jp_19210_04_001_goal_2",
+        "sc_loc_jp_19210_04_001_goal_3",
+        "sc_loc_jp_19210_04_001_goal_4",
+        "sc_loc_jp_19210_04_001_goal_5"
       ],
-      "recipe": "police-safety",
+      "recipe": null,
       "structuralErrors": [],
-      "editorialReview": "pending"
+      "editorialReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending"
     },
     {
       "scenarioId": "SC-LOC-JP-19210-05-001",
@@ -1765,18 +1682,18 @@
       "locationNameJa": "甲斐郵便局",
       "cityId": "CTY-JP-19210",
       "path": "src/data/generated/dialogues/SC-LOC-JP-19210-05-001.json",
-      "sha256": "57f5d6df37f0d50864c825865f959ad9652de6c8c4a25b81f55bc7f68efa8e75",
+      "sha256": "d8b466910d5bb848bcaab7a34b8c1b6989511e0b2f332fb3b4ece8e47696f863",
       "turnCount": 11,
       "playerIntents": [
-        "post-parcel_response_1",
-        "post-parcel_response_2",
-        "post-parcel_response_3",
-        "post-parcel_response_4",
-        "post-parcel_response_5"
+        "sc_loc_jp_19210_05_001_goal_1",
+        "sc_loc_jp_19210_05_001_goal_2",
+        "sc_loc_jp_19210_05_001_goal_3",
+        "sc_loc_jp_19210_05_001_goal_4",
+        "sc_loc_jp_19210_05_001_goal_5"
       ],
-      "recipe": "post-parcel",
+      "recipe": null,
       "structuralErrors": [],
-      "editorialReview": "pending"
+      "editorialReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending"
     },
     {
       "scenarioId": "SC-LOC-JP-19210-06-001",
@@ -1784,18 +1701,18 @@
       "locationNameJa": "甲斐銀行",
       "cityId": "CTY-JP-19210",
       "path": "src/data/generated/dialogues/SC-LOC-JP-19210-06-001.json",
-      "sha256": "1f6ef3482dd6267113d8b78bcbc09f38bc89bf093783a810d48308797db782d6",
+      "sha256": "60e8a0b4fb163a4ea6d6614e6e69da6d0055759113e1869fab64ad602fc0d3dc",
       "turnCount": 11,
       "playerIntents": [
-        "bank-transfer_response_1",
-        "bank-transfer_response_2",
-        "bank-transfer_response_3",
-        "bank-transfer_response_4",
-        "bank-transfer_response_5"
+        "sc_loc_jp_19210_06_001_goal_1",
+        "sc_loc_jp_19210_06_001_goal_2",
+        "sc_loc_jp_19210_06_001_goal_3",
+        "sc_loc_jp_19210_06_001_goal_4",
+        "sc_loc_jp_19210_06_001_goal_5"
       ],
-      "recipe": "bank-transfer",
+      "recipe": null,
       "structuralErrors": [],
-      "editorialReview": "pending"
+      "editorialReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending"
     },
     {
       "scenarioId": "SC-LOC-JP-19210-07-001",
@@ -1803,18 +1720,18 @@
       "locationNameJa": "甲斐スーパー",
       "cityId": "CTY-JP-19210",
       "path": "src/data/generated/dialogues/SC-LOC-JP-19210-07-001.json",
-      "sha256": "853344fd3dcc48415ee9f9d14f34f3002d715c4cc44274dd521cbaafd2a5f1a7",
+      "sha256": "596210d0ca5f3be8af667d50fdf93ef509a26d096b8b8133344ee3005b37e52a",
       "turnCount": 11,
       "playerIntents": [
-        "supermarket-checkout_response_1",
-        "supermarket-checkout_response_2",
-        "supermarket-checkout_response_3",
-        "supermarket-checkout_response_4",
-        "supermarket-checkout_response_5"
+        "sc_loc_jp_19210_07_001_goal_1",
+        "sc_loc_jp_19210_07_001_goal_2",
+        "sc_loc_jp_19210_07_001_goal_3",
+        "sc_loc_jp_19210_07_001_goal_4",
+        "sc_loc_jp_19210_07_001_goal_5"
       ],
-      "recipe": "supermarket-checkout",
+      "recipe": null,
       "structuralErrors": [],
-      "editorialReview": "pending"
+      "editorialReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending"
     },
     {
       "scenarioId": "SC-LOC-JP-19210-08-001",
@@ -1822,18 +1739,18 @@
       "locationNameJa": "甲斐公園",
       "cityId": "CTY-JP-19210",
       "path": "src/data/generated/dialogues/SC-LOC-JP-19210-08-001.json",
-      "sha256": "b9787c373976a797d012fdb11ac04e78f8a7aa6d157af3fdf1c75408b21b5818",
+      "sha256": "6f2ecfdecc5a8b8eff1485a5b0049d05decf5e949af1aab6ad54b85ce8c62197",
       "turnCount": 11,
       "playerIntents": [
-        "park-walk_response_1",
-        "park-walk_response_2",
-        "park-walk_response_3",
-        "park-walk_response_4",
-        "park-walk_response_5"
+        "sc_loc_jp_19210_08_001_goal_1",
+        "sc_loc_jp_19210_08_001_goal_2",
+        "sc_loc_jp_19210_08_001_goal_3",
+        "sc_loc_jp_19210_08_001_goal_4",
+        "sc_loc_jp_19210_08_001_goal_5"
       ],
-      "recipe": "park-walk",
+      "recipe": null,
       "structuralErrors": [],
-      "editorialReview": "pending"
+      "editorialReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending"
     },
     {
       "scenarioId": "SC-LOC-JP-19212-01-001",
@@ -1841,18 +1758,18 @@
       "locationNameJa": "上野原駅",
       "cityId": "CTY-JP-19212",
       "path": "src/data/generated/dialogues/SC-LOC-JP-19212-01-001.json",
-      "sha256": "153b38db5bc0acc63bddf40556a68059ee6f38a6bc8547a8942f60bc932ba272",
+      "sha256": "37c6cd9817cd3ef5402057d708266d63907650efd2710bbdb48f3a55f3986ba8",
       "turnCount": 11,
       "playerIntents": [
-        "station-delay_response_1",
-        "station-delay_response_2",
-        "station-delay_response_3",
-        "station-delay_response_4",
-        "station-delay_response_5"
+        "sc_loc_jp_19212_01_001_goal_1",
+        "sc_loc_jp_19212_01_001_goal_2",
+        "sc_loc_jp_19212_01_001_goal_3",
+        "sc_loc_jp_19212_01_001_goal_4",
+        "sc_loc_jp_19212_01_001_goal_5"
       ],
-      "recipe": "station-delay",
+      "recipe": null,
       "structuralErrors": [],
-      "editorialReview": "pending"
+      "editorialReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending"
     },
     {
       "scenarioId": "SC-LOC-JP-19212-02-001",
@@ -1860,18 +1777,18 @@
       "locationNameJa": "上野原市役所",
       "cityId": "CTY-JP-19212",
       "path": "src/data/generated/dialogues/SC-LOC-JP-19212-02-001.json",
-      "sha256": "3347f7bffefeabfb47241a4de2ded9ddf15a25ebf2e8514dbf628bb9060a1a92",
+      "sha256": "066c89ad60adf75b659c604e89089e84b35fe0de03e250e19c0e894264ef6865",
       "turnCount": 11,
       "playerIntents": [
-        "gov-appointment_response_1",
-        "gov-appointment_response_2",
-        "gov-appointment_response_3",
-        "gov-appointment_response_4",
-        "gov-appointment_response_5"
+        "sc_loc_jp_19212_02_001_goal_1",
+        "sc_loc_jp_19212_02_001_goal_2",
+        "sc_loc_jp_19212_02_001_goal_3",
+        "sc_loc_jp_19212_02_001_goal_4",
+        "sc_loc_jp_19212_02_001_goal_5"
       ],
-      "recipe": "gov-appointment",
+      "recipe": null,
       "structuralErrors": [],
-      "editorialReview": "pending"
+      "editorialReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending"
     },
     {
       "scenarioId": "SC-LOC-JP-19212-03-001",
@@ -1879,18 +1796,18 @@
       "locationNameJa": "上野原病院",
       "cityId": "CTY-JP-19212",
       "path": "src/data/generated/dialogues/SC-LOC-JP-19212-03-001.json",
-      "sha256": "234da17feac0ec750340a1ea77fa71a1e208d5e669de8584dd1c51c0e8bbc7ae",
+      "sha256": "518f2842b27e66e257152a5f620b4c6dbe5414b600122dab1b17dd34a5b61d82",
       "turnCount": 11,
       "playerIntents": [
-        "hospital-document_response_1",
-        "hospital-document_response_2",
-        "hospital-document_response_3",
-        "hospital-document_response_4",
-        "hospital-document_response_5"
+        "sc_loc_jp_19212_03_001_goal_1",
+        "sc_loc_jp_19212_03_001_goal_2",
+        "sc_loc_jp_19212_03_001_goal_3",
+        "sc_loc_jp_19212_03_001_goal_4",
+        "sc_loc_jp_19212_03_001_goal_5"
       ],
-      "recipe": "hospital-document",
+      "recipe": null,
       "structuralErrors": [],
-      "editorialReview": "pending"
+      "editorialReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending"
     },
     {
       "scenarioId": "SC-LOC-JP-19212-04-001",
@@ -1898,18 +1815,18 @@
       "locationNameJa": "上野原警察署",
       "cityId": "CTY-JP-19212",
       "path": "src/data/generated/dialogues/SC-LOC-JP-19212-04-001.json",
-      "sha256": "e23152a5267b7dee86ff4710cf9fa29ba831dd9af0f8b82ec1e680e640b48a8b",
+      "sha256": "21ecd88aa89d689a146707e27300a69b8b1bf42854d204b945953d874ef52102",
       "turnCount": 11,
       "playerIntents": [
-        "police-lost_response_1",
-        "police-lost_response_2",
-        "police-lost_response_3",
-        "police-lost_response_4",
-        "police-lost_response_5"
+        "sc_loc_jp_19212_04_001_goal_1",
+        "sc_loc_jp_19212_04_001_goal_2",
+        "sc_loc_jp_19212_04_001_goal_3",
+        "sc_loc_jp_19212_04_001_goal_4",
+        "sc_loc_jp_19212_04_001_goal_5"
       ],
-      "recipe": "police-lost",
+      "recipe": null,
       "structuralErrors": [],
-      "editorialReview": "pending"
+      "editorialReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending"
     },
     {
       "scenarioId": "SC-LOC-JP-19212-05-001",
@@ -1917,18 +1834,18 @@
       "locationNameJa": "上野原郵便局",
       "cityId": "CTY-JP-19212",
       "path": "src/data/generated/dialogues/SC-LOC-JP-19212-05-001.json",
-      "sha256": "1d315b46fa9812c8539bb7d64955a1a3ffa3d4fdbf209c4c6590071963c38cfc",
+      "sha256": "2c71774eda1e88fbc40d1a1ed278463e449e197906714575bf26952238dea590",
       "turnCount": 11,
       "playerIntents": [
-        "post-redelivery_response_1",
-        "post-redelivery_response_2",
-        "post-redelivery_response_3",
-        "post-redelivery_response_4",
-        "post-redelivery_response_5"
+        "sc_loc_jp_19212_05_001_goal_1",
+        "sc_loc_jp_19212_05_001_goal_2",
+        "sc_loc_jp_19212_05_001_goal_3",
+        "sc_loc_jp_19212_05_001_goal_4",
+        "sc_loc_jp_19212_05_001_goal_5"
       ],
-      "recipe": "post-redelivery",
+      "recipe": null,
       "structuralErrors": [],
-      "editorialReview": "pending"
+      "editorialReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending"
     },
     {
       "scenarioId": "SC-LOC-JP-19212-06-001",
@@ -1936,18 +1853,18 @@
       "locationNameJa": "上野原銀行",
       "cityId": "CTY-JP-19212",
       "path": "src/data/generated/dialogues/SC-LOC-JP-19212-06-001.json",
-      "sha256": "f1e841942b1caac8188f4084e37f4b2d1b8df8964ab62239a62e37558a3a8dbd",
+      "sha256": "3b8b99db85812e85e7113008a415e0a3628f5fb05d09fe504d5b629773075a32",
       "turnCount": 11,
       "playerIntents": [
-        "bank-card_response_1",
-        "bank-card_response_2",
-        "bank-card_response_3",
-        "bank-card_response_4",
-        "bank-card_response_5"
+        "sc_loc_jp_19212_06_001_goal_1",
+        "sc_loc_jp_19212_06_001_goal_2",
+        "sc_loc_jp_19212_06_001_goal_3",
+        "sc_loc_jp_19212_06_001_goal_4",
+        "sc_loc_jp_19212_06_001_goal_5"
       ],
-      "recipe": "bank-card",
+      "recipe": null,
       "structuralErrors": [],
-      "editorialReview": "pending"
+      "editorialReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending"
     },
     {
       "scenarioId": "SC-LOC-JP-19212-07-001",
@@ -1955,18 +1872,18 @@
       "locationNameJa": "上野原スーパー",
       "cityId": "CTY-JP-19212",
       "path": "src/data/generated/dialogues/SC-LOC-JP-19212-07-001.json",
-      "sha256": "15f19d1233c507229d50feacf0b8d8f8daeb9e976bd27ecb9e07cbc3a8cfad21",
+      "sha256": "50c94db7405d995ab7f3e3de65513192209b46405ab0f2b1b9bc71927b67fbb5",
       "turnCount": 11,
       "playerIntents": [
-        "supermarket-return_response_1",
-        "supermarket-return_response_2",
-        "supermarket-return_response_3",
-        "supermarket-return_response_4",
-        "supermarket-return_response_5"
+        "sc_loc_jp_19212_07_001_goal_1",
+        "sc_loc_jp_19212_07_001_goal_2",
+        "sc_loc_jp_19212_07_001_goal_3",
+        "sc_loc_jp_19212_07_001_goal_4",
+        "sc_loc_jp_19212_07_001_goal_5"
       ],
-      "recipe": "supermarket-return",
+      "recipe": null,
       "structuralErrors": [],
-      "editorialReview": "pending"
+      "editorialReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending"
     },
     {
       "scenarioId": "SC-LOC-JP-19212-08-001",
@@ -1974,18 +1891,18 @@
       "locationNameJa": "上野原公園",
       "cityId": "CTY-JP-19212",
       "path": "src/data/generated/dialogues/SC-LOC-JP-19212-08-001.json",
-      "sha256": "786fae2d983617f1ce65e4b5e32aa1e62c129d65d8fd78a219cf476785752895",
+      "sha256": "19ee09d810e67ed23d40765161c9e5e95e9824d453c43b3cc990a9a30d5e0aa2",
       "turnCount": 11,
       "playerIntents": [
-        "park-walk_response_1",
-        "park-walk_response_2",
-        "park-walk_response_3",
-        "park-walk_response_4",
-        "park-walk_response_5"
+        "sc_loc_jp_19212_08_001_goal_1",
+        "sc_loc_jp_19212_08_001_goal_2",
+        "sc_loc_jp_19212_08_001_goal_3",
+        "sc_loc_jp_19212_08_001_goal_4",
+        "sc_loc_jp_19212_08_001_goal_5"
       ],
-      "recipe": "park-walk",
+      "recipe": null,
       "structuralErrors": [],
-      "editorialReview": "pending"
+      "editorialReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending"
     },
     {
       "scenarioId": "SC-LOC-JP-19213-01-001",

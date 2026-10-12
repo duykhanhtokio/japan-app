@@ -473,3 +473,7 @@ Rechecked 85 final NPC turns and read all eleven existing turns of the 53 affect
 ## Yamanashi Nirasaki and Minami-Alps continuation — 2026-10-12
 
 80/112 individual Japanese rewrites,880turns,400goals;32old drafts remain. Added16, preserved earlier64. Seven distinct new scripts underwent complete replacement (nine rejected variants), and3exact duplicated closures were repaired. Selected comparison scope/hashes: content-qa/PRF-019_NIRASAKI_MINAMIALPS_REVIEW.json. Full-prefecture QA pending; no CONTENT PASS or translations. Next Kai after exact remote persistence.
+
+## Yamanashi Kai and Uenohara continuation — 2026-10-12
+
+96/112 individual Japanese rewrites,1056turns,480goals;16old drafts remain. Added16and preserved earlier80. Selected full-turn and thematic comparison scope/hashes: content-qa/PRF-019_KAI_UENOHARA_REVIEW.json. Whole-prefecture causal/closure review remains pending; no CONTENT PASS or translations. Next Koshu after exact remote persistence.
