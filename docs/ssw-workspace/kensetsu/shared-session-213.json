@@ -1,0 +1,149 @@
+{
+  "id": "kensetsu-common-session-213",
+  "weekId": "kensetsu-common-week-031",
+  "titleJa": "冷却コイル・温水コイルと熱交換",
+  "revision": 1,
+  "contentRevision": 1,
+  "status": "editorial_draft",
+  "estimatedMinutes": null,
+  "durationMeasured": false,
+  "appIntegrationReady": false,
+  "applicableLevels": [
+    "1",
+    "2"
+  ],
+  "applicableFields": [
+    "utilities",
+    "building",
+    "civil"
+  ],
+  "sourceReferences": [
+    {
+      "sourceId": "kensetsu-src-05",
+      "pdfPages": [
+        19,
+        20
+      ],
+      "printedPages": [
+        114,
+        115
+      ],
+      "section": "5.1.5"
+    }
+  ],
+  "officialReferences": [
+    "https://kubota-airconditioner.co.jp/product/technology/hydro_coil/",
+    "https://www.sinko.co.jp/product/ahu/component/coil.html"
+  ],
+  "verificationDate": "2026-10-12",
+  "verificationStatus": "Scoped primary AI function/role comparison; no operational/legal/safety or human approval",
+  "translationStatus": "deferred",
+  "illustrationStatus": "deferred",
+  "dailyMinutesTarget": 30,
+  "timingStatus": "unmeasured; provisional editorial grouping",
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "similarityReviewed": false,
+    "runtimeVerified": true
+  },
+  "scopeRationale": "Shared introductory component literacy in six independent development routes; not advanced2号 competency",
+  "keyTerms": [
+    {
+      "term": "冷却コイル",
+      "reading": "れいきゃくこいる"
+    },
+    {
+      "term": "温水コイル",
+      "reading": "おんすいこいる"
+    },
+    {
+      "term": "熱交換",
+      "reading": "ねつこうかん"
+    },
+    {
+      "term": "チューブ",
+      "reading": "ちゅーぶ"
+    },
+    {
+      "term": "フィン",
+      "reading": "ふぃん"
+    },
+    {
+      "term": "熱媒",
+      "reading": "ねつばい"
+    }
+  ],
+  "clusters": [
+    {
+      "id": "kensetsu-common-session-213-cluster-1",
+      "titleJa": "水側と空気側",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-213-cluster-1-p1",
+          "ja": "冷水を使う冷却コイルでは、チューブの内側の水と外側を通る空気との間で熱交換を行います。空気はチューブやフィンの表面を通じて冷やされます。正常な構成で空気と冷水を直接混ぜる方式という意味ではありません。"
+        },
+        {
+          "id": "kensetsu-common-session-213-cluster-1-p2",
+          "ja": "架空の断面説明を読むなら、水の流路と空気の流路を別々に示せます。「接触」という語があっても、空気が水の配管の内部を流れると書き換えず、どの表面を介する説明かを明確にします。"
+        }
+      ],
+      "applicationPromptJa": "冷却コイルの水の流路と空気の流路を、混ざると誤解させない文にしてください。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-213-cluster-2",
+      "titleJa": "暖めるための熱媒",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-213-cluster-2-p1",
+          "ja": "温水コイルは温水を熱媒として、空気を暖めるための熱交換器です。熱媒は熱を運ぶ媒体を表します。管内に温水を通すことと、室内へ給湯することは用途が違い、同じ水という語だけでは同じ系統になりません。"
+        },
+        {
+          "id": "kensetsu-common-session-213-cluster-2-p2",
+          "ja": "ある設備表に暖房用温水と洗面の給湯が並ぶ場合、コイルへ向かう系統と器具へ向かう系統を分けて整理します。温水の名称が共通でも、接続先や用途の欄を省略しません。"
+        }
+      ],
+      "applicationPromptJa": "暖房用温水と洗面への給湯を、接続先と用途から説明し分けてください。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-213-cluster-3",
+      "titleJa": "コイルの構成を読む",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-213-cluster-3-p1",
+          "ja": "コイルにはチューブとフィンを組み合わせた構成があります。フィンは空気との熱交換に関わる表面を構成します。冷却と加熱を兼用するコイルや、別の熱媒を使う製品もあり、全てのコイルが冷水専用ではありません。"
+        },
+        {
+          "id": "kensetsu-common-session-213-cluster-3-p2",
+          "ja": "機器表がコイルとしか記していない場合、冷却用か加熱用か兼用か、熱媒は何かを確認事項にできます。ここでは形状、材質、ピッチや流量を一律に定めず、仕様欄との対応を読みます。"
+        }
+      ],
+      "applicationPromptJa": "コイルという名称だけの機器表に、用途を明確にするどの欄を追加しますか。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-213-cluster-4",
+      "titleJa": "能力と実施記録",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-213-cluster-4-p1",
+          "ja": "コイルの能力は空気側と水側などの条件に対応する情報です。製品資料に能力の記載があることと、現場で指定条件の確認が行われたことは異なります。部材が付いている写真だけから、その条件や結果は分かりません。"
+        },
+        {
+          "id": "kensetsu-common-session-213-cluster-4-p2",
+          "ja": "架空の報告は「コイルの仕様資料あり。対象系統での条件と確認結果は照合待ち」とできます。温度設定、流量調整、冷媒作業や漏れの対処を、機器の名前だけから指示する文章にはしません。"
+        }
+      ],
+      "applicationPromptJa": "仕様資料があるだけのコイルを、現場確認も済んだと誤読させない一文にしてください。",
+      "graded": false
+    }
+  ],
+  "runtimeVerificationScope": "Real reader in isolated web adapters; all217sessions/2468paragraphs/reflections, scroll/manual completion, persistence, learner/level/field isolation; not native/content/human/release approval"
+}

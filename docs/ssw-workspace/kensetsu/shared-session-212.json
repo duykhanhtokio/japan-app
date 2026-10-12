@@ -1,0 +1,147 @@
+{
+  "id": "kensetsu-common-session-212",
+  "weekId": "kensetsu-common-week-031",
+  "titleJa": "ファンの給気・排気と空気経路",
+  "revision": 1,
+  "contentRevision": 1,
+  "status": "editorial_draft",
+  "estimatedMinutes": null,
+  "durationMeasured": false,
+  "appIntegrationReady": false,
+  "applicableLevels": [
+    "1",
+    "2"
+  ],
+  "applicableFields": [
+    "utilities",
+    "building",
+    "civil"
+  ],
+  "sourceReferences": [
+    {
+      "sourceId": "kensetsu-src-05",
+      "pdfPages": [
+        19
+      ],
+      "printedPages": [
+        114
+      ],
+      "section": "5.1.5"
+    }
+  ],
+  "officialReferences": [
+    "https://www.ebara.com/jp-ja/building-industry/blower/",
+    "https://www.ac.daikin.co.jp/central/handling/handling_typeunit"
+  ],
+  "verificationDate": "2026-10-12",
+  "verificationStatus": "Scoped primary AI function/role comparison; no operational/legal/safety or human approval",
+  "translationStatus": "deferred",
+  "illustrationStatus": "deferred",
+  "dailyMinutesTarget": 30,
+  "timingStatus": "unmeasured; provisional editorial grouping",
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "similarityReviewed": false,
+    "runtimeVerified": true
+  },
+  "scopeRationale": "Shared introductory component literacy in six independent development routes; not advanced2号 competency",
+  "keyTerms": [
+    {
+      "term": "ファン",
+      "reading": "ふぁん"
+    },
+    {
+      "term": "送風機",
+      "reading": "そうふうき"
+    },
+    {
+      "term": "排風機",
+      "reading": "はいふうき"
+    },
+    {
+      "term": "給気",
+      "reading": "きゅうき"
+    },
+    {
+      "term": "排気",
+      "reading": "はいき"
+    },
+    {
+      "term": "風量",
+      "reading": "ふうりょう"
+    }
+  ],
+  "clusters": [
+    {
+      "id": "kensetsu-common-session-212-cluster-1",
+      "titleJa": "空気を動かす機械",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-212-cluster-1-p1",
+          "ja": "ファンは空気などの気体にエネルギーを与え、流れをつくる機械です。送風機という名称には給気や排気に使う機械も含まれます。空気を送り出す役割と、冷やしたり粒子を捕集したりする役割は分けて読みます。"
+        },
+        {
+          "id": "kensetsu-common-session-212-cluster-1-p2",
+          "ja": "ある機器表のファン欄が確認済みでも、それだけでは冷却コイルやフィルターの状態は分かりません。空気を動かす機能を、空調の全ての機能が確認されたという記録に広げないようにします。"
+        }
+      ],
+      "applicationPromptJa": "送風機が動くという記録から、冷房機能まで正常と言えないのはなぜですか。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-212-cluster-2",
+      "titleJa": "室内を基準に向きを読む",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-212-cluster-2-p1",
+          "ja": "給気は室内などの対象へ空気を供給する側、排気は対象から空気を排出する側の役割です。部屋から外へ出す排風機と外から入れる送風機という説明は、経路の例として読めます。ファンの名称だけで実際の全経路を決めません。"
+        },
+        {
+          "id": "kensetsu-common-session-212-cluster-2-p2",
+          "ja": "架空の倉庫の図で矢印が部屋に入る線と出る線があれば、室内を基準に給気側と排気側を記します。紙面の右向きか左向きかより、どこからどこへ流れる線なのかが重要です。"
+        }
+      ],
+      "applicationPromptJa": "紙面の左右ではなく室内を基準に、給気と排気を説明する文を作ってください。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-212-cluster-3",
+      "titleJa": "送る量を読む",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-212-cluster-3-p1",
+          "ja": "風量は一定の時間に流れる空気の体積に関わる量です。機器の運転状態を示す信号と、実際の経路の風量は異なる情報です。ファンの外形が大きいことだけで、必要な場所への風量が確保されたとは判断しません。"
+        },
+        {
+          "id": "kensetsu-common-session-212-cluster-3-p2",
+          "ja": "運転欄だけ記入された架空の記録なら、「運転の記載あり。風量の測定対象と結果は未受領」と示せます。測定した位置と経路が対応しているかを別に読めるようにします。"
+        }
+      ],
+      "applicationPromptJa": "運転欄のみ記入済みのファンについて、風量の確認をどう残しますか。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-212-cluster-4",
+      "titleJa": "経路と機器を対応させる",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-212-cluster-4-p1",
+          "ja": "ファンの役割は接続された経路と組み合わせて理解します。ダクトが同じ室に近接していても、給気と排気の系統を取り違えると機器表の読み方が変わります。また通常の換気と火災時の排煙の指定は区別が必要です。"
+        },
+        {
+          "id": "kensetsu-common-session-212-cluster-4-p2",
+          "ja": "機器番号とダクトの系統番号を一組として記録すれば、別の経路の結果を転記する誤りを減らせます。羽根の回転方向、配線、起動や停止の手順はこの比較から推定しません。"
+        }
+      ],
+      "applicationPromptJa": "近接する二つのファンの記録を混同しないため、何の番号を一組にしますか。",
+      "graded": false
+    }
+  ],
+  "runtimeVerificationScope": "Real reader in isolated web adapters; all217sessions/2468paragraphs/reflections, scroll/manual completion, persistence, learner/level/field isolation; not native/content/human/release approval"
+}
