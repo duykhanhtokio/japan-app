@@ -3,7 +3,7 @@
   "weekId": "kensetsu-common-week-048",
   "titleJa": "既存埋設物の図面と現地確認",
   "revision": 1,
-  "contentRevision": 1,
+  "contentRevision": 2,
   "status": "editorial_draft",
   "estimatedMinutes": null,
   "durationMeasured": false,
@@ -45,7 +45,7 @@
     "nativeReviewed": false,
     "rightsReviewed": false,
     "similarityReviewed": false,
-    "runtimeVerified": true
+    "runtimeVerified": false
   },
   "scopeRationale": "Shared introductory component literacy in six independent development routes; not advanced2号 competency",
   "keyTerms": [
@@ -86,7 +86,7 @@
         },
         {
           "id": "kensetsu-common-session-332-cluster-1-p2",
-          "ja": "配置図に新設と既存を別線で示せます。新設図にないことを、その場所に既存設備がない根拠にしない例です。"
+          "ja": "敷地内で通信設備だけを更新する工事でも、その下に別の管理者の水道やガス設備がある可能性を考えます。今回の工事図に描かれていない設備を、存在しないものとして扱いません。工事の目的が一種類でも、調査の対象はそれだけとは限らないという例です。"
         }
       ],
       "applicationPromptJa": "新設の図面だけでは、既存埋設物について何が分かりませんか。",
@@ -103,7 +103,7 @@
         },
         {
           "id": "kensetsu-common-session-332-cluster-2-p2",
-          "ja": "確認票に図面の版と現地の確認を別欄で残せます。資料があることを、現物の深さも測定済みと扱わない例です。"
+          "ja": "古い図面と新しい現場写真で経路が一致しない場合、どちらかを都合よく選ぶのではなく相違点を残します。図面の作成時点や、その後の変更の有無も確認の対象になります。「資料上の位置」と「現地で確かめた位置」を混ぜない説明が必要です。"
         }
       ],
       "applicationPromptJa": "台帳の位置と現物の位置を、なぜ別に確認しますか。",
@@ -120,7 +120,7 @@
         },
         {
           "id": "kensetsu-common-session-332-cluster-3-p2",
-          "ja": "連絡表に設備と管理者を対応させられます。別の設備の確認票を、今回の設備の承認へ置き換えない例です。"
+          "ja": "道路上の工事で複数の設備が交差している場合、一つの管理者との連絡だけで全ての設備の確認が済むわけではありません。確認先、対象設備、返答の範囲を対応させます。調整済みの設備と連絡待ちの設備を分けることで、未確認が引継ぎから消えるのを防ぎます。"
         }
       ],
       "applicationPromptJa": "設備ごとに管理者と確認票を対応させる理由は何ですか。",
@@ -137,12 +137,13 @@
         },
         {
           "id": "kensetsu-common-session-332-cluster-4-p2",
-          "ja": "報告例は「一部の試掘記録あり。全経路は未確認」です。調査の場所や方法、掘削開始の条件はこの例から設定しません。"
+          "ja": "試掘で一つの管を確認できても、先の区間で深さが変わったり別の設備と交差したりする可能性があります。調査結果を説明するときは、確認した地点と範囲を示します。「この地点で確認した」という事実を「全区間の位置が分かった」という結論へ広げないことが重要です。"
         }
       ],
       "applicationPromptJa": "一部の試掘記録だけある経路について、確認範囲を伝えてください。",
       "graded": false
     }
   ],
-  "runtimeVerificationScope": "Actual reader in isolated web adapters: 336sessions/3420paragraphs/reflections, manual completion/reload/learner/field/level isolation; no native, content, human or release approval"
+  "runtimeVerificationScope": "Revision2 content not runtime-tested; earlier revision1 web-adapter evidence retained as history",
+  "editorialRevisionNote": "Whole-week application revision: replaced schematic worksheet suggestions with28 independent workplace cases; stable paragraph IDs and progress revision retained"
 }
