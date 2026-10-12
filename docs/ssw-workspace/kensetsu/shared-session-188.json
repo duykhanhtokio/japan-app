@@ -1,0 +1,171 @@
+{
+  "id": "kensetsu-common-session-188",
+  "weekId": "kensetsu-common-week-027",
+  "titleJa": "過電流保護・リレー・モータ保護の関係",
+  "revision": 1,
+  "status": "editorial_draft",
+  "estimatedMinutes": null,
+  "durationMeasured": false,
+  "appIntegrationReady": false,
+  "applicableLevels": [
+    "1",
+    "2"
+  ],
+  "applicableFields": [
+    "utilities",
+    "building",
+    "civil"
+  ],
+  "sourceReferences": [
+    {
+      "sourceId": "kensetsu-src-05",
+      "pdfPages": [
+        13
+      ],
+      "printedPages": [
+        108
+      ],
+      "section": "5.1.2 過電流遮断器からサーマルリレー"
+    }
+  ],
+  "officialReferences": [
+    "https://www.mlit.go.jp/gobuild/content/001888825.pdf",
+    "https://www.swcc.co.jp/sfcc/products/detail/sfcc033_2060.html",
+    "https://www.swcc.co.jp/sfcc/products/detail/sfcc003_2030.html",
+    "https://www.mitsubishielectric.co.jp/fa/ssl/learn/el/eln/course/fa_0120/cha_4/04030201.html"
+  ],
+  "verificationDate": "2026-10-12",
+  "verificationStatus": "Independent panel/cable-material/tool/protection concepts; scoped primary AI comparisons; not installation, safety, legal or human approval",
+  "translationStatus": "deferred",
+  "illustrationStatus": "deferred",
+  "dailyMinutesTarget": 30,
+  "timingStatus": "unvalidated; content grouping does not establish a 30-minute lesson",
+  "editorialAuditStatus": "new_independent_Japanese_AI_draft",
+  "contentRevision": 1,
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "similarityReviewed": false,
+    "runtimeVerified": true
+  },
+  "scopeRationale": "Publisher-confirmed shared introductory material literacy across six independent routes; specific component/function/fit distinctions, not advanced2号 proficiency",
+  "keyTerms": [
+    {
+      "term": "過電流遮断器",
+      "reading": "かでんりゅうしゃだんき"
+    },
+    {
+      "term": "配線用遮断器",
+      "reading": "はいせんようしゃだんき"
+    },
+    {
+      "term": "リレー",
+      "reading": "りれー"
+    },
+    {
+      "term": "サーマルリレー",
+      "reading": "さーまるりれー"
+    },
+    {
+      "term": "電磁接触器",
+      "reading": "でんじせっしょくき"
+    },
+    {
+      "term": "過負荷",
+      "reading": "かふか"
+    }
+  ],
+  "clusters": [
+    {
+      "id": "kensetsu-common-session-188-cluster-1",
+      "titleJa": "過電流遮断器は保護する対象を見る",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-188-cluster-1-p1",
+          "ja": "過電流遮断器は、過負荷や短絡などによる過電流に対応して電路を遮断するための装置です。配線用遮断器という名称も使われます。保護する対象と、どの状態で動作する装置かを対応させて理解します。"
+        },
+        {
+          "id": "kensetsu-common-session-188-cluster-1-p2",
+          "ja": "NFBという呼称で知られるノーヒューズ遮断器がありますが、ブレーカという語は、それだけですべての保護機能を表しません。過電流の保護と漏電の保護は確認する機能が違います。漏電を警報として出す構成と、漏電で遮断する構成も区別します。"
+        },
+        {
+          "id": "kensetsu-common-session-188-cluster-1-p3",
+          "ja": "装置名を読めたことと、その回路に適合する定格や動作条件が確認できたことは別です。取付けられていることだけを根拠に、感電や火災がすべて防げると判断したり、回路を使用できると決めたりしません。"
+        }
+      ],
+      "applicationPromptJa": "過電流遮断器があることを、すべての感電や漏電への保護と同じにできない理由は何ですか。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-188-cluster-2",
+      "titleJa": "リレーは入力と出力を分ける",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-188-cluster-2-p1",
+          "ja": "リレーは、入力信号を受けて出力側のスイッチ機能を変える機器です。電磁石と接点を用いる有接点の形式のほか、半導体を用いる形式もあります。どの形式でも同じ構造や動きであるとはいえません。"
+        },
+        {
+          "id": "kensetsu-common-session-188-cluster-2-p2",
+          "ja": "入力側のコイルなどと、出力側の接点や半導体を分けて見ると、何の信号を受けて何を変えるかが分かります。信号が来たという情報だけで、負荷側の回路が正常に開閉したという結果まで説明したことにはなりません。"
+        },
+        {
+          "id": "kensetsu-common-session-188-cluster-2-p3",
+          "ja": "架空の確認記録で「入力信号の記録はあります。出力側の動作結果は未確認です」と整理する例を考えます。これは確認範囲を区別する学習であり、盤内で信号を測定したり、接点を操作したりする方法は示しません。"
+        }
+      ],
+      "applicationPromptJa": "リレーへの信号が確認できた状態と、負荷側が動作した状態はどう違いますか。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-188-cluster-3",
+      "titleJa": "サーマルリレーは検出と遮断を分ける",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-188-cluster-3-p1",
+          "ja": "サーマルリレーは、モータの過負荷保護などに使う熱動形の継電器です。電流による発熱を利用して動作する部分があり、出力接点を通じて電磁接触器などに働きかける構成があります。検出する機器と主回路を開く機器を分けて捉えます。"
+        },
+        {
+          "id": "kensetsu-common-session-188-cluster-3-p2",
+          "ja": "周囲の温度が高くなれば、サーマルリレー単体がどんな電源回路も直接遮断するという説明ではありません。対応する負荷、設定、組合せの条件があります。過負荷を検出する役割を、すべての短絡保護や感電保護と同じには扱いません。"
+        },
+        {
+          "id": "kensetsu-common-session-188-cluster-3-p3",
+          "ja": "図の役割を説明する例は「サーマルリレーが異常状態を検出する側、電磁接触器が主回路の開閉に関係する側」です。実際の動作確認や設定変更、復帰の手順は、対象設備の資料と権限に基づく別の作業です。"
+        }
+      ],
+      "applicationPromptJa": "サーマルリレーと電磁接触器の役割を、一つずつ説明してください。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-188-cluster-4",
+      "titleJa": "動作表示と原因・復帰を混ぜない",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-188-cluster-4-p1",
+          "ja": "遮断器や保護リレーの動作は、対象の回路や機器に関する情報です。動作した装置を特定することと、原因を確定することは別です。同じ設備であっても、表示、記録、負荷の状態などを区別して扱います。"
+        },
+        {
+          "id": "kensetsu-common-session-188-cluster-4-p2",
+          "ja": "架空の報告では「保護装置の動作記録を確認しました。原因の確認と復帰の判断は担当者へ引き継ぎます」と表せます。名称を知っていることや動作表示を見たことから、自分で復帰してよいという結論には進みません。"
+        },
+        {
+          "id": "kensetsu-common-session-188-cluster-4-p3",
+          "ja": "過負荷、短絡、漏電、制御信号の変化は同じ意味の語ではありません。報告には確認した装置名と範囲を残し、未確認の原因を断定しないようにします。動作の観察と操作の許可を分けることが、用語を正しく使う基礎になります。"
+        }
+      ],
+      "applicationPromptJa": "「装置が動作した」と「原因が分かった」と「復帰できる」はなぜ別の判断ですか。",
+      "graded": false
+    }
+  ],
+  "runtimeVerificationScope": {
+    "status": "PASS_WEB_ADAPTED_COMPONENT_TEST",
+    "report": "runtime-tests/2026-10-12-week027-content/runtime-report.json",
+    "nativeDeviceTested": false,
+    "contentApproved": false
+  }
+}
