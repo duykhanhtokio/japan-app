@@ -1,0 +1,688 @@
+{
+  "prefectureId": "PRF-019",
+  "date": "2026-10-12",
+  "reviewer": "AI",
+  "contentPass": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "canonicalCount": 112,
+  "individualAuthoringCount": 32,
+  "individualTurnGoalReviewCount": 32,
+  "speakingTaskReviewCount": 160,
+  "remainingOldDrafts": 80,
+  "sourcePath": "scripts/dialogue-authoring/prf-019-first-four-cities.json",
+  "sourceSha256": {
+    "scripts/dialogue-authoring/prf-019-first-four-cities.json": "5bd17b85b4f06df8186168b68eb825b44b6b18ef957ec0d707d596c1add21197"
+  },
+  "lexicalScreeningCorpusCount": 3134,
+  "lexicalCandidateComparisonsAreNotApproval": true,
+  "fullyReadPriorRuntimeIds": [
+    "SC-LOC-JP-11238-01-001",
+    "SC-LOC-005-13-001",
+    "SC-LOC-JP-15205-02-001",
+    "SC-LOC-JP-02209-02-001",
+    "SC-LOC-016-02-001",
+    "SC-LOC-CHB-KASHIWA-07-001",
+    "SC-LOC-CHB-NARITA-05-001",
+    "SC-LOC-FKI-OBAMA-02-001",
+    "SC-LOC-ISK-KAGA-03-001",
+    "SC-LOC-FKI-SABAE-03-001",
+    "SC-LOC-GNM-TAKASAKI-02-001",
+    "SC-LOC-JP-13210-07-001",
+    "SC-LOC-JP-08230-06-001",
+    "SC-LOC-ISK-WAJIMA-02-001",
+    "SC-LOC-GNM-OTAGUNMA-08-001",
+    "SC-LOC-014-10-001",
+    "SC-LOC-JP-11238-02-001",
+    "SC-LOC-JP-07214-06-001",
+    "SC-LOC-JP-05214-07-001",
+    "SC-LOC-005-10-001"
+  ],
+  "wholePlotRejectionsAndReplacements": [
+    {
+      "scenarioId": "SC-YMN-FUJIKAWAGUCHIKO-001",
+      "decision": "Rejected missing-one-traveller reservation plot after reading SC-LOC-JP-11238-01-001; replaced every turn and goal with round-trip sightseeing versus point-to-point transport and an unconfirmed pickup place."
+    },
+    {
+      "scenarioId": "SC-LOC-019-06-001",
+      "decision": "Rejected hat retrieval plot too close to personal cardigan retrieval SC-LOC-005-13-001; replaced every turn and goal with optional hospital survey versus completed payment and voluntary disclosure."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-HOKUTO-06-001",
+      "decision": "Rejected tool-position replay plot too close to SC-LOC-FKI-SABAE-03-001; replaced every turn and goal with actual seasoning changes versus printed recipe quantities and personal taste notes."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-HOKUTO-04-001",
+      "decision": "Replaced gift-recipient preference plot to avoid consent/refusal development recurring in SC-LOC-FKI-OBAMA-02-001 and same-batch amulet draft. Current plot is early arrival for a bread reservation, maintaining the reservation and separately buying one display item."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUEFUKI-07-001",
+      "decision": "Discarded initial family-gift refusal before integration because it repeated the bakery draft development. Current handwritten-order accommodation is distinct from sample versus actual item selection SC-LOC-GNM-TAKASAKI-02-001."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUEFUKI-04-001",
+      "decision": "Thematic review found the paper/email unpaid invoice chain repeated tax notice SC-LOC-014-10-001 despite low lexical retrieval. Replaced every turn and goal with current passbook service versus optional new-product leaflet and no new application."
+    }
+  ],
+  "acceptedSelectedComparisons": [
+    {
+      "scenarioId": "SC-LOC-019-05-001",
+      "candidateIds": [
+        "SC-LOC-JP-15205-02-001",
+        "SC-LOC-JP-02209-02-001",
+        "SC-LOC-016-02-001"
+      ],
+      "decision": "Current two receiving organizations require separate information scopes; not proxy collection, issuance age, or one-day attendance versus absence-period certification."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUJIKAWAGUCHIKO-02-001",
+      "candidateIds": [
+        "SC-LOC-CHB-KASHIWA-07-001"
+      ],
+      "decision": "Compare a booked service by operator and departure with another operator queue, then hand over baggage only after service confirmation. Prior bus story identifies hospital via a different route to the same terminus and a named alighting stop. Same transport skill; different causes and decision chain."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUJIKAWAGUCHIKO-03-001",
+      "candidateIds": [
+        "SC-LOC-CHB-NARITA-05-001"
+      ],
+      "decision": "Near concept retained intentionally as distinct work development: uncertain disposal of a closed envelope outside bin, unopened privacy boundary and shift handoff of pending disposal; prior charger finding reopens a completed-room status and blocks room allocation. Not a charger-to-envelope substitution."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-HOKUTO-03-001",
+      "candidateIds": [
+        "SC-LOC-JP-13210-07-001"
+      ],
+      "decision": "Staged consumption across days leads to buying only today and postponing future purchase; prior per-weight price misconception leads to cheaper amount under a fixed budget."
+    },
+    {
+      "scenarioId": "SC-LOC-019-06-001",
+      "candidateIds": [
+        "SC-LOC-JP-11238-02-001",
+        "SC-LOC-005-10-001"
+      ],
+      "decision": "Same survey topic but distinct causal development: completed medical payment versus optional response, one voluntary comment, no added clinical/identity data, separate retention of payment papers. Prior stories concern service eligibility applications, or a scored-test misconception, copying a friend and an unvisited exhibit."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-HOKUTO-04-001",
+      "candidateIds": [
+        "SC-LOC-ISK-WAJIMA-02-001",
+        "SC-LOC-GNM-OTAGUNMA-08-001"
+      ],
+      "decision": "Early pickup has not been authorized; preserve original ready time/quantity, buy one immediately available bread separately and keep additional receipt separate from reservation. Prior third-party pickup and optional personal addition, or restaurant event changing business meeting to a meal, do not include this timing and evidence chain."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-HOKUTO-07-001",
+      "candidateIds": [
+        "SC-LOC-JP-05214-07-001"
+      ],
+      "decision": "Pre-purchase budget decision: advertised later points cannot lower today payment; choose affordable quantity. Prior is already-paid transaction: misreading a receipt point balance as cash change, then resolving a cash discrepancy."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUEFUKI-04-001",
+      "candidateIds": [
+        "SC-LOC-JP-07214-06-001"
+      ],
+      "decision": "Current service scope plus declining an optional product application, leaflet-only receipt, understanding fee/termination questions and no signature. Prior is joint family savings planning with competing trip and school spending goals, not a new-product/application boundary."
+    }
+  ],
+  "wholeCorpusComparisonGroups": [
+    {
+      "cityId": "CTY-019",
+      "cityNameJa": "甲府市",
+      "scenarioIds": [
+        "SC-019-001",
+        "SC-LOC-019-02-001",
+        "SC-LOC-019-03-001",
+        "SC-LOC-019-04-001",
+        "SC-LOC-019-05-001",
+        "SC-LOC-019-06-001",
+        "SC-LOC-019-07-001",
+        "SC-LOC-019-08-001"
+      ],
+      "review": "Current drafts only; full prefecture not reviewed."
+    },
+    {
+      "cityId": "CTY-YMN-FUJIKAWAGUCHIKO",
+      "cityNameJa": "富士河口湖町",
+      "scenarioIds": [
+        "SC-YMN-FUJIKAWAGUCHIKO-001",
+        "SC-LOC-YMN-FUJIKAWAGUCHIKO-02-001",
+        "SC-LOC-YMN-FUJIKAWAGUCHIKO-03-001",
+        "SC-LOC-YMN-FUJIKAWAGUCHIKO-04-001",
+        "SC-LOC-YMN-FUJIKAWAGUCHIKO-05-001",
+        "SC-LOC-YMN-FUJIKAWAGUCHIKO-06-001",
+        "SC-LOC-YMN-FUJIKAWAGUCHIKO-07-001",
+        "SC-LOC-YMN-FUJIKAWAGUCHIKO-08-001"
+      ],
+      "review": "Current drafts only; full prefecture not reviewed."
+    },
+    {
+      "cityId": "CTY-YMN-HOKUTO",
+      "cityNameJa": "北杜市",
+      "scenarioIds": [
+        "SC-YMN-HOKUTO-001",
+        "SC-LOC-YMN-HOKUTO-02-001",
+        "SC-LOC-YMN-HOKUTO-03-001",
+        "SC-LOC-YMN-HOKUTO-04-001",
+        "SC-LOC-YMN-HOKUTO-05-001",
+        "SC-LOC-YMN-HOKUTO-06-001",
+        "SC-LOC-YMN-HOKUTO-07-001",
+        "SC-LOC-YMN-HOKUTO-08-001"
+      ],
+      "review": "Current drafts only; full prefecture not reviewed."
+    },
+    {
+      "cityId": "CTY-YMN-FUEFUKI",
+      "cityNameJa": "笛吹市",
+      "scenarioIds": [
+        "SC-YMN-FUEFUKI-001",
+        "SC-LOC-YMN-FUEFUKI-02-001",
+        "SC-LOC-YMN-FUEFUKI-03-001",
+        "SC-LOC-YMN-FUEFUKI-04-001",
+        "SC-LOC-YMN-FUEFUKI-05-001",
+        "SC-LOC-YMN-FUEFUKI-06-001",
+        "SC-LOC-YMN-FUEFUKI-07-001",
+        "SC-LOC-YMN-FUEFUKI-08-001"
+      ],
+      "review": "Current drafts only; full prefecture not reviewed."
+    }
+  ],
+  "scenarioEvidence": [
+    {
+      "scenarioId": "SC-019-001",
+      "title": "聞き取れない放送より行先表示を確認する",
+      "sha256": "4bd7403dfeea471eed81dcdadfcae9fe14622e58289018dad0febf7f618631ee",
+      "goals": [
+        "放送の聞取れない部分と確認目的を説明する",
+        "メモの駅と進行方向を照合したいと伝える",
+        "表示の一致と読めない停車駅欄を区別する",
+        "安全な位置で確認を待つと答える",
+        "確認できた停車駅を踏まえて乗車を決める"
+      ],
+      "closure": "停車駅を確かめてから乗れますね。それでは、お気をつけて。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-019-02-001",
+      "title": "二人で一本の木を担当するときの作業分担",
+      "sha256": "96b664d5fa70080bff5d1bc051eb8615dd24e54613afa2497aa61e20c0225010",
+      "goals": [
+        "共同作業の担当範囲と個別記録の希望を伝える",
+        "交代時の記録と曖昧な境界の確認を相談する",
+        "枝の境界と声掛けで重複収穫を防ぐ案を示す",
+        "届かない実を未処理として担当者へ伝える",
+        "休憩前のかごと残りの引継ぎを説明する"
+      ],
+      "closure": "分担と残りが分かれば交代できる。記録も分けて頼む。では、休憩後にまた会おう。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-019-03-001",
+      "title": "修理に出す靴と帰りに履く靴を分ける",
+      "sha256": "3b58c86187f43da15688d70caa29cb04c66a16968f8fa92e9dd969315ac7b235",
+      "goals": [
+        "履いている靴の傷みと帰宅用の靴の必要性を説明する",
+        "替えを買う前に修理の預かり条件を確認する",
+        "座って靴を脱ぎ確認を待つと伝える",
+        "預かりの返答を受けて替えの試着を希望する",
+        "替えの購入と修理受付の順序を決める"
+      ],
+      "closure": "替えの靴を先に用意できますね。修理受付へおつなぎします。それでは、失礼します。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-019-04-001",
+      "title": "杖を使う客がお盆を運ぶ手助けを頼む",
+      "sha256": "3df5c274bb1dec21bc143defa243f57f09c598335183a728f78762b3a3d52c37",
+      "goals": [
+        "杖で手がふさがりお盆運搬の支援が必要と伝える",
+        "未確定の席と通路に置かない希望を説明する",
+        "同行者に連絡して席の位置を確定させる",
+        "料理を持たず自分の荷物だけで移動すると答える",
+        "同行者の料理受取りを了承して支援を確認する"
+      ],
+      "closure": "料理は係からお席へお届けします。それでは、ごゆっくりお召し上がりください。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-019-05-001",
+      "title": "提出先ごとに証明書へ必要な情報を比べる",
+      "sha256": "9eebcab38f2868f0056699189eeef049a781c62f52af890f429f38e002890a25",
+      "goals": [
+        "同名の証明書に提出先別の情報条件があると相談する",
+        "職場用の家族情報の要否を確認したいと伝える",
+        "住宅用を職場用の複製にせず別途照合を頼む",
+        "不明な住宅側の条件を問い合わせて申請を保留する",
+        "提出先ごとに分かる部分と質問を整理する"
+      ],
+      "closure": "提出先ごとに条件を確かめてお申し込みください。ご相談ありがとうございました。失礼します。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-019-06-001",
+      "title": "任意アンケートを会計の手続きと分ける",
+      "sha256": "e349c60bd6d4331b2845a1c3ebcaac4a7a34bf014c1415f8cc36a5b44fd93aeb",
+      "goals": [
+        "会計後の用紙が全項目必須と考えたと説明する",
+        "任意回答を理解し感想一項目だけを希望する",
+        "診療情報を載せず案内表示の感想を書くと伝える",
+        "不要な氏名や診察券番号を自分で追加しないと確認する",
+        "空欄を残して提出し会計書類は別に持ち帰る"
+      ],
+      "closure": "ご意見をお寄せいただきありがとうございます。それでは、お気をつけてお帰りください。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-019-07-001",
+      "title": "夜勤の共同購入と自分の買物を分ける",
+      "sha256": "44298ef92657a2c7749f2817532298e04582a4dbd83ee25f6d34b83aa81bf671",
+      "goals": [
+        "共同購入と私用の品を支払い前に別会計で頼む",
+        "先に精算する共同購入品を明確に分ける",
+        "一枚目のレシートの品目と用途を確かめる",
+        "袋は共用し控えだけを区別すると答える",
+        "全品と二枚の控えの受取りを確認する"
+      ],
+      "closure": "別会計のお品と控えがそろいました。夜道にお気をつけて。またお越しください。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-019-08-001",
+      "title": "口座番号を口頭で待合全体へ伝えない",
+      "sha256": "2f735635ec61d3bba0877f6da2a9d481a0302210a8d265441202b4c568f2e19b",
+      "goals": [
+        "待合で電話相手へ口座番号を読み上げないと伝える",
+        "電話の緊急性を確認して後の連絡へ切り替える",
+        "家族の質問と自分の給与入金確認を分ける",
+        "窓口に通帳を示し取引内容を電話へ読み上げないと答える",
+        "本人確認に集中し家族へ後で連絡すると決める"
+      ],
+      "closure": "お電話と窓口の用件を分けられましたね。担当から取引をご案内します。それでは、失礼します。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-YMN-FUJIKAWAGUCHIKO-001",
+      "title": "対岸へ行く予定と周遊船の運航を分ける",
+      "sha256": "bd80b973949681d59c57a6be48790b44e757b83da0b8278bc4d6cba345a7dd0b",
+      "goals": [
+        "対岸での迎えを前提に降船可能と思ったと伝える",
+        "周遊と移動を区別し券購入前に予定を見直す",
+        "観光乗船をせず友人に会う移動方法を探すと決める",
+        "迎え先の名称が未確認で相手に聞き直すと説明する",
+        "船到着の予定変更を連絡し場所確定後に移動を相談する"
+      ],
+      "closure": "目的と到着先を確認してからお進めください。それでは、お気をつけて。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUJIKAWAGUCHIKO-02-001",
+      "title": "同じ停留所の別会社の列へ並びかける",
+      "sha256": "a057ff62b29038af514ed3d08b11feac19deeccd9114a640cd053f0f5161002b",
+      "goals": [
+        "行先と会社名の不一致に気づいたと相談する",
+        "券の便名と時刻を示して複数情報を照合する",
+        "誤った列を離れ荷物とともに正しい場所へ移る",
+        "手荷物を預ける前に車両の便名を確認すると伝える",
+        "便の確認と座席探しの順序を整理する"
+      ],
+      "closure": "会社と便を照合できましたね。それでは、よいご旅行を。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUJIKAWAGUCHIKO-03-001",
+      "title": "客室の封書を清掃ごみと分けて報告する",
+      "sha256": "86664e698b4ef4f630533f637a92d605acdad3f7a641d9ffe43af3c60456e619",
+      "goals": [
+        "ごみ箱外の封書を廃棄してよいか不明と報告する",
+        "封を開かず発見位置と観察範囲を説明する",
+        "周辺を片づけず交代者へ確認待ちを伝える",
+        "個人情報を撮影せず作業記録に場所を残す",
+        "未処理状態と今後の指示記録を区別する"
+      ],
+      "closure": "封書をそのまま残し、確認待ちの報告を受けた。ありがとう。では、次の引継ぎで。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUJIKAWAGUCHIKO-04-001",
+      "title": "弁当の取り分けをせず一人分の量で選ぶ",
+      "sha256": "da45f80bd0ca62b976516763496b36f78b145840a071911488e381d9178ed08e",
+      "goals": [
+        "同行者の予定変更により一人用へ選び直すと伝える",
+        "注文確定前に少量の弁当を見たいと頼む",
+        "量と主菜の違いを理解して魚の弁当を選ぶ",
+        "一つの注文と一膳の箸を指定する",
+        "追加なしで会計を頼み最終注文を確定する"
+      ],
+      "closure": "小さい魚のお弁当とお箸一膳で承りました。それでは、よいお昼を。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUJIKAWAGUCHIKO-05-001",
+      "title": "外装を開けず中身の色を確かめたい",
+      "sha256": "74cc07254a4af43d01fcca8e3e2ea2b3ea19bf9f977f072f978c42891aabe3db",
+      "goals": [
+        "開封せず購入前に中の色を知る方法を相談する",
+        "未開封で持参した数量を伝える",
+        "色が選べない品を見送り指定できる別品を頼む",
+        "形の差を受け入れて確認可能な色の商品を選ぶ",
+        "元の未開封品を戻し購入品を明確にする"
+      ],
+      "closure": "未開封の品をお戻しいただきありがとうございます。それでは、レジでお待ちしています。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUJIKAWAGUCHIKO-06-001",
+      "title": "模様を描き直す前に下書きの線を相談する",
+      "sha256": "d2ab1ae3af93ab0838224f385bdef0fe3308ef07dda33e75ceecf134531b7fd0",
+      "goals": [
+        "縁に近い模様を加工前に相談する",
+        "残したい中心模様と減らせる部分を区別する",
+        "道具を置いて下書きだけを修正すると伝える",
+        "省く飾りを選び消す線の確認を頼む",
+        "二本の修正を報告して加工前の再確認を求める"
+      ],
+      "closure": "残す模様と作業範囲が整理できました。道具の説明でまたお会いしましょう。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUJIKAWAGUCHIKO-07-001",
+      "title": "薬の飲み方の説明を自分の言葉で言い直す",
+      "sha256": "5eaa69f5601cc2236fc6df774e87c60d3f576e98e656f2170be2a278db63ae94",
+      "goals": [
+        "うなずいたが服薬説明を再現する自信がないと伝える",
+        "自分の理解を言い直し訂正を受ける方法を頼む",
+        "飲む時点から説明を再現して確認したいと答える",
+        "説明書と袋を対応させて質問すると伝える",
+        "理解確認と帰宅後の連絡方法を相談事項にまとめる"
+      ],
+      "closure": "ご希望は薬剤師へ引き継ぎます。確認してからお帰りください。それでは、失礼いたします。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUJIKAWAGUCHIKO-08-001",
+      "title": "途中で合流した人の注文を会計時に分ける",
+      "sha256": "fef581db84601c29a34dbbf30189479b4e3816153a4b5610262124bc5e4da3c5",
+      "goals": [
+        "遅れて合流した人の別注文が卓の会計に含まれるか聞く",
+        "本人に聞いた飲物の注文場所と数量を伝える",
+        "二重追加せず別記録の合計を確認したいと頼む",
+        "一括精算と仲間内の負担計算を分ける",
+        "最終明細に従い自己計算で一杯分を加えないと答える"
+      ],
+      "closure": "別の記録も含めた精算のご希望を承りました。ご来店ありがとうございました。それでは、失礼します。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-YMN-HOKUTO-001",
+      "title": "給水の観察を朝と今で分けて引き継ぐ",
+      "sha256": "3cdc62630e0ad0a97ccbc0002f8ee866bf032b02db51fe8d6154278b5cf675a6",
+      "goals": [
+        "朝の申し送りと現在の飲水観察の違いを報告する",
+        "過去の記録を残して自分の観察時刻を分ける",
+        "飲水量が未測定で十分な量とは判断できないと説明する",
+        "状態を断定せず気になる動きを報告すると答える",
+        "時間別の観察と未確認の量を次の担当へ引き継ぐ"
+      ],
+      "closure": "観察した範囲が分かる記録で助かる。担当へ渡しておく。では、次の交代で。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-HOKUTO-02-001",
+      "title": "設営前に雨を避ける場所で受付を終える",
+      "sha256": "082c49ab32f26ddaf2e024108d43a9a93b5048b7506894da92d6ddf507d8dc2d",
+      "goals": [
+        "荷物の濡れを避け受付と区画確認を先に頼む",
+        "代表だけが受付に来たと説明する",
+        "控えを示し区画未確定で荷物を置かないと伝える",
+        "車を動かす前に同行者と道順を聞きたいと頼む",
+        "共同確認後に必要な荷物から降ろすと決める"
+      ],
+      "closure": "屋根の下で受付を進め、区画案内をお待ちください。それでは、案内担当に代わります。失礼します。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-HOKUTO-03-001",
+      "title": "数日分の果物を一度に食べる分と分ける",
+      "sha256": "4a00c8c689aa70f1e23f6a38ef4ba17de0a46d53481cb44d13470ef8726a889c",
+      "goals": [
+        "今日と後日の果物の消費予定を分けて説明する",
+        "一人用の量と大袋を食べ切れるかの迷いを伝える",
+        "小分け品を選び保存表示を見せてもらう",
+        "後日の予定を見て買い足す方針を決める",
+        "選んだ一袋の価格を確かめて会計へ進む"
+      ],
+      "closure": "必要な量でお選びいただけましたね。それでは、お買物をお楽しみください。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-HOKUTO-04-001",
+      "title": "予約パンの受取時刻を自分だけで早めない",
+      "sha256": "8dc02c347990c7d8a31b63781daeeb2ae6f491fbca6dc95a8b0823fda8d9faf6",
+      "goals": [
+        "予約品を予定より早く取りに来たと伝える",
+        "未準備の案内を理解し元の受取時刻を維持する",
+        "店頭の一個を予約数量の減少と分けて希望する",
+        "追加の一個を選び予約の控えを持って戻ると答える",
+        "追加購入のレシートと予約受取の控えを区別する"
+      ],
+      "closure": "予約の時刻と数量はそのまま承りました。それでは、予定のお時間にお待ちしています。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-HOKUTO-05-001",
+      "title": "会議室の下見を利用開始と区別する",
+      "sha256": "92cc08b886ad371ca43bcc3a5e171da497bf782203927ef6976c4b8a8b5d3e0f",
+      "goals": [
+        "利用予約ではなく配置を確かめる下見を希望する",
+        "予定人数と参加者に来場を依頼していないことを伝える",
+        "備品を動かさず図上で六人の配置を考える",
+        "下見後に受付へ戻り判断を持ち帰れるか聞く",
+        "仲間との相談後に利用日を申し込むと決める"
+      ],
+      "closure": "下見と予約を分けて進めてください。それでは、お部屋の確認へいってらっしゃい。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-HOKUTO-06-001",
+      "title": "実習で変えた味付けをレシピと別に記録する",
+      "sha256": "edd4300f159c99187aafc73e76129fa6d5e4e08449e2a24d9fd6e0ce403064b9",
+      "goals": [
+        "途中調整で配布レシピ通りの使用量ではないと報告する",
+        "酸味の好みによる減量と未測定を説明する",
+        "不明な量を作らず変更内容を記録する",
+        "味の感想を変更量や他人の好みと区別する",
+        "次回の測定記録と元レシピとの比較を決める"
+      ],
+      "closure": "使用量と感想を分けた振り返りですね。では、次の実習でまたお会いしましょう。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-HOKUTO-07-001",
+      "title": "ポイントの案内と今日の支払額を分ける",
+      "sha256": "957b9dd5e3e5d6b1ef24143fb2eea79cd9ae872e9d996e132c8c83f68f1a51bd",
+      "goals": [
+        "ポイント表示が当日の値引きか確認する",
+        "後日付与と値札の支払額の違いを理解して説明する",
+        "今日の予算で小容量の商品を比較したいと頼む",
+        "予算と必要量に合う小容量一つを選ぶ",
+        "一品だけの精算額と後日のポイント記録を分ける"
+      ],
+      "closure": "今日の費用で選べましたね。それでは、レジへどうぞ。お買物ありがとうございました。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-HOKUTO-08-001",
+      "title": "予約日と支払日が違う控えを説明する",
+      "sha256": "1f7737307f3816c5aa99eab4c6a016c40a3aaff9978a3c9b62d4553c8c8eb88f",
+      "goals": [
+        "予約と支払で年が異なる資料の日付を相談する",
+        "予約年と翌年の支払を区別し記入の誤りを説明する",
+        "控えと予約紙からそれぞれの日付を確かめる",
+        "費用の内容も伝え税の扱いを自己判断しないと答える",
+        "二行の事実メモを用意して対象年の確認を頼む"
+      ],
+      "closure": "日付の事実を分けた資料でおつなぎします。ご相談ありがとうございました。それでは、失礼します。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-YMN-FUEFUKI-001",
+      "title": "見学者の質問を収穫作業中の人へ集中させない",
+      "sha256": "408a6df439cf31ee25313ecbd2bd1033b20c54127ed56eda10c26d043094b66f",
+      "goals": [
+        "作業中の見学依頼で持ち場を離れてよいか相談する",
+        "園の全職員が案内担当ではないと理解して取次ぎを選ぶ",
+        "見学者の待機場所と作業列へ入れない対応を説明する",
+        "取次ぎの連絡と持ち場に残したかごを報告する",
+        "収穫記録を確かめて作業を再開すると伝える"
+      ],
+      "closure": "見学の対応はこちらで引き継ぐ。持ち場の確認を頼む。では、後ほど。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUEFUKI-02-001",
+      "title": "迎えが早まり湯上がりの休憩を切り上げる",
+      "sha256": "0e14972d303d1a47847849e58ab10d67bc197a4a9ea46893d5e3ebf7e440c0f9",
+      "goals": [
+        "迎えの前倒しで休憩から退館準備へ変更すると伝える",
+        "館内着を私物と区別して返却を確認する",
+        "ロッカーの私物回収と貸出袋の返却要否を聞く",
+        "袋の中身を移し二つの貸出品を返す",
+        "迎えの待機場所と確認後の連絡を伝える"
+      ],
+      "closure": "貸出品の返却を確認できました。お忘れ物に気をつけて。それでは、またお越しください。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUEFUKI-03-001",
+      "title": "洗浄中の音で連絡を聞き取れなかった",
+      "sha256": "2f314bf450a905c4564443899e45ccad2fc67b012fa910f87769efd0618b9177",
+      "goals": [
+        "騒音で連絡の末尾しか聞取れなかったと申告する",
+        "未操作で終了連絡か後続指示かを確認したいと伝える",
+        "報告を求める連絡として理解を復唱する",
+        "担当者の確認前に静音だけで完了と判断しないと答える",
+        "確認者と時刻を残して報告し後続操作を待つ"
+      ],
+      "closure": "連絡の意味を照合できた。操作と報告を分けて頼む。では、また後で。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUEFUKI-04-001",
+      "title": "案内資料を受け取るだけで申込みはしない",
+      "sha256": "5a1bbebe010e3325b8c120f8fd3ddc5cda2925f53c202e753a92fe741fe0fdc6",
+      "goals": [
+        "記帳とは別の商品説明が当日の必須手続きか確認する",
+        "新規申込みをせず読む資料だけを希望する",
+        "費用と途中終了の条件を後で質問したいと伝える",
+        "理解前の署名をせず質問をメモして自主的に相談する",
+        "資料持帰りと現在の記帳を新商品の申込から分ける"
+      ],
+      "closure": "記帳の用件と資料のお渡しのみで承りました。それでは、取引担当へおつなぎします。失礼いたします。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUEFUKI-05-001",
+      "title": "撮影場所を探す人と観覧する人の合流",
+      "sha256": "cfc03ffabc1f412cd443b5615c4f167708ce5f4603b6941462fe62c4fe59e499",
+      "goals": [
+        "撮影と座って観る同行者で場所の希望が違うと説明する",
+        "通路から移り同行者に撮影への同行を求めないと伝える",
+        "終了後の合流を相談し途中の逆行を避ける",
+        "地図で共通の合流先を決め立入区域も確認する",
+        "撮影場所の案内確認と同行者への連絡を先に行う"
+      ],
+      "closure": "お二人の予定を相談してからお楽しみください。通路のご協力ありがとうございます。それでは、失礼します。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUEFUKI-06-001",
+      "title": "上映後の感想会に参加せず帰る意思を伝える",
+      "sha256": "32b42e897bb6e35f93c924319287abc5b0a33764b2bbcd007d7b0b1512e719b4",
+      "goals": [
+        "上映後の会への全員参加が必要か帰宅予定と合わせて聞く",
+        "任意参加でも映画本編を最後まで観られると確認する",
+        "自分は不参加で同行者と別に帰ると決める",
+        "ロビーで待たず先に帰る意思を同行者へ確認済みと伝える",
+        "自分の荷物と本編終了予定を確認して帰りを連絡する"
+      ],
+      "closure": "上映と感想会の予定を分けられましたね。それでは、映画をお楽しみください。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUEFUKI-07-001",
+      "title": "声を張らずメモでお守りの希望を伝える",
+      "sha256": "f5009f7b320083766f58576bce7fff10926b9f490283796abcb1fd6ad6cb0257",
+      "goals": [
+        "声を張れないため短いメモで希望を伝えたいと頼む",
+        "種類と色を別行に書いて示す",
+        "復唱された種類と色を確認して必要なら指示し直す",
+        "不足した数量を一つと伝えメモにも加える",
+        "渡される物とメモを照合し自分でメモを回収する"
+      ],
+      "closure": "種類、色、数量を確認できました。それでは、穏やかなご参拝を。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUEFUKI-08-001",
+      "title": "家の呼出し音に気づかなかった受取り相談",
+      "sha256": "5832dc379465a889401eef32fa87bb5555127d2dec4cc7cd3921f7946d06c9e9",
+      "goals": [
+        "在宅でも呼出しに気づかず不在票が入ったと相談する",
+        "家族の未確認の在宅予定を受取り相談として説明する",
+        "再配達希望を出す前に家族へ予定を確認する",
+        "荷物の受取り条件を家族の在宅と別に確かめる",
+        "予定確認後の申込みと在宅時の事実説明を決める"
+      ],
+      "closure": "配達状況と次の受取りを分けて確認してください。ご相談ありがとうございました。それでは、失礼します。",
+      "decision": "Individual Japanese causal/location drafting reviewed; prefecture-wide semantic QA pending."
+    }
+  ],
+  "pendingGroups": [
+    "Rewrite remaining80 across Otsuki, Fujiyoshida, Tsuru, Yamanashi, Nirasaki, Minami-Alps, Kai, Uenohara, Koshu, Chuo.",
+    "Read and adjudicate whole112 for causal recipe reuse, location/role, closure and cross-prefecture risk."
+  ],
+  "finalDecision": {
+    "reviewer": "AI",
+    "contentPass": false,
+    "canonicalCount": 112,
+    "reviewedScenarioCount": 32,
+    "openEditorialBlockers": 80,
+    "scenarioSha256": {
+      "SC-019-001": "4bd7403dfeea471eed81dcdadfcae9fe14622e58289018dad0febf7f618631ee",
+      "SC-LOC-019-02-001": "96b664d5fa70080bff5d1bc051eb8615dd24e54613afa2497aa61e20c0225010",
+      "SC-LOC-019-03-001": "3b58c86187f43da15688d70caa29cb04c66a16968f8fa92e9dd969315ac7b235",
+      "SC-LOC-019-04-001": "3df5c274bb1dec21bc143defa243f57f09c598335183a728f78762b3a3d52c37",
+      "SC-LOC-019-05-001": "9eebcab38f2868f0056699189eeef049a781c62f52af890f429f38e002890a25",
+      "SC-LOC-019-06-001": "e349c60bd6d4331b2845a1c3ebcaac4a7a34bf014c1415f8cc36a5b44fd93aeb",
+      "SC-LOC-019-07-001": "44298ef92657a2c7749f2817532298e04582a4dbd83ee25f6d34b83aa81bf671",
+      "SC-LOC-019-08-001": "2f735635ec61d3bba0877f6da2a9d481a0302210a8d265441202b4c568f2e19b",
+      "SC-YMN-FUJIKAWAGUCHIKO-001": "bd80b973949681d59c57a6be48790b44e757b83da0b8278bc4d6cba345a7dd0b",
+      "SC-LOC-YMN-FUJIKAWAGUCHIKO-02-001": "a057ff62b29038af514ed3d08b11feac19deeccd9114a640cd053f0f5161002b",
+      "SC-LOC-YMN-FUJIKAWAGUCHIKO-03-001": "86664e698b4ef4f630533f637a92d605acdad3f7a641d9ffe43af3c60456e619",
+      "SC-LOC-YMN-FUJIKAWAGUCHIKO-04-001": "da45f80bd0ca62b976516763496b36f78b145840a071911488e381d9178ed08e",
+      "SC-LOC-YMN-FUJIKAWAGUCHIKO-05-001": "74cc07254a4af43d01fcca8e3e2ea2b3ea19bf9f977f072f978c42891aabe3db",
+      "SC-LOC-YMN-FUJIKAWAGUCHIKO-06-001": "d2ab1ae3af93ab0838224f385bdef0fe3308ef07dda33e75ceecf134531b7fd0",
+      "SC-LOC-YMN-FUJIKAWAGUCHIKO-07-001": "5eaa69f5601cc2236fc6df774e87c60d3f576e98e656f2170be2a278db63ae94",
+      "SC-LOC-YMN-FUJIKAWAGUCHIKO-08-001": "fef581db84601c29a34dbbf30189479b4e3816153a4b5610262124bc5e4da3c5",
+      "SC-YMN-HOKUTO-001": "3cdc62630e0ad0a97ccbc0002f8ee866bf032b02db51fe8d6154278b5cf675a6",
+      "SC-LOC-YMN-HOKUTO-02-001": "082c49ab32f26ddaf2e024108d43a9a93b5048b7506894da92d6ddf507d8dc2d",
+      "SC-LOC-YMN-HOKUTO-03-001": "4a00c8c689aa70f1e23f6a38ef4ba17de0a46d53481cb44d13470ef8726a889c",
+      "SC-LOC-YMN-HOKUTO-04-001": "8dc02c347990c7d8a31b63781daeeb2ae6f491fbca6dc95a8b0823fda8d9faf6",
+      "SC-LOC-YMN-HOKUTO-05-001": "92cc08b886ad371ca43bcc3a5e171da497bf782203927ef6976c4b8a8b5d3e0f",
+      "SC-LOC-YMN-HOKUTO-06-001": "edd4300f159c99187aafc73e76129fa6d5e4e08449e2a24d9fd6e0ce403064b9",
+      "SC-LOC-YMN-HOKUTO-07-001": "957b9dd5e3e5d6b1ef24143fb2eea79cd9ae872e9d996e132c8c83f68f1a51bd",
+      "SC-LOC-YMN-HOKUTO-08-001": "1f7737307f3816c5aa99eab4c6a016c40a3aaff9978a3c9b62d4553c8c8eb88f",
+      "SC-YMN-FUEFUKI-001": "408a6df439cf31ee25313ecbd2bd1033b20c54127ed56eda10c26d043094b66f",
+      "SC-LOC-YMN-FUEFUKI-02-001": "0e14972d303d1a47847849e58ab10d67bc197a4a9ea46893d5e3ebf7e440c0f9",
+      "SC-LOC-YMN-FUEFUKI-03-001": "2f314bf450a905c4564443899e45ccad2fc67b012fa910f87769efd0618b9177",
+      "SC-LOC-YMN-FUEFUKI-04-001": "5a1bbebe010e3325b8c120f8fd3ddc5cda2925f53c202e753a92fe741fe0fdc6",
+      "SC-LOC-YMN-FUEFUKI-05-001": "cfc03ffabc1f412cd443b5615c4f167708ce5f4603b6941462fe62c4fe59e499",
+      "SC-LOC-YMN-FUEFUKI-06-001": "32b42e897bb6e35f93c924319287abc5b0a33764b2bbcd007d7b0b1512e719b4",
+      "SC-LOC-YMN-FUEFUKI-07-001": "f5009f7b320083766f58576bce7fff10926b9f490283796abcb1fd6ad6cb0257",
+      "SC-LOC-YMN-FUEFUKI-08-001": "5832dc379465a889401eef32fa87bb5555127d2dec4cc7cd3921f7946d06c9e9"
+    }
+  },
+  "scope": "No full-prefecture, human/native, device, geography, real-policy or rights certification; no translations added.",
+  "thematicReview": "Title search supplements lexical retrieval; full selected comparisons recorded, not exhaustive semantic uniqueness across all7128."
+}

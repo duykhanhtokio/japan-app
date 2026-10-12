@@ -453,3 +453,7 @@ Current source/runtime/canonical parity and original ID/order/next-link preserva
 ## Fukui closure corrections — 2026-10-12
 
 Rechecked 85 final NPC turns and read all eleven existing turns of the 53 affected exchanges. Corrected 53 final utterances to close the current consultation with a contextual farewell, without restarting questions or pretending a pending service has completed. Preserved 425 Player turns and goals, earlier NPC text, IDs, order, next links, canonical fields, UI and translation state. Fukui source/runtime/hash parity and duplicate screening pass; full runtime validation reports 7128 scenarios and zero errors. This is a targeted AI closure follow-up, not fresh whole-corpus semantic or native review. Evidence: content-qa/PRF-018_CLOSURE_FOLLOWUP_2026-10-12.json. PRF-019 remains the next prefecture after durable verification.
+
+## Yamanashi first four cities — 2026-10-12
+
+32/112 individual Japanese rewrites integrated: Kofu, Fujikawaguchiko, Hokuto, Fuefuki;352turns and160speaking goals. Five integrated whole-plot replacements and an additional pre-integration amulet rejection remove selected prior-source/same-batch development reuse. Canonical/source/runtime identity and task parity checked. No new exact Player or NPC utterance collisions across current runtime.80old drafts remain; NOT CONTENT PASS. Full comparison scope and current hashes: content-qa/PRF-019_SEMANTIC_REVIEW.json. Next Otsuki SC-YMN-OTSUKI-001 after checkpoint persistence. No translations or next prefecture.
