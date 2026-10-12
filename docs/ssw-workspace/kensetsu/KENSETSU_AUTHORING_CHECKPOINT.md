@@ -511,3 +511,22 @@ Structural checks203sessions/2356uniqueparagraphs,28new prompts distinctfromprio
 Actualreader webadapter test passedall203sessions/2356paragraphs/reflections; end-scroll/manualcompletion, newday197 plusold1 reloadpersistence, learner/level/fieldisolation, Japanesefontloading, zerobrowsererrors. Final430×932/768×1024/932×430 captures visuallyinspected, nohorizontaloverflow observed. Expo-image/AsyncStorage adapted towebImage/localStorage; missingexpo/tsconfig.basewarning, no native iOS/Android build/device pass. Reportweek-029-runtime-report.json. Runtime approval isnotcontent/human/releaseapproval.
 
 Next after remote persistence: source5PDF17SGP/PVCmaterial families thenPDF18/19. Reread fullpages includingductile next-pagecontinuation beforeauthoring. Retainallold/newgaps; nofinalweeklimit.
+
+
+## Week030 Japanese materials and evidence batch — 2026-10-12
+
+Baseline remote-verified 3f9f6cf8295da7edd0e3a160c2d3bc01158cce0b. Added sessions204–210: 7sessions,28clusters,56new Japanese paragraphs,28ungraded reflections,42contextual readings. Total210sessions/2412paragraphs/30provisionalweeks across six independent level/field routes; common introductory literacy, not advanced2号 competency. Prior203session files and816coverage rows unchanged; old IDs/revisions/progress/UI/JLPT/Kaigo preserved. No exam, new illustrations or translations. Thirty-minute targets unmeasured.
+
+Source5 hash c53d189f90cc8129fd69eb803c6b98e08e2342a8edb84c354c40388af3a16063. PDF17–19 full text and visuals read; taught17SGP/PVC tail,18material/fitting/gas/legacy-asbestos concepts,19ductile continuation/refrigerant copper/pump/flange/sleeve before5.1.5. HVAC19 and20 text preview not taught;20 not visually reviewed. Source PDF/images stay outside repository and bundle. Source6–7/remaining5 unauthored.
+
+Full-body primary AI comparisons: NipponSteel SGP/VLP; KubotaChemix PVC/HI/HT; WSP lining; Kubota ductile; JCDA refrigeration copper; Grundfos flow/head; NKT fittings/flange; OSG gauge; Inaba sleeve; Koyo gas valves; GKK alarm/shutoff; MHLW and Environment Ministry asbestos survey/evidence concepts. NipponSteel and legacy MHLW web parse failed, full HTML retrieved via urllib. Sekisui direct pages unavailable, not represented as full-body reads. MHLW legacy page historical; full current legal framework, qualifications, duties and operating conditions remain specialist gaps. Primary scope/access limitations in week030 evidence; no inferred approval or numeric operation.
+
+Original examples contrast nickname/fluid/coating/specification, same-diameter thickness, impact versus heat, steel body versus inner layer, registered name versus class, graphite versus pipe shape, flow versus head, fitting versus gauge versus penetration, alarm versus shutoff, and legacy survey record versus actual target. No source operation recipe or photo arrangement rewrite. No cutting, sampling, gas opening/reset, drilling, tightening, pressure test or disposal procedure. Legacy asbestos cost/workability claims not taught as current benefits; old1955 ductile historical assertion deferred.
+
+Structure and preservation checks PASS:2412unique paragraphs,28new reflections distinct from prior203,42terms used,210canonical imports/6routes/30weeks. NFKC22-character contiguous source screen no matches; mechanical only, no semantic/rights clearance.47audit rows:28explanation mappings plus19gap categories. All old gap records retained,733known unresolved under existing register convention; denominator unknown, no completion percentage. Domain/native/rights/semantic, illustrations/translations, timing and native devices remain pending; releaseReady=false.
+
+Actual reader web-adapter test PASS all210sessions/2412paragraphs/reflections, end-scroll/manual completion, newday204 andold1 reloadpersistence, field/level/learner isolation, Japanese font andzero browser errors. Three430×932/768×1024/932×430 captures visually inspected; no horizontal overflow. Expo-image/AsyncStorage adapted towebImage/localStorage; missingexpo/tsconfig.basewarning, no native build/device pass. week-030-runtime-report.json records scope.
+
+Next after WORK PERSISTENCE PASS: source5PDF19 HVAC5.1.5 onward and20 full text/visual review for week031. Retain all unresolved gaps; no fixed course-end week.
+
+Before persistence, remote advanced to723d4d1 with unrelated dialogue/prefecture changes. Fast-forward retained those updates; no overlap with week030 paths. JLPT UI lock PASS10/10 andregistries after materializing unchanged HEAD files for sparse-checkout validation.
