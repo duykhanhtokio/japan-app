@@ -1,0 +1,152 @@
+{
+  "id": "kensetsu-common-session-198",
+  "weekId": "kensetsu-common-week-029",
+  "titleJa": "光パワー測定とOTDRの確認対象",
+  "revision": 1,
+  "contentRevision": 1,
+  "status": "editorial_draft",
+  "estimatedMinutes": null,
+  "durationMeasured": false,
+  "appIntegrationReady": false,
+  "applicableLevels": [
+    "1",
+    "2"
+  ],
+  "applicableFields": [
+    "utilities",
+    "building",
+    "civil"
+  ],
+  "sourceReferences": [
+    {
+      "sourceId": "kensetsu-src-05",
+      "pdfPages": [
+        16
+      ],
+      "printedPages": [
+        111
+      ],
+      "section": "5.1.3"
+    }
+  ],
+  "officialReferences": [
+    "https://tm-jp.anritsu.com/gp-opt.html",
+    "https://www.anritsu.com/ja-jp/test-measurement/optical/otdrs"
+  ],
+  "verificationDate": "2026-10-12",
+  "verificationStatus": "Scoped primary AI function/role comparison; no operational/legal/safety or human approval",
+  "translationStatus": "deferred",
+  "illustrationStatus": "deferred",
+  "dailyMinutesTarget": 30,
+  "timingStatus": "unmeasured; provisional editorial grouping",
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "similarityReviewed": false,
+    "runtimeVerified": true
+  },
+  "scopeRationale": "Shared introductory component literacy in six independent development routes; not advanced2号 competency",
+  "keyTerms": [
+    {
+      "term": "光パワーメーター",
+      "reading": "ひかりぱわーめーたー"
+    },
+    {
+      "term": "光パルス試験器",
+      "reading": "ひかりぱるすしけんき"
+    },
+    {
+      "term": "OTDR",
+      "reading": "おーてぃーでぃーあーる"
+    },
+    {
+      "term": "反射",
+      "reading": "はんしゃ"
+    },
+    {
+      "term": "損失",
+      "reading": "そんしつ"
+    },
+    {
+      "term": "線路長",
+      "reading": "せんろちょう"
+    }
+  ],
+  "clusters": [
+    {
+      "id": "kensetsu-common-session-198-cluster-1",
+      "titleJa": "光パワーを知る",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-198-cluster-1-p1",
+          "ja": "光パワーメーターは、光のパワーを測るための測定器です。測定した箇所の光のパワーと、線路のどの位置に変化があるかという情報は異なります。測定器の名前と知りたい量を対応させます。"
+        },
+        {
+          "id": "kensetsu-common-session-198-cluster-1-p2",
+          "ja": "説明用の資料で「受光側の光パワー」と「接続点の位置」が別欄なら、パワーの記録を位置の記録として転記しません。数値だけでなく、どの箇所を対象にした測定かも読み取ります。"
+        }
+      ],
+      "applicationPromptJa": "光パワーの値だけから、接続点の位置が分かったとは言えない理由は何ですか。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-198-cluster-2",
+      "titleJa": "距離に沿った状態を調べる",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-198-cluster-2-p1",
+          "ja": "光パルス試験器はOTDRとも呼ばれます。英語表記はOptical Time Domain Reflectometerです。光ファイバの線路長や、距離に対応した損失・反射などを評価するための測定器です。"
+        },
+        {
+          "id": "kensetsu-common-session-198-cluster-2-p2",
+          "ja": "光のパワーを知る目的と、線路に沿った変化の位置を調べる目的を分けると、記録の読み方も変わります。OTDRの名称だけで、すべての線路・距離・接続を同じ条件で測れるとは考えません。"
+        }
+      ],
+      "applicationPromptJa": "パワーの確認と、距離に沿う変化の確認では、知りたい情報がどう違いますか。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-198-cluster-3",
+      "titleJa": "反射と損失を区別する",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-198-cluster-3-p1",
+          "ja": "損失は伝送される光が減ることに関わり、反射は接続部などで戻る光に関わります。OTDRではこれらの情報から線路の状態を評価します。反射があるという言葉だけで、直ちにすべてを異常と決めません。"
+        },
+        {
+          "id": "kensetsu-common-session-198-cluster-3-p2",
+          "ja": "架空の結果一覧で反射の記載があっても、該当位置、接続の種類、条件や判定の記録を別に読みます。本講では波形の判定基準や合格値を定めず、結果の種類を取り違えないことを学びます。"
+        }
+      ],
+      "applicationPromptJa": "反射という項目と、異常と判定された結果を分けて読むには何が必要ですか。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-198-cluster-4",
+      "titleJa": "測定の記録と確認範囲",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-198-cluster-4-p1",
+          "ja": "線路長、損失、反射、光パワーは、それぞれ確認している情報が違います。一台の装置に複数の機能があっても、機能名と実施した測定を対応させる必要があります。"
+        },
+        {
+          "id": "kensetsu-common-session-198-cluster-4-p2",
+          "ja": "報告の例は「光パワーの記録は受領済み。距離に対応した線路の記録と、判定はまだ確認していません」です。測定器を所有していることや接続したことを、測定完了の証拠にはしません。"
+        }
+      ],
+      "applicationPromptJa": "複数機能の装置を用意しただけの状態と、各測定が終わった状態をどう分けて伝えますか。",
+      "graded": false
+    }
+  ],
+  "runtimeVerificationScope": {
+    "status": "PASS_WEB_ADAPTED_COMPONENT_TEST",
+    "report": "week-029-runtime-report.json",
+    "nativeDeviceTested": false,
+    "contentApproved": false
+  }
+}

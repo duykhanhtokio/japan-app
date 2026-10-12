@@ -1,0 +1,154 @@
+{
+  "id": "kensetsu-common-session-199",
+  "weekId": "kensetsu-common-week-029",
+  "titleJa": "LANの中継機器と配線テスター",
+  "revision": 1,
+  "contentRevision": 1,
+  "status": "editorial_draft",
+  "estimatedMinutes": null,
+  "durationMeasured": false,
+  "appIntegrationReady": false,
+  "applicableLevels": [
+    "1",
+    "2"
+  ],
+  "applicableFields": [
+    "utilities",
+    "building",
+    "civil"
+  ],
+  "sourceReferences": [
+    {
+      "sourceId": "kensetsu-src-05",
+      "pdfPages": [
+        16
+      ],
+      "printedPages": [
+        111
+      ],
+      "section": "5.1.3"
+    }
+  ],
+  "officialReferences": [
+    "https://www.cisco.com/site/us/en/learn/topics/small-business/network-switch-vs-router.html",
+    "https://www.cisco.com/c/en/us/support/docs/switches/catalyst-6000-series-switches/23563-143.html",
+    "https://jp.flukenetworks.com/knowledge-base/cableiq/verification-qualification-and-certification",
+    "https://www.jefcom.co.jp/lineup/sub_category096/item_LCT-2U"
+  ],
+  "verificationDate": "2026-10-12",
+  "verificationStatus": "Scoped primary AI function/role comparison; no operational/legal/safety or human approval",
+  "translationStatus": "deferred",
+  "illustrationStatus": "deferred",
+  "dailyMinutesTarget": 30,
+  "timingStatus": "unmeasured; provisional editorial grouping",
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "similarityReviewed": false,
+    "runtimeVerified": true
+  },
+  "scopeRationale": "Shared introductory component literacy in six independent development routes; not advanced2号 competency",
+  "keyTerms": [
+    {
+      "term": "ハブ",
+      "reading": "はぶ"
+    },
+    {
+      "term": "スイッチングハブ",
+      "reading": "すいっちんぐはぶ"
+    },
+    {
+      "term": "ルータ",
+      "reading": "るーた"
+    },
+    {
+      "term": "LANテスター",
+      "reading": "らんてすたー"
+    },
+    {
+      "term": "導通",
+      "reading": "どうつう"
+    },
+    {
+      "term": "断線",
+      "reading": "だんせん"
+    }
+  ],
+  "clusters": [
+    {
+      "id": "kensetsu-common-session-199-cluster-1",
+      "titleJa": "ハブとスイッチの中継",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-199-cluster-1-p1",
+          "ja": "ハブはLANの機器をまとめて接続する装置です。従来のリピータハブは受けた信号を他のポートへ中継します。スイッチングハブは、宛先のMACアドレスなどに基づき転送先を選ぶ装置として理解します。"
+        },
+        {
+          "id": "kensetsu-common-session-199-cluster-1-p2",
+          "ja": "ただしスイッチが必ず一つの相手だけに送るとは限りません。宛先が未学習の場合などは同じVLAN内へ広く転送することがあります。機器の違いを、すべての通信が常に同じ動きという説明にしません。"
+        }
+      ],
+      "applicationPromptJa": "スイッチの説明を「必ず一つの相手にだけ送る」と言い切れないのはなぜですか。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-199-cluster-2",
+      "titleJa": "ネットワーク間を結ぶ",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-199-cluster-2-p1",
+          "ja": "ルータは、異なるネットワーク間でデータを転送する役割を担います。機器を同じLANへつなぐ役割と、ネットワーク同士をつなぐ役割を分けると、配線図の関係が読みやすくなります。"
+        },
+        {
+          "id": "kensetsu-common-session-199-cluster-2-p2",
+          "ja": "架空の小規模事務所で、端末をまとめる機器と別のネットワークへつながる機器が描かれていたら、両者の役割を記します。外観やポート数だけで、ルータとスイッチの機能を決めません。"
+        }
+      ],
+      "applicationPromptJa": "端末をまとめる役割とネットワーク間を結ぶ役割を、図面の説明として書き分けてください。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-199-cluster-3",
+      "titleJa": "配線のつながりを確認する",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-199-cluster-3-p1",
+          "ja": "LANテスターには、導線の対応や断線などを調べるものがあります。八本の導線の対応を確認する例では、どの端子同士がつながっているかを読みます。ただしすべての通信方式や測定器の構成を八本に限定しません。"
+        },
+        {
+          "id": "kensetsu-common-session-199-cluster-3-p2",
+          "ja": "同軸ケーブルチェッカーも、対象の導通を確認するための用具として区別します。確認できる種類や接続部は機種によります。同軸の導通の記録を、LANの配線対応の記録と同じものとして扱いません。"
+        }
+      ],
+      "applicationPromptJa": "同軸の導通確認とLANの端子対応確認では、何を確認したかをどう記しますか。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-199-cluster-4",
+      "titleJa": "配線確認と性能評価",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-199-cluster-4-p1",
+          "ja": "導通や配線対応が正しいことと、必要な通信性能を満たすことは別の確認です。用途に対応する性能を評価する測定や、規格との照合を行う測定には、それぞれ確認対象があります。"
+        },
+        {
+          "id": "kensetsu-common-session-199-cluster-4-p2",
+          "ja": "架空の受入れ記録なら「配線対応の確認は済み。要求された性能の試験結果は未受領」と示せます。簡易テスターの表示だけから、カテゴリ適合や全機器の通信が確認できたとはしません。"
+        }
+      ],
+      "applicationPromptJa": "配線対応だけ確認済みのケーブルを、要求性能も確認済みと誤解させない報告にしてください。",
+      "graded": false
+    }
+  ],
+  "runtimeVerificationScope": {
+    "status": "PASS_WEB_ADAPTED_COMPONENT_TEST",
+    "report": "week-029-runtime-report.json",
+    "nativeDeviceTested": false,
+    "contentApproved": false
+  }
+}
