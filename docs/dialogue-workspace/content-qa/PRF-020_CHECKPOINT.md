@@ -27,3 +27,9 @@ Screening:33normalized duplicate groups,280near candidates among remaining draft
 37/173individual Japanese rewrites,407turns,185Player goals. Added8Karuizawa scripts;136old drafts remain. Two initial plots replaced in full after prior-corpus overlap;8selected full counterparts and4thematic full reads recorded in PRF-020_KARUIZAWA_REVIEW.json. One line naturalized. Six canonical location types aligned with current runtime roles, including hotel cleaning Hotel and postal counter Post Office. All173ID/role/order/nextlinks preserved,other165Nagano runtime files and7120othercanonical rows unchanged; Yamanashi master preserved. No new exact utterance collisions. Premises simulated, no native/human/device or real-policy certification.
 
 Actual repository category/actor alignment8/8PASS. Remaining-draft screening31normalized groups/270near candidates. Whole-prefecture CONTENT PASS pending. Resume SC-NGN-UEDA-001 after remote persistence. Japanese-only; translations deferred.
+
+## Ueda eight — 2026-10-12
+
+45/173individual Japanese rewrites,495turns,225Player goals. Added8Ueda scripts;128old drafts remain. Three initial plots rejected and replaced in full;8selected current full counterparts and4thematic full comparisons in PRF-020_UEDA_REVIEW.json. Two closures clarified. Five scenario types aligned with runtime roles, including Nature/Farmer, Onsen, Park and Pharmacy. All173ID/role/order/nextlinks preserved;other165Nagano runtime files and7120canonical rows unchanged;Yamanashi master preserved. No new exact utterance collisions. Actual repository actor/category alignment8/8PASS. Remaining drafts:29normalized duplicate groups/256near candidates. Whole-prefecture CONTENT PASS pending;no native/human/device or real-policy certification.
+
+Resume SC-NGN-SUWA-001 after remote persistence. Japanese-only;translations deferred.
