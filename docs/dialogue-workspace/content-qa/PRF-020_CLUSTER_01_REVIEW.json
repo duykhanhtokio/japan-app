@@ -1,0 +1,401 @@
+{
+  "prefectureId": "PRF-020",
+  "date": "2026-10-12",
+  "reviewer": "AI",
+  "scope": "Contiguous three-city Japanese authoring and selected comparison unit; not whole-prefecture semantic approval.",
+  "publisherBatchInstruction": "Work in complete multi-city clusters instead of a few dialogues per checkpoint; this batch completes all24 in Okaya/Iida/Suzaka.",
+  "baselineCommit": "ac95e8d918cdf62c070b3efbc8cedee5ccfee637",
+  "sourcePath": "scripts/dialogue-authoring/prf-020-cluster-01-okaya-iida-suzaka.json",
+  "sourceSha256": "82efd717217346eb2198d910879bc1332ead78353f4a7aff3f85e780b792eb0c",
+  "newScenarioCount": 24,
+  "newTurnCount": 264,
+  "newGoalCount": 120,
+  "individualRewriteCount": 77,
+  "remainingOldDrafts": 96,
+  "cityCoverage": {
+    "Okaya": {
+      "scenarioCount": 8,
+      "turnCount": 88,
+      "goalCount": 40
+    },
+    "Iida": {
+      "scenarioCount": 8,
+      "turnCount": 88,
+      "goalCount": 40
+    },
+    "Suzaka": {
+      "scenarioCount": 8,
+      "turnCount": 88,
+      "goalCount": 40
+    }
+  },
+  "allCurrentTurnsAndGoalsRead": true,
+  "contentPass": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "deviceVerified": false,
+  "lexicalPreviouslyRewrittenCorpusCount": 3299,
+  "retrievalScope": "Three-gram lexical selection; all24selected final full counterparts read, and4targeted thematic full reads. Final target/candidate hashes bind current versions. Old draft reads recorded separately for8rejections across7IDs. No exhaustive semantic uniqueness claim.",
+  "selectedFullComparisons": [
+    {
+      "scenarioId": "SC-LOC-JP-20204-01-001",
+      "candidateId": "SC-LOC-JP-04208-08-001",
+      "threeGramJaccard": 0.09457364341085271,
+      "decision": "Arrival at station versus arrival home in communication to waiting mother differs from stopped-clock missed meetup.",
+      "targetSha256": "c894b7dfd94c453f76e5c384bc1502164d199cfe6119091f02c503724d6beb68",
+      "candidateSha256": "b339db90993aefbc4b56f79cf84b5ba639294d1973a518c03d6ce4c993312dbd"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20204-02-001",
+      "candidateId": "SC-LOC-GNM-TAKASAKI-05-001",
+      "threeGramJaccard": 0.12187958883994127,
+      "decision": "Irregular shift attendance, next activity information and self-only participation differs from general briefing versus confidential individual-care consultation.",
+      "targetSha256": "a8d9f0d89aa1b12a43be5e9bd894176e4f65d3ebf192e07d646269d9521c0301",
+      "candidateSha256": "927a3bc27a0484e33976a33598b4fdc27c08ffb8e580edefe58170eda98cfd8e"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20204-03-001",
+      "candidateId": "SC-LOC-JP-19210-03-001",
+      "threeGramJaccard": 0.12220566318926974,
+      "decision": "Employer request for attendance information versus diagnostic detail differs from impaired-hand form dictation and reasons for blanks.",
+      "targetSha256": "13bc1f33c02c5ae0144f5c890289a36ffa7d0304292f0e539bc573a9a2211b6f",
+      "candidateSha256": "d854aa71f54c6ab6fc09417dfd8379d51c07000b6fa7880ebd31b829a657dd98"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20204-04-001",
+      "candidateId": "SC-LOC-TKY-ITABASHI-03-001",
+      "threeGramJaccard": 0.1234375,
+      "decision": "Unknown door knocking, fear of returning home and friend not sent to confront differs from dentistry symptom reporting.",
+      "targetSha256": "bd474f171b9e2997451ac07f72ceb70876e5b948c99f84d0825deee507cbac35",
+      "candidateSha256": "8581dc48018f3a21fd53ab3c4592b037968d803a90d764555dc63b7a69d84f40"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20204-05-001",
+      "candidateId": "SC-LOC-TKY-UENO-11-001",
+      "threeGramJaccard": 0.11525974025974026,
+      "decision": "Child wishes original art on wall, agrees to send copy; differs from officially required signed original versus accidentally copied legal form.",
+      "targetSha256": "a3d60765dc84d276950762741fc687f186f74ba477ff6d4cc1ad7d516c6aa9cb",
+      "candidateSha256": "fd050f17ce2ef2fe1c7eb54714e979de46cd640a31d2c3699f607065ab55b467"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20204-06-001",
+      "candidateId": "SC-LOC-JP-06205-03-001",
+      "threeGramJaccard": 0.1262135922330097,
+      "decision": "Gift currency total versus denomination and number, unresolved exchange availability differs from unsigned medical consent and marked question fields.",
+      "targetSha256": "28125adaec13d02abf085fa296d4e9de938b3d0174e26971f9a8715d58f77b3c",
+      "candidateSha256": "97aaad7d9d3452ff4cb6b31031ee727efde2e5abe73cfdfc8d8baaf84a2a1ed6"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20204-07-001",
+      "candidateId": "SC-LOC-006-14-001",
+      "threeGramJaccard": 0.11003236245954692,
+      "decision": "Phone visibly dropped below store display, no self-moving fixture, basket clear of passage and recovered-item verification differs from hotel borrowed charger return plus own charger search.",
+      "targetSha256": "adc221bec279647d8046631b4594aaca2018f2c3c9e107f18b7dd7cca8756de7",
+      "candidateSha256": "e90f65eae9b7662abf1307b35a266ea4d7ee7e27b62849e9d5c939e43e5fb5e3"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20204-08-001",
+      "candidateId": "SC-LOC-NGN-UEDA-02-001",
+      "threeGramJaccard": 0.11047345767575323,
+      "decision": "Bird not appearing, unknown voice observation and accepting quiet waiting differs from bath-photo prohibition and brochure-based family sharing.",
+      "targetSha256": "b4c240a731b2c20aed33d089e1d419387004099dfe4ed07a4cc99a1beb4b13dc",
+      "candidateSha256": "c99685054386f353ed0f79460daf5c4571893c73d819c76930cdb120d5b8894e"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20205-01-001",
+      "candidateId": "SC-LOC-JP-12216-01-001",
+      "threeGramJaccard": 0.11235955056179775,
+      "decision": "Cancelled intended train, flexible delivery timing and pending ticket handling differs from station stamp outside gate before imminent train.",
+      "targetSha256": "e2fbc11a48a70571fb7135704d16107759c01740ef46108f012c129eaa1f7f33",
+      "candidateSha256": "786ea5481b3c8da0e53119e322b50c50adf7d65c351243648dd083256e2897a6"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20205-02-001",
+      "candidateId": "SC-LOC-JP-07207-02-001",
+      "threeGramJaccard": 0.11221590909090909,
+      "decision": "Conversational fluency versus desired reading practice and anonymised learning examples differs from shop brand/operator names in contact-location enquiry.",
+      "targetSha256": "64ae4b8d5cd96d53eb9142c91f09f5098360d95fc6fb7686a511d110ce36baef",
+      "candidateSha256": "61c6b6f3ff8a0d973869711116fbd803984e2165a62f0bf9c85743d79be4e0e3"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20205-03-001",
+      "candidateId": "SC-LOC-JP-19212-03-001",
+      "threeGramJaccard": 0.1136,
+      "decision": "Appetite versus actual meal opportunity, hungry on workdays and uncertain meal log differs from writing every clinical explanation and missing its ending.",
+      "targetSha256": "a09dbff57862b68aeb978fdf7c83bb6ec17a00061df41d14668f02f1402fc74b",
+      "candidateSha256": "649c0778ad7934e16e7a2034ecd23cb876a05d137e33e4e7abec5c91b6f8c1d0"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20205-04-001",
+      "candidateId": "SC-LOC-NGN-SUWA-07-001",
+      "threeGramJaccard": 0.12947658402203857,
+      "decision": "Own loan memory versus friend gift claim, unset return date and no forcible recovery differs from unknown pension number versus participation records.",
+      "targetSha256": "588275dfa9a7a8241436ec760b5ae1598d9a18f09951780472cfd95bd5d5886c",
+      "candidateSha256": "3297a73a35274997f154dd3423a1d8536fd94ec7dea880bcec67e80350ea0540"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20205-05-001",
+      "candidateId": "SC-LOC-JP-11209-05-001",
+      "threeGramJaccard": 0.14695945945945946,
+      "decision": "Compressed volume mistaken for reduced mass/cost and not-yet-final wrapping differs from non-foldable A4 documents and backing-board weight.",
+      "targetSha256": "acc27392ee9209e7e47baa92159f5f78954fc3a1096b6ceed57f770ec33ddab8",
+      "candidateSha256": "0dee6f41a01d13a5eddec450a18a5315ab58f8e4435803386ae363d282adde6c"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20205-06-001",
+      "candidateId": "SC-NGN-SUWA-001",
+      "threeGramJaccard": 0.12874251497005987,
+      "decision": "Leaving job, pending salary and other account use checked before closure consultation differs from one privately booked bath versus facility closure.",
+      "targetSha256": "27202406e586265ce11392d7def990e258f241e450846ddaaf0184a83824fda5",
+      "candidateSha256": "359fa67e742fc93b10851ef301386a2b21fd72c42b24d314c9eb61c52ed771f3"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20205-07-001",
+      "candidateId": "SC-LOC-NGN-UEDA-04-001",
+      "threeGramJaccard": 0.12195121951219512,
+      "decision": "Declining tasting without allergy pretext or obligation to buy while asking product-size information differs from pressure to imitate udon slurping speed.",
+      "targetSha256": "f42dacbea580496c176b02a539f56b3aa3ccbd7907c41f418fad0c8a7361684c",
+      "candidateSha256": "eeded18f0f7956e1c1676c41bad7bbf546e718d72fba2aeead74f197f65c83b9"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20205-08-001",
+      "candidateId": "SC-LOC-NGN-UEDA-07-001",
+      "threeGramJaccard": 0.11657303370786516,
+      "decision": "Staff cannot grant dog-owner permission, owner refusal respected without persuasion differs from outer medicine bag for privacy with labels retained.",
+      "targetSha256": "e2a56596e79aa637d2bdbb5651e308afa729f9071f33ac509699ed9527a1c79b",
+      "candidateSha256": "c6bef97b053af5ec4532d4284345ce5ad621c925188d829eb62ea23c914863c2"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20207-01-001",
+      "candidateId": "SC-LOC-JP-19213-03-001",
+      "threeGramJaccard": 0.11214953271028037,
+      "decision": "One companion boarded, self remains with luggage, own ticket information held jointly by companion and no invented reunion order differs from silencing medicine reminder before clinical decision.",
+      "targetSha256": "231ceaacd58e1ef924323fff34fc34c01fe185f548fe8ddefa4bb2b192e9d765",
+      "candidateSha256": "ea38fb862c5f851faaf08eb2bc5be4b77376b994d0fc40006afd3976b000e70b"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20207-02-001",
+      "candidateId": "SC-LOC-019-06-001",
+      "threeGramJaccard": 0.10670731707317073,
+      "decision": "Rating polarity 1satisfied/4dissatisfied corrected plus separate waiting-time feedback differs from optional hospital survey versus receipt/exit requirement.",
+      "targetSha256": "727f4db7c0bf13ed5ce58e523d7c23596d9a6472535a26e520f8f25ba7d1ac0c",
+      "candidateSha256": "6dcf4102d9d784dad300e7b310493bb75311b5e71bf1ea043907192cf34a2834"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20207-03-001",
+      "candidateId": "SC-LOC-TKY-ITABASHI-03-001",
+      "threeGramJaccard": 0.1273006134969325,
+      "decision": "Reserved vaccination versus newly developed cough not concealed to preserve plan, current screening answers updated and clinician decision deferred differs from dental symptom absence at rest.",
+      "targetSha256": "08bdf61f72c805539985a3c7fa2f4707c2b7427c3387058d198af3a2635908f9",
+      "candidateSha256": "8581dc48018f3a21fd53ab3c4592b037968d803a90d764555dc63b7a69d84f40"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20207-04-001",
+      "candidateId": "SC-LOC-JP-19205-02-001",
+      "threeGramJaccard": 0.12084592145015106,
+      "decision": "Police lost-property consultation described accurately in employer delay message versus inflated interrogation term, no employer acceptance guarantee; differs from public-office enquiry contact versus private staff mobile.",
+      "targetSha256": "97d1f23d6cd724027ea7c15bf1e049fbe0a4d74d720758efb75e5355ecf2784c",
+      "candidateSha256": "bda0cea7398b231e8be99e03abd2fee76699252e5e473e7dd2b72fb9a10135fd"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20207-05-001",
+      "candidateId": "SC-LOC-JP-12234-02-001",
+      "threeGramJaccard": 0.10790273556231003,
+      "decision": "Live plant gift, receiver away, recipient preference after travel and item-method conditions checked differs from civic personal consultation versus publicity consent.",
+      "targetSha256": "da13da884ab1a697bf17db8f2fd887c18ba7068b90f0f0d4fd946e07e4412524",
+      "candidateSha256": "a36ce662d097771fa4d311507d7a03f43371873056d64a0be88a97df3a5005af"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20207-06-001",
+      "candidateId": "SC-LOC-JP-12234-02-001",
+      "threeGramJaccard": 0.12965964343598055,
+      "decision": "Calendar-month contribution versus four-week interval, amount undecided and consultation not contract differs from civic publicity inclusion consent.",
+      "targetSha256": "2115f55e4f7622bf104a9b170b7a3a21d4f6be850b9778349ef339fdffca401c",
+      "candidateSha256": "a36ce662d097771fa4d311507d7a03f43371873056d64a0be88a97df3a5005af"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20207-07-001",
+      "candidateId": "SC-LOC-JP-05214-07-001",
+      "threeGramJaccard": 0.12084063047285463,
+      "decision": "Cash handed2000, purchase1680, change320 and expense record corrected differs from points mistaken for cash change and separate programme enquiry.",
+      "targetSha256": "5a26f294d26997f6f21811c9e8e113fc9e0dbcc1edb9f44b78b30cc3aa236a2e",
+      "candidateSha256": "dd2bd6a4a76e9f5e431d1fe6574f4664adc05bc939f5dd6f57f1a9c0b13dca6d"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20207-08-001",
+      "candidateId": "SC-LOC-NGN-SUWA-07-001",
+      "threeGramJaccard": 0.12092391304347826,
+      "decision": "Community reading-meet poster versus venue use, unresolved location not advertised as approved and other park users respected differs from unknown pension number versus enrolment status.",
+      "targetSha256": "ea8d45223a811bdf9e663333b63bfa444d12261b54172b5f543b2791ac7804c6",
+      "candidateSha256": "3297a73a35274997f154dd3423a1d8536fd94ec7dea880bcec67e80350ea0540"
+    }
+  ],
+  "selectedDistinctCandidateCount": 21,
+  "additionalThematicFullComparisons": [
+    {
+      "scenarioId": "SC-LOC-JP-20207-06-001",
+      "candidateId": "SC-LOC-JP-04206-02-001",
+      "decision": "Calendar month versus four-week banking-plan interval differs from secondTuesday misunderstood as weekly/second waste category; no waste-calendar counting, district or holiday sequence.",
+      "targetSha256": "2115f55e4f7622bf104a9b170b7a3a21d4f6be850b9778349ef339fdffca401c",
+      "candidateSha256": "e01b3d1a72230664d305f9c88e852c035530c33c248e41f8c6fc9048fb6ec1e4"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20204-04-001",
+      "candidateId": "SC-LOC-JP-01226-04-001",
+      "decision": "Physical door-knock fear and prospective return-home concern, friend not sent to confront differs from five unanswered hidden-number calls and telecom-settings support.",
+      "targetSha256": "bd474f171b9e2997451ac07f72ceb70876e5b948c99f84d0825deee507cbac35",
+      "candidateSha256": "8c951de611a4d63e6f77f95f681cca2ce6958edb8c28083b2eca9045ce20b529"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20204-05-001",
+      "candidateId": "SC-LOC-NGN-SUWA-05-001",
+      "decision": "Sending copy of child-owned original after child wants wall display differs from sample wood bird versus unassembled kit and agreement to shared future craft.",
+      "targetSha256": "a3d60765dc84d276950762741fc687f186f74ba477ff6d4cc1ad7d516c6aa9cb",
+      "candidateSha256": "15920e20b3ee41a6cf1f5dcc0e4c2a6301312b45cce01f84ae62209cf011405d"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20205-02-001",
+      "candidateId": "SC-LOC-FKS-AIZUWAKAMATSU-06-001",
+      "decision": "Future reading learning despite conversational fluency and anonymised workplace examples differs from immediate friend interpreter unable to read formal procedure notes.",
+      "targetSha256": "64ae4b8d5cd96d53eb9142c91f09f5098360d95fc6fb7686a511d110ce36baef",
+      "candidateSha256": "23ae820425132bc79c465ee0e2dd9816f73da3bbcedac1869eb0441810dc47ce"
+    }
+  ],
+  "rejectedFullVariants": [
+    {
+      "scenarioId": "SC-LOC-JP-20204-03-001",
+      "candidateId": "SC-LOC-018-02-001",
+      "reason": "Currently quiet symptom versus prior staircase-related episode reproduced earlier clinical causal chain.",
+      "replacementScope": "All11turns and5goals"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20204-07-001",
+      "candidateId": "SC-LOC-NGN-UEDA-03-001",
+      "reason": "Recipe-bundle variant still reused small-bag meal-quantity choice chain.",
+      "replacementScope": "All11turns and5goals"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20204-07-001",
+      "candidateId": "SC-LOC-JP-12220-07-001",
+      "reason": "First replacement cold pack mistaken for food repeats Chiba cold-pack identification plot; replaced again.",
+      "replacementScope": "All11turns and5goals"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20207-01-001",
+      "candidateId": "SC-LOC-JP-13211-08-001",
+      "reason": "Old map point versus current location repeats prior yesterday-photo location chain.",
+      "replacementScope": "All11turns and5goals"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20207-03-001",
+      "candidateId": "SC-LOC-008-02-001",
+      "reason": "Clinical anxiety plus own notes and initial-priority sequence repeats Mito consultation.",
+      "replacementScope": "All11turns and5goals"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20207-04-001",
+      "candidateId": "SC-LOC-JP-05210-04-001",
+      "reason": "Own name/photo used for money-collecting account repeats Akita impersonation plot.",
+      "replacementScope": "All11turns and5goals"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20207-05-001",
+      "candidateId": "SC-LOC-JP-19207-05-001",
+      "reason": "Sound-producing card versus paper-only shipping declaration repeats Yamanashi plot.",
+      "replacementScope": "All11turns and5goals"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-20207-07-001",
+      "candidateId": "SC-LOC-JP-11221-07-001",
+      "reason": "Separated work/self purchases still reuse separating basket into two checkout groups.",
+      "replacementScope": "All11turns and5goals"
+    }
+  ],
+  "withinClusterRoleComparison": [
+    {
+      "scenarioIds": [
+        "SC-LOC-JP-20204-02-001",
+        "SC-LOC-JP-20205-02-001",
+        "SC-LOC-JP-20207-02-001"
+      ],
+      "decision": "Community participation constrained by rotating shifts; reading-skills learning enquiry; satisfaction-score polarity with text feedback. Different objectives, facts and next actions."
+    },
+    {
+      "scenarioIds": [
+        "SC-LOC-JP-20204-03-001",
+        "SC-LOC-JP-20205-03-001",
+        "SC-LOC-JP-20207-03-001"
+      ],
+      "decision": "Employer attendance paper; appetite versus meal access; new cough before booked vaccination. Distinct patient evidence and requests, no diagnosis or eligibility assertions."
+    },
+    {
+      "scenarioIds": [
+        "SC-LOC-JP-20204-04-001",
+        "SC-LOC-JP-20205-04-001",
+        "SC-LOC-JP-20207-04-001"
+      ],
+      "decision": "Fear from unseen door knocking; disputed loan/gift bicycle; describing own lost-property consultation accurately to employer. Different reported events and assistance sought."
+    },
+    {
+      "scenarioIds": [
+        "SC-LOC-JP-20204-05-001",
+        "SC-LOC-JP-20205-05-001",
+        "SC-LOC-JP-20207-05-001"
+      ],
+      "decision": "Child keeps original artwork and agrees copy; volume compression and final-package measurement; live plant receiver travel timing. Distinct causes and shipping decisions."
+    },
+    {
+      "scenarioIds": [
+        "SC-LOC-JP-20204-06-001",
+        "SC-LOC-JP-20205-06-001",
+        "SC-LOC-JP-20207-06-001"
+      ],
+      "decision": "Gift denominations and total; job-ending pending salary/account use; monthly plan interval and amount not set. No swap-only banking plot."
+    },
+    {
+      "scenarioIds": [
+        "SC-LOC-JP-20204-07-001",
+        "SC-LOC-JP-20205-07-001",
+        "SC-LOC-JP-20207-07-001"
+      ],
+      "decision": "Dropped phone and fixture/traffic assistance; optional tasting declined while product query continues; deposit versus price/change expense record. Different store actions and outcomes."
+    },
+    {
+      "scenarioIds": [
+        "SC-LOC-JP-20204-08-001",
+        "SC-LOC-JP-20205-08-001",
+        "SC-LOC-JP-20207-08-001"
+      ],
+      "decision": "Waiting for birds without promised sighting; owner refuses dog touch; posting and venue approvals for community reading meet. Different park relationships and decisions."
+    },
+    {
+      "scenarioIds": [
+        "SC-LOC-JP-20204-01-001",
+        "SC-LOC-JP-20205-01-001",
+        "SC-LOC-JP-20207-01-001"
+      ],
+      "decision": "Station versus home arrival message; cancelled train with flexible delivery errand; split boarding and jointly held ticket information. No shared travel-plan recipe."
+    }
+  ],
+  "checks": {
+    "all173IdsRolesOrdersNextLinksPreserved": true,
+    "untouched149NaganoRuntimeFiles": true,
+    "untouched7104CanonicalRows": true,
+    "canonicalSourceRuntimeFiveGoalParity": true,
+    "newExactUtteranceCollisions": 0,
+    "yamanashiMasterPreserved": true,
+    "actualRepositoryMetadataAlignment": "24/24 via native Node type stripping; complete8slots for each of3cities.",
+    "numericChecks": "1000*5=5000;2000-1680=320;1680+320=2000"
+  },
+  "remainingDraftScreening": {
+    "normalizedDuplicateGroups": 29,
+    "nearCandidates": 150
+  },
+  "locationScope": "Generic city-bound service premises, IDs/city bindings/categories preserved; no actual facility, clinical, financial, police, employment, postal or administrative approval. Suwa Factory/Classroom artwork gaps from prior checkpoint remain unresolved. No UI changes or device verification.",
+  "nextScenarioId": "SC-LOC-JP-20208-01-001",
+  "nextCityIds": [
+    "CTY-JP-20208",
+    "CTY-JP-20209",
+    "CTY-JP-20210"
+  ]
+}
