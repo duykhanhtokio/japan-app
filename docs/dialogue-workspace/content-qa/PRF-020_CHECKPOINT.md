@@ -15,3 +15,9 @@ Full Nagano screening still finds35normalized and330near-duplicate candidates am
 Current13full selected comparisons and rejection evidence: PRF-020_NAGANO_REST_REVIEW.json. Location evidence: PRF-020_NAGANO_LOCATION_REVIEW.json. Corrected outdated museum label to長野県立美術館 and role toMuseum/Museum Guide; M-Wave usesLandmark/Guide. Unverified shop/hotel labels now explicitly simulated. Jigokudani is officially inYamanouchi,so the Nagano-city slot is now an explicitly simulated nature area rather than false city attribution. Alllocation IDs/citybindings/order remain unchanged,with no named-artwork dependencies for the4changed labels. Actual runtime repository check passes13scenario/category alignments and the updated roles. No full asset/device/native or real-policy approval.
 
 Whole Nagano screening still has34normalized and296near candidates among remaining drafts. NOT whole-prefecture CONTENT PASS. Resume SC-NGN-MATSUMOTO-001 after remote persistence. Japanese-only first pass; translations deferred.
+
+## Matsumoto eight — 2026-10-12
+
+29/173 individual Japanese rewrites,319turns,145Player goals. Added8Matsumoto scripts;144old drafts remain. Rejected2initial plots and replaced all11turns/5goals for each before integration. Current8selected counterparts read in full; hash-bound review in PRF-020_MATSUMOTO_REVIEW.json. No exact new utterance collisions; all173IDs/roles/orders/nextlinks preserved; other165runtime files and Yamanashi master unchanged. Venue premises explicitly simulated; no clinical/financial/postal or other real-policy certification. No UI changes.
+
+Screening:33normalized duplicate groups,280near candidates among remaining drafts. NOT whole-prefecture CONTENT PASS; native/human/device review pending. Resume SC-NGN-KARUIZAWA-001 after remote persistence; translations deferred.
