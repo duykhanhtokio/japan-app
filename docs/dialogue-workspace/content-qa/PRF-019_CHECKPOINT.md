@@ -21,3 +21,7 @@ Thematic title review identified an additional bank invoice story that repeated 
 ## Tsuru and Yamanashi city continuation — 2026-10-12
 
 64/112 independent Japanese exchanges,704turns,320goals;48old drafts remain. Added16full exchanges across Tsuru and Yamanashi city, preserving earlier48. Three complete causal replacements after selected/thematic full counterpart reads remove obsolete address, unconfirmed balance, and work-marker shortcut reuse. Current16selected full comparisons plus5thematic full reads and hash evidence: PRF-019_TSURU_YAMANASHI_REVIEW.json. NOT whole-prefecture CONTENT PASS; no native/translation/device certification. Resume Nirasaki SC-LOC-JP-19207-01-001 after exact remote persistence.
+
+## Nirasaki and Minami-Alps continuation — 2026-10-12
+
+80/112 individual Japanese exchanges,880turns,400goals;32old drafts remain. Added16full exchanges and preserved earlier64. Nine rejected plot variants across7distinct new scenario IDs replaced completely after full comparisons, including second replacements of refill capacity and processed clinical photo. Three exact duplicated NPC closures changed contextually. Current16selected full comparisons and5thematic full reads/hash evidence: PRF-019_NIRASAKI_MINAMIALPS_REVIEW.json. Whole-prefecture CONTENT PASS remains false; no native/translation/device certification. Resume Kai SC-LOC-JP-19210-01-001 after exact remote verification.

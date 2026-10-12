@@ -469,3 +469,7 @@ Rechecked 85 final NPC turns and read all eleven existing turns of the 53 affect
 ## Yamanashi Tsuru and Yamanashi city continuation — 2026-10-12
 
 64/112 individually rewritten Japanese dialogues,704turns,320goals;48old drafts remain. Added16exchanges, preserving earlier48. Three full replacements and16selected full comparisons plus5thematic full reads documented in content-qa/PRF-019_TSURU_YAMANASHI_REVIEW.json. Full-prefecture semantic QA pending; no CONTENT PASS or translations. Next Nirasaki after exact remote verification.
+
+## Yamanashi Nirasaki and Minami-Alps continuation — 2026-10-12
+
+80/112 individual Japanese rewrites,880turns,400goals;32old drafts remain. Added16, preserved earlier64. Seven distinct new scripts underwent complete replacement (nine rejected variants), and3exact duplicated closures were repaired. Selected comparison scope/hashes: content-qa/PRF-019_NIRASAKI_MINAMIALPS_REVIEW.json. Full-prefecture QA pending; no CONTENT PASS or translations. Next Kai after exact remote persistence.
