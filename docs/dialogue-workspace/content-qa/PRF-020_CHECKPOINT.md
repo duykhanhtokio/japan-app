@@ -49,3 +49,11 @@ Publisher requests complete multi-city clusters rather than small dialogue batch
 All173IDs/roles/orders/nextlinks preserved;149otherNagano runtime files and7104othercanonical rows unchanged. All120source/runtime goals and264utterances match;no exact new utterance collisions across7128sharedscripts. Actual repository alignment24/24,complete3cities. Yamanashi master preserved. Numeric gift and receipt arithmetic verified. Remaining old-draft screening29normalized groups/150near candidates. No translations/UI changes;no native/human/device or real-policy certification. Prior Suwa Factory/Classroom dedicated artwork remains pending. Whole-prefecture CONTENT PASS pending.
 
 Resume SC-LOC-JP-20208-01-001 and continue in complete multi-city clusters after remote persistence. Next contiguous3city IDs:CTY-JP-20208,CTY-JP-20209,CTY-JP-20210. Do not request permission again for the already-authorized branch.
+
+## Three-city cluster02: Komoro / Ina / Komagane — 2026-10-12
+
+Completed all8slots per city:24scripts,264turns,120goals. Nagano101/173 independently rewritten scripts,1111turns,505goals;72old drafts remain. Three full variants replaced after selected comparison. Five contextual NPC closing lines refined after exact-collision check. All24 current scripts/goals and selected full counterparts read;8 within-cluster service-role triads compared. Review and bound hashes: PRF-020_CLUSTER_02_REVIEW.json.
+
+Identity/order/next links preserved for all173;149 other Nagano runtime files and7104 other canonical rows unchanged. Source/runtime goal parity and actual repository metadata24/24 pass. No new exact utterance collisions;7128 shared-script check and10/10 UI lock pass. Yamanashi master preserved. Remaining draft screening29normalized groups/78near candidates. No native/human/device or real-policy certification;whole-prefecture CONTENT PASS pending. Prior Suwa artwork gaps remain pending.
+
+Continue entire multi-city clusters, next SC-LOC-JP-20211-01-001;next city IDs CTY-JP-20211, CTY-JP-20212, CTY-JP-20213. Push to already-authorized recovery/jlpt-n3-n1 and verify WORK PERSISTENCE PASS.
