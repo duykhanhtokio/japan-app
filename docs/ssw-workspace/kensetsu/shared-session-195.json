@@ -1,0 +1,153 @@
+{
+  "id": "kensetsu-common-session-195",
+  "weekId": "kensetsu-common-week-028",
+  "titleJa": "整流器・蓄電池と通信電源",
+  "revision": 1,
+  "contentRevision": 1,
+  "status": "editorial_draft",
+  "estimatedMinutes": null,
+  "durationMeasured": false,
+  "appIntegrationReady": false,
+  "applicableLevels": [
+    "1",
+    "2"
+  ],
+  "applicableFields": [
+    "utilities",
+    "building",
+    "civil"
+  ],
+  "sourceReferences": [
+    {
+      "sourceId": "kensetsu-src-05",
+      "pdfPages": [
+        14
+      ],
+      "printedPages": [
+        109
+      ],
+      "section": "5.1.3"
+    }
+  ],
+  "officialReferences": [
+    "https://ps.gs-yuasa.com/download/dl_ups/pdf/LPSi5180-tt.pdf",
+    "https://www.gs-yuasa.com/jp/products/traction_batteries/batteries_dcs.php",
+    "https://ps.gs-yuasa.com/products/dc/"
+  ],
+  "verificationDate": "2026-10-12",
+  "verificationStatus": "Scoped primary AI concept comparison; some primary bodies unavailable; not technical/legal/safety/human approval",
+  "translationStatus": "deferred",
+  "illustrationStatus": "deferred",
+  "dailyMinutesTarget": 30,
+  "timingStatus": "unmeasured; provisional editorial grouping",
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "similarityReviewed": false,
+    "runtimeVerified": true
+  },
+  "scopeRationale": "Shared introductory component literacy in six independent development routes; not advanced2号 competency",
+  "keyTerms": [
+    {
+      "term": "整流器",
+      "reading": "せいりゅうき"
+    },
+    {
+      "term": "蓄電池",
+      "reading": "ちくでんち"
+    },
+    {
+      "term": "交流",
+      "reading": "こうりゅう"
+    },
+    {
+      "term": "直流",
+      "reading": "ちょくりゅう"
+    },
+    {
+      "term": "充電",
+      "reading": "じゅうでん"
+    },
+    {
+      "term": "放電",
+      "reading": "ほうでん"
+    }
+  ],
+  "clusters": [
+    {
+      "id": "kensetsu-common-session-195-cluster-1",
+      "titleJa": "変換する装置",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-195-cluster-1-p1",
+          "ja": "整流器は交流から直流を得るための装置です。電力の形を変換する機能であり、電気を蓄えておく機能とは区別します。「電源装置」という広い名称だけで、内部の役割を一つにしません。"
+        },
+        {
+          "id": "kensetsu-common-session-195-cluster-1-p2",
+          "ja": "模式的な機器一覧を読む場面では、交流の入力側と直流を供給する側を区別します。実際の接続や電圧を確かめる作業とは別で、本講では配線や測定の指示を出しません。"
+        }
+      ],
+      "applicationPromptJa": "整流器について、入力側と出力側をどのように説明しますか。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-195-cluster-2",
+      "titleJa": "蓄える装置",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-195-cluster-2-p1",
+          "ja": "蓄電池は充電してエネルギーを蓄え、放電によって電力を供給できる装置です。充電と放電は働きの方向が違います。整流器の変換機能と蓄電池の蓄える機能を分けます。"
+        },
+        {
+          "id": "kensetsu-common-session-195-cluster-2-p2",
+          "ja": "架空の説明例で「直流をつくる部分」と「蓄えたエネルギーから供給する部分」を別欄にします。電池という名称だけで使える充電器や交換方法が決まるわけではありません。"
+        }
+      ],
+      "applicationPromptJa": "直流を得る機能とエネルギーを蓄える機能を、どう区別しますか。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-195-cluster-3",
+      "titleJa": "バックアップを理解する",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-195-cluster-3-p1",
+          "ja": "蓄電池を含む電源システムは、停電時の電力供給を支える用途に使われます。ただし、対象機器や系統構成、蓄電池の条件によって対応は異なり、何時間でも供給できるという意味ではありません。"
+        },
+        {
+          "id": "kensetsu-common-session-195-cluster-3-p2",
+          "ja": "通信装置の一覧でバックアップありと記載されていても、必要時間を満たすかは別の照合です。具体的な負荷、容量、状態などの条件を未確認のまま「停電対策は十分」と結論づけません。"
+        }
+      ],
+      "applicationPromptJa": "「バックアップあり」から必要な供給時間を満たすと即断できない理由は何ですか。",
+      "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-195-cluster-4",
+      "titleJa": "状態を混ぜずに伝える",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-195-cluster-4-p1",
+          "ja": "装置の型式が資料と一致したこと、充電の状態、供給先の確認、点検の結果は異なる情報です。名称の一致を、電源系統全体の健全性や使用承認へ置き換えないようにします。"
+        },
+        {
+          "id": "kensetsu-common-session-195-cluster-4-p2",
+          "ja": "引継ぎ文の例は「整流器と蓄電池の型式欄は照合済み。供給先一覧と点検記録は未受領」です。既に分かった情報と残る確認を示し、操作や復旧の方法は担当者の確認事項として残します。"
+        }
+      ],
+      "applicationPromptJa": "型式欄だけ照合した状態を、給電まで確認済みと誤解させない報告にしてください。",
+      "graded": false
+    }
+  ],
+  "runtimeVerificationScope": {
+    "status": "PASS_WEB_ADAPTED_COMPONENT_TEST",
+    "report": "week-028-runtime-report.json",
+    "nativeDeviceTested": false,
+    "contentApproved": false
+  }
+}
