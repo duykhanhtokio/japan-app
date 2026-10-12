@@ -491,3 +491,7 @@ Structural,exact,normalized,near-duplicate,task,answer,title and recipe screens 
 PRF-019_SEMANTIC_REVIEW.json contains current full-exchange evidence,8internal comparison judgments, attributed earlier external decisions with56selected pairs verified against durable pre-repair targets/current counterpart hashes, and24old records expressly NOT reused as current proof. PRF-019_JAPANESE_MASTER_LOCK.json binds all112runtime and12active source hashes. CONTENT QA PASS within AI Japanese simulated-teaching editorial scope. Human/native/device/translation and real-service approval remain false; exhaustive semantic uniqueness is not claimed.
 
 Previous112drafts were persisted at dfc6125242a61488d9680f3a4ba5d792dfb5c6c8,content-tree equivalent to cc8d3e3. Persist and verify this final QA unit before starting Nagano PRF-020. Japanese-only first pass remains in force.
+
+## Nagano first eight continuation — 2026-10-12
+
+8/173individual rewrites,88turns,40goals;165old drafts remain. First8Nagano-city venues integrated with selected full comparison evidence. Six scenario role labels aligned; missing pharmacy runtime role correction added while preserving existing role layer. ID/order/next-link/source/canonical checks pass; no exact new utterance collisions; Yamanashi master unchanged. Full-prefecture CONTENT QA pending. Resume M-Wave SC-LOC-020-09-001 after durable verification. No translations or device/native approval.
