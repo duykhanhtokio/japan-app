@@ -46,3 +46,12 @@ Completed 24 individual Japanese exchanges (8 per city), 264 alternating turns a
 Yamagata fictitious railway station corrected to bus-information setting using municipal public-transport council document p4 (https://www.city.yamagata.gifu.jp/uploaded/attachment/15142.pdf). Location ID remains; category Bus Terminal, NPC Information Staff. Mizuho/Hida generic transport names marked explicitly simulated. Dedicated bus scene/NPC art and device validation remain pending. Current evidence is in PRF-021_CLUSTER_06_REVIEW.json. No whole-prefecture CONTENT PASS, native/human or actual service approval.
 
 Next canonical group: CTY-JP-21218, CTY-JP-21219, CTY-JP-21221, first SC-LOC-JP-21218-01-001. Persist and verify before advancing; finish final 24 Gifu and prefecture-wide review before PRF-022.
+
+
+## Final cities and prefecture integration — 2026-10-13
+
+Five concurrent AI workers authored Motosu, Gujo and Kaizu (24 scripts,264 turns,120 goals) and reviewed existing181 dialogue/905 goals and location roles. Gifu181/181 independently rewritten; no old recipe drafts remain. This integration updates39 runtime files:24 final-city scripts and15 earlier repairs. Eight prior scripts were rewritten for direct natural task resolution; Yamagata clinic plot replaced in full after duplication review. Source/canonical/runtime parity, all7128 dialogue identities/order/nextlinks and outside-scope hashes preserved. Structural errors0; exact/normalized whole-script groups0; near candidates0. One commonplace Gujo bag question repeats elsewhere; it is retained as natural language rather than claiming global utterance uniqueness.
+
+Six new NPC categories retain separate identities, appended after26 legacy roles. Runtime progression regression passes30 completions, repeated completion idempotence and legacy progress preservation. Reward cards reuse existing image references temporarily; dedicated role images and actual device inspection remain pending. Scoped TypeScript check passed; full Expo dependencies unavailable. JLPT locked UI10/10 unchanged. Native/human review false; no translations. See FINAL_INTEGRATION and worker evidence for bounded checks.
+
+All authored data is a review candidate. Whole-prefecture CONTENT PASS/master lock remains pending final editorial disposition; do not advance PRF-022 until this gate is resolved. Publish this narrow integration to the already authorized recovery/jlpt-n3-n1 branch and verify WORK PERSISTENCE PASS.

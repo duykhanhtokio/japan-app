@@ -1,0 +1,2037 @@
+{
+  "prefectureId": "PRF-021",
+  "auditDate": "2026-10-13",
+  "reviewer": "AI location/role agent",
+  "status": "BOUNDED LOCATION/ROLE AUDIT; labels/progress support repaired; Takayama source category parity repair pending; dedicated artwork/device review pending",
+  "scope": {
+    "cities": 21,
+    "locations": 181,
+    "effectiveSourceScenarios": 181,
+    "categoryParityErrors": [
+      "SC-LOC-GIF-TAKAYAMA-05-001"
+    ],
+    "unsupportedProgressLocations": []
+  },
+  "method": "Inspected all181 effective location categories/NPC jobs and source scenario type parity; reviewed selected transport names against official operator sources. No exhaustive verification of181 real venues or native approval. Concurrent final24 authorship not certified by this report.",
+  "runtimeConstraints": {
+    "correctionLoader": "life-content-repository.ts applies category/npcJob only; nameJa in corrections is ignored, so generated location name must be edited for display",
+    "assets": "life-assets.ts unknown scene/NPC category falls back landmark; location-backgrounds.generated.ts unsupported slug returns undefined",
+    "progress": "Repaired: six independent appended categories; dialogue finish now recognizes specialty category and records progression.",
+    "validators": "check-life-scene-mapping.cjs validates raw categories and fixed25 distinct assets; does not protect corrected categories nor reward normalization"
+  },
+  "officialYamagataEvidence": {
+    "url": "https://www.city.yamagata.gifu.jp/uploaded/attachment/15142.pdf",
+    "page": 4,
+    "fact": "Municipal document says city has no railway station; buses are primary transport. Fictional bus setting correction already appropriate.",
+    "locationId": "LOC-JP-21215-01"
+  },
+  "actionableCorrections": [
+    {
+      "locationId": "LOC-JP-21207-01",
+      "scenarioId": "SC-LOC-JP-21207-01-001",
+      "issue": "unqualified_city_named_station_label",
+      "evidenceType": "official_real_station_positive_evidence; misleading fictional-label risk inferred",
+      "evidenceUrl": "https://www.nagatetsu.co.jp/info/6066/",
+      "verifiedFact": "Operator identifies 美濃市駅 and says counter closed after 2026-03-30, now unstaffed.",
+      "recommendedNameJa": "美濃市内の駅案内（架空）",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "action": "Retain existing fictional dialogue and stable IDs; align generated location display name/description and runtime display metadata. Do not assert real staffing/services.",
+      "currentNameJa": "美濃市内の駅案内（架空）",
+      "repairStatus": "label_applied",
+      "currentEffectiveCategory": "Station"
+    },
+    {
+      "locationId": "LOC-JP-21209-01",
+      "scenarioId": "SC-LOC-JP-21209-01-001",
+      "issue": "unqualified_city_named_station_label",
+      "evidenceType": "official_real_station_positive_evidence; misleading fictional-label risk inferred",
+      "evidenceUrl": "https://railway.jr-central.co.jp/station-guide/shinkansen/gifu-hashima/index.html",
+      "verifiedFact": "JR station is 岐阜羽島駅; this does not prove no other operator station exists.",
+      "recommendedNameJa": "羽島市内の駅案内（架空）",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "action": "Retain existing fictional dialogue and stable IDs; align generated location display name/description and runtime display metadata. Do not assert real staffing/services.",
+      "currentNameJa": "羽島市内の駅案内（架空）",
+      "repairStatus": "label_applied",
+      "currentEffectiveCategory": "Station"
+    },
+    {
+      "locationId": "LOC-JP-21211-01",
+      "scenarioId": "SC-LOC-JP-21211-01-001",
+      "issue": "unqualified_city_named_station_label",
+      "evidenceType": "official_real_station_positive_evidence; misleading fictional-label risk inferred",
+      "evidenceUrl": "https://railway.jr-central.co.jp/station-guide/tokai/mino-ota/index.html",
+      "verifiedFact": "JR station in Minokamo is 美濃太田駅.",
+      "recommendedNameJa": "美濃加茂市内の駅案内（架空）",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "action": "Retain existing fictional dialogue and stable IDs; align generated location display name/description and runtime display metadata. Do not assert real staffing/services.",
+      "currentNameJa": "美濃加茂市内の駅案内（架空）",
+      "repairStatus": "label_applied",
+      "currentEffectiveCategory": "Station"
+    },
+    {
+      "locationId": "LOC-JP-21212-01",
+      "scenarioId": "SC-LOC-JP-21212-01-001",
+      "issue": "unqualified_city_named_station_label",
+      "evidenceType": "official_real_station_positive_evidence; misleading fictional-label risk inferred",
+      "evidenceUrl": "https://railway.jr-central.co.jp/station-guide/tokai/tokishi/",
+      "verifiedFact": "JR operator identifies 土岐市駅.",
+      "recommendedNameJa": "土岐市内の駅案内（架空）",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "action": "Retain existing fictional dialogue and stable IDs; align generated location display name/description and runtime display metadata. Do not assert real staffing/services.",
+      "currentNameJa": "土岐市内の駅案内（架空）",
+      "repairStatus": "label_applied",
+      "currentEffectiveCategory": "Station"
+    },
+    {
+      "locationId": "LOC-JP-21219-01",
+      "scenarioId": "SC-LOC-JP-21219-01-001",
+      "issue": "unqualified_city_named_station_label",
+      "evidenceType": "official_real_station_positive_evidence; misleading fictional-label risk inferred",
+      "evidenceUrl": "https://www.nagatetsu.co.jp/guide/time/",
+      "verifiedFact": "Operator lists 郡上八幡; no complete no-such-station proof claimed.",
+      "recommendedNameJa": "郡上市内の駅案内（架空）",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "action": "Retain existing fictional dialogue and stable IDs; align generated location display name/description and runtime display metadata. Do not assert real staffing/services.",
+      "currentNameJa": "郡上市内の駅案内（架空）",
+      "repairStatus": "label_applied",
+      "currentEffectiveCategory": "Station"
+    },
+    {
+      "locationId": "LOC-JP-21221-01",
+      "scenarioId": "SC-LOC-JP-21221-01-001",
+      "issue": "unqualified_city_named_station_label",
+      "evidenceType": "official_real_station_positive_evidence; misleading fictional-label risk inferred",
+      "evidenceUrl": "https://www.yororailway.co.jp/station/ishizu/",
+      "verifiedFact": "Operator locates 石津駅 in Kaizu; does not prove exhaustive absence.",
+      "recommendedNameJa": "海津市内の駅案内（架空）",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "action": "Retain existing fictional dialogue and stable IDs; align generated location display name/description and runtime display metadata. Do not assert real staffing/services.",
+      "currentNameJa": "海津市内の駅案内（架空）",
+      "repairStatus": "label_applied",
+      "currentEffectiveCategory": "Station"
+    },
+    {
+      "locationId": "LOC-GIF-TAKAYAMA-05",
+      "issue": "bus_stop_classified_as_railway_station",
+      "evidenceType": "internal_name_vs_category_mismatch",
+      "recommendedNameJa": "高山市の高速バス案内（架空）",
+      "category": "Bus Terminal",
+      "npcJob": "Information Staff",
+      "action": "Update correction data and source/runtime locationType together; preserve actual scenario ID discovered from location record.",
+      "scenarioIds": [],
+      "currentNameJa": "高山市のバス乗車案内（架空）",
+      "repairStatus": "label_applied_with_equivalent_simulated_bus_wording",
+      "currentEffectiveCategory": "Bus Terminal"
+    }
+  ],
+  "unsupportedCategoryLocations": [
+    {
+      "locationId": "LOC-GIF-GERO-04",
+      "scenarioIds": [],
+      "category": "Classroom",
+      "npcJob": "Teacher",
+      "metadataStatus": "semantically_appropriate",
+      "runtimeStatusAtAudit": "PRE-REPAIR: scene/NPC landmark fallback; category unsupported; progress skipped",
+      "severity": "dedicated_asset_and_device_review_pending",
+      "postRepairRuntimeStatus": "Independent category recognizes completion/progress/reward; specialist scene/NPC art still landmark fallback"
+    },
+    {
+      "locationId": "LOC-GIF-OGAKI-02",
+      "scenarioIds": [],
+      "category": "Warehouse",
+      "npcJob": "Warehouse Staff",
+      "metadataStatus": "semantically_appropriate",
+      "runtimeStatusAtAudit": "PRE-REPAIR: scene/NPC landmark fallback; category unsupported; progress skipped",
+      "severity": "dedicated_asset_and_device_review_pending",
+      "postRepairRuntimeStatus": "Independent category recognizes completion/progress/reward; specialist scene/NPC art still landmark fallback"
+    },
+    {
+      "locationId": "LOC-GIF-OGAKI-06",
+      "scenarioIds": [],
+      "category": "Library",
+      "npcJob": "Librarian",
+      "metadataStatus": "semantically_appropriate",
+      "runtimeStatusAtAudit": "PRE-REPAIR: scene/NPC landmark fallback; category unsupported; progress skipped",
+      "severity": "dedicated_asset_and_device_review_pending",
+      "postRepairRuntimeStatus": "Independent category recognizes completion/progress/reward; specialist scene/NPC art still landmark fallback"
+    },
+    {
+      "locationId": "LOC-GIF-SEKI-01",
+      "scenarioIds": [
+        "Đọc bản vẽ tại 金属加工工場 (Seki) (https://app.notion.com/p/c-b-n-v-t-i-Seki-3bd70421d96181d09882e29bf6d897c6?pvs=21)"
+      ],
+      "category": "Factory",
+      "npcJob": "Factory Worker",
+      "metadataStatus": "semantically_appropriate",
+      "runtimeStatusAtAudit": "PRE-REPAIR: scene/NPC landmark fallback; category unsupported; progress skipped",
+      "severity": "dedicated_asset_and_device_review_pending",
+      "postRepairRuntimeStatus": "Independent category recognizes completion/progress/reward; specialist scene/NPC art still landmark fallback"
+    },
+    {
+      "locationId": "LOC-GIF-SEKI-02",
+      "scenarioIds": [],
+      "category": "Workshop",
+      "npcJob": "Craftsman",
+      "metadataStatus": "semantically_appropriate",
+      "runtimeStatusAtAudit": "PRE-REPAIR: scene/NPC landmark fallback; category unsupported; progress skipped",
+      "severity": "dedicated_asset_and_device_review_pending",
+      "postRepairRuntimeStatus": "Independent category recognizes completion/progress/reward; specialist scene/NPC art still landmark fallback"
+    },
+    {
+      "locationId": "LOC-GIF-TAKAYAMA-02",
+      "scenarioIds": [],
+      "category": "Factory",
+      "npcJob": "Brewer",
+      "metadataStatus": "semantically_appropriate",
+      "runtimeStatusAtAudit": "PRE-REPAIR: scene/NPC landmark fallback; category unsupported; progress skipped",
+      "severity": "dedicated_asset_and_device_review_pending",
+      "postRepairRuntimeStatus": "Independent category recognizes completion/progress/reward; specialist scene/NPC art still landmark fallback"
+    },
+    {
+      "locationId": "LOC-JP-21215-01",
+      "scenarioIds": [
+        "SC-LOC-JP-21215-01-001"
+      ],
+      "category": "Bus Terminal",
+      "npcJob": "Information Staff",
+      "metadataStatus": "semantically_appropriate",
+      "runtimeStatusAtAudit": "PRE-REPAIR: scene/NPC landmark fallback; category unsupported; progress skipped",
+      "severity": "dedicated_asset_and_device_review_pending",
+      "postRepairRuntimeStatus": "Independent category recognizes completion/progress/reward; specialist scene/NPC art still landmark fallback"
+    }
+  ],
+  "allLocationRows": [
+    {
+      "locationId": "LOC-021-01",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "scenarioIds": [
+        "SC-LOC-021-01-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-021-02",
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "scenarioIds": [
+        "SC-LOC-021-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-021-03",
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "scenarioIds": [
+        "SC-LOC-021-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-021-04",
+      "category": "Convenience Store",
+      "npcJob": "Convenience Store Staff",
+      "scenarioIds": [
+        "SC-LOC-021-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-021-05",
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "scenarioIds": [
+        "SC-LOC-021-05-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-021-06",
+      "category": "Post Office",
+      "npcJob": "Postal Staff",
+      "scenarioIds": [
+        "SC-LOC-021-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-021-07",
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "scenarioIds": [
+        "SC-LOC-021-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-021-08",
+      "category": "Castle",
+      "npcJob": "Museum Guide",
+      "scenarioIds": [
+        "SC-LOC-021-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-021-09",
+      "category": "Nature",
+      "npcJob": "Guide",
+      "scenarioIds": [
+        "SC-LOC-021-09-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-021-10",
+      "category": "Park",
+      "npcJob": "Park Staff",
+      "scenarioIds": [
+        "SC-LOC-021-10-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-021-11",
+      "category": "Police Station",
+      "npcJob": "Police",
+      "scenarioIds": [
+        "SC-LOC-021-11-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-021-12",
+      "category": "Pharmacy",
+      "npcJob": "Pharmacist",
+      "scenarioIds": [
+        "SC-LOC-021-12-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-021-13",
+      "category": "Shopping",
+      "npcJob": "Shop Staff",
+      "scenarioIds": [
+        "SC-LOC-021-13-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-021-14",
+      "category": "Hotel",
+      "npcJob": "Hotel Staff",
+      "scenarioIds": [
+        "SC-LOC-021-14-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-021-15",
+      "category": "Landmark",
+      "npcJob": "Museum Guide",
+      "scenarioIds": [
+        "SC-LOC-021-15-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-021-16",
+      "category": "Shopping",
+      "npcJob": "Shop Staff",
+      "scenarioIds": [
+        "SC-LOC-021-16-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-021-17",
+      "category": "Museum",
+      "npcJob": "Museum Guide",
+      "scenarioIds": [
+        "SC-LOC-021-17-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-021-18",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "scenarioIds": [
+        "SC-LOC-021-18-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-021-19",
+      "category": "Ramen Shop",
+      "npcJob": "Chef",
+      "scenarioIds": [
+        "SC-LOC-021-19-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-021-20",
+      "category": "Construction Site",
+      "npcJob": "Construction Manager",
+      "scenarioIds": [
+        "SC-LOC-021-20-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-021-21",
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "scenarioIds": [
+        "SC-LOC-021-21-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-GERO-01",
+      "category": "Onsen",
+      "npcJob": "Onsen Staff",
+      "scenarioIds": [
+        "SC-GIF-GERO-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-GERO-02",
+      "category": "Museum",
+      "npcJob": "Museum Guide",
+      "scenarioIds": [
+        "SC-LOC-GIF-GERO-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-GERO-03",
+      "category": "Hotel",
+      "npcJob": "Hotel Staff",
+      "scenarioIds": [
+        "SC-LOC-GIF-GERO-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-GERO-04",
+      "category": "Classroom",
+      "npcJob": "Teacher",
+      "scenarioIds": [
+        "SC-LOC-GIF-GERO-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-GERO-05",
+      "category": "Restaurant",
+      "npcJob": "Restaurant Staff",
+      "scenarioIds": [
+        "SC-LOC-GIF-GERO-05-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-GERO-06",
+      "category": "Shrine / Temple",
+      "npcJob": "Shrine Staff",
+      "scenarioIds": [
+        "SC-LOC-GIF-GERO-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-GERO-07",
+      "category": "Castle",
+      "npcJob": "Guide",
+      "scenarioIds": [
+        "SC-LOC-GIF-GERO-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-GERO-08",
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "scenarioIds": [
+        "SC-LOC-GIF-GERO-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-OGAKI-01",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "scenarioIds": [
+        "SC-GIF-OGAKI-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-OGAKI-02",
+      "category": "Warehouse",
+      "npcJob": "Warehouse Staff",
+      "scenarioIds": [
+        "SC-LOC-GIF-OGAKI-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-OGAKI-03",
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "scenarioIds": [
+        "SC-LOC-GIF-OGAKI-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-OGAKI-04",
+      "category": "Ramen Shop",
+      "npcJob": "Chef",
+      "scenarioIds": [
+        "SC-LOC-GIF-OGAKI-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-OGAKI-05",
+      "category": "Government Office",
+      "npcJob": "City Worker",
+      "scenarioIds": [
+        "SC-LOC-GIF-OGAKI-05-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-OGAKI-06",
+      "category": "Library",
+      "npcJob": "Librarian",
+      "scenarioIds": [
+        "SC-LOC-GIF-OGAKI-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-OGAKI-07",
+      "category": "Pharmacy",
+      "npcJob": "Pharmacist",
+      "scenarioIds": [
+        "SC-LOC-GIF-OGAKI-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-OGAKI-08",
+      "category": "Izakaya",
+      "npcJob": "Restaurant Staff",
+      "scenarioIds": [
+        "SC-LOC-GIF-OGAKI-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-SEKI-01",
+      "category": "Factory",
+      "npcJob": "Factory Worker",
+      "scenarioIds": [
+        "SC-GIF-SEKI-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-SEKI-02",
+      "category": "Workshop",
+      "npcJob": "Craftsman",
+      "scenarioIds": [
+        "SC-LOC-GIF-SEKI-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-SEKI-03",
+      "category": "Restaurant",
+      "npcJob": "Restaurant Staff",
+      "scenarioIds": [
+        "SC-LOC-GIF-SEKI-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-SEKI-04",
+      "category": "Shopping",
+      "npcJob": "Shop Staff",
+      "scenarioIds": [
+        "SC-LOC-GIF-SEKI-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-SEKI-05",
+      "category": "Hospital",
+      "npcJob": "Doctor",
+      "scenarioIds": [
+        "SC-LOC-GIF-SEKI-05-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-SEKI-06",
+      "category": "Park",
+      "npcJob": "Park Staff",
+      "scenarioIds": [
+        "SC-LOC-GIF-SEKI-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-SEKI-07",
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "scenarioIds": [
+        "SC-LOC-GIF-SEKI-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-SEKI-08",
+      "category": "Tax Office",
+      "npcJob": "Tax Officer",
+      "scenarioIds": [
+        "SC-LOC-GIF-SEKI-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-TAKAYAMA-01",
+      "category": "Landmark",
+      "npcJob": "Guide",
+      "scenarioIds": [
+        "SC-GIF-TAKAYAMA-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-TAKAYAMA-02",
+      "category": "Factory",
+      "npcJob": "Brewer",
+      "scenarioIds": [
+        "SC-LOC-GIF-TAKAYAMA-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-TAKAYAMA-03",
+      "category": "Park",
+      "npcJob": "Community Staff",
+      "scenarioIds": [
+        "SC-LOC-GIF-TAKAYAMA-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-TAKAYAMA-04",
+      "category": "Restaurant",
+      "npcJob": "Vendor",
+      "scenarioIds": [
+        "SC-LOC-GIF-TAKAYAMA-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-TAKAYAMA-05",
+      "category": "Bus Terminal",
+      "npcJob": "Information Staff",
+      "scenarioIds": [
+        "SC-LOC-GIF-TAKAYAMA-05-001"
+      ],
+      "sourceCategoryParity": false,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-TAKAYAMA-06",
+      "category": "Police Station",
+      "npcJob": "Police",
+      "scenarioIds": [
+        "SC-LOC-GIF-TAKAYAMA-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-TAKAYAMA-07",
+      "category": "Convenience Store",
+      "npcJob": "Convenience Store Staff",
+      "scenarioIds": [
+        "SC-LOC-GIF-TAKAYAMA-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-GIF-TAKAYAMA-08",
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "scenarioIds": [
+        "SC-LOC-GIF-TAKAYAMA-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21204-01",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21204-01-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21204-02",
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "scenarioIds": [
+        "SC-LOC-JP-21204-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21204-03",
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "scenarioIds": [
+        "SC-LOC-JP-21204-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21204-04",
+      "category": "Police Station",
+      "npcJob": "Police",
+      "scenarioIds": [
+        "SC-LOC-JP-21204-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21204-05",
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21204-05-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21204-06",
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21204-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21204-07",
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21204-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21204-08",
+      "category": "Park",
+      "npcJob": "Community Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21204-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21206-01",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21206-01-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21206-02",
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "scenarioIds": [
+        "SC-LOC-JP-21206-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21206-03",
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "scenarioIds": [
+        "SC-LOC-JP-21206-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21206-04",
+      "category": "Police Station",
+      "npcJob": "Police",
+      "scenarioIds": [
+        "SC-LOC-JP-21206-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21206-05",
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21206-05-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21206-06",
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21206-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21206-07",
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21206-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21206-08",
+      "category": "Park",
+      "npcJob": "Community Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21206-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21207-01",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21207-01-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21207-02",
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "scenarioIds": [
+        "SC-LOC-JP-21207-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21207-03",
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "scenarioIds": [
+        "SC-LOC-JP-21207-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21207-04",
+      "category": "Police Station",
+      "npcJob": "Police",
+      "scenarioIds": [
+        "SC-LOC-JP-21207-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21207-05",
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21207-05-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21207-06",
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21207-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21207-07",
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21207-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21207-08",
+      "category": "Park",
+      "npcJob": "Community Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21207-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21208-01",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21208-01-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21208-02",
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "scenarioIds": [
+        "SC-LOC-JP-21208-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21208-03",
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "scenarioIds": [
+        "SC-LOC-JP-21208-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21208-04",
+      "category": "Police Station",
+      "npcJob": "Police",
+      "scenarioIds": [
+        "SC-LOC-JP-21208-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21208-05",
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21208-05-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21208-06",
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21208-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21208-07",
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21208-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21208-08",
+      "category": "Park",
+      "npcJob": "Community Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21208-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21209-01",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21209-01-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21209-02",
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "scenarioIds": [
+        "SC-LOC-JP-21209-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21209-03",
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "scenarioIds": [
+        "SC-LOC-JP-21209-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21209-04",
+      "category": "Police Station",
+      "npcJob": "Police",
+      "scenarioIds": [
+        "SC-LOC-JP-21209-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21209-05",
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21209-05-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21209-06",
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21209-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21209-07",
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21209-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21209-08",
+      "category": "Park",
+      "npcJob": "Community Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21209-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21210-01",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21210-01-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21210-02",
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "scenarioIds": [
+        "SC-LOC-JP-21210-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21210-03",
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "scenarioIds": [
+        "SC-LOC-JP-21210-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21210-04",
+      "category": "Police Station",
+      "npcJob": "Police",
+      "scenarioIds": [
+        "SC-LOC-JP-21210-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21210-05",
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21210-05-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21210-06",
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21210-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21210-07",
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21210-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21210-08",
+      "category": "Park",
+      "npcJob": "Community Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21210-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21211-01",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21211-01-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21211-02",
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "scenarioIds": [
+        "SC-LOC-JP-21211-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21211-03",
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "scenarioIds": [
+        "SC-LOC-JP-21211-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21211-04",
+      "category": "Police Station",
+      "npcJob": "Police",
+      "scenarioIds": [
+        "SC-LOC-JP-21211-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21211-05",
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21211-05-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21211-06",
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21211-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21211-07",
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21211-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21211-08",
+      "category": "Park",
+      "npcJob": "Community Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21211-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21212-01",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21212-01-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21212-02",
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "scenarioIds": [
+        "SC-LOC-JP-21212-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21212-03",
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "scenarioIds": [
+        "SC-LOC-JP-21212-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21212-04",
+      "category": "Police Station",
+      "npcJob": "Police",
+      "scenarioIds": [
+        "SC-LOC-JP-21212-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21212-05",
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21212-05-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21212-06",
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21212-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21212-07",
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21212-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21212-08",
+      "category": "Park",
+      "npcJob": "Community Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21212-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21213-01",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21213-01-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21213-02",
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "scenarioIds": [
+        "SC-LOC-JP-21213-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21213-03",
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "scenarioIds": [
+        "SC-LOC-JP-21213-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21213-04",
+      "category": "Police Station",
+      "npcJob": "Police",
+      "scenarioIds": [
+        "SC-LOC-JP-21213-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21213-05",
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21213-05-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21213-06",
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21213-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21213-07",
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21213-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21213-08",
+      "category": "Park",
+      "npcJob": "Community Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21213-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21214-01",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21214-01-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21214-02",
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "scenarioIds": [
+        "SC-LOC-JP-21214-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21214-03",
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "scenarioIds": [
+        "SC-LOC-JP-21214-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21214-04",
+      "category": "Police Station",
+      "npcJob": "Police",
+      "scenarioIds": [
+        "SC-LOC-JP-21214-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21214-05",
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21214-05-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21214-06",
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21214-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21214-07",
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21214-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21214-08",
+      "category": "Park",
+      "npcJob": "Community Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21214-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21215-01",
+      "category": "Bus Terminal",
+      "npcJob": "Information Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21215-01-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21215-02",
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "scenarioIds": [
+        "SC-LOC-JP-21215-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21215-03",
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "scenarioIds": [
+        "SC-LOC-JP-21215-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21215-04",
+      "category": "Police Station",
+      "npcJob": "Police",
+      "scenarioIds": [
+        "SC-LOC-JP-21215-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21215-05",
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21215-05-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21215-06",
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21215-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21215-07",
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21215-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21215-08",
+      "category": "Park",
+      "npcJob": "Community Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21215-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21216-01",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21216-01-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21216-02",
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "scenarioIds": [
+        "SC-LOC-JP-21216-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21216-03",
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "scenarioIds": [
+        "SC-LOC-JP-21216-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21216-04",
+      "category": "Police Station",
+      "npcJob": "Police",
+      "scenarioIds": [
+        "SC-LOC-JP-21216-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21216-05",
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21216-05-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21216-06",
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21216-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21216-07",
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21216-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21216-08",
+      "category": "Park",
+      "npcJob": "Community Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21216-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21217-01",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21217-01-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21217-02",
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "scenarioIds": [
+        "SC-LOC-JP-21217-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21217-03",
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "scenarioIds": [
+        "SC-LOC-JP-21217-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21217-04",
+      "category": "Police Station",
+      "npcJob": "Police",
+      "scenarioIds": [
+        "SC-LOC-JP-21217-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21217-05",
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21217-05-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21217-06",
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21217-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21217-07",
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21217-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21217-08",
+      "category": "Park",
+      "npcJob": "Community Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21217-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21218-01",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21218-01-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21218-02",
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "scenarioIds": [
+        "SC-LOC-JP-21218-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21218-03",
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "scenarioIds": [
+        "SC-LOC-JP-21218-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21218-04",
+      "category": "Police Station",
+      "npcJob": "Police",
+      "scenarioIds": [
+        "SC-LOC-JP-21218-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21218-05",
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21218-05-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21218-06",
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21218-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21218-07",
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21218-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21218-08",
+      "category": "Park",
+      "npcJob": "Community Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21218-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21219-01",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21219-01-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21219-02",
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "scenarioIds": [
+        "SC-LOC-JP-21219-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21219-03",
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "scenarioIds": [
+        "SC-LOC-JP-21219-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21219-04",
+      "category": "Police Station",
+      "npcJob": "Police",
+      "scenarioIds": [
+        "SC-LOC-JP-21219-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21219-05",
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21219-05-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21219-06",
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21219-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21219-07",
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21219-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21219-08",
+      "category": "Park",
+      "npcJob": "Community Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21219-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21221-01",
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21221-01-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21221-02",
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "scenarioIds": [
+        "SC-LOC-JP-21221-02-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21221-03",
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "scenarioIds": [
+        "SC-LOC-JP-21221-03-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21221-04",
+      "category": "Police Station",
+      "npcJob": "Police",
+      "scenarioIds": [
+        "SC-LOC-JP-21221-04-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21221-05",
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21221-05-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21221-06",
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "scenarioIds": [
+        "SC-LOC-JP-21221-06-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21221-07",
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21221-07-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    },
+    {
+      "locationId": "LOC-JP-21221-08",
+      "category": "Park",
+      "npcJob": "Community Staff",
+      "scenarioIds": [
+        "SC-LOC-JP-21221-08-001"
+      ],
+      "sourceCategoryParity": true,
+      "progressCategorySupported": true
+    }
+  ],
+  "limitations": [
+    "Generic hospital/bank/park labels are not proof of real named institutions; fictional scenario notices must stay.",
+    "Park Community Staff is compatible with community activities; not automatically a role mismatch.",
+    "Hospital Nurse dialogue role cannot be certified solely by category.",
+    "Specialist visual art and device review remain pending."
+  ],
+  "postRepairVerification": {
+    "progressionTest": "CORRECTED NPC PROGRESSION PASS: six independent roles,30 completions,repeat idempotence,legacy progress preserved",
+    "unlockOrder": "Original26 categories preserved in exact order; six new roles appended. Existing laundry previously wrapped to station at collection end; now next is bus-terminal, intentional appended extension.",
+    "effectiveLocationCount": 181,
+    "effectiveSourceCategoryMismatchIds": [
+      "SC-LOC-GIF-TAKAYAMA-05-001"
+    ],
+    "remainingArt": "npc-card-assets.ts uses explicit existing card-art references; life-assets.ts scene/NPC specialty categories still fall back to landmark and no dedicated specialist scene exists.",
+    "limitations": "No device visual check. Whole-repository TS dependencies unavailable per root; scoped changed-file check reported by root only."
+  }
+}

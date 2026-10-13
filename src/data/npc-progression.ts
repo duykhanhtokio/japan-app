@@ -30,6 +30,13 @@ export const NPC_CATEGORIES = [
   { id:'construction-site', category:'Construction Site', ja:'建設スタッフ', icon:'👷' },
   // Append new roles to preserve the established unlock order.
   { id:'laundry', category:'Laundry', ja:'ランドリー店員', icon:'🧺' },
+  // Corrected learning venues keep independent progress; append without reordering saved roles.
+  { id:'bus-terminal', category:'Bus Terminal', ja:'バス案内スタッフ', icon:'🚌' },
+  { id:'factory', category:'Factory', ja:'工場スタッフ', icon:'🏭' },
+  { id:'workshop', category:'Workshop', ja:'工房スタッフ', icon:'🛠️' },
+  { id:'classroom', category:'Classroom', ja:'教室スタッフ', icon:'📚' },
+  { id:'warehouse', category:'Warehouse', ja:'倉庫スタッフ', icon:'📦' },
+  { id:'library', category:'Library', ja:'図書館スタッフ', icon:'📖' },
 ] as const;
 
 export type NpcCategoryId = typeof NPC_CATEGORIES[number]['id'];

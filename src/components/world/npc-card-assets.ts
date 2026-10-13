@@ -2,6 +2,14 @@ import type { ImageSourcePropType } from 'react-native';
 import type { NpcCategoryId } from '@/data/npc-progression';
 
 export const npcCardById:Record<NpcCategoryId,ImageSourcePropType>={
+ // Existing card art is reused until dedicated specialist illustrations are approved.
+ // Each role has its own identity and progress; artwork reuse never aliases category IDs.
+ 'bus-terminal':require('../../../assets/app/life/rewards/cards/station.png'),
+ 'factory':require('../../../assets/app/life/rewards/cards/construction-site.png'),
+ 'workshop':require('../../../assets/app/life/rewards/cards/construction-site.png'),
+ 'classroom':require('../../../assets/app/life/rewards/cards/landmark.png'),
+ 'warehouse':require('../../../assets/app/life/rewards/cards/construction-site.png'),
+ 'library':require('../../../assets/app/life/rewards/cards/museum.png'),
  laundry:require('../../../assets/app/life/rewards/cards/laundry.png'),
  'station':require('../../../assets/app/life/rewards/cards/station.png'),
  'convenience-store':require('../../../assets/app/life/rewards/cards/convenience-store.png'),

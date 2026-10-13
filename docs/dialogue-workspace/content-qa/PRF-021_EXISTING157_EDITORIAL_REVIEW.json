@@ -1,0 +1,3371 @@
+{
+  "prefectureId": "PRF-021",
+  "date": "2026-10-13",
+  "reviewer": "AI editorial agent",
+  "baselineHead": "5a7f84782aba1e654377058780f154d4ca5c26b5",
+  "scope": {
+    "existingAuthoredScriptsRead": 157,
+    "existingGoalsRead": 785,
+    "finalNewSourceScriptsRead": 24,
+    "finalNewSourceGoalsRead": 120,
+    "finalRuntimeIntegrationNotCertified": true,
+    "method": "Read all eleven turns and five goals for every source script in bounded city/cluster chunks. Re-read portions truncated in prior command output; no lexical score used as approval.",
+    "latestFinal24Reread": "Current Kaizu04, Motosu04, Gujo07 reread after parent flagged concurrent source changes; stale E08 corrected explicitly."
+  },
+  "contentPass": false,
+  "nativeSpeakerReviewed": false,
+  "humanReviewed": false,
+  "findings": [
+    {
+      "id": "E01",
+      "severity": "content_blocker",
+      "evidence": {
+        "scenarioId": "SC-LOC-021-18-001",
+        "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+        "sourceSha256": "20d58a6fdfdf8612f9bff3e8fc2cc26437d8dd30da19a49ffc35fb402dd6b15c",
+        "runtimeSha256AtReview": "0e89dcaced0b803f1320ef65fbf06a723e31c6fea7ffd4551f42be72188b4394",
+        "runtimeBinding": "current_existing_runtime",
+        "turnEvidence": [
+          {
+            "turn": 2,
+            "text": "旅の予定に土曜日の零時半とあります。土曜の夜に来るつもりでしたが、友達は金曜の夜と言っています。"
+          },
+          {
+            "turn": 3,
+            "text": "零時を過ぎた日付と、その前に駅へ来る時刻を分けて確認しましょう。"
+          },
+          {
+            "turn": 8,
+            "text": "友達へ、金曜の夜から土曜に変わった後の零時半なのか、確認した表記で説明します。"
+          }
+        ]
+      },
+      "issue": "Saturday 00:30 versus Saturday night is the explicit question, but the station NPC never resolves the calendar distinction.",
+      "proposedRepair": "Replace turn3 with 土曜日の午前零時半は、金曜日の夜を過ぎた後です。出発の日付を予約の案内でも確認しましょう。 Preserve reservation verification but do not leave the simple meaning unanswered.",
+      "status": "resolved_in_final_source_runtime_reading",
+      "resolutionRuntimeSha256": "06a5630debc046f5b5bd796d12443b51015719bcdcdb0f015a3d4053644b2013"
+    },
+    {
+      "id": "E02",
+      "severity": "content_blocker",
+      "evidence": {
+        "scenarioId": "SC-LOC-JP-21211-06-001",
+        "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+        "sourceSha256": "ca44673923d40679d86e4a7df599968a9231952c891bc678aeb097c55912119a",
+        "runtimeSha256AtReview": "fdca02fd7d69169e82b6dfd0a357269e49a2a1e8670ffecea72ab69f6409010d",
+        "runtimeBinding": "current_existing_runtime",
+        "turnEvidence": [
+          {
+            "turn": 2,
+            "text": "「翌営業日」が分かりません。カレンダーの次の日なのか、窓口が開く日なのか知りたいです。"
+          },
+          {
+            "turn": 3,
+            "text": "営業日という言葉は、対象の手続きでの取扱いと合わせてご説明します。"
+          },
+          {
+            "turn": 7,
+            "text": "その日付と条件を見て、例を一つ挙げてご説明します。"
+          },
+          {
+            "turn": 11,
+            "text": "承知しました。それでは、言葉の説明から始めます。失礼します。"
+          }
+        ]
+      },
+      "issue": "The whole exchange asks meaning of 翌営業日; it promises a definition and example without giving either.",
+      "proposedRepair": "Turn3: 翌営業日は、その手続きを扱う営業日のうち、次の日という意味です。カレンダーの翌日とは限りません。 Turn7: 例えば土日を休みとする手続きで、月曜日が祝日でなければ、金曜日の翌営業日は月曜日です。実際の営業日はこの手続きの案内で確認しましょう。 Adjust player turn8/task4 to acknowledge the explicitly hypothetical example.",
+      "status": "resolved_in_final_source_runtime_reading",
+      "resolutionRuntimeSha256": "9223dd701c0ef7114a0041eba4bc8bd4d0cfb96427d5d58044eadff2ab043f30"
+    },
+    {
+      "id": "E03",
+      "severity": "content_blocker",
+      "evidence": {
+        "scenarioId": "SC-LOC-JP-21213-01-001",
+        "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+        "sourceSha256": "eaf2befe895fd117cdfc38c045a7f57248402f5eefd75783eedd979ee8aa6fe4",
+        "runtimeSha256AtReview": "6d3ea0df2b6bd3927f1d65e49d90025638d5d70f692ee77c0225f90d91e53467",
+        "runtimeBinding": "current_existing_runtime",
+        "turnEvidence": [
+          {
+            "turn": 2,
+            "text": "飛行機の絵があるので、ここから空港へ電車で直接行けるのかと思いました。絵の意味を確認したいです。"
+          },
+          {
+            "turn": 4,
+            "text": "空港へ行きたいです。展示施設を見る予定ではありません。この絵だけで乗る列車を決めかけました。"
+          },
+          {
+            "turn": 5,
+            "text": "案内図の施設表示と、列車の行き先を分けて確認しましょう。"
+          },
+          {
+            "turn": 6,
+            "text": "お願いします。絵が何を示すかを聞いてから、自分の空港への経路を調べたいです。"
+          },
+          {
+            "turn": 9,
+            "text": "現在の交通案内と、必要な乗り換えをご確認ください。"
+          }
+        ]
+      },
+      "issue": "Airplane pictogram meaning never answered even after player distinguishes exhibit from airport objective.",
+      "proposedRepair": "Turn5 fictional setting: この飛行機の絵は、航空機を展示する施設の場所を示しています。空港へ直通する列車の印ではありません。 Then retain airport-name/time question and route checking. Do not assert this label describes a real unverified map.",
+      "status": "resolved_in_final_source_runtime_reading",
+      "resolutionRuntimeSha256": "d2db23ba609c18bb0a689211e87e3b2009a0de42a187ec6fa5211a8618e77724"
+    },
+    {
+      "id": "E04",
+      "severity": "content_blocker",
+      "evidence": {
+        "scenarioId": "SC-LOC-JP-21215-01-001",
+        "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+        "sourceSha256": "4ad845c796a9f9996b60e731ad92cdd60a97aa0c0386938c6a9e62e7cb041e5f",
+        "runtimeSha256AtReview": "392fa3d2793c18a1af0118f207a21cb34019cab66c141d3952ea660a0bb0e427",
+        "runtimeBinding": "current_existing_runtime",
+        "turnEvidence": [
+          {
+            "turn": 7,
+            "text": "ご利用のバスの支払方法も、当日の案内で確認されますか。"
+          },
+          {
+            "turn": 8,
+            "text": "お願いします。財布を出しても、それだけでどの方法でも払えるとは限らないので、乗るバスの案内を聞きたいです。"
+          },
+          {
+            "turn": 9,
+            "text": "案内を確認してから乗り場へお進みください。"
+          },
+          {
+            "turn": 10,
+            "text": "分かりました。必要な物を手元へ移し、支払方法を聞いてから、袋をまとめて乗り場へ向かいます。"
+          }
+        ]
+      },
+      "issue": "Information NPC offers payment-method guidance, player asks, then NPC tells player to check guidance with no method or referral location.",
+      "proposedRepair": "Turn9: この案内板の支払い欄を一緒に見ましょう。乗る路線名を教えてください。 Example direct realistic referral is enough; do not invent actual bus payment policy. Update turn10 to respond with route-identification then proceed after confirmation.",
+      "status": "resolved_in_final_source_runtime_reading",
+      "resolutionRuntimeSha256": "65715d1d40d7192133c3b3179878d82df48183042bcd2f9aace0ec919f811557"
+    },
+    {
+      "id": "E05",
+      "severity": "content_blocker",
+      "evidence": {
+        "scenarioId": "SC-LOC-GIF-GERO-04-001",
+        "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+        "sourceSha256": "bd8d7493370b8a9e63acdbc1421eb334f5028e5e9ce39df39065f4fc68d491f9",
+        "runtimeSha256AtReview": "93269bc54dc400a5a673712cdbfa528ed496a2730e1126b143450e933d86523c",
+        "runtimeBinding": "current_existing_runtime",
+        "turnEvidence": [
+          {
+            "turn": 5,
+            "text": "どんなことを伝えたかったか、まずお話しください。"
+          },
+          {
+            "turn": 6,
+            "text": "初めて近所の人と話してうれしかったことです。直された言葉は、私が泣いたような意味にも見えます。"
+          },
+          {
+            "turn": 7,
+            "text": "気持ちに合う表現か、一緒に確認しましょう。"
+          },
+          {
+            "turn": 9,
+            "text": "発表では、意味を確かめた表現を使ってください。"
+          },
+          {
+            "turn": 11,
+            "text": "伝えたい気持ちを確認できました。それでは、二つの作文を見ながら整えましょう。お疲れさまです。"
+          }
+        ]
+      },
+      "issue": "Japanese classroom correction never names the difficult word or provides a usable replacement. The entire plot promises expression clarification but ends before it occurs.",
+      "proposedRepair": "Turn7: 泣いたのではなく、話せてうれしかったのですね。「初めて近所の人と話せて、うれしかったです」なら、今のお話に合っていますか。 Adjust turn8 to accept/correct actual wording and goal4. Keep both draft versions for comparison.",
+      "status": "resolved_in_final_source_runtime_reading",
+      "resolutionRuntimeSha256": "c395f926602e1329473bf6e612b99e74d8102d1c74535a4744a7d6a596eb55c4"
+    },
+    {
+      "id": "E06",
+      "severity": "content_blocker",
+      "evidence": {
+        "scenarioId": "SC-LOC-JP-21214-07-001",
+        "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+        "sourceSha256": "eaf2befe895fd117cdfc38c045a7f57248402f5eefd75783eedd979ee8aa6fe4",
+        "runtimeSha256AtReview": "f7bb6bb0876bf946f3c8d27e886521a8a8d970b42c43e2e8d13521567ad70bfe",
+        "runtimeBinding": "current_existing_runtime",
+        "turnEvidence": [
+          {
+            "turn": 2,
+            "text": "はい。重さで値段が決まるようですが、皮をむいてから量るのですか。食べる部分だけかと思いました。"
+          },
+          {
+            "turn": 3,
+            "text": "この商品の販売単位と、量る状態をご案内します。まだ皮はむいていませんね。"
+          },
+          {
+            "turn": 5,
+            "text": "こちらでは、売り場の表示と商品の状態を確認してからお会計します。"
+          },
+          {
+            "turn": 8,
+            "text": "一人で食べる分だけにしたいです。先に量を選び、会計の後に家で皮をむきます。"
+          },
+          {
+            "turn": 10,
+            "text": "はい。重さの単位と会計時の状態を確かめます。食べられない部分があることだけで、自分で値段を減らさないようにします。"
+          }
+        ]
+      },
+      "issue": "Explicit peel-before-weighing question never receives a direct answer from shop staff; player later assumes weighing unpeeled.",
+      "proposedRepair": "Turn3 fictional store: この果物は皮をむかずに量って販売します。百グラム当たりの価格はこちらです。皮をむく前に確認してくださってありがとうございます。 Update unit-dependent following player lines if needed; fictional premise must preserve store-specific scope.",
+      "status": "resolved_in_final_source_runtime_reading",
+      "resolutionRuntimeSha256": "4c3593d89f896e4bd609a0265a058d9e9afa1c90a16022835e0ccd3b2f9c8c59"
+    },
+    {
+      "id": "E07",
+      "severity": "dialogue_meta_leak",
+      "evidence": {
+        "scenarioId": "SC-LOC-JP-21218-04-001",
+        "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-motosu.json",
+        "sourceSha256": "d1cfa2ec2dbd71c0ff8c6c43e946c58dd7557baa5f78f54fa3980fd6e40d8e6b",
+        "runtimeSha256AtReview": "4fbf1535c38282063c0e37f60954dc53ad8f22d16d69d28982a50d4cf12c1056",
+        "runtimeBinding": "final24_not_yet_rebound",
+        "turnEvidence": [
+          {
+            "turn": 5,
+            "text": "この場面では、委任状と受け取る方の本人確認書類をご用意いただく案内になります。"
+          }
+        ]
+      },
+      "issue": "NPC says この場面では, exposing the authoring simulation inside a normal police dialogue.",
+      "proposedRepair": "Replace with 担当の案内では、委任状と受け取る方の本人確認書類をご用意いただきます。 Keep scenario-level simulation disclosure outside dialogue. Real lost-property proxy-document requirements need source checking, not this editorial review.",
+      "status": "resolved_in_final_source_runtime_reading",
+      "resolutionRuntimeSha256": "2f30bd0cc09d28ca6f037f8c29100b04de4ab051ccf587f1dfe74d3898deac08"
+    },
+    {
+      "id": "E09",
+      "severity": "practical_response_gap",
+      "evidence": {
+        "scenarioId": "SC-LOC-JP-21219-07-001",
+        "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-gujo.json",
+        "sourceSha256": "08b29a1f49588476fd8439c01ad5b98f25a5c681a55c164c0fafda5ee321116f",
+        "runtimeSha256AtReview": "d2f0d2ffa21105b1613efd357295b0793fde4374bcb8b141c75106afd1cc836a",
+        "runtimeBinding": "final24_not_yet_rebound",
+        "turnEvidence": [
+          {
+            "turn": 8,
+            "text": "持参した袋を使います。ただ底が薄いので、三本を横に並べるより立てて入れたいです。"
+          },
+          {
+            "turn": 9,
+            "text": "袋に無理がないか、入れる時にご確認ください。"
+          },
+          {
+            "turn": 10,
+            "text": "はい。重すぎたら一本減らして二本にします。買ってから持てないと困るので、会計前に確かめます。"
+          }
+        ]
+      },
+      "issue": "Player treats upright placement as answer to a thin bag bottom, which does not solve load-bearing strength; NPC only says check.",
+      "proposedRepair": "Turn8 持参した袋は底が薄いので、三本を入れて持てるか心配です。丈夫な袋もありますか。 Turn9 こちらの袋もありますが、まず無理なく持てる本数にしてください。会計前に重さをご確認ください。 Preserve reduction to two as possible choice and sync tasks.",
+      "status": "resolved_in_final_source_runtime_reading",
+      "resolutionRuntimeSha256": "f06e64fe609689d4805667a794fa7ec697a6b41b2bfd673f6cf761b88720c42a"
+    }
+  ],
+  "wholePlotRewriteIds": [],
+  "comparisonGroups": [
+    {
+      "ids": [
+        "SC-LOC-021-02-001",
+        "SC-LOC-JP-21215-03-001"
+      ],
+      "assessment": "whole_plot_rewrite_required",
+      "reason": "Same overtime onset / head-heavy complaint / work log plus symptom log / correlation not causation / clinician handoff development. Minor changes in timing and holiday logging do not produce an independent communicative task.",
+      "recommendedRewriteId": "SC-LOC-JP-21215-03-001",
+      "hashBoundMembers": [
+        {
+          "scenarioId": "SC-LOC-021-02-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+          "sourceSha256": "20d58a6fdfdf8612f9bff3e8fc2cc26437d8dd30da19a49ffc35fb402dd6b15c",
+          "runtimeSha256AtReview": "9e3b14247af44fe2ce475916e3206bdb3aaf66e9db394c6f06643448898470b3",
+          "runtimeBinding": "current_existing_runtime",
+          "turnEvidence": [
+            {
+              "turn": 2,
+              "text": "「忙しい」とだけ書きました。でも、仕事の予定と体の感じを分けて伝えたいです。"
+            },
+            {
+              "turn": 6,
+              "text": "帰宅後に頭が重く感じる日があります。忙しさだけが原因と決めたわけではありません。"
+            },
+            {
+              "turn": 10,
+              "text": "はい。書いていない日は症状なしとせず、分からないと伝えます。仕事の相談ではなく体の変化を診てもらいたいです。"
+            }
+          ]
+        },
+        {
+          "scenarioId": "SC-LOC-JP-21215-03-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+          "sourceSha256": "4ad845c796a9f9996b60e731ad92cdd60a97aa0c0386938c6a9e62e7cb041e5f",
+          "runtimeSha256AtReview": "b01a922437c9b8348718847507b05f469b7e3c63ff2825fb13978239c7b6a288",
+          "runtimeBinding": "current_existing_runtime",
+          "turnEvidence": [
+            {
+              "turn": 2,
+              "text": "最近残業が続いて、頭が重く感じます。残業のせいだと思っていましたが、診察では日付も正確に話したいです。"
+            },
+            {
+              "turn": 6,
+              "text": "勤務の予定表と、自分の体調メモがあります。同じ日に起きたかを、診察で一緒に見たいです。"
+            },
+            {
+              "turn": 10,
+              "text": "分かりました。今日は今の状態と始まった日を伝えます。予定表だけで、残業中の症状を全部説明したことにはしません。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ids": [
+        "SC-LOC-JP-21207-06-001",
+        "SC-LOC-JP-21219-06-001"
+      ],
+      "assessment": "similar_object_but_distinct_trigger_outcome",
+      "reason": "Before writing asks permission and chooses separate notes versus already wrote by notebook confusion and asks remediation before machine use. Preserve distinction; final script does not need rewrite merely for shared passbook.",
+      "hashBoundMembers": [
+        {
+          "scenarioId": "SC-LOC-JP-21207-06-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+          "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+          "runtimeSha256AtReview": "cc750f33b1470dae10c8099a5d5d3ba8e365bdb5a519ecc94a232da417f96c43",
+          "runtimeBinding": "current_existing_runtime",
+          "turnEvidence": [
+            {
+              "turn": 2,
+              "text": "はい。家計のメモもここに書けば便利だと思いました。印字の横の空いた場所に書いても大丈夫ですか。"
+            },
+            {
+              "turn": 6,
+              "text": "別のノートでもよさそうですね。通帳のページと取引の日付をノートに書けば、あとで照らせます。"
+            },
+            {
+              "turn": 10,
+              "text": "はい。今日は通帳に書いたり貼ったりせず、家計メモはノートに作ります。通帳の扱いは案内を確認します。"
+            }
+          ]
+        },
+        {
+          "scenarioId": "SC-LOC-JP-21219-06-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-gujo.json",
+          "sourceSha256": "08b29a1f49588476fd8439c01ad5b98f25a5c681a55c164c0fafda5ee321116f",
+          "runtimeSha256AtReview": "716c9e72976488e9a9c97e63a2d831a0c339c8bb3c42cbac36dbd999f6d15c1c",
+          "runtimeBinding": "final24_not_yet_rebound",
+          "turnEvidence": [
+            {
+              "turn": 2,
+              "text": "はい。余白に買い物のメモを書いてしまいました。次の記帳で困ることはありますか。"
+            },
+            {
+              "turn": 6,
+              "text": "お願いします。自分で消そうとすると紙を傷めそうなので、そのまま持って来ました。"
+            },
+            {
+              "turn": 10,
+              "text": "そうします。表紙が似ているので、家計用ノートには大きく「メモ」と書いて区別します。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ids": [
+        "SC-LOC-JP-21216-08-001",
+        "SC-LOC-JP-21219-08-001",
+        "SC-LOC-JP-21221-08-001"
+      ],
+      "assessment": "bounded_comparison_distinct_with_risk",
+      "reason": "Plan separate routes and reunion time versus find already separated friend with landmarks versus delayed observer entry correction. Concrete map/entry/event outcomes distinguish these; avoid adding generic no-assumption disclaimers.",
+      "hashBoundMembers": [
+        {
+          "scenarioId": "SC-LOC-JP-21216-08-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+          "sourceSha256": "4ad845c796a9f9996b60e731ad92cdd60a97aa0c0386938c6a9e62e7cb041e5f",
+          "runtimeSha256AtReview": "334b4242fa4f8b6c8b4b9b493e8d9d4bb54ba80e2d5d0ca8d86065ac80061e28",
+          "runtimeBinding": "current_existing_runtime",
+          "turnEvidence": [
+            {
+              "turn": 2,
+              "text": "はい。友達は長く歩きたいですが、私は途中で休みたいです。別々に歩いても、帰りに合流できる場所を決めたいです。"
+            },
+            {
+              "turn": 6,
+              "text": "はい。長く歩く友達の経路を全部まねず、自分が戻れる範囲を見ます。"
+            },
+            {
+              "turn": 10,
+              "text": "分かりました。入口名と時間を二人で決め、途中で予定を変えたら連絡します。自分は短い経路で休みながら歩きます。"
+            }
+          ]
+        },
+        {
+          "scenarioId": "SC-LOC-JP-21219-08-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-gujo.json",
+          "sourceSha256": "08b29a1f49588476fd8439c01ad5b98f25a5c681a55c164c0fafda5ee321116f",
+          "runtimeSha256AtReview": "c790ea9ebbbb04fbb6b5f38b635f7d19a8d2c958adb79fa862037f17837e00a5",
+          "runtimeBinding": "final24_not_yet_rebound",
+          "turnEvidence": [
+            {
+              "turn": 2,
+              "text": "はい。友人が別の入口から入ったようです。私はベンチにいますが、同じようなベンチが多くて説明に困っています。"
+            },
+            {
+              "turn": 6,
+              "text": "そうします。友人も歩き回っているので、私は動かずに、木と水飲み場の間にいると伝えます。"
+            },
+            {
+              "turn": 10,
+              "text": "ありがとうございます。友人が今いる場所を図で探します。こちらへ来る道が分かったら、私の場所まで案内します。"
+            }
+          ]
+        },
+        {
+          "scenarioId": "SC-LOC-JP-21221-08-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-kaizu.json",
+          "sourceSha256": "586a37bd29a7132de4d735a86f7933bfd2fe45a88004171d2436b3832b724644",
+          "runtimeSha256AtReview": "f45c262c1fcfb173b44601b206d1445c6ac31b1db8c1db3dd5100ecc36a33fcc",
+          "runtimeBinding": "final24_not_yet_rebound",
+          "turnEvidence": [
+            {
+              "turn": 2,
+              "text": "私は分かりました。友達が見学に遅れて来るので、迷わずここへ来られる説明を送りたいです。"
+            },
+            {
+              "turn": 6,
+              "text": "この表示の名前を送ります。友達には入る入口も聞いて、そこから来るように伝えたいです。"
+            },
+            {
+              "turn": 10,
+              "text": "そう伝えます。さっき送った右へ曲がるという案内は消して、表示名と、着いたら係に声をかけることを送ります。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ids": [
+        "SC-LOC-021-06-001",
+        "SC-LOC-JP-21217-05-001",
+        "SC-LOC-JP-21210-05-001"
+      ],
+      "assessment": "bounded_comparison_distinct",
+      "reason": "Combine sequential story letters versus intentionally post diary letters on different days versus pass one physical letter through three recipients. Need actual packing/action answers rather than philosophical reflections.",
+      "hashBoundMembers": [
+        {
+          "scenarioId": "SC-LOC-021-06-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+          "sourceSha256": "20d58a6fdfdf8612f9bff3e8fc2cc26437d8dd30da19a49ffc35fb402dd6b15c",
+          "runtimeSha256AtReview": "632390370bb08ad5ca53ac7415fe69b25b5fc1cf85b12e32db9c9fe70229ebf9",
+          "runtimeBinding": "current_existing_runtime",
+          "turnEvidence": [
+            {
+              "turn": 2,
+              "text": "はい。同じ友達へ、長い話を二つに分けました。別々に送れば、書いた順に読んでもらえると思っていました。"
+            },
+            {
+              "turn": 6,
+              "text": "まとめられるか聞きたいです。中の紙には一、二と番号を付け、二通目だけでも続きだと分かるよう書きます。"
+            },
+            {
+              "turn": 10,
+              "text": "これで全部です。番号と説明を見直してから準備します。郵便の順序に物語の説明を任せないようにします。"
+            }
+          ]
+        },
+        {
+          "scenarioId": "SC-LOC-JP-21217-05-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+          "sourceSha256": "4ad845c796a9f9996b60e731ad92cdd60a97aa0c0386938c6a9e62e7cb041e5f",
+          "runtimeSha256AtReview": "0c8b4cb0395a58f7e25a5b1181e0555f94955d89152090e4414f999bad80b2b9",
+          "runtimeBinding": "current_existing_runtime",
+          "turnEvidence": [
+            {
+              "turn": 2,
+              "text": "一通だけ出したいです。旅の各日に書いたので、残りは明日と明後日に分けて出そうと思います。"
+            },
+            {
+              "turn": 6,
+              "text": "はい。今日の手紙の中の日付は、書いた日のことです。出した日や届く日と同じ意味ではありません。"
+            },
+            {
+              "turn": 10,
+              "text": "分かりました。友達には、旅の別の日に書いた手紙と伝えます。今日はこの一通だけ出し、未発送の二通は持って帰ります。"
+            }
+          ]
+        },
+        {
+          "scenarioId": "SC-LOC-JP-21210-05-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+          "sourceSha256": "ca44673923d40679d86e4a7df599968a9231952c891bc678aeb097c55912119a",
+          "runtimeSha256AtReview": "3b81020f586665dcea1f45f20b4bb03eb0947e64f613e170376d466e31c8d46a",
+          "runtimeBinding": "current_existing_runtime",
+          "turnEvidence": [
+            {
+              "turn": 2,
+              "text": "はい。一つの手紙を三人の友達で順番に読みたいです。三つの住所を書けば、順に届けてもらえますか。"
+            },
+            {
+              "turn": 6,
+              "text": "分かりました。最初の封筒へ三人分の住所を並べず、まず一人目の宛先を書きます。"
+            },
+            {
+              "turn": 10,
+              "text": "はい。読んだ人が次の人へ送る準備をするよう相談します。今日は一人目への発送についてだけ案内をお願いします。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ids": [
+        "SC-LOC-JP-21208-08-001",
+        "SC-LOC-JP-21218-03-001",
+        "SC-LOC-JP-21219-03-001"
+      ],
+      "assessment": "bounded_comparison_distinct",
+      "reason": "Unfound park coat inquiry versus found clinic coat collection versus wheelchair return reveals coat. Outcome and NPC authority differ.",
+      "hashBoundMembers": [
+        {
+          "scenarioId": "SC-LOC-JP-21208-08-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+          "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+          "runtimeSha256AtReview": "cf858d5b58fcda7f6a4337a8dc7f63c5fe21551c2b6df642367fb910b96bf66a",
+          "runtimeBinding": "current_existing_runtime",
+          "turnEvidence": [
+            {
+              "turn": 2,
+              "text": "今日の午後に公園へ行き、子どもの上着を忘れたようです。家に帰ってから気づきました。"
+            },
+            {
+              "turn": 6,
+              "text": "車で戻ろうとしていましたが、見つかっているか分からないので、先に電話しました。"
+            },
+            {
+              "turn": 10,
+              "text": "お願いします。見つかったと連絡をもらってから受け取りを相談します。まだ見つかっていない段階で子どもに戻ったとは言いません。"
+            }
+          ]
+        },
+        {
+          "scenarioId": "SC-LOC-JP-21218-03-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-motosu.json",
+          "sourceSha256": "d1cfa2ec2dbd71c0ff8c6c43e946c58dd7557baa5f78f54fa3980fd6e40d8e6b",
+          "runtimeSha256AtReview": "89df261c845a552ed3d1c2edd26ca50cdf92ad90ab6d83ca2ae1e084829265c9",
+          "runtimeBinding": "final24_not_yet_rebound",
+          "turnEvidence": [
+            {
+              "turn": 2,
+              "text": "帰宅してから上着がないことに気付きました。診察室で脱いだので、残っていないか確認をお願いできますか。"
+            },
+            {
+              "turn": 6,
+              "text": "私の名字が書いてあります。着替えを取りに来ただけなので、もう一度診察の受付をする必要はありますか。"
+            },
+            {
+              "turn": 10,
+              "text": "三時ごろ行けます。診察券も持参して、名前のテープを一緒に確認してから受け取ります。"
+            }
+          ]
+        },
+        {
+          "scenarioId": "SC-LOC-JP-21219-03-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-gujo.json",
+          "sourceSha256": "08b29a1f49588476fd8439c01ad5b98f25a5c681a55c164c0fafda5ee321116f",
+          "runtimeSha256AtReview": "6e6aeeaf9c14fddd1892e0891a477cb7b16cc9e65d46f89446a2e32e84d75255",
+          "runtimeBinding": "final24_not_yet_rebound",
+          "turnEvidence": [
+            {
+              "turn": 2,
+              "text": "はい。付き添いで使った車椅子を返したいです。入口に戻すのでしょうか。"
+            },
+            {
+              "turn": 6,
+              "text": "はい。車への移動は家族が付き添いました。私だけ車椅子を押して戻って来ました。"
+            },
+            {
+              "turn": 10,
+              "text": "上着を取りました。貸していただいて助かりました。車椅子はここでお渡しして、母の所へ戻ります。"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "systemicEditorialIssue": {
+    "severity": "resolved_focused_editorial_issues_with_certification_limits",
+    "description": "The following exact eight scripts retain task-level naturalness/development issues after the focused factual/answer repairs. This is a limited actionable list, not a claim that every one of the157 is defective. Do not use lexical uniqueness or this list as exhaustive global semantic certification.",
+    "illustrations": [
+      {
+        "scenarioId": "SC-LOC-021-04-001",
+        "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+        "sourceSha256": "20d58a6fdfdf8612f9bff3e8fc2cc26437d8dd30da19a49ffc35fb402dd6b15c",
+        "runtimeSha256AtReview": "2bf90b61484b2a7eda399359fe4fcd862a3774cd4d11d5cf2c1b67140418e7a9",
+        "runtimeBinding": "current_existing_runtime",
+        "turnEvidence": [
+          {
+            "turn": 6,
+            "text": "分かりました。数字を見て確認できました。聞こえなかった理由を、周りのお客様へ話してもらう必要はありません。"
+          },
+          {
+            "turn": 8,
+            "text": "現金です。小銭を一度数えますので、急いで相づちだけして払ったことにしないようにします。"
+          }
+        ]
+      },
+      {
+        "scenarioId": "SC-LOC-JP-21204-07-001",
+        "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+        "sourceSha256": "bd8d7493370b8a9e63acdbc1421eb334f5028e5e9ce39df39065f4fc68d491f9",
+        "runtimeSha256AtReview": "d76be81efb82f0d81129fea8a58b7f1831cda36bf4e0f172de131bb6363a9f0d",
+        "runtimeBinding": "current_existing_runtime",
+        "turnEvidence": [
+          {
+            "turn": 6,
+            "text": "はい。一箱に十個あると、職場の全員へ同じ日に渡せるという意味にはなりませんね。"
+          }
+        ]
+      },
+      {
+        "scenarioId": "SC-LOC-JP-21217-06-001",
+        "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+        "sourceSha256": "4ad845c796a9f9996b60e731ad92cdd60a97aa0c0386938c6a9e62e7cb041e5f",
+        "runtimeSha256AtReview": "fad4a12d6fc345f1216956a287283a2671526d57755c8b9bd1d8d12901083328",
+        "runtimeBinding": "current_existing_runtime",
+        "turnEvidence": [
+          {
+            "turn": 6,
+            "text": "はい。銀行に渡していません。通帳にないことを理由に、家族へもう一度払ってとは言わないようにします。"
+          }
+        ]
+      },
+      {
+        "scenarioId": "SC-LOC-JP-21215-06-001",
+        "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+        "sourceSha256": "4ad845c796a9f9996b60e731ad92cdd60a97aa0c0386938c6a9e62e7cb041e5f",
+        "runtimeSha256AtReview": "916ea3dbaadcac97623081725f728b3a9687e45688afc3abce57f2199ca2ddaa",
+        "runtimeBinding": "current_existing_runtime",
+        "turnEvidence": [
+          {
+            "turn": 8,
+            "text": "お願いします。同居人の希望を説明したことで、その人がこの口座を使うと申し込んだことにはしません。"
+          }
+        ]
+      }
+    ],
+    "goalProblem": "Required goal components often force the learner to vocalize unprompted negatives or epistemic distinctions. E.g. a cashier should hear cash/payment response, not a pledge not to mistake a nod for payment. Remove unnecessary clauses from answer and corresponding goal together; do not merely shorten answers while keeping impossible compound goal requirements.",
+    "nonBlockingDistinction": "Reception/intake legitimately ends with a specialist handoff; no clinical, police or financial answer must be invented. Blockers above are ordinary meanings or the NPC explicit own offer, not every unresolved specialist service.",
+    "nextGate": "No specific unresolved ID remains from this review. Root technical checks, accurate review flags and remote verification remain required. Do not describe AI reading as native/human review or exhaustive worldwide corpus uniqueness.",
+    "unresolvedExactScripts": [
+      {
+        "status": "resolved_by_full_eight_script_replacements_and_rereading",
+        "evidence": {
+          "scenarioId": "SC-LOC-021-04-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+          "sourceSha256": "673e9cc96de26ca54eb97f3ca8fe775dab08f98e7a6b187074d6d5b5daa5ac16",
+          "turnEvidence": [
+            {
+              "turn": 6,
+              "text": "分かりました。数字を見て確認できました。聞こえなかった理由を、周りのお客様へ話してもらう必要はありません。"
+            },
+            {
+              "turn": 8,
+              "text": "現金です。小銭を一度数えますので、急いで相づちだけして払ったことにしないようにします。"
+            }
+          ],
+          "goalsEvidence": [
+            {
+              "playerTurn": 6,
+              "goal": "表示で確認済みで理由を周囲へ説明する必要はないと述べる"
+            },
+            {
+              "playerTurn": 8,
+              "goal": "現金を数え相づちだけで会計済としないと話す"
+            }
+          ]
+        },
+        "issueAndRepair": "Cashier context: player volunteers no need to tell bystanders hearing reason, then promises not to treat a nod as payment. Neither was proposed by NPC. Replace turn6 with brief confirmation of amount and turn8 with cash/payment request; adjust goals3/4.",
+        "resolutionRuntimeSha256": "7b8fbfacea2c726114bc2555c204d987c04a6c670bbf40c4f19227017dec9834"
+      },
+      {
+        "status": "resolved_by_full_eight_script_replacements_and_rereading",
+        "evidence": {
+          "scenarioId": "SC-LOC-JP-21204-07-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+          "sourceSha256": "237df2a0a12f099ce1da9fb61a974d5ee07fa4d1081bf09ce9a42ae3fce40bcf",
+          "turnEvidence": [
+            {
+              "turn": 4,
+              "text": "今日は八人へ配ります。休みの二人へは明日渡せるか分からないので、明日の分まで勝手に約束しません。"
+            },
+            {
+              "turn": 6,
+              "text": "はい。一箱に十個あると、職場の全員へ同じ日に渡せるという意味にはなりませんね。"
+            }
+          ],
+          "goalsEvidence": [
+            {
+              "playerTurn": 4,
+              "goal": "今日は八人で欠勤者の明日配布は未確約と述べる"
+            },
+            {
+              "playerTurn": 6,
+              "goal": "十個箱を全員同日配布可能と同一にしないと伝える"
+            }
+          ]
+        },
+        "issueAndRepair": "Staff has not suggested ten sweets imply all ten staff present. Player turn6 explains an obvious non-equivalence to shop staff instead of asking box size/expiry; replace with practical quantity/preservation question, goal3 follows.",
+        "resolutionRuntimeSha256": "543230c3bcd4eab01b7613beddda109b769bbee90a51ba3fa4b2b257caf19728"
+      },
+      {
+        "status": "resolved_by_full_eight_script_replacements_and_rereading",
+        "evidence": {
+          "scenarioId": "SC-LOC-JP-21215-06-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+          "sourceSha256": "e4694e4193d7d95a404ecf40657d1346cee654136db1c62e3ff94d1b9540a3fa",
+          "turnEvidence": [
+            {
+              "turn": 8,
+              "text": "お願いします。同居人の希望を説明したことで、その人がこの口座を使うと申し込んだことにはしません。"
+            }
+          ],
+          "goalsEvidence": [
+            {
+              "playerTurn": 8,
+              "goal": "他人希望説明を他人の口座利用申込としないと述べる"
+            }
+          ]
+        },
+        "issueAndRepair": "Explaining housemate car plans cannot reasonably be understood as authorizing another person to use the account. Turn8 invents this negative and repeats goal of turn4. Replace with amount/method/identity-preparation utterance and goal4.",
+        "resolutionRuntimeSha256": "1185738fd579941213e8bdbb5b2a04daef74dd746d026da9944c4cfb5aa5a6e4"
+      },
+      {
+        "status": "resolved_by_full_eight_script_replacements_and_rereading",
+        "evidence": {
+          "scenarioId": "SC-LOC-GIF-TAKAYAMA-07-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+          "sourceSha256": "673e9cc96de26ca54eb97f3ca8fe775dab08f98e7a6b187074d6d5b5daa5ac16",
+          "turnEvidence": [
+            {
+              "turn": 8,
+              "text": "はい。会計を終えれば友達の飲み物も決まるわけではありません。休んでから本人に聞きます。"
+            },
+            {
+              "turn": 10,
+              "text": "今は私が持ちます。パンを選んだ人と持つ人が違っても、誰の物か忘れないよう分けます。"
+            }
+          ],
+          "goalsEvidence": [
+            {
+              "playerTurn": 8,
+              "goal": "会計完了と未選択飲物決定を分け休憩後本人に聞くと述べる"
+            },
+            {
+              "playerTurn": 10,
+              "goal": "袋は自分が持つが品の所有を混同しないと伝える"
+            }
+          ]
+        },
+        "issueAndRepair": "After two-item checkout decision, player says checkout does not decide friend beverage then item selector differs from bag carrier. These abstract distinctions add no new transaction. Replace with request to split bags or clarify handling one item for tired friend; align goals4/5.",
+        "resolutionRuntimeSha256": "dd363f3c5f69ce1884e47c5b860cf8815011ad09259b8c56194562725f24ad41"
+      },
+      {
+        "status": "resolved_by_full_eight_script_replacements_and_rereading",
+        "evidence": {
+          "scenarioId": "SC-LOC-GIF-OGAKI-08-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+          "sourceSha256": "673e9cc96de26ca54eb97f3ca8fe775dab08f98e7a6b187074d6d5b5daa5ac16",
+          "turnEvidence": [
+            {
+              "turn": 8,
+              "text": "六人であることは変わりません。席札の書直しのために、人数まで取消したという意味にはしたくありません。"
+            }
+          ],
+          "goalsEvidence": [
+            {
+              "playerTurn": 8,
+              "goal": "六人は変更なしで札修正を人数取消としないと話す"
+            }
+          ]
+        },
+        "issueAndRepair": "Player tells restaurant that rewriting name cards does not cancel number of diners; staff never suggested changing人数. Replace with straightforward 六人です。名前が決まるまで席の番号で案内できますか and goal4.",
+        "resolutionRuntimeSha256": "adc9346aa3e68e7ff1b72b1ae93b7c6d2acf06c94e50bd71c4622d7bd6768292"
+      },
+      {
+        "status": "resolved_by_full_eight_script_replacements_and_rereading",
+        "evidence": {
+          "scenarioId": "SC-LOC-JP-21217-02-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+          "sourceSha256": "e4694e4193d7d95a404ecf40657d1346cee654136db1c62e3ff94d1b9540a3fa",
+          "turnEvidence": [
+            {
+              "turn": 8,
+              "text": "ありがとうございます。家族から返事が来たことを、市からの結果と同じにせず、担当の連絡を待ちます。"
+            }
+          ],
+          "goalsEvidence": [
+            {
+              "playerTurn": 8,
+              "goal": "家族返答を行政結果とせず担当連絡を待つと述べる"
+            }
+          ]
+        },
+        "issueAndRepair": "Family message reply being confused with municipal decision is unmotivated after player already corrected family. Replace with actual inquiry how city will contact applicant, goal4.",
+        "resolutionRuntimeSha256": "5d34a627f3eefd9ef5b45f3f13d9b949d63afa85fd78dd845ef9839b81047982"
+      },
+      {
+        "status": "resolved_by_full_eight_script_replacements_and_rereading",
+        "evidence": {
+          "scenarioId": "SC-LOC-JP-21214-02-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+          "sourceSha256": "4a9c77b6c8e63e3ca313151213164aff1ff31f0b7a5e7cded619807fede161ca",
+          "turnEvidence": [
+            {
+              "turn": 6,
+              "text": "では先に聞きます。メールに書いたから質問が窓口へ届いたと思わず、今日はここで確かめます。"
+            },
+            {
+              "turn": 10,
+              "text": "分かりました。今の順番を聞いてメモし、家で新しい質問が出たら用件と一緒に送ります。下書きだけで送信済みとはしません。"
+            }
+          ],
+          "goalsEvidence": [
+            {
+              "playerTurn": 6,
+              "goal": "下書作成を質問受付とせず今の順番を窓口で確認する"
+            },
+            {
+              "playerTurn": 10,
+              "goal": "新質問は正式連絡方法で送信し未送下書と区別すると伝える"
+            }
+          ]
+        },
+        "issueAndRepair": "Repeated insistence email draft is not sent/received is not needed for the stated procedure-order question. Staff says question can be answered now but never gives order. Make specific missing step query and answer, then separate later questions as an actual action; goal3/5 follow.",
+        "resolutionRuntimeSha256": "7b04c4431a02c63f2ebcf9c9a49a28a454a9c1903cb8e90dc272a5137e28889a"
+      },
+      {
+        "status": "resolved_by_full_eight_script_replacements_and_rereading",
+        "evidence": {
+          "scenarioId": "SC-LOC-JP-21212-06-001",
+          "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+          "sourceSha256": "4a9c77b6c8e63e3ca313151213164aff1ff31f0b7a5e7cded619807fede161ca",
+          "turnEvidence": [
+            {
+              "turn": 6,
+              "text": "お願いします。先に必要な物を聞き、次に手続きの方法を聞きます。順番が分かると落ち着いて話せます。"
+            },
+            {
+              "turn": 8,
+              "text": "はい。メモの文章が長くなった所は、何を知りたいか短く言い直します。書いた順に全部答えてもらわなくても大丈夫です。"
+            },
+            {
+              "turn": 10,
+              "text": "ありがとうございます。今日は丸を付けた二つを確認し、残りには聞き終えた印を付けずに持ち帰ります。"
+            }
+          ],
+          "goalsEvidence": [
+            {
+              "playerTurn": 6,
+              "goal": "準備物から方法の順で説明を希望する"
+            },
+            {
+              "playerTurn": 8,
+              "goal": "長文質問を短く言直しメモ順全回答は求めないと述べる"
+            },
+            {
+              "playerTurn": 10,
+              "goal": "二項のみ確認し未回答項は確認済にせず持帰ると話す"
+            }
+          ]
+        },
+        "issueAndRepair": "Two needed banking questions are never identified beyond needed objects/method; all remaining turns discuss prioritizing questions and unfinished marking. Name an ordinary banking action and ask its actual practical questions; maintain scoped intake if confidential specifics unknown.",
+        "resolutionRuntimeSha256": "cfbdbce9fa0ea0676f8c2760405352552ff1818a632559ce94fae3a5cf6bdeff"
+      }
+    ]
+  },
+  "readManifest": [
+    {
+      "scenarioId": "SC-LOC-021-01-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "2caf020777997fc81c1bfd78fe3358ddab309772265204d59c2672f0f34ab350",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-021-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "9e3b14247af44fe2ce475916e3206bdb3aaf66e9db394c6f06643448898470b3",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-021-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "4adf1465931a5dd84178b191f0dbaf997f01a759b106d66d4e355364c63fc6aa",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-021-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "7b8fbfacea2c726114bc2555c204d987c04a6c670bbf40c4f19227017dec9834",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-021-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "37e3672879c05d6d813290bdc03e025f582e6ba4270d1b114feaad9b696d36bd",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-021-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "632390370bb08ad5ca53ac7415fe69b25b5fc1cf85b12e32db9c9fe70229ebf9",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-021-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "5c0e5eadd4948fbcf4aef43377795586f738a5f3dbaa0bdc99199013acb90d34",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-021-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "7e529cdcd2a33beda1d80b067554bce17e79049d91488f85d04d96aee26d85d7",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-021-09-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "8ae521775f915dfc159c52b4afbf0a94582cb1817758319aa5c2a794a478c5da",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-021-10-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "a5b45b60d7cf5638cad56b7c1311887fac4eec746ee81777315922700ef38b41",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-021-11-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "2c7ab431d17fa2e6a66d975de09d86894eb30c4c9cf693cce001641a33b008dd",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-021-12-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "742a1405911d5d091688285e3e46a7dc0cd81c574f9ee6eac00a95c82ade7bdd",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-021-13-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "036f1527b3bce449a87ae0f614f571560a279dd44a28a2591f902917a1ca442c",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-021-14-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "9cd0757c0416a68f029a408f4893f848ac477389b50782b2de6ed1ce64794416",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-021-15-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "0f765b927f9ae09762ca0e1e2d4f258c66cd0cb58a927f5dc2987ae1c2668996",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-021-16-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "4d9c5bbc00b264d0bb1d85116cba745d6020a54db48720b71bd144e0c56779be",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-021-17-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "301d363685c8f2006a38f146181b743583e2db52916e698d0b19d521cc39f82d",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-021-18-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "06a5630debc046f5b5bd796d12443b51015719bcdcdb0f015a3d4053644b2013",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-021-19-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "daaaedcc2e96ec37beaac636352e32667d8c4fd1a4bca6c8a4bb4095be617d3e",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-021-20-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "f56c34ea27ad5af5ed690f7bd4361bea06b85da941ee061f4e8ef8c3776c16f8",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-021-21-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "f9a180575fd00fc4e47ab6159183ed8695d7fe129159905b4eff8ec95d4a5469",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-GIF-TAKAYAMA-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "e1e5c76352c4cdd36ce418d9eb1f0ca74075f47d2ae21f0d87f3774ef288b883",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-TAKAYAMA-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "def9de5213036427650e60504fe1b1c4c08e8c29a651c086bc42c2eb69868741",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-TAKAYAMA-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "675560d6e5cf3a7c067134515d5e67111c7d60679b0e87d200136ff799619882",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-TAKAYAMA-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "0bc5d35e897d212ce8fc39484a4fd2c226bae3cee433a5f78546fc1974048322",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-TAKAYAMA-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "71e92a650247d4d2e7a39d6b92fcdcfe8901e605827cce8126ef2d130bbba9c9",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-TAKAYAMA-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "4c33ceca83807e8fcfd2dbfa89a5739f061dc72d216c72abef56b987a4be784d",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-TAKAYAMA-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "dd363f3c5f69ce1884e47c5b860cf8815011ad09259b8c56194562725f24ad41",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-TAKAYAMA-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "47f8a789c6951ce2e8e20ef71c8b021d41d3a020c1cf2a2704eb5072047bbece",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-GIF-OGAKI-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "94a4085c3892ea2688cd859de878c2a4fd9e6dbf44b3f2570adcaaefc686622c",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-OGAKI-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "df911a40e5468dcbf6890d81d0364565d3ce2f0c13ec6e5d3d3a2d99a6430688",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-OGAKI-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "695ece32b990e2782f85a793ee3b51bac0144f56f559a84e99e0026c5260593d",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-OGAKI-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "461028cb3fa10c9db8fc6377a88ee37b6258576fea61da2910e683350c88382d",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-OGAKI-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "56345a8d81f62312bc36e4034cce4606a813d36a4268ad43a26ea4143371b282",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-OGAKI-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "8eeea91ede95b23672552091233acd3d95ac21a110fc4ea2c5d3755a704aaa54",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-OGAKI-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "fe5adba292d3c9d6621cd165bef5863091927cebad84ec3c2be8b6e763fe93af",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-OGAKI-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "runtimeSha256AtReview": "adc9346aa3e68e7ff1b72b1ae93b7c6d2acf06c94e50bd71c4622d7bd6768292",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-GIF-SEKI-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "410d97e0e53941e42815a37edaf810bafe2fca8d4ab145b9ae9ffd2db40eb2ce",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-SEKI-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "896961fa5ade9a66e24a65323138afe00bd4a7adf5bc25795cf26937b878f573",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-SEKI-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "702e5613ed4180aea8bdf68cd5a66edeb5fc0cc564b8307064f8cea7f2799a3c",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-SEKI-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "05317bdc86cdd0c147977937b979dc0f070251b05671e60cbaac97b046be3441",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-SEKI-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "a78335bb95b162a0499040f90eea1931b4651720381b5c695d2086f571ed131c",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-SEKI-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "7d43c6059b787049fa3c5207f400f8b237b561cb15c8290356ef65d05b702c34",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-SEKI-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "17ff8a7cfe6dcb38b0ac3267c30a3b98e94358fd32ace55bf0732f6866ba82fc",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-SEKI-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "6ba8520d0b5662ac83c527c75e47b5839b2638687196dfcfb4c59013cab5e429",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-GIF-GERO-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "e122bcdb9c398e88f45b1c9518677b9f640fb991cc69ab3ca79e5f8456a126ce",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-GERO-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "6fdbd9dbbe5ca776178c83c8eddfc695928b08ac9767d23fa275021cb3cfc9ba",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-GERO-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "6fc24ac6e93cf68206cb438222e21b7f8615adc2cf7d30cde4471bc2af211db3",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-GERO-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "c395f926602e1329473bf6e612b99e74d8102d1c74535a4744a7d6a596eb55c4",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-GERO-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "b261871cd2976deb3cc171c8af144089f34810541ac2ac5510a8ab89b0878da8",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-GERO-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "e71494684f6d8947fa4c0aeef9041ac3dd03261e7ebce27bb6cf73b471d06c31",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-GERO-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "c7d9fe9811fc85d47519abeacae26762f6d227ade98693e05be1e632ed87d387",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-GERO-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "505d970263d8deb9a1eecaf883403ca7b5b13aa0f668e0914ae9d420f77060bb",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21204-01-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "63f2310b2abc261a4623b3a798f6ccd60d764273c71319a00ae5e504053c7890",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21204-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "fc93cd8aa4e4485c3460ea4273fb65c8d40d654db70e03ebdad8b730c538ada1",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21204-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "a3c8378ca988628373f8a18ec8dc958eb1bb2321838d9656f682c832b01b9fcb",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21204-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "f0417b38b4ed56f78bdf61a6a7c00835a51d5477efb3549bd7ec06ddc434cb00",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21204-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "e2f116625bfdf0871b0d17a88177c3eb32eb1ebba711edf78860103c4d0b9e0e",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21204-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "7c915c6ed5f84597797c59f95f60db1595599af3275cff73abf579c38e1697f1",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21204-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "543230c3bcd4eab01b7613beddda109b769bbee90a51ba3fa4b2b257caf19728",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21204-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceSha256": "0ad422f4d1ba168a3708aead6bdc6ddf17ff83a6783743582d0d501cac56b462",
+      "runtimeSha256AtReview": "6f66e2871d5b93a2a25cd9067216c496019299c4ca65a23971923be071467e8e",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21206-01-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "ae25bafebff08596ae0ee81fa8dca817c626a54244be5c1f9f4862d3ac130eab",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21206-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "5856db6ab02b9b8a56c9140b72553018a9b70b27fa24a54f1b493e6f681a060a",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21206-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "24ecfa72c0ca2cb933a0062b016dd3be2c69d074e8945cc86bc857343189992e",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21206-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "b44bf2ac5fbf39e9d5884573244042a64475912a3d4117022de50853fbca1aee",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21206-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "ce749eab12f981ff81061d8f86f92e4e7401a5edfbca528283733600a9c014fd",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21206-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "522dfc7d378b2cbb83d06845f3be173c58af75db616bcf56378df70e45efd742",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21206-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "f33d6d4ca8005a695b573024a14766be8de7ecb554b79599c7fc6da60032058c",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21206-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "4a7ce76d5577ba0cba94a6104a52c942ee5a97398165d178850e20cd986bb89d",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21207-01-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "d3cde35f9a6253bb149b28cfb95987c6a29ecdbdd533378c8b922eed5cfa2934",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21207-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "c04dda3836f8b5f0974cc086c7907d6d6f4aaef62eedc83f6de54b04cb448d2e",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21207-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "ba616dbaccc1790c2c17bfe3f2aaa98724a0cdc22cdf1ba307b8c3c29e084e20",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21207-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "b72ab62e09a4ed383a3c439784279bef8e0fd0259b572ce8166e7413257a6c39",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21207-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "e4e572c363816ef3a40f92e0a18a01a8f1874685acbb599894df72217c8f982b",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21207-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "cc750f33b1470dae10c8099a5d5d3ba8e365bdb5a519ecc94a232da417f96c43",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21207-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "e86d9947eb9fad682546b108b8b2acc8032424f84535c8447dd760dbef4b6f4a",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21207-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "9c7830460b8006f61e6348e4d04f74bf5b0236ede7b4c2502064b21ccd03886f",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21208-01-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "61475c89f6f236a8233564bf18c0c01e3c284460d79c5ddb68e2a2da60799021",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21208-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "18faf5726653b33e2518446a5dd42f749120e916802c608b19fcff13a6d15a2c",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21208-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "1f1755f144f472c685db6aae988210dacaea84528e1675eeed81a7ca42ddf22a",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21208-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "c4c9e05fcdbdf3577db84b10da7eded4769f59cb4894902e4f09c4f75ef65130",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21208-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "c4cb42ed1100529e120e0e8f665c6b151887be197f7e28f70b70f6c91722ca54",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21208-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "1576df12d115e401fab02c7b9f2b90452692ec345a8f5a1c07a1d205971053ae",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21208-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "81423842d48a619610ca8657ffea59f8ceaae32b10628818010858ac8d3f3377",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21208-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "runtimeSha256AtReview": "cf858d5b58fcda7f6a4337a8dc7f63c5fe21551c2b6df642367fb910b96bf66a",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21209-01-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "3c718b94369f0a24a43d9f8a2a9832b19fd7e2d52820a40710c15150b0999ca7",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21209-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "ba7ea48f3c90c570773cc01e74e7b800fb21d765bd00583a4b76342e30b7ea1f",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21209-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "ee589128a8c742d3ebf13ca40684ffeec9dab2b5493ebaa2cce6da948130146e",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21209-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "e728bf4e47cd0c379334c4ba4d7a1715b42262dff87125089c1b866399d54885",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21209-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "9d4f5c3c147a7610f2cebd7d1f8a5552724488277acf58cb52dfc00264aa008d",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21209-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "fa249a43b714750e24f0e2f565be093dfd8bb8dfb0da79029403cd375c16d735",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21209-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "dee86151c7c23c83c2a3985d9061a14d8c251d4943644a91f320d0eef9444185",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21209-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "d0666765a2e7d066f3d3aa7298a6bd823afb5b2b9b2b70f849f9cf0a3aeb001d",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21210-01-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "74d20fa71124c4efa68f100b32be216d8f9bf3d7f14421c0540ed41554cd0c1d",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21210-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "7113428be6bcc0343af682f1ab03fdcb34e7a7e6813d3651792bc346fa4678d8",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21210-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "305aee0b9211d838d51da592655fc6a97a5cc98bf3fd04138aac4f52591a066c",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21210-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "1b6ed565390416a0e77b9fa83a8ad3b7e31e81cd1f9f37f43ca2ad97106a84a4",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21210-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "3b81020f586665dcea1f45f20b4bb03eb0947e64f613e170376d466e31c8d46a",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21210-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "e3066688c2d9829a66fc20a82455fcde5ae638d1c58be0767c84731667b863bc",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21210-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "bb387c1eee369a76095ef4a5ab68740682b553e0600963e89f95d8b76e35ccd8",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21210-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "7167aa150205da755ea133ac5fddf1a08747cfc2d4a62fec5266ddc2502148fd",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21211-01-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "ad77472bc850bd2b2c6f18af924f1d6aa4224548ef2cde2c0da6b29250968817",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21211-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "bf880098b996569ded228e6c1dfb5a894343f5d2fa43af69b14a97be02d17c74",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21211-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "0fb56faec031d851021b68745416b7a687bd9932f521d72f1344212f2c554715",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21211-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "8520eb6eb634fefde529954d2d2a8fad34f84dc931db58e6407c46afe2f65a62",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21211-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "cff32c069b2eca425eee7e894c4a2b44da428ebe7101be462c80b749f37c613c",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21211-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "9223dd701c0ef7114a0041eba4bc8bd4d0cfb96427d5d58044eadff2ab043f30",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21211-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "47b6c58c2e9439702224ee901e9e60ed826404d8da2ccaae25cb5af1dbe97d8f",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21211-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "runtimeSha256AtReview": "4c3e1799825ad0fb24da54063e826e8198cffc55e951ac44b4f4d5c9afb86368",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21212-01-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "5091fa8136a8b6ffe5d4203f8ff0553140c86aa56f61337541055b7ac76ccb5e",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21212-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "e67b3ab6ee2c7e08b9e28ea6193e158d5f6795d8d4b2f122a4cccc5ad4761fd8",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21212-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "2cb73d81cacd63621204bc53e59b629be2cf52ac57621cb451cb8ad4e3e7183c",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21212-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "04ad05aa666aa448ec50b9aa1a2f620471ff74fa022a1954d6eea96c2eea34de",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21212-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "c62afd5f1091339b7cdd7440cb0ec8082529cf3d1b1be16188994ec0c4fa2555",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21212-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "cfbdbce9fa0ea0676f8c2760405352552ff1818a632559ce94fae3a5cf6bdeff",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21212-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "75190d554eaada9c719cda656e4802798379188fa6709d9d1700aca5820349c3",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21212-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "2a8f1cdecc9307fb6b09e4efc8533e94a58d80cbc2563d0e6b57be45b46a37e5",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21213-01-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "d2db23ba609c18bb0a689211e87e3b2009a0de42a187ec6fa5211a8618e77724",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21213-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "c56c310aee1242f55a5cd1572a7d4802a1a9f5a31dad06da47a1a4d286734391",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21213-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "39c7db0e2f751fa0291caf4afda81d44d6862634fa9205650b4793bb49b80e35",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21213-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "ec91568957796bcaa02c8d054f8ceb99754d5de58a078645c85abbecedbac368",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21213-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "d6b7a66ae72cb8a3c0f9a657c89716978a7ad7d448edb4e63a949a81d3441be0",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21213-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "7cf097e5a51baa48187d7c230679eb5838b3da035b69ce27083e5eb6bfd3142f",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21213-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "ad682730bb1c328c6a48de1e45ea9e806364f8bef00fdb806ad577add70684b9",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21213-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "4760908449ec86d698be2d0e161bed2600efe9abbfd3f6686d8c32df6a50288e",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21214-01-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "314532f66d442879c300e5a95de591d706c71d118ccb973e0616d9d4f0c98af7",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21214-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "7b04c4431a02c63f2ebcf9c9a49a28a454a9c1903cb8e90dc272a5137e28889a",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21214-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "a31a075ad0b39d5a3ab7dcd24f153ba62508c0bfbfce60aef3484c658536eedf",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21214-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "ab1a95efe738d89020dcf22299c1f22522f01f31b511585a1da0cd59cfffb682",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21214-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "a87bee96f9c4701d90f4fed60b2310672a730b5175db1a463bfeb08eec7cb383",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21214-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "f329c645ac35b75ec639574cb9c802301ce19fd5dba6cad32c63e04d4599b293",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21214-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "4c3593d89f896e4bd609a0265a058d9e9afa1c90a16022835e0ccd3b2f9c8c59",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21214-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "runtimeSha256AtReview": "ffe3786c0f7b2e5a268176a6be89c0bfa17d735cb564fec69fc16174fc8d87d1",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21215-01-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "65715d1d40d7192133c3b3179878d82df48183042bcd2f9aace0ec919f811557",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21215-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "778afebbc1ba211c517d6a61c7fbe9612754d8ee3b32e51cd5693e429d56c824",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21215-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "c2d3a10c75da83255da6a266273f7b767af4ccd611ef7e40faf3cf5334e87f76",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21215-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "7258d6457ec37b79546322f8de9f1bb981145b2c72a11d4b84722c8ae6ce8784",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21215-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "d04c43684fbd3b42ae8b752f03e918739486e7c01cd38f084c0c52c3f6a226ea",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21215-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "1185738fd579941213e8bdbb5b2a04daef74dd746d026da9944c4cfb5aa5a6e4",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21215-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "7cf3b92298a43a5d70aebfe92cde363678d82bacd8e4f011936577d65928e2db",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21215-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "4679e13b47f117c8188740294b068674251e243e8f02cef211f0288f74f4c64e",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21216-01-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "824805edabd171bf23003ffad4e2be0dda1f1091f248119e125a88be4896e4e2",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21216-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "9a38029692a318c49ed83595715a015d71b52380506c8e6c8719a6dc618fa989",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21216-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "48bcb142e93eec358076993eacb9ebe41fb43a9993c633b742df1313d098c46d",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21216-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "3f4f46f0abbe2a46e6b4eaa0b525220c7f4c5855427a9bb3450c8dd33272b402",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21216-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "fce34cf0de772a5c2ee8e023481771dde00f56d0fca0cbe098bf8632a7781e68",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21216-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "4d42a7778a83166c741a3260c52598a05723397cce8e0f75337838fc58c1b0dc",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21216-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "c774685d2c9951e40154ab2626cf7e1809f1b00865b42955453d5025ffb6330f",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21216-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "334b4242fa4f8b6c8b4b9b493e8d9d4bb54ba80e2d5d0ca8d86065ac80061e28",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21217-01-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "42ad78a5241311031201d2152aa6d41613b4253745b190ba0a70b8d4a3442147",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21217-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "5d34a627f3eefd9ef5b45f3f13d9b949d63afa85fd78dd845ef9839b81047982",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21217-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "4af1b1939189b169e75e452237f12903adc5cdf9e5622ae17ba52f1a05ea50e6",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21217-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "4b31daaae1fcb7734cf9be52c41d0e205f3fbb900b11c5a82a4700757df1eb5c",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21217-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "0c8b4cb0395a58f7e25a5b1181e0555f94955d89152090e4414f999bad80b2b9",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21217-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "fad4a12d6fc345f1216956a287283a2671526d57755c8b9bd1d8d12901083328",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21217-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "87227413dcd8712107c46b4c1ec4d85d03e8f15ba85693444269eb20c3866818",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21217-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "runtimeSha256AtReview": "6a1174a8f177d06642886879b404008e4e118ebee55bc314c8f9b76a5d21d394",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": false,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21219-01-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-gujo.json",
+      "sourceSha256": "abe2d53be46c5a17bed9cc81a5dba2193d1fb9a2b435ca9992b754280926d209",
+      "runtimeSha256AtReview": "5a1640ccfb6b7676c60510b36b145bda03d5c5254d6487857f0ab90222b46b7c",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21219-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-gujo.json",
+      "sourceSha256": "abe2d53be46c5a17bed9cc81a5dba2193d1fb9a2b435ca9992b754280926d209",
+      "runtimeSha256AtReview": "e14cb86857afe305bb07692cca0e40a5c54d6d2f886cfcdbb9d58008511c5533",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21219-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-gujo.json",
+      "sourceSha256": "abe2d53be46c5a17bed9cc81a5dba2193d1fb9a2b435ca9992b754280926d209",
+      "runtimeSha256AtReview": "55027ab51b01f6d0257daad6bc9ef9f0ce8a45c30f0272a6a94d1a4a5be97fd2",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21219-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-gujo.json",
+      "sourceSha256": "abe2d53be46c5a17bed9cc81a5dba2193d1fb9a2b435ca9992b754280926d209",
+      "runtimeSha256AtReview": "f682a227394dee7367a56b9c55f993f4f791c6bb9107bddb940523f194d5a9ad",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21219-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-gujo.json",
+      "sourceSha256": "abe2d53be46c5a17bed9cc81a5dba2193d1fb9a2b435ca9992b754280926d209",
+      "runtimeSha256AtReview": "226b98fe95a71457f9302914f478ec05d8fcc1b9f50faaa1ff63edf8d1063133",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21219-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-gujo.json",
+      "sourceSha256": "abe2d53be46c5a17bed9cc81a5dba2193d1fb9a2b435ca9992b754280926d209",
+      "runtimeSha256AtReview": "95b539fc711e15d727a0ddb9d9c99a2718164ff57b850c20232f5e114b8bc349",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21219-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-gujo.json",
+      "sourceSha256": "abe2d53be46c5a17bed9cc81a5dba2193d1fb9a2b435ca9992b754280926d209",
+      "runtimeSha256AtReview": "f06e64fe609689d4805667a794fa7ec697a6b41b2bfd673f6cf761b88720c42a",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21219-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-gujo.json",
+      "sourceSha256": "abe2d53be46c5a17bed9cc81a5dba2193d1fb9a2b435ca9992b754280926d209",
+      "runtimeSha256AtReview": "599feea1d96e5c540b55468d351e474cc24675babd697c605627dc2419eb6766",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21221-01-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-kaizu.json",
+      "sourceSha256": "54af7a41c89580e1d3e5fe235401ea4e16e8855d2e0e3f60c3d8fc3dde016ebc",
+      "runtimeSha256AtReview": "98120af13cc765b9e1a7554e45d64bed3040b4341779e5a8b0cd1be9358bc69e",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21221-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-kaizu.json",
+      "sourceSha256": "54af7a41c89580e1d3e5fe235401ea4e16e8855d2e0e3f60c3d8fc3dde016ebc",
+      "runtimeSha256AtReview": "eaf64057d282f3c7472057e4c9889a8b6ebf7c7c7b6f6847346cea63bbb804a9",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21221-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-kaizu.json",
+      "sourceSha256": "54af7a41c89580e1d3e5fe235401ea4e16e8855d2e0e3f60c3d8fc3dde016ebc",
+      "runtimeSha256AtReview": "c6a493cfa97afa58523b84eaaf8cd992886f839b883c4ac2ba846d37e4baa8cd",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21221-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-kaizu.json",
+      "sourceSha256": "54af7a41c89580e1d3e5fe235401ea4e16e8855d2e0e3f60c3d8fc3dde016ebc",
+      "runtimeSha256AtReview": "9641489985b6f8097a78763ea5b13c4e9da9e385197d34f602a16fec3be6b7c4",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21221-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-kaizu.json",
+      "sourceSha256": "54af7a41c89580e1d3e5fe235401ea4e16e8855d2e0e3f60c3d8fc3dde016ebc",
+      "runtimeSha256AtReview": "ea847419b2a7997fbaac82301ae9d0402182d65bc3c84ede4c75862aa73eabe3",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21221-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-kaizu.json",
+      "sourceSha256": "54af7a41c89580e1d3e5fe235401ea4e16e8855d2e0e3f60c3d8fc3dde016ebc",
+      "runtimeSha256AtReview": "00c5b846d6263c18149356b0c44141bee5af951f781b2066021d781a5b62accb",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21221-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-kaizu.json",
+      "sourceSha256": "54af7a41c89580e1d3e5fe235401ea4e16e8855d2e0e3f60c3d8fc3dde016ebc",
+      "runtimeSha256AtReview": "12e369591e1c2cb53ed416586e3abed6281dabcabda101eb8414f8c1f958cbaf",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21221-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-kaizu.json",
+      "sourceSha256": "54af7a41c89580e1d3e5fe235401ea4e16e8855d2e0e3f60c3d8fc3dde016ebc",
+      "runtimeSha256AtReview": "091bdbd1998ec692a427ccf433319ccd88b7b5794f7f14d74a6aa21c34750a5e",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21218-01-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-motosu.json",
+      "sourceSha256": "4e7d57c9ba8bc8f6bc8b299d4cd4a3e8c44298648e191f9383e281653b3d91ff",
+      "runtimeSha256AtReview": "410b7ca08ae7336d2775c951a9bab860789d93be8874f43827a5d7bdd99a1447",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21218-02-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-motosu.json",
+      "sourceSha256": "4e7d57c9ba8bc8f6bc8b299d4cd4a3e8c44298648e191f9383e281653b3d91ff",
+      "runtimeSha256AtReview": "054bcaf2a13844cf9cf604dd4aa87fb2b82272efa74366630b67cb422bf2304f",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21218-03-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-motosu.json",
+      "sourceSha256": "4e7d57c9ba8bc8f6bc8b299d4cd4a3e8c44298648e191f9383e281653b3d91ff",
+      "runtimeSha256AtReview": "48284755e20abebb0ddec5fc818d402eb1fe43bab67a4fa4090ccab0cd4ac4b0",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21218-04-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-motosu.json",
+      "sourceSha256": "4e7d57c9ba8bc8f6bc8b299d4cd4a3e8c44298648e191f9383e281653b3d91ff",
+      "runtimeSha256AtReview": "2f30bd0cc09d28ca6f037f8c29100b04de4ab051ccf587f1dfe74d3898deac08",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21218-05-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-motosu.json",
+      "sourceSha256": "4e7d57c9ba8bc8f6bc8b299d4cd4a3e8c44298648e191f9383e281653b3d91ff",
+      "runtimeSha256AtReview": "64f549d0986c09f7338f3bdfd94cd71b33192562970d1cd0dc03b0d252c26d91",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21218-06-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-motosu.json",
+      "sourceSha256": "4e7d57c9ba8bc8f6bc8b299d4cd4a3e8c44298648e191f9383e281653b3d91ff",
+      "runtimeSha256AtReview": "e4f4870be71293cfbbf3941d5502263025e2440643b409fb3c1fdb7c25d156e8",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21218-07-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-motosu.json",
+      "sourceSha256": "4e7d57c9ba8bc8f6bc8b299d4cd4a3e8c44298648e191f9383e281653b3d91ff",
+      "runtimeSha256AtReview": "67e460470976edd153f6047a371fd0910da1055d34fda518fbca23d8e52bb47a",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21218-08-001",
+      "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-motosu.json",
+      "sourceSha256": "4e7d57c9ba8bc8f6bc8b299d4cd4a3e8c44298648e191f9383e281653b3d91ff",
+      "runtimeSha256AtReview": "3c6eb5e4cbdea49824c891fc7c7991471432e3f2b592a92e392939008ca98d5a",
+      "turnsRead": 11,
+      "goalsRead": 5,
+      "finalChangedScriptReread": true,
+      "sourceRuntimeTurnsAndGoalsEqual": true,
+      "disposition": "AI_reading_with_scoped_issues_resolved_not_native_certification"
+    }
+  ],
+  "correctedStaleFindings": [
+    {
+      "id": "E08",
+      "status": "resolved_by_author_before_integration",
+      "correction": "Initial issue/proposal referred to a discarded wallet/phone draft. Concurrent source replacement had already changed this ID to crime-prevention notice comprehension. Prior bound evidence was inconsistent and is withdrawn. Current full script and all five goals reread; no owner-phone causal finding applies.",
+      "currentEvidence": {
+        "scenarioId": "SC-LOC-JP-21221-04-001",
+        "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-kaizu.json",
+        "sourceSha256": "586a37bd29a7132de4d735a86f7933bfd2fe45a88004171d2436b3832b724644",
+        "turnEvidence": [
+          {
+            "turn": 2,
+            "text": "はい。日本語教室で、この防犯のお知らせを読むことになりました。分からない言葉があるので、質問したいです。"
+          },
+          {
+            "turn": 4,
+            "text": "「声をかけ合う」のところです。知らない人を見つけたら、私たちが追いかけて名前を聞く、という意味でしょうか。"
+          },
+          {
+            "turn": 5,
+            "text": "そういう意味ではありません。地域で声をかけ、困っていることなどに気づくことを伝える内容です。"
+          },
+          {
+            "turn": 10,
+            "text": "はい。教室で読むだけで解決したことにはせず、相談したい人には、質問を持ってこちらへ来る方法を伝えます。"
+          }
+        ],
+        "goalsEvidence": [
+          {
+            "playerTurn": 2,
+            "goal": "防犯掲示を日本語教室で読むため語句を質問する"
+          },
+          {
+            "playerTurn": 4,
+            "goal": "声をかけ合うが追跡して名前を聞く意味か確認する"
+          },
+          {
+            "playerTurn": 10,
+            "goal": "相談希望者に質問を持参する方法を伝えると述べる"
+          }
+        ]
+      }
+    }
+  ],
+  "final24FindingVerification": [
+    {
+      "id": "E07",
+      "status": "confirmed_current_primary_source_before_root_repair",
+      "evidence": {
+        "scenarioId": "SC-LOC-JP-21218-04-001",
+        "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-motosu.json",
+        "sourceSha256": "685154afae0a59a1395e3c744937a41a694ea6b6ab12b05503b61a999aebacaa",
+        "turnEvidence": [
+          {
+            "turn": 5,
+            "text": "担当に確認したところ、委任状と、受け取る方の本人確認書類をご用意いただく案内でした。作成方法もこちらで確認しましょう。"
+          }
+        ],
+        "goalsEvidence": []
+      }
+    },
+    {
+      "id": "E09",
+      "status": "confirmed_current_primary_source_before_root_repair",
+      "evidence": {
+        "scenarioId": "SC-LOC-JP-21219-07-001",
+        "sourcePath": "scripts/dialogue-authoring/prf-021-cluster-07-gujo.json",
+        "sourceSha256": "662d0f12c924eff27c88d62e66ed8caf5961458b04b83321f95856a60c32e865",
+        "turnEvidence": [
+          {
+            "turn": 8,
+            "text": "持参した袋は底が薄いので、三本を入れて持てるか心配です。丈夫な袋もありますか。"
+          },
+          {
+            "turn": 9,
+            "text": "こちらの袋も選べます。ただ、まず無理なく持てる本数にしてください。会計前に重さをご確認ください。"
+          },
+          {
+            "turn": 10,
+            "text": "はい。重すぎたら一本減らして二本にします。買ってから持てないと困るので、会計前に確かめます。"
+          }
+        ],
+        "goalsEvidence": [
+          {
+            "playerTurn": 8,
+            "goal": "持参袋の耐荷重を心配し丈夫な袋の選択肢を尋ねる"
+          },
+          {
+            "playerTurn": 10,
+            "goal": "会計前に重さを試し必要なら二本に減らすと話す"
+          }
+        ]
+      }
+    }
+  ],
+  "naturalnessRepairProposal": {
+    "path": "scripts/dialogue-authoring/prf-021-final-naturalness-repairs.json",
+    "sha256": "364137f16039acb85c64d3942f6dfd0032840b0508b73da4f6f72e79f0c82172",
+    "scripts": 8,
+    "turns": 88,
+    "goals": 40,
+    "status": "integrated_into_authoritative_original_sources_runtime_and_reread",
+    "method": "All eight full replacement scripts and goals read against original full scripts already read in this review. This is targeted repair rather than blanket native/human certification. Preserve stable goal IDs; titles/premises updated to concrete transaction intents.",
+    "rejectedVariant": {
+      "scenarioId": "SC-LOC-JP-21215-06-001",
+      "reason": "Initial generic opener exactly matched another previously authored Ibaraki script; replaced with deposit-specific opener and matching turn2/3."
+    },
+    "fullComparisonGroups": [
+      {
+        "currentIds": [
+          "SC-LOC-JP-21215-06-001",
+          "SC-LOC-JP-21217-06-001"
+        ],
+        "judgement": "New bank dialogue performs selected cash amount deposit with passbook and form, instead of understanding cash repayment versus account credit. Separate operational intent; does not reuse corrective diary development."
+      },
+      {
+        "currentIds": [
+          "SC-LOC-GIF-TAKAYAMA-07-001",
+          "SC-LOC-JP-21216-07-001"
+        ],
+        "judgement": "New first transaction requests separate bags for two people parting and pays by card. Existing Mizuho transfers already-paid bread to spouse still shopping and prevents mixing with unpaid basket. Shared bread ownership but different trigger/action and payment stage."
+      },
+      {
+        "currentIds": [
+          "SC-LOC-JP-21214-02-001",
+          "SC-LOC-JP-21217-02-001"
+        ],
+        "judgement": "New Kani concretely records course form submission→receipt→callback and requests callback hours; Hida corrects false announcement of application approval and plans handling missed result call. Both municipal contact, but steps versus result communication distinguish intents."
+      },
+      {
+        "currentIds": [
+          "SC-LOC-JP-21212-06-001",
+          "SC-LOC-JP-21206-06-001"
+        ],
+        "judgement": "New Toki prioritizes two bank statement issuance questions with bringable items/month range; Nakatsugawa interprets line-item purpose from receipts and individual/shared expenditures. Do not collapse to generic record clarification."
+      }
+    ],
+    "proposals": [
+      {
+        "scenarioId": "SC-LOC-021-04-001",
+        "proposalSha256": "afc085339e8c7a455845e86b0cc73ba10dc745650bdaf06e2922edd2f717dac6",
+        "fullTurns": [
+          "お会計は、こちらの二点でよろしいですか。",
+          "はい。周りの音で金額が聞こえなかったので、合計の表示を見せてもらえますか。",
+          "こちらの一番下の欄です。袋は必要ですか。",
+          "袋は要りません。合計は六百八十円ですね。",
+          "はい、六百八十円です。お支払いはどうなさいますか。",
+          "現金で払います。小銭を数えるので、少し待ってください。",
+          "どうぞ。こちらの台に置いていただけます。",
+          "六百八十円、ちょうどあります。この台に置きます。",
+          "確かにお預かりしました。こちらがレシートです。",
+          "ありがとうございます。レシートも受け取りました。表示で確かめられて助かりました。",
+          "こちらこそ、ありがとうございました。お気をつけてお帰りください。"
+        ],
+        "fiveGoals": [
+          [
+            "sc_loc_021_04_001_goal_1",
+            "騒音で合計が聞こえず表示を見せてほしいと頼む"
+          ],
+          [
+            "sc_loc_021_04_001_goal_2",
+            "袋不要と合計六百八十円を確認する"
+          ],
+          [
+            "sc_loc_021_04_001_goal_3",
+            "現金払いを選び小銭を数える時間を頼む"
+          ],
+          [
+            "sc_loc_021_04_001_goal_4",
+            "六百八十円ちょうどを台へ置くと伝える"
+          ],
+          [
+            "sc_loc_021_04_001_goal_5",
+            "レシート受領と表示確認への感謝を伝える"
+          ]
+        ]
+      },
+      {
+        "scenarioId": "SC-LOC-JP-21204-07-001",
+        "proposalSha256": "4b72bbd84254b866e3a2127b8736c6f97924b6ed3dd83a4edb781084ef90c027",
+        "fullTurns": [
+          "職場で分けるお菓子をお探しですか。",
+          "はい。十人の職場ですが、今日は八人です。一人に一つずつ渡せる箱はありますか。",
+          "この箱は八個入りで、一つずつ包んであります。",
+          "ちょうどよさそうです。休みの二人には別の日に買います。どのくらい日持ちしますか。",
+          "期限はこの側面をご覧ください。保存方法も、その下に書いてあります。",
+          "今週金曜日までですね。今日の午後に配るので、この箱にします。",
+          "こちらの箱でよろしいですね。持ち運びの袋は必要ですか。",
+          "お願いします。歩いて持っていくので、箱が傾きにくい袋があると助かります。",
+          "この袋なら底に置けます。レジでお会計をお願いします。",
+          "ありがとうございます。袋へ平らに入れて、職場へ持っていきます。",
+          "皆様でお楽しみください。お買い上げありがとうございます。"
+        ],
+        "fiveGoals": [
+          [
+            "sc_loc_jp_21204_07_001_goal_1",
+            "当日八人に一個ずつ渡せる箱を尋ねる"
+          ],
+          [
+            "sc_loc_jp_21204_07_001_goal_2",
+            "八個箱を候補にし欠勤者分は後日購入して期限を尋ねる"
+          ],
+          [
+            "sc_loc_jp_21204_07_001_goal_3",
+            "期限表示を確認し当日配布用に購入を決める"
+          ],
+          [
+            "sc_loc_jp_21204_07_001_goal_4",
+            "徒歩持運び用に箱が傾きにくい袋を頼む"
+          ],
+          [
+            "sc_loc_jp_21204_07_001_goal_5",
+            "箱を平らに入れて職場へ持参すると伝える"
+          ]
+        ]
+      },
+      {
+        "scenarioId": "SC-LOC-JP-21215-06-001",
+        "proposalSha256": "4d19d1637f4907d0e96eb374f92eead4df8ab3942eb9a9a176d5982c08c3e113",
+        "fullTurns": [
+          "入金をご希望ですね。通帳をお持ちでしょうか。",
+          "はい。旅行用に残していた現金を、自分の口座へ入れたいです。",
+          "ありがとうございます。キャッシュカードもご用意されていますか。",
+          "通帳を持っています。カードは家に置いてきました。こちらの窓口でお願いできますか。",
+          "窓口で承ります。入金する金額を教えてください。",
+          "三万円です。財布の一万円は生活費なので、手元に残します。",
+          "三万円ですね。こちらの用紙に口座番号と金額をご記入ください。",
+          "番号は通帳を見て書きます。口座名義は、この欄でよいですか。",
+          "はい、その欄です。ご記入後に、通帳と現金を一緒にお渡しください。",
+          "書けました。通帳と三万円をお渡しします。手続きが終わったら、入金の記録も見たいです。",
+          "お預かりします。記録を確認できるようご案内しますので、少々お待ちください。失礼します。"
+        ],
+        "fiveGoals": [
+          [
+            "sc_loc_jp_21215_06_001_goal_1",
+            "旅行用現金を自己口座へ入金したいと申し出る"
+          ],
+          [
+            "sc_loc_jp_21215_06_001_goal_2",
+            "通帳のみ持参し窓口で入金できるか尋ねる"
+          ],
+          [
+            "sc_loc_jp_21215_06_001_goal_3",
+            "入金三万円と手元に残す生活費を伝える"
+          ],
+          [
+            "sc_loc_jp_21215_06_001_goal_4",
+            "通帳から番号を転記し名義記入欄を尋ねる"
+          ],
+          [
+            "sc_loc_jp_21215_06_001_goal_5",
+            "用紙通帳現金を渡し完了後の記録確認を希望する"
+          ]
+        ]
+      },
+      {
+        "scenarioId": "SC-LOC-GIF-TAKAYAMA-07-001",
+        "proposalSha256": "b746dd9393f2c21cba71bbfad1c20671408a0c2633e7e477720b9ea128bdf6a5",
+        "fullTurns": [
+          "こちらの水とパンをお会計でよろしいですか。",
+          "はい。水は私の分で、パンは友達の分です。二点を一緒に払います。",
+          "袋は一つでよろしいですか。",
+          "別々にお願いします。友達は疲れたので先に帰り、私はもう一軒寄ります。",
+          "承知しました。パンはこちらの小さい袋に入れます。",
+          "ありがとうございます。飲み物も選ぶ予定でしたが、友達が今日はパンだけでよいと言っています。",
+          "では、二点でお会計します。お支払い方法はどうなさいますか。",
+          "カードでお願いします。レシートは私が持ちます。友達との精算は後にします。",
+          "お会計が済みました。パンと水をそれぞれお渡しします。",
+          "受け取りました。友達にはパンの袋を渡します。分けてくださって助かりました。",
+          "どういたしまして。お連れ様にもよろしくお伝えください。お気をつけてお帰りください。"
+        ],
+        "fiveGoals": [
+          [
+            "sc_loc_gif_takayama_07_001_goal_1",
+            "自己水と友人パンを二点一括会計すると伝える"
+          ],
+          [
+            "sc_loc_gif_takayama_07_001_goal_2",
+            "別行動するため購入品を別袋にしてほしいと頼む"
+          ],
+          [
+            "sc_loc_gif_takayama_07_001_goal_3",
+            "友人は飲物を買わずパンのみ希望と伝える"
+          ],
+          [
+            "sc_loc_gif_takayama_07_001_goal_4",
+            "カード払いと自己レシート保管と後日精算を伝える"
+          ],
+          [
+            "sc_loc_gif_takayama_07_001_goal_5",
+            "二品受領し友人へパン袋を渡すと話す"
+          ]
+        ]
+      },
+      {
+        "scenarioId": "SC-LOC-GIF-OGAKI-08-001",
+        "proposalSha256": "287e5db5b96218d581e1c88e3486786dfa49a895f91955fa0809e4b71893b13c",
+        "fullTurns": [
+          "六名様の会食のお席ですね。席札をお持ちですか。",
+          "はい。私があだ名で作りましたが、仕事先の方も来るので、この呼び方でよいか本人に聞きたいです。",
+          "それでは、確認できるまで席札はお手元に置いてください。",
+          "分かりました。今は裏返して持ちます。名前の代わりに席の番号で案内できますか。",
+          "今日は一番から六番までの番号をお使いいただけます。",
+          "助かります。入口で全員に番号を伝えて、それぞれの席へ案内します。",
+          "座る場所は、もうお決まりですか。",
+          "はい。六人の並びは決まっています。この紙に番号を書き足します。",
+          "お名前の表記が決まったら、必要に応じて席札を置いてください。",
+          "ありがとうございます。本人が希望する名前を聞いてから直します。まず番号で集まってもらいます。",
+          "承知しました。それでは、皆様で楽しいお時間をお過ごしください。"
+        ],
+        "fiveGoals": [
+          [
+            "sc_loc_gif_ogaki_08_001_goal_1",
+            "あだ名席札を仕事先にも見せる前に本人へ表記確認したいと話す"
+          ],
+          [
+            "sc_loc_gif_ogaki_08_001_goal_2",
+            "未確認札を伏せ席番号での案内可否を尋ねる"
+          ],
+          [
+            "sc_loc_gif_ogaki_08_001_goal_3",
+            "六番号を入口で伝えて席へ案内すると述べる"
+          ],
+          [
+            "sc_loc_gif_ogaki_08_001_goal_4",
+            "人数と座席順は確定済で紙へ番号追加すると話す"
+          ],
+          [
+            "sc_loc_gif_ogaki_08_001_goal_5",
+            "本人希望を聞いて札を修正し当面番号で集合すると伝える"
+          ]
+        ]
+      },
+      {
+        "scenarioId": "SC-LOC-JP-21217-02-001",
+        "proposalSha256": "6e61e5b14dee9e5c4f488e1438f16412a9f8a3079b5158d7a21e59c0c20c0b19",
+        "fullTurns": [
+          "先ほどの説明で、もう一度確認したいことがありますか。",
+          "はい。家族へ、希望どおり決まったと送ってしまいました。まだ担当の確認を待つのですね。",
+          "はい、申請を受け付けた段階です。結果は確認の後にお知らせします。",
+          "分かりました。家族には今すぐ、結果はまだ出ていないと訂正します。",
+          "結果の連絡は、申請書に書かれた電話番号へ差し上げる予定です。",
+          "この番号は私の携帯です。仕事中に出られなかった場合は、どうすればよいですか。",
+          "着信に気づいたら、こちらの担当窓口へおかけ直しください。",
+          "ありがとうございます。かけ直す時に伝えるため、申請の受付番号も控えておきます。",
+          "お知らせした番号と、お名前をお伝えください。",
+          "分かりました。連絡先と受付番号をこの控えにまとめました。結果の連絡を受けたら家族へ知らせます。",
+          "それでは、担当からの連絡をお待ちください。お越しいただき、ありがとうございました。"
+        ],
+        "fiveGoals": [
+          [
+            "sc_loc_jp_21217_02_001_goal_1",
+            "家族へ確定と送ったが担当確認待ちか再確認する"
+          ],
+          [
+            "sc_loc_jp_21217_02_001_goal_2",
+            "未決定の状態を家族へ訂正すると述べる"
+          ],
+          [
+            "sc_loc_jp_21217_02_001_goal_3",
+            "自己携帯を連絡先として不在着信時の方法を尋ねる"
+          ],
+          [
+            "sc_loc_jp_21217_02_001_goal_4",
+            "折返時に使う受付番号を控えると話す"
+          ],
+          [
+            "sc_loc_jp_21217_02_001_goal_5",
+            "連絡先受付番号を整理し結果受領後家族へ報告すると伝える"
+          ]
+        ]
+      },
+      {
+        "scenarioId": "SC-LOC-JP-21214-02-001",
+        "proposalSha256": "419b95a261666a1383aff38f9a9e39516277a7ad16a81cdab0f4e07c7d4f7b0d",
+        "fullTurns": [
+          "講座のお申し込みについて、もう一度説明しましょうか。",
+          "お願いします。家で申込書を書いた後、先に電話するのか、窓口へ出すのか分からなくなりました。",
+          "この講座は、申込書をこちらの窓口へ提出してください。提出前のお電話は不要です。",
+          "では、家で書いてから持ってきます。受付の後は、私からまた電話するのでしょうか。",
+          "申込書の連絡先へ担当から連絡します。こちらの控えも保管してください。",
+          "分かりました。提出して、控えを受け取り、連絡を待つという順番をメモします。",
+          "はい。連絡先は、日中につながる番号をお書きください。",
+          "仕事中は電話に出られないので、連絡できる時間も用紙に書いてよいですか。",
+          "余白へご希望の時間を書いてください。担当へお伝えします。",
+          "ありがとうございます。午後六時以降と書きます。家でもこのメモを見ながら申込書を用意します。",
+          "ご用意できましたら窓口へお持ちください。それでは、お待ちしております。失礼します。"
+        ],
+        "fiveGoals": [
+          [
+            "sc_loc_jp_21214_02_001_goal_1",
+            "講座申込前の電話と窓口提出の順番を尋ねる"
+          ],
+          [
+            "sc_loc_jp_21214_02_001_goal_2",
+            "窓口提出方針を伝え受付後の自己電話要否を尋ねる"
+          ],
+          [
+            "sc_loc_jp_21214_02_001_goal_3",
+            "提出控え受領連絡待ちの順をメモすると述べる"
+          ],
+          [
+            "sc_loc_jp_21214_02_001_goal_4",
+            "仕事中不応答のため希望連絡時刻の記入可否を尋ねる"
+          ],
+          [
+            "sc_loc_jp_21214_02_001_goal_5",
+            "六時以降希望を記入し家で申込準備すると話す"
+          ]
+        ]
+      },
+      {
+        "scenarioId": "SC-LOC-JP-21212-06-001",
+        "proposalSha256": "b45c0282ff9227d68e4a315fa28cc703e605fe668c7be723ac8273da686eee9d",
+        "fullTurns": [
+          "今日はどのようなご質問がありますか。",
+          "先月分の取引明細を頼みたいです。質問は何点かありますが、まず持ち物と受け取り方を教えてください。",
+          "先に口座を確認します。通帳かカードと、ご本人確認のできるものはお持ちですか。",
+          "通帳と本人確認の書類を持っています。必要なのは先月の一か月分です。",
+          "その期間で確認します。明細のお渡しは、内容を確認した後にご案内します。",
+          "今日持ち帰れるか知りたいです。まだ分からないなら、受け取りの日を聞いてから予定を決めます。",
+          "お渡しまでの時間と費用も確認します。今、ほかに急ぐご質問はありますか。",
+          "今日の申込みで必要なのは、その二つです。来月以降の利用の質問は、今日は後にします。",
+          "分かりました。確認したい期間を用紙へご記入ください。",
+          "先月の初日から末日までを書きます。記入できたら、通帳と書類をお見せします。",
+          "それでは、お持ちの資料から確認します。ご準備ありがとうございます。失礼します。"
+        ],
+        "fiveGoals": [
+          [
+            "sc_loc_jp_21212_06_001_goal_1",
+            "先月取引明細の準備物と受取方法を優先して尋ねる"
+          ],
+          [
+            "sc_loc_jp_21212_06_001_goal_2",
+            "通帳本人確認書類の所持と対象一か月を伝える"
+          ],
+          [
+            "sc_loc_jp_21212_06_001_goal_3",
+            "当日受取可否を尋ね未確定なら案内後に予定を決める"
+          ],
+          [
+            "sc_loc_jp_21212_06_001_goal_4",
+            "当日必須二問を優先し将来利用質問は後日にすると述べる"
+          ],
+          [
+            "sc_loc_jp_21212_06_001_goal_5",
+            "対象月の初末日を記入し通帳確認書類を提示すると話す"
+          ]
+        ]
+      }
+    ]
+  },
+  "resolvedWholePlotRewrite": {
+    "scenarioId": "SC-LOC-JP-21215-03-001",
+    "oldPlot": "overtime/head-heavy/two logs",
+    "newPlot": "Meaning of 再来 reception label with prior visit and different current complaint",
+    "decision": "Actual communicative intent and progression replaced; prior overtime duplicate pair no longer applies."
+  },
+  "finalDecision": {
+    "changedScriptsReread": 39,
+    "wholePrefectureScriptsRead": 181,
+    "turnsRead": 1991,
+    "goalsRead": 905,
+    "focusedUnresolvedBlockerIds": [],
+    "sourceRuntimeParityMismatches": [],
+    "decision": "All specifically identified answer omission, naturalness, meta leak, and causal findings repaired in current authoritative sources and runtime. No further concrete content blocker found in this scoped final reading. Ready for root technical validation and remote persistence as Japanese AI editorial drafts.",
+    "contentPass": false,
+    "reasonForNoBlanketPass": "The review establishes current reading and repaired concrete findings. It does not prove exhaustive semantic uniqueness against the whole previously authored corpus, native/human naturalness, real facility policy, artwork correctness, or device approval. Exact collision-free scores do not substitute for these judgments.",
+    "legitimateHandoffExamples": [
+      "SC-LOC-JP-21212-06-001 asks statement receipt timing: bank must confirm account/scope before guaranteeing issuance; required-items/period application already concretely progresses.",
+      "SC-LOC-JP-21221-03-001 requests allergy-field scope: reception reads headings and refers clinical boundary appropriately.",
+      "SC-LOC-JP-21218-04-001 obtains proxy-document guidance then awaits appointed collection details; no generic authoring meta remains."
+    ],
+    "comparisonUpdates": [
+      "Gujo06 now asks withdrawal denomination breakdown; former passbook-before/after comparison no longer binds current script.",
+      "Gujo08 now permitted leaf collection for child craft; former meeting-landmarks comparison no longer binds current script.",
+      "Motosu01 now decides to wait for friend searching forgotten book; former needle-case transport comparison withdrawn.",
+      "Motosu07 now reports cracked egg pack and selects replacement; former cold-grocery route draft comparison withdrawn."
+    ],
+    "banalSharedPhraseDecision": "Gujo07 袋は必要でしょうか is normal shop speech. Retain it; ordinary short phrase reuse is not proof of repeated full-plot development."
+  }
+}
