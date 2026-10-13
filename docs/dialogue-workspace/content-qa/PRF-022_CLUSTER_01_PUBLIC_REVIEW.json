@@ -1,0 +1,760 @@
+{
+  "status": "bounded AI public role/cause review; tax overlap and minor farewell resolved",
+  "nativeApproval": false,
+  "medicalApproval": false,
+  "legalApproval": false,
+  "contentPass": false,
+  "reviewCount": 10,
+  "entries": [
+    {
+      "scenarioId": "SC-LOC-SZO-FUJI-05-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-022-cluster-01-fuji.json",
+      "sourceFileSha256": "815db783cdcef903ae74034d62ba4c993896860e6e5718791cbfa71076cf202e",
+      "scriptSha256": "cab15cc038b9b862be5c173416c8ded9b14f0f12d8914c06a48245198d4da71f",
+      "title": "健診用の着替えのサイズを交換する",
+      "turns": [
+        "お着替えの準備はできましたか。",
+        "この上着が小さそうです。着る前に、大きいサイズへ替えてもらえますか。",
+        "腕を通したり、着たりされましたか。",
+        "まだです。広げて肩幅を見ただけです。いつもは一つ上のサイズを着ています。",
+        "では、大きいサイズをお持ちします。ズボンの方はいかがですか。",
+        "ズボンはこのサイズでよさそうです。上着だけ交換をお願いします。",
+        "こちらが大きい上着です。元の上着はこちらでお預かりします。",
+        "ありがとうございます。大きい方には名前を書く必要がありますか。",
+        "名前は書かず、着替えた後にお返しください。お荷物は案内したロッカーへお願いします。",
+        "分かりました。大きい上着に着替えて、私物はロッカーへ入れます。元の上着は今お返しします。",
+        "確かにお受けしました。それでは、お着替え後にお越しください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_szo_fuji_05_001_goal_1",
+          "未着用の健診上着が小さく交換を依頼する"
+        ],
+        [
+          "sc_loc_szo_fuji_05_001_goal_2",
+          "肩幅を見ただけで通常は一つ上のサイズと説明する"
+        ],
+        [
+          "sc_loc_szo_fuji_05_001_goal_3",
+          "ズボンは元サイズで上着だけ交換したいと伝える"
+        ],
+        [
+          "sc_loc_szo_fuji_05_001_goal_4",
+          "交換上着への記名の要否を尋ねる"
+        ],
+        [
+          "sc_loc_szo_fuji_05_001_goal_5",
+          "大きい上着へ着替え私物収納と旧上着返却を伝える"
+        ]
+      ],
+      "plannedCategory": "Hospital",
+      "plannedRole": "Nurse",
+      "causalRoleJudgement": "Unused health-check top too small, trousers unchanged; exchange top, ask marking/return, store private items. Clinical staff may handle clothes; no medical advice.",
+      "taskJudgement": "Five actual tasks map sequentially to five PLAYER responses; full evidence included.",
+      "closureJudgement": {
+        "text": "確かにお受けしました。それでは、お着替え後にお越しください。失礼します。",
+        "judgement": "Polite NPC final farewell/transfer appropriate to current task."
+      }
+    },
+    {
+      "scenarioId": "SC-LOC-SZO-FUJI-07-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-022-cluster-01-fuji.json",
+      "sourceFileSha256": "815db783cdcef903ae74034d62ba4c993896860e6e5718791cbfa71076cf202e",
+      "scriptSha256": "3db787eb9bc095e15476baba45ffdf72442afbd75918ec26de82205bcb228ecc",
+      "title": "返信用封筒の宛先を自分の住所で用意する",
+      "turns": [
+        "封筒を二枚お持ちですが、どちらをお出しになりますか。",
+        "申し込み先へ、この大きい方を送ります。小さい方は返事をもらうために、中へ入れるよう言われました。",
+        "小さい封筒には、返事を受け取る方の住所を書きます。",
+        "そうでしたか。二枚とも申し込み先の住所を書こうとしていました。小さい方は私の住所ですね。",
+        "はい。ご自身が受け取る住所とお名前をご記入ください。",
+        "書きました。小さい封筒の口も閉じた方がよいですか。",
+        "返信を入れる封筒ですから、口は開けたままで、大きい封筒へ入れてください。",
+        "分かりました。小さい方には何も入れず、申し込みの紙と一緒に大きい方へ入れます。",
+        "返信用の切手について、申し込み先から指定はありますか。",
+        "案内に指定があるので、それを見て用意します。今日は封筒の書き方が分かったので、一度持ち帰って仕上げます。",
+        "ご準備できましたらお持ちください。それでは、またのご来局をお待ちしております。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_szo_fuji_07_001_goal_1",
+          "大封筒発送と小封筒同封の返信用途を説明する"
+        ],
+        [
+          "sc_loc_szo_fuji_07_001_goal_2",
+          "返信用小封筒には自分の住所を書くと確認する"
+        ],
+        [
+          "sc_loc_szo_fuji_07_001_goal_3",
+          "自分の住所記入後に返信封筒の封をするか尋ねる"
+        ],
+        [
+          "sc_loc_szo_fuji_07_001_goal_4",
+          "返信封筒を空で開けたまま申込書と同封すると話す"
+        ],
+        [
+          "sc_loc_szo_fuji_07_001_goal_5",
+          "指定切手を案内で用意して持帰り準備すると述べる"
+        ]
+      ],
+      "plannedCategory": "Post Office",
+      "plannedRole": "Postal Clerk",
+      "causalRoleJudgement": "Self-addressed reply envelope mistakenly planned with destination address; own address, open empty small envelope inside larger submission envelope, check instructed postage then take home. Postal role fit.",
+      "taskJudgement": "Five actual tasks map sequentially to five PLAYER responses; full evidence included.",
+      "closureJudgement": {
+        "text": "ご準備できましたらお持ちください。それでは、またのご来局をお待ちしております。",
+        "judgement": "Polite NPC final farewell/transfer appropriate to current task."
+      }
+    },
+    {
+      "scenarioId": "SC-LOC-SZO-HAMAMATSU-04-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-022-cluster-01-hamamatsu.json",
+      "sourceFileSha256": "b78badfa8a16175fb2d8009d86ccb5669c2b15c50711f4d4264a379a29592350",
+      "scriptSha256": "3372c0799099a5292a39ef67a7a69b2323679495383fb332e5a0924c6c9ad469",
+      "title": "付き添いの自分が患者用の札を受け取ったと知らせる",
+      "turns": [
+        "受付の番号札についてでしょうか。",
+        "母の付き添いで来ました。私まで札を取ってしまいましたが、診察するのは母だけです。",
+        "お母様も別の札をお取りですか。",
+        "はい。母は先に一枚取りました。私は呼ばれたら一緒に行くため、自分にも必要だと思いました。",
+        "お二人の札を確認します。お母様の受付を進め、ご自身の札については受付で対応します。",
+        "お願いします。母の札と取り替えず、私が後から取った方を渡します。",
+        "番号以外に、受付の手続きはされましたか。",
+        "まだです。私の名前を書いたり、診察を申し込んだりはしていません。",
+        "お母様のお名前で、ご本人の受付をご案内します。お母様はこちらにいらっしゃいますか。",
+        "隣にいます。母の札を手元に残し、聞かれたことは母にも確認しながら付き添います。",
+        "それでは、お母様と一緒に受付へお進みください。お知らせいただき、ありがとうございました。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_szo_hamamatsu_04_001_goal_1",
+          "母のみ受診なのに付き添い自身も番号札を取ったと申告する"
+        ],
+        [
+          "sc_loc_szo_hamamatsu_04_001_goal_2",
+          "母が先に別札を取り自分も同行用に必要と思ったと説明する"
+        ],
+        [
+          "sc_loc_szo_hamamatsu_04_001_goal_3",
+          "母札と交換せず自分の後取札を渡すと伝える"
+        ],
+        [
+          "sc_loc_szo_hamamatsu_04_001_goal_4",
+          "自分名の記入や受診申込はまだしていないと述べる"
+        ],
+        [
+          "sc_loc_szo_hamamatsu_04_001_goal_5",
+          "隣の母と受付へ進み質問は本人にも確認すると話す"
+        ]
+      ],
+      "plannedCategory": "Hospital",
+      "plannedRole": "Receptionist",
+      "causalRoleJudgement": "Extra queue ticket taken by companion, not second patient; disclose before own-name registration, hand back correct extra slip, mother retains patient slip. Receptionist role appropriate.",
+      "taskJudgement": "Five actual tasks map sequentially to five PLAYER responses; full evidence included.",
+      "closureJudgement": {
+        "text": "それでは、お母様と一緒に受付へお進みください。お知らせいただき、ありがとうございました。",
+        "judgement": "Polite NPC final farewell/transfer appropriate to current task."
+      }
+    },
+    {
+      "scenarioId": "SC-LOC-SZO-HAMAMATSU-05-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-022-cluster-01-hamamatsu.json",
+      "sourceFileSha256": "b78badfa8a16175fb2d8009d86ccb5669c2b15c50711f4d4264a379a29592350",
+      "scriptSha256": "048e88953bb3a1af4989871dee2904a7540514b39e6d6ab8c2042f3a0dc716b2",
+      "title": "引っ越し予定が未定のままごみの案内を相談する",
+      "turns": [
+        "暮らしの案内で、お調べしたいことはありますか。",
+        "これから引っ越す部屋に家具が残っています。使わない机を出す方法を、住む前に知りたいです。",
+        "机はどなたの物で、どちらに置いてありますか。",
+        "前の住人の物らしく、まだその部屋にあります。大家さんは処分してよいと言いましたが、回収を頼んだとは聞いていません。",
+        "まず所有者や大家さんとの取り決めを確かめ、地域の処分方法をご相談ください。",
+        "大家さんに、私が申し込むのか聞きます。まだ契約の日も決まっていないので、今の自分の住所で申し込まない方がよいですね。",
+        "申込みの条件は担当の案内で確認してください。机の大きさは分かりますか。",
+        "写真はありますが、寸法は測っていません。次に部屋を見る時、幅と高さを確かめたいです。",
+        "住所と家具の情報がそろえば、担当へ相談しやすくなります。",
+        "分かりました。大家さんとの分担と寸法を確認してから、部屋の住所で相談先を探します。",
+        "それでは、必要な情報の案内をお渡しします。お引っ越しの準備が順調に進みますように。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_szo_hamamatsu_05_001_goal_1",
+          "入居予定部屋の残置机の処分方法を事前相談する"
+        ],
+        [
+          "sc_loc_szo_hamamatsu_05_001_goal_2",
+          "前住人家具と大家の処分許可だけで回収未依頼と説明する"
+        ],
+        [
+          "sc_loc_szo_hamamatsu_05_001_goal_3",
+          "申込担当を大家へ確認し未確定契約段階と伝える"
+        ],
+        [
+          "sc_loc_szo_hamamatsu_05_001_goal_4",
+          "写真はあるが寸法未確認で次回採寸したいと話す"
+        ],
+        [
+          "sc_loc_szo_hamamatsu_05_001_goal_5",
+          "分担寸法住所をそろえ地域相談先を探すと述べる"
+        ]
+      ],
+      "plannedCategory": "Government Office",
+      "plannedRole": "Government Officer",
+      "causalRoleJudgement": "Residual furniture in not-yet-final tenancy; clarify landlord/ownership disposal roles before dimensions and destination-address advice. Municipal referral only; not disposal authorization guarantee.",
+      "taskJudgement": "Five actual tasks map sequentially to five PLAYER responses; full evidence included.",
+      "closureJudgement": {
+        "text": "それでは、必要な情報の案内をお渡しします。お引っ越しの準備が順調に進みますように。失礼します。",
+        "judgement": "Polite NPC final farewell/transfer appropriate to current task."
+      }
+    },
+    {
+      "scenarioId": "SC-LOC-SZO-HAMAMATSU-08-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-022-cluster-01-hamamatsu.json",
+      "sourceFileSha256": "b78badfa8a16175fb2d8009d86ccb5669c2b15c50711f4d4264a379a29592350",
+      "scriptSha256": "0549ec75547e2ae5526aa37f46cd19d23b103d02af3e51abff60e13888e7473a",
+      "title": "提出用資料をまとめるクリップの外し方を尋ねる",
+      "turns": [
+        "こちらの資料をお持ちになりましたか。",
+        "はい。相談用に集めた紙を、種類ごとにクリップで留めています。相談の時は外した方がよいですか。",
+        "まず、どのように分けたか教えてください。",
+        "勤務先でもらった紙と、自分で付けた支出の記録です。仕事の紙は月の順に並べました。",
+        "ご相談の内容に応じて確認しますので、今はその分け方を保ってお持ちください。",
+        "分かりました。全部を一つにまとめてしまわず、どの束か分かるように机へ置きます。",
+        "記録の原本と、控えは分けてありますか。",
+        "はい。原本の上に「提出」と書くと汚れるので、別紙を挟んで「原本」と書きました。",
+        "今日は相談の受付です。提出する資料の範囲は、説明を聞いてからご確認ください。",
+        "では、今ここで束ごと渡して終わりにせず、必要な紙を聞きます。相談が終わったら原本を数えて持ち帰ります。",
+        "それでは、資料をお持ちになって相談窓口へお進みください。本日はありがとうございました。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_szo_hamamatsu_08_001_goal_1",
+          "種類別クリップ留めの相談資料を外す必要があるか尋ねる"
+        ],
+        [
+          "sc_loc_szo_hamamatsu_08_001_goal_2",
+          "勤務資料と自己支出記録を分け月順にしたと説明する"
+        ],
+        [
+          "sc_loc_szo_hamamatsu_08_001_goal_3",
+          "束を一つへ混ぜず分類を保って机へ置くと述べる"
+        ],
+        [
+          "sc_loc_szo_hamamatsu_08_001_goal_4",
+          "原本へ直接書かず別紙で原本表示したと話す"
+        ],
+        [
+          "sc_loc_szo_hamamatsu_08_001_goal_5",
+          "相談後に提出範囲を聞き原本を数えて持帰ると述べる"
+        ]
+      ],
+      "plannedCategory": "Tax Office",
+      "plannedRole": "Tax Officer",
+      "causalRoleJudgement": "Employer records and expense notes already grouped with clips; retain grouping and original identifiers before consultation, determine submission scope and count originals. Tax intake support only.",
+      "taskJudgement": "Five actual tasks map sequentially to five PLAYER responses; full evidence included.",
+      "closureJudgement": {
+        "text": "それでは、資料をお持ちになって相談窓口へお進みください。本日はありがとうございました。",
+        "judgement": "Polite NPC final farewell/transfer appropriate to current task."
+      }
+    },
+    {
+      "scenarioId": "SC-LOC-022-04-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-022-cluster-01-shizuoka.json",
+      "sourceFileSha256": "6ab550b7ad1ec051ad2c9aaebc34f3273e4d338f29a7cf0cffa1e102565be090",
+      "scriptSha256": "07ff4df329380fec45761e76f4337ce87d93c5ceacb4f4414f6a9de577e749bc",
+      "title": "診察の説明を書いた紙を折る前に向きをそろえる",
+      "turns": [
+        "診察後の説明の紙は、お手元にありますか。",
+        "ありますが、いただいた二枚が裏返しになって混ざりました。帰宅後に読む順番を教えてください。",
+        "こちらが一枚目、こちらが続きです。見出しのある面を上にしましょう。",
+        "分かりました。一枚目を上にして重ねます。途中にある図も、この向きで見ればよいですか。",
+        "はい、この向きです。説明を聞いて、まだ分からないところはありますか。",
+        "図の横に丸を付けたところです。家で家族に見せる前に、何についての欄かもう一度聞きたいです。",
+        "その欄について、担当の看護師から説明します。紙を広げたままお待ちください。",
+        "お願いします。聞きたい所に自分で短いメモを付け、紙の文字には重ならないように書きます。",
+        "説明が終わったら、二枚ともお持ち帰りください。",
+        "はい。説明を聞いてから二枚を同じ向きでしまいます。帰宅後は一枚目から家族と読みます。",
+        "担当へお声がけします。それでは、紙をお持ちになってこちらでお待ちください。お大事になさってください。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_022_04_001_goal_1",
+          "混ざった説明二枚の読む順を尋ねる"
+        ],
+        [
+          "sc_loc_022_04_001_goal_2",
+          "一枚目を上に重ね図の向きを確認する"
+        ],
+        [
+          "sc_loc_022_04_001_goal_3",
+          "丸印の欄を再説明してほしいと依頼する"
+        ],
+        [
+          "sc_loc_022_04_001_goal_4",
+          "質問メモを本文と重ならず付けると話す"
+        ],
+        [
+          "sc_loc_022_04_001_goal_5",
+          "説明後に二枚をそろえて持ち帰り家族と読むと伝える"
+        ]
+      ],
+      "plannedCategory": "Hospital",
+      "plannedRole": "Nurse",
+      "causalRoleJudgement": "Two post-visit explanation sheets inverted and mixed; align sequence, ask diagram question, handoff to nurse; no clinical interpretation supplied by narrator.",
+      "taskJudgement": "Five actual tasks map sequentially to five PLAYER responses; full evidence included.",
+      "closureJudgement": {
+        "text": "担当へお声がけします。それでは、紙をお持ちになってこちらでお待ちください。お大事になさってください。",
+        "judgement": "Polite NPC final farewell/transfer appropriate to current task."
+      }
+    },
+    {
+      "scenarioId": "SC-LOC-022-05-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-022-cluster-01-shizuoka.json",
+      "sourceFileSha256": "6ab550b7ad1ec051ad2c9aaebc34f3273e4d338f29a7cf0cffa1e102565be090",
+      "scriptSha256": "220a092fd8ee919bef64e97f4b67370342ccea1e34475f0f4d6ca6b6ca8a7b35",
+      "title": "落とし物を届けた後の連絡先の書き間違いを訂正する",
+      "turns": [
+        "先ほどお届けいただいた品物についてでしょうか。",
+        "はい。連絡先の電話番号に、古い番号を書いてしまいました。帰る前に直したいです。",
+        "受付の控えを拝見します。お名前を教えてください。",
+        "グエンです。この控えです。届けたのは駅前で拾った鍵の束です。",
+        "確認できました。現在使える番号を教えていただけますか。",
+        "こちらの携帯の番号です。最後の四桁だけでなく、全部を紙に書いてお見せします。",
+        "その番号で記録を確認します。連絡できる時間にもご希望はありますか。",
+        "日中は仕事で出られないことがあります。留守番電話に名前と折り返し先を残していただけると助かります。",
+        "ご希望を記録します。控えの連絡先もご確認ください。",
+        "新しい番号になりました。今後この件を問い合わせるときは、この受付の控えを手元に置いて電話します。",
+        "訂正を確認いただきありがとうございました。それでは、お気をつけてお帰りください。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_022_05_001_goal_1",
+          "落とし物届出の古い電話番号を訂正したいと申し出る"
+        ],
+        [
+          "sc_loc_022_05_001_goal_2",
+          "氏名控えと鍵の届出を特定する"
+        ],
+        [
+          "sc_loc_022_05_001_goal_3",
+          "現番号を全桁書いて示すと伝える"
+        ],
+        [
+          "sc_loc_022_05_001_goal_4",
+          "不在時の留守電に名前折返先を希望する"
+        ],
+        [
+          "sc_loc_022_05_001_goal_5",
+          "新番号と控えを確認し問い合わせ時に使うと述べる"
+        ]
+      ],
+      "plannedCategory": "Police Station",
+      "plannedRole": "Police",
+      "causalRoleJudgement": "Finder discovers old phone number immediately after key delivery; identify record and replace full number plus callback preference, verify receipt. Police role fits administrative correction.",
+      "taskJudgement": "Five actual tasks map sequentially to five PLAYER responses; full evidence included.",
+      "closureJudgement": {
+        "text": "訂正を確認いただきありがとうございました。それでは、お気をつけてお帰りください。",
+        "judgement": "Polite NPC final farewell/transfer appropriate to current task."
+      }
+    },
+    {
+      "scenarioId": "SC-LOC-022-08-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-022-cluster-01-shizuoka.json",
+      "sourceFileSha256": "6ab550b7ad1ec051ad2c9aaebc34f3273e4d338f29a7cf0cffa1e102565be090",
+      "scriptSha256": "04a13789e97fcf24963b5494c428c288be0422708323f2e79eef580b082f57f5",
+      "title": "配布された冊子の同じページを二部で見つける",
+      "turns": [
+        "その冊子は、ご家族にもお持ちになりますか。",
+        "はい。二部いただきましたが、家族は日本語がまだ読みづらいので、同じページを開いて話したいです。",
+        "ご覧になりたい見出しは何でしょうか。",
+        "地域の相談についてのページです。私は電話、家族は直接行く相談を考えています。",
+        "その見出しはこちらです。二部とも同じページ番号をご確認ください。",
+        "見つかりました。家族の冊子には付箋を付け、自分の方には電話の問い合わせ先をメモします。",
+        "相談する内容は決まっていますか。",
+        "住まいについてです。詳しい事情は家族とまとめてから話したいので、今日は相談先の案内を持ち帰ります。",
+        "相談前に、問い合わせ先へご連絡ください。",
+        "そうします。家で同じページを一緒に読み、電話する人と持参する資料を決めます。",
+        "それでは、こちらの二部をお持ちください。ご家族とのご相談にお役立てください。失礼いたします。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_022_08_001_goal_1",
+          "家族と同ページを見るため冊子二部を使いたいと説明する"
+        ],
+        [
+          "sc_loc_022_08_001_goal_2",
+          "本人電話家族対面の地域相談ページを尋ねる"
+        ],
+        [
+          "sc_loc_022_08_001_goal_3",
+          "家族冊子へ付箋自分冊子へ電話先を記すと話す"
+        ],
+        [
+          "sc_loc_022_08_001_goal_4",
+          "住まい相談事情を家族とまとめ案内のみ持帰る"
+        ],
+        [
+          "sc_loc_022_08_001_goal_5",
+          "同ページを読み連絡役と資料を家で決めると伝える"
+        ]
+      ],
+      "plannedCategory": "Government Office",
+      "plannedRole": "Government Officer",
+      "causalRoleJudgement": "Parallel booklet copies allow family to find same housing consultation page; distinct remote/in-person plans then home allocation of contact role. Municipal guide only, no eligibility decision.",
+      "taskJudgement": "Five actual tasks map sequentially to five PLAYER responses; full evidence included.",
+      "closureJudgement": {
+        "text": "それでは、こちらの二部をお持ちください。ご家族とのご相談にお役立てください。失礼いたします。",
+        "judgement": "Polite NPC final farewell/transfer appropriate to current task."
+      }
+    },
+    {
+      "scenarioId": "SC-LOC-022-09-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-022-cluster-01-shizuoka.json",
+      "sourceFileSha256": "6ab550b7ad1ec051ad2c9aaebc34f3273e4d338f29a7cf0cffa1e102565be090",
+      "scriptSha256": "3240df746e26ab03b8706fd8890b767852a96cbc26b7f33e6be08f10ceef173b",
+      "title": "税務相談の受付で二つの仕事を職業欄へ書く",
+      "turns": [
+        "職業の欄は、もうご記入になりましたか。",
+        "まだです。昼は会社で働き、週末は小さな店で販売の仕事をしています。二つ書けるか尋ねたいです。",
+        "この相談用の用紙には、現在のお仕事をお書きください。欄が足りなければ、横の余白も使えます。",
+        "では、会社の仕事を先に書きます。店の仕事は同じ行へ詰めず、余白へ短く書きます。",
+        "店では、どのようなお仕事をされますか。",
+        "商品の販売と仕入れです。まだ詳しい説明を日本語でまとめられないので、今日相談したいことも一文添えたいです。",
+        "相談したいことを、その下にお書きください。",
+        "二つの仕事について、相談に必要な資料を知りたいと書きます。仕事内容は口頭でも説明できるよう用意します。",
+        "書けましたら、受付へお見せください。",
+        "書けました。会社の仕事と週末の販売を書いたので、両方について相談する受付をお願いします。",
+        "それでは、こちらの用紙を担当へお渡しします。仕事内容もお聞かせください。本日はありがとうございます。失礼いたします。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_022_09_001_goal_1",
+          "昼の会社と週末店の二仕事を職業欄へ書けるか尋ねる"
+        ],
+        [
+          "sc_loc_022_09_001_goal_2",
+          "会社を欄内店を余白へ書くと話す"
+        ],
+        [
+          "sc_loc_022_09_001_goal_3",
+          "販売仕入れ業務と相談内容を一文添えたいと述べる"
+        ],
+        [
+          "sc_loc_022_09_001_goal_4",
+          "二仕事の必要資料を知りたいと記し口頭説明を用意する"
+        ],
+        [
+          "sc_loc_022_09_001_goal_5",
+          "記入済の二仕事について受付を依頼する"
+        ]
+      ],
+      "plannedCategory": "Tax Office",
+      "plannedRole": "Tax Officer",
+      "causalRoleJudgement": "Two current jobs cannot fit occupation field; enter company job and weekend sales/procurement in margin of fictional consultation form. Ask what supporting documents needed; no tax classification/deduction judgment. Replaces receipt sorting overlap.",
+      "taskJudgement": "Five actual tasks map sequentially to five PLAYER responses; full evidence included.",
+      "closureJudgement": {
+        "text": "それでは、こちらの用紙を担当へお渡しします。仕事内容もお聞かせください。本日はありがとうございます。失礼いたします。",
+        "judgement": "Resolved: explicit 失礼いたします farewell appended after polite intake handoff."
+      }
+    },
+    {
+      "scenarioId": "SC-LOC-022-21-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-022-cluster-01-shizuoka.json",
+      "sourceFileSha256": "6ab550b7ad1ec051ad2c9aaebc34f3273e4d338f29a7cf0cffa1e102565be090",
+      "scriptSha256": "4275d13e4acc74654806496e85b559f87a9ed134baeb3e5e6d80df5d589514c7",
+      "title": "窓口で聞いたアプリの操作を自分の画面で練習する",
+      "turns": [
+        "ご自分の画面でも、同じ操作を試されますか。",
+        "はい。説明だけだと覚えられないので、自分の携帯で最初の画面へ戻る操作を練習したいです。",
+        "この画面の、戻る矢印を押してみてください。",
+        "戻れました。二回押すと最初の画面になるので、今の操作を紙に二つの矢印で書きます。",
+        "今度は、案内のページを開いてみましょう。",
+        "この案内ですね。文字を大きくしてから読みたいので、先に表示の調節を聞いてもよいですか。",
+        "表示を調節する場所はこちらです。読みやすい大きさへ変えてください。",
+        "この大きさで読めます。家でも戻せるよう、変える前と後を短くメモしておきます。",
+        "最後に、最初の画面へ戻れますか。",
+        "はい。二回戻って、この画面になりました。今日は練習したメモを持ち帰り、家で案内を読みます。",
+        "操作を確認できました。それでは、メモと携帯をお忘れなく。ご来店ありがとうございました。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_022_21_001_goal_1",
+          "携帯で最初の画面へ戻る練習を希望する"
+        ],
+        [
+          "sc_loc_022_21_001_goal_2",
+          "二回矢印操作を確認し図で控えると話す"
+        ],
+        [
+          "sc_loc_022_21_001_goal_3",
+          "案内頁を特定し文字表示調整を尋ねる"
+        ],
+        [
+          "sc_loc_022_21_001_goal_4",
+          "調整前後を記して自宅で戻せるようにする"
+        ],
+        [
+          "sc_loc_022_21_001_goal_5",
+          "開始画面へ戻れたと示しメモを持帰ると伝える"
+        ]
+      ],
+      "plannedCategory": "Bank",
+      "plannedRole": "Bank Clerk",
+      "causalRoleJudgement": "Own phone practice of return arrows and font setting, then reproduce return-to-start. Bank Clerk offers app guidance only; interface explicit simulated, no financial transaction/authentication.",
+      "taskJudgement": "Five actual tasks map sequentially to five PLAYER responses; full evidence included.",
+      "closureJudgement": {
+        "text": "操作を確認できました。それでは、メモと携帯をお忘れなく。ご来店ありがとうございました。",
+        "judgement": "Polite NPC final farewell/transfer appropriate to current task."
+      }
+    }
+  ],
+  "fullPreviousCounterparts": [
+    {
+      "scenarioId": "SC-LOC-022-04-001",
+      "counterpartId": "SC-LOC-JP-21221-03-001",
+      "turns": [
+        "問診票で、お困りのところはありますか。",
+        "日本語の会話は少しできますが、この小さい文字が読みづらいです。読めない欄を聞いてもよいですか。",
+        "どの欄から確認しましょうか。",
+        "この三つの見出しです。順に読んでいただければ、自分で答えを書けると思います。",
+        "まず、普段飲んでいる薬についての欄です。",
+        "薬の名前を覚えていません。持ってきた手帳に書いてあるので、見ながら書きたいです。",
+        "次の二つは、これまでの病気と、アレルギーについてです。",
+        "言葉が分かりました。病気については書けますが、アレルギーの欄はどこまで書けばよいか、担当の方に聞きたいです。",
+        "その質問は担当へお伝えします。書けた欄は、ご自身でお確かめください。",
+        "はい。手帳を見て薬の欄を書きました。聞きたい欄は空けてあります。説明を聞いてから仕上げたいです。",
+        "担当へおつなぎします。それでは、用紙と手帳をお持ちになってお待ちください。"
+      ],
+      "judgement": "After-visit instruction order/diagram followup differs from before-visit questionnaire small-print reading."
+    },
+    {
+      "scenarioId": "SC-LOC-022-05-001",
+      "counterpartId": "SC-LOC-JP-09204-02-001",
+      "turns": [
+        "相談の予約をご希望ですね。お持ちの通知についてでしょうか。",
+        "はい。この通知の説明を聞きたいんですが、平日は仕事中なので、予約の電話を受けられないことがあります。",
+        "担当から折り返す形です。電話に出られる時間帯を伺ってもよろしいですか。",
+        "昼休みの十二時から十二時半なら出られます。留守番電話に、折り返す番号も入れてもらえますか。",
+        "ご希望はお伝えできます。この通知の番号ではなく、相談担当の番号に折り返していただく予定です。",
+        "では、担当の番号をここに書いてください。留守番電話だけだと、数字を聞き間違えそうです。",
+        "こちらが担当の番号です。相談当日、説明を聞く際に言語の支援はご希望ですか。",
+        "ベトナム語で相談できると助かります。支援のある日に合わせるので、その点も担当者に伝えてください。",
+        "承りました。支援の手配ができる日と予約の空きは、担当からお知らせします。",
+        "それでは、昼休みに連絡を待ちます。出られなかったら、メモしていただいた番号へ私から折り返します。",
+        "連絡方法と言語のご希望を担当へ引き継ぎます。通知は相談の日までお手元に保管してください。"
+      ],
+      "judgement": "Found-item contact data correction differs from scheduling consultation/language callback preference."
+    },
+    {
+      "scenarioId": "SC-LOC-022-21-001",
+      "counterpartId": "SC-LOC-004-11-001",
+      "turns": [
+        "いらっしゃいませ。何かお手伝いしましょうか。",
+        "この「追加麺」のボタンだけ押せば、ラーメン一杯を注文できますか。",
+        "それは料理に追加する麺です。ラーメン本体のボタンは別にあります。",
+        "本体ではないのですね。まだお金を入れていないので、先に違いを教えてください。",
+        "この練習用画面では、上段が料理、下段が追加品です。料理にはスープと通常量の麺が含まれます。",
+        "通常量で十分です。追加品は選ばず、上段のしょうゆラーメンだけにします。",
+        "はい。本体の名前と表示額を確認してからお選びください。",
+        "選んだ後に同じボタンをもう一度押すと、もう一杯になりますか。",
+        "追加で購入する操作になるので、出た食券をまず確認してください。操作に迷ったらお声がけください。",
+        "一枚出たら操作を止めて、料理名を確認してから店員さんに渡します。",
+        "ありがとうございます。確認できましたら、こちらでお待ちください。"
+      ],
+      "judgement": "Bank app navigation/accessibility rehearsal differs from purchase kiosk main-item/addon choice."
+    },
+    {
+      "scenarioId": "SC-LOC-SZO-FUJI-07-001",
+      "counterpartId": "SC-LOC-JP-21221-05-001",
+      "turns": [
+        "お送りになる物は、こちらの紙でしょうか。",
+        "子供が描いた絵です。祖母に送りたいのですが、折り目をつけない包み方を考えています。",
+        "今お持ちの封筒には入りますか。",
+        "入りません。二つ折りなら入りますが、真ん中の顔に折り目がつくので、そのままにしたいです。",
+        "紙の大きさに合う包装をご用意ください。傷みにくいような保護も必要です。",
+        "家に薄い板があります。それにはさんで、絵より大きい封筒に入れる方法を考えてもよいですか。",
+        "包装した後の大きさや重さを見て、送れる方法をご案内します。",
+        "では、今日はまだ出しません。板の角が封筒を破らないよう包んでから持ってきます。",
+        "宛先を書く場所も、外側に確保してください。",
+        "分かりました。絵の裏へ住所を書こうと思っていましたが、外側に書きます。祖母へも、準備してから送ると連絡します。",
+        "ご用意できましたらお持ちください。それでは、またのご来局をお待ちしております。"
+      ],
+      "judgement": "Reply-envelope routing and unsealed nesting differ from protective large artwork packaging."
+    }
+  ],
+  "internalRejectedComparison": {
+    "oldShizuoka09": {
+      "title": "税務相談に持参した領収書を月別に並べる",
+      "premise": "静岡市を背景にした架空の日本語学習場面。税務相談に持参した領収書を月別に並べる。設備、商品、受付条件や職員の対応は教材上の設定で、実施設の運用を保証しない。",
+      "turns": [
+        "お持ちの資料を整理されますか。",
+        "はい。税務の相談に来ましたが、領収書が日付順になっていません。説明の前に月ごとに分ける時間をいただけますか。",
+        "少し整理してからご相談いただけます。どの年の資料ですか。",
+        "昨年のものです。今年の領収書も一枚混ざっているので、それは別の袋へ移します。",
+        "相談で見たい内容を、メモにしておくと伝えやすくなります。",
+        "この三枚をどの欄に使うのか聞きたいです。自分で判断する前に、日付と内容が読める状態でまとめます。",
+        "その三枚は、ほかの資料と見分けられますか。",
+        "小さいクリップでまとめます。領収書に直接大きく書くのでなく、質問を書いた紙を添えます。",
+        "準備できましたら、担当へお声がけください。",
+        "昨年の月別資料と、質問三枚を分けました。今年の一枚は鞄へ戻したので、この資料で相談をお願いします。",
+        "それでは、資料を拝見する担当へご案内します。ご準備ありがとうございます。失礼いたします。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_022_09_001_goal_1",
+          "相談前に領収書を月別整理する時間を求める"
+        ],
+        [
+          "sc_loc_022_09_001_goal_2",
+          "昨年対象で混入した今年分を別にすると説明する"
+        ],
+        [
+          "sc_loc_022_09_001_goal_3",
+          "三枚の使う欄を質問したいと話す"
+        ],
+        [
+          "sc_loc_022_09_001_goal_4",
+          "クリップと別質問紙で対象を示すと伝える"
+        ],
+        [
+          "sc_loc_022_09_001_goal_5",
+          "整理した昨年資料で相談開始を依頼する"
+        ]
+      ]
+    },
+    "comparedHamamatsu08": {
+      "title": "提出用資料をまとめるクリップの外し方を尋ねる",
+      "premise": "浜松市を背景にした架空の日本語学習場面。提出用資料をまとめるクリップの外し方を尋ねる。施設の設備、作業方法、接客、受付手順は教材上の設定で、実施設の運用を保証しない。",
+      "turns": [
+        "こちらの資料をお持ちになりましたか。",
+        "はい。相談用に集めた紙を、種類ごとにクリップで留めています。相談の時は外した方がよいですか。",
+        "まず、どのように分けたか教えてください。",
+        "勤務先でもらった紙と、自分で付けた支出の記録です。仕事の紙は月の順に並べました。",
+        "ご相談の内容に応じて確認しますので、今はその分け方を保ってお持ちください。",
+        "分かりました。全部を一つにまとめてしまわず、どの束か分かるように机へ置きます。",
+        "記録の原本と、控えは分けてありますか。",
+        "はい。原本の上に「提出」と書くと汚れるので、別紙を挟んで「原本」と書きました。",
+        "今日は相談の受付です。提出する資料の範囲は、説明を聞いてからご確認ください。",
+        "では、今ここで束ごと渡して終わりにせず、必要な紙を聞きます。相談が終わったら原本を数えて持ち帰ります。",
+        "それでは、資料をお持ちになって相談窓口へお進みください。本日はありがとうございました。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_szo_hamamatsu_08_001_goal_1",
+          "種類別クリップ留めの相談資料を外す必要があるか尋ねる"
+        ],
+        [
+          "sc_loc_szo_hamamatsu_08_001_goal_2",
+          "勤務資料と自己支出記録を分け月順にしたと説明する"
+        ],
+        [
+          "sc_loc_szo_hamamatsu_08_001_goal_3",
+          "束を一つへ混ぜず分類を保って机へ置くと述べる"
+        ],
+        [
+          "sc_loc_szo_hamamatsu_08_001_goal_4",
+          "原本へ直接書かず別紙で原本表示したと話す"
+        ],
+        [
+          "sc_loc_szo_hamamatsu_08_001_goal_5",
+          "相談後に提出範囲を聞き原本を数えて持帰ると述べる"
+        ]
+      ]
+    },
+    "judgement": "Same chronological document grouping/clip/question-paper preparation before tax consultation, rejected. New Shiz09 dual occupation entry read completely and distinct."
+  },
+  "restaurantCrossCheck": {
+    "hamamatsu03": {
+      "title": "焼肉に合わせてご飯を出すタイミングを頼む",
+      "premise": "浜松市を背景にした架空の日本語学習場面。焼肉に合わせてご飯を出すタイミングを頼む。施設の設備、接客、受付手順は教材上の設定で、実施設の運用を保証しない。",
+      "turns": [
+        "ご飯は、お肉と一緒にお持ちしましょうか。",
+        "私は今お願いします。友人は先に肉を食べたいので、二人分を同時に出さなくても大丈夫です。",
+        "では、お客様のご飯を先にお持ちします。お連れ様の分は、後でご注文になりますか。",
+        "はい。まだ友人の分は頼まず、欲しくなった時に本人が注文します。私だけ小盛りでお願いします。",
+        "小盛りを一つですね。お飲み物も今お持ちしてよろしいですか。",
+        "水もお願いします。友人は今メニューを見ているので、飲み物まで私と同じにしないでください。",
+        "お連れ様のご希望は、決まりましたら伺います。",
+        "ありがとうございます。友人にも、ご飯はまだ注文していないと伝えます。後で二つ届くと思っているかもしれません。",
+        "こちらが小盛りのご飯です。熱いので、お受け取りにご注意ください。",
+        "受け取りました。机の空いている所に置きます。私のご飯は届いたので、友人の注文だけ後でお願いします。",
+        "承知しました。追加の際はお声がけください。それでは、ごゆっくりお召し上がりください。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_szo_hamamatsu_03_001_goal_1",
+          "自分のご飯は今友人は後でよく同時提供不要と伝える"
+        ],
+        [
+          "sc_loc_szo_hamamatsu_03_001_goal_2",
+          "友人分は未注文とし自身小盛一つだけ頼む"
+        ],
+        [
+          "sc_loc_szo_hamamatsu_03_001_goal_3",
+          "水を頼み未決定の友人飲料は同じにしないよう伝える"
+        ],
+        [
+          "sc_loc_szo_hamamatsu_03_001_goal_4",
+          "友人へご飯未注文を知らせ二杯届く期待を訂正する"
+        ],
+        [
+          "sc_loc_szo_hamamatsu_03_001_goal_5",
+          "自分のご飯を受取り友人注文は後でと改めて伝える"
+        ]
+      ]
+    },
+    "finalFuji08": {
+      "title": "同じ料理をもう一皿頼まず到着予定を確認する",
+      "premise": "静岡県富士市を背景にした架空の日本語学習場面。居酒屋で先に頼んだ料理がまだ届いていない客が、注文の有無を確認してから追加を判断する。施設の設備・案内・サービスは教材上の設定であり、実際の運用を保証しない。",
+      "turns": [
+        "追加のご注文をお伺いしましょうか。",
+        "さっき頼んだ焼き魚がまだ来ていません。もう一皿頼む前に、注文が入っているか確かめたいです。",
+        "お席の注文を見ます。焼き魚一皿が入っています。",
+        "よかったです。隣の席には似た物が出たので、私の注文が忘れられたかと思いました。",
+        "お客様の焼き魚は、ただいま調理しています。",
+        "では、その一皿を待ちます。友達が二人来たので、取り皿を二枚追加してもらえますか。",
+        "取り皿をお持ちします。今、ほかのお料理もお待ちですか。",
+        "頼んだのは焼き魚だけです。飲み物はもう届いています。",
+        "承知しました。お待たせしていますが、できましたらこちらへお持ちします。",
+        "ありがとうございます。人数が増えたので、焼き魚を食べてから足りるか相談します。今は同じ料理を追加しません。",
+        "かしこまりました。それでは、取り皿をお持ちします。ごゆっくりお過ごしください。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_szo_fuji_08_001_goal_1",
+          "未着の焼き魚注文の有無を追加前に確認する"
+        ],
+        [
+          "sc_loc_szo_fuji_08_001_goal_2",
+          "隣席料理を見て注文忘れと思ったと説明する"
+        ],
+        [
+          "sc_loc_szo_fuji_08_001_goal_3",
+          "注文済一皿を待ち追加取皿二枚を頼む"
+        ],
+        [
+          "sc_loc_szo_fuji_08_001_goal_4",
+          "未着料理は焼魚のみで飲物は受取済と伝える"
+        ],
+        [
+          "sc_loc_szo_fuji_08_001_goal_5",
+          "人数増加後の量は食後に判断し今は追加しないと述べる"
+        ]
+      ]
+    },
+    "judgement": "Current Fuji pending ordered fish query differs from own rice now and friend later unplaced order. Old deferred friend recipe not reviewed as final."
+  },
+  "concreteBlockers": [],
+  "minorRecommendations": [],
+  "limits": [
+    "Planned correction roles checked; coordinator must ensure effective runtime overlay agrees.",
+    "No certification of actual facilities, application UI or service policy.",
+    "Nearest full counterpart evidence bounded, not global proof of semantic uniqueness."
+  ],
+  "resolvedRecommendations": [
+    {
+      "scenarioId": "SC-LOC-022-09-001",
+      "issue": "Explicit farewell",
+      "resolution": "それでは、こちらの用紙を担当へお渡しします。仕事内容もお聞かせください。本日はありがとうございます。失礼いたします。"
+    }
+  ]
+}
