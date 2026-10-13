@@ -55,3 +55,12 @@ Five concurrent AI workers authored Motosu, Gujo and Kaizu (24 scripts,264 turns
 Six new NPC categories retain separate identities, appended after26 legacy roles. Runtime progression regression passes30 completions, repeated completion idempotence and legacy progress preservation. Reward cards reuse existing image references temporarily; dedicated role images and actual device inspection remain pending. Scoped TypeScript check passed; full Expo dependencies unavailable. JLPT locked UI10/10 unchanged. Native/human review false; no translations. See FINAL_INTEGRATION and worker evidence for bounded checks.
 
 All authored data is a review candidate. Whole-prefecture CONTENT PASS/master lock remains pending final editorial disposition; do not advance PRF-022 until this gate is resolved. Publish this narrow integration to the already authorized recovery/jlpt-n3-n1 branch and verify WORK PERSISTENCE PASS.
+
+
+## Final AI Japanese editorial acceptance — 2026-10-13
+
+Supersedes provisional CONTENT PASS false above. Independent role reviews read36bank/post,56public/health and50shop/work scripts in addition to full181editorial reading. Financial review found Mizuho06 repeating earlier Ibaraki planned-vs-actual-debit plot: all11turns/5goals replaced with actual bank-app consultation rescheduling. Four full prior counterparts read before acceptance. Tajimi08 title corrected to match park bench relocation request (earlier chat called it Seki incorrectly).
+
+Final hash-bound AI CONTENT PASS181/181;1991turns/905goals;0concrete blockers. All7128identities/links preserved;followup only1runtime script/2canonical rows changed. Semantic review, separate role evidence and Japanese master lock bind current sources/runtime. Native/human/translation/art/device/real-policy certification false; bounded comparison does not prove exhaustive uniqueness. No UI change.
+
+Next PRF-022 Shizuoka,first canonical three-city cluster Shizuoka21/Hamamatsu8/Fuji8,only after this finalQA commit is published and WORK PERSISTENCE PASS.

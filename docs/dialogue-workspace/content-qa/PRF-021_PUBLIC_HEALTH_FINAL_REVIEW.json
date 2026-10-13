@@ -1,0 +1,3063 @@
+{
+  "scope": "Independent final public health/police/municipal full-script review across nine cluster source files; report only",
+  "sourceFiles": [
+    "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+    "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+    "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+    "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+    "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+    "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+    "scripts/dialogue-authoring/prf-021-cluster-07-gujo.json",
+    "scripts/dialogue-authoring/prf-021-cluster-07-kaizu.json",
+    "scripts/dialogue-authoring/prf-021-cluster-07-motosu.json"
+  ],
+  "reviewCount": 56,
+  "status": "bounded AI review, no concrete blocker found after effective loader metadata verified",
+  "nativeApproval": false,
+  "medicalApproval": false,
+  "legalApproval": false,
+  "reviewMethod": "Read complete current turns; inspect stored five goals; read three nearest full prior counterparts for doubtful themes; apply effective location-role-corrections overlay as loader does.",
+  "entries": [
+    {
+      "scenarioId": "SC-LOC-021-02-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceFileSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "scriptSha256": "772dce73543b916377d48736e2f68fda8d00301f7def059f58186d83b1181337",
+      "title": "仕事の忙しさを体調記録へ一語だけで書かず具体化する",
+      "turns": [
+        "体調の記録をお持ちですね。補足したいことはありますか。",
+        "「忙しい」とだけ書きました。でも、仕事の予定と体の感じを分けて伝えたいです。",
+        "最近の勤務は、どのように変わりましたか。",
+        "先週から、帰る時刻が二時間ほど遅くなりました。毎日の勤務時刻はこのメモにあります。",
+        "体の変化も、分かる範囲で診療担当へお伝えください。",
+        "帰宅後に頭が重く感じる日があります。忙しさだけが原因と決めたわけではありません。",
+        "その感じが出た日や、休みの日の様子も記録されていますか。",
+        "出た日は丸を付けています。休みの日は記録していないので、仕事の日だけの症状だとは言えません。",
+        "勤務の記録と症状の記録を、それぞれ見せてください。",
+        "はい。書いていない日は症状なしとせず、分からないと伝えます。仕事の相談ではなく体の変化を診てもらいたいです。",
+        "二つの記録を担当へお渡しください。それでは、診察のご案内をお待ちください。お大事になさってください。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_021_02_001_goal_1",
+          "忙しいの一語でなく勤務と体調を分けて説明したいと述べる"
+        ],
+        [
+          "sc_loc_021_02_001_goal_2",
+          "先週から帰宅前の退勤が二時間遅く勤務メモがあると伝える"
+        ],
+        [
+          "sc_loc_021_02_001_goal_3",
+          "帰宅後の頭の重さはあるが原因を忙しさと断定しないと話す"
+        ],
+        [
+          "sc_loc_021_02_001_goal_4",
+          "症状日の印はあるが休日未記録で仕事日に限定できないと説明する"
+        ],
+        [
+          "sc_loc_021_02_001_goal_5",
+          "未記録を症状なしとせず体の診察用に二記録を示すと述べる"
+        ]
+      ],
+      "effectiveLocationId": "LOC-021-02",
+      "effectiveCategory": "Hospital",
+      "effectiveNpcRole": "Nurse",
+      "causalJudgement": "The visitor explains 「忙しい」とだけ書きました。でも、仕事の予定と体の感じを分けて伝えたいです。 The final player action is はい。書いていない日は症状なしとせず、分からないと伝えます。仕事の相談ではなく体の変化を診てもらいたいです。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Clinical communication/administrative support; no diagnosis, dosage or treatment promised. Effective Nurse role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "二つの記録を担当へお渡しください。それでは、診察のご案内をお待ちください。お大事になさってください。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-021-05-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceFileSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "scriptSha256": "de1cf99b522e0ddc89944fd22474a6cc4898098979ea3813a2f8613f2d6c9ebf",
+      "title": "地域アンケートの回答で空欄の理由を推測されないよう補足する",
+      "turns": [
+        "アンケートについてのお尋ねでしょうか。",
+        "はい。参加したくないから空欄にしたのではありません。質問の意味が分からない項目がありました。",
+        "どの項目か、用紙で教えていただけますか。",
+        "三番です。活動に参加した回数なのか、今後参加したい回数なのか読み取れませんでした。",
+        "設問の意図は、担当へ確認します。ほかの回答は記入済みですか。",
+        "ほかは書きました。分かった項目まで全部取り消すのでなく、三番だけ説明を聞いて答えたいです。",
+        "空欄の扱いについても、お尋ねいただけます。",
+        "お願いします。空欄をゼロ回と集計するのか、未回答とするのかも確認したいです。",
+        "受付後の訂正方法は、担当の案内をご確認ください。",
+        "まだ提出していません。意味と集計方法を聞いてから出します。答えたくない人もいるので、全員の空欄が私と同じ理由だとは言いません。",
+        "三番の説明と扱いを担当へ確認します。それでは、用紙をお持ちのままお待ちください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_021_05_001_goal_1",
+          "空欄は不参加希望でなく意味不明のためと説明する"
+        ],
+        [
+          "sc_loc_021_05_001_goal_2",
+          "三番が過去回数か希望回数か分からないと示す"
+        ],
+        [
+          "sc_loc_021_05_001_goal_3",
+          "他回答は残し三番だけ説明後に答えたいと述べる"
+        ],
+        [
+          "sc_loc_021_05_001_goal_4",
+          "空欄がゼロ回か未回答として集計されるか尋ねる"
+        ],
+        [
+          "sc_loc_021_05_001_goal_5",
+          "未提出で確認後提出し他人の空欄理由は断定しないと話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-021-05",
+      "effectiveCategory": "Government Office",
+      "effectiveNpcRole": "Government Officer",
+      "causalJudgement": "The visitor explains はい。参加したくないから空欄にしたのではありません。質問の意味が分からない項目がありました。 The final player action is まだ提出していません。意味と集計方法を聞いてから出します。答えたくない人もいるので、全員の空欄が私と同じ理由だとは言いません。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Municipal reception/clarification; decisions and special services remain fictional staff/department handling. Effective Government Officer role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "三番の説明と扱いを担当へ確認します。それでは、用紙をお持ちのままお待ちください。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-021-11-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceFileSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "scriptSha256": "da09018f6553baad961fb895585dca93122d9ff7b41c5c4e3dbe787f05382dca",
+      "title": "公園での台詞練習が本当の口論に聞こえたと相談する",
+      "turns": [
+        "練習中の出来事について、ご相談でしょうか。",
+        "公園で友達と劇の台詞を練習しました。強い言葉を大声で言ったので、通りかかった人が本当の口論だと思ったようです。",
+        "実際に相手の方から、何と言われましたか。",
+        "「けんかですか」と聞かれました。その人が警察へ連絡したかまでは知りません。",
+        "ご自身の行動と、確認できた相手の反応を分けて教えてください。",
+        "私は台本を読みましたが、見ていない人には説明がありませんでした。相手が誤解したせいだけにしません。",
+        "場所の利用については管理担当にもご相談ください。",
+        "はい。劇の練習だからどこで叫んでもよいとは考えず、声を出せる場所や方法を確認します。",
+        "同じことを繰り返す前に、周囲への影響もお考えください。",
+        "次は友達と練習方法を変えます。練習だという札だけで全て解決するとは決めず、まず台詞を大声で言うことをやめます。",
+        "状況を伺いました。それでは、場所と練習方法を確認してご準備ください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_021_11_001_goal_1",
+          "公園の劇練習で強い大声台詞を口論と心配されたと話す"
+        ],
+        [
+          "sc_loc_021_11_001_goal_2",
+          "けんかかと問われた事実と警察通報不明を分ける"
+        ],
+        [
+          "sc_loc_021_11_001_goal_3",
+          "台本読上げは自分だけ分かり周囲のせいだけにしないと述べる"
+        ],
+        [
+          "sc_loc_021_11_001_goal_4",
+          "劇という理由で自由に叫べるとせず管理者へ方法を相談する"
+        ],
+        [
+          "sc_loc_021_11_001_goal_5",
+          "札だけで解決とせず大声練習を止め仲間と方法を変えると伝える"
+        ]
+      ],
+      "effectiveLocationId": "LOC-021-11",
+      "effectiveCategory": "Police Station",
+      "effectiveNpcRole": "Police",
+      "causalJudgement": "The visitor explains 公園で友達と劇の台詞を練習しました。強い言葉を大声で言ったので、通りかかった人が本当の口論だと思ったようです。 The final player action is 次は友達と練習方法を変えます。練習だという札だけで全て解決するとは決めず、まず台詞を大声で言うことをやめます。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Police listening/referral and factual explanation; no culpability or legal outcome guaranteed. Effective Police role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "状況を伺いました。それでは、場所と練習方法を確認してご準備ください。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-021-12-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceFileSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "scriptSha256": "923e081f2bcd5496a97c4b5baa7845802c41a031d7098d748fe42bf9c85d5d99",
+      "title": "薬剤師への返答を急がず考える時間が必要と伝える",
+      "turns": [
+        "お薬についてお尋ねします。お答えしにくい点はありますか。",
+        "質問にすぐ答えないといけないと思い、知っている言葉だけで返事をしていました。少し考える時間がほしいです。",
+        "分かることを、ご自身のペースでお話しください。黙っている時は、考えているということでよろしいですか。",
+        "はい。黙っているのは了承の意味ではありません。薬の名前を思い出す間、少し待っていただけると助かります。",
+        "袋など、確認できる情報も使えます。",
+        "持っています。覚えているか試されていると思いましたが、袋を見て正確に話してよいのですね。",
+        "はい。思い出せない場合も、その点を伝えてください。",
+        "ありがとうございます。知らない名前へ「はい」と答えるのでなく、読めない所を指して質問します。",
+        "説明の後も、理解できた点を確認できます。",
+        "お願いします。まず最後まで聞き、分かった内容を自分の言葉で確かめます。考えている時は、そのことも言います。",
+        "お話しのペースを伺いました。それでは、袋を見ながら一つずつ確認しましょう。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_021_12_001_goal_1",
+          "即答必須と思い既知語だけ返事したので考える時間を求める"
+        ],
+        [
+          "sc_loc_021_12_001_goal_2",
+          "沈黙は了承でなく名称を思い出していると説明する"
+        ],
+        [
+          "sc_loc_021_12_001_goal_3",
+          "袋を示し記憶試験でなく資料で正確に答えてよいか確認する"
+        ],
+        [
+          "sc_loc_021_12_001_goal_4",
+          "不明名へ同意せず読めない部分を示して質問すると述べる"
+        ],
+        [
+          "sc_loc_021_12_001_goal_5",
+          "説明後自己表現で理解確認し思考中もその旨伝えると話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-021-12",
+      "effectiveCategory": "Pharmacy",
+      "effectiveNpcRole": "Pharmacist",
+      "causalJudgement": "The visitor explains 質問にすぐ答えないといけないと思い、知っている言葉だけで返事をしていました。少し考える時間がほしいです。 The final player action is お願いします。まず最後まで聞き、分かった内容を自分の言葉で確かめます。考えている時は、そのことも言います。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Clinical communication/administrative support; no diagnosis, dosage or treatment promised. Effective Pharmacist role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "お話しのペースを伺いました。それでは、袋を見ながら一つずつ確認しましょう。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-TAKAYAMA-06-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceFileSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "scriptSha256": "ec36013979b51fe52040cd3fbc233db9229c13061f2de4307b8b0203d5be87f5",
+      "title": "子どもの相談で親が見た場面と子どもから聞いた話を分ける",
+      "turns": [
+        "お子様に関するご相談ですね。",
+        "はい。友達に嫌なことを言われたと聞きました。私が全部見た出来事のようには説明したくありません。",
+        "ご自身で確認したことから伺います。",
+        "帰宅後に子どもが泣いていたのは見ました。相手が何を言ったかは子どもから聞いた話です。",
+        "その二つを分けてお伝えください。記録はありますか。",
+        "子どもが見せたメッセージがあります。でも、前後のやり取りを全部読んだわけではありません。",
+        "元の記録を残し、分からない部分も担当へお知らせください。",
+        "はい。私の言葉で書き直した画像だけにせず、元を残します。相手の意図まで決めて話しません。",
+        "今のお子様のご希望も、聞ける範囲で伺います。",
+        "子どもは、まず話を聞いてほしいと言っています。私が先に相手へ連絡して解決済みにするのでなく、相談方法を聞きたいです。",
+        "確認した範囲とご希望を担当へ伝えます。それでは、ご相談の案内をお待ちください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_gif_takayama_06_001_goal_1",
+          "子から聞いた嫌な発言を親の全場面目撃として話さないと述べる"
+        ],
+        [
+          "sc_loc_gif_takayama_06_001_goal_2",
+          "親は泣く姿のみ観察し発言内容は子の説明と分ける"
+        ],
+        [
+          "sc_loc_gif_takayama_06_001_goal_3",
+          "メッセージはあるが前後全体は未読と伝える"
+        ],
+        [
+          "sc_loc_gif_takayama_06_001_goal_4",
+          "元記録を残し親の書直しや相手意図断定で代用しないと話す"
+        ],
+        [
+          "sc_loc_gif_takayama_06_001_goal_5",
+          "子は傾聴希望で相手への先行連絡でなく相談方法を尋ねる"
+        ]
+      ],
+      "effectiveLocationId": "LOC-GIF-TAKAYAMA-06",
+      "effectiveCategory": "Police Station",
+      "effectiveNpcRole": "Police",
+      "causalJudgement": "The visitor explains はい。友達に嫌なことを言われたと聞きました。私が全部見た出来事のようには説明したくありません。 The final player action is 子どもは、まず話を聞いてほしいと言っています。私が先に相手へ連絡して解決済みにするのでなく、相談方法を聞きたいです。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Police listening/referral and factual explanation; no culpability or legal outcome guaranteed. Effective Police role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "確認した範囲とご希望を担当へ伝えます。それでは、ご相談の案内をお待ちください。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-OGAKI-05-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceFileSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "scriptSha256": "51904586072bb5d49c9524a7ce73ccb65fd8b48d272912389c69a7f3160a182d",
+      "title": "水道の使用量を比べるとき人数だけでなく対象期間をそろえる",
+      "turns": [
+        "使用量の比較について、ご質問ですね。",
+        "今の紙は前より多く見えます。家族が増えたからだと思いましたが、同じ長さの期間か見ていません。",
+        "それぞれの対象期間と使用量を確認しましょう。",
+        "こちらは一か月、前の控えは別の期間でした。数字の大きさだけで急に増えたと話していました。",
+        "期間の違いと生活の変化を、分けて担当へお伝えください。",
+        "はい。家族が来た日はカレンダーにありますが、請求の全期間ずっといたわけではありません。",
+        "比較の方法や、不明な表示は担当へご相談いただけます。",
+        "お願いします。人数で割った自分の計算を、窓口が測定した結果として出すことはしません。",
+        "原本の表示と、ご自身のメモを一緒にお持ちください。",
+        "二枚の紙と滞在日を見せます。期間をそろえた比較を聞き、原因を家族だけと決めずに確認します。",
+        "比較したい点を担当へつなぎます。それでは、資料をそのままご用意ください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_gif_ogaki_05_001_goal_1",
+          "使用増を家族増と考えたが期間未比較と相談する"
+        ],
+        [
+          "sc_loc_gif_ogaki_05_001_goal_2",
+          "現在一か月と旧資料別期間を数値だけで比較したと述べる"
+        ],
+        [
+          "sc_loc_gif_ogaki_05_001_goal_3",
+          "家族滞在日は分かるが対象全期間の滞在ではないと伝える"
+        ],
+        [
+          "sc_loc_gif_ogaki_05_001_goal_4",
+          "人数割自己計算を窓口測定結果として出さないと話す"
+        ],
+        [
+          "sc_loc_gif_ogaki_05_001_goal_5",
+          "二資料と滞在日で期間整合を相談し原因を家族に限定しないと述べる"
+        ]
+      ],
+      "effectiveLocationId": "LOC-GIF-OGAKI-05",
+      "effectiveCategory": "Government Office",
+      "effectiveNpcRole": "City Worker",
+      "causalJudgement": "The visitor explains 今の紙は前より多く見えます。家族が増えたからだと思いましたが、同じ長さの期間か見ていません。 The final player action is 二枚の紙と滞在日を見せます。期間をそろえた比較を聞き、原因を家族だけと決めずに確認します。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Municipal reception/clarification; decisions and special services remain fictional staff/department handling. Effective City Worker role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "比較したい点を担当へつなぎます。それでは、資料をそのままご用意ください。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-OGAKI-07-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-01-gifu-takayama-ogaki.json",
+      "sourceFileSha256": "180d75baf0cc85a39c5809503ffad0d5550126178be4e913faa0e6933d0a0cb8",
+      "scriptSha256": "2676ac93bd656e23e198287332d66d249dd979cdd8134d17e68f6de92ec03d70",
+      "title": "薬の飲み忘れを思い出した時刻と普段の服用時刻を分ける",
+      "turns": [
+        "服用の記録について、ご相談でしょうか。",
+        "昼に飲み忘れを思い出しました。メモへ十二時と書きましたが、その時に飲んだわけではありません。",
+        "実際の服用と、思い出した時刻を分けて教えてください。",
+        "いつもは朝に飲む薬です。今日はまだ飲んでいません。十二時の記録は気づいた時刻だけです。",
+        "薬と処方の情報を確認して、今回の対応を相談しましょう。",
+        "袋を持って来ました。前に別の薬で聞いた方法を、今回も同じと思って実行してはいません。",
+        "ほかに今日使った薬についても伺います。",
+        "ほかは、この記録のとおりです。飲んだ物と、飲む予定だった物を一緒の印にしていたので、説明を付けます。",
+        "確認できないことも、そのままお知らせください。",
+        "はい。思い出せない時刻を埋めず、事実から話します。次の分とまとめてよいかも自分で決めず、案内を聞きます。",
+        "記録を分けて説明してくださりありがとうございます。それでは、薬の確認をお待ちください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_gif_ogaki_07_001_goal_1",
+          "十二時は飲忘れを思い出した時刻で服用時刻ではないと申告する"
+        ],
+        [
+          "sc_loc_gif_ogaki_07_001_goal_2",
+          "通常朝服用で本日未服用と明示する"
+        ],
+        [
+          "sc_loc_gif_ogaki_07_001_goal_3",
+          "袋を示し他薬で聞いた対応を未転用と伝える"
+        ],
+        [
+          "sc_loc_gif_ogaki_07_001_goal_4",
+          "他薬の実服用と予定の同印を説明付きで区別する"
+        ],
+        [
+          "sc_loc_gif_ogaki_07_001_goal_5",
+          "不明時刻を埋めず次回分とまとめる判断も相談すると話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-GIF-OGAKI-07",
+      "effectiveCategory": "Pharmacy",
+      "effectiveNpcRole": "Pharmacist",
+      "causalJudgement": "The visitor explains 昼に飲み忘れを思い出しました。メモへ十二時と書きましたが、その時に飲んだわけではありません。 The final player action is はい。思い出せない時刻を埋めず、事実から話します。次の分とまとめてよいかも自分で決めず、案内を聞きます。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Clinical communication/administrative support; no diagnosis, dosage or treatment promised. Effective Pharmacist role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "記録を分けて説明してくださりありがとうございます。それでは、薬の確認をお待ちください。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-GIF-SEKI-05-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceFileSha256": "a3cf0cc45b2fa3fa7079d462a3920bcc22a662e371c9a295af306ed9a2c20eab",
+      "scriptSha256": "1d80d1b32f3c14e9f7412968a31664ae3b3e548dd6e28604e0cd61ae6f3543df",
+      "title": "痛みがあるのに笑って返事した理由を診察で伝える",
+      "turns": [
+        "先ほどから笑顔でお話しですが、痛みの状態はいかがですか。",
+        "痛みはあります。緊張すると笑ってしまうので、平気という意味で笑ったわけではありません。",
+        "表情だけで判断せず、お話を伺います。痛む場所を教えてください。",
+        "腰のこの辺りです。笑った時だけの痛みではなく、座っている今も気になります。",
+        "痛みが変化した時は、表情とは別にお知らせください。",
+        "分かりました。さっき「大丈夫です」と言ったのは、説明を聞けるという意味でした。痛みがなくなったという意味ではありません。",
+        "その意味を確認できました。痛み以外に、説明で困ることはありますか。",
+        "うまく話そうとして冗談を言ってしまいます。今は、言葉を選びながらゆっくり説明したいです。",
+        "お急ぎにならず、分かる範囲でお話しください。",
+        "ありがとうございます。楽しく笑えるから診察は不要という説明にせず、感じていることを真面目に伝えます。",
+        "ご不安と表情の理由を伺いました。それでは、症状を確認して診察を進めましょう。お大事になさってください。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_gif_seki_05_001_goal_1",
+          "痛みはあり笑顔は緊張の反応で平気の意味ではないと述べる"
+        ],
+        [
+          "sc_loc_gif_seki_05_001_goal_2",
+          "腰の場所を示し笑う時だけでなく現在着座時も気になると説明する"
+        ],
+        [
+          "sc_loc_gif_seki_05_001_goal_3",
+          "大丈夫は傾聴可能の意味で症状消失ではないと訂正する"
+        ],
+        [
+          "sc_loc_gif_seki_05_001_goal_4",
+          "冗談で補う癖を伝え言葉を選ぶ時間を希望する"
+        ],
+        [
+          "sc_loc_gif_seki_05_001_goal_5",
+          "笑える状態を診察不要とせず実際の感覚を真剣に説明すると話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-GIF-SEKI-05",
+      "effectiveCategory": "Hospital",
+      "effectiveNpcRole": "Doctor",
+      "causalJudgement": "The visitor explains 痛みはあります。緊張すると笑ってしまうので、平気という意味で笑ったわけではありません。 The final player action is ありがとうございます。楽しく笑えるから診察は不要という説明にせず、感じていることを真面目に伝えます。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Clinical communication/administrative support; no diagnosis, dosage or treatment promised. Effective Doctor role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "ご不安と表情の理由を伺いました。それでは、症状を確認して診察を進めましょう。お大事になさってください。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21204-02-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceFileSha256": "a3cf0cc45b2fa3fa7079d462a3920bcc22a662e371c9a295af306ed9a2c20eab",
+      "scriptSha256": "d66653fe18da7fcc5fb7165d579c3cc8b777545f988f04f8cffcbb3f2a50a3df",
+      "title": "議事録で自分の発言でない提案を自分の意見として扱わない",
+      "turns": [
+        "会議の記録について、確認したい点があるのですね。",
+        "はい。私の名前の下に、言っていない提案が書かれています。席札の位置が途中で変わったので、発言者が混ざったのかもしれません。",
+        "記録と、ご自身が覚えている発言を分けて伺います。",
+        "私は開始時刻について質問しました。施設の名前を変える提案はしていません。ただ、誰が言ったかまでは覚えていません。",
+        "担当へ、確認したい記載を示してお伝えいただけます。",
+        "お願いします。私の発言ではないという点は伝えますが、近くにいた人の名前を推測で書き足すことはしません。",
+        "その記録は、もう他の方へ共有しましたか。",
+        "友達一人に送りました。自分の名前で提案が確定したと受け取られないよう、その部分は確認中と知らせます。",
+        "ご自身で公開版を消して差し替えず、訂正の方法も担当へお尋ねください。",
+        "はい。元の記録と私の質問を示します。席が変わったという事情はありますが、それが原因と断定せず確認を頼みます。",
+        "確認したい箇所を担当へお伝えください。それでは、記録をそのままお持ちください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21204_02_001_goal_1",
+          "議事録で未発言提案が本人名下にあり席札変更との関係を相談する"
+        ],
+        [
+          "sc_loc_jp_21204_02_001_goal_2",
+          "自分は開始時刻質問のみで改称提案なしだが他発言者は不明と述べる"
+        ],
+        [
+          "sc_loc_jp_21204_02_001_goal_3",
+          "自分発言でない点のみ訂正を求め他人名を推測で加えないと伝える"
+        ],
+        [
+          "sc_loc_jp_21204_02_001_goal_4",
+          "共有した友人へ該当提案は確認中と知らせ確定意志としないと話す"
+        ],
+        [
+          "sc_loc_jp_21204_02_001_goal_5",
+          "元記録と本人質問を提示し公開版を自己差替えせず原因確認を頼む"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21204-02",
+      "effectiveCategory": "Government Office",
+      "effectiveNpcRole": "Government Officer",
+      "causalJudgement": "The visitor explains はい。私の名前の下に、言っていない提案が書かれています。席札の位置が途中で変わったので、発言者が混ざったのかもしれません。 The final player action is はい。元の記録と私の質問を示します。席が変わったという事情はありますが、それが原因と断定せず確認を頼みます。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Municipal reception/clarification; decisions and special services remain fictional staff/department handling. Effective Government Officer role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "確認したい箇所を担当へお伝えください。それでは、記録をそのままお持ちください。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21204-03-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceFileSha256": "a3cf0cc45b2fa3fa7079d462a3920bcc22a662e371c9a295af306ed9a2c20eab",
+      "scriptSha256": "9924df691ec5fbcdc89f6b66aeb1b60eb9d1d5fed7a209d2d08443f6a934901e",
+      "title": "説明前の医療者の沈黙を悪い結果だと受け取らず不安を伝える",
+      "turns": [
+        "説明をお待ちの間に、ご心配なことはありますか。",
+        "先生が紙を見て黙っていたので、悪い結果なのかと思いました。でも、結果の説明はまだ聞いていません。",
+        "沈黙から結果を決めず、ご不安な点を診療担当へ伝えましょう。",
+        "お願いします。私が見たのは紙を読む様子だけです。何が書かれているかは見ていません。",
+        "どの点を先に確認したいか、ご希望はありますか。",
+        "結果が説明される順序と、質問できる時を知りたいです。今ここで病名を当ててほしいわけではありません。",
+        "そのご希望を担当へ伝えます。ご家族へは連絡されていますか。",
+        "まだです。悪い結果だったと先に送るのではなく、説明を待っている状態だと伝えます。",
+        "説明の後も、分からない言葉は聞き直してください。",
+        "はい。緊張していることも話します。聞いた結果と、自分が沈黙から想像したことを分けて確認します。",
+        "説明と質問のご希望を担当へお伝えします。それでは、案内をお待ちください。お大事になさってください。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21204_03_001_goal_1",
+          "医師の沈黙を悪い結果と推測したが未説明と申告する"
+        ],
+        [
+          "sc_loc_jp_21204_03_001_goal_2",
+          "観察したのは紙読みに限り記載内容は未知と伝える"
+        ],
+        [
+          "sc_loc_jp_21204_03_001_goal_3",
+          "病名推測でなく説明順と質問時間の確認を希望する"
+        ],
+        [
+          "sc_loc_jp_21204_03_001_goal_4",
+          "家族へ悪結果確定ではなく説明待ちと連絡すると述べる"
+        ],
+        [
+          "sc_loc_jp_21204_03_001_goal_5",
+          "緊張を話し実説明と沈黙からの想像を分けると伝える"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21204-03",
+      "effectiveCategory": "Hospital",
+      "effectiveNpcRole": "Nurse",
+      "causalJudgement": "The visitor explains 先生が紙を見て黙っていたので、悪い結果なのかと思いました。でも、結果の説明はまだ聞いていません。 The final player action is はい。緊張していることも話します。聞いた結果と、自分が沈黙から想像したことを分けて確認します。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Clinical communication/administrative support; no diagnosis, dosage or treatment promised. Effective Nurse role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "説明と質問のご希望を担当へお伝えします。それでは、案内をお待ちください。お大事になさってください。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21204-04-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-02-seki-gero-tajimi.json",
+      "sourceFileSha256": "a3cf0cc45b2fa3fa7079d462a3920bcc22a662e371c9a295af306ed9a2c20eab",
+      "scriptSha256": "9ccc43dc8429c6720bd73c0511369847e7a6d323cbacbb39727949af3710e4b1",
+      "title": "映像を明るくした後に見えた数字を元の映像の事実と混ぜない",
+      "turns": [
+        "動画の資料をお持ちですね。手を加えた部分はありますか。",
+        "暗くて見づらかったので、明るさを変えました。車の番号らしい数字が見えますが、元では読めませんでした。",
+        "元の動画と加工した物を、分けて確認します。元は残っていますか。",
+        "あります。加工した方だけが本物の記録だと説明せず、同じ動画から作った物だと伝えます。",
+        "ご自身がその場で見たことも、別にお話しください。",
+        "車が通ったことは見ました。番号をその時に覚えたのではなく、後で画面を見て考えました。",
+        "読めない所は、推測のまま確かな数字として埋めないでください。",
+        "はい。友達が三だと言いましたが、私は五にも見えます。どちらかに決めて書き込むことはしません。",
+        "両方の資料と、変更した内容を担当へお知らせください。",
+        "明るさを変えたと説明します。切り取っていない元も見せ、現場の記憶、画面、友達の意見を分けて話します。",
+        "資料の違いを伺いました。それでは、元の動画を残したまま担当とご確認ください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21204_04_001_goal_1",
+          "暗い動画を明るくし後から数字らしい表示が見えたと申告する"
+        ],
+        [
+          "sc_loc_jp_21204_04_001_goal_2",
+          "元を保持し加工版を唯一の原記録と説明しないと述べる"
+        ],
+        [
+          "sc_loc_jp_21204_04_001_goal_3",
+          "現場で見た車と後から考えた番号を区別する"
+        ],
+        [
+          "sc_loc_jp_21204_04_001_goal_4",
+          "友人の三と自己の五の不一致を確定数字に書込まないと伝える"
+        ],
+        [
+          "sc_loc_jp_21204_04_001_goal_5",
+          "加工内容と原動画を示し記憶画面他者意見を分けると話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21204-04",
+      "effectiveCategory": "Police Station",
+      "effectiveNpcRole": "Police",
+      "causalJudgement": "The visitor explains 暗くて見づらかったので、明るさを変えました。車の番号らしい数字が見えますが、元では読めませんでした。 The final player action is 明るさを変えたと説明します。切り取っていない元も見せ、現場の記憶、画面、友達の意見を分けて話します。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Police listening/referral and factual explanation; no culpability or legal outcome guaranteed. Effective Police role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "資料の違いを伺いました。それでは、元の動画を残したまま担当とご確認ください。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21206-02-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceFileSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "scriptSha256": "f92515135f7d6f191b20c9bca3f720975a621a0d7f468e53a8e1a0c90c079193",
+      "title": "古い予定表から地区の集まりの場所を探す",
+      "turns": [
+        "地域の案内についてお尋ねですか。",
+        "部屋に残っていた地区の集まりの予定表を見ました。参加したいのですが、何年の案内か分かりません。",
+        "日付や、問い合わせ先が載っている部分を見せていただけますか。",
+        "ここです。月と日はありますが、年はなく、場所も以前の集会所らしいです。",
+        "この紙だけでは今の開催予定は分かりません。お住まいの地区を教えてください。",
+        "この住所の地区です。先に現在の案内を確認できる窓口を知りたいです。",
+        "地域の活動について相談する担当へおつなぎします。",
+        "ありがとうございます。集まりの名前をうまく読めないので、紙も一緒に持っていってよいですか。",
+        "はい、案内の確認にお使いください。参加の方法もそこでお尋ねください。",
+        "分かりました。古い場所へ直接行く前に、今年の日程と初めて参加する人の手続きを聞いてきます。",
+        "それでは、担当の窓口へご案内します。よい機会になるといいですね。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21206_02_001_goal_1",
+          "年不明の地区行事案内を見て参加先を相談する"
+        ],
+        [
+          "sc_loc_jp_21206_02_001_goal_2",
+          "年の欠落と旧集会所らしい場所を説明する"
+        ],
+        [
+          "sc_loc_jp_21206_02_001_goal_3",
+          "住所で地区を示し現行案内の確認先を尋ねる"
+        ],
+        [
+          "sc_loc_jp_21206_02_001_goal_4",
+          "読みにくい行事名のため原紙持参の可否を聞く"
+        ],
+        [
+          "sc_loc_jp_21206_02_001_goal_5",
+          "今年の日程と初参加手続きを確認してから訪ねると述べる"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21206-02",
+      "effectiveCategory": "Government Office",
+      "effectiveNpcRole": "Government Officer",
+      "causalJudgement": "The visitor explains 部屋に残っていた地区の集まりの予定表を見ました。参加したいのですが、何年の案内か分かりません。 The final player action is 分かりました。古い場所へ直接行く前に、今年の日程と初めて参加する人の手続きを聞いてきます。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Municipal reception/clarification; decisions and special services remain fictional staff/department handling. Effective Government Officer role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "それでは、担当の窓口へご案内します。よい機会になるといいですね。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21206-03-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceFileSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "scriptSha256": "47ba2208a6e7492df7cb6a7735343932ce94cde405f9e3c0eb4c647ee5ef278b",
+      "title": "呼び出しの音だけでは聞き取りにくいと受付で伝える",
+      "turns": [
+        "受付でお手伝いできることはありますか。",
+        "周りがにぎやかだと、呼ばれた名前を聞き取れません。診察を待つ間の呼び出しを相談したいです。",
+        "聞き取りやすい方法や、普段の工夫を教えてください。",
+        "目の前で話してもらうと分かりやすいです。掲示も見られますが、今日はどこを見ればよいか分かりません。",
+        "こちらで対応できる方法を確認します。少しお待ちいただけますか。",
+        "はい。大きな声なら必ず聞こえるというわけではないので、顔を見て話していただけると助かります。",
+        "担当に伝えます。ご同行の方はいらっしゃいますか。",
+        "今日は一人です。呼ばれるのが心配で入口に立ち続けるのではなく、座って待てる方法を知りたいです。",
+        "待つ場所と呼び出しの方法を確認して、ご説明します。",
+        "お願いします。説明を聞いてから席を選びます。聞き取れなかった時は、その場で確認します。",
+        "承知しました。それでは、確認できるまでこちらでお待ちください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21206_03_001_goal_1",
+          "雑音の中で名前を聞き取れず呼び出し方法を相談する"
+        ],
+        [
+          "sc_loc_jp_21206_03_001_goal_2",
+          "対面説明が分かりやすく掲示の見る場所が不明と伝える"
+        ],
+        [
+          "sc_loc_jp_21206_03_001_goal_3",
+          "声量より顔を見て話す方法を希望する"
+        ],
+        [
+          "sc_loc_jp_21206_03_001_goal_4",
+          "単独来院で座って待てる対応を希望する"
+        ],
+        [
+          "sc_loc_jp_21206_03_001_goal_5",
+          "待機説明後に席を選び聞き逃しは再確認すると伝える"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21206-03",
+      "effectiveCategory": "Hospital",
+      "effectiveNpcRole": "Nurse",
+      "causalJudgement": "The visitor explains 周りがにぎやかだと、呼ばれた名前を聞き取れません。診察を待つ間の呼び出しを相談したいです。 The final player action is お願いします。説明を聞いてから席を選びます。聞き取れなかった時は、その場で確認します。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Clinical communication/administrative support; no diagnosis, dosage or treatment promised. Effective Nurse role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、確認できるまでこちらでお待ちください。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21206-04-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceFileSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "scriptSha256": "83a06bbdc8cb656d28de0e5e8c998f15338fb6659ee1936ae904254fe967a432",
+      "title": "地域の注意喚起チラシを職場で配る前に出所を確認する",
+      "turns": [
+        "お持ちのチラシについてのご相談ですか。",
+        "このチラシを職場で配ろうと思いましたが、警察が出したものか分かりません。確認先を教えてください。",
+        "どちらで手に入れましたか。",
+        "知り合いから画像でもらいました。下の部分が切れていて、日付や問い合わせ先が見えません。",
+        "この画像だけで出所を確かめるのは難しいですね。元の資料はお持ちですか。",
+        "ありません。警察の名前があるので本物と思いましたが、まだ印刷はしていません。",
+        "確認に使える情報を整理しましょう。どのような内容ですか。",
+        "自転車についての注意です。職場の人が読めるように翻訳もしたいですが、まず原文の出所を知りたいです。",
+        "確認できる窓口や資料を調べてご案内します。未確認のまま配らないようにしてください。",
+        "はい。画像を送った人にも全体の資料を尋ねます。出所が分かってから、引用する範囲と翻訳の内容を考えます。",
+        "承知しました。それでは、確認先をご案内します。ご相談ありがとうございました。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21206_04_001_goal_1",
+          "警察名義に見える配布物の出所を印刷前に確認したいと話す"
+        ],
+        [
+          "sc_loc_jp_21206_04_001_goal_2",
+          "知人から受領した画像で日付と問合先が切れていると説明する"
+        ],
+        [
+          "sc_loc_jp_21206_04_001_goal_3",
+          "原資料未所持で警察名のみから信用しかけたと述べる"
+        ],
+        [
+          "sc_loc_jp_21206_04_001_goal_4",
+          "自転車注意の翻訳配布希望だが原文の出所確認を優先する"
+        ],
+        [
+          "sc_loc_jp_21206_04_001_goal_5",
+          "送信者に全体資料を聞き出所判明後に利用範囲を検討すると話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21206-04",
+      "effectiveCategory": "Police Station",
+      "effectiveNpcRole": "Police",
+      "causalJudgement": "The visitor explains このチラシを職場で配ろうと思いましたが、警察が出したものか分かりません。確認先を教えてください。 The final player action is はい。画像を送った人にも全体の資料を尋ねます。出所が分かってから、引用する範囲と翻訳の内容を考えます。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Police listening/referral and factual explanation; no culpability or legal outcome guaranteed. Effective Police role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、確認先をご案内します。ご相談ありがとうございました。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21207-02-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceFileSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "scriptSha256": "f59c55b236728935a0b6ebc44a1d31ddb50afd134b904ca703738f43ebfeadf5",
+      "title": "市への要望を集会の議事録と一緒に提出したい",
+      "turns": [
+        "どのようなご用件ですか。",
+        "地区の集会で話した歩道について、市に意見を届けたいです。議事録も持ってきました。",
+        "ご自身のご意見でしょうか。それとも集会でまとめたものですか。",
+        "集会で出た意見です。ただ、全員が賛成したわけではないので、全員の要望とは書いていません。",
+        "意見を受け付ける担当と、提出の方法をご案内します。",
+        "お願いします。議事録には関係のない話と参加者の連絡先もあるので、そのまま出してよいか確認したいです。",
+        "必要な内容や資料の扱いも、担当にご相談ください。",
+        "はい。歩道についての部分が分かるようにして、元の議事録も確認用に持っていきます。",
+        "回答を希望する場合の連絡方法も確認してください。",
+        "私が連絡を受ける予定です。返事をもらったら参加者へ伝えますが、市の回答にないことは付け加えません。",
+        "承知しました。それでは、担当の窓口へご案内します。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21207_02_001_goal_1",
+          "歩道に関する集会意見と議事録を提出したいと相談する"
+        ],
+        [
+          "sc_loc_jp_21207_02_001_goal_2",
+          "全員賛成ではない集会意見と明確に伝える"
+        ],
+        [
+          "sc_loc_jp_21207_02_001_goal_3",
+          "無関係の話と連絡先を含む資料の提出範囲を尋ねる"
+        ],
+        [
+          "sc_loc_jp_21207_02_001_goal_4",
+          "歩道該当部分を整理し原議事録も確認用に持参する旨述べる"
+        ],
+        [
+          "sc_loc_jp_21207_02_001_goal_5",
+          "自分を回答連絡先とし回答内容を正確に共有すると話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21207-02",
+      "effectiveCategory": "Government Office",
+      "effectiveNpcRole": "Government Officer",
+      "causalJudgement": "The visitor explains 地区の集会で話した歩道について、市に意見を届けたいです。議事録も持ってきました。 The final player action is 私が連絡を受ける予定です。返事をもらったら参加者へ伝えますが、市の回答にないことは付け加えません。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Municipal reception/clarification; decisions and special services remain fictional staff/department handling. Effective Government Officer role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、担当の窓口へご案内します。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21207-03-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceFileSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "scriptSha256": "31bbe848a838c5570c4507ba51ba2b6046bf4b866b1602e60c15cdc28a84706f",
+      "title": "診察前に持参した体調メモを渡す方法を聞く",
+      "turns": [
+        "受付で確認したいことはありますか。",
+        "体調のメモを持ってきました。診察の前に渡した方がよいのか、自分で持っていた方がよいのか知りたいです。",
+        "どのような内容を記録されていますか。",
+        "めまいがあった日と、続いた時間です。何もなかった日も書いてあるので、長いメモになっています。",
+        "お渡しする方法を担当に確認します。今、具合が悪いところはありますか。",
+        "今はありません。受付で全部読み上げるのではなく、診察で必要な部分を見てもらいたいです。",
+        "現在の状態も担当へ伝えます。メモは原本だけですか。",
+        "原本だけです。預ける場合には、返してもらえるか先に確かめたいです。",
+        "資料の扱いを確認してご案内します。診察でご自身から説明する準備もしておいてください。",
+        "はい。最初にいつから気になっているかを話し、細かい時間はメモで示します。渡し方の案内を待ちます。",
+        "分かりました。それでは、担当に確認します。こちらでお待ちください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21207_03_001_goal_1",
+          "体調メモを事前提出するか手元保管するか尋ねる"
+        ],
+        [
+          "sc_loc_jp_21207_03_001_goal_2",
+          "めまい日と継続時間と無症状日を記録したと説明する"
+        ],
+        [
+          "sc_loc_jp_21207_03_001_goal_3",
+          "現在は無症状で診察時に必要部分を見てほしいと話す"
+        ],
+        [
+          "sc_loc_jp_21207_03_001_goal_4",
+          "原本のみなので預ける場合の返却確認を希望する"
+        ],
+        [
+          "sc_loc_jp_21207_03_001_goal_5",
+          "発症時期を口頭説明し時間はメモで示すと準備を述べる"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21207-03",
+      "effectiveCategory": "Hospital",
+      "effectiveNpcRole": "Nurse",
+      "causalJudgement": "The visitor explains 体調のメモを持ってきました。診察の前に渡した方がよいのか、自分で持っていた方がよいのか知りたいです。 The final player action is はい。最初にいつから気になっているかを話し、細かい時間はメモで示します。渡し方の案内を待ちます。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Clinical communication/administrative support; no diagnosis, dosage or treatment promised. Effective Nurse role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "分かりました。それでは、担当に確認します。こちらでお待ちください。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21207-04-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceFileSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "scriptSha256": "f732462c7c1f141dd4a82cdb5134640f0bea5a167ba32806d9100c6751d5ab52",
+      "title": "見知らぬ人から借りた携帯で警察への相談先を聞く",
+      "turns": [
+        "落ち着いてお話しください。何がありましたか。",
+        "道で知らない人に何度もお金を貸してと言われ、怖くなりました。ここへ来たので相談したいです。",
+        "その方は今も近くにいますか。けがはありませんか。",
+        "今は見えません。けがもありません。駅前の店まで離れて、店の方に電話を借りました。",
+        "その後、こちらへ来られたのですね。何時ごろのことですか。",
+        "三十分くらい前です。お金は渡していませんが、名前を聞かれて答えてしまいました。",
+        "覚えている状況を順に教えてください。",
+        "相手の名前は知りません。服と場所は覚えています。電話を借りた店の方にも見てもらったと思いますが、確認はしていません。",
+        "ご自身が見聞きしたことと、まだ確認できていないことを分けて伺います。",
+        "分かりました。店の方が全部見たとは言わず、私がされた声かけと、自分が答えたことから話します。",
+        "承知しました。それでは、お話を伺います。相談後もお気をつけてお帰りください。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21207_04_001_goal_1",
+          "金銭要求を繰り返され怖くなり相談に来たと伝える"
+        ],
+        [
+          "sc_loc_jp_21207_04_001_goal_2",
+          "相手不在と無傷と店舗へ退避して電話を借りた経緯を説明する"
+        ],
+        [
+          "sc_loc_jp_21207_04_001_goal_3",
+          "三十分前で金銭未交付だが名前を答えたと述べる"
+        ],
+        [
+          "sc_loc_jp_21207_04_001_goal_4",
+          "相手の服と場所は覚えているが店側の目撃は未確認と話す"
+        ],
+        [
+          "sc_loc_jp_21207_04_001_goal_5",
+          "自分が受けた声かけと回答から事実を説明すると述べる"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21207-04",
+      "effectiveCategory": "Police Station",
+      "effectiveNpcRole": "Police",
+      "causalJudgement": "The visitor explains 道で知らない人に何度もお金を貸してと言われ、怖くなりました。ここへ来たので相談したいです。 The final player action is 分かりました。店の方が全部見たとは言わず、私がされた声かけと、自分が答えたことから話します。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Police listening/referral and factual explanation; no culpability or legal outcome guaranteed. Effective Police role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、お話を伺います。相談後もお気をつけてお帰りください。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21208-02-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceFileSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "scriptSha256": "9101e40fe643c6ab19e9eacf04f93da2642edae99e53235a0519e937c2b38ae5",
+      "title": "転居前に出した書類の控えを家族が保管している",
+      "turns": [
+        "どのような手続きについてでしょうか。",
+        "以前出した書類の続きについて聞きたいのですが、控えを家族の家に置いたまま引っ越しました。",
+        "書類の名前や、提出した時期を覚えていますか。",
+        "名前は正確に覚えていません。三月ごろで、子どもの利用する施設についての申請です。",
+        "該当する担当を確認します。ご家族から控えの内容を聞くことはできますか。",
+        "今は仕事中で連絡できません。覚えていることだけで相談できる窓口を教えてほしいです。",
+        "担当で確認に必要な情報をご相談ください。申請者はどなたですか。",
+        "私です。家族が保管しているだけなので、家族の申請として探す必要はありません。",
+        "申請者と保管している方は別なのですね。その点もお伝えください。",
+        "はい。まず担当で不足する情報を聞きます。控えが必要なら家族に頼んで確認してから改めて相談します。",
+        "承知しました。それでは、担当へご案内します。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21208_02_001_goal_1",
+          "転居で家族宅に控えを置いた以前の申請を相談する"
+        ],
+        [
+          "sc_loc_jp_21208_02_001_goal_2",
+          "名称不明だが三月頃の子供施設申請と説明する"
+        ],
+        [
+          "sc_loc_jp_21208_02_001_goal_3",
+          "家族と即連絡できず記憶情報で相談先を尋ねる"
+        ],
+        [
+          "sc_loc_jp_21208_02_001_goal_4",
+          "申請者は自分で家族は保管者のみと明確にする"
+        ],
+        [
+          "sc_loc_jp_21208_02_001_goal_5",
+          "必要情報を担当に聞き控え不足なら家族へ確認すると話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21208-02",
+      "effectiveCategory": "Government Office",
+      "effectiveNpcRole": "Government Officer",
+      "causalJudgement": "The visitor explains 以前出した書類の続きについて聞きたいのですが、控えを家族の家に置いたまま引っ越しました。 The final player action is はい。まず担当で不足する情報を聞きます。控えが必要なら家族に頼んで確認してから改めて相談します。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Municipal reception/clarification; decisions and special services remain fictional staff/department handling. Effective Government Officer role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、担当へご案内します。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21208-03-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceFileSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "scriptSha256": "892fa2bc34f2f09ebdd8fd2b4bc97fcb83b09e597c10b828bc372e6b7fd62002",
+      "title": "予約日を手帳へ転記したとき曜日が合わなくなる",
+      "turns": [
+        "次回の予約についてでしょうか。",
+        "案内を手帳に写したのですが、日付と曜日が合いません。どちらを見ればよいか確認したいです。",
+        "元の予約案内も一緒に確認できますか。",
+        "はい、これです。手帳には金曜日と書きましたが、案内の日付を見ると別の曜日のようです。",
+        "予約の記録を確認します。お名前とご本人の確認をお願いします。",
+        "はい。変更をお願いする前に、元の予約がいつなのかを知りたいです。",
+        "確認後にご説明します。手帳に書いた時間は案内と同じですか。",
+        "時間は同じです。日付を書き間違えた可能性があるので、自分の手帳だけで来院を決めないようにします。",
+        "予約の確認ができたら、案内と手帳を一緒に見直しましょう。",
+        "お願いします。分かった日付と曜日を読み上げて確認してから、古いメモを直します。来られない場合はその後相談します。",
+        "承知しました。それでは、予約の記録を確認します。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21208_03_001_goal_1",
+          "転記した予約日と曜日の矛盾を確認したいと申し出る"
+        ],
+        [
+          "sc_loc_jp_21208_03_001_goal_2",
+          "原案内と金曜日と書いた手帳の食い違いを示す"
+        ],
+        [
+          "sc_loc_jp_21208_03_001_goal_3",
+          "変更依頼より先に元予約日の確認を希望する"
+        ],
+        [
+          "sc_loc_jp_21208_03_001_goal_4",
+          "時間は一致し手帳のみで来院を決めないと述べる"
+        ],
+        [
+          "sc_loc_jp_21208_03_001_goal_5",
+          "確認日付を復唱しメモ修正後に都合を判断すると話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21208-03",
+      "effectiveCategory": "Hospital",
+      "effectiveNpcRole": "Nurse",
+      "causalJudgement": "The visitor explains 案内を手帳に写したのですが、日付と曜日が合いません。どちらを見ればよいか確認したいです。 The final player action is お願いします。分かった日付と曜日を読み上げて確認してから、古いメモを直します。来られない場合はその後相談します。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Clinical communication/administrative support; no diagnosis, dosage or treatment promised. Effective Nurse role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、予約の記録を確認します。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21208-04-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-03-nakatsugawa-mino-mizunami.json",
+      "sourceFileSha256": "fa40a5ca6fb7fd7d8fa269e6cdf52269d8e1246b8513f1dfa69ec2a0d1c4e134",
+      "scriptSha256": "8c6674a4e5a88861a262eba09fec5eb1051cb44fddc6ef1fae3c003120e0e1af",
+      "title": "子どもが自転車を勝手に動かしたと保護者が相談する",
+      "turns": [
+        "何か起きたことで、ご相談に来られましたか。",
+        "子どもが店の前の自転車を少し動かしてしまいました。元の位置が分からないので相談に来ました。",
+        "自転車は今、どこにありますか。",
+        "店の横です。子どもと店の方がその近くで待っています。私は事情を伝えに来ました。",
+        "どのように動かしたのか、分かる範囲で教えてください。",
+        "乗ったのではなく押したと子どもは言っています。私は動かした瞬間を見ていません。",
+        "ご自身が確認したことと、お子さんから聞いたことを分けて教えてください。",
+        "はい。鍵の状態や傷は私には分かりません。元に戻せば終わりと思わず、持ち主へ事情を伝える方法を相談したいです。",
+        "対応を確認します。勝手にさらに動かさず、連絡できる状態でお待ちください。",
+        "分かりました。店へ戻ってそのことを伝えます。子どもにも、触らず待つよう話して、必要な説明に協力します。",
+        "承知しました。それでは、こちらで確認します。お気をつけてお戻りください。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21208_04_001_goal_1",
+          "子供が他人自転車を移動し原位置不明と相談する"
+        ],
+        [
+          "sc_loc_jp_21208_04_001_goal_2",
+          "店横に自転車と子供と店員が待っていると説明する"
+        ],
+        [
+          "sc_loc_jp_21208_04_001_goal_3",
+          "押したという子供の説明と自分の未目撃を区別する"
+        ],
+        [
+          "sc_loc_jp_21208_04_001_goal_4",
+          "鍵や傷は不明で所有者への説明方法を相談する"
+        ],
+        [
+          "sc_loc_jp_21208_04_001_goal_5",
+          "店へ戻り再移動しないと伝え説明に協力する旨話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21208-04",
+      "effectiveCategory": "Police Station",
+      "effectiveNpcRole": "Police",
+      "causalJudgement": "The visitor explains 子どもが店の前の自転車を少し動かしてしまいました。元の位置が分からないので相談に来ました。 The final player action is 分かりました。店へ戻ってそのことを伝えます。子どもにも、触らず待つよう話して、必要な説明に協力します。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Police listening/referral and factual explanation; no culpability or legal outcome guaranteed. Effective Police role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、こちらで確認します。お気をつけてお戻りください。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21209-02-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceFileSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "scriptSha256": "9d90b1b0175cef2ad192058ae340eb36ef0bbbcabe03bebca156f722c3c6bc66",
+      "title": "共同利用の部屋を予約した後で活動内容が変わる",
+      "turns": [
+        "施設のご予約についてお尋ねですか。",
+        "はい。読書会で部屋を予約しましたが、参加者と相談して、布を使った工作もしたくなりました。",
+        "変更後に、どのような道具を使う予定ですか。",
+        "はさみと布用ののりです。机にのりが付くかもしれないので、読書だけの予約のままでよいか気になりました。",
+        "利用内容の変更として、施設の担当へ確認してください。",
+        "分かりました。片づければよいと自分で決めず、道具と作業を先に説明します。",
+        "当初の予約内容を確認できるものはお持ちですか。",
+        "この控えです。人数と時間は同じですが、活動が変わったことを伝えたいです。",
+        "担当で、部屋の条件や必要な準備をご相談ください。",
+        "はい。参加者にはまだ道具を持ってくるよう頼んでいません。利用できる内容を確認してから連絡します。",
+        "承知しました。それでは、施設の担当へご案内します。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21209_02_001_goal_1",
+          "読書用予約に布工作を追加したく変更相談する"
+        ],
+        [
+          "sc_loc_jp_21209_02_001_goal_2",
+          "はさみと布のりと机の汚れ可能性を説明する"
+        ],
+        [
+          "sc_loc_jp_21209_02_001_goal_3",
+          "清掃だけで可と判断せず道具作業の事前確認を約束する"
+        ],
+        [
+          "sc_loc_jp_21209_02_001_goal_4",
+          "予約控えを示し人数時間は同じで活動変更と伝える"
+        ],
+        [
+          "sc_loc_jp_21209_02_001_goal_5",
+          "道具持参依頼は施設条件確認後にすると話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21209-02",
+      "effectiveCategory": "Government Office",
+      "effectiveNpcRole": "Government Officer",
+      "causalJudgement": "The visitor explains はい。読書会で部屋を予約しましたが、参加者と相談して、布を使った工作もしたくなりました。 The final player action is はい。参加者にはまだ道具を持ってくるよう頼んでいません。利用できる内容を確認してから連絡します。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Municipal reception/clarification; decisions and special services remain fictional staff/department handling. Effective Government Officer role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、施設の担当へご案内します。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21209-03-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceFileSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "scriptSha256": "8d0a3a3cc19847054cefc814794ff638b1778124b767127768c6083ba71018c8",
+      "title": "帰りに別の家族と合流するので受付へ連絡方法を伝える",
+      "turns": [
+        "お帰りの準備について、ご相談ですか。",
+        "母の付き添いで来ました。帰りは兄の車ですが、兄はまだ仕事中です。会計が終わったら私から連絡したいです。",
+        "今のお付き添いは、あなたお一人ですね。",
+        "はい。兄に病院から直接電話が行くと思っていましたが、まず私が迎えの時間を相談するつもりです。",
+        "お迎えの連絡はご家族で確認されてください。待つ場所についてご案内できます。",
+        "お願いします。母が休める所で待ちたいです。車が着く前から外に出て立っているのは難しいと思います。",
+        "利用できる待機場所と、お迎えの時の案内を確認します。",
+        "ありがとうございます。兄には駐車の案内も伝えたいので、分かった内容をメモします。",
+        "当日のご案内をご確認ください。お母様の具合が変わったら職員へお知らせください。",
+        "はい。会計の後に兄へ電話し、到着の連絡を受けてから移動を相談します。母の様子も見ながら待ちます。",
+        "承知しました。それでは、待機場所をご案内します。お気をつけてお帰りください。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21209_03_001_goal_1",
+          "母の受診付き添いで仕事中の兄へ会計後に迎え連絡したいと話す"
+        ],
+        [
+          "sc_loc_jp_21209_03_001_goal_2",
+          "自分のみ同行し病院直連絡でなく自分が時間相談すると述べる"
+        ],
+        [
+          "sc_loc_jp_21209_03_001_goal_3",
+          "母が休める待機所を希望し屋外立位は難しいと伝える"
+        ],
+        [
+          "sc_loc_jp_21209_03_001_goal_4",
+          "兄へ伝える当日駐車案内をメモしたいと申し出る"
+        ],
+        [
+          "sc_loc_jp_21209_03_001_goal_5",
+          "会計後連絡し到着後移動を相談し母の状態も見ると話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21209-03",
+      "effectiveCategory": "Hospital",
+      "effectiveNpcRole": "Nurse",
+      "causalJudgement": "The visitor explains 母の付き添いで来ました。帰りは兄の車ですが、兄はまだ仕事中です。会計が終わったら私から連絡したいです。 The final player action is はい。会計の後に兄へ電話し、到着の連絡を受けてから移動を相談します。母の様子も見ながら待ちます。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Clinical communication/administrative support; no diagnosis, dosage or treatment promised. Effective Nurse role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、待機場所をご案内します。お気をつけてお帰りください。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21209-04-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceFileSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "scriptSha256": "071b9eb7bddde716c23546e07119844418a2545738aed2d7bc370fd7caff0a13",
+      "title": "近所で聞いた音の時刻を後から修正して伝える",
+      "turns": [
+        "以前のご相談についてでしょうか。",
+        "昨日、近所で大きな音がしたと話しましたが、時刻を間違えていたかもしれません。訂正を伝えたいです。",
+        "どのように気づかれましたか。",
+        "その時に友達へ送ったメッセージを見ました。九時と言いましたが、送ったのは八時半でした。",
+        "メッセージの時刻と、音を聞いた時刻は同じでしょうか。",
+        "音の後で送りました。すぐだったと思いますが、何分後かは分かりません。八時半ぴったりとも言い切れません。",
+        "確認できたことを、そのまま記録に追加しましょう。",
+        "お願いします。前に九時と話したことと、今分かった送信時刻の両方を伝えます。",
+        "音の場所や種類についても、新しく確認したことはありますか。",
+        "そこは増えていません。ほかの人の話を自分が聞いた音として付け足さず、時刻の点だけ訂正したいです。",
+        "分かりました。それでは、以前の相談を確認します。訂正のお申し出ありがとうございます。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21209_04_001_goal_1",
+          "以前申告した近所の音の時刻を訂正したいと申し出る"
+        ],
+        [
+          "sc_loc_jp_21209_04_001_goal_2",
+          "九時申告に対し送信記録は八時半と気づいた理由を示す"
+        ],
+        [
+          "sc_loc_jp_21209_04_001_goal_3",
+          "音の後の送信で正確な時間差は不明と説明する"
+        ],
+        [
+          "sc_loc_jp_21209_04_001_goal_4",
+          "過去申告と新しく確認した送信時刻を両方伝える"
+        ],
+        [
+          "sc_loc_jp_21209_04_001_goal_5",
+          "場所種類は新情報なしで時刻のみの訂正と範囲を定める"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21209-04",
+      "effectiveCategory": "Police Station",
+      "effectiveNpcRole": "Police",
+      "causalJudgement": "The visitor explains 昨日、近所で大きな音がしたと話しましたが、時刻を間違えていたかもしれません。訂正を伝えたいです。 The final player action is そこは増えていません。ほかの人の話を自分が聞いた音として付け足さず、時刻の点だけ訂正したいです。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Police listening/referral and factual explanation; no culpability or legal outcome guaranteed. Effective Police role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "分かりました。それでは、以前の相談を確認します。訂正のお申し出ありがとうございます。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21210-02-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceFileSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "scriptSha256": "399c6931aee89edeb8b76d44c7888f92898dc8a7014d12d8ca63f78291d960d3",
+      "title": "アンケートの自由記入欄へ二人の意見を分けて書く",
+      "turns": [
+        "アンケートの記入についてでしょうか。",
+        "はい。同居人と意見が違います。この用紙に、二人の話を分けて書いてもよいか知りたいです。",
+        "どのアンケートか、表紙を見せてください。",
+        "これです。一人が代表して書く物なのか、それぞれ回答する物なのか、説明を読み切れていません。",
+        "回答の単位や記入方法を、担当に確認しましょう。",
+        "お願いします。私の意見だけを二人分として書かず、同居人にも回答の方法を伝えたいです。",
+        "同居人の方は、ご自身で回答される予定ですか。",
+        "はい。日本語を読むのを手伝いますが、意見まで同じにするつもりはありません。",
+        "それぞれのご希望と、用紙の案内を分けて確認してください。",
+        "分かりました。回答方法を聞いてから、同居人と別々に内容を考えます。記入済みの欄も必要なら見直します。",
+        "承知しました。それでは、担当に記入方法を確認します。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21210_02_001_goal_1",
+          "市アンケートに異なる二人の意見をどう書くか尋ねる"
+        ],
+        [
+          "sc_loc_jp_21210_02_001_goal_2",
+          "用紙を示し回答単位の説明を未読と伝える"
+        ],
+        [
+          "sc_loc_jp_21210_02_001_goal_3",
+          "自分意見を二人分とせず回答方法を同居人へ知らせたいと述べる"
+        ],
+        [
+          "sc_loc_jp_21210_02_001_goal_4",
+          "日本語読解補助と意見共有を分け本人回答を希望すると話す"
+        ],
+        [
+          "sc_loc_jp_21210_02_001_goal_5",
+          "単位確認後に各自内容を考え既記入欄も見直すと述べる"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21210-02",
+      "effectiveCategory": "Government Office",
+      "effectiveNpcRole": "Government Officer",
+      "causalJudgement": "The visitor explains はい。同居人と意見が違います。この用紙に、二人の話を分けて書いてもよいか知りたいです。 The final player action is 分かりました。回答方法を聞いてから、同居人と別々に内容を考えます。記入済みの欄も必要なら見直します。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Municipal reception/clarification; decisions and special services remain fictional staff/department handling. Effective Government Officer role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、担当に記入方法を確認します。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21210-03-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceFileSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "scriptSha256": "1dbd1b7bffe5cf2a1d4c4ad7369c138923805b2a4dc2997f0f3d39c3a89a1b0f",
+      "title": "自分の資料に他の人の封筒が混ざったと受付へ知らせる",
+      "turns": [
+        "お手元の書類について、何かありましたか。",
+        "私の紙をまとめたら、知らない人の名前の封筒が混ざっていました。誰の物か読まずに、ここへ持ってきました。",
+        "中は開けていませんか。",
+        "はい、封は閉じたままです。外の名前だけ見て、自分の物ではないと気づきました。",
+        "こちらで確認します。どこで混ざったか覚えていますか。",
+        "待合の机で自分の紙を置きました。その時かもしれませんが、誰が置いたかは見ていません。",
+        "分かりました。封筒は受付でお預かりして確認します。",
+        "お願いします。名前を大声で呼んで持ち主を探すより、受付へ返した方がよいと思いました。",
+        "ご自身の書類も、必要な物がそろっているか確認してください。",
+        "はい。この封筒を渡してから、自分の案内紙と控えを見直します。中身を写真に撮ったりもしていません。",
+        "お知らせありがとうございます。それでは、こちらで確認します。診察までお待ちください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21210_03_001_goal_1",
+          "自分資料に他人名の封筒が混入し内容を読まず届けたと伝える"
+        ],
+        [
+          "sc_loc_jp_21210_03_001_goal_2",
+          "未開封で外名のみから自分物でないと気づいたと説明する"
+        ],
+        [
+          "sc_loc_jp_21210_03_001_goal_3",
+          "待合机で紙を置いたが混入時と他人行為は未目撃と話す"
+        ],
+        [
+          "sc_loc_jp_21210_03_001_goal_4",
+          "大声で氏名呼出せず受付へ返却したいと述べる"
+        ],
+        [
+          "sc_loc_jp_21210_03_001_goal_5",
+          "封筒返却後に自分資料を点検し撮影も未実施と伝える"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21210-03",
+      "effectiveCategory": "Hospital",
+      "effectiveNpcRole": "Nurse",
+      "causalJudgement": "The visitor explains 私の紙をまとめたら、知らない人の名前の封筒が混ざっていました。誰の物か読まずに、ここへ持ってきました。 The final player action is はい。この封筒を渡してから、自分の案内紙と控えを見直します。中身を写真に撮ったりもしていません。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Clinical communication/administrative support; no diagnosis, dosage or treatment promised. Effective Nurse role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "お知らせありがとうございます。それでは、こちらで確認します。診察までお待ちください。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21210-04-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceFileSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "scriptSha256": "29da21395c58e565d01d21f62d7815de9f7c9284cfd29d94559453391c131d79",
+      "title": "近所の犬が道へ出ていると警察へ相談する",
+      "turns": [
+        "道で気になることがありましたか。",
+        "首輪のある犬が、一匹で歩いていました。飼い主は見えず、車の通る道へ出そうだったので相談したいです。",
+        "どこで見ましたか。今も近くにいますか。",
+        "店の角です。私は犬から離れて来ました。今どこにいるかまでは分かりません。",
+        "追いかけたり、触ったりしましたか。",
+        "していません。茶色の小さな犬で、首輪は青かったと思います。写真は撮れませんでした。",
+        "確認できる特徴と場所を伺います。けがをしている様子はありましたか。",
+        "普通に歩いていましたが、近くで確かめていません。元気だと断定せず、見た様子だけ伝えます。",
+        "場所を確認して対応を検討します。ご自身で捕まえようとしないでください。",
+        "分かりました。この地図で店の角を示します。犬の様子を見るために道へ戻らず、ここで必要なことを説明します。",
+        "知らせていただきありがとうございます。それでは、場所を確認します。お気をつけてお帰りください。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21210_04_001_goal_1",
+          "首輪付きの単独犬が車道へ出そうで相談する"
+        ],
+        [
+          "sc_loc_jp_21210_04_001_goal_2",
+          "店角で最後に見たが現在地不明と伝える"
+        ],
+        [
+          "sc_loc_jp_21210_04_001_goal_3",
+          "接触追跡なしで茶色小型と青首輪らしい特徴を説明する"
+        ],
+        [
+          "sc_loc_jp_21210_04_001_goal_4",
+          "歩行は見たが健康状態は近くで未確認と区別する"
+        ],
+        [
+          "sc_loc_jp_21210_04_001_goal_5",
+          "地図で位置を示し自分で捕獲に戻らず説明する旨述べる"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21210-04",
+      "effectiveCategory": "Police Station",
+      "effectiveNpcRole": "Police",
+      "causalJudgement": "The visitor explains 首輪のある犬が、一匹で歩いていました。飼い主は見えず、車の通る道へ出そうだったので相談したいです。 The final player action is 分かりました。この地図で店の角を示します。犬の様子を見るために道へ戻らず、ここで必要なことを説明します。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Police listening/referral and factual explanation; no culpability or legal outcome guaranteed. Effective Police role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "知らせていただきありがとうございます。それでは、場所を確認します。お気をつけてお帰りください。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21211-02-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceFileSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "scriptSha256": "82b6c905409c26d23bd6bf9770837558f09a45cb9da2a9008220ced9c614e79a",
+      "title": "市の窓口で通訳を頼む範囲を先に伝える",
+      "turns": [
+        "お手続きの説明で、言葉のお手伝いが必要ですか。",
+        "はい。住所や名前は日本語で言えますが、理由を詳しく話すときは言葉が出なくなります。",
+        "どのようなご用件か、分かる範囲で教えてください。",
+        "以前の申請について相談したいです。最初の情報は自分で話し、その後の説明で通訳をお願いできるか知りたいです。",
+        "利用できる言語の支援を担当に確認します。ご希望の言語を教えてください。",
+        "ベトナム語です。簡単な日本語なら分かりますが、全部理解したと返事をしてしまわないようにしたいです。",
+        "担当にご希望を伝えます。ご相談の内容をメモで整理してありますか。",
+        "はい、母語で書きました。これをそのまま書類として提出するのではなく、相談を説明するために使いたいです。",
+        "メモの用途も担当へお伝えください。支援の方法や時間は確認後にご案内します。",
+        "分かりました。今すぐ通訳がいると思わず、利用方法を聞きます。自分で分かる部分と支援が必要な部分を伝えます。",
+        "承知しました。それでは、担当へ確認します。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21211_02_001_goal_1",
+          "氏名住所は日本語可だが理由説明には支援が必要と伝える"
+        ],
+        [
+          "sc_loc_jp_21211_02_001_goal_2",
+          "旧申請相談で冒頭は自力説明し後半通訳を希望する"
+        ],
+        [
+          "sc_loc_jp_21211_02_001_goal_3",
+          "希望言語を指定し簡単な日本語の理解範囲を説明する"
+        ],
+        [
+          "sc_loc_jp_21211_02_001_goal_4",
+          "母語メモは正式提出でなく相談説明用と区別する"
+        ],
+        [
+          "sc_loc_jp_21211_02_001_goal_5",
+          "即時通訳を前提とせず方法を聞き必要範囲を伝えると話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21211-02",
+      "effectiveCategory": "Government Office",
+      "effectiveNpcRole": "Government Officer",
+      "causalJudgement": "The visitor explains はい。住所や名前は日本語で言えますが、理由を詳しく話すときは言葉が出なくなります。 The final player action is 分かりました。今すぐ通訳がいると思わず、利用方法を聞きます。自分で分かる部分と支援が必要な部分を伝えます。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Municipal reception/clarification; decisions and special services remain fictional staff/department handling. Effective Government Officer role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、担当へ確認します。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21211-03-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceFileSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "scriptSha256": "0508494f8c9759ad2c313d9eddef4d7c275a7b6bd7037379d9a4b3069cd50ac4",
+      "title": "長い待ち時間の間に仕事先へ連絡したい",
+      "turns": [
+        "待ち時間についてお尋ねでしょうか。",
+        "はい。職場へ、午前中に戻れると伝えていましたが、まだ診察を待っています。どのように連絡するか考えています。",
+        "正確な診察の終了時刻は、今はお約束できません。",
+        "分かりました。何時に終わると決めて連絡するより、まだ診察前だと伝えたいです。",
+        "現在の受付状況について、ご案内できることを確認します。",
+        "お願いします。病名はまだ聞いていないので、職場へ勝手に病名を伝えることはしません。",
+        "ご自身の連絡は、周りの方に配慮して行ってください。",
+        "はい。短いメッセージで、戻る時刻はまだ分からないと知らせます。電話が必要な場合の場所も確認したいです。",
+        "通話できる場所をご案内します。呼び出しについてもご確認ください。",
+        "ありがとうございます。ここを離れる前に呼び出しの案内を聞き、職場には分かった状態だけ伝えます。",
+        "承知しました。それでは、連絡場所をご案内します。診察までお待ちください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21211_03_001_goal_1",
+          "予定した午前復職に間に合うか不明で待機状況を尋ねる"
+        ],
+        [
+          "sc_loc_jp_21211_03_001_goal_2",
+          "確定終了時間でなく診察前の状態を職場へ伝えたいと述べる"
+        ],
+        [
+          "sc_loc_jp_21211_03_001_goal_3",
+          "診断未説明なので病名を推測連絡しないと話す"
+        ],
+        [
+          "sc_loc_jp_21211_03_001_goal_4",
+          "時刻不明をメッセージし通話が必要なら場所を尋ねる"
+        ],
+        [
+          "sc_loc_jp_21211_03_001_goal_5",
+          "離席前に呼出方法を確認し既知状態だけ連絡すると述べる"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21211-03",
+      "effectiveCategory": "Hospital",
+      "effectiveNpcRole": "Nurse",
+      "causalJudgement": "The visitor explains はい。職場へ、午前中に戻れると伝えていましたが、まだ診察を待っています。どのように連絡するか考えています。 The final player action is ありがとうございます。ここを離れる前に呼び出しの案内を聞き、職場には分かった状態だけ伝えます。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Clinical communication/administrative support; no diagnosis, dosage or treatment promised. Effective Nurse role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、連絡場所をご案内します。診察までお待ちください。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21211-04-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-04-hashima-ena-minokamo.json",
+      "sourceFileSha256": "ac13a2a634b2df8c598eb637c573f5bf1c483e400edd3d5133e6626ffd744779",
+      "scriptSha256": "3fbffe8b8cd958f8fc61a20a1931662914c7fdc811bf9888ab618fcc646d80a7",
+      "title": "子どもの通学路で不安な場所を地図にまとめて相談する",
+      "turns": [
+        "通学路についてのご相談ですか。",
+        "はい。子どもが歩く道に、車が見えにくい曲がり角があります。どこへ相談すればよいか知りたいです。",
+        "場所と、気になった状況を教えてください。",
+        "この地図の角です。朝に車が曲がって来るのを、塀の手前からは見づらく感じました。",
+        "交通の状況を確認するため、ご自身が見た時刻なども伺います。",
+        "七時半ごろです。事故を見たわけではなく、子どもと歩いた時に気になりました。",
+        "分かりました。通学の案内について学校ともお話しされていますか。",
+        "まだです。学校には決められた道を確認したいです。ここでは車の見え方が気になる場所を説明したいです。",
+        "ご相談の内容を確認して、関係する相談先をご案内します。",
+        "お願いします。道路を自分で変えたり、物を置いて車を止めたりせず、地図と見た時間を伝えて相談します。",
+        "承知しました。それでは、場所を詳しく確認します。お子様とお気をつけてお帰りください。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21211_04_001_goal_1",
+          "子供通学路の車が見えにくい角について相談先を尋ねる"
+        ],
+        [
+          "sc_loc_jp_21211_04_001_goal_2",
+          "地図で塀と朝の車の進路を説明する"
+        ],
+        [
+          "sc_loc_jp_21211_04_001_goal_3",
+          "七時半の歩行観察で事故目撃ではないと区別する"
+        ],
+        [
+          "sc_loc_jp_21211_04_001_goal_4",
+          "学校へは指定路を聞き警察へは視認懸念を相談する範囲を伝える"
+        ],
+        [
+          "sc_loc_jp_21211_04_001_goal_5",
+          "自己道路改変せず地図時刻で相談すると話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21211-04",
+      "effectiveCategory": "Police Station",
+      "effectiveNpcRole": "Police",
+      "causalJudgement": "The visitor explains はい。子どもが歩く道に、車が見えにくい曲がり角があります。どこへ相談すればよいか知りたいです。 The final player action is お願いします。道路を自分で変えたり、物を置いて車を止めたりせず、地図と見た時間を伝えて相談します。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Police listening/referral and factual explanation; no culpability or legal outcome guaranteed. Effective Police role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、場所を詳しく確認します。お子様とお気をつけてお帰りください。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21212-02-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceFileSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "scriptSha256": "7fc4dd1521c17d268ace50aeae9e636139e64550189ae4926267a500627aa493",
+      "title": "市の講座を一回休んだ後で資料だけ受け取りたい",
+      "turns": [
+        "講座のご参加についてでしょうか。",
+        "はい。昨日の回を休みました。次の回についていけるよう、配った資料を受け取れるか聞きたいです。",
+        "講座名と、お申し込みのお名前をお願いします。",
+        "この講座です。休んだのは私で、家族が代わりに参加したわけでもありません。",
+        "資料のお渡しについて、講座の担当に確認します。",
+        "お願いします。資料をもらえた場合でも、昨日出席したことにはしなくて大丈夫です。",
+        "出席についても、実際の状況を担当へ伝えます。次の回に参加する予定ですか。",
+        "はい。資料に書いてある課題があれば、次までに何を準備するかも知りたいです。",
+        "準備についての質問を合わせて担当へ引き継ぎます。",
+        "ありがとうございます。昨日の内容を全部窓口で教えてもらうのではなく、資料と準備の案内を確認します。",
+        "承知しました。それでは、担当へおつなぎします。次回の講座をお楽しみください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21212_02_001_goal_1",
+          "欠席講座の次回理解用に配布資料を受取れるか尋ねる"
+        ],
+        [
+          "sc_loc_jp_21212_02_001_goal_2",
+          "講座名申込者を示し家族代理出席もなかったと説明する"
+        ],
+        [
+          "sc_loc_jp_21212_02_001_goal_3",
+          "資料受領で過去出席扱いに変更する希望はないと伝える"
+        ],
+        [
+          "sc_loc_jp_21212_02_001_goal_4",
+          "次回出席予定で課題等の事前準備を尋ねる"
+        ],
+        [
+          "sc_loc_jp_21212_02_001_goal_5",
+          "窓口で講義再現を求めず資料準備案内を確認すると話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21212-02",
+      "effectiveCategory": "Government Office",
+      "effectiveNpcRole": "Government Officer",
+      "causalJudgement": "The visitor explains はい。昨日の回を休みました。次の回についていけるよう、配った資料を受け取れるか聞きたいです。 The final player action is ありがとうございます。昨日の内容を全部窓口で教えてもらうのではなく、資料と準備の案内を確認します。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Municipal reception/clarification; decisions and special services remain fictional staff/department handling. Effective Government Officer role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、担当へおつなぎします。次回の講座をお楽しみください。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21212-03-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceFileSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "scriptSha256": "ba846ac3248a2b21a498baff05057828801dc2fe4484b2faa199dce989d2d7c0",
+      "title": "診察室へ入る前に厚い上着と荷物の置き方を相談する",
+      "turns": [
+        "診察前の準備で、お手伝いできることはありますか。",
+        "厚い上着と大きな袋があります。診察室でどこへ置けばよいか、入る前に聞きたいです。",
+        "ご自身の荷物は、どれでしょうか。",
+        "この袋と上着です。袋には買った食品が入っています。通路や診察の道具の所へ置かないようにしたいです。",
+        "置き方は診察室の担当に確認してください。今は手元にまとめてお持ちいただけますか。",
+        "はい。上着の中に財布もあるので、上着だけを離れた所に置き忘れないようにします。",
+        "荷物が重い場合は、移動の前に職員へお知らせください。",
+        "ありがとうございます。運ぶのはできます。呼ばれたら全部持って入り、どこへ置くか担当に尋ねます。",
+        "脱いだ上着についても、ご案内を確認してください。",
+        "分かりました。先に物を机の上へ広げず、置く場所を聞いてから準備します。帰る時も袋と上着を確かめます。",
+        "承知しました。それでは、荷物をお持ちのまま診察までお待ちください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21212_03_001_goal_1",
+          "厚手上着と大袋の診察室内置場を事前相談する"
+        ],
+        [
+          "sc_loc_jp_21212_03_001_goal_2",
+          "食品袋と上着が自己荷物で通路機器を避けたいと説明する"
+        ],
+        [
+          "sc_loc_jp_21212_03_001_goal_3",
+          "上着に財布があり離置忘失を防ぐと述べる"
+        ],
+        [
+          "sc_loc_jp_21212_03_001_goal_4",
+          "運搬自力可で呼出後全荷物持参し担当へ置場を尋ねる"
+        ],
+        [
+          "sc_loc_jp_21212_03_001_goal_5",
+          "勝手に机へ広げず置場確認後準備し退出時二品点検すると話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21212-03",
+      "effectiveCategory": "Hospital",
+      "effectiveNpcRole": "Nurse",
+      "causalJudgement": "The visitor explains 厚い上着と大きな袋があります。診察室でどこへ置けばよいか、入る前に聞きたいです。 The final player action is 分かりました。先に物を机の上へ広げず、置く場所を聞いてから準備します。帰る時も袋と上着を確かめます。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Clinical communication/administrative support; no diagnosis, dosage or treatment promised. Effective Nurse role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、荷物をお持ちのまま診察までお待ちください。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21212-04-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceFileSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "scriptSha256": "784c4743e785f343d6261af973cee39fee7802214f30465f41f773f282236dea",
+      "title": "自分の自転車のかごへ入れられた紙について相談する",
+      "turns": [
+        "お持ちの紙について、ご相談でしょうか。",
+        "自分の自転車のかごに入っていました。強い言葉が書いてあって、誰が入れたか分からず不安です。",
+        "いつ、どこで気づきましたか。",
+        "今日の夕方、買い物から戻った時です。店の駐輪場所で、入れた人は見ていません。",
+        "書かれている内容を確認します。ほかに同じようなことはありましたか。",
+        "紙は初めてです。以前の傷も気になっていますが、今日の紙を書いた人が付けた傷とは分かりません。",
+        "関係が確かめられていないことは、分けてお聞きします。",
+        "はい。紙は書き足さずに持ってきました。知っている人を疑っていますが、証拠があるわけではありません。",
+        "お気持ちと、確認できた出来事を分けてご説明ください。",
+        "分かりました。誰かの名前を犯人として広めず、発見した場所と時刻、紙の状態からお話しします。",
+        "承知しました。それでは、内容を確認します。お帰りの際もお気をつけください。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21212_04_001_goal_1",
+          "自転車かごの強い言葉の紙を発見し入れ手不明で相談する"
+        ],
+        [
+          "sc_loc_jp_21212_04_001_goal_2",
+          "夕方店駐輪場で買物後発見し投入は未目撃と説明する"
+        ],
+        [
+          "sc_loc_jp_21212_04_001_goal_3",
+          "初回紙と過去傷の関連は不明と区別する"
+        ],
+        [
+          "sc_loc_jp_21212_04_001_goal_4",
+          "未加筆原紙を示し知人への疑いは証拠なしと伝える"
+        ],
+        [
+          "sc_loc_jp_21212_04_001_goal_5",
+          "人物名を犯人として拡散せず発見事実から説明すると述べる"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21212-04",
+      "effectiveCategory": "Police Station",
+      "effectiveNpcRole": "Police",
+      "causalJudgement": "The visitor explains 自分の自転車のかごに入っていました。強い言葉が書いてあって、誰が入れたか分からず不安です。 The final player action is 分かりました。誰かの名前を犯人として広めず、発見した場所と時刻、紙の状態からお話しします。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Police listening/referral and factual explanation; no culpability or legal outcome guaranteed. Effective Police role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、内容を確認します。お帰りの際もお気をつけください。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21213-02-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceFileSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "scriptSha256": "52715b3ff36fae1f02dd548902c3772bdd40166d24248a9a69105ea7ffb7506a",
+      "title": "行事の申込時に使う名前と呼んでほしい名前を分ける",
+      "turns": [
+        "お申し込みのお名前についてでしょうか。",
+        "はい。書類の名前は長いので、行事では短い呼び名で呼んでほしいです。どこに書けばよいですか。",
+        "必要な申込情報と、当日の呼び方の希望を確認します。",
+        "お願いします。短い名前を本名の代わりに書いて、申込者が分からなくなるのは避けたいです。",
+        "書類の記入方法は、担当からご案内します。呼び名は読み方もお伝えください。",
+        "はい。この短い呼び名です。長い名前を変える手続きではなく、行事で呼ばれる時の希望です。",
+        "そのご希望として担当へお伝えします。当日の名札についても気になりますか。",
+        "気になります。名札の表記も相談できますか。参加者全員へ、書類の名前を見せる必要があるか分かりません。",
+        "名札の扱いも行事の担当に確認しましょう。",
+        "ありがとうございます。申込に必要な名前は案内どおり書き、呼び名と名札の希望は別に伝えます。",
+        "承知しました。それでは、記入方法と当日の案内を確認します。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21213_02_001_goal_1",
+          "市行事で長名と別の短い呼称希望の記入先を尋ねる"
+        ],
+        [
+          "sc_loc_jp_21213_02_001_goal_2",
+          "本名欄を呼称で置換し申込者不明にしたくないと伝える"
+        ],
+        [
+          "sc_loc_jp_21213_02_001_goal_3",
+          "呼称読みを示し氏名変更手続きではないと説明する"
+        ],
+        [
+          "sc_loc_jp_21213_02_001_goal_4",
+          "名札表記と参加者への氏名表示範囲を相談する"
+        ],
+        [
+          "sc_loc_jp_21213_02_001_goal_5",
+          "必須申込名と呼称名札希望を別々に記入伝達すると述べる"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21213-02",
+      "effectiveCategory": "Government Office",
+      "effectiveNpcRole": "Government Officer",
+      "causalJudgement": "The visitor explains はい。書類の名前は長いので、行事では短い呼び名で呼んでほしいです。どこに書けばよいですか。 The final player action is ありがとうございます。申込に必要な名前は案内どおり書き、呼び名と名札の希望は別に伝えます。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Municipal reception/clarification; decisions and special services remain fictional staff/department handling. Effective Government Officer role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、記入方法と当日の案内を確認します。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21213-03-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceFileSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "scriptSha256": "05ab5bcae7eec96ecaffa77a8a18f4ac061cfe3bd24497487ddb931729c837e6",
+      "title": "汗でぬれた問診票を書き直すか受付に相談する",
+      "turns": [
+        "問診票の状態について、お困りですか。",
+        "暑くて手が汗でぬれ、字がにじみました。読みにくい所を、書き直した方がよいか見てほしいです。",
+        "こちらで確認します。内容も変更するご希望ですか。",
+        "いいえ、内容は同じです。症状を書いたこの行が特に読めなくなっています。",
+        "必要なら新しい用紙をご案内します。元の用紙もお持ちください。",
+        "はい。書き直す時に、にじんだ字を想像して写すのでなく、自分が伝えたかった症状をもう一度書きます。",
+        "気づいた書き間違いがある場合も、担当へお伝えください。",
+        "分かりました。字がにじんだことと、内容を訂正することは分けて話します。",
+        "記入した後は、担当が受け取る前に、ご自身でも見直してください。",
+        "そうします。古い方は黙って捨てず、二枚になった理由を伝えてから受付へ渡します。",
+        "承知しました。それでは、用紙を確認します。こちらでお待ちください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21213_03_001_goal_1",
+          "汗で問診字がにじみ再記入要否を確認したいと述べる"
+        ],
+        [
+          "sc_loc_jp_21213_03_001_goal_2",
+          "内容変更希望なしで症状行の判読問題を示す"
+        ],
+        [
+          "sc_loc_jp_21213_03_001_goal_3",
+          "元紙保持し不明文字推測転写でなく伝えたい内容を再記入する"
+        ],
+        [
+          "sc_loc_jp_21213_03_001_goal_4",
+          "判読性と内容訂正を別に説明すると話す"
+        ],
+        [
+          "sc_loc_jp_21213_03_001_goal_5",
+          "再記入後自己点検し旧紙と二枚理由を受付へ伝える"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21213-03",
+      "effectiveCategory": "Hospital",
+      "effectiveNpcRole": "Nurse",
+      "causalJudgement": "The visitor explains 暑くて手が汗でぬれ、字がにじみました。読みにくい所を、書き直した方がよいか見てほしいです。 The final player action is そうします。古い方は黙って捨てず、二枚になった理由を伝えてから受付へ渡します。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Clinical communication/administrative support; no diagnosis, dosage or treatment promised. Effective Nurse role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、用紙を確認します。こちらでお待ちください。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21213-04-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceFileSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "scriptSha256": "e379e59851dee7957b5a8e080d0abc25c440407678134c4ec7f2fabba74db9d5",
+      "title": "地域の講話で警察へ聞きたい質問を整理する",
+      "turns": [
+        "講話の準備についてのご相談ですね。",
+        "はい。地区で交通の話を聞く予定です。参加者から質問を集めたのですが、個人の事故の話も混ざっています。",
+        "一般的な質問と、個別の事情を確認する相談は分けましょう。",
+        "分かりました。みんなの前で、事故を起こした人の名前や詳しい状況を読み上げない方がよいですね。",
+        "個別の相談は、ご本人の希望と相談先を確認してください。",
+        "はい。その人に確認して、講話の質問には通学や自転車についての一般的な内容を残します。",
+        "質問を出す方の希望もお確かめください。勝手に別の意味に直さないようにお願いします。",
+        "短くまとめる時も、元の質問と同じ意味か本人へ聞きます。質問を出さない選択も伝えます。",
+        "講話で扱える範囲や時間は、担当に相談してください。",
+        "承知しました。質問一覧を整理してから担当へ送り、個別の事故については別に相談する方法を案内してもらいます。",
+        "それでは、担当への連絡方法をご案内します。準備にご協力いただきありがとうございます。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21213_04_001_goal_1",
+          "地区交通講話用の収集質問に個別事故が混じると相談する"
+        ],
+        [
+          "sc_loc_jp_21213_04_001_goal_2",
+          "全体会で氏名と個別事情を読上げないと理解を示す"
+        ],
+        [
+          "sc_loc_jp_21213_04_001_goal_3",
+          "本人希望確認し一般通学自転車質問のみ一覧に残すと述べる"
+        ],
+        [
+          "sc_loc_jp_21213_04_001_goal_4",
+          "要約意味を本人確認し提出しない選択も伝えると話す"
+        ],
+        [
+          "sc_loc_jp_21213_04_001_goal_5",
+          "整理一覧を担当送付し個別相談は別方法を聞くと述べる"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21213-04",
+      "effectiveCategory": "Police Station",
+      "effectiveNpcRole": "Police",
+      "causalJudgement": "The visitor explains はい。地区で交通の話を聞く予定です。参加者から質問を集めたのですが、個人の事故の話も混ざっています。 The final player action is 承知しました。質問一覧を整理してから担当へ送り、個別の事故については別に相談する方法を案内してもらいます。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Police listening/referral and factual explanation; no culpability or legal outcome guaranteed. Effective Police role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "それでは、担当への連絡方法をご案内します。準備にご協力いただきありがとうございます。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21214-02-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceFileSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "scriptSha256": "419b95a261666a1383aff38f9a9e39516277a7ad16a81cdab0f4e07c7d4f7b0d",
+      "title": "講座申込書の提出と受付後の連絡順をメモする",
+      "turns": [
+        "講座のお申し込みについて、もう一度説明しましょうか。",
+        "お願いします。家で申込書を書いた後、先に電話するのか、窓口へ出すのか分からなくなりました。",
+        "この講座は、申込書をこちらの窓口へ提出してください。提出前のお電話は不要です。",
+        "では、家で書いてから持ってきます。受付の後は、私からまた電話するのでしょうか。",
+        "申込書の連絡先へ担当から連絡します。こちらの控えも保管してください。",
+        "分かりました。提出して、控えを受け取り、連絡を待つという順番をメモします。",
+        "はい。連絡先は、日中につながる番号をお書きください。",
+        "仕事中は電話に出られないので、連絡できる時間も用紙に書いてよいですか。",
+        "余白へご希望の時間を書いてください。担当へお伝えします。",
+        "ありがとうございます。午後六時以降と書きます。家でもこのメモを見ながら申込書を用意します。",
+        "ご用意できましたら窓口へお持ちください。それでは、お待ちしております。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21214_02_001_goal_1",
+          "講座申込前の電話と窓口提出の順番を尋ねる"
+        ],
+        [
+          "sc_loc_jp_21214_02_001_goal_2",
+          "窓口提出方針を伝え受付後の自己電話要否を尋ねる"
+        ],
+        [
+          "sc_loc_jp_21214_02_001_goal_3",
+          "提出控え受領連絡待ちの順をメモすると述べる"
+        ],
+        [
+          "sc_loc_jp_21214_02_001_goal_4",
+          "仕事中不応答のため希望連絡時刻の記入可否を尋ねる"
+        ],
+        [
+          "sc_loc_jp_21214_02_001_goal_5",
+          "六時以降希望を記入し家で申込準備すると話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21214-02",
+      "effectiveCategory": "Government Office",
+      "effectiveNpcRole": "Government Officer",
+      "causalJudgement": "The visitor explains お願いします。家で申込書を書いた後、先に電話するのか、窓口へ出すのか分からなくなりました。 The final player action is ありがとうございます。午後六時以降と書きます。家でもこのメモを見ながら申込書を用意します。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Municipal reception/clarification; decisions and special services remain fictional staff/department handling. Effective Government Officer role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "ご用意できましたら窓口へお持ちください。それでは、お待ちしております。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21214-03-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceFileSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "scriptSha256": "947f06271ef2bc95a273945d7c544071f37cfd49e0d6a7bac9b0768ca90383c9",
+      "title": "家族に痛みを軽く訳されて自分の言い方を補う",
+      "turns": [
+        "ご本人からも、付け加えたいことはありますか。",
+        "はい。家族が「少し痛い」と言いましたが、私はそれより強く感じています。自分からも説明したいです。",
+        "ご自身が感じることを、診療担当へお伝えください。",
+        "お願いします。家族を責めたいのではありません。私が母語で言ったことが、短く訳されて伝わったようです。",
+        "言葉の支援が必要か、担当に相談できます。",
+        "はい。痛みの強さと、いつから気になるかを、自分が分かる言葉で伝えたいです。",
+        "今の状態について、すぐに確認してほしいことはありますか。",
+        "今も痛みがあります。大丈夫とまとめず、そのまま担当へ伝えてほしいです。",
+        "現在のご様子を担当に知らせます。家族の方も、ご本人の説明をお待ちください。",
+        "ありがとうございます。自分で話せない言葉は支援を頼み、説明の後に私の意味と合っているか確かめます。",
+        "承知しました。それでは、担当に現在の状態とご希望を伝えます。こちらでお待ちください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21214_03_001_goal_1",
+          "家族の少し痛いという説明より強く感じ自己補足したいと述べる"
+        ],
+        [
+          "sc_loc_jp_21214_03_001_goal_2",
+          "非難でなく母語発話が短く翻訳された経緯を説明する"
+        ],
+        [
+          "sc_loc_jp_21214_03_001_goal_3",
+          "自分の語で強さと時期を伝える支援を希望する"
+        ],
+        [
+          "sc_loc_jp_21214_03_001_goal_4",
+          "現在痛も残存し大丈夫と要約せず担当へ伝えてほしいと話す"
+        ],
+        [
+          "sc_loc_jp_21214_03_001_goal_5",
+          "不明語は支援依頼し訳の意味と自己意図を確認すると述べる"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21214-03",
+      "effectiveCategory": "Hospital",
+      "effectiveNpcRole": "Nurse",
+      "causalJudgement": "The visitor explains はい。家族が「少し痛い」と言いましたが、私はそれより強く感じています。自分からも説明したいです。 The final player action is ありがとうございます。自分で話せない言葉は支援を頼み、説明の後に私の意味と合っているか確かめます。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Clinical communication/administrative support; no diagnosis, dosage or treatment promised. Effective Nurse role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、担当に現在の状態とご希望を伝えます。こちらでお待ちください。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21214-04-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-05-toki-kakamigahara-kani.json",
+      "sourceFileSha256": "4031c94882adcce3ec5a091c48ebc9de61c7e158b1743efc1ebc50e9bc2f83c2",
+      "scriptSha256": "3acbbc36f1f2882a9dfbf6691ea0f053f74f0a074d5ce4ab45502cb8fac31d10",
+      "title": "自分の相談を知人がネットへ書いたと警察へ知らせる",
+      "turns": [
+        "以前のご相談に関係するお話でしょうか。",
+        "はい。知人が私の話をネットに書きました。私が言っていない部分まであるので、どう相談したらよいか聞きたいです。",
+        "公開されている内容を、確認できる形でお持ちですか。",
+        "この画面です。私の名前はありませんが、場所と日付から私のことだと思われるかもしれません。",
+        "ご本人が確認した内容と、推測されることを分けて伺います。",
+        "分かりました。私が前に話したことと、知人が付け足した文章をそれぞれ示したいです。",
+        "投稿した方へ、ご自身から連絡されましたか。",
+        "まだです。怒って同じように相手の情報を公開する前に、相談に来ました。",
+        "経緯とご希望を伺い、相談できる範囲をご案内します。",
+        "お願いします。投稿が私の正式な説明だと思われないよう、まず違う部分を伝えます。対応は案内を聞いてから考えます。",
+        "承知しました。それでは、経緯をお聞きします。ご相談ありがとうございます。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21214_04_001_goal_1",
+          "知人公開文が自己相談に不存在部分を追加し相談したいと話す"
+        ],
+        [
+          "sc_loc_jp_21214_04_001_goal_2",
+          "画面を示し匿名だが場所日付で自分推測の可能性を伝える"
+        ],
+        [
+          "sc_loc_jp_21214_04_001_goal_3",
+          "本人申告と知人加筆を区別して提示希望する"
+        ],
+        [
+          "sc_loc_jp_21214_04_001_goal_4",
+          "未連絡で報復的相手情報公開前に相談に来たと説明する"
+        ],
+        [
+          "sc_loc_jp_21214_04_001_goal_5",
+          "投稿を自己正式説明とせず相違を伝え案内後に対応を考える"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21214-04",
+      "effectiveCategory": "Police Station",
+      "effectiveNpcRole": "Police",
+      "causalJudgement": "The visitor explains はい。知人が私の話をネットに書きました。私が言っていない部分まであるので、どう相談したらよいか聞きたいです。 The final player action is お願いします。投稿が私の正式な説明だと思われないよう、まず違う部分を伝えます。対応は案内を聞いてから考えます。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Police listening/referral and factual explanation; no culpability or legal outcome guaranteed. Effective Police role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、経緯をお聞きします。ご相談ありがとうございます。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21215-02-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceFileSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "scriptSha256": "42a1df81acf36cedfe1a0c4d1635406a748d678d4651cd16dbd16e2ea72ca7ca",
+      "title": "市の講座で聞いた話を自分の勉強会で使いたい",
+      "turns": [
+        "講座の資料について、どのようなご質問ですか。",
+        "自分の勉強会でも、この図を見せたいです。講座でもらったので、みんなへコピーしてよいか聞きたいです。",
+        "ご自身の復習と、別の集まりで配ることは分けて確認しましょう。",
+        "はい。自分で読むことはしていましたが、十人へ配る前に利用方法を知りたいです。",
+        "資料の利用について、講座の担当へ確認してください。",
+        "お願いします。表紙の名前を消して、自分が作った図のように出すつもりはありません。",
+        "どの図を、どのような集まりで使うかもお伝えください。",
+        "この二つの図です。日本語を勉強している友達との集まりで、インターネットには載せません。",
+        "その内容で担当へお尋ねください。使える範囲は回答を確認してから決めましょう。",
+        "分かりました。今日はコピーせず、図と集まりの説明を持って相談します。別の図が必要なら自分たちで用意する方法も考えます。",
+        "承知しました。それでは、担当への相談方法をご案内します。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21215_02_001_goal_1",
+          "市講座図を自己勉強会で配布したく利用可否を尋ねる"
+        ],
+        [
+          "sc_loc_jp_21215_02_001_goal_2",
+          "自己復習済だが十人配布前に確認希望する"
+        ],
+        [
+          "sc_loc_jp_21215_02_001_goal_3",
+          "出典名を消し自作と偽る意図なしと伝える"
+        ],
+        [
+          "sc_loc_jp_21215_02_001_goal_4",
+          "二図と友人日本語勉強会と非ネット公開の範囲を説明する"
+        ],
+        [
+          "sc_loc_jp_21215_02_001_goal_5",
+          "未コピーで担当確認後に利用を決め別図自作案も検討すると話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21215-02",
+      "effectiveCategory": "Government Office",
+      "effectiveNpcRole": "Government Officer",
+      "causalJudgement": "The visitor explains 自分の勉強会でも、この図を見せたいです。講座でもらったので、みんなへコピーしてよいか聞きたいです。 The final player action is 分かりました。今日はコピーせず、図と集まりの説明を持って相談します。別の図が必要なら自分たちで用意する方法も考えます。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Municipal reception/clarification; decisions and special services remain fictional staff/department handling. Effective Government Officer role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、担当への相談方法をご案内します。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21215-03-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceFileSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "scriptSha256": "c9c7d5ed8e616d6fb785108a11701887682dff427c407df3a76ee8df15219271",
+      "title": "再来という表示を症状が悪化した意味と取り違えない",
+      "turns": [
+        "受付の表示について、ご質問ですか。",
+        "「再来」と書いてあります。前より症状が悪くなって、また来た人のことかと思いました。私もそこへ行くのでしょうか。",
+        "再来は、以前に受診した方が、また受診するという意味です。その言葉だけで症状の悪化を表しているわけではありません。",
+        "そうでしたか。私は前にもここで受診しましたが、今日は前と違うことで相談したいです。",
+        "受付方法は受診の記録などを確認してご案内します。診察券はお持ちですか。",
+        "持っています。前と違う相談だから初めて来たと説明するより、以前受診したことと今日の用件を伝えます。",
+        "診察券を確認します。今日のご様子は、診療担当にもお話しください。",
+        "はい。受付で再来と呼ばれたことを、医師が同じ病気と判断したという意味にはしません。",
+        "その理解で大丈夫です。以前の受診と今日の用件を確認して、担当へご案内します。",
+        "ありがとうございます。診察券を出して、今日気になることを説明します。表示の意味が分かったので、受付を進めたいです。",
+        "承知しました。それでは、診察券をお預かりして確認します。診察までお待ちください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21215_03_001_goal_1",
+          "再来表示を悪化患者区分と誤解したため意味を尋ねる"
+        ],
+        [
+          "sc_loc_jp_21215_03_001_goal_2",
+          "既受診だが今回相談は別の用件と伝える"
+        ],
+        [
+          "sc_loc_jp_21215_03_001_goal_3",
+          "診察券所持を示し既受診歴と今日用件を正確に説明する"
+        ],
+        [
+          "sc_loc_jp_21215_03_001_goal_4",
+          "受付区分を同病診断と解釈しないと理解を示す"
+        ],
+        [
+          "sc_loc_jp_21215_03_001_goal_5",
+          "診察券を示し現用件を説明して受付を進めたいと述べる"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21215-03",
+      "effectiveCategory": "Hospital",
+      "effectiveNpcRole": "Nurse",
+      "causalJudgement": "The visitor explains 「再来」と書いてあります。前より症状が悪くなって、また来た人のことかと思いました。私もそこへ行くのでしょうか。 The final player action is ありがとうございます。診察券を出して、今日気になることを説明します。表示の意味が分かったので、受付を進めたいです。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Clinical communication/administrative support; no diagnosis, dosage or treatment promised. Effective Nurse role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、診察券をお預かりして確認します。診察までお待ちください。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21215-04-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceFileSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "scriptSha256": "725fb70eb9d7ab91b1a05a81071a46472758c4d9a44d5ed112ac43d394e18b7e",
+      "title": "夜の帰宅に同行を頼む時に知人へ伝える範囲を考える",
+      "turns": [
+        "帰り道についてのご相談ですか。",
+        "夜、一人で帰るのが不安です。知人に一緒に歩いてもらいたいですが、危険な人がいるとまで言ってよいか迷っています。",
+        "実際に何か起きたことがありますか。",
+        "今のところありません。暗くて見えにくい場所があり、心配になりました。誰かに追われたという話ではありません。",
+        "不安な場所と、帰る時間について伺えます。",
+        "この道で、仕事が終わる九時ごろです。知人には、怖い事件が起きたと作って説明したくありません。",
+        "見聞きした事実と、心配していることを区別してお伝えください。",
+        "はい。暗い道が不安なので、都合が合えば一緒に歩いてほしいと頼みます。知人の予定も確認します。",
+        "帰る方法をほかにも検討する場合は、現在の交通案内などもご確認ください。",
+        "分かりました。同行を断られたら無理に頼まず、別の帰り方も考えます。今日は場所と時刻を示して相談します。",
+        "承知しました。それでは、ご不安な点をお聞きします。お気をつけてお帰りください。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21215_04_001_goal_1",
+          "夜帰宅不安で同行依頼時に危険人物の話をしてよいか尋ねる"
+        ],
+        [
+          "sc_loc_jp_21215_04_001_goal_2",
+          "事件や追跡はなく暗所視認への不安と明確にする"
+        ],
+        [
+          "sc_loc_jp_21215_04_001_goal_3",
+          "地図と九時帰路を示し事件捏造で依頼しないと述べる"
+        ],
+        [
+          "sc_loc_jp_21215_04_001_goal_4",
+          "知人都合を聞き暗路不安を理由に同行を頼むと話す"
+        ],
+        [
+          "sc_loc_jp_21215_04_001_goal_5",
+          "拒否時強要せず代替帰路を考え位置時刻を相談すると伝える"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21215-04",
+      "effectiveCategory": "Police Station",
+      "effectiveNpcRole": "Police",
+      "causalJudgement": "The visitor explains 夜、一人で帰るのが不安です。知人に一緒に歩いてもらいたいですが、危険な人がいるとまで言ってよいか迷っています。 The final player action is 分かりました。同行を断られたら無理に頼まず、別の帰り方も考えます。今日は場所と時刻を示して相談します。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Police listening/referral and factual explanation; no culpability or legal outcome guaranteed. Effective Police role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、ご不安な点をお聞きします。お気をつけてお帰りください。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21216-02-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceFileSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "scriptSha256": "5d33f2747fc9d68a8f582cd5079ac69005e25f6ce20721b0662b622e5559d446",
+      "title": "市の案内の連絡先を職場の同僚へ渡す前に内容を確認する",
+      "turns": [
+        "このご案内を、どなたかにもお渡しになりますか。",
+        "同僚も市役所へ相談したいそうです。私が教えてもらった電話番号を、そのまま渡してよいか知りたいです。",
+        "同僚の方のご用件は、あなたと同じでしょうか。",
+        "違うようです。私は講座で、同僚は住まいについてです。市の番号なら全部同じと思っていました。",
+        "相談内容によって担当が異なります。総合案内の確認方法をご案内できます。",
+        "お願いします。私の担当者へ直接かければ、同僚の問題もすぐ解決するとは伝えません。",
+        "相手の方が、ご自身の用件を説明できるようにしておくとよいですね。",
+        "はい。同僚の詳しい事情を私が勝手に聞いて、この窓口へ伝えるのではなく、本人へ相談先の探し方を知らせます。",
+        "こちらの案内では、用件から担当を確認できます。",
+        "ありがとうございます。自分の講座の連絡先と、同僚が担当を探すための案内を分けて渡します。",
+        "承知しました。それでは、こちらの案内をお持ちください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21216_02_001_goal_1",
+          "自己窓口番号を別用件の同僚へ渡せるか尋ねる"
+        ],
+        [
+          "sc_loc_jp_21216_02_001_goal_2",
+          "自己講座と同僚住居で担当同一と誤想していたと説明する"
+        ],
+        [
+          "sc_loc_jp_21216_02_001_goal_3",
+          "自己担当への直電話で別問題解決とは伝えず総合案内を希望する"
+        ],
+        [
+          "sc_loc_jp_21216_02_001_goal_4",
+          "同僚詳細を代理収集せず本人へ担当検索法を知らせると述べる"
+        ],
+        [
+          "sc_loc_jp_21216_02_001_goal_5",
+          "自己講座連絡と別用件検索案内を分けて渡すと話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21216-02",
+      "effectiveCategory": "Government Office",
+      "effectiveNpcRole": "Government Officer",
+      "causalJudgement": "The visitor explains 同僚も市役所へ相談したいそうです。私が教えてもらった電話番号を、そのまま渡してよいか知りたいです。 The final player action is ありがとうございます。自分の講座の連絡先と、同僚が担当を探すための案内を分けて渡します。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Municipal reception/clarification; decisions and special services remain fictional staff/department handling. Effective Government Officer role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、こちらの案内をお持ちください。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21216-03-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceFileSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "scriptSha256": "38df24a886e4ff8e266567bcf0b00443f4348ad9453671c81b152039dbfb7a94",
+      "title": "診察で聞く質問を家族の希望と自分の疑問に分ける",
+      "turns": [
+        "診察で聞きたいことを、まとめていらっしゃいますか。",
+        "はい。家族からも質問を頼まれました。自分が気になることより、家族の質問ばかり書いてしまいました。",
+        "ご本人の状態や疑問も、診療担当へお伝えください。",
+        "分かりました。まず自分が今困っていることを話し、家族から頼まれた質問は、その後で示したいです。",
+        "質問を分けておくと、ご相談しやすいですね。",
+        "はい。この丸は自分の疑問で、星は家族が聞きたいことです。家族の言葉を私の症状として話すのは避けます。",
+        "ご家族は今日ご一緒ですか。",
+        "今日は来ていません。返事を家族へ伝える場合も、担当が話したことと自分の感想を区別したいです。",
+        "説明で分からない部分は、その場で聞き返してください。",
+        "そうします。自分の状態を先に話し、家族の質問も伝えます。答えがなかった所は、確認済みとは書きません。",
+        "承知しました。それでは、メモをお持ちのまま診察までお待ちください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21216_03_001_goal_1",
+          "家族預託質問を優先し自己疑問が抜けたと相談する"
+        ],
+        [
+          "sc_loc_jp_21216_03_001_goal_2",
+          "自己困り事を先に話し家族質問を後で示す希望を伝える"
+        ],
+        [
+          "sc_loc_jp_21216_03_001_goal_3",
+          "丸自己疑問と星家族質問の記号で症状発言と区別する"
+        ],
+        [
+          "sc_loc_jp_21216_03_001_goal_4",
+          "家族不在で返答伝達時公式説明と自己感想を分けると話す"
+        ],
+        [
+          "sc_loc_jp_21216_03_001_goal_5",
+          "未回答は確認済にせず本人状態と家族質問を伝えると述べる"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21216-03",
+      "effectiveCategory": "Hospital",
+      "effectiveNpcRole": "Nurse",
+      "causalJudgement": "The visitor explains はい。家族からも質問を頼まれました。自分が気になることより、家族の質問ばかり書いてしまいました。 The final player action is そうします。自分の状態を先に話し、家族の質問も伝えます。答えがなかった所は、確認済みとは書きません。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Clinical communication/administrative support; no diagnosis, dosage or treatment promised. Effective Nurse role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、メモをお持ちのまま診察までお待ちください。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21216-04-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceFileSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "scriptSha256": "283132a591763b46c3c51c344aa64513c359fdb00cea3b7e1d68b51e3c9906a3",
+      "title": "相談に持ってきた画面をスクロールすると別の日の会話が混ざる",
+      "turns": [
+        "画面を見せながら、ご説明されますか。",
+        "はい。困ったメッセージを見せたいです。ただ、下へ動かすと以前の別の話も出るので、日付を確認してから話したいです。",
+        "今回の相談に関係する、やり取りの日時を教えてください。",
+        "昨日の夜です。この表示からここまでです。上にある先月の話と一つの会話としてまとめないようにします。",
+        "元の表示と、前後の内容を確認しながら伺います。",
+        "お願いします。自分に都合のよい一文だけを切り取るのではなく、昨日のやり取りが分かる範囲を示します。",
+        "画面にある相手との関係についても、ご説明ください。",
+        "知人です。登録した名前は私が付けたので、それだけで相手の本名が確認できたとは言えません。",
+        "分かっていることと、未確認の点を分けてお話しください。",
+        "はい。昨日の日時とやり取りを先に説明し、以前の会話が関係するならその点も別に伝えます。",
+        "承知しました。それでは、元の画面を確認しながらお話を伺います。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21216_04_001_goal_1",
+          "スクロールで別日会話が混じる相談画面の日付を整理したいと話す"
+        ],
+        [
+          "sc_loc_jp_21216_04_001_goal_2",
+          "昨日夜の表示範囲と先月会話を区別して示す"
+        ],
+        [
+          "sc_loc_jp_21216_04_001_goal_3",
+          "有利一文だけでなく当日の前後も提示すると述べる"
+        ],
+        [
+          "sc_loc_jp_21216_04_001_goal_4",
+          "知人の表示名は自己設定で本名証明でないと説明する"
+        ],
+        [
+          "sc_loc_jp_21216_04_001_goal_5",
+          "昨日経緯を先説明し旧会話関連は別に説明すると伝える"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21216-04",
+      "effectiveCategory": "Police Station",
+      "effectiveNpcRole": "Police",
+      "causalJudgement": "The visitor explains はい。困ったメッセージを見せたいです。ただ、下へ動かすと以前の別の話も出るので、日付を確認してから話したいです。 The final player action is はい。昨日の日時とやり取りを先に説明し、以前の会話が関係するならその点も別に伝えます。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Police listening/referral and factual explanation; no culpability or legal outcome guaranteed. Effective Police role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、元の画面を確認しながらお話を伺います。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21217-02-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceFileSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "scriptSha256": "6e61e5b14dee9e5c4f488e1438f16412a9f8a3079b5158d7a21e59c0c20c0b19",
+      "title": "確認待ちの申請の連絡方法を聞いて家族へ訂正する",
+      "turns": [
+        "先ほどの説明で、もう一度確認したいことがありますか。",
+        "はい。家族へ、希望どおり決まったと送ってしまいました。まだ担当の確認を待つのですね。",
+        "はい、申請を受け付けた段階です。結果は確認の後にお知らせします。",
+        "分かりました。家族には今すぐ、結果はまだ出ていないと訂正します。",
+        "結果の連絡は、申請書に書かれた電話番号へ差し上げる予定です。",
+        "この番号は私の携帯です。仕事中に出られなかった場合は、どうすればよいですか。",
+        "着信に気づいたら、こちらの担当窓口へおかけ直しください。",
+        "ありがとうございます。かけ直す時に伝えるため、申請の受付番号も控えておきます。",
+        "お知らせした番号と、お名前をお伝えください。",
+        "分かりました。連絡先と受付番号をこの控えにまとめました。結果の連絡を受けたら家族へ知らせます。",
+        "それでは、担当からの連絡をお待ちください。お越しいただき、ありがとうございました。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21217_02_001_goal_1",
+          "家族へ確定と送ったが担当確認待ちか再確認する"
+        ],
+        [
+          "sc_loc_jp_21217_02_001_goal_2",
+          "未決定の状態を家族へ訂正すると述べる"
+        ],
+        [
+          "sc_loc_jp_21217_02_001_goal_3",
+          "自己携帯を連絡先として不在着信時の方法を尋ねる"
+        ],
+        [
+          "sc_loc_jp_21217_02_001_goal_4",
+          "折返時に使う受付番号を控えると話す"
+        ],
+        [
+          "sc_loc_jp_21217_02_001_goal_5",
+          "連絡先受付番号を整理し結果受領後家族へ報告すると伝える"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21217-02",
+      "effectiveCategory": "Government Office",
+      "effectiveNpcRole": "Government Officer",
+      "causalJudgement": "The visitor explains はい。家族へ、希望どおり決まったと送ってしまいました。まだ担当の確認を待つのですね。 The final player action is 分かりました。連絡先と受付番号をこの控えにまとめました。結果の連絡を受けたら家族へ知らせます。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Municipal reception/clarification; decisions and special services remain fictional staff/department handling. Effective Government Officer role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "それでは、担当からの連絡をお待ちください。お越しいただき、ありがとうございました。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21217-03-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceFileSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "scriptSha256": "a6e244d515135a81a31b0d41c17e7c0235769668f058f0158129d8a3f0e0a7b0",
+      "title": "診察で「いつも」と言った症状を頻度で説明し直す",
+      "turns": [
+        "診療担当へ追加で伝えたいことはありますか。",
+        "さっき「いつも痛い」と書きましたが、ずっと痛みがあるわけではありません。言い方を直したいです。",
+        "実際には、どのような時に気になりますか。",
+        "昨日は夕方と夜で、今日は朝に気になりました。間に気にならない時間もありました。",
+        "その経過を診療担当へお伝えください。",
+        "はい。「よくある」というつもりで「いつも」と書きました。痛みが途切れないと伝わると違うので、補足したいです。",
+        "分かった範囲で、時刻や続いた時間も説明できます。",
+        "正確な分数は覚えていません。分からない所を作らず、覚えている時間帯から話します。",
+        "現在の状態についても、担当にお知らせください。",
+        "はい。今は気になっていませんが、昨日から今日のことは話します。今ないことだけで、前の症状までなかったとはしません。",
+        "承知しました。それでは、補足のご希望を担当へ伝えます。診察までお待ちください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21217_03_001_goal_1",
+          "常時でない症状をいつもと記入したため言換補足を希望する"
+        ],
+        [
+          "sc_loc_jp_21217_03_001_goal_2",
+          "昨日夕夜と今朝の症状と無症状間隔を説明する"
+        ],
+        [
+          "sc_loc_jp_21217_03_001_goal_3",
+          "高頻度意図を連続痛と誤伝達しないため補足すると話す"
+        ],
+        [
+          "sc_loc_jp_21217_03_001_goal_4",
+          "継続分数は不明で時間帯のみ正確に伝えると述べる"
+        ],
+        [
+          "sc_loc_jp_21217_03_001_goal_5",
+          "現在無症状でも過去経過を消さず診察で伝えると話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21217-03",
+      "effectiveCategory": "Hospital",
+      "effectiveNpcRole": "Nurse",
+      "causalJudgement": "The visitor explains さっき「いつも痛い」と書きましたが、ずっと痛みがあるわけではありません。言い方を直したいです。 The final player action is はい。今は気になっていませんが、昨日から今日のことは話します。今ないことだけで、前の症状までなかったとはしません。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Clinical communication/administrative support; no diagnosis, dosage or treatment promised. Effective Nurse role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。それでは、補足のご希望を担当へ伝えます。診察までお待ちください。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21217-04-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-06-yamagata-mizuho-hida.json",
+      "sourceFileSha256": "e01cfa1c4e817c7f18dbfe0c439f643b811a5dda2cfcd3a5973a64069da92fb1",
+      "scriptSha256": "f5b54859314437f4ce9b83a0a325923040b525be627921bcfeb56a081a54d655",
+      "title": "旅行中に見た小さな落石の場所を警察へ伝える",
+      "turns": [
+        "道の状態について、お知らせでしょうか。",
+        "歩いていた道に石が落ちていました。山から落ちた物かは分かりませんが、車が通るので伝えたいです。",
+        "その場からは離れていますか。場所を示せますか。",
+        "離れています。ここに写真があります。石を動かして調べたわけではなく、道の脇から撮りました。",
+        "いつご覧になりましたか。",
+        "一時間ほど前です。写真に見える状態が今も同じとは限らないので、その時刻も伝えます。",
+        "近くの目印や、道の名前は分かりますか。",
+        "道の名前は読めませんでした。写真の看板と、地図で歩いた経路を一緒に見てもらいたいです。",
+        "確認できる場所の情報を伺い、関係する担当への連絡を確認します。",
+        "お願いします。大きな崩れが起きたとは言わず、私が見た石と位置を説明します。追加の写真を撮るためには戻りません。",
+        "お知らせの場所を確認します。それでは、こちらで経路をご説明ください。お帰りもお気をつけください。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21217_04_001_goal_1",
+          "車道上石を観察し山からの落石か未確認だが報告希望する"
+        ],
+        [
+          "sc_loc_jp_21217_04_001_goal_2",
+          "退避済で石未移動の路側写真を示す"
+        ],
+        [
+          "sc_loc_jp_21217_04_001_goal_3",
+          "一時間前観察で現在状態は未確認と伝える"
+        ],
+        [
+          "sc_loc_jp_21217_04_001_goal_4",
+          "道名未読だが看板写真と歩行地図で位置特定を求める"
+        ],
+        [
+          "sc_loc_jp_21217_04_001_goal_5",
+          "大崩落と断定せず観察石のみ説明し再撮影へ戻らないと述べる"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21217-04",
+      "effectiveCategory": "Police Station",
+      "effectiveNpcRole": "Police",
+      "causalJudgement": "The visitor explains 歩いていた道に石が落ちていました。山から落ちた物かは分かりませんが、車が通るので伝えたいです。 The final player action is お願いします。大きな崩れが起きたとは言わず、私が見た石と位置を説明します。追加の写真を撮るためには戻りません。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Police listening/referral and factual explanation; no culpability or legal outcome guaranteed. Effective Police role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "お知らせの場所を確認します。それでは、こちらで経路をご説明ください。お帰りもお気をつけください。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21219-02-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-07-gujo.json",
+      "sourceFileSha256": "abe2d53be46c5a17bed9cc81a5dba2193d1fb9a2b435ca9992b754280926d209",
+      "scriptSha256": "258d25db6d1350465c9d4ef7f17fe65107f5c84e1495c20760a5c7bd585f09ce",
+      "title": "名前の読み方を職員と確かめる",
+      "turns": [
+        "お名前の読み方を教えていただけますか。",
+        "こちらの欄の名前です。日本語では「グエン」と読みますが、途中で区切らずに読んでください。",
+        "ありがとうございます。窓口でお呼びする時も、その読み方でよろしいですか。",
+        "はい。以前、姓の一部を名前だと思って呼ばれて、気づくのが遅れました。",
+        "では、読み方の欄も一緒に確かめましょう。",
+        "お願いします。この片仮名の最後が「ソ」になっています。私が書いたつもりなのは「ン」です。",
+        "この欄は訂正できるよう、担当者から書き方をご案内します。",
+        "分かりました。別の書類には正しく書いたので、この用紙の読み方だけ直したいです。",
+        "用件は住所に関するお手続きで間違いありませんか。",
+        "はい。住所の相談で来ました。読み方を直したら、その窓口へ案内してください。",
+        "承知しました。担当へおつなぎします。本日はお越しいただき、ありがとうございました。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21219_02_001_goal_1",
+          "窓口で使う姓名の読み方と区切り方を伝える"
+        ],
+        [
+          "sc_loc_jp_21219_02_001_goal_2",
+          "以前の呼び方では気づかなかった理由を説明する"
+        ],
+        [
+          "sc_loc_jp_21219_02_001_goal_3",
+          "片仮名のソをンに直したいと指摘する"
+        ],
+        [
+          "sc_loc_jp_21219_02_001_goal_4",
+          "今回の用紙の読み方のみ訂正したいと述べる"
+        ],
+        [
+          "sc_loc_jp_21219_02_001_goal_5",
+          "住所相談を希望し訂正後の窓口案内を頼む"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21219-02",
+      "effectiveCategory": "Government Office",
+      "effectiveNpcRole": "Government Officer",
+      "causalJudgement": "The visitor explains こちらの欄の名前です。日本語では「グエン」と読みますが、途中で区切らずに読んでください。 The final player action is はい。住所の相談で来ました。読み方を直したら、その窓口へ案内してください。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Municipal reception/clarification; decisions and special services remain fictional staff/department handling. Effective Government Officer role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。担当へおつなぎします。本日はお越しいただき、ありがとうございました。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21219-03-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-07-gujo.json",
+      "sourceFileSha256": "abe2d53be46c5a17bed9cc81a5dba2193d1fb9a2b435ca9992b754280926d209",
+      "scriptSha256": "eaeb429b57b84184c2e2f7953146987ae49ed7ed2f3c6e50984ace74afe057b3",
+      "title": "貸出車椅子を返す場所を尋ねる",
+      "turns": [
+        "外来のご用はお済みですか。",
+        "はい。付き添いで使った車椅子を返したいです。入口に戻すのでしょうか。",
+        "貸出しを受けた場所は、こちらの受付でしたか。",
+        "そうです。受付の方が母に貸してくださいました。母は今、家族と車の乗り場で待っています。",
+        "お母様はもう車椅子をお使いにならないのですね。",
+        "はい。車への移動は家族が付き添いました。私だけ車椅子を押して戻って来ました。",
+        "返却はこちらでお受けします。座面にお荷物が残っていないかご確認ください。",
+        "あ、背もたれの後ろに母の上着があります。返す前に取ります。",
+        "お忘れ物が取れましたら、職員へお渡しください。",
+        "上着を取りました。貸していただいて助かりました。車椅子はここでお渡しして、母の所へ戻ります。",
+        "確かにお受けしました。お母様にもよろしくお伝えください。お気をつけてお帰りください。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21219_03_001_goal_1",
+          "貸出車椅子の返却先を尋ねる"
+        ],
+        [
+          "sc_loc_jp_21219_03_001_goal_2",
+          "受付で母に借りた経緯と母の待機場所を伝える"
+        ],
+        [
+          "sc_loc_jp_21219_03_001_goal_3",
+          "母は家族の介助で車へ移動済みと説明する"
+        ],
+        [
+          "sc_loc_jp_21219_03_001_goal_4",
+          "背もたれの後ろに残った母の上着を取ると話す"
+        ],
+        [
+          "sc_loc_jp_21219_03_001_goal_5",
+          "上着を回収し車椅子を職員へ渡して母へ戻ると述べる"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21219-03",
+      "effectiveCategory": "Hospital",
+      "effectiveNpcRole": "Nurse",
+      "causalJudgement": "The visitor explains はい。付き添いで使った車椅子を返したいです。入口に戻すのでしょうか。 The final player action is 上着を取りました。貸していただいて助かりました。車椅子はここでお渡しして、母の所へ戻ります。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Clinical communication/administrative support; no diagnosis, dosage or treatment promised. Effective Nurse role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "確かにお受けしました。お母様にもよろしくお伝えください。お気をつけてお帰りください。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21219-04-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-07-gujo.json",
+      "sourceFileSha256": "abe2d53be46c5a17bed9cc81a5dba2193d1fb9a2b435ca9992b754280926d209",
+      "scriptSha256": "ed60a0a702b33a7d1fe546501cb82e11c2af128d3d8e7fe34cba61e95deb9ebe",
+      "title": "交番で借りた電話の通話を終える",
+      "turns": [
+        "ご家族への連絡はつきましたか。",
+        "はい。電話を使わせていただき、ありがとうございました。迎えに来てもらえます。",
+        "どちらで待ち合わせることになりましたか。",
+        "交番の前と伝えましたが、家族は別の交番だと思っていたようです。もう一度場所を説明してもよいですか。",
+        "まだ通話中でしたら、そのままお伝えください。",
+        "はい。今いる交番の名前を、入口の表示で確かめて読み上げます。",
+        "迎えの方に分かるか、聞いてみてください。",
+        "名前を伝えたら分かったそうです。家族は車で来ます。私は歩き出さず、ここで待つと話しました。",
+        "分かりました。電話はお済みになったらお戻しください。",
+        "通話を終えました。こちらにお返しします。自分の携帯の電池が切れていたので、とても助かりました。",
+        "どういたしまして。ご家族に会えましたら、気をつけてお帰りください。失礼します。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21219_04_001_goal_1",
+          "借りた電話で家族へ連絡でき迎えが来ると伝える"
+        ],
+        [
+          "sc_loc_jp_21219_04_001_goal_2",
+          "家族が交番を取り違えたため再説明を求める"
+        ],
+        [
+          "sc_loc_jp_21219_04_001_goal_3",
+          "入口表示の交番名を読んで家族に伝える"
+        ],
+        [
+          "sc_loc_jp_21219_04_001_goal_4",
+          "家族に場所が伝わり自分は動かず待つと報告する"
+        ],
+        [
+          "sc_loc_jp_21219_04_001_goal_5",
+          "通話を終えて電話を返し携帯の電池切れを説明する"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21219-04",
+      "effectiveCategory": "Police Station",
+      "effectiveNpcRole": "Police",
+      "causalJudgement": "The visitor explains はい。電話を使わせていただき、ありがとうございました。迎えに来てもらえます。 The final player action is 通話を終えました。こちらにお返しします。自分の携帯の電池が切れていたので、とても助かりました。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Police listening/referral and factual explanation; no culpability or legal outcome guaranteed. Effective Police role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "どういたしまして。ご家族に会えましたら、気をつけてお帰りください。失礼します。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21221-02-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-07-kaizu.json",
+      "sourceFileSha256": "54af7a41c89580e1d3e5fe235401ea4e16e8855d2e0e3f60c3d8fc3dde016ebc",
+      "scriptSha256": "4c82b23efab272c90cd8161806278205550c2b7c2fb9336cf905ee83177765b2",
+      "title": "広報紙の折り目で読めなかった見出しを確認する",
+      "turns": [
+        "広報紙についてのお問い合わせですか。",
+        "家に届いた紙の折り目が破れて、催しの見出しが読めません。記事の続きを読みたいです。",
+        "何ページの記事でしょうか。",
+        "最後から二ページ目です。写真は見えますが、何の催しか分からなくて、予定に書けずにいます。",
+        "同じ号を探します。発行月は分かりますか。",
+        "表紙に今月の日付があります。紙を持ってきたので、こちらを見ていただけますか。",
+        "この号ですね。窓口に予備があるか確かめます。",
+        "一部いただけると助かります。なければ、そのページを読める場所を教えてください。",
+        "予備がありました。ここで、破れていた記事と同じかお確かめください。",
+        "同じ写真なので、この記事です。見出しから読めます。持ち帰って家族と参加するか相談します。",
+        "お役に立ててよかったです。それでは、この一部をお持ちください。失礼いたします。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21221_02_001_goal_1",
+          "折り目の破損で催し見出しが読めないと説明する"
+        ],
+        [
+          "sc_loc_jp_21221_02_001_goal_2",
+          "記事のページと写真が見える状態を伝える"
+        ],
+        [
+          "sc_loc_jp_21221_02_001_goal_3",
+          "発行月と持参した広報紙を示す"
+        ],
+        [
+          "sc_loc_jp_21221_02_001_goal_4",
+          "予備一部又は閲覧できる場所を希望する"
+        ],
+        [
+          "sc_loc_jp_21221_02_001_goal_5",
+          "同一記事を確認し家族と参加を相談すると話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21221-02",
+      "effectiveCategory": "Government Office",
+      "effectiveNpcRole": "Government Officer",
+      "causalJudgement": "The visitor explains 家に届いた紙の折り目が破れて、催しの見出しが読めません。記事の続きを読みたいです。 The final player action is 同じ写真なので、この記事です。見出しから読めます。持ち帰って家族と参加するか相談します。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Municipal reception/clarification; decisions and special services remain fictional staff/department handling. Effective Government Officer role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "お役に立ててよかったです。それでは、この一部をお持ちください。失礼いたします。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21221-03-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-07-kaizu.json",
+      "sourceFileSha256": "54af7a41c89580e1d3e5fe235401ea4e16e8855d2e0e3f60c3d8fc3dde016ebc",
+      "scriptSha256": "d3426e2a8b216f5d28fc7ae0429571c586bcdd4cc2a3a97e0b0ca2435b732abc",
+      "title": "診察前の読み書きの困りごとを伝える",
+      "turns": [
+        "問診票で、お困りのところはありますか。",
+        "日本語の会話は少しできますが、この小さい文字が読みづらいです。読めない欄を聞いてもよいですか。",
+        "どの欄から確認しましょうか。",
+        "この三つの見出しです。順に読んでいただければ、自分で答えを書けると思います。",
+        "まず、普段飲んでいる薬についての欄です。",
+        "薬の名前を覚えていません。持ってきた手帳に書いてあるので、見ながら書きたいです。",
+        "次の二つは、これまでの病気と、アレルギーについてです。",
+        "言葉が分かりました。病気については書けますが、アレルギーの欄はどこまで書けばよいか、担当の方に聞きたいです。",
+        "その質問は担当へお伝えします。書けた欄は、ご自身でお確かめください。",
+        "はい。手帳を見て薬の欄を書きました。聞きたい欄は空けてあります。説明を聞いてから仕上げたいです。",
+        "担当へおつなぎします。それでは、用紙と手帳をお持ちになってお待ちください。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21221_03_001_goal_1",
+          "小さい文字を読みにくく欄の説明を求める"
+        ],
+        [
+          "sc_loc_jp_21221_03_001_goal_2",
+          "三つの見出しを順に読んでほしいと頼む"
+        ],
+        [
+          "sc_loc_jp_21221_03_001_goal_3",
+          "薬名を手帳で確認して書きたいと話す"
+        ],
+        [
+          "sc_loc_jp_21221_03_001_goal_4",
+          "アレルギー欄の記入範囲を担当に質問する"
+        ],
+        [
+          "sc_loc_jp_21221_03_001_goal_5",
+          "書けた欄と未記入欄を示し説明後に仕上げたいと伝える"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21221-03",
+      "effectiveCategory": "Hospital",
+      "effectiveNpcRole": "Nurse",
+      "causalJudgement": "The visitor explains 日本語の会話は少しできますが、この小さい文字が読みづらいです。読めない欄を聞いてもよいですか。 The final player action is はい。手帳を見て薬の欄を書きました。聞きたい欄は空けてあります。説明を聞いてから仕上げたいです。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Clinical communication/administrative support; no diagnosis, dosage or treatment promised. Effective Nurse role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "担当へおつなぎします。それでは、用紙と手帳をお持ちになってお待ちください。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21221-04-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-07-kaizu.json",
+      "sourceFileSha256": "54af7a41c89580e1d3e5fe235401ea4e16e8855d2e0e3f60c3d8fc3dde016ebc",
+      "scriptSha256": "0ab259ecf2e112345c8d3631e8b53e086216840cf076fb2046256541c9b8a3ad",
+      "title": "防犯のお知らせを日本語教室で読む相談をする",
+      "turns": [
+        "掲示してあるお知らせについてですか。",
+        "はい。日本語教室で、この防犯のお知らせを読むことになりました。分からない言葉があるので、質問したいです。",
+        "気になった言葉を教えてください。",
+        "「声をかけ合う」のところです。知らない人を見つけたら、私たちが追いかけて名前を聞く、という意味でしょうか。",
+        "そういう意味ではありません。地域で声をかけ、困っていることなどに気づくことを伝える内容です。",
+        "では、相手を疑って問い詰める話として教えないようにします。短い説明を自分の言葉で書いて、教室で読みたいです。",
+        "具体的に困った場面は、それぞれの状況を伺ってご相談に対応します。",
+        "教室には夜遅く帰る人もいます。この紙を読んだあと、不安に思っていることを質問にまとめてもよいですか。",
+        "質問は、相談の際にお持ちください。緊急の連絡が必要な状況とは分けてください。",
+        "はい。教室で読むだけで解決したことにはせず、相談したい人には、質問を持ってこちらへ来る方法を伝えます。",
+        "お知らせを読んでくださってありがとうございます。それでは、教室の皆さんにもよろしくお伝えください。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21221_04_001_goal_1",
+          "防犯掲示を日本語教室で読むため語句を質問する"
+        ],
+        [
+          "sc_loc_jp_21221_04_001_goal_2",
+          "声をかけ合うが追跡して名前を聞く意味か確認する"
+        ],
+        [
+          "sc_loc_jp_21221_04_001_goal_3",
+          "説明を短く自分の言葉で教室用に書くと述べる"
+        ],
+        [
+          "sc_loc_jp_21221_04_001_goal_4",
+          "夜の帰宅に不安のある参加者の質問をまとめたいと話す"
+        ],
+        [
+          "sc_loc_jp_21221_04_001_goal_5",
+          "相談希望者に質問を持参する方法を伝えると述べる"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21221-04",
+      "effectiveCategory": "Police Station",
+      "effectiveNpcRole": "Police",
+      "causalJudgement": "The visitor explains はい。日本語教室で、この防犯のお知らせを読むことになりました。分からない言葉があるので、質問したいです。 The final player action is はい。教室で読むだけで解決したことにはせず、相談したい人には、質問を持ってこちらへ来る方法を伝えます。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Police listening/referral and factual explanation; no culpability or legal outcome guaranteed. Effective Police role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "お知らせを読んでくださってありがとうございます。それでは、教室の皆さんにもよろしくお伝えください。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21218-02-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-07-motosu.json",
+      "sourceFileSha256": "4e7d57c9ba8bc8f6bc8b299d4cd4a3e8c44298648e191f9383e281653b3d91ff",
+      "scriptSha256": "e89db59ee21e103dbef6108308868fb9dd2d48286286e51df7930462a857a8d6",
+      "title": "町内掲示板に貼る催しの案内を相談する",
+      "turns": [
+        "地域の掲示板についてのご相談ですね。",
+        "はい。近所の人と小さな日本語交流会を開きます。案内を貼れる場所があるか聞きに来ました。",
+        "まず案内の内容を拝見してもよろしいですか。",
+        "こちらです。参加費は無料ですが、会場が狭いので、事前に電話で申し込んでもらう予定です。",
+        "この掲示板では、担当者が内容を確認してから掲示します。連絡先はこの番号でよろしいですか。",
+        "その番号は私の携帯です。仕事中は出られないので、受付時間を夕方六時から八時までと書き足します。",
+        "開催日が過ぎた案内を取り下げるため、掲示の終了日も必要です。",
+        "交流会の翌日に外してください。日付だけでは分かりにくいので、曜日も一緒に書きます。",
+        "修正した案内を提出いただければ、担当者から確認結果をご連絡します。",
+        "今日は申請だけですね。貼ってよいと連絡が来てから、必要な枚数を印刷します。",
+        "その流れでお願いいたします。案内がまとまりましたら、またお越しください。失礼いたします。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21218_02_001_goal_1",
+          "交流会案内の掲示場所を尋ねる"
+        ],
+        [
+          "sc_loc_jp_21218_02_001_goal_2",
+          "無料開催と事前電話申込を説明する"
+        ],
+        [
+          "sc_loc_jp_21218_02_001_goal_3",
+          "電話受付時間を書き足すと申し出る"
+        ],
+        [
+          "sc_loc_jp_21218_02_001_goal_4",
+          "翌日の撤去と曜日表記を希望する"
+        ],
+        [
+          "sc_loc_jp_21218_02_001_goal_5",
+          "許可の連絡後に印刷すると伝える"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21218-02",
+      "effectiveCategory": "Government Office",
+      "effectiveNpcRole": "Government Officer",
+      "causalJudgement": "The visitor explains はい。近所の人と小さな日本語交流会を開きます。案内を貼れる場所があるか聞きに来ました。 The final player action is 今日は申請だけですね。貼ってよいと連絡が来てから、必要な枚数を印刷します。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Municipal reception/clarification; decisions and special services remain fictional staff/department handling. Effective Government Officer role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "その流れでお願いいたします。案内がまとまりましたら、またお越しください。失礼いたします。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21218-03-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-07-motosu.json",
+      "sourceFileSha256": "4e7d57c9ba8bc8f6bc8b299d4cd4a3e8c44298648e191f9383e281653b3d91ff",
+      "scriptSha256": "2ea073fbbd4684db3a5d1402b096fb1ae832e11b578d655e06c92886c796bf91",
+      "title": "診察後に忘れた上着の受け取り場所を尋ねる",
+      "turns": [
+        "診察後のお忘れ物についてですね。",
+        "帰宅してから上着がないことに気付きました。診察室で脱いだので、残っていないか確認をお願いできますか。",
+        "受診された時間と、上着の特徴を教えてください。",
+        "午前中の最後の診察です。灰色の上着で、内側に赤い名前のテープを縫い付けています。",
+        "その特徴の上着が届いています。内側の名前を確認してからお返しします。",
+        "私の名字が書いてあります。上着を受け取りに来るだけの場合も、もう一度診察の受付をする必要はありますか。",
+        "診察の受付ではなく、この総合受付でお声がけください。",
+        "分かりました。診察室へ直接戻らず、総合受付で忘れた上着を取りに来たと伝えます。",
+        "午後に受け取りにいらっしゃいますか。",
+        "三時ごろ行けます。診察券も持参して、名前のテープを一緒に確認してから受け取ります。",
+        "お預かりしておきます。道中お気をつけてお越しください。それでは失礼いたします。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21218_03_001_goal_1",
+          "診察室で脱いだ上着の確認を依頼する"
+        ],
+        [
+          "sc_loc_jp_21218_03_001_goal_2",
+          "受診時間と名前テープ付き上着を説明する"
+        ],
+        [
+          "sc_loc_jp_21218_03_001_goal_3",
+          "受取のみの場合の受付要否を尋ねる"
+        ],
+        [
+          "sc_loc_jp_21218_03_001_goal_4",
+          "診察室へ戻らず総合受付へ行くと伝える"
+        ],
+        [
+          "sc_loc_jp_21218_03_001_goal_5",
+          "受取時間と診察券持参を話す"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21218-03",
+      "effectiveCategory": "Hospital",
+      "effectiveNpcRole": "Nurse",
+      "causalJudgement": "The visitor explains 帰宅してから上着がないことに気付きました。診察室で脱いだので、残っていないか確認をお願いできますか。 The final player action is 三時ごろ行けます。診察券も持参して、名前のテープを一緒に確認してから受け取ります。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Clinical communication/administrative support; no diagnosis, dosage or treatment promised. Effective Nurse role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "お預かりしておきます。道中お気をつけてお越しください。それでは失礼いたします。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21218-04-001",
+      "sourceFile": "scripts/dialogue-authoring/prf-021-cluster-07-motosu.json",
+      "sourceFileSha256": "4e7d57c9ba8bc8f6bc8b299d4cd4a3e8c44298648e191f9383e281653b3d91ff",
+      "scriptSha256": "8baeecde20836b12a0e13ea221c006e9f31c56084ca6f42731f253e28d30c3ac",
+      "title": "落とした定期入れを別の人が受け取る手続きを尋ねる",
+      "turns": [
+        "お電話をいただいた定期入れについてですね。",
+        "はい。私の物だと確認できたそうですが、今日は仕事で来られません。兄に受け取りを頼めますか。",
+        "ご本人以外が受け取る場合の手続きを、担当者に確認します。",
+        "兄にはまだ出発しないよう伝えます。必要な書類がそろってから来てもらいたいです。",
+        "担当に確認したところ、委任状と、受け取る方の本人確認書類をご用意いただく案内でした。作成方法もこちらで確認しましょう。",
+        "委任状には私の署名が必要ですね。拾われた定期入れの受付番号も、兄に渡しておきます。",
+        "はい。ご本人との関係だけでなく、委任の内容が分かるようにしてください。",
+        "定期入れの受け取りだけを頼んだと書きます。ほかの手続きまでお願いするつもりはありません。",
+        "受取日時も担当者と調整してください。",
+        "兄が来られる夕方の時間を伝えます。書類の準備が間に合わなければ、私が別の日に受け取りに来ます。",
+        "承知しました。担当者からの案内をお待ちください。お仕事、お気をつけて。"
+      ],
+      "tasks": [
+        [
+          "sc_loc_jp_21218_04_001_goal_1",
+          "仕事のため兄に受取を頼めるか尋ねる"
+        ],
+        [
+          "sc_loc_jp_21218_04_001_goal_2",
+          "必要書類が分かるまで兄を待機させると話す"
+        ],
+        [
+          "sc_loc_jp_21218_04_001_goal_3",
+          "署名と受付番号の共有を確認する"
+        ],
+        [
+          "sc_loc_jp_21218_04_001_goal_4",
+          "委任範囲を定期入れ受取に限定すると説明する"
+        ],
+        [
+          "sc_loc_jp_21218_04_001_goal_5",
+          "兄の受取時間と間に合わない場合の代案を伝える"
+        ]
+      ],
+      "effectiveLocationId": "LOC-JP-21218-04",
+      "effectiveCategory": "Police Station",
+      "effectiveNpcRole": "Police",
+      "causalJudgement": "The visitor explains はい。私の物だと確認できたそうですが、今日は仕事で来られません。兄に受け取りを頼めますか。 The final player action is 兄が来られる夕方の時間を伝えます。書類の準備が間に合わなければ、私が別の日に受け取りに来ます。 This supports the title-specific causal chain rather than only category-level presence.",
+      "taskJudgement": "Five source goals correspond in order to five PLAYER turns. Retained exact goals in this entry for coordinator parity checks.",
+      "roleJudgement": "Police listening/referral and factual explanation; no culpability or legal outcome guaranteed. Effective Police role fits this reception, listening or specialist exchange.",
+      "closureJudgement": {
+        "text": "承知しました。担当者からの案内をお待ちください。お仕事、お気をつけて。",
+        "judgement": "NPC final polite farewell, handoff or waiting transition appropriate to unfinished consultation. No clinical/legal completion certification."
+      },
+      "concreteBlocker": null
+    }
+  ],
+  "targetedCounterpartComparisons": [
+    {
+      "scenarioId": "SC-LOC-JP-21214-03-001",
+      "counterpartId": "SC-LOC-JP-20209-03-001",
+      "counterpartTurns": [
+        "診察の前に、ご本人から伝えたいことはありますか。",
+        "家族には「もう平気」と言いましたが、腰がつらいです。心配させたくなくて、家族の前では元気なふりをしてしまいます。",
+        "今の実際のご様子を教えてください。どのような時につらさがありますか。",
+        "夜、寝返りをした時にも気になります。家族へ平気と言ったからと、診察でも同じ返事を続けるのは違うと思います。",
+        "その状態を担当へ伝えます。ご家族と別に話したいご希望もありますか。",
+        "はい、まず自分から落ち着いて話したいです。家族を責めるのではなく、自分が言いにくかったという事情を伝えたいです。",
+        "話す方法のご希望を担当へ確認します。ご自身で話せる内容は、どのようにまとめますか。",
+        "夜の寝返りで気になることと、いつから続くかを話します。家族が大丈夫と言っても、それを自分の症状の代わりにはしません。",
+        "ご本人の言葉として伺います。実際に話せる場所などは、担当の案内をお待ちください。",
+        "お願いします。家族への返事を訂正するのが恥ずかしくても、診療者には今のつらさを伝えます。",
+        "ご希望とご様子を引き継ぎます。それでは、案内をお待ちください。お大事になさってください。"
+      ],
+      "lexicalScore": 0.15288611544461778,
+      "judgement": "Family deliberately reassured by patient in earlier story versus family interpreter understating actual patient words here. Both protect patient voice, but intentional concealment and translation repair differ; bounded accept."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21213-03-001",
+      "counterpartId": "SC-LOC-JP-20212-06-001",
+      "counterpartTurns": [
+        "ご記入の金額について、確認したいことがあるのですね。",
+        "三万円のつもりで三十万円と書いてしまいました。ゼロを消しましたが、直した箇所が読みにくいです。",
+        "そのまま提出せず、訂正方法を確認しましょう。ご希望は三万円でよろしいですか。",
+        "はい、三万円です。見た目を整えるために上からなぞるより、書き直したほうがよいか伺いたいです。",
+        "担当が用紙の扱いをご案内します。金額以外の欄も確認してください。",
+        "日付と名前は合っています。金額だけ間違えたので、そこを知らせず渡すのは避けます。",
+        "新しい用紙をご案内する場合も、前の用紙と混ざらないようにしてください。",
+        "古い用紙をどこへ渡すかも聞きます。二枚とも有効なつもりで持たないようにします。",
+        "手続き前に、ご希望の金額をもう一度お確かめください。",
+        "三万円と声に出して確認します。ゼロの数を数えてから、担当の案内どおり提出します。",
+        "金額のご確認ありがとうございます。それでは、担当が用紙をご案内します。失礼いたします。"
+      ],
+      "lexicalScore": 0.11018363939899833,
+      "judgement": "Prior bank incorrect amount and erasure versus sweat-induced legibility loss with unchanged symptom content. Same form replacement workflow is general clerical action; causal problem and clinical handoff differ."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-21219-02-001",
+      "counterpartId": "SC-LOC-007-10-001",
+      "counterpartTurns": [
+        "こんにちは。行事のお申し込みについて何かお手伝いしましょうか。",
+        "家族の申込をしたいです。この名前は漢字だけだと別の読み方をされるので、ふりがなも一緒にお伝えしたいです。",
+        "承知しました。参加するご本人のお名前ですか。それとも、申し込みをするお客様のお名前ですか。",
+        "参加する弟の名前です。私は連絡をする人として別の欄に書きます。弟の読み方は「あきら」です。",
+        "参加者のお名前の横に、その読み方をご記入ください。呼び出すときも「あきら」でよろしいですね。",
+        "はい。「あきら」でお願いします。漢字から別の読み方を推測せず、このふりがなを使っていただきたいです。",
+        "確認しました。参加者欄と連絡する方の欄が入れ替わっていないか、最後にご覧ください。",
+        "参加者は弟、連絡先は私になっています。弟本人にもこの書き方を確認してもらってから提出します。",
+        "お持ち帰りになるのですね。提出前に読み方などが変わった場合は、書き直した用紙をお見せください。",
+        "今日は用紙を持ち帰ります。弟に確認して、読み方と連絡する人の欄をそろえてから申し込みます。",
+        "承知しました。ご本人との確認後にお持ちください。ありがとうございました。"
+      ],
+      "lexicalScore": 0.11556982343499198,
+      "judgement": "Prior registering sibling event attendance/contacts versus own municipal katakana typo/call recognition. Reading aid is shared, but own correction and address enquiry differ."
+    }
+  ],
+  "falsePositiveCorrection": {
+    "initialRawBaseFindings": [
+      "LOC-021-06 postal mapped municipal",
+      "LOC-021-07 coin mapped municipal",
+      "LOC-021-12 pharmacist mapped nurse"
+    ],
+    "resolution": "Retracted: life-content-repository.ts maps corrections before consumers. Verified Post Office/Postal Staff, Bank/Bank Clerk, Pharmacy/Pharmacist. Raw generated metadata is not effective metadata."
+  },
+  "residualRisks": [
+    "Reception scripts repeatedly use factual clarification and referral motifs; bounded review does not prove global semantic novelty.",
+    "Facility service and clerical policy assumptions explicitly fictional; no real Gujo/Gifu service-policy certification.",
+    "No medical/legal/native speaker approval or device/art verification."
+  ],
+  "concreteBlockers": []
+}
