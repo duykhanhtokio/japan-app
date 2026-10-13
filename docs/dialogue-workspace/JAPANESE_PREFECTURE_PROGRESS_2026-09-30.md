@@ -581,3 +581,14 @@ Source/canonical/runtime parity passes. All7128 identities, order and next links
 23 generic location labels are explicitly simulated; Mishima park role uses Park Staff. Ferry, taxi, fishing and aquarium dialogue uses the correct native roles with existing broad categories for asset/progression compatibility. Numazu's meeting-point label and bank branch reading are explicitly fictional and answered directly. Dedicated visuals and device checks remain pending. Native/human/real-service certification remains false. NPC progression regression passes; JLPT UI lock remains10/10.
 
 Next complete city cluster: Fujinomiya, Ito and Shimada (CTY-JP-22207/22208/22209). Publish and require WORK PERSISTENCE PASS before advancing. Complete all197 and whole-prefecture AI editorial review before PRF-023.
+
+
+## Cluster03 Fujinomiya/Ito/Shimada — 2026-10-13
+
+Added 24 individual Japanese exchanges,264 alternating turns and120 distinct goals. Shizuoka now has85/197 rewrites;112 old recipe drafts remain. All24 current exchanges/goals and selected full prior counterparts were read, with internal comparisons. Full rejected variants remain in the author reports. Final scoped cluster acceptance has zero concrete blockers; whole-prefecture CONTENT PASS remains false.
+
+Source/canonical/runtime parity passes. All7128 identities, order and next links are preserved; the other7104 runtime hashes and canonical rows remain unchanged, including the previous61 rewrites. No new exact utterance collisions. The197-script structural audit has zero errors;29 normalized groups and217 near candidates remain among drafts. Japanese only, no level gate and no new translations.
+
+21 generic location labels are explicitly simulated. Three park roles use Park Staff; station names retain operator evidence. NPC answers identify requested objects, product names and station readings directly. Bank application purpose and identification documents are clear, with no guarantee of account opening. Medical conversations report observations and hand off professional decisions. Traffic-class dialogue has bounded primary police-source evidence, with no universal whistle-duration rule asserted. Dedicated visuals/device checks and human/native review remain pending. NPC progression regression passes; JLPT UI lock remains10/10.
+
+Next complete city cluster: Iwata, Yaizu and Kakegawa (CTY-JP-22211/22212/22213). Publish and require WORK PERSISTENCE PASS before advancing. Complete all197 and whole-prefecture AI editorial review before PRF-023.
