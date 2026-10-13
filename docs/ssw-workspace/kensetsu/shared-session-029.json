@@ -37,9 +37,11 @@
     "https://laws.e-gov.go.jp/api/1/lawdata/333AC0000000079",
     "https://www.city.kagoshima.lg.jp/suido/gesuido/gesuisyori/gesuido/shikumi/shiyo/2shiyo.html",
     "https://www.cbr.mlit.go.jp/shitara/06question_answer/a2_4.html",
-    "https://www.env.go.jp/water/impure/haisui.html"
+    "https://www.env.go.jp/water/impure/haisui.html",
+    "https://www.gesui.metro.tokyo.lg.jp/contractor/suisitsu/information/8izikanri/44970",
+    "https://www.gesui.metro.tokyo.lg.jp/contractor/suisitsu/information/8izikanri/44960"
   ],
-  "verificationDate": "2026-10-11",
+  "verificationDate": "2026-10-13",
   "verificationStatus": "Claim-linked official AI comparison2026-10-11; technical/domain/native/rights approval pending",
   "translationStatus": "deferred",
   "illustrationStatus": "deferred",
@@ -127,6 +129,27 @@
       ],
       "applicationPromptJa": "pHの範囲、SS等の上限、採取条件をどう読み分けますか。一項目だけで適合とできない理由を述べてください。",
       "graded": false
+    },
+    {
+      "id": "kensetsu-common-session-029-cluster-5",
+      "titleJa": "アルカリ排水の中和と測定の役割",
+      "minutes": null,
+      "paragraphs": [
+        {
+          "id": "kensetsu-common-session-029-cluster-5-p1",
+          "ja": "コンクリートに接した水が高アルカリとなった場合、中和は酸性側の作用を用いてpHを排水先の適用範囲へ調整する処理です。元資料には炭酸ガス又は薬品等を使う方法が挙げられています。炭酸ガス方式には、水とガスを混合し、処理の結果をpHで確認する設備があります。ガスを入れたこと自体を中和完了とせず、設備方式に応じた混合、処理時間、測定・記録を対応させます。"
+        },
+        {
+          "id": "kensetsu-common-session-029-cluster-5-p2",
+          "ja": "薬品方式のpH調整槽では、pH計、撹拌、薬品の濃度・注入量、薬注ポンプや弁などが制御に関わります。濃度や注入が過大、混合が不十分などの場合には、pHが上限と下限の外へ繰り返し振れるハンチングや処理不良が起こり得ます。処理対象の水質、流量、設備に合わせて専門担当者が条件を決めるため、すべての水に同じ薬品量を加える処方にはできません。"
+        },
+        {
+          "id": "kensetsu-common-session-029-cluster-5-p3",
+          "ja": "測定が正しいことも処理の一部です。pH計の汚れや校正のずれがあると、画面の数字と実際の水質が対応しません。処理後の測定・記録に加え、SSや金属等の別項目も確認します。pHが適合したことだけで、全ての汚染物質が除去されたとは判断しません。教材の記録例では、採取場所、時刻、処理前後の測定、適用基準を結び付けます。ガス圧や薬品量の操作値は装置と処理計画で決め、この説明を汎用の操作手順に置き換えません。"
+        }
+      ],
+      "applicationPromptJa": "この説明で区別した対象、条件、確認の役割を、教材例に沿って整理してください。",
+      "graded": false
     }
   ],
   "dailyMinutesTarget": 30,
@@ -156,15 +179,24 @@
     {
       "term": "排除基準",
       "reading": "はいじょきじゅん"
+    },
+    {
+      "term": "撹拌",
+      "reading": "かくはん"
+    },
+    {
+      "term": "校正",
+      "reading": "こうせい"
     }
   ],
-  "contentRevision": 3,
+  "contentRevision": 4,
   "review": {
     "domainReviewed": false,
     "nativeReviewed": false,
     "rightsReviewed": false,
     "similarityReviewed": false,
-    "runtimeVerified": true
+    "runtimeVerified": true,
+    "runtime": "pending_updated_content_test"
   },
   "runtimeVerificationScope": "Real reader via documented browser image/storage adapters;35sessions/396paragraphs; native device not tested"
 }
