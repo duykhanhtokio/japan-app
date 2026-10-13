@@ -75,3 +75,16 @@ Source/canonical/runtime parity passes. All7128 identities, order and next links
 21 generic labels explicitly simulated. Izu station corrected to修善寺駅; Kikugawa station identity verified; misleading Omaezaki railway label becomes fictional city bus guide, Bus Terminal/Information Staff, compatible existing progress category. Three parks use Park Staff. NPC simulation wording removed; Nurse keeps consistent role while coordinating measurement staff; funnel use leaves a hand for the refill pouch. Kikugawa sleep diary develops date-page correction rather than sleep-duration inference. Final current forms/math have literal answers and bounded handoffs; no actual-service or fee guarantees. Native/human, dedicated visuals and device checks remain pending.
 
 Next final cities: Izunokuni/Makinohara (CTY-JP-22225/22226),16 scripts. Publish current24 and require WORK PERSISTENCE PASS before advancing. After all197, complete full-prefecture editorial gate and Japanese master lock before PRF-023.
+
+
+## Final cluster08 and Shizuoka master lock — 2026-10-13
+
+Shizuoka PRF-022 is197/197 rewritten Japanese dialogues,2167 turns and985 speaking goals with AI CONTENT PASS and current-hash Japanese master lock. Added Izunokuni/Makinohara16 scripts/176 turns/80 goals. Independent current full readings cover101+96 scenarios; cross-part groups and selected full prior comparisons are explicit, not an exhaustive prior-corpus uniqueness claim.
+
+Final source/runtime/canonical title/premise/goal parity passes for197. All7128 identities/order/next links are preserved; other7112 runtimes unchanged, including previous181. Only prior source/canonical text correction is Hamamatsu08 title alignment to whether clip removal is necessary. Whole197 structural/recipe/exact/normalized/near/player-task/player-answer/title groups are zero; no exact utterance collision touching197 across7128 packages.
+
+Final review found actual Makinohara05 wet-package chain reused prior12227-05; replaced all11 turns/five goals with family-requested収入印紙200円two-piece acquisition and400total/200face-value memo. Rejected full variant and matched prior are retained. No tax-duty/use judgment. Izunokuni sleeve/identity-band title and zipper wording align physical actions.14 genericlabels and Makinohara city bus guide are explicitly fictional; 伊豆長岡駅 identity verified, Bus Terminal/Information Staff and twoPark Staff corrections applied. NPC progression6roles/30completions/12correctedlocations passes withlegacy/repeat preservation; JLPTUIlock10/10.
+
+Authoring-local flags are separate from the authoritative final hash-bound AI decision. Native/human, new translations, dedicated art, device and real-service approval remain false/pending. Evidence: PRF-022_SEMANTIC_REVIEW, PART_A/PART_B_FULL_REVIEW, CLUSTER_08_EDITORIAL/LOCATION/INTEGRATION and JAPANESE_MASTER_LOCK files.
+
+Publish this complete-prefecture unit and require WORK PERSISTENCE PASS. Next is PRF-023 Aichi after persistence; retain Japanese-first sequencing and whole-prefecture QA gates.
