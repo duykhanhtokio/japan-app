@@ -6,7 +6,23 @@ type LocalizableCluster={id:string;titleJa:string;titleTranslations?:LocaleText;
  learningActivity?:{ja:string;translations?:LocaleText;graded?:boolean};
  terms?:{ja:string;reading:string;translations?:LocaleText;vi?:string}[];
  illustration?:{assetPath:string;captionJa:string;captionTranslations?:LocaleText}};
-type LocalizableSession={id:string;titleJa:string;titleTranslations?:LocaleText;clusters:LocalizableCluster[]};
+type LocalizableSession={id:string;titleJa:string;titleTranslations?:LocaleText;clusters:LocalizableCluster[];
+ keyTerms?:{term:string;reading:string;translations?:LocaleText}[];
+ illustrations?:{path:string;altJa:string;altTranslations?:LocaleText;clusterId?:string}[]};
+
+export function collectTranslatableUnits(session:LocalizableSession):Record<string,string>{
+ const units:Record<string,string>={title:session.titleJa};
+ const add=(id:string,ja:string|undefined)=>{if(!ja)return;if(units[id]!==undefined&&units[id]!==ja)throw new Error(`Conflicting translation unit: ${id}`);units[id]=ja;};
+ for(const c of session.clusters){
+  add(c.id+':title',c.titleJa);for(const p of c.paragraphs)add(p.id,p.ja);
+  add(c.id+':prompt',c.applicationPromptJa);add(c.id+':reflection',c.reflectionJa);
+  add(c.id+':caption',c.illustration?.captionJa);add('learningActivity',c.learningActivity?.ja);
+  for(const t of c.terms??[])add(c.id+':term:'+t.ja,t.ja);
+ }
+ for(const t of session.keyTerms??[])add('keyTerm:'+t.term,t.term);
+ session.illustrations?.forEach((a,i)=>add(`illustration:${i}:alt`,a.altJa));
+ return units;
+}
 
 // Never show an overlay translation after its own Japanese source has changed.
 // A mismatch also suppresses an older inline translation for that same unit.
@@ -17,7 +33,10 @@ export function applyLessonTranslations<T extends LocalizableSession>(session:T,
   if(!entry)return existing;
   return entry.sourceJa===ja?{...existing,...entry.translations}:undefined;
  };
- return {...session,titleTranslations:texts('title',session.titleJa,session.titleTranslations),clusters:session.clusters.map(c=>({
+ return {...session,titleTranslations:texts('title',session.titleJa,session.titleTranslations),
+ keyTerms:session.keyTerms?.map(t=>({...t,translations:texts('keyTerm:'+t.term,t.term,t.translations)})),
+ illustrations:session.illustrations?.map((a,i)=>({...a,altTranslations:texts(`illustration:${i}:alt`,a.altJa,a.altTranslations)})),
+ clusters:session.clusters.map(c=>({
   ...c,titleTranslations:texts(c.id+':title',c.titleJa,c.titleTranslations),
   paragraphs:c.paragraphs.map(p=>({...p,translations:texts(p.id,p.ja,p.translations)})),
   applicationPromptTranslations:texts(c.id+':prompt',c.applicationPromptJa,c.applicationPromptTranslations),

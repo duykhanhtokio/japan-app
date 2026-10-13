@@ -1,189 +1,6 @@
 # 建設 — bài 001: bản dịch theo 12 ngôn ngữ
 
-Bản Nhật là nội dung chuẩn. Đây là bản dịch do AI biên soạn, chưa có kiểm duyệt bản ngữ hoặc chuyên môn. Phạm vi: bài 001 thuộc tuần 1; 30 mục × 12 ngôn ngữ = 360 chuỗi dịch.
-
-
-## vi
-
-### title
-
-自分の仕事と、次の人の仕事をつなぐ
-
-Kết nối công việc của mình với người làm bước tiếp theo
-
-### kensetsu-common-001-purpose:title
-
-自分の担当だけで考えない
-
-Không chỉ nghĩ đến phần việc của mình
-
-### kensetsu-common-001-purpose-p1
-
-現場では、一人で終わらせられる仕事ばかりではありません。自分が仕上げた場所を別の職種が使ったり、前の工程の結果を受け取って次の仕事を始めたりします。自分の担当が終わっても、次の人に必要な情報が伝わっていなければ、仕事はうまくつながりません。
-
-Ở công trường, không phải công việc nào cũng có thể hoàn thành bởi một người. Khu vực mình làm xong có thể được nhóm nghề khác sử dụng, hoặc người làm bước sau bắt đầu công việc dựa trên kết quả của công đoạn trước. Dù phần việc của mình đã xong, công việc vẫn khó nối tiếp thuận lợi nếu người làm bước sau chưa nhận được thông tin cần thiết.
-
-### kensetsu-common-001-purpose-p2
-
-チームワークとは、相手に合わせて何でも引き受けることではありません。担当する範囲、終わった部分、まだ確認が必要な部分を分けて伝え、関係する人と調整することです。経験のある人の助言も役立ちますが、現場で決められた指示や確認の経路を置き換えるものではありません。
-
-Làm việc nhóm không có nghĩa là nhận mọi việc để chiều theo người khác. Cần tách rõ và truyền đạt phạm vi phụ trách, phần đã hoàn thành và phần còn cần kiểm tra, đồng thời phối hợp với những người liên quan. Lời khuyên của người có kinh nghiệm cũng hữu ích, nhưng không thay thế quy trình truyền đạt chỉ thị và xác nhận đã được quy định tại công trường.
-
-### kensetsu-common-001-purpose:prompt
-
-前の工程が終わっていないと、次の職種にはどのような影響がありますか。
-
-Nếu công đoạn trước chưa hoàn thành, nhóm nghề thực hiện công đoạn sau sẽ bị ảnh hưởng như thế nào?
-
-### kensetsu-common-001-roles:title
-
-誰が、何を担当するのか
-
-Ai phụ trách việc gì?
-
-### kensetsu-common-001-roles-p1
-
-発注者は工事を注文する側です。建物を建てる個人の場合も、会社や自治体の場合もあります。設計者は要望を設計図書にまとめます。建築の工事監理では、設計図書と施工内容の関係を確認します。これは、現場の毎日の人員や作業順序を調整する仕事と、同じ意味ではありません。ここでは役割の違いを理解し、資格や法的責任の細かな範囲は別の学習項目で扱います。
-
-Bên đặt hàng công trình là bên yêu cầu thực hiện công trình. Đó có thể là cá nhân xây nhà, doanh nghiệp hoặc chính quyền địa phương. Người thiết kế tổng hợp các yêu cầu thành hồ sơ thiết kế. Trong xây dựng công trình kiến trúc, công tác kiểm tra thi công theo hồ sơ thiết kế (工事監理) đối chiếu hồ sơ thiết kế với nội dung thi công. Công việc này không đồng nghĩa với việc điều phối nhân lực và thứ tự công việc hằng ngày tại công trường. Ở đây, chúng ta phân biệt các vai trò; phạm vi chi tiết về tư cách chuyên môn và trách nhiệm pháp lý được học ở mục riêng.
-
-### kensetsu-common-001-roles-p2
-
-元請は、発注者から直接工事を請け負う会社などです。小規模な住宅工事では、施主が工務店に注文し、元請となった工務店が専門工事業者と調整する例があります。大きな工事では、工事全体をまとめるゼネコンと複数の専門工事業者が関わる体制もあります。会社の立場である「元請」と、人の役割である「現場監督」「職長」を区別しましょう。職長は現場監督と打合せをし、自分の班の作業員に指示を伝えます。
-
-Nhà thầu chính (元請) là doanh nghiệp hoặc bên trực tiếp nhận thầu từ bên đặt hàng. Ví dụ, ở công trình nhà ở quy mô nhỏ, chủ nhà đặt hàng cho một công ty xây dựng; công ty đó làm nhà thầu chính và phối hợp với các nhà thầu chuyên môn. Ở công trình lớn, cũng có cơ cấu gồm tổng thầu điều phối toàn bộ công trình và nhiều nhà thầu chuyên môn. Hãy phân biệt vị thế của doanh nghiệp là “nhà thầu chính” với vai trò của cá nhân là “người điều hành công trường” (現場監督) và “tổ trưởng” (職長). Tổ trưởng trao đổi với người điều hành công trường rồi truyền đạt chỉ thị cho công nhân trong tổ của mình.
-
-### kensetsu-common-001-roles:prompt
-
-発注者・元請会社・現場監督・職長を、会社の立場と人の役割に分けて説明してください。
-
-Hãy giải thích bên đặt hàng, công ty nhà thầu chính, người điều hành công trường và tổ trưởng, phân biệt vị thế của tổ chức với vai trò của cá nhân.
-
-### kensetsu-common-001-handover:title
-
-引き継ぐ情報を具体的にする
-
-Truyền đạt cụ thể thông tin bàn giao
-
-### kensetsu-common-001-handover-p1
-
-『終わりました』だけでは、相手がどの部分を使えるのか判断できないことがあります。場所、担当した内容、完了した範囲、未確認の点を分けて伝えると、次の人が状況を理解しやすくなります。作業の完了と、確認や承認の完了も区別します。自分で行っていない確認を、済んだこととして伝えないようにします。
-
-Chỉ nói “xong rồi” có thể khiến người nhận chưa biết phần nào đã sử dụng được. Nếu tách rõ vị trí, nội dung mình phụ trách, phạm vi đã hoàn thành và các điểm chưa kiểm tra, người làm bước sau sẽ dễ hiểu tình hình hơn. Cũng cần phân biệt hoàn tất công việc với hoàn tất kiểm tra hoặc phê duyệt. Không báo rằng bước kiểm tra mình chưa thực hiện đã hoàn tất.
-
-### kensetsu-common-001-handover-p2
-
-質問するときは、『分かりません』に、分からない点を一つ加えます。たとえば『場所は分かりました。引き渡す相手をもう一度教えてください』と言えば、相手は説明すべき部分を把握できます。指示が変わった場合は、自分だけで判断して他の班との約束を変更せず、現場で指定された担当者に確認します。
-
-Khi hỏi lại, hãy bổ sung một điểm cụ thể mình chưa hiểu vào câu “tôi không hiểu”. Ví dụ: “Tôi đã hiểu vị trí. Xin cho tôi biết lại người nhận bàn giao.” Như vậy, người nghe biết cần giải thích phần nào. Nếu chỉ thị thay đổi, hãy xác nhận với người được chỉ định tại công trường; không tự quyết định thay đổi thỏa thuận với tổ khác.
-
-### kensetsu-common-001-handover:prompt
-
-「終わりました」に場所と未確認事項を加えた報告を作ってください。
-
-Hãy viết một báo cáo bổ sung vị trí và các điểm chưa kiểm tra vào câu “xong rồi”.
-
-### kensetsu-common-001-example:title
-
-例：受け渡しの時刻を調整する
-
-Ví dụ: điều chỉnh thời điểm bàn giao
-
-### kensetsu-common-001-example-p1
-
-これは学習用に作った例です。新しい休憩室を整える現場で、収納棚の組立班と室内表示の取付班が、同じ部屋を使う予定になっています。森さんは組立班の作業員です。棚の組立は終わりましたが、職長による確認はまだです。森さんは取付班から『もう入っていいですか』と聞かれました。
-
-Đây là ví dụ được tạo cho việc học. Tại công trường chuẩn bị một phòng nghỉ mới, tổ lắp ráp kệ chứa đồ và tổ lắp biển trong phòng cùng dự định sử dụng một phòng. Anh Mori là công nhân trong tổ lắp ráp. Kệ đã được lắp xong nhưng tổ trưởng chưa kiểm tra. Tổ lắp biển hỏi anh Mori: “Bây giờ chúng tôi vào được chưa?”
-
-### kensetsu-common-001-example-p2
-
-森さんは『組立は終わっています。ただ、職長の確認がまだです。受け渡しの時刻は職長に確認してからお伝えします』と答えます。この答えでは、終わった作業と未確認の点を混ぜずに伝えています。確認後は、相手に時刻だけでなく、受け渡す場所と担当者も知らせると連絡が具体的になります。
-
-Anh Mori trả lời: “Việc lắp ráp đã xong. Tuy nhiên, tổ trưởng chưa kiểm tra. Tôi sẽ báo thời điểm bàn giao sau khi xác nhận với tổ trưởng.” Câu trả lời này tách rõ công việc đã hoàn thành và điểm chưa được kiểm tra. Sau khi xác nhận, thông tin liên lạc sẽ cụ thể hơn nếu báo cả vị trí và người phụ trách bàn giao, bên cạnh thời điểm.
-
-### kensetsu-common-001-example:prompt
-
-森さんが自分で受け渡し時刻を決められない理由を説明してください。
-
-Hãy giải thích vì sao anh Mori không thể tự quyết định thời điểm bàn giao.
-
-### kensetsu-common-001-example:reflection
-
-例を読み直し、完了したこと・未確認のこと・次に連絡することを、自分の言葉で整理しましょう。解答の提出や採点はありません。
-
-Đọc lại ví dụ và tự diễn đạt điều đã hoàn tất, điều chưa kiểm tra và việc cần liên lạc tiếp theo. Không có nộp đáp án hoặc chấm điểm.
-
-### kensetsu-common-001-example:caption
-
-組立が終わったことと、職長の確認が済んだことを分けて伝える場面のイメージです。図だけでは確認の完了を判断できません。本文の例と合わせて読みましょう。
-
-Minh họa việc truyền đạt, phân biệt lắp ráp đã hoàn thành với việc tổ trưởng đã kiểm tra. Chỉ nhìn hình không thể xác định việc kiểm tra đã hoàn tất. Hãy đọc cùng ví dụ trong bài.
-
-### kensetsu-common-001-summary:title
-
-言葉と要点を整理する
-
-Hệ thống lại từ và ý chính
-
-### kensetsu-common-001-summary-p1
-
-人の役割を区別し、自分の担当と次の工程の関係を考えることが、この日の学習の要点です。連絡するときは、場所・内容・完了範囲・未確認事項を整理します。誰に確認すべきか分からない場合は、その現場の連絡体制を確認しましょう。
-
-Trọng tâm của buổi học là phân biệt vai trò của từng người và xem xét mối liên hệ giữa phần việc của mình với công đoạn tiếp theo. Khi liên lạc, hãy sắp xếp rõ vị trí, nội dung, phạm vi đã hoàn thành và các điểm chưa kiểm tra. Nếu chưa biết cần xác nhận với ai, hãy tìm hiểu cơ cấu liên lạc tại chính công trường đó.
-
-### kensetsu-common-001-summary:prompt
-
-今の自分の担当と、次に情報を受け取る相手を書いてください。
-
-Hãy viết phần việc hiện tại của mình và người sẽ nhận thông tin ở bước tiếp theo.
-
-### kensetsu-common-001-summary:term:工程
-
-工程
-
-Công đoạn hoặc bước trong trình tự công việc
-
-### kensetsu-common-001-summary:term:発注者
-
-発注者
-
-Bên đặt hàng công trình
-
-### kensetsu-common-001-summary:term:設計図書
-
-設計図書
-
-Hồ sơ thiết kế
-
-### kensetsu-common-001-summary:term:工事監理
-
-工事監理
-
-Công tác đối chiếu việc thi công với hồ sơ thiết kế
-
-### kensetsu-common-001-summary:term:元請
-
-元請
-
-Nhà thầu trực tiếp nhận thầu từ bên đặt hàng
-
-### kensetsu-common-001-summary:term:職長
-
-職長
-
-Tổ trưởng chỉ đạo nhóm làm việc
-
-### kensetsu-common-001-summary:term:引き継ぎ
-
-引き継ぎ
-
-Bàn giao công việc và thông tin liên quan
-
-### learningActivity
-
-この節の場面や用語を読み、下の問いについて自分の言葉で説明してください。説明できない箇所は本文で確かめます。
-
-Đọc tình huống và thuật ngữ trong mục này, rồi tự giải thích câu hỏi bên dưới bằng lời của mình. Kiểm tra lại trong bài những chỗ chưa giải thích được.
+Bản Nhật là nội dung chuẩn. Bản dịch do AI biên soạn, chưa duyệt bản ngữ/chuyên môn. 30 mục × 12 ngôn ngữ = 360 chuỗi.
 
 
 ## en
@@ -367,6 +184,189 @@ Handover of work and related information
 この節の場面や用語を読み、下の問いについて自分の言葉で説明してください。説明できない箇所は本文で確かめます。
 
 Read the situations and terms in this section and explain the question below in your own words. Check the text for anything you cannot explain.
+
+
+## vi
+
+### title
+
+自分の仕事と、次の人の仕事をつなぐ
+
+Kết nối công việc của mình với người làm bước tiếp theo
+
+### kensetsu-common-001-purpose:title
+
+自分の担当だけで考えない
+
+Không chỉ nghĩ đến phần việc của mình
+
+### kensetsu-common-001-purpose-p1
+
+現場では、一人で終わらせられる仕事ばかりではありません。自分が仕上げた場所を別の職種が使ったり、前の工程の結果を受け取って次の仕事を始めたりします。自分の担当が終わっても、次の人に必要な情報が伝わっていなければ、仕事はうまくつながりません。
+
+Ở công trường, không phải công việc nào cũng có thể hoàn thành bởi một người. Khu vực mình làm xong có thể được nhóm nghề khác sử dụng, hoặc người làm bước sau bắt đầu công việc dựa trên kết quả của công đoạn trước. Dù phần việc của mình đã xong, công việc vẫn khó nối tiếp thuận lợi nếu người làm bước sau chưa nhận được thông tin cần thiết.
+
+### kensetsu-common-001-purpose-p2
+
+チームワークとは、相手に合わせて何でも引き受けることではありません。担当する範囲、終わった部分、まだ確認が必要な部分を分けて伝え、関係する人と調整することです。経験のある人の助言も役立ちますが、現場で決められた指示や確認の経路を置き換えるものではありません。
+
+Làm việc nhóm không có nghĩa là nhận mọi việc để chiều theo người khác. Cần tách rõ và truyền đạt phạm vi phụ trách, phần đã hoàn thành và phần còn cần kiểm tra, đồng thời phối hợp với những người liên quan. Lời khuyên của người có kinh nghiệm cũng hữu ích, nhưng không thay thế quy trình truyền đạt chỉ thị và xác nhận đã được quy định tại công trường.
+
+### kensetsu-common-001-purpose:prompt
+
+前の工程が終わっていないと、次の職種にはどのような影響がありますか。
+
+Nếu công đoạn trước chưa hoàn thành, nhóm nghề thực hiện công đoạn sau sẽ bị ảnh hưởng như thế nào?
+
+### kensetsu-common-001-roles:title
+
+誰が、何を担当するのか
+
+Ai phụ trách việc gì?
+
+### kensetsu-common-001-roles-p1
+
+発注者は工事を注文する側です。建物を建てる個人の場合も、会社や自治体の場合もあります。設計者は要望を設計図書にまとめます。建築の工事監理では、設計図書と施工内容の関係を確認します。これは、現場の毎日の人員や作業順序を調整する仕事と、同じ意味ではありません。ここでは役割の違いを理解し、資格や法的責任の細かな範囲は別の学習項目で扱います。
+
+Bên đặt hàng công trình là bên yêu cầu thực hiện công trình. Đó có thể là cá nhân xây nhà, doanh nghiệp hoặc chính quyền địa phương. Người thiết kế tổng hợp các yêu cầu thành hồ sơ thiết kế. Trong xây dựng công trình kiến trúc, công tác kiểm tra thi công theo hồ sơ thiết kế (工事監理) đối chiếu hồ sơ thiết kế với nội dung thi công. Công việc này không đồng nghĩa với việc điều phối nhân lực và thứ tự công việc hằng ngày tại công trường. Ở đây, chúng ta phân biệt các vai trò; phạm vi chi tiết về tư cách chuyên môn và trách nhiệm pháp lý được học ở mục riêng.
+
+### kensetsu-common-001-roles-p2
+
+元請は、発注者から直接工事を請け負う会社などです。小規模な住宅工事では、施主が工務店に注文し、元請となった工務店が専門工事業者と調整する例があります。大きな工事では、工事全体をまとめるゼネコンと複数の専門工事業者が関わる体制もあります。会社の立場である「元請」と、人の役割である「現場監督」「職長」を区別しましょう。職長は現場監督と打合せをし、自分の班の作業員に指示を伝えます。
+
+Nhà thầu chính (元請) là doanh nghiệp hoặc bên trực tiếp nhận thầu từ bên đặt hàng. Ví dụ, ở công trình nhà ở quy mô nhỏ, chủ nhà đặt hàng cho một công ty xây dựng; công ty đó làm nhà thầu chính và phối hợp với các nhà thầu chuyên môn. Ở công trình lớn, cũng có cơ cấu gồm tổng thầu điều phối toàn bộ công trình và nhiều nhà thầu chuyên môn. Hãy phân biệt vị thế của doanh nghiệp là “nhà thầu chính” với vai trò của cá nhân là “người điều hành công trường” (現場監督) và “tổ trưởng” (職長). Tổ trưởng trao đổi với người điều hành công trường rồi truyền đạt chỉ thị cho công nhân trong tổ của mình.
+
+### kensetsu-common-001-roles:prompt
+
+発注者・元請会社・現場監督・職長を、会社の立場と人の役割に分けて説明してください。
+
+Hãy giải thích bên đặt hàng, công ty nhà thầu chính, người điều hành công trường và tổ trưởng, phân biệt vị thế của tổ chức với vai trò của cá nhân.
+
+### kensetsu-common-001-handover:title
+
+引き継ぐ情報を具体的にする
+
+Truyền đạt cụ thể thông tin bàn giao
+
+### kensetsu-common-001-handover-p1
+
+『終わりました』だけでは、相手がどの部分を使えるのか判断できないことがあります。場所、担当した内容、完了した範囲、未確認の点を分けて伝えると、次の人が状況を理解しやすくなります。作業の完了と、確認や承認の完了も区別します。自分で行っていない確認を、済んだこととして伝えないようにします。
+
+Chỉ nói “xong rồi” có thể khiến người nhận chưa biết phần nào đã sử dụng được. Nếu tách rõ vị trí, nội dung mình phụ trách, phạm vi đã hoàn thành và các điểm chưa kiểm tra, người làm bước sau sẽ dễ hiểu tình hình hơn. Cũng cần phân biệt hoàn tất công việc với hoàn tất kiểm tra hoặc phê duyệt. Không báo rằng bước kiểm tra mình chưa thực hiện đã hoàn tất.
+
+### kensetsu-common-001-handover-p2
+
+質問するときは、『分かりません』に、分からない点を一つ加えます。たとえば『場所は分かりました。引き渡す相手をもう一度教えてください』と言えば、相手は説明すべき部分を把握できます。指示が変わった場合は、自分だけで判断して他の班との約束を変更せず、現場で指定された担当者に確認します。
+
+Khi hỏi lại, hãy bổ sung một điểm cụ thể mình chưa hiểu vào câu “tôi không hiểu”. Ví dụ: “Tôi đã hiểu vị trí. Xin cho tôi biết lại người nhận bàn giao.” Như vậy, người nghe biết cần giải thích phần nào. Nếu chỉ thị thay đổi, hãy xác nhận với người được chỉ định tại công trường; không tự quyết định thay đổi thỏa thuận với tổ khác.
+
+### kensetsu-common-001-handover:prompt
+
+「終わりました」に場所と未確認事項を加えた報告を作ってください。
+
+Hãy viết một báo cáo bổ sung vị trí và các điểm chưa kiểm tra vào câu “xong rồi”.
+
+### kensetsu-common-001-example:title
+
+例：受け渡しの時刻を調整する
+
+Ví dụ: điều chỉnh thời điểm bàn giao
+
+### kensetsu-common-001-example-p1
+
+これは学習用に作った例です。新しい休憩室を整える現場で、収納棚の組立班と室内表示の取付班が、同じ部屋を使う予定になっています。森さんは組立班の作業員です。棚の組立は終わりましたが、職長による確認はまだです。森さんは取付班から『もう入っていいですか』と聞かれました。
+
+Đây là ví dụ được tạo cho việc học. Tại công trường chuẩn bị một phòng nghỉ mới, tổ lắp ráp kệ chứa đồ và tổ lắp biển trong phòng cùng dự định sử dụng một phòng. Mori là công nhân trong tổ lắp ráp. Kệ đã được lắp xong nhưng tổ trưởng chưa kiểm tra. Tổ lắp biển hỏi Mori: “Bây giờ chúng tôi vào được chưa?”
+
+### kensetsu-common-001-example-p2
+
+森さんは『組立は終わっています。ただ、職長の確認がまだです。受け渡しの時刻は職長に確認してからお伝えします』と答えます。この答えでは、終わった作業と未確認の点を混ぜずに伝えています。確認後は、相手に時刻だけでなく、受け渡す場所と担当者も知らせると連絡が具体的になります。
+
+Mori trả lời: “Việc lắp ráp đã xong. Tuy nhiên, tổ trưởng chưa kiểm tra. Tôi sẽ báo thời điểm bàn giao sau khi xác nhận với tổ trưởng.” Câu trả lời này tách rõ công việc đã hoàn thành và điểm chưa được kiểm tra. Sau khi xác nhận, thông tin liên lạc sẽ cụ thể hơn nếu báo cả vị trí và người phụ trách bàn giao, bên cạnh thời điểm.
+
+### kensetsu-common-001-example:prompt
+
+森さんが自分で受け渡し時刻を決められない理由を説明してください。
+
+Hãy giải thích vì sao Mori không thể tự quyết định thời điểm bàn giao.
+
+### kensetsu-common-001-example:reflection
+
+例を読み直し、完了したこと・未確認のこと・次に連絡することを、自分の言葉で整理しましょう。解答の提出や採点はありません。
+
+Đọc lại ví dụ và tự diễn đạt điều đã hoàn tất, điều chưa kiểm tra và việc cần liên lạc tiếp theo. Không có nộp đáp án hoặc chấm điểm.
+
+### kensetsu-common-001-example:caption
+
+組立が終わったことと、職長の確認が済んだことを分けて伝える場面のイメージです。図だけでは確認の完了を判断できません。本文の例と合わせて読みましょう。
+
+Minh họa việc truyền đạt, phân biệt lắp ráp đã hoàn thành với việc tổ trưởng đã kiểm tra. Chỉ nhìn hình không thể xác định việc kiểm tra đã hoàn tất. Hãy đọc cùng ví dụ trong bài.
+
+### kensetsu-common-001-summary:title
+
+言葉と要点を整理する
+
+Hệ thống lại từ và ý chính
+
+### kensetsu-common-001-summary-p1
+
+人の役割を区別し、自分の担当と次の工程の関係を考えることが、この日の学習の要点です。連絡するときは、場所・内容・完了範囲・未確認事項を整理します。誰に確認すべきか分からない場合は、その現場の連絡体制を確認しましょう。
+
+Trọng tâm của buổi học là phân biệt vai trò của từng người và xem xét mối liên hệ giữa phần việc của mình với công đoạn tiếp theo. Khi liên lạc, hãy sắp xếp rõ vị trí, nội dung, phạm vi đã hoàn thành và các điểm chưa kiểm tra. Nếu chưa biết cần xác nhận với ai, hãy tìm hiểu cơ cấu liên lạc tại chính công trường đó.
+
+### kensetsu-common-001-summary:prompt
+
+今の自分の担当と、次に情報を受け取る相手を書いてください。
+
+Hãy viết phần việc hiện tại của mình và người sẽ nhận thông tin ở bước tiếp theo.
+
+### kensetsu-common-001-summary:term:工程
+
+工程
+
+Công đoạn hoặc bước trong trình tự công việc
+
+### kensetsu-common-001-summary:term:発注者
+
+発注者
+
+Bên đặt hàng công trình
+
+### kensetsu-common-001-summary:term:設計図書
+
+設計図書
+
+Hồ sơ thiết kế
+
+### kensetsu-common-001-summary:term:工事監理
+
+工事監理
+
+Công tác đối chiếu việc thi công với hồ sơ thiết kế
+
+### kensetsu-common-001-summary:term:元請
+
+元請
+
+Nhà thầu trực tiếp nhận thầu từ bên đặt hàng
+
+### kensetsu-common-001-summary:term:職長
+
+職長
+
+Tổ trưởng chỉ đạo nhóm làm việc
+
+### kensetsu-common-001-summary:term:引き継ぎ
+
+引き継ぎ
+
+Bàn giao công việc và thông tin liên quan
+
+### learningActivity
+
+この節の場面や用語を読み、下の問いについて自分の言葉で説明してください。説明できない箇所は本文で確かめます。
+
+Đọc tình huống và thuật ngữ trong mục này, rồi tự giải thích câu hỏi bên dưới bằng lời của mình. Kiểm tra lại trong bài những chỗ chưa giải thích được.
 
 
 ## id
