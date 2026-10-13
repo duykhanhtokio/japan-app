@@ -525,3 +525,10 @@ Seki/Gero/Tajimi:24newindependentJapaneseexchanges,264turns120goals;Gifu61/181re
 Completed 24 individual Japanese exchanges (8 per city), 264 alternating turns and 120 separate speaking goals. Gifu now 85/181 rewritten; 96 old recipe drafts remain. Eight complete variants across seven IDs were rejected/replaced after prior-corpus comparisons; ten repeated NPC utterances were also revised. All current exchanges/goals and selected full counterpart scripts read against 3480 prior authored scripts. Exact new utterance collisions zero; structure and source/runtime parity pass. IDs/next links unchanged for changed scripts; 7104 other runtime files and all other canonical rows preserved. No translations or UI changes.
 
 Bounded AI review is recorded with current hashes in PRF-021_CLUSTER_03_REVIEW.json. This is not whole-prefecture CONTENT PASS, native/human approval or device testing. Next canonical group: CTY-JP-21209, CTY-JP-21210, CTY-JP-21211, first SC-LOC-JP-21209-01-001. Persist and verify this unit before advancing; complete remaining Gifu and prefecture-wide review before PRF-022.
+
+
+## Cluster04 Hashima/Ena/Minokamo — 2026-10-13
+
+Completed 24 individual Japanese exchanges (8 per city), 264 alternating turns and 120 separate speaking goals. Gifu now 109/181 rewritten; 72 old recipe drafts remain. Eight complete variants across six IDs were rejected and replaced after comparisons. All current exchanges/goals and selected full counterpart scripts read against 3504 prior authored scripts; comparison is bounded evidence rather than proof of global semantic uniqueness. No new exact utterance collisions. Structure, source/runtime metadata and goal parity pass. Changed script IDs/next links preserved; 7104 other runtime files and all other canonical rows unchanged. No translations or UI edits.
+
+Current hash-bound evidence is in PRF-021_CLUSTER_04_REVIEW.json. Not whole-prefecture CONTENT PASS, native/human approval or device testing. Next canonical group: CTY-JP-21212, CTY-JP-21213, CTY-JP-21214, first SC-LOC-JP-21212-01-001. Persist and verify before advancing; finish remaining Gifu and prefecture-wide review before PRF-022.
