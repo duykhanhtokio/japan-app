@@ -512,8 +512,8 @@ import week055 from '../../../docs/ssw-workspace/kensetsu/shared-week-055.json';
 export type Level='1'|'2';
 export type Field='utilities'|'building'|'civil';
 export type Paragraph={id:string;ja:string;translations?:Record<string,string>};
-export type Cluster={id:string;titleJa:string;titleTranslations?:Record<string,string>;paragraphs:Paragraph[];applicationPromptJa?:string;applicationPromptTranslations?:Record<string,string>;terms?:{ja:string;reading:string;translations?:Record<string,string>}[];illustration?:{assetPath:string;captionJa:string;captionTranslations?:Record<string,string>}};
-export type Session={id:string;revision:number;titleJa:string;titleTranslations?:Record<string,string>;clusters:Cluster[];keyTerms?:{term:string;reading:string}[];illustrations?:{path:string;clusterId?:string;altJa:string}[]};
+export type Cluster={id:string;titleJa:string;titleTranslations?:Record<string,string>;paragraphs:Paragraph[];applicationPromptJa?:string;applicationPromptTranslations?:Record<string,string>;reflectionJa?:string;reflectionTranslations?:Record<string,string>;learningActivity?:{ja:string;translations?:Record<string,string>;graded?:boolean};terms?:{ja:string;reading:string;translations?:Record<string,string>}[];illustration?:{assetPath:string;captionJa:string;captionTranslations?:Record<string,string>}};
+export type Session={id:string;revision:number;titleJa:string;titleTranslations?:Record<string,string>;clusters:Cluster[];keyTerms?:{term:string;reading:string;translations?:Record<string,string>}[];illustrations?:{path:string;clusterId?:string;altJa:string;altTranslations?:Record<string,string>}[]};
 export type Week={id:string;titleJa:string;sessionIds:string[]};
 export const fields:{id:Field;title:string}[]=[{id:'utilities',title:'ライフライン・設備'},{id:'building',title:'建築'},{id:'civil',title:'土木'}];
 

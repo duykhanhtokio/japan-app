@@ -12,6 +12,8 @@ Machine checks: scripts/check-kensetsu-week-translations.mjs verifies every sour
 
 State:8translated weeks/55;56translated lessons/385;329lessons remain. Next batch is the whole of week009, sessions057–063, in all12locales. Keep source IDs and valid prior translations; include every visible field and safety qualifier. No public translation service or runtime translation API was used. Weekly manifest and structural/runtime QA are retained beside this checkpoint. Durability must be established by the containing narrow commit on recovery/jlpt-n3-n1 and remote verification; this prose alone is not proof.
 
+Reader repair2026-10-13: existing shared reading instructions, distinct cluster activities and example reflections are now visible with their existing selected-locale translations. Shared instructions render once; identical activity/application prompts share one visible copy. This supersedes the historical reader omission noted in earlier weekly reports. No new lesson translation batch is claimed; week009 remains next. See ../READER_EXERCISES_CHECKPOINT_2026-10-13.md and its adapted-reader QA evidence.
+
 ## Week 002 completed coverage
 
 Sessions008–014 add219source units ×12locales =2,628strings, including84full paragraphs ×12 =1,008paragraph translations. Cumulative:386units/4,632strings;148paragraphs/1,776paragraph translations. All twelve existing non-Japanese app locales are covered. Source Japanese remains canonical. The content is translated from the existing source, not independently updated legal guidance.

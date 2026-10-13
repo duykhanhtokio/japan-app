@@ -37,7 +37,11 @@ function Reader({session,done,ready,saving,onComplete,language}:{session:Session
  const check=()=>{const g=geometry.current;if(g.height>0&&g.content>0&&g.y+g.height>=g.content-16)setReachedEnd(true);};
  const onScroll=(e:NativeSyntheticEvent<NativeScrollEvent>)=>{const n=e.nativeEvent;geometry.current={height:n.layoutMeasurement.height,content:n.contentSize.height,y:n.contentOffset.y};check();};
  const pictures=session.illustrations??[];
+ const sharedActivity=new Set(session.clusters.map(c=>c.learningActivity?.ja).filter(Boolean)).size<=1;
+ const activityCluster=session.clusters.find(c=>c.learningActivity?.ja);
  const translated=(id:string,text?:string)=>translationOpen&&language!=='ja'&&text?<Text selectable testID={`kensetsu-localized-${id}`} style={s.translationText}>{text}</Text>:null;
+ const repeatedActivity=(c:Session['clusters'][number])=>c.learningActivity?.ja===c.applicationPromptJa&&c.learningActivity?.translations?.[language]===c.applicationPromptTranslations?.[language];
+ const exerciseText=(id:string,ja:string,text?:string,alias?:string)=><View key={id}><View testID={alias?`kensetsu-source-${alias}`:undefined}><Text selectable testID={`kensetsu-source-${id}`} style={s.reflectionText}>{ja}</Text></View>{translationOpen&&language!=='ja'&&<View testID={alias?`kensetsu-localized-${alias}`:undefined}><Text selectable testID={`kensetsu-localized-${id}`} style={s.translationText}>{text||'この段落の翻訳は準備中です。'}</Text></View>}</View>;
  const art=(items:typeof pictures)=>items.map(a=><View key={a.path}><StudyImage path={a.path} caption={a.altJa}/>{translated(session.id+':illustration:'+pictures.indexOf(a)+':alt',a.altTranslations?.[language])}</View>);
  return <ScrollView testID="kensetsu-reader" style={s.readingSurface} scrollEventThrottle={80} onScroll={onScroll} onLayout={e=>{geometry.current.height=e.nativeEvent.layout.height;check();}} onContentSizeChange={(_,height)=>{geometry.current.content=height;check();}} contentContainerStyle={s.readingContent}>
  <View style={s.article}><Action testID="kensetsu-translation" title={translationOpen?'翻訳を閉じる':'翻訳を見る'} onPress={()=>setTranslationOpen(v=>!v)}/>
@@ -46,7 +50,16 @@ function Reader({session,done,ready,saving,onComplete,language}:{session:Session
  <Text style={s.caption}>この回のテーマ</Text><Text style={s.body}>{session.clusters.map(c=>c.titleJa).join(' ・ ')}</Text>
  {session.clusters.map((c,i)=><View key={c.id} testID={`kensetsu-section-${c.id}`} style={s.readingSection}><Text style={s.heading}>{i+1}. {c.titleJa}</Text>{translated(c.id+':title',c.titleTranslations?.[language])}{c.paragraphs.map(p=><View key={p.id}><Text selectable style={s.readingText}>{p.ja}</Text>{translationOpen&&language!=='ja'&&<Text selectable testID={`kensetsu-translation-${p.id}`} style={s.translationText}>{p.translations?.[language]||'この段落の翻訳は準備中です。'}</Text>}</View>)}{c.terms?.map(t=><View key={t.ja}><Text style={s.body}>{t.ja}（{t.reading}）</Text>{translated(c.id+':term:'+t.ja,t.translations?.[language])}</View>)}{art(pictures.filter(a=>a.clusterId===c.id))}{c.illustration&&<><StudyImage path={c.illustration.assetPath} caption={c.illustration.captionJa}/>{translated(c.id+':caption',c.illustration.captionTranslations?.[language])}</>} {i===0&&art(pictures.filter(a=>!a.clusterId))}</View>)}
  {!!session.keyTerms?.length&&<View style={s.readingSection}><Text style={s.heading}>ことばを整理する</Text>{session.keyTerms.map(t=><View key={t.term}><Text style={s.body}>{t.term}（{t.reading}）</Text>{translated(session.id+':keyTerm:'+t.term,t.translations?.[language])}</View>)}</View>}
- <View testID="kensetsu-reflections" style={s.readingSection}><Text style={s.heading}>振り返り</Text><Text style={s.caption}>採点はありません。本文をもとに自分の言葉で説明してください。</Text>{session.clusters.filter(c=>c.applicationPromptJa).map((c,i)=><View key={c.id}><Text style={s.reflectionText}>{i+1}. {c.applicationPromptJa}</Text>{translated(c.id+':prompt',c.applicationPromptTranslations?.[language])}</View>)}</View>
+ <View testID="kensetsu-reflections" style={s.readingSection}>
+ <Text style={s.heading}>振り返り</Text><Text style={s.caption}>採点はありません。本文をもとに自分の言葉で説明してください。</Text>
+ {sharedActivity&&activityCluster?.learningActivity&&exerciseText(session.id+':learningActivity',activityCluster.learningActivity.ja,activityCluster.learningActivity.translations?.[language])}
+ {session.clusters.filter(c=>c.applicationPromptJa||c.reflectionJa||(!sharedActivity&&c.learningActivity?.ja)).map(c=><View key={c.id}>
+ <Text style={s.body}>{c.titleJa}</Text>
+ {!sharedActivity&&c.learningActivity&&!repeatedActivity(c)&&exerciseText(c.id+':activity',c.learningActivity.ja,c.learningActivity.translations?.[language])}
+ {c.applicationPromptJa&&exerciseText(c.id+':prompt',c.applicationPromptJa,c.applicationPromptTranslations?.[language],!sharedActivity&&repeatedActivity(c)?c.id+':activity':undefined)}
+ {c.reflectionJa&&exerciseText(c.id+':reflection',c.reflectionJa,c.reflectionTranslations?.[language])}
+ </View>)}
+ </View>
  <Action testID="kensetsu-complete" title={done?'✓ 学習済み':saving?'保存中…':'完了'} disabled={!ready||saving||!reachedEnd||done} onPress={onComplete}/>{!done&&!reachedEnd&&<Text style={s.caption}>最後まで読んでから「完了」を押してください。</Text>}
  </View></ScrollView>;
 }

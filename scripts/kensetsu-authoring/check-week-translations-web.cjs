@@ -12,7 +12,7 @@ const bundles=Array.from({length:7},(_,i)=>JSON.parse(fs.readFileSync(`src/data/
 const bundle=bundles[0];
 const firstParagraph=Object.keys(bundle.entries).find(id=>/-p\d+$/.test(id));
 const sourceIds=bundles.flatMap(b=>Object.keys(b.entries));
-const verifiedFields=[['title',id=>id==='title'],['clusterTitles',id=>/:title$/.test(id)],['paragraphs',id=>/-p\d+$/.test(id)],['prompts',id=>/:prompt$/.test(id)],['caption',id=>/:caption$/.test(id)],['glossary',id=>/:term:/.test(id)],['keyTerms',id=>/^keyTerm:/.test(id)],['illustrationAlt',id=>/^illustration:/.test(id)]].filter(([,matches])=>sourceIds.some(matches)).map(([name])=>name);
+const verifiedFields=[['title',id=>id==='title'],['clusterTitles',id=>/:title$/.test(id)],['paragraphs',id=>/-p\d+$/.test(id)],['prompts',id=>/:prompt$/.test(id)],['reflections',id=>/:reflection$/.test(id)],['learningActivities',id=>id==='learningActivity'||/:activity$/.test(id)],['caption',id=>/:caption$/.test(id)],['glossary',id=>/:term:/.test(id)],['keyTerms',id=>/^keyTerm:/.test(id)],['illustrationAlt',id=>/^illustration:/.test(id)]].filter(([,matches])=>sourceIds.some(matches)).map(([name])=>name);
 fs.writeFileSync(path.join(out,'entry.tsx'),`import React from 'react';import {createRoot} from 'react-dom/client';import {KensetsuCourse} from ${JSON.stringify(root+'/src/components/kensetsu/KensetsuCourse')};createRoot(document.getElementById('root')).render(<KensetsuCourse learner="translation-qa" language={new URLSearchParams(location.search).get('language')||'en'} onBack={()=>{}}/>);`);
 const adapters={
  safe:`export const useSafeAreaInsets=()=>({top:0,bottom:0,left:0,right:0});`,
@@ -50,15 +50,22 @@ const adapters={
    let testId;if(id==='title')testId='kensetsu-localized-'+sessionId+':title';
    else if(/-p\d+$/.test(id))testId='kensetsu-translation-'+id;
    else if(/^keyTerm:|^illustration:/.test(id))testId='kensetsu-localized-'+sessionId+':'+id;
-   else if(/:title$|:caption$|:prompt$|:term:/.test(id))testId='kensetsu-localized-'+id;
-   else continue;
+   else if(id==='learningActivity')testId='kensetsu-localized-'+sessionId+':learningActivity';
+   else if(/:title$|:caption$|:prompt$|:reflection$|:activity$|:term:/.test(id))testId='kensetsu-localized-'+id;
+   else throw Error('Unverified translation field: '+id);
    assert.equal(await page.getByTestId(testId).innerText(),entry.translations[locale],testId+':'+locale);
    if(/-p\d+$/.test(id))assert.equal(await page.getByText(entry.sourceJa,{exact:true}).count(),1,'Japanese remains visible');
+   if(id==='learningActivity'||/:reflection$|:activity$/.test(id)){
+    const sourceId=id==='learningActivity'?sessionId+':learningActivity':id;
+    assert.equal(await page.getByTestId('kensetsu-source-'+sourceId).innerText(),entry.sourceJa);
+    assert.equal(await page.getByText(entry.sourceJa,{exact:true}).count(),1,'Repeated instruction displayed once');
+   }
   }
   assert.equal(await page.getByText('この段落の翻訳は準備中です。',{exact:true}).count(),0);
   assert(await page.getByTestId('kensetsu-complete').isDisabled());
   await page.getByTestId('kensetsu-translation').click();
   assert.equal(await page.getByTestId('kensetsu-translation-'+Object.keys(lessonBundle.entries).find(id=>/-p\d+$/.test(id))).count(),0);
+  for(const id of Object.keys(lessonBundle.entries).filter(id=>id==='learningActivity'||/:reflection$|:activity$/.test(id)))assert.equal(await page.getByTestId('kensetsu-localized-'+(id==='learningActivity'?sessionId+':learningActivity':id)).count(),0);
   }
   tested.push(locale);
  }
@@ -67,6 +74,10 @@ const adapters={
  for(const [w,h,name] of [[320,568,'phone'],[768,1024,'tablet'],[932,430,'landscape']]){
   await page.setViewportSize({width:w,height:h});await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:path.join(out,name+'.png')});
   assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1));screens.push({width:w,height:h});
+  await page.getByTestId('kensetsu-reflections').scrollIntoViewIfNeeded();
+  await page.screenshot({path:path.join(out,name+'-reflections.png')});
+  assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1));
+  await page.getByTestId('kensetsu-reader').evaluate(e=>{e.scrollTop=0;});
  }
  await enter('vi');await page.getByTestId('kensetsu-translation').click();
  await page.getByTestId('kensetsu-reader').evaluate(e=>{e.scrollTop=e.scrollHeight;e.dispatchEvent(new Event('scroll',{bubbles:true}));});
@@ -76,11 +87,14 @@ const adapters={
  assert((await page.getByTestId('kensetsu-complete').innerText()).includes('学習済み'));
  await enter('ja');await page.getByTestId('kensetsu-translation').click();
  assert.equal(await page.getByTestId('kensetsu-translation-'+firstParagraph).count(),0);
+ const exerciseIds=Object.keys(bundle.entries).filter(id=>id==='learningActivity'||/:activity$|:reflection$/.test(id));
+ for(const id of exerciseIds)assert.equal(await page.getByTestId('kensetsu-localized-'+(id==='learningActivity'?bundle.sessionId+':learningActivity':id)).count(),0);
  await enter('xx');await page.getByTestId('kensetsu-translation').click();
  assert.equal(await page.getByTestId('kensetsu-translation-'+firstParagraph).innerText(),'この段落の翻訳は準備中です。');
+ for(const id of exerciseIds)assert.equal(await page.getByTestId('kensetsu-localized-'+(id==='learningActivity'?bundle.sessionId+':learningActivity':id)).innerText(),'この段落の翻訳は準備中です。');
  assert.equal(errors.length,0,errors.join('\n'));
- const report={status:'PASS_WEB_ADAPTED_READER',week,locales:tested,lessons:7,localeLessonCombinations:84,translatedFieldsVerified:verifiedFields,toggleVerified:true,japaneseRetained:true,noLocaleFallback:true,completionNotTriggeredByTranslation:true,completionReloadVerified:true,viewports:screens,consoleErrors:errors,adapters:['ReactNativeWeb','AsyncStorage to localStorage','zero safe area','Royal decorative wrappers/back button stubbed','image placeholders'],limits:['Core real reader tested; decorative art/Royal design and all-script glyph coverage not certified','Learning activity and example reflection, when present, are translated in data but not separately exposed by current reader','No native device, human language or domain review'],nativeDeviceTested:false,releaseReady:false};
- fs.writeFileSync(`docs/ssw-workspace/kensetsu/translations/week-${weekCode}-web-qa.json`,JSON.stringify(report,null,2)+'\n');
+ const report={status:'PASS_WEB_ADAPTED_READER',week,locales:tested,lessons:7,localeLessonCombinations:84,translatedFieldsVerified:verifiedFields,toggleVerified:true,japaneseRetained:true,noLocaleFallback:true,completionNotTriggeredByTranslation:true,completionReloadVerified:true,viewports:screens,consoleErrors:errors,adapters:['ReactNativeWeb','AsyncStorage to localStorage','zero safe area','Royal decorative wrappers/back button stubbed','image placeholders'],limits:['Core real reader tested; decorative art/Royal design and all-script glyph coverage not certified','No native device, human language or domain review'],nativeDeviceTested:false,releaseReady:false};
+ fs.writeFileSync(process.env.KENSETSU_QA_REPORT||`docs/ssw-workspace/kensetsu/translations/week-${weekCode}-web-qa.json`,JSON.stringify(report,null,2)+'\n');
  console.log('PASS: all seven lessons x 12 translation locales in actual reader; toggle, source Japanese, no fallback, completion/reload; three viewport overflow checks. Decorative wrappers/assets adapted.');
  await browser.close();server.close();
 })().catch(e=>{console.error(e);process.exit(1)});
