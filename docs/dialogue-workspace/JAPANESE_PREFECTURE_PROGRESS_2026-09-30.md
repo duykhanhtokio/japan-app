@@ -518,3 +518,10 @@ Completed 173/173 scenarios (1,903 alternating turns; 865 speaking goals). Final
 ## Gifu cluster02 — 2026-10-13
 
 Seki/Gero/Tajimi:24newindependentJapaneseexchanges,264turns120goals;Gifu61/181rewritten,120old drafts remain. Prior next-city wording corrected from Nakatsugawa to Gero/Tajimi. Four full variants replaced across3IDs;24selected full comparisons against3456authored scripts and internal comparisons bound in PRF-021_CLUSTER_02_REVIEW.json. No whole-prefecture CONTENT PASS or translations. Next canonical first SC-LOC-JP-21206-01-001 after remote persistence.
+
+
+## Cluster03 Nakatsugawa/Mino/Mizunami — 2026-10-13
+
+Completed 24 individual Japanese exchanges (8 per city), 264 alternating turns and 120 separate speaking goals. Gifu now 85/181 rewritten; 96 old recipe drafts remain. Eight complete variants across seven IDs were rejected/replaced after prior-corpus comparisons; ten repeated NPC utterances were also revised. All current exchanges/goals and selected full counterpart scripts read against 3480 prior authored scripts. Exact new utterance collisions zero; structure and source/runtime parity pass. IDs/next links unchanged for changed scripts; 7104 other runtime files and all other canonical rows preserved. No translations or UI changes.
+
+Bounded AI review is recorded with current hashes in PRF-021_CLUSTER_03_REVIEW.json. This is not whole-prefecture CONTENT PASS, native/human approval or device testing. Next canonical group: CTY-JP-21209, CTY-JP-21210, CTY-JP-21211, first SC-LOC-JP-21209-01-001. Persist and verify this unit before advancing; complete remaining Gifu and prefecture-wide review before PRF-022.

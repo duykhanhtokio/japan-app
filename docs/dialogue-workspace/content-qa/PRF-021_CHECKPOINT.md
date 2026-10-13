@@ -16,3 +16,10 @@ Correction: canonical order after Seki is Gero then Tajimi, not Nakatsugawa. Com
 Factory,Workshop,Classroom andPark Staff role metadata aligned. Gero ruins label explicitly simulated, with no factual venue-operation claim. Dedicated specialist scene/NPC art and device checks remain pending. No CONTENT PASS, human/native or real-service certification. No translations.
 
 Next canonical three-city group: CTY-JP-21206, CTY-JP-21207, CTY-JP-21208; first SC-LOC-JP-21206-01-001. Publish/verify this unit before advancing, then complete all Gifu and whole-prefecture QA before PRF-022.
+
+
+## Cluster03 Nakatsugawa/Mino/Mizunami — 2026-10-13
+
+Completed 24 individual Japanese exchanges (8 per city), 264 alternating turns and 120 separate speaking goals. Gifu now 85/181 rewritten; 96 old recipe drafts remain. Eight complete variants across seven IDs were rejected/replaced after prior-corpus comparisons; ten repeated NPC utterances were also revised. All current exchanges/goals and selected full counterpart scripts read against 3480 prior authored scripts. Exact new utterance collisions zero; structure and source/runtime parity pass. IDs/next links unchanged for changed scripts; 7104 other runtime files and all other canonical rows preserved. No translations or UI changes.
+
+Bounded AI review is recorded with current hashes in PRF-021_CLUSTER_03_REVIEW.json. This is not whole-prefecture CONTENT PASS, native/human approval or device testing. Next canonical group: CTY-JP-21209, CTY-JP-21210, CTY-JP-21211, first SC-LOC-JP-21209-01-001. Persist and verify this unit before advancing; complete remaining Gifu and prefecture-wide review before PRF-022.
