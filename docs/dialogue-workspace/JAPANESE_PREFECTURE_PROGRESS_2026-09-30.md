@@ -685,3 +685,8 @@ Evidence: content-qa/PRF-024_INPUT_MANIFEST, GROUP_01–05_AUTHOR/SECOND_READ, R
 Real repository/dialogue-loader filesystem Metro adapter verifies all117 source/runtime/title/premise/goal/category bindings. All7128 canonical IDs/order/links, existing turn IDs/chains and indices retained. Unrelated7444 runtime files, unrelated canonical/location data, completed Mie and incoming Kensetsu week010/011 work remain unchanged. No exact Player collision against77121 outside shared turns. Stale per-turn translations/furigana/examples and obsolete descriptive metadata cleared for rewritten entries; no new translations.24 role/display corrections preserve IDs and supported progress roles, with explicit fictional replacements for unverified labels.
 
 AI editorial acceptance is distinct from native/human, actual-service-policy, dedicated artwork/voice, translation, device and release approval, which remain false/pending. Evidence:content-qa/PRF-025_INPUT_MANIFEST,GROUP_01–05_AUTHOR/SECOND_READ,RUNTIME_QA,CROSS_CORPUS_SCREEN,ROOT_ADJUDICATION,SEMANTIC_REVIEW and MASTER_JA_LOCK. Require containing integration commit remote verification and WORK PERSISTENCE PASS before advancing. Next prefecture:PRF-026 Kyoto.
+
+
+## 2026-10-14 Kyoto PRF-026 — interrupted draft checkpoint
+
+133/133 provisionally authored and integrated; CONTENT NOT ACCEPTED. Agent usage limits interrupted whole replacements and independent final readings. See content-qa/PRF-026_CHECKPOINT.md. Mie/Shiga accepted checkpoints preserved. Next remains finish Kyoto, then Osaka.
