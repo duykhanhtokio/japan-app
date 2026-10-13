@@ -12,11 +12,12 @@ type LocalizableSession={id:string;titleJa:string;titleTranslations?:LocaleText;
 
 export function collectTranslatableUnits(session:LocalizableSession):Record<string,string>{
  const units:Record<string,string>={title:session.titleJa};
+ const sharedActivity=new Set(session.clusters.map(c=>c.learningActivity?.ja).filter(Boolean)).size<=1;
  const add=(id:string,ja:string|undefined)=>{if(!ja)return;if(units[id]!==undefined&&units[id]!==ja)throw new Error(`Conflicting translation unit: ${id}`);units[id]=ja;};
  for(const c of session.clusters){
   add(c.id+':title',c.titleJa);for(const p of c.paragraphs)add(p.id,p.ja);
   add(c.id+':prompt',c.applicationPromptJa);add(c.id+':reflection',c.reflectionJa);
-  add(c.id+':caption',c.illustration?.captionJa);add('learningActivity',c.learningActivity?.ja);
+  add(c.id+':caption',c.illustration?.captionJa);add(sharedActivity?'learningActivity':c.id+':activity',c.learningActivity?.ja);
   for(const t of c.terms??[])add(c.id+':term:'+t.ja,t.ja);
  }
  for(const t of session.keyTerms??[])add('keyTerm:'+t.term,t.term);
@@ -41,7 +42,7 @@ export function applyLessonTranslations<T extends LocalizableSession>(session:T,
   paragraphs:c.paragraphs.map(p=>({...p,translations:texts(p.id,p.ja,p.translations)})),
   applicationPromptTranslations:texts(c.id+':prompt',c.applicationPromptJa,c.applicationPromptTranslations),
   reflectionTranslations:texts(c.id+':reflection',c.reflectionJa,c.reflectionTranslations),
-  learningActivity:c.learningActivity?{...c.learningActivity,translations:texts('learningActivity',c.learningActivity.ja,c.learningActivity.translations)}:undefined,
+  learningActivity:c.learningActivity?{...c.learningActivity,translations:texts(bundle.entries[c.id+':activity']?c.id+':activity':'learningActivity',c.learningActivity.ja,c.learningActivity.translations)}:undefined,
   terms:c.terms?.map(t=>({...t,translations:texts(c.id+':term:'+t.ja,t.ja,t.translations)})),
   illustration:c.illustration?{...c.illustration,captionTranslations:texts(c.id+':caption',c.illustration.captionJa,c.illustration.captionTranslations)}:undefined,
  }))} as T;

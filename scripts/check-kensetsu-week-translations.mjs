@@ -2,11 +2,13 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
 import {applyLessonTranslations,collectTranslatableUnits} from '../src/data/kensetsu/localization.ts';
+const week=Number(process.argv[2]??1);assert(Number.isInteger(week)&&week>=1&&week<=55);
+const weekCode=String(week).padStart(3,'0');
 const expected=['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];
 const catalog=fs.readFileSync('src/i18n/languages.ts','utf8');
 const actual=[...catalog.matchAll(/code:\s*'([^']+)'/g)].map(m=>m[1]).filter(x=>x!=='ja');
 assert.deepEqual(actual.slice().sort(),expected.slice().sort());
-const files=Array.from({length:7},(_,i)=>`session-${String(i+1).padStart(3,'0')}.json`);
+const files=Array.from({length:7},(_,i)=>`session-${String((week-1)*7+i+1).padStart(3,'0')}.json`);
 const records=[];let units=0,paragraphs=0,prompts=0,terms=0;
 for(const file of files){
  const number=file.match(/\d{3}/)[0];
@@ -55,12 +57,13 @@ for(const file of files){
  records.push({sessionId:source.id,sourceRevision:source.revision,sourceContentRevision:source.contentRevision??source.revision,
  sourceSha256:crypto.createHash('sha256').update(bytes).digest('hex'),unitCount,paragraphCount:count,translatedStrings:unitCount*12});
 }
-assert.equal(units,167);assert.equal(paragraphs,64*12);
-const report={status:'PASS_MACHINE_WEEKLY_ALIGNMENT_AND_ADAPTER',weekId:'kensetsu-common-week-001',completeLessonIds:records.map(r=>r.sessionId),locales:expected,
+const expectedCounts={1:{units:167,paragraphs:64},2:{units:219,paragraphs:84}};
+if(expectedCounts[week]){assert.equal(units,expectedCounts[week].units);assert.equal(paragraphs,expectedCounts[week].paragraphs*12);}
+const report={status:'PASS_MACHINE_WEEKLY_ALIGNMENT_AND_ADAPTER',weekId:`kensetsu-common-week-${weekCode}`,completeLessonIds:records.map(r=>r.sessionId),locales:expected,
  translatedUnits:units,translatedStrings:units*12,paragraphTranslationStrings:paragraphs,promptTranslationStrings:prompts,glossaryTranslationStrings:terms,
  sourceRecords:records,canonicalJapaneseUnchanged:true,sourceObjectsNotMutated:true,progressIdsUnchanged:true,
- staleSourceSuppressesTranslations:true,unrelatedSessionsUnchanged:true,staleVietnameseCorrected:true,
+ staleSourceSuppressesTranslations:true,unrelatedSessionsUnchanged:true,weekOneVietnameseRegressionChecked:week===1,
  humanLanguageReviewed:false,domainReviewed:false,releaseReady:false,
  limits:['Coverage, script and source-matching checks do not certify semantic accuracy, native-language review or rights.']};
-fs.writeFileSync('docs/ssw-workspace/kensetsu/translations/week-001-structural-qa.json',JSON.stringify(report,null,2)+'\n');
-console.log(`KENSETSU WEEKLY TRANSLATIONS PASS: 7 lessons / ${units} units / 12 locales / ${units*12} strings / ${paragraphs} paragraph translations; Japanese and progress IDs unchanged.`);
+fs.writeFileSync(`docs/ssw-workspace/kensetsu/translations/week-${weekCode}-structural-qa.json`,JSON.stringify(report,null,2)+'\n');
+console.log(`KENSETSU WEEKLY TRANSLATIONS PASS: week ${week} / 7 lessons / ${units} units / 12 locales / ${units*12} strings / ${paragraphs} paragraph translations; Japanese and progress IDs unchanged.`);
