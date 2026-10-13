@@ -53,3 +53,14 @@ Source/canonical/runtime parity passes. All7128 identities, order and next links
 21 generic labels are explicitly simulated; three parks use Park Staff and stations retain operator evidence. Fictional rail/certificate/envelope/apple prices and service premises are explicit. Gotemba postal overlap was replaced completely; the rope-jump count is one finger per jump, stopping atfive. Native/human, dedicated visuals, device and actual-service certification remain pending.
 
 Next complete city cluster: Shimoda/Susono/Kosai (CTY-JP-22219/22220/22221). Publish this narrow24-script unit and require WORK PERSISTENCE PASS before advancing. Complete197 and whole-prefecture editorial gate before PRF-023.
+
+
+## Cluster06 Shimoda/Susono/Kosai — 2026-10-13
+
+Added24 individual Japanese exchanges,264 alternating turns and120 distinct goals. Shizuoka now has157/197 rewrites;40 old recipe drafts remain. Full24 current exchanges and goals,38 selected full prior counterparts, one full discarded prior attempt and eight internal groups were read. Rejected outlines are distinguished from full rejected drafts; final source/runtime hashes bind the independent cluster acceptance with zero open blockers. Whole-prefecture CONTENT PASS remains false.
+
+Source/canonical/runtime parity passes. All7128 identities, order and next links are preserved; other7104 runtime hashes and canonical rows and previous133 rewrites remain unchanged. No new exact utterance collisions. Whole197 structural errors0, normalized groups8, near candidates17. NPC progression passes; unchanged JLPT UI lock retains10/10. Japanese only, translations deferred.
+
+21 generic labels and Kosai station-information point are explicitly simulated; Shimoda station corrected to伊豆急下田駅 and Susono operator name retained; three parks use Park Staff. Fictional rail/service conditions and bank customer reference/25000 amount are explicit. Susono postal request uses direct delivery-contact handoff; body-side correction reports the actual patient side. Kosai original source survived an author disconnect and was preserved; a second author read it and completed report-only evidence without inventing original rejected drafts. Shared prefix concept with a discarded Gujo attempt is disclosed and actual cited prior counterpart fully checked. Native/human, dedicated visuals, device and real-service certification remain pending.
+
+Next complete city cluster: Izu/Omaezaki/Kikugawa (CTY-JP-22222/22223/22224). Publish this narrow24-script unit and require WORK PERSISTENCE PASS before advancing. Complete197 and whole-prefecture editorial gate before PRF-023.
