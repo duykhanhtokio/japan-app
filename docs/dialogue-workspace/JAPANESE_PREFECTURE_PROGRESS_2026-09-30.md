@@ -539,3 +539,12 @@ Current hash-bound evidence is in PRF-021_CLUSTER_04_REVIEW.json. Not whole-pref
 Completed 24 individual Japanese exchanges (8 per city), 264 alternating turns and 120 separate speaking goals. Gifu now 133/181 rewritten; 48 old recipe drafts remain. Five complete variants across four IDs rejected/replaced after prior and internal comparisons. Current exchanges/goals and selected full counterparts read against 3528 prior authored scripts. This comparison is bounded evidence, not proof of global semantic uniqueness. New exact utterance collisions zero. Source/runtime metadata and goal parity pass; changed-script identities/next links retained; 7104 other runtime files and all other canonical rows unchanged. No translations or UI edits.
 
 Current hashes and review evidence are in PRF-021_CLUSTER_05_REVIEW.json. Not whole-prefecture CONTENT PASS, native/human approval or device testing. Next canonical group: CTY-JP-21215, CTY-JP-21216, CTY-JP-21217, first SC-LOC-JP-21215-01-001. Persist and verify before advancing; finish remaining Gifu and prefecture-wide review before PRF-022.
+
+
+## Cluster06 Yamagata/Mizuho/Hida — 2026-10-13
+
+Completed 24 individual Japanese exchanges (8 per city), 264 alternating turns and 120 separate speaking goals. Gifu now 157/181 rewritten; 24 old recipe drafts remain. Two complete variants rejected and replaced after comparison; two exact repeated NPC closures revised. Current exchanges/goals and selected full counterparts read against 3552 prior authored scripts; bounded comparison is not proof of global semantic uniqueness. New exact utterance collisions zero. Source/runtime metadata and goal parity pass. Changed-script identities/next links retained; 7104 other runtime files and all other canonical rows unchanged. No translations or UI edits.
+
+Yamagata fictitious railway station corrected to bus-information setting using municipal public-transport council document p4 (https://www.city.yamagata.gifu.jp/uploaded/attachment/15142.pdf). Location ID remains; category Bus Terminal, NPC Information Staff. Mizuho/Hida generic transport names marked explicitly simulated. Dedicated bus scene/NPC art and device validation remain pending. Current evidence is in PRF-021_CLUSTER_06_REVIEW.json. No whole-prefecture CONTENT PASS, native/human or actual service approval.
+
+Next canonical group: CTY-JP-21218, CTY-JP-21219, CTY-JP-21221, first SC-LOC-JP-21218-01-001. Persist and verify before advancing; finish final 24 Gifu and prefecture-wide review before PRF-022.
