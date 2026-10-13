@@ -1,4 +1,4 @@
-# 建設 translation checkpoint — week 008, 2026-10-13
+# 建設 translation checkpoint — week 009, 2026-10-13
 
 Publisher explicitly approved weekly translation batches and six parallel translators for the remaining week-001 lessons. The previous translation deferral is superseded for this authorized work. Japanese remains canonical; the Japanese-only test bank is unchanged.
 
@@ -85,3 +85,12 @@ Independent bounded AI comparison covers all191 units in all12 locales,2,292 str
 Assembler and structural QA PASS: exact current source IDs/Japanese, all12 locales/full mappings, immutability, stable progress, stale suppression, unrelated-session identity and unexpected-Korean-script guard. Final ten non-Chinese locales have no Japanese/CJK remnants; all12 preserve119 in the relevant paragraph. Registry imports001–056. Narrow adapter/index TypeScript PASS with minimal image declarations; unchanged10-test/200-question source-hash validation PASS. Actual adapted reader PASS84 locale–lesson combinations and present fields title/clusterTitles/paragraphs/prompts/keyTerms/illustrationAlt, toggle, retained Japanese, unsupported-locale handling, manual completion and reload, no JavaScript errors. Japanese/Vietnamese phone320×568, tablet768×1024 and landscape932×430 captures inspected with no horizontal overflow. Royal decoration/images, safearea and storage are adapted; native devices/all-script glyph coverage remain unverified. Isolated build warns of unavailable expo/tsconfig.base. Activity/reflection data, when present, has no separate reader area.
 
 Next whole batch:week009 sessions057–063 in all12 locales;329 of385 lessons remain. Weekly manifest, Vietnamese report and structural/web QA accompany this checkpoint. Durable completion requires the containing narrow commit to be remotely verified on recovery/jlpt-n3-n1; concurrent unrelated work is preserved.
+
+
+## Week 009 completed AI translation coverage — 2026-10-13
+
+Sessions057–063 add191 source units×12 locales=2,292 strings, including84 full paragraphs×12=1,008 paragraph translations. Cumulative63 lessons,1,781 units/21,372 strings;768 paragraphs/9,216 paragraph translations. Six simultaneous locale-pair translators followed by independent AI comparison of every source unit in all12 locales. Bounded corrections and rereads: WEEK_009_AI_REVIEW.json. Reclamation water-area scope, machine mass, soil/sand, prefectural governor, well deepening, tunnel segments, discharge test, vacuum, fluid, finished dimensions and qualification/permission limits retained.
+
+Assembler, source alignment/immutability/stale suppression, narrow adapter/index TypeScript PASS.442 canonical/prior translation/reader files unchanged. Existing10 Japanese tests/200questions source-hash validation PASS. Actual adapted reader PASS84 locale–lesson combinations; all present fields including final reflection prompts, toggle, retained Japanese, unsupported-locale handling, manual completion/reload; no JavaScript errors. Japanese plus Vietnamese phone320×568, tablet768×1024, landscape932×430 and reflection captures inspected without horizontal overflow. Decorative Royal controls/images, safearea and storage adapted. Not native devices, all-script glyph certification, native-speaker/domain/rights approval or release. Isolated build warns unavailable expo/tsconfig.base.
+
+Next whole batch: week010 sessions064–070;322 of385 lessons remain. Manifest/report/structural QA/web QA and screenshots accompany this checkpoint. Durable completion requires containing narrow commit remotely verified on recovery/jlpt-n3-n1. Concurrent unrelated dialogue work preserved.
