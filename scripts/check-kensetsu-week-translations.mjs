@@ -62,7 +62,7 @@ for(const file of files){
  records.push({sessionId:source.id,sourceRevision:source.revision,sourceContentRevision:source.contentRevision??source.revision,
  sourceSha256:crypto.createHash('sha256').update(bytes).digest('hex'),unitCount,paragraphCount:count,translatedStrings:unitCount*12});
 }
-const expectedCounts={1:{units:167,paragraphs:64},2:{units:219,paragraphs:84},3:{units:217,paragraphs:101},4:{units:207,paragraphs:93},5:{units:207,paragraphs:90},6:{units:191,paragraphs:84},7:{units:191,paragraphs:84}};
+const expectedCounts={1:{units:167,paragraphs:64},2:{units:219,paragraphs:84},3:{units:217,paragraphs:101},4:{units:207,paragraphs:93},5:{units:207,paragraphs:90},6:{units:191,paragraphs:84},7:{units:191,paragraphs:84},8:{units:191,paragraphs:84}};
 if(expectedCounts[week]){assert.equal(units,expectedCounts[week].units);assert.equal(paragraphs,expectedCounts[week].paragraphs*12);}
 const report={status:'PASS_MACHINE_WEEKLY_ALIGNMENT_AND_ADAPTER',weekId:`kensetsu-common-week-${weekCode}`,completeLessonIds:records.map(r=>r.sessionId),locales:expected,
  translatedUnits:units,translatedStrings:units*12,paragraphTranslationStrings:paragraphs,promptTranslationStrings:prompts,glossaryTranslationStrings:terms,
