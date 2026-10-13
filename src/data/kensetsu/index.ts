@@ -1,3 +1,4 @@
+import {weeklyIllustrations,weeklyIllustrationAspectRatios} from './weekly-illustrations';
 import type {ImageSourcePropType} from 'react-native';
 import session001 from '../../../docs/ssw-workspace/kensetsu/shared-session-001.json';
 import session002 from '../../../docs/ssw-workspace/kensetsu/shared-session-002.json';
@@ -463,7 +464,9 @@ export const sessions:Session[]=[session001,session002,session003,session004,ses
 export const weeks:Week[]=[week001,week002,week003,week004,week005,week006,week007,week008,week009,week010,week011,week012,week013,week014,week015,week016,week017,week018,week019,week020,week021,week022,week023,week024,week025,week026,week027,week028,week029,week030,week031,week032,week033,week034,week035,week036,week037,week038,week039,week040,week041,week042,week043,week044,week045,week046,week047,week048,week049,week050,week051,week052,week053,week054,week055];
 
 export const sessionById=new Map(sessions.map(s=>[s.id,s]));
+export const illustrationAspectRatios=weeklyIllustrationAspectRatios;
 export const illustrations:Record<string,ImageSourcePropType>={
+ ...weeklyIllustrations,
  'assets/kensetsu/shared/handover-v1.webp':require('../../../assets/kensetsu/shared/handover-v1.webp'),
  'assets/kensetsu/shared/greeting-v1.webp':require('../../../assets/kensetsu/shared/greeting-v1.webp'),
  'assets/kensetsu/shared/morning-meeting-v1.webp':require('../../../assets/kensetsu/shared/morning-meeting-v1.webp'),

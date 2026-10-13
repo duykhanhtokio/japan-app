@@ -3,15 +3,16 @@ import {Image,Modal,useWindowDimensions,Pressable,ScrollView,StyleSheet,Text,Vie
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {RoyalContentPanel,RoyalExplanationPanel} from '@/components/ui/RoyalPanels';
 import {RoyalBackButton,ROYAL_FONT} from '@/components/ui/RoyalSurface';
-import {completionId,completionKey,fields,illustrations,restoreProgress,sessionById,weeks,type Field,type Level,type Session} from '@/data/kensetsu';
+import {completionId,completionKey,fields,illustrations,illustrationAspectRatios,restoreProgress,sessionById,weeks,type Field,type Level,type Session} from '@/data/kensetsu';
 function Action({title,onPress,disabled=false,selected=false,testID}:{title:string;onPress:()=>void;disabled?:boolean;selected?:boolean;testID?:string}){
  return <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={title} accessibilityState={{disabled,selected}} disabled={disabled} onPress={onPress} style={[s.button,selected&&s.selected,disabled&&{opacity:.45}]}><Text style={s.buttonText}>{title}</Text></Pressable>;
 }
 function StudyImage({path,caption}:{path:string;caption:string}){
  const {width,height}=useWindowDimensions(),[open,setOpen]=useState(false);const source=illustrations[path];
- const imageWidth=Math.min(Math.max(0,width-32),620,width>height?Math.max(120,height*.42)*1672/941:620);
+ const ratio=illustrationAspectRatios[path]??1672/941;
+ const imageWidth=Math.min(Math.max(0,width-32),620,width>height?Math.max(120,height*.42)*ratio:620);
  if(!source)return null;
- return <View style={s.figure}><Pressable accessibilityRole="button" accessibilityLabel="画像を拡大" onPress={()=>setOpen(true)} style={{width:imageWidth,maxWidth:'100%'}}><Image source={source} accessibilityLabel={caption} resizeMode="contain" fadeDuration={0} style={{width:'100%',aspectRatio:1672/941}}/></Pressable><Text style={s.caption}>{caption}</Text><Text style={s.caption}>タップして拡大</Text><Modal visible={open} transparent animationType="fade" onRequestClose={()=>setOpen(false)}><View style={s.imageModal}><Action title="閉じる" onPress={()=>setOpen(false)}/><Image source={source} resizeMode="contain" style={{width:'100%',flex:1}}/><Text style={s.light}>{caption}</Text></View></Modal></View>;
+ return <View style={s.figure}><Pressable accessibilityRole="button" accessibilityLabel="画像を拡大" onPress={()=>setOpen(true)} style={{width:imageWidth,maxWidth:'100%'}}><Image source={source} accessibilityLabel={caption} resizeMode="contain" fadeDuration={0} style={{width:'100%',aspectRatio:ratio}}/></Pressable><Text style={s.caption}>{caption}</Text><Text style={s.caption}>タップして拡大</Text><Modal visible={open} transparent animationType="fade" onRequestClose={()=>setOpen(false)}><View style={s.imageModal}><Action title="閉じる" onPress={()=>setOpen(false)}/><Image source={source} resizeMode="contain" style={{width:'100%',flex:1}}/><Text style={s.light}>{caption}</Text></View></Modal></View>;
 }
 function Reader({session,done,ready,saving,onComplete}:{session:Session;done:boolean;ready:boolean;saving:boolean;onComplete:()=>void}){
  const [reachedEnd,setReachedEnd]=useState(false);const geometry=useRef({height:0,content:0,y:0});
