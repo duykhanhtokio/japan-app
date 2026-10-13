@@ -40,7 +40,7 @@ export default function LevelScreen() {
     const isN5 = levelName === 'N5';
 
     return (
-        <JlptStudyBackground><SafeAreaView style={styles.container}>
+        <JlptStudyBackground enabled={false}><SafeAreaView style={styles.container}>
             <View style={styles.content}>
                 <RoyalBackButton onPress={() => router.canGoBack() ? backPrepared() : replacePrepared('/learn')} />
 
