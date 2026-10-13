@@ -38,7 +38,16 @@ const adapters={
  const browser=await chromium.launch({...(process.env.KENSETSU_QA_CHROMIUM?{executablePath:process.env.KENSETSU_QA_CHROMIUM}:{}),args:['--no-sandbox','--disable-gpu']});
  const page=await browser.newPage({viewport:{width:430,height:932}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
  const url=`http://127.0.0.1:${server.address().port}`;
- const enter=async(locale,day=1)=>{await page.goto(url+'/?language='+locale);await page.getByTestId('kensetsu-field-building').click();if(await page.getByTestId('kensetsu-week-'+week).count())await page.getByTestId('kensetsu-week-'+week).click();await page.getByTestId('kensetsu-day-'+((week-1)*7+day)).click();};
+ const enter=async(locale,day=1)=>{
+  await page.goto(url+'/?language='+locale);await page.getByTestId('kensetsu-field-building').click();
+  const targetDay=page.getByTestId('kensetsu-day-'+((week-1)*7+day));
+  if(!await targetDay.count()){
+   const targetWeek=page.getByTestId('kensetsu-week-'+week);
+   if(!await targetWeek.count())await page.getByTestId('kensetsu-group-'+(Math.floor((week-1)/10)+1)).click();
+   await targetWeek.click();
+  }
+  await targetDay.click();
+ };
  const tested=[];
  for(const locale of Object.keys(bundle.entries.title.translations)){
   for(const [lessonIndex,lessonBundle] of bundles.entries()){

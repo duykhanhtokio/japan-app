@@ -1,0 +1,838 @@
+{
+  "week": 11,
+  "workflow": "Six parallel locale-pair translators followed by full independent comparison in all12locales, bounded fixes and final rereads",
+  "sourceUnits": 191,
+  "translationStrings": 2292,
+  "boundedCorrectionsMerged": 35,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "domainReviewed": false,
+  "releaseReady": false,
+  "peerHandoffNote": "TH/KM peer review reassigned after reader-task interruptions; completed drafts preserved and replacement independently compared every string.",
+  "pairs": [
+    {
+      "locales": [
+        "en",
+        "vi"
+      ],
+      "reviewer": "translate_zh",
+      "units": 191,
+      "strings": 382,
+      "finalPairSha256": "e206a2002370de921a1aa8c12e7afad86ba2f429688f005df85691d537c691cd",
+      "humanReviewed": false
+    },
+    {
+      "locales": [
+        "zh-CN",
+        "zh-TW"
+      ],
+      "reviewer": "translate_en_vi",
+      "units": 191,
+      "strings": 382,
+      "finalPairSha256": "cf3217b61f5b9603a233cc9b8fb2aaef4d8ef994d9f32faa6031dfa4206ffaa4",
+      "humanReviewed": false
+    },
+    {
+      "locales": [
+        "th",
+        "km"
+      ],
+      "reviewer": "translate_en_vi",
+      "units": 191,
+      "strings": 382,
+      "finalPairSha256": "3e6cf5da772fab739c9c974d0fadfbe7e54204586a0dcf42f406af8a8c16dc61",
+      "humanReviewed": false
+    },
+    {
+      "locales": [
+        "id",
+        "tl"
+      ],
+      "reviewer": "translate_th_km",
+      "units": 191,
+      "strings": 382,
+      "finalPairSha256": "2dfdac0fecbb5882c864c8e1d130f8341f012d8029419a4ec0f2fd4fa3d4abae",
+      "humanReviewed": false
+    },
+    {
+      "locales": [
+        "hi",
+        "ne"
+      ],
+      "reviewer": "translate_bn_my",
+      "units": 191,
+      "strings": 382,
+      "finalPairSha256": "a2c015a45a023824ddb4c898952cba7d5fc3cd9007d55ea660cebe223e797317",
+      "humanReviewed": false
+    },
+    {
+      "locales": [
+        "bn",
+        "my"
+      ],
+      "reviewer": "translate_hi_ne",
+      "units": 191,
+      "strings": 382,
+      "finalPairSha256": "d6ffd03e233f1b4f02348330a94475badd1b9f0d7ffe262a47cfc4adf72bbb84",
+      "humanReviewed": false
+    }
+  ],
+  "reviewEvidence": {
+    "review-en-vi.json": {
+      "reviewer": "independent_ai",
+      "pairFile": "pair-en-vi.json",
+      "inputSha256": "9d8a3361319062087fc6b809ba2f2a1d657035d1df5864f505015ea920c63045",
+      "reviewedSessions": [
+        "kensetsu-common-session-071",
+        "kensetsu-common-session-072",
+        "kensetsu-common-session-073",
+        "kensetsu-common-session-074",
+        "kensetsu-common-session-075",
+        "kensetsu-common-session-076",
+        "kensetsu-common-session-077"
+      ],
+      "locales": [
+        "en",
+        "vi"
+      ],
+      "sourceUnitsReviewed": 191,
+      "translatedStringsReviewed": 382,
+      "fullParagraphTranslationsReviewed": 168,
+      "exactSourceKeyAlignment": true,
+      "scope": "All191 units in both locales independently compared against canonical Japanese, including full prose, prompts, glossary and illustration alt text.",
+      "criticalChecks": [
+        "cement versus concrete; truck transport versus pumping versus placement",
+        "compaction versus all-air-removal; role count versus headcount",
+        "painting masking versus concrete curing and plastering protection",
+        "generic external works and rest-area scope",
+        "polished artificial/exposed aggregate versus washed exposed aggregate",
+        "generic plaster material composition",
+        "framing versus finish/formwork carpentry; stable identifiers",
+        "rainwater detailing versus coating; reroofing versus overlay; observation versus cause",
+        "supply/exhaust/fire smoke-exhaust ducts and generator combustion exhaust"
+      ],
+      "status": "bounded_corrections_requested",
+      "corrections": [
+        {
+          "sessionId": "kensetsu-common-session-071",
+          "unitId": "kensetsu-common-session-071-cluster-3-p1",
+          "id": "kensetsu-common-session-071-cluster-3-p1",
+          "locale": "en",
+          "sourceJa": "コンクリートの締固めは、鉄筋の周りや型枠の隅まで材料が充填され、必要な密実さを得るための仕事です。バイブレータ等の振動機を用いる方法があります。ポンプで材料が届くことだけでは、部材の中の充填まで確かめられません。",
+          "before": "Concrete compaction is work to fill around rebar and into formwork corners and obtain the required density. Some methods use vibrating equipment such as vibrators. Delivery of material by a pump alone does not verify filling inside a member.",
+          "after": "Concrete compaction is work to fill around rebar and into formwork corners and obtain the required degree of compactness. Some methods use vibrating equipment such as vibrators. Delivery of material by a pump alone does not verify filling inside a member.",
+          "translation": "Concrete compaction is work to fill around rebar and into formwork corners and obtain the required degree of compactness. Some methods use vibrating equipment such as vibrators. Delivery of material by a pump alone does not verify filling inside a member.",
+          "reason": "密実さ refers to compactness of filling; avoid reading it as an unstated mass-density requirement."
+        },
+        {
+          "sessionId": "kensetsu-common-session-073",
+          "unitId": "kensetsu-common-session-073-cluster-4-p1",
+          "id": "kensetsu-common-session-073-cluster-4-p1",
+          "locale": "en",
+          "sourceJa": "造園に関係する工事には、芝生の広場や花壇のほか、休憩所、噴水、遊歩道等を扱うものもあります。噴水には給排水や電気等との接点があります。造園という工事名だけで、全ての設備の担当範囲が一人へ集まるとは説明しません。",
+          "before": "Landscaping-related works can involve resting shelters, fountains, promenades and similar facilities as well as lawns and flowerbeds. Fountains interface with water supply, drainage, electricity and other services. The job name landscaping does not mean every equipment responsibility falls to one person.",
+          "after": "Landscaping-related works can involve rest areas, fountains, promenades and similar facilities as well as lawns and flowerbeds. Fountains interface with water supply, drainage, electricity and other services. The job name landscaping does not mean every equipment responsibility falls to one person.",
+          "translation": "Landscaping-related works can involve rest areas, fountains, promenades and similar facilities as well as lawns and flowerbeds. Fountains interface with water supply, drainage, electricity and other services. The job name landscaping does not mean every equipment responsibility falls to one person.",
+          "reason": "休憩所 is not restricted to sheltered structures; retain generic rest-area scope."
+        },
+        {
+          "sessionId": "kensetsu-common-session-074",
+          "unitId": "kensetsu-common-session-074-cluster-1-p2",
+          "id": "kensetsu-common-session-074-cluster-1-p2",
+          "locale": "vi",
+          "sourceJa": "材料には壁土、モルタル、漆喰、プラスター等があります。繊維を組み合わせるものもありますが、材料を同じ配合や同じ性能として扱いません。自然な材料という説明だけから、全ての場所で同じ防火・防水性能を持つとは判断しません。",
+          "before": "Vật liệu có đất trát tường, vữa, vữa vôi, thạch cao trát và các loại khác. Có loại kết hợp sợi, nhưng không coi các vật liệu có cùng cấp phối hoặc tính năng. Chỉ mô tả vật liệu tự nhiên không đủ để đánh giá có cùng khả năng chống cháy, chống thấm tại mọi vị trí.",
+          "after": "Vật liệu có đất trát tường, vữa, vữa vôi, vật liệu trát (plaster) và các loại khác. Có loại kết hợp sợi, nhưng không coi các vật liệu có cùng cấp phối hoặc tính năng. Chỉ mô tả vật liệu tự nhiên không đủ để đánh giá có cùng khả năng chống cháy, chống thấm tại mọi vị trí.",
+          "translation": "Vật liệu có đất trát tường, vữa, vữa vôi, vật liệu trát (plaster) và các loại khác. Có loại kết hợp sợi, nhưng không coi các vật liệu có cùng cấp phối hoặc tính năng. Chỉ mô tả vật liệu tự nhiên không đủ để đánh giá có cùng khả năng chống cháy, chống thấm tại mọi vị trí.",
+          "reason": "プラスター is generic in the canonical lesson; do not narrow material composition to gypsum."
+        },
+        {
+          "sessionId": "kensetsu-common-session-074",
+          "unitId": "kensetsu-common-session-074-cluster-1:prompt",
+          "id": "kensetsu-common-session-074-cluster-1:prompt",
+          "locale": "vi",
+          "sourceJa": "こて・モルタル・漆喰・プラスターを、材料と仕上げ層の目的から整理してください。",
+          "before": "Hãy tổng hợp bay, vữa, vữa vôi và thạch cao trát theo vật liệu và mục đích lớp hoàn thiện.",
+          "after": "Hãy tổng hợp bay, vữa, vữa vôi và vật liệu trát (plaster) theo vật liệu và mục đích lớp hoàn thiện.",
+          "translation": "Hãy tổng hợp bay, vữa, vữa vôi và vật liệu trát (plaster) theo vật liệu và mục đích lớp hoàn thiện.",
+          "reason": "プラスター is generic in the canonical lesson; do not narrow material composition to gypsum."
+        },
+        {
+          "sessionId": "kensetsu-common-session-074",
+          "unitId": "keyTerm:プラスター",
+          "id": "keyTerm:プラスター",
+          "locale": "vi",
+          "sourceJa": "プラスター",
+          "before": "Thạch cao trát",
+          "after": "Vật liệu trát (plaster)",
+          "translation": "Vật liệu trát (plaster)",
+          "reason": "プラスター is generic in the canonical lesson; do not narrow material composition to gypsum."
+        },
+        {
+          "sessionId": "kensetsu-common-session-075",
+          "unitId": "kensetsu-common-session-075-cluster-2-p3",
+          "id": "kensetsu-common-session-075-cluster-2-p3",
+          "locale": "en",
+          "sourceJa": "架空の部材表で、加工した番号と取り付ける場所を照合する例です。届いた部材と、その位置へ固定した部材を別に記録します。材料の搬入済みという表現を、接合や必要な精度の確認も済んだ状態へ広げません。",
+          "before": "Consider a hypothetical member schedule comparing fabricated numbers with installation locations. Record delivered members separately from members fixed in position. Do not expand materials delivered to mean connections and required accuracy have also been checked.",
+          "after": "Consider a hypothetical member schedule comparing the identifiers of fabricated members with installation locations. Record delivered members separately from members fixed in position. Do not expand materials delivered to mean connections and required accuracy have also been checked.",
+          "translation": "Consider a hypothetical member schedule comparing the identifiers of fabricated members with installation locations. Record delivered members separately from members fixed in position. Do not expand materials delivered to mean connections and required accuracy have also been checked.",
+          "reason": "Number identifies the fabricated member; the number itself is not fabricated."
+        },
+        {
+          "sessionId": "kensetsu-common-session-075",
+          "unitId": "kensetsu-common-session-075-cluster-2-p3",
+          "id": "kensetsu-common-session-075-cluster-2-p3",
+          "locale": "vi",
+          "sourceJa": "架空の部材表で、加工した番号と取り付ける場所を照合する例です。届いた部材と、その位置へ固定した部材を別に記録します。材料の搬入済みという表現を、接合や必要な精度の確認も済んだ状態へ広げません。",
+          "before": "Xét ví dụ bảng cấu kiện giả định đối chiếu số hiệu đã gia công với nơi lắp đặt. Hãy ghi riêng cấu kiện đã đến và cấu kiện đã cố định tại vị trí. Không mở rộng đã đưa vật liệu đến thành đã kiểm tra cả liên kết và độ chính xác cần thiết.",
+          "after": "Xét ví dụ bảng cấu kiện giả định đối chiếu số hiệu của cấu kiện đã gia công với nơi lắp đặt. Hãy ghi riêng cấu kiện đã đến và cấu kiện đã cố định tại vị trí. Không mở rộng đã đưa vật liệu đến thành đã kiểm tra cả liên kết và độ chính xác cần thiết.",
+          "translation": "Xét ví dụ bảng cấu kiện giả định đối chiếu số hiệu của cấu kiện đã gia công với nơi lắp đặt. Hãy ghi riêng cấu kiện đã đến và cấu kiện đã cố định tại vị trí. Không mở rộng đã đưa vật liệu đến thành đã kiểm tra cả liên kết và độ chính xác cần thiết.",
+          "reason": "Clarify that identifiers belong to fabricated members, rather than implying identifiers are fabricated."
+        },
+        {
+          "sessionId": "kensetsu-common-session-077",
+          "unitId": "kensetsu-common-session-077-cluster-4-p2",
+          "id": "kensetsu-common-session-077-cluster-4-p2",
+          "locale": "vi",
+          "sourceJa": "外壁の開口や設備の接続等では、建築と設備の担当が同じ位置を確認します。仕上げを閉じた後に見えなくなる部分もあるため、確認した対象と記録を対応させます。ここでは留付け間隔や板の厚さ、切断機・接合の操作を指定しません。",
+          "before": "Tại lỗ mở tường ngoài, kết nối thiết bị và các điểm tiếp nối tương tự, người phụ trách xây dựng và thiết bị kiểm tra cùng vị trí. Có phần bị che sau khi đóng lớp hoàn thiện, nên cần đối chiếu đối tượng đã kiểm tra với hồ sơ. Bài này không chỉ định khoảng cách cố định, chiều dày tấm hoặc thao tác máy cắt, liên kết.",
+          "after": "Tại lỗ mở tường ngoài, kết nối thiết bị và các điểm tiếp nối tương tự, người phụ trách xây dựng và thiết bị kiểm tra cùng vị trí. Có phần bị che sau khi đóng lớp hoàn thiện, nên cần đối chiếu đối tượng đã kiểm tra với hồ sơ. Bài này không chỉ định khoảng cách giữa các điểm cố định, chiều dày tấm hoặc thao tác máy cắt, liên kết.",
+          "translation": "Tại lỗ mở tường ngoài, kết nối thiết bị và các điểm tiếp nối tương tự, người phụ trách xây dựng và thiết bị kiểm tra cùng vị trí. Có phần bị che sau khi đóng lớp hoàn thiện, nên cần đối chiếu đối tượng đã kiểm tra với hồ sơ. Bài này không chỉ định khoảng cách giữa các điểm cố định, chiều dày tấm hoặc thao tác máy cắt, liên kết.",
+          "reason": "留付け間隔 means fastening spacing, not a fixed/unchanging distance."
+        }
+      ],
+      "humanReviewed": false,
+      "reviewedByNativeSpeaker": false,
+      "domainApproval": false,
+      "releaseApproval": false
+    },
+    "reread-th-km.json": {
+      "pairFile": "pair-th-km.json",
+      "finalSha256": "3e6cf5da772fab739c9c974d0fadfbe7e54204586a0dcf42f406af8a8c16dc61",
+      "status": "PASS",
+      "correctedStringsReread": 8,
+      "checks": [
+        {
+          "sessionId": "kensetsu-common-session-071",
+          "unitId": "kensetsu-common-session-071-cluster-1-p2",
+          "locale": "th",
+          "result": "PASS",
+          "currentSourceExact": true,
+          "fullFieldSemanticReread": true
+        },
+        {
+          "sessionId": "kensetsu-common-session-071",
+          "unitId": "kensetsu-common-session-071-cluster-1-p2",
+          "locale": "km",
+          "result": "PASS",
+          "currentSourceExact": true,
+          "fullFieldSemanticReread": true
+        },
+        {
+          "sessionId": "kensetsu-common-session-075",
+          "unitId": "kensetsu-common-session-075-cluster-2-p3",
+          "locale": "th",
+          "result": "PASS",
+          "currentSourceExact": true,
+          "fullFieldSemanticReread": true
+        },
+        {
+          "sessionId": "kensetsu-common-session-075",
+          "unitId": "kensetsu-common-session-075-cluster-2-p3",
+          "locale": "km",
+          "result": "PASS",
+          "currentSourceExact": true,
+          "fullFieldSemanticReread": true
+        },
+        {
+          "sessionId": "kensetsu-common-session-077",
+          "unitId": "kensetsu-common-session-077-cluster-2-p1",
+          "locale": "th",
+          "result": "PASS",
+          "currentSourceExact": true,
+          "fullFieldSemanticReread": true
+        },
+        {
+          "sessionId": "kensetsu-common-session-077",
+          "unitId": "kensetsu-common-session-077-cluster-2:prompt",
+          "locale": "th",
+          "result": "PASS",
+          "currentSourceExact": true,
+          "fullFieldSemanticReread": true
+        },
+        {
+          "sessionId": "kensetsu-common-session-077",
+          "unitId": "keyTerm:水切り",
+          "locale": "th",
+          "result": "PASS",
+          "currentSourceExact": true,
+          "fullFieldSemanticReread": true
+        },
+        {
+          "sessionId": "kensetsu-common-session-077",
+          "unitId": "kensetsu-common-session-077-cluster-3-p2",
+          "locale": "km",
+          "result": "PASS",
+          "currentSourceExact": true,
+          "fullFieldSemanticReread": true
+        }
+      ],
+      "findings": "All corrected full fields retain canonical negations, examples and evidence limits; ambient air temperature, fabricated-member identifiers, generic rainwater direction and generator combustion exhaust distinctions now explicit. No further correction required.",
+      "humanReviewed": false,
+      "reviewedByNativeSpeaker": false,
+      "domainApproval": false,
+      "releaseApproval": false
+    },
+    "reread-en-vi.json": {
+      "reviewer": "author_ai_reread",
+      "inputFile": "pair-en-vi.json",
+      "inputSha256": "e206a2002370de921a1aa8c12e7afad86ba2f429688f005df85691d537c691cd",
+      "sourceUnits": 191,
+      "translatedStrings": 382,
+      "correctedFieldsReread": 8,
+      "result": "PASS",
+      "results": [
+        {
+          "sessionId": "kensetsu-common-session-071",
+          "unitId": "kensetsu-common-session-071-cluster-3-p1",
+          "locale": "en",
+          "sourceJa": "コンクリートの締固めは、鉄筋の周りや型枠の隅まで材料が充填され、必要な密実さを得るための仕事です。バイブレータ等の振動機を用いる方法があります。ポンプで材料が届くことだけでは、部材の中の充填まで確かめられません。",
+          "translation": "Concrete compaction is work to fill around rebar and into formwork corners and obtain the required degree of compactness. Some methods use vibrating equipment such as vibrators. Delivery of material by a pump alone does not verify filling inside a member.",
+          "result": "PASS",
+          "reason": "密実さ refers to compactness of filling; avoid reading it as an unstated mass-density requirement."
+        },
+        {
+          "sessionId": "kensetsu-common-session-073",
+          "unitId": "kensetsu-common-session-073-cluster-4-p1",
+          "locale": "en",
+          "sourceJa": "造園に関係する工事には、芝生の広場や花壇のほか、休憩所、噴水、遊歩道等を扱うものもあります。噴水には給排水や電気等との接点があります。造園という工事名だけで、全ての設備の担当範囲が一人へ集まるとは説明しません。",
+          "translation": "Landscaping-related works can involve rest areas, fountains, promenades and similar facilities as well as lawns and flowerbeds. Fountains interface with water supply, drainage, electricity and other services. The job name landscaping does not mean every equipment responsibility falls to one person.",
+          "result": "PASS",
+          "reason": "休憩所 is not restricted to sheltered structures; retain generic rest-area scope."
+        },
+        {
+          "sessionId": "kensetsu-common-session-074",
+          "unitId": "kensetsu-common-session-074-cluster-1-p2",
+          "locale": "vi",
+          "sourceJa": "材料には壁土、モルタル、漆喰、プラスター等があります。繊維を組み合わせるものもありますが、材料を同じ配合や同じ性能として扱いません。自然な材料という説明だけから、全ての場所で同じ防火・防水性能を持つとは判断しません。",
+          "translation": "Vật liệu có đất trát tường, vữa, vữa vôi, vật liệu trát (plaster) và các loại khác. Có loại kết hợp sợi, nhưng không coi các vật liệu có cùng cấp phối hoặc tính năng. Chỉ mô tả vật liệu tự nhiên không đủ để đánh giá có cùng khả năng chống cháy, chống thấm tại mọi vị trí.",
+          "result": "PASS",
+          "reason": "プラスター is generic in the canonical lesson; do not narrow material composition to gypsum."
+        },
+        {
+          "sessionId": "kensetsu-common-session-074",
+          "unitId": "kensetsu-common-session-074-cluster-1:prompt",
+          "locale": "vi",
+          "sourceJa": "こて・モルタル・漆喰・プラスターを、材料と仕上げ層の目的から整理してください。",
+          "translation": "Hãy tổng hợp bay, vữa, vữa vôi và vật liệu trát (plaster) theo vật liệu và mục đích lớp hoàn thiện.",
+          "result": "PASS",
+          "reason": "プラスター is generic in the canonical lesson; do not narrow material composition to gypsum."
+        },
+        {
+          "sessionId": "kensetsu-common-session-074",
+          "unitId": "keyTerm:プラスター",
+          "locale": "vi",
+          "sourceJa": "プラスター",
+          "translation": "Vật liệu trát (plaster)",
+          "result": "PASS",
+          "reason": "プラスター is generic in the canonical lesson; do not narrow material composition to gypsum."
+        },
+        {
+          "sessionId": "kensetsu-common-session-075",
+          "unitId": "kensetsu-common-session-075-cluster-2-p3",
+          "locale": "en",
+          "sourceJa": "架空の部材表で、加工した番号と取り付ける場所を照合する例です。届いた部材と、その位置へ固定した部材を別に記録します。材料の搬入済みという表現を、接合や必要な精度の確認も済んだ状態へ広げません。",
+          "translation": "Consider a hypothetical member schedule comparing the identifiers of fabricated members with installation locations. Record delivered members separately from members fixed in position. Do not expand materials delivered to mean connections and required accuracy have also been checked.",
+          "result": "PASS",
+          "reason": "Number identifies the fabricated member; the number itself is not fabricated."
+        },
+        {
+          "sessionId": "kensetsu-common-session-075",
+          "unitId": "kensetsu-common-session-075-cluster-2-p3",
+          "locale": "vi",
+          "sourceJa": "架空の部材表で、加工した番号と取り付ける場所を照合する例です。届いた部材と、その位置へ固定した部材を別に記録します。材料の搬入済みという表現を、接合や必要な精度の確認も済んだ状態へ広げません。",
+          "translation": "Xét ví dụ bảng cấu kiện giả định đối chiếu số hiệu của cấu kiện đã gia công với nơi lắp đặt. Hãy ghi riêng cấu kiện đã đến và cấu kiện đã cố định tại vị trí. Không mở rộng đã đưa vật liệu đến thành đã kiểm tra cả liên kết và độ chính xác cần thiết.",
+          "result": "PASS",
+          "reason": "Clarify that identifiers belong to fabricated members, rather than implying identifiers are fabricated."
+        },
+        {
+          "sessionId": "kensetsu-common-session-077",
+          "unitId": "kensetsu-common-session-077-cluster-4-p2",
+          "locale": "vi",
+          "sourceJa": "外壁の開口や設備の接続等では、建築と設備の担当が同じ位置を確認します。仕上げを閉じた後に見えなくなる部分もあるため、確認した対象と記録を対応させます。ここでは留付け間隔や板の厚さ、切断機・接合の操作を指定しません。",
+          "translation": "Tại lỗ mở tường ngoài, kết nối thiết bị và các điểm tiếp nối tương tự, người phụ trách xây dựng và thiết bị kiểm tra cùng vị trí. Có phần bị che sau khi đóng lớp hoàn thiện, nên cần đối chiếu đối tượng đã kiểm tra với hồ sơ. Bài này không chỉ định khoảng cách giữa các điểm cố định, chiều dày tấm hoặc thao tác máy cắt, liên kết.",
+          "result": "PASS",
+          "reason": "留付け間隔 means fastening spacing, not a fixed/unchanging distance."
+        }
+      ],
+      "notes": [
+        "Fresh finalized pair reread against all8 exact Japanese source fields; corrected compactness, rest-area scope, generic plaster composition, member identifiers and fastening spacing are source-faithful.",
+        "No additional edits or substantive issues found.",
+        "Native-speaker/domain/release approval not claimed."
+      ]
+    },
+    "review-hi-ne.json": {
+      "scope": {
+        "sessions": [
+          "kensetsu-common-session-071",
+          "kensetsu-common-session-072",
+          "kensetsu-common-session-073",
+          "kensetsu-common-session-074",
+          "kensetsu-common-session-075",
+          "kensetsu-common-session-076",
+          "kensetsu-common-session-077"
+        ],
+        "locales": [
+          "hi",
+          "ne"
+        ],
+        "sourceUnits": 191,
+        "stringsReviewed": 382,
+        "fullParagraphs": 84
+      },
+      "inputSha256": "6715c5ae98ec24c6666717519ca7820dc28ed3e35e942219af10d45577270b2f",
+      "reviewType": "independent_ai_semantic_comparison",
+      "findings": [
+        "Every source unit compared in both locales, including full explanation/example prose, prompts, terms and illustration alt.",
+        "Concrete transport/pressure-pumping/placement/compaction distinctions and trapped-versus-designed air remain explicit.",
+        "Contextual養生 preserves concrete curing, paint masking/protection, plaster construction protection/curing; generic plaster retained, no gypsum-only narrowing.",
+        "Landscape external works exceed planting; roof/wall greening support, water and building limits retained.",
+        "Polished artificial-stone aggregate versus washed exposed aggregate, carpentry splice/junction and finished joinery versus removable formwork retained.",
+        "Rainwater detailing exceeds coating; observation versus diagnosis and generic tile materials checked. Air supply, exhaust and fire-smoke removal remain distinct.",
+        "No numeric procedures, operating recipes or extra certification inferred."
+      ],
+      "corrections": [
+        {
+          "sessionId": "kensetsu-common-session-071",
+          "unitId": "kensetsu-common-session-071-cluster-1-p2",
+          "locale": "hi",
+          "translation": "तैयार-मिश्रित कंक्रीट नाम का अर्थ यह नहीं कि सभी कामों में समान मिश्रण या प्रदर्शन होता है। तैयार सामग्री पहुँच जाना और स्थल की आवश्यक शर्तों के अनुरूप होना अलग बातें हैं। परिवहन, समय और हवा का तापमान आदि से अवस्था में बदलाव भी निर्माण योजना से संबंधित हैं।",
+          "reason": "気温 is ambient air temperature, not unspecified concrete/material temperature."
+        },
+        {
+          "sessionId": "kensetsu-common-session-071",
+          "unitId": "kensetsu-common-session-071-cluster-1-p2",
+          "locale": "ne",
+          "translation": "तयारी मिश्रित कङ्क्रिट भन्ने नामको अर्थ सबै निर्माणमा एउटै मिश्रण वा कार्यक्षमता हुन्छ भन्ने होइन। तयार गरिएको सामग्री आइपुग्नु र स्थलका आवश्यक सर्त मिल्नु फरक कुरा हुन्। ढुवानी, समय र हावाको तापक्रम आदिबाट हुने अवस्थामा परिवर्तन पनि निर्माण योजनासँग सम्बन्धित हुन्छ।",
+          "reason": "気温 explicitly denotes ambient air temperature."
+        },
+        {
+          "sessionId": "kensetsu-common-session-073",
+          "unitId": "kensetsu-common-session-073-cluster-4-p2",
+          "locale": "hi",
+          "translation": "निर्माण पूरा होने के बाद भी पौधों की वृद्धि जारी रहती है, इसलिए विकास और प्रबंधन की शर्तें आगे सौंपनी जरूरी हैं। निर्माण किया गया स्थान और बाद में कौन किसकी जाँच करेगा, इन्हें मिलाएँ। छँटाई, खाद और पानी की ठोस मात्रा तथा समय पौधों आदि की परिस्थितियों पर निर्भर हैं, इसलिए एक समान निर्देश न दें।",
+          "reason": "完成後 refers to construction completion; avoid suggesting plant growth is complete before continuing."
+        },
+        {
+          "sessionId": "kensetsu-common-session-074",
+          "unitId": "kensetsu-common-session-074-cluster-2-p1",
+          "locale": "hi",
+          "translation": "प्लास्टर फिनिश आधार की अवस्था और लगाई जाने वाली परत की शर्तों से संबंधित है। आधार का प्रकार, गंदगी, असमतलता और जुड़ने वाले भाग आदि संबंधित वस्तु से मिलाएँ। केवल अंतिम रंग या पैटर्न देखकर आवश्यक मोटाई और चिपकाव भी जाँचे गए हैं, ऐसा नहीं कहा जा सकता।",
+          "reason": "模様 is the pattern/design visible on the finish, not a sample specimen."
+        },
+        {
+          "sessionId": "kensetsu-common-session-074",
+          "unitId": "kensetsu-common-session-074-cluster-3-p1",
+          "locale": "hi",
+          "translation": "घिसकर दिखाने वाले फिनिश में पत्थर के दानों आदि वाले कृत्रिम पत्थर की सतह घिसकर एग्रीगेट का पैटर्न दिखाया जाता है। इसे केवल प्राकृतिक पत्थर की प्लेट चमकाने के उसी काम तक सीमित न करें। किस सामग्री का क्या सतह पर दिखाया जाता है, इसे अलग समझें।",
+          "reason": "骨材の模様 is the aggregate pattern revealed by polishing, not a displayed material sample."
+        },
+        {
+          "sessionId": "kensetsu-common-session-076",
+          "unitId": "kensetsu-common-session-076-cluster-3-p1",
+          "locale": "hi",
+          "translation": "छत पर चूना प्लास्टर टाइल वाली छत के कुछ हिस्सों में खुली मिट्टी आदि के संरक्षण के लिए इस्तेमाल होता है। चूना प्लास्टर की दरार या टूटना जाँच के विषय हैं, लेकिन सभी छत रिसाव का कारण उसी भाग में है, ऐसा निर्णय न करें। छत की बनावट और अवस्था जाँचकर मरम्मत पर विचार करें।",
+          "reason": "瓦屋根 here is a tile roof generically; no clay-only material is specified."
+        },
+        {
+          "sessionId": "kensetsu-common-session-076",
+          "unitId": "kensetsu-common-session-076-cluster-3-p1",
+          "locale": "ne",
+          "translation": "छतको चुना प्लास्टर टायल भएको छतको केही भागमा खुला माटो आदि जोगाउन प्रयोग हुने उदाहरण छ। चुना प्लास्टरमा चिरा वा भत्काइ पुष्टि गर्ने विषय हुन्, तर सबै छत चुहावटको कारण त्यही भागमा छ भन्ने निर्णय नगर्नुहोस्। छतको बनावट र अवस्था जाँचेर मर्मत विचार गर्नुहोस्।",
+          "reason": "瓦屋根 here remains a generic tile roof rather than clay-only."
+        }
+      ],
+      "nativeSpeakerReviewed": false,
+      "domainReviewed": false,
+      "releaseApproved": false
+    },
+    "review-bn-my.json": {
+      "scope": {
+        "sessions": [
+          "kensetsu-common-session-071",
+          "kensetsu-common-session-072",
+          "kensetsu-common-session-073",
+          "kensetsu-common-session-074",
+          "kensetsu-common-session-075",
+          "kensetsu-common-session-076",
+          "kensetsu-common-session-077"
+        ],
+        "locales": [
+          "bn",
+          "my"
+        ],
+        "sourceUnitsCompared": 191,
+        "translationsCompared": 382,
+        "paragraphsCompared": 84
+      },
+      "inputSha256": "0224dea6e26c7812875b106a7afb8c6552d22392534df9d3c10fa078e4af4fdd",
+      "status": "bounded_corrections_requested",
+      "findings": [
+        "Full prose in both locales compared to current Japanese191units.",
+        "Concrete delivery/compaction/air and curing distinct; masking distinct from curing; external works broader than planting.",
+        "Generic plaster distinct from lime plaster; polished artificial stone/washed exposed aggregate retained.",
+        "Identifiers,carpentry roles,roof replacement/overlay, rain detailing and air supply/exhaust/smoke limits retained."
+      ],
+      "corrections": [
+        {
+          "sessionId": "kensetsu-common-session-071",
+          "unitId": "kensetsu-common-session-071-cluster-2-p1",
+          "locale": "my",
+          "translation": "မွှေထိန်းထရပ်ကားသည် အသင့်ရောကွန်ကရစ်ကို လုပ်ငန်းခွင်သို့ သယ်သည့်ယာဉ်ဖြစ်သည်။ ကွန်ကရစ်ပန့်သည် ပို့ပိုက်၊ ပိုက်ပျော့စသည်မှတစ်ဆင့် ပစ္စည်းပို့သည့်ကိရိယာဖြစ်သည်။ ဖိအားဖြင့်ပို့ခြင်းနှင့် သက်ဆိုင်ရာအစိတ်အပိုင်းထဲ လောင်းခြင်းကို အလုပ်အမည်တစ်ခုတည်းမစုရပါ။",
+          "reason": "Concrete delivery hose: remove water-specific noun added to source generic hose."
+        },
+        {
+          "sessionId": "kensetsu-common-session-071",
+          "unitId": "kensetsu-common-session-071-cluster-4-p2",
+          "locale": "bn",
+          "translation": "ঢালাইযন্ত্রের কার্যকরী যন্ত্রাংশ পরিচালনায় সংশ্লিষ্ট কাজ অনুযায়ী প্রশিক্ষণ ইত্যাদি জড়িত। সংকেত, নিরাপত্তা যাচাই ও যন্ত্রের শর্ত পরিকল্পনা অনুযায়ী হয়। এখানে বুম বা হোস পরিচালনা, আটকে যাওয়া দূর করা, কম্পনযন্ত্র প্রবেশ করানোর পদ্ধতি বা সেটিংয়ের মান শেখানো হচ্ছে না।",
+          "reason": "作業装置 denotes working apparatus/attachments of placing machinery, not work arrangements."
+        },
+        {
+          "sessionId": "kensetsu-common-session-073",
+          "unitId": "kensetsu-common-session-073-cluster-1-p2",
+          "locale": "my",
+          "translation": "အဆောက်အအုံပတ်လည် အပြင်ပိုင်းလုပ်ငန်းအားလုံးသည် အပင်စိုက်ခြင်းဟု မဆိုလိုပါ။ လမ်း၊ အသုံးပြုရေးအဆောက်အအုံနှင့်နေရာများ၊ ရေထုတ်မှုစသည့်အလုပ်နှင့်လည်း ဆက်စပ်သည်။ အပင်ရှိအကွက်၊ လူသုံးနေရာခွဲဖတ်လျှင် မြေကွက်တစ်ခုတည်း၌ ဘယ်အလုပ်ဆက်စပ်သည်ကို ရှင်းပြနိုင်သည်။",
+          "reason": "施設 denotes facilities, not construction materials; external works interact with paths, facilities and drainage."
+        },
+        {
+          "sessionId": "kensetsu-common-session-075",
+          "unitId": "title",
+          "locale": "bn",
+          "translation": "কাঠামো ও অভ্যন্তরীণ কাঠের কাজ অনুযায়ী কাঠমিস্ত্রির কাজ আলাদা করা",
+          "reason": "Title大工 specifies carpenter; generic mason/craftworker loses wood-working role."
+        },
+        {
+          "sessionId": "kensetsu-common-session-077",
+          "unitId": "kensetsu-common-session-077-cluster-3-p3",
+          "locale": "bn",
+          "translation": "একটি কাল্পনিক সরঞ্জামতালিকায় বায়ু সরবরাহ, শৌচাগারের বায়ু নিষ্কাশন ও আগুনের সময় ধোঁয়া নিষ্কাশন আলাদা রয়েছে—এটি তার উদাহরণ। শুধু প্রবাহের দিক নয়, ব্যবহারের উদ্দেশ্য ও সরঞ্জামের সিস্টেম পড়ুন। পাতধাতু লাগানো শেষ মানে এয়ার কন্ডিশনিং ও বিপর্যয় প্রতিরোধের সব কার্যকারিতা যাচাই হয়েছে—এমন অর্থে প্রসারিত করবেন না।",
+          "reason": "Retain combined listed system-function scope; completion of sheet metal does not certify all AC and disaster-prevention functions."
+        },
+        {
+          "sessionId": "kensetsu-common-session-077",
+          "unitId": "kensetsu-common-session-077-cluster-2:title",
+          "locale": "bn",
+          "translation": "ধাতব ছাদ ও পানির প্রবাহ নির্দেশ করার ফিটিং",
+          "reason": "Clarify guiding/directing rainwater; avoid a water-powered/hydraulic reading of চালিত."
+        },
+        {
+          "sessionId": "kensetsu-common-session-077",
+          "unitId": "kensetsu-common-session-077-cluster-2-p1",
+          "locale": "bn",
+          "translation": "ধাতুর পাতের ছাদের কাজ ও বৃষ্টির পানি প্রতিরোধের বিন্যাসের পানির প্রবাহ নির্দেশ করার ফ্ল্যাশিং ইত্যাদি নির্মাণের পাতধাতুর কাজের উদাহরণ। ফ্ল্যাশিংকে সংযোগস্থল ইত্যাদিতে বৃষ্টির পানির প্রবাহ নির্দেশ করার অংশ হিসেবে বুঝুন। ছাদের সাধারণ অংশ এবং প্রান্ত ও অন্য অংশের সীমানা আলাদা পড়ুন।",
+          "reason": "Clarify guiding/directing rainwater; avoid a water-powered/hydraulic reading of চালিত."
+        },
+        {
+          "sessionId": "kensetsu-common-session-077",
+          "unitId": "kensetsu-common-session-077-cluster-2:prompt",
+          "locale": "bn",
+          "translation": "ধাতব ছাদ, ফ্ল্যাশিং ও দেয়ালের সীমানা বৃষ্টির পানির প্রবাহ নির্দেশ করার ভূমিকা দিয়ে ব্যাখ্যা করুন।",
+          "reason": "Clarify guiding/directing rainwater; avoid a water-powered/hydraulic reading of চালিত."
+        },
+        {
+          "sessionId": "kensetsu-common-session-077",
+          "unitId": "keyTerm:水切り",
+          "locale": "bn",
+          "translation": "পানির প্রবাহ নির্দেশ করার ফ্ল্যাশিং",
+          "reason": "Clarify guiding/directing rainwater; avoid a water-powered/hydraulic reading of চালিত."
+        }
+      ],
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "releaseApproved": false
+    },
+    "review-id-tl.json": {
+      "reviewer": "independent_ai",
+      "scope": {
+        "sessions": "071–077",
+        "locales": [
+          "id",
+          "tl"
+        ],
+        "units": 191,
+        "strings": 382,
+        "paragraphs": 84,
+        "fullSourceComparison": true
+      },
+      "corrections": [
+        {
+          "sessionId": "kensetsu-common-session-076",
+          "unitId": "kensetsu-common-session-076-cluster-1-p1",
+          "locale": "tl",
+          "translation": "Ginagamit sa bubong ang mga materyal na gaya ng tile na luwad at metal sheet. Ginagawa ang tile na luwad sa pamamagitan ng paghubog at pagsusunog ng luwad, ngunit huwag magpasya na pareho ang materyal ng lahat mula sa tawag na tile lamang. Unawain nang magkakasama ang materyal ng bubong, sapin sa ilalim, mga gilid, at ugnayan sa ibang bahagi.",
+          "reason": "Japanese焼成 refers to firing clay, not firing a gun or an explosion; use ceramic-firing sense pagsusunog."
+        }
+      ],
+      "preservedChecks": [
+        "concrete ingredients and fresh state; pumping versus placing/compaction",
+        "entrapped versus required air; no all-air removal claim",
+        "contextual curing/masking/protection",
+        "generic plaster distinct from lime plaster; aggregate polishing/washing",
+        "external works broader than planting; planting versus root establishment",
+        "timber frame versus interior joinery and temporary formwork",
+        "rainwater detailing versus coating; roofing removal versus overlay",
+        "air supply versus fuel gas; ventilation versus fire-smoke and combustion exhaust"
+      ],
+      "reviewedByNativeSpeaker": false,
+      "domainApproved": false,
+      "releaseApproved": false
+    },
+    "review-th-km.json": {
+      "reviewer": "independent_ai_takeover",
+      "inputFile": "pair-th-km.json",
+      "inputSha256": "6ab3d030e1c3a54a3c35d9805b38b9adee813fe436f9b34763d9ca686bd262f6",
+      "reviewedSessions": [
+        "kensetsu-common-session-071",
+        "kensetsu-common-session-072",
+        "kensetsu-common-session-073",
+        "kensetsu-common-session-074",
+        "kensetsu-common-session-075",
+        "kensetsu-common-session-076",
+        "kensetsu-common-session-077"
+      ],
+      "locales": [
+        "th",
+        "km"
+      ],
+      "sourceUnitsReviewed": 191,
+      "translatedStringsReviewed": 382,
+      "fullParagraphTranslationsReviewed": 168,
+      "scope": "Every source unit and both locale strings independently compared in seven bounded per-session reads; all full paragraphs, headings, prompts, terms and illustration alt text inspected.",
+      "status": "bounded_corrections_requested",
+      "corrections": [
+        {
+          "sessionId": "kensetsu-common-session-071",
+          "unitId": "kensetsu-common-session-071-cluster-1-p2",
+          "locale": "th",
+          "sourceJa": "生コンという名前は、全ての工事が同じ配合や性能という意味ではありません。製造した材料が届いたことと、現場で必要な条件に適合していることは別です。運搬や時間、気温等による状態の変化も施工の計画に関係します。",
+          "before": "ชื่อคอนกรีตผสมเสร็จไม่ได้หมายความว่างานก่อสร้างทุกแห่งมีส่วนผสมหรือสมรรถนะเดียวกัน การที่วัสดุผลิตแล้วมาถึงกับการตรงตามเงื่อนไขที่จำเป็นของหน้างานเป็นคนละเรื่อง การเปลี่ยนสภาพจากการขนส่ง เวลา อุณหภูมิ เป็นต้น ก็เกี่ยวกับแผนก่อสร้าง",
+          "translation": "ชื่อคอนกรีตผสมเสร็จไม่ได้หมายความว่างานก่อสร้างทุกแห่งมีส่วนผสมหรือสมรรถนะเดียวกัน การที่วัสดุผลิตแล้วมาถึงกับการตรงตามเงื่อนไขที่จำเป็นของหน้างานเป็นคนละเรื่อง การเปลี่ยนสภาพจากการขนส่ง เวลา อุณหภูมิอากาศ เป็นต้น ก็เกี่ยวกับแผนก่อสร้าง",
+          "reason": "Explicitly retain 気温 as ambient air temperature rather than an unspecified temperature."
+        },
+        {
+          "sessionId": "kensetsu-common-session-071",
+          "unitId": "kensetsu-common-session-071-cluster-1-p2",
+          "locale": "km",
+          "sourceJa": "生コンという名前は、全ての工事が同じ配合や性能という意味ではありません。製造した材料が届いたことと、現場で必要な条件に適合していることは別です。運搬や時間、気温等による状態の変化も施工の計画に関係します。",
+          "before": "ឈ្មោះបេតុងលាយស្រាប់មិនមានន័យថាការងារសំណង់ទាំងអស់មានសមាមាត្រលាយឬសមត្ថភាពដូចគ្នាទេ។ ការដឹកសម្ភារៈដែលផលិតរួចមកដល់ និងការស្របនឹងលក្ខខណ្ឌចាំបាច់នៅការដ្ឋានជារឿងខុសគ្នា។ ការប្រែប្រួលស្ថានភាពដោយការដឹក ពេលវេលា និងសីតុណ្ហភាពជាដើមក៏ពាក់ព័ន្ធនឹងផែនការសាងសង់។",
+          "translation": "ឈ្មោះបេតុងលាយស្រាប់មិនមានន័យថាការងារសំណង់ទាំងអស់មានសមាមាត្រលាយឬសមត្ថភាពដូចគ្នាទេ។ ការដឹកសម្ភារៈដែលផលិតរួចមកដល់ និងការស្របនឹងលក្ខខណ្ឌចាំបាច់នៅការដ្ឋានជារឿងខុសគ្នា។ ការប្រែប្រួលស្ថានភាពដោយការដឹក ពេលវេលា និងសីតុណ្ហភាពខ្យល់ជាដើមក៏ពាក់ព័ន្ធនឹងផែនការសាងសង់។",
+          "reason": "Explicitly retain 気温 as ambient air temperature rather than an unspecified temperature."
+        },
+        {
+          "sessionId": "kensetsu-common-session-075",
+          "unitId": "kensetsu-common-session-075-cluster-2-p3",
+          "locale": "th",
+          "sourceJa": "架空の部材表で、加工した番号と取り付ける場所を照合する例です。届いた部材と、その位置へ固定した部材を別に記録します。材料の搬入済みという表現を、接合や必要な精度の確認も済んだ状態へ広げません。",
+          "before": "ตัวอย่างรายการชิ้นส่วนสมมติที่เทียบหมายเลขแปรรูปกับสถานที่ติดตั้ง บันทึกชิ้นส่วนมาถึงแยกจากชิ้นส่วนยึด ณ ตำแหน่งนั้นแล้ว อย่าขยายคำว่านำวัสดุเข้าแล้วเป็นสภาพที่ตรวจรอยต่อหรือความแม่นยำจำเป็นแล้วด้วย",
+          "translation": "ตัวอย่างรายการชิ้นส่วนสมมติที่เทียบหมายเลขของชิ้นส่วนที่แปรรูปแล้วกับสถานที่ติดตั้ง บันทึกชิ้นส่วนมาถึงแยกจากชิ้นส่วนยึด ณ ตำแหน่งนั้นแล้ว อย่าขยายคำว่านำวัสดุเข้าแล้วเป็นสภาพที่ตรวจรอยต่อหรือความแม่นยำจำเป็นแล้วด้วย",
+          "reason": "Clarify identifiers of fabricated members, not fabricated numbers or quantities."
+        },
+        {
+          "sessionId": "kensetsu-common-session-075",
+          "unitId": "kensetsu-common-session-075-cluster-2-p3",
+          "locale": "km",
+          "sourceJa": "架空の部材表で、加工した番号と取り付ける場所を照合する例です。届いた部材と、その位置へ固定した部材を別に記録します。材料の搬入済みという表現を、接合や必要な精度の確認も済んだ状態へ広げません。",
+          "before": "នេះជាឧទាហរណ៍បញ្ជីធាតុសន្មតដែលផ្ទៀងផ្ទាត់លេខកែច្នៃនិងកន្លែងដំឡើង។ ត្រូវកត់ធាតុមកដល់ និងធាតុដែលបានចាប់ឱ្យជាប់នៅទីតាំងនោះដោយឡែក។ មិនត្រូវពង្រីកពាក្យសម្ភារៈដឹកចូលរួចទៅជាស្ថានភាពបានពិនិត្យការភ្ជាប់ និងភាពត្រឹមត្រូវចាំបាច់រួចទេ។",
+          "translation": "នេះជាឧទាហរណ៍បញ្ជីធាតុសន្មតដែលផ្ទៀងផ្ទាត់លេខរបស់ធាតុដែលបានកែច្នៃនិងកន្លែងដំឡើង។ ត្រូវកត់ធាតុមកដល់ និងធាតុដែលបានចាប់ឱ្យជាប់នៅទីតាំងនោះដោយឡែក។ មិនត្រូវពង្រីកពាក្យសម្ភារៈដឹកចូលរួចទៅជាស្ថានភាពបានពិនិត្យការភ្ជាប់ និងភាពត្រឹមត្រូវចាំបាច់រួចទេ។",
+          "reason": "Clarify identifiers of fabricated members, not fabricated numbers or quantities."
+        },
+        {
+          "sessionId": "kensetsu-common-session-077",
+          "unitId": "kensetsu-common-session-077-cluster-2-p1",
+          "locale": "th",
+          "sourceJa": "金属板を用いた屋根の工事や、水切り等の雨仕舞に関係する金物は、建築板金の仕事の例です。水切りは、接点等で雨水を導く部材として理解します。屋根の一般部分と、端部や他の部材との境界を分けて読みます。",
+          "before": "งานหลังคาแผ่นโลหะและอุปกรณ์โลหะเกี่ยวกับรายละเอียดน้ำฝน เช่น แผ่นกันน้ำย้อน เป็นตัวอย่างงานโลหะแผ่นอาคาร เข้าใจแผ่นกันน้ำย้อนว่าเป็นชิ้นส่วนนำน้ำฝนที่จุดสัมพันธ์ เป็นต้น อ่านแยกส่วนทั่วไปของหลังคาจากขอบและเขตสัมผัสชิ้นส่วนอื่น",
+          "translation": "งานหลังคาแผ่นโลหะและอุปกรณ์โลหะเกี่ยวกับรายละเอียดน้ำฝน เช่น แผ่นนำน้ำฝน เป็นตัวอย่างงานโลหะแผ่นอาคาร เข้าใจแผ่นนำน้ำฝนว่าเป็นชิ้นส่วนนำน้ำฝนที่จุดสัมพันธ์ เป็นต้น อ่านแยกส่วนทั่วไปของหลังคาจากขอบและเขตสัมผัสชิ้นส่วนอื่น",
+          "reason": "The Japanese describes a rainwater-directing member at interfaces; avoid narrowing it to prevention of backflow."
+        },
+        {
+          "sessionId": "kensetsu-common-session-077",
+          "unitId": "kensetsu-common-session-077-cluster-2:prompt",
+          "locale": "th",
+          "sourceJa": "金属屋根・水切り・壁との境界を、雨水を導く役割から説明してください。",
+          "before": "อธิบายหลังคาโลหะ แผ่นกันน้ำย้อน และเขตสัมผัสผนัง จากบทบาทนำน้ำฝน",
+          "translation": "อธิบายหลังคาโลหะ แผ่นนำน้ำฝน และเขตสัมผัสผนัง จากบทบาทนำน้ำฝน",
+          "reason": "Retain rainwater-directing role rather than backflow-only purpose."
+        },
+        {
+          "sessionId": "kensetsu-common-session-077",
+          "unitId": "keyTerm:水切り",
+          "locale": "th",
+          "sourceJa": "水切り",
+          "before": "แผ่นกันน้ำย้อน",
+          "translation": "แผ่นนำน้ำฝน",
+          "reason": "Use consistent generic rainwater-directing meaning for flashing."
+        },
+        {
+          "sessionId": "kensetsu-common-session-077",
+          "unitId": "kensetsu-common-session-077-cluster-3-p2",
+          "locale": "km",
+          "sourceJa": "排煙ダクトは、火災時の煙を排出する設備に関係します。一般の排気と同じ用途にまとめません。また、発電機からの燃焼排気等は、室内の換気とは違う条件を持ちます。見た目が管状というだけで同じ材料や仕様を使うとはしません。",
+          "before": "បំពង់បញ្ចេញផ្សែងពាក់ព័ន្ធនឹងប្រព័ន្ធបញ្ចេញផ្សែងពេលអគ្គិភ័យ។ មិនត្រូវសរុបជាការប្រើដូចការបញ្ចេញខ្យល់ទូទៅទេ។ លើសពីនេះ ផ្សែងចំហេះពីម៉ាស៊ីនភ្លើងជាដើមមានលក្ខខណ្ឌខុសពីបញ្ចេញបញ្ចូលខ្យល់ក្នុងបន្ទប់។ មិនត្រូវចាត់ថាប្រើសម្ភារៈឬលក្ខណៈបច្ចេកទេសដូចគ្នាដោយគ្រាន់តែមើលរាងជាបំពង់ទេ។",
+          "translation": "បំពង់បញ្ចេញផ្សែងពាក់ព័ន្ធនឹងប្រព័ន្ធបញ្ចេញផ្សែងពេលអគ្គិភ័យ។ មិនត្រូវសរុបជាការប្រើដូចការបញ្ចេញខ្យល់ទូទៅទេ។ លើសពីនេះ ឧស្ម័នចំហេះដែលបញ្ចេញពីម៉ាស៊ីនភ្លើងជាដើមមានលក្ខខណ្ឌខុសពីបញ្ចេញបញ្ចូលខ្យល់ក្នុងបន្ទប់។ មិនត្រូវចាត់ថាប្រើសម្ភារៈឬលក្ខណៈបច្ចេកទេសដូចគ្នាដោយគ្រាន់តែមើលរាងជាបំពង់ទេ។",
+          "reason": "燃焼排気 is combustion exhaust gas, not limited to visible combustion smoke; preserve distinction from fire smoke."
+        }
+      ],
+      "checks": [
+        "Cement/ready-mix and transport/pumping/placement/compaction distinctions; air conditions and three roles versus headcount",
+        "ネコ wheelbarrow nickname retained; no cat",
+        "Contextual養生 concrete curing versus painting protection versus plastering protection/curing",
+        "Substrate conditions, natural-material limits, polished artificial-stone versus washed aggregate, patterns versus samples",
+        "Generic external works/rest areas/root growth and supported tree distinction",
+        "Fabricated-member identifiers, carpentry roles and no authorization from names",
+        "Rainwater detailing, overlay/removal/observations and causal limits",
+        "Water-directing flashing rather than backflow-only; air-supply already explicit in TH/KM; fire smoke versus generator exhaust"
+      ],
+      "humanReviewed": false,
+      "reviewedByNativeSpeaker": false,
+      "domainApproval": false,
+      "releaseApproval": false
+    },
+    "reread-id-tl.json": {
+      "reviewer": "root_ai_bounded_reread",
+      "correctedFieldsReread": 1,
+      "unitId": "kensetsu-common-session-076-cluster-1-p1",
+      "locale": "tl",
+      "sourceJa": "屋根には粘土瓦、金属板等の材料が使われます。粘土瓦は粘土を成形し焼成したものですが、瓦という呼び方から全てを同じ材料と決めません。屋根材と、その下の層、端部や他の部材との接点を合わせて理解します。",
+      "finalTranslation": "Ginagamit sa bubong ang mga materyal na gaya ng tile na luwad at metal sheet. Ginagawa ang tile na luwad sa pamamagitan ng paghubog at pagsusunog ng luwad, ngunit huwag magpasya na pareho ang materyal ng lahat mula sa tawag na tile lamang. Unawain nang magkakasama ang materyal ng bubong, sapin sa ilalim, mga gilid, at ugnayan sa ibang bahagi.",
+      "finalPairSha256": "2dfdac0fecbb5882c864c8e1d130f8341f012d8029419a4ec0f2fd4fa3d4abae",
+      "status": "PASS_AI_BOUNDED_REREAD",
+      "notes": [
+        "Root compared the full corrected clay-tile paragraph with canonical Japanese; ceramic firing context, generic other tile materials and roof layer/interfaces retained."
+      ],
+      "humanReviewed": false,
+      "domainReviewed": false
+    },
+    "reread-zh.json": {
+      "pairFile": "pair-zh-CN-zh-TW.json",
+      "pairSha256": "cf3217b61f5b9603a233cc9b8fb2aaef4d8ef994d9f32faa6031dfa4206ffaa4",
+      "reviewer": "independent_ai_fresh_reread",
+      "sourceUnitsReread": 1,
+      "translatedStringsReread": 2,
+      "sessions": [
+        "kensetsu-common-session-077"
+      ],
+      "unitIds": [
+        "kensetsu-common-session-077-cluster-3-p3"
+      ],
+      "locales": [
+        "zh-CN",
+        "zh-TW"
+      ],
+      "sourceJa": "架空の設備表に、給気、便所の排気、火災時の排煙が別に載る例です。流れる方向だけでなく、使用する目的と設備の系統を読みます。板金の取付けが終わったことを、空調や防災の全機能の確認済みへ広げません。",
+      "result": "PASS",
+      "notes": [
+        "送风/送風 accurately identifies duct air supply rather than generic gas supply. Full paragraph preserves hypothetical status, toilet exhaust, fire smoke exhaust, flow direction, intended use/equipment system, and prohibition on treating installation completion as verification of all air-conditioning/disaster-prevention functions."
+      ],
+      "humanReviewed": false,
+      "reviewedByNativeSpeaker": false,
+      "domainApproval": false
+    },
+    "reread-bn-my.json": {
+      "currentPairSha256": "d6ffd03e233f1b4f02348330a94475badd1b9f0d7ffe262a47cfc4adf72bbb84",
+      "reviewType": "author_fresh_source_comparison_after_root_merge",
+      "correctedStringsReread": 9,
+      "sourceUnits": 191,
+      "translations": 382,
+      "result": "PASS",
+      "findings": [
+        "All9merged corrected fields freshly reread against exact Japanese, full paragraphs intact.",
+        "Generic concrete hose/apparatus, facilities/carpenter naming, combined system-function limits and water directing retained."
+      ],
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "releaseApproved": false
+    },
+    "review-zh.json": {
+      "reviewer": "independent_ai",
+      "inputFile": "pair-zh-CN-zh-TW.json",
+      "inputSha256": "453a7f630c64ce6af4278c722510f960dcc466fa48f82bf6e7745c42f1812f77",
+      "sessions": [
+        "kensetsu-common-session-071",
+        "kensetsu-common-session-072",
+        "kensetsu-common-session-073",
+        "kensetsu-common-session-074",
+        "kensetsu-common-session-075",
+        "kensetsu-common-session-076",
+        "kensetsu-common-session-077"
+      ],
+      "locales": [
+        "zh-CN",
+        "zh-TW"
+      ],
+      "sourceUnitsReviewed": 191,
+      "translatedStringsReviewed": 382,
+      "fullParagraphsReviewed": 168,
+      "scope": "Complete independent Japanese comparison of all191units in both Chinese locales, all84 full paragraphs per locale and other titles/prompts/terms/alt text.",
+      "result": "bounded_clarity_corrections_recommended",
+      "corrections": [
+        {
+          "sessionId": "kensetsu-common-session-077",
+          "unitId": "kensetsu-common-session-077-cluster-3-p3",
+          "locale": "zh-CN",
+          "sourceJa": "架空の設備表に、給気、便所の排気、火災時の排煙が別に載る例です。流れる方向だけでなく、使用する目的と設備の系統を読みます。板金の取付けが終わったことを、空調や防災の全機能の確認済みへ広げません。",
+          "before": "这是一个虚构设备表中分别列出供气、厕所排气、火灾时排烟的例子。除流动方向外，还要阅读使用目的与设备系统。不能将钣金安装结束，扩大解释为空调或防灾的全部功能已确认。",
+          "translation": "这是一个虚构设备表中分别列出送风、厕所排气、火灾时排烟的例子。除流动方向外，还要阅读使用目的与设备系统。不能将钣金安装结束，扩大解释为空调或防灾的全部功能已确认。",
+          "reason": "Clarify 給気 as air supply in this duct-system example; generic gas-supply wording can be misunderstood as fuel-gas service. No changed flow or operational requirement."
+        },
+        {
+          "sessionId": "kensetsu-common-session-077",
+          "unitId": "kensetsu-common-session-077-cluster-3-p3",
+          "locale": "zh-TW",
+          "sourceJa": "架空の設備表に、給気、便所の排気、火災時の排煙が別に載る例です。流れる方向だけでなく、使用する目的と設備の系統を読みます。板金の取付けが終わったことを、空調や防災の全機能の確認済みへ広げません。",
+          "before": "這是一個虛構設備表中分別列出供氣、廁所排氣、火災時排煙的例子。除流動方向外，還要閱讀使用目的與設備系統。不能將鈑金安裝結束，擴大解釋為空調或防災的全部功能已確認。",
+          "translation": "這是一個虛構設備表中分別列出送風、廁所排氣、火災時排煙的例子。除流動方向外，還要閱讀使用目的與設備系統。不能將鈑金安裝結束，擴大解釋為空調或防災的全部功能已確認。",
+          "reason": "Clarify 給気 as air supply in this duct-system example; generic gas-supply wording can be misunderstood as fuel-gas service. No changed flow or operational requirement."
+        }
+      ],
+      "checks": [
+        "Ready-mix versus cement;transport/pumping/placement/compaction;three roles not three workers",
+        "Contextual concrete curing versus painting masking and plastering protection/curing",
+        "External works broader than planting;root establishment versus supported tree",
+        "Polished artificial-stone aggregate versus washed exposure;generic plaster material",
+        "Timber framing/woodwork versus total building structure;specialist work limitations",
+        "Rainwater detailing versus coating;roof removal/overlay and leak-cause limits",
+        "Ordinary ventilation versus fire smoke exhaust and generator combustion exhaust"
+      ],
+      "humanReviewed": false,
+      "reviewedByNativeSpeaker": false,
+      "domainApproval": false,
+      "releaseApproval": false
+    },
+    "reread-hi-ne.json": {
+      "scope": {
+        "sourceUnits": 191,
+        "localeStrings": 382,
+        "correctedStringsReread": 7,
+        "locales": [
+          "hi",
+          "ne"
+        ]
+      },
+      "finalSha256": "a2c015a45a023824ddb4c898952cba7d5fc3cd9007d55ea660cebe223e797317",
+      "status": "PASS",
+      "reviewType": "translator fresh reread of independently corrected final strings",
+      "findings": [
+        "Ambient air temperature explicit; construction-completion versus plant-growth phrasing accurate.",
+        "Surface patterns distinguished from sample specimens.",
+        "Tile roof generic in076; specific clay tile example elsewhere preserved."
+      ],
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "releaseApproved": false
+    }
+  },
+  "rootFinalReread": "Root compared full Vietnamese source scope and all bounded EN/VI/ZH/HI/NE/BN/MY/TH/KM review refinements. Final Tagalog ceramic-firing correction separately reread by root with exact final hash."
+}
