@@ -603,3 +603,14 @@ Source/canonical/runtime parity passes. All 7128 identities, order and next link
 21 generic location labels are explicitly simulated; three parks use Park Staff. Station names retain operator evidence. NPC replies provide useful answers and appropriate handoffs. Yaizu postal arithmetic (500 total,350 in stamps,150 remaining) is expressly fictional, not an actual postal rate. Clinical movement is assisted by the nurse without self-disconnection instructions. Bank status and loan questions are scoped to the responsible desk. Dedicated visuals, device checks and human/native review remain pending. NPC progression regression passes; JLPT UI lock remains10/10.
 
 Next complete city cluster: Fujieda, Gotemba and Fukuroi (CTY-JP-22214/22215/22216). Publish and require WORK PERSISTENCE PASS before advancing. Complete all197 and whole-prefecture AI editorial review before PRF-023.
+
+
+## Cluster05 Fujieda/Gotemba/Fukuroi — 2026-10-13
+
+Added24 individual Japanese exchanges,264 alternating turns and120 distinct goals. Shizuoka now has133/197 rewrites;64 old recipe drafts remain. Full current scripts,31 selected full prior comparisons and eight internal groups were read. Rejected outlines are distinguished from full rejected drafts; final source/runtime hashes bind the independent cluster acceptance with zero open blockers. Whole-prefecture CONTENT PASS remains false.
+
+Source/canonical/runtime parity passes. All7128 identities, order and next links are preserved; the other7104 runtime hashes and canonical rows and previous109 rewrites remain unchanged. No new exact utterance collisions. Whole197 structural errors0, normalized groups29, near candidates56. NPC progression passes; unchanged JLPT UI lock retains10/10. Japanese only, translations deferred.
+
+21 generic labels are explicitly simulated; three parks use Park Staff and stations retain operator evidence. Fictional rail/certificate/envelope/apple prices and service premises are explicit. Gotemba postal overlap was replaced completely; the rope-jump count is one finger per jump, stopping atfive. Native/human, dedicated visuals, device and actual-service certification remain pending.
+
+Next complete city cluster: Shimoda/Susono/Kosai (CTY-JP-22219/22220/22221). Publish this narrow24-script unit and require WORK PERSISTENCE PASS before advancing. Complete197 and whole-prefecture editorial gate before PRF-023.
