@@ -82,6 +82,8 @@ export const weeklyIllustrations:Record<string,ImageSourcePropType>={
  'assets/kensetsu/weekly/w042-learning-2-v1.webp':require('../../../assets/kensetsu/weekly/w042-learning-2-v1.webp'),
  'assets/kensetsu/weekly/w028-learning-1-v1.webp':require('../../../assets/kensetsu/weekly/w028-learning-1-v1.webp'),
  'assets/kensetsu/weekly/w028-learning-2-v1.webp':require('../../../assets/kensetsu/weekly/w028-learning-2-v1.webp'),
+ 'assets/kensetsu/weekly/w029-learning-1-v1.webp':require('../../../assets/kensetsu/weekly/w029-learning-1-v1.webp'),
+ 'assets/kensetsu/weekly/w029-learning-2-v1.webp':require('../../../assets/kensetsu/weekly/w029-learning-2-v1.webp'),
 };
 export const weeklyIllustrationAspectRatios:Record<string,number>={
  'assets/kensetsu/weekly/w002-contract-conditions-v1.webp':1.5,
@@ -166,4 +168,6 @@ export const weeklyIllustrationAspectRatios:Record<string,number>={
  'assets/kensetsu/weekly/w042-learning-2-v1.webp':1.5,
  'assets/kensetsu/weekly/w028-learning-1-v1.webp':1.5,
  'assets/kensetsu/weekly/w028-learning-2-v1.webp':1.5,
+ 'assets/kensetsu/weekly/w029-learning-1-v1.webp':1.5,
+ 'assets/kensetsu/weekly/w029-learning-2-v1.webp':1.5,
 };
