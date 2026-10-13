@@ -21,6 +21,8 @@ for(const file of files){
   assert.deepEqual(Object.keys(entry.translations).sort(),expected.slice().sort(),id);
   for(const [locale,text] of Object.entries(entry.translations)){
    assert(typeof text==='string'&&text.trim().length>0,`${id}:${locale}`);assert(!/TODO|TBD|準備中|placeholder/iu.test(text));
+   // pH is an invariant scientific symbol, not an untranslated prose placeholder.
+   if(id==='keyTerm:pH'&&entry.sourceJa==='pH'&&text.trim()==='pH')continue;
    if(['hi','ne'].includes(locale))assert(/[\u0900-\u097f]/u.test(text),`${id}:${locale}`);
    if(locale==='bn')assert(/[\u0980-\u09ff]/u.test(text));
    if(locale==='my')assert(/[\u1000-\u109f]/u.test(text));
@@ -57,7 +59,7 @@ for(const file of files){
  records.push({sessionId:source.id,sourceRevision:source.revision,sourceContentRevision:source.contentRevision??source.revision,
  sourceSha256:crypto.createHash('sha256').update(bytes).digest('hex'),unitCount,paragraphCount:count,translatedStrings:unitCount*12});
 }
-const expectedCounts={1:{units:167,paragraphs:64},2:{units:219,paragraphs:84},3:{units:217,paragraphs:101},4:{units:207,paragraphs:93}};
+const expectedCounts={1:{units:167,paragraphs:64},2:{units:219,paragraphs:84},3:{units:217,paragraphs:101},4:{units:207,paragraphs:93},5:{units:207,paragraphs:90}};
 if(expectedCounts[week]){assert.equal(units,expectedCounts[week].units);assert.equal(paragraphs,expectedCounts[week].paragraphs*12);}
 const report={status:'PASS_MACHINE_WEEKLY_ALIGNMENT_AND_ADAPTER',weekId:`kensetsu-common-week-${weekCode}`,completeLessonIds:records.map(r=>r.sessionId),locales:expected,
  translatedUnits:units,translatedStrings:units*12,paragraphTranslationStrings:paragraphs,promptTranslationStrings:prompts,glossaryTranslationStrings:terms,
