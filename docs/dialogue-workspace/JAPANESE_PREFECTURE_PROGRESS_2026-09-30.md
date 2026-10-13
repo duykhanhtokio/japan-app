@@ -503,3 +503,8 @@ Previous112drafts were persisted at dfc6125242a61488d9680f3a4ba5d792dfb5c6c8,con
 Current13full selected comparisons and rejection evidence: PRF-020_NAGANO_REST_REVIEW.json. Location evidence: PRF-020_NAGANO_LOCATION_REVIEW.json. Corrected outdated museum label to長野県立美術館 and role toMuseum/Museum Guide; M-Wave usesLandmark/Guide. Unverified shop/hotel labels now explicitly simulated. Jigokudani is officially inYamanouchi,so the Nagano-city slot is now an explicitly simulated nature area rather than false city attribution. Alllocation IDs/citybindings/order remain unchanged,with no named-artwork dependencies for the4changed labels. Actual runtime repository check passes13scenario/category alignments and the updated roles. No full asset/device/native or real-policy approval.
 
 Whole Nagano screening still has34normalized and296near candidates among remaining drafts. NOT whole-prefecture CONTENT PASS. Resume SC-NGN-MATSUMOTO-001 after remote persistence. Japanese-only first pass; translations deferred.
+
+
+## 2026-10-13 — Nagano AI Japanese CONTENT PASS
+
+Completed 173/173 scenarios (1,903 alternating turns; 865 speaking goals). Final Chikuma/Tōmi/Azumino group adds 24 individually authored scripts. Full Japanese prefecture editorial reading completed; 13 scripts receive scoped text repairs for closure, role or clarity. Hash-bound semantic review and Japanese master lock are in content-qa. All 7,128 dialogue identities and 6,955 non-Nagano runtime hashes preserved; translations deferred. AI fictional-learning scope only; human/native/device and service validity not certified. Suwa Factory/Classroom art gaps remain. Next: PRF-021 Gifu after remote persistence verification.
