@@ -454,7 +454,7 @@ import week055 from '../../../docs/ssw-workspace/kensetsu/shared-week-055.json';
 
 export type Level='1'|'2';
 export type Field='utilities'|'building'|'civil';
-export type Paragraph={id:string;ja:string};
+export type Paragraph={id:string;ja:string;translations?:Record<string,string>};
 export type Cluster={id:string;titleJa:string;paragraphs:Paragraph[];applicationPromptJa?:string;illustration?:{assetPath:string;captionJa:string}};
 export type Session={id:string;revision:number;titleJa:string;clusters:Cluster[];keyTerms?:{term:string;reading:string}[];illustrations?:{path:string;clusterId?:string;altJa:string}[]};
 export type Week={id:string;titleJa:string;sessionIds:string[]};

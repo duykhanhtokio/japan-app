@@ -19,7 +19,7 @@ weeks.forEach((w,i)=>assert.deepEqual(w.sessionIds,sessions.slice(i*7,i*7+7).map
 const reader=fs.readFileSync('src/components/kensetsu/KensetsuCourse.tsx','utf8');
 assert(reader.includes('!reachedEnd||done'));assert(reader.includes('AsyncStorage.setItem(key'));
 assert(reader.includes('completionKey(learner,level,field)'));
-assert(!reader.includes('translation===c.id'));assert(reader.includes('kensetsu-reflections'));assert(reader.includes('resizeMode="contain"'));assert(!reader.slice(reader.indexOf('function Reader('),reader.indexOf('function Calendar(')).includes('RoyalContentPanel'));assert(!reader.includes('p.translations'));
+assert(!reader.includes('translation===c.id'));assert(reader.includes('kensetsu-reflections'));assert(reader.includes('resizeMode="contain"'));assert(!reader.slice(reader.indexOf('function Reader('),reader.indexOf('function Calendar(')).includes('RoyalContentPanel'));assert(reader.includes('testID="kensetsu-translation"'));assert(reader.includes('p.translations?.[language]'));assert(reader.includes('kensetsu-week-page'));assert(!reader.includes('kensetsu-resume'));
 assert(fs.readFileSync('src/app/specified-skills/kensetsu.tsx','utf8').includes('if(!__DEV__)'));
 const entry=fs.readFileSync('src/app/specified-skills/index.tsx','utf8');assert(entry.includes("'/specified-skills/kensetsu'"));
 console.log(`KENSETSU APP TEST DATA PASS: 55 weeks / 385 sessions / 3856 paragraphs; ${assetPaths.size} image files registered; development gate; native runtime not tested.`);
