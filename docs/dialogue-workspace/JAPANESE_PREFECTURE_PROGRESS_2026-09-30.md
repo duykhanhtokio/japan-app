@@ -662,3 +662,8 @@ Actual repository and Metro dialogue-loader checks pass source/runtime/canonical
 Factory/Classroom/Brewery roles use existing supported progression categories. Market/Zoo/Garden/Bathhouse/Tower/front-of-house roles corrected; unverified generic venues and fictional operations explicitly identified. NPC progression regression and unchanged JLPT UI lock checks are required before publication. New translations remain deferred; native/human, dedicated artwork, device and real-service-policy approval remain false/pending.
 
 Publish this narrow37-script cluster and require WORK PERSISTENCE PASS before advancing. Next complete city cluster: Ichinomiya, Toyohashi and Kariya (CTY-AIC-ICHINOMIYA, CTY-AIC-TOYOHASHI, CTY-AIC-KARIYA),24 scripts. Complete all317 and the whole-prefecture editorial/master-lock gate before PRF-024 Mie.
+
+
+## PRF-023 Aichi — final Japanese editorial/runtime checkpoint, 2026-10-13
+
+317/317 current canonical scenarios across38cities;3487Japanese turns;1585Player goals. Independently read final155 and hash-bound previous162; every current exchange has scopedAI Japanese editorial acceptance. Existing auditor verifies the separate317-hash semantic decision as CONTENT PASS. All7128 identities/ordering/links retained; no new translations/native/device/release approval. Master lock and full reading/cross-corpus/adapter evidence are in docs/dialogue-workspace/content-qa/PRF-023_*. The containing narrow commit must be remotely verified before beginning PRF-024 Mie.
