@@ -570,3 +570,14 @@ Source/canonical/runtime parity and all7128 identities, order and next links pas
 Two factory categories now use Factory/Factory Worker. Park, onsen and lookout roles are aligned. Fish-market Market Staff and zoo Zoo Staff retain existing broad categories for asset/progression compatibility. Unverified generic shops and services are explicitly simulated. Dedicated specialist artwork and actual device checks remain pending. Human/native and real-service approval remain false. NPC progression regression passes six distinct roles,30 completions, repeat idempotence, legacy progress preservation and10 corrected-location matches. The JLPT UI lock remains10/10.
 
 Next complete city cluster: Numazu, Atami and Mishima. Publish this narrow37-script unit and require WORK PERSISTENCE PASS before advancing. Complete all197 and the whole-prefecture AI editorial gate before PRF-023.
+
+
+## Cluster02 Numazu/Atami/Mishima — 2026-10-13
+
+Added24 individual Japanese exchanges,264 alternating turns and120 distinct goals. Shizuoka now has61/197 rewrites;136 old recipe drafts remain. All24 current exchanges/goals and selected full prior counterparts were read, with internal cross-city comparisons. Full rejected variants are retained in author reports. Final scoped cluster decision has zero concrete editorial blockers; whole-prefecture CONTENT PASS remains false.
+
+Source/canonical/runtime parity passes. All7128 identities, order and next links remain unchanged; the other7104 runtime hashes and canonical rows are preserved, including the previous37 rewritten scripts. No new exact utterance collision. Whole197 structural audit has zero errors;29 normalized groups and332 near candidates remain among drafts. Japanese only, no level gate and no new translations.
+
+23 generic location labels are explicitly simulated; Mishima park role uses Park Staff. Ferry, taxi, fishing and aquarium dialogue uses the correct native roles with existing broad categories for asset/progression compatibility. Numazu's meeting-point label and bank branch reading are explicitly fictional and answered directly. Dedicated visuals and device checks remain pending. Native/human/real-service certification remains false. NPC progression regression passes; JLPT UI lock remains10/10.
+
+Next complete city cluster: Fujinomiya, Ito and Shimada (CTY-JP-22207/22208/22209). Publish and require WORK PERSISTENCE PASS before advancing. Complete all197 and whole-prefecture AI editorial review before PRF-023.
