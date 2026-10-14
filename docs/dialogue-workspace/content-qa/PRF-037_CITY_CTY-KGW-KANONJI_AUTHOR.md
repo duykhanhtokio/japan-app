@@ -1,0 +1,3 @@
+# Kanonji independent authorship
+
+Eight canonical scenarios, 88 Japanese turns and 40 distinct matched Player goals. Full AGENTS and session entry read this session; only assigned city INPUT prose read. Existing categories and roles all match own scenarios; no alignment correction needed. Author reread final premises, turns and tasks, including corrected unresolved allergy-order premise and explicit contextual farewells. All settings simulated; no guaranteed real local access, medical safety, fees or service eligibility. Human/native/peer/device/release review flags remain false. Shared checkout untouched; parent owns integration and remote persistence.
