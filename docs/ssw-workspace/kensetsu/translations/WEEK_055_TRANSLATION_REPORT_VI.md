@@ -1,0 +1,5 @@
+# Bản dịch 建設 tuần 055
+
+Đã dịch 7 bài 379–385: 163 mục nguồn, 1,956 chuỗi cho 12 ngôn ngữ, 672 bản dịch đoạn đầy đủ. Sáu AI dịch và tự kiểm riêng từng cặp trực tiếp từ tiếng Nhật; không dịch chéo hoặc kiểm tra chéo. Giữ nguyên bản Nhật, ID và tiến độ. Kiểm dữ liệu, TypeScript phạm vi dữ liệu, bản dựng reader thích nghi và bảo toàn dữ liệu đạt. Reader web thích nghi đạt 84 tổ hợp bài–ngôn ngữ, mở/thu dịch, giữ bản Nhật, không fallback sai locale, hoàn thành thủ công/tải lại và ba kích thước màn hình. Đã xem ảnh chụp; chưa kiểm thiết bị thật hoặc toàn bộ glyph các hệ chữ. Chưa có duyệt bản ngữ/chuyên môn/phát hành. Tổng 55/55 tuần, 385/385 bài; còn 0 bài. Đã đủ toàn bộ 55 tuần dự kiến; không có tuần 056. Kiểm tổng dữ liệu xác nhận 385/385 bài và registry đủ 12 ngôn ngữ. Cần xác minh remote cho commit chứa báo cáo này.
+
+Tổng giáo trình: 9,791 mục nguồn, 117,492 chuỗi, 3,856 đoạn và 46,272 bản dịch đoạn. Đây là độ phủ bản dịch của giáo trình hiện có; không chứng nhận độ phủ toàn bộ kiến thức tài liệu tham khảo hoặc đủ điều kiện phát hành.
