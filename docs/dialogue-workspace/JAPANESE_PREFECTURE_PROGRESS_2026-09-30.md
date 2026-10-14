@@ -1024,3 +1024,7 @@ All 133 scenarios in 15 cities: 1463 Japanese turns and 665 goals independently 
 ## 2026-10-14 — PRF-037 Kagawa complete independent city self-review
 
 77/77 canonical scenarios in 8 cities by six independent authors; 847 turns, 385 Player tasks; per-city remote verification. Whole-prefecture adapter/corpus PASS, zero exact Player/NPC collisions, 7484 outside runtime files unchanged, UI lock10/10 and NPC progression PASS. Supported factory/warehouse/workshop/museum roles corrected; karaoke retains documented legacy recreation grouping with Karaoke Staff job. Peer/human/native/device/release flags false. Current checkpoint PRF-037_CHECKPOINT.json; resume PRF-038 after checkpoint persistence.
+
+## 2026-10-14 — PRF-038 Ehime complete independent city self-review
+
+101/101 canonical scenarios in 11 cities by six independent authors; 1111 Japanese turns and 505 Player tasks. Each city remotely verified before advancing. Whole-prefecture repository/loader adapter and corpus PASS; zero exact Player/NPC collisions; 7460 outside runtime files unchanged. UI lock10/10 and corrected NPC progression PASS. Supported role corrections and unverified institution/hour limits recorded in city author files and checkpoint. Peer/human/native/device/release flags false. See PRF-038_CHECKPOINT.json and PRF-038_COMPLETE_*; resume PRF-039 after containing checkpoint persistence. Concurrent Tokutei commits preserved.
