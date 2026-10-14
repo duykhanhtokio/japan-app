@@ -1,0 +1,9 @@
+# 八女市・独立著者記録
+
+Eight independent Japanese simulated scenes from own Yame input only, plus required startup/progress instructions. No peer prose read or peer review. Eleven alternating NPC/Player turns and five matched action-goal pairs each, final contextual NPC farewell. No translation or level gating.
+
+Causes differ: road-congestion notice mistaken for required bus reservation change; family telephone consultation confused with confirmed reservation; original receipt versus copy and uncertain reissue; friend's temporarily entrusted keys; household package already received but notice remains; card type unclear among similar cards; chipped container with missing paper receipt; two companions choosing different walking distances. Each is independently developed rather than a place-name swap.
+
+Author reread all full final titles, premises, 88 turns and 40 goals. Scene04 title changed to match known ownership and unknown key features. Scene08 turn04 and goal clarified a short walk around the bench before returning to it. Exact IDs, 11/5 lengths, 88 distinct full turn strings and 40 distinct goals verified; no full-turn or goal overlap with own previous five cities. Hashes and false human/native/peer flags recorded in SELF_REVIEW.
+
+Root requested unsupported 八女駅 identity be removed. Scene01 independently rewritten and fully reread as bus-counter communication about congestion, reservation-change assumptions, an unfixed lunch appointment and visible waiting information. Location01 corrected to Bus Terminal/Bus Staff with 八女のバス案内窓口（練習用） placeholder. No railway identity retained. Other seven scenarios unchanged. Source hash refreshed; 88 unique full turns and 40 goals with eleven/five structure pass. All institutions and original hours unverified. Stage only; root handles integration and persistence.
