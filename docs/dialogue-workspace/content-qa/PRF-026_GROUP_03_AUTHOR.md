@@ -156,3 +156,31 @@ Root read all24/five goals and requested concrete service progression and natura
 Source saved early for parent triage. Three actual rejected full variants are preserved above: initial late police followup, street-wait delivery worker, unfinished currency service enquiry. Ordinary selected outlines were not invented into a rejection history. All final situations written separately with distinct five Player actions, no generator expanding common dialogue text; local code only serialises handwritten lines and assigns stable IDs.
 
 Final initial-review source SHA-256 `42fb05daf5189b62d38e2ee00772ed8a4f8d6b7b7371433241a483a8ac855a5e`.24 assignedIDs,264alternating Japanese lines,120goals. Independent peer and parent acceptance/persistence remain required; no exhaustive earlier-corpus semantic uniqueness asserted.
+
+Fallback peer04 requested taxi06 actual closing instead of last NPC starting ride without farewell. NPC9 now reports hostel dropoff then station arrival; Player5 pays displayed fare and retrieves only own luggage; NPC11 confirms payment, luggage and natural closing wish. Task5 matches completed two-stop service. Current source SHA-256 `8582685112a69e9837fd7737f8fa5d645de4821cf8003a2af0a1e6b3117b5cfe`; full changed11/five goals require independent reread.
+
+## Canonical source identity inventory (root reconciliation)
+
+This list binds assigned source identities; it adds no new reading claim.
+
+- SC-KYT-UJI-001
+- SC-LOC-KYT-UJI-02-001
+- SC-LOC-KYT-UJI-03-001
+- SC-LOC-KYT-UJI-04-001
+- SC-LOC-KYT-UJI-05-001
+- SC-LOC-KYT-UJI-06-001
+- SC-LOC-KYT-UJI-07-001
+- SC-LOC-KYT-UJI-08-001
+- SC-LOC-JP-26203-01-001
+- SC-LOC-JP-26203-02-001
+- SC-LOC-JP-26203-03-001
+- SC-LOC-JP-26203-05-001
+- SC-LOC-JP-26203-06-001
+- SC-LOC-JP-26203-07-001
+- SC-LOC-JP-26203-08-001
+- SC-LOC-JP-26205-01-001
+- SC-LOC-JP-26205-02-001
+- SC-LOC-JP-26205-03-001
+- SC-LOC-JP-26205-04-001
+- SC-LOC-JP-26205-07-001
+- SC-LOC-JP-26205-08-001

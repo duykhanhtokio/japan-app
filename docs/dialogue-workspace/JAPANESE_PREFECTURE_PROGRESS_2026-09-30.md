@@ -690,3 +690,8 @@ AI editorial acceptance is distinct from native/human, actual-service-policy, de
 ## 2026-10-14 Kyoto PRF-026 — interrupted draft checkpoint
 
 133/133 provisionally authored and integrated; CONTENT NOT ACCEPTED. Agent usage limits interrupted whole replacements and independent final readings. See content-qa/PRF-026_CHECKPOINT.md. Mie/Shiga accepted checkpoints preserved. Next remains finish Kyoto, then Osaka.
+
+
+## 2026-10-14 Kyoto PRF-026 — final AI editorial acceptance
+
+Supersedes interrupteda1c28c40.133/133scenarios,1463turns,665goals,15cities independentlyread acrossfivegroups.26role/displaycorrections;7128IDs/links/chains and UIpreserved.7428outsidefiles unchanged,zero exactPlayercollision against76945outside sharedturns. Four genericNPCphrasegroups explicitlyadjudicated. RuntimeadapterPASS,UIlock10/10,progression6roles/30completionsPASS. Hash-bound SEMANTIC_REVIEW/MASTER_JA_LOCK/CHECKPOINT retain actualrejections and boundedcomparisonlimits. Human/native/operatorpolicy/translations/voice/artwork/device/release pending. NextOsakaPRF027 afterremoteverification.

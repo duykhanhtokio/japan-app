@@ -1,6 +1,6 @@
 # PRF-026 Group04 author evidence
 
-Frozen current sourceSHA256: b49fb4376492701981d8cdef73c08149633523954b3d8b2dd2b1713e529e0248
+Frozen current sourceSHA256: c03b2724878b72e1257761ac487dfc3564af1c671aed25fe6b6be71e12de7e6a
 
 32 assignedIDs inJoyo/Muko/Nagaokakyo/Yawata. Beforefirstwriting read full currentMie24208-06 householdPIN and24214-03 clinicalsealedreferral,Shiga25209-04 filmalternative,25210-05 refusedoldbooks,25212-06balanceowncashvsinterest,25214-06cashroster. These are selected full comparisons, not exhaustive corpusread.
 
@@ -225,4 +225,166 @@ Peer fullpriorShigaRitto25208-01 odor-openfood/neighbourleft/causeuncertain/no s
 
 32 exactassignedIDs,352 alternatingturns,160 distinct Playerutterances,160 goals checked. Superseding root-rejected off-domain and moral-choice variants retain fullactualversions above or PRF-026_ROOT_REJECTED_DRAFTS.json. Finalchanges include police parkingapplication and nursingpillowcoverorientation and urine-not-yet-collected examorderconsultation, plus establishedsafedepositvisit; actualpolicy,diagnosis,forms and clinicalprocedure excluded in explicitfictionalpremises. These are domainservice stories, not exactcounterpart claims where root only flagged relevance.
 
-Roles:fourparks ParkStaff; Muko/Yawata station names remain rootapproved genericlearningvenues. No UI/sharedmetadata/runtime edits by author. FinalsourceSHA256 b49fb4376492701981d8cdef73c08149633523954b3d8b2dd2b1713e529e0248. Authorcomplete pending independentpeer03 finalbinding, not durablecompletion/nativeapproval.
+Roles:fourparks ParkStaff; Muko/Yawata station names remain rootapproved genericlearningvenues. No UI/sharedmetadata/runtime edits by author. FinalsourceSHA256 c03b2724878b72e1257761ac487dfc3564af1c671aed25fe6b6be71e12de7e6a. Authorcomplete pending independentpeer03 finalbinding, not durablecompletion/nativeapproval.
+
+Independentpeer fullShigaOtsuSC-LOC-025-11-001 custodyconfirmation/correction/laterreturn matched ownYawata04phone-in-friendsbag. Authorread complete prior and rejectedwhole. Full actual rejected draft:
+```json
+{
+  "title": "忘れたと思った携帯を友人が持っていると分かり相談内容を更新する",
+  "premise": "八幡市を背景にした架空の日本語学習場面。忘れたと思った携帯を友人が持っていると分かり相談内容を更新する。施設の設備、催し、書式、商品、時刻と職員の対応は創作であり、実施設の運用や専門判断を保証しない。",
+  "turns": [
+    "携帯が見当たらないとのご相談ですね。",
+    "友人と別れてから気づきました。今、友人から私の携帯をかばんへ入れたと連絡が来たので、なくしたままという説明を直したいです。",
+    "ご本人の携帯と確認できる情報はありますか。",
+    "友人がケースの模様を説明し、画面の私の写真も確認しています。私がさっき預けた物だと思い出しました。",
+    "友人から受け取れるご予定はありますか。",
+    "今日の夕方に受け取れます。まだ手元にはありませんが、所在が分かったとお伝えします。",
+    "その内容で、先ほどのご相談を更新します。",
+    "お願いします。自分が預けたことを忘れていたので、置き忘れた場所を探す相談は今は続けません。",
+    "受取りの結果も、必要があればお知らせください。",
+    "はい。今は友人が保管中、夕方受取予定と確認できました。ここで伝えた内容もその状況にしてください。",
+    "内容を承りました。それでは、携帯をお受取りになってください。失礼します。"
+  ],
+  "tasks": [
+    [
+      "sc_loc_jp_26210_04_001_goal_1",
+      "友人携帯保管連絡を受け未発見相談を更新したいと述べる"
+    ],
+    [
+      "sc_loc_jp_26210_04_001_goal_2",
+      "本人ケース画面写真照合と本人が預けた記憶を説明する"
+    ],
+    [
+      "sc_loc_jp_26210_04_001_goal_3",
+      "夕方受取可能だが未受領で所在判明と伝える"
+    ],
+    [
+      "sc_loc_jp_26210_04_001_goal_4",
+      "更新依頼し忘れ物場所探索相談を現時点中止する"
+    ],
+    [
+      "sc_loc_jp_26210_04_001_goal_5",
+      "友人保管中夕方受取予定という現在状態を再確認する"
+    ]
+  ]
+}
+```
+
+Actual Joyo06 initial据置 version retired after peer found banking context ambiguous (not exact narrative duplicate). Preserved first full11/goals from author initialdraft source, no invented rejectedoutline:
+```json
+{
+  "title": "家族へ銀行の説明を伝える時に分からない語を残す",
+  "turns": [
+    "ご家族へ説明を持ち帰りたいとのことですね。",
+    "はい。さっきの「据置」という言葉がまだ分かりません。知っているふりで家族へ説明する前に聞きたいです。",
+    "今回の案内では、一定の期間動かさずに置くという説明で使っています。具体的な条件は担当と確認してください。",
+    "動かさない期間があるという意味ですね。でも、いつでも自由に出せると言い換えてはいけませんね。",
+    "出せる条件は別に確認が必要です。",
+    "家族へは、その条件がまだ分からないと伝えます。言葉の説明を聞いたことと、商品を選んだことも分けておきます。",
+    "ご家族と検討するための資料をお持ちになりますか。",
+    "資料を一部お願いします。分からない所へ印を付け、家族が心配した点も次の相談へ持って来たいです。",
+    "本日は申込みを進めず、説明の持ち帰りでよろしいですか。",
+    "はい。聞き直した内容だけを家で伝え、未確認の条件は私の想像で埋めません。今日は申込みません。",
+    "資料をお渡しします。それでは、ご検討後にまたお尋ねください。失礼いたします。"
+  ],
+  "tasks": [
+    "据置が未理解なので家族説明前に語義を尋ねる",
+    "期間保持を理解し自由引出しへ言換えないと示す",
+    "利用条件未確認を家族へ伝え理解と商品選択を分ける",
+    "資料一部を求め本人疑問と家族懸念を次回へ残す",
+    "確認内容のみ共有し未確認を推測せず当日は申込まない"
+  ]
+}
+```
+
+Final amendments:Yawata04adultarm-grab/currentpain/privateconsultation/ownroute/recordhandoff; no borrowed-property custodyupdate. Muko03title now explicitexamorderconsult. Full Ama23237-03 priorread:unreadyurine→unapprovedwater amount/time→emptylabelledcontainer→pendingwait; finalMuko03 professionalconfirmed otherexamfirst/bagtransport/specificreturn/reassess is different substantiveworkflow. JoyoGov02 handoffresponse now explicit田中accepts atlessonend. JoyoBank06transparentfictional元本十万/利息conditions separatefields replacesambiguous据置, no yield guarantee. Finalfrozen sourceSHA256 c03b2724878b72e1257761ac487dfc3564af1c671aed25fe6b6be71e12de7e6a.32/352/160 structural coverage remains intact; independentpeer03 finalbinding pending.
+
+Finalpeer terminology precision:JoyoBankNPC defines利息 asmoneyattached totheexampledeposit principal ratherthan merely anothercolumn, conditions stillunfixed/no rate oryield promise. Final frozenSHA c03b2724878b72e1257761ac487dfc3564af1c671aed25fe6b6be71e12de7e6a.
+
+
+## 実際に却下した八幡スーパー案：白山市の既稿との重複
+
+Root が `prf-017-hakusan.json` の `SC-LOC-JP-17210-07-001` を全11発話・5目標で比較した。私も全文を読み、昨日の値引き→今日の保証なし→現在価格で購入→数量→会計という主要な展開の一致を確認した。次は実際の却下稿であり仮の案ではない。
+
+```json
+{
+  "title": "夕方の値引き前の惣菜を今の価格で買うと決める",
+  "premise": "八幡市を背景にした架空の日本語学習場面。夕方の値引き前の惣菜を今の価格で買うと決める。施設の設備、催し、書式、商品、時刻と職員の対応は創作であり、実施設の運用や専門判断を保証しない。",
+  "turns": [
+    "こちらの惣菜をお探しですか。",
+    "はい。昨日は値引きがありましたが、今日は今の表示のままでよいか、会計前に確認したいです。",
+    "こちらは、今表示されている価格です。後の値引きはお約束できません。",
+    "今の価格で買います。家族が待っているので、値引きを待つ予定にはしません。",
+    "個数は一つでよろしいですか。",
+    "二人で食べるので二つにします。二つの合計を先に確認したいです。",
+    "合計はこちらです。温かい物と一緒に袋へ入れないようご準備ください。",
+    "合計を確認しました。冷たい物用の持参袋へ、この二つを入れます。",
+    "この個数でお会計できます。",
+    "お願いします。昨日の値引き額ではなく、今日の表示で二つ分を払います。買う時間と代金を決められました。",
+    "それでは、お会計へどうぞ。お食事をお楽しみください。ありがとうございました。"
+  ],
+  "tasks": [
+    [
+      "sc_loc_jp_26210_07_001_goal_1",
+      "昨日値引きがあった惣菜の現表示価格を会計前に確認する"
+    ],
+    [
+      "sc_loc_jp_26210_07_001_goal_2",
+      "現価格で即購入し家族待機のため将来値引きを待たない"
+    ],
+    [
+      "sc_loc_jp_26210_07_001_goal_3",
+      "二人分二つを指定し合計額を先確認する"
+    ],
+    [
+      "sc_loc_jp_26210_07_001_goal_4",
+      "合計了承して冷商品用持参袋に分ける"
+    ],
+    [
+      "sc_loc_jp_26210_07_001_goal_5",
+      "昨日価格でなく今日表示二個代金で会計依頼する"
+    ]
+  ]
+}
+```
+
+最終更新：八幡07を迷子の親子再会へ全置換。料金・値引き・購入数量の筋を引き継がず、売場連絡、窓口待機、係の付き添い、対面確認、買い物再開を描く。独立再読の完了は peer report による。
+
+八幡07の置換前に選択比較した全文：`prf-012-cty-jp-12222.json` / `SC-LOC-JP-12222-07-001`（放送を名前と聞き違え、商品案内と知り夫との既定待合わせへ戻る）と `prf-016-kurobe-nanto.json` / `SC-LOC-TYM-NANTO-07-001`（車番号の一部聞取り、写真提示、対象照会待ち）。両方とも11発話・5目標を実際に読んだ。新稿は放送の意味確認を使わず、親の捜索依頼から係の付き添い、対面確認、親子再会に進む。比較はこの選択範囲に限り、全既稿の無重複を認定しない。
+
+## Canonical source identity inventory (root reconciliation)
+
+This list binds assigned source identities; it adds no new reading claim.
+
+- SC-LOC-JP-26207-01-001
+- SC-LOC-JP-26207-02-001
+- SC-LOC-JP-26207-03-001
+- SC-LOC-JP-26207-04-001
+- SC-LOC-JP-26207-05-001
+- SC-LOC-JP-26207-06-001
+- SC-LOC-JP-26207-07-001
+- SC-LOC-JP-26207-08-001
+- SC-LOC-JP-26208-01-001
+- SC-LOC-JP-26208-02-001
+- SC-LOC-JP-26208-03-001
+- SC-LOC-JP-26208-04-001
+- SC-LOC-JP-26208-05-001
+- SC-LOC-JP-26208-06-001
+- SC-LOC-JP-26208-07-001
+- SC-LOC-JP-26208-08-001
+- SC-LOC-JP-26209-01-001
+- SC-LOC-JP-26209-02-001
+- SC-LOC-JP-26209-03-001
+- SC-LOC-JP-26209-04-001
+- SC-LOC-JP-26209-05-001
+- SC-LOC-JP-26209-06-001
+- SC-LOC-JP-26209-07-001
+- SC-LOC-JP-26209-08-001
+- SC-LOC-JP-26210-01-001
+- SC-LOC-JP-26210-02-001
+- SC-LOC-JP-26210-03-001
+- SC-LOC-JP-26210-04-001
+- SC-LOC-JP-26210-05-001
+- SC-LOC-JP-26210-06-001
+- SC-LOC-JP-26210-07-001
+- SC-LOC-JP-26210-08-001

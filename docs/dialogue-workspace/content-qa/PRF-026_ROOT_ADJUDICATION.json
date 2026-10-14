@@ -1,6 +1,6 @@
 {
   "prefectureId": "PRF-026",
-  "status": "WORK_IN_PROGRESS_USAGE_LIMIT_INTERRUPTION",
+  "status": "AI_JAPANESE_EDITORIAL_ACCEPTED",
   "rootActualFullReadInitialScenarios": 133,
   "rootActualFullReadInitialTurns": 1463,
   "rootActualFullReadInitialGoals": 665,
@@ -9,7 +9,13 @@
     "SC-LOC-JP-24208-06-001",
     "SC-LOC-JP-24205-06-001",
     "SC-LOC-JP-20215-04-001",
-    "SC-LOC-025-19-001"
+    "SC-LOC-025-19-001",
+    "SC-LOC-JP-15206-08-001",
+    "SC-LOC-JP-16209-08-001",
+    "SC-LOC-JP-17210-07-001",
+    "SC-AIC-TOYOHASHI-001",
+    "SC-LOC-MIE-ISE-03-001",
+    "SC-LOC-JP-20215-05-001"
   ],
   "initialFindings": [
     "Three full drafts rejected for off-domain police/postal service, retained in PRF-026_ROOT_REJECTED_DRAFTS.json.",
@@ -26,7 +32,8 @@
     "KyotoTrain01 and JoyoTrain01 currentfull same separatefriend/outbound/return core; whole KyotoTrain replacement requested.",
     "KyotoPark16 and AyabePark08 currentfull lateexercise/dance join atbreak core; whole KyotoPark replacement requested.",
     "Both KyotoRamen11/FukuchiyamaRamen04 forkrenge samecurrentcore; peer05 also actuallyfullread priorAichiIchinomiya03, whole replacements both requested.",
-    "FukuchiyamaPostal08 thankform compared withcurrentAyabePolice thanks and KizugawaCity positiveopinion; whole postalreplacement requested."
+    "FukuchiyamaPostal08 thankform compared withcurrentAyabePolice thanks and KizugawaCity positiveopinion; whole postalreplacement requested.",
+    "RootfullpriorIshikawa17210supermarket read duringgenericwordingadjudication found currentYawata07same discounttime/currentprice core; whole replacement requested."
   ],
   "limits": [
     "Selected full prior comparisons are bounded and do not constitute exhaustive semantic reading of all7128 prior scenarios.",
@@ -80,8 +87,43 @@
       "priorScenarioId": "SC-LOC-KYT-UJI-08-001",
       "currentAndPriorFull11Turn5GoalRead": true,
       "decision": "Accept ordinary farewell withinKyoto; foreigncurrencyconversion withcoins excluded vsJPYdenomination change for gifts withfee paidseparately, distinct transactions."
+    },
+    {
+      "text": "何かお探しですか。",
+      "currentScenarioId": "SC-LOC-026-16-001",
+      "priorScenarioIds": [
+        "SC-LOC-JP-15206-08-001",
+        "SC-LOC-JP-16209-08-001",
+        "SC-LOC-JP-17210-07-001"
+      ],
+      "allCurrentAndPriorFull11Turn5GoalRead": true,
+      "decision": "Accept genericquestion. Priorleafcollectpermission, uncertainpotability/handwashdistinction, priorpricediscount. Current asksbottlefill location thenactualfill/cap childbag andshortplay returntime. Sharedwaterlocationservice is acknowledged, not claimeduniquetopic; distinct problem and resultingfamilyplan."
     }
   ],
-  "contentPass": false,
-  "openEditorialBlockers": "See PRF-026_CHECKPOINT.md; whole replacements and independent final readings unfinished"
+  "contentPass": true,
+  "openEditorialBlockers": 0,
+  "finalIndependentReadCoverage": 133,
+  "finalIndependentReadTurns": 1463,
+  "finalIndependentReadGoals": 665,
+  "reviewWorkflow": "Five initial author groups; final independent readers reassigned after stream/quota interruption. Root completed group02 three whole replacements. Group readers are independent from authors of their reviewed material.",
+  "finalSourceSha256": {
+    "scripts/dialogue-authoring/prf-026-group-01.json": "1d20d3aecf889dc67e07c0d64d61db18434c095b038b4c6c311fcec314948815",
+    "scripts/dialogue-authoring/prf-026-group-02.json": "55cd488694f6c1ef57e9cb2b1e554cb8285eb4ed6458db5274da79fcb3151ab6",
+    "scripts/dialogue-authoring/prf-026-group-03.json": "8582685112a69e9837fd7737f8fa5d645de4821cf8003a2af0a1e6b3117b5cfe",
+    "scripts/dialogue-authoring/prf-026-group-04.json": "c03b2724878b72e1257761ac487dfc3564af1c671aed25fe6b6be71e12de7e6a",
+    "scripts/dialogue-authoring/prf-026-group-05.json": "7c73a019f8d52c9e4c2c47a44cfaa4c7a0b4cd301c7f03a541ecf84e8689adb0"
+  },
+  "finalRepairsSummary": [
+    "All flagged whole replacements and minor fixes independently reread at finalsourcehashes.",
+    "Actual rejected drafts and selected full prior comparisons are retained in AUTHOR/SECOND_READ and rootrejection evidence.",
+    "Four ordinary NPCphrasegroups accepted explicitly; no claim zero individualNPCphrase reuse or exhaustive earlier7128semanticreading."
+  ],
+  "verification": {
+    "jlptUiLock": "PASS10/10",
+    "correctedNpcProgression": "PASS6roles30completions; repeatidempotence;legacy preserved",
+    "outsideRuntimeFilesUnchanged": 7428,
+    "outsideSharedTurnsScreened": 76945,
+    "exactPlayerCollisions": 0,
+    "ordinaryNpcPhraseGroupsAccepted": 4
+  }
 }
