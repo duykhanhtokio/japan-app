@@ -24,9 +24,9 @@ for(const file of files){
    // These app locales do not use Korean; allow it only when explicitly present in the source.
    const hangul=/[\u1100-\u11ff\u3130-\u318f\uac00-\ud7af]/u;
    if(!hangul.test(entry.sourceJa))assert(!hangul.test(text),`${id}:${locale}: unexpected Korean script`);
-   // Scientific notation, technical acronyms and canonical pipe-grade codes retain their exact spelling.
+   // Scientific notation, technical acronyms and canonical material-grade codes retain their exact spelling.
    // This bounded exception applies only to standalone glossary keys, never prose.
-   if(['pH','OTDR','SGP','VP','VU','HI','HT','VLP'].includes(entry.sourceJa)&&id==='keyTerm:'+entry.sourceJa&&text.trim()===entry.sourceJa)continue;
+   if(['pH','OTDR','SGP','VP','VU','HI','HT','VLP','EPS'].includes(entry.sourceJa)&&id==='keyTerm:'+entry.sourceJa&&text.trim()===entry.sourceJa)continue;
    if(['hi','ne'].includes(locale))assert(/[\u0900-\u097f]/u.test(text),`${id}:${locale}`);
    if(locale==='bn')assert(/[\u0980-\u09ff]/u.test(text));
    if(locale==='my')assert(/[\u1000-\u109f]/u.test(text));
