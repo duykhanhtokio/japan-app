@@ -1,0 +1,2515 @@
+[
+  {
+    "scenario": {
+      "id": "SC-NAR-YOSHINO-001",
+      "name": "山道へ入る前に条件を確認する",
+      "locationId": "LOC-NAR-YOSHINO-01",
+      "cityId": "CTY-NAR-YOSHINO",
+      "locationType": "Other",
+      "type": "Travel",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "吉野町の学習用場面で、経路と天候を確認して計画を見直す。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "経路と天候を確認して計画を見直す",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": "Nha cho o chan nui leo: thoi gian leo, nuoc, dang ky leo nui.",
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [
+        "神社 (https://app.notion.com/p/3be70421d96181a59e8bdf4ca9b09bc8?pvs=21)",
+        "そこ (https://app.notion.com/p/2578af430db545d0a5c58e0424b9ff7a?pvs=21)",
+        "展望 (https://app.notion.com/p/3be70421d9618132b824c392a759da1c?pvs=21)",
+        "国語 (https://app.notion.com/p/3be70421d961814b97d1d3ab7826709f?pvs=21)",
+        "登山 (https://app.notion.com/p/3be70421d961819bb053df4f43906526?pvs=21)",
+        "外国 (https://app.notion.com/p/3be70421d96181fa8ce0cae3c0b06bcf?pvs=21)"
+      ],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-NAR-YOSHINO",
+      "name": "Yoshino",
+      "nameJa": "吉野町",
+      "type": null,
+      "description": "Thành phố Yoshino (吉野町) thuộc tỉnh Nara. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-029",
+      "order": 303,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-NAR-YOSHINO-02",
+        "LOC-NAR-YOSHINO-04",
+        "LOC-NAR-YOSHINO-07",
+        "LOC-NAR-YOSHINO-06",
+        "LOC-NAR-YOSHINO-01",
+        "LOC-NAR-YOSHINO-05",
+        "LOC-NAR-YOSHINO-03",
+        "LOC-NAR-YOSHINO-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-NAR-YOSHINO-01",
+      "name": "Yoshino Trailhead Mountain Hut",
+      "nameJa": "吉野登山口小屋",
+      "cityId": "CTY-NAR-YOSHINO",
+      "category": "Nature",
+      "type": "Tourism",
+      "npcJob": "Guide",
+      "defaultNpcId": "NPC-NAR-YOSHINO-001",
+      "description": "Nha cho o chan nui leo: thoi gian leo, nuoc, dang ky leo nui.",
+      "order": 1,
+      "status": "Active",
+      "importance": "Main",
+      "sceneStyle": "2.5D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": [
+        "Thoi gian leo tại 登山口小屋 (Yoshino) (https://app.notion.com/p/Thoi-gian-leo-t-i-Yoshino-3be70421d96181c28f20f7c5d7b3ac62?pvs=21)"
+      ]
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-NAR-YOSHINO-001-SHARED-01",
+        "scenarioId": "SC-NAR-YOSHINO-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こんにちは。山道についてのご相談ですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-NAR-YOSHINO-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-NAR-YOSHINO-001-SHARED-02",
+        "scenarioId": "SC-NAR-YOSHINO-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "mountain_response_1",
+          "requiredSemanticComponents": {
+            "goal": "経路と天候を確認して計画を見直す"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "吉野町を訪れています。短い経路を歩きたいですが、初めてです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-NAR-YOSHINO-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-NAR-YOSHINO-001-SHARED-03",
+        "scenarioId": "SC-NAR-YOSHINO-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "経験と、持っている装備を教えてください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-NAR-YOSHINO-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-NAR-YOSHINO-001-SHARED-04",
+        "scenarioId": "SC-NAR-YOSHINO-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "mountain_response_2",
+          "requiredSemanticComponents": {
+            "goal": "経路と天候を確認して計画を見直す"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "経験は少なく、普段の靴しかありません。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-NAR-YOSHINO-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-NAR-YOSHINO-001-SHARED-05",
+        "scenarioId": "SC-NAR-YOSHINO-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "その装備で無理なく利用できる経路か、現地の案内を確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-NAR-YOSHINO-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-NAR-YOSHINO-001-SHARED-06",
+        "scenarioId": "SC-NAR-YOSHINO-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "mountain_response_3",
+          "requiredSemanticComponents": {
+            "goal": "経路と天候を確認して計画を見直す"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "天候や通行止めの情報も必要ですね。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-NAR-YOSHINO-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-NAR-YOSHINO-001-SHARED-07",
+        "scenarioId": "SC-NAR-YOSHINO-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。情報を確認し、条件が合わなければ計画を変えてください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-NAR-YOSHINO-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-NAR-YOSHINO-001-SHARED-08",
+        "scenarioId": "SC-NAR-YOSHINO-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "mountain_response_4",
+          "requiredSemanticComponents": {
+            "goal": "経路と天候を確認して計画を見直す"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "帰る時刻と、引き返す目安も決めたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-NAR-YOSHINO-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-NAR-YOSHINO-001-SHARED-09",
+        "scenarioId": "SC-NAR-YOSHINO-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "同行者と計画を共有し、無理なく戻れる範囲を確認してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-NAR-YOSHINO-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-NAR-YOSHINO-001-SHARED-10",
+        "scenarioId": "SC-NAR-YOSHINO-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "mountain_response_5",
+          "requiredSemanticComponents": {
+            "goal": "経路と天候を確認して計画を見直す"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "わかりました。難しい場合は、別の散歩に変更します。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-NAR-YOSHINO-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-NAR-YOSHINO-001-SHARED-11",
+        "scenarioId": "SC-NAR-YOSHINO-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "装備や状況が不十分なまま進まず、安全を優先してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-NAR-YOSHINO-02-001",
+      "name": "機械作業前に停止と報告の手順を確認する",
+      "locationId": "LOC-NAR-YOSHINO-02",
+      "cityId": "CTY-NAR-YOSHINO",
+      "locationType": "Construction Site",
+      "type": "Work",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "吉野町の学習用場面で、機械の操作権限と異常時の対応を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "機械の操作権限と異常時の対応を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-NAR-YOSHINO",
+      "name": "Yoshino",
+      "nameJa": "吉野町",
+      "type": null,
+      "description": "Thành phố Yoshino (吉野町) thuộc tỉnh Nara. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-029",
+      "order": 303,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-NAR-YOSHINO-02",
+        "LOC-NAR-YOSHINO-04",
+        "LOC-NAR-YOSHINO-07",
+        "LOC-NAR-YOSHINO-06",
+        "LOC-NAR-YOSHINO-01",
+        "LOC-NAR-YOSHINO-05",
+        "LOC-NAR-YOSHINO-03",
+        "LOC-NAR-YOSHINO-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-NAR-YOSHINO-02",
+      "name": "Yoshino Woodworking Shop",
+      "nameJa": "吉野木工所",
+      "cityId": "CTY-NAR-YOSHINO",
+      "category": "Workshop",
+      "type": "Workplace",
+      "npcJob": "Craftsman",
+      "defaultNpcId": "NPC-NAR-YOSHINO-002",
+      "description": "Xuong go: cat go, cha nham, keo, an toan may.",
+      "order": 2,
+      "status": "Active",
+      "importance": "Secondary",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-01",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-02-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "おはようございます。機械に触る前に説明を聞いてください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-02",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-02-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-machine_response_1",
+          "requiredSemanticComponents": {
+            "goal": "機械の操作権限と異常時の対応を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "吉野町のこの現場では初めてです。自分が操作してよい範囲を教えてください。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-03",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-02-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "担当する操作と、操作してはいけない部分を確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-04",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-02-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-machine_response_2",
+          "requiredSemanticComponents": {
+            "goal": "機械の操作権限と異常時の対応を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "動いているときに物が引っかかったら、どうすればよいですか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-05",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-02-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "手を入れず、現場の停止手順に従って責任者へ報告してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-06",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-02-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-machine_response_3",
+          "requiredSemanticComponents": {
+            "goal": "機械の操作権限と異常時の対応を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "止まったように見えても、自分で取り除かないのですね。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-07",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-02-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。再始動の防止など、必要な安全確認を担当者が行います。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-08",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-02-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-machine_response_4",
+          "requiredSemanticComponents": {
+            "goal": "機械の操作権限と異常時の対応を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "非常停止の位置と連絡先も、確認できますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-09",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-02-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "実物で確認しましょう。非常時の行動と、通常の停止方法は区別してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-10",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-02-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-machine_response_5",
+          "requiredSemanticComponents": {
+            "goal": "機械の操作権限と異常時の対応を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "わかりました。説明を受け、操作を確認してから作業します。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-02-001-SHARED-11",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-02-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "不明なことが残っている場合は始めず、必ず質問してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-NAR-YOSHINO-03-001",
+      "name": "チェックイン前に予約と条件を確認する",
+      "locationId": "LOC-NAR-YOSHINO-03",
+      "cityId": "CTY-NAR-YOSHINO",
+      "locationType": "Other",
+      "type": "Travel",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "吉野町の学習用場面で、予約内容と宿泊条件を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "予約内容と宿泊条件を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-NAR-YOSHINO",
+      "name": "Yoshino",
+      "nameJa": "吉野町",
+      "type": null,
+      "description": "Thành phố Yoshino (吉野町) thuộc tỉnh Nara. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-029",
+      "order": 303,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-NAR-YOSHINO-02",
+        "LOC-NAR-YOSHINO-04",
+        "LOC-NAR-YOSHINO-07",
+        "LOC-NAR-YOSHINO-06",
+        "LOC-NAR-YOSHINO-01",
+        "LOC-NAR-YOSHINO-05",
+        "LOC-NAR-YOSHINO-03",
+        "LOC-NAR-YOSHINO-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-NAR-YOSHINO-03",
+      "name": "Yoshino Ryokan Check-in",
+      "nameJa": "吉野旅館チェックイン",
+      "cityId": "CTY-NAR-YOSHINO",
+      "category": "Hotel",
+      "type": "Tourism",
+      "npcJob": "Hotel Staff",
+      "defaultNpcId": "NPC-NAR-YOSHINO-003",
+      "description": "Nhan phong ryokan: gio an toi, yukata, suoi tam, thanh toan.",
+      "order": 3,
+      "status": "Active",
+      "importance": "Secondary",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-01",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-03-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "いらっしゃいませ。ご予約はありますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-02",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-03-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "hotel_response_1",
+          "requiredSemanticComponents": {
+            "goal": "予約内容と宿泊条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "はい。吉野町に宿泊するため、この予約をしました。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-03",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-03-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "予約のお名前と、確認できるものを見せていただけますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-04",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-03-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "hotel_response_2",
+          "requiredSemanticComponents": {
+            "goal": "予約内容と宿泊条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "こちらです。泊数と部屋の種類が合っているか、確認したいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-05",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-03-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "予約内容を照合しましょう。追加のご希望はありますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-06",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-03-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "hotel_response_3",
+          "requiredSemanticComponents": {
+            "goal": "予約内容と宿泊条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "到着が遅くなる場合の連絡方法を知りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-07",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-03-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "受付の案内を確認します。チェックインとチェックアウトの条件も説明します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-08",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-03-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "hotel_response_4",
+          "requiredSemanticComponents": {
+            "goal": "予約内容と宿泊条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "宿泊料金以外に必要な費用はありますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-09",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-03-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "予約に含まれるものと、別に必要な費用を分けて確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-10",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-03-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "hotel_response_5",
+          "requiredSemanticComponents": {
+            "goal": "予約内容と宿泊条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。内容を確認してから手続きをお願いします。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-03-001-SHARED-11",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-03-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "承知しました。個人情報は受付で必要な範囲を確認して、ご案内します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-NAR-YOSHINO-04-001",
+      "name": "髪型と料金を施術前に確認する",
+      "locationId": "LOC-NAR-YOSHINO-04",
+      "cityId": "CTY-NAR-YOSHINO",
+      "locationType": "Shop",
+      "type": "Daily Life",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "吉野町の学習用場面で、仕上がりの希望と料金を相談する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "仕上がりの希望と料金を相談する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-NAR-YOSHINO",
+      "name": "Yoshino",
+      "nameJa": "吉野町",
+      "type": null,
+      "description": "Thành phố Yoshino (吉野町) thuộc tỉnh Nara. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-029",
+      "order": 303,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-NAR-YOSHINO-02",
+        "LOC-NAR-YOSHINO-04",
+        "LOC-NAR-YOSHINO-07",
+        "LOC-NAR-YOSHINO-06",
+        "LOC-NAR-YOSHINO-01",
+        "LOC-NAR-YOSHINO-05",
+        "LOC-NAR-YOSHINO-03",
+        "LOC-NAR-YOSHINO-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-NAR-YOSHINO-04",
+      "name": "Yoshino Hair Salon",
+      "nameJa": "吉野美容院",
+      "cityId": "CTY-NAR-YOSHINO",
+      "category": "Shopping",
+      "type": "Daily Life",
+      "npcJob": "Hair Stylist",
+      "defaultNpcId": null,
+      "description": "Tiem lam toc: dat hen, do dai, goi dau, gia dich vu.",
+      "order": 4,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-01",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-04-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "いらっしゃいませ。今日はどのような髪型をご希望ですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-02",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-04-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "salon_response_1",
+          "requiredSemanticComponents": {
+            "goal": "仕上がりの希望と料金を相談する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "吉野町に住んでいます。手入れが簡単な髪型にしたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-03",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-04-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "長さや、残したい部分はありますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-04",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-04-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "salon_response_2",
+          "requiredSemanticComponents": {
+            "goal": "仕上がりの希望と料金を相談する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "結べる長さは残したいです。この写真を参考にできますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-05",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-04-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "写真を見ながら、できる仕上がりと必要な施術を相談しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-06",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-04-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "salon_response_3",
+          "requiredSemanticComponents": {
+            "goal": "仕上がりの希望と料金を相談する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "始める前に、料金と所要時間を確認したいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-07",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-04-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。追加の施術が必要な場合も、先にご説明します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-08",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-04-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "salon_response_4",
+          "requiredSemanticComponents": {
+            "goal": "仕上がりの希望と料金を相談する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "頭皮が敏感なので、使うものについても相談できますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-09",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-04-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "気になる症状や、以前困ったことをお知らせください。無理な施術は行わず確認します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-10",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-04-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "salon_response_5",
+          "requiredSemanticComponents": {
+            "goal": "仕上がりの希望と料金を相談する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。内容に納得してからお願いします。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-04-001-SHARED-11",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-04-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "仕上がりの希望をもう一度確認して、始めましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-NAR-YOSHINO-05-001",
+      "name": "観光の希望に合う行程を相談する",
+      "locationId": "LOC-NAR-YOSHINO-05",
+      "cityId": "CTY-NAR-YOSHINO",
+      "locationType": "Other",
+      "type": "Travel",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "吉野町の学習用場面で、移動時間と見学条件を比較する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "移動時間と見学条件を比較する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-NAR-YOSHINO",
+      "name": "Yoshino",
+      "nameJa": "吉野町",
+      "type": null,
+      "description": "Thành phố Yoshino (吉野町) thuộc tỉnh Nara. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-029",
+      "order": 303,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-NAR-YOSHINO-02",
+        "LOC-NAR-YOSHINO-04",
+        "LOC-NAR-YOSHINO-07",
+        "LOC-NAR-YOSHINO-06",
+        "LOC-NAR-YOSHINO-01",
+        "LOC-NAR-YOSHINO-05",
+        "LOC-NAR-YOSHINO-03",
+        "LOC-NAR-YOSHINO-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-NAR-YOSHINO-05",
+      "name": "Yoshino Tourist Information Center",
+      "nameJa": "吉野観光案内所",
+      "cityId": "CTY-NAR-YOSHINO",
+      "category": "Landmark",
+      "type": "Tourism",
+      "npcJob": "Guide",
+      "defaultNpcId": null,
+      "description": "Quay thong tin du lich: ban do, tuyen di, ve combo, gui hanh ly.",
+      "order": 5,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-01",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-05-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こんにちは。観光についてのご相談ですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-02",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-05-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "tourist_response_1",
+          "requiredSemanticComponents": {
+            "goal": "移動時間と見学条件を比較する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "吉野町を初めて訪れました。半日で回れる行程を相談したいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-03",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-05-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "興味のあることと、出発する時刻を教えてください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-04",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-05-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "tourist_response_2",
+          "requiredSemanticComponents": {
+            "goal": "移動時間と見学条件を比較する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "文化を知りたいです。午後は駅に戻る必要があります。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-05",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-05-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "案内図で候補と移動時間を確認しましょう。休憩も入れますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-06",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-05-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "tourist_response_3",
+          "requiredSemanticComponents": {
+            "goal": "移動時間と見学条件を比較する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "はい。歩く距離が長くなりすぎないようにしたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-07",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-05-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "交通手段と利用できる経路も比較しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-08",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-05-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "tourist_response_4",
+          "requiredSemanticComponents": {
+            "goal": "移動時間と見学条件を比較する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "施設が開いているかは、当日の情報で確認するのですね。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-09",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-05-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。営業や交通の情報は変わるので、出発前に最新の案内をご確認ください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-10",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-05-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "tourist_response_5",
+          "requiredSemanticComponents": {
+            "goal": "移動時間と見学条件を比較する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。候補を絞ってから、予約の必要性も確認します。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-05-001-SHARED-11",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-05-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "帰りの予定に余裕を持ち、無理のない行程でお楽しみください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-NAR-YOSHINO-06-001",
+      "name": "切符を買う前に条件を確認する",
+      "locationId": "LOC-NAR-YOSHINO-06",
+      "cityId": "CTY-NAR-YOSHINO",
+      "locationType": "Station",
+      "type": "Travel",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "吉野町の学習用場面で、切符の種類と購入方法を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "切符の種類と購入方法を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-NAR-YOSHINO",
+      "name": "Yoshino",
+      "nameJa": "吉野町",
+      "type": null,
+      "description": "Thành phố Yoshino (吉野町) thuộc tỉnh Nara. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-029",
+      "order": 303,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-NAR-YOSHINO-02",
+        "LOC-NAR-YOSHINO-04",
+        "LOC-NAR-YOSHINO-07",
+        "LOC-NAR-YOSHINO-06",
+        "LOC-NAR-YOSHINO-01",
+        "LOC-NAR-YOSHINO-05",
+        "LOC-NAR-YOSHINO-03",
+        "LOC-NAR-YOSHINO-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-NAR-YOSHINO-06",
+      "name": "Yoshino Station Lost & Found",
+      "nameJa": "吉野駅忘れ物センター",
+      "cityId": "CTY-NAR-YOSHINO",
+      "category": "Station",
+      "type": "Transportation",
+      "npcJob": "Station Staff",
+      "defaultNpcId": null,
+      "description": "Quay do that lac o ga: mo ta do mat, thoi gian, giay to nhan lai.",
+      "order": 6,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-01",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-06-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こんにちは。切符についてのご相談ですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-02",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-06-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "station-ticket_response_1",
+          "requiredSemanticComponents": {
+            "goal": "切符の種類と購入方法を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "吉野町から日帰りで出かけます。どの切符を買えばよいでしょうか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-03",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-06-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "行き先と、帰る予定の時間を教えてください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-04",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-06-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "station-ticket_response_2",
+          "requiredSemanticComponents": {
+            "goal": "切符の種類と購入方法を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "行き先はこの駅で、帰りの時間はまだ決めていません。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-05",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-06-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "では、有効な区間や利用条件を確認しましょう。特急列車は利用されますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-06",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-06-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "station-ticket_response_3",
+          "requiredSemanticComponents": {
+            "goal": "切符の種類と購入方法を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "早く着きたいですが、追加料金があるか知りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-07",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-06-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "列車の種類によって必要な切符が違います。購入画面で合計額を確認できます。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-08",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-06-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "station-ticket_response_4",
+          "requiredSemanticComponents": {
+            "goal": "切符の種類と購入方法を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "現金でも買えますか。使える支払い方法を確認したいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-09",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-06-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "この券売機の表示で確認しましょう。わからない項目は購入前に聞いてください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-10",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-06-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "station-ticket_response_5",
+          "requiredSemanticComponents": {
+            "goal": "切符の種類と購入方法を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。内容を確認してから購入します。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-06-001-SHARED-11",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-06-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "購入後は行き先と日付を確かめ、切符をなくさないようにお持ちください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-NAR-YOSHINO-07-001",
+      "name": "スポーツ用品の用途とサイズを相談する",
+      "locationId": "LOC-NAR-YOSHINO-07",
+      "cityId": "CTY-NAR-YOSHINO",
+      "locationType": "Shop",
+      "type": "Shopping",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "吉野町の学習用場面で、使う場面に合う用品を選ぶ。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "使う場面に合う用品を選ぶ",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-NAR-YOSHINO",
+      "name": "Yoshino",
+      "nameJa": "吉野町",
+      "type": null,
+      "description": "Thành phố Yoshino (吉野町) thuộc tỉnh Nara. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-029",
+      "order": 303,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-NAR-YOSHINO-02",
+        "LOC-NAR-YOSHINO-04",
+        "LOC-NAR-YOSHINO-07",
+        "LOC-NAR-YOSHINO-06",
+        "LOC-NAR-YOSHINO-01",
+        "LOC-NAR-YOSHINO-05",
+        "LOC-NAR-YOSHINO-03",
+        "LOC-NAR-YOSHINO-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-NAR-YOSHINO-07",
+      "name": "Yoshino Sports Goods Store",
+      "nameJa": "吉野スポーツ用品店",
+      "cityId": "CTY-NAR-YOSHINO",
+      "category": "Shopping",
+      "type": "Shopping",
+      "npcJob": "Shop Staff",
+      "defaultNpcId": null,
+      "description": "Cua hang dung cu the thao: size giay, thu do, doi hang.",
+      "order": 7,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-01",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-07-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "いらっしゃいませ。どのような用品をお探しですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-02",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-07-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "sports-shop_response_1",
+          "requiredSemanticComponents": {
+            "goal": "使う場面に合う用品を選ぶ"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "吉野町で軽い運動を始めます。歩くための靴を探しています。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-03",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-07-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "普段歩く場所や、使う時間を教えてください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-04",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-07-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "sports-shop_response_2",
+          "requiredSemanticComponents": {
+            "goal": "使う場面に合う用品を選ぶ"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "公園の舗装された道を、三十分ほど歩く予定です。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-05",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-07-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "用途に合う候補を見て、サイズを確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-06",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-07-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "sports-shop_response_3",
+          "requiredSemanticComponents": {
+            "goal": "使う場面に合う用品を選ぶ"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "普段使っている靴下で試してもよいですか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-07",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-07-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。かかとやつま先に無理がないか、履いて確認してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-08",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-07-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "sports-shop_response_4",
+          "requiredSemanticComponents": {
+            "goal": "使う場面に合う用品を選ぶ"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "痛いところがあれば、別のサイズを試したいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-09",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-07-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "無理に選ばず、サイズや形を比べましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-10",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-07-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "sports-shop_response_5",
+          "requiredSemanticComponents": {
+            "goal": "使う場面に合う用品を選ぶ"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。手入れの方法も確認して決めます。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-07-001-SHARED-11",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-07-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "使用上の注意と購入条件も、お会計前にご確認ください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-NAR-YOSHINO-08-001",
+      "name": "口座開設の条件を相談する",
+      "locationId": "LOC-NAR-YOSHINO-08",
+      "cityId": "CTY-NAR-YOSHINO",
+      "locationType": "Other",
+      "type": "Daily Life",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "吉野町の学習用場面で、本人の状況に合う必要書類を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "本人の状況に合う必要書類を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-NAR-YOSHINO",
+      "name": "Yoshino",
+      "nameJa": "吉野町",
+      "type": null,
+      "description": "Thành phố Yoshino (吉野町) thuộc tỉnh Nara. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-029",
+      "order": 303,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-NAR-YOSHINO-02",
+        "LOC-NAR-YOSHINO-04",
+        "LOC-NAR-YOSHINO-07",
+        "LOC-NAR-YOSHINO-06",
+        "LOC-NAR-YOSHINO-01",
+        "LOC-NAR-YOSHINO-05",
+        "LOC-NAR-YOSHINO-03",
+        "LOC-NAR-YOSHINO-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-NAR-YOSHINO-08",
+      "name": "Yoshino Bank Counter",
+      "nameJa": "吉野銀行窓口",
+      "cityId": "CTY-NAR-YOSHINO",
+      "category": "Bank",
+      "type": "Daily Life",
+      "npcJob": "Bank Clerk",
+      "defaultNpcId": null,
+      "description": "Quay ngan hang: mo tai khoan, chuyen tien, con dau, so ngan hang.",
+      "order": 8,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-01",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-08-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こんにちは。今日はどのようなご相談ですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-02",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-08-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "bank-open_response_1",
+          "requiredSemanticComponents": {
+            "goal": "本人の状況に合う必要書類を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "吉野町で働き始めました。給与を受け取る口座を作りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-03",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-08-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "ご本人の状況を確認して、申込みに必要な書類をご案内します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-04",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-08-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "bank-open_response_2",
+          "requiredSemanticComponents": {
+            "goal": "本人の状況に合う必要書類を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "在留カードと、勤務先がわかるものを持っています。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-05",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-08-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "ありがとうございます。ほかの確認事項もありますので、担当者と確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-06",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-08-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "bank-open_response_3",
+          "requiredSemanticComponents": {
+            "goal": "本人の状況に合う必要書類を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "今日中に作れるか、事前に知りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-07",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-08-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "審査や書類の確認が必要です。その場で開設できるとは限りません。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-08",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-08-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "bank-open_response_4",
+          "requiredSemanticComponents": {
+            "goal": "本人の状況に合う必要書類を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "わかりました。足りない書類があれば、一覧をもらえますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-09",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-08-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。確認した条件と、次の申込み方法をご案内します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-10",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-08-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "bank-open_response_5",
+          "requiredSemanticComponents": {
+            "goal": "本人の状況に合う必要書類を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。勤務先にも必要な口座情報を確認します。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-YOSHINO-08-001-SHARED-11",
+        "scenarioId": "SC-LOC-NAR-YOSHINO-08-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "内容がわからないまま署名せず、疑問点は担当者にお尋ねください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  }
+]
