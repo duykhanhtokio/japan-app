@@ -2,7 +2,7 @@
   "date": "2026-10-14",
   "timezone": "Asia/Tokyo",
   "week": 13,
-  "status": "IN_PROGRESS_QUOTA_BLOCKED",
+  "status": "INTEGRATED_AI_UNREVIEWED",
   "baselineCommit": "af201a98981bb79423788d824a4daf49fece1a24",
   "sessions": [
     "kensetsu-common-session-085",
@@ -42,7 +42,8 @@
       "strings": 382,
       "sha256": "4ff051fc281a179f498eb0af775907a6721d827cf82a004e2d408dfe17e49f8d",
       "sourceKeyAlignment": "PASS",
-      "status": "draft_AI_unreviewed"
+      "status": "historical_draft_preserved",
+      "finalPairSha256": "78d0639dd125de2130b8a3d76482d8c7cf262bc9f99edfb830fb6010bba64d52"
     },
     {
       "file": "pair-en-vi.json",
@@ -54,7 +55,8 @@
       "strings": 382,
       "sha256": "8958c6c3e6f318848ff65c3e9ac9c9dc2fcac60b434b0eec2bfb9913cf8b6cad",
       "sourceKeyAlignment": "PASS",
-      "status": "draft_AI_unreviewed"
+      "status": "historical_draft_preserved",
+      "finalPairSha256": "a1fc5a2d4464c2d4ddaa41048535779d47bb83bc58f59b8f7db8c2978d719b83"
     },
     {
       "file": "pair-hi-ne.json",
@@ -66,7 +68,8 @@
       "strings": 382,
       "sha256": "31f5704aad6c21b26812237c5cf2267c6c865bf45801148ff6241b6b4e476d56",
       "sourceKeyAlignment": "PASS",
-      "status": "draft_AI_unreviewed"
+      "status": "historical_draft_preserved",
+      "finalPairSha256": "216fba65c0708cb6d3719eae714cdc0dd1714bfee3818c7cfbdc2dea1eb7d2aa"
     },
     {
       "file": "pair-id-tl.json",
@@ -78,7 +81,8 @@
       "strings": 382,
       "sha256": "ec1a5099fba7bde39fc8663ccb1ab21b6999c7d74eba94eccdb2fc4b4238ebde",
       "sourceKeyAlignment": "PASS",
-      "status": "draft_AI_unreviewed"
+      "status": "historical_draft_preserved",
+      "finalPairSha256": "c207031ca28e780c5a4036f12aed11d14df0b4a8ac0941d9e5cdf509c1b00342"
     },
     {
       "file": "pair-th-km.json",
@@ -90,7 +94,8 @@
       "strings": 382,
       "sha256": "30bdc723f1ad9ffb0206e2f9bcc4e20c22d072a87730ca4fada80cfaaa140d18",
       "sourceKeyAlignment": "PASS",
-      "status": "draft_AI_unreviewed"
+      "status": "historical_draft_preserved",
+      "finalPairSha256": "085af929ad229c2f19652ba7cb5c14a906f1096f2188cfcb3a6e5080a3b89055"
     },
     {
       "file": "pair-zh-CN-zh-TW.json",
@@ -102,57 +107,98 @@
       "strings": 382,
       "sha256": "b7ebcf5c52ef9c079f55df6da69c5d85e0c80107899d54d23a51cbd9043c9ae2",
       "sourceKeyAlignment": "PASS",
-      "status": "draft_AI_unreviewed"
+      "status": "historical_draft_preserved",
+      "finalPairSha256": "ae3d03105dc7c99db70721ec69d71e073f39a827516268815700a25f2701135d"
     }
   ],
-  "integratedTranslationWeeks": 12,
-  "integratedTranslationLessons": 84,
-  "runtimeBundlesCreated": false,
-  "registryChanged": false,
+  "integratedTranslationWeeks": 13,
+  "integratedTranslationLessons": 91,
+  "runtimeBundlesCreated": true,
+  "registryChanged": true,
   "canonicalJapaneseUnchanged": true,
   "preservedFilesVerified": 471,
   "independentReviewCompleteLocales": [
     "en",
     "vi",
-    "zh-CN",
-    "zh-TW"
-  ],
-  "independentReviewPendingLocales": [
     "id",
-    "tl",
+    "zh-CN",
+    "zh-TW",
     "hi",
-    "ne",
     "bn",
+    "ne",
     "my",
     "th",
-    "km"
+    "km",
+    "tl"
   ],
-  "mergedBoundedCorrections": 9,
-  "finalFreshRereadFile": "reread-en-vi.json",
+  "independentReviewPendingLocales": [],
+  "mergedBoundedCorrections": 68,
   "openInterpretation": {
     "sessionId": "kensetsu-common-session-091",
     "unitId": "kensetsu-common-session-091-cluster-4-p3",
     "sourceJa": "今週の学習用のまとめ表で、石の取付け、電力と通信、配管、冷媒、給排水、保温の層を並べます。支える部分、流れる物、確認する範囲を対応させます。工事名を理解したことと、資格や専門的な施工判断ができることを分けて振り返ります。",
-    "issue": "Compressed Japanese phrase 資格や専門的な施工判断ができる permits uncertain qualification-possession versus qualification-related-judgment reading. Two of the9EN/VI corrections used root possession interpretation; subsequent independent reassessment was interrupted. These2strings remain provisional. Do not treat author reread as resolving this later concern.",
+    "issue": "Canonical Japanese clause remains compressed. All12final translations use neutral qualification-related matters and specialist judgment ability, without choosing credential possession or assessment authority. AI translation decision is complete; native Japanese clarification remains pending.",
     "locales": [
       "en",
-      "vi"
+      "vi",
+      "id",
+      "zh-CN",
+      "zh-TW",
+      "hi",
+      "bn",
+      "ne",
+      "my",
+      "th",
+      "km",
+      "tl"
     ],
-    "requires": "Fresh independent source/context interpretation; use faithful neutral wording if compressed source remains ambiguous, without adding legal/credential claims."
+    "requires": "Future native Japanese review/clarification of canonical wording; neutral translation choice and final author rereads are recorded in completed AI review.",
+    "status": "AI_neutral_translation_decision_complete_native_Japanese_clarification_pending",
+    "finalLocales": [
+      "en",
+      "vi",
+      "id",
+      "zh-CN",
+      "zh-TW",
+      "hi",
+      "bn",
+      "ne",
+      "my",
+      "th",
+      "km",
+      "tl"
+    ],
+    "previousIssue": "Compressed Japanese phrase 資格や専門的な施工判断ができる permits uncertain qualification-possession versus qualification-related-judgment reading. Two of the9EN/VI corrections used root possession interpretation; subsequent independent reassessment was interrupted. These2strings remain provisional. Do not treat author reread as resolving this later concern."
   },
-  "blocker": "Four author/reviewer agents returned account usage-limit errors. No retry or model switch attempted. Complete drafts preserved before further work.",
+  "blocker": null,
   "resumeSteps": [
-    "Read this checkpoint and verify containing commit remote persistence.",
-    "Reuse all6draft pairs; do not recreate completed drafts. Validate current canonical source hashes/keys before continuing.",
-    "Complete independent full reviews of ID/TL, HI/NE, BN/MY and TH/KM. TH/KM frozen/self-review status also needs confirmation after interruption.",
-    "Resolve091c4p3 EN/VI source interpretation; apply bounded corrections and freshly reread final changes.",
-    "Assemble week13 runtime bundles, register085–091, run structural QA, narrow TypeScript,200question source-hash checks,471preserved-file validation and pair/runtime equality.",
-    "Run real adapted-reader QA for84locale–lesson combinations/3viewports; inspect screenshots.",
-    "Write completed-week reports, update translated coverage only after full integration, narrow commit and remote verification."
+    "Verify containing commit remote persistence, then continue whole week014 sessions092–098; do not recreate week013.",
+    "Keep historical draft pairs unchanged; final runtime bundles and completed-week evidence are authoritative.",
+    "Native Japanese clarification of compressed091c4p3 and human/native/domain/rights/release approval remain pending; neutral translations do not assert definite qualification possession or credential-assessment authority."
   ],
   "humanReviewed": false,
   "nativeSpeakerReviewed": false,
   "domainReviewed": false,
   "rightsReviewed": false,
-  "releaseReady": false
+  "releaseReady": false,
+  "previousCheckpointStatus": "IN_PROGRESS_QUOTA_BLOCKED",
+  "previousBlocker": "Four author/reviewer agents returned account usage-limit errors. No retry or model switch attempted. Complete drafts preserved before further work.",
+  "boundedCorrectionEvents": 76,
+  "draftsAreHistorical": true,
+  "completedManifest": "../../WEEK_013_TRANSLATION_MANIFEST.json",
+  "completedAIReview": "../../WEEK_013_AI_REVIEW.json",
+  "sourceInterpretationDecision": "091c4p3 remains compressed Japanese. Final12translations use neutral qualification-related matters and specialist-construction judgment ability, avoiding definitive possession/credential-assessment or legal-authority claims. Native Japanese clarification remains pending; no source edits.",
+  "runtimeStatus": "PASS_WEB_ADAPTED_READER",
+  "runtimeBundlesAuthoritative": [
+    "src/data/kensetsu/translations/session-085.json",
+    "src/data/kensetsu/translations/session-086.json",
+    "src/data/kensetsu/translations/session-087.json",
+    "src/data/kensetsu/translations/session-088.json",
+    "src/data/kensetsu/translations/session-089.json",
+    "src/data/kensetsu/translations/session-090.json",
+    "src/data/kensetsu/translations/session-091.json"
+  ],
+  "previousFreshRereadFile": "reread-en-vi.json",
+  "finalFreshRereadEvidence": "WEEK_013_AI_REVIEW.json:reviewEvidence/reread-*.json",
+  "resumeIntegrationBaseCommit": "a1c28c407163033f40dd96819ad921f55294a176"
 }
