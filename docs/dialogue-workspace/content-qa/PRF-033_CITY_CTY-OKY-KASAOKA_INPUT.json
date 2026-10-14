@@ -1,0 +1,2512 @@
+[
+  {
+    "scenario": {
+      "id": "SC-OKY-KASAOKA-001",
+      "name": "船の利用条件を確認する",
+      "locationId": "LOC-OKY-KASAOKA-01",
+      "cityId": "CTY-OKY-KASAOKA",
+      "locationType": "Station",
+      "type": "Travel",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "笠岡市の学習用場面で、乗船前に運航と持ち物を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "乗船前に運航と持ち物を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": "Ben pha: mua ve tau bien, gio chay, mang xe/hanh ly, say song.",
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [
+        "切符 (https://app.notion.com/p/7e9d983b298e482da8be6d33ace3a0c3?pvs=21)",
+        "弁当 (https://app.notion.com/p/3be70421d96181dc9764c12ca32bcfc3?pvs=21)",
+        "利用 (https://app.notion.com/p/3be70421d96181f8968ceb0400eb648e?pvs=21)"
+      ],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-OKY-KASAOKA",
+      "name": "Kasaoka",
+      "nameJa": "笠岡市",
+      "type": null,
+      "description": "Thành phố Kasaoka (笠岡市) thuộc tỉnh Okayama. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-033",
+      "order": 215,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-OKY-KASAOKA-01",
+        "LOC-OKY-KASAOKA-02",
+        "LOC-OKY-KASAOKA-04",
+        "LOC-OKY-KASAOKA-05",
+        "LOC-OKY-KASAOKA-03",
+        "LOC-OKY-KASAOKA-06",
+        "LOC-OKY-KASAOKA-07",
+        "LOC-OKY-KASAOKA-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-OKY-KASAOKA-01",
+      "name": "Kasaoka Ferry Terminal",
+      "nameJa": "笠岡フェリーターミナル",
+      "cityId": "CTY-OKY-KASAOKA",
+      "category": "Station",
+      "type": "Transportation",
+      "npcJob": "Port Staff",
+      "defaultNpcId": "NPC-OKY-KASAOKA-001",
+      "description": "Ben pha: mua ve tau bien, gio chay, mang xe/hanh ly, say song.",
+      "order": 1,
+      "status": "Active",
+      "importance": "Main",
+      "sceneStyle": "2.5D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": [
+        "Mua ve tau bien tại フェリーターミナル (Kasaoka) (https://app.notion.com/p/Mua-ve-tau-bien-t-i-Kasaoka-3be70421d961818895f4d8e5a55b72f3?pvs=21)"
+      ]
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-OKY-KASAOKA-001-SHARED-01",
+        "scenarioId": "SC-OKY-KASAOKA-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こんにちは。乗船についてのご相談ですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-OKY-KASAOKA-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-OKY-KASAOKA-001-SHARED-02",
+        "scenarioId": "SC-OKY-KASAOKA-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "boat_response_1",
+          "requiredSemanticComponents": {
+            "goal": "乗船前に運航と持ち物を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "笠岡市を訪れています。船を利用する前に、条件を確認したいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-OKY-KASAOKA-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-OKY-KASAOKA-001-SHARED-03",
+        "scenarioId": "SC-OKY-KASAOKA-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "ご希望の便と、人数を教えてください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-OKY-KASAOKA-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-OKY-KASAOKA-001-SHARED-04",
+        "scenarioId": "SC-OKY-KASAOKA-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "boat_response_2",
+          "requiredSemanticComponents": {
+            "goal": "乗船前に運航と持ち物を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "大人二人です。天候が悪いときはどうなりますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-OKY-KASAOKA-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-OKY-KASAOKA-001-SHARED-05",
+        "scenarioId": "SC-OKY-KASAOKA-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "運航状況は当日の案内で確認してください。欠航時の扱いも、購入前に説明します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-OKY-KASAOKA-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-OKY-KASAOKA-001-SHARED-06",
+        "scenarioId": "SC-OKY-KASAOKA-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "boat_response_3",
+          "requiredSemanticComponents": {
+            "goal": "乗船前に運航と持ち物を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "船酔いが心配です。席や持ち込みの条件を聞けますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-OKY-KASAOKA-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-OKY-KASAOKA-001-SHARED-07",
+        "scenarioId": "SC-OKY-KASAOKA-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "ご案内できる内容を確認します。体調に関する相談は専門家にもご確認ください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-OKY-KASAOKA-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-OKY-KASAOKA-001-SHARED-08",
+        "scenarioId": "SC-OKY-KASAOKA-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "boat_response_4",
+          "requiredSemanticComponents": {
+            "goal": "乗船前に運航と持ち物を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "荷物の大きさと、乗り場までの経路も知りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-OKY-KASAOKA-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-OKY-KASAOKA-001-SHARED-09",
+        "scenarioId": "SC-OKY-KASAOKA-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "荷物の条件と乗船案内を、一緒に確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-OKY-KASAOKA-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-OKY-KASAOKA-001-SHARED-10",
+        "scenarioId": "SC-OKY-KASAOKA-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "boat_response_5",
+          "requiredSemanticComponents": {
+            "goal": "乗船前に運航と持ち物を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。集合時刻に余裕を持って来ます。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-OKY-KASAOKA-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-OKY-KASAOKA-001-SHARED-11",
+        "scenarioId": "SC-OKY-KASAOKA-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "乗船中は係員の指示に従い、立入禁止の場所には入らないでください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-OKY-KASAOKA-02-001",
+      "name": "農作業前に道具と担当を確認する",
+      "locationId": "LOC-OKY-KASAOKA-02",
+      "cityId": "CTY-OKY-KASAOKA",
+      "locationType": "Construction Site",
+      "type": "Work",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "笠岡市の学習用場面で、作業範囲と道具の使い方を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "作業範囲と道具の使い方を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-OKY-KASAOKA",
+      "name": "Kasaoka",
+      "nameJa": "笠岡市",
+      "type": null,
+      "description": "Thành phố Kasaoka (笠岡市) thuộc tỉnh Okayama. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-033",
+      "order": 215,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-OKY-KASAOKA-01",
+        "LOC-OKY-KASAOKA-02",
+        "LOC-OKY-KASAOKA-04",
+        "LOC-OKY-KASAOKA-05",
+        "LOC-OKY-KASAOKA-03",
+        "LOC-OKY-KASAOKA-06",
+        "LOC-OKY-KASAOKA-07",
+        "LOC-OKY-KASAOKA-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-OKY-KASAOKA-02",
+      "name": "Kasaoka Flower Nursery",
+      "nameJa": "笠岡花き苗農園",
+      "cityId": "CTY-OKY-KASAOKA",
+      "category": "Nature",
+      "type": "Workplace",
+      "npcJob": "Farmer",
+      "defaultNpcId": "NPC-OKY-KASAOKA-002",
+      "description": "Vuon cay hoa giong: gieo giong, ghep canh, xuat hang, cham hoa.",
+      "order": 2,
+      "status": "Active",
+      "importance": "Secondary",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-01",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-02-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "おはようございます。今日の作業について確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-02",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-02-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-farm_response_1",
+          "requiredSemanticComponents": {
+            "goal": "作業範囲と道具の使い方を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "笠岡市のこの畑で働くのは初めてです。どこを担当しますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-03",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-02-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "作業する区画と、立ち入らない区域を図で確認します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-04",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-02-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-farm_response_2",
+          "requiredSemanticComponents": {
+            "goal": "作業範囲と道具の使い方を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "この区画ですね。道具の使い方も見せていただけますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-05",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-02-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。安全な持ち方と、人との間隔を実際に確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-06",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-02-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-farm_response_3",
+          "requiredSemanticComponents": {
+            "goal": "作業範囲と道具の使い方を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "機械が近くを通るときは、作業を止めればよいですか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-07",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-02-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "合図と避ける場所を先に確認します。機械の進路へ入らないでください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-08",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-02-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-farm_response_4",
+          "requiredSemanticComponents": {
+            "goal": "作業範囲と道具の使い方を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "体調が悪くなったときの連絡先も知りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-09",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-02-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "この現場の責任者へすぐ知らせてください。休憩や水分補給も無理せず行いましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-10",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-02-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-farm_response_5",
+          "requiredSemanticComponents": {
+            "goal": "作業範囲と道具の使い方を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "わかりました。区画と道具を確認してから始めます。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-02-001-SHARED-11",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-02-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "迷ったことがあればその場で聞き、安全を優先してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-OKY-KASAOKA-03-001",
+      "name": "魚の下処理と保存方法を聞く",
+      "locationId": "LOC-OKY-KASAOKA-03",
+      "cityId": "CTY-OKY-KASAOKA",
+      "locationType": "Supermarket",
+      "type": "Shopping",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "笠岡市の学習用場面で、調理予定に合う魚と扱い方を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "調理予定に合う魚と扱い方を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-OKY-KASAOKA",
+      "name": "Kasaoka",
+      "nameJa": "笠岡市",
+      "type": null,
+      "description": "Thành phố Kasaoka (笠岡市) thuộc tỉnh Okayama. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-033",
+      "order": 215,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-OKY-KASAOKA-01",
+        "LOC-OKY-KASAOKA-02",
+        "LOC-OKY-KASAOKA-04",
+        "LOC-OKY-KASAOKA-05",
+        "LOC-OKY-KASAOKA-03",
+        "LOC-OKY-KASAOKA-06",
+        "LOC-OKY-KASAOKA-07",
+        "LOC-OKY-KASAOKA-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-OKY-KASAOKA-03",
+      "name": "Kasaoka Fresh Fish Stall",
+      "nameJa": "笠岡鮮魚売場",
+      "cityId": "CTY-OKY-KASAOKA",
+      "category": "Supermarket",
+      "type": "Shopping",
+      "npcJob": "Seafood Vendor",
+      "defaultNpcId": "NPC-OKY-KASAOKA-003",
+      "description": "Quay ca tuoi: ten ca, lam sach, cat lat, gia theo con.",
+      "order": 3,
+      "status": "Active",
+      "importance": "Secondary",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-01",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-03-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "いらっしゃいませ。どのような魚をお探しですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-02",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-03-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "fish-shop_response_1",
+          "requiredSemanticComponents": {
+            "goal": "調理予定に合う魚と扱い方を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "笠岡市で夕食を作ります。家で焼いて食べる魚を選びたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-03",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-03-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "何人分をお作りになりますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-04",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-03-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "fish-shop_response_2",
+          "requiredSemanticComponents": {
+            "goal": "調理予定に合う魚と扱い方を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "二人分です。骨が気になるので、下処理を頼めますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-05",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-03-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "対応できる内容を確認します。骨が完全になくなるとは限りません。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-06",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-03-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "fish-shop_response_3",
+          "requiredSemanticComponents": {
+            "goal": "調理予定に合う魚と扱い方を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "わかりました。帰宅まで少し時間がかかります。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-07",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-03-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "持ち帰りと保存について、商品の案内を確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-08",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-03-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "fish-shop_response_4",
+          "requiredSemanticComponents": {
+            "goal": "調理予定に合う魚と扱い方を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "生で食べられる商品かも、表示でわかりますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-09",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-03-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "表示を確認してください。今回は加熱して食べる予定に合うものを選びましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-10",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-03-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "fish-shop_response_5",
+          "requiredSemanticComponents": {
+            "goal": "調理予定に合う魚と扱い方を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。保存方法と調理方法を確認して買います。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-03-001-SHARED-11",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-03-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "帰宅後も表示に従って保管し、気になる点があればお問い合わせください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-OKY-KASAOKA-04-001",
+      "name": "商品を比較して選ぶ",
+      "locationId": "LOC-OKY-KASAOKA-04",
+      "cityId": "CTY-OKY-KASAOKA",
+      "locationType": "Shop",
+      "type": "Daily Life",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "笠岡市の学習用場面で、用途と予算に合う商品を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "用途と予算に合う商品を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-OKY-KASAOKA",
+      "name": "Kasaoka",
+      "nameJa": "笠岡市",
+      "type": null,
+      "description": "Thành phố Kasaoka (笠岡市) thuộc tỉnh Okayama. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-033",
+      "order": 215,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-OKY-KASAOKA-01",
+        "LOC-OKY-KASAOKA-02",
+        "LOC-OKY-KASAOKA-04",
+        "LOC-OKY-KASAOKA-05",
+        "LOC-OKY-KASAOKA-03",
+        "LOC-OKY-KASAOKA-06",
+        "LOC-OKY-KASAOKA-07",
+        "LOC-OKY-KASAOKA-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-OKY-KASAOKA-04",
+      "name": "Kasaoka Home Center",
+      "nameJa": "笠岡ホームセンター",
+      "cityId": "CTY-OKY-KASAOKA",
+      "category": "Shopping",
+      "type": "Daily Life",
+      "npcJob": "Shop Staff",
+      "defaultNpcId": null,
+      "description": "Home center: mua dung cu, kich co, thue thiet bi, giao hang.",
+      "order": 4,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-01",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-04-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "いらっしゃいませ。何をお探しですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-02",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-04-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "shop-compare_response_1",
+          "requiredSemanticComponents": {
+            "goal": "用途と予算に合う商品を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "笠岡市で使う日用品を探しています。この二つの違いを教えてください。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-03",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-04-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "どのような使い方を予定していますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-04",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-04-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "shop-compare_response_2",
+          "requiredSemanticComponents": {
+            "goal": "用途と予算に合う商品を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "毎日使いたいので、手入れが簡単なものがよいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-05",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-04-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "表示を見ながら、素材とお手入れの方法を比べましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-06",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-04-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "shop-compare_response_3",
+          "requiredSemanticComponents": {
+            "goal": "用途と予算に合う商品を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "持ち運びもしやすいほうがよいです。重さを確認できますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-07",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-04-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。サイズと重さを確認し、可能であれば実物もご覧いただけます。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-08",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-04-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "shop-compare_response_4",
+          "requiredSemanticComponents": {
+            "goal": "用途と予算に合う商品を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "予算はこのくらいです。追加で必要な物はありますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-09",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-04-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "付属品の有無と合計額を、購入前に確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-10",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-04-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "shop-compare_response_5",
+          "requiredSemanticComponents": {
+            "goal": "用途と予算に合う商品を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。条件を比べてから決めます。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-04-001-SHARED-11",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-04-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "気になる点があれば、遠慮なくお尋ねください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-OKY-KASAOKA-05-001",
+      "name": "会計と注文内容を確認する",
+      "locationId": "LOC-OKY-KASAOKA-05",
+      "cityId": "CTY-OKY-KASAOKA",
+      "locationType": "Restaurant",
+      "type": "Daily Life",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "笠岡市の学習用場面で、注文内容と会計方法を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "注文内容と会計方法を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-OKY-KASAOKA",
+      "name": "Kasaoka",
+      "nameJa": "笠岡市",
+      "type": null,
+      "description": "Thành phố Kasaoka (笠岡市) thuộc tỉnh Okayama. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-033",
+      "order": 215,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-OKY-KASAOKA-01",
+        "LOC-OKY-KASAOKA-02",
+        "LOC-OKY-KASAOKA-04",
+        "LOC-OKY-KASAOKA-05",
+        "LOC-OKY-KASAOKA-03",
+        "LOC-OKY-KASAOKA-06",
+        "LOC-OKY-KASAOKA-07",
+        "LOC-OKY-KASAOKA-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-OKY-KASAOKA-05",
+      "name": "Kasaoka Street Food Yatai",
+      "nameJa": "笠岡屋台",
+      "cityId": "CTY-OKY-KASAOKA",
+      "category": "Restaurant",
+      "type": "Food",
+      "npcJob": "Vendor",
+      "defaultNpcId": null,
+      "description": "Xe day do an duong pho: goi mon nhanh, dung an, tra tien le.",
+      "order": 5,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2.5D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-01",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-05-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "いらっしゃいませ。お会計でしょうか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-02",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-05-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-bill_response_1",
+          "requiredSemanticComponents": {
+            "goal": "注文内容と会計方法を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "はい。笠岡市の友人と食事をしました。会計の内容を確認したいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-03",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-05-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こちらがご注文の明細です。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-04",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-05-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-bill_response_2",
+          "requiredSemanticComponents": {
+            "goal": "注文内容と会計方法を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "この飲み物は注文していないと思います。確認していただけますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-05",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-05-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "承知しました。伝票と注文の記録を確認します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-06",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-05-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-bill_response_3",
+          "requiredSemanticComponents": {
+            "goal": "注文内容と会計方法を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。二人分を別々に払えるかも知りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-07",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-05-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "お店の会計方法を確認します。できない場合は先にお伝えします。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-08",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-05-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-bill_response_4",
+          "requiredSemanticComponents": {
+            "goal": "注文内容と会計方法を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "わかりました。確認が終わってから支払います。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-09",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-05-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "確認した内容を説明しますので、明細をもう一度ご覧ください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-10",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-05-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-bill_response_5",
+          "requiredSemanticComponents": {
+            "goal": "注文内容と会計方法を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "はい。内容が合っているか確認します。レシートもお願いします。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-05-001-SHARED-11",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-05-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "承知しました。お忘れ物のないようにお帰りください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-OKY-KASAOKA-06-001",
+      "name": "家具の寸法と配送を相談する",
+      "locationId": "LOC-OKY-KASAOKA-06",
+      "cityId": "CTY-OKY-KASAOKA",
+      "locationType": "Shop",
+      "type": "Shopping",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "笠岡市の学習用場面で、設置場所と配送条件を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "設置場所と配送条件を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-OKY-KASAOKA",
+      "name": "Kasaoka",
+      "nameJa": "笠岡市",
+      "type": null,
+      "description": "Thành phố Kasaoka (笠岡市) thuộc tỉnh Okayama. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-033",
+      "order": 215,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-OKY-KASAOKA-01",
+        "LOC-OKY-KASAOKA-02",
+        "LOC-OKY-KASAOKA-04",
+        "LOC-OKY-KASAOKA-05",
+        "LOC-OKY-KASAOKA-03",
+        "LOC-OKY-KASAOKA-06",
+        "LOC-OKY-KASAOKA-07",
+        "LOC-OKY-KASAOKA-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-OKY-KASAOKA-06",
+      "name": "Kasaoka Furniture Store",
+      "nameJa": "笠岡家具店",
+      "cityId": "CTY-OKY-KASAOKA",
+      "category": "Shopping",
+      "type": "Shopping",
+      "npcJob": "Shop Staff",
+      "defaultNpcId": null,
+      "description": "Cua hang noi that: kich thuoc, giao lap dat, ngay giao.",
+      "order": 6,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-01",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-06-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "いらっしゃいませ。どのような家具をお探しですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-02",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-06-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "furniture_response_1",
+          "requiredSemanticComponents": {
+            "goal": "設置場所と配送条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "笠岡市の部屋で使う机を探しています。大きさを確認したいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-03",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-06-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "設置する場所と、入口の寸法はおわかりですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-04",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-06-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "furniture_response_2",
+          "requiredSemanticComponents": {
+            "goal": "設置場所と配送条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "置く場所は測りましたが、入口はまだです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-05",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-06-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "搬入できるかも大切です。商品の寸法と、必要な搬入経路を確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-06",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-06-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "furniture_response_3",
+          "requiredSemanticComponents": {
+            "goal": "設置場所と配送条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "組み立てが必要か、知りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-07",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-06-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "組み立て方法と、利用できるサービスの条件をご説明します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-08",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-06-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "furniture_response_4",
+          "requiredSemanticComponents": {
+            "goal": "設置場所と配送条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "配送の費用と日時も、購入前に確認できますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-09",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-06-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。住所と希望を確認し、対応できる範囲をご案内します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-10",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-06-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "furniture_response_5",
+          "requiredSemanticComponents": {
+            "goal": "設置場所と配送条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。入口も測ってから、あらためて相談します。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-06-001-SHARED-11",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-06-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "寸法と合計費用を確認して、無理なく使えるものをお選びください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-OKY-KASAOKA-07-001",
+      "name": "建設現場で朝の担当と危険を確認する",
+      "locationId": "LOC-OKY-KASAOKA-07",
+      "cityId": "CTY-OKY-KASAOKA",
+      "locationType": "Construction Site",
+      "type": "Work",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "笠岡市の学習用場面で、担当範囲と立入区域を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "担当範囲と立入区域を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-OKY-KASAOKA",
+      "name": "Kasaoka",
+      "nameJa": "笠岡市",
+      "type": null,
+      "description": "Thành phố Kasaoka (笠岡市) thuộc tỉnh Okayama. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-033",
+      "order": 215,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-OKY-KASAOKA-01",
+        "LOC-OKY-KASAOKA-02",
+        "LOC-OKY-KASAOKA-04",
+        "LOC-OKY-KASAOKA-05",
+        "LOC-OKY-KASAOKA-03",
+        "LOC-OKY-KASAOKA-06",
+        "LOC-OKY-KASAOKA-07",
+        "LOC-OKY-KASAOKA-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-OKY-KASAOKA-07",
+      "name": "Kasaoka Construction Site Morning Meeting",
+      "nameJa": "笠岡建設現場朝礼",
+      "cityId": "CTY-OKY-KASAOKA",
+      "category": "Construction Site",
+      "type": "Workplace",
+      "npcJob": "Construction Manager",
+      "defaultNpcId": null,
+      "description": "Diem danh sang o cong truong: KY, an toan, phan cong, bao cao.",
+      "order": 7,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2.5D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-01",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-07-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "おはようございます。作業前の確認を行います。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-02",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-07-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-site_response_1",
+          "requiredSemanticComponents": {
+            "goal": "担当範囲と立入区域を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "笠岡市のこの現場では初めてです。今日の担当を教えてください。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-03",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-07-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "担当表と現場の図で、作業場所と立入禁止の区域を確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-04",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-07-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-site_response_2",
+          "requiredSemanticComponents": {
+            "goal": "担当範囲と立入区域を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ほかの作業と同じ場所を使う場合、どう確認しますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-05",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-07-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "責任者の指示と合図を確認します。自分の判断で作業区域に入らないでください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-06",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-07-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-site_response_3",
+          "requiredSemanticComponents": {
+            "goal": "担当範囲と立入区域を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "保護具と、使ってよい道具も確認したいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-07",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-07-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "必要な装備と操作権限を確認してください。説明を受けていない機械は操作しないでください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-08",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-07-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-site_response_4",
+          "requiredSemanticComponents": {
+            "goal": "担当範囲と立入区域を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "危険を見つけたら、作業を止めて報告するのですね。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-09",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-07-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。安全な場所から、位置と状況を責任者に知らせてください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-10",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-07-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-site_response_5",
+          "requiredSemanticComponents": {
+            "goal": "担当範囲と立入区域を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "わかりました。経路と担当範囲を確認してから始めます。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-07-001-SHARED-11",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-07-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "不明なことが残っている場合は作業を始めず、その場で質問してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-OKY-KASAOKA-08-001",
+      "name": "荷物の送り方を相談する",
+      "locationId": "LOC-OKY-KASAOKA-08",
+      "cityId": "CTY-OKY-KASAOKA",
+      "locationType": "Government Office",
+      "type": "Administrative",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "笠岡市の学習用場面で、荷物の内容と発送条件を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "荷物の内容と発送条件を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-OKY-KASAOKA",
+      "name": "Kasaoka",
+      "nameJa": "笠岡市",
+      "type": null,
+      "description": "Thành phố Kasaoka (笠岡市) thuộc tỉnh Okayama. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-033",
+      "order": 215,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-OKY-KASAOKA-01",
+        "LOC-OKY-KASAOKA-02",
+        "LOC-OKY-KASAOKA-04",
+        "LOC-OKY-KASAOKA-05",
+        "LOC-OKY-KASAOKA-03",
+        "LOC-OKY-KASAOKA-06",
+        "LOC-OKY-KASAOKA-07",
+        "LOC-OKY-KASAOKA-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-OKY-KASAOKA-08",
+      "name": "Kasaoka Post Office Counter",
+      "nameJa": "笠岡郵便局窓口",
+      "cityId": "CTY-OKY-KASAOKA",
+      "category": "Post Office",
+      "type": "Public Service",
+      "npcJob": "Postal Clerk",
+      "defaultNpcId": null,
+      "description": "Quay buu dien: gui thu/hang, chuyen phat nhanh, gui quoc te, tem.",
+      "order": 8,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-01",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-08-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こんにちは。荷物の発送ですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-02",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-08-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "post-parcel_response_1",
+          "requiredSemanticComponents": {
+            "goal": "荷物の内容と発送条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "笠岡市から家族へ、この箱を送りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-03",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-08-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "送り先と、中に入っているものを教えてください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-04",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-08-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "post-parcel_response_2",
+          "requiredSemanticComponents": {
+            "goal": "荷物の内容と発送条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "国内の住所で、衣類と本が入っています。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-05",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-08-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "大きさと重さを測り、利用できる送り方を確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-06",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-08-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "post-parcel_response_3",
+          "requiredSemanticComponents": {
+            "goal": "荷物の内容と発送条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "追跡できる方法を選びたいです。料金も比較できますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-07",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-08-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。利用条件と料金を、ご案内の表示で確認できます。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-08",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-08-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "post-parcel_response_4",
+          "requiredSemanticComponents": {
+            "goal": "荷物の内容と発送条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "到着日は確約されますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-09",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-08-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "配達の見込みは確認できますが、交通や天候などで変わることがあります。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-10",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-08-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "post-parcel_response_5",
+          "requiredSemanticComponents": {
+            "goal": "荷物の内容と発送条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "わかりました。住所と電話番号を、確認して書きます。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KASAOKA-08-001-SHARED-11",
+        "scenarioId": "SC-LOC-OKY-KASAOKA-08-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "発送後は控えを保管し、必要な場合は追跡番号でご確認ください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  }
+]
