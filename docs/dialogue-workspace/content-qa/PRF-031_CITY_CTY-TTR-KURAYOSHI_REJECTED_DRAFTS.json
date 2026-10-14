@@ -1,0 +1,2591 @@
+{
+  "mode": "actual_full_old_drafts",
+  "drafts": [
+    {
+      "scenarioId": "SC-TTR-KURAYOSHI-001",
+      "reason": "Generic response sequence, identical repeated goal across all five Player turns, final NPC instruction without conversational farewell. Replaced with an independent causal exchange.",
+      "actualDraft": {
+        "scenario": {
+          "id": "SC-TTR-KURAYOSHI-001",
+          "name": "展示施設の見学方法を確認する",
+          "locationId": "LOC-TTR-KURAYOSHI-01",
+          "cityId": "CTY-TTR-KURAYOSHI",
+          "locationType": "Other",
+          "type": "Study",
+          "difficulty": null,
+          "status": "Review",
+          "priority": "Essential",
+          "trigger": "Location Entry",
+          "order": 1,
+          "situation": "倉吉市の学習用場面で、展示の説明と撮影ルールを確認する。",
+          "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+          "playerGoal": "展示の説明と撮影ルールを確認する",
+          "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+          "branching": "Linear",
+          "description": "Khu nha co ngoai troi: cau truc nha, doi song xua, coi giay.",
+          "evaluationCriteria": null,
+          "requiredGrammarIds": [],
+          "requiredVocabularyIds": [
+            "見学 (https://app.notion.com/p/3be70421d96181728140cd26ca51b3a2?pvs=21)",
+            "写真 (https://app.notion.com/p/3be70421d9618102a4f8e4be386ad521?pvs=21)",
+            "予約 (https://app.notion.com/p/ed4c7f5c3cfe475898d5cd8ce5e08d9d?pvs=21)",
+            "もし (https://app.notion.com/p/3be70421d96181638369ee358ee7abb9?pvs=21)"
+          ],
+          "reward": null,
+          "outcome": null,
+          "startingExpression": null,
+          "version": 2
+        },
+        "city": {
+          "id": "CTY-TTR-KURAYOSHI",
+          "name": "Kurayoshi",
+          "nameJa": "倉吉市",
+          "type": null,
+          "description": "Thành phố Kurayoshi (倉吉市) thuộc tỉnh Tottori. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+          "prefectureId": "PRF-031",
+          "order": 274,
+          "unlockLevel": 0,
+          "status": null,
+          "population": 0,
+          "locationIds": [
+            "LOC-TTR-KURAYOSHI-01",
+            "LOC-TTR-KURAYOSHI-05",
+            "LOC-TTR-KURAYOSHI-06",
+            "LOC-TTR-KURAYOSHI-07",
+            "LOC-TTR-KURAYOSHI-02",
+            "LOC-TTR-KURAYOSHI-03",
+            "LOC-TTR-KURAYOSHI-04",
+            "LOC-TTR-KURAYOSHI-08"
+          ]
+        },
+        "location": {
+          "id": "LOC-TTR-KURAYOSHI-01",
+          "name": "Kurayoshi Open-air Folk House Museum",
+          "nameJa": "倉吉古民家園",
+          "cityId": "CTY-TTR-KURAYOSHI",
+          "category": "Museum",
+          "type": "Culture",
+          "npcJob": "Museum Guide",
+          "defaultNpcId": "NPC-TTR-KURAYOSHI-001",
+          "description": "Khu nha co ngoai troi: cau truc nha, doi song xua, coi giay.",
+          "order": 1,
+          "status": "Active",
+          "importance": "Main",
+          "sceneStyle": "2.5D",
+          "backgroundAsset": null,
+          "openHours": null,
+          "address": null,
+          "scenarioIds": [
+            "Cau truc nha tại 古民家園 (Kurayoshi) (https://app.notion.com/p/Cau-truc-nha-t-i-Kurayoshi-3be70421d9618133997fd908a026090a?pvs=21)"
+          ]
+        },
+        "previousTurns": [
+          {
+            "id": "DLG-SC-TTR-KURAYOSHI-001-SHARED-01",
+            "scenarioId": "SC-TTR-KURAYOSHI-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "こんにちは。展示のご案内ですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-TTR-KURAYOSHI-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-TTR-KURAYOSHI-001-SHARED-02",
+            "scenarioId": "SC-TTR-KURAYOSHI-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "museum_response_1",
+              "requiredSemanticComponents": {
+                "goal": "展示の説明と撮影ルールを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "倉吉市の歴史や文化について知りたいです。初めて見学します。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-TTR-KURAYOSHI-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-TTR-KURAYOSHI-001-SHARED-03",
+            "scenarioId": "SC-TTR-KURAYOSHI-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "特に気になる展示はありますか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-TTR-KURAYOSHI-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-TTR-KURAYOSHI-001-SHARED-04",
+            "scenarioId": "SC-TTR-KURAYOSHI-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "museum_response_2",
+              "requiredSemanticComponents": {
+                "goal": "展示の説明と撮影ルールを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "生活に関する展示を見たいです。説明が難しいときは質問できますか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-TTR-KURAYOSHI-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-TTR-KURAYOSHI-001-SHARED-05",
+            "scenarioId": "SC-TTR-KURAYOSHI-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "はい。用意されている解説や、質問できる方法を確認しましょう。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-TTR-KURAYOSHI-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-TTR-KURAYOSHI-001-SHARED-06",
+            "scenarioId": "SC-TTR-KURAYOSHI-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "museum_response_3",
+              "requiredSemanticComponents": {
+                "goal": "展示の説明と撮影ルールを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "写真を撮ってもよい場所は、どう見分けますか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-TTR-KURAYOSHI-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-TTR-KURAYOSHI-001-SHARED-07",
+            "scenarioId": "SC-TTR-KURAYOSHI-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "展示ごとの表示をご覧ください。撮影が認められていても、ほかの方に配慮してください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-TTR-KURAYOSHI-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-TTR-KURAYOSHI-001-SHARED-08",
+            "scenarioId": "SC-TTR-KURAYOSHI-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "museum_response_4",
+              "requiredSemanticComponents": {
+                "goal": "展示の説明と撮影ルールを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "荷物を預ける場所があるかも知りたいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-TTR-KURAYOSHI-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-TTR-KURAYOSHI-001-SHARED-09",
+            "scenarioId": "SC-TTR-KURAYOSHI-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "利用できる設備と条件を確認します。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-TTR-KURAYOSHI-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-TTR-KURAYOSHI-001-SHARED-10",
+            "scenarioId": "SC-TTR-KURAYOSHI-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "museum_response_5",
+              "requiredSemanticComponents": {
+                "goal": "展示の説明と撮影ルールを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "ありがとうございます。案内を確認してから見学します。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-TTR-KURAYOSHI-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-TTR-KURAYOSHI-001-SHARED-11",
+            "scenarioId": "SC-TTR-KURAYOSHI-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "展示物には指示なく触れず、ご不明な点は職員にお尋ねください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ]
+      }
+    },
+    {
+      "scenarioId": "SC-LOC-TTR-KURAYOSHI-02-001",
+      "reason": "Generic response sequence, identical repeated goal across all five Player turns, final NPC instruction without conversational farewell. Replaced with an independent causal exchange.",
+      "actualDraft": {
+        "scenario": {
+          "id": "SC-LOC-TTR-KURAYOSHI-02-001",
+          "name": "果樹園で収穫の基準を確認する",
+          "locationId": "LOC-TTR-KURAYOSHI-02",
+          "cityId": "CTY-TTR-KURAYOSHI",
+          "locationType": "Construction Site",
+          "type": "Work",
+          "difficulty": null,
+          "status": "Review",
+          "priority": "Essential",
+          "trigger": "Location Entry",
+          "order": 1,
+          "situation": "倉吉市の学習用場面で、収穫する実と安全な道具の扱いを確認する。",
+          "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+          "playerGoal": "収穫する実と安全な道具の扱いを確認する",
+          "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+          "branching": "Linear",
+          "description": null,
+          "evaluationCriteria": null,
+          "requiredGrammarIds": [],
+          "requiredVocabularyIds": [],
+          "reward": null,
+          "outcome": null,
+          "startingExpression": null,
+          "version": 2
+        },
+        "city": {
+          "id": "CTY-TTR-KURAYOSHI",
+          "name": "Kurayoshi",
+          "nameJa": "倉吉市",
+          "type": null,
+          "description": "Thành phố Kurayoshi (倉吉市) thuộc tỉnh Tottori. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+          "prefectureId": "PRF-031",
+          "order": 274,
+          "unlockLevel": 0,
+          "status": null,
+          "population": 0,
+          "locationIds": [
+            "LOC-TTR-KURAYOSHI-01",
+            "LOC-TTR-KURAYOSHI-05",
+            "LOC-TTR-KURAYOSHI-06",
+            "LOC-TTR-KURAYOSHI-07",
+            "LOC-TTR-KURAYOSHI-02",
+            "LOC-TTR-KURAYOSHI-03",
+            "LOC-TTR-KURAYOSHI-04",
+            "LOC-TTR-KURAYOSHI-08"
+          ]
+        },
+        "location": {
+          "id": "LOC-TTR-KURAYOSHI-02",
+          "name": "Kurayoshi Fruit Orchard",
+          "nameJa": "倉吉果樹園",
+          "cityId": "CTY-TTR-KURAYOSHI",
+          "category": "Nature",
+          "type": "Workplace",
+          "npcJob": "Farmer",
+          "defaultNpcId": "NPC-TTR-KURAYOSHI-002",
+          "description": "Vuon trai cay: tia canh, hai qua, phan loai kich co, dong hop.",
+          "order": 2,
+          "status": "Active",
+          "importance": "Secondary",
+          "sceneStyle": "2.5D",
+          "backgroundAsset": null,
+          "openHours": null,
+          "address": null,
+          "scenarioIds": []
+        },
+        "previousTurns": [
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-01",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-02-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "おはようございます。収穫前に、今日の基準を確認しましょう。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-02",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-02-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "work-orchard_response_1",
+              "requiredSemanticComponents": {
+                "goal": "収穫する実と安全な道具の扱いを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "倉吉市のこの果樹園では初めてです。どの実を収穫しますか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-03",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-02-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "実物を見ながら説明します。判断に迷う実は、残して確認してください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-04",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-02-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "work-orchard_response_2",
+              "requiredSemanticComponents": {
+                "goal": "収穫する実と安全な道具の扱いを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "傷のある実は、同じ箱に入れないほうがよいですか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-05",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-02-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "分類と置き場所は、今日の指示に従ってください。勝手に捨てないでください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-06",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-02-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "work-orchard_response_3",
+              "requiredSemanticComponents": {
+                "goal": "収穫する実と安全な道具の扱いを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "高いところの実は、どう取ればよいですか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-07",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-02-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "指定された道具と安全な方法を確認します。手が届かないときは無理をしないでください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-08",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-02-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "work-orchard_response_4",
+              "requiredSemanticComponents": {
+                "goal": "収穫する実と安全な道具の扱いを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "脚立を使う前も、置き方を確認したいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-09",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-02-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "はい。地面の状態や周囲を確認し、現場の手順に従ってください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-10",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-02-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "work-orchard_response_5",
+              "requiredSemanticComponents": {
+                "goal": "収穫する実と安全な道具の扱いを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "わかりました。実の基準と道具を確認してから始めます。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-02-001-SHARED-11",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-02-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "収穫中に迷ったら、その場で声をかけてください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ]
+      }
+    },
+    {
+      "scenarioId": "SC-LOC-TTR-KURAYOSHI-03-001",
+      "reason": "Generic response sequence, identical repeated goal across all five Player turns, final NPC instruction without conversational farewell. Replaced with an independent causal exchange.",
+      "actualDraft": {
+        "scenario": {
+          "id": "SC-LOC-TTR-KURAYOSHI-03-001",
+          "name": "展示作品の解説と鑑賞ルールを確認する",
+          "locationId": "LOC-TTR-KURAYOSHI-03",
+          "cityId": "CTY-TTR-KURAYOSHI",
+          "locationType": "Other",
+          "type": "Study",
+          "difficulty": null,
+          "status": "Review",
+          "priority": "Essential",
+          "trigger": "Location Entry",
+          "order": 1,
+          "situation": "倉吉市の学習用場面で、鑑賞の方法と撮影条件を確認する。",
+          "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+          "playerGoal": "鑑賞の方法と撮影条件を確認する",
+          "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+          "branching": "Linear",
+          "description": null,
+          "evaluationCriteria": null,
+          "requiredGrammarIds": [],
+          "requiredVocabularyIds": [],
+          "reward": null,
+          "outcome": null,
+          "startingExpression": null,
+          "version": 2
+        },
+        "city": {
+          "id": "CTY-TTR-KURAYOSHI",
+          "name": "Kurayoshi",
+          "nameJa": "倉吉市",
+          "type": null,
+          "description": "Thành phố Kurayoshi (倉吉市) thuộc tỉnh Tottori. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+          "prefectureId": "PRF-031",
+          "order": 274,
+          "unlockLevel": 0,
+          "status": null,
+          "population": 0,
+          "locationIds": [
+            "LOC-TTR-KURAYOSHI-01",
+            "LOC-TTR-KURAYOSHI-05",
+            "LOC-TTR-KURAYOSHI-06",
+            "LOC-TTR-KURAYOSHI-07",
+            "LOC-TTR-KURAYOSHI-02",
+            "LOC-TTR-KURAYOSHI-03",
+            "LOC-TTR-KURAYOSHI-04",
+            "LOC-TTR-KURAYOSHI-08"
+          ]
+        },
+        "location": {
+          "id": "LOC-TTR-KURAYOSHI-03",
+          "name": "Kurayoshi Manga & Anime Gallery",
+          "nameJa": "倉吉漫画ギャラリー",
+          "cityId": "CTY-TTR-KURAYOSHI",
+          "category": "Museum",
+          "type": "Culture",
+          "npcJob": "Museum Guide",
+          "defaultNpcId": "NPC-TTR-KURAYOSHI-003",
+          "description": "Phong trung bay manga: tac pham, khu doc, hang gioi han.",
+          "order": 3,
+          "status": "Active",
+          "importance": "Secondary",
+          "sceneStyle": "2D",
+          "backgroundAsset": null,
+          "openHours": null,
+          "address": null,
+          "scenarioIds": []
+        },
+        "previousTurns": [
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-01",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-03-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "こんにちは。展示のご案内ですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-02",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-03-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "art_response_1",
+              "requiredSemanticComponents": {
+                "goal": "鑑賞の方法と撮影条件を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "倉吉市で作品を見てみたいです。初めてなので、鑑賞の方法を知りたいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-03",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-03-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "気になる作品や展示はありますか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-04",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-03-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "art_response_2",
+              "requiredSemanticComponents": {
+                "goal": "鑑賞の方法と撮影条件を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "この展示です。解説を読んで、わからない言葉を聞いてもよいですか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-05",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-03-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "質問できる方法を確認しましょう。作品には指示なく触れないでください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-06",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-03-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "art_response_3",
+              "requiredSemanticComponents": {
+                "goal": "鑑賞の方法と撮影条件を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "写真を撮れるかも、確認したいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-07",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-03-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "作品ごとの条件をご覧ください。撮影できない展示もあります。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-08",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-03-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "art_response_4",
+              "requiredSemanticComponents": {
+                "goal": "鑑賞の方法と撮影条件を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "混んでいるときは、どのように移動すればよいですか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-09",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-03-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "通路をふさがず、ほかの方の鑑賞を妨げないようお願いします。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-10",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-03-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "art_response_5",
+              "requiredSemanticComponents": {
+                "goal": "鑑賞の方法と撮影条件を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "ありがとうございます。表示を確認しながら見ます。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-03-001-SHARED-11",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-03-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "ご不明な点は職員にお尋ねください。無理のない順番でお楽しみください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ]
+      }
+    },
+    {
+      "scenarioId": "SC-LOC-TTR-KURAYOSHI-04-001",
+      "reason": "Generic response sequence, identical repeated goal across all five Player turns, final NPC instruction without conversational farewell. Replaced with an independent causal exchange.",
+      "actualDraft": {
+        "scenario": {
+          "id": "SC-LOC-TTR-KURAYOSHI-04-001",
+          "name": "家具の寸法と配送を相談する",
+          "locationId": "LOC-TTR-KURAYOSHI-04",
+          "cityId": "CTY-TTR-KURAYOSHI",
+          "locationType": "Shop",
+          "type": "Shopping",
+          "difficulty": null,
+          "status": "Review",
+          "priority": "Essential",
+          "trigger": "Location Entry",
+          "order": 1,
+          "situation": "倉吉市の学習用場面で、設置場所と配送条件を確認する。",
+          "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+          "playerGoal": "設置場所と配送条件を確認する",
+          "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+          "branching": "Linear",
+          "description": null,
+          "evaluationCriteria": null,
+          "requiredGrammarIds": [],
+          "requiredVocabularyIds": [],
+          "reward": null,
+          "outcome": null,
+          "startingExpression": null,
+          "version": 2
+        },
+        "city": {
+          "id": "CTY-TTR-KURAYOSHI",
+          "name": "Kurayoshi",
+          "nameJa": "倉吉市",
+          "type": null,
+          "description": "Thành phố Kurayoshi (倉吉市) thuộc tỉnh Tottori. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+          "prefectureId": "PRF-031",
+          "order": 274,
+          "unlockLevel": 0,
+          "status": null,
+          "population": 0,
+          "locationIds": [
+            "LOC-TTR-KURAYOSHI-01",
+            "LOC-TTR-KURAYOSHI-05",
+            "LOC-TTR-KURAYOSHI-06",
+            "LOC-TTR-KURAYOSHI-07",
+            "LOC-TTR-KURAYOSHI-02",
+            "LOC-TTR-KURAYOSHI-03",
+            "LOC-TTR-KURAYOSHI-04",
+            "LOC-TTR-KURAYOSHI-08"
+          ]
+        },
+        "location": {
+          "id": "LOC-TTR-KURAYOSHI-04",
+          "name": "Kurayoshi Furniture Store",
+          "nameJa": "倉吉家具店",
+          "cityId": "CTY-TTR-KURAYOSHI",
+          "category": "Shopping",
+          "type": "Shopping",
+          "npcJob": "Shop Staff",
+          "defaultNpcId": null,
+          "description": "Cua hang noi that: kich thuoc, giao lap dat, ngay giao.",
+          "order": 4,
+          "status": "Active",
+          "importance": "Optional",
+          "sceneStyle": "2D",
+          "backgroundAsset": null,
+          "openHours": null,
+          "address": null,
+          "scenarioIds": []
+        },
+        "previousTurns": [
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-01",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-04-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "いらっしゃいませ。どのような家具をお探しですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-02",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-04-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "furniture_response_1",
+              "requiredSemanticComponents": {
+                "goal": "設置場所と配送条件を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "倉吉市の部屋で使う机を探しています。大きさを確認したいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-03",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-04-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "設置する場所と、入口の寸法はおわかりですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-04",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-04-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "furniture_response_2",
+              "requiredSemanticComponents": {
+                "goal": "設置場所と配送条件を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "置く場所は測りましたが、入口はまだです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-05",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-04-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "搬入できるかも大切です。商品の寸法と、必要な搬入経路を確認しましょう。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-06",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-04-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "furniture_response_3",
+              "requiredSemanticComponents": {
+                "goal": "設置場所と配送条件を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "組み立てが必要か、知りたいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-07",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-04-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "組み立て方法と、利用できるサービスの条件をご説明します。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-08",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-04-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "furniture_response_4",
+              "requiredSemanticComponents": {
+                "goal": "設置場所と配送条件を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "配送の費用と日時も、購入前に確認できますか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-09",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-04-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "はい。住所と希望を確認し、対応できる範囲をご案内します。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-10",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-04-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "furniture_response_5",
+              "requiredSemanticComponents": {
+                "goal": "設置場所と配送条件を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "ありがとうございます。入口も測ってから、あらためて相談します。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-04-001-SHARED-11",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-04-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "寸法と合計費用を確認して、無理なく使えるものをお選びください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ]
+      }
+    },
+    {
+      "scenarioId": "SC-LOC-TTR-KURAYOSHI-05-001",
+      "reason": "Generic response sequence, identical repeated goal across all five Player turns, final NPC instruction without conversational farewell. Replaced with an independent causal exchange.",
+      "actualDraft": {
+        "scenario": {
+          "id": "SC-LOC-TTR-KURAYOSHI-05-001",
+          "name": "動物園の見学経路を相談する",
+          "locationId": "LOC-TTR-KURAYOSHI-05",
+          "cityId": "CTY-TTR-KURAYOSHI",
+          "locationType": "Other",
+          "type": "Social",
+          "difficulty": null,
+          "status": "Review",
+          "priority": "Essential",
+          "trigger": "Location Entry",
+          "order": 1,
+          "situation": "倉吉市の学習用場面で、見学の希望と園内ルールを確認する。",
+          "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+          "playerGoal": "見学の希望と園内ルールを確認する",
+          "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+          "branching": "Linear",
+          "description": null,
+          "evaluationCriteria": null,
+          "requiredGrammarIds": [],
+          "requiredVocabularyIds": [],
+          "reward": null,
+          "outcome": null,
+          "startingExpression": null,
+          "version": 2
+        },
+        "city": {
+          "id": "CTY-TTR-KURAYOSHI",
+          "name": "Kurayoshi",
+          "nameJa": "倉吉市",
+          "type": null,
+          "description": "Thành phố Kurayoshi (倉吉市) thuộc tỉnh Tottori. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+          "prefectureId": "PRF-031",
+          "order": 274,
+          "unlockLevel": 0,
+          "status": null,
+          "population": 0,
+          "locationIds": [
+            "LOC-TTR-KURAYOSHI-01",
+            "LOC-TTR-KURAYOSHI-05",
+            "LOC-TTR-KURAYOSHI-06",
+            "LOC-TTR-KURAYOSHI-07",
+            "LOC-TTR-KURAYOSHI-02",
+            "LOC-TTR-KURAYOSHI-03",
+            "LOC-TTR-KURAYOSHI-04",
+            "LOC-TTR-KURAYOSHI-08"
+          ]
+        },
+        "location": {
+          "id": "LOC-TTR-KURAYOSHI-05",
+          "name": "Kurayoshi Zoo Entrance",
+          "nameJa": "倉吉の学習用動物園入口",
+          "cityId": "CTY-TTR-KURAYOSHI",
+          "category": "Amusement Park",
+          "type": "Entertainment",
+          "npcJob": "Zoo Staff",
+          "defaultNpcId": null,
+          "description": "Cong so thu: ve, ban do, gio cho an, xe day.",
+          "order": 5,
+          "status": "Active",
+          "importance": "Optional",
+          "sceneStyle": "2.5D",
+          "backgroundAsset": null,
+          "openHours": null,
+          "address": null,
+          "scenarioIds": []
+        },
+        "previousTurns": [
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-01",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-05-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "こんにちは。園内のご案内ですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-02",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-05-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "zoo_response_1",
+              "requiredSemanticComponents": {
+                "goal": "見学の希望と園内ルールを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "倉吉市を旅行しています。短い時間で見学したいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-03",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-05-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "特に見たい動物や、使える時間を教えてください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-04",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-05-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "zoo_response_2",
+              "requiredSemanticComponents": {
+                "goal": "見学の希望と園内ルールを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "一時間ほどです。休憩を入れながら見たいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-05",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-05-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "案内図で、見学できる場所と休憩場所を確認しましょう。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-06",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-05-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "zoo_response_3",
+              "requiredSemanticComponents": {
+                "goal": "見学の希望と園内ルールを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "動物に食べ物をあげてもよいですか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-07",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-05-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "勝手にあげず、園内のルールと職員の案内に従ってください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-08",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-05-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "zoo_response_4",
+              "requiredSemanticComponents": {
+                "goal": "見学の希望と園内ルールを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "写真を撮るときの注意も知りたいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-09",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-05-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "場所ごとの掲示を確認し、禁止されている撮影方法は使わないでください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-10",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-05-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "zoo_response_5",
+              "requiredSemanticComponents": {
+                "goal": "見学の希望と園内ルールを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "わかりました。ルールを確認しながら見学します。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-05-001-SHARED-11",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-05-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "帰る時刻も確かめて、無理のない経路でお楽しみください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ]
+      }
+    },
+    {
+      "scenarioId": "SC-LOC-TTR-KURAYOSHI-06-001",
+      "reason": "Generic response sequence, identical repeated goal across all five Player turns, final NPC instruction without conversational farewell. Replaced with an independent causal exchange.",
+      "actualDraft": {
+        "scenario": {
+          "id": "SC-LOC-TTR-KURAYOSHI-06-001",
+          "name": "会計と注文内容を確認する",
+          "locationId": "LOC-TTR-KURAYOSHI-06",
+          "cityId": "CTY-TTR-KURAYOSHI",
+          "locationType": "Restaurant",
+          "type": "Daily Life",
+          "difficulty": null,
+          "status": "Review",
+          "priority": "Essential",
+          "trigger": "Location Entry",
+          "order": 1,
+          "situation": "倉吉市の学習用場面で、注文内容と会計方法を確認する。",
+          "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+          "playerGoal": "注文内容と会計方法を確認する",
+          "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+          "branching": "Linear",
+          "description": null,
+          "evaluationCriteria": null,
+          "requiredGrammarIds": [],
+          "requiredVocabularyIds": [],
+          "reward": null,
+          "outcome": null,
+          "startingExpression": null,
+          "version": 2
+        },
+        "city": {
+          "id": "CTY-TTR-KURAYOSHI",
+          "name": "Kurayoshi",
+          "nameJa": "倉吉市",
+          "type": null,
+          "description": "Thành phố Kurayoshi (倉吉市) thuộc tỉnh Tottori. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+          "prefectureId": "PRF-031",
+          "order": 274,
+          "unlockLevel": 0,
+          "status": null,
+          "population": 0,
+          "locationIds": [
+            "LOC-TTR-KURAYOSHI-01",
+            "LOC-TTR-KURAYOSHI-05",
+            "LOC-TTR-KURAYOSHI-06",
+            "LOC-TTR-KURAYOSHI-07",
+            "LOC-TTR-KURAYOSHI-02",
+            "LOC-TTR-KURAYOSHI-03",
+            "LOC-TTR-KURAYOSHI-04",
+            "LOC-TTR-KURAYOSHI-08"
+          ]
+        },
+        "location": {
+          "id": "LOC-TTR-KURAYOSHI-06",
+          "name": "Kurayoshi Evening Izakaya",
+          "nameJa": "倉吉居酒屋",
+          "cityId": "CTY-TTR-KURAYOSHI",
+          "category": "Izakaya",
+          "type": "Food",
+          "npcJob": "Restaurant Staff",
+          "defaultNpcId": null,
+          "description": "Izakaya buoi toi: goi mon nham, do uong, chia tien, gio cuoi.",
+          "order": 6,
+          "status": "Active",
+          "importance": "Optional",
+          "sceneStyle": "2D",
+          "backgroundAsset": null,
+          "openHours": null,
+          "address": null,
+          "scenarioIds": []
+        },
+        "previousTurns": [
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-01",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-06-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "いらっしゃいませ。お会計でしょうか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-02",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-06-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "restaurant-bill_response_1",
+              "requiredSemanticComponents": {
+                "goal": "注文内容と会計方法を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "はい。倉吉市の友人と食事をしました。会計の内容を確認したいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-03",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-06-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "こちらがご注文の明細です。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-04",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-06-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "restaurant-bill_response_2",
+              "requiredSemanticComponents": {
+                "goal": "注文内容と会計方法を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "この飲み物は注文していないと思います。確認していただけますか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-05",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-06-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "承知しました。伝票と注文の記録を確認します。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-06",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-06-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "restaurant-bill_response_3",
+              "requiredSemanticComponents": {
+                "goal": "注文内容と会計方法を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "ありがとうございます。二人分を別々に払えるかも知りたいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-07",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-06-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "お店の会計方法を確認します。できない場合は先にお伝えします。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-08",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-06-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "restaurant-bill_response_4",
+              "requiredSemanticComponents": {
+                "goal": "注文内容と会計方法を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "わかりました。確認が終わってから支払います。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-09",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-06-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "確認した内容を説明しますので、明細をもう一度ご覧ください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-10",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-06-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "restaurant-bill_response_5",
+              "requiredSemanticComponents": {
+                "goal": "注文内容と会計方法を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "はい。内容が合っているか確認します。レシートもお願いします。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-06-001-SHARED-11",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-06-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "承知しました。お忘れ物のないようにお帰りください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ]
+      }
+    },
+    {
+      "scenarioId": "SC-LOC-TTR-KURAYOSHI-07-001",
+      "reason": "Generic response sequence, identical repeated goal across all five Player turns, final NPC instruction without conversational farewell. Replaced with an independent causal exchange.",
+      "actualDraft": {
+        "scenario": {
+          "id": "SC-LOC-TTR-KURAYOSHI-07-001",
+          "name": "散歩の経路と休憩場所を聞く",
+          "locationId": "LOC-TTR-KURAYOSHI-07",
+          "cityId": "CTY-TTR-KURAYOSHI",
+          "locationType": "Other",
+          "type": "Social",
+          "difficulty": null,
+          "status": "Review",
+          "priority": "Essential",
+          "trigger": "Location Entry",
+          "order": 1,
+          "situation": "倉吉市の学習用場面で、体力に合う経路と帰り道を確認する。",
+          "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+          "playerGoal": "体力に合う経路と帰り道を確認する",
+          "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+          "branching": "Linear",
+          "description": null,
+          "evaluationCriteria": null,
+          "requiredGrammarIds": [],
+          "requiredVocabularyIds": [],
+          "reward": null,
+          "outcome": null,
+          "startingExpression": null,
+          "version": 2
+        },
+        "city": {
+          "id": "CTY-TTR-KURAYOSHI",
+          "name": "Kurayoshi",
+          "nameJa": "倉吉市",
+          "type": null,
+          "description": "Thành phố Kurayoshi (倉吉市) thuộc tỉnh Tottori. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+          "prefectureId": "PRF-031",
+          "order": 274,
+          "unlockLevel": 0,
+          "status": null,
+          "population": 0,
+          "locationIds": [
+            "LOC-TTR-KURAYOSHI-01",
+            "LOC-TTR-KURAYOSHI-05",
+            "LOC-TTR-KURAYOSHI-06",
+            "LOC-TTR-KURAYOSHI-07",
+            "LOC-TTR-KURAYOSHI-02",
+            "LOC-TTR-KURAYOSHI-03",
+            "LOC-TTR-KURAYOSHI-04",
+            "LOC-TTR-KURAYOSHI-08"
+          ]
+        },
+        "location": {
+          "id": "LOC-TTR-KURAYOSHI-07",
+          "name": "Kurayoshi City Park Playground",
+          "nameJa": "倉吉公園遊具広場",
+          "cityId": "CTY-TTR-KURAYOSHI",
+          "category": "Park",
+          "type": "Entertainment",
+          "npcJob": "Park Staff",
+          "defaultNpcId": null,
+          "description": "San choi cong vien: hoi gio, tro chuyen voi nguoi dan, quy tac choi.",
+          "order": 7,
+          "status": "Active",
+          "importance": "Optional",
+          "sceneStyle": "2D",
+          "backgroundAsset": null,
+          "openHours": null,
+          "address": null,
+          "scenarioIds": []
+        },
+        "previousTurns": [
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-01",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-07-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "こんにちは。どのようなご案内をご希望ですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-02",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-07-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "park-walk_response_1",
+              "requiredSemanticComponents": {
+                "goal": "体力に合う経路と帰り道を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "倉吉市の公園で散歩したいです。短い経路を教えてください。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-03",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-07-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "どのくらい歩く予定ですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-04",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-07-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "park-walk_response_2",
+              "requiredSemanticComponents": {
+                "goal": "体力に合う経路と帰り道を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "三十分くらいです。途中で休めるところも知りたいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-05",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-07-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "案内図で経路と休憩場所を確認しましょう。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-06",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-07-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "park-walk_response_3",
+              "requiredSemanticComponents": {
+                "goal": "体力に合う経路と帰り道を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "坂道や階段が少ない経路はありますか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-07",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-07-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "図の表示を確認します。路面の状態にも気をつけてください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-08",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-07-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "park-walk_response_4",
+              "requiredSemanticComponents": {
+                "goal": "体力に合う経路と帰り道を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "帰るとき、同じ入口に戻れるようにしたいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-09",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-07-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "現在地と入口を覚えておきましょう。案内図を撮っておくのもよいですね。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-10",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-07-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "park-walk_response_5",
+              "requiredSemanticComponents": {
+                "goal": "体力に合う経路と帰り道を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "ありがとうございます。無理のない範囲で歩きます。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-07-001-SHARED-11",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-07-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "天候や体調が変わったら、早めに戻ってください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ]
+      }
+    },
+    {
+      "scenarioId": "SC-LOC-TTR-KURAYOSHI-08-001",
+      "reason": "Generic response sequence, identical repeated goal across all five Player turns, final NPC instruction without conversational farewell. Replaced with an independent causal exchange.",
+      "actualDraft": {
+        "scenario": {
+          "id": "SC-LOC-TTR-KURAYOSHI-08-001",
+          "name": "税の通知と相談先を確認する",
+          "locationId": "LOC-TTR-KURAYOSHI-08",
+          "cityId": "CTY-TTR-KURAYOSHI",
+          "locationType": "Government Office",
+          "type": "Administrative",
+          "difficulty": null,
+          "status": "Review",
+          "priority": "Essential",
+          "trigger": "Location Entry",
+          "order": 1,
+          "situation": "倉吉市の学習用場面で、通知の内容と担当窓口を確認する。",
+          "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+          "playerGoal": "通知の内容と担当窓口を確認する",
+          "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+          "branching": "Linear",
+          "description": null,
+          "evaluationCriteria": null,
+          "requiredGrammarIds": [],
+          "requiredVocabularyIds": [],
+          "reward": null,
+          "outcome": null,
+          "startingExpression": null,
+          "version": 2
+        },
+        "city": {
+          "id": "CTY-TTR-KURAYOSHI",
+          "name": "Kurayoshi",
+          "nameJa": "倉吉市",
+          "type": null,
+          "description": "Thành phố Kurayoshi (倉吉市) thuộc tỉnh Tottori. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+          "prefectureId": "PRF-031",
+          "order": 274,
+          "unlockLevel": 0,
+          "status": null,
+          "population": 0,
+          "locationIds": [
+            "LOC-TTR-KURAYOSHI-01",
+            "LOC-TTR-KURAYOSHI-05",
+            "LOC-TTR-KURAYOSHI-06",
+            "LOC-TTR-KURAYOSHI-07",
+            "LOC-TTR-KURAYOSHI-02",
+            "LOC-TTR-KURAYOSHI-03",
+            "LOC-TTR-KURAYOSHI-04",
+            "LOC-TTR-KURAYOSHI-08"
+          ]
+        },
+        "location": {
+          "id": "LOC-TTR-KURAYOSHI-08",
+          "name": "Kurayoshi Tax Office Filing Desk",
+          "nameJa": "倉吉税務署申告窓口",
+          "cityId": "CTY-TTR-KURAYOSHI",
+          "category": "Tax Office",
+          "type": "Public Service",
+          "npcJob": "Tax Officer",
+          "defaultNpcId": null,
+          "description": "Quay khai thue: khai thue cuoi nam, chung tu, han nop, hoan thue.",
+          "order": 8,
+          "status": "Active",
+          "importance": "Optional",
+          "sceneStyle": "2D",
+          "backgroundAsset": null,
+          "openHours": null,
+          "address": null,
+          "scenarioIds": []
+        },
+        "previousTurns": [
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-01",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-08-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "こんにちは。税についてのご相談ですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-02",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-08-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "tax-info_response_1",
+              "requiredSemanticComponents": {
+                "goal": "通知の内容と担当窓口を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "倉吉市で働いています。この通知について、確認したいことがあります。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-03",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-08-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "発行元と通知の件名を確認させてください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-04",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-08-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "tax-info_response_2",
+              "requiredSemanticComponents": {
+                "goal": "通知の内容と担当窓口を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "こちらです。勤務先でもらった書類との関係がわかりません。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-05",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-08-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "税の種類と担当窓口を確認しましょう。状況がわかる書類はお持ちですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-06",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-08-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "tax-info_response_3",
+              "requiredSemanticComponents": {
+                "goal": "通知の内容と担当窓口を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "勤務先の書類と、この通知を持っています。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-07",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-08-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "ありがとうございます。必要な資料と相談方法を確認します。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-08",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-08-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "tax-info_response_4",
+              "requiredSemanticComponents": {
+                "goal": "通知の内容と担当窓口を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "すぐに払えない場合の相談先も、聞けますか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-09",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-08-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "はい。条件は個別の確認が必要なので、担当窓口で事情を説明してください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-10",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-08-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "tax-info_response_5",
+              "requiredSemanticComponents": {
+                "goal": "通知の内容と担当窓口を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "わかりました。期限を確認し、早めに相談します。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-TTR-KURAYOSHI-08-001-SHARED-11",
+            "scenarioId": "SC-LOC-TTR-KURAYOSHI-08-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "通知を保管し、案内された窓口と次の手続きをメモしておいてください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ]
+      }
+    },
+    {
+      "scenarioId": "SC-LOC-TTR-KURAYOSHI-04-001",
+      "reason": "Own full final read: title stated definite inability to bring in the tabletop although measurements remain pending. Repaired to measuring again.",
+      "actualDraft": {
+        "title": "机の天板だけでは搬入できない",
+        "premise": "家具店で机を選び、脚を外した場合の寸法を聞き、狭い玄関の幅を測り直すことにする。 実在施設の営業条件を示すものではない学習用の架空場面。",
+        "turns": [
+          "この机は展示品と同じ幅のものをご希望ですか。",
+          "幅はちょうどいいですが、玄関を通るか心配です。脚を外して運べる机ですか。",
+          "この商品は脚を外せます。ただ、天板だけの大きさと玄関の曲がり角も確認したいですね。",
+          "玄関は入ってすぐ右に曲がります。ドアの幅だけ測れば足りると思っていました。",
+          "曲がるための空間も必要です。天板の寸法を書きますので、通路の幅も測っていただけますか。",
+          "通路も測ります。脚を取り付ける工具は、自分で用意する必要がありますか。",
+          "付属品の一覧には専用の工具が載っています。配送時の組み立てを頼む場合は、別に見積もりを確認しましょう。",
+          "自分で組み立てる予定です。箱に入った状態の寸法も紙に書いてもらえますか。",
+          "梱包寸法も並べて記入しますね。商品が通っても箱が通らない場合があるので、両方見てください。",
+          "天板と箱の寸法を持ち帰って、曲がり角まで測ります。注文はその後にします。",
+          "寸法がそろえば、また一緒に確認できます。お気をつけてお帰りください。"
+        ],
+        "tasks": [
+          [
+            "sc_loc_ttr_kurayoshi_04_001_intent_1",
+            "机の脚を外して搬入できるか尋ねる"
+          ],
+          [
+            "sc_loc_ttr_kurayoshi_04_001_intent_2",
+            "玄関の曲がり角を説明し測定の不足を伝える"
+          ],
+          [
+            "sc_loc_ttr_kurayoshi_04_001_intent_3",
+            "通路の測定を了承し組み立て工具の用意を尋ねる"
+          ],
+          [
+            "sc_loc_ttr_kurayoshi_04_001_intent_4",
+            "自分で組み立てる意向と梱包寸法の記載を頼む"
+          ],
+          [
+            "sc_loc_ttr_kurayoshi_04_001_intent_5",
+            "商品と箱の寸法を持ち帰り測定後に注文すると伝える"
+          ]
+        ]
+      }
+    }
+  ]
+}
