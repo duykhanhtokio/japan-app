@@ -1,0 +1,2451 @@
+{
+  "city": {
+    "id": "CTY-KGW-SAKAIDE",
+    "name": "Sakaide",
+    "nameJa": "坂出市",
+    "type": null,
+    "description": "Thành phố Sakaide (坂出市) thuộc tỉnh Kagawa. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+    "prefectureId": "PRF-037",
+    "order": 230,
+    "unlockLevel": 0,
+    "status": null,
+    "population": 0,
+    "locationIds": [
+      "LOC-KGW-SAKAIDE-02",
+      "LOC-KGW-SAKAIDE-03",
+      "LOC-KGW-SAKAIDE-01",
+      "LOC-KGW-SAKAIDE-06",
+      "LOC-KGW-SAKAIDE-07",
+      "LOC-KGW-SAKAIDE-05",
+      "LOC-KGW-SAKAIDE-04",
+      "LOC-KGW-SAKAIDE-08"
+    ]
+  },
+  "baseline": "788f77efb513bd87dc85d4eba942beaab8464160",
+  "entries": [
+    {
+      "scenario": {
+        "id": "SC-KGW-SAKAIDE-001",
+        "name": "機械作業前に停止と報告の手順を確認する",
+        "locationId": "LOC-KGW-SAKAIDE-01",
+        "cityId": "CTY-KGW-SAKAIDE",
+        "locationType": "Construction Site",
+        "type": "Work",
+        "difficulty": null,
+        "status": "Review",
+        "priority": "Essential",
+        "trigger": "Location Entry",
+        "order": 1,
+        "situation": "坂出市の学習用場面で、機械の操作権限と異常時の対応を確認する。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "機械の操作権限と異常時の対応を確認する",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "branching": "Linear",
+        "description": "Xuong gia cong kim loai: ban ve, dung sai, mai, kiem tra.",
+        "evaluationCriteria": null,
+        "requiredGrammarIds": [],
+        "requiredVocabularyIds": [
+          "間違える (https://app.notion.com/p/07ed566f36b34df09ef71ebaffa5ea9a?pvs=21)",
+          "機械 (https://app.notion.com/p/3be70421d96181cda823f195dabd4ddc?pvs=21)",
+          "手袋 (https://app.notion.com/p/3be70421d96181398d80f25cf3bf3cdd?pvs=21)",
+          "ボタン (https://app.notion.com/p/3be70421d961815f9986cab557963c8b?pvs=21)",
+          "材料 (https://app.notion.com/p/3be70421d96181f4be47c5777d54797d?pvs=21)"
+        ],
+        "reward": null,
+        "outcome": null,
+        "startingExpression": null,
+        "version": 2
+      },
+      "location": {
+        "id": "LOC-KGW-SAKAIDE-01",
+        "name": "Sakaide Metal Processing Workshop",
+        "nameJa": "坂出金属加工工場",
+        "cityId": "CTY-KGW-SAKAIDE",
+        "category": "Construction Site",
+        "type": "Workplace",
+        "npcJob": "Factory Worker",
+        "defaultNpcId": "NPC-KGW-SAKAIDE-001",
+        "description": "Xuong gia cong kim loai: ban ve, dung sai, mai, kiem tra.",
+        "order": 1,
+        "status": "Active",
+        "importance": "Main",
+        "sceneStyle": "2D",
+        "backgroundAsset": null,
+        "openHours": null,
+        "address": null,
+        "scenarioIds": [
+          "Ban ve tại 金属加工工場 (Sakaide) (https://app.notion.com/p/Ban-ve-t-i-Sakaide-3be70421d96181c99165fe8dbbe862e0?pvs=21)"
+        ]
+      },
+      "runtime": {
+        "shared": [
+          {
+            "id": "DLG-SC-KGW-SAKAIDE-001-SHARED-01",
+            "scenarioId": "SC-KGW-SAKAIDE-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "おはようございます。機械に触る前に説明を聞いてください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-KGW-SAKAIDE-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-KGW-SAKAIDE-001-SHARED-02",
+            "scenarioId": "SC-KGW-SAKAIDE-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "work-machine_response_1",
+              "requiredSemanticComponents": {
+                "goal": "機械の操作権限と異常時の対応を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "坂出市のこの現場では初めてです。自分が操作してよい範囲を教えてください。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-KGW-SAKAIDE-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-KGW-SAKAIDE-001-SHARED-03",
+            "scenarioId": "SC-KGW-SAKAIDE-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "担当する操作と、操作してはいけない部分を確認しましょう。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-KGW-SAKAIDE-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-KGW-SAKAIDE-001-SHARED-04",
+            "scenarioId": "SC-KGW-SAKAIDE-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "work-machine_response_2",
+              "requiredSemanticComponents": {
+                "goal": "機械の操作権限と異常時の対応を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "動いているときに物が引っかかったら、どうすればよいですか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-KGW-SAKAIDE-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-KGW-SAKAIDE-001-SHARED-05",
+            "scenarioId": "SC-KGW-SAKAIDE-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "手を入れず、現場の停止手順に従って責任者へ報告してください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-KGW-SAKAIDE-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-KGW-SAKAIDE-001-SHARED-06",
+            "scenarioId": "SC-KGW-SAKAIDE-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "work-machine_response_3",
+              "requiredSemanticComponents": {
+                "goal": "機械の操作権限と異常時の対応を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "止まったように見えても、自分で取り除かないのですね。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-KGW-SAKAIDE-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-KGW-SAKAIDE-001-SHARED-07",
+            "scenarioId": "SC-KGW-SAKAIDE-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "はい。再始動の防止など、必要な安全確認を担当者が行います。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-KGW-SAKAIDE-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-KGW-SAKAIDE-001-SHARED-08",
+            "scenarioId": "SC-KGW-SAKAIDE-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "work-machine_response_4",
+              "requiredSemanticComponents": {
+                "goal": "機械の操作権限と異常時の対応を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "非常停止の位置と連絡先も、確認できますか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-KGW-SAKAIDE-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-KGW-SAKAIDE-001-SHARED-09",
+            "scenarioId": "SC-KGW-SAKAIDE-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "実物で確認しましょう。非常時の行動と、通常の停止方法は区別してください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-KGW-SAKAIDE-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-KGW-SAKAIDE-001-SHARED-10",
+            "scenarioId": "SC-KGW-SAKAIDE-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "work-machine_response_5",
+              "requiredSemanticComponents": {
+                "goal": "機械の操作権限と異常時の対応を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "わかりました。説明を受け、操作を確認してから作業します。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-KGW-SAKAIDE-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-KGW-SAKAIDE-001-SHARED-11",
+            "scenarioId": "SC-KGW-SAKAIDE-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "不明なことが残っている場合は始めず、必ず質問してください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ],
+        "authoring": {
+          "locale": "ja",
+          "recipe": "work-machine",
+          "cluster": "CLUSTER_12_SHIKOKU_2026-09-30",
+          "contentScope": "simulated_learning_scenario",
+          "nativeSpeakerReviewed": false,
+          "translationState": "deferred_until_all_japanese_complete"
+        }
+      },
+      "runtimeSha256": "c2880aeee4690c1e1b6be5d04aaf90f22d8c22083a51a39e7ae8e8a374f81662"
+    },
+    {
+      "scenario": {
+        "id": "SC-LOC-KGW-SAKAIDE-02-001",
+        "name": "列車の遅れと予定を相談する",
+        "locationId": "LOC-KGW-SAKAIDE-02",
+        "cityId": "CTY-KGW-SAKAIDE",
+        "locationType": "Station",
+        "type": "Travel",
+        "difficulty": null,
+        "status": "Review",
+        "priority": "Essential",
+        "trigger": "Location Entry",
+        "order": 1,
+        "situation": "坂出市の学習用場面で、遅延情報と次の行動を確認する。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "遅延情報と次の行動を確認する",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "branching": "Linear",
+        "description": null,
+        "evaluationCriteria": null,
+        "requiredGrammarIds": [],
+        "requiredVocabularyIds": [],
+        "reward": null,
+        "outcome": null,
+        "startingExpression": null,
+        "version": 2
+      },
+      "location": {
+        "id": "LOC-KGW-SAKAIDE-02",
+        "name": "Sakaide Monorail / Tram Ticket Gate",
+        "nameJa": "坂出モノレール・路面電車改札",
+        "cityId": "CTY-KGW-SAKAIDE",
+        "category": "Station",
+        "type": "Transportation",
+        "npcJob": "Station Staff",
+        "defaultNpcId": "NPC-KGW-SAKAIDE-002",
+        "description": "Cua soat ve monorail/tau dien: mua ve le, ve ngay, hoi loi ra.",
+        "order": 2,
+        "status": "Active",
+        "importance": "Secondary",
+        "sceneStyle": "2D",
+        "backgroundAsset": null,
+        "openHours": null,
+        "address": null,
+        "scenarioIds": []
+      },
+      "runtime": {
+        "shared": [
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-01",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-02-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "こんにちは。何かお困りですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-02",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-02-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "station-delay_response_1",
+              "requiredSemanticComponents": {
+                "goal": "遅延情報と次の行動を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "坂出市で仕事の待ち合わせがあるのですが、列車が遅れているようです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-03",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-02-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "ご利用予定の列車を教えていただけますか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-04",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-02-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "station-delay_response_2",
+              "requiredSemanticComponents": {
+                "goal": "遅延情報と次の行動を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "この画面にある列車です。運転の見通しはわかりますか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-05",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-02-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "最新の運行情報を確認します。状況が変わる可能性もあります。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-06",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-02-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "station-delay_response_3",
+              "requiredSemanticComponents": {
+                "goal": "遅延情報と次の行動を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "別の経路で行けるかも知りたいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-07",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-02-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "はい。目的地と、何時までに到着したいかを教えてください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-08",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-02-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "station-delay_response_4",
+              "requiredSemanticComponents": {
+                "goal": "遅延情報と次の行動を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "この駅に、できれば一時間以内に着きたいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-09",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-02-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "代替経路の所要時間と費用を比較しましょう。払い戻しについては切符も確認します。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-10",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-02-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "station-delay_response_5",
+              "requiredSemanticComponents": {
+                "goal": "遅延情報と次の行動を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "わかりました。まず職場に遅れる可能性を連絡します。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-02-001-SHARED-11",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-02-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "そのうえで、案内表示の更新を確認しながら経路をお選びください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ],
+        "authoring": {
+          "locale": "ja",
+          "recipe": "station-delay",
+          "cluster": "CLUSTER_12_SHIKOKU_2026-09-30",
+          "contentScope": "simulated_learning_scenario",
+          "nativeSpeakerReviewed": false,
+          "translationState": "deferred_until_all_japanese_complete"
+        }
+      },
+      "runtimeSha256": "61533f08cd73f57d1ccb0a8665c6acd07d2c7246e9e5cd635d011b8f63af04c9"
+    },
+    {
+      "scenario": {
+        "id": "SC-LOC-KGW-SAKAIDE-03-001",
+        "name": "倉庫で運搬経路と荷物を確認する",
+        "locationId": "LOC-KGW-SAKAIDE-03",
+        "cityId": "CTY-KGW-SAKAIDE",
+        "locationType": "Construction Site",
+        "type": "Work",
+        "difficulty": null,
+        "status": "Review",
+        "priority": "Essential",
+        "trigger": "Location Entry",
+        "order": 1,
+        "situation": "坂出市の学習用場面で、荷物の表示と安全な移動経路を確認する。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "荷物の表示と安全な移動経路を確認する",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "branching": "Linear",
+        "description": null,
+        "evaluationCriteria": null,
+        "requiredGrammarIds": [],
+        "requiredVocabularyIds": [],
+        "reward": null,
+        "outcome": null,
+        "startingExpression": null,
+        "version": 2
+      },
+      "location": {
+        "id": "LOC-KGW-SAKAIDE-03",
+        "name": "Sakaide Logistics Warehouse Floor",
+        "nameJa": "坂出物流倉庫",
+        "cityId": "CTY-KGW-SAKAIDE",
+        "category": "Construction Site",
+        "type": "Workplace",
+        "npcJob": "Warehouse Staff",
+        "defaultNpcId": "NPC-KGW-SAKAIDE-003",
+        "description": "Kho hang: lay hang theo ma, xe nang, kiem dem, giao ca.",
+        "order": 3,
+        "status": "Active",
+        "importance": "Secondary",
+        "sceneStyle": "2.5D",
+        "backgroundAsset": null,
+        "openHours": null,
+        "address": null,
+        "scenarioIds": []
+      },
+      "runtime": {
+        "shared": [
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-01",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-03-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "おはようございます。今日の荷物と運搬経路を確認します。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-02",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-03-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "work-warehouse_response_1",
+              "requiredSemanticComponents": {
+                "goal": "荷物の表示と安全な移動経路を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "坂出市のこの倉庫で働くのは初めてです。まず何を確認しますか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-03",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-03-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "荷物の表示と置き場所を照合してください。重さも、持つ前に確認します。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-04",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-03-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "work-warehouse_response_2",
+              "requiredSemanticComponents": {
+                "goal": "荷物の表示と安全な移動経路を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "一人で持てない重さの場合は、手伝いを頼んでよいですか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-05",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-03-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "はい。無理に持たず、現場で認められた方法を確認してください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-06",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-03-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "work-warehouse_response_3",
+              "requiredSemanticComponents": {
+                "goal": "荷物の表示と安全な移動経路を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "フォークリフトの通路は、どこですか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-07",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-03-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "歩行者の経路と分けて案内します。車両の進路には入らないでください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-08",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-03-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "work-warehouse_response_4",
+              "requiredSemanticComponents": {
+                "goal": "荷物の表示と安全な移動経路を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "荷物の番号が指示と違っていたら、どうしますか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-09",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-03-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "そのまま運ばず、番号と場所を責任者へ報告してください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-10",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-03-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "work-warehouse_response_5",
+              "requiredSemanticComponents": {
+                "goal": "荷物の表示と安全な移動経路を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "わかりました。表示と経路を確認してから運びます。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-03-001-SHARED-11",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-03-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "見通しの悪い場所も急がず、周囲の安全を確認してください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ],
+        "authoring": {
+          "locale": "ja",
+          "recipe": "work-warehouse",
+          "cluster": "CLUSTER_12_SHIKOKU_2026-09-30",
+          "contentScope": "simulated_learning_scenario",
+          "nativeSpeakerReviewed": false,
+          "translationState": "deferred_until_all_japanese_complete"
+        }
+      },
+      "runtimeSha256": "d5e865d548c3c04f5b404d436d11412f4609496b530aa86cb04585c5bbde07b0"
+    },
+    {
+      "scenario": {
+        "id": "SC-LOC-KGW-SAKAIDE-04-001",
+        "name": "機械作業前に停止と報告の手順を確認する",
+        "locationId": "LOC-KGW-SAKAIDE-04",
+        "cityId": "CTY-KGW-SAKAIDE",
+        "locationType": "Construction Site",
+        "type": "Work",
+        "difficulty": null,
+        "status": "Review",
+        "priority": "Essential",
+        "trigger": "Location Entry",
+        "order": 1,
+        "situation": "坂出市の学習用場面で、機械の操作権限と異常時の対応を確認する。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "機械の操作権限と異常時の対応を確認する",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "branching": "Linear",
+        "description": null,
+        "evaluationCriteria": null,
+        "requiredGrammarIds": [],
+        "requiredVocabularyIds": [],
+        "reward": null,
+        "outcome": null,
+        "startingExpression": null,
+        "version": 2
+      },
+      "location": {
+        "id": "LOC-KGW-SAKAIDE-04",
+        "name": "Sakaide Paper Mill Floor",
+        "nameJa": "坂出製紙工場",
+        "cityId": "CTY-KGW-SAKAIDE",
+        "category": "Construction Site",
+        "type": "Workplace",
+        "npcJob": "Factory Worker",
+        "defaultNpcId": null,
+        "description": "Nha may giay: cuon giay, may cat, ca kip, an toan.",
+        "order": 4,
+        "status": "Active",
+        "importance": "Optional",
+        "sceneStyle": "2D",
+        "backgroundAsset": null,
+        "openHours": null,
+        "address": null,
+        "scenarioIds": []
+      },
+      "runtime": {
+        "shared": [
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-01",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-04-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "おはようございます。機械に触る前に説明を聞いてください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-02",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-04-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "work-machine_response_1",
+              "requiredSemanticComponents": {
+                "goal": "機械の操作権限と異常時の対応を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "坂出市のこの現場では初めてです。自分が操作してよい範囲を教えてください。別の場所でも相談しましたが、こちらでの方法も確認したいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-03",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-04-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "担当する操作と、操作してはいけない部分を確認しましょう。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-04",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-04-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "work-machine_response_2",
+              "requiredSemanticComponents": {
+                "goal": "機械の操作権限と異常時の対応を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "動いているときに物が引っかかったら、どうすればよいですか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-05",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-04-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "手を入れず、現場の停止手順に従って責任者へ報告してください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-06",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-04-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "work-machine_response_3",
+              "requiredSemanticComponents": {
+                "goal": "機械の操作権限と異常時の対応を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "止まったように見えても、自分で取り除かないのですね。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-07",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-04-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "はい。再始動の防止など、必要な安全確認を担当者が行います。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-08",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-04-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "work-machine_response_4",
+              "requiredSemanticComponents": {
+                "goal": "機械の操作権限と異常時の対応を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "非常停止の位置と連絡先も、確認できますか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-09",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-04-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "実物で確認しましょう。非常時の行動と、通常の停止方法は区別してください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-10",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-04-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "work-machine_response_5",
+              "requiredSemanticComponents": {
+                "goal": "機械の操作権限と異常時の対応を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "わかりました。説明を受け、操作を確認してから作業します。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-04-001-SHARED-11",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-04-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "不明なことが残っている場合は始めず、必ず質問してください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ],
+        "authoring": {
+          "locale": "ja",
+          "recipe": "work-machine",
+          "cluster": "CLUSTER_12_SHIKOKU_2026-09-30",
+          "contentScope": "simulated_learning_scenario",
+          "nativeSpeakerReviewed": false,
+          "translationState": "deferred_until_all_japanese_complete"
+        }
+      },
+      "runtimeSha256": "f19ed15ac01f8453f3ec22495b7f16243b7e1d322c8286c42ee8b0b1c662fa58"
+    },
+    {
+      "scenario": {
+        "id": "SC-LOC-KGW-SAKAIDE-05-001",
+        "name": "カラオケの利用時間と料金を確認する",
+        "locationId": "LOC-KGW-SAKAIDE-05",
+        "cityId": "CTY-KGW-SAKAIDE",
+        "locationType": "Other",
+        "type": "Social",
+        "difficulty": null,
+        "status": "Review",
+        "priority": "Essential",
+        "trigger": "Location Entry",
+        "order": 1,
+        "situation": "坂出市の学習用場面で、時間料金と追加注文の条件を確認する。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "時間料金と追加注文の条件を確認する",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "branching": "Linear",
+        "description": null,
+        "evaluationCriteria": null,
+        "requiredGrammarIds": [],
+        "requiredVocabularyIds": [],
+        "reward": null,
+        "outcome": null,
+        "startingExpression": null,
+        "version": 2
+      },
+      "location": {
+        "id": "LOC-KGW-SAKAIDE-05",
+        "name": "Sakaide Karaoke Box",
+        "nameJa": "坂出カラオケボックス",
+        "cityId": "CTY-KGW-SAKAIDE",
+        "category": "Amusement Park",
+        "type": "Entertainment",
+        "npcJob": "Entertainment Staff",
+        "defaultNpcId": null,
+        "description": "Karaoke: dat phong theo gio, goi do uong, gia han, chia tien.",
+        "order": 5,
+        "status": "Active",
+        "importance": "Optional",
+        "sceneStyle": "2D",
+        "backgroundAsset": null,
+        "openHours": null,
+        "address": null,
+        "scenarioIds": []
+      },
+      "runtime": {
+        "shared": [
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-01",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-05-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "いらっしゃいませ。何名様でご利用ですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-02",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-05-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "karaoke_response_1",
+              "requiredSemanticComponents": {
+                "goal": "時間料金と追加注文の条件を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "坂出市の友人と二人で来ました。一時間だけ利用したいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-03",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-05-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "利用時間と料金の案内を確認しましょう。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-04",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-05-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "karaoke_response_2",
+              "requiredSemanticComponents": {
+                "goal": "時間料金と追加注文の条件を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "飲み物の注文が必要か、先に知りたいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-05",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-05-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "プランごとの条件を確認してご説明します。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-06",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-05-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "karaoke_response_3",
+              "requiredSemanticComponents": {
+                "goal": "時間料金と追加注文の条件を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "時間を延ばす場合、追加料金はいつ確認できますか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-07",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-05-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "延長の前に受付へご確認ください。終了時刻も控えておいてください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-08",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-05-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "karaoke_response_4",
+              "requiredSemanticComponents": {
+                "goal": "時間料金と追加注文の条件を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "大きな音が苦手なので、音量を調節したいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-09",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-05-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "機器の操作方法をご案内します。わからないときは無理に操作しないでください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-10",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-05-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "karaoke_response_5",
+              "requiredSemanticComponents": {
+                "goal": "時間料金と追加注文の条件を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "ありがとうございます。料金と時間を確認して利用します。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-05-001-SHARED-11",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-05-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "ほかの部屋の方にも配慮し、退室時にはお忘れ物をご確認ください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ],
+        "authoring": {
+          "locale": "ja",
+          "recipe": "karaoke",
+          "cluster": "CLUSTER_12_SHIKOKU_2026-09-30",
+          "contentScope": "simulated_learning_scenario",
+          "nativeSpeakerReviewed": false,
+          "translationState": "deferred_until_all_japanese_complete"
+        }
+      },
+      "runtimeSha256": "f6e9dbfc21e162da1c47e12ec8d9d18dd4abc7f1195249e55d8b3f4f2a3d7100"
+    },
+    {
+      "scenario": {
+        "id": "SC-LOC-KGW-SAKAIDE-06-001",
+        "name": "予約日時の変更を相談する",
+        "locationId": "LOC-KGW-SAKAIDE-06",
+        "cityId": "CTY-KGW-SAKAIDE",
+        "locationType": "Hospital",
+        "type": "Health",
+        "difficulty": null,
+        "status": "Review",
+        "priority": "Essential",
+        "trigger": "Location Entry",
+        "order": 1,
+        "situation": "坂出市の学習用場面で、変更の可否と次の受診予定を確認する。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "変更の可否と次の受診予定を確認する",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "branching": "Linear",
+        "description": null,
+        "evaluationCriteria": null,
+        "requiredGrammarIds": [],
+        "requiredVocabularyIds": [],
+        "reward": null,
+        "outcome": null,
+        "startingExpression": null,
+        "version": 2
+      },
+      "location": {
+        "id": "LOC-KGW-SAKAIDE-06",
+        "name": "Sakaide Vaccination Counter",
+        "nameJa": "坂出予防接種窓口",
+        "cityId": "CTY-KGW-SAKAIDE",
+        "category": "Hospital",
+        "type": "Medical",
+        "npcJob": "Nurse",
+        "defaultNpcId": null,
+        "description": "Quay tiem phong: dat lich tiem, phieu dong y, phan ung sau tiem.",
+        "order": 6,
+        "status": "Active",
+        "importance": "Optional",
+        "sceneStyle": "2D",
+        "backgroundAsset": null,
+        "openHours": null,
+        "address": null,
+        "scenarioIds": []
+      },
+      "runtime": {
+        "shared": [
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-01",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-06-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "こんにちは。ご予約についてのご相談ですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-02",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-06-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "hospital-change_response_1",
+              "requiredSemanticComponents": {
+                "goal": "変更の可否と次の受診予定を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "坂出市で働いています。仕事の都合で、予約した日時を変更したいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-03",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-06-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "お名前と、現在の予約日時を確認させてください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-04",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-06-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "hospital-change_response_2",
+              "requiredSemanticComponents": {
+                "goal": "変更の可否と次の受診予定を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "こちらの予約票です。来週の午後に変更できるか知りたいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-05",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-06-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "空き状況を確認します。診療科や担当医の希望はありますか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-06",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-06-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "hospital-change_response_3",
+              "requiredSemanticComponents": {
+                "goal": "変更の可否と次の受診予定を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "できれば同じ先生にお願いしたいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-07",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-06-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "承知しました。ただ、症状の変化がある場合は先にお知らせください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-08",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-06-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "hospital-change_response_4",
+              "requiredSemanticComponents": {
+                "goal": "変更の可否と次の受診予定を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "今のところ変わりません。変更後の持ち物も確認したいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-09",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-06-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "決まった日時と持ち物を、予約案内で確認しましょう。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-10",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-06-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "hospital-change_response_5",
+              "requiredSemanticComponents": {
+                "goal": "変更の可否と次の受診予定を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "ありがとうございます。新しい日時をメモします。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-06-001-SHARED-11",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-06-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "来院できなくなった場合は、わかり次第ご連絡ください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ],
+        "authoring": {
+          "locale": "ja",
+          "recipe": "hospital-change",
+          "cluster": "CLUSTER_12_SHIKOKU_2026-09-30",
+          "contentScope": "simulated_learning_scenario",
+          "nativeSpeakerReviewed": false,
+          "translationState": "deferred_until_all_japanese_complete"
+        }
+      },
+      "runtimeSha256": "f316c012b079611926369da3615d36809c07d53985fbff12254a9702e176166c"
+    },
+    {
+      "scenario": {
+        "id": "SC-LOC-KGW-SAKAIDE-07-001",
+        "name": "リハビリ前に体調を伝える",
+        "locationId": "LOC-KGW-SAKAIDE-07",
+        "cityId": "CTY-KGW-SAKAIDE",
+        "locationType": "Hospital",
+        "type": "Health",
+        "difficulty": null,
+        "status": "Review",
+        "priority": "Essential",
+        "trigger": "Location Entry",
+        "order": 1,
+        "situation": "坂出市の学習用場面で、体調と実施する内容を担当者に確認する。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "体調と実施する内容を担当者に確認する",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "branching": "Linear",
+        "description": null,
+        "evaluationCriteria": null,
+        "requiredGrammarIds": [],
+        "requiredVocabularyIds": [],
+        "reward": null,
+        "outcome": null,
+        "startingExpression": null,
+        "version": 2
+      },
+      "location": {
+        "id": "LOC-KGW-SAKAIDE-07",
+        "name": "Sakaide Rehabilitation Room",
+        "nameJa": "坂出リハビリ室",
+        "cityId": "CTY-KGW-SAKAIDE",
+        "category": "Hospital",
+        "type": "Medical",
+        "npcJob": "Care Worker",
+        "defaultNpcId": null,
+        "description": "Phong phuc hoi chuc nang: bai tap, tan suat, dau khi tap.",
+        "order": 7,
+        "status": "Active",
+        "importance": "Optional",
+        "sceneStyle": "2D",
+        "backgroundAsset": null,
+        "openHours": null,
+        "address": null,
+        "scenarioIds": []
+      },
+      "runtime": {
+        "shared": [
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-01",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-07-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "こんにちは。始める前に、今日の体調を確認します。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-02",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-07-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "rehab_response_1",
+              "requiredSemanticComponents": {
+                "goal": "体調と実施する内容を担当者に確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "坂出市で通院しています。今日はいつもよりひざが痛いです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-03",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-07-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "いつから、どのようなときに痛みますか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-04",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-07-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "rehab_response_2",
+              "requiredSemanticComponents": {
+                "goal": "体調と実施する内容を担当者に確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "朝からで、歩くときに強く感じます。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-05",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-07-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "担当の専門職に伝え、今日行う内容を確認しましょう。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-06",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-07-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "rehab_response_3",
+              "requiredSemanticComponents": {
+                "goal": "体調と実施する内容を担当者に確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "痛みがあるまま、いつもの運動をしてよいかわかりません。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-07",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-07-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "自己判断で進めず、評価と指示を受けてください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-08",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-07-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "rehab_response_4",
+              "requiredSemanticComponents": {
+                "goal": "体調と実施する内容を担当者に確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "運動中に痛みが強くなったら、すぐ伝えます。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-09",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-07-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "はい。わからない動きは、実演を見て確認してください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-10",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-07-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "rehab_response_5",
+              "requiredSemanticComponents": {
+                "goal": "体調と実施する内容を担当者に確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "ありがとうございます。今日の状態を説明してから始めます。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-07-001-SHARED-11",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-07-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "無理に続けず、体調の変化はその場で担当者に知らせてください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ],
+        "authoring": {
+          "locale": "ja",
+          "recipe": "rehab",
+          "cluster": "CLUSTER_12_SHIKOKU_2026-09-30",
+          "contentScope": "simulated_learning_scenario",
+          "nativeSpeakerReviewed": false,
+          "translationState": "deferred_until_all_japanese_complete"
+        }
+      },
+      "runtimeSha256": "d766f1e5907b5af850b109b6abc8be0d4708e5ae1e0394becefb984b02dec324"
+    },
+    {
+      "scenario": {
+        "id": "SC-LOC-KGW-SAKAIDE-08-001",
+        "name": "税の通知と相談先を確認する",
+        "locationId": "LOC-KGW-SAKAIDE-08",
+        "cityId": "CTY-KGW-SAKAIDE",
+        "locationType": "Government Office",
+        "type": "Administrative",
+        "difficulty": null,
+        "status": "Review",
+        "priority": "Essential",
+        "trigger": "Location Entry",
+        "order": 1,
+        "situation": "坂出市の学習用場面で、通知の内容と担当窓口を確認する。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "通知の内容と担当窓口を確認する",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "branching": "Linear",
+        "description": null,
+        "evaluationCriteria": null,
+        "requiredGrammarIds": [],
+        "requiredVocabularyIds": [],
+        "reward": null,
+        "outcome": null,
+        "startingExpression": null,
+        "version": 2
+      },
+      "location": {
+        "id": "LOC-KGW-SAKAIDE-08",
+        "name": "Sakaide Tax Office Filing Desk",
+        "nameJa": "坂出税務署申告窓口",
+        "cityId": "CTY-KGW-SAKAIDE",
+        "category": "Tax Office",
+        "type": "Public Service",
+        "npcJob": "Tax Officer",
+        "defaultNpcId": null,
+        "description": "Quay khai thue: khai thue cuoi nam, chung tu, han nop, hoan thue.",
+        "order": 8,
+        "status": "Active",
+        "importance": "Optional",
+        "sceneStyle": "2D",
+        "backgroundAsset": null,
+        "openHours": null,
+        "address": null,
+        "scenarioIds": []
+      },
+      "runtime": {
+        "shared": [
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-01",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-08-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "こんにちは。税についてのご相談ですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-02",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-08-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "tax-info_response_1",
+              "requiredSemanticComponents": {
+                "goal": "通知の内容と担当窓口を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "坂出市で働いています。この通知について、確認したいことがあります。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-03",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-08-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "発行元と通知の件名を確認させてください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-04",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-08-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "tax-info_response_2",
+              "requiredSemanticComponents": {
+                "goal": "通知の内容と担当窓口を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "こちらです。勤務先でもらった書類との関係がわかりません。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-05",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-08-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "税の種類と担当窓口を確認しましょう。状況がわかる書類はお持ちですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-06",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-08-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "tax-info_response_3",
+              "requiredSemanticComponents": {
+                "goal": "通知の内容と担当窓口を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "勤務先の書類と、この通知を持っています。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-07",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-08-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "ありがとうございます。必要な資料と相談方法を確認します。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-08",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-08-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "tax-info_response_4",
+              "requiredSemanticComponents": {
+                "goal": "通知の内容と担当窓口を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "すぐに払えない場合の相談先も、聞けますか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-09",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-08-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "はい。条件は個別の確認が必要なので、担当窓口で事情を説明してください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-10",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-08-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "tax-info_response_5",
+              "requiredSemanticComponents": {
+                "goal": "通知の内容と担当窓口を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "わかりました。期限を確認し、早めに相談します。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-KGW-SAKAIDE-08-001-SHARED-11",
+            "scenarioId": "SC-LOC-KGW-SAKAIDE-08-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "通知を保管し、案内された窓口と次の手続きをメモしておいてください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ],
+        "authoring": {
+          "locale": "ja",
+          "recipe": "tax-info",
+          "cluster": "CLUSTER_12_SHIKOKU_2026-09-30",
+          "contentScope": "simulated_learning_scenario",
+          "nativeSpeakerReviewed": false,
+          "translationState": "deferred_until_all_japanese_complete"
+        }
+      },
+      "runtimeSha256": "e53fcf962eed378f84ac04d77405013097d39fd34e27d30ef72059292691c3e9"
+    }
+  ]
+}
