@@ -1,0 +1,7 @@
+# 徳島市 — independent city author
+
+Assigned 21 canonical scenario identities preserved. Read AGENTS.md and the complete session entry guide in this ongoing author session; read own city input and current independent-city progress. No other author sources, city prose, or peer reviews were read. All 231 final turns and 105 goals reread by the author. Every scenario has 11 alternating Japanese string turns and 5 Japanese action/goal pairs, with a situational NPC farewell.
+
+Independent causal situations span ticket date before purchase, post-treatment written explanation, drink volume and quantity, inverted duplex copy, family support at city hall, postal-code discrepancy, change denomination budget, outdated park map, dance-to-observation plan, temple hat handling, missing bicycle with uncertain movement, detergent compatibility, reserved shirt color, misdelivered hotel parcel, strong wind at the viewpoint, wrong pickup shop, replica identification, wrong bus queue, noodle portion correction, material blocking a worksite walkway and old/new passbook records.
+
+Role corrections supplied separately: current city park, Zuiganji, Bizan viewpoint and generic food supermarket/drugstore. Official location evidence supplied and verified by root; dialogues use fictional educational circumstances and do not claim actual operating details. Self review true; human, peer, native speaker, device and release approval false. Root owns corpus checking, integration, commit and remote verification.
