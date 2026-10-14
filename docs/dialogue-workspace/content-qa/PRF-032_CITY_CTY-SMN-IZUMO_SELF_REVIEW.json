@@ -1,0 +1,71 @@
+{
+  "cityId": "CTY-SMN-IZUMO",
+  "mode": "USER_AUTHORIZED_INDEPENDENT_CITY_SELF_REVIEW",
+  "sourceSha256": "dac98f055374653974659017ef0b983669a835af0a7005be1aee072f080ad621",
+  "scenarioCount": 8,
+  "turnCount": 88,
+  "goalCount": 40,
+  "reviewedScenarioIds": [
+    "SC-SMN-IZUMO-001",
+    "SC-LOC-SMN-IZUMO-02-001",
+    "SC-LOC-SMN-IZUMO-03-001",
+    "SC-LOC-SMN-IZUMO-04-001",
+    "SC-LOC-SMN-IZUMO-05-001",
+    "SC-LOC-SMN-IZUMO-06-001",
+    "SC-LOC-SMN-IZUMO-07-001",
+    "SC-LOC-SMN-IZUMO-08-001"
+  ],
+  "fullRead": {
+    "oldScenarios": 8,
+    "oldTurns": 88,
+    "oldGoals": 40,
+    "finalPremises": 8,
+    "finalTurns": 88,
+    "finalGoals": 40
+  },
+  "repairs": [
+    {
+      "scenarioId": "SC-LOC-SMN-IZUMO-08-001",
+      "turn": 9,
+      "reason": "Remove third sentence; preserve service consequence.",
+      "before": "承りました。先にお茶と冷ややっこをお持ちしました。取り皿は二枚でよろしいですか。",
+      "after": "先にお茶と冷ややっこをお持ちしました。取り皿は二枚でよろしいですか。"
+    },
+    {
+      "scenarioId": "SC-LOC-SMN-IZUMO-06-001",
+      "turn": 9,
+      "reason": "Make requested five o’clock deadline causally confirmed before reservation.",
+      "before": "担当者は四時半から対応できると返事がありました。料金と返却条件はこちらです。",
+      "after": "担当者から、四時半に始めて四時五十分までに終えられると返事がありました。料金と返却条件はこちらです。"
+    },
+    {
+      "scenarioId": "SC-LOC-SMN-IZUMO-03-001",
+      "turn": 9,
+      "reason": "Make purchase payment concrete instead of skipping tender.",
+      "before": "ではこちらの箱をお会計します。手提げ袋もお持ちでしょうか。",
+      "after": "千八百円のお会計をお願いします。手提げ袋もお持ちでしょうか。"
+    },
+    {
+      "scenarioId": "SC-LOC-SMN-IZUMO-03-001",
+      "turn": 10,
+      "reason": "Payment and carrying request fit two sentences.",
+      "before": "この手提げに入れてください。箱を立てずに持って帰ります。",
+      "after": "千八百円ちょうど出します。この手提げに、箱を平らに入れてください。"
+    }
+  ],
+  "historicalMachineScreen": {
+    "baselineCommit": "7e4f48211e41729ea6d8db15e7f4898c794a47ca",
+    "runtimeFilesScanned": 7128,
+    "outsidePlayerTurnsScanned": 35600,
+    "outsideGoalsScanned": 35600,
+    "exactPlayerHits": [],
+    "exactGoalHits": []
+  },
+  "peerReviewed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceVerified": false,
+  "aiContentPass": true,
+  "openBlockers": []
+}
