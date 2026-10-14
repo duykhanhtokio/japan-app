@@ -1,0 +1,5 @@
+# 美作市 independent author
+
+Source SHA-256: `c9c11c48877192d96f7f7a77c8e1deed253b25c0fe01aed5a184625a06e4dde5`. Own full prior8 and final8 premise/88turn/40goal reads completed. No peers read. Distinct stories: train-seat hat record; certificate purpose versus unresolved copy count; hearing/brief-question accommodation; unrequested visitor factual chronology; unshipped parcel address correction; cost comparison without execution; duplicate checkout quantity correction; bounded glove search. Nurse collects history and communication need without diagnosis/dose. Station is explicitly a learning venue. All operator specifics are fictional premise-bound.
+
+Self-read repairs removed unprompted train-chasing instruction, confirmed forgotten-hat record before goodbye, clarified face-directed short-question accommodation. Eight full prior rejects and two full authored rejects retained. AI only; no peer/human/native/operator/device certification. Historical exact scan is mechanical without prose exposure.
