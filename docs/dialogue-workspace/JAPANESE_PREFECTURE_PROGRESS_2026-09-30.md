@@ -1020,3 +1020,7 @@ All 133 scenarios in 15 cities: 1463 Japanese turns and 665 goals independently 
 ## 2026-10-14 — PRF-036 Tokushima complete independent city self-review
 
 77/77 canonical scenarios in 8 cities by six independent authors, 847 turns and 385 Player tasks. Each city remotely verified before advancing. Whole-prefecture adapter/corpus PASS; zero exact Player/NPC collisions; 7484 outside runtime files unchanged; UI lock 10/10 and NPC progression PASS. Final own-reviewed Museum/Bus Terminal metadata synchronized. Peer/human/native/device/release approval remains false. See content-qa/PRF-036_COMPLETE_* and PRF-036_CHECKPOINT.json. Resume at PRF-037 after containing checkpoint remote verification.
+
+## 2026-10-14 — PRF-037 Kagawa complete independent city self-review
+
+77/77 canonical scenarios in 8 cities by six independent authors; 847 turns, 385 Player tasks; per-city remote verification. Whole-prefecture adapter/corpus PASS, zero exact Player/NPC collisions, 7484 outside runtime files unchanged, UI lock10/10 and NPC progression PASS. Supported factory/warehouse/workshop/museum roles corrected; karaoke retains documented legacy recreation grouping with Karaoke Staff job. Peer/human/native/device/release flags false. Current checkpoint PRF-037_CHECKPOINT.json; resume PRF-038 after checkpoint persistence.
