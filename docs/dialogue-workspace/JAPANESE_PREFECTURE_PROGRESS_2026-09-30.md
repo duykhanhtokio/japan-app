@@ -1008,3 +1008,7 @@ All 133 scenarios in 15 cities: 1463 Japanese turns and 665 goals independently 
 ## Hiroshima PRF-034 — six independent city authors, 2026-10-14
 
 125/125 independently authored and self-reviewed Japanese exchanges, 1,375 turns and625 concrete Player tasks across14cities. Separate city commits remotely verified; whole real repository/loader adapter and exact corpus screen pass, 7,128 canonical IDs preserved, 7,436 outside runtime files unchanged, zero exact Player/NPC collisions. User-directed no-peer-reading mode; source/review/runtime hashes locked without peer/native/human/device/operator/release claims. Etajima fictional tourism/transport information counter replaces legacy station label while IDs remain stable. Continue PRF-035 after containing checkpoint persistence passes.
+
+## Yamaguchi PRF-035 — independent city self-review checkpoint, 2026-10-14
+
+85/117 Japanese scenarios (935turns,425concrete goals) independently authored/self-reviewed across9cities and remotely verified with separate city commits. Partial real adapter/corpus checks pass; zero exact Player/NPC collisions, UIlock10/10 and NPCprogression pass. Thirty-two scenarios remain: Yanai, Mine, Shunan, Sanyo-Onoda. ResumeYanai after recovery from repeated model-capacity failure and ENOSPC. No peer/human/native/device/release approval claimed; future dialogue push authorization persists. Source/review/runtime hash-bound evidence in PRF-035_CHECKPOINT.json and partial integration manifest.
