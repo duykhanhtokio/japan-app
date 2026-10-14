@@ -1,0 +1,60 @@
+{
+  "cityId": "CTY-SMN-MASUDA",
+  "mode": "INDEPENDENT_AUTHOR_SELF_REVIEW_NO_PEER_READING",
+  "sourceSha256": "f72354631e47d87da8067aa1e0234ab3b4afdb5e54dcf961211f2d926002aee9",
+  "reviewedScenarioIds": [
+    "SC-SMN-MASUDA-001",
+    "SC-LOC-SMN-MASUDA-02-001",
+    "SC-LOC-SMN-MASUDA-03-001",
+    "SC-LOC-SMN-MASUDA-04-001",
+    "SC-LOC-SMN-MASUDA-05-001",
+    "SC-LOC-SMN-MASUDA-06-001",
+    "SC-LOC-SMN-MASUDA-07-001",
+    "SC-LOC-SMN-MASUDA-08-001"
+  ],
+  "scenarioCount": 8,
+  "turnCount": 88,
+  "taskCount": 40,
+  "oldFullRead": true,
+  "finalFullRead": true,
+  "fullReadFields": [
+    "title",
+    "premise",
+    "all 11 Japanese turns",
+    "all 5 intent-goal pairs"
+  ],
+  "repairs": [
+    {
+      "scenarioId": "SC-LOC-SMN-MASUDA-04-001",
+      "issue": "Closing was an instruction rather than natural farewell",
+      "repair": "Teacher temporarily leaves for next workbench and says また後ほど",
+      "fullRejectedDraftPreserved": true
+    }
+  ],
+  "checks": {
+    "causalContinuity": true,
+    "roleAlignment": true,
+    "fiveDistinctIntentsPerScenario": true,
+    "specificGoalsMatchPlayerTurns": true,
+    "naturalNPCFarewell": true,
+    "noTemplatesOrNounSwaps": true,
+    "japaneseOnly": true,
+    "noLevelGating": true,
+    "fictionDisclaimerPremiseOnly": true,
+    "noActualOperatorPolicyClaims": true
+  },
+  "mechanicalHistoricalCorpusScan": {
+    "baseline": "7e4f48211e41729ea6d8db15e7f4898c794a47ca",
+    "outsideFiles": 7545,
+    "playerRows": 37725,
+    "goalRows": 35600,
+    "hits": []
+  },
+  "peerReviewed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceVerified": false,
+  "openBlockers": [],
+  "decision": "AUTHOR_SELF_REVIEW_PASS"
+}
