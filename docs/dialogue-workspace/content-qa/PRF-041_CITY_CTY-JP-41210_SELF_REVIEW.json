@@ -1,0 +1,87 @@
+{
+  "cityId": "CTY-JP-41210",
+  "prefectureId": "PRF-041",
+  "status": "independent_ai_self_reviewed",
+  "fullFinalReread": true,
+  "scenarioCount": 8,
+  "turnCount": 88,
+  "taskCount": 40,
+  "sourceSha256": "d6e5a43acbc14d9554aadda9b610813b1ee5224302dc6815f1119fdb4c08d459",
+  "inputSha256": "400f7f8ec615d72c812bf60fa6e8fcf0fa6fd2b64b2cae00cfaf4ed8de251dcf",
+  "roleAlignmentSha256": "c1da0a666bfc54bdaaa55f96b02a3c313e68a28cc61ee3d1317eaa0519be6621",
+  "inputRuntimeSha256": {
+    "SC-LOC-JP-41210-01-001": "406b7b52f92d5d1cb3e52575bed81b18625e3a278da5faac977c041e089237d1",
+    "SC-LOC-JP-41210-02-001": "251c34e0a179f1ea9e1dcb22fed15d7a9445e50a7b5cfbaa1b83f0a9c136009c",
+    "SC-LOC-JP-41210-03-001": "c64f4ca62dbe017790a4e29efbdf95670ab75b5adb57b51fda7455ed2a6ba441",
+    "SC-LOC-JP-41210-04-001": "bfbddcc6e672b474c146787bafc59e15372104f31f23f20a30f7b63b7d9e48a6",
+    "SC-LOC-JP-41210-05-001": "8fb9d3361393187b469c03f8f9e19bfeaeb78232ef1f84da17974466d53c87d3",
+    "SC-LOC-JP-41210-06-001": "214962cb8a55b99df4fc40561361e6c10a239753982e6f0a722b899b9bbdb68d",
+    "SC-LOC-JP-41210-07-001": "0cc3fa8649d11e4583a5e83da8169a5331f749c7059f2b1e4c27d7540317e422",
+    "SC-LOC-JP-41210-08-001": "53ea92307a04d8e89f4ab87edcb690ba5f32e7ad8fb643c76da84cb3f5faccb2"
+  },
+  "sourceScenarioSha256": {
+    "SC-LOC-JP-41210-01-001": "241b556bc4da64bc15b7218fff4da408fe6177a11fe3eabd69bdee782138f3e3",
+    "SC-LOC-JP-41210-02-001": "f8c75898ce2ec4bddf94cda692f3f8f0c4fbac4b2d60998f833b5398dde0d093",
+    "SC-LOC-JP-41210-03-001": "f2fa16b31bb02ddcfb846005dc5892c4c962213fcdb3086b61dea6563b54f578",
+    "SC-LOC-JP-41210-04-001": "87f153e334287d98cccbaa3af421019c828e12db38ca535cee8e7a1161a207f1",
+    "SC-LOC-JP-41210-05-001": "98bb435db23689f497015e43c90bcc39f70c2a26481c824bcb79ec14b94b6f2b",
+    "SC-LOC-JP-41210-06-001": "b6b6523ab5bcbb2de0c73c9eb5fcacb16922738058c72b2bb9313c6bf2f3f49c",
+    "SC-LOC-JP-41210-07-001": "a563bc1d630968a5ac0d37aec308a0d12c3969a57df482856f4be68a2de23283",
+    "SC-LOC-JP-41210-08-001": "b6a33c9269b96459fe1fb511dbe2cb27415938415c86a454599eab1bf2e69c90"
+  },
+  "causalPlots": {
+    "SC-LOC-JP-41210-01-001": "遅延放送を途中までしか聞けない→点検で再開未定→到着を約束できない→改札内で連絡しながら待つ→未定事項を勤務先へ断言しない。",
+    "SC-LOC-JP-41210-02-001": "同居人の言語補助希望→代理ではなく本人希望の同席→本人と案内を呼ぶ→予約可否は担当確認後→本人の連絡先と希望で相談を進める。",
+    "SC-LOC-JP-41210-03-001": "領収書に休暇期間記載希望→会社書式の二欄を区別→会社要求を再確認するため発行を保留→会計と書類を別に相談→看護師から受付へ引継ぎ。",
+    "SC-LOC-JP-41210-04-001": "練習会から楽器がない→同じ黒いケースが複数→内側の印で特定→主催者照会と警察届けを並行→仕事中不在時の折返しを決める。",
+    "SC-LOC-JP-41210-05-001": "二枚の不在票を別荷物と認識→番号は同じで再配達希望は一件→残業で希望変更→荷物は持出中で即時受取不可→追加申込をせず戻りを確認して変更相談。",
+    "SC-LOC-JP-41210-06-001": "停止したカードが見つかる→再発行の電話説明が曖昧→停止中で再発行なしと確認→暗証番号が分かれば使えるという誤解→試行や切断をせず解除と必要カードを担当に確認。",
+    "SC-LOC-JP-41210-07-001": "帰宅後に缶へこみ発見→購入前の状態不明→同時購入と未開封を説明→原因を断言しない→交換希望だが自己判断で売場品と取り替えず判断待ち。",
+    "SC-LOC-JP-41210-08-001": "十五分で散歩したい→池到達より疲れ前の帰路→案内柱まで行かなくても七分で折返す→門を見て同じ道へ→休憩を優先し時刻に合わせて急がない。"
+  },
+  "roleFindings": [
+    {
+      "locationId": "LOC-JP-41210-03",
+      "npcJob": "Nurse",
+      "decision": "Retain Nurse. Separates receipt, employer document and doctor assessment; accounting/document issuance explicitly handed to reception rather than performed by nurse."
+    },
+    {
+      "locationId": "LOC-JP-41210-06",
+      "npcJob": "Bank Clerk",
+      "decision": "Retain Bank Clerk. Verifies simulated stopped-card status without guaranteeing immediate reactivation or reissue."
+    },
+    {
+      "locationId": "LOC-JP-41210-08",
+      "npcJob": "Community Staff",
+      "decision": "Retain Community Staff providing fictional community park directions, without issuing commercial tickets or certifying route distance."
+    }
+  ],
+  "repairsAfterSelfReread": [
+    "Removed spoken authoring-meta phrases from station, city hall, postal and park NPC turns; fictional service status, routes and policies remain explicit in premises.",
+    "Mechanical screen reported one exact NPC opening collision. Replaced only own police opening with contextual practice-session wording; independently reread all eleven changed-exchange turns and five tasks without reading any other prose."
+  ],
+  "checks": {
+    "exactly11Turns": true,
+    "fiveConcreteTasksPerScenario": true,
+    "japaneseOnly": true,
+    "npcFirstAndLast": true,
+    "alternatingNpcPlayer": true,
+    "playerExactDuplicatesWithinCity": 0,
+    "taskGoalExactDuplicatesWithinCity": 0,
+    "noLevelGates": true,
+    "noNewTranslations": true,
+    "allFinalTurnsCloseOrHandoff": true,
+    "withinCityCausalPlotsDistinct": true
+  },
+  "fictionalPolicyScope": "Premises explicitly confine local service status, stock handling, clinic procedures, appointment workflow and park geometry to learning scenarios. No commercial, institutional, financial or medical outcome certified.",
+  "reviewScope": "Independent assigned author reread all 88 final turns and 40 task pairs, including requests, responses, causal dependencies and closure. No peers or other city prose/reviews read. Parent machine integration and durable persistence pending.",
+  "peerReviewed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "changedExchangeFullReread": {
+    "SC-LOC-JP-41210-04-001": true
+  }
+}
