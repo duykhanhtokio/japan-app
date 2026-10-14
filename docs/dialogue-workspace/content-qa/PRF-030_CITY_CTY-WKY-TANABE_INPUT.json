@@ -1,0 +1,2513 @@
+[
+  {
+    "scenario": {
+      "id": "SC-WKY-TANABE-001",
+      "name": "果樹園で収穫の基準を確認する",
+      "locationId": "LOC-WKY-TANABE-01",
+      "cityId": "CTY-WKY-TANABE",
+      "locationType": "Other",
+      "type": "Work",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "田辺市の学習用場面で、収穫する実と安全な道具の扱いを確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "収穫する実と安全な道具の扱いを確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": "Vườn trái cây: tỉa cành, bao trái, thu hoạch, chọn quả đạt chuẩn xuất bán.",
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [
+        "丁寧 (https://app.notion.com/p/223267ccdd6d43a99199c7e14a89b45b?pvs=21)",
+        "ジャム (https://app.notion.com/p/3be70421d961811e8c1ee0575139e377?pvs=21)",
+        "はさみ (https://app.notion.com/p/3be70421d96181238aa0dfba40e5b250?pvs=21)",
+        "果物 (https://app.notion.com/p/3be70421d96181a5abc7e30f9291a9fe?pvs=21)"
+      ],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-WKY-TANABE",
+      "name": "Tanabe",
+      "nameJa": "田辺市",
+      "type": "Town",
+      "description": "City mở rộng cho map exploration. Ưu tiên vùng Kanto/Kansai/Chubu; mỗi city dự kiến 7–10 locations.",
+      "prefectureId": "PRF-030",
+      "order": 159,
+      "unlockLevel": 3,
+      "status": "Active",
+      "population": 0,
+      "locationIds": [
+        "LOC-WKY-TANABE-01",
+        "LOC-WKY-TANABE-02",
+        "LOC-WKY-TANABE-05",
+        "LOC-WKY-TANABE-06",
+        "LOC-WKY-TANABE-04",
+        "LOC-WKY-TANABE-03",
+        "LOC-WKY-TANABE-07",
+        "LOC-WKY-TANABE-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-WKY-TANABE-01",
+      "name": "Tanabe Fruit Orchard",
+      "nameJa": "田辺果樹園",
+      "cityId": "CTY-WKY-TANABE",
+      "category": "Nature",
+      "type": "Workplace",
+      "npcJob": "Farmer",
+      "defaultNpcId": "NPC-WKY-TANABE-001",
+      "description": "Vườn trái cây: tỉa cành, bao trái, thu hoạch, chọn quả đạt chuẩn xuất bán.",
+      "order": 1,
+      "status": "Active",
+      "importance": "Main",
+      "sceneStyle": "2.5D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": [
+        "Tỉa cành tại 果樹園 (Tanabe) (https://app.notion.com/p/T-a-c-nh-t-i-Tanabe-3bd70421d96181cd974dd58e60096e38?pvs=21)"
+      ]
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-WKY-TANABE-001-SHARED-01",
+        "scenarioId": "SC-WKY-TANABE-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "おはようございます。収穫前に、今日の基準を確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-WKY-TANABE-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-WKY-TANABE-001-SHARED-02",
+        "scenarioId": "SC-WKY-TANABE-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-orchard_response_1",
+          "requiredSemanticComponents": {
+            "goal": "収穫する実と安全な道具の扱いを確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "田辺市のこの果樹園では初めてです。どの実を収穫しますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-WKY-TANABE-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-WKY-TANABE-001-SHARED-03",
+        "scenarioId": "SC-WKY-TANABE-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "実物を見ながら説明します。判断に迷う実は、残して確認してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-WKY-TANABE-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-WKY-TANABE-001-SHARED-04",
+        "scenarioId": "SC-WKY-TANABE-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-orchard_response_2",
+          "requiredSemanticComponents": {
+            "goal": "収穫する実と安全な道具の扱いを確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "傷のある実は、同じ箱に入れないほうがよいですか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-WKY-TANABE-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-WKY-TANABE-001-SHARED-05",
+        "scenarioId": "SC-WKY-TANABE-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "分類と置き場所は、今日の指示に従ってください。勝手に捨てないでください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-WKY-TANABE-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-WKY-TANABE-001-SHARED-06",
+        "scenarioId": "SC-WKY-TANABE-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-orchard_response_3",
+          "requiredSemanticComponents": {
+            "goal": "収穫する実と安全な道具の扱いを確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "高いところの実は、どう取ればよいですか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-WKY-TANABE-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-WKY-TANABE-001-SHARED-07",
+        "scenarioId": "SC-WKY-TANABE-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "指定された道具と安全な方法を確認します。手が届かないときは無理をしないでください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-WKY-TANABE-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-WKY-TANABE-001-SHARED-08",
+        "scenarioId": "SC-WKY-TANABE-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-orchard_response_4",
+          "requiredSemanticComponents": {
+            "goal": "収穫する実と安全な道具の扱いを確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "脚立を使う前も、置き方を確認したいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-WKY-TANABE-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-WKY-TANABE-001-SHARED-09",
+        "scenarioId": "SC-WKY-TANABE-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。地面の状態や周囲を確認し、現場の手順に従ってください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-WKY-TANABE-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-WKY-TANABE-001-SHARED-10",
+        "scenarioId": "SC-WKY-TANABE-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-orchard_response_5",
+          "requiredSemanticComponents": {
+            "goal": "収穫する実と安全な道具の扱いを確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "わかりました。実の基準と道具を確認してから始めます。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-WKY-TANABE-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-WKY-TANABE-001-SHARED-11",
+        "scenarioId": "SC-WKY-TANABE-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "収穫中に迷ったら、その場で声をかけてください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-WKY-TANABE-02-001",
+      "name": "山道へ入る前に条件を確認する",
+      "locationId": "LOC-WKY-TANABE-02",
+      "cityId": "CTY-WKY-TANABE",
+      "locationType": "Other",
+      "type": "Travel",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "田辺市の学習用場面で、経路と天候を確認して計画を見直す。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "経路と天候を確認して計画を見直す",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-WKY-TANABE",
+      "name": "Tanabe",
+      "nameJa": "田辺市",
+      "type": "Town",
+      "description": "City mở rộng cho map exploration. Ưu tiên vùng Kanto/Kansai/Chubu; mỗi city dự kiến 7–10 locations.",
+      "prefectureId": "PRF-030",
+      "order": 159,
+      "unlockLevel": 3,
+      "status": "Active",
+      "population": 0,
+      "locationIds": [
+        "LOC-WKY-TANABE-01",
+        "LOC-WKY-TANABE-02",
+        "LOC-WKY-TANABE-05",
+        "LOC-WKY-TANABE-06",
+        "LOC-WKY-TANABE-04",
+        "LOC-WKY-TANABE-03",
+        "LOC-WKY-TANABE-07",
+        "LOC-WKY-TANABE-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-WKY-TANABE-02",
+      "name": "Tanabe Trailhead Mountain Hut",
+      "nameJa": "田辺登山口小屋",
+      "cityId": "CTY-WKY-TANABE",
+      "category": "Nature",
+      "type": "Tourism",
+      "npcJob": "Guide",
+      "defaultNpcId": "NPC-WKY-TANABE-002",
+      "description": "Trạm xuất phát leo núi: nộp phiếu leo núi, hỏi độ khó đường mòn, thời tiết, thuê gậy.",
+      "order": 2,
+      "status": "Active",
+      "importance": "Secondary",
+      "sceneStyle": "2.5D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-01",
+        "scenarioId": "SC-LOC-WKY-TANABE-02-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こんにちは。山道についてのご相談ですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-02",
+        "scenarioId": "SC-LOC-WKY-TANABE-02-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "mountain_response_1",
+          "requiredSemanticComponents": {
+            "goal": "経路と天候を確認して計画を見直す"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "田辺市を訪れています。短い経路を歩きたいですが、初めてです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-03",
+        "scenarioId": "SC-LOC-WKY-TANABE-02-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "経験と、持っている装備を教えてください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-04",
+        "scenarioId": "SC-LOC-WKY-TANABE-02-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "mountain_response_2",
+          "requiredSemanticComponents": {
+            "goal": "経路と天候を確認して計画を見直す"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "経験は少なく、普段の靴しかありません。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-05",
+        "scenarioId": "SC-LOC-WKY-TANABE-02-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "その装備で無理なく利用できる経路か、現地の案内を確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-06",
+        "scenarioId": "SC-LOC-WKY-TANABE-02-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "mountain_response_3",
+          "requiredSemanticComponents": {
+            "goal": "経路と天候を確認して計画を見直す"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "天候や通行止めの情報も必要ですね。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-07",
+        "scenarioId": "SC-LOC-WKY-TANABE-02-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。情報を確認し、条件が合わなければ計画を変えてください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-08",
+        "scenarioId": "SC-LOC-WKY-TANABE-02-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "mountain_response_4",
+          "requiredSemanticComponents": {
+            "goal": "経路と天候を確認して計画を見直す"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "帰る時刻と、引き返す目安も決めたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-09",
+        "scenarioId": "SC-LOC-WKY-TANABE-02-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "同行者と計画を共有し、無理なく戻れる範囲を確認してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-10",
+        "scenarioId": "SC-LOC-WKY-TANABE-02-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "mountain_response_5",
+          "requiredSemanticComponents": {
+            "goal": "経路と天候を確認して計画を見直す"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "わかりました。難しい場合は、別の散歩に変更します。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-02-001-SHARED-11",
+        "scenarioId": "SC-LOC-WKY-TANABE-02-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "装備や状況が不十分なまま進まず、安全を優先してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-WKY-TANABE-03-001",
+      "name": "サイズや交換条件を確認する",
+      "locationId": "LOC-WKY-TANABE-03",
+      "cityId": "CTY-WKY-TANABE",
+      "locationType": "Shop",
+      "type": "Shopping",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "田辺市の学習用場面で、サイズと購入条件を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "サイズと購入条件を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-WKY-TANABE",
+      "name": "Tanabe",
+      "nameJa": "田辺市",
+      "type": "Town",
+      "description": "City mở rộng cho map exploration. Ưu tiên vùng Kanto/Kansai/Chubu; mỗi city dự kiến 7–10 locations.",
+      "prefectureId": "PRF-030",
+      "order": 159,
+      "unlockLevel": 3,
+      "status": "Active",
+      "population": 0,
+      "locationIds": [
+        "LOC-WKY-TANABE-01",
+        "LOC-WKY-TANABE-02",
+        "LOC-WKY-TANABE-05",
+        "LOC-WKY-TANABE-06",
+        "LOC-WKY-TANABE-04",
+        "LOC-WKY-TANABE-03",
+        "LOC-WKY-TANABE-07",
+        "LOC-WKY-TANABE-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-WKY-TANABE-03",
+      "name": "Tanabe Shopping Arcade",
+      "nameJa": "田辺商店街",
+      "cityId": "CTY-WKY-TANABE",
+      "category": "Shopping",
+      "type": "Shopping",
+      "npcJob": "Shop Owner",
+      "defaultNpcId": "NPC-WKY-TANABE-003",
+      "description": "Phố mua sắm có mái che: hỏi đường, mặc cả nhẹ, phiếu giảm giá của khu phố.",
+      "order": 3,
+      "status": "Active",
+      "importance": "Secondary",
+      "sceneStyle": "2.5D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-01",
+        "scenarioId": "SC-LOC-WKY-TANABE-03-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "いらっしゃいませ。お探しの物はありますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-02",
+        "scenarioId": "SC-LOC-WKY-TANABE-03-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "shop-size_response_1",
+          "requiredSemanticComponents": {
+            "goal": "サイズと購入条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "田辺市で使う服を探しています。このサイズを試せますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-03",
+        "scenarioId": "SC-LOC-WKY-TANABE-03-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "試着できる商品か確認します。普段のサイズはどのくらいですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-04",
+        "scenarioId": "SC-LOC-WKY-TANABE-03-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "shop-size_response_2",
+          "requiredSemanticComponents": {
+            "goal": "サイズと購入条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "普段はこのサイズですが、動きやすいものを選びたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-05",
+        "scenarioId": "SC-LOC-WKY-TANABE-03-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "では、表示と着たときの状態を確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-06",
+        "scenarioId": "SC-LOC-WKY-TANABE-03-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "shop-size_response_3",
+          "requiredSemanticComponents": {
+            "goal": "サイズと購入条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "購入後にサイズが合わなかった場合、交換できますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-07",
+        "scenarioId": "SC-LOC-WKY-TANABE-03-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "商品や状態によって条件が違いますので、購入前にご説明します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-08",
+        "scenarioId": "SC-LOC-WKY-TANABE-03-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "shop-size_response_4",
+          "requiredSemanticComponents": {
+            "goal": "サイズと購入条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "タグやレシートも必要ですか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-09",
+        "scenarioId": "SC-LOC-WKY-TANABE-03-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "必要なものと期限を、現在の案内で確認してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-10",
+        "scenarioId": "SC-LOC-WKY-TANABE-03-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "shop-size_response_5",
+          "requiredSemanticComponents": {
+            "goal": "サイズと購入条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "わかりました。着心地と条件を確認してから買います。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-03-001-SHARED-11",
+        "scenarioId": "SC-LOC-WKY-TANABE-03-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "ご不明な点があれば、お会計前にお尋ねください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-WKY-TANABE-04-001",
+      "name": "会計と注文内容を確認する",
+      "locationId": "LOC-WKY-TANABE-04",
+      "cityId": "CTY-WKY-TANABE",
+      "locationType": "Restaurant",
+      "type": "Daily Life",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "田辺市の学習用場面で、注文内容と会計方法を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "注文内容と会計方法を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-WKY-TANABE",
+      "name": "Tanabe",
+      "nameJa": "田辺市",
+      "type": "Town",
+      "description": "City mở rộng cho map exploration. Ưu tiên vùng Kanto/Kansai/Chubu; mỗi city dự kiến 7–10 locations.",
+      "prefectureId": "PRF-030",
+      "order": 159,
+      "unlockLevel": 3,
+      "status": "Active",
+      "population": 0,
+      "locationIds": [
+        "LOC-WKY-TANABE-01",
+        "LOC-WKY-TANABE-02",
+        "LOC-WKY-TANABE-05",
+        "LOC-WKY-TANABE-06",
+        "LOC-WKY-TANABE-04",
+        "LOC-WKY-TANABE-03",
+        "LOC-WKY-TANABE-07",
+        "LOC-WKY-TANABE-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-WKY-TANABE-04",
+      "name": "Tanabe Self-service Udon Shop",
+      "nameJa": "田辺セルフうどん店",
+      "cityId": "CTY-WKY-TANABE",
+      "category": "Restaurant",
+      "type": "Food",
+      "npcJob": "Restaurant Staff",
+      "defaultNpcId": null,
+      "description": "Tiệm udon tự phục vụ: xếp khay, chọn tempura, trả tiền ở cuối quầy.",
+      "order": 4,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-01",
+        "scenarioId": "SC-LOC-WKY-TANABE-04-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "いらっしゃいませ。お会計でしょうか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-02",
+        "scenarioId": "SC-LOC-WKY-TANABE-04-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-bill_response_1",
+          "requiredSemanticComponents": {
+            "goal": "注文内容と会計方法を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "はい。田辺市の友人と食事をしました。会計の内容を確認したいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-03",
+        "scenarioId": "SC-LOC-WKY-TANABE-04-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こちらがご注文の明細です。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-04",
+        "scenarioId": "SC-LOC-WKY-TANABE-04-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-bill_response_2",
+          "requiredSemanticComponents": {
+            "goal": "注文内容と会計方法を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "この飲み物は注文していないと思います。確認していただけますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-05",
+        "scenarioId": "SC-LOC-WKY-TANABE-04-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "承知しました。伝票と注文の記録を確認します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-06",
+        "scenarioId": "SC-LOC-WKY-TANABE-04-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-bill_response_3",
+          "requiredSemanticComponents": {
+            "goal": "注文内容と会計方法を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。二人分を別々に払えるかも知りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-07",
+        "scenarioId": "SC-LOC-WKY-TANABE-04-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "お店の会計方法を確認します。できない場合は先にお伝えします。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-08",
+        "scenarioId": "SC-LOC-WKY-TANABE-04-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-bill_response_4",
+          "requiredSemanticComponents": {
+            "goal": "注文内容と会計方法を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "わかりました。確認が終わってから支払います。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-09",
+        "scenarioId": "SC-LOC-WKY-TANABE-04-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "確認した内容を説明しますので、明細をもう一度ご覧ください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-10",
+        "scenarioId": "SC-LOC-WKY-TANABE-04-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-bill_response_5",
+          "requiredSemanticComponents": {
+            "goal": "注文内容と会計方法を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "はい。内容が合っているか確認します。レシートもお願いします。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-04-001-SHARED-11",
+        "scenarioId": "SC-LOC-WKY-TANABE-04-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "承知しました。お忘れ物のないようにお帰りください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-WKY-TANABE-05-001",
+      "name": "証明書の種類を相談する",
+      "locationId": "LOC-WKY-TANABE-05",
+      "cityId": "CTY-WKY-TANABE",
+      "locationType": "Government Office",
+      "type": "Administrative",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "田辺市の学習用場面で、提出先に合った証明書を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "提出先に合った証明書を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-WKY-TANABE",
+      "name": "Tanabe",
+      "nameJa": "田辺市",
+      "type": "Town",
+      "description": "City mở rộng cho map exploration. Ưu tiên vùng Kanto/Kansai/Chubu; mỗi city dự kiến 7–10 locations.",
+      "prefectureId": "PRF-030",
+      "order": 159,
+      "unlockLevel": 3,
+      "status": "Active",
+      "population": 0,
+      "locationIds": [
+        "LOC-WKY-TANABE-01",
+        "LOC-WKY-TANABE-02",
+        "LOC-WKY-TANABE-05",
+        "LOC-WKY-TANABE-06",
+        "LOC-WKY-TANABE-04",
+        "LOC-WKY-TANABE-03",
+        "LOC-WKY-TANABE-07",
+        "LOC-WKY-TANABE-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-WKY-TANABE-05",
+      "name": "Tanabe Police Box (Koban)",
+      "nameJa": "田辺交番",
+      "cityId": "CTY-WKY-TANABE",
+      "category": "Police Station",
+      "type": "Public Service",
+      "npcJob": "Police",
+      "defaultNpcId": null,
+      "description": "Chọt cảnh sát: hỏi đường, trình báo mất đồ, trình báo xe đạp, khai báo thông tin.",
+      "order": 5,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-01",
+        "scenarioId": "SC-LOC-WKY-TANABE-05-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こんにちは。必要な証明書はおわかりですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-02",
+        "scenarioId": "SC-LOC-WKY-TANABE-05-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "gov-certificate_response_1",
+          "requiredSemanticComponents": {
+            "goal": "提出先に合った証明書を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "田辺市で住まいを借りるため、証明書を提出するように言われました。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-03",
+        "scenarioId": "SC-LOC-WKY-TANABE-05-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "提出先から届いた案内を見せていただけますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-04",
+        "scenarioId": "SC-LOC-WKY-TANABE-05-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "gov-certificate_response_2",
+          "requiredSemanticComponents": {
+            "goal": "提出先に合った証明書を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "こちらです。どの情報が必要なのか、よくわかりません。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-05",
+        "scenarioId": "SC-LOC-WKY-TANABE-05-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "必要な証明書の名称と記載事項を、一緒に確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-06",
+        "scenarioId": "SC-LOC-WKY-TANABE-05-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "gov-certificate_response_3",
+          "requiredSemanticComponents": {
+            "goal": "提出先に合った証明書を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "記載しなくてもよい情報は、省けますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-07",
+        "scenarioId": "SC-LOC-WKY-TANABE-05-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "選べる項目がありますが、提出先の条件を先に確認する必要があります。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-08",
+        "scenarioId": "SC-LOC-WKY-TANABE-05-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "gov-certificate_response_4",
+          "requiredSemanticComponents": {
+            "goal": "提出先に合った証明書を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "では、提出先に電話してから申請したほうがよいですか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-09",
+        "scenarioId": "SC-LOC-WKY-TANABE-05-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。条件が不明なまま申請すると、取り直しが必要になる場合があります。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-10",
+        "scenarioId": "SC-LOC-WKY-TANABE-05-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "gov-certificate_response_5",
+          "requiredSemanticComponents": {
+            "goal": "提出先に合った証明書を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "わかりました。確認ができたら、申請書を書きます。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-05-001-SHARED-11",
+        "scenarioId": "SC-LOC-WKY-TANABE-05-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "その際に本人確認書類や手数料の案内も、窓口でご確認ください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-WKY-TANABE-06-001",
+      "name": "展示施設の見学方法を確認する",
+      "locationId": "LOC-WKY-TANABE-06",
+      "cityId": "CTY-WKY-TANABE",
+      "locationType": "Other",
+      "type": "Study",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "田辺市の学習用場面で、展示の説明と撮影ルールを確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "展示の説明と撮影ルールを確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-WKY-TANABE",
+      "name": "Tanabe",
+      "nameJa": "田辺市",
+      "type": "Town",
+      "description": "City mở rộng cho map exploration. Ưu tiên vùng Kanto/Kansai/Chubu; mỗi city dự kiến 7–10 locations.",
+      "prefectureId": "PRF-030",
+      "order": 159,
+      "unlockLevel": 3,
+      "status": "Active",
+      "population": 0,
+      "locationIds": [
+        "LOC-WKY-TANABE-01",
+        "LOC-WKY-TANABE-02",
+        "LOC-WKY-TANABE-05",
+        "LOC-WKY-TANABE-06",
+        "LOC-WKY-TANABE-04",
+        "LOC-WKY-TANABE-03",
+        "LOC-WKY-TANABE-07",
+        "LOC-WKY-TANABE-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-WKY-TANABE-06",
+      "name": "Tanabe Local History Museum",
+      "nameJa": "田辺郷土博物館",
+      "cityId": "CTY-WKY-TANABE",
+      "category": "Museum",
+      "type": "Culture",
+      "npcJob": "Museum Guide",
+      "defaultNpcId": null,
+      "description": "Bảo tàng địa phương: nghe giới thiệu lịch sử vùng, hỏi hiện vật, workshop cuối tuần.",
+      "order": 6,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-01",
+        "scenarioId": "SC-LOC-WKY-TANABE-06-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こんにちは。展示のご案内ですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-02",
+        "scenarioId": "SC-LOC-WKY-TANABE-06-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "museum_response_1",
+          "requiredSemanticComponents": {
+            "goal": "展示の説明と撮影ルールを確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "田辺市の歴史や文化について知りたいです。初めて見学します。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-03",
+        "scenarioId": "SC-LOC-WKY-TANABE-06-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "特に気になる展示はありますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-04",
+        "scenarioId": "SC-LOC-WKY-TANABE-06-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "museum_response_2",
+          "requiredSemanticComponents": {
+            "goal": "展示の説明と撮影ルールを確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "生活に関する展示を見たいです。説明が難しいときは質問できますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-05",
+        "scenarioId": "SC-LOC-WKY-TANABE-06-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。用意されている解説や、質問できる方法を確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-06",
+        "scenarioId": "SC-LOC-WKY-TANABE-06-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "museum_response_3",
+          "requiredSemanticComponents": {
+            "goal": "展示の説明と撮影ルールを確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "写真を撮ってもよい場所は、どう見分けますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-07",
+        "scenarioId": "SC-LOC-WKY-TANABE-06-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "展示ごとの表示をご覧ください。撮影が認められていても、ほかの方に配慮してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-08",
+        "scenarioId": "SC-LOC-WKY-TANABE-06-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "museum_response_4",
+          "requiredSemanticComponents": {
+            "goal": "展示の説明と撮影ルールを確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "荷物を預ける場所があるかも知りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-09",
+        "scenarioId": "SC-LOC-WKY-TANABE-06-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "利用できる設備と条件を確認します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-10",
+        "scenarioId": "SC-LOC-WKY-TANABE-06-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "museum_response_5",
+          "requiredSemanticComponents": {
+            "goal": "展示の説明と撮影ルールを確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。案内を確認してから見学します。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-06-001-SHARED-11",
+        "scenarioId": "SC-LOC-WKY-TANABE-06-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "展示物には指示なく触れず、ご不明な点は職員にお尋ねください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-WKY-TANABE-07-001",
+      "name": "薬の説明を聞いて確認する",
+      "locationId": "LOC-WKY-TANABE-07",
+      "cityId": "CTY-WKY-TANABE",
+      "locationType": "Hospital",
+      "type": "Health",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "田辺市の学習用場面で、処方された薬の説明を薬剤師に確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "処方された薬の説明を薬剤師に確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-WKY-TANABE",
+      "name": "Tanabe",
+      "nameJa": "田辺市",
+      "type": "Town",
+      "description": "City mở rộng cho map exploration. Ưu tiên vùng Kanto/Kansai/Chubu; mỗi city dự kiến 7–10 locations.",
+      "prefectureId": "PRF-030",
+      "order": 159,
+      "unlockLevel": 3,
+      "status": "Active",
+      "population": 0,
+      "locationIds": [
+        "LOC-WKY-TANABE-01",
+        "LOC-WKY-TANABE-02",
+        "LOC-WKY-TANABE-05",
+        "LOC-WKY-TANABE-06",
+        "LOC-WKY-TANABE-04",
+        "LOC-WKY-TANABE-03",
+        "LOC-WKY-TANABE-07",
+        "LOC-WKY-TANABE-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-WKY-TANABE-07",
+      "name": "Tanabe Prescription Pharmacy",
+      "nameJa": "田辺処方薬局",
+      "cityId": "CTY-WKY-TANABE",
+      "category": "Pharmacy",
+      "type": "Medical",
+      "npcJob": "Pharmacist",
+      "defaultNpcId": null,
+      "description": "Nhà thuốc theo đơn: nộp đơn thuốc, nghe cách uống, khai dị ứng, sổ theo dõi thuốc.",
+      "order": 7,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-01",
+        "scenarioId": "SC-LOC-WKY-TANABE-07-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こんにちは。処方箋はお持ちですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-02",
+        "scenarioId": "SC-LOC-WKY-TANABE-07-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "pharmacy_response_1",
+          "requiredSemanticComponents": {
+            "goal": "処方された薬の説明を薬剤師に確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "はい。田辺市で受診し、この処方箋を受け取りました。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-03",
+        "scenarioId": "SC-LOC-WKY-TANABE-07-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "お薬手帳と、現在使っている薬の情報も確認します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-04",
+        "scenarioId": "SC-LOC-WKY-TANABE-07-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "pharmacy_response_2",
+          "requiredSemanticComponents": {
+            "goal": "処方された薬の説明を薬剤師に確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "市販薬も使っています。名前を見せればよいですか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-05",
+        "scenarioId": "SC-LOC-WKY-TANABE-07-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。薬剤師に、薬やアレルギーの情報をお伝えください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-06",
+        "scenarioId": "SC-LOC-WKY-TANABE-07-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "pharmacy_response_3",
+          "requiredSemanticComponents": {
+            "goal": "処方された薬の説明を薬剤師に確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "飲む時間と、飲み忘れたときの対応を知りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-07",
+        "scenarioId": "SC-LOC-WKY-TANABE-07-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "薬によって違うため、薬剤師が今回の薬について説明します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-08",
+        "scenarioId": "SC-LOC-WKY-TANABE-07-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "pharmacy_response_4",
+          "requiredSemanticComponents": {
+            "goal": "処方された薬の説明を薬剤師に確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "日本語が難しいので、説明を紙で確認できますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-09",
+        "scenarioId": "SC-LOC-WKY-TANABE-07-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "用意できる案内を確認しましょう。わからないことはその場で質問してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-10",
+        "scenarioId": "SC-LOC-WKY-TANABE-07-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "pharmacy_response_5",
+          "requiredSemanticComponents": {
+            "goal": "処方された薬の説明を薬剤師に確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。自分の理解が合っているか、説明を言い直して確認します。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-07-001-SHARED-11",
+        "scenarioId": "SC-LOC-WKY-TANABE-07-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。自己判断で量を変えず、困った場合は薬剤師や医師へ相談してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-WKY-TANABE-08-001",
+      "name": "口座開設の条件を相談する",
+      "locationId": "LOC-WKY-TANABE-08",
+      "cityId": "CTY-WKY-TANABE",
+      "locationType": "Other",
+      "type": "Daily Life",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "田辺市の学習用場面で、本人の状況に合う必要書類を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "本人の状況に合う必要書類を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-WKY-TANABE",
+      "name": "Tanabe",
+      "nameJa": "田辺市",
+      "type": "Town",
+      "description": "City mở rộng cho map exploration. Ưu tiên vùng Kanto/Kansai/Chubu; mỗi city dự kiến 7–10 locations.",
+      "prefectureId": "PRF-030",
+      "order": 159,
+      "unlockLevel": 3,
+      "status": "Active",
+      "population": 0,
+      "locationIds": [
+        "LOC-WKY-TANABE-01",
+        "LOC-WKY-TANABE-02",
+        "LOC-WKY-TANABE-05",
+        "LOC-WKY-TANABE-06",
+        "LOC-WKY-TANABE-04",
+        "LOC-WKY-TANABE-03",
+        "LOC-WKY-TANABE-07",
+        "LOC-WKY-TANABE-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-WKY-TANABE-08",
+      "name": "Tanabe Bank Counter",
+      "nameJa": "田辺銀行窓口",
+      "cityId": "CTY-WKY-TANABE",
+      "category": "Bank",
+      "type": "Daily Life",
+      "npcJob": "Bank Clerk",
+      "defaultNpcId": null,
+      "description": "Quay ngan hang: mo tai khoan, chuyen tien, con dau, so ngan hang.",
+      "order": 8,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-01",
+        "scenarioId": "SC-LOC-WKY-TANABE-08-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こんにちは。今日はどのようなご相談ですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-02",
+        "scenarioId": "SC-LOC-WKY-TANABE-08-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "bank-open_response_1",
+          "requiredSemanticComponents": {
+            "goal": "本人の状況に合う必要書類を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "田辺市で働き始めました。給与を受け取る口座を作りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-03",
+        "scenarioId": "SC-LOC-WKY-TANABE-08-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "ご本人の状況を確認して、申込みに必要な書類をご案内します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-04",
+        "scenarioId": "SC-LOC-WKY-TANABE-08-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "bank-open_response_2",
+          "requiredSemanticComponents": {
+            "goal": "本人の状況に合う必要書類を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "在留カードと、勤務先がわかるものを持っています。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-05",
+        "scenarioId": "SC-LOC-WKY-TANABE-08-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "ありがとうございます。ほかの確認事項もありますので、担当者と確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-06",
+        "scenarioId": "SC-LOC-WKY-TANABE-08-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "bank-open_response_3",
+          "requiredSemanticComponents": {
+            "goal": "本人の状況に合う必要書類を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "今日中に作れるか、事前に知りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-07",
+        "scenarioId": "SC-LOC-WKY-TANABE-08-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "審査や書類の確認が必要です。その場で開設できるとは限りません。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-08",
+        "scenarioId": "SC-LOC-WKY-TANABE-08-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "bank-open_response_4",
+          "requiredSemanticComponents": {
+            "goal": "本人の状況に合う必要書類を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "わかりました。足りない書類があれば、一覧をもらえますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-09",
+        "scenarioId": "SC-LOC-WKY-TANABE-08-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。確認した条件と、次の申込み方法をご案内します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-10",
+        "scenarioId": "SC-LOC-WKY-TANABE-08-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "bank-open_response_5",
+          "requiredSemanticComponents": {
+            "goal": "本人の状況に合う必要書類を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。勤務先にも必要な口座情報を確認します。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-WKY-TANABE-08-001-SHARED-11",
+        "scenarioId": "SC-LOC-WKY-TANABE-08-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "内容がわからないまま署名せず、疑問点は担当者にお尋ねください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  }
+]
