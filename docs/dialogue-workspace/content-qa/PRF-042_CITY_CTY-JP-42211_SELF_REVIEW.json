@@ -1,0 +1,135 @@
+{
+  "cityId": "CTY-JP-42211",
+  "prefectureId": "PRF-042",
+  "baseline": "a78d996fa03fda71d48d52af45584baa09472c68",
+  "authorAgent": "ureshino",
+  "generatedBy": "AI",
+  "reviewType": "independent_author_full_self_review",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "allFinalTurnsAndTasksRead": true,
+  "metadataFinalReread": true,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "reviewedByNativeSpeaker": false,
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "inputPath": "docs/dialogue-workspace/content-qa/PRF-042_CITY_CTY-JP-42211_INPUT.json",
+  "inputSha256": "a893d39b556bba8b86e08f159fda45883b873d5c0bf81101107bef3050a542ad",
+  "sourcePath": "scripts/dialogue-authoring/prf-042-city-cty-jp-42211.json",
+  "sourceSha256": "36cdd6184353c9a5d3c6af492981616a96c27f6041892acfc9d0612e75e58c3e",
+  "roleAlignmentSha256": "42c21f5f3effd5ff17b262a646c759252886323c1a9bc456452d12fa1301e3ac",
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "scenarioCount": 8,
+  "turnCount": 88,
+  "taskCount": 40,
+  "causalPlots": {
+    "SC-LOC-JP-42211-01-001": "港から宿へのバス利用→整理券の事前購入という誤解解消→浜通りでの番号別運賃確認→大紙幣しかないので事前に小銭→財布保管と降車前準備を決定。",
+    "SC-LOC-JP-42211-02-001": "火曜回収が出張に重なる→土曜からの早期排出を認めない場面条件→金曜以降への変更希望→受付番号と共用場所照会→机は室内保管、携帯で新日程と場所を確認する。",
+    "SC-LOC-JP-42211-03-001": "嗄声で筆談→昨日発症と初診予約なし→呼吸と嚥下の現況を記す→資格確認と非言語呼出し応答→受付近くで待ち、変化時は職員へ即合図。",
+    "SC-LOC-JP-42211-04-001": "港のベンチの鍵→発見時刻と宿らしい札→札だけで所有者を断定しない→待合所への問い合わせ経緯と正確なベンチ位置→連絡先を本人承諾で記録し預かり。",
+    "SC-LOC-JP-42211-05-001": "新居郵便受けに前住人の札→管理者へ交換相談→ローマ字と会社郵便のカタカナを併記→札変更と転送申込みを区別→新旧住所メモと必要物を準備して別手続。",
+    "SC-LOC-JP-42211-06-001": "長い建物名の欄不足で略記→補記欄に正式名→部屋番号の四〇二誤読を四二〇へ訂正→裏面更新済み確認書類と照合→未発送以外の通知は即切替でないと理解し手続へ。",
+    "SC-LOC-JP-42211-07-001": "冷蔵の魚加工土産と翌日帰宅→宿に冷蔵庫なし→同魚の乾燥常温品を比較→常温でも高温日光を避ける表示→今日は購入見送り翌日出発前に再選択。",
+    "SC-LOC-JP-42211-08-001": "周回三十分と十五分希望→池手前まで往復に変更→途中引返し可能だが橋は長周回→池標識の平道を選び坂の展望台を避ける→ベンチ休憩か引返しの判断と帰路を共有。"
+  },
+  "repairsDuringSelfReview": [
+    "Legacy station converted to fictional island bus information counter, supported Bus Terminal/Bus Staff.",
+    "Park NPC job aligned to Park Staff.",
+    "Postal address/nameplate story kept distinct from bank formal-building-name and transposed-room-number correction.",
+    "Hospital keeps nursing intake and handoff without diagnosis or reserved appointment guarantee."
+  ],
+  "checks": {
+    "exact11TurnsEach": true,
+    "fiveSpecificTasksEach": true,
+    "japaneseOnlyTurns": true,
+    "noLevelGates": true,
+    "allPlayerTurnsDistinctWithinCity": true,
+    "causalProgressionIndividuallyReviewed": true,
+    "roleAlignmentIndividuallyReviewed": true,
+    "closureIndividuallyReviewed": true,
+    "noCrossReading": true
+  },
+  "scenarios": [
+    {
+      "scenarioId": "SC-LOC-JP-42211-01-001",
+      "inputRuntimeSha256": "6c4f09a105191e4e53a4bf561f911a1771f4a28554aa9257e2f3d38badac5da2",
+      "sourceScenarioSha256": "4f18f6bf989112b7f321430e479d51951db38f1b2e975ebda1a7a083c42ac97e",
+      "causalPlot": "港から宿へのバス利用→整理券の事前購入という誤解解消→浜通りでの番号別運賃確認→大紙幣しかないので事前に小銭→財布保管と降車前準備を決定。",
+      "tasksAlignedWithPlayerTurns": true,
+      "roleFinding": "Island bus counter replaces legacy rail station context.",
+      "selfReviewDecision": "accepted_ai_self_review_only"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-42211-02-001",
+      "inputRuntimeSha256": "0073502e40360ea2aa4f5c33c3018f8df03b43abcee85fbdeb43e97b9e4370fc",
+      "sourceScenarioSha256": "cbb504204dca4b38708e62a45082be33b2f1001a6246ca92096a0618c0c02a4b",
+      "causalPlot": "火曜回収が出張に重なる→土曜からの早期排出を認めない場面条件→金曜以降への変更希望→受付番号と共用場所照会→机は室内保管、携帯で新日程と場所を確認する。",
+      "tasksAlignedWithPlayerTurns": true,
+      "roleFinding": "Matches venue role; all operator information remains simulated.",
+      "selfReviewDecision": "accepted_ai_self_review_only"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-42211-03-001",
+      "inputRuntimeSha256": "b612814d9449b981848932f4e742c61a556dcb6539cd4471c6e757fd99ee971e",
+      "sourceScenarioSha256": "852c057a6f67610ee3f24fe8061f8a58782b9f8728f0d1960e6aee224b9f7de1",
+      "causalPlot": "嗄声で筆談→昨日発症と初診予約なし→呼吸と嚥下の現況を記す→資格確認と非言語呼出し応答→受付近くで待ち、変化時は職員へ即合図。",
+      "tasksAlignedWithPlayerTurns": true,
+      "roleFinding": "Matches venue role; all operator information remains simulated.",
+      "selfReviewDecision": "accepted_ai_self_review_only"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-42211-04-001",
+      "inputRuntimeSha256": "711d8b6c6e58194888403762d7074251ef247254baad1e484a6341fb6679d1bd",
+      "sourceScenarioSha256": "6ea889e29be273815f1ef7990e99fcc2d9ed8a9bafc9162121b4c14112488f4a",
+      "causalPlot": "港のベンチの鍵→発見時刻と宿らしい札→札だけで所有者を断定しない→待合所への問い合わせ経緯と正確なベンチ位置→連絡先を本人承諾で記録し預かり。",
+      "tasksAlignedWithPlayerTurns": true,
+      "roleFinding": "Matches venue role; all operator information remains simulated.",
+      "selfReviewDecision": "accepted_ai_self_review_only"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-42211-05-001",
+      "inputRuntimeSha256": "176b66097f6c0dd886aabfb26f7fdcafcfd6b6918611bc576e93635a1ed0a45a",
+      "sourceScenarioSha256": "e3e16a71412e228a559a46e4f8a1b1d3ad2411188a321d448e0ef6da8d61434a",
+      "causalPlot": "新居郵便受けに前住人の札→管理者へ交換相談→ローマ字と会社郵便のカタカナを併記→札変更と転送申込みを区別→新旧住所メモと必要物を準備して別手続。",
+      "tasksAlignedWithPlayerTurns": true,
+      "roleFinding": "Matches venue role; all operator information remains simulated.",
+      "selfReviewDecision": "accepted_ai_self_review_only"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-42211-06-001",
+      "inputRuntimeSha256": "a9cc22273c7eae4821717f8c830c4d13037dd66c195d42c67b148c30a7ea16e1",
+      "sourceScenarioSha256": "6529f7447b83ee85deb79f779af7e0322ab306d8020def3e8c40641d884e327f",
+      "causalPlot": "長い建物名の欄不足で略記→補記欄に正式名→部屋番号の四〇二誤読を四二〇へ訂正→裏面更新済み確認書類と照合→未発送以外の通知は即切替でないと理解し手続へ。",
+      "tasksAlignedWithPlayerTurns": true,
+      "roleFinding": "Matches venue role; all operator information remains simulated.",
+      "selfReviewDecision": "accepted_ai_self_review_only"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-42211-07-001",
+      "inputRuntimeSha256": "1b48e9a8ce4b23bcfeacb0905f9273f5697c9e566bb2b7bc79f9f9ee09f26fe7",
+      "sourceScenarioSha256": "d9d68e7114831cbfee16f73623327b09d3c51a8b06f42118b3aea5973147ee40",
+      "causalPlot": "冷蔵の魚加工土産と翌日帰宅→宿に冷蔵庫なし→同魚の乾燥常温品を比較→常温でも高温日光を避ける表示→今日は購入見送り翌日出発前に再選択。",
+      "tasksAlignedWithPlayerTurns": true,
+      "roleFinding": "Matches venue role; all operator information remains simulated.",
+      "selfReviewDecision": "accepted_ai_self_review_only"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-42211-08-001",
+      "inputRuntimeSha256": "5e496a9e3f5979efdbacc7f2d1a5db306e427a4a6de39d8a4b3d0dd88f67c93a",
+      "sourceScenarioSha256": "55fdbc68acf4651cd0f899ffb9de7f9809c4f6ccd8a449747fa1741a7be71eea",
+      "causalPlot": "周回三十分と十五分希望→池手前まで往復に変更→途中引返し可能だが橋は長周回→池標識の平道を選び坂の展望台を避ける→ベンチ休憩か引返しの判断と帰路を共有。",
+      "tasksAlignedWithPlayerTurns": true,
+      "roleFinding": "Park Staff supports paths and rest locations.",
+      "selfReviewDecision": "accepted_ai_self_review_only"
+    }
+  ]
+}
