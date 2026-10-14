@@ -1,0 +1,2420 @@
+[
+  {
+    "scenario": {
+      "id": "SC-HRS-HATSUKAICHI-001",
+      "name": "参拝と御朱印の案内を確認する",
+      "locationId": "LOC-HRS-HATSUKAICHI-01",
+      "cityId": "CTY-HRS-HATSUKAICHI",
+      "locationType": "Other",
+      "type": "Travel",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "廿日市市の学習用場面で、受付方法と境内のルールを確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "受付方法と境内のルールを確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": "Quay ban omamori: chon loai phu ho, cach cau nguyen, ema.",
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "location": {
+      "id": "LOC-HRS-HATSUKAICHI-01",
+      "name": "Hatsukaichi Shrine Omamori Stand",
+      "nameJa": "廜日市神社お守り授与所",
+      "cityId": "CTY-HRS-HATSUKAICHI",
+      "category": "Shrine / Temple",
+      "type": "Tourism",
+      "npcJob": "Shrine Staff",
+      "defaultNpcId": "NPC-HRS-HATSUKAICHI-001",
+      "description": "Quay ban omamori: chon loai phu ho, cach cau nguyen, ema.",
+      "order": 1,
+      "status": "Active",
+      "importance": "Main",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": [
+        "Chon loai phu ho tại 神社お守り授与所 (Hatsukaichi) (https://app.notion.com/p/Chon-loai-phu-ho-t-i-Hatsukaichi-3be70421d961812cbd84c6214482db0e?pvs=21)"
+      ]
+    },
+    "runtime": {
+      "shared": [
+        {
+          "id": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-01",
+          "scenarioId": "SC-HRS-HATSUKAICHI-001",
+          "turnOrder": 1,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "こんにちは。どのようなご案内をご希望ですか。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-02",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-02",
+          "scenarioId": "SC-HRS-HATSUKAICHI-001",
+          "turnOrder": 2,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "shrine_response_1",
+            "requiredSemanticComponents": {
+              "goal": "受付方法と境内のルールを確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "廿日市市を訪れています。参拝と御朱印について、初めてなので教えてください。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-03",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-03",
+          "scenarioId": "SC-HRS-HATSUKAICHI-001",
+          "turnOrder": 3,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "受付の案内をご覧ください。まず何を確認したいですか。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-04",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-04",
+          "scenarioId": "SC-HRS-HATSUKAICHI-001",
+          "turnOrder": 4,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "shrine_response_2",
+            "requiredSemanticComponents": {
+              "goal": "受付方法と境内のルールを確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "御朱印帳を持っていません。対応方法を聞きたいです。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-05",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-05",
+          "scenarioId": "SC-HRS-HATSUKAICHI-001",
+          "turnOrder": 5,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "今の受付方法と、用意できるものを確認しましょう。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-06",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-06",
+          "scenarioId": "SC-HRS-HATSUKAICHI-001",
+          "turnOrder": 6,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "shrine_response_3",
+            "requiredSemanticComponents": {
+              "goal": "受付方法と境内のルールを確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "写真を撮ってもよい場所は、どう確認しますか。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-07",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-07",
+          "scenarioId": "SC-HRS-HATSUKAICHI-001",
+          "turnOrder": 7,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "場所ごとの表示をご覧ください。ほかの参拝者の妨げにならないようご配慮ください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-08",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-08",
+          "scenarioId": "SC-HRS-HATSUKAICHI-001",
+          "turnOrder": 8,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "shrine_response_4",
+            "requiredSemanticComponents": {
+              "goal": "受付方法と境内のルールを確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "順番を待つ間に、気をつけることも教えてください。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-09",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-09",
+          "scenarioId": "SC-HRS-HATSUKAICHI-001",
+          "turnOrder": 9,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "案内された列でお待ちください。立入禁止の場所には入らないでください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-10",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-10",
+          "scenarioId": "SC-HRS-HATSUKAICHI-001",
+          "turnOrder": 10,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "shrine_response_5",
+            "requiredSemanticComponents": {
+              "goal": "受付方法と境内のルールを確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "ありがとうございます。受付の条件を確認してからお願いします。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-11",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-HRS-HATSUKAICHI-001-SHARED-11",
+          "scenarioId": "SC-HRS-HATSUKAICHI-001",
+          "turnOrder": 11,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "わからないことがあれば、受付の前にお尋ねください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": null,
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        }
+      ],
+      "authoring": {
+        "locale": "ja",
+        "recipe": "shrine",
+        "cluster": "CLUSTER_11_CHUGOKU_2026-09-30",
+        "contentScope": "simulated_learning_scenario",
+        "nativeSpeakerReviewed": false,
+        "translationState": "deferred_until_all_japanese_complete"
+      }
+    },
+    "runtimeSha256": "88e820bc30ca08eb8b6dabafe5cd11feab8981e2afc84523244f2f57f80e80e3"
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-HRS-HATSUKAICHI-02-001",
+      "name": "商品を比較して選ぶ",
+      "locationId": "LOC-HRS-HATSUKAICHI-02",
+      "cityId": "CTY-HRS-HATSUKAICHI",
+      "locationType": "Shop",
+      "type": "Travel",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "廿日市市の学習用場面で、用途と予算に合う商品を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "用途と予算に合う商品を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "location": {
+      "id": "LOC-HRS-HATSUKAICHI-02",
+      "name": "Hatsukaichi Souvenir Sweets Counter",
+      "nameJa": "廜日市銘菓みやげ売場",
+      "cityId": "CTY-HRS-HATSUKAICHI",
+      "category": "Shopping",
+      "type": "Tourism",
+      "npcJob": "Souvenir Shop Staff",
+      "defaultNpcId": "NPC-HRS-HATSUKAICHI-002",
+      "description": "Quay banh dac san: hop qua, han dung, so luong, goi rieng.",
+      "order": 2,
+      "status": "Active",
+      "importance": "Secondary",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "runtime": {
+      "shared": [
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-01",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-02-001",
+          "turnOrder": 1,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "いらっしゃいませ。何をお探しですか。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-02",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-02",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-02-001",
+          "turnOrder": 2,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "shop-compare_response_1",
+            "requiredSemanticComponents": {
+              "goal": "用途と予算に合う商品を確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "廿日市市で使う日用品を探しています。この二つの違いを教えてください。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-03",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-03",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-02-001",
+          "turnOrder": 3,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "どのような使い方を予定していますか。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-04",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-04",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-02-001",
+          "turnOrder": 4,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "shop-compare_response_2",
+            "requiredSemanticComponents": {
+              "goal": "用途と予算に合う商品を確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "毎日使いたいので、手入れが簡単なものがよいです。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-05",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-05",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-02-001",
+          "turnOrder": 5,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "表示を見ながら、素材とお手入れの方法を比べましょう。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-06",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-06",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-02-001",
+          "turnOrder": 6,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "shop-compare_response_3",
+            "requiredSemanticComponents": {
+              "goal": "用途と予算に合う商品を確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "持ち運びもしやすいほうがよいです。重さを確認できますか。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-07",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-07",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-02-001",
+          "turnOrder": 7,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "はい。サイズと重さを確認し、可能であれば実物もご覧いただけます。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-08",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-08",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-02-001",
+          "turnOrder": 8,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "shop-compare_response_4",
+            "requiredSemanticComponents": {
+              "goal": "用途と予算に合う商品を確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "予算はこのくらいです。追加で必要な物はありますか。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-09",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-09",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-02-001",
+          "turnOrder": 9,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "付属品の有無と合計額を、購入前に確認しましょう。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-10",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-10",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-02-001",
+          "turnOrder": 10,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "shop-compare_response_5",
+            "requiredSemanticComponents": {
+              "goal": "用途と予算に合う商品を確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "ありがとうございます。条件を比べてから決めます。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-11",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-02-001-SHARED-11",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-02-001",
+          "turnOrder": 11,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "気になる点があれば、遠慮なくお尋ねください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": null,
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        }
+      ],
+      "authoring": {
+        "locale": "ja",
+        "recipe": "shop-compare",
+        "cluster": "CLUSTER_11_CHUGOKU_2026-09-30",
+        "contentScope": "simulated_learning_scenario",
+        "nativeSpeakerReviewed": false,
+        "translationState": "deferred_until_all_japanese_complete"
+      }
+    },
+    "runtimeSha256": "7e33fbf57527e42dc10ea5754993bc1316e430d56e820e182e0e50773c278243"
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-HRS-HATSUKAICHI-03-001",
+      "name": "機械作業前に停止と報告の手順を確認する",
+      "locationId": "LOC-HRS-HATSUKAICHI-03",
+      "cityId": "CTY-HRS-HATSUKAICHI",
+      "locationType": "Construction Site",
+      "type": "Work",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "廿日市市の学習用場面で、機械の操作権限と異常時の対応を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "機械の操作権限と異常時の対応を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "location": {
+      "id": "LOC-HRS-HATSUKAICHI-03",
+      "name": "Hatsukaichi Woodworking Shop",
+      "nameJa": "廜日市木工所",
+      "cityId": "CTY-HRS-HATSUKAICHI",
+      "category": "Construction Site",
+      "type": "Workplace",
+      "npcJob": "Craftsman",
+      "defaultNpcId": "NPC-HRS-HATSUKAICHI-003",
+      "description": "Xuong go: cat go, cha nham, keo, an toan may.",
+      "order": 3,
+      "status": "Active",
+      "importance": "Secondary",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "runtime": {
+      "shared": [
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-01",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-03-001",
+          "turnOrder": 1,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "おはようございます。機械に触る前に説明を聞いてください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-02",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-02",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-03-001",
+          "turnOrder": 2,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "work-machine_response_1",
+            "requiredSemanticComponents": {
+              "goal": "機械の操作権限と異常時の対応を確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "廿日市市のこの現場では初めてです。自分が操作してよい範囲を教えてください。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-03",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-03",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-03-001",
+          "turnOrder": 3,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "担当する操作と、操作してはいけない部分を確認しましょう。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-04",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-04",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-03-001",
+          "turnOrder": 4,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "work-machine_response_2",
+            "requiredSemanticComponents": {
+              "goal": "機械の操作権限と異常時の対応を確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "動いているときに物が引っかかったら、どうすればよいですか。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-05",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-05",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-03-001",
+          "turnOrder": 5,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "手を入れず、現場の停止手順に従って責任者へ報告してください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-06",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-06",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-03-001",
+          "turnOrder": 6,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "work-machine_response_3",
+            "requiredSemanticComponents": {
+              "goal": "機械の操作権限と異常時の対応を確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "止まったように見えても、自分で取り除かないのですね。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-07",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-07",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-03-001",
+          "turnOrder": 7,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "はい。再始動の防止など、必要な安全確認を担当者が行います。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-08",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-08",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-03-001",
+          "turnOrder": 8,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "work-machine_response_4",
+            "requiredSemanticComponents": {
+              "goal": "機械の操作権限と異常時の対応を確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "非常停止の位置と連絡先も、確認できますか。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-09",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-09",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-03-001",
+          "turnOrder": 9,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "実物で確認しましょう。非常時の行動と、通常の停止方法は区別してください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-10",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-10",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-03-001",
+          "turnOrder": 10,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "work-machine_response_5",
+            "requiredSemanticComponents": {
+              "goal": "機械の操作権限と異常時の対応を確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "わかりました。説明を受け、操作を確認してから作業します。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-11",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-03-001-SHARED-11",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-03-001",
+          "turnOrder": 11,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "不明なことが残っている場合は始めず、必ず質問してください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": null,
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        }
+      ],
+      "authoring": {
+        "locale": "ja",
+        "recipe": "work-machine",
+        "cluster": "CLUSTER_11_CHUGOKU_2026-09-30",
+        "contentScope": "simulated_learning_scenario",
+        "nativeSpeakerReviewed": false,
+        "translationState": "deferred_until_all_japanese_complete"
+      }
+    },
+    "runtimeSha256": "77bc71949a4b34a8aaf868ec9576e1112749f4da53f4f1a28ec01bd72e49c671"
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-HRS-HATSUKAICHI-04-001",
+      "name": "値札と商品の対応を確認する",
+      "locationId": "LOC-HRS-HATSUKAICHI-04",
+      "cityId": "CTY-HRS-HATSUKAICHI",
+      "locationType": "Supermarket",
+      "type": "Shopping",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "廿日市市の学習用場面で、価格と対象商品を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "価格と対象商品を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "location": {
+      "id": "LOC-HRS-HATSUKAICHI-04",
+      "name": "Hatsukaichi Vegetable Stall",
+      "nameJa": "廜日市青果売場",
+      "cityId": "CTY-HRS-HATSUKAICHI",
+      "category": "Supermarket",
+      "type": "Shopping",
+      "npcJob": "Greengrocer",
+      "defaultNpcId": null,
+      "description": "Quay rau: rau theo mua, so luong, cach bao quan, gia.",
+      "order": 4,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "runtime": {
+      "shared": [
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-01",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-04-001",
+          "turnOrder": 1,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "こんにちは。何かご案内しましょうか。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-02",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-02",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-04-001",
+          "turnOrder": 2,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "supermarket-price_response_1",
+            "requiredSemanticComponents": {
+              "goal": "価格と対象商品を確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "廿日市市で日用品を買いに来ました。この値札は、どの商品に対応していますか。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-03",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-03",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-04-001",
+          "turnOrder": 3,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "商品名と容量を照らし合わせて確認しましょう。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-04",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-04",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-04-001",
+          "turnOrder": 4,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "supermarket-price_response_2",
+            "requiredSemanticComponents": {
+              "goal": "価格と対象商品を確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "大きい袋と小さい袋で、値段が違うのですね。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-05",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-05",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-04-001",
+          "turnOrder": 5,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "はい。値札の容量や個数も、商品と一致しているか確認してください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-06",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-06",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-04-001",
+          "turnOrder": 6,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "supermarket-price_response_3",
+            "requiredSemanticComponents": {
+              "goal": "価格と対象商品を確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "割引の条件が書いてありますが、会員だけが対象ですか。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-07",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-07",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-04-001",
+          "turnOrder": 7,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "この案内の条件を確認します。対象期間や対象商品もご覧ください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-08",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-08",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-04-001",
+          "turnOrder": 8,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "supermarket-price_response_4",
+            "requiredSemanticComponents": {
+              "goal": "価格と対象商品を確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "会員ではないので、通常の価格を知りたいです。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-09",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-09",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-04-001",
+          "turnOrder": 9,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "お会計前に、通常価格と適用される割引を確認しましょう。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-10",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-10",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-04-001",
+          "turnOrder": 10,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "supermarket-price_response_5",
+            "requiredSemanticComponents": {
+              "goal": "価格と対象商品を確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "ありがとうございます。必要な量と価格を比べて選びます。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-11",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-04-001-SHARED-11",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-04-001",
+          "turnOrder": 11,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "お会計の内容が気になる場合は、レシートを持ってご相談ください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": null,
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        }
+      ],
+      "authoring": {
+        "locale": "ja",
+        "recipe": "supermarket-price",
+        "cluster": "CLUSTER_11_CHUGOKU_2026-09-30",
+        "contentScope": "simulated_learning_scenario",
+        "nativeSpeakerReviewed": false,
+        "translationState": "deferred_until_all_japanese_complete"
+      }
+    },
+    "runtimeSha256": "8f29475679cf3f21b31bba265270188b4135fa72fcf9f1db9c3cd3485221af96"
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-HRS-HATSUKAICHI-05-001",
+      "name": "動物園の見学経路を相談する",
+      "locationId": "LOC-HRS-HATSUKAICHI-05",
+      "cityId": "CTY-HRS-HATSUKAICHI",
+      "locationType": "Other",
+      "type": "Social",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "廿日市市の学習用場面で、見学の希望と園内ルールを確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "見学の希望と園内ルールを確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "location": {
+      "id": "LOC-HRS-HATSUKAICHI-05",
+      "name": "Hatsukaichi Aquarium Show Hall",
+      "nameJa": "廜日市水族館ショー会場",
+      "cityId": "CTY-HRS-HATSUKAICHI",
+      "category": "Amusement Park",
+      "type": "Entertainment",
+      "npcJob": "Aquarium Staff",
+      "defaultNpcId": null,
+      "description": "Khu dien o thuy cung: suat dien, cho ngoi uot, cho ca an.",
+      "order": 5,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2.5D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "runtime": {
+      "shared": [
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-01",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-05-001",
+          "turnOrder": 1,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "こんにちは。園内のご案内ですか。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-02",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-02",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-05-001",
+          "turnOrder": 2,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "zoo_response_1",
+            "requiredSemanticComponents": {
+              "goal": "見学の希望と園内ルールを確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "廿日市市を旅行しています。短い時間で見学したいです。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-03",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-03",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-05-001",
+          "turnOrder": 3,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "特に見たい動物や、使える時間を教えてください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-04",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-04",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-05-001",
+          "turnOrder": 4,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "zoo_response_2",
+            "requiredSemanticComponents": {
+              "goal": "見学の希望と園内ルールを確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "一時間ほどです。休憩を入れながら見たいです。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-05",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-05",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-05-001",
+          "turnOrder": 5,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "案内図で、見学できる場所と休憩場所を確認しましょう。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-06",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-06",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-05-001",
+          "turnOrder": 6,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "zoo_response_3",
+            "requiredSemanticComponents": {
+              "goal": "見学の希望と園内ルールを確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "動物に食べ物をあげてもよいですか。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-07",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-07",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-05-001",
+          "turnOrder": 7,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "勝手にあげず、園内のルールと職員の案内に従ってください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-08",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-08",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-05-001",
+          "turnOrder": 8,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "zoo_response_4",
+            "requiredSemanticComponents": {
+              "goal": "見学の希望と園内ルールを確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "写真を撮るときの注意も知りたいです。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-09",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-09",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-05-001",
+          "turnOrder": 9,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "場所ごとの掲示を確認し、禁止されている撮影方法は使わないでください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-10",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-10",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-05-001",
+          "turnOrder": 10,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "zoo_response_5",
+            "requiredSemanticComponents": {
+              "goal": "見学の希望と園内ルールを確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "わかりました。ルールを確認しながら見学します。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-11",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-05-001-SHARED-11",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-05-001",
+          "turnOrder": 11,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "帰る時刻も確かめて、無理のない経路でお楽しみください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": null,
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        }
+      ],
+      "authoring": {
+        "locale": "ja",
+        "recipe": "zoo",
+        "cluster": "CLUSTER_11_CHUGOKU_2026-09-30",
+        "contentScope": "simulated_learning_scenario",
+        "nativeSpeakerReviewed": false,
+        "translationState": "deferred_until_all_japanese_complete"
+      }
+    },
+    "runtimeSha256": "241593c6881772b2889acbe24ff3e16279e65088d1b873f146c190adec77666c"
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-HRS-HATSUKAICHI-06-001",
+      "name": "展示施設の見学方法を確認する",
+      "locationId": "LOC-HRS-HATSUKAICHI-06",
+      "cityId": "CTY-HRS-HATSUKAICHI",
+      "locationType": "Other",
+      "type": "Study",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "廿日市市の学習用場面で、展示の説明と撮影ルールを確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "展示の説明と撮影ルールを確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "location": {
+      "id": "LOC-HRS-HATSUKAICHI-06",
+      "name": "Hatsukaichi Open-air Folk House Museum",
+      "nameJa": "廜日市古民家園",
+      "cityId": "CTY-HRS-HATSUKAICHI",
+      "category": "Museum",
+      "type": "Culture",
+      "npcJob": "Museum Guide",
+      "defaultNpcId": null,
+      "description": "Khu nha co ngoai troi: cau truc nha, doi song xua, coi giay.",
+      "order": 6,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2.5D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "runtime": {
+      "shared": [
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-01",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-06-001",
+          "turnOrder": 1,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "こんにちは。展示のご案内ですか。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-02",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-02",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-06-001",
+          "turnOrder": 2,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "museum_response_1",
+            "requiredSemanticComponents": {
+              "goal": "展示の説明と撮影ルールを確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "廿日市市の歴史や文化について知りたいです。初めて見学します。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-03",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-03",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-06-001",
+          "turnOrder": 3,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "特に気になる展示はありますか。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-04",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-04",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-06-001",
+          "turnOrder": 4,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "museum_response_2",
+            "requiredSemanticComponents": {
+              "goal": "展示の説明と撮影ルールを確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "生活に関する展示を見たいです。説明が難しいときは質問できますか。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-05",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-05",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-06-001",
+          "turnOrder": 5,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "はい。用意されている解説や、質問できる方法を確認しましょう。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-06",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-06",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-06-001",
+          "turnOrder": 6,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "museum_response_3",
+            "requiredSemanticComponents": {
+              "goal": "展示の説明と撮影ルールを確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "写真を撮ってもよい場所は、どう見分けますか。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-07",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-07",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-06-001",
+          "turnOrder": 7,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "展示ごとの表示をご覧ください。撮影が認められていても、ほかの方に配慮してください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-08",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-08",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-06-001",
+          "turnOrder": 8,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "museum_response_4",
+            "requiredSemanticComponents": {
+              "goal": "展示の説明と撮影ルールを確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "荷物を預ける場所があるかも知りたいです。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-09",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-09",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-06-001",
+          "turnOrder": 9,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "利用できる設備と条件を確認します。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-10",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-10",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-06-001",
+          "turnOrder": 10,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "museum_response_5",
+            "requiredSemanticComponents": {
+              "goal": "展示の説明と撮影ルールを確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "ありがとうございます。案内を確認してから見学します。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-11",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-06-001-SHARED-11",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-06-001",
+          "turnOrder": 11,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "展示物には指示なく触れず、ご不明な点は職員にお尋ねください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": null,
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        }
+      ],
+      "authoring": {
+        "locale": "ja",
+        "recipe": "museum",
+        "cluster": "CLUSTER_11_CHUGOKU_2026-09-30",
+        "contentScope": "simulated_learning_scenario",
+        "nativeSpeakerReviewed": false,
+        "translationState": "deferred_until_all_japanese_complete"
+      }
+    },
+    "runtimeSha256": "08d4c045c825c77f013ba1a01661c4822ca255f170efffa2a4a88b769771f759"
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-HRS-HATSUKAICHI-07-001",
+      "name": "検査の基準と不良品の報告を確認する",
+      "locationId": "LOC-HRS-HATSUKAICHI-07",
+      "cityId": "CTY-HRS-HATSUKAICHI",
+      "locationType": "Construction Site",
+      "type": "Work",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "廿日市市の学習用場面で、検査方法と判定できない品の扱いを確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "検査方法と判定できない品の扱いを確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "location": {
+      "id": "LOC-HRS-HATSUKAICHI-07",
+      "name": "Hatsukaichi Precision Parts Inspection Room",
+      "nameJa": "廜日市精密部品検査室",
+      "cityId": "CTY-HRS-HATSUKAICHI",
+      "category": "Construction Site",
+      "type": "Workplace",
+      "npcJob": "Factory Worker",
+      "defaultNpcId": null,
+      "description": "Phong kiem tra chi tiet chinh xac: do, ghi bieu, hang NG, bao cao.",
+      "order": 7,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "runtime": {
+      "shared": [
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-01",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-07-001",
+          "turnOrder": 1,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "おはようございます。今日の検査について確認します。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-02",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-02",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-07-001",
+          "turnOrder": 2,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "work-inspect_response_1",
+            "requiredSemanticComponents": {
+              "goal": "検査方法と判定できない品の扱いを確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "廿日市市のこの現場では初めてです。検査の基準を見せてください。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-03",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-03",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-07-001",
+          "turnOrder": 3,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "基準書と見本を使って説明します。測定器の使い方も確認しましょう。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-04",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-04",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-07-001",
+          "turnOrder": 4,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "work-inspect_response_2",
+            "requiredSemanticComponents": {
+              "goal": "検査方法と判定できない品の扱いを確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "数値が基準の境目にあるとき、自分で判断してよいですか。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-05",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-05",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-07-001",
+          "turnOrder": 5,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "迷う場合は責任者に確認してください。測定方法を勝手に変えないでください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-06",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-06",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-07-001",
+          "turnOrder": 6,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "work-inspect_response_3",
+            "requiredSemanticComponents": {
+              "goal": "検査方法と判定できない品の扱いを確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "不良の疑いがある物は、どこに置きますか。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-07",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-07",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-07-001",
+          "turnOrder": 7,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "決められた場所と表示の方法を確認します。良品に混ぜないでください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-08",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-08",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-07-001",
+          "turnOrder": 8,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "work-inspect_response_4",
+            "requiredSemanticComponents": {
+              "goal": "検査方法と判定できない品の扱いを確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "記録には、何を書けばよいですか。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-09",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-09",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-07-001",
+          "turnOrder": 9,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "現場の記録様式で、必要な項目と記入方法を説明します。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-10",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-10",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-07-001",
+          "turnOrder": 10,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "work-inspect_response_5",
+            "requiredSemanticComponents": {
+              "goal": "検査方法と判定できない品の扱いを確認する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "わかりました。測定と記録の方法を確認してから始めます。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-11",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-07-001-SHARED-11",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-07-001",
+          "turnOrder": 11,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "検査で気になることがあれば、作業を止めて確認してください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": null,
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        }
+      ],
+      "authoring": {
+        "locale": "ja",
+        "recipe": "work-inspect",
+        "cluster": "CLUSTER_11_CHUGOKU_2026-09-30",
+        "contentScope": "simulated_learning_scenario",
+        "nativeSpeakerReviewed": false,
+        "translationState": "deferred_until_all_japanese_complete"
+      }
+    },
+    "runtimeSha256": "1f3b3ece397c8d35dca295930dde955be6eda9745ea8a43e51ff3976962950a6"
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-HRS-HATSUKAICHI-08-001",
+      "name": "アレルギーについて注文前に相談する",
+      "locationId": "LOC-HRS-HATSUKAICHI-08",
+      "cityId": "CTY-HRS-HATSUKAICHI",
+      "locationType": "Restaurant",
+      "type": "Daily Life",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "廿日市市の学習用場面で、材料と調理方法を確認して注文を判断する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "材料と調理方法を確認して注文を判断する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "location": {
+      "id": "LOC-HRS-HATSUKAICHI-08",
+      "name": "Hatsukaichi Evening Izakaya",
+      "nameJa": "廜日市居酒屋",
+      "cityId": "CTY-HRS-HATSUKAICHI",
+      "category": "Izakaya",
+      "type": "Food",
+      "npcJob": "Restaurant Staff",
+      "defaultNpcId": null,
+      "description": "Izakaya buoi toi: goi mon nham, do uong, chia tien, gio cuoi.",
+      "order": 8,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "runtime": {
+      "shared": [
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-01",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-08-001",
+          "turnOrder": 1,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "いらっしゃいませ。何をご確認になりたいですか。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-02",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-02",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-08-001",
+          "turnOrder": 2,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "restaurant-allergy_response_1",
+            "requiredSemanticComponents": {
+              "goal": "材料と調理方法を確認して注文を判断する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "廿日市市で食事をしたいのですが、卵のアレルギーがあります。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-03",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-03",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-08-001",
+          "turnOrder": 3,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "調理担当に確認します。ソースや衣に含まれる場合もあるため、料理名を教えてください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-04",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-04",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-08-001",
+          "turnOrder": 4,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "restaurant-allergy_response_2",
+            "requiredSemanticComponents": {
+              "goal": "材料と調理方法を確認して注文を判断する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "この料理です。調理器具の共用についても確認できますか。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-05",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-05",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-08-001",
+          "turnOrder": 5,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "はい。確認できる範囲をお伝えしますが、安全を保証できない場合もあります。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-06",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-06",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-08-001",
+          "turnOrder": 6,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "restaurant-allergy_response_3",
+            "requiredSemanticComponents": {
+              "goal": "材料と調理方法を確認して注文を判断する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "確認が難しい場合は、注文をやめても大丈夫ですか。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-07",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-07",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-08-001",
+          "turnOrder": 7,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "もちろんです。判断できないまま食べず、安心して選べるものをお探しください。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-08",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-08",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-08-001",
+          "turnOrder": 8,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "restaurant-allergy_response_4",
+            "requiredSemanticComponents": {
+              "goal": "材料と調理方法を確認して注文を判断する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "ありがとうございます。確認した内容を、ゆっくり説明してください。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-09",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-09",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-08-001",
+          "turnOrder": 9,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "承知しました。別の料理も候補にしておきますか。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-10",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-10",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-08-001",
+          "turnOrder": 10,
+          "speaker": "PLAYER",
+          "npc": null,
+          "player": {
+            "communicativeIntent": "restaurant-allergy_response_5",
+            "requiredSemanticComponents": {
+              "goal": "材料と調理方法を確認して注文を判断する"
+            },
+            "optionalSemanticComponents": {},
+            "recommendedAnswerJa": "はい。ただ、どれも条件を確認してから決めます。",
+            "recommendedAnswerFurigana": null,
+            "acceptableExamples": [],
+            "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+            "translations": {},
+            "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+            "unexpectedIntents": [],
+            "allowMinorGrammarErrors": true,
+            "targetGrammarIds": [],
+            "targetVocabularyIds": []
+          },
+          "nextDialogueId": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-11",
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        },
+        {
+          "id": "DLG-SC-LOC-HRS-HATSUKAICHI-08-001-SHARED-11",
+          "scenarioId": "SC-LOC-HRS-HATSUKAICHI-08-001",
+          "turnOrder": 11,
+          "speaker": "NPC",
+          "npc": {
+            "textJa": "少々お待ちください。確認できた点と、確認できない点を分けてお伝えします。",
+            "furigana": null,
+            "translationVi": null,
+            "translations": {}
+          },
+          "player": null,
+          "nextDialogueId": null,
+          "status": "Japanese draft",
+          "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+          "mappingConfidence": null
+        }
+      ],
+      "authoring": {
+        "locale": "ja",
+        "recipe": "restaurant-allergy",
+        "cluster": "CLUSTER_11_CHUGOKU_2026-09-30",
+        "contentScope": "simulated_learning_scenario",
+        "nativeSpeakerReviewed": false,
+        "translationState": "deferred_until_all_japanese_complete"
+      }
+    },
+    "runtimeSha256": "401ccd1f2f1f6fd703c7d67b9d9dcf97dec8cb3c55930ba3f8c81e8c484744d5"
+  }
+]
