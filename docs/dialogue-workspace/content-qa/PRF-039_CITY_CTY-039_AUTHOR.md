@@ -1,0 +1,9 @@
+# CTY-039 independent author note
+
+Authored all 21 Kochi-city dialogues from own scenario/location input. No Ehime source, other city authoring or peer prose was read during this unit. Prior session entry, AGENTS.md and supported role registry reads retained; parent supplied verified reservation and persistence evidence.
+
+Distinct causes drive each plot: stale delay information versus luggage reservation, unclear symptom frequency, unused cooler-bag seam, food preservation label, unspecified employer certificate, postal versus sender address, temporary stay, differing sightseeing pace, beach-photo positioning, plant size and carrying, suspect urgent message, missing medicine instructions, mismatched shoe box, hotel date conflict, color-independent meeting description, gift color before wrapping, museum group consultation, changing travel itinerary, separately added food orders, noisy site instructions, and invoice/payee mismatch.
+
+Reread all own premises, eleven turns per scene and five communicative goals. Fixed the known start-date/unknown end-date distinction, made pharmacy dialogue directly addressed by pharmacist, and strengthened NPC handoff leave-taking. Mechanically checked IDs, structure and unique utterances, sentence fragments and task goals within the city. No diagnosis, dosing, eligibility, current price, guaranteed time, route or binding procedure assertions.
+
+Parent supplied primary identity results for 桂浜, 龍河洞 geography, museum and tram operator/stop. Original cave venue lies outside the city and was replaced by generic simulated city nature information, retaining ID. Unverified exact branches genericized. No artwork or UI changes; scene procedures and maps remain simulated. Human, native-speaker and peer reviews remain false. Parent performs integration, corpus validation, commit and remote verification.
