@@ -1,0 +1,60 @@
+{
+  "status": "PROPOSAL_ONLY_NO_REPO_EDITS",
+  "files": {
+    "dialogueRoute": "src/app/world/dialogue/[scenarioId].tsx",
+    "roleArt": "src/components/world/life-assets.ts",
+    "locationBackground": "src/components/world/location-backgrounds.generated.ts",
+    "progression": "src/data/npc-progression.ts"
+  },
+  "functions": {
+    "dialogueIdentity": "npcName inline expression at route line93",
+    "dialogueProgress": "finish line127 consumes location.category",
+    "npcImage": "npcForCategory and npcPresentationForCategory",
+    "scene": "sceneForCategory",
+    "background": "locationBackground checks placeBackground, laundry, assignment category and stable category variant"
+  },
+  "minimalLabelPatch": {
+    "newHelperPath": "src/components/world/npc-role-label.ts",
+    "helperCode": "const jobLabels:Record<string,string>={'Factory Worker':'工場スタッフ','Parking Attendant':'駐輪場スタッフ','Ropeway Staff':'ロープウェイ係員','Laundry Staff':'ランドリースタッフ','Park Staff':'公園スタッフ','Zoo Staff':'動物園スタッフ'};\nexport function npcRoleLabelJa(job?:string|null,categoryLabel?:string|null){return jobLabels[job??'']??categoryLabel??'スタッフ';}\n",
+    "routeImport": "import { npcRoleLabelJa } from '@/components/world/npc-role-label';",
+    "replaceExpression": "npcName=npcCategory?`${npcCategory.ja}さん`:'スタッフ'",
+    "withExpression": "npcName=`${npcRoleLabelJa(location?.npcJob,npcCategory?.ja)}さん`",
+    "preserve": [
+      "category registry/order",
+      "recordNpcScenario category ID",
+      "panels/layout/style",
+      "JLPT locks",
+      "dialogue data/IDs"
+    ]
+  },
+  "artAliasesOptionalProposal": {
+    "function": "npcForCategory / npcPresentationForCategory / sceneForCategory",
+    "mapping": {
+      "Factory": "Construction Site",
+      "Workshop": "Construction Site",
+      "Warehouse": "Construction Site",
+      "Library": "Museum",
+      "Classroom": "Museum"
+    },
+    "recommendation": "Do not blanket apply these aliases without inspecting actual artwork; Factory→Construction Site plausibly supplies worker clothing but construction-specific backdrop may still mismatch factory. Label helper can be implemented independently."
+  },
+  "artFinding": {
+    "actualVisualInspected": false,
+    "reason": "Git objects for landmark/construction-site/station PNGs are LFS pointers; view_image failed invalid image data. Cannot certify guide-specific or generic-worker appearance.",
+    "knownCodeIdentity": "Fallback landmark NPC is category-labelled 観光案内員 by registry; actual pixels unknown. Factory rendered name is 工場スタッフ from category but source art is landmark.",
+    "lfsLandmarkOid": "c545fc10edd250ecbe97ecdb5022c277c5cae82f0adec1c17c56fba5701a8607"
+  },
+  "verificationScope": [
+    "Unit metadata test mapped labels and unmapped fallback, with category registry unchanged",
+    "Actual route compile/import and rendered text helper call",
+    "Existing corrected NPC progression and UI-lock checks",
+    "Optional asset alias tests require actual hydrated image inspection and representative device render"
+  ],
+  "nativeDeviceVerified": false,
+  "peerProseRead": false,
+  "codeHashes": {
+    "src/app/world/dialogue/[scenarioId].tsx": "ee3b6f2c0ee4920d71f48acc5165f3401dc1a7fef52b343f847623c11a66ab41",
+    "src/components/world/life-assets.ts": "b972d45c217e7dfd321264134c48ba3b88cfabdb64aaf1824c05552d45b59d96",
+    "src/components/world/location-backgrounds.generated.ts": "1f6d45466583b63828a016c8acacbc591cf22014539b68220d2492690b182c80"
+  }
+}

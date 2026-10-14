@@ -869,3 +869,13 @@ All101 scenarios in11cities:1111 Japanese turns and505goals independently rewrit
 ## Independent city CTY-TTR-SAKAIMINATO — 2026-10-14
 
 8 existing Japanese scenarios, 88 turns and 40 goals corrected by one independent assigned worker and fully self-read. User instruction uses independent city authors without peer reading; Tottori has five authors and a sixth metadata-only worker with no peer reading. Source/runtime/self-review hashes bind city AI acceptance; real repository adapters and exact Player corpus screening PASS; all7128canonical IDs/links and unrelated runtimes preserved. Native/human/operatorpolicy/translations/device/release remain pending. Separate containingcity commit must be remotely verified before worker advances. Tottori cumulative 32/40.
+
+
+## Tottori independent city completion — 2026-10-14
+
+All40 scenarios in5cities:440 Japanese turns and200goals independently rewritten and fully self-read by five independent city authors; a sixth worker checked only baseline metadata. No peer reading per user directive. Each city has its own containing commit and remote verification gate. Whole-prefecture structural/exact/normalized/near/task/answer/title/recipe checks:zero blockers; all7128canonical IDs preserved. UI lock10/10 and correctedNPC progression PASS. Hash-bound AI self-review acceptance only; native/human/operatorpolicy/device/translation/release pending. Final city commit includes this checkpoint; nextprefecturePRF-032Shimane. IncomingKensetsuweek020andweek021reservation and original runtime backups preserved.
+
+
+## Independent city CTY-TTR-IWAMI — 2026-10-14
+
+8 existing Japanese scenarios, 88 turns and 40 goals corrected by one independent assigned worker and fully self-read. User instruction uses independent city authors without peer reading; Tottori has five authors and a sixth metadata-only worker with no peer reading. Source/runtime/self-review hashes bind city AI acceptance; real repository adapters and exact Player corpus screening PASS; all7128canonical IDs/links and unrelated runtimes preserved. Native/human/operatorpolicy/translations/device/release remain pending. Separate containingcity commit must be remotely verified before worker advances. Tottori cumulative 40/40.
