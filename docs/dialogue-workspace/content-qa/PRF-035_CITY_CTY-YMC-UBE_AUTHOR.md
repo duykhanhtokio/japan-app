@@ -1,0 +1,3 @@
+# CTY-YMC-UBE independent author record
+
+8 fresh fictional Japanese scenarios, 88 alternating turns and 40 unique Player utterances/goals. Own city input and own final source only were read. Full author self-reread completed, including revised water-bottle carrying direction and retaining bags when leaving an arcade queue; rejected source preserved. Factory and Bus Terminal role corrections supplied. Park NPC remains an ordinary pedestrian with limited observational knowledge. Arcade uses supported Amusement Park service category. No peer, human, native speaker or operator review claimed. Root handles integration and durable commit.
