@@ -1,0 +1,33 @@
+{
+  "cityId": "CTY-JP-42211",
+  "corrections": {
+    "LOC-JP-42211-01": {
+      "category": "Bus Terminal",
+      "npcJob": "Bus Staff",
+      "nameJa": "五島のバス案内窓口（架空）",
+      "name": "Gotou Bus Information Counter (Simulated)"
+    },
+    "LOC-JP-42211-08": {
+      "npcJob": "Park Staff"
+    }
+  },
+  "inputSha256": "a893d39b556bba8b86e08f159fda45883b873d5c0bf81101107bef3050a542ad",
+  "sourceSha256": "36cdd6184353c9a5d3c6af492981616a96c27f6041892acfc9d0612e75e58c3e",
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "peerReviewed": false,
+  "findings": [
+    {
+      "scenarioId": "SC-LOC-JP-42211-01-001",
+      "locationId": "LOC-JP-42211-01",
+      "oldMismatch": "Legacy 五島駅/Station/Station Staff risks implying railway infrastructure.",
+      "resolution": "Plausible explicitly fictional island bus information counter using supported Bus Terminal grouping. No actual local railway, route, stop or fare claim."
+    },
+    {
+      "locationId": "LOC-JP-42211-08",
+      "oldMismatch": "Park assigned Community Staff.",
+      "resolution": "Park Staff matches path/rest-point assistance and retained supported Park category."
+    }
+  ],
+  "identityLimit": "All venues and operator procedures in premises are fictional. Existing other 五島 labels denote generic venue context; no real institution identity, local service hours, policy or device certification."
+}
