@@ -1,0 +1,101 @@
+{
+  "cityId": "CTY-JP-42210",
+  "prefectureId": "PRF-042",
+  "status": "independent_ai_self_reviewed",
+  "fullFinalReread": true,
+  "scenarioCount": 8,
+  "turnCount": 88,
+  "taskCount": 40,
+  "sourceSha256": "3a0ba3bc2876454c65da9508de7a2c1e75a3b2f9c2bf38d97b2d592ee7ea287d",
+  "inputSha256": "26f6e28dd14aefc28e5fa3744934f4ece42a9a83e82775f0f3c8bdfffeff6c90",
+  "roleAlignmentSha256": "5e3c17ebc73546822d19fe2a7e96c7f5ce1fec0c0d94ea6e6d9cbe6cf2bbb688",
+  "inputRuntimeSha256": {
+    "SC-LOC-JP-42210-01-001": "2254bd5b2e59600aaa83d3fe29d78fbf7c78ea88183eac0e54bb71612466b034",
+    "SC-LOC-JP-42210-02-001": "1e38ce7b6084a838904ea23f5c30537a3a10f04a97a910fc62c455d78ad14f99",
+    "SC-LOC-JP-42210-03-001": "66fc773ee7ef52a9196bbe64a5ab46000ede16cc25afe39fc4f67aeedfaa9e86",
+    "SC-LOC-JP-42210-04-001": "f9637d6b9bc179de29b8c3787b7258e3fd888d5d36e4ac48c9c9259e21c3a21d",
+    "SC-LOC-JP-42210-05-001": "d95038c9b88c30ff01f4c3ad2d78027044c7f9745fd00b14b1343a7ad91de385",
+    "SC-LOC-JP-42210-06-001": "8697a988f03ea791c1129da074d7661f7c9b27f205d8b90f66758c196c62998f",
+    "SC-LOC-JP-42210-07-001": "48642bb581e00d479a5257a371e1f948d34b383fc158a33e38a71be38a3b348b",
+    "SC-LOC-JP-42210-08-001": "516ef965d8f18bfa1e009a1234e4d80bee4054fb361a4ca2b889081392db550c"
+  },
+  "sourceScenarioSha256": {
+    "SC-LOC-JP-42210-01-001": "ae10223210143a47472c81392a8b2dda7b8606262b4c55fb806b8cace344ce84",
+    "SC-LOC-JP-42210-02-001": "3ffb523e7da47bb4184e2ced211a6fb66096c3a0b5fc1efe0ee36e5e65e44787",
+    "SC-LOC-JP-42210-03-001": "ee4346e0f91b7631095cfe09ca83e2b92829a2f1654f6ba602c3dbfe8294092c",
+    "SC-LOC-JP-42210-04-001": "1fab49614fb96fb5b11cc66dc659cfa1f5d318fe8d9ffbd501d7c2539c0127d2",
+    "SC-LOC-JP-42210-05-001": "5d5374bd1d1555df03b71984f83341c0b42072470f254b431d697c8d7615739d",
+    "SC-LOC-JP-42210-06-001": "421fe011c982d1aa06f2bbfc89cc23a80d525a60257b0a8c4d4fca6b7ccffcb8",
+    "SC-LOC-JP-42210-07-001": "50affc23ac96277546fd1ed1aa6ddd4b175b30e0776756dfe1881deee550ba58",
+    "SC-LOC-JP-42210-08-001": "955197b36c18c982ba43809937bae3979ed777d89d6b930a01f2bed43b44b27e"
+  },
+  "causalPlots": {
+    "SC-LOC-JP-42210-01-001": "港行き利用者が反対方向の遅延札を誤読→便番号と乗り場も混同→往路は乗車受付中→帰りは影響未定→帰路の時間帯と方向で再照会。",
+    "SC-LOC-JP-42210-02-001": "読み聞かせと歌の交流会会場希望→機材と順序を具体化→日時確定より部屋選定を優先→人数と連絡方法確認→会場決定前の確定告知を控える。",
+    "SC-LOC-JP-42210-03-001": "受診証明に病名も必須と思う→午前休理由のみの会社要求を整理→領収書の内容と日付欄が不安→会計へ確認引継ぎ→会社要求確認後に必要書類だけ申込。",
+    "SC-LOC-JP-42210-04-001": "借りた双眼鏡を紛失→岩場ではなく帰路ベンチを候補に→外観は既知製品番号は不明→持ち主返信待ち→借主として連絡先を残し特徴追記。",
+    "SC-LOC-JP-42210-05-001": "夜勤睡眠で不在→未同意隣人への配達を希望→本人窓口受取へ切替→書類なしで来店かつ別保管先→待つだけでは受取不可と理解し準備して本人が行く。",
+    "SC-LOC-JP-42210-06-001": "財布に二社のカード紛失→銀行は自社分だけ停止→番号不明でも本人確認→他社探索の不審暗証番号画面→正規連絡と自社再発行の未完了を分ける。",
+    "SC-LOC-JP-42210-07-001": "昨日の卵Ｍと今日棚札Ｌを混同→レシートでＭ購入を確認→今日札から昨日棚は断定不可→封を剥がした状態を正直に伝える→交換は判断待ちで不可理由も聞く。",
+    "SC-LOC-JP-42210-08-001": "連れと花壇待合せ予定だが疲れる→屋根下の近い休息場所へ変更→以前の待合せ場所とは違うと連絡→階段なし経路を確認→合流と出口の道をまとめる。"
+  },
+  "roleFindings": [
+    {
+      "locationId": "LOC-JP-42210-01",
+      "decision": "Legacy Iki Station/Station Staff label replaced with explicitly fictional island bus information counter. Active NPC_CATEGORIES supports Bus Terminal; no railway or unsupported port category introduced."
+    },
+    {
+      "locationId": "LOC-JP-42210-02",
+      "decision": "Government Officer handles community venue enquiry routing, not automatic reservation acceptance or loud-music permission."
+    },
+    {
+      "locationId": "LOC-JP-42210-03",
+      "decision": "Nurse retains nursing support role; hands receipt/date and document applications to accounting/reception, no disclosure guarantee or certificate issuance."
+    },
+    {
+      "locationId": "LOC-JP-42210-04",
+      "decision": "Police records borrowed-property loss and uncertain serial without claiming ownership or guaranteed recovery."
+    },
+    {
+      "locationId": "LOC-JP-42210-05",
+      "decision": "Postal Clerk refuses to promise unconsented neighbor handoff or immediate retrieval from another holding counter."
+    },
+    {
+      "locationId": "LOC-JP-42210-06",
+      "decision": "Bank Clerk handles own-bank card only, distinguishes stopping from reissue and other-issuer verification."
+    },
+    {
+      "locationId": "LOC-JP-42210-07",
+      "decision": "Supermarket Staff records purchase and seal state and refers exchange decision without guaranteeing food exchange."
+    },
+    {
+      "locationId": "LOC-JP-42210-08",
+      "decision": "Community Staff provides fictional park rest route; no walking time, medical suitability or guaranteed actual layout."
+    }
+  ],
+  "repairsAfterSelfReread": [
+    "Resolved legacy Iki railway-station identity in role metadata to fictional supported bus information counter; own dialogue uses bus directions and service numbers throughout."
+  ],
+  "checks": {
+    "exactly11Turns": true,
+    "fiveConcreteTasksPerScenario": true,
+    "japaneseOnly": true,
+    "npcFirstAndLast": true,
+    "alternatingNpcPlayer": true,
+    "playerExactDuplicatesWithinCity": 0,
+    "taskGoalExactDuplicatesWithinCity": 0,
+    "noLevelGates": true,
+    "noNewTranslations": true,
+    "allFinalTurnsCloseOrHandoff": true,
+    "withinCityCausalPlotsDistinct": true,
+    "noSpokenAppPracticeMeta": true
+  },
+  "fictionalPolicyScope": "Invented status, directions, institutional handling, bank simulated verification, retail exchange handling and park layout explicitly scoped by premises. No real ferry, railway, bus schedule, clinical result, document requirement, provider security certification or commercial decision certified.",
+  "reviewScope": "Assigned independent author reread every final turn and all forty task pairs against own premises and role limits; no other author prose/review read. Parent integration/corpus machine screen/persistence pending.",
+  "peerReviewed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false
+}
