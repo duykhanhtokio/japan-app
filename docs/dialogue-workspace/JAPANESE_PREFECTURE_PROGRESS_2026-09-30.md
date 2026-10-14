@@ -889,3 +889,8 @@ All40 scenarios in5cities:440 Japanese turns and200goals independently rewritten
 ## Independent city CTY-SMN-IZUMO — 2026-10-14
 
 8 existing Japanese scenarios, 88 turns and 40 goals corrected by one independent assigned worker and fully self-read. User instruction uses independent city authors without peer reading; Shimane has six independent city authors with no peer reading. Source/runtime/self-review hashes bind city AI acceptance; real repository adapters and exact Player corpus screening PASS; all7128canonical IDs/links and unrelated runtimes preserved. Native/human/operatorpolicy/translations/device/release remain pending. Separate containingcity commit must be remotely verified before worker advances. Shimane cumulative 16/64.
+
+
+## Independent city CTY-SMN-HAMADA — 2026-10-14
+
+8 existing Japanese scenarios, 88 turns and 40 goals corrected by one independent assigned worker and fully self-read. User instruction uses independent city authors without peer reading; Shimane has six independent city authors with no peer reading. Source/runtime/self-review hashes bind city AI acceptance; real repository adapters and exact Player corpus screening PASS; all7128canonical IDs/links and unrelated runtimes preserved. Native/human/operatorpolicy/translations/device/release remain pending. Separate containingcity commit must be remotely verified before worker advances. Shimane cumulative 24/64.
