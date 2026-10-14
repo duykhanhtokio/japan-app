@@ -1,0 +1,3 @@
+# Bản dịch 建設 tuần 051
+
+Đã dịch 7 bài 351–357: 163 mục nguồn, 1,956 chuỗi cho 12 ngôn ngữ, 672 bản dịch đoạn đầy đủ. Sáu AI dịch và tự kiểm riêng từng cặp trực tiếp từ tiếng Nhật; không dịch chéo hoặc kiểm tra chéo. Giữ nguyên bản Nhật, ID và tiến độ. Kiểm dữ liệu, TypeScript phạm vi dữ liệu, bản dựng reader thích nghi và bảo toàn dữ liệu đạt. Reader web thích nghi đạt 84 tổ hợp bài–ngôn ngữ, mở/thu dịch, giữ bản Nhật, không fallback sai locale, hoàn thành thủ công/tải lại và ba kích thước màn hình. Đã xem ảnh chụp; chưa kiểm thiết bị thật hoặc toàn bộ glyph các hệ chữ. Chưa có duyệt bản ngữ/chuyên môn/phát hành. Tổng 51/55 tuần, 357/385 bài; còn 28 bài. Kế tiếp tuần 052, bài 358–364, sau khi xác minh remote.
