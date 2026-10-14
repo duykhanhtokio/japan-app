@@ -1,6 +1,6 @@
 {
   "week": 45,
-  "status": "blocked_usage_limit_preserved_drafts",
+  "status": "completed_ai_translation_coverage",
   "owner": "session-f3da09876366",
   "sessions": [
     309,
@@ -37,12 +37,24 @@
       "km"
     ]
   ],
-  "reason": "Independent translator sessions returned usage-limit errors. No retry or model switching.",
-  "integratedIntoApp": false,
-  "completedWeeks": 44,
-  "completedLessons": 308,
-  "remainingLessons": 77,
+  "reason": "Prior usage-limit stop resolved through explicit publisher continuation; remaining pair work and own-source reviews completed.",
+  "integratedIntoApp": true,
+  "completedWeeks": 45,
+  "completedLessons": 315,
+  "remainingLessons": 70,
   "pairSnapshots": [
+    {
+      "locales": [
+        "bn",
+        "my"
+      ],
+      "file": "pair-bn-my.json",
+      "translationStrings": 326,
+      "machineAlignment": "PASS",
+      "authorSelfReviewComplete": true,
+      "peerReviewed": false,
+      "nativeReviewed": false
+    },
     {
       "locales": [
         "en",
@@ -63,7 +75,7 @@
       "file": "pair-hi-ne.json",
       "translationStrings": 326,
       "machineAlignment": "PASS",
-      "authorSelfReviewComplete": false,
+      "authorSelfReviewComplete": true,
       "peerReviewed": false,
       "nativeReviewed": false
     },
@@ -75,7 +87,19 @@
       "file": "pair-id-tl.json",
       "translationStrings": 326,
       "machineAlignment": "PASS",
-      "authorSelfReviewComplete": false,
+      "authorSelfReviewComplete": true,
+      "peerReviewed": false,
+      "nativeReviewed": false
+    },
+    {
+      "locales": [
+        "th",
+        "km"
+      ],
+      "file": "pair-th-km.json",
+      "translationStrings": 326,
+      "machineAlignment": "PASS",
+      "authorSelfReviewComplete": true,
       "peerReviewed": false,
       "nativeReviewed": false
     },
@@ -99,7 +123,7 @@
         "my"
       ],
       "snapshot": "partial-author-drafts/build-bn-my.py",
-      "status": "partial_not_completed_or_validated"
+      "status": "historical_partial_snapshot_superseded_by_completed_pair"
     },
     {
       "locales": [
@@ -107,8 +131,13 @@
         "km"
       ],
       "snapshot": "partial-author-drafts/make-th-km.py",
-      "status": "partial_not_completed_or_validated"
+      "status": "historical_partial_snapshot_superseded_by_completed_pair"
     }
   ],
-  "resumeInstruction": "Preserve completed en/vi and zh-CN/zh-TW pair files. Own authors must complete self-review of hi/ne and id/tl and finish bn/my and th/km directly against source Japanese. Assemble only after all six pairs complete. No peer review."
+  "resumeInstruction": "Week045 complete; continue week046 sessions316\u2013322 only after remote persistence verification.",
+  "translationUnits": 163,
+  "translationStrings": 1956,
+  "sourceSelfReviewComplete": true,
+  "independentPeerReviewed": false,
+  "nextWeek": 46
 }
