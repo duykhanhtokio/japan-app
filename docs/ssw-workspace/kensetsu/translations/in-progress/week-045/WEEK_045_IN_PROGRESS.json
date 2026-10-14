@@ -1,6 +1,6 @@
 {
   "week": 45,
-  "status": "preparing_independent_translations",
+  "status": "blocked_usage_limit_preserved_drafts",
   "owner": "session-f3da09876366",
   "sessions": [
     309,
@@ -36,5 +36,79 @@
       "th",
       "km"
     ]
-  ]
+  ],
+  "reason": "Independent translator sessions returned usage-limit errors. No retry or model switching.",
+  "integratedIntoApp": false,
+  "completedWeeks": 44,
+  "completedLessons": 308,
+  "remainingLessons": 77,
+  "pairSnapshots": [
+    {
+      "locales": [
+        "en",
+        "vi"
+      ],
+      "file": "pair-en-vi.json",
+      "translationStrings": 326,
+      "machineAlignment": "PASS",
+      "authorSelfReviewComplete": true,
+      "peerReviewed": false,
+      "nativeReviewed": false
+    },
+    {
+      "locales": [
+        "hi",
+        "ne"
+      ],
+      "file": "pair-hi-ne.json",
+      "translationStrings": 326,
+      "machineAlignment": "PASS",
+      "authorSelfReviewComplete": false,
+      "peerReviewed": false,
+      "nativeReviewed": false
+    },
+    {
+      "locales": [
+        "id",
+        "tl"
+      ],
+      "file": "pair-id-tl.json",
+      "translationStrings": 326,
+      "machineAlignment": "PASS",
+      "authorSelfReviewComplete": false,
+      "peerReviewed": false,
+      "nativeReviewed": false
+    },
+    {
+      "locales": [
+        "zh-CN",
+        "zh-TW"
+      ],
+      "file": "pair-zh-CN-zh-TW.json",
+      "translationStrings": 326,
+      "machineAlignment": "PASS",
+      "authorSelfReviewComplete": true,
+      "peerReviewed": false,
+      "nativeReviewed": false
+    }
+  ],
+  "partialAuthors": [
+    {
+      "locales": [
+        "bn",
+        "my"
+      ],
+      "snapshot": "partial-author-drafts/build-bn-my.py",
+      "status": "partial_not_completed_or_validated"
+    },
+    {
+      "locales": [
+        "th",
+        "km"
+      ],
+      "snapshot": "partial-author-drafts/make-th-km.py",
+      "status": "partial_not_completed_or_validated"
+    }
+  ],
+  "resumeInstruction": "Preserve completed en/vi and zh-CN/zh-TW pair files. Own authors must complete self-review of hi/ne and id/tl and finish bn/my and th/km directly against source Japanese. Assemble only after all six pairs complete. No peer review."
 }
