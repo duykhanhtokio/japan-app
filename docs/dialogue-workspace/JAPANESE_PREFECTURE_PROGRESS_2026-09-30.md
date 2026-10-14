@@ -849,3 +849,8 @@ All101 scenarios in11cities:1111 Japanese turns and505goals independently rewrit
 ## Independent city CTY-JP-30209 — 2026-10-14
 
 8 existing Japanese scenarios, 88 turns and 40 goals corrected by one independent assigned worker and fully self-read. User instruction uses six concurrent city workers with no peer reading. Source/runtime/self-review hashes bind city AI acceptance; real repository adapters and exact Player corpus screening PASS; all7128canonical IDs/links and unrelated runtimes preserved. Native/human/operatorpolicy/translations/device/release remain pending. Separate containingcity commit must be remotely verified before worker advances. Wakayama cumulative 101/101.
+
+
+## Independent city CTY-031 — 2026-10-14
+
+8 existing Japanese scenarios, 88 turns and 40 goals corrected by one independent assigned worker and fully self-read. User instruction uses independent city authors without peer reading; Tottori has five authors and a sixth metadata-only worker with no peer reading. Source/runtime/self-review hashes bind city AI acceptance; real repository adapters and exact Player corpus screening PASS; all7128canonical IDs/links and unrelated runtimes preserved. Native/human/operatorpolicy/translations/device/release remain pending. Separate containingcity commit must be remotely verified before worker advances. Tottori cumulative 8/40.
