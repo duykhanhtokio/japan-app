@@ -1004,3 +1004,7 @@ All 133 scenarios in 15 cities: 1463 Japanese turns and 665 goals independently 
 ## Independent city CTY-JP-33216 — 2026-10-14
 
 8 existing Japanese scenarios, 88 turns and 40 goals corrected by one independent assigned worker and fully self-read. User instruction uses independent city authors without peer reading; Okayama has six independent city authors with no peer reading. Source/runtime/self-review hashes bind city AI acceptance; real repository adapters and exact Player corpus screening PASS; all7128canonical IDs/links and unrelated runtimes preserved. Native/human/operatorpolicy/translations/device/release remain pending. Separate containingcity commit must be remotely verified before worker advances. Okayama cumulative 133/133.
+
+## Hiroshima PRF-034 — six independent city authors, 2026-10-14
+
+125/125 independently authored and self-reviewed Japanese exchanges, 1,375 turns and625 concrete Player tasks across14cities. Separate city commits remotely verified; whole real repository/loader adapter and exact corpus screen pass, 7,128 canonical IDs preserved, 7,436 outside runtime files unchanged, zero exact Player/NPC collisions. User-directed no-peer-reading mode; source/review/runtime hashes locked without peer/native/human/device/operator/release claims. Etajima fictional tourism/transport information counter replaces legacy station label while IDs remain stable. Continue PRF-035 after containing checkpoint persistence passes.
