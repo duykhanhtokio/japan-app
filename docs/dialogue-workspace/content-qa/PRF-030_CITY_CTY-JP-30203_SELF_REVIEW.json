@@ -1,0 +1,123 @@
+{
+  "cityId": "CTY-JP-30203",
+  "mode": "INDEPENDENT_CITY_AUTHOR_FULL_SELF_REVIEW_NO_PEER_READING",
+  "sourceSha256": "f0ccca7d2f79aae1139d77b491adab50379331754870b96f53c26757fa65e587",
+  "reviewedScenarioIds": [
+    "SC-LOC-JP-30203-01-001",
+    "SC-LOC-JP-30203-02-001",
+    "SC-LOC-JP-30203-03-001",
+    "SC-LOC-JP-30203-04-001",
+    "SC-LOC-JP-30203-05-001",
+    "SC-LOC-JP-30203-06-001",
+    "SC-LOC-JP-30203-07-001",
+    "SC-LOC-JP-30203-08-001"
+  ],
+  "previousScenariosFullyRead": 8,
+  "finalScenariosFullyRead": 8,
+  "finalTurnsFullyRead": 88,
+  "finalPlayerGoalsFullyRead": 40,
+  "fullReadProof": [
+    {
+      "scenarioId": "SC-LOC-JP-30203-01-001",
+      "premiseRead": true,
+      "allElevenTurnsRead": true,
+      "allFiveGoalsRead": true,
+      "decision": "PASS",
+      "causalPlot": "大きな楽器を持って乗換経路を相談する"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-30203-02-001",
+      "premiseRead": true,
+      "allElevenTurnsRead": true,
+      "allFiveGoalsRead": true,
+      "decision": "PASS",
+      "causalPlot": "転入届の部屋番号を記入前に確かめる"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-30203-03-001",
+      "premiseRead": true,
+      "allElevenTurnsRead": true,
+      "allFiveGoalsRead": true,
+      "decision": "PASS",
+      "causalPlot": "検査予約を変える前に準備の予定を確認する"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-30203-04-001",
+      "premiseRead": true,
+      "allElevenTurnsRead": true,
+      "allFiveGoalsRead": true,
+      "decision": "PASS",
+      "causalPlot": "見当たらない自転車の停めた区画を絞る"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-30203-05-001",
+      "premiseRead": true,
+      "allElevenTurnsRead": true,
+      "allFiveGoalsRead": true,
+      "decision": "PASS",
+      "causalPlot": "折り曲げたくない証明書の送り方を相談する"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-30203-06-001",
+      "premiseRead": true,
+      "allElevenTurnsRead": true,
+      "allFiveGoalsRead": true,
+      "decision": "PASS",
+      "causalPlot": "給与口座の名義表記を申込前に相談する"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-30203-07-001",
+      "premiseRead": true,
+      "allElevenTurnsRead": true,
+      "allFiveGoalsRead": true,
+      "decision": "PASS",
+      "causalPlot": "二個組の値札と一個の値段を区別する"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-30203-08-001",
+      "premiseRead": true,
+      "allElevenTurnsRead": true,
+      "allFiveGoalsRead": true,
+      "decision": "PASS",
+      "causalPlot": "雨上がりの散歩を途中で折り返す経路に変える"
+    }
+  ],
+  "repairs": [
+    {
+      "scenarioId": "SC-LOC-JP-30203-02-001",
+      "turn": 9,
+      "before": "その点も窓口でお伝えください。今は用紙を二枚に分けず、現在お持ちのものを見てもらいましょう。",
+      "after": "その点も窓口でお伝えください。現在お持ちの書類を、そのまま担当者に見てもらいましょう。",
+      "reason": "Removed unsupported instruction not to split forms."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-30203-07-001",
+      "turn": 5,
+      "before": "そうです。一個の商品はこちらの札で、二百円です。容量も見比べてください。",
+      "after": "はい、一個の商品は二百円と表示されています。容量も見比べてください。",
+      "reason": "Reduced three sentences to two."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-30203-07-001",
+      "turn": 6,
+      "before": "袋の中も同じ容量ですね。ただ、棚には一個の商品しか残っていないようです。",
+      "after": "札に書かれた容量は同じですね。ただ、棚には一個の商品しか残っていないようです。",
+      "reason": "Capacity comparison based on label, not absent package."
+    }
+  ],
+  "machineOnlyCorpusScan": {
+    "filesScanned": 7561,
+    "playerRowsScanned": 37965,
+    "goalsScanned": 35640,
+    "exactPlayerHits": 0,
+    "exactGoalHits": 0,
+    "otherCityTextEmitted": false
+  },
+  "peerReviewed": false,
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceVerified": false,
+  "openBlockers": [],
+  "decision": "AI_SELF_REVIEW_PASS"
+}
