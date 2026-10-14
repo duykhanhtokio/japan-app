@@ -1,0 +1,1184 @@
+{
+  "locales": [
+    "id",
+    "tl"
+  ],
+  "sessions": [
+    {
+      "sessionId": "kensetsu-common-session-239",
+      "entries": {
+        "title": {
+          "sourceJa": "電動ブロックカッターと材料の対応",
+          "translations": {
+            "id": "Kecocokan pemotong blok listrik dan bahan",
+            "tl": "Electric block cutter at material compatibility"
+          }
+        },
+        "kensetsu-common-session-239-cluster-1:title": {
+          "sourceJa": "材料を切り分ける工具",
+          "translations": {
+            "id": "Alat pemisah bahan",
+            "tl": "Tool para sa pagputol ng materyal"
+          }
+        },
+        "kensetsu-common-session-239-cluster-1-p1": {
+          "sourceJa": "電動ブロックカッターは、コンクリートなどの建材の切断に関わる電動工具です。穴を作るドリルや表面を仕上げるサンダーとは、加工の目的を区別します。対応する材料の範囲は本体と刃の指定によって変わります。",
+          "translations": {
+            "id": "Pemotong blok listrik merupakan alat listrik untuk memotong bahan bangunan seperti beton. Bedakan tujuannya dari bor pembuat lubang dan sander penyiap permukaan. Rentang bahan yang sesuai bergantung pada spesifikasi badan dan pisau.",
+            "tl": "Ang electric block cutter ay power tool para sa pagputol ng building material gaya ng kongkreto. Ihiwalay ang layunin sa drill na gumagawa ng butas at sander na nag-aayos ng ibabaw. Ayon sa body at blade specification ang compatible materials."
+          }
+        },
+        "kensetsu-common-session-239-cluster-1-p2": {
+          "sourceJa": "架空の加工相談に「建材を加工する」とだけあれば、穴あけ、表面の仕上げ、切り分けのどれを求めているかを整理できます。工具名を先に選ぶより、必要な加工を言葉で明確にする例です。",
+          "translations": {
+            "id": "Jika konsultasi fiktif hanya menyebut mengolah bahan bangunan, tentukan apakah pengeboran, penyelesaian permukaan, atau pemotongan. Ini contoh memperjelas pengolahan dengan kata-kata sebelum memilih nama alat.",
+            "tl": "Kung processing ng building material lamang ang konsultasyon, isaayos kung drilling, surface finishing, o cutting ang kailangan. Halimbawa ito ng paglilinaw ng processing sa salita bago pangalan ng tool."
+          }
+        },
+        "kensetsu-common-session-239-cluster-1:prompt": {
+          "sourceJa": "建材の加工という依頼を、ブロックカッターの用途が分かる表現にしてください。",
+          "translations": {
+            "id": "Ubah permintaan pengolahan bahan bangunan menjadi ungkapan yang menjelaskan penggunaan pemotong blok.",
+            "tl": "Gawing malinaw ang request sa building-material processing upang maunawaan ang gamit ng block cutter."
+          }
+        },
+        "kensetsu-common-session-239-cluster-2:title": {
+          "sourceJa": "本体と切断部品",
+          "translations": {
+            "id": "Badan dan komponen pemotong",
+            "tl": "Body at cutting accessory"
+          }
+        },
+        "kensetsu-common-session-239-cluster-2-p1": {
+          "sourceJa": "ダイヤモンドカッターには建材に対応する製品があります。外径、取付穴、適用機種、指定材料などは別々の照合項目です。同じ円形の部品でも、すべての本体に取り付けられるとは限りません。",
+          "translations": {
+            "id": "Ada pisau berlian untuk bahan bangunan. Diameter luar, lubang pemasangan, model sesuai, dan bahan yang ditentukan adalah item pencocokan terpisah. Komponen bundar sama tidak selalu dapat dipasang pada semua badan.",
+            "tl": "May diamond cutter para sa building materials. Hiwalay na matching item ang outer diameter, mounting hole, compatible model, at specified material. Hindi tiyak na lahat ng body ay mapagkakabitan ng parehong bilog na accessory."
+          }
+        },
+        "kensetsu-common-session-239-cluster-2-p2": {
+          "sourceJa": "部品台帳には本体の型式と切断部品の品番を対にして残せます。写真の丸い輪郭だけを根拠に、別機種の部品を同じものとして登録しないための記録です。",
+          "translations": {
+            "id": "Inventaris komponen dapat memasangkan model badan dan nomor pisau. Catatan ini mencegah pendaftaran komponen model lain sebagai sama dari garis luar bundar pada foto saja.",
+            "tl": "Maaaring ipares sa parts record ang body model at cutting-part number. Pinipigilan nito ang pagtala ng part ng ibang model bilang pareho mula lamang sa bilog na outline sa larawan."
+          }
+        },
+        "kensetsu-common-session-239-cluster-2:prompt": {
+          "sourceJa": "円形の切断部品を登録するとき、形以外にどの情報を本体と対応させますか。",
+          "translations": {
+            "id": "Selain bentuk, informasi apa yang dicocokkan dengan badan saat mendaftarkan komponen potong bundar?",
+            "tl": "Bukod sa hugis, anong impormasyon ang itutugma sa body kapag nagtatala ng bilog na cutting part?"
+          }
+        },
+        "kensetsu-common-session-239-cluster-3:title": {
+          "sourceJa": "コンクリートの条件",
+          "translations": {
+            "id": "Kondisi beton",
+            "tl": "Kondisyon ng kongkreto"
+          }
+        },
+        "kensetsu-common-session-239-cluster-3-p1": {
+          "sourceJa": "コンクリート、ブロック、鉄筋を含む部材は同一条件ではありません。メーカーの対象材料欄を読み、鉄筋入りへの対応を一般建材用という名称だけから広げません。実際の部材の構成についても情報が必要です。",
+          "translations": {
+            "id": "Beton, blok, dan komponen dengan besi tulangan memiliki kondisi berbeda. Baca bahan sasaran produsen; nama untuk bahan bangunan umum tidak berarti cocok untuk yang bertulang. Informasi susunan komponen aktual juga diperlukan.",
+            "tl": "Hindi parehong kondisyon ang concrete, block, at bahagi na may rebar. Basahin ang target materials ng manufacturer; huwag palawakin ang general-building-material label bilang compatible sa reinforced material. Kailangan din ang actual component structure."
+          }
+        },
+        "kensetsu-common-session-239-cluster-3-p2": {
+          "sourceJa": "ある資料にはブロック用とあり、現物の内部構成は記録されていません。この場合は「指定材料の資料あり、現物の構成情報なし」と書けます。鉄筋も切断可能という結論へ置き換えない照合例です。",
+          "translations": {
+            "id": "Jika dokumen menyebut untuk blok tetapi struktur dalam benda tidak tercatat, tulis “Dokumen bahan yang ditentukan tersedia, informasi susunan aktual tidak tersedia.” Jangan menggantinya dengan kesimpulan besi tulangan juga dapat dipotong.",
+            "tl": "Kung para sa block ang dokumento ngunit walang actual internal structure record, maaaring isulat: “May specified-material document, walang actual structure information.” Huwag palitan bilang kayang putulin din ang rebar."
+          }
+        },
+        "kensetsu-common-session-239-cluster-3:prompt": {
+          "sourceJa": "刃の指定材料と現物の内部構成について、分かっている範囲をどう報告しますか。",
+          "translations": {
+            "id": "Bagaimana melaporkan batas informasi bahan pisau dan struktur dalam benda aktual?",
+            "tl": "Paano iulat ang alam na saklaw ng blade material at actual internal structure?"
+          }
+        },
+        "kensetsu-common-session-239-cluster-4:title": {
+          "sourceJa": "加工準備の情報",
+          "translations": {
+            "id": "Informasi persiapan pengolahan",
+            "tl": "Processing preparation information"
+          }
+        },
+        "kensetsu-common-session-239-cluster-4-p1": {
+          "sourceJa": "切断に伴う粉じんへの対策や周囲の条件は、材料と機種に応じて扱う事項です。切断部品が適合することと、集じん設備や現場条件が確認されたことは異なります。工具の写真から準備の完了は判断できません。",
+          "translations": {
+            "id": "Penanganan debu pemotongan dan kondisi sekitar bergantung bahan dan model. Pisau sesuai berbeda dari konfirmasi pengumpul debu atau kondisi lapangan. Foto alat tidak menunjukkan persiapan selesai.",
+            "tl": "Ayon sa material at model ang dust control at paligid. Magkaiba ang cutting-part compatibility at verification ng dust equipment o site conditions. Hindi matitiyak ang kumpletong paghahanda mula sa tool photo."
+          }
+        },
+        "kensetsu-common-session-239-cluster-4-p2": {
+          "sourceJa": "引継ぎ欄に本体、刃、対象材料、粉じん対策の記録を分けると、未受領の資料が見えます。具体的な切込み、押付け、注水や刃交換の手順は、この整理例から定めません。",
+          "translations": {
+            "id": "Pisahkan badan, pisau, bahan sasaran, dan catatan pengendalian debu pada serah terima agar dokumen belum diterima terlihat. Jangan menetapkan kedalaman potong, penekanan, pasokan air, atau penggantian pisau dari contoh ini.",
+            "tl": "Hiwalay ang body, blade, material, at dust-control record sa handover upang makita ang hindi pa natatanggap. Huwag magtakda ng cut depth, pressure, water supply, o blade replacement mula sa halimbawang ito."
+          }
+        },
+        "kensetsu-common-session-239-cluster-4:prompt": {
+          "sourceJa": "工具と刃の資料はあるが粉じん対策の記録がない状態を、一文で伝えてください。",
+          "translations": {
+            "id": "Sampaikan satu kalimat dokumen alat dan pisau ada tetapi catatan pengendalian debu tidak ada.",
+            "tl": "Ipaalam sa isang pangungusap na may tool at blade documents ngunit walang dust-control record."
+          }
+        },
+        "keyTerm:電動ブロックカッター": {
+          "sourceJa": "電動ブロックカッター",
+          "translations": {
+            "id": "Pemotong blok listrik",
+            "tl": "Electric block cutter"
+          }
+        },
+        "keyTerm:コンクリート": {
+          "sourceJa": "コンクリート",
+          "translations": {
+            "id": "Beton",
+            "tl": "Kongkreto"
+          }
+        },
+        "keyTerm:切断": {
+          "sourceJa": "切断",
+          "translations": {
+            "id": "Pemotongan",
+            "tl": "Cutting"
+          }
+        },
+        "keyTerm:ダイヤモンドカッター": {
+          "sourceJa": "ダイヤモンドカッター",
+          "translations": {
+            "id": "Pisau berlian",
+            "tl": "Diamond cutter"
+          }
+        },
+        "keyTerm:取付穴": {
+          "sourceJa": "取付穴",
+          "translations": {
+            "id": "Lubang pemasangan",
+            "tl": "Mounting hole"
+          }
+        },
+        "keyTerm:粉じん": {
+          "sourceJa": "粉じん",
+          "translations": {
+            "id": "Debu",
+            "tl": "Dust"
+          }
+        },
+        "illustration:0:alt": {
+          "sourceJa": "ブロックを切り分ける工具と、別に置いた材料の教材用見本。作業手順や取付け条件は示していません。",
+          "translations": {
+            "id": "Contoh alat pemotong blok dan bahan diletakkan terpisah untuk pembelajaran. Prosedur kerja dan kondisi pemasangan tidak ditunjukkan.",
+            "tl": "Halimbawa ng block-cutting tool at hiwalay na materyal para sa pag-aaral. Hindi ipinapakita ang work procedure o mounting condition."
+          }
+        }
+      }
+    },
+    {
+      "sessionId": "kensetsu-common-session-240",
+      "entries": {
+        "title": {
+          "sourceJa": "釘打ち機と圧縮空気の関係",
+          "translations": {
+            "id": "Hubungan mesin paku dan udara bertekanan",
+            "tl": "Nail gun at compressed air"
+          }
+        },
+        "kensetsu-common-session-240-cluster-1:title": {
+          "sourceJa": "空気を用いる方式",
+          "translations": {
+            "id": "Metode menggunakan udara",
+            "tl": "Uri na gumagamit ng hangin"
+          }
+        },
+        "kensetsu-common-session-240-cluster-1-p1": {
+          "sourceJa": "釘打ち機には圧縮空気を動力として釘を打ち込む方式があります。空気を圧縮して供給する装置がコンプレッサーです。釘を打つ本体と空気を供給する装置を分けて理解すると、設備の役割を読み取れます。",
+          "translations": {
+            "id": "Ada mesin paku yang memakai udara bertekanan untuk menancapkan paku. Kompresor memampatkan dan memasok udara. Memisahkan badan pemaku dan perangkat pasokan memperjelas peran instalasi.",
+            "tl": "May nail gun na compressed air ang lakas upang magbaon ng pako. Ang compressor ay nagko-compress at nagsusuplay ng hangin. Sa paghiwalay ng nail-driving body at supply equipment, mababasa ang papel."
+          }
+        },
+        "kensetsu-common-session-240-cluster-1-p2": {
+          "sourceJa": "架空の設備図では、供給側をコンプレッサー、加工側を釘打ち機と記載できます。一方の装置だけの写真を、空気を用いる系統全体の記録として扱わない例です。",
+          "translations": {
+            "id": "Diagram fiktif dapat menandai sisi pasokan sebagai kompresor dan sisi pengolahan sebagai mesin paku. Foto satu perangkat saja bukan catatan seluruh sistem udara.",
+            "tl": "Maaaring compressor ang supply side at nail gun ang processing side sa kathang-isip na diagram. Huwag ituring na buong pneumatic system record ang larawan ng isa lamang."
+          }
+        },
+        "kensetsu-common-session-240-cluster-1:prompt": {
+          "sourceJa": "コンプレッサーと空気式釘打ち機の役割を、それぞれ説明してください。",
+          "translations": {
+            "id": "Jelaskan masing-masing peran kompresor dan mesin paku udara.",
+            "tl": "Ipaliwanag ang bawat papel ng compressor at pneumatic nail gun."
+          }
+        },
+        "kensetsu-common-session-240-cluster-2:title": {
+          "sourceJa": "釘打ち機の方式を読む",
+          "translations": {
+            "id": "Membaca jenis mesin paku",
+            "tl": "Pagbasa ng nail-gun type"
+          }
+        },
+        "kensetsu-common-session-240-cluster-2-p1": {
+          "sourceJa": "釘打ち機には蓄電池を用いる製品もあります。空気式の説明をすべての製品に当てはめず、実際の型式と動力方式を照合します。コードレスという名称から、釘の種類や能力まで同じとは判断しません。",
+          "translations": {
+            "id": "Ada mesin paku berbaterai penyimpan. Jangan menerapkan penjelasan udara ke semua produk; cocokkan model aktual dan sumber daya. Tanpa kabel tidak berarti jenis paku atau kapasitas sama.",
+            "tl": "May battery-powered nail gun din. Huwag gamitin sa lahat ang pneumatic explanation; itugma ang actual model at power type. Hindi pareho ang nail type o capacity mula lamang sa cordless na pangalan."
+          }
+        },
+        "kensetsu-common-session-240-cluster-2-p2": {
+          "sourceJa": "手配の連絡に釘打ち機とだけ書かれたら、型式と動力方式を追記してもらう表現を考えられます。空気供給が必要な機種かどうかを、工具の通称だけで決めないためです。",
+          "translations": {
+            "id": "Jika pesan pengadaan hanya menyebut mesin paku, pikirkan ungkapan meminta model dan sumber daya ditambahkan. Nama umum alat tidak menentukan apakah perlu pasokan udara.",
+            "tl": "Kung nail gun lamang ang request, maaaring bumuo ng pahayag na idagdag ang model at power type. Hindi common name lamang ang batayan kung kailangan ng compressed-air supply."
+          }
+        },
+        "kensetsu-common-session-240-cluster-2:prompt": {
+          "sourceJa": "釘打ち機という名称だけの手配連絡に、どの二つの情報を求めますか。",
+          "translations": {
+            "id": "Dua informasi apa yang diminta pada pengadaan hanya menyebut mesin paku?",
+            "tl": "Anong dalawang impormasyon ang hihingin kung nail gun lamang ang request?"
+          }
+        },
+        "kensetsu-common-session-240-cluster-3:title": {
+          "sourceJa": "供給系統と圧力",
+          "translations": {
+            "id": "Sistem pasokan dan tekanan",
+            "tl": "Supply system at pressure"
+          }
+        },
+        "kensetsu-common-session-240-cluster-3-p1": {
+          "sourceJa": "空気式の系統にはエアホースや接続部があり、本体には使用圧力などの指定があります。コンプレッサーのタンク内の圧力と工具の指定値は同じ項目ではありません。接続できそうな外観を適合の証明にしません。",
+          "translations": {
+            "id": "Sistem udara memiliki selang dan sambungan; badan memiliki spesifikasi tekanan kerja. Tekanan tangki kompresor berbeda dari nilai yang ditentukan alat. Tampilan seolah bisa terhubung bukan bukti cocok.",
+            "tl": "May air hose at connections ang pneumatic system at specified operating pressure ang body. Hindi parehong item ang compressor-tank pressure at tool specification. Huwag gamiting patunay ng compatibility ang mukhang maikakabit."
+          }
+        },
+        "kensetsu-common-session-240-cluster-3-p2": {
+          "sourceJa": "照合表に供給装置、ホース、本体の指定を別欄にできます。数値を一つだけ転記した表では、それがどの装置のどの項目かを追記する例です。圧力調整や接続操作はここでは扱いません。",
+          "translations": {
+            "id": "Pisahkan spesifikasi perangkat pasokan, selang, dan badan pada tabel. Jika hanya satu angka tekanan dicatat, tambahkan perangkat dan item asalnya. Penyesuaian tekanan atau operasi sambungan tidak dibahas.",
+            "tl": "Maaaring hiwalay ang supply equipment, hose, at body specification. Kung isang numero lamang, idagdag kung sa aling device at item iyon. Hindi tinatalakay ang pressure adjustment o connection operation."
+          }
+        },
+        "kensetsu-common-session-240-cluster-3:prompt": {
+          "sourceJa": "圧力の数値だけある表で、値の所属と工具の指定をどう区別しますか。",
+          "translations": {
+            "id": "Bagaimana membedakan asal nilai tekanan dan spesifikasi alat pada tabel angka saja?",
+            "tl": "Paano paghihiwalayin ang pinagmulan ng pressure value at tool specification sa numeric-only table?"
+          }
+        },
+        "kensetsu-common-session-240-cluster-4:title": {
+          "sourceJa": "釘と用途の対応",
+          "translations": {
+            "id": "Kecocokan paku dan penggunaan",
+            "tl": "Nail at purpose compatibility"
+          }
+        },
+        "kensetsu-common-session-240-cluster-4-p1": {
+          "sourceJa": "仕上釘、ピン釘、ロール状の釘など、釘と工具の対応は製品ごとに指定されます。長さだけでなく種類や寸法条件を読みます。釘打ち機があるという事実は、すべての釘を使えるという意味ではありません。",
+          "translations": {
+            "id": "Kecocokan paku dan alat, termasuk paku finishing, pin, atau gulungan, ditentukan tiap produk. Baca jenis dan dimensi, bukan panjang saja. Adanya mesin paku tidak berarti semua paku dapat digunakan.",
+            "tl": "Specified bawat produkto ang nail/tool compatibility gaya ng finish nail, pin nail, o coil nail. Basahin ang uri at dimension, hindi haba lamang. Hindi ibig sabihin na lahat ng pako ay magagamit dahil may nail gun."
+          }
+        },
+        "kensetsu-common-session-240-cluster-4-p2": {
+          "sourceJa": "保管票に本体型式と指定釘の欄を設けると、名称の似た釘を取り違えた記録を見つけやすくなります。発射、装填、詰まりの処理や安全機構の確認方法を、この票から指示しません。",
+          "translations": {
+            "id": "Kolom model badan dan paku yang ditentukan pada kartu penyimpanan membantu menemukan paku tertukar yang namanya mirip. Jangan memberi firing, loading, penanganan macet, atau pemeriksaan mekanisme keselamatan dari kartu ini.",
+            "tl": "Ang body model at specified nail sa storage card ay tumutulong makita ang napagpalit na magkakatulad na pangalan. Huwag magbigay ng firing, loading, jam-clearing, o safety-mechanism checking mula sa card."
+          }
+        },
+        "kensetsu-common-session-240-cluster-4:prompt": {
+          "sourceJa": "仕上釘の箱と釘打ち機を照合するとき、長さ以外に何を記録しますか。",
+          "translations": {
+            "id": "Selain panjang, apa yang dicatat saat mencocokkan kotak paku finishing dan mesin paku?",
+            "tl": "Bukod sa haba, ano ang itatala sa matching ng finish-nail box at nail gun?"
+          }
+        },
+        "keyTerm:釘打ち機": {
+          "sourceJa": "釘打ち機",
+          "translations": {
+            "id": "Mesin paku",
+            "tl": "Nail gun"
+          }
+        },
+        "keyTerm:コンプレッサー": {
+          "sourceJa": "コンプレッサー",
+          "translations": {
+            "id": "Kompresor",
+            "tl": "Compressor"
+          }
+        },
+        "keyTerm:圧縮空気": {
+          "sourceJa": "圧縮空気",
+          "translations": {
+            "id": "Udara bertekanan",
+            "tl": "Compressed air"
+          }
+        },
+        "keyTerm:エアホース": {
+          "sourceJa": "エアホース",
+          "translations": {
+            "id": "Selang udara",
+            "tl": "Air hose"
+          }
+        },
+        "keyTerm:使用圧力": {
+          "sourceJa": "使用圧力",
+          "translations": {
+            "id": "Tekanan kerja",
+            "tl": "Operating pressure"
+          }
+        },
+        "keyTerm:仕上釘": {
+          "sourceJa": "仕上釘",
+          "translations": {
+            "id": "Paku finishing",
+            "tl": "Finish nail"
+          }
+        }
+      }
+    },
+    {
+      "sessionId": "kensetsu-common-session-241",
+      "entries": {
+        "title": {
+          "sourceJa": "電工ドラムの延長と負荷の表示",
+          "translations": {
+            "id": "Perpanjangan gulungan kabel dan penandaan beban",
+            "tl": "Extension ng cable reel at load marking"
+          }
+        },
+        "kensetsu-common-session-241-cluster-1:title": {
+          "sourceJa": "電源の位置を延ばす",
+          "translations": {
+            "id": "Memperpanjang posisi sambungan daya",
+            "tl": "Pagpapalayo ng power connection"
+          }
+        },
+        "kensetsu-common-session-241-cluster-1-p1": {
+          "sourceJa": "電工ドラムは電線を巻き取る構造を持ち、電源から離れた位置へ接続を延長する道具です。コードリールとも呼ばれます。発電機や変圧器とは役割が異なり、延長したことだけで電源の容量が増えるわけではありません。",
+          "translations": {
+            "id": "Gulungan kabel memiliki struktur penggulung kawat untuk memperpanjang sambungan jauh dari sumber listrik, juga disebut cord reel. Perannya berbeda dari generator atau transformator; perpanjangan saja tidak menambah kapasitas sumber.",
+            "tl": "Ang cable reel ay may paikot na wire storage upang palawigin ang connection malayo sa power source, at tinatawag ding cord reel. Iba sa generator o transformer; hindi nadaragdagan ang capacity sa extension lamang."
+          }
+        },
+        "kensetsu-common-session-241-cluster-1-p2": {
+          "sourceJa": "設備案内に「電源を増設」と書いてあるが、実際にはリールで位置を延長しただけなら、記載を見直せます。接続位置の変化と電力供給能力の変化を分ける例です。",
+          "translations": {
+            "id": "Jika panduan instalasi menyebut penambahan sumber tetapi sebenarnya hanya memperpanjang posisi dengan reel, revisi keterangannya. Ini memisahkan perubahan posisi dan kemampuan pasokan.",
+            "tl": "Kung power-source expansion ang nakasulat ngunit reel lamang ang nagpalayo ng connection, maaaring baguhin ang tala. Ihiwalay ang pagbabago ng posisyon at power-supply capability."
+          }
+        },
+        "kensetsu-common-session-241-cluster-1:prompt": {
+          "sourceJa": "電工ドラムで接続位置を延ばした状況を、容量も増えたと誤解させない言葉で説明してください。",
+          "translations": {
+            "id": "Jelaskan perpanjangan posisi dengan reel tanpa menyiratkan kapasitas meningkat.",
+            "tl": "Ipaliwanag ang reel extension nang hindi nagpapahiwatig na nadagdagan ang capacity."
+          }
+        },
+        "kensetsu-common-session-241-cluster-2:title": {
+          "sourceJa": "巻き方に対応する表示",
+          "translations": {
+            "id": "Penandaan sesuai keadaan gulungan",
+            "tl": "Marking ayon sa pagkakarolyo"
+          }
+        },
+        "kensetsu-common-session-241-cluster-2-p1": {
+          "sourceJa": "ハタヤの資料では、定格電流と限度電流を電線の巻いた状態と指定まで引き出した状態に対応させて説明しています。値は製品で異なります。別の機種の表示値を共通の上限として扱わず、その製品の説明を読みます。",
+          "translations": {
+            "id": "Dokumen Hataya menjelaskan arus nominal dan arus batas sesuai keadaan kabel tergulung dan ditarik keluar sesuai ketentuan. Nilai berbeda menurut produk. Jangan menggunakan penandaan model lain sebagai batas umum; baca produk itu sendiri.",
+            "tl": "Sa dokumento ng Hataya, itinutugma ang rated current at limiting current sa rolled at specified extended-wire condition. Nag-iiba ayon sa produkto ang value. Huwag gawing common limit ang ibang modelo; basahin ang mismong produkto."
+          }
+        },
+        "kensetsu-common-session-241-cluster-2-p2": {
+          "sourceJa": "架空の台帳には二つの数値欄に加えて、各値に対応する電線の状態を残せます。大きい値だけを抜き出した一覧より、条件との関係が分かる記録になります。",
+          "translations": {
+            "id": "Inventaris fiktif dapat menyisakan kondisi kabel untuk masing-masing dari dua kolom angka. Ini memperjelas hubungan kondisi dibanding daftar nilai besar saja.",
+            "tl": "Maaaring itala ang wire condition kasama ang dalawang value sa kathang-isip na talaan. Mas malinaw ang condition relationship kaysa pinakamalaking numero lamang."
+          }
+        },
+        "kensetsu-common-session-241-cluster-2:prompt": {
+          "sourceJa": "定格電流と限度電流の記録に、数値と一緒にどの条件を残しますか。",
+          "translations": {
+            "id": "Kondisi apa yang dicatat bersama arus nominal dan arus batas?",
+            "tl": "Anong kondisyon ang ilalakip sa rated-current at limiting-current values?"
+          }
+        },
+        "kensetsu-common-session-241-cluster-3:title": {
+          "sourceJa": "負荷と発熱",
+          "translations": {
+            "id": "Beban dan panas",
+            "tl": "Load at heat generation"
+          }
+        },
+        "kensetsu-common-session-241-cluster-3-p1": {
+          "sourceJa": "電線には負荷に応じた発熱が生じます。巻いた状態で大きな電流を流すことなどは過熱の問題に関わります。差込口の数を、同時に使用できる機器の容量の保証として読むことはできません。",
+          "translations": {
+            "id": "Kawat menghasilkan panas sesuai beban. Arus besar pada gulungan berkaitan dengan masalah panas berlebih. Jumlah stopkontak bukan jaminan kapasitas perangkat yang bisa dipakai bersamaan.",
+            "tl": "Nagkakaroon ng init ang wire ayon sa load. Kaugnay ng overheating ang malaking current habang rolled. Hindi garantiya ng sabay-sabay na capacity ang outlet count."
+          }
+        },
+        "kensetsu-common-session-241-cluster-3-p2": {
+          "sourceJa": "三つの機器を記載した接続予定表なら、各機器の負荷と同時使用の条件を整理できます。機器が一台ずつ適合するという記録を、その組合せ全体の確認済みへ変えないためです。",
+          "translations": {
+            "id": "Rencana sambungan tiga perangkat dapat merangkum beban masing-masing dan kondisi bersamaan. Catatan tiap perangkat cocok sendiri tidak berarti keseluruhan kombinasi sudah diperiksa.",
+            "tl": "Maaaring ayusin sa plano ng tatlong device ang load at simultaneous-use conditions. Hindi buong combination verification ang compatible na bawat isa nang hiwalay."
+          }
+        },
+        "kensetsu-common-session-241-cluster-3:prompt": {
+          "sourceJa": "複数の差込口に接続する予定で、口数以外に整理する情報は何ですか。",
+          "translations": {
+            "id": "Selain jumlah stopkontak, informasi apa yang disusun untuk beberapa sambungan?",
+            "tl": "Bukod sa outlet count, anong impormasyon ang aayusin para sa maraming connections?"
+          }
+        },
+        "kensetsu-common-session-241-cluster-4:title": {
+          "sourceJa": "環境と付属機能",
+          "translations": {
+            "id": "Lingkungan dan fungsi tambahan",
+            "tl": "Environment at additional function"
+          }
+        },
+        "kensetsu-common-session-241-cluster-4-p1": {
+          "sourceJa": "コードリールには屋内用や屋外向け、接地や保護機能の異なる製品があります。温度センサーが付くことと、あらゆる異常を防げることは同じではありません。外観の似たリールでも用途や指定条件を照合します。",
+          "translations": {
+            "id": "Reel tersedia untuk dalam atau luar ruangan serta fungsi grounding dan perlindungan berbeda. Sensor suhu tidak berarti mencegah semua abnormalitas. Cocokkan penggunaan dan kondisi meski tampilan mirip.",
+            "tl": "May indoor o outdoor cord reel na iba ang grounding at protection. Hindi katumbas ng pag-iwas sa lahat ng abnormalidad ang temperature sensor. Itugma ang gamit at conditions kahit magkatulad ang hitsura."
+          }
+        },
+        "kensetsu-common-session-241-cluster-4-p2": {
+          "sourceJa": "引継ぎ例は「型式の資料あり。設置環境と保護機能の照合記録は未受領」です。異常時の再通電、保護装置の復帰や配線変更の方法は、この教材の判断例から決めません。",
+          "translations": {
+            "id": "Serah terima: “Dokumen model tersedia. Catatan pencocokan lingkungan dan perlindungan belum diterima.” Jangan menentukan pemberian listrik kembali saat abnormal, reset perlindungan, atau perubahan kabel dari contoh ini.",
+            "tl": "Halimbawa: “May model document. Hindi pa natatanggap ang installation-environment at protection-function matching.” Huwag magtakda ng re-energization sa abnormal condition, protective reset, o rewiring mula rito."
+          }
+        },
+        "kensetsu-common-session-241-cluster-4:prompt": {
+          "sourceJa": "屋外での使用条件をまだ確認していないリールについて、資料の有無を分けて報告してください。",
+          "translations": {
+            "id": "Laporkan terpisah ketersediaan dokumen untuk reel yang kondisi luar ruangannya belum diperiksa.",
+            "tl": "Hiwalay na iulat ang document availability ng reel na outdoor-use conditions ay hindi pa nasuri."
+          }
+        },
+        "keyTerm:電工ドラム": {
+          "sourceJa": "電工ドラム",
+          "translations": {
+            "id": "Gulungan kabel",
+            "tl": "Cable reel"
+          }
+        },
+        "keyTerm:コードリール": {
+          "sourceJa": "コードリール",
+          "translations": {
+            "id": "Cord reel",
+            "tl": "Cord reel"
+          }
+        },
+        "keyTerm:定格電流": {
+          "sourceJa": "定格電流",
+          "translations": {
+            "id": "Arus nominal",
+            "tl": "Rated current"
+          }
+        },
+        "keyTerm:限度電流": {
+          "sourceJa": "限度電流",
+          "translations": {
+            "id": "Arus batas",
+            "tl": "Limiting current"
+          }
+        },
+        "keyTerm:負荷": {
+          "sourceJa": "負荷",
+          "translations": {
+            "id": "Beban",
+            "tl": "Load"
+          }
+        },
+        "keyTerm:発熱": {
+          "sourceJa": "発熱",
+          "translations": {
+            "id": "Pembentukan panas",
+            "tl": "Heat generation"
+          }
+        }
+      }
+    },
+    {
+      "sessionId": "kensetsu-common-session-242",
+      "entries": {
+        "title": {
+          "sourceJa": "剣・角・ダブルスコップの形と用途",
+          "translations": {
+            "id": "Bentuk dan penggunaan sekop runcing, persegi, dan ganda",
+            "tl": "Hugis at gamit ng pointed, square, at double shovel"
+          }
+        },
+        "kensetsu-common-session-242-cluster-1:title": {
+          "sourceJa": "掘る形とすくう形",
+          "translations": {
+            "id": "Bentuk menggali dan menyendok",
+            "tl": "Hugis para sa digging at scooping"
+          }
+        },
+        "kensetsu-common-session-242-cluster-1-p1": {
+          "sourceJa": "剣スコップは先端が尖った形で、地面の掘削に関わる道具です。角スコップは前縁が直線的な形で、土などをすくう用途があります。刃先の形と作業の目的を合わせて読み、名前だけで能力を決めません。",
+          "translations": {
+            "id": "Sekop runcing memiliki ujung lancip untuk penggalian. Sekop persegi memiliki tepi depan lurus untuk menyendok tanah. Baca bentuk mata bersama tujuan, bukan menentukan kapasitas dari nama saja.",
+            "tl": "Ang pointed shovel ay matulis para sa paghuhukay at square shovel ay tuwid ang front edge para sa pagsalok ng lupa. Basahin ang edge shape kasama ang purpose; huwag tukuyin ang capacity sa pangalan lamang."
+          }
+        },
+        "kensetsu-common-session-242-cluster-1-p2": {
+          "sourceJa": "倉庫の写真に二種類の頭部が写っていれば、尖った形と直線的な形を分けて説明できます。写真に写る特徴を、土の状態や実際の作業結果まで広げない分類例です。",
+          "translations": {
+            "id": "Jika foto gudang menunjukkan dua kepala, jelaskan bentuk runcing dan lurus terpisah. Ini klasifikasi fitur foto tanpa memperluas ke kondisi tanah atau hasil aktual.",
+            "tl": "Kung dalawang head ang nasa warehouse photo, hiwalay na ipaliwanag ang pointed at straight. Classification ito ng nakikita, hindi soil condition o actual work result."
+          }
+        },
+        "kensetsu-common-session-242-cluster-1:prompt": {
+          "sourceJa": "剣スコップと角スコップの前縁の違いを、用途と結び付けて説明してください。",
+          "translations": {
+            "id": "Jelaskan perbedaan tepi depan sekop runcing dan persegi terkait penggunaan.",
+            "tl": "Ipaliwanag ang front-edge difference ng pointed at square shovel ayon sa gamit."
+          }
+        },
+        "kensetsu-common-session-242-cluster-2:title": {
+          "sourceJa": "通称と実際の製品",
+          "translations": {
+            "id": "Sebutan umum dan produk aktual",
+            "tl": "Common name at actual product"
+          }
+        },
+        "kensetsu-common-session-242-cluster-2-p1": {
+          "sourceJa": "剣スコ、角スコという略称を聞くことがあります。踏み部分や柄の形は実際の製品で確認する事項です。角形という名称だけから、すべての製品で足を掛ける部分がないと判断しません。",
+          "translations": {
+            "id": "Ada sebutan singkat ken-suko dan kaku-suko. Bagian pijakan dan bentuk gagang diperiksa pada produk aktual. Nama persegi tidak berarti semua produk tanpa pijakan kaki.",
+            "tl": "May pinaikling ken-suko at kaku-suko. Sa actual product sinusuri ang foot step at handle shape. Huwag ipalagay na lahat ay walang foot step dahil square ang pangalan."
+          }
+        },
+        "kensetsu-common-session-242-cluster-2-p2": {
+          "sourceJa": "貸出簿に角スコとだけあれば、型式や写真への参照を加えられます。短い呼び名で話せても、現物の構造まで確定した記録にはならないためです。",
+          "translations": {
+            "id": "Jika buku peminjaman hanya menyebut kaku-suko, tambahkan model atau rujukan foto. Nama singkat bukan record struktur aktual sudah ditentukan.",
+            "tl": "Kung kaku-suko lamang ang lending record, maaaring idagdag ang model o photo reference. Hindi tiyak ang actual structure mula lamang sa pinaikling pangalan."
+          }
+        },
+        "kensetsu-common-session-242-cluster-2:prompt": {
+          "sourceJa": "角スコという略称だけの貸出簿に、現物を特定するどの情報を加えますか。",
+          "translations": {
+            "id": "Informasi apa yang ditambahkan untuk menentukan benda pada buku hanya sebutan sekop persegi?",
+            "tl": "Anong impormasyon ang idaragdag sa pinaikling square-shovel record upang tukuyin ang actual item?"
+          }
+        },
+        "kensetsu-common-session-242-cluster-3:title": {
+          "sourceJa": "二枚で土を扱う道具",
+          "translations": {
+            "id": "Alat dua kepala untuk tanah",
+            "tl": "Dalawang head para sa lupa"
+          }
+        },
+        "kensetsu-common-session-242-cluster-3-p1": {
+          "sourceJa": "ダブルスコップは二つの柄と向き合う頭部を持ち、縦穴の土を挟んで取り出す用途の道具です。複式ショベルという名称もあります。杭などの穴の例があっても、すべての深さや地盤に対応するとは限りません。",
+          "translations": {
+            "id": "Sekop ganda memiliki dua gagang dan kepala berhadapan untuk menjepit dan mengeluarkan tanah dari lubang vertikal; juga disebut sekop majemuk. Contoh lubang tiang tidak menjamin semua kedalaman atau tanah sesuai.",
+            "tl": "Ang double shovel ay may dalawang handle at magkaharap na head upang ipit at alisin ang lupa sa vertical hole; tinatawag ding double-action shovel. Hindi tiyak na lahat ng lalim at ground ay angkop mula sa post-hole example."
+          }
+        },
+        "kensetsu-common-session-242-cluster-3-p2": {
+          "sourceJa": "架空の穴掘り計画に工具名だけあれば、対象の地盤や穴の条件の記録が別に必要だと示せます。道具が用意されたことと、掘削の条件が確定したことを区別する例です。",
+          "translations": {
+            "id": "Jika rencana fiktif hanya nama alat, tunjukkan perlunya catatan tanah dan kondisi lubang terpisah. Bedakan alat tersedia dan kondisi penggalian sudah ditentukan.",
+            "tl": "Kung tool name lamang ang digging plan, ipakita ang pangangailangan ng ground at hole condition. Ihiwalay ang availability at finalized excavation conditions."
+          }
+        },
+        "kensetsu-common-session-242-cluster-3:prompt": {
+          "sourceJa": "ダブルスコップが用意された計画で、穴の条件まで確定したと書けない理由は何ですか。",
+          "translations": {
+            "id": "Mengapa rencana dengan sekop ganda tersedia belum berarti kondisi lubang ditentukan?",
+            "tl": "Bakit hindi finalized ang hole conditions dahil may double shovel?"
+          }
+        },
+        "kensetsu-common-session-242-cluster-4:title": {
+          "sourceJa": "用途外の力を加えない",
+          "translations": {
+            "id": "Tidak memberi gaya di luar penggunaan",
+            "tl": "Huwag maglapat ng puwersang labas sa gamit"
+          }
+        },
+        "kensetsu-common-session-242-cluster-4-p1": {
+          "sourceJa": "スコップを重い物のてことして扱うことは、掘る・すくう用途から外れます。頭部や柄に意図しない力が加わるため、工具名と本来の用途を対応させて理解します。地中の配管や配線の有無も、地表の見た目だけでは分かりません。",
+          "translations": {
+            "id": "Memakai sekop sebagai tuas benda berat di luar penggunaan menggali atau menyendok. Kepala dan gagang menerima gaya tak direncanakan; pahami nama bersama penggunaan asli. Pipa atau kabel bawah tanah juga tidak diketahui dari tampilan permukaan saja.",
+            "tl": "Labas sa digging o scooping ang paggamit ng shovel bilang lever ng mabigat na bagay. May hindi nilalayong force sa head at handle; unawain ang pangalan at orihinal na gamit. Hindi malalaman ang underground piping/wiring sa surface appearance lamang."
+          }
+        },
+        "kensetsu-common-session-242-cluster-4-p2": {
+          "sourceJa": "相談欄が「スコップで蓋をこじる」なら、掘削用具の用途とは別の相談だと整理できます。持ち方、踏み方、掘り進め方や地中設備への接近方法を、この整理から指示しません。",
+          "translations": {
+            "id": "Jika konsultasi menyebut mencongkel tutup dengan sekop, kelompokkan terpisah dari penggunaan alat penggali. Jangan memberi instruksi memegang, menginjak, menggali, atau mendekati instalasi bawah tanah dari pengelompokan ini.",
+            "tl": "Kung pag-pry ng lid gamit ang shovel ang request, ituring na ibang konsultasyon sa excavation-tool purpose. Huwag magbigay ng grip, stepping, digging progression, o underground-equipment approach mula rito."
+          }
+        },
+        "kensetsu-common-session-242-cluster-4:prompt": {
+          "sourceJa": "スコップで重い蓋をこじる依頼を、本来の用途との関係からどう整理しますか。",
+          "translations": {
+            "id": "Bagaimana menyusun permintaan mencongkel tutup berat dengan sekop terkait penggunaan asli?",
+            "tl": "Paano isaayos ang request na i-pry ang mabigat na lid ayon sa orihinal na gamit?"
+          }
+        },
+        "keyTerm:剣スコップ": {
+          "sourceJa": "剣スコップ",
+          "translations": {
+            "id": "Sekop runcing",
+            "tl": "Pointed shovel"
+          }
+        },
+        "keyTerm:角スコップ": {
+          "sourceJa": "角スコップ",
+          "translations": {
+            "id": "Sekop persegi",
+            "tl": "Square shovel"
+          }
+        },
+        "keyTerm:ダブルスコップ": {
+          "sourceJa": "ダブルスコップ",
+          "translations": {
+            "id": "Sekop ganda",
+            "tl": "Double shovel"
+          }
+        },
+        "keyTerm:刃先": {
+          "sourceJa": "刃先",
+          "translations": {
+            "id": "Mata alat",
+            "tl": "Cutting edge"
+          }
+        },
+        "keyTerm:掘削": {
+          "sourceJa": "掘削",
+          "translations": {
+            "id": "Penggalian",
+            "tl": "Excavation"
+          }
+        },
+        "keyTerm:てこ": {
+          "sourceJa": "てこ",
+          "translations": {
+            "id": "Tuas",
+            "tl": "Lever"
+          }
+        },
+        "illustration:0:alt": {
+          "sourceJa": "剣スコップ・角スコップ・ダブルスコップの形を比較する教材用見本。",
+          "translations": {
+            "id": "Contoh bentuk sekop runcing, persegi, dan ganda untuk perbandingan pembelajaran.",
+            "tl": "Halimbawa ng pointed, square, at double shovel para sa paghahambing sa pag-aaral."
+          }
+        }
+      }
+    },
+    {
+      "sessionId": "kensetsu-common-session-243",
+      "entries": {
+        "title": {
+          "sourceJa": "つるはし・レーキ・ジョレンの役割",
+          "translations": {
+            "id": "Peran beliung, rake, dan joren",
+            "tl": "Papel ng pickaxe, rake, at joren"
+          }
+        },
+        "kensetsu-common-session-243-cluster-1:title": {
+          "sourceJa": "硬い地面を扱う道具",
+          "translations": {
+            "id": "Alat tanah keras",
+            "tl": "Tool para sa matigas na lupa"
+          }
+        },
+        "kensetsu-common-session-243-cluster-1-p1": {
+          "sourceJa": "つるはしは硬い地面を掘り起こす用途に関わり、教材ではアスファルトを砕く例も示されています。尖った部分や平たい部分など頭部の構造を実物で読みます。すくって運ぶスコップと同じ役割にはまとめません。",
+          "translations": {
+            "id": "Beliung untuk membongkar tanah keras; materi juga memberi contoh memecah aspal. Baca kepala aktual seperti bagian lancip atau datar. Jangan menyamakan peran dengan sekop penyendok dan pemindah.",
+            "tl": "Para sa matigas na lupa ang pickaxe at may asphalt-breaking example sa aralin. Basahin ang actual head na pointed o flat. Huwag pagsamahin sa papel ng shovel na sumasalok at naglilipat."
+          }
+        },
+        "kensetsu-common-session-243-cluster-1-p2": {
+          "sourceJa": "道具の役割表を「硬い部分を崩す」「土をすくう」に分けると、つるはしとスコップを区別できます。振り上げる高さ、打つ位置や力の加え方は、この分類表から決めません。",
+          "translations": {
+            "id": "Pisahkan peran membongkar bagian keras dan menyendok tanah untuk membedakan beliung dan sekop. Jangan menetapkan tinggi ayunan, posisi pukulan, atau gaya dari tabel ini.",
+            "tl": "Paghiwalayin ang pagbasag ng matigas at pagsalok ng lupa upang makilala ang pickaxe at shovel. Huwag magtakda ng swing height, strike location, o force mula sa classification."
+          }
+        },
+        "kensetsu-common-session-243-cluster-1:prompt": {
+          "sourceJa": "つるはしとスコップを、土に対する役割の違いで説明してください。",
+          "translations": {
+            "id": "Jelaskan beliung dan sekop berdasarkan peran terhadap tanah.",
+            "tl": "Ipaliwanag ang pickaxe at shovel ayon sa papel sa lupa."
+          }
+        },
+        "kensetsu-common-session-243-cluster-2:title": {
+          "sourceJa": "レーキの形と材料",
+          "translations": {
+            "id": "Bentuk dan bahan rake",
+            "tl": "Hugis at materyal ng rake"
+          }
+        },
+        "kensetsu-common-session-243-cluster-2-p1": {
+          "sourceJa": "レーキは土やアスファルトをならす、落ち葉を集めるなどの用途を持ちます。爪のある形や平たい形、材質の違いがあります。アスファルト向けにも爪付きの製品があるため、用途だけで爪の有無を二分しません。",
+          "translations": {
+            "id": "Rake meratakan tanah atau aspal dan mengumpulkan daun. Ada bentuk bergigi atau datar dan bahan berbeda. Ada juga rake aspal bergigi, jadi penggunaan saja tidak membagi ada atau tidak gigi.",
+            "tl": "May gamit ang rake sa leveling ng lupa o asphalt at leaf gathering. May may tine o flat at iba ang material. May asphalt rake na may tine, kaya huwag hatiin ang tine/no-tine sa purpose lamang."
+          }
+        },
+        "kensetsu-common-session-243-cluster-2-p2": {
+          "sourceJa": "架空の発注表には用途、頭部の形、材質を別欄にできます。「舗装用だから爪なし」と自動入力した記録は、実際の品番の説明と照合する必要があります。",
+          "translations": {
+            "id": "Tabel pesanan fiktif memisahkan penggunaan, bentuk kepala, dan bahan. Catatan otomatis “untuk perkerasan maka tanpa gigi” harus dicocokkan dengan nomor produk aktual.",
+            "tl": "Hiwalay ang purpose, head shape, at material sa order table. Kailangang itugma sa actual part number ang auto-entry na paving kaya walang tine."
+          }
+        },
+        "kensetsu-common-session-243-cluster-2:prompt": {
+          "sourceJa": "アスファルト用レーキの形を決め付けない発注表には、どの項目を設けますか。",
+          "translations": {
+            "id": "Item apa yang dibuat agar pesanan tidak menganggap bentuk rake aspal selalu sama?",
+            "tl": "Anong item ang ilalagay sa order upang hindi ipagpalagay ang hugis ng asphalt rake?"
+          }
+        },
+        "kensetsu-common-session-243-cluster-3:title": {
+          "sourceJa": "かき集める道具",
+          "translations": {
+            "id": "Alat penggaruk pengumpul",
+            "tl": "Tool para sa pagkalaykay"
+          }
+        },
+        "kensetsu-common-session-243-cluster-3-p1": {
+          "sourceJa": "ジョレンは土やごみをかき寄せる用途に関わります。泥をすくうものや水抜き穴を持つものなど、製品によって構造と対象が異なります。名前の共通性だけから、すべてが同じ土や水分状態に対応するとは判断しません。",
+          "translations": {
+            "id": "Joren menggaruk tanah atau sampah. Ada produk penyendok lumpur atau berlubang pembuangan air; struktur dan sasaran berbeda menurut produk. Nama sama tidak berarti cocok semua tanah atau kelembapan.",
+            "tl": "Para sa pagkalaykay ng lupa o basura ang joren. May mud-scooping o drainage-hole product, at iba ang structure at target. Huwag ipalagay na compatible sa lahat ng soil at water condition dahil parehong pangalan."
+          }
+        },
+        "kensetsu-common-session-243-cluster-3-p2": {
+          "sourceJa": "清掃用具の一覧にジョレンとあれば、乾いた土を集めるのか、水を含む泥を扱うのかを追記できます。対象の記載があると、用途の異なる現物を区別しやすくなります。",
+          "translations": {
+            "id": "Jika daftar kebersihan menyebut joren, tambahkan apakah tanah kering atau lumpur basah. Sasaran tercatat membantu membedakan penggunaan benda aktual.",
+            "tl": "Kung joren ang listahan ng cleaning tools, idagdag kung dry soil o wet mud. Nakakatulong ang target record sa paghihiwalay ng actual items na iba ang gamit."
+          }
+        },
+        "kensetsu-common-session-243-cluster-3:prompt": {
+          "sourceJa": "ジョレンの一覧で、対象の状態を明確にするどの情報を追記しますか。",
+          "translations": {
+            "id": "Informasi apa ditambahkan untuk memperjelas keadaan sasaran joren?",
+            "tl": "Anong target-state information ang idaragdag sa joren list?"
+          }
+        },
+        "kensetsu-common-session-243-cluster-4:title": {
+          "sourceJa": "ならすことと固めること",
+          "translations": {
+            "id": "Meratakan dan memadatkan",
+            "tl": "Leveling at compaction"
+          }
+        },
+        "kensetsu-common-session-243-cluster-4-p1": {
+          "sourceJa": "整地で表面をならすことと、材料を締め固めることは別の目的です。レーキで形を整えた外観だけでは、締固めの状態は判断できません。集める、ならす、固めるという動詞を記録で区別します。",
+          "translations": {
+            "id": "Meratakan permukaan saat penyiapan tanah berbeda dari pemadatan bahan. Tampilan yang diratakan rake tidak menentukan kondisi pemadatan. Bedakan kata mengumpulkan, meratakan, dan memadatkan dalam catatan.",
+            "tl": "Magkaiba ang leveling sa land preparation at material compaction. Hindi malalaman ang compaction sa leveled appearance ng rake. Ihiwalay sa record ang gathering, leveling, at compacting."
+          }
+        },
+        "kensetsu-common-session-243-cluster-4-p2": {
+          "sourceJa": "報告例は「土の表面をならした記録あり。締固めの実施・結果記録はなし」です。平らに見える写真だけを、必要な締固めを満たした証拠へ置き換えない伝え方です。",
+          "translations": {
+            "id": "Contoh laporan: “Ada catatan permukaan tanah diratakan. Tidak ada pelaksanaan atau hasil pemadatan.” Foto rata saja bukan bukti pemadatan yang diperlukan tercapai.",
+            "tl": "Halimbawa: “May soil-surface leveling record. Walang compaction implementation/result record.” Hindi ebidensya ng required compaction ang flat photo lamang."
+          }
+        },
+        "kensetsu-common-session-243-cluster-4:prompt": {
+          "sourceJa": "整地の写真しかない状況を、締固め済みと誤読させない報告にしてください。",
+          "translations": {
+            "id": "Buat laporan hanya foto penyiapan tanah tanpa menyiratkan pemadatan selesai.",
+            "tl": "Gumawa ng ulat na leveling photo lamang ang mayroon, nang hindi nagpapahiwatig na compacted na."
+          }
+        },
+        "keyTerm:つるはし": {
+          "sourceJa": "つるはし",
+          "translations": {
+            "id": "Beliung",
+            "tl": "Pickaxe"
+          }
+        },
+        "keyTerm:レーキ": {
+          "sourceJa": "レーキ",
+          "translations": {
+            "id": "Rake",
+            "tl": "Rake"
+          }
+        },
+        "keyTerm:ジョレン": {
+          "sourceJa": "ジョレン",
+          "translations": {
+            "id": "Joren",
+            "tl": "Joren"
+          }
+        },
+        "keyTerm:整地": {
+          "sourceJa": "整地",
+          "translations": {
+            "id": "Penyiapan tanah",
+            "tl": "Land leveling"
+          }
+        },
+        "keyTerm:爪": {
+          "sourceJa": "爪",
+          "translations": {
+            "id": "Gigi rake",
+            "tl": "Tine"
+          }
+        },
+        "keyTerm:材質": {
+          "sourceJa": "材質",
+          "translations": {
+            "id": "Bahan",
+            "tl": "Materyal"
+          }
+        }
+      }
+    },
+    {
+      "sessionId": "kensetsu-common-session-244",
+      "entries": {
+        "title": {
+          "sourceJa": "たこ・手動タンパーと締固めの記録",
+          "translations": {
+            "id": "Tako, tamper manual, dan catatan pemadatan",
+            "tl": "Tako, manual tamper, at compaction records"
+          }
+        },
+        "kensetsu-common-session-244-cluster-1:title": {
+          "sourceJa": "重さを利用する用具",
+          "translations": {
+            "id": "Alat memanfaatkan berat",
+            "tl": "Tool na gumagamit ng bigat"
+          }
+        },
+        "kensetsu-common-session-244-cluster-1-p1": {
+          "sourceJa": "ここでいうたこは、重さを利用して土を突き固める手動の用具を指します。機械式のランマと同じ名称にはまとめません。用具の重さだけで、どの地盤にも十分な締固めができると判断しないことが大切です。",
+          "translations": {
+            "id": "Tako di sini adalah alat manual pemadat tanah menggunakan berat. Jangan menyamakan namanya dengan rammer mesin. Berat alat saja tidak berarti cukup memadatkan semua tanah.",
+            "tl": "Ang tako rito ay manual tool na gumagamit ng bigat upang tamp-in ang lupa. Huwag pagsamahin sa mechanical rammer na pangalan. Mahalagang huwag ipalagay na sapat sa lahat ng ground mula lamang sa bigat."
+          }
+        },
+        "kensetsu-common-session-244-cluster-1-p2": {
+          "sourceJa": "架空の用具表に「たこ」とあれば、手動の締固め用具という説明を添えられます。同じ呼び方を別の設備名として受け取られないよう、用途も残す例です。",
+          "translations": {
+            "id": "Jika tabel fiktif menyebut tako, tambahkan alat pemadat manual. Ini menyisakan penggunaan agar nama sama tidak dianggap instalasi lain.",
+            "tl": "Kung tako ang nasa tool table, maaaring idagdag na manual compaction tool. Panatilihin ang purpose upang hindi mapagkamalang ibang equipment name."
+          }
+        },
+        "kensetsu-common-session-244-cluster-1:prompt": {
+          "sourceJa": "用具表のたこについて、動力と用途が伝わる説明を加えてください。",
+          "translations": {
+            "id": "Tambahkan penjelasan tenaga dan penggunaan tako pada tabel.",
+            "tl": "Idagdag ang power at purpose ng tako sa talaan."
+          }
+        },
+        "kensetsu-common-session-244-cluster-2:title": {
+          "sourceJa": "平らな板の手動用具",
+          "translations": {
+            "id": "Alat manual dengan pelat datar",
+            "tl": "Manual tool na may flat plate"
+          }
+        },
+        "kensetsu-common-session-244-cluster-2-p1": {
+          "sourceJa": "この教材のタンパーは、柄の先に金属板を持つ手動の締固め用具です。アスファルトなどを対象とする製品があります。タンパーという呼称が機械の名称にも使われる場合があるため、構造と動力を合わせて読みます。",
+          "translations": {
+            "id": "Tamper dalam materi ini adalah alat manual pemadat dengan pelat logam di ujung gagang. Ada produk untuk aspal. Nama tamper juga dapat dipakai mesin, jadi baca struktur bersama tenaga.",
+            "tl": "Ang tamper sa aralin ay manual compaction tool na metal plate sa dulo ng handle. May asphalt product. Dahil ginagamit din ang tamper bilang machine name, basahin ang structure at power."
+          }
+        },
+        "kensetsu-common-session-244-cluster-2-p2": {
+          "sourceJa": "用品台帳にタンパーだけを書かず、「手動、柄と平らな板」と構造を添えられます。機械の手配と混同しないための記載で、すべての名称の統一を求める例ではありません。",
+          "translations": {
+            "id": "Jangan hanya tamper dalam inventaris; tambahkan “manual, gagang dan pelat datar”. Ini mencegah tertukar dengan pengadaan mesin, bukan menuntut semua nama diseragamkan.",
+            "tl": "Huwag tamper lamang; maaaring idagdag na “manual, handle at flat plate”. Para ito hindi mapaghalo sa machine procurement, hindi pagpapareho ng lahat ng pangalan."
+          }
+        },
+        "kensetsu-common-session-244-cluster-2:prompt": {
+          "sourceJa": "タンパーを機械と取り違えないよう、台帳にどの構造と動力を書きますか。",
+          "translations": {
+            "id": "Struktur dan tenaga apa ditulis agar tamper tidak tertukar dengan mesin?",
+            "tl": "Anong structure at power ang itatala upang hindi mapagkamalang machine ang tamper?"
+          }
+        },
+        "kensetsu-common-session-244-cluster-3:title": {
+          "sourceJa": "接する面と対象材料",
+          "translations": {
+            "id": "Permukaan kontak dan bahan",
+            "tl": "Contact surface at materyal"
+          }
+        },
+        "kensetsu-common-session-244-cluster-3-p1": {
+          "sourceJa": "締固め用具は材料に力を伝える部分を持ち、手動タンパーでは板の面がその役割に関わります。対象材料や面の寸法などは製品の指定を読む事項です。板が広いという外観だけで、締固めの効果を順位付けしません。",
+          "translations": {
+            "id": "Alat pemadat memiliki bagian penerus gaya ke bahan; permukaan pelat tamper manual berperan demikian. Baca bahan sasaran dan ukuran dari spesifikasi produk. Pelat lebar saja tidak menentukan peringkat efek pemadatan.",
+            "tl": "May force-transmitting part ang compaction tool at plate face iyon sa manual tamper. Basahin ang target material at face dimension sa specification. Huwag iranggo ang compaction effect sa wide-plate appearance lamang."
+          }
+        },
+        "kensetsu-common-session-244-cluster-3-p2": {
+          "sourceJa": "比較表を対象材料、接する部分、製品の指定に分けると、外観だけの比較を避けられます。板の形が似た二つの用具も、同じ条件で同じ結果になるとは書けません。",
+          "translations": {
+            "id": "Pisahkan bahan sasaran, bagian kontak, dan spesifikasi produk agar perbandingan tidak berdasarkan tampilan saja. Dua alat mirip pelat belum tentu hasil sama pada kondisi sama.",
+            "tl": "Hiwalay ang target material, contact part, at product specification upang maiwasan ang appearance-only comparison. Hindi tiyak na parehong resulta sa parehong kondisyon ang dalawang magkatulad na plate tools."
+          }
+        },
+        "kensetsu-common-session-244-cluster-3:prompt": {
+          "sourceJa": "平らな板を持つ二つの用具を比較するとき、外観以外にどの条件を整理しますか。",
+          "translations": {
+            "id": "Kondisi apa selain tampilan disusun saat membandingkan dua alat pelat datar?",
+            "tl": "Anong kondisyon bukod sa hitsura ang aayusin sa dalawang flat-plate tool?"
+          }
+        },
+        "kensetsu-common-session-244-cluster-4:title": {
+          "sourceJa": "実施と結果を分ける",
+          "translations": {
+            "id": "Pelaksanaan dan hasil terpisah",
+            "tl": "Implementation at result na hiwalay"
+          }
+        },
+        "kensetsu-common-session-244-cluster-4-p1": {
+          "sourceJa": "手動用具で突き固めたという実施記録と、必要な締固め状態を満たしたという結果の確認は異なります。表面が平らになったことも、結果のすべてを示しません。要求事項と確認方法は現場の資料で扱います。",
+          "translations": {
+            "id": "Catatan menumbuk dengan alat manual berbeda dari konfirmasi kondisi pemadatan yang diperlukan terpenuhi. Permukaan rata juga bukan semua hasil. Persyaratan dan metode pemeriksaan memakai dokumen lapangan.",
+            "tl": "Iba ang manual-tamping record at result verification ng required compaction. Hindi lahat ng resulta ang flat surface. Sa site documents ang requirements at verification method."
+          }
+        },
+        "kensetsu-common-session-244-cluster-4-p2": {
+          "sourceJa": "引継ぎ例は「手動タンパーを用いた記録あり。要求事項への適合を示す結果は未受領」です。回数、持ち上げ高さや打撃の強さを、この報告例から指定しません。",
+          "translations": {
+            "id": "Serah terima: “Ada catatan penggunaan tamper manual. Hasil kesesuaian persyaratan belum diterima.” Jangan menentukan jumlah pukulan, tinggi angkat, atau kekuatan dari laporan ini.",
+            "tl": "Halimbawa: “May manual-tamper use record. Hindi pa natatanggap ang requirement-compliance result.” Huwag magtakda ng count, lift height, o impact strength mula rito."
+          }
+        },
+        "kensetsu-common-session-244-cluster-4:prompt": {
+          "sourceJa": "手動タンパーの使用記録だけある状況を、結果も合格したと誤解させずに伝えてください。",
+          "translations": {
+            "id": "Sampaikan catatan penggunaan tamper saja tanpa menyiratkan hasil lulus.",
+            "tl": "Ipaalam ang tamper-use record lamang nang hindi nagpapahiwatig na pasado na ang result."
+          }
+        },
+        "keyTerm:たこ": {
+          "sourceJa": "たこ",
+          "translations": {
+            "id": "Tako (alat pemadat manual)",
+            "tl": "Tako (manual compaction tool)"
+          }
+        },
+        "keyTerm:タンパー": {
+          "sourceJa": "タンパー",
+          "translations": {
+            "id": "Tamper",
+            "tl": "Tamper"
+          }
+        },
+        "keyTerm:手動": {
+          "sourceJa": "手動",
+          "translations": {
+            "id": "Manual",
+            "tl": "Manual"
+          }
+        },
+        "keyTerm:締固め": {
+          "sourceJa": "締固め",
+          "translations": {
+            "id": "Pemadatan",
+            "tl": "Compaction"
+          }
+        },
+        "keyTerm:金属板": {
+          "sourceJa": "金属板",
+          "translations": {
+            "id": "Pelat logam",
+            "tl": "Metal plate"
+          }
+        },
+        "keyTerm:柄": {
+          "sourceJa": "柄",
+          "translations": {
+            "id": "Gagang",
+            "tl": "Handle"
+          }
+        }
+      }
+    },
+    {
+      "sessionId": "kensetsu-common-session-245",
+      "entries": {
+        "title": {
+          "sourceJa": "ランマと振動式コンパクタの違い",
+          "translations": {
+            "id": "Perbedaan rammer dan pemadat getar",
+            "tl": "Rammer at vibratory compactor"
+          }
+        },
+        "kensetsu-common-session-245-cluster-1:title": {
+          "sourceJa": "上下の衝撃を伝える",
+          "translations": {
+            "id": "Meneruskan hentakan naik-turun",
+            "tl": "Paghatid ng up-down impact"
+          }
+        },
+        "kensetsu-common-session-245-cluster-1-p1": {
+          "sourceJa": "ランマは衝撃板の上下動によって土の締固めに関わる機械です。質量や衝撃の作用と、対象材料の条件を分けて理解します。エンジン式のほか電動の製品もあり、ランマという名称だけで動力を確定しません。",
+          "translations": {
+            "id": "Rammer memadatkan tanah melalui gerakan naik-turun pelat hentak. Pisahkan massa dan kerja hentakan dari kondisi bahan. Ada produk mesin bakar dan listrik; nama rammer saja tidak menentukan tenaga.",
+            "tl": "Ang rammer ay compaction machine na up-down ang impact plate. Ihiwalay ang mass at impact action sa target material. May engine at electric product; hindi natutukoy ang power sa pangalan lamang."
+          }
+        },
+        "kensetsu-common-session-245-cluster-1-p2": {
+          "sourceJa": "架空の機械台帳では名称に加え、原動機と接地する部分を記載できます。ランマをすべて燃料式として登録した表なら、実際の型式の資料に合わせて修正する例です。",
+          "translations": {
+            "id": "Inventaris mesin fiktif menambahkan penggerak dan bagian kontak tanah. Jika semua rammer terdaftar berbahan bakar, perbaiki sesuai dokumen model aktual.",
+            "tl": "Maaaring idagdag ang prime mover at ground-contact part. Kung lahat ay fuel-powered sa table, halimbawa ang pagwawasto ayon sa actual-model documents."
+          }
+        },
+        "kensetsu-common-session-245-cluster-1:prompt": {
+          "sourceJa": "ランマの台帳で、名称以外に動力と接する部分のどの情報を残しますか。",
+          "translations": {
+            "id": "Informasi tenaga dan bagian kontak apa disisakan selain nama rammer?",
+            "tl": "Anong power at contact-part information ang pananatilihin bukod sa rammer name?"
+          }
+        },
+        "kensetsu-common-session-245-cluster-2:title": {
+          "sourceJa": "振動を用いる締固め",
+          "translations": {
+            "id": "Pemadatan menggunakan getaran",
+            "tl": "Vibration compaction"
+          }
+        },
+        "kensetsu-common-session-245-cluster-2-p1": {
+          "sourceJa": "バイブロコンパクタの説明では、機体の重さと振動を利用した転圧が扱われます。路盤や埋戻しなどは用途の例です。振動式の機械では転圧盤から材料へ作用を伝えますが、使う場所や材料は機種の指定に依存します。",
+          "translations": {
+            "id": "Vibro compactor memanfaatkan berat dan getaran untuk pemadatan. Lapisan dasar jalan atau urugan adalah contoh penggunaan. Pada mesin getar, pelat meneruskan kerja ke bahan, tetapi lokasi dan bahan bergantung spesifikasi model.",
+            "tl": "Sa vibro compactor, ginagamit ang bigat at vibration para sa compaction. Halimbawa ang road base at backfill. Plate ang naghahatid ng action sa materyal ngunit ayon sa specified model ang lugar at materyal."
+          }
+        },
+        "kensetsu-common-session-245-cluster-2-p2": {
+          "sourceJa": "配置案に埋戻し用とだけ書かれた機械があれば、対象材料と型式を対応させる欄を加えられます。用途例に同じ言葉があることを、現場の全条件に適合した判断へ変えないためです。",
+          "translations": {
+            "id": "Jika rencana hanya menyebut mesin untuk urugan, tambahkan kolom model dan bahan. Kesamaan kata dalam contoh bukan penilaian cocok seluruh kondisi lapangan.",
+            "tl": "Kung backfill machine lamang ang layout, idagdag ang model/material matching. Hindi site-wide compatibility ang parehong salita sa use example."
+          }
+        },
+        "kensetsu-common-session-245-cluster-2:prompt": {
+          "sourceJa": "埋戻し用という記載だけの配置案に、機械と材料を対応させるどの情報を加えますか。",
+          "translations": {
+            "id": "Informasi apa ditambahkan agar mesin dan bahan sesuai pada rencana urugan saja?",
+            "tl": "Anong impormasyon ang idaragdag sa backfill-only plan upang itugma ang machine at material?"
+          }
+        },
+        "kensetsu-common-session-245-cluster-3:title": {
+          "sourceJa": "名称と仕様の照合",
+          "translations": {
+            "id": "Pencocokan nama dan spesifikasi",
+            "tl": "Name at specification matching"
+          }
+        },
+        "kensetsu-common-session-245-cluster-3-p1": {
+          "sourceJa": "プレートコンパクタも振動を使う締固め機械の名称です。バイブロコンパクタという呼び方との関係は、製品の分類や型式を照合します。全機種で片方の盤が大きい、振動が小さいという固定の順位にはしません。",
+          "translations": {
+            "id": "Plate compactor juga nama mesin pemadat getar. Cocokkan hubungannya dengan vibro compactor melalui klasifikasi atau model. Jangan menetapkan satu selalu lebih besar pelatnya atau lebih kecil getarannya pada semua model.",
+            "tl": "Ang plate compactor ay pangalan din ng vibratory compaction machine. Itugma ang kaugnayan sa vibro compactor sa classification/model. Huwag iranggong laging mas malaking plate o mas mababang vibration ang isa sa lahat ng modelo."
+          }
+        },
+        "kensetsu-common-session-245-cluster-3-p2": {
+          "sourceJa": "比較表では質量、転圧盤の寸法、振動や衝撃の仕様を別欄にできます。単位と測定条件の違う値を、同じ力の大小として並べないための整理です。",
+          "translations": {
+            "id": "Tabel dapat memisahkan massa, dimensi pelat, serta spesifikasi getaran dan hentakan. Jangan menjajarkan nilai dengan satuan atau pengukuran berbeda sebagai besar-kecil gaya sama.",
+            "tl": "Maaaring hiwalay ang mass, plate dimension, at vibration/impact specification. Huwag ihambing na parehong force ang values na iba ang units at measurement conditions."
+          }
+        },
+        "kensetsu-common-session-245-cluster-3:prompt": {
+          "sourceJa": "二つのコンパクタを比較するとき、名称による順位を避けるため何を照合しますか。",
+          "translations": {
+            "id": "Apa dicocokkan untuk menghindari peringkat berdasarkan nama pada dua compactor?",
+            "tl": "Ano ang itutugma upang maiwasan ang name-based ranking ng dalawang compactor?"
+          }
+        },
+        "kensetsu-common-session-245-cluster-4:title": {
+          "sourceJa": "施工目的と確認する結果",
+          "translations": {
+            "id": "Tujuan pekerjaan dan hasil diperiksa",
+            "tl": "Work purpose at verified result"
+          }
+        },
+        "kensetsu-common-session-245-cluster-4-p1": {
+          "sourceJa": "材料をならして形を整えることと、機械で締め固めることは目的が異なります。機械の運転記録だけで、必要な締固めの結果が得られたとは判断しません。対象、要求事項、確認結果の関係を読みます。",
+          "translations": {
+            "id": "Meratakan dan membentuk bahan berbeda tujuan dari pemadatan mesin. Catatan operasi saja tidak menentukan hasil diperlukan tercapai. Baca hubungan sasaran, persyaratan, dan hasil.",
+            "tl": "Magkaiba ang leveling/shaping at machine compaction. Hindi masasabing required result ang nakuha sa operation record lamang. Basahin ang target, requirements, at verification result."
+          }
+        },
+        "kensetsu-common-session-245-cluster-4-p2": {
+          "sourceJa": "報告例は「対象材料と機械型式の記録あり。締固め結果の確認票は未受領」です。運転、移動、施工回数や層の厚さは、この教材の比較例から設定しません。",
+          "translations": {
+            "id": "Contoh laporan: “Ada catatan bahan sasaran dan model mesin. Formulir hasil pemadatan belum diterima.” Jangan menentukan operasi, pergerakan, jumlah lintasan, atau tebal lapisan dari perbandingan materi ini.",
+            "tl": "Halimbawa: “May target-material at machine-model record. Hindi pa natatanggap ang compaction-result verification.” Huwag magtakda ng operation, movement, pass count, o layer thickness mula rito."
+          }
+        },
+        "kensetsu-common-session-245-cluster-4:prompt": {
+          "sourceJa": "機械型式と運転記録だけある施工について、結果の確認状況を分けて報告してください。",
+          "translations": {
+            "id": "Laporkan terpisah status hasil pada pekerjaan hanya model mesin dan operasi tercatat.",
+            "tl": "Hiwalay na iulat ang result verification sa trabahong machine model at operation lamang ang nakatala."
+          }
+        },
+        "keyTerm:ランマ": {
+          "sourceJa": "ランマ",
+          "translations": {
+            "id": "Rammer",
+            "tl": "Rammer"
+          }
+        },
+        "keyTerm:衝撃板": {
+          "sourceJa": "衝撃板",
+          "translations": {
+            "id": "Pelat hentak",
+            "tl": "Impact plate"
+          }
+        },
+        "keyTerm:バイブロコンパクタ": {
+          "sourceJa": "バイブロコンパクタ",
+          "translations": {
+            "id": "Vibro compactor",
+            "tl": "Vibro compactor"
+          }
+        },
+        "keyTerm:プレートコンパクタ": {
+          "sourceJa": "プレートコンパクタ",
+          "translations": {
+            "id": "Plate compactor",
+            "tl": "Plate compactor"
+          }
+        },
+        "keyTerm:転圧盤": {
+          "sourceJa": "転圧盤",
+          "translations": {
+            "id": "Pelat pemadat",
+            "tl": "Compaction plate"
+          }
+        },
+        "keyTerm:埋戻し": {
+          "sourceJa": "埋戻し",
+          "translations": {
+            "id": "Urugan kembali",
+            "tl": "Backfill"
+          }
+        }
+      }
+    }
+  ]
+}
