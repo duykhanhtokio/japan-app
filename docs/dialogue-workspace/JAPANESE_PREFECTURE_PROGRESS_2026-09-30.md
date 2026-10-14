@@ -924,3 +924,8 @@ All64 scenarios in8cities:704 Japanese turns and320goals independently rewritten
 ## Independent city CTY-JP-32209 — 2026-10-14
 
 8 existing Japanese scenarios, 88 turns and 40 goals corrected by one independent assigned worker and fully self-read. User instruction uses independent city authors without peer reading; Shimane has six independent city authors with no peer reading. Source/runtime/self-review hashes bind city AI acceptance; real repository adapters and exact Player corpus screening PASS; all7128canonical IDs/links and unrelated runtimes preserved. Native/human/operatorpolicy/translations/device/release remain pending. Separate containingcity commit must be remotely verified before worker advances. Shimane cumulative 64/64.
+
+
+## Independent city CTY-OKY-KURASHIKI — 2026-10-14
+
+8 existing Japanese scenarios, 88 turns and 40 goals corrected by one independent assigned worker and fully self-read. User instruction uses independent city authors without peer reading; Okayama has six independent city authors with no peer reading. Source/runtime/self-review hashes bind city AI acceptance; real repository adapters and exact Player corpus screening PASS; all7128canonical IDs/links and unrelated runtimes preserved. Native/human/operatorpolicy/translations/device/release remain pending. Separate containingcity commit must be remotely verified before worker advances. Okayama cumulative 8/133.

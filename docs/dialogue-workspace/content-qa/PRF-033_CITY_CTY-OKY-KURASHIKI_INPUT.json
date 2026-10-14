@@ -1,0 +1,2510 @@
+[
+  {
+    "scenario": {
+      "id": "SC-OKY-KURASHIKI-001",
+      "name": "展示作品の解説と鑑賞ルールを確認する",
+      "locationId": "LOC-OKY-KURASHIKI-01",
+      "cityId": "CTY-OKY-KURASHIKI",
+      "locationType": "Other",
+      "type": "Study",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "倉敷市の学習用場面で、鑑賞の方法と撮影条件を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "鑑賞の方法と撮影条件を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": "Phong tranh: tac gia, gia tranh, trien lam, huong dan xem.",
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [
+        "美術 (https://app.notion.com/p/3be70421d96181b2a989ce0d52fca5d4?pvs=21)"
+      ],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-OKY-KURASHIKI",
+      "name": "Kurashiki",
+      "nameJa": "倉敷市",
+      "type": null,
+      "description": "Thành phố Kurashiki (倉敷市) thuộc tỉnh Okayama. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-033",
+      "order": 213,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-OKY-KURASHIKI-01",
+        "LOC-OKY-KURASHIKI-05",
+        "LOC-OKY-KURASHIKI-02",
+        "LOC-OKY-KURASHIKI-07",
+        "LOC-OKY-KURASHIKI-03",
+        "LOC-OKY-KURASHIKI-04",
+        "LOC-OKY-KURASHIKI-06",
+        "LOC-OKY-KURASHIKI-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-OKY-KURASHIKI-01",
+      "name": "Kurashiki Art Gallery",
+      "nameJa": "倉敷美術ギャラリー",
+      "cityId": "CTY-OKY-KURASHIKI",
+      "category": "Museum",
+      "type": "Culture",
+      "npcJob": "Museum Guide",
+      "defaultNpcId": "NPC-OKY-KURASHIKI-001",
+      "description": "Phong tranh: tac gia, gia tranh, trien lam, huong dan xem.",
+      "order": 1,
+      "status": "Active",
+      "importance": "Main",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": [
+        "Tac gia tại 美術ギャラリー (Kurashiki) (https://app.notion.com/p/Tac-gia-t-i-Kurashiki-3be70421d9618100b0e8c22a3948ceda?pvs=21)"
+      ]
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-OKY-KURASHIKI-001-SHARED-01",
+        "scenarioId": "SC-OKY-KURASHIKI-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こんにちは。展示のご案内ですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-OKY-KURASHIKI-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-OKY-KURASHIKI-001-SHARED-02",
+        "scenarioId": "SC-OKY-KURASHIKI-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "art_response_1",
+          "requiredSemanticComponents": {
+            "goal": "鑑賞の方法と撮影条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "倉敷市で作品を見てみたいです。初めてなので、鑑賞の方法を知りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-OKY-KURASHIKI-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-OKY-KURASHIKI-001-SHARED-03",
+        "scenarioId": "SC-OKY-KURASHIKI-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "気になる作品や展示はありますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-OKY-KURASHIKI-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-OKY-KURASHIKI-001-SHARED-04",
+        "scenarioId": "SC-OKY-KURASHIKI-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "art_response_2",
+          "requiredSemanticComponents": {
+            "goal": "鑑賞の方法と撮影条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "この展示です。解説を読んで、わからない言葉を聞いてもよいですか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-OKY-KURASHIKI-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-OKY-KURASHIKI-001-SHARED-05",
+        "scenarioId": "SC-OKY-KURASHIKI-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "質問できる方法を確認しましょう。作品には指示なく触れないでください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-OKY-KURASHIKI-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-OKY-KURASHIKI-001-SHARED-06",
+        "scenarioId": "SC-OKY-KURASHIKI-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "art_response_3",
+          "requiredSemanticComponents": {
+            "goal": "鑑賞の方法と撮影条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "写真を撮れるかも、確認したいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-OKY-KURASHIKI-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-OKY-KURASHIKI-001-SHARED-07",
+        "scenarioId": "SC-OKY-KURASHIKI-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "作品ごとの条件をご覧ください。撮影できない展示もあります。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-OKY-KURASHIKI-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-OKY-KURASHIKI-001-SHARED-08",
+        "scenarioId": "SC-OKY-KURASHIKI-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "art_response_4",
+          "requiredSemanticComponents": {
+            "goal": "鑑賞の方法と撮影条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "混んでいるときは、どのように移動すればよいですか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-OKY-KURASHIKI-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-OKY-KURASHIKI-001-SHARED-09",
+        "scenarioId": "SC-OKY-KURASHIKI-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "通路をふさがず、ほかの方の鑑賞を妨げないようお願いします。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-OKY-KURASHIKI-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-OKY-KURASHIKI-001-SHARED-10",
+        "scenarioId": "SC-OKY-KURASHIKI-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "art_response_5",
+          "requiredSemanticComponents": {
+            "goal": "鑑賞の方法と撮影条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。表示を確認しながら見ます。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-OKY-KURASHIKI-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-OKY-KURASHIKI-001-SHARED-11",
+        "scenarioId": "SC-OKY-KURASHIKI-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "ご不明な点は職員にお尋ねください。無理のない順番でお楽しみください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-OKY-KURASHIKI-02-001",
+      "name": "船の利用条件を確認する",
+      "locationId": "LOC-OKY-KURASHIKI-02",
+      "cityId": "CTY-OKY-KURASHIKI",
+      "locationType": "Other",
+      "type": "Travel",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "倉敷市の学習用場面で、乗船前に運航と持ち物を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "乗船前に運航と持ち物を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-OKY-KURASHIKI",
+      "name": "Kurashiki",
+      "nameJa": "倉敷市",
+      "type": null,
+      "description": "Thành phố Kurashiki (倉敷市) thuộc tỉnh Okayama. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-033",
+      "order": 213,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-OKY-KURASHIKI-01",
+        "LOC-OKY-KURASHIKI-05",
+        "LOC-OKY-KURASHIKI-02",
+        "LOC-OKY-KURASHIKI-07",
+        "LOC-OKY-KURASHIKI-03",
+        "LOC-OKY-KURASHIKI-04",
+        "LOC-OKY-KURASHIKI-06",
+        "LOC-OKY-KURASHIKI-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-OKY-KURASHIKI-02",
+      "name": "Kurashiki Sightseeing Boat Dock",
+      "nameJa": "倉敷遊覧船乗り場",
+      "cityId": "CTY-OKY-KURASHIKI",
+      "category": "Nature",
+      "type": "Tourism",
+      "npcJob": "Guide",
+      "defaultNpcId": "NPC-OKY-KURASHIKI-002",
+      "description": "Ben tau du ngoan: gio chuyen, say song, ao phao, huy do thoi tiet.",
+      "order": 2,
+      "status": "Active",
+      "importance": "Secondary",
+      "sceneStyle": "2.5D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-01",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-02-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こんにちは。乗船についてのご相談ですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-02",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-02-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "boat_response_1",
+          "requiredSemanticComponents": {
+            "goal": "乗船前に運航と持ち物を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "倉敷市を訪れています。船を利用する前に、条件を確認したいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-03",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-02-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "ご希望の便と、人数を教えてください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-04",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-02-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "boat_response_2",
+          "requiredSemanticComponents": {
+            "goal": "乗船前に運航と持ち物を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "大人二人です。天候が悪いときはどうなりますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-05",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-02-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "運航状況は当日の案内で確認してください。欠航時の扱いも、購入前に説明します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-06",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-02-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "boat_response_3",
+          "requiredSemanticComponents": {
+            "goal": "乗船前に運航と持ち物を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "船酔いが心配です。席や持ち込みの条件を聞けますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-07",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-02-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "ご案内できる内容を確認します。体調に関する相談は専門家にもご確認ください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-08",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-02-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "boat_response_4",
+          "requiredSemanticComponents": {
+            "goal": "乗船前に運航と持ち物を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "荷物の大きさと、乗り場までの経路も知りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-09",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-02-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "荷物の条件と乗船案内を、一緒に確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-10",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-02-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "boat_response_5",
+          "requiredSemanticComponents": {
+            "goal": "乗船前に運航と持ち物を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。集合時刻に余裕を持って来ます。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-02-001-SHARED-11",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-02-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "乗船中は係員の指示に従い、立入禁止の場所には入らないでください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-OKY-KURASHIKI-03-001",
+      "name": "工房で作業の担当と道具を確認する",
+      "locationId": "LOC-OKY-KURASHIKI-03",
+      "cityId": "CTY-OKY-KURASHIKI",
+      "locationType": "Construction Site",
+      "type": "Work",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "倉敷市の学習用場面で、材料と安全な作業手順を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "材料と安全な作業手順を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-OKY-KURASHIKI",
+      "name": "Kurashiki",
+      "nameJa": "倉敷市",
+      "type": null,
+      "description": "Thành phố Kurashiki (倉敷市) thuộc tỉnh Okayama. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-033",
+      "order": 213,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-OKY-KURASHIKI-01",
+        "LOC-OKY-KURASHIKI-05",
+        "LOC-OKY-KURASHIKI-02",
+        "LOC-OKY-KURASHIKI-07",
+        "LOC-OKY-KURASHIKI-03",
+        "LOC-OKY-KURASHIKI-04",
+        "LOC-OKY-KURASHIKI-06",
+        "LOC-OKY-KURASHIKI-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-OKY-KURASHIKI-03",
+      "name": "Kurashiki Textile Workshop",
+      "nameJa": "倉敷織物工房",
+      "cityId": "CTY-OKY-KURASHIKI",
+      "category": "Workshop",
+      "type": "Workplace",
+      "npcJob": "Craftsman",
+      "defaultNpcId": "NPC-OKY-KURASHIKI-003",
+      "description": "Xuong det: may det, soi, mau vai, kiem loi.",
+      "order": 3,
+      "status": "Active",
+      "importance": "Secondary",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-01",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-03-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "おはようございます。今日の工程について確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-02",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-03-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-craft_response_1",
+          "requiredSemanticComponents": {
+            "goal": "材料と安全な作業手順を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "倉敷市のこの工房で働くのは初めてです。担当する作業を教えてください。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-03",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-03-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "担当する工程と、材料の種類を確認します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-04",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-03-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-craft_response_2",
+          "requiredSemanticComponents": {
+            "goal": "材料と安全な作業手順を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "道具を使う前に、持ち方と置き方を見たいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-05",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-03-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。実演で確認しましょう。熱い物や刃のある道具には特に注意してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-06",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-03-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-craft_response_3",
+          "requiredSemanticComponents": {
+            "goal": "材料と安全な作業手順を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "設備の中を清掃するときも、許可と停止の確認が必要ですか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-07",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-03-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。現場ごとの安全手順に従い、自分だけで判断しないでください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-08",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-03-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-craft_response_4",
+          "requiredSemanticComponents": {
+            "goal": "材料と安全な作業手順を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "材料を間違えた場合は、すぐ報告します。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-09",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-03-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "ありがとうございます。そのまま次の工程へ流さず、決められた方法で区別してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-10",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-03-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-craft_response_5",
+          "requiredSemanticComponents": {
+            "goal": "材料と安全な作業手順を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "わかりました。材料と手順を確認してから作業します。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-03-001-SHARED-11",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-03-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "異常や疑問があれば、作業を止めて責任者に相談してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-OKY-KURASHIKI-04-001",
+      "name": "農作業前に道具と担当を確認する",
+      "locationId": "LOC-OKY-KURASHIKI-04",
+      "cityId": "CTY-OKY-KURASHIKI",
+      "locationType": "Construction Site",
+      "type": "Work",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "倉敷市の学習用場面で、作業範囲と道具の使い方を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "作業範囲と道具の使い方を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-OKY-KURASHIKI",
+      "name": "Kurashiki",
+      "nameJa": "倉敷市",
+      "type": null,
+      "description": "Thành phố Kurashiki (倉敷市) thuộc tỉnh Okayama. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-033",
+      "order": 213,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-OKY-KURASHIKI-01",
+        "LOC-OKY-KURASHIKI-05",
+        "LOC-OKY-KURASHIKI-02",
+        "LOC-OKY-KURASHIKI-07",
+        "LOC-OKY-KURASHIKI-03",
+        "LOC-OKY-KURASHIKI-04",
+        "LOC-OKY-KURASHIKI-06",
+        "LOC-OKY-KURASHIKI-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-OKY-KURASHIKI-04",
+      "name": "Kurashiki Vegetable Greenhouse",
+      "nameJa": "倉敷野菜ハウス",
+      "cityId": "CTY-OKY-KURASHIKI",
+      "category": "Nature",
+      "type": "Workplace",
+      "npcJob": "Farmer",
+      "defaultNpcId": null,
+      "description": "Nha kinh rau: nhiet do, tuoi nho giot, thu hai, dong thung.",
+      "order": 4,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2.5D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-01",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-04-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "おはようございます。今日の作業について確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-02",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-04-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-farm_response_1",
+          "requiredSemanticComponents": {
+            "goal": "作業範囲と道具の使い方を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "倉敷市のこの畑で働くのは初めてです。どこを担当しますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-03",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-04-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "作業する区画と、立ち入らない区域を図で確認します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-04",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-04-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-farm_response_2",
+          "requiredSemanticComponents": {
+            "goal": "作業範囲と道具の使い方を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "この区画ですね。道具の使い方も見せていただけますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-05",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-04-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。安全な持ち方と、人との間隔を実際に確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-06",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-04-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-farm_response_3",
+          "requiredSemanticComponents": {
+            "goal": "作業範囲と道具の使い方を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "機械が近くを通るときは、作業を止めればよいですか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-07",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-04-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "合図と避ける場所を先に確認します。機械の進路へ入らないでください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-08",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-04-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-farm_response_4",
+          "requiredSemanticComponents": {
+            "goal": "作業範囲と道具の使い方を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "体調が悪くなったときの連絡先も知りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-09",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-04-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "この現場の責任者へすぐ知らせてください。休憩や水分補給も無理せず行いましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-10",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-04-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "work-farm_response_5",
+          "requiredSemanticComponents": {
+            "goal": "作業範囲と道具の使い方を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "わかりました。区画と道具を確認してから始めます。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-04-001-SHARED-11",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-04-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "迷ったことがあればその場で聞き、安全を優先してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-OKY-KURASHIKI-05-001",
+      "name": "サイズや交換条件を確認する",
+      "locationId": "LOC-OKY-KURASHIKI-05",
+      "cityId": "CTY-OKY-KURASHIKI",
+      "locationType": "Shop",
+      "type": "Shopping",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "倉敷市の学習用場面で、サイズと購入条件を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "サイズと購入条件を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-OKY-KURASHIKI",
+      "name": "Kurashiki",
+      "nameJa": "倉敷市",
+      "type": null,
+      "description": "Thành phố Kurashiki (倉敷市) thuộc tỉnh Okayama. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-033",
+      "order": 213,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-OKY-KURASHIKI-01",
+        "LOC-OKY-KURASHIKI-05",
+        "LOC-OKY-KURASHIKI-02",
+        "LOC-OKY-KURASHIKI-07",
+        "LOC-OKY-KURASHIKI-03",
+        "LOC-OKY-KURASHIKI-04",
+        "LOC-OKY-KURASHIKI-06",
+        "LOC-OKY-KURASHIKI-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-OKY-KURASHIKI-05",
+      "name": "Kurashiki Bookstore",
+      "nameJa": "倉敷書店",
+      "cityId": "CTY-OKY-KURASHIKI",
+      "category": "Shopping",
+      "type": "Shopping",
+      "npcJob": "Shop Staff",
+      "defaultNpcId": null,
+      "description": "Nha sach: tim sach, dat hang, boc bia, sach hoc tieng Nhat.",
+      "order": 5,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-01",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-05-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "いらっしゃいませ。お探しの物はありますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-02",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-05-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "shop-size_response_1",
+          "requiredSemanticComponents": {
+            "goal": "サイズと購入条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "倉敷市で使う服を探しています。このサイズを試せますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-03",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-05-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "試着できる商品か確認します。普段のサイズはどのくらいですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-04",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-05-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "shop-size_response_2",
+          "requiredSemanticComponents": {
+            "goal": "サイズと購入条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "普段はこのサイズですが、動きやすいものを選びたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-05",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-05-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "では、表示と着たときの状態を確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-06",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-05-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "shop-size_response_3",
+          "requiredSemanticComponents": {
+            "goal": "サイズと購入条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "購入後にサイズが合わなかった場合、交換できますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-07",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-05-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "商品や状態によって条件が違いますので、購入前にご説明します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-08",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-05-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "shop-size_response_4",
+          "requiredSemanticComponents": {
+            "goal": "サイズと購入条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "タグやレシートも必要ですか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-09",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-05-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "必要なものと期限を、現在の案内で確認してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-10",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-05-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "shop-size_response_5",
+          "requiredSemanticComponents": {
+            "goal": "サイズと購入条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "わかりました。着心地と条件を確認してから買います。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-05-001-SHARED-11",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-05-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "ご不明な点があれば、お会計前にお尋ねください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-OKY-KURASHIKI-06-001",
+      "name": "書道体験の準備を確認する",
+      "locationId": "LOC-OKY-KURASHIKI-06",
+      "cityId": "CTY-OKY-KURASHIKI",
+      "locationType": "Other",
+      "type": "Study",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "倉敷市の学習用場面で、体験の内容と道具の扱いを確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "体験の内容と道具の扱いを確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-OKY-KURASHIKI",
+      "name": "Kurashiki",
+      "nameJa": "倉敷市",
+      "type": null,
+      "description": "Thành phố Kurashiki (倉敷市) thuộc tỉnh Okayama. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-033",
+      "order": 213,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-OKY-KURASHIKI-01",
+        "LOC-OKY-KURASHIKI-05",
+        "LOC-OKY-KURASHIKI-02",
+        "LOC-OKY-KURASHIKI-07",
+        "LOC-OKY-KURASHIKI-03",
+        "LOC-OKY-KURASHIKI-04",
+        "LOC-OKY-KURASHIKI-06",
+        "LOC-OKY-KURASHIKI-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-OKY-KURASHIKI-06",
+      "name": "Kurashiki Calligraphy Classroom",
+      "nameJa": "倉敷書道教室",
+      "cityId": "CTY-OKY-KURASHIKI",
+      "category": "Classroom",
+      "type": "Culture",
+      "npcJob": "Teacher",
+      "defaultNpcId": null,
+      "description": "Lop thu phap: but muc, net chu, hoc phi, buoi thu.",
+      "order": 6,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-01",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-06-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こんにちは。書道の体験をご希望ですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-02",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-06-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "calligraphy_response_1",
+          "requiredSemanticComponents": {
+            "goal": "体験の内容と道具の扱いを確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "倉敷市を訪れた記念に、自分の名前を書いてみたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-03",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-06-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "筆を使った経験はありますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-04",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-06-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "calligraphy_response_2",
+          "requiredSemanticComponents": {
+            "goal": "体験の内容と道具の扱いを確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "初めてです。服が汚れないようにしたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-05",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-06-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "道具の置き方と、用意できる保護用品を確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-06",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-06-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "calligraphy_response_3",
+          "requiredSemanticComponents": {
+            "goal": "体験の内容と道具の扱いを確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "どんな文字を書くか、相談してもよいですか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-07",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-06-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。文字の形を見ながら、無理のない課題を選びましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-08",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-06-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "calligraphy_response_4",
+          "requiredSemanticComponents": {
+            "goal": "体験の内容と道具の扱いを確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "できた作品は、持ち帰れますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-09",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-06-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "乾かす時間や持ち帰り方を、開始前に確認します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-10",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-06-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "calligraphy_response_5",
+          "requiredSemanticComponents": {
+            "goal": "体験の内容と道具の扱いを確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。料金と所要時間も確認してから参加します。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-06-001-SHARED-11",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-06-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "承知しました。道具の説明を聞いてから始めましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-OKY-KURASHIKI-07-001",
+      "name": "商品を比較して選ぶ",
+      "locationId": "LOC-OKY-KURASHIKI-07",
+      "cityId": "CTY-OKY-KURASHIKI",
+      "locationType": "Shop",
+      "type": "Shopping",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "倉敷市の学習用場面で、用途と予算に合う商品を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "用途と予算に合う商品を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-OKY-KURASHIKI",
+      "name": "Kurashiki",
+      "nameJa": "倉敷市",
+      "type": null,
+      "description": "Thành phố Kurashiki (倉敷市) thuộc tỉnh Okayama. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-033",
+      "order": 213,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-OKY-KURASHIKI-01",
+        "LOC-OKY-KURASHIKI-05",
+        "LOC-OKY-KURASHIKI-02",
+        "LOC-OKY-KURASHIKI-07",
+        "LOC-OKY-KURASHIKI-03",
+        "LOC-OKY-KURASHIKI-04",
+        "LOC-OKY-KURASHIKI-06",
+        "LOC-OKY-KURASHIKI-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-OKY-KURASHIKI-07",
+      "name": "Kurashiki Shopping Arcade",
+      "nameJa": "倉敷商店街",
+      "cityId": "CTY-OKY-KURASHIKI",
+      "category": "Shopping",
+      "type": "Shopping",
+      "npcJob": "Shop Owner",
+      "defaultNpcId": null,
+      "description": "Pho mua sam mai vom: hoi duong trong pho, gia ca, gio dong cua.",
+      "order": 7,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2.5D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-01",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-07-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "いらっしゃいませ。何をお探しですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-02",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-07-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "shop-compare_response_1",
+          "requiredSemanticComponents": {
+            "goal": "用途と予算に合う商品を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "倉敷市で使う日用品を探しています。この二つの違いを教えてください。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-03",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-07-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "どのような使い方を予定していますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-04",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-07-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "shop-compare_response_2",
+          "requiredSemanticComponents": {
+            "goal": "用途と予算に合う商品を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "毎日使いたいので、手入れが簡単なものがよいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-05",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-07-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "表示を見ながら、素材とお手入れの方法を比べましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-06",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-07-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "shop-compare_response_3",
+          "requiredSemanticComponents": {
+            "goal": "用途と予算に合う商品を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "持ち運びもしやすいほうがよいです。重さを確認できますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-07",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-07-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。サイズと重さを確認し、可能であれば実物もご覧いただけます。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-08",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-07-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "shop-compare_response_4",
+          "requiredSemanticComponents": {
+            "goal": "用途と予算に合う商品を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "予算はこのくらいです。追加で必要な物はありますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-09",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-07-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "付属品の有無と合計額を、購入前に確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-10",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-07-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "shop-compare_response_5",
+          "requiredSemanticComponents": {
+            "goal": "用途と予算に合う商品を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。条件を比べてから決めます。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-07-001-SHARED-11",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-07-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "気になる点があれば、遠慮なくお尋ねください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-OKY-KURASHIKI-08-001",
+      "name": "注文前に料理の内容を確認する",
+      "locationId": "LOC-OKY-KURASHIKI-08",
+      "cityId": "CTY-OKY-KURASHIKI",
+      "locationType": "Restaurant",
+      "type": "Daily Life",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "倉敷市の学習用場面で、料理の内容と希望を伝える。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "料理の内容と希望を伝える",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-OKY-KURASHIKI",
+      "name": "Kurashiki",
+      "nameJa": "倉敷市",
+      "type": null,
+      "description": "Thành phố Kurashiki (倉敷市) thuộc tỉnh Okayama. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+      "prefectureId": "PRF-033",
+      "order": 213,
+      "unlockLevel": 0,
+      "status": null,
+      "population": 0,
+      "locationIds": [
+        "LOC-OKY-KURASHIKI-01",
+        "LOC-OKY-KURASHIKI-05",
+        "LOC-OKY-KURASHIKI-02",
+        "LOC-OKY-KURASHIKI-07",
+        "LOC-OKY-KURASHIKI-03",
+        "LOC-OKY-KURASHIKI-04",
+        "LOC-OKY-KURASHIKI-06",
+        "LOC-OKY-KURASHIKI-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-OKY-KURASHIKI-08",
+      "name": "Kurashiki Evening Izakaya",
+      "nameJa": "倉敷居酒屋",
+      "cityId": "CTY-OKY-KURASHIKI",
+      "category": "Izakaya",
+      "type": "Food",
+      "npcJob": "Restaurant Staff",
+      "defaultNpcId": null,
+      "description": "Izakaya buoi toi: goi mon nham, do uong, chia tien, gio cuoi.",
+      "order": 8,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-01",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-08-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "いらっしゃいませ。ご注文はお決まりですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-02",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-08-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-order_response_1",
+          "requiredSemanticComponents": {
+            "goal": "料理の内容と希望を伝える"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "倉敷市で食事をしています。この料理について教えてください。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-03",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-08-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "気になる材料や、苦手なものはありますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-04",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-08-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-order_response_2",
+          "requiredSemanticComponents": {
+            "goal": "料理の内容と希望を伝える"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "辛いものが苦手です。辛さを変えられますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-05",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-08-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "調理担当に確認します。量についてもご希望はありますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-06",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-08-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-order_response_3",
+          "requiredSemanticComponents": {
+            "goal": "料理の内容と希望を伝える"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "少なめにできるか知りたいです。追加料金も確認したいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-07",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-08-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "変更できる内容と料金を確認してから、お伝えします。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-08",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-08-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-order_response_4",
+          "requiredSemanticComponents": {
+            "goal": "料理の内容と希望を伝える"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。確認できてから注文したいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-09",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-08-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "承知しました。飲み物はあとでお選びになりますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-10",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-08-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-order_response_5",
+          "requiredSemanticComponents": {
+            "goal": "料理の内容と希望を伝える"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "はい。まず料理の内容を確認してから決めます。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-OKY-KURASHIKI-08-001-SHARED-11",
+        "scenarioId": "SC-LOC-OKY-KURASHIKI-08-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "少々お待ちください。確認した内容をご説明してから、ご注文を伺います。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  }
+]
