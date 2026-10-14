@@ -31,7 +31,10 @@ const adapters={
   b.onResolve({filter:/\.(png|jpe?g|webp)$/},a=>({path:a.path,namespace:'art'}));
   b.onLoad({filter:/.*/,namespace:'art'},()=>({contents:'module.exports='+JSON.stringify({uri:'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1672" height="941"></svg>'}),loader:'js'}));
  }}]});
- fs.copyFileSync(path.join(root,'assets/app/fonts/NotoSansJP-Medium.ttf'),path.join(out,'font.ttf'));
+ const fontBytes=fs.readFileSync(process.env.KENSETSU_QA_FONT||path.join(root,'assets/app/fonts/NotoSansJP-Medium.ttf'));
+ assert(!fontBytes.subarray(0,80).toString().startsWith('version https://git-lfs.github.com/spec/'),'QA requires actual font bytes; materialize the LFS font or set KENSETSU_QA_FONT');
+ const fontSha256=require('crypto').createHash('sha256').update(fontBytes).digest('hex');
+ fs.writeFileSync(path.join(out,'font.ttf'),fontBytes);
  fs.writeFileSync(path.join(out,'index.html'),'<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><style>@font-face{font-family:TranslationQA;src:url(/font.ttf)}*{font-family:TranslationQA,sans-serif!important}html,body,#root{margin:0;height:100%}#root{display:flex;flex-direction:column}</style><div id="root"></div><script src="/entry.js"></script>');
  const server=http.createServer((q,r)=>{const file=q.url.startsWith('/entry.js')?'entry.js':q.url.startsWith('/font.ttf')?'font.ttf':'index.html';r.setHeader('Content-Type',file.endsWith('.js')?'application/javascript':file.endsWith('.ttf')?'font/ttf':'text/html');r.end(fs.readFileSync(path.join(out,file)));}).listen(0,'127.0.0.1');
  await new Promise(resolve=>server.on('listening',resolve));
@@ -106,7 +109,7 @@ const adapters={
  assert.equal(await page.getByTestId('kensetsu-translation-'+firstParagraph).innerText(),'この段落の翻訳は準備中です。');
  for(const id of exerciseIds)assert.equal(await page.getByTestId('kensetsu-localized-'+(id==='learningActivity'?bundle.sessionId+':learningActivity':id)).innerText(),'この段落の翻訳は準備中です。');
  assert.equal(errors.length,0,errors.join('\n'));
- const report={status:'PASS_WEB_ADAPTED_READER',week,browserLaunchArgs,locales:tested,lessons:7,localeLessonCombinations:84,translatedFieldsVerified:verifiedFields,toggleVerified:true,japaneseRetained:true,noLocaleFallback:true,completionNotTriggeredByTranslation:true,completionReloadVerified:true,viewports:screens,consoleErrors:errors,adapters:['ReactNativeWeb','AsyncStorage to localStorage','zero safe area','Royal decorative wrappers/back button stubbed','image placeholders'],limits:['Core real reader tested; decorative art/Royal design and all-script glyph coverage not certified','No native device, human language or domain review'],nativeDeviceTested:false,releaseReady:false};
+ const report={status:'PASS_WEB_ADAPTED_READER',week,browserLaunchArgs,fontSha256,locales:tested,lessons:7,localeLessonCombinations:84,translatedFieldsVerified:verifiedFields,toggleVerified:true,japaneseRetained:true,noLocaleFallback:true,completionNotTriggeredByTranslation:true,completionReloadVerified:true,viewports:screens,consoleErrors:errors,adapters:['ReactNativeWeb','AsyncStorage to localStorage','zero safe area','Royal decorative wrappers/back button stubbed','image placeholders'],limits:['Core real reader tested; decorative art/Royal design and all-script glyph coverage not certified','No native device, human language or domain review'],nativeDeviceTested:false,releaseReady:false};
  fs.writeFileSync(process.env.KENSETSU_QA_REPORT||`docs/ssw-workspace/kensetsu/translations/week-${weekCode}-web-qa.json`,JSON.stringify(report,null,2)+'\n');
  console.log('PASS: all seven lessons x 12 translation locales in actual reader; toggle, source Japanese, no fallback, completion/reload; three viewport overflow checks. Decorative wrappers/assets adapted.');
  await browser.close();server.close();
