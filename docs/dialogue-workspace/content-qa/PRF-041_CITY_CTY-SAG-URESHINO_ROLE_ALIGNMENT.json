@@ -1,0 +1,75 @@
+{
+  "cityId": "CTY-SAG-URESHINO",
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "peerReviewed": false,
+  "inputSha256": "0722a43f536e552c6667531c9e9e6192f8c92f4b930caf66bc5816c37eca08ab",
+  "sourceSha256": "2394196c584a6156d9b6ef90aa4c765aff321176944e37a2cb26ff429464fb72",
+  "findings": [
+    {
+      "scenarioId": "SC-LOC-SAG-URESHINO-03-001",
+      "locationId": "LOC-SAG-URESHINO-03",
+      "oldMismatch": "Clothing size/exchange scenario at tea specialist shop with Shop Owner.",
+      "resolution": "Tea-gift package selection and brewing explanation; title, premise, first Player goal must sync from authored source."
+    },
+    {
+      "scenarioId": "SC-LOC-SAG-URESHINO-07-001",
+      "locationId": "LOC-SAG-URESHINO-07",
+      "oldMismatch": "Rail station elevator/gate route scenario at taxi rank with Taxi Driver.",
+      "resolution": "Taxi trip to lodging and safe accessible drop-off consultation; title, premise, first Player goal must sync from authored source."
+    },
+    {
+      "locationId": "LOC-SAG-URESHINO-02",
+      "oldMismatch": "Canonical locationType Construction Site but tea plantation workplace and Farmer job.",
+      "resolution": "Author tea-field work. Recommend supported agricultural/workplace grouping if adapter supports it; no fabricated construction role."
+    },
+    {
+      "locationId": "LOC-SAG-URESHINO-06",
+      "oldMismatch": "Cooking Class classified Museum although NPC is Teacher.",
+      "resolution": "Classroom supported grouping with Cooking Instructor preserves cooking class identity."
+    },
+    {
+      "locationId": "LOC-SAG-URESHINO-07",
+      "oldMismatch": "Taxi stand classified Station.",
+      "resolution": "Retain supported Station as broad transport grouping with Taxi Driver; explicitly simulated taxi rank name and no station duties."
+    }
+  ],
+  "identityLimit": "嘉野 labels in source appear legacy fictional labels; authored premises explicitly use fictional locations in 嬉野市. No real operator, timetable, facility or bank-policy certification.",
+  "corrections": {
+    "LOC-SAG-URESHINO-01": {
+      "nameJa": "嬉野の温泉受付（学習用）",
+      "name": "Ureshino Onsen Front Desk (Simulated)"
+    },
+    "LOC-SAG-URESHINO-02": {
+      "nameJa": "嬉野の茶畑（学習用）",
+      "name": "Ureshino Tea Plantation (Simulated)"
+    },
+    "LOC-SAG-URESHINO-03": {
+      "nameJa": "嬉野のお茶専門店（学習用）",
+      "name": "Ureshino Tea Shop (Simulated)"
+    },
+    "LOC-SAG-URESHINO-04": {
+      "nameJa": "嬉野の寿司カウンター（学習用）",
+      "name": "Ureshino Sushi Counter (Simulated)"
+    },
+    "LOC-SAG-URESHINO-05": {
+      "nameJa": "嬉野の建設現場朝礼（学習用）",
+      "name": "Ureshino Construction Morning Meeting (Simulated)"
+    },
+    "LOC-SAG-URESHINO-06": {
+      "category": "Classroom",
+      "nameJa": "嬉野の料理教室（学習用）",
+      "name": "Ureshino Cooking Class (Simulated)",
+      "npcJob": "Cooking Instructor"
+    },
+    "LOC-SAG-URESHINO-07": {
+      "nameJa": "嬉野のタクシー乗り場（学習用）",
+      "name": "Ureshino Taxi Stand (Simulated)"
+    },
+    "LOC-SAG-URESHINO-08": {
+      "nameJa": "嬉野の銀行窓口（学習用）",
+      "name": "Ureshino Bank Counter (Simulated)"
+    }
+  },
+  "categoryLimit": "The supported NPC registry has Classroom/Cooking Instructor, but no dedicated taxi category. Taxi location retains Station only as broad transport grouping with Taxi Driver; this does not imply rail-station NPC duties or station layout."
+}
