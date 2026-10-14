@@ -4,7 +4,7 @@
   "inputFile": "docs/dialogue-workspace/content-qa/PRF-041_CITY_CTY-JP-41204_INPUT.json",
   "inputSha256": "4ce39039f33a697c23eec7a6861874e967b0e6879df6e6696afc990601c51c83",
   "reviewedAuthoringFile": "scripts/dialogue-authoring/prf-041-city-cty-jp-41204.json",
-  "reviewedAuthoringSha256": "0dccb6f2635284e26230764b8dff0a36247d366602b3168cd12f9de6e55a94ba",
+  "reviewedAuthoringSha256": "106392068cc859b68288eed490f8912718c8e75d8fe8d622112a86ed16f0a012",
   "scenarioCount": 8,
   "turnCount": 88,
   "taskCount": 40,
@@ -20,7 +20,8 @@
   "status": "AI_SELF_REVIEW_PASS_PENDING_PARENT_MECHANICAL_INTEGRATION",
   "repairs": [
     "警察場面の質問に合わせ降車時刻を明示し、対応する課題を修正。",
-    "郵便場面の誤った送り主タイトルを修正。条件確認中の曖昧な終了を本人による再配達へ切り替える確定した相談結果に変更し、最終課題と架空条件の明示を同期。"
+    "郵便場面の誤った送り主タイトルを修正。条件確認中の曖昧な終了を本人による再配達へ切り替える確定した相談結果に変更し、最終課題と架空条件の明示を同期。",
+    "親の機械的一致検査で通知された警察・郵便の冒頭2件を、自分の場面内の自然な発話へ変更。相手側コーパスや他作者の文章は読まず、変更した両場面の全22発話・10課題を再読。"
   ],
   "causalPlots": [
     {
@@ -56,7 +57,7 @@
     {
       "scenarioId": "SC-LOC-JP-41204-04-001",
       "inputRuntimeSha256": "6d3b2d3de54082ca9730e67186a4c2b90f826eac5aeb8808698fdb01ef282023",
-      "authoredScenarioSha256": "55f56c3909a9e7d2b93343ea4c93740bcd4f22d08a9be666e290e2b700ca8ae9",
+      "authoredScenarioSha256": "0b706dabca52d7468b619fc11afe5f2788016715d67205c4dbf36492f670e4a4",
       "all11TurnsRead": true,
       "all5TasksRead": true,
       "causalPlot": "バスで紛失した傘の識別印を説明。似た色の傘を自分の物と決めず届け出を行いバス会社へも問い合わせる。",
@@ -66,7 +67,7 @@
     {
       "scenarioId": "SC-LOC-JP-41204-05-001",
       "inputRuntimeSha256": "7491605a959bb6f56b8a9182a297b20cb7148ed8bb3f2b717b24733cf7f0e0cf",
-      "authoredScenarioSha256": "ac4028709eaa83f635a0d17a6748b5f400d3d8c99c42a5354a0ffc4e54dfcc5a",
+      "authoredScenarioSha256": "01f2067391d89015242c0e484c0c45797c547871278d9a09ba2608f216f646f1",
       "all11TurnsRead": true,
       "all5TasksRead": true,
       "causalPlot": "自分宛てと思った不在票が兄宛てと気づく。記録確認で本人受け取り条件が判明し、兄に在宅日の再配達を申し込んでもらう。",
@@ -111,5 +112,17 @@
     "銀行は同行カードの本人確認後の停止のみを扱い、カード停止と口座入金の違いを説明。",
     "スーパー返金と公園設備は個別の学習設定を明示。"
   ],
-  "openFindings": []
+  "openFindings": [],
+  "postScreenRepair": {
+    "changedScenarioIds": [
+      "SC-LOC-JP-41204-04-001",
+      "SC-LOC-JP-41204-05-001"
+    ],
+    "changedTurnOrders": [
+      1
+    ],
+    "allChangedExchangesAndTasksReread": true,
+    "peerContentRead": false,
+    "parentCorpusScreenPending": true
+  }
 }
