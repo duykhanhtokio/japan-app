@@ -1012,3 +1012,7 @@ All 133 scenarios in 15 cities: 1463 Japanese turns and 665 goals independently 
 ## Yamaguchi PRF-035 — independent city self-review checkpoint, 2026-10-14
 
 85/117 Japanese scenarios (935turns,425concrete goals) independently authored/self-reviewed across9cities and remotely verified with separate city commits. Partial real adapter/corpus checks pass; zero exact Player/NPC collisions, UIlock10/10 and NPCprogression pass. Thirty-two scenarios remain: Yanai, Mine, Shunan, Sanyo-Onoda. ResumeYanai after recovery from repeated model-capacity failure and ENOSPC. No peer/human/native/device/release approval claimed; future dialogue push authorization persists. Source/review/runtime hash-bound evidence in PRF-035_CHECKPOINT.json and partial integration manifest.
+
+## 2026-10-14 — PRF-035 Yamaguchi complete independent city self-review
+
+117/117 canonical scenarios in 13 cities, 1287 turns and 585 Player tasks. Each city remotely verified before the next integration. Whole-prefecture adapter/corpus checks PASS; zero exact Player/NPC collisions, 7444 outside runtime files unchanged; UI lock 10/10 and NPC progression PASS. Peer/human/native/device/release approval remains false. Current complete manifest and checkpoint under content-qa/PRF-035_COMPLETE_* and PRF-035_CHECKPOINT.json. Resume at PRF-036 only after containing checkpoint remote verification.
