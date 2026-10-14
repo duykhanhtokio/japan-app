@@ -1,0 +1,1184 @@
+{
+  "locales": [
+    "en",
+    "vi"
+  ],
+  "sessions": [
+    {
+      "sessionId": "kensetsu-common-session-344",
+      "entries": {
+        "title": {
+          "sourceJa": "高圧受電設備と電路の区分",
+          "translations": {
+            "en": "High-voltage receiving equipment and circuit divisions",
+            "vi": "Thiết bị tiếp nhận điện cao áp và phân chia mạch điện"
+          }
+        },
+        "kensetsu-common-session-344-cluster-1:title": {
+          "sourceJa": "受ける設備の構成",
+          "translations": {
+            "en": "Configuration of receiving equipment",
+            "vi": "Cấu thành thiết bị tiếp nhận điện"
+          }
+        },
+        "kensetsu-common-session-344-cluster-1-p1": {
+          "sourceJa": "受電設備は外側の電源を建物などで使う側へ対応させる設備です。キュービクルには機器や電路が収容されます。箱の名称だけで内部の全機器と電圧は分かりません。",
+          "translations": {
+            "en": "Receiving equipment connects an external power source to the user side in a building or similar facility. A cubicle houses equipment and electrical circuits. The enclosure name alone does not reveal every device or voltage inside.",
+            "vi": "Thiết bị tiếp nhận điện liên kết nguồn điện bên ngoài với phía sử dụng trong tòa nhà hoặc công trình tương tự. Tủ điện hợp bộ chứa thiết bị và mạch điện. Chỉ tên vỏ tủ không cho biết toàn bộ thiết bị và điện áp bên trong."
+          }
+        },
+        "kensetsu-common-session-344-cluster-1-p2": {
+          "sourceJa": "建物にキュービクルがあるという連絡だけでは、工事担当者は中の構成を判断できません。対象の機器番号と系統図を受け取り、外形を知ることと電路を確認することを分けて準備します。",
+          "translations": {
+            "en": "Being told that a building has a cubicle does not enable the construction team to judge its internal configuration. Obtain the relevant equipment numbers and system diagram, and prepare by distinguishing knowledge of the exterior from verification of the circuits.",
+            "vi": "Chỉ được báo tòa nhà có tủ điện hợp bộ thì người phụ trách thi công chưa thể đánh giá cấu thành bên trong. Cần nhận số thiết bị liên quan và sơ đồ hệ thống, chuẩn bị bằng cách tách việc biết hình dáng bên ngoài với việc xác nhận mạch điện."
+          }
+        },
+        "kensetsu-common-session-344-cluster-1:prompt": {
+          "sourceJa": "キュービクルの外観だけでは、内部について何が未確認ですか。",
+          "translations": {
+            "en": "What remains unverified inside a cubicle if only its exterior is known?",
+            "vi": "Nếu chỉ nhìn bên ngoài tủ điện hợp bộ thì nội dung nào bên trong vẫn chưa được xác minh?"
+          }
+        },
+        "kensetsu-common-session-344-cluster-2:title": {
+          "sourceJa": "変圧と開閉",
+          "translations": {
+            "en": "Voltage transformation and switching",
+            "vi": "Biến đổi điện áp và đóng cắt"
+          }
+        },
+        "kensetsu-common-session-344-cluster-2-p1": {
+          "sourceJa": "変圧器は電圧を変える機器として読みます。PASなどの開閉機器とは役割が異なります。受電設備の名前だけで、一つの機器が変圧と全電路の遮断を行うとは判断しません。",
+          "translations": {
+            "en": "Read a transformer as equipment that changes voltage. Its role differs from switching equipment such as a PAS. The receiving-equipment name alone does not establish that one device both transforms voltage and interrupts every circuit.",
+            "vi": "Máy biến áp được hiểu là thiết bị thay đổi điện áp. Vai trò của nó khác thiết bị đóng cắt như PAS. Không thể chỉ từ tên thiết bị tiếp nhận điện mà kết luận một thiết bị vừa biến đổi điện áp vừa ngắt toàn bộ mạch điện."
+          }
+        },
+        "kensetsu-common-session-344-cluster-2-p2": {
+          "sourceJa": "設備一覧に変圧器と開閉機器の名前が並ぶ場合は、それぞれがどの電路に対応するかを確認します。一方の機器の資料だけで、受電から使用側まで全ての機能が分かったと扱わない例です。",
+          "translations": {
+            "en": "When an equipment list includes both transformers and switching equipment, check which circuit each serves. This example does not treat documents for one device as establishing every function from the receiving side to the user side.",
+            "vi": "Khi danh mục thiết bị có cả máy biến áp và thiết bị đóng cắt, cần xác nhận từng thiết bị tương ứng với mạch nào. Đây là ví dụ không coi tài liệu của một thiết bị là đã cho biết mọi chức năng từ phía tiếp nhận đến phía sử dụng."
+          }
+        },
+        "kensetsu-common-session-344-cluster-2:prompt": {
+          "sourceJa": "変圧器と開閉機器を、働きから区別してください。",
+          "translations": {
+            "en": "Distinguish transformers from switching equipment by their functions.",
+            "vi": "Hãy phân biệt máy biến áp và thiết bị đóng cắt theo chức năng."
+          }
+        },
+        "kensetsu-common-session-344-cluster-3:title": {
+          "sourceJa": "機器ごとの機能",
+          "translations": {
+            "en": "Functions of individual devices",
+            "vi": "Chức năng của từng thiết bị"
+          }
+        },
+        "kensetsu-common-session-344-cluster-3-p1": {
+          "sourceJa": "遮断器と断路器は電路に関わる機器ですが、負荷や故障電流を遮断する機能は同じとは限りません。名称と型式の指定を読みます。どちらでも電気を止められるという一律の操作にはしません。",
+          "translations": {
+            "en": "Circuit breakers and disconnectors are circuit devices, but their ability to interrupt load or fault current is not necessarily the same. Read the specified names and models. Do not turn them into a uniform operating instruction that either can stop the electricity.",
+            "vi": "Máy cắt và dao cách ly đều liên quan đến mạch điện, nhưng chức năng ngắt dòng tải hoặc dòng sự cố chưa chắc giống nhau. Cần đọc chỉ định tên và kiểu loại. Không biến thành hướng dẫn thao tác đồng loạt rằng dùng loại nào cũng ngắt điện được."
+          }
+        },
+        "kensetsu-common-session-344-cluster-3-p2": {
+          "sourceJa": "以前使った機器と外形が似ていても、型式や開閉機能が違う場合があります。担当者は名称と仕様を照合し、見た目の一致を操作可能な条件の根拠にしません。",
+          "translations": {
+            "en": "Even if a device looks like one previously used, its model or switching functions may differ. The person responsible compares names and specifications rather than using a matching appearance as evidence of permissible operating conditions.",
+            "vi": "Dù thiết bị trông giống loại đã dùng trước đây, kiểu loại hoặc chức năng đóng cắt có thể khác. Người phụ trách cần đối chiếu tên và thông số, không lấy vẻ ngoài giống nhau làm căn cứ cho điều kiện được phép thao tác."
+          }
+        },
+        "kensetsu-common-session-344-cluster-3:prompt": {
+          "sourceJa": "遮断器と断路器を、外観だけで同じ機能とできない理由は何ですか。",
+          "translations": {
+            "en": "Why can circuit breakers and disconnectors not be assumed to have the same function from appearance alone?",
+            "vi": "Vì sao không thể chỉ nhìn ngoài mà coi máy cắt và dao cách ly có cùng chức năng?"
+          }
+        },
+        "kensetsu-common-session-344-cluster-4:title": {
+          "sourceJa": "上流と下流",
+          "translations": {
+            "en": "Upstream and downstream",
+            "vi": "Phía thượng nguồn và hạ nguồn"
+          }
+        },
+        "kensetsu-common-session-344-cluster-4-p1": {
+          "sourceJa": "機器の上流と下流は力が供給される側との関係で読みます。一方を開いたことだけで、上流を含む全体が無電圧とは分かりません。対象電路と周囲を分けて確認します。",
+          "translations": {
+            "en": "Read equipment’s upstream and downstream sides in relation to the supply side. Opening one device alone does not establish that the whole installation, including upstream, is free of voltage. Check the target circuit separately from its surroundings.",
+            "vi": "Cần đọc phía thượng nguồn và hạ nguồn của thiết bị theo quan hệ với phía cấp điện. Chỉ mở một thiết bị không có nghĩa là toàn bộ, kể cả phía thượng nguồn, đều không có điện áp. Cần kiểm tra riêng mạch mục tiêu và khu vực xung quanh."
+          }
+        },
+        "kensetsu-common-session-344-cluster-4-p2": {
+          "sourceJa": "一部の開閉機器が開いていると聞いた現場では、どの範囲の状態を確認した報告かが重要です。上流や周囲も含む全体の停電と受け取らず、対象範囲を担当者へ確かめます。",
+          "translations": {
+            "en": "At a site where some switching equipment is reported open, it matters which area the status report actually covers. Do not interpret it as an outage of the entire installation including upstream and surrounding circuits; confirm the relevant scope with the person responsible.",
+            "vi": "Tại hiện trường được báo một phần thiết bị đóng cắt đang mở, điều quan trọng là báo cáo đã xác nhận tình trạng trong phạm vi nào. Không hiểu thành mất điện toàn bộ kể cả phía thượng nguồn và xung quanh; cần hỏi người phụ trách về phạm vi liên quan."
+          }
+        },
+        "kensetsu-common-session-344-cluster-4:prompt": {
+          "sourceJa": "開閉機器の名称だけある設備について、電路の状態を推測せず伝えてください。",
+          "translations": {
+            "en": "For an installation with only switching-equipment names available, report without assuming circuit conditions.",
+            "vi": "Với hệ thống chỉ có tên thiết bị đóng cắt, hãy báo cáo mà không suy đoán tình trạng mạch điện."
+          }
+        },
+        "keyTerm:受電": {
+          "sourceJa": "受電",
+          "translations": {
+            "en": "Receiving electrical power",
+            "vi": "Tiếp nhận điện"
+          }
+        },
+        "keyTerm:PAS": {
+          "sourceJa": "PAS",
+          "translations": {
+            "en": "PAS",
+            "vi": "PAS"
+          }
+        },
+        "keyTerm:キュービクル": {
+          "sourceJa": "キュービクル",
+          "translations": {
+            "en": "Cubicle-type receiving equipment",
+            "vi": "Tủ điện tiếp nhận hợp bộ"
+          }
+        },
+        "keyTerm:変圧器": {
+          "sourceJa": "変圧器",
+          "translations": {
+            "en": "Transformer",
+            "vi": "Máy biến áp"
+          }
+        },
+        "keyTerm:遮断器": {
+          "sourceJa": "遮断器",
+          "translations": {
+            "en": "Circuit breaker",
+            "vi": "Máy cắt"
+          }
+        },
+        "keyTerm:断路器": {
+          "sourceJa": "断路器",
+          "translations": {
+            "en": "Disconnector",
+            "vi": "Dao cách ly"
+          }
+        },
+        "illustration:0:alt": {
+          "sourceJa": "キュービクルの閉じた外観を確認する教材例。外形だけでは内部の機器構成や電圧、電路の関係は分かりません。",
+          "translations": {
+            "en": "A teaching example checking the closed exterior of a cubicle. Its external shape alone does not establish the internal equipment configuration, voltages, or circuit relationships.",
+            "vi": "Ví dụ học tập quan sát bên ngoài tủ điện hợp bộ đang đóng. Chỉ hình dáng ngoài không cho biết cấu thành thiết bị, điện áp hoặc quan hệ mạch điện bên trong."
+          }
+        }
+      }
+    },
+    {
+      "sessionId": "kensetsu-common-session-345",
+      "entries": {
+        "title": {
+          "sourceJa": "停電の表示と安全な作業条件",
+          "translations": {
+            "en": "Outage indications and safe working conditions",
+            "vi": "Chỉ báo mất điện và điều kiện làm việc an toàn"
+          }
+        },
+        "kensetsu-common-session-345-cluster-1:title": {
+          "sourceJa": "表示と実際の状態",
+          "translations": {
+            "en": "Indications and actual conditions",
+            "vi": "Chỉ báo và tình trạng thực tế"
+          }
+        },
+        "kensetsu-common-session-345-cluster-1-p1": {
+          "sourceJa": "停電の表示と対象電路が無電圧であることは異なる情報です。表示されたスイッチの状態だけで全電源は分かりません。対象の識別と確認を別に読みます。",
+          "translations": {
+            "en": "An outage indication and a target circuit being free of voltage are different information. The indicated switch state alone does not identify every power source. Read target identification and verification separately.",
+            "vi": "Chỉ báo mất điện và việc mạch mục tiêu không có điện áp là hai thông tin khác nhau. Chỉ trạng thái công tắc được hiển thị không cho biết mọi nguồn điện. Cần đọc riêng việc nhận dạng đối tượng và xác minh."
+          }
+        },
+        "kensetsu-common-session-345-cluster-1-p2": {
+          "sourceJa": "照明が消えた設備でも、別の電路や機器の状態は分かりません。作業の準備では消灯の事実と電路の確認記録を分け、暗いという見た目を安全な作業条件へ置き換えません。",
+          "translations": {
+            "en": "Even when an installation’s lights are off, the states of other circuits or equipment remain unknown. During work preparation, distinguish lights going out from circuit-verification records; do not replace safe working conditions with the visual impression of darkness.",
+            "vi": "Dù đèn của hệ thống đã tắt, vẫn chưa biết tình trạng mạch hay thiết bị khác. Khi chuẩn bị công việc, cần tách sự thật đèn tắt với hồ sơ xác nhận mạch điện, không thay điều kiện làm việc an toàn bằng vẻ ngoài tối."
+          }
+        },
+        "kensetsu-common-session-345-cluster-1:prompt": {
+          "sourceJa": "灯りが消えたことだけで、電路の状態を判断できない理由は何ですか。",
+          "translations": {
+            "en": "Why can circuit conditions not be judged merely because the lights are off?",
+            "vi": "Vì sao không thể chỉ vì đèn tắt mà đánh giá tình trạng mạch điện?"
+          }
+        },
+        "kensetsu-common-session-345-cluster-2:title": {
+          "sourceJa": "複数の供給経路",
+          "translations": {
+            "en": "Multiple supply paths",
+            "vi": "Nhiều đường cấp điện"
+          }
+        },
+        "kensetsu-common-session-345-cluster-2-p1": {
+          "sourceJa": "設備には主電源以外の供給や周囲の活線部分などが関わる場合があります。一つの電源の記録だけでは全経路の状態は分かりません。系統図と作業対象の対応を読みます。",
+          "translations": {
+            "en": "An installation may involve supplies other than the main supply and nearby live parts. Records for one power source alone do not establish the state of every path. Read how the system diagram corresponds to the work target.",
+            "vi": "Hệ thống có thể liên quan đến nguồn cấp ngoài nguồn chính hoặc phần mang điện xung quanh. Chỉ hồ sơ một nguồn không cho biết tình trạng mọi đường cấp. Cần đọc sự tương ứng giữa sơ đồ hệ thống và đối tượng công việc."
+          }
+        },
+        "kensetsu-common-session-345-cluster-2-p2": {
+          "sourceJa": "工事対象の設備に別の供給経路があると分かった場合、主電源の資料だけでは準備が足りません。対象と周囲の電路を系統図へ対応させ、確認されていない経路を担当者へ伝える場面です。",
+          "translations": {
+            "en": "If another supply path is found for the installation being worked on, main-supply documents alone are insufficient for preparation. This situation relates the target and surrounding circuits to the system diagram and communicates unchecked paths to the person responsible.",
+            "vi": "Nếu biết hệ thống thi công có đường cấp điện khác thì chuẩn bị chỉ bằng tài liệu nguồn chính là chưa đủ. Đây là tình huống đối chiếu mạch mục tiêu và xung quanh với sơ đồ hệ thống, đồng thời báo người phụ trách về đường chưa được xác minh."
+          }
+        },
+        "kensetsu-common-session-345-cluster-2:prompt": {
+          "sourceJa": "一つの電源の情報以外に、対象と周囲について何を区別しますか。",
+          "translations": {
+            "en": "Besides information on one power source, what will you distinguish about the target and its surroundings?",
+            "vi": "Ngoài thông tin một nguồn điện, bạn sẽ phân biệt điều gì về đối tượng và xung quanh?"
+          }
+        },
+        "kensetsu-common-session-345-cluster-3:title": {
+          "sourceJa": "蓄えられた電気",
+          "translations": {
+            "en": "Stored electricity",
+            "vi": "Điện được tích trữ"
+          }
+        },
+        "kensetsu-common-session-345-cluster-3-p1": {
+          "sourceJa": "残留電荷は供給を止めた後も機器などに蓄えられた電気に関わります。電源の遮断と蓄えられた状態は別です。検電などの確認は対象と機器の指定に対応させます。",
+          "translations": {
+            "en": "Residual charge concerns electricity remaining stored in equipment after the supply is stopped. Disconnecting power and the stored state are separate matters. Match checks such as voltage detection to the target and the equipment specifications.",
+            "vi": "Điện tích dư liên quan đến điện vẫn được tích trong thiết bị sau khi dừng cấp điện. Ngắt nguồn và trạng thái tích điện là hai việc riêng. Các kiểm tra như kiểm tra điện áp phải phù hợp với đối tượng và chỉ định thiết bị."
+          }
+        },
+        "kensetsu-common-session-345-cluster-3-p2": {
+          "sourceJa": "電源を止めた記録が届いても、機器に蓄えられた電気の確認が別に必要な場合があります。受け取った担当者は、停止時刻だけを全危険の解消と扱わず、対象に必要な確認の範囲を確かめます。",
+          "translations": {
+            "en": "Even after a record of power shutdown arrives, stored electricity in the equipment may require separate verification. The recipient must not treat the shutdown time alone as elimination of all hazards, but must confirm the scope of checks required for the target.",
+            "vi": "Dù đã nhận hồ sơ dừng nguồn điện, vẫn có thể cần kiểm tra riêng điện tích trong thiết bị. Người nhận không coi riêng thời điểm dừng là đã hết mọi nguy hiểm, mà phải xác nhận phạm vi kiểm tra cần cho đối tượng."
+          }
+        },
+        "kensetsu-common-session-345-cluster-3:prompt": {
+          "sourceJa": "電源の遮断と残留電荷を別に確認する理由は何ですか。",
+          "translations": {
+            "en": "Why are power disconnection and residual charge checked separately?",
+            "vi": "Vì sao cần kiểm tra riêng việc ngắt nguồn và điện tích dư?"
+          }
+        },
+        "kensetsu-common-session-345-cluster-4:title": {
+          "sourceJa": "再び通ることへの管理",
+          "translations": {
+            "en": "Managing the possibility of re-energization",
+            "vi": "Quản lý khả năng có điện trở lại"
+          }
+        },
+        "kensetsu-common-session-345-cluster-4-p1": {
+          "sourceJa": "誤通電などにより状態が変わる危険も作業条件に関わります。以前の検電記録だけで現在の作業が承認されたとは読みません。作業範囲、確認時点と管理を合わせます。",
+          "translations": {
+            "en": "The risk of conditions changing through accidental energization or similar events also affects working conditions. A previous voltage-check record alone does not mean current work is authorized. Consider work scope, verification time, and management together.",
+            "vi": "Nguy cơ tình trạng thay đổi do cấp điện nhầm hoặc sự kiện tương tự cũng liên quan đến điều kiện làm việc. Chỉ hồ sơ kiểm tra điện áp trước đây không có nghĩa công việc hiện tại đã được phê duyệt. Cần xét cùng phạm vi công việc, thời điểm kiểm tra và quản lý."
+          }
+        },
+        "kensetsu-common-session-345-cluster-4-p2": {
+          "sourceJa": "前日の検電票を今日の作業に使う準備では、その後に状態が変わっていないかを確認します。過去の票を現在の許可と同じ意味にせず、対象、時点と作業条件を分けて引き継ぐ例です。",
+          "translations": {
+            "en": "When preparing to use yesterday’s voltage-check sheet for today’s work, check whether conditions have changed since then. This example hands over the target, time, and working conditions separately instead of equating an old sheet with current permission.",
+            "vi": "Khi chuẩn bị dùng phiếu kiểm tra điện áp hôm qua cho công việc hôm nay, cần xác nhận sau đó tình trạng có thay đổi hay không. Đây là ví dụ bàn giao riêng đối tượng, thời điểm và điều kiện làm việc, không coi phiếu cũ đồng nghĩa với cho phép hiện tại."
+          }
+        },
+        "kensetsu-common-session-345-cluster-4:prompt": {
+          "sourceJa": "以前の確認票だけある電路について、現在の作業条件を分けて報告してください。",
+          "translations": {
+            "en": "For a circuit with only an earlier verification sheet, report current working conditions separately.",
+            "vi": "Với mạch điện chỉ có phiếu xác nhận trước đây, hãy báo cáo riêng điều kiện làm việc hiện tại."
+          }
+        },
+        "keyTerm:停電": {
+          "sourceJa": "停電",
+          "translations": {
+            "en": "Power outage",
+            "vi": "Mất điện"
+          }
+        },
+        "keyTerm:活線": {
+          "sourceJa": "活線",
+          "translations": {
+            "en": "Live circuit",
+            "vi": "Mạch mang điện"
+          }
+        },
+        "keyTerm:検電": {
+          "sourceJa": "検電",
+          "translations": {
+            "en": "Voltage detection",
+            "vi": "Kiểm tra điện áp"
+          }
+        },
+        "keyTerm:残留電荷": {
+          "sourceJa": "残留電荷",
+          "translations": {
+            "en": "Residual charge",
+            "vi": "Điện tích dư"
+          }
+        },
+        "keyTerm:誤通電": {
+          "sourceJa": "誤通電",
+          "translations": {
+            "en": "Accidental energization",
+            "vi": "Cấp điện nhầm"
+          }
+        },
+        "keyTerm:電源": {
+          "sourceJa": "電源",
+          "translations": {
+            "en": "Power source",
+            "vi": "Nguồn điện"
+          }
+        }
+      }
+    },
+    {
+      "sessionId": "kensetsu-common-session-346",
+      "entries": {
+        "title": {
+          "sourceJa": "短絡・地絡・漏電の経路",
+          "translations": {
+            "en": "Paths of short circuits, earth faults, and leakage current",
+            "vi": "Đường đi của ngắn mạch, chạm đất và rò điện"
+          }
+        },
+        "kensetsu-common-session-346-cluster-1:title": {
+          "sourceJa": "短い経路の故障",
+          "translations": {
+            "en": "A fault through a short path",
+            "vi": "Sự cố qua đường dẫn ngắn"
+          }
+        },
+        "kensetsu-common-session-346-cluster-1-p1": {
+          "sourceJa": "短絡は本来の負荷などを通らず、低い抵抗などの経路ができる故障に関わります。ショートという呼び方もあります。三相の線同士だけでなく、単相や直流の回路にも関わります。",
+          "translations": {
+            "en": "A short circuit is a fault involving a low-resistance or similar path that bypasses the intended load. It is also called a short. It can occur in single-phase and direct-current circuits, not only between three-phase conductors.",
+            "vi": "Ngắn mạch là sự cố hình thành đường dẫn có điện trở thấp hoặc tương tự, không đi qua tải dự kiến. Cũng có cách gọi là chập điện. Hiện tượng không chỉ liên quan đến giữa các dây ba pha mà còn cả mạch một pha hoặc một chiều."
+          }
+        },
+        "kensetsu-common-session-346-cluster-1-p2": {
+          "sourceJa": "三本の線がない回路でも短絡の可能性はあります。担当者は直流や単相の回路を三相の例に当てはめて除外せず、今回の電路と観測した現象を対応させます。",
+          "translations": {
+            "en": "A circuit without three conductors may still short-circuit. The person responsible does not exclude direct-current or single-phase circuits by applying a three-phase example, but relates the actual circuit to the observed phenomenon.",
+            "vi": "Mạch không có ba dây vẫn có thể bị ngắn mạch. Người phụ trách không áp ví dụ ba pha để loại trừ mạch một chiều hoặc một pha, mà cần đối chiếu mạch lần này với hiện tượng quan sát được."
+          }
+        },
+        "kensetsu-common-session-346-cluster-1:prompt": {
+          "sourceJa": "単相や直流の回路にも短絡が関わる理由を説明してください。",
+          "translations": {
+            "en": "Explain why short circuits also concern single-phase and direct-current circuits.",
+            "vi": "Hãy giải thích vì sao ngắn mạch cũng liên quan đến mạch một pha hoặc một chiều."
+          }
+        },
+        "kensetsu-common-session-346-cluster-2:title": {
+          "sourceJa": "大地への故障経路",
+          "translations": {
+            "en": "A fault path to earth",
+            "vi": "Đường sự cố xuống đất"
+          }
+        },
+        "kensetsu-common-session-346-cluster-2-p1": {
+          "sourceJa": "地絡は意図しない大地への導電経路などが生じる故障です。機器の接地という指定された保護の接続とは区別します。地面へつながる線があることだけで故障とは判定しません。",
+          "translations": {
+            "en": "An earth fault is a fault involving an unintended conductive path to earth or a similar condition. Distinguish it from the specified protective connection of equipment earthing. A wire connected to earth alone does not establish a fault.",
+            "vi": "Chạm đất là sự cố tạo đường dẫn điện ngoài ý muốn xuống đất hoặc tình trạng tương tự. Cần phân biệt với nối đất thiết bị là kết nối bảo vệ được chỉ định. Chỉ có dây nối xuống đất không thể kết luận là sự cố."
+          }
+        },
+        "kensetsu-common-session-346-cluster-2-p2": {
+          "sourceJa": "設備の接地線を見た人が地絡と呼んだ場合は、意図された接続か故障の経路かを確かめます。大地へつながるという外観だけで故障箇所と決めず、系統の資料と診断を区別します。",
+          "translations": {
+            "en": "If someone calls an equipment earthing wire an earth fault, check whether it is an intended connection or a fault path. Do not identify it as a fault location merely because it appears connected to earth; distinguish system documents from diagnosis.",
+            "vi": "Nếu có người nhìn dây nối đất của thiết bị rồi gọi là chạm đất, cần xác nhận đó là kết nối có chủ đích hay đường sự cố. Không chỉ từ vẻ ngoài nối xuống đất mà quyết định là vị trí sự cố; cần tách tài liệu hệ thống với chẩn đoán."
+          }
+        },
+        "kensetsu-common-session-346-cluster-2:prompt": {
+          "sourceJa": "意図した接地と地絡の違いを説明してください。",
+          "translations": {
+            "en": "Explain the difference between intentional earthing and an earth fault.",
+            "vi": "Hãy giải thích sự khác nhau giữa nối đất có chủ đích và chạm đất."
+          }
+        },
+        "kensetsu-common-session-346-cluster-3:title": {
+          "sourceJa": "流れるべきでない経路",
+          "translations": {
+            "en": "A path where current should not flow",
+            "vi": "Đường không được có dòng điện đi qua"
+          }
+        },
+        "kensetsu-common-session-346-cluster-3-p1": {
+          "sourceJa": "漏電は意図しない側へ電流が流れる状態に関わります。絶縁の損傷なども原因となる場合があります。地絡と関係する場合があっても、用語をすべて同じ故障の名前にはしません。",
+          "translations": {
+            "en": "Current leakage concerns current flowing where it is not intended. Insulation damage and similar conditions may be causes. Even if related to an earth fault in some cases, do not treat all these terms as names for the same fault.",
+            "vi": "Rò điện liên quan đến tình trạng dòng điện chạy sang phía ngoài ý muốn. Hư hỏng cách điện và tình trạng tương tự cũng có thể là nguyên nhân. Dù có trường hợp liên quan đến chạm đất, không coi mọi thuật ngữ là tên của cùng một sự cố."
+          }
+        },
+        "kensetsu-common-session-346-cluster-3-p2": {
+          "sourceJa": "漏電警報を受けた引継ぎでは、警報が出た時点と対象設備を残します。警報だけで場所や原因が確定したとは報告せず、観測した事実と診断の未確認事項を分けて伝えます。",
+          "translations": {
+            "en": "During handover following a leakage alarm, record when the alarm occurred and which equipment was involved. Do not report that the location or cause is established from the alarm alone; distinguish observed facts from diagnostic matters still unverified.",
+            "vi": "Khi bàn giao sau cảnh báo rò điện, cần ghi thời điểm cảnh báo và thiết bị liên quan. Không báo rằng vị trí hay nguyên nhân đã được xác định chỉ từ cảnh báo; cần truyền đạt riêng sự thật quan sát được và nội dung chẩn đoán chưa xác minh."
+          }
+        },
+        "kensetsu-common-session-346-cluster-3:prompt": {
+          "sourceJa": "警報が出たことと故障位置を特定したことの違いは何ですか。",
+          "translations": {
+            "en": "What is the difference between an alarm occurring and a fault location being identified?",
+            "vi": "Có cảnh báo và đã xác định vị trí sự cố khác nhau thế nào?"
+          }
+        },
+        "kensetsu-common-session-346-cluster-4:title": {
+          "sourceJa": "保護機器と故障",
+          "translations": {
+            "en": "Protective devices and faults",
+            "vi": "Thiết bị bảo vệ và sự cố"
+          }
+        },
+        "kensetsu-common-session-346-cluster-4-p1": {
+          "sourceJa": "保護機器による遮断や警報は故障への対応に関わります。機器が動作したことだけで、原因が解消されたとは読みません。観測、対象と対応の記録を分けます。",
+          "translations": {
+            "en": "Tripping or alarms from protective devices are responses to faults. Device operation alone does not mean the cause has been eliminated. Keep records of observations, targets, and responses separate.",
+            "vi": "Việc thiết bị bảo vệ ngắt hoặc báo động liên quan đến ứng phó sự cố. Chỉ thiết bị đã tác động không có nghĩa nguyên nhân đã được loại bỏ. Cần tách hồ sơ quan sát, đối tượng và ứng phó."
+          }
+        },
+        "kensetsu-common-session-346-cluster-4-p2": {
+          "sourceJa": "保護機器が動作して設備が止まっても、原因の確認は別に残る場合があります。止まった事実を故障が直った意味に変えず、診断と対応の担当へ記録を引き継ぐ場面です。",
+          "translations": {
+            "en": "Even if protective-device operation stops an installation, checking the cause may remain outstanding. This situation hands records over to those responsible for diagnosis and response without turning the fact of shutdown into a claim that the fault is fixed.",
+            "vi": "Dù thiết bị bảo vệ tác động làm hệ thống dừng, vẫn có thể còn việc xác nhận nguyên nhân. Đây là tình huống bàn giao hồ sơ cho người phụ trách chẩn đoán và ứng phó, không biến việc đã dừng thành ý nghĩa sự cố đã được sửa."
+          }
+        },
+        "kensetsu-common-session-346-cluster-4:prompt": {
+          "sourceJa": "警報の記録だけある設備について、原因の確認状況を伝えてください。",
+          "translations": {
+            "en": "For an installation with only alarm records available, report the status of cause verification.",
+            "vi": "Với hệ thống chỉ có hồ sơ cảnh báo, hãy báo cáo tình trạng xác nhận nguyên nhân."
+          }
+        },
+        "keyTerm:短絡": {
+          "sourceJa": "短絡",
+          "translations": {
+            "en": "Short circuit",
+            "vi": "Ngắn mạch"
+          }
+        },
+        "keyTerm:ショート": {
+          "sourceJa": "ショート",
+          "translations": {
+            "en": "Short",
+            "vi": "Chập điện"
+          }
+        },
+        "keyTerm:地絡": {
+          "sourceJa": "地絡",
+          "translations": {
+            "en": "Earth fault",
+            "vi": "Chạm đất"
+          }
+        },
+        "keyTerm:漏電": {
+          "sourceJa": "漏電",
+          "translations": {
+            "en": "Current leakage",
+            "vi": "Rò điện"
+          }
+        },
+        "keyTerm:絶縁": {
+          "sourceJa": "絶縁",
+          "translations": {
+            "en": "Insulation",
+            "vi": "Cách điện"
+          }
+        },
+        "keyTerm:接地": {
+          "sourceJa": "接地",
+          "translations": {
+            "en": "Earthing",
+            "vi": "Nối đất"
+          }
+        }
+      }
+    },
+    {
+      "sessionId": "kensetsu-common-session-347",
+      "entries": {
+        "title": {
+          "sourceJa": "電線・端子・圧着工具の組合せ",
+          "translations": {
+            "en": "Combinations of wires, terminals, and crimping tools",
+            "vi": "Tổ hợp dây điện, đầu cốt và dụng cụ ép cốt"
+          }
+        },
+        "kensetsu-common-session-347-cluster-1:title": {
+          "sourceJa": "線と接続する部品",
+          "translations": {
+            "en": "The wire and the connecting component",
+            "vi": "Dây và chi tiết kết nối"
+          }
+        },
+        "kensetsu-common-session-347-cluster-1-p1": {
+          "sourceJa": "圧着端子は電線との接続に使う部品です。スリーブなどへ線を対応させます。外側が入ることだけで線の材質、構造とサイズへ適合するとは分かりません。",
+          "translations": {
+            "en": "A crimp terminal is a component used to connect to a wire. Match wires to sleeves and similar components. Fitting inside alone does not establish suitability for the wire’s material, construction, and size.",
+            "vi": "Đầu cốt ép là chi tiết dùng để kết nối với dây điện. Cần đối chiếu dây với ống nối và chi tiết tương tự. Chỉ lắp lọt vào không thể biết có phù hợp vật liệu, kết cấu và kích thước dây hay không."
+          }
+        },
+        "kensetsu-common-session-347-cluster-1-p2": {
+          "sourceJa": "線が端子の穴に入った現物を受け取っても、線の材質や構造が指定と合うかは別です。電線と端子の表示を照合し、物理的に入ることを材料の適合確認の代わりにしません。",
+          "translations": {
+            "en": "Even when receiving a wire inserted into a terminal hole, its material and construction matching the specification is a separate matter. Compare wire and terminal markings; do not substitute physical fit for verification of material compatibility.",
+            "vi": "Dù nhận hiện vật có dây lắp vào lỗ đầu cốt, vật liệu và kết cấu dây có đúng chỉ định hay không vẫn là vấn đề riêng. Cần đối chiếu ký hiệu dây và đầu cốt, không thay việc xác nhận phù hợp vật liệu bằng việc lắp lọt về cơ học."
+          }
+        },
+        "kensetsu-common-session-347-cluster-1:prompt": {
+          "sourceJa": "電線が端子に入ることと、指定の組合せの違いは何ですか。",
+          "translations": {
+            "en": "What is the difference between a wire fitting into a terminal and the specified combination?",
+            "vi": "Dây lắp vào được đầu cốt và tổ hợp được chỉ định khác nhau thế nào?"
+          }
+        },
+        "kensetsu-common-session-347-cluster-2:title": {
+          "sourceJa": "工具とダイス",
+          "translations": {
+            "en": "Tools and dies",
+            "vi": "Dụng cụ và khuôn ép"
+          }
+        },
+        "kensetsu-common-session-347-cluster-2-p1": {
+          "sourceJa": "圧着工具とダイスは端子や電線の指定に対応させます。本体が同じでも使う型が同じとは限りません。工具が閉じることだけで必要な加工が成立したとは読みません。",
+          "translations": {
+            "en": "Match the crimping tool and dies to terminal and wire specifications. Even with the same tool body, the dies used may differ. A tool closing alone does not mean the required processing has been achieved.",
+            "vi": "Cần đối chiếu dụng cụ ép cốt và khuôn ép với chỉ định đầu cốt, dây điện. Dù cùng thân dụng cụ, khuôn dùng chưa chắc giống nhau. Chỉ dụng cụ khép lại không có nghĩa đã đạt gia công cần thiết."
+          }
+        },
+        "kensetsu-common-session-347-cluster-2-p2": {
+          "sourceJa": "工具本体が用意された圧着の準備でも、今回の端子に対応するダイスが未確認なら全ては揃っていません。本体、型と材料の情報を対応させて不足を担当者へ伝える例です。",
+          "translations": {
+            "en": "Even if the tool body is ready for crimping, preparations are incomplete if the dies for the current terminal remain unverified. This example matches information on the body, dies, and materials to report missing items to the person responsible.",
+            "vi": "Dù thân dụng cụ đã được chuẩn bị để ép cốt, nếu chưa xác nhận khuôn phù hợp đầu cốt lần này thì vẫn chưa đủ. Đây là ví dụ đối chiếu thông tin thân, khuôn và vật liệu để báo nội dung còn thiếu cho người phụ trách."
+          }
+        },
+        "kensetsu-common-session-347-cluster-2:prompt": {
+          "sourceJa": "圧着工具の本体以外に、どの型の情報を照合しますか。",
+          "translations": {
+            "en": "Besides the crimping-tool body, what die information will you compare?",
+            "vi": "Ngoài thân dụng cụ ép cốt, bạn sẽ đối chiếu thông tin khuôn nào?"
+          }
+        },
+        "kensetsu-common-session-347-cluster-3:title": {
+          "sourceJa": "接触と発熱",
+          "translations": {
+            "en": "Contact and heat generation",
+            "vi": "Tiếp xúc và phát nhiệt"
+          }
+        },
+        "kensetsu-common-session-347-cluster-3-p1": {
+          "sourceJa": "接続の状態は抵抗や発熱などに関わります。端子が外れないことだけでは電気的な性能は分かりません。加工寸法、保持と電気的な確認を目的に応じて分けます。",
+          "translations": {
+            "en": "Connection condition affects resistance, heat generation, and similar factors. A terminal not coming off alone does not establish electrical performance. Distinguish processing dimensions, retention, and electrical checks according to their purposes.",
+            "vi": "Tình trạng kết nối liên quan đến điện trở, phát nhiệt và các yếu tố tương tự. Chỉ đầu cốt không tuột ra chưa thể biết tính năng điện. Cần tách kích thước gia công, khả năng giữ và kiểm tra điện theo mục đích."
+          }
+        },
+        "kensetsu-common-session-347-cluster-3-p2": {
+          "sourceJa": "外れない端子を見た担当者が接続良好と報告しようとしたときは、何を確認した結果かを明らかにします。保持の確認だけを電気的な性能へ広げず、必要な結果票を別に確かめます。",
+          "translations": {
+            "en": "When someone seeing a terminal that does not come off is about to report a good connection, clarify which checks support that result. Do not expand retention checks alone into electrical performance; verify the required result sheets separately.",
+            "vi": "Khi người phụ trách thấy đầu cốt không tuột và định báo kết nối tốt, cần làm rõ đó là kết quả đã xác nhận nội dung gì. Không mở rộng riêng kiểm tra giữ chặt thành tính năng điện; phải xác nhận riêng phiếu kết quả cần thiết."
+          }
+        },
+        "kensetsu-common-session-347-cluster-3:prompt": {
+          "sourceJa": "外れない接続だけで、電気的な性能を確認済みとできない理由は何ですか。",
+          "translations": {
+            "en": "Why does a connection not coming off alone fail to establish that electrical performance has been checked?",
+            "vi": "Vì sao chỉ mối nối không tuột chưa thể coi là đã xác nhận tính năng điện?"
+          }
+        },
+        "kensetsu-common-session-347-cluster-4:title": {
+          "sourceJa": "系統で使える電流",
+          "translations": {
+            "en": "Current the system can carry",
+            "vi": "Dòng điện hệ thống cho phép mang"
+          }
+        },
+        "kensetsu-common-session-347-cluster-4-p1": {
+          "sourceJa": "許容電流は電線だけでなく端子や周囲の条件とも対応させます。一つの部品の値で系統全体の条件は決まりません。指定した材料と加工後の結果を区別します。",
+          "translations": {
+            "en": "Allowable current must be related not only to wires but also to terminals and surrounding conditions. One component’s value does not determine requirements for the entire system. Distinguish specified materials from results after processing.",
+            "vi": "Dòng điện cho phép phải được đối chiếu không chỉ với dây điện mà còn với đầu cốt và điều kiện xung quanh. Giá trị của một chi tiết không quyết định điều kiện toàn hệ thống. Cần phân biệt vật liệu chỉ định với kết quả sau gia công."
+          }
+        },
+        "kensetsu-common-session-347-cluster-4-p2": {
+          "sourceJa": "材料票がある接続を引き継ぐ場合、使った工具と加工結果の資料も対応させます。指定材料の受領と加工後の適合を分けることで、確認済みの範囲が次の担当者へ伝わります。",
+          "translations": {
+            "en": "When handing over a connection with a material sheet, also match documents for the tools used and processing results. Separating receipt of specified materials from conformity after processing communicates the verified scope to the next person responsible.",
+            "vi": "Khi bàn giao kết nối có phiếu vật liệu, cũng cần đối chiếu tài liệu dụng cụ đã dùng và kết quả gia công. Tách việc tiếp nhận đúng vật liệu chỉ định với sự phù hợp sau gia công giúp người phụ trách tiếp theo hiểu phạm vi đã xác nhận."
+          }
+        },
+        "kensetsu-common-session-347-cluster-4:prompt": {
+          "sourceJa": "品番だけある電線の接続について、工具と結果の確認を分けて伝えてください。",
+          "translations": {
+            "en": "For a wire connection with only product numbers known, report tool checks separately from result checks.",
+            "vi": "Với kết nối dây điện chỉ có mã sản phẩm, hãy báo cáo riêng việc xác nhận dụng cụ và kết quả."
+          }
+        },
+        "keyTerm:圧着端子": {
+          "sourceJa": "圧着端子",
+          "translations": {
+            "en": "Crimp terminal",
+            "vi": "Đầu cốt ép"
+          }
+        },
+        "keyTerm:電線": {
+          "sourceJa": "電線",
+          "translations": {
+            "en": "Wire",
+            "vi": "Dây điện"
+          }
+        },
+        "keyTerm:スリーブ": {
+          "sourceJa": "スリーブ",
+          "translations": {
+            "en": "Sleeve",
+            "vi": "Ống nối"
+          }
+        },
+        "keyTerm:ダイス": {
+          "sourceJa": "ダイス",
+          "translations": {
+            "en": "Die",
+            "vi": "Khuôn ép"
+          }
+        },
+        "keyTerm:許容電流": {
+          "sourceJa": "許容電流",
+          "translations": {
+            "en": "Allowable current",
+            "vi": "Dòng điện cho phép"
+          }
+        },
+        "keyTerm:発熱": {
+          "sourceJa": "発熱",
+          "translations": {
+            "en": "Heat generation",
+            "vi": "Phát nhiệt"
+          }
+        },
+        "illustration:0:alt": {
+          "sourceJa": "未接続の電線・端子と工具の教材用見本。穴に入る大きさだけで材料の適合は判断せず、対象の表示と指定を照合します。",
+          "translations": {
+            "en": "Teaching samples of unconnected wires, terminals, and tools. Do not judge material compatibility solely by a size that fits in the hole; compare the relevant markings and specifications.",
+            "vi": "Mẫu học tập gồm dây điện, đầu cốt chưa kết nối và dụng cụ. Không đánh giá sự phù hợp vật liệu chỉ từ kích thước lọt lỗ; cần đối chiếu ký hiệu và chỉ định liên quan."
+          }
+        }
+      }
+    },
+    {
+      "sessionId": "kensetsu-common-session-348",
+      "entries": {
+        "title": {
+          "sourceJa": "架空線と建設機械の動く範囲",
+          "translations": {
+            "en": "Overhead lines and construction-machinery movement envelopes",
+            "vi": "Đường dây trên không và phạm vi chuyển động của máy xây dựng"
+          }
+        },
+        "kensetsu-common-session-348-cluster-1:title": {
+          "sourceJa": "上側の設備",
+          "translations": {
+            "en": "Equipment overhead",
+            "vi": "Hệ thống ở phía trên"
+          }
+        },
+        "kensetsu-common-session-348-cluster-1-p1": {
+          "sourceJa": "架空線は地上より上に設けられた線です。通信と電力などの用途を外観だけで同定しません。設備の管理者と表示、現場の資料を対応させます。",
+          "translations": {
+            "en": "Overhead lines are lines installed above ground. Do not identify uses such as communications or power from appearance alone. Match the utility operator, markings, and site documents.",
+            "vi": "Đường dây trên không là dây được lắp cao hơn mặt đất. Không nhận định công dụng như truyền thông hay điện chỉ bằng vẻ ngoài. Cần đối chiếu đơn vị quản lý, ký hiệu và tài liệu hiện trường."
+          }
+        },
+        "kensetsu-common-session-348-cluster-1-p2": {
+          "sourceJa": "道路上に細い架空線が見える現場では、細さだけで通信線や低い危険の設備と決めません。管理者と位置の情報を確かめ、分からない種類を推測で記録しない例です。",
+          "translations": {
+            "en": "At a site with thin overhead wires above the road, do not identify them as communication lines or low-hazard equipment merely because they are thin. This example confirms operator and location information rather than recording an unknown type by guesswork.",
+            "vi": "Tại hiện trường có dây trên không mảnh phía trên đường, không chỉ vì mảnh mà quyết định đó là dây truyền thông hoặc hệ thống ít nguy hiểm. Đây là ví dụ xác nhận thông tin đơn vị quản lý và vị trí, không ghi loại chưa biết bằng suy đoán."
+          }
+        },
+        "kensetsu-common-session-348-cluster-1:prompt": {
+          "sourceJa": "架空線の外観以外に、どの管理情報を照合しますか。",
+          "translations": {
+            "en": "Besides an overhead line’s appearance, which management information will you compare?",
+            "vi": "Ngoài vẻ ngoài đường dây trên không, bạn sẽ đối chiếu thông tin quản lý nào?"
+          }
+        },
+        "kensetsu-common-session-348-cluster-2:title": {
+          "sourceJa": "機械の動く形",
+          "translations": {
+            "en": "The shape of machinery movement",
+            "vi": "Hình dạng phạm vi chuyển động của máy"
+          }
+        },
+        "kensetsu-common-session-348-cluster-2-p1": {
+          "sourceJa": "ブームや荷台が動くと機械の高さと占める範囲が変わります。停止時の車体の寸法だけでは、動作中の位置関係は分かりません。架空線と動く範囲を別に読みます。",
+          "translations": {
+            "en": "Movement of a boom or load bed changes a machine’s height and occupied space. The dimensions of the stationary vehicle body alone do not establish spatial relationships during operation. Read overhead-line locations separately from the movement envelope.",
+            "vi": "Khi cần hoặc thùng xe chuyển động, chiều cao và phạm vi chiếm chỗ của máy thay đổi. Chỉ kích thước thân xe lúc dừng không cho biết quan hệ vị trí khi hoạt động. Cần đọc riêng vị trí dây trên không và phạm vi chuyển động."
+          }
+        },
+        "kensetsu-common-session-348-cluster-2-p2": {
+          "sourceJa": "荷台を上げる予定がある車両では、走行時の高さだけの確認では足りません。担当者は機械が動く範囲を架空線の位置へ対応させ、静止時に通れた経験を作業時へ転用しません。",
+          "translations": {
+            "en": "For a vehicle whose load bed will be raised, checking traveling height alone is insufficient. The person responsible relates the machinery’s movement envelope to overhead-line positions instead of reusing the experience of passing with moving parts stationary as evidence for working conditions.",
+            "vi": "Với xe dự kiến nâng thùng, chỉ kiểm tra chiều cao khi chạy là chưa đủ. Người phụ trách cần đối chiếu phạm vi chuyển động của máy với vị trí dây trên không, không chuyển kinh nghiệm đã đi qua khi bộ phận chuyển động ở trạng thái tĩnh sang điều kiện làm việc."
+          }
+        },
+        "kensetsu-common-session-348-cluster-2:prompt": {
+          "sourceJa": "静止した車体の高さだけでは、架空線へのどの関係が不足しますか。",
+          "translations": {
+            "en": "What relationship to overhead lines is missing when only the stationary vehicle height is known?",
+            "vi": "Nếu chỉ biết chiều cao thân xe đứng yên thì còn thiếu quan hệ nào với đường dây trên không?"
+          }
+        },
+        "kensetsu-common-session-348-cluster-3:title": {
+          "sourceJa": "接触と放電の危険",
+          "translations": {
+            "en": "Contact and discharge hazards",
+            "vi": "Nguy hiểm do tiếp xúc và phóng điện"
+          }
+        },
+        "kensetsu-common-session-348-cluster-3-p1": {
+          "sourceJa": "電力の線では直接の接触だけでなく接近する条件にも危険が関わります。離隔の条件は電圧などと計画へ対応させます。触れていない写真だけで安全とは判定しません。",
+          "translations": {
+            "en": "For power lines, approaching conditions as well as direct contact involve hazards. Match clearance requirements to voltage and the plan. A photograph showing no contact alone is not a basis for judging safety.",
+            "vi": "Với đường dây điện, không chỉ tiếp xúc trực tiếp mà điều kiện đến gần cũng có nguy hiểm. Cần đối chiếu điều kiện khoảng cách an toàn với điện áp và kế hoạch. Không thể chỉ ảnh chưa chạm mà đánh giá là an toàn."
+          }
+        },
+        "kensetsu-common-session-348-cluster-3-p2": {
+          "sourceJa": "機械と架空線が離れて見える写真でも、必要な離隔の測定結果とは限りません。確認した距離と設備の区分を別に読み、写真の印象だけで接近条件を判断しない場面です。",
+          "translations": {
+            "en": "A photograph in which machinery and an overhead line appear separated is not necessarily a measurement of required clearance. Read the verified distance separately from the installation category; do not judge approaching conditions solely from the photograph’s impression.",
+            "vi": "Dù ảnh trông máy và dây trên không có cách nhau, chưa chắc đó là kết quả đo khoảng cách cần thiết. Cần đọc riêng khoảng cách đã xác nhận và phân loại hệ thống, không đánh giá điều kiện đến gần chỉ từ cảm giác do ảnh mang lại."
+          }
+        },
+        "kensetsu-common-session-348-cluster-3:prompt": {
+          "sourceJa": "触れていない外観だけで、架空線への適合を確認済みとできない理由は何ですか。",
+          "translations": {
+            "en": "Why does a non-contact appearance alone fail to establish compliance around overhead lines?",
+            "vi": "Vì sao chỉ nhìn chưa tiếp xúc không thể coi là đã xác nhận đáp ứng yêu cầu đối với dây trên không?"
+          }
+        },
+        "kensetsu-common-session-348-cluster-4:title": {
+          "sourceJa": "保護用品の役割",
+          "translations": {
+            "en": "The role of protective items",
+            "vi": "Vai trò của vật tư bảo vệ"
+          }
+        },
+        "kensetsu-common-session-348-cluster-4-p1": {
+          "sourceJa": "ケーブルカバーなどは指定された設備と用途に対応させます。カバーがあることだけで機械を接触させてよい意味にはしません。取付けにも対象の管理と作業条件が関わります。",
+          "translations": {
+            "en": "Match cable covers and similar items to their specified installations and uses. A cover being present alone does not mean machinery may contact it. Installation also involves management of the relevant equipment and working conditions.",
+            "vi": "Vỏ che dây và vật tư tương tự phải phù hợp với hệ thống và mục đích được chỉ định. Chỉ có vỏ che không có nghĩa là được để máy tiếp xúc. Việc lắp cũng liên quan đến quản lý hệ thống và điều kiện làm việc."
+          }
+        },
+        "kensetsu-common-session-348-cluster-4-p2": {
+          "sourceJa": "線にカバーがある現場を引き継ぐときは、その保護の指定範囲を確認します。カバーの存在を接触してよい許可に変えず、設備管理者との確認と機械の範囲を担当者へ伝えます。",
+          "translations": {
+            "en": "When taking over a site where lines have covers, check the specified scope of that protection. Do not turn the presence of covers into permission for contact; communicate verification with the operator and the machinery’s envelope to the person responsible.",
+            "vi": "Khi tiếp nhận hiện trường có dây được che, cần xác nhận phạm vi bảo vệ được chỉ định. Không biến việc có vỏ che thành cho phép tiếp xúc; cần truyền đạt việc xác nhận với đơn vị quản lý và phạm vi của máy cho người phụ trách."
+          }
+        },
+        "kensetsu-common-session-348-cluster-4:prompt": {
+          "sourceJa": "位置図だけある架空線について、管理者との確認状況を伝えてください。",
+          "translations": {
+            "en": "For an overhead line with only a location drawing, report the status of verification with its operator.",
+            "vi": "Với dây trên không chỉ có sơ đồ vị trí, hãy báo cáo tình trạng xác nhận với đơn vị quản lý."
+          }
+        },
+        "keyTerm:架空線": {
+          "sourceJa": "架空線",
+          "translations": {
+            "en": "Overhead line",
+            "vi": "Đường dây trên không"
+          }
+        },
+        "keyTerm:ブーム": {
+          "sourceJa": "ブーム",
+          "translations": {
+            "en": "Boom",
+            "vi": "Cần"
+          }
+        },
+        "keyTerm:荷台": {
+          "sourceJa": "荷台",
+          "translations": {
+            "en": "Load bed",
+            "vi": "Thùng xe"
+          }
+        },
+        "keyTerm:ケーブルカバー": {
+          "sourceJa": "ケーブルカバー",
+          "translations": {
+            "en": "Cable cover",
+            "vi": "Vỏ che dây"
+          }
+        },
+        "keyTerm:離隔": {
+          "sourceJa": "離隔",
+          "translations": {
+            "en": "Clearance",
+            "vi": "Khoảng cách an toàn"
+          }
+        },
+        "keyTerm:管理者": {
+          "sourceJa": "管理者",
+          "translations": {
+            "en": "Utility operator",
+            "vi": "Đơn vị quản lý"
+          }
+        }
+      }
+    },
+    {
+      "sessionId": "kensetsu-common-session-349",
+      "entries": {
+        "title": {
+          "sourceJa": "道路使用・占用の許可と条件",
+          "translations": {
+            "en": "Road-use and road-occupancy permits and conditions",
+            "vi": "Giấy phép sử dụng, chiếm dụng đường và điều kiện"
+          }
+        },
+        "kensetsu-common-session-349-cluster-1:title": {
+          "sourceJa": "道路で行う行為",
+          "translations": {
+            "en": "Activities carried out on roads",
+            "vi": "Hoạt động thực hiện trên đường"
+          }
+        },
+        "kensetsu-common-session-349-cluster-1-p1": {
+          "sourceJa": "道路使用許可は道路での工事や特別な使用などに関わる制度です。道路占用許可とは目的と確認する側が異なります。ひとつの許可があることだけで必要な手続きが全て済んだとは読みません。",
+          "translations": {
+            "en": "The road-use permit system concerns construction and special uses of roads. Its purpose and the authority checking it differ from those of a road-occupancy permit. One permit alone does not mean every necessary procedure is complete.",
+            "vi": "Chế độ giấy phép sử dụng đường liên quan đến thi công và sử dụng đặc biệt trên đường. Mục đích và bên xác nhận khác với giấy phép chiếm dụng đường. Chỉ có một giấy phép không có nghĩa đã xong mọi thủ tục cần thiết."
+          }
+        },
+        "kensetsu-common-session-349-cluster-1-p2": {
+          "sourceJa": "道路の工事で許可証が一枚届いた場合、それが使用と占用のどちらかを確認します。必要な行為と各制度を対応させ、一枚あることだけで全手続きが終わったとは扱いません。",
+          "translations": {
+            "en": "If one permit arrives for road works, check whether it concerns road use or road occupancy. Relate each required activity to the relevant system rather than treating one document as completion of all procedures.",
+            "vi": "Nếu nhận một giấy phép cho công trình đường, cần xác nhận đó là sử dụng hay chiếm dụng đường. Cần đối chiếu hoạt động cần thiết với từng chế độ, không coi có một giấy là mọi thủ tục đã hoàn tất."
+          }
+        },
+        "kensetsu-common-session-349-cluster-1:prompt": {
+          "sourceJa": "道路使用と道路占用の許可を別に整理する理由は何ですか。",
+          "translations": {
+            "en": "Why are road-use and road-occupancy permits organized separately?",
+            "vi": "Vì sao cần sắp xếp riêng giấy phép sử dụng đường và giấy phép chiếm dụng đường?"
+          }
+        },
+        "kensetsu-common-session-349-cluster-2:title": {
+          "sourceJa": "許可の範囲",
+          "translations": {
+            "en": "The scope of a permit",
+            "vi": "Phạm vi giấy phép"
+          }
+        },
+        "kensetsu-common-session-349-cluster-2-p1": {
+          "sourceJa": "許可条件には作業時間、場所や行為などの条件が関わります。工事名が一致することだけで現在の計画が範囲内とは分かりません。許可と予定した作業の対応を読みます。",
+          "translations": {
+            "en": "Permit conditions include matters such as work times, locations, and activities. A matching project name alone does not establish that the current plan is within scope. Read the correspondence between the permit and planned work.",
+            "vi": "Điều kiện giấy phép bao gồm các nội dung như thời gian, vị trí và hoạt động. Chỉ tên công trình trùng khớp không cho biết kế hoạch hiện tại nằm trong phạm vi hay không. Cần đọc sự tương ứng giữa giấy phép và công việc dự kiến."
+          }
+        },
+        "kensetsu-common-session-349-cluster-2-p2": {
+          "sourceJa": "同じ工事名でも予定する時間が変わった場合は、許可条件との対応を読み直します。以前の資料を新しい予定へ自動的に広げず、変更した条件を担当者へ明らかにする例です。",
+          "translations": {
+            "en": "Even with the same project name, reread the permit conditions if planned times change. This example clarifies changed conditions to the person responsible instead of automatically extending old documents to the new schedule.",
+            "vi": "Dù cùng tên công trình, nếu giờ dự kiến thay đổi thì phải đọc lại sự tương ứng với điều kiện giấy phép. Đây là ví dụ làm rõ điều kiện đã đổi cho người phụ trách, không tự mở rộng tài liệu trước đây sang kế hoạch mới."
+          }
+        },
+        "kensetsu-common-session-349-cluster-2:prompt": {
+          "sourceJa": "同じ工事名の許可でも、作業のどの条件を別に照合しますか。",
+          "translations": {
+            "en": "Even for a permit with the same project name, which work conditions will you compare separately?",
+            "vi": "Dù giấy phép cùng tên công trình, bạn sẽ đối chiếu riêng điều kiện nào của công việc?"
+          }
+        },
+        "kensetsu-common-session-349-cluster-3:title": {
+          "sourceJa": "通行する人への対応",
+          "translations": {
+            "en": "Accommodating road users",
+            "vi": "Đáp ứng người tham gia giao thông"
+          }
+        },
+        "kensetsu-common-session-349-cluster-3-p1": {
+          "sourceJa": "保安施設は工事区域と通行する側の条件に対応します。歩行者と車両では必要な経路や見え方が異なります。車両が通れることだけで歩行者の経路も確保されたとは判断しません。",
+          "translations": {
+            "en": "Safety installations must correspond to the construction area and the conditions of road users. Pedestrians and vehicles require different routes and visibility. Vehicles being able to pass alone does not establish that a pedestrian route is also secured.",
+            "vi": "Công trình, thiết bị bảo đảm an toàn phải phù hợp với khu vực thi công và điều kiện của phía qua lại. Người đi bộ và xe có yêu cầu khác nhau về lối đi và khả năng nhìn thấy. Chỉ xe đi qua được không thể kết luận đã bảo đảm cả lối đi bộ."
+          }
+        },
+        "kensetsu-common-session-349-cluster-3-p2": {
+          "sourceJa": "車両が通れる配置図でも、歩行者の経路が別に必要な場合があります。車線の確認を全ての通行者への対応と扱わず、人が通る範囲と工事区域を照合します。",
+          "translations": {
+            "en": "Even a layout allowing vehicles to pass may require a separate pedestrian route. Do not treat lane checks as accommodation of all road users; compare the pedestrian area with the construction zone.",
+            "vi": "Dù sơ đồ bố trí cho xe đi qua được, vẫn có thể cần lối riêng cho người đi bộ. Không coi kiểm tra làn xe là đã đáp ứng mọi người qua lại; cần đối chiếu phạm vi người đi với khu vực thi công."
+          }
+        },
+        "kensetsu-common-session-349-cluster-3:prompt": {
+          "sourceJa": "車両の経路だけ分かる道路工事で、歩行者について何が残りますか。",
+          "translations": {
+            "en": "In road works where only vehicle routes are known, what remains to be checked for pedestrians?",
+            "vi": "Trong công trình đường chỉ biết tuyến xe, còn việc gì cần xác nhận về người đi bộ?"
+          }
+        },
+        "kensetsu-common-session-349-cluster-4:title": {
+          "sourceJa": "許可と現場の状態",
+          "translations": {
+            "en": "Permits and site conditions",
+            "vi": "Giấy phép và tình trạng hiện trường"
+          }
+        },
+        "kensetsu-common-session-349-cluster-4-p1": {
+          "sourceJa": "許可された行為と現場の保安施設や作業条件は別に確認します。許可証だけで現在の全危険が管理されたとは分かりません。手続きと設置状態を対応させて伝えます。",
+          "translations": {
+            "en": "Check permitted activities separately from site safety installations and working conditions. A permit alone does not establish that every current hazard is managed. Communicate procedures in relation to installation conditions.",
+            "vi": "Cần kiểm tra riêng hoạt động được phép với công trình, thiết bị an toàn và điều kiện làm việc tại hiện trường. Chỉ giấy phép không thể cho biết mọi nguy hiểm hiện tại đã được quản lý. Cần đối chiếu thủ tục với tình trạng lắp đặt khi truyền đạt."
+          }
+        },
+        "kensetsu-common-session-349-cluster-4-p2": {
+          "sourceJa": "許可の資料が揃った道路作業でも、設置した保安施設の状態は現場で別に確認します。手続きの完了と今の区域の適合を分けて伝えると、担当者が実施の条件を判断しやすくなります。",
+          "translations": {
+            "en": "Even for road work with complete permit documents, the condition of installed safety facilities must be checked separately on site. Reporting procedural completion separately from conformity of the current area helps the person responsible judge execution conditions.",
+            "vi": "Dù công việc trên đường đã đủ tài liệu giấy phép, vẫn phải kiểm tra riêng tại hiện trường tình trạng công trình, thiết bị bảo đảm an toàn đã lắp. Báo riêng hoàn tất thủ tục và sự phù hợp của khu vực hiện tại giúp người phụ trách dễ đánh giá điều kiện thực hiện."
+          }
+        },
+        "kensetsu-common-session-349-cluster-4:prompt": {
+          "sourceJa": "許可資料だけある道路工事について、現場の確認状況を報告してください。",
+          "translations": {
+            "en": "For road works with only permit documents available, report the status of site checks.",
+            "vi": "Với công trình đường chỉ có tài liệu giấy phép, hãy báo cáo tình trạng xác nhận tại hiện trường."
+          }
+        },
+        "keyTerm:道路使用許可": {
+          "sourceJa": "道路使用許可",
+          "translations": {
+            "en": "Road-use permit",
+            "vi": "Giấy phép sử dụng đường"
+          }
+        },
+        "keyTerm:道路占用許可": {
+          "sourceJa": "道路占用許可",
+          "translations": {
+            "en": "Road-occupancy permit",
+            "vi": "Giấy phép chiếm dụng đường"
+          }
+        },
+        "keyTerm:許可条件": {
+          "sourceJa": "許可条件",
+          "translations": {
+            "en": "Permit conditions",
+            "vi": "Điều kiện giấy phép"
+          }
+        },
+        "keyTerm:作業時間": {
+          "sourceJa": "作業時間",
+          "translations": {
+            "en": "Work times",
+            "vi": "Thời gian làm việc"
+          }
+        },
+        "keyTerm:保安施設": {
+          "sourceJa": "保安施設",
+          "translations": {
+            "en": "Safety installations",
+            "vi": "Công trình, thiết bị bảo đảm an toàn"
+          }
+        },
+        "keyTerm:歩行者": {
+          "sourceJa": "歩行者",
+          "translations": {
+            "en": "Pedestrian",
+            "vi": "Người đi bộ"
+          }
+        }
+      }
+    },
+    {
+      "sessionId": "kensetsu-common-session-350",
+      "entries": {
+        "title": {
+          "sourceJa": "道路の開口部・保管物と夜間",
+          "translations": {
+            "en": "Road openings, stored materials, and nighttime conditions",
+            "vi": "Miệng hố trên đường, vật tư lưu giữ và ban đêm"
+          }
+        },
+        "kensetsu-common-session-350-cluster-1:title": {
+          "sourceJa": "掘った場所の状態",
+          "translations": {
+            "en": "The condition of an excavated location",
+            "vi": "Tình trạng chỗ đã đào"
+          }
+        },
+        "kensetsu-common-session-350-cluster-1-p1": {
+          "sourceJa": "開口部の状態と覆工などの保護は対象に対応させます。作業が終わったことだけで、道路の穴への管理も終わったとは読みません。離れる時点の状態を別に確認します。",
+          "translations": {
+            "en": "Match opening conditions and protection such as temporary decking to the location concerned. Work ending alone does not mean management of a hole in the road is also finished. Check conditions at the time of departure separately.",
+            "vi": "Tình trạng miệng hố và biện pháp bảo vệ như kết cấu đậy tạm phải phù hợp với đối tượng. Chỉ công việc đã xong không có nghĩa là việc quản lý hố trên đường cũng kết thúc. Cần kiểm tra riêng tình trạng khi rời đi."
+          }
+        },
+        "kensetsu-common-session-350-cluster-1-p2": {
+          "sourceJa": "作業終了の連絡を受けた担当者は、道路の開口部がどの状態で残るかも確認します。工事の手が止まった時刻を道路の復旧完了と同じ意味にせず、離れる時点の管理を引き継ぎます。",
+          "translations": {
+            "en": "A person receiving notice that work has ended also checks the condition in which road openings will remain. Do not equate the time construction stops with completion of road restoration; hand over management arrangements at departure.",
+            "vi": "Người phụ trách nhận thông báo kết thúc công việc cũng cần xác nhận miệng hố trên đường được để lại trong tình trạng nào. Không coi thời điểm ngừng thi công đồng nghĩa đã khôi phục xong đường; cần bàn giao việc quản lý khi rời đi."
+          }
+        },
+        "kensetsu-common-session-350-cluster-1:prompt": {
+          "sourceJa": "作業終了と開口部の状態を別に記録する理由は何ですか。",
+          "translations": {
+            "en": "Why are work completion and opening conditions recorded separately?",
+            "vi": "Vì sao cần ghi riêng kết thúc công việc và tình trạng miệng hố?"
+          }
+        },
+        "kensetsu-common-session-350-cluster-2:title": {
+          "sourceJa": "覆うことと区切ること",
+          "translations": {
+            "en": "Covering and separating",
+            "vi": "Che phủ và phân khu"
+          }
+        },
+        "kensetsu-common-session-350-cluster-2-p1": {
+          "sourceJa": "覆工は上側を覆う構造、保安柵は区域を分ける用品として読みます。機能が異なるため、存在する用品を同じ保護にまとめません。覆工の耐荷重や区域の指定は別に照合します。",
+          "translations": {
+            "en": "Read temporary decking as a structure covering the top, and a safety barrier as an item separating areas. Since their functions differ, do not group the items present as identical protection. Compare decking load capacity and area specifications separately.",
+            "vi": "Kết cấu đậy tạm được hiểu là kết cấu che phía trên, còn rào an toàn là vật tư phân chia khu vực. Vì chức năng khác nhau, không gộp vật tư hiện có thành cùng một biện pháp bảo vệ. Cần đối chiếu riêng sức chịu tải kết cấu đậy và chỉ định khu vực."
+          }
+        },
+        "kensetsu-common-session-350-cluster-2-p2": {
+          "sourceJa": "穴の上に板が置かれた現場でも、通行する荷重への対応は別に確認します。柵と覆う構造の機能を分け、板が見えることだけで車両の通過条件が成立したと報告しません。",
+          "translations": {
+            "en": "Even with a plate placed over a hole, suitability for passing loads must be checked separately. Distinguish barrier and covering functions; do not report that vehicle-passage requirements are satisfied merely because a plate is visible.",
+            "vi": "Dù có tấm đặt trên hố, vẫn phải kiểm tra riêng khả năng đáp ứng tải trọng qua lại. Cần tách chức năng rào và kết cấu che phủ, không báo đã đáp ứng điều kiện xe qua chỉ vì nhìn thấy tấm đậy."
+          }
+        },
+        "kensetsu-common-session-350-cluster-2:prompt": {
+          "sourceJa": "覆工と保安柵を、機能から区別してください。",
+          "translations": {
+            "en": "Distinguish temporary decking from safety barriers by their functions.",
+            "vi": "Hãy phân biệt kết cấu đậy tạm và rào an toàn theo chức năng."
+          }
+        },
+        "kensetsu-common-session-350-cluster-3:title": {
+          "sourceJa": "物の置かれた状態",
+          "translations": {
+            "en": "The condition of stored items",
+            "vi": "Tình trạng vật tư được đặt"
+          }
+        },
+        "kensetsu-common-session-350-cluster-3-p1": {
+          "sourceJa": "一時的に置く材料などの散逸や移動は通行に影響します。置く範囲と固定などの条件を読みます。道路端に寄せたことだけで、移動や飛散への対応が成立したとは分かりません。",
+          "translations": {
+            "en": "Scattering or movement of temporarily placed materials affects passage. Read placement limits and conditions such as securing. Moving items to the road edge alone does not establish that movement or scattering has been addressed.",
+            "vi": "Vật liệu đặt tạm bị phân tán hoặc dịch chuyển sẽ ảnh hưởng việc qua lại. Cần đọc phạm vi đặt và điều kiện như cố định. Chỉ dồn ra mép đường chưa thể biết đã xử lý khả năng dịch chuyển hoặc bay tán hay chưa."
+          }
+        },
+        "kensetsu-common-session-350-cluster-3-p2": {
+          "sourceJa": "材料を道路端へ寄せた写真が届いても、風や移動への対策まで分かるとは限りません。保管範囲と固定の確認を分け、車線外という位置だけで全条件を満たすとは扱わない例です。",
+          "translations": {
+            "en": "Even a photograph of materials moved to the road edge may not reveal measures against wind or movement. This example checks storage limits separately from securing, rather than treating a position outside the traffic lane as meeting all conditions.",
+            "vi": "Dù nhận ảnh vật liệu được dồn ra mép đường, vẫn chưa chắc biết biện pháp đối phó gió hay dịch chuyển. Đây là ví dụ xác nhận riêng phạm vi lưu giữ và việc cố định, không coi vị trí ngoài làn xe là đã đủ mọi điều kiện."
+          }
+        },
+        "kensetsu-common-session-350-cluster-3:prompt": {
+          "sourceJa": "道路端に置いた材料について、位置以外にどの状態を読みますか。",
+          "translations": {
+            "en": "Besides location, what conditions will you read for materials placed at the road edge?",
+            "vi": "Với vật liệu đặt ở mép đường, ngoài vị trí bạn sẽ đọc tình trạng nào?"
+          }
+        },
+        "kensetsu-common-session-350-cluster-4:title": {
+          "sourceJa": "暗さと周辺への影響",
+          "translations": {
+            "en": "Darkness and effects on the surroundings",
+            "vi": "Trời tối và ảnh hưởng xung quanh"
+          }
+        },
+        "kensetsu-common-session-350-cluster-4-p1": {
+          "sourceJa": "注意灯などは夜間の見え方に関わります。幅や高さ、通行する側との関係を対応させます。照明があることだけで、周辺住民への騒音などの影響まで確認されたとは判断しません。",
+          "translations": {
+            "en": "Warning lights and similar items affect nighttime visibility. Relate width, height, and the position of road users. Lighting alone does not establish that effects such as noise on nearby residents have also been checked.",
+            "vi": "Đèn cảnh báo và vật tư tương tự liên quan đến khả năng nhìn vào ban đêm. Cần đối chiếu chiều rộng, chiều cao và quan hệ với phía qua lại. Chỉ có chiếu sáng không thể kết luận đã kiểm tra cả ảnh hưởng như tiếng ồn đối với cư dân xung quanh."
+          }
+        },
+        "kensetsu-common-session-350-cluster-4-p2": {
+          "sourceJa": "夜間の注意灯が点いていても、通行する側から区域の形が分かるかは別です。担当者は見え方と周辺への影響を対応させ、照明があることを騒音への確認まで含む報告にしません。",
+          "translations": {
+            "en": "Even with nighttime warning lights on, whether road users can recognize the shape of the area is a separate issue. The person responsible relates visibility to surrounding effects and does not report that lighting being present also covers noise checks.",
+            "vi": "Dù đèn cảnh báo ban đêm đang sáng, người qua lại có nhận biết được hình dạng khu vực hay không vẫn là vấn đề riêng. Người phụ trách cần đối chiếu khả năng nhìn và ảnh hưởng xung quanh, không báo rằng có chiếu sáng là đã bao gồm cả xác nhận tiếng ồn."
+          }
+        },
+        "kensetsu-common-session-350-cluster-4:prompt": {
+          "sourceJa": "注意灯だけ分かる夜間工事について、通行と周辺への確認を伝えてください。",
+          "translations": {
+            "en": "For nighttime work where only warning lights are known, report checks concerning passage and the surroundings.",
+            "vi": "Với công việc ban đêm chỉ biết có đèn cảnh báo, hãy báo cáo việc xác nhận về qua lại và khu vực xung quanh."
+          }
+        },
+        "keyTerm:開口部": {
+          "sourceJa": "開口部",
+          "translations": {
+            "en": "Opening",
+            "vi": "Miệng hố"
+          }
+        },
+        "keyTerm:覆工": {
+          "sourceJa": "覆工",
+          "translations": {
+            "en": "Temporary decking",
+            "vi": "Kết cấu đậy tạm"
+          }
+        },
+        "keyTerm:保安柵": {
+          "sourceJa": "保安柵",
+          "translations": {
+            "en": "Safety barrier",
+            "vi": "Rào an toàn"
+          }
+        },
+        "keyTerm:注意灯": {
+          "sourceJa": "注意灯",
+          "translations": {
+            "en": "Warning light",
+            "vi": "Đèn cảnh báo"
+          }
+        },
+        "keyTerm:散逸": {
+          "sourceJa": "散逸",
+          "translations": {
+            "en": "Scattering",
+            "vi": "Phân tán"
+          }
+        },
+        "keyTerm:周辺住民": {
+          "sourceJa": "周辺住民",
+          "translations": {
+            "en": "Nearby residents",
+            "vi": "Cư dân xung quanh"
+          }
+        }
+      }
+    }
+  ]
+}
