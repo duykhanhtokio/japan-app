@@ -1,0 +1,2515 @@
+[
+  {
+    "scenario": {
+      "id": "SC-NAR-IKOMA-001",
+      "name": "乗り換えの経路を確認する",
+      "locationId": "LOC-NAR-IKOMA-01",
+      "cityId": "CTY-NAR-IKOMA",
+      "locationType": "Station",
+      "type": "Travel",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "生駒市の学習用場面で、目的地までの経路を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "目的地までの経路を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": "Trạm cáp treo: mua vé lên núi, hỏi thọi tiết, giờ chuyến cuối.",
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [
+        "往復 (https://app.notion.com/p/cf929dd6ad7c442cb221ed49b9ae5c47?pvs=21)",
+        "とても (https://app.notion.com/p/3be70421d961810988d5e85f4370acef?pvs=21)",
+        "上着 (https://app.notion.com/p/3be70421d961817693bae0c804137217?pvs=21)",
+        "景色 (https://app.notion.com/p/3be70421d96181faba83d54acbd9cc43?pvs=21)",
+        "低い (https://app.notion.com/p/3be70421d96181b79e9dc3b67217c8b5?pvs=21)",
+        "寒い (https://app.notion.com/p/3be70421d96181dfad8adfc8f77d767d?pvs=21)"
+      ],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-NAR-IKOMA",
+      "name": "Ikoma",
+      "nameJa": "生駒市",
+      "type": "Town",
+      "description": "City mở rộng cho map exploration. Ưu tiên vùng Kanto/Kansai/Chubu; mỗi city dự kiến 7–10 locations.",
+      "prefectureId": "PRF-029",
+      "order": 154,
+      "unlockLevel": 2,
+      "status": "Active",
+      "population": 0,
+      "locationIds": [
+        "LOC-NAR-IKOMA-01",
+        "LOC-NAR-IKOMA-06",
+        "LOC-NAR-IKOMA-05",
+        "LOC-NAR-IKOMA-03",
+        "LOC-NAR-IKOMA-02",
+        "LOC-NAR-IKOMA-04",
+        "LOC-NAR-IKOMA-07",
+        "LOC-NAR-IKOMA-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-NAR-IKOMA-01",
+      "name": "Ikoma Ropeway Boarding Station",
+      "nameJa": "生駒の学習用ロープウェイ乗り場",
+      "cityId": "CTY-NAR-IKOMA",
+      "category": "Station",
+      "type": "Transportation",
+      "npcJob": "Ropeway Staff",
+      "defaultNpcId": "NPC-NAR-IKOMA-001",
+      "description": "Trạm cáp treo: mua vé lên núi, hỏi thọi tiết, giờ chuyến cuối.",
+      "order": 1,
+      "status": "Active",
+      "importance": "Main",
+      "sceneStyle": "2.5D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": [
+        "Mua vé lên núi tại ロープウェイ乗り場 (Ikoma) (https://app.notion.com/p/Mua-v-l-n-n-i-t-i-Ikoma-3bd70421d96181d2ad4ef99715506482?pvs=21)"
+      ]
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-NAR-IKOMA-001-SHARED-01",
+        "scenarioId": "SC-NAR-IKOMA-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こんにちは。どちらまでお出かけですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-NAR-IKOMA-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-NAR-IKOMA-001-SHARED-02",
+        "scenarioId": "SC-NAR-IKOMA-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "station-route_response_1",
+          "requiredSemanticComponents": {
+            "goal": "目的地までの経路を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "生駒市から友人の家へ行きたいのですが、乗り換えがわかりません。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-NAR-IKOMA-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-NAR-IKOMA-001-SHARED-03",
+        "scenarioId": "SC-NAR-IKOMA-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "目的地の駅名か、住所がわかるものを見せていただけますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-NAR-IKOMA-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-NAR-IKOMA-001-SHARED-04",
+        "scenarioId": "SC-NAR-IKOMA-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "station-route_response_2",
+          "requiredSemanticComponents": {
+            "goal": "目的地までの経路を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "このメッセージに駅名が書いてあります。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-NAR-IKOMA-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-NAR-IKOMA-001-SHARED-05",
+        "scenarioId": "SC-NAR-IKOMA-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "ありがとうございます。経路検索の結果を一緒に確認しましょう。出発時刻の希望はありますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-NAR-IKOMA-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-NAR-IKOMA-001-SHARED-06",
+        "scenarioId": "SC-NAR-IKOMA-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "station-route_response_3",
+          "requiredSemanticComponents": {
+            "goal": "目的地までの経路を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "午後三時までに着きたいです。歩く時間も含めて調べられますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-NAR-IKOMA-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-NAR-IKOMA-001-SHARED-07",
+        "scenarioId": "SC-NAR-IKOMA-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。乗り換えに余裕のある経路を確認します。階段の利用は大丈夫ですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-NAR-IKOMA-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-NAR-IKOMA-001-SHARED-08",
+        "scenarioId": "SC-NAR-IKOMA-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "station-route_response_4",
+          "requiredSemanticComponents": {
+            "goal": "目的地までの経路を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "荷物が重いので、できればエレベーターを使いたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-NAR-IKOMA-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-NAR-IKOMA-001-SHARED-09",
+        "scenarioId": "SC-NAR-IKOMA-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "では、駅構内の案内図でエレベーターの位置も確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-NAR-IKOMA-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-NAR-IKOMA-001-SHARED-10",
+        "scenarioId": "SC-NAR-IKOMA-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "station-route_response_5",
+          "requiredSemanticComponents": {
+            "goal": "目的地までの経路を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。乗る前にホームの表示も確認します。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-NAR-IKOMA-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-NAR-IKOMA-001-SHARED-11",
+        "scenarioId": "SC-NAR-IKOMA-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "行き先と出発時刻を表示で確かめてから、ご乗車ください。お気をつけて。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-NAR-IKOMA-02-001",
+      "name": "部屋の契約前に費用を確認する",
+      "locationId": "LOC-NAR-IKOMA-02",
+      "cityId": "CTY-NAR-IKOMA",
+      "locationType": "Shop",
+      "type": "Daily Life",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "生駒市の学習用場面で、家賃以外の費用と契約条件を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "家賃以外の費用と契約条件を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-NAR-IKOMA",
+      "name": "Ikoma",
+      "nameJa": "生駒市",
+      "type": "Town",
+      "description": "City mở rộng cho map exploration. Ưu tiên vùng Kanto/Kansai/Chubu; mỗi city dự kiến 7–10 locations.",
+      "prefectureId": "PRF-029",
+      "order": 154,
+      "unlockLevel": 2,
+      "status": "Active",
+      "population": 0,
+      "locationIds": [
+        "LOC-NAR-IKOMA-01",
+        "LOC-NAR-IKOMA-06",
+        "LOC-NAR-IKOMA-05",
+        "LOC-NAR-IKOMA-03",
+        "LOC-NAR-IKOMA-02",
+        "LOC-NAR-IKOMA-04",
+        "LOC-NAR-IKOMA-07",
+        "LOC-NAR-IKOMA-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-NAR-IKOMA-02",
+      "name": "Ikoma Real Estate Agency",
+      "nameJa": "生駒不動産屋",
+      "cityId": "CTY-NAR-IKOMA",
+      "category": "Shopping",
+      "type": "Daily Life",
+      "npcJob": "Real Estate Agent",
+      "defaultNpcId": "NPC-NAR-IKOMA-002",
+      "description": "Văn phòng nhà đất: hỏi thuê phòng, tiền cọc, điều khoản hợp đồng, người bảo lãnh.",
+      "order": 2,
+      "status": "Active",
+      "importance": "Secondary",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-01",
+        "scenarioId": "SC-LOC-NAR-IKOMA-02-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "いらっしゃいませ。どのようなお部屋をお探しですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-02",
+        "scenarioId": "SC-LOC-NAR-IKOMA-02-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "property_response_1",
+          "requiredSemanticComponents": {
+            "goal": "家賃以外の費用と契約条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "生駒市で部屋を借りたいです。毎月の予算はこのくらいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-03",
+        "scenarioId": "SC-LOC-NAR-IKOMA-02-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "家賃以外の費用も含めて確認しましょう。希望する条件はありますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-04",
+        "scenarioId": "SC-LOC-NAR-IKOMA-02-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "property_response_2",
+          "requiredSemanticComponents": {
+            "goal": "家賃以外の費用と契約条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "通勤しやすく、初期費用がわかりやすい部屋を希望しています。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-05",
+        "scenarioId": "SC-LOC-NAR-IKOMA-02-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "候補の費用を項目ごとに説明します。追加のサービスも確認してください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-06",
+        "scenarioId": "SC-LOC-NAR-IKOMA-02-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "property_response_3",
+          "requiredSemanticComponents": {
+            "goal": "家賃以外の費用と契約条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "退去するときの条件と、更新の費用も知りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-07",
+        "scenarioId": "SC-LOC-NAR-IKOMA-02-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "契約書面で確認しましょう。不明な項目は署名前にご質問ください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-08",
+        "scenarioId": "SC-LOC-NAR-IKOMA-02-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "property_response_4",
+          "requiredSemanticComponents": {
+            "goal": "家賃以外の費用と契約条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "内見したあとに、持ち帰って検討できますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-09",
+        "scenarioId": "SC-LOC-NAR-IKOMA-02-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。申込みや契約が成立する条件も説明します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-10",
+        "scenarioId": "SC-LOC-NAR-IKOMA-02-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "property_response_5",
+          "requiredSemanticComponents": {
+            "goal": "家賃以外の費用と契約条件を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。合計費用と条件を比べてから決めます。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-02-001-SHARED-11",
+        "scenarioId": "SC-LOC-NAR-IKOMA-02-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "口頭の説明だけでなく、書面の内容も確認して進めましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-NAR-IKOMA-03-001",
+      "name": "会計と注文内容を確認する",
+      "locationId": "LOC-NAR-IKOMA-03",
+      "cityId": "CTY-NAR-IKOMA",
+      "locationType": "Restaurant",
+      "type": "Daily Life",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "生駒市の学習用場面で、注文内容と会計方法を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "注文内容と会計方法を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-NAR-IKOMA",
+      "name": "Ikoma",
+      "nameJa": "生駒市",
+      "type": "Town",
+      "description": "City mở rộng cho map exploration. Ưu tiên vùng Kanto/Kansai/Chubu; mỗi city dự kiến 7–10 locations.",
+      "prefectureId": "PRF-029",
+      "order": 154,
+      "unlockLevel": 2,
+      "status": "Active",
+      "population": 0,
+      "locationIds": [
+        "LOC-NAR-IKOMA-01",
+        "LOC-NAR-IKOMA-06",
+        "LOC-NAR-IKOMA-05",
+        "LOC-NAR-IKOMA-03",
+        "LOC-NAR-IKOMA-02",
+        "LOC-NAR-IKOMA-04",
+        "LOC-NAR-IKOMA-07",
+        "LOC-NAR-IKOMA-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-NAR-IKOMA-03",
+      "name": "Ikoma Bakery",
+      "nameJa": "生駒パン屋",
+      "cityId": "CTY-NAR-IKOMA",
+      "category": "Restaurant",
+      "type": "Food",
+      "npcJob": "Baker",
+      "defaultNpcId": "NPC-NAR-IKOMA-003",
+      "description": "Tiệm bánh mì: dùng kỹp chọn bánh, nhờ hâm nóng, hỏi bánh mới ra lò.",
+      "order": 3,
+      "status": "Active",
+      "importance": "Secondary",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-01",
+        "scenarioId": "SC-LOC-NAR-IKOMA-03-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "いらっしゃいませ。お会計でしょうか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-02",
+        "scenarioId": "SC-LOC-NAR-IKOMA-03-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-bill_response_1",
+          "requiredSemanticComponents": {
+            "goal": "注文内容と会計方法を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "はい。生駒市の友人と食事をしました。会計の内容を確認したいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-03",
+        "scenarioId": "SC-LOC-NAR-IKOMA-03-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こちらがご注文の明細です。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-04",
+        "scenarioId": "SC-LOC-NAR-IKOMA-03-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-bill_response_2",
+          "requiredSemanticComponents": {
+            "goal": "注文内容と会計方法を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "この飲み物は注文していないと思います。確認していただけますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-05",
+        "scenarioId": "SC-LOC-NAR-IKOMA-03-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "承知しました。伝票と注文の記録を確認します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-06",
+        "scenarioId": "SC-LOC-NAR-IKOMA-03-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-bill_response_3",
+          "requiredSemanticComponents": {
+            "goal": "注文内容と会計方法を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。二人分を別々に払えるかも知りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-07",
+        "scenarioId": "SC-LOC-NAR-IKOMA-03-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "お店の会計方法を確認します。できない場合は先にお伝えします。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-08",
+        "scenarioId": "SC-LOC-NAR-IKOMA-03-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-bill_response_4",
+          "requiredSemanticComponents": {
+            "goal": "注文内容と会計方法を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "わかりました。確認が終わってから支払います。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-09",
+        "scenarioId": "SC-LOC-NAR-IKOMA-03-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "確認した内容を説明しますので、明細をもう一度ご覧ください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-10",
+        "scenarioId": "SC-LOC-NAR-IKOMA-03-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-bill_response_5",
+          "requiredSemanticComponents": {
+            "goal": "注文内容と会計方法を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "はい。内容が合っているか確認します。レシートもお願いします。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-03-001-SHARED-11",
+        "scenarioId": "SC-LOC-NAR-IKOMA-03-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "承知しました。お忘れ物のないようにお帰りください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-NAR-IKOMA-04-001",
+      "name": "会計後に受診書類を確認する",
+      "locationId": "LOC-NAR-IKOMA-04",
+      "cityId": "CTY-NAR-IKOMA",
+      "locationType": "Hospital",
+      "type": "Health",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "生駒市の学習用場面で、領収書と職場に必要な書類を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "領収書と職場に必要な書類を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-NAR-IKOMA",
+      "name": "Ikoma",
+      "nameJa": "生駒市",
+      "type": "Town",
+      "description": "City mở rộng cho map exploration. Ưu tiên vùng Kanto/Kansai/Chubu; mỗi city dự kiến 7–10 locations.",
+      "prefectureId": "PRF-029",
+      "order": 154,
+      "unlockLevel": 2,
+      "status": "Active",
+      "population": 0,
+      "locationIds": [
+        "LOC-NAR-IKOMA-01",
+        "LOC-NAR-IKOMA-06",
+        "LOC-NAR-IKOMA-05",
+        "LOC-NAR-IKOMA-03",
+        "LOC-NAR-IKOMA-02",
+        "LOC-NAR-IKOMA-04",
+        "LOC-NAR-IKOMA-07",
+        "LOC-NAR-IKOMA-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-NAR-IKOMA-04",
+      "name": "Ikoma Dental Clinic",
+      "nameJa": "生駒歯科医院",
+      "cityId": "CTY-NAR-IKOMA",
+      "category": "Hospital",
+      "type": "Medical",
+      "npcJob": "Dentist",
+      "defaultNpcId": null,
+      "description": "Phòng khám nha: tả cơn đau răng, lấy cao răng, hẹn lần sau, hỏi chi phí.",
+      "order": 4,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-01",
+        "scenarioId": "SC-LOC-NAR-IKOMA-04-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "お会計に関して、ご質問はありますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-02",
+        "scenarioId": "SC-LOC-NAR-IKOMA-04-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "hospital-document_response_1",
+          "requiredSemanticComponents": {
+            "goal": "領収書と職場に必要な書類を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "生駒市の職場に、受診したことがわかる書類を提出する必要があります。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-03",
+        "scenarioId": "SC-LOC-NAR-IKOMA-04-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "職場からは、どのような書類を求められていますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-04",
+        "scenarioId": "SC-LOC-NAR-IKOMA-04-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "hospital-document_response_2",
+          "requiredSemanticComponents": {
+            "goal": "領収書と職場に必要な書類を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "領収書でよいのか、診断書が必要なのか、まだ確認できていません。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-05",
+        "scenarioId": "SC-LOC-NAR-IKOMA-04-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "まず提出先に確認しましょう。診断書は医師への相談や別の手続きが必要です。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-06",
+        "scenarioId": "SC-LOC-NAR-IKOMA-04-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "hospital-document_response_3",
+          "requiredSemanticComponents": {
+            "goal": "領収書と職場に必要な書類を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "費用と受け取れる時期も、申請前に聞けますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-07",
+        "scenarioId": "SC-LOC-NAR-IKOMA-04-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。書類の種類がわかったら、担当窓口でご確認ください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-08",
+        "scenarioId": "SC-LOC-NAR-IKOMA-04-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "hospital-document_response_4",
+          "requiredSemanticComponents": {
+            "goal": "領収書と職場に必要な書類を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "今日は領収書を大切に保管しておきます。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-09",
+        "scenarioId": "SC-LOC-NAR-IKOMA-04-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "内容にわからない点があれば、会計窓口でお尋ねください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-10",
+        "scenarioId": "SC-LOC-NAR-IKOMA-04-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "hospital-document_response_5",
+          "requiredSemanticComponents": {
+            "goal": "領収書と職場に必要な書類を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。職場に確認してから、あらためて相談します。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-04-001-SHARED-11",
+        "scenarioId": "SC-LOC-NAR-IKOMA-04-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "承知しました。お大事になさってください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-NAR-IKOMA-05-001",
+      "name": "散歩の経路と休憩場所を聞く",
+      "locationId": "LOC-NAR-IKOMA-05",
+      "cityId": "CTY-NAR-IKOMA",
+      "locationType": "Other",
+      "type": "Social",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "生駒市の学習用場面で、体力に合う経路と帰り道を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "体力に合う経路と帰り道を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-NAR-IKOMA",
+      "name": "Ikoma",
+      "nameJa": "生駒市",
+      "type": "Town",
+      "description": "City mở rộng cho map exploration. Ưu tiên vùng Kanto/Kansai/Chubu; mỗi city dự kiến 7–10 locations.",
+      "prefectureId": "PRF-029",
+      "order": 154,
+      "unlockLevel": 2,
+      "status": "Active",
+      "population": 0,
+      "locationIds": [
+        "LOC-NAR-IKOMA-01",
+        "LOC-NAR-IKOMA-06",
+        "LOC-NAR-IKOMA-05",
+        "LOC-NAR-IKOMA-03",
+        "LOC-NAR-IKOMA-02",
+        "LOC-NAR-IKOMA-04",
+        "LOC-NAR-IKOMA-07",
+        "LOC-NAR-IKOMA-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-NAR-IKOMA-05",
+      "name": "Ikoma City Park Playground",
+      "nameJa": "生駒公園遊具広場",
+      "cityId": "CTY-NAR-IKOMA",
+      "category": "Park",
+      "type": "Entertainment",
+      "npcJob": "Park Staff",
+      "defaultNpcId": null,
+      "description": "Công viên khu dân cư: hỏi đường, trò chuyện với người đi bộ, ngắm hoa theo mùa, quy định trong công viên.",
+      "order": 5,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-01",
+        "scenarioId": "SC-LOC-NAR-IKOMA-05-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こんにちは。どのようなご案内をご希望ですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-02",
+        "scenarioId": "SC-LOC-NAR-IKOMA-05-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "park-walk_response_1",
+          "requiredSemanticComponents": {
+            "goal": "体力に合う経路と帰り道を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "生駒市の公園で散歩したいです。短い経路を教えてください。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-03",
+        "scenarioId": "SC-LOC-NAR-IKOMA-05-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "どのくらい歩く予定ですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-04",
+        "scenarioId": "SC-LOC-NAR-IKOMA-05-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "park-walk_response_2",
+          "requiredSemanticComponents": {
+            "goal": "体力に合う経路と帰り道を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "三十分くらいです。途中で休めるところも知りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-05",
+        "scenarioId": "SC-LOC-NAR-IKOMA-05-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "案内図で経路と休憩場所を確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-06",
+        "scenarioId": "SC-LOC-NAR-IKOMA-05-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "park-walk_response_3",
+          "requiredSemanticComponents": {
+            "goal": "体力に合う経路と帰り道を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "坂道や階段が少ない経路はありますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-07",
+        "scenarioId": "SC-LOC-NAR-IKOMA-05-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "図の表示を確認します。路面の状態にも気をつけてください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-08",
+        "scenarioId": "SC-LOC-NAR-IKOMA-05-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "park-walk_response_4",
+          "requiredSemanticComponents": {
+            "goal": "体力に合う経路と帰り道を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "帰るとき、同じ入口に戻れるようにしたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-09",
+        "scenarioId": "SC-LOC-NAR-IKOMA-05-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "現在地と入口を覚えておきましょう。案内図を撮っておくのもよいですね。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-10",
+        "scenarioId": "SC-LOC-NAR-IKOMA-05-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "park-walk_response_5",
+          "requiredSemanticComponents": {
+            "goal": "体力に合う経路と帰り道を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。無理のない範囲で歩きます。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-05-001-SHARED-11",
+        "scenarioId": "SC-LOC-NAR-IKOMA-05-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "天候や体調が変わったら、早めに戻ってください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-NAR-IKOMA-06-001",
+      "name": "図書館で貸出しと利用方法を確認する",
+      "locationId": "LOC-NAR-IKOMA-06",
+      "cityId": "CTY-NAR-IKOMA",
+      "locationType": "Other",
+      "type": "Study",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "生駒市の学習用場面で、利用登録と資料の探し方を確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "利用登録と資料の探し方を確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-NAR-IKOMA",
+      "name": "Ikoma",
+      "nameJa": "生駒市",
+      "type": "Town",
+      "description": "City mở rộng cho map exploration. Ưu tiên vùng Kanto/Kansai/Chubu; mỗi city dự kiến 7–10 locations.",
+      "prefectureId": "PRF-029",
+      "order": 154,
+      "unlockLevel": 2,
+      "status": "Active",
+      "population": 0,
+      "locationIds": [
+        "LOC-NAR-IKOMA-01",
+        "LOC-NAR-IKOMA-06",
+        "LOC-NAR-IKOMA-05",
+        "LOC-NAR-IKOMA-03",
+        "LOC-NAR-IKOMA-02",
+        "LOC-NAR-IKOMA-04",
+        "LOC-NAR-IKOMA-07",
+        "LOC-NAR-IKOMA-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-NAR-IKOMA-06",
+      "name": "Ikoma Public Library Counter",
+      "nameJa": "生駒図書館カウンター",
+      "cityId": "CTY-NAR-IKOMA",
+      "category": "Library",
+      "type": "Culture",
+      "npcJob": "Librarian",
+      "defaultNpcId": null,
+      "description": "Thư viện thành phố: làm thẻ, mượn và gia hạn sách, phòng tự học, hỏi sách dễ đọc.",
+      "order": 6,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-01",
+        "scenarioId": "SC-LOC-NAR-IKOMA-06-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こんにちは。何かお探しですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-02",
+        "scenarioId": "SC-LOC-NAR-IKOMA-06-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "library_response_1",
+          "requiredSemanticComponents": {
+            "goal": "利用登録と資料の探し方を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "生駒市で暮らしています。日本語のやさしい本を借りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-03",
+        "scenarioId": "SC-LOC-NAR-IKOMA-06-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "利用者登録はお済みですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-04",
+        "scenarioId": "SC-LOC-NAR-IKOMA-06-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "library_response_2",
+          "requiredSemanticComponents": {
+            "goal": "利用登録と資料の探し方を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "まだです。必要な書類と、利用できる条件を教えてください。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-05",
+        "scenarioId": "SC-LOC-NAR-IKOMA-06-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "現在の利用案内で確認しましょう。読みたい分野はありますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-06",
+        "scenarioId": "SC-LOC-NAR-IKOMA-06-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "library_response_3",
+          "requiredSemanticComponents": {
+            "goal": "利用登録と資料の探し方を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "生活に使う日本語を学べる本を探しています。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-07",
+        "scenarioId": "SC-LOC-NAR-IKOMA-06-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "資料の検索方法と、わかりやすい本の棚を確認します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-08",
+        "scenarioId": "SC-LOC-NAR-IKOMA-06-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "library_response_4",
+          "requiredSemanticComponents": {
+            "goal": "利用登録と資料の探し方を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "借りられる冊数と返す日も、確認したいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-09",
+        "scenarioId": "SC-LOC-NAR-IKOMA-06-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "登録後の案内でご確認ください。延長や予約の条件も説明します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-10",
+        "scenarioId": "SC-LOC-NAR-IKOMA-06-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "library_response_5",
+          "requiredSemanticComponents": {
+            "goal": "利用登録と資料の探し方を確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。使う前に案内を読んで確認します。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-06-001-SHARED-11",
+        "scenarioId": "SC-LOC-NAR-IKOMA-06-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "資料を大切に扱い、返却の予定を忘れずに控えてください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-NAR-IKOMA-07-001",
+      "name": "転居後の郵便物を相談する",
+      "locationId": "LOC-NAR-IKOMA-07",
+      "cityId": "CTY-NAR-IKOMA",
+      "locationType": "Government Office",
+      "type": "Administrative",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "生駒市の学習用場面で、転居に関する郵便の手続きを確認する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "転居に関する郵便の手続きを確認する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-NAR-IKOMA",
+      "name": "Ikoma",
+      "nameJa": "生駒市",
+      "type": "Town",
+      "description": "City mở rộng cho map exploration. Ưu tiên vùng Kanto/Kansai/Chubu; mỗi city dự kiến 7–10 locations.",
+      "prefectureId": "PRF-029",
+      "order": 154,
+      "unlockLevel": 2,
+      "status": "Active",
+      "population": 0,
+      "locationIds": [
+        "LOC-NAR-IKOMA-01",
+        "LOC-NAR-IKOMA-06",
+        "LOC-NAR-IKOMA-05",
+        "LOC-NAR-IKOMA-03",
+        "LOC-NAR-IKOMA-02",
+        "LOC-NAR-IKOMA-04",
+        "LOC-NAR-IKOMA-07",
+        "LOC-NAR-IKOMA-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-NAR-IKOMA-07",
+      "name": "Ikoma Post Office Counter",
+      "nameJa": "生駒郵便局窓口",
+      "cityId": "CTY-NAR-IKOMA",
+      "category": "Post Office",
+      "type": "Public Service",
+      "npcJob": "Postal Clerk",
+      "defaultNpcId": null,
+      "description": "Bưu điện: gửi hàng về nước, cân bưu kiện, mua tem, chuyển phát nhanh.",
+      "order": 7,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-01",
+        "scenarioId": "SC-LOC-NAR-IKOMA-07-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "こんにちは。どのようなご用件ですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-02",
+        "scenarioId": "SC-LOC-NAR-IKOMA-07-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "post-address_response_1",
+          "requiredSemanticComponents": {
+            "goal": "転居に関する郵便の手続きを確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "生駒市へ引っ越しました。以前の住所に届く郵便物について相談したいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-03",
+        "scenarioId": "SC-LOC-NAR-IKOMA-07-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "郵便の転送に関するお手続きをご希望ですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-04",
+        "scenarioId": "SC-LOC-NAR-IKOMA-07-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "post-address_response_2",
+          "requiredSemanticComponents": {
+            "goal": "転居に関する郵便の手続きを確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "はい。申込みの方法と、必要な確認書類を知りたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-05",
+        "scenarioId": "SC-LOC-NAR-IKOMA-07-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "現在の案内で、手続き方法と利用条件を確認しましょう。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-06",
+        "scenarioId": "SC-LOC-NAR-IKOMA-07-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "post-address_response_3",
+          "requiredSemanticComponents": {
+            "goal": "転居に関する郵便の手続きを確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "家族の分もまとめて申し込めるか、聞きたいです。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-07",
+        "scenarioId": "SC-LOC-NAR-IKOMA-07-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "同居する方の情報など、必要事項を確認してご案内します。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-08",
+        "scenarioId": "SC-LOC-NAR-IKOMA-07-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "post-address_response_4",
+          "requiredSemanticComponents": {
+            "goal": "転居に関する郵便の手続きを確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "手続きが反映されるまでは、どのように確認できますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-09",
+        "scenarioId": "SC-LOC-NAR-IKOMA-07-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "受付後の確認方法を説明します。重要な差出人には新しい住所もお知らせください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-10",
+        "scenarioId": "SC-LOC-NAR-IKOMA-07-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "post-address_response_5",
+          "requiredSemanticComponents": {
+            "goal": "転居に関する郵便の手続きを確認する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "わかりました。会社や銀行にも住所変更を連絡します。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-07-001-SHARED-11",
+        "scenarioId": "SC-LOC-NAR-IKOMA-07-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "申込み内容に誤りがないか、送信や提出の前に確かめてください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  },
+  {
+    "scenario": {
+      "id": "SC-LOC-NAR-IKOMA-08-001",
+      "name": "アレルギーについて注文前に相談する",
+      "locationId": "LOC-NAR-IKOMA-08",
+      "cityId": "CTY-NAR-IKOMA",
+      "locationType": "Restaurant",
+      "type": "Daily Life",
+      "difficulty": null,
+      "status": "Review",
+      "priority": "Essential",
+      "trigger": "Location Entry",
+      "order": 1,
+      "situation": "生駒市の学習用場面で、材料と調理方法を確認して注文を判断する。",
+      "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+      "playerGoal": "材料と調理方法を確認して注文を判断する",
+      "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+      "branching": "Linear",
+      "description": null,
+      "evaluationCriteria": null,
+      "requiredGrammarIds": [],
+      "requiredVocabularyIds": [],
+      "reward": null,
+      "outcome": null,
+      "startingExpression": null,
+      "version": 2
+    },
+    "city": {
+      "id": "CTY-NAR-IKOMA",
+      "name": "Ikoma",
+      "nameJa": "生駒市",
+      "type": "Town",
+      "description": "City mở rộng cho map exploration. Ưu tiên vùng Kanto/Kansai/Chubu; mỗi city dự kiến 7–10 locations.",
+      "prefectureId": "PRF-029",
+      "order": 154,
+      "unlockLevel": 2,
+      "status": "Active",
+      "population": 0,
+      "locationIds": [
+        "LOC-NAR-IKOMA-01",
+        "LOC-NAR-IKOMA-06",
+        "LOC-NAR-IKOMA-05",
+        "LOC-NAR-IKOMA-03",
+        "LOC-NAR-IKOMA-02",
+        "LOC-NAR-IKOMA-04",
+        "LOC-NAR-IKOMA-07",
+        "LOC-NAR-IKOMA-08"
+      ]
+    },
+    "location": {
+      "id": "LOC-NAR-IKOMA-08",
+      "name": "Ikoma Evening Izakaya",
+      "nameJa": "生駒居酒屋",
+      "cityId": "CTY-NAR-IKOMA",
+      "category": "Izakaya",
+      "type": "Food",
+      "npcJob": "Restaurant Staff",
+      "defaultNpcId": null,
+      "description": "Izakaya buoi toi: goi mon nham, do uong, chia tien, gio cuoi.",
+      "order": 8,
+      "status": "Active",
+      "importance": "Optional",
+      "sceneStyle": "2D",
+      "backgroundAsset": null,
+      "openHours": null,
+      "address": null,
+      "scenarioIds": []
+    },
+    "previousTurns": [
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-01",
+        "scenarioId": "SC-LOC-NAR-IKOMA-08-001",
+        "turnOrder": 1,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "いらっしゃいませ。何をご確認になりたいですか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-02",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-02",
+        "scenarioId": "SC-LOC-NAR-IKOMA-08-001",
+        "turnOrder": 2,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-allergy_response_1",
+          "requiredSemanticComponents": {
+            "goal": "材料と調理方法を確認して注文を判断する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "生駒市で食事をしたいのですが、卵のアレルギーがあります。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-03",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-03",
+        "scenarioId": "SC-LOC-NAR-IKOMA-08-001",
+        "turnOrder": 3,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "調理担当に確認します。ソースや衣に含まれる場合もあるため、料理名を教えてください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-04",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-04",
+        "scenarioId": "SC-LOC-NAR-IKOMA-08-001",
+        "turnOrder": 4,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-allergy_response_2",
+          "requiredSemanticComponents": {
+            "goal": "材料と調理方法を確認して注文を判断する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "この料理です。調理器具の共用についても確認できますか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-05",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-05",
+        "scenarioId": "SC-LOC-NAR-IKOMA-08-001",
+        "turnOrder": 5,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "はい。確認できる範囲をお伝えしますが、安全を保証できない場合もあります。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-06",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-06",
+        "scenarioId": "SC-LOC-NAR-IKOMA-08-001",
+        "turnOrder": 6,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-allergy_response_3",
+          "requiredSemanticComponents": {
+            "goal": "材料と調理方法を確認して注文を判断する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "確認が難しい場合は、注文をやめても大丈夫ですか。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-07",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-07",
+        "scenarioId": "SC-LOC-NAR-IKOMA-08-001",
+        "turnOrder": 7,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "もちろんです。判断できないまま食べず、安心して選べるものをお探しください。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-08",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-08",
+        "scenarioId": "SC-LOC-NAR-IKOMA-08-001",
+        "turnOrder": 8,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-allergy_response_4",
+          "requiredSemanticComponents": {
+            "goal": "材料と調理方法を確認して注文を判断する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "ありがとうございます。確認した内容を、ゆっくり説明してください。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-09",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-09",
+        "scenarioId": "SC-LOC-NAR-IKOMA-08-001",
+        "turnOrder": 9,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "承知しました。別の料理も候補にしておきますか。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-10",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-10",
+        "scenarioId": "SC-LOC-NAR-IKOMA-08-001",
+        "turnOrder": 10,
+        "speaker": "PLAYER",
+        "npc": null,
+        "player": {
+          "communicativeIntent": "restaurant-allergy_response_5",
+          "requiredSemanticComponents": {
+            "goal": "材料と調理方法を確認して注文を判断する"
+          },
+          "optionalSemanticComponents": {},
+          "recommendedAnswerJa": "はい。ただ、どれも条件を確認してから決めます。",
+          "recommendedAnswerFurigana": null,
+          "acceptableExamples": [],
+          "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+          "translations": {},
+          "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+          "unexpectedIntents": [],
+          "allowMinorGrammarErrors": true,
+          "targetGrammarIds": [],
+          "targetVocabularyIds": []
+        },
+        "nextDialogueId": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-11",
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      },
+      {
+        "id": "DLG-SC-LOC-NAR-IKOMA-08-001-SHARED-11",
+        "scenarioId": "SC-LOC-NAR-IKOMA-08-001",
+        "turnOrder": 11,
+        "speaker": "NPC",
+        "npc": {
+          "textJa": "少々お待ちください。確認できた点と、確認できない点を分けてお伝えします。",
+          "furigana": null,
+          "translationVi": null,
+          "translations": {}
+        },
+        "player": null,
+        "nextDialogueId": null,
+        "status": "Japanese draft",
+        "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+        "mappingConfidence": null
+      }
+    ]
+  }
+]
