@@ -1,0 +1,58 @@
+{
+  "cityId": "CTY-JP-29210",
+  "scenarioIds": [
+    "SC-LOC-JP-29210-01-001",
+    "SC-LOC-JP-29210-02-001",
+    "SC-LOC-JP-29210-03-001",
+    "SC-LOC-JP-29210-04-001",
+    "SC-LOC-JP-29210-05-001",
+    "SC-LOC-JP-29210-06-001",
+    "SC-LOC-JP-29210-07-001",
+    "SC-LOC-JP-29210-08-001"
+  ],
+  "sourceSha256": "f098f72dc2810780894eb05cf20285a400f474f3df230a8edac182a75eb4ee76",
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "playerTurns": 40,
+    "tasks": 40
+  },
+  "reviewType": "AI self-review",
+  "peerReviewed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "policyVerified": false,
+  "deviceVerified": false,
+  "fullFinalRead": true,
+  "repairs": [
+    "NPC explicitly identifies ordinary transfer train.",
+    "Fictional certificate form choice moved into premise.",
+    "Hospital handoff uses waiting room.",
+    "Police ending closes naturally.",
+    "Parcel wording clarifies removal of unintended items.",
+    "Bank fee and total answered concretely and confirmed by PLAYER."
+  ],
+  "checks": {
+    "exactIds": true,
+    "npcFirstAlternatingElevenTurns": true,
+    "fiveLocalTasksPerScenario": true,
+    "oneOrTwoSentencesPerTurn": true,
+    "uniqueCityPlayerLines": true,
+    "uniqueIntentIds": true,
+    "uniqueLocalGoals": true,
+    "committedRuntimeExactPlayerCheck": {
+      "head": "c14ddf24e5799d314cb70d1d5e56ea954941c01d",
+      "method": "machine exact-field git grep across committed src/data/generated/dialogues/*.json; no semantic peer-output reads",
+      "outsideMatches": []
+    }
+  },
+  "independentReview": [
+    "Read all eight provided old premises, 88 turns, 40 tasks, and role alignment.",
+    "Read all final eight premises, 88 turns, and 40 local tasks after whole-city repair.",
+    "Independently checked turn logic, role fit, short natural Japanese, fictional policy/venue scope, and professional decision boundaries.",
+    "No current peer worker outputs, including newly published Nara scripts, were semantically read. No exhaustive originality claim."
+  ],
+  "limitations": [
+    "AI authored and self-reviewed; peer/human/native/policy/device verification false."
+  ]
+}
