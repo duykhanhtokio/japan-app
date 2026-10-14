@@ -6,15 +6,15 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。どのようなお手続きですか。",
+        "textJa": "振込画面で操作が止まっていますね。暗証番号以外で、ご不明な点をお聞かせください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-36206-06-001-SHARED-02",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -24,25 +24,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "bank-transfer_response_1",
+        "communicativeIntent": "受講料振込の名義不一致を伝える",
         "requiredSemanticComponents": {
-          "goal": "振込先と費用を確認する"
+          "goal": "受講料を振り込む際に画面の受取人名が案内と違うと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "阿波市で借りている部屋の家賃を、振り込みたいです。",
+        "recommendedAnswerJa": "講習の受講料を振り込みたいのですが、画面の受取人名が案内に書かれた名前と違います。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "受講料を振り込む際に画面の受取人名が案内と違うと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "受講料を振り込む際に画面の受取人名が案内と違うと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-36206-06-001-SHARED-03",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -51,15 +51,15 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "振込先の情報が書かれたものはお持ちですか。",
+        "textJa": "まだ確定していなければ、そのまま進めずに情報を照合しましょう。銀行名、支店名、口座番号は案内と一致していますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-36206-06-001-SHARED-04",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -69,25 +69,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "bank-transfer_response_2",
+        "communicativeIntent": "入力ミスを認め訂正後の操作を尋ねる",
         "requiredSemanticComponents": {
-          "goal": "振込先と費用を確認する"
+          "goal": "口座番号一桁を誤入力し訂正すればすぐ確定してよいか尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。ただ、支店名と口座の種類を正しく読めるか不安です。",
+        "recommendedAnswerJa": "口座番号を一桁入力し間違えていました。正しく直せば、すぐ確定してもよいでしょうか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "口座番号一桁を誤入力し訂正すればすぐ確定してよいか尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "口座番号一桁を誤入力し訂正すればすぐ確定してよいか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-36206-06-001-SHARED-05",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -96,15 +96,15 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "必要な情報を確認しましょう。受取人名も、請求書と照合してください。",
+        "textJa": "入力を直した後も、表示される受取人名を必ず確かめてください。案内と一致しない場合は、振込を依頼した相手に情報をご確認ください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-36206-06-001-SHARED-06",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -114,25 +114,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "bank-transfer_response_3",
+        "communicativeIntent": "名義一致と送金額の疑問を伝える",
         "requiredSemanticComponents": {
-          "goal": "振込先と費用を確認する"
+          "goal": "訂正後に名義が一致したが金額に手数料を足して送るか不明だと説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "振込手数料は、実行する前にわかりますか。",
+        "recommendedAnswerJa": "直したら名義は一致しました。でも金額に振込手数料を足して送るのか、案内を読んでもわかりません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "訂正後に名義が一致したが金額に手数料を足して送るか不明だと説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "訂正後に名義が一致したが金額に手数料を足して送るか不明だと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-36206-06-001-SHARED-07",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -141,15 +141,15 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。利用する方法の画面や窓口で確認できます。",
+        "textJa": "振込金額と銀行の手数料は別に確認しましょう。相手に送るべき金額は依頼元へ、こちらの手数料は確認画面でお確かめください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-36206-06-001-SHARED-08",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -159,25 +159,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "bank-transfer_response_4",
+        "communicativeIntent": "実行を止め依頼元へ確認すると伝える",
         "requiredSemanticComponents": {
-          "goal": "振込先と費用を確認する"
+          "goal": "画面を戻し講習窓口に電話し手数料誤解で過剰送金しかけたと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "もし受取人名が違っていたら、どうすればよいですか。",
+        "recommendedAnswerJa": "いったん画面を戻して、講習の窓口に電話します。手数料の意味を取り違えて、多く送ってしまうところでした。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "画面を戻し講習窓口に電話し手数料誤解で過剰送金しかけたと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "画面を戻し講習窓口に電話し手数料誤解で過剰送金しかけたと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-36206-06-001-SHARED-09",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -186,15 +186,15 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "そのまま進めず、振込先に確認してから手続きしてください。",
+        "textJa": "最終確認の前であれば、今日は実行せずにお帰りいただけます。回答があってから、あらためて手続きなさってください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-36206-06-001-SHARED-10",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -204,25 +204,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "bank-transfer_response_5",
+        "communicativeIntent": "当日の見送りと次回の確認項目を伝える",
         "requiredSemanticComponents": {
-          "goal": "振込先と費用を確認する"
+          "goal": "今日は振り込まず次回は名義、送金額、手数料を別々に確認すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "わかりました。情報と合計金額を確認してから実行します。",
+        "recommendedAnswerJa": "今日は振り込まずに確認します。次は口座名義、送る金額、手数料をそれぞれ確かめてから実行します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "今日は振り込まず次回は名義、送金額、手数料を別々に確認すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "今日は振り込まず次回は名義、送金額、手数料を別々に確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-36206-06-001-SHARED-11",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -231,24 +231,27 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "手続き後の控えを保管し、不明な点があればお問い合わせください。",
+        "textJa": "確定前の確認が大切です。画面を終了して、お持ちの案内もお忘れなく。それでは、お気をつけてお帰りください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": null,
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     }
   ],
   "authoring": {
     "locale": "ja",
-    "recipe": "bank-transfer",
     "cluster": "CLUSTER_12_SHIKOKU_2026-09-30",
     "contentScope": "simulated_learning_scenario",
     "nativeSpeakerReviewed": false,
-    "translationState": "deferred_until_all_japanese_complete"
+    "translationState": "deferred_until_all_japanese_complete",
+    "editorialSource": "scripts/dialogue-authoring/prf-036-city-cty-jp-36206.json",
+    "premise": "銀行で受講料を振り込む直前、受取人名が案内と違うため相談する。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
   }
 }
