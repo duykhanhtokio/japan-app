@@ -35,7 +35,10 @@ const adapters={
  fs.writeFileSync(path.join(out,'index.html'),'<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><style>@font-face{font-family:TranslationQA;src:url(/font.ttf)}*{font-family:TranslationQA,sans-serif!important}html,body,#root{margin:0;height:100%}#root{display:flex;flex-direction:column}</style><div id="root"></div><script src="/entry.js"></script>');
  const server=http.createServer((q,r)=>{const file=q.url.startsWith('/entry.js')?'entry.js':q.url.startsWith('/font.ttf')?'font.ttf':'index.html';r.setHeader('Content-Type',file.endsWith('.js')?'application/javascript':file.endsWith('.ttf')?'font/ttf':'text/html');r.end(fs.readFileSync(path.join(out,file)));}).listen(0,'127.0.0.1');
  await new Promise(resolve=>server.on('listening',resolve));
- const browser=await chromium.launch({...(process.env.KENSETSU_QA_CHROMIUM?{executablePath:process.env.KENSETSU_QA_CHROMIUM}:{}),args:['--no-sandbox','--disable-gpu']});
+ const extraBrowserArgs=JSON.parse(process.env.KENSETSU_QA_CHROMIUM_ARGS||'[]');
+ assert(Array.isArray(extraBrowserArgs)&&extraBrowserArgs.every(arg=>typeof arg==='string'),'KENSETSU_QA_CHROMIUM_ARGS must be a JSON string array');
+ const browserLaunchArgs=['--no-sandbox','--disable-gpu',...extraBrowserArgs];
+ const browser=await chromium.launch({...(process.env.KENSETSU_QA_CHROMIUM?{executablePath:process.env.KENSETSU_QA_CHROMIUM}:{}),args:browserLaunchArgs});
  const page=await browser.newPage({viewport:{width:430,height:932}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
  const url=`http://127.0.0.1:${server.address().port}`;
  const enter=async(locale,day=1)=>{
@@ -95,6 +98,7 @@ const adapters={
  await page.getByTestId('kensetsu-field-building').click();await page.getByTestId('kensetsu-day-'+((week-1)*7+1)).click();
  assert((await page.getByTestId('kensetsu-complete').innerText()).includes('学習済み'));
  await enter('ja');await page.getByTestId('kensetsu-translation').click();
+ await page.screenshot({path:path.join(out,'japanese.png')});
  assert.equal(await page.getByTestId('kensetsu-translation-'+firstParagraph).count(),0);
  const exerciseIds=Object.keys(bundle.entries).filter(id=>id==='learningActivity'||/:activity$|:reflection$/.test(id));
  for(const id of exerciseIds)assert.equal(await page.getByTestId('kensetsu-localized-'+(id==='learningActivity'?bundle.sessionId+':learningActivity':id)).count(),0);
@@ -102,7 +106,7 @@ const adapters={
  assert.equal(await page.getByTestId('kensetsu-translation-'+firstParagraph).innerText(),'この段落の翻訳は準備中です。');
  for(const id of exerciseIds)assert.equal(await page.getByTestId('kensetsu-localized-'+(id==='learningActivity'?bundle.sessionId+':learningActivity':id)).innerText(),'この段落の翻訳は準備中です。');
  assert.equal(errors.length,0,errors.join('\n'));
- const report={status:'PASS_WEB_ADAPTED_READER',week,locales:tested,lessons:7,localeLessonCombinations:84,translatedFieldsVerified:verifiedFields,toggleVerified:true,japaneseRetained:true,noLocaleFallback:true,completionNotTriggeredByTranslation:true,completionReloadVerified:true,viewports:screens,consoleErrors:errors,adapters:['ReactNativeWeb','AsyncStorage to localStorage','zero safe area','Royal decorative wrappers/back button stubbed','image placeholders'],limits:['Core real reader tested; decorative art/Royal design and all-script glyph coverage not certified','No native device, human language or domain review'],nativeDeviceTested:false,releaseReady:false};
+ const report={status:'PASS_WEB_ADAPTED_READER',week,browserLaunchArgs,locales:tested,lessons:7,localeLessonCombinations:84,translatedFieldsVerified:verifiedFields,toggleVerified:true,japaneseRetained:true,noLocaleFallback:true,completionNotTriggeredByTranslation:true,completionReloadVerified:true,viewports:screens,consoleErrors:errors,adapters:['ReactNativeWeb','AsyncStorage to localStorage','zero safe area','Royal decorative wrappers/back button stubbed','image placeholders'],limits:['Core real reader tested; decorative art/Royal design and all-script glyph coverage not certified','No native device, human language or domain review'],nativeDeviceTested:false,releaseReady:false};
  fs.writeFileSync(process.env.KENSETSU_QA_REPORT||`docs/ssw-workspace/kensetsu/translations/week-${weekCode}-web-qa.json`,JSON.stringify(report,null,2)+'\n');
  console.log('PASS: all seven lessons x 12 translation locales in actual reader; toggle, source Japanese, no fallback, completion/reload; three viewport overflow checks. Decorative wrappers/assets adapted.');
  await browser.close();server.close();

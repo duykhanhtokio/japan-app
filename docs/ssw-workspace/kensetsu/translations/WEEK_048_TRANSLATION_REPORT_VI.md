@@ -1,0 +1,3 @@
+# Bản dịch 建設 tuần 048
+
+Đã dịch 7 bài 330–336:163 mục nguồn,1.956 chuỗi cho12 ngôn ngữ,672 bản dịch đoạn đầy đủ. Sáu AI dịch và tự kiểm riêng từng cặp trực tiếp từ tiếng Nhật; không dịch chéo hoặc kiểm tra chéo. Giữ nguyên bản Nhật,ID và tiến độ. Kiểm dữ liệu,TypeScript phạm vi dữ liệu,bản dựng reader thích nghi và bảo toàn dữ liệu đạt. Chromium được khôi phục và cấu hình để chạy được. Reader web thích nghi đạt84 tổ hợp bài–ngôn ngữ,mở/thu bản dịch,giữ tiếng Nhật,không fallback sai locale,hoàn thành thủ công/tải lại và ba kích thước màn hình. Đã xem ảnh chụp; chưa kiểm thiết bị thật. Chưa có duyệt bản ngữ/chuyên môn/phát hành. Tổng48/55 tuần,336/385 bài; còn49 bài. Kế tiếp tuần049,bài337–343,sau khi xác minh remote.
