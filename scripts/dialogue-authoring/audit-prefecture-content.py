@@ -41,6 +41,9 @@ def audit(prefecture):
     locations = {x['id']: x for x in read('src/data/generated/locations.json')}
     scenarios = {x['id']: x for x in read('src/data/generated/scenarios.json')}
     scenarios.update({x['id']: x for x in read('src/data/dialogue-content/scenario-overrides.json')})
+    city_overlays = ROOT / 'src/data/dialogue-content/independent-city-overrides.json'
+    if city_overlays.exists():
+        scenarios.update({x['id']: x for x in json.loads(city_overlays.read_text())})
     index = read('src/data/generated/scenario-index.json')
     index.update(read('src/data/dialogue-content/scenario-index-overrides.json'))
     targets = sorted((s for s in scenarios.values() if cities[s['cityId']]['prefectureId'] == prefecture), key=lambda s: (cities[s['cityId']]['order'], locations[s['locationId']]['order'], s['order'], s['id']))

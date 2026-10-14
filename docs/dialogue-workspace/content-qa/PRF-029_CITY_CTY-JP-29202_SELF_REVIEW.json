@@ -1,0 +1,55 @@
+{
+  "cityId": "CTY-JP-29202",
+  "scenarioIds": [
+    "SC-LOC-JP-29202-01-001",
+    "SC-LOC-JP-29202-02-001",
+    "SC-LOC-JP-29202-03-001",
+    "SC-LOC-JP-29202-04-001",
+    "SC-LOC-JP-29202-05-001",
+    "SC-LOC-JP-29202-06-001",
+    "SC-LOC-JP-29202-07-001",
+    "SC-LOC-JP-29202-08-001"
+  ],
+  "sourceSha256": "ac57177f8c9bd02353fc7956c48b44e97409f5ef09f7dfe18faea437064c70e1",
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "playerTurns": 40,
+    "tasks": 40
+  },
+  "reviewType": "AI self-review",
+  "peerReviewed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "policyVerified": false,
+  "deviceVerified": false,
+  "fullFinalRead": true,
+  "repairs": [
+    "Police closing farewell repaired.",
+    "Supermarket bag fit question receives a direct answer.",
+    "Six three-sentence turns reduced to two; full pre-repair variants preserved."
+  ],
+  "checks": {
+    "exactIds": true,
+    "alternatingNpcFirstElevenTurns": true,
+    "fiveLocalTaskGoalsPerScenario": true,
+    "oneOrTwoSentencesPerTurn": true,
+    "uniqueIntentIds": true,
+    "uniqueLocalGoals": true,
+    "uniquePlayerLines": true,
+    "committedRuntimeExactPlayerCheck": {
+      "head": "a6ecd17d5351573dd5daeb943b8e4ea8a7d30b21",
+      "method": "git grep exact recommendedAnswerJa fields in committed src/data/generated/dialogues/*.json, outside assigned scenario files",
+      "outsideMatches": []
+    }
+  },
+  "independentReview": [
+    "All eight final premises, 88 turns, and 40 goals read; all repairs reread.",
+    "NPC roles match assigned venues; scene-only arrangements identified in premises.",
+    "Medical decisions and banking eligibility remain with professional staff. No active peer output read."
+  ],
+  "limitations": [
+    "AI authored/self-reviewed only; no exhaustive originality claim.",
+    "Human/native/policy/device verification false."
+  ]
+}

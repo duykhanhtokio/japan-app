@@ -15,7 +15,9 @@ const before = p => JSON.parse(execFileSync('git', ['show', `${baseline}:${p}`],
 
 const pending = new Set(inputManifest.groups.flatMap(group => group.scenarioIds));
 assert.equal(pending.size, inputManifest.canonicalCount);
-const sourceRows = new Map([...read('src/data/generated/scenarios.json'), ...read('src/data/dialogue-content/scenario-overrides.json')].map(row => [row.id, row]));
+const cityOverlayPath = 'src/data/dialogue-content/independent-city-overrides.json';
+const beforeCityOverlays = (()=>{try{return before(cityOverlayPath);}catch{return [];}})();
+const sourceRows = new Map([...read('src/data/generated/scenarios.json'), ...read('src/data/dialogue-content/scenario-overrides.json'), ...read(cityOverlayPath)].map(row => [row.id, row]));
 const cityRows = new Map(read('src/data/generated/cities.json').map(row => [row.id, row]));
 const targetIds = [...pending];
 const entries = new Map();
@@ -65,10 +67,11 @@ const repository = loadAdapter('src/services/life-content-repository.ts', ['getL
 const loader = loadAdapter('src/services/dialogue-content-loader.ts', ['loadDialogueTurns']);
 const scenarios = read('src/data/generated/scenarios.json');
 const overrides = read('src/data/dialogue-content/scenario-overrides.json');
-const merged = new Map([...scenarios, ...overrides].map(row => [row.id, row]));
-const previous = new Map([...before('src/data/generated/scenarios.json'), ...before('src/data/dialogue-content/scenario-overrides.json')].map(row => [row.id, row]));
+const merged = new Map([...scenarios, ...overrides, ...read(cityOverlayPath)].map(row => [row.id, row]));
+const previous = new Map([...before('src/data/generated/scenarios.json'), ...before('src/data/dialogue-content/scenario-overrides.json'), ...beforeCityOverlays].map(row => [row.id, row]));
 assert.deepEqual([...merged.keys()], [...previous.keys()]);
 assert.equal(merged.size, 7128);
+for (const id of merged.keys()) assert.deepEqual(repository.getLifeScenarioById(id), merged.get(id), 'All canonical adapter values: '+id);
 for (const [id, row] of merged) {
   if (!entries.has(id)) assert.deepEqual(row, previous.get(id), `Unrelated scenario metadata changed: ${id}`);
   else for (const field of ['id', 'cityId', 'locationId', 'order', 'type', 'trigger', 'branching']) assert.deepEqual(row[field], previous.get(id)[field], `${id}: changed identity/link ${field}`);

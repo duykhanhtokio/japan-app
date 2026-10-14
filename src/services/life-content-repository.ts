@@ -4,6 +4,7 @@ import locationRoleCorrectionsJson from '@/data/location-role-corrections.json';
 import scenarioIndexJson from '@/data/generated/scenario-index.json';
 import scenariosJson from '@/data/generated/scenarios.json';
 import scenarioOverridesJson from '@/data/dialogue-content/scenario-overrides.json';
+import independentCityOverridesJson from '@/data/dialogue-content/independent-city-overrides.json';
 import scenarioIndexOverridesJson from '@/data/dialogue-content/scenario-index-overrides.json';
 
 import type {
@@ -30,8 +31,11 @@ const locations = (locationsJson as LifeLocation[]).map(location => {
     return correction ? { ...location, category: correction.category, npcJob: correction.npcJob } : location;
 });
 
-const scenarioOverrides = scenarioOverridesJson as LifeScenario[];
-const scenarioOverrideById = new Map(scenarioOverrides.map(scenario => [scenario.id, scenario]));
+const scenarioOverrideById = new Map(
+    [...(scenarioOverridesJson as LifeScenario[]), ...(independentCityOverridesJson as LifeScenario[])]
+        .map(scenario => [scenario.id, scenario]),
+);
+const scenarioOverrides = [...scenarioOverrideById.values()];
 const sourceScenarios = scenariosJson as LifeScenario[];
 const sourceScenarioIds = new Set(sourceScenarios.map(scenario => scenario.id));
 const scenarios = [
