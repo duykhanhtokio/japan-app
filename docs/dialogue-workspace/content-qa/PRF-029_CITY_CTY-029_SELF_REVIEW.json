@@ -1,6 +1,6 @@
 {
   "cityId": "CTY-029",
-  "sourceSha256": "35a86029375d5c51e7cd5068cb6bc49765f5895d6d6f095fbe2fc80fa879dad7",
+  "sourceSha256": "61c1d0852cb00f0224c09e31bb169fb7314faca03ca0bc77fbfa5e73eec07488",
   "scenarioIds": [
     "SC-LOC-029-01-001",
     "SC-LOC-029-02-001",
@@ -61,10 +61,20 @@
     "12 shortened final NPC to two sentences",
     "14 aligned baggage request with checkout plan",
     "15 replaced premature tour thanks with farewell to inquiry and continued visit",
-    "14/20/21 shortened three-sentence NPC turns; reread repaired turns against five goals"
+    "14/20/21 shortened three-sentence NPC turns; reread repaired turns against five goals",
+    "Final machine-only exact-goal screen: SC-LOC-029-14-001 task1 made specific to own arrival/name/one-night PLAYER intent; entire own11 turns and five goals reread, dialogue unchanged."
   ],
   "limitations": [
     "AI self-review only; no peer or native-human approval",
     "Bounded prior semantic comparison, not exhaustive uniqueness proof"
-  ]
+  ],
+  "finalMachineGoalRepair": {
+    "scenarioId": "SC-LOC-029-14-001",
+    "intentId": "nara-14-1",
+    "oldGoal": "予約名と泊数を伝える",
+    "newGoal": "田中名義の一泊予約で到着したことをフロントに伝える",
+    "previousSourceSha256": "35a86029375d5c51e7cd5068cb6bc49765f5895d6d6f095fbe2fc80fa879dad7",
+    "fullOwnExchangeAndGoalsReread": true,
+    "otherCityTextRead": false
+  }
 }

@@ -1,6 +1,6 @@
 # CTY-029 independent city authorship
 
-Source SHA-256: 35a86029375d5c51e7cd5068cb6bc49765f5895d6d6f095fbe2fc80fa879dad7
+Source SHA-256: 61c1d0852cb00f0224c09e31bb169fb7314faca03ca0bc77fbfa5e73eec07488
 
 21 scenarios; 231 turns; 105 distinct PLAYER lines; 105 unique intent IDs. independentCityWorkerSelfReview: true. peerReviewed: false. nativeHumanReviewed: false.
 
@@ -30,3 +30,5 @@ Exact IDs:
 - SC-LOC-029-19-001
 - SC-LOC-029-20-001
 - SC-LOC-029-21-001
+
+Final machine-only exact-goal repair: SC-LOC-029-14-001 / nara-14-1 changed from 「予約名と泊数を伝える」 to 「田中名義の一泊予約で到着したことをフロントに伝える」. Independently reread the full own11-turn exchange, premise and five goals; dialogue unchanged. No other-city text read.
