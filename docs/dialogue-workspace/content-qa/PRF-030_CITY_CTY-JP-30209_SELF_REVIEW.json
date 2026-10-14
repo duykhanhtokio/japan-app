@@ -1,0 +1,131 @@
+{
+  "cityId": "CTY-JP-30209",
+  "mode": "INDEPENDENT_CITY_AUTHOR_FULL_SELF_REVIEW_NO_PEER_READING",
+  "sourceSha256": "2f9bbdfbc17145b0f103b4091b8b0e3d56b26efadedc478dea5a458c1c40c43d",
+  "reviewedScenarioIds": [
+    "SC-LOC-JP-30209-01-001",
+    "SC-LOC-JP-30209-02-001",
+    "SC-LOC-JP-30209-03-001",
+    "SC-LOC-JP-30209-04-001",
+    "SC-LOC-JP-30209-05-001",
+    "SC-LOC-JP-30209-06-001",
+    "SC-LOC-JP-30209-07-001",
+    "SC-LOC-JP-30209-08-001"
+  ],
+  "previousScenariosFullyRead": 8,
+  "previousTurnsFullyRead": 88,
+  "previousGoalsFullyRead": 40,
+  "finalScenariosFullyRead": 8,
+  "finalTurnsFullyRead": 88,
+  "finalPlayerGoalsFullyRead": 40,
+  "fullReadProof": [
+    {
+      "scenarioId": "SC-LOC-JP-30209-01-001",
+      "premiseRead": true,
+      "allElevenTurnsRead": true,
+      "allFiveGoalsRead": true,
+      "decision": "PASS",
+      "causalPlot": "駅名が似た目的地を乗る前に区別する"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-30209-02-001",
+      "premiseRead": true,
+      "allElevenTurnsRead": true,
+      "allFiveGoalsRead": true,
+      "decision": "PASS",
+      "causalPlot": "提出案内の「世帯全員」を確かめてから申請する"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-30209-03-001",
+      "premiseRead": true,
+      "allElevenTurnsRead": true,
+      "allFiveGoalsRead": true,
+      "decision": "PASS",
+      "causalPlot": "「安静時」の意味を聞いて症状を書き分ける"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-30209-04-001",
+      "premiseRead": true,
+      "allElevenTurnsRead": true,
+      "allFiveGoalsRead": true,
+      "decision": "PASS",
+      "causalPlot": "宅配業者を名乗る連絡の記録を見せる"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-30209-05-001",
+      "premiseRead": true,
+      "allElevenTurnsRead": true,
+      "allFiveGoalsRead": true,
+      "decision": "PASS",
+      "causalPlot": "古い送り状をはがして再利用の箱を送る"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-30209-06-001",
+      "premiseRead": true,
+      "allElevenTurnsRead": true,
+      "allFiveGoalsRead": true,
+      "decision": "PASS",
+      "causalPlot": "家賃振込の依頼人名に部屋番号を加える相談をする"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-30209-07-001",
+      "premiseRead": true,
+      "allElevenTurnsRead": true,
+      "allFiveGoalsRead": true,
+      "decision": "PASS",
+      "causalPlot": "破れた持参袋の代わりに購入品を分ける"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-30209-08-001",
+      "premiseRead": true,
+      "allElevenTurnsRead": true,
+      "allFiveGoalsRead": true,
+      "decision": "PASS",
+      "causalPlot": "風で飛びそうな帽子をしまって短い散歩にする"
+    }
+  ],
+  "repairs": [
+    {
+      "scenarioId": "SC-LOC-JP-30209-04-001",
+      "turn": 11,
+      "before": "記録を見ながら伺いますね。ご相談ありがとうございました、失礼します。",
+      "after": "記録は今後の確認にも必要なので、保管しておいてください。ご相談ありがとうございました、失礼します。",
+      "reason": "Changed continuation statement at final turn into closing preservation reminder."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-30209-05-001",
+      "turn": 10,
+      "before": "服を減らして古い表示を隠し、新しい住所を上面に書いて戻ります。",
+      "after": "服を減らして古い表示を隠し、新しい送り状を上面に貼って戻ります。",
+      "reason": "Use new waybill rather than address alone written on box to complete posting preparation."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-30209-06-001",
+      "turn": 11,
+      "before": "わからないまま進めずに済みましたね。ご相談ありがとうございました。",
+      "after": "わからないまま進めずに済みましたね。ご相談ありがとうございました、失礼します。",
+      "reason": "Added explicit farewell to final NPC closure."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-30209-05-001",
+      "goal": 5,
+      "after": "古い表示を隠し新しい送り状を貼って持参すると伝える",
+      "reason": "Goal explicitly aligned to new waybill attachment repair."
+    }
+  ],
+  "machineOnlyCorpusScan": {
+    "filesScanned": 7561,
+    "playerRowsScanned": 37965,
+    "goalsScanned": 35640,
+    "exactPlayerHits": 0,
+    "exactGoalHits": 0,
+    "otherCityTextEmitted": false
+  },
+  "peerReviewed": false,
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceVerified": false,
+  "openBlockers": [],
+  "decision": "AI_SELF_REVIEW_PASS"
+}
