@@ -1,0 +1,1184 @@
+{
+  "locales": [
+    "en",
+    "vi"
+  ],
+  "sessions": [
+    {
+      "sessionId": "kensetsu-common-session-190",
+      "entries": {
+        "title": {
+          "sourceJa": "通信経路を信号・支持・電源に分ける",
+          "translations": {
+            "en": "Separate communication routes into signals, support and power supply",
+            "vi": "Phân biệt tín hiệu, phần đỡ và nguồn điện trong tuyến thông tin"
+          }
+        },
+        "kensetsu-common-session-190-cluster-1:title": {
+          "sourceJa": "何が情報を運ぶのか",
+          "translations": {
+            "en": "What carries the information?",
+            "vi": "Phần nào truyền thông tin?"
+          }
+        },
+        "kensetsu-common-session-190-cluster-1-p1": {
+          "sourceJa": "光信号を伝える光ファイバと、金属の導体を使って電気信号を伝える通信ケーブルでは、伝送の仕組みが違います。外から見える被覆の色だけでは、この区別はできません。",
+          "translations": {
+            "en": "Optical fibres carrying optical signals and communication cables carrying electrical signals through metal conductors have different transmission mechanisms. The colour of covering visible from outside alone cannot distinguish them.",
+            "vi": "Sợi quang truyền tín hiệu quang và cáp thông tin truyền tín hiệu điện bằng ruột dẫn kim loại có cơ chế truyền khác nhau. Không thể phân biệt chỉ qua màu lớp bọc nhìn thấy bên ngoài."
+          }
+        },
+        "kensetsu-common-session-190-cluster-1-p2": {
+          "sourceJa": "架空の改修図で、建物間は光、室内の一部はメタルと指定されている例を考えます。両方を「通信線」とだけ書き直すと、必要な機器や接続先の違いが見えなくなります。",
+          "translations": {
+            "en": "Consider a hypothetical renovation drawing specifying optical transmission between buildings and metal cable in part of the interior. Rewriting both simply as “communication lines” obscures differences in required equipment and connection destinations.",
+            "vi": "Hãy xét bản vẽ cải tạo giả định chỉ định truyền quang giữa các tòa nhà và cáp kim loại ở một phần bên trong. Nếu viết lại cả hai chỉ là “dây thông tin”, khác biệt về thiết bị cần thiết và nơi nối sẽ không còn rõ."
+          }
+        },
+        "kensetsu-common-session-190-cluster-1:prompt": {
+          "sourceJa": "建物間と室内で媒体が違う図面に、どの二つの情報を残しますか。",
+          "translations": {
+            "en": "What two pieces of information do you retain in a drawing where transmission media differ between the inter-building and indoor sections?",
+            "vi": "Trong bản vẽ dùng môi trường truyền khác nhau giữa đoạn nối các tòa nhà và đoạn trong nhà, bạn giữ hai thông tin nào?"
+          }
+        },
+        "kensetsu-common-session-190-cluster-2:title": {
+          "sourceJa": "伝送と支持は別の役割",
+          "translations": {
+            "en": "Transmission and support have separate roles",
+            "vi": "Truyền tín hiệu và đỡ cáp có vai trò riêng"
+          }
+        },
+        "kensetsu-common-session-190-cluster-2-p1": {
+          "sourceJa": "支持線は架空のケーブルを支える部分です。情報を運ぶ部分と、機械的に支持する部分を分けて考えます。支持線があることだけでは、伝送方式も通信の良否も決まりません。",
+          "translations": {
+            "en": "A support wire is the part supporting an aerial cable. Consider the information-carrying part separately from the mechanically supporting part. The presence of a support wire alone determines neither the transmission method nor whether communication is satisfactory.",
+            "vi": "Dây đỡ là phần đỡ cáp treo trên không. Cần xem riêng phần truyền thông tin với phần đỡ về mặt cơ học. Chỉ có dây đỡ không quyết định phương thức truyền hay chất lượng thông tin có tốt hay không."
+          }
+        },
+        "kensetsu-common-session-190-cluster-2-p2": {
+          "sourceJa": "資料に支持線と接続部の両方が描かれていたら、支え方を示す情報と、通信経路をつなぐ情報に整理します。同じ経路にある部材でも、担当する役割は同じではありません。",
+          "translations": {
+            "en": "If documentation depicts both a support wire and a connection section, organize these into information describing support and information joining the communication route. Components on the same route do not necessarily perform the same role.",
+            "vi": "Nếu tài liệu vẽ cả dây đỡ và phần nối, hãy chia thành thông tin thể hiện cách đỡ và thông tin nối tuyến thông tin. Dù cùng trên một tuyến, các bộ phận không đảm nhiệm cùng vai trò."
+          }
+        },
+        "kensetsu-common-session-190-cluster-2:prompt": {
+          "sourceJa": "支持線の記載を通信方式の記載と分けると、何が分かりやすくなりますか。",
+          "translations": {
+            "en": "What becomes clearer when support-wire information is separated from communication-method information?",
+            "vi": "Điều gì rõ hơn khi tách thông tin dây đỡ với thông tin phương thức thông tin?"
+          }
+        },
+        "kensetsu-common-session-190-cluster-3:title": {
+          "sourceJa": "通信機器にも電源がある",
+          "translations": {
+            "en": "Communication equipment also has a power supply",
+            "vi": "Thiết bị thông tin cũng có nguồn điện"
+          }
+        },
+        "kensetsu-common-session-190-cluster-3-p1": {
+          "sourceJa": "通信機器が情報を扱うことと、その機器へ電源を供給することは別の関係です。電源装置や蓄電池の説明は、光やメタルの伝送経路の説明にそのまま置き換えられません。",
+          "translations": {
+            "en": "A communication device handling information and power being supplied to that device are separate relationships. Descriptions of power-supply equipment and storage batteries cannot be substituted directly for descriptions of optical or metal transmission routes.",
+            "vi": "Thiết bị thông tin xử lý thông tin và việc cấp điện cho thiết bị đó là các quan hệ riêng. Không thể dùng nguyên mô tả bộ nguồn hoặc ắc quy để thay cho mô tả tuyến truyền quang hay kim loại."
+          }
+        },
+        "kensetsu-common-session-190-cluster-3-p2": {
+          "sourceJa": "例えば機器一覧で通信ポートは記載済み、電源の接続先は空欄だったとします。「通信線の記載はありますが、電源欄の照合が残っています」と伝えれば、確認対象を限定できます。",
+          "translations": {
+            "en": "For example, suppose an equipment list records communication ports but leaves power-supply connection destinations blank. Saying “The communication lines are recorded, but comparison of the power-supply field remains outstanding” identifies a limited checking target.",
+            "vi": "Ví dụ, giả sử danh sách thiết bị đã ghi cổng thông tin nhưng để trống nơi nối nguồn điện. Nói “đã ghi dây thông tin nhưng vẫn còn đối chiếu mục nguồn điện” sẽ giới hạn rõ đối tượng cần kiểm tra."
+          }
+        },
+        "kensetsu-common-session-190-cluster-3:prompt": {
+          "sourceJa": "通信ポートだけ記載された一覧を、電源も確認済みとしてよいでしょうか。理由を説明してください。",
+          "translations": {
+            "en": "Can a list recording only communication ports be treated as having its power supply checked too? Explain why.",
+            "vi": "Có thể coi danh sách chỉ ghi cổng thông tin là đã kiểm tra cả nguồn điện không? Hãy giải thích lý do."
+          }
+        },
+        "kensetsu-common-session-190-cluster-4:title": {
+          "sourceJa": "経路図を読む練習",
+          "translations": {
+            "en": "Practise reading route diagrams",
+            "vi": "Luyện đọc sơ đồ tuyến"
+          }
+        },
+        "kensetsu-common-session-190-cluster-4-p1": {
+          "sourceJa": "一つの経路について、伝送媒体、接続部、支持の構成、関連する電源を分けて整理します。この整理は部材の関係を理解するためで、施工や通電の指示を決めるものではありません。",
+          "translations": {
+            "en": "For one route, organize the transmission medium, connection sections, support configuration and associated power supply separately. This organization helps understand component relationships; it does not determine instructions for installation or energization.",
+            "vi": "Với một tuyến, hãy sắp xếp riêng môi trường truyền, phần nối, cấu hình đỡ và nguồn điện liên quan. Cách sắp xếp này giúp hiểu quan hệ giữa các bộ phận, không quyết định chỉ dẫn thi công hay cấp điện."
+          }
+        },
+        "kensetsu-common-session-190-cluster-4-p2": {
+          "sourceJa": "架空の引継ぎメモには「光の経路番号は確認済み。支持方式の資料と機器の電源資料は未受領」と書けます。図面に記載があることと、現場の状態が確認済みであることを区別します。",
+          "translations": {
+            "en": "A hypothetical handover memo may say “The optical route number has been checked. Documentation on the support method and equipment power supply has not been received.” Distinguish information recorded on a drawing from confirmation of actual site conditions.",
+            "vi": "Ghi chú bàn giao giả định có thể viết: “Đã kiểm tra số tuyến quang. Chưa nhận được tài liệu phương thức đỡ và tài liệu nguồn điện của thiết bị”. Phân biệt có ghi trên bản vẽ với đã kiểm tra trạng thái tại hiện trường."
+          }
+        },
+        "kensetsu-common-session-190-cluster-4:prompt": {
+          "sourceJa": "経路番号が分かった段階で未受領の資料をどう具体的に伝えますか。",
+          "translations": {
+            "en": "After learning the route number, how do you specify which documents have not yet been received?",
+            "vi": "Khi đã biết số tuyến, bạn nêu cụ thể tài liệu chưa nhận được thế nào?"
+          }
+        },
+        "keyTerm:光信号": {
+          "sourceJa": "光信号",
+          "translations": {
+            "en": "Optical signal",
+            "vi": "Tín hiệu quang"
+          }
+        },
+        "keyTerm:電気信号": {
+          "sourceJa": "電気信号",
+          "translations": {
+            "en": "Electrical signal",
+            "vi": "Tín hiệu điện"
+          }
+        },
+        "keyTerm:伝送": {
+          "sourceJa": "伝送",
+          "translations": {
+            "en": "Transmission",
+            "vi": "Truyền tín hiệu"
+          }
+        },
+        "keyTerm:支持線": {
+          "sourceJa": "支持線",
+          "translations": {
+            "en": "Support wire",
+            "vi": "Dây đỡ"
+          }
+        },
+        "keyTerm:接続部": {
+          "sourceJa": "接続部",
+          "translations": {
+            "en": "Connection section",
+            "vi": "Phần nối"
+          }
+        },
+        "keyTerm:電源": {
+          "sourceJa": "電源",
+          "translations": {
+            "en": "Power supply",
+            "vi": "Nguồn điện"
+          }
+        },
+        "illustration:0:alt": {
+          "sourceJa": "何が情報を運ぶのかについて、本文の対象と確認事項を整理する教材例。",
+          "translations": {
+            "en": "An instructional example organizing the subjects and checks in the text about what carries information.",
+            "vi": "Ví dụ học tập sắp xếp các đối tượng và mục cần kiểm tra trong bài về phần truyền thông tin."
+          }
+        }
+      }
+    },
+    {
+      "sessionId": "kensetsu-common-session-191",
+      "entries": {
+        "title": {
+          "sourceJa": "光ファイバの層とケーブルの構成",
+          "translations": {
+            "en": "Optical-fibre layers and cable construction",
+            "vi": "Các lớp sợi quang và cấu tạo cáp"
+          }
+        },
+        "kensetsu-common-session-191-cluster-1:title": {
+          "sourceJa": "コアとクラッドの関係",
+          "translations": {
+            "en": "Relationship between core and cladding",
+            "vi": "Quan hệ giữa lõi quang và lớp vỏ quang"
+          }
+        },
+        "kensetsu-common-session-191-cluster-1-p1": {
+          "sourceJa": "光ファイバの中心側をコア、その周囲の層をクラッドと呼びます。両者の屈折率の関係が光の伝わり方に関わります。コアとクラッドは、外側の被覆とは役割の違う部分です。",
+          "translations": {
+            "en": "The central part of an optical fibre is called the core, and the surrounding layer is called the cladding. The relationship between their refractive indices affects how light propagates. The core and cladding have roles different from the outer covering.",
+            "vi": "Phần phía trung tâm sợi quang gọi là lõi quang, lớp bao quanh gọi là lớp vỏ quang. Quan hệ giữa chiết suất của hai phần liên quan đến cách ánh sáng truyền đi. Lõi quang và lớp vỏ quang có vai trò khác lớp bọc bên ngoài."
+          }
+        },
+        "kensetsu-common-session-191-cluster-1-p2": {
+          "sourceJa": "断面を説明するときは「中心のコア、その外のクラッド、さらに外側の保護に関わる層」と位置を言葉でたどります。外被の色をコアの材質や伝送特性の証拠にはしません。",
+          "translations": {
+            "en": "When explaining a cross-section, trace positions in words: “The central core, the cladding outside it, and further out the layers involved in protection.” Do not use outer-jacket colour as evidence of core material or transmission characteristics.",
+            "vi": "Khi giải thích mặt cắt, lần theo vị trí bằng lời: “Lõi quang ở giữa, bên ngoài là lớp vỏ quang, xa hơn nữa là lớp liên quan đến bảo vệ”. Không lấy màu vỏ ngoài làm bằng chứng về vật liệu lõi hay đặc tính truyền."
+          }
+        },
+        "kensetsu-common-session-191-cluster-1:prompt": {
+          "sourceJa": "コア・クラッドと外側の被覆は、どのように位置と役割を分けますか。",
+          "translations": {
+            "en": "How do you distinguish the positions and roles of the core, cladding and outer covering?",
+            "vi": "Bạn phân biệt vị trí và vai trò của lõi quang, lớp vỏ quang và lớp bọc ngoài thế nào?"
+          }
+        },
+        "kensetsu-common-session-191-cluster-2:title": {
+          "sourceJa": "材料は種類ごとに見る",
+          "translations": {
+            "en": "Examine materials for each type",
+            "vi": "Xem vật liệu theo từng loại"
+          }
+        },
+        "kensetsu-common-session-191-cluster-2-p1": {
+          "sourceJa": "石英ガラス系の光ファイバのほか、クラッドにプラスチックを用いる種類などがあります。「光ファイバ」という名称だけで、すべての層の材料を一つに決めることはできません。",
+          "translations": {
+            "en": "Besides silica-glass optical fibres, there are types using plastic for the cladding and other varieties. The name “optical fibre” alone cannot determine one material for every layer.",
+            "vi": "Ngoài sợi quang gốc thủy tinh silica, còn có loại dùng nhựa cho lớp vỏ quang và các loại khác. Chỉ tên “sợi quang” không thể quyết định một vật liệu cho mọi lớp."
+          }
+        },
+        "kensetsu-common-session-191-cluster-2-p2": {
+          "sourceJa": "被覆も「必ずナイロン」と覚えるのではなく、対象の品種と層を特定して資料を読みます。例えば材料表の被覆欄が未記入なら、既知の別製品の材質を転記せず、対象品の確認を残します。",
+          "translations": {
+            "en": "Do not memorize the covering as “always nylon”; identify the intended type and layer when reading documentation. For example, if the covering field in a material table is blank, do not copy in the material of another known product; retain checking of the intended product as outstanding.",
+            "vi": "Không nên nhớ lớp bọc là “luôn bằng nylon”; cần xác định loại và lớp tương ứng khi đọc tài liệu. Ví dụ, nếu mục lớp bọc trong bảng vật liệu chưa ghi, không chép vật liệu của sản phẩm khác đã biết vào, mà giữ việc kiểm tra sản phẩm tương ứng là mục còn lại."
+          }
+        },
+        "kensetsu-common-session-191-cluster-2:prompt": {
+          "sourceJa": "別製品の被覆材を空欄へそのまま転記できないのはなぜですか。",
+          "translations": {
+            "en": "Why can you not simply copy the covering material of another product into a blank field?",
+            "vi": "Vì sao không thể chép nguyên vật liệu lớp bọc của sản phẩm khác vào ô trống?"
+          }
+        },
+        "kensetsu-common-session-191-cluster-3:title": {
+          "sourceJa": "ファイバとケーブルを分ける",
+          "translations": {
+            "en": "Distinguish fibre from cable",
+            "vi": "Phân biệt sợi quang với cáp"
+          }
+        },
+        "kensetsu-common-session-191-cluster-3-p1": {
+          "sourceJa": "光ファイバケーブルは、光ファイバを実用の配線に使うため外被などを組み合わせたものです。ファイバの構造、ケーブル全体の構造、ケーブルに収められた心数は異なる情報です。",
+          "translations": {
+            "en": "An optical-fibre cable combines optical fibres with an outer jacket and other parts for practical wiring use. Fibre structure, whole-cable structure and the number of fibres housed in the cable are different information.",
+            "vi": "Cáp quang kết hợp sợi quang với vỏ ngoài và các phần khác để dùng đi dây thực tế. Cấu tạo sợi, cấu tạo toàn bộ cáp và số sợi chứa trong cáp là thông tin khác nhau."
+          }
+        },
+        "kensetsu-common-session-191-cluster-3-p2": {
+          "sourceJa": "20心・100心・400心などの表示は心数の例であり、使える品種の全一覧ではありません。心数が同じでも外径や構成が一致するとは限らず、コアの数を表す別の用語とも区別します。",
+          "translations": {
+            "en": "Markings such as 20-fibre, 100-fibre and 400-fibre are examples of fibre counts, not a complete list of usable types. Equal fibre counts do not necessarily mean equal outside diameters or construction. Also distinguish fibre count from other terminology indicating the number of cores.",
+            "vi": "Các ký hiệu như 20 sợi, 100 sợi, 400 sợi là ví dụ số sợi, không phải danh sách đầy đủ các loại có thể dùng. Cùng số sợi chưa chắc cùng đường kính ngoài hay cấu tạo; cũng cần phân biệt với thuật ngữ khác chỉ số lõi quang."
+          }
+        },
+        "kensetsu-common-session-191-cluster-3:prompt": {
+          "sourceJa": "「100心」とケーブル外径、ファイバ内部のコア数を同じ数字として扱えない理由は何ですか。",
+          "translations": {
+            "en": "Why can “100 fibres,” cable outside diameter and the number of cores inside a fibre not be treated as the same number?",
+            "vi": "Vì sao không thể coi “100 sợi”, đường kính ngoài cáp và số lõi quang bên trong sợi là cùng một con số?"
+          }
+        },
+        "kensetsu-common-session-191-cluster-4:title": {
+          "sourceJa": "特徴と取扱い条件",
+          "translations": {
+            "en": "Characteristics and handling conditions",
+            "vi": "Đặc tính và điều kiện xử lý"
+          }
+        },
+        "kensetsu-common-session-191-cluster-4-p1": {
+          "sourceJa": "光による伝送には大容量・長距離の通信に適した性質があります。ただし、実際の性能は対象の品種や通信系の条件によります。光の伝送媒体の特徴を、ケーブル全体がどんな環境にも耐えるという意味に広げません。",
+          "translations": {
+            "en": "Optical transmission has properties suited to high-capacity, long-distance communication. Actual performance, however, depends on the intended type and communication-system conditions. Do not extend characteristics of the optical transmission medium to mean that the entire cable withstands any environment.",
+            "vi": "Truyền bằng ánh sáng có đặc tính phù hợp với thông tin dung lượng lớn, khoảng cách dài. Tuy nhiên, tính năng thực tế tùy loại tương ứng và điều kiện hệ thống thông tin. Không mở rộng đặc tính môi trường truyền quang thành nghĩa toàn bộ cáp chịu được mọi môi trường."
+          }
+        },
+        "kensetsu-common-session-191-cluster-4-p2": {
+          "sourceJa": "傷、曲げ、接続部の汚れなどは確認対象です。「細いから自由に曲げられる」とは判断せず、対象品の条件を確認します。本講では曲げ半径の数値、清掃や加工の方法は定めません。",
+          "translations": {
+            "en": "Damage, bending, dirt at connections and similar conditions are checking targets. Do not conclude that a fibre can be bent freely because it is thin; check the intended product’s conditions. This lesson sets no numerical bend radius or cleaning or processing method.",
+            "vi": "Hư hại, uốn cong, bụi bẩn ở phần nối và các tình trạng tương tự là đối tượng kiểm tra. Không kết luận “mảnh nên uốn tùy ý”; cần kiểm tra điều kiện của sản phẩm tương ứng. Bài này không quy định giá trị bán kính uốn hay cách làm sạch, gia công."
+          }
+        },
+        "kensetsu-common-session-191-cluster-4:prompt": {
+          "sourceJa": "光で情報を伝える特徴と、曲げや汚れに関する条件をどう説明し分けますか。",
+          "translations": {
+            "en": "How do you explain separately the characteristics of carrying information with light and conditions concerning bending and dirt?",
+            "vi": "Bạn giải thích riêng đặc tính truyền thông tin bằng ánh sáng với điều kiện về uốn và bụi bẩn thế nào?"
+          }
+        },
+        "keyTerm:コア": {
+          "sourceJa": "コア",
+          "translations": {
+            "en": "Core",
+            "vi": "Lõi quang"
+          }
+        },
+        "keyTerm:クラッド": {
+          "sourceJa": "クラッド",
+          "translations": {
+            "en": "Cladding",
+            "vi": "Lớp vỏ quang"
+          }
+        },
+        "keyTerm:被覆": {
+          "sourceJa": "被覆",
+          "translations": {
+            "en": "Covering",
+            "vi": "Lớp bọc"
+          }
+        },
+        "keyTerm:屈折率": {
+          "sourceJa": "屈折率",
+          "translations": {
+            "en": "Refractive index",
+            "vi": "Chiết suất"
+          }
+        },
+        "keyTerm:心数": {
+          "sourceJa": "心数",
+          "translations": {
+            "en": "Fibre count",
+            "vi": "Số sợi"
+          }
+        },
+        "keyTerm:外被": {
+          "sourceJa": "外被",
+          "translations": {
+            "en": "Outer jacket",
+            "vi": "Vỏ ngoài"
+          }
+        }
+      }
+    },
+    {
+      "sessionId": "kensetsu-common-session-192",
+      "entries": {
+        "title": {
+          "sourceJa": "メタルケーブル・同軸・UTPの読み分け",
+          "translations": {
+            "en": "Distinguishing metal cable, coaxial cable and UTP",
+            "vi": "Phân biệt cáp kim loại, đồng trục và UTP"
+          }
+        },
+        "kensetsu-common-session-192-cluster-1:title": {
+          "sourceJa": "金属の導体で伝える",
+          "translations": {
+            "en": "Transmission through metal conductors",
+            "vi": "Truyền qua ruột dẫn kim loại"
+          }
+        },
+        "kensetsu-common-session-192-cluster-1-p1": {
+          "sourceJa": "メタルケーブルでは金属の導体を使って電気信号を伝えます。同軸やツイストペアは構造の異なる例です。「メタル」という広い呼び方だけでは、端末や用途を特定できません。",
+          "translations": {
+            "en": "Metal cables use metal conductors to transmit electrical signals. Coaxial and twisted-pair cables are examples with different structures. The broad term “metal” alone cannot identify terminals or applications.",
+            "vi": "Cáp kim loại dùng ruột dẫn kim loại để truyền tín hiệu điện. Đồng trục và đôi xoắn là những ví dụ có cấu tạo khác nhau. Chỉ cách gọi rộng “kim loại” chưa thể xác định đầu cuối hay công dụng."
+          }
+        },
+        "kensetsu-common-session-192-cluster-1-p2": {
+          "sourceJa": "銅を使う例があっても、全製品の材料や寸法を同じと考えません。架空の材料一覧で「メタル」しか記載されていなければ、同軸なのかツイストペアなのか、品種の記載を追加する必要があります。",
+          "translations": {
+            "en": "Even where copper is used, do not assume every product has the same materials or dimensions. If a hypothetical material list records only “metal,” information on the type, such as coaxial or twisted pair, must be added.",
+            "vi": "Dù có ví dụ dùng đồng, không coi mọi sản phẩm đều cùng vật liệu hay kích thước. Nếu danh mục vật liệu giả định chỉ ghi “kim loại”, cần bổ sung loại là đồng trục hay đôi xoắn."
+          }
+        },
+        "kensetsu-common-session-192-cluster-1:prompt": {
+          "sourceJa": "一覧の「メタル」だけでは不足する情報を二つ挙げてください。",
+          "translations": {
+            "en": "Name two pieces of information missing from a list that says only “metal.”",
+            "vi": "Hãy nêu hai thông tin còn thiếu khi danh sách chỉ ghi “kim loại”."
+          }
+        },
+        "kensetsu-common-session-192-cluster-2:title": {
+          "sourceJa": "同軸の層を読む",
+          "translations": {
+            "en": "Read the layers of coaxial cable",
+            "vi": "Đọc các lớp cáp đồng trục"
+          }
+        },
+        "kensetsu-common-session-192-cluster-2-p1": {
+          "sourceJa": "同軸ケーブルは中心導体の外側に絶縁体を置き、その周りに外部導体を設ける構造で理解します。外部導体と最外側のシースは同じものではありません。テレビアンテナの配線は用途の一例です。",
+          "translations": {
+            "en": "Understand coaxial cable as a structure with insulation outside the central conductor and an outer conductor around that insulation. The outer conductor and the outermost sheath are not the same part. TV antenna wiring is one example of its applications.",
+            "vi": "Hiểu cáp đồng trục là cấu tạo có lớp cách điện bên ngoài ruột dẫn trung tâm, quanh lớp này có ruột dẫn ngoài. Ruột dẫn ngoài và vỏ bọc ngoài cùng không phải một phần. Đi dây ăng-ten tivi là một ví dụ công dụng."
+          }
+        },
+        "kensetsu-common-session-192-cluster-2-p2": {
+          "sourceJa": "断面資料では中心導体、絶縁体、外部導体、外側の保護を区別します。テレビ用という用途だけで、同軸の全製品の寸法、特性、接続部品が同じだとは決めません。",
+          "translations": {
+            "en": "In cross-sectional documentation, distinguish the central conductor, insulation, outer conductor and outer protection. An application described as “for TV” alone does not establish identical dimensions, characteristics or connection components for all coaxial products.",
+            "vi": "Trong tài liệu mặt cắt, cần phân biệt ruột dẫn trung tâm, lớp cách điện, ruột dẫn ngoài và phần bảo vệ ngoài. Chỉ công dụng “cho tivi” không quyết định rằng mọi cáp đồng trục cùng kích thước, đặc tính và bộ phận nối."
+          }
+        },
+        "kensetsu-common-session-192-cluster-2:prompt": {
+          "sourceJa": "同軸の外部導体と外側の保護層を混同すると、どの説明が曖昧になりますか。",
+          "translations": {
+            "en": "Which explanation becomes unclear if the coaxial cable’s outer conductor is confused with its outer protective layer?",
+            "vi": "Nếu lẫn ruột dẫn ngoài của cáp đồng trục với lớp bảo vệ ngoài, giải thích nào sẽ không rõ?"
+          }
+        },
+        "kensetsu-common-session-192-cluster-3:title": {
+          "sourceJa": "ツイストペアとシールド",
+          "translations": {
+            "en": "Twisted pairs and shielding",
+            "vi": "Đôi xoắn và lớp chống nhiễu"
+          }
+        },
+        "kensetsu-common-session-192-cluster-3-p1": {
+          "sourceJa": "ツイストペアは二本の導線を一組としてより合わせた構成です。UTPはシールドを持たない種類を指します。ペアの構成とシールドの有無は、別々に読み取る情報です。",
+          "translations": {
+            "en": "A twisted pair is a structure with two conducting wires twisted together as a pair. UTP refers to an unshielded type. Pair construction and the presence or absence of shielding are separate information to read.",
+            "vi": "Đôi xoắn là cấu tạo hai dây dẫn được xoắn với nhau thành một đôi. UTP chỉ loại không có lớp chống nhiễu. Cấu tạo đôi dây và có hay không lớp chống nhiễu là thông tin đọc riêng."
+          }
+        },
+        "kensetsu-common-session-192-cluster-3-p2": {
+          "sourceJa": "「UTPだから同軸より必ず安く柔らかい」と一律には比べません。価格や柔軟性は具体的な品種と条件に依存します。通信方式、シールド、形状を分けると比較の条件をそろえられます。",
+          "translations": {
+            "en": "Do not make a universal comparison that “UTP is always cheaper and more flexible than coaxial cable.” Price and flexibility depend on the specific type and conditions. Separating communication method, shielding and shape lets you align the conditions of comparison.",
+            "vi": "Không so sánh chung rằng “UTP luôn rẻ và mềm hơn cáp đồng trục”. Giá và độ mềm dẻo phụ thuộc loại cụ thể và điều kiện. Tách phương thức thông tin, lớp chống nhiễu và hình dạng sẽ giúp thống nhất điều kiện so sánh."
+          }
+        },
+        "kensetsu-common-session-192-cluster-3:prompt": {
+          "sourceJa": "ペアの構成とシールドの有無は、それぞれ何の違いを示しますか。",
+          "translations": {
+            "en": "What differences do pair construction and the presence or absence of shielding each indicate?",
+            "vi": "Cấu tạo đôi dây và việc có hay không lớp chống nhiễu thể hiện những khác biệt gì?"
+          }
+        },
+        "kensetsu-common-session-192-cluster-4:title": {
+          "sourceJa": "カテゴリと実際の通信",
+          "translations": {
+            "en": "Category and actual communication",
+            "vi": "Cấp loại và thông tin thực tế"
+          }
+        },
+        "kensetsu-common-session-192-cluster-4-p1": {
+          "sourceJa": "カテゴリはLANケーブルの性能を区分するための表示です。数字を読むだけで、機器を含む通信系全体の実際の速度や、すべての使用条件が確認できたことにはなりません。",
+          "translations": {
+            "en": "A category marking classifies LAN cable performance. Reading its number alone does not verify the actual speed of the entire communication system, including equipment, or all conditions of use.",
+            "vi": "Ký hiệu cấp loại dùng để phân loại tính năng cáp LAN. Chỉ đọc con số không có nghĩa đã kiểm tra tốc độ thực tế của toàn hệ thống thông tin gồm cả thiết bị hay mọi điều kiện sử dụng."
+          }
+        },
+        "kensetsu-common-session-192-cluster-4-p2": {
+          "sourceJa": "独立した確認例として「指定カテゴリの品番は一致しています。接続先機器と経路条件の照合は残っています」と報告します。カテゴリを、ケーブルの色や接続完了の表示に置き換えません。",
+          "translations": {
+            "en": "An independently created checking example reports: “The product number for the specified category matches. Comparison with connected equipment and route conditions remains outstanding.” Do not substitute cable colour or an indication of completed connection for category information.",
+            "vi": "Ví dụ kiểm tra được tạo riêng báo cáo: “Mã sản phẩm của cấp loại chỉ định khớp. Vẫn còn đối chiếu thiết bị ở nơi nối và điều kiện tuyến”. Không dùng màu cáp hay hiển thị nối xong để thay cho cấp loại."
+          }
+        },
+        "kensetsu-common-session-192-cluster-4:prompt": {
+          "sourceJa": "品番の一致と通信系全体の確認を分けて報告する文を作ってください。",
+          "translations": {
+            "en": "Write a report that separates a matching product number from checking the whole communication system.",
+            "vi": "Hãy viết câu báo cáo phân biệt mã sản phẩm khớp với kiểm tra toàn hệ thống thông tin."
+          }
+        },
+        "keyTerm:メタルケーブル": {
+          "sourceJa": "メタルケーブル",
+          "translations": {
+            "en": "Metal cable",
+            "vi": "Cáp kim loại"
+          }
+        },
+        "keyTerm:同軸": {
+          "sourceJa": "同軸",
+          "translations": {
+            "en": "Coaxial",
+            "vi": "Đồng trục"
+          }
+        },
+        "keyTerm:導体": {
+          "sourceJa": "導体",
+          "translations": {
+            "en": "Conductor",
+            "vi": "Ruột dẫn"
+          }
+        },
+        "keyTerm:絶縁体": {
+          "sourceJa": "絶縁体",
+          "translations": {
+            "en": "Insulation",
+            "vi": "Lớp cách điện"
+          }
+        },
+        "keyTerm:ツイストペア": {
+          "sourceJa": "ツイストペア",
+          "translations": {
+            "en": "Twisted pair",
+            "vi": "Đôi xoắn"
+          }
+        },
+        "keyTerm:カテゴリ": {
+          "sourceJa": "カテゴリ",
+          "translations": {
+            "en": "Category",
+            "vi": "Cấp loại"
+          }
+        }
+      }
+    },
+    {
+      "sessionId": "kensetsu-common-session-193",
+      "entries": {
+        "title": {
+          "sourceJa": "架空ケーブルの支持と繰出し用具",
+          "translations": {
+            "en": "Aerial cable support and payout equipment",
+            "vi": "Phần đỡ cáp trên không và dụng cụ nhả cáp"
+          }
+        },
+        "kensetsu-common-session-193-cluster-1:title": {
+          "sourceJa": "支持を担う部分",
+          "translations": {
+            "en": "The part providing support",
+            "vi": "Phần đảm nhiệm việc đỡ"
+          }
+        },
+        "kensetsu-common-session-193-cluster-1-p1": {
+          "sourceJa": "つり線は、架空のケーブルを支えるための線で、メッセンジャーワイヤーとも呼ばれます。伝送部へかかる機械的な力を考える際に、支持の構成を分けて理解します。",
+          "translations": {
+            "en": "A suspension wire is a wire used to support an aerial cable, also called a messenger wire. When considering mechanical forces on the transmission part, understand the support configuration separately.",
+            "vi": "Dây treo là dây dùng để đỡ cáp trên không, còn gọi là dây chịu lực messenger. Khi xét lực cơ học tác dụng lên phần truyền tín hiệu, cần hiểu riêng cấu hình đỡ."
+          }
+        },
+        "kensetsu-common-session-193-cluster-1-p2": {
+          "sourceJa": "支持があることを「ケーブルに力が一切かからない」とは言い換えません。対象ケーブル、支持方式、許容条件は個別の確認事項です。ここでは張力の数値や張設の手順を指定しません。",
+          "translations": {
+            "en": "Do not rephrase the presence of support as “no force at all acts on the cable.” The intended cable, support method and permissible conditions are individual checking items. No tension values or stringing procedures are specified here.",
+            "vi": "Không đổi việc có phần đỡ thành “cáp hoàn toàn không chịu lực”. Cáp tương ứng, phương thức đỡ và điều kiện cho phép là các mục kiểm tra riêng. Ở đây không chỉ định giá trị lực căng hay trình tự căng lắp dây."
+          }
+        },
+        "kensetsu-common-session-193-cluster-1:prompt": {
+          "sourceJa": "つり線があることと、ケーブルに加わる力がゼロであることを区別する理由は何ですか。",
+          "translations": {
+            "en": "Why should the presence of a suspension wire be distinguished from zero force acting on the cable?",
+            "vi": "Vì sao cần phân biệt có dây treo với lực tác dụng lên cáp bằng không?"
+          }
+        },
+        "kensetsu-common-session-193-cluster-2:title": {
+          "sourceJa": "支持線が一体の種類",
+          "translations": {
+            "en": "Types with an integrated support wire",
+            "vi": "Loại tích hợp dây đỡ"
+          }
+        },
+        "kensetsu-common-session-193-cluster-2-p1": {
+          "sourceJa": "自己支持ケーブルは、ケーブルを支える線を一体化した構成のものです。別のつり線と組み合わせる構成とは材料のまとめ方が違います。支持線と伝送部の役割の違いは残ります。",
+          "translations": {
+            "en": "A self-supporting cable has an integrated wire supporting the cable. Its components are combined differently from a configuration using a separate suspension wire. The distinction between the roles of the support wire and transmission part remains.",
+            "vi": "Cáp tự chịu lực có cấu tạo tích hợp dây đỡ cáp. Cách kết hợp các thành phần khác với cấu hình dùng dây treo riêng. Vẫn phải phân biệt vai trò dây đỡ với phần truyền tín hiệu."
+          }
+        },
+        "kensetsu-common-session-193-cluster-2-p2": {
+          "sourceJa": "自己支持という名称は、取付けや設計の確認が不要という意味ではありません。架空の準備表で自己支持型と指定されていたら、対応品種と支持の資料を確認対象として整理します。",
+          "translations": {
+            "en": "The name “self-supporting” does not mean mounting and design checks are unnecessary. If a hypothetical preparation table specifies a self-supporting type, organize the compatible type and support documentation as checking targets.",
+            "vi": "Tên “tự chịu lực” không có nghĩa không cần kiểm tra lắp đặt hay thiết kế. Nếu bảng chuẩn bị giả định chỉ định loại tự chịu lực, cần ghi loại tương ứng và tài liệu phần đỡ thành đối tượng kiểm tra."
+          }
+        },
+        "kensetsu-common-session-193-cluster-2:prompt": {
+          "sourceJa": "支持線が一体になっても、なぜ取付け条件の確認が残るのでしょうか。",
+          "translations": {
+            "en": "Why do mounting-condition checks remain even when the support wire is integrated?",
+            "vi": "Dù dây đỡ đã tích hợp, vì sao vẫn còn kiểm tra điều kiện lắp đặt?"
+          }
+        },
+        "kensetsu-common-session-193-cluster-3:title": {
+          "sourceJa": "繰出しと金車の機能",
+          "translations": {
+            "en": "Payout and the functions of cable stringing blocks",
+            "vi": "Nhả cáp và chức năng ròng rọc dẫn cáp"
+          }
+        },
+        "kensetsu-common-session-193-cluster-3-p1": {
+          "sourceJa": "ケーブル繰り出し機は、巻かれたケーブルを送り出すための用具です。金車は、延線でケーブルを案内する滑車・ローラーの用具として区別します。送り出す側と経路側の機能を混同しません。",
+          "translations": {
+            "en": "Cable payout equipment feeds out wound cable. Distinguish cable stringing blocks as pulley or roller devices that guide cable during stringing. Do not confuse the feed-out-side function with the route-side function.",
+            "vi": "Dụng cụ nhả cáp dùng để đưa cáp đã cuộn ra. Ròng rọc dẫn cáp được phân biệt là dụng cụ dạng ròng rọc hoặc con lăn hướng dẫn cáp khi kéo rải. Không lẫn chức năng phía nhả cáp với phía tuyến."
+          }
+        },
+        "kensetsu-common-session-193-cluster-3-p2": {
+          "sourceJa": "繰出し用具にはケーブルドラムを支える型や巻き束に対応する型などがあり、形態は一つではありません。写真の色や脚の形だけで適合を判断せず、巻かれ方と対象品の情報を照合します。",
+          "translations": {
+            "en": "Payout equipment includes types supporting cable drums and types for coils, among others; it does not have one single form. Do not judge compatibility from photograph colours or leg shapes alone; compare the winding form with the intended product’s information.",
+            "vi": "Dụng cụ nhả cáp có loại đỡ tang cáp, loại dùng cho bó cáp cuộn và các loại khác, không chỉ một dạng. Không đánh giá phù hợp chỉ qua màu ảnh hay hình chân đỡ; cần đối chiếu dạng cuộn với thông tin sản phẩm tương ứng."
+          }
+        },
+        "kensetsu-common-session-193-cluster-3:prompt": {
+          "sourceJa": "繰出し用具と金車では、ケーブルのどの場面を補助する役割が違いますか。",
+          "translations": {
+            "en": "How do payout equipment and cable stringing blocks assist different stages of cable handling?",
+            "vi": "Dụng cụ nhả cáp và ròng rọc dẫn cáp hỗ trợ những khâu nào khác nhau của cáp?"
+          }
+        },
+        "kensetsu-common-session-193-cluster-4:title": {
+          "sourceJa": "用具名と適合情報",
+          "translations": {
+            "en": "Equipment names and compatibility information",
+            "vi": "Tên dụng cụ và thông tin phù hợp"
+          }
+        },
+        "kensetsu-common-session-193-cluster-4-p1": {
+          "sourceJa": "金車や繰出し用具は、対象のケーブル寸法や支持条件に対応する必要があります。同じ名称の用具を用意しただけでは、現場の条件へ適合したと判断できません。",
+          "translations": {
+            "en": "Cable stringing blocks and payout equipment must match the intended cable dimensions and support conditions. Merely preparing equipment with the same name does not establish compatibility with site conditions.",
+            "vi": "Ròng rọc dẫn cáp và dụng cụ nhả cáp phải tương ứng kích thước cáp và điều kiện đỡ. Chỉ chuẩn bị dụng cụ cùng tên chưa đủ kết luận phù hợp điều kiện tại hiện trường."
+          }
+        },
+        "kensetsu-common-session-193-cluster-4-p2": {
+          "sourceJa": "例えば手配メモには「経路側の金車の候補は確認済み。繰出し側の巻き形態に対応する品種は照合中」と書けます。選定途中の状態を、設置済みや延線開始の指示と分けて伝えます。",
+          "translations": {
+            "en": "For example, an arrangement memo may state “Candidates for route-side cable stringing blocks have been checked. Types matching the winding form on the payout side are being compared.” Convey the selection-in-progress state separately from completed installation or an instruction to begin stringing.",
+            "vi": "Ví dụ, ghi chú chuẩn bị có thể viết: “Đã kiểm tra dụng cụ ứng viên cho ròng rọc dẫn cáp phía tuyến. Đang đối chiếu loại phù hợp dạng cuộn phía nhả cáp”. Cần truyền đạt trạng thái đang lựa chọn riêng với đã lắp xong hay chỉ dẫn bắt đầu kéo rải cáp."
+          }
+        },
+        "kensetsu-common-session-193-cluster-4:prompt": {
+          "sourceJa": "候補品の手配と実際の使用可能の確認を、どう区別して引き継ぎますか。",
+          "translations": {
+            "en": "How do you hand over the distinction between arranging candidate products and confirming actual usability?",
+            "vi": "Bạn bàn giao thế nào để phân biệt chuẩn bị sản phẩm ứng viên với xác nhận dùng được thực tế?"
+          }
+        },
+        "keyTerm:つり線": {
+          "sourceJa": "つり線",
+          "translations": {
+            "en": "Suspension wire",
+            "vi": "Dây treo"
+          }
+        },
+        "keyTerm:メッセンジャーワイヤー": {
+          "sourceJa": "メッセンジャーワイヤー",
+          "translations": {
+            "en": "Messenger wire",
+            "vi": "Dây chịu lực messenger"
+          }
+        },
+        "keyTerm:自己支持": {
+          "sourceJa": "自己支持",
+          "translations": {
+            "en": "Self-supporting",
+            "vi": "Tự chịu lực"
+          }
+        },
+        "keyTerm:金車": {
+          "sourceJa": "金車",
+          "translations": {
+            "en": "Cable stringing block",
+            "vi": "Ròng rọc dẫn cáp"
+          }
+        },
+        "keyTerm:繰り出し": {
+          "sourceJa": "繰り出し",
+          "translations": {
+            "en": "Payout",
+            "vi": "Nhả cáp"
+          }
+        },
+        "keyTerm:ケーブルドラム": {
+          "sourceJa": "ケーブルドラム",
+          "translations": {
+            "en": "Cable drum",
+            "vi": "Tang cáp"
+          }
+        },
+        "illustration:0:alt": {
+          "sourceJa": "支持を担う部分について、本文の対象と確認事項を整理する教材例。",
+          "translations": {
+            "en": "An instructional example organizing the subjects and checks in the text about the part providing support.",
+            "vi": "Ví dụ học tập sắp xếp các đối tượng và mục cần kiểm tra trong bài về phần đảm nhiệm việc đỡ."
+          }
+        }
+      }
+    },
+    {
+      "sessionId": "kensetsu-common-session-194",
+      "entries": {
+        "title": {
+          "sourceJa": "クロージャと張線・把持の役割",
+          "translations": {
+            "en": "Roles of closures, tensioning and gripping",
+            "vi": "Vai trò hộp bảo vệ mối nối, căng dây và kẹp giữ"
+          }
+        },
+        "kensetsu-common-session-194-cluster-1:title": {
+          "sourceJa": "接続を収める場所",
+          "translations": {
+            "en": "Where connections are housed",
+            "vi": "Nơi chứa phần nối"
+          }
+        },
+        "kensetsu-common-session-194-cluster-1-p1": {
+          "sourceJa": "クロージャは通信ケーブルの接続部分などを収容・保護するための部材です。光クロージャには架空用だけでなく地中用もあります。名称を聞いただけで設置場所を電柱上に限定しません。",
+          "translations": {
+            "en": "A closure is a component housing and protecting communication-cable connections and similar parts. Optical closures include underground as well as aerial types. Hearing the name alone does not justify limiting their installation location to utility poles.",
+            "vi": "Hộp bảo vệ mối nối là bộ phận chứa và bảo vệ phần nối cáp thông tin cùng các phần tương tự. Hộp mối nối quang có loại trên không và cả loại dưới đất. Chỉ nghe tên không được giới hạn nơi lắp là trên cột điện."
+          }
+        },
+        "kensetsu-common-session-194-cluster-1-p2": {
+          "sourceJa": "架空の経路一覧に地中区間の接続点がある場合も、クロージャの用途と型式を確認します。接続するファイバ、内部の収容、入口の適合などは、箱の外形だけでは分かりません。",
+          "translations": {
+            "en": "Also check closure application and model when a hypothetical route list includes a connection point in an underground section. The fibres to be joined, internal accommodation and inlet compatibility cannot be known from box shape alone.",
+            "vi": "Nếu danh sách tuyến giả định có điểm nối ở đoạn dưới đất, cũng cần kiểm tra công dụng và kiểu hộp mối nối. Chỉ hình dạng ngoài hộp chưa cho biết sợi quang sẽ nối, cách chứa bên trong hay sự phù hợp của cửa vào."
+          }
+        },
+        "kensetsu-common-session-194-cluster-1:prompt": {
+          "sourceJa": "「クロージャは必ず電柱上」という説明では、どの種類が見落とされますか。",
+          "translations": {
+            "en": "Which type is overlooked by saying “closures are always on utility poles”?",
+            "vi": "Mô tả “hộp mối nối luôn ở trên cột điện” bỏ sót loại nào?"
+          }
+        },
+        "kensetsu-common-session-194-cluster-2:title": {
+          "sourceJa": "箱と内部の接続は別",
+          "translations": {
+            "en": "The box and internal connections are separate",
+            "vi": "Hộp và mối nối bên trong là riêng"
+          }
+        },
+        "kensetsu-common-session-194-cluster-2-p1": {
+          "sourceJa": "クロージャの外側が所定位置にあることと、内部の心線の対応や接続が確認済みであることは別です。外部の設置記録と、内部の接続に関する記録を分けて考えます。",
+          "translations": {
+            "en": "The exterior of a closure being in its specified position is separate from fibre correspondence and internal connections having been checked. Consider external installation records separately from records of internal connections.",
+            "vi": "Phần ngoài hộp mối nối ở vị trí quy định khác với đã kiểm tra đối ứng sợi và đấu nối bên trong. Cần xem riêng hồ sơ lắp đặt bên ngoài với hồ sơ về mối nối bên trong."
+          }
+        },
+        "kensetsu-common-session-194-cluster-2-p2": {
+          "sourceJa": "説明用の記録例では「接続点の番号は確認済み。心線の対応表は未受領」と示します。内部を開けたり接続状態を変えたりする方法を、位置の確認から導き出しません。",
+          "translations": {
+            "en": "An explanatory record example says “The connection point number has been checked. The fibre correspondence table has not been received.” Do not derive methods for opening the interior or changing connections from a location check.",
+            "vi": "Ví dụ hồ sơ để giải thích ghi: “Đã kiểm tra số điểm nối. Chưa nhận được bảng đối ứng sợi”. Không suy ra cách mở bên trong hay thay đổi trạng thái nối từ việc kiểm tra vị trí."
+          }
+        },
+        "kensetsu-common-session-194-cluster-2:prompt": {
+          "sourceJa": "設置記録だけある接続点について、何の記録を未確認として残しますか。",
+          "translations": {
+            "en": "For a connection point with only an installation record, which records do you retain as unchecked?",
+            "vi": "Với điểm nối chỉ có hồ sơ lắp đặt, bạn giữ hồ sơ nào là chưa kiểm tra?"
+          }
+        },
+        "kensetsu-common-session-194-cluster-3:title": {
+          "sourceJa": "張る機能とつかむ機能",
+          "translations": {
+            "en": "Tensioning functions and gripping functions",
+            "vi": "Chức năng căng và chức năng kẹp giữ"
+          }
+        },
+        "kensetsu-common-session-194-cluster-3-p1": {
+          "sourceJa": "張線器は線を張るための力を与える用具、掴線器は対象の線を把持する用具として機能を分けます。この組合せは、線をつかむことと張力を加えることの違いを理解するための基本例です。",
+          "translations": {
+            "en": "Distinguish a wire tensioner, which applies force to tension a line, from a wire grip, which grips the intended line. This combination is a basic example for understanding the difference between gripping a line and applying tension.",
+            "vi": "Phân biệt chức năng của dụng cụ căng dây tạo lực để căng dây với dụng cụ kẹp dây giữ dây tương ứng. Tổ hợp này là ví dụ cơ bản để hiểu khác biệt giữa kẹp giữ dây và tạo lực căng."
+          }
+        },
+        "kensetsu-common-session-194-cluster-3-p2": {
+          "sourceJa": "両方の機能を備えた特定製品もあるため、必ず別々の二台を使うと一般化しません。製品名と機能を対応させる学習であり、活線や高所で使う方法、力の設定、操作順は扱いません。",
+          "translations": {
+            "en": "Some specific products have both functions, so do not generalize that two separate devices must always be used. This teaches how product names relate to functions; it does not cover use on live lines or at height, force settings or operating sequences.",
+            "vi": "Có sản phẩm cụ thể có cả hai chức năng, nên không khái quát rằng luôn phải dùng hai dụng cụ riêng. Đây là học đối chiếu tên sản phẩm với chức năng; không trình bày cách dùng trên đường dây đang mang điện hay trên cao, thiết lập lực hoặc thứ tự thao tác."
+          }
+        },
+        "kensetsu-common-session-194-cluster-3:prompt": {
+          "sourceJa": "把持と張線の二つの機能が一体の製品でも、役割を分けて理解する意義は何ですか。",
+          "translations": {
+            "en": "What is the value of understanding gripping and tensioning separately even in a product integrating both functions?",
+            "vi": "Dù sản phẩm tích hợp kẹp giữ và căng dây, việc hiểu riêng vai trò có ý nghĩa gì?"
+          }
+        },
+        "kensetsu-common-session-194-cluster-4:title": {
+          "sourceJa": "接続の保護と機械的支持",
+          "translations": {
+            "en": "Connection protection and mechanical support",
+            "vi": "Bảo vệ mối nối và đỡ cơ học"
+          }
+        },
+        "kensetsu-common-session-194-cluster-4-p1": {
+          "sourceJa": "クロージャは接続部分の収容・保護、支持線はケーブルの支持という関係で整理します。接続部分が保護されていることだけを、支持の構成や張力条件の確認完了にはしません。",
+          "translations": {
+            "en": "Organize closures as housing and protecting connection sections, and support wires as supporting cables. Protection of a connection section alone does not establish that support configuration or tension conditions have been fully checked.",
+            "vi": "Cần hiểu hộp mối nối đảm nhiệm chứa và bảo vệ phần nối, còn dây đỡ đảm nhiệm đỡ cáp. Chỉ phần nối đã được bảo vệ không có nghĩa đã xong kiểm tra cấu hình đỡ hoặc điều kiện lực căng."
+          }
+        },
+        "kensetsu-common-session-194-cluster-4-p2": {
+          "sourceJa": "独立した資料照合の例は「地中区間の接続用箱は特定できました。架空区間の支持の資料は別件として確認中」です。違う区間と部材の確認を一つの「全部確認済み」にまとめません。",
+          "translations": {
+            "en": "An independently created document-comparison example is “The connection box for the underground section has been identified. Support documentation for the aerial section is being checked separately.” Do not combine checks of different sections and components into one “everything checked.”",
+            "vi": "Ví dụ đối chiếu tài liệu được tạo riêng: “Đã xác định hộp nối cho đoạn dưới đất. Tài liệu phần đỡ ở đoạn trên không đang được kiểm tra riêng”. Không gom kiểm tra các đoạn và bộ phận khác nhau thành một câu “đã kiểm tra tất cả”."
+          }
+        },
+        "kensetsu-common-session-194-cluster-4:prompt": {
+          "sourceJa": "地中の接続用箱と架空の支持を別件として伝える報告を作ってください。",
+          "translations": {
+            "en": "Write a report that treats the underground connection box and aerial support as separate matters.",
+            "vi": "Hãy viết báo cáo truyền đạt hộp nối dưới đất và phần đỡ trên không là các việc riêng."
+          }
+        },
+        "keyTerm:クロージャ": {
+          "sourceJa": "クロージャ",
+          "translations": {
+            "en": "Closure",
+            "vi": "Hộp bảo vệ mối nối"
+          }
+        },
+        "keyTerm:架空": {
+          "sourceJa": "架空",
+          "translations": {
+            "en": "Aerial",
+            "vi": "Trên không"
+          }
+        },
+        "keyTerm:地中": {
+          "sourceJa": "地中",
+          "translations": {
+            "en": "Underground",
+            "vi": "Dưới đất"
+          }
+        },
+        "keyTerm:張線器": {
+          "sourceJa": "張線器",
+          "translations": {
+            "en": "Wire tensioner",
+            "vi": "Dụng cụ căng dây"
+          }
+        },
+        "keyTerm:掴線器": {
+          "sourceJa": "掴線器",
+          "translations": {
+            "en": "Wire grip",
+            "vi": "Dụng cụ kẹp dây"
+          }
+        },
+        "keyTerm:把持": {
+          "sourceJa": "把持",
+          "translations": {
+            "en": "Gripping",
+            "vi": "Kẹp giữ"
+          }
+        }
+      }
+    },
+    {
+      "sessionId": "kensetsu-common-session-195",
+      "entries": {
+        "title": {
+          "sourceJa": "整流器・蓄電池と通信電源",
+          "translations": {
+            "en": "Rectifiers, storage batteries and communication power supplies",
+            "vi": "Bộ chỉnh lưu, ắc quy và nguồn điện thông tin"
+          }
+        },
+        "kensetsu-common-session-195-cluster-1:title": {
+          "sourceJa": "変換する装置",
+          "translations": {
+            "en": "A converting device",
+            "vi": "Thiết bị chuyển đổi"
+          }
+        },
+        "kensetsu-common-session-195-cluster-1-p1": {
+          "sourceJa": "整流器は交流から直流を得るための装置です。電力の形を変換する機能であり、電気を蓄えておく機能とは区別します。「電源装置」という広い名称だけで、内部の役割を一つにしません。",
+          "translations": {
+            "en": "A rectifier is a device for obtaining direct current from alternating current. This converts the form of electrical power and is distinct from storing electricity. Do not reduce internal roles to one merely under the broad name “power-supply device.”",
+            "vi": "Bộ chỉnh lưu là thiết bị lấy điện một chiều từ điện xoay chiều. Chức năng này chuyển đổi dạng điện năng, khác với lưu trữ điện. Không gom vai trò bên trong thành một chỉ theo tên gọi rộng “thiết bị nguồn điện”."
+          }
+        },
+        "kensetsu-common-session-195-cluster-1-p2": {
+          "sourceJa": "模式的な機器一覧を読む場面では、交流の入力側と直流を供給する側を区別します。実際の接続や電圧を確かめる作業とは別で、本講では配線や測定の指示を出しません。",
+          "translations": {
+            "en": "When reading a schematic equipment list, distinguish the alternating-current input side from the direct-current supply side. This is separate from work to check actual connections or voltage; the lesson gives no wiring or measurement instructions.",
+            "vi": "Khi đọc danh sách thiết bị dạng sơ lược, cần phân biệt phía đầu vào xoay chiều với phía cấp điện một chiều. Đây là việc riêng với kiểm tra đấu nối hay điện áp thực tế; bài này không chỉ dẫn đi dây hoặc đo."
+          }
+        },
+        "kensetsu-common-session-195-cluster-1:prompt": {
+          "sourceJa": "整流器について、入力側と出力側をどのように説明しますか。",
+          "translations": {
+            "en": "How do you describe the input and output sides of a rectifier?",
+            "vi": "Bạn mô tả phía đầu vào và đầu ra của bộ chỉnh lưu thế nào?"
+          }
+        },
+        "kensetsu-common-session-195-cluster-2:title": {
+          "sourceJa": "蓄える装置",
+          "translations": {
+            "en": "A storing device",
+            "vi": "Thiết bị lưu trữ"
+          }
+        },
+        "kensetsu-common-session-195-cluster-2-p1": {
+          "sourceJa": "蓄電池は充電してエネルギーを蓄え、放電によって電力を供給できる装置です。充電と放電は働きの方向が違います。整流器の変換機能と蓄電池の蓄える機能を分けます。",
+          "translations": {
+            "en": "A storage battery stores energy through charging and can supply electrical power through discharge. Charging and discharging have different directions of action. Distinguish the rectifier’s conversion function from the battery’s storage function.",
+            "vi": "Ắc quy lưu trữ năng lượng bằng sạc và có thể cấp điện bằng phóng điện. Sạc và phóng điện có chiều hoạt động khác nhau. Cần phân biệt chức năng chuyển đổi của bộ chỉnh lưu với chức năng lưu trữ của ắc quy."
+          }
+        },
+        "kensetsu-common-session-195-cluster-2-p2": {
+          "sourceJa": "架空の説明例で「直流をつくる部分」と「蓄えたエネルギーから供給する部分」を別欄にします。電池という名称だけで使える充電器や交換方法が決まるわけではありません。",
+          "translations": {
+            "en": "In a hypothetical explanation, use separate columns for “the part that produces direct current” and “the part that supplies power from stored energy.” The name “battery” alone does not determine compatible chargers or replacement methods.",
+            "vi": "Trong ví dụ giải thích giả định, tách cột “phần tạo điện một chiều” và “phần cấp từ năng lượng đã lưu trữ”. Chỉ tên gọi pin hay ắc quy không quyết định được bộ sạc dùng được hoặc cách thay."
+          }
+        },
+        "kensetsu-common-session-195-cluster-2:prompt": {
+          "sourceJa": "直流を得る機能とエネルギーを蓄える機能を、どう区別しますか。",
+          "translations": {
+            "en": "How do you distinguish obtaining direct current from storing energy?",
+            "vi": "Bạn phân biệt chức năng lấy điện một chiều với chức năng lưu trữ năng lượng thế nào?"
+          }
+        },
+        "kensetsu-common-session-195-cluster-3:title": {
+          "sourceJa": "バックアップを理解する",
+          "translations": {
+            "en": "Understand backup",
+            "vi": "Hiểu nguồn dự phòng"
+          }
+        },
+        "kensetsu-common-session-195-cluster-3-p1": {
+          "sourceJa": "蓄電池を含む電源システムは、停電時の電力供給を支える用途に使われます。ただし、対象機器や系統構成、蓄電池の条件によって対応は異なり、何時間でも供給できるという意味ではありません。",
+          "translations": {
+            "en": "Power-supply systems including storage batteries are used to support power supply during outages. Their response, however, differs according to the intended equipment, system configuration and battery conditions; this does not mean they can supply power for any number of hours.",
+            "vi": "Hệ thống nguồn có ắc quy dùng để hỗ trợ cấp điện khi mất điện. Tuy nhiên, khả năng đáp ứng khác nhau tùy thiết bị, cấu hình hệ thống và điều kiện ắc quy; không có nghĩa cấp được điện trong bao nhiêu giờ cũng được."
+          }
+        },
+        "kensetsu-common-session-195-cluster-3-p2": {
+          "sourceJa": "通信装置の一覧でバックアップありと記載されていても、必要時間を満たすかは別の照合です。具体的な負荷、容量、状態などの条件を未確認のまま「停電対策は十分」と結論づけません。",
+          "translations": {
+            "en": "Even if a communication-equipment list says backup is provided, whether it meets the required duration is a separate comparison. Do not conclude that outage measures are sufficient without checking specific load, capacity, condition and similar factors.",
+            "vi": "Dù danh sách thiết bị thông tin ghi có dự phòng, có đáp ứng thời gian cần thiết không vẫn là việc đối chiếu riêng. Không kết luận “biện pháp mất điện đã đủ” khi chưa kiểm tra điều kiện như tải cụ thể, dung lượng và trạng thái."
+          }
+        },
+        "kensetsu-common-session-195-cluster-3:prompt": {
+          "sourceJa": "「バックアップあり」から必要な供給時間を満たすと即断できない理由は何ですか。",
+          "translations": {
+            "en": "Why can “backup provided” not immediately establish that the required supply duration is met?",
+            "vi": "Vì sao không thể từ “có dự phòng” mà kết luận ngay đáp ứng thời gian cấp điện cần thiết?"
+          }
+        },
+        "kensetsu-common-session-195-cluster-4:title": {
+          "sourceJa": "状態を混ぜずに伝える",
+          "translations": {
+            "en": "Convey states without mixing them",
+            "vi": "Truyền đạt các trạng thái không lẫn nhau"
+          }
+        },
+        "kensetsu-common-session-195-cluster-4-p1": {
+          "sourceJa": "装置の型式が資料と一致したこと、充電の状態、供給先の確認、点検の結果は異なる情報です。名称の一致を、電源系統全体の健全性や使用承認へ置き換えないようにします。",
+          "translations": {
+            "en": "A device model matching documentation, charging state, confirmation of supply destinations and inspection results are different information. Avoid substituting a matching name for confirmation that the entire power-supply system is in sound condition or approved for use.",
+            "vi": "Kiểu thiết bị khớp tài liệu, trạng thái sạc, xác nhận nơi cấp điện và kết quả kiểm tra là thông tin khác nhau. Tránh lấy tên khớp thay cho tình trạng tốt hay phê duyệt sử dụng toàn hệ thống nguồn điện."
+          }
+        },
+        "kensetsu-common-session-195-cluster-4-p2": {
+          "sourceJa": "引継ぎ文の例は「整流器と蓄電池の型式欄は照合済み。供給先一覧と点検記録は未受領」です。既に分かった情報と残る確認を示し、操作や復旧の方法は担当者の確認事項として残します。",
+          "translations": {
+            "en": "An example handover states “The model fields for the rectifier and storage battery have been compared. The supply-destination list and inspection records have not been received.” State what is already known and which checks remain, leaving operating or restoration methods for confirmation by the person responsible.",
+            "vi": "Ví dụ bàn giao: “Đã đối chiếu mục kiểu bộ chỉnh lưu và ắc quy. Chưa nhận được danh sách nơi cấp điện và hồ sơ kiểm tra”. Nêu thông tin đã biết và việc kiểm tra còn lại, để cách thao tác hoặc khôi phục là mục người phụ trách cần xác nhận."
+          }
+        },
+        "kensetsu-common-session-195-cluster-4:prompt": {
+          "sourceJa": "型式欄だけ照合した状態を、給電まで確認済みと誤解させない報告にしてください。",
+          "translations": {
+            "en": "Report a state where only model fields have been compared, without implying that power delivery has also been checked.",
+            "vi": "Hãy báo cáo trạng thái mới đối chiếu mục kiểu thiết bị sao cho không bị hiểu nhầm là đã kiểm tra cả cấp điện."
+          }
+        },
+        "keyTerm:整流器": {
+          "sourceJa": "整流器",
+          "translations": {
+            "en": "Rectifier",
+            "vi": "Bộ chỉnh lưu"
+          }
+        },
+        "keyTerm:蓄電池": {
+          "sourceJa": "蓄電池",
+          "translations": {
+            "en": "Storage battery",
+            "vi": "Ắc quy"
+          }
+        },
+        "keyTerm:交流": {
+          "sourceJa": "交流",
+          "translations": {
+            "en": "Alternating current",
+            "vi": "Điện xoay chiều"
+          }
+        },
+        "keyTerm:直流": {
+          "sourceJa": "直流",
+          "translations": {
+            "en": "Direct current",
+            "vi": "Điện một chiều"
+          }
+        },
+        "keyTerm:充電": {
+          "sourceJa": "充電",
+          "translations": {
+            "en": "Charging",
+            "vi": "Sạc"
+          }
+        },
+        "keyTerm:放電": {
+          "sourceJa": "放電",
+          "translations": {
+            "en": "Discharging",
+            "vi": "Phóng điện"
+          }
+        }
+      }
+    },
+    {
+      "sessionId": "kensetsu-common-session-196",
+      "entries": {
+        "title": {
+          "sourceJa": "光接続の方法・保護部材・保持用具",
+          "translations": {
+            "en": "Optical connection methods, protective components and holding tools",
+            "vi": "Phương pháp nối quang, bộ phận bảo vệ và dụng cụ giữ"
+          }
+        },
+        "kensetsu-common-session-196-cluster-1:title": {
+          "sourceJa": "つなぐ方法の区別",
+          "translations": {
+            "en": "Distinguish connection methods",
+            "vi": "Phân biệt phương pháp nối"
+          }
+        },
+        "kensetsu-common-session-196-cluster-1-p1": {
+          "sourceJa": "融着接続は、光ファイバの接続部を加熱して一体につなぐ方法です。融着接続機はこのための機器です。ケーブルの外被全体を溶かしてつなぐという説明とは区別します。",
+          "translations": {
+            "en": "Fusion splicing joins optical fibres into one by heating the connection section. A fusion splicer is equipment for this purpose. Distinguish this from an explanation that the whole cable jacket is melted to make a connection.",
+            "vi": "Nối hàn nhiệt là phương pháp gia nhiệt phần nối của sợi quang để nối liền thành một. Máy hàn sợi quang là thiết bị cho việc này. Cần phân biệt với mô tả làm chảy toàn bộ vỏ ngoài cáp để nối."
+          }
+        },
+        "kensetsu-common-session-196-cluster-1-p2": {
+          "sourceJa": "光の接続にはメカニカルスプライスやコネクタを用いる方法もあります。方法の名称を知ることと、対象ファイバに適した方法や機器が確定することは別で、加工条件をここで選びません。",
+          "translations": {
+            "en": "Optical connections also include methods using mechanical splices or connectors. Knowing the method’s name is separate from determining the appropriate method or equipment for the intended fibre; processing conditions are not selected here.",
+            "vi": "Nối quang còn có phương pháp dùng mối nối cơ khí hoặc đầu nối. Biết tên phương pháp khác với chốt phương pháp hay thiết bị phù hợp cho sợi tương ứng; ở đây không chọn điều kiện gia công."
+          }
+        },
+        "kensetsu-common-session-196-cluster-1:prompt": {
+          "sourceJa": "「ケーブル全体を溶かす」という説明を、何をつなぐ方法かが分かる文へ直してください。",
+          "translations": {
+            "en": "Rewrite “melting the whole cable” into a sentence showing what the method joins.",
+            "vi": "Hãy sửa mô tả “làm chảy toàn bộ cáp” thành câu cho biết phương pháp này nối phần nào."
+          }
+        },
+        "kensetsu-common-session-196-cluster-2:title": {
+          "sourceJa": "接続部の保護",
+          "translations": {
+            "en": "Protect the connection section",
+            "vi": "Bảo vệ phần nối"
+          }
+        },
+        "kensetsu-common-session-196-cluster-2-p1": {
+          "sourceJa": "保護スリーブは、融着した部分の保護・補強に用いる部材です。ファイバの心数や構成などに応じた種類があります。保護部材の名称が同じでも、どれでも同じ条件で使えるとは限りません。",
+          "translations": {
+            "en": "A protective sleeve protects and reinforces a fusion-spliced section. Types differ according to fibre count, construction and similar factors. Even under the same protective-component name, not every item necessarily works under the same conditions.",
+            "vi": "Ống bảo vệ là bộ phận dùng bảo vệ và gia cường phần đã hàn nối. Có loại theo số sợi, cấu tạo và các yếu tố tương tự. Dù tên bộ phận bảo vệ giống nhau, không phải loại nào cũng dùng được cùng điều kiện."
+          }
+        },
+        "kensetsu-common-session-196-cluster-2-p2": {
+          "sourceJa": "資料上でスリーブが記載されていても、適合や接続の品質を確認したことにはなりません。加熱条件、挿入の順序や長さは対象品の指示に関わるため、本講では共通の施工手順にしません。",
+          "translations": {
+            "en": "A sleeve recorded in documentation does not mean compatibility or connection quality has been checked. Heating conditions and insertion order or length relate to the intended product’s instructions, so this lesson does not turn them into a common installation procedure.",
+            "vi": "Tài liệu có ghi ống bảo vệ không có nghĩa đã kiểm tra sự phù hợp hoặc chất lượng mối nối. Điều kiện gia nhiệt, thứ tự hay chiều dài đưa vào liên quan đến chỉ dẫn của sản phẩm tương ứng, nên bài này không biến thành quy trình thi công chung."
+          }
+        },
+        "kensetsu-common-session-196-cluster-2:prompt": {
+          "sourceJa": "スリーブの手配が済んだことと、接続品質が確認できたことを分ける理由は何ですか。",
+          "translations": {
+            "en": "Why distinguish completion of sleeve arrangements from confirmation of connection quality?",
+            "vi": "Vì sao phải phân biệt đã chuẩn bị ống bảo vệ với đã xác nhận chất lượng mối nối?"
+          }
+        },
+        "kensetsu-common-session-196-cluster-3:title": {
+          "sourceJa": "保持と被覆除去",
+          "translations": {
+            "en": "Holding and covering removal",
+            "vi": "Giữ và loại bỏ lớp bọc"
+          }
+        },
+        "kensetsu-common-session-196-cluster-3-p1": {
+          "sourceJa": "ファイバホルダは、ファイバを対応する機器や工具で保持・位置決めするための用具です。ジャケットリムーバなどの被覆除去用具は、対象の被覆を取り除くためのもので、保持用具とは役割が違います。",
+          "translations": {
+            "en": "A fibre holder holds and positions a fibre in compatible equipment or tools. Covering-removal tools, such as jacket removers, remove the intended covering and have a role different from holding tools.",
+            "vi": "Giá giữ sợi quang là dụng cụ giữ và định vị sợi trong thiết bị hoặc dụng cụ tương ứng. Dụng cụ loại bỏ lớp bọc như dụng cụ tuốt vỏ dùng để bỏ lớp bọc tương ứng, có vai trò khác dụng cụ giữ."
+          }
+        },
+        "kensetsu-common-session-196-cluster-3-p2": {
+          "sourceJa": "例えば工具の組合せ一覧なら、保持側、被覆除去側、接続機側をそれぞれ照合します。同じホルダを使えるか、対象被覆に対応するかは型式ごとの情報で、見た目の一致では判断しません。",
+          "translations": {
+            "en": "For example, in a tool-combination list, compare the holding side, covering-removal side and splicer side separately. Whether the same holder can be used and whether a tool suits the intended covering are model-specific information; do not judge them by matching appearance.",
+            "vi": "Ví dụ, trong danh sách tổ hợp dụng cụ, đối chiếu riêng phía giữ, phía bỏ lớp bọc và phía máy nối. Có dùng được cùng giá giữ hay có đáp ứng lớp bọc tương ứng không là thông tin theo từng kiểu; không đánh giá qua vẻ ngoài giống nhau."
+          }
+        },
+        "kensetsu-common-session-196-cluster-3:prompt": {
+          "sourceJa": "保持する用具と被覆を除去する用具では、対象へ何をする機能が違いますか。",
+          "translations": {
+            "en": "How do the functions of a holding tool and a covering-removal tool differ in what they do to the target?",
+            "vi": "Dụng cụ giữ và dụng cụ bỏ lớp bọc có chức năng tác động lên đối tượng khác nhau thế nào?"
+          }
+        },
+        "kensetsu-common-session-196-cluster-4:title": {
+          "sourceJa": "接続の有無と確認結果",
+          "translations": {
+            "en": "Connection status and checking results",
+            "vi": "Có nối hay chưa và kết quả kiểm tra"
+          }
+        },
+        "kensetsu-common-session-196-cluster-4-p1": {
+          "sourceJa": "機器にセットしたこと、接続したこと、保護したこと、接続損失などの確認結果があることは別の記録です。接続が見えるだけで、伝送の状態が良好と結論づけないようにします。",
+          "translations": {
+            "en": "Setting a fibre in equipment, joining it, protecting it and having checking results such as connection loss are separate records. Do not conclude that transmission is satisfactory merely because a connection is visible.",
+            "vi": "Đã đặt vào thiết bị, đã nối, đã bảo vệ và có kết quả kiểm tra như suy hao mối nối là các hồ sơ riêng. Không kết luận trạng thái truyền tốt chỉ vì nhìn thấy mối nối."
+          }
+        },
+        "kensetsu-common-session-196-cluster-4-p2": {
+          "sourceJa": "架空の整理例では「接続方法の記載は融着。保護部材の型式は照合中。伝送の確認記録は未受領」と書きます。方法、部材、品質の記録を分ければ、未了の範囲が具体的になります。",
+          "translations": {
+            "en": "A hypothetical organization example states “The recorded connection method is fusion splicing. The protective-component model is being compared. Transmission check records have not been received.” Separating records for method, component and quality makes the outstanding scope specific.",
+            "vi": "Ví dụ sắp xếp giả định ghi: “Phương pháp nối được ghi là hàn nhiệt. Đang đối chiếu kiểu bộ phận bảo vệ. Chưa nhận được hồ sơ kiểm tra truyền tín hiệu”. Tách hồ sơ phương pháp, bộ phận và chất lượng sẽ làm rõ cụ thể phạm vi chưa xong."
+          }
+        },
+        "kensetsu-common-session-196-cluster-4:prompt": {
+          "sourceJa": "接続方法・保護部材・品質の記録が別々に進んでいる状態を、短く引き継いでください。",
+          "translations": {
+            "en": "Briefly hand over a state where records for connection method, protective component and quality are progressing separately.",
+            "vi": "Hãy bàn giao ngắn trạng thái hồ sơ phương pháp nối, bộ phận bảo vệ và chất lượng đang tiến triển riêng."
+          }
+        },
+        "keyTerm:融着接続": {
+          "sourceJa": "融着接続",
+          "translations": {
+            "en": "Fusion splicing",
+            "vi": "Nối hàn nhiệt"
+          }
+        },
+        "keyTerm:保護スリーブ": {
+          "sourceJa": "保護スリーブ",
+          "translations": {
+            "en": "Protective sleeve",
+            "vi": "Ống bảo vệ"
+          }
+        },
+        "keyTerm:ファイバホルダ": {
+          "sourceJa": "ファイバホルダ",
+          "translations": {
+            "en": "Fibre holder",
+            "vi": "Giá giữ sợi quang"
+          }
+        },
+        "keyTerm:被覆除去": {
+          "sourceJa": "被覆除去",
+          "translations": {
+            "en": "Covering removal",
+            "vi": "Loại bỏ lớp bọc"
+          }
+        },
+        "keyTerm:コネクタ": {
+          "sourceJa": "コネクタ",
+          "translations": {
+            "en": "Connector",
+            "vi": "Đầu nối"
+          }
+        },
+        "keyTerm:接続損失": {
+          "sourceJa": "接続損失",
+          "translations": {
+            "en": "Connection loss",
+            "vi": "Suy hao mối nối"
+          }
+        }
+      }
+    }
+  ]
+}
