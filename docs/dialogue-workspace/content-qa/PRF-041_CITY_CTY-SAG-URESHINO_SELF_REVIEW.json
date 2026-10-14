@@ -1,0 +1,148 @@
+{
+  "cityId": "CTY-SAG-URESHINO",
+  "prefectureId": "PRF-041",
+  "baseline": "7c47081a15b1d0be703f9ad92609f06a7057c421",
+  "reviewType": "independent_author_full_self_review",
+  "generatedBy": "AI",
+  "authorAgent": "ureshino",
+  "selfReviewed": true,
+  "allFinalTurnsAndTasksRead": true,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "reviewedByNativeSpeaker": false,
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "inputPath": "docs/dialogue-workspace/content-qa/PRF-041_CITY_CTY-SAG-URESHINO_INPUT.json",
+  "inputSha256": "0722a43f536e552c6667531c9e9e6192f8c92f4b930caf66bc5816c37eca08ab",
+  "sourcePath": "scripts/dialogue-authoring/prf-041-city-cty-sag-ureshino.json",
+  "sourceSha256": "2394196c584a6156d9b6ef90aa4c765aff321176944e37a2cb26ff429464fb72",
+  "scenarioCount": 8,
+  "turnCount": 88,
+  "taskCount": 40,
+  "repairsDuringSelfReview": [
+    "温泉の冒頭で手荷物を受付預かりと示唆せず、ロッカーの説明に統一。",
+    "茶畑で二個ずつのかご配りに直後のNPCが明示的に返答。",
+    "寿司のネタはゆでえびと茹でて冷ましたえびに統一。",
+    "タクシーは乗車相談の終了と出発の挨拶で閉じ、架空旅館の入口設備を実在情報としない。"
+  ],
+  "checks": {
+    "exact11TurnsEach": true,
+    "alternationByPosition": "NPC_PLAYER_NPC_PLAYER_NPC_PLAYER_NPC_PLAYER_NPC_PLAYER_NPC",
+    "fiveSpecificTasksEach": true,
+    "japaneseOnlyTurns": true,
+    "noLevelGates": true,
+    "noTemplateReuseWithinCity": true,
+    "causalProgressionIndividuallyReviewed": true,
+    "roleAlignmentIndividuallyReviewed": true,
+    "closureIndividuallyReviewed": true,
+    "realPolicyClaimsExcluded": true
+  },
+  "scenarios": [
+    {
+      "scenarioId": "SC-SAG-URESHINO-001",
+      "inputRuntimeSha256": "eb627779765eb1662f82611ee9a012bb46d437d5ce8e4e2ba46b638b1b379f86",
+      "sourceScenarioSha256": "e1b04ec6a644e204fd75c7c444329ae42c7127bb3909e9bb81ba93081e14f9b8",
+      "causalPlot": "着替えと小さい手ぬぐいだけを持参→大きい貸出しタオルを一枚追加→ロッカー返却という誤解を解消→自分の布と借りた物を分ける→貴重品収納と支払いを済ませて入浴へ。",
+      "tasksAlignedWithPlayerTurns": true,
+      "roleFinding": "Matches location job; concrete duties and limits retained.",
+      "outcome": "相談を完結し、その場で実行する内容と後続の行動を区別。",
+      "selfReviewDecision": "accepted_ai_self_review_only"
+    },
+    {
+      "scenarioId": "SC-LOC-SAG-URESHINO-02-001",
+      "inputRuntimeSha256": "7c9365fbb20c2eeb6a1843e90a67df1f6be1c8a4c780d87e165772724b135ae3",
+      "sourceScenarioSha256": "581f032756b55303b195ebdb08903ce19aa9e79ae6b4fd5fde7fcc5ebc70db60",
+      "causalPlot": "空のかご配り中の雨雲発見→穴のないシート選択→葉との接触を防ぐ提案→ひびのある棒を使用しない→支柱で固定後に空かご収納、雨なら農家と葉を避難。",
+      "tasksAlignedWithPlayerTurns": true,
+      "roleFinding": "Matches location job; concrete duties and limits retained.",
+      "outcome": "相談を完結し、その場で実行する内容と後続の行動を区別。",
+      "selfReviewDecision": "accepted_ai_self_review_only"
+    },
+    {
+      "scenarioId": "SC-LOC-SAG-URESHINO-03-001",
+      "inputRuntimeSha256": "4fc7de43658926a8d965ea3acbb4ecf6aa94cdc09140dacbae56621ffc2735f6",
+      "sourceScenarioSha256": "0e86a7ad3c22ff2b760520ecb6ff432c19c89201a6d8dc3557535f991357b577",
+      "causalPlot": "急須のない贈答相手→マグカップ用ティーバッグ提案→一杯一袋と二人五日分を計算→二箱に増やす→絵付きの説明を同包して使い方も伝える。",
+      "tasksAlignedWithPlayerTurns": true,
+      "roleFinding": "Replaced clothing-size/return recipe with tea-gift recipient equipment, portions, brewing explanation.",
+      "outcome": "相談を完結し、その場で実行する内容と後続の行動を区別。",
+      "selfReviewDecision": "accepted_ai_self_review_only"
+    },
+    {
+      "scenarioId": "SC-LOC-SAG-URESHINO-04-001",
+      "inputRuntimeSha256": "1d241db201b197f85549de0b8bf66af97941a3bfe57b62d07490a7491e386642",
+      "sourceScenarioSha256": "1ec16741c88c91410330f6f87bb4213f133779ea43392902006f5b9849379d33",
+      "causalPlot": "生魚の食感が苦手→アレルギーと区別→加熱済みのえびと卵を各二貫選択→わさび別添えと茶の温度調整→醤油の有無を確認し味付けを自分で加減。",
+      "tasksAlignedWithPlayerTurns": true,
+      "roleFinding": "Matches location job; concrete duties and limits retained.",
+      "outcome": "相談を完結し、その場で実行する内容と後続の行動を区別。",
+      "selfReviewDecision": "accepted_ai_self_review_only"
+    },
+    {
+      "scenarioId": "SC-LOC-SAG-URESHINO-05-001",
+      "inputRuntimeSha256": "abec84ae50e4bcc7463900f331349b07edd83869d33d1012c1d916ad917caae7",
+      "sourceScenarioSha256": "426634ae7784467fed64870aee0786898828a2e72395c01719968939cabbfd90",
+      "causalPlot": "掃除場所と搬入車旋回が競合→先に西側へ変更→掘削区域の近道を拒否→車の退出だけを再開根拠にしない→道具収納と待機場所報告後、管理者の許可を待つ。",
+      "tasksAlignedWithPlayerTurns": true,
+      "roleFinding": "Matches location job; concrete duties and limits retained.",
+      "outcome": "相談を完結し、その場で実行する内容と後続の行動を区別。",
+      "selfReviewDecision": "accepted_ai_self_review_only"
+    },
+    {
+      "scenarioId": "SC-LOC-SAG-URESHINO-06-001",
+      "inputRuntimeSha256": "694995ac865bb4872676723d4cc6b9175b807a03a324d78a9648817640e99cde",
+      "sourceScenarioSha256": "c7fadbcb14ef3d8bfe2800e11f9ef21cd8d6b8291e6377bd7199d13be25bb9b3",
+      "causalPlot": "サラダ係が肉用まな板を選びかける→色分けと場所分離→肉用包丁も除外→袋の手伝いと汁の汚れを開示→エプロン外し、手洗い、新品着用後、野菜用道具を使い講師確認へ。",
+      "tasksAlignedWithPlayerTurns": true,
+      "roleFinding": "Matches location job; concrete duties and limits retained.",
+      "outcome": "相談を完結し、その場で実行する内容と後続の行動を区別。",
+      "selfReviewDecision": "accepted_ai_self_review_only"
+    },
+    {
+      "scenarioId": "SC-LOC-SAG-URESHINO-07-001",
+      "inputRuntimeSha256": "fa1794d6fba175712ba7f89b325f52efb581e43cf65bb72dffce4eea28447b13",
+      "sourceScenarioSha256": "7c598dccaa943249bb4aaa0db2bf07245c9d9c076e35a21efcb35daa957305fe",
+      "causalPlot": "裏門案内と足の痛みが衝突→予約の正面入口写真を確認→車寄せとスロープを選択→安全な停車不能なら旅館職員を呼ぶ→支払い、ゆっくり降車、荷物受取りの順を共有し出発。",
+      "tasksAlignedWithPlayerTurns": true,
+      "roleFinding": "Replaced station elevator/gate recipe with taxi pickup, lodging access and safe drop-off.",
+      "outcome": "相談を完結し、その場で実行する内容と後続の行動を区別。",
+      "selfReviewDecision": "accepted_ai_self_review_only"
+    },
+    {
+      "scenarioId": "SC-LOC-SAG-URESHINO-08-001",
+      "inputRuntimeSha256": "3c3a9e1a0ce184823a846f5f4d0c257708b0d05eb083344122274fef962ab04a",
+      "sourceScenarioSha256": "7b96f01f963dba995524bf054219f07cba5d51408b9a51373a6666e26e646bd2",
+      "causalPlot": "給与口座希望で最近転居→在留カードの旧住所発見→架空銀行の本人確認条件を説明→会社書類と自分の番号を準備→給与先は勤務先へ相談し、本日開設の保証なしで再来店。",
+      "tasksAlignedWithPlayerTurns": true,
+      "roleFinding": "Matches location job; concrete duties and limits retained.",
+      "outcome": "相談を完結し、その場で実行する内容と後続の行動を区別。",
+      "selfReviewDecision": "accepted_ai_self_review_only"
+    }
+  ],
+  "causalPlots": {
+    "SC-SAG-URESHINO-001": "着替えと小さい手ぬぐいだけを持参→大きい貸出しタオルを一枚追加→ロッカー返却という誤解を解消→自分の布と借りた物を分ける→貴重品収納と支払いを済ませて入浴へ。",
+    "SC-LOC-SAG-URESHINO-02-001": "空のかご配り中の雨雲発見→穴のないシート選択→葉との接触を防ぐ提案→ひびのある棒を使用しない→支柱で固定後に空かご収納、雨なら農家と葉を避難。",
+    "SC-LOC-SAG-URESHINO-03-001": "急須のない贈答相手→マグカップ用ティーバッグ提案→一杯一袋と二人五日分を計算→二箱に増やす→絵付きの説明を同包して使い方も伝える。",
+    "SC-LOC-SAG-URESHINO-04-001": "生魚の食感が苦手→アレルギーと区別→加熱済みのえびと卵を各二貫選択→わさび別添えと茶の温度調整→醤油の有無を確認し味付けを自分で加減。",
+    "SC-LOC-SAG-URESHINO-05-001": "掃除場所と搬入車旋回が競合→先に西側へ変更→掘削区域の近道を拒否→車の退出だけを再開根拠にしない→道具収納と待機場所報告後、管理者の許可を待つ。",
+    "SC-LOC-SAG-URESHINO-06-001": "サラダ係が肉用まな板を選びかける→色分けと場所分離→肉用包丁も除外→袋の手伝いと汁の汚れを開示→エプロン外し、手洗い、新品着用後、野菜用道具を使い講師確認へ。",
+    "SC-LOC-SAG-URESHINO-07-001": "裏門案内と足の痛みが衝突→予約の正面入口写真を確認→車寄せとスロープを選択→安全な停車不能なら旅館職員を呼ぶ→支払い、ゆっくり降車、荷物受取りの順を共有し出発。",
+    "SC-LOC-SAG-URESHINO-08-001": "給与口座希望で最近転居→在留カードの旧住所発見→架空銀行の本人確認条件を説明→会社書類と自分の番号を準備→給与先は勤務先へ相談し、本日開設の保証なしで再来店。"
+  },
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "roleAlignmentSha256": "294380f79303903a984dbdf1a0c2fb8f1b6715b0af8063e6040eb22c7a5cc58e",
+  "metadataFinalReread": true,
+  "roleMetadataFindings": [
+    "Cooking class: Classroom/Cooking Instructor supported registry mapping.",
+    "Taxi: retain Station broad transport grouping with Taxi Driver; no railway duties or verified station layout."
+  ]
+}
