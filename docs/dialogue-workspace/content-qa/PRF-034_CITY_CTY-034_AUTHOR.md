@@ -1,0 +1,7 @@
+# CTY-034 Hiroshima independent author record
+
+Authored 21 new Japanese dialogues, 231 alternating NPC/PLAYER turns, and 105 distinct per-turn player goals. All scripts start and end with NPC speech; the final line provides a contextual farewell or departure greeting. Each script was reread independently for causality, response relevance, role limits, goal specificity, and closure. A mechanical exact-corpus duplicate check flagged two own NPC lines. The police farewell and hotel opening were independently reworded to refer to their specific context; both complete chains were reread. The original authored source is preserved at `scripts/dialogue-authoring/rejected/prf-034-city-cty-034-before-exact-duplicate-repair.json`. No peer prose was supplied or read.
+
+Only the assigned CTY-034 input was used for city/scenario/role context. No peer authored content was read or reviewed. Input remains preserved. This is AI author self-review, with no human, native-speaker, independent peer, or actual operator verification. Real names are learning labels; every premise states fictional service details. CTY-034-16 specifically uses a fictional temporary exhibition and does not claim the named venue currently operates.
+
+Source: `scripts/dialogue-authoring/prf-034-city-cty-034.json`. Review: `PRF-034_CITY_CTY-034_SELF_REVIEW.json`. Runtime integration and serial narrow commit/push are owned by the root agent. No runtime files or shared metadata were edited by this author.
