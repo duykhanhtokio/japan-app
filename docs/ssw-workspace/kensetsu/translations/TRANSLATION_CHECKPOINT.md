@@ -1,4 +1,4 @@
-# 建設 translation checkpoint — week 030, 2026-10-14
+# 建設 translation checkpoint — week 031, 2026-10-14
 
 Publisher workflow update2026-10-14: use six independent AI translators, two locales each. Each author translates and fully self-checks only their own pair against canonical Japanese. No cross-translation, cross-author reading or peer review. Root performs mechanical integration/runtime checks and persists each whole-week commit before advancing. Historical peer-review reports below remain historical; no independent peer review is claimed for batches from week018 onward.
 
@@ -12,7 +12,7 @@ Six new lessons received independent bounded AI semantic checks in en,vi,zh-CN,z
 
 Machine checks: scripts/check-kensetsu-week-translations.mjs verifies every source unit and all12locale keys, all paragraph/title/prompt/keyTerm/caption fields, immutable source, stable progress revision, stale suppression and unrelated-session identity. Adapter/index TypeScript checks use a minimal image-module declaration, not a full Expo build. Existing200question review-bank lesson hashes still pass. Actual seven-lesson reader web adapter verifies84locale–lesson combinations, expanded translations and originalJapanese, title/cluster/paragraph/prompt/caption/glossary/keyTerm/alt fields, close/reopen, missing locale without fallback, manual-only completion and reload. Threeviewport checks and Japanese/Vietnamese captures use the existing NotoSansJP font. DecorativeRoyal controls/images and safearea/storage are adapted; native iOS/Android and all-script glyph coverage remain unverified. The isolated build has an unavailableexpo/tsconfig.base warning. Shared reading instruction and example reflection remain fully translated in data but are not separately displayed by the current reader.
 
-Current state:30 translated weeks/55;210 translated lessons/385;175 lessons remain. Next batch is week031, sessions211–217, in all12locales. Six independent authors self-reviewed only their own pair directly against canonical Japanese. No cross-translation or peer review. Remote verification required before advancing.
+Current state:31 translated weeks/55;217 translated lessons/385;168 lessons remain. Next batch is week032, sessions218–224, in all12locales. Six independent authors self-reviewed only their own pair directly against canonical Japanese. No cross-translation or peer review. Remote verification required before advancing.
 
 Reader repair2026-10-13: existing shared reading instructions, distinct cluster activities and example reflections are now visible with their existing selected-locale translations. Shared instructions render once; identical activity/application prompts share one visible copy. This supersedes the historical reader omission noted in earlier weekly reports. No new lesson translation batch is claimed; week009 remains next. See ../READER_EXERCISES_CHECKPOINT_2026-10-13.md and its adapted-reader QA evidence.
 
@@ -244,3 +244,8 @@ Seven lessons, 163 source units ×12=1956 strings; 56 full paragraphs ×12=672 p
 ## Week 030 independent AI translation coverage — 2026-10-14
 
 Seven lessons, 163 source units ×12=1956 strings; 56 full paragraphs ×12=672 paragraph translations. Six independent authors fully self-reviewed only their own two locales. No peer or cross-translation review. Exact Japanese/IDs/keys/numeric tokens, final pair/runtime mapping, 590 preserved files, structural adapter tests and narrow TypeScript pass. Japanese-only review bank unchanged. Browser runtime and screenshots could not run because no Chromium executable is installed in this session; no browser/native visual pass is claimed. AI language/domain/rights/release approval remains pending. Next whole week031, sessions211–217, only after remote persistence verification.
+
+
+## Week 031 independent AI translation coverage — 2026-10-14
+
+Seven lessons, 163 source units ×12=1956 strings; 56 full paragraphs ×12=672 paragraph translations. Six independent authors fully self-reviewed only their own two locales. No peer or cross-translation review. Exact Japanese/IDs/keys/numeric tokens, final pair/runtime mapping, 597 preserved files, structural adapter tests and narrow TypeScript pass. Japanese-only review bank unchanged. Browser runtime and screenshots could not run because no Chromium executable is installed in this session; no browser/native visual pass is claimed. AI language/domain/rights/release approval remains pending. Next whole week032, sessions218–224, only after remote persistence verification.
