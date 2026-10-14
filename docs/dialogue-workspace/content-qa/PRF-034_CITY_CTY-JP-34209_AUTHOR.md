@@ -1,0 +1,3 @@
+# CTY-JP-34209 independent author record
+
+8 fictional Japanese scenarios; 88 alternating turns; 40 distinct Player utterances and concrete goals. Only own city input and own staged source were read. All final turns and goals were reread. Self-review corrected the police officer's over-specific assumption about where keys were lost and the bank reception farewell; rejected source was preserved. Categories and NPC jobs match the assigned venues; no role alignment file is necessary. No peer, human, native-speaker or operator verification is claimed. Root owns runtime integration and durable city commit.
