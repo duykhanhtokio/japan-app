@@ -1,7 +1,9 @@
-# Saga PRF-041 — Takeo continuation
+# Saga PRF-041 — hoàn tất vòng tiếng Nhật độc lập
 
-61 hội thoại trước đã được lưu và xác minh trên recovery/jlpt-n3-n1 tại d12615ef450d44c64a3f417308d5b4ce0c335e45 (WORK PERSISTENCE PASS). GitHub connection dựng lại đủ9 commit với cây nội dung trùng từng commit cục bộ đến be89c48c; lịch sử gốc cục bộ được giữ, remote commit map trong PRF-041_PUBLICATION_MAP.json. Tiến trình Tokutei đồng thời được giữ.
+93/93 hội thoại thuộc10 thành phố:1.023 lượt tiếng Nhật,465 nhiệm vụ Player. Tác giả riêng từng thành phố tự đọc lại toàn bộ bản cuối, không đọc/kiểm tra chéo. Mỗi thành phố có commit riêng trên recovery/jlpt-n3-n1 và vượt WORK PERSISTENCE trước checkpoint này. Danh sách commit/hashes: PRF-041_DURABLE_CITY_COMMITS.json.
 
-Takeo đã soạn/tự đọc lại độc lập thêm8 hội thoại,88 lượt và40 nhiệm vụ, tiếng Nhật; không đọc/kiểm tra chéo. Saga đạt69/93 hội thoại,759 lượt,345 nhiệm vụ. Bản ngữ/con người/thiết bị chưa duyệt; chưa dịch. Các kiểm tra adapter/corpus/sàng lọc trùng/UI lock 10/10 và NPC progression đều PASS; riêng Takeo chưa vượt remote gate tại thời điểm commit chứa báo cáo này.
+Kiểm tra repository/loader và sàng lọc kỹ thuật toàn tỉnh/toàn kho đều PASS: giữ7.128 mã chuẩn, ID lượt nói và chuỗi; không câu Player/NPC trùng nguyên văn chạm Saga; không nhóm trùng kịch bản/chuẩn hóa/gần giống/mục tiêu/đáp án/tiêu đề/recipe. UI lock10/10 và corrected NPC progression PASS. Sàng lọc kỹ thuật không phải kiểm duyệt ngữ nghĩa toàn kho.
 
-Còn24 hội thoại ở Kashima,Ogi,Kanzaki. Tiếp theo Kashima CTY-JP-41207 sau khi commit Takeo vượt push/fetch và WORK PERSISTENCE PASS.
+Metadata vai trò và địa điểm đã sửa theo tác giả; bối cảnh/điều kiện mô phỏng được ghi rõ. Chưa xác minh tất cả tên cơ sở/giờ/quy định/artwork; chưa có duyệt người thật/bản ngữ/thiết bị/release. Chỉ tiếng Nhật, chưa dịch. Concurrent Tokutei commits preserved.
+
+Tổng vòng này6.402/7.128 (89,8%); còn726 hội thoại. Tiếp theo Nagasaki PRF-042 sau khi commit chứa checkpoint này được xuất bản và WORK PERSISTENCE PASS.
