@@ -1,0 +1,408 @@
+{
+  "cityId": "CTY-JP-46206",
+  "baseline": "70b9863045bb19397bc94bc4f0f393234389fcc3",
+  "inputSha256": "ad21d68901d2e23963fb6291cffdb7514870b0cb0a1a5c8096f1f0366595e3c7",
+  "sourceSha256": "2af4cd6bad8595936fea6d89afde184367ecb46ffb7f6e15ff7f7aa811ecff24",
+  "roleAlignmentSha256": "f0e910574ff8c3e685a05e7e91245f01b1dc9c1ae6794faf559e45ea67a03602",
+  "sourceFile": "scripts/dialogue-authoring/prf-046-city-cty-jp-46206.json",
+  "roleAlignmentFile": "docs/dialogue-workspace/content-qa/PRF-046_CITY_CTY-JP-46206_ROLE_ALIGNMENT.json",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-46206-01-001": {
+      "title": "夜中を過ぎる帰路の日付を購入前に確かめる",
+      "causalProgression": "阿久根市に配置した架空の駅切符相談窓口。日帰りのつもりの客が、催し終了後の帰路は日付が変わる可能性に気づく。往復する日付と帰りの列車の有無を先に照会し、同日扱いや券種の条件を決めつけず購入を保留する。実在の終列車や切符の有効期間は示さない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "ask_after_midnight_return_daytrip_ticket_conditions",
+          "goal": "夜の催し後に帰る予定だが、夜中を過ぎても日帰りの切符でよいか迷うと相談する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "show_event_end_but_admit_station_arrival_and_service_unknown",
+          "goal": "終了予定を示し、片付けで駅到着時刻が読めず帰路の列車も未確認と説明する。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "pause_discount_return_purchase_and_compare_next_day_conditions",
+          "goal": "安そうな往復商品を先に選ばず、翌日帰りも含め条件を比較したいと述べる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "ask_event_cleanup_time_before_lodging_or_shorter_visit_choice",
+          "goal": "主催者に片付けの目安を聞き、列車に間に合わないなら宿泊か短時間参加を決めてから購入すると述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "request_options_only_until_dates_and_ticket_conditions_match",
+          "goal": "今日は往復候補の照会だけにし、日付変更も同じ扱いと決めず予定と券種を購入前に照合すると伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46206-02-001": {
+      "title": "通知の対象期間を回答期限と取り違えない",
+      "causalProgression": "架空の行政通知読解相談窓口。通知の対象期間が過去なので対応不要と思った客が、別欄の回答期限を見落としている。変更のない内容にも回答が必要か、提出方法や不明欄を担当へ照会する。回答義務や受付完了を窓口案内だけで断定しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "explain_past_target_period_and_reply_form_confusion",
+          "goal": "対象期間が先月までなので対応不要と思ったが、返信用紙もあり不安と相談する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "identify_separate_response_deadline_previously_missed",
+          "goal": "対象期間末だけを見て別欄の回答期限を見落としたと伝える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "ask_blank_or_no_change_answer_for_unchanged_status",
+          "goal": "状況が変わらない場合に空欄でよいか変更なしの回答が必要か分からないと述べる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "list_no_change_reply_blank_field_and_submission_options",
+          "goal": "変更なしの回答要否、空欄可否、郵送以外の提出方法の三点を照会したいと伝える。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "consult_and_record_required_reply_and_receipt_confirmation",
+          "goal": "通知を手元に担当へ相談し回答方法と受付確認を記録して、過去の対象期間だけで捨てないと述べる。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46206-03-001": {
+      "title": "紹介状を持っていても予約済みとは限らないと確認する",
+      "causalProgression": "架空の病院初診案内窓口。他院の紹介状を持つ患者が、自分で予約をしていないのに受診時間も決まっていると思って来訪する。看護師が受診目的・症状の経過と予約案内の有無を聞き、受付へ照会する。紹介状による即日診察や優先順位、診断を保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "explain_referral_letter_without_personal_booking",
+          "goal": "他院の紹介状で受診時間も決まると思ったが、自分では予約連絡していないと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "recognize_contact_instruction_and_missing_appointment_record",
+          "goal": "日時の紙はなく病院へ連絡との案内があり、紹介状取得で予約済みと思い込んだと伝える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "state_persistent_tinnitus_reason_without_diagnosis",
+          "goal": "続く耳鳴りの相談で紹介され、先週から同様だが病名は不明と説明する。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "show_medicine_record_and_request_actual_reception_availability",
+          "goal": "薬手帳があり紹介状を開かず担当へ渡すと述べ、今日の受診可否と受付方法を確認したいと頼む。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "request_written_date_items_and_booking_confirmation",
+          "goal": "別日受診でも日時と持ち物を紙で希望し、日本語は聞き返して予約成立も確認すると述べる。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46206-04-001": {
+      "title": "拾った人から預かった袋の引継ぎを説明する",
+      "causalProgression": "架空の警察拾得物相談窓口。同僚が拾った買物袋を預かって届ける客が、自分の移動経路と実際の拾得場所を混同しないよう整理する。未確認の中身を断定せず、同僚の連絡可否と記録に必要な情報を確認する。所有者や拾得者の権利を代理で決めない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "identify_handover_from_colleague_not_personal_finding",
+          "goal": "同僚が拾った袋を警察へ来る用事のある自分が預かったので、自分が拾得者ではないと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "separate_colleague_sidewalk_location_from_own_route",
+          "goal": "昼ごろ店前の歩道で拾ったと聞き、自分が通った別の道で拾ったわけではないと伝える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "state_unopened_bag_and_secondhand_content_report",
+          "goal": "自分は袋を開けず、同僚の本らしき物という話を自分が確認した中身とは答えられないと述べる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "contact_actual_finder_for_landmark_time_without_guessing",
+          "goal": "同僚に連絡でき、目印と記憶する時刻を尋ね推測で補わないと述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "leave_finders_preferences_to_colleague_and_ask_contact_fields",
+          "goal": "同僚の希望を代理で選ばず本人に確認し、預かり経緯を説明して必要な連絡先を尋ねる。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46206-05-001": {
+      "title": "家族全員ではなく自分だけの転居を伝える",
+      "causalProgression": "架空の郵便転居相談窓口。実家から一人で移った客が、旧住所に残る家族の郵便まで一括転送されると思っている。移る人と残る人を区別し、申込範囲と反映確認を照会して、差出人の登録変更も別に行う。転送対象や開始日を保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "ask_forwarding_scope_for_only_self_moving",
+          "goal": "実家から自分だけ転居し、同姓の家族の郵便まで新住所へ転送されるか心配と相談する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "identify_parents_sister_remaining_and_only_own_mail_request",
+          "goal": "両親と妹は旧住所に残り、自分宛てだけの相談で家族名を一括記入しないようにしたいと述べる。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "pause_unsent_whole_household_selection_for_scope_check",
+          "goal": "全員分の欄へ進みかけたが未送信で、自分だけの扱いを確認してから申込みたいと伝える。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "ask_limits_and_status_check_and_notify_old_household",
+          "goal": "全郵便が届くと決めず条件と受付後の確認を聞き、実家にも自分宛ての到着を知らせてもらうと述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "update_senders_separately_and_review_two_addresses_name",
+          "goal": "会社と銀行へ別途住所変更を伝え、残る家族の旧住所と自分の新住所、申込む名前を見直して送信すると述べる。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46206-06-001": {
+      "title": "銀行の住所入力を完了したつもりでも送信状態を確認する",
+      "causalProgression": "架空の銀行登録情報相談窓口。住所変更を入力した客が、下書きのまま閉じた画面を完了と思っている。旧電話番号で確認が進まない点も含め、申請状況と本人確認方法を担当へ相談し、認証の回避や即時反映を求めない。登録完了や通知先変更を保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "ask_update_status_without_completion_notice",
+          "goal": "新住所を入力して完了と思ったが最後の案内は見ず、旧住所に通知が来て不安と相談する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "identify_draft_saved_not_submitted",
+          "goal": "下書き保存の表示で送信した記憶はないが、入力だけで登録済みと思ったと説明する。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "report_old_unusable_phone_blocking_confirmation",
+          "goal": "確認先が使っていない旧番号なので、住所と電話番号の両方を相談する必要があると伝える。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "request_valid_verification_and_status_before_duplicate_request",
+          "goal": "認証省略ではなく本人が使える確認方法を求め、重複申請前に下書きと受付状況の照会を頼む。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "bring_notice_date_and_check_registration_future_destination",
+          "goal": "通知の日付を示し変更済みと決めず、申請と今後の送付先を確かめ必要な本人確認で進めると述べる。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46206-07-001": {
+      "title": "植物性という表示だけで来客の食事を決めない",
+      "causalProgression": "架空のスーパー食品表示相談窓口。乳成分を避ける必要のある来客用に菓子を探す客が、正面の植物性表示を安全の保証と思っている。裏面の原材料と注意表示、商品ごとの差を読み、店員が摂取可否を判断せず、未確認なら購入を保留する。実在製品の安全や医療上の適否は示さない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "ask_plant_based_label_for_guest_milk_allergy",
+          "goal": "乳成分アレルギーの来客用に、正面の植物性表示ならよいか確かめたいと相談する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "state_limited_guest_instruction_and_no_safety_claim",
+          "goal": "乳成分を避けるとのみ聞き商品指定はなく、自分で大丈夫と判断して出さないと述べる。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "hold_unclear_warning_product_and_request_manufacturer_details",
+          "goal": "注意書きが不明なので商品を保留し、メーカー照会用の商品名と連絡先の欄を尋ねる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "check_each_flavor_and_show_label_to_guest",
+          "goal": "別の味も同じと決めず、本人に表示を見てもらい不明点を確認してから選ぶと述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "record_label_without_rushed_substitute_and_check_storage_later",
+          "goal": "代替品を急いで買わず本人確認用に表示を控え、後に選ぶ際も期限と開封後の扱いを読むと伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46206-08-001": {
+      "title": "設備の利用案内を散歩道全体の保証と思わない",
+      "causalProgression": "架空の公園経路確認窓口。車いすの同行者と短い散歩を考える客が、案内図の設備利用の印を公園全体の通行可能の意味だと思っている。印の対象と道の状態を分けて確認し、未確認の長い周回をやめ、同行者と相談して近い範囲を選ぶ。実在のバリアフリー設備や経路の安全を保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "explain_access_symbol_assumed_entire_wheelchair_loop",
+          "goal": "車いすの友人と散歩し、図の印で奥の周回も全て通れると思ったと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "request_loop_surface_step_details_without_symbol_guarantee",
+          "goal": "奥の周回への道を希望し、印だけで段差なしと決めず路面や通りにくい所を知りたいと述べる。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "accept_near_entrance_scope_for_social_walk",
+          "goal": "一周自体が目的ではなく友人と話しながら外へ出たいので、確認できる入口付近でもよいと伝える。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "consult_friend_after_rest_access_and_return_route_information",
+          "goal": "休憩場所への到達を決めず案内後に友人と選び、途中で戻る道も同じように確認したいと頼む。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "ask_friends_needs_and_shorten_walk_when_unconfirmed",
+          "goal": "友人の必要条件を聞いて確認済み範囲を共有し、不明な道へ進まず無理なら短くすると述べる。"
+        }
+      ]
+    }
+  },
+  "corrections": [
+    "最終自己再読で、車いすの同行者について身体の歩行を前提にしないよう公園の質問を「回る」に整えた。駅の日付をまたぐ表現と郵便の申込対象名も具体的にした。",
+    "旧版の反復目標を、直前のNPCと各応答に整合する固有の四十課題へ変更した。",
+    "駅は夜中を過ぎる日付と帰りの列車・券種条件を分け、未定の帰路で購入を急がない内容へ変更した。",
+    "行政は対象期間と回答期限を分け、変更なしでも回答が必要か担当へ照会する。",
+    "病院は紹介状と予約済みを区別し、即日受診や診断を看護師が保証しない。",
+    "警察は実際の拾得者と持参者、伝聞と確認済み事実を分け、拾得者の希望を代理で決めない。",
+    "郵便は一人だけの転居を家族全員と混同せず、銀行は下書き入力を申請完了と扱わず使えない電話の本人確認を担当へ相談する。",
+    "食品は植物性の言葉だけで乳アレルギーへの適否を判断せず購入を保留し、公園は設備の印を周回全体の通行保証と扱わない。"
+  ],
+  "checks": {
+    "exactScenarioIds": true,
+    "elevenAlternatingTurnsEach": true,
+    "fiveSpecificTasksEach": true,
+    "fortyDistinctPlayerTurns": true,
+    "fortyDistinctTaskGoals": true,
+    "allFinalTitlesPremisesTurnsTasksAndRolesReread": true,
+    "specificCausalProgression": true,
+    "concreteNpcClosures": true,
+    "japaneseOnlyProse": true,
+    "supportedCategoriesExactMatch": true,
+    "fictionalVenuesNullHoursAddresses": true,
+    "noRealPolicyScheduleMedicalOrRefundGuarantees": true,
+    "noSharedOrRuntimeWrites": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "独立した自己レビューのみ。人間・母語話者・同僚のレビューは未実施。",
+    "実在の制度・運行・設備・商品の適否やアレルギー安全性は未検証。既存画像との一致は保証しない。",
+    "実機確認・公開承認・翻訳は未実施。"
+  ]
+}
