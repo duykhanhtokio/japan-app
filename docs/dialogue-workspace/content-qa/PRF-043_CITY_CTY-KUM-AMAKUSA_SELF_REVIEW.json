@@ -1,0 +1,72 @@
+{
+  "cityId": "CTY-KUM-AMAKUSA",
+  "baseline": "de054c902c4a00ad79944220ae87a64373782f14",
+  "inputSha256": "b958603d15cab5c0f8fafb703694f0ff6dddd5c35ccd309c4f0fa4378451e1ae",
+  "sourceSha256": "5095753e032d11b4271a5a711dff6083837ed6b933249ec43d6ef98e4485e75f",
+  "roleAlignmentSha256": "19333541d99618a064ec3619fc283dc5d3ed2f1a9341b6fb254b7b09720e0c94",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-KUM-AMAKUSA-001": "運航判断待ち→支払保留→大型荷物の船内・陸上扱い→揺れの不安→連れを呼んで二人で説明を聞く。",
+    "SC-LOC-KUM-AMAKUSA-02-001": "伝票十二番と箱二十一番の不一致→未移動→記入者不明の数字→通路の水たまり→移動と完了印を保留して責任者へ。",
+    "SC-LOC-KUM-AMAKUSA-03-001": "撮影不可の札→持帰り資料→大きな文字→二部品の丸い側の読み違い→展示番号付きの資料で理解して再質問。",
+    "SC-LOC-KUM-AMAKUSA-04-001": "袖口破れ→入室前の交換→ラベル切り身と票詰め合わせ→版も未確定→更衣担当へ行き、ラベル判断を待つ。",
+    "SC-LOC-KUM-AMAKUSA-05-001": "カバー表示と消えた本体表示→本体の資料を家で探す→カバーのみ照合→乾燥表示は不明→乾燥を選ばず別の袋で持ち帰る計画。",
+    "SC-LOC-KUM-AMAKUSA-06-001": "帰り未定→片道申込み→似た停留所名の区別→窓口現金と車内扱いを分ける→明日の利用を訂正して発券。",
+    "SC-LOC-KUM-AMAKUSA-07-001": "重い荷物と段差→屋内経路とベンチ→二十分の余裕→積込みの段差・援助は未確認→座席変更不要、乗務員の返事を待つ。",
+    "SC-LOC-KUM-AMAKUSA-08-001": "古い宛名付きの箱→カップの動き→受取人不在と勤務先の可否→住所確定まで伝票を書かず持帰り→見込みと確約を分ける。"
+  },
+  "corrections": [
+    "元の汎用的な相づちと繰返し目標を、八つの別々の障害・意思決定・結末と四十の具体的目標へ書き直した。",
+    "二つのバス場所から列車・特急・ホーム・改札の案内を取り除き、元の場所IDのままバス用件へ修正した。",
+    "食品工場とランドリー職を修正し、水産物仕分けをWarehouseへ対応。遊覧船相談はNature/Guideの案内職で、乗船承認や発券は行わない。",
+    "最終再読で船の質問を欠航が前提に聞こえる表現から運航判断前へ修正した。",
+    "展示の札も撮影できない仮定の規定を明確に言い直した。",
+    "郵便の包装見直しは持帰り後に行うとし、当日保留の結末と時系列を合わせた。"
+  ],
+  "checks": {
+    "exactAssignedScenarioIds": "PASS",
+    "elevenAlternatingNpcPlayerTurns": "PASS: 配列の奇数位置NPC、偶数位置PLAYER。元IDへ機械的に対応する。",
+    "fiveContextualGoalsPerScenario": "PASS: 全四十目標を直前NPCと該当PLAYERの全文で再照合。",
+    "playerUtterancesUnique40": "PASS",
+    "concreteGoalsUnique40": "PASS",
+    "intentIdsUnique40": "PASS",
+    "npcUtterancesUnique48": "PASS",
+    "japaneseSpokenTextOnly": "PASS",
+    "noReusableAcknowledgmentOnlyPlayerTurns": "PASS",
+    "distinctCausalProgression": "PASS: 別用件・障害・追質問・決定を個別に確認。",
+    "npcFinalClosureAll8": "PASS",
+    "supportedRolePairs": "PASS: src/data/npc-progression.tsのNPC_CATEGORIESへ全八カテゴリが正規化一致。職名はカテゴリの業務と対話の権限へ対応。",
+    "fictionalVenuePremisesAll8": "PASS",
+    "noRailClaimsAtBusLocations": "PASS",
+    "noMedicalEligibilityDeliveryGuarantee": "PASS",
+    "preserveIdsAndRouteGrouping": "PASS: IDs入力と一致、runtime変更なし。",
+    "finalTitlesPremisesTurnsTasksRoleReread": "PASS"
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "独立したAI著者による全文自己照合であり、他著者や母語話者・運営者による審査ではない。",
+    "実在の営業時間・住所・運航・路線・運賃・施設方針・衛生基準や配達条件を検証した教材ではない。",
+    "船や荷物の扱い、作業着、包装、洗濯、バス案内は明記した架空条件内の相談。専門的な安全手順や合否の認定ではない。",
+    "統合・UI・端末動作・公開・翻訳はこの著者作業の対象外。",
+    "新カテゴリ・新背景資産は作らない。既存カテゴリの汎用背景を想定するが、海辺案内所や水産物倉庫の美術上の一致は実機・画像で未確認。",
+    "原ルート群とIDは保持し、メタデータと本文の反映は統合側で行う。"
+  ],
+  "paths": {
+    "source": "scripts/dialogue-authoring/prf-043-city-cty-kum-amakusa.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-043_CITY_CTY-KUM-AMAKUSA_ROLE_ALIGNMENT.json",
+    "input": "docs/dialogue-workspace/content-qa/PRF-043_CITY_CTY-KUM-AMAKUSA_INPUT.json"
+  }
+}
