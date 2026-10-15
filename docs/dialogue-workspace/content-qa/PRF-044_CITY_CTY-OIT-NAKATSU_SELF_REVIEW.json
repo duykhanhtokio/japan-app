@@ -1,0 +1,72 @@
+{
+  "cityId": "CTY-OIT-NAKATSU",
+  "baseline": "3954f280818ce7c8e596a45e99a2823e86eda841",
+  "inputSha256": "49f93cffd206a4735f0c67eb1229213d1c7b18034f51223bb491def4de08c815",
+  "sourceSha256": "7b8b633ec833699c1d46730d437c0a8c334912459a4d0731135d9b2ba25ce20a",
+  "roleAlignmentSha256": "14d2c8c7bb4ce40f4acc7a14c06fceb59a7dc0186f38b2033d76e16b62c9c98b",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-OIT-NAKATSU-001": "別添えと思ったたれが調理済み→除去でなく候補変更→甘いたれの唐辛子確認→ご飯のみ少量と料金→箸不要で確定保留。",
+    "SC-LOC-OIT-NAKATSU-02-001": "停止理由空白→あとで動かすは許可ではない→三号機と四号機の食違い→触っておらず記録も未修正→判断者の説明を待つ。",
+    "SC-LOC-OIT-NAKATSU-03-001": "図の点線を現存と誤認→中央建物は復元模型→図番号と札を対応→細部まで確定とせず根拠を読む→資料名と展示番号をメモ。",
+    "SC-LOC-OIT-NAKATSU-04-001": "箱運び後の腰の痛み→長い座位がつらいので看護師へ→会社の書類名不明→当日発行を約束しない→貼り薬使用の事実を渡す。",
+    "SC-LOC-OIT-NAKATSU-05-001": "白い粉二皿の片方は無名→一覧と元袋の照合→推測せず札を準備→使用皿と洗浄待ちの置場→計量を保留して講師の説明。",
+    "SC-LOC-OIT-NAKATSU-06-001": "手首の赤みの濃淡→三日前の気付きと昨日の撮影→手袋と洗剤は使用事実→家族の薬は未使用→仕事中の困り事を追記。",
+    "SC-LOC-OIT-NAKATSU-07-001": "同題名二版→写真は版の表示が欠ける→館内区分と古いカードの照会→ノートで内容確認→閲覧席と本番号を控える。",
+    "SC-LOC-OIT-NAKATSU-08-001": "大皿共有と卵アレルギー→別皿だけでなく調理・器具照会→大皿注文も保留→衣の卵判明で本人は断る→別料理も自動的安全とせず未注文。"
+  },
+  "corrections": [
+    "汎用の相づちと同一目標を、八つの個別の食違い・情報不足・判断・結末へ書き直した。四十目標を直前NPCと対応するPlayer応答で照合した。",
+    "工場・教室・図書館の誤カテゴリを既存Factory/Classroom/Libraryへ修正した。",
+    "整形外科の内容を腰の痛みに合わせ、受付役と看護師役は診療・判断の担当者へ取り次ぐ範囲へ修正した。",
+    "城郭の歴史・建物が実在するかを創作せず、仮定の図と模型を読む内容へ変えた。",
+    "最終再読で整形受付の書類希望を聞いたとの先取り発言をなくし、勤務先へ伝える別の困り事を尋ねる流れに直した。",
+    "最終再読で居酒屋の未注文の個人料理を既に存在するように述べないため、後で選ぶ物との同じ皿を避けたいという条件付き表現へ整えた。",
+    "居酒屋の題名を自然な注文相談の表現へ修正し、全八施設を架空名・null営業時間住所に統一した。"
+  ],
+  "checks": {
+    "assignedScenarioIdsExact": "PASS",
+    "elevenAlternatingTurns": "PASS: 元順序の奇数NPC・偶数PLAYERへ対応。",
+    "fiveConcreteTasksPerScenario": "PASS: 四十組の前後文脈を自分の最終稿で直接照合。",
+    "playerUtterancesUnique40": "PASS",
+    "concreteGoalsUnique40": "PASS",
+    "intentIdsUnique40": "PASS",
+    "npcUtterancesUnique48": "PASS",
+    "fullFinalOwnReread": "PASS: 最終タイトル・前提・88発話・40目標・全役割訂正を再読。",
+    "causalPlotDiversity": "PASS",
+    "npcClosureAll8": "PASS",
+    "japaneseOnlySpokenContent": "PASS",
+    "supportedNpcCategories": "PASS: NPC_CATEGORIES/normalizeNpcCategoryの定義に八カテゴリが正確一致。",
+    "fictionalVenueAll8AndNullHoursAddresses": "PASS",
+    "roleAuthorityAlignment": "PASS",
+    "noRealHistoryRoutesPricesSchedules": "PASS",
+    "noDiagnosisMedicationOrAllergySafetyGuarantee": "PASS",
+    "preserveOriginalIdsRouteGrouping": "PASS: runtimeは書き換えていない。"
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "独立したAI著者による自分の担当市の全文照合であり、他著者や母語話者・専門家による確認ではない。",
+    "食品、展示、資料区分、受付、機械記録等は架空の会話条件。実在の運営規定、診断や衛生・安全の合否を検証したものではない。",
+    "新しいカテゴリや画像資産は作らない。既存カテゴリの汎用背景を想定するが、実際の画像や端末の見え方は未確認。",
+    "受付・看護師は診療へ引き継ぐ範囲で、書類・受診・薬やアレルギーの判断を確約しない。",
+    "runtime統合、UI、翻訳、端末検証、公開やremote保存は統合側の作業である。"
+  ],
+  "paths": {
+    "source": "scripts/dialogue-authoring/prf-044-city-cty-oit-nakatsu.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-044_CITY_CTY-OIT-NAKATSU_ROLE_ALIGNMENT.json",
+    "input": "docs/dialogue-workspace/content-qa/PRF-044_CITY_CTY-OIT-NAKATSU_INPUT.json"
+  }
+}
