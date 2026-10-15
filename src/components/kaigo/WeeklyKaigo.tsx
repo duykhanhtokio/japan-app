@@ -593,6 +593,12 @@ export function WeeklyKaigo({
   };
   const finishDay = async () => {
     if (!entry) return;
+    if (progress.value.days[entry.day]) {
+      setWeek(Math.ceil(entry.day / 7));
+      setShowWeek(true);
+      open(null);
+      return;
+    }
     const saved = await progress.update((old) => ({
       ...old,
       days: { ...old.days, [entry.day]: true },
@@ -849,7 +855,7 @@ export function WeeklyKaigo({
                     <Action
                       title={
                         progress.value.days[entry.day]
-                          ? "✓ 学習済み"
+                          ? "✓ 学習済み · 戻る"
                           : progress.saving
                             ? "保存中…"
                             : "完了"
@@ -857,8 +863,7 @@ export function WeeklyKaigo({
                       disabled={
                         !progress.ready ||
                         progress.saving ||
-                        !endReached ||
-                        !!progress.value.days[entry.day]
+                        (!endReached && !progress.value.days[entry.day])
                       }
                       testID="kaigo-complete-day"
                       onPress={() => void finishDay()}

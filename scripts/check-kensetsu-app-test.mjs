@@ -17,7 +17,7 @@ for(const [i,s] of sessions.entries()){
 }
 weeks.forEach((w,i)=>assert.deepEqual(w.sessionIds,sessions.slice(i*7,i*7+7).map(s=>s.id)));
 const reader=fs.readFileSync('src/components/kensetsu/KensetsuCourse.tsx','utf8'),compactReader=reader.replace(/\s+/g,'');
-assert(compactReader.includes('!reachedEnd||done'));assert(reader.includes('AsyncStorage.setItem(key'));
+assert(compactReader.includes('!reachedEnd&&!done'));assert(reader.includes('AsyncStorage.setItem(key'));
 assert(compactReader.includes('completionKey(learner,level,field)'));
 assert(!reader.includes('translation===c.id'));assert(reader.includes('kensetsu-reflections'));assert(reader.includes('resizeMode="contain"'));assert(!reader.slice(reader.indexOf('function Reader('),reader.indexOf('function Calendar(')).includes('RoyalContentPanel'));assert(reader.includes('testID="kensetsu-translation"'));assert(reader.includes('p.translations?.[language]'));assert(reader.includes('kensetsu-week-page'));assert(!reader.includes('kensetsu-resume'));
 assert(fs.readFileSync('src/app/specified-skills/kensetsu.tsx','utf8').includes('if(!__DEV__)'));

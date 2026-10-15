@@ -465,8 +465,8 @@ function Reader({
         </View>
         <Action
           testID="kensetsu-complete"
-          title={done ? "✓ 学習済み" : saving ? "保存中…" : "完了"}
-          disabled={!ready || saving || !reachedEnd || done}
+          title={done ? "✓ 学習済み · 戻る" : saving ? "保存中…" : "完了"}
+          disabled={!ready || saving || (!reachedEnd && !done)}
           onPress={onComplete}
         />
         {!done && !reachedEnd && (
@@ -623,6 +623,10 @@ function Calendar({
   };
   const complete = async () => {
     if (!lesson || !ready || saving) return;
+    if (progress[completionId(lesson)]) {
+      closeLesson();
+      return;
+    }
     const next = { ...progress, [completionId(lesson)]: true as const };
     setSaving(true);
     try {

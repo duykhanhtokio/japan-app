@@ -109,6 +109,9 @@ async function end(tree, id) {
   await click(t, "kensetsu-complete");
   assert.equal(hosts(t, "kensetsu-reader").length, 0);
   assert(text(t).includes("学習済み"));
+  await click(t,"kensetsu-day-1");
+  await click(t,"kensetsu-complete");
+  assert.equal(hosts(t,"kensetsu-reader").length,0,"Completed construction day returns without another write");
   await unmount(t);
   // Storage failure must keep the reader open instead of losing the day.
   t = await mount(m.KensetsuCourse, {
@@ -179,6 +182,9 @@ async function end(tree, id) {
   await click(t, "kaigo-complete-day");
   assert.equal(hosts(t, "kaigo-japanese-reader").length, 0);
   assert.equal(hosts(t, "kaigo-week-schedule-1").length, 1);
+  await click(t,"kaigo-calendar-day-1");
+  await click(t,"kaigo-complete-day");
+  assert.equal(hosts(t,"kaigo-japanese-reader").length,0,"Completed Kaigo day returns without another write");
   await unmount(t);
   // Kaigo completion must also remain open on a storage failure.
   global.__tokuteiStorage.delete("@japan_app_kaigo_weekly:completion:v1");
