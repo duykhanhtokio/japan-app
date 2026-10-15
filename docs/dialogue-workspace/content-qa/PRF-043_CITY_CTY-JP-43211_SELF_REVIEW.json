@@ -1,0 +1,72 @@
+{
+  "cityId": "CTY-JP-43211",
+  "baseline": "de054c902c4a00ad79944220ae87a64373782f14",
+  "inputSha256": "03611212a4f32c4136e01222fa0d008141eba6512b9743d16c28d8bf930f4dc4",
+  "sourceSha256": "727058ed6e2a3890f6f80cf81969a53e0e8a05f584e6253a0777edb5705a345a",
+  "roleAlignmentSha256": "028393a6cd487947143395b4905c06f9e2f9f7a185c2de52f2a60192c55e3890",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-43211-01-001": "地図の階段案内に気づく→ベビーカーと友人との行き違い→広い改札外で合流を選ぶ→図記号を聞く→入口まで係員同行を依頼。",
+    "SC-LOC-JP-43211-02-001": "契約書と鍵袋の部屋番号が不一致→確かな建物名と居住開始日を分ける→旧住所書類と在留カードの未追記を伝える→保険相談先も聞く→管理会社の返事を記録して担当へ。",
+    "SC-LOC-JP-43211-03-001": "木曜午前の予約と仕事が重なる→金曜二時を希望、四時不可→体調変化の有無は別に伝える→昼休みの折返しと連絡票を示す→未確定を理解し元予約票を保管。",
+    "SC-LOC-JP-43211-04-001": "臨時駐輪場所の柵が変化→最後の時刻と紺色・白い傷→写真はあるが登録番号は家→鍵と探索範囲を報告→図で二列目を示し主催者照会と追記を計画。",
+    "SC-LOC-JP-43211-05-001": "提出案内の送付記録と受取り記録の疑問→前後の文を読む→金曜希望と条件確認→提出先へ控えの適合を照会するため保留→宛先人名を推測せず未封で再来。",
+    "SC-LOC-JP-43211-06-001": "勤務先名義欄が短い→正式名と社内呼び名の区別→持参社員証と自宅の書類→即日番号を前提にせず会社へ事情説明→入力方法照会と不足書類の書面を頼む。",
+    "SC-LOC-JP-43211-07-001": "本体下の札が詰替え表示→容器がなく小さい本体が必要→非会員の通常価格→無香料と容量を照合→本体一つ購入、会計表示も確認。",
+    "SC-LOC-JP-43211-08-001": "二十分以内で迎えと同じ入口→池の閉鎖で花壇往復→ベンチと階段近道を区別→案内所横の丸時計で待合せ→休憩時間も含めて戻る。"
+  },
+  "corrections": [
+    "原入力の抽象的な同一目標を、八つの異なる因果展開と四十の具体的目標へ全面改稿。",
+    "実在風名称と未検証営業時間を八地点とも架空名称・nullへ修正。",
+    "ParkのCommunity Staffを、既存のPark Staffへ整合。",
+    "郵便の必着を約束させないという不自然な発話を、見込み・条件を聞いて選ぶ自然な希望へ改稿。",
+    "郵便の控えの内容を先方が確認する表現を、控えが提出先の条件を満たすか照会する内容へ明確化。",
+    "銀行の「給与の提出期限」を「口座情報の提出期限」へ修正し、即日番号を前提にしない自然な説明へ改稿。",
+    "改稿した郵便二発話・銀行一発話と各目標を再読し、最終hashを更新。"
+  ],
+  "checks": {
+    "originalScenarioIds": "PASS8/8",
+    "elevenAlternatingTurns": "PASS8x11;NPCfirst,PLAYERat2/4/6/8/10,NPCclosure11",
+    "fiveTasksPerScenario": "PASS40",
+    "uniquePlayerUtterances": "PASS40/40",
+    "uniqueConcreteGoals": "PASS40/40",
+    "uniqueSpecificIntents": "PASS40/40",
+    "precedingNpcTaskResponseAlignment": "full final own semantic reread PASS",
+    "causalPlotDiversity": "full final own semantic reread PASS8specificplots",
+    "closure": "PASSconcreteoutcomes8/8",
+    "japaneseOnlySpokenAndGoalText": "PASSnoLatinmixedprose",
+    "numbersAndNames": "own full final reread PASS fictional conditions coherent",
+    "supportedCategories": "PASSexistingexactNPC_CATEGORIESonly",
+    "venueCapabilities": "AI own review PASS no clinical diagnosis, institutional eligibility, tax/legal decision or service guarantees",
+    "metadataScope": "PASS8fictionalnames/nullhours-address;originalcity/location/scenarioidentitypreserved",
+    "sourceRoleInputHashes": "PASSfinalbytes",
+    "stagingOnly": "PASSnoactivecheckout/runtime/shared/Gitwrites"
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "AI own-source reread only; native/human/peer review not performed.",
+    "All venues, route diagrams, proposed times, policies and merchandise conditions fictional; no actual Uto facilities, opening hours or services verified.",
+    "Hospital booking remains pending with reservation team; police consultation does not determine theft or recovery; bank conversation does not approve account.",
+    "Existing category artwork only in concept; bespoke maps/objects and device layout unverified.",
+    "Japanese pass only; translations deferred until all Japanese complete.",
+    "Root alone integrates runtime, retains original turn IDs/grouping and remotely verifies persistence."
+  ],
+  "files": {
+    "input": "docs/dialogue-workspace/content-qa/PRF-043_CITY_CTY-JP-43211_INPUT.json",
+    "source": "scripts/dialogue-authoring/prf-043-city-cty-jp-43211.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-043_CITY_CTY-JP-43211_ROLE_ALIGNMENT.json"
+  }
+}
