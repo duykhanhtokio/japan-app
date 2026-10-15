@@ -1271,3 +1271,8 @@ Previous61 scenarios durably verified at d12615ef with exact trees matching all9
 ## Independent Miyazaki city CTY-JP-45206 — 2026-10-15
 
 8 own-authored/self-reviewed Japanese exchanges,88turns,40concrete Player tasks. Exact source/runtime/metadata adapter PASS; canonical7128IDs preserved; zero exact Player/NPC collisions and 7553 outside runtimes unchanged. Venue labels explicitly fictional, unverified hours/addresses cleared and supported NPC roles aligned. No peer reading, translations, native/human/device/operator/release approval. Miyazaki cumulative93/93;0 remain. Current city containing commit requires remote persistence before next integration.
+
+
+## 2026-10-15 — PRF-045 Miyazaki complete independent city self-review
+
+93/93 canonical scenarios across 10 cities, 1023 Japanese turns, 465 concrete Player tasks. Each containing city commit was remotely verified before advancing. Whole real adapters/corpus/normalized-near/task/answer/title/recipe checks PASS; zero exact Player/NPC collisions; 7468 outside runtime files unchanged. Exact source/input/role hashes bind all 10 city self-reviews by six independent authors. All 93 scripts independently rewritten; Tokutei paths preserved. UI lock 10/10 and corrected NPC progression PASS. No peer/human/native/operator/device/release approval. Global 6862/7128; 266 scenarios/30 cities remain. Next Kagoshima PRF-046 only after this checkpoint commit persistence.
