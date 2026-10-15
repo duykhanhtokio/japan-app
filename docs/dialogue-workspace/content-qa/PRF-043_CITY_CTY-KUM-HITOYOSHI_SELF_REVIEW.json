@@ -1,0 +1,72 @@
+{
+  "cityId": "CTY-KUM-HITOYOSHI",
+  "baseline": "de054c902c4a00ad79944220ae87a64373782f14",
+  "inputSha256": "c5c5920191905608d7f138bb1b0cd5c991036c9645033b83d6011c3188837664",
+  "sourceSha256": "648554f8204335b46b04f320e72b8f999f589817fd2f3448ebef3c0af5a36ec5",
+  "roleAlignmentSha256": "42d18901143000f5388c17f84b03c7a02d88e22b1f0cf27661e8216cd94bae35",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-KUM-HITOYOSHI-001": "タオル忘れ→ロッカーに入らない荷物→貴重品を分け預かり札を使う→湯船の語義とタオルの扱いを聞く→荷物を預けてから券を買う。",
+    "SC-LOC-KUM-HITOYOSHI-02-001": "担当容器が不明→表示がにじみ洗浄を保留→責任者確認中に未開封備品の数量確認へ切替え→対象棚と開封品の扱いを限定→数量と場所を報告する。",
+    "SC-LOC-KUM-HITOYOSHI-03-001": "五分乗換えと三時の約束→重い荷物で階段回避→二十分接続を選び遅れを連絡→東入口を追記→画面保存と友人への変更共有。",
+    "SC-LOC-KUM-HITOYOSHI-04-001": "自転車持帰りのこぼれ懸念→温かい麺とつゆを別容器→辛味・天ぷら不要、ねぎ付き→袋の底幅不足を解消→注文内容確認と会計後番号受取り。",
+    "SC-LOC-KUM-HITOYOSHI-05-001": "疲れたという本人の希望→発言時刻と着席状態を分けて申し送る→読書希望と移動支援の担当相談→薬の質問を看護担当へ取次ぎ→本人へ説明し記録を持参する。",
+    "SC-LOC-KUM-HITOYOSHI-06-001": "炊飯頻度と二キロ量への迷い→流し下保管案と表示→棚へ移し一キロ一袋を試す→普通米と無洗米の混同に気づく→未開封で購入し識別表示を残す。",
+    "SC-LOC-KUM-HITOYOSHI-07-001": "火を使わない予定と加熱用表示の不一致→サラダ用と玉ねぎ表示→添付小袋は別表示と知り野菜だけへ変更→一人分小袋選択→保存注意を読み最初の商品を店員へ返す。",
+    "SC-LOC-KUM-HITOYOSHI-08-001": "友人と本人の書類混在→名義を分け対象年の不一致→取寄せ遅延懸念→期限変更を確約せず確認質問二点に整理→金額判断は求めず担当へ相談、原本保管。"
+  },
+  "corrections": [
+    "汎用質問と抽象目標を、各直前NPCに応じる四十の具体的目標へ全面改稿。",
+    "介護場面の冒頭を「午前中」から「先ほど」へ修正し、一時の報告との時刻矛盾を解消。",
+    "架空駅で画面を物理的に渡す表現を保存用提示へ修正。",
+    "うどん受取は未聴取の氏名でなく注文票番号で呼ぶ設定へ修正。",
+    "米の最終発話を容器移替え後も袋の表示を残す表現へ明確化。",
+    "醸造場面のpremiseに数量確認への切替えを反映。",
+    "税相談の最終発話を通知に記載された担当へ相談すると明確化。",
+    "醸造場をFactoryへ修正、介護場を既存Hospitalの架空療養支援部門へ整合。八地点の実在風名称を架空名称に修正。"
+  ],
+  "checks": {
+    "scenarioIdsAgainstInput": "PASS8/8",
+    "turnCountAndAlternation": "PASS11/scenario; NPC at1/3/5/7/9/11 and Player at2/4/6/8/10 by author format",
+    "taskCount": "PASS5/scenario",
+    "uniquePlayerUtterances": "PASS40/40",
+    "uniqueConcreteGoals": "PASS40/40",
+    "uniqueSpecificIntents": "PASS40/40",
+    "immediatePrecedingNpcAlignment": "own full semantic reread PASS",
+    "distinctCausalProgression": "own full semantic reread PASS8different constraints/outcomes",
+    "concreteNpcClosure": "PASS8/8",
+    "japaneseOnlySpokenContent": "PASSno Latin mixed prose",
+    "numbersAndNames": "own full reread PASS fictional values internally coherent",
+    "supportedCategories": "PASSexactNPC_CATEGORIESexisting values only",
+    "roleCapabilities": "AI self-review PASS; no diagnosis, medication/transfer methods, chemical operations, tax determination or real timetable guarantee",
+    "immutableInputIdentity": "PASSsource uses only original8scenario IDs; original runtime IDs and route grouping left to root integration",
+    "stagingOnly": "PASSauthored files under staging; active checkout untouched",
+    "hashConsistency": "PASSfinal exact-byte hashes"
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "AI author self-review only; no independent native/human review.",
+    "All institutions, merchandise policies and transport examples are fictional; no real city schedule, availability, prices, jurisdiction decision or operator policy verified.",
+    "Existing Hospital/Factory category artwork is reused in concept only; care-specific or brewery-specific art and device layout not reviewed.",
+    "Japanese dialogues only; translations deferred.",
+    "No runtime integration, shared file changes or commits performed by this worker."
+  ],
+  "files": {
+    "source": "scripts/dialogue-authoring/prf-043-city-cty-kum-hitoyoshi.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-043_CITY_CTY-KUM-HITOYOSHI_ROLE_ALIGNMENT.json",
+    "input": "docs/dialogue-workspace/content-qa/PRF-043_CITY_CTY-KUM-HITOYOSHI_INPUT.json"
+  }
+}

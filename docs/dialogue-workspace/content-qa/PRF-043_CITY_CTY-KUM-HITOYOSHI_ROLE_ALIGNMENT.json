@@ -1,0 +1,90 @@
+{
+  "cityId": "CTY-KUM-HITOYOSHI",
+  "corrections": {
+    "LOC-KUM-HITOYOSHI-01": {
+      "category": "Onsen",
+      "npcJob": "Onsen Staff",
+      "nameJa": "架空の入浴施設・受付",
+      "name": "架空の入浴施設・受付",
+      "description": "仮想の貸出しタオルと荷物預かりを相談する受付。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-KUM-HITOYOSHI-02": {
+      "category": "Factory",
+      "npcJob": "Brewer",
+      "nameJa": "架空の醸造工場・作業確認所",
+      "name": "架空の醸造工場・作業確認所",
+      "description": "醸造工場の洗浄担当範囲と読めない表示を相談する。薬剤や装置の操作を指示しない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-KUM-HITOYOSHI-03": {
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "nameJa": "架空の駅・乗換案内窓口",
+      "name": "架空の駅・乗換案内窓口",
+      "description": "実在しない経路表示を使って荷物と乗換え余裕を相談する。実在の鉄道運行情報ではない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-KUM-HITOYOSHI-04": {
+      "category": "Restaurant",
+      "npcJob": "Restaurant Staff",
+      "nameJa": "架空のセルフうどん店",
+      "name": "架空のセルフうどん店",
+      "description": "仮想の持帰り容器と注文内容を相談する店舗。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-KUM-HITOYOSHI-05": {
+      "category": "Hospital",
+      "npcJob": "Care Worker",
+      "nameJa": "架空の病院・療養支援担当",
+      "name": "架空の病院・療養支援担当",
+      "description": "病院の療養支援で介護職員に観察と言葉を申し送る。診断や服薬の判断は行わない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-KUM-HITOYOSHI-06": {
+      "category": "Shopping",
+      "npcJob": "Shop Owner",
+      "nameJa": "架空の米販売店",
+      "name": "架空の米販売店",
+      "description": "仮想商品の量と表示、保管場所を相談する米販売店。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-KUM-HITOYOSHI-07": {
+      "category": "Supermarket",
+      "npcJob": "Greengrocer",
+      "nameJa": "架空の食品スーパー・青果売場",
+      "name": "架空の食品スーパー・青果売場",
+      "description": "仮想商品の加熱用途や野菜・添付小袋の表示を読む青果売場。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-KUM-HITOYOSHI-08": {
+      "category": "Tax Office",
+      "npcJob": "Tax Officer",
+      "nameJa": "架空の税相談窓口",
+      "name": "架空の税相談窓口",
+      "description": "通知の名義と対象年を整理し、担当への確認事項をまとめる。税額や期限変更を確約しない。",
+      "openHours": null,
+      "address": null
+    }
+  },
+  "findings": [
+    "醸造作業場をConstruction Siteから既存のFactoryへ修正し、Brewerを保持する。",
+    "介護の仕事は既存のHospitalカテゴリに合わせ、架空の病院療養支援部門として明示。介護職員は観察報告・希望確認と担当への取次ぎのみ行う。",
+    "青果担当が扱える加熱用表示とサラダ商品の選択へ具体化し、Greengrocerの役割を保持する。",
+    "全八地点を明示的な架空施設名へ変更し、営業時間・住所をnullにする。森前駅・展示館・経路表示も架空の設定とする。",
+    "カテゴリはNPC_CATEGORIESに存在するOnsen/Factory/Station/Restaurant/Hospital/Shopping/Supermarket/Tax Officeのみ。",
+    "既存のカテゴリ別アートのみを想定し、醸造工場や病院介護担当の専用アート・実機画面は未確認。"
+  ],
+  "inputSha256": "c5c5920191905608d7f138bb1b0cd5c991036c9645033b83d6011c3188837664",
+  "sourceSha256": "648554f8204335b46b04f320e72b8f999f589817fd2f3448ebef3c0af5a36ec5",
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "peerReviewed": false
+}
