@@ -1051,3 +1051,8 @@ Previous61 scenarios durably verified at d12615ef with exact trees matching all9
 ## 2026-10-14 — PRF-041 Saga complete independent city self-review
 
 93/93 canonical scenarios across10 cities,1,023 Japanese turns and465Player tasks; individual authors independently reread their final city with no peer prose/review reading. Allcitycommits remotely verified; whole real adapter/corpus/normalized/near/task/title/recipe screens and UIlock10/10/NPCprogression PASS. No peer/human/native/device/release certification. Global6,402/7,128;726remain. PRF-041_CHECKPOINT.json and PRF-041_COMPLETE_* authoritative; next Nagasaki PRF-042 only after containing checkpoint persistence. Concurrent Tokutei preserved.
+
+
+## Independent Nagasaki city CTY-JP-42212 — 2026-10-15
+
+8 own-authored/self-reviewed Japanese exchanges,88turns,40concrete Player tasks. Exact source/runtime/metadata adapter PASS; canonical7128IDs preserved; zero exact Player/NPC collisions and 7553 outside runtimes unchanged. Venue labels explicitly fictional, unverified hours/addresses cleared and supported NPC roles aligned. No peer reading, translations, native/human/device/operator/release approval. Nagasaki cumulative101/117;16 remain. Current city containing commit requires remote persistence before next integration.
