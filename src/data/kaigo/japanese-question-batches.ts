@@ -24,4 +24,5 @@ import week22 from './japanese-master/questions/week-22.json';
 import week23 from './japanese-master/questions/week-23.json';
 import week24 from './japanese-master/questions/week-24.json';
 import week25 from './japanese-master/questions/week-25.json';
-export const japaneseQuestionBatches = [week01, week02, week03, week04, week05, week06, week07, week08, week09, week10, week11, week12, week13, week14, week15, week16, week17, week18, week19, week20, week21, week22, week23, week24, week25];
+import week26 from './japanese-master/questions/week-26.json';
+export const japaneseQuestionBatches = [week01, week02, week03, week04, week05, week06, week07, week08, week09, week10, week11, week12, week13, week14, week15, week16, week17, week18, week19, week20, week21, week22, week23, week24, week25, week26];

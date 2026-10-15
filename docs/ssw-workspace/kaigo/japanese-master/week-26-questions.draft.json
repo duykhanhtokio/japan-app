@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "week": 26,
+  "sourceLanguage": "ja",
+  "status": "ai_editorial_draft_not_runtime_integrated",
+  "sourceJapaneseSha256": "c9c3e6c0d2dd9eefdbe8f289af5050013dc3eea93aba147963166578bbc3be69",
+  "humanReviewed": false,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "releaseReady": false,
+  "questions": {
+    "weekly-kaigo-completeness-measurement-context-probe": {
+      "day": 176,
+      "promptJa": "この場面の記録・申し送りとして、適切なのはどれですか。",
+      "readingJa": "8時の体温は、わきの下で測定した記録があります。15時30分、別の介護職員が、活動から戻った利用者の額を別の機器で測り、「新しい数値の方が高い」とだけ記録しました。本人は「疲れました」と話しています。脈拍と呼吸は、まだ確認されていません。",
+      "optionsJa": [
+        "15時30分の数値は活動が原因で高くなったと記録し、本人の「疲れました」という言葉は測定値に関係しないので省きます。",
+        "二つの数値を同じ条件で測った変化として記録し、高くなったことだけを根拠に発熱と判断して申し送ります。",
+        "それぞれの時刻・部位・機器、活動直後だったこと、本人の言葉、脈拍と呼吸が未確認であることを分けて記録し、変化を担当者に報告します。",
+        "測定条件が違うため二つの記録は比較に使えないとして、高くなった数値と本人の疲れについては報告を見送ります。"
+      ],
+      "correctIndex": 2,
+      "rationalesJa": [
+        "活動直後だったことは事実ですが、それだけで数値が高くなった原因を確定できません。本人の疲れの訴えも、数値と合わせて伝える必要があります。",
+        "部位と機器が違うため、同じ条件で得た二つの数値として扱えません。この情報だけで発熱と判断せず、それぞれの条件と本人の様子を伝えます。",
+        "測定条件、本人の言葉、未確認の項目を区別することで、受け手が状況を理解できます。数値だけで病名や原因を決めず、気になる変化を共有する対応です。",
+        "条件の違いを確認することと、変化を報告しないことは別です。条件が違っても、高くなった数値と疲れの訴えを無視せず、分かっている情報を担当者に伝えます。"
+      ],
+      "humanReviewed": false,
+      "domainReviewed": false,
+      "nativeReviewed": false,
+      "releaseReady": false
+    }
+  },
+  "runtimeMaterialization": {
+    "path": "src/data/kaigo/japanese-master/questions/week-26.json",
+    "status": "ai_editorial_internal_preview",
+    "sourceHashVerified": true,
+    "oldAttemptRecordsPreserved": true
+  }
+}

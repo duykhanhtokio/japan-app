@@ -239,7 +239,9 @@ async function end(tree, id) {
   });
   const report = {
     date: "2026-10-15",
-    status: "UI_PASS_JAPANESE_CONTENT_INCOMPLETE",
+    status: days.every((d) => d.missingJapanese.length === 0)
+      ? "UI_PASS_JAPANESE_FIELDS_COMPLETE_REVIEW_PENDING"
+      : "UI_PASS_JAPANESE_CONTENT_INCOMPLETE",
     days: days.length,
     sections: days.reduce((n, d) => n + d.sections, 0),
     completeJapaneseSections: days.reduce((n, d) => n + d.completeJapanese, 0),
