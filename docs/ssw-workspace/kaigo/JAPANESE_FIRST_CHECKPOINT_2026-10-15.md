@@ -28,3 +28,11 @@ Next content work: produce and verify complete Japanese text for the listed miss
 Scoped TypeScript check uses real React Native declarations and lightweight declarations for unrelated shared UI/context dependencies. This is not a whole-app typecheck. Browser layout harness uses actual component styles/events with fixture raster art and construction questions. Neither test substitutes for iPhone/iPad/Android native screenshots or native-speaker/professional approval.
 
 All human/native/domain/device/release approval flags remain false. This checkpoint records an incomplete Japanese content migration, not completion of publisher item 7.
+
+## Interrupted-session recovery and all-day text regression
+
+The publisher's 23:21 screenshot shows a disconnected ChatGPT session and a native warning, `Text strings must be rendered within a <Text>`. On resumption, the working tree was clean at `de890a1e`; the configured remote independently advertised that same commit and the persistence validator passed. The screenshot alone does not identify the Mac's running source revision, nor prove that the warning remains in that commit.
+
+Expanded the course-flow validator to open all 176 real study days and all 866 sections through the actual Kaigo reader. For every day it checks native-host text ancestry before translation, after explicit translation and after closing translation; checks that each existing Vietnamese teaching paragraph is preserved; checks that no Vietnamese text leaks before translation; and returns to the selected week. The isolated fixture run passes for all 176/866. This does not reproduce or certify the iOS runtime: shared Royal panels/backgrounds and native hosts remain fixtures. Do not report the screenshot's device warning as fixed from this result alone. Obtain its native component stack and running revision if it persists after updating the Mac.
+
+The curriculum remains unchanged: 166 complete Japanese representations and 700 sections missing full Japanese content. No Japanese authorship or source-coverage claim was made in this recovery unit. The canonical source PDF is accessible by its existing Library ID; the source-dependent authoring contract and relevant pages still apply to subsequent content work.

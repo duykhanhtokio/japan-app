@@ -252,6 +252,51 @@ async function end(tree, id) {
     releaseReady: false,
     perDay: days,
   };
+  // A warning in an arbitrary study day must not escape a day-1-only check.
+  // Exercise the real reader and every actual section, with translation closed
+  // and open. Host fixtures check text ancestry, not native device rendering.
+  const storedBeforeSweep = new Map(global.__tokuteiStorage);
+  global.__tokuteiStorage.delete("@japan_app_kaigo_weekly:completion:v1");
+  t = await mount(m.KaigoCourse, { onBack() {}, active: false });
+  let renderedDays = 0, renderedSections = 0;
+  for (const week of m.learningWeeks) {
+    await click(t, `kaigo-week-${week.week}`);
+    for (const slot of week.slots) {
+      if (!slot.entry) continue;
+      await click(t, `kaigo-calendar-day-${slot.day}`);
+      raw(t);
+      assert(!/[À-ỹ]/u.test(text(t)), `Day ${slot.day}: translation leaked before explicit action`);
+      const sections = m.japaneseSectionsFor(slot.entry);
+      for (const section of sections) {
+        assert.equal(hosts(t, `kaigo-reading-section-${section.id}`).length, 1);
+      }
+      await click(t, "kaigo-translation");
+      raw(t);
+      for (const section of sections) {
+        section.paragraphs.forEach((paragraph, index) => {
+          const node = get(t, `kaigo-translation-${section.id}-${index}`);
+          assert.deepEqual(node.children, [paragraph], `Day ${slot.day}: original translation paragraph changed`);
+        });
+      }
+      await click(t, "kaigo-translation");
+      raw(t);
+      await click(t, "kaigo-reading-back");
+      assert.equal(hosts(t, `kaigo-week-schedule-${week.week}`).length, 1);
+      renderedDays++;
+      renderedSections += sections.length;
+    }
+    await act(async () => {
+      get(t, "tokutei-header").findByProps({ accessibilityLabel: "戻る" }).props.onPress();
+      await sleep();
+    });
+  }
+  assert.equal(renderedDays, report.days);
+  assert.equal(renderedSections, report.sections);
+  await unmount(t);
+  global.__tokuteiStorage = storedBeforeSweep;
+  report.renderedDays = renderedDays;
+  report.renderedSections = renderedSections;
+  report.allDaysTextAncestryChecked = true;
   if (process.env.TOKUTEI_QA_REPORT)
     fs.writeFileSync(
       process.env.TOKUTEI_QA_REPORT,
