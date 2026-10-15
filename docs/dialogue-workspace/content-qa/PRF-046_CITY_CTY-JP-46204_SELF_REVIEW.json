@@ -1,0 +1,409 @@
+{
+  "cityId": "CTY-JP-46204",
+  "baseline": "70b9863045bb19397bc94bc4f0f393234389fcc3",
+  "inputSha256": "98646a55d2584683d5fa3cb6bd61cbda5e4a083c4af07e07d9bb9644d86d2bed",
+  "sourceSha256": "006a6767bd69d65a751b5cf4cb4155a98d0b083cef41af9984926a8294bc1470",
+  "roleAlignmentSha256": "c02554e4b236e8a0ecf23bf295a39c2aa3680ed03421207873ed8e1e58888f40",
+  "sourceFile": "scripts/dialogue-authoring/prf-046-city-cty-jp-46204.json",
+  "roleAlignmentFile": "docs/dialogue-workspace/content-qa/PRF-046_CITY_CTY-JP-46204_ROLE_ALIGNMENT.json",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-46204-01-001": {
+      "title": "遅延で変わる発車順と停車駅を確かめる",
+      "causalProgression": "枕崎市に配置した架空の駅列車案内窓口。遅延中の仕事訪問を予定する客が、先に出る列車なら目的駅にも早く着くと思っている。発車順と停車駅を分けて確かめ、受渡し先へ予定変更を相談してから列車を選ぶ。実在路線の停車駅・接続・切符条件は示さない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "ask_earlier_departure_for_delayed_work_collection",
+          "goal": "仕事の受取へ向かう列車が遅れ、放送された先発列車なら早着できると思ったと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "show_collection_station_note_and_unheard_stops",
+          "goal": "受取先の駅のメモと切符を示し、放送の行先だけ聞いて途中の停車駅は未確認と伝える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "call_recipient_to_check_collection_window_before_choice",
+          "goal": "午後対応可能と聞いたが終了時刻は不明で、遅延可能性と受取可能時間を電話で確認すると述べる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "report_flexible_collection_reply_and_avoid_rushed_boarding",
+          "goal": "急がず見込みが立ったら連絡してよいとの返事を伝え、慌てて先発へ乗るのをやめる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "choose_after_stop_ticket_checks_without_arrival_promise",
+          "goal": "停車駅と切符条件の確認後に選び、次の案内後に受取先へ見込みを伝え今は到着を約束しないと述べる。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46204-02-001": {
+      "title": "相談予約の変更と通知への対応を混同しない",
+      "causalProgression": "架空の行政予約調整窓口。仕事の都合で相談日時を変えたい客が、予約取消をすると既に提出した申請まで取り消されると思っている。予約・申請状況・通知の期限を別々に担当へ確認し、言語支援も再調整が必要か照会する。変更受付や期限延長を確約しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "ask_whether_canceling_consultation_withdraws_application",
+          "goal": "仕事で相談日に行けず、予約を取り消すと先週の申請自体も取り消されるか尋ねる。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "report_unread_deadline_on_additional_document_notice",
+          "goal": "追加書類の通知があり予約日に持参予定だが、期限欄はまだ理解できていないと伝える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "request_notice_deadline_action_separate_from_booking",
+          "goal": "新相談日を待って通知を放置せず、予約と別に書類対応が必要か確認してほしいと頼む。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "recheck_vietnamese_support_when_changing_date",
+          "goal": "以前相談したベトナム語支援を新日程でも使えると決めず、支援調整を含めて空きを照会してほしいと述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "provide_two_morning_options_and_request_confirmed_record",
+          "goal": "平日午前の二候補をメモで渡し、元予約の扱いと変更確定日時を確認して控えたいと伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46204-03-001": {
+      "title": "領収書をなくした後に予約票との違いを相談する",
+      "causalProgression": "架空の病院会計書類相談。患者が職場の費用精算に必要な領収書を紛失し、残っている次回予約票で代用できると思って看護師へ尋ねる。書類の目的を分け、再発行などの可否と職場の受理条件を別々に照会する。看護師は支払証明を発行せず、費用や即日交付も確約しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "ask_appointment_slip_substitute_for_lost_payment_receipt",
+          "goal": "今日の領収書をなくし、職場の精算に次回予約票で代用できるか尋ねる。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "recognize_employer_receipt_requirement_and_missing_amount",
+          "goal": "職場の指定は領収書で、予約票の病院名だけで十分と思ったが金額がないと述べる。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "report_phone_photo_and_request_lost_receipt_desk",
+          "goal": "携帯の写真は残るが職場の画像受理は未確認と伝え、紛失時の病院相談先を尋ねる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "check_available_document_cost_timing_without_immediate_issue",
+          "goal": "即時交付と決めず会計で書類可否・費用・時期を聞き、職場にも写真でよいか連絡すると述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "identify_today_payment_and_withhold_appointment_proof_claim",
+          "goal": "今日の受診分の支払と答え、写真で確認を頼み、予約票を支払証明として提出しないと伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46204-04-001": {
+      "title": "社員証入りの袋の紛失と職場への連絡を分ける",
+      "causalProgression": "架空の警察持物紛失相談窓口。昼食用の袋をなくした客が、内ポケットの社員証も入っていたと途中で思い出す。最後に見た場面と推測を分けて特徴を記録し、職場の入館対応を警察届出で代替できると考えず別途連絡する。発見や社員証の無効化を保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "recall_employee_badge_inside_missing_lunch_bag",
+          "goal": "弁当箱入りの布袋をなくし、内ポケットの社員証も入れたままだと思い出して伝える。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "separate_bench_last_sighting_from_store_loss_guess",
+          "goal": "ベンチを立つ時には袋があった事実と、その後の店で落とした推測を分けて説明する。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "describe_green_bag_yellow_stitch_and_badge_case",
+          "goal": "緑無地の袋の持ち手の黄色い縫い跡と、内ポケットの透明ケース入り社員証を説明する。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "clarify_police_report_does_not_disable_work_badge",
+          "goal": "会社未連絡で警察届出が社員証停止になると思っていたと述べ、職場への別連絡を確認する。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "contact_workplace_and_register_bag_badge_loss_contact",
+          "goal": "職場へ入館方法も相談し、警察には袋と社員証の両方を届けて発見時の連絡先を登録したいと述べる。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46204-05-001": {
+      "title": "配達日と保管期限を読み分けて出張前に相談する",
+      "causalProgression": "架空の郵便不在票相談窓口。出張前の客が不在票の配達日を保管期限と思い、すでに返送されたと考えている。欄の意味と実際の状態を照会し、不在中の延長や家族受取を当然とせず、利用可能な方法を確認する。保管延長や即時引渡しは保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "explain_yesterday_date_and_trip_receipt_concern",
+          "goal": "不在票の日付が昨日なので返送済みと思い、明日から出張で受取が心配と説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "correct_delivery_date_storage_deadline_confusion",
+          "goal": "配達日と保管期限を取り違えたと認め、番号で現在受取可能な状態か調べてほしいと頼む。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "request_possible_hold_during_trip_without_assumption",
+          "goal": "出張中は戻らず帰宅までの保管を希望するが、自動延長ではないと確認する。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "check_household_proxy_conditions_before_asking_family",
+          "goal": "同居家族には未依頼で、必ず代理受取可能と決めず条件と持ち物を知ってから相談したいと述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "request_actual_status_options_and_sender_contact_if_needed",
+          "goal": "現在状態と利用方法を先に聞き、帰宅まで待てないなら差出人にも相談し延長済みと決めず予定を立てる。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46204-06-001": {
+      "title": "父のカード紛失を家族として相談する",
+      "causalProgression": "架空の銀行家族相談窓口。父に頼まれてカードを探した家族が、見つけられなかったため、本人不在で停止や再発行を頼めると思って来訪する。一般的な相談と個別手続きの権限を分け、本人が連絡できる方法や確認条件を担当へ照会する。家族であることだけで権限や情報開示を認めず、停止完了を保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "request_lost_fathers_card_action_as_family",
+          "goal": "父に頼まれ家で探したがカードがなく、家族として停止と再発行を頼めると思ったと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "state_father_absent_phone_available_card_number_unknown",
+          "goal": "父は来店せず電話で話せるが番号は分からないと伝え、番号なしの相談方法を尋ねる。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "request_owner_contact_route_and_helpers_scope_not_transactions",
+          "goal": "父の取引開示ではなく、本人から連絡する方法と家族が手伝える範囲を知りたいと述べる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "keep_pin_private_and_do_not_substitute_own_identity_call",
+          "goal": "父から暗証番号を聞かず連絡方法を伝え、代わりの電話だけで本人確認完了とは考えないと述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "prioritize_fathers_loss_consultation_without_completion_claim",
+          "goal": "まず父の紛失相談を優先し、再発行費用や受取は父と確認して停止や再発行完了とは伝えないと答える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46204-07-001": {
+      "title": "箱の写真と付属品の記載を照合する",
+      "causalProgression": "架空のスーパー日用品相談窓口。卓上の小物整理箱を買った客が、箱の写真にある仕切りが全て付属すると思って不足を訴える。付属品欄と使い方例を照合し、別売の可能性と実際の不足を分けて確認する。販売条件・在庫・交換を断定しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "report_missing_photo_divider_in_stationery_organizer",
+          "goal": "昨日の整理箱に写真の小仕切りがなく、文房具を分けるつもりだったため入れ忘れか相談する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "show_box_receipt_and_admit_unread_small_print",
+          "goal": "外箱とレシートを示し、写真で選んで小さな説明は読めていないと述べる。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "request_counting_listed_parts_not_all_photo_items",
+          "goal": "使用例の写真全てが付属とは限らないと確認し、記載数と現物を一緒に数えてほしいと頼む。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "prioritize_missing_parts_check_before_optional_purchase",
+          "goal": "本来の部品不足を先に確認し、別売なら価格と適合性を聞いて追加購入を決めると述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "retain_parts_and_defer_exchange_until_comparison",
+          "goal": "箱と部品を保管し写真との差だけで交換可能と決めず、付属品照合と別売案内後に希望を伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46204-08-001": {
+      "title": "静かな道の希望と自転車共用の表示を確かめる",
+      "causalProgression": "架空の公園歩行案内所。静かにゆっくり散歩したい客が、広い道なら歩行者だけだと思っている。案内図の自転車共用表示と当日の催しの案内を確かめ、混雑がないと保証せず入口近くの範囲で様子を見る。実在の設備・通行規則・催しは示さない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "request_quiet_path_without_assuming_wide_means_pedestrians_only",
+          "goal": "速い歩行者や自転車が多いと落ち着かず静かな道を希望し、広い道は歩行者専用と思ったと伝える。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "notice_cycle_symbol_and_avoid_long_shared_route",
+          "goal": "自転車印を見落としたと認め、無人でなくてもよいが共用道を長く歩くのは避けたいと述べる。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "replace_event_plaza_shortcut_with_short_avoiding_route",
+          "goal": "広場の近道を考えたが催しの状況は不明なので静かと決めず、広場を避ける短い範囲を尋ねる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "check_near_entrance_crowding_and_request_rest_symbols",
+          "goal": "入口付近で様子を見て落ち着かなければ切り上げ、休憩場所の印も教えてほしいと頼む。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "return_to_information_entrance_without_seat_guarantee",
+          "goal": "空席を前提に遠くへ行かず案内所の入口へ戻り、現在地と帰路を確認後に近くを歩きたいと述べる。"
+        }
+      ]
+    }
+  },
+  "corrections": [
+    "最終自己再読で、銀行の前提を家族ではなくカードが見つからないと明確にし、相談方法と手続き完了確認の表現を整えた。公園の無人を求めない希望と、警察の社員証の利用状態も具体的に言い換えた。",
+    "旧版の反復する目標を各応答に固有の四十課題へ修正した。",
+    "駅は発車順と目的駅への停車を分け、受取先への連絡後も切符条件の照会を残した。",
+    "行政は予約の変更と既存申請・通知期限を分け、変更による自動延長と扱わない。",
+    "病院は次回予約票と支払証明を分け、看護師が領収書の再発行可否を決めず会計へつなぐ。",
+    "警察は袋と社員証を記録し、会社の入館・証明書対応を警察届出で代替しない。",
+    "郵便は配達日と保管期限の混同を解き、延長や家族受取を確認前に確定扱いしない。",
+    "銀行は本人不在の父のカード相談として家族の権限と本人確認を区別し、暗証番号を集めず停止完了を保証しない。",
+    "商品は写真の使用例と付属品を照合し、公園は広い道と歩行者専用を区別して混雑や空席を保証しない。"
+  ],
+  "checks": {
+    "exactScenarioIds": true,
+    "elevenAlternatingTurnsEach": true,
+    "fiveSpecificTasksEach": true,
+    "fortyDistinctPlayerTurns": true,
+    "fortyDistinctTaskGoals": true,
+    "allFinalTitlesPremisesTurnsTasksAndRoleCorrectionsReread": true,
+    "specificCausalProgression": true,
+    "concreteNpcClosures": true,
+    "japaneseOnlyProse": true,
+    "supportedCategoriesExactMatch": true,
+    "fictionalVenuesNullHoursAddresses": true,
+    "noRealPolicyScheduleMedicalOrRefundGuarantees": true,
+    "noSharedOrRuntimeWrites": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "独立した自己レビューのみ。人間・母語話者・同僚のレビューは未実施。",
+    "実在の事業者の制度・条件・設備・地理は未検証。既存画像との一致は保証しない。",
+    "実機確認・公開承認・翻訳は未実施。"
+  ]
+}
