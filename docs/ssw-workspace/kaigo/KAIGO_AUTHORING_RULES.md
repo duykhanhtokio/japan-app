@@ -1,6 +1,6 @@
 # Hướng dẫn chính thức — Tokutei Gino 介護
 
-Phiên bản: 12. Ngày duyệt: 2026-10-16 (Asia/Tokyo).
+Phiên bản: 13. Ngày duyệt: 2026-10-16 (Asia/Tokyo).
 Trạng thái: CHỦ DỰ ÁN ĐÃ DUYỆT PHƯƠNG ÁN BIÊN SOẠN.
 Repository: duykhanhtokio/japan-app. Nhánh: recovery/jlpt-n3-n1.
 Đây là hợp đồng biên soạn; duyệt phương án không chứng nhận nội dung chưa được tạo, kiểm duyệt hoặc tích hợp.
@@ -8,7 +8,7 @@ Repository: duykhanhtokio/japan-app. Nhánh: recovery/jlpt-n3-n1.
 ## 1. Bắt buộc đọc trước mỗi phiên
 
 1. Đọc đầy đủ docs/AI_SESSION_START_HERE.md và AGENTS.md theo thứ tự dự án.
-2. Đọc toàn bộ bản này, KAIGO_AUTHORING_CHECKPOINT.md và approved-plan.json cùng thư mục.
+2. Đọc toàn bộ bản này, KAIGO_AUTHORING_CHECKPOINT.md và approved-plan.json cùng thư mục; trước khi soạn/dịch/chỉnh hiển thị, đọc đầy đủ KAIGO_LANGUAGE_STYLE_GUIDE.md và language-style-policy.json.
 3. Đọc quy tắc biểu đạt độc lập tại ../TOKUTEIGINO_ORIGINAL_AUTHORING_REQUIREMENTS_2026-09-25.md. Các gate riêng ngành xây dựng/thực phẩm không áp dụng máy móc cho 介護.
 4. Kiểm tra nhánh, remote, HEAD, thay đổi chưa lưu, nội dung đã có; bảo toàn công việc khác.
 5. Đọc lại các trang nguồn liên quan đến đơn vị sắp soạn; kiểm tra phiên bản/hash. Không dùng trí nhớ hoặc bản tóm tắt thay cho hướng dẫn đầy đủ.
@@ -21,7 +21,7 @@ Nếu thiếu nguồn, chỉ dừng phần phụ thuộc nguồn đó; tiếp t�
 - Giữ kiến thức và thuật ngữ; tự viết mới hội thoại, bài đọc, câu hỏi, giải thích và hình.
 - Tạo đủ số NPC cho mọi vai/bối cảnh cần thiết. KHÔNG giới hạn một NPC xuyên suốt hoặc để một nhân vật đổi vai không rõ ràng.
 - Mỗi ngày 30 phút; không giới hạn số tuần. Đủ toàn bộ kiến thức tài liệu chuẩn là mục tiêu bắt buộc.
-- Hội thoại tiếng Nhật; hỗ trợ, dịch và giải thích tiếng Việt. Tách trường ngôn ngữ, không trộn vào một câu thoại Nhật.
+- Tiếng Nhật là bản chính của toàn bộ nội dung; các ngôn ngữ hỗ trợ dịch trực tiếp từ bản Nhật. Tách trường ngôn ngữ, dùng hồ sơ xưng hô/thuật ngữ chung và không trộn bản dịch vào câu thoại Nhật (mục23–24).
 - Hội thoại khoảng 6–12 lượt theo mục tiêu. Không áp quy tắc 11 lượt của nhánh hội thoại khác.
 - Bắt đầu bằng tình huống đã kiểm duyệt, lựa chọn tự do có giới hạn.
 - Tạo một bộ thi thử kỹ năng và một bộ thi thử tiếng Nhật để kiểm duyệt trước; tổng số bộ về sau chưa chốt.
@@ -202,3 +202,14 @@ Chỉ thị mới thay mọi mô tả lịch sử coi tiếng Việt là bản g
 Bắt đầu tuần1, rồi từng tuần trọn chu trình: kiểm kê → soạn Nhật → đối chiếu ý nguồn → rà ảnh/câu hỏi → dịch → tích hợp/QA → commit/xác minh remote. Giữ ID, dữ liệu cũ và tiến trình; không thiết kế lại UI. Bản dịch phải gắn phiên bản nội dung Nhật; thay bản Nhật thì bản dịch cũ chờ cập nhật. Không lấy tiếng Việt thay ngôn ngữ đang thiếu. Bản Việt cũ nếu còn hiển thị để tham khảo phải ghi rõ chưa đối chiếu; không tính là bản dịch hoàn thành.
 
 Lập bảng nguồn/phiên bản/trang/ý kiến thức/ID đoạn/trạng thái; không suy độ phủ toàn sách từ số trường hay số trang. Tách kiểm AI, chuyên môn, bản ngữ và thiết bị. Chưa duyệt thì giữ cờ false, không tự nhận phát hành. Tuần chỉ hoàn tất khi mọi bước thực sự xong; được lưu checkpoint giữa chừng nhưng không đổi tên phần dở thành hoàn thành.
+
+
+## 24. Chuẩn xưng hô, ngôn từ và hiển thị đã duyệt — 2026-10-16
+
+Chủ dự án xác nhận bản Việt tuần1 ở commit3bed1485 gần gũi và đúng mong muốn, yêu cầu áp dụng cách xử lý đó nhất quán cho mọi ngôn ngữ Kaigo từ nay về sau. Hướng dẫn bắt buộc: KAIGO_LANGUAGE_STYLE_GUIDE.md phiên bản1; metadata: language-style-policy.json. Đọc trước mỗi đợt soạn/dịch/chỉnh hiển thị; dùng cùng điểm tham chiếu qua các phiên.
+
+Việt: giải thích dùng “người được chăm sóc”; nhân viên trẻ với người lớn tuổi trong cảnh phù hợp dùng “cháu–bác”; đồng nghiệp ngang vai theo mẫu dùng “mình–bạn”. Tôn trọng cách gọi cá nhân, vai, tuổi và thông tin đã biết; không ép một cặp đại từ cho mọi người. Câu văn đầy đủ, tự nhiên; thuật ngữ ưu tiên thống nhất. Mọi ngôn ngữ dịch trực tiếp từ Nhật và dùng cách xưng hô tự nhiên theo văn hóa/ngữ cảnh riêng, không chuyển máy móc đại từ Việt. Lập và dùng hồ sơ ngôn ngữ, bảng thuật ngữ và quan hệ nhân vật chung.
+
+Nhật hiển thị trước; mở dịch thì từng đoạn dịch theo ngay đoạn Nhật tương ứng. Giữ thứ tự, ngôn ngữ chọn, liên kết phiên bản và hệ Royal/màu ngày–đêm/thành phần hiển thị đã duyệt; không tự đổi thiết kế theo tuần/phiên hoặc lẫn bản cũ với bản mới. Rà cả nghĩa, độ tự nhiên, xưng hô, thuật ngữ và cặp đoạn; kiểm tự động không chứng nhận chất lượng ngôn ngữ.
+
+Duyệt này xác nhận phong cách Việt và nguyên tắc chung, không tự nâng cờ chuyên môn, bản ngữ, thiết bị hoặc toàn bộ bản dịch. Sửa lỗi thường lệ trong phạm vi đã giao được tiếp tục; không yêu cầu chủ dự án duyệt lại chuẩn đã chốt.

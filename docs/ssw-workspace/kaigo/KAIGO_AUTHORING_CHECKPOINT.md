@@ -796,3 +796,8 @@ The current migration state is recorded in JAPANESE_FIRST_CHECKPOINT_2026-10-15.
 
 ## 2026-10-16 — week1 Vietnamese readability repair
 After publisher feedback,73week1reader sections/246paragraphs now have full Vietnamese translations from the unchanged Japanese master, with7titles/captions. Original Vietnamese source data preserved, replaced references no longer displayed in that week. Japanese/translation paragraphs are paired.84AI translation drafts total (73vi+11pilot other languages); no human/native approval. Current migration details are in JAPANESE_FIRST_CHECKPOINT_2026-10-15.md, latest Vietnamese revision section. Week1 and the course migration are still incomplete; don't mark them complete from translation field counts.
+
+
+## 2026-10-16 — publisher-approved multilingual style baseline
+The publisher explicitly approved the Vietnamese week1 address/tone and requested the same editorial and presentation approach across every Kaigo language from now on. Rules v13, approved-plan v17, KAIGO_LANGUAGE_STYLE_GUIDE.md v1 and language-style-policy.json v1 record the binding convention. AGENTS.md and the session entry guide now require these readings before future Kaigo language/display batches. Vietnamese benchmark:3bed1485; known older-resident scenes use cháu–bác, peer colleagues mình–bạn, explanations người được chăm sóc. Other languages preserve the respectful/contextual intent using their own appropriate forms and recorded locale profiles.
+This unit changes documentation/policy only, not runtime content/layout or progress. Approval covers style, not whole-course completion, every translation, specialist/native/device/release review. Existing remaining authoring/translation/assessment work is unchanged.
