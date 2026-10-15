@@ -6,15 +6,15 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "いらっしゃいませ。お会計でしょうか。",
+        "textJa": "お会計の明細をお持ちしました。幹事の方がまとめて確認なさいますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-046-12-001-SHARED-02",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -24,25 +24,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "restaurant-bill_response_1",
+        "communicativeIntent": "ask_deposit_application_in_group_meal_bill",
         "requiredSemanticComponents": {
-          "goal": "注文内容と会計方法を確認する"
+          "goal": "幹事として予約預かり金が明細で差引済みか不明と尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。鹿児島市の友人と食事をしました。会計の内容を確認したいです。",
+        "recommendedAnswerJa": "私が確認します。予約のときに預かり金を払っていますが、この明細ではその分が引かれているかわかりません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "幹事として予約預かり金が明細で差引済みか不明と尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "幹事として予約預かり金が明細で差引済みか不明と尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-046-12-001-SHARED-03",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -51,15 +51,15 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こちらがご注文の明細です。",
+        "textJa": "予約の控えや、お支払いを確認できるものはありますか。記録と照合します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-046-12-001-SHARED-04",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -69,25 +69,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "restaurant-bill_response_2",
+        "communicativeIntent": "present_deposit_proof_and_separate_food_total_from_balance",
         "requiredSemanticComponents": {
-          "goal": "注文内容と会計方法を確認する"
+          "goal": "控えを示し料理合計の誤りではなく先払と本日残額を分けて確認したいと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "この飲み物は注文していないと思います。確認していただけますか。",
+        "recommendedAnswerJa": "この控えです。料理の合計が間違っていると言いたいのではなく、先に払った分と今日払う残額を分けて見たいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "控えを示し料理合計の誤りではなく先払と本日残額を分けて確認したいと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "控えを示し料理合計の誤りではなく先払と本日残額を分けて確認したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-046-12-001-SHARED-05",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -96,15 +96,15 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。伝票と注文の記録を確認します。",
+        "textJa": "記録を確認したところ、先のお預かり分がまだこの明細に反映されていません。差し引いた残額の明細を出し直します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-046-12-001-SHARED-06",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -114,25 +114,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "restaurant-bill_response_3",
+        "communicativeIntent": "request_revised_balance_before_collecting_participant_money",
         "requiredSemanticComponents": {
-          "goal": "注文内容と会計方法を確認する"
+          "goal": "残額明細を求め参加者徴収額決定前に旧合計と残額を区別すると述べる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "ありがとうございます。二人分を別々に払えるかも知りたいです。",
+        "recommendedAnswerJa": "残額を出し直してもらえますか。参加者から集める額を決める前に、古い合計と新しい残額を取り違えないよう確認します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "残額明細を求め参加者徴収額決定前に旧合計と残額を区別すると述べる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "残額明細を求め参加者徴収額決定前に旧合計と残額を区別すると述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-046-12-001-SHARED-07",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -141,15 +141,15 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "お店の会計方法を確認します。できない場合は先にお伝えします。",
+        "textJa": "こちらが修正した明細です。預かり分と残額の欄を分けました。お支払いの分け方にご希望はありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-046-12-001-SHARED-08",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -159,25 +159,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "restaurant-bill_response_4",
+        "communicativeIntent": "choose_one_restaurant_payment_not_per_person_split",
         "requiredSemanticComponents": {
-          "goal": "注文内容と会計方法を確認する"
+          "goal": "店では幹事が残額一括払いし参加者負担調整は別にして分割会計を求めないと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "わかりました。確認が終わってから支払います。",
+        "recommendedAnswerJa": "店では私が残額をまとめて払います。参加者同士の負担は後で話すので、お店に人数で割った別会計を頼むつもりではありません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "店では幹事が残額一括払いし参加者負担調整は別にして分割会計を求めないと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "店では幹事が残額一括払いし参加者負担調整は別にして分割会計を求めないと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-046-12-001-SHARED-09",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -186,15 +186,15 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "確認した内容を説明しますので、明細をもう一度ご覧ください。",
+        "textJa": "残額をまとめてのお支払いですね。明細を確認してから、お支払い方法をお選びください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-046-12-001-SHARED-10",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -204,25 +204,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "restaurant-bill_response_5",
+        "communicativeIntent": "approve_deposit_adjusted_balance_card_payment_and_keep_records",
         "requiredSemanticComponents": {
-          "goal": "注文内容と会計方法を確認する"
+          "goal": "預かり反映残額を確認しカード一括払いと修正明細・決済後控えの保管を希望する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。内容が合っているか確認します。レシートもお願いします。",
+        "recommendedAnswerJa": "預かり分が反映された残額を確認しました。カードでまとめて払います。修正明細と、支払い後の控えを受け取って保管します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "預かり反映残額を確認しカード一括払いと修正明細・決済後控えの保管を希望する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "預かり反映残額を確認しカード一括払いと修正明細・決済後控えの保管を希望する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-046-12-001-SHARED-11",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -231,24 +231,27 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。お忘れ物のないようにお帰りください。",
+        "textJa": "では確認後の残額でカード会計に進みます。お支払いが済んだら控えをお渡しします。ありがとうございました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": null,
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     }
   ],
   "authoring": {
     "locale": "ja",
-    "recipe": "restaurant-bill",
     "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
     "contentScope": "simulated_learning_scenario",
     "nativeSpeakerReviewed": false,
-    "translationState": "deferred_until_all_japanese_complete"
+    "translationState": "deferred_until_all_japanese_complete",
+    "editorialSource": "scripts/dialogue-authoring/prf-046-city-cty-046.json",
+    "premise": "鹿児島市を舞台にした学習用の架空施設。架空飲食店で、会食の幹事が予約時に払った預かり金の控えを示す。明細に反映されていないことが記録照合で判明し、残額を確認してまとめて払う。表示、書類、設備、条件は架空場面内のものであり、実在施設の情報を示さない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
   }
 }

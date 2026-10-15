@@ -6,15 +6,15 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。どちらまでお出かけですか。",
+        "textJa": "経路の確認ですね。どの駅で降りたいか、わかるものはありますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-046-01-001-SHARED-02",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -24,25 +24,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "station-route_response_1",
+        "communicativeIntent": "question_transfer_despite_train_beyond_destination",
         "requiredSemanticComponents": {
-          "goal": "目的地までの経路を確認する"
+          "goal": "友人指定駅より先へ行く列車なのに乗換表示があると尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "鹿児島市から友人の家へ行きたいのですが、乗り換えがわかりません。",
+        "recommendedAnswerJa": "友人からこの駅へ来てと言われました。ここに出ている列車はもっと先まで行くので、途中のその駅でも降りられると思ったのですが、乗換えの表示があります。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "友人指定駅より先へ行く列車なのに乗換表示があると尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "友人指定駅より先へ行く列車なのに乗換表示があると尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-046-01-001-SHARED-03",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -51,15 +51,15 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "目的地の駅名か、住所がわかるものを見せていただけますか。",
+        "textJa": "終点が先でも、目的の駅に停まるかは別です。この候補では目的駅を通過するため、途中で別の列車へ乗り換える表示になっています。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-046-01-001-SHARED-04",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -69,25 +69,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "station-route_response_2",
+        "communicativeIntent": "distinguish_transfer_station_from_final_stop",
         "requiredSemanticComponents": {
-          "goal": "目的地までの経路を確認する"
+          "goal": "終点と全駅停車を混同したと述べ乗換駅と最終降車駅を分けて示してもらう"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "このメッセージに駅名が書いてあります。",
+        "recommendedAnswerJa": "先まで行くことと、途中の駅すべてに停まることを同じに考えていました。乗り換える駅と、最後に降りる駅を分けて示してください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "終点と全駅停車を混同したと述べ乗換駅と最終降車駅を分けて示してもらう。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "終点と全駅停車を混同したと述べ乗換駅と最終降車駅を分けて示してもらう。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-046-01-001-SHARED-05",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -96,15 +96,15 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ありがとうございます。経路検索の結果を一緒に確認しましょう。出発時刻の希望はありますか。",
+        "textJa": "こちらが乗換駅、こちらが目的駅です。候補のうち、出発が早いものと乗換えが少ないものでは、どちらを優先しますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-046-01-001-SHARED-06",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -114,25 +114,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "station-route_response_3",
+        "communicativeIntent": "prioritize_fewer_changes_over_earlier_departure",
         "requiredSemanticComponents": {
-          "goal": "目的地までの経路を確認する"
+          "goal": "出発が少し後でも知らない駅での急な移動を減らすため乗換少なめを希望する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "午後三時までに着きたいです。歩く時間も含めて調べられますか。",
+        "recommendedAnswerJa": "乗換えの少ない方を優先します。少し出発が後でも、知らない駅で急いで移動する回数を減らしたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "出発が少し後でも知らない駅での急な移動を減らすため乗換少なめを希望する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "出発が少し後でも知らない駅での急な移動を減らすため乗換少なめを希望する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-046-01-001-SHARED-07",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -141,15 +141,15 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。乗り換えに余裕のある経路を確認します。階段の利用は大丈夫ですか。",
+        "textJa": "その条件の候補を確認します。乗換えの場所で、ホームの表示に迷ったらどうするかも考えておきましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-046-01-001-SHARED-08",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -159,25 +159,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "station-route_response_4",
+        "communicativeIntent": "check_stop_list_before_boarding_next_train",
         "requiredSemanticComponents": {
-          "goal": "目的地までの経路を確認する"
+          "goal": "終点名だけで選ばず目的駅停車表示を見て不明なら乗車前に係員へ聞くと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "荷物が重いので、できればエレベーターを使いたいです。",
+        "recommendedAnswerJa": "終点の名前だけで次の列車に乗らず、目的駅に停まるかの表示も見ます。わからなければ乗る前に係員へ聞きます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "終点名だけで選ばず目的駅停車表示を見て不明なら乗車前に係員へ聞くと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "終点名だけで選ばず目的駅停車表示を見て不明なら乗車前に係員へ聞くと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-046-01-001-SHARED-09",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -186,15 +186,15 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "では、駅構内の案内図でエレベーターの位置も確認しましょう。",
+        "textJa": "はい。案内の列車名と時刻も、その時の発車表示に照らし合わせてください。乗車前に、経路を言い返してみますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-046-01-001-SHARED-10",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -204,25 +204,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "station-route_response_5",
+        "communicativeIntent": "restate_change_station_vs_friends_destination",
         "requiredSemanticComponents": {
-          "goal": "目的地までの経路を確認する"
+          "goal": "乗換駅と友人の最寄り駅を区別して停車列車へ乗り発車表示も照合すると復唱する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "ありがとうございます。乗る前にホームの表示も確認します。",
+        "recommendedAnswerJa": "この案内の乗換駅で降り、目的駅に停まる列車へ移るのですね。乗換駅を友人の最寄り駅と取り違えず、表示を照合してから乗ります。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "乗換駅と友人の最寄り駅を区別して停車列車へ乗り発車表示も照合すると復唱する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "乗換駅と友人の最寄り駅を区別して停車列車へ乗り発車表示も照合すると復唱する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-046-01-001-SHARED-11",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -231,24 +231,27 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "行き先と出発時刻を表示で確かめてから、ご乗車ください。お気をつけて。",
+        "textJa": "その二つの駅を分けてお確かめください。こちらが確認した経路です。お気をつけて、いってらっしゃいませ。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": null,
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     }
   ],
   "authoring": {
     "locale": "ja",
-    "recipe": "station-route",
     "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
     "contentScope": "simulated_learning_scenario",
     "nativeSpeakerReviewed": false,
-    "translationState": "deferred_until_all_japanese_complete"
+    "translationState": "deferred_until_all_japanese_complete",
+    "editorialSource": "scripts/dialogue-authoring/prf-046-city-cty-046.json",
+    "premise": "鹿児島市を舞台にした学習用の架空施設。架空駅で友人宅へ向かう客が、目的駅より先へ行く列車なら途中で降りられると思ったと説明する。停車駅と乗換えの違いを確認し、案内どおりの列車を照合する。表示、書類、設備、条件は架空場面内のものであり、実在施設の情報を示さない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
   }
 }
