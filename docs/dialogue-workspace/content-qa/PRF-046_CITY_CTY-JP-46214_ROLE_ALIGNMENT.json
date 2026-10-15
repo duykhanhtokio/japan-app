@@ -1,0 +1,102 @@
+{
+  "cityId": "CTY-JP-46214",
+  "corrections": {
+    "LOC-JP-46214-01": {
+      "category": "Bus Terminal",
+      "npcJob": "Bus Staff",
+      "nameJa": "架空のバス乗継案内所",
+      "name": "Fictional Bus Connection Information Counter",
+      "description": "架空のバス乗継案内所で、過去の遅延表示を発車予定と誤解した利用者へ、未定の情報と更新確認を案内する。Station/Station Staffから既存Bus Terminal/Bus Staffへ変更しTravel目的を保持。実在の垂水市の鉄道やバス路線、運行時刻、発車見込みを設定・保証しない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46214-02": {
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "nameJa": "架空の行政相談予約窓口",
+      "name": "Fictional Administrative Appointment Desk",
+      "description": "架空の行政相談窓口で、予約済み本人の用件と同居人の別件、言語補助としての同行を分ける。既存予約を維持し、別件の担当と日時を本人へ確認する段階であり、実在の行政予約や通訳提供を保証しない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46214-03": {
+      "category": "Hospital",
+      "npcJob": "Hospital Reception Staff",
+      "nameJa": "架空の病院会計書類窓口",
+      "name": "Fictional Hospital Billing Document Desk",
+      "description": "架空の病院会計窓口で、受付事務担当者が領収書の受診日と職場用紙の復職予定日を区別する。NurseからHospital Reception Staffへ役割を合わせ、就業可否の医学的判断や即日発行をしない。職場の要件を確認し書類相談担当へつなぐ。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46214-04": {
+      "category": "Police Station",
+      "npcJob": "Police",
+      "nameJa": "架空の警察遺失物相談窓口",
+      "name": "Fictional Police Lost Property Consultation Desk",
+      "description": "架空の警察相談窓口で、ケースは見つかったが眼鏡は未発見という更新を記録する。ケースの発見場所を眼鏡の紛失場所と断定せず、本人の最後の使用と推測を分ける。発見、所有権、受理後の結果を保証しない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46214-05": {
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "nameJa": "架空の郵便受取相談窓口",
+      "name": "Fictional Postal Collection Consultation Counter",
+      "description": "架空の郵便相談窓口で、にじんだ不在票番号、保管期限と保管場所を推測せず確認する。家族の発送控えは照合用で、それだけで引渡し資格が確定する設定ではない。実在事業者の再配達時刻や代理受取条件を保証しない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46214-06": {
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "nameJa": "架空の銀行カード紛失窓口",
+      "name": "Fictional Bank Lost Card Desk",
+      "description": "架空の銀行窓口で、二行のカード紛失を当行分と他行分に分ける。本人確認前に停止済みとはせず、停止状況の確認と再発行の選択も分ける。全発行元への代理対応、即日停止完了、再発行日や費用を保証しない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46214-07": {
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "nameJa": "架空のスーパー日用品相談窓口",
+      "name": "Fictional Supermarket Household Goods Desk",
+      "description": "架空のスーパーで、一度使って開いた洗濯ネットについて、閉め方の記憶、未修理、外袋なし、レシートありという状況を整理する。持ち手収納部の有無と開いた原因を区別し、原因や交換可否は現物確認前に確定しない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46214-08": {
+      "category": "Park",
+      "npcJob": "Park Staff",
+      "nameJa": "架空の公園散歩案内所",
+      "name": "Fictional Park Walking Information Desk",
+      "description": "架空の公園で、犬連れの短い散歩、屋外休憩と犬の世話を相談する。Community StaffからPark Staffへ合わせた。室内利用制限、同伴可能範囲、預かりをしない条件は会話内だけの設定で実在公園の規則や設備ではない。",
+      "openHours": null,
+      "address": null
+    }
+  },
+  "findings": [
+    {
+      "locationId": "LOC-JP-46214-01",
+      "finding": "実在駅名に見える入力から、架空のバス乗継案内所へ変更。既存Bus Terminal/Bus Staffを使い、遅延と更新確認というTravel目的、原IDと経路グループを保持。実在鉄道路線を捏造しない。"
+    },
+    {
+      "locationId": "LOC-JP-46214-03",
+      "finding": "会計書類相談に合わせてNurseからHospital Reception Staffへ。受付担当は復職日を医学的に決めず、医師への相談担当を案内する。"
+    },
+    {
+      "locationId": "LOC-JP-46214-08",
+      "finding": "Parkの案内担当としてCommunity StaffをPark Staffへ修正。犬の預かりや訓練を提供せず、公園内の相談に限定。"
+    },
+    {
+      "finding": "全8施設を明示的な架空名に変更。入力の未確認の営業時間は全てnull、住所もnull。city/scenario/location IDと元の経路グループを保持。"
+    },
+    {
+      "finding": "カテゴリは実コードNPC_CATEGORIESと完全一致照合済み。新規カテゴリ/画像なし。既存バス窓口・会計窓口・公園画像との適合や図の表示は実機未検証。犬の専用アセットは追加しない。"
+    }
+  ],
+  "inputSha256": "fde0ebb226b611779a7165f774d34734a0855aefdec88ad76ce7eb0a31b65f9d",
+  "sourceSha256": "9368123fca0262ba3ddb1d446854cf6a8c9a7e7991cdc7037cad829afc898ac4",
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "peerReviewed": false
+}
