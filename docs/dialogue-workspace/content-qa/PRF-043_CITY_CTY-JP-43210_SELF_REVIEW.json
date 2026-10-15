@@ -1,0 +1,71 @@
+{
+  "cityId": "CTY-JP-43210",
+  "baseline": "de054c902c4a00ad79944220ae87a64373782f14",
+  "inputSha256": "1c09b46a0d3b120430ddaaef77ce8e7023ca6f3d69007794f7b6d99d422795bc",
+  "sourceSha256": "fcf906d3ffb4cb5ee7f110b96765b5db19f49b6f2f0240022e847f053bc3d58d",
+  "roleAlignmentSha256": "0846d894a624b0d409443cb14f5b34ee5bc8efcfafc196130d0536901cee178e",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-43210-01-001": "二人の乗車場所が別→友人は広場とだけ連絡→本人一人の候補を整理→同便は未確定→停留所名が分かるまで購入保留。",
+    "SC-LOC-JP-43210-02-001": "提出したつもりの回答書の催促→写真はあるが受理不明→発行日と提出日の前後を整理→別紙の意味も不明→原本を残し照会待ち。",
+    "SC-LOC-JP-43210-03-001": "声を出しにくい初診→筆談で発症時点→薬袋を提示→過去の不調と薬名不明を分ける→呼出し時の挙手を申し送る。",
+    "SC-LOC-JP-43210-04-001": "鍵三本を拾得→広場名不明なので図で特定→レシートから推定時刻→青い布の特徴→連絡先は紙で必要範囲を記入。",
+    "SC-LOC-JP-43210-05-001": "自分のみ転居で同居人は残る→建物名・部屋番号→会社名併記の郵便は不明→見本に必要な部分を相談→対象と差出人への連絡を分ける。",
+    "SC-LOC-JP-43210-06-001": "旧番号へ確認が届き住所変更停止→秘密番号を出さず別確認相談→建物略称と資料の差→口座とカードを個別確認→送付先の反映も照会。",
+    "SC-LOC-JP-43210-07-001": "似た調味料とごまアレルギー→片方ごま、他方の文字は読めない→未開封常温と開封後冷蔵→番号を控えてメーカーへ→今日は買わない。",
+    "SC-LOC-JP-43210-08-001": "二十分の散歩と南入口待合せ→北から来た思い込みを訂正→電池切れで紙の目印→閉鎖区間を避け短い帰路も相談→園内表示を照合して南へ。"
+  },
+  "corrections": [
+    "元の汎用台本を八つの独立した原因・追質問・判断・結末で書き直し、四十のPlayer目標を各応答に対応させた。",
+    "未検証の駅名と鉄道の案内を、架空バス窓口の別乗り場申込みへ転換した。",
+    "行政の回答書提出と受理、看護師の伝達と診断、銀行の照会と完了、食品表示と安全保証を区別した。",
+    "最終再読で銀行の秘密番号は不要との表現を、窓口では聞かないとの明示に整えた。",
+    "最終再読で北から来た人の最初の希望を南入口へ戻るから南入口へ行くへ修正し、目標も同じ表現に合わせた。",
+    "実在風の八施設名を架空にして営業時間を消し、公園係をPark Staffへ対応させた。"
+  ],
+  "checks": {
+    "assignedScenarioIdsExact": "PASS",
+    "elevenAlternatingTurns": "PASS: 元IDの順で奇数NPC・偶数PLAYERへ対応。",
+    "fiveTasksToFivePlayerReplies": "PASS: 全文と直前NPCの質問を一つずつ自分で照合。",
+    "uniquePlayerUtterances40": "PASS",
+    "uniqueGoals40": "PASS",
+    "uniqueIntentIds40": "PASS",
+    "uniqueNpcUtterances48": "PASS",
+    "fullFinalOwnReread": "PASS: title/premise/88turns/40tasks/role metadataを再読。",
+    "concreteNpcClosureAll8": "PASS",
+    "japaneseOnlySpokenContent": "PASS",
+    "distinctCausalPlots": "PASS",
+    "supportedNpcCategories": "PASS: NPC_CATEGORIES/normalizeNpcCategoryのカテゴリ文字列へ八つ全て一致。",
+    "fictionalVenuesAndNullHoursAddresses": "PASS",
+    "noRailGeographyClaims": "PASS",
+    "noDiagnosisEligibilityOwnershipOrDeliveryGuarantee": "PASS",
+    "noUnverifiedRealOperatorSchedulesPrices": "PASS",
+    "preservedIdsAndGrouping": "PASS: authoringのみ、runtimeは変更していない。"
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "独立したAI著者が担当市の入力と最終稿を自分で全文照合したもので、他著者による確認や母語話者審査ではない。",
+    "各施設・商品・通知・路線・通路・受付条件は明示した架空設定。現地の営業時間・住所・法的手続条件を確認した内容ではない。",
+    "看護師の記録支援は診断や服薬指示ではなく、銀行と行政の照会も受理・認定・変更完了を保証しない。",
+    "既存のBus Terminal等の汎用カテゴリを使い新カテゴリや資産を作らない。実際の背景画像と本文の一致は画像・端末で未検証。",
+    "統合、UI、実機、翻訳、公開承認やremote保存は著者の作業範囲外であり統合側で行う。"
+  ],
+  "paths": {
+    "source": "scripts/dialogue-authoring/prf-043-city-cty-jp-43210.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-043_CITY_CTY-JP-43210_ROLE_ALIGNMENT.json",
+    "input": "docs/dialogue-workspace/content-qa/PRF-043_CITY_CTY-JP-43210_INPUT.json"
+  }
+}
