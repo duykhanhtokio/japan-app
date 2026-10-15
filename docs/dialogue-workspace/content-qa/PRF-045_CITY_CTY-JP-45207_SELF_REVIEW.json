@@ -1,0 +1,80 @@
+{
+  "cityId": "CTY-JP-45207",
+  "baseline": "5e9e90add76f00a3e660df23a611cfa2988ccd2b",
+  "inputSha256": "36dcf9fe966b17b1488c321015188bd6a6fa7dd4d5b6e156ff7438ad22fb4a86",
+  "sourceSha256": "e805048b1eb5cac1d6bc85fe0db450353eb2e96f329b23a5b32a260bfc258f1b",
+  "roleAlignmentSha256": "1498e609a7db051c6b1d85fb59b3c80546e9740ac35cf8568d405c642aca9f34",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "paths": {
+    "source": "scripts/dialogue-authoring/prf-045-city-cty-jp-45207.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-045_CITY_CTY-JP-45207_ROLE_ALIGNMENT.json"
+  },
+  "causalPlots": {
+    "SC-LOC-JP-45207-01-001": "友人に頼まれ二人分買うつもりが、新しい買えたという連絡を見落としていた。人数・日付・行先を友人へ照会し、本人一人分だけの購入相談に直す。",
+    "SC-LOC-JP-45207-02-001": "自分の一覧の印を提出確認と誤認したが、印は準備時に付け封筒も家にある。準備と提出、未着の一書類と期限の質問を区別して担当へ伝える。",
+    "SC-LOC-JP-45207-03-001": "未測定なのに発熱なしを選びかけた。頭痛は昨日昼、熱っぽさは夜と分け、強さの比較も不確かとして看護師から医師へ引き継ぐ。",
+    "SC-LOC-JP-45207-04-001": "拾ったポーチを私物の買物袋で運び、袋には本人のレシートもある。拾得時の範囲と持参時に加わった物を分け、通話履歴を時刻の目安として届ける。",
+    "SC-LOC-JP-45207-05-001": "会社寮への郵便を全て新居へと考えたが、会社名だけの封筒と本人名の封筒がある。本人分の相談を先にし会社宛ての扱いは会社に確認する。",
+    "SC-LOC-JP-45207-06-001": "メールアドレス変更を郵便先変更と思った。画面はメールだけと確かめ、家族から旧居の手紙の宛先写真を受け、新住所と通知先の相談を別に依頼する。",
+    "SC-LOC-JP-45207-07-001": "常温表示は未開封条件なのに開封大瓶を職場で数日使うつもりだった。職場に冷蔵庫がないので大容量案をやめ、小さい一本の独自表示を確かめる。",
+    "SC-LOC-JP-45207-08-001": "紙の案内を逆向きに持ち花壇の並びが合わない。現在地と現地目印で図を回し、戻る入口と休憩所を指して確認してから散歩へ進む。"
+  },
+  "corrections": [
+    "All eight actual-looking facility names made explicitly generic fictional learning venues; unverified hours and addresses cleared to null.",
+    "Park/Community Staff corrected to existing Park/Park Staff. All source venue categories, location/scenario IDs and route grouping retained.",
+    "Station NPC question revised to directly ask whether both people still plan to buy and whether a new companion message exists, improving the cause of the Player reread.",
+    "Administrative NPC revised to a direct request to explain the unarrived document and deadline; unnecessary extension-disclaimer wording removed without promising extension.",
+    "Nurse handoff wording revised to natural reporting of the Player account and assistance with writing, without diagnosis or urgency classification.",
+    "Bank evidence continuity clarified: letter arrived at the old home, so the Player requests an addressee photo from family rather than implicitly presenting an original already in hand. Third task synchronized.",
+    "Supermarket final Player sentence smoothed to natural wording about choosing the amount to drink today; no storage safety claim added.",
+    "Every final title, premise, 88 turns, 40 tasks and eight role corrections reread. Changed passages and neighboring turns/tasks reread after final edits and byte hashes refreshed."
+  ],
+  "checks": {
+    "fullAssignedInputRead": true,
+    "allOwnFinalProseAndRoleCorrectionsReread": true,
+    "exactScenarioIdsPreserved": true,
+    "sourceCityLocationIdsTypesAndRouteGroupingRetained": true,
+    "elevenNpcFirstAlternatingTurnsEach": true,
+    "fiveSpecificContextAlignedTasksEach": true,
+    "allFortyPlayerUtterancesUnique": true,
+    "allFortyIntentsUnique": true,
+    "allFortyTaskGoalsUnique": true,
+    "eightDistinctNpcClosures": true,
+    "noAcknowledgmentOnlyPlayerTurns": true,
+    "noNounSwappedReusableSkeleton": true,
+    "eachCausalPlotAndOutcomeReviewed": true,
+    "japaneseOnlySpeech": true,
+    "noLevelGate": true,
+    "numbersDatesOnsetsAndOwnershipReferencesChecked": true,
+    "categoriesCheckedAgainstExactNpcProgressionCode": true,
+    "noNewCategoriesOrAssets": true,
+    "explicitFictionalVenueIdentities": true,
+    "allHoursAndAddressesNull": true,
+    "noActualLocalRouteSchedulePriceOrPolicyGuarantee": true,
+    "noDiagnosisTriageOrFoodSafetyGuarantee": true,
+    "noPropertyRightsAdministrativeCompletionOrProxyAuthorityDetermination": true,
+    "finalExactByteHashesVerified": true,
+    "noOtherCityProseRead": true,
+    "noActiveCheckoutRuntimeSharedOrGitWrites": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "Independent author self-review only; no peer, native-speaker or human review.",
+    "All signs, products, documents, service screens, layouts and scene conditions are hypothetical, not verified Kushima facilities or current operational policies.",
+    "No actual ticket validity, document acceptance, deadline alteration, medical diagnosis, property entitlement, postal authority, bank registration or consumption safety is established.",
+    "Runtime integration, artwork/device inspection and release approval remain with root; this author made no active-checkout runtime or shared-file edits."
+  ]
+}
