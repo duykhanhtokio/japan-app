@@ -1,0 +1,420 @@
+{
+  "cityId": "CTY-JP-43204",
+  "baseline": "de054c902c4a00ad79944220ae87a64373782f14",
+  "inputSha256": "fea0a3bc3994cd2031acd230ea4394b04347a2f042e81a20398c58ba68f06b1f",
+  "sourceSha256": "16ac502062814b22f06434ceafc2f398121f540ab3c19939e0e948b89be12632",
+  "roleAlignmentSha256": "45ebc96ccafb00fa54f7f0796b55536fd6376deffb1a9596564facc87f96c437",
+  "sourceFile": "scripts/dialogue-authoring/prf-043-city-cty-jp-43204.json",
+  "roleAlignmentFile": "docs/dialogue-workspace/content-qa/PRF-043_CITY_CTY-JP-43204_ROLE_ALIGNMENT.json",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-43204-01-001": {
+      "title": "購入日と利用日を分けて片道の切符を頼む",
+      "causalProgression": "荒尾市に配置した架空の駅窓口。翌日の展示会へ向かう切符を前日に買う。往復の行程メモを持っているが、帰りは知人の車に乗る可能性があり、片道だけ申し込む。実在路線の運賃や発売条件を示すものではない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "request_outbound_ticket_for_tomorrow",
+          "goal": "翌日の展示会に行くため、メモの会場最寄り駅まで大人一人分の切符を求める。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "exclude_uncertain_return_journey",
+          "goal": "帰りは知人の車に乗る可能性を伝え、行きの片道だけを申し込む。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "distinguish_purchase_and_travel_dates",
+          "goal": "乗車日は明日だと答え、今日購入して利用日を明日に指定できるか尋ねる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "explain_abandoned_machine_purchase",
+          "goal": "券売機に今日の日付が出たため支払わず戻ったと説明し、窓口での対応を頼む。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "reapply_at_counter_and_request_receipt",
+          "goal": "窓口で申し込み直し、明日利用の片道一枚と支払いの控えを希望する。"
+        }
+      ]
+    },
+    "SC-LOC-JP-43204-02-001": {
+      "title": "通知の日付を読み分けて不足書類を相談する",
+      "causalProgression": "架空の行政相談窓口。住所確認の照会通知に発行日と回答期限があるが、添付書類の案内が手元にない。窓口は相談先をつなぎ、期限延長や書類免除の可否は確約しない。実在行政機関の手続き情報ではない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "identify_two_dates_on_notice",
+          "goal": "住所確認の通知に日付が二つあり、回答すべき期限を読み分けられず困っていると伝える。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "show_notice_and_disclose_missing_enclosure",
+          "goal": "その場で通知を見ることを認め、封筒の別紙が手元になく一枚だけ持参したと説明する。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "seek_replacement_instruction_sheet",
+          "goal": "書類の種類が不明で期限に間に合うか分からないと答え、別紙を再取得する方法を尋ねる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "preserve_deadline_uncertainty_and_request_relay",
+          "goal": "期限延長とは受け取らず相談すると述べ、取り次ぐ担当へ別紙の不足も伝えてほしいと頼む。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "retain_original_until_assigned_consultation",
+          "goal": "通知を手元に残す希望を伝え、担当に呼ばれた際に自分から見せると申し出る。"
+        }
+      ]
+    },
+    "SC-LOC-JP-43204-03-001": {
+      "title": "初診で症状と名前の分からない薬を伝える",
+      "causalProgression": "架空の病院の初診受付付近。看護師がひざの痛みの経過と持参情報を聞く。患者は普段飲む薬の名前が分からず、家族に確認する。診断や服薬変更、受診順や保険適用の保証は行わない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "describe_first_visit_knee_pain_history",
+          "goal": "初診であることと、一週間ほど続く右ひざの痛みが歩くときに気になることを伝える。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "state_uncertain_injury_and_onset",
+          "goal": "明確なけがの覚えがなく発症時期も正確ではないと答え、その不確かさを問診票に書いてよいか尋ねる。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "report_unnamed_regular_medicine",
+          "goal": "毎朝飲む薬があるが名称を覚えておらず、お薬手帳も持参していないと伝える。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "arrange_family_photo_without_guessing_name",
+          "goal": "家族に薬名の読める写真を頼み、確認できるまでは名称不明と記載すると伝える。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "request_one_question_at_a_time",
+          "goal": "痛みの質問をまとめて聞くと聞き取れないと説明し、以後は一つずつ説明してほしいと頼む。"
+        }
+      ]
+    },
+    "SC-LOC-JP-43204-04-001": {
+      "title": "拾った定期入れの発見場所と手続きの控えを伝える",
+      "causalProgression": "架空の警察相談窓口。架空の公園の休憩室で黒い定期入れを見つけ、入口と休憩室を取り違えないよう発見場所と時刻を説明して届ける。拾得者の権利や保管期間、返還の可否をこの会話で決定しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "deliver_unopened_pass_holder",
+          "goal": "公園の休憩室で拾った黒い定期入れを届け、中のカードは取り出していないと伝える。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "correct_discovery_place_and_approximate_time",
+          "goal": "入口ではなく休憩室の椅子の下で見つけ、確認した時刻は午後二時過ぎだったと訂正する。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "report_limited_contact_with_possible_owner",
+          "goal": "近くの人一人に持ち主か尋ねて否定され、それ以外には話していないと答える。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "seek_explanation_before_contact_option_choice",
+          "goal": "案内を読む希望を示し、持ち主発見後の連絡に関する選択欄の意味を記入前に尋ねる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "request_case_reference_on_receipt",
+          "goal": "項目の説明後に記入すると伝え、後日照会に使う番号を控えで案内してほしいと頼む。"
+        }
+      ]
+    },
+    "SC-LOC-JP-43204-05-001": {
+      "title": "一人だけ転居した場合の郵便の届け出を相談する",
+      "causalProgression": "架空の郵便窓口。本人だけが引っ越し、配偶者は元の住所に住み続ける。家族全員分として書きかけた用紙を提出前に見直す。郵便物の転送可否、開始時期や必要書類は担当が個別に確認する仮想場面。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "explain_partly_completed_family_form",
+          "goal": "家族全員分を書く予定だったが、妻は旧居に残るため用紙の記入途中で迷っていると説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "limit_request_to_actual_mover",
+          "goal": "転居したのは自分だけで、妻あての郵便の扱いは変えたくないと伝える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "identify_completed_and_blank_form_fields",
+          "goal": "旧住所、新住所と自分の氏名まで記入し、妻の名前はまだ書いていないと答える。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "seek_document_check_before_submission",
+          "goal": "持参書類で足りるかを提出前に確認してほしいと頼み、不足なら再訪すると伝える。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "separate_receipt_from_forwarding_start",
+          "goal": "受付直後に転送開始とは受け取らないと述べ、反映時期の確認方法を書き留めたいと伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-43204-06-001": {
+      "title": "アプリに入れない状態で住所と連絡先の変更を相談する",
+      "causalProgression": "架空の銀行相談窓口。旧住所のままの口座について相談するが、電話番号の変更後にアプリへ入れなくなっている。窓口担当は本人確認と届出方法の案内を行い、変更完了や郵便の配送先を未確認のまま保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "explain_outdated_address_and_failed_app_access",
+          "goal": "口座の登録住所が旧住所のままで、アプリから変更しようとしてログインできなかったと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "identify_unavailable_old_phone_channel",
+          "goal": "旧電話番号へ確認通知を送る表示が出て、その番号はもう使えないと答える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "offer_available_evidence_and_seek_counter_method",
+          "goal": "新番号の控えと新住所の書類を持参したと答え、窓口で可能な手続きについて相談する。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "ask_about_already_dispatched_mail_without_assumption",
+          "goal": "手続き前に発送済みの郵便があるか尋ね、新住所への配達を当然とは考えていないと伝える。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "request_both_updates_and_completion_confirmation",
+          "goal": "住所と電話番号の両方の届出方法を希望し、変更完了を確かめる案内も求める。"
+        }
+      ]
+    },
+    "SC-LOC-JP-43204-07-001": {
+      "title": "アレルギー表示の不明点が残る商品の購入を見送る",
+      "causalProgression": "架空の食品売場。ごまアレルギーのある客が未開封のたれの原材料と保存表示を見る。同じ設備での製造に関する点を表示だけで判断できず、店員は安全を保証せず問い合わせ先を案内する。仮想の商品表示であり食品選択の安全基準を示さない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "request_help_reading_ingredients_for_sesame_allergy",
+          "goal": "ごまアレルギーがあり、小さい原材料表示を一緒に読んでほしいと頼む。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "identify_missing_shared_equipment_information",
+          "goal": "ごま使用商品と同じ設備で製造するか気になるが、袋に該当説明が見当たらないと伝える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "avoid_inferring_safety_and_record_product_name",
+          "goal": "記載がないことを安全とは考えず問い合わせると述べ、購入せずに品名を控えてよいか尋ねる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "distinguish_storage_before_and_after_opening",
+          "goal": "開封前常温、開封後要冷蔵という表示を読み、期限の日付だけで開封後を判断できないのか尋ねる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "defer_purchase_pending_manufacturer_questions",
+          "goal": "製造設備と開封後の扱いをメーカーへ尋ねると述べ、今日は買わず袋を棚に戻すと伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-43204-08-001": {
+      "title": "通れない周回路を避けて同じ入口へ戻る散歩を選ぶ",
+      "causalProgression": "架空の公園の案内所。短い散歩を希望する客に、公園職員が仮想の園内図と当日の通行止めを説明する。周回路を使わず、同じ入口へ戻る短い往復を選ぶ。地形、実在経路や路面の安全性を保証する内容ではない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "request_short_walk_with_rest_and_same_return_gate",
+          "goal": "足の疲れがあるため短く歩いて休める経路を希望し、同じ入口へ戻る予定を伝える。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "choose_out_and_back_instead_of_closed_loop",
+          "goal": "周回しなくてよいと答え、通行止めの手前で引き返す往復を希望する。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "prioritize_bench_and_check_return_before_closure",
+          "goal": "池よりベンチでの休憩を優先し、広場から閉鎖区間に入らず戻れるか尋ねる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "request_marked_paper_map_due_to_low_battery",
+          "goal": "携帯の電池が少ないと説明し、紙の図と現在の入口の印を頼む。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "set_early_turn_back_plan_using_marked_gate",
+          "goal": "途中で疲れたら広場へ無理に行かず来た道を戻り、丸印の入口を目印に紙の図を使うと答える。"
+        }
+      ]
+    }
+  },
+  "corrections": [
+    "最終自己再読で、駅の窓口再申込の説明を自然にし、公園職員の試問風の問いを途中帰還の案内へ修正した。警察場面の前提も実際の発見場所の説明に一致させた。",
+    "各場面で同じ目的を五回繰り返す旧課題を、直前の質問に対応する五つの異なる具体的課題へ書き直した。",
+    "駅は往復メモと片道希望、購入日と利用日の食い違いを解決する筋へ再構成した。",
+    "行政は発行日と回答期限、別紙の欠落、原本を預けない希望を分け、期限変更を確約しない。",
+    "病院は症状経過の不確かさ、名称不明の薬、家族への照会と一項目ずつの説明希望をつないだ。",
+    "警察は発見場所の訂正、持ち主とのやり取り、連絡項目の説明と照会控えを具体化した。",
+    "郵便は本人のみ転居して妻は旧居に残る条件により申込対象を限定し、受付と反映時期を区別した。",
+    "銀行は旧番号のためログインできない事情と住所変更を関連付け、本人確認前に発送状況や変更完了を断定しない。",
+    "食品は表示不明点を安全と解釈せず、照会事項を整理して購入を見送る結末へ変えた。",
+    "公園は通行止めで周回できず、短い往復と電池不足に対応する紙の図を選ぶ筋へ変えた。"
+  ],
+  "checks": {
+    "exactScenarioIdsPreserved": true,
+    "locationIdsPreserved": true,
+    "originalRouteGroupingPreserved": true,
+    "elevenAlternatingTurnsNpcFirst": true,
+    "fiveConcreteGoalsAlignedToImmediateNpc": true,
+    "uniquePlayerUtterances": 40,
+    "uniquePlayerGoals": 40,
+    "distinctCausalPlots": true,
+    "npcFollowupsRespondToPlayerConstraints": true,
+    "finalNpcFarewellOrConcreteClosure": true,
+    "allFinalOwnTitlesPremisesTurnsTasksAndRoleCorrectionsReread": true,
+    "noAcknowledgmentOnlyPlayerTurns": true,
+    "noNounSwapTemplates": true,
+    "japaneseOnlySpokenTextAndGoals": true,
+    "noAuthoringInstructionsInDialogue": true,
+    "noLevelGate": true,
+    "fictionalVenueMetadataExplicit": true,
+    "unverifiedHoursAndAddressesCleared": true,
+    "supportedRoleCategoriesCheckedAgainstInputAndContract": true,
+    "exactCategoryMembershipCheckedInNpcProgression": true,
+    "noRealOperatorPolicyOrGeographyClaims": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "独立したAIによる自己点検であり、母語話者・人・他AIによる内容審査ではない。",
+    "全施設、経路、商品表示と窓口条件は架空の学習場面。実在の営業時間、運賃、制度適用や医療上の判断を保証しない。",
+    "作者はステージングの自分の三出力と再現用スクリプトだけを書き、稼働データ・共有記録・Gitを変更していない。",
+    "既存のカテゴリと職種を使い、新規カテゴリ・画像・ルートは作成しない。施設別の背景絵との適合は未確認。",
+    "端末表示・翻訳・公開承認は未確認。ルートと既存IDへの統合および遠隔保存の検証は親セッションが行う。"
+  ]
+}
