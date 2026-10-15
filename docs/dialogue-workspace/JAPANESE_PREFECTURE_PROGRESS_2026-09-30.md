@@ -1076,3 +1076,8 @@ Previous61 scenarios durably verified at d12615ef with exact trees matching all9
 ## Independent Kumamoto city CTY-KUM-ASO — 2026-10-15
 
 8 own-authored/self-reviewed Japanese exchanges,88turns,40concrete Player tasks. Exact source/runtime/metadata adapter PASS; canonical7128IDs preserved; zero exact Player/NPC collisions and 7553 outside runtimes unchanged. Venue labels explicitly fictional, unverified hours/addresses cleared and supported NPC roles aligned. No peer reading, translations, native/human/device/operator/release approval. Kumamoto cumulative8/125;117 remain. Current city containing commit requires remote persistence before next integration.
+
+
+## Independent Kumamoto city CTY-043 — 2026-10-15
+
+21 own-authored/self-reviewed Japanese exchanges,231turns,105concrete Player tasks. Exact source/runtime/metadata adapter PASS; canonical7128IDs preserved; zero exact Player/NPC collisions and 7540 outside runtimes unchanged. Venue labels explicitly fictional, unverified hours/addresses cleared and supported NPC roles aligned. No peer reading, translations, native/human/device/operator/release approval. Kumamoto cumulative29/125;96 remain. Current city containing commit requires remote persistence before next integration.
