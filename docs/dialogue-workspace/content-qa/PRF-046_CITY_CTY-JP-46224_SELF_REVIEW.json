@@ -1,0 +1,80 @@
+{
+  "cityId": "CTY-JP-46224",
+  "baseline": "70b9863045bb19397bc94bc4f0f393234389fcc3",
+  "inputSha256": "e10b696146f4424e710cb9a94f5cd41553ba57d9d39cb96ceb93f02bc85b5d70",
+  "sourceSha256": "078f490f8290ded69f8d64c1535c3cc685b6992e809f79b038af10711288df31",
+  "roleAlignmentSha256": "ed814b5a50edb0090d887c47253e50f07e27077d93c3a1074b481435ed1e3778",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "paths": {
+    "source": "scripts/dialogue-authoring/prf-046-city-cty-jp-46224.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-046_CITY_CTY-JP-46224_ROLE_ALIGNMENT.json"
+  },
+  "causalPlots": {
+    "SC-LOC-JP-46224-01-001": "遅れの放送を全て自分に当てはめたが見ていた表示は逆方向。行先・方向・列車名で対象を絞り、家族へは状況確認中と伝えて現在の案内を待つ。",
+    "SC-LOC-JP-46224-02-001": "二人分の相談を希望したが一人は言葉の付き添いで本人の通知一件。言語と区切った説明の希望、二人の勤務都合を分けて受付方法を尋ねる。",
+    "SC-LOC-JP-46224-03-001": "職場用紙を全部自分で書こうとしたが本人欄と医師欄が別。求める項目と具体期限を職場へ確認し、担当の発行相談・費用・時期を尋ねる。",
+    "SC-LOC-JP-46224-04-001": "財布とカード全体が紛失と思ったが、前に外したカード入れはバッグにあった。確認済みカードと未発見財布を分け、星飾りと不確かな現金額を報告する。",
+    "SC-LOC-JP-46224-05-001": "新しい不在票が前の一枚を置換と思ったが番号が異なる。二枚の対象・受取場所・大きさ・期限を個別に確かめ、自転車で持ち帰る可否も含め方法を相談する。",
+    "SC-LOC-JP-46224-06-001": "現金引出後にカード不明で機械から戻った記憶がない。現金と控えの受領からカード受領を推定せず、時刻と店情報を示して停止と問合せ先を相談する。",
+    "SC-LOC-JP-46224-07-001": "三容器のふたが二枚と思ったが二枚の重なりで一枚に見えていた。現物を分けて三枚と訂正し、大小の対応を確かめ交換依頼をせず持ち帰る。",
+    "SC-LOC-JP-46224-08-001": "距離表示を今の入口からと思ったが別起点。数字の地点を目標にせず、現在地・休憩所・戻る入口の関係を地図で確認して範囲を考え直す。"
+  },
+  "corrections": [
+    "All eight unverified actual-looking facilities renamed as explicitly generic fictional learning venues; opening hours and addresses null. No actual Isa rail or route claim added.",
+    "Park/Community Staff corrected to existing Park/Park Staff; remaining supported input category/job pairings retained.",
+    "Station initial Player wording corrected so that an opposite-direction display is assumed applicable without already asserting a matching destination, removing a directional inconsistency.",
+    "Medical final Player wording clarified to leave the doctor field unfilled by the applicant while preserving the whole form; corresponding fifth task synchronized.",
+    "Postal NPC wording made natural by asking about parcel size rather than the size of taking it home.",
+    "Bank handoff wording revised to a natural pending status explanation by the responsible staff member, without announcing suspension complete.",
+    "Container discovery revised from perfectly fitting stacked lids to overlapping lids appearing as one, consistent with different-sized containers and their lid matching.",
+    "Every final title, premise, 88 turns, 40 tasks and eight role corrections reread; all final edited passages and adjacent turns/tasks reread and exact byte hashes refreshed."
+  ],
+  "checks": {
+    "fullAssignedInputRead": true,
+    "allOwnFinalProseAndRoleCorrectionsReread": true,
+    "exactScenarioIdsPreserved": true,
+    "sourceCityLocationIdsTypesAndRouteGroupingRetained": true,
+    "elevenNpcFirstAlternatingTurnsEach": true,
+    "fiveSpecificContextAlignedTasksEach": true,
+    "allFortyPlayerLinesUnique": true,
+    "allFortyIntentsUnique": true,
+    "allFortyGoalsUnique": true,
+    "eightDistinctNpcClosures": true,
+    "noAcknowledgmentOnlyPlayerTurns": true,
+    "noNounSwappedReusableSkeleton": true,
+    "eachCausalPlotAndOutcomeReviewed": true,
+    "japaneseOnlySpeech": true,
+    "noLevelGate": true,
+    "directionsCountsLocationsAndTemporalReferencesChecked": true,
+    "categoriesVerifiedAgainstExactNpcProgressionCode": true,
+    "noNewCategoriesOrAssets": true,
+    "explicitFictionalVenues": true,
+    "allHoursAndAddressesNull": true,
+    "noActualLocalRouteSchedulePriceOrPolicyGuarantees": true,
+    "noMedicalDocumentIssuanceOrBankSuspensionCompletionClaim": true,
+    "noPropertyRightsOrPostalEligibilityDetermination": true,
+    "finalExactByteHashesVerified": true,
+    "noOtherCityProseRead": true,
+    "noActiveCheckoutRuntimeSharedOrGitWrites": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "Independent author self-review only; no peer, native-speaker or human review.",
+    "All notices, forms, products, signs, maps, layouts and service conditions are hypothetical scene facts, not verified Isa facilities or current operational policies.",
+    "No actual train delay, interpreter/booking availability, document issuance, located-card safety, delivery eligibility, card retention or suspension, product performance or real walking distance is established.",
+    "Runtime integration, artwork/device inspection and release approval remain with root; no active-checkout runtime or shared-file edits by this author."
+  ]
+}
