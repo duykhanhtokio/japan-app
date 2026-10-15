@@ -1,0 +1,98 @@
+{
+  "cityId": "CTY-JP-46223",
+  "corrections": {
+    "LOC-JP-46223-01": {
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "nameJa": "架空の鉄道経路相談窓口",
+      "name": "Fictional Railway Route Consultation Counter",
+      "description": "架空の鉄道経路相談窓口で、検索結果の出発地と目的地、今日の行きと明日の帰りを分けて相談する。原カテゴリStationを維持するが、実在の南九州市の駅、鉄道路線、時刻、運賃や乗換施設を設定しない。切符条件は予定を確認後に別途相談する。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46223-02": {
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "nameJa": "架空の行政証明相談窓口",
+      "name": "Fictional Administrative Certificate Counter",
+      "description": "架空の行政相談窓口で、証明書の発行時期と提出期限を区別する。一部が切れた提出先案内の基準日や必要記載は推測せず、全文を確認してから申請する。実在市役所や提出先の要件、発行可否を保証しない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46223-03": {
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "nameJa": "架空の外来問診相談窓口",
+      "name": "Fictional Outpatient Intake Consultation Desk",
+      "description": "架空の外来で看護師が、ときどき使った薬と不明な実服用数を記録する。箱の説明を実際の服用数として埋めず、医師へ症状とともに引き継ぐ。投薬量、服薬方法、診断、治療の指示を行わない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46223-04": {
+      "category": "Police Station",
+      "npcJob": "Police",
+      "nameJa": "架空の警察連絡相談窓口",
+      "name": "Fictional Police Message Consultation Desk",
+      "description": "架空の警察窓口で、友人と同じ表示名と写真から届く送金要求の記録を確認する。既知の電話帳と新たに示された連絡先を分け、アカウントの実際の被害や相手の身元、犯罪の有無を未確認で断定しない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46223-05": {
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "nameJa": "架空の郵便発送支払相談窓口",
+      "name": "Fictional Postal Shipping Payment Counter",
+      "description": "架空の郵便窓口で、着払いを差出人の後払いと誤解した利用者が送料の負担者を聞き返す。利用できる方法、費用と発送日は確認後に選び、実在事業者の支払方法、料金や到着日を保証しない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46223-06": {
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "nameJa": "架空の銀行振込費用相談窓口",
+      "name": "Fictional Bank Transfer Cost Consultation Counter",
+      "description": "架空の銀行で、振込額三万円と手数料三百三十円を分けて総支出を確認する。手数料と方法は会話内の仮定であり実在銀行の料金を示さない。受取側が少額入金を認めるかを代わりに決めず、今回は送金を実行しない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46223-07": {
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "nameJa": "架空の食品日用品スーパー",
+      "name": "Fictional Grocery and Household Supermarket",
+      "description": "架空のスーパーで、会計前に仕事用と自宅用の買物とレシートを分ける。六百八十円と四百二十円、千円と五百円の現金会計は会話内だけの条件であり、実在店の価格や分割会計の規則ではない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46223-08": {
+      "category": "Park",
+      "npcJob": "Park Staff",
+      "nameJa": "架空の公園散歩相談所",
+      "name": "Fictional Park Walk Consultation Desk",
+      "description": "架空の公園のPark Staffが、点検中の小道から開いている広場周囲の散歩へ案内する。Community Staffを役割に合う職名へ変更。閉鎖区間や広場・ベンチ・入口の位置は会話内だけの設定で、実在公園の経路や通行条件を保証しない。",
+      "openHours": null,
+      "address": null
+    }
+  },
+  "findings": [
+    {
+      "locationId": "LOC-JP-46223-01",
+      "finding": "Stationは実コード対応カテゴリとして維持。実在駅に見える南九州駅という名を架空の経路相談窓口へ変更し、地域の運行・駅名・経路を事実として設定しない。"
+    },
+    {
+      "locationId": "LOC-JP-46223-08",
+      "finding": "Parkを維持し、Community Staffを具体的な公園案内のPark Staffへ変更した。点検中の他者を職員と断定せず、表示に従う相談として限定。"
+    },
+    {
+      "finding": "全8施設の名前と前提に架空を明示し、入力の未確認営業時間は全てnullに変更。住所もnull。原city/scenario/location IDと経路グループを保持。"
+    },
+    {
+      "finding": "全categoryを実コードNPC_CATEGORIESに完全一致照合した。新規カテゴリやアセットなし。既存背景と窓口、切れた案内写真、地図等の視覚的適合は実機未検証。"
+    }
+  ],
+  "inputSha256": "0df9997330a48e1e90afb3fdbf762c027e34b4689d7b125a9b538fb9a71f5f1e",
+  "sourceSha256": "11c875b2ce6ebdb25a34dca9b4d8ccbe5562cc13dbad800139d42a3f9880c9e2",
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "peerReviewed": false
+}
