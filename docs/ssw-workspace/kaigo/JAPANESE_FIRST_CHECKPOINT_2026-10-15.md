@@ -52,3 +52,12 @@ Publisher approved Japanese as the canonical content language, with direct trans
 - Next: finish week1 option-level editorial QA, align revised assessments with preserved attempts, translate remaining72 sections directly from Japanese into all12 languages, finish source-point reconciliation and real device/layout QA. Week1 is NOT complete. Do not begin week2 as if the week1 full-cycle gate passed.
 
 Review flags remain false; source-book knowledge coverage percentage remains null.
+
+
+## 2026-10-16 — Vietnamese clarity revision after user testing
+
+The user reported fragmented, unnatural Vietnamese. Replaced all week1 legacy reader references with73 aligned Vietnamese translations/246paragraphs,7lesson titles and7image captions, directly bound to the unchanged Japanese master (SHA256e306f96c8f491ecf4cd1662cebaba012230da2bc497bc1c3e33353199b217c70). Vietnamese source remains a translation; Japanese master remains canonical. Paragraphs now pair Japanese then translation; old data remains preserved but no duplicate legacy text is displayed in the revised week.
+
+Translation registry now contains84 AI translation drafts:73Vietnamese and11other-language pilot drafts. Only the original first goals section has all12languages; other72sections still lack the other11translations.59question drafts remain outside runtime. Whole-week completion, human/domain/native/release flags stay false;225Japanese representations/641missing remain unchanged.
+
+QA:7days/73sections/246paired paragraphs, titles/captions, explicit show/hide, no legacy duplicates, rejected incomplete/stale bindings; all12selected pilot languages; full isolated-host176day/866section sweep; focused data TypeScript; JLPTlock10/10; whitespace check. Tests use fixtures, not actual native devices. See japanese-master/VIETNAMESE_WEEK_01_REVISION_2026-10-16.md and reviews/vietnamese-week1-revision-2026-10-16.json.

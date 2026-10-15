@@ -12,7 +12,7 @@ for(const e of m.kaigoCatalog.filter(e=>e.day<=7)){
 }
 assert.equal(ids.size,73);assert.equal(paragraphs,246);
 const id=Object.keys(m.japaneseMasterSections)[0],master=m.japaneseMasterSections[id];
-const translation={sourceRevision:m.japaneseMasterRevision(master),heading:'Reference',paragraphs:['Direct draft translation'],status:'translated_ai_unreviewed'};
+const translation={sourceRevision:m.japaneseMasterRevision(master),heading:'Reference',paragraphs:master.paragraphsJa.map(()=> 'Direct draft translation'),status:'translated_ai_unreviewed'};
 assert.equal(m.translationForMaster(id,'en',{[id]:{en:translation}}),translation);
 assert.equal(m.translationForMaster(id,'th',{[id]:{vi:translation}}),undefined,'No Vietnamese fallback');
 assert.equal(m.translationForMaster(id,'en',{[id]:{en:translation}},{...m.japaneseMasterSections,[id]:{...master,paragraphsJa:[...master.paragraphsJa,'変更']}}),undefined,'Japanese paragraph edit invalidates translation');

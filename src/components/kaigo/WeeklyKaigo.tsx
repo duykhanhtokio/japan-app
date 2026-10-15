@@ -40,7 +40,7 @@ import {
   japaneseSectionsFor,
   titleForDay,
 } from "@/data/kaigo/japanese-reading";
-import { japaneseLessonMetadata, translationForMaster } from '@/data/kaigo/japanese-master';
+import { japaneseLessonMetadata, translationForMaster, translationForLesson } from '@/data/kaigo/japanese-master';
 import { illustrationForStudyDay } from "@/data/kaigo/weekly-art-allocation";
 import { kaigoDepthFigures } from "@/data/kaigo/depth-figures";
 import {
@@ -432,6 +432,7 @@ function DayReading({
     [translationOpen, setTranslationOpen] = useState(false),
     { colors } = useStudyAppearance(),
     { language } = useAppLanguage();
+  const lessonTranslation = translationForLesson(entry.id, language);
   const translated = (text: string, id?: string) =>
     translationOpen ? (
       language === "vi" ? (
@@ -451,8 +452,15 @@ function DayReading({
       <Text style={[s.heading, { color: colors.text }]}>
         {masterLesson?.titleJa ?? titleForDay(entry)}
       </Text>
-      {masterLesson && translationOpen && language === "vi" && <TranslationText>旧版参考訳：日本語原稿との照合前です。</TranslationText>}
-      {translated(entry.titleVi)}
+      {translationOpen && lessonTranslation
+        ? <TranslationText>{lessonTranslation.title}</TranslationText>
+        : <>
+            {masterLesson && translationOpen && language === "vi" && <TranslationText>旧版参考訳：日本語原稿との照合前です。</TranslationText>}
+            {translated(entry.titleVi)}
+          </>}
+      {translationOpen && masterLesson && language === 'vi' && (
+        <TranslationText>Bản dịch hỗ trợ học tập từ nội dung tiếng Nhật. Chưa có người duyệt độc lập.</TranslationText>
+      )}
       {masterLesson && (
         <Text style={[s.meta, { color: colors.muted }]}>
           日本語教材（確認中）
@@ -471,9 +479,13 @@ function DayReading({
           maxHeight: 320,
         }}
       />
-      {translated(cover.captionVi)}
-      {masterLesson && <JapaneseText text={masterLesson.artCaptionJa} />}
-      {sections.map((section) => (
+      {masterLesson && <JapaneseText testID={`kaigo-art-caption-${entry.day}`} text={masterLesson.artCaptionJa} />}
+      {translationOpen && lessonTranslation
+        ? <TranslationText>{lessonTranslation.artCaption}</TranslationText>
+        : translated(cover.captionVi)}
+      {sections.map((section) => {
+        const translation = translationForMaster(section.id, language);
+        return (
         <View
           key={section.id}
           testID={`kaigo-reading-section-${section.id}`}
@@ -482,9 +494,12 @@ function DayReading({
           <Text style={[s.heading, { color: colors.text }]}>
             {section.headingJa}
           </Text>
+          {translationOpen && translation && (
+            <TranslationText>{translation.heading}</TranslationText>
+          )}
           {section.paragraphsJa.map((paragraph, index) => (
+            <View key={index}>
             <JapaneseText
-              key={index}
               testID={`kaigo-source-${section.id}-${index}`}
               text={paragraph}
               tokens={
@@ -493,6 +508,12 @@ function DayReading({
                   : undefined
               }
             />
+            {translationOpen && translation && (
+              <TranslationText testID={`kaigo-master-translation-${section.id}-${index}`}>
+                {translation.paragraphs[index]}
+              </TranslationText>
+            )}
+            </View>
           ))}
           {!section.japaneseComplete && (
             <Text
@@ -502,23 +523,14 @@ function DayReading({
               この項目の日本語本文は整備中です。要約を本文の代わりにはしていません。
             </Text>
           )}
-          {translationOpen && section.masterStatus && (
+          {translationOpen && section.masterStatus && !translation && (
             <TranslationText>
-              {translationForMaster(section.id, language)
-                ? (translationForMaster(section.id, language)!.status === 'human_reviewed' ? '日本語原稿からの翻訳です。' : '日本語原稿からのAI翻訳（未校閲）です。')
-                : language === 'vi'
+              {language === 'vi'
                   ? '日本語原稿からの翻訳は準備中です。以下は照合前の旧版参考訳であり、現在の日本語原稿と一致するとは限りません。'
                   : 'この言語の翻訳は準備中です。'}
             </TranslationText>
           )}
-          {translationOpen && translationForMaster(section.id, language) ? (
-            <View>
-              <TranslationText>{translationForMaster(section.id, language)!.heading}</TranslationText>
-              {translationForMaster(section.id, language)!.paragraphs.map((paragraph, index) => (
-                <TranslationText key={index}>{paragraph}</TranslationText>
-              ))}
-            </View>
-          ) : <>
+          {!translation && <>
           {translated(section.heading)}
           {section.paragraphs.map((paragraph, index) => (
             <View key={index}>
@@ -544,7 +556,7 @@ function DayReading({
             </View>
           ))}
         </View>
-      ))}
+      );})}
       {form && (
         <Action
           title="予定の模擬試験を開く"

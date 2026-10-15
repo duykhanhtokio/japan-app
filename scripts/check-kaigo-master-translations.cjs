@@ -18,5 +18,5 @@ async function click(t,id){await act(async()=>{t.root.findAll(n=>typeof n.type==
  }
  const source=m.japaneseMasterSections[id],prior=[...source.paragraphsJa];source.paragraphsJa.push('変更');assert.equal(m.translationForMaster(id,'en'),undefined);source.paragraphsJa=prior;
  delete global.__tokuteiLanguage;
- console.log('KAIGO MASTER TRANSLATIONS PASS: 12 selected languages render only after explicit action; no Vietnamese fallback; source edit invalidates translations. Pilot is 1/73 sections; human review pending.');
+ console.log('KAIGO MASTER TRANSLATIONS PASS: 12 selected languages render only after explicit action; no Vietnamese fallback; source edit invalidates translations. Vietnamese week 1 is also checked separately; human review pending.');
 })().catch(e=>{console.error(e);process.exitCode=1;});

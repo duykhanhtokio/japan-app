@@ -792,3 +792,7 @@ Lưu hẹp5file bằng GitHubtree/commit/ref cólease trênHEAD hiện tại và
 
 ## 2026-10-16 — Japanese-master migration
 The current migration state is recorded in JAPANESE_FIRST_CHECKPOINT_2026-10-15.md, section2026-10-16, and reviews/japanese-master-inventory-2026-10-16.json. Week1 has73 Japanese draft masters/246 paragraphs;641 course sections still lack full Japanese representations.12 AI translation drafts cover only one section.59 weekly-question drafts remain outside runtime. Week1 is not complete; finish its translations, editorial QA and assessment migration before week2. No human/domain/native/release approval or whole-book coverage claim.
+
+
+## 2026-10-16 — week1 Vietnamese readability repair
+After publisher feedback,73week1reader sections/246paragraphs now have full Vietnamese translations from the unchanged Japanese master, with7titles/captions. Original Vietnamese source data preserved, replaced references no longer displayed in that week. Japanese/translation paragraphs are paired.84AI translation drafts total (73vi+11pilot other languages); no human/native approval. Current migration details are in JAPANESE_FIRST_CHECKPOINT_2026-10-15.md, latest Vietnamese revision section. Week1 and the course migration are still incomplete; don't mark them complete from translation field counts.

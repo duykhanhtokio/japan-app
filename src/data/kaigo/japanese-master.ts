@@ -1,5 +1,6 @@
 import week01 from './japanese-master/week-01.json';
 import pilotTranslations from './japanese-master/translations/pilot-01.json';
+import vietnameseWeek01 from './japanese-master/translations/week-01.vi.json';
 
 export type JapaneseMasterSection = {
   headingJa: string;
@@ -22,8 +23,11 @@ export const japaneseLessonMetadata: Record<string, JapaneseLessonMetadata> = we
 
 /** Content-dependent binding. Any Japanese edit invalidates a previous translation. */
 export function japaneseMasterRevision(master: Pick<JapaneseMasterSection, 'headingJa' | 'paragraphsJa'>): string {
+  return contentRevision([master.headingJa, master.paragraphsJa]);
+}
+function contentRevision(value: unknown): string {
   let hash = 2166136261;
-  for (const char of JSON.stringify([master.headingJa, master.paragraphsJa])) {
+  for (const char of JSON.stringify(value)) {
     hash = Math.imul(hash ^ char.charCodeAt(0), 16777619);
   }
   return 'ja-master-v1-' + (hash >>> 0).toString(16);
@@ -36,7 +40,38 @@ export type MasterTranslation = {
 };
 // Only translations authored directly from the Japanese master belong here.
 // Existing Vietnamese paragraphs remain in the original data as legacy references.
-export const japaneseMasterTranslations = pilotTranslations as Record<string, Record<string, MasterTranslation>>;
+export const japaneseMasterTranslations: Record<string, Record<string, MasterTranslation>> = {
+  ...(pilotTranslations as Record<string, Record<string, MasterTranslation>>),
+};
+for (const [id, translation] of Object.entries(vietnameseWeek01.sections)) {
+  japaneseMasterTranslations[id] = {
+    ...japaneseMasterTranslations[id],
+    vi: translation as MasterTranslation,
+  };
+}
+
+export type LessonTranslation = {
+  sourceRevision: string;
+  title: string;
+  artCaption: string;
+  status: MasterTranslation['status'];
+};
+export function japaneseLessonRevision(lesson: JapaneseLessonMetadata): string {
+  return contentRevision([lesson.titleJa, lesson.objectivesJa, lesson.contextJa, lesson.artCaptionJa]);
+}
+export const japaneseLessonTranslations: Record<string, Record<string, LessonTranslation>> =
+  Object.fromEntries(Object.entries(vietnameseWeek01.lessons).map(([id, translation]) =>
+    [id, { vi: translation as LessonTranslation }],
+  ));
+export function translationForLesson(
+  id: string,
+  language: string,
+  translations = japaneseLessonTranslations,
+  lessons = japaneseLessonMetadata,
+): LessonTranslation | undefined {
+  const lesson = lessons[id], translation = translations[id]?.[language];
+  return lesson && translation?.sourceRevision === japaneseLessonRevision(lesson) ? translation : undefined;
+}
 export function translationForMaster(
   id: string,
   language: string,
@@ -44,6 +79,9 @@ export function translationForMaster(
   masters = japaneseMasterSections,
 ): MasterTranslation | undefined {
   const master = masters[id], translation = translations[id]?.[language];
-  if (!master || !translation || translation.sourceRevision !== japaneseMasterRevision(master)) return undefined;
+  if (!master || !translation || translation.sourceRevision !== japaneseMasterRevision(master)
+    || !translation.heading?.trim()
+    || translation.paragraphs.length !== master.paragraphsJa.length
+    || !translation.paragraphs.every(p => typeof p === 'string' && p.trim())) return undefined;
   return translation;
 }

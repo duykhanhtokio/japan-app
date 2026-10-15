@@ -273,7 +273,15 @@ async function end(tree, id) {
       await click(t, "kaigo-translation");
       raw(t);
       for (const section of sections) {
-        section.paragraphs.forEach((paragraph, index) => {
+        const aligned = m.translationForMaster(section.id, "vi");
+        if (aligned) {
+          assert.equal(aligned.paragraphs.length, section.paragraphsJa.length);
+          aligned.paragraphs.forEach((paragraph, index) => {
+            const node = get(t, `kaigo-master-translation-${section.id}-${index}`);
+            assert.deepEqual(node.children, [paragraph], `Day ${slot.day}: aligned translation paragraph mismatch`);
+          });
+          assert.equal(hosts(t, `kaigo-translation-${section.id}-0`).length, 0, "Do not display legacy text beside the aligned translation");
+        } else section.paragraphs.forEach((paragraph, index) => {
           const node = get(t, `kaigo-translation-${section.id}-${index}`);
           assert.deepEqual(node.children, [paragraph], `Day ${slot.day}: original translation paragraph changed`);
         });
