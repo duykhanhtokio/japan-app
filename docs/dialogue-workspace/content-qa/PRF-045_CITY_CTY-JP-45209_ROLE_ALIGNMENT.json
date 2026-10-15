@@ -1,0 +1,97 @@
+{
+  "cityId": "CTY-JP-45209",
+  "corrections": {
+    "LOC-JP-45209-01": {
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "nameJa": "架空の駅経路相談窓口",
+      "name": "Fictional Station Route Counter",
+      "description": "架空の駅窓口で、保存画像の日付と駅外の徒歩区間を確認する。検索結果はこの会話内の仮定であり、えびの市の実在路線、運行、駅間距離や乗換設備を表さない。待合せ場所変更後の再相談までを扱う。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-45209-02": {
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "nameJa": "架空の行政証明相談窓口",
+      "name": "Fictional Administrative Certificate Desk",
+      "description": "架空の行政窓口で、学校からの授業料と奨学金の案内を分けて読む。必要書類の名称、対象年、枚数は提出先へ確認し、発行や奨学金適格性をその場で決定しない。実在市役所の規則ではない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-45209-03": {
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "nameJa": "架空の外来問診受付",
+      "name": "Fictional Outpatient Questionnaire Desk",
+      "description": "架空の外来で看護師が利き手と痛む側を区別して記入を助ける。原因不明という本人の説明を保持し、診断や治療、受診可否は判断しない。実在病院の受付時間や診療体制を示さない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-45209-04": {
+      "category": "Police Station",
+      "npcJob": "Police",
+      "nameJa": "架空の警察相談窓口",
+      "name": "Fictional Police Consultation Desk",
+      "description": "架空の警察相談窓口で、点検訪問を予告する電話の記録と既知の管理先資料を分けて確認する。相手の身元や犯罪の有無は未確定であり、被害認定や捜査結果を保証しない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-45209-05": {
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "nameJa": "架空の郵便発送相談窓口",
+      "name": "Fictional Parcel Consultation Counter",
+      "description": "架空の郵便窓口で、一箱に入った本と毛布を分けて送る案の比較条件を整理する。実在事業者の料金、引受条件、確実な到着日は示さず、再梱包後に箱ごとに確認する。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-45209-06": {
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "nameJa": "架空の銀行振込相談窓口",
+      "name": "Fictional Bank Transfer Consultation Desk",
+      "description": "架空の銀行窓口で、過去の控えと当日の予約らしい表示を区別する。所定の本人確認後に状態を確認する段階で止め、完了、着金、手数料や再操作の要否は確認前に断定しない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-45209-07": {
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "nameJa": "架空の食品スーパー",
+      "name": "Fictional Grocery Supermarket",
+      "description": "架空のスーパーで、破れた持参袋を避ける袋選びと未決済からの現金への切替を相談する。袋十円、合計八百四十六円、千円札とおつり百五十四円は会話内だけの仮定であり実在店の価格や決済条件ではない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-45209-08": {
+      "category": "Park",
+      "npcJob": "Park Staff",
+      "nameJa": "架空の公園散歩案内所",
+      "name": "Fictional Park Walking Information Desk",
+      "description": "架空の公園の案内担当者が、一周ではなく同じ道を戻る散歩案を示す。ベンチの図記号と分岐は会話内の仮定で、実在公園の経路、設備や歩行時間を保証しない。Community Staffから公園スタッフに職名を整合した。",
+      "openHours": null,
+      "address": null
+    }
+  },
+  "findings": [
+    {
+      "locationId": "LOC-JP-45209-08",
+      "finding": "カテゴリParkは実コードに対応。Community Staffは公園案内に役割が曖昧なので、既存Parkに即したPark Staffへ変更した。"
+    },
+    {
+      "finding": "8施設の既存カテゴリはいずれもNPC_CATEGORIESに完全一致で対応しているため維持。原施設名は実在施設と混同させない架空の汎用名へ変更した。"
+    },
+    {
+      "finding": "入力の営業時間05:00–24:00、08:30–17:15、08:30–17:00、24/7、09:00–17:00、09:00–15:00、09:00–21:00、24/7はいずれも裏付け未確認のためnullへ。住所も全てnull。"
+    },
+    {
+      "finding": "シナリオ、施設ID、経路グループを保持。既存画像の利用が前提で新規アセットは追加せず、図、窓口、路線検索や施設専用画像の視覚的適合は未検証。実機確認は行っていない。"
+    }
+  ],
+  "inputSha256": "029b24a2222fe3b971963aff59319c2673d7019bd00ed10a29e0c7d49df2322b",
+  "sourceSha256": "210c1354a822e2ce57e166f6b1be2b46d38605e96b308eba45afec2d22611829",
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "peerReviewed": false
+}

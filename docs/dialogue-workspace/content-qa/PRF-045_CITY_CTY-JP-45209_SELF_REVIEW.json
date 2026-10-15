@@ -1,0 +1,63 @@
+{
+  "cityId": "CTY-JP-45209",
+  "baseline": "5e9e90add76f00a3e660df23a611cfa2988ccd2b",
+  "inputSha256": "029b24a2222fe3b971963aff59319c2673d7019bd00ed10a29e0c7d49df2322b",
+  "sourceSha256": "210c1354a822e2ce57e166f6b1be2b46d38605e96b308eba45afec2d22611829",
+  "roleAlignmentSha256": "fe6601834a80adcbd60b7cbe0774fd87279bd4b00a41e544816e0612deb4991c",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-45209-01-001": "保存経路の乗換欄に駅外徒歩十六分があると判明。日付の切れた先週画像で進めず、当日の検索も徒歩が必要なため友人と待合せを相談し直す。",
+    "SC-LOC-JP-45209-02-001": "学校の二通を同じ証明書二枚と考えた誤解を解く。授業料と奨学金の目的別に名称・対象年・枚数を質問し、返信を分けて保存してから申請する。",
+    "SC-LOC-JP-45209-03-001": "利き手を痛む側と誤解して右を選んだが、普段書く手は左。右手首の動作痛と昨日昼からという本人情報を別欄へ整理し、原因は推測せず診察へ。",
+    "SC-LOC-JP-45209-04-001": "点検訪問電話で自分が答えた名字と相手が口にした建物名を区別。着信と集合玄関への連絡を保存し、折り返す前に相談、契約時の管理先資料を別に提示する。",
+    "SC-LOC-JP-45209-05-001": "一箱の本と毛布のうち本だけ先に必要。二箱なら料金半分ずつという計算を避け、箱ごとの条件と宛先をそろえ、本先行と同時発送の費用を再来時に比較する。",
+    "SC-LOC-JP-45209-06-001": "家賃操作を閉じて完了不明。先月控えと当日の予約らしい表示を分け、実行日を覚えていないと明示。本人確認後の状態照会まで再振込しない。",
+    "SC-LOC-JP-45209-07-001": "持参袋の破れからパン用布袋と瓶用有料袋に分ける。携帯の充電切れで未決済を確認して現金へ切替。十円袋込み八百四十六円に千円を払い百五十四円のおつり。",
+    "SC-LOC-JP-45209-08-001": "不慣れな友人との散歩で一周完走の前提を外す。分岐の少ない往復路にし、ベンチの図記号を聞き直して戻る矢印を依頼。広場到達前でも休憩して引き返す。"
+  },
+  "corrections": [
+    "旧汎用対話を8場面とも独立の具体的な因果展開へ全面置換し、40課題も各Playerと直前NPCに即して書き直した。",
+    "駅外徒歩について単に駅外と答えるだけでなく「別の駅まで」と明示し、Playerの質問に直接答えるよう修正した。",
+    "病院の「右手首と分けて書く」は何を分けるか曖昧だったので、利き手欄とは別の痛む場所欄に右手首と記す表現へ修正した。",
+    "警察の相手の「実体」は不自然なので「身元」へ修正した。本人が返した情報と相手が先に述べた情報を混同しない。",
+    "郵便の再来を意味した「持ち直します」は別の意味に読めるため「改めて持ってきます」へ修正した。",
+    "スーパーの支払いに数値の根拠がなかったため、袋十円を含む合計846円、千円札、おつり154円を明示し、対応課題も合計額を含めた。",
+    "全施設を架空の汎用名にし、未確認の営業時間と住所をnullへ。公園の職名をPark Staffへ合わせた。"
+  ],
+  "checks": {
+    "assignedIds": "PASS: 入力のシナリオ8ID、施設8IDと出力の集合が完全一致。経路変更なし。",
+    "elevenTurnsFiveTasks": "PASS: 各11日本語発話、NPC開始とNPC終結、Player位置1/3/5/7/9に5具体課題。8/88/40を検証。",
+    "ownFullFinalReread": "PASS: 全8タイトル・前提・88発話・40課題を自分で全文再読。最終修正4発話も再読。全8施設の最終役割修正全文を再読。",
+    "contextAndCausality": "PASS: 40Player応答ごとに直前NPCと目標の情報・質問・選択を照合。各場面の障害と後続判断を変え、単なる謝意のみのPlayerなし。",
+    "ownUniqueness": "PASS: 完全一致重複は40Player、40目標、40intent、48NPCの各集合でゼロ。本人が筋の類似も再点検。",
+    "languageNumbers": "PASS: 発話・タイトル・前提・日本語目標に英字/タイ語/韓国語なし。左利き対右手首、昨日昼、先週対今日・先月対今月、徒歩16分、袋10円込み846円・1000円支払・154円返金を整合確認。",
+    "supportedRoles": "PASS: 全カテゴリをsrc/data/npc-progression.tsのNPC_CATEGORIES文字列集合と完全一致照合。新規カテゴリ・アセットなし。",
+    "fictionAndLimits": "PASS: 全施設名と前提に架空明示、hours/addressはnull。実在運行や学校条件、診断、相手身元、料金と配達日、振込完了を保証しない。",
+    "scope": "PASS: 自分の入力と共有カテゴリコードのみ参照。他都市の著者本文・レビューは読まず、書込みは自分のstagingファイルだけ。"
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "paths": {
+    "source": "scripts/dialogue-authoring/prf-045-city-cty-jp-45209.json",
+    "input": "docs/dialogue-workspace/content-qa/PRF-045_CITY_CTY-JP-45209_INPUT.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-045_CITY_CTY-JP-45209_ROLE_ALIGNMENT.json"
+  },
+  "limits": [
+    "AI本人による最終全文自己レビュー。人間・母語話者・同僚の査読やリリース承認ではない。",
+    "路線、現地地理、学校や行政の要件、医療・警察・郵便・銀行の運用は現地照合していない。条件は架空場面の内部に限定。",
+    "既存画像との適合、端末上の図や表示、音声、翻訳は未確認。新規画像なし。",
+    "staging素材のみで、親担当による機械統合、ランタイムQA、Git永続化は別工程。"
+  ]
+}
