@@ -1,9 +1,9 @@
 import { prepareArtwork } from '@/components/ui/prepareArtwork';
 import { prepareSceneRoute, cancelPreparedNavigation, registerNavigationStateReader, backPrepared } from '@/components/ui/prepareSceneRoute';
-import { COMMON_UI_ARTWORK } from '@/components/ui/common-artwork';
-import { PAPER_FRAME_SLICES, OPEN_FRAME_SLICES, HUD_FRAME_SLICES } from '@/components/ui/RoyalPaperPanel';
+import { OPEN_FRAME_SLICES } from '@/components/ui/RoyalPaperPanel';
 import { NAVY_FRAME_ART } from '@/components/ui/RoyalSurface';
-import { useEffect, useState } from 'react';
+import { DEVELOPMENT_FEATURES } from '@/config/development-features';
+import { useEffect, useRef, useState } from 'react';
 import { Stack, usePathname, useNavigationContainerRef } from 'expo-router';
 import { BackHandler } from 'react-native';
 import { SafeAreaProvider, initialWindowMetrics } from 'react-native-safe-area-context';
@@ -32,24 +32,44 @@ export default function RootLayout() {
     });
     return () => subscription.remove();
   }, [navigation]);
-  const [artworkReady,setArtworkReady]=useState(false);
-  useEffect(()=>{let active=true;void Promise.all([prepareSceneRoute(pathname), prepareArtwork([
-    ...COMMON_UI_ARTWORK,
-    ...PAPER_FRAME_SLICES,...OPEN_FRAME_SLICES,...HUD_FRAME_SLICES,NAVY_FRAME_ART,
-    require('../../assets/app/ui/royal-af/button-wide-v2.png'),
-    require('../../assets/app/ui/royal-af/button-back-curved-a-v1.png'),
-    require('../../assets/app/ui/royal-af/hint-gold-grape-v1.png'),
-    require('../../assets/app/ui/royal-af/hint-red-lantern-v2.png'),
-    require('../../assets/app/ui/royal-af/microphone-v2.png'),
-    require('../../assets/app/ui/royal-af/dialogue-frame-v1.png'),
-    require('../../assets/app/ui/royal-af/farm-hud-plaque-v1.png'),
-    require('../../assets/app/backgrounds/study-light.png'),
-    require('../../assets/app/backgrounds/profile-details.png'),
-    require('../../assets/app/welcome/welcome-japan-landscape-v2.png'),
-    require('../../assets/app/home-cards/study-man.png'),
-    require('../../assets/app/home-cards/conversation-three.png'),
-    require('../../assets/app/home-cards/tokutei-engine-safety.png'),
-  ])]).then(()=>{if(active)setArtworkReady(true)}).catch(error=>console.warn('Initial artwork preparation failed:',error));return()=>{active=false};},[]);
+  const [artworkReady, setArtworkReady] = useState(false);
+  const initialPathname = useRef(pathname).current;
+  useEffect(() => {
+    let active = true;
+    const finish = () => { if (active) setArtworkReady(true); };
+    // Asset/network/cache failures must never hold the native splash forever.
+    const timeout = setTimeout(() => {
+      console.warn('Initial artwork preparation timed out; continuing startup.');
+      finish();
+    }, 10000);
+    // Only prepare the first visible screen. Other screens retain their
+    // existing destination preparation when the learner navigates to them.
+    const preparation = initialPathname === '/' ? prepareArtwork(
+      DEVELOPMENT_FEATURES.skipRegistration ? [
+        ...OPEN_FRAME_SLICES, NAVY_FRAME_ART,
+        require('../../assets/app/ui/royal-af/hud-top-composite-midnight-v3.png'),
+        require('../../assets/app/ui/royal-af/hud-player-medallion-v1.png'),
+        require('../../assets/app/ui/royal-af/hud-coin-v1.png'),
+        require('../../assets/app/ui/royal-af/nav-composite-navy-v1.png'),
+        require('../../assets/app/welcome/welcome-japan-landscape-v2.png'),
+        require('../../assets/app/home-cards/study-man.png'),
+        require('../../assets/app/home-cards/conversation-three.png'),
+        require('../../assets/app/home-cards/tokutei-engine-safety.png'),
+      ] : [
+        require('../../assets/app/welcome/welcome-japan-portrait-v2.png'),
+        require('../../assets/app/welcome/welcome-japan-landscape-v2.png'),
+        require('../../assets/app/welcome/sakura-petal-welcome-v2.png'),
+        require('../../assets/app/ui/royal-af/button-wide-v2.png'),
+      ],
+    ) : prepareSceneRoute(initialPathname);
+    void preparation.catch(error => {
+      console.warn('Initial artwork preparation failed:', error);
+    }).finally(() => {
+      clearTimeout(timeout);
+      finish();
+    });
+    return () => { active = false; clearTimeout(timeout); };
+  }, [initialPathname]);
   const [fontsLoaded, fontError] = useFonts({
     'RoyalSerifJP-SemiBold': require('../../assets/app/fonts/NotoSerifJP-SemiBold.ttf'),
     'RoyalSansJP-Medium': require('../../assets/app/fonts/NotoSansJP-Medium.ttf'),
