@@ -1216,3 +1216,8 @@ Previous61 scenarios durably verified at d12615ef with exact trees matching all9
 ## Independent Oita city CTY-JP-44214 — 2026-10-15
 
 8 own-authored/self-reviewed Japanese exchanges,88turns,40concrete Player tasks. Exact source/runtime/metadata adapter PASS; canonical7128IDs preserved; zero exact Player/NPC collisions and 7553 outside runtimes unchanged. Venue labels explicitly fictional, unverified hours/addresses cleared and supported NPC roles aligned. No peer reading, translations, native/human/device/operator/release approval. Oita cumulative125/125;0 remain. Current city containing commit requires remote persistence before next integration.
+
+
+## 2026-10-15 — PRF-044 Oita complete independent city self-review
+
+125/125 canonical scenarios across 14 cities, 1375 Japanese turns, 625 concrete Player tasks. Each containing city commit was remotely verified before advancing. Whole real adapters/corpus/normalized-near/task/answer/title/recipe checks PASS; zero exact Player/NPC collisions; 7436 outside runtime files unchanged. Exact source/input/role hashes bind all 14 city self-reviews by six independent authors. All 125 scripts independently rewritten; Tokutei paths preserved. UI lock 10/10 and corrected NPC progression PASS. No peer/human/native/operator/device/release approval. Global 6769/7128; 359 scenarios/40 cities remain. Next Miyazaki PRF-045 only after this checkpoint commit persistence.
