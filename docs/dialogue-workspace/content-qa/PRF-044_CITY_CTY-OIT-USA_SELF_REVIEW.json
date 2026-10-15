@@ -1,0 +1,69 @@
+{
+  "cityId": "CTY-OIT-USA",
+  "baseline": "3954f280818ce7c8e596a45e99a2823e86eda841",
+  "inputSha256": "e605f90d2f5ab441edd472850153ede4d6fe9dcaf43378c36b008f82539416bd",
+  "sourceSha256": "95c4017b5d4d1be44dab43e537d16fed76d1e09f13ac24beae4f792196fef3cb",
+  "roleAlignmentSha256": "1371428180f415a66be6bb372762fe6b867dce48db362e97cf5d5ffec325bf69",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-OIT-USA-001": "御朱印帳を忘れた未参拝の客が受付列と参拝順路を区別し、同行者分を含む二枚の申し込みと受取札の所持者、撮影への配慮を決める。",
+    "SC-LOC-OIT-USA-02-001": "空の苗箱を数える担当だと確認した後、返却待ちの札と棚番号の不一致、割れた箱の計数という別々の問題を発見し、出庫分確定まで計数を待つ。",
+    "SC-LOC-OIT-USA-03-001": "九十分の制約に対して体験六十分と前後二十分では移動余裕が乏しく、見学のみを検討する。一部入替と座席の有無が判断条件になり、返答待ちで体験予約を見送る。",
+    "SC-LOC-OIT-USA-04-001": "野菜かき揚げの材料表にえびがなくても共用油が判明し、つゆの原料と器具も未確認のため自分の食事と味見を見送って同行者の注文だけにする。",
+    "SC-LOC-OIT-USA-05-001": "応募先は決まっているが職歴の日本語化が難しく、母語メモと午後・ベトナム語通訳を希望する。電話で日時を聞き違える心配から窓口で紙の返答を選び、予約未確定を理解する。",
+    "SC-LOC-OIT-USA-06-001": "受診日を知らせたい客が職場書式の診断欄に戸惑い、領収書に金額もあるため、看護師の保証ではなく書類担当への質問と職場への記載範囲確認を分ける。",
+    "SC-LOC-OIT-USA-07-001": "机の背面コンセントと引き出しの干渉から壁・椅子の余裕が問題になり、浅い型へ絞る。三階の階段搬入と室内組立の見積もりは寸法不足のため保留する。",
+    "SC-LOC-OIT-USA-08-001": "支払い後の通知と同額の領収証を見せるが、金額一致では納付分が一致すると決められない。対象期間が読めず記録担当への照会と期限までの対応の質問を引き継ぐ。"
+  },
+  "corrections": [
+    "八件の汎用応答を新しい条件・発見・判断を持つ独立した会話に書き直し、全四十課題を各プレイヤー発話と直前のNPC発話に対応させた。",
+    "Nature/Farmerの不整合を、農作業用資材の準備という仕事目的を残した架空のWarehouse/Warehouse Staffに修正した。",
+    "一般生活手続きの相談を、既存のJob Counselorの職域に合う履歴書の予約相談に変更した。",
+    "最終自己再読で観光場面の「同行者との待ち合わせまで」という時間制約が同行者の座席確認と紛らわしいと気づき、「次の予定まで」に修正した。題名も終了時刻ではなく所要時間とし、該当場面全体と課題を再読した。",
+    "全施設を架空と明示して住所・営業時間をnullにし、実在の神社・公共機関・店の運営情報と混同する表記を外した。"
+  ],
+  "checks": {
+    "exactAssignedScenarioIds": true,
+    "exactAssignedLocationIds": true,
+    "eightScenariosElevenTurnsEach": true,
+    "fiveTasksPerScenario": true,
+    "fortyUniquePlayerUtterances": true,
+    "fortyUniqueTaskGoals": true,
+    "fortyUniqueIntents": true,
+    "japaneseTitlesPremisesTurnsGoals": true,
+    "npcFirstPlayerAlternationAndNpcClosureReviewed": true,
+    "allTasksAgainstImmediateNpcAndPlayerReviewed": true,
+    "allTitlesPremisesTurnsTasksAndRoleCorrectionsReread": true,
+    "numericConsistencyReviewed": "御朱印二枚、棚三番と札二番、予定まで九十分・体験六十分と前後二十分、三階を各場面内で照合した。",
+    "allCategoriesExactMatchNpcProgression": true,
+    "allEightFictionalVenuesWithNullHoursAddress": true,
+    "roleScopeAndUncertaintyReviewed": true,
+    "noNewCategoriesOrAssets": true,
+    "noSharedOrActiveCheckoutWrites": true,
+    "noCrossReading": true,
+    "noGitWrites": true,
+    "sourcePath": "scripts/dialogue-authoring/prf-044-city-cty-oit-usa.json",
+    "roleAlignmentPath": "docs/dialogue-workspace/content-qa/PRF-044_CITY_CTY-OIT-USA_ROLE_ALIGNMENT.json"
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "独立したモデルの自己再読のみであり、人間・母語話者・他著者による校閲は行っていない。",
+    "学習用の架空設定で、実在の営業時間・経路・料金・料理材料・予約や書類の取扱い・税の納付状況は検証していない。",
+    "Warehouseへの適応は農作業前の資材準備を保持するが、実際の田んぼでの作業や農業専用の背景・職務画像を追加するものではない。既存背景・衣装との厳密な視覚一致は未確認。",
+    "看護師は診断や書類受理を保証せず、店員はアレルギー安全性を保証せず、税務窓口は支払い済みや期限変更を確定しない。",
+    "ランタイムへの統合、端末表示、公開承認、翻訳は親担当の後続工程であり未実施。"
+  ]
+}
