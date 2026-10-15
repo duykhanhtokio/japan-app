@@ -46,6 +46,7 @@ const adapters={
  const url=`http://127.0.0.1:${server.address().port}`;
  const enter=async(locale,day=1)=>{
   await page.goto(url+'/?language='+locale);await page.getByTestId('kensetsu-field-building').click();
+  if(await page.getByTestId('kensetsu-mode-study').count())await page.getByTestId('kensetsu-mode-study').click();
   const targetDay=page.getByTestId('kensetsu-day-'+((week-1)*7+day));
   if(!await targetDay.count()){
    const targetWeek=page.getByTestId('kensetsu-week-'+week);
@@ -98,7 +99,7 @@ const adapters={
  await page.getByTestId('kensetsu-reader').evaluate(e=>{e.scrollTop=e.scrollHeight;e.dispatchEvent(new Event('scroll',{bubbles:true}));});
  await page.waitForTimeout(200);assert(await page.getByTestId('kensetsu-complete').isEnabled());
  await page.getByTestId('kensetsu-complete').click();await page.reload();
- await page.getByTestId('kensetsu-field-building').click();await page.getByTestId('kensetsu-day-'+((week-1)*7+1)).click();
+ await page.getByTestId('kensetsu-field-building').click();if(await page.getByTestId('kensetsu-mode-study').count())await page.getByTestId('kensetsu-mode-study').click();await page.getByTestId('kensetsu-day-'+((week-1)*7+1)).click();
  assert((await page.getByTestId('kensetsu-complete').innerText()).includes('学習済み'));
  await enter('ja');await page.getByTestId('kensetsu-translation').click();
  await page.screenshot({path:path.join(out,'japanese.png')});

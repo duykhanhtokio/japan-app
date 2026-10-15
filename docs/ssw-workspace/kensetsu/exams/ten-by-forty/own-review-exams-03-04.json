@@ -1,0 +1,80 @@
+{
+  "exams": [
+    3,
+    4
+  ],
+  "questionCount": 80,
+  "language": "ja",
+  "scope": "Independent new Japanese assessment based only on own assigned canonical lesson paragraphs; no translations, official questions, historical 200-question bank, public search or other-author reading.",
+  "sourceFilesReadCompletely": [
+    "source-exam-03.json",
+    "source-exam-04.json"
+  ],
+  "reviewMethod": "Author semantic review of each prompt, the unique correct option and all three distractors against referenced Japanese paragraphs. Four rationale entries retained, with index0 supporting the answer and indices1–3 explaining each wrong option.",
+  "all80QuestionsSelfReviewed": true,
+  "correctIndexBeforeRootShuffle": 0,
+  "checks": {
+    "exactBlueprintSlots": true,
+    "sourceLessonHashesUnchanged": true,
+    "referenceParagraphIdsExist": true,
+    "fourDistinctChoicesEach": true,
+    "fourNonemptyRationalesEach": true,
+    "allRequiredTextPresent": true,
+    "uniquePrompts80": true,
+    "uniqueSpecificObjectiveClaims80": true,
+    "newGeometryExampleArithmetic": {
+      "horizontalDistanceM": 4,
+      "heightDifferenceMm": 40,
+      "convertedDistanceMm": 4000,
+      "ratio": "1/100",
+      "notDesignPrescription": true
+    }
+  },
+  "statistics": {
+    "3": {
+      "questions": 40,
+      "lessonsReferenced": 39,
+      "clustersReferenced": 101,
+      "paragraphsReferenced": 204,
+      "authorSha256": "51ef000b4898c4bdbe43c8b58b972a785cd7625d222f6b14bdbfd25cffed3d18"
+    },
+    "4": {
+      "questions": 40,
+      "lessonsReferenced": 39,
+      "clustersReferenced": 114,
+      "paragraphsReferenced": 277,
+      "authorSha256": "e6635d16e9b4ba6086565a02aed2764a0cc8ee8861dd87d40eee49a896cc4f09"
+    }
+  },
+  "distinctExtraObjectives": {
+    "03": {
+      "lesson98Primary": "車両系建設機械の機体重量は運搬物・当日積載量とは異なる仕様。",
+      "lesson98Extra": "高所作業車の能力としての作業床高さは当日の低い使用位置では変わらない。"
+    },
+    "04": {
+      "lesson137Primary": "境界材である見切り材と仕上がり面を前に出すふかしの役割を区別。",
+      "lesson137Extra": "部材空間の余裕の逃げと表示位置の関係の逃げ墨を区別。"
+    }
+  },
+  "corrections": [
+    {
+      "examNumber": 4,
+      "questionNumber": 29,
+      "change": "Replaced a weak DC/AC distractor with separate plausible errors at the600V and7000V inclusive boundaries; revised both wrong-option rationales.",
+      "reason": "Exactly one correct combination while independently assessing the two boundary-inclusion errors."
+    }
+  ],
+  "semanticReviewNotes": [
+    "Roles, material layers, equipment functions, dimensions and qualification-role distinctions assessed through different domain-specific claims; no reused generic check-specification stem template.",
+    "No operation, rescue, explosion, energization, chemical mixing or structural design procedures authored. Unsafe overgeneralizations appear solely as wrong answers with explicit rationales.",
+    "Legal/qualification content stays within the assigned introductory Japanese claims; no current-law or all-exception qualification determination is certified.",
+    "Only actual evaluated paragraph IDs are referenced. The references include the answer and assessed distractor distinctions; they are not a claim that every source paragraph or every knowledge item is assessed.",
+    "Lesson coverage means one slot for each assigned lesson and the distinct extra; question-bank completion does not establish comprehensive source-knowledge, official-exam or release coverage."
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "currentLawIndependentlyVerified": false,
+  "officialExam": false,
+  "releaseApproved": false,
+  "limitations": "Author AI self-review only. No peer, native, domain or legal signoff; root integration/shuffle/runtime checks and durable Git verification remain outside this author task."
+}

@@ -1,3 +1,9 @@
+# 建設 — active 10 × 40 Japanese review tests
+
+Publisher update2026-10-15 supersedes10x20 size. New runtime bank src/data/kensetsu/review-tests.ja.json:10tests/400questions; every385lesson represented with exact source hashes. Scope and residual paragraph gaps:ten-by-forty/REPORT_VI.md and coverage-matrix.json. Japanese-only development runner integrated via existing Kensetsu course mode selector; hidden answers untilsubmission, scoped persistent attempts, grading/review/source return. Actual adapted web400questions/1600choices and study84combinations PASS; narrow TypeScript, state and byte-lock checks PASS. Human/native/domain/rights/release approval remains false. No exhaustive knowledge/advanced2/native-device claim. Containing commit must be remote-verified before durable completion is reported.
+
+## Historical 10×20 draft retained unchanged
+
 # 建設 — 10 × 20 Japanese review tests
 
 Publisher instruction, 2026-10-13: continue to assessment authoring; create exactly 10 tests of 20 questions based on existing lessons. This explicit instruction supersedes the historical `examAuthoringEnabled: false` and “no exams yet” authoring-phase restriction, for this bank only. It does not certify the existing lessons or authorize release before review.
