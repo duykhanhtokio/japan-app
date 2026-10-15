@@ -1,0 +1,81 @@
+{
+  "cityId": "CTY-JP-44205",
+  "baseline": "3954f280818ce7c8e596a45e99a2823e86eda841",
+  "inputSha256": "b59f948e91428c67d77d0f33b8ac1e161e6fedc9e1073fe16b9097a1e46459ec",
+  "sourceSha256": "348d6568609ffac233cfd0ef49c6085ee6f9b480adf94b8b3ff1e7ce4f3959f2",
+  "roleAlignmentSha256": "0fa5658898d14b2895d8b2f01926a53bc297c44ae94a99cc980cf944b85dfa7b",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "paths": {
+    "source": "scripts/dialogue-authoring/prf-044-city-cty-jp-44205.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-044_CITY_CTY-JP-44205_ROLE_ALIGNMENT.json"
+  },
+  "causalPlots": {
+    "SC-LOC-JP-44205-01-001": "午後三時の訪問を検索の出発時刻に入れた誤りを直す。駅から家への移動も未確認なので友人に聞き、到着目標と乗換えの少なさを条件に候補を比べる。",
+    "SC-LOC-JP-44205-02-001": "賃貸申込みの証明書案内が別の物件の物と判明。前の指定を流用せず、現提出先へ書類名・対象年・必要項目を確かめるため申請を保留する。",
+    "SC-LOC-JP-44205-03-001": "持続するという問診語を確認し、座位では痛みがなく下り階段で痛むと説明。右ひざと不確かな開始日を分けて記し、ゆっくりした説明を希望して医師へ引き継ぐ。",
+    "SC-LOC-JP-44205-04-001": "再配達を名乗る支払い連絡が待っている荷物と同じとは限らない。切った保存画像にない時刻等を原文で示し、未操作と推測した会社名を事実から分けて相談する。",
+    "SC-LOC-JP-44205-05-001": "本だけと思っていた箱に額入り写真もあると補足。梱包の相談に必要な内容を整理するが現在の部屋番号も不明なので、持ち帰って家族へ住所を確かめる。",
+    "SC-LOC-JP-44205-06-001": "部屋番号を足す指示は受取人名ではなく振込人名と理解。相手口座情報と本人表示を分け、未実行のまま費用と記載を担当へ相談する。",
+    "SC-LOC-JP-44205-07-001": "自分と隣人の商品が同じかごに混ざり、牛乳の所属もメモで訂正。二組の品・袋・レシートを対応させ、自分の分から順に会計する。",
+    "SC-LOC-JP-44205-08-001": "以前の周回案内にはない橋の閉鎖が今日の掲示で判明。一周をやめて閉鎖手前の休憩所までの範囲へ変更し、現在の図に入口と目安を記して戻る。"
+  },
+  "corrections": [
+    "All eight unverified real-looking institutions renamed as explicit generic fictional learning venues; opening hours and addresses cleared to null.",
+    "Park/Community Staff corrected to supported Park/Park Staff. Other existing supported category/job pairs retained.",
+    "Station NPC arrival-versus-departure readback revised to natural Japanese describing the arrival search condition.",
+    "Government Player wording revised to clearly put the previous-property sheet aside without implying discarding or losing it.",
+    "Nurse onset question revised to ask naturally when the Player noticed pain; uncertainty about the exact date remains explicit.",
+    "Police NPC wording revised to state that the sender cannot be identified from the message alone, preserving uncertainty without certifying fraud.",
+    "Parcel exchange revised from an unsolicited delivery-guarantee disclaimer to a concrete request for contents-specific packing review; premise and third task synchronized.",
+    "Park NPC wording revised to refer clearly to the currently indicated open area; no passage beyond the closure is proposed.",
+    "Every final title, premise, turn, task and role correction was reread. All final edited passages and adjacent tasks/replies reread; exact source and role hashes refreshed."
+  ],
+  "checks": {
+    "fullAssignedInputRead": true,
+    "allOwnFinalProseAndRoleCorrectionsReread": true,
+    "exactScenarioIdsPreserved": true,
+    "originalVenueAndRouteGroupingRetained": true,
+    "elevenNpcFirstAlternatingTurnsEach": true,
+    "fiveSpecificContextAlignedTasksEach": true,
+    "allFortyPlayerUtterancesUnique": true,
+    "allFortyTaskIntentsUnique": true,
+    "allFortyTaskGoalsUnique": true,
+    "eightDistinctNpcClosures": true,
+    "noAcknowledgmentOnlyPlayerTurns": true,
+    "distinctCausalPlotsReviewedIndividually": true,
+    "noNounSwappedReusableDialogueSkeleton": true,
+    "japaneseOnlySpeech": true,
+    "noLevelGate": true,
+    "numbersSidesAndNamedSceneLabelsReviewed": true,
+    "supportedExistingCategoriesOnly": true,
+    "noNewCategoriesOrAssets": true,
+    "explicitFictionalVenueIdentities": true,
+    "allHoursAndAddressesNull": true,
+    "noRealLocalRoutesSchedulesFeesOrProceduralGuarantees": true,
+    "noDiagnosisOrFraudDetermination": true,
+    "noTransferOrShipmentClaimedComplete": true,
+    "finalExactByteHashesVerified": true,
+    "noOtherCityProseRead": true,
+    "noActiveCheckoutRuntimeSharedOrGitWrites": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "Independent author self-review only; no peer, native-speaker or human review.",
+    "All documents, forms, messages, products, display conditions and venue layouts are hypothetical scene facts, not verified Saiki institutions or operational policies.",
+    "No certificate suitability, medical diagnosis, sender identity, parcel eligibility, bank transfer status, actual train connection or real park passage is established.",
+    "Runtime integration, artwork/device inspection and release approval remain with root. No runtime or shared repository file was edited by this author."
+  ]
+}
