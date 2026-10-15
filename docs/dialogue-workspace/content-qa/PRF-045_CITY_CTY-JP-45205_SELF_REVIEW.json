@@ -1,0 +1,408 @@
+{
+  "cityId": "CTY-JP-45205",
+  "baseline": "5e9e90add76f00a3e660df23a611cfa2988ccd2b",
+  "inputSha256": "3d645b1c40d55a0eac3688dfdeeedcbe3068de0508eace63473bad1ba88c0b37",
+  "sourceSha256": "2023c195e6bcfc24252006b955011049e8b1e3edea6ede3098a62d7ca92aa4b9",
+  "roleAlignmentSha256": "5e9d6ef641073d1b343434d8536de3ab4885ee58c582f4699937fb400c5830fd",
+  "sourceFile": "scripts/dialogue-authoring/prf-045-city-cty-jp-45205.json",
+  "roleAlignmentFile": "docs/dialogue-workspace/content-qa/PRF-045_CITY_CTY-JP-45205_ROLE_ALIGNMENT.json",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-45205-01-001": {
+      "title": "同じ読みの駅名を漢字と路線で確かめる",
+      "causalProgression": "小林市に配置した架空の駅旅行相談窓口。友人から音声で聞いた駅名を検索した客が、漢字の違う候補を選んでいたことに気づく。切符購入を保留し、友人の返信を基に行先と乗換条件を確認する。実在の駅名・路線・運行は示さない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "ask_if_first_voice_name_search_candidate_is_correct",
+          "goal": "音声で聞いた駅名を入力し、最初の検索候補で友人宅への乗換を調べてよいか尋ねる。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "pause_ticket_purchase_to_get_station_kanji",
+          "goal": "漢字を知らず地図も見ずに候補を選んだと説明し、購入前に友人へ駅名を尋ねる。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "replace_wrong_kanji_candidate_with_friends_reply",
+          "goal": "友人の返信にある漢字と路線を示し、最初の候補とは別の駅として検索し直すよう頼む。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "prefer_fewer_transfers_with_pickup_time_unfixed",
+          "goal": "友人が駅へ迎えに来るため乗換の少なさを優先し、迎えの時刻は未定だと伝える。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "coordinate_pickup_after_estimate_and_recheck_destination",
+          "goal": "到着見込みが分かってから迎えを相談し、購入前に行先の漢字を一緒に照合したいと述べる。"
+        }
+      ]
+    },
+    "SC-LOC-JP-45205-02-001": {
+      "title": "古い証明書の画像と今回の提出条件を分ける",
+      "causalProgression": "架空の行政証明相談窓口。転居前の証明書画像を会社へ送ろうとした客が、画像提出と原本の要否を混同している。書類の発行日・住所・提出形式を整理し、会社の条件が分かるまで申請を保留する。具体的な証明書の有効期限や発行要件は保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "ask_whether_old_certificate_photo_avoids_new_request",
+          "goal": "会社への住所証明に以前の紙の写真を使えば新規申請を省けるか相談する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "identify_pre_move_address_and_vague_issue_date_requirement",
+          "goal": "画像が転居前の住所で、会社の「最近のもの」という条件の期間も不明だと説明する。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "distinguish_initial_image_upload_from_original_exemption",
+          "goal": "最初の画像提出は指示されているが後の原本要否は不明で、画像提出と原本不要は別だと確認する。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "ask_company_four_requirements_before_application",
+          "goal": "現在住所を示す書類名・発行日・原本の扱いを会社に尋ね、回答前の申請を保留する。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "return_with_reply_and_withhold_outdated_image",
+          "goal": "会社の返信を持って再相談し、古い住所の画像は送らず確認中だと会社へ連絡すると伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-45205-03-001": {
+      "title": "食後という言葉から痛みの時間を具体化する",
+      "causalProgression": "架空の病院問診支援窓口。患者が「食後」を毎食後という意味だと思い、問診票を空欄にしている。看護師が語義と記入を支援し、夕食後だけの症状、続く時間、薬名が不明な点を医師へ伝える準備をする。診断や薬の使用指示は行わない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "clarify_shokugo_without_assuming_every_meal",
+          "goal": "「食後」が毎食後を意味するか尋ね、夕食後だけなので回答に迷うと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "state_onset_epigastric_location_and_meal_difference",
+          "goal": "一昨日の夜から夕食後にみぞおちが痛み、朝昼の食後には今のところないと伝える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "report_approximate_duration_without_false_minutes",
+          "goal": "昨日は片付けが終わるころに治まり、正確な分数は不明と記入してよいか尋ねる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "disclose_no_new_medicine_and_pending_regular_medicine_photo",
+          "goal": "今回の痛みでは服薬せず、普段の薬名は不明だが家族から袋の写真を送ってもらえると述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "request_slow_diagnosis_explanation_and_mark_unknown_name",
+          "goal": "病名が聞き取れない際はゆっくり再説明を希望し、写真未着なら薬名不明と医師に伝えると述べる。"
+        }
+      ]
+    },
+    "SC-LOC-JP-45205-04-001": {
+      "title": "友人を名乗る送金依頼と本人の返事を相談する",
+      "causalProgression": "架空の警察連絡被害相談窓口。友人の新しい番号だという連絡を信じて送金した後、本来の連絡先から依頼していないと返事が来た。警察は記録と相談内容を確認し、銀行への照会も分けて案内する。犯人の特定や返金を確約しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "explain_friend_impersonation_payment_then_denial",
+          "goal": "友人の新番号を信じ送金した後、以前の連絡先の本人が依頼を否定したと相談する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "state_no_meeting_and_continued_extra_payment_requests",
+          "goal": "会う約束や接近の連絡はないが、新番号から追加送金の要求が続くと伝える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "present_transfer_receipt_and_both_message_records",
+          "goal": "振込控え・要求の履歴・本人の否定の返事を、時刻が分かる状態で示すと述べる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "clarify_bank_contact_and_no_automatic_refund",
+          "goal": "銀行未連絡で、警察への相談が自動連絡や返金になると思っていたと伝え、別途銀行への連絡要否を尋ねる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "decline_extra_payment_and_consult_bank_separately",
+          "goal": "追加送金せず銀行にも送金後の対応を尋ね、両連絡先の記録と控えを警察に確認してほしいと頼む。"
+        }
+      ]
+    },
+    "SC-LOC-JP-45205-05-001": {
+      "title": "本だけのつもりの箱に端末を入れたことを伝える",
+      "causalProgression": "架空の郵便発送相談窓口。国内の家族へ本を送る客が、荷造りの最後に使わなくなった端末を加え、内容欄を更新していない。郵便局員が端末の種類と不明点を確認し、受託条件が分かるまで発送を止める。電池の取り外しや梱包の手順、輸送可否を断定しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "disclose_tablet_added_to_unsealed_domestic_book_parcel",
+          "goal": "国内の家族向けの本の箱に最後に古い端末を加え、まだ封をしていないと申告する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "identify_model_check_possible_but_battery_unknown",
+          "goal": "機種名は本体で確認できそうだが電池は不明で、本と同じ扱いと思っていたと説明する。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "admit_unused_device_condition_unchecked",
+          "goal": "最近使っておらず端末の現在の状態も未確認で、受付可能と分かってから封をするつもりだったと述べる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "take_parcel_back_for_documents_and_correct_contents",
+          "goal": "箱を持ち帰り機種の資料を探し、内容欄を本だけにせず端末も含めて相談すると述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "discuss_omitting_device_and_reconsult_actual_contents",
+          "goal": "急ぎなのは本だと答え、端末を今回送らない選択も家族と相談し、内容決定後に料金と条件を再相談する。"
+        }
+      ]
+    },
+    "SC-LOC-JP-45205-06-001": {
+      "title": "予約した振込を失敗と思って重ねない",
+      "causalProgression": "架空の銀行振込照会窓口。授業料を振込予約した客が、残高が減っていないため失敗と思っている。予約と実行の状態、指定日と学校の期限を分けて照会し、確認前の二重送金を避ける。個別の実行・取消・返金・学校の入金認定は保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "question_failed_transfer_assumption_from_unchanged_balance",
+          "goal": "昨夜の授業料手続き後に残高が減らず、失敗と思い窓口で再送するか迷うと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "report_reserved_status_and_next_week_selected_date",
+          "goal": "履歴は予約で来週の日付を選んだが、予約直後に残高が減ると思っていたと伝える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "raise_this_week_deadline_and_duplicate_payment_risk",
+          "goal": "学校の期限が今週だと気づき、来週の予約を残して今日送れば二重になるか尋ねる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "request_reservation_status_change_cancel_and_fees_before_decision",
+          "goal": "予約状態と変更・取消の可否を先に調べ、できない場合の対応や費用も聞いてから決めたいと頼む。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "ask_school_crediting_deadline_and_withhold_new_transfer",
+          "goal": "銀行の確認結果を学校へ伝えて必要な入金時点を尋ね、当面は追加振込をしないと述べる。"
+        }
+      ]
+    },
+    "SC-LOC-JP-45205-07-001": {
+      "title": "重さ当たりの表示と二つのパックの金額を見直す",
+      "causalProgression": "架空のスーパー会計窓口。重さの違う魚の二パックを同額だと思った客が、百グラム当たりの表示とパックの金額を区別する。予算に合わせ一パックへの変更を会計前に相談し、ポイント表示と決済方法も分けて確かめる。実在店舗の価格・取消・決済条件は示さない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "query_different_fish_pack_amounts_on_same_shelf",
+          "goal": "同じ棚の魚二パックが同額と思っていたのに表示金額が違うと会計前に尋ねる。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "compare_per_hundred_gram_sign_with_pack_weights",
+          "goal": "棚が百グラム当たりの表示と気づき、異なる重さが金額差の理由かラベルで確かめたいと述べる。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "request_removing_larger_pack_before_payment",
+          "goal": "予算を超えそうなので小さいパックだけにし、未決済の大きいパックを外せるか確認を頼む。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "ask_fish_inner_bag_cost_despite_own_shopping_bag",
+          "goal": "買い物袋はあるが魚用の小袋を希望し、有料なら価格を聞いて付けるか決めたいと答える。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "distinguish_points_from_balance_and_verify_final_card_total",
+          "goal": "ポイント表示を残高と誤解したと述べ、ポイントを使わずカード利用可否と小袋込み合計を確認後に払うと伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-45205-08-001": {
+      "title": "待ち合わせの入口と一周コースの出口を分ける",
+      "causalProgression": "架空の公園散策案内所。友人との待合せを前に短い散歩をしたい客が、案内図の別の入口を待合せ場所と思っている。入園時の目印と友人の写真を照合し、一周にこだわらず戻る計画へ変える。実在公園の経路・距離・設備・安全を保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "ask_loop_end_meets_friends_entrance",
+          "goal": "後から来る友人に入口で会いたく、一周の終点が待合せ入口になると思ったと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "identify_clock_sign_and_suspected_wrong_entrance",
+          "goal": "時計の看板から入ったが指した入口には時計印がなく、別の入口かもしれないと述べる。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "compare_friends_clock_photo_to_map_marker",
+          "goal": "友人の写真の時計を案内図と照合してほしいと頼み、入口としか伝えていない不安を説明する。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "replace_full_loop_with_short_rest_and_return_path",
+          "goal": "待合せまで余裕がなく一周をやめ、時計の入口へ戻る途中で休める短い道を尋ねる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "set_turnback_margin_and_share_exact_meeting_landmark",
+          "goal": "入口の時計を見て出発し余裕を残して引き返し、友人にも時計の写真を送り待合せ入口を一致させると述べる。"
+        }
+      ]
+    }
+  },
+  "corrections": [
+    "最終自己再読で、郵便の応答から求められていない電池取り外しへの言及を除き、実際の内容欄を直す意思に焦点を合わせた。急ぎの品を尋ねる表現、駅の迎えと画面待機、スーパーの題名も自然に整えた。",
+    "全場面の反復的な旧課題を、直前のNPCと各応答に合う四十の具体的な課題に書き換えた。",
+    "駅では同じ読みの別候補を区別して購入を保留し、行政では転居前の画像と今回の提出条件を区別した。",
+    "問診では食後と毎食後を区別し、分からない時間や薬名を断定せず診察につなぐ。",
+    "警察では友人本人の否定と送金履歴を整理し、警察相談を銀行連絡や返金確定と扱わない。",
+    "郵便は追加した端末の電池や状態が不明なまま受付を確約せず、分解や梱包の手順も示さない。",
+    "銀行は予約と実行を区別し、期限に気づいた後も確認前の重複振込を避ける。",
+    "会計は重さ当たりの表示とパック金額、ポイントと残高を区別する。公園は二つの入口を写真と図で照合する。"
+  ],
+  "checks": {
+    "exactScenarioIds": true,
+    "elevenAlternatingTurnsEach": true,
+    "fiveSpecificTasksEach": true,
+    "fortyDistinctPlayerTurns": true,
+    "fortyDistinctTaskGoals": true,
+    "npcClosuresConcrete": true,
+    "allTitlesPremisesTurnsTasksReread": true,
+    "roleCorrectionsReread": true,
+    "supportedCategoriesExactMatch": true,
+    "fictionalVenuesAndNullHoursAddresses": true,
+    "noActualSchedulesPricesPoliciesOrMedicalDecisions": true,
+    "noNewCategoriesAssetsOrRuntimeEdits": true,
+    "japaneseOnlyProse": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "独立した自己レビューのみ。母語話者・人間・同僚によるレビューは未実施。",
+    "実在事業者の制度、地理、設備、取扱条件を検証していない。",
+    "実機確認・公開承認・翻訳は未実施。既存背景画像の一致は保証しない。"
+  ]
+}
