@@ -19,6 +19,16 @@ assert.equal(m.translationForMaster(id,'en',{[id]:{en:translation}},{...m.japane
 assert.equal(m.translationForMaster(id,'en',{[id]:{en:translation}},{...m.japaneseMasterSections,[id]:{...master,headingJa:'変更'}}),undefined,'Heading edit invalidates translation');
 assert.equal(m.translationForMaster('unknown','en',{[id]:{en:translation}}),undefined);
 for(const s of Object.values(m.japaneseMasterSections)){assert.equal(s.humanReviewed,false);assert.equal(s.domainReviewed,false);assert.equal(s.nativeReviewed,false);}
-const qs=JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/kaigo/japanese-master/week-01-questions.draft.json'))).questions;
+const questionDraft=JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/kaigo/japanese-master/week-01-questions.draft.json'))),qs=questionDraft.questions;
 assert.equal(Object.keys(qs).length,59);for(const q of Object.values(qs)){assert(q.promptJa);assert.equal(q.optionsJa.length,4);assert.equal(new Set(q.optionsJa).size,4);assert.equal(q.rationalesJa.length,4);assert(q.correctIndex>=0&&q.correctIndex<4);assert(!/[À-ỹ]/u.test(JSON.stringify(q)));}
+const review=questionDraft.optionRationaleReview;
+assert.equal(review.reviewedQuestionCount,59);assert.equal(review.reviewedOptionCount,236);
+assert.equal(review.runtimeIntegrated,false);assert.equal(review.humanReviewed,false);assert.equal(review.domainReviewed,false);assert.equal(review.nativeReviewed,false);
+assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,review.sourceMasterPath))).digest('hex'),review.sourceJapaneseSha256,'Japanese changes require renewed question editorial review');
+const core=Object.fromEntries(Object.entries(qs).map(([id,q])=>[id,{promptJa:q.promptJa,optionsJa:q.optionsJa,correctIndex:q.correctIndex}]));
+assert.equal(crypto.createHash('sha256').update(JSON.stringify(core)).digest('hex'),review.questionCoreSha256,'Question changes require renewed option-rationale review');
+for(const [id,q] of Object.entries(qs)){
+ assert.equal(new Set(q.rationalesJa).size,4,`${id}: repeated rationale`);
+ for(const explanation of q.rationalesJa){assert(explanation.trim());assert(!explanation.startsWith('この選択肢は場面の条件と一致しません。'),`${id}: generic explanation`);}
+}
 console.log('KAIGO JAPANESE MASTER PASS: 7 days / 73 sections / 246 paragraphs; legacy source bytes preserved; stale and unsupported translations rejected; 59 question drafts structurally valid (not runtime-integrated).');
