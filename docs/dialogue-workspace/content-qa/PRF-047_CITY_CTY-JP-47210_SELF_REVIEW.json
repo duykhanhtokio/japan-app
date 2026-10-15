@@ -1,0 +1,69 @@
+{
+  "cityId": "CTY-JP-47210",
+  "baseline": "41920ad4784b36c2da34976fa1f1d27df4e6a0bc",
+  "inputSha256": "86582dff5f3036dfd6e4d08425cb95fbee29e42ffc5f721599db71f8a6d7502f",
+  "sourceSha256": "ad0a535c662dee1b0e1eaece7a258dd8852eb6e49d75d3c4adc25bcb192621a7",
+  "roleAlignmentSha256": "75d71f3bc4fa645d56340fe364b93225ee2e03cc34e4f64b886b7e3eda56409c",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-47210-01-001": "バス案内で乗換案内の停留所名だけを頼りにしていた客が、方向と乗換場所を確認する。",
+    "SC-LOC-JP-47210-02-001": "妹のために来た客が記入済みと思っていた書類が白紙だと気づき、代理申請の条件を確認して出直す。",
+    "SC-LOC-JP-47210-03-001": "診察前に食欲低下と吐き気の言葉を聞き分け、食べた量と水分摂取を看護師に伝える。",
+    "SC-LOC-JP-47210-04-001": "不審な配達メッセージのリンクに住所を入れた客が、入力内容と時刻を整理して警察の相談受付を受ける。",
+    "SC-LOC-JP-47210-05-001": "持参した箱の底が弱いため窓口で発送を止め、本を分ける方法と梱包材料の費用を相談する。",
+    "SC-LOC-JP-47210-06-001": "銀行で振込途中の通信切断を相談し、受付番号の照会が終わるまで再操作を控える。",
+    "SC-LOC-JP-47210-07-001": "食品店の会計で二千円条件の券が使えないと知り、不要な買い足しをせず袋代を含めて支払う。",
+    "SC-LOC-JP-47210-08-001": "ベビーカーの客が遊具側の音を避けつつ、車止めの狭い近道を使わず広い入口から戻る。"
+  },
+  "corrections": [
+    "入力の全八場面、八十八発話、四十ゴールを読み、共通レシピから独立した因果関係へ全面的に書き直した。",
+    "駅と鉄道乗換を架空のバス案内に変更し、同名停留所の方向と横断歩道の移動時間を扱う。",
+    "公園担当を公園スタッフに修正し、八施設の名称と営業時間等を仮想の場面に合わせた。",
+    "警察相談の題名で偽物と断定していた語を不審に修正し、犯罪の有無を決めつけない本文に合わせた。",
+    "代理申請の前提から本人用申請書だという未提示の判断を除き、白紙の用紙を持参した事実だけに合わせた。",
+    "新聞紙を使えるかという直前の質問へ答えるよう、梱包の説明を具体化した。",
+    "最終修正後は行政・警察・郵便の三場面の題名、前提、全発話、ゴールを再読した。"
+  ],
+  "checks": {
+    "fullAssignedInputRead": true,
+    "fullOwnFinalReread": true,
+    "allFinalTitlesPremisesTurnsTasksAndRoleCorrectionsRead": true,
+    "finalEditedPassagesReread": true,
+    "originalScenarioIdsPreserved": true,
+    "elevenAlternatingNpcPlayerTurnsByArrayIndex": true,
+    "fiveContextAlignedTasks": true,
+    "npcFinalConcreteClosure": true,
+    "uniquePlayerLines": 40,
+    "uniqueNpcLines": 48,
+    "uniqueTaskGoals": 40,
+    "japaneseOnlyAuthoredContent": true,
+    "noLevelGate": true,
+    "noNounSwapRecipe": true,
+    "noCrossCityReading": true,
+    "fictionalMetadataAndPremises": true,
+    "rolesWithinSupportedCategories": true,
+    "roleCapabilityBoundsChecked": true,
+    "couponArithmeticChecked": true,
+    "inputSourceAndRoleExactByteHashesVerified": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "著者本人の再読と構造検査のみ。人間、母語話者、他の著者、運営者の確認ではない。",
+    "場所、運行、申請、商品、送料、割引条件、設備、対応は架空設定で現実の営業情報や制度を検証していない。",
+    "病名、被害の有無、送金成立の判断はしない。画面・音声・翻訳・端末・リリースの確認は未実施。",
+    "staging成果物のみ。著者はruntime、Git、公開ブランチの変更や保存を行っていない。"
+  ]
+}

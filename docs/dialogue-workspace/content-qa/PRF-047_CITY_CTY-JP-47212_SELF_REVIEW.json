@@ -1,0 +1,62 @@
+{
+  "cityId": "CTY-JP-47212",
+  "baseline": "41920ad4784b36c2da34976fa1f1d27df4e6a0bc",
+  "inputSha256": "2dad3963e71641105c8763e6b561f2e1a1c4067db973320dbf2fd5bb21cf6e10",
+  "sourceSha256": "b84e6ccd679fdecdc7cc429b20a987b2722561d4938fb8239b78f3bf2b51422a",
+  "roleAlignmentSha256": "bbdeeaab73c82779743f0ebb8f2d42055e0a7af32ccdb849d424118c772fd59a",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-47212-01-001": "バスの未到着と他便の混雑から定刻到着を約束せず、友人への連絡と待合席での表示確認へ切り替える。",
+    "SC-LOC-JP-47212-02-001": "二通の通知と不明な期限を整理し、通訳と火曜午後の希望を出すが、担当からの返事前は予約未確定と理解する。",
+    "SC-LOC-JP-47212-03-001": "勤務と休養についての会社指定用紙を領収書と区別し、医師の判断や書類担当への確認前に発行を会社へ約束しない。",
+    "SC-LOC-JP-47212-04-001": "傘袋の外ポケットの鍵、持ち手の欠け、刺繍の名前で遺失物を説明し、似た傘は照合中として連絡先を残す。",
+    "SC-LOC-JP-47212-05-001": "荷物が別窓口にあると分かり、車を使わず木曜午後の再配達を申し込めるか連絡する。期限と確定日時は別途確認する。",
+    "SC-LOC-JP-47212-06-001": "財布はあるがカードだけ不明な客が本人確認書類を示し、停止完了を推測せず結果を待つ。再発行は説明後に判断する。",
+    "SC-LOC-JP-47212-07-001": "未開封洗剤の漏れを二重袋で持参し、レシート確認と担当の了承を経て交換品の底を点検して受け取る。",
+    "SC-LOC-JP-47212-08-001": "閉鎖中の橋を渡る一周案をやめ、広場と時計を目印に池の手前で折り返し、濡れたベンチも確認する。"
+  },
+  "corrections": [
+    "全40個の共通的な目標を、直前のNPC発話とPlayer応答に対応する個別課題へ変更。",
+    "最終自読で傘袋への鍵の収納を外ポケットと明確化し、対応課題も更新。",
+    "03の書類の欄を勤務と休養に統一して休む日数の話と整合。",
+    "06の「担当から確認」を「担当にご確認」に修正し、停止結果の確認を停止完了の保証と誤読しない課題へ修正。",
+    "01の最終発話に別れの言葉を補い、変更した箇所を再読。"
+  ],
+  "checks": {
+    "exactElevenTurnsEach": true,
+    "npcFirstAndFinalClosure": true,
+    "exactFiveTasksEach": true,
+    "playerTurnsUniqueWithinCity": true,
+    "taskGoalsUniqueWithinCity": true,
+    "taskIntentsUniqueWithinCity": true,
+    "scenarioIdsPreserved": true,
+    "japaneseSpokenContentOnly": true,
+    "independentCausalPlotsReread": true,
+    "immediatePrecedingNpcAlignmentReread": true,
+    "numbersAndNamesReread": true,
+    "roleCorrectionsReread": true,
+    "nounSwapTemplateAbsentOnSelfReview": true,
+    "supportedCategoriesChecked": true,
+    "noLevelGating": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "作者自身の全件最終読みによる確認。人間・日本語母語話者・他作者によるレビューではない。",
+    "施設・路線・営業時間・商品対応・予約・医療書類・銀行等の現行条件は検証していない。架空の場面の個別設定として扱う。",
+    "同市の全11発話と5課題を読み、他都市作者の会話・課題・レビューは閲覧していない。",
+    "端末確認、統合、翻訳、Gitへの保存、公開はroot側の後続作業。このステージングのみで永続化済みとは主張しない。"
+  ]
+}

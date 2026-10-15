@@ -1,0 +1,89 @@
+{
+  "cityId": "CTY-JP-47212",
+  "corrections": {
+    "LOC-JP-47212-01": {
+      "category": "Bus Terminal",
+      "npcJob": "Bus Staff",
+      "nameJa": "架空のバス案内所",
+      "name": "架空のバス案内所",
+      "description": "実在の駅・鉄道・バス路線を示さない架空のバス案内所。遅延の不確実性と待合場所、乗り場の案内を行う。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-47212-02": {
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "nameJa": "架空の行政相談受付",
+      "name": "架空の行政相談受付",
+      "description": "二通の通知の相談先と通訳希望を取り次ぐ架空の行政受付。予約の希望と日時確定を区別する。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-47212-03": {
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "nameJa": "架空の病院・帰宅前相談場所",
+      "name": "架空の病院・帰宅前相談場所",
+      "description": "架空の病院内。看護師は書面の種類を確認し書類担当へ案内する。発行可否・費用・休養期間を決めない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-47212-04": {
+      "category": "Police Station",
+      "npcJob": "Police",
+      "nameJa": "架空の警察相談窓口",
+      "name": "架空の警察相談窓口",
+      "description": "架空の遺失物相談。特徴を聞き取り類似品を照合するが、似た傘を本人の物と断定しない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-47212-05": {
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "nameJa": "架空の郵便窓口",
+      "name": "架空の郵便窓口",
+      "description": "架空の郵便相談。別の保管先の票を確認し申込先を示す。その場で再配達の確定や荷物の引渡しを行わない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-47212-06": {
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "nameJa": "架空の銀行相談窓口",
+      "name": "架空の銀行相談窓口",
+      "description": "架空の銀行相談。停止の申出を担当へ引き継ぎ、相談中の段階を停止済みと扱わない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-47212-07": {
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "nameJa": "架空のスーパー・相談カウンター",
+      "name": "架空のスーパー・相談カウンター",
+      "description": "架空のスーパー。漏れた洗剤を確認し、担当の承認後に個別の交換対応を案内する。一般的な返品保証を主張しない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-47212-08": {
+      "category": "Park",
+      "npcJob": "Park Staff",
+      "nameJa": "架空の公園・案内場所",
+      "name": "架空の公園・案内場所",
+      "description": "架空の園内配置。閉鎖中の橋とぬかるみを避け、広場経由で同じ入口へ戻る経路を案内する。",
+      "openHours": null,
+      "address": null
+    }
+  },
+  "findings": [
+    "元の豊見城駅という名称と鉄道の存在を未検証のまま採用せず、同じIDで架空のBus TerminalとBus Staffの場面に修正する。",
+    "08はCommunity StaffではなくPark Staffへ整合する。",
+    "全八施設を架空名にし、元データの営業時間をすべてnullにする。住所はnullを維持する。",
+    "03の看護師、02の予約受付、05の郵便相談、06の銀行相談は、相談・照会と判断完了を区別する。",
+    "04の類似品は照合中とし、受取りできるとは断定しない。07は当該架空店の確認済み個別対応に限定する。"
+  ],
+  "inputSha256": "2dad3963e71641105c8763e6b561f2e1a1c4067db973320dbf2fd5bb21cf6e10",
+  "sourceSha256": "b84e6ccd679fdecdc7cc429b20a987b2722561d4938fb8239b78f3bf2b51422a",
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "peerReviewed": false
+}

@@ -1,0 +1,62 @@
+{
+  "cityId": "CTY-JP-47213",
+  "baseline": "41920ad4784b36c2da34976fa1f1d27df4e6a0bc",
+  "inputSha256": "d043a669b35135c18a988ced4441d4d5aa4bbdf132503fbcdfd016b1d4bc828f",
+  "sourceSha256": "f6eceed980343f3fefb8cc9bcbfcaef888581a8d20c9057b3869992d2997735b",
+  "roleAlignmentSha256": "1a85a8c5fb83ac291c0d6bf4ec97395f5630fd056937d9f328232025a7c426b7",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-47213-01-001": "復路払戻し不可という仮定条件→片道検討→帰り席未保証→友人の迎え確認→空席のある次便を購入。",
+    "SC-LOC-JP-47213-02-001": "補足依頼の不足書類確認→勤務先証明の受取日が期限後→担当課への取次ぎ→私用携帯への折返し→未変更の期限として自己連絡も準備。",
+    "SC-LOC-JP-47213-03-001": "声が出しづらいため筆談→不明薬名は推測せず記入→家族から箱写真→病歴不明も明記→問診票を提出し写真を追完。",
+    "SC-LOC-JP-47213-04-001": "拾得端末を届ける→見取図で南北の誤りを訂正→時刻と未操作を申告→近くの別の布袋も届ける→二品目記録を確認。",
+    "SC-LOC-JP-47213-05-001": "兄妹の転居時期が異なる→本人のみの用紙へ書直し→長い旧住所の記入相談→翌日全面転送の思込みを確認→差出人へ直接通知。",
+    "SC-LOC-JP-47213-06-001": "旧番号へ認証送信で停止→窓口で住所と電話の更新相談→部屋番号を五〇二と訂正→発送準備済み通知の扱い→本人が三情報を照合。",
+    "SC-LOC-JP-47213-07-001": "開封前後で違う保存条件→開封後期限の思込み解消→小袋を検討→苦手なにんにく記載を確認→条件に合う別商品を比較するまで購入延期。",
+    "SC-LOC-JP-47213-08-001": "閉鎖橋で引返し相談→平らな園路を選択→使用不可ベンチ回避→花壇と池を目印に広場へ→東入口表示で帰る。"
+  },
+  "corrections": [
+    "未確認の鉄道駅・特急券を架空の臨時バスへ変更。",
+    "抽象的に反復されていた目標を応答に対応する四十の具体目標へ書き換え。",
+    "公園NPCをPark Staffへ整合。",
+    "行政の期限未変更、薬名不明、拾得場所の訂正、転送時期未確定、発送情報の確認範囲を具体化。",
+    "既存の実在風施設名と未確認営業時間を架空名・空欄へ変更。"
+  ],
+  "checks": {
+    "exactScenarioIds": true,
+    "elevenAlternatingTurnsNpcFirstLast": true,
+    "fiveContextualTasksPerScenario": true,
+    "uniquePlayerUtterancesWithinCity": true,
+    "uniqueTaskIntentsAndGoalsWithinCity": true,
+    "causalProgressionReread": true,
+    "titlesPremisesTasksRolesReread": true,
+    "japaneseOnlySpokenText": true,
+    "explicitNpcClosure": true,
+    "noLevelGating": true,
+    "noTemplateNounSwap": true,
+    "numbersAndNamesChecked": true,
+    "fictionalVenueMetadata": true,
+    "noAuthoringInstructionsInSpeech": true,
+    "exactFinalByteHashes": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "作者自身の最終全文再読と構造検査のみ。人間・母語話者・相互のレビューは未実施。",
+    "運賃・販売条件・施設内部の経路・表示は架空の会話条件であり実在のサービス情報ではない。",
+    "端末実機表示と翻訳を確認していない。",
+    "本市の三成果物のみ凍結し統合とGitリモート検証はroot担当。"
+  ]
+}

@@ -1406,3 +1406,28 @@ Previous61 scenarios durably verified at d12615ef with exact trees matching all9
 ## Local-only Okinawa city CTY-047 — 2026-10-15
 
 21 independently authored/self-reviewed Japanese exchanges; exact runtime/metadata adapter PASS, 7128 canonical IDs preserved, zero exact Player/NPC collisions. Local Okinawa 61/101; local global 7088/7128. Publication blocked by automatic approval; NOT remote-verified or durable. Remote-verified total at start remains 7027/7128. No peer/native/human/device/operator/release approval.
+
+
+## Local-only Okinawa city CTY-JP-47210 — 2026-10-15
+
+8 independently authored/self-reviewed Japanese exchanges; exact runtime/metadata adapter PASS, 7128 canonical IDs preserved, zero exact Player/NPC collisions. Local Okinawa 69/101; local global 7096/7128. Current batch awaits connector publication; not yet remote-verified. Remote-verified total before this batch 7088/7128. No peer/native/human/device/operator/release approval.
+
+
+## Local-only Okinawa city CTY-JP-47214 — 2026-10-15
+
+8 independently authored/self-reviewed Japanese exchanges; exact runtime/metadata adapter PASS, 7128 canonical IDs preserved, zero exact Player/NPC collisions. Local Okinawa 77/101; local global 7104/7128. Current batch awaits connector publication; not yet remote-verified. Remote-verified total before this batch 7088/7128. No peer/native/human/device/operator/release approval.
+
+
+## Local-only Okinawa city CTY-JP-47212 — 2026-10-15
+
+8 independently authored/self-reviewed Japanese exchanges; exact runtime/metadata adapter PASS, 7128 canonical IDs preserved, zero exact Player/NPC collisions. Local Okinawa 85/101; local global 7112/7128. Current batch awaits connector publication; not yet remote-verified. Remote-verified total before this batch 7088/7128. No peer/native/human/device/operator/release approval.
+
+
+## Local-only Okinawa city CTY-JP-47213 — 2026-10-15
+
+8 independently authored/self-reviewed Japanese exchanges; exact runtime/metadata adapter PASS, 7128 canonical IDs preserved, zero exact Player/NPC collisions. Local Okinawa 93/101; local global 7120/7128. Current batch awaits connector publication; not yet remote-verified. Remote-verified total before this batch 7088/7128. No peer/native/human/device/operator/release approval.
+
+
+## Local-only Okinawa city CTY-JP-47215 — 2026-10-15
+
+8 independently authored/self-reviewed Japanese exchanges; exact runtime/metadata adapter PASS, 7128 canonical IDs preserved, zero exact Player/NPC collisions. Local Okinawa 101/101; local global 7128/7128. Current batch awaits connector publication; not yet remote-verified. Remote-verified total before this batch 7088/7128. No peer/native/human/device/operator/release approval.

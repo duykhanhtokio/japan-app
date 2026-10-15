@@ -1,0 +1,64 @@
+{
+  "cityId": "CTY-JP-47214",
+  "baseline": "41920ad4784b36c2da34976fa1f1d27df4e6a0bc",
+  "inputSha256": "03a159adccf80bfb9dae2f762c89723f4518b987f06cf4b8ad02912398a42f2c",
+  "sourceSha256": "2ce3dfdfe4842eed95f47f44f1f01a4be8902a1a325d4a28f7c3abe252f2ff7c",
+  "roleAlignmentSha256": "0eb4e4aeb6e4e68844d1a1485a55e9d4ef985d717f0d8c095fac68edb76049a7",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-47214-01-001": "重い荷物を持ってバスの乗車場所へ向かう。宮古島市を舞台とする学習用の架空施設。架空のバスターミナルで、荷物を持つ利用者が階段のない経路を尋ねる。運行と設備は架空設定で、実在の交通情報ではない。",
+    "SC-LOC-JP-47214-02-001": "転入届の建物名の書き方を相談する。宮古島市を舞台とする学習用の架空施設。架空の行政相談窓口。転入届の住所欄について、契約書と入口表示の違いを相談し、審査担当で確認する結末。法的な要件や受理を保証しない。",
+    "SC-LOC-JP-47214-03-001": "受診時刻の変更希望を担当へ取り次いでもらう。宮古島市を舞台とする学習用の架空施設。架空の医療機関。受付付近の看護師が予約担当への取り次ぎを行う。交通の都合による希望を整理し、折り返し確認を待つ。診断や受診延期の安全性は扱わない。",
+    "SC-LOC-JP-47214-04-001": "借りた自転車が見つからず特徴を伝える。宮古島市を舞台とする学習用の架空施設。架空の警察相談窓口。借用した自転車が見当たらない利用者が、場所と識別情報を整理する。盗難の断定や受理・捜査結果の保証はしない。",
+    "SC-LOC-JP-47214-05-001": "送付条件が曖昧な書類をいったん持ち帰る。宮古島市を舞台とする学習用の架空施設。架空の郵便相談窓口。提出先の案内にある「記録」の意味を確かめる必要に気づき、差出記録と受取記録の希望を先方に尋ねてから再来する。実在サービスの料金や効力を断定しない。",
+    "SC-LOC-JP-47214-06-001": "勤務先の口座名義の記入方法を確認する。宮古島市を舞台とする学習用の架空施設。架空の銀行相談窓口。給与受取口座の申込み希望者が、職場の用紙の名前表記と本人確認書類の違いを相談する。開設可否や審査完了日は未確定。",
+    "SC-LOC-JP-47214-07-001": "二個まとめ買いの値札を読み違えたと気づく。宮古島市を舞台とする学習用の架空施設。架空のスーパーで、ヨーグルトの棚札を単品価格と思った客が、対象商品と組合せ条件を聞いて購入数を決める。価格と割引条件はこの場面内だけの設定。",
+    "SC-LOC-JP-47214-08-001": "散歩中に風が強まり東屋で休む。宮古島市を舞台とする学習用の架空施設。架空の公園で、風で帽子を飛ばされそうになった来園者が係員に相談する。落下物のあった木陰を避け、散歩を切り上げて帰る判断をする。経路と施設は架空設定。"
+  },
+  "corrections": [
+    "最終再読でスーパーの発話を、手に持った描写のない対象外商品を「戻す」から「選ばない」へ変更し、課題も修正。",
+    "郵便窓口で未封のまま持ち帰れるかを尋ねる不自然な発話を削除。未確定の送付条件と宛先を提出前に確認して持ち帰る行動に修正し、次の窓口発話と課題を整合。",
+    "駅の既存識別子とルートを保ち、架空のバスターミナルとして交通手段・設備・担当を整合。",
+    "看護師の取り次ぎ、行政の担当確認、警察の事情聴取、銀行の相談のみという権限の範囲を明示。",
+    "機械的なコーパス完全一致通知により郵便場面の第一発話のみ変更。未封の提出書類と送り方の案内の確認を具体化し、自己の当該十一発話・五課題を再読。他著者の発話は閲覧していない。"
+  ],
+  "checks": {
+    "exactly11AlternatingTurns": true,
+    "npcFirstAndLast": true,
+    "fiveConcreteTasksEach": true,
+    "eachTaskMatchesPreviousNpcAndPlayer": true,
+    "allPlayerUtterancesUniqueWithinCity": true,
+    "allPlayerGoalsUniqueWithinCity": true,
+    "independentCausalProgression": true,
+    "concreteClosureEachScenario": true,
+    "japaneseOnlyDialogueAndGoals": true,
+    "fictionalVenuePremisesExplicit": true,
+    "noUnverifiedRealVenuePolicyClaims": true,
+    "noMedicalOrOperatorGuarantee": true,
+    "originalScenarioLocationAndTurnIdsRetainedByProjection": true,
+    "noPeerProseRead": true,
+    "finalEditedPassagesReread": true,
+    "arithmeticChecked": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "自己点検のみで、人間・母語話者・他著者による審査は未実施。",
+    "施設、便、経路、時刻、値段、割引、予約運用は架空の場面設定で実在情報を検証していない。",
+    "行政・警察・郵便・銀行の審査や取扱条件、医療上の安全性について一般的な判断を示すものではない。",
+    "元データのLocationType等と既存NPC資産への投影・端末表示は親セッションの後工程。",
+    "この著者はステージングの三出力のみを書き、Git操作・公開・永続化の実施はしていない。"
+  ]
+}
