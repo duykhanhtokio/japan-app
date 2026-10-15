@@ -6,15 +6,15 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。どのようなお手続きですか。",
+        "textJa": "お振り込みのご相談ですか。金額や振込先を記した案内はお持ちでしょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-44209-06-001-SHARED-02",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -24,25 +24,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "bank-transfer_response_1",
+        "communicativeIntent": "bt_bank_report_missing_contract_number",
         "requiredSemanticComponents": {
-          "goal": "振込先と費用を確認する"
+          "goal": "家賃案内では氏名前に契約番号が必要だが番号のメモを忘れたと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "豊後高田市で借りている部屋の家賃を、振り込みたいです。",
+        "recommendedAnswerJa": "家賃の案内を持っています。氏名の前に契約番号を付けるよう書いてありますが、その番号のメモを忘れました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "家賃案内では氏名前に契約番号が必要だが番号のメモを忘れたと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "家賃案内では氏名前に契約番号が必要だが番号のメモを忘れたと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-44209-06-001-SHARED-03",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -51,15 +51,15 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "振込先の情報が書かれたものはお持ちですか。",
+        "textJa": "番号を推測して入力するのは避けましょう。管理会社からの契約書などで番号を確かめられますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-44209-06-001-SHARED-04",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -69,25 +69,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "bank-transfer_response_2",
+        "communicativeIntent": "bt_bank_defer_transfer_query_fee_deduction",
         "requiredSemanticComponents": {
-          "goal": "振込先と費用を確認する"
+          "goal": "契約書は家にあり今日は送金せず、手数料を家賃から引くか不明と伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。ただ、支店名と口座の種類を正しく読めるか不安です。",
+        "recommendedAnswerJa": "契約書は家にあります。今日は手続きせず持ち帰るつもりですが、手数料の分を家賃から引くのかも迷っています。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "契約書は家にあり今日は送金せず、手数料を家賃から引くか不明と伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "契約書は家にあり今日は送金せず、手数料を家賃から引くか不明と伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-44209-06-001-SHARED-05",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -96,15 +96,15 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "必要な情報を確認しましょう。受取人名も、請求書と照合してください。",
+        "textJa": "家賃から差し引いてよいかは契約先への確認が必要です。銀行の手数料と、相手に送る金額は分けて考えましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-44209-06-001-SHARED-06",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -114,25 +114,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "bank-transfer_response_3",
+        "communicativeIntent": "bt_bank_separate_rent_fee_confirmation",
         "requiredSemanticComponents": {
-          "goal": "振込先と費用を確認する"
+          "goal": "家賃額は管理会社に確認すると伝え、銀行手数料を方法選択前に比較できるか聞く"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "振込手数料は、実行する前にわかりますか。",
+        "recommendedAnswerJa": "では、相手に送る家賃額は管理会社に確認します。銀行でかかる手数料は、使う方法を選ぶ前に比較できますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "家賃額は管理会社に確認すると伝え、銀行手数料を方法選択前に比較できるか聞く。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "家賃額は管理会社に確認すると伝え、銀行手数料を方法選択前に比較できるか聞く。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-44209-06-001-SHARED-07",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -141,15 +141,15 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。利用する方法の画面や窓口で確認できます。",
+        "textJa": "ご案内の料金表で比較できます。ただし適用条件によって変わるので、金額や利用方法を確定してから最終確認します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-44209-06-001-SHARED-08",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -159,25 +159,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "bank-transfer_response_4",
+        "communicativeIntent": "bt_bank_compare_channel_and_name_field",
         "requiredSemanticComponents": {
-          "goal": "振込先と費用を確認する"
+          "goal": "窓口と機械の費用を比べ、両方法で契約番号を氏名前に付けられるか尋ねる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "もし受取人名が違っていたら、どうすればよいですか。",
+        "recommendedAnswerJa": "窓口と機械の二つの方法を比べたいです。契約番号を氏名の前に付けられるかも、それぞれで聞きたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "窓口と機械の費用を比べ、両方法で契約番号を氏名前に付けられるか尋ねる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "窓口と機械の費用を比べ、両方法で契約番号を氏名前に付けられるか尋ねる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-44209-06-001-SHARED-09",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -186,15 +186,15 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "そのまま進めず、振込先に確認してから手続きしてください。",
+        "textJa": "二つの方法の費用と入力欄についてご説明します。ご案内だけで振込が行われることはありません。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-44209-06-001-SHARED-10",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -204,25 +204,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "bank-transfer_response_5",
+        "communicativeIntent": "bt_bank_confirm_information_only_next_steps",
         "requiredSemanticComponents": {
-          "goal": "振込先と費用を確認する"
+          "goal": "今日は説明のみとし、番号と家賃額の確認後に手数料を別に用意して入力を確かめると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "わかりました。情報と合計金額を確認してから実行します。",
+        "recommendedAnswerJa": "今日は説明だけ受けます。契約番号と家賃額を確認してから、手数料を別に用意し、実行前に入力内容を確かめます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "今日は説明のみとし、番号と家賃額の確認後に手数料を別に用意して入力を確かめると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "今日は説明のみとし、番号と家賃額の確認後に手数料を別に用意して入力を確かめると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-44209-06-001-SHARED-11",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -231,24 +231,27 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "手続き後の控えを保管し、不明な点があればお問い合わせください。",
+        "textJa": "承知しました。比較する項目を紙にまとめますので、番号を確認したあと、手続きの際にお持ちください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": null,
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     }
   ],
   "authoring": {
     "locale": "ja",
-    "recipe": "bank-transfer",
     "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
     "contentScope": "simulated_learning_scenario",
     "nativeSpeakerReviewed": false,
-    "translationState": "deferred_until_all_japanese_complete"
+    "translationState": "deferred_until_all_japanese_complete",
+    "editorialSource": "scripts/dialogue-authoring/prf-044-city-cty-jp-44209.json",
+    "premise": "架空の銀行窓口で、家賃の振込依頼文を見て手続き前の不明点を整理する。送金はまだ実行せず、受取先の正当性、着金時期や契約上の扱いは保証しない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
   }
 }

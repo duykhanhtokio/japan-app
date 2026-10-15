@@ -1,0 +1,69 @@
+{
+  "cityId": "CTY-JP-44209",
+  "baseline": "3954f280818ce7c8e596a45e99a2823e86eda841",
+  "inputSha256": "15d6e392dfdf96fc1bd6a74f40934fae4f64b3cfb7c1c89e5fa561efed544ae7",
+  "sourceSha256": "ff8010a443333344ccba77b2394cdc51ed816f63f77c29532e056d59171da2ba",
+  "roleAlignmentSha256": "f6a6b9af864038f0925cdf9d48cc94c94907737e7d93cbdd02633d32b7752739",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-44209-01-001": "会館名を駅名と取り違えた検索を招待状で修正する。駅到着に徒歩が含まれないとわかり、乗換余裕のある経路を選んで受付への遅れは主催者に問い合わせる。",
+    "SC-LOC-JP-44209-02-001": "賃貸の依頼文が住所と勤務先の証明をまとめて求めており、手持ちの写しに勤務先がないと気づく。書類名と記載対象を提出先に聞き、不要な再申請を保留する。",
+    "SC-LOC-JP-44209-03-001": "持続と時々の意味を尋ねた患者が、右手首の痛む動作・痛まない状態、曖昧な開始日、原因不明を区別して記入する。看護師は患者の言葉と説明上の希望を診察へ引き継ぐ。",
+    "SC-LOC-JP-44209-04-001": "再配達料の連絡からページを開いたが入力も支払いもしていない経緯を説明する。保存画像を提示し、二件の表示名の違いと時刻を残して相談へ進む。",
+    "SC-LOC-JP-44209-05-001": "カップ二個の箱が鳴り、再利用箱の角も傷んでいるため発送を保留する。割れ物表示だけでは十分とせず梱包と転居先部屋番号を確かめて再来訪する。",
+    "SC-LOC-JP-44209-06-001": "家賃の振込で氏名前に付ける契約番号が不明。家賃から手数料を引くかという契約上の疑問と銀行手数料を区別し、窓口・機械の費用と入力欄の説明だけ受ける。",
+    "SC-LOC-JP-44209-07-001": "牛乳一本が二本と登録されたことを指摘して訂正後合計を確認する。コードが読めず携帯が電池切れになり、レジ側の未決済確認後に現金へ変更し、二つの手持ち袋を使ってレシートを確かめる。",
+    "SC-LOC-JP-44209-08-001": "周回路の通行止めに対する坂の迂回を避け、入口側の広場で折り返す散歩に変更する。補修中と使用可能なベンチを区別し、入口と往復路の印で帰り道を確認する。"
+  },
+  "corrections": [
+    "八件の汎用会話を、それぞれ異なる誤認・条件・発見・選択が展開する会話に変更し、四十のプレイヤー発話と課題を具体化した。",
+    "全八施設を明示的な架空名に置き換え、未検証営業時間を削除して営業時間・住所をnullにした。駅の実在や路線は示さない。",
+    "公園の職務をCommunity StaffからPark Staffへ合わせ、既存のParkカテゴリを維持した。",
+    "最終自己再読で警察相談の題名が真偽未確定なのに「配達を装う」と断定していたため、「再配達料を求める」に修正した。",
+    "証明書の冒頭で依頼文を示す行為を明示し、公園の応答で現在の入口と使えるベンチに印を付けることを明示して課題との対応を改善した。修正した三場面の全発話と課題を再読した。"
+  ],
+  "checks": {
+    "exactAssignedScenarioAndLocationIds": true,
+    "eightScenariosElevenTurnsEach": true,
+    "fiveTasksPerScenario": true,
+    "fortyUniquePlayerUtterances": true,
+    "fortyUniqueGoals": true,
+    "fortyUniqueIntents": true,
+    "japaneseOnlyTitlesPremisesTurnsGoals": true,
+    "fullFinalTitlesPremisesTurnsTasksRolesReread": true,
+    "immediateNpcPlayerTaskAlignmentReviewed": true,
+    "distinctCausalPlotsReviewed": true,
+    "npcFirstAlternationAndConcreteNpcClosuresReviewed": true,
+    "numericAndReferentConsistencyReviewed": "陶器二個、不審連絡二件、牛乳二本から一本への訂正、手持ち袋二つ、架空の中央会館と中央駅・西町駅の区別を照合した。",
+    "allEightCategoriesExactNpcProgressionMatch": true,
+    "allEightFictionalNamesNullHoursAddress": true,
+    "medicalPoliceBankRoleLimitsReviewed": true,
+    "noNewCategoriesOrArtwork": true,
+    "noCrossReading": true,
+    "noActiveCheckoutRuntimeSharedOrGitWrites": true,
+    "sourcePath": "scripts/dialogue-authoring/prf-044-city-cty-jp-44209.json",
+    "roleAlignmentPath": "docs/dialogue-workspace/content-qa/PRF-044_CITY_CTY-JP-44209_ROLE_ALIGNMENT.json"
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "独立したモデルの自己再読のみで、人間・母語話者・他著者の校閲は行っていない。",
+    "駅と会場、路線、地図、施設運営や決済などは学習用の仮定であり、実在の豊後高田市の施設・営業時間・経路・制度や取扱いを案内する内容ではない。",
+    "看護師は問診の言語説明と引き継ぎ、警察は記録を見て相談、銀行は送金前の説明のみとし、診断・安全・被害・契約条件・送金結果の確定を行わない。",
+    "郵便の破損防止や書類の受理を保証せず、条件の照合が必要である。",
+    "新規資産は追加していない。個別の地図・衣装・架空窓口と既存アートワークの厳密な視覚一致は未確認。",
+    "ランタイム統合、端末表示、翻訳、公開承認は未実施である。"
+  ]
+}
