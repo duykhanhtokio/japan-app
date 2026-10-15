@@ -1,0 +1,74 @@
+{
+  "cityId": "CTY-JP-46217",
+  "baseline": "70b9863045bb19397bc94bc4f0f393234389fcc3",
+  "inputSha256": "53b2a3509bb5e735b16b6319e8965d39a413f4812e647212a636da39681ef6cd",
+  "sourceSha256": "0ff56f3644609613ca2ee07e015095f4184258bd748318873ad798f4322e63fd",
+  "roleAlignmentSha256": "17952d88ce350aa2a9f4901b59cd0e576251786ffd89422c1707b4dfe4a8988c",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40,
+    "uniquePlayerUtterances": 40,
+    "uniqueTaskIntents": 40,
+    "uniqueTaskGoals": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-46217-01-001": "大荷物で広い扉から昇降機へ行けると思う→職員用で入らない→利用者改札と回転の幅・設備を係員へ確認→案内板横で荷物と待ち職員扉を近道にしない。",
+    "SC-LOC-JP-46217-02-001": "家族転入を本人一人で全部済ませられるか相談→本人カードと旧役所書類はあるが家族資料なし→記憶氏名で書かず今日可能範囲を照会→住所と保険、本人と家族を分け完了・未確認を記録。",
+    "SC-LOC-JP-46217-03-001": "言語補助の友人が不在で予約変更希望→違和感の回数も増えたと報告→同症状だから延期可とは判断しない→医師へ情報をつなぎ短い説明・文字案内の支援と予約扱いを確認。",
+    "SC-LOC-JP-46217-04-001": "駐輪場に自転車なし→昨日と別入口で手前列しか捜していないと図示→管理者未確認で移動盗難は不明→鍵番号と登録番号、鍵所持と施錠記憶を区別して担当へ。",
+    "SC-LOC-JP-46217-05-001": "追跡配達完了を提出先受理証明と思う→配達と審査受理を区別→提出先へ受領記録形式と原本コピーを確認→自分控えあり未封で持帰り方法決定を保留。",
+    "SC-LOC-JP-46217-06-001": "給与用紙の見本の銀行名を指定と思う→既存の他行本人口座と記入例表示を確認→会社の給与条件と銀行の申込条件を別質問→即日確約や申込みをせず回答後に判断。",
+    "SC-LOC-JP-46217-07-001": "二袋価格を一袋価格と思う→別味は組合せ対象外と知る→必要量一袋を優先→一袋税込み通常価格で選び二袋割引なしを誤りとしない。",
+    "SC-LOC-JP-46217-08-001": "案内時間を広場往復と思う→片道目安で休憩も帰りも別と知る→手前花壇とベンチを選ぶが空席前提にしない→入口目印を紙に記し疲れたら花壇前でも引返す。"
+  },
+  "corrections": [
+    "全八件を新たな因果展開と四十の具体的で異なるタスクへ書き直した。",
+    "銀行の記入例の文言は、記入例だから指定と決めたという不自然な因果でなく、今その表示に気づき銀行名だけで決めた過去を説明する発話に修正。",
+    "スーパーの「一袋の個数」を、味は正しく個数は一袋と確認する表現へ修正。",
+    "公園の最初のタスクから休憩も目安時間に含まれると既に断定していたという要求を除き、往復と思った点と休憩希望に合わせる。",
+    "全施設を架空名と説明へ変更して未確認の時間住所を null にし、公園役割を Park Staff へ修正。"
+  ],
+  "checks": {
+    "assignedIdsExact": true,
+    "elevenAlternatingTurnsPerScenario": true,
+    "fiveConcreteContextAlignedTasksPerScenario": true,
+    "allPlayerUtterancesUnique": true,
+    "allTaskIntentsSpecificAndUnique": true,
+    "allTaskGoalsUnique": true,
+    "japaneseOnlySpokenLines": true,
+    "noAuthoringInstructionsInSpeech": true,
+    "npcFarewellAndConcreteClosureEveryScenario": true,
+    "titlesPremisesRolesAndEveryFinalTurnAndTaskReread": true,
+    "causalProgressionAndOutcomesReviewed": true,
+    "numbersNegationsNamesAndUncertaintyReviewed": true,
+    "noAcknowledgmentOnlyPlayerTurns": true,
+    "noNounSwapTemplates": true,
+    "noLevelGate": true,
+    "noRealOperatorPolicyClaims": true,
+    "supportedNpcCategoriesChecked": true,
+    "unverifiedHoursAndAddressesNull": true,
+    "ownCityOnlyNoCrossReading": true,
+    "stageOnlyNoActiveRepoWrites": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "独立著者の自己再読と構造検査のみ。人間・母語話者・他著者による審査ではない。",
+    "実在の交通・家族手続・保険・診療支援・遺失や盗難認定・郵便サービス・給与口座条件・価格や園路の情報は検証していない。具体的条件は架空。",
+    "延期適否、家族代理可否、銀行開設、提出受理、移動所要やベンチ利用を確定しない。",
+    "端末・音声・評価エンジンの実行時検証と公開承認は未実施。"
+  ],
+  "paths": {
+    "source": "scripts/dialogue-authoring/prf-046-city-cty-jp-46217.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-046_CITY_CTY-JP-46217_ROLE_ALIGNMENT.json"
+  }
+}
