@@ -1,0 +1,88 @@
+{
+  "cityId": "CTY-JP-44206",
+  "corrections": {
+    "LOC-JP-44206-01": {
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "nameJa": "学習用・架空の駅運行相談窓口",
+      "name": "Fictional learning venue: Station service inquiry",
+      "description": "臼杵市を舞台にした日本語会話学習用の架空施設。実在施設の名称、住所、営業時間、料金、運行、施設配置、運営方針についての案内ではない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-44206-02": {
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "nameJa": "学習用・架空の行政書類相談窓口",
+      "name": "Fictional learning venue: Administrative paper consultation",
+      "description": "臼杵市を舞台にした日本語会話学習用の架空施設。実在施設の名称、住所、営業時間、料金、運行、施設配置、運営方針についての案内ではない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-44206-03": {
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "nameJa": "学習用・架空の病院会計書類相談窓口",
+      "name": "Fictional learning venue: Hospital billing-document consultation",
+      "description": "臼杵市を舞台にした日本語会話学習用の架空施設。実在施設の名称、住所、営業時間、料金、運行、施設配置、運営方針についての案内ではない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-44206-04": {
+      "category": "Police Station",
+      "npcJob": "Police",
+      "nameJa": "学習用・架空の警察遺失物相談窓口",
+      "name": "Fictional learning venue: Police lost-property consultation",
+      "description": "臼杵市を舞台にした日本語会話学習用の架空施設。実在施設の名称、住所、営業時間、料金、運行、施設配置、運営方針についての案内ではない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-44206-05": {
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "nameJa": "学習用・架空の郵便受取照会窓口",
+      "name": "Fictional learning venue: Postal item collection inquiry",
+      "description": "臼杵市を舞台にした日本語会話学習用の架空施設。実在施設の名称、住所、営業時間、料金、運行、施設配置、運営方針についての案内ではない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-44206-06": {
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "nameJa": "学習用・架空の銀行カード発見相談窓口",
+      "name": "Fictional learning venue: Bank found-card consultation",
+      "description": "臼杵市を舞台にした日本語会話学習用の架空施設。実在施設の名称、住所、営業時間、料金、運行、施設配置、運営方針についての案内ではない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-44206-07": {
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "nameJa": "学習用・架空のスーパー商品相談窓口",
+      "name": "Fictional learning venue: Supermarket item consultation",
+      "description": "臼杵市を舞台にした日本語会話学習用の架空施設。実在施設の名称、住所、営業時間、料金、運行、施設配置、運営方針についての案内ではない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-44206-08": {
+      "category": "Park",
+      "npcJob": "Park Staff",
+      "nameJa": "学習用・架空の公園休憩案内窓口",
+      "name": "Fictional learning venue: Park rest information",
+      "description": "臼杵市を舞台にした日本語会話学習用の架空施設。実在施設の名称、住所、営業時間、料金、運行、施設配置、運営方針についての案内ではない。",
+      "openHours": null,
+      "address": null
+    }
+  },
+  "findings": [
+    "全八件を明示的な架空学習施設名に改め、未確認の営業時間・住所を null にする。都市・施設・シナリオの識別子と既存ルート所属を維持する。",
+    "公園の Community Staff を Park Staff へ修正。全八分類は実際の npc-progression.ts NPC_CATEGORIES にある既存分類で、新規分類やアセットは作成しない。",
+    "看護師は会計の記録を確定せず会計担当へ引き継ぐ。行政職員は予約・言語支援・修正結果の確定を約束しない。警察は類似の届出品の存在や本人への返還を断定しない。",
+    "郵便窓口は二件の受付状況・場所・期限を照会する段階で、再配達や期限延長を確約しない。銀行窓口は停止完了や利用再開を確定せず本人確認と現物照合へつなぐ。公園職員は歩きやすさと所要時間を保証しない。"
+  ],
+  "inputSha256": "7f43efac9f83a0dc9015f7fd774a8660267b6390911eee8f2b80bb5791b0df90",
+  "sourceSha256": "0fae67c14a03efc914d9f6544e7ccc53f247750703b8bc302ea82e717cb9e02c",
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "peerReviewed": false
+}

@@ -1,0 +1,74 @@
+{
+  "cityId": "CTY-JP-44206",
+  "baseline": "3954f280818ce7c8e596a45e99a2823e86eda841",
+  "inputSha256": "7f43efac9f83a0dc9015f7fd774a8660267b6390911eee8f2b80bb5791b0df90",
+  "sourceSha256": "0fae67c14a03efc914d9f6544e7ccc53f247750703b8bc302ea82e717cb9e02c",
+  "roleAlignmentSha256": "9f4cac8ab6d98b0f96084212a9f6d2600534c3a6a1b8b1808c77f0157a9d8ac3",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40,
+    "uniquePlayerUtterances": 40,
+    "uniqueTaskIntents": 40,
+    "uniqueTaskGoals": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-44206-01-001": "古い保存画面の遅れを足して迎えに到着を約束→現在表示は到着未定→相手が出発前に訂正→切符条件と代替候補を比較し移動方法が決まってから再連絡。",
+    "SC-LOC-JP-44206-02-001": "返送申請の修正案内を不受理かと心配→原本と付箋三か所・別紙質問を整理→電話日時の聞き違い対策として文字確認を希望→午後とベトナム語支援の可否を照会し確定連絡後に勤務調整。",
+    "SC-LOC-JP-44206-03-001": "請求書を領収書と思い未払いか不安→端末手続きと別の紙も提示→看護師は再払いさせず会計記録へ引継ぎ→職場の支払い証明と受診証明の指定は別途確認。",
+    "SC-LOC-JP-44206-04-001": "紺色かばん紛失で古い写真を提示→灰色の持ち手補修を追加→最後の確実な所持と不明の紛失場所を分ける→鍵の詳細は担当へ、類似品でも現特徴照合と発見時連絡を確認。",
+    "SC-LOC-JP-44206-05-001": "同日の二枚の不在票を訂正版と思う→番号が異なり一件だけ希望送信済み→保管期限を配達日や自動延長と混同しない→二件別に受付・場所・期限・持参物を照会して方法決定。",
+    "SC-LOC-JP-44206-06-001": "停止依頼後に家族がカード発見と連絡→受付番号はあるが停止完了は不明→現物未確認で同一カードとも未確定→試しの引出しをせず停止状況と現物照合を先に相談。",
+    "SC-LOC-JP-44206-07-001": "保存容器の袋を開けてふたのひび発見→開封と未使用、購入前状態の未確認を区別→洗浄・接着なしで一式提示→同商品交換希望でも勝手なふた交換や別品開封はせず預ける品目を確認。",
+    "SC-LOC-JP-44206-08-001": "自分の速さで一周予定だが同行者は入口で疲れる→先行せず一緒に休憩へ→短区間の階段表示と戻り道を確認→奥広場を必須にせず本人と短区間か入口帰還か決める。"
+  },
+  "corrections": [
+    "全八件を独立した新しい原因・制約・選択・結果の会話と四十の具体的タスクへ置換。",
+    "行政相談の希望時間を午前勤務後の午後と明確化し、まだ提示していない予約候補を提示済みとする発話を除去。",
+    "警察場面の写真は似た別物でなく本人のかばんの古い写真だと明確化。類似品が届いているという含意は条件表現に直し、照合前の発見断定を避ける。",
+    "公園の短い散歩案を休憩所から進んで引き返す形と明確化。前提も歩くことが確定したとせず休憩後の相談で決めると整合。",
+    "全施設を架空名・営業時間住所 null へ修正し、公園の役割を Park Staff に整合。"
+  ],
+  "checks": {
+    "assignedIdsExact": true,
+    "elevenAlternatingTurnsPerScenario": true,
+    "fiveConcreteContextAlignedTasksPerScenario": true,
+    "allPlayerUtterancesUnique": true,
+    "allTaskIntentsSpecificAndUnique": true,
+    "allTaskGoalsUnique": true,
+    "japaneseOnlySpokenLines": true,
+    "noAuthoringInstructionsInSpeech": true,
+    "npcFarewellAndConcreteClosureEveryScenario": true,
+    "titlesPremisesRolesAndEveryFinalTurnAndTaskReread": true,
+    "causalProgressionAndOutcomesReviewed": true,
+    "numbersNegationsNamesAndUncertaintyReviewed": true,
+    "noAcknowledgmentOnlyPlayerTurns": true,
+    "noNounSwapTemplates": true,
+    "noLevelGate": true,
+    "noRealOperatorPolicyClaims": true,
+    "supportedNpcCategoriesChecked": true,
+    "unverifiedHoursAndAddressesNull": true,
+    "ownCityOnlyNoCrossReading": true,
+    "stageOnlyNoActiveRepoWrites": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "独立著者による自己再読と構造検査のみ。人間・母語話者・他著者による審査ではない。",
+    "実在施設の運行、予約支援、医療書類、遺失物、郵便取扱い、カード停止、交換、園路は未検証で、場面内の表示と条件を使用。",
+    "診断、支払い完了、予約確定、荷物受領、停止や利用再開、交換承認、移動時間を確約しない。",
+    "端末・音声・評価エンジンの実行時検証と公開承認は未実施。"
+  ],
+  "paths": {
+    "source": "scripts/dialogue-authoring/prf-044-city-cty-jp-44206.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-044_CITY_CTY-JP-44206_ROLE_ALIGNMENT.json"
+  }
+}
