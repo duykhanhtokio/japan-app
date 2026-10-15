@@ -1,3 +1,4 @@
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {
   useCallback,
   useEffect,
@@ -621,253 +622,270 @@ export function WeeklyKaigo({
       }}
     />
   );
+  const insets = useSafeAreaInsets();
   const content = (
     <View style={[s.root, route && { backgroundColor: colors.background }]}>
-      {header}
-      {route?.kind === "assessment" ? (
-        <WeeklyAssessment
-          key={route.week}
-          week={route.week}
-          completed={!!progress.value.assessments[route.week]}
-          completeReady={progress.ready && !progress.saving}
-          onComplete={() => {
-            void progress
-              .update((old) => ({
-                ...old,
-                assessments: { ...old.assessments, [route.week]: true },
-              }))
-              .then((saved) => {
-                if (saved) open(null);
-              });
-          }}
-        />
-      ) : form ? (
-        renderMock(form)
-      ) : (
-        <ScrollView
-          ref={scroll}
-          key={
-            route ? JSON.stringify(route) : "calendar-" + tab + "-" + showWeek
-          }
-          testID="kaigo-course-scroll"
-          scrollEventThrottle={80}
-          onScroll={onScroll}
-          onLayout={(e) => {
-            geometry.current.height = e.nativeEvent.layout.height;
-            checkEnd();
-          }}
-          onContentSizeChange={(_, height) => {
-            geometry.current.content = height;
-            checkEnd();
-          }}
-          contentContainerStyle={s.content}
-        >
-          <View style={s.article}>
-            {!route && (
-              <>
-                <View style={s.controls}>
-                  <View style={s.control}>
-                    <Action
-                      title="学習"
-                      onPress={() => {
-                        setTab("calendar");
-                        setShowWeek(false);
-                      }}
-                      testID="kaigo-weekly-tab-calendar"
-                    />
-                  </View>
-                  <View style={s.control}>
-                    <Action
-                      title="模擬試験"
-                      onPress={() => setTab("mocks")}
-                      testID="kaigo-weekly-tab-mocks"
-                    />
-                  </View>
-                </View>
-                {tab === "calendar" ? (
-                  showWeek ? (
-                    <View testID={`kaigo-week-schedule-${week}`}>
-                      <RoyalExplanationPanel style={s.info}>
-                        <Text style={s.light}>
-                          第{week}週 ·{" "}
-                          {
-                            currentWeek.slots.filter(
-                              (d) => d.entry && progress.value.days[d.day],
-                            ).length
-                          }
-                          /{currentWeek.slots.filter((d) => d.entry).length}日
-                          学習済み
-                        </Text>
-                      </RoyalExplanationPanel>
-                      {currentWeek.slots.map((slot, index) =>
-                        slot.entry ? (
-                          <TokuteiDayCard
-                            key={slot.day}
-                            testID={`kaigo-calendar-day-${slot.day}`}
-                            day={index + 1}
-                            title={titleForDay(slot.entry)}
-                            done={!!progress.value.days[slot.day]}
-                            onPress={() => open({ kind: "day", day: slot.day })}
-                          />
-                        ) : (
-                          <View key={slot.day} style={s.emptyDay}>
-                            <Text style={s.meta}>
-                              第{index + 1}日 · 学習なし
-                            </Text>
-                          </View>
-                        ),
-                      )}
-                      <RoyalContentPanel style={s.paper}>
-                        <Text style={s.heading}>週末の確認テスト</Text>
-                        <Text style={s.meta}>
-                          {questionsForWeek(week).length}問 · 四択
-                        </Text>
-                        <Action
-                          title={
-                            progress.value.assessments[week]
-                              ? "✓ 確認テストを見る"
-                              : "確認テストを開く"
-                          }
-                          testID={`kaigo-assessment-open-${week}`}
-                          onPress={() => open({ kind: "assessment", week })}
-                        />
-                      </RoyalContentPanel>
+      <View
+        style={{
+          flex: 1,
+          paddingTop: insets.top,
+          paddingBottom: insets.bottom,
+          paddingLeft: insets.left,
+          paddingRight: insets.right,
+        }}
+      >
+        {header}
+        {route?.kind === "assessment" ? (
+          <WeeklyAssessment
+            key={route.week}
+            week={route.week}
+            completed={!!progress.value.assessments[route.week]}
+            completeReady={progress.ready && !progress.saving}
+            onComplete={() => {
+              void progress
+                .update((old) => ({
+                  ...old,
+                  assessments: { ...old.assessments, [route.week]: true },
+                }))
+                .then((saved) => {
+                  if (saved) open(null);
+                });
+            }}
+          />
+        ) : form ? (
+          renderMock(form)
+        ) : (
+          <ScrollView
+            ref={scroll}
+            key={
+              route ? JSON.stringify(route) : "calendar-" + tab + "-" + showWeek
+            }
+            testID="kaigo-course-scroll"
+            scrollEventThrottle={80}
+            onScroll={onScroll}
+            onLayout={(e) => {
+              geometry.current.height = e.nativeEvent.layout.height;
+              checkEnd();
+            }}
+            onContentSizeChange={(_, height) => {
+              geometry.current.content = height;
+              checkEnd();
+            }}
+            contentContainerStyle={s.content}
+          >
+            <View style={s.article}>
+              {!route && (
+                <>
+                  <View style={s.controls}>
+                    <View style={s.control}>
+                      <Action
+                        title="学習"
+                        onPress={() => {
+                          setTab("calendar");
+                          setShowWeek(false);
+                        }}
+                        testID="kaigo-weekly-tab-calendar"
+                      />
                     </View>
+                    <View style={s.control}>
+                      <Action
+                        title="模擬試験"
+                        onPress={() => setTab("mocks")}
+                        testID="kaigo-weekly-tab-mocks"
+                      />
+                    </View>
+                  </View>
+                  {tab === "calendar" ? (
+                    showWeek ? (
+                      <View testID={`kaigo-week-schedule-${week}`}>
+                        <RoyalExplanationPanel style={s.info}>
+                          <Text style={s.light}>
+                            第{week}週 ·{" "}
+                            {
+                              currentWeek.slots.filter(
+                                (d) => d.entry && progress.value.days[d.day],
+                              ).length
+                            }
+                            /{currentWeek.slots.filter((d) => d.entry).length}日
+                            学習済み
+                          </Text>
+                        </RoyalExplanationPanel>
+                        {currentWeek.slots.map((slot, index) =>
+                          slot.entry ? (
+                            <TokuteiDayCard
+                              key={slot.day}
+                              testID={`kaigo-calendar-day-${slot.day}`}
+                              day={index + 1}
+                              title={titleForDay(slot.entry)}
+                              done={!!progress.value.days[slot.day]}
+                              onPress={() =>
+                                open({ kind: "day", day: slot.day })
+                              }
+                            />
+                          ) : (
+                            <View key={slot.day} style={s.emptyDay}>
+                              <Text style={s.meta}>
+                                第{index + 1}日 · 学習なし
+                              </Text>
+                            </View>
+                          ),
+                        )}
+                        <RoyalContentPanel style={s.paper}>
+                          <Text style={s.heading}>週末の確認テスト</Text>
+                          <Text style={s.meta}>
+                            {questionsForWeek(week).length}問 · 四択
+                          </Text>
+                          <Action
+                            title={
+                              progress.value.assessments[week]
+                                ? "✓ 確認テストを見る"
+                                : "確認テストを開く"
+                            }
+                            testID={`kaigo-assessment-open-${week}`}
+                            onPress={() => open({ kind: "assessment", week })}
+                          />
+                        </RoyalContentPanel>
+                      </View>
+                    ) : (
+                      <>
+                        <RoyalExplanationPanel style={s.info}>
+                          <Text style={s.light}>週を選ぶ</Text>
+                          <Text style={s.light}>
+                            学習する日を選び、最後まで読んだら「完了」を押してください。
+                          </Text>
+                        </RoyalExplanationPanel>
+                        <View
+                          testID="kaigo-week-grid"
+                          onLayout={(e) =>
+                            setFrameWidth(e.nativeEvent.layout.width)
+                          }
+                          style={s.weekGrid}
+                        >
+                          {learningWeeks.map((w) => {
+                            const count = w.slots.filter(
+                                (d) => d.entry && progress.value.days[d.day],
+                              ).length,
+                              total = w.slots.filter((d) => d.entry).length;
+                            return (
+                              <Pressable
+                                key={w.week}
+                                testID={`kaigo-week-${w.week}`}
+                                accessibilityRole="button"
+                                accessibilityLabel={`第${w.week}週`}
+                                onPress={() => {
+                                  setWeek(w.week);
+                                  setShowWeek(true);
+                                  void progress.update((old) => ({
+                                    ...old,
+                                    lastWeek: w.week,
+                                  }));
+                                  scroll.current?.scrollTo({
+                                    y: 0,
+                                    animated: false,
+                                  });
+                                }}
+                                style={{ width: cellWidth }}
+                              >
+                                <RoyalContentPanel style={s.weekPaper}>
+                                  <Text style={s.weekNumber}>第{w.week}週</Text>
+                                  <Text style={s.meta}>
+                                    {count}/{total}日 学習済み{" "}
+                                    {weekDone(w.week, progress.value)
+                                      ? "✓"
+                                      : ""}
+                                  </Text>
+                                </RoyalContentPanel>
+                              </Pressable>
+                            );
+                          })}
+                        </View>
+                      </>
+                    )
                   ) : (
                     <>
                       <RoyalExplanationPanel style={s.info}>
-                        <Text style={s.light}>週を選ぶ</Text>
+                        <Text style={s.light}>模擬試験 · 12回</Text>
                         <Text style={s.light}>
-                          学習する日を選び、最後まで読んだら「完了」を押してください。
+                          技能：45問・60分 ／ 日本語：15問・30分
                         </Text>
                       </RoyalExplanationPanel>
-                      <View
-                        testID="kaigo-week-grid"
-                        onLayout={(e) =>
-                          setFrameWidth(e.nativeEvent.layout.width)
-                        }
-                        style={s.weekGrid}
-                      >
-                        {learningWeeks.map((w) => {
-                          const count = w.slots.filter(
-                              (d) => d.entry && progress.value.days[d.day],
-                            ).length,
-                            total = w.slots.filter((d) => d.entry).length;
-                          return (
-                            <Pressable
-                              key={w.week}
-                              testID={`kaigo-week-${w.week}`}
-                              accessibilityRole="button"
-                              accessibilityLabel={`第${w.week}週`}
-                              onPress={() => {
-                                setWeek(w.week);
-                                setShowWeek(true);
-                                void progress.update((old) => ({
-                                  ...old,
-                                  lastWeek: w.week,
-                                }));
-                                scroll.current?.scrollTo({
-                                  y: 0,
-                                  animated: false,
-                                });
-                              }}
-                              style={{ width: cellWidth }}
-                            >
-                              <RoyalContentPanel style={s.weekPaper}>
-                                <Text style={s.weekNumber}>第{w.week}週</Text>
-                                <Text style={s.meta}>
-                                  {count}/{total}日 学習済み{" "}
-                                  {weekDone(w.week, progress.value) ? "✓" : ""}
-                                </Text>
-                              </RoyalContentPanel>
-                            </Pressable>
-                          );
-                        })}
-                      </View>
+                      {kaigoCourse.mocks.map((m, index) => (
+                        <RoyalContentPanel key={m.id} style={s.paper}>
+                          <Text style={s.heading}>
+                            {m.id.includes("skills")
+                              ? "介護技能"
+                              : "介護日本語"}{" "}
+                            · 第{(index % 6) + 1}回
+                          </Text>
+                          <Text style={s.body}>
+                            {m.questions.length}問 · {m.durationMs / 60000}分
+                          </Text>
+                          <Action
+                            title="模擬試験を開く"
+                            testID={`kaigo-mock-${m.id}`}
+                            onPress={() => open({ kind: "mock", id: m.id })}
+                          />
+                        </RoyalContentPanel>
+                      ))}
                     </>
-                  )
-                ) : (
-                  <>
-                    <RoyalExplanationPanel style={s.info}>
-                      <Text style={s.light}>模擬試験 · 12回</Text>
-                      <Text style={s.light}>
-                        技能：45問・60分 ／ 日本語：15問・30分
-                      </Text>
-                    </RoyalExplanationPanel>
-                    {kaigoCourse.mocks.map((m, index) => (
-                      <RoyalContentPanel key={m.id} style={s.paper}>
-                        <Text style={s.heading}>
-                          {m.id.includes("skills") ? "介護技能" : "介護日本語"}{" "}
-                          · 第{(index % 6) + 1}回
-                        </Text>
-                        <Text style={s.body}>
-                          {m.questions.length}問 · {m.durationMs / 60000}分
-                        </Text>
-                        <Action
-                          title="模擬試験を開く"
-                          testID={`kaigo-mock-${m.id}`}
-                          onPress={() => open({ kind: "mock", id: m.id })}
-                        />
-                      </RoyalContentPanel>
-                    ))}
-                  </>
-                )}
-              </>
-            )}
-            {entry && (
-              <>
-                <DayReading
-                  key={entry.day}
-                  entry={entry}
-                  onMock={(id) => open({ kind: "mock", id })}
-                />
-                <View testID="kaigo-day-completion-footer">
-                  <Text style={[s.meta, { color: colors.muted }]}>
-                    {progress.value.days[entry.day]
-                      ? "✓ 学習済み"
-                      : endReached
-                        ? "最後まで読みました。「完了」を押すと週の予定に戻ります。"
-                        : "最後まで読んでから完了してください。"}
+                  )}
+                </>
+              )}
+              {entry && (
+                <>
+                  <DayReading
+                    key={entry.day}
+                    entry={entry}
+                    onMock={(id) => open({ kind: "mock", id })}
+                  />
+                  <View testID="kaigo-day-completion-footer">
+                    <Text style={[s.meta, { color: colors.muted }]}>
+                      {progress.value.days[entry.day]
+                        ? "✓ 学習済み"
+                        : endReached
+                          ? "最後まで読みました。「完了」を押すと週の予定に戻ります。"
+                          : "最後まで読んでから完了してください。"}
+                    </Text>
+                    <Action
+                      title={
+                        progress.value.days[entry.day]
+                          ? "✓ 学習済み"
+                          : progress.saving
+                            ? "保存中…"
+                            : "完了"
+                      }
+                      disabled={
+                        !progress.ready ||
+                        progress.saving ||
+                        !endReached ||
+                        !!progress.value.days[entry.day]
+                      }
+                      testID="kaigo-complete-day"
+                      onPress={() => void finishDay()}
+                    />
+                    <Action
+                      title="週の予定に戻る"
+                      testID="kaigo-reading-back"
+                      onPress={() => open(null)}
+                    />
+                  </View>
+                </>
+              )}
+              {progress.error && (
+                <RoyalExplanationPanel style={s.info}>
+                  <Text style={s.light}>
+                    進捗を保存できませんでした。保存に成功してから前の画面へ戻ります。
                   </Text>
                   <Action
-                    title={
-                      progress.value.days[entry.day]
-                        ? "✓ 学習済み"
-                        : progress.saving
-                          ? "保存中…"
-                          : "完了"
-                    }
-                    disabled={
-                      !progress.ready ||
-                      progress.saving ||
-                      !endReached ||
-                      !!progress.value.days[entry.day]
-                    }
-                    testID="kaigo-complete-day"
-                    onPress={() => void finishDay()}
+                    title="再試行"
+                    onPress={entry ? () => void finishDay() : progress.retry}
                   />
-                  <Action
-                    title="週の予定に戻る"
-                    testID="kaigo-reading-back"
-                    onPress={() => open(null)}
-                  />
-                </View>
-              </>
-            )}
-            {progress.error && (
-              <RoyalExplanationPanel style={s.info}>
-                <Text style={s.light}>
-                  進捗を保存できませんでした。保存に成功してから前の画面へ戻ります。
-                </Text>
-                <Action
-                  title="再試行"
-                  onPress={entry ? () => void finishDay() : progress.retry}
-                />
-              </RoyalExplanationPanel>
-            )}
-          </View>
-        </ScrollView>
-      )}
+                </RoyalExplanationPanel>
+              )}
+            </View>
+          </ScrollView>
+        )}
+      </View>
     </View>
   );
   return route ? content : <RoyalPageBackground>{content}</RoyalPageBackground>;
