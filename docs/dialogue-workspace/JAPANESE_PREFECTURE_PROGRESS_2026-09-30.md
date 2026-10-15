@@ -1431,3 +1431,13 @@ Previous61 scenarios durably verified at d12615ef with exact trees matching all9
 ## Local-only Okinawa city CTY-JP-47215 — 2026-10-15
 
 8 independently authored/self-reviewed Japanese exchanges; exact runtime/metadata adapter PASS, 7128 canonical IDs preserved, zero exact Player/NPC collisions. Local Okinawa 101/101; local global 7128/7128. Current batch awaits connector publication; not yet remote-verified. Remote-verified total before this batch 7088/7128. No peer/native/human/device/operator/release approval.
+
+
+## 2026-10-15 — PRF-047 Okinawa complete independent city self-review
+
+101/101 canonical scenarios across 11 cities, 1111 Japanese turns, 505 concrete Player tasks. Each containing city commit was remotely verified before advancing. Whole real adapters/corpus/normalized-near/task/answer/title/recipe checks PASS; zero exact Player/NPC collisions; 7460 outside runtime files unchanged. Exact source/input/role hashes bind all 11 city self-reviews by independent authors. All 101 scripts independently rewritten; Tokutei paths preserved. UI lock 10/10 and corrected NPC progression PASS. No peer/human/native/operator/device/release approval. Global 7128/7128; 0 scenarios/0 cities remain. Japanese prefecture pass is complete; all 7128 independently authored/self-reviewed. No human/native/translation/device release approval implied.
+
+
+## Remote publication reconciliation — 2026-10-15
+
+All101 Okinawa Japanese scenarios are remote-verified on recovery/jlpt-n3-n1. First61 exact-tree commit e35aedc053bbf6c9811e71ab12c31901275df221; final40 and complete adapter/corpus/global source evidence commit62166734d42b82e8f431f479e7a716759ff72899, both WORK PERSISTENCE PASS. These supersede earlier local-only/blocked-publication notes. CLI Git lacked credentials; authorized GitHub connector preserved exact validated trees while consolidating local commit history. Whole global Japanese source/runtime/task bindings7128/7128 across47 prefectures PASS;0 scenarios/0 cities remain in this authoring pass. Own-city AI self-review only; human/native/operator/device/release approval and translations remain deferred.
