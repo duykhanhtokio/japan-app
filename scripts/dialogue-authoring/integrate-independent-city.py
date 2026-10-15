@@ -1,6 +1,6 @@
 """Integrate one self-reviewed city; preserve canonical IDs and all other scenarios."""
 from pathlib import Path
-import json,hashlib,subprocess,sys
+import json,hashlib,subprocess,sys,re
 ROOT=Path(__file__).resolve().parents[2]
 read=lambda p:json.loads((ROOT/p).read_text())
 write=lambda p,v:(ROOT/p).write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
@@ -17,6 +17,13 @@ for flag in ['peerReviewed','crossReadingPerformed','crossReading','crossCityRea
 assert review.get('roleAlignmentSha256',digest(prefix+'_ROLE_ALIGNMENT.json'))==digest(prefix+'_ROLE_ALIGNMENT.json')
 assert not review.get('peerReviewed') and not review.get('crossReadingPerformed')
 assert set(entries)=={x['scenario']['id'] for x in snapshot['entries']}
+# Validate new role categories before any runtime mutation; raw metadata labels are not support.
+supported=set(re.findall(r"category:'([^']+)'",(ROOT/'src/data/npc-progression.ts').read_text()))
+input_locations={e['location']['id']:e['location'] for e in snapshot['entries']}
+for lid,changes in role.get('corrections',{}).items():
+ assert lid in input_locations
+ assert set(changes)<={'category','npcJob','nameJa','name','description','openHours','address'}
+ assert changes.get('category',input_locations[lid]['category']) in supported,('Unsupported effective NPC category',lid,changes.get('category'))
 baseline=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
 prior_manifest=ROOT/(prefix+'_MANIFEST.json')
 if prior_manifest.exists():baseline=read(prefix+'_MANIFEST.json')['baseline']

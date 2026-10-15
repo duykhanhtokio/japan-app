@@ -1,0 +1,91 @@
+{
+  "cityId": "CTY-KUM-ASO",
+  "baseline": "de054c902c4a00ad79944220ae87a64373782f14",
+  "inputSha256": "689b0b85c3159316131be190626cdd7a7ddf312463f15b37a14dc746aec8e369",
+  "sourceSha256": "d3a38f86e92f391c863feae7ada847dd4e06c7df97c7189998a7f9fec977eaa3",
+  "roleAlignmentSha256": "12ba30facd8afa3d39e660967181a4b7125e8b3763964268fa5f449615e25f26",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "fullFinalRereadScope": "Read all8final titles/premises,88spoken turns,40tasks and8role corrections. Final edited titles/passages/tasks reread after changes; no unseen final edits.",
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40,
+    "playerUtterances": 40,
+    "uniquePlayerUtterances": 40,
+    "uniqueGoals": 40,
+    "distinctNpcClosures": 8
+  },
+  "causalPlots": {
+    "SC-KUM-ASO-001": "作業表で隣人の担当を誤読→記録整理という本人担当に訂正→牛舎見学の立ち位置は現地担当へ依頼→異常は識別と観察を分けて伝える→作業表と希望を現地へ引き継ぎ説明を終える。",
+    "SC-LOC-KUM-ASO-02-001": "撮影日不明の案内写真→経験・靴・同行者と帰着計画の不足を把握→当日の山歩きを取りやめ→更新日付き案内の問い合わせ先を控える→友人に中止を伝え案内室で次回準備へ進む。",
+    "SC-LOC-KUM-ASO-03-001": "毎日洗う水筒を比較→蓋の部品の確認→広口品は通勤かばんから蓋が出ると分かる→かばんを閉められる細い品を候補に→説明書と予算を踏まえて購入する。",
+    "SC-LOC-KUM-ASO-04-001": "受取人欄へ本人名を誤記→受取人と振込人を区別→管理会社の指示にある振込人の部屋番号を確認→家賃額と手数料を分ける→訂正した申込みを受付へ渡す。",
+    "SC-LOC-KUM-ASO-05-001": "発車の早い列車を候補にする→時刻欄の通過印を時刻省略と誤読したと判明→目的駅に停まる乗換えなし案を求める→各駅停車を選択して友人へ見込み連絡→停車駅表示を確認して待つ方針で別れる。",
+    "SC-LOC-KUM-ASO-06-001": "大きい上着は袖が長い→厚い中着を重ねて小さい品を試す→袖は合うが挙腕時に肩が張る→購入後の交換を保証できないと理解→通勤時の重ね着の動きやすさを優先して大きい品を選ぶ。",
+    "SC-LOC-KUM-ASO-07-001": "購入確認画面が今日の日付→明日へ訂正→帰路の寄り道が未定と共有→片道の範囲を確認して往路だけ選ぶ→日付・区間・枚数・合計を確認し発券を受ける。",
+    "SC-LOC-KUM-ASO-08-001": "未注文の追加料理を指摘→食べた最初の一皿と追加分を区別→他卓の注文混入を店員が確認して削除→二人の精算相談後、一人が店へまとめ払い→訂正明細とレシートを受け取って別れる。"
+  },
+  "corrections": [
+    {
+      "scenarioId": "SC-KUM-ASO-001",
+      "change": "Retained agriculture/Work context but aligned unsupported farm-art role to supported Classroom/Teacher at a fictional farm briefing room. No cow-handling procedure or remote safety-position judgment."
+    },
+    {
+      "scenarioId": "SC-LOC-KUM-ASO-02-001",
+      "change": "Do not assert an undated photograph is necessarily outdated; title now states missing date. Identified a separate new guide with update date/contact so current information is not inferred from the old photo."
+    },
+    {
+      "scenarioId": "SC-LOC-KUM-ASO-03-001",
+      "change": "Added explicit personal-budget acceptance to final water-bottle choice and matching task; no actual price invented."
+    },
+    {
+      "scenarioId": "SC-LOC-KUM-ASO-05-001",
+      "change": "Replaced awkward alighting-stations phrase with boarding/alighting count; title now concerns early departure rather than nonexistent arrival-time choice."
+    },
+    {
+      "scenarioId": "SC-LOC-KUM-ASO-06-001",
+      "change": "Removed claim that unspecified exchange terms had already been fully explained; buyer now decides from current fitting without relying on guaranteed exchange. Specified commuting use over work clothes."
+    },
+    {
+      "scope": "metadata",
+      "change": "Removed real-looking named venues and unsupported monorail/tram claim; ATM renamed staffed consultation counter, daily-goods shop aligned to product comparison, all fictional labels and hours/address cleared."
+    }
+  ],
+  "checks": {
+    "exactAssignedScenarioIds": true,
+    "originalCityAndRouteGroupingPreservedForRoot": true,
+    "elevenAlternatingNpcPlayerTurns": true,
+    "npcStartsAndClosesEach": true,
+    "japaneseOnlySpokenLines": true,
+    "fiveDistinctConcreteGoalsPerScenario": true,
+    "fortyUniquePlayerUtterancesWithinCity": true,
+    "fortyUniqueTaskGoalsWithinCity": true,
+    "tasksAlignedToImmediatelyPrecedingNpc": true,
+    "causesConstraintsDecisionsOutcomesReread": true,
+    "noAcknowledgmentOnlyPlayerTurns": true,
+    "noLevelGating": true,
+    "explicitFictionInPremisesAndVenueMetadata": true,
+    "noRealSchedulesPricesHoursRoutePolicyGuarantee": true,
+    "noAnimalHandlingHikingMedicalOrElectricalProcedure": true,
+    "sourceHashesExactFinalBytes": true,
+    "workerWritesOnlyStaging": true
+  },
+  "sourcePath": "scripts/dialogue-authoring/prf-043-city-cty-kum-aso.json",
+  "roleAlignmentPath": "docs/dialogue-workspace/content-qa/PRF-043_CITY_CTY-KUM-ASO_ROLE_ALIGNMENT.json",
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "Author AI own-source review only; no othercity prose/review reading or peer checking.",
+    "All transaction, display, product and route conditions are hypothetical within explicitly fictional venues; no real business/geography/policy assertion or guarantee.",
+    "Agricultural scenario is a pre-work briefing classroom preserving Work context. Root must assess artwork/runtime consistency; no new categories or assets created.",
+    "No animal approach/handling, trail access approval, bank deposit timing, universal exchange entitlement or actual rail-operation facts are provided.",
+    "Root owns runtime/shared metadata integration and remote Git persistence. No worker runtime/shared edits, commits, native/device/operator or release approval claimed."
+  ]
+}
