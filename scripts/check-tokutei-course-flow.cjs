@@ -1,3 +1,4 @@
+// Detect accented Latin/Vietnamese text without incorrectly rejecting Greek scientific symbols such as α.
 const assert = require("node:assert/strict"),
   fs = require("fs"),
   path = require("path"),
@@ -172,11 +173,11 @@ async function end(tree, id) {
   raw(t);
   assert.equal(hosts(t, "kaigo-japanese-reader").length, 1);
   assert(
-    !/[À-ỹ]/u.test(text(t)),
+    !/[À-ÖØ-öø-ÿĂăĐđĨĩŨũƠơƯư\u1EA0-\u1EF9]/u.test(text(t)),
     "No Vietnamese before the translation action",
   );
   await click(t, "kaigo-translation");
-  assert(/[À-ỹ]/u.test(text(t)));
+  assert(/[À-ÖØ-öø-ÿĂăĐđĨĩŨũƠơƯư\u1EA0-\u1EF9]/u.test(text(t)));
   raw(t);
   await end(t, "kaigo-course-scroll");
   await click(t, "kaigo-complete-day");
@@ -265,7 +266,7 @@ async function end(tree, id) {
       if (!slot.entry) continue;
       await click(t, `kaigo-calendar-day-${slot.day}`);
       raw(t);
-      assert(!/[À-ỹ]/u.test(text(t)), `Day ${slot.day}: translation leaked before explicit action`);
+      assert(!/[À-ÖØ-öø-ÿĂăĐđĨĩŨũƠơƯư\u1EA0-\u1EF9]/u.test(text(t)), `Day ${slot.day}: translation leaked before explicit action`);
       const sections = m.japaneseSectionsFor(slot.entry);
       for (const section of sections) {
         assert.equal(hosts(t, `kaigo-reading-section-${section.id}`).length, 1);
