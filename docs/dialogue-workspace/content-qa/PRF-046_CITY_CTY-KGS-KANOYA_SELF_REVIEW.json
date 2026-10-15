@@ -1,0 +1,63 @@
+{
+  "cityId": "CTY-KGS-KANOYA",
+  "baseline": "70b9863045bb19397bc94bc4f0f393234389fcc3",
+  "inputSha256": "f744335ec2176178b9a0c1f11c38f536e28c8810458af11a9a77340dcb70c33b",
+  "sourceSha256": "2ac991473160e9024f079dc87129bf696b5000ff36093318bf938f7610a2e301",
+  "roleAlignmentSha256": "243ddfbece5d93828526abecbfcb639db376b0c324558673d309be932bc86d0e",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-KGS-KANOYA-001": "教室で待機を移動と聞き違えた意味を確認。二人の先輩のうち誰が担当者か不明なため紹介を求め、相反する指示を自己選択せず、図だけに頼らず現場実演と復唱確認へ。",
+    "SC-LOC-KGS-KANOYA-02-001": "年代不詳を百年前と決めることをやめる。当時の写真ではない説明図も使用法の一例と区別。展示番号と引用を記録し、年代不明の理由は未確認の質問として残す。",
+    "SC-LOC-KGS-KANOYA-03-001": "三百グラム注文の記憶に対し未開封パックの表示は五百グラム。自分のメモはないためレシートと売場記録を照合。原因と対応は確定せず、商品を預けて説明を待つ。",
+    "SC-LOC-KGS-KANOYA-04-001": "同行者が二人分の券を持ち、予約画像では先に入れない。大きな鞄を入口通路に置かず、列と別の待合せ表示前へ。同行者へ場所と撮影禁止を伝えて二人で戻る。",
+    "SC-LOC-KGS-KANOYA-05-001": "家族の講習費を自分の口座から払うときの申込者名指定を、受取人名の変更と誤解。主催者へ申込番号も含めて照会し、受取先・送る側表示・費用を分けてから決める。",
+    "SC-LOC-KGS-KANOYA-06-001": "退館出口と屋内へ戻る順路を混同。屋内の友人が見えた近くの扉から戻れるとは限らないと知り、合流点を案内板前に明確化。屋外一方通行の図を先に尋ねる。",
+    "SC-LOC-KGS-KANOYA-07-001": "セット内コーヒーの別行零円表示を二重請求と疑うが、セット価格に一杯含む意味と理解。プリン三百円を区別し追加コーヒーを断り、千五百円の会計へ。",
+    "SC-LOC-KGS-KANOYA-08-001": "写真で小さく見えた盛合せが二人から三人用とわかり、未発注のうちに変更。半量不可なので温かい煮物の小鉢一つを選び、和え物は頼まず量を見てから追加する。"
+  },
+  "corrections": [
+    "旧汎用対話8件をそれぞれ異なる障害・聞き返し・判断・終結を持つ11発話へ全面置換。40目標を各応答と直前のNPCに合わせて具体化した。",
+    "牧場をNatureとして案内する役割不整合は、生体のない架空の作業前研修教室に変更。動物への接近手順を文章で実演する代わりに、待機の意味、担当者紹介、指示の復唱と現場説明へ接続した。",
+    "公演場面は野球場名と遊園地カテゴリの混在を解消し、架空の遊園地内ステージへ変更。精肉と公演の職名も担当カテゴリに整合した。",
+    "展望施設の初稿のPlayerが唐突に柵沿いの近道をしないと述べる表現を改め、屋内の友人が見えた近くの扉から戻れると思っていたという誤解へ変更。次のNPCの訂正と課題も更新した。",
+    "公演受付の「案内した待機場所」はまだ場所を案内していなかったため削除し、その後のPlayerの場所質問とNPCの説明へつなげた。",
+    "会計はセット内一杯と追加無料を区別し、1200円+300円=1500円、2000円から500円のおつりを確認した。",
+    "全施設を架空の汎用名にし、時間と住所をnullへ。未確認の注文、返金交換、名義、入金や実在の展示史を確定しない表現にした。"
+  ],
+  "checks": {
+    "assignedIds": "PASS: 入力8シナリオと8施設のID集合が完全一致。元のIDと経路グループを保持。",
+    "structure": "PASS: 各11日本語発話、NPC開始・交互・NPC終結。5Playerに5具体課題。8/88/40。",
+    "fullFinalOwnReread": "PASS: 全8件の最終タイトル・前提・88発話・40課題を全文再読。再読後の公演受付の一文修正も再読。最終8施設の役割修正全文を再読。",
+    "causalTaskAlignment": "PASS: 直前のNPC、Player応答、目標を40組ごとに照合。謝意だけの応答はなく、物品・状態・選択が具体的。全筋は本人が比較して確認。",
+    "ownUniqueness": "PASS: 40Player発話、40目標、40intent、48NPC発話の各集合で完全一致重複ゼロ。名詞交換だけの構成にしない。",
+    "languageNumbers": "PASS: タイトル・前提・発話・日本語目標に英字/タイ語/韓国語なし。先輩二人、年代不詳対百年、300g対500g、二人の券、セット1200+プリン300=1500、支払2000-1500=500、一人客と二～三人盛合せを照合。",
+    "supportedRoles": "PASS: categoryは実コードsrc/data/npc-progression.tsのNPC_CATEGORIES文字列集合に完全一致。新規カテゴリ/アセットなし。",
+    "fictionAndAuthority": "PASS: 全施設名/前提で架空明示。時間住所null。動物取扱いの実技、食品安全判断、返金交換や主催者の入金処理を保証しない。会話内の具体条件は実在施設の規則として扱わない。",
+    "scope": "PASS: 自分の入力と共有カテゴリコードのみ参照。他都市著者の本文/レビューは未参照。全書込みは自分のstagingファイルのみ。"
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "paths": {
+    "source": "scripts/dialogue-authoring/prf-046-city-cty-kgs-kanoya.json",
+    "input": "docs/dialogue-workspace/content-qa/PRF-046_CITY_CTY-KGS-KANOYA_INPUT.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-046_CITY_CTY-KGS-KANOYA_ROLE_ALIGNMENT.json"
+  },
+  "limits": [
+    "著者AI自身による全文自己確認のみ。人間・母語話者・同僚の査読、リリース承認ではない。",
+    "現地の施設規則、作業手順、展示の来歴、価格、銀行の運用は未確認。条件は架空場面の内部に限定。",
+    "既存画像との適合、図の表示、端末、音声、翻訳は未確認。専用アートは追加していない。",
+    "stagingの著者素材と証跡のみ。親担当による機械統合・実行時検証・Git永続化は別工程。"
+  ]
+}
