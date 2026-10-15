@@ -1066,3 +1066,8 @@ Previous61 scenarios durably verified at d12615ef with exact trees matching all9
 ## Independent Nagasaki city CTY-JP-42214 — 2026-10-15
 
 8 own-authored/self-reviewed Japanese exchanges,88turns,40concrete Player tasks. Exact source/runtime/metadata adapter PASS; canonical7128IDs preserved; zero exact Player/NPC collisions and 7553 outside runtimes unchanged. Venue labels explicitly fictional, unverified hours/addresses cleared and supported NPC roles aligned. No peer reading, translations, native/human/device/operator/release approval. Nagasaki cumulative117/117;0 remain. Current city containing commit requires remote persistence before next integration.
+
+
+## 2026-10-15 — PRF-042 Nagasaki complete independent city self-review
+
+117/117 canonical scenarios across13cities,1287Japanese turns,585Player tasks. This continuation finished24scenarios inSaikai/Unzen/Minamishimabara, each containing city commit remotely verified before advancing. Whole real adapters/corpus/normalized-near/task/answer/title/recipe checks PASS; zero exact Player/NPC collisions;7444outside runtime files unchanged. Source hashes and final-own-read evidence bind all13city reviews, including alternate historical field names. Prior93existing scripts and Tokutei paths preserved. UIlock10/10 and correctedNPCprogression PASS. No peer/human/native/operator/device/release approval. Global6519/7128;609scenarios/68cities remain. NextKumamoto PRF-043 only after this checkpoint commit persistence.
