@@ -1,0 +1,81 @@
+{
+  "cityId": "CTY-JP-43213",
+  "baseline": "de054c902c4a00ad79944220ae87a64373782f14",
+  "inputSha256": "0bf13f35e54a5c36496c26468bd13698d3daa2cb1bfe4d1db5d13a2bd6f0ee20",
+  "sourceSha256": "d3606d173818dc5fb9dd5e09d1f1193a454be2f3f0419601dfe45d75020610a0",
+  "roleAlignmentSha256": "ec41b28d665763bac835ed8aefdd27aa0b5f028bdf06d40ace1041c9c1dd6a0f",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "paths": {
+    "source": "scripts/dialogue-authoring/prf-043-city-cty-jp-43213.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-043_CITY_CTY-JP-43213_ROLE_ALIGNMENT.json"
+  },
+  "causalPlots": {
+    "SC-LOC-JP-43213-01-001": "遅れの分数を足した到着予想は保証されないと知り、発車未定を相手へ伝えて先に打合せを始めてもらう。返信後も次の案内で移動を判断する。",
+    "SC-LOC-JP-43213-02-001": "通知を支払い命令と思い込まず本文の説明を希望。ベトナム語と文字の支援、仕事後の候補を担当へ照会し、希望受付と予約成立を分ける。",
+    "SC-LOC-JP-43213-03-001": "領収書の当日の日付と欠勤期間の証明は同じとは限らない。職場の用紙・期間・記載項目を先に確かめ、医療情報の追加や申請を保留する。",
+    "SC-LOC-JP-43213-04-001": "青い長財布の最後の使用場所と紛失場所を区別し、赤い縫い跡という内部特徴を伝える。発行元への連絡と届出の連絡先確認を分ける。",
+    "SC-LOC-JP-43213-05-001": "不在票の配達日を保管期限と読み違えたと分かる。代理の家族も予定未定なので、本人が仕事後に受け取る窓口・時間・持参物を問合せる方針を選ぶ。",
+    "SC-LOC-JP-43213-06-001": "カード紛失で停止相談中に家族から発見の連絡が入る。発見だけで利用再開や取消とは考えず、保管を頼み手続きの進み具合とカードの扱いを先に確認する。",
+    "SC-LOC-JP-43213-07-001": "未記入ノートの十二ページから十七ページへの飛びを現物で示し、外袋はないがレシートはあると説明。同じ罫線の交換を希望し、在庫と対応の確認を待つ。",
+    "SC-LOC-JP-43213-08-001": "撮影の立ち止まりを含めず一周できると思っていた予定を変更。休憩所への往復と早めの折返しを選び、似た入口を取り違えないため現在地を図で印付けする。"
+  },
+  "corrections": [
+    "All eight actual-looking institution names replaced with explicit generic fictional venue identities; all unverified opening hours and addresses cleared.",
+    "Park/Community Staff changed to existing Park/Park Staff; other existing supported category/job pairs retained.",
+    "Bank self-review revised the family-found-card response so that family keeps the card while the account holder defers use; synchronized that task goal to avoid implying family card use.",
+    "Bank NPC wording revised from a stiff statement about not having announced suspension completion to a pending status check by the responsible staff member.",
+    "Medical NPC wording revised to avoid presuming which medical information is unnecessary before the employer requirements have been established.",
+    "Government Player closing revised to natural spoken confirmation that the reservation is still pending rather than a formal statement of understanding.",
+    "Park NPC closing revised to natural reference to on-site passage notices, while preserving a concrete return-route outcome.",
+    "All final changed passages and their neighboring responses/tasks were reread after these revisions; exact author and role hashes were refreshed."
+  ],
+  "checks": {
+    "fullAssignedInputRead": true,
+    "allFinalTitlesPremisesTurnsTasksRolesReread": true,
+    "exactScenarioIdsPreserved": true,
+    "sourceVenueTypeAndRouteGroupingRetained": true,
+    "elevenAlternatingTurnsNpcFirst": true,
+    "npcFarewellOrConcreteClosureAtTurnEleven": true,
+    "fiveSpecificTasksPerScenario": true,
+    "tasksMatchPrecedingNpcAndPlayer": true,
+    "fortyDistinctPlayerUtterances": true,
+    "fortyDistinctTaskIntents": true,
+    "fortyDistinctTaskGoals": true,
+    "eightDistinctClosures": true,
+    "noAcknowledgmentOnlyPlayerTurns": true,
+    "noNounSwappedDialogueRecipe": true,
+    "individuallyReviewedCausalOutcomes": true,
+    "japaneseOnlySpokenLines": true,
+    "noLevelGate": true,
+    "numbersAndNamedSceneLabelsChecked": true,
+    "supportedCategoriesCheckedAgainstNpcProgression": true,
+    "noNewCategoriesOrAssets": true,
+    "explicitFictionalVenues": true,
+    "allHoursAndAddressesNull": true,
+    "noActualLocalTimetableRoutePriceOrProcedureClaim": true,
+    "professionalRolesDoNotGuaranteeDeterminationOrCompletion": true,
+    "exactByteHashesVerified": true,
+    "noOtherCityProseRead": true,
+    "noActiveCheckoutRuntimeSharedOrGitWrites": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "Independent author self-review only. Native-speaker, human and peer review have not occurred.",
+    "All venue layouts, displays, documents and item conditions are fictional scene facts, not verified Uki institutions or policies.",
+    "No actual timetable, arrival prediction, interpretation availability, medical document issuance, lost-property recovery, postal collection eligibility or bank-card status has been established.",
+    "Runtime integration, artwork/device inspection and release approval remain with root; this author made no runtime or shared repository edits."
+  ]
+}
