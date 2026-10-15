@@ -1,0 +1,61 @@
+{
+  "cityId": "CTY-OKN-ISHIGAKI",
+  "baseline": "41920ad4784b36c2da34976fa1f1d27df4e6a0bc",
+  "inputSha256": "34d50ae12c7f87b07daeee4b15b950187daf052fcf05e0a02db1f05028cd9507",
+  "sourceSha256": "dd611cc8369fa2a5eae8c521c3cf15a561856387ab883417d8ef5f3f50a75376",
+  "roleAlignmentSha256": "aa590a60857da024342ee9f3300adcd3cc10e89327fbcc35b45d3d4acf6418f0",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-OKN-ISHIGAKI-001": "強風で屋外傘不可→屋根席→引換札付き荷物預け→一時返却と雨の移動→茶と返却手順。",
+    "SC-LOC-OKN-ISHIGAKI-02-001": "旅行案内と船会社の担当区別→予約情報準備→釣具の寸法と中身→運航と荷物を別々に照会。",
+    "SC-LOC-OKN-ISHIGAKI-03-001": "煮込み用途→二回分三百グラム→百五十グラム二包み→小さい角切りと重量表示→現金会計。",
+    "SC-LOC-OKN-ISHIGAKI-04-001": "色の観察→落果は通路から撮影→落枝を報告→観察台へ戻る→双眼鏡の使用と返却。",
+    "SC-LOC-OKN-ISHIGAKI-05-001": "海の字を選ぶ→筆と紙の安定→縦線の追加練習→清書と署名→乾燥と台紙。",
+    "SC-LOC-OKN-ISHIGAKI-06-001": "九十分の帰着制約→近い展示室→段差のない入口を照会→友人の荷物と傘→遅れた場合の宿集合。",
+    "SC-LOC-OKN-ISHIGAKI-07-001": "唐揚げを野菜へ訂正→焼き魚だけ温め→箸と別袋→二人分を別会計→釣銭と別レシート。",
+    "SC-LOC-OKN-ISHIGAKI-08-001": "追跡番号と発送控えの相違→提出先に必要条件確認→料金照会→未署名を補完→控え保管。"
+  },
+  "corrections": [
+    "既存の抽象的な同一目標を五つの具体目標へ分離。",
+    "港案内と自然観察を対応NPCの権限内へ再構成。",
+    "会話中の学習用案内図という表現を除去。",
+    "精肉の渡し状態を冷蔵と明示し根拠のない冷凍希望の推測を除去。",
+    "観光の駅への帰着を宿への帰着へ修正。"
+  ],
+  "checks": {
+    "exactScenarioIds": true,
+    "elevenAlternatingTurnsNpcFirstLast": true,
+    "fiveContextualTasksPerScenario": true,
+    "uniquePlayerUtterancesWithinCity": true,
+    "uniqueTaskIntentsAndGoalsWithinCity": true,
+    "causalProgressionReread": true,
+    "titlesPremisesTasksRolesReread": true,
+    "japaneseOnlySpokenText": true,
+    "explicitNpcClosure": true,
+    "noLevelGating": true,
+    "noTemplateNounSwap": true,
+    "numbersAndNamesChecked": true,
+    "fictionalVenueMetadata": true,
+    "noAuthoringInstructionsInSpeech": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "作者自身による再読と構造検査のみ。人間・母語話者・相互レビューは未実施。",
+    "架空施設の価格・所要時間・受付条件であり現地情報を検証していない。",
+    "実機表示と翻訳は未確認。",
+    "現在市の三成果物のみ凍結。Gitへの統合とリモート永続化はroot担当で未確認。"
+  ]
+}

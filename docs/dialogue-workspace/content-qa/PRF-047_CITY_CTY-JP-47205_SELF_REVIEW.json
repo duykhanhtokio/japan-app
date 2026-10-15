@@ -1,0 +1,66 @@
+{
+  "cityId": "CTY-JP-47205",
+  "baseline": "41920ad4784b36c2da34976fa1f1d27df4e6a0bc",
+  "inputSha256": "d8bec8bf7dbdeb88c41f54f150760e371e87c0205741b70a3cc7cbde678e15f5",
+  "sourceSha256": "00aca00b2c4c55e6c96f3a6d577b128e76a23222a67e372851efb7960fdf95f2",
+  "roleAlignmentSha256": "ece60823eb88e96828f1a429edfe3878967a6af557fc2b110e494e7c86d950de",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-47205-01-001": "大荷物で階段回避→エレベーター待ちが不確定→待機場所→歩行の遅い母が合流→荷物は自力、案内のみ依頼。",
+    "SC-LOC-JP-47205-02-001": "住所の部屋番号不足→大家へ確認→未開封の会社封筒は別確認→単身・会社保険→住所確認後の復帰と保険相談先。",
+    "SC-LOC-JP-47205-03-001": "勤務変更で火曜予約に行けない→体調変化はないが延期判断不可→木曜希望→元予約は確認まで保持→案内票で受付へ引継ぎ。",
+    "SC-LOC-JP-47205-04-001": "自転車不在の観察時刻→管理者へ未確認→色とひもと写真→鍵の記憶の限界→確認結果を相談窓口へ連絡。",
+    "SC-LOC-JP-47205-05-001": "到着確認の希望→提出先の発送記録指示が曖昧→発送保留→部署名宛先照合→条件と担当者名を確認しコピー後に再訪。",
+    "SC-LOC-JP-47205-06-001": "給与口座相談→銀行指定が不明かつ氏名省略→会社へ二点確認→提出期限金曜でも即日保証なし→申込前の再相談。",
+    "SC-LOC-JP-47205-07-001": "値札と容量不一致→二点割引の香り条件→税込・非会員対象を確認→本体未所持に気付く→割引外の本体一つへ変更。",
+    "SC-LOC-JP-47205-08-001": "二十分以内希望→池一周三十分を避け花壇往復十五分→雨後のぬれた木陰→ベンチと分岐→復路目印と途中折返し。"
+  },
+  "corrections": [
+    "既存の一律ゴールを直前のNPC発話と各Player応答に対応する四十の独立したゴールへ置換。",
+    "未確認の駅設定を架空バスターミナルへ修正し、階段回避と母の歩行支援の筋に再構成。",
+    "公園職種をPark Staffへ整合。",
+    "全八施設に架空表示を付け、時刻・住所を未設定に変更。",
+    "病院は予約の引継ぎ、警察は未確認事項の整理、銀行は申込前確認に限定。",
+    "割引による選択から本体未所持による購入変更まで数量と税込金額の整合を確認。"
+  ],
+  "checks": {
+    "assignedInputReadCompletely": true,
+    "ownTitlesPremisesTurnsTasksRolesReread": true,
+    "elevenAlternatingTurnsNpcFirstLast": true,
+    "fiveConcreteContextualTasksPerScenario": true,
+    "uniquePlayerUtterancesWithinCity": true,
+    "uniquePlayerGoalsWithinCity": true,
+    "distinctCausalPlots": true,
+    "noNounSwapRecipes": true,
+    "japaneseOnlyDialogueAndGoals": true,
+    "farewellAndConcreteClosure": true,
+    "originalScenarioLocationTurnIdsPreservedByIntegrationContract": true,
+    "originalRouteGroupingPreserved": true,
+    "fictionalVenueMetadataExplicit": true,
+    "unverifiedHoursAndAddressesCleared": true,
+    "numbersAndNamesChecked": true,
+    "roleBoundariesChecked": true,
+    "noLevelGates": true,
+    "mechanicalCountsPassed": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "AI著者による自分の最終稿の再読のみ。第三者・母語話者・運営者の確認は未実施。",
+    "実在施設の配置・時刻・価格・制度を検証したものではなく、会話内の仮定。",
+    "表示端末での文章収まり、音声、翻訳は未確認。",
+    "この三出力はステージング用。統合・コミット・リモート保存は親作業の責任であり、ここでは完了を主張しない。"
+  ]
+}

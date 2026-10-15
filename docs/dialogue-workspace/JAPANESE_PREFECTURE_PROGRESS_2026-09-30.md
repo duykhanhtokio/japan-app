@@ -1376,3 +1376,33 @@ Previous61 scenarios durably verified at d12615ef with exact trees matching all9
 ## 2026-10-15 — PRF-046 Kagoshima complete independent city self-review
 
 165/165 canonical scenarios across 19 cities, 1815 Japanese turns, 825 concrete Player tasks. Each containing city commit was remotely verified before advancing. Whole real adapters/corpus/normalized-near/task/answer/title/recipe checks PASS; zero exact Player/NPC collisions; 7396 outside runtime files unchanged. Exact source/input/role hashes bind all 19 city self-reviews by six independent authors. All 165 scripts independently rewritten; Tokutei paths preserved. UI lock 10/10 and corrected NPC progression PASS. No peer/human/native/operator/device/release approval. Global 7027/7128; 101 scenarios/11 cities remain. Next Okinawa PRF-047 only after this checkpoint commit persistence.
+
+
+## Local-only Okinawa city CTY-OKN-OKINAWACITY — 2026-10-15
+
+8 independently authored/self-reviewed Japanese exchanges; exact runtime/metadata adapter PASS, 7128 canonical IDs preserved, zero exact Player/NPC collisions. Local Okinawa 8/101; local global 7035/7128. Publication blocked by automatic approval; NOT remote-verified or durable. Remote-verified total at start remains 7027/7128. No peer/native/human/device/operator/release approval.
+
+
+## Local-only Okinawa city CTY-OKN-NAGO — 2026-10-15
+
+8 independently authored/self-reviewed Japanese exchanges; exact runtime/metadata adapter PASS, 7128 canonical IDs preserved, zero exact Player/NPC collisions. Local Okinawa 16/101; local global 7043/7128. Publication blocked by automatic approval; NOT remote-verified or durable. Remote-verified total at start remains 7027/7128. No peer/native/human/device/operator/release approval.
+
+
+## Local-only Okinawa city CTY-OKN-ISHIGAKI — 2026-10-15
+
+8 independently authored/self-reviewed Japanese exchanges; exact runtime/metadata adapter PASS, 7128 canonical IDs preserved, zero exact Player/NPC collisions. Local Okinawa 24/101; local global 7051/7128. Publication blocked by automatic approval; NOT remote-verified or durable. Remote-verified total at start remains 7027/7128. No peer/native/human/device/operator/release approval.
+
+
+## Local-only Okinawa city CTY-JP-47205 — 2026-10-15
+
+8 independently authored/self-reviewed Japanese exchanges; exact runtime/metadata adapter PASS, 7128 canonical IDs preserved, zero exact Player/NPC collisions. Local Okinawa 32/101; local global 7059/7128. Publication blocked by automatic approval; NOT remote-verified or durable. Remote-verified total at start remains 7027/7128. No peer/native/human/device/operator/release approval.
+
+
+## Local-only Okinawa city CTY-OKN-URASOE — 2026-10-15
+
+8 independently authored/self-reviewed Japanese exchanges; exact runtime/metadata adapter PASS, 7128 canonical IDs preserved, zero exact Player/NPC collisions. Local Okinawa 40/101; local global 7067/7128. Publication blocked by automatic approval; NOT remote-verified or durable. Remote-verified total at start remains 7027/7128. No peer/native/human/device/operator/release approval.
+
+
+## Local-only Okinawa city CTY-047 — 2026-10-15
+
+21 independently authored/self-reviewed Japanese exchanges; exact runtime/metadata adapter PASS, 7128 canonical IDs preserved, zero exact Player/NPC collisions. Local Okinawa 61/101; local global 7088/7128. Publication blocked by automatic approval; NOT remote-verified or durable. Remote-verified total at start remains 7027/7128. No peer/native/human/device/operator/release approval.

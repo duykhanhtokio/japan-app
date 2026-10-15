@@ -1,0 +1,63 @@
+{
+  "cityId": "CTY-OKN-NAGO",
+  "baseline": "41920ad4784b36c2da34976fa1f1d27df4e6a0bc",
+  "inputSha256": "37d18f0754b583eb9cf531496e9018d9a4f206dfa2037ad2f6eb95372a7bbaf2",
+  "sourceSha256": "589a67e613583f188a48c20bb19cc5168478fe8a1c0a0a10ba1c1db6d7a33ef6",
+  "roleAlignmentSha256": "81da62c64ee91ea9b856843b44039b54cbd6c6e5d7a7de31e8ce1c6ae1bd51c0",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-OKN-NAGO-001": "ショーを待たずに水槽を見学する。名護市を舞台とする架空の海洋展示館。生きた魚の水槽と映像ショーを備える設定。次の映像ショーまで待てない来館者が、四十分で見られる水槽と撮影の条件を展示案内係に相談する。",
+    "SC-LOC-OKN-NAGO-02-001": "色見本と傷を確かめて収穫する。名護市を舞台とする架空の果樹園内の収穫体験区画。初参加者が担当ガイドと当日の見本、仕分け箱、道具を確かめる。高い実は担当外として地上での収穫に限定する。",
+    "SC-LOC-OKN-NAGO-03-001": "火が使えない日のキャンプを変更する。名護市を舞台とする架空の公園内キャンプ場。風のため当日は火の使用を中止している設定。公園の受付担当と、来場者が食事と区画を見直す。実在施設の運用情報ではない。",
+    "SC-LOC-OKN-NAGO-04-001": "光の体験展示で説明を受ける。名護市を舞台とする架空の科学展示室。来館者が光の実験を体験し、分からない語を聞き返す。操作と撮影の条件はこの架空の展示だけの設定。",
+    "SC-LOC-OKN-NAGO-05-001": "詰め替え洗剤と本体を比較する。名護市を舞台とする架空の日用品売場。容器のない来店客が、値札と容量を比較し、詰め替え用だけでは使えないことに気づいて購入を変更する。",
+    "SC-LOC-OKN-NAGO-06-001": "閉鎖された道を避けて入口へ戻る。名護市を舞台とする架空の公園。遊具広場のそばで係員に散歩道を相談する。工事中の区間と園内の目印は、この架空の公園だけの設定。",
+    "SC-LOC-OKN-NAGO-07-001": "急須を持たない相手への茶の贈り物。名護市を舞台とする架空のお茶専門店。贈る相手に急須がないため、茶葉の缶からティーバッグへ選び直す。値段と包装条件は架空の店内設定。",
+    "SC-LOC-OKN-NAGO-08-001": "卵と共用油を確認して注文を見送る。名護市を舞台とする架空の飲食店。卵アレルギーのある客が揚げ物を相談し、調理担当の回答を聞いて食事の注文を見送る。医学的な安全性や実在店舗の対応を保証する場面ではない。"
+  },
+  "corrections": [
+    "最終再読で収穫時の範囲を「地面に立って届く」に明確化。",
+    "洗剤の袋は総額でなく容量当たりの割安なので、最初の質問をお得表示と容量の比較に修正。容量と単位量価格を再計算し六十円対八十円で整合。",
+    "厨房に確認を頼んだ付け合わせとソースも回答に追加し、客の復唱と課題を一致させた。",
+    "海洋展示、果樹園体験、公園キャンプ、科学実験、日用品販売、公園案内、茶の贈答、飲食店のアレルゲン照会に役割を整合。"
+  ],
+  "checks": {
+    "exactly11AlternatingTurns": true,
+    "npcFirstAndLast": true,
+    "fiveConcreteTasksEach": true,
+    "eachTaskMatchesPreviousNpcAndPlayer": true,
+    "allPlayerUtterancesUniqueWithinCity": true,
+    "allPlayerGoalsUniqueWithinCity": true,
+    "independentCausalProgression": true,
+    "concreteClosureEachScenario": true,
+    "japaneseOnlyDialogueAndGoals": true,
+    "fictionalVenuePremisesExplicit": true,
+    "noUnverifiedRealVenuePolicyClaims": true,
+    "noMedicalOrOperatorGuarantee": true,
+    "originalScenarioLocationAndTurnIdsRetainedByProjection": true,
+    "noPeerProseRead": true,
+    "finalEditedPassagesReread": true,
+    "arithmeticChecked": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "自己点検のみ。日本語母語話者・人間・他著者による審査は未実施。",
+    "施設、経路、料金、営業時間、商品、運用規則は実在情報として検証していない。すべて架空の場面設定。",
+    "学習上の会話であり、アレルギーの安全判定、医療助言、実在施設の対応保証ではない。",
+    "ルートの統合、既存NPC資産の対応、端末表示と公開承認は親セッションの後工程。",
+    "今回出力はステージングのみ。リモート永続化はこの著者では実施していない。"
+  ]
+}
