@@ -1,0 +1,409 @@
+{
+  "cityId": "CTY-JP-45206",
+  "baseline": "5e9e90add76f00a3e660df23a611cfa2988ccd2b",
+  "inputSha256": "531946e316f5b3c3a1992922f231749aef5a0619f5fc13a440e7afae09507874",
+  "sourceSha256": "9fbbf9ddfeda0373175f35f216cfff8874dc7bffd62a02467d0f74a2052fa74d",
+  "roleAlignmentSha256": "7789d63bbaf964510174a9a443bec9ad6b8565baa9a54b6df5936ae54f039b3b",
+  "sourceFile": "scripts/dialogue-authoring/prf-045-city-cty-jp-45206.json",
+  "roleAlignmentFile": "docs/dialogue-workspace/content-qa/PRF-045_CITY_CTY-JP-45206_ROLE_ALIGNMENT.json",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-45206-01-001": {
+      "title": "運転再開の見込みと乗れる列車を区別する",
+      "causalProgression": "日向市に配置した架空の駅運行相談窓口。遅延中に「再開見込み」の表示を見た客が、自分の列車にもすぐ乗れると思っている。対象列車と乗車案内を区別し、仕事先から届くオンライン参加の提案を受けて、移動の必要を再確認する。実在の運行・設備・払戻条件は示さない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "ask_if_restart_estimate_allows_platform_boarding_wait",
+          "goal": "仕事先への列車が停止中で、再開見込みの表示を見てホームで乗車待ちしてよいか尋ねる。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "show_ticket_and_admit_routewide_notice_misread",
+          "goal": "切符を示し、路線全体の表示を自分の列車に乗れる意味と取り違えたと説明する。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "check_need_to_travel_after_remote_meeting_offer",
+          "goal": "職場からオンライン参加の提案が来たと伝え、再開を待つ前に移動の必要を確認する。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "identify_company_booking_and_avoid_immediate_refund_assumption",
+          "goal": "会社が別サービスで手配した切符と伝え、即返金と決めず手配担当へ変更を相談すると述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "choose_remote_attendance_and_consult_ticket_change",
+          "goal": "オンライン参加を承諾されたため移動をやめ、切符変更を会社へ確認し再開見込みだけでホームへ向かわないと伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-45206-02-001": {
+      "title": "二人分の通知を一件の予約にまとめられるか尋ねる",
+      "causalProgression": "架空の行政通知相談窓口。同居家族と自分に別々の通知が届いた客が、一人で予約すれば双方の手続きも済むと思っている。本人の相談と家族の情報の扱いを分け、同席・代理・言語支援の条件を確認してから予約方法を決める。具体的な代理権や支援提供を保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "ask_one_reservation_for_two_separate_addressees",
+          "goal": "自分と同居の兄への通知を示し、自分だけの予約で二人分の手続きも済むと思ったと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "state_brother_absent_without_proxy_documents",
+          "goal": "兄は仕事で不在で相談を頼まれたが、代理の書類は預かっていないと答える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "prioritize_own_deadline_and_ask_brothers_consultation_conditions",
+          "goal": "自分の期限と予約窓口を知りたく、兄の通知を見せるだけで手続きできると決めず相談方法を尋ねる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "request_vietnamese_support_and_check_joint_booking",
+          "goal": "ベトナム語支援を希望し兄と来られる日を探すが、一件の予約でよいか担当確認後に決めたいと伝える。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "keep_brothers_plan_unfixed_and_start_own_consultation",
+          "goal": "兄へ同席と予約条件は確認中と伝え、自分の相談を先に進め二人分の完了を約束しないと述べる。"
+        }
+      ]
+    },
+    "SC-LOC-JP-45206-03-001": {
+      "title": "領収書の旧姓に気づいて提出前に相談する",
+      "causalProgression": "架空の病院書類案内窓口。会計後、領収書に旧姓があると気づいた患者が、職場への提出のため看護師へ相談する。看護師は登録情報の確認と書類訂正を担当へ取り次ぎ、その場の手書き訂正や職場の受理を保証しない。医療内容の判断は行わない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "report_old_surname_on_current_visit_receipt",
+          "goal": "今日の受診の領収書が旧姓で、職場へそのまま提出してよいか困っていると相談する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "explain_unreported_surname_change_at_reception",
+          "goal": "受付では診察券だけを出し改姓を伝えておらず、職場の現姓と書類の名前を確認したいと説明する。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "request_official_correction_desk_before_handwriting",
+          "goal": "自分で線を引いて直す前に、正式な訂正の相談先と必要な確認書類を教えてほしいと頼む。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "state_tomorrow_deadline_without_same_day_correction_promise",
+          "goal": "提出期限は明日だが今日訂正できるとは決めず、職場へ確認中と連絡すると述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "retain_receipt_and_statement_and_check_correction_timing",
+          "goal": "明細書も旧姓だと伝え二枚とも保管して示し、訂正可否と受取時期を確認後に職場へ返事すると述べる。"
+        }
+      ]
+    },
+    "SC-LOC-JP-45206-04-001": {
+      "title": "似た傘の取り違えと自分の傘の紛失を伝える",
+      "causalProgression": "架空の警察遺失相談窓口。店の傘立てから自分の物と思った傘を持ち出した客が、途中で別の傘と気づいて店へ返した。自分の傘は不明なままなので、取り違えの経緯と修理跡を伝えて相談する。盗難や所有者、発見を断定しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "explain_wrong_umbrella_returned_and_own_still_missing",
+          "goal": "似た傘を持ち出して違いに気づき店員へ返したが、自分の傘は不明だと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "describe_navy_umbrella_white_tape_repair_mark",
+          "goal": "持ち手の修理跡がないため取り違えと気づき、自分の紺色の傘には白い細いテープがあると伝える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "recount_entrance_rack_and_unchecked_hasty_pickup",
+          "goal": "入店時に入口の傘立てへ置き、退出時は急いで修理跡を見ずに似た傘を取ったと説明する。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "report_store_search_without_assuming_theft",
+          "goal": "店員が探した時にはなく、他人の取り違えも不明なので盗難と決めず相談したいと述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "request_recording_features_and_contact_after_report",
+          "goal": "店から連絡が来れば警察へも知らせると述べ、白テープと取り違えの記録、届出後の連絡方法を頼む。"
+        }
+      ]
+    },
+    "SC-LOC-JP-45206-05-001": {
+      "title": "自分と違う宛名の不在票を先に照会する",
+      "causalProgression": "架空の郵便受取相談窓口。通販の配達と思って不在票を持参した客が、宛名が自分でも家族でもないと気づく。注文履歴との照合と誤配の可能性の相談を行い、受取権限があると決めず持帰りや再配達の申込みを止める。郵便物の中身や他人の情報は開示しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "identify_unfamiliar_addressee_on_notice_at_own_address",
+          "goal": "通販と思った不在票の住所は自宅らしいが、宛名は自分でも家族でもないと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "state_previous_resident_unknown_and_receipt_assumption",
+          "goal": "転居直後で以前の居住者かも不明だが、同住所なら受け取れると思っていたと述べる。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "compare_own_order_name_and_tracking_number",
+          "goal": "注文履歴には自分の名前があり、そこの番号と不在票を比較したいと伝える。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "separate_mismatched_order_inquiry_from_unknown_notice",
+          "goal": "番号が違うため自分の注文は注文先へ聞き、不明な宛名の不在票の扱いを教えてほしいと頼む。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "refuse_other_parcel_details_and_pause_receipt_requests",
+          "goal": "中身の情報は不要と述べ、自分の荷物として受領や再配達を申し込まず不明宛名の票として相談する。"
+        }
+      ]
+    },
+    "SC-LOC-JP-45206-06-001": {
+      "title": "機械からカードを受け取ったか不明な状況を伝える",
+      "causalProgression": "架空の銀行カード相談窓口。現金自動預払機で取引後にカードを取ったか思い出せない客が、別の場所の銀行へ相談する。機械の場所・時刻とカード発行元を分けて確認し、停止などの対応と機械の照会を担当へつなぐ。回収済みや停止完了、即時返却を保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "report_uncertain_card_removal_after_cash_withdrawal",
+          "goal": "引出後にカードがなく、財布へ戻したか機械から出なかったかも思い出せないと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "provide_offsite_machine_location_time_and_receipt",
+          "goal": "別の店内の機械を今日の昼に使い、機械名と時刻の載った控えがあると伝える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "identify_different_card_issuer_from_consultation_bank",
+          "goal": "カードは別銀行の発行で、機械利用場所に近いだけの相談先へ来たと説明する。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "contact_issuer_and_ask_machine_operator_inquiry_route",
+          "goal": "発行元へ連絡すると述べ、機械内と断定せず控えから管理先を調べる方法を尋ねる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "avoid_same_day_return_assumption_and_separate_two_inquiries",
+          "goal": "即日返却と決めず発行元へ停止などを相談し、管理先には時刻と場所を伝えて別々に照会すると述べる。"
+        }
+      ]
+    },
+    "SC-LOC-JP-45206-07-001": {
+      "title": "ふたの不具合と思った弁当箱の大きさを照合する",
+      "causalProgression": "架空のスーパー商品相談窓口。弁当箱のふたが閉まらない客が、家族が使う似た別サイズの物と入れ替わった可能性に気づく。購入記録・現物の表示を照合し、欠陥や交換を断定せず不足する物を確認する。商品の改造や強引な使用を勧めない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "request_check_of_lunchbox_lid_lifting",
+          "goal": "昨日買った弁当箱のふたが浮いて閉まらず、不具合か見てほしいと相談する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "show_receipt_body_lid_with_uncertain_original_pair",
+          "goal": "レシート・本体・ふたを示し、包装は家で、元からのふたか確信がないと伝える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "explain_possible_family_lid_mix_after_washing",
+          "goal": "家族の色違い品も同じ大きさと思い、洗った後にふたを一緒に置いて取り違えた可能性を説明する。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "check_home_packaging_and_pair_before_defect_claim",
+          "goal": "家で包装と家族のふたを確認し、破損と決めず元の組み合わせを確かめて再相談すると述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "report_correct_pair_behavior_before_exchange_request",
+          "goal": "正しい組合せでの状態を伝えて交換可否を再相談し、今日は三点を持ち帰り保管すると述べる。"
+        }
+      ]
+    },
+    "SC-LOC-JP-45206-08-001": {
+      "title": "近道の通行止めを踏まえて散歩を縮める",
+      "causalProgression": "架空の公園経路相談所。帰りのバスまでに散歩したい客が、紙の図の近道を使うつもりだが、当日の掲示では通行止めになっている。公園スタッフが掲示と図の違いを説明し、帰路の時間を残して近い休憩場所までに範囲を縮める。実在のバス時刻・工事・経路の安全は保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "propose_bridge_shortcut_before_return_bus",
+          "goal": "帰りのバスに間に合うよう紙の図の橋を近道に使い、奥の広場まで歩くつもりだと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "identify_old_family_map_and_unseen_current_closure",
+          "goal": "家族から以前の図をもらい当日の掲示は見ておらず、橋なしでは帰路が長くなると思うと述べる。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "include_bus_stop_walk_and_choose_nearer_rest",
+          "goal": "出口からバス停までの時間を入れていなかったと伝え、奥の広場をやめ近くの休憩できる道を尋ねる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "plan_early_exit_if_nearby_rest_seat_unavailable",
+          "goal": "座れると決めて奥へ進まず近くで休めるか見て、空席がなければ散歩を切り上げると述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "recheck_bus_time_and_follow_current_not_old_map",
+          "goal": "バス時刻表を見直して退出目安を決め、古い図の橋を使わず当日の掲示で近い範囲を歩くと伝える。"
+        }
+      ]
+    }
+  },
+  "corrections": [
+    "最終自己再読で、銀行の題名をカードが機械へ戻るとも読める表現から、利用後に受け取ったか不明な状況へ修正した。郵便も宛名が読めないのではなく心当たりがないという発話に整えた。",
+    "汎用的に繰り返されていた旧課題を、各発話に対応する四十の具体的目標へ書き換えた。",
+    "運行再開の見込みと個別の乗車案内を分け、オンライン参加を選んだ後も切符変更を確定扱いにしない。",
+    "同居家族と本人の通知を分け、同居や依頼だけで代理手続きができると断定しない。",
+    "看護師は旧姓書類の訂正を自ら行わず、受付・会計へ取り次ぐ。",
+    "傘の取り違えと自分の傘の不明を分け、盗難と断定しない。",
+    "異なる宛名の不在票と自分の注文を番号で区別し、他人の荷物の情報開示や受取を保証しない。",
+    "機械から戻らなかった可能性と紛失を未確定のまま伝え、管理先と発行元を分け、停止済みとは扱わない。",
+    "弁当箱はふたの組み違いを確認してから交換を相談し、公園は当日の通行止めと帰りのバス停までの時間を踏まえて範囲を縮める。"
+  ],
+  "checks": {
+    "exactScenarioIds": true,
+    "elevenAlternatingTurnsEach": true,
+    "fiveSpecificTasksEach": true,
+    "fortyDistinctPlayerTurns": true,
+    "fortyDistinctTaskGoals": true,
+    "allProseAndRoleCorrectionsReread": true,
+    "specificCausalProgression": true,
+    "concreteNpcClosures": true,
+    "japaneseOnlyProse": true,
+    "supportedCategoriesExactMatch": true,
+    "fictionalVenuesNullHoursAddresses": true,
+    "noRealPolicyScheduleMedicalOrRefundGuarantees": true,
+    "noSharedOrRuntimeWrites": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "独立した自己レビューのみ。人間・母語話者・同僚のレビューは未実施。",
+    "実在の地理・事業者の取扱条件・運行や施設の設備は未検証。既存画像との一致は保証しない。",
+    "実機確認・公開承認・翻訳は行っていない。"
+  ]
+}
