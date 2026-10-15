@@ -1,0 +1,75 @@
+{
+  "cityId": "CTY-JP-43205",
+  "baseline": "de054c902c4a00ad79944220ae87a64373782f14",
+  "inputSha256": "cf6a2fc1155f230d8cded36d2991df5246b851345e695f954719446785a8cd7f",
+  "sourceSha256": "2be17596933e0dd1f286c605dc9fe82bc87b2e16fb8d60f193499c6e3bd3e13f",
+  "roleAlignmentSha256": "cd4f0c3813159e6b9af4c30ded28ae88bc8d84c416fc58b559e047bc92602908",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "paths": {
+    "source": "scripts/dialogue-authoring/prf-043-city-cty-jp-43205.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-043_CITY_CTY-JP-43205_ROLE_ALIGNMENT.json"
+  },
+  "causalPlots": {
+    "SC-LOC-JP-43205-01-001": "大きな荷物では階段を避けたいがエレベーターの出口と待合改札が異なる。同行者へ改札表示を共有し、返信を得てから合流する出口と経路を確定する。",
+    "SC-LOC-JP-43205-02-001": "契約日と居住開始日の混同を引越しメモで解く。勤務先保険の住所連絡は別の質問とし、担当へ渡す情報を分ける。",
+    "SC-LOC-JP-43205-03-001": "来月十五日の希望が今月と復唱されたため月を訂正。同じ医師を優先し、別日候補と連絡方法を相談するが予約変更は確定しない。",
+    "SC-LOC-JP-43205-04-001": "盗難の心配から相談を始め、写真で停めた列を修正する。移動原因や施錠の記憶は未確認として、車体資料と管理者への照会方針を整理する。",
+    "SC-LOC-JP-43205-05-001": "発送日が分かればよいとの思い込みを必着の表示で修正する。記録種別と不足部署名を提出先に確かめるため書類を持ち帰り、発送方法の決定を保留する。",
+    "SC-LOC-JP-43205-06-001": "引越しで給与口座を作り直すと思っていたが旧通帳を所持。既存口座の状態、住所の不一致、勤務先の希望を分け、新規開設の判断より先に相談する。",
+    "SC-LOC-JP-43205-07-001": "目立つ値札は二箱の表示だった。家に残りがあるため一箱で足り、小容量品の中袋数と対応値札を照らし合わせて一箱を選ぶ。",
+    "SC-LOC-JP-43205-08-001": "家族の入口写真と現在地が異なり待合場所も未指定と分かる。家族の疲れやすさを考慮して散歩前の合流へ変更し、休憩所名と到着連絡を共有する。"
+  },
+  "corrections": [
+    "All eight institution names replaced with explicit generic fictional learning venues; unverified opening hours and addresses cleared.",
+    "Park role changed from Community Staff to supported Park Staff; other supported category/job pairings retained.",
+    "Appointment revision uses an explicit next-month fifteenth versus this-month fifteenth misunderstanding, with matching Player goals and final readback; no available appointment is asserted.",
+    "Postal closing Player line revised to a natural positive decision to seal only after checking and bring the answer back; no dispatch or arrival guarantee added.",
+    "Supermarket wording distinguishes large printed price from expensive price, and the final Player action names one box of the selected capacity.",
+    "Park NPC explicitly reads the fictional resting-place name so that the Player request receives a spoken answer, rather than merely pointing at an unspecified label.",
+    "Professional-role outcomes remain fact gathering, pending confirmation or handoff rather than diagnosis, eligibility decision, theft certification or account-use guarantee."
+  ],
+  "checks": {
+    "inputFullyRead": true,
+    "allFinalTitlesPremisesTurnsTasksAndRolesReread": true,
+    "exactScenarioIdsPreserved": true,
+    "elevenTurnsNpcFirstPlayerAlternating": true,
+    "fiveTasksAlignedToPrecedingNpcAndPlayer": true,
+    "allFortyPlayerUtterancesUnique": true,
+    "allFortyTaskIntentsUnique": true,
+    "allFortyTaskGoalsUnique": true,
+    "allEightFinalNpcClosuresDistinct": true,
+    "noGenericAcknowledgmentOnlyPlayerTurns": true,
+    "japaneseOnlySpokenContent": true,
+    "noLevelGates": true,
+    "causalProgressionReviewedIndividually": true,
+    "stationAndParkPlotsDistinct": "Station resolves a luggage/accessibility constraint by relocating the companion; park postpones walking and arranges a resting-place reunion based on family fatigue.",
+    "supportedExistingNpcCategoriesJobsOnly": true,
+    "fictionalNamesAndPremises": true,
+    "allOpeningHoursAndAddressesNull": true,
+    "noRealLocalRouteOrPolicyClaims": true,
+    "numbersNamesAndReadbackChecked": true,
+    "noNewAssetsOrCategories": true,
+    "noActiveCheckoutRuntimeSharedOrGitWrites": true,
+    "onlyAssignedCityProseRead": true,
+    "finalExactByteHashesVerified": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "Independent author self-review only; no native-speaker, human or peer review has occurred.",
+    "Fictional learning scenes do not verify current Minamata institutions, physical routes, hours, medical scheduling, municipal procedures, postal services or banking conditions.",
+    "No runtime integration, device execution, artwork inspection or release approval was performed by this author; root integrates metadata and runtime separately."
+  ]
+}
