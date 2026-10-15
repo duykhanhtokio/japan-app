@@ -1,0 +1,71 @@
+{
+  "cityId": "CTY-JP-43206",
+  "baseline": "de054c902c4a00ad79944220ae87a64373782f14",
+  "inputSha256": "59448dfa1ac73e3bd02099220c8a0c806bbe2d2ee64c2de7b1f5c3b7cfbc5a40",
+  "sourceSha256": "5619299a7ef71b267d32ada81d7337311c261b5daffb442ebaa26018fe1fb2b4",
+  "roleAlignmentSha256": "eb43ab09ad038832760efe5e33f329e31fd210b87be7470113f372a09dd5c26e",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40,
+    "uniquePlayerUtterances": 40,
+    "uniqueTaskIntents": 40,
+    "uniqueTaskGoals": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-43206-01-001": "友人の画像の出発駅が現在地ではなく検索日も昨日だった→現在地・当日へ条件を修正→降車駅を紙で示す→改札前の行き先・時刻の照合を選ぶ。",
+    "SC-LOC-JP-43206-02-001": "証明書名の写しを自宅コピーと取り違える→交付書類そのものと区別→家の原本が古く「最近」が不明→発行日を確認して提出先へ問い合わせるため申請を保留。",
+    "SC-LOC-JP-43206-03-001": "常にを頻繁にと誤解→感じない時間もあると訂正→左指先の感覚と気づいた時期を本人の言葉で記録→考える時間の希望とともに医師への申し送り。",
+    "SC-LOC-JP-43206-04-001": "荷物料金の連絡に不安→本人の未返信・未送金を確認→番号も日付も異なる画像の逆順を整理→同一送信者か未確認と明記し相談担当へ引き継ぐ。",
+    "SC-LOC-JP-43206-05-001": "携帯住所の改行後を写し忘れる→部屋番号か不明→追跡でも住所不足は補えないと理解→未預かりの箱と新しい送り状を持ち帰り家族に確認。",
+    "SC-LOC-JP-43206-06-001": "受取人欄に自分の氏名を書いた疑い→受取人と依頼人を区別→案内の契約番号・氏名順を再読→家賃と手数料を分け、新用紙の確認後まで送金保留。",
+    "SC-LOC-JP-43206-07-001": "持参袋が水で濡れる→空き箱の底を見て食品だけ収納し洗剤は別持ち→ポイント専用カードでは決済できないと理解→現金を選び商品と合計の確認へ。",
+    "SC-LOC-JP-43206-08-001": "図の上を前方と誤解し建物の位置が合わない→休憩所に合わせて向きを読む→一周せず花壇往復とベンチを選ぶ→丸い時計で友人の休憩所を識別して戻る。"
+  },
+  "corrections": [
+    "既存の反復的な一般応答を全八件で新しい因果展開と四十の具体的応答へ置換。",
+    "全タスク識別子を都市内連番だけでなく具体的な伝達目的を示す固有の意味識別子に修正。",
+    "駅の最初の目標から、まだ本人が説明していない画像の送信者情報を要求する表現を除去。",
+    "警察の目標から直接の危険なしという断定および注文案内が正規だという認定を除去し、本人が話した範囲に合わせる。",
+    "銀行の前提を、氏名欄の誤記が確定したという表現から本人が疑って相談する表現へ修正。",
+    "未確認の実在風施設名と営業時間を架空名・空値へ改め、公園職員の役割を Park Staff に整合。"
+  ],
+  "checks": {
+    "assignedIdsExact": true,
+    "elevenAlternatingTurnsPerScenario": true,
+    "fiveConcreteContextAlignedTasksPerScenario": true,
+    "allPlayerUtterancesUnique": true,
+    "allTaskGoalsUnique": true,
+    "allTaskIntentsSpecificAndUnique": true,
+    "japaneseOnlySpokenLines": true,
+    "npcFarewellAndConcreteClosureEveryScenario": true,
+    "titlesPremisesRolesAndEveryFinalTurnAndTaskReread": true,
+    "causalProgressionAndOutcomesReviewed": true,
+    "noAcknowledgmentOnlyPlayerTurns": true,
+    "noLevelGate": true,
+    "noRealOperatorPolicyClaims": true,
+    "supportedNpcCategoriesChecked": true,
+    "unverifiedHoursAndAddressesNull": true,
+    "ownCityOnlyNoCrossReading": true,
+    "stageOnlyNoActiveRepoWrites": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "独立著者による自己再読と構造検査。人間・母語話者・他著者による審査ではない。",
+    "実在施設の営業、運行、制度、料金、地理、個別の診断や事件認定は未検証。",
+    "端末表示・音声・評価エンジンとの実行時統合は未検証。ルートと実行時データへの反映は担当外。"
+  ],
+  "paths": {
+    "source": "scripts/dialogue-authoring/prf-043-city-cty-jp-43206.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-043_CITY_CTY-JP-43206_ROLE_ALIGNMENT.json"
+  }
+}
