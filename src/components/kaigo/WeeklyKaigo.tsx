@@ -1,74 +1,956 @@
-import {useCallback,useEffect,useRef,useState,type ReactNode} from 'react';
-import {Image,Pressable,ScrollView,StyleSheet,Text,View,useWindowDimensions,type ImageSourcePropType,type NativeScrollEvent,type NativeSyntheticEvent} from 'react-native';
-import {RoyalContentPanel,RoyalExplanationPanel} from '@/components/ui/RoyalPanels';
-import {RoyalBackButton,ROYAL_FONT} from '@/components/ui/RoyalSurface';
-import {kaigoCourse} from '@/data/kaigo';
-import {kaigoCatalog,kaigoTopics,type CatalogEntry} from '@/data/kaigo/catalog';
-import {illustrationForStudyDay} from '@/data/kaigo/weekly-art-allocation';
-import {kaigoDepthFigures} from '@/data/kaigo/depth-figures';
-import {assessmentRevisionForWeek,completionKey,emptyCompletion,learningWeeks,mockForDay,questionsForWeek,restoreCompletion,sectionsFor,weekDone,type Completion,type WeeklyQuestion} from '@/data/kaigo/weekly-learning';
-import {loadKaigoState,saveKaigoState} from '@/services/kaigo-storage';
-import type {MockForm,RubyToken} from '@/data/kaigo/types';
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
+import {
+  Image,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  useWindowDimensions,
+  type NativeScrollEvent,
+  type NativeSyntheticEvent,
+} from "react-native";
+import {
+  RoyalContentPanel,
+  RoyalExplanationPanel,
+} from "@/components/ui/RoyalPanels";
+import { ROYAL_FONT } from "@/components/ui/RoyalSurface";
+import RoyalPageBackground from "@/components/ui/RoyalPageBackground";
+import {
+  TokuteiHeader,
+  TokuteiDayCard,
+  TokuteiActionBar,
+} from "@/components/tokutei/TokuteiChrome";
+import {
+  useStudyAppearance,
+  ReadingAppearanceControl,
+  TranslationText,
+} from "@/components/tokutei/StudyAppearance";
+import { useAppLanguage } from "@/context/LanguageContext";
+import { kaigoCourse } from "@/data/kaigo";
+import { kaigoCatalog, type CatalogEntry } from "@/data/kaigo/catalog";
+import {
+  japaneseSectionsFor,
+  titleForDay,
+} from "@/data/kaigo/japanese-reading";
+import { illustrationForStudyDay } from "@/data/kaigo/weekly-art-allocation";
+import { kaigoDepthFigures } from "@/data/kaigo/depth-figures";
+import {
+  assessmentRevisionForWeek,
+  completionKey,
+  emptyCompletion,
+  learningWeeks,
+  mockForDay,
+  questionsForWeek,
+  restoreCompletion,
+  weekDone,
+  type Completion,
+  type WeeklyQuestion,
+} from "@/data/kaigo/weekly-learning";
+import { loadKaigoState, saveKaigoState } from "@/services/kaigo-storage";
+import type { MockForm, RubyToken } from "@/data/kaigo/types";
 
-function Action({title,onPress,disabled=false,testID}:{title:string;onPress:()=>void;disabled?:boolean;testID?:string}){return <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={title} accessibilityState={{disabled}} disabled={disabled} onPress={onPress} style={({pressed})=>[s.action,disabled&&s.disabled,pressed&&{opacity:.8}]}><Text style={s.actionText}>{title}</Text></Pressable>;}
-function Tick({label='Đã hoàn thành'}:{label?:string}){return <Text accessibilityLabel={label} style={s.tick}>✓</Text>;}
-function Ornament(){return <View accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={s.ornament}><View style={s.line}/><Text style={s.ornamentText}>❖</Text><View style={s.line}/></View>;}
-function Japanese({text,tokens}:{text:string;tokens?:RubyToken[]}){return tokens?.length?<View style={s.rubyRow}>{tokens.map((t,i)=>t.text==='\n'?<View key={i} style={{width:'100%'}}/>:<View key={i} style={s.rubyWord}>{t.readingKana&&<Text style={s.kana}>{t.readingKana}</Text>}<Text style={s.japanese}>{t.text}</Text></View>)}</View>:<Text selectable style={s.japanese}>{text}</Text>;}
-function useSaved<T>(key:string,initial:()=>T,restore:(raw:string|null)=>T){
- const [value,setValue]=useState(initial),[ready,setReady]=useState(false),[saving,setSaving]=useState(false),[error,setError]=useState(false);const current=useRef(value),loaded=useRef(false),restoreRef=useRef(restore);restoreRef.current=restore;
- useEffect(()=>{let live=true;loaded.current=false;setReady(false);void loadKaigoState(key).then(raw=>{if(live){const next=restoreRef.current(raw);current.current=next;setValue(next);loaded.current=true;setReady(true);setError(false);}}).catch(()=>{if(live)setError(true);});return()=>{live=false;};},[key]);
- const update=useCallback(async (change:(old:T)=>T)=>{if(!loaded.current)return;const next=change(current.current);current.current=next;setSaving(true);try{await saveKaigoState(key,next);setValue(next);setError(false);}catch{setError(true);}finally{setSaving(false);}},[key]);
- const retry=()=>{if(loaded.current)void update(()=>current.current);else void loadKaigoState(key).then(raw=>{const next=restoreRef.current(raw);current.current=next;setValue(next);loaded.current=true;setReady(true);setError(false);}).catch(()=>setError(true));};
- return {value,ready,saving,error,update,retry};
+function Action({
+  title,
+  onPress,
+  disabled = false,
+  testID,
+}: {
+  title: string;
+  onPress: () => void;
+  disabled?: boolean;
+  testID?: string;
+}) {
+  return (
+    <Pressable
+      testID={testID}
+      accessibilityRole="button"
+      accessibilityLabel={title}
+      accessibilityState={{ disabled }}
+      disabled={disabled}
+      onPress={onPress}
+      style={[s.action, disabled && s.disabled]}
+    >
+      <Text style={s.actionText}>{title}</Text>
+    </Pressable>
+  );
 }
-type Route={kind:'day';day:number}|{kind:'assessment';week:number}|{kind:'mock';id:string}|null;
-type AssessmentState={answers:Record<string,number>;submitted:boolean};
-function restoreAssessment(raw:string|null,questions:WeeklyQuestion[]):AssessmentState{
- try{const p=JSON.parse(raw??'null');if(typeof p?.submitted!=='boolean'||!p.answers||typeof p.answers!=='object'||Array.isArray(p.answers))return {answers:{},submitted:false};
- const answers:Record<string,number>={};for(const [id,a] of Object.entries(p.answers))if(typeof a==='number'&&Number.isInteger(a)&&a>=0&&a<4&&questions.some(q=>q.id===id))answers[id]=a;
- return {answers,submitted:p.submitted&&Object.keys(answers).length===questions.length};}catch{return {answers:{},submitted:false};}
+function useSaved<T>(
+  key: string,
+  initial: () => T,
+  restore: (raw: string | null) => T,
+) {
+  const [value, setValue] = useState(initial),
+    [ready, setReady] = useState(false),
+    [saving, setSaving] = useState(false),
+    [error, setError] = useState(false);
+  const current = useRef(value),
+    loaded = useRef(false),
+    restoreRef = useRef(restore),
+    queue = useRef(Promise.resolve()),
+    writes = useRef(0),
+    live = useRef(true);
+  restoreRef.current = restore;
+  useEffect(() => {
+    live.current = true;
+    loaded.current = false;
+    setReady(false);
+    void loadKaigoState(key)
+      .then((raw) => {
+        if (live.current) {
+          const next = restoreRef.current(raw);
+          current.current = next;
+          setValue(next);
+          loaded.current = true;
+          setReady(true);
+          setError(false);
+        }
+      })
+      .catch(() => {
+        if (live.current) setError(true);
+      });
+    return () => {
+      live.current = false;
+    };
+  }, [key]);
+  const update = useCallback(
+    async (change: (old: T) => T): Promise<boolean> => {
+      if (!loaded.current) return false;
+      const next = change(current.current);
+      current.current = next;
+      const n = ++writes.current;
+      setSaving(true);
+      const write = queue.current
+        .catch(() => {})
+        .then(() => saveKaigoState(key, next));
+      queue.current = write;
+      try {
+        await write;
+        if (live.current) {
+          setValue(next);
+          setError(false);
+        }
+        return true;
+      } catch {
+        if (live.current) setError(true);
+        return false;
+      } finally {
+        if (live.current && n === writes.current) setSaving(false);
+      }
+    },
+    [key],
+  );
+  const retry = () => {
+    if (loaded.current) void update(() => current.current);
+    else
+      void loadKaigoState(key)
+        .then((raw) => {
+          if (!live.current) return;
+          const next = restoreRef.current(raw);
+          current.current = next;
+          setValue(next);
+          loaded.current = true;
+          setReady(true);
+          setError(false);
+        })
+        .catch(() => {
+          if (live.current) setError(true);
+        });
+  };
+  return { value, ready, saving, error, update, retry };
 }
-function WeeklyAssessment({week,completed,onComplete,completeReady}:{week:number;completed:boolean;onComplete:()=>void;completeReady:boolean}){
- const questions=questionsForWeek(week),st=useSaved<AssessmentState>(`@japan_app_kaigo_weekly:assessment:${assessmentRevisionForWeek(week)}:${week}`,()=>({answers:{},submitted:false}),raw=>restoreAssessment(raw,questions));const [index,setIndex]=useState(0);const q=questions[index],answered=Object.keys(st.value.answers).length,allAnswered=questions.length>0&&answered===questions.length,score=questions.filter(q=>st.value.answers[q.id]===q.correctIndex).length;
- if(!q)return <Text style={s.light}>Tuần này chưa có bài đánh giá.</Text>;
- return <View testID={`kaigo-weekly-assessment-${week}`}><RoyalExplanationPanel style={s.infoPanel}><Text style={s.lightHeading}>Đánh giá cuối tuần {week}</Text><Text style={s.light}>{questions.length} câu · 4 lựa chọn/câu · hoàn thành không phụ thuộc điểm đạt.</Text></RoyalExplanationPanel><RoyalContentPanel style={s.paper}>
- {st.value.submitted?<View><Text style={s.heading}>Kết quả {score}/{questions.length}</Text><Text style={s.body}>Đã trả lời đủ câu. Xem giải thích bên dưới rồi bấm “Hoàn thành kiểm tra” để ghi dấu ✓ vào lịch cuối tuần.</Text></View>:<Text style={s.meta}>Đã trả lời {answered}/{questions.length} · Câu {index+1}</Text>}
- <Text style={s.heading}>Câu {index+1} / {questions.length}</Text>
- {q.reading&&<Japanese text={q.reading} tokens={q.readingRuby}/>}{q.japanese&&<Japanese text={q.japanese} tokens={q.ruby}/>}<Text style={s.body}>{q.prompt}</Text>
- {q.options.map((option,i)=><Pressable key={q.id+'-'+i} testID={`kaigo-weekly-option-${i}`} accessibilityRole="radio" aria-checked={st.value.answers[q.id]===i} accessibilityLabel={`Đáp án ${i+1}: ${option}`} accessibilityState={{checked:st.value.answers[q.id]===i,disabled:st.value.submitted||!st.ready||st.saving}} disabled={st.value.submitted||!st.ready||st.saving} onPress={()=>void st.update(old=>({...old,answers:{...old.answers,[q.id]:i}}))} style={[s.option,st.value.answers[q.id]===i&&s.optionSelected]}><Text style={s.optionNumber}>{i+1}</Text><Text style={q.language==='ja'?s.japanese:s.body}>{option}</Text></Pressable>)}
- {st.value.submitted&&<View testID="kaigo-weekly-review"><Ornament/><Text style={s.heading}>{st.value.answers[q.id]===q.correctIndex?'Đúng':'Cần ôn lại'} · Đáp án {q.correctIndex+1}</Text>{q.rationales.map((r,i)=><Text key={i} style={s.body}>{i+1}. {r}</Text>)}</View>}
- <View style={s.navigation}><Action title="Câu trước" disabled={index===0} onPress={()=>setIndex(index-1)} testID="kaigo-weekly-question-prev"/><Action title="Câu sau" disabled={index===questions.length-1} onPress={()=>setIndex(index+1)} testID="kaigo-weekly-question-next"/></View>
- <View style={s.questionGrid}>{questions.map((x,i)=><Pressable key={x.id} testID={`kaigo-weekly-question-${i+1}`} accessibilityRole="button" accessibilityLabel={`Câu ${i+1}${st.value.answers[x.id]!==undefined?', đã trả lời':''}`} onPress={()=>setIndex(i)} style={[s.questionCell,index===i&&s.questionCurrent]}><Text style={s.questionNumber}>{i+1}{st.value.answers[x.id]!==undefined?' •':''}</Text></Pressable>)}</View>
- {!st.value.submitted?<Action title={allAnswered?'Nộp bài và xem giải thích':`Trả lời đủ ${questions.length} câu để nộp`} disabled={!st.ready||st.saving||!allAnswered} testID="kaigo-weekly-submit" onPress={()=>void st.update(old=>({...old,submitted:true}))}/>:<View><Action title={completed?'✓ Đã hoàn thành kiểm tra':'Hoàn thành kiểm tra'} disabled={!completeReady||completed} testID="kaigo-weekly-complete-assessment" onPress={onComplete}/><Action title="Làm lại bài đánh giá" testID="kaigo-weekly-restart" disabled={st.saving} onPress={()=>{void st.update(()=>({answers:{},submitted:false}));setIndex(0);}}/></View>}
- {st.error&&<Action title="Chưa lưu được · Thử lại" onPress={st.retry}/>}</RoyalContentPanel></View>;
+type Route =
+  | { kind: "day"; day: number }
+  | { kind: "assessment"; week: number }
+  | { kind: "mock"; id: string }
+  | null;
+type AssessmentState = { answers: Record<string, number>; submitted: boolean };
+function restoreAssessment(
+  raw: string | null,
+  questions: WeeklyQuestion[],
+): AssessmentState {
+  try {
+    const p = JSON.parse(raw ?? "null");
+    if (
+      typeof p?.submitted !== "boolean" ||
+      !p.answers ||
+      typeof p.answers !== "object" ||
+      Array.isArray(p.answers)
+    )
+      return { answers: {}, submitted: false };
+    const answers: Record<string, number> = {};
+    for (const [id, a] of Object.entries(p.answers))
+      if (
+        typeof a === "number" &&
+        Number.isInteger(a) &&
+        a >= 0 &&
+        a < 4 &&
+        questions.some((q) => q.id === id)
+      )
+        answers[id] = a;
+    return {
+      answers,
+      submitted:
+        p.submitted && Object.keys(answers).length === questions.length,
+    };
+  } catch {
+    return { answers: {}, submitted: false };
+  }
 }
-function StudyImage({source,aspectRatio,captionVi,testID}:{source:ImageSourcePropType;aspectRatio:number;captionVi:string;testID?:string}){
- const {width,height}=useWindowDimensions();const maxWidth=width>height?Math.max(120,height-170)*aspectRatio:undefined;
- return <View><View style={{alignItems:'center'}}><Image source={source} testID={testID} accessibilityLabel={captionVi} resizeMode="cover" style={[s.illustration,{aspectRatio,maxWidth}]}/></View><Text style={s.caption}>{captionVi}</Text></View>;
+function WeeklyAssessment({
+  week,
+  completed,
+  onComplete,
+  completeReady,
+}: {
+  week: number;
+  completed: boolean;
+  onComplete: () => void;
+  completeReady: boolean;
+}) {
+  const questions = questionsForWeek(week),
+    st = useSaved<AssessmentState>(
+      `@japan_app_kaigo_weekly:assessment:${assessmentRevisionForWeek(week)}:${week}`,
+      () => ({ answers: {}, submitted: false }),
+      (raw) => restoreAssessment(raw, questions),
+    );
+  const [index, setIndex] = useState(0),
+    [translationOpen, setTranslationOpen] = useState(false),
+    scroll = useRef<ScrollView>(null),
+    { colors } = useStudyAppearance();
+  const q = questions[index],
+    answered = Object.keys(st.value.answers).length,
+    allAnswered = questions.length > 0 && answered === questions.length,
+    score = questions.filter(
+      (x) => st.value.answers[x.id] === x.correctIndex,
+    ).length;
+  const move = (next: number) => {
+    setIndex(next);
+    scroll.current?.scrollTo({ y: 0, animated: false });
+  };
+  if (!q)
+    return (
+      <Text style={[s.body, { color: colors.text }]}>
+        この週の確認テストは準備中です。
+      </Text>
+    );
+  return (
+    <View style={s.root} testID={`kaigo-weekly-assessment-${week}`}>
+      <ScrollView ref={scroll} contentContainerStyle={s.content}>
+        <View style={s.article}>
+          <RoyalContentPanel style={s.paper}>
+            <Text style={s.heading}>第{week}週 · 確認テスト</Text>
+            <Text style={s.meta}>
+              {st.value.submitted
+                ? `結果 ${score}/${questions.length}`
+                : `問題 ${index + 1}/${questions.length} · 解答済み ${answered}`}
+            </Text>
+            <Action
+              title={translationOpen ? "翻訳を閉じる" : "翻訳を見る"}
+              onPress={() => setTranslationOpen((v) => !v)}
+            />
+            {q.reading && (
+              <Text selectable style={s.japanese}>
+                {q.reading}
+              </Text>
+            )}
+            {q.japanese && (
+              <Text selectable style={s.japanese}>
+                {q.japanese}
+              </Text>
+            )}
+            {q.language === "vi" && !translationOpen && (
+              <Text style={s.body}>
+                この問題の日本語本文は整備中です。翻訳を開くと既存のベトナム語教材を確認できます。
+              </Text>
+            )}
+            {translationOpen && <TranslationText>{q.prompt}</TranslationText>}
+            {(q.language === "ja" || translationOpen) &&
+              q.options.map((option, i) => (
+                <Pressable
+                  key={q.id + "-" + i}
+                  testID={`kaigo-weekly-option-${i}`}
+                  accessibilityRole="radio"
+                  accessibilityState={{
+                    checked: st.value.answers[q.id] === i,
+                    disabled: st.value.submitted || !st.ready || st.saving,
+                  }}
+                  disabled={st.value.submitted || !st.ready || st.saving}
+                  onPress={() =>
+                    void st.update((old) => ({
+                      ...old,
+                      answers: { ...old.answers, [q.id]: i },
+                    }))
+                  }
+                  style={[s.option, st.value.answers[q.id] === i && s.selected]}
+                >
+                  <Text style={s.body}>
+                    {i + 1}. {option}
+                  </Text>
+                </Pressable>
+              ))}
+            {st.value.submitted && (
+              <View testID="kaigo-weekly-review">
+                <Text style={s.heading}>正答：{q.correctIndex + 1}</Text>
+                {translationOpen &&
+                  q.rationales.map((r, i) => (
+                    <TranslationText key={i}>
+                      {i + 1}. {r}
+                    </TranslationText>
+                  ))}
+              </View>
+            )}
+            {st.error && <Action title="保存を再試行" onPress={st.retry} />}
+          </RoyalContentPanel>
+        </View>
+      </ScrollView>
+      <TokuteiActionBar testID="kaigo-weekly-controls">
+        <View style={s.controls}>
+          <View style={s.control}>
+            <Action
+              title="前へ"
+              disabled={index === 0}
+              onPress={() => move(index - 1)}
+              testID="kaigo-weekly-question-prev"
+            />
+          </View>
+          <View style={s.control}>
+            <Action
+              title="次へ"
+              disabled={index === questions.length - 1}
+              onPress={() => move(index + 1)}
+              testID="kaigo-weekly-question-next"
+            />
+          </View>
+        </View>
+        {!st.value.submitted ? (
+          <Action
+            title="提出する"
+            disabled={!st.ready || st.saving || !allAnswered}
+            testID="kaigo-weekly-submit"
+            onPress={() =>
+              void st.update((old) => ({ ...old, submitted: true }))
+            }
+          />
+        ) : (
+          <View style={s.controls}>
+            <View style={s.control}>
+              <Action
+                title={completed ? "✓ 完了" : "確認テストを完了"}
+                disabled={!completeReady || completed}
+                testID="kaigo-weekly-complete-assessment"
+                onPress={onComplete}
+              />
+            </View>
+            <View style={s.control}>
+              <Action
+                title="やり直す"
+                testID="kaigo-weekly-restart"
+                disabled={st.saving}
+                onPress={() => {
+                  void st.update(() => ({ answers: {}, submitted: false }));
+                  move(0);
+                }}
+              />
+            </View>
+          </View>
+        )}
+      </TokuteiActionBar>
+    </View>
+  );
+}
+function JapaneseText({
+  text,
+  tokens,
+  testID,
+}: {
+  text: string;
+  tokens?: RubyToken[];
+  testID: string;
+}) {
+  const { colors } = useStudyAppearance();
+  return tokens?.length ? (
+    <View
+      testID={testID}
+      style={{
+        flexDirection: "row",
+        flexWrap: "wrap",
+        alignItems: "flex-end",
+        marginVertical: 8,
+      }}
+    >
+      {tokens.map((token, index) =>
+        token.text === "\n" ? (
+          <View key={index} style={{ width: "100%" }} />
+        ) : (
+          <View key={index} style={{ alignItems: "center" }}>
+            {!!token.readingKana && (
+              <Text
+                style={{ fontSize: 11, lineHeight: 17, color: colors.muted }}
+              >
+                {token.readingKana}
+              </Text>
+            )}
+            <Text
+              style={[s.japanese, { color: colors.text, marginVertical: 0 }]}
+            >
+              {token.text}
+            </Text>
+          </View>
+        ),
+      )}
+    </View>
+  ) : (
+    <Text
+      selectable
+      testID={testID}
+      style={[s.japanese, { color: colors.text }]}
+    >
+      {text}
+    </Text>
+  );
+}
+function DayReading({
+  entry,
+  onMock,
+}: {
+  entry: CatalogEntry;
+  onMock: (id: string) => void;
+}) {
+  const sections = japaneseSectionsFor(entry),
+    form = mockForDay(entry.day),
+    cover = illustrationForStudyDay(entry.day),
+    [translationOpen, setTranslationOpen] = useState(false),
+    { colors } = useStudyAppearance(),
+    { language } = useAppLanguage();
+  const translated = (text: string, id?: string) =>
+    translationOpen ? (
+      language === "vi" ? (
+        <TranslationText testID={id}>{text}</TranslationText>
+      ) : (
+        <TranslationText>この言語の翻訳は準備中です。</TranslationText>
+      )
+    ) : null;
+  return (
+    <View testID="kaigo-japanese-reader">
+      <ReadingAppearanceControl />
+      <Action
+        title={translationOpen ? "翻訳を閉じる" : "翻訳を見る"}
+        testID="kaigo-translation"
+        onPress={() => setTranslationOpen((v) => !v)}
+      />
+      <Text style={[s.heading, { color: colors.text }]}>
+        {titleForDay(entry)}
+      </Text>
+      {translated(entry.titleVi)}
+      <Text style={[s.meta, { color: colors.muted }]}>
+        第{Math.ceil(entry.day / 7)}週 · 目安30分
+      </Text>
+      <Image
+        testID={`kaigo-day-art-${entry.day}`}
+        source={cover.source}
+        resizeMode="contain"
+        style={{
+          width: "100%",
+          aspectRatio: cover.aspectRatio,
+          maxHeight: 320,
+        }}
+      />
+      {translated(cover.captionVi)}
+      {sections.map((section) => (
+        <View
+          key={section.id}
+          testID={`kaigo-reading-section-${section.id}`}
+          style={s.readingSection}
+        >
+          <Text style={[s.heading, { color: colors.text }]}>
+            {section.headingJa}
+          </Text>
+          {section.paragraphsJa.map((paragraph, index) => (
+            <JapaneseText
+              key={index}
+              testID={`kaigo-source-${section.id}-${index}`}
+              text={paragraph}
+              tokens={
+                index === 0 && paragraph === section.japanese
+                  ? section.ruby
+                  : undefined
+              }
+            />
+          ))}
+          {!section.japaneseComplete && (
+            <Text
+              testID={`kaigo-source-pending-${section.id}`}
+              style={[s.meta, { color: colors.muted }]}
+            >
+              この項目の日本語本文は整備中です。要約を本文の代わりにはしていません。
+            </Text>
+          )}
+          {translated(section.heading)}
+          {section.paragraphs.map((paragraph, index) => (
+            <View key={index}>
+              {translated(
+                paragraph,
+                `kaigo-translation-${section.id}-${index}`,
+              )}
+            </View>
+          ))}
+          {section.figureKeys?.map((figure) => (
+            <View key={figure.key}>
+              <Image
+                source={kaigoDepthFigures[figure.key]}
+                resizeMode="contain"
+                style={{
+                  width: "100%",
+                  aspectRatio: 800 / 660,
+                  maxHeight: 320,
+                }}
+              />
+              {translated(figure.captionVi)}
+            </View>
+          ))}
+        </View>
+      ))}
+      {form && (
+        <Action
+          title="予定の模擬試験を開く"
+          testID="kaigo-scheduled-mock"
+          onPress={() => onMock(form.id)}
+        />
+      )}
+    </View>
+  );
 }
 
-function DayReading({entry,onMock}:{entry:CatalogEntry;onMock:(id:string)=>void}){const sections=sectionsFor(entry),form=mockForDay(entry.day),cover=illustrationForStudyDay(entry.day);return <RoyalContentPanel style={s.paper}><Text style={s.chapter}>Ngày {entry.day} · 30 phút dự kiến</Text><Text style={s.dayTitle}>{entry.titleVi}</Text><Text style={s.meta}>{kaigoTopics.find(t=>t.id===entry.topicId)?.titleVi}</Text><StudyImage testID={`kaigo-day-art-${entry.day}`} source={cover.source} aspectRatio={cover.aspectRatio} captionVi={cover.captionVi}/><Ornament/>{sections.map((section,index)=>{return <View key={section.id} testID={`kaigo-reading-section-${section.id}`}><Text style={s.heading}>{section.heading}</Text>{section.japanese&&<Japanese text={section.japanese} tokens={section.ruby}/>} {section.paragraphs.map((p,i)=><Text selectable key={i} style={s.body}>{p}</Text>)}{section.figureKeys?.map(f=><View key={f.key}><StudyImage source={kaigoDepthFigures[f.key]} aspectRatio={800/660} captionVi={f.captionVi}/></View>)}{index<sections.length-1&&<Ornament/>}</View>;})}{form&&<Action title={`Mở đề thi thử · ${form.titleVi}`} testID="kaigo-scheduled-mock" onPress={()=>onMock(form.id)}/>}</RoyalContentPanel>;}
-
-export function WeeklyKaigo({onBack,renderMock}:{onBack:()=>void;renderMock:(form:MockForm)=>ReactNode}){
- const progress=useSaved(completionKey,emptyCompletion,restoreCompletion);const [week,setWeek]=useState(1),[route,setRoute]=useState<Route>(null),[tab,setTab]=useState<'calendar'|'mocks'>('calendar'),[frameWidth,setFrameWidth]=useState(350),[endReached,setEndReached]=useState(false);const scroll=useRef<ScrollView>(null),geometry=useRef({height:0,content:0,y:0});
- const restoredWeek=useRef(false);useEffect(()=>{if(progress.ready&&!restoredWeek.current){setWeek(progress.value.lastWeek??1);restoredWeek.current=true;}},[progress.ready,progress.value.lastWeek]);
- const entry=route?.kind==='day'?kaigoCatalog.find(e=>e.day===route.day):undefined,form=route?.kind==='mock'?kaigoCourse.mocks.find(m=>m.id===route.id):undefined,currentWeek=learningWeeks[week-1],columns=frameWidth<440?3:frameWidth<680?4:frameWidth<960?6:7,cellWidth=(frameWidth-12*(columns-1))/columns;
- const open=(next:Route)=>{geometry.current={height:0,content:0,y:0};setEndReached(false);setRoute(next);scroll.current?.scrollTo({y:0,animated:false});};
- const checkEnd=()=>{const g=geometry.current;if(g.height>0&&g.content>0&&g.y+g.height>=g.content-24)setEndReached(true);};
- const onScroll=(event:NativeSyntheticEvent<NativeScrollEvent>)=>{const e=event.nativeEvent;geometry.current={height:e.layoutMeasurement.height,content:e.contentSize.height,y:e.contentOffset.y};checkEnd();};
- return <View style={s.root}><View style={s.header}><RoyalBackButton onPress={()=>route?open(null):onBack()}/><View style={{flex:1}}><Text style={s.title}>介護</Text><Text style={s.subtitle}>26 tuần · 176 buổi · 30 phút/ngày</Text></View></View>
- <ScrollView ref={scroll} key={route?JSON.stringify(route):'calendar-'+tab} testID="kaigo-course-scroll" scrollEventThrottle={80} onScroll={onScroll} onLayout={e=>{geometry.current.height=e.nativeEvent.layout.height;checkEnd();}} onContentSizeChange={(_,height)=>{geometry.current.content=height;checkEnd();}} contentContainerStyle={s.content}>
- {!route&&<View><View style={s.tabs}><Action title="Lịch học" onPress={()=>setTab('calendar')} testID="kaigo-weekly-tab-calendar"/><Action title="Thi thử" onPress={()=>setTab('mocks')} testID="kaigo-weekly-tab-mocks"/></View>{tab==='calendar'?<View>
- <RoyalExplanationPanel style={s.infoPanel}><Text style={s.lightHeading}>Lộ trình 26 tuần</Text><Text style={s.light}>Chọn tuần để xem lịch bên dưới. Học hết bài rồi bấm Hoàn thành; đánh giá cuối tuần nằm riêng.</Text></RoyalExplanationPanel>
- <View testID="kaigo-week-grid" onLayout={e=>setFrameWidth(e.nativeEvent.layout.width)} style={s.weekGrid}>{learningWeeks.map(w=>{const done=weekDone(w.week,progress.value),count=w.slots.filter(d=>d.entry&&progress.value.days[d.day]).length,total=w.slots.filter(d=>d.entry).length;return <Pressable key={w.week} testID={`kaigo-week-${w.week}`} accessibilityRole="button" accessibilityLabel={`Tuần ${w.week}, đã học ${count}/${total} ngày${done?', đã hoàn thành':''}`} accessibilityState={{selected:week===w.week}} onPress={()=>{setWeek(w.week);void progress.update(old=>({...old,lastWeek:w.week}));}} style={[{width:cellWidth},s.weekCell,week===w.week&&s.weekCellSelected]}><RoyalContentPanel style={s.weekPaper}><View style={s.weekNumberRow}><Text style={s.weekLabel}>TUẦN</Text>{done&&<Tick/>}</View><Text style={s.weekNumber}>{String(w.week).padStart(2,'0')}</Text><Text style={s.weekCount}>{count}/{total} ngày</Text><View style={s.progressTrack}><View style={[s.progressFill,{width:`${count/total*100}%`}]}/></View></RoyalContentPanel></Pressable>;})}</View>
- <View testID={`kaigo-week-schedule-${week}`}><RoyalExplanationPanel style={s.infoPanel}><Text style={s.lightHeading}>Lịch tuần {week}</Text><Text style={s.light}>Ngày {currentWeek.slots[0].day}–{currentWeek.slots.filter(s=>s.entry).at(-1)?.day} · {currentWeek.slots.filter(s=>s.entry).length} buổi có nội dung</Text></RoyalExplanationPanel><RoyalContentPanel style={s.paper}>
- {currentWeek.slots.map((slot,index)=><View key={slot.day} style={[s.scheduleRow,!slot.entry&&s.disabled]}><View style={s.dayNumber}><Text style={s.dayNumberText}>{index+1}</Text></View><Pressable style={{flex:1}} testID={`kaigo-calendar-day-${slot.day}`} accessibilityRole="button" accessibilityLabel={slot.entry?`Ngày ${slot.day}: ${slot.entry.titleVi}${progress.value.days[slot.day]?', đã hoàn thành':''}`:`Ngày ${slot.day}, không có nội dung học`} accessibilityState={{disabled:!slot.entry}} disabled={!slot.entry} onPress={()=>open({kind:'day',day:slot.day})}><Text style={s.meta}>Ngày {slot.day}</Text><Text style={s.scheduleTitle}>{slot.entry?.titleVi??'Không có nội dung học'}</Text>{slot.entry&&<Text style={s.meta}>30 phút</Text>}{slot.entry&&slot.day===currentWeek.slots.filter(s=>s.entry).at(-1)?.day&&progress.value.assessments[week]&&<Text style={[s.meta,{color:'#287445',fontWeight:'700'}]}>✓ Đánh giá cuối tuần</Text>}</Pressable>{progress.value.days[slot.day]&&<Tick label={`Ngày ${slot.day} đã học xong`}/>}</View>)}
- <Ornament/><View style={s.weeklyCheckHeading}><Text style={[s.heading,{flex:1}]}>Đánh giá cuối tuần</Text>{progress.value.assessments[week]&&<Tick label={`Kiểm tra cuối tuần ${week} đã hoàn thành`}/>}</View><Text style={s.meta}>Ngày {currentWeek.slots.filter(s=>s.entry).at(-1)?.day} · {questionsForWeek(week).length} câu · 4 đáp án lựa chọn</Text><Action title={progress.value.assessments[week]?'✓ Xem lại bài đánh giá':'Mở bài đánh giá cuối tuần'} onPress={()=>open({kind:'assessment',week})} testID={`kaigo-assessment-open-${week}`}/>
- </RoyalContentPanel></View></View>:<View><RoyalExplanationPanel style={s.infoPanel}><Text style={s.lightHeading}>Thi thử riêng</Text><Text style={s.light}>12 đề · 360 câu. Đề kỹ năng 45 câu/60 phút; đề tiếng Nhật 15 câu/30 phút. Giữ nguyên lượt đã lưu.</Text></RoyalExplanationPanel>{kaigoCourse.mocks.map(m=><RoyalContentPanel key={m.id} style={s.paper}><Text style={s.heading}>{m.titleVi}</Text><Text style={s.body}>{m.questions.length} câu · {m.durationMs/60000} phút</Text><Action title="Mở đề thi thử" testID={`kaigo-mock-${m.id}`} onPress={()=>open({kind:'mock',id:m.id})}/></RoyalContentPanel>)}</View>}</View>}
- {entry&&<View><View style={s.tabs}><Text style={s.activeTab}>BÀI HỌC · TUẦN {Math.ceil(entry.day/7)}</Text><Action title="Lịch tuần" testID="kaigo-reading-back" onPress={()=>{setWeek(Math.ceil(entry.day/7));open(null);}}/></View><DayReading entry={entry} onMock={id=>open({kind:'mock',id})}/><View testID="kaigo-day-completion-footer"><Text style={s.light}>{progress.value.days[entry.day]?'✓ Ngày này đã hoàn thành.':endReached?'Đã tới cuối bài. Bấm Hoàn thành để ghi vào lịch.':'Đọc tới cuối bài để ghi hoàn thành.'}</Text><Action title={progress.value.days[entry.day]?'✓ Đã hoàn thành ngày học':'Hoàn thành ngày học'} disabled={!progress.ready||progress.saving||!endReached||!!progress.value.days[entry.day]} testID="kaigo-complete-day" onPress={()=>void progress.update(old=>({...old,days:{...old.days,[entry.day]:true}}))}/><Action title="Về lịch tuần" onPress={()=>{setWeek(Math.ceil(entry.day/7));open(null);}}/></View></View>}
- {route?.kind==='assessment'&&<WeeklyAssessment key={route.week} week={route.week} completed={!!progress.value.assessments[route.week]} completeReady={progress.ready&&!progress.saving} onComplete={()=>void progress.update(old=>({...old,assessments:{...old.assessments,[route.week]:true}}))}/>}
- {form&&renderMock(form)}
- {progress.error&&<RoyalExplanationPanel style={s.infoPanel}><Text style={s.light}>Chưa lưu được tiến trình. Dấu hoàn thành chỉ ghi sau khi lưu thành công.</Text><Action title="Thử lại" onPress={progress.retry}/></RoyalExplanationPanel>}
- </ScrollView></View>;
+export function WeeklyKaigo({
+  onBack,
+  renderMock,
+}: {
+  onBack: () => void;
+  renderMock: (form: MockForm) => ReactNode;
+}) {
+  const progress = useSaved(completionKey, emptyCompletion, restoreCompletion),
+    [week, setWeek] = useState(1),
+    [showWeek, setShowWeek] = useState(false),
+    [route, setRoute] = useState<Route>(null),
+    [tab, setTab] = useState<"calendar" | "mocks">("calendar"),
+    [endReached, setEndReached] = useState(false),
+    [frameWidth, setFrameWidth] = useState(350);
+  const { colors } = useStudyAppearance(),
+    { fontScale } = useWindowDimensions(),
+    scroll = useRef<ScrollView>(null),
+    geometry = useRef({ height: 0, content: 0, y: 0 }),
+    restoredWeek = useRef(false);
+  useEffect(() => {
+    if (progress.ready && !restoredWeek.current) {
+      setWeek(progress.value.lastWeek ?? 1);
+      restoredWeek.current = true;
+    }
+  }, [progress.ready, progress.value.lastWeek]);
+  const entry =
+      route?.kind === "day"
+        ? kaigoCatalog.find((e) => e.day === route.day)
+        : undefined,
+    form =
+      route?.kind === "mock"
+        ? kaigoCourse.mocks.find((m) => m.id === route.id)
+        : undefined,
+    currentWeek = learningWeeks[week - 1];
+  const columns = Math.max(
+      1,
+      Math.min(
+        5,
+        Math.floor((frameWidth + 10) / Math.max(124, 124 * fontScale)),
+      ),
+    ),
+    cellWidth = (frameWidth - 10 * (columns - 1)) / columns;
+  const open = (next: Route) => {
+    geometry.current = { height: 0, content: 0, y: 0 };
+    setEndReached(false);
+    setRoute(next);
+    scroll.current?.scrollTo({ y: 0, animated: false });
+  };
+  const checkEnd = () => {
+    const g = geometry.current;
+    if (g.height > 0 && g.content > 0 && g.y + g.height >= g.content - 24)
+      setEndReached(true);
+  };
+  const onScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+    const e = event.nativeEvent;
+    geometry.current = {
+      height: e.layoutMeasurement.height,
+      content: e.contentSize.height,
+      y: e.contentOffset.y,
+    };
+    checkEnd();
+  };
+  const finishDay = async () => {
+    if (!entry) return;
+    const saved = await progress.update((old) => ({
+      ...old,
+      days: { ...old.days, [entry.day]: true },
+    }));
+    if (saved) {
+      setWeek(Math.ceil(entry.day / 7));
+      setShowWeek(true);
+      open(null);
+    }
+  };
+  const header = (
+    <TokuteiHeader
+      title="介護"
+      subtitle={
+        route?.kind === "day"
+          ? `第${week}週 · 第${entry?.day}日`
+          : route?.kind === "assessment"
+            ? `第${route.week}週 · 確認テスト`
+            : form
+              ? "模擬試験"
+              : "26週間 · 176回 · 1日30分"
+      }
+      onBack={() => {
+        if (route) open(null);
+        else if (showWeek) setShowWeek(false);
+        else onBack();
+      }}
+    />
+  );
+  const content = (
+    <View style={[s.root, route && { backgroundColor: colors.background }]}>
+      {header}
+      {route?.kind === "assessment" ? (
+        <WeeklyAssessment
+          key={route.week}
+          week={route.week}
+          completed={!!progress.value.assessments[route.week]}
+          completeReady={progress.ready && !progress.saving}
+          onComplete={() => {
+            void progress
+              .update((old) => ({
+                ...old,
+                assessments: { ...old.assessments, [route.week]: true },
+              }))
+              .then((saved) => {
+                if (saved) open(null);
+              });
+          }}
+        />
+      ) : form ? (
+        renderMock(form)
+      ) : (
+        <ScrollView
+          ref={scroll}
+          key={
+            route ? JSON.stringify(route) : "calendar-" + tab + "-" + showWeek
+          }
+          testID="kaigo-course-scroll"
+          scrollEventThrottle={80}
+          onScroll={onScroll}
+          onLayout={(e) => {
+            geometry.current.height = e.nativeEvent.layout.height;
+            checkEnd();
+          }}
+          onContentSizeChange={(_, height) => {
+            geometry.current.content = height;
+            checkEnd();
+          }}
+          contentContainerStyle={s.content}
+        >
+          <View style={s.article}>
+            {!route && (
+              <>
+                <View style={s.controls}>
+                  <View style={s.control}>
+                    <Action
+                      title="学習"
+                      onPress={() => {
+                        setTab("calendar");
+                        setShowWeek(false);
+                      }}
+                      testID="kaigo-weekly-tab-calendar"
+                    />
+                  </View>
+                  <View style={s.control}>
+                    <Action
+                      title="模擬試験"
+                      onPress={() => setTab("mocks")}
+                      testID="kaigo-weekly-tab-mocks"
+                    />
+                  </View>
+                </View>
+                {tab === "calendar" ? (
+                  showWeek ? (
+                    <View testID={`kaigo-week-schedule-${week}`}>
+                      <RoyalExplanationPanel style={s.info}>
+                        <Text style={s.light}>
+                          第{week}週 ·{" "}
+                          {
+                            currentWeek.slots.filter(
+                              (d) => d.entry && progress.value.days[d.day],
+                            ).length
+                          }
+                          /{currentWeek.slots.filter((d) => d.entry).length}日
+                          学習済み
+                        </Text>
+                      </RoyalExplanationPanel>
+                      {currentWeek.slots.map((slot, index) =>
+                        slot.entry ? (
+                          <TokuteiDayCard
+                            key={slot.day}
+                            testID={`kaigo-calendar-day-${slot.day}`}
+                            day={index + 1}
+                            title={titleForDay(slot.entry)}
+                            done={!!progress.value.days[slot.day]}
+                            onPress={() => open({ kind: "day", day: slot.day })}
+                          />
+                        ) : (
+                          <View key={slot.day} style={s.emptyDay}>
+                            <Text style={s.meta}>
+                              第{index + 1}日 · 学習なし
+                            </Text>
+                          </View>
+                        ),
+                      )}
+                      <RoyalContentPanel style={s.paper}>
+                        <Text style={s.heading}>週末の確認テスト</Text>
+                        <Text style={s.meta}>
+                          {questionsForWeek(week).length}問 · 四択
+                        </Text>
+                        <Action
+                          title={
+                            progress.value.assessments[week]
+                              ? "✓ 確認テストを見る"
+                              : "確認テストを開く"
+                          }
+                          testID={`kaigo-assessment-open-${week}`}
+                          onPress={() => open({ kind: "assessment", week })}
+                        />
+                      </RoyalContentPanel>
+                    </View>
+                  ) : (
+                    <>
+                      <RoyalExplanationPanel style={s.info}>
+                        <Text style={s.light}>週を選ぶ</Text>
+                        <Text style={s.light}>
+                          学習する日を選び、最後まで読んだら「完了」を押してください。
+                        </Text>
+                      </RoyalExplanationPanel>
+                      <View
+                        testID="kaigo-week-grid"
+                        onLayout={(e) =>
+                          setFrameWidth(e.nativeEvent.layout.width)
+                        }
+                        style={s.weekGrid}
+                      >
+                        {learningWeeks.map((w) => {
+                          const count = w.slots.filter(
+                              (d) => d.entry && progress.value.days[d.day],
+                            ).length,
+                            total = w.slots.filter((d) => d.entry).length;
+                          return (
+                            <Pressable
+                              key={w.week}
+                              testID={`kaigo-week-${w.week}`}
+                              accessibilityRole="button"
+                              accessibilityLabel={`第${w.week}週`}
+                              onPress={() => {
+                                setWeek(w.week);
+                                setShowWeek(true);
+                                void progress.update((old) => ({
+                                  ...old,
+                                  lastWeek: w.week,
+                                }));
+                                scroll.current?.scrollTo({
+                                  y: 0,
+                                  animated: false,
+                                });
+                              }}
+                              style={{ width: cellWidth }}
+                            >
+                              <RoyalContentPanel style={s.weekPaper}>
+                                <Text style={s.weekNumber}>第{w.week}週</Text>
+                                <Text style={s.meta}>
+                                  {count}/{total}日 学習済み{" "}
+                                  {weekDone(w.week, progress.value) ? "✓" : ""}
+                                </Text>
+                              </RoyalContentPanel>
+                            </Pressable>
+                          );
+                        })}
+                      </View>
+                    </>
+                  )
+                ) : (
+                  <>
+                    <RoyalExplanationPanel style={s.info}>
+                      <Text style={s.light}>模擬試験 · 12回</Text>
+                      <Text style={s.light}>
+                        技能：45問・60分 ／ 日本語：15問・30分
+                      </Text>
+                    </RoyalExplanationPanel>
+                    {kaigoCourse.mocks.map((m, index) => (
+                      <RoyalContentPanel key={m.id} style={s.paper}>
+                        <Text style={s.heading}>
+                          {m.id.includes("skills") ? "介護技能" : "介護日本語"}{" "}
+                          · 第{(index % 6) + 1}回
+                        </Text>
+                        <Text style={s.body}>
+                          {m.questions.length}問 · {m.durationMs / 60000}分
+                        </Text>
+                        <Action
+                          title="模擬試験を開く"
+                          testID={`kaigo-mock-${m.id}`}
+                          onPress={() => open({ kind: "mock", id: m.id })}
+                        />
+                      </RoyalContentPanel>
+                    ))}
+                  </>
+                )}
+              </>
+            )}
+            {entry && (
+              <>
+                <DayReading
+                  key={entry.day}
+                  entry={entry}
+                  onMock={(id) => open({ kind: "mock", id })}
+                />
+                <View testID="kaigo-day-completion-footer">
+                  <Text style={[s.meta, { color: colors.muted }]}>
+                    {progress.value.days[entry.day]
+                      ? "✓ 学習済み"
+                      : endReached
+                        ? "最後まで読みました。「完了」を押すと週の予定に戻ります。"
+                        : "最後まで読んでから完了してください。"}
+                  </Text>
+                  <Action
+                    title={
+                      progress.value.days[entry.day]
+                        ? "✓ 学習済み"
+                        : progress.saving
+                          ? "保存中…"
+                          : "完了"
+                    }
+                    disabled={
+                      !progress.ready ||
+                      progress.saving ||
+                      !endReached ||
+                      !!progress.value.days[entry.day]
+                    }
+                    testID="kaigo-complete-day"
+                    onPress={() => void finishDay()}
+                  />
+                  <Action
+                    title="週の予定に戻る"
+                    testID="kaigo-reading-back"
+                    onPress={() => open(null)}
+                  />
+                </View>
+              </>
+            )}
+            {progress.error && (
+              <RoyalExplanationPanel style={s.info}>
+                <Text style={s.light}>
+                  進捗を保存できませんでした。保存に成功してから前の画面へ戻ります。
+                </Text>
+                <Action
+                  title="再試行"
+                  onPress={entry ? () => void finishDay() : progress.retry}
+                />
+              </RoyalExplanationPanel>
+            )}
+          </View>
+        </ScrollView>
+      )}
+    </View>
+  );
+  return route ? content : <RoyalPageBackground>{content}</RoyalPageBackground>;
 }
-const s=StyleSheet.create({root:{flex:1},header:{flexDirection:'row',alignItems:'center',gap:14,paddingHorizontal:18,paddingTop:10,paddingBottom:12},title:{fontFamily:ROYAL_FONT.heading,fontSize:26,color:'#fff3cf'},subtitle:{fontFamily:ROYAL_FONT.body,fontSize:15,color:'#fffdf7'},content:{padding:18,paddingBottom:38,gap:14},tabs:{flexDirection:'row',flexWrap:'wrap',alignItems:'center',gap:12,marginBottom:12},activeTab:{fontFamily:ROYAL_FONT.body,color:'#ead296',fontSize:16,fontWeight:'700'},infoPanel:{paddingHorizontal:26,paddingVertical:22,marginBottom:16},light:{fontFamily:ROYAL_FONT.body,color:'#fff3cf',fontSize:16,lineHeight:25},lightHeading:{fontFamily:ROYAL_FONT.heading,fontWeight:'700',color:'#fff3cf',fontSize:22,lineHeight:30,marginBottom:6},weekGrid:{flexDirection:'row',flexWrap:'wrap',gap:12,marginBottom:24},weekCell:{borderRadius:12,borderWidth:2,borderColor:'transparent'},weekCellSelected:{borderColor:'#e7c477',backgroundColor:'#375070'},weekPaper:{paddingHorizontal:14,paddingVertical:26,minHeight:150},weekNumberRow:{flexDirection:'row',justifyContent:'space-between',alignItems:'center'},weekLabel:{fontFamily:ROYAL_FONT.body,fontSize:12,color:'#4e5e73',fontWeight:'700',letterSpacing:1},weekNumber:{fontFamily:ROYAL_FONT.heading,fontSize:30,lineHeight:38,color:'#17324c',fontWeight:'700'},weekCount:{fontFamily:ROYAL_FONT.body,fontSize:12,color:'#43536b',lineHeight:20},progressTrack:{height:4,backgroundColor:'#dbd6c8',borderRadius:2,marginTop:7,overflow:'hidden'},progressFill:{height:4,backgroundColor:'#32774b'},paper:{paddingHorizontal:24,paddingVertical:28,marginBottom:18},scheduleRow:{flexDirection:'row',alignItems:'center',gap:14,paddingVertical:16,borderBottomColor:'#d9c9a4',borderBottomWidth:1},dayNumber:{width:34,height:34,borderRadius:17,borderWidth:1,borderColor:'#b78f4d',backgroundColor:'#1b3153',alignItems:'center',justifyContent:'center'},dayNumberText:{fontFamily:ROYAL_FONT.body,fontWeight:'700',fontSize:16,color:'#fff3cf'},scheduleTitle:{fontFamily:ROYAL_FONT.body,fontWeight:'700',fontSize:17,lineHeight:25,color:'#17324c',marginVertical:3},weeklyCheckHeading:{flexDirection:'row',alignItems:'center',gap:12},tick:{fontFamily:ROYAL_FONT.body,color:'#287445',fontSize:26,lineHeight:32,fontWeight:'800'},chapter:{fontFamily:ROYAL_FONT.body,fontSize:14,fontWeight:'700',color:'#725426',marginBottom:8},dayTitle:{fontFamily:ROYAL_FONT.heading,fontWeight:'700',fontSize:26,lineHeight:36,color:'#142335',marginBottom:12},heading:{fontFamily:ROYAL_FONT.heading,fontWeight:'700',fontSize:23,lineHeight:33,color:'#142335',marginVertical:12},body:{fontFamily:ROYAL_FONT.body,color:'#26364c',fontSize:17,lineHeight:28,marginVertical:8},meta:{fontFamily:ROYAL_FONT.body,color:'#526074',fontSize:14,lineHeight:22},japanese:{fontFamily:ROYAL_FONT.body,color:'#142335',fontSize:20,lineHeight:33,marginVertical:7,flexShrink:1},illustration:{width:'100%',borderRadius:10,marginVertical:10},caption:{fontFamily:ROYAL_FONT.body,fontSize:14,lineHeight:23,color:'#526074',marginBottom:12},ornament:{flexDirection:'row',alignItems:'center',gap:16,marginVertical:26},line:{height:1,flex:1,backgroundColor:'#c8a367'},ornamentText:{color:'#aa7c33',fontSize:21},action:{backgroundColor:'#1b3153',borderColor:'#c99c51',borderWidth:1,borderRadius:10,paddingHorizontal:16,paddingVertical:14,marginVertical:6,alignItems:'center',justifyContent:'center',minHeight:48},actionText:{fontFamily:ROYAL_FONT.body,color:'#fff3cf',fontSize:16,lineHeight:24,textAlign:'center',fontWeight:'700'},disabled:{opacity:.38},option:{flexDirection:'row',gap:12,alignItems:'flex-start',borderWidth:1,borderColor:'#98a0ab',borderRadius:10,padding:14,marginVertical:8},optionSelected:{borderColor:'#ad7c20',borderWidth:2,backgroundColor:'#fff0c4'},optionNumber:{fontFamily:ROYAL_FONT.body,fontSize:17,fontWeight:'700',color:'#18324d',paddingTop:8},navigation:{flexDirection:'row',flexWrap:'wrap',gap:14,marginVertical:16},questionGrid:{flexDirection:'row',flexWrap:'wrap',gap:8,marginBottom:18},questionCell:{minWidth:44,minHeight:44,padding:8,borderWidth:1,borderColor:'#9f8d64',borderRadius:8,justifyContent:'center',alignItems:'center'},questionCurrent:{backgroundColor:'#f4dfac',borderColor:'#a77926'},questionNumber:{fontFamily:ROYAL_FONT.body,color:'#17324c',fontSize:15},rubyRow:{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',marginVertical:10},rubyWord:{alignItems:'center',paddingHorizontal:1},kana:{fontFamily:ROYAL_FONT.body,fontSize:11,lineHeight:16,color:'#526074'}});
+const s = StyleSheet.create({
+  root: { flex: 1, minHeight: 0 },
+  content: { padding: 12, paddingBottom: 28, alignItems: "center" },
+  article: { width: "100%", maxWidth: 900 },
+  paper: { paddingHorizontal: 24, paddingVertical: 22, marginBottom: 14 },
+  info: { paddingHorizontal: 24, paddingVertical: 22, marginBottom: 14 },
+  light: {
+    fontFamily: ROYAL_FONT.body,
+    fontSize: 16,
+    lineHeight: 26,
+    color: "#fff3cf",
+  },
+  body: {
+    fontFamily: ROYAL_FONT.body,
+    fontSize: 17,
+    lineHeight: 28,
+    color: "#26364c",
+  },
+  meta: { fontSize: 14, lineHeight: 23, color: "#536575", marginVertical: 6 },
+  heading: {
+    fontFamily: ROYAL_FONT.heading,
+    fontSize: 21,
+    lineHeight: 31,
+    color: "#173a60",
+    marginVertical: 8,
+  },
+  japanese: {
+    fontFamily: ROYAL_FONT.body,
+    fontSize: 18,
+    lineHeight: 30,
+    color: "#253749",
+    marginVertical: 8,
+  },
+  action: {
+    minHeight: 46,
+    borderWidth: 1,
+    borderColor: "#c99c51",
+    backgroundColor: "#1b3153",
+    borderRadius: 10,
+    paddingHorizontal: 12,
+    paddingVertical: 9,
+    marginVertical: 4,
+    justifyContent: "center",
+  },
+  actionText: {
+    color: "#fff3cf",
+    fontSize: 16,
+    lineHeight: 24,
+    textAlign: "center",
+  },
+  disabled: { opacity: 0.45 },
+  option: {
+    padding: 14,
+    minHeight: 50,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "#b9bec6",
+    backgroundColor: "#fffdf6",
+    marginVertical: 6,
+  },
+  selected: {
+    borderColor: "#244e7b",
+    borderWidth: 2,
+    backgroundColor: "#e6eff8",
+  },
+  controls: { flexDirection: "row", gap: 8 },
+  control: { flex: 1, minWidth: 0 },
+  readingSection: {
+    paddingVertical: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: "#998363",
+  },
+  weekGrid: { flexDirection: "row", flexWrap: "wrap", gap: 10 },
+  weekPaper: { minHeight: 120, paddingHorizontal: 18, paddingVertical: 22 },
+  weekNumber: {
+    fontSize: 22,
+    lineHeight: 32,
+    color: "#173a60",
+    fontWeight: "700",
+  },
+  emptyDay: { padding: 18, opacity: 0.7 },
+});

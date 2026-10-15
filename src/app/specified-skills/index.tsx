@@ -1,3 +1,4 @@
+import {TokuteiHeader} from '@/components/tokutei/TokuteiChrome';
 import { backPrepared, pushPrepared } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
@@ -17,7 +18,7 @@ import {
 import {
     useSafeAreaInsets,
 } from 'react-native-safe-area-context';
-import { RoyalBackButton, ROYAL_FONT, ROYAL_PLACEMENT } from '@/components/ui/RoyalSurface';
+import { ROYAL_FONT, ROYAL_PLACEMENT } from '@/components/ui/RoyalSurface';
 
 import BottomNav from '@/components/app/BottomNav';
 
@@ -38,31 +39,7 @@ export default function SpecifiedSkillsScreen() {
         <ImageBackground inheritBackdrop source={require('../../../assets/app/home-cards/tokutei-engine-safety.png')} blurRadius={40} resizeMode="cover" style={{flex:1}}><View
             style={[styles.container, { paddingTop: insets.top, paddingLeft: insets.left, paddingRight: insets.right, paddingBottom: navHeight + insets.bottom }]}
         >
-            <View
-                style={
-                    styles.header
-                }
-            >
-                <RoyalBackButton onPress={() => backPrepared()} />
-
-                <View>
-                    <Text
-                        style={
-                            styles.title
-                        }
-                    >
-                        特定技能学習
-                    </Text>
-
-                    <Text
-                        style={
-                            styles.subtitle
-                        }
-                    >
-                        Specified Skilled Worker
-                    </Text>
-                </View>
-            </View>
+            <TokuteiHeader title="特定技能学習" subtitle="Specified Skilled Worker" onBack={()=>{void backPrepared();}}/>
 
             <ScrollView
                 style={styles.scroll}

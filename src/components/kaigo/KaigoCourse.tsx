@@ -1,4 +1,6 @@
 import {WeeklyKaigo} from './WeeklyKaigo';
+import {StudyAppearanceProvider,TranslationText} from '@/components/tokutei/StudyAppearance';
+import {TokuteiActionBar} from '@/components/tokutei/TokuteiChrome';
 import {useCallback,useEffect,useRef,useState} from 'react';
 import {AppState,Image,Modal,Pressable,ScrollView,StyleSheet,Text,TextInput,View} from 'react-native';
 import {RoyalContentPanel,RoyalExplanationPanel} from '@/components/ui/RoyalPanels';
@@ -82,18 +84,202 @@ function LanguageSupplementStudy({day,onParent}:{day:number;onParent:(id:string)
 function RelatedStudy({day,onSelect}:{day:number;onSelect:(next:StudySelection)=>void}){const [open,setOpen]=useState(false);const entries=kaigoCatalog.filter(e=>e.parentDay===day&&(e.kind==='atomic'||e.kind==='language'));if(!entries.length)return null;return <View><Button title={`${open?'Đóng':'Ôn'} ${entries.length} buổi liên quan`} testID="kaigo-related-toggle" onPress={()=>setOpen(!open)}/>{open&&entries.map(e=><RoyalContentPanel key={e.day} style={s.panel}><Body>Ngày {e.day} · {e.typeVi}</Body><Text style={s.heading}>{e.titleVi}</Text><Button title="Mở buổi liên quan" testID={`kaigo-related-${e.day}`} onPress={()=>onSelect({kind:e.kind,id:e.id})}/></RoyalContentPanel>)}</View>;}
 function LessonStudy({lesson,onRelated,scheduledDay}:{lesson:Lesson;scheduledDay?:number;onRelated:(next:StudySelection)=>void}){const [tab,setTab]=useState(0);const parentLesson=kaigoCourse.candidates.some(l=>l.id===lesson.id)?kaigoCourse.lessons.find(l=>l.day===lesson.day):undefined;const tabs=['Kiến thức','Từ và cách nói','Luyện thoại','Thực hành tình huống','Kiểm tra bài học · 5 câu',...(lesson.languageTasks?.length?['Đọc và hiểu']:[])];return <View><RoyalExplanationPanel style={s.panel}><Text style={[s.heading,s.light]}>{kaigoCourse.candidates.some(l=>l.id===lesson.id)?'Thực hành trong bài':`Ngày ${scheduledDay??lesson.day}`} · {lesson.titleVi}</Text><Text style={s.light}>{lesson.studyPlanVi??'30 phút dự kiến · có thể tiếp tục phần chưa xong.'}</Text>{parentLesson&&<Button title="Quay lại bài học liên quan" testID="kaigo-practice-parent" onPress={()=>onRelated({kind:'lesson',id:parentLesson.id})}/>}</RoyalExplanationPanel><View style={s.wrap}>{tabs.map((title,i)=><Button key={title} title={title} onPress={()=>setTab(i)}/>)}</View>{tab===0&&<Knowledge lesson={lesson}/>}{tab===1&&<View>{lesson.activeTermIds&&<RoyalExplanationPanel style={s.panel}><Text style={s.light}>4 phút: ưu tiên tối đa 8 từ đầu. Kho từ theo tuần phía dưới dùng nhận diện/tra cứu; không phải học thuộc tất cả hôm nay.</Text></RoyalExplanationPanel>}{[...kaigoCourse.terms.filter(t=>lesson.termIds.includes(t.id??'')).sort((a,b)=>Number(lesson.activeTermIds?.includes(b.id??''))-Number(lesson.activeTermIds?.includes(a.id??''))),...lesson.inlineNotes].map((t,i)=><RoyalContentPanel key={i} style={s.panel}><Ja>{t.termJa}</Ja><Body>{t.readingJa} · {t.meaningVi}</Body></RoyalContentPanel>)}{lesson.expressions.map((x,i)=><RoyalContentPanel key={i} style={s.panel}><Ja>{x.textJa}</Ja><Body>{x.meaningVi}</Body></RoyalContentPanel>)}</View>}{tab===2&&<Dialogue lesson={lesson}/>}{tab===3&&<View><Transfer lesson={lesson}/>{kaigoCourse.candidates.filter(l=>l.day===lesson.day&&l.id!==lesson.id).map(l=><RoyalContentPanel key={l.id} style={s.panel}><Text style={s.heading}>Thực hành trong bài · {l.titleVi}</Text><Body>Thực hành trong thời gian dành cho tình huống của buổi học. Nếu chưa xong, tiếp tục ở lượt học sau.</Body><Button title="Mở thực hành" testID={`kaigo-practice-${l.id}`} onPress={()=>onRelated({kind:'lesson',id:l.id})}/></RoyalContentPanel>)}</View>}{tab===4&&<LessonCheck lesson={lesson}/>} {tab===5&&<View><RoyalExplanationPanel style={s.panel}><Text style={s.light}>2 phút đọc một thẻ ngắn và tự giải thích theo dữ kiện. Nếu chưa xong, giữ phần còn lại để ôn tiếp.</Text></RoyalExplanationPanel>{lesson.languageTasks?.map(t=><RetrievalCard key={t.id} probe={t} lesson={lesson}/>)}</View>}<RelatedStudy day={lesson.day} onSelect={onRelated}/></View>;}
 
-function MockExam({form,active}:{form:MockForm;active:boolean}){
- const st=useStored<ExamSession>(examStorageKey(form),createExamSession(form),raw=>restoreExamSession(raw,form));const [confirm,setConfirm]=useState(false);const session=st.value;const {ready,update}=st;
- useEffect(()=>{if(!ready||!active||session.status!=='active')return;let visible=AppState.currentState==='active',last=Date.now();const advance=()=>{const now=Date.now();if(visible)update(s=>tickExam(s,Math.max(0,now-last),now));last=now;};const timer=setInterval(advance,1000);const subscription=AppState.addEventListener('change',next=>{advance();visible=next==='active';last=Date.now();});return()=>{clearInterval(timer);subscription.remove();advance();};},[active,ready,session.status,update]);
- const review=examReview(session,form);const current=form.questions[session.currentQuestion],q=publicQuestion(current);const seconds=Math.ceil(session.remainingMs/1000);
- return <View><RoyalExplanationPanel style={s.panel}><Text style={[s.heading,s.light]}>{form.titleVi}</Text><Text style={s.light}>{review?'Đã nộp':`Còn ${Math.floor(seconds/60)}:${String(seconds%60).padStart(2,'0')} · Câu ${session.currentQuestion+1}/${form.questions.length}`}</Text></RoyalExplanationPanel><SaveStatus error={st.error} retry={st.retry}/>
- {review?<View><RoyalExplanationPanel style={s.panel}><Text style={s.light}>Điểm luyện tập: {review.score}/{review.total}. Đây là điểm thô của app, không quy đổi thành kết quả thi chính thức.</Text></RoyalExplanationPanel>{review.questions.map((x,i)=><RoyalContentPanel key={x.id} style={s.panel}><Body>Câu {i+1} · {session.answers[x.id]===x.correctIndex?'Đúng':session.answers[x.id]===undefined?'Bỏ trống':'Sai'} · Đáp án {x.correctIndex+1}</Body>{!!x.passageJa&&<Ruby tokens={x.furigana.passage} fallback={x.passageJa}/>}<Ruby tokens={x.furigana.prompt} fallback={x.promptJa}/>{!!x.figureKey&&<Image source={kaigoFigures[x.figureKey]} resizeMode="contain" style={s.figure}/>}{!!x.figureDescriptionJa&&<Ruby tokens={x.furigana.figureDescription} fallback={x.figureDescriptionJa}/>}<Body>{x.figureDescriptionVi}</Body><Body>{x.passageVi}</Body><Body>{x.promptVi}</Body>{x.optionsJa.map((o,j)=><View key={j}><Body>{j+1}.</Body><Ruby tokens={x.furigana.options[j]} fallback={o}/><Body>{x.optionsVi[j]}</Body><Body>{x.rationalesVi[j]}</Body></View>)}</RoyalContentPanel>)}<Button title="Làm lại đề này" onPress={()=>st.update(createExamSession(form))}/></View>:<View>
- <RoyalContentPanel style={s.panel}>{!!q.passageJa&&<Ruby tokens={q.furigana.passage} fallback={q.passageJa}/>}{!!q.figureKey&&<Image accessibilityLabel={q.figureDescriptionJa} source={kaigoFigures[q.figureKey]} resizeMode="contain" style={s.figure}/>}{!!q.figureDescriptionJa&&<Ruby tokens={q.furigana.figureDescription} fallback={q.figureDescriptionJa}/>}<Ruby tokens={q.furigana.prompt} fallback={q.promptJa}/>{q.optionsJa.map((o,i)=><Pressable key={i} accessibilityRole="radio" accessibilityState={{selected:session.answers[q.id]===i}} disabled={!st.ready} testID={`kaigo-option-${i}`} onPress={()=>st.update(s=>answerExam(s,current,i))} style={[s.option,session.answers[q.id]===i&&s.selected]}><Body>{i+1}.</Body><Ruby tokens={q.furigana.options[i]} fallback={o}/></Pressable>)}</RoyalContentPanel>
- <View style={s.row}><Button title="Câu trước" disabled={!st.ready||session.currentQuestion===0} onPress={()=>st.update(s=>({...s,currentQuestion:s.currentQuestion-1}))}/><Button title="Câu sau" disabled={!st.ready||session.currentQuestion===form.questions.length-1} onPress={()=>st.update(s=>({...s,currentQuestion:s.currentQuestion+1}))}/></View>
- <View style={s.wrap}>{form.questions.map((x,i)=><Button key={x.id} title={`${i+1}${session.answers[x.id]!==undefined?' ✓':''}`} disabled={!st.ready} onPress={()=>st.update(s=>({...s,currentQuestion:i}))}/>)}</View><Button title="Nộp bài" testID="kaigo-submit-exam" disabled={!st.ready} onPress={()=>setConfirm(true)}/>
- </View>}
- <Modal visible={confirm&&!review} transparent animationType="none" onRequestClose={()=>setConfirm(false)}><View style={s.modalBackdrop}><View style={s.modalCard}><Body>Đã trả lời {Object.keys(session.answers).length}/{form.questions.length} câu. Nộp bài và kết thúc lượt này?</Body><Button title="Tiếp tục làm bài" onPress={()=>setConfirm(false)}/><Button title="Xác nhận nộp bài" testID="kaigo-confirm-submit" onPress={()=>{st.update(s=>submitExam(s));setConfirm(false);}}/></View></View></Modal>
- </View>;
+function MockExam({ form, active }: { form: MockForm; active: boolean }) {
+  const st = useStored<ExamSession>(
+    examStorageKey(form),
+    createExamSession(form),
+    (raw) => restoreExamSession(raw, form),
+  );
+  const [confirm, setConfirm] = useState<"submit" | "restart" | null>(null),
+    [translationOpen, setTranslationOpen] = useState(false);
+  const scroll = useRef<ScrollView>(null);
+  const session = st.value;
+  const { ready, update } = st;
+  useEffect(() => {
+    if (!ready || !active || session.status !== "active") return;
+    let visible = AppState.currentState === "active",
+      last = Date.now();
+    const advance = () => {
+      const now = Date.now();
+      if (visible) update((s) => tickExam(s, Math.max(0, now - last), now));
+      last = now;
+    };
+    const timer = setInterval(advance, 1000);
+    const subscription = AppState.addEventListener("change", (next) => {
+      advance();
+      visible = next === "active";
+      last = Date.now();
+    });
+    return () => {
+      clearInterval(timer);
+      subscription.remove();
+      advance();
+    };
+  }, [active, ready, session.status, update]);
+  const review = examReview(session, form);
+  const current = form.questions[session.currentQuestion],
+    q = publicQuestion(current);
+  const seconds = Math.ceil(session.remainingMs / 1000);
+  const move = (index: number) => {
+    st.update((old) => ({ ...old, currentQuestion: index }));
+    scroll.current?.scrollTo({ y: 0, animated: false });
+  };
+  return (
+    <View style={{ flex: 1, minHeight: 0 }} testID="kaigo-mock-runner">
+      <ScrollView
+        ref={scroll}
+        testID="kaigo-mock-content"
+        contentContainerStyle={{ padding: 12, paddingBottom: 24 }}
+      >
+        <RoyalContentPanel style={s.panel}>
+          <Text style={s.heading}>介護 · 模擬試験</Text>
+          <Body>
+            {review
+              ? `結果 ${review.score}/${review.total}`
+              : `残り ${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`}{" "}
+            · 問題 {session.currentQuestion + 1}/{form.questions.length}
+          </Body>
+          <SaveStatus error={st.error} retry={st.retry} />
+          {!!q.passageJa && (
+            <Ruby tokens={q.furigana.passage} fallback={q.passageJa} />
+          )}
+          {!!q.figureKey && (
+            <Image
+              accessibilityLabel={q.figureDescriptionJa}
+              source={kaigoFigures[q.figureKey]}
+              resizeMode="contain"
+              style={s.figure}
+            />
+          )}
+          {!!q.figureDescriptionJa && (
+            <Ruby
+              tokens={q.furigana.figureDescription}
+              fallback={q.figureDescriptionJa}
+            />
+          )}
+          <Ruby tokens={q.furigana.prompt} fallback={q.promptJa} />
+          {q.optionsJa.map((option, i) => (
+            <Pressable
+              key={i}
+              accessibilityRole="radio"
+              accessibilityState={{
+                checked: session.answers[q.id] === i,
+                disabled: !!review || !st.ready,
+              }}
+              disabled={!!review || !st.ready}
+              testID={`kaigo-option-${i}`}
+              onPress={() => st.update((old) => answerExam(old, current, i))}
+              style={[s.option, session.answers[q.id] === i && s.selected]}
+            >
+              <Body>{i + 1}.</Body>
+              <Ruby tokens={q.furigana.options[i]} fallback={option} />
+            </Pressable>
+          ))}
+          {review && (
+            <View testID="kaigo-mock-review">
+              <Text style={s.heading}>正答：{current.correctIndex + 1}</Text>
+              {current.rationalesJa.map((text, i) => (
+                <Ja key={i}>
+                  {i + 1}. {text}
+                </Ja>
+              ))}
+              <Button
+                title={translationOpen ? "翻訳を閉じる" : "翻訳を見る"}
+                testID="kaigo-mock-translation"
+                onPress={() => setTranslationOpen((v) => !v)}
+              />
+              {translationOpen && (
+                <View>
+                  <TranslationText>{current.passageVi}</TranslationText>
+                  <TranslationText>{current.promptVi}</TranslationText>
+                  {current.rationalesVi.map((text, i) => (
+                    <TranslationText key={i}>
+                      {i + 1}. {text}
+                    </TranslationText>
+                  ))}
+                </View>
+              )}
+            </View>
+          )}
+        </RoyalContentPanel>
+      </ScrollView>
+      <TokuteiActionBar testID="kaigo-mock-controls">
+        <View style={{ flexDirection: "row", gap: 8 }}>
+          <View style={{ flex: 1 }}>
+            <Button
+              title="前へ"
+              testID="kaigo-mock-previous"
+              disabled={!st.ready || session.currentQuestion === 0}
+              onPress={() => move(session.currentQuestion - 1)}
+            />
+          </View>
+          <View style={{ flex: 1 }}>
+            <Button
+              title="次へ"
+              testID="kaigo-mock-next"
+              disabled={
+                !st.ready ||
+                session.currentQuestion === form.questions.length - 1
+              }
+              onPress={() => move(session.currentQuestion + 1)}
+            />
+          </View>
+        </View>
+        <View style={{ flexDirection: "row", gap: 8 }}>
+          {!review && (
+            <View style={{ flex: 1 }}>
+              <Button
+                title="提出する"
+                testID="kaigo-submit-exam"
+                disabled={!st.ready || st.error}
+                onPress={() => setConfirm("submit")}
+              />
+            </View>
+          )}
+          <View style={{ flex: 1 }}>
+            <Button
+              title="最初からやり直す"
+              testID="kaigo-mock-restart"
+              disabled={!st.ready}
+              onPress={() => setConfirm("restart")}
+            />
+          </View>
+        </View>
+      </TokuteiActionBar>
+      <Modal
+        visible={confirm !== null}
+        transparent
+        animationType="none"
+        onRequestClose={() => setConfirm(null)}
+      >
+        <View style={s.modalBackdrop}>
+          <View style={s.modalCard}>
+            <Body>
+              {confirm === "restart"
+                ? "この模擬試験の解答と結果を消して、最初からやり直しますか。"
+                : `解答済み ${Object.keys(session.answers).length}/${form.questions.length}問。提出して終了しますか。`}
+            </Body>
+            <Button title="キャンセル" onPress={() => setConfirm(null)} />
+            <Button
+              title={confirm === "restart" ? "やり直す" : "提出する"}
+              testID={
+                confirm === "restart"
+                  ? "kaigo-confirm-restart"
+                  : "kaigo-confirm-submit"
+              }
+              onPress={() => {
+                if (confirm === "restart") {
+                  st.update(createExamSession(form));
+                  scroll.current?.scrollTo({ y: 0, animated: false });
+                } else st.update((old) => submitExam(old));
+                setConfirm(null);
+              }}
+            />
+          </View>
+        </View>
+      </Modal>
+    </View>
+  );
 }
 type CatalogPreferences={view:'calendar'|'topics'|'mocks';query:string;topic:TopicId|null;page:number};
 function CourseCatalog({onSelect,last,ready,state,setState}:{onSelect:(next:StudySelection,day?:number)=>void;last:StudySelection|null;ready:boolean;state:CatalogPreferences;setState:React.Dispatch<React.SetStateAction<CatalogPreferences>>}){
@@ -130,4 +316,4 @@ function LegacyKaigoCourse({onBack,active=true}:{onBack:()=>void;active?:boolean
 }
 const s=StyleSheet.create({root:{flex:1},header:{flexDirection:'row',gap:14,paddingHorizontal:18,paddingTop:10,paddingBottom:12},headerText:{flex:1},title:{fontFamily:ROYAL_FONT.heading,fontSize:26,color:'#fff3cf'},subtitle:{fontFamily:ROYAL_FONT.body,fontSize:15,color:'#fffdf7'},content:{padding:18,paddingBottom:40,gap:10},heading:{fontFamily:ROYAL_FONT.heading,fontSize:20,color:'#142335',lineHeight:28,marginVertical:8},panel:{paddingHorizontal:26,paddingVertical:24,marginBottom:14},body:{fontFamily:ROYAL_FONT.body,color:'#26364c',fontSize:16,lineHeight:25,marginVertical:5},small:{fontFamily:ROYAL_FONT.body,color:'#43536b',fontSize:14,lineHeight:22,marginVertical:5},ja:{fontFamily:ROYAL_FONT.body,color:'#142335',fontSize:20,lineHeight:32,marginVertical:6},light:{fontFamily:ROYAL_FONT.body,fontSize:16,lineHeight:25,color:'#fff3cf'},button:{backgroundColor:'#1b3153',borderColor:'#c99c51',borderWidth:1,borderRadius:10,paddingHorizontal:14,paddingVertical:12,marginVertical:5,alignItems:'center',justifyContent:'center'},buttonText:{fontFamily:ROYAL_FONT.body,color:'#fff3cf',fontSize:16,lineHeight:23,textAlign:'center'},disabled:{opacity:.45},pressed:{opacity:.7},row:{flexDirection:'row',flexWrap:'wrap',gap:12},wrap:{flexDirection:'row',flexWrap:'wrap',gap:8,marginBottom:10},input:{position:'relative',fontFamily:ROYAL_FONT.body,color:'#142335',backgroundColor:'#fffdf4',borderColor:'#61718b',borderWidth:1,borderRadius:8,padding:12,minHeight:95,fontSize:18,lineHeight:28,textAlignVertical:'top',marginVertical:10},check:{paddingVertical:6},option:{borderWidth:1,borderColor:'#8792a3',borderRadius:8,padding:12,marginVertical:6},selected:{borderColor:'#c08e25',borderWidth:2,backgroundColor:'#fff0c4'},rubyRow:{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',marginVertical:4},rubyWord:{alignItems:'center',paddingHorizontal:1},rubyKana:{fontFamily:ROYAL_FONT.body,fontSize:10,lineHeight:15,color:'#43536b'},rubyText:{fontFamily:ROYAL_FONT.body,fontSize:20,lineHeight:30,color:'#142335'},figure:{width:'100%',aspectRatio:800/420,maxHeight:260,marginVertical:10},modalBackdrop:{flex:1,backgroundColor:'rgba(0,0,0,.65)',alignItems:'center',justifyContent:'center',padding:20},modalCard:{maxWidth:480,width:'100%',padding:24,borderRadius:14,backgroundColor:'#fff6df'}});
 
-export function KaigoCourse({onBack,active=true}:{onBack:()=>void;active?:boolean}){return <WeeklyKaigo onBack={onBack} renderMock={form=><MockExam key={form.id} form={form} active={active}/>}/>;}
+export function KaigoCourse({onBack,active=true}:{onBack:()=>void;active?:boolean}){return <StudyAppearanceProvider><WeeklyKaigo onBack={onBack} renderMock={form=><MockExam key={form.id} form={form} active={active}/>}/></StudyAppearanceProvider>;}
