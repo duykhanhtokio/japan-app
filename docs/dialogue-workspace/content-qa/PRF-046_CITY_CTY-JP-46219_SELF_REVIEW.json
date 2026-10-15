@@ -1,0 +1,409 @@
+{
+  "cityId": "CTY-JP-46219",
+  "baseline": "70b9863045bb19397bc94bc4f0f393234389fcc3",
+  "inputSha256": "b5b1ee081bea4a999a4bbb8e627e34e4e42b32864a6898a9822d8836e4a024de",
+  "sourceSha256": "5b3abca559545df6b449938bdb4159adc1c4107e8f6dab3a01f9f83383b470c4",
+  "roleAlignmentSha256": "8ea4e476cc7b8f8202ae6f23c7e23f21977e9fe0b6b6942b9925e688018bb970",
+  "sourceFile": "scripts/dialogue-authoring/prf-046-city-cty-jp-46219.json",
+  "roleAlignmentFile": "docs/dialogue-workspace/content-qa/PRF-046_CITY_CTY-JP-46219_ROLE_ALIGNMENT.json",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-46219-01-001": {
+      "title": "乗換駅で友人と合流する時間を経路に含める",
+      "causalProgression": "いちき串木野市に配置した架空の駅経路相談窓口。乗換駅で友人と合流する客が、経路検索の乗換時間だけで改札外の待合せもできると思っている。検索の条件と待合せ場所を分け、友人の希望を確かめて余裕のある経路を照会する。実在の駅構造・接続・改札通過条件は示さない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "ask_search_transfer_time_for_meeting_friend",
+          "goal": "乗換駅で友人と会い一緒に出かけるため、検索の乗換時間で合流も足りると思ったと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "identify_outside_gate_meeting_not_platform_transfer",
+          "goal": "友人は改札外の案内板で待つと伝え、単なる乗換だけの時間と気づかなかったと述べる。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "retain_outside_meeting_after_friend_has_no_ticket",
+          "goal": "友人は未購入のため改札外合流を希望すると伝え、短時間に合わせホームへ来てもらわないと決める。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "prioritize_unhurried_meeting_over_fastest_arrival",
+          "goal": "目的地の予約はなく少し遅着でもよいので、最速より余裕ある改札外合流の候補を尋ねる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "confirm_ticket_and_train_before_promising_meeting_time",
+          "goal": "列車と切符条件を確認後に友人へ時刻を伝え、短い検索乗換をそのまま約束しないと述べる。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46219-02-001": {
+      "title": "二つの提出先へ同じ証明書を出せると決めない",
+      "causalProgression": "架空の行政証明書相談窓口。住宅申込みと勤務先への証明を一度に用意したい客が、二通とも同じ記載事項でよいと思っている。提出先の案内を別々に照合し、不明な世帯範囲と省略事項を先方へ確認してから部数を決める。証明書の発行条件や提出先の受理は保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "request_two_identical_certificates_for_housing_and_work",
+          "goal": "住宅用と会社用の二通を同じ住所証明と思い、同じ内容でよいと考えたと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "show_two_requirements_individual_vs_household_wording",
+          "goal": "住宅の紙と会社の携帯案内を示し、本人分と世帯の表現が異なると伝える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "identify_unknown_household_scope_and_omittable_fields",
+          "goal": "住所氏名は必要と聞いたが世帯範囲や省略項目は不明で、申請をまとめる前に分けて確かめたいと述べる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "ask_housing_and_employer_requirements_independently",
+          "goal": "住宅担当と会社へ別々に確認し、一方の回答を他方にも当てはめないと伝える。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "hold_two_copies_and_record_each_reply_before_applying",
+          "goal": "二通の申請を保留し、回答を各案内に記録して記載事項・部数・費用確認後に申込むと述べる。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46219-03-001": {
+      "title": "既往歴の欄で現在の痛みと過去のけがを分ける",
+      "causalProgression": "架空の病院問診相談窓口。手首の痛みで受診した患者が、既往歴を今の症状の意味と思って記入している。看護師が欄の語義を説明し、過去の骨折と今回の痛み、薬名の不明を分けて記録する支援をする。けが同士の関連や治療法は判断しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "ask_if_kiooreki_means_current_main_symptom",
+          "goal": "既往歴欄に今の手首痛を書き、今日の主症状という意味でよいか尋ねる。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "separate_old_left_arm_fracture_from_current_right_wrist",
+          "goal": "昔の左腕骨折と現在の右手首痛を別に記入したいと述べる。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "state_weekend_onset_bag_lifting_pain_without_cause_claim",
+          "goal": "週末から袋を持ち上げる際に痛み、昔の骨折との関係は不明なので原因と断定しないと説明する。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "disclose_no_regular_meds_and_unknown_patch_packaging",
+          "goal": "常用薬はなく昨日市販の貼り薬を使ったが名は不明で、家族に外袋を確認してもらえると述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "mark_approximate_fracture_date_and_unknown_product",
+          "goal": "骨折年はおよその時期と書き、貼った物も不明ならその旨伝えて単なる空欄にしないと述べる。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46219-04-001": {
+      "title": "匿名の貼り紙の事実と推測を分けて相談する",
+      "causalProgression": "架空の警察生活不安相談窓口。自宅の扉に繰り返し貼られる匿名の紙を受けた客が、近隣住民が書いたと決めつけそうになっている。内容・見つけた時刻・現在の危険を確認し、元の紙を保存して警察と住宅管理者への相談を分ける。書き手や犯罪該当性、解決を断定しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "report_two_anonymous_door_notes_without_current_person",
+          "goal": "現在は人を見かけず、帰宅が遅いことを記した匿名紙が扉に二度あったと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "separate_discovery_photos_from_unknown_author_time",
+          "goal": "発見日の写真はあるが貼付時刻は不明で、隣人と思っただけで書いた所は見ていないと伝える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "retain_original_notes_without_reply_or_neighbor_visit",
+          "goal": "元の二枚を保管し返事や隣家訪問はしておらず、写真と原本を確認してほしいと頼む。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "contact_property_manager_separately_from_police",
+          "goal": "管理者未連絡で警察相談が連絡代わりと思ったが、発見状況を管理者へ別途相談すると述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "avoid_neighbor_accusation_and_ask_future_contact_route",
+          "goal": "隣人と断定して責めず二度の記録を順に説明し、再発や危険時の相談方法を教えてほしいと頼む。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46219-05-001": {
+      "title": "再利用した箱の古い住所を今回の送り先と分ける",
+      "causalProgression": "架空の郵便発送前相談窓口。再利用の箱で衣類を送る客が、残った古い伝票と新しい宛先のメモを混在させている。送り先・差出人・受取人の滞在先を整理し、今回の情報が確かになるまで発送を保留する。受託や配達日、宛先変更を保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "distinguish_old_inbound_label_from_new_clothing_destination",
+          "goal": "残る伝票は自宅へ届いた時のもので、今回は友人へ衣類を送り別住所メモがあると伝える。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "identify_temporary_relative_address_and_unknown_recipient_name",
+          "goal": "送り先は友人の一時滞在する親戚宅で、受取可能な名前は未確認と説明する。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "state_jacket_trousers_and_wait_for_recipient_details",
+          "goal": "中身は上着とズボンと答え、友人に宛名と滞在先表記を聞き返信前に伝票を完成させないと述べる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "use_current_sender_address_not_old_label",
+          "goal": "旧伝票の自分の旧住所を写さず現在住所を確認し、宛先と差出人の欄を取り違えないようにしたいと伝える。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "check_cost_estimate_after_address_without_delivery_promise",
+          "goal": "滞在中の配達を希望するが日付は約束せず、宛先確認後に料金と見込みを聞いて発送を決めると述べる。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46219-06-001": {
+      "title": "家賃の振込先変更を銀行の照合だけで正しいと思わない",
+      "causalProgression": "架空の銀行振込相談窓口。家賃の口座変更というメールを受けた客が、銀行で名義が表示されれば依頼自体も正しいと分かると思っている。新旧の情報と依頼の出所を分け、従来の管理会社連絡先へ確認するまで送金を保留する。詐欺かどうかや返金、契約上の扱いを断定しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "ask_bank_name_display_as_proof_of_rent_account_change",
+          "goal": "管理会社名のメールで別口座を指定され、銀行の名義表示で変更の真偽も分かると思ったと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "show_old_contract_contact_and_unverified_email_number",
+          "goal": "契約案内に旧口座と連絡先があり、メールの別番号との真偽は未確認と伝える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "verify_through_prior_contact_and_hold_new_or_double_payment",
+          "goal": "従来の契約連絡先へ尋ね、確認前に新口座や両口座へ送らないと述べる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "separate_bank_fee_from_unclear_rent_deduction_request",
+          "goal": "メールの手数料差引表現が不明で、銀行手数料と相手へ払う金額を別に確認したいと尋ねる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "confirm_account_and_rent_amount_before_returning_without_execution",
+          "goal": "管理会社へ口座変更と支払額を確認し、返信と元資料で再相談して今日は実行しないと伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46219-07-001": {
+      "title": "私用と職場用の買い物を決済前に分けて相談する",
+      "causalProgression": "架空のスーパー会計相談窓口。自分の食品と職場用の日用品を一つの会計に載せた客が、後で必ず別の領収書を出せると思っている。決済前に商品区分・袋・支払方法と書類条件を確認する。会計分割や領収書の書換え、経費認定を保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "explain_personal_food_work_supplies_receipt_split_assumption",
+          "goal": "自分の食品と職場用掃除品をまとめて払っても後で職場分の領収書を出せると思ったと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "identify_two_work_items_and_request_pre_payment_split",
+          "goal": "掃除用品二つだけが職場用と示し、未決済なので食品と会計を分けられるか確認を頼む。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "request_separate_work_bag_and_fee_allocation",
+          "goal": "食品は持参袋、職場用は別袋を希望し、有料なら袋代をどちらへ入れるか事前相談したいと述べる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "request_cash_personal_card_work_and_document_method",
+          "goal": "私用は現金、職場用はカードを希望し、カード利用と書類方法を決済前に確認してほしいと頼む。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "check_formal_company_name_items_bags_amounts_before_pay",
+          "goal": "携帯の正式社名を見直し、商品区分・袋・宛名・金額と二会計の準備を確認してから払うと述べる。"
+        }
+      ]
+    },
+    "SC-LOC-JP-46219-08-001": {
+      "title": "片道の距離表示を往復分と思わない",
+      "causalProgression": "架空の公園散歩距離相談窓口。短い散歩を希望する客が、見晴らし場所までの距離を往復全体と思っている。矢印の向きと帰路を図で確認し、休憩を含めて負担を見直し、目的地にこだわらず途中で戻る計画を立てる。実在の距離・所要時間・休憩席の空きを示さない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "ask_viewpoint_arrow_distance_as_total_return_walk",
+          "goal": "見晴らし場所へ往復したく、矢印横の距離を全行程の長さと思ったと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "recognize_one_way_distance_exceeds_short_return_assumption",
+          "goal": "片道表示と分かり、短い往復と思ったが同じ道を戻れば想定より長いと述べる。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "prioritize_early_return_over_viewpoint_after_long_break",
+          "goal": "久しぶりの散歩で見晴らし場所到達より早く戻れることを優先し、近い折返し範囲を尋ねる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "avoid_distance_extension_for_seat_and_choose_turnback_landmark",
+          "goal": "空席を前提に延ばさず近くの様子を見て、別の道へ出ない折返しの目印も決めたいと述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "confirm_entrance_turnback_and_reserve_return_capacity",
+          "goal": "入口と候補目印を図で確認し、到達を約束せず帰路の余力も残して短く歩くと伝える。"
+        }
+      ]
+    }
+  },
+  "corrections": [
+    "最終自己再読で、駅の検索時間の指示対象を明示し、市販の貼り薬と家賃資料の表現を自然にした。公園の誤解は一周ではなく往復距離へ統一し、題名・発話・課題を整えた。",
+    "旧版の反復目標を、各応答と直前のNPCに対応する四十の具体的課題へ変更した。",
+    "駅では改札外の友人との合流を検索の乗換時間に含むと決めず、切符条件と余裕を照会する。",
+    "証明書は二提出先の記載事項を分け、同じ二通で済むと決めず申請を保留する。",
+    "問診の既往歴と現在症状を区別し、左腕骨折と右手首痛の関連を断定しない。",
+    "匿名紙は発見事実と隣人の推測を分け、管理者への相談と警察相談を別にする。",
+    "発送は再利用箱の古い伝票と今回の宛先・差出人を分け、友人の一時滞在先の受取条件を照会する。",
+    "銀行では口座名義表示と家賃変更依頼の真偽を分け、従来の連絡先への確認まで送金を保留する。",
+    "会計は私用と職場用の区分を決済前に相談し、公園は片道の表示と帰路を分ける。"
+  ],
+  "checks": {
+    "exactScenarioIds": true,
+    "elevenAlternatingTurnsEach": true,
+    "fiveSpecificTasksEach": true,
+    "fortyDistinctPlayerTurns": true,
+    "fortyDistinctTaskGoals": true,
+    "allFinalTitlesPremisesTurnsTasksAndRoleCorrectionsReread": true,
+    "specificCausalProgression": true,
+    "concreteNpcClosures": true,
+    "japaneseOnlyProse": true,
+    "supportedCategoriesExactMatch": true,
+    "fictionalVenuesNullHoursAddresses": true,
+    "noRealPolicyScheduleMedicalOrRefundGuarantees": true,
+    "noSharedOrRuntimeWrites": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "独立した自己レビューのみ。人間・母語話者・同僚によるレビューは未実施。",
+    "実在の制度・地理・設備・価格・運行・医療判断は未検証。既存画像との一致は保証しない。",
+    "実機確認・公開承認・翻訳は行っていない。"
+  ]
+}
