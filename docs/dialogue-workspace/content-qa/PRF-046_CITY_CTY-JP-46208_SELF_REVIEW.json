@@ -1,0 +1,70 @@
+{
+  "cityId": "CTY-JP-46208",
+  "baseline": "70b9863045bb19397bc94bc4f0f393234389fcc3",
+  "inputSha256": "af6dd3ecc56584f1160057418b930d48954668ef0903a8af4fe3a43a91977555",
+  "sourceSha256": "438e63e70669285d417370da6dea431c5f99c0af0efcfcd4d194913b8d9377c9",
+  "roleAlignmentSha256": "4f3fc33ce01a1be8f284036c4043c1b09aafd6d01b7dee56ff4e2a2f256a451a",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-46208-01-001": "駅前広場行きのエレベーターをホーム行きと思いかけた客が、同じ階の通路で改札へ向かい、予約画面と発車案内でホーム番号を確かめてから設備を選ぶ。重い荷物のため改札係の案内も依頼する。",
+    "SC-LOC-JP-46208-02-001": "荷物を運んだあと旧居で二晩過ごした転居者が、生活開始日と搬入日、後日移る家族を区別する。写しの部屋番号が欠けており推測記入をせず、経緯と空欄を担当へ相談する。",
+    "SC-LOC-JP-46208-03-001": "同日午前の検査と午後の診察の二予約について、仕事のため次週への変更を希望する。片方だけ取消せず組合せと現予約の扱いを確認し、自覚変化なしを延期可否の判断にせず準備も再確認する。",
+    "SC-LOC-JP-46208-04-001": "兄から借りた青い後ろかご付き自転車が見当たらず、駐輪位置も不確か。似た別車体は動かさず、写真を示して兄の登録資料の有無と管理者への確認を進める。見当たらないと気づいた時刻と実際の消失時期を分ける。",
+    "SC-LOC-JP-46208-05-001": "応募書類の案内から発送控えと配達記録を混同し、追跡が内容受理を意味しないと知る。必着を差出日と誤解していた点も直し、到着見込みと料金を聞いてから発送方法を選ぶ。",
+    "SC-LOC-JP-46208-06-001": "給与口座の準備で勤務先と本人資料の氏名順、古い住所の記載が異なる。氏名を勝手に省略せず資料を示し、新住所の確認資料と不足点を聞いて開設確定とは区別する。",
+    "SC-LOC-JP-46208-07-001": "二十六袋入りと五十二袋入りの麦茶の札を比べ、二点購入条件に気づく。一つだけ必要なので割引目的で量を増やさず、二十六袋一個の通常価格をレジで照合する。",
+    "SC-LOC-JP-46208-08-001": "友人の迎えが元の入口のため、休憩所から近い別出口へ変える前に連絡する。距離だけでは車の迎え可否を決めず、返答と出口名の相互確認がなければ紙の図で元入口へ往復する。"
+  },
+  "corrections": [
+    "八件の汎用会話をそれぞれ独立した誤認・条件・確認・結果の展開に書き換え、四十のプレイヤー発話・課題・意図を区別した。",
+    "全八施設を架空と明記し、未検証営業時間を削除して営業時間と住所をnullにした。公園の職務をCommunity StaffからPark Staffに合わせた。",
+    "最終自己再読で転入の家族について「今日来た」が窓口来訪と紛らわしかったため、同じ日に住み始めたと書かないという実際の居住日へ明示した。欠けた番号は記憶に頼った記入の問いとし、未記入箇所のある用紙という結末に整えた。",
+    "駅の切符でホーム番号が見当たらないという発話を自然にし、銀行の題名をつづりではなく氏名の並びへ合わせ、自転車の課題の不自然な「発見不能」を「見当たらないと気づいた」に直した。修正した四場面を課題とともに再読した。",
+    "親担当の機械的な重複検査で郵便場面の冒頭NPC文が他の一文と完全一致すると報告されたため、相手方は読まず、自分の冒頭を応募先への封筒・保存記録・発送条件を尋ねる文へ修正した。直後の応答と第一課題を含めて再読し、因果展開と評価条件を維持した。"
+  ],
+  "checks": {
+    "assignedScenarioLocationIdsExact": true,
+    "eightScenariosElevenTurnsEach": true,
+    "fiveTasksPerScenario": true,
+    "fortyUniquePlayerLinesGoalsIntents": true,
+    "japaneseTitlesPremisesTurnsGoals": true,
+    "fullOwnFinalTitlesPremisesTurnsTasksRolesReread": true,
+    "allTasksAgainstPrecedingNpcAndPlayerReviewed": true,
+    "independentCausalProgressionsReviewed": true,
+    "npcFirstAlternationAndConcreteNpcClosuresReviewed": true,
+    "numericAndReferentConsistencyReviewed": "引越後の旧居二晩、検査と診察の予約票二枚と午前午後・次週、借りた青い車体と別の青い車体、麦茶二十六袋と五十二袋・二点条件と一個購入を照合した。",
+    "allEightCategoriesExactNpcProgressionMatch": true,
+    "allEightFictionalNamesNullHoursAddress": true,
+    "nurseDoesNotDecideDelayOrConfirmBooking": true,
+    "policeDoesNotDetermineTheftOrOwnership": true,
+    "bankDoesNotGuaranteeAccountOpening": true,
+    "postalDeliveryDoesNotImplyApplicationAcceptance": true,
+    "noNewCategoriesOrAssets": true,
+    "noCrossReading": true,
+    "noActiveCheckoutRuntimeSharedOrGitWrites": true,
+    "sourcePath": "scripts/dialogue-authoring/prf-046-city-cty-jp-46208.json",
+    "roleAlignmentPath": "docs/dialogue-workspace/content-qa/PRF-046_CITY_CTY-JP-46208_ROLE_ALIGNMENT.json"
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "独立モデルの自己再読のみで、人間・母語話者・他著者の校閲は行っていない。",
+    "実在の出水市の駅構内、施設の営業時間、運営や制度・郵便仕様・価格・公園地図等を検証した案内ではない。すべて学習用の架空条件である。",
+    "転入の記入日付や書類、検査と診察の変更・延期と準備、口座の開設可否は個別確認が必要として未確定にした。",
+    "自転車の消失時期・位置・盗難や撤去は確定せず、郵便の配達記録も提出先の内容確認や応募受理を保証しない。",
+    "既存カテゴリと資産のみを前提とし、個別の昇降設備・紙の地図・衣装とアートワークの細かな一致は未確認。",
+    "ランタイム統合、端末表示、翻訳、公開承認は未実施。"
+  ]
+}
