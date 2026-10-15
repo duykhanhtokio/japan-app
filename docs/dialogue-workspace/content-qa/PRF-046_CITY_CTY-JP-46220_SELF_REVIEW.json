@@ -1,0 +1,70 @@
+{
+  "cityId": "CTY-JP-46220",
+  "baseline": "70b9863045bb19397bc94bc4f0f393234389fcc3",
+  "inputSha256": "01d8c12af675b92ed2d29e473f92fac1f41ec76b9854e70ce57701930bcb551a",
+  "sourceSha256": "f3151fbf51f26fcbf4f12a55efa8aa7ff4374e987f229facb695afe12fbd82c2",
+  "roleAlignmentSha256": "69752a48a9f4225574d9f03adc938203f2cf276ad89848224b129f770613b82b",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-46220-01-001": "携帯の予定発車時刻と駅の遅延表示を区別する。仕事の打合せにオンラインで参加できるか先方へ聞き、別切符購入や携帯券の取消は条件確認まで行わず、運行表示更新も確認する。",
+    "SC-LOC-JP-46220-02-001": "夫宛ての予約を家族全員の相談枠と思っていた客が、同席希望と自分の住所書類の相談を分ける。夫の通訳だけに頼らず短い日本語説明を希望し、別担当と相談方法を照会する。",
+    "SC-LOC-JP-46220-03-001": "手元の二枚は明細と予約票で領収書ではない。受取忘れか紛失かも決めず、現金支払の経緯を会計へ伝え、領収書の発行状況と職場の原本要否を別々に確認する。",
+    "SC-LOC-JP-46220-04-001": "眼鏡ケースを食堂か買物先でなくした客が、灰色の外見と内側の名入り布、本人の所有物でなく同型商品だけの参考画像を区別して説明する。二か所へ問い合わせ発見時に相談先へ知らせる。",
+    "SC-LOC-JP-46220-05-001": "再配達申込後に窓口受取を希望した客が、同番号の画面だけで変更確定とはしない。荷物の所在と取消変更の順序、必要資料、保管期限を確認してから方法を決める。",
+    "SC-LOC-JP-46220-06-001": "紛失申出後に上着でカードが見つかる。利用停止状態は未確認のため機械で試さず、受付番号を示し、再利用可否を先に、再発行必要時だけ費用と時期を尋ねる。",
+    "SC-LOC-JP-46220-07-001": "二枚組の買い物袋一枚の持ち手のほつれを使用後に発見する。原因は不明で重さも測っておらず補修していないと伝え、二枚とレシートの該当行で交換の相談範囲と対応理由を尋ねる。",
+    "SC-LOC-JP-46220-08-001": "池への短い下り道は帰りに上りとなるため、同じ高さの花壇へ候補を変更する。屋根付き休憩所の席を前提とせず、緑線と行き先文字を照合し、休めなければ早めに戻る。"
+  },
+  "corrections": [
+    "八件の汎用応答を独立した状況・誤認・条件・結果を持つ会話へ変更し、四十のプレイヤー発話・課題・意図をそれぞれ具体化した。",
+    "全八施設を明示的な架空名にし、住所・営業時間をnullにした。公園の職務をCommunity StaffからPark Staffへ合わせ、既存カテゴリのみを維持した。",
+    "最終自己再読で駅の題名を未確定の参加方法と切符条件を分けて考える展開へ合わせた。看護師の結末でそれまでに所持を述べていない診察券を追加せず、二枚の紙のみを用意する形へ修正した。",
+    "遺失課題は落下したと断定せず、なくした場所が不明という発話へ合わせた。行政職員の配偶者への呼び方を一か所自然にした。修正した四場面の題名・前提・全発話・課題を再読した。"
+  ],
+  "checks": {
+    "exactAssignedScenarioAndLocationIds": true,
+    "eightScenariosElevenTurnsEach": true,
+    "fiveSpecificTasksEach": true,
+    "fortyUniquePlayerLinesGoalsAndIntents": true,
+    "japaneseTitlesPremisesTurnsGoals": true,
+    "fullFinalOwnTitlesPremisesTurnsTasksRolesReread": true,
+    "immediateNpcAndPlayerTaskAlignmentReviewed": true,
+    "distinctCausalProgressionsReviewed": true,
+    "npcFirstAlternationConcreteNpcClosuresReviewed": true,
+    "numericReferentConsistencyReviewed": "手元の明細と予約票二枚、遺失物の眼鏡と名入り布・食堂と買物先二か所、同じ不在票番号、袋二枚組の一枚と使用一度、緑の花壇道と青の池道を場面内で照合した。",
+    "categoriesExactNpcProgressionMatch": true,
+    "allEightFictionalVenuesNullHoursAddress": true,
+    "noUnverifiedLocalRailOrParkClaims": true,
+    "medicalDocumentIssueAndEmployerAcceptanceUnconfirmed": true,
+    "policeDoesNotAuthenticateOwnershipOrPromiseRecovery": true,
+    "bankDoesNotConfirmStopReleaseOrReissue": true,
+    "postalChangeAndProductExchangeRemainConditional": true,
+    "noNewAssetsOrCategories": true,
+    "noCrossReading": true,
+    "noActiveCheckoutRuntimeSharedOrGitWrites": true,
+    "sourcePath": "scripts/dialogue-authoring/prf-046-city-cty-jp-46220.json",
+    "roleAlignmentPath": "docs/dialogue-workspace/content-qa/PRF-046_CITY_CTY-JP-46220_ROLE_ALIGNMENT.json"
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "独立したモデルの自己再読のみであり、人間・母語話者・他著者の校閲は行っていない。",
+    "実在の南さつま市の駅や運行・施設営業時間・行政相談・郵便取扱い・銀行条件・店舗規則・公園地図を検証した案内ではなく、すべて学習用の架空条件である。",
+    "行政の同席と当日相談、領収書発行・再発行と職場受理、郵便の所在や変更順序、銀行の利用状態と再発行、商品の交換は未確定で担当確認を必要としている。",
+    "遺失物の発見や持ち主認定、公園での歩行の安全性、列車の再開や切符の払戻しは保証しない。",
+    "新規カテゴリや画像資産は追加していない。個別の紙・地図・窓口・衣装と既存画像との細かな視覚一致は未確認。",
+    "ランタイム統合、端末表示、翻訳、公開承認は未実施。"
+  ]
+}
