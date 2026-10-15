@@ -1,7 +1,7 @@
 import { kaigoCourse } from "./index";
 import { sectionsFor, type ReadingSection } from "./weekly-learning";
 import type { CatalogEntry, TopicId } from "./catalog";
-import { japaneseMasterSections } from './japanese-master';
+import { japaneseMasterSections, japaneseLessonKey, japaneseLessonMetadata } from './japanese-master';
 
 export const topicTitlesJa: Record<TopicId, string> = {
   dignity: "尊厳と自立支援",
@@ -17,12 +17,13 @@ export const topicTitlesJa: Record<TopicId, string> = {
   review: "総合復習",
 };
 export const titleForDay = (entry: CatalogEntry) =>
-  `${topicTitlesJa[entry.topicId]} · 第${entry.day}日`;
+  japaneseLessonMetadata[japaneseLessonKey(entry)]?.titleJa ?? `${topicTitlesJa[entry.topicId]} · 第${entry.day}日`;
 export type JapaneseReadingSection = ReadingSection & {
   headingJa: string;
   paragraphsJa: string[];
   japaneseComplete: boolean;
   masterStatus?: string;
+  figureCaptionsJa?: Record<string, string>;
 };
 const placeholder = /^知識を確かめて、理由を説明しましょう。$/;
 
@@ -40,6 +41,7 @@ export function japaneseSectionsFor(
       paragraphsJa: master.paragraphsJa,
       japaneseComplete: true,
       masterStatus: master.editorialStatus,
+      figureCaptionsJa: master.figureCaptionsJa,
     };
     const lesson = lessons.find((l) => section.id.startsWith(l.id + "-"));
     let paragraphsJa =

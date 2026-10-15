@@ -281,6 +281,9 @@ async function end(tree, id) {
             assert.deepEqual(node.children, [paragraph], `Day ${slot.day}: aligned translation paragraph mismatch`);
           });
           assert.equal(hosts(t, `kaigo-translation-${section.id}-0`).length, 0, "Do not display legacy text beside the aligned translation");
+        } else if (section.masterStatus) {
+          assert.equal(hosts(t, `kaigo-translation-${section.id}-0`).length, 0, 'Unaligned legacy Vietnamese must stay hidden for a Japanese master');
+          assert(text(t).includes('この言語の翻訳は準備中です。'));
         } else section.paragraphs.forEach((paragraph, index) => {
           const node = get(t, `kaigo-translation-${section.id}-${index}`);
           assert.deepEqual(node.children, [paragraph], `Day ${slot.day}: original translation paragraph changed`);

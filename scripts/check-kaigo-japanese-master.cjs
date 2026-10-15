@@ -31,4 +31,4 @@ for(const [id,q] of Object.entries(qs)){
  assert.equal(new Set(q.rationalesJa).size,4,`${id}: repeated rationale`);
  for(const explanation of q.rationalesJa){assert(explanation.trim());assert(!explanation.startsWith('この選択肢は場面の条件と一致しません。'),`${id}: generic explanation`);}
 }
-console.log('KAIGO JAPANESE MASTER PASS: 7 days / 73 sections / 246 paragraphs; legacy source bytes preserved; stale and unsupported translations rejected; 59 question drafts structurally valid (not runtime-integrated).');
+console.log('KAIGO JAPANESE MASTER PASS: 7 days / 73 sections / 246 paragraphs; legacy source bytes preserved; stale and unsupported translations rejected; 59 week1 question masters structurally valid; runtime preview is checked separately.');

@@ -1,6 +1,6 @@
 # Hướng dẫn chính thức — Tokutei Gino 介護
 
-Phiên bản: 13. Ngày duyệt: 2026-10-16 (Asia/Tokyo).
+Phiên bản: 14. Ngày duyệt: 2026-10-16 (Asia/Tokyo).
 Trạng thái: CHỦ DỰ ÁN ĐÃ DUYỆT PHƯƠNG ÁN BIÊN SOẠN.
 Repository: duykhanhtokio/japan-app. Nhánh: recovery/jlpt-n3-n1.
 Đây là hợp đồng biên soạn; duyệt phương án không chứng nhận nội dung chưa được tạo, kiểm duyệt hoặc tích hợp.
@@ -213,3 +213,12 @@ Việt: giải thích dùng “người được chăm sóc”; nhân viên tr�
 Nhật hiển thị trước; mở dịch thì từng đoạn dịch theo ngay đoạn Nhật tương ứng. Giữ thứ tự, ngôn ngữ chọn, liên kết phiên bản và hệ Royal/màu ngày–đêm/thành phần hiển thị đã duyệt; không tự đổi thiết kế theo tuần/phiên hoặc lẫn bản cũ với bản mới. Rà cả nghĩa, độ tự nhiên, xưng hô, thuật ngữ và cặp đoạn; kiểm tự động không chứng nhận chất lượng ngôn ngữ.
 
 Duyệt này xác nhận phong cách Việt và nguyên tắc chung, không tự nâng cờ chuyên môn, bản ngữ, thiết bị hoặc toàn bộ bản dịch. Sửa lỗi thường lệ trong phạm vi đã giao được tiếp tục; không yêu cầu chủ dự án duyệt lại chuẩn đã chốt.
+
+
+## 25. Ưu tiên hoàn thiện toàn bộ bản Nhật, 6 AI song song — yêu cầu 2026-10-16
+
+Chủ dự án yêu cầu dùng6AI cùng biên soạn để tăng tốc và tạm thời ưu tiên hoàn thiện toàn bộ nội dung tiếng Nhật. Các bản dịch chỉ tiếp tục sau khi bản Nhật của toàn bộ phạm vi Kaigo đã hoàn thiện và kiểm tra. Quyết định này thay bước dịch và cổng phải xong bản dịch của từng tuần ở mục23; không đợi dịch tuần1 mới được soạn Nhật tuần2. Giữ nguyên các bản dịch đã lưu, chỉ vô hiệu bản không còn khớp phiên bản Nhật; không tạo thêm hoặc sửa hàng loạt bản dịch trong giai đoạn hiện tại.
+
+Chia6phạm vi độc lập theo tuần, mỗi AI giữ đúng ID và đọc nguồn liên quan; không sửa chéo tệp hoặc tự đổi hướng dẫn/UI. Đợt đầu:tuần2–7, mỗi AI một tuần; điều phối kiểm tập hợp, đối chiếu nguồn, dữ liệu cũ và tích hợp Nhật, commit/push/fetch/xác minh trước đợt tiếp. Tiếp tục các tuần còn lại theo cùng nguyên tắc. Câu hỏi, đáp án, lời giải, thuật ngữ, chú thích và nội dung phụ đều thuộc bản Nhật; không chỉ đổi ngôn ngữ mặc định.
+
+Báo riêng trạng thái bản Nhật, bản dịch đang tạm hoãn và duyệt chuyên môn/bản ngữ/thiết bị. Chỉ đánh dấu Nhật của một tuần đầy đủ khi đã kiểm nội dung, nguồn, ảnh và tích hợp theo phạm vi thực tế; tổng thể Kaigo vẫn chưa hoàn thành trong thời gian bản dịch hoặc bước khác còn dở. Không tự nhận100%độ phủ nguồn khi chưa có danh mục mọi ý nguồn.

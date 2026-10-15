@@ -59,6 +59,7 @@ module.exports = async function compile(root, modules) {
     "src/data/kaigo/japanese-master",
     "src/data/kaigo/catalog",
     "src/data/kaigo/weekly-learning",
+    "src/data/kaigo/japanese-assessments",
     "src/components/tokutei/StudyAppearance",
     "src/data/kaigo/index",
   ];

@@ -40,21 +40,23 @@ import {
   japaneseSectionsFor,
   titleForDay,
 } from "@/data/kaigo/japanese-reading";
-import { japaneseLessonMetadata, translationForMaster, translationForLesson } from '@/data/kaigo/japanese-master';
+import { japaneseLessonKey, japaneseLessonMetadata, translationForMaster, translationForLesson } from '@/data/kaigo/japanese-master';
 import { illustrationForStudyDay } from "@/data/kaigo/weekly-art-allocation";
 import { kaigoDepthFigures } from "@/data/kaigo/depth-figures";
 import {
-  assessmentRevisionForWeek,
   completionKey,
   emptyCompletion,
   learningWeeks,
   mockForDay,
-  questionsForWeek,
   restoreCompletion,
   weekDone,
   type Completion,
-  type WeeklyQuestion,
 } from "@/data/kaigo/weekly-learning";
+import {
+  japaneseAssessmentRevisionForWeek as assessmentRevisionForWeek,
+  japaneseQuestionsForWeek as questionsForWeek,
+  type JapaneseWeeklyQuestion as WeeklyQuestion,
+} from '@/data/kaigo/japanese-assessments';
 import { loadKaigoState, saveKaigoState } from "@/services/kaigo-storage";
 import type { MockForm, RubyToken } from "@/data/kaigo/types";
 
@@ -254,6 +256,7 @@ function WeeklyAssessment({
                 : `問題 ${index + 1}/${questions.length} · 解答済み ${answered}`}
             </Text>
             <Action
+              testID="kaigo-weekly-translation"
               title={translationOpen ? "翻訳を閉じる" : "翻訳を見る"}
               onPress={() => setTranslationOpen((v) => !v)}
             />
@@ -272,7 +275,9 @@ function WeeklyAssessment({
                 この問題の日本語本文は整備中です。翻訳を開くと既存のベトナム語教材を確認できます。
               </Text>
             )}
-            {translationOpen && <TranslationText>{q.prompt}</TranslationText>}
+            {translationOpen && (q.japaneseMaster
+              ? <TranslationText>この言語の翻訳は準備中です。</TranslationText>
+              : <TranslationText>{q.prompt}</TranslationText>)}
             {(q.language === "ja" || translationOpen) &&
               q.options.map((option, i) => (
                 <Pressable
@@ -300,7 +305,12 @@ function WeeklyAssessment({
             {st.value.submitted && (
               <View testID="kaigo-weekly-review">
                 <Text style={s.heading}>正答：{q.correctIndex + 1}</Text>
-                {translationOpen &&
+                {q.japaneseMaster && q.rationales.map((r, i) => (
+                  <Text key={i} testID={`kaigo-weekly-rationale-${i}`} style={[s.body, { color: colors.text }]}>
+                    {i + 1}. {r}
+                  </Text>
+                ))}
+                {translationOpen && !q.japaneseMaster &&
                   q.rationales.map((r, i) => (
                     <TranslationText key={i}>
                       {i + 1}. {r}
@@ -426,13 +436,14 @@ function DayReading({
   onMock: (id: string) => void;
 }) {
   const sections = japaneseSectionsFor(entry),
-    masterLesson = japaneseLessonMetadata[entry.id],
+    lessonKey = japaneseLessonKey(entry),
+    masterLesson = japaneseLessonMetadata[lessonKey],
     form = mockForDay(entry.day),
     cover = illustrationForStudyDay(entry.day),
     [translationOpen, setTranslationOpen] = useState(false),
     { colors } = useStudyAppearance(),
     { language } = useAppLanguage();
-  const lessonTranslation = translationForLesson(entry.id, language);
+  const lessonTranslation = translationForLesson(lessonKey, language);
   const translated = (text: string, id?: string) =>
     translationOpen ? (
       language === "vi" ? (
@@ -454,11 +465,11 @@ function DayReading({
       </Text>
       {translationOpen && lessonTranslation
         ? <TranslationText>{lessonTranslation.title}</TranslationText>
-        : <>
+        : masterLesson ? translationOpen && <TranslationText>この言語の翻訳は準備中です。</TranslationText> : <>
             {masterLesson && translationOpen && language === "vi" && <TranslationText>旧版参考訳：日本語原稿との照合前です。</TranslationText>}
             {translated(entry.titleVi)}
           </>}
-      {translationOpen && masterLesson && language === 'vi' && (
+      {translationOpen && masterLesson && lessonTranslation && language === 'vi' && (
         <TranslationText>Bản dịch hỗ trợ học tập từ nội dung tiếng Nhật. Chưa có người duyệt độc lập.</TranslationText>
       )}
       {masterLesson && (
@@ -482,7 +493,7 @@ function DayReading({
       {masterLesson && <JapaneseText testID={`kaigo-art-caption-${entry.day}`} text={masterLesson.artCaptionJa} />}
       {translationOpen && lessonTranslation
         ? <TranslationText>{lessonTranslation.artCaption}</TranslationText>
-        : translated(cover.captionVi)}
+        : !masterLesson && translated(cover.captionVi)}
       {sections.map((section) => {
         const translation = translationForMaster(section.id, language);
         return (
@@ -525,12 +536,10 @@ function DayReading({
           )}
           {translationOpen && section.masterStatus && !translation && (
             <TranslationText>
-              {language === 'vi'
-                  ? '日本語原稿からの翻訳は準備中です。以下は照合前の旧版参考訳であり、現在の日本語原稿と一致するとは限りません。'
-                  : 'この言語の翻訳は準備中です。'}
+              この言語の翻訳は準備中です。
             </TranslationText>
           )}
-          {!translation && <>
+          {!translation && !section.masterStatus && <>
           {translated(section.heading)}
           {section.paragraphs.map((paragraph, index) => (
             <View key={index}>
@@ -552,7 +561,13 @@ function DayReading({
                   maxHeight: 320,
                 }}
               />
-              {translated(figure.captionVi)}
+              {section.figureCaptionsJa?.[figure.key] && (
+                <JapaneseText text={section.figureCaptionsJa[figure.key]} testID={`kaigo-figure-caption-${section.id}-${figure.key}`} />
+              )}
+              {section.masterStatus && (
+                <Text style={[s.meta, { color: colors.muted }]}>図中の文字は旧版です。日本語ラベルを確認中です。</Text>
+              )}
+              {!section.masterStatus && translated(figure.captionVi)}
             </View>
           ))}
         </View>

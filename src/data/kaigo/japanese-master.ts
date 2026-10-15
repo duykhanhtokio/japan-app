@@ -1,4 +1,4 @@
-import week01 from './japanese-master/week-01.json';
+import { japaneseMasterBatches } from './japanese-master-batches';
 import pilotTranslations from './japanese-master/translations/pilot-01.json';
 import vietnameseWeek01 from './japanese-master/translations/week-01.vi.json';
 import englishWeek01 from './japanese-master/translations/week-01.en.json';
@@ -10,6 +10,7 @@ export type JapaneseMasterSection = {
   humanReviewed: boolean;
   domainReviewed: boolean;
   nativeReviewed: boolean;
+  figureCaptionsJa?: Record<string, string>;
 };
 export type JapaneseLessonMetadata = {
   day: number;
@@ -19,8 +20,12 @@ export type JapaneseLessonMetadata = {
   artCaptionJa: string;
   artReviewStatus: string;
 };
-export const japaneseMasterSections: Record<string, JapaneseMasterSection> = week01.sections;
-export const japaneseLessonMetadata: Record<string, JapaneseLessonMetadata> = week01.lessons;
+export const japaneseMasterSections: Record<string, JapaneseMasterSection> = Object.assign({}, ...japaneseMasterBatches.map(batch => batch.sections));
+export const japaneseLessonMetadata: Record<string, JapaneseLessonMetadata> = Object.assign({}, ...japaneseMasterBatches.map(batch => batch.lessons));
+export function japaneseLessonKey(entry: { id: string; day: number }): string {
+  const dayKey = `study-day-${entry.day}`;
+  return japaneseLessonMetadata[dayKey] ? dayKey : entry.id;
+}
 
 /** Content-dependent binding. Any Japanese edit invalidates a previous translation. */
 export function japaneseMasterRevision(master: Pick<JapaneseMasterSection, 'headingJa' | 'paragraphsJa'>): string {

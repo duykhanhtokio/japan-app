@@ -104,3 +104,8 @@ Mẫu tham chiếu hiển thị là tuần 1 trong commit đã nêu. Quy tắc n
 Mỗi đợt ghi phiên bản hướng dẫn/hồ sơ đã dùng, ngôn ngữ, phạm vi bài, mẫu đã đối chiếu và mọi quyết định đổi thuật ngữ/xưng hô. Nếu phát hiện cách gọi sai, sửa hồ sơ chung và xác định các bài bị ảnh hưởng; không sửa một bài rồi để phần còn lại dùng chuẩn khác mà không ghi việc cần đồng bộ.
 
 Không tự đổi chuẩn phong cách đã được chủ dự án duyệt theo sở thích của phiên AI mới. Điều chỉnh chính sách phải có lý do và được ghi phiên bản; chỉ hỏi chủ dự án khi có thay đổi thực sự ngoài phạm vi đã được giao. Không yêu cầu duyệt lại việc sửa lỗi thông thường hoặc việc tiếp tục áp dụng chính sách đã chốt.
+
+
+## 9. Thứ tự sản xuất hiện tại — cập nhật chủ dự án 2026-10-16
+
+Ưu tiên hoàn thiện và kiểm tra toàn bộ bản Nhật trước; tạm hoãn soạn bản dịch mới cho đến khi xong phạm vi Nhật toàn khóa.6AI soạn các tuần độc lập, điều phối tích hợp và xác minh từng đợt. Phong cách, thuật ngữ và hiển thị đã duyệt tiếp tục áp dụng. Giữ bản dịch đã có và kiểm ràng buộc phiên bản; thiếu bản dịch thì báo đang chuẩn bị, không hiển thị bản Việt cũ như bản đã đối chiếu. Quyết định này thay lịch dịch theo từng tuần, không thay chuẩn chất lượng hay ý nghĩa các cờ duyệt.
