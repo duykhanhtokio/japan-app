@@ -1,0 +1,2449 @@
+{
+  "city": {
+    "id": "CTY-OIT-BEPPU",
+    "name": "Beppu",
+    "nameJa": "別府市",
+    "type": null,
+    "description": "Thành phố Beppu (別府市) thuộc tỉnh Oita. Bối cảnh hội thoại riêng theo đặc trưng địa phương.",
+    "prefectureId": "PRF-044",
+    "order": 257,
+    "unlockLevel": 0,
+    "status": null,
+    "population": 0,
+    "locationIds": [
+      "LOC-OIT-BEPPU-01",
+      "LOC-OIT-BEPPU-02",
+      "LOC-OIT-BEPPU-03",
+      "LOC-OIT-BEPPU-04",
+      "LOC-OIT-BEPPU-06",
+      "LOC-OIT-BEPPU-07",
+      "LOC-OIT-BEPPU-05",
+      "LOC-OIT-BEPPU-08"
+    ]
+  },
+  "baseline": "3954f280818ce7c8e596a45e99a2823e86eda841",
+  "entries": [
+    {
+      "scenario": {
+        "id": "SC-OIT-BEPPU-001",
+        "name": "入浴施設の利用方法を確認する",
+        "locationId": "LOC-OIT-BEPPU-01",
+        "cityId": "CTY-OIT-BEPPU",
+        "locationType": "Other",
+        "type": "Travel",
+        "difficulty": null,
+        "status": "Review",
+        "priority": "Essential",
+        "trigger": "Location Entry",
+        "order": 1,
+        "situation": "別府市の学習用場面で、持ち物と入浴のルールを確認する。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "持ち物と入浴のルールを確認する",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "branching": "Linear",
+        "description": "Quay onsen: gia ve, khan, quy tac tam, tu khoa, hinh xam.",
+        "evaluationCriteria": null,
+        "requiredGrammarIds": [],
+        "requiredVocabularyIds": [
+          "日帰り (https://app.notion.com/p/3be70421d96181968355e92004701d9f?pvs=21)",
+          "タオル (https://app.notion.com/p/3be70421d961814a9d6cc6b6df85ad57?pvs=21)",
+          "必ず (https://app.notion.com/p/3be70421d9618121a7e3ecd7b75f0353?pvs=21)"
+        ],
+        "reward": null,
+        "outcome": null,
+        "startingExpression": null,
+        "version": 2
+      },
+      "location": {
+        "id": "LOC-OIT-BEPPU-01",
+        "name": "Beppu Onsen Front Desk",
+        "nameJa": "別府温泉受付",
+        "cityId": "CTY-OIT-BEPPU",
+        "category": "Onsen",
+        "type": "Tourism",
+        "npcJob": "Onsen Staff",
+        "defaultNpcId": "NPC-OIT-BEPPU-001",
+        "description": "Quay onsen: gia ve, khan, quy tac tam, tu khoa, hinh xam.",
+        "order": 1,
+        "status": "Active",
+        "importance": "Main",
+        "sceneStyle": "2D",
+        "backgroundAsset": null,
+        "openHours": null,
+        "address": null,
+        "scenarioIds": [
+          "Gia ve tại 温泉受付 (Beppu) (https://app.notion.com/p/Gia-ve-t-i-Beppu-3be70421d9618144855becaa83406751?pvs=21)"
+        ]
+      },
+      "runtime": {
+        "shared": [
+          {
+            "id": "DLG-SC-OIT-BEPPU-001-SHARED-01",
+            "scenarioId": "SC-OIT-BEPPU-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "こんにちは。ご利用についてのご質問ですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-OIT-BEPPU-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-OIT-BEPPU-001-SHARED-02",
+            "scenarioId": "SC-OIT-BEPPU-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "onsen_response_1",
+              "requiredSemanticComponents": {
+                "goal": "持ち物と入浴のルールを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "別府市を訪れています。入浴施設を使うのは初めてです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-OIT-BEPPU-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-OIT-BEPPU-001-SHARED-03",
+            "scenarioId": "SC-OIT-BEPPU-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "ご利用方法と持ち物を確認しましょう。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-OIT-BEPPU-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-OIT-BEPPU-001-SHARED-04",
+            "scenarioId": "SC-OIT-BEPPU-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "onsen_response_2",
+              "requiredSemanticComponents": {
+                "goal": "持ち物と入浴のルールを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "タオルを持っていません。借りたり買ったりできますか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-OIT-BEPPU-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-OIT-BEPPU-001-SHARED-05",
+            "scenarioId": "SC-OIT-BEPPU-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "用意できるものと料金を確認します。着替えや荷物の置き方も説明します。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-OIT-BEPPU-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-OIT-BEPPU-001-SHARED-06",
+            "scenarioId": "SC-OIT-BEPPU-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "onsen_response_3",
+              "requiredSemanticComponents": {
+                "goal": "持ち物と入浴のルールを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "浴室で気をつけることを、教えてください。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-OIT-BEPPU-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-OIT-BEPPU-001-SHARED-07",
+            "scenarioId": "SC-OIT-BEPPU-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "掲示されているルールをご覧ください。撮影や携帯電話の使用についても確認してください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-OIT-BEPPU-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-OIT-BEPPU-001-SHARED-08",
+            "scenarioId": "SC-OIT-BEPPU-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "onsen_response_4",
+              "requiredSemanticComponents": {
+                "goal": "持ち物と入浴のルールを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "体調がよくないときは、入らないほうがよいですか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-OIT-BEPPU-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-OIT-BEPPU-001-SHARED-09",
+            "scenarioId": "SC-OIT-BEPPU-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "無理に入浴せず、心配なことは医療の専門家に相談してください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-OIT-BEPPU-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-OIT-BEPPU-001-SHARED-10",
+            "scenarioId": "SC-OIT-BEPPU-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "onsen_response_5",
+              "requiredSemanticComponents": {
+                "goal": "持ち物と入浴のルールを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "わかりました。利用条件と体調を確認してから決めます。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-OIT-BEPPU-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-OIT-BEPPU-001-SHARED-11",
+            "scenarioId": "SC-OIT-BEPPU-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "気分が悪くなった場合は利用を止め、すぐ職員に知らせてください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ],
+        "authoring": {
+          "locale": "ja",
+          "recipe": "onsen",
+          "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
+          "contentScope": "simulated_learning_scenario",
+          "nativeSpeakerReviewed": false,
+          "translationState": "deferred_until_all_japanese_complete"
+        }
+      },
+      "runtimeSha256": "bbf62b5e37e02189435afe4ce294435eea83fa4226a8121c12ead2ab940ad7b2"
+    },
+    {
+      "scenario": {
+        "id": "SC-LOC-OIT-BEPPU-02-001",
+        "name": "チェックイン前に予約と条件を確認する",
+        "locationId": "LOC-OIT-BEPPU-02",
+        "cityId": "CTY-OIT-BEPPU",
+        "locationType": "Other",
+        "type": "Travel",
+        "difficulty": null,
+        "status": "Review",
+        "priority": "Essential",
+        "trigger": "Location Entry",
+        "order": 1,
+        "situation": "別府市の学習用場面で、予約内容と宿泊条件を確認する。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "予約内容と宿泊条件を確認する",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "branching": "Linear",
+        "description": null,
+        "evaluationCriteria": null,
+        "requiredGrammarIds": [],
+        "requiredVocabularyIds": [],
+        "reward": null,
+        "outcome": null,
+        "startingExpression": null,
+        "version": 2
+      },
+      "location": {
+        "id": "LOC-OIT-BEPPU-02",
+        "name": "Beppu Ryokan Check-in",
+        "nameJa": "別府旅館チェックイン",
+        "cityId": "CTY-OIT-BEPPU",
+        "category": "Hotel",
+        "type": "Tourism",
+        "npcJob": "Hotel Staff",
+        "defaultNpcId": "NPC-OIT-BEPPU-002",
+        "description": "Nhan phong ryokan: gio an toi, yukata, suoi tam, thanh toan.",
+        "order": 2,
+        "status": "Active",
+        "importance": "Secondary",
+        "sceneStyle": "2D",
+        "backgroundAsset": null,
+        "openHours": null,
+        "address": null,
+        "scenarioIds": []
+      },
+      "runtime": {
+        "shared": [
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-01",
+            "scenarioId": "SC-LOC-OIT-BEPPU-02-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "いらっしゃいませ。ご予約はありますか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-02",
+            "scenarioId": "SC-LOC-OIT-BEPPU-02-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "hotel_response_1",
+              "requiredSemanticComponents": {
+                "goal": "予約内容と宿泊条件を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "はい。別府市に宿泊するため、この予約をしました。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-03",
+            "scenarioId": "SC-LOC-OIT-BEPPU-02-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "予約のお名前と、確認できるものを見せていただけますか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-04",
+            "scenarioId": "SC-LOC-OIT-BEPPU-02-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "hotel_response_2",
+              "requiredSemanticComponents": {
+                "goal": "予約内容と宿泊条件を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "こちらです。泊数と部屋の種類が合っているか、確認したいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-05",
+            "scenarioId": "SC-LOC-OIT-BEPPU-02-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "予約内容を照合しましょう。追加のご希望はありますか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-06",
+            "scenarioId": "SC-LOC-OIT-BEPPU-02-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "hotel_response_3",
+              "requiredSemanticComponents": {
+                "goal": "予約内容と宿泊条件を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "到着が遅くなる場合の連絡方法を知りたいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-07",
+            "scenarioId": "SC-LOC-OIT-BEPPU-02-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "受付の案内を確認します。チェックインとチェックアウトの条件も説明します。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-08",
+            "scenarioId": "SC-LOC-OIT-BEPPU-02-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "hotel_response_4",
+              "requiredSemanticComponents": {
+                "goal": "予約内容と宿泊条件を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "宿泊料金以外に必要な費用はありますか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-09",
+            "scenarioId": "SC-LOC-OIT-BEPPU-02-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "予約に含まれるものと、別に必要な費用を分けて確認しましょう。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-10",
+            "scenarioId": "SC-LOC-OIT-BEPPU-02-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "hotel_response_5",
+              "requiredSemanticComponents": {
+                "goal": "予約内容と宿泊条件を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "ありがとうございます。内容を確認してから手続きをお願いします。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-02-001-SHARED-11",
+            "scenarioId": "SC-LOC-OIT-BEPPU-02-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "承知しました。個人情報は受付で必要な範囲を確認して、ご案内します。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ],
+        "authoring": {
+          "locale": "ja",
+          "recipe": "hotel",
+          "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
+          "contentScope": "simulated_learning_scenario",
+          "nativeSpeakerReviewed": false,
+          "translationState": "deferred_until_all_japanese_complete"
+        }
+      },
+      "runtimeSha256": "d21b49b93059c6433911e24c470685777346a24b7b01079f8cfa4906111568f4"
+    },
+    {
+      "scenario": {
+        "id": "SC-LOC-OIT-BEPPU-03-001",
+        "name": "入浴施設の利用方法を確認する",
+        "locationId": "LOC-OIT-BEPPU-03",
+        "cityId": "CTY-OIT-BEPPU",
+        "locationType": "Other",
+        "type": "Social",
+        "difficulty": null,
+        "status": "Review",
+        "priority": "Essential",
+        "trigger": "Location Entry",
+        "order": 1,
+        "situation": "別府市の学習用場面で、持ち物と入浴のルールを確認する。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "持ち物と入浴のルールを確認する",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "branching": "Linear",
+        "description": null,
+        "evaluationCriteria": null,
+        "requiredGrammarIds": [],
+        "requiredVocabularyIds": [],
+        "reward": null,
+        "outcome": null,
+        "startingExpression": null,
+        "version": 2
+      },
+      "location": {
+        "id": "LOC-OIT-BEPPU-03",
+        "name": "Beppu Public Bath (Sento)",
+        "nameJa": "別府銭湯",
+        "cityId": "CTY-OIT-BEPPU",
+        "category": "Onsen",
+        "type": "Entertainment",
+        "npcJob": "Sento Staff",
+        "defaultNpcId": "NPC-OIT-BEPPU-003",
+        "description": "Sento khu pho: gia ve, xa bong, quy tac, sua sau khi tam.",
+        "order": 3,
+        "status": "Active",
+        "importance": "Secondary",
+        "sceneStyle": "2D",
+        "backgroundAsset": null,
+        "openHours": null,
+        "address": null,
+        "scenarioIds": []
+      },
+      "runtime": {
+        "shared": [
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-01",
+            "scenarioId": "SC-LOC-OIT-BEPPU-03-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "こんにちは。ご利用についてのご質問ですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-02",
+            "scenarioId": "SC-LOC-OIT-BEPPU-03-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "onsen_response_1",
+              "requiredSemanticComponents": {
+                "goal": "持ち物と入浴のルールを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "別府市を訪れています。入浴施設を使うのは初めてです。別の場所でも相談しましたが、こちらでの方法も確認したいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-03",
+            "scenarioId": "SC-LOC-OIT-BEPPU-03-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "ご利用方法と持ち物を確認しましょう。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-04",
+            "scenarioId": "SC-LOC-OIT-BEPPU-03-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "onsen_response_2",
+              "requiredSemanticComponents": {
+                "goal": "持ち物と入浴のルールを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "タオルを持っていません。借りたり買ったりできますか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-05",
+            "scenarioId": "SC-LOC-OIT-BEPPU-03-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "用意できるものと料金を確認します。着替えや荷物の置き方も説明します。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-06",
+            "scenarioId": "SC-LOC-OIT-BEPPU-03-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "onsen_response_3",
+              "requiredSemanticComponents": {
+                "goal": "持ち物と入浴のルールを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "浴室で気をつけることを、教えてください。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-07",
+            "scenarioId": "SC-LOC-OIT-BEPPU-03-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "掲示されているルールをご覧ください。撮影や携帯電話の使用についても確認してください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-08",
+            "scenarioId": "SC-LOC-OIT-BEPPU-03-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "onsen_response_4",
+              "requiredSemanticComponents": {
+                "goal": "持ち物と入浴のルールを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "体調がよくないときは、入らないほうがよいですか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-09",
+            "scenarioId": "SC-LOC-OIT-BEPPU-03-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "無理に入浴せず、心配なことは医療の専門家に相談してください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-10",
+            "scenarioId": "SC-LOC-OIT-BEPPU-03-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "onsen_response_5",
+              "requiredSemanticComponents": {
+                "goal": "持ち物と入浴のルールを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "わかりました。利用条件と体調を確認してから決めます。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-03-001-SHARED-11",
+            "scenarioId": "SC-LOC-OIT-BEPPU-03-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "気分が悪くなった場合は利用を止め、すぐ職員に知らせてください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ],
+        "authoring": {
+          "locale": "ja",
+          "recipe": "onsen",
+          "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
+          "contentScope": "simulated_learning_scenario",
+          "nativeSpeakerReviewed": false,
+          "translationState": "deferred_until_all_japanese_complete"
+        }
+      },
+      "runtimeSha256": "32914804448e01c4fdb5b2c43a8396dd726cd7982d5f5ba9be392fd18c9e7407"
+    },
+    {
+      "scenario": {
+        "id": "SC-LOC-OIT-BEPPU-04-001",
+        "name": "相談の予約方法を聞く",
+        "locationId": "LOC-OIT-BEPPU-04",
+        "cityId": "CTY-OIT-BEPPU",
+        "locationType": "Government Office",
+        "type": "Administrative",
+        "difficulty": null,
+        "status": "Review",
+        "priority": "Essential",
+        "trigger": "Location Entry",
+        "order": 1,
+        "situation": "別府市の学習用場面で、相談内容と予約方法を確認する。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "相談内容と予約方法を確認する",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "branching": "Linear",
+        "description": null,
+        "evaluationCriteria": null,
+        "requiredGrammarIds": [],
+        "requiredVocabularyIds": [],
+        "reward": null,
+        "outcome": null,
+        "startingExpression": null,
+        "version": 2
+      },
+      "location": {
+        "id": "LOC-OIT-BEPPU-04",
+        "name": "Beppu City Hall Resident Desk",
+        "nameJa": "別府市役所住民課",
+        "cityId": "CTY-OIT-BEPPU",
+        "category": "Government Office",
+        "type": "Public Service",
+        "npcJob": "Government Officer",
+        "defaultNpcId": null,
+        "description": "Quay ho tich: chuyen dia chi, the my number, giay chung nhan cu tru.",
+        "order": 4,
+        "status": "Active",
+        "importance": "Optional",
+        "sceneStyle": "2D",
+        "backgroundAsset": null,
+        "openHours": null,
+        "address": null,
+        "scenarioIds": []
+      },
+      "runtime": {
+        "shared": [
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-01",
+            "scenarioId": "SC-LOC-OIT-BEPPU-04-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "こんにちは。どのようなことでお困りですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-02",
+            "scenarioId": "SC-LOC-OIT-BEPPU-04-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "gov-appointment_response_1",
+              "requiredSemanticComponents": {
+                "goal": "相談内容と予約方法を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "別府市で暮らし始めました。生活の手続きを、ゆっくり相談したいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-03",
+            "scenarioId": "SC-LOC-OIT-BEPPU-04-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "特に確認したいことを教えていただけますか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-04",
+            "scenarioId": "SC-LOC-OIT-BEPPU-04-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "gov-appointment_response_2",
+              "requiredSemanticComponents": {
+                "goal": "相談内容と予約方法を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "届いた通知の意味と、どこで手続きをするのか知りたいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-05",
+            "scenarioId": "SC-LOC-OIT-BEPPU-04-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "通知を見て、担当の相談先を確認しましょう。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-06",
+            "scenarioId": "SC-LOC-OIT-BEPPU-04-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "gov-appointment_response_3",
+              "requiredSemanticComponents": {
+                "goal": "相談内容と予約方法を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "日本語が難しいとき、通訳について相談できますか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-07",
+            "scenarioId": "SC-LOC-OIT-BEPPU-04-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "利用できる支援と予約の必要性を確認します。希望する言語を教えてください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-08",
+            "scenarioId": "SC-LOC-OIT-BEPPU-04-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "gov-appointment_response_4",
+              "requiredSemanticComponents": {
+                "goal": "相談内容と予約方法を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "ベトナム語です。仕事があるので、予約できる日時も知りたいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-09",
+            "scenarioId": "SC-LOC-OIT-BEPPU-04-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "担当窓口の受付方法と空き状況を確認して、ご案内します。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-10",
+            "scenarioId": "SC-LOC-OIT-BEPPU-04-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "gov-appointment_response_5",
+              "requiredSemanticComponents": {
+                "goal": "相談内容と予約方法を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "ありがとうございます。通知と質問をまとめて持ってきます。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-04-001-SHARED-11",
+            "scenarioId": "SC-LOC-OIT-BEPPU-04-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "予約が必要な場合は、日時と持ち物を控えてからお帰りください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ],
+        "authoring": {
+          "locale": "ja",
+          "recipe": "gov-appointment",
+          "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
+          "contentScope": "simulated_learning_scenario",
+          "nativeSpeakerReviewed": false,
+          "translationState": "deferred_until_all_japanese_complete"
+        }
+      },
+      "runtimeSha256": "1c43ffc6c7a78249986cbfd41f1f2a02b8a46579a7eac31347ee7198d074ebe4"
+    },
+    {
+      "scenario": {
+        "id": "SC-LOC-OIT-BEPPU-05-001",
+        "name": "会計と注文内容を確認する",
+        "locationId": "LOC-OIT-BEPPU-05",
+        "cityId": "CTY-OIT-BEPPU",
+        "locationType": "Restaurant",
+        "type": "Daily Life",
+        "difficulty": null,
+        "status": "Review",
+        "priority": "Essential",
+        "trigger": "Location Entry",
+        "order": 1,
+        "situation": "別府市の学習用場面で、注文内容と会計方法を確認する。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "注文内容と会計方法を確認する",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "branching": "Linear",
+        "description": null,
+        "evaluationCriteria": null,
+        "requiredGrammarIds": [],
+        "requiredVocabularyIds": [],
+        "reward": null,
+        "outcome": null,
+        "startingExpression": null,
+        "version": 2
+      },
+      "location": {
+        "id": "LOC-OIT-BEPPU-05",
+        "name": "Beppu Okonomiyaki Diner",
+        "nameJa": "別府お好み焼き店",
+        "cityId": "CTY-OIT-BEPPU",
+        "category": "Restaurant",
+        "type": "Food",
+        "npcJob": "Chef",
+        "defaultNpcId": null,
+        "description": "Tiem okonomiyaki: tu nuong tren ban, chon nhan, sot, mayonnaise.",
+        "order": 5,
+        "status": "Active",
+        "importance": "Optional",
+        "sceneStyle": "2D",
+        "backgroundAsset": null,
+        "openHours": null,
+        "address": null,
+        "scenarioIds": []
+      },
+      "runtime": {
+        "shared": [
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-01",
+            "scenarioId": "SC-LOC-OIT-BEPPU-05-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "いらっしゃいませ。お会計でしょうか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-02",
+            "scenarioId": "SC-LOC-OIT-BEPPU-05-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "restaurant-bill_response_1",
+              "requiredSemanticComponents": {
+                "goal": "注文内容と会計方法を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "はい。別府市の友人と食事をしました。会計の内容を確認したいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-03",
+            "scenarioId": "SC-LOC-OIT-BEPPU-05-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "こちらがご注文の明細です。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-04",
+            "scenarioId": "SC-LOC-OIT-BEPPU-05-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "restaurant-bill_response_2",
+              "requiredSemanticComponents": {
+                "goal": "注文内容と会計方法を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "この飲み物は注文していないと思います。確認していただけますか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-05",
+            "scenarioId": "SC-LOC-OIT-BEPPU-05-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "承知しました。伝票と注文の記録を確認します。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-06",
+            "scenarioId": "SC-LOC-OIT-BEPPU-05-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "restaurant-bill_response_3",
+              "requiredSemanticComponents": {
+                "goal": "注文内容と会計方法を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "ありがとうございます。二人分を別々に払えるかも知りたいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-07",
+            "scenarioId": "SC-LOC-OIT-BEPPU-05-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "お店の会計方法を確認します。できない場合は先にお伝えします。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-08",
+            "scenarioId": "SC-LOC-OIT-BEPPU-05-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "restaurant-bill_response_4",
+              "requiredSemanticComponents": {
+                "goal": "注文内容と会計方法を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "わかりました。確認が終わってから支払います。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-09",
+            "scenarioId": "SC-LOC-OIT-BEPPU-05-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "確認した内容を説明しますので、明細をもう一度ご覧ください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-10",
+            "scenarioId": "SC-LOC-OIT-BEPPU-05-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "restaurant-bill_response_5",
+              "requiredSemanticComponents": {
+                "goal": "注文内容と会計方法を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "はい。内容が合っているか確認します。レシートもお願いします。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-05-001-SHARED-11",
+            "scenarioId": "SC-LOC-OIT-BEPPU-05-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "承知しました。お忘れ物のないようにお帰りください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ],
+        "authoring": {
+          "locale": "ja",
+          "recipe": "restaurant-bill",
+          "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
+          "contentScope": "simulated_learning_scenario",
+          "nativeSpeakerReviewed": false,
+          "translationState": "deferred_until_all_japanese_complete"
+        }
+      },
+      "runtimeSha256": "20e391c0f7caac5f52eaed234eb5641c3c21c42d2d2729dd4fa190b382e6edad"
+    },
+    {
+      "scenario": {
+        "id": "SC-LOC-OIT-BEPPU-06-001",
+        "name": "観光の希望に合う行程を相談する",
+        "locationId": "LOC-OIT-BEPPU-06",
+        "cityId": "CTY-OIT-BEPPU",
+        "locationType": "Other",
+        "type": "Travel",
+        "difficulty": null,
+        "status": "Review",
+        "priority": "Essential",
+        "trigger": "Location Entry",
+        "order": 1,
+        "situation": "別府市の学習用場面で、移動時間と見学条件を比較する。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "移動時間と見学条件を比較する",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "branching": "Linear",
+        "description": null,
+        "evaluationCriteria": null,
+        "requiredGrammarIds": [],
+        "requiredVocabularyIds": [],
+        "reward": null,
+        "outcome": null,
+        "startingExpression": null,
+        "version": 2
+      },
+      "location": {
+        "id": "LOC-OIT-BEPPU-06",
+        "name": "Beppu Tourist Information Center",
+        "nameJa": "別府観光案内所",
+        "cityId": "CTY-OIT-BEPPU",
+        "category": "Landmark",
+        "type": "Tourism",
+        "npcJob": "Guide",
+        "defaultNpcId": null,
+        "description": "Quay thong tin du lich: ban do, tuyen di, ve combo, gui hanh ly.",
+        "order": 6,
+        "status": "Active",
+        "importance": "Optional",
+        "sceneStyle": "2D",
+        "backgroundAsset": null,
+        "openHours": null,
+        "address": null,
+        "scenarioIds": []
+      },
+      "runtime": {
+        "shared": [
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-01",
+            "scenarioId": "SC-LOC-OIT-BEPPU-06-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "こんにちは。観光についてのご相談ですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-02",
+            "scenarioId": "SC-LOC-OIT-BEPPU-06-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "tourist_response_1",
+              "requiredSemanticComponents": {
+                "goal": "移動時間と見学条件を比較する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "別府市を初めて訪れました。半日で回れる行程を相談したいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-03",
+            "scenarioId": "SC-LOC-OIT-BEPPU-06-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "興味のあることと、出発する時刻を教えてください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-04",
+            "scenarioId": "SC-LOC-OIT-BEPPU-06-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "tourist_response_2",
+              "requiredSemanticComponents": {
+                "goal": "移動時間と見学条件を比較する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "文化を知りたいです。午後は駅に戻る必要があります。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-05",
+            "scenarioId": "SC-LOC-OIT-BEPPU-06-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "案内図で候補と移動時間を確認しましょう。休憩も入れますか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-06",
+            "scenarioId": "SC-LOC-OIT-BEPPU-06-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "tourist_response_3",
+              "requiredSemanticComponents": {
+                "goal": "移動時間と見学条件を比較する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "はい。歩く距離が長くなりすぎないようにしたいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-07",
+            "scenarioId": "SC-LOC-OIT-BEPPU-06-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "交通手段と利用できる経路も比較しましょう。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-08",
+            "scenarioId": "SC-LOC-OIT-BEPPU-06-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "tourist_response_4",
+              "requiredSemanticComponents": {
+                "goal": "移動時間と見学条件を比較する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "施設が開いているかは、当日の情報で確認するのですね。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-09",
+            "scenarioId": "SC-LOC-OIT-BEPPU-06-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "はい。営業や交通の情報は変わるので、出発前に最新の案内をご確認ください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-10",
+            "scenarioId": "SC-LOC-OIT-BEPPU-06-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "tourist_response_5",
+              "requiredSemanticComponents": {
+                "goal": "移動時間と見学条件を比較する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "ありがとうございます。候補を絞ってから、予約の必要性も確認します。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-11",
+            "scenarioId": "SC-LOC-OIT-BEPPU-06-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "帰りの予定に余裕を持ち、無理のない行程でお楽しみください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ],
+        "authoring": {
+          "locale": "ja",
+          "recipe": "tourist",
+          "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
+          "contentScope": "simulated_learning_scenario",
+          "nativeSpeakerReviewed": false,
+          "translationState": "deferred_until_all_japanese_complete"
+        }
+      },
+      "runtimeSha256": "34edac9e86eb723dfbeb774f917352a37e505fca71eb1ffa5bbf765ac26427eb"
+    },
+    {
+      "scenario": {
+        "id": "SC-LOC-OIT-BEPPU-07-001",
+        "name": "ボウリングの受付と靴を確認する",
+        "locationId": "LOC-OIT-BEPPU-07",
+        "cityId": "CTY-OIT-BEPPU",
+        "locationType": "Other",
+        "type": "Social",
+        "difficulty": null,
+        "status": "Review",
+        "priority": "Essential",
+        "trigger": "Location Entry",
+        "order": 1,
+        "situation": "別府市の学習用場面で、利用方法と安全な用品を確認する。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "利用方法と安全な用品を確認する",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "branching": "Linear",
+        "description": null,
+        "evaluationCriteria": null,
+        "requiredGrammarIds": [],
+        "requiredVocabularyIds": [],
+        "reward": null,
+        "outcome": null,
+        "startingExpression": null,
+        "version": 2
+      },
+      "location": {
+        "id": "LOC-OIT-BEPPU-07",
+        "name": "Beppu Bowling Alley",
+        "nameJa": "別府ボウリング場",
+        "cityId": "CTY-OIT-BEPPU",
+        "category": "Amusement Park",
+        "type": "Entertainment",
+        "npcJob": "Entertainment Staff",
+        "defaultNpcId": null,
+        "description": "Bowling: thue giay, so game, lane, tinh diem.",
+        "order": 7,
+        "status": "Active",
+        "importance": "Optional",
+        "sceneStyle": "2D",
+        "backgroundAsset": null,
+        "openHours": null,
+        "address": null,
+        "scenarioIds": []
+      },
+      "runtime": {
+        "shared": [
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-01",
+            "scenarioId": "SC-LOC-OIT-BEPPU-07-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "いらっしゃいませ。何名様でご利用ですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-02",
+            "scenarioId": "SC-LOC-OIT-BEPPU-07-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "bowling_response_1",
+              "requiredSemanticComponents": {
+                "goal": "利用方法と安全な用品を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "別府市の友人と来ました。二人で、初めて利用します。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-03",
+            "scenarioId": "SC-LOC-OIT-BEPPU-07-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "利用方法と料金をご案内します。貸し靴は必要ですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-04",
+            "scenarioId": "SC-LOC-OIT-BEPPU-07-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "bowling_response_2",
+              "requiredSemanticComponents": {
+                "goal": "利用方法と安全な用品を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "はい。サイズが合うか確認したいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-05",
+            "scenarioId": "SC-LOC-OIT-BEPPU-07-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "履いてみて、痛みやゆるさがあればお知らせください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-06",
+            "scenarioId": "SC-LOC-OIT-BEPPU-07-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "bowling_response_3",
+              "requiredSemanticComponents": {
+                "goal": "利用方法と安全な用品を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "ボールは、どの重さを選べばよいですか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-07",
+            "scenarioId": "SC-LOC-OIT-BEPPU-07-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "無理なく持てるものを選びましょう。持ち方も説明します。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-08",
+            "scenarioId": "SC-LOC-OIT-BEPPU-07-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "bowling_response_4",
+              "requiredSemanticComponents": {
+                "goal": "利用方法と安全な用品を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "レーンの先へ入らないようにするのですね。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-09",
+            "scenarioId": "SC-LOC-OIT-BEPPU-07-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "はい。床が滑りやすい場所があるので、指定された範囲でご利用ください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-10",
+            "scenarioId": "SC-LOC-OIT-BEPPU-07-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "bowling_response_5",
+              "requiredSemanticComponents": {
+                "goal": "利用方法と安全な用品を確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "わかりました。料金と終了の手続きを確認して始めます。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-07-001-SHARED-11",
+            "scenarioId": "SC-LOC-OIT-BEPPU-07-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "不具合や困ったことがあれば、すぐ職員へお知らせください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ],
+        "authoring": {
+          "locale": "ja",
+          "recipe": "bowling",
+          "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
+          "contentScope": "simulated_learning_scenario",
+          "nativeSpeakerReviewed": false,
+          "translationState": "deferred_until_all_japanese_complete"
+        }
+      },
+      "runtimeSha256": "5d472e29d94733d237a0dfcdd832ac1f0a13f8b8a50b3a87c82bba979b34a513"
+    },
+    {
+      "scenario": {
+        "id": "SC-LOC-OIT-BEPPU-08-001",
+        "name": "転居後の郵便物を相談する",
+        "locationId": "LOC-OIT-BEPPU-08",
+        "cityId": "CTY-OIT-BEPPU",
+        "locationType": "Government Office",
+        "type": "Administrative",
+        "difficulty": null,
+        "status": "Review",
+        "priority": "Essential",
+        "trigger": "Location Entry",
+        "order": 1,
+        "situation": "別府市の学習用場面で、転居に関する郵便の手続きを確認する。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "転居に関する郵便の手続きを確認する",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "branching": "Linear",
+        "description": null,
+        "evaluationCriteria": null,
+        "requiredGrammarIds": [],
+        "requiredVocabularyIds": [],
+        "reward": null,
+        "outcome": null,
+        "startingExpression": null,
+        "version": 2
+      },
+      "location": {
+        "id": "LOC-OIT-BEPPU-08",
+        "name": "Beppu Post Office Counter",
+        "nameJa": "別府郵便局窓口",
+        "cityId": "CTY-OIT-BEPPU",
+        "category": "Post Office",
+        "type": "Public Service",
+        "npcJob": "Postal Clerk",
+        "defaultNpcId": null,
+        "description": "Quay buu dien: gui thu/hang, chuyen phat nhanh, gui quoc te, tem.",
+        "order": 8,
+        "status": "Active",
+        "importance": "Optional",
+        "sceneStyle": "2D",
+        "backgroundAsset": null,
+        "openHours": null,
+        "address": null,
+        "scenarioIds": []
+      },
+      "runtime": {
+        "shared": [
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-01",
+            "scenarioId": "SC-LOC-OIT-BEPPU-08-001",
+            "turnOrder": 1,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "こんにちは。どのようなご用件ですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-02",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-02",
+            "scenarioId": "SC-LOC-OIT-BEPPU-08-001",
+            "turnOrder": 2,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "post-address_response_1",
+              "requiredSemanticComponents": {
+                "goal": "転居に関する郵便の手続きを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "別府市へ引っ越しました。以前の住所に届く郵便物について相談したいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-03",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-03",
+            "scenarioId": "SC-LOC-OIT-BEPPU-08-001",
+            "turnOrder": 3,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "郵便の転送に関するお手続きをご希望ですか。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-04",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-04",
+            "scenarioId": "SC-LOC-OIT-BEPPU-08-001",
+            "turnOrder": 4,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "post-address_response_2",
+              "requiredSemanticComponents": {
+                "goal": "転居に関する郵便の手続きを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "はい。申込みの方法と、必要な確認書類を知りたいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-05",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-05",
+            "scenarioId": "SC-LOC-OIT-BEPPU-08-001",
+            "turnOrder": 5,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "現在の案内で、手続き方法と利用条件を確認しましょう。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-06",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-06",
+            "scenarioId": "SC-LOC-OIT-BEPPU-08-001",
+            "turnOrder": 6,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "post-address_response_3",
+              "requiredSemanticComponents": {
+                "goal": "転居に関する郵便の手続きを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "家族の分もまとめて申し込めるか、聞きたいです。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-07",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-07",
+            "scenarioId": "SC-LOC-OIT-BEPPU-08-001",
+            "turnOrder": 7,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "同居する方の情報など、必要事項を確認してご案内します。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-08",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-08",
+            "scenarioId": "SC-LOC-OIT-BEPPU-08-001",
+            "turnOrder": 8,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "post-address_response_4",
+              "requiredSemanticComponents": {
+                "goal": "転居に関する郵便の手続きを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "手続きが反映されるまでは、どのように確認できますか。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-09",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-09",
+            "scenarioId": "SC-LOC-OIT-BEPPU-08-001",
+            "turnOrder": 9,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "受付後の確認方法を説明します。重要な差出人には新しい住所もお知らせください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-10",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-10",
+            "scenarioId": "SC-LOC-OIT-BEPPU-08-001",
+            "turnOrder": 10,
+            "speaker": "PLAYER",
+            "npc": null,
+            "player": {
+              "communicativeIntent": "post-address_response_5",
+              "requiredSemanticComponents": {
+                "goal": "転居に関する郵便の手続きを確認する"
+              },
+              "optionalSemanticComponents": {},
+              "recommendedAnswerJa": "わかりました。会社や銀行にも住所変更を連絡します。",
+              "recommendedAnswerFurigana": null,
+              "acceptableExamples": [],
+              "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+              "translations": {},
+              "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+              "unexpectedIntents": [],
+              "allowMinorGrammarErrors": true,
+              "targetGrammarIds": [],
+              "targetVocabularyIds": []
+            },
+            "nextDialogueId": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-11",
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          },
+          {
+            "id": "DLG-SC-LOC-OIT-BEPPU-08-001-SHARED-11",
+            "scenarioId": "SC-LOC-OIT-BEPPU-08-001",
+            "turnOrder": 11,
+            "speaker": "NPC",
+            "npc": {
+              "textJa": "申込み内容に誤りがないか、送信や提出の前に確かめてください。",
+              "furigana": null,
+              "translationVi": null,
+              "translations": {}
+            },
+            "player": null,
+            "nextDialogueId": null,
+            "status": "Japanese draft",
+            "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+            "mappingConfidence": null
+          }
+        ],
+        "authoring": {
+          "locale": "ja",
+          "recipe": "post-address",
+          "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
+          "contentScope": "simulated_learning_scenario",
+          "nativeSpeakerReviewed": false,
+          "translationState": "deferred_until_all_japanese_complete"
+        }
+      },
+      "runtimeSha256": "883d37d1bcfd654183a747f96d1dcf16e05a06a0f1074c678abceb131fbec331"
+    }
+  ]
+}

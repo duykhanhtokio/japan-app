@@ -1,0 +1,80 @@
+{
+  "cityId": "CTY-OIT-BEPPU",
+  "baseline": "3954f280818ce7c8e596a45e99a2823e86eda841",
+  "inputSha256": "55d72ee083ebbd12479582fa6caf5266f96a1feeb2d47ea4e439808c631dec5d",
+  "sourceSha256": "14b0ea358e7e387dad01d618078d157b131653fa58da0539812d0ca240ab9460",
+  "roleAlignmentSha256": "9344100ff3f7e1d9105d25229b55cbd2664da22a584b99dc2bc59d81c6c768bc",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "paths": {
+    "source": "scripts/dialogue-authoring/prf-044-city-cty-oit-beppu.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-044_CITY_CTY-OIT-BEPPU_ROLE_ALIGNMENT.json"
+  },
+  "causalPlots": {
+    "SC-OIT-BEPPU-001": "入浴券にタオルも付くと思って来たが別売の表示と判明。宿へ戻る案と購入を比較し、小さいタオル一枚の表示と別払いを確かめて購入する。",
+    "SC-LOC-OIT-BEPPU-02-001": "先着一人と後着一人の予約で、今いる人数・部屋数・宿泊人数を混同。二名で一室と確認し、後着の情報共有と先にできる受付を相談する。",
+    "SC-LOC-OIT-BEPPU-03-001": "着替える前に荷物のロッカーへ戻ろうとして薄い鍵札が読めない。券番号と混同したこと、袋のリボンと曖昧な位置を説明し、職員を待って一緒に確認する。",
+    "SC-LOC-OIT-BEPPU-04-001": "住民票の写しは家族全員分でよいと思ったが提出先は範囲を指定していない。住所確認の用途に必要な記載を会社へ尋ね、回答後の相談受付を希望する。",
+    "SC-LOC-OIT-BEPPU-05-001": "一枚の大皿を一人前と考えて二人前の明細を重複と疑う。注文した友人と店の記録でまとめた二人前と確認し、申出を取り下げて一人がまとめて払う。",
+    "SC-LOC-OIT-BEPPU-06-001": "展示と体験を半日で回るつもりだったが体験には開始待ちが必要と気づく。作るより道具を見ることを優先し、一か所の展示と往復の移動を確認する案に絞る。",
+    "SC-LOC-OIT-BEPPU-07-001": "貸し靴は右だけ指が当たり左は問題ない。単に両方を大きくせず職員と別候補を試し、友人にも待ってもらい説明・ゲーム申込みを靴確認後へ回す。",
+    "SC-LOC-OIT-BEPPU-08-001": "本人だけ先に転居し家族は旧住所に残っているのに全員まとめて申し込むつもりだった。未定の家族日程を埋めず対象を相談し、差出人の住所変更も別に連絡する。"
+  },
+  "corrections": [
+    "All eight venue identities made explicitly fictional and generic; unverified hours and addresses remain null.",
+    "Sento Staff changed to existing Onsen Staff; Chef changed to existing Restaurant Staff for cashier duties; Entertainment Staff changed to existing Amusement Park Staff. Existing venue categories and bowling/public-bath contexts retained.",
+    "Full source review caught that a post-bath locker problem with clothes locked inside would not support returning to reception coherently. The final scene now explicitly occurs before changing and concerns hand luggage; first Player goal synchronized.",
+    "Locker closing Player line softened from not letting go of the key to holding it while waiting, consistent with staff inspecting the label.",
+    "Hotel final Player reply revised to a direct natural restatement of two staying guests with one arriving later, followed by the next-step question.",
+    "Restaurant NPC phrase about the number of servings revised to natural wording about the ordered quantity.",
+    "Bowling NPC response revised to directly offer joint checking of the left/right difference rather than only telling the Player to check alone.",
+    "Every final title, premise, turn, task and role correction reread; all revised passages and their adjacent replies/tasks reread after editing and hashes refreshed."
+  ],
+  "checks": {
+    "fullAssignedInputRead": true,
+    "allFinalProseAndRolesReread": true,
+    "exactScenarioIdsPreserved": true,
+    "originalVenueRouteGroupingRetained": true,
+    "elevenTurnsNpcFirstAlternating": true,
+    "fiveSpecificAlignedTasksEach": true,
+    "allFortyPlayerLinesUnique": true,
+    "allFortyIntentsUnique": true,
+    "allFortyGoalsUnique": true,
+    "eightDistinctNpcClosures": true,
+    "noGenericAcknowledgmentOnlyPlayerTurns": true,
+    "noNounSwappedReusableSkeleton": true,
+    "distinctTwoOnsenPlots": true,
+    "causalChoicesAndOutcomesReviewed": true,
+    "japaneseOnlySpeech": true,
+    "noLevelGate": true,
+    "numbersAndSceneLabelsReviewed": true,
+    "supportedExistingCategoriesAndJobLabelsOnly": true,
+    "noNewCategoriesOrAssets": true,
+    "explicitFictionalVenues": true,
+    "nullHoursAndAddresses": true,
+    "noActualSpaHealthPolicyPriceOrRouteGuarantees": true,
+    "professionalAuthorityBoundariesRetained": true,
+    "finalExactByteHashesVerified": true,
+    "noOtherCityProseRead": true,
+    "noActiveCheckoutRuntimeSharedOrGitWrites": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "Independent author self-review only; no native-speaker, human or peer review.",
+    "All displayed labels, orders, bookings, equipment and location conditions are hypothetical scene facts, not verified Beppu institutions or operational policies.",
+    "No real bathing health effect or suitability, lodging eligibility, certificate issuance, transport time, equipment fit, postal forwarding scope or completion is guaranteed.",
+    "Runtime integration, artwork/device inspection and release approval remain with root; this author edited no runtime or shared repository files."
+  ]
+}
