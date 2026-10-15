@@ -1,0 +1,79 @@
+{
+  "cityId": "CTY-JP-44212",
+  "baseline": "3954f280818ce7c8e596a45e99a2823e86eda841",
+  "inputSha256": "11ed7899d1df5e2a35f120b3ccf32a0f6ec117e263ed49bd6b053af43f772626",
+  "sourceSha256": "98e27a82394e36daa3e9579610818697c7cba9741f5470ffbf6f1163e8e58f24",
+  "roleAlignmentSha256": "f6d035c1aa312b33fd0638cff306c68f9c80e926454d95f89499872721b70a92",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "paths": {
+    "source": "scripts/dialogue-authoring/prf-044-city-cty-jp-44212.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-044_CITY_CTY-JP-44212_ROLE_ALIGNMENT.json"
+  },
+  "causalPlots": {
+    "SC-LOC-JP-44212-01-001": "帰り未定の日帰り旅行で画面の列車を適当に選ぼうとしたが、後の利用条件は未確認。決済前に往復と行きのみの案を含め、条件と合計額を担当へ相談する。",
+    "SC-LOC-JP-44212-02-001": "通知の写真は表だけで裏面と同封物が未確認。用意した書類が合うとも不足とも判断せず、家の封筒をそろえて内容と期限を担当に尋ねる。",
+    "SC-LOC-JP-44212-03-001": "初診で薬名不明の白い薬を今朝飲んだと申告。色で特定せず同じ薬の袋の写真を家族へ頼み、症状の開始と服用時刻を医師へ引き継ぐ。",
+    "SC-LOC-JP-44212-04-001": "友人が拾った鍵を代わりに届けたが、自分が知るのは受渡し時刻だけ。聞いた場所と不明な時刻を直接の記憶と分け、実際の拾得者に確認する。",
+    "SC-LOC-JP-44212-05-001": "転居の入力保存を受付完了と思い、旧住所への配達から再申込みを考えた。保存画面と受信連絡を集め、受付状況と郵便の扱いを分けて相談する。",
+    "SC-LOC-JP-44212-06-001": "同居夫婦の口座変更を一括と考えたが来訪は本人だけ。自分の住所・電話・通知先の希望を先に整理し、配偶者分の確認事項は別に担当へ聞く。",
+    "SC-LOC-JP-44212-07-001": "家族の乳アレルギー向け菓子を表面の不使用だけで選びかけた。共通設備の注意と開封前後の保存表示を控え、適合を断定せず購入を保留する。",
+    "SC-LOC-JP-44212-08-001": "ベンチ記号を空席保証と思って奥への散歩を計画。近くの席も利用中と気づき、休める状況を見るまで奥を目標にせず、入口へ戻る選択を残す。"
+  },
+  "corrections": [
+    "All eight unverified actual-looking venue identities made explicitly generic and fictional; unverified opening hours and addresses cleared to null.",
+    "Park/Community Staff corrected to existing Park/Park Staff. All other supported input category/job pairs and venue grouping retained.",
+    "Full self-review caught that the postal Player had only heard of a letter delivered to the old address but later claimed it was in hand. The final line now plans to verify its address/date, and the fifth task was synchronized.",
+    "Medication-photo request narrowed to the bag belonging to the medicine taken that morning, rather than an unspecified medicine bag; corresponding task synchronized.",
+    "Park title and opening Player wording revised to natural language about planning with an assumed seat, preserving the distinction between bench location and availability.",
+    "All final titles, premises, spoken turns, tasks and role corrections reread. All edited passages and adjacent turns/tasks reread after editing; exact author/role hashes refreshed."
+  ],
+  "checks": {
+    "fullAssignedInputRead": true,
+    "allOwnFinalProseAndRoleCorrectionsReread": true,
+    "exactScenarioIdsPreserved": true,
+    "originalVenueTypeRouteGroupingRetained": true,
+    "elevenNpcFirstAlternatingTurnsPerScenario": true,
+    "fiveSpecificAlignedTasksPerScenario": true,
+    "allFortyPlayerUtterancesUnique": true,
+    "allFortyIntentsUnique": true,
+    "allFortyTaskGoalsUnique": true,
+    "eightDistinctNpcClosures": true,
+    "noAcknowledgmentOnlyPlayerTurns": true,
+    "noNounSwappedReusableSkeleton": true,
+    "individualCausalPlotAndOutcomeReview": true,
+    "japaneseOnlySpokenContent": true,
+    "noLevelGate": true,
+    "numbersTemporalReferencesAndNamesChecked": true,
+    "supportedExistingCategoriesOnly": true,
+    "noNewCategoriesOrAssets": true,
+    "explicitFictionalVenues": true,
+    "allHoursAndAddressesNull": true,
+    "noActualLocalRoutesSchedulesFeesOrServiceGuarantees": true,
+    "noMedicineIdentificationFromAppearanceOrTreatmentAdvice": true,
+    "noAllergySafetyGuarantee": true,
+    "noProxyAuthorityOrAdministrativeCompletionClaim": true,
+    "finalExactByteHashesVerified": true,
+    "noOtherCityProseRead": true,
+    "noActiveCheckoutRuntimeSharedOrGitWrites": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "Independent author self-review only; no peer, native-speaker or human review.",
+    "All forms, messages, products, signs, venue layouts and service screens are hypothetical scene facts, not verified Bungoono facilities or current operational policies.",
+    "No ticket flexibility, administrative obligation, diagnosis, medicine identity, finder entitlement, postal status, bank authority, allergy suitability or seating availability is established.",
+    "Runtime integration, artwork/device review and release approval remain with root. This author made no active-checkout runtime or shared-file edits."
+  ]
+}
