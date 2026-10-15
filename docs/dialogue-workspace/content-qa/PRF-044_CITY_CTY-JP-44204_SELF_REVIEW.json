@@ -1,0 +1,420 @@
+{
+  "cityId": "CTY-JP-44204",
+  "baseline": "3954f280818ce7c8e596a45e99a2823e86eda841",
+  "inputSha256": "dc8bde9baae655ca18eee7f02bcf23d450fbc0d046134bd31ba376fcdd8acd6c",
+  "sourceSha256": "6ef3d3fb53a92bca992d630e4b8f3624a2395d91974e3720c2985004e0bbd3c9",
+  "roleAlignmentSha256": "af9669e7ecf28ca68fd89f96bde5de1f36d2e4cba0f897f8bc3f0f14a2bcd55c",
+  "sourceFile": "scripts/dialogue-authoring/prf-044-city-cty-jp-44204.json",
+  "roleAlignmentFile": "docs/dialogue-workspace/content-qa/PRF-044_CITY_CTY-JP-44204_ROLE_ALIGNMENT.json",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-44204-01-001": {
+      "title": "迎えの出口を変えずに階段を避ける道を確認する",
+      "causalProgression": "日田市に配置した架空の駅案内。列車を降りた客が大きな荷物を持って東口の家族と合流する。目の前の階段は避け、架空の構内図で遠回りのエレベーター経路を選ぶ。実在駅の設備、構内経路や稼働状況は示さない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "request_step_free_east_exit_with_large_case",
+          "goal": "降車直後で東口の家族に合流したく、大きなケースを持って階段を下りるのを避けたいと伝える。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "retain_family_pickup_exit",
+          "goal": "家族の車が東口にあるため、合流出口を変更せずに行きたいと答える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "prioritize_no_stairs_and_notify_waiting_family",
+          "goal": "近道より階段を使わない経路を選び、回り道で待ってほしいと家族へ連絡すると述べる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "check_current_marker_and_lift_before_gate_order",
+          "goal": "現在地の丸印を確認し、先に階段前へ行くのではなくエレベーターの後で改札へ向かう順序を確かめる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "plan_to_stop_and_ask_if_confused",
+          "goal": "分岐で迷えば進み続けず東口への案内を係員に尋ねると決め、家族にも出口を変えないと連絡済みだと伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-44204-02-001": {
+      "title": "荷物を運んだ日と住み始めた日を分けて相談する",
+      "causalProgression": "架空の転入相談窓口。別の市から移った客が荷物搬入日と居住開始日を混同して申請書に書きかけている。同居する知人との世帯の扱いも未確認で、担当に事実を説明する。届出期限、世帯認定や必要書類を一般的な規則として断定しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "ask_which_moving_date_to_record",
+          "goal": "土曜日の荷物搬入と月曜日の居住開始のどちらを日付欄に記すのか迷っていると相談する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "describe_overnight_residence_timeline",
+          "goal": "日曜の夜までは旧居で寝て、新居に泊まり始めたのは月曜だと経過を説明する。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "identify_single_mover_and_unresolved_household",
+          "goal": "転居者は自分だけだが新居に知人が先に住み、世帯の扱いも確認したいと答える。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "offer_unidentified_previous_city_documents",
+          "goal": "前の市の書類を封筒ごと持参したが名称が読めず、在留カードと一緒に担当へ見せてよいか尋ねる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "leave_uncertain_fields_for_fact_based_consultation",
+          "goal": "日付と世帯欄を推測で埋めず持参し、搬入日と居住開始日を分けて説明すると決める。"
+        }
+      ]
+    },
+    "SC-LOC-JP-44204-03-001": {
+      "title": "検査と診察の予約をまとめて変更してよいか相談する",
+      "causalProgression": "架空の病院の予約相談。患者の予約票に検査と診察が別々に書かれているが、仕事と重なるため診察だけ午後へ動かしたい。看護師は必要な連携先を確認し、検査と診察の関係、変更可否や医療上の間隔を自己判断で確定しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "request_afternoon_consultation_with_two_item_ticket",
+          "goal": "検査と診察が朝の予約票を示し、仕事のため診察を午後へ変更できるか相談する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "recognize_test_time_conflict_as_well",
+          "goal": "検査も仕事と重なると答え、診察だけでなく両方の変更相談が必要だと確認する。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "request_same_day_without_reordering_tests",
+          "goal": "検査と診察を同じ日に受けたいが、自分の判断で順番を入れ替えないと希望を伝える。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "report_no_noticed_change_without_deciding_delay_safety",
+          "goal": "自分では普段と違う症状を感じていないと答え、日程を動かしてよいかは診療側の確認を求める。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "wait_for_both_confirmations_and_keep_existing_ticket",
+          "goal": "窓口で回答を待ち、両方の新予約が確認できるまで現在の予約票を保管すると決める。"
+        }
+      ]
+    },
+    "SC-LOC-JP-44204-04-001": {
+      "title": "見当たらない自転車の写真と別の登録書類を区別する",
+      "causalProgression": "架空の警察相談窓口。駐輪場所に自転車がない客が写真と登録書類を持参するが、書類は以前の自転車のものかもしれず、現車との対応が未確認だった。実車の特徴、見当たらなくなった時間帯、未確認の管理者による移動を整理する。盗難の認定や発見は保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "describe_last_parking_and_missing_time_window",
+          "goal": "昨日夕方に白い屋根の下へ駐輪し、今朝同じ場所で見当たらなくなったと説明する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "preserve_uncertainty_about_relocation_or_wrong_spot",
+          "goal": "管理者へ未連絡で、場所の取り違えか移動かも分からないと答える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "offer_photo_and_flag_possibly_old_registration",
+          "goal": "青い車体の写真と登録書類を持参したが、紙は前の自転車用かもしれないと申告する。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "confirm_current_photo_and_distinctive_basket_tape",
+          "goal": "写真は現在の自転車だと確認し、後ろかごの黄色いテープが識別の特徴だと伝える。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "state_lock_memory_limit_and_followup_evidence_plan",
+          "goal": "施錠したつもりだが直前の動作は覚えていないと述べ、現在車体の書類探しと管理者への照会を行うと伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-44204-05-001": {
+      "title": "郵便の配達記録と提出先の受付確認を分ける",
+      "causalProgression": "架空の郵便窓口。申請書原本を送る客が、郵便の配達状況、受取に関する記録と、提出先が申請を受け付けたことを混同している。必要な記録内容を整理して送り方の案内を依頼する。実在商品の仕様、料金、法的証明力や申請受理を保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "ask_whether_delivery_status_proves_application_acceptance",
+          "goal": "申請書原本を送りたく、追跡の配達済みが提出先の申請受付の証明になるか尋ねる。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "state_vague_sender_instruction_and_record_confusion",
+          "goal": "送った控えを保管という案内しかなく、到着確認と受取人の記録を同じだと思っていたと説明する。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "request_dispatch_and_receipt_records_without_review_inference",
+          "goal": "発送と受取の両記録を希望し、受取記録が審査完了を意味するわけではないと理解を述べる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "take_back_unaccepted_envelope_to_copy_originals",
+          "goal": "原本は入れたが自分用コピーはなく、受付前の封筒を持ち帰って控えを取ってから送り直したいと伝える。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "choose_method_after_record_scope_and_price_review",
+          "goal": "原本のコピーを残して封をした後に再訪し、両記録の内容と料金を見て発送方法を選ぶと伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-44204-06-001": {
+      "title": "給与用口座の氏名表記と会社への提出物を相談する",
+      "causalProgression": "架空の銀行の口座開設相談。勤務先ではミドルネームを省いた表記を使っている客が、本人確認書類との違いと給与提出期限を相談する。口座名義、開設可否、開設時期や会社が受け取る情報を未確認のまま断定しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "raise_employer_shortened_name_vs_identity_document",
+          "goal": "会社ではミドルネームを省略しているが本人確認書類は全氏名のため、開設申込の書き方を相談する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "identify_next_day_payroll_deadline_and_unclear_evidence",
+          "goal": "会社の提出期限は明日だが番号だけか名義資料も必要か不明だと答える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "distinguish_application_receipt_from_opened_account",
+          "goal": "申込控えを口座番号の代わりに考えていたと述べ、受付済みと開設済みは違うと確認する。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "offer_residence_and_employment_evidence_without_sufficiency_assumption",
+          "goal": "在留カードと勤務先案内を持参し、それだけで足りると決めず本人に必要な追加書類の案内を求める。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "inform_payroll_of_consultation_stage_and_confirm_name_requirements",
+          "goal": "会社へ開設相談中と伝え、省略氏名を当然とせず提出資料と表記を給与担当に確認すると決める。"
+        }
+      ]
+    },
+    "SC-LOC-JP-44204-07-001": {
+      "title": "一袋の値札と二袋セットを分けて本体の商品を選ぶ",
+      "causalProgression": "架空の日用品売場。洗剤を初めて買う客が一袋用の値札を二袋セットの価格だと思い、さらに本体容器を持っていないことが分かる。表示の容量・個数と本体／詰替えを照合して本体一つを選ぶ。実在店の価格、特売や決済額は示さない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "ask_single_vs_two_pack_price_scope",
+          "goal": "手に取った二袋セットに対し、棚の値札が一袋分かセット全体か尋ねる。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "state_small_trial_quantity_instead_of_set",
+          "goal": "まず少量試すため一袋でよく、二袋セットを取る必要はなかったと答える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "disclose_missing_main_container_and_refill_misunderstanding",
+          "goal": "本体容器を持たず、安く見えた詰替えだけで使えると思っていたと説明する。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "choose_one_pump_bottle_and_return_unwanted_set",
+          "goal": "ポンプ付き本体を一つ選ぶと答え、買わない詰替えセットの戻し場所を尋ねる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "match_bottle_name_capacity_and_its_own_price",
+          "goal": "本体と値札の商品名・容量が同じだと確認し、本体一つの価格を見てからかごに入れると伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-44204-08-001": {
+      "title": "同行者と別れた後に入口を推測せず休憩場所で合流する",
+      "causalProgression": "架空の公園案内所。散歩中に友人と別の道へ進んだ客が疲れて戻ろうとするが、集合する入口の認識が一致していない。公園職員と現在地を確認し、友人と連絡して案内所での合流に変える。実在の地理や通信・空席は保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "explain_fatigue_and_uncertain_gate_after_separate_paths",
+          "goal": "友人と別道を歩いて疲れて戻りたく、入口での待ち合わせ先に自信がなくなったと伝える。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "identify_ambiguous_flowerbed_landmark",
+          "goal": "友人の花壇横という連絡だけでは、自分が入った花壇のある入口と同じか分からないと説明する。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "pause_to_contact_friend_from_information_office",
+          "goal": "案内所で休みながら現在地を伝え、友人が来られるか連絡して尋ねると決める。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "send_precise_building_location_instead_of_generic_gate",
+          "goal": "園内図の現在地と案内所名を送り、単なる入口ではなくその建物で待つと伝える。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "confirm_friend_reply_and_end_long_walk",
+          "goal": "友人が案内所へ向かう返信を受けたと報告し、長い散歩をやめ合流まで休むと決める。"
+        }
+      ]
+    }
+  },
+  "corrections": [
+    "最終自己再読で、駅の説明にない改札を増やさず階段とエレベーターの順序に絞った。警察の登録書類が古いかは未確認のままとし、郵便は既に希望した両記録を受け止める返答に修正した。公園の結びも友人が到着済みと誤読されない表現にした。",
+    "旧課題の各場面で同一目的を繰り返す五項目を、直前の発話と結び付く四十の具体的課題へ改めた。",
+    "駅は家族の車がある出口を変えず、近道でなく段差を避ける遠回りを選ぶ筋にした。",
+    "転入相談は荷物の搬入日と新居に泊まり始めた日を分け、同居人との世帯の扱いも担当確認に残した。",
+    "予約変更は検査と診察が関連するため一方だけ変更済みとせず、両方の照会を待つ結末にした。",
+    "自転車は現車の写真と古い登録書類を取り違えず、施錠の記憶と管理者による移動の有無を未確認として伝える。",
+    "書類発送は郵便の配達・受取記録と申請の受理・審査を区別し、原本の控えを残すため受付前に持ち帰る結末にした。",
+    "口座開設は省略氏名と本人確認書類の相違、給与提出期限と申込控えの意味を別に確認する内容にした。",
+    "売場は値札の一袋と二袋セットの違いから、本体容器の不所持も分かり、必要な本体一つを選ぶ筋にした。",
+    "公園は疲れた客が不確かな入口を探し回らず、現在地を友人へ具体的に伝えて案内所で合流する筋へ変えた。"
+  ],
+  "checks": {
+    "exactScenarioIdsPreserved": true,
+    "locationIdsPreserved": true,
+    "originalRouteGroupingPreserved": true,
+    "elevenAlternatingTurnsNpcFirst": true,
+    "fiveConcreteGoalsAlignedToImmediateNpc": true,
+    "uniquePlayerUtterances": 40,
+    "uniquePlayerGoals": 40,
+    "distinctCausalPlots": true,
+    "npcFollowupsRespondToPlayerConstraints": true,
+    "finalNpcFarewellOrConcreteClosure": true,
+    "allFinalOwnTitlesPremisesTurnsTasksAndRoleCorrectionsReread": true,
+    "noAcknowledgmentOnlyPlayerTurns": true,
+    "noNounSwapTemplates": true,
+    "japaneseOnlySpokenTextAndGoals": true,
+    "noAuthoringInstructionsInDialogue": true,
+    "noLevelGate": true,
+    "fictionalVenueMetadataExplicit": true,
+    "unverifiedHoursAndAddressesCleared": true,
+    "exactCategoryMembershipCheckedInNpcProgression": true,
+    "supportedJobsCheckedAgainstInputAndContract": true,
+    "noRealOperatorPolicyOrGeographyClaims": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "独立したAIによる自己点検で、母語話者・人・他AIによる内容審査ではない。",
+    "全施設、構内経路、商品表示と窓口の応対条件は架空。実在施設の営業、価格、制度適用、診断、書類の法的効果は保証しない。",
+    "既存のカテゴリと職種だけを用い、カテゴリや画像は追加しない。施設ごとの背景絵の適合は未検証。",
+    "作者の書き込みはステージング内の自分の三出力と再現スクリプトのみ。稼働データ・共有記録・Gitは変更しない。",
+    "翻訳、端末表示、公開承認は未実施。親セッションによる統合と遠隔保存の確認が必要。"
+  ]
+}
