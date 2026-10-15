@@ -1,0 +1,102 @@
+{
+  "cityId": "CTY-MYZ-NICHINAN",
+  "corrections": {
+    "LOC-MYZ-NICHINAN-01": {
+      "category": "Shrine / Temple",
+      "npcJob": "Shrine Staff",
+      "nameJa": "架空の寺社御朱印受付",
+      "name": "Fictional Shrine Stamp Counter",
+      "description": "架空の寺社受付で、二種類の書き置きの区別と同行者の希望を確認する。撮影の制限はこの会話内だけの条件であり、実在寺社の規則や御朱印の取扱いを保証しない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-MYZ-NICHINAN-02": {
+      "category": "Nature",
+      "npcJob": "Guide",
+      "nameJa": "架空の海辺案内小屋",
+      "name": "Fictional Seaside Guide Hut",
+      "description": "架空の海辺案内小屋の自然ガイド。風による傘の貸出中止と屋内休憩、係員への荷物位置の伝達を扱う。監視員資格、遊泳可否、現地気象判断や回収時刻を保証しない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-MYZ-NICHINAN-03": {
+      "category": "Warehouse",
+      "npcJob": "Warehouse Staff",
+      "nameJa": "架空の水産品出荷倉庫",
+      "name": "Fictional Seafood Dispatch Warehouse",
+      "description": "架空の水産品倉庫で出荷前の荷札照合を案内する倉庫スタッフ。Natureと漁師の組合せから修正し、漁港の操業や魚種判定の指導は行わない。未照合の箱を責任者に引き継ぐWork場面。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-MYZ-NICHINAN-04": {
+      "category": "Shopping",
+      "npcJob": "Shop Staff",
+      "nameJa": "架空の日用品販売店",
+      "name": "Fictional Household Goods Shop",
+      "description": "架空の日用品店で、収納箱と別売りのふたの適合、書類の収まり、一組の総額を相談する。税込価格はこの会話内の仮定で、実在店舗の価格や販売条件ではない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-MYZ-NICHINAN-05": {
+      "category": "Workshop",
+      "npcJob": "Workshop Staff",
+      "nameJa": "架空の花苗出荷準備工房",
+      "name": "Fictional Seedling Packing Workshop",
+      "description": "架空の花苗出荷準備工房で空箱の仕切り組立を案内する工房スタッフ。Natureと農家の組合せを修正し、Work目的を維持する。栽培、農薬、機械操作の指導はせず、部品の適合確認と実演依頼を扱う。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-MYZ-NICHINAN-06": {
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "nameJa": "架空の健診問診受付",
+      "name": "Fictional Checkup Questionnaire Desk",
+      "description": "架空の健診問診受付の看護師が既往歴の語義と記入情報の整理を助ける。過去の病名や症状の原因を推測せず、診断や検査の要否は医師へ相談する。実在センターの健診運用ではない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-MYZ-NICHINAN-07": {
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "nameJa": "架空の夜間診療受付",
+      "name": "Fictional Evening Clinical Intake",
+      "description": "架空の夜間診療受付の看護師が本人の症状と不明な服薬情報を聴き取り、悪化の申告を直ちに担当者へ引き継ぐ。写真到着を待たせず、受診可否、待機時間、入院、診断を保証しない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-MYZ-NICHINAN-08": {
+      "category": "Izakaya",
+      "npcJob": "Restaurant Staff",
+      "nameJa": "架空の夕食居酒屋",
+      "name": "Fictional Evening Dining Izakaya",
+      "description": "架空の居酒屋で、早く帰った同行者への未提供を店内記録と照合し、小鉢の数量を修正する。会計と明細の扱いは会話内の条件で、実在店舗の席料や返金規則を示さない。",
+      "openHours": null,
+      "address": null
+    }
+  },
+  "findings": [
+    {
+      "locationId": "LOC-MYZ-NICHINAN-02",
+      "finding": "Natureは既存の対応カテゴリ。Beach Staffから自然ガイドへ職名を合わせ、気象の専門判定や救助ではなく案内と係員への伝達に限定した。"
+    },
+    {
+      "locationId": "LOC-MYZ-NICHINAN-03",
+      "finding": "魚を扱うだけでNatureの自然ガイドにはしない。仕分け前の照合をする架空のWarehouse/Warehouse Staffへ変更した。"
+    },
+    {
+      "locationId": "LOC-MYZ-NICHINAN-05",
+      "finding": "農園全般の描写を空箱の出荷準備に絞り、既存Workshop/Workshop Staffへ変更。農作業の実技や農園画像を追加せずWork経路を維持する。"
+    },
+    {
+      "finding": "全8施設を明示的な架空の汎用施設に改名し、住所と営業時間をnullにした。シナリオID、施設ID、経路グループは変更していない。"
+    },
+    {
+      "finding": "カテゴリはsrc/data/npc-progression.tsのNPC_CATEGORIESと完全一致で照合した。既存アートを使用する前提で新規アセットを作成せず、倉庫・工房・海辺の専用絵との一致は未検証。実機確認なし。"
+    }
+  ],
+  "inputSha256": "aab9f1b43f4d1d61f9aee238913da35652a08b06fe3a8420da05b9524f147a24",
+  "sourceSha256": "098b9cfbe87a16c6691637d29c1e10210297c9f3af8e093c0ade6b5e3593e314",
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "peerReviewed": false
+}

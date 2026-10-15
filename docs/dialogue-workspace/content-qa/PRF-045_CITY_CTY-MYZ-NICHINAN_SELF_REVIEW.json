@@ -1,0 +1,62 @@
+{
+  "cityId": "CTY-MYZ-NICHINAN",
+  "baseline": "5e9e90add76f00a3e660df23a611cfa2988ccd2b",
+  "inputSha256": "aab9f1b43f4d1d61f9aee238913da35652a08b06fe3a8420da05b9524f147a24",
+  "sourceSha256": "098b9cfbe87a16c6691637d29c1e10210297c9f3af8e093c0ade6b5e3593e314",
+  "roleAlignmentSha256": "74be64919b9a3939efe4f46a3a498ae401726e363b6e55f6f6b2afcf51c867e8",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-MYZ-NICHINAN-001": "二枚一組という誤解を解き、本人未確認の同行者分は保留。書き置きと撮影制限を聞き、自分の一枚だけ受ける。",
+    "SC-LOC-MYZ-NICHINAN-02-001": "傘の貸出中止を私物ならよいかと聞き直し、屋内へ切り替える。靴を取りに戻る同行者を呼び、位置だけ係員へ伝え、回収時刻の保証なく待つ。",
+    "SC-LOC-MYZ-NICHINAN-03-001": "箱と落ちた荷札の所属が不明、八番と三番も不一致。中身で判断せず照合済み扱いを止め、目撃していない点を明示して引継ぐ。",
+    "SC-LOC-MYZ-NICHINAN-04-001": "同色でも箱とふたは不適合。袋入り書類を見本で試し、対応ふたの別売価格を合計し、予算上二組から一組へ絞る。",
+    "SC-LOC-MYZ-NICHINAN-05-001": "仕切りの外れをテープで補おうとするが、切れ込み数から別サイズ部品と判明。不要な破損刃物の位置と未使用を報告し、適合部品の実演と初品確認を依頼する。",
+    "SC-LOC-MYZ-NICHINAN-06-001": "既往歴に現在症状を書こうとする混同を解消。昔の不明病名と今の肩の症状を分け、発症時刻不明と気づいた日時を記録して診察へ持参する。",
+    "SC-LOC-MYZ-NICHINAN-07-001": "友人任せにせず本人が嘔吐と不明な薬を説明。写真手配の途中で痛みの悪化を直ちに申告し、看護師がその場で状態確認と担当者への引継ぎを行う。",
+    "SC-LOC-MYZ-NICHINAN-08-001": "三名来店から一名が注文前に退出。実際の小鉢提供二つを確認して三つの計上を修正し、ご飯追加の意味を確認後、代表で払い修正明細を残す。"
+  },
+  "corrections": [
+    "汎用的な旧11発話と反復課題を8場面とも新しい因果展開と具体課題へ全面置換した。",
+    "初稿の花苗ラベル保留は魚倉庫の荷札保留に展開が近いため全面改稿し、空箱の異なる仕切り部品、不要な破損道具、実演と初品確認へ変えた。",
+    "御朱印の撮影制限が唐突にならないよう、直前のPlayerに見本の撮影可否を尋ねる発話を加え、課題も一致させた。",
+    "居酒屋ではご飯一杯は修正した項目ではないため「二つと一杯に直った」を「小鉢二つ、ご飯一杯の内容を確認」に直した。",
+    "夜間受付の薬の写真は看護師へ家族への連絡を頼む意味に読めないよう、家族から送ってもらった写真を見せてよいかという質問へ修正した。前提も同行者による説明済みという含意を除いた。",
+    "海辺は自然ガイド、魚仕分けは倉庫スタッフ、花苗出荷準備は工房スタッフとして既存カテゴリと場面を整合させた。全施設を架空名・住所時間nullへ揃えた。"
+  ],
+  "checks": {
+    "assignedScenarioIds": "PASS: 入力8件のID集合と完全一致。原IDを出力キーに保持。",
+    "structure": "PASS: 各11発話、NPC始まり交互でNPC終結。Player位置1/3/5/7/9に5課題。合計8/88/40。",
+    "fullOwnReread": "PASS: 全8件の最終タイトル・前提・88発話・40課題を自分で全文再読。後から改稿した花苗、夜間受付と前提も再読。8施設の役割修正全文も確認。",
+    "causalTaskAlignment": "PASS: 各Playerの具体情報・質問・意思決定を直前NPCおよび課題と照合した。単なる謝意のみのPlayerはない。",
+    "uniqueOwnText": "PASS: 全40Player発話、40課題目標、40intent、48NPC発話はそれぞれ完全重複なし。展開の類似も自己比較して苗場面を改稿。",
+    "japaneseAndNumbers": "PASS: タイトル・前提・発話・日本語目標に英字/タイ語/韓国語なし。八番対三番、二対四切れ込み、220円相当二個で440円相当、三名から二名、小鉢二つ・ご飯一杯を照合。",
+    "fictionAndCapabilities": "PASS: 全前提と施設名に架空を明示。営業時間/住所null。医療の診断・検査要否は決定せず、夜間悪化を写真待ちにしない。出荷保留や道具不具合は責任者へ引継ぐ。",
+    "categories": "PASS: 全8施設のcategoryを実際のNPC_CATEGORIESの文字列集合と完全一致照合。新規categoryなし。",
+    "scope": "PASS: 自分の入力と共有カテゴリコードのみ読取り。他都市著者本文・査読を読まず、書込みは当staging内の自分のファイルのみ。"
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "paths": {
+    "source": "scripts/dialogue-authoring/prf-045-city-cty-myz-nichinan.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-045_CITY_CTY-MYZ-NICHINAN_ROLE_ALIGNMENT.json",
+    "input": "docs/dialogue-workspace/content-qa/PRF-045_CITY_CTY-MYZ-NICHINAN_INPUT.json"
+  },
+  "limits": [
+    "AI著者本人による全文自己確認のみ。人間・母語話者・同僚による査読やリリース承認ではない。",
+    "実在施設の規則、価格、気象、受付や医療体制は確認していない。条件は架空の会話内に限定。",
+    "既存アートとの視覚的適合、実機表示、音声、翻訳は未確認。新しい画像や設備は追加していない。",
+    "stagingの著者素材と証跡のみ。親担当の機械統合・実行時検証・Git永続化は別工程。"
+  ]
+}
