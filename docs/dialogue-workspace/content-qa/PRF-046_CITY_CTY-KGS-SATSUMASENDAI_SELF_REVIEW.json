@@ -1,0 +1,69 @@
+{
+  "cityId": "CTY-KGS-SATSUMASENDAI",
+  "baseline": "70b9863045bb19397bc94bc4f0f393234389fcc3",
+  "inputSha256": "386b2cccc9e96c92bd91cf7f1e1a9c3fbec74c1b31d86fe4d36672b5916c50fc",
+  "sourceSha256": "c71db11bed4199803fd26369aa8489bc71fe3987c8f906c4773119d0d2e2b6e5",
+  "roleAlignmentSha256": "56c7d9f079a65fc6d7ba2ecf664b2904571f59a687468aac62c010e7659e794b",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-KGS-SATSUMASENDAI-001": "入室記録の手袋欄が空白で、手袋の破れも発見する。商品未接触と記録確認を報告し、窓越しに見える袋口の浮きも自己修正せず責任者へつなぎ、作業開始を待つ。",
+    "SC-LOC-KGS-SATSUMASENDAI-02-001": "案内図のエレベーターが工事囲いで使えず、出発まで二十分でも階段を避けたい客が支援を相談する。窓口横の椅子で荷物を保持し、移動案内と乗れなかった場合の切符条件を別々に待つ。",
+    "SC-LOC-KGS-SATSUMASENDAI-03-001": "職場四人への旅土産を実用の手拭きに絞る。濃色の単独洗いと薄色のネット使用を比べ、表示を残した四つの個別袋と合計を確認して薄色四枚を選ぶ。",
+    "SC-LOC-KGS-SATSUMASENDAI-04-001": "復元想像図を現存建物の姿と誤解していた客が古写真との対応番号を確認する。図だけ撮影可能、写真は禁止と知り、配布解説と未確認部分のメモを使って見直す。",
+    "SC-LOC-KGS-SATSUMASENDAI-05-001": "三日後の面接に向けて、勤務正午終了に移動時間を足した午後一時以降で自己紹介の練習を希望する。通訳より簡単な日本語で一問ずつ聞き返す練習を選び、面接前の空き枠は未確定のまま問い合わせる。",
+    "SC-LOC-KGS-SATSUMASENDAI-06-001": "税の封筒を支払い通知と思ったが件名は資料追加提出だった。二枚目の対象期間と勤務先資料の月が一致するか不明で、推測記入せず担当への照合と提出日までの連絡方法を尋ねる。",
+    "SC-LOC-KGS-SATSUMASENDAI-07-001": "農具工房の受付担当が、切れにくいはさみを試すのは担当外と知る。似た二本の番号札が外れても推測で付け直さず、申告と未特定を記録して修理担当へ引き継ぐ。",
+    "SC-LOC-KGS-SATSUMASENDAI-08-001": "昨日の家賃振込操作後、相手が入金を確認できず再送を迷う。受付控えと保存画面だけで完了を決めず、記録照会と費用の説明を求め、新規振込をせず結果後に相手へ連絡する。"
+  },
+  "corrections": [
+    "全八件を具体的な条件・誤認・発見・結果を持つ独立した会話に変更し、四十のプレイヤー発話・課題・意図を個別化した。",
+    "食品工場をConstruction SiteからFactoryへ合わせ、Nature/Farmerは仕事目的を残す農具受付のWorkshop/Workshop Staffへ適応した。",
+    "就労窓口は相談員の職域に合う面接練習予約とし、城は架空の城郭展示の解説と資料別撮影表示に合わせた。",
+    "全施設を架空名とし、営業時間・住所をnullとした。",
+    "最終自己再読で食品工場の袋は入室前に窓越しに見えることを明示し、前提の記録範囲も入室に合わせた。面接練習の題名を勤務後の移動時間に合わせ、薄色商品の課題を注意書きの確認という実発話に合わせ、農具受付の結末を二本の照合の引継ぎに具体化した。変更した四場面を課題とともに再読した。"
+  ],
+  "checks": {
+    "exactAssignedScenarioLocationIds": true,
+    "eightScenariosElevenTurnsEach": true,
+    "fiveTasksEach": true,
+    "fortyUniquePlayerLinesGoalsIntents": true,
+    "japaneseTitlesPremisesTurnsGoals": true,
+    "fullFinalTitlesPremisesTurnsTasksRolesReread": true,
+    "immediateNpcAndPlayerTaskAlignmentReviewed": true,
+    "distinctCausalProgressionsReviewed": true,
+    "npcFirstAlternationAndConcreteClosuresReviewed": true,
+    "numericReferentConsistencyReviewed": "駅の約二十分、職場四人・手拭き四枚・個別袋四つ、三日後の面接・正午勤務終了と午後一時以降、税の用紙二枚、はさみ二本、昨日の受付と本日の新規振込なしを照合した。",
+    "allCategoriesExactNpcProgressionMatch": true,
+    "allEightFictionalNamesAndNullHoursAddress": true,
+    "farmWorkPurposePreservedInWorkshop": true,
+    "noMachineChemicalBladeOperatingInstructions": true,
+    "noFoodQualityTaxLiabilityOrBankCompletionGuarantee": true,
+    "noNewCategoriesOrAssets": true,
+    "noCrossReading": true,
+    "noActiveCheckoutRuntimeSharedOrGitWrites": true,
+    "sourcePath": "scripts/dialogue-authoring/prf-046-city-cty-kgs-satsumasendai.json",
+    "roleAlignmentPath": "docs/dialogue-workspace/content-qa/PRF-046_CITY_CTY-KGS-SATSUMASENDAI_ROLE_ALIGNMENT.json"
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "独立モデルによる自己再読のみであり、人間・母語話者・他著者の校閲は行っていない。",
+    "実在の薩摩川内市の工場・駅・特産品・城の歴史・公共機関・銀行等の運営や料金・制度・規則を検証した内容ではなく、学習用の仮定である。",
+    "食品工場の現場固有の衛生指導や食品良否の判断は代替しない。農具受付では実際に切る・刃先に触れる・開閉する・修理する手順を教えない。",
+    "農業場面は農作業前の道具準備・修理受付へ適応したため、実際の温室栽培や圃場作業を描かない。",
+    "駅では接続と切符変更、就労窓口では面接前の予約、税では提出期限変更、銀行では着金・失敗・照会費用を保証しない。",
+    "新規資産を追加せず、Factory/Workshopの役割と既存背景・衣装の細かな一致は未確認。端末表示・ランタイム統合・翻訳・公開承認は未実施。"
+  ]
+}
