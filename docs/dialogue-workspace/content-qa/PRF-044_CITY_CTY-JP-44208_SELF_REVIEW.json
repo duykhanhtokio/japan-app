@@ -1,0 +1,70 @@
+{
+  "cityId": "CTY-JP-44208",
+  "baseline": "3954f280818ce7c8e596a45e99a2823e86eda841",
+  "inputSha256": "c96795d400fe3ac0b21b044664910667f173a70fc61374b58b3566aff22c0ca9",
+  "sourceSha256": "50d5f8d7ea5348f9f75ace2449ade8363950788efe2cb82e7a6f353e9514d635",
+  "roleAlignmentSha256": "0e5d03564136453011dfeab17acc32be11fa25d7ecb4c67e6f930ac2d4fe4564",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-44208-01-001": "眠る子供と点検中の昇降設備→券の違う側の乗り場確認→大人一人で階段運搬は選ばない→点検終了不明→別経路と短い同行支援の返事を待つ。",
+    "SC-LOC-JP-44208-02-001": "転入用紙を取ったが旧住所も同じ市→荷物移動と住み始めの日の違い→自分だけの移動→メモの部屋番号欠落→区分と必要資料が分かるまで白紙保留。",
+    "SC-LOC-JP-44208-03-001": "診察と検査の二予約→水曜午前不可・午後可→順番不明なので両予約を保持→新しい気掛かりは看護師へ→両日程の回答後に返事。",
+    "SC-LOC-JP-44208-04-001": "自転車不在と似た写真→自分の控え番号と他車未確認を区別→管理者返事待ち→交換した前かご→図の停め場所を示し盗難は未確定。",
+    "SC-LOC-JP-44208-05-001": "記録を残すとの曖昧な要求→受付と配達の記録を分ける→期限は着日か出す日か不明→部署名も二つ→三点を提出先へ照会してから発送。",
+    "SC-LOC-JP-44208-06-001": "旧口座があるかもしれず新規相談→会社の銀行指定不明→部分番号のメモは断定材料にしない→当日開設は約束しない→名前順の違いも先に確認。",
+    "SC-LOC-JP-44208-07-001": "本体に袋用値札を対応させた誤認→家の容器は別洗剤→本体通常価格→袋割引は同時購入条件→本体一つのみ選択。",
+    "SC-LOC-JP-44208-08-001": "友人待ちの近場散歩→撮影停止で目安より長くなる→途中休憩と戻る地点→入口から案内所前へ待合せを明確化→直接連絡し近場に限定。"
+  },
+  "corrections": [
+    "元の汎用的な台本を八つの別々の制約・聞返し・訂正・判断で新規構成し、四十目標を該当Player発話と直前NPCの問いへ個別に対応させた。",
+    "全八場所の実在風名称と未検証の営業時間を架空名・nullにした。駅は既存Stationの架空構内で、実在の鉄道地理を説明しない。",
+    "予約相談は受付職の権限に合わせ、検査と診療の延期や症状は担当へ確認する内容とした。",
+    "最終再読で予約の間という曖昧な時期を前回診察からの変化へ言い直した。",
+    "最終再読で銀行の照会を当行口座の確認方法に限定し、他行口座まで調べるように読める範囲を狭めた。",
+    "最終再読で公園職員による名前の探索を提供する流れを、友人同士の直接連絡へ直し、Player目標と閉じ方も再照合した。"
+  ],
+  "checks": {
+    "assignedScenarioIdsExact": "PASS",
+    "elevenAlternatingTurns": "PASS: 元ID順の奇数NPC・偶数PLAYER。",
+    "fiveConcreteTasksPerScenario": "PASS: 全四十の前後文脈と内容一致を最終自稿で再読。",
+    "playerUtterancesUnique40": "PASS",
+    "concreteGoalsUnique40": "PASS",
+    "intentIdsUnique40": "PASS",
+    "npcUtterancesUnique48": "PASS",
+    "fullFinalOwnReread": "PASS: title/premise/88turns/40tasks/role correctionsを全文再読。",
+    "distinctCausalPlots": "PASS",
+    "npcClosureAll8": "PASS",
+    "japaneseOnlySpokenContent": "PASS",
+    "supportedNpcCategories": "PASS: NPC_CATEGORIESの実定義へ全八カテゴリが正確一致。",
+    "fictionalAllVenuesAndNullHoursAddress": "PASS",
+    "noFactualLocalRailOrRouteClaims": "PASS",
+    "noMedicalLegalEligibilityOwnershipGuarantee": "PASS",
+    "preserveIdsRouteGrouping": "PASS: runtime変更は行っていない。"
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "自分の担当入力と最終稿を独立したAI著者が直接照合したもので、他著者や母語話者・専門家の審査ではない。",
+    "施設内の配置・商品・表示・日程等は仮定。現実の営業時間・住所・手続期限・受付条件・料金・運行を検証した内容ではない。",
+    "駅名や列車路線を確定せず既存Stationカテゴリを架空設定で使う。新カテゴリや画像は作らず、背景の実際の一致や端末は未確認。",
+    "受付・銀行・警察・郵便の相談は権限内の案内と照会であり、診療、開設、所有権、提出先の期限解釈の決定ではない。",
+    "runtime統合、翻訳、UI、実機、公開承認やremote保存は統合側の作業である。"
+  ],
+  "paths": {
+    "source": "scripts/dialogue-authoring/prf-044-city-cty-jp-44208.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-044_CITY_CTY-JP-44208_ROLE_ALIGNMENT.json",
+    "input": "docs/dialogue-workspace/content-qa/PRF-044_CITY_CTY-JP-44208_INPUT.json"
+  }
+}
