@@ -1,0 +1,85 @@
+{
+  "cityId": "CTY-JP-42213",
+  "baseline": "f56997c6bef23257d64faacb3fb067d7e75a5a92",
+  "inputSha256": "25d360bab1c8f4b3ee96d510df8db084efde38c0037e799dc004b2d1def351e5",
+  "sourceSha256": "bf8e2a04176e1ebc86eb93e7e52a3be33118e18b8ce0f3efcb776dfe0c102b3f",
+  "roleSha256": "e1ff9457e0fad8de4a164989338296d2b1875626c284bc2b84b4ece9dd125a36",
+  "roleAlignmentSha256": "e1ff9457e0fad8de4a164989338296d2b1875626c284bc2b84b4ece9dd125a36",
+  "fullFinalReread": true,
+  "fullFinalRereadScope": "All8finalscripts,88turns,40tasks,title/premise and all8finalrole/name/category/job/hour/address corrections. Changed passages/tasks reread after final edits.",
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "playerUtterances": 40,
+    "tasks": 40,
+    "uniquePlayerUtterances": 40,
+    "uniqueTaskIntents": 40,
+    "uniqueTaskGoals": 40,
+    "distinctNpcClosures": 8
+  },
+  "causalPlots": {
+    "SC-LOC-JP-42213-01-001": "省略した駅名での検索→正式名の候補へ訂正→重い荷物と別ホームの制約→乗換えに余裕のある案を選択→友人への連絡と表示照合を決めて別れる。",
+    "SC-LOC-JP-42213-02-001": "賃貸会社の曖昧な案内→証明書を推定申請しようとする→窓口が提出先の希望を断定しない→名称・対象者・記載事項の質問メモ→申請を保留して提出先へ連絡する方針で別れる。",
+    "SC-LOC-JP-42213-03-001": "問診票の左右の誤記→右膝と発症時期の訂正→痛む動作と不明な服薬名→写真による情報確認と説明速度の希望→看護師が診察へ引き継いで退席する。",
+    "SC-LOC-JP-42213-04-001": "覚えのない請求→切迫危険との区別→受信記録と返信・送金・入力の有無→名前の記載を正当性の証拠としない→相談記録に残して終了する。",
+    "SC-LOC-JP-42213-05-001": "送り状の記入済み住所→最新画面との部屋番号不一致→古いメモ使用を特定して訂正→追跡と料金を優先して送り方を選択→荷物を預け控えを受け取る。",
+    "SC-LOC-JP-42213-06-001": "管理会社名と個人口座名義の不一致→メール由来と契約書連絡先の違い→銀行表示だけでは正当支払先を証明しない→実行保留と既知連絡先への確認→未実行の相談として閉じる。",
+    "SC-LOC-JP-42213-07-001": "重複商品の発見→会計前に一つを除外→持参袋破損で食品用袋を追加し洗剤を分別→カード読取不良で現金へ→重複削除と袋数のレシートを確認して別れる。",
+    "SC-LOC-JP-42213-08-001": "周回路と休憩希望→架空場面内の通行止め→同一路のベンチ往復へ変更→入口目印と階段のない枝を明確化→短い往復と同じ入口への帰着を決めて別れる。"
+  },
+  "corrections": [
+    {
+      "scenarioId": "SC-LOC-JP-42213-02-001",
+      "details": "Changed title to preparation of questions rather than falsely completed certificate identification; explained記載事項before player demonstrates understanding; matching task updated."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-42213-03-001",
+      "details": "Added explicit nurse leave-taking after completed intake handoff rather than ending only with a waiting instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-42213-05-001",
+      "details": "Made causal address error explicit: label copied from old memo, compared against current recipient message screen; corrected before shipment."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-42213-06-001",
+      "details": "Changed opening from before input to before execution, consistent with ending an unexecuted partial input; premise now correctly refers to management-company name rather than invoice addressee."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-42213-07-001",
+      "details": "Final receipt refers to the duplicated item count, avoiding implication that detergent/other goods vanished from checkout."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-42213-01-001",
+      "details": "Task states future friend notification, matching player promise rather than claiming notification already occurred."
+    },
+    {
+      "scope": "all8locations",
+      "details": "All names explicitly fictional; unverified opening hours and addresses cleared. Park role corrected to Park Staff."
+    }
+  ],
+  "checks": {
+    "exactAssignedScenarioIds": true,
+    "npcPlayerAlternationByArrayPosition": true,
+    "startsNpcEndsNpc": true,
+    "japaneseOnlySpokenLines": true,
+    "allPlayerLinesUniqueWithinAssignedCity": true,
+    "tasksMatchFiveSpecificPlayerTurns": true,
+    "finalNpcLeaveTakingInAllEight": true,
+    "noReusableAcknowledgmentOnlyPlayerTurn": true,
+    "noLevelGating": true,
+    "causalPlotAndOutcomeManuallyReread": true,
+    "noRealPolicyPriceHoursRouteOrGeographyClaim": true,
+    "supportedRoleCategories": true
+  },
+  "peerReviewed": false,
+  "crossReading": false,
+  "crossReadOtherCityContent": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorReviewed": false,
+  "operatorVerified": false,
+  "deviceReviewed": false,
+  "deviceVerified": false,
+  "releaseApproved": false,
+  "limitations": "Independent AI own-source review only. All premises are fictional learning scenes. Medical content is intake language, financial/police content is consultation language; no diagnosis, fraud determination, real service guarantee or jurisdictional policy. Root handles runtime/shared metadata integration and durable persistence; neither integration nor operator/device/release approval is claimed here."
+}

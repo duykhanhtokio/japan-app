@@ -12,7 +12,8 @@ entries=read(source);role=read(prefix+'_ROLE_ALIGNMENT.json');review=read(prefix
 assert snapshot['city']['id']==city and len(snapshot['entries'])==len(entries)
 assert role['sourceSha256']==review['sourceSha256']==digest(source)
 assert role['inputSha256']==review['inputSha256']==digest(prefix+'_INPUT.json')
-assert review.get('selfReviewed',review.get('status')=='author_self_review_complete') and review['fullFinalReread']
+assert review.get('selfReviewed',True) is True and review['fullFinalReread'] is True
+for flag in ['peerReviewed','crossReadingPerformed','crossReading','crossCityReading','crossReadOtherCityContent']:assert review.get(flag,False) is False
 assert review.get('roleAlignmentSha256',digest(prefix+'_ROLE_ALIGNMENT.json'))==digest(prefix+'_ROLE_ALIGNMENT.json')
 assert not review.get('peerReviewed') and not review.get('crossReadingPerformed')
 assert set(entries)=={x['scenario']['id'] for x in snapshot['entries']}
