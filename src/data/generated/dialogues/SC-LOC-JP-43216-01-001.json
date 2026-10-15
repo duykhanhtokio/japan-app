@@ -6,15 +6,15 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。切符についてのご相談ですか。",
+        "textJa": "券売機の確認画面で、操作を止めていらっしゃいますね。何を買うご予定ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-43216-01-001-SHARED-02",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -24,25 +24,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "station-ticket_response_1",
+        "communicativeIntent": "explain_two_tickets_as_two_people_selection",
         "requiredSemanticComponents": {
-          "goal": "切符の種類と購入方法を確認する"
+          "goal": "一人の往復用に二人を選んだと説明し支払い前に確認する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "合志市から日帰りで出かけます。どの切符を買えばよいでしょうか。",
+        "recommendedAnswerJa": "一人で日帰りの往復をするので、切符が二枚必要だと思って「二人」を押しました。このまま払ってよいでしょうか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "一人の往復用に二人を選んだと説明し支払い前に確認する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "一人の往復用に二人を選んだと説明し支払い前に確認する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-43216-01-001-SHARED-03",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -51,15 +51,15 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "行き先と、帰る予定の時間を教えてください。",
+        "textJa": "その「二人」は乗る人数です。今の確認画面には、同じ方向の片道を二人分と表示されています。同行の方はいませんか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-43216-01-001-SHARED-04",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -69,25 +69,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "station-ticket_response_2",
+        "communicativeIntent": "clarify_solo_outbound_return_intention",
         "requiredSemanticComponents": {
-          "goal": "切符の種類と購入方法を確認する"
+          "goal": "同行者はおらず行きと帰りで一枚ずつのつもりだったと訂正する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "行き先はこの駅で、帰りの時間はまだ決めていません。",
+        "recommendedAnswerJa": "同行者はいません。行きと帰りを一枚ずつ買うつもりで、人数を増やしてしまいました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "同行者はおらず行きと帰りで一枚ずつのつもりだったと訂正する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "同行者はおらず行きと帰りで一枚ずつのつもりだったと訂正する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-43216-01-001-SHARED-05",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -96,15 +96,15 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "では、有効な区間や利用条件を確認しましょう。特急列車は利用されますか。",
+        "textJa": "まだお支払い前なので、今の選択を取り消して最初に戻れます。帰りは同じ経路の予定ですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-43216-01-001-SHARED-06",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -114,25 +114,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "station-ticket_response_3",
+        "communicativeIntent": "switch_to_outbound_only_due_to_possible_ride",
         "requiredSemanticComponents": {
-          "goal": "切符の種類と購入方法を確認する"
+          "goal": "帰りは友人の車かもしれないため行きの片道だけを希望する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "早く着きたいですが、追加料金があるか知りたいです。",
+        "recommendedAnswerJa": "帰りは友人に送ってもらうかもしれません。往復分ではなく、まず行きの片道だけにしたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "帰りは友人の車かもしれないため行きの片道だけを希望する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "帰りは友人の車かもしれないため行きの片道だけを希望する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-43216-01-001-SHARED-07",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -141,15 +141,15 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "列車の種類によって必要な切符が違います。購入画面で合計額を確認できます。",
+        "textJa": "では取り消した後、人数を一人にして、行き先を選び直しましょう。画面が戻ったらご自分で操作なさいますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-43216-01-001-SHARED-08",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -159,25 +159,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "station-ticket_response_4",
+        "communicativeIntent": "operate_cancel_then_request_initial_screen_check",
         "requiredSemanticComponents": {
-          "goal": "切符の種類と購入方法を確認する"
+          "goal": "自分で取り消しを押し最初の画面に戻ったか見てもらう"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "現金でも買えますか。使える支払い方法を確認したいです。",
+        "recommendedAnswerJa": "自分で押してみます。取り消しを押したところで止めるので、最初の画面に戻ったか見てもらえますか。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "自分で取り消しを押し最初の画面に戻ったか見てもらう。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "自分で取り消しを押し最初の画面に戻ったか見てもらう。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-43216-01-001-SHARED-09",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -186,15 +186,15 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "この券売機の表示で確認しましょう。わからない項目は購入前に聞いてください。",
+        "textJa": "最初の画面に戻っています。選び直した後は、確認画面の「人数」「区間」「片道」を読み上げて確かめましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-JP-43216-01-001-SHARED-10",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -204,25 +204,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "station-ticket_response_5",
+        "communicativeIntent": "restate_one_person_segment_and_one_way_before_payment",
         "requiredSemanticComponents": {
-          "goal": "切符の種類と購入方法を確認する"
+          "goal": "一人・乗車区間・片道を読み直し二人分の選択が残っていないか支払い前に確認すると伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "ありがとうございます。内容を確認してから購入します。",
+        "recommendedAnswerJa": "一人、ここから目的の駅まで、片道ですね。支払いの前にその三つを読み直し、二人分が残っていないことも見ます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "一人・乗車区間・片道を読み直し二人分の選択が残っていないか支払い前に確認すると伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "一人・乗車区間・片道を読み直し二人分の選択が残っていないか支払い前に確認すると伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-JP-43216-01-001-SHARED-11",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -231,24 +231,27 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "購入後は行き先と日付を確かめ、切符をなくさないようにお持ちください。",
+        "textJa": "はい、選び直した内容を確認してからお支払いください。帰りの切符は今回買わないということで承りました。いってらっしゃいませ。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": null,
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     }
   ],
   "authoring": {
     "locale": "ja",
-    "recipe": "station-ticket",
     "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
     "contentScope": "simulated_learning_scenario",
     "nativeSpeakerReviewed": false,
-    "translationState": "deferred_until_all_japanese_complete"
+    "translationState": "deferred_until_all_japanese_complete",
+    "editorialSource": "scripts/dialogue-authoring/prf-043-city-cty-jp-43216.json",
+    "premise": "合志市を舞台にした学習用の架空施設での会話。架空駅で、一人の往復分を買いたい利用者が券売機の人数表示を二人にしてしまい、購入前に取り消して片道分へ選び直す。実在施設の運営、料金、日時、地理を示すものではなく、文面や対応条件は場面内の設定である。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
   }
 }
