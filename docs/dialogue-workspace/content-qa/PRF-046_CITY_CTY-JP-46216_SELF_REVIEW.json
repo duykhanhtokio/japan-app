@@ -1,0 +1,80 @@
+{
+  "cityId": "CTY-JP-46216",
+  "baseline": "70b9863045bb19397bc94bc4f0f393234389fcc3",
+  "inputSha256": "29c78b798370b88863c35fa1e94fc4f3ac23140fa6a4ef2c1b688ed02ad3f746",
+  "sourceSha256": "d8676a6b91705bfdacc8988e9e4778b8152306439dbfb01373f17edc83331817",
+  "roleAlignmentSha256": "28b358114d980126202883faf431eedc113373ce02900a54b21fe8fedc572587",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "paths": {
+    "source": "scripts/dialogue-authoring/prf-046-city-cty-jp-46216.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-046_CITY_CTY-JP-46216_ROLE_ALIGNMENT.json"
+  },
+  "causalPlots": {
+    "SC-LOC-JP-46216-01-001": "友人と同じ車両なら隣と思ったが画像には座席が写っていない。詳細を友人へ確認し、隣を第一希望、難しければ同車両通路側として候補を相談する。",
+    "SC-LOC-JP-46216-02-001": "知らない名前が印刷された記入例を申請用紙と思った。未記入の用紙と見本を分け、続柄と添付物を見本から写さず担当へ質問する。",
+    "SC-LOC-JP-46216-03-001": "他院受診済みなのに初めて欄を選ぶことに迷う。ここへの初回、二週間前の右手首痛、先週の他院受診を区別し、略語のある前資料を医師へ引き継ぐ。",
+    "SC-LOC-JP-46216-04-001": "帽子を拾った場所を休憩写真のベンチと混同。水飲み場の後で拾い次にベンチへ行った順序と、写真より前という時刻の限界を報告する。",
+    "SC-LOC-JP-46216-05-001": "旧居を出て仮宿におり、新居は来月入居だが即時受取を期待。三住所と未確認の日程を分け、宿と新居の受取状況および利用条件を担当へ相談する。",
+    "SC-LOC-JP-46216-06-001": "会社内線四桁を私用の連絡先と思って記入。現在の携帯は使え新番号は来週未定と分け、住所・通知先の希望とともに担当へ確認する。",
+    "SC-LOC-JP-46216-07-001": "果物写真から果肉粒を期待したが表示は果汁。中身の形と保存条件を別に確かめ、粒入りかの回答を受けてから好みの一品を選ぶ。",
+    "SC-LOC-JP-46216-08-001": "最短周回線を選びかけたが同行友人のベビーカーを考慮していない。階段印を避ける候補も当日未確認と認識し、一周に限定せず友人と係員に条件を共有する。"
+  },
+  "corrections": [
+    "All eight unverified actual-looking venue names replaced with explicitly generic fictional learning identities; hours and addresses null.",
+    "Park/Community Staff corrected to existing Park/Park Staff. Other original supported category/job pairings and scenario/venue grouping retained.",
+    "Station Player wording corrected from buying a carriage to buying a ticket in the same carriage, retaining the mistaken adjacency assumption.",
+    "Clinic opening and first-visit explanation revised to ordinary medical reception wording; onset question corrected to natural Japanese.",
+    "Clinic prior-paper line revised to naturally state that abbreviated explanation cannot be read accurately, without reinterpreting the document.",
+    "Police readback revised to include the actual finding point after the water fountain and before the later rest bench, preserving the exact sequence.",
+    "Bank Player wording revised to naturally state that the current mobile can be reached while the future number is unknown.",
+    "Every final title, premise, 88 turns, 40 tasks and eight role corrections reread. Final edited passages and adjacent turns/tasks reread and exact byte hashes refreshed."
+  ],
+  "checks": {
+    "fullAssignedInputRead": true,
+    "allOwnFinalProseAndRoleCorrectionsReread": true,
+    "exactScenarioIdsPreserved": true,
+    "sourceCityLocationIdsTypesAndRouteGroupingRetained": true,
+    "elevenNpcFirstAlternatingTurnsEach": true,
+    "fiveSpecificContextAlignedTasksEach": true,
+    "allFortyPlayerLinesUnique": true,
+    "allFortyIntentsUnique": true,
+    "allFortyGoalsUnique": true,
+    "eightDistinctNpcClosures": true,
+    "noAcknowledgmentOnlyPlayerTurns": true,
+    "noNounSwappedReusableSkeleton": true,
+    "eachCausalPlotAndOutcomeReviewed": true,
+    "japaneseOnlySpeech": true,
+    "noLevelGate": true,
+    "numbersPhoneTypesChronologyAndOwnershipReferencesChecked": true,
+    "categoriesCheckedAgainstExactNpcProgressionCode": true,
+    "noNewCategoriesOrAssets": true,
+    "explicitFictionalVenues": true,
+    "allHoursAndAddressesNull": true,
+    "noActualLocalRouteSchedulePriceOrPolicyGuarantee": true,
+    "noDiagnosisFoodSafetyOrStrollerAccessGuarantee": true,
+    "noAdministrativeBankOrPostalCompletionDetermination": true,
+    "finalExactByteHashesVerified": true,
+    "noOtherCityProseRead": true,
+    "noActiveCheckoutRuntimeSharedOrGitWrites": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "Independent author self-review only; no peer, native-speaker or human review.",
+    "All signs, forms, products, layouts, service screens and availability conditions are hypothetical scene facts, not verified Hioki institutions or policies.",
+    "No actual seat adjacency, application acceptance, diagnosis, ownership, postal eligibility, phone registration, food suitability or accessible park route is established.",
+    "Runtime integration, artwork/device review and release approval remain with root; no active-checkout runtime or shared-file edits by this author."
+  ]
+}
