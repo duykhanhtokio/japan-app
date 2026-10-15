@@ -1,6 +1,7 @@
 import week01 from './japanese-master/week-01.json';
 import pilotTranslations from './japanese-master/translations/pilot-01.json';
 import vietnameseWeek01 from './japanese-master/translations/week-01.vi.json';
+import englishWeek01 from './japanese-master/translations/week-01.en.json';
 
 export type JapaneseMasterSection = {
   headingJa: string;
@@ -43,11 +44,13 @@ export type MasterTranslation = {
 export const japaneseMasterTranslations: Record<string, Record<string, MasterTranslation>> = {
   ...(pilotTranslations as Record<string, Record<string, MasterTranslation>>),
 };
-for (const [id, translation] of Object.entries(vietnameseWeek01.sections)) {
-  japaneseMasterTranslations[id] = {
-    ...japaneseMasterTranslations[id],
-    vi: translation as MasterTranslation,
-  };
+for (const batch of [vietnameseWeek01, englishWeek01]) {
+  for (const [id, translation] of Object.entries(batch.sections)) {
+    japaneseMasterTranslations[id] = {
+      ...japaneseMasterTranslations[id],
+      [batch.language]: translation as MasterTranslation,
+    };
+  }
 }
 
 export type LessonTranslation = {
@@ -59,10 +62,15 @@ export type LessonTranslation = {
 export function japaneseLessonRevision(lesson: JapaneseLessonMetadata): string {
   return contentRevision([lesson.titleJa, lesson.objectivesJa, lesson.contextJa, lesson.artCaptionJa]);
 }
-export const japaneseLessonTranslations: Record<string, Record<string, LessonTranslation>> =
-  Object.fromEntries(Object.entries(vietnameseWeek01.lessons).map(([id, translation]) =>
-    [id, { vi: translation as LessonTranslation }],
-  ));
+export const japaneseLessonTranslations: Record<string, Record<string, LessonTranslation>> = {};
+for (const batch of [vietnameseWeek01, englishWeek01]) {
+  for (const [id, translation] of Object.entries(batch.lessons)) {
+    japaneseLessonTranslations[id] = {
+      ...japaneseLessonTranslations[id],
+      [batch.language]: translation as LessonTranslation,
+    };
+  }
+}
 export function translationForLesson(
   id: string,
   language: string,
