@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-16",
+  "status": "ai_editorial_internal_preview",
+  "corrections": [
+    {
+      "questionId": "kaigo-skills-mock-05-q25",
+      "issue": "Yes/no command paired with action alternatives; correct option stays uniquely appropriate. Existing 白/杖 furigana split was also wrong for the intended care term.",
+      "change": "Explicit action-selection command; 白杖 reading repaired to はくじょう in prompt and option3. No option text or correctIndex changes.",
+      "sourceReadingSupport": [
+        {
+          "url": "https://www.mhlw.go.jp/content/12200000/0000123597.pdf",
+          "section": "PDF page1, 移動の手引き",
+          "supports": "白杖（はくじょう） reading; avoid pulling hands/cane. No numeric/manual lifting advice imported from this older disaster leaflet."
+        },
+        {
+          "url": "https://www.city.takamatsu.kagawa.jp/smph/kurashi/kenkou/shogai_shien/rikainosuisin/hakujou.html",
+          "updated": "2025-08-06",
+          "accessed": "2026-10-16",
+          "supports": "白杖（はくじょう） term and confirming appropriate support rather than pulling."
+        }
+      ]
+    },
+    {
+      "questionId": "kaigo-japanese-mock-04-q03",
+      "issue": "Options0 and2 both describe urine quantity. CorrectIndex1 remains unique.",
+      "change": "Option2 distinguishes actual act of urination from sensation; corresponding Japanese rationale/furigana updated.",
+      "sourceConcept": "Main private book urinary/elimination term scope, reviewed by the owning author; no new clinical procedure."
+    }
+  ],
+  "sourceCoreBinding": "Expected original Japanese fields and furigana must match before applying any correction. Raw content.json unchanged.",
+  "attemptPolicy": "Two affected forms receive content-dependent new revision keys. Ten unaffected forms keep exact original keys. Old attempt records stay untouched; no answer migration onto changed alternatives.",
+  "humanReviewed": false,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "nativeDeviceTested": false,
+  "releaseReady": false
+}

@@ -21,7 +21,7 @@ const mount=async m=>{let t;await act(async()=>{t=create(React.createElement(m.K
   assert.notEqual(m.japaneseAssessmentRevisionForWeek(week),m.assessmentRevisionForWeek(week),'New Japanese content gets independent attempt revision');
   for(const q of active){assert.equal(q.language,'ja');assert.equal(q.prompt,q.japanese);assert.equal(q.options.length,4);assert.equal(new Set(q.options).size,4);assert.equal(q.rationales.length,4);assert.equal(new Set(q.rationales).size,4);assert(q.correctIndex>=0&&q.correctIndex<4);assert(!/[À-ỹ]/u.test(JSON.stringify([q.prompt,q.options,q.rationales])));}
   const entries=m.kaigoCatalog.filter(e=>Math.ceil(e.day/7)===week);
-  for(const e of entries){const meta=m.japaneseLessonMetadata[m.japaneseLessonKey(e)];assert(meta,'Missing Japanese day metadata '+e.day);assert(meta.titleJa&&meta.objectivesJa.length&&meta.artCaptionJa);
+  for(const e of entries){const meta=m.japaneseLessonMetadata[m.japaneseLessonKey(e)];assert(meta,'Missing Japanese day metadata '+e.day);assert.equal(meta.day,e.day,'Metadata belongs to another scheduled day');assert(meta.titleJa&&meta.objectivesJa.length&&meta.artCaptionJa);
    for(const s of m.japaneseSectionsFor(e)){assert(s.masterStatus,'Master missing '+s.id);assert(s.japaneseComplete);assert(s.headingJa);assert(s.paragraphsJa.length);assert(!/[À-ỹ]/u.test(JSON.stringify([s.headingJa,s.paragraphsJa])));for(const p of s.paragraphsJa){assert(p.trim());assert(/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u.test(p));paragraphs++;}sections++;}
   }
  }

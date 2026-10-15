@@ -13,10 +13,11 @@ import {illustrationFor} from '@/data/kaigo/lesson-illustrations';
 import type {KnowledgeProbe,LanguageTask,Lesson,MockForm,RubyToken,TransferStep} from '@/data/kaigo/types';
 import {answerExam,canAdvancePractice,canRevealPractice,createExamSession,examReview,examStorageKey,publicQuestion,restoreExamSession,scoreQuestions,submitExam,tickExam,type Answers,type ExamSession} from '@/services/kaigo-session';
 import {loadKaigoState,saveKaigoState} from '@/services/kaigo-storage';
+import {withJapaneseMockReview,japaneseMockFigureLabelsPending} from '@/data/kaigo/japanese-mock-reviews';
 
 const revision='test-content-v1';
 function Body({children}:{children:React.ReactNode}){return <Text style={s.body}>{children}</Text>;}
-function Ja({children}:{children:React.ReactNode}){return <Text selectable style={s.ja}>{children}</Text>;}
+function Ja({children,testID}:{children:React.ReactNode;testID?:string}){return <Text selectable testID={testID} style={s.ja}>{children}</Text>;}
 function Button({title,onPress,disabled=false,selected=false,testID}:{title:string;onPress:()=>void;disabled?:boolean;selected?:boolean;testID?:string}){return <Pressable accessibilityRole="button" accessibilityLabel={title} accessibilityState={{disabled,selected}} disabled={disabled} onPress={onPress} testID={testID} style={({pressed})=>[s.button,selected&&{backgroundColor:'#395477',borderColor:'#e4be71'},disabled&&s.disabled,pressed&&s.pressed]}><Text style={s.buttonText}>{title}</Text></Pressable>;}
 function Ruby({tokens,fallback}:{tokens?:RubyToken[];fallback:string}){return tokens?.length?<View style={s.rubyRow}>{tokens.map((t,i)=>t.text==='\n'?<View key={i} style={{width:'100%'}}/>:<View key={i} style={s.rubyWord}><Text style={s.rubyKana}>{t.readingKana??' '}</Text><Text style={s.rubyText}>{t.text}</Text></View>)}</View>:<Ja>{fallback}</Ja>;}
 function useStored<T>(key:string,initial:T,restore:(raw:string|null)=>T){
@@ -84,7 +85,8 @@ function LanguageSupplementStudy({day,onParent}:{day:number;onParent:(id:string)
 function RelatedStudy({day,onSelect}:{day:number;onSelect:(next:StudySelection)=>void}){const [open,setOpen]=useState(false);const entries=kaigoCatalog.filter(e=>e.parentDay===day&&(e.kind==='atomic'||e.kind==='language'));if(!entries.length)return null;return <View><Button title={`${open?'Đóng':'Ôn'} ${entries.length} buổi liên quan`} testID="kaigo-related-toggle" onPress={()=>setOpen(!open)}/>{open&&entries.map(e=><RoyalContentPanel key={e.day} style={s.panel}><Body>Ngày {e.day} · {e.typeVi}</Body><Text style={s.heading}>{e.titleVi}</Text><Button title="Mở buổi liên quan" testID={`kaigo-related-${e.day}`} onPress={()=>onSelect({kind:e.kind,id:e.id})}/></RoyalContentPanel>)}</View>;}
 function LessonStudy({lesson,onRelated,scheduledDay}:{lesson:Lesson;scheduledDay?:number;onRelated:(next:StudySelection)=>void}){const [tab,setTab]=useState(0);const parentLesson=kaigoCourse.candidates.some(l=>l.id===lesson.id)?kaigoCourse.lessons.find(l=>l.day===lesson.day):undefined;const tabs=['Kiến thức','Từ và cách nói','Luyện thoại','Thực hành tình huống','Kiểm tra bài học · 5 câu',...(lesson.languageTasks?.length?['Đọc và hiểu']:[])];return <View><RoyalExplanationPanel style={s.panel}><Text style={[s.heading,s.light]}>{kaigoCourse.candidates.some(l=>l.id===lesson.id)?'Thực hành trong bài':`Ngày ${scheduledDay??lesson.day}`} · {lesson.titleVi}</Text><Text style={s.light}>{lesson.studyPlanVi??'30 phút dự kiến · có thể tiếp tục phần chưa xong.'}</Text>{parentLesson&&<Button title="Quay lại bài học liên quan" testID="kaigo-practice-parent" onPress={()=>onRelated({kind:'lesson',id:parentLesson.id})}/>}</RoyalExplanationPanel><View style={s.wrap}>{tabs.map((title,i)=><Button key={title} title={title} onPress={()=>setTab(i)}/>)}</View>{tab===0&&<Knowledge lesson={lesson}/>}{tab===1&&<View>{lesson.activeTermIds&&<RoyalExplanationPanel style={s.panel}><Text style={s.light}>4 phút: ưu tiên tối đa 8 từ đầu. Kho từ theo tuần phía dưới dùng nhận diện/tra cứu; không phải học thuộc tất cả hôm nay.</Text></RoyalExplanationPanel>}{[...kaigoCourse.terms.filter(t=>lesson.termIds.includes(t.id??'')).sort((a,b)=>Number(lesson.activeTermIds?.includes(b.id??''))-Number(lesson.activeTermIds?.includes(a.id??''))),...lesson.inlineNotes].map((t,i)=><RoyalContentPanel key={i} style={s.panel}><Ja>{t.termJa}</Ja><Body>{t.readingJa} · {t.meaningVi}</Body></RoyalContentPanel>)}{lesson.expressions.map((x,i)=><RoyalContentPanel key={i} style={s.panel}><Ja>{x.textJa}</Ja><Body>{x.meaningVi}</Body></RoyalContentPanel>)}</View>}{tab===2&&<Dialogue lesson={lesson}/>}{tab===3&&<View><Transfer lesson={lesson}/>{kaigoCourse.candidates.filter(l=>l.day===lesson.day&&l.id!==lesson.id).map(l=><RoyalContentPanel key={l.id} style={s.panel}><Text style={s.heading}>Thực hành trong bài · {l.titleVi}</Text><Body>Thực hành trong thời gian dành cho tình huống của buổi học. Nếu chưa xong, tiếp tục ở lượt học sau.</Body><Button title="Mở thực hành" testID={`kaigo-practice-${l.id}`} onPress={()=>onRelated({kind:'lesson',id:l.id})}/></RoyalContentPanel>)}</View>}{tab===4&&<LessonCheck lesson={lesson}/>} {tab===5&&<View><RoyalExplanationPanel style={s.panel}><Text style={s.light}>2 phút đọc một thẻ ngắn và tự giải thích theo dữ kiện. Nếu chưa xong, giữ phần còn lại để ôn tiếp.</Text></RoyalExplanationPanel>{lesson.languageTasks?.map(t=><RetrievalCard key={t.id} probe={t} lesson={lesson}/>)}</View>}<RelatedStudy day={lesson.day} onSelect={onRelated}/></View>;}
 
-function MockExam({ form, active }: { form: MockForm; active: boolean }) {
+function MockExam({ form: originalForm, active }: { form: MockForm; active: boolean }) {
+  const form = withJapaneseMockReview(originalForm);
   const st = useStored<ExamSession>(
     examStorageKey(form),
     createExamSession(form),
@@ -140,6 +142,7 @@ function MockExam({ form, active }: { form: MockForm; active: boolean }) {
             · 問題 {session.currentQuestion + 1}/{form.questions.length}
           </Body>
           <SaveStatus error={st.error} retry={st.retry} />
+          {form.japaneseCoreCorrected && <Body>設問を修正した版です。以前の解答記録はそのまま保管されます。</Body>}
           {!!q.passageJa && (
             <Ruby tokens={q.furigana.passage} fallback={q.passageJa} />
           )}
@@ -156,6 +159,9 @@ function MockExam({ form, active }: { form: MockForm; active: boolean }) {
               tokens={q.furigana.figureDescription}
               fallback={q.figureDescriptionJa}
             />
+          )}
+          {!!q.figureKey && japaneseMockFigureLabelsPending.has(q.figureKey) && (
+            <Body>図中の文字は日本語版を準備中です。日本語の説明と合わせて確認してください。</Body>
           )}
           <Ruby tokens={q.furigana.prompt} fallback={q.promptJa} />
           {q.optionsJa.map((option, i) => (
@@ -179,25 +185,18 @@ function MockExam({ form, active }: { form: MockForm; active: boolean }) {
             <View testID="kaigo-mock-review">
               <Text style={s.heading}>正答：{current.correctIndex + 1}</Text>
               {current.rationalesJa.map((text, i) => (
-                <Ja key={i}>
+                <Ja key={i} testID={`kaigo-mock-rationale-${current.id}-${i}`}>
                   {i + 1}. {text}
                 </Ja>
               ))}
+              {current.rationalesJa.length === 0 && <Body>この問題の日本語解説は確認中です。</Body>}
               <Button
                 title={translationOpen ? "翻訳を閉じる" : "翻訳を見る"}
                 testID="kaigo-mock-translation"
                 onPress={() => setTranslationOpen((v) => !v)}
               />
               {translationOpen && (
-                <View>
-                  <TranslationText>{current.passageVi}</TranslationText>
-                  <TranslationText>{current.promptVi}</TranslationText>
-                  {current.rationalesVi.map((text, i) => (
-                    <TranslationText key={i}>
-                      {i + 1}. {text}
-                    </TranslationText>
-                  ))}
-                </View>
+                <TranslationText>この言語の翻訳は準備中です。</TranslationText>
               )}
             </View>
           )}
@@ -311,9 +310,9 @@ function LegacyKaigoCourse({onBack,active=true}:{onBack:()=>void;active?:boolean
  const lesson=selection?.kind==='lesson'?[...kaigoCourse.lessons,...kaigoCourse.candidates].find(l=>l.id===selection.id):undefined,mock=selection?.kind==='mock'?kaigoCourse.mocks.find(m=>m.id===selection.id):undefined;
  return <View style={s.root}><View style={s.header}><RoyalBackButton onPress={()=>selection?setSelection(null):onBack()}/><View style={s.headerText}><Text style={s.title}>介護</Text><Text style={s.subtitle}>Học {Math.ceil(kaigoDailyPlan.totalDays/7)} tuần · {kaigoDailyPlan.totalDays} buổi · 30 phút/ngày</Text></View></View><ScrollView key={selection?selection.kind+':'+selection.id:'catalog'} testID="kaigo-course-scroll" keyboardShouldPersistTaps="handled" contentContainerStyle={s.content}>
  {selection&&scheduledDay&&<RoyalExplanationPanel style={s.panel}><Text style={s.light}>Tuần {Math.ceil(scheduledDay/7)} · Buổi {(scheduledDay-1)%7+1} · Ngày {scheduledDay} · 30 phút</Text></RoyalExplanationPanel>}
- {lesson?<LessonStudy key={lesson.id} scheduledDay={scheduledDay} lesson={lesson} onRelated={select}/>:mock?<MockExam key={mock.id} form={mock} active={active}/>:selection?.kind==='language'?<LanguageSupplementStudy key={selection.id} day={Number(selection.id)} onParent={id=>select({kind:'lesson',id})}/>:selection?.kind==='atomic'?<AtomicStudy key={selection.id} day={Number(selection.id)} onParent={id=>select({kind:'lesson',id})}/>:<View><CourseCatalog onSelect={select} last={last.value} ready={last.ready} state={catalog} setState={setCatalog}/><SaveStatus error={last.error} retry={last.retry}/></View>}
+ {lesson?<LessonStudy key={lesson.id} scheduledDay={scheduledDay} lesson={lesson} onRelated={select}/>:mock?<MockExam key={`${mock.id}:${withJapaneseMockReview(mock).contentRevision}`} form={mock} active={active}/>:selection?.kind==='language'?<LanguageSupplementStudy key={selection.id} day={Number(selection.id)} onParent={id=>select({kind:'lesson',id})}/>:selection?.kind==='atomic'?<AtomicStudy key={selection.id} day={Number(selection.id)} onParent={id=>select({kind:'lesson',id})}/>:<View><CourseCatalog onSelect={select} last={last.value} ready={last.ready} state={catalog} setState={setCatalog}/><SaveStatus error={last.error} retry={last.retry}/></View>}
  </ScrollView></View>;
 }
 const s=StyleSheet.create({root:{flex:1},header:{flexDirection:'row',gap:14,paddingHorizontal:18,paddingTop:10,paddingBottom:12},headerText:{flex:1},title:{fontFamily:ROYAL_FONT.heading,fontSize:26,color:'#fff3cf'},subtitle:{fontFamily:ROYAL_FONT.body,fontSize:15,color:'#fffdf7'},content:{padding:18,paddingBottom:40,gap:10},heading:{fontFamily:ROYAL_FONT.heading,fontSize:20,color:'#142335',lineHeight:28,marginVertical:8},panel:{paddingHorizontal:26,paddingVertical:24,marginBottom:14},body:{fontFamily:ROYAL_FONT.body,color:'#26364c',fontSize:16,lineHeight:25,marginVertical:5},small:{fontFamily:ROYAL_FONT.body,color:'#43536b',fontSize:14,lineHeight:22,marginVertical:5},ja:{fontFamily:ROYAL_FONT.body,color:'#142335',fontSize:20,lineHeight:32,marginVertical:6},light:{fontFamily:ROYAL_FONT.body,fontSize:16,lineHeight:25,color:'#fff3cf'},button:{backgroundColor:'#1b3153',borderColor:'#c99c51',borderWidth:1,borderRadius:10,paddingHorizontal:14,paddingVertical:12,marginVertical:5,alignItems:'center',justifyContent:'center'},buttonText:{fontFamily:ROYAL_FONT.body,color:'#fff3cf',fontSize:16,lineHeight:23,textAlign:'center'},disabled:{opacity:.45},pressed:{opacity:.7},row:{flexDirection:'row',flexWrap:'wrap',gap:12},wrap:{flexDirection:'row',flexWrap:'wrap',gap:8,marginBottom:10},input:{position:'relative',fontFamily:ROYAL_FONT.body,color:'#142335',backgroundColor:'#fffdf4',borderColor:'#61718b',borderWidth:1,borderRadius:8,padding:12,minHeight:95,fontSize:18,lineHeight:28,textAlignVertical:'top',marginVertical:10},check:{paddingVertical:6},option:{borderWidth:1,borderColor:'#8792a3',borderRadius:8,padding:12,marginVertical:6},selected:{borderColor:'#c08e25',borderWidth:2,backgroundColor:'#fff0c4'},rubyRow:{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',marginVertical:4},rubyWord:{alignItems:'center',paddingHorizontal:1},rubyKana:{fontFamily:ROYAL_FONT.body,fontSize:10,lineHeight:15,color:'#43536b'},rubyText:{fontFamily:ROYAL_FONT.body,fontSize:20,lineHeight:30,color:'#142335'},figure:{width:'100%',aspectRatio:800/420,maxHeight:260,marginVertical:10},modalBackdrop:{flex:1,backgroundColor:'rgba(0,0,0,.65)',alignItems:'center',justifyContent:'center',padding:20},modalCard:{maxWidth:480,width:'100%',padding:24,borderRadius:14,backgroundColor:'#fff6df'}});
 
-export function KaigoCourse({onBack,active=true}:{onBack:()=>void;active?:boolean}){return <StudyAppearanceProvider><WeeklyKaigo onBack={onBack} renderMock={form=><MockExam key={form.id} form={form} active={active}/>}/></StudyAppearanceProvider>;}
+export function KaigoCourse({onBack,active=true}:{onBack:()=>void;active?:boolean}){return <StudyAppearanceProvider><WeeklyKaigo onBack={onBack} renderMock={form=><MockExam key={`${form.id}:${withJapaneseMockReview(form).contentRevision}`} form={form} active={active}/>}/></StudyAppearanceProvider>;}
