@@ -1,0 +1,419 @@
+{
+  "cityId": "CTY-JP-43212",
+  "baseline": "de054c902c4a00ad79944220ae87a64373782f14",
+  "inputSha256": "878e7b5dc2719bcee99c1fe470540f914abc3020e334ae4042ee48ed83e541d5",
+  "sourceSha256": "5604c9c20b80fe8a95d4c7f952ec8e88489fa230c58590d8dd28a831dd2a2159",
+  "roleAlignmentSha256": "2ef871e1ebdcd8330e2e4231eee8734da575687bc5c45a6c7303fd5506f3c03d",
+  "sourceFile": "scripts/dialogue-authoring/prf-043-city-cty-jp-43212.json",
+  "roleAlignmentFile": "docs/dialogue-workspace/content-qa/PRF-043_CITY_CTY-JP-43212_ROLE_ALIGNMENT.json",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-43212-01-001": {
+      "title": "似た停留所名を区別して待ち合わせの経路を選ぶ",
+      "causalProgression": "上天草市に配置した架空のバスターミナル案内窓口。友人宅への移動で、受信メッセージと経路検索に似た名称の停留所が表示される。架空の行き先一覧を使って区別し、乗り換え時間の余裕を確かめる。実在駅やバス路線、接続時刻、地理は示さない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "distinguish_similar_destination_stop_labels",
+          "goal": "友人のメッセージと検索結果で広場前と広場入口の名称が異なり、同じ停留所か分からないと伝える。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "correct_wrong_stop_search_from_meeting_landmark",
+          "goal": "待ち合わせが広場前の屋根のある待合所だと答え、広場入口で降りるつもりで検索した誤りを説明する。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "seek_later_connection_with_luggage_margin",
+          "goal": "乗り換えが三分で荷物もあり不安だと伝え、一本後に乗り継ぐ候補を尋ねる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "choose_later_arrival_after_friend_confirmation",
+          "goal": "友人に遅い候補の到着でよいと確認できたと報告し、乗り換えの余裕を優先する。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "record_separate_legs_and_correct_alighting_stop",
+          "goal": "二便を分けて控え、降車先は広場入口ではなく広場前だとメモに明記すると伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-43212-02-001": {
+      "title": "提出先の短い指示だけで証明書を申請しない",
+      "causalProgression": "架空の行政証明相談窓口。勤務先の住宅関係の手続きに必要な証明書を相談する。最初のメモでは世帯の範囲が不明で、途中で勤務先から本人分という返答を得るが、必要記載事項は残る。窓口は要件整理を手伝い、勤務先の受理や交付条件を保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "seek_certificate_type_from_vague_employer_request",
+          "goal": "勤務先の住宅手続きで住所の証明を求められたが、申し込む種類が決まらないと相談する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "explain_uncertain_family_scope_in_note",
+          "goal": "家族の分も確認というメモを示し、全員分の証明が必要という意味か分からないと伝える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "report_employer_clarifies_individual_only",
+          "goal": "勤務先から本人分の証明でよく家族情報は別用紙という返信が来たと報告する。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "identify_unconfirmed_householder_relationship_items",
+          "goal": "住所以外は未確認と答え、世帯主や続柄を載せる必要があるか追加で尋ねたいと述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "prepare_specific_questions_on_scratch_sheet",
+          "goal": "用紙を希望し、本人分という条件と世帯主・続柄の要否を整理して勤務先へ連絡すると伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-43212-03-001": {
+      "title": "問診票の専門語を言い換えて自分の症状を記入する",
+      "causalProgression": "架空の病院の問診支援。看護師が「随伴症状」の意味と記入方法を説明する。患者は耳の詰まり感を痛みと区別し、確認した症状と判断できない点を伝える。診断、治療、重症度や診察順の判断は行わない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "ask_meaning_of_associated_symptoms_field",
+          "goal": "随伴症状の意味が分からないと伝え、耳の詰まり感について何を書く欄か尋ねる。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "distinguish_onset_and_fullness_from_pain",
+          "goal": "昨日夕方からの詰まり感であり痛みとは違うため、耳が痛いとは書きたくないと説明する。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "report_echo_sensation_without_self_diagnosis",
+          "goal": "時々音が響く感じがあり、耳鳴りか分からないので自分の表現で伝えたいと答える。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "separate_persistent_and_intermittent_sensations",
+          "goal": "詰まりは昨日から続き音の響きは時々だと区別し、二つに分けて記入する。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "restate_term_and_reserve_cause_for_consultation",
+          "goal": "随伴は一緒に出るほかの症状という意味だと確認し、音の原因は診察で尋ねたいと伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-43212-04-001": {
+      "title": "未払いを主張する電話の内容と伝えた情報を整理する",
+      "causalProgression": "架空の警察相談窓口。知らない相手から未払いを理由とする電話を受け、氏名だけを答えた客が相談する。番号表示や相手の自称を正当性の証拠とせず記録を整理する。犯罪の成立や被害回復、通信事業者の対応を確定しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "report_unknown_payment_demand_and_name_disclosure",
+          "goal": "知らないサービスの未払いを主張する電話を受け、氏名を答えてしまったと相談する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "bound_disclosure_and_no_payment_actions",
+          "goal": "住所や口座番号は伝えず、支払操作もせず通話を切って来たと答える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "distinguish_repeated_calls_from_immediate_visit",
+          "goal": "相手が来るとは言っていないが知らない番号から着信が続き、掛け直すか迷っていると説明する。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "offer_call_log_and_contemporaneous_notes",
+          "goal": "録音はなく着信履歴は残ると答え、要求内容を覚えているうちに書いてよいか尋ねる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "state_unknown_caller_name_and_unverified_company_claim",
+          "goal": "相手の個人名は不明で会社名らしいメモだけがあり、その真偽は分からないと伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-43212-05-001": {
+      "title": "割れ物を含む箱を測る前に内容と梱包を伝える",
+      "causalProgression": "架空の郵便相談窓口。家族へ送る本と湯のみを一箱に入れたが、割れ物が箱の中で動く。客は追跡と料金を希望しつつ、いったん梱包を見直す。実在商品の補償、引受条件、具体的な料金や配達日は確定しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "disclose_books_two_fragile_cups_and_internal_movement",
+          "goal": "国内の家族へ本と湯のみ二個を送りたく、箱の中で物が動く音がすると伝える。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "describe_joint_wrapping_and_pause_sealing",
+          "goal": "二個を一枚の紙で一緒に包み本の上に置いたと答え、封をする前に梱包を見直したいと述べる。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "request_tracking_without_breakage_guarantee",
+          "goal": "追跡できる方法を希望し、表示を付けるだけで破損しない保証にはならないか確認する。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "take_home_to_repack_and_question_provisional_price",
+          "goal": "家で包み直すと伝え、箱の大きさが変わる可能性があり、料金の再確認も必要か尋ねる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "defer_method_and_price_until_final_box",
+          "goal": "最終の箱で料金と送り方を決め、再訪時にも追跡の希望を伝えると決める。"
+        }
+      ]
+    },
+    "SC-LOC-JP-43212-06-001": {
+      "title": "読み取れない振込先を確定せず手数料の見方を相談する",
+      "causalProgression": "架空の銀行窓口。家賃の振込先メモの支店番号が読みにくく、請求書の受取人名とも対応が不明。客は送金を保留し、確認できた後の手数料と実行額の区別を相談する。銀行員は送金先の正当性、着金、手数料額や返金を保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "report_ambiguous_branch_digit_before_transfer",
+          "goal": "家賃の振込先メモの支店番号が薄く、一か七か読み取れないと相談する。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "identify_company_person_recipient_mismatch",
+          "goal": "請求書は会社名でメモは個人名のため、同じ口座か判断できないと説明する。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "withhold_transfer_and_seek_fee_display_guidance",
+          "goal": "今日は送金せず管理会社に番号と名義を確認すると決め、手数料の見方だけ先に尋ねる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "restate_transfer_amount_and_separate_fee_distinction",
+          "goal": "家賃から手数料を差し引くと決めず、振込額と別の支払いの有無を確認する理解を述べる。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "include_fee_burden_in_followup_and_return_with_verified_details",
+          "goal": "手数料負担も請求元に尋ね、確認した口座と金額をメモし直して再相談すると伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-43212-07-001": {
+      "title": "会社の文具と自分の食品を別々に会計する",
+      "causalProgression": "架空のスーパーのレジ。仕事用の文具と自分用の食品を一緒のかごに入れてしまった客が、領収書と支払いを分ける。袋代と発行条件はこの架空レジで表示を見ながら確認する。実在店の決済・領収書規則や価格は示さない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "separate_employer_stationery_from_personal_food",
+          "goal": "会社用文具と自分用食品を混ぜたと説明し、会社分だけ領収書を出すため別会計を頼む。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "use_own_food_bag_and_request_visible_stationery_bag_price",
+          "goal": "食品は自分の袋に入れ、文具用の袋一枚を買う前に袋代を見せてほしいと伝える。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "allocate_bag_cost_and_two_payment_methods",
+          "goal": "袋代を文具会計に含め、文具はカード、食品は現金で支払うと指定する。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "specify_employer_receipt_and_exclude_food_before_payment",
+          "goal": "宛名を勤務先名、品目を文具代と希望し、食品を含まない明細を支払前に確認したいと頼む。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "approve_stationery_only_total_then_request_food_total",
+          "goal": "文具と袋だけの明細を確認し、その分を先にカードで払い食品の合計は後で聞きたいと伝える。"
+        }
+      ]
+    },
+    "SC-LOC-JP-43212-08-001": {
+      "title": "待ち合わせまでの散歩を短くして屋内の休憩場所を確認する",
+      "causalProgression": "架空の公園案内所。友人を待つ間に散歩を考えていた客が、雨が降り始めたため計画を変える。園内図の休憩室と待ち合わせの時計のある門を照合し、無理に周回しない。天候予測、実在地理、空席や路面の安全を保証しない。",
+      "playerTurnNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "closureTurn": 11,
+      "taskAlignment": [
+        {
+          "playerTurn": 2,
+          "precedingNpcTurn": 1,
+          "intent": "revise_waiting_walk_due_to_rain_and_no_umbrella",
+          "goal": "友人到着まで四十分で散歩予定だったが傘がないと説明し、近くで休める場所を尋ねる。"
+        },
+        {
+          "playerTurn": 4,
+          "precedingNpcTurn": 3,
+          "intent": "check_friend_before_changing_clock_gate_meeting",
+          "goal": "待ち合わせは時計のある門だと答え、休憩室へ移る前に友人へ場所変更を相談すると述べる。"
+        },
+        {
+          "playerTurn": 6,
+          "precedingNpcTurn": 5,
+          "intent": "retain_original_meeting_gate_and_request_return_route",
+          "goal": "友人は時計の門へ来るため待ち合わせを変えず、休憩室から門に戻る道を尋ねる。"
+        },
+        {
+          "playerTurn": 8,
+          "precedingNpcTurn": 7,
+          "intent": "cancel_full_loop_and_budget_return_time",
+          "goal": "周回をやめて案内棟で休み、門へ戻る時間を考えて長居しないと決める。"
+        },
+        {
+          "playerTurn": 10,
+          "precedingNpcTurn": 9,
+          "intent": "avoid_assuming_seats_and_notify_friend_of_short_rest",
+          "goal": "空席を当然とせず職員に尋ね、休憩後に元の約束の門へ戻ることも友人へ知らせると伝える。"
+        }
+      ]
+    }
+  },
+  "corrections": [
+    "最終自己再読で、郵便はまだ料金提示がない点に合わせて再確認の質問へ修正し、寸法変更で必ず料金が変わるとの断定を除いた。包み直し、折返し電話、会計後の領収書の語句と公園の待ち合わせの助詞も整えた。",
+    "交通は架空の停留所二つの取り違えを訂正し、荷物を伴う短い接続より友人に了解を得た遅い候補を選ぶ筋へ作り直した。",
+    "証明書は勤務先の家族情報と本人証明の混同を解き、記載事項が残るため未確認のまま申請しない結末にした。",
+    "問診は随伴症状の意味から、痛みでない詰まり感と持続・断続の違いを本人の言葉で伝える内容へ変えた。",
+    "警察は氏名だけ答えてしまった相談者の情報範囲、着信履歴と不確かな名乗りを整理する筋にした。",
+    "荷物は湯のみと本の混載による内部の動きから梱包をやり直し、最終の箱で料金と追跡方法を確認する結末にした。",
+    "振込は読みにくい番号と名義の不一致により実行を保留し、振込額・手数料・負担条件を分ける課題にした。",
+    "スーパーは会社文具と私物食品の会計、袋代、決済方法と領収書を順序立てて分ける実際的なやり取りにした。",
+    "公園は雨と傘の不所持により周回をやめ、待ち合わせを変えずに休憩室を使う計画へ展開した。"
+  ],
+  "checks": {
+    "exactScenarioIdsPreserved": true,
+    "locationIdsPreserved": true,
+    "originalRouteGroupingPreserved": true,
+    "elevenAlternatingTurnsNpcFirst": true,
+    "fiveConcreteGoalsAlignedToImmediateNpc": true,
+    "uniquePlayerUtterances": 40,
+    "uniquePlayerGoals": 40,
+    "distinctCausalPlots": true,
+    "npcFollowupsRespondToPlayerConstraints": true,
+    "finalNpcFarewellOrConcreteClosure": true,
+    "allFinalOwnTitlesPremisesTurnsTasksAndRoleCorrectionsReread": true,
+    "noAcknowledgmentOnlyPlayerTurns": true,
+    "noNounSwapTemplates": true,
+    "japaneseOnlySpokenTextAndGoals": true,
+    "noAuthoringInstructionsInDialogue": true,
+    "noLevelGate": true,
+    "fictionalVenueMetadataExplicit": true,
+    "unverifiedHoursAndAddressesCleared": true,
+    "exactCategoryMembershipCheckedInNpcProgression": true,
+    "supportedJobsCheckedAgainstInputAndContract": true,
+    "noRealOperatorPolicyOrGeographyClaims": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "独立したAIによる自己点検のみ。母語話者・人・他AIによる審査ではない。",
+    "施設、経路候補、待ち合わせ、商品と窓口の応対条件は架空。実在地理、時刻、運賃、手数料、制度の適用、診断を示さない。",
+    "既存のBus TerminalとParkを含む対応済みカテゴリと職種を用いる。カテゴリや画像は追加しない。施設別背景の視覚適合は未確認。",
+    "ステージングの自分の三出力と再現用スクリプトのみを作成し、稼働データ・共有記録・Gitは変更しない。",
+    "翻訳と端末検証と公開承認は未実施。親セッションによる統合・遠隔保存の確認が必要。"
+  ]
+}
