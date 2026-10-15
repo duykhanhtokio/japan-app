@@ -1,0 +1,89 @@
+{
+  "cityId": "CTY-JP-46225",
+  "corrections": {
+    "LOC-JP-46225-01": {
+      "category": "Station",
+      "npcJob": "Station Staff",
+      "nameJa": "学習用・架空の駅利用日相談窓口",
+      "name": "Fictional learning venue: Station ticket-date desk",
+      "description": "姶良市を舞台にした日本語会話練習用の架空施設。実在施設の名称、住所、営業時間、料金、路線、制度、診療、食品情報、運営規則や行事についての案内ではない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46225-02": {
+      "category": "Government Office",
+      "npcJob": "Government Officer",
+      "nameJa": "学習用・架空の行政返信確認窓口",
+      "name": "Fictional learning venue: Administrative reply-status desk",
+      "description": "姶良市を舞台にした日本語会話練習用の架空施設。実在施設の名称、住所、営業時間、料金、路線、制度、診療、食品情報、運営規則や行事についての案内ではない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46225-03": {
+      "category": "Hospital",
+      "npcJob": "Nurse",
+      "nameJa": "学習用・架空の病院初診聞取り窓口",
+      "name": "Fictional learning venue: Hospital first-visit interview",
+      "description": "姶良市を舞台にした日本語会話練習用の架空施設。実在施設の名称、住所、営業時間、料金、路線、制度、診療、食品情報、運営規則や行事についての案内ではない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46225-04": {
+      "category": "Police Station",
+      "npcJob": "Police",
+      "nameJa": "学習用・架空の警察拾得財布窓口",
+      "name": "Fictional learning venue: Police found-wallet desk",
+      "description": "姶良市を舞台にした日本語会話練習用の架空施設。実在施設の名称、住所、営業時間、料金、路線、制度、診療、食品情報、運営規則や行事についての案内ではない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46225-05": {
+      "category": "Post Office",
+      "npcJob": "Postal Clerk",
+      "nameJa": "学習用・架空の郵便転居経路相談窓口",
+      "name": "Fictional learning venue: Postal multiple-move consultation",
+      "description": "姶良市を舞台にした日本語会話練習用の架空施設。実在施設の名称、住所、営業時間、料金、路線、制度、診療、食品情報、運営規則や行事についての案内ではない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46225-06": {
+      "category": "Bank",
+      "npcJob": "Bank Clerk",
+      "nameJa": "学習用・架空の銀行本人情報変更窓口",
+      "name": "Fictional learning venue: Bank personal-details desk",
+      "description": "姶良市を舞台にした日本語会話練習用の架空施設。実在施設の名称、住所、営業時間、料金、路線、制度、診療、食品情報、運営規則や行事についての案内ではない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46225-07": {
+      "category": "Supermarket",
+      "npcJob": "Supermarket Staff",
+      "nameJa": "学習用・架空のスーパー食品注意書き売場",
+      "name": "Fictional learning venue: Supermarket food-warning desk",
+      "description": "姶良市を舞台にした日本語会話練習用の架空施設。実在施設の名称、住所、営業時間、料金、路線、制度、診療、食品情報、運営規則や行事についての案内ではない。",
+      "openHours": null,
+      "address": null
+    },
+    "LOC-JP-46225-08": {
+      "category": "Park",
+      "npcJob": "Park Staff",
+      "nameJa": "学習用・架空の公園散歩調整案内所",
+      "name": "Fictional learning venue: Park walk planning desk",
+      "description": "姶良市を舞台にした日本語会話練習用の架空施設。実在施設の名称、住所、営業時間、料金、路線、制度、診療、食品情報、運営規則や行事についての案内ではない。",
+      "openHours": null,
+      "address": null
+    }
+  },
+  "findings": [
+    "全八件を架空学習施設名と説明へ変更し、未確認の時間と住所を null にする。都市・施設・シナリオ識別子とルート所属は維持する。",
+    "公園の Community Staff を Park Staff へ修正。全分類は実際の npc-progression.ts NPC_CATEGORIES にある既存分類を使用し、新規分類やアセットを作成しない。",
+    "駅は架空の商品画面の当日条件を読む場面で実在の運賃や日付規則を案内しない。行政は下書き・未確認提出として担当へ照会する。看護師は症状と市販薬の情報を診察へ引き継ぎ診断や服用指示を出さない。",
+    "警察は持ち主を名乗ったことと本人確認を区別する。郵便は二度の転居の扱いを照会して反映を保証せず、銀行は本人と家族の名義を分け変更完了を確定しない。",
+    "スーパー職員は注意表示を案内してもアレルギー安全性を保証しない。公園職員は架空の催しと道の表示を説明するが静けさ・空席・歩きやすさを保証しない。"
+  ],
+  "inputSha256": "56581c207ae812f8f9cde89f7367950a95056f779a422adf4f1997f25f1294b8",
+  "sourceSha256": "e93f29dfa184d8884424143df034a22a351a885439cf084883a7a7d8e6b9562a",
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "peerReviewed": false
+}

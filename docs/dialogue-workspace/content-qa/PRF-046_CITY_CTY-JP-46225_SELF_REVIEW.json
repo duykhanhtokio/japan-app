@@ -1,0 +1,76 @@
+{
+  "cityId": "CTY-JP-46225",
+  "baseline": "70b9863045bb19397bc94bc4f0f393234389fcc3",
+  "inputSha256": "56581c207ae812f8f9cde89f7367950a95056f779a422adf4f1997f25f1294b8",
+  "sourceSha256": "e93f29dfa184d8884424143df034a22a351a885439cf084883a7a7d8e6b9562a",
+  "roleAlignmentSha256": "7f3b26aa9b4e04973d60a72494f12165f575f7147ce2e7eb75281005cdf3031f",
+  "selfReviewed": true,
+  "fullFinalReread": true,
+  "counts": {
+    "scenarios": 8,
+    "turns": 88,
+    "tasks": 40,
+    "uniquePlayerUtterances": 40,
+    "uniqueTaskIntents": 40,
+    "uniqueTaskGoals": 40
+  },
+  "causalPlots": {
+    "SC-LOC-JP-46225-01-001": "日帰り予定を一泊へ変更→当日往復商品は翌日の帰りへ適用としない→帰りも別駅発と伝える→未購入選択を戻し二日付二区間と合計条件を確認して購入判断。",
+    "SC-LOC-JP-46225-02-001": "返事を書いて対応済みと思うが画面は下書き→送信完了とは断定しない→通知の番号・発行日・回答期限・未添付を整理→重複送信せず担当へ提出法と完了確認を聞く。",
+    "SC-LOC-JP-46225-03-001": "初診の夜の咳を相談→処方薬なしだが昨夜市販薬を服用→薬なしと書かず箱未持参で名前量未確認を記録→資格書類は受付、症状服薬再服用の相談は診察へ。",
+    "SC-LOC-JP-46225-04-001": "財布を拾い途中で持ち主を名乗る人に会う→拾得地点と声かけ地点、時刻の不確かさを分ける→内部未確認で名前一致も未確認→所有者認定ではなく聞いた事として担当へ。",
+    "SC-LOC-JP-46225-05-001": "旧居から仮住まい、現在へ二度転居→初回申込控えあり今回は未申込→三住所を別見出しで対象手続きを照会→希望日は開始保証とせず差出人連絡も自分で行う。",
+    "SC-LOC-JP-46225-06-001": "本人の住所更新で家族名義通知も変わると思う→本人資料と家族申込を分ける→本人電話も変更対象と示す→通知反映範囲を聞き家族分も完了とは伝えない。",
+    "SC-LOC-JP-46225-07-001": "原材料にナッツを見つけられず同工場注意文が不明→一覧と工場文の意味を分け安全判断しない→買わず試食せず商品名と注意文を控える→保存と期限も条件別に照会。",
+    "SC-LOC-JP-46225-08-001": "短く静かに休みたいが広場の催しが聞こえる→無音保証を求めず樹木沿いの短往復→催しの区域を横切らず段差と座席を確認→合わなければ延長せず入口へ戻り終了も選ぶ。"
+  },
+  "corrections": [
+    "全八件を新しい具体的な因果展開と四十の異なる発話目標へ書き直す。",
+    "病院前提は昨夜という記憶に合わせ、正確な時刻という表現でなく服用時期とした。",
+    "拾得財布の最後の引継ぎを、持ち主本人と誤読できる代名詞でなく拾得状況の確認と明記した。",
+    "銀行の本人確認・申込方法についての担当への接続を自然な日本語へ修正。家族への伝言は「あなたの分も済んだ」と言わない形にし、誰の完了かを明確化。",
+    "食品の原材料は完全な不在が確認されたと広げず、本人に見当たらないだけという表現へ修正。",
+    "公園の目標の近道という語は、発話どおり近い道へ修正し、催し横断の近道を選ぶ意味にしない。",
+    "全施設を架空名・未確認営業時間住所 null へ変更し、公園役割を Park Staff に整合。"
+  ],
+  "checks": {
+    "assignedIdsExact": true,
+    "elevenAlternatingTurnsPerScenario": true,
+    "fiveConcreteContextAlignedTasksPerScenario": true,
+    "allPlayerUtterancesUnique": true,
+    "allTaskIntentsSpecificAndUnique": true,
+    "allTaskGoalsUnique": true,
+    "japaneseOnlySpokenLines": true,
+    "noAuthoringInstructionsInSpeech": true,
+    "npcFarewellAndConcreteClosureEveryScenario": true,
+    "titlesPremisesRolesAndEveryFinalTurnAndTaskReread": true,
+    "causalProgressionAndOutcomesReviewed": true,
+    "numbersNegationsNamesAndUncertaintyReviewed": true,
+    "noAcknowledgmentOnlyPlayerTurns": true,
+    "noNounSwapTemplates": true,
+    "noLevelGate": true,
+    "noRealOperatorPolicyClaims": true,
+    "supportedNpcCategoriesChecked": true,
+    "unverifiedHoursAndAddressesNull": true,
+    "ownCityOnlyNoCrossReading": true,
+    "stageOnlyNoActiveRepoWrites": true
+  },
+  "peerReviewed": false,
+  "crossReadingPerformed": false,
+  "humanReviewed": false,
+  "nativeSpeakerReviewed": false,
+  "operatorPolicyVerified": false,
+  "deviceReviewed": false,
+  "releaseApproved": false,
+  "translationState": "deferred_until_all_japanese_complete",
+  "limits": [
+    "自己再読と構造検査のみ。人間・母語話者・他著者による審査ではない。",
+    "実在の運賃、申請期限、受診・服薬、拾得物手続、転送規則、金融手続、食品製造、公園行事と環境は未検証。具体的表示と条件は架空場面。",
+    "診断、提出・転送・住所変更完了、持ち主認定、食品安全、静けさや移動時間を確定しない。",
+    "端末・音声・評価エンジンの実行時検証と公開承認は未実施。"
+  ],
+  "paths": {
+    "source": "scripts/dialogue-authoring/prf-046-city-cty-jp-46225.json",
+    "roleAlignment": "docs/dialogue-workspace/content-qa/PRF-046_CITY_CTY-JP-46225_ROLE_ALIGNMENT.json"
+  }
+}
