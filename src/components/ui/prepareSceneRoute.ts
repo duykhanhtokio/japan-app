@@ -13,7 +13,10 @@ export const preparedRouteBackdrop = (path: string) => routeBackdrops.get(path);
 export async function prepareSceneRoute(path: string) {
   path = path.split(/[?#]/)[0].replace(/\/$/, '') || '/';
   const pattern = matchRoutePattern(path, Object.keys(ROUTE_ARTWORK));
-  const routeImages = pattern ? ROUTE_ARTWORK[pattern] : [];
+  // Dynamic world scenes are selected below. Their generated route list
+  // includes every category's backgrounds/NPCs; do not decode all of them.
+  const dynamicWorldScene = /^\/world\/(?:city|location|dialogue)\//.test(path);
+  const routeImages = !dynamicWorldScene && pattern ? ROUTE_ARTWORK[pattern] : [];
   await prepareArtwork([...COMMON_UI_ARTWORK, ...routeImages]);
   const additional: ArtworkSource[] = [];
   const { width, height } = Dimensions.get('window');
@@ -104,11 +107,24 @@ export function registerNavigationStateReader(reader: () => NavigationState | un
 export const cancelPreparedNavigation = () => { navigationIntent += 1; };
 export function navigateWithPreparedArtwork(path: string, navigate: () => void, additional: ArtworkSource[] = [], prepareState?: () => Promise<unknown>) {
   const intent = ++navigationIntent;
-  return Promise.all([prepareSceneRoute(path), prepareArtwork(additional), prepareState?.()]).then(() => {
+  let timeout: ReturnType<typeof setTimeout>;
+  // Preloading is an optimization, not permission to navigate. A failed
+  // native image cache or a stalled development asset server must not make
+  // every Home button a no-op. Keep waiting for required state/credit checks.
+  const artwork = Promise.all([prepareSceneRoute(path), prepareArtwork(additional)])
+    .catch(error => { console.warn('Destination artwork:', error); });
+  const boundedArtwork = Promise.race([artwork, new Promise<void>(resolve => {
+    timeout = setTimeout(() => {
+      console.warn('Destination artwork timed out; continuing navigation:', path);
+      resolve();
+    }, 2500);
+  })]);
+  return Promise.all([boundedArtwork, Promise.resolve().then(() => prepareState?.())]).then(() => {
     if (intent !== navigationIntent) return false;
     navigate();
     return true;
-  }).catch(error => { console.warn('Destination artwork:', error); return false; });
+  }).catch(error => { console.warn('Destination state preparation:', error); return false; })
+    .finally(() => clearTimeout(timeout));
 }
 
 type Destination = Parameters<typeof router.push>[0];
