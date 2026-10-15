@@ -40,6 +40,7 @@ import {
   japaneseSectionsFor,
   titleForDay,
 } from "@/data/kaigo/japanese-reading";
+import { japaneseLessonMetadata, translationForMaster } from '@/data/kaigo/japanese-master';
 import { illustrationForStudyDay } from "@/data/kaigo/weekly-art-allocation";
 import { kaigoDepthFigures } from "@/data/kaigo/depth-figures";
 import {
@@ -425,6 +426,7 @@ function DayReading({
   onMock: (id: string) => void;
 }) {
   const sections = japaneseSectionsFor(entry),
+    masterLesson = japaneseLessonMetadata[entry.id],
     form = mockForDay(entry.day),
     cover = illustrationForStudyDay(entry.day),
     [translationOpen, setTranslationOpen] = useState(false),
@@ -447,9 +449,15 @@ function DayReading({
         onPress={() => setTranslationOpen((v) => !v)}
       />
       <Text style={[s.heading, { color: colors.text }]}>
-        {titleForDay(entry)}
+        {masterLesson?.titleJa ?? titleForDay(entry)}
       </Text>
+      {masterLesson && translationOpen && language === "vi" && <TranslationText>旧版参考訳：日本語原稿との照合前です。</TranslationText>}
       {translated(entry.titleVi)}
+      {masterLesson && (
+        <Text style={[s.meta, { color: colors.muted }]}>
+          日本語教材（確認中）
+        </Text>
+      )}
       <Text style={[s.meta, { color: colors.muted }]}>
         第{Math.ceil(entry.day / 7)}週 · 目安30分
       </Text>
@@ -464,6 +472,7 @@ function DayReading({
         }}
       />
       {translated(cover.captionVi)}
+      {masterLesson && <JapaneseText text={masterLesson.artCaptionJa} />}
       {sections.map((section) => (
         <View
           key={section.id}
@@ -493,6 +502,23 @@ function DayReading({
               この項目の日本語本文は整備中です。要約を本文の代わりにはしていません。
             </Text>
           )}
+          {translationOpen && section.masterStatus && (
+            <TranslationText>
+              {translationForMaster(section.id, language)
+                ? (translationForMaster(section.id, language)!.status === 'human_reviewed' ? '日本語原稿からの翻訳です。' : '日本語原稿からのAI翻訳（未校閲）です。')
+                : language === 'vi'
+                  ? '日本語原稿からの翻訳は準備中です。以下は照合前の旧版参考訳であり、現在の日本語原稿と一致するとは限りません。'
+                  : 'この言語の翻訳は準備中です。'}
+            </TranslationText>
+          )}
+          {translationOpen && translationForMaster(section.id, language) ? (
+            <View>
+              <TranslationText>{translationForMaster(section.id, language)!.heading}</TranslationText>
+              {translationForMaster(section.id, language)!.paragraphs.map((paragraph, index) => (
+                <TranslationText key={index}>{paragraph}</TranslationText>
+              ))}
+            </View>
+          ) : <>
           {translated(section.heading)}
           {section.paragraphs.map((paragraph, index) => (
             <View key={index}>
@@ -502,6 +528,7 @@ function DayReading({
               )}
             </View>
           ))}
+          </>}
           {section.figureKeys?.map((figure) => (
             <View key={figure.key}>
               <Image

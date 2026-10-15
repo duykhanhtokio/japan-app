@@ -1,6 +1,6 @@
 # Hướng dẫn chính thức — Tokutei Gino 介護
 
-Phiên bản: 11. Ngày duyệt: 2026-10-11 (Asia/Tokyo).
+Phiên bản: 12. Ngày duyệt: 2026-10-16 (Asia/Tokyo).
 Trạng thái: CHỦ DỰ ÁN ĐÃ DUYỆT PHƯƠNG ÁN BIÊN SOẠN.
 Repository: duykhanhtokio/japan-app. Nhánh: recovery/jlpt-n3-n1.
 Đây là hợp đồng biên soạn; duyệt phương án không chứng nhận nội dung chưa được tạo, kiểm duyệt hoặc tích hợp.
@@ -193,3 +193,12 @@ Lưu chính sách vào approved-plan.json và checkpoint. Theo dõi số mục/�
 ## 22. Dừng tạo ảnh và phân bổ lại ảnh hiện có — yêu cầu 2026-10-11
 
 Chủ dự án yêu cầu dừng tạo ảnh Kaigo vì quá nhiều ảnh trùng; phân bố ảnh đã tạo đều cho đủ số tuần hiện có. Quyết định này thay yêu cầu tạo đủ ảnh từng đoạn ở mục21. Không gọi trình tạo ảnh, không tạo thêm để đủ quota. Giữ nguyên396ảnh và mã gốc; chọn ảnh phù hợp mục tiêu, một ảnh ngữ cảnh mỗi buổi trong176buổi/26tuần. Tuần1–25 có7ảnh/7buổi; tuần26có1ảnh/1buổi, sáu ngày trống giữ nguyên. Không lặp ảnh trong cùng tuần hoặc giữa bìa và đoạn; ảnh có thể dùng lại ở tuần khác khi cùng mục tiêu. Giữ hình kỹ thuật hiện có trong nội dung, không dùng cảnh ngữ cảnh thay sơ đồ/quy trình. Bản phân bổ ở src/data/kaigo/weekly-art-allocation.json; QA sự phù hợp, tỷ lệ, số lượng và bảo toàn dữ liệu/lượt học. Không chứng nhận chuyên môn hoặc phát hành.
+
+
+## 23. Tiếng Nhật là bản chuẩn — yêu cầu chủ dự án 2026-10-16
+
+Chỉ thị mới thay mọi mô tả lịch sử coi tiếng Việt là bản giảng giải chính. Toàn bộ kiến thức, mục tiêu, thuật ngữ, ví dụ, ngữ cảnh, bài đọc, câu hỏi, đáp án, lời giải và chú thích ảnh phải có bản Nhật chính. Soạn độc lập theo khái niệm được kiểm chứng từ nguồn chuẩn; dùng bản Việt cũ để đối chiếu độ phủ, không dịch ngược máy móc và coi là chuẩn. Không tự thêm dữ kiện chuyên môn. Bản Nhật mới là nguồn cho 12 bản dịch: en,vi,id,zh-CN,zh-TW,hi,bn,ne,my,th,km,tl; dịch trực tiếp, không qua tiếng Việt.
+
+Bắt đầu tuần1, rồi từng tuần trọn chu trình: kiểm kê → soạn Nhật → đối chiếu ý nguồn → rà ảnh/câu hỏi → dịch → tích hợp/QA → commit/xác minh remote. Giữ ID, dữ liệu cũ và tiến trình; không thiết kế lại UI. Bản dịch phải gắn phiên bản nội dung Nhật; thay bản Nhật thì bản dịch cũ chờ cập nhật. Không lấy tiếng Việt thay ngôn ngữ đang thiếu. Bản Việt cũ nếu còn hiển thị để tham khảo phải ghi rõ chưa đối chiếu; không tính là bản dịch hoàn thành.
+
+Lập bảng nguồn/phiên bản/trang/ý kiến thức/ID đoạn/trạng thái; không suy độ phủ toàn sách từ số trường hay số trang. Tách kiểm AI, chuyên môn, bản ngữ và thiết bị. Chưa duyệt thì giữ cờ false, không tự nhận phát hành. Tuần chỉ hoàn tất khi mọi bước thực sự xong; được lưu checkpoint giữa chừng nhưng không đổi tên phần dở thành hoàn thành.

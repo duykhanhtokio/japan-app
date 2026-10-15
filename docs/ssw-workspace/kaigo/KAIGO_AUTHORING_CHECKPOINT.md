@@ -788,3 +788,7 @@ Lưu hẹp5file bằng GitHubtree/commit/ref cólease trênHEAD hiện tại và
 - Kiểm ảnh gần giống là sànglọc tựđộng, không chứngnhận tươngđồng semantic. Không có ảnh trùng byte trong396tệp;1cặp pHash gần nhau, không chọn đồng thời cảhai. Chưa kiểmnative/chuyênmôn/bảnngữ/quyền/release.
 - Bước tiếp theo về ảnh: rà theo phản hồi người học trên lịch mới; không tạo thêm nếu chưa có chỉ thị mới. Bằngchứng kiểm mới ở reviews/WEEKLY_ART_REDISTRIBUTION_2026-10-11.json và runtime-tests/2026-10-11-art-redistribution/.
 - QA hoàn tất: phân bổ176ngày/129ảnh, hash396ảnh và7runtimeJSON nguyênbyte; calendar26/182slot/176active/6trống,866đề mục và687câu giữ nguyên. RNWeb thật kiểm228lượt/176ngày ở390×844,768×1024,844×390;15ảnh chụp,0JSerrors, ảnh đúngnguồn và tỷlệ, khôngtràn. Đã xem ảnh điệnthoại/tablet/ngang; native chưa kiểm. TypeScript toànrepo còn lỗiTS2352 cũ ởlife-content-repository.ts, không phải Kaigo.
+
+
+## 2026-10-16 — Japanese-master migration
+The current migration state is recorded in JAPANESE_FIRST_CHECKPOINT_2026-10-15.md, section2026-10-16, and reviews/japanese-master-inventory-2026-10-16.json. Week1 has73 Japanese draft masters/246 paragraphs;641 course sections still lack full Japanese representations.12 AI translation drafts cover only one section.59 weekly-question drafts remain outside runtime. Week1 is not complete; finish its translations, editorial QA and assessment migration before week2. No human/domain/native/release approval or whole-book coverage claim.

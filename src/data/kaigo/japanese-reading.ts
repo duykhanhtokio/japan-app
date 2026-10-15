@@ -1,6 +1,7 @@
 import { kaigoCourse } from "./index";
 import { sectionsFor, type ReadingSection } from "./weekly-learning";
 import type { CatalogEntry, TopicId } from "./catalog";
+import { japaneseMasterSections } from './japanese-master';
 
 export const topicTitlesJa: Record<TopicId, string> = {
   dignity: "尊厳と自立支援",
@@ -21,6 +22,7 @@ export type JapaneseReadingSection = ReadingSection & {
   headingJa: string;
   paragraphsJa: string[];
   japaneseComplete: boolean;
+  masterStatus?: string;
 };
 const placeholder = /^知識を確かめて、理由を説明しましょう。$/;
 
@@ -31,6 +33,14 @@ export function japaneseSectionsFor(
 ): JapaneseReadingSection[] {
   const lessons = [...kaigoCourse.lessons, ...kaigoCourse.candidates];
   return sectionsFor(entry).map((section, index) => {
+    const master = japaneseMasterSections[section.id];
+    if (master) return {
+      ...section,
+      headingJa: master.headingJa,
+      paragraphsJa: master.paragraphsJa,
+      japaneseComplete: true,
+      masterStatus: master.editorialStatus,
+    };
     const lesson = lessons.find((l) => section.id.startsWith(l.id + "-"));
     let paragraphsJa =
       section.japanese && !placeholder.test(section.japanese)
