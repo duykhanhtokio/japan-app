@@ -6,15 +6,15 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。何をご確認になりたいですか。",
+        "textJa": "通知についてのご相談ですね。封筒はまだ開けていない状態でしょうか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-045-05-001-SHARED-02",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -24,25 +24,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "gov-notice_response_1",
+        "communicativeIntent": "report_unopened_unknown_addressee_at_current_address",
         "requiredSemanticComponents": {
-          "goal": "通知の内容と対応期限を確認する"
+          "goal": "現住所宛だが未知の氏名で未開封の通知に自分が回答するのか心配と伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "宮崎市の住所にこの通知が届きました。どう対応すればよいかわかりません。",
+        "recommendedAnswerJa": "開けていません。今住んでいる住所ですが、宛名は知らない人です。自分が返事をしないといけないのか心配になりました。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "現住所宛だが未知の氏名で未開封の通知に自分が回答するのか心配と伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "現住所宛だが未知の氏名で未開封の通知に自分が回答するのか心配と伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-045-05-001-SHARED-03",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -51,15 +51,15 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "通知の件名と発行元を確認してもよろしいですか。",
+        "textJa": "住所と宛名の相違を担当へ確認しましょう。差出元や封筒の外に書かれた情報は見せていただけますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-045-05-001-SHARED-04",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -69,25 +69,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "gov-notice_response_2",
+        "communicativeIntent": "show_sender_without_assuming_previous_tenant_identity",
         "requiredSemanticComponents": {
-          "goal": "通知の内容と対応期限を確認する"
+          "goal": "差出元を示し未知の宛名を前住人とは断定しないと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。個人情報があるので、窓口で見ていただきたいです。",
+        "recommendedAnswerJa": "こちらが差出元です。前に住んでいた人かどうかは知らないので、「前の住人」と決めて説明しないでおきます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "差出元を示し未知の宛名を前住人とは断定しないと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "差出元を示し未知の宛名を前住人とは断定しないと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-045-05-001-SHARED-05",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -96,15 +96,15 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "承知しました。必要な部分だけ確認します。提出や支払いの期限は書かれていますか。",
+        "textJa": "知らない宛名というご説明で確認します。中身を開けて判断せず、担当に封筒の扱いを照会します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-045-05-001-SHARED-06",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -114,25 +114,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "gov-notice_response_3",
+        "communicativeIntent": "question_date_as_own_deadline_before_payment_or_application",
         "requiredSemanticComponents": {
-          "goal": "通知の内容と対応期限を確認する"
+          "goal": "封筒の日付を自分への期限とせず申請や支払い前に宛名違いを確認したいと述べる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "この日付だと思いますが、まだ必要な書類がそろっていません。",
+        "recommendedAnswerJa": "外側に日付もありますが、それが私への期限だとはわかりません。心配だからと自分の申請や支払いを始める前に、宛名違いを確認したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "封筒の日付を自分への期限とせず申請や支払い前に宛名違いを確認したいと述べる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "封筒の日付を自分への期限とせず申請や支払い前に宛名違いを確認したいと述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-045-05-001-SHARED-07",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -141,15 +141,15 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "担当窓口に、期限と書類が不足している場合の相談方法を確認しましょう。",
+        "textJa": "日付の意味も含めて担当へつなぎます。ご自身の連絡先などは、担当が必要な範囲を説明してから確認します。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-045-05-001-SHARED-08",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -159,25 +159,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "gov-notice_response_4",
+        "communicativeIntent": "avoid_using_unknown_name_and_state_current_occupancy",
         "requiredSemanticComponents": {
-          "goal": "通知の内容と対応期限を確認する"
+          "goal": "他人名で記入せず自分は現住所居住者で未開封持参と担当へ伝えるよう頼む"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "電話で相談するとき、何を伝えればよいですか。",
+        "recommendedAnswerJa": "では、この場で知らない人の名前を使って記入はしません。私が今この住所に住んでいて、未開封で持参したことを伝えてください。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "他人名で記入せず自分は現住所居住者で未開封持参と担当へ伝えるよう頼む。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "他人名で記入せず自分は現住所居住者で未開封持参と担当へ伝えるよう頼む。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-045-05-001-SHARED-09",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -186,15 +186,15 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "通知の件名、ご本人の状況、確認したいことを簡潔に伝えるとよいでしょう。",
+        "textJa": "その内容を引き継ぎます。封筒を預かるか持ち帰っていただくかも、担当の案内を聞いてから確認しましょう。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-045-05-001-SHARED-10",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -204,25 +204,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "gov-notice_response_5",
+        "communicativeIntent": "confirm_envelope_custody_without_disposal_or_redirecting",
         "requiredSemanticComponents": {
-          "goal": "通知の内容と対応期限を確認する"
+          "goal": "預ける封筒を確認し自己処分や別宛転送をせず担当へ扱いを聞くと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "わかりました。通知を手元に置いて相談します。",
+        "recommendedAnswerJa": "預ける場合は、どの封筒を預けたかを確認します。自分で処分したり別の宛先へ送ったりせず、担当から次の扱いを聞きます。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "預ける封筒を確認し自己処分や別宛転送をせず担当へ扱いを聞くと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "預ける封筒を確認し自己処分や別宛転送をせず担当へ扱いを聞くと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-045-05-001-SHARED-11",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -231,24 +231,27 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "回答を受けたら、担当者と次に行う手続きをメモしておいてください。",
+        "textJa": "では封筒を開けずに担当へお持ちください。宛名違いの相談としておつなぎします。お気をつけてお進みください。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": null,
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     }
   ],
   "authoring": {
     "locale": "ja",
-    "recipe": "gov-notice",
     "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
     "contentScope": "simulated_learning_scenario",
     "nativeSpeakerReviewed": false,
-    "translationState": "deferred_until_all_japanese_complete"
+    "translationState": "deferred_until_all_japanese_complete",
+    "editorialSource": "scripts/dialogue-authoring/prf-045-city-cty-045.json",
+    "premise": "宮崎市を舞台にした学習用の架空施設。架空行政窓口へ、自宅に届いた別人名の封筒を未開封で持参する。住所が一致しても自分の支払いや回答の義務と決めず、担当へ扱いを照会する。施設名、表示、配置、書類、対応条件は架空場面内のもので、実在施設の情報ではない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
   }
 }

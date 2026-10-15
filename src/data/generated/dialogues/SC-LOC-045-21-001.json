@@ -6,15 +6,15 @@
       "turnOrder": 1,
       "speaker": "NPC",
       "npc": {
-        "textJa": "こんにちは。どのようなご用件ですか。",
+        "textJa": "住所変更の入力をまだ送信する前ですね。どの箇所を確かめたいですか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-045-21-001-SHARED-02",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -24,25 +24,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "bank-update_response_1",
+        "communicativeIntent": "pause_unsent_address_change_for_reversed_room_digits",
         "requiredSemanticComponents": {
-          "goal": "住所変更と通知の送付先を確認する"
+          "goal": "新住所の部屋番号の順が書類と違い送信前に止めたいと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "宮崎市に引っ越したので、口座の登録住所を変更したいです。",
+        "recommendedAnswerJa": "新しい住所を入れましたが、部屋番号の数字の順が、持参した書類と違います。送信してから直すのではなく、ここで止めたいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "新住所の部屋番号の順が書類と違い送信前に止めたいと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "新住所の部屋番号の順が書類と違い送信前に止めたいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-045-21-001-SHARED-03",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -51,15 +51,15 @@
       "turnOrder": 3,
       "speaker": "NPC",
       "npc": {
-        "textJa": "変更後の住所を確認できる書類はお持ちですか。",
+        "textJa": "送信せずに、書類と入力を一項目ずつ見直しましょう。番地と部屋番号をまとめて読まず、分けて示していただけますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-045-21-001-SHARED-04",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -69,25 +69,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "bank-update_response_2",
+        "communicativeIntent": "separate_street_room_and_correct_input_not_original",
         "requiredSemanticComponents": {
-          "goal": "住所変更と通知の送付先を確認する"
+          "goal": "番地と部屋を分け建物後の数字転記逆転を入力側で直し原書類は変更しないと述べる"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "はい。電話番号も変わったので、一緒に手続きしたいです。",
+        "recommendedAnswerJa": "番地はこの部分、部屋番号はその下です。建物名の後の数字を写すときに、順番を逆にしました。元の書類は変えず入力の方を直します。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "番地と部屋を分け建物後の数字転記逆転を入力側で直し原書類は変更しないと述べる。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "番地と部屋を分け建物後の数字転記逆転を入力側で直し原書類は変更しないと述べる。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-045-21-001-SHARED-05",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -96,15 +96,15 @@
       "turnOrder": 5,
       "speaker": "NPC",
       "npc": {
-        "textJa": "必要な確認書類と手続き方法を確認しましょう。",
+        "textJa": "入力欄を見直してから担当に確認します。通知の送付先について、居住する住所と別の場所を希望しているわけではありませんね。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-045-21-001-SHARED-06",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -114,25 +114,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "bank-update_response_3",
+        "communicativeIntent": "clarify_actual_new_residence_not_friends_temporary_mail_location",
         "requiredSemanticComponents": {
-          "goal": "住所変更と通知の送付先を確認する"
+          "goal": "居住新住所の変更で友人の一時預り先を登録するつもりでないと説明する"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "オンラインでできるか、窓口で行う必要があるか知りたいです。",
+        "recommendedAnswerJa": "今回は自分が住む新住所への変更です。友人に一時預かってもらう場所を、登録住所として書くつもりではありません。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "居住新住所の変更で友人の一時預り先を登録するつもりでないと説明する。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "居住新住所の変更で友人の一時預り先を登録するつもりでないと説明する。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-045-21-001-SHARED-07",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -141,15 +141,15 @@
       "turnOrder": 7,
       "speaker": "NPC",
       "npc": {
-        "textJa": "お使いのサービスによって違うので、ご利用状況を確認します。",
+        "textJa": "居住住所の変更として確認します。必要な本人確認と、通知へ反映される条件は担当がご案内します。電話番号も変わっていますか。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-045-21-001-SHARED-08",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -159,25 +159,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "bank-update_response_4",
+        "communicativeIntent": "keep_unchanged_phone_out_of_address_update",
         "requiredSemanticComponents": {
-          "goal": "住所変更と通知の送付先を確認する"
+          "goal": "電話は不変なので住所変更と同時に電話も変えた扱いにしないと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "今後の通知がどこへ届くかも、確認できますか。",
+        "recommendedAnswerJa": "電話は変わっていません。住所を直すついでに、電話まで変更したことにせず、その欄は変更なしとして見直したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "電話は不変なので住所変更と同時に電話も変えた扱いにしないと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "電話は不変なので住所変更と同時に電話も変えた扱いにしないと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-045-21-001-SHARED-09",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -186,15 +186,15 @@
       "turnOrder": 9,
       "speaker": "NPC",
       "npc": {
-        "textJa": "はい。変更が反映される時期と送付先も、ご案内を確認してください。",
+        "textJa": "対象を住所の変更に絞って確認しましょう。送付先と反映についての案内を聞いてから、申請へ進めます。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": "DLG-SC-LOC-045-21-001-SHARED-10",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -204,25 +204,25 @@
       "speaker": "PLAYER",
       "npc": null,
       "player": {
-        "communicativeIntent": "bank-update_response_5",
+        "communicativeIntent": "reread_room_building_unchanged_phone_before_identity_guided_submission",
         "requiredSemanticComponents": {
-          "goal": "住所変更と通知の送付先を確認する"
+          "goal": "部屋番号・建物・電話変更なしを読み直し通知反映と本人確認の案内後に送信したいと伝える"
         },
         "optionalSemanticComponents": {},
-        "recommendedAnswerJa": "ありがとうございます。入力した内容を見直してから申請します。",
+        "recommendedAnswerJa": "部屋番号、建物名、電話変更なしを読み返します。通知がいつからどこへ準備されるかを聞き、本人確認の案内も受けてから送信したいです。",
         "recommendedAnswerFurigana": null,
         "acceptableExamples": [],
-        "hint": "相手の質問に答え、必要な条件を具体的に伝えましょう。わからない点は聞き返してください。",
+        "hint": "部屋番号・建物・電話変更なしを読み直し通知反映と本人確認の案内後に送信したいと伝える。日本語で伝えてください。",
         "translations": {},
-        "evaluationNotes": "直前の発話に応じ、用件・条件・確認事項を適切に伝えられているか確認する。",
+        "evaluationNotes": "部屋番号・建物・電話変更なしを読み直し通知反映と本人確認の案内後に送信したいと伝える。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
         "unexpectedIntents": [],
         "allowMinorGrammarErrors": true,
         "targetGrammarIds": [],
         "targetVocabularyIds": []
       },
       "nextDialogueId": "DLG-SC-LOC-045-21-001-SHARED-11",
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     },
     {
@@ -231,24 +231,27 @@
       "turnOrder": 11,
       "speaker": "NPC",
       "npc": {
-        "textJa": "ご不明な点はその場でお尋ねください。正しい情報で手続きを進めましょう。",
+        "textJa": "では入力は未送信のまま、担当の確認へ進みます。住所の反映はまだ完了していません。お声かけありがとうございました。",
         "furigana": null,
         "translationVi": null,
         "translations": {}
       },
       "player": null,
       "nextDialogueId": null,
-      "status": "Japanese draft",
-      "qualityCheck": "Scenario-specific Japanese exchange; alternating 11 turns; translation deferred; simulated setting, not verified local service information.",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
       "mappingConfidence": null
     }
   ],
   "authoring": {
     "locale": "ja",
-    "recipe": "bank-update",
     "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
     "contentScope": "simulated_learning_scenario",
     "nativeSpeakerReviewed": false,
-    "translationState": "deferred_until_all_japanese_complete"
+    "translationState": "deferred_until_all_japanese_complete",
+    "editorialSource": "scripts/dialogue-authoring/prf-045-city-cty-045.json",
+    "premise": "宮崎市を舞台にした学習用の架空施設。架空銀行で登録住所変更の入力に部屋番号の転記違いを見つける。居住地と任意の送付先を混同せず、本人確認と対象項目を担当へ照会して未送信で修正する。施設名、表示、配置、書類、対応条件は架空場面内のもので、実在施設の情報ではない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
   }
 }
