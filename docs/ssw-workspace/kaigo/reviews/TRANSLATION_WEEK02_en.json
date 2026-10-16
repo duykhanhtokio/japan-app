@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "language": "en",
+  "week": 2,
+  "sourceLanguage": "ja",
+  "sourceCommit": "9ff9ec014ade9a110f9434ac675fe70ae97eda3d",
+  "canonicalPacketPath": "/workspace/scratch/64c65738732f/translation-packets/week-02.ja.json",
+  "canonicalPacketSha256": "c299f09e07e400f4f41bf65a5ae8b0413ec0a57c2501625a5b3f73c3c483babd",
+  "translationPath": "src/data/kaigo/japanese-master/translations/week-02.en.json",
+  "translationSha256": "7728480678914d35f9a7f8010000b0722067312084f305a4f52615210344d184",
+  "status": "translated_ai_unreviewed",
+  "directJapanese": true,
+  "noCrossTranslation": true,
+  "translatedDirectlyFromJapanese": true,
+  "vietnameseUsedAsTranslationIntermediate": false,
+  "humanReviewed": false,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "rightsReviewed": false,
+  "releaseReady": false,
+  "nativeDeviceTested": false,
+  "styleGuideVersion": 1,
+  "localeProfile": "docs/ssw-workspace/kaigo/locale-profiles/en.json",
+  "counts": {
+    "sections": 90,
+    "paragraphs": 881,
+    "distinctJapaneseParagraphTexts": 352,
+    "lessons": 7,
+    "objectives": 14,
+    "questions": 70,
+    "options": 280,
+    "rationales": 280,
+    "sourceRevisionBindings": 167,
+    "readingFields": 45,
+    "nonemptyReadings": 45,
+    "emptyReadings": 0,
+    "questionsWithoutReading": 25,
+    "distinctNonemptyReadings": 16
+  },
+  "checks": {
+    "exactIds": true,
+    "paragraphAlignment": true,
+    "allSourceRevisionsMatch": true,
+    "correctIndicesPreserved": true,
+    "fourOptionsAndIndividualReasons": true,
+    "readingPresenceMatchesJapanese": true,
+    "metadataComplete": true,
+    "atomicCompleteFileWrite": true
+  },
+  "aiSemanticSpotChecks": [
+    {
+      "target": "weekly-kaigo-week2-05-q01",
+      "check": "negation_in_distractor",
+      "result": "pass",
+      "note": "Confirmed absence of an appointment remains a false claim. It is not mistranslated as absence of confirmation, which would create another valid answer."
+    },
+    {
+      "target": "kaigo-week2-01-dialogue",
+      "check": "right_and_onset",
+      "result": "pass",
+      "note": "Right shoulder and onset this morning preserved without diagnosis or invented values."
+    },
+    {
+      "target": "kaigo-week2-04-reading",
+      "check": "effective_reading_extra_fact",
+      "result": "pass",
+      "note": "The question reading stating the box is not in the current room retains that fact, even though the shorter reader paragraph omits it."
+    },
+    {
+      "target": "weekly-kaigo-week2-06-q03",
+      "check": "absence_of_reports_vs_confirmed_no_injuries",
+      "result": "pass",
+      "note": "No injury report has been received is not rendered as all people confirmed uninjured; the longer effective reading retains the worker’s explicit statement."
+    },
+    {
+      "target": "kaigo-gap-worker-health-01-followup-variant-10",
+      "check": "actor_time_and_progress",
+      "result": "pass",
+      "note": "Worker fatigue is separate from Onodera’s whole-body fatigue. Pain unasked at9:15 is distinguished from the person denying pain at9:20. Nurse contacted does not mean arrived or assessed; reassignment remains pending."
+    },
+    {
+      "target": "kaigo-week2-05-dialogue",
+      "check": "emotion_vs_unconfirmed_event",
+      "result": "pass",
+      "note": "Worry is acknowledged without asserting that the appointment exists or does not exist."
+    },
+    {
+      "target": "kaigo-gap-worker-health-01-knowledge-1",
+      "check": "clinical_boundary",
+      "result": "pass",
+      "note": "Body mechanics does not authorize manual lifting or untrained equipment use; individual planning and training conditions retained."
+    }
+  ],
+  "editorialNotes": [
+    "Translated directly from the Japanese packet only. Did not read another locale or use a translation intermediary.",
+    "Repeated glossary paragraphs use identical English for identical Japanese source strings.352distinct texts map to881paragraph records; repeated entries are not reported as unique concepts.",
+    "Maintained stable names, respectful adult language, neutral pronouns, US spelling and shared terminology. Japanese headwords/readings remain only where the vocabulary activity requires them.",
+    "Translated all effective readings, including the combined worker-health record and two longer runtime variants. Did not infer readings from unrelated dialogues.",
+    "No clinical protocols, thresholds, diagnoses or additional treatment claims were introduced."
+  ],
+  "uncertainties": [
+    "The English phrase internal functional disabilities conveys the Japanese care-learning category 内部障害 rather than claiming an identical legal category in an English-speaking jurisdiction.",
+    "This is AI semantic and editorial checking, not independent native-speaker, clinical or legal review."
+  ],
+  "limits": [
+    "No whole-book coverage, professional/native/rights/release approval, device testing or learning-time claim.",
+    "Only the complete English week02translation and this review are deliverables. Japanese masters, questions, shared files, UI, images, other locales and commits are unchanged by this worker.",
+    "Root owns runtime integration, durable commit and remote verification."
+  ]
+}

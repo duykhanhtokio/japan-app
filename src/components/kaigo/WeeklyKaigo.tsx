@@ -55,6 +55,7 @@ import {
 import {
   japaneseAssessmentRevisionForWeek as assessmentRevisionForWeek,
   japaneseQuestionsForWeek as questionsForWeek,
+  translationForQuestion,
   type JapaneseWeeklyQuestion as WeeklyQuestion,
 } from '@/data/kaigo/japanese-assessments';
 import { loadKaigoState, saveKaigoState } from "@/services/kaigo-storage";
@@ -218,6 +219,7 @@ function WeeklyAssessment({
   onComplete: () => void;
   completeReady: boolean;
 }) {
+  const { language } = useAppLanguage();
   const questions = questionsForWeek(week),
     st = useSaved<AssessmentState>(
       `@japan_app_kaigo_weekly:assessment:${assessmentRevisionForWeek(week)}:${week}`,
@@ -234,6 +236,7 @@ function WeeklyAssessment({
     score = questions.filter(
       (x) => st.value.answers[x.id] === x.correctIndex,
     ).length;
+  const questionTranslation = q?.japaneseMaster ? translationForQuestion(q.id, language) : undefined;
   const move = (next: number) => {
     setIndex(next);
     scroll.current?.scrollTo({ y: 0, animated: false });
@@ -265,6 +268,7 @@ function WeeklyAssessment({
                 {q.reading}
               </Text>
             )}
+            {translationOpen && questionTranslation?.reading && <TranslationText testID="kaigo-weekly-reading-translation">{questionTranslation.reading}</TranslationText>}
             {q.japanese && (
               <Text selectable style={s.japanese}>
                 {q.japanese}
@@ -276,7 +280,9 @@ function WeeklyAssessment({
               </Text>
             )}
             {translationOpen && (q.japaneseMaster
-              ? <TranslationText>この言語の翻訳は準備中です。</TranslationText>
+              ? questionTranslation
+                ? <TranslationText testID="kaigo-weekly-prompt-translation">{questionTranslation.prompt}</TranslationText>
+                : <TranslationText>この言語の翻訳は準備中です。</TranslationText>
               : <TranslationText>{q.prompt}</TranslationText>)}
             {(q.language === "ja" || translationOpen) &&
               q.options.map((option, i) => (
@@ -300,6 +306,7 @@ function WeeklyAssessment({
                   <Text style={s.body}>
                     {i + 1}. {option}
                   </Text>
+                  {translationOpen && questionTranslation && <TranslationText testID={`kaigo-weekly-option-translation-${i}`}>{questionTranslation.options[i]}</TranslationText>}
                 </Pressable>
               ))}
             {st.value.submitted && (
@@ -309,6 +316,9 @@ function WeeklyAssessment({
                   <Text key={i} testID={`kaigo-weekly-rationale-${i}`} style={[s.body, { color: colors.text }]}>
                     {i + 1}. {r}
                   </Text>
+                ))}
+                {translationOpen && questionTranslation && questionTranslation.rationales.map((r, i) => (
+                  <TranslationText key={i} testID={`kaigo-weekly-rationale-translation-${i}`}>{i + 1}. {r}</TranslationText>
                 ))}
                 {translationOpen && !q.japaneseMaster &&
                   q.rationales.map((r, i) => (
@@ -563,6 +573,9 @@ function DayReading({
               />
               {section.figureCaptionsJa?.[figure.key] && (
                 <JapaneseText text={section.figureCaptionsJa[figure.key]} testID={`kaigo-figure-caption-${section.id}-${figure.key}`} />
+              )}
+              {translationOpen && translation?.figureCaptions?.[figure.key] && (
+                <TranslationText testID={`kaigo-figure-caption-translation-${section.id}-${figure.key}`}>{translation.figureCaptions[figure.key]}</TranslationText>
               )}
               {section.masterStatus && (
                 <Text style={[s.meta, { color: colors.muted }]}>図中の文字は旧版です。日本語ラベルを確認中です。</Text>

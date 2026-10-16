@@ -1,7 +1,6 @@
 import { japaneseMasterBatches } from './japanese-master-batches';
 import pilotTranslations from './japanese-master/translations/pilot-01.json';
-import vietnameseWeek01 from './japanese-master/translations/week-01.vi.json';
-import englishWeek01 from './japanese-master/translations/week-01.en.json';
+import { japaneseTranslationBatches } from './japanese-translation-batches';
 
 export type JapaneseMasterSection = {
   headingJa: string;
@@ -28,10 +27,12 @@ export function japaneseLessonKey(entry: { id: string; day: number }): string {
 }
 
 /** Content-dependent binding. Any Japanese edit invalidates a previous translation. */
-export function japaneseMasterRevision(master: Pick<JapaneseMasterSection, 'headingJa' | 'paragraphsJa'>): string {
-  return contentRevision([master.headingJa, master.paragraphsJa]);
+export function japaneseMasterRevision(master: Pick<JapaneseMasterSection, 'headingJa' | 'paragraphsJa' | 'figureCaptionsJa'>): string {
+  return contentRevision(master.figureCaptionsJa && Object.keys(master.figureCaptionsJa).length
+    ? [master.headingJa, master.paragraphsJa, master.figureCaptionsJa]
+    : [master.headingJa, master.paragraphsJa]);
 }
-function contentRevision(value: unknown): string {
+export function contentRevision(value: unknown): string {
   let hash = 2166136261;
   for (const char of JSON.stringify(value)) {
     hash = Math.imul(hash ^ char.charCodeAt(0), 16777619);
@@ -42,6 +43,7 @@ export type MasterTranslation = {
   sourceRevision: string;
   heading: string;
   paragraphs: string[];
+  figureCaptions?: Record<string, string>;
   status: 'translated_ai_unreviewed' | 'human_reviewed';
 };
 // Only translations authored directly from the Japanese master belong here.
@@ -49,7 +51,7 @@ export type MasterTranslation = {
 export const japaneseMasterTranslations: Record<string, Record<string, MasterTranslation>> = {
   ...(pilotTranslations as Record<string, Record<string, MasterTranslation>>),
 };
-for (const batch of [vietnameseWeek01, englishWeek01]) {
+for (const batch of japaneseTranslationBatches) {
   for (const [id, translation] of Object.entries(batch.sections)) {
     japaneseMasterTranslations[id] = {
       ...japaneseMasterTranslations[id],
@@ -62,13 +64,15 @@ export type LessonTranslation = {
   sourceRevision: string;
   title: string;
   artCaption: string;
+  objectives: string[];
+  context: string;
   status: MasterTranslation['status'];
 };
 export function japaneseLessonRevision(lesson: JapaneseLessonMetadata): string {
   return contentRevision([lesson.titleJa, lesson.objectivesJa, lesson.contextJa, lesson.artCaptionJa]);
 }
 export const japaneseLessonTranslations: Record<string, Record<string, LessonTranslation>> = {};
-for (const batch of [vietnameseWeek01, englishWeek01]) {
+for (const batch of japaneseTranslationBatches) {
   for (const [id, translation] of Object.entries(batch.lessons)) {
     japaneseLessonTranslations[id] = {
       ...japaneseLessonTranslations[id],
@@ -83,7 +87,11 @@ export function translationForLesson(
   lessons = japaneseLessonMetadata,
 ): LessonTranslation | undefined {
   const lesson = lessons[id], translation = translations[id]?.[language];
-  return lesson && translation?.sourceRevision === japaneseLessonRevision(lesson) ? translation : undefined;
+  if (!lesson || !translation || translation.sourceRevision !== japaneseLessonRevision(lesson)
+    || ![translation.title, translation.artCaption, translation.context].every(s => typeof s === 'string' && s.trim())
+    || !Array.isArray(translation.objectives) || translation.objectives.length !== lesson.objectivesJa.length
+    || !translation.objectives.every(s => typeof s === 'string' && s.trim())) return undefined;
+  return translation;
 }
 export function translationForMaster(
   id: string,
@@ -95,6 +103,7 @@ export function translationForMaster(
   if (!master || !translation || translation.sourceRevision !== japaneseMasterRevision(master)
     || !translation.heading?.trim()
     || translation.paragraphs.length !== master.paragraphsJa.length
-    || !translation.paragraphs.every(p => typeof p === 'string' && p.trim())) return undefined;
+    || !translation.paragraphs.every(p => typeof p === 'string' && p.trim())
+    || Object.keys(master.figureCaptionsJa ?? {}).some(key => !translation.figureCaptions?.[key]?.trim())) return undefined;
   return translation;
 }

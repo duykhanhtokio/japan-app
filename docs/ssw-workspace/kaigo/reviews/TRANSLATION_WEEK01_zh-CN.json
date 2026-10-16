@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "language": "zh-CN",
+  "week": 1,
+  "sourceCommit": "9ff9ec014ade9a110f9434ac675fe70ae97eda3d",
+  "sourcePacket": "/workspace/scratch/64c65738732f/translation-packets/week-01.ja.json",
+  "sourcePacketSha256": "3bf98f396d741fefc2aa6384e9c186e58b44f7d23380dd18e09315335a174e40",
+  "translationPath": "src/data/kaigo/japanese-master/translations/week-01.zh-CN.json",
+  "translationSha256": "2ee39e9432e6e002de3c439ab1b2a9365704654efb3ac3d25ab82a80a703c6d5",
+  "status": "translated_ai_unreviewed",
+  "directJapanese": true,
+  "noCrossTranslation": true,
+  "sourceInputs": [
+    "week-01.ja.json: Japanese headings, paragraphs, lesson metadata, prompts, options, rationales, effective readingJa and sourceRevision only"
+  ],
+  "counts": {
+    "sections": 73,
+    "parallelParagraphs": 246,
+    "lessonMetadata": 7,
+    "lessonObjectives": 14,
+    "weeklyQuestions": 59,
+    "options": 236,
+    "rationales": 236,
+    "questionReadingFields": 42,
+    "nonemptyQuestionReadings": 40,
+    "explicitEmptySourceReadingsPreserved": 2,
+    "questionsWithoutReadingField": 17,
+    "missingSections": 0,
+    "missingParagraphs": 0,
+    "missingLessons": 0,
+    "missingQuestions": 0,
+    "sourceRevisionMismatches": 0,
+    "changedCorrectIndices": 0
+  },
+  "registerProfile": "docs/ssw-workspace/kaigo/locale-profiles/zh-CN.json",
+  "aiReview": {
+    "scope": "All 73 sections / 246 paragraph positions, all 7 lesson metadata entries, all 59 prompts, 236 options and 236 rationales, plus all effective source reading fields were compared directly against the Japanese packet. Repeated Japanese paragraphs reuse their corresponding translation.",
+    "actorAndStatusChecks": "Preserved who requests/performs/confirms each action, facts vs inference, permission scope, now vs afternoon, planned/pending vs completed, and option-specific correct/incorrect explanations. No independent clinical claims or intervention instructions were added.",
+    "lesson07Correction": "Translated resident-to-worker request accurately from corrected Japanese context, sourceRevision ja-master-v1-65e5d707; reading help and absence notification requested by resident, reading itself remains resident activity.",
+    "effectiveRuntimeReadings": "Reloaded updated packet. Bound all 42 source reading fields to current question sourceRevision, preserving 2 explicit empty readings and omitting reading entirely for 17 questions without readingJa. Did not invent passages or add model answers.",
+    "vocabularyTreatment": "Japanese headwords/kana and Japanese address forms that are themselves the learning target remain intact; definitions and surrounding explanations are Chinese. Japanese personal-name kanji remain stable.",
+    "terminology": "Profile fixes adult respectful 您; 照护人员 / 服务对象 / 本人; 自主决定; 自立支持; 标准预防措施; 手卫生; 身体约束; 放弃或疏于照护. Japanese professional roles retain Japanese-role meaning rather than implying Chinese credentials.",
+    "targetOnlyRefinements": [
+      "Avoided suggesting that nurses diagnose by rendering the source care-worker diagnosis/treatment boundary without adding an alternative actor.",
+      "Used natural Chinese 转移 for 移乗 and 身体状况 for 体調; retained source conditions, equipment and training limits.",
+      "Preserved page location as 那一页 rather than introducing a page-number request."
+    ]
+  },
+  "validation": {
+    "jsonParsed": true,
+    "exactSectionIds": true,
+    "exactLessonIds": true,
+    "exactQuestionIds": true,
+    "parallelParagraphCounts": true,
+    "allRequiredTextNonempty": true,
+    "fourOptionsAndRationalesEach": true,
+    "correctIndicesUnchanged": true,
+    "sourceRevisionsExact": true,
+    "readingFieldPresenceMatchesSource": true,
+    "explicitEmptyReadingPreserved": true,
+    "unrelatedFilesEdited": false
+  },
+  "limits": [
+    "AI translation and direct bilingual comparison only; no human, native-speaker or domain-professional approval.",
+    "Japanese source is the authoritative source for this translation; no additional source-book coverage or medical validation is claimed.",
+    "No app/runtime integration, device rendering, illustration alteration, publishing or commit performed by this agent.",
+    "Draft schema names/revision metadata were inspected in preparation; no other-locale translated text was used as translation input."
+  ],
+  "humanReviewed": false,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "rightsReviewed": false,
+  "nativeDeviceTested": false,
+  "releaseReady": false
+}

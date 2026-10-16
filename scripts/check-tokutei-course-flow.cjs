@@ -238,7 +238,7 @@ async function end(tree, id) {
     };
   });
   const report = {
-    date: "2026-10-15",
+    date: new Date().toISOString().slice(0, 10),
     status: days.every((d) => d.missingJapanese.length === 0)
       ? "UI_PASS_JAPANESE_FIELDS_COMPLETE_REVIEW_PENDING"
       : "UI_PASS_JAPANESE_CONTENT_INCOMPLETE",

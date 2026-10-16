@@ -121,16 +121,24 @@
       "stylePolicy": "docs/ssw-workspace/kaigo/language-style-policy.json",
       "styleVersion": 1,
       "mandatoryBeforeEachLanguageOrDisplayBatch": true,
-      "productionPhase": "japanese_entire_course_first",
-      "translationsPaused": true,
+      "productionPhase": "direct_translation_after_japanese_agreed_scope_closure",
+      "translationsPaused": false,
       "translationResumeCondition": "entire_japanese_content_completed_and_checked",
       "parallelAuthorCount": 6,
-      "parallelUnit": "independent_calendar_week",
+      "parallelUnit": "one_distinct_language_per_ai_direct_from_japanese",
       "currentParallelWeeks": [],
       "supersedesPerWeekTranslationGate": true,
       "scheduledJapaneseReaderAuthoringComplete": true,
-      "nextJapaneseTask": "complete_source_inventory_and_resolve_remaining_japanese_review_items_before_translation",
-      "knownInventoryReconciliationReport": "docs/ssw-workspace/kaigo/reviews/JAPANESE_RECONCILIATION_RESOLUTION.json"
+      "nextJapaneseTask": "none_in_agreed_ai_editorial_scope; independent reviews remain disclosed",
+      "knownInventoryReconciliationReport": "docs/ssw-workspace/kaigo/reviews/JAPANESE_RECONCILIATION_RESOLUTION.json",
+      "currentParallelLanguages": [
+        "vi",
+        "en",
+        "id",
+        "zh-CN",
+        "zh-TW",
+        "th"
+      ]
     }
   },
   "notYetDecided": [
@@ -432,6 +440,16 @@
       "translationsPaused": true,
       "preserveExistingTranslations": true,
       "japaneseWholeCourseCompleted": false,
+      "humanReviewed": false,
+      "releaseReady": false
+    },
+    {
+      "date": "2026-10-16",
+      "publisherInstructionVi": "Loại hoặc thay4mục thiếu căn cứ; hoàn tất Nhật rồi dịch bằng6AI, mỗi AI một ngôn ngữ, không dịch chéo.",
+      "supersedesTranslationPause": true,
+      "parallelTranslators": 6,
+      "oneLanguagePerAgent": true,
+      "crossTranslation": false,
       "humanReviewed": false,
       "releaseReady": false
     }

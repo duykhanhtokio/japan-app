@@ -109,3 +109,8 @@ Không tự đổi chuẩn phong cách đã được chủ dự án duyệt theo
 ## 9. Thứ tự sản xuất hiện tại — cập nhật chủ dự án 2026-10-16
 
 Ưu tiên hoàn thiện và kiểm tra toàn bộ bản Nhật trước; tạm hoãn soạn bản dịch mới cho đến khi xong phạm vi Nhật toàn khóa.6AI soạn các tuần độc lập, điều phối tích hợp và xác minh từng đợt. Phong cách, thuật ngữ và hiển thị đã duyệt tiếp tục áp dụng. Giữ bản dịch đã có và kiểm ràng buộc phiên bản; thiếu bản dịch thì báo đang chuẩn bị, không hiển thị bản Việt cũ như bản đã đối chiếu. Quyết định này thay lịch dịch theo từng tuần, không thay chuẩn chất lượng hay ý nghĩa các cờ duyệt.
+
+
+## Production-order amendment — 2026-10-16
+
+The publisher has authorized exclusion/replacement of the four unsupported source details, recorded in `reviews/JAPANESE_FINAL_SCOPE_RESOLUTION.json`. Japanese content in that agreed scope may now proceed to direct translation after its checks and remote checkpoint. Use six parallel AI, one distinct language per AI, with no translation through another locale. This changes the production phase only; the approved style version1, respectful adult register, stable address forms and existing display rules remain mandatory. All twelve supported locales remain in scope; a completed pilot week is not completion of the entire course or all languages.
