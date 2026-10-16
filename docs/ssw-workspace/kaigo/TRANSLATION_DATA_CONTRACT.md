@@ -34,3 +34,7 @@ Target file `src/data/kaigo/japanese-master/mock-translations/mocks.LOCALE.json`
 - Review report `reviews/TRANSLATION_MOCKS_LOCALE.json` records actual form/question/option/rationale/caption counts, semantic checks, hashes and false approval flags.
 
 Track26×12weekly week-locale pairs separately from12×12full-mock-form locale pairs. Neither record count nor a passing validator proves exhaustive unique source knowledge or human approval. Existing image-lettering issues remain disclosed separately.
+
+## Complete-form delivery checkpoints
+
+A locale file may contain a subset of the twelve forms once every included form has its entire canonical question set, title, source revisions and four specific rationales per question, with its owner's source/meaning/style checks and actual output hash recorded. Never register a partial question set. Record exact completed and remaining form IDs in the locale review and inventory; completing one form does not mean the locale's twelve forms are complete. Runtime checks exercise every included form and verify that missing forms have no selected-locale fallback. The target remains all twelve forms in all twelve locales. Preserve source-bound unfinished drafts outside the runtime registry until their complete form is ready.
