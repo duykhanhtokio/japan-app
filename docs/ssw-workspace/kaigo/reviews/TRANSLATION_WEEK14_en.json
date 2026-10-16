@@ -4,7 +4,7 @@
   "language": "en",
   "sourceLanguage": "ja",
   "sourceCommit": "9ff9ec014ade9a110f9434ac675fe70ae97eda3d",
-  "canonicalPacketPath": "/workspace/scratch/64c65738732f/translation-packets/week-14.ja.json",
+  "canonicalPacketPath": "/workspace/scratch/64c65738732f/kaigo-isolated-he0gx2q5/packets/week-14.ja.json",
   "canonicalPacketSha256": "5f22594b6fed3a5147b3ad597db5ef4e95449f4ae744d0e47250e27737c02f8b",
   "translationPath": "src/data/kaigo/japanese-master/translations/week-14.en.json",
   "translationSha256": "afecf7ff8fd5db8062629d5c6d620b00bfd2a1f01fb3eb710060c4e8df79cd86",
@@ -82,6 +82,12 @@
       "check": "actual_runtime_passages",
       "result": "pass",
       "note": "Read all7actual Japanese runtime passages, prompts,28options and28individual reasons. Passages are independently translated exactly, without substituting longer master explanation or adding correct-answer guidance. Indices and conditions unchanged."
+    },
+    {
+      "target": "own remote EN candidate differences",
+      "check": "direct_Japanese_clarity_reconciliation",
+      "result": "pass",
+      "note": "Compared all 10 differing fields with canonical Japanese. Adopted 10 clearer adult-English fields; retained 0 newer source-correct fields. Person’s own words, full conditions, recipients, uncertainty and completed/planned facts preserved."
     }
   ],
   "editorialNotes": [
@@ -99,44 +105,145 @@
     "No new dementia diagnoses, medication claims, urine criteria or changing methods were authored. Source qualifications remain intact.",
     "Root handles integration, commits and remote verification."
   ],
-  "semanticEditorialFollowup20261016": {
-    "scope": "Own English weeks09–14 checked against Japanese-only packets; targeted prose and explicit-actor/condition review, not independent native or clinical approval.",
-    "targetedParagraphRepairs": [
+  "isolatedReexport": {
+    "source": "reconstructed from own retained authoring inputs and builders; exact previously notified translation hash reproduced",
+    "sourceTranslationSha256": "98439d05c7619a5da1a457e0b0812365ac310319afa40f369403d1d10fafd839",
+    "priorEnglishSourceCommit": "afdf012cb4e4e430541d6e326819b040ae667484",
+    "mutableOriginalTranslationsNotUsed": true
+  },
+  "ownEnglishRemoteReconciliation": {
+    "remoteCommit": "6904db6f",
+    "remoteCandidatePath": "/workspace/scratch/64c65738732f/kaigo-isolated-he0gx2q5/en/remote-review/week-14.en.json",
+    "remoteCandidateSha256": "afecf7ff8fd5db8062629d5c6d620b00bfd2a1f01fb3eb710060c4e8df79cd86",
+    "priorPrivateTranslationSha256": "98439d05c7619a5da1a457e0b0812365ac310319afa40f369403d1d10fafd839",
+    "auditScope": "All differing leaf fields compared directly to current canonical JA; unchanged fields covered by prior completed direct-JA review. This is an AI clarity/semantic reconciliation, not independent native or domain review.",
+    "differenceFields": 10,
+    "adoptedFields": 10,
+    "retainedNewerCanonicalFields": 0,
+    "changes": [
       {
-        "sectionId": "kaigo-atomic-dementia-symptoms",
-        "paragraphIndex": 6,
+        "path": [
+          "sections",
+          "kaigo-atomic-brain-lobes",
+          "paragraphs",
+          5
+        ],
+        "before": "Dementia involves reduced cognition affecting daily or social life and has various causes. Do not diagnose it from one memory lapse or dismiss new difficulties as age alone. Record personal words and changes and arrange appropriate assessment.",
+        "after": "Dementia involves reduced cognition affecting daily or social life and has various causes. Do not diagnose it from one memory lapse or dismiss new difficulties as age alone. Record the person’s own words and changes and arrange appropriate assessment.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
+      },
+      {
+        "path": [
+          "sections",
+          "kaigo-atomic-forgetting",
+          "paragraphs",
+          5
+        ],
+        "before": "Acknowledging emotion differs from declaring an unconfirmed event true. Do not argue for an admission of error or publicly test memory and cause embarrassment. Preserve personal words, check facts together if needed and tell the person responsible. Actual support follows individual assessment, the care plan and facility instruction.",
+        "after": "Acknowledging emotion differs from declaring an unconfirmed event true. Do not argue for an admission of error or publicly test memory and cause embarrassment. Preserve the person’s own words, check facts together if needed and tell the person responsible. Actual support follows individual assessment, the care plan and facility instruction.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
+      },
+      {
+        "path": [
+          "sections",
+          "kaigo-atomic-dementia-symptoms",
+          "paragraphs",
+          4
+        ],
+        "before": "Walking may have a purpose. For example, moving about before meals is not automatically meaningless wandering. Consider personal words and context, such as looking for something or needing the toilet. This learning example does not justify deciding the purpose before asking.",
+        "after": "Walking may have a purpose. For example, moving about before meals is not automatically meaningless wandering. Consider the person’s own words and context, such as looking for something or needing the toilet. This learning example does not justify deciding the purpose before asking.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
+      },
+      {
+        "path": [
+          "sections",
+          "kaigo-atomic-dementia-symptoms",
+          "paragraphs",
+          6
+        ],
         "before": "Ask about anxiety and needs and tell the person responsible observations separately from unknowns. Support follows individual assessment and plan. With urgent abnormalities, seek necessary help rather than continuing ordinary questioning.",
-        "after": "Ask about the person’s anxiety and needs. Tell the person responsible what changes you observed, clearly distinguishing them from what is still unconfirmed. Provide support according to individual assessment and the care plan. If an urgent abnormality occurs, seek the necessary help instead of continuing routine questions."
+        "after": "Ask about the person’s anxiety and needs. Tell the person responsible what changes you observed, clearly distinguishing them from what is still unconfirmed. Provide support according to individual assessment and the care plan. If an urgent abnormality occurs, seek the necessary help instead of continuing routine questions.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
       },
       {
-        "sectionId": "kaigo-atomic-urination-volume",
-        "paragraphIndex": 5,
+        "path": [
+          "sections",
+          "kaigo-atomic-urination-volume",
+          "paragraphs",
+          5
+        ],
         "before": "When the person wants to urinate, acknowledge the wish and current condition and support them through an individual method. General capacity values are not holding-time rules or personal diagnoses. Report changes to the person responsible.",
-        "after": "When the person says they want to urinate, acknowledge their wish and current condition and support them using an individualized method. Do not use general bladder-capacity figures as a reason to make them hold their urine or as a basis for diagnosing disease. Report changes to the person responsible."
+        "after": "When the person says they want to urinate, acknowledge their wish and current condition and support them using an individualized method. Do not use general bladder-capacity figures as a reason to make them hold their urine or as a basis for diagnosing disease. Report changes to the person responsible.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
       },
       {
-        "sectionId": "kaigo-atomic-urine-reference",
-        "paragraphIndex": 2,
+        "path": [
+          "sections",
+          "kaigo-atomic-urine-reference",
+          "paragraphs",
+          2
+        ],
         "before": "Consider collection duration, fluid intake, medication, illness and climate with volume. Do not compare 600 mL over half a day as a whole-day amount or invent and double the unmeasured remainder. Check personal baseline and conditions needed for healthcare assessment.",
-        "after": "Interpret urine volume together with the collection period, fluid intake from food and drinks, medication, illness, climate and other relevant conditions. For example, do not compare 600 mL collected over half a day directly with a full-day reference value, or double it by inventing an unmeasured amount for the rest of the day. Check the person’s usual condition and the circumstances needed for assessment by healthcare professionals."
+        "after": "Interpret urine volume together with the collection period, fluid intake from food and drinks, medication, illness, climate and other relevant conditions. For example, do not compare 600 mL collected over half a day directly with a full-day reference value, or double it by inventing an unmeasured amount for the rest of the day. Check the person’s usual condition and the circumstances needed for assessment by healthcare professionals.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
       },
       {
-        "sectionId": "kaigo-atomic-diaper-fit",
-        "paragraphIndex": 0,
+        "path": [
+          "sections",
+          "kaigo-atomic-diaper-fit",
+          "paragraphs",
+          0
+        ],
         "before": "Before changing, check condition, explain purpose and actions and obtain consent. Protect privacy with curtains and prepare supplies, suitable bed height and waterproof protection before starting. Avoid prolonged exposure.",
-        "after": "Before changing the diaper, check the person’s physical condition, explain the purpose and what you will do, and obtain consent. Protect privacy with curtains or similar measures. Before starting, prepare the necessary supplies, adjust the bed to a suitable working height and prepare a waterproof sheet. Avoid leaving the person’s body exposed for a long time."
+        "after": "Before changing the diaper, check the person’s physical condition, explain the purpose and what you will do, and obtain consent. Protect privacy with curtains or similar measures. Before starting, prepare the necessary supplies, adjust the bed to a suitable working height and prepare a waterproof sheet. Avoid leaving the person’s body exposed for a long time.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
+      },
+      {
+        "path": [
+          "lessons",
+          "95",
+          "objectives",
+          1
+        ],
+        "before": "Specifically report personal words and circumstances before and after actions.",
+        "after": "Specifically report the person’s own words and circumstances before and after actions.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
+      },
+      {
+        "path": [
+          "questions",
+          "weekly-kaigo-atomic-case-dementia-symptoms",
+          "rationales",
+          1
+        ],
+        "before": "Check personal words and surrounding events without assuming the background.",
+        "after": "Check the person’s own words and surrounding events without assuming the background.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
+      },
+      {
+        "path": [
+          "questions",
+          "weekly-kaigo-atomic-case-urine-reference",
+          "reading"
+        ],
+        "before": "[Learning example]600 mL was measured over half a day. No measurement exists for the remaining time. The source gives daily reference values.",
+        "after": "[Learning example] 600 mL was measured over half a day. No measurement exists for the remaining time. The source gives daily reference values.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
       }
     ],
-    "otherRepairs": "Changed “personal words” to “the person’s own words” in natural-language values where present; week10 question grammar and week14 passage spacing corrected. IDs and opaque revisions excluded.",
-    "checks": [
-      "No other target locale read or used.",
-      "Preserved individual care plans, medical-professional recipients, consent, method permission, uncertainty and reporting urgency.",
-      "Retained every reading field including explicit empty readings and absence when absent.",
-      "Targeted complete-prose repairs preserve source conditions and do not create clinical instructions."
-    ],
-    "humanReviewed": false,
-    "domainReviewed": false,
-    "nativeReviewed": false,
-    "releaseReady": false
+    "rejectedStaleRemoteFields": [],
+    "noOtherLocaleRead": true,
+    "allBindingsRechecked": true,
+    "allIdsArraysAndAnswerIndicesPreserved": true
   }
 }

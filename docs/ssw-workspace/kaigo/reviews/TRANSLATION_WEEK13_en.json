@@ -3,11 +3,11 @@
   "week": 13,
   "language": "en",
   "sourceLanguage": "ja",
-  "sourceCommit": "9ff9ec014ade9a110f9434ac675fe70ae97eda3d",
-  "canonicalPacketPath": "/workspace/scratch/64c65738732f/translation-packets/week-13.ja.json",
-  "canonicalPacketSha256": "94b2a164763f739e99009e9d48b81f25a9c4a673afcd706ed70940bfa2834ee3",
+  "sourceCommit": null,
+  "canonicalPacketPath": "/workspace/scratch/64c65738732f/kaigo-isolated-he0gx2q5/packets/week-13.ja.json",
+  "canonicalPacketSha256": "d97a0305896ea43bb60775035dbd4ff95bac4148f3c665a3bd7c9b2e1b09347e",
   "translationPath": "src/data/kaigo/japanese-master/translations/week-13.en.json",
-  "translationSha256": "f070ba4f2a1f28a3c5ae8f645f3372b6a059e6f31504428a0b392eae2ddfbbb6",
+  "translationSha256": "4547e96e8fc1cf352508e85c3626b1b0b311eb83409a86f7c859e231cb9554ed",
   "status": "translated_ai_unreviewed",
   "directJapanese": true,
   "noCrossTranslation": true,
@@ -94,6 +94,12 @@
       "check": "qualifiers_and_answers",
       "result": "pass",
       "note": "Compared all7Japanese prompts,28options and28individual reasons. Retained exact answer positions and seven explicit empty readings, individual-plan and recipient conditions."
+    },
+    {
+      "target": "own remote EN candidate differences",
+      "check": "direct_Japanese_clarity_reconciliation",
+      "result": "pass",
+      "note": "Compared all 7 differing fields with canonical Japanese. Adopted 5 clearer adult-English fields; retained 2 newer source-correct fields. Person’s own words, full conditions, recipients, uncertainty and completed/planned facts preserved."
     }
   ],
   "editorialNotes": [
@@ -110,44 +116,118 @@
     "No new diagnostic criteria, fluids, feeding methods, dialysis/oxygen/stoma procedures or mental-health treatments were authored.",
     "Root handles integration, commits and remote verification."
   ],
-  "semanticEditorialFollowup20261016": {
-    "scope": "Own English weeks09–14 checked against Japanese-only packets; targeted prose and explicit-actor/condition review, not independent native or clinical approval.",
-    "targetedParagraphRepairs": [
+  "isolatedReexport": {
+    "source": "Own exact reconstructed output, then one source-verified Japanese precision refinement",
+    "sourceTranslationSha256": "44a551a30da4c4f260c8ee247a908e14b38d71bb6f8de94c5446cf854b86bda7",
+    "priorEnglishSourceCommit": "afdf012cb4e4e430541d6e326819b040ae667484",
+    "mutableOriginalTranslationsNotUsed": true,
+    "supersededTranslationSha256": "44a551a30da4c4f260c8ee247a908e14b38d71bb6f8de94c5446cf854b86bda7"
+  },
+  "sourceBaseCommit": "afdf012cb4e4e430541d6e326819b040ae667484",
+  "sourceState": "working_tree_snapshot",
+  "japanesePrecisionRefinement": {
+    "sectionId": "kaigo-atomic-pneumonia",
+    "paragraphIndex": 1,
+    "sourceRevision": "ja-master-v1-2cbcb290",
+    "before": "Dysphagia means difficulty in the swallowing process. Aspiration means material intended for the esophagus enters the airway. These related terms are not identical; not every swallowing difficulty is aspiration.",
+    "after": "Dysphagia means difficulty in the swallowing process. Aspiration means material intended for the esophagus enters the airway below the vocal cords. These related terms are not identical; not every swallowing difficulty is aspiration.",
+    "reason": "Directly reflects revised Japanese aspiration definition: airway below the vocal cords. No other fields or bindings changed.",
+    "sourceCommit": null,
+    "sourceBaseCommit": "afdf012cb4e4e430541d6e326819b040ae667484",
+    "sourceState": "working_tree_snapshot",
+    "questionsOrMetadataChanged": false
+  },
+  "ownEnglishRemoteReconciliation": {
+    "remoteCommit": "6904db6f",
+    "remoteCandidatePath": "/workspace/scratch/64c65738732f/kaigo-isolated-he0gx2q5/en/remote-review/week-13.en.json",
+    "remoteCandidateSha256": "f070ba4f2a1f28a3c5ae8f645f3372b6a059e6f31504428a0b392eae2ddfbbb6",
+    "priorPrivateTranslationSha256": "38b5baf8a90b0da8e2cfed0e4f079f41c980999894d396ec971bb7bf491b03af",
+    "auditScope": "All differing leaf fields compared directly to current canonical JA; unchanged fields covered by prior completed direct-JA review. This is an AI clarity/semantic reconciliation, not independent native or domain review.",
+    "differenceFields": 7,
+    "adoptedFields": 5,
+    "retainedNewerCanonicalFields": 2,
+    "changes": [
       {
-        "sectionId": "kaigo-atomic-heart-diseases",
-        "paragraphIndex": 6,
+        "path": [
+          "sections",
+          "kaigo-atomic-heart-diseases",
+          "paragraphs",
+          6
+        ],
         "before": "This explanation teaches disease mechanisms and observation/reporting boundaries. Tell healthcare professionals the observation time, personal words, differences from usual and actions taken. It does not authorize diagnosis or treatment changes.",
-        "after": "This explanation teaches how diseases arise and the boundaries of observation and reporting. Tell healthcare professionals when you made the observation, what the person said, how the situation differs from usual and what action you took. This material does not provide instructions for diagnosis or changes to treatment."
+        "after": "This explanation teaches how diseases arise and the boundaries of observation and reporting. Tell healthcare professionals when you made the observation, what the person said, how the situation differs from usual and what action you took. This material does not provide instructions for diagnosis or changes to treatment.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
       },
       {
-        "sectionId": "kaigo-atomic-diabetes-complications",
-        "paragraphIndex": 1,
+        "path": [
+          "sections",
+          "kaigo-atomic-diabetes-complications",
+          "paragraphs",
+          1
+        ],
         "before": "Nerve damage can reduce sensation so wounds may cause little pain. Persistent high glucose can also delay healing. The person’s no-pain statement matters, but differs from proof of no wound or safety.",
-        "after": "If nerve damage reduces sensation, a person may feel little pain even when they have a wound. Persistent high blood glucose may also make wounds slower to heal. The person’s statement that they do not feel pain is important information, but it is separate from evidence that there is no wound or that the situation is safe."
+        "after": "If nerve damage reduces sensation, a person may feel little pain even when they have a wound. Persistent high blood glucose may also make wounds slower to heal. The person’s statement that they do not feel pain is important information, but it is separate from evidence that there is no wound or that the situation is safe.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
       },
       {
-        "sectionId": "kaigo-atomic-diabetes-complications",
-        "paragraphIndex": 2,
+        "path": [
+          "sections",
+          "kaigo-atomic-diabetes-complications",
+          "paragraphs",
+          2
+        ],
         "before": "If a wound, redness or skin breakdown is found, report location, appearance, sensation and noticing time according to the facility plan. Do not omit records because pain is absent or independently apply medication and obscure the course.",
-        "after": "If you find a wound, redness, skin breakdown or a similar change, report its location, observed appearance, the person’s sensation and the time you noticed it according to the facility’s plan. Do not omit the record because there is no pain, or independently apply medication and obscure how the condition develops."
+        "after": "If you find a wound, redness, skin breakdown or a similar change, report its location, observed appearance, the person’s sensation and the time you noticed it according to the facility’s plan. Do not omit the record because there is no pain, or independently apply medication and obscure how the condition develops.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
       },
       {
-        "sectionId": "kaigo-atomic-internal-disability",
-        "paragraphIndex": 6,
+        "path": [
+          "sections",
+          "kaigo-atomic-internal-disability",
+          "paragraphs",
+          6
+        ],
         "before": "Stoma appliances and waste handling follow the personal plan and necessary training. Report surrounding redness, skin breakdown, leaks or changes from usual. Inexperienced workers must not improvise appliance or opening adjustments.",
-        "after": "Handle stoma appliances and excreted material according to the person’s plan and the necessary training. Report redness or skin breakdown around the stoma, leaks and changes from usual. A worker without the relevant experience must not improvise adjustments to the appliance or opening."
+        "after": "Handle stoma appliances and excreted material according to the person’s plan and the necessary training. Report redness or skin breakdown around the stoma, leaks and changes from usual. A worker without the relevant experience must not improvise adjustments to the appliance or opening.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
+      },
+      {
+        "path": [
+          "lessons",
+          "86",
+          "artCaption"
+        ],
+        "before": "Staff check meal information together. Communicate observations separately from personal words.",
+        "after": "Staff check meal information together. Communicate observations separately from the person’s own words.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
       }
     ],
-    "otherRepairs": "Changed “personal words” to “the person’s own words” in natural-language values where present; week10 question grammar and week14 passage spacing corrected. IDs and opaque revisions excluded.",
-    "checks": [
-      "No other target locale read or used.",
-      "Preserved individual care plans, medical-professional recipients, consent, method permission, uncertainty and reporting urgency.",
-      "Retained every reading field including explicit empty readings and absence when absent.",
-      "Targeted complete-prose repairs preserve source conditions and do not create clinical instructions."
+    "rejectedStaleRemoteFields": [
+      {
+        "path": [
+          "sections",
+          "kaigo-atomic-pneumonia",
+          "paragraphs",
+          1
+        ],
+        "reason": "Remote predates canonical Japanese below-vocal-cords refinement. Current direct-JA paragraph and ja-master-v1-2cbcb290 retained."
+      },
+      {
+        "path": [
+          "sections",
+          "kaigo-atomic-pneumonia",
+          "sourceRevision"
+        ],
+        "reason": "Remote predates canonical Japanese below-vocal-cords refinement. Current direct-JA paragraph and ja-master-v1-2cbcb290 retained."
+      }
     ],
-    "humanReviewed": false,
-    "domainReviewed": false,
-    "nativeReviewed": false,
-    "releaseReady": false
+    "noOtherLocaleRead": true,
+    "allBindingsRechecked": true,
+    "allIdsArraysAndAnswerIndicesPreserved": true
   }
 }

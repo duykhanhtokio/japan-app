@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "date": "2026-10-16",
+  "baselineCommit": "afdf012cb4e4e430541d6e326819b040ae667484",
+  "status": "ai_evidence_checked_terminology_precision_refinement",
+  "reason": "Translation source comparison found week13 omits the explicit below-vocal-fold boundary already present in weeks04/20/21. Clarify the canonical Japanese first; do not silently add a boundary in individual translations.",
+  "patches": [
+    {
+      "week": 13,
+      "sectionId": "kaigo-atomic-pneumonia",
+      "paragraphIndex": 1,
+      "beforeJa": "嚥下障害は、食べ物や飲み物などを飲み込む過程に問題があることです。誤嚥は、本来食道へ進むべき物などが気道へ入ることを指します。関係する言葉ですが同じ意味ではなく、嚥下の障害すべてを誤嚥と言い換えません。",
+      "afterJa": "嚥下障害は、食べ物や飲み物などを飲み込む過程に問題があることです。誤嚥は、本来食道へ進むべき物などが声帯より下の気道へ入ることを指します。関係する言葉ですが同じ意味ではなく、嚥下の障害すべてを誤嚥と言い換えません。",
+      "sourceId": "asha-pas-boundary-2019"
+    }
+  ],
+  "additionalVerifiedSources": {
+    "asha-pas-boundary-2019": {
+      "url": "https://pubs.asha.org/doi/10.1044/2019_JSLHR-S-18-0448",
+      "publisher": "ASHA / Journal of Speech, Language, and Hearing Research",
+      "publicationDate": "2019-05-21",
+      "accessDate": "2026-10-16",
+      "sourceSection": "Appendix, ASPEKT step3, Penetration-Aspiration Scale points2–8",
+      "assertionsJa": [
+        "声帯を越えて下の気道へ入る誤嚥と、声帯を越えない喉頭への侵入を区別する。"
+      ],
+      "limitsJa": "用語の境界のみ。検査手順、食形態、量、手技や治療の推奨を教材へ移さない。"
+    }
+  },
+  "originalFourDispositionsUnchanged": true,
+  "questionContentChanged": false,
+  "idsOrderAnswerPositionsAndAttemptKeysPreserved": true,
+  "clinicalProceduresImported": false,
+  "sourceKnowledgeCoveragePercent": null,
+  "humanReviewed": false,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "nativeDeviceTested": false,
+  "rightsApproved": false,
+  "releaseReady": false,
+  "canonicalTranslationPacket": {
+    "week": 13,
+    "path": "/workspace/scratch/64c65738732f/kaigo-isolated-he0gx2q5/packets/week-13.ja.json",
+    "sha256": "d97a0305896ea43bb60775035dbd4ff95bac4148f3c665a3bd7c9b2e1b09347e",
+    "sourceMasterSha256": "0c1c01f88e5d7eb4e2f80be0c0f15e579149c6e1d2541ce1679dad8e97dab563",
+    "sourceBaseCommit": "afdf012cb4e4e430541d6e326819b040ae667484",
+    "sourceState": "working_tree_snapshot",
+    "sectionRevision": "ja-master-v1-2cbcb290"
+  },
+  "illustrationRecheck": {
+    "day": 86,
+    "artId": "kaigo-eating-05-knowledge-1",
+    "path": "assets/kaigo/paragraphs/kaigo-eating-05-knowledge-1-v1.webp",
+    "sha256": "bacbe1aff0331ed1d894178585f7a162b96a4cf5d571f84ff2c3dab5e4277f4b",
+    "aiVisuallyChecked": true,
+    "finding": "Two care workers discuss food observations with a notebook; context illustration, not an airway anatomy or swallowing-technique diagram. Existing Japanese caption remains accurate.",
+    "imageChanged": false,
+    "captionChanged": false,
+    "humanReviewed": false
+  }
+}

@@ -5,7 +5,7 @@
   "translatedFrom": "ja",
   "status": "translated_ai_unreviewed",
   "sourceCommit": "9ff9ec014ade9a110f9434ac675fe70ae97eda3d",
-  "sourcePacketPath": "/workspace/scratch/64c65738732f/translation-packets/week-08.ja.json",
+  "sourcePacketPath": "/workspace/scratch/64c65738732f/kaigo-isolated-he0gx2q5/packets/week-08.ja.json",
   "sourcePacketSha256": "0a40f426daa636328d3bc20d32ee26ab3f97ebd63a9995f780f4582756e484bd",
   "directJapanese": true,
   "noCrossTranslation": true,
@@ -15,10 +15,16 @@
   "rightsReviewed": false,
   "releaseReady": false,
   "nativeDeviceTested": false,
+  "localeProfile": {
+    "path": "docs/ssw-workspace/kaigo/locale-profiles/zh-TW.json",
+    "sha256": "44a27f33b5c928ff5edefeed098740c20fa18837b1ba3294cfb784100b1f5211",
+    "reused": true
+  },
   "counts": {
     "sections": 86,
     "sectionParagraphs": 294,
     "uniqueJapaneseParagraphStrings": 252,
+    "newUniqueGlossaryParagraphStrings": 32,
     "identicalJapaneseParagraphsCheckedAgainstOwnPriorWeeks": 24,
     "lessonMetadata": 7,
     "objectives": 14,
@@ -198,56 +204,102 @@
       "sha256": "68798916e093c06b4a79b859e55b762839f8903bea474381603a25237cd18c8c"
     }
   ],
-  "sameLocaleConsistencyInputs": [
-    "src/data/kaigo/japanese-master/translations/week-01.zh-TW.json",
-    "src/data/kaigo/japanese-master/translations/week-02.zh-TW.json",
-    "src/data/kaigo/japanese-master/translations/week-03.zh-TW.json",
-    "src/data/kaigo/japanese-master/translations/week-04.zh-TW.json",
-    "src/data/kaigo/japanese-master/translations/week-05.zh-TW.json",
-    "src/data/kaigo/japanese-master/translations/week-06.zh-TW.json",
-    "src/data/kaigo/japanese-master/translations/week-07.zh-TW.json"
-  ],
-  "localeProfile": {
-    "path": "docs/ssw-workspace/kaigo/locale-profiles/zh-TW.json",
-    "sha256": "44a27f33b5c928ff5edefeed098740c20fa18837b1ba3294cfb784100b1f5211",
-    "reused": true
-  },
   "editorialReview": {
     "performedBy": "AI",
-    "directJapaneseOnly": true,
-    "otherLocaleInputsUsed": false,
+    "allTranslatedFieldsReadAgainstJapanese": true,
+    "sourceMeaningAltered": false,
+    "japaneseSourceDiscrepanciesFound": [],
     "newMedicalOrLegalClaimsAdded": false,
     "checks": [
-      "依原日文保留選曲、參與條件、確認支援、重新詢問本人選擇與不參加各階段，不把安排支援當成本人同意或已返房。",
-      "區分評估、計畫、執行、評值；分享感想以本人意願為條件，不自行批准新目標或更改計畫。",
-      "保留日本高齡者虐待防止法第二十一條第一項的適用範圍、同一設置者等的範圍與市町村通報對象；不等內部確定調查或主管許可才通報。",
-      "一般面談的說明、錄音、照片傳送與私人訊息方法分別確認；不將虐待通報規定當成向家人傳送的同意。",
-      "身體約束三要件、組織程序、本人家人與相關人員討論、持續觀察與不符要件立即解除均保留，不教授實施或解除手法。",
-      "保留突然單側無力立即求援、呼喚有回應不能否定緊急性、撥出不等於接通、接通後繼續依指示處理。",
-      "虛構地址與離線訓練保留，不實際撥119；頸部或嘴巴的一般提問練習另屬不同場景，不放在救急求援之前。",
-      "指甲異常先向醫療人員傳達狀態、確認可執行範圍與個別計畫；不以沐浴後柔軟作為可剪異常指甲的依據。",
-      "化妝遵守每項產品意願、不用遮蓋皮膚變化取代確認；睡前整理與皮膚處理保留原文限制。",
-      "有效題目閱讀完整翻譯，題24、28、29、39專屬閱讀保留完整條件、角色及方法，不以較短共用閱讀替代。",
-      "保留日文詞頭與假名，沿用自己前七週對相同日文的繁體譯文；恵等姓名原字不改。"
+      "直接由日文翻成尊重成人、自然連貫的臺灣繁體中文，沒有其他語言翻譯輸入。",
+      "保留短時間參與、回程支援與時間等本人條件。條件符合後仍重新詢問目前選擇，不當成自動同意參加。",
+      "區分照顧過程的評估、計畫、執行與評值，保留工作人員支援與本人結果的差異，不以選書代替分享完成。",
+      "完整保留一般資訊分享的內容、對象、方法與同意，以及向負責人確認，不把面談同意擴大為錄音、照片傳送或私人訊息。",
+      "日本虐待通報的法律範圍與第二十一條第一項保留；區分內部報告、市町村通報，不新增臺灣法律或套用全部家庭情境。",
+      "保留虐待疑慮階段、未確認傷勢及供餐狀態，未編造觀察或確定結論。",
+      "身體約束保留原則禁止、全三要件、組織程序、記錄、觀察、重新檢討及不再符合要件時立即解除，不教授操作或自行解除方法。",
+      "突然單側無力保留立即求援、不因有回應而否定緊急性；分清未接通與已接通、持續處理，保留同事另支電話及本人身旁分工。",
+      "虛構通報地址與離線訓練限制保留，不實際撥119，不新增病名、年齡或數值。",
+      "指甲異常保留向醫療人員諮詢、個別計畫與職責範圍；化妝保留各產品同意、皮膚變化與停止諮詢。",
+      "全部58題題目、四選項、四項理由及有效閱讀對照日文，答案位置與閱讀有無不變；完整對話閱讀依原段落翻譯組合。",
+      "相同日文段落沿用自己前七週已核對的相同譯文，維持用語一致，未讀其他語系。"
     ],
-    "semanticCorrections": [
-      "將部位與症狀的說明調成完整自然句，保留嘴唇外側、口內、開始時間與感覺的各項確認。"
-    ]
+    "sameLocaleRemoteReconciliation": {
+      "remoteCommit": "6904db6f",
+      "candidatePath": "/workspace/scratch/64c65738732f/kaigo-isolated-he0gx2q5/zh-TW/remote-review/week-08.zh-TW.json",
+      "candidateSha256": "68798916e093c06b4a79b859e55b762839f8903bea474381603a25237cd18c8c",
+      "ownPreviousSha256": "076a7c2037ff97a6a586e7e3ce3f75d9928ecd566bd2c4b0d5cb964773ec49c7",
+      "decision": "adopt_one_clearer_target_paragraph",
+      "directJapanese": true,
+      "noCrossTranslation": true,
+      "differentTextFields": 1,
+      "adoptedFields": [
+        {
+          "sectionId": "kaigo-review-04-knowledge-0",
+          "paragraphIndex": 0,
+          "sourceJapanese": "からだのどこかという部位と、痛い・かゆい・しびれる・腫れるなどの症状は別の情報です。「口の辺り」だけでは唇の外側か口の中か分かりません。本人が指す場所、始まった時期、感じ方を確かめます。",
+          "before": "身體哪裡的部位資訊，與痛、癢、麻、腫等症狀，是不同資訊。只說「嘴巴附近」，不知道是嘴唇外側還是口內。應確認本人指的位置、何時開始，以及感覺。",
+          "after": "身體哪個部位的資訊，與疼痛、發癢、麻木、腫脹等症狀，是不同的資訊。只說「嘴巴附近」，還不知道指的是嘴唇外側還是口腔內。應確認本人所指的位置、何時開始，以及具體的感覺。",
+          "reason": "對照日文，候選完整保留部位與症狀、嘴唇外側與口內、本人所指位置、開始時間及感覺，語句更連貫自然，因此採用。"
+        }
+      ],
+      "unchanged": "其餘所有內容、ID、來源版號、題目、選項、理由、閱讀與正答位置與已核對自有譯文一致。",
+      "method": "先比對全部欄位找到唯一差異，再直接與日文核對該段，不以候選當翻譯來源。",
+      "humanReviewed": false,
+      "domainReviewed": false,
+      "nativeReviewed": false,
+      "rightsReviewed": false,
+      "releaseReady": false,
+      "nativeDeviceTested": false
+    }
   },
+  "sameLocaleConsistencyInputs": [
+    "/workspace/scratch/64c65738732f/japan-app/src/data/kaigo/japanese-master/translations/week-01.zh-TW.json",
+    "/workspace/scratch/64c65738732f/japan-app/src/data/kaigo/japanese-master/translations/week-02.zh-TW.json",
+    "/workspace/scratch/64c65738732f/japan-app/src/data/kaigo/japanese-master/translations/week-03.zh-TW.json",
+    "/workspace/scratch/64c65738732f/japan-app/src/data/kaigo/japanese-master/translations/week-04.zh-TW.json",
+    "/workspace/scratch/64c65738732f/japan-app/src/data/kaigo/japanese-master/translations/week-05.zh-TW.json",
+    "/workspace/scratch/64c65738732f/japan-app/src/data/kaigo/japanese-master/translations/week-06.zh-TW.json",
+    "/workspace/scratch/64c65738732f/japan-app/src/data/kaigo/japanese-master/translations/week-07.zh-TW.json"
+  ],
+  "newLocaleTerminology": {
+    "care_process": "照顧過程",
+    "assessment": "評估",
+    "care_plan": "照顧計畫",
+    "implementation": "執行",
+    "evaluation": "評值",
+    "elder_abuse": "高齡者虐待",
+    "municipality": "市町村（日本地方自治體）",
+    "urgency_requirement": "切迫性",
+    "non_substitutability": "非替代性",
+    "temporary_requirement": "暫時性"
+  },
+  "japaneseIntentionallyPreserved": [
+    "詞彙表保留日文詞頭、假名，定義及實用表達為繁體中文。",
+    "虛構地址中的さくら、ひだまりケア等專名保留，不替換成真實通報地點。",
+    "法律內容保留日本制度定位，不轉換為臺灣法律。"
+  ],
   "checks": {
     "exactSectionLessonQuestionIds": "pass",
     "parallelParagraphCounts": "pass",
+    "exactFigureCaptionKeys": "pass",
     "perItemSourceRevision": "pass",
     "allCorrectIndicesUnchanged": "pass",
     "fourOptionsAndSpecificRationales": "pass",
     "effectiveReadingPresenceAndEmptyState": "pass",
     "identicalJapaneseParagraphsUseIdenticalTranslation": "pass",
     "sameLocaleSharedGlossaryConsistency": "pass",
-    "approvalFlagsRemainFalse": "pass"
+    "approvalFlagsRemainFalse": "pass",
+    "otherLocaleInputsUsed": false,
+    "runtimeIntegrationPerformedByThisAgent": false,
+    "nativeDeviceCheckPerformed": false
   },
   "limits": [
-    "AI直接翻譯與編輯檢查，尚未經專業、母語或權利審閱，不代表發行承認。",
-    "未修改日文、其他語言、共享登錄檔、UI、圖片或Git；整合與裝置測試由主協調者執行。",
-    "每週練習不等於12份完整模擬題已翻譯；本次僅完成第八週。"
+    "AI翻譯與編輯檢查，尚未經專業或母語審閱，不代表權利或發行承認。",
+    "未修改日文主檔、題目來源、其他語言、UI、圖片或共享檔案，未提交。",
+    "未在實際裝置確認字型、換行或顯示，整合與裝置測試由主協調者另行執行。",
+    "圖說沿用日文限制，不把圖像當同意、處理完成或器材操作的專業承認。",
+    "只翻譯已核對日文，不另新增醫療或法律主張，也不轉換為臺灣制度。",
+    "不同段落字串數不是不同知識概念數或全書覆蓋率。"
   ]
 }

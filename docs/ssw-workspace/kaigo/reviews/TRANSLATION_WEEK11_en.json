@@ -4,7 +4,7 @@
   "language": "en",
   "sourceLanguage": "ja",
   "sourceCommit": "9ff9ec014ade9a110f9434ac675fe70ae97eda3d",
-  "canonicalPacketPath": "/workspace/scratch/64c65738732f/translation-packets/week-11.ja.json",
+  "canonicalPacketPath": "/workspace/scratch/64c65738732f/kaigo-isolated-he0gx2q5/packets/week-11.ja.json",
   "canonicalPacketSha256": "29d518c3c8767bd5d9bb8b86662f6b5fdd1669a5b2686b03a8c4aee403757b03",
   "translationPath": "src/data/kaigo/japanese-master/translations/week-11.en.json",
   "translationSha256": "6964c922bc96cfd88029d1b40b74d565315aeff9cd272f64a1217f73e9e526a9",
@@ -82,6 +82,12 @@
       "check": "source_comparison",
       "result": "pass",
       "note": "Read all Japanese prompts,28options and28individual reasons. Preserved answer positions, site precision, unknown assessments and source clinical limits. No readings exist, so none invented."
+    },
+    {
+      "target": "own remote EN candidate differences",
+      "check": "direct_Japanese_clarity_reconciliation",
+      "result": "pass",
+      "note": "Compared all 5 differing fields with canonical Japanese. Adopted 5 clearer adult-English fields; retained 0 newer source-correct fields. Person’s own words, full conditions, recipients, uncertainty and completed/planned facts preserved."
     }
   ],
   "editorialNotes": [
@@ -97,46 +103,88 @@
   "limits": [
     "AI translation and semantic/structural checking only. Human, domain, native-language, rights, actual-device and release approvals remain false.",
     "No new diagnosis, exercise prescription, personal care technique or treatment was introduced.",
-    "Root handles integration, commits and remote verification. Checkpoint05 remote verification was confirmed before atomic publication."
+    "Root handles integration, commits and remote verification. Complete week11 remains in scratch under checkpoint05 hold."
   ],
-  "semanticEditorialFollowup20261016": {
-    "scope": "Own English weeks09–14 checked against Japanese-only packets; targeted prose and explicit-actor/condition review, not independent native or clinical approval.",
-    "targetedParagraphRepairs": [
+  "isolatedReexport": {
+    "source": "reconstructed from own retained authoring inputs and builders; exact previously notified translation hash reproduced",
+    "sourceTranslationSha256": "c63fa415fd5c4e7146f69f3bad237a09a4e4e89e046b591dceab64eb9886b8ba",
+    "priorEnglishSourceCommit": "afdf012cb4e4e430541d6e326819b040ae667484",
+    "mutableOriginalTranslationsNotUsed": true
+  },
+  "ownEnglishRemoteReconciliation": {
+    "remoteCommit": "6904db6f",
+    "remoteCandidatePath": "/workspace/scratch/64c65738732f/kaigo-isolated-he0gx2q5/en/remote-review/week-11.en.json",
+    "remoteCandidateSha256": "6964c922bc96cfd88029d1b40b74d565315aeff9cd272f64a1217f73e9e526a9",
+    "priorPrivateTranslationSha256": "c63fa415fd5c4e7146f69f3bad237a09a4e4e89e046b591dceab64eb9886b8ba",
+    "auditScope": "All differing leaf fields compared directly to current canonical JA; unchanged fields covered by prior completed direct-JA review. This is an AI clarity/semantic reconciliation, not independent native or domain review.",
+    "differenceFields": 5,
+    "adoptedFields": 5,
+    "retainedNewerCanonicalFields": 0,
+    "changes": [
       {
-        "sectionId": "kaigo-atomic-skeleton-functions",
-        "paragraphIndex": 2,
+        "path": [
+          "sections",
+          "kaigo-atomic-skeleton-functions",
+          "paragraphs",
+          2
+        ],
         "before": "The spine has physiological curves, described as S-shaped from the side. Appearance alone does not diagnose spinal disease. Specifically report actually confirmed posture, pain and other conditions.",
-        "after": "The spine has physiological curves and is described as S-shaped when viewed from the side. Its appearance alone does not allow you to diagnose a spinal disease. Clearly communicate the posture, pain or other conditions that you have actually confirmed."
+        "after": "The spine has physiological curves and is described as S-shaped when viewed from the side. Its appearance alone does not allow you to diagnose a spinal disease. Clearly communicate the posture, pain or other conditions that you have actually confirmed.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
       },
       {
-        "sectionId": "kaigo-atomic-skeleton-functions",
-        "paragraphIndex": 4,
+        "path": [
+          "sections",
+          "kaigo-atomic-skeleton-functions",
+          "paragraphs",
+          4
+        ],
         "before": "This section teaches body mechanisms. Actual assistance follows condition, the individual care plan and practical training. Do not correct posture or start exercise from this explanation alone.",
-        "after": "This section explains how the body works. The actual method of assistance must follow the person’s condition, individual care plan and practical training. Do not use this explanation alone as a basis for correcting someone’s posture or starting exercise."
+        "after": "This section explains how the body works. The actual method of assistance must follow the person’s condition, individual care plan and practical training. Do not use this explanation alone as a basis for correcting someone’s posture or starting exercise.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
       },
       {
-        "sectionId": "kaigo-atomic-muscle-labels",
-        "paragraphIndex": 0,
+        "path": [
+          "sections",
+          "kaigo-atomic-skeleton-labels",
+          "paragraphs",
+          5
+        ],
+        "before": "[Learning comparison] If a record identifies the femoral neck, reporting only ‘thigh’ loses necessary precision. Communicate the confirmed site and personal words without adding unassessed fractures or disease names.",
+        "after": "[Learning comparison] If a record identifies the femoral neck, reporting only ‘thigh’ loses necessary precision. Communicate the confirmed site and the person’s own words without adding unassessed fractures or disease names.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
+      },
+      {
+        "path": [
+          "sections",
+          "kaigo-atomic-muscle-labels",
+          "paragraphs",
+          0
+        ],
         "before": "The deltoid is around the shoulder and the pectoralis major on the front chest. The biceps brachii is at the front of the upper arm and the triceps brachii at the back. First establish front or back view when reading muscle diagrams.",
-        "after": "The deltoid is around the shoulder, and the pectoralis major is at the front of the chest. In the upper arm, identify the biceps brachii at the front and the triceps brachii at the back. Before reading a muscle diagram, first check whether it shows the front or the back of the body."
+        "after": "The deltoid is around the shoulder, and the pectoralis major is at the front of the chest. In the upper arm, identify the biceps brachii at the front and the triceps brachii at the back. Before reading a muscle diagram, first check whether it shows the front or the back of the body.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
       },
       {
-        "sectionId": "kaigo-atomic-senses",
-        "paragraphIndex": 4,
+        "path": [
+          "sections",
+          "kaigo-atomic-senses",
+          "paragraphs",
+          4
+        ],
         "before": "[Learning comparison] Improved sound understanding with a hearing aid does not establish the entire auditory pathway as normal. Check accessible communication and wishes; consult professionals for necessary assessment and device adjustment.",
-        "after": "[Learning comparison] A person’s improved ability to understand sounds while using a hearing aid does not establish that their entire auditory pathway is normal. Check which communication methods they can understand and what they prefer. Consult the appropriate professionals about any necessary assessment or adjustment of the device."
+        "after": "[Learning comparison] A person’s improved ability to understand sounds while using a hearing aid does not establish that their entire auditory pathway is normal. Check which communication methods they can understand and what they prefer. Consult the appropriate professionals about any necessary assessment or adjustment of the device.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
       }
     ],
-    "otherRepairs": "Changed “personal words” to “the person’s own words” in natural-language values where present; week10 question grammar and week14 passage spacing corrected. IDs and opaque revisions excluded.",
-    "checks": [
-      "No other target locale read or used.",
-      "Preserved individual care plans, medical-professional recipients, consent, method permission, uncertainty and reporting urgency.",
-      "Retained every reading field including explicit empty readings and absence when absent.",
-      "Targeted complete-prose repairs preserve source conditions and do not create clinical instructions."
-    ],
-    "humanReviewed": false,
-    "domainReviewed": false,
-    "nativeReviewed": false,
-    "releaseReady": false
+    "rejectedStaleRemoteFields": [],
+    "noOtherLocaleRead": true,
+    "allBindingsRechecked": true,
+    "allIdsArraysAndAnswerIndicesPreserved": true
   }
 }

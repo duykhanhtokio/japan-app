@@ -27,7 +27,23 @@ const mount=async m=>{let t;await act(async()=>{t=create(React.createElement(m.K
     global.__tokuteiStorage.set('@japan_app_tokutei_reading_appearance_v1',mode);
     const t=await mount(m);await click(t,'kaigo-week-'+week);await click(t,'kaigo-calendar-day-'+entry.day);
     const sections=m.japaneseSectionsFor(entry);
-    for(const section of sections){assert.equal(nodes(t,`kaigo-master-translation-${section.id}-0`).length,0,'Translation hidden initially');assert(text(t).includes(section.paragraphsJa[0]));}
+    for(const section of sections){
+      assert.equal(nodes(t,`kaigo-master-translation-${section.id}-0`).length,0,'Translation hidden initially');
+      for(const [index,paragraph] of section.paragraphsJa.entries()) {
+        const source=get(t,`kaigo-source-${section.id}-${index}`);
+        const ruby=index===0 && paragraph===section.japanese ? section.ruby : undefined;
+        if(ruby?.length) {
+          assert.equal(ruby.map(token=>token.text).join(''),paragraph,'Ruby base text must equal the Japanese source');
+          assert.equal(source.children.length,ruby.length,'Every Japanese ruby token must render');
+          ruby.forEach((token,i)=>{
+            const child=source.children[i];
+            if(token.text==='\n') assert.equal(child.props.style.width,'100%','Japanese line break');
+            else assert.deepEqual(child.findAll(n=>n.type==='Text').map(n=>flatten(n.children)),
+              [...(token.readingKana?[token.readingKana]:[]),token.text],'Exact Japanese base text and furigana');
+          });
+        } else assert.equal(flatten(source.children),paragraph,`Japanese paragraph day${entry.day} ${section.id}:${index} ${locale} ${mode}`);
+      }
+    }
     await click(t,'kaigo-translation');
     for(const section of sections){const translated=m.translationForMaster(section.id,locale);for(let i=0;i<translated.paragraphs.length;i++){
       const node=get(t,`kaigo-master-translation-${section.id}-${i}`);assert.equal(flatten(node.children),translated.paragraphs[i]);

@@ -5,13 +5,16 @@ const path = require('node:path');
 const os = require('node:os');
 const { spawnSync, execFileSync } = require('node:child_process');
 const assert = require('node:assert/strict');
+const crypto = require('node:crypto');
 const root = path.resolve(__dirname, '..');
 const batch = process.env.KAIGO_TRANSLATION_BATCH;
 assert(/^\d{2}$/.test(batch ?? ''), 'Set KAIGO_TRANSLATION_BATCH to the checkpoint number');
 const reportPath = path.join(root, `docs/ssw-workspace/kaigo/reviews/TRANSLATION_BATCH${batch}_RUNTIME.json`);
 assert(!fs.existsSync(reportPath), 'Preserve completed checkpoint runtime reports');
 const git = args => execFileSync('git', args, { cwd: root, encoding: 'utf8' }).split('\n').filter(Boolean);
-const changed = new Set([...git(['diff', '--name-only', 'HEAD']), ...git(['ls-files', '--others', '--exclude-standard'])]);
+const baseRef = process.env.KAIGO_TRANSLATION_BASE_REF ?? 'HEAD';
+execFileSync('git', ['rev-parse', '--verify', `${baseRef}^{commit}`], { cwd: root });
+const changed = new Set([...git(['diff', '--name-only', baseRef]), ...git(['ls-files', '--others', '--exclude-standard'])]);
 for (const value of (process.env.KAIGO_TRANSLATION_FULL_WEEKS ?? '').split(',').filter(Boolean)) {
   const week = Number(value);
   assert(Number.isInteger(week) && week >= 1 && week <= 26, 'Invalid full-week runtime scope');
@@ -49,13 +52,22 @@ for (const [week, locales] of [...groups].sort((a, b) => a[0] - b[0])) {
 }
 // Publish reports only after the entire selected snapshot passes.
 for (const report of reports) {
-  if (report.counts.length === 6) fs.writeFileSync(path.join(root,
-    `docs/ssw-workspace/kaigo/reviews/TRANSLATION_WEEK${String(report.week).padStart(2, '0')}_RUNTIME.json`),
-  JSON.stringify(report, null, 2) + '\n');
+  if (report.counts.length === 6) {
+    const weeklyPath = path.join(root, `docs/ssw-workspace/kaigo/reviews/TRANSLATION_BATCH${batch}_WEEK${String(report.week).padStart(2, '0')}_RUNTIME.json`);
+    assert(!fs.existsSync(weeklyPath), 'Preserve completed checkpoint weekly reports');
+    fs.writeFileSync(weeklyPath, JSON.stringify(report, null, 2) + '\n');
+  }
 }
 const aggregate = {
   status: 'PASS_CHANGED_DIRECT_TRANSLATION_BATCH_NATIVE_HOST_RUNTIME',
+  comparisonBaseCommit: execFileSync('git', ['rev-parse', `${baseRef}^{commit}`], { cwd: root, encoding: 'utf8' }).trim(),
   weeks: reports,
+  testedFileHashes: Object.fromEntries(reports.flatMap(r => r.counts.flatMap(c => {
+    const number = String(c.week).padStart(2, '0');
+    return [`src/data/kaigo/japanese-master/week-${number}.json`,
+      `src/data/kaigo/japanese-master/translations/week-${number}.${c.language}.json`,
+      `docs/ssw-workspace/kaigo/reviews/TRANSLATION_WEEK${number}_${c.language}.json`];
+  })).map(file => [file, crypto.createHash('sha256').update(fs.readFileSync(path.join(root, file))).digest('hex')])),
   weekLocalePairsChecked: reports.reduce((n, r) => n + r.counts.length, 0),
   readerDayLocaleModeCases: reports.reduce((n, r) => n + r.readerDayLocaleModeCases, 0),
   paragraphDisplayPairsChecked: reports.reduce((n, r) => n + r.paragraphDisplayPairsChecked, 0),
@@ -64,4 +76,4 @@ const aggregate = {
   nativeReviewed: false, nativeDeviceTested: false, releaseReady: false,
 };
 fs.writeFileSync(reportPath, JSON.stringify(aggregate, null, 2) + '\n');
-console.log(JSON.stringify({ ...aggregate, weeks: undefined }));
+console.log(JSON.stringify({ ...aggregate, weeks: undefined, testedFileHashes: undefined }));

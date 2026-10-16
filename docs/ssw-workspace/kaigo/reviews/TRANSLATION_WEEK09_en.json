@@ -4,7 +4,7 @@
   "language": "en",
   "sourceLanguage": "ja",
   "sourceCommit": "9ff9ec014ade9a110f9434ac675fe70ae97eda3d",
-  "canonicalPacketPath": "/workspace/scratch/64c65738732f/translation-packets/week-09.ja.json",
+  "canonicalPacketPath": "/workspace/scratch/64c65738732f/kaigo-isolated-he0gx2q5/packets/week-09.ja.json",
   "canonicalPacketSha256": "2aaeec6b439c03dedf5b89d1e7d5f4c225fe82eff0637523bcce84328b4947c6",
   "translationPath": "src/data/kaigo/japanese-master/translations/week-09.en.json",
   "translationSha256": "01b9c4c6168c777d9c5f7561a253d015aedb8b2452ca2eab286b95629b4344f9",
@@ -88,6 +88,12 @@
       "check": "qualifiers_and_fact_status",
       "result": "pass",
       "note": "Read all14Japanese prompts,56options and56reasons; explicit individual care plan, instructor/equipment checks, actual measured information and correct answer positions are retained. Six nonempty readings map to two exact Japanese paragraphs; eight explicit empties remain empty."
+    },
+    {
+      "target": "own remote EN candidate differences",
+      "check": "direct_Japanese_clarity_reconciliation",
+      "result": "pass",
+      "note": "Compared all 7 differing fields with canonical Japanese. Adopted 7 clearer adult-English fields; retained 0 newer source-correct fields. Person’s own words, full conditions, recipients, uncertainty and completed/planned facts preserved."
     }
   ],
   "editorialNotes": [
@@ -102,52 +108,111 @@
   ],
   "limits": [
     "AI translation and semantic/structural checking only. All human, domain, native-language, rights, actual-device and release approvals remain false.",
-    "Root handles integration, commits and remote verification. Checkpoint05 remote verification was confirmed before atomic publication."
+    "Root handles integration, commits and remote verification. Complete week09 remains in scratch under checkpoint05 hold."
   ],
-  "semanticEditorialFollowup20261016": {
-    "scope": "Own English weeks09–14 checked against Japanese-only packets; targeted prose and explicit-actor/condition review, not independent native or clinical approval.",
-    "targetedParagraphRepairs": [
+  "isolatedReexport": {
+    "source": "reconstructed from own retained authoring inputs and builders; exact previously notified translation hash reproduced",
+    "sourceTranslationSha256": "3a7e4eedd74ba221a4e22dd1f6824c742ddb74be8fa761daffe85ba394ace138",
+    "priorEnglishSourceCommit": "afdf012cb4e4e430541d6e326819b040ae667484",
+    "mutableOriginalTranslationsNotUsed": true
+  },
+  "ownEnglishRemoteReconciliation": {
+    "remoteCommit": "6904db6f",
+    "remoteCandidatePath": "/workspace/scratch/64c65738732f/kaigo-isolated-he0gx2q5/en/remote-review/week-09.en.json",
+    "remoteCandidateSha256": "01b9c4c6168c777d9c5f7561a253d015aedb8b2452ca2eab286b95629b4344f9",
+    "priorPrivateTranslationSha256": "3a7e4eedd74ba221a4e22dd1f6824c742ddb74be8fa761daffe85ba394ace138",
+    "auditScope": "All differing leaf fields compared directly to current canonical JA; unchanged fields covered by prior completed direct-JA review. This is an AI clarity/semantic reconciliation, not independent native or domain review.",
+    "differenceFields": 7,
+    "adoptedFields": 7,
+    "retainedNewerCanonicalFields": 0,
+    "changes": [
       {
-        "sectionId": "kaigo-review-05-knowledge-2",
-        "paragraphIndex": 1,
+        "path": [
+          "sections",
+          "kaigo-review-05-knowledge-2",
+          "paragraphs",
+          1
+        ],
         "before": "Do not close a read-only item as though explanation and practice were both checked. An app score or one correction does not certify all care skills, professional approval or passing an official examination.",
-        "after": "Do not mark an item as fully checked in both explanation and practical performance merely because you have read it. An app score or a single correction does not certify overall care skills, professional approval or a pass in the official examination."
+        "after": "Do not mark an item as fully checked in both explanation and practical performance merely because you have read it. An app score or a single correction does not certify overall care skills, professional approval or a pass in the official examination.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
       },
       {
-        "sectionId": "kaigo-review-05-transfer-legacy",
-        "paragraphIndex": 1,
+        "path": [
+          "sections",
+          "kaigo-review-05-transfer-legacy",
+          "paragraphs",
+          1
+        ],
         "before": "Preparation is known. Recording completed face washing requires a separate check of implementation. Distinguish prepared objects from personal actions.",
-        "after": "We know that the towel has been prepared. Before recording that the person has finished washing their face, separately confirm what they actually did. Distinguish the state of the prepared items from the person’s actions."
+        "after": "We know that the towel has been prepared. Before recording that the person has finished washing their face, separately confirm what they actually did. Distinguish the state of the prepared items from the person’s actions.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
       },
       {
-        "sectionId": "kaigo-review-05-transfer-legacy",
-        "paragraphIndex": 2,
+        "path": [
+          "sections",
+          "kaigo-review-05-transfer-legacy",
+          "paragraphs",
+          2
+        ],
         "before": "Example wording: ‘The towel is prepared. I haven’t confirmed whether face washing is complete. I’ll check implementation with the person responsible.’",
-        "after": "Example wording: “I have prepared the towel. I have not yet confirmed whether the person has finished washing their face. I will check what has been done with the person responsible.”"
+        "after": "Example wording: “I have prepared the towel. I have not yet confirmed whether the person has finished washing their face. I will check what has been done with the person responsible.”",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
       },
       {
-        "sectionId": "kaigo-atomic-memory",
-        "paragraphIndex": 3,
+        "path": [
+          "sections",
+          "kaigo-atomic-stress",
+          "paragraphs",
+          0
+        ],
+        "before": "People experience and express joy, anger, sadness and enjoyment differently. The same situation does not necessarily produce identical feelings. Expressions and behavior offer clues, but check personal words rather than concluding emotions from them alone.",
+        "after": "People experience and express joy, anger, sadness and enjoyment differently. The same situation does not necessarily produce identical feelings. Expressions and behavior offer clues, but check the person’s own words rather than concluding emotions from them alone.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
+      },
+      {
+        "path": [
+          "sections",
+          "kaigo-atomic-memory",
+          "paragraphs",
+          3
+        ],
         "before": "[Learning example] Skillful use of familiar scissors can coexist with difficulty recalling a newly heard schedule. One skill does not prove all memory preserved. Record abilities and difficulties separately and arrange needed assessment.",
-        "after": "[Learning example] A person may be able to use familiar scissors but have difficulty remembering a schedule they have just heard. This is not necessarily a contradiction. One retained skill does not show that all memory is preserved. Record what the person can do separately from their difficulties and arrange the necessary assessment."
+        "after": "[Learning example] A person may be able to use familiar scissors but have difficulty remembering a schedule they have just heard. This is not necessarily a contradiction. One retained skill does not show that all memory is preserved. Record what the person can do separately from their difficulties and arrange the necessary assessment.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
       },
       {
-        "sectionId": "kaigo-atomic-breathing",
-        "paragraphIndex": 2,
+        "path": [
+          "sections",
+          "kaigo-atomic-breathing",
+          "paragraphs",
+          2
+        ],
         "before": "Bluish-purple lips or nails, called cyanosis, are an important change that can relate to insufficient oxygen. Absence of this color change does not establish safety. Promptly connect new breathlessness with a healthcare professional; with severe difficulty or other urgent conditions, immediately seek help under facility emergency procedures.",
-        "after": "Bluish-purple coloring of the lips or nails, called cyanosis, is an important change that may be associated with insufficient oxygen. However, the absence of this color change does not establish that the person is safe. Promptly seek assessment by a healthcare professional for new breathlessness. In an emergency, such as severe breathing difficulty, immediately seek help according to the facility’s emergency procedures."
+        "after": "Bluish-purple coloring of the lips or nails, called cyanosis, is an important change that may be associated with insufficient oxygen. However, the absence of this color change does not establish that the person is safe. Promptly seek assessment by a healthcare professional for new breathlessness. In an emergency, such as severe breathing difficulty, immediately seek help according to the facility’s emergency procedures.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
+      },
+      {
+        "path": [
+          "lessons",
+          "63",
+          "artCaption"
+        ],
+        "before": "Consult nursing staff, distinguishing personal words, observations and actual measurements.",
+        "after": "Consult nursing staff, distinguishing the person’s own words, observations and actual measurements.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
       }
     ],
-    "otherRepairs": "Changed “personal words” to “the person’s own words” in natural-language values where present; week10 question grammar and week14 passage spacing corrected. IDs and opaque revisions excluded.",
-    "checks": [
-      "No other target locale read or used.",
-      "Preserved individual care plans, medical-professional recipients, consent, method permission, uncertainty and reporting urgency.",
-      "Retained every reading field including explicit empty readings and absence when absent.",
-      "Targeted complete-prose repairs preserve source conditions and do not create clinical instructions."
-    ],
-    "humanReviewed": false,
-    "domainReviewed": false,
-    "nativeReviewed": false,
-    "releaseReady": false
+    "rejectedStaleRemoteFields": [],
+    "noOtherLocaleRead": true,
+    "allBindingsRechecked": true,
+    "allIdsArraysAndAnswerIndicesPreserved": true
   }
 }

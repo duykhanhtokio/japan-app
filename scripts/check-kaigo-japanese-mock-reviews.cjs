@@ -9,7 +9,7 @@ const click=async(t,id)=>act(async()=>{const n=get(t,id);assert(!n.props.disable
 const mount=async m=>{let t;await act(async()=>{t=create(React.createElement(m.KaigoCourse,{active:false,onBack(){}}));await new Promise(setImmediate);});await click(t,'kaigo-weekly-tab-mocks');return t;};
 (async()=>{
  const m=await require('./tokutei-ui-qa/compile.cjs')(root,modules);
- const forms=m.kaigoCourse.mocks;assert.equal(forms.length,12);let questions=0;
+ const forms=m.kaigoCourse.mocks;assert.equal(forms.length,12);let questions=0,actualTranslatedLocaleReviewFlows=0,missingLocaleReviewFlows=0;
  for(const source of forms){const form=m.withJapaneseMockReview(source);assert(form.japaneseReviewApplied,source.id+' Japanese explanations missing');assert.notEqual(form,source);
   const corrections=m.japaneseMockCoreCorrections[source.id];
   if(corrections)assert.notEqual(m.examStorageKey(form),m.examStorageKey(source),'Edited core receives a new attempt revision');
@@ -36,12 +36,34 @@ const mount=async m=>{let t;await act(async()=>{t=create(React.createElement(m.K
   assert.equal(nodes(t,`kaigo-mock-rationale-${source.questions[index].id}-0`).length,0,'No explanations before submission');
   await click(t,'kaigo-submit-exam');assert.equal(nodes(t,'kaigo-mock-review').length,0);await click(t,'kaigo-confirm-submit');assert.equal(nodes(t,'kaigo-mock-review').length,1);
   for(let i=0;i<4;i++){assert.equal(get(t,`kaigo-mock-rationale-${source.questions[index].id}-${i}`).children.join(''),`${i+1}. ${form.questions[index].rationalesJa[i]}`);assert(get(t,'kaigo-option-'+i).props.disabled);}
-  for(const locale of ['vi','en','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl']){global.__tokuteiLanguage=locale;await click(t,'kaigo-mock-translation');assert(flatten(t.toJSON()).includes('この言語の翻訳は準備中です。'));assert(!/[À-ỹ]/u.test(flatten(t.toJSON())),'No stale Vietnamese translation for '+locale);await click(t,'kaigo-mock-translation');}
+  for(const locale of ['vi','en','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl']){
+   global.__tokuteiLanguage=locale;await click(t,'kaigo-mock-translation');
+   const current=form.questions[index],translation=m.translationForMockQuestion(form,current.id,locale),title=m.translationForMockTitle(form,locale);
+   if(translation){
+    assert.equal(flatten(get(t,'kaigo-mock-prompt-translation').children),translation.prompt);
+    for(let i=0;i<4;i++){
+     assert.equal(flatten(get(t,'kaigo-mock-option-translation-'+i).children),translation.options[i]);
+     assert.equal(flatten(get(t,'kaigo-mock-rationale-translation-'+i).children),`${i+1}. ${translation.rationales[i]}`);
+    }
+    for(const[field,id]of [['passage','kaigo-mock-passage-translation'],['figureDescription','kaigo-mock-figure-translation']]){
+     if(translation[field])assert.equal(flatten(get(t,id).children),translation[field]);else assert.equal(nodes(t,id).length,0);
+    }
+    actualTranslatedLocaleReviewFlows++;
+   }else{
+    assert(flatten(t.toJSON()).includes('この言語の翻訳は準備中です。'));
+    assert.equal(nodes(t,'kaigo-mock-prompt-translation').length,0,'No other-locale question fallback');
+    for(let i=0;i<4;i++)for(const kind of ['option','rationale'])assert.equal(nodes(t,`kaigo-mock-${kind}-translation-${i}`).length,0);
+    missingLocaleReviewFlows++;
+   }
+   if(title)assert.equal(flatten(get(t,'kaigo-mock-title-translation').children),title.title);else assert.equal(nodes(t,'kaigo-mock-title-translation').length,0);
+   await click(t,'kaigo-mock-translation');
+  }
   await act(async()=>t.unmount());const saved=JSON.parse(global.__tokuteiStorage.get(key));assert.equal(saved.status,'submitted');assert.equal(saved.currentQuestion,index);assert.equal(saved.remainingMs,active.remainingMs);assert.deepEqual(saved.answers,active.answers);
   if(corrections)assert.equal(global.__tokuteiStorage.get(oldKey),oldValue,'Old revision remains archived unchanged');
   t=await mount(m);await click(t,'kaigo-mock-'+source.id);assert.equal(nodes(t,'kaigo-mock-review').length,1,'Submitted compatible attempt restores with Japanese explanation');await act(async()=>t.unmount());
  }
  assert.equal(questions,360);
  const report={status:'PASS_JAPANESE_MOCK_EXPLANATIONS_INTERNAL_PREVIEW',forms:forms.length,questions,optionRationales:questions*4,unchangedCoreForms:forms.length-Object.keys(m.japaneseMockCoreCorrections).length,explicitlyRevisedForms:Object.keys(m.japaneseMockCoreCorrections).length,sourceLegacyJSONPreserved:true,oldAttemptRecordsPreserved:true,revisedFormsUseSeparateKeys:true,originalTimingPreserved:true,explanationsOnlyAfterSubmission:true,missingTranslationsNoVietnameseFallback:true,selectedTranslationLanguagesChecked:12,humanReviewed:false,domainReviewed:false,nativeDeviceTested:false,releaseReady:false};
+ report.actualTranslatedLocaleReviewFlows=actualTranslatedLocaleReviewFlows;report.missingLocaleReviewFlows=missingLocaleReviewFlows;
  if(process.env.KAIGO_JAPANESE_MOCK_REPORT)fs.writeFileSync(process.env.KAIGO_JAPANESE_MOCK_REPORT,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 })().catch(e=>{console.error(e);process.exit(1);});

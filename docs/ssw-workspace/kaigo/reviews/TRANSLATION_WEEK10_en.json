@@ -4,7 +4,7 @@
   "language": "en",
   "sourceLanguage": "ja",
   "sourceCommit": "9ff9ec014ade9a110f9434ac675fe70ae97eda3d",
-  "canonicalPacketPath": "/workspace/scratch/64c65738732f/translation-packets/week-10.ja.json",
+  "canonicalPacketPath": "/workspace/scratch/64c65738732f/kaigo-isolated-he0gx2q5/packets/week-10.ja.json",
   "canonicalPacketSha256": "30a2a4bed1e8fbd9ec1f44a4ecdf08707203740eb873aa284dbde7a7241bb2d1",
   "translationPath": "src/data/kaigo/japanese-master/translations/week-10.en.json",
   "translationSha256": "311bdf7593103e355c0a03a6b1909f514f58caa1750134e26922f97aacc64279",
@@ -82,6 +82,12 @@
       "check": "answer_preservation",
       "result": "pass",
       "note": "Read all Japanese prompts,28options and28individual rationales. Retained option order and correct indices, including true-but-nonresponsive distractors from the canonical source; did not author replacement assessments."
+    },
+    {
+      "target": "own remote EN candidate differences",
+      "check": "direct_Japanese_clarity_reconciliation",
+      "result": "pass",
+      "note": "Compared all 6 differing fields with canonical Japanese. Adopted 6 clearer adult-English fields; retained 0 newer source-correct fields. Person’s own words, full conditions, recipients, uncertainty and completed/planned facts preserved."
     }
   ],
   "editorialNotes": [
@@ -97,34 +103,98 @@
   "limits": [
     "AI translation and semantic/structural checks only. Human, domain, native-language, rights, actual-device and release approvals remain false.",
     "No new blood-pressure thresholds, diagnoses, clinical operations or medications were introduced.",
-    "Root handles integration, commits and remote verification. Checkpoint05 remote verification was confirmed before atomic publication."
+    "Root handles integration, commits and remote verification. Complete week10 remains in scratch under checkpoint05 hold."
   ],
-  "semanticEditorialFollowup20261016": {
-    "scope": "Own English weeks09–14 checked against Japanese-only packets; targeted prose and explicit-actor/condition review, not independent native or clinical approval.",
-    "targetedParagraphRepairs": [
+  "isolatedReexport": {
+    "source": "reconstructed from own retained authoring inputs and builders; exact previously notified translation hash reproduced",
+    "sourceTranslationSha256": "8a8ecfc72b0e01b3f370916d6e91959962ff5f9cfe546269d2f468f49210619e",
+    "priorEnglishSourceCommit": "afdf012cb4e4e430541d6e326819b040ae667484",
+    "mutableOriginalTranslationsNotUsed": true
+  },
+  "ownEnglishRemoteReconciliation": {
+    "remoteCommit": "6904db6f",
+    "remoteCandidatePath": "/workspace/scratch/64c65738732f/kaigo-isolated-he0gx2q5/en/remote-review/week-10.en.json",
+    "remoteCandidateSha256": "311bdf7593103e355c0a03a6b1909f514f58caa1750134e26922f97aacc64279",
+    "priorPrivateTranslationSha256": "8a8ecfc72b0e01b3f370916d6e91959962ff5f9cfe546269d2f468f49210619e",
+    "auditScope": "All differing leaf fields compared directly to current canonical JA; unchanged fields covered by prior completed direct-JA review. This is an AI clarity/semantic reconciliation, not independent native or domain review.",
+    "differenceFields": 6,
+    "adoptedFields": 6,
+    "retainedNewerCanonicalFields": 0,
+    "changes": [
       {
-        "sectionId": "kaigo-atomic-pressure-context",
-        "paragraphIndex": 4,
+        "path": [
+          "sections",
+          "kaigo-atomic-pressure-context",
+          "paragraphs",
+          4
+        ],
         "before": "If two values differ and the second follows activity, report both values and their respective conditions separately. Do not dismiss an unusual value because of activity or decide hypertension developed or resolved from that one reading. Follow the individual care plan and facility procedures for contact and rechecking appropriate to condition.",
-        "after": "If two blood-pressure readings differ and the second was taken immediately after activity, report both values and the circumstances of each measurement separately. Do not dismiss an unusual reading because it followed activity or conclude from that reading alone that hypertension has developed or resolved. Follow the individual care plan and facility procedures for the contact or rechecking required by the person’s condition."
+        "after": "If two blood-pressure readings differ and the second was taken immediately after activity, report both values and the circumstances of each measurement separately. Do not dismiss an unusual reading because it followed activity or conclude from that reading alone that hypertension has developed or resolved. Follow the individual care plan and facility procedures for the contact or rechecking required by the person’s condition.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
       },
       {
-        "sectionId": "kaigo-atomic-body-regions",
-        "paragraphIndex": 5,
+        "path": [
+          "sections",
+          "kaigo-atomic-body-regions",
+          "paragraphs",
+          0
+        ],
+        "before": "Major body regions are the head, neck, trunk, upper limbs and lower limbs. The trunk includes the chest and abdomen. ‘My arm hurts’ covers a broad area, so check the indicated location and personal words and specify the side. Use the person’s body, rather than the worker’s viewpoint, to define left and right.",
+        "after": "Major body regions are the head, neck, trunk, upper limbs and lower limbs. The trunk includes the chest and abdomen. ‘My arm hurts’ covers a broad area, so check the indicated location and the person’s own words and specify the side. Use the person’s body, rather than the worker’s viewpoint, to define left and right.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
+      },
+      {
+        "path": [
+          "sections",
+          "kaigo-atomic-body-regions",
+          "paragraphs",
+          5
+        ],
         "before": "In reports, distinguish location, side, timing and personal words. If pain intensity or cause has not been asked about, do not invent it. When sudden changes or other circumstances require contact, do not delay reporting until every question is finished.",
-        "after": "In a report, distinguish the body location, side, time and the person’s own words. If you have not yet asked about the intensity or cause of pain, do not fill the gaps with assumptions. When a sudden change or another circumstance requires contact, do not delay reporting until you have finished every question."
+        "after": "In a report, distinguish the body location, side, time and the person’s own words. If you have not yet asked about the intensity or cause of pain, do not fill the gaps with assumptions. When a sudden change or another circumstance requires contact, do not delay reporting until you have finished every question.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
+      },
+      {
+        "path": [
+          "sections",
+          "kaigo-atomic-nerves",
+          "paragraphs",
+          4
+        ],
+        "before": "This explanation teaches information direction and classification. Do not identify causes of numbness or movement difficulty from a diagram alone. Communicate location, timing and personal words and arrange individual assessment.",
+        "after": "This explanation teaches information direction and classification. Do not identify causes of numbness or movement difficulty from a diagram alone. Communicate location, timing and the person’s own words and arrange individual assessment.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
+      },
+      {
+        "path": [
+          "lessons",
+          "65",
+          "artCaption"
+        ],
+        "before": "Listen to personal words and differences from usual. The image cannot diagnose hypertension or organ disease.",
+        "after": "Listen to the person’s own words and differences from usual. The image cannot diagnose hypertension or organ disease.",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
+      },
+      {
+        "path": [
+          "questions",
+          "weekly-kaigo-atomic-case-autonomic-other",
+          "prompt"
+        ],
+        "before": "Why cannot autonomic activity in every organ be represented by two perfectly opposing arrows?",
+        "after": "Why can’t autonomic activity in every organ be represented by two perfectly opposing arrows?",
+        "directJapaneseChecked": true,
+        "reason": "Verified directly against corresponding canonical Japanese. Clearer natural adult English preserves meaning, source qualifiers, actor and information state."
       }
     ],
-    "otherRepairs": "Changed “personal words” to “the person’s own words” in natural-language values where present; week10 question grammar and week14 passage spacing corrected. IDs and opaque revisions excluded.",
-    "checks": [
-      "No other target locale read or used.",
-      "Preserved individual care plans, medical-professional recipients, consent, method permission, uncertainty and reporting urgency.",
-      "Retained every reading field including explicit empty readings and absence when absent.",
-      "Targeted complete-prose repairs preserve source conditions and do not create clinical instructions."
-    ],
-    "humanReviewed": false,
-    "domainReviewed": false,
-    "nativeReviewed": false,
-    "releaseReady": false
+    "rejectedStaleRemoteFields": [],
+    "noOtherLocaleRead": true,
+    "allBindingsRechecked": true,
+    "allIdsArraysAndAnswerIndicesPreserved": true
   }
 }
