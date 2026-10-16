@@ -1,3 +1,5 @@
+import { useAppLanguage } from '@/context/LanguageContext';
+import { translationForMockQuestion, translationForMockTitle } from '@/data/kaigo/japanese-mock-translations';
 import {WeeklyKaigo} from './WeeklyKaigo';
 import {StudyAppearanceProvider,TranslationText} from '@/components/tokutei/StudyAppearance';
 import {TokuteiActionBar} from '@/components/tokutei/TokuteiChrome';
@@ -86,6 +88,7 @@ function RelatedStudy({day,onSelect}:{day:number;onSelect:(next:StudySelection)=
 function LessonStudy({lesson,onRelated,scheduledDay}:{lesson:Lesson;scheduledDay?:number;onRelated:(next:StudySelection)=>void}){const [tab,setTab]=useState(0);const parentLesson=kaigoCourse.candidates.some(l=>l.id===lesson.id)?kaigoCourse.lessons.find(l=>l.day===lesson.day):undefined;const tabs=['Kiến thức','Từ và cách nói','Luyện thoại','Thực hành tình huống','Kiểm tra bài học · 5 câu',...(lesson.languageTasks?.length?['Đọc và hiểu']:[])];return <View><RoyalExplanationPanel style={s.panel}><Text style={[s.heading,s.light]}>{kaigoCourse.candidates.some(l=>l.id===lesson.id)?'Thực hành trong bài':`Ngày ${scheduledDay??lesson.day}`} · {lesson.titleVi}</Text><Text style={s.light}>{lesson.studyPlanVi??'30 phút dự kiến · có thể tiếp tục phần chưa xong.'}</Text>{parentLesson&&<Button title="Quay lại bài học liên quan" testID="kaigo-practice-parent" onPress={()=>onRelated({kind:'lesson',id:parentLesson.id})}/>}</RoyalExplanationPanel><View style={s.wrap}>{tabs.map((title,i)=><Button key={title} title={title} onPress={()=>setTab(i)}/>)}</View>{tab===0&&<Knowledge lesson={lesson}/>}{tab===1&&<View>{lesson.activeTermIds&&<RoyalExplanationPanel style={s.panel}><Text style={s.light}>4 phút: ưu tiên tối đa 8 từ đầu. Kho từ theo tuần phía dưới dùng nhận diện/tra cứu; không phải học thuộc tất cả hôm nay.</Text></RoyalExplanationPanel>}{[...kaigoCourse.terms.filter(t=>lesson.termIds.includes(t.id??'')).sort((a,b)=>Number(lesson.activeTermIds?.includes(b.id??''))-Number(lesson.activeTermIds?.includes(a.id??''))),...lesson.inlineNotes].map((t,i)=><RoyalContentPanel key={i} style={s.panel}><Ja>{t.termJa}</Ja><Body>{t.readingJa} · {t.meaningVi}</Body></RoyalContentPanel>)}{lesson.expressions.map((x,i)=><RoyalContentPanel key={i} style={s.panel}><Ja>{x.textJa}</Ja><Body>{x.meaningVi}</Body></RoyalContentPanel>)}</View>}{tab===2&&<Dialogue lesson={lesson}/>}{tab===3&&<View><Transfer lesson={lesson}/>{kaigoCourse.candidates.filter(l=>l.day===lesson.day&&l.id!==lesson.id).map(l=><RoyalContentPanel key={l.id} style={s.panel}><Text style={s.heading}>Thực hành trong bài · {l.titleVi}</Text><Body>Thực hành trong thời gian dành cho tình huống của buổi học. Nếu chưa xong, tiếp tục ở lượt học sau.</Body><Button title="Mở thực hành" testID={`kaigo-practice-${l.id}`} onPress={()=>onRelated({kind:'lesson',id:l.id})}/></RoyalContentPanel>)}</View>}{tab===4&&<LessonCheck lesson={lesson}/>} {tab===5&&<View><RoyalExplanationPanel style={s.panel}><Text style={s.light}>2 phút đọc một thẻ ngắn và tự giải thích theo dữ kiện. Nếu chưa xong, giữ phần còn lại để ôn tiếp.</Text></RoyalExplanationPanel>{lesson.languageTasks?.map(t=><RetrievalCard key={t.id} probe={t} lesson={lesson}/>)}</View>}<RelatedStudy day={lesson.day} onSelect={onRelated}/></View>;}
 
 function MockExam({ form: originalForm, active }: { form: MockForm; active: boolean }) {
+  const { language } = useAppLanguage();
   const form = withJapaneseMockReview(originalForm);
   const st = useStored<ExamSession>(
     examStorageKey(form),
@@ -121,6 +124,8 @@ function MockExam({ form: originalForm, active }: { form: MockForm; active: bool
   const review = examReview(session, form);
   const current = form.questions[session.currentQuestion],
     q = publicQuestion(current);
+  const mockTranslation = translationForMockQuestion(form, current.id, language);
+  const titleTranslation = translationForMockTitle(form, language);
   const seconds = Math.ceil(session.remainingMs / 1000);
   const move = (index: number) => {
     st.update((old) => ({ ...old, currentQuestion: index }));
@@ -146,6 +151,7 @@ function MockExam({ form: originalForm, active }: { form: MockForm; active: bool
           {!!q.passageJa && (
             <Ruby tokens={q.furigana.passage} fallback={q.passageJa} />
           )}
+          {review && translationOpen && mockTranslation?.passage && <TranslationText testID="kaigo-mock-passage-translation">{mockTranslation.passage}</TranslationText>}
           {!!q.figureKey && (
             <Image
               accessibilityLabel={q.figureDescriptionJa}
@@ -163,7 +169,9 @@ function MockExam({ form: originalForm, active }: { form: MockForm; active: bool
           {!!q.figureKey && japaneseMockFigureLabelsPending.has(q.figureKey) && (
             <Body>図中の文字は日本語版を準備中です。日本語の説明と合わせて確認してください。</Body>
           )}
+          {review && translationOpen && mockTranslation?.figureDescription && <TranslationText testID="kaigo-mock-figure-translation">{mockTranslation.figureDescription}</TranslationText>}
           <Ruby tokens={q.furigana.prompt} fallback={q.promptJa} />
+          {review && translationOpen && mockTranslation && <TranslationText testID="kaigo-mock-prompt-translation">{mockTranslation.prompt}</TranslationText>}
           {q.optionsJa.map((option, i) => (
             <Pressable
               key={i}
@@ -179,15 +187,17 @@ function MockExam({ form: originalForm, active }: { form: MockForm; active: bool
             >
               <Body>{i + 1}.</Body>
               <Ruby tokens={q.furigana.options[i]} fallback={option} />
+              {review && translationOpen && mockTranslation && <TranslationText testID={`kaigo-mock-option-translation-${i}`}>{mockTranslation.options[i]}</TranslationText>}
             </Pressable>
           ))}
           {review && (
             <View testID="kaigo-mock-review">
               <Text style={s.heading}>正答：{current.correctIndex + 1}</Text>
               {current.rationalesJa.map((text, i) => (
-                <Ja key={i} testID={`kaigo-mock-rationale-${current.id}-${i}`}>
-                  {i + 1}. {text}
-                </Ja>
+                <View key={i}>
+                  <Ja testID={`kaigo-mock-rationale-${current.id}-${i}`}>{i + 1}. {text}</Ja>
+                  {translationOpen && mockTranslation && <TranslationText testID={`kaigo-mock-rationale-translation-${i}`}>{i + 1}. {mockTranslation.rationales[i]}</TranslationText>}
+                </View>
               ))}
               {current.rationalesJa.length === 0 && <Body>この問題の日本語解説は確認中です。</Body>}
               <Button
@@ -195,7 +205,10 @@ function MockExam({ form: originalForm, active }: { form: MockForm; active: bool
                 testID="kaigo-mock-translation"
                 onPress={() => setTranslationOpen((v) => !v)}
               />
-              {translationOpen && (
+              {translationOpen && titleTranslation && <View>
+                <Ja>{form.titleJa ?? ''}</Ja><TranslationText testID="kaigo-mock-title-translation">{titleTranslation.title}</TranslationText>
+              </View>}
+              {translationOpen && !mockTranslation && (
                 <TranslationText>この言語の翻訳は準備中です。</TranslationText>
               )}
             </View>

@@ -67,6 +67,7 @@ module.exports = async function compile(root, modules, jsonSnapshots = new Map()
     "src/data/kaigo/weekly-learning",
     "src/data/kaigo/japanese-assessments",
     "src/data/kaigo/japanese-mock-reviews",
+    "src/data/kaigo/japanese-mock-translations",
     "src/services/kaigo-session",
     "src/components/tokutei/StudyAppearance",
     "src/data/kaigo/index",

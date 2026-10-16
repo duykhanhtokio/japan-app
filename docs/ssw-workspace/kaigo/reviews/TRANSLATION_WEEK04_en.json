@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "week": 4,
+  "language": "en",
+  "sourceLanguage": "ja",
+  "sourceCommit": "9ff9ec014ade9a110f9434ac675fe70ae97eda3d",
+  "canonicalPacketPath": "/workspace/scratch/64c65738732f/translation-packets/week-04.ja.json",
+  "canonicalPacketSha256": "a64ed9e443399dc7c80b3508a422c15787f31326209a3663317ce236d8aa55a6",
+  "translationPath": "src/data/kaigo/japanese-master/translations/week-04.en.json",
+  "translationSha256": "6b4a073c3862f3e2ce54dcd640c35519869f9b5d3a18cda1582e7569c1b16339",
+  "status": "translated_ai_unreviewed",
+  "directJapanese": true,
+  "noCrossTranslation": true,
+  "translatedDirectlyFromJapanese": true,
+  "vietnameseUsedAsTranslationIntermediate": false,
+  "humanReviewed": false,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "rightsReviewed": false,
+  "releaseReady": false,
+  "nativeDeviceTested": false,
+  "styleGuideVersion": 1,
+  "localeProfile": "docs/ssw-workspace/kaigo/locale-profiles/en.json",
+  "counts": {
+    "sections": 75,
+    "paragraphs": 558,
+    "distinctJapaneseParagraphTexts": 259,
+    "lessons": 7,
+    "objectives": 14,
+    "questions": 61,
+    "options": 244,
+    "rationales": 244,
+    "figureCaptions": 1,
+    "sourceRevisionBindings": 143,
+    "readingFields": 42,
+    "nonemptyReadings": 42,
+    "emptyReadings": 0,
+    "questionsWithoutReading": 19,
+    "distinctNonemptyReadings": 14
+  },
+  "checks": {
+    "exactIds": true,
+    "paragraphAlignment": true,
+    "allSourceRevisionsMatch": true,
+    "correctIndicesPreserved": true,
+    "fourOptionsAndIndividualReasons": true,
+    "readingPresenceMatchesJapanese": true,
+    "metadataComplete": true,
+    "exactFigureCaptionKeys": true,
+    "identicalJapaneseGlossaryAcrossCompletedEnglishWeeks": true
+  },
+  "aiSemanticSpotChecks": [
+    {
+      "target": "kaigo-eating-01 / weekly-eating-q03",
+      "check": "request_and_classification",
+      "result": "pass",
+      "note": "Asking about staple foods and side dishes is not a request to change the meal."
+    },
+    {
+      "target": "kaigo-eating-02",
+      "check": "texture_and_uncertainty",
+      "result": "pass",
+      "note": "A readable food name does not establish texture or safety; unresolved information is checked before serving."
+    },
+    {
+      "target": "kaigo-eating-03",
+      "check": "independent_actions_and_position",
+      "result": "pass",
+      "note": "Dish placement follows the person’s wishes. The conditional meal example with the unaffected side down remains distinct from mobility examples."
+    },
+    {
+      "target": "weekly-eating-q21 / kaigo-eating-05",
+      "check": "chewing_speech_condition",
+      "result": "pass",
+      "note": "Avoid talking while the person is chewing, including remarks as well as questions; checking wishes remains outside that condition."
+    },
+    {
+      "target": "kaigo-eating-06",
+      "check": "unknown_vs_zero",
+      "result": "pass",
+      "note": "Unconfirmed intake is not translated as zero; recorded amounts and the person’s words remain separate."
+    },
+    {
+      "target": "kaigo-depth-14",
+      "check": "figure_scope",
+      "result": "pass",
+      "note": "Caption retains support gaps, trapped limbs, sliding, supported soles and no individually prescribed angle or posture."
+    },
+    {
+      "target": "all effective readings",
+      "check": "runtime_passage_alignment",
+      "result": "pass",
+      "note": "Translated all 42 effective passages directly, including seven composite document-plus-dialogue readings; no answer guidance was inserted."
+    }
+  ],
+  "editorialNotes": [
+    "Translated every paragraph, metadata item and question directly from the current Japanese packet. No other locale was read or used as an intermediary.",
+    "Repeated identical Japanese strings share identical English;259distinct strings cover558paragraph records and do not imply259distinct clinical concepts.",
+    "Used respectful adult speech, stable names, neutral pronouns, US spelling and consistent care terminology. Japanese vocabulary headwords/readings remain where needed for learning.",
+    "Preserved sourceRevision bindings, exact paragraph alignment, answer indices and optional reading presence.",
+    "Powder vocabulary distinguishes the generally used standalone reading kona from ko in the textbook compound context. Clearing dishes is the contextual meaning of sageru in this meal lesson.",
+    "Compared identical Japanese glossary paragraphs across EN weeks01–04: one wording difference found for Wishes and normalized all 3 week04 copies to the previously checked week01 wording. No other identical-source glossary differences found."
+  ],
+  "uncertainties": [
+    "Independent English-native and clinical review remain pending. Food texture terminology and conditional care examples retain the Japanese source’s limits."
+  ],
+  "limits": [
+    "AI translation and semantic/structural checks only. No human, clinical, native-language, rights, actual-device or release approval is claimed.",
+    "No additional diagnoses, thresholds, methods or personal treatment instructions were introduced.",
+    "Root handles integration, commits and remote verification."
+  ]
+}
