@@ -7,7 +7,7 @@
   "canonicalPacketPath": "/workspace/scratch/64c65738732f/translation-packets/week-01.ja.json",
   "canonicalPacketSha256": "3bf98f396d741fefc2aa6384e9c186e58b44f7d23380dd18e09315335a174e40",
   "translationPath": "src/data/kaigo/japanese-master/translations/week-01.en.json",
-  "translationSha256": "8fe7e0d8553b1bcc36654630da5ee37da41dd40b18b70dc6218869b6efb44ddb",
+  "translationSha256": "9eca96977fa82be2cc426e123fb26db30091bbaf8598202af6c81a75a512dec0",
   "status": "translated_ai_unreviewed",
   "directJapanese": true,
   "noCrossTranslation": true,
@@ -87,7 +87,8 @@
     "allCorrectIndicesPreserved": true,
     "questionFourOptionsAndReasons": true,
     "optionalReadingPresenceMatchesJapanese": true,
-    "allBodiesReadAgainstJapanese": true
+    "allBodiesReadAgainstJapanese": true,
+    "focusedSourceQualifierScan": true
   },
   "editorialNotes": [
     "Rechecked existing English directly against every current Japanese paragraph. Reused faithful wording and revised three paragraph records; repaired their stale source bindings. No other locale was read or used as a translation intermediary.",
@@ -388,5 +389,59 @@
       "result": "pass",
       "note": "Body-mechanics knowledge does not authorize solo lifting. Equipment, staffing and training conditions remain."
     }
-  ]
+  ],
+  "focusedQualifierAudit": {
+    "scope": "Own EN weeks01–08, directly compared with Japanese source packets; paragraphs, metadata, effective readings, prompts, options and individual rationales.",
+    "candidateFieldsInThisWeek": 97,
+    "globalCandidateFields": 993,
+    "globalDistinctSourceTranslationPairs": 711,
+    "globalManualRiskPairsReviewed": 45,
+    "globalDistinctPairCorrections": 34,
+    "correctedFieldsInThisWeek": 3,
+    "changes": [
+      {
+        "week": 1,
+        "group": "questions",
+        "id": "weekly-kaigo-language-transfer-256",
+        "field": "rationales",
+        "index": 2,
+        "before": "A check is planned, but no results are given. Do not treat a plan as a completed action.",
+        "after": "The person responsible plans to check, but no result is given. Do not treat the planned check as completed.",
+        "reviewedCandidateIndices": [
+          42
+        ]
+      },
+      {
+        "week": 1,
+        "group": "questions",
+        "id": "weekly-kaigo-foundation-05-q03",
+        "field": "rationales",
+        "index": 0,
+        "before": "Convey the wish not to be photographed and ask about participation arrangements.",
+        "after": "Convey the person’s wish not to be photographed and ask the person responsible about participation arrangements.",
+        "reviewedCandidateIndices": [
+          72
+        ]
+      },
+      {
+        "week": 1,
+        "group": "questions",
+        "id": "weekly-kaigo-foundation-05-revision-q01",
+        "field": "rationales",
+        "index": 3,
+        "before": "This promises to check and report back rather than guaranteeing unknown conditions. The person can then decide.",
+        "after": "The response explains that the person responsible will be asked and the result shared, rather than promising unknown conditions. The person can then decide based on that information.",
+        "reviewedCandidateIndices": [
+          77
+        ]
+      }
+    ],
+    "method": "Pattern scan of all source fields for individual plans, facility procedures, consent/permission and report or assistance recipients; manual JA→EN review of44flagged pairs plus the extra medical-role pair. Coordinator and explicit-question consent equivalents retained. Repairs propagated to corresponding runtime readings when the same Japanese and English excerpt occur.",
+    "limitations": "This targeted risk audit is not an independent native, domain or full711-pair manual semantic review.",
+    "humanReviewed": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "releaseReady": false
+  }
 }

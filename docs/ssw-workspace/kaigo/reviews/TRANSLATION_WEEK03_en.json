@@ -7,7 +7,7 @@
   "canonicalPacketPath": "/workspace/scratch/64c65738732f/translation-packets/week-03.ja.json",
   "canonicalPacketSha256": "d722e197565c6f2439bdc9bb92a74ee8e08f71aff345748d89916da5ae538ab2",
   "translationPath": "src/data/kaigo/japanese-master/translations/week-03.en.json",
-  "translationSha256": "ca453d1e82d0ff0f8ad5cc640dcda65adb5d8d624bc6299fc4337480a44bc378",
+  "translationSha256": "8b7a69d07fbca0514de5049f8dff55a7b7be3fc7d2c9298393f7847952e127f7",
   "status": "translated_ai_unreviewed",
   "directJapanese": true,
   "noCrossTranslation": true,
@@ -46,7 +46,8 @@
     "fourOptionsAndIndividualReasons": true,
     "readingPresenceMatchesJapanese": true,
     "metadataComplete": true,
-    "exactFigureCaptionKeys": true
+    "exactFigureCaptionKeys": true,
+    "focusedSourceQualifierScan": true
   },
   "aiSemanticSpotChecks": [
     {
@@ -112,5 +113,59 @@
     "AI semantic and structural checking only; all human, clinical, native-language, rights, actual-device and release approvals remain false.",
     "No new thresholds, diagnoses or clinical methods added. Conditional source examples retain training, individual plan and equipment limits.",
     "Root handles integration, persistent commit and remote verification. This worker edits only complete English week outputs and their own reviews."
-  ]
+  ],
+  "focusedQualifierAudit": {
+    "scope": "Own EN weeks01–08, directly compared with Japanese source packets; paragraphs, metadata, effective readings, prompts, options and individual rationales.",
+    "candidateFieldsInThisWeek": 83,
+    "globalCandidateFields": 993,
+    "globalDistinctSourceTranslationPairs": 711,
+    "globalManualRiskPairsReviewed": 45,
+    "globalDistinctPairCorrections": 34,
+    "correctedFieldsInThisWeek": 3,
+    "changes": [
+      {
+        "week": 3,
+        "group": "questions",
+        "id": "weekly-kaigo-move-04-revision-q01",
+        "field": "rationales",
+        "index": 3,
+        "before": "Confirm the other worker and current condition and meet the plan before starting.",
+        "after": "Confirm the other worker and the person’s current condition, and meet the individual care plan’s conditions before starting.",
+        "reviewedCandidateIndices": [
+          190
+        ]
+      },
+      {
+        "week": 3,
+        "group": "questions",
+        "id": "weekly-kaigo-move-04-revision-q02",
+        "field": "options",
+        "index": 1,
+        "before": "Check the plan for this time and preserve what the person can do.",
+        "after": "Check the individual care plan for this time and preserve what the person can do.",
+        "reviewedCandidateIndices": [
+          191
+        ]
+      },
+      {
+        "week": 3,
+        "group": "questions",
+        "id": "weekly-kaigo-move-07-revision-q01",
+        "field": "rationales",
+        "index": 3,
+        "before": "An old notice does not invalidate a confirmed update.",
+        "after": "This ignores an update confirmed by the person responsible merely because an old notice remains.",
+        "reviewedCandidateIndices": [
+          200
+        ]
+      }
+    ],
+    "method": "Pattern scan of all source fields for individual plans, facility procedures, consent/permission and report or assistance recipients; manual JA→EN review of44flagged pairs plus the extra medical-role pair. Coordinator and explicit-question consent equivalents retained. Repairs propagated to corresponding runtime readings when the same Japanese and English excerpt occur.",
+    "limitations": "This targeted risk audit is not an independent native, domain or full711-pair manual semantic review.",
+    "humanReviewed": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "releaseReady": false
+  }
 }

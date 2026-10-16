@@ -7,7 +7,7 @@
   "canonicalPacketPath": "/workspace/scratch/64c65738732f/translation-packets/week-05.ja.json",
   "canonicalPacketSha256": "735e214fc0b856d629f51294fe16e29240d9c69d4fb8fd611be02634f324861f",
   "translationPath": "src/data/kaigo/japanese-master/translations/week-05.en.json",
-  "translationSha256": "446425caa9d4a5a25a047cc13ffdb626d1cfa2de42c92ce152ea6c2ddbd5f89a",
+  "translationSha256": "a501647da843718d9492a9b71337697db0f3627e6ec2fb8cb123772b1ee016d3",
   "status": "translated_ai_unreviewed",
   "directJapanese": true,
   "noCrossTranslation": true,
@@ -48,7 +48,8 @@
     "readingPresenceMatchesJapanese": true,
     "metadataComplete": true,
     "exactFigureCaptionKeys": true,
-    "identicalJapaneseGlossaryAcrossCompletedEnglishWeeks": true
+    "identicalJapaneseGlossaryAcrossCompletedEnglishWeeks": true,
+    "focusedSourceQualifierScan": true
   },
   "aiSemanticSpotChecks": [
     {
@@ -98,6 +99,12 @@
       "check": "actual_runtime_variants",
       "result": "pass",
       "note": "Read all15distinct runtime passages. One note explicitly adds corridor visitors as the quiet-speech reason; translated that addition rather than substituting the shorter master note."
+    },
+    {
+      "target": "kaigo-depth-21 paragraph3 / kaigo-depth-22 paragraphs1–2",
+      "check": "permitted_for_person_not_permission_by_person",
+      "result": "pass_no_translation_change",
+      "note": "Compared exact Japanese surrounding context and current English. “within the person’s authorized method and your training” and “method allowed for the person” refer to individual suitability/authorization with the approving actor unspecified, not resident-issued permission. The separate explanation-and-consent condition remains explicit in depth22paragraph1. No new approving actor, medical clearance or authorization was invented."
     }
   ],
   "editorialNotes": [
@@ -114,5 +121,35 @@
     "AI translation and semantic/structural checks only. All human, clinical, native-language, rights, actual-device and release approvals remain false.",
     "No new medical procedures, diagnoses or fluid prescriptions were added.",
     "Root handles integration, commits and remote verification. Checkpoint03 remote verification was confirmed before atomic publication."
-  ]
+  ],
+  "focusedQualifierAudit": {
+    "scope": "Own EN weeks01–08, directly compared with Japanese source packets; paragraphs, metadata, effective readings, prompts, options and individual rationales.",
+    "candidateFieldsInThisWeek": 121,
+    "globalCandidateFields": 993,
+    "globalDistinctSourceTranslationPairs": 711,
+    "globalManualRiskPairsReviewed": 45,
+    "globalDistinctPairCorrections": 34,
+    "correctedFieldsInThisWeek": 1,
+    "changes": [
+      {
+        "week": 5,
+        "group": "sections",
+        "id": "kaigo-excretion-04-knowledge-3",
+        "field": "paragraphs",
+        "index": 1,
+        "before": "Preparing equipment is also different from deciding to change the method. If prepared items conflict with the plan, tell the appropriate person both facts and check the current plan. Record only wishes actually confirmed with the person.",
+        "after": "Preparing equipment is also different from deciding to change the method. If prepared items conflict with the plan, tell the appropriate person responsible both facts and check the current plan. Record only wishes actually confirmed with the person.",
+        "reviewedCandidateIndices": [
+          298
+        ]
+      }
+    ],
+    "method": "Pattern scan of all source fields for individual plans, facility procedures, consent/permission and report or assistance recipients; manual JA→EN review of44flagged pairs plus the extra medical-role pair. Coordinator and explicit-question consent equivalents retained. Repairs propagated to corresponding runtime readings when the same Japanese and English excerpt occur.",
+    "limitations": "This targeted risk audit is not an independent native, domain or full711-pair manual semantic review.",
+    "humanReviewed": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "releaseReady": false
+  }
 }

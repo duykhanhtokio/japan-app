@@ -30,7 +30,7 @@
   "outputs": [
     {
       "path": "src/data/kaigo/japanese-master/translations/week-01.th.json",
-      "sha256": "81c7d6e791567fd63386beb228e2c811ca03813978b2692e94a0997dfc07d45d"
+      "sha256": "2aa95fbb0f6f02b235a1ca8cd442c93eda1b00a255f85081a3801067a31fe1af"
     },
     {
       "path": "docs/ssw-workspace/kaigo/locale-profiles/th.json",
@@ -253,5 +253,76 @@
     "No actual-device, Thai font/layout, clipping or runtime translation integration test was performed by this worker.",
     "Source Japanese is the supplied canonical packet; this translation is not a new independent verification of every clinical statement.",
     "All approval flags remain false; complete draft counts do not certify native fluency, medical validity or release readiness."
-  ]
+  ],
+  "reportingQualifierRecheck": {
+    "scope": "Direct Japanese comparison across all source paragraphs, metadata, questions and effective readings for reporting/assistance recipients, individual plans, consent and facility-procedure qualifiers. Existing correct terminology retained.",
+    "semanticCorrections": [
+      {
+        "sourceId": "weekly-kaigo-language-transfer-252",
+        "field": "rationales",
+        "index": 0,
+        "japanese": "カードでは位置を変える前に説明し、同意を確認します。後で説明するのでは順序が逆です。",
+        "before": "บัตรระบุให้ทำก่อนเปลี่ยนตำแหน่ง อธิบายทีหลังกลับลำดับ",
+        "after": "บัตรระบุให้อธิบายและตรวจสอบความยินยอมก่อนเปลี่ยนตำแหน่ง ไม่ใช่อธิบายภายหลังซึ่งกลับลำดับ"
+      },
+      {
+        "sourceId": "weekly-kaigo-language-transfer-252",
+        "field": "rationales",
+        "index": 3,
+        "japanese": "説明と同意の確認を、本人から質問があった場合だけに限定していません。職員から先に説明する順序です。",
+        "before": "ไม่ได้จำกัดเฉพาะเมื่อเจ้าตัวถาม แต่เจ้าหน้าที่อธิบายก่อน",
+        "after": "ไม่ได้จำกัดการอธิบายและตรวจความยินยอมไว้เฉพาะเมื่อเจ้าตัวถาม แต่ให้เจ้าหน้าที่อธิบายก่อน"
+      },
+      {
+        "sourceId": "weekly-kaigo-knowledge-07-2",
+        "field": "rationales",
+        "index": 3,
+        "japanese": "未訓練の対応を一人で進めません。施設の手順に従って連絡し、必要な応援を求めます。",
+        "before": "ไม่ทำสิ่งที่ยังไม่ฝึกคนเดียว ให้ติดต่อตามขั้นตอนและขอกำลังจำเป็น",
+        "after": "ไม่ทำสิ่งที่ยังไม่ผ่านการฝึกคนเดียว ให้ติดต่อตามขั้นตอนของสถานดูแลและขอคนช่วยตามจำเป็น"
+      },
+      {
+        "sourceId": "weekly-kaigo-foundation-01-q01",
+        "field": "rationales",
+        "index": 1,
+        "japanese": "田中さんは看護師ではなく、介護職員だと明確に伝えています。看護師への相談は担当者につなぎます。",
+        "before": "บอกชัดว่าเป็นเจ้าหน้าที่ดูแลไม่ใช่พยาบาล และจะประสานเรื่องปรึกษาพยาบาล",
+        "after": "คุณทานากะบอกชัดว่าเป็นเจ้าหน้าที่ดูแล ไม่ใช่พยาบาล และจะประสานผู้รับผิดชอบเรื่องการปรึกษาพยาบาล"
+      },
+      {
+        "sourceId": "weekly-kaigo-foundation-04-q03",
+        "field": "options",
+        "index": 0,
+        "japanese": "部屋で聞いた内容なら、担当者にはすべて共有する",
+        "before": "เรื่องที่ฟังในห้องแบ่งปันได้ทั้งหมด",
+        "after": "เรื่องที่ฟังในห้องแบ่งปันแก่ผู้รับผิดชอบได้ทั้งหมด"
+      },
+      {
+        "sourceId": "weekly-kaigo-foundation-04-q03",
+        "field": "rationales",
+        "index": 0,
+        "japanese": "部屋で聞いたことでも、担当者へすべて共有してよいとは限りません。必要な内容を先に本人と確認します。",
+        "before": "แม้ฟังในห้องก็ไม่ได้แบ่งปันได้ทั้งหมด ต้องยืนยันเรื่องจำเป็นก่อน",
+        "after": "แม้ฟังในห้องก็ไม่ได้หมายความว่าแบ่งปันแก่ผู้รับผิดชอบได้ทั้งหมด ต้องถามยืนยันเนื้อหาที่จำเป็นกับเจ้าตัวก่อน"
+      },
+      {
+        "sourceId": "weekly-kaigo-foundation-05-q01",
+        "field": "rationales",
+        "index": 3,
+        "japanese": "本人は担当者への確認を依頼しています。確認を拒否した会話ではありません。",
+        "before": "ขอให้สอบถาม ไม่ได้ปฏิเสธการตรวจสอบ",
+        "after": "เจ้าตัวขอให้สอบถามผู้รับผิดชอบ ไม่ได้ปฏิเสธการตรวจสอบ"
+      },
+      {
+        "sourceId": "weekly-kaigo-foundation-05-revision-q01",
+        "field": "rationales",
+        "index": 3,
+        "japanese": "不明な条件を約束せず、担当者へ確認して結果を伝えると説明しています。本人はその情報をもとに判断できます。",
+        "before": "ไม่รับปากเงื่อนไขไม่รู้ แต่บอกว่าจะถามแล้วแจ้งผล ให้เจ้าตัวใช้ข้อมูลตัดสิน",
+        "after": "ไม่ได้รับปากเงื่อนไขที่ไม่รู้ แต่อธิบายว่าจะถามผู้รับผิดชอบแล้วแจ้งผล เจ้าตัวจึงใช้ข้อมูลนั้นตัดสินใจได้"
+      }
+    ],
+    "candidateFalsePositives": [],
+    "allApprovalFlagsUnchangedFalse": true
+  }
 }

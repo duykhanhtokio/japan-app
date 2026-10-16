@@ -17,7 +17,7 @@
   "releaseReady": false,
   "output": {
     "path": "src/data/kaigo/japanese-master/translations/week-01.id.json",
-    "sha256": "55170b8212a559c5a8e1b921e295e9c3f5b3a6b812545ef09553dcabb64ac578",
+    "sha256": "027fb884532b43921f7b2a2996805606d8c9cb86d4bf448d6e3f94d334be4333",
     "localeProfilePath": "docs/ssw-workspace/kaigo/locale-profiles/id.json",
     "localeProfileSha256": "72cb24e055ba7877caf0da054da4375958ad3eeea4089496b8a01e68d80d6a76"
   },
@@ -217,5 +217,88 @@
     "No UI/runtime/device approval is claimed; root integrates registry and tests selected language plus stale/missing translation behavior.",
     "No master, Japanese question, image, UI, other-language translation or shared policy was edited. Root is responsible for commit and remote persistence.",
     "Source Japanese technical content is translated as provided, without adding clinical procedures, numbers, diagnoses or safety guarantees."
-  ]
+  ],
+  "focusedQualifierAudit": {
+    "reviewedAt": "2026-10-16",
+    "sourceLanguage": "ja",
+    "language": "id",
+    "directJapanese": true,
+    "noCrossTranslation": true,
+    "enumeratedQualifierOccurrences": 127,
+    "uniqueSourceTargetPairsFirstInWeek": 106,
+    "wholeSixWeekUniquePairs": 773,
+    "wholeSixWeekOccurrences": 1064,
+    "method": "Enumerate explicit JA recipient/report/help, consent/permission, individual and facility procedure/training qualifications across section paragraphs/captions, lesson metadata and all question prompts/effective readings/options/rationales; independently inspect source-target meanings, including repeated recipients within composite readings. Keyword candidates assisted discovery and did not constitute semantic approval.",
+    "repairs": [
+      {
+        "path": [
+          "questions",
+          "weekly-kaigo-foundation-04-q03",
+          "options",
+          1
+        ],
+        "before": "Samakan lingkup informasi untuk keluarga dan petugas",
+        "after": "Samakan lingkup informasi untuk keluarga dan petugas penanggung jawab",
+        "reason": "Restore explicitly stated recipient, facility procedure or consent scope from canonical Japanese.",
+        "sourceJa": "家族への連絡と担当者への共有は同じ範囲にする",
+        "auditUniqueIndex": 84
+      },
+      {
+        "path": [
+          "questions",
+          "weekly-kaigo-foundation-04-q03",
+          "rationales",
+          0
+        ],
+        "before": "Walaupun didengar di kamar, semua informasi belum tentu boleh dibagikan. Pastikan dahulu isi yang diperlukan bersama orang tersebut.",
+        "after": "Walaupun didengar di kamar, semua informasi belum tentu boleh dibagikan kepada penanggung jawab. Pastikan dahulu isi yang diperlukan bersama orang tersebut.",
+        "reason": "Restore explicitly stated recipient, facility procedure or consent scope from canonical Japanese.",
+        "sourceJa": "部屋で聞いたことでも、担当者へすべて共有してよいとは限りません。必要な内容を先に本人と確認します。",
+        "auditUniqueIndex": 85
+      },
+      {
+        "path": [
+          "questions",
+          "weekly-kaigo-foundation-04-q03",
+          "rationales",
+          1
+        ],
+        "before": "Kebutuhan dan batas persetujuan berbagi kepada keluarga dan petugas belum tentu sama. Pastikan masing-masing.",
+        "after": "Kebutuhan dan batas persetujuan berbagi kepada keluarga dan petugas penanggung jawab belum tentu sama. Pastikan masing-masing.",
+        "reason": "Restore explicitly stated recipient, facility procedure or consent scope from canonical Japanese.",
+        "sourceJa": "家族と担当職員では、共有の必要性や同意の範囲が同じとは限りません。それぞれ確認します。",
+        "auditUniqueIndex": 86
+      },
+      {
+        "path": [
+          "questions",
+          "weekly-kaigo-foundation-05-revision-q01",
+          "rationales",
+          3
+        ],
+        "before": "Penjelasan ini tidak menjanjikan kondisi yang belum diketahui, tetapi memastikan dahulu lalu menyampaikan hasilnya. Orang tersebut dapat memutuskan berdasarkan informasi itu.",
+        "after": "Penjelasan ini tidak menjanjikan kondisi yang belum diketahui, tetapi memastikan kepada penanggung jawab dahulu lalu menyampaikan hasilnya. Orang tersebut dapat memutuskan berdasarkan informasi itu.",
+        "reason": "Restore explicitly stated recipient, facility procedure or consent scope from canonical Japanese.",
+        "sourceJa": "不明な条件を約束せず、担当者へ確認して結果を伝えると説明しています。本人はその情報をもとに判断できます。",
+        "auditUniqueIndex": 101
+      }
+    ],
+    "changedFieldCount": 4,
+    "validation": {
+      "exactIdsAndSourceRevisions": true,
+      "parallelCountsAndCaptionKeys": true,
+      "correctIndicesUnchanged": true,
+      "readingPresenceUnchanged": true
+    },
+    "limits": [
+      "AI focused semantic check only; no human, domain, native or device approval.",
+      "This audit targets explicit qualifications, not a claim that all corpus translation quality is complete."
+    ],
+    "humanReviewed": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "nativeDeviceTested": false,
+    "releaseReady": false
+  }
 }

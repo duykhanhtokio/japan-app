@@ -4,6 +4,8 @@ Read the official authoring rules, language style guide, machine style policy an
 
 Every batch remains `translated_ai_unreviewed`; human/domain/native/device/rights/release flags remain false until the relevant independent review actually happens. Atomic whole-week files are completion units. Scratch/draft work is not published as complete.
 
+Before publishing, read the target as continuous teaching prose, not as a compressed outline. Faster parallel production does not authorize shortening conditions, actors, recipients, individual-plan requirements or reasons. Check source reporting instructions as a whole: what triggers reporting, what is reported, and to whom. A generic “report it” does not preserve an explicit Japanese medical-professional recipient. Correct clipped grammar even when every field and revision passes. Record semantic/style corrections in the locale's own review and refresh its actual file hash. Formatters must exclude IDs and source revisions; validate every binding again after the last formatting pass.
+
 ## Calendar weeks
 
 `src/data/kaigo/japanese-master/translations/week-XX.LOCALE.json`:

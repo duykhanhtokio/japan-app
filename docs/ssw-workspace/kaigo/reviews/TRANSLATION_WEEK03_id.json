@@ -32,7 +32,7 @@
   },
   "output": {
     "path": "src/data/kaigo/japanese-master/translations/week-03.id.json",
-    "sha256": "91065ce2c3a6b2a11c7187597bb2a7b3814a5bc7a6dc7007aaea21050125c407",
+    "sha256": "41f2259c3cf01c306a35b74a2b2feed4d5149ed70050bd6279ad74c729febf34",
     "localeProfile": "docs/ssw-workspace/kaigo/locale-profiles/id.json"
   },
   "sourceRevisions": {
@@ -230,5 +230,88 @@
     "No new images or edits to embedded labels;3legacy Vietnamese technical figures remain pending as stated in captions.",
     "No Japanese master/questions, shared UI/policy, other locale or assets changed; only completed translation and review files published.",
     "Root handles runtime selected-language/stale/missing checks, commit, push, and remote persistence; no device or release approval claimed."
-  ]
+  ],
+  "focusedQualifierAudit": {
+    "reviewedAt": "2026-10-16",
+    "sourceLanguage": "ja",
+    "language": "id",
+    "directJapanese": true,
+    "noCrossTranslation": true,
+    "enumeratedQualifierOccurrences": 134,
+    "uniqueSourceTargetPairsFirstInWeek": 95,
+    "wholeSixWeekUniquePairs": 773,
+    "wholeSixWeekOccurrences": 1064,
+    "method": "Enumerate explicit JA recipient/report/help, consent/permission, individual and facility procedure/training qualifications across section paragraphs/captions, lesson metadata and all question prompts/effective readings/options/rationales; independently inspect source-target meanings, including repeated recipients within composite readings. Keyword candidates assisted discovery and did not constitute semantic approval.",
+    "repairs": [
+      {
+        "path": [
+          "sections",
+          "kaigo-move-02-dialogue",
+          "paragraphs",
+          8
+        ],
+        "before": "Petugas perawatan Tanaka: Tolong, ya. Setelah sampai, beri tahu juga petugas ruangan.",
+        "after": "Petugas perawatan Tanaka: Tolong, ya. Setelah sampai, beri tahu juga penanggung jawab ruangan.",
+        "reason": "Restore explicitly stated recipient, facility procedure or consent scope from canonical Japanese.",
+        "sourceJa": "介護職員の田中：お願いします。到着したら、部屋の担当者にも伝えてください。",
+        "auditUniqueIndex": 238
+      },
+      {
+        "path": [
+          "questions",
+          "weekly-move-q05",
+          "rationales",
+          1
+        ],
+        "before": "Tertulis menunggu arahan petugas saat ramai.",
+        "after": "Tertulis menunggu arahan petugas penanggung jawab saat ramai.",
+        "reason": "Restore explicitly stated recipient, facility procedure or consent scope from canonical Japanese.",
+        "sourceJa": "混雑しているときは担当職員の案内を待つと書かれています。",
+        "auditUniqueIndex": 288
+      },
+      {
+        "path": [
+          "questions",
+          "weekly-move-q10",
+          "options",
+          0
+        ],
+        "before": "Setelah tiba, hanya kepada petugas ruangan",
+        "after": "Setelah tiba, hanya menjelaskan kepada penanggung jawab ruangan",
+        "reason": "Restore explicitly stated recipient, facility procedure or consent scope from canonical Japanese.",
+        "sourceJa": "到着後、部屋の担当者にだけ説明する",
+        "auditUniqueIndex": 290
+      },
+      {
+        "path": [
+          "questions",
+          "weekly-kaigo-move-07-revision-q01",
+          "rationales",
+          3
+        ],
+        "before": "Pilihan ini mengabaikan pembaruan terkonfirmasi hanya karena pengumuman lama masih ada.",
+        "after": "Pilihan ini mengabaikan pembaruan yang telah dipastikan penanggung jawab hanya karena pengumuman lama masih ada.",
+        "reason": "Restore explicitly stated recipient, facility procedure or consent scope from canonical Japanese.",
+        "sourceJa": "担当者が確認した更新を、古い掲示が残っているという理由で無視しています。",
+        "auditUniqueIndex": 311
+      }
+    ],
+    "changedFieldCount": 4,
+    "validation": {
+      "exactIdsAndSourceRevisions": true,
+      "parallelCountsAndCaptionKeys": true,
+      "correctIndicesUnchanged": true,
+      "readingPresenceUnchanged": true
+    },
+    "limits": [
+      "AI focused semantic check only; no human, domain, native or device approval.",
+      "This audit targets explicit qualifications, not a claim that all corpus translation quality is complete."
+    ],
+    "humanReviewed": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "nativeDeviceTested": false,
+    "releaseReady": false
+  }
 }

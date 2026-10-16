@@ -8,7 +8,7 @@
   "sourcePacket": "/workspace/scratch/64c65738732f/translation-packets/week-05.ja.json",
   "sourcePacketSha256": "735e214fc0b856d629f51294fe16e29240d9c69d4fb8fd611be02634f324861f",
   "translationPath": "src/data/kaigo/japanese-master/translations/week-05.zh-CN.json",
-  "translationSha256": "961d14cc03ab53d1bf081297fc5c4a99dd42492a51cab27aa93a20ad5da8b553",
+  "translationSha256": "08b0f4e837980f87e24a591bf983a860d9b4e2089ddb338824c795a137bd5b47",
   "directJapanese": true,
   "noCrossTranslation": true,
   "counts": {
@@ -74,5 +74,50 @@
   "nativeReviewed": false,
   "rightsReviewed": false,
   "nativeDeviceTested": false,
-  "releaseReady": false
+  "releaseReady": false,
+  "focusedQualifierAudit": {
+    "scope": "Current canonical Japanese→own zh-CN weeks01–06, including sections, all lesson fields, question prompts/options/rationales/effective runtime readings.",
+    "selectedFieldOccurrences": 237,
+    "distinctJapaneseChinesePairs": 155,
+    "byGroup": {
+      "sections": 104,
+      "lessons": 13,
+      "questions": 120
+    },
+    "method": "Mechanical full-scope binding and lexical-risk inventory plus AI semantic review of source qualifying clauses and their Chinese sentence scope. Reviewed899distinct bilingual pairs /1191occurrences across sixweeks; repeated strings not unique knowledge. Synonyms and context checked, including full paragraphs where extraction omitted Chinese synonyms.",
+    "checkedQualifiers": [
+      "Explicit report/assistance/consultation recipient and role",
+      "Resident consent/permission and activity/body/item scope",
+      "Individual plan/evaluation/training conditions",
+      "Facility procedure/method/training requirements",
+      "Order, unknown vs absent, communication vs implementation, effective displayed reading context"
+    ],
+    "correctedFieldOccurrences": 2,
+    "corrections": [
+      {
+        "path": [
+          "sections",
+          "kaigo-depth-21",
+          "paragraphs",
+          4
+        ],
+        "before": "关于便于排便的姿势，教材有前倾并抬脚跟的例子，有助理解直肠至肛门的通路。但不能不确认稳定、疼痛等条件，就要求所有人采用同一姿势。足下和身体支撑应分别确认。",
+        "after": "关于便于排便的姿势，教材有前倾并抬脚跟的例子，有助理解直肠至肛门的通路。但不能不确认稳定、疼痛等条件，就要求所有人采用同一姿势。应根据本人情况，分别确认足下和身体所需的支撑。",
+        "reason": "Preserve explicit Japanese recipient role / individual-person condition / act of reporting."
+      },
+      {
+        "path": [
+          "sections",
+          "kaigo-excretion-03-dialogue",
+          "paragraphs",
+          4
+        ],
+        "before": "照护人员：还没有。我并没有观察今天全天，因此会区分本人的话和尚未确认的信息。",
+        "after": "照护人员：还没有。我并没有观察今天全天，因此报告时会区分本人的话和尚未确认的信息。",
+        "reason": "Preserve explicit Japanese recipient role / individual-person condition / act of reporting."
+      }
+    ],
+    "remainingFindings": [],
+    "limits": "AI semantic editorial check only; not independent human/native/domain/rights/device/release approval."
+  }
 }

@@ -7,7 +7,7 @@
   "canonicalPacketPath": "/workspace/scratch/64c65738732f/translation-packets/week-02.ja.json",
   "canonicalPacketSha256": "c299f09e07e400f4f41bf65a5ae8b0413ec0a57c2501625a5b3f73c3c483babd",
   "translationPath": "src/data/kaigo/japanese-master/translations/week-02.en.json",
-  "translationSha256": "7728480678914d35f9a7f8010000b0722067312084f305a4f52615210344d184",
+  "translationSha256": "a55ef5dd4f56544002ca25f256ac7bf5580a4dceb63bee01cf60d077de63b5fe",
   "status": "translated_ai_unreviewed",
   "directJapanese": true,
   "noCrossTranslation": true,
@@ -45,7 +45,8 @@
     "fourOptionsAndIndividualReasons": true,
     "readingPresenceMatchesJapanese": true,
     "metadataComplete": true,
-    "atomicCompleteFileWrite": true
+    "atomicCompleteFileWrite": true,
+    "focusedSourceQualifierScan": true
   },
   "aiSemanticSpotChecks": [
     {
@@ -106,5 +107,35 @@
     "No whole-book coverage, professional/native/rights/release approval, device testing or learning-time claim.",
     "Only the complete English week02translation and this review are deliverables. Japanese masters, questions, shared files, UI, images, other locales and commits are unchanged by this worker.",
     "Root owns runtime integration, durable commit and remote verification."
-  ]
+  ],
+  "focusedQualifierAudit": {
+    "scope": "Own EN weeks01–08, directly compared with Japanese source packets; paragraphs, metadata, effective readings, prompts, options and individual rationales.",
+    "candidateFieldsInThisWeek": 102,
+    "globalCandidateFields": 993,
+    "globalDistinctSourceTranslationPairs": 711,
+    "globalManualRiskPairsReviewed": 45,
+    "globalDistinctPairCorrections": 34,
+    "correctedFieldsInThisWeek": 1,
+    "changes": [
+      {
+        "week": 2,
+        "group": "sections",
+        "id": "kaigo-week2-01-transfer-legacy",
+        "field": "paragraphs",
+        "index": 1,
+        "before": "Ask about the pain and any current changes, and report the left knee and midday onset as information provided by the person.",
+        "after": "Ask the person about the pain and current changes, and tell the person responsible that the left knee and midday onset are information provided by the person.",
+        "reviewedCandidateIndices": [
+          100
+        ]
+      }
+    ],
+    "method": "Pattern scan of all source fields for individual plans, facility procedures, consent/permission and report or assistance recipients; manual JA→EN review of44flagged pairs plus the extra medical-role pair. Coordinator and explicit-question consent equivalents retained. Repairs propagated to corresponding runtime readings when the same Japanese and English excerpt occur.",
+    "limitations": "This targeted risk audit is not an independent native, domain or full711-pair manual semantic review.",
+    "humanReviewed": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "releaseReady": false
+  }
 }

@@ -7,7 +7,7 @@
   "canonicalPacketPath": "/workspace/scratch/64c65738732f/translation-packets/week-06.ja.json",
   "canonicalPacketSha256": "46834c19cf5cf19ac6814bfe51b2d338fe9bf72df283a29d8374917565fb0549",
   "translationPath": "src/data/kaigo/japanese-master/translations/week-06.en.json",
-  "translationSha256": "6bbf96c09c0f7d7b7baa12642e41c49bf3c0f4c754ea26b34d5d2881922956d2",
+  "translationSha256": "bd9c098a5e5a756581df93ffc99bf7761ba959cfb81a0b962b2ff519dd8dab28",
   "status": "translated_ai_unreviewed",
   "directJapanese": true,
   "noCrossTranslation": true,
@@ -48,7 +48,8 @@
     "readingPresenceMatchesJapanese": true,
     "metadataComplete": true,
     "exactFigureCaptionKeys": true,
-    "identicalJapaneseGlossaryAcrossCompletedEnglishWeeks": true
+    "identicalJapaneseGlossaryAcrossCompletedEnglishWeeks": true,
+    "focusedSourceQualifierScan": true
   },
   "aiSemanticSpotChecks": [
     {
@@ -120,5 +121,155 @@
     "AI translation and semantic/structural checks only; human, clinical, native-language, rights, actual-device and release approvals remain false.",
     "No new diagnosis, chemical concentration, contact time, angle, temperature threshold or individual care protocol was introduced.",
     "Root handles integration, commits and remote verification. Checkpoint03 remote verification was confirmed before atomic publication."
-  ]
+  ],
+  "focusedQualifierAudit": {
+    "scope": "Own EN weeks01–08, directly compared with Japanese source packets; paragraphs, metadata, effective readings, prompts, options and individual rationales.",
+    "candidateFieldsInThisWeek": 225,
+    "globalCandidateFields": 993,
+    "globalDistinctSourceTranslationPairs": 711,
+    "globalManualRiskPairsReviewed": 45,
+    "globalDistinctPairCorrections": 34,
+    "correctedFieldsInThisWeek": 11,
+    "changes": [
+      {
+        "week": 6,
+        "group": "sections",
+        "id": "kaigo-hygiene-04-knowledge-1",
+        "field": "paragraphs",
+        "index": 1,
+        "before": "The textbook illustration distinguishes an example with a squared nail tip from cutting too short or cutting deeply into the sides. Knowing the shape does not establish safe ability to perform care. Report abnormalities and stay within your trained scope.",
+        "after": "The textbook illustration distinguishes an example with a squared nail tip from cutting too short or cutting deeply into the sides. Knowing the shape does not establish safe ability to perform care. Report abnormalities to a healthcare professional and stay within your trained scope.",
+        "reviewedCandidateIndices": [
+          371
+        ]
+      },
+      {
+        "week": 6,
+        "group": "sections",
+        "id": "kaigo-hygiene-05-transfer-legacy",
+        "field": "paragraphs",
+        "index": 1,
+        "before": "Separate the declined activity from the desired one, report fatigue and consult about a method. Do not record hair washing as done or interpret wanting to wash hands as approval of a particular hand-bath method.",
+        "after": "Separate the declined activity from the desired one, report fatigue to the person responsible and consult about a method. Do not record hair washing as done or interpret wanting to wash hands as approval of a particular hand-bath method.",
+        "reviewedCandidateIndices": [
+          397
+        ]
+      },
+      {
+        "week": 6,
+        "group": "sections",
+        "id": "kaigo-hygiene-07-knowledge-2",
+        "field": "paragraphs",
+        "index": 0,
+        "before": "Choose one issue: mixed-up supplies, touching clean items with used gloves, expanding consent or overstating records. Explain the problem. Consider known facts, remaining checks, consultation and prevention specifically.",
+        "after": "Choose one issue: mixed-up supplies, touching clean items with used gloves, expanding consent or overstating records. Explain the problem. Consider known facts, remaining checks, consultation with the person responsible and prevention specifically.",
+        "reviewedCandidateIndices": [
+          412
+        ]
+      },
+      {
+        "week": 6,
+        "group": "questions",
+        "id": "weekly-hygiene-q09",
+        "field": "rationales",
+        "index": 1,
+        "before": "This communicates uncertainty and checks before use.",
+        "after": "This communicates uncertainty to the person responsible and requests checking before use.",
+        "reviewedCandidateIndices": [
+          442
+        ]
+      },
+      {
+        "week": 6,
+        "group": "questions",
+        "id": "weekly-hygiene-q19",
+        "field": "rationales",
+        "index": 2,
+        "before": "Do not cut deeply before assessment; report the concern.",
+        "after": "Do not cut deeply before an abnormality is assessed; report the concern to a healthcare professional.",
+        "reviewedCandidateIndices": [
+          446
+        ]
+      },
+      {
+        "week": 6,
+        "group": "questions",
+        "id": "weekly-hygiene-q23",
+        "field": "rationales",
+        "index": 0,
+        "before": "Report this condition information as the person’s words.",
+        "after": "Tell the person responsible this condition information as the person’s own words.",
+        "reviewedCandidateIndices": [
+          449
+        ]
+      },
+      {
+        "week": 6,
+        "group": "questions",
+        "id": "weekly-kaigo-gap-infection-01-q05",
+        "field": "options",
+        "index": 0,
+        "before": "Report the comb as lost because it is absent from the box and check screen contact and handling.",
+        "after": "Report the comb as lost because it is absent from the box, and check the screen-contact location and response with the person responsible.",
+        "reviewedCandidateIndices": [
+          471
+        ]
+      },
+      {
+        "week": 6,
+        "group": "questions",
+        "id": "weekly-kaigo-gap-infection-01-q05",
+        "field": "options",
+        "index": 3,
+        "before": "Report comb-search scope and method, but withhold screen contact until the next shift.",
+        "after": "Report the comb-search scope and method to the person responsible, but withhold screen contact until the next shift.",
+        "reviewedCandidateIndices": [
+          472
+        ]
+      },
+      {
+        "week": 6,
+        "group": "questions",
+        "id": "weekly-kaigo-knowledge-40-1",
+        "field": "rationales",
+        "index": 3,
+        "before": "Genital washing concerns another area and is not included.",
+        "after": "Genital washing concerns a separate area; consent to handwashing cannot be extended to it.",
+        "reviewedCandidateIndices": [
+          486
+        ]
+      },
+      {
+        "week": 6,
+        "group": "questions",
+        "id": "weekly-kaigo-language-transfer-231",
+        "field": "options",
+        "index": 3,
+        "before": "Condition checks and consultation are complete.",
+        "after": "Condition checks and consultation with the person responsible are complete.",
+        "reviewedCandidateIndices": [
+          494
+        ]
+      },
+      {
+        "week": 6,
+        "group": "questions",
+        "id": "weekly-kaigo-language-transfer-229",
+        "field": "options",
+        "index": 2,
+        "before": "The specified cuff button, not taking over the whole clothing change.",
+        "after": "The specified cuff button; this is not consent to take over the whole clothing change.",
+        "reviewedCandidateIndices": [
+          507
+        ]
+      }
+    ],
+    "method": "Pattern scan of all source fields for individual plans, facility procedures, consent/permission and report or assistance recipients; manual JA→EN review of44flagged pairs plus the extra medical-role pair. Coordinator and explicit-question consent equivalents retained. Repairs propagated to corresponding runtime readings when the same Japanese and English excerpt occur.",
+    "limitations": "This targeted risk audit is not an independent native, domain or full711-pair manual semantic review.",
+    "humanReviewed": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "releaseReady": false
+  }
 }

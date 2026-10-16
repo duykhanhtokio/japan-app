@@ -30,7 +30,7 @@
   },
   "output": {
     "path": "src/data/kaigo/japanese-master/translations/week-02.id.json",
-    "sha256": "d8f7373f8789b429c73db5f4cd221e7231d233580485ed48c4ca953889d439bd",
+    "sha256": "ec903ebb54b6932acab55795ba5289331ebe01ede294d7d86f295b2075bad613",
     "localeProfile": "docs/ssw-workspace/kaigo/locale-profiles/id.json"
   },
   "sourceRevisions": {
@@ -243,5 +243,49 @@
     "No UI, device, image, rights or release approval is claimed. Root integrates runtime and verifies stale/missing/selected language behavior.",
     "No Japanese master, question source, other locale, shared file, UI or asset was changed. Only the completed translation and this review are published; scratch assembly is not course completion.",
     "Root performs commit/push/remote verification. Whole-course translation completion is not claimed."
-  ]
+  ],
+  "focusedQualifierAudit": {
+    "reviewedAt": "2026-10-16",
+    "sourceLanguage": "ja",
+    "language": "id",
+    "directJapanese": true,
+    "noCrossTranslation": true,
+    "enumeratedQualifierOccurrences": 173,
+    "uniqueSourceTargetPairsFirstInWeek": 125,
+    "wholeSixWeekUniquePairs": 773,
+    "wholeSixWeekOccurrences": 1064,
+    "method": "Enumerate explicit JA recipient/report/help, consent/permission, individual and facility procedure/training qualifications across section paragraphs/captions, lesson metadata and all question prompts/effective readings/options/rationales; independently inspect source-target meanings, including repeated recipients within composite readings. Keyword candidates assisted discovery and did not constitute semantic approval.",
+    "repairs": [
+      {
+        "path": [
+          "questions",
+          "weekly-kaigo-week2-06-revision-q01",
+          "rationales",
+          2
+        ],
+        "before": "Periksa keadaan lantai setelah dibersihkan dan syarat jalur sesuai prosedur.",
+        "after": "Periksa keadaan lantai setelah dibersihkan dan syarat jalur sesuai prosedur fasilitas.",
+        "reason": "Restore explicitly stated recipient, facility procedure or consent scope from canonical Japanese.",
+        "sourceJa": "清掃後の床の状態と通行条件を、施設の手順で確認します。",
+        "auditUniqueIndex": 203
+      }
+    ],
+    "changedFieldCount": 1,
+    "validation": {
+      "exactIdsAndSourceRevisions": true,
+      "parallelCountsAndCaptionKeys": true,
+      "correctIndicesUnchanged": true,
+      "readingPresenceUnchanged": true
+    },
+    "limits": [
+      "AI focused semantic check only; no human, domain, native or device approval.",
+      "This audit targets explicit qualifications, not a claim that all corpus translation quality is complete."
+    ],
+    "humanReviewed": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "nativeDeviceTested": false,
+    "releaseReady": false
+  }
 }

@@ -7,7 +7,7 @@
   "canonicalPacketPath": "/workspace/scratch/64c65738732f/translation-packets/week-04.ja.json",
   "canonicalPacketSha256": "a64ed9e443399dc7c80b3508a422c15787f31326209a3663317ce236d8aa55a6",
   "translationPath": "src/data/kaigo/japanese-master/translations/week-04.en.json",
-  "translationSha256": "6b4a073c3862f3e2ce54dcd640c35519869f9b5d3a18cda1582e7569c1b16339",
+  "translationSha256": "1270d463095d5ace436ebd3b25629f32348d936c4564d244bac8d24192596ac6",
   "status": "translated_ai_unreviewed",
   "directJapanese": true,
   "noCrossTranslation": true,
@@ -47,7 +47,8 @@
     "readingPresenceMatchesJapanese": true,
     "metadataComplete": true,
     "exactFigureCaptionKeys": true,
-    "identicalJapaneseGlossaryAcrossCompletedEnglishWeeks": true
+    "identicalJapaneseGlossaryAcrossCompletedEnglishWeeks": true,
+    "focusedSourceQualifierScan": true
   },
   "aiSemanticSpotChecks": [
     {
@@ -108,5 +109,95 @@
     "AI translation and semantic/structural checks only. No human, clinical, native-language, rights, actual-device or release approval is claimed.",
     "No additional diagnoses, thresholds, methods or personal treatment instructions were introduced.",
     "Root handles integration, commits and remote verification."
-  ]
+  ],
+  "focusedQualifierAudit": {
+    "scope": "Own EN weeks01–08, directly compared with Japanese source packets; paragraphs, metadata, effective readings, prompts, options and individual rationales.",
+    "candidateFieldsInThisWeek": 102,
+    "globalCandidateFields": 993,
+    "globalDistinctSourceTranslationPairs": 711,
+    "globalManualRiskPairsReviewed": 45,
+    "globalDistinctPairCorrections": 34,
+    "correctedFieldsInThisWeek": 6,
+    "changes": [
+      {
+        "week": 4,
+        "group": "sections",
+        "id": "kaigo-depth-16",
+        "field": "paragraphs",
+        "index": 1,
+        "before": "Check the person, meal, planned texture, restrictions and allergies. Observe shape, softness, cohesion and fluid separation, but appearance does not replace individual swallowing assessment. Confirm discrepancies before serving.",
+        "after": "Check the person, meal timing, planned texture, restrictions and allergies. Observe shape, softness, cohesion and fluid separation, but appearance does not replace individual swallowing assessment. If labeling or contents differ, check with the person responsible before serving.",
+        "reviewedCandidateIndices": [
+          206
+        ]
+      },
+      {
+        "week": 4,
+        "group": "questions",
+        "id": "weekly-eating-q07",
+        "field": "rationales",
+        "index": 3,
+        "before": "Checking the current plan avoids guessing an unknown texture.",
+        "after": "Checking today’s individual meal plan with the person responsible before serving avoids guessing an unknown texture.",
+        "reviewedCandidateIndices": [
+          249
+        ]
+      },
+      {
+        "week": 4,
+        "group": "questions",
+        "id": "weekly-eating-q08",
+        "field": "rationales",
+        "index": 3,
+        "before": "This is a referral for current information, not permission to ignore the person.",
+        "after": "This situation calls for checking current information with the person responsible; it does not permit ignoring the person receiving care.",
+        "reviewedCandidateIndices": [
+          252
+        ]
+      },
+      {
+        "week": 4,
+        "group": "questions",
+        "id": "weekly-eating-q09",
+        "field": "rationales",
+        "index": 2,
+        "before": "The conversation places replacement after confirmation.",
+        "after": "In the conversation, the person responsible checks the contents before replacement with a new label.",
+        "reviewedCandidateIndices": [
+          254
+        ]
+      },
+      {
+        "week": 4,
+        "group": "questions",
+        "id": "weekly-eating-q31",
+        "field": "rationales",
+        "index": 0,
+        "before": "Verify the current plan and resolve the discrepancy before serving.",
+        "after": "Check the person’s current plan with the person responsible, resolve the discrepancy, then proceed to serving.",
+        "reviewedCandidateIndices": [
+          266
+        ]
+      },
+      {
+        "week": 4,
+        "group": "questions",
+        "id": "weekly-eating-q35",
+        "field": "rationales",
+        "index": 1,
+        "before": "The discrepancy remains; no match has been confirmed.",
+        "after": "A match with the shared menu is not established; a difference from the individual care plan remains.",
+        "reviewedCandidateIndices": [
+          270
+        ]
+      }
+    ],
+    "method": "Pattern scan of all source fields for individual plans, facility procedures, consent/permission and report or assistance recipients; manual JA→EN review of44flagged pairs plus the extra medical-role pair. Coordinator and explicit-question consent equivalents retained. Repairs propagated to corresponding runtime readings when the same Japanese and English excerpt occur.",
+    "limitations": "This targeted risk audit is not an independent native, domain or full711-pair manual semantic review.",
+    "humanReviewed": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "rightsReviewed": false,
+    "releaseReady": false
+  }
 }
