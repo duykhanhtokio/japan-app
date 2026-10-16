@@ -7,11 +7,11 @@
   "translatedDirectlyFromJapanese": true,
   "crossTranslationUsed": false,
   "otherLocaleSemanticInputUsed": false,
-  "sourcePacket": "/workspace/scratch/c29dc516c1f6/translation-packets-batch10-ja/full-mocks.ja.json",
-  "sourceCommit": "bef62f367dfab58bf653b13c45470cd2e15b6c0c",
-  "sourcePacketSha256": "f133140da342301df3c319ad1d392c9b09101bf22855d2eee3f4975b03dc2fa3",
+  "sourcePacket": "/workspace/scratch/c29dc516c1f6/translation-packets-current-34b9745e/full-mocks.ja.json",
+  "sourceCommit": "34b9745ea1f676e0229f89f25c0aed8cc7bcd84c",
+  "sourcePacketSha256": "f9b540457e4fb04a38faee968b57f34fef562049a07dc13946e86017ed1b154f",
   "translationPath": "src/data/kaigo/japanese-master/mock-translations/mocks.id.json",
-  "translationSha256": "8b7ea2deb730578939cf09035c8ae5d82c6bf736b73a0e1eac7695405529f2c4",
+  "translationSha256": "34688010ff674cd7159bf24cf6f468e0bcaa33cc36c0bae4385d0c3edbaabdda",
   "styleGuideVersion": 1,
   "localeProfile": "docs/ssw-workspace/kaigo/locale-profiles/id.json",
   "completedFormIds": [
@@ -19,7 +19,8 @@
     "kaigo-japanese-mock-02",
     "kaigo-japanese-mock-03",
     "kaigo-japanese-mock-04",
-    "kaigo-japanese-mock-05"
+    "kaigo-japanese-mock-05",
+    "kaigo-japanese-mock-06"
   ],
   "remainingFormIds": [
     "kaigo-skills-mock-01",
@@ -27,16 +28,15 @@
     "kaigo-skills-mock-03",
     "kaigo-skills-mock-04",
     "kaigo-skills-mock-05",
-    "kaigo-skills-mock-06",
-    "kaigo-japanese-mock-06"
+    "kaigo-skills-mock-06"
   ],
   "all12Complete": false,
   "counts": {
-    "forms": 5,
-    "questions": 75,
-    "options": 300,
-    "rationales": 300,
-    "passages": 50,
+    "forms": 6,
+    "questions": 90,
+    "options": 360,
+    "rationales": 360,
+    "passages": 60,
     "figureDescriptions": 0
   },
   "semanticSelfReview": {
@@ -70,7 +70,8 @@
   "rightsReviewed": false,
   "releaseReady": false,
   "openIssues": [
-    "Seven forms remain untranslated: all six skills forms and Japanese form06.",
+    "All six skills forms remain incomplete/untranslated for runtime.",
+    "Skills01 q01–q23 initial translations exist only as an unreviewed scratch fragment; q24–q45 remain.",
     "No runtime/device validation performed by this locale worker."
   ],
   "draftHashes": {
@@ -78,20 +79,32 @@
     "kaigo-japanese-mock-02": "4ff6e7e485074b399844f5b458e52d4c62180b8b90b048bcec5f4c894937f0af",
     "kaigo-japanese-mock-03": "e14af03b292ac9bb389a28a2a892dd76aa5c0f765b9dca02383bd2ff9100aef4",
     "kaigo-japanese-mock-04": "224023f9f2683e10a9c750a26a0d7ddc1cb2ca27a665ffa8f1d8d7e5d5343387",
-    "kaigo-japanese-mock-05": "455c35b3248de872b40ae51bb91a22344647940a46838302060ea7474e466c05"
+    "kaigo-japanese-mock-05": "455c35b3248de872b40ae51bb91a22344647940a46838302060ea7474e466c05",
+    "kaigo-japanese-mock-06": "9dcb259398b6f439a1706fa5749f3151eb972e4e7eddd48d34a884070f87b033"
   },
   "directJapanese": true,
   "noCrossTranslation": true,
   "outputs": [
     {
       "path": "src/data/kaigo/japanese-master/mock-translations/mocks.id.json",
-      "sha256": "8b7ea2deb730578939cf09035c8ae5d82c6bf736b73a0e1eac7695405529f2c4"
+      "sha256": "34688010ff674cd7159bf24cf6f468e0bcaa33cc36c0bae4385d0c3edbaabdda"
     }
   ],
-  "integrationMetadataNormalization": {
-    "translatedProseChanged": false,
-    "missingFalseApprovalFieldsAdded": [],
-    "directJapaneseAndNoCrossDeclarationNormalizedFromOwnerReport": true,
-    "originalOwnerOutputHash": "8b7ea2deb730578939cf09035c8ae5d82c6bf736b73a0e1eac7695405529f2c4"
+  "batch12SelfReview": {
+    "newCompleteFormIds": [
+      "kaigo-japanese-mock-06"
+    ],
+    "directJapanese": true,
+    "noCrossTranslation": true,
+    "meaningAndContinuousTargetProseSelfReviewed": true,
+    "specificRationalesConditionsNegationRolesAndOrderPreserved": true,
+    "oldFiveFormsUnchanged": true,
+    "newDraftSha256": "9dcb259398b6f439a1706fa5749f3151eb972e4e7eddd48d34a884070f87b033",
+    "notes": [
+      "Preserved that confirming the method, explaining it and obtaining consent all precede implementation.",
+      "Kept self-report, observation and unmeasured temperature distinct.",
+      "Preserved optional observation-only participation and explicit recipient instructions."
+    ],
+    "pausedForPublisherPriority": "Six untranslated locales now take priority. No next form started after steering."
   }
 }

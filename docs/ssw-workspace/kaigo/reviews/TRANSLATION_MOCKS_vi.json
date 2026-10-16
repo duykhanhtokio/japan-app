@@ -3,11 +3,11 @@
   "language": "vi",
   "translatedFrom": "ja",
   "status": "translated_ai_unreviewed",
-  "sourceCommit": "bef62f367dfab58bf653b13c45470cd2e15b6c0c",
+  "sourceCommit": "34b9745ea1f676e0229f89f25c0aed8cc7bcd84c",
   "sourcePacket": "full-mocks.ja.json",
-  "sourcePacketSha256": "f133140da342301df3c319ad1d392c9b09101bf22855d2eee3f4975b03dc2fa3",
+  "sourcePacketSha256": "f9b540457e4fb04a38faee968b57f34fef562049a07dc13946e86017ed1b154f",
   "translationFile": "src/data/kaigo/japanese-master/mock-translations/mocks.vi.json",
-  "translationSha256": "c2ef361385cdcbf5d70c6c73556466a905df067c5135fb7aa3a26706e190e721",
+  "translationSha256": "7eaa3bbdcf4cfe4549a9663f4c05355ca77b95009444e0d1fbc8bc538bb78fae",
   "directJapaneseTranslation": true,
   "crossTranslation": false,
   "crossLocaleSemanticInputs": false,
@@ -17,12 +17,12 @@
   "completedFormIds": [
     "kaigo-skills-mock-01",
     "kaigo-japanese-mock-01",
-    "kaigo-japanese-mock-02"
+    "kaigo-japanese-mock-02",
+    "kaigo-japanese-mock-03"
   ],
   "remainingFormIds": [
     "kaigo-skills-mock-02",
     "kaigo-skills-mock-03",
-    "kaigo-japanese-mock-03",
     "kaigo-skills-mock-04",
     "kaigo-skills-mock-05",
     "kaigo-skills-mock-06",
@@ -31,11 +31,11 @@
     "kaigo-japanese-mock-06"
   ],
   "counts": {
-    "forms": 3,
-    "questions": 75,
-    "options": 300,
-    "rationales": 300,
-    "passages": 20,
+    "forms": 4,
+    "questions": 90,
+    "options": 360,
+    "rationales": 360,
+    "passages": 30,
     "figureDescriptions": 5
   },
   "semanticChecks": {
@@ -52,7 +52,7 @@
     "Skills01 q17 removed ungrounded age-specific address."
   ],
   "openIssues": [
-    "9 full forms remain untranslated; this is a subset of complete forms, not completion of the12-form locale.",
+    "8 full forms remain untranslated; included4 complete forms do not mean all12 complete.",
     "Independent domain/native review and native-device testing pending.",
     "Existing figure lettering issues remain separate."
   ],
@@ -67,13 +67,22 @@
   "outputs": [
     {
       "path": "src/data/kaigo/japanese-master/mock-translations/mocks.vi.json",
-      "sha256": "c2ef361385cdcbf5d70c6c73556466a905df067c5135fb7aa3a26706e190e721"
+      "sha256": "7eaa3bbdcf4cfe4549a9663f4c05355ca77b95009444e0d1fbc8bc538bb78fae"
     }
   ],
-  "integrationMetadataNormalization": {
-    "translatedProseChanged": false,
-    "missingFalseApprovalFieldsAdded": [],
-    "directJapaneseAndNoCrossDeclarationNormalizedFromOwnerReport": true,
-    "originalOwnerOutputHash": "c2ef361385cdcbf5d70c6c73556466a905df067c5135fb7aa3a26706e190e721"
+  "newFormReview": {
+    "formId": "kaigo-japanese-mock-03",
+    "questions": 15,
+    "options": 60,
+    "rationales": 60,
+    "passages": 10,
+    "directJapanese": true,
+    "noCrossTranslation": true,
+    "semanticSelfReview": "All fifteen complete questions read directly against Japanese. Preserved pending decisions, explicit non-consent, observation versus inference, dates/times, assigned actors and response-before-explanation-before-consent-before-support sequence. q15 explicitly retains nursing-professional recipient/source of response.",
+    "styleSelfReview": "Own vi profile; neutral tôi or omitted pronouns in unknown-age scenes, mình–bạn between peers. Complete connected explanations; no compressed conditions.",
+    "sourceRevisionAndAnswerPositions": "exactly verified",
+    "previousThreeFormsPreservedAsObjects": true,
+    "formObjectSha256": "0275ee47c2bde5a953ad3fab4eefe8459e919772246aee5a0ce56df6916419e4",
+    "productionPause": "Publisher now prioritizes six untranslated locales; Japanese04–06/skills02–03 not started as translations."
   }
 }

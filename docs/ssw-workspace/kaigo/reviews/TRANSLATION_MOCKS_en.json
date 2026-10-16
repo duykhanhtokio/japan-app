@@ -2,11 +2,11 @@
   "version": 1,
   "language": "en",
   "sourceLanguage": "ja",
-  "sourceCommit": "bef62f367dfab58bf653b13c45470cd2e15b6c0c",
-  "canonicalPacketPath": "/workspace/scratch/c29dc516c1f6/translation-packets-batch10-ja/full-mocks.ja.json",
-  "canonicalPacketSha256": "f133140da342301df3c319ad1d392c9b09101bf22855d2eee3f4975b03dc2fa3",
+  "sourceCommit": "34b9745ea1f676e0229f89f25c0aed8cc7bcd84c",
+  "canonicalPacketPath": "/workspace/scratch/c29dc516c1f6/translation-packets-current-34b9745e/full-mocks.ja.json",
+  "canonicalPacketSha256": "f9b540457e4fb04a38faee968b57f34fef562049a07dc13946e86017ed1b154f",
   "translationPath": "src/data/kaigo/japanese-master/mock-translations/mocks.en.json",
-  "translationSha256": "2f6d5377f04a62bcf7fb3cf66fbc4e26ea5c7dda41ab29e685af674bbc4cb678",
+  "translationSha256": "a7a81b1d8a07cc7ad65188ae4a6f74adbbb55486f4982c4f14649fe19340720c",
   "status": "translated_ai_unreviewed",
   "directJapanese": true,
   "noCrossTranslation": true,
@@ -28,23 +28,23 @@
     "kaigo-japanese-mock-04",
     "kaigo-japanese-mock-05",
     "kaigo-japanese-mock-06",
-    "kaigo-skills-mock-01"
+    "kaigo-skills-mock-01",
+    "kaigo-skills-mock-02"
   ],
   "remainingFormIds": [
-    "kaigo-skills-mock-02",
     "kaigo-skills-mock-03",
     "kaigo-skills-mock-04",
     "kaigo-skills-mock-05",
     "kaigo-skills-mock-06"
   ],
   "counts": {
-    "forms": 7,
-    "questions": 135,
-    "options": 540,
-    "rationales": 540,
+    "forms": 8,
+    "questions": 180,
+    "options": 720,
+    "rationales": 720,
     "passages": 60,
-    "figureDescriptions": 5,
-    "sourceRevisionBindings": 142
+    "figureDescriptions": 10,
+    "sourceRevisionBindings": 188
   },
   "checks": {
     "exactIds": true,
@@ -56,23 +56,26 @@
     "metadataComplete": true
   },
   "aiSemanticChecks": [
-    "Reviewed all 90 Japanese-language mock questions and all 45 skills mock 01 questions directly against effective Japanese prompts, every option, option-specific rationale, passage, and figure description.",
+    "Reviewed all 90 Japanese-language mock questions and all 90 skills mock 01–02 questions directly against effective Japanese prompts, every option, option-specific rationale, passage, and figure description.",
     "Expanded clipped rationale drafts into complete option-specific explanations; preserved qualifications, uncertainty, order, permissions, actors and recipients.",
     "Restored exact distractor content rather than explanations or stronger assertions: paper-sheet decisions, quiet-speech wishes, drawers/books/letters scope, noon shoulder report, handover recipients and nursing-reply sequence.",
     "Corrected floor-cleaning distractor from wiping with water to removing moisture; preserved separate foot-bath temperature checks and unknown-versus-negative distinctions.",
     "Retained Japanese word便where its contextual meaning and delivery/stool ambiguity are the learning target.",
     "Checked connected natural English wording, respectful adult address, consistent care worker/nurse terminology and complete individual reasons.",
     "Skills mock 01: expanded all 180 individual rationales into complete source-specific English; preserved reasons, professional recipients, conditions, uncertainty and distinctions among assessment, implementation, evaluation and consent.",
-    "Skills mock 01: restored reduced-explanation distractor, precise meal-serving checks without added only conditions, medicine use before reporting, and personal belongings consent boundaries; polished complete prompts/options and figure-code spacing."
+    "Skills mock 01: restored reduced-explanation distractor, precise meal-serving checks without added only conditions, medicine use before reporting, and personal belongings consent boundaries; polished complete prompts/options and figure-code spacing.",
+    "Batch 12 skills mock 02: directly source-reviewed all 45 questions and expanded all 180 specific rationales; retained photo purpose-specific consent, blood/excreta precautions regardless of diagnosis, staffing/equipment conditions, handover information sources and individual plans.",
+    "Skills mock 02: preserved reporting new skin/nail changes to medical staff, temperature/method distinctions, stage-of-eating explanations, dysphagia profession roles, affected-side dressing general rule with condition/plan limits, and before/after-position call-button reach checks.",
+    "Skills mock 02: corrected clipped prompts and distractors, retained stool/urine/observed-versus-stated distinctions and exact figure numbers/letters. Original seven form objects preserved unchanged."
   ],
   "editorialNotes": [
-    "Original scratch en-mocks drafts are preserved. Only source-reviewed Japanese mock forms 01–06 and skills mock 01 are included; unreviewed skills mock forms 02–06 are excluded.",
+    "Original scratch en-mocks drafts are preserved. Only source-reviewed Japanese mock forms 01–06 and skills mock forms 01–02 are included; skills mock forms 03–06 remain excluded.",
     "No other locale was read or used as a translation intermediate.",
     "No changes to UI, mock attempt revisions, Japanese data, timing or answer indices.",
     "Root handles integration, runtime, commits and remote persistence."
   ],
   "uncertainties": [
-    "Skills forms 02–06 remain to be source-reviewed and polished: 225 questions, 900 options and 900 rationales. Existing compressed drafts are scratch only.",
+    "Skills forms 03–06 remain to be source-reviewed and polished: 180 questions, 720 options and 720 rationales. Existing compressed drafts are scratch only.",
     "Independent native/domain review and device verification remain pending."
   ],
   "limits": [
@@ -81,7 +84,7 @@
   "outputs": [
     {
       "path": "src/data/kaigo/japanese-master/mock-translations/mocks.en.json",
-      "sha256": "2f6d5377f04a62bcf7fb3cf66fbc4e26ea5c7dda41ab29e685af674bbc4cb678"
+      "sha256": "a7a81b1d8a07cc7ad65188ae4a6f74adbbb55486f4982c4f14649fe19340720c"
     }
   ],
   "integrationMetadataNormalization": {
@@ -96,5 +99,13 @@
     "directJapaneseAndNoCrossDeclarationNormalizedFromOwnerReport": true,
     "originalOwnerOutputHash": "a27074a2929dc0bb14a4107155fd8871e3ffee70e3e8db6492967914dec60b9e",
     "currentAssemblyPreservesNormalizedFalseFlags": true
+  },
+  "batch12ScopeChange": {
+    "completedNewFormIds": [
+      "kaigo-skills-mock-02"
+    ],
+    "pausedBeforeNextForm": "kaigo-skills-mock-03",
+    "reason": "User steering prioritizes six currently untranslated locales; stop at next completed form.",
+    "priorSevenFormsPreserved": true
   }
 }
