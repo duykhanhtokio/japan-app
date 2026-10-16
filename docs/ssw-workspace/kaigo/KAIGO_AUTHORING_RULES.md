@@ -1,6 +1,6 @@
 # Hướng dẫn chính thức — Tokutei Gino 介護
 
-Phiên bản: 14. Ngày duyệt: 2026-10-16 (Asia/Tokyo).
+Phiên bản: 15. Ngày duyệt: 2026-10-16 (Asia/Tokyo).
 Trạng thái: CHỦ DỰ ÁN ĐÃ DUYỆT PHƯƠNG ÁN BIÊN SOẠN.
 Repository: duykhanhtokio/japan-app. Nhánh: recovery/jlpt-n3-n1.
 Đây là hợp đồng biên soạn; duyệt phương án không chứng nhận nội dung chưa được tạo, kiểm duyệt hoặc tích hợp.
@@ -222,3 +222,10 @@ Chủ dự án yêu cầu dùng6AI cùng biên soạn để tăng tốc và tạ
 Chia6phạm vi độc lập theo tuần, mỗi AI giữ đúng ID và đọc nguồn liên quan; không sửa chéo tệp hoặc tự đổi hướng dẫn/UI. Đợt đầu:tuần2–7, mỗi AI một tuần; điều phối kiểm tập hợp, đối chiếu nguồn, dữ liệu cũ và tích hợp Nhật, commit/push/fetch/xác minh trước đợt tiếp. Tiếp tục các tuần còn lại theo cùng nguyên tắc. Câu hỏi, đáp án, lời giải, thuật ngữ, chú thích và nội dung phụ đều thuộc bản Nhật; không chỉ đổi ngôn ngữ mặc định.
 
 Báo riêng trạng thái bản Nhật, bản dịch đang tạm hoãn và duyệt chuyên môn/bản ngữ/thiết bị. Chỉ đánh dấu Nhật của một tuần đầy đủ khi đã kiểm nội dung, nguồn, ảnh và tích hợp theo phạm vi thực tế; tổng thể Kaigo vẫn chưa hoàn thành trong thời gian bản dịch hoặc bước khác còn dở. Không tự nhận100%độ phủ nguồn khi chưa có danh mục mọi ý nguồn.
+
+
+## 2026-10-16 — Japanese scope closure and direct translation
+
+Publisher authorizes exclusion of two unlabelled visual details (PDF33/42) and replacement of two unsupported procedure details (PDF74/197) with supported anatomy, observation, consent, hygiene and reporting content. See `reviews/JAPANESE_FINAL_SCOPE_RESOLUTION.json` for exact dispositions and five Japanese paragraph changes. Japanese content in this agreed scope is AI editorial complete for translation; this is not exhaustive source coverage, professional approval, native review, device approval or release approval. Historical findings remain preserved.
+
+After canonical Japanese checks and remote verification, resume translation with six AI, each assigned one distinct locale and translating directly from Japanese. Never use another locale as a pivot. Complete all twelve supported locales through subsequent batches. Preserve the approved warm respectful adult style, stable address forms, locale terminology and existing display components. Bind every translation to its Japanese revision; stale or missing selected-locale content must not fall back to Vietnamese.

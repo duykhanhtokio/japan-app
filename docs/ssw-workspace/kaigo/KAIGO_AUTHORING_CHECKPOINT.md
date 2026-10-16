@@ -1011,3 +1011,10 @@ QA PASS: all1,047IDs/counts,24+2exact question changes/1core overlay/3master cha
 Four source items remain disclosed at printed31/40/72/195; source-candidate dispositions remain1,276covered/20qualified-source-error/4pending. The3VI-label technical and13EN-label mock figures remain pending; no image generation. No new claim that all30mock figure assets or every historical furigana reading was visually checked. Whole-source unique denominator/coverage percentage remain null; allhuman/domain/native/device/rights/release flags false and JapaneseWholeCorpusComplete false.
 
 Evidence: JAPANESE_ASSESSMENT_REVIEW_01..06.json, JAPANESE_ASSESSMENT_RESOLUTION.json, STRUCTURE/RUNTIME/MOCK/COURSE_FLOW/REVISION_QA reports. Next: continue independent Japanese completeness/language review with the four source items disclosed before translation. Commit/push/fetch and clean WORK PERSISTENCE PASS required before handoff; no SHA-only followup commit.
+
+
+## 2026-10-16 — Japanese scope closure and direct translation
+
+Publisher authorizes exclusion of two unlabelled visual details (PDF33/42) and replacement of two unsupported procedure details (PDF74/197) with supported anatomy, observation, consent, hygiene and reporting content. See `reviews/JAPANESE_FINAL_SCOPE_RESOLUTION.json` for exact dispositions and five Japanese paragraph changes. Japanese content in this agreed scope is AI editorial complete for translation; this is not exhaustive source coverage, professional approval, native review, device approval or release approval. Historical findings remain preserved.
+
+After canonical Japanese checks and remote verification, resume translation with six AI, each assigned one distinct locale and translating directly from Japanese. Never use another locale as a pivot. Complete all twelve supported locales through subsequent batches. Preserve the approved warm respectful adult style, stable address forms, locale terminology and existing display components. Bind every translation to its Japanese revision; stale or missing selected-locale content must not fall back to Vietnamese.

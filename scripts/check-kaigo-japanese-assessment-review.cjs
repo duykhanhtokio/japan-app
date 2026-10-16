@@ -3,7 +3,9 @@ const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypt
 const {execFileSync}=require('node:child_process');
 const root=path.resolve(__dirname,'..'),dir='docs/ssw-workspace/kaigo/reviews/';
 const baseline='6288f2182fdd5a5217d52535602db4f71ee39f7d',cache=new Map();
-const bytes=p=>fs.readFileSync(path.join(root,p));
+const successor=fs.existsSync(path.join(root,dir+'JAPANESE_FINAL_SCOPE_RESOLUTION.json'))?JSON.parse(fs.readFileSync(path.join(root,dir+'JAPANESE_FINAL_SCOPE_RESOLUTION.json'))):null;
+if(successor)execFileSync(process.execPath,[path.join(root,'scripts/check-kaigo-japanese-final-scope.cjs')],{cwd:root,stdio:'pipe'});
+const bytes=p=>successor&&(/japanese-master\/week-\d{2}(?:-questions\.draft)?\.json$/.test(p)||p.includes('mock-reviews/pair-')||p.endsWith('mock-core-corrections.json'))?execFileSync('git',['show',`${successor.baselineCommit}:${p}`],{cwd:root,maxBuffer:16e6}):fs.readFileSync(path.join(root,p));
 const gitBytes=p=>{if(!cache.has(p))cache.set(p,execFileSync('git',['show',`${baseline}:${p}`],{cwd:root,maxBuffer:16e6}));return cache.get(p);};
 const read=p=>JSON.parse(bytes(p)),old=p=>JSON.parse(gitBytes(p));
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
@@ -66,6 +68,7 @@ function validate(input=reports,state=current,res=resolution){
  return {status:'PASS_JAPANESE_ASSESSMENT_REVIEW_AND_EXACT_REVISIONS',baselineCommit:baseline,reviewReports:6,weeklyQuestionsReviewed:weeklyCovered,mockQuestionsReviewed:mockCovered,optionRationalesReviewed:(weeklyCovered+mockCovered)*4,weeklyQuestionsRevised:revisedWeekly,mockRationaleQuestionsRevised:revisedMock,mockCoreQuestionsRevised:res.corePatches.length,masterParagraphsRevised:revisedMaster,japaneseParagraphRecords:paragraphs,allAnswerIndicesPreserved:true,legacySourceBytePreserved:true,translationsPaused:true,sourceKnowledgeCoveragePercent:null,humanReviewed:false,domainReviewed:false,nativeReviewed:false,nativeDeviceTested:false,releaseReady:false};
 }
 const result=validate();
+if(successor){result.comparisonCommit=successor.baselineCommit;result.historicalSnapshotValidation=true;result.currentSuccessorValidation=JSON.parse(execFileSync(process.execPath,[path.join(root,'scripts/check-kaigo-japanese-final-scope.cjs')],{cwd:root,encoding:'utf8'}));}
 for(const[name,mutate]of [
  ['omitted_reviewed_question',(rs)=>rs[0].inspected[0].questionIds.pop()],
  ['unearned_approval',(rs)=>rs[0].humanReviewed=true],
