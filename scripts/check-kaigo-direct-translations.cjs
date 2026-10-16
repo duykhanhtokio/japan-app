@@ -10,6 +10,13 @@ const nodes=(t,id)=>t.root.findAll(n=>typeof n.type==='string'&&n.props.testID==
 const get=(t,id)=>{const ns=nodes(t,id);assert.equal(ns.length,1,id);return ns[0];};
 const flatten=n=>typeof n==='string'?n:Array.isArray(n)?n.map(flatten).join(' '):n&&typeof n==='object'?flatten(n.children):'';
 const text=t=>flatten(t.toJSON());
+// Ruby rows render base text separately from readings; line breaks use empty Views.
+const sourceParagraphText=(t,section,index)=>{
+ const node=get(t,`kaigo-source-${section.id}-${index}`);
+ if(index===0&&section.paragraphsJa[index]===section.japanese&&section.ruby?.length)
+  return node.children.map(part=>{assert.equal(typeof part,'object');const words=part.findAll(n=>n.type==='Text');return words.length?flatten(words.at(-1).children):'\n';}).join('');
+ return flatten(node.children);
+};
 const click=async(t,id)=>act(async()=>{const n=get(t,id);assert(!n.props.disabled,id);n.props.onPress();await new Promise(setImmediate);});
 const mount=async m=>{let t;await act(async()=>{t=create(React.createElement(m.KaigoCourse,{active:false,onBack(){}}));await new Promise(setImmediate);});return t;};
 (async()=>{
@@ -27,7 +34,7 @@ const mount=async m=>{let t;await act(async()=>{t=create(React.createElement(m.K
     global.__tokuteiStorage.set('@japan_app_tokutei_reading_appearance_v1',mode);
     const t=await mount(m);await click(t,'kaigo-week-'+week);await click(t,'kaigo-calendar-day-'+entry.day);
     const sections=m.japaneseSectionsFor(entry);
-    for(const section of sections){assert.equal(nodes(t,`kaigo-master-translation-${section.id}-0`).length,0,'Translation hidden initially');assert(text(t).includes(section.paragraphsJa[0]));}
+    for(const section of sections){assert.equal(nodes(t,`kaigo-master-translation-${section.id}-0`).length,0,'Translation hidden initially');for(let i=0;i<section.paragraphsJa.length;i++)assert.equal(sourceParagraphText(t,section,i),section.paragraphsJa[i],'Japanese source paragraph stays exact');}
     await click(t,'kaigo-translation');
     for(const section of sections){const translated=m.translationForMaster(section.id,locale);for(let i=0;i<translated.paragraphs.length;i++){
       const node=get(t,`kaigo-master-translation-${section.id}-${i}`);assert.equal(flatten(node.children),translated.paragraphs[i]);
