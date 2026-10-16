@@ -1,7 +1,7 @@
 // Isolated native host fixtures: test real course hooks and data, without claiming device rendering.
 const fs = require("node:fs"),
   path = require("node:path");
-module.exports = async function compile(root, modules) {
+module.exports = async function compile(root, modules, jsonSnapshots = new Map()) {
   const base = root + path.sep;
   const dependency = (name) =>
     require(require.resolve(name, { paths: [modules || root] }));
@@ -36,6 +36,12 @@ module.exports = async function compile(root, modules) {
         contents: mocks[args.path],
         loader: "tsx",
       }));
+      // Optional committed JSON inputs let revision tests run the actual old data adapter.
+      // Normal fixture callers read the working tree exactly as before.
+      build.onLoad({ filter: /\.json$/, namespace: "file" }, (args) => {
+        const snapshot = jsonSnapshots.get(path.resolve(args.path));
+        return snapshot === undefined ? undefined : { contents: snapshot, loader: "json" };
+      });
       build.onResolve({ filter: /\.(png|jpg|jpeg|webp|mp3)$/ }, (args) => ({
         path: args.path,
         namespace: "asset",

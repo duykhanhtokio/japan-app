@@ -20,6 +20,8 @@ if(successor){
   assert.equal(successor.baselineCommit,'f269590c5a38c7efa13d8ccdbcc697c3402baa68');
   successorResult=JSON.parse(execFileSync(process.execPath,[path.join(__dirname,'check-kaigo-japanese-remaining.cjs')],{cwd:root,encoding:'utf8',maxBuffer:2e6}).trim());
 }
+const questionComparisonCommit=successorResult?.questionComparisonCommit;
+const questionSnapshot=p=>questionComparisonCommit?execFileSync('git',['show',`${questionComparisonCommit}:${p}`],{cwd:root,maxBuffer:12e6}):fs.readFileSync(path.join(root,p));
 const originals = {}, masters = {}, originalQuestions = {};
 for (let week=1; week<=26; week++) {
   originals[week] = JSON.parse(fromGit(mp(week)));
@@ -112,13 +114,14 @@ function validate(input = reports, current = masters) {
         paragraphs++;if(text!==old.paragraphsJa[paragraphIndex]) {assert(patches.has(key({week,sectionId,paragraphIndex})),'Unrecorded Japanese edit');if(paragraphIndex>=old.paragraphsJa.length)added++;else changed++;}
       });
     }
-    const draft=read(qp(week));assert.deepEqual(draft.questions,originalQuestions[week],'Question objects changed');questionsUnchanged+=Object.keys(draft.questions).length;
-    assert.equal(draft.sourceJapaneseSha256,sha(fs.readFileSync(path.join(root,mp(week)))));
+    const draft=JSON.parse(questionSnapshot(qp(week)));assert.deepEqual(draft.questions,originalQuestions[week],'Question objects changed');questionsUnchanged+=Object.keys(draft.questions).length;
+    assert.equal(draft.sourceJapaneseSha256,sha(questionSnapshot(mp(week))));
   }
   return {status:'PASS_SOURCE_PAGE_INVENTORY_AND_CURRENT_JAPANESE_REVISIONS',baselineCommit:baseline,pdfPages:pageIds.size,teachingPages,conceptRecords:concepts,paragraphPointers:targets,domainCounts:domains,effectiveConceptCounts:counts,conceptRecordsRepaired:repaired,paragraphs,revisedParagraphs:changed,addedParagraphs:added,questionsUnchanged,sourceKnowledgeCoveragePercent:null,semanticExhaustivenessCertified:false,humanReviewed:false,domainReviewed:false,nativeReviewed:false,nativeDeviceTested:false,releaseReady:false};
 }
 const result=validate();
 result.comparisonCommit=successor?.baselineCommit??'working_tree';
+result.questionComparisonCommit=questionComparisonCommit??'working_tree';
 result.historicalSnapshotValidation=Boolean(successor);
 result.currentSuccessorValidation=successorResult;
 for(const [name,mutate] of [

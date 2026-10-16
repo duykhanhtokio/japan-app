@@ -980,3 +980,34 @@ Root additionally read 105 Japanese paragraphs in24 sections of weeks9/10/12 and
 QA PASS: 10 exact-before/after revision bindings; all six prior pending source candidates accounted without hidden omission;6 negative controls; historical audit chain explicitly checks committed8004/f269 snapshots before current successor;5,372 ledger pointers; full26week/176day/866section runtime and course flow; old attempts/resume/submission; Japanese-first/selected translation/no stale or missing fallback;74 protected Kaigo data files byte-unchanged; focused TypeScript; JLPT10/10UI lock. Fresh execution2026-10-16; historical course-flow fixture date is not execution time. Host fixtures are not actual-device testing.
 
 All human/domain/native/device/rights/release approvals remain false. Whole-source denominator and coverage percentage remain null; JapaneseWholeCorpusComplete remains false. Next: independent Japanese completeness/language review with the four disclosed source items before translations. Evidence: JAPANESE_REMAINING_RESOLUTION.json plus STRUCTURE/RUNTIME/COURSE_FLOW_QA reports. Commit/push/fetch and clean WORK PERSISTENCE PASS must be verified before handoff; no SHA-only followup commit.
+
+
+## 2026-10-16 — full Japanese assessment editorial audit, six AI
+
+Resumed from remote-verified 6288f2182fdd5a5217d52535602db4f71ee39f7d with clean WORK PERSISTENCE PASS. Reused the same six AI: weekly scopes1–2/3–4/5–6/7–12/13–26 and12fullmocks. Actual membership checked from data:687weeklyQ/2,748option reasons plus360mockQ/1,440reasons, total1,047question records/4,188reasons. All actual weekly runtime readings were also read, including inherited legacy readings where readingJa was absent; no assumption that the current master dialogue was automatically displayed. Runtime baseline was captured before edits and checked again through the actual adapters with72committedJSON snapshots. Rulesv14/stylev1/ja profile remain unchanged; no translations.
+
+Applied24weekly question revisions,2mock-rationale revisions and1guarded mock-core wording/furigana correction. All correctIndex values, IDs, question/option order and mock timing remain unchanged. No new questions. Retained663weeklyQ/357mockQ exactly. Root read every proposed change and preserved original facts/conditions; no noun-swap or duplicate question generation. A proposed answer-action sentence was removed from a reading before integration. Added missing reading facts only from existing project scenes; standalone transfer questions explicitly suppress irrelevant inherited reading where appropriate. A3時/15時 concern was resolved without a patch because actual runtime already said十五時.
+
+| Week | Questions retained | Revised | Added | Current questions |
+| --- | ---: | ---: | ---: | ---: |
+| 1 | 52 | 7 | 0 | 59 |
+| 2 | 69 | 1 | 0 | 70 |
+| 4 | 59 | 2 | 0 | 61 |
+| 5 | 62 | 2 | 0 | 64 |
+| 6 | 72 | 3 | 0 | 75 |
+| 7 | 67 | 4 | 0 | 71 |
+| 8 | 55 | 3 | 0 | 58 |
+| 9 | 13 | 1 | 0 | 14 |
+| 19 | 6 | 1 | 0 | 7 |
+
+Examples: explicit requester/recipient roles; surname versus given-name distinction; chewing-time communication aligned with the already-reviewed Japanese source150; 未確認 not misreported as未測定; screen-contact scenario no longer contradicted by its reading; observation/time/source facts attached to comprehension questions; law name included for Article21(1); food recipient versus plating worker; receiver explicitly repeats the handoff. MHLW Article21(1) actually opened/read for the law-name references, without changing scope to other cases. Sources/section IDs and exact before/after evidence are in reviews01..06 and the resolution.
+
+Three week1 master paragraphs also clarified the same reversed requester grammar: foundation03-reading and the two identical foundation07 introductions. No teaching condition or actual dialogue turn changed;5,369other paragraph records retain exact text. Corpus remains26weeks/176days/866sections/5,372paragraph records. Week1ledger, draft source binding and option-rationale review hashes renewed; VI/ENtranslationfiles unchanged. Six stale translation bindings for the three changed sections were rejected by the actual adapter. All52original project language passages remain intact.
+
+Mock fixes: Japanese04q07 now explains which dishes, not who bought them; skills06q23 no longer implies increased urine output belongs to dragging-skin harms; skills04q32 clarifies urine volume associated with the urge, not a volume of the sensation itself. New prompt furigana synchronized, no numerical wait criterion added. Review core bindings remain byte-matched to legacy content; skills04q32 uses a guarded overlay. Total forms with explicit corrections relative to legacy is now3, with9core-unchanged forms. Relative to the preceding Japanese baseline, only1mock gets a new attempt key and11keep theirs.
+
+QA PASS: all1,047IDs/counts,24+2exact question changes/1core overlay/3master changes,6negative controls, current successor plus explicit historical source/paragraph snapshots;5,372ledger pointers; full26week Japanese production and176day/866section course flow; all12mocks/360questions/1,440reasons after-submit only/12selectedlanguages; week1source/core editorial hash renewal;75protected Kaigo data files byte-unchanged; focused TypeScript; JLPT10/10UIlock. Real-adapter baseline comparison verifies9changed/17unchanged weekly Japanese revisions; old Japanese weekly attempts preserved;1new/11preserved mock keys;6staleVI/ENsection translations rejected. Existing source JSON/translation/assets/UI unchanged. Host fixtures are not actual-device testing.
+
+Four source items remain disclosed at printed31/40/72/195; source-candidate dispositions remain1,276covered/20qualified-source-error/4pending. The3VI-label technical and13EN-label mock figures remain pending; no image generation. No new claim that all30mock figure assets or every historical furigana reading was visually checked. Whole-source unique denominator/coverage percentage remain null; allhuman/domain/native/device/rights/release flags false and JapaneseWholeCorpusComplete false.
+
+Evidence: JAPANESE_ASSESSMENT_REVIEW_01..06.json, JAPANESE_ASSESSMENT_RESOLUTION.json, STRUCTURE/RUNTIME/MOCK/COURSE_FLOW/REVISION_QA reports. Next: continue independent Japanese completeness/language review with the four source items disclosed before translation. Commit/push/fetch and clean WORK PERSISTENCE PASS required before handoff; no SHA-only followup commit.

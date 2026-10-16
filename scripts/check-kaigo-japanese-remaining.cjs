@@ -10,7 +10,14 @@ const mp=w=>`src/data/kaigo/japanese-master/week-${String(w).padStart(2,'0')}.js
 const qp=w=>`docs/ssw-workspace/kaigo/japanese-master/week-${String(w).padStart(2,'0')}-questions.draft.json`;
 const reports=Array.from({length:6},(_,i)=>read(dir+`JAPANESE_REMAINING_REVIEW_0${i+1}.json`));
 const resolution=read(dir+'JAPANESE_REMAINING_RESOLUTION.json');
-const masters={},originals={};for(let w=1;w<=26;w++){masters[w]=read(mp(w));originals[w]=old(mp(w));}
+// A later assessment review can also clarify a reader paragraph. Check that successor first,
+// then validate this complete historical unit against its committed successor baseline.
+const successorPath=dir+'JAPANESE_ASSESSMENT_RESOLUTION.json';
+const successor=fs.existsSync(path.join(root,successorPath))?read(successorPath):null;
+let successorResult=null;
+if(successor){assert.equal(successor.baselineCommit,'6288f2182fdd5a5217d52535602db4f71ee39f7d');successorResult=JSON.parse(execFileSync(process.execPath,[path.join(__dirname,'check-kaigo-japanese-assessment-review.cjs')],{cwd:root,encoding:'utf8',maxBuffer:2e6}).trim());}
+const snapshotBytes=p=>successor?execFileSync('git',['show',`${successor.baselineCommit}:${p}`],{cwd:root,maxBuffer:12e6}):fs.readFileSync(path.join(root,p));
+const masters={},originals={};for(let w=1;w<=26;w++){masters[w]=JSON.parse(snapshotBytes(mp(w)));originals[w]=old(mp(w));}
 const key=p=>`${p.week}:${p.sectionId}:${p.paragraphIndex}`;
 function approvals(x){for(const k of ['humanReviewed','domainReviewed','nativeReviewed'])assert.equal(x[k],false,k);for(const k of ['releaseReady','rightsReviewed','rightsApproved','nativeDeviceTested'])if(k in x)assert.equal(x[k],false,k);}
 function at(corpus,p){const ps=corpus[p.week]?.sections[p.sectionId]?.paragraphsJa;assert(Array.isArray(ps),'Unknown paragraph section');assert(Number.isInteger(p.paragraphIndex)&&p.paragraphIndex>=0&&p.paragraphIndex<ps.length,'Invalid paragraph index');return ps[p.paragraphIndex];}
@@ -26,8 +33,8 @@ function validate(input=reports,current=masters,res=resolution){
    const prior=originals[w].sections[sid];assert.deepEqual({...s,paragraphsJa:[]},{...prior,paragraphsJa:[]});assert.equal(s.paragraphsJa.length,prior.paragraphsJa.length,'Paragraph ID/index shape changed');
    s.paragraphsJa.forEach((text,i)=>{paragraphs++;if(text!==prior.paragraphsJa[i]){assert(applied.has(key({week:w,sectionId:sid,paragraphIndex:i})),'Unrecorded Japanese edit');changes++;revised++;}});
   }
-  const q=read(qp(w)),priorQ=old(qp(w));assert.deepEqual(q.questions,priorQ.questions,'Weekly question content changed');questions+=Object.keys(q.questions).length;
-  assert.equal(q.sourceJapaneseSha256,hash(fs.readFileSync(path.join(root,mp(w)))),'Stale question source binding');
+  const q=JSON.parse(snapshotBytes(qp(w))),priorQ=old(qp(w));assert.deepEqual(q.questions,priorQ.questions,'Weekly question content changed');questions+=Object.keys(q.questions).length;
+  assert.equal(q.sourceJapaneseSha256,hash(snapshotBytes(mp(w))),'Stale question source binding');
   perWeek.push({week:w,revisedParagraphs:changes});
  }
  assert.equal(revised,res.patches.length);assert.equal(res.counts.currentParagraphRecords,paragraphs);assert.equal(res.counts.revisedParagraphRecords,revised);assert.equal(res.sourceKnowledgeCoveragePercent,null);assert.equal(res.translationsPaused,true);
@@ -41,6 +48,10 @@ function validate(input=reports,current=masters,res=resolution){
  return {status:'PASS_JAPANESE_REMAINING_REVISION_AND_PRESERVATION',baselineCommit:baseline,reports:input.length,paragraphs,revisedParagraphs:revised,addedParagraphs:0,weeklyQuestionObjectsUnchanged:questions,perWeek,sourceKnowledgeCoveragePercent:null,translationsPaused:true,humanReviewed:false,domainReviewed:false,nativeReviewed:false,nativeDeviceTested:false,releaseReady:false};
 }
 const result=validate();
+result.comparisonCommit=successor?.baselineCommit??'working_tree';
+result.questionComparisonCommit=successor?.baselineCommit??null;
+result.historicalSnapshotValidation=Boolean(successor);
+result.currentSuccessorValidation=successorResult;
 const controls=[['unearned_approval',(rs,ms,rr)=>rs[0].humanReviewed=true],['missing_report',(rs)=>rs.pop()],['misstated_disposition_count',(rs,ms,rr)=>rr.sourceCandidateDispositions.afterThisAiEvidenceReview.pending++],['unrecorded_japanese_edit',(rs,ms)=>{const s=Object.keys(ms[1].sections)[0];ms[1].sections[s].paragraphsJa[0]+='未確認の追記';}]];
 // Report count is required separately so an empty sixth report cannot be silently omitted.
 const checked=(rs,ms,rr)=>{assert.equal(rs.length,6);return validate(rs,ms,rr);};
