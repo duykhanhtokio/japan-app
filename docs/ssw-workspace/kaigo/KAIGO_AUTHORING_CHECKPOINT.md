@@ -882,3 +882,42 @@ ScheduledJapanese reader/weekly-assessment authoring now complete as AI editoria
 FinalQA PASS:26weekassessment flows withresume/submission/explanation-after-submit/oldattemptpreservation;176day866section reader sweep inhostfixtures with Japanese-first/explicit selectedtranslation/no staleVIfallback; all5366paragraph pointers; unchangedlegacydata and stale-translation rejection; focuseddataTypeScript. Courseflow report now distinguishes completeJapanese fields from pendingeditorialreview instead of always labellingcontentincomplete. UI/source/assets were not redesigned. Native-device screenshots were not taken; allhuman/domain/native/rights/release approvals remainpending.
 
 Nextphase:whole-corpus source reconciliation and Japanese consistencyreview before resumingtranslations. Knownpending:source195male intimatewashing manipulation,31finehandregion boundaries,40twounlabelledkititems;3technicalVI-labelled and13English-labelledmockfigures; independentprofessional/native/device/load checks. JapaneseWholeCorpusComplete remainsfalse even though scheduledJapanese fieldpresence iscomplete. Translations remainpaused; oldVI/EN/otherlocale files preserved. Evidence:reviews/JAPANESE_FINAL_SCHEDULED_{EDITORIAL,RUNTIME,COURSE_FLOW}.json andweek26ledger/review. Persist andverifythisunit; do not create a SHA-only followup commit.
+
+
+## 2026-10-16 — six-AI known-source reconciliation and Japanese revision
+
+Resumed from remote-verified ed3935df49c205432244ab6e72dccd377e2c5082 with clean WORK PERSISTENCE PASS. Reused the same6AI for six source domains. Independently mapped2844existing source-atom rows plus52reading-goal records and177lexical records:3073known teaching-inventory records, plus6non-teaching source-page classifications. All3079audit rows retain actual zero-based Japanese targets where applicable;5225paragraph pointers checked. These are records, including repeated labels and compound goals, not3073unique concepts or a certified whole-book denominator.
+
+Applied63exact reviewed paragraph changes:59revised records and4new language-note paragraphs, preserving5307old Japanese paragraph records byte-for-byte. The revisions address85previously partial/missing known inventory records. Also restored one multi-leg-cane use-context on printed128outside the known atom denominator. Changes include explicit pathogen/route pairs, team-role conditions, objective test data, ear-ossicle amplification, qualified disease/anatomy concepts, movement/posture/feeding/elimination conditions, grooming/bathing/cleanliness reasons, and four language distinctions. Ten repeated constipation definitions now include hard/difficult/incomplete evacuation instead of limiting the definition to frequency/quantity. Sources and examples remain distinguished; no guessed clinical numbers or procedures.
+
+Root cross-review caught and corrected a proposal before integration: printed165removes the bedpan, while printed166side-lying removes only the waterproof sheet. The pressure-caption reference belongs to165. The final proposals and source trace preserve this correction. Root read40related questions and their options/rationales against the revised material; all687weekly question objects, correct indices, rationales and content-dependent attempt revisions remain unchanged. Changed master hashes, paragraph ledgers and question source bindings were refreshed.
+
+A same-edition official Japanese companion (改訂2版・2025年3月) and official2025-06-10errata were downloaded privately, edition/hash/page count checked and relevant pages read/viewed. This corroboratesとろみ食and the209source correction, while18/29/112/220/255errata are reading corrections. The29errata does not withdraw the glove wording; task-basedPPE remains separately supported. The Japanese companion does not resolve the safety of the terse male-care manipulation at195. PDFs, OCR and source illustrations are not added to Git or the app.
+
+Effective AI dispositions across3073teaching records after the applied fixes and narrow official-source evidence resolution:3039covered,28corrected-source-error,6pending. The6pending records are abdominal-massage interpretation at72(one record) and male intimate-care interpretation at195(five records); existing safe boundaries remain. Two additional figure issues remain:31fine hand-region boundaries and40two unlabelled kit objects. Source128demonstrates why a full independent source inventory is still required; no source coverage percentage or whole-Japanese completion claim. All human/domain/native/device/rights/release approvals remainfalse.
+
+Per changed week (paragraph records; repeated glossary copies are not unique concepts):
+
+| Week | Retained | Revised | Added | Current paragraphs | Weekly questions |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 2 | 874 | 7 | 0 | 881 | 70 |
+| 5 | 393 | 5 | 0 | 398 | 64 |
+| 11 | 34 | 2 | 0 | 36 | 7 |
+| 12 | 35 | 1 | 0 | 36 | 7 |
+| 13 | 48 | 1 | 0 | 49 | 7 |
+| 14 | 42 | 7 | 0 | 49 | 7 |
+| 15 | 49 | 6 | 0 | 55 | 7 |
+| 16 | 42 | 5 | 0 | 47 | 7 |
+| 17 | 51 | 9 | 0 | 60 | 7 |
+| 18 | 46 | 3 | 0 | 49 | 7 |
+| 19 | 57 | 12 | 0 | 69 | 7 |
+| 20 | 51 | 1 | 0 | 52 | 7 |
+| 21 | 139 | 0 | 1 | 140 | 16 |
+| 22 | 208 | 0 | 2 | 210 | 22 |
+| 23 | 137 | 0 | 1 | 138 | 19 |
+
+All other11weeks retain exact masters. Scheduled scope remains26weeks/176days/866reader sections, now5370Japanese paragraph records,687weekly questions/2748option rationales. All12full mocks/360questions/1440Japanese rationales remain unchanged. Existing locale files are unchanged and translation production stayspaused. No UI or image assets edited/generated;3technicalVI-labelled diagrams and13English-labelled mock diagrams remain pending Japanese labels.
+
+QA PASS: known-inventory membership/status counts and applied-revision bindings, with negative controls for unknown atom, invalid paragraph, unearned approval and false count;5370paragraph-ledger pointers; full26week/176day/866section Japanese runtime fixture flows; old-attempt/resume/submission preservation; Japanese-first and explicit selected translation with stale/missing translation rejection; week1VI/ENbinding protection and58unchanged protected Kaigo data files; focused TypeScript; JLPT10/10UIlock. Host fixtures are not actual-device testing. Fresh course-flow execution is recorded in the reconciliation report; the fixture's historical date field is not the execution date.
+
+Evidence: reviews/JAPANESE_RECONCILIATION_01..06domain audits, JAPANESE_RECONCILIATION_RESOLUTION.json and *_STRUCTURE_QA/RUNTIME_QA/COURSE_FLOW_QA.json. Next: complete the independent source denominator and remaining Japanese review items before translation. Commit/push/fetch and WORK PERSISTENCE PASS are required before handoff; no SHA-only followup commit.
