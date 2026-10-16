@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "week": 10,
+  "language": "en",
+  "sourceLanguage": "ja",
+  "sourceCommit": "9ff9ec014ade9a110f9434ac675fe70ae97eda3d",
+  "canonicalPacketPath": "/workspace/scratch/64c65738732f/translation-packets/week-10.ja.json",
+  "canonicalPacketSha256": "30a2a4bed1e8fbd9ec1f44a4ecdf08707203740eb873aa284dbde7a7241bb2d1",
+  "translationPath": "src/data/kaigo/japanese-master/translations/week-10.en.json",
+  "translationSha256": "311bdf7593103e355c0a03a6b1909f514f58caa1750134e26922f97aacc64279",
+  "status": "translated_ai_unreviewed",
+  "directJapanese": true,
+  "noCrossTranslation": true,
+  "translatedDirectlyFromJapanese": true,
+  "vietnameseUsedAsTranslationIntermediate": false,
+  "humanReviewed": false,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "rightsReviewed": false,
+  "releaseReady": false,
+  "nativeDeviceTested": false,
+  "styleGuideVersion": 1,
+  "localeProfile": "docs/ssw-workspace/kaigo/locale-profiles/en.json",
+  "counts": {
+    "sections": 7,
+    "paragraphs": 35,
+    "distinctJapaneseParagraphTexts": 35,
+    "lessons": 7,
+    "objectives": 14,
+    "questions": 7,
+    "options": 28,
+    "rationales": 28,
+    "figureCaptions": 0,
+    "sourceRevisionBindings": 21,
+    "priorIdenticalJapaneseGlossaryTextsReused": 0,
+    "readingFields": 0,
+    "nonemptyReadings": 0,
+    "emptyReadings": 0,
+    "questionsWithoutReading": 7,
+    "distinctNonemptyReadings": 0
+  },
+  "checks": {
+    "exactIds": true,
+    "paragraphAlignment": true,
+    "allSourceRevisionsMatch": true,
+    "sourceRevisionsRecheckedAfterFormatting": true,
+    "correctIndicesPreserved": true,
+    "fourOptionsAndIndividualReasons": true,
+    "readingPresenceMatchesJapanese": true,
+    "metadataComplete": true,
+    "exactFigureCaptionKeys": true,
+    "identicalJapaneseGlossaryAcrossCompletedEnglishWeeks": true,
+    "explicitSourceQualifiersChecked": true
+  },
+  "aiSemanticSpotChecks": [
+    {
+      "target": "day64",
+      "check": "pressure_cycle_and_conditions",
+      "result": "pass",
+      "note": "Systolic/diastolic do not mean hypertension/hypotension diagnoses. Both readings and activity conditions retained; individual care plan and facility procedure govern reporting/rechecks. No thresholds added."
+    },
+    {
+      "target": "day65",
+      "check": "cause_vs_consequence",
+      "result": "pass",
+      "note": "Heart strain caused by hypertension does not mean every heart disease causes it. Lifestyle/heredity and secondary disease examples remain qualified, with healthcare assessment and treatment-plan limits explicit."
+    },
+    {
+      "target": "day66–68",
+      "check": "anatomy_and_count_units",
+      "result": "pass",
+      "note": "Sides are person-referenced; unaffected does not guarantee no problem.12pairs and31pairs retain paired units. Pons is in brainstem; diencephalon is distinct. Names do not authorize diagnosis."
+    },
+    {
+      "target": "day69–70",
+      "check": "autonomic_model_limits",
+      "result": "pass",
+      "note": "Anxiety is not measured increased pressure. General sympathetic/parasympathetic effects do not prescribe actual pulse. Eccrine sweating retains sympathetic involvement without inventing direct parasympathetic stopping. Organ-specific limits and professional consultation remain."
+    },
+    {
+      "target": "all7questions",
+      "check": "answer_preservation",
+      "result": "pass",
+      "note": "Read all Japanese prompts,28options and28individual rationales. Retained option order and correct indices, including true-but-nonresponsive distractors from the canonical source; did not author replacement assessments."
+    }
+  ],
+  "editorialNotes": [
+    "Translated35Japanese paragraphs,7lesson metadata records and7questions directly from the current Japanese packet. No other locale or pivot was read.",
+    "No glossary section occurs in this week; source terminology remains consistent with own checked English.",
+    "Numeric lesson IDs64–70, paragraph alignment, all21sourceRevision bindings and answer positions are preserved. Revision strings are excluded from formatting and verified afterward.",
+    "All7questions lack readings in the Japanese packet; no reading fields were invented.",
+    "Natural adult English preserves source qualifiers, individual plans, facility procedures, recipient roles, uncertainty and model limitations."
+  ],
+  "uncertainties": [
+    "Independent English-native and clinical review remain pending. Existing distractor design is retained as required; translation does not certify assessment quality or clinical approval."
+  ],
+  "limits": [
+    "AI translation and semantic/structural checks only. Human, domain, native-language, rights, actual-device and release approvals remain false.",
+    "No new blood-pressure thresholds, diagnoses, clinical operations or medications were introduced.",
+    "Root handles integration, commits and remote verification. Checkpoint05 remote verification was confirmed before atomic publication."
+  ],
+  "semanticEditorialFollowup20261016": {
+    "scope": "Own English weeks09–14 checked against Japanese-only packets; targeted prose and explicit-actor/condition review, not independent native or clinical approval.",
+    "targetedParagraphRepairs": [
+      {
+        "sectionId": "kaigo-atomic-pressure-context",
+        "paragraphIndex": 4,
+        "before": "If two values differ and the second follows activity, report both values and their respective conditions separately. Do not dismiss an unusual value because of activity or decide hypertension developed or resolved from that one reading. Follow the individual care plan and facility procedures for contact and rechecking appropriate to condition.",
+        "after": "If two blood-pressure readings differ and the second was taken immediately after activity, report both values and the circumstances of each measurement separately. Do not dismiss an unusual reading because it followed activity or conclude from that reading alone that hypertension has developed or resolved. Follow the individual care plan and facility procedures for the contact or rechecking required by the person’s condition."
+      },
+      {
+        "sectionId": "kaigo-atomic-body-regions",
+        "paragraphIndex": 5,
+        "before": "In reports, distinguish location, side, timing and personal words. If pain intensity or cause has not been asked about, do not invent it. When sudden changes or other circumstances require contact, do not delay reporting until every question is finished.",
+        "after": "In a report, distinguish the body location, side, time and the person’s own words. If you have not yet asked about the intensity or cause of pain, do not fill the gaps with assumptions. When a sudden change or another circumstance requires contact, do not delay reporting until you have finished every question."
+      }
+    ],
+    "otherRepairs": "Changed “personal words” to “the person’s own words” in natural-language values where present; week10 question grammar and week14 passage spacing corrected. IDs and opaque revisions excluded.",
+    "checks": [
+      "No other target locale read or used.",
+      "Preserved individual care plans, medical-professional recipients, consent, method permission, uncertainty and reporting urgency.",
+      "Retained every reading field including explicit empty readings and absence when absent.",
+      "Targeted complete-prose repairs preserve source conditions and do not create clinical instructions."
+    ],
+    "humanReviewed": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "releaseReady": false
+  }
+}
