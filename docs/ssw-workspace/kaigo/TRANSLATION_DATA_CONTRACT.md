@@ -2,6 +2,8 @@
 
 Read the official authoring rules, language style guide, machine style policy and your own locale profile first. Each AI owns one distinct locale. Use Japanese-only translation packets; never use another locale as a semantic input or pivot. Reuse your own checked target-language wording for identical Japanese glossary definitions. Preserve respectful adult speech, exact address forms when they are the learning target, all qualifications, negation, uncertainty, speaker roles and clinical limits.
 
+For new complete target files, explicitly set all six top-level approval flags (`humanReviewed`, `domainReviewed`, `nativeReviewed`, `nativeDeviceTested`, `rightsReviewed`, `releaseReady`) to `false`, as well as in the review; missing fields are not proof of approval or review.
+
 Every batch remains `translated_ai_unreviewed`; human/domain/native/device/rights/release flags remain false until the relevant independent review actually happens. Atomic whole-week files are completion units. Scratch/draft work is not published as complete.
 
 Before publishing, read the target as continuous teaching prose, not as a compressed outline. Faster parallel production does not authorize shortening conditions, actors, recipients, individual-plan requirements or reasons. Check source reporting instructions as a whole: what triggers reporting, what is reported, and to whom. A generic “report it” does not preserve an explicit Japanese medical-professional recipient. Correct clipped grammar even when every field and revision passes. Record semantic/style corrections in the locale's own review and refresh its actual file hash. Formatters must exclude IDs and source revisions; validate every binding again after the last formatting pass.

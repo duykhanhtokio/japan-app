@@ -2,7 +2,7 @@
   "version": 1,
   "date": "2026-10-16",
   "baselineCommit": "afdf012cb4e4e430541d6e326819b040ae667484",
-  "status": "ai_evidence_checked_terminology_precision_refinement",
+  "status": "ai_evidence_checked_terminology_and_scope_wording_refinements",
   "reason": "Translation source comparison found week13 omits the explicit below-vocal-fold boundary already present in weeks04/20/21. Clarify the canonical Japanese first; do not silently add a boundary in individual translations.",
   "patches": [
     {
@@ -57,5 +57,59 @@
     "imageChanged": false,
     "captionChanged": false,
     "humanReviewed": false
-  }
+  },
+  "lessonPatches": [
+    {
+      "week": 20,
+      "lessonId": "136",
+      "field": "contextJa",
+      "beforeJa": "部分浴と陰部の清潔を扱います。男性の具体的な洗浄操作には未確認の記述があり、絵から推測して実施しません。",
+      "afterJa": "部分浴と陰部の清潔を扱います。図だけでは確かめられない男性の具体的な洗浄操作は、指導内容から除外しています。観察・同意・プライバシーと個別計画に沿った対応を学び、絵から方法を推測して実施しません。",
+      "sourceDispositionId": "source-page-197-concept-05",
+      "reason": "Metadata now describes the already-closed exclusion explicitly; objectives summarize existing observation/reporting content. No clinical procedure or new factual claim added."
+    },
+    {
+      "week": 20,
+      "lessonId": "136",
+      "field": "objectivesJa",
+      "beforeJa": [
+        "部分浴の範囲と、陰部洗浄の清潔・不潔の境界を説明する。",
+        "具体的な操作が未確認の部分と、観察・相談する事項を区別する。"
+      ],
+      "afterJa": [
+        "部分浴の範囲と、陰部洗浄の清潔・不潔の境界を説明する。",
+        "観察する事項と、担当者へ相談する場面を説明する。"
+      ],
+      "sourceDispositionId": "source-page-197-concept-05",
+      "reason": "Metadata now describes the already-closed exclusion explicitly; objectives summarize existing observation/reporting content. No clinical procedure or new factual claim added."
+    }
+  ],
+  "reasons": [
+    "Translation source comparison found week13 omits the explicit below-vocal-fold boundary already present in weeks04/20/21. Clarify the canonical Japanese first; do not silently add a boundary in individual translations.",
+    "Week20 lesson136 context and second objective now describe the already-closed procedural exclusion explicitly, rather than suggesting unfinished procedure authoring. Existing observation/consent/privacy/individual-plan teaching and all clinical paragraphs/questions are unchanged."
+  ],
+  "additionalCanonicalTranslationPackets": [
+    {
+      "week": 20,
+      "path": "/workspace/scratch/64c65738732f/kaigo-isolated-he0gx2q5/packets/week-20.ja.json",
+      "sha256": "2a028c75e8f20a15726db468a058fc9277ab92ec42fb2913b84a2582dcc183d2",
+      "sourceMasterSha256": "699c5d0b1624efe726437bf10706b12bb99663d6a308e817869bbdd65e386419",
+      "sourceBaseCommit": "765e3cf15a71faf16ef180d37ce98a730d2d7a35",
+      "sourceState": "working_tree_snapshot",
+      "lessonRevision": "ja-master-v1-38060a01"
+    }
+  ],
+  "additionalIllustrationRechecks": [
+    {
+      "day": 136,
+      "artId": "kaigo-excretion-05-knowledge-1",
+      "path": "assets/kaigo/paragraphs/excretion-05-knowledge-1-v1.webp",
+      "sha256": "84b226ad48f25b9d59e6c2e39fe55581e302437cac085239a4ead8345e815695",
+      "aiVisuallyChecked": true,
+      "finding": "Contextual care worker between a towel/supply trolley and a closed collection receptacle. No intimate procedure or anatomical manipulation depicted. Existing Japanese caption explicitly avoids certifying cleanliness or washing technique from the picture; it remains accurate.",
+      "imageChanged": false,
+      "captionChanged": false,
+      "humanReviewed": false
+    }
+  ]
 }

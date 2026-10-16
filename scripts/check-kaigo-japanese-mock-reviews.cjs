@@ -43,7 +43,7 @@ const mount=async m=>{let t;await act(async()=>{t=create(React.createElement(m.K
     assert.equal(flatten(get(t,'kaigo-mock-prompt-translation').children),translation.prompt);
     for(let i=0;i<4;i++){
      assert.equal(flatten(get(t,'kaigo-mock-option-translation-'+i).children),translation.options[i]);
-     assert.equal(flatten(get(t,'kaigo-mock-rationale-translation-'+i).children),`${i+1}. ${translation.rationales[i]}`);
+     const renderedRationale=flatten(get(t,'kaigo-mock-rationale-translation-'+i).children);assert.match(renderedRationale,new RegExp(`^${i+1}\\s*\\.\\s*`));assert.equal(renderedRationale.replace(/^\d+\s*\.\s*/,''),translation.rationales[i]);
     }
     for(const[field,id]of [['passage','kaigo-mock-passage-translation'],['figureDescription','kaigo-mock-figure-translation']]){
      if(translation[field])assert.equal(flatten(get(t,id).children),translation[field]);else assert.equal(nodes(t,id).length,0);
@@ -63,7 +63,7 @@ const mount=async m=>{let t;await act(async()=>{t=create(React.createElement(m.K
   t=await mount(m);await click(t,'kaigo-mock-'+source.id);assert.equal(nodes(t,'kaigo-mock-review').length,1,'Submitted compatible attempt restores with Japanese explanation');await act(async()=>t.unmount());
  }
  assert.equal(questions,360);
- const report={status:'PASS_JAPANESE_MOCK_EXPLANATIONS_INTERNAL_PREVIEW',forms:forms.length,questions,optionRationales:questions*4,unchangedCoreForms:forms.length-Object.keys(m.japaneseMockCoreCorrections).length,explicitlyRevisedForms:Object.keys(m.japaneseMockCoreCorrections).length,sourceLegacyJSONPreserved:true,oldAttemptRecordsPreserved:true,revisedFormsUseSeparateKeys:true,originalTimingPreserved:true,explanationsOnlyAfterSubmission:true,missingTranslationsNoVietnameseFallback:true,selectedTranslationLanguagesChecked:12,humanReviewed:false,domainReviewed:false,nativeDeviceTested:false,releaseReady:false};
+ const report={status:'PASS_JAPANESE_MOCK_EXPLANATIONS_INTERNAL_PREVIEW',forms:forms.length,questions,optionRationales:questions*4,unchangedCoreForms:forms.length-Object.keys(m.japaneseMockCoreCorrections).length,explicitlyRevisedForms:Object.keys(m.japaneseMockCoreCorrections).length,sourceLegacyJSONPreserved:true,oldAttemptRecordsPreserved:true,revisedFormsUseSeparateKeys:true,originalTimingPreserved:true,explanationsOnlyAfterSubmission:true,missingTranslationsNoVietnameseFallback:true,selectedTranslationLanguagesChecked:12,humanReviewed:false,domainReviewed:false,nativeReviewed:false,nativeDeviceTested:false,rightsReviewed:false,releaseReady:false};
  report.actualTranslatedLocaleReviewFlows=actualTranslatedLocaleReviewFlows;report.missingLocaleReviewFlows=missingLocaleReviewFlows;
  if(process.env.KAIGO_JAPANESE_MOCK_REPORT)fs.writeFileSync(process.env.KAIGO_JAPANESE_MOCK_REPORT,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 })().catch(e=>{console.error(e);process.exit(1);});

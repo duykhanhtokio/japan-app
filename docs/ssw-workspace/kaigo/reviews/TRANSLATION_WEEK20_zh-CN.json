@@ -4,11 +4,11 @@
   "language": "zh-CN",
   "translatedFrom": "ja",
   "status": "translated_ai_unreviewed",
-  "sourceCommit": "9ff9ec014ade9a110f9434ac675fe70ae97eda3d",
+  "sourceCommit": null,
   "sourcePacket": "/workspace/scratch/64c65738732f/kaigo-isolated-he0gx2q5/packets/week-20.ja.json",
-  "sourcePacketSha256": "f42fee896b01a6a3c9a9ee9b7413c6f84319908607cb5011e7d1704fcf4b921b",
+  "sourcePacketSha256": "2a028c75e8f20a15726db468a058fc9277ab92ec42fb2913b84a2582dcc183d2",
   "translationPath": "src/data/kaigo/japanese-master/translations/week-20.zh-CN.json",
-  "translationSha256": "fdc693b6bae45bee1244000eb63019e3329ff9fb05091b321171360bd59b6abd",
+  "translationSha256": "96f766b5c47ed1d7cd6afd0fed23557f0c81cc821bf4ed8cc1a04aee494de131",
   "directJapanese": true,
   "noCrossTranslation": true,
   "counts": {
@@ -39,7 +39,7 @@
     "specificChecks": [
       "Oral care does not guarantee pneumonia prevention; aspiration and dysphagia remain distinct; mouth rinse, material-specific dentures cleaning/storage and professional report conditions preserved.",
       "Bathing staff support side vs nonparetic pour/start side distinguished; temperature recheck, folds drying, moisturising and device instructions preserved.",
-      "Perineal direction plus clean surface/hand hygiene and explicitly unresolved male procedure context retained; ICF, motor/hearing/language capacities not conflated. Seven exact effective readings translated directly."
+      "Perineal direction plus clean surface/hand hygiene retained. Lesson136 now matches the closed Japanese scope: male washing operations not verifiable from the figure are excluded from instruction, rather than described as pending. Observation, consent, privacy, individual-plan response and no image-inferred procedure remain explicit. ICF and motor/hearing/language capacities remain distinct; seven effective readings unchanged."
     ]
   },
   "validation": {
@@ -53,7 +53,8 @@
     "correctIndicesUnchanged": true,
     "sourceRevisionsExact": true,
     "readingFieldPresenceMatchesSource": true,
-    "allRequiredTextNonempty": true
+    "allRequiredTextNonempty": true,
+    "narrowMetadataOnlyDiff": true
   },
   "limits": [
     "AI editorial check only, no independent human/native/domain/rights/device/release approval.",
@@ -69,7 +70,34 @@
   "releaseReady": false,
   "output": {
     "path": "src/data/kaigo/japanese-master/translations/week-20.zh-CN.json",
-    "sha256": "fdc693b6bae45bee1244000eb63019e3329ff9fb05091b321171360bd59b6abd"
+    "sha256": "96f766b5c47ed1d7cd6afd0fed23557f0c81cc821bf4ed8cc1a04aee494de131"
   },
-  "handoffPath": "/workspace/scratch/64c65738732f/kaigo-isolated-he0gx2q5/zh-CN/week-20.zh-CN.json"
+  "handoffPath": "/workspace/scratch/64c65738732f/kaigo-isolated-he0gx2q5/zh-CN/week-20.zh-CN.json",
+  "sourceBaseCommit": "765e3cf15a71faf16ef180d37ce98a730d2d7a35",
+  "sourceState": "working_tree_snapshot",
+  "sourceMasterSha256": "699c5d0b1624efe726437bf10706b12bb99663d6a308e817869bbdd65e386419",
+  "metadataRefinement": {
+    "lessonId": "136",
+    "sourceRevision": "ja-master-v1-38060a01",
+    "changedTextFields": [
+      "context",
+      "objectives[1]"
+    ],
+    "changedBindingFields": [
+      "sourceRevision"
+    ],
+    "before": {
+      "context": "讨论局部浴及外生殖器清洁。男性具体清洗操作中有尚未确认的表述，不能从图中推测后实施。",
+      "objective1": "区分具体操作尚未确认的部分与观察、咨询事项。",
+      "sourceRevision": "ja-master-v1-26391dd5"
+    },
+    "after": {
+      "context": "本单元讨论局部浴及外生殖器清洁。仅凭图无法确认的男性具体清洗操作，已从指导内容中排除。学习观察、同意、隐私，以及依据个人计划采取的应对，不从图中推测方法后实施。",
+      "objective1": "说明需要观察的事项，以及应向负责人咨询的情境。",
+      "sourceRevision": "ja-master-v1-38060a01"
+    },
+    "directJapanese": true,
+    "allOtherParsedTranslationFieldsUnchanged": true,
+    "sectionParagraphsQuestionsAndImagesUnchanged": true
+  }
 }

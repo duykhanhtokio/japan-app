@@ -1,5 +1,5 @@
 // Check actual translated mock data in every submitted-review screen, not synthetic language strings.
-const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),modules=process.env.TOKUTEI_QA_MODULES||root;
 const dep=n=>require(require.resolve(n,{paths:[modules]})),React=dep('react'),{create,act}=dep('react-test-renderer');
 global.IS_REACT_ACT_ENVIRONMENT=true;global.__tokuteiStorage=new Map();global.__tokuteiFailSave=false;
@@ -37,8 +37,12 @@ const click=async(t,id)=>act(async()=>{const n=get(t,id);assert(!n.props.disable
     assert.equal(flat(get(t,'kaigo-mock-prompt-translation').children),target.prompt);
     for(let i=0;i<4;i++){
      assert.equal(flat(get(t,'kaigo-mock-option-translation-'+i).children),target.options[i]);
-     assert.equal(flat(get(t,'kaigo-mock-rationale-translation-'+i).children),`${i+1}. ${target.rationales[i]}`);
-     assert.equal(flat(get(t,`kaigo-mock-rationale-${q.id}-${i}`).children),`${i+1}. ${q.rationalesJa[i]}`);
+     for(const [id,expected] of [['kaigo-mock-rationale-translation-'+i,target.rationales[i]],
+       [`kaigo-mock-rationale-${q.id}-${i}`,q.rationalesJa[i]]]) {
+       const rendered=flat(get(t,id).children);
+       assert.match(rendered,new RegExp(`^${i+1}\\s*\\.\\s*`),'Correct rationale numbering');
+       assert.equal(rendered.replace(/^\d+\s*\.\s*/,''),expected,'Exact rationale text after JSX number prefix');
+     }
      assert(get(t,'kaigo-option-'+i).props.disabled,'Submitted choices remain locked');
     }
     for(const[field,id]of [['passage','kaigo-mock-passage-translation'],['figureDescription','kaigo-mock-figure-translation']]){
@@ -53,7 +57,7 @@ const click=async(t,id)=>act(async()=>{const n=get(t,id);assert(!n.props.disable
    assert.equal(saved.status,'submitted');assert.equal(saved.remainingMs,form.durationMs);
    assert.deepEqual(saved.answers,{[form.questions[0].id]:form.questions[0].correctIndex});
   }
-  counts.push({language,forms:m.kaigoCourse.mocks.length,questions,options:questions*4,rationales:questions*4,passages,figureDescriptions});
+  counts.push({language,targetSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(dir,`mocks.${language}.json`))).digest('hex'),reviewSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,`docs/ssw-workspace/kaigo/reviews/TRANSLATION_MOCKS_${language}.json`))).digest('hex'),forms:m.kaigoCourse.mocks.length,questions,options:questions*4,rationales:questions*4,passages,figureDescriptions});
  }
  const report={status:'PASS_ACTUAL_DIRECT_JAPANESE_MOCK_TRANSLATION_RUNTIME',counts,selectedLocaleOnly:true,explicitTranslationAction:true,translationAndRationalesOnlyInSubmittedReview:true,attemptAnswersAndTimingPreserved:true,humanReviewed:false,domainReviewed:false,nativeReviewed:false,nativeDeviceTested:false,releaseReady:false};
  if(process.env.KAIGO_MOCK_TRANSLATION_REPORT)fs.writeFileSync(process.env.KAIGO_MOCK_TRANSLATION_REPORT,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
