@@ -9,7 +9,9 @@ const crypto = require('node:crypto');
 const root = path.resolve(__dirname, '..');
 const batch = process.env.KAIGO_TRANSLATION_BATCH;
 assert(/^\d{2}$/.test(batch ?? ''), 'Set KAIGO_TRANSLATION_BATCH to the checkpoint number');
-const reportPath = path.join(root, `docs/ssw-workspace/kaigo/reviews/TRANSLATION_BATCH${batch}_RUNTIME.json`);
+const reportPrefix = process.env.KAIGO_TRANSLATION_REPORT_PREFIX ?? `TRANSLATION_BATCH${batch}`;
+assert(/^[A-Z0-9_]+$/.test(reportPrefix), 'Invalid report prefix');
+const reportPath = path.join(root, `docs/ssw-workspace/kaigo/reviews/${reportPrefix}_RUNTIME.json`);
 assert(!fs.existsSync(reportPath), 'Preserve completed checkpoint runtime reports');
 const git = args => execFileSync('git', args, { cwd: root, encoding: 'utf8' }).split('\n').filter(Boolean);
 const baseRef = process.env.KAIGO_TRANSLATION_BASE_REF ?? 'HEAD';
@@ -53,7 +55,7 @@ for (const [week, locales] of [...groups].sort((a, b) => a[0] - b[0])) {
 // Publish reports only after the entire selected snapshot passes.
 for (const report of reports) {
   if (report.counts.length === 6) {
-    const weeklyPath = path.join(root, `docs/ssw-workspace/kaigo/reviews/TRANSLATION_BATCH${batch}_WEEK${String(report.week).padStart(2, '0')}_RUNTIME.json`);
+    const weeklyPath = path.join(root, `docs/ssw-workspace/kaigo/reviews/${reportPrefix}_WEEK${String(report.week).padStart(2, '0')}_RUNTIME.json`);
     assert(!fs.existsSync(weeklyPath), 'Preserve completed checkpoint weekly reports');
     fs.writeFileSync(weeklyPath, JSON.stringify(report, null, 2) + '\n');
   }
