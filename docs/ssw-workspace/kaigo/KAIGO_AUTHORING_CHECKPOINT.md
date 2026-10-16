@@ -921,3 +921,35 @@ All other11weeks retain exact masters. Scheduled scope remains26weeks/176days/86
 QA PASS: known-inventory membership/status counts and applied-revision bindings, with negative controls for unknown atom, invalid paragraph, unearned approval and false count;5370paragraph-ledger pointers; full26week/176day/866section Japanese runtime fixture flows; old-attempt/resume/submission preservation; Japanese-first and explicit selected translation with stale/missing translation rejection; week1VI/ENbinding protection and58unchanged protected Kaigo data files; focused TypeScript; JLPT10/10UIlock. Host fixtures are not actual-device testing. Fresh course-flow execution is recorded in the reconciliation report; the fixture's historical date field is not the execution date.
 
 Evidence: reviews/JAPANESE_RECONCILIATION_01..06domain audits, JAPANESE_RECONCILIATION_RESOLUTION.json and *_STRUCTURE_QA/RUNTIME_QA/COURSE_FLOW_QA.json. Next: complete the independent source denominator and remaining Japanese review items before translation. Commit/push/fetch and WORK PERSISTENCE PASS are required before handoff; no SHA-only followup commit.
+
+
+## 2026-10-16 — independent Japanese source-page audit with six AI
+
+Resumed from remote-verified 8004eaa24f40df5448c348f781a942523e3c6639, clean WORK PERSISTENCE PASS. The same six AI independently read the official same-edition Japanese source across all276PDFpages, classified250teaching/26non-teaching pages and enumerated1300candidate concept records. These grouped records include repeated labels; page accounting is complete, but this is not a unique or exhaustive source-knowledge denominator. Coverage percentage remainsnull and JapaneseWholeCorpusComplete remainsfalse. Japanese companion SHA256:2fa47d80d4167c5173e9f24c93178d90fdcf5e6cc45ca574360364f9820325af; canonicalVI SHA256:997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54; March2025secondrevision/2025-06-10officialerrata. Private PDFs/OCR/source figures are excluded from Git/app.
+
+Applied36reviewed changes:34revised Japanese paragraph records and2additions, retaining5336baseline records exactly. Changes repair35partial/missing candidate records and3identified source-error records. Effective candidate dispositions:1276covered/18corrected-source-error/6pending. Root compared35related questions; all687weekly question objects,2748rationales,correct indices and attempt revisions remainunchanged. All52original project Japanese passages and12fullmocks/360questions/1440rationales remainpreserved.
+
+Distinct improvements include sliding-board versus sheet, qualified movement examples, meal/chewing and postmeal reasons, urine以上 versus超える, stool茶褐色, 白湯 versus room-temperature sports drinks, bathing timing supported by Japanese source, anatomy/clinical terminology and Japanese degree/obligation distinctions. Rejected duplicate cosmetic additions. Printed178 visually says仰臥位/ぎょうがい although PDF text extraction misleadingly yields側臥位; the posture addition was withdrawn because current coverage was sufficient. Never rely on that extracted glyph to claim a source contradiction. Source195unsafe-to-infer manipulation remainsuntaught.
+
+| Week | Retained | Revised | Added | Current paragraphs |
+| --- | ---: | ---: | ---: | ---: |
+| 5 | 397 | 1 | 0 | 398 |
+| 6 | 623 | 1 | 0 | 624 |
+| 11 | 32 | 4 | 0 | 36 |
+| 13 | 46 | 3 | 0 | 49 |
+| 14 | 44 | 5 | 0 | 49 |
+| 15 | 49 | 6 | 0 | 55 |
+| 16 | 44 | 3 | 0 | 47 |
+| 17 | 59 | 1 | 0 | 60 |
+| 18 | 46 | 3 | 0 | 49 |
+| 19 | 67 | 2 | 0 | 69 |
+| 20 | 48 | 4 | 0 | 52 |
+| 21 | 139 | 1 | 0 | 140 |
+| 22 | 210 | 0 | 1 | 211 |
+| 23 | 138 | 0 | 1 | 139 |
+
+Other12weeks retain exact masters. Corpus now26weeks/176days/866sections/5372paragraph records/687weekly questions. Six pending candidate records: printed31fine hand-region diagram boundaries;40two unnamed kit objects;72abdominal-massage interpretation;74overbroad disease-cause category;82time-dependent visual-disability trend;195male intimate-care manipulation. These are not the historical six pending known-inventory atom rows. Existing safe qualifications remain.3VI-labelled technical figures and13EN-labelled mock figures remain pending; assets and translations unchanged, no new images or UI redesign. Translations staypaused.
+
+QA PASS: independent276page partition/1300candidate counts/1588paragraph pointers/36patch bindings/687unchanged question objects with5negative controls; historical3079row known-inventory audit is explicitly validated against committed8004snapshot and current edits against the new successor audit.5372ledger pointers, full26week runtime and176day/866section reader flows, old attempts/resume/submission, Japanese-first/selected translation/no stale or missing fallback,60protected Kaigo data files byte-unchanged, focused TypeScript and JLPT10/10UIlock. Root read the changed Japanese proposals and35related question objects. Host fixtures do not replace actual-device checks; allhuman/domain/native/device/rights/release flags remainfalse. Courseflow execution was2026-10-16; its historical fixture date is not execution time.
+
+Evidence:reviews/JAPANESE_SOURCE_PAGE_AUDIT_01..06.json, JAPANESE_SOURCE_PAGE_RESOLUTION.json, and STRUCTURE/RUNTIME/COURSE_FLOW_QA reports. Next: resolve deferred Japanese items and independent consistency/completeness review before translations. Commit/push/fetch and clean WORK PERSISTENCE PASS must be verified before handoff; do not create a SHA-only followup commit.

@@ -19,9 +19,20 @@ const groups = [
 const read = name => JSON.parse(fs.readFileSync(path.join(root, name), 'utf8'));
 const hash = value => crypto.createHash('sha256').update(value).digest('hex');
 const masterPath = week => `src/data/kaigo/japanese-master/week-${String(week).padStart(2, '0')}.json`;
+// A later reviewed batch may revise the same paragraph. Validate its current chain first,
+// then retain this audit as an exact, explicitly labelled historical snapshot.
+const successorPath = reviewDir + 'JAPANESE_SOURCE_PAGE_RESOLUTION.json';
+const successor = fs.existsSync(path.join(root, successorPath)) ? read(successorPath) : null;
+let successorResult = null;
+if (successor) {
+  assert.equal(successor.baselineCommit, '8004eaa24f40df5448c348f781a942523e3c6639');
+  successorResult = JSON.parse(execFileSync(process.execPath, [path.join(__dirname, 'check-kaigo-japanese-source-pages.cjs')], { cwd: root, encoding: 'utf8', maxBuffer: 2e6 }).trim());
+}
 const masters = {}, originals = {};
 for (let week = 1; week <= 26; week++) {
-  masters[week] = read(masterPath(week));
+  masters[week] = successor
+    ? JSON.parse(execFileSync('git', ['show', `${successor.baselineCommit}:${masterPath(week)}`], { cwd: root, maxBuffer: 8e6 }))
+    : read(masterPath(week));
   originals[week] = JSON.parse(execFileSync('git', ['show', `${baseline}:${masterPath(week)}`], { cwd: root, maxBuffer: 8e6 }));
 }
 const inventories = Object.fromEntries(groups.flatMap(([, names]) => names.map(name => [name, read(reviewDir + name).atoms])));
@@ -171,6 +182,9 @@ function validate(inputReports = reports, current = masters, applied = resolutio
   return { status: 'PASS_KNOWN_INVENTORY_AND_APPLIED_REVISIONS', auditRows: rowCount, teachingInventoryRows: teachingCount, nonTeachingPageRows: rowCount - teachingCount, paragraphPointers: targetCount, appliedParagraphChanges: applied.patches.length, restoredInventoryRows, effectiveCountsIncludingStructuralPages: effectiveCounts, reportCounts, sourceKnowledgeCoveragePercent: null, humanReviewed: false, domainReviewed: false, nativeReviewed: false };
 }
 const result = validate();
+result.comparisonCommit = successor?.baselineCommit ?? 'working_tree';
+result.historicalSnapshotValidation = Boolean(successor);
+result.currentSuccessorValidation = successorResult;
 // Negative controls: a plausible-looking report must fail for real evidence defects.
 for (const [label, mutate] of [
   ['unknown_atom', data => { data[0].atoms[0].atomId = 'not-a-real-atom'; }],
