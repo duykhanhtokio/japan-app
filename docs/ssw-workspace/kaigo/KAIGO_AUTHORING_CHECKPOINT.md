@@ -953,3 +953,30 @@ Other12weeks retain exact masters. Corpus now26weeks/176days/866sections/5372par
 QA PASS: independent276page partition/1300candidate counts/1588paragraph pointers/36patch bindings/687unchanged question objects with5negative controls; historical3079row known-inventory audit is explicitly validated against committed8004snapshot and current edits against the new successor audit.5372ledger pointers, full26week runtime and176day/866section reader flows, old attempts/resume/submission, Japanese-first/selected translation/no stale or missing fallback,60protected Kaigo data files byte-unchanged, focused TypeScript and JLPT10/10UIlock. Root read the changed Japanese proposals and35related question objects. Host fixtures do not replace actual-device checks; allhuman/domain/native/device/rights/release flags remainfalse. Courseflow execution was2026-10-16; its historical fixture date is not execution time.
 
 Evidence:reviews/JAPANESE_SOURCE_PAGE_AUDIT_01..06.json, JAPANESE_SOURCE_PAGE_RESOLUTION.json, and STRUCTURE/RUNTIME/COURSE_FLOW_QA reports. Next: resolve deferred Japanese items and independent consistency/completeness review before translations. Commit/push/fetch and clean WORK PERSISTENCE PASS must be verified before handoff; do not create a SHA-only followup commit.
+
+
+## 2026-10-16 — remaining source items and Japanese consistency, six AI
+
+Resumed from remote-verified f269590c5a38c7efa13d8ccdbcc697c3402baa68 with clean WORK PERSISTENCE PASS. Reused the same six AI for independent scoped reviews. Rules v14/style guide v1/ja profile remain unchanged; translations remain paused. Exact read scopes, hashes, source evidence and limits are in JAPANESE_REMAINING_REVIEW_01..06.json. These are focused reviews, not a claim that every paragraph received another native or professional review.
+
+Applied 10 paragraph revisions across seven weeks: two chewing-time communication alignments; two clearer assistive-tool explanations preserving direction and individual selection; one diaper-paragraph order correction preserving existing steps and conditions; one hypertension cause-versus-consequence distinction; one factual pending-status correction from translation checking to clinical interpretation; three Japanese grammar repairs. No added paragraph, ID/sequence change, new medical threshold or invented procedure. 5,362 old paragraph records unchanged; total remains 5,372. Root read all proposals and 12 related question objects. All 687 question objects/2,748 reasons and attempt revisions remain unchanged.
+
+| Week | Retained | Revised | Added | Current paragraphs |
+| --- | ---: | ---: | ---: | ---: |
+| 4 | 556 | 2 | 0 | 558 |
+| 6 | 623 | 1 | 0 | 624 |
+| 10 | 34 | 1 | 0 | 35 |
+| 14 | 48 | 1 | 0 | 49 |
+| 16 | 45 | 2 | 0 | 47 |
+| 21 | 138 | 2 | 0 | 140 |
+| 25 | 41 | 1 | 0 | 42 |
+
+Two source assertions now have bounded evidence dispositions: printed74 broad heart-disease cause category is qualified using NCVC/Yokohama primary guidance; printed82 unqualified increase trend is not retained. The 2022 MHLW slide reports historical Japanese disability certifications, not every current worldwide metric; no replacement decrease claim is taught. Source-candidate record counts now 1,276 covered /20 corrected-source-error /4 pending. “Corrected” records are AI evidence qualifications, not author-issued errata or professional approvals. Historical 1,300-record reports remain intact with explicit snapshot checks; counts are not unique concepts or whole-book coverage.
+
+Four pending source items remain explicit: printed31 fine hand-map boundaries;40 two unlabelled kit objects;72 individual appropriateness and clinical implementation of abdominal massage;195 male intimate-care manipulation. Rechecking unnamed figures cannot supply author-defined names. Conditional NHS abdominal-massage guidance supports training/exclusions but does not approve a universal Kaigo procedure. Other penile/foreskin/catheter care sources do not verify the original195 posterior-scrotal operation. Current safe limits remain and no such manipulation is added.
+
+Root additionally read 105 Japanese paragraphs in24 sections of weeks9/10/12 and a foundation dialogue sample; scanned6,766 Japanese fields for Vietnamese diacritics, finding0. This mechanical scan is not a Japanese-language quality certificate. Root viewed actual Japanese source74/82/148/150/168/169/195; no PDF/OCR/source illustrations added to Git/app. 52 original project Japanese passages, all12fullmocks/360questions/1,440reasons, existing translations, UI and artwork preserved. 3VI-label technical figures and13EN-label mock figures still pending; no image generation.
+
+QA PASS: 10 exact-before/after revision bindings; all six prior pending source candidates accounted without hidden omission;6 negative controls; historical audit chain explicitly checks committed8004/f269 snapshots before current successor;5,372 ledger pointers; full26week/176day/866section runtime and course flow; old attempts/resume/submission; Japanese-first/selected translation/no stale or missing fallback;74 protected Kaigo data files byte-unchanged; focused TypeScript; JLPT10/10UI lock. Fresh execution2026-10-16; historical course-flow fixture date is not execution time. Host fixtures are not actual-device testing.
+
+All human/domain/native/device/rights/release approvals remain false. Whole-source denominator and coverage percentage remain null; JapaneseWholeCorpusComplete remains false. Next: independent Japanese completeness/language review with the four disclosed source items before translations. Evidence: JAPANESE_REMAINING_RESOLUTION.json plus STRUCTURE/RUNTIME/COURSE_FLOW_QA reports. Commit/push/fetch and clean WORK PERSISTENCE PASS must be verified before handoff; no SHA-only followup commit.

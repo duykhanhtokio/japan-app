@@ -12,10 +12,18 @@ const fromGit = file => execFileSync('git', ['show', `${baseline}:${file}`], { c
 const sha = data => crypto.createHash('sha256').update(data).digest('hex');
 const mp = week => `src/data/kaigo/japanese-master/week-${String(week).padStart(2, '0')}.json`;
 const qp = week => `docs/ssw-workspace/kaigo/japanese-master/week-${String(week).padStart(2, '0')}-questions.draft.json`;
+// Preserve this audit's exact snapshot while a later independently checked review refines Japanese.
+const successorFile=dir+'JAPANESE_REMAINING_RESOLUTION.json';
+const successor=fs.existsSync(path.join(root,successorFile))?read(successorFile):null;
+let successorResult=null;
+if(successor){
+  assert.equal(successor.baselineCommit,'f269590c5a38c7efa13d8ccdbcc697c3402baa68');
+  successorResult=JSON.parse(execFileSync(process.execPath,[path.join(__dirname,'check-kaigo-japanese-remaining.cjs')],{cwd:root,encoding:'utf8',maxBuffer:2e6}).trim());
+}
 const originals = {}, masters = {}, originalQuestions = {};
 for (let week=1; week<=26; week++) {
   originals[week] = JSON.parse(fromGit(mp(week)));
-  masters[week] = read(mp(week));
+  masters[week] = successor?JSON.parse(execFileSync('git',['show',`${successor.baselineCommit}:${mp(week)}`],{cwd:root,maxBuffer:12e6})):read(mp(week));
   originalQuestions[week] = JSON.parse(fromGit(qp(week))).questions;
 }
 const reports = ranges.map((_, i) => read(dir + `JAPANESE_SOURCE_PAGE_AUDIT_0${i+1}.json`));
@@ -110,6 +118,9 @@ function validate(input = reports, current = masters) {
   return {status:'PASS_SOURCE_PAGE_INVENTORY_AND_CURRENT_JAPANESE_REVISIONS',baselineCommit:baseline,pdfPages:pageIds.size,teachingPages,conceptRecords:concepts,paragraphPointers:targets,domainCounts:domains,effectiveConceptCounts:counts,conceptRecordsRepaired:repaired,paragraphs,revisedParagraphs:changed,addedParagraphs:added,questionsUnchanged,sourceKnowledgeCoveragePercent:null,semanticExhaustivenessCertified:false,humanReviewed:false,domainReviewed:false,nativeReviewed:false,nativeDeviceTested:false,releaseReady:false};
 }
 const result=validate();
+result.comparisonCommit=successor?.baselineCommit??'working_tree';
+result.historicalSnapshotValidation=Boolean(successor);
+result.currentSuccessorValidation=successorResult;
 for(const [name,mutate] of [
   ['missing_source_page',data=>data[0].pages.pop()],
   ['invalid_semantic_pointer',data=>{const c=data.flatMap(r=>r.pages).flatMap(p=>p.concepts).find(c=>c.targets.length);c.targets[0].paragraphIndex=99999;}],
