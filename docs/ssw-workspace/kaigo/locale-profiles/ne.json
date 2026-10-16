@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "language": "ne",
   "languageName": "नेपाली",
   "sourceLanguage": "ja",
@@ -24,7 +24,9 @@
       "森川晴子": "मोरिकावा हारुको",
       "長谷部健一": "हासेबे केनइची",
       "小野寺文": "ओनोदेरा फुमि",
-      "岸本美咲": "किशिमोतो मिसाकि"
+      "岸本美咲": "किशिमोतो मिसाकि",
+      "藤野彩": "फुजिनो आया",
+      "川瀬直人": "कावासे नाओतो"
     },
     "unknown": "Do not infer gender, age or family relationship from a name. Avoid श्री/श्रीमती/दाइ/दिदी/बुबा/आमा unless explicitly justified by the source.",
     "roleLabels": "हेरचाह कर्मचारी, नर्स, जिम्मेवार व्यक्ति; speaker labels use colon and retain stable names."
@@ -162,6 +164,621 @@
       "preferred": "खबर गर्नु",
       "definition": "आवश्यक व्यक्तिलाई जानकारी दिई सम्पर्क जोड्नु।",
       "sourceConcept": "連絡"
+    },
+    "肩": {
+      "preferred": "काँध",
+      "definition": "हात र शरीर जोडिने भाग हो।",
+      "sourceConcept": "肩"
+    },
+    "右": {
+      "preferred": "दायाँ",
+      "definition": "शरीर वा वस्तुको एउटा पाटो हो। बुझाउँदा कसको दृष्टिबाट दायाँ हो भन्ने स्पष्ट गर्छौँ।",
+      "sourceConcept": "右"
+    },
+    "左": {
+      "preferred": "बायाँ",
+      "definition": "दायाँको उल्टो पाटो हो। बुझाउँदा कसको दृष्टिबाट बायाँ हो भन्ने स्पष्ट गर्छौँ।",
+      "sourceConcept": "左"
+    },
+    "痛い": {
+      "preferred": "दुख्नु",
+      "definition": "दुखाइ महसुस हुनु हो। स्थान र सुरु भएको समय आदि व्यक्तिसँग पुष्टि गर्छौँ।",
+      "sourceConcept": "痛い"
+    },
+    "原因": {
+      "preferred": "कारण",
+      "definition": "कुनै अवस्था वा घटना उत्पन्न भएको वजह हो। अझै थाहा नभए अज्ञात भनेर बताउँछौँ।",
+      "sourceConcept": "原因"
+    },
+    "症状": {
+      "preferred": "लक्षण",
+      "definition": "रोग आदिसँग देखिने व्यक्तिले महसुस गर्ने वा बाहिरबाट देखिने परिवर्तन हो।",
+      "sourceConcept": "症状"
+    },
+    "姿勢": {
+      "preferred": "आसन",
+      "definition": "उभिँदा वा बस्दा जस्ता अवस्थामा शरीर राख्ने ढाँचा वा रूप हो।",
+      "sourceConcept": "姿勢"
+    },
+    "立位": {
+      "preferred": "उभिएको आसन",
+      "definition": "उभिरहेको स्थिति हो।",
+      "sourceConcept": "立位"
+    },
+    "背中": {
+      "preferred": "ढाड",
+      "definition": "शरीरको पछाडि काँधदेखि कम्मरमाथिसम्मको भाग हो।",
+      "sourceConcept": "背中"
+    },
+    "便秘": {
+      "preferred": "कब्जियत",
+      "definition": "कडा दिसा, निकाल्न कठिनाइ, पूरा ननिस्केको अनुभूति वा सामान्यभन्दा कम दिसा जस्ता कारणले पर्याप्त र सजिलै दिसा निकाल्न नसक्ने अवस्था हो। एउटै अभिलेखको खाली ठाउँबाट मात्रै निर्णय गर्दैनौँ।",
+      "sourceConcept": "便秘"
+    },
+    "下痢": {
+      "preferred": "पखाला",
+      "definition": "पानी धेरै भएको नरम वा पानीजस्तो दिसा निस्कने अवस्था हो। कारण छुट्टै पुष्टि गर्नुपर्छ।",
+      "sourceConcept": "下痢"
+    },
+    "認知症": {
+      "preferred": "डिमेन्सिया",
+      "definition": "संज्ञानात्मक क्षमता घटेर जीवनमा बाधा पर्ने अवस्था हो। एकपटक बिर्सेकै आधारमा निर्णय गर्दैनौँ।",
+      "sourceConcept": "認知症"
+    },
+    "仰臥位": {
+      "preferred": "उत्तानो आसन",
+      "definition": "अनुहार माथि फर्काएर सुत्ने आसन हो। यसलाई あおむけ पनि भनिन्छ।",
+      "sourceConcept": "仰臥位"
+    },
+    "側臥位": {
+      "preferred": "कोल्टे आसन",
+      "definition": "शरीरको एक पाटो तल राखेर सुत्ने आसन हो। यसलाई よこむき पनि भनिन्छ।",
+      "sourceConcept": "側臥位"
+    },
+    "褥瘡": {
+      "preferred": "दबाबजन्य घाउ",
+      "definition": "दबाब आदिले छाला वा त्यसमुनिको तन्तुमा चोट लाग्नु हो। ओछ्यानमै रहनुपर्ने अवस्थामा मात्रै हुने होइन।",
+      "sourceConcept": "褥瘡"
+    },
+    "頭": {
+      "preferred": "टाउको",
+      "definition": "मस्तिष्क आदि रहेको शरीरको माथिल्लो भाग हो।",
+      "sourceConcept": "頭"
+    },
+    "額": {
+      "preferred": "निधार",
+      "definition": "अनुहारको माथि आँखिभौँभन्दा माथिको भाग हो।",
+      "sourceConcept": "額"
+    },
+    "目": {
+      "preferred": "आँखा",
+      "definition": "वस्तु हेर्ने अङ्ग हो।",
+      "sourceConcept": "目"
+    },
+    "目頭": {
+      "preferred": "आँखाको भित्री कुना",
+      "definition": "नाकनजिकको आँखाको छेउ हो।",
+      "sourceConcept": "目頭"
+    },
+    "目尻": {
+      "preferred": "आँखाको बाहिरी कुना",
+      "definition": "नाकबाट टाढाको आँखाको छेउ हो।",
+      "sourceConcept": "目尻"
+    },
+    "耳": {
+      "preferred": "कान",
+      "definition": "आवाज सुन्ने जस्ता कामसँग सम्बन्धित अङ्ग हो।",
+      "sourceConcept": "耳"
+    },
+    "鼻": {
+      "preferred": "नाक",
+      "definition": "गन्ध थाहा पाउने र हावा भित्रबाहिर जाने कामसँग सम्बन्धित भाग हो।",
+      "sourceConcept": "鼻"
+    },
+    "口": {
+      "preferred": "मुख",
+      "definition": "खाना भित्र लिने र आवाज निकाल्ने जस्ता कामसँग सम्बन्धित भाग हो।",
+      "sourceConcept": "口"
+    },
+    "唇": {
+      "preferred": "ओठ",
+      "definition": "मुखवरिपरिका माथिल्लो र तल्लो नरम भाग हुन्।",
+      "sourceConcept": "唇"
+    },
+    "顎": {
+      "preferred": "जबडा",
+      "definition": "मुखको तल र वरिपरि रहेको, मुख खोल्नेबन्द गर्ने र चपाउने कामसँग सम्बन्धित भाग हो।",
+      "sourceConcept": "顎"
+    },
+    "首": {
+      "preferred": "घाँटी",
+      "definition": "टाउको र धड जोड्ने भाग हो।",
+      "sourceConcept": "首"
+    },
+    "喉": {
+      "preferred": "गलो",
+      "definition": "मुखभित्र पछाडितर्फ जोडिने भाग हो। निल्ने र सास फेर्ने जस्ता काममा भूमिका खेल्छ।",
+      "sourceConcept": "喉"
+    },
+    "脇": {
+      "preferred": "काखी",
+      "definition": "हातको फेदको भित्री भाग हो।",
+      "sourceConcept": "脇"
+    },
+    "腕": {
+      "preferred": "बाहु",
+      "definition": "काँधदेखि हातसम्म जोडिने माथिल्लो अङ्गको भाग हो।",
+      "sourceConcept": "腕"
+    },
+    "肘": {
+      "preferred": "कुहिनो",
+      "definition": "बाहुको बीचमा रहेको मोड्ने र सोझ्याउने जोर्नीको भाग हो।",
+      "sourceConcept": "肘"
+    },
+    "腰": {
+      "preferred": "कम्मर",
+      "definition": "ढाडमुनि श्रोणिभन्दा माथितिरको भाग हो।",
+      "sourceConcept": "腰"
+    },
+    "手首": {
+      "preferred": "नाडीको जोर्नी",
+      "definition": "हात र बाहु जोडिने भाग हो।",
+      "sourceConcept": "手首"
+    },
+    "手のひら": {
+      "preferred": "हत्केला",
+      "definition": "हातको भित्री सतह हो।",
+      "sourceConcept": "手のひら"
+    },
+    "指": {
+      "preferred": "औँला",
+      "definition": "हातको टुप्पामा छुट्टिएका भाग हुन्। खुट्टाका औँला पनि जनाउन सक्छ।",
+      "sourceConcept": "指"
+    },
+    "指先": {
+      "preferred": "औँलाको टुप्पो",
+      "definition": "औँलाको अन्तिम भाग हो।",
+      "sourceConcept": "指先"
+    },
+    "手の甲": {
+      "preferred": "हातको पछाडिको भाग",
+      "definition": "हत्केलाको विपरीत सतह हो।",
+      "sourceConcept": "手の甲"
+    },
+    "足首": {
+      "preferred": "गोडाको जोर्नी",
+      "definition": "पैताला र खुट्टा जोडिने भाग हो।",
+      "sourceConcept": "足首"
+    },
+    "つま先": {
+      "preferred": "खुट्टाको अगाडिको टुप्पो",
+      "definition": "औँला रहेको अगाडिको भाग हो।",
+      "sourceConcept": "つま先"
+    },
+    "胸": {
+      "preferred": "छाती",
+      "definition": "धडको अगाडिको माथिल्लो भाग हो जहाँ मुटु र फोक्सो आदि हुन्छन्।",
+      "sourceConcept": "胸"
+    },
+    "臀部": {
+      "preferred": "नितम्ब",
+      "definition": "शरीरको पछाडि बस्दा आधार दिने भाग हो। यसलाई 尻 पनि भनिन्छ।",
+      "sourceConcept": "臀部"
+    },
+    "尻": {
+      "preferred": "पुठ्ठो",
+      "definition": "नितम्बलाई जनाउने दैनिक बोलीको शब्द हो।",
+      "sourceConcept": "尻"
+    },
+    "腹": {
+      "preferred": "पेट",
+      "definition": "धडको अगाडि छातीभन्दा तलको भाग हो।",
+      "sourceConcept": "腹"
+    },
+    "膝": {
+      "preferred": "घुँडा",
+      "definition": "खुट्टाको बीचमा रहेको मोड्ने र सोझ्याउने जोर्नीको भाग हो।",
+      "sourceConcept": "膝"
+    },
+    "踵": {
+      "preferred": "कुर्कुच्चा",
+      "definition": "पैतालाको पछाडि भुइँमा टेक्ने भाग हो।",
+      "sourceConcept": "踵"
+    },
+    "足底": {
+      "preferred": "पैताला",
+      "definition": "खुट्टाको तल्लो सतह हो। यसलाई 足の裏 पनि भनिन्छ।",
+      "sourceConcept": "足底"
+    },
+    "足の裏": {
+      "preferred": "खुट्टाको तलुवा",
+      "definition": "पैताला जनाउने दैनिक बोलीको शब्द हो।",
+      "sourceConcept": "足の裏"
+    },
+    "顔色": {
+      "preferred": "अनुहारको रङ",
+      "definition": "अनुहारमा देखिने छालाको रङ र अवस्था हो। सामान्यभन्दा फरक छ कि ध्यान दिन्छौँ।",
+      "sourceConcept": "顔色"
+    },
+    "患側": {
+      "preferred": "प्रभावित पाटो",
+      "definition": "रोग वा पक्षाघात आदिको असर भएको पाटो हो। हरेक परिस्थितिमा कुन पाटो हो पुष्टि गर्छौँ।",
+      "sourceConcept": "患側"
+    },
+    "健側": {
+      "preferred": "कम प्रभावित पाटो",
+      "definition": "प्रभावित पाटोको तुलनामा असर नभएको वा कम भएको पाटो हो। सबै काम सामान्य छन् भन्ने अर्थ होइन।",
+      "sourceConcept": "健側"
+    },
+    "健康": {
+      "preferred": "स्वास्थ्य",
+      "definition": "मन, शरीर र जीवनको अवस्थासँग सम्बन्धित शब्द हो। रोग छ कि छैन भन्नेबाट मात्रै व्यक्तिको समग्र जीवन तय गर्दैनौँ।",
+      "sourceConcept": "健康"
+    },
+    "体調": {
+      "preferred": "शारीरिक अवस्था",
+      "definition": "त्यतिबेलाको शरीरको अवस्था हो।",
+      "sourceConcept": "体調"
+    },
+    "バイタルサイン": {
+      "preferred": "जीवनसूचक चिह्न",
+      "definition": "तापक्रम, श्वास, नाडी र रक्तचाप जस्ता जीवनको अवस्था जनाउने सूचक हुन्।",
+      "sourceConcept": "バイタルサイン"
+    },
+    "あおむけ": {
+      "preferred": "उत्तानो",
+      "definition": "仰臥位 जनाउने दैनिक बोलीको शब्द हो।",
+      "sourceConcept": "あおむけ"
+    },
+    "よこむき": {
+      "preferred": "कोल्टे",
+      "definition": "側臥位 जनाउने दैनिक बोलीको शब्द हो।",
+      "sourceConcept": "よこむき"
+    },
+    "腹臥位": {
+      "preferred": "घोप्टो आसन",
+      "definition": "पेट तल फर्काएर सुत्ने आसन हो। यसलाई うつぶせ पनि भनिन्छ।",
+      "sourceConcept": "腹臥位"
+    },
+    "うつぶせ": {
+      "preferred": "घोप्टो",
+      "definition": "腹臥位 जनाउने दैनिक बोलीको शब्द हो।",
+      "sourceConcept": "うつぶせ"
+    },
+    "端座位": {
+      "preferred": "किनारमा बसेको आसन",
+      "definition": "ओछ्यान आदिको छेउमा खुट्टा तल झारेर बसेको स्थिति हो।",
+      "sourceConcept": "端座位"
+    },
+    "椅座位": {
+      "preferred": "कुर्सीमा बसेको आसन",
+      "definition": "कुर्सीमा बसेको स्थिति हो।",
+      "sourceConcept": "椅座位"
+    },
+    "体位": {
+      "preferred": "शरीरको स्थिति",
+      "definition": "सुत्दा वा बस्दा जस्ता अवस्थामा शरीरको स्थान र दिशाअनुसारको आसन हो।",
+      "sourceConcept": "体位"
+    },
+    "体位変換": {
+      "preferred": "स्थिति परिवर्तन",
+      "definition": "शरीरको दिशा वा आसन बदल्नु हो। गर्नका लागि व्यक्तिगत विधि र पुष्टि आवश्यक हुन्छ।",
+      "sourceConcept": "体位変換"
+    },
+    "疥癬": {
+      "preferred": "लुतो",
+      "definition": "स्केबीज माइटको सङ्क्रमणले चिलाउने जस्ता लक्षण हुने रोग हो। शङ्कास्पद परिवर्तन स्वास्थ्यकर्मीलाई बताउँछौँ।",
+      "sourceConcept": "疥癬"
+    },
+    "風邪": {
+      "preferred": "रुघाखोकी",
+      "definition": "नाक वा गलो आदिको सङ्क्रमणसँगका लक्षण जनाउने सामान्य नाम हो। खोकी मात्रैबाट निर्णय गर्दैनौँ।",
+      "sourceConcept": "風邪"
+    },
+    "高血圧症": {
+      "preferred": "उच्च रक्तचाप",
+      "definition": "रक्तचाप लगातार उच्च रहने रोग हो। एकपटकको मापनबाट मात्रै निदान गर्दैनौँ।",
+      "sourceConcept": "高血圧症"
+    },
+    "食中毒": {
+      "preferred": "खाद्य विषाक्तता",
+      "definition": "खानेपिउने वस्तु आदिमार्फत हानिकारक पदार्थ शरीरमा पसी स्वास्थ्यमा हानि हुनु हो।",
+      "sourceConcept": "食中毒"
+    },
+    "熱中症": {
+      "preferred": "गर्मीजन्य स्वास्थ्य समस्या",
+      "definition": "गर्मी आदिले तापक्रम नियमन र शरीरको पानी तथा नुनको सन्तुलन बिग्रेर हुने स्वास्थ्य हानि हो।",
+      "sourceConcept": "熱中症"
+    },
+    "肺炎": {
+      "preferred": "निमोनिया",
+      "definition": "फोक्सोमा सूजन हुने रोग हो। खोकी वा ज्वरो भएनभएकोबाट मात्रै निर्णय गर्न सकिँदैन।",
+      "sourceConcept": "肺炎"
+    },
+    "白内障": {
+      "preferred": "मोतिबिन्दु",
+      "definition": "आँखाको लेन्स धमिलो भई देखाइमा प्रभाव पर्ने रोग हो।",
+      "sourceConcept": "白内障"
+    },
+    "アレルギー": {
+      "preferred": "एलर्जी",
+      "definition": "शरीरले कुनै विशेष पदार्थप्रति अत्यधिक प्रतिक्रिया दिनु हो। कारण आफैँ तय गर्दैनौँ।",
+      "sourceConcept": "アレルギー"
+    },
+    "嘔吐": {
+      "preferred": "बान्ता",
+      "definition": "पेटको सामग्री आदि मुखबाट बाहिर निकाल्नु हो।",
+      "sourceConcept": "嘔吐"
+    },
+    "片麻痺": {
+      "preferred": "एकपक्षीय पक्षाघात",
+      "definition": "शरीरको दायाँ वा बायाँ एक पाटोमा पक्षाघात भएको अवस्था हो। मात्रा र गर्न सक्ने काम फरक हुन्छन्।",
+      "sourceConcept": "片麻痺"
+    },
+    "かゆい": {
+      "preferred": "चिलाउनु",
+      "definition": "छाला कोट्याउन मन लाग्ने अनुभूति हो। स्थान, फैलावट र छालाको परिवर्तन पुष्टि गर्छौँ।",
+      "sourceConcept": "かゆい"
+    },
+    "傷": {
+      "preferred": "घाउ",
+      "definition": "छाला जस्ता तन्तुमा क्षति भएको ठाउँ हो।",
+      "sourceConcept": "傷"
+    },
+    "苦しい": {
+      "preferred": "गाह्रो हुनु",
+      "definition": "सासको कठिनाइ वा कडा असहजता जनाउने शब्द हो। उहाँको आशय सोधी आपत्कालीन परिवर्तनमा तुरुन्त थप सहयोग माग्छौँ।",
+      "sourceConcept": "苦しい"
+    },
+    "拘縮": {
+      "preferred": "जोर्नी सङ्कुचन",
+      "definition": "जोर्नी चल्ने दायरा साँघुरिएको अवस्था हो।",
+      "sourceConcept": "拘縮"
+    },
+    "骨折": {
+      "preferred": "हड्डी भाँचिनु",
+      "definition": "हड्डी भाँचिनु वा चिरा पर्नु हो।",
+      "sourceConcept": "骨折"
+    },
+    "しびれる": {
+      "preferred": "झमझमाउनु",
+      "definition": "संवेदना कम हुनु वा सुईले घोचेजस्तो हुनु जस्ता संवेदनाका परिवर्तन हुन्। स्थान र समय पुष्टि गर्छौँ।",
+      "sourceConcept": "しびれる"
+    },
+    "出血": {
+      "preferred": "रक्तस्राव",
+      "definition": "रगत रक्तनलीबाहिर निस्कनु हो।",
+      "sourceConcept": "出血"
+    },
+    "咳": {
+      "preferred": "खोकी",
+      "definition": "श्वासनलीको बाहिरी वस्तु आदि निकाल्न खोज्ने प्रतिक्रिया हो।",
+      "sourceConcept": "咳"
+    },
+    "脱水": {
+      "preferred": "निर्जलीकरण",
+      "definition": "शरीरमा पानीको कमी भएको अवस्था हो।",
+      "sourceConcept": "脱水"
+    },
+    "吐き気": {
+      "preferred": "वाकवाकी",
+      "definition": "बान्ता होला जस्तो महसुस हुनु हो। वास्तवमै बान्ता गर्नुभन्दा छुट्याउँछौँ।",
+      "sourceConcept": "吐き気"
+    },
+    "発熱": {
+      "preferred": "ज्वरो",
+      "definition": "सामान्यभन्दा तापक्रम उच्च भएको अवस्था हो। सामान्य मान र मापनका सर्त पनि पुष्टि गर्छौँ।",
+      "sourceConcept": "発熱"
+    },
+    "発汗": {
+      "preferred": "पसिना आउनु",
+      "definition": "पसिना निस्कनु हो।",
+      "sourceConcept": "発汗"
+    },
+    "はれる": {
+      "preferred": "सुन्निनु",
+      "definition": "शरीरको कुनै भाग सामान्यभन्दा फुल्नु हो।",
+      "sourceConcept": "はれる"
+    },
+    "発作": {
+      "preferred": "आकस्मिक लक्षण",
+      "definition": "लक्षण अचानक देखिनु वा बढ्नु हो। यो रोगको नाम जनाउने शब्द होइन।",
+      "sourceConcept": "発作"
+    },
+    "むくむ": {
+      "preferred": "पानी जमेर सुन्निनु",
+      "definition": "तन्तुमा पानी जम्मा भएर सुन्निएको अवस्था हुनु हो।",
+      "sourceConcept": "むくむ"
+    },
+    "めまい": {
+      "preferred": "चक्कर लाग्नु",
+      "definition": "घुमेजस्तो वा असन्तुलित जस्तो अनुभूति हो। कारण नतोक्दै उहाँको गुनासो पुष्टि गर्छौँ।",
+      "sourceConcept": "めまい"
+    },
+    "座る": {
+      "preferred": "बस्नु",
+      "definition": "शरीर तल झारी बस्ने चाल हो।",
+      "sourceConcept": "座る"
+    },
+    "観察": {
+      "preferred": "अवलोकन",
+      "definition": "व्यक्ति वा वरिपरिको अवस्था ध्यान दिएर जाँच्नु हो।",
+      "sourceConcept": "観察"
+    },
+    "記録": {
+      "preferred": "अभिलेख",
+      "definition": "पुष्टि गरेको वा गरेको काम पछि बुझिने गरी राख्नु हो।",
+      "sourceConcept": "記録"
+    },
+    "座位": {
+      "preferred": "बसेको आसन",
+      "definition": "बसेका विभिन्न अवस्थाको सामूहिक नाम हो।",
+      "sourceConcept": "座位"
+    },
+    "高齢": {
+      "preferred": "वृद्धावस्था",
+      "definition": "उमेर बढी हुनु हो। त्यसैबाट क्षमता वा इच्छा तय गर्दैनौँ।",
+      "sourceConcept": "高齢"
+    },
+    "年齢": {
+      "preferred": "उमेर",
+      "definition": "जन्मदेखि बितेका वर्ष हुन्।",
+      "sourceConcept": "年齢"
+    },
+    "個人差": {
+      "preferred": "व्यक्तिगत भिन्नता",
+      "definition": "व्यक्तिअनुसार अवस्था वा विशेषता फरक हुनु हो।",
+      "sourceConcept": "個人差"
+    },
+    "声": {
+      "preferred": "स्वर",
+      "definition": "मानिसले निकाल्ने आवाज हो। व्यक्तिअनुकूल ठूलो-सानो र गति पुष्टि गर्छौँ।",
+      "sourceConcept": "声"
+    },
+    "速度": {
+      "preferred": "गति",
+      "definition": "चाल वा बोलाइ आदिको छिटोपन हो।",
+      "sourceConcept": "速度"
+    },
+    "聞き取りやすい": {
+      "preferred": "सुन्न सजिलो",
+      "definition": "अर्को व्यक्तिको बोली सुनेर सजिलै बुझ्न सकिने हुनु हो।",
+      "sourceConcept": "聞き取りやすい"
+    },
+    "見えにくい": {
+      "preferred": "देख्न कठिन",
+      "definition": "अक्षर वा वस्तु स्पष्ट देख्न गाह्रो अवस्था हो।",
+      "sourceConcept": "見えにくい"
+    },
+    "表示": {
+      "preferred": "सूचना लेखाइ",
+      "definition": "जानकारी दिन अक्षर वा चिह्न आदिले देखाइएको कुरा हो।",
+      "sourceConcept": "表示"
+    },
+    "受付": {
+      "preferred": "स्वागत कक्ष",
+      "definition": "आएका व्यक्तिको काम बुझ्ने ठाउँ वा जिम्मेवार व्यक्ति हो।",
+      "sourceConcept": "受付"
+    },
+    "具体的": {
+      "preferred": "ठोस",
+      "definition": "स्थान वा विषय स्पष्ट बुझिने हुनु हो।",
+      "sourceConcept": "具体的"
+    },
+    "触れる": {
+      "preferred": "छुनु",
+      "definition": "शरीर वा वस्तुसँग सम्पर्क गर्नु हो। व्यक्तिको शरीर छुनुअघि बोलाई इच्छा र सहमति पुष्टि गर्छौँ।",
+      "sourceConcept": "触れる"
+    },
+    "案内": {
+      "preferred": "मार्गदर्शन",
+      "definition": "स्थान वा तरिका बताउनु वा इच्छाअनुसार डोर्‍याउनु हो।",
+      "sourceConcept": "案内"
+    },
+    "記憶障害": {
+      "preferred": "स्मृतिसम्बन्धी समस्या",
+      "definition": "नयाँ जानकारी सम्झेर राख्न वा पुनः सम्झन जस्ता काममा कठिनाइ भएको अवस्था हो।",
+      "sourceConcept": "記憶障害"
+    },
+    "BPSD": {
+      "preferred": "BPSD",
+      "definition": "डिमेन्सियाका व्यवहार तथा मनोवैज्ञानिक लक्षणको सङ्क्षिप्त नाम हो। व्यक्तिको अवस्था, वातावरण र अरूसँगको सम्बन्ध पनि विचार गर्छौँ।",
+      "sourceConcept": "BPSD"
+    },
+    "腰痛": {
+      "preferred": "कम्मर दुखाइ",
+      "definition": "कम्मरमा महसुस हुने दुखाइ हो। कारण रोगको नाम होइन।",
+      "sourceConcept": "腰痛"
+    },
+    "疲労": {
+      "preferred": "थकान",
+      "definition": "गतिविधि आदिसँग थाकेको अवस्था हो। उहाँको अनुभूति र काममा पर्ने प्रभाव पनि सोध्छौँ।",
+      "sourceConcept": "疲労"
+    },
+    "恒常性": {
+      "preferred": "आन्तरिक सन्तुलन",
+      "sourceConcept": "恒常性",
+      "scope": "Week02 teaching prose; definition remains the complete bound paragraph."
+    },
+    "意味記憶": {
+      "preferred": "अर्थगत स्मृति",
+      "sourceConcept": "意味記憶",
+      "scope": "Week02 teaching prose; definition remains the complete bound paragraph."
+    },
+    "エピソード記憶": {
+      "preferred": "घटनात्मक स्मृति",
+      "sourceConcept": "エピソード記憶",
+      "scope": "Week02 teaching prose; definition remains the complete bound paragraph."
+    },
+    "手続き記憶": {
+      "preferred": "प्रक्रियागत स्मृति",
+      "sourceConcept": "手続き記憶",
+      "scope": "Week02 teaching prose; definition remains the complete bound paragraph."
+    },
+    "中枢神経": {
+      "preferred": "केन्द्रीय स्नायु",
+      "sourceConcept": "中枢神経",
+      "scope": "Week02 teaching prose; definition remains the complete bound paragraph."
+    },
+    "末梢神経": {
+      "preferred": "परिधीय स्नायु",
+      "sourceConcept": "末梢神経",
+      "scope": "Week02 teaching prose; definition remains the complete bound paragraph."
+    },
+    "大脳": {
+      "preferred": "प्रमस्तिष्क",
+      "sourceConcept": "大脳",
+      "scope": "Week02 teaching prose; definition remains the complete bound paragraph."
+    },
+    "小脳": {
+      "preferred": "अनुमस्तिष्क",
+      "sourceConcept": "小脳",
+      "scope": "Week02 teaching prose; definition remains the complete bound paragraph."
+    },
+    "脳幹": {
+      "preferred": "मस्तिष्कस्तम्भ",
+      "sourceConcept": "脳幹",
+      "scope": "Week02 teaching prose; definition remains the complete bound paragraph."
+    },
+    "失語症": {
+      "preferred": "अफेजिया",
+      "sourceConcept": "失語症",
+      "scope": "Week02 teaching prose; definition remains the complete bound paragraph."
+    },
+    "骨粗鬆症": {
+      "preferred": "अस्थिक्षय",
+      "sourceConcept": "骨粗鬆症",
+      "scope": "Week02 teaching prose; definition remains the complete bound paragraph."
+    },
+    "人工透析": {
+      "preferred": "डायलाइसिस",
+      "sourceConcept": "人工透析",
+      "scope": "Week02 teaching prose; definition remains the complete bound paragraph."
+    },
+    "ペースメーカー": {
+      "preferred": "पेसमेकर",
+      "sourceConcept": "ペースメーカー",
+      "scope": "Week02 teaching prose; definition remains the complete bound paragraph."
+    },
+    "ストーマ": {
+      "preferred": "स्टोमा",
+      "sourceConcept": "ストーマ",
+      "scope": "Week02 teaching prose; definition remains the complete bound paragraph."
+    },
+    "酸素療法": {
+      "preferred": "अक्सिजन थेरापी",
+      "sourceConcept": "酸素療法",
+      "scope": "Week02 teaching prose; definition remains the complete bound paragraph."
+    },
+    "収縮期血圧": {
+      "preferred": "सिस्टोलिक रक्तचाप",
+      "sourceConcept": "収縮期血圧",
+      "scope": "Week02 teaching prose; definition remains the complete bound paragraph."
+    },
+    "拡張期血圧": {
+      "preferred": "डायस्टोलिक रक्तचाप",
+      "sourceConcept": "拡張期血圧",
+      "scope": "Week02 teaching prose; definition remains the complete bound paragraph."
     }
   },
   "headings_punctuation_and_script_fonts": {
@@ -184,5 +801,16 @@
   "nativeReviewed": false,
   "nativeDeviceTested": false,
   "rightsReviewed": false,
-  "releaseReady": false
+  "releaseReady": false,
+  "changeLog": [
+    {
+      "date": "2026-10-16",
+      "batch": "week02",
+      "previousVersion": 1,
+      "version": 2,
+      "changes": "Added source-backed week02 glossary/anatomy/cognition/device terminology and Fujino/Kawase names; all prior address/register principles and25 concept entries preserved.",
+      "priorProfileSha256": "4c4c970b6b95d5e5c6df1bed563e015a9746bba0cbcb1adea0fb104cff46330f",
+      "sourceCommit": "bc800b260e565c268d0d8a3c659b402e819b70ef"
+    }
+  ]
 }
