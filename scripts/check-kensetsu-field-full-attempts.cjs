@@ -84,6 +84,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  }
  for(const legacy of legacyExamples)assert.equal(globalThis.__scopeStorage.get(legacy.key),legacy.raw);
  const report={priorFieldAttemptsPreserved:true,status:'PASS_FULL_FIELD_HOST_ATTEMPTS',differentialBankSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'src/data/kensetsu/field-review-tests.ja.json'))).digest('hex'),cases,catalogTitlesChecked,choicesChecked,resumesChecked,preSubmitAnswersHidden:true,submittedChoicesLocked:true,exactQuestionAndAnswerResume:true,submittedReloadPreserved:true,adapters:['React Native host components','in-memory AsyncStorage','artwork','safe area'],browserScreenshots:false,nativeDeviceTested:false,domainReviewed:false,releaseReady:false};
+ report.assessmentInputsSha256=Object.fromEntries(['review-tests.ja.json','differential-review-tests.ja.json','theory-review-tests.ja.json','utilities-review-tests.ja.json','field-review-tests.ja.json','review-tests.ts','scope.ts','reuse-policy.json'].map(name=>[name,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'src/data/kensetsu',name))).digest('hex')]));
  if(process.env.KENSETSU_FULL_FIELD_REPORT)fs.writeFileSync(process.env.KENSETSU_FULL_FIELD_REPORT,JSON.stringify(report,null,2)+'\n');
  console.log(JSON.stringify({status:report.status,attempts:cases.length,catalogTitlesChecked,choicesChecked,resumesChecked}));
 })().catch(e=>{console.error(e);process.exit(1)});

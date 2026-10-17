@@ -2,6 +2,18 @@
 
 Ngày lập: 2026-10-11, Asia/Tokyo. Phạm vi hiện tại: hoàn thiện nội dung để học, bản dịch và ảnh minh họa mới cho 特定技能1号 và 特定技能2号. Phần thi hoàn toàn bằng tiếng Nhật sẽ thiết kế sau khi phần học hoàn thiện. Đây là hướng dẫn thực thi cho AI tiếp nối dự án, không phải báo cáo nội dung đã sản xuất hay chứng nhận tài liệu đã bao phủ đủ.
 
+## Cập nhật tích hợp — toàn bộ ngân hàng 1号 đủ 10 × 40
+
+Lý thuyết chung dùng cho cả ba nhánh: 400 câu. Mỗi phần thực hành ライフライン・設備、建築、土木: 400 câu, chia thành 10 đề đủ 40 câu. Hai nhánh 建築、土木 dùng chung 208 câu mới bằng tham chiếu; 土木 có thêm 22 câu riêng. Giữ bài học, bản dịch và hình dùng chung; giữ dữ liệu bài làm cũ, không gán sang bộ có thành phần câu hỏi mới. 2号 tiếp tục chờ. Các mốc số lượng phía dưới là lịch sử. Đủ ngân hàng đề chưa xác nhận bao phủ toàn bộ 13 PDF, kiểm tra trình duyệt/thiết bị hay duyệt chuyên môn/ngôn ngữ/bản quyền.
+
+## Cập nhật mới nhất — lý thuyết và ライフライン đủ 10 × 40
+
+Đọc đầu FIELD_PRACTICAL_CHECKPOINT.md. Lý thuyết chung và thực hành ライフライン・設備 đều có 10 đề đủ 40 câu, 400 câu riêng biệt mỗi ngân hàng. Giữ bộ đã hoàn tất; đề phụ 40 câu chưa công bố được lưu riêng, không nhập trùng vào app. 建築 còn 192 câu, 土木 170 câu. Chưa xác nhận bao phủ toàn bộ nguồn hay phát hành; 2号 chờ. Các số bên dưới là lịch sử.
+
+## Cập nhật mới nhất — đề lý thuyết 40 câu thứ tư
+
+Đọc đầu FIELD_PRACTICAL_CHECKPOINT.md: lý thuyết chung 325 câu, gồm 160 câu mới trong bốn đề 40 câu. Thực hành: ライフライン 400 câu trong 10 đề đủ 40 câu, 建築 192 câu, 土木 170 câu. Giữ nguyên nội dung học và bản dịch dùng chung. Chưa đủ 10 × 40 cho từng phần; 2号 chờ. Các số bên dưới là lịch sử.
+
 ## Cập nhật mới nhất — đề lý thuyết 40 câu thứ ba
 
 Đọc đầu FIELD_PRACTICAL_CHECKPOINT.md: lý thuyết chung có 285 câu, gồm 120 câu mới trong ba đề 40 câu. Giữ nguyên bài học và bản dịch dùng chung. Thực hành: ライフライン 235 câu, 建築 192 câu, 土木 170 câu. Chưa đủ 10 × 40 cho từng phần; 2号 chờ. Các số bên dưới là lịch sử.

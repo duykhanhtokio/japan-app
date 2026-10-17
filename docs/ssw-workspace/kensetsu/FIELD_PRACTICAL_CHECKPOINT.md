@@ -15,6 +15,8 @@ Theory400(common3fields),utilities400,building400,civil400. Every scope has10ful
 Allfieldforms10correctperposition/no3same. ActualadaptedhostQA60fullattempts/9600choice labels/120resumes passed; legacyfieldstoragepreserved. ScopeQAall6routes10×40/844originalinputs/1248localeparagraphs/42PNGfiles passed. FocuseddataTypeScript and10/10JLPTUIlock passed. Theory90attempts andutilities30previouslypassed; finalcross-route rerun/realbrowser/native evidence andsourceaudit are next.
 
 Question-count deficits are0; this is not whole-source or release certification. Stillopen:13PDFatomic/numeric/recognition/safety-context completeness, browser/device evidence, humanexpert/native/rights approvals.2号deferred. SeeFIELD_FULL_ATTEMPTS_QA_2026-10-17.json/PRACTICAL_REUSE_RUNTIME_QA_2026-10-17.json andFIELD_ASSESSMENT_COMPLETION_LEDGER_2026-10-17.json.
+The unpublished 40-question finishes supplement is preserved with archive-only IDs in archived-assessment-drafts/theory-finishes-40-2026-10-17.json. It is excluded from runtime and coverage counts; the completed primary theory bank is retained without duplicate authoring.
+
 
 ---
 
