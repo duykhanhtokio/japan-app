@@ -4,6 +4,16 @@ R=pathlib.Path(__file__).resolve().parents[2];out=R/'assets/kensetsu/differentia
 font=fitz.Font('japan').buffer
 F=lambda n:ImageFont.truetype(io.BytesIO(font),n)
 navy='#173750';gold='#B38432';cream='#FFFAEC';teal='#22766D';ink='#24384B'
+def write_png(im, path):
+ # Encode completely before replacing a deliverable; never expose a half-written PNG.
+ import os
+ buffer=io.BytesIO();im.save(buffer,format='PNG',optimize=True);data=buffer.getvalue()
+ assert len(data)>64 and data.startswith(b'\x89PNG\r\n\x1a\n') and data[-8:-4]==b'IEND',path
+ pending=path.with_suffix('.png.pending')
+ with pending.open('wb') as stream:stream.write(data);stream.flush();os.fsync(stream.fileno())
+ os.replace(pending,path)
+ assert path.read_bytes()==data,path
+
 def start(title):
  im=Image.new('RGB',(1200,650),cream);d=ImageDraw.Draw(im);d.rounded_rectangle((20,20,1180,630),radius=28,outline=gold,width=3);d.text((55,42),title,font=F(34),fill=navy);d.line((55,100,1145,100),fill=gold,width=2);d.text((55,590),'役割を比べる概念図・操作手順ではありません',font=F(23),fill=ink);return im,d
 def card(d,x,y,w,h,title,lines):
@@ -20,7 +30,7 @@ def card(d,x,y,w,h,title,lines):
 def save(key,title,groups):
  im,d=start(title);w=(1090-(len(groups)-1)*24)//len(groups)
  for i,(t,ls)in enumerate(groups):card(d,55+i*(w+24),135,w,395,t,ls)
- im.save(out/(key+'.png'),optimize=True);return im
+ write_png(im,out/(key+'.png'));return im
 ims=[]
 ims.append(save('b3','足場の接続先を区別する',[('クランプ',['単管　⇄　単管','管どうしの接続']),('壁つなぎ',['足場　⇄　建物','建物側への接続'])]))
 ims.append(save('b4','接合工具の働きと、結果の確認',[('位置合わせ',['接合部の穴','○　○','穴の位置をそろえる']),('レンチ',['ボルト・ナット','回転','回す働き']),('確認',['工具の準備','≠','施工結果の確認'])]))
@@ -38,7 +48,7 @@ d.line((120,475,690,475),fill=navy,width=3);d.line((560,175,560,315),fill=gold,w
 for yy,sg in [(175,1),(315,-1)]:d.line((548,yy+sg*15,560,yy,572,yy+sg*15),fill=gold,width=4)
 d.line((400,315,590,315),fill=teal,width=2);d.text((585,220),'下がった分',font=F(27),fill=navy);d.text((150,500),'コーンを外した後の試料（模式図）',font=F(25),fill=ink)
 card(d,780,140,365,385,'区別すること',['スランプの測定','≠ 硬化後の強度試験','','型枠側からの振動','≠ 内部締固めの全代替'])
-im.save(out/'b8.png',optimize=True);ims.append(im)
+write_png(im,out/'b8.png');ims.append(im)
 ims.append(save('b9','型枠をつくる部材と、支える部材',[('間隔・締付け',['セパレーター：間隔','Pコン：端部','フォームタイ：締付け']),('面と補強',['せき板：接する面','桟木：補強・接続','パネル：板＋補強']),('荷重を受ける部分',['端太角・トンボ端太','横向きに受ける','パイプサポート：支柱'])]))
 ims.append(save('b10','形を残す・案内する・外しやすくする',[('完成形をつくる',['面木：角の面取り','目地棒：平面の溝','欠き込み材：欠き込み']),('工具',['フック：穴へ案内','タイ回し：締める・緩める']),('剥離剤',['型枠の表面に用いる','混和剤・支柱とは別','取外し可否の判断とは別'])]))
 ims.append(save('b11','ポンプの部位を目的で整理する',[('受入れ・検知',['ホッパ：受入れ','スクリーン：開口の部品','レベルセンサ：量を検知']),('動力・給油',['PTO：動力の取出し','油圧回路：発生・制御','給油装置：グリス供給']),('経路・支持',['輸送管：材料の経路','ブーム：経路を届かせる','アウトリガ：車体の安定'])]))
@@ -69,9 +79,13 @@ ims.append(save('b31','覆うシートと、足場への風の力',[('覆う目�
 ims.append(save('b32','屋根から落ちる二つの危険',[('端からの墜落',['滑る・バランスを崩す','屋根の端から落ちる']),('踏み抜き',['屋根面を踏み抜いて落ちる','見える面 ≠ 人を支える床','指定の通路・作業床を確認'])]))
 ims.append(save('c12','坑内の面・車両・空気',[('切羽',['掘削する先端の面','地質と落下・崩壊の危険','車両の動きとは別に確認']),('空気の対象',['酸素と他のガスを区別','CO・CO₂は色やにおいで','存在を判断できない','測定と換気の管理'])]))
 ims.append(save('c13','水に落ちる危険と、動くロープ',[('救命胴衣',['水に落ちた後に浮くため','墜落を制止する器具と別','危険な乗降の理由にしない']),('ロープ・係留',['急に張る・動くことがある','輪の中へ足を入れない','ビットとアイの接点も注意'])]))
+ims.append(save('b33','混和剤は目的と名称を分ける',[('加える対象',['コンクリートの性質を調整','型枠に塗る剥離剤とは別','基本材料と加える材料']),('減水剤',['セメント粒子の分散','必要な流動性と単位水量','減衰剤を分類名にしない']),('性質の違い',['流動化剤：流動性','硬化促進剤：硬化','量の自己判断を認めない'])]))
+ims.append(save('b34','かなじめと、他の石材工具',[('かなじめ',['槌に似た形','木の柄の末端に金属の輪','打撃・てことしての用途']),('対象と働き',['こやすけ：刃で割る','びしゃん：表面を整える','名称・形・用途を対応'])]))
 contact=Image.new('RGB',(1200,((len(ims)+1)//2)*325),'#dddddd')
 for i,im in enumerate(ims):im=im.resize((600,325));contact.paste(im,((i%2)*600,(i//2)*325))
 # Source-controlled generator; the review contact sheet is a temporary QA artifact.
 import os
 if os.environ.get('KENSETSU_DIAGRAM_CONTACT'):contact.save(os.environ['KENSETSU_DIAGRAM_CONTACT'])
-print('rendered',len(ims),'original controlled diagrams')
+for asset in out.glob('*.png'):
+ data=asset.read_bytes();assert len(data)>64 and data[:8]==b'\x89PNG\r\n\x1a\n' and data[-8:-4]==b'IEND',asset
+print('rendered and byte-verified',len(ims),'original controlled diagrams')

@@ -1,3 +1,17 @@
+# Latest continuation — terminology and first additional full theory form2026-10-17
+
+Current:427global records;42additional fact views/104unique Japanese paragraphs/42controlled concept diagrams/104supplemental practical questions. All additional paragraphs translated12locales(1248paragraph renders). Building140practical entries/192questions; civil128entries/170questions; utilities224/235 unchanged. Common theory161lessons/205questions now shared3fields. Canonical reuse remainsbuilding108/civil104/109distinct,14additional shared views into civil.
+
+Building033 adds3mixed-admixture term/function paragraphs also linked into civil;034adds1かなじめ fact onlybuilding.4newpractical questions(test16),2diagrams. JCI verifies減水剤rather than propagating source減衰剤as taxonomy; trade federation verifiesかなじめshape/endring and uses. No source issuer erratum is claimed. See TERMINOLOGY_AND_THEORY_ASSESSMENT_LEDGER_2026-10-17.json. Source5k32is a brief textual definition, not an approved recognition atlas.
+
+Added40source-bound Japanese theory questions as stable newform kensetsu-theory-extra-test-01, sourced to canonical36–49(excludes38). No theory lesson rewrite or new duplicate translations.10correct answers perposition, no3same inrow; unique normalized prompts. Original400questions/forms unchanged. Runtime host submits new40-question theory form in all3fields, tests exact shared question data, scores/attempt restore/pre-submit hiding, field practical form16,140paragraph route renders and42actualPNGsignatures/dimensions/IEND.844original inputs preserved. FocusedTypeScript and UIlock checked; browser/native/human gates remain unconfirmed.
+
+An image encoded directly to the filesystem was observed truncated during regeneration; generator now encodes completePNGinmemory, fsyncs a temporary file, atomically replaces output and verifies bytes/all42files. Existing c12diagram restored identically from generator; no content/progress reset.
+
+Remaining400question-pool deficits:theory195;utilities165;building208;civil230. Reuse shared practical knowledge/questions once; write distinct source-backed assessment objectives. Existing catalog counts are NOT completed10×40forms. Finish source numeric/figure/safety scope audit and13PDF atomic knowledge denominator, then native/domain/rights and real-device/browser evidence. AI-authorable work remains;2号deferred.
+
+---
+
 # Latest continuation — field safety2026-10-17
 
 Current totals supersede history below:40additional views/100unique Japanese paragraphs/40controlled concept diagrams/100supplemental questions;425global records. All additional paragraphs have12revision-bound locale translations. Building138practical entries/188questions; civil127entries/167questions. Theory161lessons/165questions and utilities224practical/235questions unchanged. Canonical reuse isbuilding108,civil104,109distinct originals. No full10×40forms yet;11building/10civil catalog views are filtered subsets or small supplements, not40-question exams.
