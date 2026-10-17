@@ -2,6 +2,17 @@
 
 Ngày lập: 2026-10-11, Asia/Tokyo. Phạm vi hiện tại: hoàn thiện nội dung để học, bản dịch và ảnh minh họa mới cho 特定技能1号 và 特定技能2号. Phần thi hoàn toàn bằng tiếng Nhật sẽ thiết kế sau khi phần học hoàn thiện. Đây là hướng dẫn thực thi cho AI tiếp nối dự án, không phải báo cáo nội dung đã sản xuất hay chứng nhận tài liệu đã bao phủ đủ.
 
+## Cập nhật phạm vi có hiệu lực — chủ dự án chốt 2026-10-17
+
+Mục này ưu tiên hơn mọi mô tả dùng chung sáu lộ trình trước đây. Hoàn thiện 1号 trước; chưa biên soạn hoặc mở nội dung 2号.
+
+- Bảy PDF đã nhận thuộc bộ ライフライン・設備1号. File 学科1–4 được chủ dự án cho dùng chung phần lý thuyết và kiểm tra lý thuyết của cả ライフライン・設備、建築、土木 trong 1号.
+- File 実技5l/6l/7l chỉ dùng thực hành và kiểm tra thực hành ライフライン・設備1号. Không dùng chung cho 建築、土木 hoặc 2号.
+- Thực hành 建築1号 lấy từ bộ5k/6k/7k; 土木1号 lấy từ bộ5d/6d/7d. Phải nhận, kiểm kê và đọc byte thật trước khi soạn. Không thay bằng file l, không tự lấy bản khác trên mạng thay tài liệu đính kèm.
+- Phạm vi được định tuyến từ sourceReferences theo nguồn; lịch sử applicableLevels/applicableFields trong bài cũ không còn là căn cứ dùng chung. Giữ nguyên ID bài, đoạn, bản dịch, hình và dữ liệu hoàn thành cũ.
+- Đề cũ trộn 学科/実技 được giữ nguyên làm dữ liệu gốc. Khi tách theo nguồn, giữ từng câu/đáp án/lời giải; bài bị chia có ID lượt làm mới để không gán sai đáp án cũ. Không tự coi mỗi nhánh đã có đủ10đề×40câu.
+- Tài liệu JAC leader.pdf mới tìm chỉ là tham khảo dự phòng2号; chưa dùng để soạn cho1号.
+
 ## 1. Mục tiêu và quyết định phải giữ
 
 Tổng hợp đầy đủ kiến thức cần học trong kho tham khảo, sau đó tự biên soạn một giáo trình mới bằng tiếng Nhật cho người lao động nước ngoài. Bản dịch theo ngôn ngữ người học đi cùng từng cụm nội dung, được mở rộng ngay trong khung của cụm đó. Toàn bộ bài giải thích, ví dụ, tình huống, bản dịch và ảnh phải do dự án tạo mới.

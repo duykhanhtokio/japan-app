@@ -18,12 +18,13 @@ import {
   TokuteiActionBar,
 } from "@/components/tokutei/TokuteiChrome";
 import type { Field, Level, Session } from "@/data/kensetsu";
+import { subjectLabels, type Subject } from "@/data/kensetsu/scope";
 const fieldLabels: Record<Field, string> = {
   utilities: "ライフライン・設備",
   building: "建築",
   civil: "土木",
 };
-import { reviewTests, type ReviewTest } from "@/data/kensetsu/review-tests";
+import { reviewTestsForScope, type ReviewTest } from "@/data/kensetsu/review-tests";
 import {
   freshTestAttempt,
   gradeTest,
@@ -61,6 +62,7 @@ type Scope = {
   learner: string;
   level: Level;
   field: Field;
+  subject: Subject;
   onBack: () => void;
   getSourceLesson?: (sessionId: string) => Session | undefined;
 };
@@ -69,9 +71,11 @@ export function KensetsuReviewTests({
   learner,
   level,
   field,
+  subject,
   onBack,
   getSourceLesson,
 }: Scope) {
+  const reviewTests = reviewTestsForScope(level, field, subject);
   const [exam, setExam] = useState<ReviewTest | null>(null);
   const insets = useSafeAreaInsets();
   if (exam)
@@ -81,6 +85,7 @@ export function KensetsuReviewTests({
         learner={learner}
         level={level}
         field={field}
+        subject={subject}
         exam={exam}
         getSourceLesson={getSourceLesson}
         onBack={() => setExam(null)}
@@ -99,7 +104,7 @@ export function KensetsuReviewTests({
           },
         ]}
       >
-        <TokuteiHeader title="建設 · 確認テスト" onBack={onBack} />
+        <TokuteiHeader title={`建設 · ${subjectLabels[subject]} 確認テスト`} onBack={onBack} />
         <ScrollView
           testID="kensetsu-test-catalog"
           contentContainerStyle={s.content}
@@ -107,10 +112,10 @@ export function KensetsuReviewTests({
           <View style={s.article}>
             <RoyalContentPanel style={s.panel}>
               <Text style={s.meta}>
-                {level}号 · {fieldLabels[field]}
+                {level}号 · {fieldLabels[field]} · {subjectLabels[subject]}
               </Text>
               <Text style={s.body}>
-                既存教材の共通知識を確認するテストです。日本語の四択問題です。解答と表示位置を保存します。正答・解説は提出後に表示します。
+                選択した学科・実技の学習内容を確認するテストです。日本語の四択問題です。解答と表示位置を保存します。正答・解説は提出後に表示します。
               </Text>
             </RoyalContentPanel>
             {reviewTests.map((t, i) => (
@@ -137,6 +142,7 @@ function Attempt({
   learner,
   level,
   field,
+  subject,
   exam,
   onBack,
   getSourceLesson,
@@ -245,7 +251,7 @@ function Attempt({
     >
       <TokuteiHeader
         title={exam.titleJa}
-        subtitle={`${level}号 · ${fieldLabels[field]}`}
+        subtitle={`${level}号 · ${fieldLabels[field]} · ${subjectLabels[subject]}`}
         onBack={back}
       />
       {loading ? (

@@ -1,4 +1,4 @@
-import { type PropsWithChildren, useEffect, useRef, useState } from "react";
+import { type PropsWithChildren, useEffect, useMemo, useRef, useState } from "react";
 import {
   Image,
   Modal,
@@ -39,11 +39,11 @@ import {
   illustrationAspectRatios,
   restoreProgress,
   sessionById,
-  weeks,
   type Field,
   type Level,
   type Session,
 } from "@/data/kensetsu";
+import { subjectLabels, weeksForScope, type Subject } from "@/data/kensetsu/scope";
 const CALENDAR_LEAF = require("../../../assets/kensetsu/ui/calendar-leaf-v1.webp");
 // The backdrop owns safe-area edges; only the lesson reader uses solid ivory.
 function CourseSurface({
@@ -484,15 +484,19 @@ function Calendar({
   learner,
   onBack,
   language,
+  subject,
 }: {
   level: Level;
   field: Field;
   learner: string;
   onBack: () => void;
   language: string;
+  subject: Subject;
 }) {
+  const weeks = useMemo(() => weeksForScope(level, field, subject), [level, field, subject]);
+  const allowedSessionIds = useMemo(() => new Set(weeks.flatMap(w => w.sessionIds)), [weeks]);
   const key = completionKey(learner, level, field),
-    navigationKey = key + ":navigation:v1";
+    navigationKey = key + `:navigation:${subject}:v2`;
   const { width, fontScale } = useWindowDimensions();
   const calendar = useRef<ScrollView>(null),
     calendarOffset = useRef(0);
@@ -529,7 +533,7 @@ function Calendar({
           setShowWeek(n.view === "days");
           if (Number.isInteger(n.week) && n.week >= 0 && n.week < weeks.length)
             setWeek(n.week);
-          if (typeof n.lastId === "string" && sessionById.has(n.lastId))
+          if (typeof n.lastId === "string" && allowedSessionIds.has(n.lastId))
             setLastId(n.lastId);
           if (Number.isFinite(n.offset) && n.offset >= 0)
             calendarOffset.current = n.offset;
@@ -547,7 +551,7 @@ function Calendar({
     return () => {
       live = false;
     };
-  }, [key, navigationKey]);
+  }, [key, navigationKey, weeks, allowedSessionIds]);
   const persistNavigation = (
     selectedWeek: number,
     recentId: string | null,
@@ -585,6 +589,7 @@ function Calendar({
     persistNavigation(next, lastId, calendarOffset.current);
   };
   const openLesson = (d: Session) => {
+    if (!allowedSessionIds.has(d.id)) return;
     const next = weeks.findIndex((w) => w.sessionIds.includes(d.id));
     setWeek(next);
     setLastId(d.id);
@@ -645,7 +650,7 @@ function Calendar({
       <View style={s.root}>
         <TokuteiHeader
           title={`建設 · ${level}号`}
-          subtitle={fields.find((f) => f.id === field)?.title}
+          subtitle={`${fields.find((f) => f.id === field)?.title} · ${subjectLabels[subject]}`}
           onBack={() => {
             if (lesson) closeLesson();
             else if (showWeek) {
@@ -708,7 +713,7 @@ function Calendar({
                   return d ? (
                     <TokuteiDayCard
                       key={id}
-                      testID={`kensetsu-day-${week * 7 + i + 1}`}
+                      testID={`kensetsu-day-${Number(d.id.split("-").pop())}`}
                       day={i + 1}
                       title={d.titleJa}
                       done={!!progress[completionId(d)]}
@@ -857,77 +862,37 @@ function Calendar({
     </CourseSurface>
   );
 }
-function CourseMode({
-  learner,
-  level,
-  field,
-  language,
-  onBack,
-}: {
-  learner: string;
-  level: Level;
-  field: Field;
-  language: string;
-  onBack: () => void;
+function CourseMode({ learner, level, field, language, onBack }: {
+  learner: string; level: Level; field: Field; language: string; onBack: () => void;
 }) {
-  const [mode, setMode] = useState<"study" | "test" | null>(null);
-  if (mode === "study")
-    return (
-      <Calendar
-        key={`${learner}:${level}:${field}`}
-        learner={learner}
-        level={level}
-        field={field}
-        language={language}
-        onBack={() => setMode(null)}
-      />
-    );
-  if (mode === "test")
-    return (
-      <KensetsuReviewTests
-        key={`${learner}:${level}:${field}:tests`}
-        learner={learner}
-        level={level}
-        field={field}
-        getSourceLesson={(id) => sessionById.get(id)}
-        onBack={() => setMode(null)}
-      />
-    );
+  const [mode, setMode] = useState<{ subject: Subject; view: "study" | "test" } | null>(null);
+  if (mode?.view === "study") return (
+    <Calendar key={`${learner}:${level}:${field}:${mode.subject}`} learner={learner} level={level}
+      field={field} language={language} subject={mode.subject} onBack={() => setMode(null)} />
+  );
+  if (mode?.view === "test") return (
+    <KensetsuReviewTests key={`${learner}:${level}:${field}:${mode.subject}:tests`} learner={learner}
+      level={level} field={field} subject={mode.subject} getSourceLesson={id => sessionById.get(id)}
+      onBack={() => setMode(null)} />
+  );
   return (
-    <CourseSurface>
-      <View style={s.root}>
-        <TokuteiHeader
-          title={`建設 · ${level}号`}
-          subtitle={fields.find((f) => f.id === field)?.title}
-          onBack={onBack}
-        />
-        <ScrollView
-          testID="kensetsu-mode-selector"
-          contentContainerStyle={s.content}
-        >
-          <RoyalContentPanel style={s.paper}>
-            <Text style={s.heading}>学習</Text>
-            <Text style={s.body}>週・日を選んで学習します。</Text>
-            <Action
-              title="学習カレンダー"
-              testID="kensetsu-mode-study"
-              onPress={() => setMode("study")}
-            />
-          </RoyalContentPanel>
-          <RoyalContentPanel style={s.paper}>
-            <Text style={s.heading}>確認テスト</Text>
-            <Text style={s.body}>
-              日本語の四択問題で、学習した内容を確認します。
-            </Text>
-            <Action
-              title="確認テストを選ぶ"
-              testID="kensetsu-mode-tests"
-              onPress={() => setMode("test")}
-            />
-          </RoyalContentPanel>
-        </ScrollView>
-      </View>
-    </CourseSurface>
+    <CourseSurface><View style={s.root}>
+      <TokuteiHeader title={`建設 · ${level}号`} subtitle={fields.find(f => f.id === field)?.title} onBack={onBack} />
+      <ScrollView testID="kensetsu-mode-selector" contentContainerStyle={s.content}>
+        {(["theory", "practical"] as const).map(subject => {
+          const available = weeksForScope(level, field, subject).length > 0;
+          return <RoyalContentPanel key={subject} style={s.paper}>
+            <Text style={s.heading}>{subjectLabels[subject]}</Text>
+            <Text style={s.body}>{subject === "theory" ? "1号の三分野に共通する学科を学習します。" :
+              available ? "ライフライン・設備の実技を学習します。" : "この分野の実技教材は準備中です。"}</Text>
+            <Action title={`${subjectLabels[subject]} 学習カレンダー`} testID={`kensetsu-mode-${subject}-study`}
+              disabled={!available} onPress={() => setMode({ subject, view: "study" })} />
+            <Action title={`${subjectLabels[subject]} 確認テスト`} testID={`kensetsu-mode-${subject}-tests`}
+              disabled={!available} onPress={() => setMode({ subject, view: "test" })} />
+          </RoyalContentPanel>;
+        })}
+      </ScrollView>
+    </View></CourseSurface>
   );
 }
 function KensetsuFlow({
@@ -959,7 +924,7 @@ function KensetsuFlow({
         <ScrollView contentContainerStyle={s.content}>
           <RoyalExplanationPanel style={s.info}>
             <Text style={s.light}>
-              日本語の学習内容を確認するテスト版です。1号・2号、三つの分野で共通の理論を学びます。
+              1号の学科は三分野共通です。実技は分野ごとに学習します。2号は1号の教材整備後に準備します。
             </Text>
           </RoyalExplanationPanel>
           <View style={s.row}>
@@ -973,7 +938,8 @@ function KensetsuFlow({
               />
             ))}
           </View>
-          {fields.map((f) => (
+          {level === "2" && <RoyalContentPanel style={s.paper}><Text testID="kensetsu-level-2-pending" style={s.body}>2号の教材は準備中です。1号の教材整備を先に進めています。</Text></RoyalContentPanel>}
+          {level === "1" && fields.map((f) => (
             <RoyalContentPanel key={f.id} style={s.paper}>
               <Text style={s.heading}>{f.title}</Text>
               <Action
