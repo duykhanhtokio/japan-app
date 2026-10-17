@@ -1,3 +1,7 @@
+## Rà ngược 土木6d6–17 —2026-10-18
+
+Đã đọc thân nguồn và các đoạn ứng dụng liên quan, ghi35ý khái niệm có IDđoạn/hashđể tái sử dụng; không thêm bài/đoạn/bản dịch. XemREVERSE_CIVIL_SELECTED_CONCEPTS_2026-10-18.json.10nhóm số liệu/phương pháp/điều kiện còn mở được ghi cụ thể; Đã xem hình nguồn6–17; chưa xác nhận đầy đủ nhãn/nhận diện thiết bị. Loại một ánh xạ không đủ nghĩa về ổn định máy thi công cọc. Không được dùng35ý này làm bằng chứng phủ toàn trang/toàn194trang.
+
 ## Mốc mới —2026-10-18: rà ngược phương pháp và cấu kiện
 
 B011r2 bổ sung hao mòn thành ống/đo chiều dày và vật liệu bơm mồi, dùng chung建築・土木. B026r2 thêm火打土台・火打梁; B029r2 thêm密着張り/dụng cụ rung, chỉ建築. Bốn đoạn Nhật mới,48bản dịch trong12locale; không đổi số bài224/163/152.71mục bổ sung hiện174đoạn Nhật. Giữ toàn bộ đoạn/bản dịch cũ, các ID hoàn thànhr1kể cảr1scoped củaB011; phiên bản mới không tự hoàn thành. Ngân hàng chỉ11hashtrích bài đổi, câu hỏi/đáp án/thứ tự/phiên bản đề giữ nguyên.

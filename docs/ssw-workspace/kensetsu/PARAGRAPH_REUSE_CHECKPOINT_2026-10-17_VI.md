@@ -218,3 +218,7 @@ Host96lượt đọc đủ12localeởhai cấp/hai nhánh;Chromium4tuyến/18c�
 B011r2 bổ sung hao mòn thành ống/đo chiều dày và vật liệu bơm mồi, dùng chung建築・土木. B026r2 thêm火打土台・火打梁; B029r2 thêm密着張り/dụng cụ rung, chỉ建築. Bốn đoạn Nhật mới,48bản dịch trong12locale; không đổi số bài224/163/152.71mục bổ sung hiện174đoạn Nhật. Giữ toàn bộ đoạn/bản dịch cũ, các ID hoàn thànhr1kể cảr1scoped củaB011; phiên bản mới không tự hoàn thành. Ngân hàng chỉ11hashtrích bài đổi, câu hỏi/đáp án/thứ tự/phiên bản đề giữ nguyên.
 
 Host192lượt cho5bài bổ sung qua hai cấp và các nhánh phù hợp;2088lượt hiển thị bản dịch bổ sung đạt. Trình duyệt4tuyến/28cặp đoạn Nhật–Việt/4nâng phiên bản đạt;9ảnh đã xem ở điện thoại/máy tính bảng/ngang. ĐọcREVERSE_SOURCE_METHOD_GAPS_2026-10-18.json. Đây là đối chiếu các ý có giới hạn, chưa đóng toàn bộ194trang hoặc duyệt chuyên gia/bản ngữ/quyền sử dụng/Expo/thiết bị thật.
+
+## Rà ngược 土木6d6–17 —2026-10-18
+
+Đã đọc thân nguồn và các đoạn ứng dụng liên quan, ghi35ý khái niệm có IDđoạn/hashđể tái sử dụng; không thêm bài/đoạn/bản dịch. XemREVERSE_CIVIL_SELECTED_CONCEPTS_2026-10-18.json.10nhóm số liệu/phương pháp/điều kiện còn mở được ghi cụ thể; Đã xem hình nguồn6–17; chưa xác nhận đầy đủ nhãn/nhận diện thiết bị. Loại một ánh xạ không đủ nghĩa về ổn định máy thi công cọc. Không được dùng35ý này làm bằng chứng phủ toàn trang/toàn194trang.
