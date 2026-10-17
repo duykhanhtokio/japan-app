@@ -1,3 +1,11 @@
+# Latest continuation — utilities practical10×40,2026-10-17
+
+ライフライン・設備1号practical has10fullJapanese40-question forms=400unique questions:235oldscoped+165new. All10answerpositions10each,no3sameinrow. New35+5completedformusesversionedID;old35attemptstorageandalloriginalquestionbytespreserved. HostQA30fullattempts/4800choice labels/60resumes passed. See UTILITIES_ASSESSMENT_CHECKPOINT_2026-10-17.md, UTILITIES_FULL_ATTEMPTS_QA_2026-10-17.json and latest utilityledgers. No study/translation/image duplication.
+
+Otherpoolsunchanged:theory285(common3fields),building192,civil170;remaining400deficits115/208/230. Utilities deficit0. Existing scopedcatalogcounts for these otherpools are NOT10×40. ScopeQA844originalinputs/1248localeparagraphs/42PNGs passed;focusedTypeScript/UIlock passed. Expert/native/rights/whole13PDFatomiccoverage/browser/device/releasegates remainunconfirmed.2号deferred.
+
+---
+
 # Current checkpoint — shared theory form 03 (2026-10-17)
 
 Common theory: 161 canonical lessons and 285 questions shared across all three fields. This unit adds 40 Japanese questions from canonical lessons 060–069: wells, groundwater lowering, pavement, earthmoving, piles, scaffolding, structural steel, reinforcing steel, splices and welding. It reuses existing study text and translations. No new knowledge-coverage claim is inferred from question count.

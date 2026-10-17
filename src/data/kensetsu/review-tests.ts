@@ -31,7 +31,7 @@ export function reviewTestsForScope(level: Level, field: Field, subject: Subject
  };
  // Prior field-specific questions repeated shared reporting objectives; archived without deleting attempts.
  const availableTests: ReviewTest[] = [...reviewTests, ...differentialBank.exams, ...utilitiesBank.exams];
- return availableTests.flatMap(exam => {
+ let scopedTests = availableTests.flatMap(exam => {
   const questions = exam.questions.filter(questionsInScope);
   if (!questions.length) return [];
   const unchanged = questions.length === exam.questions.length;
@@ -44,7 +44,25 @@ export function reviewTestsForScope(level: Level, field: Field, subject: Subject
    sessionRange: [Math.min(...questions.flatMap(q => q.sourceReferences.map(ref => Number(ref.sessionId.split('-').pop())))),
                   Math.max(...questions.flatMap(q => q.sourceReferences.map(ref => Number(ref.sessionId.split('-').pop()))))],
   }];
- }).map((exam, index) => ({
+ });
+ if (field === 'utilities' && subject === 'practical') {
+  const completion = scopedTests.find(exam => exam.id === 'kensetsu-utilities-completion-test-01');
+  const partial = scopedTests.find(exam => exam.id === 'kensetsu-review-v2-05:practical:scope-v1');
+  if (completion && partial && partial.questionCount === 35 && completion.questionCount === 5) {
+   const questions = [...partial.questions, ...completion.questions].map((question, index) => ({ ...question, number: index + 1 }));
+   scopedTests = scopedTests.flatMap(exam => exam.id === completion.id ? [] : exam.id === partial.id ? [{
+    ...partial,
+    // A new identity preserves stored 35-question attempts without treating them as a submitted 40-question form.
+    id: 'kensetsu-utilities-complete-test-01',
+    revision: '1go-utilities-original35-plus5-v1',
+    questions,
+    questionCount: questions.length,
+    maxPoints: questions.reduce((total, question) => total + question.points, 0),
+    sessionRange: [partial.sessionRange[0], completion.sessionRange[1]],
+   }] : [exam]);
+  }
+ }
+ return scopedTests.map((exam, index) => ({
   ...exam,
   // Display order belongs to this scope; stable exam/attempt IDs retain their original identity.
   titleJa: `建設1号 ${subject === 'theory' ? '学科' : '実技'} 確認テスト 第${index + 1}回`,

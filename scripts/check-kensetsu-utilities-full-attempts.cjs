@@ -32,15 +32,20 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  const norm=s=>s.normalize('NFKC').replace(/[\s。、！？「」]/gu,'');
  assert.equal(new Set(allQuestions.map(q=>norm(q.promptJa))).size,allQuestions.length);
  for(const exam of utilitiesBank.exams){
-  assert.equal(exam.questions.length,40);
-  const positions=exam.questions.map(q=>q.correctIndex);for(let i=0;i<4;i++)assert.equal(positions.filter(p=>p===i).length,10);
-  for(let i=2;i<40;i++)assert(!(positions[i]===positions[i-1]&&positions[i]===positions[i-2]));
+  assert.equal(exam.questions.length,exam.id==='kensetsu-utilities-completion-test-01'?5:40);
   for(const field of ['building','civil'])for(const subject of ['theory','practical'])assert(!m.reviewTestsForScope('1',field,subject).some(e=>e.id.startsWith(exam.id)),'Utilities scope leaked');
   for(const q of exam.questions){
    assert.equal(new Set(q.choicesJa.map(norm)).size,4);
    for(const ref of q.sourceReferences){const data=fs.readFileSync(path.join(root,ref.lessonFile));assert.equal(crypto.createHash('sha256').update(data).digest('hex'),ref.lessonSha256);const lesson=m.sessionById.get(ref.sessionId);assert(ref.paragraphIds.every(id=>lesson.clusters.some(c=>c.paragraphs.some(p=>p.id===id))));}
   }
  }
+ const originalMixed=oldBank.exams.find(e=>e.id==='kensetsu-review-v2-05');
+ const legacy={...originalMixed,id:originalMixed.id+':practical:scope-v1',revision:originalMixed.revision+':practical:scope-v1',questions:originalMixed.questions.filter(q=>q.sourceReferences.every(ref=>m.isSessionInScope(m.sessionById.get(ref.sessionId),'1','utilities','practical')))};
+ assert.equal(legacy.questions.length,35);
+ const legacyAttempt=m.freshTestAttempt(legacy);legacyAttempt.answers[0]=legacy.questions[0].correctIndex;legacyAttempt.currentQuestion=17;legacyAttempt.submitted=true;
+ const legacyRaw=JSON.stringify(legacyAttempt),legacyKey=m.testStorageKey('full-utilities-correct','1','utilities',legacy.id);globalThis.__scopeStorage.set(legacyKey,legacyRaw);
+ const completed=m.reviewTestsForScope('1','utilities','practical').find(e=>e.id==='kensetsu-utilities-complete-test-01');
+ assert(completed);assert.deepEqual(completed.questions.slice(0,35).map(q=>q.id),legacy.questions.map(q=>q.id));assert.equal(m.restoreTestAttempt(legacyRaw,completed),null);
  let catalogTitlesChecked=0;
  for(const field of ['utilities','building','civil'])for(const subject of ['theory','practical']){
   const tests=m.reviewTestsForScope('1',field,subject);
@@ -50,8 +55,11 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  let choicesChecked=0,resumesChecked=0;const cases=[];
  for(const field of ['utilities']){
   const tests=m.reviewTestsForScope('1',field,'practical');
-  const forms=tests.filter(e=>e.id.startsWith('kensetsu-utilities-extra-test-'));
-  assert(forms.length>=1,'Expected an additional full theory form');
+  const forms=tests;
+  assert.equal(forms.length,10,'Utilities requires ten full forms');
+  const pooled=forms.flatMap(e=>e.questions);assert.equal(pooled.length,400);assert.equal(new Set(pooled.map(q=>q.id)).size,400);
+  for(const exam of forms){const positions=exam.questions.map(q=>q.correctIndex);for(let i=0;i<4;i++)assert.equal(positions.filter(p=>p===i).length,10);for(let i=2;i<positions.length;i++)assert(!(positions[i]===positions[i-1]&&positions[i]===positions[i-2]));}
+
   for(const exam of forms){
    assert.equal(exam.questionCount,40);assert.equal(new Set(exam.questions.map(q=>q.id)).size,40);
    const index=tests.findIndex(e=>e.id===exam.id);
@@ -85,7 +93,8 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
    }
   }
  }
- const report={status:'PASS_FULL_UTILITIES_HOST_ATTEMPTS',differentialBankSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'src/data/kensetsu/utilities-review-tests.ja.json'))).digest('hex'),cases,catalogTitlesChecked,choicesChecked,resumesChecked,preSubmitAnswersHidden:true,submittedChoicesLocked:true,exactQuestionAndAnswerResume:true,submittedReloadPreserved:true,adapters:['React Native host components','in-memory AsyncStorage','artwork','safe area'],browserScreenshots:false,nativeDeviceTested:false,domainReviewed:false,releaseReady:false};
+ assert.equal(globalThis.__scopeStorage.get(legacyKey),legacyRaw,'Legacy 35-question attempt overwritten');
+ const report={legacy35QuestionAttemptPreserved:true,tenFullUtilitiesForms:true,utilitiesQuestionPool:400,status:'PASS_FULL_UTILITIES_HOST_ATTEMPTS',differentialBankSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'src/data/kensetsu/utilities-review-tests.ja.json'))).digest('hex'),cases,catalogTitlesChecked,choicesChecked,resumesChecked,preSubmitAnswersHidden:true,submittedChoicesLocked:true,exactQuestionAndAnswerResume:true,submittedReloadPreserved:true,adapters:['React Native host components','in-memory AsyncStorage','artwork','safe area'],browserScreenshots:false,nativeDeviceTested:false,domainReviewed:false,releaseReady:false};
  if(process.env.KENSETSU_FULL_UTILITIES_REPORT)fs.writeFileSync(process.env.KENSETSU_FULL_UTILITIES_REPORT,JSON.stringify(report,null,2)+'\n');
  console.log(JSON.stringify({status:report.status,attempts:cases.length,catalogTitlesChecked,choicesChecked,resumesChecked}));
 })().catch(e=>{console.error(e);process.exit(1)});
