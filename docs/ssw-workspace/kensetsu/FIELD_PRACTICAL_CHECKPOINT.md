@@ -1,3 +1,17 @@
+# Latest continuation — restored concepts and real browser QA,2026-10-17
+
+Four distinct equipment paragraphs had been removed by overbroad deduplication: scaffold platform/bracing,basic ratchet mechanism,gas-pressure equipment roles,welding source versus consumable electrode. Restored the original Japanese and stable IDs in building003/004/006/007; both building and civil reuse them. Added48paragraph translation strings and60new term strings;36term strings reused from existing canonical translations. These four active views are revision2; oldr1completion keys remain archived and cannot silently complete the expanded view. Raw844original inputs and every exam question remain byte-preserved.
+
+Active additional text now108paragraphs/42views;1296locale-paragraph host renders passed. Scope QA148Japanese paragraph renders,52excluded repeats,427global records,42PNGfiles and all6routes10×40passed. Focused TypeScript and10/10JLPT lock passed. Host attempt matrix180cases remains unchanged in question data.
+
+RealChromium153.0.8010.0 now works through a separately extracted npm distribution. The complete realbrowser run passed60full attempts/2400questions/9600choice labels/60resumes and all postsubmit reloads across6routes. Final18captures have a loaded Japanese font,visible44px+controls,no horizontal overflow and no transient modals; AI visually inspected all18. Persisted underqa/2026-10-17. The fullattempt bundle and independent visual-capture bundle have identical SHA256. Royal artwork,safearea andAsyncStorage are adapted; productionExpo andnative devices remain untested. See ONE_GO_BROWSER_QA and ONE_GO_BROWSER_VISUAL_QA.
+
+Read the33remaining page bodies and inspected33page renders for layout/figure context. REMAINING_PAGE_SEMANTIC_REVIEW records62bounded objectives,explicit active paragraph candidates and precise remaining gaps. This is not a complete atomic denominator or fullresolution figure/table certification. Four concepts restored,16bounded explanations identified; other missing/partial concepts,recognition details and product/design/SDS/current-law requirements remain open. Continue source-backed conceptual authoring; do not treat related paragraph links as adequate teaching. Independent manufacturer evidence resolves annealing towardsoft/workable tying wire,not a universal strength increase; do not propagate the source wording.
+
+Whole1go task remains NOTcomplete. All exam pools are complete; remaining work is source knowledge/figure reconciliation,missing explanations,production/native evidence and required professional/native/rights review.2号stays deferred. No sourcePDF/rawimage redistributed. Do not request renewed push permission; current branch publishing is already authorized.
+
+---
+
 # Final technical matrix and remaining review —2026-10-17
 
 All6scope routes have10×40. Finalfreshhostmatrix180attempts/28800choice labels/360mid-attempt resumes passed across theory,utilities,building,civil; three currentreports saved. Original385lessontranslations passed9791sourceunits/117492strings/3856paragraphs across12locales;104additionalparagraphs/1248localeparagraphrenders and42PNGfiles verified. Original844inputs preserved. Source13PDFbytes+387pagecounts+references verified; no rawsourcebytes/images committed.
