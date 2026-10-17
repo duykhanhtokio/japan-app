@@ -1,3 +1,17 @@
+# Latest continuation — shared theory form02,2026-10-17
+
+Common theory now245questions(161canonical lessons):two additional40-question Japanese forms plus165original scoped questions. Newform02reuses source-bound canonical50–59 knowledge:electrical/gas/water/communications/airconditioning/insulation/fireequipment/earthwork/pipejacking/marine facilities. No study text,translations or diagrams recreated.80additional theory questions total,10correctperposition per40form,no3same run; original forms includingnew01byte-equivalent atJSONobject level.
+
+Practical counts unchanged:utilities224lessons/235questions;building140/192;civil128/170.427global records,42additional fact views/104paragraphs/42diagrams/104practical questions,12locales and14shared additional views. Additionalquestionstotal184(80theory+104practical). Scope runtimechecks6actual-host40-question submissions(twoforms×threefields),1248locale-paragraph renders,42realPNGfiles and844originalinputs; learnercompletion/navigation/attemptisolation and hiddenpresubmitanswers preserved. TypeScript/UIlock unaffected and checked. All human/native/rights/browser/native-device/releaseflags remain false.
+
+Full-attempt validation also passed18cases(twoforms×threefields×correct/wrong/mixed),2880choice-label checks,36mid-test resumes, exact post-submit reload and40/0/20score cases. Existing parallel full-attempt script/report were inspected, independently rerun, and preserved unchanged.
+
+THEORY_ASSESSMENT_EXPANSION_2026-10-17.json binds each question to canonicalparagraph IDs+lesson hashes. Questions assess existing knowledge; they are not new source-knowledge coverage units. No official time/pass threshold claimed.
+
+Next: remaining400-question pool deficits theory155,utilities165,building208,civil230. Continue shared Japanese assessment authoring from canonical60onward;do not rewrite sharedstudycontent. Check existing questions to avoidsameprompt/answerpatterninflation. Sources50–59firstinstructionalparagraph percluster read forform02. No10×40completepoolyet. Full13PDFatomic/numeric/recognition/safetycontextaudit,realdevice/browser andhumanreviewsstillunfinished;2号deferred.
+
+---
+
 # Latest continuation — terminology and first additional full theory form2026-10-17
 
 Current:427global records;42additional fact views/104unique Japanese paragraphs/42controlled concept diagrams/104supplemental practical questions. All additional paragraphs translated12locales(1248paragraph renders). Building140practical entries/192questions; civil128entries/170questions; utilities224/235 unchanged. Common theory161lessons/205questions now shared3fields. Canonical reuse remainsbuilding108/civil104/109distinct,14additional shared views into civil.

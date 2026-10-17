@@ -2,6 +2,10 @@
 
 Ngày lập: 2026-10-11, Asia/Tokyo. Phạm vi hiện tại: hoàn thiện nội dung để học, bản dịch và ảnh minh họa mới cho 特定技能1号 và 特定技能2号. Phần thi hoàn toàn bằng tiếng Nhật sẽ thiết kế sau khi phần học hoàn thiện. Đây là hướng dẫn thực thi cho AI tiếp nối dự án, không phải báo cáo nội dung đã sản xuất hay chứng nhận tài liệu đã bao phủ đủ.
 
+## Cập nhật mới nhất — đề lý thuyết40câu thứ hai
+
+Đọc đầu FIELD_PRACTICAL_CHECKPOINT.md:245câu lý thuyết chung(80câu mới trong2đề40câu). Không tạo lại bài học/bản dịch chung. Thực hành giữ nguyên:ライフライン235câu,建築192câu,土木170câu.42mục bổ sung/104đoạn/12locale/42sơ đồ. Chưa đủ10×40;2号chờ. Các số dưới đây là lịch sử.
+
 ## Cập nhật mới nhất — thuật ngữ và đề lý thuyết40câu
 
 Đọc đầu FIELD_PRACTICAL_CHECKPOINT.md:42mục bổ sung/104đoạn Nhật,12locale,42sơ đồ,104câu thực hành bổ sung và40câu lý thuyết mới. Lý thuyết chung205câu;建築140bài thực hành/192câu;土木128bài/170câu;ライフライン224/235giữ nguyên.033phụ gia dùng chung土木;034かなじめchỉ建築. Chưa đủ10×40;2号chờ. Các số dưới đây là lịch sử.
