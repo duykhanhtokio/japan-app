@@ -5,28 +5,28 @@
   "directJapanese": true,
   "noCrossTranslation": true,
   "sourceLanguage": "ja",
-  "sourceCommit": "6212bc54cacd8951183950d77d9984d2762aa6e1",
+  "sourceCommit": "790dfeb29763c08b7a59c4abab2f65e29e04624f",
   "sourcePacket": {
-    "path": "/workspace/scratch/93b7226de7f9/mock-packets-current-6212bc54/japanese-mock-01.ja.json",
-    "sha256": "3dda45b0d8e98a5a62adc81c309db7fcf55e62892aa03f826432d5f2339a7a19"
+    "path": "/workspace/scratch/93b7226de7f9/mock-packets-current-790dfeb2/skills-mock-01.ja.json",
+    "sha256": "76a0ad694403f7640f5144da86662c6ab6013f22b2e9d7533a73cd47d982360b"
   },
   "canonicalFullPacket": {
-    "path": "/workspace/scratch/93b7226de7f9/mock-packets-current-6212bc54/full-mocks.ja.json",
-    "sha256": "71f1117d4c2496d4291630ea78f2074b755b030aa2b744ddaf755dec98620b39"
+    "path": "/workspace/scratch/93b7226de7f9/mock-packets-current-790dfeb2/full-mocks.ja.json",
+    "sha256": "cb7944277537ceb4a8911ea23b5e512acfd2dd2437d5869b9b96d8e811fd203c"
   },
-  "sourceSha256": "3dda45b0d8e98a5a62adc81c309db7fcf55e62892aa03f826432d5f2339a7a19",
-  "translationSha256": "1b072e149fc87507328064b6b1c4481995ff16394ac1ca4b5e0e96b7b04230d9",
+  "sourceSha256": "76a0ad694403f7640f5144da86662c6ab6013f22b2e9d7533a73cd47d982360b",
+  "translationSha256": "20b861dc5872ac626c509d5dd9b28d94e85df07dfac5eeca54dd0de990ab7c17",
   "outputs": [
     {
       "path": "src/data/kaigo/japanese-master/mock-translations/mocks.hi.json",
-      "sha256": "1b072e149fc87507328064b6b1c4481995ff16394ac1ca4b5e0e96b7b04230d9"
+      "sha256": "20b861dc5872ac626c509d5dd9b28d94e85df07dfac5eeca54dd0de990ab7c17"
     }
   ],
   "completedFormIds": [
-    "kaigo-japanese-mock-01"
+    "kaigo-japanese-mock-01",
+    "kaigo-skills-mock-01"
   ],
   "remainingFormIds": [
-    "kaigo-skills-mock-01",
     "kaigo-skills-mock-02",
     "kaigo-skills-mock-03",
     "kaigo-japanese-mock-02",
@@ -39,14 +39,24 @@
     "kaigo-japanese-mock-06"
   ],
   "counts": {
-    "forms": 1,
-    "questions": 15,
-    "options": 60,
-    "rationales": 60,
+    "forms": 2,
+    "questions": 60,
+    "options": 240,
+    "rationales": 240,
     "passages": 10,
-    "emptyPassages": 5,
-    "figureDescriptions": 0,
-    "emptyFigureDescriptions": 15
+    "emptyPassages": 50,
+    "figureDescriptions": 5,
+    "emptyFigureDescriptions": 55
+  },
+  "newBatchCounts": {
+    "forms": 1,
+    "questions": 45,
+    "options": 180,
+    "rationales": 180,
+    "passages": 0,
+    "emptyPassages": 45,
+    "figureDescriptions": 5,
+    "emptyFigureDescriptions": 40
   },
   "formCounts": {
     "kaigo-japanese-mock-01": {
@@ -58,6 +68,16 @@
       "emptyPassages": 5,
       "figureDescriptions": 0,
       "emptyFigureDescriptions": 15
+    },
+    "kaigo-skills-mock-01": {
+      "forms": 1,
+      "questions": 45,
+      "options": 180,
+      "rationales": 180,
+      "passages": 0,
+      "emptyPassages": 45,
+      "figureDescriptions": 5,
+      "emptyFigureDescriptions": 40
     }
   },
   "localeProfile": {
@@ -95,20 +115,56 @@
       "25": "38773e82eeb1a123475441e845c269c8c67e10db1cc9eacc162b7b369c4a9a64",
       "26": "8f188d70c132094caa381ad1cd109c7741ea1076492b41dbf21269daf4971814"
     },
-    "priorWeeksByteIdentical": true
+    "priorWeeksByteIdentical": true,
+    "priorTargetSha256": "1b072e149fc87507328064b6b1c4481995ff16394ac1ca4b5e0e96b7b04230d9",
+    "priorCompletedFormIds": [
+      "kaigo-japanese-mock-01"
+    ],
+    "priorCompletedFormObjectSha256": {
+      "kaigo-japanese-mock-01": "161bd766818637ce96ee0e1f610f1fb35bc05475f4f4f6cb1c2ca9c8ba8cf726"
+    },
+    "priorFormObjectsExactlyPreserved": true,
+    "topLevelMetadataUnchanged": true
   },
   "semanticChecks": {
-    "scope": "Owner AI translated only the complete first Japanese-language mock form directly from the effective canonical Japanese: title,15 prompts,60 options,60 specific rationales and10 complete passages. Full source comparison followed by continuous Hindi question/passage/rationale self-review. No other locale, pivot or cross-review used. Source Japanese and furigana unchanged.",
-    "vocabulary": "Japanese target words retained only within the five terminology-learning prompts, as allowed by own profile. Hindi explanations preserve dentures versus brush/cup/paste; transfer between sitting places versus posture change/walking/dressing; excretion outward versus intake/wiping; wiping care versus bath/footbath/hair washing; shift handoff versus invitations/holiday requests/initial preference collection. Own established dentures, transfer, wiping care, handoff and staple-food terminology retained.",
-    "choiceAndUncertainty": "First sheet inspected before deciding whether another is needed: neither two-sheet commitment nor refusal of additional sheet invented. Tuesday week unknown until checked; change alone does not mean next week. Desire to attend and anxiety coexist, no cancellation or conditional attendance promise inferred. Person chooses independently, staff only retrieves two shelf samples, not one sample or selection delegated.",
-    "sequenceAndConsent": "Equipment inspection completed before preparation, not after/simultaneous/omitted. Book-cover arrangement only; no disposal or moving to another room, letters excluded and no implied permission to read. Person consent scope retained exactly.",
-    "documentsAndRoles": "27 October consultation in third room: reception14:50, consultation15:00–15:20 and20-minute duration distinguished. Glass placed on table13:35 and later-drinking wish are recorded; actual quantity drunk remains unchecked, preparation not consumption. 29 October menu is plan only: rice staple, tofu main dish, vegetable side; individual food texture and actual service not yet confirmed. Inspection assigned to Tanaka, preparation to Kishimoto after checking results; both confirm roles before start. No invented gender/age/kinship, recipient roles unchanged.",
-    "clinicalAndDisplayLimits": "No new clinical instructions, diagnoses or individualized eating permission added. Exact empty source passages and figure descriptions retained as empty strings; no invented figures or furigana field. Full nonempty documents/dialogues retain original line ordering. Adult respectful Hindi using आप/जी; no UI, timing, attempts, answer display, weekly or registry edits. Native-device/font review remains pending."
+    "scope": "Owner AI translated only one complete new skills form directly from effective Japanese: title,45 prompts,180 options,180 distinct option-specific rationales and five complete figure descriptions. All45 passages and40 figure descriptions remain explicitly empty. Entire Japanese comparison and continuous Hindi source/meaning/prose review completed. No other-locale input, pivot or cross-review.",
+    "autonomyPrivacySafety": "Person wishes and self-choice remain central while required practical help is not withdrawn. Subjective satisfaction and meaning distinct from staff workload/seat count/room area. Assessment/planning/implementation/evaluation distinct. Privacy sharing limited to necessary recipient under person consent/facility procedures; family demand alone not authority, unnamed SNS still identifiable. Hand hygiene after gloves, movement restriction by locked room, abuse categories, own medication-change prohibition, damaged aid not tested, prompt accident report before cause certainty or completed prose preserved.",
+    "psychologyBodyAndCommunication": "Stress can have multiple environmental/physical/interpersonal factors and individual response; unspoken anxiety not proof absent. Encoding, retention and recall distinct. Age not presumed cause of new complaint; life history and current response both relevant. Orientation distinct from memory/executive/calculation tasks. Bladder storage, kidneys urine formation, skin sweating/protection and esophagus/colon functions kept distinct. Open questions versus yes/no/two-choice prompts; listening without interruption; sign language is language despite no voice. Person refusal words separate from actual participation unobserved; no invented completed attendance or staff cancellation.",
+    "mobilityMealsAndExcretion": "Movement expands activities/participation, arrival not wish satisfaction. Current condition/support/explanation/consent checked before movement, old consent not automatic or equipment a substitute. Sitting/standing/side-lying/supine and established disuse-syndrome wording retained. Food pleasure/social meaning distinct from nutrition/quantity; need-not distractors not strengthened to prohibitions. Chewing/saliva versus swallowing/esophageal peristalsis/stomach digestion preserved. Individual recipient/texture/allergy/current instruction checked before serving; no reply demanded while chewing and silence not comprehension. Necessary toileting help/observation combined with privacy, not either abandoned. Urination/defecation distinct. Stool change report includes date/time/observed state/person words, no diagnosis or yesterday-record substitution. Wet trousers factual, urine/water cause unknown.",
+    "clothingHygieneAndDomesticTasks": "Clothing temperature/skin protection distinct from environmental assessment, fit/activities matter. Preparation not completed dressing and chosen garment/consent not reason to omit comfort or pain. Gum bleeding/swelling explicitly reported to medical professionals with site/state, not self-diagnosis/drug choice or normal-record substitution. Bathing relates to comfort/rhythm/person preference and current health. Face-washing consultation only, no all-body consent or completed care inferred. IADL shopping versus basic ADL. Organizing request not disposal authority; person consent for retained items/method. Laundry fabric/label checked despite similar color or little dirt.",
+    "fiveCompleteFigures": "Q41 overhead route A destination/B large obstructing box/C current place preserved, waiting or correct destination not safety clearance and no stepping-over instruction endorsed. Q42 left service slip012/P3 versus right tray014/P3: matching texture not identity match, no relabeling or premature serving. Q43 A toileting place/B open entrance/C corridor, dotted sight line and needed screening retained. Q44 chosen upper garment R blue versus prepared S green, both product number and color differ; preparation not changed choice. Q45 person blue-tagA retain/yellow-tagB discard; central C untagged means unknown, not disposal or staff retention choice, tags not swapped.",
+    "preservationAndRegister": "Existing Japanese mock01 object preserved entirely including order, fields, strings and revisions, top metadata unchanged. All26 weekly targets byte-identical and profile unchanged. Warm respectful adult Hindi with no invented age/gender/kinship, extra diagnosis or procedure. Furigana/Japanese/assets/UI/attempts/timing and registry untouched; automated checks do not certify native/domain/device quality."
+  },
+  "priorFormReviews": {
+    "kaigo-japanese-mock-01": {
+      "sourcePacket": {
+        "path": "/workspace/scratch/93b7226de7f9/mock-packets-current-6212bc54/japanese-mock-01.ja.json",
+        "sha256": "3dda45b0d8e98a5a62adc81c309db7fcf55e62892aa03f826432d5f2339a7a19"
+      },
+      "canonicalFullPacket": {
+        "path": "/workspace/scratch/93b7226de7f9/mock-packets-current-6212bc54/full-mocks.ja.json",
+        "sha256": "71f1117d4c2496d4291630ea78f2074b755b030aa2b744ddaf755dec98620b39"
+      },
+      "semanticChecks": {
+        "scope": "Owner AI translated only the complete first Japanese-language mock form directly from the effective canonical Japanese: title,15 prompts,60 options,60 specific rationales and10 complete passages. Full source comparison followed by continuous Hindi question/passage/rationale self-review. No other locale, pivot or cross-review used. Source Japanese and furigana unchanged.",
+        "vocabulary": "Japanese target words retained only within the five terminology-learning prompts, as allowed by own profile. Hindi explanations preserve dentures versus brush/cup/paste; transfer between sitting places versus posture change/walking/dressing; excretion outward versus intake/wiping; wiping care versus bath/footbath/hair washing; shift handoff versus invitations/holiday requests/initial preference collection. Own established dentures, transfer, wiping care, handoff and staple-food terminology retained.",
+        "choiceAndUncertainty": "First sheet inspected before deciding whether another is needed: neither two-sheet commitment nor refusal of additional sheet invented. Tuesday week unknown until checked; change alone does not mean next week. Desire to attend and anxiety coexist, no cancellation or conditional attendance promise inferred. Person chooses independently, staff only retrieves two shelf samples, not one sample or selection delegated.",
+        "sequenceAndConsent": "Equipment inspection completed before preparation, not after/simultaneous/omitted. Book-cover arrangement only; no disposal or moving to another room, letters excluded and no implied permission to read. Person consent scope retained exactly.",
+        "documentsAndRoles": "27 October consultation in third room: reception14:50, consultation15:00–15:20 and20-minute duration distinguished. Glass placed on table13:35 and later-drinking wish are recorded; actual quantity drunk remains unchecked, preparation not consumption. 29 October menu is plan only: rice staple, tofu main dish, vegetable side; individual food texture and actual service not yet confirmed. Inspection assigned to Tanaka, preparation to Kishimoto after checking results; both confirm roles before start. No invented gender/age/kinship, recipient roles unchanged.",
+        "clinicalAndDisplayLimits": "No new clinical instructions, diagnoses or individualized eating permission added. Exact empty source passages and figure descriptions retained as empty strings; no invented figures or furigana field. Full nonempty documents/dialogues retain original line ordering. Adult respectful Hindi using आप/जी; no UI, timing, attempts, answer display, weekly or registry edits. Native-device/font review remains pending."
+      },
+      "editorialCorrections": [
+        "Restored own established स्थानांतरण and मुख्य आहार wording after consulting only own Hindi glossary.",
+        "Smoothed duplicated additional-sheet wording and consent/sequence prompts into natural complete Hindi.",
+        "Used stable name transliterations with respectful जी and kept all unknown personal attributes unasserted."
+      ]
+    }
   },
   "editorialCorrections": [
-    "Restored own established स्थानांतरण and मुख्य आहार wording after consulting only own Hindi glossary.",
-    "Smoothed duplicated additional-sheet wording and consent/sequence prompts into natural complete Hindi.",
-    "Used stable name transliterations with respectful जी and kept all unknown personal attributes unasserted."
+    "Restored established निष्क्रियता सिंड्रोम and दैनिक जीवन की साधनात्मक गतिविधियाँ terminology using only own prior Hindi.",
+    "Preserved unnecessary as not required in meal distractors instead of strengthening it into prohibited.",
+    "Smoothed privacy-recipient, anxiety-response, shame/observation and untagged-item wording into complete Hindi.",
+    "Kept explicit medical-professional recipient for gum bleeding/swelling and all five diagram labels/identity distinctions."
   ],
   "checks": {
     "exactIdsAndOrder": true,
@@ -117,15 +173,16 @@
     "fourSpecificRationalesPerQuestion": true,
     "completeFormOnly": true,
     "emptyFieldSemantics": true,
-    "passageLineOrder": true,
+    "fullFigureDescriptionsReviewed": true,
     "sourceSubsetMatchesCanonical": true,
+    "priorFormObjectAndMetadataPreserved": true,
     "ownerAiSemanticAndStyleReview": true,
     "runtimeIntegration": "pending root coordination"
   },
   "openIssues": [
-    "Eleven Hindi mock forms remain pending.",
+    "Ten Hindi mock forms remain pending.",
     "Independent human/domain/native-language/actual-device/rights/release review remains pending.",
-    "Existing image-lettering issues remain outside this form, which has no figure descriptions."
+    "Existing image lettering is not edited or certified by figure-description translation."
   ],
   "approvalFlags": {
     "humanReviewed": false,

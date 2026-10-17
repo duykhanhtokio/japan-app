@@ -2,17 +2,17 @@
   "version": 1,
   "language": "tl",
   "sourceLanguage": "ja",
-  "sourceCommit": "6212bc54cacd8951183950d77d9984d2762aa6e1",
-  "canonicalPacketPath": "/workspace/scratch/93b7226de7f9/mock-packets-current-6212bc54/full-mocks.ja.json",
-  "canonicalPacketSha256": "71f1117d4c2496d4291630ea78f2074b755b030aa2b744ddaf755dec98620b39",
-  "scopedPacketPath": "/workspace/scratch/93b7226de7f9/mock-packets-current-6212bc54/japanese-mock-01.ja.json",
-  "scopedPacketSha256": "3dda45b0d8e98a5a62adc81c309db7fcf55e62892aa03f826432d5f2339a7a19",
+  "sourceCommit": "790dfeb29763c08b7a59c4abab2f65e29e04624f",
+  "canonicalPacketPath": "/workspace/scratch/93b7226de7f9/mock-packets-current-790dfeb2/full-mocks.ja.json",
+  "canonicalPacketSha256": "cb7944277537ceb4a8911ea23b5e512acfd2dd2437d5869b9b96d8e811fd203c",
+  "scopedPacketPath": "/workspace/scratch/93b7226de7f9/mock-packets-current-790dfeb2/skills-mock-01.ja.json",
+  "scopedPacketSha256": "76a0ad694403f7640f5144da86662c6ab6013f22b2e9d7533a73cd47d982360b",
   "translationPath": "src/data/kaigo/japanese-master/mock-translations/mocks.tl.json",
-  "translationSha256": "66fd111a8b6313e3bb31583f153a8c476becad60086eb12498e2a2a505c0ac80",
+  "translationSha256": "0031cbed854b35741a9a4316e195a5932e9bb6394471fffebaec92aad61e2b1c",
   "outputs": [
     {
       "path": "src/data/kaigo/japanese-master/mock-translations/mocks.tl.json",
-      "sha256": "66fd111a8b6313e3bb31583f153a8c476becad60086eb12498e2a2a505c0ac80"
+      "sha256": "0031cbed854b35741a9a4316e195a5932e9bb6394471fffebaec92aad61e2b1c"
     }
   ],
   "status": "translated_ai_unreviewed",
@@ -31,23 +31,23 @@
   "localeProfileVersion": 7,
   "localeProfileSha256": "ad0b546f212bdff0b6256e9797e84ccbb43fbe19a61fa7546eb14b0cb3c76b96",
   "counts": {
-    "forms": 1,
-    "questions": 15,
-    "options": 60,
-    "rationales": 60,
-    "passageFields": 15,
+    "forms": 2,
+    "questions": 60,
+    "options": 240,
+    "rationales": 240,
+    "passageFields": 60,
     "nonemptyPassages": 10,
-    "emptyPassages": 5,
-    "figureDescriptionFields": 15,
-    "nonemptyFigureDescriptions": 0,
-    "emptyFigureDescriptions": 15,
-    "figureCaptions": 0
+    "emptyPassages": 50,
+    "figureDescriptionFields": 60,
+    "nonemptyFigureDescriptions": 5,
+    "emptyFigureDescriptions": 55,
+    "figureCaptions": 5
   },
   "completedFormIds": [
-    "kaigo-japanese-mock-01"
+    "kaigo-japanese-mock-01",
+    "kaigo-skills-mock-01"
   ],
   "remainingFormIds": [
-    "kaigo-skills-mock-01",
     "kaigo-skills-mock-02",
     "kaigo-skills-mock-03",
     "kaigo-japanese-mock-02",
@@ -59,44 +59,126 @@
     "kaigo-japanese-mock-05",
     "kaigo-japanese-mock-06"
   ],
+  "profileChanges": [],
+  "newBatchFormIds": [
+    "kaigo-skills-mock-01"
+  ],
+  "newBatchCounts": {
+    "forms": 1,
+    "questions": 45,
+    "options": 180,
+    "rationales": 180,
+    "passageFields": 45,
+    "nonemptyPassages": 0,
+    "emptyPassages": 45,
+    "figureDescriptionFields": 45,
+    "nonemptyFigureDescriptions": 5,
+    "emptyFigureDescriptions": 40,
+    "figureCaptions": 5
+  },
+  "perFormCounts": {
+    "kaigo-japanese-mock-01": {
+      "forms": 1,
+      "questions": 15,
+      "options": 60,
+      "rationales": 60,
+      "passageFields": 15,
+      "nonemptyPassages": 10,
+      "emptyPassages": 5,
+      "figureDescriptionFields": 15,
+      "nonemptyFigureDescriptions": 0,
+      "emptyFigureDescriptions": 15,
+      "figureCaptions": 0
+    },
+    "kaigo-skills-mock-01": {
+      "forms": 1,
+      "questions": 45,
+      "options": 180,
+      "rationales": 180,
+      "passageFields": 45,
+      "nonemptyPassages": 0,
+      "emptyPassages": 45,
+      "figureDescriptionFields": 45,
+      "nonemptyFigureDescriptions": 5,
+      "emptyFigureDescriptions": 40,
+      "figureCaptions": 5
+    }
+  },
+  "priorBatches": [
+    {
+      "sourceCommit": "6212bc54cacd8951183950d77d9984d2762aa6e1",
+      "canonicalPacketSha256": "71f1117d4c2496d4291630ea78f2074b755b030aa2b744ddaf755dec98620b39",
+      "scopedPacketSha256": "3dda45b0d8e98a5a62adc81c309db7fcf55e62892aa03f826432d5f2339a7a19",
+      "translationSha256": "66fd111a8b6313e3bb31583f153a8c476becad60086eb12498e2a2a505c0ac80",
+      "completedFormIds": [
+        "kaigo-japanese-mock-01"
+      ],
+      "selfReview": {
+        "completed": true,
+        "independentReviewer": false,
+        "method": "Read current mandatory rules/style/policy/plan/contract/checkpoint and own profile. Read all15effective Japanese questions/options/rationales/passages directly from scoped canonical packet,using Japanese labels as teaching material and own prior terms only. Translate all fields,read the entire assembled Tagalog form continuously,compare each specific reason and full dialogue/document with Japanese,polish wording,then check exact bindings,counts,empties,hashes and prior preservation. No other target locale/pivot/semantic cross-review.",
+        "semanticChecks": [
+          "Q01dentures replace losttooth function/shape,not toothbrush/cup/toothpaste;Q02transfer bed→wheelchair versus supine→side positionchange/walking fromroom→dining/changingclothes in chair;Q03excretion outward urine/stool versus chewing/intake,drinking inward,skinwipe hygiene;Q04bodywipe towel versus tubbath/footbath/hairwash;Q05shift handover next responsible supportinformation versus familyinvitation,stafftimeoff preferences,first personpreference question.",
+          "Q06person first sees one paper then decides additional need,both additionalyes and additionalno remain undecided,no two prepared inadvance assumption;worker respectful confirmation. Q07Tuesday thisweek/next unknown,heardday or change word not infer week,sameweekday differentdate requires check before informing. Q08wants go AND anxiety about many firsttimepeople,both coexist,no anxietygone,cancel or promisedparticipation if fewer inferred. Q09person keeps own choice,worker takes only2physical samples fromshelf,not takesone/choosesforperson/persontakes. Q10inspection finished→prepare,not reversed/simultaneous/skipped;peer register retained.",
+          "Q11October27consultationroom3,reception14:50 versus consultation15:00–15:20=20minutes,room4unsupported. Q12cupset table13:35/person laterdrinkwish verified,actualconsumption unknown,preparation not drinking. Q13books arrange coversvisible consent only,no discard/no anotherroom,noletters or reading letters,no scope expansion by purpose. Q14October29planned lunch staple rice/main dish tofu/side dish vegetables,planned not servedalready,eachperson foodform/provisionresults still unconfirmed;staple versus main/side separate. Q15Tanaka equipmentinspection/Kishimoto preparation only after checking inspectionresult,both roles verified before start,not swapped/bothassignedoneworker.",
+          "All10nonempty passages complete with all dialogue turns/document lines and extra qualifications. Fiveempty vocabulary passages and all15empty figure descriptions retained,not absent/invented. All60specific reasons preserve each source correct or incorrect inference;no clinical procedure,new diagnosis,quantity,age,gender or familyfact added. Formtitle remains practiceexam,not official-source certification."
+        ],
+        "styleChecks": [
+          "Natural connected adult Tagalog explanations and respectful worker-to-person po/kayo/ninyo,neutral peer speech;stable Kawani Tanaka/Kishimoto roles.",
+          "Own established pustiso,pagpapalit ng damit,paglalabas ng dumi ng katawan,pagpupunas sa katawan,pagpapasa ng impormasyon at tungkulin terms preserved;Japanese vocabulary labels retained for learning.",
+          "No shortened generic reasons;all conditions,negations,uncertainty,order,numbers,consent scope and actors preserved."
+        ],
+        "corrections": [
+          "Rendered physical samples as sampol rather than abstract halimbawa.",
+          "Kept provided food as served only,without adding an unsupported preparation-completion claim.",
+          "Distinguished staple food/main dish/side dish and polished cup-time rationale and spaces around times.",
+          "Removed unnecessarily broad vehicle reference from transfer explanation;rechecked all bindings after final edits."
+        ]
+      }
+    }
+  ],
   "checks": [
-    "PASS complete15question canonical set for exactly kaigo-japanese-mock-01;no partial question set or other forms.",
-    "PASS form title/question source revisions,IDs/order/correctIndex bound to canonical effective Japanese,scoped form exactly matches canonical form.",
-    "PASS60options and60individual specific rationales.",
-    "PASS10full passages/5explicit empty passages/15explicit empty figure descriptions/0caption texts;original passage line counts retained.",
-    "PASS six approval flags false at top level and report,status translated_ai_unreviewed.",
-    "PASS all26prior TL weeks/profile v7 byte-identical;no Japanese/furigana/UI/attempt edits."
+    "PASS complete45question canonical skills01 set appended to prior complete15question Japanese01 form. No partial or other forms.",
+    "PASS scoped skills01 object exactly matches canonical effective Japanese; title and question revisions, IDs, order and correctIndex match source for both included forms.",
+    "PASS new180options and180individual specific rationales; cumulative240options and240specific rationales.",
+    "PASS all45new passages explicitly empty; five full diagram descriptions and40empty descriptions. Cumulative10nonempty and50empty passages; five nonempty and55empty figure descriptions.",
+    "PASS prior Japanese01 object serialized with all ordered fields and values exactly unchanged; all prior top-level target metadata unchanged.",
+    "PASS all26prior TL weeks and profile v7 byte-identical; Japanese/furigana/assets/UI/attempt data not edited.",
+    "PASS six standard approval flags false and translated_ai_unreviewed; directJapanese/noCrossTranslation true."
   ],
   "selfReview": {
     "completed": true,
     "independentReviewer": false,
-    "method": "Read current mandatory rules/style/policy/plan/contract/checkpoint and own profile. Read all15effective Japanese questions/options/rationales/passages directly from scoped canonical packet,using Japanese labels as teaching material and own prior terms only. Translate all fields,read the entire assembled Tagalog form continuously,compare each specific reason and full dialogue/document with Japanese,polish wording,then check exact bindings,counts,empties,hashes and prior preservation. No other target locale/pivot/semantic cross-review.",
+    "reviewedFormIds": [
+      "kaigo-skills-mock-01"
+    ],
+    "reviewedQuestionCount": 45,
+    "reviewedSpecificRationaleCount": 180,
+    "reviewedFigureDescriptionCount": 5,
+    "method": "Read current mandatory rules, plan, checkpoint, style guide, policy, contract and own profile; compare every new prompt, option, specific rationale and figure description directly with effective Japanese. Read the complete Tagalog draft continuously, polish adult explanatory prose, then validate source bindings, actual counts, empty fields, hashes and exact preservation. No other target locale, pivot or semantic cross-review.",
     "semanticChecks": [
-      "Q01dentures replace losttooth function/shape,not toothbrush/cup/toothpaste;Q02transfer bed→wheelchair versus supine→side positionchange/walking fromroom→dining/changingclothes in chair;Q03excretion outward urine/stool versus chewing/intake,drinking inward,skinwipe hygiene;Q04bodywipe towel versus tubbath/footbath/hairwash;Q05shift handover next responsible supportinformation versus familyinvitation,stafftimeoff preferences,first personpreference question.",
-      "Q06person first sees one paper then decides additional need,both additionalyes and additionalno remain undecided,no two prepared inadvance assumption;worker respectful confirmation. Q07Tuesday thisweek/next unknown,heardday or change word not infer week,sameweekday differentdate requires check before informing. Q08wants go AND anxiety about many firsttimepeople,both coexist,no anxietygone,cancel or promisedparticipation if fewer inferred. Q09person keeps own choice,worker takes only2physical samples fromshelf,not takesone/choosesforperson/persontakes. Q10inspection finished→prepare,not reversed/simultaneous/skipped;peer register retained.",
-      "Q11October27consultationroom3,reception14:50 versus consultation15:00–15:20=20minutes,room4unsupported. Q12cupset table13:35/person laterdrinkwish verified,actualconsumption unknown,preparation not drinking. Q13books arrange coversvisible consent only,no discard/no anotherroom,noletters or reading letters,no scope expansion by purpose. Q14October29planned lunch staple rice/main dish tofu/side dish vegetables,planned not servedalready,eachperson foodform/provisionresults still unconfirmed;staple versus main/side separate. Q15Tanaka equipmentinspection/Kishimoto preparation only after checking inspectionresult,both roles verified before start,not swapped/bothassignedoneworker.",
-      "All10nonempty passages complete with all dialogue turns/document lines and extra qualifications. Fiveempty vocabulary passages and all15empty figure descriptions retained,not absent/invented. All60specific reasons preserve each source correct or incorrect inference;no clinical procedure,new diagnosis,quantity,age,gender or familyfact added. Formtitle remains practiceexam,not official-source certification."
+      "Q01–10: preserve own choice versus execution assistance; subjective QOL versus environmental/work counts; assessment/planning/implementation/evaluation distinction; necessary recipient and consent/facility procedure for information; glove removal before hand hygiene; restriction of movement; four abuse categories; care worker observation versus medical decision and medication limits; damaged walking aid remains unused before reporting to responsible person; prompt accident facts versus unknown cause.",
+      "Q11–20: multiple stress factors and individual differences; new encoding versus retention, attention and retrieval; aging does not justify ignoring new complaints; orientation versus memory, executive function and calculation; bladder/kidney/esophagus/colon and skin roles distinct; open versus closed questions; anxiety listened to without assumed reassurance; sign language remains language; stated refusal versus unobserved actual participation remain separate.",
+      "Q21–30: mobility supports daily and social activity, not arrival as proof of satisfied wishes; seated/side-lying/standing/supine positions distinct; low activity and disuse syndrome; current condition/explanation/consent before mobility, not old consent; nutrition plus enjoyment and environment; chewing and saliva versus swallowing/esophageal peristalsis/gastric digestion; identity, food form, allergy and current instructions before serving; no demand for an answer during chewing; privacy alongside necessary excretion assistance/observation; urination versus defecation.",
+      "Q31–40: stool observations include date/time, observed facts and person statements without diagnosis; wet trousers do not establish urine leakage or spilled water; clothing size, temperature, activity and condition; preparation not completed changing and pain remains reportable despite consent; oral bleeding/swelling explicitly reported to a medical professional, no care-worker diagnosis or medication selection; hygiene includes comfort and daily rhythm; face-washing consultation neither completed washing nor whole-body consent; IADL shopping versus basic daily activities; possessions require person consent before sorting/disposal; laundry material and labels checked despite previous method or low soil.",
+      "Q41–45: complete diagram descriptions preserve overhead layout, A destination/B large obstruction/C current position, safe route with responsible-person check before use; left012 versus right014 and sameP3 food form do not establish correct recipient; open entranceB/hallC/dotted sightline toward excretion-care placeA requires shielding; person-selectedR blue versus preparedS green also have different product codes and require renewed wish confirmation, not record overwrite; blue-tagA storage/yellow-tagB disposal/central untaggedC remains unconfirmed pending person check."
     ],
     "styleChecks": [
-      "Natural connected adult Tagalog explanations and respectful worker-to-person po/kayo/ninyo,neutral peer speech;stable Kawani Tanaka/Kishimoto roles.",
-      "Own established pustiso,pagpapalit ng damit,paglalabas ng dumi ng katawan,pagpupunas sa katawan,pagpapasa ng impormasyon at tungkulin terms preserved;Japanese vocabulary labels retained for learning.",
-      "No shortened generic reasons;all conditions,negations,uncertainty,order,numbers,consent scope and actors preserved."
+      "Connected adult Filipino explanations; respectful po/kayo/ninyo in direct questions to the person receiving care; no invented age, gender, kinship or assurances.",
+      "Own established role and clinical terms retained, including propesyonal na medikal, taong inaalagaan, kawani sa pangangalaga, paglalabas ng dumi ng katawan, pagnguya/mastikasyon, paggunita and IADL explanation.",
+      "Every incorrect option has its own specific source-grounded reason. All conditions, uncertainty, negatives, recipients, consent scope, roles and before/after order retained."
     ],
     "corrections": [
-      "Rendered physical samples as sampol rather than abstract halimbawa.",
-      "Kept provided food as served only,without adding an unsupported preparation-completion claim.",
-      "Distinguished staple food/main dish/side dish and polished cup-time rationale and spaces around times.",
-      "Removed unnecessarily broad vehicle reference from transfer explanation;rechecked all bindings after final edits."
+      "Kept Q07 strong arm strike and resulting injury explicit.",
+      "Distinguished first received information in encoding from retrieval of stored information; retained attention as a separate function.",
+      "Replaced an unnecessary English restriction term and polished body-position reasons.",
+      "Kept Q13 verification broader than asking and Q20 cancellation distinct from actually stopping an activity already begun.",
+      "Removed a tautological swallowing explanation while preserving the separate chewing/saliva stage; polished gastric digestion sentence.",
+      "Rechecked every binding after final punctuation and prose edits; IDs and source revisions were excluded from text formatting."
     ]
   },
-  "profileChanges": {
-    "previousSha256": "ad0b546f212bdff0b6256e9797e84ccbb43fbe19a61fa7546eb14b0cb3c76b96",
-    "currentSha256": "ad0b546f212bdff0b6256e9797e84ccbb43fbe19a61fa7546eb14b0cb3c76b96",
-    "unchanged": true,
-    "addedActualConcepts": 0,
-    "priorPrinciplesAndPreferredTermsPreserved": true
-  },
   "preservation": {
+    "priorTargetSha256": "66fd111a8b6313e3bb31583f153a8c476becad60086eb12498e2a2a505c0ac80",
     "priorTranslationSha256": {
       "src/data/kaigo/japanese-master/translations/week-13.tl.json": "cad7c8a27a0e11991c4f828e7c652ba9f4a48d0c4c03fdb9ffb264a931b3d2cb",
       "src/data/kaigo/japanese-master/translations/week-03.tl.json": "a898e486aa61e9176cabc49a436163a77267912ff39090b95f8151f901237da8",
@@ -126,39 +208,29 @@
       "src/data/kaigo/japanese-master/translations/week-02.tl.json": "dc814420d45d863643e3034fec51bec147834398809f2a88f30b686d69d45370",
       "docs/ssw-workspace/kaigo/locale-profiles/tl.json": "ad0b546f212bdff0b6256e9797e84ccbb43fbe19a61fa7546eb14b0cb3c76b96"
     },
-    "week01Through26ByteIdentical": true
+    "week01Through26ByteIdentical": true,
+    "localeProfileByteIdentical": true,
+    "priorJapaneseMock01EntireObjectExact": true,
+    "priorJapaneseMock01OrderedObjectSha256": "9e724b083ba303bcc81fddab2f4b0b3633f18d2ae79b18bf2edc50e4dd8610c9",
+    "priorTopLevelMetadataUnchanged": true
   },
   "openIssues": [
-    "Independent Filipino/native,clinical,rights and actual-device review pending.",
-    "Eleven full mock forms remain untranslated for tl."
+    "Independent Filipino/native, clinical, rights and actual-device reviews remain pending.",
+    "Ten full mock forms remain untranslated for tl.",
+    "Existing source figure lettering limitations remain outside this translation batch; no source assets edited."
   ],
   "limits": [
     "AI meaning/style/structure self-review is not independent professional/native/device/rights/release certification.",
-    "Root owns registration,runtime,integration and remote persistence.",
+    "Root owns shared registration, runtime, integration and remote persistence.",
     "No source-knowledge denominator or coverage percentage claimed.",
-    "Complete first Japanese mock only;all other forms remain absent from target."
+    "Exactly two complete forms included; ten remaining forms absent, with no selected-locale fallback authorized."
   ],
   "completion": {
-    "completedFormIds": [
-      "kaigo-japanese-mock-01"
-    ],
-    "remainingFormIds": [
-      "kaigo-skills-mock-01",
-      "kaigo-skills-mock-02",
-      "kaigo-skills-mock-03",
-      "kaigo-japanese-mock-02",
-      "kaigo-japanese-mock-03",
-      "kaigo-skills-mock-04",
-      "kaigo-skills-mock-05",
-      "kaigo-skills-mock-06",
-      "kaigo-japanese-mock-04",
-      "kaigo-japanese-mock-05",
-      "kaigo-japanese-mock-06"
-    ],
-    "completedForms": 1,
-    "remainingForms": 11,
-    "allMockFormsComplete": false,
-    "allLocaleWorkComplete": false,
-    "awaitingRootPersistenceBeforeNextUnit": true
+    "completeForms": 2,
+    "totalRequiredForms": 12,
+    "remainingForms": 10,
+    "allLocaleMocksComplete": false,
+    "currentBatchComplete": true,
+    "frozenForRootIntegration": true
   }
 }

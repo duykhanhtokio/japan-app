@@ -3,44 +3,59 @@
   "date": "2026-10-17",
   "language": "km",
   "status": "translated_ai_unreviewed",
-  "completionUnit": "one_complete_full_mock_form_in_one_locale",
+  "completionUnit": "one_complete_new_full_mock_form_appended_in_one_locale",
   "directJapanese": true,
   "noCrossTranslation": true,
   "source": {
-    "path": "/workspace/scratch/93b7226de7f9/mock-packets-current-6212bc54/japanese-mock-01.ja.json",
-    "sha256": "3dda45b0d8e98a5a62adc81c309db7fcf55e62892aa03f826432d5f2339a7a19",
-    "sourceCommit": "6212bc54cacd8951183950d77d9984d2762aa6e1",
+    "path": "/workspace/scratch/93b7226de7f9/mock-packets-current-790dfeb2/skills-mock-01.ja.json",
+    "sha256": "76a0ad694403f7640f5144da86662c6ab6013f22b2e9d7533a73cd47d982360b",
+    "sourceCommit": "790dfeb29763c08b7a59c4abab2f65e29e04624f",
     "sourceLanguage": "ja",
-    "canonicalFullPacketPath": "/workspace/scratch/93b7226de7f9/mock-packets-current-6212bc54/full-mocks.ja.json",
-    "canonicalFullPacketSha256": "71f1117d4c2496d4291630ea78f2074b755b030aa2b744ddaf755dec98620b39",
-    "policy": "Fresh Japanese-only scoped form equals the corresponding effective canonical full-packet form. Direct Japanese only; no other-locale semantic input, pivot or cross-review. Other forms inspected for IDs/count only, never as semantic source."
+    "canonicalFullPacketPath": "/workspace/scratch/93b7226de7f9/mock-packets-current-790dfeb2/full-mocks.ja.json",
+    "canonicalFullPacketSha256": "cb7944277537ceb4a8911ea23b5e512acfd2dd2437d5869b9b96d8e811fd203c",
+    "policy": "Fresh scoped effective Japanese-only source; current form exactly equals corresponding canonical effective full-packet form. Direct Japanese only, own checked Khmer terminology, no other-locale semantic input/pivot/cross-review. Other-form content is outside this batch."
   },
-  "sourceSha256": "3dda45b0d8e98a5a62adc81c309db7fcf55e62892aa03f826432d5f2339a7a19",
-  "canonicalFullPacketSha256": "71f1117d4c2496d4291630ea78f2074b755b030aa2b744ddaf755dec98620b39",
-  "translationSha256": "89cce7d864888b2be0bf99041fe30ee6b2954cecd8ae7b170cf9eb3434a2801d",
+  "sourceSha256": "76a0ad694403f7640f5144da86662c6ab6013f22b2e9d7533a73cd47d982360b",
+  "canonicalFullPacketSha256": "cb7944277537ceb4a8911ea23b5e512acfd2dd2437d5869b9b96d8e811fd203c",
+  "translationSha256": "ead25ed4d2455d3243bd0e560aa426986487832d23faf2bfcef0efc7329a49b6",
   "outputs": [
     {
       "path": "src/data/kaigo/japanese-master/mock-translations/mocks.km.json",
-      "sha256": "89cce7d864888b2be0bf99041fe30ee6b2954cecd8ae7b170cf9eb3434a2801d"
+      "sha256": "ead25ed4d2455d3243bd0e560aa426986487832d23faf2bfcef0efc7329a49b6"
     }
   ],
   "counts": {
-    "forms": 1,
-    "questions": 15,
-    "options": 60,
-    "rationales": 60,
-    "passageFields": 15,
+    "forms": 2,
+    "questions": 60,
+    "options": 240,
+    "rationales": 240,
+    "passageFields": 60,
     "nonemptyPassages": 10,
-    "emptyPassages": 5,
-    "figureDescriptionFields": 15,
-    "nonemptyFigureDescriptions": 0,
-    "emptyFigureDescriptions": 15
+    "emptyPassages": 50,
+    "figureDescriptionFields": 60,
+    "nonemptyFigureDescriptions": 5,
+    "emptyFigureDescriptions": 55
+  },
+  "batchCounts": {
+    "forms": 1,
+    "questions": 45,
+    "options": 180,
+    "rationales": 180,
+    "passageFields": 45,
+    "nonemptyPassages": 0,
+    "emptyPassages": 45,
+    "figureDescriptionFields": 45,
+    "nonemptyFigureDescriptions": 5,
+    "emptyFigureDescriptions": 40
   },
   "completedFormIds": [
-    "kaigo-japanese-mock-01"
+    "kaigo-japanese-mock-01",
+    "kaigo-skills-mock-01"
+  ],
+  "newlyCompletedFormIds": [
+    "kaigo-skills-mock-01"
   ],
   "remainingFormIds": [
-    "kaigo-skills-mock-01",
     "kaigo-skills-mock-02",
     "kaigo-skills-mock-03",
     "kaigo-japanese-mock-02",
@@ -53,94 +68,253 @@
     "kaigo-japanese-mock-06"
   ],
   "totalFormsRequired": 12,
-  "completedForms": 1,
-  "remainingForms": 11,
+  "completedForms": 2,
+  "remainingForms": 10,
   "styleGuideVersion": 1,
   "localeProfile": {
     "path": "docs/ssw-workspace/kaigo/locale-profiles/km.json",
     "sha256": "ca18c4af79dea66ba79cd01c47013d305ff9e163486f35bdc5252a75acc2e3a6",
     "changed": false
   },
+  "priorFormPreservation": {
+    "formIds": [
+      "kaigo-japanese-mock-01"
+    ],
+    "baselineTranslationSha256": "89cce7d864888b2be0bf99041fe30ee6b2954cecd8ae7b170cf9eb3434a2801d",
+    "baselineReviewSha256": "62d4be17b252078a47671a86a976b8e729fbe511476040eebea6c38b963d2b5d",
+    "rawObjectByteIdentical": true,
+    "rawObjectSha256": "7729d04118d22eb80a74efe5be76cf89de3f205729e6e369c38f49f59ec6c983",
+    "topMetadataUnchanged": true
+  },
   "terminologyDecisions": {
-    "scope": "Own checked weekly Khmer terminology retained; no profile changes. Japanese headwords remain only in explicit vocabulary questions. New main-dish and side-dish labels kept distinct from staple food and the broader previously used non-staple food concept.",
+    "scope": "Existing own profile/weekly terminology and names retained; no profile edits. Memory processes, disuse syndrome, organs, care-process terms and clinical recipients checked against own prior Japanese-bound Khmer only.",
     "terms": {
-      "義歯": "ធ្មេញសិប្បនិម្មិត",
-      "入れ歯": "ធ្មេញដាក់",
-      "移乗": "ការផ្ទេរទី",
-      "移動": "ការផ្លាស់ទី",
-      "排せつ": "ការបញ្ចេញកាកសំណល់",
-      "清拭": "ការជូតខ្លួន",
-      "申し送り": "ការប្រគល់ព័ត៌មាន",
-      "主食": "អាហារចម្បង",
-      "主菜": "ម្ហូបចម្បង",
-      "副菜": "ម្ហូបបន្ទាប់បន្សំ",
-      "田中": "តាណាកា",
-      "岸本": "គីស៊ីម៉ូតូ"
+      "本人": "សាមីខ្លួន",
+      "自己決定": "ការសម្រេចចិត្តដោយខ្លួនឯង",
+      "QOL": "គុណភាពជីវិត",
+      "手指衛生": "អនាម័យដៃ",
+      "医療職": "បុគ្គលិកវេជ្ជសាស្ត្រ",
+      "廃用症候群": "រោគសញ្ញាចុះខ្សោយដោយមិនប្រើរាងកាយ",
+      "膀胱": "ប្លោកនោម",
+      "腎臓": "តម្រងនោម",
+      "排尿": "ការនោម",
+      "排便": "ការបន្ទោរបង់លាមក",
+      "口腔ケア": "ការថែទាំមាត់",
+      "上着": "អាវខាងក្រៅ"
+    }
+  },
+  "formReviews": {
+    "kaigo-japanese-mock-01": {
+      "source": {
+        "path": "/workspace/scratch/93b7226de7f9/mock-packets-current-6212bc54/japanese-mock-01.ja.json",
+        "sha256": "3dda45b0d8e98a5a62adc81c309db7fcf55e62892aa03f826432d5f2339a7a19",
+        "sourceCommit": "6212bc54cacd8951183950d77d9984d2762aa6e1",
+        "sourceLanguage": "ja",
+        "canonicalFullPacketPath": "/workspace/scratch/93b7226de7f9/mock-packets-current-6212bc54/full-mocks.ja.json",
+        "canonicalFullPacketSha256": "71f1117d4c2496d4291630ea78f2074b755b030aa2b744ddaf755dec98620b39",
+        "policy": "Fresh Japanese-only scoped form equals the corresponding effective canonical full-packet form. Direct Japanese only; no other-locale semantic input, pivot or cross-review. Other forms inspected for IDs/count only, never as semantic source."
+      },
+      "selfReview": {
+        "performed": true,
+        "type": "AI own-locale direct Japanese semantic comparison and continuous Khmer case/question/rationale prose review",
+        "scope": {
+          "formIds": [
+            "kaigo-japanese-mock-01"
+          ],
+          "questions": 15,
+          "options": 60,
+          "specificRationales": 60,
+          "nonemptyPassages": 10,
+          "emptyPassages": 5,
+          "nonemptyFigureDescriptions": 0,
+          "emptyFigureDescriptions": 15
+        },
+        "method": "Read the complete scoped Japanese title and all15questions with four options, four effective rationales, passages and figure-description fields. Verify scoped form equality and both source hashes against the canonical effective Japanese packet without reading other-form semantic content. Translate directly, compare every source meaning, and read Khmer title, vocabulary explanations, dialogue/documents and each option-specific reason for natural connected adult prose. Check actor, recipient, quantities, date/time, sequence, uncertainty, conditions, negation, consent and clinical limits. Validate final schema/bindings/order/indices/empty fields and preserve all own weekly files/profile.",
+        "semanticChecks": [
+          "q01dentures retain lost-tooth function/shape replacement, distinguished from brush, rinsing cup and toothpaste. q02transfer between support/seating places distinguished from supine-to-side position change, walking/movement and clothing change. q03excretion is outward urine/stool/unneeded-material function, distinguished from food chewing/intake, inward hydration and surface wiping. q04body wiping with towel distinguished from warm-water tub bathing, basin foot washing and shower hair washing; no temperature number or technique added. q05handover carries necessary support information to next assigned person at shift change, distinct from family invitation, staff leave preferences and initial collection of person’s food preferences.",
+          "q06two-sheet offer versus person choosing to view one first and only later decide whether another is needed. Neither automatic additional sheet nor final refusal invented. Conditional sequence and one/two quantities preserved; no unstated preparer or shared actor introduced in confirmation options.",
+          "q07Tuesday change retains this-week/next-week uncertainty. Colleague has not received that detail; no week inferred from hearing date or word change. Confirm which Tuesday before conveying the schedule; same weekday in another week means another date.",
+          "q08wish to try attending and anxiety with many unfamiliar people coexist. Correct response acknowledges the feeling. No claim anxiety disappeared, participation cancelled, or participation promised if unfamiliar people fewer. Neutral adult address preserves no inferred age/gender/kinship.",
+          "q09person retains own selection while requesting only retrieval of two shelf samples. Correct help scope excludes choosing for the person, changing quantity to one, or treating requested retrieval as entirely self-performed. q10inspection must be completed before preparation, not reversed/simultaneous/omitted. No unnamed participant assigned a new collective task.",
+          "q11October27,consultationroom3,registration14:50,consultation15:00–15:20 preserved. Duration20minutes verified separately from registration time and wrong room4 distractor. No invented actual venue rule outside the fictional document.",
+          "q12record13:35cup placed on desk for the person, wish to drink later and actual intake amount explicitly unchecked. Preparation is not consumption evidence. Time/place/wish are known; no unrecorded drinking quantity or clinical instruction added.",
+          "q13consent only to arrange books with covers visible. No disposal or removal to another room. Letters remain outside scope, including reading and placing on same shelf. Showing covers does not broaden consent; old books are not authorized for staff selection/discard.",
+          "q14October29lunch plan distinguishes staple rice, tofu main dish and vegetable side dish. Plan is not evidence of food already served. Individual food form and serving results remain unconfirmed. Date reference is that planned day, not an invented assertion about today. q15Tanaka inspects; Kishimoto prepares only after checking inspection results; both verify assignment before beginning. No role reversal or sole worker responsibility for both tasks. Only source surnames/roles used, no given names/gender inferred.",
+          "All10nonempty passages fully translated with original line/turn structure, including scope restrictions and unconfirmed facts. First5empty passages and all15empty figure descriptions remain exact empty strings. No figures recreated or source furigana edited. All15questions,60options and60full specific reasons retained with exact IDs/order/sourceRevisions/correctIndex. Form title remains a mock-question title, not a claim of official certification. Only this complete form included; all11others remain pending."
+        ],
+        "styleChecks": [
+          "Natural complete Khmer explanations with cause/contrast/condition clauses; no clipped outline or generic rationale substitution.",
+          "Khmer neutral ខ្ញុំ/អ្នក and explicit person/staff/colleague roles, consistent respectful adult address and own names/terms.",
+          "Japanese terms retained only where the Japanese headword itself is being tested; all explanations directly translated into Khmer.",
+          "Dialogue confirms choices and uncertainty without invented promises, permissions, care actions or relationships."
+        ],
+        "correctionsDuringSelfReview": [
+          "Removed an unstated collective actor from sequence-confirmation options and avoided assigning paper preparation to the care recipient.",
+          "Kept the colleague’s missing Tuesday detail as information not yet heard rather than claiming a question had not been asked.",
+          "Retained warm-water references and smoothed bathing/foot-basin wording without adding numerical conditions.",
+          "Clarified same-shelf wording, planned-day date reference and the specific division of inspection versus preparation.",
+          "Used established own transfer/excretion/handover/denture terms and differentiated staple/main/side dish labels."
+        ],
+        "mechanicalChecks": [
+          "BothJapaneseSHA256hashes and scoped/currentcanonicalform equality PASS.",
+          "Exactly1completeform,15questions,60options,60specificrationales; fixedtitle/question sourceRevisions, IDs/order/correctIndex/status PASS.",
+          "15passagefields=10full+5exactempty;15figureDescriptionfields=0full+15exactempty; allfullpassage linecounts preserved.",
+          "Only contract fields in target form/questions, no furigana/source modifications and no otherform/partialquestion publication.",
+          "All26ownweeklytargets and26ownweeklyreview files plus ownprofile byte-identical toHEAD.",
+          "Allsixstandardapprovalflagsfalse; allnonemptyteachingstrings contain Khmer/no placeholders; completed+11remainingformIDs matchcanonicalformIDs.",
+          "Owner publishes only ownmocktarget/review; root handles shared registration/runtime/inventory/persistence."
+        ],
+        "validationStatus": "PASS_OWN_KM_JAPANESE_MOCK01_MEANING_PROSE_BINDINGS_COUNTS_PASSAGES_PRESERVATION",
+        "limits": "AI own-locale semantic/style and structural checks do not establish independent Khmer, care-domain, native-device, rights or release approval."
+      },
+      "preservedWithoutChanges": true
+    },
+    "kaigo-skills-mock-01": {
+      "source": {
+        "path": "/workspace/scratch/93b7226de7f9/mock-packets-current-790dfeb2/skills-mock-01.ja.json",
+        "sha256": "76a0ad694403f7640f5144da86662c6ab6013f22b2e9d7533a73cd47d982360b",
+        "sourceCommit": "790dfeb29763c08b7a59c4abab2f65e29e04624f",
+        "sourceLanguage": "ja",
+        "canonicalFullPacketPath": "/workspace/scratch/93b7226de7f9/mock-packets-current-790dfeb2/full-mocks.ja.json",
+        "canonicalFullPacketSha256": "cb7944277537ceb4a8911ea23b5e512acfd2dd2437d5869b9b96d8e811fd203c",
+        "policy": "Fresh scoped effective Japanese-only source; current form exactly equals corresponding canonical effective full-packet form. Direct Japanese only, own checked Khmer terminology, no other-locale semantic input/pivot/cross-review. Other-form content is outside this batch."
+      },
+      "selfReview": {
+        "performed": true,
+        "type": "AI own-locale direct Japanese semantic comparison and continuous Khmer question/rationale/figure-description prose review",
+        "scope": {
+          "newFormIds": [
+            "kaigo-skills-mock-01"
+          ],
+          "newQuestions": 45,
+          "newOptions": 180,
+          "newSpecificRationales": 180,
+          "newEmptyPassages": 45,
+          "newNonemptyFigureDescriptions": 5,
+          "newEmptyFigureDescriptions": 40,
+          "priorCompleteFormsPreserved": [
+            "kaigo-japanese-mock-01"
+          ],
+          "cumulativeForms": 2,
+          "cumulativeQuestions": 60,
+          "cumulativeSpecificRationales": 240
+        },
+        "method": "Read the entire scoped Japanese title,45prompts,180options,180effective specific rationales and all45passage/figure-description fields. Verify both source hashes and canonical form equality without another-locale input. Translate directly, compare every meaning-bearing field to Japanese, then read Khmer questions and all reasons in source order, including five complete figure descriptions. Check adult roles, clinical recipients, conditions, negation, uncertainty, consent scope, sequence and exact figure codes. Apply final prose corrections, validate every binding/count/empty field, and check literal raw-byte preservation of the prior form plus unchanged target top metadata and all own weekly/profile files.",
+        "semanticChecks": [
+          "q01–04:Person-led choice distinguished from staff substituting decisions, family-only decisions and withdrawing needed physical help merely because the person can choose. QOL is the person’s satisfaction/meaning in life, not room area/staff workload/seat count. Assessment/planning/implementation/evaluation remain distinct; evaluation compares actual outcomes and goal/plan fit. Personal information shared only with necessary recipients under person consent/facility procedure; coworker status does not justify shop disclosure, family request alone does not justify private-contact transfer, anonymized personalSNS can still identify person/course.",
+          "q05–10:After excretion care and glove removal, hand hygiene remains necessary despite clean appearance; no substitution by disinfecting fresh-glove surfaces or waiting until next care ends. Locking person inside restricts freedom, unlike requested quiet conversation/matched pace/tool check. Physical/financial/psychological abuse and neglect differentiated, retaining repeated frightening threats and prolonged lack of food assistance. Teamwork conveys observed change, time and person wishes for professional judgment; no independent medication-dose change followed by notification. Broken walking aid not used even short distance/familiarity; report to assigned person and verify safe alternative before use, not after. Accident facts/unknowns conveyed promptly without waiting for completed report, cause certainty or next meeting.",
+          "q11–16:Stress can involve noise/fatigue/relationships; silence about anxiety does not prove none, same stimulus does not imply same personal intensity, rest alone does not erase relationship effects. Recall distinguished from encoding/retention/attention. Aging support considers life history and current state with individual variation; new complaints are not dismissed as age and current reactions still recorded. Dementia orientation difficulty concerns current date/time/place, distinguished from new-memory, sequencing/executive and calculation difficulties without inventing a diagnosis. Bladder temporarily stores urine until voiding, kidney produces it, esophagus transports food and large bowel absorbs water/forms stool; skin protects body surface and sweats.",
+          "q17–20:Open question asks what person wants to try rather than yes/no or two-option limits. Anxiety response listens without interruption and clarifies worry; distraction/schedule explanation/others’ participation do not establish reassurance. Facial expression/gesture are nonlanguage information; writing and sign language remain language and absence of sound does not make sign language nonlanguage. Person’s today-not-wanting-participation statement remains separate from still-unobserved participation. No invented stay in room, staff cancellation, participation or later rest.",
+          "q21–24:Movement widens life/social participation opportunities, not proof wishes met merely by arrival; same destination still requires this-occurrence explanation/wish check and equipment is no substitute for condition check. Sitting/side-lying/standing/supine postures differentiated. Prolonged inactivity-related physical/mental function decline/disuse syndrome distinguished from contact dermatitis, UTI and food allergy. Before movement support, verify current state/support, explain and obtain consent; no automatic reuse of prior consent, destination-seat-only check or staff-only method decision because person hurried.",
+          "q25–30:Meals provide nutrition plus enjoyment/social contact, not satisfaction proved by intake or nutrition-only/environment-free planning. Chewing mixes with saliva, swallowing differs from esophageal peristalsis/gastric digestion. Before serving, identify person and match current food form/allergy conditions; time/count/yesterday’s appearance/dish color insufficient. Do not require immediate answers while chewing, even for hearing checks; no response is not proof of understanding. Excretion support combines necessary assistance/observation and privacy; shame alone is not permission for unilateral cancellation of needed monitoring, and speed/staff convenience cannot replace explanation/consent or corridor screening. Urination/defecation names correctly paired, with all wrong mappings preserved as distractors and individually explained.",
+          "q31–35:Stool change reporting retains date/time, observed state and person words; yesterday’s record is not today’s evidence and one change is not diagnosis. Wet trousers are observed, cause remains unconfirmed; neither incontinence nor spilled-water cause inferred from wetness/cup, and lack of explanation does not erase observed wetness. Clothing supports temperature control/skin protection; thickness does not replace environment/current-condition checks, size affects mobility/comfort, season alone insufficient. Preparation differs from actual dressing completion; before/after comfort/pain checked even for person-selected clothes or existing consent. Oral gum bleeding/swelling explicitly reported with location/state to medical professionals, not self-diagnosed/self-medicated or rewritten as usual merely because person not concerned.",
+          "q36–40:Bathing/hygiene involve cleanliness, comfort, daily rhythm and person feelings/habits; schedule does not reduce current health check. Face-washing consultation alone is neither whole-body consent nor completed washing; rejecting whole-body support does not cancel face consultation wish. Shopping as instrumental daily living activity differs from basic eating/toileting/dressing movements. Before arranging belongings, check what to keep/how and specific consent; no staff discretionary disposal or family-only classification. Laundry method follows material/care label despite same color, previous owner method or low visible soil.",
+          "q41Figure:top-view route, A destination/Blarge obstructing box/Ccurrent position complete. Correct judgment checks box with assigned person and makes route safe before use; correct destination or waiting atC does not establish safety, and person is not asked to step over obstacle.",
+          "q42Figure:left serving slip person012/formP3 versus right tray person014/formP3 retained with leading zeros. SameP3 is not identity match; verify before serving. No self-correction of label or placing tray before identification merely because seat empty.",
+          "q43Figure:Aexcretion support place/Bopen entrance/Ccorridor and dotted sightline from corridor toA retained. Check entrance/view and provide required screening before support; short duration, corridor explanation or telling person not to mind cannot replace privacy adjustment.",
+          "q44Figure:leftpersonselection outergarmentRblue versus preparedSgreen, both product code and color differ. Preparation does not mean person changed choice; disclose mismatch/reconfirm wishes and do not rewrite person’s selection. q45Figure:person’sblue-tag items storedA/yellow-tag items designated disposalB/centralCuntagged. Missing label is not disposal consent or staff authority to keep based on apparent usability. No swapping person labels; confirm C treatment with person before classification.",
+          "All45passages exactempty and all40absent-content figure descriptions exactempty; five full descriptions translated without recreating images or altering furigana/source assets. Every question has four complete option-specific reasons and unchanged correctIndex. Existing Japanese mock01 entire rawJSON form object and topmetadata unchanged, including15Q/60rationales/10full passages. Only one complete new form appended; ten others remain pending."
+        ],
+        "styleChecks": [
+          "Complete natural connected adult Khmer with full reason/condition/contrast clauses; no outline compression or generic replacement rationales.",
+          "Neutral person/staff/professional roles and established own terminology; no invented age, gender, kinship or names.",
+          "Preserve modality such as may/unconfirmed/cannot infer and individual/current-condition versus generic rules.",
+          "Figure codes/numbers/colors/sightlines and safe clinical recipients preserved as source meanings, without new procedures or diagnosis."
+        ],
+        "correctionsDuringSelfReview": [
+          "Replaced a literal written-reference phrase with natural wording that staff experience can inform consideration without overriding person choice.",
+          "Smoothed encoding and new-complaint wording while retaining the exact memory/refraining-from-reporting distinctions.",
+          "Retained both necessary assistance and monitoring alongside privacy, rather than wording them as interchangeable alternatives.",
+          "Expanded urination/defecation mappings into natural full Khmer statements, retaining all distractor mappings exactly.",
+          "Clarified dotted-line wording and rechecked A/B/C,R/S,012/014/P3 and source color distinctions."
+        ],
+        "mechanicalChecks": [
+          "New1completeform45Q180options180specificrationales/45exactempty passages/5full+40exactemptyfigureDescriptions PASS.",
+          "Cumulative2forms60Q240options240rationales/10nonemptypassages50empty/5nonemptyfigureDescriptions55empty PASS.",
+          "Source scoped/fullSHA256 and canonicalcurrentformequality, exactIDs/order/title+question sourceRevisions/correctIndex/contractfields/status PASS.",
+          "Existing Japanese mock01 rawJSON formobject bytes identical, rawSHA2567729d04118d22eb80a74efe5be76cf89de3f205729e6e369c38f49f59ec6c983; alltopmetadata exactlypreserved.",
+          "Figure-description letter/code token sequences preserved, including012/014 leadingzeros andP3.",
+          "All26ownweeklytargets and26ownweeklyreview files plusprofile byte-identical toHEAD; priorpreferredterms/names unchanged.",
+          "Sixstandardapprovalflagsfalse, allnonemptyteachingstrings containKhmer/no placeholders, completed+10remainingIDs matchcanonicalformIDs.",
+          "Onlyowncumulativemocktarget/review changed; no partialform,sharedregistry/UI/script/source/asset edits."
+        ],
+        "validationStatus": "PASS_OWN_KM_SKILLS_MOCK01_MEANING_PROSE_BINDINGS_COUNTS_FIGURES_PRIOR_RAW_OBJECT_PRESERVATION",
+        "limits": "AI own-locale semantic/style and structural checks do not establish independent Khmer, domain, native-device, rights or release approval."
+      }
     }
   },
   "selfReview": {
     "performed": true,
-    "type": "AI own-locale direct Japanese semantic comparison and continuous Khmer case/question/rationale prose review",
+    "type": "AI own-locale direct Japanese semantic comparison and continuous Khmer question/rationale/figure-description prose review",
     "scope": {
-      "formIds": [
+      "newFormIds": [
+        "kaigo-skills-mock-01"
+      ],
+      "newQuestions": 45,
+      "newOptions": 180,
+      "newSpecificRationales": 180,
+      "newEmptyPassages": 45,
+      "newNonemptyFigureDescriptions": 5,
+      "newEmptyFigureDescriptions": 40,
+      "priorCompleteFormsPreserved": [
         "kaigo-japanese-mock-01"
       ],
-      "questions": 15,
-      "options": 60,
-      "specificRationales": 60,
-      "nonemptyPassages": 10,
-      "emptyPassages": 5,
-      "nonemptyFigureDescriptions": 0,
-      "emptyFigureDescriptions": 15
+      "cumulativeForms": 2,
+      "cumulativeQuestions": 60,
+      "cumulativeSpecificRationales": 240
     },
-    "method": "Read the complete scoped Japanese title and all15questions with four options, four effective rationales, passages and figure-description fields. Verify scoped form equality and both source hashes against the canonical effective Japanese packet without reading other-form semantic content. Translate directly, compare every source meaning, and read Khmer title, vocabulary explanations, dialogue/documents and each option-specific reason for natural connected adult prose. Check actor, recipient, quantities, date/time, sequence, uncertainty, conditions, negation, consent and clinical limits. Validate final schema/bindings/order/indices/empty fields and preserve all own weekly files/profile.",
+    "method": "Read the entire scoped Japanese title,45prompts,180options,180effective specific rationales and all45passage/figure-description fields. Verify both source hashes and canonical form equality without another-locale input. Translate directly, compare every meaning-bearing field to Japanese, then read Khmer questions and all reasons in source order, including five complete figure descriptions. Check adult roles, clinical recipients, conditions, negation, uncertainty, consent scope, sequence and exact figure codes. Apply final prose corrections, validate every binding/count/empty field, and check literal raw-byte preservation of the prior form plus unchanged target top metadata and all own weekly/profile files.",
     "semanticChecks": [
-      "q01dentures retain lost-tooth function/shape replacement, distinguished from brush, rinsing cup and toothpaste. q02transfer between support/seating places distinguished from supine-to-side position change, walking/movement and clothing change. q03excretion is outward urine/stool/unneeded-material function, distinguished from food chewing/intake, inward hydration and surface wiping. q04body wiping with towel distinguished from warm-water tub bathing, basin foot washing and shower hair washing; no temperature number or technique added. q05handover carries necessary support information to next assigned person at shift change, distinct from family invitation, staff leave preferences and initial collection of person’s food preferences.",
-      "q06two-sheet offer versus person choosing to view one first and only later decide whether another is needed. Neither automatic additional sheet nor final refusal invented. Conditional sequence and one/two quantities preserved; no unstated preparer or shared actor introduced in confirmation options.",
-      "q07Tuesday change retains this-week/next-week uncertainty. Colleague has not received that detail; no week inferred from hearing date or word change. Confirm which Tuesday before conveying the schedule; same weekday in another week means another date.",
-      "q08wish to try attending and anxiety with many unfamiliar people coexist. Correct response acknowledges the feeling. No claim anxiety disappeared, participation cancelled, or participation promised if unfamiliar people fewer. Neutral adult address preserves no inferred age/gender/kinship.",
-      "q09person retains own selection while requesting only retrieval of two shelf samples. Correct help scope excludes choosing for the person, changing quantity to one, or treating requested retrieval as entirely self-performed. q10inspection must be completed before preparation, not reversed/simultaneous/omitted. No unnamed participant assigned a new collective task.",
-      "q11October27,consultationroom3,registration14:50,consultation15:00–15:20 preserved. Duration20minutes verified separately from registration time and wrong room4 distractor. No invented actual venue rule outside the fictional document.",
-      "q12record13:35cup placed on desk for the person, wish to drink later and actual intake amount explicitly unchecked. Preparation is not consumption evidence. Time/place/wish are known; no unrecorded drinking quantity or clinical instruction added.",
-      "q13consent only to arrange books with covers visible. No disposal or removal to another room. Letters remain outside scope, including reading and placing on same shelf. Showing covers does not broaden consent; old books are not authorized for staff selection/discard.",
-      "q14October29lunch plan distinguishes staple rice, tofu main dish and vegetable side dish. Plan is not evidence of food already served. Individual food form and serving results remain unconfirmed. Date reference is that planned day, not an invented assertion about today. q15Tanaka inspects; Kishimoto prepares only after checking inspection results; both verify assignment before beginning. No role reversal or sole worker responsibility for both tasks. Only source surnames/roles used, no given names/gender inferred.",
-      "All10nonempty passages fully translated with original line/turn structure, including scope restrictions and unconfirmed facts. First5empty passages and all15empty figure descriptions remain exact empty strings. No figures recreated or source furigana edited. All15questions,60options and60full specific reasons retained with exact IDs/order/sourceRevisions/correctIndex. Form title remains a mock-question title, not a claim of official certification. Only this complete form included; all11others remain pending."
+      "q01–04:Person-led choice distinguished from staff substituting decisions, family-only decisions and withdrawing needed physical help merely because the person can choose. QOL is the person’s satisfaction/meaning in life, not room area/staff workload/seat count. Assessment/planning/implementation/evaluation remain distinct; evaluation compares actual outcomes and goal/plan fit. Personal information shared only with necessary recipients under person consent/facility procedure; coworker status does not justify shop disclosure, family request alone does not justify private-contact transfer, anonymized personalSNS can still identify person/course.",
+      "q05–10:After excretion care and glove removal, hand hygiene remains necessary despite clean appearance; no substitution by disinfecting fresh-glove surfaces or waiting until next care ends. Locking person inside restricts freedom, unlike requested quiet conversation/matched pace/tool check. Physical/financial/psychological abuse and neglect differentiated, retaining repeated frightening threats and prolonged lack of food assistance. Teamwork conveys observed change, time and person wishes for professional judgment; no independent medication-dose change followed by notification. Broken walking aid not used even short distance/familiarity; report to assigned person and verify safe alternative before use, not after. Accident facts/unknowns conveyed promptly without waiting for completed report, cause certainty or next meeting.",
+      "q11–16:Stress can involve noise/fatigue/relationships; silence about anxiety does not prove none, same stimulus does not imply same personal intensity, rest alone does not erase relationship effects. Recall distinguished from encoding/retention/attention. Aging support considers life history and current state with individual variation; new complaints are not dismissed as age and current reactions still recorded. Dementia orientation difficulty concerns current date/time/place, distinguished from new-memory, sequencing/executive and calculation difficulties without inventing a diagnosis. Bladder temporarily stores urine until voiding, kidney produces it, esophagus transports food and large bowel absorbs water/forms stool; skin protects body surface and sweats.",
+      "q17–20:Open question asks what person wants to try rather than yes/no or two-option limits. Anxiety response listens without interruption and clarifies worry; distraction/schedule explanation/others’ participation do not establish reassurance. Facial expression/gesture are nonlanguage information; writing and sign language remain language and absence of sound does not make sign language nonlanguage. Person’s today-not-wanting-participation statement remains separate from still-unobserved participation. No invented stay in room, staff cancellation, participation or later rest.",
+      "q21–24:Movement widens life/social participation opportunities, not proof wishes met merely by arrival; same destination still requires this-occurrence explanation/wish check and equipment is no substitute for condition check. Sitting/side-lying/standing/supine postures differentiated. Prolonged inactivity-related physical/mental function decline/disuse syndrome distinguished from contact dermatitis, UTI and food allergy. Before movement support, verify current state/support, explain and obtain consent; no automatic reuse of prior consent, destination-seat-only check or staff-only method decision because person hurried.",
+      "q25–30:Meals provide nutrition plus enjoyment/social contact, not satisfaction proved by intake or nutrition-only/environment-free planning. Chewing mixes with saliva, swallowing differs from esophageal peristalsis/gastric digestion. Before serving, identify person and match current food form/allergy conditions; time/count/yesterday’s appearance/dish color insufficient. Do not require immediate answers while chewing, even for hearing checks; no response is not proof of understanding. Excretion support combines necessary assistance/observation and privacy; shame alone is not permission for unilateral cancellation of needed monitoring, and speed/staff convenience cannot replace explanation/consent or corridor screening. Urination/defecation names correctly paired, with all wrong mappings preserved as distractors and individually explained.",
+      "q31–35:Stool change reporting retains date/time, observed state and person words; yesterday’s record is not today’s evidence and one change is not diagnosis. Wet trousers are observed, cause remains unconfirmed; neither incontinence nor spilled-water cause inferred from wetness/cup, and lack of explanation does not erase observed wetness. Clothing supports temperature control/skin protection; thickness does not replace environment/current-condition checks, size affects mobility/comfort, season alone insufficient. Preparation differs from actual dressing completion; before/after comfort/pain checked even for person-selected clothes or existing consent. Oral gum bleeding/swelling explicitly reported with location/state to medical professionals, not self-diagnosed/self-medicated or rewritten as usual merely because person not concerned.",
+      "q36–40:Bathing/hygiene involve cleanliness, comfort, daily rhythm and person feelings/habits; schedule does not reduce current health check. Face-washing consultation alone is neither whole-body consent nor completed washing; rejecting whole-body support does not cancel face consultation wish. Shopping as instrumental daily living activity differs from basic eating/toileting/dressing movements. Before arranging belongings, check what to keep/how and specific consent; no staff discretionary disposal or family-only classification. Laundry method follows material/care label despite same color, previous owner method or low visible soil.",
+      "q41Figure:top-view route, A destination/Blarge obstructing box/Ccurrent position complete. Correct judgment checks box with assigned person and makes route safe before use; correct destination or waiting atC does not establish safety, and person is not asked to step over obstacle.",
+      "q42Figure:left serving slip person012/formP3 versus right tray person014/formP3 retained with leading zeros. SameP3 is not identity match; verify before serving. No self-correction of label or placing tray before identification merely because seat empty.",
+      "q43Figure:Aexcretion support place/Bopen entrance/Ccorridor and dotted sightline from corridor toA retained. Check entrance/view and provide required screening before support; short duration, corridor explanation or telling person not to mind cannot replace privacy adjustment.",
+      "q44Figure:leftpersonselection outergarmentRblue versus preparedSgreen, both product code and color differ. Preparation does not mean person changed choice; disclose mismatch/reconfirm wishes and do not rewrite person’s selection. q45Figure:person’sblue-tag items storedA/yellow-tag items designated disposalB/centralCuntagged. Missing label is not disposal consent or staff authority to keep based on apparent usability. No swapping person labels; confirm C treatment with person before classification.",
+      "All45passages exactempty and all40absent-content figure descriptions exactempty; five full descriptions translated without recreating images or altering furigana/source assets. Every question has four complete option-specific reasons and unchanged correctIndex. Existing Japanese mock01 entire rawJSON form object and topmetadata unchanged, including15Q/60rationales/10full passages. Only one complete new form appended; ten others remain pending."
     ],
     "styleChecks": [
-      "Natural complete Khmer explanations with cause/contrast/condition clauses; no clipped outline or generic rationale substitution.",
-      "Khmer neutral ខ្ញុំ/អ្នក and explicit person/staff/colleague roles, consistent respectful adult address and own names/terms.",
-      "Japanese terms retained only where the Japanese headword itself is being tested; all explanations directly translated into Khmer.",
-      "Dialogue confirms choices and uncertainty without invented promises, permissions, care actions or relationships."
+      "Complete natural connected adult Khmer with full reason/condition/contrast clauses; no outline compression or generic replacement rationales.",
+      "Neutral person/staff/professional roles and established own terminology; no invented age, gender, kinship or names.",
+      "Preserve modality such as may/unconfirmed/cannot infer and individual/current-condition versus generic rules.",
+      "Figure codes/numbers/colors/sightlines and safe clinical recipients preserved as source meanings, without new procedures or diagnosis."
     ],
     "correctionsDuringSelfReview": [
-      "Removed an unstated collective actor from sequence-confirmation options and avoided assigning paper preparation to the care recipient.",
-      "Kept the colleague’s missing Tuesday detail as information not yet heard rather than claiming a question had not been asked.",
-      "Retained warm-water references and smoothed bathing/foot-basin wording without adding numerical conditions.",
-      "Clarified same-shelf wording, planned-day date reference and the specific division of inspection versus preparation.",
-      "Used established own transfer/excretion/handover/denture terms and differentiated staple/main/side dish labels."
+      "Replaced a literal written-reference phrase with natural wording that staff experience can inform consideration without overriding person choice.",
+      "Smoothed encoding and new-complaint wording while retaining the exact memory/refraining-from-reporting distinctions.",
+      "Retained both necessary assistance and monitoring alongside privacy, rather than wording them as interchangeable alternatives.",
+      "Expanded urination/defecation mappings into natural full Khmer statements, retaining all distractor mappings exactly.",
+      "Clarified dotted-line wording and rechecked A/B/C,R/S,012/014/P3 and source color distinctions."
     ],
     "mechanicalChecks": [
-      "BothJapaneseSHA256hashes and scoped/currentcanonicalform equality PASS.",
-      "Exactly1completeform,15questions,60options,60specificrationales; fixedtitle/question sourceRevisions, IDs/order/correctIndex/status PASS.",
-      "15passagefields=10full+5exactempty;15figureDescriptionfields=0full+15exactempty; allfullpassage linecounts preserved.",
-      "Only contract fields in target form/questions, no furigana/source modifications and no otherform/partialquestion publication.",
-      "All26ownweeklytargets and26ownweeklyreview files plus ownprofile byte-identical toHEAD.",
-      "Allsixstandardapprovalflagsfalse; allnonemptyteachingstrings contain Khmer/no placeholders; completed+11remainingformIDs matchcanonicalformIDs.",
-      "Owner publishes only ownmocktarget/review; root handles shared registration/runtime/inventory/persistence."
+      "New1completeform45Q180options180specificrationales/45exactempty passages/5full+40exactemptyfigureDescriptions PASS.",
+      "Cumulative2forms60Q240options240rationales/10nonemptypassages50empty/5nonemptyfigureDescriptions55empty PASS.",
+      "Source scoped/fullSHA256 and canonicalcurrentformequality, exactIDs/order/title+question sourceRevisions/correctIndex/contractfields/status PASS.",
+      "Existing Japanese mock01 rawJSON formobject bytes identical, rawSHA2567729d04118d22eb80a74efe5be76cf89de3f205729e6e369c38f49f59ec6c983; alltopmetadata exactlypreserved.",
+      "Figure-description letter/code token sequences preserved, including012/014 leadingzeros andP3.",
+      "All26ownweeklytargets and26ownweeklyreview files plusprofile byte-identical toHEAD; priorpreferredterms/names unchanged.",
+      "Sixstandardapprovalflagsfalse, allnonemptyteachingstrings containKhmer/no placeholders, completed+10remainingIDs matchcanonicalformIDs.",
+      "Onlyowncumulativemocktarget/review changed; no partialform,sharedregistry/UI/script/source/asset edits."
     ],
-    "validationStatus": "PASS_OWN_KM_JAPANESE_MOCK01_MEANING_PROSE_BINDINGS_COUNTS_PASSAGES_PRESERVATION",
-    "limits": "AI own-locale semantic/style and structural checks do not establish independent Khmer, care-domain, native-device, rights or release approval."
+    "validationStatus": "PASS_OWN_KM_SKILLS_MOCK01_MEANING_PROSE_BINDINGS_COUNTS_FIGURES_PRIOR_RAW_OBJECT_PRESERVATION",
+    "limits": "AI own-locale semantic/style and structural checks do not establish independent Khmer, domain, native-device, rights or release approval."
   },
   "openIssues": [
     "Independent Khmer and care-domain review pending.",
-    "Root integration, selected-language runtime/rendering, missing-form behavior and persistence checks pending at owner handoff."
+    "Root integration/runtime/rendering/missing-form behavior and persistence pending at owner handoff; no native-device claim."
   ],
   "remaining": {
-    "fullMockForms": 11,
-    "status": "pending_next_persistence_gate",
-    "weeklyUnits": 0
+    "fullMockForms": 10,
+    "weeklyUnits": 0,
+    "status": "pending_next_persistence_gate"
   },
-  "freeze": "Only complete kaigo-japanese-mock-01 frozen. Do not begin another form before root QA and persistence checkpoint.",
+  "freeze": "Only complete skillsmock01 appended; Japanese mock01 exactly preserved. No nextform before root QA and persistence.",
   "humanReviewed": false,
   "domainReviewed": false,
   "nativeReviewed": false,
