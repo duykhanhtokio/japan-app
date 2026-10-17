@@ -1,3 +1,15 @@
+# Conceptual-depth verification complete —2026-10-17
+
+All103reader routes passed actualChromium:240Japanese/240Vietnamese paragraphs,16revision upgrades. All2004locale host renders passed; focusedTypeScript andJLPT10/10lock passed.62source units/221pagebindings validated. Source-expression screen4023paragraphs across13PDFs: no new22-character exact-span candidates; prior standard technical English name retained by identical hash. Nine identified partial explanations implemented. Whole-source semantic/atomic completeness and physical recognition are not certified; independent professional/native-language/rights and production/native-device checks remain open.
+
+---
+
+# Nine identified conceptual-depth gaps implemented —2026-10-17
+
+Added bounded explanations to035/038/040/041/042at revision2, and building058/civil019at revision1. All12locale overlays updated; priorr1completion retained without auto-completingr2. Two original concept diagrams inspected. Actual host:456records/72weeks/4023Japanese paragraphs/71additionalviews/167additionalparagraphs/2004locale renders/240scopedparagraph renders/844original inputs byte-preserved. Source identity:62units/221page bindings. Complete source atomic coverage, physical recognition atlas, production/native-device and independent professional/native-language/rights gates remain unapproved.2号deferred.
+
+---
+
 # Preserved parallel source clarifications and full reader verification
 
 101 reader routes passed; 036 and 043 remain revision 2 with all 12 locales and prior completion keys preserved. Source semantic review identifies 9 remaining conceptual-depth objectives. No professional or release approval inferred.

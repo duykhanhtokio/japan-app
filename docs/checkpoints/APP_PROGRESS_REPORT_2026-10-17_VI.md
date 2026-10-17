@@ -1,3 +1,11 @@
+Cập nhật sau đợt hoàn thiện 9 mục kiến thức —17/10/2026
+
+Đã bổ sung 9 phân biệt khái niệm còn thiếu vào 5 bài revision2 và 2 bài mới, đủ12ngôn ngữ và2sơ đồ. Hiện có456bản ghi/4023đoạn Nhật/71bài bổ sung. Host đạt2004lượt đoạn dịch; Chromium đạt103tuyến đọc/240đoạn Nhật vàViệt/16lượt nâng phiên bản giữ tiến độ.844đầu vào gốc giữ nguyên. Không còn mục partial_explanation trong62mục đã rà; đây không phải chứng nhận đã phân rã hết13PDF hoặc hoàn thành phát hành. Các điều kiện sản phẩm, chuyên gia, ngôn ngữ, quyền sử dụng vàthiết bị thật vẫn được ghi mở trong hồ sơ.
+
+Báo cáo kiểm kê trước đợt bổ sung được giữ bên dưới để đối chiếu.
+
+---
+
 Báo cáo tiến độ Japan App — kiểm kê ngày 17/10/2026
 
 Báo cáo này đối chiếu dữ liệu đang được app nạp, registry thực thi và kết quả kiểm tra. “Đủ số lượng dữ liệu”, “đạt kiểm tra kỹ thuật” và “sẵn sàng phát hành” là ba trạng thái khác nhau. Toàn bộ app chưa hoàn tất để phát hành; không có cơ sở quy đổi tiến độ chung thành một tỷ lệ phần trăm.

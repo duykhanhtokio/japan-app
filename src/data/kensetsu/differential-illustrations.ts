@@ -1,5 +1,7 @@
 import type { ImageSourcePropType } from 'react-native';
 export const differentialIllustrations: Record<string, ImageSourcePropType> = {
+ 'assets/kensetsu/differential/b58.png': require('../../../assets/kensetsu/differential/b58.png'),
+ 'assets/kensetsu/differential/c19.png': require('../../../assets/kensetsu/differential/c19.png'),
  'assets/kensetsu/differential/b53.png': require('../../../assets/kensetsu/differential/b53.png'),
  'assets/kensetsu/differential/b54.png': require('../../../assets/kensetsu/differential/b54.png'),
  'assets/kensetsu/differential/b55.png': require('../../../assets/kensetsu/differential/b55.png'),
