@@ -1,3 +1,15 @@
+# Latest continuation — components unit2026-10-17
+
+This section supersedes the historical counts below. Added building009–012 (formwork parts/shape/hand tools, pump subsystems, carpentry tools),14 new Japanese paragraphs,12-locale translations,4 original concept diagrams and14 new source-bound questions. Building009–011 shared into civil via explicit assignments;012 carpentry is building-only. See COMPONENTS_DIFFERENTIAL_LEDGER_2026-10-17.json.4titles+14paragraphs independently translated by6AI pairs, each2locales; no cross-translation or peer-review certification.
+
+Current internal counts:399 global records (385original+14differential views);33unique additional paragraphs;14diagrams;396locale-paragraph checks;building111practical entries and131questions;civil114entries and136questions. Common theory161lessons/165questions and utilities224practical/235questions unchanged. Shared canonical per new field101,102distinct across both.
+
+Atomic differences in this unit are editorially integrated, not safety/domain/native/rights/release approved. Detailed support design/stock dimensions, operational pump procedures and remaining finishing/landscaping definitions still need reconciliation. Source5k16–21 and5d22–26 read; selected page images inspected as ledger records. Independent primary manufacturer check supports the squeeze-tube pumping concept only. Complete source coverage and10×40banks remain pending. Browser/native QA still unconfirmed.
+
+Next:5k22–32 and5d26–31, compare each definition against existing Japanese before writing; then specialised6k/6d and7k/7d. Do not repeat the already translated33paragraphs or original385lessons. Publish/fetch/persistence-check this unit before further authoring.
+
+---
+
 # 建設1号 — Differential completion checkpoint
 
 Publisher instruction 2026-10-17: finish the missing items, reuse common knowledge, keep 2号 deferred. This checkpoint supersedes previous runtime counts, not the uncompleted whole-source audit.

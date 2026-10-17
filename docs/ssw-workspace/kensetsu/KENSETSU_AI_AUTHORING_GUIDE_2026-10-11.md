@@ -2,6 +2,10 @@
 
 Ngày lập: 2026-10-11, Asia/Tokyo. Phạm vi hiện tại: hoàn thiện nội dung để học, bản dịch và ảnh minh họa mới cho 特定技能1号 và 特定技能2号. Phần thi hoàn toàn bằng tiếng Nhật sẽ thiết kế sau khi phần học hoàn thiện. Đây là hướng dẫn thực thi cho AI tiếp nối dự án, không phải báo cáo nội dung đã sản xuất hay chứng nhận tài liệu đã bao phủ đủ.
 
+## Cập nhật tiếp nối — bộ phận cốp pha/bơm/dụng cụ mộc
+
+Đọc điểm đầu FIELD_PRACTICAL_CHECKPOINT.md: hiện14mục bổ sung/33đoạn Nhật,12locale,14sơ đồ,33câu bổ sung. 建築111mục thực hành/131câu;土木114mục/136câu. Bài012mộc chỉ thuộc 建築;009–011dùng chungciviltừnguồn5d. Các số cũ bên dưới là lịch sử. Chưa bao phủ nguồn toàn bộ;chưa đủ10×40;2号tiếp tục chờ.
+
 ## Điểm tiếp nối mới nhất — hoàn thiện phần khác biệt (2026-10-17)
 
 Chủ dự án yêu cầu làm hết các mục còn thiếu của1号; yêu cầu này cho phép bổ sung phần học, dịch, sơ đồ và câu hỏi. Bản phát triển hiện có10mục bổ sung/19đoạn Nhật,12locale dịch,10sơ đồ vai trò và19câu hỏi bổ sung. Hai bài chung365–366 được dùng lại có giới hạn; mỗi nhánh mới có101bài gốc tái sử dụng. Thực hành 建築107mục/117câu;土木111mục/125câu. Những số9mục/16đoạn/99bài/104câu ở các đoạn lịch sử bên dưới đã được cập nhật bởi checkpoint mới.

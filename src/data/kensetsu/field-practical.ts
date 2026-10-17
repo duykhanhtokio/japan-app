@@ -1,3 +1,11 @@
+import building9 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-009.json';
+import b9 from './differential-translations/b9.json';
+import building10 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-010.json';
+import b10 from './differential-translations/b10.json';
+import building11 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-011.json';
+import b11 from './differential-translations/b11.json';
+import building12 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-012.json';
+import b12 from './differential-translations/b12.json';
 import b3 from './differential-translations/b3.json';
 import b4 from './differential-translations/b4.json';
 import b5 from './differential-translations/b5.json';
@@ -29,14 +37,14 @@ import civil6 from '../../../docs/ssw-workspace/kensetsu/civil/practical/session
 import civil7 from '../../../docs/ssw-workspace/kensetsu/civil/practical/session-007.json';
 import civilWeek1 from '../../../docs/ssw-workspace/kensetsu/civil/practical/week-001.json';
 import type { Session, Week, Cluster } from './index';
-const originalFieldPracticalSessions: Session[] = [building1, building2, building3, building4, building5, building6, building7, civil1, civil2, civil3, civil4, civil5, civil6, civil7, building8];
+const originalFieldPracticalSessions: Session[] = [building1, building2, building3, building4, building5, building6, building7, civil1, civil2, civil3, civil4, civil5, civil6, civil7, building8, building9, building10, building11, building12];
 export const fieldPracticalWeeks: Week[] = [
  {...buildingWeek1, titleJa: '構造工事の工具・部材の補足'},
  {...civilWeek1, titleJa: '土木に固有の機械・設備の補足'},
  buildingWeek2,
 ];
 
-const differentialTranslations = new Map<string, TranslationBundle>([b3, b4, b5, b6, b7, c3, c5, c6, c7, b8].map(bundle => [bundle.sessionId, bundle]));
+const differentialTranslations = new Map<string, TranslationBundle>([b3, b4, b5, b6, b7, c3, c5, c6, c7, b8, b9, b10, b11, b12].map(bundle => [bundle.sessionId, bundle]));
 
 // Retain only additional facts in the active reader; original authored JSON stays archived intact.
 export const fieldPracticalSessions: Session[] = originalFieldPracticalSessions.flatMap(session => {

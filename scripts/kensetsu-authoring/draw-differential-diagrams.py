@@ -8,7 +8,15 @@ def start(title):
  im=Image.new('RGB',(1200,650),cream);d=ImageDraw.Draw(im);d.rounded_rectangle((20,20,1180,630),radius=28,outline=gold,width=3);d.text((55,42),title,font=F(34),fill=navy);d.line((55,100,1145,100),fill=gold,width=2);d.text((55,590),'役割を比べる概念図・操作手順ではありません',font=F(23),fill=ink);return im,d
 def card(d,x,y,w,h,title,lines):
  d.rounded_rectangle((x,y,x+w,y+h),radius=18,fill='#F0F3EE',outline=teal,width=3);d.text((x+22,y+22),title,font=F(31),fill=navy)
- for i,l in enumerate(lines):d.text((x+22,y+80+i*47),l,font=F(27),fill=ink)
+ wrapped=[]
+ for line in lines:
+  part=''
+  for char in line:
+   if part and d.textlength(part+char,font=F(27))>w-44:wrapped.append(part);part=''
+   part+=char
+  wrapped.append(part)
+ assert len(wrapped)<=6,(title,wrapped)
+ for i,line in enumerate(wrapped):d.text((x+22,y+80+i*47),line,font=F(27),fill=ink)
 def save(key,title,groups):
  im,d=start(title);w=(1090-(len(groups)-1)*24)//len(groups)
  for i,(t,ls)in enumerate(groups):card(d,55+i*(w+24),135,w,395,t,ls)
@@ -31,7 +39,11 @@ for yy,sg in [(175,1),(315,-1)]:d.line((548,yy+sg*15,560,yy,572,yy+sg*15),fill=g
 d.line((400,315,590,315),fill=teal,width=2);d.text((585,220),'下がった分',font=F(27),fill=navy);d.text((150,500),'コーンを外した後の試料（模式図）',font=F(25),fill=ink)
 card(d,780,140,365,385,'区別すること',['スランプの測定','≠ 硬化後の強度試験','','型枠側からの振動','≠ 内部締固めの全代替'])
 im.save(out/'b8.png',optimize=True);ims.append(im)
-contact=Image.new('RGB',(1200,5*325),'#dddddd')
+ims.append(save('b9','型枠をつくる部材と、支える部材',[('間隔・締付け',['セパレーター：間隔','Pコン：端部','フォームタイ：締付け']),('面と補強',['せき板：接する面','桟木：補強・接続','パネル：板＋補強']),('荷重を受ける部分',['端太角・トンボ端太','横向きに受ける','パイプサポート：支柱'])]))
+ims.append(save('b10','形を残す・案内する・外しやすくする',[('完成形をつくる',['面木：角の面取り','目地棒：平面の溝','欠き込み材：欠き込み']),('工具',['フック：穴へ案内','タイ回し：締める・緩める']),('剥離剤',['型枠の表面に用いる','混和剤・支柱とは別','取外し可否の判断とは別'])]))
+ims.append(save('b11','ポンプの部位を目的で整理する',[('受入れ・検知',['ホッパ：受入れ','スクリーン：開口の部品','レベルセンサ：量を検知']),('動力・給油',['PTO：動力の取出し','油圧回路：発生・制御','給油装置：グリス供給']),('経路・支持',['輸送管：材料の経路','ブーム：経路を届かせる','アウトリガ：車体の安定'])]))
+ims.append(save('b12','木の繊維・削る形・印の基準',[('切る方向',['縦引き：繊維に沿う','横引き：繊維を横切る','両刃：両側に用途別の刃']),('削る形',['のみ：溝や穴を削る','かんな：表面を整える','きり：回転で穴をつくる']),('印と打撃',['筋毛引き：平行な線','げんのう：打撃','用途を入れ替えない'])]))
+contact=Image.new('RGB',(1200,((len(ims)+1)//2)*325),'#dddddd')
 for i,im in enumerate(ims):im=im.resize((600,325));contact.paste(im,((i%2)*600,(i//2)*325))
 # Source-controlled generator; the review contact sheet is a temporary QA artifact.
 import os

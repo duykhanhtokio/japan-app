@@ -24,7 +24,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  const sharedSets={};
  for(const field of ['utilities','building','civil']){
   const theory=m.sessionsForScope('1',field,'theory');assert.equal(theory.length,161);
-  const practical=m.sessionsForScope('1',field,'practical');assert.equal(practical.length,field==='utilities'?224:field==='building'?107:111);
+  const practical=m.sessionsForScope('1',field,'practical');assert.equal(practical.length,field==='utilities'?224:field==='building'?111:114);
   assert.equal(new Set(practical.map(s=>s.id)).size,practical.length);
   if(field!=='utilities'){
    const assigned=policy.canonicalPracticalAssignments[field];assert.equal(assigned.length,101);
@@ -35,7 +35,8 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
   }
   for(const subject of ['theory','practical']){assert.equal(m.sessionsForScope('2',field,subject).length,0);assert.equal(m.reviewTestsForScope('2',field,subject).length,0);}
  }
- assert.equal(m.sessions.length,395);
+ assert.equal(m.sessions.length,399);
+ assert(!m.sessionsForScope('1','civil','practical').some(s=>s.id==='kensetsu-building-practical-session-012'),'Carpentry scope leaked into civil');
  const scopeRows=[];
  for(const field of ['utilities','building','civil'])for(const subject of ['theory','practical']){
   const tests=m.reviewTestsForScope('1',field,subject),questions=tests.flatMap(e=>e.questions);
@@ -67,7 +68,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  const unmount=async()=>settle(()=>renderer.unmount());
  await mount();await click('kensetsu-level-2');assert.equal(host('kensetsu-level-2-pending','Text').length,1);assert.equal(host('kensetsu-field-building').length,0);await unmount();
  let deltaParagraphsRendered=0,excludedParagraphsAbsent=0;
- for(const view of policy.deltaViews)for(const field of (view.sessionId.includes('-building-')?['building','civil']:['civil'])){
+ for(const view of policy.deltaViews)for(const field of ['building','civil'].filter(field=>m.isSessionInScope(m.sessionById.get(view.sessionId),'1',field,'practical'))){
   const key=m.completionKey('reuse-learner','1',field);
   // An old calendar index must not restore the wrong week after sharing changes the list.
   globalThis.__scopeStorage.set(key+':navigation:practical:v2',JSON.stringify({week:0,lastId:view.sessionId,view:'days',offset:0}));
@@ -80,7 +81,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
   }
   await unmount();
  }
- assert.equal(deltaParagraphsRendered,30);assert.equal(excludedParagraphsAbsent,60);
+ assert.equal(deltaParagraphsRendered,55);assert.equal(excludedParagraphsAbsent,60);
  for(const field of ['building','civil']){
   const key=m.completionKey('reuse-learner','1',field),retired=policy.retiredSessionIds.find(id=>id.includes('-'+field+'-'))+':r1';
   globalThis.__scopeStorage.set(key,JSON.stringify({[retired]:true}));globalThis.__scopeStorage.delete(key+':navigation:practical:v2');
@@ -94,7 +95,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
   await click('kensetsu-test-choice-'+(exam.questions[0].correctIndex+1));await click('kensetsu-test-submit');await click('kensetsu-test-confirm-submit');assert.equal(host('kensetsu-test-result','View').length,1);await unmount();
  }
  for(const field of ['building','civil']){
-  const scoped=m.reviewTestsForScope('1',field,'practical'),exam=scoped.at(-1);assert(exam.id.startsWith('kensetsu-delta-test-11'));
+  const scoped=m.reviewTestsForScope('1',field,'practical'),exam=scoped.at(-1);assert(exam.id.startsWith('kensetsu-delta-test-12'));
   await mount();await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-tests');await click('kensetsu-test-exam-'+String(scoped.length).padStart(2,'0'));
   assert(renderer.root.findAll(n=>n.type==='Text'&&n.children.includes(exam.questions[0].promptJa)).length>0);
   assert.equal(host('kensetsu-test-explanation','Text').length,0);
@@ -125,9 +126,9 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
    assert(host('kensetsu-study-image').length>0);await unmount();
   }
  }
- assert.equal(localeParagraphRenderChecks,228);
+ assert.equal(localeParagraphRenderChecks,396);
  const hashes=JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/kensetsu/PRACTICAL_REUSE_PRESERVED_INPUTS_2026-10-17.json')));
  for(const [file,hash]of Object.entries(hashes))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex'),hash,file);
- const report={status:'PASS_SOURCE_BOUND_REUSE_DEDUP_AND_ACTUAL_HOST_FLOW',sharedCanonicalLessonsPerField:{building:101,civil:101},distinctCanonicalLessonsReused:102,activeCanonicalAndDeltaRecords:395,additionalFactViews:10,uniqueAdditionalParagraphs:19,additionalParagraphRenderChecks:deltaParagraphsRendered,excludedParagraphChecks:excludedParagraphsAbsent,sharedAdditionalFactViewsLinkedIntoCivil:6,duplicateParagraphsRemovedFromNineUniqueViews:38,fullyRetiredDraftLessons:5,retiredDraftParagraphs:30,totalPriorDraftParagraphsRemovedFromActiveReader:68,scopedQuestions:scopeRows,targetLocales:locales,localeParagraphRenderChecks,additionalDiagrams:10,newInstructionalParagraphsAuthored:3,newQuestionsAuthored:19,originalLessonTranslationAndQuestionInputsBytePreserved:Object.keys(hashes).length,canonicalLessonTranslationsAndArtworkReusedByReference:true,archivedDraftCompletionPreservedWithoutMarkingReplacementLessons:true,navigationRestoredByStableLessonId:true,utilitiesSpecificSourceLessonsNotInOtherFields:true,twoGoDeferred:true,actualHostComponentFlow:true,newSupplementaryTestHostSubmissionFields:2,nativeDeviceTested:false,browserScreenshots:false,wholeSourceCoverageConfirmed:false,releaseReady:false};
+ const report={status:'PASS_SOURCE_BOUND_REUSE_DEDUP_AND_ACTUAL_HOST_FLOW',sharedCanonicalLessonsPerField:{building:101,civil:101},distinctCanonicalLessonsReused:102,activeCanonicalAndDeltaRecords:399,additionalFactViews:14,uniqueAdditionalParagraphs:33,additionalParagraphRenderChecks:deltaParagraphsRendered,excludedParagraphChecks:excludedParagraphsAbsent,sharedAdditionalFactViewsLinkedIntoCivil:9,duplicateParagraphsRemovedFromNineUniqueViews:38,fullyRetiredDraftLessons:5,retiredDraftParagraphs:30,totalPriorDraftParagraphsRemovedFromActiveReader:68,scopedQuestions:scopeRows,targetLocales:locales,localeParagraphRenderChecks,additionalDiagrams:14,newInstructionalParagraphsAuthored:14,newQuestionsAuthored:14,originalLessonTranslationAndQuestionInputsBytePreserved:Object.keys(hashes).length,canonicalLessonTranslationsAndArtworkReusedByReference:true,archivedDraftCompletionPreservedWithoutMarkingReplacementLessons:true,navigationRestoredByStableLessonId:true,utilitiesSpecificSourceLessonsNotInOtherFields:true,twoGoDeferred:true,actualHostComponentFlow:true,newSupplementaryTestHostSubmissionFields:2,nativeDeviceTested:false,browserScreenshots:false,wholeSourceCoverageConfirmed:false,releaseReady:false};
  if(process.env.KENSETSU_SCOPE_QA_REPORT)fs.writeFileSync(process.env.KENSETSU_SCOPE_QA_REPORT,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 })().catch(e=>{console.error(e);process.exit(1)});
