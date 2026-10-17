@@ -1,3 +1,4 @@
+import { differentialIllustrations, differentialIllustrationAspectRatios } from './differential-illustrations';
 import reusePolicy from './reuse-policy.json';
 import { fieldPracticalSessions, fieldPracticalWeeks } from './field-practical';
 import translations379 from './translations/session-379.json';
@@ -857,12 +858,14 @@ export const weeks:Week[]=[week001,week002,week003,week004,week005,week006,week0
 export const sessionById=new Map(sessions.map(s=>[s.id,s]));
 export const illustrationAspectRatios:Record<string,number>={
  ...weeklyIllustrationAspectRatios,
+ ...differentialIllustrationAspectRatios,
  'assets/kensetsu/shared/greeting-v1.webp':1.7768331562167907,
  'assets/kensetsu/shared/handover-v1.webp':1.7768331562167907,
  'assets/kensetsu/shared/morning-meeting-v1.webp':1.7768331562167907,
 };
 export const illustrations:Record<string,ImageSourcePropType>={
  ...weeklyIllustrations,
+ ...differentialIllustrations,
  'assets/kensetsu/shared/handover-v1.webp':require('../../../assets/kensetsu/shared/handover-v1.webp'),
  'assets/kensetsu/shared/greeting-v1.webp':require('../../../assets/kensetsu/shared/greeting-v1.webp'),
  'assets/kensetsu/shared/morning-meeting-v1.webp':require('../../../assets/kensetsu/shared/morning-meeting-v1.webp'),

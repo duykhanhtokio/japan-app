@@ -19,14 +19,15 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  const box={exports:{}};new Function('module','exports','require',result.outputFiles[0].text)(box,box.exports,dep);const m=box.exports;
  const policy=JSON.parse(fs.readFileSync(path.join(root,'src/data/kensetsu/reuse-policy.json')));
  const canonical=JSON.parse(fs.readFileSync(path.join(root,'src/data/kensetsu/review-tests.ja.json')));
- const originalQuestions=new Map(canonical.exams.flatMap(e=>e.questions).map(q=>[q.id,q]));
+ const differential=JSON.parse(fs.readFileSync(path.join(root,'src/data/kensetsu/differential-review-tests.ja.json')));
+ const originalQuestions=new Map([...canonical.exams,...differential.exams].flatMap(e=>e.questions).map(q=>[q.id,q]));
  const sharedSets={};
  for(const field of ['utilities','building','civil']){
   const theory=m.sessionsForScope('1',field,'theory');assert.equal(theory.length,161);
-  const practical=m.sessionsForScope('1',field,'practical');assert.equal(practical.length,field==='utilities'?224:field==='building'?104:108);
+  const practical=m.sessionsForScope('1',field,'practical');assert.equal(practical.length,field==='utilities'?224:field==='building'?107:111);
   assert.equal(new Set(practical.map(s=>s.id)).size,practical.length);
   if(field!=='utilities'){
-   const assigned=policy.canonicalPracticalAssignments[field];assert.equal(assigned.length,99);
+   const assigned=policy.canonicalPracticalAssignments[field];assert.equal(assigned.length,101);
    for(const id of assigned){const lesson=practical.find(s=>s.id===id);assert.strictEqual(lesson,m.sessionById.get(id));}
    assert(!practical.some(s=>s.id==='kensetsu-common-session-169')); // utilities electrical detail
    assert(!practical.some(s=>s.id==='kensetsu-common-session-309')); // utilities pipe detail
@@ -34,7 +35,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
   }
   for(const subject of ['theory','practical']){assert.equal(m.sessionsForScope('2',field,subject).length,0);assert.equal(m.reviewTestsForScope('2',field,subject).length,0);}
  }
- assert.equal(m.sessions.length,394);
+ assert.equal(m.sessions.length,395);
  const scopeRows=[];
  for(const field of ['utilities','building','civil'])for(const subject of ['theory','practical']){
   const tests=m.reviewTestsForScope('1',field,subject),questions=tests.flatMap(e=>e.questions);
@@ -62,7 +63,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  const settle=async fn=>act(async()=>{if(fn)fn();await Promise.resolve();await Promise.resolve();});
  const host=(id,type='Pressable')=>renderer.root.findAll(n=>n.type===type&&n.props.testID===id);
  const click=async id=>{const n=host(id)[0];assert(n,'Missing '+id);assert(!n.props.disabled,'Disabled '+id);await settle(()=>n.props.onPress());};
- const mount=async()=>settle(()=>{renderer=TR.create(React.createElement(m.KensetsuCourse,{learner:'reuse-learner',language:'vi',onBack(){}}));});
+ const mount=async(language="vi")=>settle(()=>{renderer=TR.create(React.createElement(m.KensetsuCourse,{learner:'reuse-learner',language,onBack(){}}));});
  const unmount=async()=>settle(()=>renderer.unmount());
  await mount();await click('kensetsu-level-2');assert.equal(host('kensetsu-level-2-pending','Text').length,1);assert.equal(host('kensetsu-field-building').length,0);await unmount();
  let deltaParagraphsRendered=0,excludedParagraphsAbsent=0;
@@ -79,7 +80,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
   }
   await unmount();
  }
- assert.equal(deltaParagraphsRendered,24);assert.equal(excludedParagraphsAbsent,60);
+ assert.equal(deltaParagraphsRendered,30);assert.equal(excludedParagraphsAbsent,60);
  for(const field of ['building','civil']){
   const key=m.completionKey('reuse-learner','1',field),retired=policy.retiredSessionIds.find(id=>id.includes('-'+field+'-'))+':r1';
   globalThis.__scopeStorage.set(key,JSON.stringify({[retired]:true}));globalThis.__scopeStorage.delete(key+':navigation:practical:v2');
@@ -92,8 +93,41 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
   const exam=m.reviewTestsForScope('1',field,'practical')[0];await click('kensetsu-test-exam-01');assert.equal(host('kensetsu-test-explanation','Text').length,0);
   await click('kensetsu-test-choice-'+(exam.questions[0].correctIndex+1));await click('kensetsu-test-submit');await click('kensetsu-test-confirm-submit');assert.equal(host('kensetsu-test-result','View').length,1);await unmount();
  }
+ for(const field of ['building','civil']){
+  const scoped=m.reviewTestsForScope('1',field,'practical'),exam=scoped.at(-1);assert(exam.id.startsWith('kensetsu-delta-test-11'));
+  await mount();await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-tests');await click('kensetsu-test-exam-'+String(scoped.length).padStart(2,'0'));
+  assert(renderer.root.findAll(n=>n.type==='Text'&&n.children.includes(exam.questions[0].promptJa)).length>0);
+  assert.equal(host('kensetsu-test-explanation','Text').length,0);
+  await click('kensetsu-test-choice-'+(exam.questions[0].correctIndex+1));await click('kensetsu-test-submit');await click('kensetsu-test-confirm-submit');
+  assert.equal(host('kensetsu-test-result','View').length,1);await unmount();
+ }
+ const allQuestions=[...canonical.exams,...differential.exams].flatMap(e=>e.questions);
+ const norm=text=>text.normalize('NFKC').replace(/[\s。、！？「」]/gu,'');
+ assert.equal(new Set(allQuestions.map(q=>norm(q.promptJa))).size,allQuestions.length,'Duplicate normalized prompt');
+ for(const q of differential.exams.flatMap(e=>e.questions)){
+  assert.equal(q.choicesJa.length,4);assert.equal(new Set(q.choicesJa.map(norm)).size,4);assert(q.correctIndex>=0&&q.correctIndex<4);
+  for(const ref of q.sourceReferences){const bytes=fs.readFileSync(path.join(root,ref.lessonFile));assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),ref.lessonSha256);const lesson=m.sessionById.get(ref.sessionId);assert(ref.paragraphIds.every(id=>lesson.clusters.some(c=>c.paragraphs.some(p=>p.id===id))));}
+ }
+ const locales=['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];
+ let localeParagraphRenderChecks=0;
+ for(const view of policy.deltaViews){
+  const lesson=m.sessionById.get(view.sessionId),field=view.sessionId.includes('-building-')?'building':'civil';
+  for(const locale of locales){
+   assert(lesson.titleTranslations?.[locale]);
+   for(const c of lesson.clusters){assert(c.titleTranslations?.[locale]);assert(c.illustration?.captionTranslations?.[locale]);assert(m.illustrations[c.illustration.assetPath]);for(const term of c.terms??[])assert(term.translations?.[locale],term.ja+':'+locale);}
+   globalThis.__scopeStorage.set(m.completionKey('reuse-learner','1',field)+':navigation:practical:v2',JSON.stringify({week:0,lastId:view.sessionId,view:'days',offset:0}));
+   await mount(locale);await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click('kensetsu-day-'+Number(view.sessionId.split('-').pop()));
+   await click('kensetsu-translation');
+   for(const c of lesson.clusters)for(const paragraph of c.paragraphs){
+    const expected=paragraph.translations?.[locale];assert(expected&&expected!==paragraph.ja,paragraph.id+':'+locale);
+    const nodes=host('kensetsu-translation-'+paragraph.id,'Text');assert(nodes.some(n=>n.children.includes(expected)),paragraph.id+':'+locale);localeParagraphRenderChecks++;
+   }
+   assert(host('kensetsu-study-image').length>0);await unmount();
+  }
+ }
+ assert.equal(localeParagraphRenderChecks,228);
  const hashes=JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/kensetsu/PRACTICAL_REUSE_PRESERVED_INPUTS_2026-10-17.json')));
  for(const [file,hash]of Object.entries(hashes))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex'),hash,file);
- const report={status:'PASS_SOURCE_BOUND_REUSE_DEDUP_AND_ACTUAL_HOST_FLOW',sharedCanonicalLessonsPerField:{building:99,civil:99},distinctCanonicalLessonsReused:100,activeCanonicalAndDeltaRecords:394,additionalFactViews:9,uniqueAdditionalParagraphs:16,additionalParagraphRenderChecks:deltaParagraphsRendered,excludedParagraphChecks:excludedParagraphsAbsent,sharedAdditionalFactViewsLinkedIntoCivil:5,duplicateParagraphsRemovedFromNineUniqueViews:38,fullyRetiredDraftLessons:5,retiredDraftParagraphs:30,totalPriorDraftParagraphsRemovedFromActiveReader:68,scopedQuestions:scopeRows,noNewInstructionalParagraphsOrQuestionsAuthored:true,originalLessonTranslationAndQuestionInputsBytePreserved:Object.keys(hashes).length,canonicalLessonTranslationsAndArtworkReusedByReference:true,archivedDraftCompletionPreservedWithoutMarkingReplacementLessons:true,navigationRestoredByStableLessonId:true,utilitiesSpecificSourceLessonsNotInOtherFields:true,twoGoDeferred:true,actualHostComponentFlow:true,nativeDeviceTested:false,browserScreenshots:false,wholeSourceCoverageConfirmed:false,releaseReady:false};
+ const report={status:'PASS_SOURCE_BOUND_REUSE_DEDUP_AND_ACTUAL_HOST_FLOW',sharedCanonicalLessonsPerField:{building:101,civil:101},distinctCanonicalLessonsReused:102,activeCanonicalAndDeltaRecords:395,additionalFactViews:10,uniqueAdditionalParagraphs:19,additionalParagraphRenderChecks:deltaParagraphsRendered,excludedParagraphChecks:excludedParagraphsAbsent,sharedAdditionalFactViewsLinkedIntoCivil:6,duplicateParagraphsRemovedFromNineUniqueViews:38,fullyRetiredDraftLessons:5,retiredDraftParagraphs:30,totalPriorDraftParagraphsRemovedFromActiveReader:68,scopedQuestions:scopeRows,targetLocales:locales,localeParagraphRenderChecks,additionalDiagrams:10,newInstructionalParagraphsAuthored:3,newQuestionsAuthored:19,originalLessonTranslationAndQuestionInputsBytePreserved:Object.keys(hashes).length,canonicalLessonTranslationsAndArtworkReusedByReference:true,archivedDraftCompletionPreservedWithoutMarkingReplacementLessons:true,navigationRestoredByStableLessonId:true,utilitiesSpecificSourceLessonsNotInOtherFields:true,twoGoDeferred:true,actualHostComponentFlow:true,newSupplementaryTestHostSubmissionFields:2,nativeDeviceTested:false,browserScreenshots:false,wholeSourceCoverageConfirmed:false,releaseReady:false};
  if(process.env.KENSETSU_SCOPE_QA_REPORT)fs.writeFileSync(process.env.KENSETSU_SCOPE_QA_REPORT,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 })().catch(e=>{console.error(e);process.exit(1)});

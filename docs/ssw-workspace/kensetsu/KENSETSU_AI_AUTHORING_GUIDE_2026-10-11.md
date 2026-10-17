@@ -2,6 +2,12 @@
 
 Ngày lập: 2026-10-11, Asia/Tokyo. Phạm vi hiện tại: hoàn thiện nội dung để học, bản dịch và ảnh minh họa mới cho 特定技能1号 và 特定技能2号. Phần thi hoàn toàn bằng tiếng Nhật sẽ thiết kế sau khi phần học hoàn thiện. Đây là hướng dẫn thực thi cho AI tiếp nối dự án, không phải báo cáo nội dung đã sản xuất hay chứng nhận tài liệu đã bao phủ đủ.
 
+## Điểm tiếp nối mới nhất — hoàn thiện phần khác biệt (2026-10-17)
+
+Chủ dự án yêu cầu làm hết các mục còn thiếu của1号; yêu cầu này cho phép bổ sung phần học, dịch, sơ đồ và câu hỏi. Bản phát triển hiện có10mục bổ sung/19đoạn Nhật,12locale dịch,10sơ đồ vai trò và19câu hỏi bổ sung. Hai bài chung365–366 được dùng lại có giới hạn; mỗi nhánh mới có101bài gốc tái sử dụng. Thực hành 建築107mục/117câu;土木111mục/125câu. Những số9mục/16đoạn/99bài/104câu ở các đoạn lịch sử bên dưới đã được cập nhật bởi checkpoint mới.
+
+Không coi đợt bổ sung này là đã làm hết nguồn hoặc đủ10×40cho từng phần. Đọc FIELD_PRACTICAL_CHECKPOINT.md và KD_PAGE_RECONCILIATION_REGISTER_2026-10-17.json; sổ194trang chỉ là chỉ mục điều hướng, chưa phải mẫu số kiến thức. Chuyên môn/bản ngữ/quyền/thiết bị thật vẫn chưa duyệt;2号tiếp tục chờ.
+
 ## Ưu tiên mới nhất — đối chiếu phần khác nhau và dùng lại kiến thức chung (2026-10-17)
 
 Chủ dự án yêu cầu: chỉ lọc kiến thức khác nhau giữa các nguồn và dùng lại nội dung đã tạo cho phần chung. Không soạn lại, thay tình huống hoặc dịch lại chỉ vì kiến thức xuất hiện trong file k/d. Trước mọi đơn vị mới, kiểm PRACTICAL_SOURCE_REUSE_MATRIX_2026-10-17.json và runtime reuse-policy.json.
