@@ -1,3 +1,15 @@
+# Current integrated state —2026-10-17
+
+454records/72globalweeks/4018Japaneseparagraphs;69additionalviews/162paragraphs/12locales/69diagrams. Host1944locale-paragraph renders,source57units/212pagebindings,realChromium60exam attempts+26currentreader routes and18finalviewports. Prior counts below are historical. All6assessment routes10×40; whole-source/professional/native/rights/device gates remain open. Next conceptual-depth batch is explicitly recorded in authoring-plan;2号deferred.
+
+# Current integrated figures —2026-10-17
+
+441records/69globalweeks/3994Japaneseparagraphs;56additionalviews/138paragraphs/12locales/56diagrams. RealChromium60exam attempts,26merged-reader routes and18finalviewport captures;1656additional locale-paragraph host renders.370instructional-page lineage anchors/17frontmatter; no whole-source atomic/recognition/native/domain/rights/release approval. Earlier figures below are historical. Continue the explicit conceptual gaps and exact product/design/figure checks in the current semantic review;2号deferred.
+
+# Latest integrated continuation —2026-10-17
+
+Read the current FIELD_PRACTICAL_CHECKPOINT first:433records/67global weeks/3976activeJapanese paragraphs;48additional views/120additional paragraphs/12locales/48concept diagrams. Both concurrent lines of work preserved.004/007and036are revision2;oldr1progress preserved. All6assessment scopes10×40; no question/code bytes changed. RealChromium60exam attempts plus16merged-reader cases and18finalviewport captures now available; all12locales have1440additionalparagraphhost checks. ProductionExpo/native and professional/native/rights/whole-sourceatomic/recognition approval remain open.2号deferred. Earlier counts and browser-unavailable statements below are historical.
+
 # Hướng dẫn AI sản xuất nội dung học 建設 vào app
 
 Ngày lập: 2026-10-11, Asia/Tokyo. Phạm vi hiện tại: hoàn thiện nội dung để học, bản dịch và ảnh minh họa mới cho 特定技能1号 và 特定技能2号. Phần thi hoàn toàn bằng tiếng Nhật sẽ thiết kế sau khi phần học hoàn thiện. Đây là hướng dẫn thực thi cho AI tiếp nối dự án, không phải báo cáo nội dung đã sản xuất hay chứng nhận tài liệu đã bao phủ đủ.
