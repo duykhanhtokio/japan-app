@@ -1,8 +1,8 @@
 import reusePolicy from './reuse-policy.json';
 import { sessions, weeks, type Field, type Level, type Session, type Week } from './index';
 
-export type Subject = 'theory' | 'practical';
-export const subjectLabels: Record<Subject, string> = { theory: '学科', practical: '実技' };
+export type Subject = 'theory' | 'practical' | 'foreman';
+export const subjectLabels: Record<Subject, string> = { theory: '学科', practical: '実技', foreman: '職長' };
 const theorySources = new Set(['kensetsu-src-01', 'kensetsu-src-02', 'kensetsu-src-03', 'kensetsu-src-04']);
 const practicalSources: Record<Field, Set<string>> = {
  utilities: new Set(['kensetsu-src-05', 'kensetsu-src-06', 'kensetsu-src-07']),
@@ -15,13 +15,15 @@ const allPracticalSources = new Set(Object.values(practicalSources).flatMap(ids 
 export function sessionSubject(session: Session): Subject | null {
   const sourceIds = session.sourceReferences?.map(ref => ref.sourceId) ?? [];
   if (!sourceIds.length) return null;
+  if (sourceIds.every(id => id === 'kensetsu-2go-foreman-leader-20250115')) return 'foreman';
   if (sourceIds.every(id => theorySources.has(id))) return 'theory';
   if (sourceIds.every(id => theorySources.has(id) || allPracticalSources.has(id)) &&
       sourceIds.some(id => allPracticalSources.has(id))) return 'practical';
   return null;
 }
 export function isSessionInScope(session: Session, level: Level, field: Field, subject: Subject): boolean {
-  if (level !== '1' || reusePolicy.retiredSessionIds.includes(session.id) || sessionSubject(session) !== subject) return false;
+  if (subject === 'foreman') return level === '2' && sessionSubject(session) === 'foreman';
+  if (reusePolicy.retiredSessionIds.includes(session.id) || sessionSubject(session) !== subject) return false;
   if (subject === 'practical' && field !== 'utilities' && reusePolicy.canonicalPracticalAssignments[field].includes(session.id)) return true;
   if (subject === 'practical' && field === 'civil' && reusePolicy.crossFieldDeltaAssignments.civil.includes(session.id)) return true;
   return subject === 'theory' || !!session.sourceReferences?.every(ref => theorySources.has(ref.sourceId) || practicalSources[field].has(ref.sourceId));

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "status": "1go_differential_completion_in_progress",
-  "guideSha256": "3a840547f07a0c86eedcb11f4e396f418a90c777d5617798273f95c181aeaed3",
+  "status": "shared_1go_2go_lessons_and_foreman_authoring_in_progress",
+  "guideSha256": "ad4616af310d88c3c9b7a1b68fc58634415419dddc6265cf38d41229283f24b6",
   "dailyMinutesTarget": 30,
   "durationMeasured": false,
   "weekCount": null,
@@ -2204,7 +2204,7 @@
       "level": "特定技能2号",
       "fieldJa": "ライフライン・設備",
       "sourceFolder": "Nội dung đưa vào app/Tokuteigino-kensetsu/02特定技能2号",
-      "sourceAccess": "uploaded_shared_theory_available",
+      "sourceAccess": "corresponding1go_reused_by_publisher_decision; leader20250115_available",
       "weeks": [],
       "lessonIds": [],
       "draftSessionIds": [],
@@ -2270,14 +2270,20 @@
         "theory": [],
         "practical": []
       },
-      "status": "deferred_until_1go_complete"
+      "status": "shared_1go_lessons_available_foreman_in_progress",
+      "sharedLessonScope": "kensetsu-1-utilities",
+      "foremanSessionIds": [
+        "kensetsu-foreman-session-001",
+        "kensetsu-foreman-session-002",
+        "kensetsu-foreman-session-003"
+      ]
     },
     {
       "id": "kensetsu-2-building",
       "level": "特定技能2号",
       "fieldJa": "建築",
       "sourceFolder": "Nội dung đưa vào app/Tokuteigino-kensetsu/02特定技能2号",
-      "sourceAccess": "uploaded_shared_theory_available",
+      "sourceAccess": "corresponding1go_reused_by_publisher_decision; leader20250115_available",
       "weeks": [],
       "lessonIds": [],
       "draftSessionIds": [],
@@ -2343,14 +2349,20 @@
         "theory": [],
         "practical": []
       },
-      "status": "deferred_until_1go_complete"
+      "status": "shared_1go_lessons_available_foreman_in_progress",
+      "sharedLessonScope": "kensetsu-1-building",
+      "foremanSessionIds": [
+        "kensetsu-foreman-session-001",
+        "kensetsu-foreman-session-002",
+        "kensetsu-foreman-session-003"
+      ]
     },
     {
       "id": "kensetsu-2-civil",
       "level": "特定技能2号",
       "fieldJa": "土木",
       "sourceFolder": "Nội dung đưa vào app/Tokuteigino-kensetsu/02特定技能2号",
-      "sourceAccess": "uploaded_shared_theory_available",
+      "sourceAccess": "corresponding1go_reused_by_publisher_decision; leader20250115_available",
       "weeks": [],
       "lessonIds": [],
       "draftSessionIds": [],
@@ -2416,7 +2428,13 @@
         "theory": [],
         "practical": []
       },
-      "status": "deferred_until_1go_complete"
+      "status": "shared_1go_lessons_available_foreman_in_progress",
+      "sharedLessonScope": "kensetsu-1-civil",
+      "foremanSessionIds": [
+        "kensetsu-foreman-session-001",
+        "kensetsu-foreman-session-002",
+        "kensetsu-foreman-session-003"
+      ]
     }
   ],
   "sharedKnowledgePolicy": "Publisher confirmed 2026-10-11: one shared theory dataset for both levels and all three fields; references only, no duplicated lesson content.",
@@ -3024,12 +3042,18 @@
   "illustrationPolicyFile": "illustration-production-policy-2026-10-13.json",
   "authoritativeScopePolicy": "source-inventory.json#publisherScopeCorrection",
   "historicalLessonApplicabilityMetadataSuperseded": true,
-  "twoGoDeferredUntilOneGoComplete": true,
+  "twoGoDeferredUntilOneGoComplete": false,
   "fieldPracticalSourceReceipt": "SOURCE_KD_INTAKE_2026-10-17.json",
   "commonPracticalReusePolicy": "src/data/kensetsu/reuse-policy.json",
   "commonPracticalReuseEvidence": "docs/ssw-workspace/kensetsu/PRACTICAL_SOURCE_REUSE_MATRIX_2026-10-17.json",
   "fieldPracticalTranslationPolicy": "Reuse all existing canonical translations/artwork; translate only active additional paragraphs after Japanese differential course is complete. Never translate archived repeated drafts.",
-  "currentPublisherInstruction": "2026-10-17 complete missing 1go items; shared knowledge reused, no 2go authoring",
+  "currentPublisherInstruction": {
+    "date": "2026-10-17",
+    "theoryAndPractical": "2go uses all corresponding1go content by reference",
+    "foreman": "new source-based teaching shared across2go fields",
+    "practicalReaudit": "atomic comparison required; no equal-count target",
+    "report": "docs/checkpoints/CONSTRUCTION_DIALOGUE_ACTION_REPORT_2026-10-17_VI.md"
+  },
   "differentialCompletion": {
     "activeAdditionalViews": 71,
     "uniqueAdditionalJapaneseParagraphs": 167,
@@ -3101,5 +3125,17 @@
     "scope": "Complete identified source-backed conceptual depth; no operating/design/SDS or human/native-device approval inferred.",
     "readerRoutes": 103,
     "revisionUpgradeCases": 16
+  },
+  "twoGoImplementation": {
+    "sameLessonObjects": true,
+    "progressSeparateByLevel": true,
+    "foremanIntroductorySessions": 3,
+    "foremanLocales": [
+      "ja",
+      "vi"
+    ],
+    "foremanWholeSourceComplete": false,
+    "foremanWeekComplete": false,
+    "officialTwoGoExamStructureVerified": false
   }
 }

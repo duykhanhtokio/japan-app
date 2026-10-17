@@ -22,7 +22,8 @@ export const reviewTests:ReviewTest[]=bank.exams;
 
 /** Keep the original bank/attempts intact; derive subject views from every cited lesson. */
 export function reviewTestsForScope(level: Level, field: Field, subject: Subject): ReviewTest[] {
- if (level !== '1') return [];
+ if (subject === 'foreman') return [];
+ // Publisher decision 2026-10-17: both levels share corresponding lesson/question content.
  const questionsInScope = (question: ReviewQuestion) => {
   if (!question.sourceReferences.length) return false;
   const lessons = question.sourceReferences.map(ref => sessionById.get(ref.sessionId));
@@ -93,7 +94,8 @@ export function reviewTestsForScope(level: Level, field: Field, subject: Subject
  }
  return scopedTests.map((exam, index) => ({
   ...exam,
+  id: level === '2' ? `${exam.id}:2go:v1` : exam.id,
   // Display order belongs to this scope; stable exam/attempt IDs retain their original identity.
-  titleJa: `建設1号 ${subject === 'theory' ? '学科' : '実技'} 確認テスト 第${index + 1}回`,
+  titleJa: `建設${level}号 ${subject === 'theory' ? '学科' : '実技'} 確認テスト 第${index + 1}回`,
  }));
 }

@@ -8,6 +8,7 @@ const webModules = process.env.KENSETSU_WEB_MODULES;
 const executablePath = process.env.KENSETSU_QA_CHROMIUM;
 const out = process.env.KENSETSU_QA_OUTPUT;
 const visualOnly = process.env.KENSETSU_BROWSER_VISUAL_ONLY === '1';
+const twoGoOnly = process.env.KENSETSU_BROWSER_TWO_GO_ONLY === '1';
 const readerOnly = process.env.KENSETSU_BROWSER_READER_ONLY === '1';
 for (const [key, value] of Object.entries({modules, webModules, executablePath, out}))
   if (!value) throw Error('Missing QA input: ' + key);
@@ -50,6 +51,37 @@ async function main() {
     const saved=()=>page.waitForFunction(()=>{const n=document.querySelector('[data-testid="kensetsu-test-save-status"]');return n&&!n.textContent.includes('保存中')});
     const open=async n=>{await id('exam-'+String(n).padStart(2,'0')).click();await id('question').waitFor()};
     const back=async()=>{await saved();await page.getByRole('button',{name:'Back',exact:true}).click();await id('catalog').waitFor()};
+    if(twoGoOnly){
+      let examRoutes=0,readerRoutes=0,paragraphs=0;const screenshots=[];
+      for(const field of ['utilities','building','civil'])for(const subject of ['theory','practical']){
+        await page.goto(base+'/?level=2&field='+field+'&subject='+subject+'&learner=two-go');await id('catalog').waitFor();
+        assert.equal((await page.evaluate(()=>window.__forms)).length,10);await open(1);
+        assert((await id('question').innerText()).length>0);await id('choice-1').click();await saved();
+        await page.reload();await open(1);assert.equal(await id('choice-1').getAttribute('aria-checked'),'true');
+        await id('submit').click();await id('confirm-submit').click();await id('result').waitFor();examRoutes++;
+      }
+      for(const field of ['utilities','building','civil'])for(const n of [1,2,3]){
+        const learner='foreman-'+field+'-'+n,sessionId='kensetsu-foreman-session-'+String(n).padStart(3,'0');
+        await page.goto(base+'/?reader=1&language=vi&learner='+learner);await page.getByTestId('kensetsu-level-2').click();
+        await page.getByTestId('kensetsu-field-'+field).click();await page.getByTestId('kensetsu-mode-foreman-study').click();
+        await page.getByTestId('kensetsu-week-1').click();await page.getByTestId('kensetsu-day-'+n).click();
+        const reader=page.getByTestId('kensetsu-reader');await reader.waitFor();const lesson=await page.evaluate(id=>window.__lesson(id),sessionId);
+        await page.getByTestId('kensetsu-translation').click();const text=await reader.innerText();
+        for(const c of lesson.clusters)for(const p of c.paragraphs){assert(text.includes(p.ja));assert.equal(await page.getByTestId('kensetsu-translation-'+p.id).innerText(),p.translations.vi);paragraphs++;}
+        if(field==='building'&&n===1)for(const [width,height,label]of [[320,568,'phone'],[768,1024,'tablet'],[932,430,'landscape']]){
+          await page.setViewportSize({width,height});await page.screenshot({path:path.join(out,'foreman-'+label+'.png'),fullPage:false});screenshots.push('foreman-'+label+'.png');
+        }
+        await page.setViewportSize({width:390,height:844});
+        await reader.evaluate(e=>{e.scrollTop=e.scrollHeight;e.dispatchEvent(new Event('scroll',{bubbles:true}))});
+        await page.waitForFunction(()=>document.querySelector('[data-testid="kensetsu-complete"]')?.getAttribute('aria-disabled')!=='true');await page.getByTestId('kensetsu-complete').click();
+        const key=await page.evaluate(({learner,field})=>window.__completionKey(learner,'2',field),{learner,field});
+        await page.waitForFunction(({key,id})=>JSON.parse(localStorage.getItem(key)||'{}')[id]===true,{key,id:sessionId+':r1'});
+        const one=await page.evaluate(({learner,field})=>localStorage.getItem(window.__completionKey(learner,'1',field)),{learner,field});assert.equal(one,null);readerRoutes++;
+      }
+      assert.deepEqual(errors,[]);
+      const report={date:'2026-10-17',status:'PASS_ADAPTED_CHROMIUM_TWO_GO',examRoutes,readerRoutes,paragraphPairs:paragraphs,screenshots,runtimeErrors:errors,storageIsolatedFromOneGo:true,examContent:'same corresponding 1go teaching review bank; not official 2go exam certification',nativeDeviceTested:false,productionExpoTested:false,domainReviewed:false,nativeReviewed:false,releaseReady:false};
+      fs.writeFileSync(path.join(root,'docs/ssw-workspace/kensetsu/TWO_GO_BROWSER_QA_2026-10-17.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));return;
+    }
     if(readerOnly){
       const cases=[];let japaneseParagraphs=0,translatedParagraphs=0,revisionUpgradeCases=0;
       await page.goto(base+'/?reader=1');
@@ -153,9 +185,9 @@ async function main() {
     await page.evaluate(()=>window.__failSave=false);await id('retry-save').click();await saved();await page.reload();await open(1);assert.equal(await id('choice-3').getAttribute('aria-checked'),'true');
     await id('restart').click();await id('confirm-cancel').click();assert.equal(await id('choice-3').getAttribute('aria-checked'),'true');await id('restart').click();await id('confirm-restart').click();await saved();assert.equal(await id('choice-3').getAttribute('aria-checked'),'false');
     await page.goto(base+'/?field=building&subject=practical&learner=read-failure');await id('catalog').waitFor();await page.evaluate(()=>window.__failRead=true);await id('exam-01').click();await id('load-error').waitFor();await page.evaluate(()=>window.__failRead=false);await id('retry-load').click();await id('question').waitFor();
-    await page.goto(base+'/?level=2&field=building&subject=practical');await id('catalog').waitFor();assert.equal(await page.locator('[data-testid^="kensetsu-test-exam-"]').count(),0);
+    await page.goto(base+'/?level=2&field=building&subject=practical');await id('catalog').waitFor();assert.equal(await page.locator('[data-testid^="kensetsu-test-exam-"]').count(),10);
     assert.deepEqual(errors,[]);
-    const report={date:'2026-10-17',status:'PASS_REAL_CHROMIUM_ADAPTED_WEB_SIX_SCOPES',browserVersion:await browser.version(),scopes:6,fullAttempts:cases.length,questions:cases.length*40,choiceLabels,resumes,postSubmitReloads:cases.length,cancelSubmit:true,sourceLessonModals:6,saveFailureRetainsChoices:true,readFailureRetry:true,restartAndCancel:true,secondLevelStaysDeferred:true,screenshots,cases,runtimeErrors:errors,limits:['Real Chromium renders the actual KensetsuReviewTests and TokuteiChrome components through react-native-web.','Royal artwork, safe-area insets and AsyncStorage have explicit web adapters; this does not certify the production Expo bundle or artwork.','No native device, human construction/safety, native-language or rights approval.'],nativeDeviceTested:false,domainReviewed:false,nativeReviewed:false,rightsReviewed:false,releaseReady:false};
+    const report={date:'2026-10-17',status:'PASS_REAL_CHROMIUM_ADAPTED_WEB_SIX_SCOPES',browserVersion:await browser.version(),scopes:6,fullAttempts:cases.length,questions:cases.length*40,choiceLabels,resumes,postSubmitReloads:cases.length,cancelSubmit:true,sourceLessonModals:6,saveFailureRetainsChoices:true,readFailureRetry:true,restartAndCancel:true,secondLevelSharedBankAvailable:true,screenshots,cases,runtimeErrors:errors,limits:['Real Chromium renders the actual KensetsuReviewTests and TokuteiChrome components through react-native-web.','Royal artwork, safe-area insets and AsyncStorage have explicit web adapters; this does not certify the production Expo bundle or artwork.','No native device, human construction/safety, native-language or rights approval.'],nativeDeviceTested:false,domainReviewed:false,nativeReviewed:false,rightsReviewed:false,releaseReady:false};
     report.fontSha256=crypto.createHash('sha256').update(fs.readFileSync(path.join(out,'font.woff2'))).digest('hex');
     const name=visualOnly?'ONE_GO_BROWSER_VISUAL_QA_2026-10-17.json':'ONE_GO_BROWSER_QA_2026-10-17.json';
     report.visualPassOnly=visualOnly;

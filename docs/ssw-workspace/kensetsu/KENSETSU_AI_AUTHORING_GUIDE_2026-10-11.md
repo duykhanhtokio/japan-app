@@ -2,6 +2,14 @@
 
 Ngày lập: 2026-10-11, Asia/Tokyo. Phạm vi hiện tại: hoàn thiện nội dung để học, bản dịch và ảnh minh họa mới cho 特定技能1号 và 特定技能2号. Phần thi hoàn toàn bằng tiếng Nhật sẽ thiết kế sau khi phần học hoàn thiện. Đây là hướng dẫn thực thi cho AI tiếp nối dự án, không phải báo cáo nội dung đã sản xuất hay chứng nhận tài liệu đã bao phủ đủ.
 
+
+## Quyết định mới của chủ dự án — 2026-10-17 (ưu tiên hơn các mục lịch sử phía dưới)
+
+2号 dùng toàn bộ 学科・実技 của đúng nhánh 1号, dùng chung dữ liệu và tự nhận các sửa đổi của bài chung. Lưu tiến độ và lượt kiểm tra riêng theo cấp. 職長 soạn mới từ leader.pdf và dùng chung cả ba nhánh tại 2号. Đã tích hợp ba bài nháp Nhật–Việt đầu; phần còn lại,11ngôn ngữ,hình và duyệt chưa xong. Không chờ xong1号 mới mở2号. Không gọi ngân hàng xác nhận kiến thức dùng lại là bộ đề2号chính thức.
+
+Đọc `docs/checkpoints/CONSTRUCTION_DIALOGUE_ACTION_REPORT_2026-10-17_VI.md`, `PRACTICAL_REUSE_REAUDIT_2026-10-17.json` và `foreman/coverage-ledger.json` trước khi tiếp nối. Ma trận224bài là kiểm kê liên kết, chưa phải đã rà đủ từng ý. Chênh lệch224/163/152sau hợp nhất B058/C019 không chứng minh đủ hoặc thiếu;116/120bài chưa liên kết là ứng viên rà, không tự động đưa sang ngành khác.
+
+
 ## Tiếp nối tích hợp và kiểm tra Chromium — 2026-10-17
 
 Đọc đầu FIELD_PRACTICAL_CHECKPOINT.md:69mục bổ sung/162đoạn Nhật/12ngôn ngữ/69sơ đồ. Đã khôi phục đoạn phân biệt máy hàn và vật liệu tiêu hao;giữ lịch sửr1và yêu cầu hoàn thành lạir2. Chromium/RNWeb đạt60tuyến đề,101tuyến bài học,2trường hợp nâng phiên bản;36ảnh chụp được lưu. Kiểm tra12ngôn ngữ đạt1944lượt đoạn. Các phần Royal/ảnh/storage có adapter;Expo sản xuất và thiết bị thật chưa kiểm. Duyệt chuyên môn/bản ngữ/quyền và bao phủ từng ý nguồn còn mở;2号chờ. Không tạo lại câu hỏi để đủ chỉ tiêu vì các ngân hàng đã10×40.

@@ -1,3 +1,4 @@
+import { applyDialogueTranslations, type DialogueTranslationBundle } from './dialogue-translations';
 import authoredHintsJson from '@/data/dialogue-content/player-hints.json';
 import type { LifeDialogueLevelSet, LifeDialogueTurn } from '@/types/life-conversation';
 
@@ -27,6 +28,14 @@ const dialogueContext = (require as RequireWithContext).context(
 );
 
 const availableFiles = new Set(dialogueContext.keys());
+const translationContext = (require as RequireWithContext).context('../data/dialogue-content/translations', false, /\.json$/);
+const translatedFiles = new Set(translationContext.keys());
+function withTranslations(turn: LifeDialogueTurn): LifeDialogueTurn {
+ const key = `./${turn.scenarioId}.json`;
+ if (!translatedFiles.has(key)) return withAuthoredHint(turn);
+ const value = translationContext(key) as DialogueTranslationBundle | { default: DialogueTranslationBundle };
+ return applyDialogueTranslations(withAuthoredHint(turn), 'default' in value ? value.default : value);
+}
 
 // The initial JLPT assessment describes the learner; it does not select or
 // restrict conversation content. New authored scenarios use `shared`.
@@ -45,12 +54,12 @@ export function loadDialogueTurns(scenarioId: string): LifeDialogueTurn[] {
     const value = typeof moduleValue === 'object' && moduleValue && 'default' in moduleValue
         ? (moduleValue as { default: unknown }).default
         : moduleValue;
-    if (Array.isArray(value)) return (value as LifeDialogueTurn[]).map(withAuthoredHint);
+    if (Array.isArray(value)) return (value as LifeDialogueTurn[]).map(withTranslations);
     if (value && typeof value === 'object') {
         const content = value as LifeDialogueLevelSet & { shared?: LifeDialogueTurn[] };
         const selected = content.shared ?? content.N5;
         if (!Array.isArray(selected)) return [];
-        if (key === directKey) return selected.map(withAuthoredHint);
+        if (key === directKey) return selected.map(withTranslations);
         const genericId = `GENERIC-CITY-${genericMatch![1]}`;
         return selected.map((turn) => {
             const replace = (value: string | null) => value?.split(genericId).join(scenarioId) ?? null;

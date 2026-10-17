@@ -1,3 +1,14 @@
+# Mốc tiếp nối mới — 2026-10-17
+
+## Quyết định mới của chủ dự án — 2026-10-17 (ưu tiên hơn các mục lịch sử phía dưới)
+
+2号 dùng toàn bộ 学科・実技 của đúng nhánh 1号, dùng chung dữ liệu và tự nhận các sửa đổi của bài chung. Lưu tiến độ và lượt kiểm tra riêng theo cấp. 職長 soạn mới từ leader.pdf và dùng chung cả ba nhánh tại 2号. Đã tích hợp ba bài nháp Nhật–Việt đầu; phần còn lại,11ngôn ngữ,hình và duyệt chưa xong. Không chờ xong1号 mới mở2号. Không gọi ngân hàng xác nhận kiến thức dùng lại là bộ đề2号chính thức.
+
+Đọc `docs/checkpoints/CONSTRUCTION_DIALOGUE_ACTION_REPORT_2026-10-17_VI.md`, `PRACTICAL_REUSE_REAUDIT_2026-10-17.json` và `foreman/coverage-ledger.json` trước khi tiếp nối. Ma trận224bài là kiểm kê liên kết, chưa phải đã rà đủ từng ý. Chênh lệch224/163/152sau hợp nhất B058/C019 không chứng minh đủ hoặc thiếu;116/120bài chưa liên kết là ứng viên rà, không tự động đưa sang ngành khác.
+
+
+Các mục phía dưới là lịch sử.
+
 # Kensetsu checkpoint — 2026-10-11
 
 Week 001 is a complete seven-session editorial batch, shared by references across both levels and all three fields. Authoring and handoffs must proceed in one-week batches, per publisher instruction. Japanese/Vietnamese text and three original illustrations are available. Existing session 001 retained its stable identifiers.

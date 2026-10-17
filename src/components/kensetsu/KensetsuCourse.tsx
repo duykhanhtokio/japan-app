@@ -883,16 +883,16 @@ function CourseMode({ learner, level, field, language, onBack }: {
     <CourseSurface><View style={s.root}>
       <TokuteiHeader title={`建設 · ${level}号`} subtitle={fields.find(f => f.id === field)?.title} onBack={onBack} />
       <ScrollView testID="kensetsu-mode-selector" contentContainerStyle={s.content}>
-        {(["theory", "practical"] as const).map(subject => {
+        {(level === "2" ? ["theory", "practical", "foreman"] as const : ["theory", "practical"] as const).map(subject => {
           const available = weeksForScope(level, field, subject).length > 0;
           return <RoyalContentPanel key={subject} style={s.paper}>
             <Text style={s.heading}>{subjectLabels[subject]}</Text>
-            <Text style={s.body}>{subject === "theory" ? "1号の三分野に共通する学科を学習します。" :
+            <Text style={s.body}>{subject === "foreman" ? "三分野共通の職長教材です。現在は導入の3回分を収録しています。" : subject === "theory" ? "三分野に共通する学科を学習します。1号・2号で同じ教材を使用します。" :
               available ? `${fields.find(f => f.id === field)?.title}の実技を学習します。` : "この分野の実技教材は準備中です。"}</Text>
             <Action title={`${subjectLabels[subject]} 学習カレンダー`} testID={`kensetsu-mode-${subject}-study`}
               disabled={!available} onPress={() => setMode({ subject, view: "study" })} />
-            <Action title={`${subjectLabels[subject]} 確認テスト`} testID={`kensetsu-mode-${subject}-tests`}
-              disabled={!available} onPress={() => setMode({ subject, view: "test" })} />
+            {subject !== "foreman" && <Action title={`${subjectLabels[subject]} 確認テスト`} testID={`kensetsu-mode-${subject}-tests`}
+              disabled={!available} onPress={() => setMode({ subject, view: "test" })} />}
           </RoyalContentPanel>;
         })}
       </ScrollView>
@@ -928,7 +928,7 @@ function KensetsuFlow({
         <ScrollView contentContainerStyle={s.content}>
           <RoyalExplanationPanel style={s.info}>
             <Text style={s.light}>
-              1号の学科は三分野共通です。実技は分野ごとに学習します。2号は1号の教材整備後に準備します。
+              学科は三分野共通です。実技は分野ごとに学習します。1号・2号で学科と実技の教材を共有し、学習記録は別々に保存します。2号の職長教材は三分野共通です。
             </Text>
           </RoyalExplanationPanel>
           <View style={s.row}>
@@ -942,8 +942,7 @@ function KensetsuFlow({
               />
             ))}
           </View>
-          {level === "2" && <RoyalContentPanel style={s.paper}><Text testID="kensetsu-level-2-pending" style={s.body}>2号の教材は準備中です。1号の教材整備を先に進めています。</Text></RoyalContentPanel>}
-          {level === "1" && fields.map((f) => (
+          {fields.map((f) => (
             <RoyalContentPanel key={f.id} style={s.paper}>
               <Text style={s.heading}>{f.title}</Text>
               <Action

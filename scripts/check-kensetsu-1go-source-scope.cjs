@@ -53,9 +53,17 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
    assert(!practical.some(s=>s.id==='kensetsu-common-session-309')); // utilities pipe detail
    sharedSets[field]=practical.filter(s=>assigned.includes(s.id)).map(s=>s.id);
   }
-  for(const subject of ['theory','practical']){assert.equal(m.sessionsForScope('2',field,subject).length,0);assert.equal(m.reviewTestsForScope('2',field,subject).length,0);}
+  for(const subject of ['theory','practical']){
+   const one=m.sessionsForScope('1',field,subject),two=m.sessionsForScope('2',field,subject);
+   assert.deepEqual(two.map(s=>s.id),one.map(s=>s.id));two.forEach((s,i)=>assert.strictEqual(s,one[i]));
+   const a=m.reviewTestsForScope('1',field,subject),b=m.reviewTestsForScope('2',field,subject);
+   assert.deepEqual(b.map(e=>e.questions),a.map(e=>e.questions));
+   b.forEach((e,i)=>assert.notEqual(e.id,a[i].id));
+   assert.notEqual(m.completionKey('learner','1',field),m.completionKey('learner','2',field));
+  }
  }
- assert.equal(m.sessions.length,456);
+ assert.equal(m.sessions.length,459);
+ for(const field of ["utilities","building","civil"]){assert.equal(m.sessionsForScope("1",field,"foreman").length,0);const f=m.sessionsForScope("2",field,"foreman");assert.equal(f.length,3);f.forEach(s=>assert.strictEqual(s,m.sessionById.get(s.id)));assert.equal(m.reviewTestsForScope("2",field,"foreman").length,0);}
  assert(!m.sessionsForScope('1','civil','practical').some(s=>s.id==='kensetsu-building-practical-session-012'),'Carpentry scope leaked into civil');
  for(const n of [13,14,16,17,18,19,20,21,22,26,27,28,29,30,31,32,34])assert(!m.sessionsForScope('1','civil','practical').some(s=>s.id==='kensetsu-building-practical-session-'+String(n).padStart(3,'0')),'Finishes scope leaked into civil');
  assert(!m.sessionsForScope('1','building','practical').some(s=>s.id==='kensetsu-civil-practical-session-008'),'Landscaping scope leaked into building');
@@ -97,7 +105,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  const click=async id=>{const n=host(id)[0];assert(n,'Missing '+id);assert(!n.props.disabled,'Disabled '+id);await settle(()=>n.props.onPress());};
  const mount=async(language="vi")=>settle(()=>{renderer=TR.create(React.createElement(m.KensetsuCourse,{learner:'reuse-learner',language,onBack(){}}));});
  const unmount=async()=>settle(()=>renderer.unmount());
- await mount();await click('kensetsu-level-2');assert.equal(host('kensetsu-level-2-pending','Text').length,1);assert.equal(host('kensetsu-field-building').length,0);await unmount();
+ await mount();await click('kensetsu-level-2');assert.equal(host('kensetsu-field-building').length,1);await click('kensetsu-field-building');assert.equal(host('kensetsu-mode-foreman-study').length,1);await click('kensetsu-mode-practical-tests');await click('kensetsu-test-exam-01');await unmount();
  let deltaParagraphsRendered=0,excludedParagraphsAbsent=0;
  for(const view of policy.deltaViews)for(const field of ['building','civil'].filter(field=>m.isSessionInScope(m.sessionById.get(view.sessionId),'1',field,'practical'))){
   const key=m.completionKey('reuse-learner','1',field);
@@ -177,6 +185,6 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  assert.equal(localeParagraphRenderChecks,2004);
  const hashes=JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/kensetsu/PRACTICAL_REUSE_PRESERVED_INPUTS_2026-10-17.json')));
  for(const [file,hash]of Object.entries(hashes))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex'),hash,file);
- const report={status:'PASS_SOURCE_BOUND_REUSE_DEDUP_AND_ACTUAL_HOST_FLOW',sharedCanonicalLessonsPerField:{building:108,civil:104},distinctCanonicalLessonsReused:109,activeCanonicalAndDeltaRecords:456,additionalFactViews:71,uniqueAdditionalParagraphs:167,additionalParagraphRenderChecks:deltaParagraphsRendered,excludedParagraphChecks:excludedParagraphsAbsent,sharedAdditionalFactViewsLinkedIntoCivil:32,duplicateParagraphsRemovedFromNineUniqueViews:37,fullyRetiredDraftLessons:5,retiredDraftParagraphs:30,totalPriorDraftParagraphsRemovedFromActiveReader:67,scopedQuestions:scopeRows,targetLocales:locales,localeParagraphRenderChecks,additionalDiagrams:71,differentialPngFilesVerified,newInstructionalParagraphsAuthored:5,newQuestionsAuthored:0,originalLessonTranslationAndQuestionInputsBytePreserved:Object.keys(hashes).length,canonicalLessonTranslationsAndArtworkReusedByReference:true,archivedDraftCompletionPreservedWithoutMarkingReplacementLessons:true,navigationRestoredByStableLessonId:true,utilitiesSpecificSourceLessonsNotInOtherFields:true,twoGoDeferred:true,actualHostComponentFlow:true,newSupplementaryTestHostSubmissionFields:2,newTheory40QuestionHostSubmissionFields:3,theory40QuestionHostSubmissions,fullAdditionalTheoryForms:5,additionalTheoryQuestions:235,additionalPracticalQuestions:104,additionalUtilitiesQuestions:165,additionalSharedFieldQuestions:208,additionalCivilSpecificQuestions:22,nativeDeviceTested:false,browserScreenshots:false,wholeSourceCoverageConfirmed:false,releaseReady:false};
+ const report={status:'PASS_SOURCE_BOUND_REUSE_DEDUP_AND_ACTUAL_HOST_FLOW',sharedCanonicalLessonsPerField:{building:108,civil:104},distinctCanonicalLessonsReused:109,activeCanonicalAndDeltaRecords:456,foremanIntroductoryRecords:3,totalActiveRecords:m.sessions.length,additionalFactViews:71,uniqueAdditionalParagraphs:167,additionalParagraphRenderChecks:deltaParagraphsRendered,excludedParagraphChecks:excludedParagraphsAbsent,sharedAdditionalFactViewsLinkedIntoCivil:32,duplicateParagraphsRemovedFromNineUniqueViews:37,fullyRetiredDraftLessons:5,retiredDraftParagraphs:30,totalPriorDraftParagraphsRemovedFromActiveReader:67,scopedQuestions:scopeRows,targetLocales:locales,localeParagraphRenderChecks,additionalDiagrams:71,differentialPngFilesVerified,newInstructionalParagraphsAuthored:5,newQuestionsAuthored:0,originalLessonTranslationAndQuestionInputsBytePreserved:Object.keys(hashes).length,canonicalLessonTranslationsAndArtworkReusedByReference:true,archivedDraftCompletionPreservedWithoutMarkingReplacementLessons:true,navigationRestoredByStableLessonId:true,utilitiesSpecificSourceLessonsNotInOtherFields:true,twoGoSharedContent:true,actualHostComponentFlow:true,newSupplementaryTestHostSubmissionFields:2,newTheory40QuestionHostSubmissionFields:3,theory40QuestionHostSubmissions,fullAdditionalTheoryForms:5,additionalTheoryQuestions:235,additionalPracticalQuestions:104,additionalUtilitiesQuestions:165,additionalSharedFieldQuestions:208,additionalCivilSpecificQuestions:22,nativeDeviceTested:false,browserScreenshots:false,wholeSourceCoverageConfirmed:false,releaseReady:false};
  if(process.env.KENSETSU_SCOPE_QA_REPORT)fs.writeFileSync(process.env.KENSETSU_SCOPE_QA_REPORT,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 })().catch(e=>{console.error(e);process.exit(1)});
