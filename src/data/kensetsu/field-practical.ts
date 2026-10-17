@@ -157,7 +157,9 @@ export const fieldPracticalSessions: Session[] = originalFieldPracticalSessions.
  const visibleJapanese = clusters.flatMap(cluster => cluster.paragraphs.map(p => p.ja)).join('');
  const terms = session.clusters.flatMap(cluster => cluster.terms ?? []).filter(term => visibleJapanese.includes(term.ja));
  if (clusters.length) clusters[0].terms = terms;
- const activeSession = { ...session, clusters };
+ // Preserve old r1 progress while requiring renewed completion for restored facts.
+ const contentRevision = 'contentRevision' in view ? Number(view.contentRevision) : session.revision;
+ const activeSession = { ...session, revision: Math.max(session.revision, contentRevision), contentRevision, clusters };
  const bundle = differentialTranslations.get(session.id);
  return [bundle ? applyLessonTranslations(activeSession, bundle) : activeSession];
 });

@@ -1,3 +1,9 @@
+# Current integrated continuation —2026-10-17
+
+Preserved component and mechanism additions through3f5d77e6 and the independent browser/revision work. Three of the four recovery candidates are superseded by more specific035/038/043teaching and remain archived; the electrode/power-source007paragraph stays active atrevision2. Existing036has an explicit tensile-force clarification; two final name checks addbolshin as a concrete004alignment-tool example andhand-guidedroller ascompaction rather thanemulsiondistribution. Allnew/expandedJapanesehas12revision-bound translations;oldr1progressstayspreserved. Final merged host QA passed1656locale-paragraph renders/199Japanese route-paragraph renders/56PNGfiles/844preserved inputs. RealChromium reader QA passed26routes,63Japanese+63Vietnamese paragraphs and9revision upgrades preservingoldr1. Source identityQA33units/153pagebindings/12historicalrows passed. Current441records/69globalweeks/3994Japaneseparagraphs;56additionalviews/138paragraphs/56diagrams. Durable merge verification is next. No sourcePDF/rawfigure redistributed; no question/pool membership changed.2号deferred.
+
+---
+
 # Latest source-difference supplement — component recognition,2026-10-17
 
 Added8views/18Japaneseparagraphs/12localeoverlays/8controlleddiagrams. B042–045 are shared withcivil; B046–048 arebuilding-only; C014 iscivil-only. Names/functions cover scaffold systems/edge members/fall-arrest blocks; annealed binding wire andshino/ratchet; open/ring/combination wrench heads; reinforcement spacers/caps/folding rules; insulation raw-liquid reaction risks; roofingunderlay/snowguards; sashanchors; piling/pavement equipment. Existing B004 is reused instead of another impact-wrench paragraph. Manufacturer/association comparisons prevent teaching annealing asautomatic strengthening and asphalt emulsion asidentical toemulsifier. No generic container-handling procedure or operating values authored.
@@ -6,6 +12,15 @@ Totals441studyrecords;56additionalviews/136Japaneseparagraphs/12locales/56diagra
 
 Source-lineage reconciliation:13actual PDF byte/page hashes reverified; all370instructional pages have at least one linked concept,17pages arefrontmatter. This is not a semantic knowledge denominator. Six remaining page groups reuse active lessons;12historical missing rows are reconciled against later teaching without overwritingoldaudits. Some historicalcells/currenttrade-grade mapping/productprocedures still require review; these rows are not all markedclosed. SeeREMAINING_PAGE_REUSE_RECONCILIATION_2026-10-17.json and LEGACY_MISSING_ITEMS_RECONCILIATION_2026-10-17.json. Source/paragraph identityQA32newunits/150pagebindings/12legacyrows passed; all180fullattempt cases/360resumes andfocusedTypeScript passed. Realbrowser/nativeandhumanapprovals remainunavailable.
 
+
+---
+
+# Integrated continuation after concurrent branch changes —2026-10-17
+
+Preserved both parallel lines of work: six new structural/mechanism views from421a44f6, and realChromium QA plus omitted-concept recovery fromfdc672af. Two recovery candidates (scaffold general roles and gas-pressure general roles) overlap the more specific new035/038 lessons and remain archived; ratchet004 and electrode/power-source007 additions stay active with revision2. Their48paragraph translation strings and all144added/reused term/paragraph strings remain preserved; active totals are120additional Japanese paragraphs,48views,433records and48diagrams. Building146,civil134,utilities224 practical lessons; theory161shared. No question bytes or10×40memberships changed. Allpriorcompletionkeysremain; the two expanded views require revision2completion.
+
+Fresh merged host checks passed1440locale-paragraph renders,172Japanese route-paragraph renders,56excluded repeats,48PNGfiles and844preserved inputs. RealChromium reader QA passed16building/civil routes,40Japanese+40Vietnamese paragraphs and6revision upgrades preservingr1while savingr2. The explicit tensile-force role in036was clarified inJapanese+12locales atrevision2; no extra paragraph/question. TypeScript/UI checks passed; durable merge verification is required next. Browser60attempts/9600choice labels/60resumes and18finalviewports were captured before structural integration; they are real adapted-web evidence, not production/native certification. Whole13PDFatomic/figure coverage and professional/native/rights approval remain open. The62objective review is a bounded review of the historical33page gap, not a whole-source denominator. Current sourceintegrityreport has352anchored pages/18unanchored instructional pages; these are lineage counts only.
+
 ---
 
 # Latest source-difference supplement — 2026-10-17
@@ -13,6 +28,22 @@ Source-lineage reconciliation:13actual PDF byte/page hashes reverified; all370in
 Added six shared building/civil views (035–038,040–041),14 Japanese paragraphs,12 direct-Japanese locale overlays and six controlled concept diagrams. Newly explicit knowledge: scaffold member positions and foot components; concrete/steel bond and carbonation; slab formwork load path; hydraulic versus gas-pressure-welding equipment paths; electrode coating and fume/spatter mechanisms; demolition systems and construction-stage support. Three unpublished overlapping paragraphs were excluded and existing006/007 reused. No new questions or duplicated canonical study/translation/artwork inputs.
 
 Totals433study records;48additional views/118Japanese paragraphs/12locales/48diagrams. Building146practical lessons,civil134,utilities224;theory161shared. Allassessment scopes stay10×40. New diagrams explain roles, not a complete tool-recognition atlas. Source atomic/numeric/figure/safety-context completeness and professional/native/rights/device review remain unresolved.2号deferred. See FINAL_STRUCTURAL_DIFFERENTIAL_LEDGER_2026-10-17.json and current runtime QA.
+
+
+---
+
+# Latest continuation — restored concepts and real browser QA,2026-10-17
+
+Four distinct equipment paragraphs had been removed by overbroad deduplication: scaffold platform/bracing,basic ratchet mechanism,gas-pressure equipment roles,welding source versus consumable electrode. Restored the original Japanese and stable IDs in building003/004/006/007; both building and civil reuse them. Added48paragraph translation strings and60new term strings;36term strings reused from existing canonical translations. These four active views are revision2; oldr1completion keys remain archived and cannot silently complete the expanded view. Raw844original inputs and every exam question remain byte-preserved.
+
+Active additional text now108paragraphs/42views;1296locale-paragraph host renders passed. Scope QA148Japanese paragraph renders,52excluded repeats,427global records,42PNGfiles and all6routes10×40passed. Focused TypeScript and10/10JLPT lock passed. Host attempt matrix180cases remains unchanged in question data.
+
+RealChromium153.0.8010.0 now works through a separately extracted npm distribution. The complete realbrowser run passed60full attempts/2400questions/9600choice labels/60resumes and all postsubmit reloads across6routes. Final18captures have a loaded Japanese font,visible44px+controls,no horizontal overflow and no transient modals; AI visually inspected all18. Persisted underqa/2026-10-17. The fullattempt bundle and independent visual-capture bundle have identical SHA256. Royal artwork,safearea andAsyncStorage are adapted; productionExpo andnative devices remain untested. See ONE_GO_BROWSER_QA and ONE_GO_BROWSER_VISUAL_QA.
+
+Read the33remaining page bodies and inspected33page renders for layout/figure context. REMAINING_PAGE_SEMANTIC_REVIEW records62bounded objectives,explicit active paragraph candidates and precise remaining gaps. This is not a complete atomic denominator or fullresolution figure/table certification. Four concepts restored,16bounded explanations identified; other missing/partial concepts,recognition details and product/design/SDS/current-law requirements remain open. Continue source-backed conceptual authoring; do not treat related paragraph links as adequate teaching. Independent manufacturer evidence resolves annealing towardsoft/workable tying wire,not a universal strength increase; do not propagate the source wording.
+
+Whole1go task remains NOTcomplete. All exam pools are complete; remaining work is source knowledge/figure reconciliation,missing explanations,production/native evidence and required professional/native/rights review.2号stays deferred. No sourcePDF/rawimage redistributed. Do not request renewed push permission; current branch publishing is already authorized.
+
 
 ---
 
@@ -33,8 +64,6 @@ Theory400(common3fields),utilities400,building400,civil400. Every scope has10ful
 Allfieldforms10correctperposition/no3same. ActualadaptedhostQA60fullattempts/9600choice labels/120resumes passed; legacyfieldstoragepreserved. ScopeQAall6routes10×40/844originalinputs/1248localeparagraphs/42PNGfiles passed. FocuseddataTypeScript and10/10JLPTUIlock passed. Theory90attempts andutilities30previouslypassed; finalcross-route rerun/realbrowser/native evidence andsourceaudit are next.
 
 Question-count deficits are0; this is not whole-source or release certification. Stillopen:13PDFatomic/numeric/recognition/safety-context completeness, browser/device evidence, humanexpert/native/rights approvals.2号deferred. SeeFIELD_FULL_ATTEMPTS_QA_2026-10-17.json/PRACTICAL_REUSE_RUNTIME_QA_2026-10-17.json andFIELD_ASSESSMENT_COMPLETION_LEDGER_2026-10-17.json.
-The unpublished 40-question finishes supplement is preserved with archive-only IDs in archived-assessment-drafts/theory-finishes-40-2026-10-17.json. It is excluded from runtime and coverage counts; the completed primary theory bank is retained without duplicate authoring.
-
 
 ---
 
