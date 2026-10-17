@@ -1,6 +1,6 @@
 # Đối chiếu và dùng lại kiến thức theo đoạn — 2026-10-17
 
-Điểm tiếp nối mới nhất:111bài có hồ sơ giới hạn; định nghĩa ケガキ từ337đã liên kết theo đoạn vào308của 土木, giữ nguyên câu Nhật và12bản dịch bằng tách đoạn không mất nội dung.113bài còn lại và rà ngược toàn bộ ý/hình/bảng nguồn chưa hoàn tất.
+Điểm tiếp nối mới nhất: 118 bài có hồ sơ đối chiếu có giới hạn. Nhóm máy xây dựng 162–168 đã được rà; giữ nội dung và liên kết đang có, không soạn lại các khác biệt đã giải thích tại building049/050/053. Còn 106 bài chưa có hồ sơ nhóm tương đương; rà ngược toàn bộ ý, hình, bảng và điều kiện nguồn vẫn chưa hoàn tất.
 
 Yêu cầu chủ dự án: đối chiếu từng ý của toàn bộ224bài 実技 gốc với nguồn 建築・土木, gồm bảng/hình/chú thích/điều kiện; dùng lại toàn phần hoặc theo cụm/đoạn, chỉ soạn phần riêng, không làm đều số bài. Sau khi sửa xong mới bàn giao bước kiểm thực tế trên app.
 
@@ -151,3 +151,17 @@ QA host đạt 104 lượt đọc liên kết theo đoạn và 208 lượt kiể
 Mốc hiện tại: 111 bài, 892 ID đoạn gốc (2 ID đã điều chỉnh: một sửa giới hạn, một tách câu), thêm 11 ID = 903 đoạn trong các nhóm đã rà. 11 ID thêm gồm 10 đoạn soạn bổ sung và một câu cũ tách ra. Có 810 mục kiểm giới hạn, 1.319 ràng buộc giải thích dùng chung, 12 ràng buộc inline 実技 cộng 4 vị trí từ 学科071; 485 quyết định phạm vi được đếm riêng. Kiểm kê 224 bài gốc hiện 1.923 đoạn; hiển thị utilities 1.923, building 1.033, civil 990. Số bài 224/163/152 giữ nguyên.
 
 Còn 113 bài chưa có hồ sơ nhóm tương đương: 341–385 và 162–229. Việc rà ngược toàn bộ ý, bảng, hình, điều kiện, nhận dạng ảnh và các mục mở trong hai hồ sơ ống/ngầm vẫn còn. Nguồn 6d PDF9 nêu khoảng đường kính đẩy ống 0,2–3m, trong khi 7d PDF7 nêu 0,8–3m; chưa chọn một khoảng làm giới hạn thiết kế chung. Màu sheet, ngưỡng khí/đào và điều kiện sản phẩm cần được xác minh trước khi giảng thành quy tắc áp dụng. Chưa bàn giao như đã hoàn tất toàn bộ 224 bài.
+
+## Nhóm máy xây dựng 162–168 — 2026-10-18
+
+Đọc 84 đoạn Nhật của 7 bài, đối chiếu thân bài xuyên trang và xem hình/chú thích trên 5l PDF5–6, 5k PDF5–6, 5d PDF5–7. Hồ sơ `MACHINE_REUSE_AUDIT_162_168_2026-10-17.json` ghi 56 điểm kiểm có giới hạn và 144 ràng buộc đoạn–nhánh đang dùng. Không tăng số bài, đoạn, bản dịch, hình hoặc câu hỏi.
+
+Giữ phân biệt đào/xúc–quay toa–di chuyển; bộ công tác và xi lanh; đầm chặt khác làm phẳng; bánh thép, lốp và các phương rung; xúc–vận chuyển–đổ; bán kính làm việc khác chiều dài cần; tải thực tế khác các trị số năng lực máy. Câu nhận dạng không được hiểu thành hướng dẫn vận hành, lắp đặt, tính tải hoặc xác nhận đủ tư cách.
+
+Các khác biệt đã được soạn trước được giữ bằng ID hiện có: building049 giải thích cấu trúc một cabin của ラフタークレーン; building050 giải thích hướng di chuyển của 天井クレーン; building053 phân biệt kiểu gầu hướng lên với バックホウ. Không tạo lại ba nội dung đó. Ảnh tương tự có chú thích khác nhau giữa bộ l và k/d không làm hai loại cần cẩu tự động đồng nghĩa. Kiểm lại phần giới thiệu ラフテレーンクレーン của TADANO và họ lu của SAKAI để giới hạn kết luận.
+
+Không tạo phê duyệt mới cho 163/building hoặc 167/civil: các trang đối chiếu được chọn không đủ mục tiêu lu đường hoặc cơ chế mast/floor climbing. Những hàng đó vẫn pending trong sổ từng đoạn. Việc tên タイヤドーザー xuất hiện như tên gọi trong nguồn được ghi riêng để xác minh theo sản phẩm/ngữ cảnh; không biến thành quan hệ đồng nghĩa tuyệt đối và không thêm đoạn chỉ vì thiếu một từ.
+
+Kiểm sổ hash đạt, không có hồ sơ trùng hay bài đã đổi nhưng vẫn dùng hash cũ. Giữ 1.923 đoạn của 224 bài; 1.463 ràng buộc giải thích dùng chung, 12 liên kết inline 実技 và 485 quyết định phạm vi đếm riêng. Toàn bộ thay đổi chỉ thuộc hồ sơ nên không chạy lại trình duyệt cho nội dung/runtime không đổi. Tổng 118 bài có hồ sơ, 976 ID đoạn gốc + 11 ID thêm = 987 đoạn trong các nhóm đã rà; 866 điểm kiểm có giới hạn, chưa phải mẫu số toàn bộ kiến thức nguồn.
+
+Còn 106 bài chưa có hồ sơ nhóm tương đương: 169–229 và 341–385. Các mục mở của nhóm ống/ngầm, kiểm nhận dạng ảnh và đối chiếu ngược mọi ý nguồn tiếp tục được giữ. Chưa bàn giao như đã hoàn tất toàn bộ.
