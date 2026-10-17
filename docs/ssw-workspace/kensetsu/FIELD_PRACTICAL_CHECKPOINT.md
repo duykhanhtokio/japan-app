@@ -1,3 +1,17 @@
+# Resumed integration and real Chromium verification — 2026-10-17
+
+Restored one previously authored welding-equipment paragraph that was still hidden after concurrent integration. Its original Japanese, stable paragraph ID and 12 existing translations are retained. Common069 continues to provide the base/filler-material explanation. Other restoration candidates remain replaced by the more specific035/038/043 lessons to avoid repeated teaching.
+
+The expanded007 lesson now uses revision2 in both applicable fields. Explicitly preserve its r1 completion in the archive allowlist; old completion remains history and does not auto-complete the expanded lesson. Real browser checks pass both field migrations, requiring reading to the end before completing r2.
+
+Current totals:454 study records;69 additional views/162 unique Japanese paragraphs/12 locales/69 concept diagrams. All six 1号 assessment scopes retain10×40; shared theory and canonical content are reused. No question bank or original385 lessons/844 preserved inputs changed.2号 remains deferred.
+
+Fresh verification: actual Chromium with RN Web completed60 assessment attempts/2400 question interactions/9600 choice labels/60 mid-test reloads; storage failure/retry, restart/cancel, result reload and deferred2号 passed. Final readers passed101 routes/233 Japanese plus233 Vietnamese paragraph renders/2 revision migrations. Host checks passed1944 locale-paragraph renders across12 languages.18 unsubmitted viewport captures were visually inspected;36 unsubmitted/submitted captures and hashes retained. Focused TypeScript and10/10 JLPT UI lock passed.
+
+Browser fixtures adapt Royal artwork, safe area, storage and images; these results do not certify the production Expo bundle or native devices. Atomic whole-source coverage, complete physical tool-recognition artwork, independent domain/native/rights review and release approval remain pending. See ONE_GO_OPEN_REVIEW_ITEMS_2026-10-17.json and the three browser reports. Earlier entries below are historical.
+
+---
+
 # Current 1号 source-difference checkpoint — 2026-10-17
 
 Added B053–057: 5 views, 7 Japanese paragraphs, 12 locale overlays and 5 original concept diagrams. All five views are individually source-bound for both 建築 and 土木. They cover shovel bucket orientation, scaffold brackets, slump cone versus measuring gauge, masking tape/spatula, and source tool names linked to already taught roles. Earlier fastening, hammer, painting and measurement explanations are reused by reference. No question duplication or new operating values.

@@ -5,7 +5,7 @@
   "sourceLineageNotCoverageApproval": true,
   "atomicKnowledgeReviewStillRequired": true,
   "requiredExpertGate": "safetyCritical: independent construction/safety expert before publication",
-  "browserAndNativeEvidenceUnavailable": true,
+  "browserAndNativeEvidenceUnavailable": false,
   "noNewOperationalNumbersApproved": true,
   "doNotInferQuestionsEqualSourceCoverage": true,
   "latestAdditionalFactLedger": "SOURCE_LABEL_DIFFERENTIAL_LEDGER_2026-10-17.json",
@@ -18,7 +18,7 @@
     "buildingPracticalLessons": 162,
     "civilPracticalLessons": 151,
     "additionalViews": 69,
-    "uniqueAdditionalJapaneseParagraphs": 161,
+    "uniqueAdditionalJapaneseParagraphs": 162,
     "targetLocales": 12,
     "assessmentFormsPerScope": 10,
     "questionsPerForm": 40,
@@ -42,8 +42,15 @@
     },
     {
       "id": "browser-device-evidence",
-      "status": "unavailable_in_environment",
-      "reason": "Host component/assessment checks are available; no actual browser/native-device evidence has been obtained."
+      "status": "adapted_web_passed_native_and_production_pending",
+      "reason": "Real Chromium/RN Web passed all 60 assessment routes and 101 active differential-reader routes, 36 viewport captures retained. Artwork, safe area and storage adapters remain; production Expo and native-device evidence is pending."
     }
+  ],
+  "adaptedBrowserEvidenceAvailable": true,
+  "nativeDeviceEvidenceUnavailable": true,
+  "browserEvidenceReports": [
+    "ONE_GO_BROWSER_QA_2026-10-17.json",
+    "ONE_GO_BROWSER_VISUAL_QA_2026-10-17.json",
+    "ONE_GO_MERGED_READER_BROWSER_QA_2026-10-17.json"
   ]
 }

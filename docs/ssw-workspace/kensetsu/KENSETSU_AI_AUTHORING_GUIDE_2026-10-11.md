@@ -2,6 +2,10 @@
 
 Ngày lập: 2026-10-11, Asia/Tokyo. Phạm vi hiện tại: hoàn thiện nội dung để học, bản dịch và ảnh minh họa mới cho 特定技能1号 và 特定技能2号. Phần thi hoàn toàn bằng tiếng Nhật sẽ thiết kế sau khi phần học hoàn thiện. Đây là hướng dẫn thực thi cho AI tiếp nối dự án, không phải báo cáo nội dung đã sản xuất hay chứng nhận tài liệu đã bao phủ đủ.
 
+## Tiếp nối tích hợp và kiểm tra Chromium — 2026-10-17
+
+Đọc đầu FIELD_PRACTICAL_CHECKPOINT.md:69mục bổ sung/162đoạn Nhật/12ngôn ngữ/69sơ đồ. Đã khôi phục đoạn phân biệt máy hàn và vật liệu tiêu hao;giữ lịch sửr1và yêu cầu hoàn thành lạir2. Chromium/RNWeb đạt60tuyến đề,101tuyến bài học,2trường hợp nâng phiên bản;36ảnh chụp được lưu. Kiểm tra12ngôn ngữ đạt1944lượt đoạn. Các phần Royal/ảnh/storage có adapter;Expo sản xuất và thiết bị thật chưa kiểm. Duyệt chuyên môn/bản ngữ/quyền và bao phủ từng ý nguồn còn mở;2号chờ. Không tạo lại câu hỏi để đủ chỉ tiêu vì các ngân hàng đã10×40.
+
 ## Cập nhật tên gọi và hình dạng dụng cụ — 2026-10-17
 
 Mốc hiện tại:69mục bổ sung/161đoạn Nhật/12ngôn ngữ/69sơ đồ khái niệm. B053–057 được đối chiếu riêng nguồn5k và5d, dùng chung 建築・土木. Thực hành 建築162bài,土木151bài,ライフライン・設備224bài;161bài lý thuyết dùng chung. Cả6phần kiểm tra vẫn10×40. Không coi liên kết370trang là chứng nhận đầy đủ mọi ý nguồn;duyệt chuyên môn/bản ngữ/quyền và thử thiết bị thực tế chưa hoàn tất.2号để sau. Số phía dưới là lịch sử.
