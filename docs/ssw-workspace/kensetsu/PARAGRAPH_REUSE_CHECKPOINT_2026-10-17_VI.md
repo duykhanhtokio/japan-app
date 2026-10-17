@@ -1,6 +1,6 @@
 # Đối chiếu và dùng lại kiến thức theo đoạn — 2026-10-17
 
-Điểm tiếp nối mới nhất:72bài đã có hồ sơ đối chiếu có giới hạn; sáu việc274–301ở phần lịch sử đã được sửa và QA theo mục cuối.152bài còn lại và rà ngược toàn bộ ý/hình/bảng nguồn chưa hoàn tất.
+Điểm tiếp nối mới nhất:79bài đã có hồ sơ đối chiếu có giới hạn; nhóm302–308đã bổ sung3đoạn và qua QA theo mục cuối.145bài còn lại và rà ngược toàn bộ ý/hình/bảng nguồn chưa hoàn tất.
 
 Yêu cầu chủ dự án: đối chiếu từng ý của toàn bộ224bài 実技 gốc với nguồn 建築・土木, gồm bảng/hình/chú thích/điều kiện; dùng lại toàn phần hoặc theo cụm/đoạn, chỉ soạn phần riêng, không làm đều số bài. Sau khi sửa xong mới bàn giao bước kiểm thực tế trên app.
 
@@ -107,3 +107,23 @@ Công cụ kiểm nguồn thay đổi đối chiếu trực tiếp vớiGit nề
 Host sáu bài đạt234tuyến (12locale×3nhánh×6bài ở1号vàViệt×3nhánh×6bài ở2号). Chromium/RNWeb đạt18tuyến,159đoạn Nhật/159đoạn Việt,18trường hợp lưu lịch sửr1và hoàn thànhr2chủ động. Đã xem6ảnh của295/296ở320×568,768×1024,932×430. Ngân hàng10×40của mỗi phạm vi vẫn đạt; TypeScript liên quan, kiểm bảo toàn và khóa UI JLPT đạt. Chi tiết tại `SOURCE_GAP_REPAIRS_HOST_QA_2026-10-17.json`, `SOURCE_GAP_REPAIRS_BROWSER_QA_2026-10-17.json`, `SOURCE_GAP_REPAIRS_SCOPE_QA_2026-10-17.json`. Chưa phải Expo sản xuất/thiết bị thật hoặc duyệt chuyên môn/bản ngữ/quyền.
 
 Mốc hiện tại:72bài đã có hồ sơ;576IDđoạn gốc(trong đó1đoạn đã chỉnh giới hạn)+6đoạn thêm;614điểm kiểm có giới hạn;1.164ràng buộc đoạn–nhánh đã đối chiếu phần giải thích. Sổ 実技 gốc224bài có1.918đoạn, mẫu số ban đầu1.912được giữ riêng. Số đoạn hiển thị:utilities1.918,building1.029,civil986; số bài224/163/152giữ nguyên. Không còn sáu việc sửa cụ thể của nhóm này ở trạng thái chưa tích hợp.152bài chưa có hồ sơ nhóm tương đương, rà ngược toàn bộ ý/bảng/hình/điều kiện và mục tiêu nhận dạng vẫn mở. Tiếp tục302–385và162–229; chưa bàn giao như đã hoàn tất toàn bộ224bài.
+
+## Nhóm quản lý thi công302–308 — ba bổ sung đã tích hợp
+
+Đã đọc56đoạn gốc, đối chiếu6k/6dPDF1–5và bảng ba loại墨出しởPDF5của cả hai nguồn. PDF1–4không có đối tượng hình nhúng hoặc vector; không suy rộng thành đã duyệt hình ở trang khác. Hồ sơ `CONSTRUCTION_METHOD_REUSE_AUDIT_302_308_2026-10-17.json` ghi59đoạn hiện hành,65điểm kiểm có giới hạn và118ràng buộc đoạn–nhánh.
+
+Ba thiếu sót được bổ sung đúng bài:303cluster3p3giải thíchQCDSE;307cluster3p3phân biệt hồ sơ có bằng/chứng chỉ với mang giấy tờ cần thiết khi làm công việc thuộc diện yêu cầu;308cluster3p3giải thíchガラリtrong bảng vị trí lắp đặt. Có36giá trị dịch mới cho12locale; giữ nguyên mọi đoạn và bản dịch cũ. Ba bài lênr2, lưu hoàn thànhr1trong lịch sử, không tự hoàn thànhr2. Dùng chung qua tham chiếu ở cả3nhánh và2cấp; không thêm bài/câu hỏi.10hashtrích dẫn ngân hàng được cập nhật; nội dung câu hỏi/thứ tự/đáp án/revisionđề giữ nguyên.
+
+QA: host351lượt đọc cho9bài trong sổ sửa thiếu sót, cộng39lượt riêng263; bộ kiểm toàn bộ phạm vi và12localePASS. Chromium9tuyến của3bài mới,81đoạn Nhật+81đoạn Việt,9ca nângr1→r2; đã xem9ảnh điện thoại/tablet/ngang. Các ảnh là readerRNWebvới adapter kiểm thử, chưa phảiExpohoặc thiết bị native. TypeScriptvà khóaUIJLPT10/10PASS. Kiểm toàn vẹn xác nhận823đầu vào gốc nguyên byte,22tệp sửa có truy vết,40hashtrích dẫn cập nhật cộng dồn và nội dung đề không đổi.
+
+Cộng năm nhóm:79bài/632IDđoạn gốc(trong đó1đoạn đã chỉnh giới hạn)+9đoạn thêm=641đoạn;679điểm kiểm có giới hạn;1.282ràng buộc đoạn–nhánh.224bài gốc có1.921đoạn, giữ riêng mẫu số gốc1.912. Các đoạn hiển thị:utilities1.921,building1.032,civil989; số bài224/163/152không đổi.145bài chưa có hồ sơ nhóm tương đương. Ứng viên hẹp337ケガキtrong bảng6dPDF5để mở tới khi rà đầy đủ337; không coi một từ trong bảng đủ để nhập toàn bài hoặc mọi dụng cụ của bài337. Các mục nhận dạng hình, đối chiếu ngược mọi ý nguồn và bản dịch chuyên gia vẫn mở. Tiếp tục309–385và162–229.
+
+## Tiếp nối nhóm quản lý thi công302–308 — 2026-10-18
+
+Khôi phục phần chưa commit của phiên trước, đối chiếu56đoạn Nhật gốc với cả6k/6dPDF1–5và đọc trực quan đủ10trang, gồm bảng ba nhóm墨出し/墨付け. Giữ các đoạn đã có; bổ sung3đoạn ở303/307/308kèm36giá trị dịch cho12locale. QCDSEđược giải nghĩa đúng năm khía cạnh; giấy tờ phải mang theo được phân biệt với bản ghi có bằng/chứng chỉ và thẻCareerUp;ガラリđược gắn vào mục tiêu vị trí lỗ lấy/thải gió, không suy lưu lượng/tính năng từ dấu vị trí. Mỗi bài sửa lênr2, giữ hoàn thànhr1riêng, không tự hoàn thành phần mới.
+
+Đã kiểm lại Điều61khoản1–4tạiMHLW và mô tả sản phẩm thông gió củaUNIX; phạm vi không phải toàn bộ nghĩa vụ pháp lý hoặc mọi sản phẩm. GLvà基準墨/親墨đã có trong115/119nên không soạn lại. Ứng viên337cluster2p1còn trộn định nghĩaケガキvới dụng cụ riêng; tiếp tục rà tại337, chưa đưa cả bài sang土木từ một từ trùng trong bảng. Quan hệ chất lượng–quá trình thi công an toàn và đầy đủ từng hoạt động quản lý còn thuộc rà ngược nguồn; hồ sơ hiện tại chỉ xác nhận các khẳng định có giới hạn.
+
+Kiểm bảo toàn vớiGit nền đạt:9đoạn thêm tổng cộng,1đoạn sửa,79đoạn cũ và232mục dịch cũ giữ nguyên;40hash trích bài được cập nhật, nội dung/thứ tự/đáp án/revision đề không đổi. Host đọc9bài sửa trên351tuyến (12locale×3nhánh ở1号vàViệt×3nhánh ở2号). Chromium/RNWeb kiểm lại9tuyến cho3bài mới,81đoạn Nhật/81đoạn Việt,9trường hợp giữr1vàhoàn thànhr2chủđộng; ảnhphone/tablet/landscapeđược tạo. Không phảiExpo/thiếtbịthật,duyệtchuyênmôn/bảnngữ/quyền. KhóaUIJLPTđạt10/10.
+
+Tổng79bài có hồ sơ/632IDđoạn gốc+9đoạn thêm/679điểmkiểmcógiớihạn. Sổ224bài có1921đoạn;1282ràngbuộcđoạn–nhánh xácnhậnphầngiảithích và11liênkếttừngđoạnriêng. Sốbài224/163/152khôngđổi. Còn145bài chưa có hồ sơ nhóm tương đương (309–385trừ phần đã rà, và162–229); chưa bàn giao là đã hoàn tất toàn bộ.

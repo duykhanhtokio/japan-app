@@ -10,7 +10,7 @@ inline = json.loads((ROOT / 'src/data/kensetsu/paragraph-reuse-policy.json').rea
 manifest = json.loads((DOCS / 'SOURCE_KD_INTAKE_2026-10-17.json').read_text())
 source_hashes = {s['sourceId']: s['sha256'] for s in manifest['sources']}
 audits = {}
-for audit_path in sorted(DOCS.glob('SHARED_TOOLS_REUSE_AUDIT_*.json')):
+for audit_path in sorted(DOCS.glob('*REUSE_AUDIT_[0-9]*_2026-10-17.json')):
     audit = json.loads(audit_path.read_text())
     assert audit['whole224AtomicReviewComplete'] is False
     for lesson in audit['rows']:
