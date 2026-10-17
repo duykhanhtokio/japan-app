@@ -1,3 +1,13 @@
+# Final technical matrix and remaining review —2026-10-17
+
+All6scope routes have10×40. Finalfreshhostmatrix180attempts/28800choice labels/360mid-attempt resumes passed across theory,utilities,building,civil; three currentreports saved. Original385lessontranslations passed9791sourceunits/117492strings/3856paragraphs across12locales;104additionalparagraphs/1248localeparagraphrenders and42PNGfiles verified. Original844inputs preserved. Source13PDFbytes+387pagecounts+references verified; no rawsourcebytes/images committed.
+
+SOURCE_FINAL_INTEGRITY_AUDIT_2026-10-17.json now merges directlessonrefs, reuseassignments and all5differentialledgers, including canonicalreuse/safety crossfield evidence.337pages have teachinglineageanchors;17cover/contents pages excluded;33instructional pages lackexplicitanchors. These are document-lineage counts, not missing-knowledge percentages and not whole-source semantic approval. Initial61pageestimate preceded ledger merging and frontmatter classification; it is superseded.92pages have numericcandidates;263pageshaveimageblocks, not recognition/expert approvals.
+
+Whole task remains NOTcomplete: complete atomic fact/condition/number/figure reconciliation, source-bound resolution of the33lineageitems, realbrowser/native evidence and required professional/native/rights review. Current runtime has no Chromium executable; previous download was corrupt. Do not repeat unchanged failed download, invent screenshots/humanapproval, universalise source numerical settings or count morequestions as semantic coverage. See ONE_GO_FINAL_TECHNICAL_QA_2026-10-17.json and ONE_GO_OPEN_REVIEW_ITEMS_2026-10-17.json. All400questionpooldeficits0;2号deferred. Nextwork is source/review gates, not quota authoring.
+
+---
+
 # Latest continuation — all1go assessmentpools10×40,2026-10-17
 
 Theory400(common3fields),utilities400,building400,civil400. Every scope has10full40-question Japanese forms. Newfieldbank contains208questions shared bybuilding/civil fromcanonical230–281 and22civil-only questions fromactivecivil003/005/006/007/008/009/010/011/012/013. Eachparagraph binding haslessonSHA/revision. No study/translation/image copies. Existing192building/170civilquestions retained unchanged; newversioned400membership is explicit infield-review-tests.ja.json. Oldattemptkeys stay stored and are not silently applied to rearrangedforms.
