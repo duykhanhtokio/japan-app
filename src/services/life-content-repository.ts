@@ -43,13 +43,18 @@ const scenarios = [
     ...scenarioOverrides.filter(scenario => !sourceScenarioIds.has(scenario.id)),
 ];
 
-const scenarioIndex = {
-    ...(scenarioIndexJson as Record<
-        string,
-        LifeScenarioIndexItem
-    >),
-    ...(scenarioIndexOverridesJson as Record<string, LifeScenarioIndexItem>),
-};
+// Older index records omit type; derive it from the effective scenario data.
+const sourceScenarioIndex: Record<
+    string,
+    Omit<LifeScenarioIndexItem, 'type'> & { type?: string | null }
+> = { ...scenarioIndexJson, ...scenarioIndexOverridesJson };
+const scenarioTypeById = new Map(scenarios.map(scenario => [scenario.id, scenario.type]));
+const scenarioIndex: Record<string, LifeScenarioIndexItem> = Object.fromEntries(
+    Object.entries(sourceScenarioIndex).map(([id, item]) => [
+        id,
+        { ...item, type: item.type === undefined ? scenarioTypeById.get(id) ?? null : item.type },
+    ]),
+);
 
 /*
  * =========================================================

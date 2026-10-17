@@ -54,8 +54,11 @@ async function main() {
       const cases=[];let japaneseParagraphs=0,translatedParagraphs=0,revisionUpgradeCases=0;
       await page.goto(base+'/?reader=1');
       await page.waitForFunction(()=>Array.isArray(window.__readerCases));
-      const readerCases=await page.evaluate(()=>window.__readerCases);
-      assert(readerCases.length>=69,'Missing active differential readers');
+      const allReaderCases=await page.evaluate(()=>window.__readerCases);
+      assert(allReaderCases.length>=69,'Missing active differential readers');
+      const selectedReaderIds=(process.env.KENSETSU_BROWSER_READER_IDS||'').split(',').filter(Boolean);
+      const readerCases=selectedReaderIds.length?allReaderCases.filter(c=>selectedReaderIds.includes(c.sessionId)):allReaderCases;
+      assert(readerCases.length>0,'No requested readers found');
       for(const {field,sessionId,n} of readerCases){
         const learner='merged-reader-'+field+'-'+sessionId;
         await page.goto(base+'/?reader=1&language=vi&learner='+learner);
@@ -80,8 +83,8 @@ async function main() {
         console.log('PASS merged reader '+field+'/'+n+' r'+lesson.revision);
       }
       assert.deepEqual(errors,[]);
-      const report={date:'2026-10-17',status:'PASS_REAL_CHROMIUM_MERGED_READERS_AND_REVISION_PROGRESS',browserVersion:await browser.version(),readerCases:cases.length,japaneseParagraphs,translatedParagraphs,revisionUpgradeCases,cases,runtimeErrors:errors,bundleSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(out,'entry.js'))).digest('hex'),limits:['Actual KensetsuCourse reader with RN Web; Royal artwork/safe-area/storage/image data have explicit fixture adapters.','Japanese and Vietnamese DOM rendering checked here; all12locales are separately checked by the host suite.','No production Expo/native-device, professional or human-native approval.'],nativeDeviceTested:false,domainReviewed:false,nativeReviewed:false,releaseReady:false};
-      fs.writeFileSync(path.join(root,'docs/ssw-workspace/kensetsu/ONE_GO_MERGED_READER_BROWSER_QA_2026-10-17.json'),JSON.stringify(report,null,2)+'\n');
+      const report={selectedReaderIds,availableReaderCases:allReaderCases.length,date:'2026-10-17',status:'PASS_REAL_CHROMIUM_MERGED_READERS_AND_REVISION_PROGRESS',browserVersion:await browser.version(),readerCases:cases.length,japaneseParagraphs,translatedParagraphs,revisionUpgradeCases,cases,runtimeErrors:errors,bundleSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(out,'entry.js'))).digest('hex'),limits:['Actual KensetsuCourse reader with RN Web; Royal artwork/safe-area/storage/image data have explicit fixture adapters.','Japanese and Vietnamese DOM rendering checked here; all12locales are separately checked by the host suite.','No production Expo/native-device, professional or human-native approval.'],nativeDeviceTested:false,domainReviewed:false,nativeReviewed:false,releaseReady:false};
+      fs.writeFileSync(path.join(root,'docs/ssw-workspace/kensetsu',selectedReaderIds.length?'ONE_GO_TARGETED_READER_BROWSER_QA_2026-10-17.json':'ONE_GO_MERGED_READER_BROWSER_QA_2026-10-17.json'),JSON.stringify(report,null,2)+'\n');
       console.log('PASS merged readers: '+cases.length+' routes, '+japaneseParagraphs+' Japanese/'+translatedParagraphs+' Vietnamese paragraphs, '+revisionUpgradeCases+' revision upgrades');return;
     }
     const cases=[],screenshots=[];

@@ -16,7 +16,7 @@ module.exports = async function compile(root, modules, jsonSnapshots = new Map()
     "@/components/ui/RoyalPageBackground": `import React from 'react';export default ({children})=>React.createElement('View',{},children);`,
     "@/context/LanguageContext": `export const useAppLanguage=()=>({language:globalThis.__tokuteiLanguage??'vi'});`,
     "@/data/kensetsu": `export const fields=[{id:'utilities',title:'ライフライン・設備'}],weeks=[{id:'week-01',titleJa:'安全確認',sessionIds:['session-001']}],illustrations={},illustrationAspectRatios={};export const sessionById=new Map([['session-001',${JSON.stringify(fixture.fixtureSession)}]]);export const completionId=s=>s.id,completionKey=(learner,level,field)=>'kensetsu:'+learner+':'+level+':'+field;export const restoreProgress=raw=>JSON.parse(raw||'{}');`,
-    "@/data/kensetsu/review-tests": `export const reviewTests=[{id:'test-01',version:1,contentRevision:'v1',titleJa:'建設学習確認テスト 第1回',questions:${JSON.stringify(fixture.questions)}}];`,
+    "@/data/kensetsu/review-tests": `export const reviewTests=[{id:'test-01',version:1,contentRevision:'v1',titleJa:'建設学習確認テスト 第1回',questions:${JSON.stringify(fixture.questions)}}];export const reviewTestsForScope=level=>level==='1'?reviewTests:[];`,
     "@/data/kaigo/weekly-art-allocation": `export const illustrationForStudyDay=day=>({source:1,aspectRatio:1.5,captionVi:'BẢN_DỊCH_HÌNH'});`,
     "@/data/kaigo/depth-figures": `export const kaigoDepthFigures={};`,
     "@/data/kaigo/figures": `export const kaigoFigures={};`,

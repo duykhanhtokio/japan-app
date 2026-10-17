@@ -1,3 +1,11 @@
+# Whole active Japanese paragraph expression screen — 2026-10-17
+
+All13 PDFs/387pages byte-verified for a22-normalized-character exact-span screen against454active lesson records/4018Japanese paragraphs. Two candidate paragraphs found:retain the standard PF conduit English expansion;rewrite building010p2 as an independently framed tool-sorting example and update12direct Japanese translations. The latter is wording-only:stable completion revision1 and exam question/answer/attempt identities retained;source-reference hash refreshed. No new knowledge quota added.
+
+Final scan retains only the technical-name candidate,AI-editorially classified. This does not certify semantic independence,figure/audio/question/translation rights,whole-source knowledge coverage or publication. Current host checks1944locale paragraphs;focused actual Chromium checks2field routes/6Japanese+6Vietnamese paragraph renders. See SOURCE_EXPRESSION_SCREEN_2026-10-17.json and ONE_GO_TARGETED_READER_BROWSER_QA_2026-10-17.json. Earlier full60exam/101reader evidence remains historical evidence of those exact bundles. Native/expert/rights gates remain open.
+
+---
+
 # Historical source-cell reconciliation — 2026-10-17
 
 After remote persistence of84c618e5, verified10 selected2021construction statistics against MHLW official table12,columnR3,PDF11(publication2022-05-30). All three source7l/7k/7d table1 subtotal rows agree.13 displayed accident columns sum267;overall total remains288 because source table lists principal types, not every type. Sector subtotals102+139+47equal288. Do not "correct" either set or label these historical counts as current rates.
