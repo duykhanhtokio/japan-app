@@ -42,3 +42,15 @@ Chưa đến mốc báo hoàn tất toàn bộ đối chiếu. Các thay đổi 
 ## Đợt rà ứng viên tiếp theo
 
 Đã đối chiếu thêm sáu ứng viên theo ngữ cảnh. Hai ý giữ bài đang có để tránh lặp:flux ởbuilding040(dùng chungcivil),và hệ treo/trục stud ởbuilding018. Bốn so khớp từ ngữ không được dùng làm bằng chứng chuyển kiến thức:ống đồng/thép uốn;CO2tạo bọt/CO2chữa cháy;cáp quang được ngắt trước phá dỡ/cáp quang truyền dẫn;khoảng cách cần bơm–đường điện/khoảng cách tuyến ngầm. Xem `REUSE_CANDIDATE_DECISIONS_2026-10-17.json`; đây là quyết định hẹp theo ý/cặp nguồn, chưa phải đã loại trừ toàn bộ mọi ý trong sáu bài đó khỏi hai nhánh. Không có thay đổi runtime trong đợt này.
+
+## Rà lại nhóm dụng cụ230–249 và nối 学科→実技
+
+Đã đọc lại toàn bộ160đoạn Nhật của20bài230–249, đối chiếu thân bài xuyên trang và hình/chú thích của5kPDF33–37,5dPDF31–36. Hồ sơ `SHARED_TOOLS_REUSE_AUDIT_230_249_2026-10-17.json` ghi172điểm khái niệm có điều kiện,80cụm,hash từng đoạn và căn cứ riêng cho mỗi nhánh. Giữ các bài đang dùng chung; không thêm bài hoặc viết lại/dịch lại. Những giới hạn đã có về tốc độ/torque, loại đĩa, tuổi thọ lưỡi, máy đóng đinh, cuộn dây, xẻng/cào, máy đầm và kính nhìn laser được giữ nguyên. Đoạn ví dụ do dự án soạn được rà như vận dụng, không đếm thành sự kiện nguồn mới.
+
+Phát hiện một liên kết hiển thị còn thiếu: nguyên lý đầm bê tông có trong 学科071 nhưng bài 実技building008 chỉ nhắc phần cũ ở hồ sơ biên soạn. Đã gắn cùng hai đối tượng đoạn071cluster3p1–p2 vào bài008 của cả建築・土木 ở1号và2号. Đi cùng ý rung/độ đặc là điều kiện giảm không khí cuốn vào không mong muốn; không diễn giải thành loại bỏ toàn bộ không khí hay rung càng lâu càng tốt. Các đoạn khác của071 không kéo theo. Không tăng số bài.
+
+Tổng phần dùng lại theo đoạn hiện có8đoạn nguồn tại15vị trí theo nhánh; trong đó2đoạn mới này thuộc 学科, nằm ngoài kiểm kê1.912đoạn 実技 gốc. Số đoạn hiển thị:building1.023,civil980;utilities giữ1.912. Bộ sinh sổ rà soát giờ đọc quyết định cóhash từ hồ sơ kiểm, không làm mất320ràng buộc đoạn–nhánh đã rà khi chạy lại; bài đổi nội dung sẽ bị báo hồ sơ cũ thay vì âm thầm giữ chứng nhận.
+
+Host/component đạt91tuyến đọc và195lượt đối chiếu dịch; vẫn dùng cùng đối tượng Nhật/dịch12ngôn ngữ, giữ lịch sử cũ và yêu cầu hoàn thành phần mở rộng. Các bài gốc/ngân hàng/ảnh và844đầu vào cũ giữ nguyên. Chromium/RNWeb đạt14tuyến đọc và30lượt đối chiếu đoạn dịch Việt. Đã xem ảnh bài008 tại320×568,768×1024,932×430. Giữ lịch sử cũ và yêu cầu bấm hoàn thành mới; không có lỗi runtime ghi nhận. Chi tiết trong `PARAGRAPH_REUSE_BROWSER_QA_2026-10-17.json`; chưa phải Expo/thiết bị thật. TypeScript phần liên quan và khóa UI JLPT đều đạt.
+
+Đây là đối chiếu các khẳng định có giới hạn của nhóm đã chọn, chưa chứng nhận đầy đủ mọi ý nguồn hay đủ hình nhận biết thiết bị. Mẫu số ý kiến thức toàn nguồn vẫn chưa lập đủ;204bài còn lại chưa có hồ sơ nhóm tương đương, ngoài những quyết định hẹp đã ghi trước. Duyệt chuyên môn/bản ngữ/quyền và thiết bị thật vẫn chưa có. Không được báo đã hoàn tất224bài. Tiếp theo: nhóm đo/kiểm250trở đi và rà ngược các ý trong bảng/hình nguồn sang bài thật.
