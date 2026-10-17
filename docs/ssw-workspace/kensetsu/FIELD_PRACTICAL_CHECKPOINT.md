@@ -1,3 +1,15 @@
+# Current checkpoint — shared theory form 03 (2026-10-17)
+
+Common theory: 161 canonical lessons and 285 questions shared across all three fields. This unit adds 40 Japanese questions from canonical lessons 060–069: wells, groundwater lowering, pavement, earthmoving, piles, scaffolding, structural steel, reinforcing steel, splices and welding. It reuses existing study text and translations. No new knowledge-coverage claim is inferred from question count.
+
+Three additional 40-question forms now contain 120 new theory questions. Each has ten correct answers at each position and no run of three equal positions. All previously saved forms and questions remain exactly equal as JSON objects. Runtime scope checks passed nine theory-form submissions across three fields. Full attempts passed 27 cases (three forms × three fields × correct/wrong/mixed), 4,320 choice checks and 54 resumes. The current scoped catalog names were also checked. These are adapter-based host checks, not native/browser certification.
+
+Practical counts remain: utilities 224 lessons / 235 questions; building 140 / 192; civil 128 / 170. Global records: 427. Additional practical set: 42 fact views, 104 Japanese paragraphs, 12 locales, 42 diagrams and 104 questions. Total additional questions: 224 (120 theory + 104 practical). Original 844 inputs, progress, stable navigation and pre-submit answer hiding remain verified. See THEORY_ASSESSMENT_EXPANSION_2026-10-17.json and both runtime QA reports.
+
+Remaining 400-question pool deficits: theory 115, utilities 165, building 208, civil 230. Continue theory from canonical 070 onward; do not rewrite shared lessons. Complete source numeric/recognition/safety-context audit and the full 13-PDF knowledge denominator. Human domain/native/rights approval and actual browser/device evidence remain open; no release approval is claimed. 2号 remains deferred.
+
+---
+
 # Latest continuation — shared theory form02,2026-10-17
 
 Common theory now245questions(161canonical lessons):two additional40-question Japanese forms plus165original scoped questions. Newform02reuses source-bound canonical50–59 knowledge:electrical/gas/water/communications/airconditioning/insulation/fireequipment/earthwork/pipejacking/marine facilities. No study text,translations or diagrams recreated.80additional theory questions total,10correctperposition per40form,no3same run; original forms includingnew01byte-equivalent atJSONobject level.
