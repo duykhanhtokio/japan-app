@@ -1,3 +1,7 @@
+# Preserved parallel source clarifications and full reader verification
+
+101 reader routes passed; 036 and 043 remain revision 2 with all 12 locales and prior completion keys preserved. Source semantic review identifies 9 remaining conceptual-depth objectives. No professional or release approval inferred.
+
 # Whole active Japanese paragraph expression screen — 2026-10-17
 
 All13 PDFs/387pages byte-verified for a22-normalized-character exact-span screen against454active lesson records/4018Japanese paragraphs. Two candidate paragraphs found:retain the standard PF conduit English expansion;rewrite building010p2 as an independently framed tool-sorting example and update12direct Japanese translations. The latter is wording-only:stable completion revision1 and exam question/answer/attempt identities retained;source-reference hash refreshed. No new knowledge quota added.
