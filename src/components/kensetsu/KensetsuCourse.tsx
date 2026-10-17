@@ -884,7 +884,7 @@ function CourseMode({ learner, level, field, language, onBack }: {
           return <RoyalContentPanel key={subject} style={s.paper}>
             <Text style={s.heading}>{subjectLabels[subject]}</Text>
             <Text style={s.body}>{subject === "theory" ? "1号の三分野に共通する学科を学習します。" :
-              available ? "ライフライン・設備の実技を学習します。" : "この分野の実技教材は準備中です。"}</Text>
+              available ? `${fields.find(f => f.id === field)?.title}の実技を学習します。` : "この分野の実技教材は準備中です。"}</Text>
             <Action title={`${subjectLabels[subject]} 学習カレンダー`} testID={`kensetsu-mode-${subject}-study`}
               disabled={!available} onPress={() => setMode({ subject, view: "study" })} />
             <Action title={`${subjectLabels[subject]} 確認テスト`} testID={`kensetsu-mode-${subject}-tests`}

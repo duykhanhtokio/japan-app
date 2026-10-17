@@ -3,19 +3,25 @@ import { sessions, weeks, type Field, type Level, type Session, type Week } from
 export type Subject = 'theory' | 'practical';
 export const subjectLabels: Record<Subject, string> = { theory: '学科', practical: '実技' };
 const theorySources = new Set(['kensetsu-src-01', 'kensetsu-src-02', 'kensetsu-src-03', 'kensetsu-src-04']);
-const utilitiesPracticalSources = new Set(['kensetsu-src-05', 'kensetsu-src-06', 'kensetsu-src-07']);
+const practicalSources: Record<Field, Set<string>> = {
+ utilities: new Set(['kensetsu-src-05', 'kensetsu-src-06', 'kensetsu-src-07']),
+ building: new Set(['kensetsu-src-5k', 'kensetsu-src-6k', 'kensetsu-src-7k']),
+ civil: new Set(['kensetsu-src-5d', 'kensetsu-src-6d', 'kensetsu-src-7d']),
+};
+const allPracticalSources = new Set(Object.values(practicalSources).flatMap(ids => [...ids]));
 
 /** Publisher correction 2026-10-17 supersedes historical shared applicability metadata. */
 export function sessionSubject(session: Session): Subject | null {
   const sourceIds = session.sourceReferences?.map(ref => ref.sourceId) ?? [];
   if (!sourceIds.length) return null;
   if (sourceIds.every(id => theorySources.has(id))) return 'theory';
-  if (sourceIds.every(id => theorySources.has(id) || utilitiesPracticalSources.has(id)) &&
-      sourceIds.some(id => utilitiesPracticalSources.has(id))) return 'practical';
+  if (sourceIds.every(id => theorySources.has(id) || allPracticalSources.has(id)) &&
+      sourceIds.some(id => allPracticalSources.has(id))) return 'practical';
   return null;
 }
 export function isSessionInScope(session: Session, level: Level, field: Field, subject: Subject): boolean {
-  return level === '1' && sessionSubject(session) === subject && (subject === 'theory' || field === 'utilities');
+  if (level !== '1' || sessionSubject(session) !== subject) return false;
+  return subject === 'theory' || !!session.sourceReferences?.every(ref => theorySources.has(ref.sourceId) || practicalSources[field].has(ref.sourceId));
 }
 export function sessionsForScope(level: Level, field: Field, subject: Subject): Session[] {
   return sessions.filter(session => isSessionInScope(session, level, field, subject));

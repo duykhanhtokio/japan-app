@@ -12,6 +12,7 @@ Mục này ưu tiên hơn mọi mô tả dùng chung sáu lộ trình trước �
 - Phạm vi được định tuyến từ sourceReferences theo nguồn; lịch sử applicableLevels/applicableFields trong bài cũ không còn là căn cứ dùng chung. Giữ nguyên ID bài, đoạn, bản dịch, hình và dữ liệu hoàn thành cũ.
 - Đề cũ trộn 学科/実技 được giữ nguyên làm dữ liệu gốc. Khi tách theo nguồn, giữ từng câu/đáp án/lời giải; bài bị chia có ID lượt làm mới để không gán sai đáp án cũ. Không tự coi mỗi nhánh đã có đủ10đề×40câu.
 - Tài liệu JAC leader.pdf mới tìm chỉ là tham khảo dự phòng2号; chưa dùng để soạn cho1号.
+- Đã nhận đủ6PDF5k/6k/7k/5d/6d/7d trong cùng ngày; hồ sơ SOURCE_KD_INTAKE_2026-10-17.json ghi byte/hash/số trang và phạm vi đã đọc. Điểm tiếp nối thực hành riêng hai mảng nằm ở FIELD_PRACTICAL_CHECKPOINT.md. Không lặp yêu cầu gửi lại các tệp này.
 
 ## 1. Mục tiêu và quyết định phải giữ
 

@@ -1,3 +1,4 @@
+import fieldPracticalBank from './field-practical-review-tests.ja.json';
 import { sessionById, type Field, type Level } from './index';
 import { isSessionInScope, type Subject } from './scope';
 import bank from './review-tests.ja.json';
@@ -18,7 +19,7 @@ export const reviewTests:ReviewTest[]=bank.exams;
 
 /** Keep the original bank/attempts intact; derive subject views from every cited lesson. */
 export function reviewTestsForScope(level: Level, field: Field, subject: Subject): ReviewTest[] {
- if (level !== '1' || (subject === 'practical' && field !== 'utilities')) return [];
+ if (level !== '1') return [];
  const questionsInScope = (question: ReviewQuestion) => {
   if (!question.sourceReferences.length) return false;
   const lessons = question.sourceReferences.map(ref => sessionById.get(ref.sessionId));
@@ -27,7 +28,8 @@ export function reviewTestsForScope(level: Level, field: Field, subject: Subject
   return lessons.every(lesson => isSessionInScope(lesson!, level, field, 'theory') || isSessionInScope(lesson!, level, field, 'practical')) &&
    lessons.some(lesson => isSessionInScope(lesson!, level, field, 'practical'));
  };
- return reviewTests.flatMap(exam => {
+ const availableTests: ReviewTest[] = [...reviewTests, ...fieldPracticalBank.exams];
+ return availableTests.flatMap(exam => {
   const questions = exam.questions.filter(questionsInScope);
   if (!questions.length) return [];
   const unchanged = questions.length === exam.questions.length;
