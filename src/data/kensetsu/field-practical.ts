@@ -17,7 +17,10 @@ import civil7 from '../../../docs/ssw-workspace/kensetsu/civil/practical/session
 import civilWeek1 from '../../../docs/ssw-workspace/kensetsu/civil/practical/week-001.json';
 import type { Session, Week, Cluster } from './index';
 const originalFieldPracticalSessions: Session[] = [building1, building2, building3, building4, building5, building6, building7, civil1, civil2, civil3, civil4, civil5, civil6, civil7];
-export const fieldPracticalWeeks: Week[] = [buildingWeek1, civilWeek1];
+export const fieldPracticalWeeks: Week[] = [
+ {...buildingWeek1, titleJa: '構造工事の工具・部材の補足'},
+ {...civilWeek1, titleJa: '土木に固有の機械・設備の補足'},
+];
 
 // Retain only additional facts in the active reader; original authored JSON stays archived intact.
 export const fieldPracticalSessions: Session[] = originalFieldPracticalSessions.flatMap(session => {

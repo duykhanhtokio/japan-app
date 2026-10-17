@@ -23,7 +23,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  const sharedSets={};
  for(const field of ['utilities','building','civil']){
   const theory=m.sessionsForScope('1',field,'theory');assert.equal(theory.length,161);
-  const practical=m.sessionsForScope('1',field,'practical');assert.equal(practical.length,field==='utilities'?224:field==='building'?104:103);
+  const practical=m.sessionsForScope('1',field,'practical');assert.equal(practical.length,field==='utilities'?224:field==='building'?104:108);
   assert.equal(new Set(practical.map(s=>s.id)).size,practical.length);
   if(field!=='utilities'){
    const assigned=policy.canonicalPracticalAssignments[field];assert.equal(assigned.length,99);
@@ -66,12 +66,12 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  const unmount=async()=>settle(()=>renderer.unmount());
  await mount();await click('kensetsu-level-2');assert.equal(host('kensetsu-level-2-pending','Text').length,1);assert.equal(host('kensetsu-field-building').length,0);await unmount();
  let deltaParagraphsRendered=0,excludedParagraphsAbsent=0;
- for(const view of policy.deltaViews){
-  const field=view.sessionId.includes('-building-')?'building':'civil';const key=m.completionKey('reuse-learner','1',field);
+ for(const view of policy.deltaViews)for(const field of (view.sessionId.includes('-building-')?['building','civil']:['civil'])){
+  const key=m.completionKey('reuse-learner','1',field);
   // An old calendar index must not restore the wrong week after sharing changes the list.
   globalThis.__scopeStorage.set(key+':navigation:practical:v2',JSON.stringify({week:0,lastId:view.sessionId,view:'days',offset:0}));
   await mount();await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click('kensetsu-day-'+Number(view.sessionId.split('-').pop()));
-  const original=JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/kensetsu',field,'practical','session-'+view.sessionId.split('-').pop()+'.json')));
+  const original=JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/kensetsu',view.sessionId.includes('-building-')?'building':'civil','practical','session-'+view.sessionId.split('-').pop()+'.json')));
   for(const cluster of original.clusters)for(const paragraph of cluster.paragraphs){
    const found=renderer.root.findAll(n=>n.type==='Text'&&n.children.includes(paragraph.ja)).length>0;
    if(view.activeParagraphIds.includes(paragraph.id)){assert(found,paragraph.id);deltaParagraphsRendered++;}
@@ -79,7 +79,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
   }
   await unmount();
  }
- assert.equal(deltaParagraphsRendered,16);assert.equal(excludedParagraphsAbsent,38);
+ assert.equal(deltaParagraphsRendered,24);assert.equal(excludedParagraphsAbsent,60);
  for(const field of ['building','civil']){
   const key=m.completionKey('reuse-learner','1',field),retired=policy.retiredSessionIds.find(id=>id.includes('-'+field+'-'))+':r1';
   globalThis.__scopeStorage.set(key,JSON.stringify({[retired]:true}));globalThis.__scopeStorage.delete(key+':navigation:practical:v2');
@@ -94,6 +94,6 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  }
  const hashes=JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/kensetsu/PRACTICAL_REUSE_PRESERVED_INPUTS_2026-10-17.json')));
  for(const [file,hash]of Object.entries(hashes))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex'),hash,file);
- const report={status:'PASS_SOURCE_BOUND_REUSE_DEDUP_AND_ACTUAL_HOST_FLOW',sharedCanonicalLessonsPerField:{building:99,civil:99},distinctCanonicalLessonsReused:100,activeCanonicalAndDeltaRecords:394,additionalFactViews:9,additionalParagraphsRendered:deltaParagraphsRendered,duplicateParagraphsRemovedFromNineViews:excludedParagraphsAbsent,fullyRetiredDraftLessons:5,retiredDraftParagraphs:30,totalPriorDraftParagraphsRemovedFromActiveReader:68,scopedQuestions:scopeRows,noNewQuestionsOrJapaneseTextAuthored:true,originalLessonTranslationAndQuestionInputsBytePreserved:Object.keys(hashes).length,canonicalLessonTranslationsAndArtworkReusedByReference:true,archivedDraftCompletionPreservedWithoutMarkingReplacementLessons:true,navigationRestoredByStableLessonId:true,utilitiesSpecificSourceLessonsNotInOtherFields:true,twoGoDeferred:true,actualHostComponentFlow:true,nativeDeviceTested:false,browserScreenshots:false,wholeSourceCoverageConfirmed:false,releaseReady:false};
+ const report={status:'PASS_SOURCE_BOUND_REUSE_DEDUP_AND_ACTUAL_HOST_FLOW',sharedCanonicalLessonsPerField:{building:99,civil:99},distinctCanonicalLessonsReused:100,activeCanonicalAndDeltaRecords:394,additionalFactViews:9,uniqueAdditionalParagraphs:16,additionalParagraphRenderChecks:deltaParagraphsRendered,excludedParagraphChecks:excludedParagraphsAbsent,sharedAdditionalFactViewsLinkedIntoCivil:5,duplicateParagraphsRemovedFromNineUniqueViews:38,fullyRetiredDraftLessons:5,retiredDraftParagraphs:30,totalPriorDraftParagraphsRemovedFromActiveReader:68,scopedQuestions:scopeRows,noNewInstructionalParagraphsOrQuestionsAuthored:true,originalLessonTranslationAndQuestionInputsBytePreserved:Object.keys(hashes).length,canonicalLessonTranslationsAndArtworkReusedByReference:true,archivedDraftCompletionPreservedWithoutMarkingReplacementLessons:true,navigationRestoredByStableLessonId:true,utilitiesSpecificSourceLessonsNotInOtherFields:true,twoGoDeferred:true,actualHostComponentFlow:true,nativeDeviceTested:false,browserScreenshots:false,wholeSourceCoverageConfirmed:false,releaseReady:false};
  if(process.env.KENSETSU_SCOPE_QA_REPORT)fs.writeFileSync(process.env.KENSETSU_SCOPE_QA_REPORT,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 })().catch(e=>{console.error(e);process.exit(1)});

@@ -16,7 +16,7 @@ The14earlierfieldreviewquestions duplicated commonreporting objectives, so they 
 
 ## Data and learner state
 
-Active394lessonrecords:385original+9additionalfactviews. Building practical104entries=99shared+5factviews;civil103=99shared+4factviews. Theory161entries remain shared across3fields. No content duplication:each canonical lesson exists once and is assigned by reference. Original844lesson/week/translation/question/progress-service inputs bytechecked against PRACTICAL_REUSE_PRESERVED_INPUTS_2026-10-17.json.
+Active394lessonrecords:385original+9additionalfactviews. Building practical104entries=99shared+5factviews;civil108=99shared+4civilfactviews+5sharedstructuralfactviews. Theory161entries remain shared across3fields. No content duplication:each canonical lesson exists once and is assigned by reference. Original844lesson/week/translation/question/progress-service inputs bytechecked against PRACTICAL_REUSE_PRESERVED_INPUTS_2026-10-17.json.
 
 Archiveddraft completion stays stored and neverauto-completes a replacementcanonical lesson. Subject navigation restores the stablelessonID before an oldnumericweekindex so changedcalendar order cannot open the wrongweek. Field/learner progress keys remain independent; originalmixedtest05split protection stays intact.
 
@@ -25,3 +25,5 @@ Archiveddraft completion stays stored and neverauto-completes a replacementcanon
 Actual component host tests PASS:canonical object/translation/artwork reference reuse;16delta paragraphs visible,38removed paragraphs absent in9views;5retiredlessons hidden;sharedquestion sourcefilters;manualcompletion;archivedcompletionretention;stableIDnavigation;newfieldsubmittedreview;pre-submitanswershidden;no utilitiesdetail leakage;2号defer. Focused dataTypeScript and JLPT10/10UIlock PASS. Native surfaces/artwork/storage are adapted; no native/browser screenshot claim. See PRACTICAL_REUSE_RUNTIME_QA_2026-10-17.json.
 
 Next:review unmappedsource differences before furtherwriting. Compare k↔d as well as each↔l and link prior theory/clusters where sufficient. Keep unresolved sourceknowledge/figures/legaloperational review explicit. Complete Japanese differentialcoverage before newtranslation/artwork;reuse existing translations/artwork for linkedcanonical material. Publication/fetch/WORKPERSISTENCEPASS is required before durability claim.
+
+Additional k↔d comparison:15equipment/component definitions exactly match after normalizing glyphs and excluding the nextsection heading. The5building structuraltool factviews003–007 are therefore linked into civil as the same records, not recopied or retranslated. Generic week labels reflect shared structuralfacts. Active uniqueparagraphs remain16 and uniqueactiveadditionalrecords9. Evidence is in crossFieldAdditionalKnowledgeReuse.

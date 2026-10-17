@@ -23,6 +23,7 @@ export function sessionSubject(session: Session): Subject | null {
 export function isSessionInScope(session: Session, level: Level, field: Field, subject: Subject): boolean {
   if (level !== '1' || reusePolicy.retiredSessionIds.includes(session.id) || sessionSubject(session) !== subject) return false;
   if (subject === 'practical' && field !== 'utilities' && reusePolicy.canonicalPracticalAssignments[field].includes(session.id)) return true;
+  if (subject === 'practical' && field === 'civil' && reusePolicy.crossFieldDeltaAssignments.civil.includes(session.id)) return true;
   return subject === 'theory' || !!session.sourceReferences?.every(ref => theorySources.has(ref.sourceId) || practicalSources[field].has(ref.sourceId));
 }
 export function sessionsForScope(level: Level, field: Field, subject: Subject): Session[] {
