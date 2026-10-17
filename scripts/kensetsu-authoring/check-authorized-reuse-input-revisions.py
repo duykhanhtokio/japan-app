@@ -47,6 +47,32 @@ for file in lesson_files:
 assert added == set(record['addedCanonicalParagraphs'])
 assert revised == set(record.get('revisedCanonicalParagraphs', []))
 
+# Field-only additions are kept separate from the 224 canonical lesson inventory.
+differential_added = set()
+differential_lesson_files = set()
+for repair in record.get('differentialSourceGapRepairs', []):
+    file, translation_file = repair['lessonFile'], repair['translationFile']
+    before, after = old[file], new[file]
+    before_p, after_p = paragraphs(before), paragraphs(after)
+    assert set(before_p) <= set(after_p)
+    assert all(after_p[k] == v for k, v in before_p.items())
+    assert after['revision'] == before['revision'] + 1 == repair['afterRevision']
+    assert before['revision'] == repair['beforeRevision']
+    new_ids = set(after_p) - set(before_p)
+    assert new_ids == set(repair['addedParagraphIds'])
+    before_entries = old[translation_file]['entries']
+    after_entries = new[translation_file]['entries']
+    assert set(after_entries) - set(before_entries) == new_ids
+    assert all(after_entries[k] == v for k, v in before_entries.items())
+    assert new[translation_file]['sourceRevision'] == after['revision']
+    for pid in new_ids:
+        entry = after_entries[pid]
+        assert entry['sourceJa'] == after_p[pid]
+        assert set(entry['translations']) == locales
+        assert all(isinstance(v, str) and v.strip() for v in entry['translations'].values())
+    differential_added |= new_ids
+    differential_lesson_files.add(file)
+
 # A scope-only split must preserve the original Japanese and translated sentences.
 for split in record.get('paragraphReorganizations', []):
     old_id, moved_id = split['sourceParagraphId'], split['splitParagraphId']
@@ -82,7 +108,7 @@ for file in [f for f in old if 'review-tests' in f]:
         if isinstance(before, dict):
             if before.get('lessonSha256') != after.get('lessonSha256'):
                 target = before['lessonFile']
-                assert target in lesson_files and after['lessonFile'] == target
+                assert target in lesson_files | differential_lesson_files and after['lessonFile'] == target
                 entry = next(e for e in record['files'] if e['path'] == target)
                 assert before['lessonSha256'] == entry['beforeSha256']
                 assert after['lessonSha256'] == entry['afterSha256']
@@ -97,8 +123,14 @@ assert updates == record['citationHashUpdates']
 policy = json.loads((ROOT / 'src/data/kensetsu/reuse-policy.json').read_text())
 for file in lesson_files:
     assert old[file]['id'] + ':r1' in policy['preservedArchivedCompletionIds']
+for repair in record.get('differentialSourceGapRepairs', []):
+    assert repair['sessionId'] + ':r' + str(repair['beforeRevision']) in policy['preservedArchivedCompletionIds']
+    view = next(v for v in policy['deltaViews'] if v['sessionId'] == repair['sessionId'])
+    assert set(repair['addedParagraphIds']) <= set(view['activeParagraphIds'])
+    assert view['contentRevision'] == repair['afterRevision']
+assert differential_added == {pid for unit in record['completedUnits'] for pid in unit.get('addedDifferentialParagraphs', [])}
 print(json.dumps({'status': 'PASS_BOUNDED_SOURCE_GAP_REVISIONS', 'addedParagraphs': len(added),
-                  'revisedParagraphs': len(revised), 'retainedOriginalParagraphs': retained_paragraphs,
+                  'addedDifferentialParagraphs': len(differential_added), 'revisedParagraphs': len(revised), 'retainedOriginalParagraphs': retained_paragraphs,
                   'retainedTranslationEntries': retained_translation_entries,
                   'targetLocales': len(locales), 'citationHashesOnly': updates,
                   'questionPayloadsOrderAndExamRevisionsUnchanged': True,

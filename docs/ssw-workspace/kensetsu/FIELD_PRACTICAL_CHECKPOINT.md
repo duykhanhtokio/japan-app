@@ -1,3 +1,9 @@
+## Mốc mới —2026-10-18: rà ngược kết cấu
+
+Thực hành vẫn224/163/152bài;71mục bổ sung hiện170đoạn Nhật (tăng3),12locale. B024thêm giá đỡ cốt thép móng/腹筋・幅止め筋;B035thêm前踏・後踏・下さん, dùng chung建築・土木ởhai cấp. Giữ mọi nội dung/bản dịch cũ và lịch sửr1/r2;B024r2,B035r3. Host96lượt chohai cấp/hai nhánh/12localeđạt;Chromium4tuyến/18cặp đoạnNhật–Việt/4nâng phiên bảnđạt;6ảnh đã xem. Ngân hàng giữ10×40mỗi phạm vi, chỉ3hashtrích bài đổi.
+
+Đọc `REVERSE_SOURCE_COMPONENT_GAPS_2026-10-18.json`:7ý có ID nguồn–đoạn;ba đoạn thêm không đồng nghĩa hoàn tất194trang. Các điều kiện số và thao tác ở6k12/15/16/17vẫn cần quyết định riêng. Toàn bộ224bài gốc có hồ sơ so sánh có giới hạn; rà ngược toàn nguồn, nhận diện thiết bị và duyệt/Expo/thiết bị thật vẫn chưa hoàn tất.
+
 # Conceptual-depth verification complete —2026-10-17
 
 All103reader routes passed actualChromium:240Japanese/240Vietnamese paragraphs,16revision upgrades. All2004locale host renders passed; focusedTypeScript andJLPT10/10lock passed.62source units/221pagebindings validated. Source-expression screen4023paragraphs across13PDFs: no new22-character exact-span candidates; prior standard technical English name retained by identical hash. Nine identified partial explanations implemented. Whole-source semantic/atomic completeness and physical recognition are not certified; independent professional/native-language/rights and production/native-device checks remain open.

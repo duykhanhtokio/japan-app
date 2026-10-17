@@ -203,3 +203,11 @@ Tổng 132 bài có hồ sơ: 1.144 ID đoạn gốc + 12 ID thêm = 1.156 đo�
 Host đạt481lượt đọc các bài sửa, trong đó78lượt cho365/366(12locale×3nhánhở1号,Việt×3nhánhở2号); kiểm mọi đoạn thêm trong hai bài, không chỉ đoạn đại diện. Chromium/RNWeb đạt6tuyến/61đoạn Nhật+61đoạn Việt/6nâng phiên bản;6ảnh điện thoại/tablet/ngang đã xem. Đủ sáu phạm vi10×40vẫn giữ. Đây là component/web có adapter, chưa phải Expo sản xuất hay thiết bị thật.
 
 Tổng kiểm kê hiện1.927đoạn 実技gốc:1.912ban đầu+15IDthêm (14giải thích mới và1tách câu không mất nội dung). Toàn bộ224bài có hồ sơ, nhưng mỗi hồ sơ giới hạn theo các ý đã nêu; mẫu số ý nguồn vẫn chưa lập đủ, hình nhận diện và rà ngược toàn bộ nguồn vẫn chưa xong. Bước tiếp theo: lập và giải quyết từng mục tiêu nguồn k/d, bắt đầu các bảng/hình/điều kiện chưa được ghi thành quyết định riêng. Không bàn giao lệnh kiểm app như một mốc hoàn tất toàn bộ.
+
+## Rà ngược6k6–13/6d18–25 — bổ sung vào bài riêng theo nhánh
+
+Đã so nguồn và đọc bài thật: các tên基礎エース,腹筋,幅止め筋,前踏み,後踏み,下さんchưa có giải thích trong kho. Bổ sung3đoạn vàoB024p4–p5vàB035p4,36bản dịch AI. Chia7ý cóIDổn định trong `REVERSE_SOURCE_COMPONENT_GAPS_2026-10-18.json`;giữ170đoạn khác biệt/71mục,không tăng số ngày/bài. Hai bài dùng chung建築・土木ở1号/2号,không nhập sangutilities. B024r1→r2;B035r2→r3;giữ mã hoàn thành phiên bản cũ.
+
+Host96lượt đọc đủ12localeởhai cấp/hai nhánh;Chromium4tuyến/18cặp đoạnNhật–Việt/4nâng phiên bản;6ảnhđiện thoại/tablet/ngangđã xem. Cả sáu ngân hàng vẫn10×40;3hashtrích bài cập nhật, câu hỏi/đáp án/thứ tự/revisionđề giữ nguyên. Bộ kiểm đối chiếu đã tách phần bổ sung riêng nhánh khỏi1.927đoạn của224bài gốc. Chưa duyệt chuyên môn/bản ngữ/quyền hoặcExpo/thiết bị thật.
+
+Đang rà ngược tiếp6k14–34và6dphần riêng. Các mục sốliệu/thao tác vừa thấy ở6k12/15/16/17ghi mở tronghồ sơ, không coi một câu giới hạn chung là đã dạy đủ các điều kiện đó. Toàn bộ yêu cầu đối chiếu từng ý nguồn chưa hoàn tất.
