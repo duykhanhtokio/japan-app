@@ -1,6 +1,6 @@
 # Đối chiếu và dùng lại kiến thức theo đoạn — 2026-10-17
 
-Điểm tiếp nối mới nhất: 125 bài có hồ sơ đối chiếu có giới hạn. Nhóm 169–175 đã được rà; bổ sung một đoạn giải thích vai trò ラジアスクランプ ở bài 175 cùng 12 bản dịch, chỉ thuộc utilities. Còn 99 bài chưa có hồ sơ nhóm tương đương; rà ngược toàn bộ ý, hình, bảng và điều kiện nguồn chưa hoàn tất.
+Điểm tiếp nối mới nhất: 132 bài có hồ sơ đối chiếu có giới hạn. Đã rà nhóm 169–182; bài 175 được bổ sung vai trò ラジアスクランプ cùng 12 bản dịch, chỉ utilities. Nhóm đầu nối và hỗ trợ tuyến cáp 176–182 giữ nội dung phù hợp hiện có. Còn 92 bài chưa có hồ sơ nhóm tương đương; rà ngược toàn bộ ý/hình/bảng/điều kiện nguồn chưa hoàn tất.
 
 Yêu cầu chủ dự án: đối chiếu từng ý của toàn bộ224bài 実技 gốc với nguồn 建築・土木, gồm bảng/hình/chú thích/điều kiện; dùng lại toàn phần hoặc theo cụm/đoạn, chỉ soạn phần riêng, không làm đều số bài. Sau khi sửa xong mới bàn giao bước kiểm thực tế trên app.
 
@@ -179,3 +179,17 @@ Bài 175 trước chỉ nhắc tên ラジアスクランプ và yêu cầu ki�
 Host kiểm toàn phạm vi đạt, gồm 403 lượt đọc của 12 bài theo dõi sửa và 39 lượt riêng 263; 13 lượt mới cho 175 (12 locale ở 1号 và Việt ở 2号), kiểm loại trừ cả building/civil ở hai cấp. Chromium kiểm một tuyến 175, 13 đoạn Nhật/13 đoạn Việt, giữ r1 và hoàn thành r2 chủ động; đã xem 3 ảnh phone/tablet/landscape tập trung đúng đoạn mới. Chưa phải Expo/thiết bị native hoặc duyệt chuyên môn/bản ngữ/quyền. Kiểm bảo toàn trực tiếp với Git nền đạt: 12 ID thêm (11 đoạn soạn mới và 1 câu cũ tách ra), 2 ID gốc điều chỉnh; 108 đoạn cũ và 308 mục dịch cũ còn nguyên. Cập nhật cộng dồn 52 hash trích bài, giữ mọi nội dung/thứ tự/đáp án/revision đề.
 
 Mốc hiện tại: 125 bài có hồ sơ, 1.060 ID đoạn gốc + 12 ID thêm = 1.072 đoạn trong các nhóm đã rà; 923 mục kiểm có giới hạn. Sổ 224 bài gốc có 1.924 đoạn. Ràng buộc giải thích dùng chung vẫn 1.463; 12 liên kết inline 実技 và 655 quyết định phạm vi đếm riêng. Số bài 224/163/152 giữ nguyên. Còn 99 bài chưa có hồ sơ nhóm tương đương: 176–229 và 341–385. Các mục mở, nhận dạng ảnh và rà ngược từng ý nguồn vẫn chưa hoàn tất.
+
+## Nhóm đầu nối, tuyến cáp và giá đỡ 176–182 — 2026-10-18
+
+Đã đọc 84 đoạn Nhật và toàn bộ thân bài/ảnh/chú thích liên quan trên 5l PDF9–12, kể cả đoạn nối trang của ring sleeve và saddle ở đầu trang12. Hồ sơ `ELECTRICAL_SUPPORT_REUSE_AUDIT_176_182_2026-10-17.json` ghi 56 mục kiểm có giới hạn và 168 quyết định phạm vi. Không thêm bài, đoạn, bản dịch, câu hỏi hoặc sửa runtime trong đợt này.
+
+Giữ các phân biệt sẵn có: đầu nối và dụng cụ ép là hai đối tượng; hai phía của đầu nối cần phù hợp riêng; màu tay cầm chỉ là dấu hiệu; dây đơn và dây bện phụ thuộc kiểu đầu nối; chức năng chuyển nguồn không phải chỉ bật/tắt. Tỷ lệ kéo giãn băng tự kết dính trong nguồn không được dùng làm quy trình chung. Cọc tiếp địa là một dạng điện cực; vị trí và kết quả đo không thay thế nhau. Dây mồi khác dây chính, đầu bảo vệ ống không chứng minh toàn bộ tuyến kéo cáp phù hợp.
+
+Phần luồng lực đỡ trần đã có tại building018; giao diện ren, đường kính/bước ren và cấu hình bu-lông–đai ốc đã có ở bài chung273. Không nhập các bài chiếu sáng/đỡ cáp hoặc cách siết đai ốc kép vào nhánh khác từ những từ chung đó. Cùng gọi là manhole trong nguồn đẩy ống dân dụng không đủ căn cứ liên kết toàn bài handhole cáp điện179 sang civil. Các quyết định đều có đối tượng/điều kiện đối chiếu, không dựa riêng vào từ khóa.
+
+Đọc bổ sung phần công bố sản phẩm của WAGO, 3M và NEGUROSU: giữ các giới hạn đã có về loại dây, băng dùng cho cách điện, mối nối nonbond và cấu hình sản phẩm. Không sao chép bảng số liệu, thao tác hoặc biến nonbond thành miễn toàn bộ nối đất. Không coi một giá đỡ, thanh chéo hoặc hai đai ốc nhìn thấy là xác nhận đủ tải, chống rung hay chịu động đất.
+
+Kiểm sổ hash/ID đạt, không có bài hoặc quyết định trùng. Các tệp dữ liệu học, bản dịch, câu hỏi và runtime nguyên trạng so với commit057384a0; do đó không chạy lại trình duyệt cho phần không thay đổi. Giữ kết quả kiểm actual-reader của đợt175, không gán kết quả đó thành chứng nhận mới cho toàn nhóm176–182.
+
+Tổng 132 bài có hồ sơ: 1.144 ID đoạn gốc + 12 ID thêm = 1.156 đoạn trong các nhóm đã rà; 979 mục kiểm có giới hạn. Sổ 224 bài gốc vẫn có 1.924 đoạn. Ràng buộc giải thích dùng chung vẫn 1.463, 12 liên kết inline 実技 và 823 quyết định phạm vi đếm riêng. Số bài 224/163/152 không đổi. Còn 92 bài chưa có hồ sơ nhóm tương đương: 183–229 và 341–385. Rà ngược đầy đủ ý nguồn, nhận dạng hình và các điều kiện sản phẩm/ngưỡng an toàn vẫn còn mở; chưa bàn giao hoàn tất toàn bộ.
