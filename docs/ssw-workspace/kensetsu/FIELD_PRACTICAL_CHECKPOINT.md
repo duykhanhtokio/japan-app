@@ -1,3 +1,13 @@
+# Latest continuation — all1go assessmentpools10×40,2026-10-17
+
+Theory400(common3fields),utilities400,building400,civil400. Every scope has10full40-question Japanese forms. Newfieldbank contains208questions shared bybuilding/civil fromcanonical230–281 and22civil-only questions fromactivecivil003/005/006/007/008/009/010/011/012/013. Eachparagraph binding haslessonSHA/revision. No study/translation/image copies. Existing192building/170civilquestions retained unchanged; newversioned400membership is explicit infield-review-tests.ja.json. Oldattemptkeys stay stored and are not silently applied to rearrangedforms.
+
+Allfieldforms10correctperposition/no3same. ActualadaptedhostQA60fullattempts/9600choice labels/120resumes passed; legacyfieldstoragepreserved. ScopeQAall6routes10×40/844originalinputs/1248localeparagraphs/42PNGfiles passed. FocuseddataTypeScript and10/10JLPTUIlock passed. Theory90attempts andutilities30previouslypassed; finalcross-route rerun/realbrowser/native evidence andsourceaudit are next.
+
+Question-count deficits are0; this is not whole-source or release certification. Stillopen:13PDFatomic/numeric/recognition/safety-context completeness, browser/device evidence, humanexpert/native/rights approvals.2号deferred. SeeFIELD_FULL_ATTEMPTS_QA_2026-10-17.json/PRACTICAL_REUSE_RUNTIME_QA_2026-10-17.json andFIELD_ASSESSMENT_COMPLETION_LEDGER_2026-10-17.json.
+
+---
+
 # Latest continuation — shared theory10×40,2026-10-17
 
 Common theory now400uniqueJapanese questions in10full40-question forms shared byutilities/building/civil. Added115source-bound questions fromcanonical70–94,113–115and116clusters1–3; no new study/translation/image copies or procedural/numeric legal instructions. Separate theory-review-tests.ja.json contains2full40forms and35completionquestions. Original5-question theoryscope frommixedform05is combined with35undernewversionedID; originalbank/attemptbytes remain stored, not silently remapped.

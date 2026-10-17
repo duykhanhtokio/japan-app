@@ -1,6 +1,7 @@
 import differentialBank from './differential-review-tests.ja.json';
 import utilitiesBank from './utilities-review-tests.ja.json';
 import theoryBank from './theory-review-tests.ja.json';
+import fieldBank from './field-review-tests.ja.json';
 import { sessionById, type Field, type Level } from './index';
 import { isSessionInScope, type Subject } from './scope';
 import bank from './review-tests.ja.json';
@@ -74,6 +75,21 @@ export function reviewTestsForScope(level: Level, field: Field, subject: Subject
     sessionRange: [Math.min(partial.sessionRange[0], completion.sessionRange[0]), Math.max(partial.sessionRange[1], completion.sessionRange[1])],
    }] : [exam]);
   }
+ }
+ if (subject === 'practical' && field !== 'utilities') {
+  const additions: ReviewQuestion[] = [...fieldBank.sharedQuestions, ...(field === 'civil' ? fieldBank.civilQuestions : [])];
+  const questionsById = new Map([...scopedTests.flatMap(exam => exam.questions), ...additions.filter(questionsInScope)].map(question => [question.id, question]));
+  // Membership changes get new attempt identities; all prior bank definitions and stored attempts remain intact.
+  scopedTests = fieldBank.formsByField[field].flatMap(form => {
+   const selected = form.questionIds.map(id => questionsById.get(id));
+   if (selected.some(question => !question)) return [];
+   const questions = (selected as ReviewQuestion[]).map((question, index) => ({ ...question, number: index + 1 }));
+   const sessionNumbers = questions.flatMap(question => question.sourceReferences.map(ref => Number(ref.sessionId.split('-').pop())));
+   return [{ id: form.id, revision: fieldBank.revision, titleJa: '', language: 'ja',
+    questionCount: questions.length, maxPoints: questions.reduce((total, question) => total + question.points, 0),
+    timeLimitSeconds: null, passThreshold: null, isOfficialExam: false,
+    sessionRange: [Math.min(...sessionNumbers), Math.max(...sessionNumbers)], questions }];
+  });
  }
  return scopedTests.map((exam, index) => ({
   ...exam,
