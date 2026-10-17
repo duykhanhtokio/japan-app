@@ -151,16 +151,22 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  for(const [number,pid]of Object.entries(repairRecord.sourceGapRepairParagraphs)){
   const lesson=m.sessionById.get('kensetsu-common-session-'+number),paragraph=lesson.clusters.flatMap(c=>c.paragraphs).find(p=>p.id===pid);assert(paragraph);assert.equal(lesson.revision,2);
   const old=lesson.id+':r1',restored=m.restoreProgress(JSON.stringify({[old]:true}));assert(restored[old]);assert.equal(restored[m.completionId(lesson)],undefined);
+  const repairedParagraphs=lesson.clusters.flatMap(c=>c.paragraphs).filter(p=>p.id===pid||repairRecord.addedCanonicalParagraphs.includes(p.id)||repairRecord.revisedCanonicalParagraphs.includes(p.id));
   const repairFields=repairRecord.sourceGapRepairFields?.[number]??['utilities','building','civil'];
   for(const field of ['utilities','building','civil'].filter(f=>!repairFields.includes(f)))for(const level of ['1','2'])assert.equal(m.sessionForScope(lesson.id,level,field,'practical'),undefined);
   for(const level of ['1','2'])for(const field of repairFields)for(const locale of level==='1'?locales:['vi']){
    const fieldLesson=m.sessionForScope(lesson.id,level,field,'practical');assert(fieldLesson);assert(fieldLesson.clusters.flatMap(c=>c.paragraphs).includes(paragraph));
    if(fieldLesson!==lesson)assert(paragraphPolicy.supplements.some(s=>s.targetSessionId===lesson.id&&s.fields.includes(field)));
    assert.strictEqual(fieldLesson,m.sessionForScope(lesson.id,level==='1'?'2':'1',field,'practical'));
-   const key=m.completionKey('reuse-learner',level,field);globalThis.__scopeStorage.set(key,JSON.stringify({[old]:true}));globalThis.__scopeStorage.set(key+':navigation:practical:v2',JSON.stringify({week:0,lastId:lesson.id,view:'days',offset:0}));
+   // 366 already had this scoped r1 view before its canonical content changed.
+   // Other repairs can acquire an inline scope only after r2; do not invent r1 history.
+   const oldScoped=number==='366'&&fieldLesson.scopeRevision?old+':scope:'+fieldLesson.scopeRevision:null;
+   const history={[old]:true,...(oldScoped?{[oldScoped]:true}:{})};
+   const retained=m.restoreProgress(JSON.stringify(history));for(const id of Object.keys(history))assert(retained[id],id);assert.equal(retained[m.completionId(fieldLesson)],undefined);
+   const key=m.completionKey('reuse-learner',level,field);globalThis.__scopeStorage.set(key,JSON.stringify(history));globalThis.__scopeStorage.set(key+':navigation:practical:v2',JSON.stringify({week:0,lastId:lesson.id,view:'days',offset:0}));
    await mount(locale);if(level==='2')await click('kensetsu-level-2');await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click('kensetsu-day-'+number);
-   assert(renderer.root.findAll(n=>n.type==='Text'&&n.children.includes(paragraph.ja)).length);
-   assert.equal(renderer.root.findAll(n=>n.type==='Text'&&n.children.includes('✓ 学習済み · 戻る')).length,0);await click('kensetsu-translation');assert(host('kensetsu-translation-'+pid,'Text').some(n=>n.children.includes(paragraph.translations[locale])));
+   for(const p of repairedParagraphs)assert(renderer.root.findAll(n=>n.type==='Text'&&n.children.includes(p.ja)).length,p.id);
+   assert.equal(renderer.root.findAll(n=>n.type==='Text'&&n.children.includes('✓ 学習済み · 戻る')).length,0);await click('kensetsu-translation');for(const p of repairedParagraphs)assert(host('kensetsu-translation-'+p.id,'Text').some(n=>n.children.includes(p.translations[locale])),p.id);
    await unmount();sourceGapReaderCases++;
   }
  }

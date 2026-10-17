@@ -1,6 +1,6 @@
 # Đối chiếu và dùng lại kiến thức theo đoạn — 2026-10-17
 
-Điểm tiếp nối mới nhất: 132 bài có hồ sơ đối chiếu có giới hạn. Đã rà nhóm 169–182; bài 175 được bổ sung vai trò ラジアスクランプ cùng 12 bản dịch, chỉ utilities. Nhóm đầu nối và hỗ trợ tuyến cáp 176–182 giữ nội dung phù hợp hiện có. Còn 92 bài chưa có hồ sơ nhóm tương đương; rà ngược toàn bộ ý/hình/bảng/điều kiện nguồn chưa hoàn tất.
+Điểm tiếp nối mới nhất —2026-10-18: toàn bộ224bài đã có hồ sơ đối chiếu có giới hạn (132cũ+92mới). Không còn bài thiếu hồ sơ nhóm tương đương; chưa hoàn tất rà ngược từng ý/bảng/hình/điều kiện nguồn. Đã bổ sung3đoạn phân biệt loại tai nạn vào365/366,36bản dịch và giữ lịch sửr1/r1theo phạm vi. Không được đổi mốc này thành chứng nhận đủ mọi kiến thức.
 
 Yêu cầu chủ dự án: đối chiếu từng ý của toàn bộ224bài 実技 gốc với nguồn 建築・土木, gồm bảng/hình/chú thích/điều kiện; dùng lại toàn phần hoặc theo cụm/đoạn, chỉ soạn phần riêng, không làm đều số bài. Sau khi sửa xong mới bàn giao bước kiểm thực tế trên app.
 
@@ -193,3 +193,13 @@ Phần luồng lực đỡ trần đã có tại building018; giao diện ren, �
 Kiểm sổ hash/ID đạt, không có bài hoặc quyết định trùng. Các tệp dữ liệu học, bản dịch, câu hỏi và runtime nguyên trạng so với commit057384a0; do đó không chạy lại trình duyệt cho phần không thay đổi. Giữ kết quả kiểm actual-reader của đợt175, không gán kết quả đó thành chứng nhận mới cho toàn nhóm176–182.
 
 Tổng 132 bài có hồ sơ: 1.144 ID đoạn gốc + 12 ID thêm = 1.156 đoạn trong các nhóm đã rà; 979 mục kiểm có giới hạn. Sổ 224 bài gốc vẫn có 1.924 đoạn. Ràng buộc giải thích dùng chung vẫn 1.463, 12 liên kết inline 実技 và 823 quyết định phạm vi đếm riêng. Số bài 224/163/152 không đổi. Còn 92 bài chưa có hồ sơ nhóm tương đương: 183–229 và 341–385. Rà ngược đầy đủ ý nguồn, nhận dạng hình và các điều kiện sản phẩm/ngưỡng an toàn vẫn còn mở; chưa bàn giao hoàn tất toàn bộ.
+
+## Nhóm còn lại183–229và341–385 —2026-10-18
+
+Đã đọc92bài/768đoạn trước sửa, nguồn5lPDF12–22,6lPDF24–34và7l/7k/7dPDF1–16thân bài/hình/chú thích. So sánh có giới hạn với ngữ cảnh tháo dỡ6k33–34/6d31–32, cảm điện7k/d3và những ý chung đã có trong 学科070/088/104/144/145/155/157. Ba hồ sơ mới ghi368điểm khái niệm; không dùng số này làm mẫu số mọi ý nguồn. Nội dung truyền thông, điều khiển, vật liệu ống, chữa cháy và lò không chuyển nguyên bài chỉ vì có chung tên bộ phận. Các liên kết đoạn348/369đã có vẫn giữ.
+
+Đã phát hiện phần phân loại tai nạn còn nông:有害物等との接触không chỉ là hóa chất dính da;火災vàおぼれcần giải thích ngoài tên mục;はさまれ・巻き込まれkhác với máy di chuyển va vào người. Bổ sung3đoạn tự soạn365cluster3p3/cluster4p3và366cluster3p3;36giá trị dịch AIcho12locale. Đối chiếu ảnh bảng phân loại trong tài liệu Chiba Labour Bureau2026PDF20, không thay bảng tai nạn cũ bằng số liệu mới hoặc dạy cách cứu nạn. Hai bài lênr2, giữ toàn bộ đoạn/bản dịch cũ và lịch sửr1; riêng366giữ cả mãr1cóscopeđã tồn tại. Không tăng số bài, không thêm câu hỏi, chỉ cập nhật6hashtrích bài.
+
+Host đạt481lượt đọc các bài sửa, trong đó78lượt cho365/366(12locale×3nhánhở1号,Việt×3nhánhở2号); kiểm mọi đoạn thêm trong hai bài, không chỉ đoạn đại diện. Chromium/RNWeb đạt6tuyến/61đoạn Nhật+61đoạn Việt/6nâng phiên bản;6ảnh điện thoại/tablet/ngang đã xem. Đủ sáu phạm vi10×40vẫn giữ. Đây là component/web có adapter, chưa phải Expo sản xuất hay thiết bị thật.
+
+Tổng kiểm kê hiện1.927đoạn 実技gốc:1.912ban đầu+15IDthêm (14giải thích mới và1tách câu không mất nội dung). Toàn bộ224bài có hồ sơ, nhưng mỗi hồ sơ giới hạn theo các ý đã nêu; mẫu số ý nguồn vẫn chưa lập đủ, hình nhận diện và rà ngược toàn bộ nguồn vẫn chưa xong. Bước tiếp theo: lập và giải quyết từng mục tiêu nguồn k/d, bắt đầu các bảng/hình/điều kiện chưa được ghi thành quyết định riêng. Không bàn giao lệnh kiểm app như một mốc hoàn tất toàn bộ.
