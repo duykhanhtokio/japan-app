@@ -38,3 +38,7 @@ Xem bản đồ nguồn/hash/IDđoạn tại `src/data/kensetsu/paragraph-reuse-
 Bước tiếp: tiếp tục từng hàng pending, ghi ý/điều kiện và nguồn tương ứng; rà ngược bài đã liên kết; kiểm phần trùng đã được dạy tại bài nhận trước khi bổ sung; chỉ chốt ứng viên giữ riêng khi có căn cứ nội dung. Không biến so khớp từ khóa hay kiểm kê1.912đoạn thành hoàn tất yêu cầu đối chiếu kiến thức.
 
 Chưa đến mốc báo hoàn tất toàn bộ đối chiếu. Các thay đổi của đợt đầu là một mốc kỹ thuật có thể kiểm lại, không phải yêu cầu chủ dự án chấp nhận phần còn dở.
+
+## Đợt rà ứng viên tiếp theo
+
+Đã đối chiếu thêm sáu ứng viên theo ngữ cảnh. Hai ý giữ bài đang có để tránh lặp:flux ởbuilding040(dùng chungcivil),và hệ treo/trục stud ởbuilding018. Bốn so khớp từ ngữ không được dùng làm bằng chứng chuyển kiến thức:ống đồng/thép uốn;CO2tạo bọt/CO2chữa cháy;cáp quang được ngắt trước phá dỡ/cáp quang truyền dẫn;khoảng cách cần bơm–đường điện/khoảng cách tuyến ngầm. Xem `REUSE_CANDIDATE_DECISIONS_2026-10-17.json`; đây là quyết định hẹp theo ý/cặp nguồn, chưa phải đã loại trừ toàn bộ mọi ý trong sáu bài đó khỏi hai nhánh. Không có thay đổi runtime trong đợt này.
