@@ -1,3 +1,13 @@
+# Latest source-difference supplement — component recognition,2026-10-17
+
+Added8views/18Japaneseparagraphs/12localeoverlays/8controlleddiagrams. B042–045 are shared withcivil; B046–048 arebuilding-only; C014 iscivil-only. Names/functions cover scaffold systems/edge members/fall-arrest blocks; annealed binding wire andshino/ratchet; open/ring/combination wrench heads; reinforcement spacers/caps/folding rules; insulation raw-liquid reaction risks; roofingunderlay/snowguards; sashanchors; piling/pavement equipment. Existing B004 is reused instead of another impact-wrench paragraph. Manufacturer/association comparisons prevent teaching annealing asautomatic strengthening and asphalt emulsion asidentical toemulsifier. No generic container-handling procedure or operating values authored.
+
+Totals441studyrecords;56additionalviews/136Japaneseparagraphs/12locales/56diagrams. Building153practicallessons,civil139,utilities224;theory161shared. All6assessment routes10×40. Original385lessons/844inputs and learner identities retained. Controlled concept diagrams are not afullphysicaltoolatlas. Human/domain/native/rights/deviceandwhole-sourceatomiccoverage remainunconfirmed.2号deferred. See COMPONENT_RECOGNITION_DIFFERENTIAL_LEDGER_2026-10-17.json.
+
+Source-lineage reconciliation:13actual PDF byte/page hashes reverified; all370instructional pages have at least one linked concept,17pages arefrontmatter. This is not a semantic knowledge denominator. Six remaining page groups reuse active lessons;12historical missing rows are reconciled against later teaching without overwritingoldaudits. Some historicalcells/currenttrade-grade mapping/productprocedures still require review; these rows are not all markedclosed. SeeREMAINING_PAGE_REUSE_RECONCILIATION_2026-10-17.json and LEGACY_MISSING_ITEMS_RECONCILIATION_2026-10-17.json. Source/paragraph identityQA32newunits/150pagebindings/12legacyrows passed; all180fullattempt cases/360resumes andfocusedTypeScript passed. Realbrowser/nativeandhumanapprovals remainunavailable.
+
+---
+
 # Latest source-difference supplement — 2026-10-17
 
 Added six shared building/civil views (035–038,040–041),14 Japanese paragraphs,12 direct-Japanese locale overlays and six controlled concept diagrams. Newly explicit knowledge: scaffold member positions and foot components; concrete/steel bond and carbonation; slab formwork load path; hydraulic versus gas-pressure-welding equipment paths; electrode coating and fume/spatter mechanisms; demolition systems and construction-stage support. Three unpublished overlapping paragraphs were excluded and existing006/007 reused. No new questions or duplicated canonical study/translation/artwork inputs.
