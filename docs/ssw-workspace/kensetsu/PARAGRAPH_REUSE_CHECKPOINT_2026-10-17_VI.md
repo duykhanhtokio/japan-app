@@ -72,3 +72,20 @@ Bảy hash trích bài trong hai tệp ngân hàng được nối sang phiên b�
 Host bài263 đạt39tuyến:12locale×3nhánh ở1号vàViệt×3nhánh ở2号; giữ cùng bài và lịch sử cũ. Chromium/RNWeb đạt3nhánh,27đoạn Nhật/27đoạn dịch Việt,3trường hợp nângr1→r2; đã xem ảnh320×568,768×1024,932×430. Ảnh minh họa cũ của263đã mở xem: chỉ hai mẫu đục khác bề rộng, không khẳng định nhận dạng được目切り. Không tạo ảnh hoặc nhận đủ mục tiêu nhận dạng từ ảnh này. Host phạm vi/ngân hàng,TypeScript phần liên quan và khóa UI JLPT đạt. Chưa phải Expo/thiết bị thật hoặc duyệt bản ngữ/chuyên môn/quyền.
 
 Cộng ba nhóm:44bài/352đoạn gốc+1đoạn mới/372điểm kiểm có giới hạn/706ràng buộc đoạn–nhánh. Tổng kiểm kê 実技 gốc hiện1.913đoạn trong224bài; giữ mẫu số gốc1.912để phân biệt bổ sung. Các đoạn hiển thị:utilities1.913,building1.024,civil981. Các liên kết theo đoạn071/332/348/369vẫn giữ.180bài chưa có hồ sơ nhóm tương đương; một số ứng viên có quyết định hẹp từ trước. Chưa đối chiếu đủ mọi ý nguồn hoặc đủ hình nhận biết. Tiếp nối274: trộn vật liệu, hộp/sàng, che phủ/lưới/bảo vệ; sau đó quay sang nhóm bài chưa liên kết toàn phần. Không báo toàn bộ224bài đã xong hoặc đưa lệnh kiểm như một bàn giao hoàn tất.
+
+## Nhóm trộn/che phủ/vận chuyển/nâng kéo/làm cao274–301 — sáu việc sửa đã xác định
+
+Đã đọc thêm224đoạn của28bài, thân bài và toàn bộ hình/chú thích của5kPDF44–49,5dPDF42–47. Hồ sơ `SHARED_TOOLS_REUSE_AUDIT_274_301_2026-10-17.json` ghi224điểm kiểm có giới hạn và tách sáu ý còn phải sửa, chưa coi là đã tích hợp:
+
+1.275: ví dụ máy trộn điện100V/động cơ; không biến100Vthành điện áp mọi máy. Đã đọc văn bản bảng catalogue hãng về các cấu hình; chưa duyệt thao tác đổi động lực/đấu điện.
+2.291: quan hệ dụng cụ chul-hooru với ứng dụng kéo/định vị trong khai thác gỗ; bài cũ chỉ nhắc để loại trừ hướng dẫn thao tác. Đã đọc danh sách ứng dụng hãng; không soạn cách đốn cây, hướng kéo hay lực.
+3.294: nối rõ tên lever block/hoist với ví dụ chỉnh độ thẳng đứng khung thép; bài cũ giải thích công việc và dụng cụ ở hai nơi riêng.
+4.295: góc tham khảo khoảng75độ trong nguồn và checklist chính thức; bài cũ chưa dạy con số này. Giữ điều kiện hỗ trợ/cố định, không suy góc đúng là toàn bộ lắp đặt an toàn.
+5.296: thêm ý không ngồi trên天板của loại cấm dùng mặt trên và chỉnh giới hạn câu cũ; FAQhãng có loại nhỏ/踏台được cho đứng theo thiết kế. Không dùng ngoại lệ thành cho phép ngồi/đứng ở mọi dụng cụ. Riêng296cluster3p1được ghi `needs_content_correction` ở cả hai nhánh, chưa tính xác nhận đúng có giới hạn.
+6.299: giải thích mốc2mtrong phạm vi nguồn/quy định bằng chiều cao sàn tối đa; không lẫn với độ cao đang làm, tầm với hoặc ngưỡng đào tạo. Đã đọc đoạn liên quan trong văn bản Bộ; chưa nhận đã rà toàn bộ luật hoặc ngoại lệ.
+
+Thuật ngữノロđã có trong 学科131dùng chung, không soạn lại hoặc kéo ví dụ rò cốp pha vào bài vệ sinh. Một ảnh minh họa không thay việc kiểm từng tính năng hoặc sản phẩm.
+
+Cộng bốn nhóm:72bài/576đoạn gốc+1đoạn đã bổ sung/596điểm kiểm có giới hạn. Có1.152ràng buộc đoạn–nhánh xác nhận phần giải thích hiện có,2ràng buộc cần sửa điều kiện; ngoài ra11liên kết từng đoạn 実技 và4vị trí từ 学科071đã sửa trước vẫn giữ.152bài chưa có hồ sơ nhóm tương đương; vẫn chưa có mẫu số đầy đủ mọi ý nguồn, nên không báo phần trăm bao phủ.
+
+Đợt này chỉ thêm hồ sơ/sổ đối chiếu, chưa đổi bài/runtime. Bước tiếp theo là thực hiện sáu sửa cụ thể trên, dịch các phần thật sự thêm/đổi, bảo toàn phần cũ và lượt làm đề, kiểm các tuyến ảnh hưởng rồi lưu. Sau đó tiếp tục302–385và162–229. Không bỏ sáu việc này để chỉ tăng số bài đã rà.
