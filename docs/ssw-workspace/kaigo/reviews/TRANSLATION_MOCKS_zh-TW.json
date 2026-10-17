@@ -1,24 +1,26 @@
 {
-  "version": 1,
+  "version": 2,
   "language": "zh-TW",
   "translatedFrom": "ja",
   "status": "translated_ai_unreviewed",
-  "sourceCommit": "34b9745ea1f676e0229f89f25c0aed8cc7bcd84c",
-  "sourcePacket": "/workspace/scratch/c29dc516c1f6/translation-packets-current-34b9745e/full-mocks.ja.json",
-  "sourcePacketSha256": "f9b540457e4fb04a38faee968b57f34fef562049a07dc13946e86017ed1b154f",
+  "sourceCommit": "47db98cdf7ab3cbc07e6d87b13d3bc9a630b3bdc",
+  "sourcePacket": "/workspace/scratch/f6ab6bb996d8/mock-packets48/full-mocks.ja.json",
+  "sourcePacketSha256": "545cafdaf85079d97259562f2fba17f7be305a6e4be262f2296ff78567b0eaae",
   "translationPath": "src/data/kaigo/japanese-master/mock-translations/mocks.zh-TW.json",
-  "translationSha256": "bfc13355ee777be8f749a8c231b23654564d9f683e2061ea157c731f01168138",
+  "translationSha256": "e7ce6c0f6c8c1d617a46b0eff09344c057724b844b44d17fad69b874a2757f9a",
   "directJapanese": true,
   "noCrossTranslation": true,
   "otherLocaleSemanticInputs": false,
-  "all12Complete": false,
+  "all12Complete": true,
   "counts": {
-    "forms": 7,
-    "questions": 135,
-    "options": 540,
-    "rationales": 540,
+    "forms": 12,
+    "questions": 360,
+    "options": 1440,
+    "rationales": 1440,
     "nonemptyPassages": 60,
-    "nonemptyFigureDescriptions": 5
+    "nonemptyFigureDescriptions": 30,
+    "emptyPassages": 300,
+    "emptyFigureDescriptions": 330
   },
   "completedFormIds": [
     "kaigo-japanese-mock-01",
@@ -27,15 +29,14 @@
     "kaigo-japanese-mock-04",
     "kaigo-japanese-mock-05",
     "kaigo-japanese-mock-06",
-    "kaigo-skills-mock-01"
-  ],
-  "remainingFormIds": [
+    "kaigo-skills-mock-01",
     "kaigo-skills-mock-02",
     "kaigo-skills-mock-03",
     "kaigo-skills-mock-04",
     "kaigo-skills-mock-05",
     "kaigo-skills-mock-06"
   ],
+  "remainingFormIds": [],
   "formDraftSha256": {
     "kaigo-japanese-mock-01": "deb7c873e97bec0ab2b1a46d1358cd03c0eb0ce610c3543e7ecf021534827f27",
     "kaigo-japanese-mock-02": "78f2ae2dffd4634a3289c850306efcbbfd4bbeda70740fb74f75f51e0eca7a75",
@@ -51,7 +52,7 @@
     "unchangedCorrectIndex": true,
     "fourOptionsAndDetailedRationales": true,
     "emptySourceFieldsPreserved": true,
-    "sourceTargetSemanticSelfReview": "AI self-review completed for all six Japanese forms and skills form01: source-target meaning, conditions, negation, certainty, time, sequence, observation versus inference, consent scope, actors and clinical recipients; full four rationales retained. Traditional Chinese target prose reviewed for coherence and respectful adult register.",
+    "sourceTargetSemanticSelfReview": "AI owner read every Japanese prompt, all four options, all four specific rationales, all explicit empty passages and all25figure descriptions for skills02–06; compared each complete target form directly with Japanese and continuously read target prose across all225questions. Rechecked actors, recipients, negation, scope, consent versus implementation, observation versus inference, time and conditions. Prior7runtime form objects are retained exactly; their historical review statements are preserved.",
     "styleProfile": "docs/ssw-workspace/kaigo/locale-profiles/zh-TW.json",
     "styleGuideVersion": 1,
     "semanticDecisions": [
@@ -61,9 +62,9 @@
       "Preserved separation of planned, unconfirmed and completed actions; did not infer cause, drinking volume or clinical diagnosis."
     ],
     "limitations": [
-      "Skills forms02–06 remain untranslated in this batch.",
       "AI self-review is not independent native/domain/rights review.",
-      "No runtime or native device validation by this locale author."
+      "No runtime or native device validation by this locale author; coordinating agent performs runtime checks.",
+      "Existing figure asset lettering is unchanged; translated figure descriptions do not certify asset localization."
     ]
   },
   "humanReviewed": false,
@@ -75,7 +76,11 @@
   "outputs": [
     {
       "path": "src/data/kaigo/japanese-master/mock-translations/mocks.zh-TW.json",
-      "sha256": "bfc13355ee777be8f749a8c231b23654564d9f683e2061ea157c731f01168138"
+      "sha256": "e7ce6c0f6c8c1d617a46b0eff09344c057724b844b44d17fad69b874a2757f9a"
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/locale-profiles/zh-TW.json",
+      "sha256": "614a950df42277117cdbacaaf5bf30ac1d933c8612b14d176089f9f63fb7af80"
     }
   ],
   "integrationMetadataNormalization": {
@@ -108,5 +113,235 @@
     "rightsReviewed": false,
     "releaseReady": false,
     "nativeDeviceTested": false
+  },
+  "reviewHistory": [
+    {
+      "label": "prior7formReportBeforeFinalCompletion",
+      "report": {
+        "version": 1,
+        "language": "zh-TW",
+        "translatedFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "sourceCommit": "34b9745ea1f676e0229f89f25c0aed8cc7bcd84c",
+        "sourcePacket": "/workspace/scratch/c29dc516c1f6/translation-packets-current-34b9745e/full-mocks.ja.json",
+        "sourcePacketSha256": "f9b540457e4fb04a38faee968b57f34fef562049a07dc13946e86017ed1b154f",
+        "translationPath": "src/data/kaigo/japanese-master/mock-translations/mocks.zh-TW.json",
+        "translationSha256": "bfc13355ee777be8f749a8c231b23654564d9f683e2061ea157c731f01168138",
+        "directJapanese": true,
+        "noCrossTranslation": true,
+        "otherLocaleSemanticInputs": false,
+        "all12Complete": false,
+        "counts": {
+          "forms": 7,
+          "questions": 135,
+          "options": 540,
+          "rationales": 540,
+          "nonemptyPassages": 60,
+          "nonemptyFigureDescriptions": 5
+        },
+        "completedFormIds": [
+          "kaigo-japanese-mock-01",
+          "kaigo-japanese-mock-02",
+          "kaigo-japanese-mock-03",
+          "kaigo-japanese-mock-04",
+          "kaigo-japanese-mock-05",
+          "kaigo-japanese-mock-06",
+          "kaigo-skills-mock-01"
+        ],
+        "remainingFormIds": [
+          "kaigo-skills-mock-02",
+          "kaigo-skills-mock-03",
+          "kaigo-skills-mock-04",
+          "kaigo-skills-mock-05",
+          "kaigo-skills-mock-06"
+        ],
+        "formDraftSha256": {
+          "kaigo-japanese-mock-01": "deb7c873e97bec0ab2b1a46d1358cd03c0eb0ce610c3543e7ecf021534827f27",
+          "kaigo-japanese-mock-02": "78f2ae2dffd4634a3289c850306efcbbfd4bbeda70740fb74f75f51e0eca7a75",
+          "kaigo-japanese-mock-03": "f6aff097de5828164fbc6b4c7f9438f0b878a86dd6808758435fc979e72dd754",
+          "kaigo-japanese-mock-04": "98c70df256a4928c92c1fc6a49dfe877d1c315b19efd85584e626bc8b1efc7e9",
+          "kaigo-japanese-mock-05": "a661445e4076896624cdcb7997cf38b7275cb1257af32c7a32d0f45e26cc5b03",
+          "kaigo-japanese-mock-06": "858831311439688a388e7c70f35ea76203eb5a2bc80460d5b6bb89f848db47ea",
+          "kaigo-skills-mock-01": "62c1fc477db73b6c508f6f84fd497cad905c0d14866f8663c2881f43c8bf3223"
+        },
+        "checks": {
+          "completeFormQuestionSets": true,
+          "exactSourceRevisions": true,
+          "unchangedCorrectIndex": true,
+          "fourOptionsAndDetailedRationales": true,
+          "emptySourceFieldsPreserved": true,
+          "sourceTargetSemanticSelfReview": "AI self-review completed for all six Japanese forms and skills form01: source-target meaning, conditions, negation, certainty, time, sequence, observation versus inference, consent scope, actors and clinical recipients; full four rationales retained. Traditional Chinese target prose reviewed for coherence and respectful adult register.",
+          "styleProfile": "docs/ssw-workspace/kaigo/locale-profiles/zh-TW.json",
+          "styleGuideVersion": 1,
+          "semanticDecisions": [
+            "Retained Japanese lexical headwords when they are the learning target; explanations use Traditional Chinese.",
+            "Used 您 with care recipients; preserved original names without guessed gender or kinship.",
+            "Retained nursing-professional recipient in japanese-mock-03-q15 and japanese-mock-04-q13.",
+            "Preserved separation of planned, unconfirmed and completed actions; did not infer cause, drinking volume or clinical diagnosis."
+          ],
+          "limitations": [
+            "Skills forms02–06 remain untranslated in this batch.",
+            "AI self-review is not independent native/domain/rights review.",
+            "No runtime or native device validation by this locale author."
+          ]
+        },
+        "humanReviewed": false,
+        "domainReviewed": false,
+        "nativeReviewed": false,
+        "rightsReviewed": false,
+        "releaseReady": false,
+        "nativeDeviceTested": false,
+        "outputs": [
+          {
+            "path": "src/data/kaigo/japanese-master/mock-translations/mocks.zh-TW.json",
+            "sha256": "bfc13355ee777be8f749a8c231b23654564d9f683e2061ea157c731f01168138"
+          }
+        ],
+        "integrationMetadataNormalization": {
+          "translatedProseChanged": false,
+          "missingFalseApprovalFieldsAdded": [],
+          "directJapaneseAndNoCrossDeclarationNormalizedFromOwnerReport": true,
+          "originalOwnerOutputHash": "f52d4b9bcc1f61cc493fc5eb78f1d2c9cbf3e4b9841f50aaa8e5360e1895a2cb"
+        },
+        "batch12": {
+          "completedFormIds": [
+            "kaigo-skills-mock-01"
+          ],
+          "questionsAdded": 45,
+          "stoppedForPublisherPriority": "Six untranslated locales prioritized; skills02 not started.",
+          "previousSixFormsPreservedExactly": true,
+          "semanticReviewDecisions": [
+            "Skills01q08 distinguishes collaborative professional judgment from unauthorized medication changes.",
+            "Skills01q24 retains current-condition explanation and consent rather than reusing previous consent.",
+            "Skills01q27 retains person-identification, food texture and allergy checks.",
+            "Skills01q29 balances required assistance/observation with visual privacy; does not cancel observation without authority.",
+            "Skills01q35 retains explicit medical-professional reporting recipient and observed bleeding/swelling location and condition.",
+            "Skills01q37 distinguishes face-washing consultation, full-body consent and actual implementation.",
+            "All five practical figure descriptions retain labels, identity numbers012/014, P3, product codesR/S, colors and unconfirmed itemC."
+          ],
+          "sourceBindingsValidated": true,
+          "draftSha256": "62c1fc477db73b6c508f6f84fd497cad905c0d14866f8663c2881f43c8bf3223",
+          "humanReviewed": false,
+          "domainReviewed": false,
+          "nativeReviewed": false,
+          "rightsReviewed": false,
+          "releaseReady": false,
+          "nativeDeviceTested": false
+        }
+      }
+    }
+  ],
+  "finalBatch48": {
+    "date": "2026-10-17",
+    "baselineCommit": "47db98cdf7ab3cbc07e6d87b13d3bc9a630b3bdc",
+    "sourceCommit": "47db98cdf7ab3cbc07e6d87b13d3bc9a630b3bdc",
+    "canonicalFullPacketSha256": "545cafdaf85079d97259562f2fba17f7be305a6e4be262f2296ff78567b0eaae",
+    "remainingPacketSha256": "6a05a8799661bd26d467d8b1ceb60de8e83b7cc7e9fe2e3b48b38c2ae6674c3d",
+    "directJapanese": true,
+    "noCrossTranslation": true,
+    "otherLocaleSemanticInputs": false,
+    "perForm": [
+      {
+        "formId": "kaigo-skills-mock-02",
+        "questions": 45,
+        "options": 180,
+        "rationales": 180,
+        "nonemptyPassages": 0,
+        "emptyPassages": 45,
+        "nonemptyFigureDescriptions": 5,
+        "emptyFigureDescriptions": 40,
+        "sourceRevision": "ja-master-v1-90911c52",
+        "sourceTargetFullAiSelfReview": true,
+        "continuousTargetProseAiSelfReview": true
+      },
+      {
+        "formId": "kaigo-skills-mock-03",
+        "questions": 45,
+        "options": 180,
+        "rationales": 180,
+        "nonemptyPassages": 0,
+        "emptyPassages": 45,
+        "nonemptyFigureDescriptions": 5,
+        "emptyFigureDescriptions": 40,
+        "sourceRevision": "ja-master-v1-52fc2dba",
+        "sourceTargetFullAiSelfReview": true,
+        "continuousTargetProseAiSelfReview": true
+      },
+      {
+        "formId": "kaigo-skills-mock-04",
+        "questions": 45,
+        "options": 180,
+        "rationales": 180,
+        "nonemptyPassages": 0,
+        "emptyPassages": 45,
+        "nonemptyFigureDescriptions": 5,
+        "emptyFigureDescriptions": 40,
+        "sourceRevision": "ja-master-v1-8220c132",
+        "sourceTargetFullAiSelfReview": true,
+        "continuousTargetProseAiSelfReview": true
+      },
+      {
+        "formId": "kaigo-skills-mock-05",
+        "questions": 45,
+        "options": 180,
+        "rationales": 180,
+        "nonemptyPassages": 0,
+        "emptyPassages": 45,
+        "nonemptyFigureDescriptions": 5,
+        "emptyFigureDescriptions": 40,
+        "sourceRevision": "ja-master-v1-dc75b7df",
+        "sourceTargetFullAiSelfReview": true,
+        "continuousTargetProseAiSelfReview": true
+      },
+      {
+        "formId": "kaigo-skills-mock-06",
+        "questions": 45,
+        "options": 180,
+        "rationales": 180,
+        "nonemptyPassages": 0,
+        "emptyPassages": 45,
+        "nonemptyFigureDescriptions": 5,
+        "emptyFigureDescriptions": 40,
+        "sourceRevision": "ja-master-v1-15b85ee2",
+        "sourceTargetFullAiSelfReview": true,
+        "continuousTargetProseAiSelfReview": true
+      }
+    ],
+    "prior7FormObjectsPreservedExactly": true,
+    "priorTopLevelMetadataPreservedExactly": true,
+    "fullNewSourceComparisonAndContinuousProseReview": true,
+    "reviewedQuestions": 225,
+    "reviewedOptions": 900,
+    "reviewedSpecificRationales": 900,
+    "reviewedFigureDescriptions": 25,
+    "all12RuntimeFormsPresent": true,
+    "semanticDecisions": [
+      "Preserved Japanese-only source; no Simplified Chinese, Vietnamese or other-locale input.",
+      "Preserved the skills04q32 corrected urine-volume wording and all source revisions/correct indices.",
+      "Kept skills05q25 as appropriate guiding action, retaining prior notice and agreed method for a white-cane user.",
+      "Kept skills06q23 urinary-output distractor separate from actual friction/shear harms.",
+      "Preserved explanation, consent, preparation, provision and completion as different stages.",
+      "Kept individual plan/training/equipment/facility-procedure qualifiers for transfer, swallowing, hygiene and medication boundaries.",
+      "Retained all labels, IDs, times, quantities and source-specific numeric conditions without converting them into universal care rules."
+    ],
+    "profileAdditions": [
+      "pressure_injury",
+      "shear",
+      "orientation",
+      "executive_function",
+      "disuse_syndrome",
+      "partial_denture",
+      "full_denture",
+      "transfer_between_surfaces",
+      "home_visit_service",
+      "day_attendance_service",
+      "registered_dietitian_japanese_role",
+      "social_worker_japanese_qualification",
+      "swallowing_pharyngeal_phase",
+      "homeostasis",
+      "near_miss"
+    ],
+    "frozenTargetSha256": "e7ce6c0f6c8c1d617a46b0eff09344c057724b844b44d17fad69b874a2757f9a",
+    "frozenProfileSha256": "614a950df42277117cdbacaaf5bf30ac1d933c8612b14d176089f9f63fb7af80"
   }
 }

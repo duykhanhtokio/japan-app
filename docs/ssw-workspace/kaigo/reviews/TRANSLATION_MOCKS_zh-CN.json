@@ -7,15 +7,15 @@
   "noCrossTranslation": true,
   "styleGuideVersion": 1,
   "localeProfile": "docs/ssw-workspace/kaigo/locale-profiles/zh-CN.json",
-  "allTwelveFormsComplete": false,
+  "allTwelveFormsComplete": true,
   "completionUnit": "one_complete_source_bound_form_in_one_locale",
   "counts": {
-    "forms": 9,
-    "questions": 225,
-    "options": 900,
-    "rationales": 900,
+    "forms": 12,
+    "questions": 360,
+    "options": 1440,
+    "rationales": 1440,
     "passages": 60,
-    "figureDescriptions": 15
+    "figureDescriptions": 30
   },
   "formIds": [
     "kaigo-japanese-mock-02",
@@ -26,138 +26,216 @@
     "kaigo-japanese-mock-06",
     "kaigo-skills-mock-01",
     "kaigo-skills-mock-02",
-    "kaigo-japanese-mock-01"
-  ],
-  "remainingFormIds": [
+    "kaigo-japanese-mock-01",
     "kaigo-skills-mock-03",
     "kaigo-skills-mock-05",
     "kaigo-skills-mock-06"
   ],
+  "remainingFormIds": [],
   "sourcePacket": {
-    "path": "/workspace/scratch/c29dc516c1f6/translation-packets-current-34b9745e/full-mocks.ja.json",
-    "sha256": "f9b540457e4fb04a38faee968b57f34fef562049a07dc13946e86017ed1b154f"
+    "path": "/workspace/scratch/f6ab6bb996d8/mock-packets48/full-mocks.ja.json",
+    "sha256": "545cafdaf85079d97259562f2fba17f7be305a6e4be262f2296ff78567b0eaae"
   },
   "outputs": [
     {
       "path": "src/data/kaigo/japanese-master/mock-translations/mocks.zh-CN.json",
-      "sha256": "f2f0f190769a37a43608836fd49165e35f8b96f943c50f82ecded30cfaa1c037"
+      "sha256": "abca2f010ec55c22eee6620495eb47a728366f636647e36d5874d75d0178b701"
     }
   ],
   "aiSelfReview": {
     "completed": true,
-    "scope": "Nine complete forms. Batch11 six forms retained exactly as objects. Batch12 directly rechecked all105 questions in earlier Japanese01 and skills01–02 drafts against current effective Japanese, including every prompt, four options, four specific rationales, all passages and figure descriptions; read target prose continuously and repaired the recorded semantic/style issues.",
+    "scope": "Final three missing skills forms03,05,06: complete direct effective-Japanese comparison of135 prompts,540options,540specific option rationales,15figure descriptions and135explicit empty passages; then continuous Simplified Chinese prose reading of all three complete forms, with targeted repairs. Nine previously completed runtime form objects and their historical review remain preserved exactly; no claim of a fresh full review of those225questions.",
+    "directJapanese": true,
+    "noCrossTranslation": true,
+    "fullOwnSourceReview": true,
+    "continuousTargetProseReview": true,
     "meaningConditionsNegationUncertaintyPreserved": true,
     "speakerListenerRolesAndRespectfulRegisterChecked": true,
     "clinicalRoleRecipientsAndIndividualPlanConditionsChecked": true,
     "consentAndSequenceChecked": true,
     "answerIndicesIdsRevisionsAndEmptyFieldsChecked": true,
     "numbersTimesDirectionsAndFigureLabelsChecked": true,
-    "editorialChoices": [
-      "Use 您 for respectful direct speech without inventing kinship, age or gender. Preserve Japanese address when present.",
-      "Distinguish not yet checked, not yet measured, not yet performed and negative facts; do not infer completion or diagnosis.",
-      "Keep anatomy and clinical limits, individual-plan/procedure qualifiers, required professional consultation and reporting recipients.",
-      "Retain context-specific diagram dimensions as question conditions; do not turn them into universal safety requirements."
-    ],
-    "corrections": [
+    "method": "Japanese only as semantic source. Own historical skills03 draft read in45 paired Japanese/Chinese rows and repaired; skills05–06 translated from the effective packet field by field, with each option-specific reason retained. After all three drafts were saved, all135target questions/options/reasons were read continuously by form and compared with the Japanese already read; final fixes retain broad alternative arrangements, anatomical meaning of陰部 and natural conditional prose. Existing own-week terminology spotcheck confirms内稳态、局部义齿、半坐位、剪切. No other locale input.",
+    "draftRepairs": [
       {
-        "formId": "kaigo-japanese-mock-01",
-        "questionId": "kaigo-japanese-mock-01-q02",
-        "field": "rationales",
-        "index": 2,
-        "before": "沿走廊行走属于步行、移动，与从一处转到另一处乘坐的动作不同。",
-        "after": "沿走廊行走属于步行、移动，与从一个承坐位置转到另一个承坐位置的动作不同。",
-        "reason": "Clarify transfer between support/sitting positions; avoid ambiguous vehicle-like 乘坐."
-      },
-      {
-        "formId": "kaigo-japanese-mock-01",
-        "questionId": "kaigo-japanese-mock-01-q05",
+        "questionId": "kaigo-skills-mock-03-q01",
         "field": "options",
-        "index": 1,
-        "before": "工作人员之间商量休假日期的愿望。",
-        "after": "工作人员之间商量希望在哪天休假。",
-        "reason": "Replace awkward literal phrasing with a natural full Chinese sentence."
+        "index": 0,
+        "before": "尊重意愿，商量其他度过时间的方式和必要支持。",
+        "after": "尊重本人的意愿，商量如何安排其他活动及所需的支持。"
       },
       {
-        "formId": "kaigo-japanese-mock-01",
-        "questionId": "kaigo-japanese-mock-01-q05",
-        "field": "rationales",
-        "index": 1,
-        "before": "商量工作人员的休假愿望，与向下一位负责人传递服务对象支持信息的交接不同。",
-        "after": "工作人员商量希望在哪天休假，与向下一位负责人传递服务对象支持信息的交接不同。",
-        "reason": "Carry the same leave-request meaning in connected Chinese prose."
-      },
-      {
-        "formId": "kaigo-skills-mock-01",
-        "questionId": "kaigo-skills-mock-01-q18",
+        "questionId": "kaigo-skills-mock-03-q02",
         "field": "options",
-        "index": 1,
-        "before": "建议转移心情，改变话题。",
-        "after": "建议本人换换心情，并改变话题。",
-        "reason": "Render 気分転換 naturally rather than literal 转移心情."
+        "index": 0,
+        "before": "共享的必要性，以及场所是否不会被周围人听见。",
+        "after": "是否有必要共享，以及交谈地点是否能避免被周围的人听见。"
       },
       {
-        "formId": "kaigo-skills-mock-01",
-        "questionId": "kaigo-skills-mock-01-q18",
-        "field": "rationales",
-        "index": 1,
-        "before": "马上转向转移心情的话题，会使本人担心的内容未得到充分倾听。",
-        "after": "若立刻以换换心情为由转移话题，就无法充分倾听本人担心的内容。",
-        "reason": "Natural explanation retaining the premature topic change and failure to listen."
-      },
-      {
-        "formId": "kaigo-skills-mock-02",
-        "questionId": "kaigo-skills-mock-02-q17",
-        "field": "options",
-        "index": 1,
-        "before": "您讨厌人多啊，那就别参加了吧。",
-        "after": "您讨厌与人打交道，是吗？那就不参加了吧。",
-        "reason": "Correct 人が嫌い: source distractor makes a broad personality judgment, not merely dislike of crowds. Preserve cancellation suggestion."
-      },
-      {
-        "formId": "kaigo-skills-mock-02",
-        "questionId": "kaigo-skills-mock-02-q22",
+        "questionId": "kaigo-skills-mock-03-q02",
         "field": "options",
         "index": 2,
-        "before": "床边坐位。",
-        "after": "床沿坐位。",
-        "reason": "Align 端座位 with already-used own-locale terminology."
+        "before": "只要把疾病名称简称，就不再属于个人信息。",
+        "after": "只要使用疾病名称的简称，就不再属于个人信息。"
       },
       {
-        "formId": "kaigo-skills-mock-02",
-        "questionId": "kaigo-skills-mock-02-q22",
-        "field": "rationales",
-        "index": 2,
-        "before": "床边坐位是坐在床缘等处、双腿下垂的姿势，并非卧姿。",
-        "after": "床沿坐位是坐在床沿等处、双腿下垂的姿势，并非卧姿。",
-        "reason": "Consistent term, preserving lowered legs and non-lying distinction."
-      },
-      {
-        "formId": "kaigo-skills-mock-02",
-        "questionId": "kaigo-skills-mock-02-q31",
-        "field": "options",
-        "index": 1,
-        "before": "断定本人没有尿意。",
-        "after": "断定本人没有排尿的感觉。",
-        "reason": "Preserve 排尿の感覚 directly rather than narrowing to 尿意."
-      },
-      {
-        "formId": "kaigo-skills-mock-02",
-        "questionId": "kaigo-skills-mock-02-q31",
-        "field": "rationales",
-        "index": 1,
-        "before": "不能因找不到位置，就判断本人没有尿意。",
-        "after": "不能因找不到位置，就判断本人没有排尿的感觉。",
-        "reason": "Preserve the sensation wording and rejection of unsupported inference."
-      },
-      {
-        "formId": "kaigo-skills-mock-02",
-        "questionId": "kaigo-skills-mock-02-q42",
+        "questionId": "kaigo-skills-mock-03-q02",
         "field": "rationales",
         "index": 0,
-        "before": "仅凭按钮在房间里，不能确认本人以实际姿势能够够到。",
-        "after": "仅凭按钮在房间里，不能确认本人在实际使用姿势下够得到。",
-        "reason": "Remove duplicated 能够够到 and retain actual-posture reach condition."
+        "before": "病史属于个人信息，应确认需要向谁共享什么，以及场所是否不会被他人听见。",
+        "after": "病史属于个人信息，应确认需要向谁共享什么内容，以及交谈地点是否能避免被他人听见。"
+      },
+      {
+        "questionId": "kaigo-skills-mock-03-q06",
+        "field": "prompt",
+        "index": null,
+        "before": "预防感染时，为什么要区分脏器具和清洁器具？",
+        "after": "预防感染时，为什么要区分用脏的器具和清洁器具？"
+      },
+      {
+        "questionId": "kaigo-skills-mock-03-q12",
+        "field": "prompt",
+        "index": null,
+        "before": "第一次记住新同事姓名的功能是什么？",
+        "after": "第一次记住新工作人员的姓名，属于哪种功能？"
+      },
+      {
+        "questionId": "kaigo-skills-mock-03-q12",
+        "field": "rationales",
+        "index": 2,
+        "before": "识记是记住新信息并将其纳入记忆的功能，符合初次记住同事姓名的场景。",
+        "after": "识记是记住新信息并将其纳入记忆的功能，符合初次记住工作人员姓名的场景。"
+      },
+      {
+        "questionId": "kaigo-skills-mock-03-q15",
+        "field": "options",
+        "index": 3,
+        "before": "只确认用于同一诊断名称者的方法。",
+        "after": "只参考曾用于诊断相同的其他人的方法。"
+      },
+      {
+        "questionId": "kaigo-skills-mock-03-q17",
+        "field": "rationales",
+        "index": 0,
+        "before": "在回答过程中叠加问题，会让本人无法说完，使本次问题持续。",
+        "after": "在本人回答时接连提问，会让本人无法说完，使打断谈话的问题持续存在。"
+      },
+      {
+        "questionId": "kaigo-skills-mock-03-q18",
+        "field": "rationales",
+        "index": 1,
+        "before": "以本人为基准具体说明方向和距离，更容易共享仅用“那边”未能说清的位置。",
+        "after": "以本人为基准具体说明方向和距离，更容易让双方明确仅用“那边”未能说清的位置。"
+      },
+      {
+        "questionId": "kaigo-skills-mock-03-q28",
+        "field": "options",
+        "index": 1,
+        "before": "以本人看到的摆放方向，用双方共同的基准说明。",
+        "after": "以本人为基准，用双方共同理解的方向或标准说明摆放位置。"
+      },
+      {
+        "questionId": "kaigo-skills-mock-03-q28",
+        "field": "options",
+        "index": 2,
+        "before": "只说“那里”，并用手指。",
+        "after": "只说“那里”，并用手指示。"
+      },
+      {
+        "questionId": "kaigo-skills-mock-03-q31",
+        "field": "prompt",
+        "index": null,
+        "before": "便秘持续，平时的支持也未改善，以下哪种做法适当？",
+        "after": "便秘持续，平时提供的支持也未能使情况改善。以下哪种做法适当？"
+      },
+      {
+        "questionId": "kaigo-skills-mock-03-q34",
+        "field": "prompt",
+        "index": null,
+        "before": "更衣后，本人说“袖子在拉扯”。以下哪种做法适当？",
+        "after": "更衣后，本人说“袖子有拉扯感”。以下哪种做法适当？"
+      },
+      {
+        "questionId": "kaigo-skills-mock-03-q34",
+        "field": "rationales",
+        "index": 2,
+        "before": "应听取本人感到拉扯的感受，具体确认褶皱、移位和身体状态。",
+        "after": "应听取本人对拉扯感的描述，具体确认褶皱、移位和身体状态。"
+      },
+      {
+        "questionId": "kaigo-skills-mock-03-q36",
+        "field": "options",
+        "index": 0,
+        "before": "只要形状相同，就能否放入别人的容器。",
+        "after": "只要形状相同，是否就可以放入别人的容器。"
+      },
+      {
+        "questionId": "kaigo-skills-mock-03-q36",
+        "field": "options",
+        "index": 2,
+        "before": "因为越干越清洁，所以是否已使其干燥。",
+        "after": "因为认为越干越清洁，所以确认是否已使其干燥。"
+      },
+      {
+        "questionId": "kaigo-skills-mock-03-q40",
+        "field": "options",
+        "index": 2,
+        "before": "只凭烹饪外观，也决定洗衣方法。",
+        "after": "只凭菜肴的外观，也决定洗衣方法。"
+      },
+      {
+        "questionId": "kaigo-skills-mock-03-q41",
+        "field": "options",
+        "index": 3,
+        "before": "只让本人自行决定跨过电线的方法。",
+        "after": "把如何跨过电线完全交给本人处理。"
+      },
+      {
+        "questionId": "kaigo-skills-mock-03-q42",
+        "field": "options",
+        "index": 2,
+        "before": "负责人是否收到联系，并接下了处理事项。",
+        "after": "负责人是否收到信息，并接下了处理事项。"
+      },
+      {
+        "questionId": "kaigo-skills-mock-03-q45",
+        "field": "figureDescription",
+        "index": null,
+        "before": "A：托盘已备好。B：向本人提供尚未确认。C：进食量尚未确认。",
+        "after": "A：托盘已备好。B：是否已向本人提供尚未确认。C：进食量尚未确认。"
       }
+    ],
+    "finalProseRepairs": [
+      {
+        "formId": "kaigo-skills-mock-03",
+        "questionId": "kaigo-skills-mock-03-q01",
+        "field": "options",
+        "index": 0,
+        "before": "尊重本人的意愿，商量如何安排其他活动及所需的支持。",
+        "after": "尊重本人的意愿，商量其他安排及所需的支持。"
+      },
+      {
+        "formId": "kaigo-skills-mock-05",
+        "questionId": "kaigo-skills-mock-05-q35",
+        "field": "prompt",
+        "index": null,
+        "before": "关于清洗私密部位所用的水，需要确认什么？",
+        "after": "关于清洗阴部所用的水，需要确认什么？"
+      },
+      {
+        "formId": "kaigo-skills-mock-06",
+        "questionId": "kaigo-skills-mock-06-q38",
+        "field": "rationales",
+        "index": 1,
+        "before": "在偏瘫更衣的例子中，先从健侧脱衣，是为了减少瘫痪侧勉强活动的思路。实际实施应遵循本人的状态和计划。",
+        "after": "在偏瘫更衣的例子中，先从健侧脱衣，可以减少瘫痪侧的勉强活动。实际实施应遵循本人的状态和计划。"
+      }
+    ],
+    "editorialChoices": [
+      "Respectful adult register without invented kinship, gender or age.",
+      "Preserve required professional roles, recipient, individual plan, trained-method and device-fit conditions.",
+      "Distinguish requested/planned/sent/replied/consented/implemented/completed and unknown from negative facts.",
+      "Keep clock orientation, figure letters/numbers, measurement windows and diagram suitability as question-specific conditions; no universal procedure added."
     ]
   },
   "formDrafts": [
@@ -232,20 +310,40 @@
       "questions": 15,
       "sourceRevision": "ja-master-v1-d62d1de3",
       "aiSelfReviewed": true
+    },
+    {
+      "formId": "kaigo-skills-mock-03",
+      "path": "/workspace/scratch/f6ab6bb996d8/zhcn48/kaigo-skills-mock-03.json",
+      "sha256": "f495c75c19a7816c48c71c6f3e0ee57ac5a0c0d5f4c7e1107c8e11f7be91b4ca",
+      "questions": 45,
+      "sourceRevision": "ja-master-v1-52fc2dba",
+      "aiSelfReviewed": true
+    },
+    {
+      "formId": "kaigo-skills-mock-05",
+      "path": "/workspace/scratch/f6ab6bb996d8/zhcn48/kaigo-skills-mock-05.json",
+      "sha256": "f39c20f1de498d648e1248b5355acfd331185021f32088794db10dd411b284d4",
+      "questions": 45,
+      "sourceRevision": "ja-master-v1-dc75b7df",
+      "aiSelfReviewed": true
+    },
+    {
+      "formId": "kaigo-skills-mock-06",
+      "path": "/workspace/scratch/f6ab6bb996d8/zhcn48/kaigo-skills-mock-06.json",
+      "sha256": "df9f3ddacefa26456314fb54b2819e746cf7c9a951963ff720bb8704e4282975",
+      "questions": 45,
+      "sourceRevision": "ja-master-v1-15b85ee2",
+      "aiSelfReviewed": true
     }
   ],
   "remainingDraftState": {
-    "completePreservedButNotRechecked": [
-      "kaigo-skills-mock-03"
-    ],
-    "notDrafted": [
-      "kaigo-skills-mock-05",
-      "kaigo-skills-mock-06"
-    ]
+    "completePreservedButNotRechecked": [],
+    "notDrafted": [],
+    "historicalDraftPreserved": true,
+    "historicalDraftSha256": "4545421fd95a22ca5b257553f27e2ba294c36239d6826cb55d1d8aa4afa4bde8"
   },
   "openIssues": [
-    "Three forms remain outside the integrated subset: skills03 has a prior complete scratch draft pending source/meaning recheck; skills05–06 are undrafted.",
-    "No independent native, clinical, rights or device review; existing source image lettering issues are not changed."
+    "No independent native, clinical, rights or device review; existing source image lettering issues are unchanged."
   ],
   "humanReviewed": false,
   "domainReviewed": false,
@@ -253,7 +351,7 @@
   "nativeDeviceTested": false,
   "rightsReviewed": false,
   "releaseReady": false,
-  "all12Complete": false,
+  "all12Complete": true,
   "batch12": {
     "newFormIds": [
       "kaigo-skills-mock-01",
@@ -290,5 +388,369 @@
       }
     ],
     "remainingWorkPausedForPublisherPriority": "Prioritize the six untranslated locales."
+  },
+  "reviewHistory": [
+    {
+      "date": "2026-10-17",
+      "checkpoint": "before_final_three_forms",
+      "review": {
+        "version": 1,
+        "language": "zh-CN",
+        "translatedFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "directJapanese": true,
+        "noCrossTranslation": true,
+        "styleGuideVersion": 1,
+        "localeProfile": "docs/ssw-workspace/kaigo/locale-profiles/zh-CN.json",
+        "allTwelveFormsComplete": false,
+        "completionUnit": "one_complete_source_bound_form_in_one_locale",
+        "counts": {
+          "forms": 9,
+          "questions": 225,
+          "options": 900,
+          "rationales": 900,
+          "passages": 60,
+          "figureDescriptions": 15
+        },
+        "formIds": [
+          "kaigo-japanese-mock-02",
+          "kaigo-japanese-mock-03",
+          "kaigo-skills-mock-04",
+          "kaigo-japanese-mock-04",
+          "kaigo-japanese-mock-05",
+          "kaigo-japanese-mock-06",
+          "kaigo-skills-mock-01",
+          "kaigo-skills-mock-02",
+          "kaigo-japanese-mock-01"
+        ],
+        "remainingFormIds": [
+          "kaigo-skills-mock-03",
+          "kaigo-skills-mock-05",
+          "kaigo-skills-mock-06"
+        ],
+        "sourcePacket": {
+          "path": "/workspace/scratch/c29dc516c1f6/translation-packets-current-34b9745e/full-mocks.ja.json",
+          "sha256": "f9b540457e4fb04a38faee968b57f34fef562049a07dc13946e86017ed1b154f"
+        },
+        "outputs": [
+          {
+            "path": "src/data/kaigo/japanese-master/mock-translations/mocks.zh-CN.json",
+            "sha256": "f2f0f190769a37a43608836fd49165e35f8b96f943c50f82ecded30cfaa1c037"
+          }
+        ],
+        "aiSelfReview": {
+          "completed": true,
+          "scope": "Nine complete forms. Batch11 six forms retained exactly as objects. Batch12 directly rechecked all105 questions in earlier Japanese01 and skills01–02 drafts against current effective Japanese, including every prompt, four options, four specific rationales, all passages and figure descriptions; read target prose continuously and repaired the recorded semantic/style issues.",
+          "meaningConditionsNegationUncertaintyPreserved": true,
+          "speakerListenerRolesAndRespectfulRegisterChecked": true,
+          "clinicalRoleRecipientsAndIndividualPlanConditionsChecked": true,
+          "consentAndSequenceChecked": true,
+          "answerIndicesIdsRevisionsAndEmptyFieldsChecked": true,
+          "numbersTimesDirectionsAndFigureLabelsChecked": true,
+          "editorialChoices": [
+            "Use 您 for respectful direct speech without inventing kinship, age or gender. Preserve Japanese address when present.",
+            "Distinguish not yet checked, not yet measured, not yet performed and negative facts; do not infer completion or diagnosis.",
+            "Keep anatomy and clinical limits, individual-plan/procedure qualifiers, required professional consultation and reporting recipients.",
+            "Retain context-specific diagram dimensions as question conditions; do not turn them into universal safety requirements."
+          ],
+          "corrections": [
+            {
+              "formId": "kaigo-japanese-mock-01",
+              "questionId": "kaigo-japanese-mock-01-q02",
+              "field": "rationales",
+              "index": 2,
+              "before": "沿走廊行走属于步行、移动，与从一处转到另一处乘坐的动作不同。",
+              "after": "沿走廊行走属于步行、移动，与从一个承坐位置转到另一个承坐位置的动作不同。",
+              "reason": "Clarify transfer between support/sitting positions; avoid ambiguous vehicle-like 乘坐."
+            },
+            {
+              "formId": "kaigo-japanese-mock-01",
+              "questionId": "kaigo-japanese-mock-01-q05",
+              "field": "options",
+              "index": 1,
+              "before": "工作人员之间商量休假日期的愿望。",
+              "after": "工作人员之间商量希望在哪天休假。",
+              "reason": "Replace awkward literal phrasing with a natural full Chinese sentence."
+            },
+            {
+              "formId": "kaigo-japanese-mock-01",
+              "questionId": "kaigo-japanese-mock-01-q05",
+              "field": "rationales",
+              "index": 1,
+              "before": "商量工作人员的休假愿望，与向下一位负责人传递服务对象支持信息的交接不同。",
+              "after": "工作人员商量希望在哪天休假，与向下一位负责人传递服务对象支持信息的交接不同。",
+              "reason": "Carry the same leave-request meaning in connected Chinese prose."
+            },
+            {
+              "formId": "kaigo-skills-mock-01",
+              "questionId": "kaigo-skills-mock-01-q18",
+              "field": "options",
+              "index": 1,
+              "before": "建议转移心情，改变话题。",
+              "after": "建议本人换换心情，并改变话题。",
+              "reason": "Render 気分転換 naturally rather than literal 转移心情."
+            },
+            {
+              "formId": "kaigo-skills-mock-01",
+              "questionId": "kaigo-skills-mock-01-q18",
+              "field": "rationales",
+              "index": 1,
+              "before": "马上转向转移心情的话题，会使本人担心的内容未得到充分倾听。",
+              "after": "若立刻以换换心情为由转移话题，就无法充分倾听本人担心的内容。",
+              "reason": "Natural explanation retaining the premature topic change and failure to listen."
+            },
+            {
+              "formId": "kaigo-skills-mock-02",
+              "questionId": "kaigo-skills-mock-02-q17",
+              "field": "options",
+              "index": 1,
+              "before": "您讨厌人多啊，那就别参加了吧。",
+              "after": "您讨厌与人打交道，是吗？那就不参加了吧。",
+              "reason": "Correct 人が嫌い: source distractor makes a broad personality judgment, not merely dislike of crowds. Preserve cancellation suggestion."
+            },
+            {
+              "formId": "kaigo-skills-mock-02",
+              "questionId": "kaigo-skills-mock-02-q22",
+              "field": "options",
+              "index": 2,
+              "before": "床边坐位。",
+              "after": "床沿坐位。",
+              "reason": "Align 端座位 with already-used own-locale terminology."
+            },
+            {
+              "formId": "kaigo-skills-mock-02",
+              "questionId": "kaigo-skills-mock-02-q22",
+              "field": "rationales",
+              "index": 2,
+              "before": "床边坐位是坐在床缘等处、双腿下垂的姿势，并非卧姿。",
+              "after": "床沿坐位是坐在床沿等处、双腿下垂的姿势，并非卧姿。",
+              "reason": "Consistent term, preserving lowered legs and non-lying distinction."
+            },
+            {
+              "formId": "kaigo-skills-mock-02",
+              "questionId": "kaigo-skills-mock-02-q31",
+              "field": "options",
+              "index": 1,
+              "before": "断定本人没有尿意。",
+              "after": "断定本人没有排尿的感觉。",
+              "reason": "Preserve 排尿の感覚 directly rather than narrowing to 尿意."
+            },
+            {
+              "formId": "kaigo-skills-mock-02",
+              "questionId": "kaigo-skills-mock-02-q31",
+              "field": "rationales",
+              "index": 1,
+              "before": "不能因找不到位置，就判断本人没有尿意。",
+              "after": "不能因找不到位置，就判断本人没有排尿的感觉。",
+              "reason": "Preserve the sensation wording and rejection of unsupported inference."
+            },
+            {
+              "formId": "kaigo-skills-mock-02",
+              "questionId": "kaigo-skills-mock-02-q42",
+              "field": "rationales",
+              "index": 0,
+              "before": "仅凭按钮在房间里，不能确认本人以实际姿势能够够到。",
+              "after": "仅凭按钮在房间里，不能确认本人在实际使用姿势下够得到。",
+              "reason": "Remove duplicated 能够够到 and retain actual-posture reach condition."
+            }
+          ]
+        },
+        "formDrafts": [
+          {
+            "formId": "kaigo-japanese-mock-02",
+            "path": "/workspace/scratch/c29dc516c1f6/zhcn-mocks-wip/kaigo-japanese-mock-02.json",
+            "sha256": "98dfb155c880c1bc0c9e1123b9cff9b21675e5e6961c68fb3d670b2b26c64f81",
+            "questions": 15,
+            "sourceRevision": "ja-master-v1-578aed7c",
+            "aiSelfReviewed": true
+          },
+          {
+            "formId": "kaigo-japanese-mock-03",
+            "path": "/workspace/scratch/c29dc516c1f6/zhcn-mocks-wip/kaigo-japanese-mock-03.json",
+            "sha256": "5eac3b2d6fe384a00c3e1c839fbb82ab7060175466900b7af68ee40a0532fb84",
+            "questions": 15,
+            "sourceRevision": "ja-master-v1-e30e04d8",
+            "aiSelfReviewed": true
+          },
+          {
+            "formId": "kaigo-skills-mock-04",
+            "path": "/workspace/scratch/c29dc516c1f6/zhcn-mocks-wip/kaigo-skills-mock-04.json",
+            "sha256": "dee66563731d9f5979dee1830e0b40b422c8d3571b265b881b3754f36360ddab",
+            "questions": 45,
+            "sourceRevision": "ja-master-v1-8220c132",
+            "aiSelfReviewed": true
+          },
+          {
+            "formId": "kaigo-japanese-mock-04",
+            "path": "/workspace/scratch/c29dc516c1f6/zhcn-mocks-wip/kaigo-japanese-mock-04.json",
+            "sha256": "91b7d7f96fffd2d898d9b6d668c8c78fd7e24fb4036c040bbda616a2d6103fc2",
+            "questions": 15,
+            "sourceRevision": "ja-master-v1-b6193a48",
+            "aiSelfReviewed": true
+          },
+          {
+            "formId": "kaigo-japanese-mock-05",
+            "path": "/workspace/scratch/c29dc516c1f6/zhcn-mocks-wip/kaigo-japanese-mock-05.json",
+            "sha256": "fd8feb5736b8f91ceffb32a4641bf154eb22d70012d9b4d5196bcb4162ea92f2",
+            "questions": 15,
+            "sourceRevision": "ja-master-v1-1ea862a1",
+            "aiSelfReviewed": true
+          },
+          {
+            "formId": "kaigo-japanese-mock-06",
+            "path": "/workspace/scratch/c29dc516c1f6/zhcn-mocks-wip/kaigo-japanese-mock-06.json",
+            "sha256": "817d81be85d760809cce7d6d52ca59e40e92294422e8ebbcd1224d781d7edbd4",
+            "questions": 15,
+            "sourceRevision": "ja-master-v1-deb8c9a4",
+            "aiSelfReviewed": true
+          },
+          {
+            "formId": "kaigo-skills-mock-01",
+            "path": "/workspace/scratch/c29dc516c1f6/zhcn-mocks-wip/kaigo-skills-mock-01.json",
+            "sha256": "dd9972bc040a281b599f7d8aad9ccb97c8683f29d4c68d80d95645815c4543bf",
+            "questions": 45,
+            "sourceRevision": "ja-master-v1-8df136d",
+            "aiSelfReviewed": true
+          },
+          {
+            "formId": "kaigo-skills-mock-02",
+            "path": "/workspace/scratch/c29dc516c1f6/zhcn-mocks-wip/kaigo-skills-mock-02.json",
+            "sha256": "13bd3394262820c4681dc29189a17851b9b4e42b75a91917c156a0696a441bf2",
+            "questions": 45,
+            "sourceRevision": "ja-master-v1-90911c52",
+            "aiSelfReviewed": true
+          },
+          {
+            "formId": "kaigo-japanese-mock-01",
+            "path": "/workspace/scratch/c29dc516c1f6/zhcn-mocks-wip/kaigo-japanese-mock-01.json",
+            "sha256": "05d00f67e97fc30b6636ea29423a991dca6af8241dd7a2a3d581343473b17389",
+            "questions": 15,
+            "sourceRevision": "ja-master-v1-d62d1de3",
+            "aiSelfReviewed": true
+          }
+        ],
+        "remainingDraftState": {
+          "completePreservedButNotRechecked": [
+            "kaigo-skills-mock-03"
+          ],
+          "notDrafted": [
+            "kaigo-skills-mock-05",
+            "kaigo-skills-mock-06"
+          ]
+        },
+        "openIssues": [
+          "Three forms remain outside the integrated subset: skills03 has a prior complete scratch draft pending source/meaning recheck; skills05–06 are undrafted.",
+          "No independent native, clinical, rights or device review; existing source image lettering issues are not changed."
+        ],
+        "humanReviewed": false,
+        "domainReviewed": false,
+        "nativeReviewed": false,
+        "nativeDeviceTested": false,
+        "rightsReviewed": false,
+        "releaseReady": false,
+        "all12Complete": false,
+        "batch12": {
+          "newFormIds": [
+            "kaigo-skills-mock-01",
+            "kaigo-skills-mock-02",
+            "kaigo-japanese-mock-01"
+          ],
+          "newQuestions": 105,
+          "previousSixFormObjectsPreserved": true,
+          "sourceRevisionBindingsCheckedAfterEdits": true,
+          "newFormHashes": [
+            {
+              "formId": "kaigo-skills-mock-01",
+              "path": "/workspace/scratch/c29dc516c1f6/zhcn-mocks-wip/kaigo-skills-mock-01.json",
+              "sha256": "dd9972bc040a281b599f7d8aad9ccb97c8683f29d4c68d80d95645815c4543bf",
+              "questions": 45,
+              "sourceRevision": "ja-master-v1-8df136d",
+              "aiSelfReviewed": true
+            },
+            {
+              "formId": "kaigo-skills-mock-02",
+              "path": "/workspace/scratch/c29dc516c1f6/zhcn-mocks-wip/kaigo-skills-mock-02.json",
+              "sha256": "13bd3394262820c4681dc29189a17851b9b4e42b75a91917c156a0696a441bf2",
+              "questions": 45,
+              "sourceRevision": "ja-master-v1-90911c52",
+              "aiSelfReviewed": true
+            },
+            {
+              "formId": "kaigo-japanese-mock-01",
+              "path": "/workspace/scratch/c29dc516c1f6/zhcn-mocks-wip/kaigo-japanese-mock-01.json",
+              "sha256": "05d00f67e97fc30b6636ea29423a991dca6af8241dd7a2a3d581343473b17389",
+              "questions": 15,
+              "sourceRevision": "ja-master-v1-d62d1de3",
+              "aiSelfReviewed": true
+            }
+          ],
+          "remainingWorkPausedForPublisherPriority": "Prioritize the six untranslated locales."
+        }
+      }
+    }
+  ],
+  "sourceCommit": "47db98cdf7ab3cbc07e6d87b13d3bc9a630b3bdc",
+  "finalCohort48": {
+    "sourceCommit": "47db98cdf7ab3cbc07e6d87b13d3bc9a630b3bdc",
+    "fullJapanesePacketSha256": "545cafdaf85079d97259562f2fba17f7be305a6e4be262f2296ff78567b0eaae",
+    "remainingPacketSha256": "6335df919f53b2daf6ada0e48d3d124103ae9954f47b6afda39aa43b414f34ff",
+    "previousNineFormObjectsAndOrderPreserved": true,
+    "topLevelMetadataPreserved": true,
+    "newFormIds": [
+      "kaigo-skills-mock-03",
+      "kaigo-skills-mock-05",
+      "kaigo-skills-mock-06"
+    ],
+    "newQuestions": 135,
+    "newOptions": 540,
+    "newSpecificRationales": 540,
+    "newNonemptyPassages": 0,
+    "newEmptyPassages": 135,
+    "newFigureDescriptions": 15,
+    "newEmptyFigureDescriptions": 120,
+    "perForm": [
+      {
+        "formId": "kaigo-skills-mock-03",
+        "questions": 45,
+        "options": 180,
+        "rationales": 180,
+        "passages": 0,
+        "emptyPassages": 45,
+        "figureDescriptions": 5,
+        "emptyFigureDescriptions": 40,
+        "sourceRevision": "ja-master-v1-52fc2dba",
+        "fullDirectSourceReview": true,
+        "continuousTargetProseReview": true,
+        "sha256": "f495c75c19a7816c48c71c6f3e0ee57ac5a0c0d5f4c7e1107c8e11f7be91b4ca"
+      },
+      {
+        "formId": "kaigo-skills-mock-05",
+        "questions": 45,
+        "options": 180,
+        "rationales": 180,
+        "passages": 0,
+        "emptyPassages": 45,
+        "figureDescriptions": 5,
+        "emptyFigureDescriptions": 40,
+        "sourceRevision": "ja-master-v1-dc75b7df",
+        "fullDirectSourceReview": true,
+        "continuousTargetProseReview": true,
+        "sha256": "f39c20f1de498d648e1248b5355acfd331185021f32088794db10dd411b284d4"
+      },
+      {
+        "formId": "kaigo-skills-mock-06",
+        "questions": 45,
+        "options": 180,
+        "rationales": 180,
+        "passages": 0,
+        "emptyPassages": 45,
+        "figureDescriptions": 5,
+        "emptyFigureDescriptions": 40,
+        "sourceRevision": "ja-master-v1-15b85ee2",
+        "fullDirectSourceReview": true,
+        "continuousTargetProseReview": true,
+        "sha256": "df9f3ddacefa26456314fb54b2819e746cf7c9a951963ff720bb8704e4282975"
+      }
+    ]
   }
 }

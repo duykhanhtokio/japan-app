@@ -3,19 +3,21 @@
   "language": "th",
   "translatedFrom": "ja",
   "status": "translated_ai_unreviewed",
-  "all12Complete": false,
-  "sourceCommit": "34b9745ea1f676e0229f89f25c0aed8cc7bcd84c",
+  "all12Complete": true,
+  "sourceCommit": "47db98cdf7ab3cbc07e6d87b13d3bc9a630b3bdc",
   "sourcePacket": "full-mocks.ja.json",
-  "sourcePacketSha256": "f9b540457e4fb04a38faee968b57f34fef562049a07dc13946e86017ed1b154f",
+  "sourcePacketSha256": "545cafdaf85079d97259562f2fba17f7be305a6e4be262f2296ff78567b0eaae",
   "translationPath": "src/data/kaigo/japanese-master/mock-translations/mocks.th.json",
-  "translationSha256": "696be68700973f3f6e7c620c96c0f71641e940d609508658dfcec6565f15a63b",
+  "translationSha256": "dde343e2f1c944d82d6ef520a278d5de46b64c60d880ad79e8b5d9e4758546aa",
   "counts": {
-    "forms": 6,
-    "questions": 90,
-    "options": 360,
-    "rationales": 360,
+    "forms": 12,
+    "questions": 360,
+    "options": 1440,
+    "rationales": 1440,
     "nonemptyPassages": 60,
-    "nonemptyFigureDescriptions": 0
+    "nonemptyFigureDescriptions": 30,
+    "emptyPassages": 300,
+    "emptyFigureDescriptions": 330
   },
   "completeFormIds": [
     "kaigo-japanese-mock-01",
@@ -23,9 +25,7 @@
     "kaigo-japanese-mock-03",
     "kaigo-japanese-mock-04",
     "kaigo-japanese-mock-05",
-    "kaigo-japanese-mock-06"
-  ],
-  "remainingFormIds": [
+    "kaigo-japanese-mock-06",
     "kaigo-skills-mock-01",
     "kaigo-skills-mock-02",
     "kaigo-skills-mock-03",
@@ -33,7 +33,8 @@
     "kaigo-skills-mock-05",
     "kaigo-skills-mock-06"
   ],
-  "remainingQuestions": 270,
+  "remainingFormIds": [],
+  "remainingQuestions": 0,
   "directJapaneseTranslation": true,
   "crossTranslationUsed": false,
   "otherLocaleInputsUsed": false,
@@ -41,22 +42,23 @@
   "localeProfile": "docs/ssw-workspace/kaigo/locale-profiles/th.json",
   "aiSelfReview": {
     "completed": true,
-    "scope": "Japanese mock forms01–06; this batch adds Japanese05–06 (30 questions), directly checked against effective Japanese and read as natural Thai",
+    "scope": "All six newly translated skills forms01–06:270questions,1080options,1080specific rationales,30figure descriptions; all Japanese source fields compared directly and complete Thai prose read continuously form by form. Prior six Japanese form objects retained exactly.",
+    "directJapanese": true,
+    "noCrossTranslation": true,
+    "fullOwnSourceReview": true,
+    "continuousTargetProseReview": true,
     "checks": [
-      "Exact form/question IDs, source revisions and correct indices retained.",
-      "All four full option rationales retained. Explicit empty passages/figure descriptions remain empty.",
-      "Natural respectful adult Thai; no inferred kinship, age or speaker gender. Japanese terminology remains when it is the learning target.",
-      "Recipients, planned versus performed, unknown versus absent, scope of consent, negation and ordering preserved.",
-      "Specific audit: Japanese03 q15 preserves pending nurse reply, subsequent explanation/consent, and current not-performed state; Japanese04 q13 retains report to nurse and unknown cause.",
-      "Batch12 Japanese05 preserves optional photo, basket-only search, meeting appointment vs service initiation, and designated shelf recipient. Japanese06 preserves face-only consent, unmeasured temperature, source discrepancy, person’s unconfirmed preferred time, and responsible-staff verification plus consent before starting.",
-      "Prior four form objects preserved exactly against prebatch snapshot."
+      "Read complete effective Japanese prompts, all options and all four specific rationales, figure descriptions, negation, conditions, actor/recipient and temporal scope for all270new questions.",
+      "Read each Thai form as continuous prose and compared the full set with Japanese during authoring and final editorial review. Retained observation versus inference, consent versus explanation, planned versus performed and unknown versus absent.",
+      "Preserved every prior complete Japanese form object/order and all top-level target metadata. No Japanese source, UI, assets, timing, answer index or attempt revision was changed.",
+      "Verified every new ID/order/revision/correctIndex/status, all explicit-empty fields and full nonempty figure descriptions. Kept respectful adult Thai without invented gender or kinship.",
+      "Specifically checked skills04q32 urine quantity associated with urge, skills05q25 action-selection wording and skills06q23 actual friction/shear harm without urine-output implication."
     ],
     "corrections": [
-      "Used food-main versus side-dish terminology consistently: อาหารหลัก / กับข้าวหลัก / กับข้าวประกอบ.",
-      "Maintained recipient in Japanese02 q15 as both person receiving care and responsible staff.",
-      "Preserved Japanese06 q01 palm-versus-back-of-hand anatomy distinction. Used น้ำอุ่น consistently for 湯."
+      "Repaired draft stray Japanese character in skills05q41 and accidental internal spacing in skills05q28.",
+      "Clarified skills06q22 foot support as การรองรับเท้า rather than footwear, and made skills06q26 agency wording natural."
     ],
-    "limitations": "AI self-review and structural assertions do not certify native/domain correctness or device rendering."
+    "limitations": "AI editorial/self-review only; independent native, professional, rights and device review remain pending."
   },
   "draftSha256": {
     "kaigo-japanese-mock-01": "d498ffd126f227034ae78c056c4cc6ccb1a685f1ad5fe7ff8c91ef08b034a74d",
@@ -64,7 +66,13 @@
     "kaigo-japanese-mock-03": "b8c356babc2e84e5cef3a1e94810e4993c55509e6d073220af1fc351d2866a4a",
     "kaigo-japanese-mock-04": "2f5dcc15293cb10c717365279feaacd9ffac4ddbe0e69dcd5eb27fc84acd12cd",
     "kaigo-japanese-mock-05": "9a64329064177bb3cf2a4719a2a0c462e37ea94d56dc8ad138c7ff8237cb974d",
-    "kaigo-japanese-mock-06": "22f958be3af38940e0d255778bf0edc9534f246808ea73ad0726a34b98e07f52"
+    "kaigo-japanese-mock-06": "22f958be3af38940e0d255778bf0edc9534f246808ea73ad0726a34b98e07f52",
+    "kaigo-skills-mock-01": "e1e971908cecad43182c5046e1d8b932fb4ba58fc348519e57360bffb63598f3",
+    "kaigo-skills-mock-02": "9f0ec8ed94bdc87c0b99e45499a8fc117efd81366c8ce769aca9fd4d0700fbdb",
+    "kaigo-skills-mock-03": "5fd1207d62bfa416fea4d16a72edbee8325226048b75af63ac860dc184dda3f2",
+    "kaigo-skills-mock-04": "e7d67223d3f97d6fe3df7493c586cfaa4e322d0aeea68c75366186e30525ae2c",
+    "kaigo-skills-mock-05": "b0406e14b7d958c21f574afdcaa44bef9fb77d6fb5c08f668a44e8bceae51ecb",
+    "kaigo-skills-mock-06": "3489df86d080d88778c4a5599bf91d6ca6c76460d6dbaeb39e7c3e4e93a9c04e"
   },
   "humanReviewed": false,
   "domainReviewed": false,
@@ -73,8 +81,6 @@
   "rightsReviewed": false,
   "releaseReady": false,
   "openIssues": [
-    "Six whole skills forms01–06 remain untranslated (270 questions).",
-    "User priority switched to six missing locales; paused Thai production after safe complete Japanese05–06 handoff.",
     "Independent native, domain, rights and device reviews remain pending. Existing image-lettering issues are outside this text-only batch."
   ],
   "directJapanese": true,
@@ -82,7 +88,7 @@
   "outputs": [
     {
       "path": "src/data/kaigo/japanese-master/mock-translations/mocks.th.json",
-      "sha256": "696be68700973f3f6e7c620c96c0f71641e940d609508658dfcec6565f15a63b"
+      "sha256": "dde343e2f1c944d82d6ef520a278d5de46b64c60d880ad79e8b5d9e4758546aa"
     }
   ],
   "integrationMetadataNormalization": {
@@ -102,5 +108,261 @@
     "selfReviewed": true,
     "priorFourFormsUnchanged": true,
     "pausedForUserPriority": true
+  },
+  "history": [
+    {
+      "checkpoint": "pre_completion48",
+      "review": {
+        "version": 1,
+        "language": "th",
+        "translatedFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "all12Complete": false,
+        "sourceCommit": "34b9745ea1f676e0229f89f25c0aed8cc7bcd84c",
+        "sourcePacket": "full-mocks.ja.json",
+        "sourcePacketSha256": "f9b540457e4fb04a38faee968b57f34fef562049a07dc13946e86017ed1b154f",
+        "translationPath": "src/data/kaigo/japanese-master/mock-translations/mocks.th.json",
+        "translationSha256": "696be68700973f3f6e7c620c96c0f71641e940d609508658dfcec6565f15a63b",
+        "counts": {
+          "forms": 6,
+          "questions": 90,
+          "options": 360,
+          "rationales": 360,
+          "nonemptyPassages": 60,
+          "nonemptyFigureDescriptions": 0
+        },
+        "completeFormIds": [
+          "kaigo-japanese-mock-01",
+          "kaigo-japanese-mock-02",
+          "kaigo-japanese-mock-03",
+          "kaigo-japanese-mock-04",
+          "kaigo-japanese-mock-05",
+          "kaigo-japanese-mock-06"
+        ],
+        "remainingFormIds": [
+          "kaigo-skills-mock-01",
+          "kaigo-skills-mock-02",
+          "kaigo-skills-mock-03",
+          "kaigo-skills-mock-04",
+          "kaigo-skills-mock-05",
+          "kaigo-skills-mock-06"
+        ],
+        "remainingQuestions": 270,
+        "directJapaneseTranslation": true,
+        "crossTranslationUsed": false,
+        "otherLocaleInputsUsed": false,
+        "styleGuideVersion": 1,
+        "localeProfile": "docs/ssw-workspace/kaigo/locale-profiles/th.json",
+        "aiSelfReview": {
+          "completed": true,
+          "scope": "Japanese mock forms01–06; this batch adds Japanese05–06 (30 questions), directly checked against effective Japanese and read as natural Thai",
+          "checks": [
+            "Exact form/question IDs, source revisions and correct indices retained.",
+            "All four full option rationales retained. Explicit empty passages/figure descriptions remain empty.",
+            "Natural respectful adult Thai; no inferred kinship, age or speaker gender. Japanese terminology remains when it is the learning target.",
+            "Recipients, planned versus performed, unknown versus absent, scope of consent, negation and ordering preserved.",
+            "Specific audit: Japanese03 q15 preserves pending nurse reply, subsequent explanation/consent, and current not-performed state; Japanese04 q13 retains report to nurse and unknown cause.",
+            "Batch12 Japanese05 preserves optional photo, basket-only search, meeting appointment vs service initiation, and designated shelf recipient. Japanese06 preserves face-only consent, unmeasured temperature, source discrepancy, person’s unconfirmed preferred time, and responsible-staff verification plus consent before starting.",
+            "Prior four form objects preserved exactly against prebatch snapshot."
+          ],
+          "corrections": [
+            "Used food-main versus side-dish terminology consistently: อาหารหลัก / กับข้าวหลัก / กับข้าวประกอบ.",
+            "Maintained recipient in Japanese02 q15 as both person receiving care and responsible staff.",
+            "Preserved Japanese06 q01 palm-versus-back-of-hand anatomy distinction. Used น้ำอุ่น consistently for 湯."
+          ],
+          "limitations": "AI self-review and structural assertions do not certify native/domain correctness or device rendering."
+        },
+        "draftSha256": {
+          "kaigo-japanese-mock-01": "d498ffd126f227034ae78c056c4cc6ccb1a685f1ad5fe7ff8c91ef08b034a74d",
+          "kaigo-japanese-mock-02": "5c0b2758cb6bf6b5a241da6086b915c370c6db9a2dd99f50012b9724af4b928e",
+          "kaigo-japanese-mock-03": "b8c356babc2e84e5cef3a1e94810e4993c55509e6d073220af1fc351d2866a4a",
+          "kaigo-japanese-mock-04": "2f5dcc15293cb10c717365279feaacd9ffac4ddbe0e69dcd5eb27fc84acd12cd",
+          "kaigo-japanese-mock-05": "9a64329064177bb3cf2a4719a2a0c462e37ea94d56dc8ad138c7ff8237cb974d",
+          "kaigo-japanese-mock-06": "22f958be3af38940e0d255778bf0edc9534f246808ea73ad0726a34b98e07f52"
+        },
+        "humanReviewed": false,
+        "domainReviewed": false,
+        "nativeReviewed": false,
+        "nativeDeviceTested": false,
+        "rightsReviewed": false,
+        "releaseReady": false,
+        "openIssues": [
+          "Six whole skills forms01–06 remain untranslated (270 questions).",
+          "User priority switched to six missing locales; paused Thai production after safe complete Japanese05–06 handoff.",
+          "Independent native, domain, rights and device reviews remain pending. Existing image-lettering issues are outside this text-only batch."
+        ],
+        "directJapanese": true,
+        "noCrossTranslation": true,
+        "outputs": [
+          {
+            "path": "src/data/kaigo/japanese-master/mock-translations/mocks.th.json",
+            "sha256": "696be68700973f3f6e7c620c96c0f71641e940d609508658dfcec6565f15a63b"
+          }
+        ],
+        "integrationMetadataNormalization": {
+          "translatedProseChanged": false,
+          "missingFalseApprovalFieldsAdded": [],
+          "directJapaneseAndNoCrossDeclarationNormalizedFromOwnerReport": true,
+          "originalOwnerOutputHash": "b85857d0478f31eee67a50e420498e49b82e9bad4a1e46b9a5473ef95139468a"
+        },
+        "batch12": {
+          "newCompleteFormIds": [
+            "kaigo-japanese-mock-05",
+            "kaigo-japanese-mock-06"
+          ],
+          "newQuestions": 30,
+          "newOptions": 120,
+          "newRationales": 120,
+          "selfReviewed": true,
+          "priorFourFormsUnchanged": true,
+          "pausedForUserPriority": true
+        }
+      }
+    }
+  ],
+  "perFormCounts": [
+    {
+      "formId": "kaigo-japanese-mock-01",
+      "questions": 15,
+      "options": 60,
+      "rationales": 60,
+      "nonemptyPassages": 10,
+      "nonemptyFigureDescriptions": 0,
+      "emptyPassages": 5,
+      "emptyFigureDescriptions": 15
+    },
+    {
+      "formId": "kaigo-japanese-mock-02",
+      "questions": 15,
+      "options": 60,
+      "rationales": 60,
+      "nonemptyPassages": 10,
+      "nonemptyFigureDescriptions": 0,
+      "emptyPassages": 5,
+      "emptyFigureDescriptions": 15
+    },
+    {
+      "formId": "kaigo-japanese-mock-03",
+      "questions": 15,
+      "options": 60,
+      "rationales": 60,
+      "nonemptyPassages": 10,
+      "nonemptyFigureDescriptions": 0,
+      "emptyPassages": 5,
+      "emptyFigureDescriptions": 15
+    },
+    {
+      "formId": "kaigo-japanese-mock-04",
+      "questions": 15,
+      "options": 60,
+      "rationales": 60,
+      "nonemptyPassages": 10,
+      "nonemptyFigureDescriptions": 0,
+      "emptyPassages": 5,
+      "emptyFigureDescriptions": 15
+    },
+    {
+      "formId": "kaigo-japanese-mock-05",
+      "questions": 15,
+      "options": 60,
+      "rationales": 60,
+      "nonemptyPassages": 10,
+      "nonemptyFigureDescriptions": 0,
+      "emptyPassages": 5,
+      "emptyFigureDescriptions": 15
+    },
+    {
+      "formId": "kaigo-japanese-mock-06",
+      "questions": 15,
+      "options": 60,
+      "rationales": 60,
+      "nonemptyPassages": 10,
+      "nonemptyFigureDescriptions": 0,
+      "emptyPassages": 5,
+      "emptyFigureDescriptions": 15
+    },
+    {
+      "formId": "kaigo-skills-mock-01",
+      "questions": 45,
+      "options": 180,
+      "rationales": 180,
+      "nonemptyPassages": 0,
+      "nonemptyFigureDescriptions": 5,
+      "emptyPassages": 45,
+      "emptyFigureDescriptions": 40
+    },
+    {
+      "formId": "kaigo-skills-mock-02",
+      "questions": 45,
+      "options": 180,
+      "rationales": 180,
+      "nonemptyPassages": 0,
+      "nonemptyFigureDescriptions": 5,
+      "emptyPassages": 45,
+      "emptyFigureDescriptions": 40
+    },
+    {
+      "formId": "kaigo-skills-mock-03",
+      "questions": 45,
+      "options": 180,
+      "rationales": 180,
+      "nonemptyPassages": 0,
+      "nonemptyFigureDescriptions": 5,
+      "emptyPassages": 45,
+      "emptyFigureDescriptions": 40
+    },
+    {
+      "formId": "kaigo-skills-mock-04",
+      "questions": 45,
+      "options": 180,
+      "rationales": 180,
+      "nonemptyPassages": 0,
+      "nonemptyFigureDescriptions": 5,
+      "emptyPassages": 45,
+      "emptyFigureDescriptions": 40
+    },
+    {
+      "formId": "kaigo-skills-mock-05",
+      "questions": 45,
+      "options": 180,
+      "rationales": 180,
+      "nonemptyPassages": 0,
+      "nonemptyFigureDescriptions": 5,
+      "emptyPassages": 45,
+      "emptyFigureDescriptions": 40
+    },
+    {
+      "formId": "kaigo-skills-mock-06",
+      "questions": 45,
+      "options": 180,
+      "rationales": 180,
+      "nonemptyPassages": 0,
+      "nonemptyFigureDescriptions": 5,
+      "emptyPassages": 45,
+      "emptyFigureDescriptions": 40
+    }
+  ],
+  "batch48": {
+    "newCompleteFormIds": [
+      "kaigo-skills-mock-01",
+      "kaigo-skills-mock-02",
+      "kaigo-skills-mock-03",
+      "kaigo-skills-mock-04",
+      "kaigo-skills-mock-05",
+      "kaigo-skills-mock-06"
+    ],
+    "newQuestions": 270,
+    "newOptions": 1080,
+    "newRationales": 1080,
+    "newNonemptyPassages": 0,
+    "newNonemptyFigureDescriptions": 30,
+    "newEmptyPassages": 270,
+    "newEmptyFigureDescriptions": 240,
+    "priorSixFormsUnchanged": true,
+    "topLevelMetadataUnchanged": true,
+    "sourceBaseline": "47db98cdf7ab3cbc07e6d87b13d3bc9a630b3bdc",
+    "fullOwnSourceReview": true,
+    "continuousTargetProseReview": true,
+    "status": "translated_ai_unreviewed"
   }
 }
