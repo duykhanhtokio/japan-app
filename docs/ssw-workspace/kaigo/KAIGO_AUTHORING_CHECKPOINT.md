@@ -1352,3 +1352,14 @@ Week21 now has all12 translations. Cumulative weekly total282/312 week-locale pa
 Week21 native-host runtime PASS for84 day-locale-mode cases/1680 paragraph display pairs/384 submitted rationales, with exact Japanese/target text, selected-language-only display, revision rejection, mixed full/explicit-empty reading semantics and answer concealment/locking. Full176-day/866-section course flow, focused Kaigo data TypeScript and JLPT UI lock10/10 PASS. 1050 prior files preserved byte-for-byte; source/UI/assets/attempts unchanged. Profile extensions retain previous preferred terms. No native-device or independent language/domain/rights/release approval; source coverage percentage remains null.
 
 Next: week22 for hi/bn/ne/my/km/tl, then remaining weeks and12full mocks per locale; first-cohort unfinished mocks remain tracked. Commit/publish/fetch/WORK PERSISTENCE PASS required before durability claims or next production unit.
+
+
+## 2026-10-17 — Direct translation checkpoint 33: week 22 for the six additional locales
+
+Remote 836c50f93bb419a2c4f757c96a8d3260e83d4bbb verified WORK PERSISTENCE PASS before production. Six distinct-language owners translated hi/bn/ne/my/km/tl directly from unchanged canonical Japanese, using only their own checked glossary/profile wording. Each locale has 36 sections / 211 paragraph records / 7 lessons / 22 questions / 88 specific option rationales. The 211 paragraph records contain204 distinct Japanese strings; neither count is a certified source-knowledge denominator. Full effective readings:22 nonempty and0 explicit-empty per locale. All week01–21 translations and existing preferred terms preserved.
+
+Week22 now has all12 translations. Cumulative weekly total288/312 week-locale pairs; first six locales retain26/26 weeks and additional six22/26. Remaining24 weekly pairs are weeks23–26. Full mocks remain40/144 form-locale pairs,104 pending; their data and prior checks remain unchanged. AI-unreviewed accounting stays separate from unique source knowledge coverage.
+
+Week22 native-host runtime PASS for84 day-locale-mode cases/2532 paragraph display pairs/528 submitted rationales, with exact Japanese/target text, selected-language-only display, revision rejection, full nonempty reading semantics and answer concealment/locking. Full176-day/866-section course flow, focused Kaigo data TypeScript and JLPT UI lock10/10 PASS. 1067 prior files preserved byte-for-byte; source/UI/assets/attempts unchanged. Profile extensions retain previous preferred terms. No native-device or independent language/domain/rights/release approval; source coverage percentage remains null.
+
+Next: week23 for hi/bn/ne/my/km/tl, then remaining weeks and12full mocks per locale; first-cohort unfinished mocks remain tracked. Commit/publish/fetch/WORK PERSISTENCE PASS required before durability claims or next production unit.
