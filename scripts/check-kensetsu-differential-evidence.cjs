@@ -4,7 +4,7 @@ const root=path.resolve(__dirname,'..'),doc=path.join(root,'docs/ssw-workspace/k
 const policy=read(path.join(root,'src/data/kensetsu/reuse-policy.json')),sources=new Map(read(path.join(doc,'SOURCE_FINAL_INTEGRITY_AUDIT_2026-10-17.json')).sources.map(s=>[s.sourceId,s]));
 const lessonPath=id=>id.startsWith('kensetsu-common-')?path.join(doc,'shared-session-'+id.split('-').pop()+'.json'):path.join(doc,id.includes('-building-')?'building':'civil','practical','session-'+id.split('-').pop()+'.json');
 let paragraphBindings=0,pageBindings=0;
-for(const name of ['FINAL_STRUCTURAL_DIFFERENTIAL_LEDGER_2026-10-17.json','COMPONENT_RECOGNITION_DIFFERENTIAL_LEDGER_2026-10-17.json','EQUIPMENT_ROLE_DIFFERENTIAL_LEDGER_2026-10-17.json']){
+for(const name of ['FINAL_STRUCTURAL_DIFFERENTIAL_LEDGER_2026-10-17.json','COMPONENT_RECOGNITION_DIFFERENTIAL_LEDGER_2026-10-17.json','EQUIPMENT_ROLE_DIFFERENTIAL_LEDGER_2026-10-17.json','SOURCE_LABEL_DIFFERENTIAL_LEDGER_2026-10-17.json']){
  const ledger=read(path.join(doc,name));assert.equal(ledger.rows.length,ledger.newJapaneseParagraphs);
  for(const row of ledger.rows){
   const file=lessonPath(row.lessonId),lesson=read(file);assert.equal(hash(file),row.lessonSha256);assert(lesson.clusters.flatMap(c=>c.paragraphs).some(p=>p.id===row.paragraphId));

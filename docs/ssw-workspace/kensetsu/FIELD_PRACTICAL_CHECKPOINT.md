@@ -1,3 +1,11 @@
+# Current 1号 source-difference checkpoint — 2026-10-17
+
+Added B053–057: 5 views, 7 Japanese paragraphs, 12 locale overlays and 5 original concept diagrams. All five views are individually source-bound for both 建築 and 土木. They cover shovel bucket orientation, scaffold brackets, slump cone versus measuring gauge, masking tape/spatula, and source tool names linked to already taught roles. Earlier fastening, hammer, painting and measurement explanations are reused by reference. No question duplication or new operating values.
+
+Current counts: 454 active study records; 69 additional views / 161 unique Japanese paragraphs / 12 locales / 69 concept diagrams. Theory: 161 shared lessons. Practical: ライフライン・設備224, 建築162, 土木151 (counts include reused lessons). Every theory/practical scope has 10×40 questions. Original385lessons/844inputs and existing progress IDs retained. Source lineage: all370instructional pages anchored,17frontmatter pages excluded. This does not certify every source fact/number/figure label. Expert/native/rights reviews and actual browser/device evidence remain unapproved.2号 is deferred. See SOURCE_LABEL_DIFFERENTIAL_LEDGER_2026-10-17.json and ONE_GO_OPEN_REVIEW_ITEMS_2026-10-17.json. Totals below are historical.
+
+---
+
 # Latest source differences — equipment roles,2026-10-17
 
 Added8views/18Japaneseparagraphs/12localeoverlays/8controlledconceptdiagrams. B049/B051/B052 are shared withcivil; B050 isbuilding-only. C015–018 arecivil-only. This batch distinguishes rough-terrain/overhead cranes; rebar-machine mechanism and portability; gas-side valves and PSrings; pipe-jacking force/reaction paths and auxiliary equipment; mixer/GATvessels/leadline/anchor; drilling circulation/airhammer/waterjet/doubletube wellpoint; walk-behind rollers. Existing B004/B006/B011/common064 are reused instead of repeated tool and pump-control explanations. Attached-source interpretations corrected for rough-terrain type and boring-pump function; no numerical operation values introduced.

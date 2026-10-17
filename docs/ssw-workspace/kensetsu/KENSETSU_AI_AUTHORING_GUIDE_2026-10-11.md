@@ -2,6 +2,10 @@
 
 Ngày lập: 2026-10-11, Asia/Tokyo. Phạm vi hiện tại: hoàn thiện nội dung để học, bản dịch và ảnh minh họa mới cho 特定技能1号 và 特定技能2号. Phần thi hoàn toàn bằng tiếng Nhật sẽ thiết kế sau khi phần học hoàn thiện. Đây là hướng dẫn thực thi cho AI tiếp nối dự án, không phải báo cáo nội dung đã sản xuất hay chứng nhận tài liệu đã bao phủ đủ.
 
+## Cập nhật tên gọi và hình dạng dụng cụ — 2026-10-17
+
+Mốc hiện tại:69mục bổ sung/161đoạn Nhật/12ngôn ngữ/69sơ đồ khái niệm. B053–057 được đối chiếu riêng nguồn5k và5d, dùng chung 建築・土木. Thực hành 建築162bài,土木151bài,ライフライン・設備224bài;161bài lý thuyết dùng chung. Cả6phần kiểm tra vẫn10×40. Không coi liên kết370trang là chứng nhận đầy đủ mọi ý nguồn;duyệt chuyên môn/bản ngữ/quyền và thử thiết bị thực tế chưa hoàn tất.2号để sau. Số phía dưới là lịch sử.
+
 ## Cập nhật thiết bị và đường truyền lực — 2026-10-17
 
 Mốc hiện tại:64mục bổ sung/154đoạn Nhật/12ngôn ngữ/64sơ đồ khái niệm. B049/B051/B052 dùng chung 建築・土木;B050 chỉ建築;C015–018 chỉ土木. Thực hành 建築157bài,土木146bài,ライフライン・設備224bài;161bài lý thuyết dùng chung. Ngân hàng của6phần vẫn10×40. Nội dung cũ được dùng lại; chưa chứng nhận toàn bộ nguồn, hình nhận dạng thiết bị hoặc phát hành.2号chờ. Xem đầu FIELD_PRACTICAL_CHECKPOINT.md; số phía dưới là lịch sử.
