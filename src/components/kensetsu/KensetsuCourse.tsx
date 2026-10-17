@@ -533,8 +533,12 @@ function Calendar({
           setShowWeek(n.view === "days");
           if (Number.isInteger(n.week) && n.week >= 0 && n.week < weeks.length)
             setWeek(n.week);
-          if (typeof n.lastId === "string" && allowedSessionIds.has(n.lastId))
+          if (typeof n.lastId === "string" && allowedSessionIds.has(n.lastId)) {
             setLastId(n.lastId);
+            // Reuse can reorder/filter week lists; restore by the stable lesson ID.
+            const restoredWeek = weeks.findIndex(w => w.sessionIds.includes(n.lastId));
+            if (restoredWeek >= 0) setWeek(restoredWeek);
+          }
           if (Number.isFinite(n.offset) && n.offset >= 0)
             calendarOffset.current = n.offset;
         } catch {

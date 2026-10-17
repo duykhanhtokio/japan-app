@@ -1,28 +1,27 @@
-# 建設1号 — Field practical checkpoint
+# 建設1号 — Reuse common knowledge; author differences only
 
-Date:2026-10-17 Asia/Tokyo. Authoritative publisher scope remains 学科1–4 shared across allthree1号fields; 実技l/k/d distinct utilities/building/civil;2号deferred. This checkpoint supersedes the earlier missingattachment notice after the sixk/dPDFs arrived.
+Latest publisher instruction2026-10-17:compare all l/k/dsources, link existing Japanese/translation/artwork/question material for identical knowledge, and add only missing/different facts. Supersedes the earlier plan to write separate complete courses from scratch.2号remainsdeferred.
 
-## Received sources
+## Applied source reuse
 
-All6original attachments verified by bytes/SHA256 and retained Library identities in source-inventory.json and SOURCE_KD_INTAKE_2026-10-17.json. Building5k49pages+6k34+7k16=99;civil5d47+6d32+7d16=95;new194pages. Total inventory13PDFs/387pages. No sourcePDF, extracted text or sourceimage copied to repo/app.
+Original3lPDFs materialized from the publisher's retained files and SHA256checked against inventory, then compared to6attachedk/dPDFs. Bodytext normalized across page boundaries; page/layout/font/glyph/heading differences separated from actual additions. No sourcePDF/OCR/sourceimage committed. Exact/fuzzy navigation is not automatic coverage approval. The198field assignments refer to100distinct canonical lessons:99building and99civil, mostly commontools, preparation and safety plus selectedmachine lessons. Sourcebindings and actualcanonical hashes are in PRACTICAL_SOURCE_REUSE_MATRIX_2026-10-17.json. Whole-book/figure/native/domain/rights coverage is unconfirmed.
 
-## First full weekly Japanese units
+Runtime policy links each approved canonical lesson directly, preserving Japanese paragraphs, revisions,12locale translations and originalartwork. Utilities-specific electrical/piping lessons stay out of building/civil. Sharedsource pages can include newfacts; those are not silently counted complete. Concretevibrator fundamentals already exist in theorylesson071; do not rewrite. Slumpmeasuringtool detail and specificformworktapping application remain delta/technicalreview items.
 
-Building practical week001:7lessons,42Japaneseparagraphs,42contextual readings,14ungraded reflection prompts,7reviewquestions. Source5kPDF5–15/printed100–110 directly text/visually reviewed. Independent situations cover component delivery/cranes, excavation-loading-haulage, scaffold component purposes, steel connectiontools, rebarprocessing/tying/identification, pressurejoint equipmentversusinspection, welding materials/helpers/protection. No operational settings or general legal/numeric limits.
+## Prior14new lessons filtered
 
-Civil practical week001:7lessons,42Japaneseparagraphs,42contextual readings,14ungradedreflectionprompts,7reviewquestions. Source5dPDF5–12/printed100–107 directly text/visually reviewed. Independent situations cover earthmoving roles, roller classification/resultrecords, grader/scraper purpose, loadingversusreceipt, pipejacking equipment roles, marinework vesselsversusmeasurement, drillingversuswatercollection. Field-specific IDs and actual k/dsource references; no lfile reassignment.
+All14original JSONrecords are retained unchanged. Fiveentire duplicates are hidden from activecalendars:building001–002;civil001–002and004. Remaining9records are fact-onlyviews:building003–007;civil003,005–007. Only16additional Japanese paragraphs are displayed;68repeated paragraphs/cases are archived rather than reauthored. Active delta paragraph IDs and prior theory references are in reuse-policy.json. No new Japaneseprose or question authored in this change.
 
-All14lessons and14questions remain AIeditorial drafts; Japanese first. Each question has4specific optionrationales and sourcebound lesson/cluster/paragraph/hash. Existing385lessons,55weeks,385translationJSON,400question bank and progress service are bytepreserved (827inputs). Global data399lessons/57weeks;theory161,utilitiespractical224,buildingpractical7,civilpractical7. Existing400questions remain partitioned165theory/235utilitiespractical;14field questions additive, not full10×40banks. No native/professional/rights/release approval and no30minute measured claim.
+The14earlierfieldreviewquestions duplicated commonreporting objectives, so they remain archived and theirattempts untouched. Source-bound existingbank questions are reused:104practicalquestions each in building/civil,165theoryquestions perfield;utilities235practical unchanged. These are derived subsets, not new10×40banks or complete assessment of allnewfacts. Independent sourcequestion IDs/options/answers/rationales remain unchanged.
 
-## Verification
+## Data and learner state
 
-Focused dataTypeScript and JLPTUIlock10/10PASS. Actual component host fixtures render all84new paragraphs, enforce subject/field separation and2号defer, exercise newfieldreview submission, hide pre-submitexplanations, preserve original full-form attempts, isolate split05attempts and retain bothsubject completion records. Native surfaces/art/storage adapted; no browser or actualdevice claim. Newparagraph exactduplicates0;22character normalized selectedsource extractionmatches0, not semantic/rights clearance. See FIELD_PRACTICAL_WEEK001_QA_2026-10-17.json and FIELD_PRACTICAL_WEEK001_RUNTIME_2026-10-17.json.
+Active394lessonrecords:385original+9additionalfactviews. Building practical104entries=99shared+5factviews;civil103=99shared+4factviews. Theory161entries remain shared across3fields. No content duplication:each canonical lesson exists once and is assigned by reference. Original844lesson/week/translation/question/progress-service inputs bytechecked against PRACTICAL_REUSE_PRESERVED_INPUTS_2026-10-17.json.
 
-## Next units and uncompleted scope
+Archiveddraft completion stays stored and neverauto-completes a replacementcanonical lesson. Subject navigation restores the stablelessonID before an oldnumericweekindex so changedcalendar order cannot open the wrongweek. Field/learner progress keys remain independent; originalmixedtest05split protection stays intact.
 
-1. Building next:5kPDF16onward, startingformwork/concretepumping/carpentry thenfinishes andsharedtools. Civil next:5dPDF13onward, startingpavingtools thencommon structuraltrades/landscaping/sharedtools. Read full newunit pages and inspect visuals before drafting. Sourcebook order is navigation only; newlesson structure/scenarios must be independent.
-2. After chapter5,read6k/6d and7k/7d in full and decompose sourceknowledge. Firstpage previews only were inspected for these4files; no fullpage/bodyread or coverageclaim.5kcover/5dcover are recorded separately; contents references to chapters6/7inside5files do not mean those bodies are present there.
-3. Maintain source-to-lesson matrix including figures/tables/labels;28selected mappings are not exhaustiveatomic denominator. Remaining sourcebody, professional/native review, learnerload, currentlaw/technical validation, targetlanguage translations, originalillustrations and complete assessmentbanks remain pending.
-4. Never reactivate2号with1号content. JACleader.pdf remains future2号reference only. Preserve all earlier learner progress and immutable canonical Japanese/translation/question data.
+## Verification and next work
 
-Userauthorized narrowcommit/publish/fetch/WORKPERSISTENCEPASS is required before moving production to nextweeklyunits.
+Actual component host tests PASS:canonical object/translation/artwork reference reuse;16delta paragraphs visible,38removed paragraphs absent in9views;5retiredlessons hidden;sharedquestion sourcefilters;manualcompletion;archivedcompletionretention;stableIDnavigation;newfieldsubmittedreview;pre-submitanswershidden;no utilitiesdetail leakage;2号defer. Focused dataTypeScript and JLPT10/10UIlock PASS. Native surfaces/artwork/storage are adapted; no native/browser screenshot claim. See PRACTICAL_REUSE_RUNTIME_QA_2026-10-17.json.
+
+Next:review unmappedsource differences before furtherwriting. Compare k↔d as well as each↔l and link prior theory/clusters where sufficient. Keep unresolved sourceknowledge/figures/legaloperational review explicit. Complete Japanese differentialcoverage before newtranslation/artwork;reuse existing translations/artwork for linkedcanonical material. Publication/fetch/WORKPERSISTENCEPASS is required before durability claim.

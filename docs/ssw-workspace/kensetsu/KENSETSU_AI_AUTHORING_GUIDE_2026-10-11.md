@@ -2,6 +2,16 @@
 
 Ngày lập: 2026-10-11, Asia/Tokyo. Phạm vi hiện tại: hoàn thiện nội dung để học, bản dịch và ảnh minh họa mới cho 特定技能1号 và 特定技能2号. Phần thi hoàn toàn bằng tiếng Nhật sẽ thiết kế sau khi phần học hoàn thiện. Đây là hướng dẫn thực thi cho AI tiếp nối dự án, không phải báo cáo nội dung đã sản xuất hay chứng nhận tài liệu đã bao phủ đủ.
 
+## Ưu tiên mới nhất — đối chiếu phần khác nhau và dùng lại kiến thức chung (2026-10-17)
+
+Chủ dự án yêu cầu: chỉ lọc kiến thức khác nhau giữa các nguồn và dùng lại nội dung đã tạo cho phần chung. Không soạn lại, thay tình huống hoặc dịch lại chỉ vì kiến thức xuất hiện trong file k/d. Trước mọi đơn vị mới, kiểm PRACTICAL_SOURCE_REUSE_MATRIX_2026-10-17.json và runtime reuse-policy.json.
+
+- So sánh văn bản thân bài xuyên qua ranh giới trang; số trang, vị trí ảnh, chữ dạng khác, số mục khác và lỗi in không tự tạo ra ý kiến thức mới. Tỷ lệ giống chỉ tìm ứng viên; cần quyết định có căn cứ theo nguồn và bài thật.
+- Mỗi ý chung liên kết đến ID bài/đoạn Nhật gốc, bản dịch, hình và câu hỏi đã có. Không nhân bản dữ liệu để đủ tuần/ngày. Tránh bỏ sót phần khác biệt trong trang có phần lớn văn bản chung.
+- Bộ l vẫn là nguồn gốc của ライフライン・設備1号; phần chung được xác nhận trong k/d có thể dùng lại bằng ma trận giới hạn từng bài. Không gán toàn bộ thực hành l sang hai mảng khác. Giữ 2号 chờ.
+- 14bài mới đã được rà:5bài trùng rút khỏi luồng học,9mục chỉ giữ16đoạn bổ sung;68đoạn lặp không còn hiển thị. Giữ dữ liệu gốc, ID và lịch sử.14câu xác nhận mới lặp mục tiêu chung được lưu lịch sử, dùng câu hỏi chung sẵn có thay thế.
+- Với nội dung mới còn thiếu: dùng liên kết nếu bài lý thuyết đã giải thích đủ; chỉ bổ sung ý chưa có hoặc chưa đủ độ sâu. Không tự tuyên bố đã bao phủ toàn nguồn hay đủ10×40đề cho mỗi mảng.
+
 ## Cập nhật phạm vi có hiệu lực — chủ dự án chốt 2026-10-17
 
 Mục này ưu tiên hơn mọi mô tả dùng chung sáu lộ trình trước đây. Hoàn thiện 1号 trước; chưa biên soạn hoặc mở nội dung 2号.

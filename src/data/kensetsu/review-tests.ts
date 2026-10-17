@@ -1,4 +1,3 @@
-import fieldPracticalBank from './field-practical-review-tests.ja.json';
 import { sessionById, type Field, type Level } from './index';
 import { isSessionInScope, type Subject } from './scope';
 import bank from './review-tests.ja.json';
@@ -28,7 +27,8 @@ export function reviewTestsForScope(level: Level, field: Field, subject: Subject
   return lessons.every(lesson => isSessionInScope(lesson!, level, field, 'theory') || isSessionInScope(lesson!, level, field, 'practical')) &&
    lessons.some(lesson => isSessionInScope(lesson!, level, field, 'practical'));
  };
- const availableTests: ReviewTest[] = [...reviewTests, ...fieldPracticalBank.exams];
+ // Prior field-specific questions repeated shared reporting objectives; archived without deleting attempts.
+ const availableTests: ReviewTest[] = reviewTests;
  return availableTests.flatMap(exam => {
   const questions = exam.questions.filter(questionsInScope);
   if (!questions.length) return [];

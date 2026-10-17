@@ -1,3 +1,4 @@
+import reusePolicy from './reuse-policy.json';
 import { sessions, weeks, type Field, type Level, type Session, type Week } from './index';
 
 export type Subject = 'theory' | 'practical';
@@ -20,7 +21,8 @@ export function sessionSubject(session: Session): Subject | null {
   return null;
 }
 export function isSessionInScope(session: Session, level: Level, field: Field, subject: Subject): boolean {
-  if (level !== '1' || sessionSubject(session) !== subject) return false;
+  if (level !== '1' || reusePolicy.retiredSessionIds.includes(session.id) || sessionSubject(session) !== subject) return false;
+  if (subject === 'practical' && field !== 'utilities' && reusePolicy.canonicalPracticalAssignments[field].includes(session.id)) return true;
   return subject === 'theory' || !!session.sourceReferences?.every(ref => theorySources.has(ref.sourceId) || practicalSources[field].has(ref.sourceId));
 }
 export function sessionsForScope(level: Level, field: Field, subject: Subject): Session[] {
