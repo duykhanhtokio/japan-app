@@ -1,5 +1,7 @@
 # Đối chiếu và dùng lại kiến thức theo đoạn — 2026-10-17
 
+Điểm tiếp nối mới nhất:72bài đã có hồ sơ đối chiếu có giới hạn; sáu việc274–301ở phần lịch sử đã được sửa và QA theo mục cuối.152bài còn lại và rà ngược toàn bộ ý/hình/bảng nguồn chưa hoàn tất.
+
 Yêu cầu chủ dự án: đối chiếu từng ý của toàn bộ224bài 実技 gốc với nguồn 建築・土木, gồm bảng/hình/chú thích/điều kiện; dùng lại toàn phần hoặc theo cụm/đoạn, chỉ soạn phần riêng, không làm đều số bài. Sau khi sửa xong mới bàn giao bước kiểm thực tế trên app.
 
 ## Nguyên nhân chưa liên kết
@@ -89,3 +91,19 @@ Thuật ngữノロđã có trong 学科131dùng chung, không soạn lại ho�
 Cộng bốn nhóm:72bài/576đoạn gốc+1đoạn đã bổ sung/596điểm kiểm có giới hạn. Có1.152ràng buộc đoạn–nhánh xác nhận phần giải thích hiện có,2ràng buộc cần sửa điều kiện; ngoài ra11liên kết từng đoạn 実技 và4vị trí từ 学科071đã sửa trước vẫn giữ.152bài chưa có hồ sơ nhóm tương đương; vẫn chưa có mẫu số đầy đủ mọi ý nguồn, nên không báo phần trăm bao phủ.
 
 Đợt này chỉ thêm hồ sơ/sổ đối chiếu, chưa đổi bài/runtime. Bước tiếp theo là thực hiện sáu sửa cụ thể trên, dịch các phần thật sự thêm/đổi, bảo toàn phần cũ và lượt làm đề, kiểm các tuyến ảnh hưởng rồi lưu. Sau đó tiếp tục302–385và162–229. Không bỏ sáu việc này để chỉ tăng số bài đã rà.
+
+## Đã thực hiện sáu sửa274–301
+
+Đã thêm5đoạn tại275cluster1p3,291cluster1p3,294cluster1p3,295cluster2p3,299cluster2p3; sửa296cluster3p1. Tất cả6bài lênrevision2, giữIDvà mã hoàn thànhr1trong lịch sử nhưng không tự hoàn thànhr2. Có72giá trị dịch mới/sửa cho12locale, dùng cùng dữ liệu cả3nhánh và2cấp. Không thêm ngày/bài/câu hỏi.
+
+- Máy trộn: giữ100Vlà ví dụ của động lực điện, phân biệt động cơ và không suy vật liệu/dung tích từ nguồn lực.
+- Kéo cây và chỉnh khung: nối tên dụng cụ với ứng dụng nguồn, tách khỏi kế hoạch/khả năng điều khiển kết quả hoặc thao tác thực địa.
+- Thang tựa: dạy mốc tham khảo khoảng75độso với mặt phẳng ngang; bổ sung nguy cơ quá dốc đổ sau/quá thoải trượt theoFAQhãng, không chép khẳng định thang luôn gãy khi góc nhỏ. Góc không thay kiểm hỗ trợ/cố định hoặc góc chân脚立.
+- 天板: câu được giới hạn theo loại có nhãn cấm; bổ sung việc ngồi, phân biệt một số loại nhỏ/踏台được thiết kế cho đứng, không biến cho đứng thành cho ngồi hoặc dạng chân.
+- Xe làm cao: nêu2mtrong phạm vi phân loại theo sàn ở vị trí cao nhất; không lẫn độ cao đang dùng, tầm với hoặc ngưỡng đào tạo.
+
+Công cụ kiểm nguồn thay đổi đối chiếu trực tiếp vớiGit nền: tổng hai đợt263và sáu sửa này có6đoạn thêm,1đoạn Nhật sửa,55đoạn cũ còn nguyên và163mục dịch cũ còn nguyên. Ba mươi hash trích bài được đổi, còn nội dung/thứ tự/đáp án/revision đề không đổi. Sổ hash gốc844tệp vẫn giữ:829tệp nguyên byte,15tệp trong sổ sửa có chủ đích; ngân hàng bổ sung thứ16nằm ngoài sổ gốc. Hồ sơ giữ cả hash nền và từng mốc trước–sau, không ghi đè sổ gốc để làm kiểm tra đạt.
+
+Host sáu bài đạt234tuyến (12locale×3nhánh×6bài ở1号vàViệt×3nhánh×6bài ở2号). Chromium/RNWeb đạt18tuyến,159đoạn Nhật/159đoạn Việt,18trường hợp lưu lịch sửr1và hoàn thànhr2chủ động. Đã xem6ảnh của295/296ở320×568,768×1024,932×430. Ngân hàng10×40của mỗi phạm vi vẫn đạt; TypeScript liên quan, kiểm bảo toàn và khóa UI JLPT đạt. Chi tiết tại `SOURCE_GAP_REPAIRS_HOST_QA_2026-10-17.json`, `SOURCE_GAP_REPAIRS_BROWSER_QA_2026-10-17.json`, `SOURCE_GAP_REPAIRS_SCOPE_QA_2026-10-17.json`. Chưa phải Expo sản xuất/thiết bị thật hoặc duyệt chuyên môn/bản ngữ/quyền.
+
+Mốc hiện tại:72bài đã có hồ sơ;576IDđoạn gốc(trong đó1đoạn đã chỉnh giới hạn)+6đoạn thêm;614điểm kiểm có giới hạn;1.164ràng buộc đoạn–nhánh đã đối chiếu phần giải thích. Sổ 実技 gốc224bài có1.918đoạn, mẫu số ban đầu1.912được giữ riêng. Số đoạn hiển thị:utilities1.918,building1.029,civil986; số bài224/163/152giữ nguyên. Không còn sáu việc sửa cụ thể của nhóm này ở trạng thái chưa tích hợp.152bài chưa có hồ sơ nhóm tương đương, rà ngược toàn bộ ý/bảng/hình/điều kiện và mục tiêu nhận dạng vẫn mở. Tiếp tục302–385và162–229; chưa bàn giao như đã hoàn tất toàn bộ224bài.
