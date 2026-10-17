@@ -1,3 +1,7 @@
+## Đối chiếu224bài theo ý — 2026-10-17
+
+Chủ dự án đã cho phép đối chiếu đầy đủ. Đọc `PARAGRAPH_REUSE_CHECKPOINT_2026-10-17_VI.md` trước khi tiếp. Đã dùng lại6đoạn vào11vị trí theo nhánh bằng liên kết trực tiếp; giữ nguyên số bài224/163/152, bản dịch và lịch sử. Ma trận224bài/1.912đoạn mới là kiểm kê, toàn bộ đối chiếu từng ý còn dở. Không báo xong hoặc coi hàng pending là đã được duyệt.
+
 # Mốc tiếp nối mới — 2026-10-17
 
 ## Quyết định mới của chủ dự án — 2026-10-17 (ưu tiên hơn các mục lịch sử phía dưới)

@@ -3,7 +3,7 @@ import utilitiesBank from './utilities-review-tests.ja.json';
 import theoryBank from './theory-review-tests.ja.json';
 import fieldBank from './field-review-tests.ja.json';
 import { sessionById, type Field, type Level } from './index';
-import { isSessionInScope, type Subject } from './scope';
+import { isSessionInScope, paragraphIdsForScope, type Subject } from './scope';
 import bank from './review-tests.ja.json';
 export type ReviewSourceReference={
  sessionId:string;clusterId:string;paragraphIds:string[];
@@ -26,6 +26,11 @@ export function reviewTestsForScope(level: Level, field: Field, subject: Subject
  // Publisher decision 2026-10-17: both levels share corresponding lesson/question content.
  const questionsInScope = (question: ReviewQuestion) => {
   if (!question.sourceReferences.length) return false;
+  if (question.sourceReferences.some(ref => {
+   const ids = new Set([...paragraphIdsForScope(ref.sessionId, level, field, subject),
+    ...(subject === 'practical' ? paragraphIdsForScope(ref.sessionId, level, field, 'theory') : [])]);
+   return !ref.paragraphIds.length || ref.paragraphIds.some(id => !ids.has(id));
+  })) return false;
   const lessons = question.sourceReferences.map(ref => sessionById.get(ref.sessionId));
   if (lessons.some(lesson => !lesson)) return false;
   if (subject === 'theory') return lessons.every(lesson => isSessionInScope(lesson!, level, field, 'theory'));

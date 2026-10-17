@@ -48,7 +48,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
   assert.equal(new Set(practical.map(s=>s.id)).size,practical.length);
   if(field!=='utilities'){
    const assigned=policy.canonicalPracticalAssignments[field];assert.equal(assigned.length,field==='building'?108:104);
-   for(const id of assigned){const lesson=practical.find(s=>s.id===id);assert.strictEqual(lesson,m.sessionById.get(id));}
+   for(const id of assigned){const lesson=practical.find(s=>s.id===id);const original=m.sessionById.get(id);if(!lesson.scopeRevision)assert.strictEqual(lesson,original);else for(const c of original.clusters)for(const p of c.paragraphs)assert(lesson.clusters.flatMap(c=>c.paragraphs).includes(p));}
    assert(!practical.some(s=>s.id==='kensetsu-common-session-169')); // utilities electrical detail
    assert(!practical.some(s=>s.id==='kensetsu-common-session-309')); // utilities pipe detail
    sharedSets[field]=practical.filter(s=>assigned.includes(s.id)).map(s=>s.id);
@@ -106,6 +106,32 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  const mount=async(language="vi")=>settle(()=>{renderer=TR.create(React.createElement(m.KensetsuCourse,{learner:'reuse-learner',language,onBack(){}}));});
  const unmount=async()=>settle(()=>renderer.unmount());
  await mount();await click('kensetsu-level-2');assert.equal(host('kensetsu-field-building').length,1);await click('kensetsu-field-building');assert.equal(host('kensetsu-mode-foreman-study').length,1);await click('kensetsu-mode-practical-tests');await click('kensetsu-test-exam-01');await unmount();
+ const paragraphPolicy=JSON.parse(fs.readFileSync(path.join(root,'src/data/kensetsu/paragraph-reuse-policy.json')));
+ let inlineTranslationChecks=0,inlineReaderCases=0;
+ for(const spec of paragraphPolicy.supplements)for(const field of spec.fields){
+  const source=m.sessionById.get(spec.sourceSessionId),original=m.sessionById.get(spec.targetSessionId);
+  const view=m.sessionForScope(spec.targetSessionId,'1',field,'practical');
+  assert.strictEqual(view,m.sessionForScope(spec.targetSessionId,'2',field,'practical'));
+  assert.notEqual(m.completionId(view),m.completionId(original));
+  const restored=m.restoreProgress(JSON.stringify({[m.completionId(original)]:true,[m.completionId(view)]:true}));
+  assert(restored[m.completionId(original)]&&restored[m.completionId(view)]);
+  const selected=source.clusters.flatMap(c=>c.paragraphs).filter(p=>spec.paragraphIds.includes(p.id));
+  for(const p of selected)assert(view.clusters.flatMap(c=>c.paragraphs).includes(p));
+  for(const p of source.clusters.flatMap(c=>c.paragraphs).filter(p=>!spec.paragraphIds.includes(p.id)))assert(!view.clusters.flatMap(c=>c.paragraphs).includes(p),'Unapproved source paragraph leaked');
+  for(const level of ['1','2'])for(const locale of level==='1'?['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl']:['vi']){
+   const key=m.completionKey('reuse-learner',level,field);
+   globalThis.__scopeStorage.set(key,JSON.stringify({[m.completionId(original)]:true}));
+   globalThis.__scopeStorage.set(key+':navigation:practical:v2',JSON.stringify({week:0,lastId:spec.targetSessionId,view:'days',offset:0}));
+   await mount(locale);if(level==='2')await click('kensetsu-level-2');await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click('kensetsu-day-'+Number(spec.targetSessionId.split('-').pop()));
+   assert.equal(m.restoreProgress(JSON.stringify({[m.completionId(original)]:true}))[m.completionId(view)],undefined);
+   assert.equal(renderer.root.findAll(n=>n.type==='Text'&&n.children.includes('✓ 学習済み · 戻る')).length,0);
+   await click('kensetsu-translation');
+   for(const p of selected){assert(host('kensetsu-translation-'+p.id,'Text').some(n=>n.children.includes(p.translations[locale])),p.id+':'+locale);inlineTranslationChecks++;}
+   await unmount();inlineReaderCases++;
+  }
+ }
+ const inlineReport={status:'PASS_HOST_PARAGRAPH_REUSE',uniqueSourceParagraphs:new Set(paragraphPolicy.supplements.flatMap(s=>s.paragraphIds)).size,inlineReaderCases,inlineTranslationChecks,originalParagraphObjectsAndTranslationsReused:true,unselectedSourceParagraphsExcluded:true,oldAndScopedCompletionIdsPreserved:true,levelOneAndTwoShareTheSameFieldView:true,whole224AtomicReviewComplete:false,nativeDeviceTested:false};
+ fs.writeFileSync(path.join(root,'docs/ssw-workspace/kensetsu/PARAGRAPH_REUSE_HOST_QA_2026-10-17.json'),JSON.stringify(inlineReport,null,2)+'\n');
  let deltaParagraphsRendered=0,excludedParagraphsAbsent=0;
  for(const view of policy.deltaViews)for(const field of ['building','civil'].filter(field=>m.isSessionInScope(m.sessionById.get(view.sessionId),'1',field,'practical'))){
   const key=m.completionKey('reuse-learner','1',field);

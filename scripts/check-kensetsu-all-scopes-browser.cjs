@@ -8,6 +8,7 @@ const webModules = process.env.KENSETSU_WEB_MODULES;
 const executablePath = process.env.KENSETSU_QA_CHROMIUM;
 const out = process.env.KENSETSU_QA_OUTPUT;
 const visualOnly = process.env.KENSETSU_BROWSER_VISUAL_ONLY === '1';
+const inlineOnly = process.env.KENSETSU_BROWSER_INLINE_REUSE_ONLY === '1';
 const twoGoOnly = process.env.KENSETSU_BROWSER_TWO_GO_ONLY === '1';
 const readerOnly = process.env.KENSETSU_BROWSER_READER_ONLY === '1';
 for (const [key, value] of Object.entries({modules, webModules, executablePath, out}))
@@ -23,7 +24,7 @@ const adapters = {
 async function build() {
   const fontDir=path.join(webModules,'@fontsource/noto-sans-jp');
   fs.copyFileSync(path.join(fontDir,'files/noto-sans-jp-japanese-400-normal.woff2'),path.join(out,'font.woff2'));
-  const entry = `import React from 'react';import {createRoot} from 'react-dom/client';import {KensetsuReviewTests} from ${JSON.stringify(path.join(root,'src/components/kensetsu/KensetsuReviewTests'))};import {KensetsuCourse} from ${JSON.stringify(path.join(root,'src/components/kensetsu/KensetsuCourse'))};import {reviewTestsForScope} from ${JSON.stringify(path.join(root,'src/data/kensetsu/review-tests'))};import {sessionsForScope} from ${JSON.stringify(path.join(root,'src/data/kensetsu/scope'))};import {sessionById,completionKey} from ${JSON.stringify(path.join(root,'src/data/kensetsu'))};const p=new URLSearchParams(location.search);const field=p.get('field')||'utilities',subject=p.get('subject')||'theory',level=p.get('level')||'1',learner=p.get('learner')||'browser-final';window.__forms=reviewTestsForScope(level,field,subject);window.__lesson=id=>sessionById.get(id);window.__completionKey=completionKey;window.__readerCases=['building','civil'].flatMap(field=>sessionsForScope('1',field,'practical').filter(s=>/^kensetsu-(building|civil)-practical-session-/.test(s.id)).map(s=>({field,sessionId:s.id,n:Number(s.id.split('-').pop())}))); createRoot(document.getElementById('root')).render(p.get('reader')==='1'?<KensetsuCourse learner={learner} language={p.get('language')||'vi'} onBack={()=>{window.__left=true}}/>:<KensetsuReviewTests learner={learner} field={field} subject={subject} level={level} getSourceLesson={id=>sessionById.get(id)} onBack={()=>{window.__left=true}}/>);`;
+  const entry = `import React from 'react';import {createRoot} from 'react-dom/client';import {KensetsuReviewTests} from ${JSON.stringify(path.join(root,'src/components/kensetsu/KensetsuReviewTests'))};import {KensetsuCourse} from ${JSON.stringify(path.join(root,'src/components/kensetsu/KensetsuCourse'))};import {reviewTestsForScope} from ${JSON.stringify(path.join(root,'src/data/kensetsu/review-tests'))};import paragraphPolicy from ${JSON.stringify(path.join(root,'src/data/kensetsu/paragraph-reuse-policy.json'))};import {sessionsForScope,sessionForScope} from ${JSON.stringify(path.join(root,'src/data/kensetsu/scope'))};import {sessionById,completionKey,completionId} from ${JSON.stringify(path.join(root,'src/data/kensetsu'))};const p=new URLSearchParams(location.search);const field=p.get('field')||'utilities',subject=p.get('subject')||'theory',level=p.get('level')||'1',learner=p.get('learner')||'browser-final';window.__forms=reviewTestsForScope(level,field,subject);window.__lesson=id=>sessionById.get(id);window.__completionKey=completionKey;window.__completionId=completionId;window.__scopeLesson=(id,level,field)=>sessionForScope(id,level,field,'practical');window.__inlineCases=paragraphPolicy.supplements.flatMap(spec=>spec.fields.map(field=>({...spec,field})));window.__readerCases=['building','civil'].flatMap(field=>sessionsForScope('1',field,'practical').filter(s=>/^kensetsu-(building|civil)-practical-session-/.test(s.id)).map(s=>({field,sessionId:s.id,n:Number(s.id.split('-').pop())}))); createRoot(document.getElementById('root')).render(p.get('reader')==='1'?<KensetsuCourse learner={learner} language={p.get('language')||'vi'} onBack={()=>{window.__left=true}}/>:<KensetsuReviewTests learner={learner} field={field} subject={subject} level={level} getSourceLesson={id=>sessionForScope(id,level,field,subject)??sessionForScope(id,level,field,"theory")} onBack={()=>{window.__left=true}}/>);`;
   await esbuild.build({stdin:{contents:entry,resolveDir:root,loader:'tsx'},outfile:path.join(out,'entry.js'),bundle:true,platform:'browser',format:'iife',jsx:'automatic',nodePaths:[webModules,modules],define:{'process.env.NODE_ENV':'"development"','__DEV__':'true'},logLevel:'error',plugins:[{name:'qa-web',setup(b){
     b.onResolve({filter:/^(react|react-dom)(\/.*)?$/},a=>({path:require.resolve(a.path,{paths:[webModules]})}));
     b.onResolve({filter:/^react-native$/},()=>({path:require.resolve('react-native-web',{paths:[webModules]})}));
@@ -51,6 +52,30 @@ async function main() {
     const saved=()=>page.waitForFunction(()=>{const n=document.querySelector('[data-testid="kensetsu-test-save-status"]');return n&&!n.textContent.includes('保存中')});
     const open=async n=>{await id('exam-'+String(n).padStart(2,'0')).click();await id('question').waitFor()};
     const back=async()=>{await saved();await page.getByRole('button',{name:'Back',exact:true}).click();await id('catalog').waitFor()};
+    if(inlineOnly){
+      let readerRoutes=0,translatedParagraphs=0;const screenshots=[];
+      await page.goto(base+'/?reader=1');await page.waitForFunction(()=>Array.isArray(window.__inlineCases));
+      const cases=await page.evaluate(()=>window.__inlineCases);
+      for(const level of ['1','2'])for(const spec of cases){
+        const learner='inline-'+level+'-'+spec.field+'-'+spec.sourceSessionId;
+        await page.goto(base+'/?reader=1&language=vi&learner='+learner);
+        const view=await page.evaluate(({id,level,field})=>window.__scopeLesson(id,level,field),{id:spec.targetSessionId,level,field:spec.field});
+        const key=await page.evaluate(({learner,level,field})=>window.__completionKey(learner,level,field),{learner,level,field:spec.field});
+        const oldId=view.id+':r'+view.revision,newId=oldId+':scope:'+view.scopeRevision;
+        await page.evaluate(({key,oldId,id})=>{localStorage.setItem(key,JSON.stringify({[oldId]:true}));localStorage.setItem(key+':navigation:practical:v2',JSON.stringify({lastId:id,week:0,view:'days'}))},{key,oldId,id:view.id});
+        if(level==='2')await page.getByTestId('kensetsu-level-2').click();await page.getByTestId('kensetsu-field-'+spec.field).click();await page.getByTestId('kensetsu-mode-practical-study').click();await page.getByTestId('kensetsu-day-'+Number(view.id.split('-').pop())).click();
+        const reader=page.getByTestId('kensetsu-reader');await reader.waitFor();assert(!(await page.getByTestId('kensetsu-complete').innerText()).includes('学習済み'));
+        await page.getByTestId('kensetsu-translation').click();
+        const text=await reader.innerText(),source=await page.evaluate(id=>window.__lesson(id),spec.sourceSessionId);
+        for(const c of source.clusters)for(const p of c.paragraphs){if(spec.paragraphIds.includes(p.id)){assert(text.includes(p.ja));assert.equal(await page.getByTestId('kensetsu-translation-'+p.id).innerText(),p.translations.vi);translatedParagraphs++;}else assert(!text.includes(p.ja),'Excluded source paragraph rendered');}
+        if(level==='1'&&spec.sourceSessionId.endsWith('348')&&spec.field==='building')for(const [width,height,label]of [[320,568,'phone'],[768,1024,'tablet'],[932,430,'landscape']]){
+          await page.setViewportSize({width,height});const first=source.clusters.flatMap(c=>c.paragraphs).find(p=>spec.paragraphIds.includes(p.id));await page.getByText(first.ja,{exact:true}).scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,'inline-'+label+'.png')});screenshots.push('inline-'+label+'.png');
+        }
+        await page.setViewportSize({width:390,height:844});await reader.evaluate(e=>{e.scrollTop=e.scrollHeight;e.dispatchEvent(new Event('scroll',{bubbles:true}))});await page.waitForFunction(()=>document.querySelector('[data-testid="kensetsu-complete"]')?.getAttribute('aria-disabled')!=='true');await page.getByTestId('kensetsu-complete').click();
+        await page.waitForFunction(({key,newId})=>JSON.parse(localStorage.getItem(key)||'{}')[newId]===true,{key,newId});assert(await page.evaluate(({key,oldId})=>JSON.parse(localStorage.getItem(key))[oldId],{key,oldId}));readerRoutes++;
+      }
+      assert.deepEqual(errors,[]);const report={date:'2026-10-17',status:'PASS_CHROMIUM_INLINE_PARAGRAPH_REUSE',readerRoutes,translatedParagraphs,screenshots,priorCompletionPreserved:true,newCompletionExplicitlyRequired:true,unselectedParagraphsExcluded:true,runtimeErrors:errors,productionExpoTested:false,nativeDeviceTested:false,whole224AtomicReviewComplete:false};fs.writeFileSync(path.join(root,'docs/ssw-workspace/kensetsu/PARAGRAPH_REUSE_BROWSER_QA_2026-10-17.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));return;
+    }
     if(twoGoOnly){
       let examRoutes=0,readerRoutes=0,paragraphs=0;const screenshots=[];
       for(const field of ['utilities','building','civil'])for(const subject of ['theory','practical']){
@@ -95,7 +120,7 @@ async function main() {
         const learner='merged-reader-'+field+'-'+sessionId;
         await page.goto(base+'/?reader=1&language=vi&learner='+learner);
         await page.getByTestId('kensetsu-field-'+field).waitFor();
-        const lesson=await page.evaluate(id=>window.__lesson(id),sessionId);assert(lesson);
+        const lesson=await page.evaluate(({id,field})=>window.__scopeLesson(id,"1",field),{id:sessionId,field});assert(lesson);
         const key=await page.evaluate(({learner,field})=>window.__completionKey(learner,'1',field),{learner,field});
         await page.evaluate(({key,sessionId,revision})=>{localStorage.setItem(key+':navigation:practical:v2',JSON.stringify({week:0,lastId:sessionId,view:'days',offset:0}));if(revision===2)localStorage.setItem(key,JSON.stringify({[sessionId+':r1']:true}))},{key,sessionId,revision:lesson.revision});
         await page.getByTestId('kensetsu-field-'+field).click();await page.getByTestId('kensetsu-mode-practical-study').click();await page.getByTestId('kensetsu-day-'+n).click();
@@ -108,7 +133,7 @@ async function main() {
         await reader.evaluate(e=>{e.scrollTop=e.scrollHeight;e.dispatchEvent(new Event('scroll',{bubbles:true}))});
         await page.waitForFunction(()=>document.querySelector('[data-testid="kensetsu-complete"]')?.getAttribute('aria-disabled')!=='true');
         await complete.click();
-        await page.waitForFunction(({key,id})=>JSON.parse(localStorage.getItem(key)||'{}')[id]===true,{key,id:sessionId+':r'+lesson.revision});
+        await page.waitForFunction(({key,id})=>JSON.parse(localStorage.getItem(key)||'{}')[id]===true,{key,id:await page.evaluate(lesson=>window.__completionId(lesson),lesson)});
         const progress=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)),key);
         if(lesson.revision===2)assert(progress[sessionId+':r1']);
         cases.push({field,sessionId,revision:lesson.revision,japaneseAndVietnameseRendered:true,completionSaved:true,priorR1Preserved:lesson.revision===2});
@@ -116,7 +141,7 @@ async function main() {
       }
       assert.deepEqual(errors,[]);
       const report={selectedReaderIds,availableReaderCases:allReaderCases.length,date:'2026-10-17',status:'PASS_REAL_CHROMIUM_MERGED_READERS_AND_REVISION_PROGRESS',browserVersion:await browser.version(),readerCases:cases.length,japaneseParagraphs,translatedParagraphs,revisionUpgradeCases,cases,runtimeErrors:errors,bundleSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(out,'entry.js'))).digest('hex'),limits:['Actual KensetsuCourse reader with RN Web; Royal artwork/safe-area/storage/image data have explicit fixture adapters.','Japanese and Vietnamese DOM rendering checked here; all12locales are separately checked by the host suite.','No production Expo/native-device, professional or human-native approval.'],nativeDeviceTested:false,domainReviewed:false,nativeReviewed:false,releaseReady:false};
-      fs.writeFileSync(path.join(root,'docs/ssw-workspace/kensetsu',selectedReaderIds.length?'ONE_GO_TARGETED_READER_BROWSER_QA_2026-10-17.json':'ONE_GO_MERGED_READER_BROWSER_QA_2026-10-17.json'),JSON.stringify(report,null,2)+'\n');
+      fs.writeFileSync(path.join(root,'docs/ssw-workspace/kensetsu',process.env.KENSETSU_BROWSER_READER_REPORT || (selectedReaderIds.length?'ONE_GO_TARGETED_READER_BROWSER_QA_2026-10-17.json':'ONE_GO_MERGED_READER_BROWSER_QA_2026-10-17.json')),JSON.stringify(report,null,2)+'\n');
       console.log('PASS merged readers: '+cases.length+' routes, '+japaneseParagraphs+' Japanese/'+translatedParagraphs+' Vietnamese paragraphs, '+revisionUpgradeCases+' revision upgrades');return;
     }
     const cases=[],screenshots=[];

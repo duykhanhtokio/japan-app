@@ -1,3 +1,4 @@
+import paragraphReuse from './paragraph-reuse-policy.json';
 import foreman001 from '../../../docs/ssw-workspace/kensetsu/foreman/session-001.json';
 import foreman002 from '../../../docs/ssw-workspace/kensetsu/foreman/session-002.json';
 import foreman003 from '../../../docs/ssw-workspace/kensetsu/foreman/session-003.json';
@@ -849,7 +850,7 @@ export type Level='1'|'2';
 export type Field='utilities'|'building'|'civil';
 export type Paragraph={id:string;ja:string;translations?:Record<string,string>};
 export type Cluster={id:string;titleJa:string;titleTranslations?:Record<string,string>;paragraphs:Paragraph[];applicationPromptJa?:string;applicationPromptTranslations?:Record<string,string>;reflectionJa?:string;reflectionTranslations?:Record<string,string>;learningActivity?:{ja:string;translations?:Record<string,string>;graded?:boolean};terms?:{ja:string;reading:string;translations?:Record<string,string>}[];illustration?:{assetPath:string;captionJa:string;captionTranslations?:Record<string,string>}};
-export type Session={sourceReferences?:{sourceId:string}[];id:string;revision:number;titleJa:string;titleTranslations?:Record<string,string>;clusters:Cluster[];keyTerms?:{term:string;reading:string;translations?:Record<string,string>}[];illustrations?:{path:string;clusterId?:string;altJa:string;altTranslations?:Record<string,string>}[]};
+export type Session={scopeRevision?:string;sourceReferences?:{sourceId:string}[];id:string;revision:number;titleJa:string;titleTranslations?:Record<string,string>;clusters:Cluster[];keyTerms?:{term:string;reading:string;translations?:Record<string,string>}[];illustrations?:{path:string;clusterId?:string;altJa:string;altTranslations?:Record<string,string>}[]};
 export type Week={id:string;titleJa:string;sessionIds:string[]};
 export const fields:{id:Field;title:string}[]=[{id:'utilities',title:'ライフライン・設備'},{id:'building',title:'建築'},{id:'civil',title:'土木'}];
 
@@ -874,10 +875,10 @@ export const illustrations:Record<string,ImageSourcePropType>={
  'assets/kensetsu/shared/greeting-v1.webp':require('../../../assets/kensetsu/shared/greeting-v1.webp'),
  'assets/kensetsu/shared/morning-meeting-v1.webp':require('../../../assets/kensetsu/shared/morning-meeting-v1.webp'),
 };
-export const completionId=(session:Session)=>`${session.id}:r${session.revision}`;
+export const completionId=(session:Session)=>`${session.id}:r${session.revision}${session.scopeRevision ? `:scope:${session.scopeRevision}` : ""}`;
 export const completionKey=(learner:string,level:Level,field:Field)=>`@japan_app_kensetsu_test:v1:${encodeURIComponent(learner)}:${level}:${field}`;
 export function restoreProgress(raw:string|null):Record<string,true>{
  try{const data=JSON.parse(raw??'null');if(!data||typeof data!=='object'||Array.isArray(data))return {};
- const validIds=[...sessions.map(completionId),...reusePolicy.preservedArchivedCompletionIds];
+ const validIds=[...sessions.map(completionId),...paragraphReuse.supplements.map(view=>{const session=sessions.find(s=>s.id===view.targetSessionId)!;return completionId({...session,scopeRevision:view.scopeRevision});}),...reusePolicy.preservedArchivedCompletionIds];
  return Object.fromEntries(validIds.filter(id=>data[id]===true).map(id=>[id,true]));}catch{return {};}
 }

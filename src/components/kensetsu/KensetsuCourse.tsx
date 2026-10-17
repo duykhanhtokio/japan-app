@@ -38,12 +38,11 @@ import {
   illustrations,
   illustrationAspectRatios,
   restoreProgress,
-  sessionById,
   type Field,
   type Level,
   type Session,
 } from "@/data/kensetsu";
-import { subjectLabels, weeksForScope, type Subject } from "@/data/kensetsu/scope";
+import { subjectLabels, weeksForScope, sessionsForScope, sessionForScope, type Subject } from "@/data/kensetsu/scope";
 const CALENDAR_LEAF = require("../../../assets/kensetsu/ui/calendar-leaf-v1.webp");
 // The backdrop owns safe-area edges; only the lesson reader uses solid ivory.
 function CourseSurface({
@@ -494,6 +493,7 @@ function Calendar({
   subject: Subject;
 }) {
   const weeks = useMemo(() => weeksForScope(level, field, subject), [level, field, subject]);
+  const scopedSessionById = useMemo(() => new Map(sessionsForScope(level, field, subject).map(session => [session.id, session])), [level, field, subject]);
   const allowedSessionIds = useMemo(() => new Set(weeks.flatMap(w => w.sessionIds)), [weeks]);
   const key = completionKey(learner, level, field),
     navigationKey = key + `:navigation:${subject}:v2`;
@@ -703,7 +703,7 @@ function Calendar({
                   第{week + 1}週 ·{" "}
                   {
                     weeks[week].sessionIds.filter((id) => {
-                      const d = sessionById.get(id);
+                      const d = scopedSessionById.get(id);
                       return d && progress[completionId(d)];
                     }).length
                   }
@@ -713,7 +713,7 @@ function Calendar({
               </RoyalExplanationPanel>
               <View testID="kensetsu-day-calendar">
                 {weeks[week].sessionIds.map((id, i) => {
-                  const d = sessionById.get(id);
+                  const d = scopedSessionById.get(id);
                   return d ? (
                     <TokuteiDayCard
                       key={id}
@@ -798,7 +798,7 @@ function Calendar({
                 {visibleWeeks.map((w, i) => {
                   const index = group * 10 + i,
                     count = w.sessionIds.filter((id) => {
-                      const d = sessionById.get(id);
+                      const d = scopedSessionById.get(id);
                       return d && progress[completionId(d)];
                     }).length;
                   return (
@@ -876,7 +876,7 @@ function CourseMode({ learner, level, field, language, onBack }: {
   );
   if (mode?.view === "test") return (
     <KensetsuReviewTests key={`${learner}:${level}:${field}:${mode.subject}:tests`} learner={learner}
-      level={level} field={field} subject={mode.subject} getSourceLesson={id => sessionById.get(id)}
+      level={level} field={field} subject={mode.subject} getSourceLesson={id => sessionForScope(id, level, field, mode.subject) ?? sessionForScope(id, level, field, "theory")}
       onBack={() => setMode(null)} />
   );
   return (
