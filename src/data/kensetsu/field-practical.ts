@@ -1,3 +1,27 @@
+import building23 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-023.json';
+import b23 from './differential-translations/b23.json';
+import building24 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-024.json';
+import b24 from './differential-translations/b24.json';
+import building25 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-025.json';
+import b25 from './differential-translations/b25.json';
+import building26 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-026.json';
+import b26 from './differential-translations/b26.json';
+import building27 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-027.json';
+import b27 from './differential-translations/b27.json';
+import building28 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-028.json';
+import b28 from './differential-translations/b28.json';
+import building29 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-029.json';
+import b29 from './differential-translations/b29.json';
+import building30 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-030.json';
+import b30 from './differential-translations/b30.json';
+import civil9 from '../../../docs/ssw-workspace/kensetsu/civil/practical/session-009.json';
+import c9 from './differential-translations/c9.json';
+import civil10 from '../../../docs/ssw-workspace/kensetsu/civil/practical/session-010.json';
+import c10 from './differential-translations/c10.json';
+import civil11 from '../../../docs/ssw-workspace/kensetsu/civil/practical/session-011.json';
+import c11 from './differential-translations/c11.json';
+import buildingWeek5 from '../../../docs/ssw-workspace/kensetsu/building/practical/week-005.json';
+import civilWeek3 from '../../../docs/ssw-workspace/kensetsu/civil/practical/week-003.json';
 import building13 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-013.json';
 import b13 from './differential-translations/b13.json';
 import building14 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-014.json';
@@ -62,14 +86,14 @@ import civil6 from '../../../docs/ssw-workspace/kensetsu/civil/practical/session
 import civil7 from '../../../docs/ssw-workspace/kensetsu/civil/practical/session-007.json';
 import civilWeek1 from '../../../docs/ssw-workspace/kensetsu/civil/practical/week-001.json';
 import type { Session, Week, Cluster } from './index';
-const originalFieldPracticalSessions: Session[] = [building1, building2, building3, building4, building5, building6, building7, civil1, civil2, civil3, civil4, civil5, civil6, civil7, building8, building9, building10, building11, building12, building13, building14, building15, building16, building17, building18, building19, building20, building21, building22, civil8];
+const originalFieldPracticalSessions: Session[] = [building1, building2, building3, building4, building5, building6, building7, civil1, civil2, civil3, civil4, civil5, civil6, civil7, building8, building9, building10, building11, building12, building13, building14, building15, building16, building17, building18, building19, building20, building21, building22, civil8, building23, building24, building25, building26, building27, building28, building29, building30, civil9, civil10, civil11];
 export const fieldPracticalWeeks: Week[] = [
  {...buildingWeek1, titleJa: '構造工事の工具・部材の補足'},
  {...civilWeek1, titleJa: '土木に固有の機械・設備の補足'},
- buildingWeek2, buildingWeek3, buildingWeek4, civilWeek2,
+ buildingWeek2, buildingWeek3, buildingWeek4, civilWeek2, buildingWeek5, civilWeek3,
 ];
 
-const differentialTranslations = new Map<string, TranslationBundle>([b3, b4, b5, b6, b7, c3, c5, c6, c7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, c8].map(bundle => [bundle.sessionId, bundle]));
+const differentialTranslations = new Map<string, TranslationBundle>([b3, b4, b5, b6, b7, c3, c5, c6, c7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, c8, b23, b24, b25, b26, b27, b28, b29, b30, c9, c10, c11].map(bundle => [bundle.sessionId, bundle]));
 
 // Retain only additional facts in the active reader; original authored JSON stays archived intact.
 export const fieldPracticalSessions: Session[] = originalFieldPracticalSessions.flatMap(session => {

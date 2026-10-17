@@ -2,6 +2,10 @@
 
 Ngày lập: 2026-10-11, Asia/Tokyo. Phạm vi hiện tại: hoàn thiện nội dung để học, bản dịch và ảnh minh họa mới cho 特定技能1号 và 特定技能2号. Phần thi hoàn toàn bằng tiếng Nhật sẽ thiết kế sau khi phần học hoàn thiện. Đây là hướng dẫn thực thi cho AI tiếp nối dự án, không phải báo cáo nội dung đã sản xuất hay chứng nhận tài liệu đã bao phủ đủ.
 
+## Cập nhật mới nhất — phần thi công6k/6d
+
+Đọc đầu FIELD_PRACTICAL_CHECKPOINT.md:36mục bổ sung/93đoạn Nhật,12locale,36sơ đồ,93câu bổ sung. 建築133mục thực hành/182câu;土木122mục/160câu. Dùng lại4bài gia công kim loại337–340cho建築;023–025dùng chung土木. Chưa hoàn tất toàn bộ nguồn/chưa đủ10×40;2号chờ. Các số cũ bên dưới là lịch sử.
+
 ## Cập nhật mới nhất — dụng cụ hoàn thiện và tạo vườn
 
 Đọc đầu FIELD_PRACTICAL_CHECKPOINT.md:25mục bổ sung/66đoạn Nhật,12locale,25sơ đồ,66câu bổ sung. 建築121mục thực hành/159câu;土木116mục/145câu. Trong đợt013–022 chỉ015sơn dùng chung;008tạo vườn chỉ 土木. Chưa bao phủ nguồn toàn bộ/chưa đủ10×40;2号chờ. Các số cũ bên dưới là lịch sử.

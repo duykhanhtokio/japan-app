@@ -1,3 +1,17 @@
+# Latest continuation — chapter6 methods2026-10-17
+
+Supersedes historical counts below: building023–030 and civil009–011 add27Japanese differential paragraphs,12-locale translations,11controlled concept diagrams and27source-bound questions(test14). Only building023–025 are shared into civil. Building also reuses original337–340 from verified6k23–24; utilities-only duct connections remain excluded. No previous lesson/bank/progress asset changed.
+
+Current totals:36additional views/93unique additional paragraphs/36diagrams/93questions;421global records. Building practical133entries/182questions in10scoped views; civil122entries/160questions in9views. These are NOT ten40-question forms. Common theory161lessons/165questions and utilities224practical/235questions unchanged. Canonical practical reuse:building105,civil101,106distinct original records.
+
+QA passed1116locale-paragraph renders,126field-assignment paragraph renders, original844source bytes, new test14 host submission/hidden pre-submit answers, scope isolation, grading, restore/navigation and manual completion. FocusedTypeScript and10/10JLPTUIlock passed. Actual native/browser screenshots and human/domain/native/rights approval remain unconfirmed; no release certification.
+
+Source6k7–32 and6d6–29 reconciled for these differences;24source-page image contact inspected. METHODS_DIFFERENTIAL_LEDGER_2026-10-17.json records27paragraph bindings plus4canonical sheet-metal reuse. Manufacturer checks resolve tile open-time as permitted working time (not mandatory waiting), and product-specific recoating upper intervals. Source stud-welding generalisation, operational numbers and polyurethane container handling are not approved or asserted as universal rules.
+
+Remaining: specialised chapter7 safety reconciliation; unresolved source figures/numbers/technical conflicts; all13PDF atomic claim denominator and original193page completeness; full10×40forms per separate subject/field without duplicate inflation; native/domain/rights review and browser/device evidence. Continue safe remaining work;2号 stays deferred.
+
+---
+
 # Latest continuation — finishes and landscaping2026-10-17
 
 Supersedes counts below: building013–022 and civil008 add33Japanese paragraphs,12-locale translations,11controlled diagrams and33source-bound questions. Only painting015 is shared into civil; other finishing sources remain building-only, landscaping008civil-only. Full current additional set:25views/66unique paragraphs/25diagrams/66questions;410global records. Building practical121entries/159questions;civil116entries/145questions. Theory161lessons/165questions and utilities224practical/235questions unchanged.101oldcanonical per newfield,102distinct oldrecords across them.
