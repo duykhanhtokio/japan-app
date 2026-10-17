@@ -1475,3 +1475,14 @@ Actual host fixtures PASS for36cumulative form-locale pairs/1080questions/4320ra
 Publisher authorization on2026-10-17:the user explicitly permits pushing current371df32e and subsequent Kaigo translation commits to duykhanhtokio/japan-app, branch recovery/jlpt-n3-n1, to save and continue. This persists for this scope; no renewed confirmation is needed for those translation commits.
 
 Next:continue68remaining complete mock-form locale translations, one language per AI and directJapanese only. Commit/publish/fetch and clean WORK PERSISTENCE PASS required before durability claims or next production unit.
+
+
+## 2026-10-17 — Direct translation checkpoint44: Japanese mock04 in six additional locales
+
+Remote 27516a82e7b85027a3a4c4b8e43eece61fefc23c verified clean WORK PERSISTENCE PASS before production. Six independent locale owners translated kaigo-japanese-mock-04 directly from effective Japanese into hi/bn/ne/my/km/tl and completed their own source and continuous prose review. Per locale:15questions/60options/60specific rationales/10full passages;5empty passages/15empty figure descriptions preserved. IDs, order, correct indices and source revisions unchanged; all six prior form objects and top-level metadata retained.
+
+Added6complete form-locale pairs/90question translations/360rationales/60full passages. Full mocks82/144,62pending. Current six owners each have5forms left; first-cohort32unfinished pairs/248non-runtime draft rows preserved. Weekly remains312/312, all weekly targets/reviews unchanged.
+
+Fresh actual host fixtures PASS42cumulative form-locale pairs/1170questions/4680rationales, including all6new forms. Checked full passages, explicit selected-locale translation after confirmed submission, empty fields, no fallback for5missing forms per active locale, stale-source rejection, locked choices and saved answers/time. Both inventories, focused Kaigo TypeScript and JLPT10/10UIlock PASS. 1727 prior files byte-preserved. Prior176day/866section course-flow evidence is retained with matching source/component hashes, not claimed as freshly rerun. Source/UI/assets/attempt keys/timing/style policies preserved. Host fixtures are not actual-device testing; human/domain/native/device/rights/release flags remainfalse; source denominator/percentage null;3VI-labelled technical/13EN-labelled mock figures remain disclosed.
+
+User authorization for subsequent Kaigo translation commits to duykhanhtokio/japan-app recovery/jlpt-n3-n1 remains effective. Next:skills mock04 for the same six separate language owners. Commit/publish/fetch and clean WORK PERSISTENCE PASS required before durability claims or another production unit.
