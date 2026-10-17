@@ -22,6 +22,7 @@ for audit_path in sorted(DOCS.glob('SHARED_TOOLS_REUSE_AUDIT_*.json')):
                     key = (paragraph['paragraphId'], field)
                     assert key not in audits, 'Conflicting audit decisions: ' + str(key)
                     audits[key] = {'ledger': audit_path.name, 'lesson': lesson, 'paragraph': paragraph}
+authorized = json.loads((DOCS / 'AUTHORIZED_REUSE_INPUT_REVISIONS_2026-10-17.json').read_text())
 rows = []
 for file in sorted(DOCS.glob('shared-session-*.json')):
     lesson = json.loads(file.read_text())
@@ -45,9 +46,9 @@ for file in sorted(DOCS.glob('shared-session-*.json')):
             rows.append({'sessionId': lesson['id'], 'clusterId': cluster['id'], 'paragraphId': paragraph['id'],
                          'japaneseSha256': hashlib.sha256(paragraph['ja'].encode()).hexdigest(), 'fields': fields})
 assert len({r['sessionId'] for r in rows}) == 224
-assert len(rows) == 1912
+assert len(rows) == authorized['baselineParagraphs'] + len(authorized['addedCanonicalParagraphs'])
 report = {'date': '2026-10-17', 'status': 'FULL_PARAGRAPH_INVENTORY_PARTIAL_SEMANTIC_REVIEW',
-          'canonicalLessons': 224, 'canonicalParagraphs': len(rows), 'whole224AtomicReviewComplete': False,
+          'canonicalLessons': 224, 'baselineCanonicalParagraphs': authorized['baselineParagraphs'], 'canonicalParagraphs': len(rows), 'whole224AtomicReviewComplete': False,
           'knowledgeAtomDenominator': None,
           'freshApprovedParagraphFieldBindings': sum(f['freshDecision'] == 'approved_bounded_inline_reuse' for r in rows for f in r['fields'].values()),
           'freshConfirmedExistingParagraphFieldBindings': sum(f['freshDecision'] == 'confirmed_existing_bounded_reuse' for r in rows for f in r['fields'].values()),

@@ -132,6 +132,20 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  }
  const inlineReport={status:'PASS_HOST_PARAGRAPH_REUSE',uniqueSourceParagraphs:new Set(paragraphPolicy.supplements.flatMap(s=>s.paragraphIds)).size,inlineReaderCases,inlineTranslationChecks,originalParagraphObjectsAndTranslationsReused:true,unselectedSourceParagraphsExcluded:true,oldAndScopedCompletionIdsPreserved:true,levelOneAndTwoShareTheSameFieldView:true,whole224AtomicReviewComplete:false,nativeDeviceTested:false};
  fs.writeFileSync(path.join(root,'docs/ssw-workspace/kensetsu/PARAGRAPH_REUSE_HOST_QA_2026-10-17.json'),JSON.stringify(inlineReport,null,2)+'\n');
+
+ const locales=['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];
+ const mekiri=m.sessionById.get('kensetsu-common-session-263'),mekiriP=mekiri.clusters[0].paragraphs.find(p=>p.id.endsWith('-p3'));let mekiriReaderCases=0;
+ for(const level of ['1','2'])for(const field of ['utilities','building','civil'])for(const locale of level==='1'?locales:['vi']){
+  assert.strictEqual(m.sessionForScope(mekiri.id,level,field,'practical'),mekiri);
+  const key=m.completionKey('reuse-learner',level,field);globalThis.__scopeStorage.set(key,JSON.stringify({[mekiri.id+':r1']:true}));
+  globalThis.__scopeStorage.set(key+':navigation:practical:v2',JSON.stringify({week:0,lastId:mekiri.id,view:'days',offset:0}));
+  await mount(locale);if(level==='2')await click('kensetsu-level-2');await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click('kensetsu-day-263');
+  assert(renderer.root.findAll(n=>n.type==='Text'&&n.children.includes(mekiriP.ja)).length);
+  assert.equal(renderer.root.findAll(n=>n.type==='Text'&&n.children.includes('✓ 学習済み · 戻る')).length,0);await click('kensetsu-translation');
+  assert(host('kensetsu-translation-'+mekiriP.id,'Text').some(n=>n.children.includes(mekiriP.translations[locale])));
+  await unmount();mekiriReaderCases++;
+ }
+ fs.writeFileSync(path.join(root,'docs/ssw-workspace/kensetsu/MEKIRI_263_HOST_QA_2026-10-17.json'),JSON.stringify({status:'PASS_TARGETED_HOST_READER',readerCases:mekiriReaderCases,newParagraphs:1,targetLocales:locales,allThreeFieldsAndBothLevels:true,originalParagraphsRetained:true,oldCompletionPreservedWithoutAutoCompletion:true,nativeReviewed:false,domainReviewed:false,nativeDeviceTested:false},null,2)+'\n');
  let deltaParagraphsRendered=0,excludedParagraphsAbsent=0;
  for(const view of policy.deltaViews)for(const field of ['building','civil'].filter(field=>m.isSessionInScope(m.sessionById.get(view.sessionId),'1',field,'practical'))){
   const key=m.completionKey('reuse-learner','1',field);
@@ -191,7 +205,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
   assert.equal(q.choicesJa.length,4);assert.equal(new Set(q.choicesJa.map(norm)).size,4);assert(q.correctIndex>=0&&q.correctIndex<4);
   for(const ref of q.sourceReferences){const bytes=fs.readFileSync(path.join(root,ref.lessonFile));assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),ref.lessonSha256);const lesson=m.sessionById.get(ref.sessionId);assert(ref.paragraphIds.every(id=>lesson.clusters.some(c=>c.paragraphs.some(p=>p.id===id))));}
  }
- const locales=['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];
+
  let localeParagraphRenderChecks=0;
  for(const view of policy.deltaViews){
   const lesson=m.sessionById.get(view.sessionId),field=view.sessionId.includes('-building-')?'building':'civil';
@@ -210,7 +224,13 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  }
  assert.equal(localeParagraphRenderChecks,2004);
  const hashes=JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/kensetsu/PRACTICAL_REUSE_PRESERVED_INPUTS_2026-10-17.json')));
- for(const [file,hash]of Object.entries(hashes))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex'),hash,file);
- const report={status:'PASS_SOURCE_BOUND_REUSE_DEDUP_AND_ACTUAL_HOST_FLOW',sharedCanonicalLessonsPerField:{building:108,civil:104},distinctCanonicalLessonsReused:109,activeCanonicalAndDeltaRecords:456,foremanIntroductoryRecords:3,totalActiveRecords:m.sessions.length,additionalFactViews:71,uniqueAdditionalParagraphs:167,additionalParagraphRenderChecks:deltaParagraphsRendered,excludedParagraphChecks:excludedParagraphsAbsent,sharedAdditionalFactViewsLinkedIntoCivil:32,duplicateParagraphsRemovedFromNineUniqueViews:37,fullyRetiredDraftLessons:5,retiredDraftParagraphs:30,totalPriorDraftParagraphsRemovedFromActiveReader:67,scopedQuestions:scopeRows,targetLocales:locales,localeParagraphRenderChecks,additionalDiagrams:71,differentialPngFilesVerified,newInstructionalParagraphsAuthored:5,newQuestionsAuthored:0,originalLessonTranslationAndQuestionInputsBytePreserved:Object.keys(hashes).length,canonicalLessonTranslationsAndArtworkReusedByReference:true,archivedDraftCompletionPreservedWithoutMarkingReplacementLessons:true,navigationRestoredByStableLessonId:true,utilitiesSpecificSourceLessonsNotInOtherFields:true,twoGoSharedContent:true,actualHostComponentFlow:true,newSupplementaryTestHostSubmissionFields:2,newTheory40QuestionHostSubmissionFields:3,theory40QuestionHostSubmissions,fullAdditionalTheoryForms:5,additionalTheoryQuestions:235,additionalPracticalQuestions:104,additionalUtilitiesQuestions:165,additionalSharedFieldQuestions:208,additionalCivilSpecificQuestions:22,nativeDeviceTested:false,browserScreenshots:false,wholeSourceCoverageConfirmed:false,releaseReady:false};
+ const authorized=JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/kensetsu/AUTHORIZED_REUSE_INPUT_REVISIONS_2026-10-17.json')));
+ const revisions=new Map(authorized.files.map(f=>[f.path,f]));let unchangedInputs=0;
+ for(const [file,hash]of Object.entries(hashes)){const revision=revisions.get(file);if(revision)assert.equal(revision.beforeSha256,hash,'Revision must match preserved baseline');else unchangedInputs++;assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex'),revision?revision.afterSha256:hash,file);}
+ for(const revision of authorized.files)assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,revision.path))).digest('hex'),revision.afterSha256,revision.path);
+ const revised=m.sessionById.get('kensetsu-common-session-263');assert.equal(revised.revision,2);
+ for(const p of revised.clusters.flatMap(c=>c.paragraphs))if(authorized.preservedCanonicalParagraphHashes[p.id])assert.equal(crypto.createHash('sha256').update(p.ja).digest('hex'),authorized.preservedCanonicalParagraphHashes[p.id]);
+ const progress=m.restoreProgress(JSON.stringify({[revised.id+':r1']:true}));assert(progress[revised.id+':r1']);assert.equal(progress[m.completionId(revised)],undefined);
+ const report={status:'PASS_SOURCE_BOUND_REUSE_DEDUP_AND_ACTUAL_HOST_FLOW',sharedCanonicalLessonsPerField:{building:108,civil:104},distinctCanonicalLessonsReused:109,activeCanonicalAndDeltaRecords:456,foremanIntroductoryRecords:3,totalActiveRecords:m.sessions.length,additionalFactViews:71,uniqueAdditionalParagraphs:167,additionalParagraphRenderChecks:deltaParagraphsRendered,excludedParagraphChecks:excludedParagraphsAbsent,sharedAdditionalFactViewsLinkedIntoCivil:32,duplicateParagraphsRemovedFromNineUniqueViews:37,fullyRetiredDraftLessons:5,retiredDraftParagraphs:30,totalPriorDraftParagraphsRemovedFromActiveReader:67,scopedQuestions:scopeRows,targetLocales:locales,localeParagraphRenderChecks,additionalDiagrams:71,differentialPngFilesVerified,newInstructionalParagraphsAuthored:6,newQuestionsAuthored:0,originalLessonTranslationAndQuestionInputsBytePreserved:unchangedInputs,intentionallyRevisedInputs:authorized.files.length,originalQuestionPayloadsUnchanged:authorized.originalQuestionPayloadsUnchanged,canonicalLessonTranslationsAndArtworkReusedByReference:true,archivedDraftCompletionPreservedWithoutMarkingReplacementLessons:true,navigationRestoredByStableLessonId:true,utilitiesSpecificSourceLessonsNotInOtherFields:true,twoGoSharedContent:true,actualHostComponentFlow:true,newSupplementaryTestHostSubmissionFields:2,newTheory40QuestionHostSubmissionFields:3,theory40QuestionHostSubmissions,fullAdditionalTheoryForms:5,additionalTheoryQuestions:235,additionalPracticalQuestions:104,additionalUtilitiesQuestions:165,additionalSharedFieldQuestions:208,additionalCivilSpecificQuestions:22,nativeDeviceTested:false,browserScreenshots:false,wholeSourceCoverageConfirmed:false,releaseReady:false};
  if(process.env.KENSETSU_SCOPE_QA_REPORT)fs.writeFileSync(process.env.KENSETSU_SCOPE_QA_REPORT,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 })().catch(e=>{console.error(e);process.exit(1)});
