@@ -38,11 +38,14 @@ export function reviewTestsForScope(level: Level, field: Field, subject: Subject
    // Only the split fifth form gets new attempt identities. Original full forms resume unchanged.
    id: unchanged ? exam.id : `${exam.id}:${subject}:scope-v1`,
    revision: unchanged ? exam.revision : `${exam.revision}:${subject}:scope-v1`,
-   titleJa: `建設1号 ${subject === 'theory' ? '学科' : '実技'} 確認テスト 第${Number(exam.id.split('-').pop())}回`,
    questions: questions.map((question, index) => ({ ...question, number: index + 1 })),
    questionCount: questions.length, maxPoints: questions.reduce((total, question) => total + question.points, 0),
    sessionRange: [Math.min(...questions.flatMap(q => q.sourceReferences.map(ref => Number(ref.sessionId.split('-').pop())))),
                   Math.max(...questions.flatMap(q => q.sourceReferences.map(ref => Number(ref.sessionId.split('-').pop()))))],
   }];
- });
+ }).map((exam, index) => ({
+  ...exam,
+  // Display order belongs to this scope; stable exam/attempt IDs retain their original identity.
+  titleJa: `建設1号 ${subject === 'theory' ? '学科' : '実技'} 確認テスト 第${index + 1}回`,
+ }));
 }

@@ -25,6 +25,12 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  const hosts=(id,type)=>renderer.root.findAll(n=>n.type===type&&n.props.testID===id);
  const click=async id=>{const node=hosts(id,'Pressable')[0];assert(node,'Missing '+id);assert(!node.props.disabled,'Disabled '+id);await settle(()=>node.props.onPress());};
  const textPresent=value=>renderer.root.findAll(n=>n.type==='Text'&&n.children.filter(x=>typeof x==='string').join('').includes(value)).length>0;
+ let catalogTitlesChecked=0;
+ for(const field of ['utilities','building','civil'])for(const subject of ['theory','practical']){
+  const tests=m.reviewTestsForScope('1',field,subject);
+  assert.equal(new Set(tests.map(e=>e.titleJa)).size,tests.length,'Repeated scoped exam title');
+  tests.forEach((exam,index)=>{assert.equal(exam.titleJa,`建設1号 ${subject==='theory'?'学科':'実技'} 確認テスト 第${index+1}回`);catalogTitlesChecked++;});
+ }
  let choicesChecked=0,resumesChecked=0;const cases=[];
  for(const field of ['utilities','building','civil']){
   const tests=m.reviewTestsForScope('1',field,'theory');
@@ -63,7 +69,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
    }
   }
  }
- const report={status:'PASS_FULL_THEORY_HOST_ATTEMPTS',differentialBankSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'src/data/kensetsu/differential-review-tests.ja.json'))).digest('hex'),cases,choicesChecked,resumesChecked,preSubmitAnswersHidden:true,submittedChoicesLocked:true,exactQuestionAndAnswerResume:true,submittedReloadPreserved:true,adapters:['React Native host components','in-memory AsyncStorage','artwork','safe area'],browserScreenshots:false,nativeDeviceTested:false,domainReviewed:false,releaseReady:false};
+ const report={status:'PASS_FULL_THEORY_HOST_ATTEMPTS',differentialBankSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'src/data/kensetsu/differential-review-tests.ja.json'))).digest('hex'),cases,catalogTitlesChecked,choicesChecked,resumesChecked,preSubmitAnswersHidden:true,submittedChoicesLocked:true,exactQuestionAndAnswerResume:true,submittedReloadPreserved:true,adapters:['React Native host components','in-memory AsyncStorage','artwork','safe area'],browserScreenshots:false,nativeDeviceTested:false,domainReviewed:false,releaseReady:false};
  if(process.env.KENSETSU_FULL_THEORY_REPORT)fs.writeFileSync(process.env.KENSETSU_FULL_THEORY_REPORT,JSON.stringify(report,null,2)+'\n');
- console.log(JSON.stringify({status:report.status,attempts:cases.length,choicesChecked,resumesChecked}));
+ console.log(JSON.stringify({status:report.status,attempts:cases.length,catalogTitlesChecked,choicesChecked,resumesChecked}));
 })().catch(e=>{console.error(e);process.exit(1)});
