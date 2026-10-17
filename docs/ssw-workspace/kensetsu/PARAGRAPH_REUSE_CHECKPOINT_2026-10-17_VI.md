@@ -1,6 +1,6 @@
 # Đối chiếu và dùng lại kiến thức theo đoạn — 2026-10-17
 
-Điểm tiếp nối mới nhất:100bài có hồ sơ giới hạn, gồm79bài dùng chung và21bài đối chiếu phạm vi đường ống; không coi cả100là bài được phép dùng chung.124bài còn lại và rà ngược toàn bộ ý/hình/bảng nguồn chưa hoàn tất.
+Điểm tiếp nối mới nhất:111bài có hồ sơ giới hạn; định nghĩa ケガキ từ337đã liên kết theo đoạn vào308của 土木, giữ nguyên câu Nhật và12bản dịch bằng tách đoạn không mất nội dung.113bài còn lại và rà ngược toàn bộ ý/hình/bảng nguồn chưa hoàn tất.
 
 Yêu cầu chủ dự án: đối chiếu từng ý của toàn bộ224bài 実技 gốc với nguồn 建築・土木, gồm bảng/hình/chú thích/điều kiện; dùng lại toàn phần hoặc theo cụm/đoạn, chỉ soạn phần riêng, không làm đều số bài. Sau khi sửa xong mới bàn giao bước kiểm thực tế trên app.
 
@@ -139,3 +139,15 @@ Một thiếu sót rõ từ nhãn hình:6lPDF9cóレ形nhưng bài312chưa giả
 QAhostPASS364lượt của10bài trong sổ sửa (13lượt mới312:12localeở1号+Việtở2号),cộng39lượt riêng263. Chromium312đạt1tuyến/9đoạn Nhật+9đoạn Việt/1ca nângr1→r2;đã xem3ảnh phone/tablet/ngang và lưu cùng báo cáo. TypeScriptvàkhóaUIJLPT10/10PASS.821đầu vào gốc nguyên byte,24tệp sửa có truy vết,43hashtrích bài cộng dồn;mọi câu hỏi/thứ tự/đáp án/revisionđề giữ nguyên. Kiểmtham chiếu xác nhận169quyết định đoạn không bị gán nhầm thành dùng nguyên bài.
 
 Cộng100bài:800IDđoạn gốc(trong đó1đã sửa giới hạn)+10đoạn thêm=810đoạn;764mục kiểm có giới hạn,không phải mẫu số ý nguồn.224bài gốc có1.922đoạn;hiển thịutilities1.922/building1.032/civil989;số bài224/163/152không đổi.124bài chưa có hồ sơ nhóm:330–385và162–229. Những việc rà ngược còn mở đã ghi chính xác:biến thểMD/NO-HUB313;nhãnGW/RW/PS/ALGC/ALK321;lock-ring-holder324;connector/terminal-pin/indicator327;điều kiện ngưỡng cắt và tần suất gauge310;sản phẩm/hoá chất/tape311;thông số và dấu kết thúcEF328–329. Không sao chép các con số/hướng dẫn như quy tắc chung khi chưa xác minh đúng sản phẩm và điều kiện. Ứng viên337ケガキtiếp tục ở nhóm sau. Chưa bàn giao toàn bộ224bài hoặc báo đã hoàn thành nội dung nguồn.
+
+## Nhóm công tác ngầm và 板金 330–340 — liên kết hẹp 337 sang 土木
+
+Đã đọc 92 đoạn gốc của 11 bài, 6l PDF21–24, 6k PDF23–24 và các đoạn nguồn 6d/7k/7d liên quan; xem bảng màu, ảnh manhole và ba ảnh gia công trong 6l. Căn cứ chi tiết nằm ở `GROUND_SHEET_REUSE_AUDIT_330_340_2026-10-17.json`. Có 46 mục kiểm giới hạn; chưa xác nhận toàn bộ ý nguồn.
+
+Đã xử lý ứng viên 337: cluster2p1 trước chứa cả định nghĩa ケガキ, câu về dụng cụ và giới hạn kết luận từ đường dấu. Chuyển nguyên câu về dụng cụ sang cluster2p3; giữ định nghĩa và giới hạn tại cluster2p1. Kiểm ghép lại xác nhận đúng nguyên văn Nhật và 12 bản dịch. Bài 337 lên r2 ở utilities/building, giữ hoàn thành r1 riêng. Liên kết đúng đoạn định nghĩa từ 337 vào bài 308 civil ở cả 1号/2号, bằng cùng đối tượng đoạn và bản dịch. Câu về dụng cụ, bài tập, ảnh và toàn bộ bài 337 không được nhập sang civil. Bài 308 civil có scopeRevision; giữ hoàn thành r2 cũ và yêu cầu chủ động hoàn thành phần mở rộng. Liên kết 332cluster1p1 vào civil009 được đối chiếu lại, chưa mở rộng sang các quy trình thử đào hoặc dò tìm vị trí.
+
+QA host đạt 104 lượt đọc liên kết theo đoạn và 208 lượt kiểm dịch; 390 lượt cho 11 bài theo dõi sửa, cộng 39 lượt riêng 263. Chromium đạt 16 tuyến inline ở hai cấp với 32 lượt đoạn Việt; thêm 2 tuyến bài gốc 337 utilities/building, kiểm 22 đoạn Nhật và 22 đoạn Việt, 2 ca nâng r1→r2. Đã xem 6 ảnh mới ở cỡ điện thoại, tablet và ngang: định nghĩa tại civil và câu dụng cụ giữ tại building. Câu hỏi, thứ tự, đáp án và revision đề giữ nguyên; chỉ cập nhật 46 hash trích bài cộng dồn. Có 819 đầu vào gốc nguyên byte và 26 tệp sửa có truy vết. TypeScript và khóa UI JLPT 10/10 đạt. Đây là RNWeb với fixture; chưa phải thử thiết bị native hoặc duyệt chuyên môn, bản ngữ và quyền.
+
+Mốc hiện tại: 111 bài, 892 ID đoạn gốc (2 ID đã điều chỉnh: một sửa giới hạn, một tách câu), thêm 11 ID = 903 đoạn trong các nhóm đã rà. 11 ID thêm gồm 10 đoạn soạn bổ sung và một câu cũ tách ra. Có 810 mục kiểm giới hạn, 1.319 ràng buộc giải thích dùng chung, 12 ràng buộc inline 実技 cộng 4 vị trí từ 学科071; 485 quyết định phạm vi được đếm riêng. Kiểm kê 224 bài gốc hiện 1.923 đoạn; hiển thị utilities 1.923, building 1.033, civil 990. Số bài 224/163/152 giữ nguyên.
+
+Còn 113 bài chưa có hồ sơ nhóm tương đương: 341–385 và 162–229. Việc rà ngược toàn bộ ý, bảng, hình, điều kiện, nhận dạng ảnh và các mục mở trong hai hồ sơ ống/ngầm vẫn còn. Nguồn 6d PDF9 nêu khoảng đường kính đẩy ống 0,2–3m, trong khi 7d PDF7 nêu 0,8–3m; chưa chọn một khoảng làm giới hạn thiết kế chung. Màu sheet, ngưỡng khí/đào và điều kiện sản phẩm cần được xác minh trước khi giảng thành quy tắc áp dụng. Chưa bàn giao như đã hoàn tất toàn bộ 224 bài.

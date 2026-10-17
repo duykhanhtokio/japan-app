@@ -1,6 +1,6 @@
 {
   "date": "2026-10-17",
-  "reason": "Publisher-authorized source reconciliation across four implementation checkpoints:10additions and1scope correction; all other original paragraphs/translations and every question payload/order/exam revision retained.",
+  "reason": "Publisher-authorized bounded source reconciliation:10authored additions,1lossless paragraph split and2revised original IDs (one scope correction,one sentence split). Other original paragraphs/translations and all question payload/order/exam revisions retained.",
   "baselineParagraphs": 1912,
   "addedCanonicalParagraphs": [
     "kensetsu-common-session-263-cluster-1-p3",
@@ -12,7 +12,8 @@
     "kensetsu-common-session-303-cluster-3-p3",
     "kensetsu-common-session-307-cluster-3-p3",
     "kensetsu-common-session-308-cluster-3-p3",
-    "kensetsu-common-session-312-cluster-3-p3"
+    "kensetsu-common-session-312-cluster-3-p3",
+    "kensetsu-common-session-337-cluster-2-p3"
   ],
   "files": [
     {
@@ -28,7 +29,7 @@
     {
       "path": "src/data/kensetsu/review-tests.ja.json",
       "beforeSha256": "0b6f8643d2a35fe13d25903e7ddbeb8f9fa088305151a25899aeb37fca29c458",
-      "afterSha256": "32ec5d81b71701e101103f913e3c0a5845a95a82fd4bd484bd8696ea212c4276"
+      "afterSha256": "00c857d486488e15351e90846c17aae477f40f1d64d332b76004e4a80d176259"
     },
     {
       "path": "src/data/kensetsu/field-review-tests.ja.json",
@@ -134,9 +135,19 @@
       "path": "src/data/kensetsu/translations/session-312.json",
       "beforeSha256": "a4950c14970785913a171c81be9016408934c62f954ff17a6a850a9e9a007d34",
       "afterSha256": "3014a585f751970322f05c4629d0fda4ab59ddfa45a66dd6a6a6134436f256d2"
+    },
+    {
+      "path": "docs/ssw-workspace/kensetsu/shared-session-337.json",
+      "beforeSha256": "85830e4bcd793902fc38224f88b33d535e829edb6f1947e2de95fd2379046184",
+      "afterSha256": "072caa9ed985914937677f994f92ea236514d91cf81b830427f6f79cad8e07e3"
+    },
+    {
+      "path": "src/data/kensetsu/translations/session-337.json",
+      "beforeSha256": "a90ab50ce598321f111fb6f8ed53492c4daa0306e52a5448c35926bad308971c",
+      "afterSha256": "8bc6801aaa670d1ba3d7c9b75c4eeecfd3e4a7075d5dcd56087dea3cd829930b"
     }
   ],
-  "citationHashUpdates": 43,
+  "citationHashUpdates": 46,
   "domainReviewed": false,
   "nativeReviewed": false,
   "rightsReviewed": false,
@@ -411,10 +422,39 @@
           "afterSha256": "32ec5d81b71701e101103f913e3c0a5845a95a82fd4bd484bd8696ea212c4276"
         }
       ]
+    },
+    {
+      "baseCommit": "23443927d621853b5195b3cc120c00f4caafd4e2",
+      "reason": "Lossless split of337cluster2p1:definition/dimension caveat retained atp1; existing middle tool sentence moved top3 in Japanese and12translations, enabling a bounded civil reference without importing tools. No new knowledge or translated wording.",
+      "addedCanonicalParagraphs": [
+        "kensetsu-common-session-337-cluster-2-p3"
+      ],
+      "revisedCanonicalParagraphs": [
+        "kensetsu-common-session-337-cluster-2-p1"
+      ],
+      "citationHashUpdates": 3,
+      "files": [
+        {
+          "path": "docs/ssw-workspace/kensetsu/shared-session-337.json",
+          "beforeSha256": "85830e4bcd793902fc38224f88b33d535e829edb6f1947e2de95fd2379046184",
+          "afterSha256": "072caa9ed985914937677f994f92ea236514d91cf81b830427f6f79cad8e07e3"
+        },
+        {
+          "path": "src/data/kensetsu/translations/session-337.json",
+          "beforeSha256": "a90ab50ce598321f111fb6f8ed53492c4daa0306e52a5448c35926bad308971c",
+          "afterSha256": "8bc6801aaa670d1ba3d7c9b75c4eeecfd3e4a7075d5dcd56087dea3cd829930b"
+        },
+        {
+          "path": "src/data/kensetsu/review-tests.ja.json",
+          "beforeSha256": "32ec5d81b71701e101103f913e3c0a5845a95a82fd4bd484bd8696ea212c4276",
+          "afterSha256": "00c857d486488e15351e90846c17aae477f40f1d64d332b76004e4a80d176259"
+        }
+      ]
     }
   ],
   "revisedCanonicalParagraphs": [
-    "kensetsu-common-session-296-cluster-3-p1"
+    "kensetsu-common-session-296-cluster-3-p1",
+    "kensetsu-common-session-337-cluster-2-p1"
   ],
   "sourceGapRepairParagraphs": {
     "275": "kensetsu-common-session-275-cluster-1-p3",
@@ -426,11 +466,81 @@
     "303": "kensetsu-common-session-303-cluster-3-p3",
     "307": "kensetsu-common-session-307-cluster-3-p3",
     "308": "kensetsu-common-session-308-cluster-3-p3",
-    "312": "kensetsu-common-session-312-cluster-3-p3"
+    "312": "kensetsu-common-session-312-cluster-3-p3",
+    "337": "kensetsu-common-session-337-cluster-2-p1"
   },
   "sourceGapRepairFields": {
     "312": [
       "utilities"
+    ],
+    "337": [
+      "utilities",
+      "building"
     ]
-  }
+  },
+  "paragraphReorganizations": [
+    {
+      "sourceParagraphId": "kensetsu-common-session-337-cluster-2-p1",
+      "splitParagraphId": "kensetsu-common-session-337-cluster-2-p3",
+      "lessonFile": "docs/ssw-workspace/kensetsu/shared-session-337.json",
+      "translationFile": "src/data/kensetsu/translations/session-337.json",
+      "sentenceFormats": {
+        "ja": {
+          "terminator": "。",
+          "separator": ""
+        },
+        "en": {
+          "terminator": ".",
+          "separator": " "
+        },
+        "vi": {
+          "terminator": ".",
+          "separator": " "
+        },
+        "id": {
+          "terminator": ".",
+          "separator": " "
+        },
+        "zh-CN": {
+          "terminator": "。",
+          "separator": ""
+        },
+        "zh-TW": {
+          "terminator": "。",
+          "separator": ""
+        },
+        "hi": {
+          "terminator": "।",
+          "separator": " "
+        },
+        "bn": {
+          "terminator": "।",
+          "separator": " "
+        },
+        "ne": {
+          "terminator": "।",
+          "separator": " "
+        },
+        "my": {
+          "terminator": "။",
+          "separator": " "
+        },
+        "km": {
+          "terminator": "។",
+          "separator": " "
+        },
+        "tl": {
+          "terminator": ".",
+          "separator": " "
+        }
+      },
+      "thaiMiddleSentence": "ใช้เหล็กขีด วงเวียนขาแหลม และอุปกรณ์อื่นให้สอดคล้องกับตำแหน่งและรูปที่ต้องการ",
+      "originalOrder": [
+        "retainedFirst",
+        "movedMiddle",
+        "retainedLast"
+      ],
+      "semantics": "All original sentences and translated wording retained exactly, with original sentence delimiters restored when recombining."
+    }
+  ]
 }

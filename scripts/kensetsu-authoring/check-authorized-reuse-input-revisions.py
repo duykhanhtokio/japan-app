@@ -47,6 +47,25 @@ for file in lesson_files:
 assert added == set(record['addedCanonicalParagraphs'])
 assert revised == set(record.get('revisedCanonicalParagraphs', []))
 
+# A scope-only split must preserve the original Japanese and translated sentences.
+for split in record.get('paragraphReorganizations', []):
+    old_id, moved_id = split['sourceParagraphId'], split['splitParagraphId']
+    lesson_file, translation_file = split['lessonFile'], split['translationFile']
+    prior = {'ja': paragraphs(old[lesson_file])[old_id], **old[translation_file]['entries'][old_id]['translations']}
+    retained = {'ja': paragraphs(new[lesson_file])[old_id], **new[translation_file]['entries'][old_id]['translations']}
+    moved = {'ja': paragraphs(new[lesson_file])[moved_id], **new[translation_file]['entries'][moved_id]['translations']}
+    for locale, original in prior.items():
+        if locale == 'th':
+            middle = split['thaiMiddleSentence']
+            assert original.count(middle) == 1 and moved[locale] == middle
+            assert original.replace(' ' + middle, '', 1) == retained[locale]
+        else:
+            fmt = split['sentenceFormats'][locale]
+            end, separator = fmt['terminator'], fmt['separator']
+            parts = retained[locale][:-len(end)].split(end + separator)
+            assert len(parts) == 2 and retained[locale].endswith(end) and moved[locale].endswith(end)
+            assert original == parts[0] + end + separator + moved[locale] + separator + parts[1] + end
+
 # Citation-only changes preserve question content, order, choices, answers and exam revisions.
 def without_citation_hash(value):
     if isinstance(value, dict):
