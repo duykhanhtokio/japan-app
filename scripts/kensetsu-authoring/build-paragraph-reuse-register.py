@@ -36,9 +36,12 @@ for file in sorted(DOCS.glob('shared-session-*.json')):
                 if reviewed:
                     assert reviewed['paragraph']['japaneseSha256'] == hashlib.sha256(paragraph['ja'].encode()).hexdigest()
                 approved = [s for s in inline['supplements'] if field in s['fields'] and paragraph['id'] in s['paragraphIds']]
+                reviewed_disposition = reviewed['paragraph'].get('fieldDecisions', {}).get(field) if reviewed else None
+                allowed_scope_decisions = {'utility_scope_retained_after_bounded_kd_comparison', 'shared_concept_already_taught_no_whole_paragraph_import'}
+                assert reviewed_disposition is None or reviewed_disposition in allowed_scope_decisions
                 fields[field] = {
                     'existingWholeLessonLink': lesson['id'] in policy['canonicalPracticalAssignments'][field],
-                    'freshDecision': 'approved_bounded_inline_reuse' if approved else 'needs_content_correction' if reviewed and reviewed['paragraph']['decision'] == 'needs_content_correction' else 'confirmed_existing_bounded_reuse' if reviewed else 'pending_atomic_review',
+                    'freshDecision': 'approved_bounded_inline_reuse' if approved else reviewed_disposition if reviewed_disposition else 'needs_content_correction' if reviewed and reviewed['paragraph']['decision'] == 'needs_content_correction' else 'confirmed_existing_bounded_reuse' if reviewed else 'pending_atomic_review',
                     **({'boundedAuditLedger': reviewed['ledger'], 'sourceAtomExhaustivenessConfirmed': False} if reviewed else {}),
                     'inlineTargets': [s['targetSessionId'] for s in approved],
                     'sourceBindings': [{**binding, 'sourceSha256': source_hashes[binding['sourceId']]} for s in (approved if approved else [reviewed['lesson']] if reviewed else []) for binding in s['sourceBindings'] if binding['sourceId'].endswith('k' if field == 'building' else 'd')],
@@ -53,6 +56,7 @@ report = {'date': '2026-10-17', 'status': 'FULL_PARAGRAPH_INVENTORY_PARTIAL_SEMA
           'freshApprovedParagraphFieldBindings': sum(f['freshDecision'] == 'approved_bounded_inline_reuse' for r in rows for f in r['fields'].values()),
           'freshConfirmedExistingParagraphFieldBindings': sum(f['freshDecision'] == 'confirmed_existing_bounded_reuse' for r in rows for f in r['fields'].values()),
           'paragraphFieldBindingsNeedingContentCorrection': sum(f['freshDecision'] == 'needs_content_correction' for r in rows for f in r['fields'].values()),
+          'boundedScopeDecisionsWithoutNewRuntimeReuse': sum(f['freshDecision'] in {'utility_scope_retained_after_bounded_kd_comparison', 'shared_concept_already_taught_no_whole_paragraph_import'} for r in rows for f in r['fields'].values()),
           'crossSubjectSupplementsOutside224CanonicalLessons': [s for s in inline['supplements'] if s['sourceSessionId'] not in {r['sessionId'] for r in rows}],
           'method': 'A paragraph can contain several knowledge atoms. An existing link, a term match, an absent term or an indexed page is not a fresh semantic approval. Review figures, tables, conditions and exceptions before changing each pending disposition.',
           'rows': rows}

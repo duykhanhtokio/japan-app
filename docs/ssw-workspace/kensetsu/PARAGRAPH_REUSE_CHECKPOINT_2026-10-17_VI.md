@@ -1,6 +1,6 @@
 # Đối chiếu và dùng lại kiến thức theo đoạn — 2026-10-17
 
-Điểm tiếp nối mới nhất:79bài đã có hồ sơ đối chiếu có giới hạn; nhóm302–308đã bổ sung3đoạn và qua QA theo mục cuối.145bài còn lại và rà ngược toàn bộ ý/hình/bảng nguồn chưa hoàn tất.
+Điểm tiếp nối mới nhất:100bài có hồ sơ giới hạn, gồm79bài dùng chung và21bài đối chiếu phạm vi đường ống; không coi cả100là bài được phép dùng chung.124bài còn lại và rà ngược toàn bộ ý/hình/bảng nguồn chưa hoàn tất.
 
 Yêu cầu chủ dự án: đối chiếu từng ý của toàn bộ224bài 実技 gốc với nguồn 建築・土木, gồm bảng/hình/chú thích/điều kiện; dùng lại toàn phần hoặc theo cụm/đoạn, chỉ soạn phần riêng, không làm đều số bài. Sau khi sửa xong mới bàn giao bước kiểm thực tế trên app.
 
@@ -127,3 +127,15 @@ Kiểm lại Điều 61 khoản 1–4 tại MHLW và mô tả sản phẩm thôn
 Kiểm bảo toàn với Git nền đạt: tổng cộng 9 đoạn thêm, 1 đoạn sửa; 79 đoạn cũ và 232 mục dịch cũ giữ nguyên. Cập nhật 40 hash trích bài; nội dung/thứ tự/đáp án/revision đề không đổi. Host đọc 9 bài sửa trên 351 tuyến (12 locale × 3 nhánh ở 1号 và Việt × 3 nhánh ở 2号). Chromium/RNWeb kiểm lại 9 tuyến cho 3 bài mới, 81 đoạn Nhật/81 đoạn Việt, 9 trường hợp giữ r1 và hoàn thành r2 chủ động. Đã xem 9 ảnh phone/tablet/landscape. Đây chưa phải Expo/thiết bị thật hoặc duyệt chuyên môn/bản ngữ/quyền. Khóa UI JLPT đạt 10/10.
 
 Tổng 79 bài có hồ sơ, 632 ID đoạn gốc + 9 đoạn thêm, 679 điểm kiểm có giới hạn. Sổ 224 bài có 1.921 đoạn; 1.282 ràng buộc đoạn–nhánh xác nhận phần giải thích và 11 liên kết từng đoạn riêng. Số bài 224/163/152 không đổi. Còn 145 bài chưa có hồ sơ nhóm tương đương: 309–385 và 162–229. Chưa bàn giao là đã hoàn tất toàn bộ.
+
+## Nhóm đường ống309–329 — quyết định phạm vi và bổ sung hình レ
+
+Đã đọc168đoạn Nhật gốc,6lPDF6–20và13hình/chú thích/nhãn liên quan; đối chiếu thân chương6kPDF1–34/6dPDF1–32qua ranh giới trang cùng các trang dụng cụ/hàn/cách nhiệt được liệt kê riêng trong `PIPE_SCOPE_REUSE_AUDIT_309_329_2026-10-17.json`. Có85mục kiểm giới hạn theo cụm và169đoạn hiện hành. Đây là quyết định phạm vi từng đoạn, không phải công nhận đã dạy hết mọi ý trong6l.
+
+Không đưa hàng loạt21bài chuyên ống sang 建築・土木. Giữ ID nền chung đã có:flux/lõi que hàn tạibuilding040(dùng chungcivil);phân loại nối và phân biệt thi công/kiểm tra tại069;ngưng tụ và các lớp nhiệt/ẩm/vỏ bảo vệ tại083/091. Bendercốt thép trong5k11/5d18khác gia công ống đồng318;ống vận chuyển bê tông/wellpoint hoặc lớp urethane phun không đủ căn cứ dùng nguyên bài mối nối/ống bảo ôn.338ràng buộc quyết định phạm vi được đếm riêng, không nhập vào1.282ràng buộc đã xác nhận giải thích dùng chung.
+
+Một thiếu sót rõ từ nhãn hình:6lPDF9cóレ形nhưng bài312chưa giải thích tên này. Đã thêm312cluster3p3phân biệt vát một bên với dạngV,không đưa góc/kích thước/chế độ thao tác. Có12bản dịch mới,giữ8đoạn và toàn bộ mục dịch cũ;312lênr2,giữr1lịch sử. Chỉhiệnởutilitiescả1号/2号;kiểmkhôngxuấthiệnbuilding/civilởcảhaicấp. Nguồn học thuậtJWESmục2.1được kiểm bổ sung về tên và điều kiện chọn開先;không tuyên bố đã xem toàn bộ hình của bài báo. Hình nhận biết trongappchưa chứng nhận đủ từ việc đọc nguồn.
+
+QAhostPASS364lượt của10bài trong sổ sửa (13lượt mới312:12localeở1号+Việtở2号),cộng39lượt riêng263. Chromium312đạt1tuyến/9đoạn Nhật+9đoạn Việt/1ca nângr1→r2;đã xem3ảnh phone/tablet/ngang và lưu cùng báo cáo. TypeScriptvàkhóaUIJLPT10/10PASS.821đầu vào gốc nguyên byte,24tệp sửa có truy vết,43hashtrích bài cộng dồn;mọi câu hỏi/thứ tự/đáp án/revisionđề giữ nguyên. Kiểmtham chiếu xác nhận169quyết định đoạn không bị gán nhầm thành dùng nguyên bài.
+
+Cộng100bài:800IDđoạn gốc(trong đó1đã sửa giới hạn)+10đoạn thêm=810đoạn;764mục kiểm có giới hạn,không phải mẫu số ý nguồn.224bài gốc có1.922đoạn;hiển thịutilities1.922/building1.032/civil989;số bài224/163/152không đổi.124bài chưa có hồ sơ nhóm:330–385và162–229. Những việc rà ngược còn mở đã ghi chính xác:biến thểMD/NO-HUB313;nhãnGW/RW/PS/ALGC/ALK321;lock-ring-holder324;connector/terminal-pin/indicator327;điều kiện ngưỡng cắt và tần suất gauge310;sản phẩm/hoá chất/tape311;thông số và dấu kết thúcEF328–329. Không sao chép các con số/hướng dẫn như quy tắc chung khi chưa xác minh đúng sản phẩm và điều kiện. Ứng viên337ケガキtiếp tục ở nhóm sau. Chưa bàn giao toàn bộ224bài hoặc báo đã hoàn thành nội dung nguồn.

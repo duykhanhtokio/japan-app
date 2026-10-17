@@ -151,7 +151,9 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  for(const [number,pid]of Object.entries(repairRecord.sourceGapRepairParagraphs)){
   const lesson=m.sessionById.get('kensetsu-common-session-'+number),paragraph=lesson.clusters.flatMap(c=>c.paragraphs).find(p=>p.id===pid);assert(paragraph);assert.equal(lesson.revision,2);
   const old=lesson.id+':r1',restored=m.restoreProgress(JSON.stringify({[old]:true}));assert(restored[old]);assert.equal(restored[m.completionId(lesson)],undefined);
-  for(const level of ['1','2'])for(const field of ['utilities','building','civil'])for(const locale of level==='1'?locales:['vi']){
+  const repairFields=repairRecord.sourceGapRepairFields?.[number]??['utilities','building','civil'];
+  for(const field of ['utilities','building','civil'].filter(f=>!repairFields.includes(f)))for(const level of ['1','2'])assert.equal(m.sessionForScope(lesson.id,level,field,'practical'),undefined);
+  for(const level of ['1','2'])for(const field of repairFields)for(const locale of level==='1'?locales:['vi']){
    assert.strictEqual(m.sessionForScope(lesson.id,level,field,'practical'),lesson);
    const key=m.completionKey('reuse-learner',level,field);globalThis.__scopeStorage.set(key,JSON.stringify({[old]:true}));globalThis.__scopeStorage.set(key+':navigation:practical:v2',JSON.stringify({week:0,lastId:lesson.id,view:'days',offset:0}));
    await mount(locale);if(level==='2')await click('kensetsu-level-2');await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click('kensetsu-day-'+number);
@@ -160,7 +162,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
    await unmount();sourceGapReaderCases++;
   }
  }
- fs.writeFileSync(path.join(root,'docs/ssw-workspace/kensetsu/SOURCE_GAP_REPAIRS_HOST_QA_2026-10-17.json'),JSON.stringify({status:'PASS_TARGETED_HOST_SOURCE_GAP_REPAIRS',lessons:Object.keys(repairRecord.sourceGapRepairParagraphs).length,readerCases:sourceGapReaderCases,addedParagraphs:Object.values(repairRecord.sourceGapRepairParagraphs).filter(id=>repairRecord.addedCanonicalParagraphs.includes(id)).length,revisedParagraphs:Object.values(repairRecord.sourceGapRepairParagraphs).filter(id=>repairRecord.revisedCanonicalParagraphs.includes(id)).length,targetLocales:locales,levelOneLocales:12,levelTwoLocales:['vi'],allThreeFieldsAndBothLevels:true,originalR1CompletionRetainedWithoutAutoCompletingR2:true,nativeReviewed:false,domainReviewed:false,nativeDeviceTested:false},null,2)+'\n');
+ fs.writeFileSync(path.join(root,'docs/ssw-workspace/kensetsu/SOURCE_GAP_REPAIRS_HOST_QA_2026-10-17.json'),JSON.stringify({status:'PASS_TARGETED_HOST_SOURCE_GAP_REPAIRS',lessons:Object.keys(repairRecord.sourceGapRepairParagraphs).length,readerCases:sourceGapReaderCases,addedParagraphs:Object.values(repairRecord.sourceGapRepairParagraphs).filter(id=>repairRecord.addedCanonicalParagraphs.includes(id)).length,revisedParagraphs:Object.values(repairRecord.sourceGapRepairParagraphs).filter(id=>repairRecord.revisedCanonicalParagraphs.includes(id)).length,targetLocales:locales,levelOneLocales:12,levelTwoLocales:['vi'],allExpectedFieldsAndBothLevels:true,restrictedFieldOverrides:repairRecord.sourceGapRepairFields??{},nonApplicableFieldsExcluded:true,originalR1CompletionRetainedWithoutAutoCompletingR2:true,nativeReviewed:false,domainReviewed:false,nativeDeviceTested:false},null,2)+'\n');
  let deltaParagraphsRendered=0,excludedParagraphsAbsent=0;
  for(const view of policy.deltaViews)for(const field of ['building','civil'].filter(field=>m.isSessionInScope(m.sessionById.get(view.sessionId),'1',field,'practical'))){
   const key=m.completionKey('reuse-learner','1',field);
