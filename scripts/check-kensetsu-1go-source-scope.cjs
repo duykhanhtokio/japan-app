@@ -31,7 +31,8 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  const canonical=JSON.parse(fs.readFileSync(path.join(root,'src/data/kensetsu/review-tests.ja.json')));
  const differential=JSON.parse(fs.readFileSync(path.join(root,'src/data/kensetsu/differential-review-tests.ja.json')));
  const utilities=JSON.parse(fs.readFileSync(path.join(root,'src/data/kensetsu/utilities-review-tests.ja.json')));
- const originalQuestions=new Map([...canonical.exams,...differential.exams,...utilities.exams].flatMap(e=>e.questions).map(q=>[q.id,q]));
+ const theoryCompletion=JSON.parse(fs.readFileSync(path.join(root,'src/data/kensetsu/theory-review-tests.ja.json')));
+ const originalQuestions=new Map([...canonical.exams,...differential.exams,...utilities.exams,...theoryCompletion.exams].flatMap(e=>e.questions).map(q=>[q.id,q]));
  const sharedSets={};
  for(const field of ['utilities','building','civil']){
   const theory=m.sessionsForScope('1',field,'theory');assert.equal(theory.length,161);
@@ -76,7 +77,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
   scopeRows.push({field,subject,tests:tests.length,questions:questions.length});
  }
  const t=m.reviewTestsForScope('1','utilities','theory'),p=m.reviewTestsForScope('1','utilities','practical');
- assert.equal(t.reduce((n,e)=>n+e.questionCount,0),285);assert.equal(p.reduce((n,e)=>n+e.questionCount,0),400);
+ assert.equal(t.reduce((n,e)=>n+e.questionCount,0),400);assert.equal(p.reduce((n,e)=>n+e.questionCount,0),400);
  assert.equal(m.restoreTestAttempt(JSON.stringify(m.freshTestAttempt(m.reviewTests[4])),t[4]),null);
  for(const exam of [...t,...p].filter(e=>!e.id.includes(':')&&m.reviewTests.some(original=>original.id===e.id))){const old=m.reviewTests.find(e=>e.id===exam.id);assert.deepEqual(m.restoreTestAttempt(JSON.stringify(m.freshTestAttempt(old)),exam),m.freshTestAttempt(old));}
  for(const id of policy.retiredSessionIds){assert(!m.sessions.some(s=>s.id===id));assert(m.restoreProgress(JSON.stringify({[id+':r1']:true}))[id+':r1']);}
@@ -124,7 +125,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
   await click('kensetsu-test-choice-'+(exam.questions[0].correctIndex+1));await click('kensetsu-test-submit');await click('kensetsu-test-confirm-submit');
   assert.equal(host('kensetsu-test-result','View').length,1);await unmount();
  }
- const theoryExtras=differential.exams.filter(e=>e.id.startsWith('kensetsu-theory-extra-test-'));assert.equal(theoryExtras.length,3);
+ const theoryExtras=[...differential.exams,...theoryCompletion.exams].filter(e=>e.id.startsWith('kensetsu-theory-extra-test-'));assert.equal(theoryExtras.length,5);
  let theory40QuestionHostSubmissions=0;
  for(const theoryExtra of theoryExtras){
   assert.equal(theoryExtra.questions.length,40);const theoryPositions=theoryExtra.questions.map(q=>q.correctIndex);
@@ -140,11 +141,11 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
    assert.equal(host('kensetsu-test-result','View').length,1);theory40QuestionHostSubmissions++;await unmount();
   }
  }
- assert.equal(theory40QuestionHostSubmissions,9);
- const allQuestions=[...canonical.exams,...differential.exams,...utilities.exams].flatMap(e=>e.questions);
+ assert.equal(theory40QuestionHostSubmissions,15);
+ const allQuestions=[...canonical.exams,...differential.exams,...utilities.exams,...theoryCompletion.exams].flatMap(e=>e.questions);
  const norm=text=>text.normalize('NFKC').replace(/[\s。、！？「」]/gu,'');
  assert.equal(new Set(allQuestions.map(q=>norm(q.promptJa))).size,allQuestions.length,'Duplicate normalized prompt');
- for(const q of [...differential.exams,...utilities.exams].flatMap(e=>e.questions)){
+ for(const q of [...differential.exams,...utilities.exams,...theoryCompletion.exams].flatMap(e=>e.questions)){
   assert.equal(q.choicesJa.length,4);assert.equal(new Set(q.choicesJa.map(norm)).size,4);assert(q.correctIndex>=0&&q.correctIndex<4);
   for(const ref of q.sourceReferences){const bytes=fs.readFileSync(path.join(root,ref.lessonFile));assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),ref.lessonSha256);const lesson=m.sessionById.get(ref.sessionId);assert(ref.paragraphIds.every(id=>lesson.clusters.some(c=>c.paragraphs.some(p=>p.id===id))));}
  }
@@ -168,6 +169,6 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  assert.equal(localeParagraphRenderChecks,1248);
  const hashes=JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/kensetsu/PRACTICAL_REUSE_PRESERVED_INPUTS_2026-10-17.json')));
  for(const [file,hash]of Object.entries(hashes))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex'),hash,file);
- const report={status:'PASS_SOURCE_BOUND_REUSE_DEDUP_AND_ACTUAL_HOST_FLOW',sharedCanonicalLessonsPerField:{building:108,civil:104},distinctCanonicalLessonsReused:109,activeCanonicalAndDeltaRecords:427,additionalFactViews:42,uniqueAdditionalParagraphs:104,additionalParagraphRenderChecks:deltaParagraphsRendered,excludedParagraphChecks:excludedParagraphsAbsent,sharedAdditionalFactViewsLinkedIntoCivil:14,duplicateParagraphsRemovedFromNineUniqueViews:38,fullyRetiredDraftLessons:5,retiredDraftParagraphs:30,totalPriorDraftParagraphsRemovedFromActiveReader:68,scopedQuestions:scopeRows,targetLocales:locales,localeParagraphRenderChecks,additionalDiagrams:42,differentialPngFilesVerified,newInstructionalParagraphsAuthored:0,newQuestionsAuthored:45,originalLessonTranslationAndQuestionInputsBytePreserved:Object.keys(hashes).length,canonicalLessonTranslationsAndArtworkReusedByReference:true,archivedDraftCompletionPreservedWithoutMarkingReplacementLessons:true,navigationRestoredByStableLessonId:true,utilitiesSpecificSourceLessonsNotInOtherFields:true,twoGoDeferred:true,actualHostComponentFlow:true,newSupplementaryTestHostSubmissionFields:2,newTheory40QuestionHostSubmissionFields:3,theory40QuestionHostSubmissions,fullAdditionalTheoryForms:3,additionalTheoryQuestions:120,additionalPracticalQuestions:104,additionalUtilitiesQuestions:165,nativeDeviceTested:false,browserScreenshots:false,wholeSourceCoverageConfirmed:false,releaseReady:false};
+ const report={status:'PASS_SOURCE_BOUND_REUSE_DEDUP_AND_ACTUAL_HOST_FLOW',sharedCanonicalLessonsPerField:{building:108,civil:104},distinctCanonicalLessonsReused:109,activeCanonicalAndDeltaRecords:427,additionalFactViews:42,uniqueAdditionalParagraphs:104,additionalParagraphRenderChecks:deltaParagraphsRendered,excludedParagraphChecks:excludedParagraphsAbsent,sharedAdditionalFactViewsLinkedIntoCivil:14,duplicateParagraphsRemovedFromNineUniqueViews:38,fullyRetiredDraftLessons:5,retiredDraftParagraphs:30,totalPriorDraftParagraphsRemovedFromActiveReader:68,scopedQuestions:scopeRows,targetLocales:locales,localeParagraphRenderChecks,additionalDiagrams:42,differentialPngFilesVerified,newInstructionalParagraphsAuthored:0,newQuestionsAuthored:115,originalLessonTranslationAndQuestionInputsBytePreserved:Object.keys(hashes).length,canonicalLessonTranslationsAndArtworkReusedByReference:true,archivedDraftCompletionPreservedWithoutMarkingReplacementLessons:true,navigationRestoredByStableLessonId:true,utilitiesSpecificSourceLessonsNotInOtherFields:true,twoGoDeferred:true,actualHostComponentFlow:true,newSupplementaryTestHostSubmissionFields:2,newTheory40QuestionHostSubmissionFields:3,theory40QuestionHostSubmissions,fullAdditionalTheoryForms:5,additionalTheoryQuestions:235,additionalPracticalQuestions:104,additionalUtilitiesQuestions:165,nativeDeviceTested:false,browserScreenshots:false,wholeSourceCoverageConfirmed:false,releaseReady:false};
  if(process.env.KENSETSU_SCOPE_QA_REPORT)fs.writeFileSync(process.env.KENSETSU_SCOPE_QA_REPORT,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 })().catch(e=>{console.error(e);process.exit(1)});

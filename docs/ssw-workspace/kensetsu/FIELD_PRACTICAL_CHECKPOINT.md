@@ -1,3 +1,11 @@
+# Latest continuation — shared theory10×40,2026-10-17
+
+Common theory now400uniqueJapanese questions in10full40-question forms shared byutilities/building/civil. Added115source-bound questions fromcanonical70–94,113–115and116clusters1–3; no new study/translation/image copies or procedural/numeric legal instructions. Separate theory-review-tests.ja.json contains2full40forms and35completionquestions. Original5-question theoryscope frommixedform05is combined with35undernewversionedID; originalbank/attemptbytes remain stored, not silently remapped.
+
+Eachtheoryform10correctperposition,no3sameinrow. FullhostQA90attempts(10forms×3fields×correct/wrong/mixed),14400choice labels,180resumes passed. ScopeQA844originalinputs/1248localeparagraphs/42PNGs retained; focusedTypeScript/UIlockpassed. Utilitiespractical remains10×40=400. Building192/civil170remain;400pooldeficits208/230. Continue practical sharedsource230onward after scope/read checks. Whole13PDFatomic/numeric/figure/safetycoverage andhuman/native/rights/browser/device/releasegates remainunconfirmed.2号deferred.
+
+---
+
 # Latest continuation — utilities practical10×40,2026-10-17
 
 ライフライン・設備1号practical has10fullJapanese40-question forms=400unique questions:235oldscoped+165new. All10answerpositions10each,no3sameinrow. New35+5completedformusesversionedID;old35attemptstorageandalloriginalquestionbytespreserved. HostQA30fullattempts/4800choice labels/60resumes passed. See UTILITIES_ASSESSMENT_CHECKPOINT_2026-10-17.md, UTILITIES_FULL_ATTEMPTS_QA_2026-10-17.json and latest utilityledgers. No study/translation/image duplication.

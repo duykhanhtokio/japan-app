@@ -34,8 +34,10 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  let choicesChecked=0,resumesChecked=0;const cases=[];
  for(const field of ['utilities','building','civil']){
   const tests=m.reviewTestsForScope('1',field,'theory');
-  const forms=tests.filter(e=>e.id.startsWith('kensetsu-theory-extra-test-'));
-  assert(forms.length>=1,'Expected an additional full theory form');
+  const forms=tests;assert.equal(forms.length,10);
+  const all=forms.flatMap(e=>e.questions);assert.equal(all.length,400);assert.equal(new Set(all.map(q=>q.id)).size,400);
+  for(const exam of forms){const p=exam.questions.map(q=>q.correctIndex);for(let i=0;i<4;i++)assert.equal(p.filter(x=>x===i).length,10);for(let i=2;i<p.length;i++)assert(!(p[i]===p[i-1]&&p[i]===p[i-2]));}
+
   for(const exam of forms){
    assert.equal(exam.questionCount,40);assert.equal(new Set(exam.questions.map(q=>q.id)).size,40);
    const index=tests.findIndex(e=>e.id===exam.id);

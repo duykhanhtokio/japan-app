@@ -1,5 +1,6 @@
 import differentialBank from './differential-review-tests.ja.json';
 import utilitiesBank from './utilities-review-tests.ja.json';
+import theoryBank from './theory-review-tests.ja.json';
 import { sessionById, type Field, type Level } from './index';
 import { isSessionInScope, type Subject } from './scope';
 import bank from './review-tests.ja.json';
@@ -30,7 +31,7 @@ export function reviewTestsForScope(level: Level, field: Field, subject: Subject
    lessons.some(lesson => isSessionInScope(lesson!, level, field, 'practical'));
  };
  // Prior field-specific questions repeated shared reporting objectives; archived without deleting attempts.
- const availableTests: ReviewTest[] = [...reviewTests, ...differentialBank.exams, ...utilitiesBank.exams];
+ const availableTests: ReviewTest[] = [...reviewTests, ...differentialBank.exams, ...utilitiesBank.exams, ...theoryBank.exams];
  let scopedTests = availableTests.flatMap(exam => {
   const questions = exam.questions.filter(questionsInScope);
   if (!questions.length) return [];
@@ -59,6 +60,18 @@ export function reviewTestsForScope(level: Level, field: Field, subject: Subject
     questionCount: questions.length,
     maxPoints: questions.reduce((total, question) => total + question.points, 0),
     sessionRange: [partial.sessionRange[0], completion.sessionRange[1]],
+   }] : [exam]);
+  }
+ }
+ if (subject === 'theory') {
+  const completion = scopedTests.find(exam => exam.id === 'kensetsu-theory-completion-test-01');
+  const partial = scopedTests.find(exam => exam.id === 'kensetsu-review-v2-05:theory:scope-v1');
+  if (completion && partial && partial.questionCount === 5 && completion.questionCount === 35) {
+   const questions = [...partial.questions, ...completion.questions].map((question, index) => ({ ...question, number: index + 1 }));
+   scopedTests = scopedTests.flatMap(exam => exam.id === completion.id ? [] : exam.id === partial.id ? [{
+    ...partial, id: 'kensetsu-theory-complete-test-01', revision: '1go-theory-original5-plus35-v1',
+    questions, questionCount: questions.length, maxPoints: questions.length,
+    sessionRange: [Math.min(partial.sessionRange[0], completion.sessionRange[0]), Math.max(partial.sessionRange[1], completion.sessionRange[1])],
    }] : [exam]);
   }
  }
