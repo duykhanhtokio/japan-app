@@ -1,3 +1,19 @@
+# Latest continuation — field safety2026-10-17
+
+Current totals supersede history below:40additional views/100unique Japanese paragraphs/40controlled concept diagrams/100supplemental questions;425global records. All additional paragraphs have12revision-bound locale translations. Building138practical entries/188questions; civil127entries/167questions. Theory161lessons/165questions and utilities224practical/235questions unchanged. Canonical reuse isbuilding108,civil104,109distinct originals. No full10×40forms yet;11building/10civil catalog views are filtered subsets or small supplements, not40-question exams.
+
+This unit adds building031–032 andcivil012–013:7paragraphs,4diagrams,7questions(test15). Three original lessons367/368/371 are linked into both fields after source comparison. Existing235circular saw,296ladder,365–366statistics,372–385safety retained, no duplicate drafting. Only building-specific roofs/scaffold and civil-specific tunnel/marine differences authored. SAFETY_DIFFERENTIAL_LEDGER_2026-10-17.json records exact source/primary checks and unresolved safety context.
+
+Fixed the previously zero-byte b16.png by regenerating its original diagram. QA now verifies all40PNG signatures/dimensions/IEND, preventing asset stubs from hiding empty files.
+
+QA passed1200locale-paragraph renders,133field-assignment paragraph renders,844original input hashes, correct field isolation, hidden pre-submit answers, scoring and attempt/navigation/progress preservation. FocusedTypeScript/UIlock checked. No actual-device/browser screenshot evidence; all domain/native/rights/release approvals remain false.
+
+Next available authoring: source terminology減衰剤is not adopted as a valid concrete-admixture label; JapanConcreteInstitute confirms減水剤and its role. Figure-onlyかなじめis now identified usingJapanFederationofLandscapeContractors'own tool dictionary (wooden handle withendmetalring; hammer/lever functions); add only missing facts after checking original265. Sources: https://www.jci-net.or.jp/j/concrete/kiso/Admixure-a.html and https://www.jflc.or.jp/index.php?itemid=108 . These terminology findings are researched, not yet additional lesson content.
+
+Still unfinished: exact numeric/figure/safety-context audit and full13PDF knowledge denominator; full10×40banks per separate subject/field; actual browser/device and human technical/native/rights review. Safe independent authoring remains available.2号deferred. Save/fetch/WORKPERSISTENCEPASS before next unit.
+
+---
+
 # Latest continuation — chapter6 methods2026-10-17
 
 Supersedes historical counts below: building023–030 and civil009–011 add27Japanese differential paragraphs,12-locale translations,11controlled concept diagrams and27source-bound questions(test14). Only building023–025 are shared into civil. Building also reuses original337–340 from verified6k23–24; utilities-only duct connections remain excluded. No previous lesson/bank/progress asset changed.
