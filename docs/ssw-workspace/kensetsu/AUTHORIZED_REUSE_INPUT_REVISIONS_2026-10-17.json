@@ -1,6 +1,6 @@
 {
   "date": "2026-10-17",
-  "reason": "Publisher-authorized bounded source reconciliation:10authored additions,1lossless paragraph split and2revised original IDs (one scope correction,one sentence split). Other original paragraphs/translations and all question payload/order/exam revisions retained.",
+  "reason": "Publisher-authorized scoped source reconciliation;12addedIDs(11new paragraphs and1lossless sentence split), with preserved old content and separate revision history. Question payload/order/exam revisions unchanged.",
   "baselineParagraphs": 1912,
   "addedCanonicalParagraphs": [
     "kensetsu-common-session-263-cluster-1-p3",
@@ -13,7 +13,8 @@
     "kensetsu-common-session-307-cluster-3-p3",
     "kensetsu-common-session-308-cluster-3-p3",
     "kensetsu-common-session-312-cluster-3-p3",
-    "kensetsu-common-session-337-cluster-2-p3"
+    "kensetsu-common-session-337-cluster-2-p3",
+    "kensetsu-common-session-175-cluster-3-p4"
   ],
   "files": [
     {
@@ -29,7 +30,7 @@
     {
       "path": "src/data/kensetsu/review-tests.ja.json",
       "beforeSha256": "0b6f8643d2a35fe13d25903e7ddbeb8f9fa088305151a25899aeb37fca29c458",
-      "afterSha256": "00c857d486488e15351e90846c17aae477f40f1d64d332b76004e4a80d176259"
+      "afterSha256": "12f10b4ceb7e0c4ac87ff9052524bebe5915d87b99fc386607d8ffacfdc7f558"
     },
     {
       "path": "src/data/kensetsu/field-review-tests.ja.json",
@@ -145,9 +146,24 @@
       "path": "src/data/kensetsu/translations/session-337.json",
       "beforeSha256": "a90ab50ce598321f111fb6f8ed53492c4daa0306e52a5448c35926bad308971c",
       "afterSha256": "8bc6801aaa670d1ba3d7c9b75c4eeecfd3e4a7075d5dcd56087dea3cd829930b"
+    },
+    {
+      "path": "docs/ssw-workspace/kensetsu/shared-session-175.json",
+      "beforeSha256": "695db3b7d4c51ef1e8c5aea11ad26770db8c688320b0e6891a7cbf4a7a671729",
+      "afterSha256": "2a2443caf0841fd0ab1960593dacfa7276c3debf909cef7d015efa1a127984be"
+    },
+    {
+      "path": "src/data/kensetsu/translations/session-175.json",
+      "beforeSha256": "3066cacc9c8828c4c5b808118d2254c40e3f21b264ff7fce4f21bd8c0501bcad",
+      "afterSha256": "f025091b4f7d712d6c6d41fd2d0074804c0f0fb448caf520c57dc7c5b3fb8dbd"
+    },
+    {
+      "path": "src/data/kensetsu/utilities-review-tests.ja.json",
+      "beforeSha256": "868b6137958504092e4532f9f0aa2fafae39378084293a8e8615b2f2be46dbff",
+      "afterSha256": "d7a200ec15e0ff0aa8ba1338ba0acba65fe9ac9062f293d76efa56cec80379c8"
     }
   ],
-  "citationHashUpdates": 46,
+  "citationHashUpdates": 52,
   "domainReviewed": false,
   "nativeReviewed": false,
   "rightsReviewed": false,
@@ -450,6 +466,37 @@
           "afterSha256": "00c857d486488e15351e90846c17aae477f40f1d64d332b76004e4a80d176259"
         }
       ]
+    },
+    {
+      "baseCommit": "f4f67590cdb8c542da9a1e6ba333630668e27e06",
+      "reason": "Fill one missing name-to-bonding-function mapping in175; preserve all original Japanese/translation content and every question payload. Twelve AI translations; utilities only.",
+      "addedCanonicalParagraphs": [
+        "kensetsu-common-session-175-cluster-3-p4"
+      ],
+      "revisedCanonicalParagraphs": [],
+      "citationHashUpdates": 6,
+      "files": [
+        {
+          "path": "docs/ssw-workspace/kensetsu/shared-session-175.json",
+          "beforeSha256": "695db3b7d4c51ef1e8c5aea11ad26770db8c688320b0e6891a7cbf4a7a671729",
+          "afterSha256": "2a2443caf0841fd0ab1960593dacfa7276c3debf909cef7d015efa1a127984be"
+        },
+        {
+          "path": "src/data/kensetsu/translations/session-175.json",
+          "beforeSha256": "3066cacc9c8828c4c5b808118d2254c40e3f21b264ff7fce4f21bd8c0501bcad",
+          "afterSha256": "f025091b4f7d712d6c6d41fd2d0074804c0f0fb448caf520c57dc7c5b3fb8dbd"
+        },
+        {
+          "path": "src/data/kensetsu/review-tests.ja.json",
+          "beforeSha256": "00c857d486488e15351e90846c17aae477f40f1d64d332b76004e4a80d176259",
+          "afterSha256": "12f10b4ceb7e0c4ac87ff9052524bebe5915d87b99fc386607d8ffacfdc7f558"
+        },
+        {
+          "path": "src/data/kensetsu/utilities-review-tests.ja.json",
+          "beforeSha256": "868b6137958504092e4532f9f0aa2fafae39378084293a8e8615b2f2be46dbff",
+          "afterSha256": "d7a200ec15e0ff0aa8ba1338ba0acba65fe9ac9062f293d76efa56cec80379c8"
+        }
+      ]
     }
   ],
   "revisedCanonicalParagraphs": [
@@ -467,7 +514,8 @@
     "307": "kensetsu-common-session-307-cluster-3-p3",
     "308": "kensetsu-common-session-308-cluster-3-p3",
     "312": "kensetsu-common-session-312-cluster-3-p3",
-    "337": "kensetsu-common-session-337-cluster-2-p1"
+    "337": "kensetsu-common-session-337-cluster-2-p1",
+    "175": "kensetsu-common-session-175-cluster-3-p4"
   },
   "sourceGapRepairFields": {
     "312": [
@@ -476,6 +524,9 @@
     "337": [
       "utilities",
       "building"
+    ],
+    "175": [
+      "utilities"
     ]
   },
   "paragraphReorganizations": [

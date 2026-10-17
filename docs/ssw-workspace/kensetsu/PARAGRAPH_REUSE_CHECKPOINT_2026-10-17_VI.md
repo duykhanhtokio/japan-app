@@ -1,6 +1,6 @@
 # Đối chiếu và dùng lại kiến thức theo đoạn — 2026-10-17
 
-Điểm tiếp nối mới nhất: 118 bài có hồ sơ đối chiếu có giới hạn. Nhóm máy xây dựng 162–168 đã được rà; giữ nội dung và liên kết đang có, không soạn lại các khác biệt đã giải thích tại building049/050/053. Còn 106 bài chưa có hồ sơ nhóm tương đương; rà ngược toàn bộ ý, hình, bảng và điều kiện nguồn vẫn chưa hoàn tất.
+Điểm tiếp nối mới nhất: 125 bài có hồ sơ đối chiếu có giới hạn. Nhóm 169–175 đã được rà; bổ sung một đoạn giải thích vai trò ラジアスクランプ ở bài 175 cùng 12 bản dịch, chỉ thuộc utilities. Còn 99 bài chưa có hồ sơ nhóm tương đương; rà ngược toàn bộ ý, hình, bảng và điều kiện nguồn chưa hoàn tất.
 
 Yêu cầu chủ dự án: đối chiếu từng ý của toàn bộ224bài 実技 gốc với nguồn 建築・土木, gồm bảng/hình/chú thích/điều kiện; dùng lại toàn phần hoặc theo cụm/đoạn, chỉ soạn phần riêng, không làm đều số bài. Sau khi sửa xong mới bàn giao bước kiểm thực tế trên app.
 
@@ -165,3 +165,17 @@ Không tạo phê duyệt mới cho 163/building hoặc 167/civil: các trang đ
 Kiểm sổ hash đạt, không có hồ sơ trùng hay bài đã đổi nhưng vẫn dùng hash cũ. Giữ 1.923 đoạn của 224 bài; 1.463 ràng buộc giải thích dùng chung, 12 liên kết inline 実技 và 485 quyết định phạm vi đếm riêng. Toàn bộ thay đổi chỉ thuộc hồ sơ nên không chạy lại trình duyệt cho nội dung/runtime không đổi. Tổng 118 bài có hồ sơ, 976 ID đoạn gốc + 11 ID thêm = 987 đoạn trong các nhóm đã rà; 866 điểm kiểm có giới hạn, chưa phải mẫu số toàn bộ kiến thức nguồn.
 
 Còn 106 bài chưa có hồ sơ nhóm tương đương: 169–229 và 341–385. Các mục mở của nhóm ống/ngầm, kiểm nhận dạng ảnh và đối chiếu ngược mọi ý nguồn tiếp tục được giữ. Chưa bàn giao như đã hoàn tất toàn bộ.
+
+## Nhóm dụng cụ và bộ phận điện 169–175 — 2026-10-18
+
+Đã đọc 84 đoạn Nhật gốc, thân bài và ảnh/chú thích trên 5l PDF7–9. Đối chiếu riêng dụng cụ cắt/đục, bender cốt thép, kẹp giàn giáo, kẹp giữ tấm kim loại, cô lập hệ thống trước phá dỡ và nhận thức điện giật trong k/d. Phạm vi/trang/hash và quyết định theo từng đoạn nằm ở `ELECTRICAL_SCOPE_REUSE_AUDIT_169_175_2026-10-17.json`: 85 đoạn hiện hành, 57 mục kiểm có giới hạn, 170 quyết định phạm vi. Không coi tìm từ hoặc không thấy từ là bằng chứng đã rà hết mọi kiến thức k/d.
+
+Giữ 7 bài trong utilities. Các bài chung 031/050 đã dạy nhận thức an toàn/nguồn điện; 260/263 đã dạy chức năng cưa/đục. Không nhập nguyên bài chuyên dụng chỉ vì cùng tên dụng cụ: bender ống khác bender cốt thép, kẹp liên kết điện khác kẹp cơ học giàn giáo hoặc giữ tấm. Ống tạo lỗ, ống luồn dây và hộp nối có chức năng khác nhau. Không nhập cả bài hộp/ống điện từ khái niệm chung về lỗ hay kim loại.
+
+Giữ các sửa nghĩa đã có: PF có tính tự tắt lửa khác CD và không đồng nghĩa vật liệu không cháy; thứ tự pha khác trị số điện áp và chiều quay thực tế; vai trò dây nguồn/trung tính/tiếp địa xoay chiều khác cực dương/âm; gọi tên đường kính không thay cho kích thước/công sai thực. Đã kiểm bổ sung phần sản phẩm HIOKI và bảng có điều kiện của MIRAI; không đưa các số liệu hay quy trình trong đó thành quy tắc chung.
+
+Bài 175 trước chỉ nhắc tên ラジアスクランプ và yêu cầu kiểm công dụng, chưa nối tên với vai trò điện. Thêm cluster3p4 độc lập về diễn đạt: đây là ví dụ bộ phận bonding giữa hộp thép và ống luồn dây kim loại, khác thanh スタットバー đỡ hộp; trùng tên chưa xác nhận phù hợp, tình trạng nối hay quyền bỏ dây nối riêng. Không thêm cách lắp, trị số, hoặc ngoại lệ được phép bỏ dây. Có đủ 12 bản dịch AI. Bài lên r2, giữ r1 trong lịch sử; chỉ utilities ở cả hai cấp. Các bài và bản dịch cũ giữ nguyên.
+
+Host kiểm toàn phạm vi đạt, gồm 403 lượt đọc của 12 bài theo dõi sửa và 39 lượt riêng 263; 13 lượt mới cho 175 (12 locale ở 1号 và Việt ở 2号), kiểm loại trừ cả building/civil ở hai cấp. Chromium kiểm một tuyến 175, 13 đoạn Nhật/13 đoạn Việt, giữ r1 và hoàn thành r2 chủ động; đã xem 3 ảnh phone/tablet/landscape tập trung đúng đoạn mới. Chưa phải Expo/thiết bị native hoặc duyệt chuyên môn/bản ngữ/quyền. Kiểm bảo toàn trực tiếp với Git nền đạt: 12 ID thêm (11 đoạn soạn mới và 1 câu cũ tách ra), 2 ID gốc điều chỉnh; 108 đoạn cũ và 308 mục dịch cũ còn nguyên. Cập nhật cộng dồn 52 hash trích bài, giữ mọi nội dung/thứ tự/đáp án/revision đề.
+
+Mốc hiện tại: 125 bài có hồ sơ, 1.060 ID đoạn gốc + 12 ID thêm = 1.072 đoạn trong các nhóm đã rà; 923 mục kiểm có giới hạn. Sổ 224 bài gốc có 1.924 đoạn. Ràng buộc giải thích dùng chung vẫn 1.463; 12 liên kết inline 実技 và 655 quyết định phạm vi đếm riêng. Số bài 224/163/152 giữ nguyên. Còn 99 bài chưa có hồ sơ nhóm tương đương: 176–229 và 341–385. Các mục mở, nhận dạng ảnh và rà ngược từng ý nguồn vẫn chưa hoàn tất.
