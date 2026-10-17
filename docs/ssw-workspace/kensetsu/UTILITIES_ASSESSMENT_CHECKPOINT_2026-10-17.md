@@ -1,3 +1,13 @@
+# Latest utilities continuation — third full form, 2026-10-17
+
+Added40Japanese questions as `kensetsu-utilities-extra-test-03`, bound to canonical189–198:socket type/function, communication signal/support/power, optical-fiber layers, coax/UTP/category terminology, overhead support tools, closures/tension/grip, rectifier/storage battery, optical fusion/protection/holding/cutting/connectors and power/OTDR measurements. No new study or translation/image copies, procedures, operating settings or official pass/time claims.
+
+Utilities practice now355questions:235original+120additional. Three new40-question forms have10correctperposition and no3identicalinrow. HostQA9fullattempts,1440choice-label checks,18mid-attempt resumes; exact saved/submitted restoration and field isolation passed. ScopeQA844originalinputs/1248localeparagraphs/42PNGfiles preserved. Focused dataTypeScript and10/10UIlock passed. Whole-source/expert/native/rights/browser/device/release approval remain unconfirmed.
+
+Next:45utilities questions remain to reach400. Existing scoped form05has35questions with answer counts9/10/8/8; the other5original utility forms and3additional forms eachhave40with10perposition. Author another40from199onward, then5distinct additional objectives to complete the35-question scoped form with new versioned identity. Preserve all original bank bytes and saved attempt IDs; do not silently apply a35-question submission to a40-question revision. Final balancing/membership/runtime evidence must precede any10×40claim.
+
+---
+
 # Latest utilities continuation — second full form, 2026-10-17
 
 Added `kensetsu-utilities-extra-test-02`:40newJapanese questions bound to canonical179–188. Topics:underground cable routes, cable racks/bonds/supports, distribution panels, insulation stripping terminology, cable materials/markings, mobile-equipment cable conditions, protective-device roles. No lesson/translation/image duplication, operating procedure, limit, time/pass threshold or release approval authored.
