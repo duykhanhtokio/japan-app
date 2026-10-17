@@ -1,4 +1,5 @@
 import differentialBank from './differential-review-tests.ja.json';
+import utilitiesBank from './utilities-review-tests.ja.json';
 import { sessionById, type Field, type Level } from './index';
 import { isSessionInScope, type Subject } from './scope';
 import bank from './review-tests.ja.json';
@@ -29,7 +30,7 @@ export function reviewTestsForScope(level: Level, field: Field, subject: Subject
    lessons.some(lesson => isSessionInScope(lesson!, level, field, 'practical'));
  };
  // Prior field-specific questions repeated shared reporting objectives; archived without deleting attempts.
- const availableTests: ReviewTest[] = [...reviewTests, ...differentialBank.exams];
+ const availableTests: ReviewTest[] = [...reviewTests, ...differentialBank.exams, ...utilitiesBank.exams];
  return availableTests.flatMap(exam => {
   const questions = exam.questions.filter(questionsInScope);
   if (!questions.length) return [];
