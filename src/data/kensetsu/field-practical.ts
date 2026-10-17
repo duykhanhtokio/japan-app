@@ -1,3 +1,28 @@
+import building13 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-013.json';
+import b13 from './differential-translations/b13.json';
+import building14 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-014.json';
+import b14 from './differential-translations/b14.json';
+import building15 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-015.json';
+import b15 from './differential-translations/b15.json';
+import building16 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-016.json';
+import b16 from './differential-translations/b16.json';
+import building17 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-017.json';
+import b17 from './differential-translations/b17.json';
+import building18 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-018.json';
+import b18 from './differential-translations/b18.json';
+import building19 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-019.json';
+import b19 from './differential-translations/b19.json';
+import building20 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-020.json';
+import b20 from './differential-translations/b20.json';
+import building21 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-021.json';
+import b21 from './differential-translations/b21.json';
+import building22 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-022.json';
+import b22 from './differential-translations/b22.json';
+import civil8 from '../../../docs/ssw-workspace/kensetsu/civil/practical/session-008.json';
+import c8 from './differential-translations/c8.json';
+import buildingWeek3 from '../../../docs/ssw-workspace/kensetsu/building/practical/week-003.json';
+import buildingWeek4 from '../../../docs/ssw-workspace/kensetsu/building/practical/week-004.json';
+import civilWeek2 from '../../../docs/ssw-workspace/kensetsu/civil/practical/week-002.json';
 import building9 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-009.json';
 import b9 from './differential-translations/b9.json';
 import building10 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-010.json';
@@ -37,14 +62,14 @@ import civil6 from '../../../docs/ssw-workspace/kensetsu/civil/practical/session
 import civil7 from '../../../docs/ssw-workspace/kensetsu/civil/practical/session-007.json';
 import civilWeek1 from '../../../docs/ssw-workspace/kensetsu/civil/practical/week-001.json';
 import type { Session, Week, Cluster } from './index';
-const originalFieldPracticalSessions: Session[] = [building1, building2, building3, building4, building5, building6, building7, civil1, civil2, civil3, civil4, civil5, civil6, civil7, building8, building9, building10, building11, building12];
+const originalFieldPracticalSessions: Session[] = [building1, building2, building3, building4, building5, building6, building7, civil1, civil2, civil3, civil4, civil5, civil6, civil7, building8, building9, building10, building11, building12, building13, building14, building15, building16, building17, building18, building19, building20, building21, building22, civil8];
 export const fieldPracticalWeeks: Week[] = [
  {...buildingWeek1, titleJa: '構造工事の工具・部材の補足'},
  {...civilWeek1, titleJa: '土木に固有の機械・設備の補足'},
- buildingWeek2,
+ buildingWeek2, buildingWeek3, buildingWeek4, civilWeek2,
 ];
 
-const differentialTranslations = new Map<string, TranslationBundle>([b3, b4, b5, b6, b7, c3, c5, c6, c7, b8, b9, b10, b11, b12].map(bundle => [bundle.sessionId, bundle]));
+const differentialTranslations = new Map<string, TranslationBundle>([b3, b4, b5, b6, b7, c3, c5, c6, c7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, c8].map(bundle => [bundle.sessionId, bundle]));
 
 // Retain only additional facts in the active reader; original authored JSON stays archived intact.
 export const fieldPracticalSessions: Session[] = originalFieldPracticalSessions.flatMap(session => {

@@ -1,3 +1,15 @@
+# Latest continuation — finishes and landscaping2026-10-17
+
+Supersedes counts below: building013–022 and civil008 add33Japanese paragraphs,12-locale translations,11controlled diagrams and33source-bound questions. Only painting015 is shared into civil; other finishing sources remain building-only, landscaping008civil-only. Full current additional set:25views/66unique paragraphs/25diagrams/66questions;410global records. Building practical121entries/159questions;civil116entries/145questions. Theory161lessons/165questions and utilities224practical/235questions unchanged.101oldcanonical per newfield,102distinct oldrecords across them.
+
+Sixindependent AIpairs translated directly from Japanese, each2locales, no peer/cross translation. New supplementary test13 has28building questions with7answers perposition and9civil with3/2/2/2; neither scope has three consecutive equal positions. No legacy form/attempt changed. HostQA now checks792locale-paragraph renders and92field-assignment paragraph renders; native/browser screenshots remain unconfirmed. See runtime QA and FINISHES_DIFFERENTIAL_LEDGER_2026-10-17.json. All domain/native/rights/release flags remain false.
+
+Source5k22–32 and5d27–30 text and page images inspected; prior basic theory/commontools reused. This is additional functional teaching, not full source/figure/dimension certification. Current stainless association terminology checked without importing source11%as a universal threshold. このきり wooden-mallet meaning checked against a public vocational-school source. Source混和剤/減衰剤 wording and figure-onlyかなじめ need further resolution; do not guess.
+
+Next: reconcile specialised6k/6d and7k/7d against existing theory and original6l/7l; only write differences. Original193page atomic audit also remains incomplete. Existing scoped question subsets are NOT ten40-question forms. Complete knowledge mapping before filling assessment quotas. Expert/domain/native/rights review and actual-device/browser evidence remain open. Publish/fetch/WORKPERSISTENCEPASS this unit before new authoring.
+
+---
+
 # Latest continuation — components unit2026-10-17
 
 This section supersedes the historical counts below. Added building009–012 (formwork parts/shape/hand tools, pump subsystems, carpentry tools),14 new Japanese paragraphs,12-locale translations,4 original concept diagrams and14 new source-bound questions. Building009–011 shared into civil via explicit assignments;012 carpentry is building-only. See COMPONENTS_DIFFERENTIAL_LEDGER_2026-10-17.json.4titles+14paragraphs independently translated by6AI pairs, each2locales; no cross-translation or peer-review certification.
