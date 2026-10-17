@@ -1,3 +1,11 @@
+# Latest source-difference supplement — 2026-10-17
+
+Added six shared building/civil views (035–038,040–041),14 Japanese paragraphs,12 direct-Japanese locale overlays and six controlled concept diagrams. Newly explicit knowledge: scaffold member positions and foot components; concrete/steel bond and carbonation; slab formwork load path; hydraulic versus gas-pressure-welding equipment paths; electrode coating and fume/spatter mechanisms; demolition systems and construction-stage support. Three unpublished overlapping paragraphs were excluded and existing006/007 reused. No new questions or duplicated canonical study/translation/artwork inputs.
+
+Totals433study records;48additional views/118Japanese paragraphs/12locales/48diagrams. Building146practical lessons,civil134,utilities224;theory161shared. Allassessment scopes stay10×40. New diagrams explain roles, not a complete tool-recognition atlas. Source atomic/numeric/figure/safety-context completeness and professional/native/rights/device review remain unresolved.2号deferred. See FINAL_STRUCTURAL_DIFFERENTIAL_LEDGER_2026-10-17.json and current runtime QA.
+
+---
+
 # Final technical matrix and remaining review —2026-10-17
 
 All6scope routes have10×40. Finalfreshhostmatrix180attempts/28800choice labels/360mid-attempt resumes passed across theory,utilities,building,civil; three currentreports saved. Original385lessontranslations passed9791sourceunits/117492strings/3856paragraphs across12locales;104additionalparagraphs/1248localeparagraphrenders and42PNGfiles verified. Original844inputs preserved. Source13PDFbytes+387pagecounts+references verified; no rawsourcebytes/images committed.

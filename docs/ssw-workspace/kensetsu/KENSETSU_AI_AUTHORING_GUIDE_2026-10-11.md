@@ -2,6 +2,10 @@
 
 Ngày lập: 2026-10-11, Asia/Tokyo. Phạm vi hiện tại: hoàn thiện nội dung để học, bản dịch và ảnh minh họa mới cho 特定技能1号 và 特定技能2号. Phần thi hoàn toàn bằng tiếng Nhật sẽ thiết kế sau khi phần học hoàn thiện. Đây là hướng dẫn thực thi cho AI tiếp nối dự án, không phải báo cáo nội dung đã sản xuất hay chứng nhận tài liệu đã bao phủ đủ.
 
+## Cập nhật phần kiến thức khác biệt cuối — 2026-10-17
+
+Đọc đầu FIELD_PRACTICAL_CHECKPOINT.md:48mục bổ sung,118đoạn Nhật,12ngôn ngữ,48sơ đồ khái niệm. Sáu mục mới dùng chung 建築・土木; ba đoạn dự thảo trùng đã loại trước tích hợp. Toàn bộ ngân hàng đề vẫn10×40 cho mỗi phần. Chưa xác nhận bao phủ mọi ý/số liệu/hình nhận biết trong13PDF;2号chờ. Các số phía dưới là lịch sử.
+
 ## Cập nhật tích hợp — toàn bộ ngân hàng 1号 đủ 10 × 40
 
 Lý thuyết chung dùng cho cả ba nhánh: 400 câu. Mỗi phần thực hành ライフライン・設備、建築、土木: 400 câu, chia thành 10 đề đủ 40 câu. Hai nhánh 建築、土木 dùng chung 208 câu mới bằng tham chiếu; 土木 có thêm 22 câu riêng. Giữ bài học, bản dịch và hình dùng chung; giữ dữ liệu bài làm cũ, không gán sang bộ có thành phần câu hỏi mới. 2号 tiếp tục chờ. Các mốc số lượng phía dưới là lịch sử. Đủ ngân hàng đề chưa xác nhận bao phủ toàn bộ 13 PDF, kiểm tra trình duyệt/thiết bị hay duyệt chuyên môn/ngôn ngữ/bản quyền.
