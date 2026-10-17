@@ -1,6 +1,6 @@
 # Hướng dẫn chính thức — Tokutei Gino 介護
 
-Phiên bản: 15. Ngày duyệt: 2026-10-16 (Asia/Tokyo).
+Phiên bản: 16. Ngày duyệt: 2026-10-16 (Asia/Tokyo).
 Trạng thái: CHỦ DỰ ÁN ĐÃ DUYỆT PHƯƠNG ÁN BIÊN SOẠN.
 Repository: duykhanhtokio/japan-app. Nhánh: recovery/jlpt-n3-n1.
 Đây là hợp đồng biên soạn; duyệt phương án không chứng nhận nội dung chưa được tạo, kiểm duyệt hoặc tích hợp.
@@ -232,3 +232,8 @@ After canonical Japanese checks and remote verification, resume translation with
 
 
 Translation accounting must separately track the26calendar weeks ×12locales and the12full mock forms ×12locales, including all360mock questions and1440Japanese option rationales as direct-translation source. Completing312weekly week-locale pairs alone does not mean all Kaigo translation is complete. Keep corrected effective Japanese mock wording, stable question IDs/indices and original attempt records when implementing mock translations.
+
+
+## 26. Thay đúng16ảnh có chữ bằng bản mới tiếng Nhật — yêu cầu2026-10-17
+
+Chủ dự án yêu cầu bỏ3sơ đồ có chữ Việt và13hình đề có chữ Anh, tạo16ảnh mới với chữ Nhật. Đây là ngoại lệ hẹp thay mục22chỉ cho16tài sản đã xác định; không mở lại tạo ảnh ngữ cảnh đại trà. Giữ IDhình/câu hỏi/lựa chọn/đáp án/khóa lượt học. Dùng hình mới tự tạo từ kiến thức và dữ kiện của bài hiện có; không sao chép hình sách. Kiểm từng nhãn/vị trí/số liệu và đáp án, không thêm diễn biến làm lộ hoặc đổi đáp án. Xóa thông báo chờ đổi nhãn đã hết hiệu lực, cập nhật liên kết phiên bản chú thích và12bản dịch tương ứng. Kiểm AI không thay duyệt chuyên môn/bản ngữ/thiết bị.
