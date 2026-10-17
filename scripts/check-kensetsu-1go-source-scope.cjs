@@ -178,16 +178,18 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
   assert(!m.isSessionInScope(original,'1','utilities','practical'));
   const previous=repair.sessionId+':r'+repair.beforeRevision;
   for(const level of ['1','2'])for(const field of repair.fields)for(const locale of locales){
-   const lesson=m.sessionForScope(repair.sessionId,level,field,'practical');assert.strictEqual(lesson,original);
+   const lesson=m.sessionForScope(repair.sessionId,level,field,'practical');assert.equal(lesson.id,original.id);assert.equal(lesson.revision,original.revision);
+   const scopedPrevious=previous+(lesson.scopeRevision?':scope:'+lesson.scopeRevision:'');
+   const scopedRetained=m.restoreProgress(JSON.stringify({[scopedPrevious]:true}));assert(scopedRetained[scopedPrevious]);assert.equal(scopedRetained[m.completionId(lesson)],undefined);
    const retained=m.restoreProgress(JSON.stringify({[previous]:true}));assert(retained[previous]);assert.equal(retained[m.completionId(lesson)],undefined);
-   const key=m.completionKey('reuse-learner',level,field);globalThis.__scopeStorage.set(key,JSON.stringify({[previous]:true}));globalThis.__scopeStorage.set(key+':navigation:practical:v2',JSON.stringify({week:0,lastId:lesson.id,view:'days',offset:0}));
+   const key=m.completionKey('reuse-learner',level,field);globalThis.__scopeStorage.set(key,JSON.stringify({[previous]:true,[scopedPrevious]:true}));globalThis.__scopeStorage.set(key+':navigation:practical:v2',JSON.stringify({week:0,lastId:lesson.id,view:'days',offset:0}));
    await mount(locale);if(level==='2')await click('kensetsu-level-2');await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click('kensetsu-day-'+Number(lesson.id.split('-').pop()));
    assert.equal(renderer.root.findAll(n=>n.type==='Text'&&n.children.includes('✓ 学習済み · 戻る')).length,0);await click('kensetsu-translation');
    for(const pid of repair.addedParagraphIds){const p=lesson.clusters.flatMap(c=>c.paragraphs).find(p=>p.id===pid);assert(p);assert(renderer.root.findAll(n=>n.type==='Text'&&n.children.includes(p.ja)).length);assert(host('kensetsu-translation-'+pid,'Text').some(n=>n.children.includes(p.translations[locale])));}
    await unmount();differentialRepairReaderCases++;
   }
  }
- fs.writeFileSync(path.join(root,'docs/ssw-workspace/kensetsu/REVERSE_SOURCE_COMPONENT_HOST_QA_2026-10-18.json'),JSON.stringify({status:'PASS_BOTH_LEVELS_BOTH_FIELDS_ALL_12_LOCALES',readerCases:differentialRepairReaderCases,lessons:differentialRepairs.length,addedParagraphs:differentialRepairs.reduce((n,r)=>n+r.addedParagraphIds.length,0),previousRevisionHistoryRetained:true,newRevisionRequiresExplicitCompletion:true,utilitiesExcluded:true,nativeDeviceTested:false,domainReviewed:false,nativeReviewed:false},null,2)+'\n');
+ fs.writeFileSync(path.join(root,'docs/ssw-workspace/kensetsu/REVERSE_SOURCE_COMPONENT_HOST_QA_2026-10-18.json'),JSON.stringify({status:'PASS_BOTH_LEVELS_APPLICABLE_FIELDS_ALL_12_LOCALES',readerCases:differentialRepairReaderCases,lessons:differentialRepairs.length,addedParagraphs:differentialRepairs.reduce((n,r)=>n+r.addedParagraphIds.length,0),previousRevisionHistoryRetained:true,newRevisionRequiresExplicitCompletion:true,utilitiesExcluded:true,nativeDeviceTested:false,domainReviewed:false,nativeReviewed:false},null,2)+'\n');
  const addedDeltaParagraphs=differentialRepairs.reduce((n,r)=>n+r.addedParagraphIds.length,0);
  let deltaParagraphsRendered=0,excludedParagraphsAbsent=0;
  for(const view of policy.deltaViews)for(const field of ['building','civil'].filter(field=>m.isSessionInScope(m.sessionById.get(view.sessionId),'1',field,'practical'))){

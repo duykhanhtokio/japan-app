@@ -1,3 +1,9 @@
+## Mốc mới —2026-10-18: rà ngược phương pháp và cấu kiện
+
+B011r2 bổ sung hao mòn thành ống/đo chiều dày và vật liệu bơm mồi, dùng chung建築・土木. B026r2 thêm火打土台・火打梁; B029r2 thêm密着張り/dụng cụ rung, chỉ建築. Bốn đoạn Nhật mới,48bản dịch trong12locale; không đổi số bài224/163/152.71mục bổ sung hiện174đoạn Nhật. Giữ toàn bộ đoạn/bản dịch cũ, các ID hoàn thànhr1kể cảr1scoped củaB011; phiên bản mới không tự hoàn thành. Ngân hàng chỉ11hashtrích bài đổi, câu hỏi/đáp án/thứ tự/phiên bản đề giữ nguyên.
+
+Host192lượt cho5bài bổ sung qua hai cấp và các nhánh phù hợp;2088lượt hiển thị bản dịch bổ sung đạt. Trình duyệt4tuyến/28cặp đoạn Nhật–Việt/4nâng phiên bản đạt;9ảnh đã xem ở điện thoại/máy tính bảng/ngang. ĐọcREVERSE_SOURCE_METHOD_GAPS_2026-10-18.json. Đây là đối chiếu các ý có giới hạn, chưa đóng toàn bộ194trang hoặc duyệt chuyên gia/bản ngữ/quyền sử dụng/Expo/thiết bị thật.
+
 ## Mốc mới —2026-10-18: rà ngược kết cấu
 
 Thực hành vẫn224/163/152bài;71mục bổ sung hiện170đoạn Nhật (tăng3),12locale. B024thêm giá đỡ cốt thép móng/腹筋・幅止め筋;B035thêm前踏・後踏・下さん, dùng chung建築・土木ởhai cấp. Giữ mọi nội dung/bản dịch cũ và lịch sửr1/r2;B024r2,B035r3. Host96lượt chohai cấp/hai nhánh/12localeđạt;Chromium4tuyến/18cặp đoạnNhật–Việt/4nâng phiên bảnđạt;6ảnh đã xem. Ngân hàng giữ10×40mỗi phạm vi, chỉ3hashtrích bài đổi.

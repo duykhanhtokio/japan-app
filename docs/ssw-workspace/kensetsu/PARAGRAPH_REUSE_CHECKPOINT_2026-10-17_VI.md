@@ -211,3 +211,10 @@ Tổng kiểm kê hiện1.927đoạn 実技gốc:1.912ban đầu+15IDthêm (14gi
 Host96lượt đọc đủ12localeởhai cấp/hai nhánh;Chromium4tuyến/18cặp đoạnNhật–Việt/4nâng phiên bản;6ảnhđiện thoại/tablet/ngangđã xem. Cả sáu ngân hàng vẫn10×40;3hashtrích bài cập nhật, câu hỏi/đáp án/thứ tự/revisionđề giữ nguyên. Bộ kiểm đối chiếu đã tách phần bổ sung riêng nhánh khỏi1.927đoạn của224bài gốc. Chưa duyệt chuyên môn/bản ngữ/quyền hoặcExpo/thiết bị thật.
 
 Đang rà ngược tiếp6k14–34và6dphần riêng. Các mục sốliệu/thao tác vừa thấy ở6k12/15/16/17ghi mở tronghồ sơ, không coi một câu giới hạn chung là đã dạy đủ các điều kiện đó. Toàn bộ yêu cầu đối chiếu từng ý nguồn chưa hoàn tất.
+
+
+## Mốc mới —2026-10-18: rà ngược phương pháp và cấu kiện
+
+B011r2 bổ sung hao mòn thành ống/đo chiều dày và vật liệu bơm mồi, dùng chung建築・土木. B026r2 thêm火打土台・火打梁; B029r2 thêm密着張り/dụng cụ rung, chỉ建築. Bốn đoạn Nhật mới,48bản dịch trong12locale; không đổi số bài224/163/152.71mục bổ sung hiện174đoạn Nhật. Giữ toàn bộ đoạn/bản dịch cũ, các ID hoàn thànhr1kể cảr1scoped củaB011; phiên bản mới không tự hoàn thành. Ngân hàng chỉ11hashtrích bài đổi, câu hỏi/đáp án/thứ tự/phiên bản đề giữ nguyên.
+
+Host192lượt cho5bài bổ sung qua hai cấp và các nhánh phù hợp;2088lượt hiển thị bản dịch bổ sung đạt. Trình duyệt4tuyến/28cặp đoạn Nhật–Việt/4nâng phiên bản đạt;9ảnh đã xem ở điện thoại/máy tính bảng/ngang. ĐọcREVERSE_SOURCE_METHOD_GAPS_2026-10-18.json. Đây là đối chiếu các ý có giới hạn, chưa đóng toàn bộ194trang hoặc duyệt chuyên gia/bản ngữ/quyền sử dụng/Expo/thiết bị thật.
