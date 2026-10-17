@@ -1,5 +1,14 @@
 import type { ImageSourcePropType } from 'react-native';
 export const differentialIllustrations: Record<string, ImageSourcePropType> = {
+ 'assets/kensetsu/differential/b49.png': require('../../../assets/kensetsu/differential/b49.png'),
+ 'assets/kensetsu/differential/b50.png': require('../../../assets/kensetsu/differential/b50.png'),
+ 'assets/kensetsu/differential/b51.png': require('../../../assets/kensetsu/differential/b51.png'),
+ 'assets/kensetsu/differential/b52.png': require('../../../assets/kensetsu/differential/b52.png'),
+ 'assets/kensetsu/differential/c15.png': require('../../../assets/kensetsu/differential/c15.png'),
+ 'assets/kensetsu/differential/c16.png': require('../../../assets/kensetsu/differential/c16.png'),
+ 'assets/kensetsu/differential/c17.png': require('../../../assets/kensetsu/differential/c17.png'),
+ 'assets/kensetsu/differential/c18.png': require('../../../assets/kensetsu/differential/c18.png'),
+
  'assets/kensetsu/differential/b42.png': require('../../../assets/kensetsu/differential/b42.png'),
  'assets/kensetsu/differential/b43.png': require('../../../assets/kensetsu/differential/b43.png'),
  'assets/kensetsu/differential/b44.png': require('../../../assets/kensetsu/differential/b44.png'),

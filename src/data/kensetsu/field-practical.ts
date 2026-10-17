@@ -1,3 +1,21 @@
+import building49 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-049.json';
+import b49 from './differential-translations/b49.json';
+import building50 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-050.json';
+import b50 from './differential-translations/b50.json';
+import building51 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-051.json';
+import b51 from './differential-translations/b51.json';
+import building52 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-052.json';
+import b52 from './differential-translations/b52.json';
+import civil15 from '../../../docs/ssw-workspace/kensetsu/civil/practical/session-015.json';
+import c15 from './differential-translations/c15.json';
+import civil16 from '../../../docs/ssw-workspace/kensetsu/civil/practical/session-016.json';
+import c16 from './differential-translations/c16.json';
+import civil17 from '../../../docs/ssw-workspace/kensetsu/civil/practical/session-017.json';
+import c17 from './differential-translations/c17.json';
+import civil18 from '../../../docs/ssw-workspace/kensetsu/civil/practical/session-018.json';
+import c18 from './differential-translations/c18.json';
+import buildingWeek10 from '../../../docs/ssw-workspace/kensetsu/building/practical/week-010.json';
+import civilWeek6 from '../../../docs/ssw-workspace/kensetsu/civil/practical/week-006.json';
 import building42 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-042.json';
 import b42 from './differential-translations/b42.json';
 import building43 from '../../../docs/ssw-workspace/kensetsu/building/practical/session-043.json';
@@ -132,14 +150,14 @@ import civil6 from '../../../docs/ssw-workspace/kensetsu/civil/practical/session
 import civil7 from '../../../docs/ssw-workspace/kensetsu/civil/practical/session-007.json';
 import civilWeek1 from '../../../docs/ssw-workspace/kensetsu/civil/practical/week-001.json';
 import type { Session, Week, Cluster } from './index';
-const originalFieldPracticalSessions: Session[] = [building1, building2, building3, building4, building5, building6, building7, civil1, civil2, civil3, civil4, civil5, civil6, civil7, building8, building9, building10, building11, building12, building13, building14, building15, building16, building17, building18, building19, building20, building21, building22, civil8, building23, building24, building25, building26, building27, building28, building29, building30, civil9, civil10, civil11, building31, building32, civil12, civil13, building33, building34, building35, building36, building37, building38, building40, building41, building42, building43, building44, building45, building46, building47, building48, civil14];
+const originalFieldPracticalSessions: Session[] = [building1, building2, building3, building4, building5, building6, building7, civil1, civil2, civil3, civil4, civil5, civil6, civil7, building8, building9, building10, building11, building12, building13, building14, building15, building16, building17, building18, building19, building20, building21, building22, civil8, building23, building24, building25, building26, building27, building28, building29, building30, civil9, civil10, civil11, building31, building32, civil12, civil13, building33, building34, building35, building36, building37, building38, building40, building41, building42, building43, building44, building45, building46, building47, building48, civil14, building49, building50, building51, building52, civil15, civil16, civil17, civil18];
 export const fieldPracticalWeeks: Week[] = [
  {...buildingWeek1, titleJa: '構造工事の工具・部材の補足'},
  {...civilWeek1, titleJa: '土木に固有の機械・設備の補足'},
- buildingWeek2, buildingWeek3, buildingWeek4, civilWeek2, buildingWeek5, civilWeek3, buildingWeek6, civilWeek4, buildingWeek7, buildingWeek8, buildingWeek9, civilWeek5,
+ buildingWeek2, buildingWeek3, buildingWeek4, civilWeek2, buildingWeek5, civilWeek3, buildingWeek6, civilWeek4, buildingWeek7, buildingWeek8, buildingWeek9, civilWeek5, buildingWeek10, civilWeek6,
 ];
 
-const differentialTranslations = new Map<string, TranslationBundle>([b3, b4, b5, b6, b7, c3, c5, c6, c7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, c8, b23, b24, b25, b26, b27, b28, b29, b30, c9, c10, c11, b31, b32, c12, c13, b33, b34, b35, b36, b37, b38, b40, b41, b42, b43, b44, b45, b46, b47, b48, c14].map(bundle => [bundle.sessionId, bundle]));
+const differentialTranslations = new Map<string, TranslationBundle>([b3, b4, b5, b6, b7, c3, c5, c6, c7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, c8, b23, b24, b25, b26, b27, b28, b29, b30, c9, c10, c11, b31, b32, c12, c13, b33, b34, b35, b36, b37, b38, b40, b41, b42, b43, b44, b45, b46, b47, b48, c14, b49, b50, b51, b52, c15, c16, c17, c18].map(bundle => [bundle.sessionId, bundle]));
 
 // Retain only additional facts in the active reader; original authored JSON stays archived intact.
 export const fieldPracticalSessions: Session[] = originalFieldPracticalSessions.flatMap(session => {

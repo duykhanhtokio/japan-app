@@ -1,3 +1,11 @@
+# Latest source differences — equipment roles,2026-10-17
+
+Added8views/18Japaneseparagraphs/12localeoverlays/8controlledconceptdiagrams. B049/B051/B052 are shared withcivil; B050 isbuilding-only. C015–018 arecivil-only. This batch distinguishes rough-terrain/overhead cranes; rebar-machine mechanism and portability; gas-side valves and PSrings; pipe-jacking force/reaction paths and auxiliary equipment; mixer/GATvessels/leadline/anchor; drilling circulation/airhammer/waterjet/doubletube wellpoint; walk-behind rollers. Existing B004/B006/B011/common064 are reused instead of repeated tool and pump-control explanations. Attached-source interpretations corrected for rough-terrain type and boring-pump function; no numerical operation values introduced.
+
+Current totals449studyrecords;64additionalviews/154Japaneseparagraphs/12locales/64conceptdiagrams. Building157practicallessons,civil146,utilities224;theory161shared. All6assessment routes10×40. Original385lessons/844inputs and learner identities retained. Whole-source atomic coverage, full physical recognition atlas, human/domain/native/rights review and browser/device evidence remainunconfirmed.2号deferred. See EQUIPMENT_ROLE_DIFFERENTIAL_LEDGER_2026-10-17.json. Historical totals below are superseded.
+
+---
+
 # Latest source-difference supplement — component recognition,2026-10-17
 
 Added8views/18Japaneseparagraphs/12localeoverlays/8controlleddiagrams. B042–045 are shared withcivil; B046–048 arebuilding-only; C014 iscivil-only. Names/functions cover scaffold systems/edge members/fall-arrest blocks; annealed binding wire andshino/ratchet; open/ring/combination wrench heads; reinforcement spacers/caps/folding rules; insulation raw-liquid reaction risks; roofingunderlay/snowguards; sashanchors; piling/pavement equipment. Existing B004 is reused instead of another impact-wrench paragraph. Manufacturer/association comparisons prevent teaching annealing asautomatic strengthening and asphalt emulsion asidentical toemulsifier. No generic container-handling procedure or operating values authored.
