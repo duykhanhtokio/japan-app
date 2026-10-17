@@ -1,3 +1,11 @@
+# Historical source-cell reconciliation — 2026-10-17
+
+After remote persistence of84c618e5, verified10 selected2021construction statistics against MHLW official table12,columnR3,PDF11(publication2022-05-30). All three source7l/7k/7d table1 subtotal rows agree.13 displayed accident columns sum267;overall total remains288 because source table lists principal types, not every type. Sector subtotals102+139+47equal288. Do not "correct" either set or label these historical counts as current rates.
+
+Reused365period/denominator/classification teaching; no Japanese,translation,image or question duplication. Historical audit019now records selected cells verified;full original table and whole-source semantic coverage remain unapproved. See HISTORICAL_2021_CONSTRUCTION_CELL_REVIEW_2026-10-17.json. Native/domain/rights/release flags remain false. Earlier checkpoint entries below are preserved.
+
+---
+
 # Resumed integration and real Chromium verification — 2026-10-17
 
 Restored one previously authored welding-equipment paragraph that was still hidden after concurrent integration. Its original Japanese, stable paragraph ID and 12 existing translations are retained. Common069 continues to provide the base/filler-material explanation. Other restoration candidates remain replaced by the more specific035/038/043 lessons to avoid repeated teaching.
