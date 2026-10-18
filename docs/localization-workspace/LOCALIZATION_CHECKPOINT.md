@@ -36,8 +36,8 @@ Values below mean usable exact-locale presence with source-revision guards where
 | Construction review tests | 1,134 unique runtime questions; 11,340 displayed question/choice/explanation/rationale units currently have no supporting translations. |
 | Kaigo active Japanese masters | 6,242 heading/paragraph/caption units and 176 lesson metadata records pass all 12 locales and current source revisions. |
 | Kaigo tests | 687 weekly questions plus 360 mock questions across 12 forms pass their full-question validation in all 12 locales. |
-| Local conversations | 7,128 effective scenarios;42,768 NPC and35,640 player turns.11 scenarios now have complete NPC+player translations across all12 supporting languages (1 existing +10 in batch001).7,117 scenarios remain incomplete; do not claim the corpus is fully translated. |
-| Authored conversation tasks | Batch001 supplies50 exact-source task hints per supporting locale (600 new hint translations). The existing scenario retains its10 authored en/vi hints. Authored hints now take precedence over answer-meaning fallback. Missing hints remain inventoried separately. |
+| Local conversations | 7,128 effective scenarios. 31 scenarios have complete NPC/player sentence translations in all12 supporting languages; 31 also have all source-bound player task hints. Current details: DIALOGUE_TRANSLATION_PROGRESS.json. |
+| Authored conversation tasks | 31 fully indexed scenarios have all5 Japanese-source-bound tasks in each of12 supporting locales. Batch000 preserved the first scenario sentences and completed its task hints. |
 | Older work conversations | Some English/Vietnamese and a few other translations exist, but the 2-scenario / 16-turn bank is not complete across languages. |
 | Registered occupation/operation names | The ACTIVE runtime adapter now resolves all278 identifiers in all12 supporting languages. New locale entries are accepted only when their Japanese source matches the active occupation name. |
 | Older lessons/modules/categories/tags | All71 source fields across the audited older lesson/module/industry/category/tag/mission/dialogue records now have all12 supporting translations.16 profile occupation/communication titles also have all12. Unknown or changed source text remains pending rather than silently using Vietnamese. |
@@ -54,7 +54,7 @@ Values below mean usable exact-locale presence with source-revision guards where
 - Existing grammar catalog and calendar data validators pass; approved exam UI lock passes 10/10; git diff whitespace check passes.
 - Runtime browser tests use explicit artwork, native-service and dictionary backend adapters. No native-device, production Expo, full-image OCR or native-speaker certification is claimed.
 - Full static scan is an inventory, not a claim that every app label is translated. Japanese-only portal preview UI and limited-locale calendar/task copy still need authored locale coverage. Legacy Kaigo reference/practice data is not counted as the active translated weekly course.
-- Local dialogue translation is incomplete. No placeholders, sentence substitutions or machine-generated completion flags close the remaining7,117-scenario gap.
+- Local dialogue translation is incomplete. No placeholders, sentence substitutions or machine-generated completion flags close the remaining corpus gaps recorded in DIALOGUE_TRANSLATION_PROGRESS.json.
 
 ## Resumable evidence
 
@@ -65,4 +65,4 @@ Values below mean usable exact-locale presence with source-revision guards where
 - runtime-qa.json and dialogue-routing-qa.json: observed regression results.
 - Run audit-app-localization.cjs with TOKUTEI_QA_MODULES pointing to esbuild dependencies; a full checkout must include docs/ssw-workspace because construction runtime lessons import those source files.
 
-Next content unit: local dialogue batch002, active scenario indices11–20 (zero-based), after batch001 persistence. Extract with `node scripts/prepare-dialogue-localization-batch.cjs 002 11 10`. Continue the same language ownership; the coordinator owns Vietnamese unless a disjoint assignment is explicitly made. Extend locale-batch-index.json only for completed source-bound batches. Preserve Japanese sources, scenario/turn IDs and saved progress. Construction test translations, older work-dialogue support, JMdict locale glosses and other explicitly inventoried gaps remain separate outstanding work.
+Current full-corpus continuation is governed by [DIALOGUE_TRANSLATION_CHECKPOINT.md](DIALOGUE_TRANSLATION_CHECKPOINT.md), the complete remaining queue, and derived DIALOGUE_TRANSLATION_PROGRESS.json. Six workers now own two languages each, including Vietnamese. Validated locale files may be saved independently while unrelated unfinished work is preserved; only complete twelve-locale batches become runtime-indexed. Preserve Japanese sources, stable IDs and review flags. Continue until all7,128 scenarios have every NPC/player sentence and task hint in every supporting language.
