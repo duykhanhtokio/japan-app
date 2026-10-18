@@ -1,6 +1,6 @@
 """Collect independently authored, complete rows; leave rejected rows with their owner."""
 from pathlib import Path
-import argparse, json, re, os
+import argparse, json, re, os, unicodedata
 p=argparse.ArgumentParser();p.add_argument('--source',required=True);args=p.parse_args()
 root=Path(__file__).resolve().parents[1];work=Path(args.source);directory=root/'docs/vocabulary-workspace/practical-examples'
 assignment=json.loads((directory/'parallel-assignment-2026-10-18.json').read_text());locales=assignment['locales'];owners={id:w['worker'] for w in assignment['workers'] for id in w['ids']}
@@ -34,6 +34,7 @@ for worker in range(1,7):
      assert locale=='en' or value!=r[3],locale+' is English fallback'
      if locale in scripts:assert re.search(scripts[locale],value),locale+' script absent'
      if locale not in ['zh-CN','zh-TW']:assert not re.search(r'[\u3040-\u30ff\u3400-\u9fff]',value),locale+' contains untranslated Japanese'
+     if locale in ['en','vi','id','tl']:assert all(not unicodedata.category(c).startswith('L') or 'LATIN' in unicodedata.name(c,'') for c in value),locale+' contains non-Latin letters'
      assert not re.search(r'\b(TODO|TRANSLATE_ME|PLACEHOLDER)\b',value),'placeholder'
     if id not in integrated:new+=1
     accepted[id]=r;integrated[id]=r;batchById[id]=f.name;sources[r[2]]=id

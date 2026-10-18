@@ -25,6 +25,9 @@ const dep=n=>require(require.resolve(n,{paths:[process.env.TOKUTEI_QA_MODULES||r
    if(/^direct-\d+\.json$/.test(item.sourceBatch)&&!['zh-CN','zh-TW'].includes(language)){
     assert(!/[\u3040-\u30ff\u3400-\u9fff]/u.test(text),id+' leftover Japanese in direct translation '+language);
    }
+   if(Number(/^direct-(\d+)\.json$/.exec(item.sourceBatch)?.[1])>=1000&&['en','vi','id','tl'].includes(language)){
+    assert([...text].every(ch=>!/[\p{L}]/u.test(ch)||/[\p{Script=Latin}]/u.test(ch)),id+' unexpected non-Latin letter '+language);
+   }
    assert.equal(getTranslation(word,language),text,id+' runtime '+language);
   }
  }
