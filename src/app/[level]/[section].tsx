@@ -1,3 +1,5 @@
+import { useAppLanguage } from '@/context/LanguageContext';
+import { uiText } from '@/i18n/ui-text';
 import GrammarCatalog from '@/components/jlpt/GrammarCatalog';
 import { replacePrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
@@ -19,6 +21,7 @@ const PAGE_SIZE = 8;
 function param(value: string | string[] | undefined) { return Array.isArray(value) ? value[0] : value; }
 
 export default function JlptSectionScreen() {
+    const {language}=useAppLanguage();
     const params = useLocalSearchParams();
     const levelValue = param(params.level);
     const sectionValue = param(params.section) as LearningSection | undefined;
@@ -38,8 +41,8 @@ export default function JlptSectionScreen() {
     function renderCharacters() {
         const rows = kanaGroup === 'basic' ? (kanaMode === 'hiragana' ? hiraganaRows : katakanaRows) : kanaGroup === 'voiced' ? (kanaMode === 'hiragana' ? hiraganaVoicedRows : katakanaVoicedRows) : (kanaMode === 'hiragana' ? hiraganaCombinationRows : katakanaCombinationRows);
         return <><View style={styles.tabs}>{(['hiragana','katakana'] as const).map((mode) => <Pressable key={mode} onPress={() => setKanaMode(mode)} style={[styles.tab,kanaMode===mode&&styles.tabActive]}><Text style={[styles.tabText,kanaMode===mode&&styles.activeText]}>{mode==='hiragana'?'ひらがな':'カタカナ'}</Text></Pressable>)}</View>
-            <View style={styles.tabs}>{(['basic','voiced','combination'] as const).map((group) => <Pressable key={group} onPress={() => setKanaGroup(group)} style={[styles.smallTab,kanaGroup===group&&styles.smallTabActive]}><Text style={kanaGroup===group&&styles.activeText}>{group==='basic'?'Âm cơ bản':group==='voiced'?'Âm đục':'Âm ghép'}</Text></Pressable>)}</View>
-            <Text style={styles.help}>Mỗi ô gồm chữ Nhật, Romaji và nút nghe phát âm.</Text>
+            <View style={styles.tabs}>{(['basic','voiced','combination'] as const).map((group) => <Pressable key={group} onPress={() => setKanaGroup(group)} style={[styles.smallTab,kanaGroup===group&&styles.smallTabActive]}><Text style={kanaGroup===group&&styles.activeText}>{uiText(group==='basic'?'kanaBasic':group==='voiced'?'kanaVoiced':'kanaCombined',language)}</Text></Pressable>)}</View>
+            <Text style={styles.help}>{uiText('kanaHint',language)}</Text>
             {rows.map((row,rowIndex)=><View key={rowIndex} style={styles.kanaRow}>{row.map((character)=>{const id=`kana:${character}`;const learned=learnedIds.includes(id);return <View key={character} style={[styles.kanaCell,learned&&styles.learned]}><Pressable style={styles.kanaMain} onPress={()=>void toggle(id)}><Text style={styles.kana}>{character}</Text><Text style={styles.romaji}>{getKanaRomaji(character)}</Text>{learned&&<Text style={styles.tick}>✓</Text>}</Pressable><Pressable style={styles.voice} onPress={()=>speak(character)}><Text>🔊</Text></Pressable></View>;})}</View>)}</>;
     }
     function renderGrammar() { return <GrammarCatalog grammar={grammar} learnedIds={learnedIds} limit={limit} onToggle={(id) => void toggle(id)} />; }

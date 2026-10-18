@@ -15,9 +15,13 @@ function localizeNode(node: ReactNode, language: Parameters<typeof localizeRunti
 
 export function Text({ children, ...props }: TextProps) {
     const { language } = useAppLanguage();
+    const parts = Children.toArray(children);
+    const content = parts.every(part => typeof part === 'string' || typeof part === 'number')
+        ? localizeRuntimeText(parts.join(''), language)
+        : Children.map(children, (child) => localizeNode(child, language));
     return (
         <NativeText {...props}>
-            {Children.map(children, (child) => localizeNode(child, language))}
+            {content}
         </NativeText>
     );
 }

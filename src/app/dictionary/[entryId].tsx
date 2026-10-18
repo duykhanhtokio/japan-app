@@ -1,3 +1,5 @@
+import { useAppLanguage } from '@/context/LanguageContext';
+import { uiText, type UiTextKey } from '@/i18n/ui-text';
 import { backPrepared } from '@/components/ui/prepareSceneRoute';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
@@ -19,9 +21,10 @@ import { ActivityIndicator,
 } from 'react-native';
 
 
-const POS: Record<string,string> = {n:'Danh từ',adj_i:'Tính từ い',adj_na:'Tính từ な',adv:'Trạng từ',exp:'Cụm từ',prt:'Trợ từ',v1:'Động từ nhóm 2',v5u:'Động từ nhóm 1',v5k:'Động từ nhóm 1',v5g:'Động từ nhóm 1',v5s:'Động từ nhóm 1',v5t:'Động từ nhóm 1',v5n:'Động từ nhóm 1',v5b:'Động từ nhóm 1',v5m:'Động từ nhóm 1',v5r:'Động từ nhóm 1',vs:'Động từ する',vk:'Động từ 来る'};
+const POS: Record<string,UiTextKey> = {n:'noun',adj_i:'iAdjective',adj_na:'naAdjective',adv:'adverb',exp:'phrase',prt:'particle',v1:'verb2',v5u:'verb1',v5k:'verb1',v5g:'verb1',v5s:'verb1',v5t:'verb1',v5n:'verb1',v5b:'verb1',v5m:'verb1',v5r:'verb1',vs:'suruVerb',vk:'kuruVerb'};
 
 function EntryContent() {
+    const {language}=useAppLanguage();
     const db = useSQLiteContext();
     const params = useLocalSearchParams();
     const raw = Array.isArray(params.entryId) ? params.entryId[0] : params.entryId;
@@ -37,7 +40,7 @@ function EntryContent() {
         <Section title="意味・English meanings">{entry.glosses.map((x,i)=><Text key={i} style={s.gloss}>{i+1}. {x}</Text>)}</Section>
         {entry.kanji.length>0&&<Section title="表記・Cách viết"><Text style={s.value}>{entry.kanji.join('・')}</Text></Section>}
         <Section title="読み方・Cách đọc"><Text style={s.value}>{entry.kana.join('・')}</Text></Section>
-        {entry.partsOfSpeech.length>0&&<Section title="品詞・Loại từ"><Text style={s.value}>{entry.partsOfSpeech.map(x=>POS[x]||x).join('・')}</Text></Section>}
+        {entry.partsOfSpeech.length>0&&<Section title="品詞・Loại từ"><Text style={s.value}>{entry.partsOfSpeech.map(x=>POS[x]?uiText(POS[x],language):x).join('・')}</Text></Section>}
         {entry.fields.length>0&&<Section title="分野・Lĩnh vực"><Text style={s.value}>{entry.fields.join('・')}</Text></Section>}
         {entry.misc.length>0&&<Section title="注記・Nhãn"><Text style={s.value}>{entry.misc.join('・')}</Text></Section>}
         <Text style={s.source}>JMdict sequence: {entry.seq}{'\n'}JMdict/EDRDG • CC BY-SA 4.0</Text>

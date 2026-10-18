@@ -8,6 +8,7 @@ import {
     useEffect,
     useMemo,
     useState,
+    useRef,
 } from 'react';
 
 import type {
@@ -19,6 +20,7 @@ import {
     type TranslationKey,
 } from '@/i18n/translations';
 import { setCurrentAppLanguage } from '@/i18n/localization-runtime';
+import { isAppLanguageCode } from '@/i18n/languages';
 
 const LANGUAGE_STORAGE_KEY =
     '@japan_app_language';
@@ -53,6 +55,8 @@ export function LanguageProvider({
     children:
     ReactNode;
 }) {
+    const selectionVersion = useRef(0);
+    const storageWrite = useRef(Promise.resolve());
     const [
         language,
         setLanguageState,
@@ -69,19 +73,23 @@ export function LanguageProvider({
 
     useEffect(() => {
         async function loadLanguage() {
+            const version = selectionVersion.current;
             try {
                 const stored =
                     await AsyncStorage.getItem(
                         LANGUAGE_STORAGE_KEY
                     );
 
-                if (stored) {
-                    setLanguageState(
-                        stored as AppLanguageCode
-                    );
-                    setCurrentAppLanguage(stored as AppLanguageCode);
+                if (selectionVersion.current === version) {
+                    const restored = isAppLanguageCode(stored) ? stored : 'ja';
+                    setLanguageState(restored);
+                    setCurrentAppLanguage(restored);
                 }
             } catch (error) {
+                if (selectionVersion.current === version) {
+                    setLanguageState('ja');
+                    setCurrentAppLanguage('ja');
+                }
                 console.log(
                     'Load language error:',
                     error
@@ -100,22 +108,16 @@ export function LanguageProvider({
                 nextLanguage:
                     AppLanguageCode
             ) => {
-                try {
-                    await AsyncStorage.setItem(
-                        LANGUAGE_STORAGE_KEY,
-                        nextLanguage
-                    );
-
-                    setLanguageState(
-                        nextLanguage
-                    );
-                    setCurrentAppLanguage(nextLanguage);
-                } catch (error) {
-                    console.log(
-                        'Save language error:',
-                        error
-                    );
-                }
+                if (!isAppLanguageCode(nextLanguage)) return;
+                selectionVersion.current += 1;
+                setCurrentAppLanguage(nextLanguage);
+                setLanguageState(nextLanguage);
+                // Selection is immediate even if persistence fails. Serialize writes
+                // so rapid switches cannot restore an older locale on next launch.
+                storageWrite.current = storageWrite.current.catch(() => {}).then(() =>
+                    AsyncStorage.setItem(LANGUAGE_STORAGE_KEY, nextLanguage)
+                ).catch(error => console.log('Save language error:', error));
+                await storageWrite.current;
             },
             []
         );

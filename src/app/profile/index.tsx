@@ -1,3 +1,6 @@
+import { useAppLanguage } from '@/context/LanguageContext';
+import { selectedContentTranslation } from '@/i18n/selected-content';
+import { Text } from '@/components/app/LocalizedText';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
@@ -11,7 +14,6 @@ import {
     Pressable,
     ScrollView,
     StyleSheet,
-    Text,
     View,
     type StyleProp,
     type ViewStyle,
@@ -52,6 +54,7 @@ function ProfilePanel({children,style,kind='plain'}:PropsWithChildren<{style?:St
 }
 
 export default function ProfileScreen() {
+    const {language}=useAppLanguage();
     const modalInsets = useSafeAreaInsets();
     const modalFrame = useSafeAreaFrame();
     const [detailsVisible,setDetailsVisible]=useState(false);
@@ -138,7 +141,7 @@ export default function ProfileScreen() {
                     <Image fadeDuration={0} source={PROFILE_AVATAR} resizeMode="contain" style={styles.identityAvatar}/>
                     <Text style={styles.identityName}>{profile.name?.trim() || 'プレイヤー'}</Text>
                     <Text style={styles.identityRank}>JLPT · {economy?.officialRank ?? 'N5'}</Text>
-                    <Image fadeDuration={0} source={PROFILE_ICONS.work} resizeMode="contain" style={{width:40,height:40,marginTop:12}}/><Text style={styles.identityOccupation}> {occupation?.titleJa ?? 'その他'} / {occupation?.titleVi ?? 'Công việc khác'}</Text>
+                    <Image fadeDuration={0} source={PROFILE_ICONS.work} resizeMode="contain" style={{width:40,height:40,marginTop:12}}/><Text style={styles.identityOccupation}> {occupation?.titleJa ?? 'その他'} / {selectedContentTranslation(language, occupation?.titleVi ?? 'Công việc khác')}</Text>
                     <RoyalButton style={styles.identityEdit} onPress={()=>navigate('/register')}>
                         <Text style={styles.editText}>編集 · Chỉnh sửa</Text>
                     </RoyalButton>
@@ -188,9 +191,7 @@ export default function ProfileScreen() {
                             styles.ratingVi
                         }
                     >
-                        {
-                            communication.titleVi
-                        }
+                        {selectedContentTranslation(language, communication.titleVi)}
                     </Text>
 
                     <RoyalPaperPanel tone="hud" style={[styles.ratingLevelBadge,{backgroundColor:'transparent',borderWidth:0,paddingHorizontal:24,paddingVertical:12,minHeight:48}]}>
@@ -362,8 +363,7 @@ export default function ProfileScreen() {
                                 {occupation?.titleJa ??
                                     'その他'}
                                 {' / '}
-                                {occupation?.titleVi ??
-                                    ''}
+                                {selectedContentTranslation(language, occupation?.titleVi)}
                             </Text>
                         </View>
                     </View>

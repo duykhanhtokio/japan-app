@@ -1,3 +1,5 @@
+import { Text } from '@/components/app/LocalizedText';
+import { legacyFieldTranslation } from '@/i18n/selected-content';
 import { useAppLanguage } from '@/context/LanguageContext';
 import { getVocabularyMeaning, findVocabularyByJapanese } from '@/data/vocabulary-localization';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
@@ -8,7 +10,6 @@ import {
     Pressable,
     ScrollView,
     StyleSheet,
-    Text,
     View,
 } from 'react-native';
 
@@ -61,12 +62,12 @@ export default function LessonDetailScreen() {
                 </Text>
 
                 <Text style={styles.translation}>
-                    {lesson.titleVi}
+                    {legacyFieldTranslation(language, lesson, 'title')}
                 </Text>
 
                 {lesson.descriptionVi && (
                     <Text style={styles.description}>
-                        {lesson.descriptionVi}
+                        {legacyFieldTranslation(language, lesson, 'description')}
                     </Text>
                 )}
 
@@ -103,7 +104,7 @@ export default function LessonDetailScreen() {
 
                             {lesson.objectiveVi && (
                                 <Text style={styles.vietnameseText}>
-                                    {lesson.objectiveVi}
+                                    {legacyFieldTranslation(language, lesson, 'objective')}
                                 </Text>
                             )}
                         </View>
@@ -161,7 +162,7 @@ export default function LessonDetailScreen() {
                                     </Text>
 
                                     <Text style={styles.expressionMeaning}>
-                                        {expression.meaningVi}
+                                        {legacyFieldTranslation(language, expression, 'meaning')}
                                     </Text>
 
                                     {expression.exampleJa && (
@@ -172,7 +173,7 @@ export default function LessonDetailScreen() {
 
                                             {expression.exampleVi && (
                                                 <Text style={styles.vietnameseText}>
-                                                    {expression.exampleVi}
+                                                    {legacyFieldTranslation(language, expression, 'example')}
                                                 </Text>
                                             )}
                                         </View>
@@ -196,9 +197,7 @@ export default function LessonDetailScreen() {
                                 >
                                     <Text style={styles.speaker}>
                                         {line.speakerJa}
-                                        {line.speakerVi
-                                            ? ` / ${line.speakerVi}`
-                                            : ''}
+                                        {language === 'vi' && line.speakerVi ? ` / ${line.speakerVi}` : ''}
                                     </Text>
 
                                     <Text style={styles.dialogueJa}>
@@ -212,7 +211,7 @@ export default function LessonDetailScreen() {
                                     )}
 
                                     <Text style={styles.dialogueVi}>
-                                        {line.textVi}
+                                        {legacyFieldTranslation(language, line, 'text')}
                                     </Text>
                                 </View>
                             ))}

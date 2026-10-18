@@ -1,3 +1,4 @@
+import { Text } from '@/components/app/LocalizedText';
 import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
@@ -10,7 +11,6 @@ import {
     Pressable,
     ScrollView,
     StyleSheet,
-    Text,
     View,
 } from 'react-native';
 

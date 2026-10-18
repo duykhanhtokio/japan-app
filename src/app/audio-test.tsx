@@ -1,9 +1,9 @@
+import { Text } from '@/components/app/LocalizedText';
 import { useEffect, useState } from 'react';
 import {
     Alert,
     Pressable,
     StyleSheet,
-    Text,
     View,
 } from 'react-native';
 

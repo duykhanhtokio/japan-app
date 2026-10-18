@@ -1,3 +1,6 @@
+import { Text } from '@/components/app/LocalizedText';
+import { legacyFieldTranslation } from '@/i18n/selected-content';
+import { useAppLanguage } from '@/context/LanguageContext';
 import { backPrepared } from '@/components/ui/prepareSceneRoute';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
@@ -14,7 +17,6 @@ import {
 
     Pressable,
     StyleSheet,
-    Text,
     View,
 } from 'react-native';
 
@@ -47,6 +49,7 @@ import {
 import { useGameSpeech } from '@/hooks/useGameSpeech';
 
 export default function MissionScreen() {
+    const {language}=useAppLanguage();
     const {
         missionId,
     } =
@@ -370,9 +373,7 @@ export default function MissionScreen() {
                             styles.completeVi
                         }
                     >
-                        {
-                            activeMission.titleVi
-                        }
+                        {legacyFieldTranslation(language, activeMission, 'title')}
                     </Text>
 
                     <View
@@ -653,9 +654,7 @@ export default function MissionScreen() {
                                             styles.dialogueVi
                                         }
                                     >
-                                        {
-                                            activeNode.textVi
-                                        }
+                                        {legacyFieldTranslation(language, activeNode, 'text')}
                                     </Text>
                                 )}
 
@@ -697,9 +696,7 @@ export default function MissionScreen() {
                                             styles.playerPromptVi
                                         }
                                     >
-                                        {
-                                            activeNode.playerPromptVi
-                                        }
+                                        {legacyFieldTranslation(language, activeNode, 'playerPrompt')}
                                     </Text>
                                 )}
 

@@ -163,3 +163,7 @@ export function getLanguage(
             item.code === code
     );
 }
+
+export function isAppLanguageCode(value: unknown): value is AppLanguageCode {
+    return typeof value === 'string' && appLanguages.some(item => item.code === value);
+}

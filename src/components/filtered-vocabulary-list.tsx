@@ -1,3 +1,4 @@
+import { selectedContentTranslation } from '@/i18n/selected-content';
 import { useAppLanguage } from '@/context/LanguageContext';
 import { getVocabularyMeaning, findVocabularyByJapanese } from '@/data/vocabulary-localization';
 import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
@@ -44,7 +45,7 @@ export function FilteredVocabularyList({
                 </Text>
 
                 <Text style={styles.translation}>
-                    {translation}
+                    {selectedContentTranslation(language, translation)}
                 </Text>
 
                 <Text style={styles.count}>

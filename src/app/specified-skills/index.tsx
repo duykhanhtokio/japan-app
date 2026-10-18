@@ -1,3 +1,6 @@
+import { useAppLanguage } from '@/context/LanguageContext';
+import { uiText } from '@/i18n/ui-text';
+import { Text } from '@/components/app/LocalizedText';
 import {TokuteiHeader} from '@/components/tokutei/TokuteiChrome';
 import { backPrepared, pushPrepared } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
@@ -8,7 +11,6 @@ import {
 
     ScrollView,
     StyleSheet,
-    Text,
     View,
     useWindowDimensions,
 } from 'react-native';
@@ -32,6 +34,7 @@ const sectors = [
 ];
 
 export default function SpecifiedSkillsScreen() {
+    const {language}=useAppLanguage();
     const insets = useSafeAreaInsets();
     const { width } = useWindowDimensions();
     const navHeight = Math.round(76 * Math.max(.9, Math.min(1.18, width / 390)));
@@ -52,7 +55,7 @@ export default function SpecifiedSkillsScreen() {
                         <Pressable
                             key={ja}
                             accessibilityRole={(ja==='介護'||ja==='建設')&&__DEV__?'button':undefined}
-                            accessibilityLabel={(ja==='介護'||ja==='建設')&&__DEV__?`${ja} — mở bản kiểm tra nội bộ`:ja}
+                            accessibilityLabel={(ja==='介護'||ja==='建設')&&__DEV__?uiText('internalPreview',language,{name:ja}):ja}
                             disabled={(ja!=='介護'&&ja!=='建設')||!__DEV__}
                             onPress={()=>{void pushPrepared(ja==='建設'?'/specified-skills/kensetsu':'/specified-skills/kaigo');}}
                             style={

@@ -1,3 +1,6 @@
+import { Text } from '@/components/app/LocalizedText';
+import { legacyFieldTranslation } from '@/i18n/selected-content';
+import { useAppLanguage } from '@/context/LanguageContext';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
@@ -8,7 +11,6 @@ import {
     Pressable,
     ScrollView,
     StyleSheet,
-    Text,
     View,
 } from 'react-native';
 
@@ -27,6 +29,7 @@ import type {
 } from '@/types/progress';
 
 export default function ModuleScreen() {
+    const {language}=useAppLanguage();
     const { moduleId } = useLocalSearchParams();
 
     const id = Array.isArray(moduleId)
@@ -125,12 +128,12 @@ export default function ModuleScreen() {
                 </Text>
 
                 <Text style={styles.translation}>
-                    {module.titleVi}
+                    {legacyFieldTranslation(language, module, 'title')}
                 </Text>
 
                 {module.descriptionVi && (
                     <Text style={styles.description}>
-                        {module.descriptionVi}
+                        {legacyFieldTranslation(language, module, 'description')}
                     </Text>
                 )}
 
@@ -240,7 +243,7 @@ export default function ModuleScreen() {
                                             styles.lessonTranslation
                                         }
                                     >
-                                        {lesson.titleVi}
+                                        {legacyFieldTranslation(language, lesson, 'title')}
                                     </Text>
 
                                     <View

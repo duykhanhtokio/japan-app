@@ -63,12 +63,12 @@ export function loadDialogueTurns(scenarioId: string): LifeDialogueTurn[] {
         const genericId = `GENERIC-CITY-${genericMatch![1]}`;
         return selected.map((turn) => {
             const replace = (value: string | null) => value?.split(genericId).join(scenarioId) ?? null;
-            return {
+            return withTranslations({
                 ...turn,
                 id: replace(turn.id)!,
                 scenarioId,
                 nextDialogueId: replace(turn.nextDialogueId),
-            };
+            });
         });
     }
     return [];

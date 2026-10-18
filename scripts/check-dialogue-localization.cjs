@@ -1,0 +1,16 @@
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'..');
+(async()=>{
+ const esbuild=require(require.resolve('esbuild',{paths:[process.env.TOKUTEI_QA_MODULES||root]}));
+ const built=await esbuild.build({entryPoints:[path.join(root,'src/services/dialogue-content-loader.ts')],bundle:true,write:false,platform:'node',format:'cjs',logLevel:'error',plugins:[{name:'aliases',setup(b){b.onResolve({filter:/^@\//},a=>{const p=path.join(root,'src',a.path.slice(2));for(const x of ['', '.ts','.json','/index.ts'])if(fs.existsSync(p+x)&&fs.statSync(p+x).isFile())return {path:p+x};});}}]});
+ const id='SC-LOC-JP-99999-01-001',generic='GENERIC-CITY-01',source='確認します。';
+ const turn=scenarioId=>({id:'DLG-'+scenarioId+'-1',scenarioId,speaker:'NPC',nextDialogueId:null,npc:{textJa:source,translationVi:null}});
+ const sources={'./DIRECT.json':{default:{shared:[turn('DIRECT')]}},'./GENERIC-CITY-01.json':{shared:[turn(generic)]}};
+ const translations={};for(const scenarioId of ['DIRECT',id])translations['./'+scenarioId+'.json']={scenarioId,status:'translated_ai_unreviewed',turns:{['DLG-'+scenarioId+'-1']:{speaker:'NPC',sourceJa:source,translations:{th:'จะตรวจสอบให้',vi:'Tôi sẽ kiểm tra.'}}}};
+ const custom=Object.assign(name=>require(name),{context(directory){const data=directory.includes('/translations')?translations:sources;return Object.assign(key=>data[key],{keys:()=>Object.keys(data)});}});
+ const m={exports:{}};new Function('module','exports','require',built.outputFiles[0].text)(m,m.exports,custom);
+ for(const scenarioId of ['DIRECT',id]){const [t]=m.exports.loadDialogueTurns(scenarioId);assert.equal(t.scenarioId,scenarioId);assert.equal(t.id,'DLG-'+scenarioId+'-1');assert.equal(t.npc.translations.th,'จะตรวจสอบให้');assert.equal(t.npc.translationVi,'Tôi sẽ kiểm tra.');}
+ const entry=translations['./'+id+'.json'].turns['DLG-'+id+'-1'];entry.sourceJa='変更後の文です。';assert.equal(m.exports.loadDialogueTurns(id)[0].npc.translations,undefined,'Never apply a stale translation after source drift');
+ entry.sourceJa=source;entry.speaker='PLAYER';assert.equal(m.exports.loadDialogueTurns(id)[0].npc.translations,undefined,'Never attach a player translation to NPC');
+ const report={status:'PASS',actualLoader:true,directAndGenericScenarioBindings:true,stableTurnIds:true,staleSourceRejected:true,speakerMismatchRejected:true,fixturesOnly:true};fs.writeFileSync(path.join(root,'docs/localization-workspace/dialogue-routing-qa.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
+})().catch(e=>{console.error(e);process.exit(1)});

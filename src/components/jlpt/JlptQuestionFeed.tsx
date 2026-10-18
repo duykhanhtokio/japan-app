@@ -1,5 +1,6 @@
+import { Text } from '@/components/app/LocalizedText';
 import { useMemo, useRef, useState } from 'react';
-import { SectionList, StyleSheet, Text, View } from 'react-native';
+import { SectionList, StyleSheet, View } from 'react-native';
 import type { JlptMockPart, JlptMockQuestion } from '@/data/jlpt-mock/types';
 import JlptAudioButton from '@/components/jlpt/JlptAudioButton';
 import {

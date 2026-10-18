@@ -1,9 +1,12 @@
+import { Text } from '@/components/app/LocalizedText';
+import { useAppLanguage } from '@/context/LanguageContext';
+import { uiText } from '@/i18n/ui-text';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
 import { useEffect, useState } from 'react';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
-import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { REVIEW_SOURCES, type ReviewSource } from '@/data/jlpt-official/n4-n5-listening-review-sources';
 import { loadListeningSegmentCorrection, saveListeningSegmentCorrection } from '@/services/jlpt-listening-segment-review';
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
@@ -13,6 +16,7 @@ const time = (milliseconds: number) => (milliseconds / 1000).toFixed(1);
 const milliseconds = (value: string) => Math.round(Number(value.replace(',', '.')) * 1000);
 
 function Editor({ source }: { source: ReviewSource }) {
+  const {language}=useAppLanguage();
   const router = useRouter();
   const [index, setIndex] = useState(0);
   const [start, setStart] = useState('');
@@ -53,10 +57,10 @@ function Editor({ source }: { source: ReviewSource }) {
     } catch { setNotice('Không lưu được.'); }
   }
   return <SafeAreaView style={styles.screen}><View style={styles.header}><RoyalBackButton onPress={() => { player.pause(); backPrepared(); }} /></View><ScrollView contentContainerStyle={styles.page}>
-    <Text style={styles.title}>Chỉnh nghe · {source.id}</Text>
+    <Text style={styles.title}>{uiText('listeningEditor',language,{id:source.id})}</Text>
     <Text>Timing ứng viên chưa được duyệt. Bản sửa được lưu riêng trên thiết bị.</Text>
-    <Text style={styles.heading}>Câu {index + 1}/{source.segments.length}: {segment.label}</Text>
-    <Text>Audio: {status.isLoaded ? time(status.duration * 1000) : 'đang tải'} giây</Text>
+    <Text style={styles.heading}>{uiText('questionIndex',language,{count:index+1,total:source.segments.length,label:segment.label})}</Text>
+    <Text>{uiText('audioDuration',language,{value:status.isLoaded?time(status.duration * 1000):uiText('loading',language)})}</Text>
     <Text>Bắt đầu (giây)</Text><TextInput style={styles.input} keyboardType="decimal-pad" value={start} onChangeText={setStart} />
     <Text>Kết thúc (giây)</Text><TextInput style={styles.input} keyboardType="decimal-pad" value={end} onChangeText={setEnd} />
     <View style={styles.row}>

@@ -1,3 +1,5 @@
+import { Text } from '@/components/app/LocalizedText';
+import { legacyFieldTranslation } from '@/i18n/selected-content';
 import { useAppLanguage } from '@/context/LanguageContext';
 import { getVocabularyMeaning, findVocabularyByJapanese } from '@/data/vocabulary-localization';
 import { backPrepared } from '@/components/ui/prepareSceneRoute';
@@ -26,7 +28,6 @@ import {
     Pressable,
     ScrollView,
     StyleSheet,
-    Text,
     View,
 } from 'react-native';
 
@@ -43,6 +44,7 @@ import {
 } from 'expo-audio';
 
 export default function LessonPlayerScreen() {
+    const {language}=useAppLanguage();
     const { lessonId } = useLocalSearchParams();
 
     const id = Array.isArray(lessonId)
@@ -268,7 +270,7 @@ export default function LessonPlayerScreen() {
                             styles.translation
                         }
                     >
-                        {step.titleVi}
+                        {legacyFieldTranslation(language, step, 'title')}
                     </Text>
                 )}
 
@@ -284,11 +286,9 @@ export default function LessonPlayerScreen() {
 
                 {step.instructionVi && (
                     <Text
-                        style={
-                            styles.instructionVi
-                        }
+                        style={styles.instructionVi}
                     >
-                        {step.instructionVi}
+                        {legacyFieldTranslation(language, step, 'instruction')}
                     </Text>
                 )}
 
@@ -519,6 +519,7 @@ function ExpressionContent({
 }: {
     expressions: LessonExpression[];
 }) {
+    const {language}=useAppLanguage();
     return (
         <View>
             {expressions.map(
@@ -544,9 +545,7 @@ function ExpressionContent({
                                 styles.meaning
                             }
                         >
-                            {
-                                item.meaningVi
-                            }
+                            {legacyFieldTranslation(language, item, 'meaning')}
                         </Text>
 
                         {item.exampleJa && (
@@ -571,9 +570,7 @@ function ExpressionContent({
                                             styles.exampleVi
                                         }
                                     >
-                                        {
-                                            item.exampleVi
-                                        }
+                                        {legacyFieldTranslation(language, item, 'example')}
                                     </Text>
                                 )}
                             </View>
@@ -590,6 +587,7 @@ function DialogueContent({
 }: {
     dialogue: DialogueLine[];
 }) {
+    const {language}=useAppLanguage();
     return (
         <View>
             {dialogue.map((line) => (
@@ -603,9 +601,7 @@ function DialogueContent({
                         }
                     >
                         {line.speakerJa}
-                        {line.speakerVi
-                            ? ` / ${line.speakerVi}`
-                            : ''}
+                        {language === 'vi' && line.speakerVi ? ` / ${line.speakerVi}` : ''}
                     </Text>
 
                     <Text
@@ -631,7 +627,7 @@ function DialogueContent({
                             styles.meaning
                         }
                     >
-                        {line.textVi}
+                        {legacyFieldTranslation(language, line, 'text')}
                     </Text>
                 </View>
             ))}
@@ -648,6 +644,7 @@ function QuizContent({
         score: number
     ) => void;
 }) {
+    const {language}=useAppLanguage();
     const [
         questionIndex,
         setQuestionIndex,
@@ -749,9 +746,7 @@ function QuizContent({
                         styles.quizQuestionVi
                     }
                 >
-                    {
-                        question.questionVi
-                    }
+                    {legacyFieldTranslation(language, question, 'question')}
                 </Text>
             )}
 
@@ -859,9 +854,7 @@ function QuizContent({
                                 styles.quizExplanationVi
                             }
                         >
-                            {
-                                question.explanationVi
-                            }
+                            {legacyFieldTranslation(language, question, 'explanation')}
                         </Text>
                     )}
 
