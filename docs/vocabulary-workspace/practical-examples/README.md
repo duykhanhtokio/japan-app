@@ -19,3 +19,5 @@ Set TOKUTEI_QA_MODULES to the available esbuild dependency directory for validat
 Only records with all 12 nonempty translations are integrated. The app binds additions to the exact vocabulary ID, corrected headword/reading and Japanese example. A changed source must not inherit old example translations. Each integrated record stores its actual surface form so the validator can verify the example demonstrates the target word.
 
 The strict completion command is `node scripts/check-vocabulary-practical-examples.cjs` without --allow-incomplete. It fails until every language reaches 8,350 examples. Never treat the progress-mode validator, meanings-only completeness or a partial batch as completion of the publisher's full request.
+
+Known model errors found during focused review included invented unrelated text, reversed intent, literal idiom translations, and replacing Japanese yen with another currency. These are real editorial defects, not resolved by counts or script checks. Corrections must remain source-bound, and scripts must never be described as certifying semantic correctness or native quality. The correction ledger preserves all identified fixes.

@@ -19,6 +19,6 @@ for(const file of fs.readdirSync(dir).filter(x=>/^batch-\d+\.tsv$/.test(x)).sort
  const targetForm=({'VOC0413':'売って','VOC0415':'働き'})[id]||item.word;assert(sourceJa.includes(targetForm),id+' must demonstrate target');
  output.entries[id]={word:item.word,reading:item.reading,targetForm,sourceJa,translations,sourceBatch:file};
 }
-output.status='in_progress';output.generatedBy='AI';output.nativeReviewed=false;
+output.status='in_progress';output.generatedBy='AI';output.nativeReviewed=false;output.semanticReview='focused AI review only; not an all-record/all-locale quality certification';output.editorialCorrections='docs/vocabulary-workspace/practical-examples/editorial-corrections.json';
 output.translationMethod={en:'Directly authored with Japanese source',vi:'Directly authored with Japanese source',otherLocales:'Offline MADLAD-400 3B translation from the explicitly authored English meaning; machine translation, not native-reviewed',runtimeTranslation:false};
 fs.writeFileSync(target,JSON.stringify(output,null,2)+'\n');console.log(JSON.stringify({completeAddedEntries:Object.keys(output.entries).length,pendingAuthoredEntries:pending.length}));

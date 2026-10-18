@@ -34,9 +34,13 @@ const dep=n=>require(require.resolve(n,{paths:[process.env.TOKUTEI_QA_MODULES||r
   assert(!original.exampleJa,'original data remains unchanged');
  }
  const withExamples=words.filter(x=>x.exampleJa?.trim()),missing=words.filter(x=>!x.exampleJa?.trim()).map(x=>x.id);
+ if(extra.entries.VOC6536)assert(extra.entries.VOC6536.translations.my.includes('ယန်း'),'preserve Japanese yen; do not localize currency to kyat');
+ if(extra.entries.VOC6538){assert(extra.entries.VOC6538.translations.hi.includes('अनुभव'),'CV sentence must preserve experience');assert(!extra.entries.VOC6538.translations.hi.includes('पिता'),'reject known unrelated father-credit hallucination');}
+ if(extra.entries.VOC6539)assert(!extra.entries.VOC6539.translations.id.includes('bohong'),'arrogant is not lying');
  const perLanguage=Object.fromEntries(locales.map(language=>[language,withExamples.filter(x=>{const v=getTranslation(x,language);return v?.trim()&&v!==getCopy(language).pending;}).length]));
+ const byLevel=Object.fromEntries(['N5','N4','N3','N2','N1'].map(level=>[level,{required:words.filter(x=>x.jlpt===level).length,withJapaneseExample:withExamples.filter(x=>x.jlpt===level).length}]));
  const complete=withExamples.length===8350&&locales.every(language=>perLanguage[language]===8350);
- const report={requiredExamplesPerLanguage:8350,sourceJapaneseExamples:withExamples.length,addedJapaneseExamples:Object.keys(extra.entries).length,perLanguage,missingJapaneseIds:missing,allExamplesComplete:complete,status:complete?'COMPLETE':'IN_PROGRESS',nativeReviewed:false};
+ const report={requiredExamplesPerLanguage:8350,sourceJapaneseExamples:withExamples.length,addedJapaneseExamples:Object.keys(extra.entries).length,perLanguage,byLevel,missingJapaneseIds:missing,allExamplesComplete:complete,status:complete?'COMPLETE':'IN_PROGRESS',nativeReviewed:false,semanticReview:'focused AI review only; counts do not certify all-record/all-locale semantic correctness'};
  fs.writeFileSync(path.join(root,'docs/vocabulary-workspace/practical-examples/coverage.json'),JSON.stringify(report,null,2)+'\n');
  console.log(JSON.stringify({...report,missingJapaneseIds:undefined,remainingJapaneseExamples:missing.length}));
  if(!complete&&!process.argv.includes('--allow-incomplete')){console.error('INCOMPLETE: every word must have a Japanese example and all 12 translations.');process.exitCode=1;}
