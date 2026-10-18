@@ -22,6 +22,8 @@ Publisher instruction: finish all dialogue translations with six independent AI 
 
 From batch030 onward, each worker owns all12 locale files for disjoint scenario batches. The owner slot is `(integer(batch)-30)%6`: en_vi=0, id_tl=1, zh=2, hi_bn=3, ne_my=4, th_km=5. Each group advances by six batches through its final assigned batch (708–713). Finish the original language-pair assignments through029 before starting the new assigned queue. `DIALOGUE_TRANSLATION_OWNERSHIP.json` is the machine-readable authority. This balances differing translation lengths while preserving exclusive files and no semantic cross-review.
 
+Readiness requires full natural target utterances retaining every Japanese clause, condition and detail. Structural nonempty/source checks alone do not establish this. Workers author and self-compare one or two scenarios at a time in scratch, then publish the completed locale file; never shorten content to fit a batch or context. All future markers include `fullUtteranceFidelityChecked:true`. `DIALOGUE_TRANSLATION_AUTHOR_HOLDS.json` records author-withdrawn files and own corrections; held batches are excluded from completion counts until their authors re-confirm full fidelity with matching final hashes. Source-bound technical coverage remains reported separately. AI-unreviewed means no native/domain certification, never permission for summaries or fragments.
+
 Workers read canonical Japanese and their own translations only. Coordinator integration/coverage/source-binding checks are technical, not semantic cross-review. All new material remains AI-unreviewed; no native/domain approval is implied.
 
 ## Integration and durability
