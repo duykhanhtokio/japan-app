@@ -1,3 +1,11 @@
+## Giếng và hạ nước ngầm — 2026-10-18
+
+Bổ sung3đoạn Nhật vào C010p4–p5 và C017p5,36bản dịch trực tiếp cho12locale. Hai bài r1→r2, chỉ 土木;1号/2号 dùng chung dữ liệu và giữ tiến độ riêng. Giữ nguyên toàn bộ đoạn/bản dịch cũ, lịch sửr1; bản mới yêu cầu hoàn thành chủ động. Nội dung mới: đọc kết quả điện kiểm với địa tầng/thử bơm và ảnh hưởng của muối; chọn sỏi chèn theo hạt tầng chứa nước/khe lọc; phân biệt cỡ hạt với độ sâu chèn; thời gian hạ nước và điều kiện hồi phục. Bài chung061cluster3p1/p3 đã đủ nguyên tắc chọn công pháp nên dùng lại, không soạn trùng. Khoảng2–7m ở nguồn không được coi là ranh giới chung chuyển sang deepwell; đối chiếu MLIT có phân biệt độ nâng hút, độ sâu lắp và nhiều tầng wellpoint.
+
+Số bài224/163/152 và71mục bổ sung giữ nguyên; phần bổ sung hiện177đoạn Nhật. Chỉ6hashtrích bài cập nhật, câu hỏi/đáp án/thứ tự/revisionđề giữ nguyên. Kiểm bảo toàn input đạt;host240lượt cho7bài bổ sung qua cảhai cấp/12locale, trong đó48lượt cho C010/C017;2124lượt hiển thị bản dịch bổ sung. Chromium153/RNWeb đạt2tuyến/10cặp đoạn Nhật–Việt/2nâng phiên bản;9ảnh phone/tablet/landscape đã xem, lưuWebP lossless. JLPT khóa10/10đạt. Đây là component/web có adapter, chưa phải Expo/native.
+
+Đọc REVERSE_GROUNDWATER_GAPS_2026-10-18.json:7ý cóID/hash/phạm vi và căn cứ nguồn. Hồ sơ35ý chọn trước giữ nguyênID/ý, chỉ cập nhật hashhai bài đã đổi. Hai nhóm nguồn12và13–14 được ghi xử lý có giới hạn; không đóng toàn trang/toàn nguồn. Còn hướng thấp/cao của điện trở theo tầng cần căn cứ riêng; trình tự khoan/lắp đầy đủ, nhãn hình/nhận diện thiết bị và8nhóm nguồn khác tiếp tục mở. Bước tiếp theo: rà đầy đủ chuỗi thiết bị/lớp mặt đường6d14–15 và các điều kiện máy15–17, đối chiếu bài thực tế trước khi thêm. Chưa xác nhận hoàn tất toàn bộ yêu cầu đối chiếu nguồn.
+
 # Đối chiếu và dùng lại kiến thức theo đoạn — 2026-10-17
 
 Điểm tiếp nối mới nhất —2026-10-18: toàn bộ224bài đã có hồ sơ đối chiếu có giới hạn (132cũ+92mới). Không còn bài thiếu hồ sơ nhóm tương đương; chưa hoàn tất rà ngược từng ý/bảng/hình/điều kiện nguồn. Đã bổ sung3đoạn phân biệt loại tai nạn vào365/366,36bản dịch và giữ lịch sửr1/r1theo phạm vi. Không được đổi mốc này thành chứng nhận đủ mọi kiến thức.

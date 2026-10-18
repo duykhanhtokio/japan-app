@@ -11,6 +11,7 @@ const visualOnly = process.env.KENSETSU_BROWSER_VISUAL_ONLY === '1';
 const inlineOnly = process.env.KENSETSU_BROWSER_INLINE_REUSE_ONLY === '1';
 const twoGoOnly = process.env.KENSETSU_BROWSER_TWO_GO_ONLY === '1';
 const readerOnly = process.env.KENSETSU_BROWSER_READER_ONLY === '1';
+const captureParagraphIds = (process.env.KENSETSU_BROWSER_CAPTURE_PARAGRAPH_IDS || '').split(',').filter(Boolean);
 for (const [key, value] of Object.entries({modules, webModules, executablePath, out}))
   if (!value) throw Error('Missing QA input: ' + key);
 const esbuild = require(require.resolve('esbuild', {paths: [modules]}));
@@ -128,6 +129,15 @@ async function main() {
         for(const cluster of lesson.clusters)for(const paragraph of cluster.paragraphs){assert(text.includes(paragraph.ja),paragraph.id);japaneseParagraphs++}
         await page.getByTestId('kensetsu-translation').click();
         for(const cluster of lesson.clusters)for(const paragraph of cluster.paragraphs){const actual=await page.getByTestId('kensetsu-translation-'+paragraph.id).innerText();assert.equal(actual,paragraph.translations.vi);translatedParagraphs++}
+        for(const paragraph of lesson.clusters.flatMap(c=>c.paragraphs).filter(p=>captureParagraphIds.includes(p.id))){
+          for(const [width,height,label] of [[320,568,'phone'],[768,1024,'tablet'],[932,430,'landscape']]){
+            await page.setViewportSize({width,height});
+            await page.getByText(paragraph.ja,{exact:true}).scrollIntoViewIfNeeded();
+            assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1));
+            const file='paragraph-'+paragraph.id+'-'+label+'.png';
+            await page.screenshot({path:path.join(out,file)});readerScreenshots.push(file);
+          }
+        }
         if(['kensetsu-building-practical-session-011','kensetsu-building-practical-session-024','kensetsu-building-practical-session-026','kensetsu-building-practical-session-029','kensetsu-building-practical-session-035'].includes(sessionId)&&field==='building'||sessionId==='kensetsu-common-session-175'&&field==='utilities'||['024','035','365','366','263','295','296','303','307','308','312','337'].some(n=>sessionId==='kensetsu-common-session-'+n)&&(field==='building'||(sessionId==='kensetsu-common-session-312'&&field==='utilities')))for(const [width,height,label]of [[320,568,'phone'],[768,1024,'tablet'],[932,430,'landscape']]){
           await page.setViewportSize({width,height});const p=sessionId==='kensetsu-building-practical-session-011'?lesson.clusters[0].paragraphs.find(p=>p.id.endsWith('-p6')):sessionId==='kensetsu-building-practical-session-026'?lesson.clusters[0].paragraphs.find(p=>p.id.endsWith('-p5')):sessionId.endsWith('024')?lesson.clusters[0].paragraphs.find(p=>p.id.endsWith('-p4')):sessionId.endsWith('035')?lesson.clusters[0].paragraphs.find(p=>p.id.endsWith('-p4')):sessionId.endsWith('365')?lesson.clusters[2].paragraphs.find(p=>p.id.endsWith('-p3')):sessionId.endsWith('366')?lesson.clusters[2].paragraphs.find(p=>p.id.endsWith('-p3')):sessionId.endsWith('175')?lesson.clusters[2].paragraphs.find(p=>p.id.endsWith('-p4')):sessionId.endsWith('296')?lesson.clusters[2].paragraphs[0]:lesson.clusters.flatMap(c=>c.paragraphs).find(p=>sessionId.endsWith('337')?p.id==='kensetsu-common-session-337-cluster-2-p3':p.id.endsWith('-p3'));assert(p);await page.getByText(p.ja,{exact:true}).scrollIntoViewIfNeeded();assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1));const file='source-gap-'+sessionId.split('-').pop()+'-'+label+'.png';await page.screenshot({path:path.join(out,file)});readerScreenshots.push(file);
         }
