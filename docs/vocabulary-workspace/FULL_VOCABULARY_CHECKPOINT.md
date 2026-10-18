@@ -1,6 +1,6 @@
 # Vocabulary localization and practical examples — active checkpoint
 
-Current parallel snapshot: 4,343/8,350 Japanese examples, each with 12 explicit translations; 4,007 still missing. Six independent authoring groups, no cross translation. Mechanically validated AI content; native review remains false.
+Current parallel snapshot: 4,438/8,350 Japanese examples, each with 12 explicit translations; 3,912 still missing. Six independent authoring groups, no cross translation. Mechanically validated AI content; native review remains false.
 Publisher requirement, updated 2026-10-18: all 8,350 stable vocabulary IDs across N5–N1 must each have one practical Japanese example and an explicit translation in all 12 other app languages. The previous 298-example-only scope was insufficient. The 311 additional N5 calendar terms remain covered for meanings. Japanese uses the corrected Japanese headword and source example; the other 12 locales require explicit meanings and example translations. No missing-string or English fallback counts as a completed translation.
 
 All 12 translation locales are complete: en, vi, id, zh-CN, zh-TW, hi, bn, ne, my, th, km and tl — each 8350 meanings / 298 existing example translations / 311 additional N5 meanings. Japanese retains the corrected source headwords/readings and examples. Runtime integration and full data/browser QA passed for all 13 app languages. Original IDs/source bytes/progress keys remain unchanged. Native review and physical-device/production Expo validation are not claimed.
@@ -39,3 +39,5 @@ Parallel source repair VOC2239: display 脉 normalized to standard Japanese 脈 
 Source-bound multilingual meaning repairs: the owners independently corrected VOC3410 弁償金 from ransom/redemption to compensation payment, and expanded VOC3203 一段 beyond paragraph to include step/stage. All 12 glosses override prior meanings only for matching word/reading; original bundles are preserved. Authorship provenance is in parallel-meaning-repairs.json; native review remains false.
 
 The owner of VOC3993 賜る added a source-bound 12-locale gloss repair covering humble receiving and honorific bestowing; the practical example uses the receiving sense. No cross-worker translation or native-review claim.
+
+VOC4472 source spelling normalized 灼く→焼く for the supplied fish-grilling sense (やく); source binding updated, raw canonical unchanged. The independently authored example uses natural kana やきました.
