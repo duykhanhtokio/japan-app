@@ -1,6 +1,6 @@
 # Vocabulary localization and practical examples — active checkpoint
 
-Current parallel snapshot: 6,258/8,350 Japanese examples, each with 12 explicit translations; 2,092 still missing. Six independent authoring groups, no cross translation. Mechanically validated AI content; native review remains false.
+Current parallel snapshot: 6,548/8,350 Japanese examples, each with 12 explicit translations; 1,802 still missing. Six independent authoring groups, no cross translation. Mechanically validated AI content; native review remains false.
 Publisher requirement, updated 2026-10-18: all 8,350 stable vocabulary IDs across N5–N1 must each have one practical Japanese example and an explicit translation in all 12 other app languages. The previous 298-example-only scope was insufficient. The 311 additional N5 calendar terms remain covered for meanings. Japanese uses the corrected Japanese headword and source example; the other 12 locales require explicit meanings and example translations. No missing-string or English fallback counts as a completed translation.
 
 All 12 translation locales are complete: en, vi, id, zh-CN, zh-TW, hi, bn, ne, my, th, km and tl — each 8350 meanings / 298 existing example translations / 311 additional N5 meanings. Japanese retains the corrected source headwords/readings and examples. Runtime integration and full data/browser QA passed for all 13 app languages. Original IDs/source bytes/progress keys remain unchanged. Native review and physical-device/production Expo validation are not claimed.
