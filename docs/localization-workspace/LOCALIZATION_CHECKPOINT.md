@@ -36,8 +36,8 @@ Values below mean usable exact-locale presence with source-revision guards where
 | Construction review tests | 1,134 unique runtime questions; 11,340 displayed question/choice/explanation/rationale units currently have no supporting translations. |
 | Kaigo active Japanese masters | 6,242 heading/paragraph/caption units and 176 lesson metadata records pass all 12 locales and current source revisions. |
 | Kaigo tests | 687 weekly questions plus 360 mock questions across 12 forms pass their full-question validation in all 12 locales. |
-| Local conversations | 7,128 effective scenarios. 211 have technical source-bound sentence/task coverage in all12 locales; 211 are author-ready after excluding pending own editorial holds. See DIALOGUE_TRANSLATION_PROGRESS.json. |
-| Authored conversation tasks | 211 author-ready scenarios have all5 Japanese-source-bound tasks in all12 locales; 0 indexed scenarios remain under their authors’ editorial holds. Native/domain review is unconfirmed. |
+| Local conversations | 7,128 effective scenarios. 221 have technical source-bound sentence/task coverage in all12 locales; 221 are author-ready after excluding pending own editorial holds. See DIALOGUE_TRANSLATION_PROGRESS.json. |
+| Authored conversation tasks | 221 author-ready scenarios have all5 Japanese-source-bound tasks in all12 locales; 0 indexed scenarios remain under their authors’ editorial holds. Native/domain review is unconfirmed. |
 | Older work conversations | Some English/Vietnamese and a few other translations exist, but the 2-scenario / 16-turn bank is not complete across languages. |
 | Registered occupation/operation names | The ACTIVE runtime adapter now resolves all278 identifiers in all12 supporting languages. New locale entries are accepted only when their Japanese source matches the active occupation name. |
 | Older lessons/modules/categories/tags | All71 source fields across the audited older lesson/module/industry/category/tag/mission/dialogue records now have all12 supporting translations.16 profile occupation/communication titles also have all12. Unknown or changed source text remains pending rather than silently using Vietnamese. |
