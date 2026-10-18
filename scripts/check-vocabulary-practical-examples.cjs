@@ -22,6 +22,9 @@ const dep=n=>require(require.resolve(n,{paths:[process.env.TOKUTEI_QA_MODULES||r
    const text=item.translations[language];assert(text?.trim(),id+language);assert(text.length<=1000,id+' possible decoding loop '+language);
    if(language!=='en')assert.notEqual(text,item.translations.en,id+' untranslated English '+language);
    if(scripts[language])assert(scripts[language].test(text),id+' target script '+language);
+   if(/^direct-\d+\.json$/.test(item.sourceBatch)&&!['zh-CN','zh-TW'].includes(language)){
+    assert(!/[\u3040-\u30ff\u3400-\u9fff]/u.test(text),id+' leftover Japanese in direct translation '+language);
+   }
    assert.equal(getTranslation(word,language),text,id+' runtime '+language);
   }
  }
