@@ -1,0 +1,128 @@
+{
+  "version": 2,
+  "canonicalScenarios": 7128,
+  "supportingLocales": [
+    "en",
+    "vi",
+    "id",
+    "tl",
+    "zh-CN",
+    "zh-TW",
+    "hi",
+    "bn",
+    "ne",
+    "my",
+    "th",
+    "km"
+  ],
+  "phase1": {
+    "lastBatch": "029",
+    "workers": [
+      {
+        "owner": "dialogue_en_vi",
+        "exclusiveLocales": [
+          "en",
+          "vi"
+        ]
+      },
+      {
+        "owner": "dialogue_id_tl",
+        "exclusiveLocales": [
+          "id",
+          "tl"
+        ]
+      },
+      {
+        "owner": "dialogue_zh",
+        "exclusiveLocales": [
+          "zh-CN",
+          "zh-TW"
+        ]
+      },
+      {
+        "owner": "dialogue_hi_bn",
+        "exclusiveLocales": [
+          "hi",
+          "bn"
+        ]
+      },
+      {
+        "owner": "dialogue_ne_my",
+        "exclusiveLocales": [
+          "ne",
+          "my"
+        ]
+      },
+      {
+        "owner": "dialogue_th_km",
+        "exclusiveLocales": [
+          "th",
+          "km"
+        ]
+      }
+    ]
+  },
+  "phase2": {
+    "firstBatch": "030",
+    "stride": 6,
+    "rule": "For batch >=030, owner slot is (integer(batch)-30)%6. That owner alone translates all12 supporting locales for that batch.",
+    "workers": [
+      {
+        "owner": "dialogue_en_vi",
+        "slot": 0,
+        "firstBatch": "030",
+        "lastBatch": "708",
+        "exclusiveLocales": "all_supporting"
+      },
+      {
+        "owner": "dialogue_id_tl",
+        "slot": 1,
+        "firstBatch": "031",
+        "lastBatch": "709",
+        "exclusiveLocales": "all_supporting"
+      },
+      {
+        "owner": "dialogue_zh",
+        "slot": 2,
+        "firstBatch": "032",
+        "lastBatch": "710",
+        "exclusiveLocales": "all_supporting"
+      },
+      {
+        "owner": "dialogue_hi_bn",
+        "slot": 3,
+        "firstBatch": "033",
+        "lastBatch": "711",
+        "exclusiveLocales": "all_supporting"
+      },
+      {
+        "owner": "dialogue_ne_my",
+        "slot": 4,
+        "firstBatch": "034",
+        "lastBatch": "712",
+        "exclusiveLocales": "all_supporting"
+      },
+      {
+        "owner": "dialogue_th_km",
+        "slot": 5,
+        "firstBatch": "035",
+        "lastBatch": "713",
+        "exclusiveLocales": "all_supporting"
+      }
+    ]
+  },
+  "semanticCrossReview": false,
+  "readyMarker": {
+    "relativeScratchDirectory": "dialogue-ready/LOCALE/BATCH.json",
+    "requiredFields": [
+      "owner",
+      "language",
+      "batch",
+      "path",
+      "sha256"
+    ],
+    "writeAfter": "Final own-language editorial/source QA and atomic final locale-file publication",
+    "immutableAfterMarker": true,
+    "coordinatorGate": "Only stage new files whose explicit owner-ready SHA256 marker matches their exact bytes. Existing committed clean files remain trusted; preserve and report any mismatch."
+  }
+}
