@@ -1,6 +1,6 @@
-# Full vocabulary localization — active checkpoint
+# Vocabulary localization and practical examples — active checkpoint
 
-Scope: all 8,350 existing stable vocabulary IDs across N5–N1, all 298 existing Japanese example records, all 13 app languages, plus 311 additional N5 calendar terms. Japanese uses the corrected Japanese headword and source example; the other 12 locales require explicit meanings and example translations. No missing-string or English fallback counts as a completed translation.
+Publisher requirement, updated 2026-10-18: all 8,350 stable vocabulary IDs across N5–N1 must each have one practical Japanese example and an explicit translation in all 12 other app languages. The previous 298-example-only scope was insufficient. The 311 additional N5 calendar terms remain covered for meanings. Japanese uses the corrected Japanese headword and source example; the other 12 locales require explicit meanings and example translations. No missing-string or English fallback counts as a completed translation.
 
 All 12 translation locales are complete: en, vi, id, zh-CN, zh-TW, hi, bn, ne, my, th, km and tl — each 8350 meanings / 298 existing example translations / 311 additional N5 meanings. Japanese retains the corrected source headwords/readings and examples. Runtime integration and full data/browser QA passed for all 13 app languages. Original IDs/source bytes/progress keys remain unchanged. Native review and physical-device/production Expo validation are not claimed.
 
@@ -8,8 +8,17 @@ The original vocabulary.json stays byte-preserved. vocabulary-source-repairs.jso
 
 English definitions for 1,704 formerly empty entries use the repository's JMdict SQLite source (SHA256 36918a97b86f41029b2a0b5c1eefce0a354471cf82fd3a9cf3088cf821563bcb), exact form/reading matches and explicit ambiguous-entry selections. Source: JMdict, Electronic Dictionary Research and Development Group, https://www.edrdg.org/jmdict/j_jmdict.html . These adapted dictionary definitions are under CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/ ; attribution and entry sequences are in vocabulary-english-provenance.json. EDRDG licence: https://www.edrdg.org/edrdg/licence.html . Other missing English definitions and source repairs were authored directly in this session. This attribution does not claim EDRDG endorsement.
 
-8,052 existing records have no Japanese example sentence. This localization scope translates all 298 existing examples; it does not invent or claim new example sentences for those other records.
+8,052 existing records have no Japanese example sentence. That is the immutable original-file count, not an accepted completion limit. New examples are added through vocabulary-practical-examples.json with exact ID/headword/reading/source binding. Completion is blocked until effective coverage is 8350/8350 for Japanese and each translation locale.
 
 Validation: complete per-level coverage (N5 909, N4 804, N3 1716, N2 3078, N1 1843), exact required IDs, legacy 100/10 translations preserved per new locale, source guards and unknown-item pending state, all 1796 calendar occurrences in every app language, actual list/detail/N5 screens and search, language persistence and learned-state persistence for both canonical and planned IDs. Chromium captured 24 screenshots at 320×568, 768×1024 and 932×430, with six visually inspected contact sheets. Royal artwork/navigation/storage use explicit browser adapters. The approved exam UI lock passed 10/10; no locked file changed. Focused AI semantic QA reviewed 216 critical values in 12 locales without a high-confidence correction.
 
 Reports: localization-manifest.json, localization-qa-2026-10-18.json, browser-qa-2026-10-18.json, semantic-review-2026-10-18.json, and qa-evidence/full-manifest.json. The final integration must be committed, pushed and remote-verified before reporting completion.
+
+
+## Practical-example completion gate
+
+330 new Japanese/English/Vietnamese examples have been directly authored in practical-examples/batch-001.tsv batch-002.tsv and batch-003.tsv. Other languages are translated offline, not by a runtime service; every entry needs all 12 translations before integration. This is ongoing work, not all-example completion. The authoritative current counts and missing IDs are practical-examples/coverage.json.
+
+Run `node scripts/check-vocabulary-practical-examples.cjs` for the strict completion gate. `--allow-incomplete` is for checkpoint validation only and continues to report IN_PROGRESS; it cannot certify completion. The meanings-only regression now reports allMeaningsComplete separately from allExamplesComplete. Existing IDs, progress and original vocabulary.json remain unchanged.
+
+Current verified practical-example unit: 150 additional fully translated records, 448 effective examples per language, 7,902 still missing; 180 further directly authored source rows are not counted as completed translations. Actual list/detail/calendar browser checks passed across 13 app languages including new ID VOC0302; phone contact-sheet evidence is practical-examples/phone-example-qa.webp. This remains an incomplete 8,350-example task.

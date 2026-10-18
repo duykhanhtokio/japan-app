@@ -5,6 +5,7 @@ import copyJson from './generated/vocabulary-ui-localizations.json';
 import sourceJson from './generated/vocabulary-localization-source.json';
 import repairsJson from './generated/vocabulary-source-repairs.json';
 import canonicalJson from './generated/vocabulary.json';
+import practicalExamplesJson from './generated/vocabulary-practical-examples.json';
 import plannedSource from './generated/vocabulary-planned-source.json';
 import plannedBindings from './generated/vocabulary-planned-bindings.json';
 import en from './generated/vocabulary-localizations/en.json';
@@ -39,6 +40,22 @@ type TranslationBundle = { locale: string; meanings: Record<string, string>; exa
 const bundles: Partial<Record<AppLanguageCode, TranslationBundle>> = { en, vi, id, 'zh-CN': zhCN, 'zh-TW': zhTW, hi, bn, ne, my, th, km, tl };
 const source = sourceJson.canonical as Record<string, { word: string; reading: string; exampleJa?: string }>;
 const repairs = repairsJson as Record<string, { originalWord: string; originalReading: string; originalExampleJa?: string; word: string; reading: string; meaningEn?: string; meaningVi?: string; exampleJa?: string; exampleVi?: string }>;
+type PracticalExample = {
+    word: string;
+    reading: string;
+    sourceJa: string;
+    translations: Record<Exclude<AppLanguageCode, 'ja'>, string>;
+};
+const practicalExamples = practicalExamplesJson.entries as Record<string, PracticalExample>;
+
+function withPracticalExample<T extends VocabularyText>(item: T): T {
+    const example = practicalExamples[item.id];
+    // A changed headword, reading or source sentence must never inherit an old translation.
+    if (!example || example.word !== item.word || example.reading !== item.reading
+        || (nonempty(item.exampleJa) && item.exampleJa !== example.sourceJa)) return item;
+    return { ...item, exampleJa: example.sourceJa, exampleVi: example.translations.vi,
+        exampleTranslations: { ...item.exampleTranslations, ...example.translations } };
+}
 
 export function getVocabularyCopy(language: AppLanguageCode) {
     return copyJson[language];
@@ -63,21 +80,21 @@ export function localizeVocabulary<T extends VocabularyText>(item: T): T {
             if (nonempty(bundle.meanings[item.id])) meaningTranslations[language] = bundle.meanings[item.id];
             if (binding.exampleJa === corrected.exampleJa && nonempty(bundle.examples[item.id])) exampleTranslations[language] = bundle.examples[item.id];
         }
-        return { ...corrected, meaningEn: meaningTranslations.en ?? corrected.meaningEn, meaningVi: meaningTranslations.vi ?? corrected.meaningVi, meaningTranslations, exampleTranslations };
+        return withPracticalExample({ ...corrected, meaningEn: meaningTranslations.en ?? corrected.meaningEn, meaningVi: meaningTranslations.vi ?? corrected.meaningVi, meaningTranslations, exampleTranslations });
     }
     const meaning = meaningBundles[item.id];
     const example = exampleBundles[item.id];
     const meaningTranslations = meaning?.word === item.word && meaning.reading === item.reading
         ? { ...item.meaningTranslations, ...meaning.translations }
         : item.meaningTranslations;
-    return {
+    return withPracticalExample({
         ...item,
         meaningVi: nonempty(meaningTranslations?.vi) ?? item.meaningVi,
         meaningTranslations,
         exampleTranslations: example?.sourceJa === item.exampleJa
             ? { ...item.exampleTranslations, ...example.translations }
             : item.exampleTranslations,
-    };
+    });
 }
 
 // Explicitly reviewed word/reading aliases avoid treating homophones as the same word.

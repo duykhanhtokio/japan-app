@@ -1,0 +1,32 @@
+{
+  "requirement": "One practical Japanese example for each canonical vocabulary ID, translated into every other app language",
+  "requiredVocabularyIds": 8350,
+  "requiredTranslationLocales": [
+    "en",
+    "vi",
+    "id",
+    "zh-CN",
+    "zh-TW",
+    "hi",
+    "bn",
+    "ne",
+    "my",
+    "th",
+    "km",
+    "tl"
+  ],
+  "sourceLanguage": "ja",
+  "requiredContext": "Natural, concrete everyday life or work situations; the sentence must demonstrate the intended sense of the word",
+  "preserveExistingExamples": true,
+  "blankOrFallbackCountsAsComplete": false,
+  "untranslatedEnglishCountsAsComplete": false,
+  "completionGate": "node scripts/check-vocabulary-practical-examples.cjs",
+  "nativeReviewed": false,
+  "offlineTranslationModel": {
+    "repo": "Nextcloud-AI/madlad400-3b-mt-ct2-int8",
+    "revision": "aa32bbdeba7880eff2096ec044cb155a340a9400",
+    "license": "Apache-2.0",
+    "runtimeDependency": false,
+    "quality": "machine-generated, requires editorial review; script/count checks do not certify semantic or native quality"
+  }
+}
