@@ -2,7 +2,7 @@
 
 Scope: all 8,350 existing stable vocabulary IDs across N5–N1, all 298 existing Japanese example records, all 13 app languages, plus 311 additional N5 calendar terms. Japanese uses the corrected Japanese headword and source example; the other 12 locales require explicit meanings and example translations. No missing-string or English fallback counts as a completed translation.
 
-Current completed data units: Indonesian 8350/298/311; Vietnamese 8350/298/311; English 8350/298/311; Simplified Chinese 8350/298/311; Traditional Chinese 8350/298/311; Bengali 8350/298/311. Other AI language workers continue independently. Runtime integration and whole-scope QA remain unfinished. The files are AI-authored and not native-reviewed. This is not an all-language completion claim.
+Current completed data units: English, Vietnamese, Indonesian, Simplified Chinese, Traditional Chinese, Hindi, Bengali, Myanmar, Khmer and Tagalog — each 8350/298/311. Nepali and Thai continue in disjoint authoring ranges. Runtime integration and whole-scope QA remain unfinished. The files are AI-authored and not native-reviewed. This is not an all-language completion claim.
 
 The original vocabulary.json stays byte-preserved. vocabulary-source-repairs.json records original spelling/reading and explicit editorial corrections, applied by an original-source guard. All original IDs and stored progress keys remain stable. The 311 N5 additions also fix unsafe homophone matching such as はい/杯, 乾杯/完敗 and こと/琴. N5 calendar content uses explicit reviewed aliases; earlier progress-ID assignment is preserved.
 
