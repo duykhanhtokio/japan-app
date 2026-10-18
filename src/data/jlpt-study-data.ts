@@ -4,7 +4,8 @@ import grammarJson from '@/data/generated/grammar.json';
 import grammarExampleLocalizationsJson from '@/data/generated/grammar-example-localizations.json';
 import grammarMeaningTranslationsJson from '@/data/generated/grammar-meaning-translations.json';
 import vocabularyJson from '@/data/generated/vocabulary.json';
-import { jlptGrammarSupplements, replacedGrammarIds } from '@/data/jlpt-grammar-supplements';
+import grammarBindingsJson from '@/data/generated/grammar-source-bindings.json';
+import { getGrammarCopy } from '@/i18n/grammar-copy';
 import type { AppLanguageCode } from '@/i18n/languages';
 
 export type JlptLevel = 'N5' | 'N4' | 'N3' | 'N2' | 'N1';
@@ -57,7 +58,7 @@ export function getGrammarMeaning(
     if (language === 'vi') return item.meaningVi;
     const localizedMeaning = item.meaningTranslations?.[language];
     if (!localizedMeaning) {
-        throw new Error(`Missing ${language} grammar explanation for ${item.id}`);
+        return getGrammarCopy(language).pending;
     }
     return localizedMeaning;
 }
@@ -68,7 +69,7 @@ export function getGrammarExampleTranslation(
 ) {
     if (language === 'ja') return undefined;
     if (language === 'vi') return item.exampleVi;
-    return item.exampleTranslations?.[language];
+    return item.exampleTranslations?.[language] ?? getGrammarCopy(language).pending;
 }
 
 export type GeneratedScenario = {
@@ -103,15 +104,18 @@ const grammarExampleLocalizations = grammarExampleLocalizationsJson as Record<
     GrammarExampleLocalization
 >;
 
-export const generatedGrammar = [
-    ...(grammarJson as GeneratedGrammar[]).filter(item=>!replacedGrammarIds.has(item.id)),
-    ...jlptGrammarSupplements,
-].map((item) => ({
-    ...item,
-    meaningTranslations: grammarMeaningTranslations[item.id],
-    exampleReading: grammarExampleLocalizations[item.id]?.reading,
-    exampleTranslations: grammarExampleLocalizations[item.id]?.translations,
-})) as GeneratedGrammar[];
+const grammarBindings = grammarBindingsJson as Record<string, {name:string; meaningVi:string; pattern:string; exampleJa:string}>;
+export const generatedGrammar = (grammarJson as GeneratedGrammar[]).map((item) => {
+    const binding = grammarBindings[item.id];
+    const meaningMatches = binding?.name === item.name && binding.meaningVi === item.meaningVi && binding.pattern === item.pattern;
+    const exampleMatches = binding?.exampleJa === item.exampleJa;
+    return {
+        ...item,
+        meaningTranslations: meaningMatches ? grammarMeaningTranslations[item.id] : {},
+        exampleReading: exampleMatches ? grammarExampleLocalizations[item.id]?.reading : undefined,
+        exampleTranslations: exampleMatches ? grammarExampleLocalizations[item.id]?.translations : {},
+    };
+}) as GeneratedGrammar[];
 
 export const hiraganaRows = [
     ['あ', 'い', 'う', 'え', 'お'], ['か', 'き', 'く', 'け', 'こ'],

@@ -1,6 +1,6 @@
+import GrammarCatalog from '@/components/jlpt/GrammarCatalog';
 import { replacePrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
-import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 import JlptStudyBackground from '@/components/jlpt/JlptStudyBackground';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useMemo, useState } from 'react';
@@ -42,7 +42,7 @@ export default function JlptSectionScreen() {
             <Text style={styles.help}>Mỗi ô gồm chữ Nhật, Romaji và nút nghe phát âm.</Text>
             {rows.map((row,rowIndex)=><View key={rowIndex} style={styles.kanaRow}>{row.map((character)=>{const id=`kana:${character}`;const learned=learnedIds.includes(id);return <View key={character} style={[styles.kanaCell,learned&&styles.learned]}><Pressable style={styles.kanaMain} onPress={()=>void toggle(id)}><Text style={styles.kana}>{character}</Text><Text style={styles.romaji}>{getKanaRomaji(character)}</Text>{learned&&<Text style={styles.tick}>✓</Text>}</Pressable><Pressable style={styles.voice} onPress={()=>speak(character)}><Text>🔊</Text></Pressable></View>;})}</View>)}</>;
     }
-    function renderGrammar(){return <><Text style={styles.help}>{grammar.length} mẫu • tự động tải khi cuộn</Text>{grammar.slice(0,limit).map((item)=>{const learned=learnedIds.includes(item.id);return <RoyalPaperPanel key={item.id} style={styles.card}><View style={styles.cardTop}><Text style={styles.itemTitle}>{item.name}</Text><Pressable style={[styles.mark,learned&&styles.marked]} onPress={()=>void toggle(item.id)}><Text>{learned?'✓ Đã học':'Đánh dấu'}</Text></Pressable></View><Text style={styles.muted}>{item.reading}</Text><Text style={styles.meaning}>{item.meaningVi}</Text>{!!item.pattern&&<Text style={styles.detail}>Cấu trúc: {item.pattern}</Text>}{!!item.formation&&<Text style={styles.detail}>Cách tạo: {item.formation}</Text>}{!!item.exampleJa&&<View style={styles.example}><Text style={styles.exampleJa}>{item.exampleJa}</Text><Text>{item.exampleVi}</Text></View>}</RoyalPaperPanel>;})}{limit<grammar.length&&<Text style={styles.loading}>Đang tự tải thêm…</Text>}</>}
+    function renderGrammar() { return <GrammarCatalog grammar={grammar} learnedIds={learnedIds} limit={limit} onToggle={(id) => void toggle(id)} />; }
     if (section === 'test') {
       // Defer exam dataset initialization until the test branch is opened.
       // eslint-disable-next-line @typescript-eslint/no-require-imports
