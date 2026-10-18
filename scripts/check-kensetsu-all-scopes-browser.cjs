@@ -10,6 +10,8 @@ const out = process.env.KENSETSU_QA_OUTPUT;
 const visualOnly = process.env.KENSETSU_BROWSER_VISUAL_ONLY === '1';
 const inlineOnly = process.env.KENSETSU_BROWSER_INLINE_REUSE_ONLY === '1';
 const twoGoOnly = process.env.KENSETSU_BROWSER_TWO_GO_ONLY === '1';
+const foremanImagesOnly = process.env.KENSETSU_BROWSER_FOREMAN_IMAGES_ONLY === '1';
+const foremanOnly = process.env.KENSETSU_BROWSER_FOREMAN_ONLY === '1';
 const readerOnly = process.env.KENSETSU_BROWSER_READER_ONLY === '1';
 const captureParagraphIds = (process.env.KENSETSU_BROWSER_CAPTURE_PARAGRAPH_IDS || '').split(',').filter(Boolean);
 for (const [key, value] of Object.entries({modules, webModules, executablePath, out}))
@@ -33,6 +35,8 @@ async function build() {
     b.onResolve({filter:/^@react-native-async-storage\/async-storage$/},()=>({path:'storage',namespace:'adapter'}));
     b.onResolve({filter:/RoyalPageBackground|RoyalPanels|RoyalSurface/},()=>({path:'royal',namespace:'adapter'}));
     b.onLoad({filter:/.*/,namespace:'adapter'},a=>({contents:adapters[a.path],loader:'jsx',resolveDir:root}));
+    b.onResolve({filter:/assets\/kensetsu\/foreman\/[^/]+\.png$/},a=>({path:path.resolve(a.resolveDir,a.path),namespace:'foreman-image'}));
+    b.onLoad({filter:/.*/,namespace:'foreman-image'},a=>({contents:'module.exports = {uri:'+JSON.stringify('data:image/png;base64,'+fs.readFileSync(a.path).toString('base64'))+',width:1200,height:720};',loader:'js'}));
     b.onResolve({filter:/\.(png|webp|jpe?g)$/},()=>({path:'image',namespace:'asset'}));
     b.onLoad({filter:/.*/,namespace:'asset'},()=>({contents:'export default "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=";',loader:'js'}));
     b.onResolve({filter:/^@\//},a=>{const p=path.join(root,'src',a.path.slice(2));for(const ext of ['.tsx','.ts','.json','/index.ts'])if(fs.existsSync(p+ext))return {path:p+ext};throw Error(p)});
@@ -53,6 +57,55 @@ async function main() {
     const saved=()=>page.waitForFunction(()=>{const n=document.querySelector('[data-testid="kensetsu-test-save-status"]');return n&&!n.textContent.includes('保存中')});
     const open=async n=>{await id('exam-'+String(n).padStart(2,'0')).click();await id('question').waitFor()};
     const back=async()=>{await saved();await page.getByRole('button',{name:'Back',exact:true}).click();await id('catalog').waitFor()};
+    if(foremanImagesOnly){
+      let imageViews=0;const screenshots=[];
+      for(const n of [10,14,16,24])for(const [width,height,label]of [[320,568,'phone'],[768,1024,'tablet'],[932,430,'landscape']]){
+        await page.setViewportSize({width,height});await page.goto(base+'/?reader=1&language=vi&learner=foreman-visual-'+n+'-'+label);
+        await page.getByTestId('kensetsu-level-2').click();await page.getByTestId('kensetsu-field-building').click();await page.getByTestId('kensetsu-mode-foreman-study').click();await page.getByTestId('kensetsu-week-'+Math.ceil(n/7)).click();await page.getByTestId('kensetsu-day-'+n).click();
+        const figure=page.getByTestId('kensetsu-study-image');await figure.scrollIntoViewIfNeeded();await figure.click();await page.getByTestId('kensetsu-image-viewer').waitFor();await page.waitForTimeout(400); // RN Web modal fade must settle before visual evidence.
+        const img=page.getByTestId('kensetsu-image-viewer').locator('img');await img.waitFor();const rect=await img.boundingBox();assert(rect&&rect.x>=0&&rect.x+rect.width<=width+1);assert(Math.abs(rect.width/rect.height-1200/720)<0.01);
+        const file='foreman-'+n+'-enlarged-'+label+'.png';await page.screenshot({path:path.join(out,file)});screenshots.push(file);await page.getByTestId('kensetsu-image-close').click();await page.waitForTimeout(400);
+        await page.getByTestId('kensetsu-translation').click();await page.addStyleTag({content:'[data-testid="kensetsu-reader"] * {font-size:28px!important;line-height:1.7!important}'});await figure.scrollIntoViewIfNeeded();assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1));
+        const large='foreman-'+n+'-large-text-'+label+'.png';await page.screenshot({path:path.join(out,large)});screenshots.push(large);await page.getByTestId('kensetsu-translation').click();assert.equal(await page.getByTestId('kensetsu-translation-kensetsu-foreman-session-'+String(n).padStart(3,'0')+'-c1-p1').count(),0);imageViews++;
+      }
+      assert.deepEqual(errors,[]);const report={date:'2026-10-18',status:'PASS_CHROMIUM_FOUR_FOREMAN_IMAGES',imageViews,screenshots,enlargeAndClose:true,aspectRatioPreserved:true,translationOpenAndClose:true,largeTextOverridePx:28,horizontalDocumentOverflow:false,runtimeErrors:errors,nativeFontScaleTested:false,nativeDeviceTested:false};fs.writeFileSync(path.join(root,'docs/ssw-workspace/kensetsu/foreman/image-browser-qa-2026-10-18.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));return;
+    }
+    if(foremanOnly){
+      let routes=0,paragraphPairs=0,exerciseTranslations=0;const screenshots=[];
+      for(const field of ['utilities','building','civil'])for(let n=1;n<=28;n++){
+        const learner='foreman-course-'+field+'-'+n,sessionId='kensetsu-foreman-session-'+String(n).padStart(3,'0');
+        await page.goto(base+'/?reader=1&language=vi&learner='+learner);
+        await page.getByTestId('kensetsu-field-'+field).waitFor();
+        await page.getByTestId('kensetsu-field-'+field).click();
+        assert.equal(await page.getByTestId('kensetsu-mode-foreman-study').count(),0,'Foreman leaked into1go');
+        await page.getByRole('button',{name:'Back',exact:true}).click();
+        await page.getByTestId('kensetsu-level-2').click();await page.getByTestId('kensetsu-field-'+field).click();
+        await page.getByTestId('kensetsu-mode-foreman-study').click();assert.equal(await page.getByTestId('kensetsu-mode-foreman-tests').count(),0);
+        await page.getByTestId('kensetsu-week-'+Math.ceil(n/7)).click();await page.getByTestId('kensetsu-day-'+n).click();
+        const reader=page.getByTestId('kensetsu-reader');await reader.waitFor();const lesson=await page.evaluate(id=>window.__lesson(id),sessionId);
+        await page.getByTestId('kensetsu-translation').click();const text=await reader.innerText();
+        for(const c of lesson.clusters){
+          for(const p of c.paragraphs){assert(text.includes(p.ja),p.id);assert.equal(await page.getByTestId('kensetsu-translation-'+p.id).innerText(),p.translations.vi);paragraphPairs++;}
+          if(c.applicationPromptTranslations?.vi){assert(text.includes(c.applicationPromptJa));assert(text.includes(c.applicationPromptTranslations.vi));exerciseTranslations++;}
+          if(c.illustration){const image=page.getByTestId('kensetsu-study-image').locator('img');await image.waitFor();await page.waitForFunction(()=>[...document.querySelectorAll('[data-testid="kensetsu-study-image"] img')].every(i=>i.complete&&i.naturalWidth===1200));}
+        }
+        const complete=page.getByTestId('kensetsu-complete');assert(!(await complete.innerText()).includes('学習済み'));
+        if(field==='building'&&[4,10,14,16,21,24,28].includes(n))for(const [width,height,label]of [[320,568,'phone'],[768,1024,'tablet'],[932,430,'landscape']]){
+          await page.setViewportSize({width,height});const paragraph=lesson.clusters.find(c=>c.illustration)?.paragraphs[0]||lesson.clusters[0].paragraphs[0];if(lesson.clusters.some(c=>c.illustration))await page.getByTestId('kensetsu-study-image').scrollIntoViewIfNeeded();else await page.getByText(paragraph.ja,{exact:true}).scrollIntoViewIfNeeded();assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1));
+          const file='foreman-'+String(n).padStart(3,'0')+'-'+label+'.png';await page.screenshot({path:path.join(out,file)});screenshots.push(file);
+        }
+        await page.setViewportSize({width:390,height:844});await reader.evaluate(e=>{e.scrollTop=e.scrollHeight;e.dispatchEvent(new Event('scroll',{bubbles:true}))});
+        await page.waitForFunction(()=>document.querySelector('[data-testid="kensetsu-complete"]')?.getAttribute('aria-disabled')!=='true');await complete.click();
+        const key=await page.evaluate(({learner,field})=>window.__completionKey(learner,'2',field),{learner,field});
+        await page.waitForFunction(({key,id})=>JSON.parse(localStorage.getItem(key)||'{}')[id]===true,{key,id:sessionId+':r1'});
+        assert.equal(await page.evaluate(({learner,field})=>localStorage.getItem(window.__completionKey(learner,'1',field)),{learner,field}),null);
+        await page.reload();await page.getByTestId('kensetsu-level-2').click();await page.getByTestId('kensetsu-field-'+field).click();await page.getByTestId('kensetsu-mode-foreman-study').click();
+        if(await page.getByTestId('kensetsu-week-'+Math.ceil(n/7)).count())await page.getByTestId('kensetsu-week-'+Math.ceil(n/7)).click();await page.getByTestId('kensetsu-day-'+n).click();assert((await page.getByTestId('kensetsu-complete').innerText()).includes('学習済み'));routes++;
+        console.log('PASS foreman '+field+'/'+n);
+      }
+      assert.deepEqual(errors,[]);const report={date:'2026-10-18',status:'PASS_CHROMIUM_FOREMAN_28_LESSONS_THREE_FIELDS',routes,paragraphPairs,exerciseTranslations,screenshots,runtimeErrors:errors,completionExplicit:true,completionSurvivesReload:true,oneGoExcluded:true,progressIsolatedFromOneGo:true,newConceptImagesEmbedded:true,browserVersion:await browser.version(),productionExpoTested:false,nativeDeviceTested:false,domainReviewed:false,nativeReviewed:false,releaseReady:false};
+      fs.writeFileSync(path.join(root,'docs/ssw-workspace/kensetsu/foreman/browser-qa-2026-10-18.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));return;
+    }
     if(inlineOnly){
       let readerRoutes=0,translatedParagraphs=0;const screenshots=[];
       await page.goto(base+'/?reader=1');await page.waitForFunction(()=>Array.isArray(window.__inlineCases));

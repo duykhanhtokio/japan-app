@@ -1,0 +1,111 @@
+{
+  "id": "kensetsu-foreman-session-010",
+  "revision": 1,
+  "status": "editorial_draft",
+  "titleJa": "前後のつながりから工程を読む",
+  "applicableLevels": [
+    "2"
+  ],
+  "applicableFields": [
+    "utilities",
+    "building",
+    "civil"
+  ],
+  "estimatedMinutes": null,
+  "dailyMinutesTarget": 30,
+  "durationMeasured": false,
+  "appIntegrationReady": false,
+  "review": {
+    "domain": false,
+    "nativeJapanese": false,
+    "rights": false,
+    "sourceSimilarity": "exact_span_22_character_screen_passed_not_rights_approval",
+    "nativeVietnamese": false
+  },
+  "sourceReferences": [
+    {
+      "sourceId": "kensetsu-2go-foreman-leader-20250115",
+      "pdfPages": [
+        49,
+        50,
+        51,
+        52,
+        53
+      ],
+      "printedPages": [
+        43,
+        44,
+        45,
+        46,
+        47
+      ]
+    }
+  ],
+  "clusters": [
+    {
+      "id": "kensetsu-foreman-session-010-c1",
+      "titleJa": "日数だけでなく、着手条件を読む",
+      "paragraphs": [
+        {
+          "id": "kensetsu-foreman-session-010-c1-p1",
+          "ja": "工程表は、作業の順序、必要な期間、進み具合、完成日に影響する仕事を共有する道具です。順行法では必要な作業を前から積み上げ、逆算法では完成日から戻って条件を検討します。逆算して日付が収まっても、人員、材料、養生や検査の条件を無視した計画は実行できません。",
+          "translations": {
+            "vi": "Bảng tiến độ dùng để chia sẻ trình tự, thời gian cần thiết, mức hoàn thành và công việc ảnh hưởng hạn cuối. Lập xuôi là cộng dần các việc từ đầu; lập ngược là từ ngày hoàn thành để xem điều kiện phía trước. Ngày tháng khớp khi tính ngược vẫn không tạo ra kế hoạch khả thi nếu bỏ qua nhân lực, vật tư, bảo dưỡng hoặc kiểm tra."
+          }
+        },
+        {
+          "id": "kensetsu-foreman-session-010-c1-p2",
+          "ja": "ガントチャートやバーチャートは、期間や進捗を時間軸で示すのに役立ちます。ネットワーク式工程表は、作業間の先行関係を読む助けになります。矢印式の図では、節目を示す点と、期間を持つ作業を区別します。点線が依存関係を示す表現もあり、それ自体に実作業の日数があるとは限りません。",
+          "translations": {
+            "vi": "Biểu đồ Gantt hoặc biểu đồ thanh giúp thể hiện thời gian, tiến độ trên trục thời gian. Sơ đồ mạng giúp đọc quan hệ phụ thuộc giữa công việc. Trong sơ đồ mũi tên, cần phân biệt điểm mốc với công việc có thời lượng. Có cách dùng nét đứt để chỉ quan hệ phụ thuộc; bản thân nét ấy không nhất thiết có số ngày thực hiện công việc."
+          }
+        }
+      ],
+      "applicationPromptJa": "期間の棒だけでは分かりにくい「この確認が終わるまで次へ進めない」という関係を説明してください。",
+      "titleTranslations": {
+        "vi": "Đọc điều kiện bắt đầu bên cạnh số ngày"
+      },
+      "applicationPromptTranslations": {
+        "vi": "Hãy giải thích quan hệ chỉ khi kiểm tra này xong mới được làm bước sau, điều khó thấy nếu chỉ nhìn thanh thời gian."
+      }
+    },
+    {
+      "id": "kensetsu-foreman-session-010-c2",
+      "titleJa": "余裕のある作業も、自由には変えない",
+      "paragraphs": [
+        {
+          "id": "kensetsu-foreman-session-010-c2-p1",
+          "ja": "【学習用の架空例】準備が2日、その後に加工4日と資材確認2日を並行し、両方が終わってから組立て3日を行うとします。人や機械を互いに妨げず使えるという仮定なら、最短は2＋4＋3＝9日です。資材確認には2日の余裕がありますが、加工側が遅れれば完成日へ影響します。実際の工事を計算だけで許可する例ではありません。",
+          "translations": {
+            "vi": "Ví dụ giả định để học: chuẩn bị 2 ngày, sau đó gia công 4 ngày và kiểm vật tư 2 ngày song song, rồi chỉ lắp ráp 3 ngày khi cả hai xong. Nếu người và máy không cản nhau, thời gian ngắn nhất là 2 + 4 + 3 = 9 ngày. Kiểm vật tư có dự trữ 2 ngày; nếu gia công chậm sẽ ảnh hưởng hạn cuối. Phép tính này không cấp phép thi công thực tế."
+          }
+        },
+        {
+          "id": "kensetsu-foreman-session-010-c2-p2",
+          "ja": "工程を変更するときは、余裕のある作業から応援を出せるか、必要な技能や資格、場所、機械の条件まで確認します。他職種の遅れ、搬入日、天候、検査予定も共有し、完成日に影響する作業を重点的に監視します。更新した日付は関係者へ伝え、古い計画のまま作業が進むのを防ぎます。",
+          "translations": {
+            "vi": "Khi đổi tiến độ, cần xem có thể điều người từ việc còn dự trữ hay không, đồng thời kiểm kỹ năng, chứng chỉ, mặt bằng và thiết bị. Chia sẻ cả chậm trễ của nghề khác, ngày giao hàng, thời tiết và lịch kiểm tra; theo dõi kỹ việc ảnh hưởng hạn cuối. Báo ngày mới cho người liên quan để tránh tiếp tục làm theo lịch cũ."
+          }
+        }
+      ],
+      "applicationPromptJa": "架空例で資材確認が5日になった場合の完成日を求め、計算以外に確認すべき条件を挙げてください。",
+      "titleTranslations": {
+        "vi": "Công việc có dự trữ thời gian vẫn không được đổi tùy ý"
+      },
+      "applicationPromptTranslations": {
+        "vi": "Trong ví dụ, nếu kiểm vật tư thành 5 ngày, hãy tính thời điểm hoàn thành và nêu những điều cần kiểm ngoài phép tính."
+      },
+      "illustration": {
+        "assetPath": "assets/kensetsu/foreman/schedule.png",
+        "captionJa": "架空の工程例。並行する二つの作業が終わってから次へ進みます。",
+        "captionTranslations": {
+          "vi": "Ví dụ tiến độ giả định: chỉ chuyển bước sau khi cả hai việc song song kết thúc."
+        }
+      }
+    }
+  ],
+  "translationStatus": "ja_vi_ai_drafts_other11locales_pending",
+  "titleTranslations": {
+    "vi": "Đọc tiến độ từ quan hệ trước và sau"
+  }
+}

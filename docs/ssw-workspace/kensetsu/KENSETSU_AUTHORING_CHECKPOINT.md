@@ -1,3 +1,7 @@
+## 職長 — ưu tiên hiện tại 2026-10-18
+
+Chủ dự án yêu cầu chuyển sang hoàn thiện 職長. Đã mở rộng từ 3 lên 28 bài Nhật–Việt, bốn tuần, 112 đoạn mỗi ngôn ngữ và bốn sơ đồ gốc. Đọc `foreman/CHECKPOINT_2026-10-18_VI.md` và `foreman/coverage-ledger.json` trước khi tiếp. Dùng chung một bộ dữ liệu ở ba nhánh 2号; giữ nguyên ba bài đầu, ID, revision và dữ liệu 学科・実技. Chưa có bộ đề 職長. Đối chiếu đầy đủ từng ý, 11 ngôn ngữ khác và duyệt chuyên môn/người bản ngữ còn chờ; không báo đã hoàn tất toàn bộ nguồn hay sẵn sàng phát hành.
+
 ## Đối chiếu224bài theo ý — 2026-10-17
 
 Chủ dự án đã cho phép đối chiếu đầy đủ. Đọc `PARAGRAPH_REUSE_CHECKPOINT_2026-10-17_VI.md` trước khi tiếp. Đã dùng lại6đoạn vào11vị trí theo nhánh bằng liên kết trực tiếp; giữ nguyên số bài224/163/152, bản dịch và lịch sử. Ma trận224bài/1.912đoạn mới là kiểm kê, toàn bộ đối chiếu từng ý còn dở. Không báo xong hoặc coi hàng pending là đã được duyệt.
@@ -6,7 +10,7 @@ Chủ dự án đã cho phép đối chiếu đầy đủ. Đọc `PARAGRAPH_REU
 
 ## Quyết định mới của chủ dự án — 2026-10-17 (ưu tiên hơn các mục lịch sử phía dưới)
 
-2号 dùng toàn bộ 学科・実技 của đúng nhánh 1号, dùng chung dữ liệu và tự nhận các sửa đổi của bài chung. Lưu tiến độ và lượt kiểm tra riêng theo cấp. 職長 soạn mới từ leader.pdf và dùng chung cả ba nhánh tại 2号. Đã tích hợp ba bài nháp Nhật–Việt đầu; phần còn lại,11ngôn ngữ,hình và duyệt chưa xong. Không chờ xong1号 mới mở2号. Không gọi ngân hàng xác nhận kiến thức dùng lại là bộ đề2号chính thức.
+2号 dùng toàn bộ 学科・実技 của đúng nhánh 1号, dùng chung dữ liệu và tự nhận các sửa đổi của bài chung. Lưu tiến độ và lượt kiểm tra riêng theo cấp. 職長 soạn mới từ leader.pdf và dùng chung cả ba nhánh tại 2号. Ban đầu tích hợp ba bài nháp Nhật–Việt; hiện đã mở rộng lên28bài như mốc2026-10-18 ở đầu tài liệu. Không chờ xong1号 mới mở2号. Không gọi ngân hàng xác nhận kiến thức dùng lại là bộ đề2号chính thức.
 
 Đọc `docs/checkpoints/CONSTRUCTION_DIALOGUE_ACTION_REPORT_2026-10-17_VI.md`, `PRACTICAL_REUSE_REAUDIT_2026-10-17.json` và `foreman/coverage-ledger.json` trước khi tiếp nối. Ma trận224bài là kiểm kê liên kết, chưa phải đã rà đủ từng ý. Chênh lệch224/163/152sau hợp nhất B058/C019 không chứng minh đủ hoặc thiếu;116/120bài chưa liên kết là ứng viên rà, không tự động đưa sang ngành khác.
 
