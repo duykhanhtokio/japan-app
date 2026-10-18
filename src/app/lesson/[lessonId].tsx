@@ -1,3 +1,5 @@
+import { useAppLanguage } from '@/context/LanguageContext';
+import { getVocabularyMeaning, findVocabularyByJapanese } from '@/data/vocabulary-localization';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
@@ -16,6 +18,7 @@ import { vocabulary } from '@/data/vocabulary';
 import { RoyalBackButton } from '@/components/ui/RoyalSurface';
 
 export default function LessonDetailScreen() {
+    const {language}=useAppLanguage();
     const { lessonId } = useLocalSearchParams();
 
     const id = Array.isArray(lessonId)
@@ -119,7 +122,7 @@ export default function LessonDetailScreen() {
                                 style={styles.wordCard}
                                 onPress={() =>
                                     pushPrepared(
-                                        `/${word.jlptLevel}/vocabulary/${word.id}`
+                                        `/${word.jlptLevel}/vocabulary/${findVocabularyByJapanese(word.word,word.reading)?.id ?? word.id}`
                                     )
                                 }
                             >
@@ -134,7 +137,7 @@ export default function LessonDetailScreen() {
                                 </View>
 
                                 <Text style={styles.wordMeaning}>
-                                    {word.meaningVi}
+                                    {getVocabularyMeaning(findVocabularyByJapanese(word.word,word.reading) ?? {...word,id:String(word.id)},language)}
                                 </Text>
                             </Pressable>
                         ))}

@@ -1,5 +1,5 @@
 import { useAppLanguage } from '@/context/LanguageContext';
-import { generatedVocabulary, getVocabularyMeaning } from '@/data/jlpt-study-data';
+import { getVocabularyMeaning, findVocabularyByJapanese } from '@/data/vocabulary-localization';
 import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
@@ -57,7 +57,7 @@ export function FilteredVocabularyList({
                         style={styles.card}
                         onPress={() =>
                             pushPrepared(
-                                `/${item.jlptLevel}/vocabulary/${item.id}`
+                                `/${item.jlptLevel}/vocabulary/${findVocabularyByJapanese(item.word,item.reading)?.id ?? item.id}`
                             )
                         }
                     >
@@ -80,7 +80,7 @@ export function FilteredVocabularyList({
                         </View>
 
                         <Text style={styles.meaning}>
-                            {getVocabularyMeaning(generatedVocabulary.find(word=>word.word===item.word&&word.reading===item.reading)??{...item,id:String(item.id)},language)}
+                            {getVocabularyMeaning(findVocabularyByJapanese(item.word,item.reading)??{...item,id:String(item.id)},language)}
                         </Text>
                     </Pressable>
                 ))}

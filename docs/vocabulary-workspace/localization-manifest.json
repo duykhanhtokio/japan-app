@@ -1,15 +1,28 @@
 {
   "date": "2026-10-18",
-  "baseCommit": "6bb098ea22dcb606dd8a985f92b523444a23698e",
+  "baseCommit": "39fc81e6f0d0b71ca698330f2398bd04b2dd7596",
   "canonicalData": "src/data/generated/vocabulary.json",
   "canonicalSha256": "f69cce35c06624316c4ca119f3eb8a73bd63d8faa21b661caa4f041cb2fc56ea",
   "sourceLanguage": "ja",
-  "meaningBundles": "src/data/generated/vocabulary-meaning-localizations.json",
-  "exampleBundles": "src/data/generated/vocabulary-example-localizations.json",
-  "translationStatus": "ai_translated_native_review_pending",
-  "authoredMeaningsPerNewLocale": 100,
-  "authoredExampleRecordsPerNewLocale": 10,
-  "authoredUniqueExampleSentences": 9,
+  "sourceBinding": "src/data/generated/vocabulary-localization-source.json",
+  "sourceBindingSha256": "67849ac207f891c0c3ced6574b87afe3032ba440ca5e74ea3920af112f6c7dbf",
+  "sourceRevision": "7fcd6dd13b31294711c2867b7e7c9deeff74a923ed0231656e67e051b773f2db",
+  "sourceRepairs": "src/data/generated/vocabulary-source-repairs.json",
+  "sourceRepairCount": 328,
+  "plannedSource": "src/data/generated/vocabulary-planned-source.json",
+  "plannedSourceSha256": "1868c000d9722b064e875a4e86db59078f3d99de7f27afebd0ad778f124e52b1",
+  "plannedAliases": "src/data/generated/vocabulary-planned-bindings.json",
+  "sourceMeaningsByLevel": {
+    "N5": 909,
+    "N4": 804,
+    "N3": 1716,
+    "N2": 3078,
+    "N1": 1843
+  },
+  "canonicalMeanings": 8350,
+  "additionalPlannedMeanings": 311,
+  "existingJapaneseExampleRecords": 298,
+  "recordsWithoutJapaneseExample": 8052,
   "localeScope": [
     "id",
     "zh-CN",
@@ -24,6 +37,7 @@
   ],
   "exampleLocaleScope": [
     "en",
+    "vi",
     "id",
     "zh-CN",
     "zh-TW",
@@ -35,18 +49,122 @@
     "km",
     "tl"
   ],
-  "corrections": [
-    {
-      "id": "VOC0243",
-      "word": "辛い",
-      "reading": "からい",
-      "locale": "vi",
-      "previous": "khổ sở",
-      "replacement": "cay",
-      "reason": "Readingからいandfoodcontextmean spicy;つらいis a different reading."
-    }
+  "supportedAppLanguages": [
+    "ja",
+    "en",
+    "vi",
+    "id",
+    "zh-CN",
+    "zh-TW",
+    "hi",
+    "bn",
+    "ne",
+    "my",
+    "th",
+    "km",
+    "tl"
   ],
+  "japaneseDisplay": "Japanese headword, reading, and existing source example; no translation required",
+  "bundles": {
+    "en": {
+      "file": "src/data/generated/vocabulary-localizations/en.json",
+      "sha256": "94519fd702f662a0f977fda40f0ca45fe8320a4e75e15e083c9756ce89df7fa7",
+      "meanings": 8350,
+      "examples": 298,
+      "plannedMeanings": 311
+    },
+    "vi": {
+      "file": "src/data/generated/vocabulary-localizations/vi.json",
+      "sha256": "2a8d0ce30117133829ed59ea10017a0cbc94f824d1cc357f92258056ce30d833",
+      "meanings": 8350,
+      "examples": 298,
+      "plannedMeanings": 311
+    },
+    "id": {
+      "file": "src/data/generated/vocabulary-localizations/id.json",
+      "sha256": "0194b28600ba076a1f5fe291a9941ec939f5ec406cbb6bd0de2227a8c75ce943",
+      "meanings": 8350,
+      "examples": 298,
+      "plannedMeanings": 311
+    },
+    "zh-CN": {
+      "file": "src/data/generated/vocabulary-localizations/zh-CN.json",
+      "sha256": "541a7a31e3369437f92bcb37ee75b27bb7385aa06e17c8b65675aeb079aed903",
+      "meanings": 8350,
+      "examples": 298,
+      "plannedMeanings": 311
+    },
+    "zh-TW": {
+      "file": "src/data/generated/vocabulary-localizations/zh-TW.json",
+      "sha256": "4081f0047e0bfa879e5300cd686593a552a5c41c839a53185689e6225011ac66",
+      "meanings": 8350,
+      "examples": 298,
+      "plannedMeanings": 311
+    },
+    "hi": {
+      "file": "src/data/generated/vocabulary-localizations/hi.json",
+      "sha256": "75113b48afb54802b86e99f8d0ec10b93c206eafa599b7a3f228844db9021429",
+      "meanings": 8350,
+      "examples": 298,
+      "plannedMeanings": 311
+    },
+    "bn": {
+      "file": "src/data/generated/vocabulary-localizations/bn.json",
+      "sha256": "d508f8f1fed0f447967e93de038295fbd8a23ea48c85db3e07efbe896ca9bd6c",
+      "meanings": 8350,
+      "examples": 298,
+      "plannedMeanings": 311
+    },
+    "ne": {
+      "file": "src/data/generated/vocabulary-localizations/ne.json",
+      "sha256": "fd021224e9e1275467c6195025aa55c58dce683b50dc1af1b89d88131607789b",
+      "meanings": 8350,
+      "examples": 298,
+      "plannedMeanings": 311
+    },
+    "my": {
+      "file": "src/data/generated/vocabulary-localizations/my.json",
+      "sha256": "34c4d8f10a117db71edc08b8502cdaf62ffc2db5a901410e6433cdb8d5d13280",
+      "meanings": 8350,
+      "examples": 298,
+      "plannedMeanings": 311
+    },
+    "th": {
+      "file": "src/data/generated/vocabulary-localizations/th.json",
+      "sha256": "2d02461eec5909b00ef9c21a5f08805869d58263a5fee08e4b707872a733778b",
+      "meanings": 8350,
+      "examples": 298,
+      "plannedMeanings": 311
+    },
+    "km": {
+      "file": "src/data/generated/vocabulary-localizations/km.json",
+      "sha256": "c8aada49a491613b683e3f5418392ae39891aed8198c9a2ec379ce5cfedd752a",
+      "meanings": 8350,
+      "examples": 298,
+      "plannedMeanings": 311
+    },
+    "tl": {
+      "file": "src/data/generated/vocabulary-localizations/tl.json",
+      "sha256": "a8d423c5179b80dda314ff274b02f9bdb26f4244aa53f0e26519e5d22ce64d66",
+      "meanings": 8350,
+      "examples": 298,
+      "plannedMeanings": 311
+    }
+  },
+  "legacyMeaningBundles": "src/data/generated/vocabulary-meaning-localizations.json",
+  "legacyExampleBundles": "src/data/generated/vocabulary-example-localizations.json",
+  "legacyTranslationsPreservedVerbatim": true,
+  "translationStatus": "ai_translated_native_review_pending",
   "nativeReviewed": false,
-  "all8350TranslationsComplete": false,
-  "canonicalIdsAndProgressKeysChanged": false
+  "all8350TranslationsComplete": true,
+  "canonicalIdsAndProgressKeysChanged": false,
+  "englishDictionaryAttribution": {
+    "source": "JMdict / EDRDG",
+    "url": "https://www.edrdg.org/jmdict/j_jmdict.html",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "definitions": 1704,
+    "provenance": "src/data/generated/vocabulary-english-provenance.json",
+    "databaseSha256": "36918a97b86f41029b2a0b5c1eefce0a354471cf82fd3a9cf3088cf821563bcb"
+  }
 }

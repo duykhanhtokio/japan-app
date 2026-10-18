@@ -14,6 +14,8 @@ import {
     type GeneratedVocabulary,
 } from '@/data/jlpt-learning';
 import curriculum from '@/game/data/n5/n5-curriculum-data';
+import originalVocabulary from '@/data/generated/vocabulary.json';
+import { getPlannedVocabularyItem, getPlannedVocabularyMeaning } from '@/data/vocabulary-localization';
 import type { N5GrammarItem, N5StudyDay, N5VocabularyItem } from '@/game/data/n5/n5-curriculum-types';
 import { getJlptProgress, saveN5JourneyPosition, toggleLearnedId } from '@/services/jlpt-progress-storage';
 import * as Speech from 'expo-speech';
@@ -71,6 +73,8 @@ type DayGroup = {
 };
 
 const N5_VOCABULARY = generatedVocabulary.filter((item) => item.jlpt === 'N5' && item.status !== 'Rejected');
+// Freeze the previous progress-ID assignment while correcting displayed homophones.
+const N5_PROGRESS_VOCABULARY = originalVocabulary.filter((item) => item.jlpt === 'N5' && item.status !== 'Rejected');
 const N5_GRAMMAR = generatedGrammar.filter((item) => item.jlpt === 'N5' && item.status !== 'Rejected');
 
 const COPY = {
@@ -180,8 +184,8 @@ export default function N5LearningJourney({ mode, onBack, onOpenCharacters }: Pr
     const groups = useMemo<DayGroup[]>(() => {
         const usedVocabulary = new Set<string>();
         const usedGrammar = new Set<string>();
-        const vocabularyByWord = indexBy(N5_VOCABULARY, (item) => normalize(item.word));
-        const vocabularyByReading = indexBy(N5_VOCABULARY, (item) => normalize(item.reading));
+        const vocabularyByWord = indexBy(N5_PROGRESS_VOCABULARY, (item) => normalize(item.word));
+        const vocabularyByReading = indexBy(N5_PROGRESS_VOCABULARY, (item) => normalize(item.reading));
         const grammarByName = indexBy(N5_GRAMMAR, (item) => normalize(item.name));
         const grammarByPattern = indexBy(N5_GRAMMAR, (item) => normalize(item.pattern));
 
@@ -203,16 +207,16 @@ export default function N5LearningJourney({ mode, onBack, onOpenCharacters }: Pr
 
         const planned: DayGroup[] = curriculum.days.map((day: N5StudyDay) => {
             const vocabulary = day.vocabulary.map((entry, index) => {
-                const source = findVocabulary(entry);
-                if (source) usedVocabulary.add(source.id);
-                return source
-                    ? toVocabulary(source)
-                    : {
-                        id: `n5-plan:vocabulary:${day.day}:${index}`,
-                        word: entry.japanese,
-                        reading: entry.reading,
-                        meaning: getVocabularyMeaning({ id: `n5-plan:vocabulary:${day.day}:${index}`, word: entry.japanese, reading: entry.reading, meaningVi: entry.reviewMeaningVi ?? '' }, language),
-                    };
+                const previous = findVocabulary(entry);
+                if (previous) usedVocabulary.add(previous.id);
+                const source = getPlannedVocabularyItem(entry.japanese, entry.reading);
+                return {
+                    ...(source ? toVocabulary(source as GeneratedVocabulary) : {}),
+                    id: previous?.id ?? `n5-plan:vocabulary:${day.day}:${index}`,
+                    word: entry.japanese,
+                    reading: entry.reading,
+                    meaning: getPlannedVocabularyMeaning(entry.japanese, entry.reading, language),
+                };
             });
             const grammar = day.grammar.map((entry, index) => {
                 const source = findGrammar(entry);
@@ -392,8 +396,8 @@ export default function N5LearningJourney({ mode, onBack, onOpenCharacters }: Pr
 }
 
 function VocabularyCard({ item, learned, onToggle }: { item: VocabEntry; learned: boolean; onToggle: () => void }) {
-    return <View style={[styles.itemCard, learned && styles.itemCardLearned]}>
-        <View style={styles.itemTop}><View style={styles.itemHeading}><Text style={styles.word}>{item.word}</Text><Text style={styles.reading}>{item.reading}</Text></View><Pressable onPress={onToggle} style={[styles.checkButton, learned && styles.checkButtonActive]}><Text style={[styles.checkText, learned && styles.whiteText]}>{learned ? '✓' : '○'}</Text></Pressable></View>
+    return <View testID={`n5-vocabulary-card-${item.id}`} style={[styles.itemCard, learned && styles.itemCardLearned]}>
+        <View style={styles.itemTop}><View style={styles.itemHeading}><Text style={styles.word}>{item.word}</Text><Text style={styles.reading}>{item.reading}</Text></View><Pressable testID={`n5-vocabulary-learned-${item.id}`} onPress={onToggle} style={[styles.checkButton, learned && styles.checkButtonActive]}><Text style={[styles.checkText, learned && styles.whiteText]}>{learned ? '✓' : '○'}</Text></Pressable></View>
         <Text style={styles.meaning}>{item.meaning}</Text>
         {item.exampleJa && <View style={styles.example}><Text style={styles.exampleReading}>{item.exampleReading}</Text><Text style={styles.exampleJa}>{item.exampleJa}</Text>{item.exampleTranslation && <Text style={styles.exampleTranslation}>{item.exampleTranslation}</Text>}</View>}
     </View>;

@@ -14,7 +14,7 @@ export default function VocabularyScreen() {
  const {language}=useAppLanguage(); const copy=getVocabularyCopy(language);
  const params=useLocalSearchParams(); const raw=Array.isArray(params.level)?params.level[0]:params.level; const level=isJlptLevel(raw)?raw:'N5';
  const [query,setQuery]=useState(''); const [limit,setLimit]=useState(8);
- const words=useMemo(()=>{const q=query.trim().toLocaleLowerCase(); return generatedVocabulary.filter(x=>x.status!=='Rejected'&&(q?`${x.word} ${x.reading} ${getVocabularyMeaning(x,language)} ${x.meaningEn??''} ${Object.values(x.meaningTranslations??{}).join(' ')}`.toLocaleLowerCase().includes(q):x.jlpt===level));},[level,query]);
+ const words=useMemo(()=>{const q=query.trim().toLocaleLowerCase(); return generatedVocabulary.filter(x=>x.status!=='Rejected'&&(q?`${x.word} ${x.reading} ${getVocabularyMeaning(x,language)} ${x.meaningEn??''} ${Object.values(x.meaningTranslations??{}).join(' ')}`.toLocaleLowerCase().includes(q):x.jlpt===level));},[level,query,language]);
  return <JlptStudyBackground enabled={false}><SafeAreaView style={s.container}><View style={s.header}><RoyalBackButton onPress={()=>backPrepared()} /></View><ScrollView contentContainerStyle={s.content} keyboardShouldPersistTaps="handled">
   <Text style={s.level}>{level}</Text><Text style={s.title}>単語</Text><Text style={s.count}>{vocabularyCountText(copy.count,words.length,language)}</Text>
   <TextInput testID="vocabulary-search" value={query} onChangeText={v=>{setQuery(v);setLimit(8);}} placeholder={copy.search} placeholderTextColor="#586373" selectionColor="#72501f" style={s.search}/>

@@ -1,3 +1,5 @@
+import { useAppLanguage } from '@/context/LanguageContext';
+import { getVocabularyMeaning, findVocabularyByJapanese } from '@/data/vocabulary-localization';
 import { backPrepared } from '@/components/ui/prepareSceneRoute';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
@@ -477,6 +479,7 @@ function VocabularyContent({
 }: {
     words: VocabularyItem[];
 }) {
+    const {language}=useAppLanguage();
     return (
         <View>
             {words.map((word) => (
@@ -503,7 +506,7 @@ function VocabularyContent({
                             styles.meaning
                         }
                     >
-                        {word.meaningVi}
+                        {getVocabularyMeaning(findVocabularyByJapanese(word.word,word.reading) ?? {...word,id:String(word.id)},language)}
                     </Text>
                 </View>
             ))}
