@@ -33,7 +33,7 @@ for(const language of locales){let hint,npc;
  assert.equal(npcTurn.npc.textJa,npc.t.sourceJa);assert.equal(playerTurn.player.recommendedAnswerJa,hint.t.sourceJa);
  if(authoredHints[hint.id]?.answerJa===hint.t.sourceJa&&authoredHints[hint.id].recommendedAnswerRuby)playerTurn.player.recommendedAnswerRuby=authoredHints[hint.id].recommendedAnswerRuby;
  npcTurn.npc.translations={[language]:npc.t.translation};playerTurn.player.translations={[language]:hint.t.translation};playerTurn.player.hintTranslations={[language]:hint.t.hintTranslation};
- fixtures[language]={scenario,location:locations.get(scenario.locationId)||{id:'layout-fixture',category:'station',nameJa:'駅'},hintId:hint.id,npcId:npc.id,hint:hint.t.hintTranslation,translation:npc.t.translation,answerJa:hint.t.sourceJa,turns:[npcTurn,playerTurn]};
+ fixtures[language]={scenario,location:locations.get(scenario.locationId)||{id:'layout-fixture',category:'station',nameJa:'駅'},hintId:hint.id,npcId:npc.id,hint:hint.t.hintTranslation,translation:npc.t.translation,npcJa:npc.t.sourceJa,answerJa:hint.t.sourceJa,turns:[npcTurn,playerTurn]};
 }
 const adapters={
  backdrop:`export const useInheritedBackdrop=()=>false;export const useRootBackdropSource=()=>null;`,
@@ -77,19 +77,29 @@ const adapters={
   browser=await chromium.launch({executablePath:process.env.KENSETSU_QA_CHROMIUM||'/tmp/chromium',headless:true,args:['--no-sandbox']});
   for(const [width,height]of viewports){
    const page=await browser.newPage({viewport:{width,height}});page.on('pageerror',e=>report.errors.push(e.message));await page.goto('http://127.0.0.1:'+server.address().port);
-   for(const language of locales){await page.waitForFunction(()=>window.__show);await page.evaluate(l=>window.__show(l),language);await page.waitForFunction(()=>window.__speech);await page.evaluate(()=>window.__speech.options.onDone());await page.getByTestId('dialogue-microphone').waitFor();await page.waitForFunction(()=>getComputedStyle(document.querySelector('[data-testid="dialogue-panels"]')).pointerEvents!=='none');await page.evaluate(()=>document.fonts.ready);
-    const hint=fixtures[language].hint;await page.getByText(hint,{exact:true}).waitFor();
-    const measure=async value=>(typeof value==='string'?page.getByText(value,{exact:true}).first():value).evaluate(el=>{const box=e=>{const r=e.getBoundingClientRect();return{x:r.x,y:r.y,width:r.width,height:r.height,bottom:r.bottom,right:r.right}};const parents=[];let p=el;for(let i=0;p&&i<7;i++,p=p.parentElement)parents.push(box(p));return{text:box(el),parents,fontSize:parseFloat(getComputedStyle(el).fontSize),lineHeight:parseFloat(getComputedStyle(el).lineHeight),conversation:box(document.querySelector('[data-testid="dialogue-panels"]'))}});
-    const row={language,width,height,hintId:fixtures[language].hintId,npcId:fixtures[language].npcId,hint:await measure(hint)};
-    await page.getByRole('button',{name:'ヒント',exact:true}).first().click();await page.getByText(fixtures[language].translation,{exact:true}).waitFor();row.initialHint=row.hint;row.hint=await measure(hint);row.npc=await measure(fixtures[language].translation);
-    if(width===390&&['en','my','km'].includes(language))await page.screenshot({path:path.join(output,language+'-'+width+'x'+height+'.png')});
-    await page.getByRole('button',{name:'ヒント',exact:true}).nth(1).click();await page.getByText(hint,{exact:true}).waitFor({state:'hidden'});
-    const ruby=page.getByTestId('japanese-ruby');row.answerUsesRuby=(await ruby.count())>0;if(rubyMode)assert(row.answerUsesRuby,'Authored ruby fixture must exercise real ruby rendering');row.answer=await measure(row.answerUsesRuby?ruby:page.getByText(fixtures[language].answerJa,{exact:true}).first());row.npcWithAnswer=await measure(fixtures[language].translation);
-    for(const v of [row.initialHint,row.hint,row.npc,row.answer,row.npcWithAnswer]){const frame=v.parents[2],clip=v.conversation;v.fitsFrame=v.text.y>=frame.y+7&&v.text.bottom<=frame.bottom-7&&v.text.x>=frame.x&&v.text.right<=frame.right;v.fitsConversation=v.text.y>=clip.y&&v.text.bottom<=clip.bottom&&v.text.x>=clip.x&&v.text.right<=clip.right;v.fits=v.fitsFrame&&v.fitsConversation;}
+   for(const language of locales){
+    await page.waitForFunction(()=>window.__show);await page.evaluate(async l=>{const f=window.__fixtures[l],text=[f.hint,f.translation,f.npcJa,f.answerJa].join(' ');await Promise.all(['Noto Sans JP','Noto Sans Devanagari','Noto Sans Bengali','Noto Sans Thai','Noto Sans Myanmar','Noto Sans Khmer'].map(font=>document.fonts.load('17px \"'+font+'\"',text)));window.__show(l)},language);await page.waitForFunction(()=>window.__speech);
+    await page.evaluate(()=>window.__speech.options.onBoundary({charIndex:0,charLength:window.__speech.text.length}));
+    const stable=async()=>{await page.waitForFunction(()=>{const p=document.querySelector('[data-testid="dialogue-panels"]');return getComputedStyle(p).pointerEvents!=='none'&&Array.from(p.children).every(el=>Math.abs(new DOMMatrix(getComputedStyle(el).transform).m42)<.1)});await page.evaluate(async()=>{await document.fonts.ready;await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))})};
+    await stable();await page.getByText(fixtures[language].npcJa,{exact:true}).waitFor();
+    const measure=async value=>{await stable();return (typeof value==='string'?page.getByText(value,{exact:true}).first():value).evaluate(el=>{const box=e=>{const r=e.getBoundingClientRect();return{x:r.x,y:r.y,width:r.width,height:r.height,bottom:r.bottom,right:r.right}};const parents=[];let p=el;for(let i=0;p&&i<7;i++,p=p.parentElement)parents.push(box(p));return{text:box(el),parents,fontSize:parseFloat(getComputedStyle(el).fontSize),lineHeight:parseFloat(getComputedStyle(el).lineHeight),conversation:box(document.querySelector('[data-testid="dialogue-panels"]'))}})};
+    const row={language,width,height,hintId:fixtures[language].hintId,npcId:fixtures[language].npcId,npcStandaloneJa:await measure(fixtures[language].npcJa)};
+    await page.getByRole('button',{name:'ヒント',exact:true}).first().click();await page.getByText(fixtures[language].translation,{exact:true}).waitFor();row.npcStandaloneTranslation=await measure(fixtures[language].translation);
+    await page.getByRole('button',{name:'ヒント',exact:true}).first().click();
+    await page.evaluate(()=>window.__speech.options.onDone());await page.getByTestId('dialogue-microphone').waitFor();await stable();
+    const hint=fixtures[language].hint;await page.getByText(hint,{exact:true}).waitFor();row.initialHint=await measure(hint);
+    row.currentTurnOnly=(await page.getByRole('button',{name:'ヒント',exact:true}).count())===1;
+    if(!row.currentTurnOnly){await page.getByRole('button',{name:'ヒント',exact:true}).first().click();await page.getByText(fixtures[language].translation,{exact:true}).waitFor();row.hint=await measure(hint);row.npc=await measure(fixtures[language].translation);}
+    if([375,390,667].includes(width)&&['en','my','km'].includes(language))await page.screenshot({path:path.join(output,language+'-'+width+'x'+height+'.png')});
+    await page.getByRole('button',{name:'ヒント',exact:true}).nth(row.currentTurnOnly?0:1).click();await page.getByText(hint,{exact:true}).waitFor({state:'hidden'});
+    const ruby=page.getByTestId('japanese-ruby');row.answerUsesRuby=(await ruby.count())>0;if(rubyMode)assert(row.answerUsesRuby,'Authored ruby fixture must exercise real ruby rendering');row.answer=await measure(row.answerUsesRuby?ruby:page.getByText(fixtures[language].answerJa,{exact:true}).first());if(!row.currentTurnOnly)row.npcWithAnswer=await measure(fixtures[language].translation);
+    if(row.currentTurnOnly){await page.getByRole('button',{name:'前へ',exact:true}).click();await stable();await page.getByText(fixtures[language].npcJa,{exact:true}).waitFor();row.returnedNpc=await measure(fixtures[language].npcJa);await page.getByRole('button',{name:'次へ',exact:true}).click();await stable();row.returnedAnswer=await measure(row.answerUsesRuby?page.getByTestId('japanese-ruby'):page.getByText(fixtures[language].answerJa,{exact:true}).first());}
+    row.measurements=['returnedNpc','returnedAnswer','npcStandaloneJa','npcStandaloneTranslation','initialHint','hint','npc','answer','npcWithAnswer'].filter(key=>row[key]);
+    for(const key of row.measurements){const v=row[key],frame=v.parents[2],clip=v.conversation;v.fitsFrame=v.text.y>=frame.y+7&&v.text.bottom<=frame.bottom-7&&v.text.x>=frame.x&&v.text.right<=frame.right;v.fitsConversation=v.text.y>=clip.y&&v.text.bottom<=clip.bottom&&v.text.x>=clip.x&&v.text.right<=clip.right;v.fits=v.fitsFrame&&v.fitsConversation;}
     report.views.push(row);
    }await page.close();
   }
-  report.failures=report.views.filter(r=>[r.initialHint,r.hint,r.npc,r.answer,r.npcWithAnswer].some(v=>!v.fits)).length;report.status=report.errors.length?'ERROR':report.failures?'FAIL_TEXT_FIT':'PASS';
+  report.failures=report.views.filter(r=>r.measurements.some(key=>!r[key].fits)).length;report.status=report.errors.length?'ERROR':report.failures?'FAIL_TEXT_FIT':'PASS';
  }catch(e){report.status='ERROR';report.errors.push(e.message);throw e;}finally{fs.writeFileSync(path.join(output,'report.json'),JSON.stringify(report,null,2)+'\n');if(browser)await browser.close();await new Promise(r=>server.close(r));}
  console.log(JSON.stringify({status:report.status,head,scenarios:report.scenarios,cases:report.views.length,failures:report.failures,errors:report.errors.slice(0,3),report:path.join(output,'report.json')}));
  if(report.status!=='PASS')process.exitCode=1;

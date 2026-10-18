@@ -49,15 +49,15 @@ export function nativeDialogueLineHeight(language: string): number {
   return ['hi', 'bn', 'ne', 'my', 'th', 'km'].includes(language) ? 1.45 : 1.3;
 }
 
-export function dialoguePanelLayout({ width, height, headerBottom, bottom, npcWaist, wide, panels }: {
-  width: number; height: number; headerBottom: number; bottom: number; npcWaist: number; wide: boolean; panels: DialoguePanelSpec[];
+export function dialoguePanelLayout({ width, height, headerBottom, bottom, npcWaist, wide, compact = false, panels }: {
+  width: number; height: number; headerBottom: number; bottom: number; npcWaist: number; wide: boolean; compact?: boolean; panels: DialoguePanelSpec[];
 }) {
-  const gap = 16, inset = wide ? 40 : 60;
+  const gap = 16, inset = wide || compact ? 40 : 60;
   const topLimit = Math.max(0, headerBottom + 8), bottomLimit = Math.min(height, bottom);
   const available = Math.max(0, bottomLimit - topLimit);
-  const normalWidth = wide ? width * .46 : width - 20;
+  const normalWidth = wide && !compact ? width * .46 : width - 20;
   function required(spec: DialoguePanelSpec, panelWidth: number, fontSize: number) {
-    const copyWidth = Math.max(80, panelWidth - (wide ? 44 : 56) - 8);
+    const copyWidth = Math.max(80, panelWidth - (wide || compact ? 44 : 56) - 8);
     return Math.ceil(spec.copy.reduce((sum, copy) => sum + dialogueCopyLines(copy.text, copyWidth, fontSize) * fontSize * copy.lineHeight, 0) + inset + 8);
   }
   const atFourteen = panels.map(spec => required(spec, normalWidth, 14));

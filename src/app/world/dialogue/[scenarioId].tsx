@@ -123,22 +123,29 @@ function DialogueScreen({id}:{id?:string}){
  const npcBoxHeight=stageSize.height*(wide?.82:.72),npcBoxWidth=stageSize.width*(wide?.48:.94);
  const npcDrawHeight=Math.min(npcBoxHeight,npcBoxWidth/npcRatio);
  const npcWaist=stageSize.height-controlsBottom-npcBoxHeight+(npcBoxHeight-npcDrawHeight)/2+npcDrawHeight*npcPresentation.waistY/npcPresentation.height;
- const dockReserve=wide?96:124;
- const missionWidth=(wide?stageSize.width*.46:Math.min(560,stageSize.width-24))-56;
+ // Short phones show the current turn at full width. Previous turns remain
+ // available through 前へ; the lantern switches between complete Japanese
+ // and translated copy rather than stacking both in a shallow frame.
+ const compact=wide?stageSize.height<480:stageSize.height<720;
+ const compactLandscape=compact&&wide;
+ const dockReserve=compactLandscape?60:wide?96:124;
+ const missionWidth=(compactLandscape?stageSize.width*.64:wide?stageSize.width*.46:Math.min(560,stageSize.width-24))-56;
  const missionFont=wide?12:ROYAL_TYPE.explanation,missionLine=wide?16:ROYAL_TYPE.explanationLine;
  const missionLines=copyLines(mission,missionWidth,missionFont);
- const headerHeight=insets.top+ROYAL_PLACEMENT.headerTop+44+4+12+(wide?20:36)+missionLines*missionLine;
- const visiblePanels=turns.slice(Math.max(0,index-1),index+1);
+ const headerHeight=compactLandscape?insets.top+8+Math.max(44,12+20+missionLines*missionLine):insets.top+ROYAL_PLACEMENT.headerTop+44+4+12+(wide?20:36)+missionLines*missionLine;
+ const visiblePanels=compact?[turn]:turns.slice(Math.max(0,index-1),index+1);
  const lineHeight=nativeDialogueLineHeight(language);
  const panelSpecs=visiblePanels.map((panel,slot)=>{
   const hintStage=hintStages[panel.id]??0,isNpc=panel.speaker==='NPC';
-  const copy=isNpc?[{text:panel.npc?.textJa??'',lineHeight}]:[{text:hintStage>0?panel.player?.recommendedAnswerJa??'':(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language],lineHeight:hintStage>0?3.2:lineHeight}];
-  if(isNpc&&hintStage>0&&language!=='ja')copy.push({text:panel.npc?.translations?.[language]??(language==='vi'?panel.npc?.translationVi:null)??missingHint[language],lineHeight});
+  const npcNative=panel.npc?.translations?.[language]??(language==='vi'?panel.npc?.translationVi:null)??missingHint[language];
+  const answerHasRuby=panel.player?.recommendedAnswerRuby?.length&&panel.player.recommendedAnswerRuby.map(part=>part.text).join('')===panel.player.recommendedAnswerJa;
+  const copy=isNpc?[{text:compact&&hintStage>0&&language!=='ja'?npcNative:panel.npc?.textJa??'',lineHeight}]:[{text:hintStage>0?panel.player?.recommendedAnswerJa??'':(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language],lineHeight:hintStage>0?(answerHasRuby?3.2:1.25):lineHeight}];
+  if(isNpc&&!compact&&hintStage>0&&language!=='ja')copy.push({text:panel.npc?.translations?.[language]??(language==='vi'?panel.npc?.translationVi:null)??missingHint[language],lineHeight});
   const transcript=isNpc?'':visiblePanels.length===2&&slot===0?playerTranscripts[panel.id]??'':speech.transcript;
   if(transcript)copy.push({text:`「${transcript}」`,lineHeight});
   return{copy,context:visiblePanels.length===2&&slot===0};
  });
- const panelLayout=dialoguePanelLayout({width:stageSize.width,height:stageSize.height,headerBottom:headerHeight,bottom:stageSize.height-controlsBottom-dockReserve,npcWaist,wide,panels:panelSpecs});
+ const panelLayout=dialoguePanelLayout({width:stageSize.width,height:stageSize.height,headerBottom:headerHeight,bottom:stageSize.height-controlsBottom-dockReserve,npcWaist,wide,compact,panels:panelSpecs});
  const entryDistance=Math.max(80,...panelLayout.placements.map(panel=>panel.height))+16;
  const renderPanel=(panel:typeof turn,context:boolean,slot:number)=>{
   const isNpc=panel.speaker==='NPC',showText=context||revealedTurnIds.has(panel.id),hintStage=hintStages[panel.id]??0;
@@ -150,9 +157,9 @@ function DialogueScreen({id}:{id?:string}){
   const fit={fontSize,lineHeight:fontSize*lineHeight};
   return <View key={panel.id} style={[s.bubbleWrap,{height:allocatedHeight}]}>
    <RoyalNavyFrame style={s.speakerPlate}><Text numberOfLines={1} adjustsFontSizeToFit maxFontSizeMultiplier={1} style={s.speakerName}>{isNpc?npcName:playerName}</Text></RoyalNavyFrame>
-   <View style={[s.bubbleDepth,{flex:1}]}><RoyalReadingFrame style={[{flex:1},wide&&{paddingVertical:8,paddingHorizontal:22}]}>
+   <View style={[s.bubbleDepth,{flex:1}]}><RoyalReadingFrame style={[{flex:1},(wide||compact)&&{paddingVertical:8,paddingHorizontal:22}]}>
     {!isNpc?hintStage===0?<Text maxFontSizeMultiplier={1} style={[s.guidance,fit,{color:theme.text}]}>{(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language]}</Text>:<JapaneseRuby fontSize={fontSize} text={panel.player?.recommendedAnswerJa??''} segments={panel.player?.recommendedAnswerRuby}/>:<>
-     <Text maxFontSizeMultiplier={1} style={[s.japanese,fit,{color:theme.text}]}>{npcText||' '}</Text>
+     {(!compact||hintStage===0||language==='ja')&&<Text maxFontSizeMultiplier={1} style={[s.japanese,fit,{color:theme.text}]}>{npcText||' '}</Text>}
      {hintStage>0&&language!=='ja'&&<Text maxFontSizeMultiplier={1} style={[s.translation,fit,{color:theme.reading}]}>{npcTranslation??missingHint[language]}</Text>}
     </>}
     {!isNpc&&(panelRecognizing||!!panelTranscript)&&<Text maxFontSizeMultiplier={1} style={[s.transcript,fit,{color:theme.text}]}>「{panelTranscript||'音声を認識しています…'}」</Text>}
@@ -160,19 +167,19 @@ function DialogueScreen({id}:{id?:string}){
   </View>;
  };
  return <ImageBackground inheritBackdrop key={location?.id} source={background} resizeMode="cover" style={s.screen}><View style={s.safe}>
-  <View style={[s.header,{paddingTop:insets.top+ROYAL_PLACEMENT.headerTop}]}><View style={s.headerRow}><RoyalBackButton onPress={()=>backPrepared()}/><View style={s.headerTitle}><View style={s.titleRow}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.title}>{location?displayLocationNameJa(location.nameJa,location.category):'会話練習'}</Text></View></View></View><View style={[s.missionCard,wide&&s.missionCardWide]}><RoyalNavyFrame style={s.missionLabel}><Text style={s.missionLabelText}>課題</Text></RoyalNavyFrame><RoyalReadingFrame explanation style={wide?{paddingVertical:10}:undefined}><Text maxFontSizeMultiplier={1} style={[s.missionText,{color:ROYAL.paleGold},wide&&{fontSize:12,lineHeight:16}]}>{mission}</Text></RoyalReadingFrame></View></View>
+  <View style={[s.header,{paddingTop:insets.top+(compactLandscape?8:ROYAL_PLACEMENT.headerTop)},compactLandscape&&{flexDirection:'row',alignItems:'center',gap:8}]}><View style={[s.headerRow,compactLandscape&&{width:'34%'}]}><RoyalBackButton onPress={()=>backPrepared()}/><View style={s.headerTitle}><View style={s.titleRow}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.title}>{location?displayLocationNameJa(location.nameJa,location.category):'会話練習'}</Text></View></View></View><View style={[s.missionCard,wide&&s.missionCardWide,compactLandscape&&{width:'64%',marginTop:0}]}><RoyalNavyFrame style={s.missionLabel}><Text style={s.missionLabelText}>課題</Text></RoyalNavyFrame><RoyalReadingFrame explanation style={wide?{paddingVertical:10}:undefined}><Text maxFontSizeMultiplier={1} style={[s.missionText,{color:ROYAL.paleGold},wide&&{fontSize:12,lineHeight:16}]}>{mission}</Text></RoyalReadingFrame></View></View>
   <View testID="dialogue-npc" pointerEvents="none" style={[s.npcLayer,{left:stageSize.width*(wide?.02:.03),top:stageSize.height-controlsBottom-npcBoxHeight,width:npcBoxWidth,height:npcBoxHeight}]}><Image key={location?.category} fadeDuration={0} source={npcImage} resizeMode="contain" style={s.npcImage}/></View>
-  <View testID="dialogue-panels" pointerEvents={transitioning?'none':'auto'} style={[s.conversation,{top:panelLayout.top,bottom:panelLayout.bottom,overflow:'hidden'},wide&&s.conversationWide,panelLayout.columns&&{left:10,right:10}]}>
+  <View testID="dialogue-panels" pointerEvents={transitioning?'none':'auto'} style={[s.conversation,{top:panelLayout.top,bottom:panelLayout.bottom,overflow:'hidden'},wide&&s.conversationWide,(panelLayout.columns||compact)&&{left:10,right:10}]}>
    {visiblePanels.map((panel,slot)=>{
     const previous=visiblePanels.length===2&&slot===0;
     const placement=panelLayout.placements[slot];
-    return <NativeAnimated.View key={panel.id} style={{position:'absolute',left:placement.left,width:placement.width,top:placement.top,transform:[{translateY:turnMotion.interpolate({inputRange:[0,1],outputRange:[entryDistance,0]})}]}}>
+    return <NativeAnimated.View key={panel.id} style={{position:'absolute',left:placement.left,width:placement.width,top:placement.top,transform:[{translateY:transitioning?turnMotion.interpolate({inputRange:[0,1],outputRange:[entryDistance,0]}):0}]}}>
      {renderPanel(panel,previous,slot)}
     </NativeAnimated.View>;
    })}
   </View>
-  {playerTurn&&<View testID="dialogue-microphone" style={[s.microphoneDock,{bottom:controlsBottom+(wide?52:72),height:wide?44:48},wide&&s.conversationWide]}><PulsingMic disabled={transitioning||!speech.speechAvailable||(npcTurn&&!npcSpeechDone)} recording={speech.recognizing} onPress={()=>{if(speech.recognizing)speech.stopListening();else void speech.startListening()}}/></View>}
-  <View style={[s.controls,{bottom:controlsBottom},wide&&s.controlsWide]}><RoyalButton contentStyle={wide?{paddingVertical:4}:undefined} disabled={transitioning||index===0} onPress={()=>move(index-1)} style={[s.control,wide&&{height:44,minHeight:44}]}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.controlText}>前へ</Text></RoyalButton><RoyalButton contentStyle={wide?{paddingVertical:4}:undefined} disabled={transitioning||finishing||(npcTurn&&!npcSpeechDone)} onPress={()=>index+1<turns.length?move(index+1):finish()} style={[s.control,wide&&{height:44,minHeight:44}]}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.controlText}>{index+1<turns.length?'次へ':finishing?'保存中…':npcTurn&&!npcSpeechDone?'再生中…':'終了'}</Text></RoyalButton></View>
+  {playerTurn&&<View testID="dialogue-microphone" style={[s.microphoneDock,{bottom:controlsBottom+(compactLandscape?0:wide?52:72),height:wide?44:48},wide&&s.conversationWide,compactLandscape&&{left:'44%',right:'44%'}]}><PulsingMic disabled={transitioning||!speech.speechAvailable||(npcTurn&&!npcSpeechDone)} recording={speech.recognizing} onPress={()=>{if(speech.recognizing)speech.stopListening();else void speech.startListening()}}/></View>}
+  <View style={[s.controls,{bottom:controlsBottom},wide&&s.controlsWide,compactLandscape&&{left:10,right:10,gap:70}]}><RoyalButton contentStyle={wide?{paddingVertical:4}:undefined} disabled={transitioning||index===0} onPress={()=>move(index-1)} style={[s.control,wide&&{height:44,minHeight:44}]}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.controlText}>前へ</Text></RoyalButton><RoyalButton contentStyle={wide?{paddingVertical:4}:undefined} disabled={transitioning||finishing||(npcTurn&&!npcSpeechDone)} onPress={()=>index+1<turns.length?move(index+1):finish()} style={[s.control,wide&&{height:44,minHeight:44}]}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.controlText}>{index+1<turns.length?'次へ':finishing?'保存中…':npcTurn&&!npcSpeechDone?'再生中…':'終了'}</Text></RoyalButton></View>
   {rewardVisible&&<NpcRewardModal visible={rewardVisible} category={rewardCategory} progress={rewardProgress} isUnlock={isUnlock} onClose={()=>{
    const cityId=location?.cityId??scenario.cityId;
    // Return to this city's location cards after collecting the reward.
