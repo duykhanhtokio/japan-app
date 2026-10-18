@@ -28,6 +28,9 @@ const dep=n=>require(require.resolve(n,{paths:[process.env.TOKUTEI_QA_MODULES||r
    if(Number(/^direct-(\d+)\.json$/.exec(item.sourceBatch)?.[1])>=1000&&['en','vi','id','tl'].includes(language)){
     assert([...text].every(ch=>!/[\p{L}]/u.test(ch)||/[\p{Script=Latin}]/u.test(ch)),id+' unexpected non-Latin letter '+language);
    }
+   if(Number(/^direct-(\d+)\.json$/.exec(item.sourceBatch)?.[1])>=1000&&['hi','bn','ne','my','th','km'].includes(language)){
+    for(const other of ['hi','bn','my','th','km'])if(scripts[other].source!==scripts[language].source)assert(![...text].some(ch=>/\p{L}/u.test(ch)&&scripts[other].test(ch)),id+' foreign '+other+' script in '+language);
+   }
    assert.equal(getTranslation(word,language),text,id+' runtime '+language);
   }
  }

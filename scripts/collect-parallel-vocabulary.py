@@ -35,6 +35,9 @@ for worker in range(1,7):
      if locale in scripts:assert re.search(scripts[locale],value),locale+' script absent'
      if locale not in ['zh-CN','zh-TW']:assert not re.search(r'[\u3040-\u30ff\u3400-\u9fff]',value),locale+' contains untranslated Japanese'
      if locale in ['en','vi','id','tl']:assert all(not unicodedata.category(c).startswith('L') or 'LATIN' in unicodedata.name(c,'') for c in value),locale+' contains non-Latin letters'
+     if locale in ['hi','bn','ne','my','th','km']:
+      for other in ['hi','bn','my','th','km']:
+       if scripts[other]!=scripts[locale]:assert not any(unicodedata.category(c).startswith('L') and re.search(scripts[other],c) for c in value),locale+' contains '+other+' script'
      assert not re.search(r'\b(TODO|TRANSLATE_ME|PLACEHOLDER)\b',value),'placeholder'
     if id not in integrated:new+=1
     accepted[id]=r;integrated[id]=r;batchById[id]=f.name;sources[r[2]]=id
