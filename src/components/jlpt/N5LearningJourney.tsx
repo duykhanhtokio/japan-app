@@ -1,6 +1,7 @@
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
-import { Text } from '@/components/app/LocalizedText';
+// Locale-resolved text must bypass the legacy script-guessing translator.
+import { Text } from 'react-native';
 import { useAppLanguage } from '@/context/LanguageContext';
 import {
     generatedGrammar,
@@ -210,7 +211,7 @@ export default function N5LearningJourney({ mode, onBack, onOpenCharacters }: Pr
                         id: `n5-plan:vocabulary:${day.day}:${index}`,
                         word: entry.japanese,
                         reading: entry.reading,
-                        meaning: language === 'vi' ? (entry.reviewMeaningVi ?? entry.japanese) : entry.japanese,
+                        meaning: getVocabularyMeaning({ id: `n5-plan:vocabulary:${day.day}:${index}`, word: entry.japanese, reading: entry.reading, meaningVi: entry.reviewMeaningVi ?? '' }, language),
                     };
             });
             const grammar = day.grammar.map((entry, index) => {

@@ -1,3 +1,5 @@
+import { localizeVocabulary } from './vocabulary-localization';
+export { getVocabularyMeaning, getVocabularyExampleTranslation, getVocabularyCopy, vocabularyCountText } from './vocabulary-localization';
 import grammarJson from '@/data/generated/grammar.json';
 import grammarExampleLocalizationsJson from '@/data/generated/grammar-example-localizations.json';
 import grammarMeaningTranslationsJson from '@/data/generated/grammar-meaning-translations.json';
@@ -84,25 +86,8 @@ export type GeneratedScenario = {
     status?: string;
 };
 
-export const generatedVocabulary = vocabularyJson as GeneratedVocabulary[];
+export const generatedVocabulary = (vocabularyJson as GeneratedVocabulary[]).map(localizeVocabulary);
 
-export function getVocabularyMeaning(
-    item: GeneratedVocabulary,
-    language: AppLanguageCode,
-) {
-    if (language === 'vi') return item.meaningVi;
-    return item.meaningTranslations?.[language]
-        ?? item.meaningTranslations?.ja
-        ?? item.word;
-}
-
-export function getVocabularyExampleTranslation(
-    item: GeneratedVocabulary,
-    language: AppLanguageCode,
-) {
-    if (language === 'ja') return undefined;
-    return item.exampleTranslations?.[language];
-}
 const grammarMeaningTranslations = grammarMeaningTranslationsJson as Record<
     string,
     Partial<Record<Exclude<AppLanguageCode, 'vi'>, string>>

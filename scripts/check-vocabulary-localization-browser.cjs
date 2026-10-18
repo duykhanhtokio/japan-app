@@ -1,0 +1,59 @@
+// Actual vocabulary screens, LanguageProvider and progress service on RN Web.
+// Royal artwork/navigation/native storage have explicit browser-only adapters.
+const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'..'),modules=process.env.TOKUTEI_QA_MODULES,out=process.env.VOCABULARY_QA_OUTPUT;
+if(!modules||!out||!process.env.KENSETSU_QA_CHROMIUM)throw Error('Set TOKUTEI_QA_MODULES, VOCABULARY_QA_OUTPUT and KENSETSU_QA_CHROMIUM');
+const esbuild=require(require.resolve('esbuild',{paths:[modules]}));
+const {chromium}=require(require.resolve('playwright',{paths:[process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES]}));
+const adapters={
+ storage:`export default {getItem:async k=>localStorage.getItem(k),setItem:async(k,v)=>localStorage.setItem(k,v)};`,
+ route:`export const pushPrepared=p=>window.__open('detail',p.split('/').pop());export const backPrepared=()=>window.__open('list');`,
+ router:`export const useLocalSearchParams=()=>({level:'N5',wordId:window.__wordId||'VOC0001'});`,
+ royal:`import React from 'react';import {View,Pressable,Text} from 'react-native';export const ROYAL_LAYOUT={screenGutter:12,backSafeTop:8},ROYAL_FONT={body:undefined};export const RoyalBackButton=p=><Pressable accessibilityRole="button" accessibilityLabel="Back" onPress={p.onPress}><Text>Back</Text></Pressable>;export const RoyalContentPanel=p=><View style={p.style}>{p.children}</View>;export default p=><View style={{flex:1,backgroundColor:'#eee6d6'}}>{p.children}</View>;`,
+ safe:`export {View as default} from 'react-native';`,
+ positioning:`export {useWindowDimensions as useRoyalPositioning} from 'react-native';`,
+ speech:`export const stop=()=>{};export const speak=()=>{};`,
+};
+(async()=>{
+ fs.mkdirSync(out,{recursive:true});
+ const fonts=[['noto-sans-jp','japanese'],['noto-sans-devanagari','devanagari'],['noto-sans-bengali','bengali'],['noto-sans-thai','thai'],['noto-sans-myanmar','myanmar'],['noto-sans-khmer','khmer']];for(const [i,[family,subset]]of fonts.entries())fs.copyFileSync(path.join(modules,'@fontsource',family,'files',family+'-'+subset+'-400-normal.woff2'),path.join(out,'font-'+i+'.woff2'));
+ const entry=`import {saveN5JourneyPosition} from ${JSON.stringify(path.join(root,'src/services/jlpt-progress-storage.ts'))};import React,{useEffect,useState} from 'react';import {createRoot} from 'react-dom/client';import List from ${JSON.stringify(path.join(root,'src/app/[level]/vocabulary.tsx'))};import Detail from ${JSON.stringify(path.join(root,'src/app/[level]/vocabulary/[wordId].tsx'))};import Journey from ${JSON.stringify(path.join(root,'src/components/jlpt/N5LearningJourney.tsx'))};import {LanguageProvider,useAppLanguage} from ${JSON.stringify(path.join(root,'src/context/LanguageContext.tsx'))};import {generatedVocabulary,getVocabularyMeaning,getVocabularyExampleTranslation,getVocabularyCopy} from ${JSON.stringify(path.join(root,'src/data/jlpt-study-data.ts'))};function Harness(){const [mode,setMode]=useState('list');const {language,setLanguage,loading}=useAppLanguage();window.__journey=async()=>{await saveN5JourneyPosition(2,8);setMode('journey')};window.__open=(m,id)=>{window.__wordId=id;setMode(m)};window.__setLanguage=setLanguage;window.__language=language;window.__expected=(id,l)=>{const w=generatedVocabulary.find(x=>x.id===id);return {meaning:getVocabularyMeaning(w,l),example:getVocabularyExampleTranslation(w,l),copy:getVocabularyCopy(l)}};window.__missing=generatedVocabulary.find(x=>x.jlpt==='N1'&&!x.meaningEn)?.id;return loading?null:mode==='list'?<List/>:mode==='detail'?<Detail/>:<Journey mode="vocabulary" onBack={()=>setMode('list')} onOpenCharacters={()=>{}}/>;}createRoot(document.getElementById('root')).render(<LanguageProvider><Harness/></LanguageProvider>);`;
+ await esbuild.build({stdin:{contents:entry,loader:'tsx',resolveDir:root},outfile:path.join(out,'entry.js'),bundle:true,platform:'browser',format:'iife',jsx:'automatic',nodePaths:[modules],define:{'process.env.NODE_ENV':'"development"','__DEV__':'true'},logLevel:'error',plugins:[{name:'browser-adapters',setup(b){
+  b.onResolve({filter:/^(react|react-dom)(\/.*)?$/},a=>({path:require.resolve(a.path,{paths:[modules]})}));
+  b.onResolve({filter:/^react-native$/},()=>({path:require.resolve('react-native-web',{paths:[modules]})}));
+  b.onResolve({filter:/^expo-router$/},()=>({path:'router',namespace:'adapter'}));
+  b.onResolve({filter:/^expo-speech$/},()=>({path:'speech',namespace:'adapter'}));
+  b.onResolve({filter:/async-storage/},()=>({path:'storage',namespace:'adapter'}));
+  b.onResolve({filter:/prepareSceneRoute/},()=>({path:'route',namespace:'adapter'}));
+  b.onResolve({filter:/RoyalPanels|RoyalSurface|RoyalPageBackground|JlptStudyBackground|FocusedImageBackground/},()=>({path:'royal',namespace:'adapter'}));
+  b.onResolve({filter:/StableSafeAreaView/},()=>({path:'safe',namespace:'adapter'}));
+  b.onResolve({filter:/RoyalPositioning/},()=>({path:'positioning',namespace:'adapter'}));
+  b.onLoad({filter:/.*/,namespace:'adapter'},a=>({contents:adapters[a.path],loader:'jsx',resolveDir:root}));
+  b.onResolve({filter:/\.(png|webp|jpe?g)$/},()=>({path:'image',namespace:'asset'}));
+  b.onLoad({filter:/.*/,namespace:'asset'},()=>({contents:'module.exports={uri:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="};',loader:'js'}));
+  b.onResolve({filter:/^@\//},a=>{const base=path.join(root,'src',a.path.slice(2));for(const ext of ['', '.tsx','.ts','.json','.js','/index.ts'])if(fs.existsSync(base+ext))return {path:base+ext};throw Error(base)});
+ }}]});
+ const fontCss=fonts.map((_,i)=>'@font-face{font-family:Vocab'+i+';src:url(/font-'+i+'.woff2)}').join('')+'*{font-family:'+fonts.map((_,i)=>'Vocab'+i).join(',')+',sans-serif!important}';
+ const html='<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>'+fontCss+'html,body,#root{height:100%;margin:0}#root{display:flex;flex-direction:column}*{box-sizing:border-box}</style><div id="root"></div><script src="/entry.js"></script>';
+ const server=http.createServer((q,r)=>{const font=/^\/font-[0-5]\.woff2$/.test(q.url);r.setHeader('Content-Type',font?'font/woff2':q.url==='/entry.js'?'application/javascript':'text/html; charset=utf-8');r.end(font?fs.readFileSync(path.join(out,q.url.slice(1))):q.url==='/entry.js'?fs.readFileSync(path.join(out,'entry.js')):html)});await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
+ try{
+  browser=await chromium.launch({executablePath:process.env.KENSETSU_QA_CHROMIUM,args:['--no-sandbox'],headless:true});const page=await browser.newPage({viewport:{width:390,height:844}}),errors=[],screenshots=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.goto('http://127.0.0.1:'+server.address().port);await page.getByTestId('vocabulary-card-VOC0001').waitFor();
+  let checks=0;
+  for(const language of ['ja','en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl']){
+   await page.evaluate(l=>window.__setLanguage(l),language);await page.waitForFunction(l=>window.__language===l,language);const expected=await page.evaluate(l=>window.__expected('VOC0001',l),language);
+   assert.equal(await page.getByTestId('vocabulary-meaning-VOC0001').innerText(),expected.meaning);
+   await page.getByTestId('vocabulary-search').fill(expected.meaning);await page.getByTestId('vocabulary-card-VOC0001').waitFor();await page.getByTestId('vocabulary-search').fill('');
+   await page.getByTestId('vocabulary-card-VOC0001').click();assert.equal(await page.getByTestId('vocabulary-detail-meaning').innerText(),expected.meaning);
+   if(language==='ja')assert.equal(await page.getByTestId('vocabulary-detail-example').count(),0);else assert.equal(await page.getByTestId('vocabulary-detail-example').innerText(),expected.example);
+   if(language==='ja'){await page.getByTestId('vocabulary-learned').click();await page.waitForFunction(()=>JSON.parse(localStorage.getItem('@japan_app/jlpt_progress_v1')).learnedIds.includes('VOC0001'));}
+   await page.waitForFunction(label=>document.querySelector('[data-testid="vocabulary-learned"]').textContent===label,expected.copy.learned);
+   await page.reload();await page.getByTestId('vocabulary-card-VOC0001').waitFor();assert.equal(await page.evaluate(()=>window.__language),language);await page.getByTestId('vocabulary-card-VOC0001').click();await page.waitForFunction(label=>document.querySelector('[data-testid="vocabulary-learned"]').textContent===label,expected.copy.learned);
+   if(['vi','th','my','km'].includes(language))for(const [width,height]of [[320,568],[768,1024],[932,430]]){await page.setViewportSize({width,height});await page.evaluate(()=>document.fonts.ready);assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1));const file=language+'-'+width+'x'+height+'.png';await page.screenshot({path:path.join(out,file)});screenshots.push(file);}
+   await page.evaluate(()=>window.__journey());await page.getByText('私',{exact:true}).first().waitFor();const first=await page.evaluate(l=>window.__expected('VOC0302',l).meaning,language);assert(await page.getByText(first,{exact:true}).count()>0,'N5 meaning '+language);
+   await page.evaluate(()=>window.__open('list'));await page.getByTestId('vocabulary-card-VOC0001').waitFor();checks++;
+  }
+  await page.evaluate(()=>window.__setLanguage('th'));await page.evaluate(()=>window.__open('detail',window.__missing));const pending=await page.evaluate(()=>window.__expected(window.__missing,'th').copy.pending);assert.equal(await page.getByTestId('vocabulary-detail-meaning').innerText(),pending);
+  assert.deepEqual(errors,[]);const report={date:'2026-10-18',status:'PASS_ACTUAL_SCREENS_AND_LANGUAGE_PROVIDER',languages:checks,listDetailAndN5Journey:true,localizedSearch:true,learnedIdRetainedAcrossLanguageChangesAndReload:true,persistedLanguageRestored:true,explicitPendingVerified:true,screenshots,runtimeErrors:errors,royalArtworkAdapted:true,nativeDeviceTested:false,productionExpoTested:false};fs.writeFileSync(path.join(root,'docs/vocabulary-workspace/browser-qa-2026-10-18.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
+ }finally{if(browser)await browser.close();await new Promise(r=>server.close(r));}
+})().catch(e=>{console.error(e);process.exit(1)});

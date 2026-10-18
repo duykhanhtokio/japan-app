@@ -1,3 +1,5 @@
+import { useAppLanguage } from '@/context/LanguageContext';
+import { generatedVocabulary, getVocabularyMeaning } from '@/data/jlpt-study-data';
 import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
@@ -27,6 +29,7 @@ export function FilteredVocabularyList({
     translation,
     words,
 }: Props) {
+    const {language}=useAppLanguage();
     return (
         <RoyalPageBackground><SafeAreaView style={styles.container}>
             <View style={styles.header}><RoyalBackButton onPress={() => backPrepared()} /></View>
@@ -77,7 +80,7 @@ export function FilteredVocabularyList({
                         </View>
 
                         <Text style={styles.meaning}>
-                            {item.meaningVi}
+                            {getVocabularyMeaning(generatedVocabulary.find(word=>word.word===item.word&&word.reading===item.reading)??{...item,id:String(item.id)},language)}
                         </Text>
                     </Pressable>
                 ))}
