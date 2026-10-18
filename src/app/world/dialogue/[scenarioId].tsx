@@ -22,6 +22,7 @@ import { recordNpcScenario } from '@/services/npc-progression-storage';
 import { scenarioMission } from '@/components/world/scenario-mission';
 import { displayLocationNameJa } from '@/components/world/world-ja';
 import { getPlayerNativeHint } from '@/components/world/player-answer-guidance';
+import { dialogueCopyLines as copyLines, dialoguePanelLayout, nativeDialogueLineHeight } from '@/components/world/dialogue-panel-layout';
 import { RoyalBackButton, RoyalButton, RoyalHintButton, RoyalNavyFrame, ROYAL, ROYAL_FONT, ROYAL_PLACEMENT, ROYAL_TEXT_FIT, ROYAL_TYPE, useRoyalPositioning } from '@/components/ui/RoyalSurface';
 
 const missingHint:Record<string,string>={ja:'この文のヒントはまだありません。',vi:'Chưa có gợi ý cho câu này.',en:'No hint is available for this line yet.',id:'Petunjuk untuk kalimat ini belum tersedia.','zh-CN':'这句话暂时没有提示。','zh-TW':'這句話暫時沒有提示。',hi:'इस वाक्य के लिए संकेत अभी उपलब्ध नहीं है।',bn:'এই বাক্যের ইঙ্গিত এখনও পাওয়া যায়নি।',ne:'यस वाक्यको सङ्केत अझै उपलब्ध छैन।',my:'ဤစာကြောင်းအတွက် အရိပ်အမြွက် မရရှိသေးပါ။',th:'ยังไม่มีคำใบ้สำหรับประโยคนี้',km:'មិនទាន់មានតម្រុយសម្រាប់ប្រយោគនេះទេ។',tl:'Wala pang pahiwatig para sa linyang ito.'};
@@ -35,13 +36,6 @@ function PulsingMic({disabled,recording,onPress}:{disabled:boolean;recording:boo
  const pulse=useRef(new NativeAnimated.Value(0)).current;
  useEffect(()=>{const loop=NativeAnimated.loop(NativeAnimated.sequence([NativeAnimated.timing(pulse,{toValue:1,duration:1500,useNativeDriver:true}),NativeAnimated.timing(pulse,{toValue:0,duration:1500,useNativeDriver:true})]));loop.start();return()=>loop.stop()},[pulse]);
  return <Pressable accessibilityRole="button" accessibilityLabel={recording?'録音を停止':'録音を開始'} disabled={disabled} onPress={onPress} style={({pressed})=>[s.mic,disabled&&{opacity:.7},pressed&&s.pressed]}><NativeAnimated.Image fadeDuration={0} source={MICROPHONE} resizeMode="contain" style={[s.micIcon,{opacity:pulse.interpolate({inputRange:[0,1],outputRange:[.78,1]}),transform:[{scale:pulse.interpolate({inputRange:[0,1],outputRange:[.96,1.06]})}]}]}/></Pressable>
-}
-
-// Conservative line budgeting before paint; Latin glyphs occupy half a full-width cell.
-function copyLines(text:string,width:number,size:number){
- const capacity=Math.max(1,width/size);let lines=1,used=0;
- for(const char of text){if(char==='\n'){lines++;used=0;continue;}const unit=/[\u0000-\u007f]/.test(char)?.6:1;if(used+unit>capacity){lines++;used=0;}used+=unit;}
- return lines;
 }
 
 export default function DialogueRoute(){
@@ -134,29 +128,26 @@ function DialogueScreen({id}:{id?:string}){
  const missionFont=wide?12:ROYAL_TYPE.explanation,missionLine=wide?16:ROYAL_TYPE.explanationLine;
  const missionLines=copyLines(mission,missionWidth,missionFont);
  const headerHeight=insets.top+ROYAL_PLACEMENT.headerTop+44+4+12+(wide?20:36)+missionLines*missionLine;
- const conversationTop=Math.max(headerHeight+8,npcWaist);
  const visiblePanels=turns.slice(Math.max(0,index-1),index+1);
- const availableHeight=Math.max(0,stageSize.height-conversationTop-controlsBottom-dockReserve);
- const slotHeight=Math.max(0,(availableHeight-40)/2);
- const renderPanel=(panel:typeof turn,context=false)=>{
+ const lineHeight=nativeDialogueLineHeight(language);
+ const panelSpecs=visiblePanels.map((panel,slot)=>{
+  const hintStage=hintStages[panel.id]??0,isNpc=panel.speaker==='NPC';
+  const copy=isNpc?[{text:panel.npc?.textJa??'',lineHeight}]:[{text:hintStage>0?panel.player?.recommendedAnswerJa??'':(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language],lineHeight:hintStage>0?3.2:lineHeight}];
+  if(isNpc&&hintStage>0&&language!=='ja')copy.push({text:panel.npc?.translations?.[language]??(language==='vi'?panel.npc?.translationVi:null)??missingHint[language],lineHeight});
+  const transcript=isNpc?'':visiblePanels.length===2&&slot===0?playerTranscripts[panel.id]??'':speech.transcript;
+  if(transcript)copy.push({text:`「${transcript}」`,lineHeight});
+  return{copy,context:visiblePanels.length===2&&slot===0};
+ });
+ const panelLayout=dialoguePanelLayout({width:stageSize.width,height:stageSize.height,headerBottom:headerHeight,bottom:stageSize.height-controlsBottom-dockReserve,npcWaist,wide,panels:panelSpecs});
+ const entryDistance=Math.max(80,...panelLayout.placements.map(panel=>panel.height))+16;
+ const renderPanel=(panel:typeof turn,context:boolean,slot:number)=>{
   const isNpc=panel.speaker==='NPC',showText=context||revealedTurnIds.has(panel.id),hintStage=hintStages[panel.id]??0;
   const npcText=showText?panel.npc?.textJa??'':(panel.npc?.textJa??'').slice(0,spokenLengths[panel.id]??0);
   const npcTranslation=panel.npc?.translations?.[language]??(language==='vi'?panel.npc?.translationVi:null);
   const panelTranscript=isNpc?'':context?playerTranscripts[panel.id]??'':speech.transcript;
   const panelRecognizing=!isNpc&&!context&&speech.recognizing;
-  const budgetHeight=slotHeight;
-  const copyWidth=Math.max(80,(wide?stageSize.width*.46:stageSize.width-20)-56);
-  const fullNpc=panel.npc?.textJa??'';
-  const panelCopy=isNpc?fullNpc:hintStage>0?panel.player?.recommendedAnswerJa??'':(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language];
-  const copyPixels=(size:number)=>copyLines(panelCopy,copyWidth,size)*size*(isNpc?1.15:hintStage>0?3.2:1.15)+(isNpc&&hintStage>0&&language!=='ja'?3+copyLines(npcTranslation??missingHint[language],copyWidth,size)*size*1.15:0)+(!isNpc&&panelTranscript?copyLines(panelTranscript,copyWidth,size)*size*1.15:0);
-  const panelInsets=wide?40:60;
-  // Last NPC hugs the complete sentence, including revealed translation.
-  // Reserve against full copy so speech boundary events never resize the panel.
-  const allocatedHeight=Math.min(budgetHeight,Math.max(isNpc?100:140,copyPixels(17)+panelInsets));
-  const copyHeight=Math.max(20,allocatedHeight-panelInsets);
-  let fontSize=17;
-  while(fontSize>(isNpc?6:14)&&copyPixels(fontSize)>copyHeight)fontSize-=.5;
-  const fit={fontSize,lineHeight:fontSize*1.15};
+  const {height:allocatedHeight,fontSize}=panelLayout.placements[slot];
+  const fit={fontSize,lineHeight:fontSize*lineHeight};
   return <View key={panel.id} style={[s.bubbleWrap,{height:allocatedHeight}]}>
    <RoyalNavyFrame style={s.speakerPlate}><Text numberOfLines={1} adjustsFontSizeToFit maxFontSizeMultiplier={1} style={s.speakerName}>{isNpc?npcName:playerName}</Text></RoyalNavyFrame>
    <View style={[s.bubbleDepth,{flex:1}]}><RoyalReadingFrame style={[{flex:1},wide&&{paddingVertical:8,paddingHorizontal:22}]}>
@@ -171,11 +162,12 @@ function DialogueScreen({id}:{id?:string}){
  return <ImageBackground inheritBackdrop key={location?.id} source={background} resizeMode="cover" style={s.screen}><View style={s.safe}>
   <View style={[s.header,{paddingTop:insets.top+ROYAL_PLACEMENT.headerTop}]}><View style={s.headerRow}><RoyalBackButton onPress={()=>backPrepared()}/><View style={s.headerTitle}><View style={s.titleRow}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.title}>{location?displayLocationNameJa(location.nameJa,location.category):'会話練習'}</Text></View></View></View><View style={[s.missionCard,wide&&s.missionCardWide]}><RoyalNavyFrame style={s.missionLabel}><Text style={s.missionLabelText}>課題</Text></RoyalNavyFrame><RoyalReadingFrame explanation style={wide?{paddingVertical:10}:undefined}><Text maxFontSizeMultiplier={1} style={[s.missionText,{color:ROYAL.paleGold},wide&&{fontSize:12,lineHeight:16}]}>{mission}</Text></RoyalReadingFrame></View></View>
   <View testID="dialogue-npc" pointerEvents="none" style={[s.npcLayer,{left:stageSize.width*(wide?.02:.03),top:stageSize.height-controlsBottom-npcBoxHeight,width:npcBoxWidth,height:npcBoxHeight}]}><Image key={location?.category} fadeDuration={0} source={npcImage} resizeMode="contain" style={s.npcImage}/></View>
-  <View testID="dialogue-panels" pointerEvents={transitioning?'none':'auto'} style={[s.conversation,{top:conversationTop,bottom:controlsBottom+dockReserve,overflow:'hidden'},wide&&s.conversationWide]}>
+  <View testID="dialogue-panels" pointerEvents={transitioning?'none':'auto'} style={[s.conversation,{top:panelLayout.top,bottom:panelLayout.bottom,overflow:'hidden'},wide&&s.conversationWide,panelLayout.columns&&{left:10,right:10}]}>
    {visiblePanels.map((panel,slot)=>{
     const previous=visiblePanels.length===2&&slot===0;
-    return <NativeAnimated.View key={panel.id} style={{position:'absolute',left:0,right:0,top:previous?0:slotHeight+16,transform:[{translateY:turnMotion.interpolate({inputRange:[0,1],outputRange:[slotHeight+16,0]})}]}}>
-     {renderPanel(panel,previous)}
+    const placement=panelLayout.placements[slot];
+    return <NativeAnimated.View key={panel.id} style={{position:'absolute',left:placement.left,width:placement.width,top:placement.top,transform:[{translateY:turnMotion.interpolate({inputRange:[0,1],outputRange:[entryDistance,0]})}]}}>
+     {renderPanel(panel,previous,slot)}
     </NativeAnimated.View>;
    })}
   </View>
