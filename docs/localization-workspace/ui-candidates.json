@@ -257,7 +257,7 @@
   {
     "file": "src/app/profile/index.tsx",
     "line": 142,
-    "text": "<Image fadeDuration={0} source={PROFILE_ICONS.work} resizeMode=\"contain\" style={{width:40,height:40,marginTop:12}}/><Text style={styles.identityOccupation}> {occupation?.titleJa ?? 'その他'} / {selectedContentTranslation(language, occupation?.titleVi ?? 'Công việc khác')}</Text>"
+    "text": "<Image fadeDuration={0} source={PROFILE_ICONS.work} resizeMode=\"contain\" style={{width:40,height:40,marginTop:12}}/><Text style={styles.identityOccupation}> {occupation?.titleJa ?? 'その他'} / {legacyFieldTranslation(language, occupation ?? {titleJa:'その他',titleVi:'Công việc khác'}, 'title')}</Text>"
   },
   {
     "file": "src/app/profile/index.tsx",
@@ -273,6 +273,11 @@
     "file": "src/app/profile/index.tsx",
     "line": 156,
     "text": "<Text style={styles.editText}>閉じる · Đóng</Text>"
+  },
+  {
+    "file": "src/app/profile/index.tsx",
+    "line": 354,
+    "text": "{legacyFieldTranslation(language, occupation ?? {titleJa:'その他',titleVi:'Công việc khác'}, 'title')}"
   },
   {
     "file": "src/app/profile/index.tsx",

@@ -4,6 +4,7 @@ import type {
 
 import {
     technicalInternJobTranslations,
+    getTechnicalInternJobTranslation,
 } from '@/data/technical-intern-translations';
 
 /*
@@ -2387,63 +2388,7 @@ function translateByKey(
     japaneseFallback:
         string
 ): string {
-    /*
-     * Japanese:
-     * dùng trực tiếp official Japanese.
-     */
-
-    if (
-        language ===
-        'ja'
-    ) {
-        return japaneseFallback;
-    }
-
-    /*
-     * Language của người dùng.
-     */
-
-    const selectedPack =
-        technicalInternJobTranslations[
-        language
-        ];
-
-    const translated =
-        selectedPack?.[
-        key
-        ];
-
-    if (
-        translated
-    ) {
-        return translated;
-    }
-
-    /*
-     * Nếu pack hiện tại thiếu key,
-     * thử English.
-     */
-
-    const english =
-        technicalInternJobTranslations
-            .en?.[
-        key
-        ];
-
-    if (
-        english
-    ) {
-        return english;
-    }
-
-    /*
-     * Cuối cùng fallback Japanese.
-     *
-     * UI không crash dù translation
-     * chưa hoàn thành.
-     */
-
-    return japaneseFallback;
+    return getTechnicalInternJobTranslation(key, language, japaneseFallback) ?? japaneseFallback;
 }
 
 export function getLocalizedGroupName(

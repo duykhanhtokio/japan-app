@@ -31,5 +31,21 @@ import w002 from '../../../docs/ssw-workspace/kensetsu/foreman/week-002.json';
 import w003 from '../../../docs/ssw-workspace/kensetsu/foreman/week-003.json';
 import w004 from '../../../docs/ssw-workspace/kensetsu/foreman/week-004.json';
 
-export const foremanSessions = [s001,s002,s003,s004,s005,s006,s007,s008,s009,s010,s011,s012,s013,s014,s015,s016,s017,s018,s019,s020,s021,s022,s023,s024,s025,s026,s027,s028];
+const sourceForemanSessions = [s001,s002,s003,s004,s005,s006,s007,s008,s009,s010,s011,s012,s013,s014,s015,s016,s017,s018,s019,s020,s021,s022,s023,s024,s025,s026,s027,s028];
 export const foremanWeeks = [w001,w002,w003,w004];
+
+import { applyLocaleLessonBundles } from './localization';
+import pack_en from './foreman-translations/en.json';
+import pack_id from './foreman-translations/id.json';
+import pack_zh_CN from './foreman-translations/zh-CN.json';
+import pack_zh_TW from './foreman-translations/zh-TW.json';
+import pack_hi from './foreman-translations/hi.json';
+import pack_bn from './foreman-translations/bn.json';
+import pack_ne from './foreman-translations/ne.json';
+import pack_my from './foreman-translations/my.json';
+import pack_th from './foreman-translations/th.json';
+import pack_km from './foreman-translations/km.json';
+import pack_tl from './foreman-translations/tl.json';
+const foremanLocalePacks = [pack_en,pack_id,pack_zh_CN,pack_zh_TW,pack_hi,pack_bn,pack_ne,pack_my,pack_th,pack_km,pack_tl];
+export const foremanSessions = sourceForemanSessions.map(session => applyLocaleLessonBundles(session,
+ foremanLocalePacks.map(pack => (pack.sessions as Record<string, import('./localization').TranslationBundle>)[session.id])));

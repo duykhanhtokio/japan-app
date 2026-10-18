@@ -1,3 +1,6 @@
+import { appLanguages } from '@/i18n/languages';
+import localeBatchIndex from '@/data/dialogue-content/locale-batch-index.json';
+import { applyDialogueLocaleBatch, type DialogueLocaleBatch } from './dialogue-locale-batches';
 import { applyDialogueTranslations, type DialogueTranslationBundle } from './dialogue-translations';
 import authoredHintsJson from '@/data/dialogue-content/player-hints.json';
 import type { LifeDialogueLevelSet, LifeDialogueTurn } from '@/types/life-conversation';
@@ -30,11 +33,23 @@ const dialogueContext = (require as RequireWithContext).context(
 const availableFiles = new Set(dialogueContext.keys());
 const translationContext = (require as RequireWithContext).context('../data/dialogue-content/translations', false, /\.json$/);
 const translatedFiles = new Set(translationContext.keys());
+const localeBatchContext = (require as RequireWithContext).context('../data/dialogue-content/locale-batches', true, /\.json$/);
+const localeBatchFiles = new Set(localeBatchContext.keys());
+function withLocaleBatches(turn:LifeDialogueTurn):LifeDialogueTurn {
+ const batchId=(localeBatchIndex as Record<string,string>)[turn.scenarioId];
+ if(!batchId)return turn;
+ return appLanguages.reduce((current,locale)=>{
+  const key=`./${locale.code}/${batchId}.json`;
+  if(!localeBatchFiles.has(key))return current;
+  const value=localeBatchContext(key) as DialogueLocaleBatch | {default:DialogueLocaleBatch};
+  return applyDialogueLocaleBatch(current,'default' in value?value.default:value);
+ },turn);
+}
 function withTranslations(turn: LifeDialogueTurn): LifeDialogueTurn {
  const key = `./${turn.scenarioId}.json`;
- if (!translatedFiles.has(key)) return withAuthoredHint(turn);
+ if (!translatedFiles.has(key)) return withLocaleBatches(withAuthoredHint(turn));
  const value = translationContext(key) as DialogueTranslationBundle | { default: DialogueTranslationBundle };
- return applyDialogueTranslations(withAuthoredHint(turn), 'default' in value ? value.default : value);
+ return withLocaleBatches(applyDialogueTranslations(withAuthoredHint(turn), 'default' in value ? value.default : value));
 }
 
 // The initial JLPT assessment describes the learner; it does not select or

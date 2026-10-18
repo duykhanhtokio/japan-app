@@ -25,6 +25,7 @@ const fieldLabels: Record<Field, string> = {
   civil: "土木",
 };
 import { reviewTestsForScope, type ReviewTest } from "@/data/kensetsu/review-tests";
+import { representativeSourceLessons } from "@/data/kensetsu/source-lesson-links";
 import {
   freshTestAttempt,
   gradeTest,
@@ -399,8 +400,7 @@ function Attempt({
                         {q.explanationJa}
                       </Text>
                       <Text style={s.heading}>関連する学習内容</Text>
-                      {q.sourceReferences.map((ref, i) => {
-                        const lesson = getSourceLesson?.(ref.sessionId);
+                      {representativeSourceLessons(q.sourceReferences, getSourceLesson).map(({ reference: ref, lesson }, i) => {
                         return (
                           <View key={`${ref.sessionId}:${ref.clusterId}:${i}`}>
                             <Text style={s.meta}>

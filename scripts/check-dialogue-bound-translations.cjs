@@ -13,7 +13,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
   for(let i=0;i<11;i++){
    const original=raw[i],turn=actual[i],entry=b.turns[turn.id],key=turn.speaker==='NPC'?'npc':'player',ja=key==='npc'?'textJa':'recommendedAnswerJa';
    assert.equal(turn[key][ja],original[key][ja]);assert.equal(entry.sourceJa,original[key][ja]);assert.equal(turn.id,original.id);assert.equal(turn.nextDialogueId,original.nextDialogueId);
-   for(const locale of locales){assert(entry.translations[locale]?.trim());assert.equal(turn[key].translations[locale],entry.translations[locale]);translations++;if(key==='player')assert.equal(m.getPlayerNativeHint(turn.player,locale),entry.translations[locale]);}
+   for(const locale of locales){assert(entry.translations[locale]?.trim());assert.equal(turn[key].translations[locale],entry.translations[locale]);translations++;if(key==='player')assert.equal(m.getPlayerNativeHint(turn.player,locale),turn.player.hintTranslations?.[locale]??entry.translations[locale]);}
    if(key==='npc')assert.equal(turn.npc.translationVi,entry.translations.vi);
    const stale=structuredClone(original);stale[key][ja]+='変更';assert.strictEqual(m.applyDialogueTranslations(stale,b),stale);
    assert.strictEqual(m.applyDialogueTranslations(original,{...b,scenarioId:'other'}),original);

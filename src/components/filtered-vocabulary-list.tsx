@@ -1,4 +1,4 @@
-import { selectedContentTranslation } from '@/i18n/selected-content';
+import { selectedContentTranslation, legacyFieldTranslation } from '@/i18n/selected-content';
 import { useAppLanguage } from '@/context/LanguageContext';
 import { getVocabularyMeaning, findVocabularyByJapanese } from '@/data/vocabulary-localization';
 import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
@@ -21,6 +21,7 @@ type Props = {
     typeLabel: string;
     title: string;
     translation: string;
+    translationRecord?: object;
     words: VocabularyItem[];
 };
 
@@ -28,6 +29,7 @@ export function FilteredVocabularyList({
     typeLabel,
     title,
     translation,
+    translationRecord,
     words,
 }: Props) {
     const {language}=useAppLanguage();
@@ -45,7 +47,7 @@ export function FilteredVocabularyList({
                 </Text>
 
                 <Text style={styles.translation}>
-                    {selectedContentTranslation(language, translation)}
+                    {translationRecord ? legacyFieldTranslation(language, translationRecord, 'name') : selectedContentTranslation(language, translation)}
                 </Text>
 
                 <Text style={styles.count}>

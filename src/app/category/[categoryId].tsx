@@ -30,6 +30,7 @@ export default function CategoryScreen() {
             typeLabel="カテゴリー"
             title={category.nameJa}
             translation={category.nameVi}
+            translationRecord={category}
             words={words}
         />
     );

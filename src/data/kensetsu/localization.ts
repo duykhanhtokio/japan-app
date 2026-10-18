@@ -47,3 +47,24 @@ export function applyLessonTranslations<T extends LocalizableSession>(session:T,
   illustration:c.illustration?{...c.illustration,captionTranslations:texts(c.id+':caption',c.illustration.captionJa,c.illustration.captionTranslations)}:undefined,
  }))} as T;
 }
+
+/** Validate each locale independently before combining overlays for one lesson. */
+export function applyLocaleLessonBundles<T extends LocalizableSession>(session:T,
+ bundles:readonly (TranslationBundle | undefined)[]):T {
+ const sources=collectTranslatableUnits(session),entries:TranslationBundle['entries']={};
+ for(const bundle of bundles){
+  if(!bundle || bundle.sessionId!==session.id)continue;
+  for(const [id,entry]of Object.entries(bundle.entries)){
+   if(sources[id]===undefined)continue;
+   if(entry.sourceJa===sources[id]){
+    const previous=entries[id];
+    entries[id]={sourceJa:entry.sourceJa,translations:{
+     ...(previous?.sourceJa===entry.sourceJa?previous.translations:{}),...entry.translations}};
+   }else if(!entries[id]){
+    // When every overlay is stale, retain the original mismatch suppression.
+    entries[id]={sourceJa:entry.sourceJa,translations:{}};
+   }
+  }
+ }
+ return applyLessonTranslations(session,{sessionId:session.id,entries});
+}

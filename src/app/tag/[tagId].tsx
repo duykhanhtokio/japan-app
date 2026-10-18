@@ -30,6 +30,7 @@ export default function TagScreen() {
             typeLabel="タグ"
             title={tag.nameJa}
             translation={tag.nameVi}
+            translationRecord={tag}
             words={words}
         />
     );

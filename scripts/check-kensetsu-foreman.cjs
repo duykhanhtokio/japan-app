@@ -24,6 +24,6 @@ for(let n=1;n<=28;n++){
 }
 const weekly=[];for(let n=1;n<=4;n++){const w=read('week-'+String(n).padStart(3,'0')+'.json');assert.equal(w.sessionIds.length,7);weekly.push(...w.sessionIds);}assert.deepEqual(weekly,all);
 assert.equal(paragraphs,112);assert.equal(prompts,50);assert.equal(images,4);assert.equal(screen.paragraphs,paragraphs);assert.equal(screen.candidates.length,0);assert.equal(screen.rightsCertification,false);
-assert.equal(ledger.coverageDenominator,null);assert.equal(ledger.wholeSourceComplete,false);assert.equal(ledger.releaseReady,false);assert.equal(ledger.remainingTargetLocales.length,11);assert.equal(ledger.objectives.length,56);
+assert.equal(ledger.coverageDenominator,null);assert.equal(ledger.wholeSourceComplete,false);assert.equal(ledger.releaseReady,false);assert.equal(ledger.remainingTargetLocales.length,0);assert.equal(ledger.objectives.length,56);
 const report={date:'2026-10-18',status:'PASS_AUTHORED_DATA_AND_PRESERVATION',lessons:all.length,weeks:4,clusters:56,japaneseParagraphs:paragraphs,vietnameseParagraphs:paragraphs,newTranslatedApplicationPrompts:prompts,originalDiagrams:images,originalThreeFilesBytePreserved:true,sourcePdfInRepository:false,wholeSourceCoverageConfirmed:false,domainReviewed:false,nativeReviewed:false,releaseReady:false};
 fs.writeFileSync(path.join(dir,'content-qa-2026-10-18.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

@@ -1,5 +1,6 @@
 import type { AppLanguageCode } from './languages';
 import { translatedUiSource, uiText } from './ui-text';
+import { authoredLegacyTranslation } from './legacy-content';
 
 /** Supporting translation only. Japanese source content is rendered separately. */
 export function selectedContentTranslation(language: AppLanguageCode, vietnamese?: string | null,
@@ -21,6 +22,8 @@ export function legacyFieldTranslation(language: AppLanguageCode, record: object
         const value = (pack as Record<string, unknown>)[language];
         if (typeof value === 'string') translations[language] = value;
     }
+    const authored = authoredLegacyTranslation(language, values, field);
+    if (!translations[language]?.trim() && authored?.trim()) translations[language] = authored;
     const english = values[field + 'En'];
     if (language === 'en' && !translations.en?.trim() && typeof english === 'string') translations.en = english;
     const vietnamese = values[field + 'Vi'];

@@ -1,5 +1,5 @@
 import { useAppLanguage } from '@/context/LanguageContext';
-import { selectedContentTranslation } from '@/i18n/selected-content';
+import { legacyFieldTranslation } from '@/i18n/selected-content';
 import { Text } from '@/components/app/LocalizedText';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import { pushPrepared } from '@/components/ui/prepareSceneRoute';
@@ -141,7 +141,7 @@ export default function ProfileScreen() {
                     <Image fadeDuration={0} source={PROFILE_AVATAR} resizeMode="contain" style={styles.identityAvatar}/>
                     <Text style={styles.identityName}>{profile.name?.trim() || 'プレイヤー'}</Text>
                     <Text style={styles.identityRank}>JLPT · {economy?.officialRank ?? 'N5'}</Text>
-                    <Image fadeDuration={0} source={PROFILE_ICONS.work} resizeMode="contain" style={{width:40,height:40,marginTop:12}}/><Text style={styles.identityOccupation}> {occupation?.titleJa ?? 'その他'} / {selectedContentTranslation(language, occupation?.titleVi ?? 'Công việc khác')}</Text>
+                    <Image fadeDuration={0} source={PROFILE_ICONS.work} resizeMode="contain" style={{width:40,height:40,marginTop:12}}/><Text style={styles.identityOccupation}> {occupation?.titleJa ?? 'その他'} / {legacyFieldTranslation(language, occupation ?? {titleJa:'その他',titleVi:'Công việc khác'}, 'title')}</Text>
                     <RoyalButton style={styles.identityEdit} onPress={()=>navigate('/register')}>
                         <Text style={styles.editText}>編集 · Chỉnh sửa</Text>
                     </RoyalButton>
@@ -191,7 +191,7 @@ export default function ProfileScreen() {
                             styles.ratingVi
                         }
                     >
-                        {selectedContentTranslation(language, communication.titleVi)}
+                        {legacyFieldTranslation(language, communication, 'title')}
                     </Text>
 
                     <RoyalPaperPanel tone="hud" style={[styles.ratingLevelBadge,{backgroundColor:'transparent',borderWidth:0,paddingHorizontal:24,paddingVertical:12,minHeight:48}]}>
@@ -363,7 +363,7 @@ export default function ProfileScreen() {
                                 {occupation?.titleJa ??
                                     'その他'}
                                 {' / '}
-                                {selectedContentTranslation(language, occupation?.titleVi)}
+                                {legacyFieldTranslation(language, occupation ?? {titleJa:'その他',titleVi:'Công việc khác'}, 'title')}
                             </Text>
                         </View>
                     </View>
