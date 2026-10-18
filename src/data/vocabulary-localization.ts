@@ -6,6 +6,7 @@ import sourceJson from './generated/vocabulary-localization-source.json';
 import repairsJson from './generated/vocabulary-source-repairs.json';
 import canonicalJson from './generated/vocabulary.json';
 import practicalExamplesJson from './generated/vocabulary-practical-examples.json';
+import practicalExampleAdditionsJson from './generated/vocabulary-practical-example-additions.json';
 import plannedSource from './generated/vocabulary-planned-source.json';
 import plannedBindings from './generated/vocabulary-planned-bindings.json';
 import en from './generated/vocabulary-localizations/en.json';
@@ -46,7 +47,7 @@ type PracticalExample = {
     sourceJa: string;
     translations: Record<Exclude<AppLanguageCode, 'ja'>, string>;
 };
-const practicalExamples = practicalExamplesJson.entries as Record<string, PracticalExample>;
+const practicalExamples = { ...practicalExamplesJson.entries, ...practicalExampleAdditionsJson.entries } as Record<string, PracticalExample>;
 
 function withPracticalExample<T extends VocabularyText>(item: T): T {
     const example = practicalExamples[item.id];

@@ -7,7 +7,7 @@ const dep=n=>require(require.resolve(n,{paths:[process.env.TOKUTEI_QA_MODULES||r
  const modules=built.outputFiles.map(file=>{const mod={exports:{}};new Function('module','exports','require',file.text)(mod,mod.exports,require);return mod.exports;});
  const mod={exports:modules.find(x=>x.generatedVocabulary)},helpers=modules.find(x=>x.localizeVocabulary);
  const {generatedVocabulary:words,getVocabularyExampleTranslation:getTranslation,getVocabularyCopy:getCopy}=mod.exports;
- const originals=read('src/data/generated/vocabulary.json'),extra=read('src/data/generated/vocabulary-practical-examples.json');
+ const originals=read('src/data/generated/vocabulary.json'),extra=require('./read-vocabulary-practical-examples.cjs')(root);
  const locales=['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];
  assert.equal(words.length,8350);assert.deepEqual(words.map(x=>x.id),originals.map(x=>x.id));
  const byId=new Map(words.map(x=>[x.id,x]));const sourceById=new Map(originals.map(x=>[x.id,x]));
@@ -28,8 +28,8 @@ const dep=n=>require(require.resolve(n,{paths:[process.env.TOKUTEI_QA_MODULES||r
    assert.equal(getTranslation(word,language),text,id+' runtime '+language);
   }
  }
- const firstId=Object.keys(extra.entries)[0];
- if(firstId){
+ const overlay=read('src/data/generated/vocabulary-practical-example-additions.json');
+ for(const firstId of new Set([Object.keys(extra.entries)[0],Object.keys(overlay.entries)[0]].filter(Boolean))){
   const original=sourceById.get(firstId);
   for(const changed of [{...original,word:'changed source'},{...original,reading:'changed reading'},{...original,exampleJa:'別の例文です。'}]){
    assert.notEqual(helpers.localizeVocabulary(changed).exampleJa,extra.entries[firstId].sourceJa,'stale source must not receive supplement');

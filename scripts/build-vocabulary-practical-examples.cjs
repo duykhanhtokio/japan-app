@@ -8,7 +8,7 @@ const source=new Map(read(path.join(dataDir,'vocabulary.json')).map(x=>[x.id,x])
 const locales=['id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];
 const translated=Object.fromEntries(locales.map(l=>{const f=work&&path.join(work,'translations-'+l+'.json');return[l,f&&fs.existsSync(f)?read(f):{}]}));
 const corrections=read(path.join(dir,'editorial-corrections.json')).entries;
-const target=path.join(dataDir,'vocabulary-practical-examples.json'),output=read(target),pending=[],seen=new Set();
+const target=path.join(dataDir,'vocabulary-practical-example-additions.json'),baseline=read(path.join(dataDir,'vocabulary-practical-examples.json')),output=require('./read-vocabulary-practical-examples.cjs')(root),pending=[],seen=new Set();
 for(const file of fs.readdirSync(dir).filter(x=>/^batch-\d+\.tsv$/.test(x)).sort())for(const line of fs.readFileSync(path.join(dir,file),'utf8').trim().split('\n')){
  const parts=line.split('|');assert.equal(parts.length,4,file+' expected ID, Japanese, English, Vietnamese');const [id,sourceJa,en,vi]=parts;
  assert(!seen.has(id),id+' duplicate authoring row');seen.add(id);
@@ -41,4 +41,5 @@ for(const file of fs.readdirSync(dir).filter(x=>/^direct-\d+\.json$/.test(x)).so
 }
 output.status='in_progress';output.generatedBy='AI';output.nativeReviewed=false;output.semanticReview='focused AI review only; not an all-record/all-locale quality certification';output.editorialCorrections='docs/vocabulary-workspace/practical-examples/editorial-corrections.json';
 output.translationMethod={tsvBatches:'English and Vietnamese directly authored; other locales drafted offline with MADLAD-400 3B and source-bound editorial corrections',directJsonBatches:'All 12 translations directly AI-authored with Japanese source; each record identifies its sourceBatch',nativeReviewed:false,runtimeTranslation:false};
-fs.writeFileSync(target,JSON.stringify(output,null,2)+'\n');console.log(JSON.stringify({completeAddedEntries:Object.keys(output.entries).length,pendingAuthoredEntries:pending.length}));
+const entries=Object.fromEntries(Object.entries(output.entries).filter(([id,item])=>JSON.stringify(item)!==JSON.stringify(baseline.entries[id])));
+fs.writeFileSync(target,JSON.stringify({generatedBy:'AI',nativeReviewed:false,entries},null,2)+'\n');console.log(JSON.stringify({completeAddedEntries:Object.keys(output.entries).length,overlayEntries:Object.keys(entries).length,pendingAuthoredEntries:pending.length}));
