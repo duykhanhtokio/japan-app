@@ -29,7 +29,9 @@ const dep=n=>require(require.resolve(n,{paths:[process.env.TOKUTEI_QA_MODULES||r
   }
  }
  const overlay=read('src/data/generated/vocabulary-practical-example-additions.json');
- for(const firstId of new Set([Object.keys(extra.entries)[0],Object.keys(overlay.entries)[0]].filter(Boolean))){
+ const shardManifest=read('src/data/generated/vocabulary-practical-example-shards/manifest.json');
+ const firstShard=shardManifest.files[0]&&read('src/data/generated/vocabulary-practical-example-shards/'+shardManifest.files[0].file);
+ for(const firstId of new Set([Object.keys(extra.entries)[0],Object.keys(overlay.entries)[0],firstShard&&Object.keys(firstShard.entries)[0]].filter(Boolean))){
   const original=sourceById.get(firstId);
   for(const changed of [{...original,word:'changed source'},{...original,reading:'changed reading'},{...original,exampleJa:'別の例文です。'}]){
    assert.notEqual(helpers.localizeVocabulary(changed).exampleJa,extra.entries[firstId].sourceJa,'stale source must not receive supplement');
