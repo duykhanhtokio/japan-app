@@ -11,60 +11,85 @@ import shard9 from './vocabulary-practical-example-shards/direct-1010.json';
 import shard10 from './vocabulary-practical-example-shards/direct-1011.json';
 import shard11 from './vocabulary-practical-example-shards/direct-1012.json';
 import shard12 from './vocabulary-practical-example-shards/direct-1013.json';
-import shard13 from './vocabulary-practical-example-shards/direct-2001.json';
-import shard14 from './vocabulary-practical-example-shards/direct-2002.json';
-import shard15 from './vocabulary-practical-example-shards/direct-2003.json';
-import shard16 from './vocabulary-practical-example-shards/direct-2004.json';
-import shard17 from './vocabulary-practical-example-shards/direct-2005.json';
-import shard18 from './vocabulary-practical-example-shards/direct-2006.json';
-import shard19 from './vocabulary-practical-example-shards/direct-2007.json';
-import shard20 from './vocabulary-practical-example-shards/direct-2008.json';
-import shard21 from './vocabulary-practical-example-shards/direct-2009.json';
-import shard22 from './vocabulary-practical-example-shards/direct-2010.json';
-import shard23 from './vocabulary-practical-example-shards/direct-2011.json';
-import shard24 from './vocabulary-practical-example-shards/direct-3001.json';
-import shard25 from './vocabulary-practical-example-shards/direct-3002.json';
-import shard26 from './vocabulary-practical-example-shards/direct-3003.json';
-import shard27 from './vocabulary-practical-example-shards/direct-3004.json';
-import shard28 from './vocabulary-practical-example-shards/direct-3005.json';
-import shard29 from './vocabulary-practical-example-shards/direct-3006.json';
-import shard30 from './vocabulary-practical-example-shards/direct-3007.json';
-import shard31 from './vocabulary-practical-example-shards/direct-3008.json';
-import shard32 from './vocabulary-practical-example-shards/direct-3009.json';
-import shard33 from './vocabulary-practical-example-shards/direct-3010.json';
-import shard34 from './vocabulary-practical-example-shards/direct-4001.json';
-import shard35 from './vocabulary-practical-example-shards/direct-4002.json';
-import shard36 from './vocabulary-practical-example-shards/direct-4003.json';
-import shard37 from './vocabulary-practical-example-shards/direct-4004.json';
-import shard38 from './vocabulary-practical-example-shards/direct-4005.json';
-import shard39 from './vocabulary-practical-example-shards/direct-4006.json';
-import shard40 from './vocabulary-practical-example-shards/direct-4007.json';
-import shard41 from './vocabulary-practical-example-shards/direct-4008.json';
-import shard42 from './vocabulary-practical-example-shards/direct-4009.json';
-import shard43 from './vocabulary-practical-example-shards/direct-4010.json';
-import shard44 from './vocabulary-practical-example-shards/direct-4011.json';
-import shard45 from './vocabulary-practical-example-shards/direct-5001.json';
-import shard46 from './vocabulary-practical-example-shards/direct-5002.json';
-import shard47 from './vocabulary-practical-example-shards/direct-5003.json';
-import shard48 from './vocabulary-practical-example-shards/direct-5004.json';
-import shard49 from './vocabulary-practical-example-shards/direct-5005.json';
-import shard50 from './vocabulary-practical-example-shards/direct-5006.json';
-import shard51 from './vocabulary-practical-example-shards/direct-5007.json';
-import shard52 from './vocabulary-practical-example-shards/direct-5008.json';
-import shard53 from './vocabulary-practical-example-shards/direct-5009.json';
-import shard54 from './vocabulary-practical-example-shards/direct-5010.json';
-import shard55 from './vocabulary-practical-example-shards/direct-5011.json';
-import shard56 from './vocabulary-practical-example-shards/direct-5012.json';
-import shard57 from './vocabulary-practical-example-shards/direct-6001.json';
-import shard58 from './vocabulary-practical-example-shards/direct-6002.json';
-import shard59 from './vocabulary-practical-example-shards/direct-6003.json';
-import shard60 from './vocabulary-practical-example-shards/direct-6004.json';
-import shard61 from './vocabulary-practical-example-shards/direct-6005.json';
-import shard62 from './vocabulary-practical-example-shards/direct-6006.json';
-import shard63 from './vocabulary-practical-example-shards/direct-6007.json';
-import shard64 from './vocabulary-practical-example-shards/direct-6008.json';
-import shard65 from './vocabulary-practical-example-shards/direct-6009.json';
-import shard66 from './vocabulary-practical-example-shards/direct-6010.json';
+import shard13 from './vocabulary-practical-example-shards/direct-1014.json';
+import shard14 from './vocabulary-practical-example-shards/direct-1015.json';
+import shard15 from './vocabulary-practical-example-shards/direct-1016.json';
+import shard16 from './vocabulary-practical-example-shards/direct-1017.json';
+import shard17 from './vocabulary-practical-example-shards/direct-2001.json';
+import shard18 from './vocabulary-practical-example-shards/direct-2002.json';
+import shard19 from './vocabulary-practical-example-shards/direct-2003.json';
+import shard20 from './vocabulary-practical-example-shards/direct-2004.json';
+import shard21 from './vocabulary-practical-example-shards/direct-2005.json';
+import shard22 from './vocabulary-practical-example-shards/direct-2006.json';
+import shard23 from './vocabulary-practical-example-shards/direct-2007.json';
+import shard24 from './vocabulary-practical-example-shards/direct-2008.json';
+import shard25 from './vocabulary-practical-example-shards/direct-2009.json';
+import shard26 from './vocabulary-practical-example-shards/direct-2010.json';
+import shard27 from './vocabulary-practical-example-shards/direct-2011.json';
+import shard28 from './vocabulary-practical-example-shards/direct-2012.json';
+import shard29 from './vocabulary-practical-example-shards/direct-2013.json';
+import shard30 from './vocabulary-practical-example-shards/direct-2014.json';
+import shard31 from './vocabulary-practical-example-shards/direct-2015.json';
+import shard32 from './vocabulary-practical-example-shards/direct-3001.json';
+import shard33 from './vocabulary-practical-example-shards/direct-3002.json';
+import shard34 from './vocabulary-practical-example-shards/direct-3003.json';
+import shard35 from './vocabulary-practical-example-shards/direct-3004.json';
+import shard36 from './vocabulary-practical-example-shards/direct-3005.json';
+import shard37 from './vocabulary-practical-example-shards/direct-3006.json';
+import shard38 from './vocabulary-practical-example-shards/direct-3007.json';
+import shard39 from './vocabulary-practical-example-shards/direct-3008.json';
+import shard40 from './vocabulary-practical-example-shards/direct-3009.json';
+import shard41 from './vocabulary-practical-example-shards/direct-3010.json';
+import shard42 from './vocabulary-practical-example-shards/direct-3011.json';
+import shard43 from './vocabulary-practical-example-shards/direct-3012.json';
+import shard44 from './vocabulary-practical-example-shards/direct-3013.json';
+import shard45 from './vocabulary-practical-example-shards/direct-3014.json';
+import shard46 from './vocabulary-practical-example-shards/direct-4001.json';
+import shard47 from './vocabulary-practical-example-shards/direct-4002.json';
+import shard48 from './vocabulary-practical-example-shards/direct-4003.json';
+import shard49 from './vocabulary-practical-example-shards/direct-4004.json';
+import shard50 from './vocabulary-practical-example-shards/direct-4005.json';
+import shard51 from './vocabulary-practical-example-shards/direct-4006.json';
+import shard52 from './vocabulary-practical-example-shards/direct-4007.json';
+import shard53 from './vocabulary-practical-example-shards/direct-4008.json';
+import shard54 from './vocabulary-practical-example-shards/direct-4009.json';
+import shard55 from './vocabulary-practical-example-shards/direct-4010.json';
+import shard56 from './vocabulary-practical-example-shards/direct-4011.json';
+import shard57 from './vocabulary-practical-example-shards/direct-4012.json';
+import shard58 from './vocabulary-practical-example-shards/direct-4013.json';
+import shard59 from './vocabulary-practical-example-shards/direct-4014.json';
+import shard60 from './vocabulary-practical-example-shards/direct-4015.json';
+import shard61 from './vocabulary-practical-example-shards/direct-5001.json';
+import shard62 from './vocabulary-practical-example-shards/direct-5002.json';
+import shard63 from './vocabulary-practical-example-shards/direct-5003.json';
+import shard64 from './vocabulary-practical-example-shards/direct-5004.json';
+import shard65 from './vocabulary-practical-example-shards/direct-5005.json';
+import shard66 from './vocabulary-practical-example-shards/direct-5006.json';
+import shard67 from './vocabulary-practical-example-shards/direct-5007.json';
+import shard68 from './vocabulary-practical-example-shards/direct-5008.json';
+import shard69 from './vocabulary-practical-example-shards/direct-5009.json';
+import shard70 from './vocabulary-practical-example-shards/direct-5010.json';
+import shard71 from './vocabulary-practical-example-shards/direct-5011.json';
+import shard72 from './vocabulary-practical-example-shards/direct-5012.json';
+import shard73 from './vocabulary-practical-example-shards/direct-5013.json';
+import shard74 from './vocabulary-practical-example-shards/direct-5014.json';
+import shard75 from './vocabulary-practical-example-shards/direct-5015.json';
+import shard76 from './vocabulary-practical-example-shards/direct-5016.json';
+import shard77 from './vocabulary-practical-example-shards/direct-5017.json';
+import shard78 from './vocabulary-practical-example-shards/direct-6001.json';
+import shard79 from './vocabulary-practical-example-shards/direct-6002.json';
+import shard80 from './vocabulary-practical-example-shards/direct-6003.json';
+import shard81 from './vocabulary-practical-example-shards/direct-6004.json';
+import shard82 from './vocabulary-practical-example-shards/direct-6005.json';
+import shard83 from './vocabulary-practical-example-shards/direct-6006.json';
+import shard84 from './vocabulary-practical-example-shards/direct-6007.json';
+import shard85 from './vocabulary-practical-example-shards/direct-6008.json';
+import shard86 from './vocabulary-practical-example-shards/direct-6009.json';
+import shard87 from './vocabulary-practical-example-shards/direct-6010.json';
+import shard88 from './vocabulary-practical-example-shards/direct-6011.json';
+import shard89 from './vocabulary-practical-example-shards/direct-6012.json';
+import shard90 from './vocabulary-practical-example-shards/direct-6013.json';
+import shard91 from './vocabulary-practical-example-shards/direct-6014.json';
 export const practicalExampleShardEntries = {
     ...shard0.entries,
     ...shard1.entries,
@@ -133,4 +158,29 @@ export const practicalExampleShardEntries = {
     ...shard64.entries,
     ...shard65.entries,
     ...shard66.entries,
+    ...shard67.entries,
+    ...shard68.entries,
+    ...shard69.entries,
+    ...shard70.entries,
+    ...shard71.entries,
+    ...shard72.entries,
+    ...shard73.entries,
+    ...shard74.entries,
+    ...shard75.entries,
+    ...shard76.entries,
+    ...shard77.entries,
+    ...shard78.entries,
+    ...shard79.entries,
+    ...shard80.entries,
+    ...shard81.entries,
+    ...shard82.entries,
+    ...shard83.entries,
+    ...shard84.entries,
+    ...shard85.entries,
+    ...shard86.entries,
+    ...shard87.entries,
+    ...shard88.entries,
+    ...shard89.entries,
+    ...shard90.entries,
+    ...shard91.entries,
 };

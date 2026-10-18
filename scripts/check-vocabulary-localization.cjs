@@ -22,6 +22,13 @@ const dep=n=>require(require.resolve(n,{paths:[process.env.TOKUTEI_QA_MODULES||r
   for(const [id,v]of Object.entries(legacyExamples))if(v.translations[locale])assert.equal(bundle.examples[id],v.translations[locale],locale+id+' preserved example');
   for(const item of planned)assert(bundle.plannedMeanings[item.id]?.trim(),locale+item.id);
  }
+ for(const [id,repair] of Object.entries(repairs))if(repair.meaningTranslations){
+  const item=m.generatedVocabulary.find(x=>x.id===id);assert(item,id+' repaired meaning ID');
+  assert.deepEqual(Object.keys(repair.meaningTranslations).sort(),[...translatedLocales].sort(),id+' repaired meaning locales');
+  for(const locale of translatedLocales)assert.equal(m.getVocabularyMeaning(item,locale),repair.meaningTranslations[locale],id+' repaired meaning runtime '+locale);
+  const changed=helpers.localizeVocabulary({...original.find(x=>x.id===id),word:'changed source',meaningTranslations:{}});
+  assert(!changed.meaningTranslations?.vi,id+' changed source must not inherit repaired meaning');
+ }
  const counts=languages.map(language=>{
   const copy=m.getVocabularyCopy(language);assert(Object.values(copy).every(x=>typeof x==='string'&&x.trim()));let examplesPresent=0;
   const byLevel=Object.fromEntries(levels.map(level=>[level,0]));

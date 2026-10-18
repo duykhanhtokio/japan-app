@@ -41,7 +41,7 @@ const nonempty = (value?: string) => value?.trim() ? value : undefined;
 type TranslationBundle = { locale: string; meanings: Record<string, string>; examples: Record<string, string>; plannedMeanings?: Record<string, string> };
 const bundles: Partial<Record<AppLanguageCode, TranslationBundle>> = { en, vi, id, 'zh-CN': zhCN, 'zh-TW': zhTW, hi, bn, ne, my, th, km, tl };
 const source = sourceJson.canonical as Record<string, { word: string; reading: string; exampleJa?: string }>;
-const repairs = repairsJson as Record<string, { originalWord: string; originalReading: string; originalExampleJa?: string; word: string; reading: string; meaningEn?: string; meaningVi?: string; exampleJa?: string; exampleVi?: string }>;
+const repairs = repairsJson as Record<string, { originalWord: string; originalReading: string; originalExampleJa?: string; word: string; reading: string; meaningEn?: string; meaningVi?: string; meaningTranslations?: LocalizedText; exampleJa?: string; exampleVi?: string }>;
 type PracticalExample = {
     word: string;
     reading: string;
@@ -51,6 +51,12 @@ type PracticalExample = {
 const practicalExamples = { ...practicalExamplesJson.entries, ...practicalExampleAdditionsJson.entries, ...practicalExampleShardEntries } as Record<string, PracticalExample>;
 
 function withPracticalExample<T extends VocabularyText>(item: T): T {
+    const repair = repairs[item.id];
+    if (repair?.word === item.word && repair.reading === item.reading && repair.meaningTranslations) {
+        const meaningTranslations = { ...item.meaningTranslations, ...repair.meaningTranslations };
+        item = { ...item, meaningTranslations, meaningEn: meaningTranslations.en ?? item.meaningEn,
+            meaningVi: meaningTranslations.vi ?? item.meaningVi };
+    }
     const example = practicalExamples[item.id];
     // A changed headword, reading or source sentence must never inherit an old translation.
     if (!example || example.word !== item.word || example.reading !== item.reading
