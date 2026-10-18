@@ -1,4 +1,4 @@
-/** Replacements for 19 malformed N1 placeholder rows, preserving their stable IDs. */
+/** Historical replacement provenance. The 19 reviewed rows now live in generated/grammar.json; runtime no longer imports this file. */
 export const jlptGrammarSupplements=[
  {id:'GR0418',name:'～を皮切りに',reading:'をかわきりに',jlpt:'N1',meaningVi:'Bắt đầu từ… rồi mở rộng tiếp',pattern:'N + を皮切りに',formation:'公演 + を皮切りに',exampleJa:'東京公演を皮切りに、全国でコンサートが行われます。',exampleVi:'Bắt đầu từ buổi diễn Tokyo, hòa nhạc sẽ được tổ chức trên toàn quốc.',status:'Approved'},
  {id:'GR0450',name:'～にかたくない',reading:'にかたくない',jlpt:'N1',meaningVi:'Không khó để tưởng tượng/hiểu',pattern:'V辞書形 + にかたくない',formation:'想像する + にかたくない',exampleJa:'被災者の苦労は想像するにかたくない。',exampleVi:'Không khó để hình dung sự vất vả của những người bị thiên tai.',status:'Approved'},

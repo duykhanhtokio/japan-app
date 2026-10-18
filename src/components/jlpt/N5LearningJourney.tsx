@@ -1,22 +1,20 @@
+import { getPlannedGrammar } from '@/data/grammar-planned-localization';
+import { getGrammarCopy } from '@/i18n/grammar-copy';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
 // Locale-resolved text must bypass the legacy script-guessing translator.
 import { Text } from 'react-native';
 import { useAppLanguage } from '@/context/LanguageContext';
 import {
-    generatedGrammar,
     generatedVocabulary,
-    getGrammarExampleTranslation,
-    getGrammarMeaning,
     getVocabularyExampleTranslation,
     getVocabularyMeaning,
-    type GeneratedGrammar,
     type GeneratedVocabulary,
 } from '@/data/jlpt-learning';
 import curriculum from '@/game/data/n5/n5-curriculum-data';
 import originalVocabulary from '@/data/generated/vocabulary.json';
 import { getPlannedVocabularyItem, getPlannedVocabularyMeaning } from '@/data/vocabulary-localization';
-import type { N5GrammarItem, N5StudyDay, N5VocabularyItem } from '@/game/data/n5/n5-curriculum-types';
+import type { N5StudyDay, N5VocabularyItem } from '@/game/data/n5/n5-curriculum-types';
 import { getJlptProgress, saveN5JourneyPosition, toggleLearnedId } from '@/services/jlpt-progress-storage';
 import * as Speech from 'expo-speech';
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -60,6 +58,7 @@ type GrammarEntry = {
     exampleJa?: string;
     exampleReading?: string;
     exampleTranslation?: string;
+    examples?: { exampleJa: string; exampleReading?: string; exampleTranslation?: string }[];
 };
 
 type JourneyEntry = VocabEntry | GrammarEntry;
@@ -75,7 +74,6 @@ type DayGroup = {
 const N5_VOCABULARY = generatedVocabulary.filter((item) => item.jlpt === 'N5' && item.status !== 'Rejected');
 // Freeze the previous progress-ID assignment while correcting displayed homophones.
 const N5_PROGRESS_VOCABULARY = originalVocabulary.filter((item) => item.jlpt === 'N5' && item.status !== 'Rejected');
-const N5_GRAMMAR = generatedGrammar.filter((item) => item.jlpt === 'N5' && item.status !== 'Rejected');
 
 const COPY = {
     vi: {
@@ -154,14 +152,6 @@ function normalize(value: string | undefined) {
     return (value ?? '').replace(/[\s・~～〜]/g, '').toLocaleLowerCase();
 }
 
-function matchesGrammar(item: GeneratedGrammar, planned: N5GrammarItem) {
-    const pattern = normalize(planned.pattern);
-    return normalize(item.name) === pattern
-        || normalize(item.pattern) === pattern
-        || normalize(item.name).includes(pattern)
-        || pattern.includes(normalize(item.name));
-}
-
 export default function N5LearningJourney({ mode, onBack, onOpenCharacters }: Props) {
     const { language } = useAppLanguage();
     const copy = copyFor(language);
@@ -183,11 +173,8 @@ export default function N5LearningJourney({ mode, onBack, onOpenCharacters }: Pr
 
     const groups = useMemo<DayGroup[]>(() => {
         const usedVocabulary = new Set<string>();
-        const usedGrammar = new Set<string>();
         const vocabularyByWord = indexBy(N5_PROGRESS_VOCABULARY, (item) => normalize(item.word));
         const vocabularyByReading = indexBy(N5_PROGRESS_VOCABULARY, (item) => normalize(item.reading));
-        const grammarByName = indexBy(N5_GRAMMAR, (item) => normalize(item.name));
-        const grammarByPattern = indexBy(N5_GRAMMAR, (item) => normalize(item.pattern));
 
         function firstUnused<T extends { id: string }>(candidates: T[] | undefined, used: Set<string>) {
             return candidates?.find((item) => !used.has(item.id));
@@ -196,13 +183,6 @@ export default function N5LearningJourney({ mode, onBack, onOpenCharacters }: Pr
         function findVocabulary(entry: N5VocabularyItem) {
             return firstUnused(vocabularyByWord.get(normalize(entry.japanese)), usedVocabulary)
                 ?? firstUnused(vocabularyByReading.get(normalize(entry.reading)), usedVocabulary);
-        }
-
-        function findGrammar(entry: N5GrammarItem) {
-            const key = normalize(entry.pattern);
-            return firstUnused(grammarByName.get(key), usedGrammar)
-                ?? firstUnused(grammarByPattern.get(key), usedGrammar)
-                ?? N5_GRAMMAR.find((item) => !usedGrammar.has(item.id) && matchesGrammar(item, entry));
         }
 
         const planned: DayGroup[] = curriculum.days.map((day: N5StudyDay) => {
@@ -218,22 +198,8 @@ export default function N5LearningJourney({ mode, onBack, onOpenCharacters }: Pr
                     meaning: getPlannedVocabularyMeaning(entry.japanese, entry.reading, language),
                 };
             });
-            const grammar = day.grammar.map((entry, index) => {
-                const source = findGrammar(entry);
-                if (source) usedGrammar.add(source.id);
-                return source
-                    ? toGrammar(source)
-                    : {
-                        id: `n5-plan:grammar:${day.day}:${index}`,
-                        name: entry.pattern,
-                        meaning: language === 'vi' ? (entry.reviewExplanationVi ?? entry.pattern) : entry.pattern,
-                        pattern: entry.pattern,
-                        exampleJa: entry.example.japanese,
-                        exampleReading: entry.example.reading,
-                        exampleTranslation: language === 'vi' ? entry.example.reviewTranslationVi : undefined,
-                    };
-            });
-            return { day: day.day, week: day.week, title: day.title, vocabulary, grammar };
+            const grammar = day.grammar.map((entry, index) => getPlannedGrammar(day.day, index, entry, language));
+            return { day: day.day, week: day.week, title: mode === 'grammar' ? getGrammarCopy(language).title : day.title, vocabulary, grammar };
         });
 
         return planned;
@@ -250,20 +216,6 @@ export default function N5LearningJourney({ mode, onBack, onOpenCharacters }: Pr
             };
         }
 
-        function toGrammar(item: GeneratedGrammar): GrammarEntry {
-            return {
-                id: item.id,
-                name: item.name,
-                reading: item.reading,
-                meaning: getGrammarMeaning(item, language),
-                pattern: item.pattern,
-                formation: item.formation,
-                exampleJa: item.exampleJa,
-                exampleReading: item.exampleReading,
-                exampleTranslation: getGrammarExampleTranslation(item, language),
-            };
-        }
-
         function indexBy<T>(items: T[], keyFor: (item: T) => string) {
             const index = new Map<string, T[]>();
             items.forEach((item) => {
@@ -275,7 +227,7 @@ export default function N5LearningJourney({ mode, onBack, onOpenCharacters }: Pr
             });
             return index;
         }
-    }, [language]);
+    }, [language, mode, copy.day]);
 
     const visibleGroups = useMemo(
         () => groups.filter((group) => (mode === 'vocabulary' ? group.vocabulary.length : group.grammar.length)),
@@ -314,7 +266,7 @@ export default function N5LearningJourney({ mode, onBack, onOpenCharacters }: Pr
     function speakCurrent() {
         const first = currentItems.find((item) => !learnedSet.has(item.id)) ?? currentItems[0];
         if (!first) return;
-        const text = 'word' in first ? first.word : (first.exampleJa ?? first.name);
+        const text = 'word' in first ? first.word : (first.examples?.[0]?.exampleJa ?? first.exampleJa ?? first.name);
         Speech.stop();
         Speech.speak(text, { language: 'ja-JP', rate: 0.68 });
     }
@@ -329,10 +281,11 @@ export default function N5LearningJourney({ mode, onBack, onOpenCharacters }: Pr
                     <View style={styles.totalProgress}><Text style={styles.totalProgressLabel}>{copy.progress}</Text><Text style={styles.totalProgressValue}>{allItems.length - unlearned.length}/{allItems.length}</Text></View>
                 </View>
 
+                {mode === 'grammar' && <Text style={[styles.detail, { marginBottom: 12 }]}>{getGrammarCopy(language).legend}</Text>}
                 <View style={[styles.dashboard, compact && styles.dashboardCompact]}>
                     <View style={[styles.calendar, compact && styles.fullWidth]}>
                         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.weekRow}>
-                            {weeks.map((week) => <Pressable key={week} onPress={() => { const first = groups.find((group) => group.week === week); setSelectedWeek(week); if (first) { setSelectedDay(first.day); void saveN5JourneyPosition(week, first.day); } }} style={[styles.weekChip, selectedWeek === week && styles.weekChipActive]}>
+                            {weeks.map((week) => <Pressable testID={`n5-week-${week}`} key={week} onPress={() => { const first = groups.find((group) => group.week === week); setSelectedWeek(week); if (first) { setSelectedDay(first.day); void saveN5JourneyPosition(week, first.day); } }} style={[styles.weekChip, selectedWeek === week && styles.weekChipActive]}>
                                 <Text style={[styles.weekText, selectedWeek === week && styles.whiteText]}>{copy.week} {week}</Text>
                             </Pressable>)}
                         </ScrollView>
@@ -340,7 +293,7 @@ export default function N5LearningJourney({ mode, onBack, onOpenCharacters }: Pr
                             {weekDays.map((group) => {
                                 const items = mode === 'vocabulary' ? group.vocabulary : group.grammar;
                                 const done = items.filter((item) => learnedSet.has(item.id)).length;
-                                return <Pressable key={group.day} onPress={() => selectDay(group.day)} style={[styles.dayCell, selectedDay === group.day && styles.dayCellActive]}>
+                                return <Pressable testID={`n5-day-${group.day}`} key={group.day} onPress={() => selectDay(group.day)} style={[styles.dayCell, selectedDay === group.day && styles.dayCellActive]}>
                                     <View style={styles.dayCellTop}><Text style={[styles.dayNumber, selectedDay === group.day && styles.whiteText]}>{copy.day} {group.day}</Text>{done === items.length && items.length > 0 && <Text style={styles.doneTick}>✓</Text>}</View>
                                     <Text numberOfLines={2} style={[styles.dayTitle, selectedDay === group.day && styles.whiteText]}>{group.title}</Text>
                                     <Text style={[styles.dayProgress, selectedDay === group.day && styles.whiteMuted]}>{done}/{items.length}</Text>
@@ -354,10 +307,10 @@ export default function N5LearningJourney({ mode, onBack, onOpenCharacters }: Pr
                             <Text style={styles.sideIcon}>📥</Text><Text style={styles.sideTitle}>{copy.unlearnedBox}</Text><Text style={styles.sideValue}>{unlearned.length}</Text><Text style={styles.sideHint}>{copy.open}</Text>
                         </Pressable>
                         <Pressable style={[styles.sideCard, styles.extraCard]} onPress={() => unlearned[0] && selectDay(visibleGroups.find((group) => (mode === 'vocabulary' ? group.vocabulary : group.grammar).some((item) => item.id === unlearned[0].id))?.day ?? selectedDay)}>
-                            <Text style={styles.sideIcon}>🎡</Text><Text style={styles.sideTitle}>{mode === 'vocabulary' ? copy.extraOneVocabulary : copy.extraOneGrammar}</Text>
+                            <Text style={styles.sideIcon}>🎡</Text><Text style={styles.sideTitle}>{mode === 'vocabulary' ? copy.extraOneVocabulary : getGrammarCopy(language).reviewAction}</Text>
                         </Pressable>
-                        <Pressable style={[styles.sideCard, styles.listenCard]} onPress={speakCurrent}>
-                            <Text style={styles.sideIcon}>🎧</Text><Text style={styles.sideTitle}>{mode === 'vocabulary' ? copy.extraTwoVocabulary : copy.extraTwoGrammar}</Text>
+                        <Pressable testID="n5-listen-example" style={[styles.sideCard, styles.listenCard]} onPress={speakCurrent}>
+                            <Text style={styles.sideIcon}>🎧</Text><Text style={styles.sideTitle}>{mode === 'vocabulary' ? copy.extraTwoVocabulary : getGrammarCopy(language).listenAction}</Text>
                         </Pressable>
                     </View>
                 </View>
@@ -371,7 +324,7 @@ export default function N5LearningJourney({ mode, onBack, onOpenCharacters }: Pr
                     const items = currentItems;
                     return <View style={styles.daySection}>
                         <View style={styles.sectionHeading}><View><Text style={styles.sectionDay}>{copy.day} {currentGroup.day}</Text><Text style={styles.sectionName}>{currentGroup.title}</Text></View><Text style={styles.sectionCount}>{items.filter((item) => learnedSet.has(item.id)).length}/{items.length}</Text></View>
-                        {!items.length && currentGroup.week === 1 && <Pressable onPress={onOpenCharacters} style={styles.kanaRouteCard}><Text style={styles.kanaRouteIcon}>🔤</Text><View style={styles.kanaRouteCopy}><Text style={styles.kanaRouteTitle}>文字の基礎へ</Text><Text style={styles.kanaRouteText}>第1週はひらがな・カタカナを学習します。文字学習画面で進めてください。</Text></View><Text style={styles.kanaRouteArrow}>›</Text></Pressable>}
+                        {!items.length && currentGroup.week === 1 && <Pressable onPress={onOpenCharacters} style={styles.kanaRouteCard}><Text style={styles.kanaRouteIcon}>🔤</Text><View style={styles.kanaRouteCopy}><Text style={styles.kanaRouteTitle}>{mode === 'grammar' ? getGrammarCopy(language).kanaTitle : '文字の基礎へ'}</Text><Text style={styles.kanaRouteText}>{mode === 'grammar' ? getGrammarCopy(language).kanaHint : '第1週はひらがな・カタカナを学習します。文字学習画面で進めてください。'}</Text></View><Text style={styles.kanaRouteArrow}>›</Text></Pressable>}
                         {!items.length && currentGroup.week !== 1 && <Text style={styles.noItems}>{copy.noItems}</Text>}
                         {mode === 'vocabulary'
                             ? (items as VocabEntry[]).map((item) => <VocabularyCard key={item.id} item={item} learned={learnedSet.has(item.id)} onToggle={() => void toggle(item.id)}/>)
@@ -404,10 +357,15 @@ function VocabularyCard({ item, learned, onToggle }: { item: VocabEntry; learned
 }
 
 function GrammarCard({ item, learned, onToggle }: { item: GrammarEntry; learned: boolean; onToggle: () => void }) {
-    return <View style={[styles.itemCard, learned && styles.itemCardLearned]}>
-        <View style={styles.itemTop}><View style={styles.itemHeading}><Text style={styles.grammarName}>{item.name}</Text>{item.reading && <Text style={styles.reading}>{item.reading}</Text>}</View><Pressable onPress={onToggle} style={[styles.checkButton, learned && styles.checkButtonActive]}><Text style={[styles.checkText, learned && styles.whiteText]}>{learned ? '✓' : '○'}</Text></Pressable></View>
-        <Text style={styles.meaning}>{item.meaning}</Text>{item.pattern && <Text style={styles.detail}>構造: {item.pattern}</Text>}{item.formation && <Text style={styles.detail}>接続: {item.formation}</Text>}
-        {item.exampleJa && <View style={styles.example}><Text style={styles.exampleReading}>{item.exampleReading}</Text><Text style={styles.exampleJa}>{item.exampleJa}</Text>{item.exampleTranslation && <Text style={styles.exampleTranslation}>{item.exampleTranslation}</Text>}</View>}
+    const { language } = useAppLanguage();
+    const copy = getGrammarCopy(language);
+    const examples = item.examples ?? (item.exampleJa ? [{ exampleJa:item.exampleJa, exampleReading:item.exampleReading, exampleTranslation:item.exampleTranslation }] : []);
+    return <View testID={`n5-grammar-card-${item.id}`} style={[styles.itemCard, learned && styles.itemCardLearned]}>
+        <View style={styles.itemTop}><View style={styles.itemHeading}><Text style={styles.grammarName}>{item.name}</Text>{item.reading && <Text style={styles.reading}>{item.reading}</Text>}</View><Pressable testID={`n5-grammar-learned-${item.id}`} accessibilityRole="checkbox" accessibilityLabel={learned ? copy.learned : copy.mark} aria-checked={learned} accessibilityState={{checked:learned}} onPress={onToggle} style={[styles.checkButton, learned && styles.checkButtonActive]}><Text style={[styles.checkText, learned && styles.whiteText]}>{learned ? '✓' : '○'}</Text></Pressable></View>
+        <Text testID={`n5-grammar-meaning-${item.id}`} style={styles.meaning}>{item.meaning}</Text>
+        {item.pattern && <Text style={styles.detail}>{copy.structure}: {item.pattern}</Text>}
+        {item.formation && <Text style={styles.detail}>{copy.formation}: {item.formation}</Text>}
+        {examples.map((example,i)=><View key={i} testID={`n5-grammar-example-${item.id}-${i}`} style={styles.example}><Text style={styles.exampleJa}>{example.exampleJa}</Text><Text style={styles.exampleReading}>{example.exampleReading}</Text>{language!=='ja'&&example.exampleTranslation&&<Text style={styles.exampleTranslation}>{example.exampleTranslation}</Text>}</View>)}
     </View>;
 }
 

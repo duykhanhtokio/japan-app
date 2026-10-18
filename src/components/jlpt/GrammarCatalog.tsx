@@ -21,8 +21,8 @@ export default function GrammarCatalog({ grammar, learnedIds, limit, onToggle }:
                 <View testID={`grammar-card-${item.id}`}>
                     <View style={styles.cardTop}>
                         <Text style={styles.itemTitle}>{item.name}</Text>
-                        <Pressable testID={`grammar-learned-${item.id}`} accessibilityRole="button"
-                            accessibilityState={{ selected: complete }} accessibilityLabel={complete ? copy.learned : copy.mark}
+                        <Pressable testID={`grammar-learned-${item.id}`} accessibilityRole="checkbox"
+                            aria-checked={complete} accessibilityState={{ checked: complete }} accessibilityLabel={complete ? copy.learned : copy.mark}
                             style={[styles.mark, complete && styles.marked]} onPress={() => onToggle(item.id)}>
                             <Text>{complete ? `✓ ${copy.learned}` : copy.mark}</Text>
                         </Pressable>

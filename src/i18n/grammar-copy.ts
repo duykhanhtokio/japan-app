@@ -11,8 +11,12 @@ const COPY = {
     "mark": "学習済みにする",
     "loading": "続きを表示中…",
     "pending": "翻訳を準備中です",
-    "legend": "N＝名詞、V辞書形＝辞書に載る形、Vます幹＝ますを除いた形、Vない形＝ないで終わる形、普通形＝です・ますを使わない形。",
-    "title": "文法"
+    "legend": "N＝名詞、V辞書形＝辞書に載る形、Vます幹＝ますを除いた形、Vない形＝ないで終わる形、普通形＝です・ますを使わない形。 N1・N2は名詞を区別する記号で、JLPTの級ではありません。",
+    "title": "文法",
+    "reviewAction": "未習得の文法を復習",
+    "listenAction": "日本語の例文を聞く",
+    "kanaTitle": "文字の基礎へ",
+    "kanaHint": "第1週は文字学習画面でひらがな・カタカナを学びます。"
   },
   "vi": {
     "count": "{count} mẫu • cuộn để xem tiếp",
@@ -25,8 +29,12 @@ const COPY = {
     "mark": "Đánh dấu đã học",
     "loading": "Đang tải thêm…",
     "pending": "Bản dịch đang được chuẩn bị",
-    "legend": "N: danh từ. V辞書形: thể từ điển. Vます幹: bỏ ます. Vない形: dạng kết thúc bằng ない. 普通形: thể thường, không dùng です・ます.",
-    "title": "Ngữ pháp"
+    "legend": "N: danh từ. V辞書形: thể từ điển. Vます幹: bỏ ます. Vない形: dạng kết thúc bằng ない. 普通形: thể thường, không dùng です・ます. N1, N2 là ký hiệu các danh từ khác nhau, không phải cấp JLPT.",
+    "title": "Ngữ pháp",
+    "reviewAction": "Ôn mẫu chưa nhớ",
+    "listenAction": "Nghe ví dụ tiếng Nhật",
+    "kanaTitle": "Học chữ cơ bản",
+    "kanaHint": "Tuần 1 học Hiragana và Katakana tại màn hình học chữ."
   },
   "en": {
     "count": "{count} patterns • scroll for more",
@@ -39,8 +47,12 @@ const COPY = {
     "mark": "Mark as learned",
     "loading": "Loading more…",
     "pending": "Translation being prepared",
-    "legend": "N: noun. V辞書形: dictionary form. Vます幹: remove ます. Vない形: negative form ending in ない. 普通形: plain form without です or ます.",
-    "title": "Grammar"
+    "legend": "N: noun. V辞書形: dictionary form. Vます幹: remove ます. Vない形: negative form ending in ない. 普通形: plain form without です or ます. N1 and N2 label different nouns, not JLPT levels.",
+    "title": "Grammar",
+    "reviewAction": "Review unlearned patterns",
+    "listenAction": "Listen to the Japanese example",
+    "kanaTitle": "Learn basic characters",
+    "kanaHint": "In week 1, study hiragana and katakana on the character screen."
   },
   "id": {
     "count": "{count} pola • gulir untuk melihat lagi",
@@ -53,8 +65,12 @@ const COPY = {
     "mark": "Tandai sudah dipelajari",
     "loading": "Memuat lagi…",
     "pending": "Terjemahan sedang disiapkan",
-    "legend": "N: kata benda. V辞書形: bentuk kamus. Vます幹: buang ます. Vない形: bentuk negatif berakhiran ない. 普通形: bentuk biasa tanpa です atau ます.",
-    "title": "Tata bahasa"
+    "legend": "N: kata benda. V辞書形: bentuk kamus. Vます幹: buang ます. Vない形: bentuk negatif berakhiran ない. 普通形: bentuk biasa tanpa です atau ます. N1 dan N2 menandai kata benda berbeda, bukan tingkat JLPT.",
+    "title": "Tata bahasa",
+    "reviewAction": "Ulangi pola yang belum dikuasai",
+    "listenAction": "Dengarkan contoh bahasa Jepang",
+    "kanaTitle": "Pelajari huruf dasar",
+    "kanaHint": "Pada minggu 1, pelajari hiragana dan katakana di layar huruf."
   },
   "zh-CN": {
     "count": "{count}个句型・滚动查看更多",
@@ -67,8 +83,12 @@ const COPY = {
     "mark": "标记为已学",
     "loading": "正在加载更多…",
     "pending": "翻译准备中",
-    "legend": "N：名词。V辞書形：词典形。Vます幹：去掉ます。Vない形：以ない结尾的否定形式。普通形：不使用です、ます的形式。",
-    "title": "语法"
+    "legend": "N：名词。V辞書形：词典形。Vます幹：去掉ます。Vない形：以ない结尾的否定形式。普通形：不使用です、ます的形式。 N1、N2只是区分名词的符号，不是JLPT等级。",
+    "title": "语法",
+    "reviewAction": "复习未掌握的句型",
+    "listenAction": "听日语例句",
+    "kanaTitle": "学习基础文字",
+    "kanaHint": "第1周请在文字学习页面学习平假名和片假名。"
   },
   "zh-TW": {
     "count": "{count}個句型・捲動查看更多",
@@ -81,8 +101,12 @@ const COPY = {
     "mark": "標記為已學",
     "loading": "正在載入更多…",
     "pending": "翻譯準備中",
-    "legend": "N：名詞。V辞書形：辭典形。Vます幹：去掉ます。Vない形：以ない結尾的否定形式。普通形：不使用です、ます的形式。",
-    "title": "文法"
+    "legend": "N：名詞。V辞書形：辭典形。Vます幹：去掉ます。Vない形：以ない結尾的否定形式。普通形：不使用です、ます的形式。 N1、N2只是區分名詞的符號，不是JLPT等級。",
+    "title": "文法",
+    "reviewAction": "複習未掌握的句型",
+    "listenAction": "聽日語例句",
+    "kanaTitle": "學習基礎文字",
+    "kanaHint": "第1週請在文字學習頁面學習平假名和片假名。"
   },
   "hi": {
     "count": "{count} संरचनाएँ • और देखने के लिए स्क्रॉल करें",
@@ -95,8 +119,12 @@ const COPY = {
     "mark": "सीखा हुआ चिह्नित करें",
     "loading": "और लोड हो रहा है…",
     "pending": "अनुवाद तैयार किया जा रहा है",
-    "legend": "N: संज्ञा। V辞書形: शब्दकोश रूप। Vます幹: ます हटा दें। Vない形: ない पर समाप्त नकारात्मक रूप। 普通形: です या ます के बिना सामान्य रूप।",
-    "title": "व्याकरण"
+    "legend": "N: संज्ञा। V辞書形: शब्दकोश रूप। Vます幹: ます हटा दें। Vない形: ない पर समाप्त नकारात्मक रूप। 普通形: です या ます के बिना सामान्य रूप। N1 और N2 अलग संज्ञाओं के चिह्न हैं, JLPT स्तर नहीं।",
+    "title": "व्याकरण",
+    "reviewAction": "न सीखी संरचनाएँ दोहराएँ",
+    "listenAction": "जापानी उदाहरण सुनें",
+    "kanaTitle": "मूल अक्षर सीखें",
+    "kanaHint": "पहले हफ़्ते अक्षर स्क्रीन पर हिरागाना और काताकाना सीखें।"
   },
   "bn": {
     "count": "{count}টি গঠন • আরও দেখতে স্ক্রল করুন",
@@ -109,8 +137,12 @@ const COPY = {
     "mark": "শেখা হয়েছে হিসেবে চিহ্নিত করুন",
     "loading": "আরও লোড হচ্ছে…",
     "pending": "অনুবাদ প্রস্তুত হচ্ছে",
-    "legend": "N: বিশেষ্য। V辞書形: অভিধান রূপ। Vます幹: ます বাদ দিন। Vない形: ない দিয়ে শেষ হওয়া নেতিবাচক রূপ। 普通形: です বা ます ছাড়া সাধারণ রূপ।",
-    "title": "ব্যাকরণ"
+    "legend": "N: বিশেষ্য। V辞書形: অভিধান রূপ। Vます幹: ます বাদ দিন। Vない形: ない দিয়ে শেষ হওয়া নেতিবাচক রূপ। 普通形: です বা ます ছাড়া সাধারণ রূপ। N1 ও N2 আলাদা বিশেষ্যের চিহ্ন, JLPT স্তর নয়।",
+    "title": "ব্যাকরণ",
+    "reviewAction": "না শেখা গঠন পুনরাবৃত্তি",
+    "listenAction": "জাপানি উদাহরণ শুনুন",
+    "kanaTitle": "প্রাথমিক অক্ষর শিখুন",
+    "kanaHint": "প্রথম সপ্তাহে অক্ষর শেখার পর্দায় হিরাগানা ও কাতাকানা শিখুন।"
   },
   "ne": {
     "count": "{count} संरचना • थप हेर्न स्क्रोल गर्नुहोस्",
@@ -123,8 +155,12 @@ const COPY = {
     "mark": "सिकिसकेको चिन्ह लगाउनुहोस्",
     "loading": "थप लोड हुँदैछ…",
     "pending": "अनुवाद तयार हुँदैछ",
-    "legend": "N: संज्ञा। V辞書形: शब्दकोश रूप। Vます幹: ます हटाउनुहोस्। Vない形: ない मा अन्त्य हुने नकारात्मक रूप। 普通形: です वा ます बिनाको सामान्य रूप।",
-    "title": "व्याकरण"
+    "legend": "N: संज्ञा। V辞書形: शब्दकोश रूप। Vます幹: ます हटाउनुहोस्। Vない形: ない मा अन्त्य हुने नकारात्मक रूप। 普通形: です वा ます बिनाको सामान्य रूप। N1 र N2 फरक संज्ञाका चिह्न हुन्, JLPT तह होइनन्।",
+    "title": "व्याकरण",
+    "reviewAction": "नसिकेका संरचना दोहोर्‍याउनुहोस्",
+    "listenAction": "जापानी उदाहरण सुन्नुहोस्",
+    "kanaTitle": "आधारभूत अक्षर सिक्नुहोस्",
+    "kanaHint": "पहिलो हप्ता अक्षर स्क्रिनमा हिरागाना र काताकाना सिक्नुहोस्।"
   },
   "my": {
     "count": "ဝါကျဖွဲ့ပုံ {count} ခု၊ ဆက်ကြည့်ရန် အောက်သို့ရွှေ့ပါ",
@@ -137,8 +173,12 @@ const COPY = {
     "mark": "လေ့လာပြီးဟု မှတ်သားမည်",
     "loading": "ထပ်မံတင်နေသည်…",
     "pending": "ဘာသာပြန် ပြင်ဆင်နေသည်",
-    "legend": "N: နာမ်။ V辞書形: အဘိဓာန်ပုံစံ။ Vます幹: ます ကိုဖြုတ်ပါ။ Vない形: ない ဖြင့်ဆုံးသော အငြင်းပုံစံ။ 普通形: です သို့မဟုတ် ます မပါသော ရိုးရိုးပုံစံ။",
-    "title": "သဒ္ဒါ"
+    "legend": "N: နာမ်။ V辞書形: အဘိဓာန်ပုံစံ။ Vます幹: ます ကိုဖြုတ်ပါ။ Vない形: ない ဖြင့်ဆုံးသော အငြင်းပုံစံ။ 普通形: です သို့မဟုတ် ます မပါသော ရိုးရိုးပုံစံ။ N1၊ N2 သည် နာမ်များကို ခွဲခြားသည့် အမှတ်အသားဖြစ်ပြီး JLPT အဆင့် မဟုတ်ပါ။",
+    "title": "သဒ္ဒါ",
+    "reviewAction": "မမှတ်မိသေးသော ပုံစံများကို ပြန်လေ့လာမည်",
+    "listenAction": "ဂျပန်ဥပမာဝါကျကို နားထောင်မည်",
+    "kanaTitle": "အခြေခံအက္ခရာများ လေ့လာရန်",
+    "kanaHint": "ပထမအပတ်တွင် အက္ခရာသင်ခန်းစာစာမျက်နှာ၌ ဟိရဂနနှင့် ခတခနကို လေ့လာပါ။"
   },
   "th": {
     "count": "{count} รูปแบบ • เลื่อนเพื่อดูเพิ่มเติม",
@@ -151,8 +191,12 @@ const COPY = {
     "mark": "ทำเครื่องหมายว่าเรียนแล้ว",
     "loading": "กำลังโหลดเพิ่มเติม…",
     "pending": "กำลังเตรียมคำแปล",
-    "legend": "N: คำนาม V辞書形: รูปพจนานุกรม Vます幹: ตัด ます ออก Vない形: รูปปฏิเสธที่ลงท้ายด้วย ない 普通形: รูปธรรมดาที่ไม่ใช้ です หรือ ます",
-    "title": "ไวยากรณ์"
+    "legend": "N: คำนาม V辞書形: รูปพจนานุกรม Vます幹: ตัด ます ออก Vない形: รูปปฏิเสธที่ลงท้ายด้วย ない 普通形: รูปธรรมดาที่ไม่ใช้ です หรือ ます N1 และ N2 เป็นสัญลักษณ์แทนคำนามต่างกัน ไม่ใช่ระดับ JLPT",
+    "title": "ไวยากรณ์",
+    "reviewAction": "ทบทวนรูปแบบที่ยังจำไม่ได้",
+    "listenAction": "ฟังประโยคตัวอย่างภาษาญี่ปุ่น",
+    "kanaTitle": "เรียนตัวอักษรพื้นฐาน",
+    "kanaHint": "ในสัปดาห์ที่ 1 เรียนฮิรางานะและคาตากานะที่หน้าตัวอักษร"
   },
   "km": {
     "count": "{count} ទម្រង់ • អូសដើម្បីមើលបន្ថែម",
@@ -165,8 +209,12 @@ const COPY = {
     "mark": "សម្គាល់ថាបានរៀនហើយ",
     "loading": "កំពុងផ្ទុកបន្ថែម…",
     "pending": "កំពុងរៀបចំការបកប្រែ",
-    "legend": "N៖ នាម។ V辞書形៖ ទម្រង់វចនានុក្រម។ Vます幹៖ ដក ます ចេញ។ Vない形៖ ទម្រង់បដិសេធដែលបញ្ចប់ដោយ ない។ 普通形៖ ទម្រង់ធម្មតាដែលមិនប្រើ です ឬ ます។",
-    "title": "វេយ្យាករណ៍"
+    "legend": "N៖ នាម។ V辞書形៖ ទម្រង់វចនានុក្រម។ Vます幹៖ ដក ます ចេញ។ Vない形៖ ទម្រង់បដិសេធដែលបញ្ចប់ដោយ ない។ 普通形៖ ទម្រង់ធម្មតាដែលមិនប្រើ です ឬ ます។ N1 និង N2 ជាសញ្ញាសម្គាល់នាមផ្សេងគ្នា មិនមែនកម្រិត JLPT ទេ។",
+    "title": "វេយ្យាករណ៍",
+    "reviewAction": "រំលឹកទម្រង់ដែលមិនទាន់ចាំ",
+    "listenAction": "ស្ដាប់ឧទាហរណ៍ភាសាជប៉ុន",
+    "kanaTitle": "រៀនអក្សរមូលដ្ឋាន",
+    "kanaHint": "នៅសប្ដាហ៍ទី១ សូមរៀនហ៊ីរ៉ាហ្គាណា និងកាតាកាណានៅទំព័ររៀនអក្សរ។"
   },
   "tl": {
     "count": "{count} na padron • mag-scroll para sa iba pa",
@@ -179,8 +227,12 @@ const COPY = {
     "mark": "Markahang napag-aralan",
     "loading": "Naglo-load pa…",
     "pending": "Inihahanda ang salin",
-    "legend": "N: pangngalan. V辞書形: anyong nasa diksyunaryo. Vます幹: alisin ang ます. Vない形: anyong negatibo na nagtatapos sa ない. 普通形: payak na anyo na walang です o ます.",
-    "title": "Gramatika"
+    "legend": "N: pangngalan. V辞書形: anyong nasa diksyunaryo. Vます幹: alisin ang ます. Vない形: anyong negatibo na nagtatapos sa ない. 普通形: payak na anyo na walang です o ます. Magkaibang pangngalan ang N1 at N2, hindi antas ng JLPT.",
+    "title": "Gramatika",
+    "reviewAction": "Balikan ang hindi pa kabisadong padron",
+    "listenAction": "Pakinggan ang halimbawang Hapones",
+    "kanaTitle": "Pag-aralan ang batayang titik",
+    "kanaHint": "Sa linggo 1, pag-aralan ang hiragana at katakana sa pahina ng mga titik."
   }
 } as const;
 export const getGrammarCopy = (language: AppLanguageCode) => COPY[language];
