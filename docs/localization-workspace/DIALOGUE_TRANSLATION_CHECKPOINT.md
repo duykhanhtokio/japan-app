@@ -160,3 +160,14 @@ Next unfinished source:118(start1171,count10), logical owner dialogue_ne_my. Pre
 ## 2026-10-19 continuation118–123
 
 Completed112–117 integration is authenticated remote-verified at22dcc234dd247e929cd9b88ba7d36783e3be8434. Baseline1171 complete;5957 remain. Continue without stopping at this checkpoint. Prepared118–123 sources cover60 scenarios starting1171 through1221. Six fresh exclusive language-pair authors use compact Japanese input, checkpointed16–32-value drafts,160-value full own-fidelity helper publication and incremental authenticated persistence. Existing completed packs are immutable; native/domain review false, no semantic cross-review. Whole-app audits are deferred to complete cohort integration.
+
+
+## 2026-10-19 optimized118–123 cohort fully complete
+
+All72 locale packs are final author-ready, including recorded acknowledged exclusive handovers. Every pack has full own-language Japanese-source fidelity confirmation and an immutable matching SHA256 marker. No semantic cross-review was performed; native/domain review remains false. No assigned file remains unfinished.
+
+All batches are integrated, adding60 complete scenarios,7,920 translated utterances and3,600 task hints beyond1171. Current full source-bound sentence+task total1231/7,128; remaining5,897. Exact canonical source/ID/speaker/task validation and actual app loader pass162,492 turn-language bindings and73,860 task-language bindings with stable IDs, direct/generic loading and stale-source/wrong-speaker guards. All1,488 indexed locale-file hashes match the derived progress manifest. Whole-app coverage reports were refreshed once for this complete cohort.
+
+Content was persisted incrementally through the authenticated GitHub connector with exact blob/tree verification, expected-parent branch updates and independent commit/ref readbacks. Final integration uses the same protocol. Local exact commit objects are reconstructed/hash-verified from authenticated receipts without overwriting work. CLI HTTPS credentials remain unavailable; no CLI persistence-gate pass is claimed.
+
+Next unfinished source:124(start1231,count10), logical ownerdialogue_ne_my. Preserve completed packs; continue compact-source, disjoint authoring, full own-fidelity QA, immutable markers and incremental persistence. The remaining5,897 scenarios remain unfinished.
