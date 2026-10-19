@@ -85,3 +85,14 @@ Sources097(start961,count10) and099(start981,count10) were extracted from curren
 ## 2026-10-19 batch097 complete
 
 All12 independent author-ready locale packs for097 pass canonical source/ID/speaker/task and exact marker/file-hash checks. Batch097 is integrated, total981/7,128, remaining6,147. The actual app loader passes129,492 turn-language bindings and58,860 task-language bindings, including stale-source and wrong-speaker guards. Source099 is in progress with independent completed locales persisted; do not count it complete until all12 locales are author-ready and integrated. Native/domain review remains false. Six assigned language-pair queues remain nonoverlapping, with each author self-checking only its own full natural translations. Broad coverage reports are refreshed at the next complete-batch checkpoint; DIALOGUE_TRANSLATION_PROGRESS.json is authoritative for integrated counts.
+
+
+## 2026-10-19 batches097 and099 fully complete
+
+All six independent language-pair assignments for097/099 are finished. Every locale file contains110 full utterances and50 Japanese-source-bound task hints, has its author's full-fidelity confirmation and immutable matching final SHA256 marker, and passes exact canonical source/ID/speaker/task validation. No semantic cross-review was performed; native/domain approval remains false.
+
+Both batches are integrated. Current total991/7,128; remaining6,137. This continuation added20 complete scenarios,2,640 turn translations and1,200 task-hint translations beyond remote03b3c324's971 baseline. Actual loader validation passes130,812 turn-language bindings and59,460 task-language bindings across991 scenarios, including stable IDs, generic/direct loading and stale-source/wrong-speaker rejection. All1,200 indexed locale files are checked against the derived manifest hashes. Broad coverage reports are refreshed to the same integrated snapshot.
+
+Completed content was published incrementally through the authenticated GitHub connector, with leased branch updates and independent branch/commit/tree readbacks. Intermediate verified checkpoints include02af27ef,d41104a2,605ba3e7,5a870085,6513ca5d,11a21922. Local exact commit objects were reconstructed/hash-verified and branches aligned without overwriting work. CLI HTTPS credentials remain unavailable; these connector readbacks, rather than an invented CLI persistence-gate pass, establish remote persistence. The unrelated pre-existing temporary evidence file remains untouched.
+
+Next unfinished source:100(start991,count10), logical owner dialogue_ne_my under the existing stride6 rule. Source098 remains complete and was not rewritten. Continue six file-disjoint translation subtasks, full utterance+hint fidelity, per-file author readiness, all12-locale integration and authenticated persistence. No currently assigned locale file is unfinished.
