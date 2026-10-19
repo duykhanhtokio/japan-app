@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-18T19:03:13.979Z",
-  "baselineCommit": "9d2afe5e39ffb84f06f93cf3361aefa3298ac077",
-  "validatedInputTree": "60303a2594e7d38d0c9091e1a09a7e2cd9416a02",
+  "generatedAt": "2026-10-19T00:22:57.233Z",
+  "baselineCommit": "9a127506594090e79f9b31aa2fb557666ea6acf9",
+  "validatedInputTree": null,
   "authorReadiness": {
     "status": "IN_PROGRESS",
     "sourceBoundSentenceAndTaskScenarios": 901,
@@ -212,37 +212,6 @@
         "th": 0,
         "km": 0,
         "tl": 0
-      }
-    },
-    "kensetsu.tests": {
-      "units": 11340,
-      "translated": {
-        "en": 0,
-        "vi": 0,
-        "id": 0,
-        "zh-CN": 0,
-        "zh-TW": 0,
-        "hi": 0,
-        "bn": 0,
-        "ne": 0,
-        "my": 0,
-        "th": 0,
-        "km": 0,
-        "tl": 0
-      },
-      "missing": {
-        "en": 11340,
-        "vi": 11340,
-        "id": 11340,
-        "zh-CN": 11340,
-        "zh-TW": 11340,
-        "hi": 11340,
-        "bn": 11340,
-        "ne": 11340,
-        "my": 11340,
-        "th": 11340,
-        "km": 11340,
-        "tl": 11340
       }
     },
     "kaigo.knowledge": {
@@ -1077,7 +1046,7 @@
     "completeNpcAndPlayerScenariosAllLocales": 901,
     "effectiveTurns": "shared, otherwise N5; existing translations accepted only for matching source/speaker"
   },
-  "runtimeDataModulesChecked": 35,
+  "runtimeDataModulesChecked": 34,
   "originalExamInventory": {
     "forms": 30,
     "integratedForms": 30,
@@ -1150,19 +1119,19 @@
     "reviewPolicy": "Detailed explanations and listening transcripts are hidden by the existing approved exam UI; pack presence is not runtime translation coverage."
   },
   "constructionSessions": 484,
-  "constructionUniqueQuestions": 1134,
   "jmdict": {
     "meaningLanguage": "en",
     "source": "src/services/jmdict.ts: gloss_json and englishFtsQuery; no locale-specific gloss selection"
   },
   "uiSourceFilesScanned": 174,
   "staticVietnameseCandidateLines": 223,
-  "missingLocaleUnits": 1705539,
-  "unitsWithMissingTranslations": 142135,
+  "missingLocaleUnits": 1569459,
+  "unitsWithMissingTranslations": 130795,
   "limitations": [
     "Coverage is presence and source-revision alignment, not native-language or domain certification.",
     "Japanese JLPT test questions remain Japanese by design; translations are audited separately from the locked examination UI.",
-    "Missing construction/legacy/dialogue translations are reported, never counted as complete through an English fallback.",
+    "Construction assessment translations are excluded by publisher instruction on 2026-10-19; their Japanese assessment content is preserved.",
+    "Missing lesson/legacy/dialogue translations are reported, never counted as complete through an English fallback.",
     "Legacy Kaigo practice/reference data is not counted as active translated weekly content.",
     "Japanese-only portal previews and UI labels require separate authored locale copy; a static scan is not proof that every UI label is translated.",
     "Static candidate lines may be valid Vietnamese locale tables or review-only metadata; they are leads, not proven runtime leaks."

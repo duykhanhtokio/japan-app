@@ -1,6 +1,6 @@
 # App localization checkpoint — 2026-10-18
 
-User scope: correct Vietnamese defaults across the app and inventory translations for learning content, tests and conversations in all 13 supported languages. Japanese remains canonical learning/assessment text.
+User scope: correct Vietnamese defaults across the app and inventory translations for learning content and conversations in all 13 supported languages. Japanese remains canonical learning/assessment text. Publisher update 2026-10-19: construction review tests do not require translations and are excluded from translation backlog reports and audits. Their Japanese questions, choices, grading and lesson references remain unchanged.
 
 ## Parallel content update — 2026-10-18
 
@@ -33,7 +33,6 @@ Values below mean usable exact-locale presence with source-revision guards where
 | Grammar | 540 catalog patterns have all 12 supporting translations. N5 calendar continuation retains its separately validated 398 progress keys / 103 distinct patterns. |
 | Construction lessons | 10,250 translatable title/paragraph/prompt/activity/term/caption units across non-foreman runtime sessions have all 12 translations. |
 | Foreman 職長 | 28 sessions;250 units have all12 supporting translations (11 languages added in this update). Original Japanese/Vietnamese lesson files remain byte-preserved. |
-| Construction review tests | 1,134 unique runtime questions; 11,340 displayed question/choice/explanation/rationale units currently have no supporting translations. |
 | Kaigo active Japanese masters | 6,242 heading/paragraph/caption units and 176 lesson metadata records pass all 12 locales and current source revisions. |
 | Kaigo tests | 687 weekly questions plus 360 mock questions across 12 forms pass their full-question validation in all 12 locales. |
 | Local conversations | 7,128 effective scenarios. 901 have technical source-bound sentence/task coverage in all12 locales; 901 are author-ready after excluding pending own editorial holds. See DIALOGUE_TRANSLATION_PROGRESS.json. |
