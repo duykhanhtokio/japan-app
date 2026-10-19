@@ -155,3 +155,8 @@ All six batches are integrated, adding60 complete scenarios,7,920 translated utt
 Completed packs were incrementally persisted using authenticated GitHub exact blob/tree verification, expected-parent branch updates and independent commit/ref readbacks; verified checkpoints include6078a2fc,d5b95a8d,f97f55c9,ea27f470,ab63f747,612c8349,4da72ce2,e800346c. Local exact commit objects were reconstructed/hash-verified from authenticated receipts without overwriting files. CLI HTTPS credentials remain unavailable; no CLI persistence-gate pass is claimed. Final integration follows the same authenticated publication protocol.
 
 Next unfinished source:118(start1171,count10), logical owner dialogue_ne_my. Preserve completed112–117 packs and continue compact sources, disjoint authoring, full own-fidelity QA, immutable markers and incremental persistence. The remaining5,957 scenarios remain unfinished.
+
+
+## 2026-10-19 continuation118–123
+
+Completed112–117 integration is authenticated remote-verified at22dcc234dd247e929cd9b88ba7d36783e3be8434. Baseline1171 complete;5957 remain. Continue without stopping at this checkpoint. Prepared118–123 sources cover60 scenarios starting1171 through1221. Six fresh exclusive language-pair authors use compact Japanese input, checkpointed16–32-value drafts,160-value full own-fidelity helper publication and incremental authenticated persistence. Existing completed packs are immutable; native/domain review false, no semantic cross-review. Whole-app audits are deferred to complete cohort integration.
