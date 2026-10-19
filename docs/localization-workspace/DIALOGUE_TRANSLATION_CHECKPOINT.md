@@ -73,3 +73,10 @@ All six independent assignments finished. Both095 Chinese locale files are now f
 This continuation completed30 additional scenarios beyond the publisher-approved941 checkpoint:094,093,095. Every newly authored ready locale file is preserved in narrow commits and published through the authenticated GitHub connector with branch-ref leases and exact commit/tree/blob readbacks. Intermediate durable checkpoints includea4fb2e4c,565d2042,6938d671,d52e15f0,3169818f. No worker remains authoring a partially assigned file. Preserve the unrelated pre-existing temporary evidence file.
 
 Next unfinished queued source:097(start961,count10), then099(start981,count10);098 was already complete and must not be rewritten. Existing093/094/095/096 are complete and must not be restarted. Continue disjoint ownership and complete utterance+task fidelity rules, then technical integration and authenticated persistence. No pending release/native-review certification is implied.
+
+
+## 2026-10-19 continuation from remote03b3c324
+
+The user requested continued work. Authenticated GitHub branch-ref readback confirms03b3c324ad9cc0fb8080ab20dfcaef225a0c1c7a; local HEAD and remote-tracking HEAD match, with the unrelated pre-existing temporary evidence file preserved. Baseline971 complete scenarios;6,157 remain.
+
+Sources097(start961,count10) and099(start981,count10) were extracted from current canonical Japanese;098 is complete and preserved. Six exclusive language-pair subtasks process097 then099: en/vi, id/tl, zh-CN/zh-TW, hi/bn, ne/my, th/km. Batch097 retains logical owner dialogue_id_tl and099 retains dialogue_hi_bn; these are delegated file-disjoint subtasks under those owners, with no semantic cross-review. Each file is published and persisted independently only after full own-language fidelity QA and a matching immutable final owner-ready marker. Each batch is integrated only after all12 locales pass source/ID/speaker/task checks. No draft/placeholder is counted complete.
