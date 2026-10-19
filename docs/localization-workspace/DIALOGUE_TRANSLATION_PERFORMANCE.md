@@ -8,6 +8,8 @@ Six exclusive language-pair queues process100–105 continuously (60 scenarios a
 
 Read each Japanese source once with `node scripts/dialogue-translation-worker.cjs extract BATCH`. N/P/H preserve NPC, player and task context; scenario grouping/order is retained. Author only160 complete translated strings per locale in a scratch JSON array. Retain every clause, number, condition and task instruction; no summaries or reusable dialogue substitutions.
 
+Save scratch drafts after each one or two scenarios (16–32 ordered values), then continue appending in source order. Partial arrays stay outside the repository and cannot pass the160-value publication gate. This limits lost generation if a user continuation interrupts a worker. Read source once and never publish partial packs.
+
 After full own fidelity QA, run:
 
 ```bash
