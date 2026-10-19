@@ -39,3 +39,12 @@ Workers read canonical Japanese and their own translations only. Coordinator int
 ## 2026-10-19 explicit handover
 
 For batch094 only, dialogue_zh exclusively authors the previously absent my/th/km locale files after completing batch098. dialogue_ne_my retains hi/bn/ne and its already published id/tl/Chinese files. The exact three transferred paths are recorded in DIALOGUE_TRANSLATION_OWNERSHIP.json. No file ownership overlaps, and no semantic cross-review is introduced. Construction assessment translations are outside the publisher's required translation scope and excluded from backlog reporting.
+
+
+## 2026-10-19 checked continuation and pending remote approval
+
+- Rechecked all1,104 previously integrated locale files against the stored final SHA256 hashes: no mismatch. Baseline remote-verified HEAD was525c0de1625f4002a1423a04835eae6c2266990b, with911 complete scenarios.
+- Seven existing author-ready locale files were preserved in local commit99da3a70 after exact-source/ID/speaker/task and owner-marker hash checks. GitHub push was rejected by automatic approval review. This commit and subsequent local work must not be reported as remote-saved until explicit approval, push, fetch and scoped persistence verification succeed.
+- Six independent assignments filled missing km089, my091, my094, my096, km096. All five published complete files have immutable matching owner-ready markers and full own-language fidelity checks. Batches089/091/096 are integrated after all12-locale checks; the actual app loader validates941 scenarios,124,212 translated turn bindings and56,460 task-hint bindings. Complete scenarios941/7,128; remaining6,187. Native/domain review remains unconfirmed; no semantic cross-review was performed.
+- km094 did not publish: its author encountered model capacity errors. Preserve the unfinished author script at /workspace/scratch/3014ed9128c9/km094-author/author.py (six scenarios drafted according to the author). It has no final owner-ready marker, is not runtime-integrated and is not included in completion counts. Do not replace or certify this unfinished translation. Source and completed eleven locale files remain intact.
+- Next: obtain approval for the concrete pending dialogue commits to duykhanhtokio/japan-app, recovery/jlpt-n3-n1; push/fetch and pass the scoped work-persistence gate. Then resume the same km094 author, finish own fidelity QA and all12-locale integration; continue093 (ne/my/th/km), then unstarted095/097 and subsequent exclusive queues. Construction assessment translations remain excluded.
