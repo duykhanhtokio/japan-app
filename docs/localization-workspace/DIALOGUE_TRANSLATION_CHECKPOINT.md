@@ -171,3 +171,13 @@ All batches are integrated, adding60 complete scenarios,7,920 translated utteran
 Content was persisted incrementally through the authenticated GitHub connector with exact blob/tree verification, expected-parent branch updates and independent commit/ref readbacks. Final integration uses the same protocol. Local exact commit objects are reconstructed/hash-verified from authenticated receipts without overwriting work. CLI HTTPS credentials remain unavailable; no CLI persistence-gate pass is claimed.
 
 Next unfinished source:124(start1231,count10), logical ownerdialogue_ne_my. Preserve completed packs; continue compact-source, disjoint authoring, full own-fidelity QA, immutable markers and incremental persistence. The remaining5,897 scenarios remain unfinished.
+
+
+## Việc chưa hoàn tất — phiên âm hội thoại (2026-10-19)
+
+- **DIALOGUE-FURIGANA-001 — OPEN / chưa thực hiện.** Người dùng báo còn nhiều câu hội thoại thiếu phiên âmひらがな. Bổ sung furigana cho nội dung tiếng Nhật trong **cả ô NPC và ô người chơi**, đồng bộ cách trình bày và kích cỡ chữ với ảnh mẫu: chữ đọcひらがな nhỏ phía trên đúng từ/kanji, căn theo chữ chính, không chồng chữ hay cắt mất phiên âm. Ảnh có ô người chơi làm mẫu; ô NPC trong ảnh chưa có phiên âm. Không tự suy ra cỡ px từ ảnh chụp.
+- Phạm vi lượt này: **chỉ ghi nhận backlog, chưa sửa dữ liệu/giao diện, chưa kiểm đếm số câu thiếu**. Tiến trình dịch vẫn tạm dừng theo yêu cầu trước.
+- **Bắt buộc nêu lại mục OPEN này trong lần báo cáo/kiểm tra tiến độ app tiếp theo**, kèm trạng thái chưa xử lý; không coi số hội thoại đã dịch là bằng chứng đã đủ furigana. Khi được tiếp tục xử lý: kiểm kê toàn bộ câu đang dùng ở hai ô, bổ sung cách đọc đúng ngữ cảnh, kiểm tra hiển thị theo ảnh trên iPhone và các kích thước màn hình hỗ trợ, rồi mới đánh dấu hoàn tất.
+- Ảnh tham chiếu người dùng: `2026-10-19 20.37の画像.jpeg`, ChatGPT Library `libfile_c163d3aec1f0819194635ce78409114a` (iPhone16 Plus Simulator; ảnh được xem khi ghi nhận).
+
+Điểm tiếp tục dịch giữ nguyên: lô124, start1231;1231/7128 hội thoại đủ bản dịch,5897 còn thiếu. Không khởi động lại tác vụ dịch hoặc sửa UI trong lượt ghi nhận này.

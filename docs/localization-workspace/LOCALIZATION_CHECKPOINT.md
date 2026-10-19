@@ -2,6 +2,15 @@
 
 User scope: correct Vietnamese defaults across the app and inventory translations for learning content and conversations in all 13 supported languages. Japanese remains canonical learning/assessment text. Publisher update 2026-10-19: construction review tests do not require translations and are excluded from translation backlog reports and audits. Their Japanese questions, choices, grading and lesson references remain unchanged.
 
+
+## Việc chưa hoàn tất — phiên âm hội thoại (2026-10-19)
+
+- **DIALOGUE-FURIGANA-001 — OPEN / chưa thực hiện.** Người dùng báo còn nhiều câu hội thoại thiếu phiên âmひらがな. Bổ sung furigana cho nội dung tiếng Nhật trong **cả ô NPC và ô người chơi**, đồng bộ cách trình bày và kích cỡ chữ với ảnh mẫu: chữ đọcひらがな nhỏ phía trên đúng từ/kanji, căn theo chữ chính, không chồng chữ hay cắt mất phiên âm. Ảnh có ô người chơi làm mẫu; ô NPC trong ảnh chưa có phiên âm. Không tự suy ra cỡ px từ ảnh chụp.
+- Phạm vi lượt này: **chỉ ghi nhận backlog, chưa sửa dữ liệu/giao diện, chưa kiểm đếm số câu thiếu**. Tiến trình dịch vẫn tạm dừng theo yêu cầu trước.
+- **Bắt buộc nêu lại mục OPEN này trong lần báo cáo/kiểm tra tiến độ app tiếp theo**, kèm trạng thái chưa xử lý; không coi số hội thoại đã dịch là bằng chứng đã đủ furigana. Khi được tiếp tục xử lý: kiểm kê toàn bộ câu đang dùng ở hai ô, bổ sung cách đọc đúng ngữ cảnh, kiểm tra hiển thị theo ảnh trên iPhone và các kích thước màn hình hỗ trợ, rồi mới đánh dấu hoàn tất.
+- Ảnh tham chiếu người dùng: `2026-10-19 20.37の画像.jpeg`, ChatGPT Library `libfile_c163d3aec1f0819194635ce78409114a` (iPhone16 Plus Simulator; ảnh được xem khi ghi nhận).
+
+
 ## Parallel content update — 2026-10-18
 
 The user explicitly requested six independent AI workers. Language ownership: en/id; zh-CN/zh-TW; hi/bn; ne/my; th/km; tl. Workers wrote only their assigned locale files and checked their own outputs. The coordinator integrated runtime adapters and performed technical source/ID/coverage/browser checks; no semantic cross-review was performed. Vietnamese dialogue batch001 belongs to the coordinator.
