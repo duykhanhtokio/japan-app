@@ -57,3 +57,10 @@ The publisher explicitly authorized both pending commits and continuation. Direc
 The same km094 author resumed and completed full own fidelity QA, publishing its final immutable marker. Batch094 now has all12 locales and passes source/ID/speaker/task coverage; local integrated total is951/7,128, remaining6,177. Completed content is persisted independently while integrated reports are finalized.
 
 Six independent subtasks continue under each batch's logical owner (no transfer or file overlap): missing km/my/ne/th093 under dialogue_hi_bn; then095 en/vi, id/tl, zh-CN/zh-TW, hi/bn, ne/my, th/km under dialogue_th_km. The canonical095 source is newly extracted using queued start941,count10. No semantic cross-review; each author checks only their own Japanese-source-aligned locale files. Do not infer a completed095 batch from partial published locale files.
+
+
+## 2026-10-19 complete093 and persisted095 locale files
+
+All12 locales of093 passed owner-ready/hash and exact source/ID/speaker/task checks; integrated count961/7,128, remaining6,167. The real loader verifies126,852 turn bindings and57,660 task bindings. Completed095 locale files are separately persisted;095 must remain unindexed until all12 final author-ready markers pass. Native/domain review remains false and semantic cross-review is not performed. The Chinese095 author retains its unfinished strings at /workspace/scratch/3014ed9128c9/zh095-author/strings.json; finish own final QA and exact-locale publication before integrating095. After095, the next queued unstarted source is097(start961,count10).
+
+Authenticated GitHub connector readbacks have verified each publication's branch ref, commit parent and exact content tree, including remote checkpoints565d2042,6938d671,d52e15f0. The CLI has no HTTPS credentials; do not claim a CLI persistence-gate pass. Author-ready files and reports are committed narrowly while the pre-existing unrelated temporary evidence file is preserved.
