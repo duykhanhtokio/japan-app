@@ -144,3 +144,14 @@ Next unfinished source:112(start1111,count10), logical owner dialogue_ne_my unde
 ## 2026-10-19 continuation112–117
 
 Authenticated GitHub ref and local/tracking HEAD match5398b461f204d24eb7b286207bdf35eb8af6912d. Baseline1111 complete scenarios;6017 remain. Prepared sources112–117 cover60 scenarios from start1111 through1161. Six exclusive language-pair authors continue en/my,vi/km,id/ne,tl/hi,zh-CN/bn,zh-TW/th. Existing packs remain immutable. Drafts checkpoint every16–32 values; complete160-value locale packs receive full own-source fidelity QA and helper technical/hash validation before incremental authenticated persistence. Full audits run at complete cohort integration. Native/domain review remains false; semantic cross-review is not performed.
+
+
+## 2026-10-19 optimized112–117 cohort fully complete
+
+All72 locale packs across112–117 are final author-ready, including acknowledged exclusive km116/km117 handovers. Every160-value pack has full own-language Japanese-source fidelity confirmation and an immutable matching SHA256 marker. No semantic cross-review was performed; native/domain review remains false. No assigned file remains unfinished.
+
+All six batches are integrated, adding60 complete scenarios,7,920 translated utterances and3,600 task hints beyond1111. Current full source-bound sentence+task total1171/7,128; remaining5,957. Exact source/ID/speaker/task validation passes. The actual application loader passes154,572 turn-language bindings and70,260 task-language bindings across1171 scenarios, with stable IDs, generic/direct loading and stale-source/wrong-speaker guards. All1,416 indexed locale-file SHA256 values match the derived progress manifest. Whole-app coverage reports were refreshed once for the full cohort.
+
+Completed packs were incrementally persisted using authenticated GitHub exact blob/tree verification, expected-parent branch updates and independent commit/ref readbacks; verified checkpoints include6078a2fc,d5b95a8d,f97f55c9,ea27f470,ab63f747,612c8349,4da72ce2,e800346c. Local exact commit objects were reconstructed/hash-verified from authenticated receipts without overwriting files. CLI HTTPS credentials remain unavailable; no CLI persistence-gate pass is claimed. Final integration follows the same authenticated publication protocol.
+
+Next unfinished source:118(start1171,count10), logical owner dialogue_ne_my. Preserve completed112–117 packs and continue compact sources, disjoint authoring, full own-fidelity QA, immutable markers and incremental persistence. The remaining5,957 scenarios remain unfinished.
