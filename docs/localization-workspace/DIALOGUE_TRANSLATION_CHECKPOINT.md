@@ -128,3 +128,14 @@ Next unfinished source:106(start1051,count10), logical owner dialogue_ne_my. Pre
 Authenticated GitHub ref, local HEAD and remote-tracking HEAD match58e6428c9e8e4e457823d59b7e0c318eb58d7e35. Baseline1051 complete scenarios;6,077 remain. Six new prepared canonical sources106–111 cover60 scenarios from queued start1051 through1101, ten each. Completed100–105 packs are preserved.
 
 The active roster assigns six disjoint language pairs across all six new batches: en/my, vi/km, id/ne, tl/hi, zh-CN/bn, zh-TW/th. Pairing a Latin/Chinese locale with a longer-script locale distributes writing load without overlapping files. Authors checkpoint scratch every16–32 units, self-check every complete utterance/condition/hint and publish each160-value pack through the tested helper. Full corpus audits are deferred to the complete cohort checkpoint; every new file retains technical source/ID/speaker/task/hash checks and incremental authenticated persistence. Do not count draft or fallback content as complete. Native/domain review remains false and no semantic cross-review is authorized.
+
+
+## 2026-10-19 optimized106–111 cohort fully complete
+
+All72 locale packs across106–111 are final author-ready, including acknowledged exclusive km110/km111 handovers. Each160-value pack has complete own-language Japanese-source fidelity confirmation and an immutable matching SHA256 marker. No semantic cross-review was performed; native/domain review remains false. No assigned file remains unfinished.
+
+All six batches are integrated, adding60 complete scenarios,7,920 translated utterances and3,600 translated task hints. Current complete source-bound sentence+task total1111/7,128; remaining6,017. Exact canonical source/ID/speaker/task validation passes. The actual application loader passes146,652 turn-language bindings and66,660 task-language bindings across1111 scenarios, including stable IDs, generic/direct loading and stale-source/wrong-speaker guards. All1,344 indexed locale-file SHA256 values match the derived progress manifest. Whole-app coverage reports were refreshed once for the complete cohort.
+
+Completed packs were persisted incrementally through authenticated GitHub connector updates with exact blob/tree verification, expected-parent ref updates and independent commit/ref readback. Verified checkpoints include90e5faec,a670d445,8b90f5a8,370d3e0c. Local commit objects were reconstructed and hash-verified from authenticated receipts without overwriting working files. CLI HTTPS credentials remain unavailable, so no CLI persistence-gate pass is claimed. Final integration uses the same authenticated publication protocol.
+
+Next unfinished source:112(start1111,count10), logical owner dialogue_ne_my under the existing stride6 queue. Preserve completed106–111 packs and continue compact-source, disjoint authoring, own-fidelity QA, immutable per-file readiness and incremental persistence. The remaining6,017 scenarios are unfinished.
