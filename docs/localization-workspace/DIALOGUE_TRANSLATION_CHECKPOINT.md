@@ -423,3 +423,19 @@ Newly integrated batches: 158. All twelve locales, own-source author fidelity ma
 ## Own-author fluency repair154–159
 
 The zh-TW/th author independently flagged terse phrasing in10 packs (zh-TW154/155/156/158; th154–159) and is expanding these into full natural utterances. Exact original packs and markers are preserved in versioned archives. Ten own-author holds are open, affecting50 already-indexed scenarios; derived complete count temporarily1531 while source-bound index remains1581. No semantic cross-review; native review false. Continue all ten own-author repairs and remaining159 km before final integration. Preserve original canonical Git blobs and archived bytes; do not delete unrelated work.
+
+
+## Incremental154–159 integration 2026-10-20T15:08:39.812617+00:00
+
+Newly integrated batches: 159. All twelve locales, own-source author fidelity markers, source/ID/speaker/task checks and actual app loader pass. Complete scenarios 1591/7128. Native review false; no semantic cross-review. Preserve remaining author-ready files.
+
+
+## 2026-10-20 optimized154–159 cohort fully complete
+
+All72 locale packs are final author-ready, with six disjoint language-pair queues balanced from the outset. Every pack has full own-language Japanese-source fidelity confirmation and an immutable matching SHA256 marker. No semantic cross-review was performed; native/domain review remains false. No assigned file remains unfinished.
+
+All batches are integrated, adding60 complete scenarios,7,920 translated utterances and3,600 task hints beyond1531. Current full source-bound sentence+task total1591/7,128; remaining5,537. Exact canonical source/ID/speaker/task validation and actual app loader pass210,012 turn-language bindings and95,460 task-language bindings with stable IDs, direct/generic loading and stale-source/wrong-speaker guards. All1,920 indexed locale-file hashes match the derived progress manifest. The actual dialogue loader and derived dialogue progress were refreshed for this complete cohort; whole-app coverage reports remain at their earlier cohort snapshot.
+
+Content was persisted incrementally through the authenticated GitHub connector with exact blob/tree verification, expected-parent branch updates and independent commit/ref readbacks. Final integration uses the same protocol. Local exact commit objects are reconstructed/hash-verified from authenticated receipts without overwriting work. The shell network gate was cancelled earlier in this workspace; this continuation uses exact authenticated commit/tree/ref verification, and no new shell-gate pass is claimed.
+
+Next unfinished source:160(start1591,count10), logical ownerdialogue_ne_my. Preserve completed packs; continue compact-source, disjoint authoring, full own-fidelity QA, immutable markers and incremental persistence. The remaining5,537 scenarios remain unfinished.
