@@ -311,3 +311,8 @@ Next unfinished source:146(start1451,count10), logical ownerdialogue_zh. Preserv
 ## 2026-10-20 continuation146–147
 
 Authenticated remote ref, local HEAD and tracking HEAD matchcc582eab4d6ec66628836d69542de9964bf6e6f7. Baseline1451 complete scenarios;5677 remaining. Prepared canonical sources146–147 and six disjoint language-pair queues, with English/Myanmar and Vietnamese/Khmer balanced from the outset. Preserve completed content and unrelated files. Require complete own-language Japanese-source fidelity QA, immutable matching readiness markers, exact source/ID/speaker/task checks and incremental authenticated commit/tree/ref persistence. Native/domain review remains false. Furigana remains OPEN independently; no browser/native visual approval is claimed. Shell network gate was cancelled earlier; use authenticated connector readback and do not claim a new shell-gate pass.
+
+
+## 2026-10-20 batch146 integrated;147 authoring
+
+All 12 batch146 packs have matching immutable own-fidelity markers and exact source/ID/speaker/task validation. Added 10 integrated scenarios: 1320 translated utterances and 600 translated task hints. The actual dialogue loader passes 1461 scenarios, 192852 turn-language bindings and 87660 task-language bindings; stable IDs and stale-source/wrong-speaker guards pass. Complete corpus:1461/7128; remaining:5667. Batch147 remains unfinished and is not yet counted. Six disjoint language-pair queues were balanced from the outset. Native/domain review remains false; furigana remains OPEN. Persistence uses authenticated connector commit/tree/ref verification; no new shell network gate pass is claimed.
