@@ -290,3 +290,8 @@ Next unfinished source:144(start1431,count10), logical ownerdialogue_en_vi. Pres
 ## 2026-10-20 continuation144–145
 
 Remote ref, local HEAD and tracking HEAD match0dc029ccd77cc6eb81de307629d07107d3310c3e through authenticated connector readback. Baseline1431 complete scenarios;5697 remaining. Prepared two canonical ten-scenario sources144–145 and six disjoint language-pair queues. Continue compact Japanese input, complete own-language source fidelity QA, immutable readiness markers and incremental authenticated persistence; native/domain review remains false. Furigana remains OPEN independently. The shell network persistence check was cancelled by the host approval layer before returning a decision; no new shell-gate pass is claimed. Connector commit/tree/ref verification remains available.
+
+
+## 2026-10-20 batch144 integrated;145 authoring
+
+All12 batch144 packs have matching immutable own-fidelity markers and exact source/ID/speaker/task validation. Added10 integrated scenarios:1320 translated utterances and600 translated task hints. Actual dialogue loader passes1441 scenarios,190212 turn-language bindings and86460 task-language bindings; stable IDs and stale-source/wrong-speaker guards pass. Complete corpus1441/7128, remaining5687. Batch145 remains unfinished and is not yet counted. Four explicitly acknowledged untouched-file transfers remain recorded in ACTIVE_QUEUE. Native/domain review remains false; furigana remains OPEN. Shell network gate remains unavailable; persistence uses authenticated connector commit/tree/ref verification.
