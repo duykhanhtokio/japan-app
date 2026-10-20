@@ -418,3 +418,8 @@ Newly integrated batches: 157. All twelve locales, own-source author fidelity ma
 ## Incremental154–159 integration 2026-10-20T14:45:07.912901+00:00
 
 Newly integrated batches: 158. All twelve locales, own-source author fidelity markers, source/ID/speaker/task checks and actual app loader pass. Complete scenarios 1581/7128. Native review false; no semantic cross-review. Preserve remaining author-ready files.
+
+
+## Own-author fluency repair154–159
+
+The zh-TW/th author independently flagged terse phrasing in10 packs (zh-TW154/155/156/158; th154–159) and is expanding these into full natural utterances. Exact original packs and markers are preserved in versioned archives. Ten own-author holds are open, affecting50 already-indexed scenarios; derived complete count temporarily1531 while source-bound index remains1581. No semantic cross-review; native review false. Continue all ten own-author repairs and remaining159 km before final integration. Preserve original canonical Git blobs and archived bytes; do not delete unrelated work.
