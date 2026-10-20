@@ -274,3 +274,14 @@ Source142 is remote-verified at11a29248acf45395117c707a6884f5921cdcdfc8; baselin
 ## 2026-10-20 batch142 integrated;143 authoring
 
 All12 batch142 packs have matching immutable own-fidelity markers and exact source/ID/speaker/task validation. Added10 integrated scenarios:1320 translated utterances and600 translated task hints. Full actual dialogue loader passes1421 scenarios,187572 turn-language bindings and85260 task-language bindings; stable IDs and stale-source/wrong-speaker guards pass. Complete corpus count1421/7128, remaining5707. Batch143 is still authoring and is not yet counted. Its km pack was explicitly released untouched and accepted by the en/vi author; the acknowledged exclusive handover is recorded in ACTIVE_QUEUE. Native/domain review remains false. Furigana remains OPEN.
+
+
+## 2026-10-20 optimized142–143 cohort fully complete
+
+All24 locale packs are final author-ready, with disjoint language-pair ownership. Every pack has full own-language Japanese-source fidelity confirmation and an immutable matching SHA256 marker. No semantic cross-review was performed; native/domain review remains false. No assigned file remains unfinished.
+
+All batches are integrated, adding20 complete scenarios,2,640 translated utterances and1,200 task hints beyond1411. Current full source-bound sentence+task total1431/7,128; remaining5,697. Exact canonical source/ID/speaker/task validation and actual app loader pass188,892 turn-language bindings and85,860 task-language bindings with stable IDs, direct/generic loading and stale-source/wrong-speaker guards. All1,728 indexed locale-file hashes match the derived progress manifest. The actual dialogue loader and derived dialogue progress were refreshed for this complete cohort; whole-app coverage reports remain at their earlier cohort snapshot.
+
+Content was persisted incrementally through the authenticated GitHub connector with exact blob/tree verification, expected-parent branch updates and independent commit/ref readbacks. Final integration uses the same protocol. Local exact commit objects are reconstructed/hash-verified from authenticated receipts without overwriting work. Authenticated connector writes are followed by exact commit/ref readback and the scoped check-work-persistence.mjs fetch/advertised-head/clean-path gate.
+
+Next unfinished source:144(start1431,count10), logical ownerdialogue_en_vi. Preserve completed packs; continue compact-source, disjoint authoring, full own-fidelity QA, immutable markers and incremental persistence. The remaining5,697 scenarios remain unfinished.
