@@ -195,3 +195,14 @@ Pre-existing working changes (121 Kaigo PNG paths and unrelated temporary eviden
 Publisher authorized continuing the pending priorities. Restored six exclusive en/my, vi/km, id/ne, tl/hi, zh-CN/bn and zh-TW/th assignments for124–129; published files are immutable, existing drafts preserved. No semantic cross-review. Translation remains the first priority.
 
 DIALOGUE-FURIGANA-001 remains OPEN. Full canonical structural inventory via scripts/audit-dialogue-furigana.cjs covers7,128 scenarios:42,768 NPC lines and35,640 player lines.42,725 NPC lines contain kanji and lack aligned ruby;35,630 player lines lack complete aligned ruby, with only10 existing complete player lines. NPC currently uses plain Text rather than JapaneseRuby; player rendering consumes only source-aligned recommendedAnswerRuby. No reading was guessed or changed. The audit is structural and does not certify pronunciation or device layout. Follow-up must author context-correct readings and support both panels, then validate the reference appearance on supported screens.
+
+
+## 2026-10-20 optimized124–129 cohort fully complete
+
+All72 locale packs are final author-ready, including recorded acknowledged exclusive handovers. Every pack has full own-language Japanese-source fidelity confirmation and an immutable matching SHA256 marker. No semantic cross-review was performed; native/domain review remains false. No assigned file remains unfinished.
+
+All batches are integrated, adding60 complete scenarios,7,920 translated utterances and3,600 task hints beyond1231. Current full source-bound sentence+task total1291/7,128; remaining5,837. Exact canonical source/ID/speaker/task validation and actual app loader pass170,412 turn-language bindings and77,460 task-language bindings with stable IDs, direct/generic loading and stale-source/wrong-speaker guards. All1,560 indexed locale-file hashes match the derived progress manifest. Whole-app coverage reports were refreshed once for this complete cohort.
+
+Content was persisted incrementally through the authenticated GitHub connector with exact blob/tree verification, expected-parent branch updates and independent commit/ref readbacks. Final integration uses the same protocol. Local exact commit objects are reconstructed/hash-verified from authenticated receipts without overwriting work. CLI HTTPS credentials remain unavailable; no CLI persistence-gate pass is claimed.
+
+Next unfinished source:130(start1291,count10), logical ownerdialogue_ne_my. Preserve completed packs; continue compact-source, disjoint authoring, full own-fidelity QA, immutable markers and incremental persistence. The remaining5,837 scenarios remain unfinished.
