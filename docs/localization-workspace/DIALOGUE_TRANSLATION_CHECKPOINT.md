@@ -339,3 +339,8 @@ Authenticated remote ref, local HEAD and tracking HEAD match 03b14a98021df8d727c
 ## 2026-10-20 batch148 integrated;149 authoring
 
 All 12 batch148 packs have matching immutable own-fidelity markers and exact source/ID/speaker/task validation. Added 10 integrated scenarios:1320 translated utterances and600 translated task hints. The actual dialogue loader passes1481 scenarios,195492 turn-language bindings and88860 task-language bindings; stable IDs and stale-source/wrong-speaker guards pass. Complete corpus:1481/7128; remaining:5647. Batch149 remains unfinished and is not yet counted. Six disjoint queues remain active. Native/domain review remains false; furigana remains OPEN. Persistence uses authenticated connector commit/tree/ref verification; no new shell network-gate pass is claimed.
+
+
+## 2026-10-20 continuous extension150–151
+
+Batch148 is integrated and remote-verified at33be4ad6125b47cd970a3b729ecfc6098b0bfa29; count1481. Batch149 is still finishing and is not counted yet. To keep completed language groups productive, prepared canonical sources150–151 and extended the same six exclusive pairs through151. Cohort baseline remains1471; intended additional scope is now40 scenarios across148–151. Preserve all completed immutable packs. Integrate each complete twelve-locale batch independently and continue own-source fidelity QA and incremental authenticated persistence. Native/domain review remains false; furigana remains OPEN.
