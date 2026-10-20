@@ -382,3 +382,14 @@ Next unfinished source:152(start1511,count10), logical ownerdialogue_zh. Preserv
 ## 2026-10-20 batch152 complete
 
 Batch152 has all12 author-ready locale packs integrated. Actual app loader passes1521 scenarios,200772 turn-language bindings and91260 task-language bindings. Source/ID/speaker/task guards pass; native review false, no semantic cross-review. Batch153 remains in progress; preserve completed author-ready files.
+
+
+## 2026-10-20 optimized152–153 cohort fully complete
+
+All24 locale packs are final author-ready, with six disjoint language-pair queues balanced from the outset. Every pack has full own-language Japanese-source fidelity confirmation and an immutable matching SHA256 marker. No semantic cross-review was performed; native/domain review remains false. No assigned file remains unfinished.
+
+All batches are integrated, adding20 complete scenarios,2,640 translated utterances and1,200 task hints beyond1511. Current full source-bound sentence+task total1531/7,128; remaining5,597. Exact canonical source/ID/speaker/task validation and actual app loader pass202,092 turn-language bindings and91,860 task-language bindings with stable IDs, direct/generic loading and stale-source/wrong-speaker guards. All1,848 indexed locale-file hashes match the derived progress manifest. The actual dialogue loader and derived dialogue progress were refreshed for this complete cohort; whole-app coverage reports remain at their earlier cohort snapshot.
+
+Content was persisted incrementally through the authenticated GitHub connector with exact blob/tree verification, expected-parent branch updates and independent commit/ref readbacks. Final integration uses the same protocol. Local exact commit objects are reconstructed/hash-verified from authenticated receipts without overwriting work. The shell network gate was cancelled earlier in this workspace; this continuation uses exact authenticated commit/tree/ref verification, and no new shell-gate pass is claimed.
+
+Next unfinished source:154(start1531,count10), logical ownerdialogue_ne_my. Preserve completed packs; continue compact-source, disjoint authoring, full own-fidelity QA, immutable markers and incremental persistence. The remaining5,597 scenarios remain unfinished.
