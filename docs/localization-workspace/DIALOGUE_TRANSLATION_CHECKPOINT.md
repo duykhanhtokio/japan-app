@@ -253,3 +253,14 @@ Active player rendering uses the source-bound recommendedAnswerRuby data; NPC pr
 ## 2026-10-20 alternate browser verification remains blocked
 
 A materially changed Chromium133 environment was tested with a minimal local Japanese-font page before applying the presentation candidate. document.fonts.load still failed with NetworkError. No active UI files were changed and no visual approval is claimed. Stop repeating this rendering path; retain the separate candidate and continue dialogue translation.
+
+
+## 2026-10-20 optimized136–141 cohort fully complete
+
+All72 locale packs are final author-ready, including recorded acknowledged exclusive handovers. Every pack has full own-language Japanese-source fidelity confirmation and an immutable matching SHA256 marker. No semantic cross-review was performed; native/domain review remains false. No assigned file remains unfinished.
+
+All batches are integrated, adding60 complete scenarios,7,920 translated utterances and3,600 task hints beyond1351. Current full source-bound sentence+task total1411/7,128; remaining5,717. Exact canonical source/ID/speaker/task validation and actual app loader pass186,252 turn-language bindings and84,660 task-language bindings with stable IDs, direct/generic loading and stale-source/wrong-speaker guards. All1,704 indexed locale-file hashes match the derived progress manifest. Whole-app coverage reports were refreshed once for this complete cohort.
+
+Content was persisted incrementally through the authenticated GitHub connector with exact blob/tree verification, expected-parent branch updates and independent commit/ref readbacks. Final integration uses the same protocol. Local exact commit objects are reconstructed/hash-verified from authenticated receipts without overwriting work. Authenticated connector writes are followed by exact commit/ref readback and the scoped check-work-persistence.mjs fetch/advertised-head/clean-path gate.
+
+Next unfinished source:142(start1411,count10), logical ownerdialogue_ne_my. Preserve completed packs; continue compact-source, disjoint authoring, full own-fidelity QA, immutable markers and incremental persistence. The remaining5,717 scenarios remain unfinished.
