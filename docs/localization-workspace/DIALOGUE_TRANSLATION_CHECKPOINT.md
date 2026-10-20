@@ -344,3 +344,8 @@ All 12 batch148 packs have matching immutable own-fidelity markers and exact sou
 ## 2026-10-20 continuous extension150–151
 
 Batch148 is integrated and remote-verified at33be4ad6125b47cd970a3b729ecfc6098b0bfa29; count1481. Batch149 is still finishing and is not counted yet. To keep completed language groups productive, prepared canonical sources150–151 and extended the same six exclusive pairs through151. Cohort baseline remains1471; intended additional scope is now40 scenarios across148–151. Preserve all completed immutable packs. Integrate each complete twelve-locale batch independently and continue own-source fidelity QA and incremental authenticated persistence. Native/domain review remains false; furigana remains OPEN.
+
+
+## 2026-10-20 batch149 integrated;150–151 authoring
+
+All 12 batch149 packs have matching immutable own-fidelity markers and source/ID/speaker/task validation. Both148–149 are integrated, adding20 scenarios beyond cohort baseline1471. Actual dialogue loader passes1491 scenarios,196812 turn-language bindings and89460 task-language bindings; stable IDs and stale-source/wrong-speaker guards pass. Complete corpus:1491/7128; remaining:5637. Sources150–151 are remote-verified atcb3000d5a9038ffc060de2f59960a9047885d484, with the same six exclusive author groups continuing. Partial150/151 files are preserved independently but are not counted until a full twelve-locale batch is integrated. Native/domain review remains false; furigana remains OPEN. Authenticated connector commit/tree/ref verification remains the persistence evidence.
