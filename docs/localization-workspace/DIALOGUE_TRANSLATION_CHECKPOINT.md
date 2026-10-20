@@ -234,3 +234,10 @@ Next unfinished source:136(start1351,count10), logical ownerdialogue_ne_my. Pres
 ## 2026-10-20 continuation136–141
 
 Remote ref, local HEAD and tracking HEAD match f09251609ca98d9f1e5b14b8a4c2e2b5d3b9efc0. Baseline1351 complete scenarios;5777 remaining. Prepared six canonical sources136–141,60 scenarios. Six exclusive language-pair assignments continue compact Japanese input, complete own-source fidelity QA, immutable helper publication and incremental authenticated persistence. No semantic cross-review; native/domain review remains false. Preserve pre-existing unrelated PNG changes and completed content. Furigana remains OPEN: six NPC reading rows/source-bound loader exist; presentation candidate awaits visual validation after repeated Chromium rendering crashes. Do not rerun the unchanged failed UI environment or mark the candidate applied.
+
+
+## 2026-10-20 additional source-bound furigana data
+
+Authored22 additional reading rows for SC-LOC-001-02-001 and SC-LOC-001-03-001 (12 NPC,10 player), preserving exact canonical Japanese. The dedicated reading bundles now contain28 rows across3 scenarios:18 NPC and10 player. Together with existing authored player-hint readings, full corpus inventory has18 aligned NPC lines and20 aligned player lines. Data tests now verify every stored bundle against the actual generated dialogue source and exercise both NPC/player bindings, stale-source/speaker/scenario rejection and partial-word reveal. The real application loader verifies every stored reading row. Native review remains false.
+
+DIALOGUE-FURIGANA-001 stays OPEN. The presentation candidate remains separate and unapplied; the prior Chromium crash blocker is unchanged, so no redundant UI environment retry or visual/native-device approval is claimed. Continue corpus data authoring and visual validation when the rendering environment is available.
