@@ -351,8 +351,29 @@ Batch148 is integrated and remote-verified at33be4ad6125b47cd970a3b729ecfc6098b0
 All 12 batch149 packs have matching immutable own-fidelity markers and source/ID/speaker/task validation. Both148–149 are integrated, adding20 scenarios beyond cohort baseline1471. Actual dialogue loader passes1491 scenarios,196812 turn-language bindings and89460 task-language bindings; stable IDs and stale-source/wrong-speaker guards pass. Complete corpus:1491/7128; remaining:5637. Sources150–151 are remote-verified atcb3000d5a9038ffc060de2f59960a9047885d484, with the same six exclusive author groups continuing. Partial150/151 files are preserved independently but are not counted until a full twelve-locale batch is integrated. Native/domain review remains false; furigana remains OPEN. Authenticated connector commit/tree/ref verification remains the persistence evidence.
 
 
+## 2026-10-20 batch150 integrated;151 authoring
+
+All 12 batch150 packs have matching immutable own-fidelity markers and source/ID/speaker/task validation. Batches148–150 are integrated, adding30 scenarios beyond baseline1471. Actual dialogue loader passes1501 scenarios,198132 turn-language bindings and90060 task-language bindings; stable IDs and stale-source/wrong-speaker guards pass. Complete corpus:1501/7128; remaining:5627. Batch151 remains unfinished and is not counted yet. Own-language source fidelity checks and incremental authenticated persistence continue. Native/domain review remains false; furigana remains OPEN.
+
+
 ## 2026-10-20T13:54:16.144Z execution transport blocked — durable recovery checkpoint
 
 Confirmed remote branch remains at 350f23bfb653fc82d1c4e568a3e15d1cef0aed60, with1491/7128 complete source-bound sentence/task scenarios. Local draft 7679db1d57d73ac7c856db6eebd0cbb70bd84523, tree afa5654cd66600b140c27f0908790da181ef57e4, contains integrated batch150 and passed the actual loader at1501 scenarios,198132 turn-language and90060 task-language bindings, but it was NOT pushed: exec-server transport disconnected during publication. Only one draft blob had been uploaded when execution access failed. Do not count1501 as remotely saved.
 
 All151 authors reported packs, but Bengali151 has an own-author negative-scope correction at flat106 and remains REVISION_REQUIRED; its exact original/proposed wording and local corrected-array path are recorded in AUTHOR_HOLDS and docs/localization-workspace/DIALOGUE_TRANSLATION_TRANSPORT_RECOVERY_2026-10-20.json. No151 integration is approved before that correction. Local unpublished commit/blob manifests, seven uncommitted pack hashes and recovery steps are recorded there. These hashes/paths are not backups of the unpublished file bytes. Preserve local draft and all packs; reconcile this remote checkpoint instead of resetting or overwriting work. Continue no new batches until data publication and own-author correction are recovered. Native/domain review remains false; furigana stays OPEN. This checkpoint is saved via the authenticated GitHub connector; local checkout cannot be reconciled while execution access is disconnected.
+
+
+## 2026-10-20T14:01:42.374107+00:00 execution restored and local data reconciled
+
+Execution access has recovered. Original local draft7679db1d remains preserved. Authenticated remote checkpoints bce8c7ec/1ac1f40e were imported and reconciled with the existing local1501-scenario data without resetting, cleaning or dropping work. The historical transport-block note above describes the interruption; recovery is now in progress. Bengali151 remains held until its own-author correction is archived and republished. Publish and verify recovered data before opening new source batches. Native/domain review and furigana status remain unchanged.
+
+
+## 2026-10-20 optimized148–151 cohort fully complete
+
+All48 locale packs are final author-ready, with six disjoint language-pair queues balanced from the outset. Every pack has full own-language Japanese-source fidelity confirmation and an immutable matching SHA256 marker. No semantic cross-review was performed; native/domain review remains false. No assigned file remains unfinished.
+
+All batches are integrated, adding40 complete scenarios,5,280 translated utterances and2,400 task hints beyond1471. Current full source-bound sentence+task total1511/7,128; remaining5,617. Exact canonical source/ID/speaker/task validation and actual app loader pass199,452 turn-language bindings and90,660 task-language bindings with stable IDs, direct/generic loading and stale-source/wrong-speaker guards. All1,824 indexed locale-file hashes match the derived progress manifest. The actual dialogue loader and derived dialogue progress were refreshed for this complete cohort; whole-app coverage reports remain at their earlier cohort snapshot.
+
+Content was persisted incrementally through the authenticated GitHub connector with exact blob/tree verification, expected-parent branch updates and independent commit/ref readbacks. Final integration uses the same protocol. Local exact commit objects are reconstructed/hash-verified from authenticated receipts without overwriting work. The shell network gate was cancelled earlier in this workspace; this continuation uses exact authenticated commit/tree/ref verification, and no new shell-gate pass is claimed.
+
+Next unfinished source:152(start1511,count10), logical ownerdialogue_zh. Preserve completed packs; continue compact-source, disjoint authoring, full own-fidelity QA, immutable markers and incremental persistence. The remaining5,617 scenarios remain unfinished.
