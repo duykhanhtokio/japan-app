@@ -334,3 +334,8 @@ Before integrating batch147, its Khmer author identified and corrected ambiguous
 ## 2026-10-20 continuation148–149
 
 Authenticated remote ref, local HEAD and tracking HEAD match 03b14a98021df8d727cb4b47753ee6ec3ff8bb1d. Baseline:1471 complete scenarios;5657 remaining. Prepared canonical sources148–149 and six balanced disjoint language-pair queues. The earlier own-author Khmer revision is resolved and preserved; no active author holds remain. Preserve completed packs and unrelated work. Require full own-language Japanese-source fidelity QA before immutable publication, exact source/ID/speaker/task checks and incremental authenticated commit/tree/ref persistence. Native/domain review remains false; furigana remains OPEN independently. No new shell network-gate pass or browser/native visual approval is claimed.
+
+
+## 2026-10-20 batch148 integrated;149 authoring
+
+All 12 batch148 packs have matching immutable own-fidelity markers and exact source/ID/speaker/task validation. Added 10 integrated scenarios:1320 translated utterances and600 translated task hints. The actual dialogue loader passes1481 scenarios,195492 turn-language bindings and88860 task-language bindings; stable IDs and stale-source/wrong-speaker guards pass. Complete corpus:1481/7128; remaining:5647. Batch149 remains unfinished and is not yet counted. Six disjoint queues remain active. Native/domain review remains false; furigana remains OPEN. Persistence uses authenticated connector commit/tree/ref verification; no new shell network-gate pass is claimed.
