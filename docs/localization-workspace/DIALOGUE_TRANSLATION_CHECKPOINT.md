@@ -264,3 +264,8 @@ All batches are integrated, adding60 complete scenarios,7,920 translated utteran
 Content was persisted incrementally through the authenticated GitHub connector with exact blob/tree verification, expected-parent branch updates and independent commit/ref readbacks. Final integration uses the same protocol. Local exact commit objects are reconstructed/hash-verified from authenticated receipts without overwriting work. Authenticated connector writes are followed by exact commit/ref readback and the scoped check-work-persistence.mjs fetch/advertised-head/clean-path gate.
 
 Next unfinished source:142(start1411,count10), logical ownerdialogue_ne_my. Preserve completed packs; continue compact-source, disjoint authoring, full own-fidelity QA, immutable markers and incremental persistence. The remaining5,717 scenarios remain unfinished.
+
+
+## 2026-10-20 continuation batch142
+
+Source142 is remote-verified at11a29248acf45395117c707a6884f5921cdcdfc8; baseline1411 complete scenarios. Six exclusive language-pair groups resumed successfully after the previous service failure. Preserve all ready packs and require complete own-source fidelity confirmation and matching immutable markers. Only a full twelve-locale pack is integrated and counted; native/domain review remains false. Furigana remains OPEN independently of translation coverage.
