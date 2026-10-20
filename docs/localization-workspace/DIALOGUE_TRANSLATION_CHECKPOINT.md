@@ -469,3 +469,13 @@ Newly integrated 163. All twelve locales, own-source full fidelity/fluency marke
 ## Incremental160–165 integration 2026-10-20T19:36:35.007010+00:00
 
 Newly integrated 164. All twelve locales, own-source full fidelity/fluency markers, canonical IDs/source/speaker/task checks and real app loader pass. Complete 1641/7128. Native review false; no semantic cross-review. GitHub connector publication uses exact blob/tree/commit/ref verification; shell push credentials unavailable.
+
+
+## Incremental160–165 integration 2026-10-20T19:39:31.354479+00:00
+
+Newly integrated 165. All twelve locales, own-source full fidelity/fluency markers, canonical IDs/source/speaker/task checks and real app loader pass. Complete 1651/7128. Native review false; no semantic cross-review. GitHub connector publication uses exact blob/tree/commit/ref verification; shell push credentials unavailable.
+
+
+##160–165 cohort complete
+
+All72 locale packs complete with full own Japanese-source fidelity and natural-sentence QA, immutable author markers, no semantic cross-review, nativeReviewed false. Added60 scenarios:7920 translated utterances and3600 task hints. Current1651/7128;remaining5477. Actual app loader passes217932 turn-language and99060 task-language bindings; all1992 indexed locale hashes match. Dialogue reports refreshed; whole-app coverage snapshots remain older. Authenticated GitHub connector is the durable publication path; final expected-parent commit/tree/ref readback required. No shell persistence-gate pass is claimed. Next batch166,start1651,count10. Furigana NPC/player remains separately unfinished.
