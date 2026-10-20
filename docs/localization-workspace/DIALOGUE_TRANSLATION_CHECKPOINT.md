@@ -295,3 +295,14 @@ Remote ref, local HEAD and tracking HEAD match0dc029ccd77cc6eb81de307629d07107d3
 ## 2026-10-20 batch144 integrated;145 authoring
 
 All12 batch144 packs have matching immutable own-fidelity markers and exact source/ID/speaker/task validation. Added10 integrated scenarios:1320 translated utterances and600 translated task hints. Actual dialogue loader passes1441 scenarios,190212 turn-language bindings and86460 task-language bindings; stable IDs and stale-source/wrong-speaker guards pass. Complete corpus1441/7128, remaining5687. Batch145 remains unfinished and is not yet counted. Four explicitly acknowledged untouched-file transfers remain recorded in ACTIVE_QUEUE. Native/domain review remains false; furigana remains OPEN. Shell network gate remains unavailable; persistence uses authenticated connector commit/tree/ref verification.
+
+
+## 2026-10-20 optimized144–145 cohort fully complete
+
+All24 locale packs are final author-ready, with disjoint ownership and acknowledged untouched-file handovers. Every pack has full own-language Japanese-source fidelity confirmation and an immutable matching SHA256 marker. No semantic cross-review was performed; native/domain review remains false. No assigned file remains unfinished.
+
+All batches are integrated, adding20 complete scenarios,2,640 translated utterances and1,200 task hints beyond1431. Current full source-bound sentence+task total1451/7,128; remaining5,677. Exact canonical source/ID/speaker/task validation and actual app loader pass191,532 turn-language bindings and87,060 task-language bindings with stable IDs, direct/generic loading and stale-source/wrong-speaker guards. All1,752 indexed locale-file hashes match the derived progress manifest. The actual dialogue loader and derived dialogue progress were refreshed for this complete cohort; whole-app coverage reports remain at their earlier cohort snapshot.
+
+Content was persisted incrementally through the authenticated GitHub connector with exact blob/tree verification, expected-parent branch updates and independent commit/ref readbacks. Final integration uses the same protocol. Local exact commit objects are reconstructed/hash-verified from authenticated receipts without overwriting work. The shell network gate was cancelled by the host approval layer in this continuation; exact authenticated commit/tree/ref verification is the persistence evidence, and no new shell-gate pass is claimed.
+
+Next unfinished source:146(start1451,count10), logical ownerdialogue_zh. Preserve completed packs; continue compact-source, disjoint authoring, full own-fidelity QA, immutable markers and incremental persistence. The remaining5,677 scenarios remain unfinished.
