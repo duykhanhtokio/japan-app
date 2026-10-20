@@ -285,3 +285,8 @@ All batches are integrated, adding20 complete scenarios,2,640 translated utteran
 Content was persisted incrementally through the authenticated GitHub connector with exact blob/tree verification, expected-parent branch updates and independent commit/ref readbacks. Final integration uses the same protocol. Local exact commit objects are reconstructed/hash-verified from authenticated receipts without overwriting work. Authenticated connector writes are followed by exact commit/ref readback and the scoped check-work-persistence.mjs fetch/advertised-head/clean-path gate.
 
 Next unfinished source:144(start1431,count10), logical ownerdialogue_en_vi. Preserve completed packs; continue compact-source, disjoint authoring, full own-fidelity QA, immutable markers and incremental persistence. The remaining5,697 scenarios remain unfinished.
+
+
+## 2026-10-20 continuation144–145
+
+Remote ref, local HEAD and tracking HEAD match0dc029ccd77cc6eb81de307629d07107d3310c3e through authenticated connector readback. Baseline1431 complete scenarios;5697 remaining. Prepared two canonical ten-scenario sources144–145 and six disjoint language-pair queues. Continue compact Japanese input, complete own-language source fidelity QA, immutable readiness markers and incremental authenticated persistence; native/domain review remains false. Furigana remains OPEN independently. The shell network persistence check was cancelled by the host approval layer before returning a decision; no new shell-gate pass is claimed. Connector commit/tree/ref verification remains available.
