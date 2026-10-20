@@ -444,3 +444,8 @@ Next unfinished source:160(start1591,count10), logical ownerdialogue_ne_my. Pres
 ## User-requested pause — 2026-10-21 JST
 
 All dialogue work is paused after durable cohort154–159 completion. Verified content commit0a20ff014949957dd2e2784ccee6b33ad00edaee on authenticated GitHub branch recovery/jlpt-n3-n1. Complete1591/7128 scenarios;5537 remain. All six translation authors completed; no translation/publisher background processes observed. Four account automations were checked and all are disabled. Do not start new translation or resume any agent unless explicitly requested by the user. Next source batch160, start1591,count10. Furigana NPC/player remains separately unfinished. Unrelated work preserved.
+
+
+## Incremental160–165 integration 2026-10-20T19:19:11.896430+00:00
+
+Newly integrated 160. All twelve locales, own-source full fidelity/fluency markers, canonical IDs/source/speaker/task checks and real app loader pass. Complete 1601/7128. Native review false; no semantic cross-review. GitHub connector publication uses exact blob/tree/commit/ref verification; shell push credentials unavailable.
