@@ -181,3 +181,10 @@ Next unfinished source:124(start1231,count10), logical ownerdialogue_ne_my. Pres
 - Ảnh tham chiếu người dùng: `2026-10-19 20.37の画像.jpeg`, ChatGPT Library `libfile_c163d3aec1f0819194635ce78409114a` (iPhone16 Plus Simulator; ảnh được xem khi ghi nhận).
 
 Điểm tiếp tục dịch giữ nguyên: lô124, start1231;1231/7128 hội thoại đủ bản dịch,5897 còn thiếu. Không khởi động lại tác vụ dịch hoặc sửa UI trong lượt ghi nhận này.
+
+
+## 2026-10-20 resumed translation124–129
+
+Publisher resumed dialogue translations. Authenticated remote ref matches local/tracking b96007750cd0338b87d5844785d23aadbbbce6d7. Baseline1231 complete;5897 remain. Sources124–129 cover60 scenarios starting1231 through1281. Six exclusive language-pair authors use compact canonical Japanese,16–32-value scratch checkpoints,160-value own-fidelity publication and immutable markers. Content is persisted incrementally through authenticated exact blob/tree/commit/ref checks; whole-app audits wait for full cohort integration. Native/domain review false; no semantic cross-review.
+
+Pre-existing working changes (121 Kaigo PNG paths and unrelated temporary evidence files) are preserved and excluded from dialogue commits. DIALOGUE-FURIGANA-001 remains OPEN and must be included in the next app progress report; this translation resumption does not authorize or claim completion of that separate UI/reading backlog.
