@@ -1,4 +1,5 @@
 import { appLanguages } from '@/i18n/languages';
+import { applyDialogueFurigana, type DialogueFuriganaBundle } from './dialogue-furigana';
 import localeBatchIndex from '@/data/dialogue-content/locale-batch-index.json';
 import { applyDialogueLocaleBatch, type DialogueLocaleBatch } from './dialogue-locale-batches';
 import { applyDialogueTranslations, type DialogueTranslationBundle } from './dialogue-translations';
@@ -30,6 +31,15 @@ const dialogueContext = (require as RequireWithContext).context(
     /\.json$/
 );
 
+const furiganaContext = (require as RequireWithContext).context('../data/dialogue-content/furigana', false, /\.json$/);
+const furiganaFiles = new Set(furiganaContext.keys());
+function withFurigana(turn: LifeDialogueTurn): LifeDialogueTurn {
+ const key = `./${turn.scenarioId}.json`;
+ if (!furiganaFiles.has(key)) return turn;
+ const value = furiganaContext(key) as DialogueFuriganaBundle | { default: DialogueFuriganaBundle };
+ return applyDialogueFurigana(turn, 'default' in value ? value.default : value);
+}
+
 const availableFiles = new Set(dialogueContext.keys());
 const translationContext = (require as RequireWithContext).context('../data/dialogue-content/translations', false, /\.json$/);
 const translatedFiles = new Set(translationContext.keys());
@@ -46,6 +56,7 @@ function withLocaleBatches(turn:LifeDialogueTurn):LifeDialogueTurn {
  },turn);
 }
 function withTranslations(turn: LifeDialogueTurn): LifeDialogueTurn {
+ turn = withFurigana(turn);
  const key = `./${turn.scenarioId}.json`;
  if (!translatedFiles.has(key)) return withLocaleBatches(withAuthoredHint(turn));
  const value = translationContext(key) as DialogueTranslationBundle | { default: DialogueTranslationBundle };

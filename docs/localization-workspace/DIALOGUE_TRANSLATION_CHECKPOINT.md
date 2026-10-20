@@ -211,3 +211,10 @@ Next unfinished source:130(start1291,count10), logical ownerdialogue_ne_my. Pres
 ## 2026-10-20 continuation130–135
 
 Remote-verified baseline cf635231d5e68c1309f6b0665c03d841fe19f128:1291 complete scenarios,5837 remaining. Prepared six canonical sources130–135 covering60 scenarios. Six exclusive language-pair assignments continue compact Japanese input, full own-source fidelity QA, immutable publication markers and incremental authenticated GitHub persistence. Do not semantically cross-review other authors. Native/domain review remains false. Furigana backlog remains OPEN; structural inventory is complete but readings and panel rendering are not repaired. Preserve unrelated pre-existing work and all completed packs.
+
+
+## 2026-10-20 furigana data and presentation candidate
+
+Added six context-authored NPC reading rows for SC-LOC-001-01-001, a lazy per-scenario reading loader and exact source/speaker/scenario guards. Existing Japanese text and translations are unchanged. Data and reveal-prefix tests pass; native review remains false. Data inventory now has6 complete NPC ruby lines and10 complete player ruby lines; remaining42719 NPC kanji lines and35630 player lines still lack complete aligned readings.
+
+Presentation changes were saved explicitly under furigana-ui-candidate/*.pending.txt, not applied to the active route/component. Chromium153 repeatedly closed during rendering or font loading, so no browser fit/native-device approval is claimed. Candidate preserves NPC progressive reveal and uses the same JapaneseRuby rendering for both panels. Resume visual verification with a working browser/simulator before applying it. DIALOGUE-FURIGANA-001 remains OPEN. Reference image was reopened and inspected. Translation authoring continues independently.

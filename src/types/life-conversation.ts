@@ -1,3 +1,5 @@
+import type { RubySegment } from './japanese-ruby';
+
 export type LifeCity = {
     id: string;
     name: string;
@@ -61,6 +63,8 @@ export type LifeScenario = {
 
 export type LifeNpcTurn = {
     textJa: string | null;
+    /** Source-aligned, authored hiragana; never inferred at runtime. */
+    textRuby?: RubySegment[];
     furigana: string | null;
     translationVi: string | null;
 
