@@ -248,3 +248,8 @@ DIALOGUE-FURIGANA-001 stays OPEN. The presentation candidate remains separate an
 Authored28 further source-bound reading rows for SC-LOC-001-04-001, SC-LOC-001-05-001 and the six NPC turns of SC-LOC-002-01-001. This continuation adds50 reading rows total (30 NPC,20 player). Stored reading bundles now contain56 rows; existing10 player-hint readings bring effective full aligned coverage to36 NPC and30 player lines, covering all11 turns of six starter scenarios. All stored bundles pass canonical-source matching, per-kanji authored hiragana and both-role binding checks. Original Japanese sentences and translations are preserved. Native review remains false.
 
 Active player rendering uses the source-bound recommendedAnswerRuby data; NPC presentation remains the separate unapplied candidate. No browser/native visual approval is claimed. DIALOGUE-FURIGANA-001 remains OPEN for the rest of the corpus and the presentation verification.
+
+
+## 2026-10-20 alternate browser verification remains blocked
+
+A materially changed Chromium133 environment was tested with a minimal local Japanese-font page before applying the presentation candidate. document.fonts.load still failed with NetworkError. No active UI files were changed and no visual approval is claimed. Stop repeating this rendering path; retain the separate candidate and continue dialogue translation.
