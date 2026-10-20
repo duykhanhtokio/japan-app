@@ -188,3 +188,10 @@ Next unfinished source:124(start1231,count10), logical ownerdialogue_ne_my. Pres
 Publisher resumed dialogue translations. Authenticated remote ref matches local/tracking b96007750cd0338b87d5844785d23aadbbbce6d7. Baseline1231 complete;5897 remain. Sources124–129 cover60 scenarios starting1231 through1281. Six exclusive language-pair authors use compact canonical Japanese,16–32-value scratch checkpoints,160-value own-fidelity publication and immutable markers. Content is persisted incrementally through authenticated exact blob/tree/commit/ref checks; whole-app audits wait for full cohort integration. Native/domain review false; no semantic cross-review.
 
 Pre-existing working changes (121 Kaigo PNG paths and unrelated temporary evidence files) are preserved and excluded from dialogue commits. DIALOGUE-FURIGANA-001 remains OPEN and must be included in the next app progress report; this translation resumption does not authorize or claim completion of that separate UI/reading backlog.
+
+
+## 2026-10-20 resumed priorities and furigana inventory
+
+Publisher authorized continuing the pending priorities. Restored six exclusive en/my, vi/km, id/ne, tl/hi, zh-CN/bn and zh-TW/th assignments for124–129; published files are immutable, existing drafts preserved. No semantic cross-review. Translation remains the first priority.
+
+DIALOGUE-FURIGANA-001 remains OPEN. Full canonical structural inventory via scripts/audit-dialogue-furigana.cjs covers7,128 scenarios:42,768 NPC lines and35,640 player lines.42,725 NPC lines contain kanji and lack aligned ruby;35,630 player lines lack complete aligned ruby, with only10 existing complete player lines. NPC currently uses plain Text rather than JapaneseRuby; player rendering consumes only source-aligned recommendedAnswerRuby. No reading was guessed or changed. The audit is structural and does not certify pronunciation or device layout. Follow-up must author context-correct readings and support both panels, then validate the reference appearance on supported screens.
