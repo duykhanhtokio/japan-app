@@ -306,3 +306,8 @@ All batches are integrated, adding20 complete scenarios,2,640 translated utteran
 Content was persisted incrementally through the authenticated GitHub connector with exact blob/tree verification, expected-parent branch updates and independent commit/ref readbacks. Final integration uses the same protocol. Local exact commit objects are reconstructed/hash-verified from authenticated receipts without overwriting work. The shell network gate was cancelled by the host approval layer in this continuation; exact authenticated commit/tree/ref verification is the persistence evidence, and no new shell-gate pass is claimed.
 
 Next unfinished source:146(start1451,count10), logical ownerdialogue_zh. Preserve completed packs; continue compact-source, disjoint authoring, full own-fidelity QA, immutable markers and incremental persistence. The remaining5,677 scenarios remain unfinished.
+
+
+## 2026-10-20 continuation146–147
+
+Authenticated remote ref, local HEAD and tracking HEAD matchcc582eab4d6ec66628836d69542de9964bf6e6f7. Baseline1451 complete scenarios;5677 remaining. Prepared canonical sources146–147 and six disjoint language-pair queues, with English/Myanmar and Vietnamese/Khmer balanced from the outset. Preserve completed content and unrelated files. Require complete own-language Japanese-source fidelity QA, immutable matching readiness markers, exact source/ID/speaker/task checks and incremental authenticated commit/tree/ref persistence. Native/domain review remains false. Furigana remains OPEN independently; no browser/native visual approval is claimed. Shell network gate was cancelled earlier; use authenticated connector readback and do not claim a new shell-gate pass.
