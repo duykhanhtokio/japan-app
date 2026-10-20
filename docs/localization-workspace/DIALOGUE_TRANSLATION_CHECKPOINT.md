@@ -206,3 +206,8 @@ All batches are integrated, adding60 complete scenarios,7,920 translated utteran
 Content was persisted incrementally through the authenticated GitHub connector with exact blob/tree verification, expected-parent branch updates and independent commit/ref readbacks. Final integration uses the same protocol. Local exact commit objects are reconstructed/hash-verified from authenticated receipts without overwriting work. CLI HTTPS credentials remain unavailable; no CLI persistence-gate pass is claimed.
 
 Next unfinished source:130(start1291,count10), logical ownerdialogue_ne_my. Preserve completed packs; continue compact-source, disjoint authoring, full own-fidelity QA, immutable markers and incremental persistence. The remaining5,837 scenarios remain unfinished.
+
+
+## 2026-10-20 continuation130–135
+
+Remote-verified baseline cf635231d5e68c1309f6b0665c03d841fe19f128:1291 complete scenarios,5837 remaining. Prepared six canonical sources130–135 covering60 scenarios. Six exclusive language-pair assignments continue compact Japanese input, full own-source fidelity QA, immutable publication markers and incremental authenticated GitHub persistence. Do not semantically cross-review other authors. Native/domain review remains false. Furigana backlog remains OPEN; structural inventory is complete but readings and panel rendering are not repaired. Preserve unrelated pre-existing work and all completed packs.
