@@ -439,3 +439,8 @@ All batches are integrated, adding60 complete scenarios,7,920 translated utteran
 Content was persisted incrementally through the authenticated GitHub connector with exact blob/tree verification, expected-parent branch updates and independent commit/ref readbacks. Final integration uses the same protocol. Local exact commit objects are reconstructed/hash-verified from authenticated receipts without overwriting work. The shell network gate was cancelled earlier in this workspace; this continuation uses exact authenticated commit/tree/ref verification, and no new shell-gate pass is claimed.
 
 Next unfinished source:160(start1591,count10), logical ownerdialogue_ne_my. Preserve completed packs; continue compact-source, disjoint authoring, full own-fidelity QA, immutable markers and incremental persistence. The remaining5,537 scenarios remain unfinished.
+
+
+## User-requested pause — 2026-10-21 JST
+
+All dialogue work is paused after durable cohort154–159 completion. Verified content commit0a20ff014949957dd2e2784ccee6b33ad00edaee on authenticated GitHub branch recovery/jlpt-n3-n1. Complete1591/7128 scenarios;5537 remain. All six translation authors completed; no translation/publisher background processes observed. Four account automations were checked and all are disabled. Do not start new translation or resume any agent unless explicitly requested by the user. Next source batch160, start1591,count10. Furigana NPC/player remains separately unfinished. Unrelated work preserved.
