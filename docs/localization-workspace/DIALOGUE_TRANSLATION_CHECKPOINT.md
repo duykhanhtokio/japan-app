@@ -329,3 +329,8 @@ Content was persisted incrementally through the authenticated GitHub connector w
 Next unfinished source:148(start1471,count10), logical ownerdialogue_ne_my. Preserve completed packs; continue compact-source, disjoint authoring, full own-fidelity QA, immutable markers and incremental persistence. The remaining5,657 scenarios remain unfinished.
 
 Before integrating batch147, its Khmer author identified and corrected ambiguous white-ribbon wording in exactly three flat strings (135,136,138). The original pack and immutable marker were archived unchanged with the author proposal, replacement marker and revision record under translation-revisions/147/km/revision-01. Technical comparison confirmed all source bindings and the other157 strings unchanged; the author repeated own-source fidelity QA. The explicit author hold is RESOLVED, and no batch147 integration occurred while it was active. No semantic cross-review or native/domain approval is claimed.
+
+
+## 2026-10-20 continuation148–149
+
+Authenticated remote ref, local HEAD and tracking HEAD match 03b14a98021df8d727cb4b47753ee6ec3ff8bb1d. Baseline:1471 complete scenarios;5657 remaining. Prepared canonical sources148–149 and six balanced disjoint language-pair queues. The earlier own-author Khmer revision is resolved and preserved; no active author holds remain. Preserve completed packs and unrelated work. Require full own-language Japanese-source fidelity QA before immutable publication, exact source/ID/speaker/task checks and incremental authenticated commit/tree/ref persistence. Native/domain review remains false; furigana remains OPEN independently. No new shell network-gate pass or browser/native visual approval is claimed.
