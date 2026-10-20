@@ -269,3 +269,8 @@ Next unfinished source:142(start1411,count10), logical ownerdialogue_ne_my. Pres
 ## 2026-10-20 continuation batch142
 
 Source142 is remote-verified at11a29248acf45395117c707a6884f5921cdcdfc8; baseline1411 complete scenarios. Six exclusive language-pair groups resumed successfully after the previous service failure. Preserve all ready packs and require complete own-source fidelity confirmation and matching immutable markers. Only a full twelve-locale pack is integrated and counted; native/domain review remains false. Furigana remains OPEN independently of translation coverage.
+
+
+## 2026-10-20 batch142 integrated;143 authoring
+
+All12 batch142 packs have matching immutable own-fidelity markers and exact source/ID/speaker/task validation. Added10 integrated scenarios:1320 translated utterances and600 translated task hints. Full actual dialogue loader passes1421 scenarios,187572 turn-language bindings and85260 task-language bindings; stable IDs and stale-source/wrong-speaker guards pass. Complete corpus count1421/7128, remaining5707. Batch143 is still authoring and is not yet counted. Its km pack was explicitly released untouched and accepted by the en/vi author; the acknowledged exclusive handover is recorded in ACTIVE_QUEUE. Native/domain review remains false. Furigana remains OPEN.
