@@ -241,3 +241,10 @@ Remote ref, local HEAD and tracking HEAD match f09251609ca98d9f1e5b14b8a4c2e2b5d
 Authored22 additional reading rows for SC-LOC-001-02-001 and SC-LOC-001-03-001 (12 NPC,10 player), preserving exact canonical Japanese. The dedicated reading bundles now contain28 rows across3 scenarios:18 NPC and10 player. Together with existing authored player-hint readings, full corpus inventory has18 aligned NPC lines and20 aligned player lines. Data tests now verify every stored bundle against the actual generated dialogue source and exercise both NPC/player bindings, stale-source/speaker/scenario rejection and partial-word reveal. The real application loader verifies every stored reading row. Native review remains false.
 
 DIALOGUE-FURIGANA-001 stays OPEN. The presentation candidate remains separate and unapplied; the prior Chromium crash blocker is unchanged, so no redundant UI environment retry or visual/native-device approval is claimed. Continue corpus data authoring and visual validation when the rendering environment is available.
+
+
+## 2026-10-20 complete reading data for six starter scenarios
+
+Authored28 further source-bound reading rows for SC-LOC-001-04-001, SC-LOC-001-05-001 and the six NPC turns of SC-LOC-002-01-001. This continuation adds50 reading rows total (30 NPC,20 player). Stored reading bundles now contain56 rows; existing10 player-hint readings bring effective full aligned coverage to36 NPC and30 player lines, covering all11 turns of six starter scenarios. All stored bundles pass canonical-source matching, per-kanji authored hiragana and both-role binding checks. Original Japanese sentences and translations are preserved. Native review remains false.
+
+Active player rendering uses the source-bound recommendedAnswerRuby data; NPC presentation remains the separate unapplied candidate. No browser/native visual approval is claimed. DIALOGUE-FURIGANA-001 remains OPEN for the rest of the corpus and the presentation verification.
