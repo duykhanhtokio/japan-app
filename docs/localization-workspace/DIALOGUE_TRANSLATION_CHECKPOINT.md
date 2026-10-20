@@ -218,3 +218,14 @@ Remote-verified baseline cf635231d5e68c1309f6b0665c03d841fe19f128:1291 complete 
 Added six context-authored NPC reading rows for SC-LOC-001-01-001, a lazy per-scenario reading loader and exact source/speaker/scenario guards. Existing Japanese text and translations are unchanged. Data and reveal-prefix tests pass; native review remains false. Data inventory now has6 complete NPC ruby lines and10 complete player ruby lines; remaining42719 NPC kanji lines and35630 player lines still lack complete aligned readings.
 
 Presentation changes were saved explicitly under furigana-ui-candidate/*.pending.txt, not applied to the active route/component. Chromium153 repeatedly closed during rendering or font loading, so no browser fit/native-device approval is claimed. Candidate preserves NPC progressive reveal and uses the same JapaneseRuby rendering for both panels. Resume visual verification with a working browser/simulator before applying it. DIALOGUE-FURIGANA-001 remains OPEN. Reference image was reopened and inspected. Translation authoring continues independently.
+
+
+## 2026-10-20 optimized130–135 cohort fully complete
+
+All72 locale packs are final author-ready, including recorded acknowledged exclusive handovers. Every pack has full own-language Japanese-source fidelity confirmation and an immutable matching SHA256 marker. No semantic cross-review was performed; native/domain review remains false. No assigned file remains unfinished.
+
+All batches are integrated, adding60 complete scenarios,7,920 translated utterances and3,600 task hints beyond1291. Current full source-bound sentence+task total1351/7,128; remaining5,777. Exact canonical source/ID/speaker/task validation and actual app loader pass178,332 turn-language bindings and81,060 task-language bindings with stable IDs, direct/generic loading and stale-source/wrong-speaker guards. All1,632 indexed locale-file hashes match the derived progress manifest. Whole-app coverage reports were refreshed once for this complete cohort.
+
+Content was persisted incrementally through the authenticated GitHub connector with exact blob/tree verification, expected-parent branch updates and independent commit/ref readbacks. Final integration uses the same protocol. Local exact commit objects are reconstructed/hash-verified from authenticated receipts without overwriting work. Authenticated connector writes are followed by exact commit/ref readback and the scoped check-work-persistence.mjs fetch/advertised-head/clean-path gate.
+
+Next unfinished source:136(start1351,count10), logical ownerdialogue_ne_my. Preserve completed packs; continue compact-source, disjoint authoring, full own-fidelity QA, immutable markers and incremental persistence. The remaining5,777 scenarios remain unfinished.
