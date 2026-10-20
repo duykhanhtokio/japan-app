@@ -393,3 +393,8 @@ All batches are integrated, adding20 complete scenarios,2,640 translated utteran
 Content was persisted incrementally through the authenticated GitHub connector with exact blob/tree verification, expected-parent branch updates and independent commit/ref readbacks. Final integration uses the same protocol. Local exact commit objects are reconstructed/hash-verified from authenticated receipts without overwriting work. The shell network gate was cancelled earlier in this workspace; this continuation uses exact authenticated commit/tree/ref verification, and no new shell-gate pass is claimed.
 
 Next unfinished source:154(start1531,count10), logical ownerdialogue_ne_my. Preserve completed packs; continue compact-source, disjoint authoring, full own-fidelity QA, immutable markers and incremental persistence. The remaining5,597 scenarios remain unfinished.
+
+
+## Incremental154–159 integration 2026-10-20T14:25:59.416031+00:00
+
+Newly integrated batches: 154. All twelve locales, own-source author fidelity markers, source/ID/speaker/task checks and actual app loader pass. Complete scenarios 1541/7128. Native review false; no semantic cross-review. Preserve remaining author-ready files.
