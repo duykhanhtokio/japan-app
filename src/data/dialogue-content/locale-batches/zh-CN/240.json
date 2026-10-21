@@ -1,0 +1,697 @@
+{
+  "language": "zh-CN",
+  "status": "translated_ai_unreviewed",
+  "nativeReviewed": false,
+  "scenarios": {
+    "SC-TKY-CHIYODA-001": {
+      "turns": {
+        "DLG-SC-TKY-CHIYODA-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "どちらの改札へ向かいますか。",
+          "translation": "您要去哪个检票口？"
+        },
+        "DLG-SC-TKY-CHIYODA-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "在来線を降りました。ここで一度外へ出て、新幹線の改札へ入り直すつもりです。",
+          "hintJa": "在来線から新幹線へ外経由で移動する予定を伝える。日本語で伝えてください。",
+          "translation": "我刚从普通线路下车，打算在这里先出站，再重新进入新干线检票口。",
+          "hintTranslation": "请说明计划从普通线路经站外换乘新干线。请用日语表达。"
+        },
+        "DLG-SC-TKY-CHIYODA-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "乗換えの方法は、お持ちの券によって確認が必要です。新幹線の予約と今の券を見せてください。",
+          "translation": "换乘方法需要按您持有的车票确认，请给我看新干线预订和现在的票。"
+        },
+        "DLG-SC-TKY-CHIYODA-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "こちらです。外へ出ると乗換えの扱いが変わるかもしれないので、まだ改札は通っていません。",
+          "hintJa": "券を示し未通過のまま扱いを確認する。日本語で伝えてください。",
+          "translation": "都在这里。出站后换乘处理可能会变，所以我还没过检票口。",
+          "hintTranslation": "请出示车票，在未通过时确认处理方式。请用日语表达。"
+        },
+        "DLG-SC-TKY-CHIYODA-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "券の確認は係員が行います。お連れの方も同じ券ですか。",
+          "translation": "车票由工作人员确认，您的同伴也是相同车票吗？"
+        },
+        "DLG-SC-TKY-CHIYODA-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "友人は別に購入しています。自分の案内をそのまま友人にも適用せず、本人の券を確認してもらいます。",
+          "hintJa": "同行者の別券にも独立した確認を求める。日本語で伝えてください。",
+          "translation": "朋友是另外买的。我不会把自己的指引直接套给他，会请您也确认他的票。",
+          "hintTranslation": "请要求同行者的另购车票也独立确认。请用日语表达。"
+        },
+        "DLG-SC-TKY-CHIYODA-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "それぞれの券で確認しましょう。荷物のために階段を避けたいというご希望はありますか。",
+          "translation": "我们分别核对。因为行李，您有希望避开楼梯吗？"
+        },
+        "DLG-SC-TKY-CHIYODA-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "はい。二人で大きな荷物があります。使える乗換え経路が分かった後、その経路の昇降設備も教えてください。",
+          "hintJa": "荷物による階段回避を有効な経路確定後に相談する。日本語で伝えてください。",
+          "translation": "有，我们两个人都有大件行李。知道能走的换乘路线后，也请介绍那条路的升降设施。",
+          "hintTranslation": "请在有效路线确定后，因行李咨询避开楼梯。请用日语表达。"
+        },
+        "DLG-SC-TKY-CHIYODA-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "券の扱いと通れる経路を先に確認し、その後で設備を案内します。",
+          "translation": "先确认车票处理和可走路线，然后介绍设施。"
+        },
+        "DLG-SC-TKY-CHIYODA-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "分かりました。外へ出る操作を先にせず、二人分の券と経路を係員に確認してから移動します。",
+          "hintJa": "二人の券と経路を確認するまで改札を通らない。日本語で伝えてください。",
+          "translation": "明白，我不会先做出站操作，会等工作人员确认两人的票和路线后再走。",
+          "hintTranslation": "请在确认两人车票和路线前不通过检票口。请用日语表达。"
+        },
+        "DLG-SC-TKY-CHIYODA-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "では、こちらの係員窓口へどうぞ。改札は確認後にお通りください。",
+          "translation": "那么，请到这个工作人员窗口，确认后再过检票口。"
+        }
+      }
+    },
+    "SC-LOC-TKY-CHIYODA-02-001": {
+      "turns": {
+        "DLG-SC-LOC-TKY-CHIYODA-02-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "どの手続きについてのご相談ですか。",
+          "translation": "您想咨询哪种手续？"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-02-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "転入後の保険の受付をしました。年金についても同じ紙に名前を書いたので、済んだと思っています。",
+          "hintJa": "保険受付で年金も完了したと思ったことを説明する。日本語で伝えてください。",
+          "translation": "搬入后我办了保险受理。年金也在同一张纸写过名字，所以我以为已经办完。",
+          "hintTranslation": "请说明以为保险受理时年金也已完成。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-02-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "紙に名前があるだけでは、年金の手続きが済んだか分かりません。受け取った案内を見せてください。",
+          "translation": "只凭纸上有名字不能确定年金办完，请给我看收到的指引。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-02-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "この控えです。保険の受付とだけ書いてあります。年金の完了まで示すものではないのですね。",
+          "hintJa": "控えの対象が保険だけだと読み直す。日本語で伝えてください。",
+          "translation": "是这张凭条，只写保险受理。原来不代表年金也完成了。",
+          "hintTranslation": "请重新读明凭条仅涉及保险。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-02-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "年金について担当が状況を確認します。勤務先の制度も関係するため、現在の状況を教えてください。",
+          "translation": "年金由负责人确认状态，也关系到工作单位制度，请说目前情况。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-02-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "新しい勤務先に入ったばかりです。どの制度の手続きが進んでいるかは会社にも確認が必要です。",
+          "hintJa": "新勤務先の加入状況が未確認だと申告する。日本語で伝えてください。",
+          "translation": "我刚进新单位，哪种制度正在办理，也需要向公司确认。",
+          "hintTranslation": "请申明新单位加入制度的状态尚未确认。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-02-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "勤務先からの案内があれば担当へ見せてください。確認できない項目を推測で記入しないでください。",
+          "translation": "有单位指引就给负责人看，不能确认的项目不要猜着填。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-02-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "分からない欄は空欄のまま相談します。今日の保険の控えと勤務先の案内を別に持って説明します。",
+          "hintJa": "推測記入をせず二つの資料を分けて示す。日本語で伝えてください。",
+          "translation": "不懂的栏我先空着咨询，今天保险凭条和单位指引分别带着说明。",
+          "hintTranslation": "请不推测填写，分别出示两份资料。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-02-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "担当が必要な確認先と手順を案内します。追加手続きが不要とここでは確定しません。",
+          "translation": "负责人指导需要问哪里及步骤，这里不会认定无需追加手续。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-02-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "では年金の状況を確認し、必要な手順を聞きます。会社にも年金が全部済んだとはまだ伝えません。",
+          "hintJa": "年金の状況と手順を確認するまで完了を報告しない。日本語で伝えてください。",
+          "translation": "那我确认年金状态，听所需步骤。也不会现在就向公司说年金都办完了。",
+          "hintTranslation": "请在确认年金状态与步骤前不报告完成。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-02-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "そのようにしてください。年金担当へおつなぎします。",
+          "translation": "请这样做，我为您联系年金负责人。"
+        }
+      }
+    },
+    "SC-LOC-TKY-CHIYODA-03-001": {
+      "turns": {
+        "DLG-SC-LOC-TKY-CHIYODA-03-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "ご購入品についてのご相談ですか。",
+          "translation": "您想咨询买过的商品吗？"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-03-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "この問題集に解答がありません。表紙には別冊付きとあるので、別に買うのでしょうか。",
+          "hintJa": "別冊付きの本で解答が見つからないと相談する。日本語で伝えてください。",
+          "translation": "这本习题集没有答案。封面写附别册，是要另外买吗？",
+          "hintTranslation": "请咨询注明附别册的书却找不到答案。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-03-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "まず商品の構成と状態を確認します。お持ちの本と購入記録を見せていただけますか。",
+          "translation": "先确认商品组成和状态，可以给我看书和购买记录吗？"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-03-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "本とレシートがあります。購入後に家で袋を開けましたが、解答別冊は見つかりませんでした。",
+          "hintJa": "購入品と記録を示し開封後の発見を説明する。日本語で伝えてください。",
+          "translation": "书和收据都有。买后在家拆袋，不过没找到答案别册。",
+          "hintTranslation": "请出示商品与记录，说明开封后发现的情况。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-03-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "背表紙側の差込みや包装も確認しましょう。いつの時点でなくなったかは、まだ分かりませんね。",
+          "translation": "也看看书脊侧夹层和包装，目前还不清楚何时丢失，对吧？"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-03-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "はい。初めから欠けていたと断言はできません。包装は家に残してあるので、捨てずに確認します。",
+          "hintJa": "欠落時点は不明と認め包装を残して確認する。日本語で伝えてください。",
+          "translation": "是的，不能断言开始就缺了。包装还留在家，我不会扔，会回去检查。",
+          "hintTranslation": "请承认缺失时间不明，保留包装核查。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-03-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "担当が商品の構成と対応条件を確認します。今この場で別冊だけお渡しできるとは限りません。",
+          "translation": "负责人核对组成和处理条件，不一定现在能直接给别册。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-03-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "別冊を無料でもらえると決めず、対応を聞きたいです。買い直しは確認が終わるまで待ちます。",
+          "hintJa": "無償提供を決めつけず買い直しを待つ。日本語で伝えてください。",
+          "translation": "我不认定能免费领，想先听处理。确认完前也先不重新买。",
+          "hintTranslation": "请不认定免费提供，暂缓重买。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-03-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "購入品を一度お預かりして確認してよろしいですか。",
+          "translation": "可以先收下商品检查吗？"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-03-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "はい。本とレシートを見てください。家の包装も必要なら、確認して持参する方法を相談します。",
+          "hintJa": "本と記録の確認を依頼し包装持参の要否を聞く。日本語で伝えてください。",
+          "translation": "可以，请看书和收据。若需要家中包装，我也商量检查后带来的办法。",
+          "hintTranslation": "请要求检查书和记录，并询问是否需带包装。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-03-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "担当が確認します。商品の状態が分かった後に、必要な手順をご案内します。",
+          "translation": "负责人核实，了解商品状态后指导需要的步骤。"
+        }
+      }
+    },
+    "SC-LOC-TKY-CHIYODA-04-001": {
+      "turns": {
+        "DLG-SC-LOC-TKY-CHIYODA-04-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "作業場所で気になることはありますか。",
+          "translation": "工作场所有什么让您在意的吗？"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-04-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "いつもの吸い込みの音が聞こえません。木を切る機械は動くので、加工を続けてもよいですか。",
+          "hintJa": "集じん音の変化と加工継続の可否を尋ねる。日本語で伝えてください。",
+          "translation": "我听不到平时吸气的声音。切木头机器还能动，可以继续加工吗？",
+          "hintTranslation": "请说明集尘声音变化，询问能否继续加工。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-04-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "設備の状態を確認するまで、加工は進めないでください。決められた停止と報告の手順に従います。",
+          "translation": "确认设备前先别加工，按规定的停止与报告步骤进行。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-04-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "音が聞こえないことを報告し、手順どおり作業を止めます。集じん機の故障とまでは分かりません。",
+          "hintJa": "観察を故障断定と分け手順に従って止める。日本語で伝えてください。",
+          "translation": "我报告听不到声音，按步骤停工，但还不知道是不是集尘器故障。",
+          "hintTranslation": "请区分观察与故障定论，按步骤停止。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-04-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "こちらで担当へ連絡します。フィルターや配管を自分で開けないでください。",
+          "translation": "我们联系负责人，请不要自己打开过滤器或管道。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-04-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "開けません。さっきまで音があり、板を一枚加工した後に変化へ気づいたと伝えます。",
+          "hintJa": "設備を開けず変化に気づいた時点を伝える。日本語で伝えてください。",
+          "translation": "我不会开。会说明刚才还有声音，加工完一块板后注意到变化。",
+          "hintTranslation": "请不打开设备，说明何时注意到变化。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-04-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "発生時点を記録します。周囲の作業者も同じ設備を使っていますか。",
+          "translation": "我们记录发生时间。周围工人也使用同一设备吗？"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-04-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "隣の台も使っています。自分の台だけの問題と決めず、確認中であることを隣の担当にも知らせます。",
+          "hintJa": "共用設備の可能性を示し隣の担当にも知らせる。日本語で伝えてください。",
+          "translation": "旁边工作台也用。我不认定只是自己台子的问题，会告诉隔壁负责人正在确认。",
+          "hintTranslation": "请指出可能共用设备，也通知邻台负责人。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-04-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "設備担当が状態を確認します。床にある粉を空気で吹き飛ばすような作業も始めないでください。",
+          "translation": "设备负责人核实。也别开始用空气吹散地上粉尘等作业。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-04-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "分かりました。設備や清掃方法を自己判断で変えず、停止した状態を引き継いで再開指示を待ちます。",
+          "hintJa": "設備や清掃を変更せず停止状態を引き継ぐ。日本語で伝えてください。",
+          "translation": "明白。我不自行改设备或清扫方法，会交接停止状态，等恢复指示。",
+          "hintTranslation": "请不更改设备或清扫，交接停止状态。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-04-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "そのままお待ちください。担当の確認後に作業を指示します。",
+          "translation": "保持原样等候，负责人确认后再指示。"
+        }
+      }
+    },
+    "SC-LOC-TKY-CHIYODA-05-001": {
+      "turns": {
+        "DLG-SC-LOC-TKY-CHIYODA-05-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "商品のどの点が気になりましたか。",
+          "translation": "您在意商品哪一点？"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-05-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "表示は五百グラムですが、凍った袋ごと量るともっと重かったです。多すぎる商品を渡されたのでしょうか。",
+          "hintJa": "包装ごとの測定が表示より重いと相談する。日本語で伝えてください。",
+          "translation": "标示五百克，可冻着连袋称更重。是不是给了我过量的商品？",
+          "hintTranslation": "请咨询含包装测量重于标示。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-05-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "袋ごとの重さには包装も入ります。表示と比べる条件を確認しましょう。",
+          "translation": "连袋重量包括包装，我们确认与标示比较的条件。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-05-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "肉だけの表示と袋ごとの測定を比べていました。包装を含む数字で間違いだとは言えないのですね。",
+          "hintJa": "肉の表示と包装込み測定の条件差を認める。日本語で伝えてください。",
+          "translation": "原来我拿只算肉的标示和连袋测量比较，不能凭含包装数字说出错。",
+          "hintTranslation": "请承认肉重与含包装测量条件不同。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-05-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "商品と表示、量った時の状況を確認します。肉は今どのように保管していますか。",
+          "translation": "我们核对商品标示和称重情况，肉现在怎么保存？"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-05-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "家の冷凍庫です。ここへ持ち歩いて溶かす前に、相談方法を聞こうと思って来ました。",
+          "hintJa": "冷凍保管中で持参方法を事前相談したと伝える。日本語で伝えてください。",
+          "translation": "在家冷冻柜。我想在带来路上化掉之前，先来问咨询方法。",
+          "hintTranslation": "请说明冷冻保存中，事先咨询带来方法。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-05-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "持参の要否や方法は担当が案内します。重量を確かめるために、自己判断で解凍し直さないでください。",
+          "translation": "是否要带及怎么带由负责人指导，别为了测重量自行解冻。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-05-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "分かりました。家で包装表示の写真を撮り、使ったはかりと袋ごと量ったことも説明します。",
+          "hintJa": "解凍せず表示写真とはかりの条件を示す。日本語で伝えてください。",
+          "translation": "明白。我在家拍包装标示，也说明用了什么秤，以及连袋称重。",
+          "hintTranslation": "请不解冻，提供标示照片与秤的测量条件。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-05-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "その情報から確認します。商品の状態や対応については担当の説明をお待ちください。",
+          "translation": "我们先用这些确认，商品状态和处理请等负责人说明。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-05-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "はい。重さの違いだけで返品が決まったとは考えず、保管を続けて案内された方法で相談します。",
+          "hintJa": "返品を決めつけず保管を続け指定方法で確認する。日本語で伝えてください。",
+          "translation": "好的，我不会只因重量差就认为退货已定，会继续保存，按指引方法咨询。",
+          "hintTranslation": "请不认定退货，继续保管并按指定方法核查。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-05-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "担当へ状況を伝えます。表示の写真と購入記録の準備もお願いします。",
+          "translation": "我转告情况，也请准备标示照片和购买记录。"
+        }
+      }
+    },
+    "SC-LOC-TKY-CHIYODA-06-001": {
+      "turns": {
+        "DLG-SC-LOC-TKY-CHIYODA-06-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "洗い終わった道具を、この台へ並べてください。",
+          "translation": "洗好的工具请摆在这个台子上。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-06-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "洗ったので、消毒済みの札を付けて収納棚へ戻してよいですか。",
+          "hintJa": "洗浄後に消毒済み札を付けられるか尋ねる。日本語で伝えてください。",
+          "translation": "已经洗过，可以挂消毒完成牌，再放回收纳架吗？",
+          "hintTranslation": "请询问清洗后能否挂消毒完成牌。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-06-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "洗浄と消毒は別の工程です。今日はまず洗い終わった物を並べる担当です。",
+          "translation": "清洗和消毒是两个步骤，您今天先负责把洗好的摆出来。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-06-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "洗っただけで消毒済みにはできないのですね。まだ札は付けていません。洗浄後の台に置きます。",
+          "hintJa": "工程を区別し未表示のまま指定台へ置く。日本語で伝えてください。",
+          "translation": "原来洗过不算消毒完成。我还没挂牌，会放清洗后的台子。",
+          "hintTranslation": "请区分步骤，不挂标示放指定台。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-06-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "はい。消毒の担当が次の工程を行います。昨日の札が残っている物はありますか。",
+          "translation": "对，消毒负责人进行下一步。有留下昨天标签的工具吗？"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-06-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "一本に残っています。今日も完了したように見えるので、自分で書き換えず担当に報告します。",
+          "hintJa": "古い札の残存を報告し自己更新しない。日本語で伝えてください。",
+          "translation": "有一根留着，会看起来像今天也完成了。我不自行改写，会报告负责人。",
+          "hintTranslation": "请报告残留旧标签，不自行更新。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-06-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "その一本は、ほかと分けて確認しましょう。薬剤も自己判断で追加しないでください。",
+          "translation": "那根和其他分开核查，也别自行添药剂。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-06-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "台の指定された場所で分けます。洗っていない物も一緒に置かれそうなので、どこへ置くか確認したいです。",
+          "hintJa": "確認待ちと未洗浄の置場を区別したいと頼む。日本語で伝えてください。",
+          "translation": "我在台上指定位置分开。未洗的也可能被放一起，所以想确认放哪里。",
+          "hintTranslation": "请要求区分待确认及未清洗的放置处。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-06-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "未洗浄は別の回収場所です。札のある一本と未洗浄を混ぜないでください。",
+          "translation": "未洗的是另一回收处，别和有标签那根混在一起。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-06-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "分かりました。洗浄後、札の確認待ち、未洗浄を分けて、消毒済みとは記録せず引き継ぎます。",
+          "hintJa": "三つの状態を分け消毒完了とせず引き継ぐ。日本語で伝えてください。",
+          "translation": "明白，我区分清洗后、标签待确认和未洗三类，不记成消毒完就交接。",
+          "hintTranslation": "请区分三种状态，不当消毒完成交接。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-06-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "その状態で引き継いでください。次の担当が工程と表示を確認します。",
+          "translation": "请按此状态交接，下一位确认工序和标示。"
+        }
+      }
+    },
+    "SC-LOC-TKY-CHIYODA-07-001": {
+      "turns": {
+        "DLG-SC-LOC-TKY-CHIYODA-07-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "注文履歴についてご質問ですか。",
+          "translation": "您想问订单历史吗？"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-07-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "この小さい料理が二つ分あります。子ども用の一皿は大人のセットに付いていたと思うので、重複ではありませんか。",
+          "hintJa": "小さい料理二つを付属品の重複と疑い尋ねる。日本語で伝えてください。",
+          "translation": "这个小菜算了两份。我以为孩子那盘附在成人套餐里，是重复了吗？",
+          "hintTranslation": "请疑问两份小菜是否附品重复，进行询问。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-07-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "注文時の内容を確認します。大人のセットに付くのは、こちらの小鉢です。",
+          "translation": "我们核对点餐内容，成人套餐附的是这里这道小菜。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-07-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "小鉢と子ども用の料理を同じものだと思っていました。どちらも実際に出てきたので、料理名を照合したいです。",
+          "hintJa": "小鉢と子ども料理を区別し実物と履歴を照合する。日本語で伝えてください。",
+          "translation": "我以为小菜和儿童餐是一样的。两样都实际上桌了，想核对菜名。",
+          "hintTranslation": "请区分小菜与儿童餐，核对实物和订单。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-07-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "注文履歴では、小鉢付きのセットと単品の子ども料理になっています。",
+          "translation": "订单是带小菜套餐，以及单点儿童餐。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-07-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "二つの料理が別注文なら、勝手に一つを消してもらう話ではありませんね。単品の注文を誰が入れたか家族に聞きます。",
+          "hintJa": "別注文を削除要求せず家族に注文者を確認する。日本語で伝えてください。",
+          "translation": "如果两道是不同订单，就不是擅自要求删一个。我问家人谁点了单点。",
+          "hintTranslation": "请不要求删除不同订单，向家人确认下单者。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-07-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "確認される間、会計はお待ちします。追加の注文は必要ですか。",
+          "translation": "您确认期间我们等着结账，需要再点吗？"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-07-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "追加はありません。家族に聞くと、子ども用は別に注文したそうです。履歴との違いはなくなりました。",
+          "hintJa": "追加不要と伝え家族の単品注文を報告する。日本語で伝えてください。",
+          "translation": "不加了。问家人说儿童餐是另点的，现在和记录没有差异了。",
+          "hintTranslation": "请说明不追加，报告家人另点单品。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-07-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "では、現在の内容で会計してよろしいですか。",
+          "translation": "那按当前内容结账，可以吗？"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-07-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "はい。小鉢付きのセットと単品一皿を区別して確認できたので、この内容で支払います。",
+          "hintJa": "二つの注文を理解し現在の内容で支払う。日本語で伝えてください。",
+          "translation": "可以，已确认带小菜套餐和单点一盘不同，我按这些付。",
+          "hintTranslation": "请理解两份订单，按当前内容付款。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-07-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "承知しました。確認済みの内容で会計します。",
+          "translation": "好的，按确认内容结账。"
+        }
+      }
+    },
+    "SC-LOC-TKY-CHIYODA-08-001": {
+      "turns": {
+        "DLG-SC-LOC-TKY-CHIYODA-08-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "こちらの小皿料理をご希望ですか。",
+          "translation": "您要这道小盘菜吗？"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-08-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "三つ写っているので、三人で一皿ずつ食べるセットを一つお願いします。",
+          "hintJa": "写真三皿を人数分セットとして注文したいと述べる。日本語で伝えてください。",
+          "translation": "照片有三盘，请给一套，让我们三个人一人吃一盘。",
+          "hintTranslation": "请说明想把照片三盘当作三人套餐点。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-08-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "この写真は、選べる三種類の見本です。一つの注文で三皿届く意味ではありません。",
+          "translation": "照片是可选择三种的样品，不是点一次来三盘。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-08-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "三種類から一つ選ぶ商品でしたか。人数分を一つのセットで頼めると誤解しました。",
+          "hintJa": "選択肢見本であると理解し誤解を訂正する。日本語で伝えてください。",
+          "translation": "原来是三选一。我误会以为一套就能点够人数。",
+          "hintTranslation": "请理解是选项样品，纠正误会。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-08-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "どの種類を何皿にするか、ご相談ください。まだ注文は通していません。",
+          "translation": "商量要哪种、几盘吧，现在还没下单。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-08-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "三人それぞれに希望を聞きます。自分はこの種類ですが、ほかの二人も同じと決めないようにします。",
+          "hintJa": "三人の種類希望を個別に確認する。日本語で伝えてください。",
+          "translation": "我分别问三个人。我自己要这款，不直接认定另外两人也一样。",
+          "hintTranslation": "请分别确认三人菜种意愿。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-08-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "決まったら種類ごとの皿数を教えてください。取り分ける場合も人数分と注文数を分けて考えてください。",
+          "translation": "定好告诉我每种盘数。分享时人数和订单数量也分开考虑。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-08-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "聞いてきました。二人はこの種類を一皿ずつ、もう一人は別の種類を一皿です。合計三皿になります。",
+          "hintJa": "二皿と一皿の内訳と合計を伝える。日本語で伝えてください。",
+          "translation": "问好了，两人这款各一盘，另一人别款一盘，一共三盘。",
+          "hintTranslation": "请说明两盘加一盘的明细及总数。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-08-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "この種類を二皿、別の種類を一皿ですね。こちらでよろしいですか。",
+          "translation": "这款两盘，另一款一盘，对吗？"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-08-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "はい、その三皿でお願いします。三人の人数だけを伝えるのでなく、種類と皿数で確認します。",
+          "hintJa": "種類別皿数の復唱を確認し注文を確定する。日本語で伝えてください。",
+          "translation": "对，就这三盘。不只说三个人，而按种类和盘数确认。",
+          "hintTranslation": "请确认分种盘数复述，确定订单。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHIYODA-08-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "承知しました。確認した内訳で注文を通します。",
+          "translation": "好的，按确认明细下单。"
+        }
+      }
+    },
+    "SC-TKY-CHUO-001": {
+      "turns": {
+        "DLG-SC-TKY-CHUO-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "遅延について、どのような確認をご希望ですか。",
+          "translation": "关于延误，您想确认什么？"
+        },
+        "DLG-SC-TKY-CHUO-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "職場へ遅れを報告します。案内に三十分遅れとあるので、私も三十分遅刻したと書けばよいですか。",
+          "hintJa": "列車の遅延分を自分の遅刻時間として書けるか尋ねる。日本語で伝えてください。",
+          "translation": "我要向单位报告迟到。指引写晚三十分钟，我也可以写自己迟到三十分钟吗？",
+          "hintTranslation": "请询问能否将列车延误当成自己迟到时间。请用日语表达。"
+        },
+        "DLG-SC-TKY-CHUO-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "列車の遅れと、職場へ着く時刻は別です。ご自身の行程を含めて確認してください。",
+          "translation": "列车延误和到单位时间不同，请包含自己的行程来确认。"
+        },
+        "DLG-SC-TKY-CHUO-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "元々、列車から降りて移動する時間がありました。三十分の表示を自分の到着時刻へそのまま置き換えません。",
+          "hintJa": "列車後の移動もあり到着時刻と区別すると述べる。日本語で伝えてください。",
+          "translation": "原本下车后还有移动时间，我不会把三十分钟直接换成自己的到达时间。",
+          "hintTranslation": "请说明还有下车后路程，区别到达时间。请用日语表达。"
+        },
+        "DLG-SC-TKY-CHUO-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "職場には、今いる場所と確認できる列車の状況を分けて伝えられます。",
+          "translation": "可以向单位分别报告目前位置和能确认的列车状态。"
+        },
+        "DLG-SC-TKY-CHUO-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "乗換口で待っていて、まだ職場には着いていないと伝えます。到着前に遅刻時間を確定して書かないようにします。",
+          "hintJa": "まだ職場未着だと報告し遅刻時間を確定しない。日本語で伝えてください。",
+          "translation": "我会说在换乘口等，还没到单位。到达前不确定写迟到多久。",
+          "hintTranslation": "请报告尚未到单位，不确定迟到时长。请用日语表达。"
+        },
+        "DLG-SC-TKY-CHUO-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "遅延に関する案内をご希望なら、担当が利用方法を確認します。職場への提出条件は職場で聞いてください。",
+          "translation": "若要延误资料，负责人确认使用方法。单位提交条件请问单位。"
+        },
+        "DLG-SC-TKY-CHUO-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "案内をもらえば自分の行程まで証明されると考えず、資料に何が記載されるかを読みたいです。",
+          "hintJa": "資料が証明する範囲を自分の行程と分け確認する。日本語で伝えてください。",
+          "translation": "我不会以为拿到资料就连自己行程都获证明，想读清资料写了什么。",
+          "hintTranslation": "请区分资料证明范围与自己行程进行确认。请用日语表达。"
+        },
+        "DLG-SC-TKY-CHUO-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "担当が案内します。列車の表示も更新されるので、ご自身が利用する列車を引き続き確認してください。",
+          "translation": "负责人会说明，列车显示也更新，请继续确认自己要坐的列车。"
+        },
+        "DLG-SC-TKY-CHUO-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "はい。現在地と列車の情報を先に報告し、自分の実際の到着時刻は着いてから追加します。資料の提出条件も職場に聞きます。",
+          "hintJa": "現在地と列車状況を先に報告し到着後に実時刻を追加する。日本語で伝えてください。",
+          "translation": "好的，我先报告当前位置和列车信息，实际到达时间等到后补，也向单位问提交条件。",
+          "hintTranslation": "请先报告位置和列车状态，到后追加实际时间。请用日语表达。"
+        },
+        "DLG-SC-TKY-CHUO-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "では、遅延の案内方法を担当へ確認します。ご自身の報告とは分けてお使いください。",
+          "translation": "那我向负责人问延误指引方法，请和个人报告分开使用。"
+        }
+      }
+    },
+    "SC-LOC-TKY-CHUO-02-001": {
+      "turns": {
+        "DLG-SC-LOC-TKY-CHUO-02-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "表示について気になることはありますか。",
+          "translation": "标示有什么让您在意的吗？"
+        },
+        "DLG-SC-LOC-TKY-CHUO-02-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "この印字を見て、店で先月開封した商品だと思いました。売っている商品は開封済みですか。",
+          "hintJa": "印字を開封日と思い販売品の状態を尋ねる。日本語で伝えてください。",
+          "translation": "我看这个印字，以为上月在店里开过封。卖的商品已经开封了吗？",
+          "hintTranslation": "请说明把印字当开封日，询问在售状态。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHUO-02-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "その印字の意味は確認が必要です。見た数字だけで開封日とは決めず、商品を見せてください。",
+          "translation": "印字含义需要确认，不凭数字认定开封日，请给我看商品。"
+        },
+        "DLG-SC-LOC-TKY-CHUO-02-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "こちらです。日付のように見えましたが、説明を読まず判断していました。外箱も一緒に確認したいです。",
+          "hintJa": "数字の未確認解釈を認め外箱との照合を求める。日本語で伝えてください。",
+          "translation": "在这里。看着像日期，不过我没读说明就判断了，也想一起核对外盒。",
+          "hintTranslation": "请承认数字解释未核实，要求对照外盒。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHUO-02-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "担当が外箱と容器の表示、販売品の状態を確認します。展示のテスターとは別の商品です。",
+          "translation": "负责人检查外盒、容器标示及在售状态，这是和展示试用品不同的商品。"
+        },
+        "DLG-SC-LOC-TKY-CHUO-02-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "テスターを売るのだとも思っていました。この販売品とテスターを混ぜず、印字の説明を聞きます。",
+          "hintJa": "販売品とテスターを区別して印字説明を聞く。日本語で伝えてください。",
+          "translation": "我还以为把试用品卖了。我不混淆在售和试用，先听印字解释。",
+          "hintTranslation": "请区分在售品与试用品，听印字说明。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHUO-02-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "分からない表示は製造元へ確認する場合もあります。保管や使用についての案内も必要ですか。",
+          "translation": "不明标示有时也要问厂家，需要保存或使用指引吗？"
+        },
+        "DLG-SC-LOC-TKY-CHUO-02-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "はい。開封後にいつまで使えるかを、この数字から自分で計算しないよう、製品の案内を確認したいです。",
+          "hintJa": "数字から使用期限を推測せず製品の案内を求める。日本語で伝えてください。",
+          "translation": "需要。我不从数字自行算开封后能用多久，想确认产品说明。",
+          "hintTranslation": "请不从数字推测使用期限，要求产品指引。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHUO-02-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "担当が案内できる情報を整理します。確認できない点を今日ここで断言はしません。",
+          "translation": "负责人整理能介绍的信息，不能确认的不会今天在这里断言。"
+        },
+        "DLG-SC-LOC-TKY-CHUO-02-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "分かりました。今日は購入を決めず、印字と使用上の案内が確認できてから検討します。",
+          "hintJa": "表示と使用上の情報が分かるまで購入を保留する。日本語で伝えてください。",
+          "translation": "明白，今天先不定购买，印字和使用信息确认好后再考虑。",
+          "hintTranslation": "请在理解标示及使用信息前暂缓购买。请用日语表达。"
+        },
+        "DLG-SC-LOC-TKY-CHUO-02-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "では、表示の担当に確認します。商品は未開封の状態でお預かりします。",
+          "translation": "那问标示负责人，商品保持未开封收下。"
+        }
+      }
+    }
+  }
+}
