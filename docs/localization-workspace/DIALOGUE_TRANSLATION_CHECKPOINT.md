@@ -1179,3 +1179,13 @@ Newly integrated 263. All twelve locales, own-source full fidelity/fluency marke
 ## Incremental262–267 integration 2026-10-21T14:55:53.485810+00:00
 
 Newly integrated 264. All twelve locales, own-source full fidelity/fluency markers, canonical IDs/source/speaker/task checks and real app loader pass. Complete 2641/7128. Native review false; no semantic cross-review. GitHub connector publication uses exact blob/tree/commit/ref verification; shell push credentials unavailable.
+
+
+##262–267 load balance update
+
+Untouched VI266 transferred from vi/km to completed id/ne author after explicit relinquishment. Original VI/KM author retains finalKM266. Queue updated before new authorship; no overlapping path or semantic cross-review. All72 files retain one author.
+
+
+## Incremental262–267 integration 2026-10-21T15:00:08.473676+00:00
+
+Newly integrated 265. All twelve locales, own-source full fidelity/fluency markers, canonical IDs/source/speaker/task checks and real app loader pass. Complete 2651/7128. Native review false; no semantic cross-review. GitHub connector publication uses exact blob/tree/commit/ref verification; shell push credentials unavailable.

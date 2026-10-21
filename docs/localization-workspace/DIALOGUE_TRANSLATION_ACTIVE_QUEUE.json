@@ -148,6 +148,11 @@
           "batch": "267",
           "language": "ne",
           "path": "src/data/dialogue-content/locale-batches/ne/267.json"
+        },
+        {
+          "batch": "266",
+          "language": "vi",
+          "path": "src/data/dialogue-content/locale-batches/vi/266.json"
         }
       ]
     },
@@ -396,11 +401,6 @@
         },
         {
           "batch": "266",
-          "language": "vi",
-          "path": "src/data/dialogue-content/locale-batches/vi/266.json"
-        },
-        {
-          "batch": "266",
           "language": "km",
           "path": "src/data/dialogue-content/locale-batches/km/266.json"
         }
@@ -410,8 +410,19 @@
   "integratedScopeBatches": [
     "262",
     "263",
-    "264"
+    "264",
+    "265"
   ],
-  "currentCompleteScenarios": 2641,
-  "loadBalancing": "Six exclusive queues: en/my262–267+KM267(13), id/ne262–267(12), tl/hi262–267+VI267(13), tw/th262–267(12), zh-CN/bn262–267(12), vi/km262–266(10). No overlaps or cross-review."
+  "currentCompleteScenarios": 2651,
+  "loadBalancing": "Six exclusive queues: en/my262–267+KM267(13), id/ne262–267(12), tl/hi262–267+VI267(13), tw/th262–267(12), zh-CN/bn262–267(12), vi/km262–266(10). No overlaps or cross-review. Untouched VI266 transferred from vi/km to completed id/ne queue after explicit relinquishment; no overlap.",
+  "transfers": [
+    {
+      "batch": "266",
+      "language": "vi",
+      "fromAuthor": "translate178_vi_km",
+      "toAuthor": "translate178_id_ne",
+      "previousAuthorConfirmedUntouched": true,
+      "createdAt": "2026-10-21T14:59:59.475165+00:00"
+    }
+  ]
 }
