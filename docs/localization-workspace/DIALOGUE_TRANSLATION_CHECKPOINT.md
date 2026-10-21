@@ -1049,3 +1049,8 @@ Newly integrated 245. All twelve locales, own-source full fidelity/fluency marke
 ## Incremental244–249 integration 2026-10-21T13:27:50.351005+00:00
 
 Newly integrated 246. All twelve locales, own-source full fidelity/fluency markers, canonical IDs/source/speaker/task checks and real app loader pass. Complete 2461/7128. Native review false; no semantic cross-review. GitHub connector publication uses exact blob/tree/commit/ref verification; shell push credentials unavailable.
+
+
+##244–249 load balance update
+
+Untouched KM248 transferred from zh-TW/th author to completed VI/KM author after explicit relinquishment. Exclusive queue updated before authorship; no semantic cross-review or overlapping path. All72 files retain one author.
