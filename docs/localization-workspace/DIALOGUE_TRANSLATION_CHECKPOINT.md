@@ -649,3 +649,8 @@ Newly integrated 191. All twelve locales, own-source full fidelity/fluency marke
 ## Bengali190–192 own-author fluency holds
 
 Original author is expanding elliptical utterances to full natural Bengali. Cohort closure held; exact changes will be author-declared and mechanically checked with all source fields and hints preserved. No semantic cross-review. Current ready counts discount held indexed scenarios until republished.
+
+
+## Incremental190–195 integration 2026-10-21T07:42:40.385539+00:00
+
+Newly integrated 190. All twelve locales, own-source full fidelity/fluency markers, canonical IDs/source/speaker/task checks and real app loader pass. Complete 1901/7128. Native review false; no semantic cross-review. GitHub connector publication uses exact blob/tree/commit/ref verification; shell push credentials unavailable.
