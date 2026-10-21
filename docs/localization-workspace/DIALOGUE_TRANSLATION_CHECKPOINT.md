@@ -1270,3 +1270,24 @@ All72 locale packs complete with full own Japanese-source fidelity/fluency QA an
 ##274–279 continuation — 2026-10-22 Asia/Tokyo
 
 User requested continuation. Verified local/advertised remote54c555711b154ded18febcdcf2507744fab577c7; prior91-file scoped WORK PERSISTENCE PASS and no new dialogue changes. Baseline2731/7128;remaining4397. Six exclusive authors assigned72 language files for60 scenarios; balanced before authorship: VI278 to zh-CN/bn, VI279 to zh-TW/th, KM279 to id/ne; original VI/KM author retains other9 paths. Full own-source fidelity/fluency QA and exact immutable markers required; no semantic cross-review; nativeReviewed false. Preserve approved UI and Japanese canonical content. Only dialogue source/locale/index/revision and localization checkpoint/report files may change.
+
+
+## Incremental274–279 integration 2026-10-21T23:13:41.240618+00:00
+
+Newly integrated 274. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2741/7128; remaining 4387. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
+
+
+## Own-author BN274/275 holds — before274 index publication
+
+Own author withdrew BN274 andBN275 for expanded natural full sentences/hints and complete own Japanese-source fidelity review. Routine own correction authorized; old bytes/markers to be archived and explicitly withdrawn. The provisional local274 integration above was NOT published and is withdrawn: its10 new IDs removed from the uncommitted index until replacement author readiness. Durable complete count remains2731/7128. Other locales and authors continue; no semantic cross-review or native approval. Hold records are authoritative until own author re-confirms full160 values with exact new hashes.
+
+
+## Own-author TW274–276 holds and untouched handover
+
+Own TW author withdrew274–276 for complete natural-sentence/task re-authoring; old data/markers archived before replacement. No held pack may integrate. Complete count remains2731. To focus own repair, original author explicitly confirmed untouched zh-TW277/278/279 andVI279; these paths assigned respectively to en/my, id/ne, tl/hi, VI/KM authors before new work. Original author retains Thai274–279 and own TW274–276 repairs. Exact exclusive queue updated first; no target overlap or semantic cross-review.
+
+
+Own-author bn274 controlled revision RESOLVED: full160 natural-source-fidelity/fluency re-confirmation;156 target values changed,4 unchanged, all Japanese/IDs/speakers/tasks identical. Exact old pack/withdrawn marker archived atdocs/localization-workspace/translation-revisions/274/bn/revision-01; new readiness SHA22919fad32d21292e32ee22d33c3e205993f5e351b9b0260f1a5cc22bcb7f25e. No semantic cross-review; nativeReviewed false.
+
+
+Own-author bn275 controlled revision RESOLVED: full160 natural-source-fidelity/fluency re-confirmation;153 target values changed,7 unchanged, all Japanese/IDs/speakers/tasks identical. Exact old pack/withdrawn marker archived atdocs/localization-workspace/translation-revisions/275/bn/revision-01; new readiness SHA5d505ff18e3371756e7767967a21de1adfb54384e068e68c1031b512fb559674. No semantic cross-review; nativeReviewed false.
