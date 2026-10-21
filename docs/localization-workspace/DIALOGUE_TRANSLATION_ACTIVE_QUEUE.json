@@ -9,7 +9,7 @@
   ],
   "baselineCompleteScenarios": 2131,
   "intendedAdditionalScenarios": 60,
-  "status": "PAUSED_REMOTE_TREE_VERIFICATION_FAILED",
+  "status": "AUTHORING",
   "createdAt": "2026-10-21T09:42:53.214817+00:00",
   "assignmentsAreNotLiveProcessEvidence": true,
   "resumeRule": "Preserve completed packs; full natural utterances and complete own Japanese fidelity/fluency QA before immutable publication; persist progressively.",
@@ -233,6 +233,11 @@
           "batch": "219",
           "language": "vi",
           "path": "src/data/dialogue-content/locale-batches/vi/219.json"
+        },
+        {
+          "batch": "219",
+          "language": "zh-CN",
+          "path": "src/data/dialogue-content/locale-batches/zh-CN/219.json"
         }
       ]
     },
@@ -326,11 +331,6 @@
         },
         {
           "batch": "219",
-          "language": "zh-CN",
-          "path": "src/data/dialogue-content/locale-batches/zh-CN/219.json"
-        },
-        {
-          "batch": "219",
           "language": "bn",
           "path": "src/data/dialogue-content/locale-batches/bn/219.json"
         },
@@ -343,11 +343,6 @@
           "batch": "218",
           "language": "zh-TW",
           "path": "src/data/dialogue-content/locale-batches/zh-TW/218.json"
-        },
-        {
-          "batch": "219",
-          "language": "zh-TW",
-          "path": "src/data/dialogue-content/locale-batches/zh-TW/219.json"
         }
       ]
     },
@@ -403,6 +398,11 @@
           "batch": "219",
           "language": "th",
           "path": "src/data/dialogue-content/locale-batches/th/219.json"
+        },
+        {
+          "batch": "219",
+          "language": "zh-TW",
+          "path": "src/data/dialogue-content/locale-batches/zh-TW/219.json"
         }
       ]
     }
@@ -413,65 +413,10 @@
     "217"
   ],
   "currentCompleteScenarios": 2161,
-  "loadBalancing": "Six exclusive queues; original tw/th author retains214–216pairs and own Thai208–215 revisions. Confirmed unstarted217–219zh-TW transferred tozh/bn author;217–219th tovi/km author;KM218 toen/my author. Other assignments unchanged; no crossreview/overlap.",
+  "loadBalancing": "Resume across6 authors: originaltw/th author repairs ownThai215; en/my219km; id/ne219ne; zh/bn218bn+219bn; tl/hi219zh-CN; vi/km219zh-TW. Last2newfiles confirmedunstarted beforetransfer; no crossreview. Preserveallpriorready/repairedfiles.",
   "parallelOwnRevisionBatches": [
-    "208",
-    "209",
-    "210",
-    "211",
-    "212",
-    "213",
-    "214",
     "215"
   ],
-  "pauseReason": "GitHub create_tree response failed exact tree match; GET expectedtree6a325fe0a1e0bff907c039a75e6f1bb8d775cafb returned404 and branch remained unchanged. No automatic mutation retry. All authors stopped; valid local files committed.",
-  "pausedAt": "2026-10-21T10:07:08.324362+00:00",
-  "lastVerifiedRemoteCommit": "b95b7cd06f979f5f40ea9e755a6cbcddabab92e7",
-  "lastVerifiedRemoteCompleteScenarios": 2091,
-  "lastVerifiedRemoteSourceBoundScenarios": 2151,
-  "localValidatedCompleteScenarios": 2161,
-  "localAvailableLocaleFiles": 66,
-  "localAuthorReadyLocaleFiles": 65,
-  "missingLocaleFiles": [
-    {
-      "batch": "219",
-      "language": "km",
-      "path": "src/data/dialogue-content/locale-batches/km/219.json"
-    },
-    {
-      "batch": "219",
-      "language": "ne",
-      "path": "src/data/dialogue-content/locale-batches/ne/219.json"
-    },
-    {
-      "batch": "218",
-      "language": "bn",
-      "path": "src/data/dialogue-content/locale-batches/bn/218.json"
-    },
-    {
-      "batch": "219",
-      "language": "zh-CN",
-      "path": "src/data/dialogue-content/locale-batches/zh-CN/219.json"
-    },
-    {
-      "batch": "219",
-      "language": "bn",
-      "path": "src/data/dialogue-content/locale-batches/bn/219.json"
-    },
-    {
-      "batch": "219",
-      "language": "zh-TW",
-      "path": "src/data/dialogue-content/locale-batches/zh-TW/219.json"
-    }
-  ],
-  "remainingOwnRevision": [
-    {
-      "batch": "215",
-      "language": "th",
-      "path": "src/data/dialogue-content/locale-batches/th/215.json",
-      "reason": "Own author reports overly compressed Thai utterances and prior fluency readiness overstated; complete natural spoken sentence revision pending exactindices."
-    }
-  ],
-  "localValidatedCommit": "022abf1f48fa8664021dfebaca97ff4600ac1f0d",
-  "nextAction": "Resolve remote tree publication mismatch and publish pending committed work before more authorship; finish original-author Thai215 full-utterance revision and six unstarted missing packs. Do not restart65author-ready currentcohort packs or seven completed Thai208–214 repairs. Native review false."
+  "resumedAt": "2026-10-21T11:07:03.405171+00:00",
+  "resumeFromVerifiedRemote": "b52a98109696791bf0721973acee61c5f109e411"
 }

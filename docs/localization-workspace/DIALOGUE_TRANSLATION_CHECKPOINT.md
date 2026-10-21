@@ -849,3 +849,8 @@ Newly integrated 212,213,214,216. All twelve locales, own-source full fidelity/f
 ##214–219 pause: remote tree verification blocker
 
 Local ready2161/7128,remaining4967; actual app loaderPASS2161. Currentcohort66locale files exist;65author-ready and215th remainsheld/unrepaired. Seven original-author Thai208–214 full-speech repairs resolved with allhints/sourceunchanged;215bn flat103 and216vi flat124/125 resolved. Missing6packs allunstarted perauthors:218bn,219zh-CN/bn/zh-TW,219ne,219km. All6authors stopped. Last remotely verified commitb95b7cd06f979f5f40ea9e755a6cbcddabab92e7,ready2091,sourcebound2151; subsequent localcommits NOT durable. Expected remote tree6a325fe0a1e0bff907c039a75e6f1bb8d775cafb notfound404 aftercreate_tree mismatch; branchunchanged. Stopwithoutautomaticretry. Next publish pendingwork before newcontent, then originalauthor215th repair+sixmissingpacks. No semantic crossreview;nativeReviewedfalse.
+
+
+##214–219 persistence recovered before resume
+
+Allpendingcommits exacttree/refverified and imported atb52a98109696791bf0721973acee61c5f109e411. Localready2161/7128 nowremotelypreserved with oneThai215hold+sixmissingpacks accurately recorded. Resume7units across6exclusiveauthors; unstarted219zh-CN/TW transferred toidleauthors, originalauthorretainsThai215repair. No priorready/repaired work restarted.
