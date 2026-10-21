@@ -1252,3 +1252,16 @@ Thai272 own-author correction resolved before integration. Old pack and withdraw
 ## Incremental268–273 integration 2026-10-21T22:39:32.738687+00:00
 
 Newly integrated 272. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2721/7128; remaining 4407. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
+
+
+TL273 own-author neutrality correction resolved before integration. Exactly1/160 target value changed at index13;159 unchanged; all source/IDs/speakers/tasks unchanged. Old pack and explicitly withdrawn readiness archived under translation-revisions/273/tl/revision-01. New AUTHOR_READY SHA2a099ddd071169c3a898a3dd9f904fed24e5290e1e7c5dc779a23b9357ee08f0 reconfirmed by own author; native review false and no cross-review.
+
+
+## Incremental268–273 integration 2026-10-21T22:41:17.827171+00:00
+
+Newly integrated 273. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2731/7128; remaining 4397. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
+
+
+##268–273 cohort complete — 2026-10-22 Asia/Tokyo
+
+All72 locale packs complete with full own Japanese-source fidelity/fluency QA and matching immutable readiness hashes. Added60 scenarios:7920 translated utterances and3600 task hints. Current2731/7128;remaining4397. Actual app loader PASS:360492 turn-language and163860 task-language bindings across2731 scenarios, including source drift/speaker rejection and stable direct/generic IDs. All3216 baseline locale hashes unchanged; all72 new source/file/owner-ready bindings verified. No active author holds. Thai272/TL273 own-author controlled corrections and withdrawn versions archived; no semantic cross-review; nativeReviewed false. Approved UI lock PASS10/10 and scoped diff whitespace check PASS. Dialogue progress/routing reports current; unrelated whole-app coverage snapshots remain older. Authenticated GitHub connector commit/tree/ref verification followed by fetched exact-tree/blob and scoped WORK PERSISTENCE gate establish durability. Next batch274,start2731,count10. Furigana for NPC/player remains a separate unfinished task; no UI/device approval claimed. All current author assignments finished; next cohort not started.
