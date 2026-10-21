@@ -1244,3 +1244,11 @@ Original VI/KM author explicitly relinquished untouched KM273; assigned exclusiv
 ## Incremental268–273 integration 2026-10-21T22:36:01.393180+00:00
 
 Newly integrated 271. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2711/7128; remaining 4417. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
+
+
+Thai272 own-author correction resolved before integration. Old pack and withdrawn readiness archived under translation-revisions/272/th/revision-01; exactly2/160 target values corrected,158 unchanged; all Japanese/IDs/speakers/tasks unchanged. New immutable marker SHA81efd02d14a965357cd09f6bb62faa1405b95c6d88b1d3cc0bb9e08462df2e41 confirmed by own author. Native review false; no cross-review.
+
+
+## Incremental268–273 integration 2026-10-21T22:39:32.738687+00:00
+
+Newly integrated 272. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2721/7128; remaining 4407. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
