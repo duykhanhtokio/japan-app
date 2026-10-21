@@ -1316,3 +1316,13 @@ Newly integrated 276. All12 own-source-fidelity readiness markers and exact loca
 
 
 Own-author zh-TW277 controlled revision RESOLVED: full160 natural-source-fidelity/fluency re-confirmation;3 target values changed,157 unchanged, all Japanese/IDs/speakers/tasks identical. Exact old pack/withdrawn marker archived atdocs/localization-workspace/translation-revisions/277/zh-TW/revision-01; new readiness SHA0056fb5893dc24c5e223687cf8d3d36407db302debf7f3f99819feffded9ee1d. No semantic cross-review; nativeReviewed false.
+
+
+## Runtime refresh recovery — 2026-10-22 Asia/Tokyo
+
+Author execution interrupted after tool/environment refresh. Live registry inspection detected the interruption; all six SAME exclusive roles explicitly resumed, each confirmed source-cache/draft state and preserved ready files. No author ownership overlap or cross-review. Current remote-fetched HEADf3b7eec5b57d447a12be4135ca1a541140ec5754; complete2761/7128. Remaining277–279 continue from actual saved draft rows; full160-value own natural-source-fidelity QA and readiness gates unchanged.
+
+
+## Incremental274–279 integration 2026-10-21T23:37:38.611483+00:00
+
+Newly integrated 277. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2771/7128; remaining 4357. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
