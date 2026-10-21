@@ -779,3 +779,8 @@ All72packs/60scenarios complete and real app loaderPASS2071 scenarios,273372turn
 ##202–207 persistence restored
 
 All prior local work exact blob/tree/commit/ref verified remotely at0c47eec3abd3e300bd390fd01fd9cc3e4b3299c1 before new authorship. Corpus2071/7128. Now starting balanced208–213 cohort. Prior service-error checkpoint retained historically; no unpersisted202–207 work remains.
+
+
+## Incremental208–213 integration 2026-10-21T09:13:17.515635+00:00
+
+Newly integrated 208. All twelve locales, own-source full fidelity/fluency markers, canonical IDs/source/speaker/task checks and real app loader pass. Complete 2081/7128. Native review false; no semantic cross-review. GitHub connector publication uses exact blob/tree/commit/ref verification; shell push credentials unavailable.
