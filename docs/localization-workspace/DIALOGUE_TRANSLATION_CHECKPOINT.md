@@ -1216,3 +1216,8 @@ All262–267 completed and remote verified before pause. Current2671/7128, remai
 User requested continuation. Verified remote baseline98cdf2756f3e0725950e627e7add935a1b556712,2671/7128; clean working tree and WORK PERSISTENCE PASS. Twenty scenarios assigned across six exclusive language pairs; no semantic cross-review. Only dialogue sources, locale packs, index and progress reports may change. Japanese canonical content and approved UI preserved. Full own-source fidelity/fluency checks and immutable markers required. Native review false.
 
 Expanded active continuation to268–273,60 scenarios,72 exclusive language files. Existing268/269 assignments retained; each language-pair author continues270–273 without overlap.
+
+
+##268 integrated — 2026-10-21T22:19:47.815357+00:00
+
+All12 final own-source-fidelity markers verified against exact locale/source SHA256. Canonical IDs, speaker, Japanese text and task coverage pass. Current2681/7128,remaining4447. NativeReviewed false; no semantic cross-review. Other assigned batches continue. Authenticated GitHub publication with expected-parent lease and commit/tree readback; scoped CLI persistence gate used after fetch.
