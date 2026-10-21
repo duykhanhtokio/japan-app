@@ -1291,3 +1291,25 @@ Own-author bn274 controlled revision RESOLVED: full160 natural-source-fidelity/f
 
 
 Own-author bn275 controlled revision RESOLVED: full160 natural-source-fidelity/fluency re-confirmation;153 target values changed,7 unchanged, all Japanese/IDs/speakers/tasks identical. Exact old pack/withdrawn marker archived atdocs/localization-workspace/translation-revisions/275/bn/revision-01; new readiness SHA5d505ff18e3371756e7767967a21de1adfb54384e068e68c1031b512fb559674. No semantic cross-review; nativeReviewed false.
+
+
+Own-author zh-TW274 controlled revision RESOLVED: full160 natural-source-fidelity/fluency re-confirmation;159 target values changed,1 unchanged, all Japanese/IDs/speakers/tasks identical. Exact old pack/withdrawn marker archived atdocs/localization-workspace/translation-revisions/274/zh-TW/revision-01; new readiness SHAbd4e78df22f9c37f16725925b765750f6814fa1db3ffdf2d30f6feaf5926e015. No semantic cross-review; nativeReviewed false.
+
+
+Own-author zh-TW275 controlled revision RESOLVED: full160 natural-source-fidelity/fluency re-confirmation;160 target values changed,0 unchanged, all Japanese/IDs/speakers/tasks identical. Exact old pack/withdrawn marker archived atdocs/localization-workspace/translation-revisions/275/zh-TW/revision-01; new readiness SHA17f10fc14b9cf6643643d2d9ae6d0df4c12107ee0f68ac09661bafa253929518. No semantic cross-review; nativeReviewed false.
+
+
+Own-author zh-TW276 controlled revision RESOLVED: full160 natural-source-fidelity/fluency re-confirmation;160 target values changed,0 unchanged, all Japanese/IDs/speakers/tasks identical. Exact old pack/withdrawn marker archived atdocs/localization-workspace/translation-revisions/276/zh-TW/revision-01; new readiness SHA9f1dcad6b7fb957de25c3c932461efb21fd78560659b1e96be19c09ee56efde7. No semantic cross-review; nativeReviewed false.
+
+
+VI278 explicitly confirmed untouched/relinquished by CN/BN author; assigned exclusively to originalVI/KM author after existing queue, before authorship. CN/BN277–279 retained by original author. Queue remains72 unique paths; no semantic cross-review.
+
+
+## Incremental274–279 integration 2026-10-21T23:22:54.055072+00:00
+
+Newly integrated 274,275. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2751/7128; remaining 4377. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
+
+
+## Incremental274–279 integration 2026-10-21T23:23:38.483172+00:00
+
+Newly integrated 276. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2761/7128; remaining 4367. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
