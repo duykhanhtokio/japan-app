@@ -153,11 +153,6 @@
           "batch": "253",
           "language": "vi",
           "path": "src/data/dialogue-content/locale-batches/vi/253.json"
-        },
-        {
-          "batch": "254",
-          "language": "vi",
-          "path": "src/data/dialogue-content/locale-batches/vi/254.json"
         }
       ]
     },
@@ -403,6 +398,11 @@
           "batch": "254",
           "language": "km",
           "path": "src/data/dialogue-content/locale-batches/km/254.json"
+        },
+        {
+          "batch": "254",
+          "language": "vi",
+          "path": "src/data/dialogue-content/locale-batches/vi/254.json"
         }
       ]
     }
@@ -413,5 +413,15 @@
     "252"
   ],
   "currentCompleteScenarios": 2521,
-  "loadBalancing": "Six exclusive queues: VI253–254 id/ne; VI255 tl/hi; KM255 en/my. vi/km retains VI250–252 and KM250–254 (8packs); tw/th only12packs. No overlaps or cross-review."
+  "loadBalancing": "Six exclusive queues: VI253–254 id/ne; VI255 tl/hi; KM255 en/my. vi/km retains VI250–252 and KM250–254 (8packs); tw/th only12packs. No overlaps or cross-review. VI254 transferred untouched from id/ne to completed vi/km queue after explicit relinquishment; VI253 retained by original author. No overlap.",
+  "transfers": [
+    {
+      "batch": "254",
+      "language": "vi",
+      "fromAuthor": "translate178_id_ne",
+      "toAuthor": "translate178_vi_km",
+      "previousAuthorConfirmedUntouched": true,
+      "createdAt": "2026-10-21T14:01:10.724752+00:00"
+    }
+  ]
 }
