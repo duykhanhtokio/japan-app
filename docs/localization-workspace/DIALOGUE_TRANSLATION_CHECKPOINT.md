@@ -1343,3 +1343,19 @@ Own-author my279 controlled revision RESOLVED: full160 natural-source-fidelity/f
 ## Incremental274–279 integration 2026-10-21T23:43:21.067423+00:00
 
 Newly integrated 278. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2781/7128; remaining 4347. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
+
+
+Own-author vi279 controlled revision RESOLVED: full160 natural-source-fidelity/fluency re-confirmation;1 target values changed,159 unchanged, all Japanese/IDs/speakers/tasks identical. Exact old pack/withdrawn marker archived atdocs/localization-workspace/translation-revisions/279/vi/revision-01; new readiness SHA2583e95cd7e1aa1fac685c5954bdcb2646f7236598f46ca121bd76f573d442c6. No semantic cross-review; nativeReviewed false.
+
+
+Own-author bn279 controlled revision RESOLVED: full160 natural-source-fidelity/fluency re-confirmation;2 target values changed,158 unchanged, all Japanese/IDs/speakers/tasks identical. Exact old pack/withdrawn marker archived atdocs/localization-workspace/translation-revisions/279/bn/revision-01; new readiness SHA98516c5b68ac04dcfa5d25fbbd160a876e04112621f95f13009fc8de45b58dbe. No semantic cross-review; nativeReviewed false.
+
+
+## Incremental274–279 integration 2026-10-21T23:46:44.124584+00:00
+
+Newly integrated 279. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2791/7128; remaining 4337. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
+
+
+##274–279 cohort complete — 2026-10-22 Asia/Tokyo
+
+All72 locale packs final own-author ready with complete natural-sentence/task and Japanese-source fidelity confirmations; exact owner/source/file hashes verified. Added60 scenarios,7920 translated utterances and3600 task hints. Complete2791/7128;remaining4337. All3288 baseline locale hashes unchanged; all72 new readiness bindings PASS. Actual app loader PASS:368412 turn-language and167460 task-language bindings,6200lazyJSONreads, stable IDs/direct/generic paths and stale-source/speaker-mismatch rejection. No active author holds. Controlled own-author revisions preserve exact withdrawn pack/marker archives and mechanical changed-index/source-identity checks; no semantic cross-review or native/domain certification. UI lock PASS10/10; narrow metadata/index Git whitespace check PASS. Runtime refresh interrupted authors mid-cohort; same exclusive roles explicitly resumed from actual saved drafts/source caches. All6author roles now finished; no next cohort begun. Dialogue progress/routing reports current; unrelated whole-app snapshots older. Final durability requires expected-parent connector publication, exact commit/tree/blob readback, fetched alignment and scoped WORK PERSISTENCE gate. Next280,start2791,count10. NPC/player furigana remains separately unfinished; no device visual approval claimed.
