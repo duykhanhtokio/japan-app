@@ -1226,3 +1226,13 @@ All12 final own-source-fidelity markers verified against exact locale/source SHA
 ## Incremental268–273 integration 2026-10-21T22:24:29.999179+00:00
 
 Newly integrated 269. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2691/7128; remaining 4437. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
+
+
+##268–273 load balance
+
+Original VI/KM author explicitly confirmed VI272/273 untouched and relinquished them. VI272 assigned exclusively to zh-CN/bn author; VI273 to zh-TW/th author. They start only after finishing their existing assigned pairs. KM272/273 remain with original author. Queue updated before new authorship; no overlapping paths or semantic cross-review.
+
+
+## Incremental268–273 integration 2026-10-21T22:30:21.701778+00:00
+
+Newly integrated 270. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2701/7128; remaining 4427. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
