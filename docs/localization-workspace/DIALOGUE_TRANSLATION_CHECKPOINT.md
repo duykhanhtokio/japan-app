@@ -1204,3 +1204,8 @@ Newly integrated 267. All twelve locales, own-source full fidelity/fluency marke
 ##262–267 cohort complete
 
 All72 locale packs complete with full own Japanese-source fidelity and natural-sentence QA, immutable author markers, no semantic cross-review, nativeReviewed false. Added60 scenarios:7920 translated utterances and3600 task hints. Current2671/7128;remaining4457. Actual app loader passes352572 turn-language and160260 task-language bindings; all3216 indexed locale hashes match. Dialogue reports refreshed; whole-app coverage snapshots remain older. Authenticated GitHub connector is the durable publication path; final expected-parent commit/tree/ref readback required. No shell persistence-gate pass is claimed. Next batch268,start2671,count10. Furigana NPC/player remains separately unfinished.
+
+
+## User-requested pause — 2026-10-22 Asia/Tokyo
+
+All262–267 completed and remote verified before pause. Current2671/7128, remaining4457; zero own-author holds. All six authors finished; no next cohort started. Resume only on explicit user request at batch268,start2671,count10. Execution state PAUSED_BY_USER; no new authorship or worker scheduling. No claim of global account/device process termination.
