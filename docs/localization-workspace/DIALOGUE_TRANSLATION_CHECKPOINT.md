@@ -999,3 +999,8 @@ Newly integrated 239. All twelve locales, own-source full fidelity/fluency marke
 ## Own Hindi238–241 revision hold
 
 Original author reports overly clipped speech and will supply full natural utterance revisions; no semantic cross-review. Four packs on hold, including20 alreadyindexed scenarios temporarily excluded from complete count. Current2371/7128 pending own corrections. Other sources/data preserved; only exact author-proposed indices authorized after archive verification.
+
+
+## Incremental238–243 integration 2026-10-21T12:57:41.206138+00:00
+
+Newly integrated 238. All twelve locales, own-source full fidelity/fluency markers, canonical IDs/source/speaker/task checks and real app loader pass. Complete 2381/7128. Native review false; no semantic cross-review. GitHub connector publication uses exact blob/tree/commit/ref verification; shell push credentials unavailable.
