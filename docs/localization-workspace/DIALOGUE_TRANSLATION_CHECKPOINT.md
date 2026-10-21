@@ -1236,3 +1236,11 @@ Original VI/KM author explicitly confirmed VI272/273 untouched and relinquished 
 ## Incremental268–273 integration 2026-10-21T22:30:21.701778+00:00
 
 Newly integrated 270. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2701/7128; remaining 4427. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
+
+
+Original VI/KM author explicitly relinquished untouched KM273; assigned exclusively to completed id/ne author, who authors from Japanese273 only. Original author retains KM272. Queue updated before authorship; no overlap/cross-review.
+
+
+## Incremental268–273 integration 2026-10-21T22:36:01.393180+00:00
+
+Newly integrated 271. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2711/7128; remaining 4417. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
