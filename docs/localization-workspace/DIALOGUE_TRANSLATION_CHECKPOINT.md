@@ -1326,3 +1326,20 @@ Author execution interrupted after tool/environment refresh. Live registry inspe
 ## Incremental274–279 integration 2026-10-21T23:37:38.611483+00:00
 
 Newly integrated 277. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2771/7128; remaining 4357. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
+
+
+Completed TW/Thai author receives untouchedKM279 after id/ne author explicitly confirmed zero draft rows and relinquished it. Queue updated before new authorship. Cached own Japanese279 reused; no overlapping file ownership or semantic cross-review. id/ne author retains279 pair.
+
+
+Completed TL/HI/TW279 author receives untouchedCN279 after CN/BN author explicitly relinquished it. Queue updated before work; cached own Japanese279 reused. BN278/279 remain exclusively with original author; no cross-reading of targets or overlapping authorship.
+
+
+Own-author my278 controlled revision RESOLVED: full160 natural-source-fidelity/fluency re-confirmation;3 target values changed,157 unchanged, all Japanese/IDs/speakers/tasks identical. Exact old pack/withdrawn marker archived atdocs/localization-workspace/translation-revisions/278/my/revision-01; new readiness SHA6e8b4d5345637b9992dc6d2864611bedfed13e1c7623adb4258b054a18123ecd. No semantic cross-review; nativeReviewed false.
+
+
+Own-author my279 controlled revision RESOLVED: full160 natural-source-fidelity/fluency re-confirmation;1 target values changed,159 unchanged, all Japanese/IDs/speakers/tasks identical. Exact old pack/withdrawn marker archived atdocs/localization-workspace/translation-revisions/279/my/revision-01; new readiness SHA9e128feae0ec53120ab2f811bc5d32d4915fe34aaf6db9bd91929f3fce8c9000. No semantic cross-review; nativeReviewed false.
+
+
+## Incremental274–279 integration 2026-10-21T23:43:21.067423+00:00
+
+Newly integrated 278. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2781/7128; remaining 4347. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
