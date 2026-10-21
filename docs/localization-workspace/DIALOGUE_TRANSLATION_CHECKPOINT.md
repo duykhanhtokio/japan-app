@@ -944,3 +944,8 @@ All72 locale packs complete with full own Japanese-source fidelity and natural-s
 ##232–237 active cohort
 
 Baseline2311/7128, target2371;60 scenarios,72 exclusive locale packs. Six independent authors with full Japanese fidelity and natural full utterance self-QA; no semantic cross-review. Progressive remote persistence. NativeReviewed false. Only dialogue data/index and localization checkpoint/report files may change; approved UI untouched.
+
+
+## Incremental232–237 integration 2026-10-21T12:18:16.914307+00:00
+
+Newly integrated 232. All twelve locales, own-source full fidelity/fluency markers, canonical IDs/source/speaker/task checks and real app loader pass. Complete 2321/7128. Native review false; no semantic cross-review. GitHub connector publication uses exact blob/tree/commit/ref verification; shell push credentials unavailable.
