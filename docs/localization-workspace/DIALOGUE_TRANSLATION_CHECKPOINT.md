@@ -1738,3 +1738,16 @@ Integrated 341: all12 own-source-fidelity markers, logical owners, exact final f
 ## Continuation337–342 2026-10-22T15:02:35.841Z
 
 Integrated 338: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 3411/7128; remaining 3717. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+## Continuation337–342 2026-10-22T15:04:50.088Z
+
+Integrated 339: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 3421/7128; remaining 3707. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+### Cohort337–342 final AI translation QA
+
+72 final own-source-fidelity locale packs; 60 added fully integrated scenarios. Complete 3421/7128; remaining 3707. All six exclusive author assignments finished. Ready markers, logical owners, exact source/IDs/roles/task bindings pass; 4044 preexisting locale files unchanged. Actual-loader PASS3421 scenarios. Native/domain review false; no semantic cross-review. Dictionary-generated source-bound furigana was added by a separate session at88d7ba08; native pronunciation/device review remains pending. Remote publication and scoped persistence gate follow. Resume batch343, start3421.
+
+
+Execution handoff337–342: coordinator uses /workspace/scratch/e7f6533a75d2/dialogue-coordinator, local branch recovery/dialogue-337-342-coordinator tracking origin/recovery/jlpt-n3-n1. The shared author checkout /workspace/scratch/2975d401ac22/japan-app retains an unrelated unpublished audio commit4fcb517207a; do not reset or overwrite it. All assigned authors are finished. Continue translations from the verified remote/isolated coordinator, batch343 start3421; reconcile other-session audio separately without force-overwriting either history.
