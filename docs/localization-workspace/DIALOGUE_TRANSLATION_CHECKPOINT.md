@@ -1498,3 +1498,8 @@ vi296 own-author controlled revision resolved: 1 target values refined after ful
 ## Continuation292–297 integration 2026-10-22T02:15:53.538975+00:00
 
 Integrated batches 295: all12 immutable own-source-fidelity markers and hashes verified; canonical Japanese/IDs/roles/task bindings pass. Complete 2951/7128; remaining 4177. No semantic cross-review; nativeReviewed false. Existing locale packs preserved. Publication and scoped persistence gate required before durability claims.
+
+
+## Continuation292–297 integration 2026-10-22T02:16:40.180170+00:00
+
+Integrated batches 296: all12 immutable own-source-fidelity markers and hashes verified; canonical Japanese/IDs/roles/task bindings pass. Complete 2961/7128; remaining 4167. No semantic cross-review; nativeReviewed false. Existing locale packs preserved. Publication and scoped persistence gate required before durability claims.
