@@ -1487,3 +1487,6 @@ Integrated batches 294: all12 immutable own-source-fidelity markers and hashes v
 
 
 hi292 own-author controlled revision resolved: 155 target values refined after full160 natural-utterance/source fidelity recheck; all canonical JP/IDs/roles unchanged. Exact prior pack+marker+withdrawal archived in translation-revisions/292/hi/revision-01. FinalSHA2065a32cb779faa62dd0c70c25a5cd43949ab06a0f89cd899f1ae6971a101965. No semantic cross-review; nativeReviewed false.
+
+
+hi293 own-author controlled revision resolved: 156 target values refined after full160 natural-utterance/source fidelity recheck; all canonical JP/IDs/roles unchanged. Exact prior pack+marker+withdrawal archived in translation-revisions/293/hi/revision-01. FinalSHA2dba7c0644c3c1ef524ac087e2320abf98cd3f879283c28a474001d5d6013a7f. No semantic cross-review; nativeReviewed false.
