@@ -1771,3 +1771,16 @@ Integrated 344: all12 own-source-fidelity markers, logical owners, exact final f
 ## Continuation343–348 2026-10-22T16:02:32.686Z
 
 Integrated 347: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 3471/7128; remaining 3657. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+## Continuation343–348 2026-10-22T16:04:32.079Z
+
+Integrated 345: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 3481/7128; remaining 3647. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+### Cohort343–348 final AI translation QA
+
+72 final own-source-fidelity locale packs; 60 added fully integrated scenarios. Complete 3481/7128; remaining 3647. All six exclusive author assignments finished. Ready markers, logical owners, exact source/IDs/roles/task bindings pass; 4116 preexisting locale files unchanged. Actual-loader PASS3481 scenarios. Native/domain review false; no semantic cross-review. Dictionary-generated source-bound furigana was added by a separate session at88d7ba08; native pronunciation/device review remains pending. Remote publication and scoped persistence gate follow. Resume batch349, start3481.
+
+
+Execution handoff343–348: all authors and coordinator use /workspace/scratch/e7f6533a75d2/dialogue-coordinator, local branch recovery/dialogue-337-342-coordinator tracking origin/recovery/jlpt-n3-n1. Other-session NPC audio was durably integrated atbb2779f1d9b and preserved during a branch-lease reconciliation; earlier pending-audio note is historical. All six authors finished. Resume batch349 start3481, preserving all indexed packs and truthful AI-unreviewed flags.
