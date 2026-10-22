@@ -1593,3 +1593,13 @@ Integrated 310: all12 own-source-fidelity markers, logical owners, exact final f
 ## Continuation307–312 2026-10-22T11:05:47.807Z
 
 Integrated 311: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 3111/7128; remaining 4017. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+## Continuation307–312 2026-10-22T11:11:48.404Z
+
+Integrated 312: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 3121/7128; remaining 4007. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+### Cohort307–312 final AI translation QA
+
+72 final own-source-fidelity locale packs; 60 added fully integrated scenarios. Complete 3121/7128; remaining 4007. All six exclusive author assignments finished. Ready markers, logical owners, exact source/IDs/roles/task bindings pass; 3684 preexisting locale files unchanged. Actual-loader PASS3121 scenarios. Native/domain review false; no semantic cross-review. Furigana remains unfinished. Remote publication and scoped persistence gate follow. Resume batch313, start3121.
