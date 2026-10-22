@@ -1503,3 +1503,13 @@ Integrated batches 295: all12 immutable own-source-fidelity markers and hashes v
 ## Continuation292–297 integration 2026-10-22T02:16:40.180170+00:00
 
 Integrated batches 296: all12 immutable own-source-fidelity markers and hashes verified; canonical Japanese/IDs/roles/task bindings pass. Complete 2961/7128; remaining 4167. No semantic cross-review; nativeReviewed false. Existing locale packs preserved. Publication and scoped persistence gate required before durability claims.
+
+
+## Continuation292–297 integration 2026-10-22T02:19:34.284919+00:00
+
+Integrated batches 297: all12 immutable own-source-fidelity markers and hashes verified; canonical Japanese/IDs/roles/task bindings pass. Complete 2971/7128; remaining 4157. No semantic cross-review; nativeReviewed false. Existing locale packs preserved. Publication and scoped persistence gate required before durability claims.
+
+
+### Cohort292–297 final AI translation QA
+
+All60 additional scenarios now have12 complete locale packs:72 files,7920 translated utterances,3600 task hints. Integrated corpus2971/7128;4157 remain. All six author groups completed retained/transferred paths; no active drafts. All72 immutable final markers match logical ownership, sources, file hashes and integrated progress manifest. Exclusive assignments do not overlap. All3504 preexisting locale files unchanged. Own-author revisions TH293, HI292/293/294 and VI296 retain exact prior packs/markers/withdrawals; Hindi natural-utterance corrections were authored and fully source-rechecked by the same author. Active holds0. Actual loader PASS2971 scenarios,392172 translated turn bindings,178260 task hints,6596 lazy modules; stable/direct/generic IDs and stale-source/speaker rejection pass. UI lock PASS10/10. Furigana remains36 NPC and20 player authored lines, backlog unfinished. Native/domain review false; no semantic cross-review or device/deployment approval implied. Final publication and scoped remote verification follow. Resume298,start2971,count10; never redo292–297.
