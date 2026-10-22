@@ -1693,3 +1693,8 @@ Integrated 327: all12 own-source-fidelity markers, logical owners, exact final f
 ## Continuation331–336 2026-10-22T14:22:03.416Z
 
 Integrated 331: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 3311/7128; remaining 3817. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+## Continuation331–336 2026-10-22T14:24:03.012Z
+
+Integrated 334,336: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 3331/7128; remaining 3797. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
