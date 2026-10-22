@@ -1408,3 +1408,17 @@ Newly integrated 283. All12 own-source-fidelity readiness markers and exact loca
 ## Incremental280–285 integration 2026-10-22T00:25:54.197390+00:00
 
 Newly integrated 284. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2841/7128; remaining 4287. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
+
+
+## Incremental280–285 integration 2026-10-22T00:26:47.264401+00:00
+
+Newly integrated 285. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2851/7128; remaining 4277. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
+
+### Cohort280–285 final AI translation QA
+
+- All60 additional scenarios have12 complete locale packs (72 files),7920 translated utterances and3600 task hints. Integrated corpus2851/7128;4277 remain. All6 authors report their retained/handoff assignments complete; no active authorship.
+- Actual loader PASS:2851 scenarios,376332 translated turns,171060 task hints,6332 lazy JSON modules; stable IDs, direct/generic bindings, stale-source rejection and speaker mismatch rejection pass. Ruby remains36 NPC and20 player authored lines; NPC/player furigana backlog is separate and unfinished.
+- UI lock PASS10/10. Mechanical verification:3359 preexisting locale files unchanged; one explicitly authorized own-author correction NE277 preserves exact superseded bytes and full-source bindings. All72 new readiness/source/file/logical-owner bindings pass; no active author holds.
+- Controlled own-author corrections: NE277, NE280 (including withdrawn intermediate archive), BN282, MY283 and TL284. Exact superseded packs/markers archived; source IDs, roles and canonical Japanese unchanged. No semantic cross-review.
+- Untouched ID/NE285 and VI285 were handed off only after old authors confirmed zero drafts/authorship, with exclusive queue changes before new writers began.
+- AI translations remain nativeReviewed:false; no native/domain review or device/deployment approval implied. Final durability requires final GitHub publication plus scoped WORK PERSISTENCE PASS. Next resume batch286,start2851,count10.
