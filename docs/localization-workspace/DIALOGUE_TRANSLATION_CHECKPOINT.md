@@ -1403,3 +1403,8 @@ Newly integrated 283. All12 own-source-fidelity readiness markers and exact loca
 - Controlled upfront handoff: untouched ID/NE285 moved from translate_id_ne to finished translate_zh_bn after explicit zero-draft confirmation; queue updated before new authorship. ID/NE284 remains original author.
 
 - Controlled handoff: untouched VI285 moved from translate_vi_km to finished translate_tw_th after zero-draft/source-authorship confirmation, queue updated before new writing. VI/KM284 stays original author.
+
+
+## Incremental280–285 integration 2026-10-22T00:25:54.197390+00:00
+
+Newly integrated 284. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2841/7128; remaining 4287. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
