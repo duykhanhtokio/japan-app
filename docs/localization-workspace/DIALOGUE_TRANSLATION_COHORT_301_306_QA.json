@@ -1,5 +1,5 @@
 {
-  "status": "PASS_READY_FILES_WITH_CAPACITY_BACKLOG",
+  "status": "PASS_AI_TRANSLATION_COHORT",
   "scopeBatches": [
     "301",
     "302",
@@ -10,30 +10,52 @@
   ],
   "baselineCommit": "077cb21eda1f8b03797433470a3be8d2bf0ed841",
   "preparedScenarios": 60,
-  "addedIntegratedScenarios": 30,
-  "localeFiles": 67,
-  "readyFileUtterances": 7370,
-  "readyFileTaskHints": 3350,
-  "completeScenarios": 3031,
-  "remainingScenarios": 4097,
-  "missingLocaleFiles": [
-    "src/data/dialogue-content/locale-batches/ne/304.json",
-    "src/data/dialogue-content/locale-batches/vi/305.json",
-    "src/data/dialogue-content/locale-batches/ne/305.json",
-    "src/data/dialogue-content/locale-batches/vi/306.json",
-    "src/data/dialogue-content/locale-batches/ne/306.json"
-  ],
-  "blockedAuthors": [
+  "addedIntegratedScenarios": 60,
+  "localeFiles": 72,
+  "readyFileUtterances": 7920,
+  "readyFileTaskHints": 3600,
+  "completeScenarios": 3061,
+  "remainingScenarios": 4067,
+  "missingLocaleFiles": [],
+  "blockedAuthors": [],
+  "capacityRecoveryHistory": [
     {
-      "author": "ne_my_298",
-      "reason": "Agent errored: Selected model is at capacity. No automatic retry or model switch.",
-      "draftArchive": "docs/localization-workspace/pending-author-drafts/cohort301306/ne-304.strings.json",
-      "unpublishedFiles": [
-        "src/data/dialogue-content/locale-batches/ne/304.json",
-        "src/data/dialogue-content/locale-batches/vi/305.json",
-        "src/data/dialogue-content/locale-batches/ne/305.json",
-        "src/data/dialogue-content/locale-batches/vi/306.json",
-        "src/data/dialogue-content/locale-batches/ne/306.json"
+      "originalBlockedAuthors": [
+        {
+          "author": "ne_my_298",
+          "reason": "Agent errored: Selected model is at capacity. No automatic retry or model switch.",
+          "draftArchive": "docs/localization-workspace/pending-author-drafts/cohort301306/ne-304.strings.json",
+          "unpublishedFiles": [
+            "src/data/dialogue-content/locale-batches/ne/304.json",
+            "src/data/dialogue-content/locale-batches/vi/305.json",
+            "src/data/dialogue-content/locale-batches/ne/305.json",
+            "src/data/dialogue-content/locale-batches/vi/306.json",
+            "src/data/dialogue-content/locale-batches/ne/306.json"
+          ]
+        }
+      ],
+      "boundedAttempt": {
+        "attempt": 1,
+        "maximumAutomaticAttempts": 1,
+        "author": "ne_my_298",
+        "modelSwitch": false,
+        "reason": "All other authors finished; concurrency slots released. Resume original author and exact retained draft only.",
+        "createdAt": "2026-10-22T03:20:27.425783+00:00"
+      },
+      "outcome": "ALL_PREVIOUSLY_MISSING_FILES_PUBLISHED_AND_INTEGRATED",
+      "modelSwitch": false,
+      "createdAt": "2026-10-22T03:21:29.840939+00:00",
+      "ne304FinalSha256": "f98ee7fa2bfc8e5bccff7982a7f416f36cd8d3740ede0f9b15e7e2c232dd01d9",
+      "changedDraftIndices": [
+        98,
+        114,
+        118,
+        128,
+        130,
+        134,
+        140,
+        141,
+        146
       ]
     }
   ],
@@ -148,6 +170,15 @@
       "fullUtteranceFidelityChecked": true
     },
     {
+      "owner": "dialogue_th_km",
+      "language": "vi",
+      "batch": "305",
+      "path": "src/data/dialogue-content/locale-batches/vi/305.json",
+      "sha256": "e8a6cd8dd523f3a0d7c06ac4653c69b2b57a9a3be4dab7e81803dfb9710b20e7",
+      "sourceSha256": "7cd1457f6448cdc5da031be0d66195fe71b11918a5beea9f1dcbe0995660b366",
+      "fullUtteranceFidelityChecked": true
+    },
+    {
       "owner": "dialogue_id_tl",
       "language": "vi",
       "batch": "301",
@@ -207,6 +238,15 @@
       "batch": "304",
       "path": "src/data/dialogue-content/locale-batches/vi/304.json",
       "sha256": "fcf8db70e0bfd3bbccb70f3d4799c3cf839b7916e844c84d2898ca7174a214b7",
+      "sourceSha256": "61b4a6024aaa6a1acefc230bb31fc1ea3533cf6a3a9b67d0483b480875ba36ee",
+      "fullUtteranceFidelityChecked": true
+    },
+    {
+      "owner": "dialogue_ne_my",
+      "language": "ne",
+      "batch": "304",
+      "path": "src/data/dialogue-content/locale-batches/ne/304.json",
+      "sha256": "f98ee7fa2bfc8e5bccff7982a7f416f36cd8d3740ede0f9b15e7e2c232dd01d9",
       "sourceSha256": "61b4a6024aaa6a1acefc230bb31fc1ea3533cf6a3a9b67d0483b480875ba36ee",
       "fullUtteranceFidelityChecked": true
     },
@@ -289,6 +329,15 @@
       "path": "src/data/dialogue-content/locale-batches/id/306.json",
       "sha256": "eb67d0f4a38c43be94be3b9c4d5021c6b25740cbe9f14db51620c7f2e54681b5",
       "sourceSha256": "f03a1742e9eed47209cd9514d974fedd9017dd1393e5fba3c05228534dc3db20",
+      "fullUtteranceFidelityChecked": true
+    },
+    {
+      "owner": "dialogue_th_km",
+      "language": "ne",
+      "batch": "305",
+      "path": "src/data/dialogue-content/locale-batches/ne/305.json",
+      "sha256": "07cd8e1787f810ee5816d943f8dec93572589354c7733dbcc55ec2e32cdafcd2",
+      "sourceSha256": "7cd1457f6448cdc5da031be0d66195fe71b11918a5beea9f1dcbe0995660b366",
       "fullUtteranceFidelityChecked": true
     },
     {
@@ -400,6 +449,15 @@
       "fullUtteranceFidelityChecked": true
     },
     {
+      "owner": "dialogue_en_vi",
+      "language": "vi",
+      "batch": "306",
+      "path": "src/data/dialogue-content/locale-batches/vi/306.json",
+      "sha256": "f20873bdbfb21a5903cd01ea5c692c270d2e918480c85e6b519c8e2c188e3d8f",
+      "sourceSha256": "f03a1742e9eed47209cd9514d974fedd9017dd1393e5fba3c05228534dc3db20",
+      "fullUtteranceFidelityChecked": true
+    },
+    {
       "owner": "dialogue_id_tl",
       "language": "hi",
       "batch": "301",
@@ -504,6 +562,15 @@
       "batch": "306",
       "path": "src/data/dialogue-content/locale-batches/th/306.json",
       "sha256": "361cc1cf76de11bcbdf953fd29ba91d80bc99d6131101f359fc67b3afe953d74",
+      "sourceSha256": "f03a1742e9eed47209cd9514d974fedd9017dd1393e5fba3c05228534dc3db20",
+      "fullUtteranceFidelityChecked": true
+    },
+    {
+      "owner": "dialogue_en_vi",
+      "language": "ne",
+      "batch": "306",
+      "path": "src/data/dialogue-content/locale-batches/ne/306.json",
+      "sha256": "ed3ed8006e52c34b93e57f723179ef819e6b109388d595f58c3d95108af2b1d7",
       "sourceSha256": "f03a1742e9eed47209cd9514d974fedd9017dd1393e5fba3c05228534dc3db20",
       "fullUtteranceFidelityChecked": true
     },
@@ -648,10 +715,10 @@
     "actualLoader": true,
     "authoredNpcRubyLines": 36,
     "authoredPlayerRubyLines": 20,
-    "actualScenarios": 3031,
-    "actualTurns": 400092,
-    "actualHints": 181860,
-    "lazyJsonModulesRead": 6728,
+    "actualScenarios": 3061,
+    "actualTurns": 404052,
+    "actualHints": 183660,
+    "lazyJsonModulesRead": 6794,
     "moduleCacheLimit": 32,
     "directAndGenericScenarioBindings": true,
     "stableTurnIds": true,
@@ -688,30 +755,54 @@
   "nativeReviewed": false,
   "semanticCrossReview": false,
   "remotePersistence": "Pending final publication and scoped WORK PERSISTENCE PASS",
-  "partialBatchSourceChecks": [
+  "cohortSourceChecks": [
+    {
+      "batch": "301",
+      "sourceScenarios": 10,
+      "locales": 12,
+      "turnTranslationChecks": 1320,
+      "hintTranslationChecks": 600,
+      "integrated": true
+    },
+    {
+      "batch": "302",
+      "sourceScenarios": 10,
+      "locales": 12,
+      "turnTranslationChecks": 1320,
+      "hintTranslationChecks": 600,
+      "integrated": true
+    },
+    {
+      "batch": "303",
+      "sourceScenarios": 10,
+      "locales": 12,
+      "turnTranslationChecks": 1320,
+      "hintTranslationChecks": 600,
+      "integrated": true
+    },
     {
       "batch": "304",
       "sourceScenarios": 10,
-      "readyLocales": 11,
-      "turnTranslationChecks": 1210,
-      "hintTranslationChecks": 550,
-      "integrated": false
+      "locales": 12,
+      "turnTranslationChecks": 1320,
+      "hintTranslationChecks": 600,
+      "integrated": true
     },
     {
       "batch": "305",
       "sourceScenarios": 10,
-      "readyLocales": 10,
-      "turnTranslationChecks": 1100,
-      "hintTranslationChecks": 500,
-      "integrated": false
+      "locales": 12,
+      "turnTranslationChecks": 1320,
+      "hintTranslationChecks": 600,
+      "integrated": true
     },
     {
       "batch": "306",
       "sourceScenarios": 10,
-      "readyLocales": 10,
-      "turnTranslationChecks": 1100,
-      "hintTranslationChecks": 500,
-      "integrated": false
+      "locales": 12,
+      "turnTranslationChecks": 1320,
+      "hintTranslationChecks": 600,
+      "integrated": true
     }
   ]
 }
