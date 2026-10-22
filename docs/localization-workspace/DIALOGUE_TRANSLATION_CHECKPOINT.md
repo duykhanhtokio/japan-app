@@ -1513,3 +1513,8 @@ Integrated batches 297: all12 immutable own-source-fidelity markers and hashes v
 ### Cohort292–297 final AI translation QA
 
 All60 additional scenarios now have12 complete locale packs:72 files,7920 translated utterances,3600 task hints. Integrated corpus2971/7128;4157 remain. All six author groups completed retained/transferred paths; no active drafts. All72 immutable final markers match logical ownership, sources, file hashes and integrated progress manifest. Exclusive assignments do not overlap. All3504 preexisting locale files unchanged. Own-author revisions TH293, HI292/293/294 and VI296 retain exact prior packs/markers/withdrawals; Hindi natural-utterance corrections were authored and fully source-rechecked by the same author. Active holds0. Actual loader PASS2971 scenarios,392172 translated turn bindings,178260 task hints,6596 lazy modules; stable/direct/generic IDs and stale-source/speaker rejection pass. UI lock PASS10/10. Furigana remains36 NPC and20 player authored lines, backlog unfinished. Native/domain review false; no semantic cross-review or device/deployment approval implied. Final publication and scoped remote verification follow. Resume298,start2971,count10; never redo292–297.
+
+
+## Continuation298–300 2026-10-22T02:31:40.789Z
+
+Integrated 298: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 2981/7128; remaining 4147. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
