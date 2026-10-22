@@ -1388,3 +1388,9 @@ Own-author bn282 controlled revision RESOLVED: full160 natural-source-fidelity/f
 ## Incremental280–285 integration 2026-10-22T00:12:52.698252+00:00
 
 Newly integrated 282. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2821/7128; remaining 4307. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
+
+
+Own-author my283 controlled revision RESOLVED: full160 natural-source-fidelity/fluency re-confirmation;1 target values changed,159 unchanged, all Japanese/IDs/speakers/tasks identical. Exact old pack/withdrawn marker archived atdocs/localization-workspace/translation-revisions/283/my/revision-01; new readiness SHAaf1790fcf43c0ccf1c44457ac56f0a8685fe5c35a828918fd50f5064fbceacf1. No semantic cross-review; nativeReviewed false.
+
+
+Own-author tl284 controlled revision RESOLVED: full160 natural-source-fidelity/fluency re-confirmation;10 target values changed,150 unchanged, all Japanese/IDs/speakers/tasks identical. Exact old pack/withdrawn marker archived atdocs/localization-workspace/translation-revisions/284/tl/revision-01; new readiness SHAbdcb885dec0081fb8432cdb870548a0542b93281945bffc641a17cbf5d1e953a. No semantic cross-review; nativeReviewed false.
