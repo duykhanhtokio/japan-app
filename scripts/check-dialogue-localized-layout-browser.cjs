@@ -9,7 +9,7 @@ const rubyMode=process.env.DIALOGUE_LAYOUT_QA_VARIANT==='ruby';
 const viewports=process.env.DIALOGUE_LAYOUT_QA_VIEWPORTS?JSON.parse(process.env.DIALOGUE_LAYOUT_QA_VIEWPORTS):[[360,800],[390,844],[430,932],[768,1024],[1366,768],[932,430]];
 assert(Array.isArray(viewports)&&viewports.every(v=>Array.isArray(v)&&v.length===2&&v.every(n=>Number.isInteger(n)&&n>=240&&n<=5000)),'Invalid QA viewports');
 const committed=p=>JSON.parse(execFileSync('git',['show',head+':'+p],{cwd:root,encoding:'utf8',maxBuffer:50*1024*1024}));
-const locales=['en','vi','id','tl','zh-CN','zh-TW','hi','bn','ne','my','th','km'];
+const locales=process.env.DIALOGUE_LAYOUT_QA_LOCALES?JSON.parse(process.env.DIALOGUE_LAYOUT_QA_LOCALES):['en','vi','id','tl','zh-CN','zh-TW','hi','bn','ne','my','th','km'];
 const index=committed('src/data/dialogue-content/locale-batch-index.json'),batches=[...new Set(Object.values(index))];
 const scenarios=new Map(committed('src/data/generated/scenarios.json').map(s=>[s.id,s]));
 const locations=new Map(committed('src/data/generated/locations.json').map(s=>[s.id,s]));
@@ -19,11 +19,14 @@ function canonicalTurn(sid,id){
  if(!canonicalCache.has(sid)){let file=`src/data/generated/dialogues/${sid}.json`,generic=false;if(!fs.existsSync(path.join(root,file))){const m=/^SC-LOC-JP-\d{5}-(\d{2})-001$/.exec(sid);assert(m);file=`src/data/generated/dialogues/GENERIC-CITY-${m[1]}.json`;generic=true;}const data=committed(file),turns=Array.isArray(data)?data:data.shared??data.N5;canonicalCache.set(sid,turns.map(t=>generic?{...t,id:t.id.replace(/GENERIC-CITY-\d{2}/g,sid),scenarioId:sid}:t));}
  const turn=canonicalCache.get(sid).find(t=>t.id===id);assert(turn);return JSON.parse(JSON.stringify(turn));
 }
+const lexicon=JSON.parse(fs.readFileSync(path.join(root,'src/data/dialogue-content/furigana-lexicon.json'),'utf8'));
+const rubyShards=Object.assign({},...Array.from({length:32},(_,i)=>JSON.parse(fs.readFileSync(path.join(root,'src/data/dialogue-content/furigana-indexed',String(i).padStart(2,'0')+'.json'),'utf8')).scenarios));
+function attachRuby(t){const entry=rubyShards[t.scenarioId]?.[t.id];if(!entry)return;const ruby=entry.tokens.map(i=>({text:lexicon[i][0],...(lexicon[i][1]?{reading:lexicon[i][1]}:{})}));const source=t.speaker==='NPC'?t.npc.textJa:t.player.recommendedAnswerJa;assert.equal(ruby.map(p=>p.text).join(''),source);if(t.speaker==='NPC')t.npc.textRuby=ruby;else t.player.recommendedAnswerRuby=ruby;}
 const fixtures={};
 for(const language of locales){let hint,npc;
  for(const batch of batches){const pack=committed(`src/data/dialogue-content/locale-batches/${language}/${batch}.json`);
   for(const [sid,s]of Object.entries(pack.scenarios))for(const [id,t]of Object.entries(s.turns)){
-   const allowedHint=!rubyMode||(authoredHints[id]?.recommendedAnswerRuby?.length&&authoredHints[id].answerJa===t.sourceJa);
+   const allowedHint=!rubyMode||!!rubyShards[sid]?.[id];
    if(t.speaker==='PLAYER'&&allowedHint&&(!hint||(rubyMode?t.sourceJa.length>hint.t.sourceJa.length:Array.from(t.hintTranslation).length>Array.from(hint.t.hintTranslation).length)))hint={sid,id,t};
    if(t.speaker==='NPC'&&(!npc||Array.from(t.translation).length>Array.from(npc.t.translation).length))npc={sid,id,t};
   }
@@ -32,6 +35,7 @@ for(const language of locales){let hint,npc;
  const npcTurn=canonicalTurn(npc.sid,npc.id),playerTurn=canonicalTurn(hint.sid,hint.id);
  assert.equal(npcTurn.npc.textJa,npc.t.sourceJa);assert.equal(playerTurn.player.recommendedAnswerJa,hint.t.sourceJa);
  if(authoredHints[hint.id]?.answerJa===hint.t.sourceJa&&authoredHints[hint.id].recommendedAnswerRuby)playerTurn.player.recommendedAnswerRuby=authoredHints[hint.id].recommendedAnswerRuby;
+ attachRuby(npcTurn);attachRuby(playerTurn);
  npcTurn.npc.translations={[language]:npc.t.translation};playerTurn.player.translations={[language]:hint.t.translation};playerTurn.player.hintTranslations={[language]:hint.t.hintTranslation};
  fixtures[language]={scenario,location:locations.get(scenario.locationId)||{id:'layout-fixture',category:'station',nameJa:'駅'},hintId:hint.id,npcId:npc.id,hint:hint.t.hintTranslation,translation:npc.t.translation,npcJa:npc.t.sourceJa,answerJa:hint.t.sourceJa,turns:[npcTurn,playerTurn]};
 }
@@ -54,7 +58,7 @@ const adapters={
 };
 (async()=>{
  fs.mkdirSync(output,{recursive:true});
- const entry=`import React,{useState} from 'react';import {createRoot} from 'react-dom/client';import Dialogue from ${JSON.stringify(path.join(root,'src/app/world/dialogue/[scenarioId].tsx'))};window.__fixtures=${JSON.stringify(fixtures)};function Harness(){const [key,setKey]=useState('en');window.__show=language=>{window.__language=language;window.__fixture=window.__fixtures[language];window.__speech=null;setKey(language+':'+Date.now())};if(!window.__fixture){window.__language='en';window.__fixture=window.__fixtures.en}return <Dialogue key={key}/>;}createRoot(document.getElementById('root')).render(<Harness/>);`;
+ const entry=`import React,{useState} from 'react';import {createRoot} from 'react-dom/client';import Dialogue from ${JSON.stringify(path.join(root,'src/app/world/dialogue/[scenarioId].tsx'))};window.__fixtures=${JSON.stringify(fixtures)};function Harness(){const [key,setKey]=useState('en');window.__show=language=>{window.__language=language;window.__fixture=window.__fixtures[language];window.__speech=null;setKey(language+':'+Date.now())};if(!window.__fixture){window.__language=Object.keys(window.__fixtures)[0];window.__fixture=window.__fixtures[window.__language]}return <Dialogue key={key}/>;}createRoot(document.getElementById('root')).render(<Harness/>);`;
  await esbuild.build({stdin:{contents:entry,loader:'tsx',resolveDir:root},outfile:path.join(output,'entry.js'),bundle:true,platform:'browser',format:'iife',jsx:'automatic',nodePaths:[modules],define:{'global':'globalThis','process.env.NODE_ENV':'"development"','__DEV__':'true'},logLevel:'silent',plugins:[{name:'layout-fixtures',setup(b){
   b.onResolve({filter:/^(react|react-dom)(\/.*)?$/},a=>({path:require.resolve(a.path,{paths:[modules]})}));
   b.onResolve({filter:/^react-native$/},()=>({path:require.resolve('react-native-web',{paths:[modules]})}));
@@ -81,8 +85,9 @@ const adapters={
     await page.waitForFunction(()=>window.__show);await page.evaluate(async l=>{const f=window.__fixtures[l],text=[f.hint,f.translation,f.npcJa,f.answerJa].join(' ');await Promise.all(['Noto Sans JP','Noto Sans Devanagari','Noto Sans Bengali','Noto Sans Thai','Noto Sans Myanmar','Noto Sans Khmer'].map(font=>document.fonts.load('17px \"'+font+'\"',text)));window.__show(l)},language);await page.waitForFunction(()=>window.__speech);
     await page.evaluate(()=>window.__speech.options.onBoundary({charIndex:0,charLength:window.__speech.text.length}));
     const stable=async()=>{await page.waitForFunction(()=>{const p=document.querySelector('[data-testid="dialogue-panels"]');return getComputedStyle(p).pointerEvents!=='none'&&Array.from(p.children).every(el=>Math.abs(new DOMMatrix(getComputedStyle(el).transform).m42)<.1)});await page.evaluate(async()=>{await document.fonts.ready;await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))})};
-    await stable();await page.getByText(fixtures[language].npcJa,{exact:true}).waitFor();
-    const measure=async value=>{await stable();return (typeof value==='string'?page.getByText(value,{exact:true}).first():value).evaluate(el=>{const box=e=>{const r=e.getBoundingClientRect();return{x:r.x,y:r.y,width:r.width,height:r.height,bottom:r.bottom,right:r.right}};const parents=[];let p=el;for(let i=0;p&&i<7;i++,p=p.parentElement)parents.push(box(p));return{text:box(el),parents,fontSize:parseFloat(getComputedStyle(el).fontSize),lineHeight:parseFloat(getComputedStyle(el).lineHeight),conversation:box(document.querySelector('[data-testid="dialogue-panels"]'))}})};
+    await stable();await page.getByLabel(fixtures[language].npcJa,{exact:true}).waitFor();
+    const measure=async value=>{await stable();return (typeof value==='string'?page.getByLabel(value,{exact:true}).or(page.getByText(value,{exact:true})).first():value).evaluate(el=>{const box=e=>{const r=e.getBoundingClientRect();return{x:r.x,y:r.y,width:r.width,height:r.height,bottom:r.bottom,right:r.right}};const parents=[];let p=el;for(let i=0;p&&i<7;i++,p=p.parentElement)parents.push(box(p));return{text:box(el),parents,fontSize:parseFloat(getComputedStyle(el).fontSize),lineHeight:parseFloat(getComputedStyle(el).lineHeight),conversation:box(document.querySelector('[data-testid="dialogue-panels"]'))}})};
+    if(rubyMode)await page.screenshot({path:path.join(output,'npc-'+language+'-'+width+'x'+height+'.png')});
     const row={language,width,height,hintId:fixtures[language].hintId,npcId:fixtures[language].npcId,npcStandaloneJa:await measure(fixtures[language].npcJa)};
     await page.getByRole('button',{name:'ヒント',exact:true}).first().click();await page.getByText(fixtures[language].translation,{exact:true}).waitFor();row.npcStandaloneTranslation=await measure(fixtures[language].translation);
     await page.getByRole('button',{name:'ヒント',exact:true}).first().click();
@@ -92,8 +97,10 @@ const adapters={
     if(!row.currentTurnOnly){await page.getByRole('button',{name:'ヒント',exact:true}).first().click();await page.getByText(fixtures[language].translation,{exact:true}).waitFor();row.hint=await measure(hint);row.npc=await measure(fixtures[language].translation);}
     if([375,390,667].includes(width)&&['en','my','km'].includes(language))await page.screenshot({path:path.join(output,language+'-'+width+'x'+height+'.png')});
     await page.getByRole('button',{name:'ヒント',exact:true}).nth(row.currentTurnOnly?0:1).click();await page.getByText(hint,{exact:true}).waitFor({state:'hidden'});
+    row.hintCurrentTurnOnly=row.currentTurnOnly;row.currentTurnOnly=(await page.getByRole('button',{name:'ヒント',exact:true}).count())===1;
     const ruby=page.getByTestId('japanese-ruby');row.answerUsesRuby=(await ruby.count())>0;if(rubyMode)assert(row.answerUsesRuby,'Authored ruby fixture must exercise real ruby rendering');row.answer=await measure(row.answerUsesRuby?ruby:page.getByText(fixtures[language].answerJa,{exact:true}).first());if(!row.currentTurnOnly)row.npcWithAnswer=await measure(fixtures[language].translation);
-    if(row.currentTurnOnly){await page.getByRole('button',{name:'前へ',exact:true}).click();await stable();await page.getByText(fixtures[language].npcJa,{exact:true}).waitFor();row.returnedNpc=await measure(fixtures[language].npcJa);await page.getByRole('button',{name:'次へ',exact:true}).click();await stable();row.returnedAnswer=await measure(row.answerUsesRuby?page.getByTestId('japanese-ruby'):page.getByText(fixtures[language].answerJa,{exact:true}).first());}
+    if(rubyMode)await page.screenshot({path:path.join(output,'player-'+language+'-'+width+'x'+height+'.png')});
+    if(row.currentTurnOnly){await page.getByRole('button',{name:'前へ',exact:true}).click();await stable();await page.getByLabel(fixtures[language].npcJa,{exact:true}).waitFor();row.returnedNpc=await measure(fixtures[language].npcJa);await page.getByRole('button',{name:'次へ',exact:true}).click();await stable();row.returnedAnswer=await measure(row.answerUsesRuby?page.getByTestId('japanese-ruby'):page.getByText(fixtures[language].answerJa,{exact:true}).first());}
     row.measurements=['returnedNpc','returnedAnswer','npcStandaloneJa','npcStandaloneTranslation','initialHint','hint','npc','answer','npcWithAnswer'].filter(key=>row[key]);
     for(const key of row.measurements){const v=row[key],frame=v.parents[2],clip=v.conversation;v.fitsFrame=v.text.y>=frame.y+7&&v.text.bottom<=frame.bottom-7&&v.text.x>=frame.x&&v.text.right<=frame.right;v.fitsConversation=v.text.y>=clip.y&&v.text.bottom<=clip.bottom&&v.text.x>=clip.x&&v.text.right<=clip.right;v.fits=v.fitsFrame&&v.fitsConversation;}
     report.views.push(row);

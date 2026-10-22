@@ -1,3 +1,4 @@
+import { applyIndexedFurigana, furiganaShardKey, type IndexedFuriganaShard } from './dialogue-indexed-furigana';
 import { appLanguages } from '@/i18n/languages';
 import { applyDialogueFurigana, type DialogueFuriganaBundle } from './dialogue-furigana';
 import localeBatchIndex from '@/data/dialogue-content/locale-batch-index.json';
@@ -31,6 +32,15 @@ const dialogueContext = (require as RequireWithContext).context(
     /\.json$/
 );
 
+const indexedFuriganaContext = (require as RequireWithContext).context('../data/dialogue-content/furigana-indexed', false, /\.json$/);
+const indexedFuriganaFiles = new Set(indexedFuriganaContext.keys());
+function withIndexedFurigana(turn: LifeDialogueTurn): LifeDialogueTurn {
+ const key = furiganaShardKey(turn.scenarioId);
+ if (!indexedFuriganaFiles.has(key)) return turn;
+ const value = indexedFuriganaContext(key) as IndexedFuriganaShard | { default: IndexedFuriganaShard };
+ return applyIndexedFurigana(turn, 'default' in value ? value.default : value);
+}
+
 const furiganaContext = (require as RequireWithContext).context('../data/dialogue-content/furigana', false, /\.json$/);
 const furiganaFiles = new Set(furiganaContext.keys());
 function withFurigana(turn: LifeDialogueTurn): LifeDialogueTurn {
@@ -56,7 +66,7 @@ function withLocaleBatches(turn:LifeDialogueTurn):LifeDialogueTurn {
  },turn);
 }
 function withTranslations(turn: LifeDialogueTurn): LifeDialogueTurn {
- turn = withFurigana(turn);
+ turn = withFurigana(withIndexedFurigana(turn));
  const key = `./${turn.scenarioId}.json`;
  if (!translatedFiles.has(key)) return withLocaleBatches(withAuthoredHint(turn));
  const value = translationContext(key) as DialogueTranslationBundle | { default: DialogueTranslationBundle };

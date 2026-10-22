@@ -1,5 +1,5 @@
 export type DialoguePanelCopy = { text: string; lineHeight: number };
-export type DialoguePanelSpec = { copy: DialoguePanelCopy[]; context: boolean };
+export type DialoguePanelSpec = { copy: DialoguePanelCopy[]; alternatives?: DialoguePanelCopy[][]; context: boolean };
 
 const segmenter = typeof Intl.Segmenter === 'function' ? new Intl.Segmenter(undefined, { granularity: 'grapheme' }) : null;
 function graphemes(text: string): string[] {
@@ -58,7 +58,8 @@ export function dialoguePanelLayout({ width, height, headerBottom, bottom, npcWa
   const normalWidth = wide && !compact ? width * .46 : width - 20;
   function required(spec: DialoguePanelSpec, panelWidth: number, fontSize: number) {
     const copyWidth = Math.max(80, panelWidth - (wide || compact ? 44 : 56) - 8);
-    return Math.ceil(spec.copy.reduce((sum, copy) => sum + dialogueCopyLines(copy.text, copyWidth, fontSize) * fontSize * copy.lineHeight, 0) + inset + 8);
+    const copyHeight = Math.max(...[spec.copy, ...(spec.alternatives ?? [])].map(copy => copy.reduce((sum, row) => sum + dialogueCopyLines(row.text, copyWidth, fontSize) * fontSize * row.lineHeight, 0)));
+    return Math.ceil(copyHeight + inset + 8);
   }
   const atFourteen = panels.map(spec => required(spec, normalWidth, 14));
   const columns = wide && panels.length === 2 && atFourteen.reduce((sum, value) => sum + value, gap) > available;

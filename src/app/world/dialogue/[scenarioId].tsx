@@ -14,6 +14,7 @@ import { useGameSpeech } from '@/hooks/useGameSpeech';
 import { useUserProfile } from '@/hooks/useUserProfile';
 import { loadDialogueTurns } from '@/services/dialogue-content-loader';
 import { getLifeLocationById, getLifeScenarioById } from '@/services/life-content-repository';
+import { visibleRuby, hasAlignedRuby } from '@/components/world/japanese-ruby-data';
 import JapaneseRuby from '@/components/world/JapaneseRuby';
 import RoyalReadingFrame from '@/components/world/RoyalReadingFrame';
 import NpcRewardModal from '@/components/world/NpcRewardModal';
@@ -126,7 +127,8 @@ function DialogueScreen({id}:{id?:string}){
  // Short phones show the current turn at full width. Previous turns remain
  // available through 前へ; the lantern switches between complete Japanese
  // and translated copy rather than stacking both in a shallow frame.
- const compact=wide?stageSize.height<480:stageSize.height<720;
+ const lineHeight=nativeDialogueLineHeight(language);
+ function layoutPanels(compact:boolean){
  const compactLandscape=compact&&wide;
  const dockReserve=compactLandscape?60:wide?96:124;
  const missionWidth=(compactLandscape?stageSize.width*.64:wide?stageSize.width*.46:Math.min(560,stageSize.width-24))-56;
@@ -134,18 +136,31 @@ function DialogueScreen({id}:{id?:string}){
  const missionLines=copyLines(mission,missionWidth,missionFont);
  const headerHeight=compactLandscape?insets.top+8+Math.max(44,12+20+missionLines*missionLine):insets.top+ROYAL_PLACEMENT.headerTop+44+4+12+(wide?20:36)+missionLines*missionLine;
  const visiblePanels=compact?[turn]:turns.slice(Math.max(0,index-1),index+1);
- const lineHeight=nativeDialogueLineHeight(language);
  const panelSpecs=visiblePanels.map((panel,slot)=>{
   const hintStage=hintStages[panel.id]??0,isNpc=panel.speaker==='NPC';
   const npcNative=panel.npc?.translations?.[language]??(language==='vi'?panel.npc?.translationVi:null)??missingHint[language];
-  const answerHasRuby=panel.player?.recommendedAnswerRuby?.length&&panel.player.recommendedAnswerRuby.map(part=>part.text).join('')===panel.player.recommendedAnswerJa;
-  const copy=isNpc?[{text:compact&&hintStage>0&&language!=='ja'?npcNative:panel.npc?.textJa??'',lineHeight}]:[{text:hintStage>0?panel.player?.recommendedAnswerJa??'':(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language],lineHeight:hintStage>0?(answerHasRuby?3.2:1.25):lineHeight}];
+  const answerHasRuby=hasAlignedRuby(panel.player?.recommendedAnswerJa??'',panel.player?.recommendedAnswerRuby);
+  const npcHasRuby=hasAlignedRuby(panel.npc?.textJa??'',panel.npc?.textRuby);
+  const npcIsJapanese=!compact||hintStage===0||language==='ja';
+  const copy=isNpc?[{text:compact&&hintStage>0&&language!=='ja'?npcNative:panel.npc?.textJa??'',lineHeight:npcIsJapanese&&npcHasRuby?3.2:lineHeight}]:[{text:hintStage>0?panel.player?.recommendedAnswerJa??'':(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language],lineHeight:hintStage>0?(answerHasRuby?3.2:1.25):lineHeight}];
   if(isNpc&&!compact&&hintStage>0&&language!=='ja')copy.push({text:panel.npc?.translations?.[language]??(language==='vi'?panel.npc?.translationVi:null)??missingHint[language],lineHeight});
   const transcript=isNpc?'':visiblePanels.length===2&&slot===0?playerTranscripts[panel.id]??'':speech.transcript;
   if(transcript)copy.push({text:`「${transcript}」`,lineHeight});
-  return{copy,context:visiblePanels.length===2&&slot===0};
+  const japanese={text:isNpc?panel.npc?.textJa??'':panel.player?.recommendedAnswerJa??'',lineHeight:(isNpc?npcHasRuby:answerHasRuby)?3.2:1.3};
+  const native={text:isNpc?npcNative:(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language],lineHeight};
+  const alternatives=isNpc?[!compact&&language!=='ja'?[japanese,native]:[japanese],[native]]:[[japanese],[native]];
+  if(transcript)for(const alternative of alternatives)alternative.push({text:`「${transcript}」`,lineHeight});
+  return{copy,alternatives,context:visiblePanels.length===2&&slot===0};
  });
  const panelLayout=dialoguePanelLayout({width:stageSize.width,height:stageSize.height,headerBottom:headerHeight,bottom:stageSize.height-controlsBottom-dockReserve,npcWaist,wide,compact,panels:panelSpecs});
+ return {compactLandscape,headerHeight,visiblePanels,panelLayout};
+ }
+ let compact=wide?stageSize.height<480:stageSize.height<720;
+ let layout=layoutPanels(compact);
+ // Ruby adds a reading row. Reuse the existing single-turn phone mode when
+ // two complete panels cannot fit at readable sizes; previous stays on 前へ.
+ if(!compact&&!layout.panelLayout.fits){compact=true;layout=layoutPanels(true);}
+ const {compactLandscape,headerHeight,visiblePanels,panelLayout}=layout;
  const entryDistance=Math.max(80,...panelLayout.placements.map(panel=>panel.height))+16;
  const renderPanel=(panel:typeof turn,context:boolean,slot:number)=>{
   const isNpc=panel.speaker==='NPC',showText=context||revealedTurnIds.has(panel.id),hintStage=hintStages[panel.id]??0;
@@ -158,8 +173,8 @@ function DialogueScreen({id}:{id?:string}){
   return <View key={panel.id} style={[s.bubbleWrap,{height:allocatedHeight}]}>
    <RoyalNavyFrame style={s.speakerPlate}><Text numberOfLines={1} adjustsFontSizeToFit maxFontSizeMultiplier={1} style={s.speakerName}>{isNpc?npcName:playerName}</Text></RoyalNavyFrame>
    <View style={[s.bubbleDepth,{flex:1}]}><RoyalReadingFrame style={[{flex:1},(wide||compact)&&{paddingVertical:8,paddingHorizontal:22}]}>
-    {!isNpc?hintStage===0?<Text maxFontSizeMultiplier={1} style={[s.guidance,fit,{color:theme.text}]}>{(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language]}</Text>:<JapaneseRuby fontSize={fontSize} text={panel.player?.recommendedAnswerJa??''} segments={panel.player?.recommendedAnswerRuby}/>:<>
-     {(!compact||hintStage===0||language==='ja')&&<Text maxFontSizeMultiplier={1} style={[s.japanese,fit,{color:theme.text}]}>{npcText||' '}</Text>}
+    {!isNpc?hintStage===0?<Text maxFontSizeMultiplier={1} style={[s.guidance,fit,{color:theme.text}]}>{(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language]}</Text>:<JapaneseRuby fontSize={fontSize} text={panel.player?.recommendedAnswerJa??''} segments={panel.player?.recommendedAnswerRuby} color={theme.text} readingColor={theme.reading}/>:<>
+     {(!compact||hintStage===0||language==='ja')&&<JapaneseRuby testID="npc-japanese-ruby" text={npcText||' '} fontSize={fontSize} segments={panel.npc?.textRuby?visibleRuby(panel.npc.textRuby,npcText.length):undefined} color={theme.text} readingColor={theme.reading}/>}
      {hintStage>0&&language!=='ja'&&<Text maxFontSizeMultiplier={1} style={[s.translation,fit,{color:theme.reading}]}>{npcTranslation??missingHint[language]}</Text>}
     </>}
     {!isNpc&&(panelRecognizing||!!panelTranscript)&&<Text maxFontSizeMultiplier={1} style={[s.transcript,fit,{color:theme.text}]}>「{panelTranscript||'音声を認識しています…'}」</Text>}
