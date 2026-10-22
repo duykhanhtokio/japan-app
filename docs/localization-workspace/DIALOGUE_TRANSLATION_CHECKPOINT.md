@@ -1468,3 +1468,11 @@ All60 additional scenarios now have12 complete locale packs:72 files,7920 transl
 ## Continuation292–297 integration 2026-10-22T01:53:44.034041+00:00
 
 Integrated batches 292: all12 immutable own-source-fidelity markers and hashes verified; canonical Japanese/IDs/roles/task bindings pass. Complete 2921/7128; remaining 4207. No semantic cross-review; nativeReviewed false. Existing locale packs preserved. Publication and scoped persistence gate required before durability claims.
+
+
+TH293 own-author controlled revision resolved:1 ordered value153 refined,159 unchanged; canonical Japanese/IDs/roles unchanged. Exact superseded pack+marker+withdrawal archived293/th/revision-01. Full160 own-source/editorial fidelity reaffirmed; finalSHAd37dfc32b83874eaf540abb912cb8010c81ac439b9e848ccd00a5f7b48427766. No semantic cross-review/native approval.
+
+
+## Continuation292–297 integration 2026-10-22T02:00:25.062950+00:00
+
+Integrated batches 293: all12 immutable own-source-fidelity markers and hashes verified; canonical Japanese/IDs/roles/task bindings pass. Complete 2931/7128; remaining 4197. No semantic cross-review; nativeReviewed false. Existing locale packs preserved. Publication and scoped persistence gate required before durability claims.
