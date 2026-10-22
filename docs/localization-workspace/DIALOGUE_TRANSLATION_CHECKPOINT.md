@@ -1476,3 +1476,11 @@ TH293 own-author controlled revision resolved:1 ordered value153 refined,159 unc
 ## Continuation292–297 integration 2026-10-22T02:00:25.062950+00:00
 
 Integrated batches 293: all12 immutable own-source-fidelity markers and hashes verified; canonical Japanese/IDs/roles/task bindings pass. Complete 2931/7128; remaining 4197. No semantic cross-review; nativeReviewed false. Existing locale packs preserved. Publication and scoped persistence gate required before durability claims.
+
+
+hi294 own-author controlled revision resolved: 158 target values refined after full160 natural-utterance/source fidelity recheck; all canonical JP/IDs/roles unchanged. Exact prior pack+marker+withdrawal archived in translation-revisions/294/hi/revision-01. FinalSHA1d5cb261db77300ab099bdb6efc1cb419e42be637ce36d960ebdacd4d2f8e839. No semantic cross-review; nativeReviewed false.
+
+
+## Continuation292–297 integration 2026-10-22T02:05:34.775725+00:00
+
+Integrated batches 294: all12 immutable own-source-fidelity markers and hashes verified; canonical Japanese/IDs/roles/task bindings pass. Complete 2921/7128; remaining 4207. No semantic cross-review; nativeReviewed false. Existing locale packs preserved. Publication and scoped persistence gate required before durability claims.
