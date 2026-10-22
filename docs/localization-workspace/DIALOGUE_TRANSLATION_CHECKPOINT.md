@@ -1568,3 +1568,8 @@ Integrated 305,306: all12 own-source-fidelity markers, logical owners, exact fin
 ### Cohort301–306 final AI translation QA
 
 72 final own-source-fidelity locale packs; 60 added fully integrated scenarios. Complete 3061/7128; remaining 4067. All retained assignments finished; 0 unpublished files. One original-author capacity error was preserved, then recovered with exactly one bounded same-author attempt after other workers finished; no model switch or retry loop. Exact NE304160-value draft and original metadata remain archived; same-author final fidelity QA completed before first marker, with nine prepublication edits and151 values unchanged. Four wholly untouched VI/NE305–306 files were reassigned only after original-author zero-authorship acknowledgement and queue update. Ready markers, logical ownership, exact source/IDs/roles/task bindings pass; 3612 preexisting locale files unchanged. Actual-loader PASS3061 scenarios. Native/domain review false; no semantic cross-review. Furigana remains36 NPC and20 player authored lines, backlog unfinished. MY304 controlled own-author revision changes only ordered target130;159 unchanged and exact superseded pack/marker/withdrawal archived. Final remote publication and scoped persistence gate follow. Resume batch307; preserve all complete packs.
+
+
+## Continuation307–312 2026-10-22T10:47:47.283Z
+
+Integrated 307: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 3071/7128; remaining 4057. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
