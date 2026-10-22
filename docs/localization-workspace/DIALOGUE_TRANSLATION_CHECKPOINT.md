@@ -1383,3 +1383,8 @@ Newly integrated 281. All12 own-source-fidelity readiness markers and exact loca
 
 
 Own-author bn282 controlled revision RESOLVED: full160 natural-source-fidelity/fluency re-confirmation;1 target values changed,159 unchanged, all Japanese/IDs/speakers/tasks identical. Exact old pack/withdrawn marker archived atdocs/localization-workspace/translation-revisions/282/bn/revision-01; new readiness SHA818e382d00a832e06081cd6c7fca31dbed19ef4bf3b0fde839a72f5896f6a1ab. No semantic cross-review; nativeReviewed false.
+
+
+## Incremental280–285 integration 2026-10-22T00:12:52.698252+00:00
+
+Newly integrated 282. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2821/7128; remaining 4307. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
