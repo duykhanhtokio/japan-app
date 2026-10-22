@@ -2,10 +2,10 @@ import { backPrepared, dismissToPrepared } from '@/components/ui/prepareSceneRou
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
-import * as Speech from 'expo-speech';
+import * as Speech from '@/services/dialogue-npc-audio';
 import { useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Animated as NativeAnimated, Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Alert, Animated as NativeAnimated, Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { npcPresentationForCategory, sceneForCategory } from '@/components/world/life-assets';
 import { locationBackground } from '@/components/world/location-backgrounds.generated';
@@ -96,7 +96,7 @@ function DialogueScreen({id}:{id?:string}){
    const spokenText=turn.npc.textJa;
    setNpcSpeechDone(false);
    setSpokenLengths(previous=>({...previous,[turn.id]:0}));
-   Speech.speak(spokenText,{language:'ja-JP',rate:.82,
+   Speech.speak(spokenText,{scenarioId:turn.scenarioId,turnId:turn.id,category:location?.category,language:'ja-JP',rate:.82,
     onBoundary:(event:{charIndex:number;charLength?:number})=>{
      if(!active)return;
      const end=Math.min(spokenText.length,event.charIndex+Math.max(1,event.charLength??1));
@@ -116,7 +116,7 @@ function DialogueScreen({id}:{id?:string}){
   };
   void begin().catch(()=>{if(active)setNpcSpeechDone(true)});
   return()=>{active=false;void Speech.stop()};
- },[turn?.id,turn?.speaker,turn?.npc?.textJa,abortListening,index,turns,advanceTurn]);
+ },[turn?.id,turn?.speaker,turn?.npc?.textJa,location?.category,abortListening,index,turns,advanceTurn]);
  if(!scenario||!turn)return <RoyalPageBackground source={require('../../../../assets/app/backgrounds/profile-details.png')}><SafeAreaView style={s.emptyScreen}><Text style={s.empty}>会話データがありません。</Text></SafeAreaView></RoyalPageBackground>;
  const nextHint=(turnId:string,isNpc:boolean)=>{if(isNpc)setHintStages(previous=>({...previous,[turnId]:previous[turnId]?0:1}));else setHintStages(previous=>({...previous,[turnId]:previous[turnId]?0:1}))},move=(next:number)=>advanceTurn(next);
  const finish=async()=>{if(finishing)return;const category=normalizeNpcCategory(location?.category);if(!category){backPrepared();return}setFinishing(true);const result=await recordNpcScenario(scenario.id,category.id);const unlocked=result.unlockedCategoryId?npcCategoryById(result.unlockedCategoryId):null;setRewardCategory(unlocked??category);setRewardProgress(result.progress);setIsUnlock(!!unlocked);setRewardVisible(true);setFinishing(false)};
@@ -171,7 +171,7 @@ function DialogueScreen({id}:{id?:string}){
   const {height:allocatedHeight,fontSize}=panelLayout.placements[slot];
   const fit={fontSize,lineHeight:fontSize*lineHeight};
   return <View key={panel.id} style={[s.bubbleWrap,{height:allocatedHeight}]}>
-   <RoyalNavyFrame style={s.speakerPlate}><Text numberOfLines={1} adjustsFontSizeToFit maxFontSizeMultiplier={1} style={s.speakerName}>{isNpc?npcName:playerName}</Text></RoyalNavyFrame>
+   <RoyalNavyFrame style={s.speakerPlate}><Text onPress={isNpc?()=>Alert.alert('VOICEVOX',Speech.voiceCredits):undefined} accessibilityRole={isNpc?'button':undefined} accessibilityLabel={isNpc?`${npcName} · VOICEVOX`:undefined} numberOfLines={1} adjustsFontSizeToFit maxFontSizeMultiplier={1} style={s.speakerName}>{isNpc?npcName:playerName}</Text></RoyalNavyFrame>
    <View style={[s.bubbleDepth,{flex:1}]}><RoyalReadingFrame style={[{flex:1},(wide||compact)&&{paddingVertical:8,paddingHorizontal:22}]}>
     {!isNpc?hintStage===0?<Text maxFontSizeMultiplier={1} style={[s.guidance,fit,{color:theme.text}]}>{(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language]}</Text>:<JapaneseRuby fontSize={fontSize} text={panel.player?.recommendedAnswerJa??''} segments={panel.player?.recommendedAnswerRuby} color={theme.text} readingColor={theme.reading}/>:<>
      {(!compact||hintStage===0||language==='ja')&&<JapaneseRuby testID="npc-japanese-ruby" text={npcText||' '} fontSize={fontSize} segments={panel.npc?.textRuby?visibleRuby(panel.npc.textRuby,npcText.length):undefined} color={theme.text} readingColor={theme.reading}/>}
