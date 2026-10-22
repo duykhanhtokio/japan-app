@@ -1422,3 +1422,8 @@ Newly integrated 285. All12 own-source-fidelity readiness markers and exact loca
 - Controlled own-author corrections: NE277, NE280 (including withdrawn intermediate archive), BN282, MY283 and TL284. Exact superseded packs/markers archived; source IDs, roles and canonical Japanese unchanged. No semantic cross-review.
 - Untouched ID/NE285 and VI285 were handed off only after old authors confirmed zero drafts/authorship, with exclusive queue changes before new writers began.
 - AI translations remain nativeReviewed:false; no native/domain review or device/deployment approval implied. Final durability requires final GitHub publication plus scoped WORK PERSISTENCE PASS. Next resume batch286,start2851,count10.
+
+
+## Continuation286–289 integration 2026-10-22T01:16:26.878909+00:00
+
+Integrated batches 286: all12 immutable own-source-fidelity markers and hashes verified; canonical Japanese/IDs/roles/task bindings pass. Complete 2861/7128; remaining 4267. No semantic cross-review; nativeReviewed false. Existing locale packs preserved. Publication and scoped persistence gate required before durability claims.
