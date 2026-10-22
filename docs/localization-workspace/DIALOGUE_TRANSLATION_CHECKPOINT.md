@@ -1490,3 +1490,6 @@ hi292 own-author controlled revision resolved: 155 target values refined after f
 
 
 hi293 own-author controlled revision resolved: 156 target values refined after full160 natural-utterance/source fidelity recheck; all canonical JP/IDs/roles unchanged. Exact prior pack+marker+withdrawal archived in translation-revisions/293/hi/revision-01. FinalSHA2dba7c0644c3c1ef524ac087e2320abf98cd3f879283c28a474001d5d6013a7f. No semantic cross-review; nativeReviewed false.
+
+
+vi296 own-author controlled revision resolved: 1 target values refined after full160 natural-utterance/source fidelity recheck; all canonical JP/IDs/roles unchanged. Exact prior pack+marker+withdrawal archived in translation-revisions/296/vi/revision-01. FinalSHA3be2670cdc6bf4e33e2bd0718a029d79ce6c206c5e547ce7109812d723696612. No semantic cross-review; nativeReviewed false.
