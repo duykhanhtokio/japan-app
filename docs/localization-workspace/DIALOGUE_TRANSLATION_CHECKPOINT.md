@@ -1445,3 +1445,11 @@ MY289 own-author controlled revision resolved: explicit heavy-bag wording, one o
 ## Continuation286–291 integration 2026-10-22T01:34:58.696190+00:00
 
 Integrated batches 289: all12 immutable own-source-fidelity markers and hashes verified; canonical Japanese/IDs/roles/task bindings pass. Complete 2891/7128; remaining 4237. No semantic cross-review; nativeReviewed false. Existing locale packs preserved. Publication and scoped persistence gate required before durability claims.
+
+
+## Continuation286–291 integration 2026-10-22T01:37:23.656811+00:00
+
+Integrated batches 290: all12 immutable own-source-fidelity markers and hashes verified; canonical Japanese/IDs/roles/task bindings pass. Complete 2901/7128; remaining 4227. No semantic cross-review; nativeReviewed false. Existing locale packs preserved. Publication and scoped persistence gate required before durability claims.
+
+
+MY290 own-author controlled revision resolved before persistence: inclusive deadline wording at ordered values77/78,158 unchanged; exact old pack+marker/withdrawal archived290/my/revision-01. Source/IDs/roles unchanged; full160 own-source fidelity reaffirmed with finalSHA3e69860e2c60a242a928983a9544ce73fc03e927db15a3dfde195b8900f022ee. No semantic cross-review; nativeReviewed false.
