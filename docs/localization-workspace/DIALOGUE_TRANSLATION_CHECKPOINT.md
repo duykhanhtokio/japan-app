@@ -1784,3 +1784,8 @@ Integrated 345: all12 own-source-fidelity markers, logical owners, exact final f
 
 
 Execution handoff343–348: all authors and coordinator use /workspace/scratch/e7f6533a75d2/dialogue-coordinator, local branch recovery/dialogue-337-342-coordinator tracking origin/recovery/jlpt-n3-n1. Other-session NPC audio was durably integrated atbb2779f1d9b and preserved during a branch-lease reconciliation; earlier pending-audio note is historical. All six authors finished. Resume batch349 start3481, preserving all indexed packs and truthful AI-unreviewed flags.
+
+
+## Continuation349–354 2026-10-22T21:57:28.908Z
+
+Integrated 349,350: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 3501/7128; remaining 3627. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
