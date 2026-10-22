@@ -1453,3 +1453,13 @@ Integrated batches 290: all12 immutable own-source-fidelity markers and hashes v
 
 
 MY290 own-author controlled revision resolved before persistence: inclusive deadline wording at ordered values77/78,158 unchanged; exact old pack+marker/withdrawal archived290/my/revision-01. Source/IDs/roles unchanged; full160 own-source fidelity reaffirmed with finalSHA3e69860e2c60a242a928983a9544ce73fc03e927db15a3dfde195b8900f022ee. No semantic cross-review; nativeReviewed false.
+
+
+## Continuation286–291 integration 2026-10-22T01:40:03.887140+00:00
+
+Integrated batches 291: all12 immutable own-source-fidelity markers and hashes verified; canonical Japanese/IDs/roles/task bindings pass. Complete 2911/7128; remaining 4217. No semantic cross-review; nativeReviewed false. Existing locale packs preserved. Publication and scoped persistence gate required before durability claims.
+
+
+### Cohort286–291 final AI translation QA
+
+All60 additional scenarios now have12 complete locale packs:72 files,7920 translated utterances,3600 task hints. Integrated corpus2911/7128;4217 remain. All six author groups finished their retained/handoff assignments; no active drafts. All72 immutable markers match logical ownership, source hashes and final file hashes; exclusive assignments do not overlap. All3432 preexisting locale files unchanged. MY289/MY290 controlled own-author corrections preserve exact superseded pack+marker/withdrawal archives and canonical sources/IDs/roles; no active holds. Actual loader PASS2911 scenarios,384252 translated turn bindings,174660 task hints,6464 lazy modules, direct/generic IDs and source/role rejection. UI lock PASS10/10. Furigana remains36 NPC and20 player authored lines: backlog unfinished. Native/domain review false; no semantic cross-review or device/deployment approval implied. Final publication and scoped remote gate follow. Next resume292,start2911,count10; do not redo286–291.
