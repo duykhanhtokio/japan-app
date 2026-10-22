@@ -1401,3 +1401,5 @@ Own-author tl284 controlled revision RESOLVED: full160 natural-source-fidelity/f
 Newly integrated 283. All12 own-source-fidelity readiness markers and exact locale/source hashes verified. Canonical source/ID/speaker/task checks pass. Complete 2831/7128; remaining 4297. Native review false; no semantic cross-review. Other assigned work continues. Authenticated connector publication and scoped remote verification follow before durability claims.
 
 - Controlled upfront handoff: untouched ID/NE285 moved from translate_id_ne to finished translate_zh_bn after explicit zero-draft confirmation; queue updated before new authorship. ID/NE284 remains original author.
+
+- Controlled handoff: untouched VI285 moved from translate_vi_km to finished translate_tw_th after zero-draft/source-authorship confirmation, queue updated before new writing. VI/KM284 stays original author.
