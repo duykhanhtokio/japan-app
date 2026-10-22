@@ -1844,3 +1844,13 @@ Integrated 372: all12 own-source-fidelity markers, logical owners, exact final f
 ## Continuation367–372 2026-10-22T23:15:03.246Z
 
 Integrated 367,368,370,371: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 3711/7128; remaining 3417. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+## Continuation367–372 2026-10-22T23:15:42.444Z
+
+Integrated 369: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 3721/7128; remaining 3407. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+### Cohort367–372 final AI translation QA
+
+72 final own-source-fidelity locale packs; 60 added fully integrated scenarios. Complete 3721/7128; remaining 3407. All six exclusive author assignments finished. Ready markers, logical owners, exact source/IDs/roles/task bindings pass; 4404 preexisting locale files unchanged. Actual-loader PASS3721 scenarios. Native/domain review false; no semantic cross-review. Dictionary-generated source-bound furigana was added by a separate session at88d7ba08; native pronunciation/device review remains pending. Remote publication and scoped persistence gate follow. Resume batch373, start3721.
