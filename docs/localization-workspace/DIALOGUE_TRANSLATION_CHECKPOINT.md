@@ -1437,3 +1437,11 @@ Integrated batches 287: all12 immutable own-source-fidelity markers and hashes v
 ## Continuation286–291 integration 2026-10-22T01:29:38.656965+00:00
 
 Integrated batches 288: all12 immutable own-source-fidelity markers and hashes verified; canonical Japanese/IDs/roles/task bindings pass. Complete 2881/7128; remaining 4247. No semantic cross-review; nativeReviewed false. Existing locale packs preserved. Publication and scoped persistence gate required before durability claims.
+
+
+MY289 own-author controlled revision resolved: explicit heavy-bag wording, one ordered value18 changed;159 unchanged. Author reaffirmed full160 own-source fidelity. Exact prior pack+marker and withdrawal retained under translation-revisions/289/my/revision-01. Sources/IDs/roles identical; new readySHA e05fa1638391fa00475eb400786f92fa64da7e8a2f73a102b0b99b36386057fa. No semantic cross-review/native approval.
+
+
+## Continuation286–291 integration 2026-10-22T01:34:58.696190+00:00
+
+Integrated batches 289: all12 immutable own-source-fidelity markers and hashes verified; canonical Japanese/IDs/roles/task bindings pass. Complete 2891/7128; remaining 4237. No semantic cross-review; nativeReviewed false. Existing locale packs preserved. Publication and scoped persistence gate required before durability claims.
