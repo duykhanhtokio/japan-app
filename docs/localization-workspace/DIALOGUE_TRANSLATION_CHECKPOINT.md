@@ -1553,3 +1553,8 @@ Integrated 303: all12 own-source-fidelity markers, logical owners, exact final f
 ### Cohort301–306 saved with local capacity blocker
 
 67 final own-source-fidelity locale packs preserved; 30 added fully integrated scenarios. Complete 3031/7128; remaining 4097. All available authors finished their retained files. Failed vi/ne author was not retried or switched; 5 unpublished locale files remain under exclusive assignment. NE304 exact160-value draft archived with source/draft hashes under pending-author-drafts/cohort301306; it is not author-ready or runtime-integrated. Ready markers, logical ownership, exact source/IDs/roles/task bindings pass; 3612 preexisting locale files unchanged. Actual-loader PASS3031 scenarios. Native/domain review false; no semantic cross-review. Furigana remains36 NPC and20 player authored lines, backlog unfinished. Own-author revision archives are listed in the cohort QA report. Final remote publication and scoped persistence gate follow. Resume batch304 from the failed author and archived draft; do not rewrite completed locale files.
+
+
+## Continuation301–306 2026-10-22T03:23:05.640Z
+
+Integrated 304: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 3041/7128; remaining 4087. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
