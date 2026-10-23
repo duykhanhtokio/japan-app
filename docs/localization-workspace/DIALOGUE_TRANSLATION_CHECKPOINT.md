@@ -2642,3 +2642,13 @@ Own th517 author withdrew initial readiness and clarified one player two-hint in
 
 
 Own hi519 author withdrew initial readiness and clarified one player target-only script clause. One utterance changed; exact source, prior/revised bytes and markers preserved in translation-revisions/519/hi/revision-01. Original unintegrated version was not counted complete. Native/domain review false; no semantic cross-review.
+
+
+## Continuation510–521 2026-10-23T12:57:34.749Z
+
+Integrated 517: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 5161/7128; remaining 1967. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+## Continuation510–521 2026-10-23T12:58:39.595Z
+
+Integrated 519: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 5171/7128; remaining 1957. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
