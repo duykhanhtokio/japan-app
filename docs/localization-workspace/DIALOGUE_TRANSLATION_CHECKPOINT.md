@@ -2478,3 +2478,13 @@ Integrated 480,482: all12 own-source-fidelity markers, logical owners, exact fin
 ## Continuation474–485 2026-10-23T09:36:14.898Z
 
 Integrated 485: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 4821/7128; remaining 2307. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+## Continuation474–485 2026-10-23T09:39:16.308Z
+
+Integrated 481,483,484: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 4851/7128; remaining 2277. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+### Cohort474–485 complete
+
+All144 immutable own-source-fidelity-checked locale packs integrated:120 new scenarios across12 languages,15,840 utterances and7,200 task hints. Exact canonical source/ID/speaker/task and marker hashes pass. Actual app loader PASS4851 scenarios; 5688 preexisting locale files unchanged. Complete4851/7128, remaining2277; no author holds. Native/domain review false; no semantic cross-review. Next unstarted source486,start4851. Final remote publication and scoped persistence verification follow.
