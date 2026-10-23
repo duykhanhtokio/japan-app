@@ -2616,3 +2616,13 @@ Own hi511 author withdrew initial readiness and clarified one player parcel-acce
 ## Continuation510–521 2026-10-23T12:33:26.309Z
 
 Integrated 511: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 5101/7128; remaining 2027. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+## Continuation510–521 2026-10-23T12:35:23.254Z
+
+Integrated 513,515: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 5121/7128; remaining 2007. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+## Continuation510–521 2026-10-23T12:35:56.427Z
+
+Integrated 510: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 5131/7128; remaining 1997. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
