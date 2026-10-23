@@ -2554,3 +2554,8 @@ Baseline25076b1be333:4971/7128 complete,2157 remaining,no author holds. User ret
 
 
 Own zh-CN498 author withdrew initial readiness and clarified one player name pronunciation. One utterance changed; exact source, prior/revised bytes and markers preserved in translation-revisions/498/zh-CN/revision-01. Original unintegrated version was not counted complete. Native/domain review false; no semantic cross-review.
+
+
+## Continuation498–509 2026-10-23T11:15:24.696Z
+
+Integrated 500: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 4981/7128; remaining 2147. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
