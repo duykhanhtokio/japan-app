@@ -2493,3 +2493,8 @@ All144 immutable own-source-fidelity-checked locale packs integrated:120 new sce
 ## Cohort486–497 continuation
 
 Baseline1328fa7acec7:4851/7128 complete,2277 remaining,no author holds. User retains120 scenario turn. Six explicitly authorized authors exclusively own486–491 all12 locales each;492–497 reserved wholly unstarted for fresh sessions. Full160 strings per pack, full own Japanese fidelity and expanded script QA before immutable publication. Incremental authenticated publication; native/domain review false,no semantic cross-review.
+
+
+## Continuation486–497 2026-10-23T10:12:19.001Z
+
+Integrated 490: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 4861/7128; remaining 2267. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
