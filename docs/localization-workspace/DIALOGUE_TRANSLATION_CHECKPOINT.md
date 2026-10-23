@@ -2167,3 +2167,23 @@ Installed hi420. Six disjoint replacement authors continue the publisher-authori
 ### Historical Hindi/Bengali source-only replacement checkpoint
 
 Installed hi417. Six disjoint replacement authors continue the publisher-authorized parallel workflow; each authors from canonical Japanese without reading withdrawn target text and self-checks its own full utterances and hints. This is replacement authorship, not a claim that the unavailable former author resumed. Previous bytes, exact source hashes, final author-task markers and changes archived. Complete 4211/7128, remaining 2917; held files 18. Native/domain review false; no semantic cross-review. Remote publication and scoped verification follow.
+
+
+### Historical Hindi/Bengali source-only replacement checkpoint
+
+Installed hi425,hi423,bn420. Six disjoint replacement authors continue the publisher-authorized parallel workflow; each authors from canonical Japanese without reading withdrawn target text and self-checks its own full utterances and hints. This is replacement authorship, not a claim that the unavailable former author resumed. Previous bytes, exact source hashes, final author-task markers and changes archived. Complete 4221/7128, remaining 2907; held files 15. Native/domain review false; no semantic cross-review. Remote publication and scoped verification follow.
+
+
+### Historical Hindi/Bengali source-only replacement checkpoint
+
+Installed hi414,bn414. Six disjoint replacement authors continue the publisher-authorized parallel workflow; each authors from canonical Japanese without reading withdrawn target text and self-checks its own full utterances and hints. This is replacement authorship, not a claim that the unavailable former author resumed. Previous bytes, exact source hashes, final author-task markers and changes archived. Complete 4231/7128, remaining 2897; held files 13. Native/domain review false; no semantic cross-review. Remote publication and scoped verification follow.
+
+
+### Historical Hindi/Bengali source-only replacement checkpoint
+
+Installed bn417. Six disjoint replacement authors continue the publisher-authorized parallel workflow; each authors from canonical Japanese without reading withdrawn target text and self-checks its own full utterances and hints. This is replacement authorship, not a claim that the unavailable former author resumed. Previous bytes, exact source hashes, final author-task markers and changes archived. Complete 4241/7128, remaining 2887; held files 12. Native/domain review false; no semantic cross-review. Remote publication and scoped verification follow.
+
+
+### Historical Hindi/Bengali source-only replacement checkpoint
+
+Installed hi411,bn411,bn425. Six disjoint replacement authors continue the publisher-authorized parallel workflow; each authors from canonical Japanese without reading withdrawn target text and self-checks its own full utterances and hints. This is replacement authorship, not a claim that the unavailable former author resumed. Previous bytes, exact source hashes, final author-task markers and changes archived. Complete 4261/7128, remaining 2867; held files 9. Native/domain review false; no semantic cross-review. Remote publication and scoped verification follow.
