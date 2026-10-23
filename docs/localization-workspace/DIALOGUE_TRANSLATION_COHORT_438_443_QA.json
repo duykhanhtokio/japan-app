@@ -1,5 +1,5 @@
 {
-  "status": "AUTHOR_READY_PACKS_CHECKPOINT",
+  "status": "PASS_AI_TRANSLATION_COHORT",
   "scopeBatches": [
     "438",
     "439",
@@ -10,14 +10,15 @@
   ],
   "baselineCommit": "7f60e71db3091fa4f9bb99b765ba0faee9c7952c",
   "preparedScenarios": 60,
-  "localeFiles": 71,
-  "readyFileUtterances": 7810,
-  "readyFileTaskHints": 3550,
-  "completeScenarios": 4421,
-  "remainingScenarios": 2707,
-  "missingLocaleFiles": [
-    "src/data/dialogue-content/locale-batches/km/438.json"
-  ],
+  "addedIntegratedScenarios": 60,
+  "localeFiles": 72,
+  "readyFileUtterances": 7920,
+  "readyFileTaskHints": 3600,
+  "completeScenarios": 4431,
+  "remainingScenarios": 2697,
+  "authorHoldFiles": 0,
+  "missingLocaleFiles": [],
+  "preservedPreexistingLocaleFiles": 5256,
   "authorReadyMarkers": [
     {
       "owner": "dialogue_en_vi",
@@ -115,6 +116,15 @@
       "batch": "438",
       "path": "src/data/dialogue-content/locale-batches/th/438.json",
       "sha256": "18d7d44c1cca5b59b10d45fab87d7e89019e215f9f46a3741594c02b0a7b9996",
+      "sourceSha256": "5a96e0f34d7ee33e7dc576a55e623e0a2d1b7ae7d8a0d0372af1dca388c0fbfd",
+      "fullUtteranceFidelityChecked": true
+    },
+    {
+      "owner": "dialogue_en_vi",
+      "language": "km",
+      "batch": "438",
+      "path": "src/data/dialogue-content/locale-batches/km/438.json",
+      "sha256": "ce221bddcd5a177690cd7c64d36e2ec104dde8687a09e0c66271c3755565cf4c",
       "sourceSha256": "5a96e0f34d7ee33e7dc576a55e623e0a2d1b7ae7d8a0d0372af1dca388c0fbfd",
       "fullUtteranceFidelityChecked": true
     },
@@ -659,24 +669,23 @@
       "fullUtteranceFidelityChecked": true
     }
   ],
+  "actualLoader": {
+    "status": "PASS",
+    "actualLoader": true,
+    "authoredNpcRubyLines": 36,
+    "authoredPlayerRubyLines": 20,
+    "actualScenarios": 4431,
+    "actualTurns": 584892,
+    "actualHints": 265860,
+    "lazyJsonModulesRead": 9840,
+    "moduleCacheLimit": 32,
+    "directAndGenericScenarioBindings": true,
+    "stableTurnIds": true,
+    "staleSourceRejected": true,
+    "speakerMismatchRejected": true,
+    "fixturesOnly": false
+  },
   "nativeReviewed": false,
   "semanticCrossReview": false,
-  "finalLoaderQa": "Deferred until the complete cohort; no full-cohort completion claim",
-  "remotePersistence": "Publication must pass exact tree/blob/ref readback and scoped WORK PERSISTENCE gate",
-  "controlledOwnAuthorRevisions": [
-    {
-      "owner": "dialogue_ne_my",
-      "language": "km",
-      "batch": "442",
-      "path": "src/data/dialogue-content/locale-batches/km/442.json",
-      "status": "RECHECKED_FULL_BY_AUTHOR",
-      "previousSha256": "f7f45fa886011b0387edac89c47d185caab74bb4f77050971290319dc2afab57",
-      "previousVersionPersisted": false,
-      "resolvedSha256": "ab242cd795afb77e7f40f808180cd84895bc9ecd68fd4af3e58809a7115669ec",
-      "fullUtteranceFidelityChecked": true,
-      "resolvedAt": "2026-10-23T05:33:07.549Z",
-      "resolution": "Own author single-utterance script correction; original and corrected packs/markers preserved in docs/localization-workspace/translation-revisions/442/km/revision-01",
-      "nativeReviewed": false
-    }
-  ]
+  "remotePersistence": "Final publication and scoped WORK PERSISTENCE verification required"
 }
