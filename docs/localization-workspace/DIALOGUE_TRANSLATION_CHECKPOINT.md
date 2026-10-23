@@ -2132,3 +2132,13 @@ Integrated 429: all12 own-source-fidelity markers, logical owners, exact final f
 ### Cohort426–431 final current-cohort QA with historical holds
 
 All72 final own-source-fidelity packs across60 scenarios are integrated; current13 withdrawn packs have been fully revised by their own authors and archived. Loader PASS 4311 source-bound scenarios. Editorial-complete count excluding historical holds 4151/7128; remaining 2977. Historical hi/bn410–425 remains 32 held locale files affecting 160 scenarios; these are NOT complete despite prior structural PASS reports. No native review or semantic cross-review. Next priority original-author audit/revision410–425, not new432; next unstarted source432,start4311. Prior versions and revision history preserved. Remote publication and verification follow.
+
+
+### Historical Hindi/Bengali source-only replacement checkpoint
+
+Installed hi416. Six disjoint replacement authors continue the publisher-authorized parallel workflow; each authors from canonical Japanese without reading withdrawn target text and self-checks its own full utterances and hints. This is replacement authorship, not a claim that the unavailable former author resumed. Previous bytes, exact source hashes, final author-task markers and changes archived. Complete 4151/7128, remaining 2977; held files 31. Native/domain review false; no semantic cross-review. Remote publication and scoped verification follow.
+
+
+### Historical Hindi/Bengali source-only replacement checkpoint
+
+Installed hi424,hi422. Six disjoint replacement authors continue the publisher-authorized parallel workflow; each authors from canonical Japanese without reading withdrawn target text and self-checks its own full utterances and hints. This is replacement authorship, not a claim that the unavailable former author resumed. Previous bytes, exact source hashes, final author-task markers and changes archived. Complete 4151/7128, remaining 2977; held files 29. Native/domain review false; no semantic cross-review. Remote publication and scoped verification follow.
