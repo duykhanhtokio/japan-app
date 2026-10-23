@@ -2605,3 +2605,6 @@ Integrated 509: all12 own-source-fidelity markers, logical owners, exact final f
 ### Cohort498–509 complete
 
 All144 immutable own-source-fidelity-checked locale packs integrated:120 new scenarios across12 languages,15,840 utterances and7,200 task hints. Exact canonical source/ID/speaker/task and marker hashes pass. Actual app loader PASS5091 scenarios; 5976 preexisting locale files unchanged. Complete5091/7128, remaining2037; no author holds. Native/domain review false; no semantic cross-review. Next unstarted source510,start5091. Final remote publication and scoped persistence verification follow.
+
+
+Own id515 author withdrew initial readiness and clarified one player previous-occasion time-reference clause. One utterance changed; exact source, prior/revised bytes and markers preserved in translation-revisions/515/id/revision-01. Original unintegrated version was not counted complete. Native/domain review false; no semantic cross-review.
