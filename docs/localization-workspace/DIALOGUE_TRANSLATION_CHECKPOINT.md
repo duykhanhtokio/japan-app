@@ -2559,3 +2559,11 @@ Own zh-CN498 author withdrew initial readiness and clarified one player name pro
 ## Continuation498–509 2026-10-23T11:15:24.696Z
 
 Integrated 500: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 4981/7128; remaining 2147. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+Own hi501 author withdrew initial readiness and clarified one player own-words clause. One utterance changed; exact source, prior/revised bytes and markers preserved in translation-revisions/501/hi/revision-01. Original unintegrated version was not counted complete. Native/domain review false; no semantic cross-review.
+
+
+## Continuation498–509 2026-10-23T11:18:04.796Z
+
+Integrated 499,501: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 5001/7128; remaining 2127. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
