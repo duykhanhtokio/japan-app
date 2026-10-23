@@ -2636,3 +2636,9 @@ Integrated 514: all12 own-source-fidelity markers, logical owners, exact final f
 ## Continuation510–521 2026-10-23T12:38:50.918Z
 
 Integrated 512: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 5151/7128; remaining 1977. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+Own th517 author withdrew initial readiness and clarified one player two-hint indexed script clause. One utterance changed; exact source, prior/revised bytes and markers preserved in translation-revisions/517/th/revision-01. Original unintegrated version was not counted complete. Native/domain review false; no semantic cross-review.
+
+
+Own hi519 author withdrew initial readiness and clarified one player target-only script clause. One utterance changed; exact source, prior/revised bytes and markers preserved in translation-revisions/519/hi/revision-01. Original unintegrated version was not counted complete. Native/domain review false; no semantic cross-review.
