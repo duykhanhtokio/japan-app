@@ -2279,3 +2279,11 @@ Integrated 440: all12 own-source-fidelity markers, logical owners, exact final f
 ## Continuation438–443 2026-10-23T05:31:18.596Z
 
 Integrated 439: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 4391/7128; remaining 2737. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+Own km442 author withdrew original readiness after catching mixed Thai characters in one Khmer loanword. Author-supplied full source-faithful correction changes one utterance and zero hints; immutable prior/revised pack and markers archived under translation-revisions/442/km/revision-01. Expanded Thai/Japanese/CJK target-script check passes. Native/domain review false; no semantic cross-review; original unintegrated pack was not counted complete.
+
+
+## Continuation438–443 2026-10-23T05:33:24.152Z
+
+Integrated 441,442,443: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 4421/7128; remaining 2707. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
