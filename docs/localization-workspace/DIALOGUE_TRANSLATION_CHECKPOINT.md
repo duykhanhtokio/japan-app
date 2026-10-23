@@ -2215,3 +2215,8 @@ Installed hi412,bn412. Six disjoint replacement authors continue the publisher-a
 ### Hindi/Bengali410–425 full replacement cohort complete
 
 All32 withdrawn packs have full source-only replacement translations:3,520 utterances and1,600 task hints across160 scenarios. Six disjoint replacement authors self-checked their own complete Japanese meanings; they did not read or review former target text. Previous/replacement bytes and source/final SHA256 markers preserved. Technical canonical binding checks and actual app loader PASS4311 scenarios; 5152 other locale files unchanged. No historical editorial holds remain. Complete4311/7128, remaining2817. Native/domain approval remains false. Next new batch432,start4311. Final remote publication and scoped persistence verification follow.
+
+
+## New cohort432–437
+
+Baseline ca3b1be84e60,4311/7128 fully integrated scenarios with no author holds. Prepared60 canonical scenarios,start4311; six authors explicitly acknowledged disjoint language-pair assignments for all72 locale packs. Full natural utterances and task hints, author own-source fidelity before immutable readiness, exact source/ID/speaker/hash checks and incremental remote publication remain mandatory. Native/domain review false; no semantic cross-review. Drafts not counted complete.
