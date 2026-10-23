@@ -2305,3 +2305,11 @@ Baseline76db2657b2b3:4431/7128 complete,2697 remaining,no author holds. Six auth
 
 
 Own bn447 author withdrew initial readiness and supplied a full fidelity-rechecked revision clarifying responsibility alternatives, night onset and parking terminology. Five target units changed; exact source, prior and revised bytes/markers preserved in translation-revisions/447/bn/revision-01. Original unintegrated version was not counted complete. Native/domain review false; no semantic cross-review.
+
+
+Own bn448 author withdrew readiness after an index-based edit changed the preceding NPC utterance. Author supplied a full fidelity-rechecked pack restoring that NPC utterance and refining the intended player utterance. Two target units changed; exact source, prior and revised bytes/markers preserved in translation-revisions/448/bn/revision-01. Original unintegrated version was not counted complete. Native/domain review false; no semantic cross-review.
+
+
+## Continuation444–449 2026-10-23T06:03:22.344Z
+
+Integrated 445,446: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 4451/7128; remaining 2677. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
