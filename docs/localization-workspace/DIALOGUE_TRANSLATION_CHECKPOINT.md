@@ -2551,3 +2551,6 @@ All144 immutable own-source-fidelity-checked locale packs integrated:120 new sce
 ## Cohort498–509 continuation
 
 Baseline25076b1be333:4971/7128 complete,2157 remaining,no author holds. User retains120 scenario turn. Six explicitly authorized authors exclusively own498–503 all12 locales each;504–509 reserved wholly unstarted for fresh sessions. Full160 strings per pack, full own Japanese fidelity and expanded script QA before immutable publication. Incremental authenticated publication; native/domain review false,no semantic cross-review.
+
+
+Own zh-CN498 author withdrew initial readiness and clarified one player name pronunciation. One utterance changed; exact source, prior/revised bytes and markers preserved in translation-revisions/498/zh-CN/revision-01. Original unintegrated version was not counted complete. Native/domain review false; no semantic cross-review.
