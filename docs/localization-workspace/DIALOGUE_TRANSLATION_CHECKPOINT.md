@@ -2608,3 +2608,6 @@ All144 immutable own-source-fidelity-checked locale packs integrated:120 new sce
 
 
 Own id515 author withdrew initial readiness and clarified one player previous-occasion time-reference clause. One utterance changed; exact source, prior/revised bytes and markers preserved in translation-revisions/515/id/revision-01. Original unintegrated version was not counted complete. Native/domain review false; no semantic cross-review.
+
+
+Own hi511 author withdrew initial readiness and clarified one player parcel-acceptance clause. One utterance changed; exact source, prior/revised bytes and markers preserved in translation-revisions/511/hi/revision-01. Original unintegrated version was not counted complete. Native/domain review false; no semantic cross-review.
