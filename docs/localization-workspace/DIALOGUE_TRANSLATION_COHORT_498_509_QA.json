@@ -1,5 +1,5 @@
 {
-  "status": "AUTHOR_READY_PACKS_CHECKPOINT",
+  "status": "PASS_AI_TRANSLATION_COHORT",
   "scopeBatches": [
     "498",
     "499",
@@ -16,14 +16,15 @@
   ],
   "baselineCommit": "25076b1be33381e0053b87127c64f42d6f7d084d",
   "preparedScenarios": 120,
-  "localeFiles": 143,
-  "readyFileUtterances": 15730,
-  "readyFileTaskHints": 7150,
-  "completeScenarios": 5081,
-  "remainingScenarios": 2047,
-  "missingLocaleFiles": [
-    "src/data/dialogue-content/locale-batches/km/509.json"
-  ],
+  "addedIntegratedScenarios": 120,
+  "localeFiles": 144,
+  "readyFileUtterances": 15840,
+  "readyFileTaskHints": 7200,
+  "completeScenarios": 5091,
+  "remainingScenarios": 2037,
+  "authorHoldFiles": 0,
+  "missingLocaleFiles": [],
+  "preservedPreexistingLocaleFiles": 5976,
   "authorReadyMarkers": [
     {
       "owner": "dialogue_en_vi",
@@ -782,6 +783,15 @@
       "fullUtteranceFidelityChecked": true
     },
     {
+      "owner": "dialogue_th_km",
+      "language": "km",
+      "batch": "509",
+      "path": "src/data/dialogue-content/locale-batches/km/509.json",
+      "sha256": "561335ae94f71421f16712e1a3584272a93fce8f432acc4167d07ad3a7936705",
+      "sourceSha256": "59f0f28d7eb64b434769d7c275b31cfd58f1b80ae8dd3b9c61067d2c578cb170",
+      "fullUtteranceFidelityChecked": true
+    },
+    {
       "owner": "dialogue_id_tl",
       "language": "en",
       "batch": "505",
@@ -1313,52 +1323,23 @@
       "fullUtteranceFidelityChecked": true
     }
   ],
+  "actualLoader": {
+    "status": "PASS",
+    "actualLoader": true,
+    "authoredNpcRubyLines": 36,
+    "authoredPlayerRubyLines": 20,
+    "actualScenarios": 5091,
+    "actualTurns": 672012,
+    "actualHints": 305460,
+    "lazyJsonModulesRead": 11292,
+    "moduleCacheLimit": 32,
+    "directAndGenericScenarioBindings": true,
+    "stableTurnIds": true,
+    "staleSourceRejected": true,
+    "speakerMismatchRejected": true,
+    "fixturesOnly": false
+  },
   "nativeReviewed": false,
   "semanticCrossReview": false,
-  "finalLoaderQa": "Deferred until the complete cohort; no full-cohort completion claim",
-  "remotePersistence": "Publication must pass exact tree/blob/ref readback and scoped WORK PERSISTENCE gate",
-  "controlledOwnAuthorRevisions": [
-    {
-      "owner": "dialogue_en_vi",
-      "language": "zh-CN",
-      "batch": "498",
-      "path": "src/data/dialogue-content/locale-batches/zh-CN/498.json",
-      "status": "RECHECKED_FULL_BY_AUTHOR",
-      "previousSha256": "f7eddbfd38e3916f219b6eb112888ffd9f2e31b850f40c9239f8f48cab9ab4f7",
-      "previousVersionPersisted": false,
-      "resolvedSha256": "e7a3a19462ddec0876566990549e144166e3a34539ae1701f93e599b6168fff6",
-      "fullUtteranceFidelityChecked": true,
-      "resolvedAt": "2026-10-23T11:03:13.949Z",
-      "resolution": "Own author one-unit name pronunciation clarification; immutable prior/revised pack and markers archived in docs/localization-workspace/translation-revisions/498/zh-CN/revision-01",
-      "nativeReviewed": false
-    },
-    {
-      "owner": "dialogue_hi_bn",
-      "language": "hi",
-      "batch": "501",
-      "path": "src/data/dialogue-content/locale-batches/hi/501.json",
-      "status": "RECHECKED_FULL_BY_AUTHOR",
-      "previousSha256": "83bd4645ca0c2e75c6db08793b9f624c41ba9a6fa6245f9d17baa87b3cbe8899",
-      "previousVersionPersisted": true,
-      "resolvedSha256": "9ba38ff1b164b65df0b230fac620f647a7d21843652527f483e8940692bdbe68",
-      "fullUtteranceFidelityChecked": true,
-      "resolvedAt": "2026-10-23T11:17:17.661Z",
-      "resolution": "Own author one-unit own-words clarification; immutable prior/revised pack and markers archived in docs/localization-workspace/translation-revisions/501/hi/revision-01",
-      "nativeReviewed": false
-    },
-    {
-      "owner": "dialogue_th_km",
-      "language": "zh-CN",
-      "batch": "509",
-      "path": "src/data/dialogue-content/locale-batches/zh-CN/509.json",
-      "status": "RECHECKED_FULL_BY_AUTHOR",
-      "previousSha256": "69d8e759c76ca301568837716892d421dd6d2b1e6b995f3fcf0ec178b175967b",
-      "previousVersionPersisted": false,
-      "resolvedSha256": "ac6421f1ba37c9f8821f3967e375f9fbc576592fba5cbba83f20333df62075da",
-      "fullUtteranceFidelityChecked": true,
-      "resolvedAt": "2026-10-23T11:32:00.999Z",
-      "resolution": "Own author two-unit own-source indexed correction; immutable prior/revised pack and markers archived in docs/localization-workspace/translation-revisions/509/zh-CN/revision-01",
-      "nativeReviewed": false
-    }
-  ]
+  "remotePersistence": "Final publication and scoped WORK PERSISTENCE verification required"
 }
