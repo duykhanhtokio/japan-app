@@ -2187,3 +2187,31 @@ Installed bn417. Six disjoint replacement authors continue the publisher-authori
 ### Historical Hindi/Bengali source-only replacement checkpoint
 
 Installed hi411,bn411,bn425. Six disjoint replacement authors continue the publisher-authorized parallel workflow; each authors from canonical Japanese without reading withdrawn target text and self-checks its own full utterances and hints. This is replacement authorship, not a claim that the unavailable former author resumed. Previous bytes, exact source hashes, final author-task markers and changes archived. Complete 4261/7128, remaining 2867; held files 9. Native/domain review false; no semantic cross-review. Remote publication and scoped verification follow.
+
+
+### Historical Hindi/Bengali source-only replacement checkpoint
+
+Installed hi421,bn423,hi418. Six disjoint replacement authors continue the publisher-authorized parallel workflow; each authors from canonical Japanese without reading withdrawn target text and self-checks its own full utterances and hints. This is replacement authorship, not a claim that the unavailable former author resumed. Previous bytes, exact source hashes, final author-task markers and changes archived. Complete 4271/7128, remaining 2857; held files 6. Native/domain review false; no semantic cross-review. Remote publication and scoped verification follow.
+
+
+### Historical Hindi/Bengali source-only replacement checkpoint
+
+Installed bn421. Six disjoint replacement authors continue the publisher-authorized parallel workflow; each authors from canonical Japanese without reading withdrawn target text and self-checks its own full utterances and hints. This is replacement authorship, not a claim that the unavailable former author resumed. Previous bytes, exact source hashes, final author-task markers and changes archived. Complete 4281/7128, remaining 2847; held files 5. Native/domain review false; no semantic cross-review. Remote publication and scoped verification follow.
+
+
+Replacement author supplied one additional Bengali420 negation clarification after its earlier ready declaration. Controlled revision-02 preserves prior final bytes and records the new final hash; one utterance changed, no hints changed. No semantic cross-review or native approval.
+
+
+### Historical Hindi/Bengali source-only replacement checkpoint
+
+Installed hi415,bn415,bn418. Six disjoint replacement authors continue the publisher-authorized parallel workflow; each authors from canonical Japanese without reading withdrawn target text and self-checks its own full utterances and hints. This is replacement authorship, not a claim that the unavailable former author resumed. Previous bytes, exact source hashes, final author-task markers and changes archived. Complete 4301/7128, remaining 2827; held files 2. Native/domain review false; no semantic cross-review. Remote publication and scoped verification follow.
+
+
+### Historical Hindi/Bengali source-only replacement checkpoint
+
+Installed hi412,bn412. Six disjoint replacement authors continue the publisher-authorized parallel workflow; each authors from canonical Japanese without reading withdrawn target text and self-checks its own full utterances and hints. This is replacement authorship, not a claim that the unavailable former author resumed. Previous bytes, exact source hashes, final author-task markers and changes archived. Complete 4311/7128, remaining 2817; held files 0. Native/domain review false; no semantic cross-review. Remote publication and scoped verification follow.
+
+
+### Hindi/Bengali410–425 full replacement cohort complete
+
+All32 withdrawn packs have full source-only replacement translations:3,520 utterances and1,600 task hints across160 scenarios. Six disjoint replacement authors self-checked their own complete Japanese meanings; they did not read or review former target text. Previous/replacement bytes and source/final SHA256 markers preserved. Technical canonical binding checks and actual app loader PASS4311 scenarios; 5152 other locale files unchanged. No historical editorial holds remain. Complete4311/7128, remaining2817. Native/domain approval remains false. Next new batch432,start4311. Final remote publication and scoped persistence verification follow.
