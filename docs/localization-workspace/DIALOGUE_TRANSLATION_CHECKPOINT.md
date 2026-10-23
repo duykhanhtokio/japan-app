@@ -2302,3 +2302,6 @@ All72 immutable own-source-fidelity-checked locale packs integrated:60 new scena
 ## Cohort444–449 continuation
 
 Baseline76db2657b2b3:4431/7128 complete,2697 remaining,no author holds. Six authors explicitly acknowledged disjoint whole-batch ownership444–449,one ten-scenario batch/all12 locales each,matching phase2 logical owners. Preserve all details of longer source utterances; no compression or fragments. One locale160 full strings at a time with incremental draft saves,full own Japanese fidelity and expanded unexpected-script QA before immutable readiness. Publish completed packs incrementally; exact source/IDs/roles/tasks/hash checks before integration. Native/domain review false; no semantic cross-review. Drafts are not completion.
+
+
+Own bn447 author withdrew initial readiness and supplied a full fidelity-rechecked revision clarifying responsibility alternatives, night onset and parking terminology. Five target units changed; exact source, prior and revised bytes/markers preserved in translation-revisions/447/bn/revision-01. Original unintegrated version was not counted complete. Native/domain review false; no semantic cross-review.
