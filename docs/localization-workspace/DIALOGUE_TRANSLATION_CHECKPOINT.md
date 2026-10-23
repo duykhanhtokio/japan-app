@@ -2225,3 +2225,11 @@ Baseline ca3b1be84e60,4311/7128 fully integrated scenarios with no author holds.
 ## Continuation432–437 2026-10-23T04:49:21.667Z
 
 Integrated 432: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 4321/7128; remaining 2807. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+Own ne436 author withdrew original readiness after detecting Japanese characters in one Nepali hint. Controlled author-supplied correction changes exactly one hint and preserves immutable prior/revised bytes and markers under translation-revisions/436/ne/revision-01. Final source-faithfulness rechecked by own author; no semantic cross-review or native approval. Original unintegrated pack was never counted complete.
+
+
+## Continuation432–437 2026-10-23T04:56:11.872Z
+
+Integrated 433: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 4331/7128; remaining 2797. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
