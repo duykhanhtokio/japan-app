@@ -2358,3 +2358,6 @@ Integrated 451,452: all12 own-source-fidelity markers, logical owners, exact fin
 ## Continuation450–461 2026-10-23T06:48:13.662Z
 
 Integrated 455: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 4551/7128; remaining 2577. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+Own zh-CN459 author withdrew initial readiness and corrected a duplicated temporal character. One utterance changed; exact source, prior/revised bytes and markers preserved in translation-revisions/459/zh-CN/revision-01. Original unintegrated version was not counted complete. Native/domain review false; no semantic cross-review.
