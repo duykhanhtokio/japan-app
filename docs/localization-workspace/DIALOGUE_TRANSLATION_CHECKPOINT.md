@@ -2384,3 +2384,8 @@ Integrated 456,457,458: all12 own-source-fidelity markers, logical owners, exact
 ### Cohort450–461 complete
 
 All144 immutable own-source-fidelity-checked locale packs integrated:120 new scenarios across12 languages,15,840 utterances and7,200 task hints. Exact canonical source/ID/speaker/task and marker hashes pass. Actual app loader PASS4611 scenarios; 5400 preexisting locale files unchanged. Complete4611/7128, remaining2517; no author holds. Native/domain review false; no semantic cross-review. Next unstarted source462,start4611. Final remote publication and scoped persistence verification follow.
+
+
+## Cohort462–473 continuation
+
+Baselinef0f622626f8f:4611/7128 complete,2517 remaining,no author holds. User retains doubled120 scenario turn. Six explicitly authorized authors exclusively own462–467 all12 locales each;468–473 reserved wholly unstarted for fresh sessions. Full160 strings per pack, complete own Japanese fidelity and expanded script QA before immutable publication. Incremental authenticated GitHub publication; no semantic cross-review, native/domain review false.
