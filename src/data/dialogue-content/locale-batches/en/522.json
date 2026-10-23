@@ -1,0 +1,697 @@
+{
+  "language": "en",
+  "status": "translated_ai_unreviewed",
+  "nativeReviewed": false,
+  "scenarios": {
+    "SC-LOC-JP-23217-02-001": {
+      "turns": {
+        "DLG-SC-LOC-JP-23217-02-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "お電話ありがとうございます。お知らせについてのお問い合わせですね。",
+          "translation": "Thank you for calling. You have a question about the notice, correct?"
+        },
+        "DLG-SC-LOC-JP-23217-02-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "水道工事で断水する紙が入りました。町名は私の住所と同じですが、番地の一部が対象と書いてあります。私の建物も入るか確認したいです。",
+          "hintJa": "断水紙の町名一致だけでは対象か分からず番地確認を頼む。日本語で伝えてください。",
+          "translation": "I received a notice about a water outage due to waterworks. The neighborhood name matches my address, but it says only some block numbers are affected. I would like to check whether my building is included.",
+          "hintTranslation": "Explain that matching the neighborhood name alone does not establish whether you are affected, and ask them to check your block number. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-02-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "案内の対象範囲と、お客様の番地を照らします。紙のどの範囲をご覧になっていますか。",
+          "translation": "We will compare the area covered by the notice with your block number. Which area on the notice are you looking at?"
+        },
+        "DLG-SC-LOC-JP-23217-02-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "三丁目の一番から六番とあります。私は三丁目八番です。町名だけで同じ対象だと思っていました。",
+          "hintJa": "対象一から六番と自宅八番を示す。日本語で伝えてください。",
+          "translation": "It says blocks 1 through 6 in the third district. I live at block 8 in the third district. I assumed I was included just because the neighborhood name was the same.",
+          "hintTranslation": "Give the affected blocks, 1 through 6, and your home block, 8. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-02-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "このお知らせの範囲には、八番は含まれていません。建物の管理者から別の案内はありましたか。",
+          "translation": "Block 8 is not included in the area covered by this notice. Have you received a separate notice from your building manager?"
+        },
+        "DLG-SC-LOC-JP-23217-02-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "建物の管理者からの案内はまだ見ていません。この紙の工事とは別に、建物内で作業があるかも聞いてみます。",
+          "hintJa": "市工事は範囲外でも建物内工事を管理者へ確認すると述べる。日本語で伝えてください。",
+          "translation": "I have not seen any notice from the building manager yet. I will also ask whether there is work inside the building separate from the work on this notice.",
+          "hintTranslation": "Say that although the municipal work does not cover your address, you will check with the manager about work inside the building. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-02-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "この紙に書かれた工事時間は、明日の十時から十二時です。対象外の方への作業案内ではありません。",
+          "translation": "The work time on this notice is tomorrow from 10 a.m. to noon. This is not a notice of work for people outside the designated area."
+        },
+        "DLG-SC-LOC-JP-23217-02-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "明日の十時から十二時、対象は一番から六番ですね。家族には、八番はこのお知らせの対象外だったと伝えます。",
+          "hintJa": "対象番地と明日十十二時を確認し家族へ正確に伝える。日本語で伝えてください。",
+          "translation": "Tomorrow from 10 a.m. to noon, and the affected blocks are 1 through 6, correct? I will tell my family that block 8 was outside the scope of this notice.",
+          "hintTranslation": "Confirm the affected blocks and tomorrow's 10 a.m. to noon schedule, and relay the information accurately to your family. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-02-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "必要でしたら、お知らせの問い合わせ番号を控えてください。",
+          "translation": "Please note down the inquiry number on the notice if you need it."
+        },
+        "DLG-SC-LOC-JP-23217-02-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "控えました。自分の番地と対象範囲を区別できました。建物については管理者へ別に確認します。",
+          "hintJa": "問合番号を控え建物の別確認を引き受ける。日本語で伝えてください。",
+          "translation": "I have written it down. I now understand the difference between my block number and the affected area. I will check separately with the manager about the building.",
+          "hintTranslation": "Say you have noted the inquiry number and will take responsibility for checking separately about the building. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-02-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "お問い合わせありがとうございました。それでは、失礼いたします。",
+          "translation": "Thank you for your inquiry. Goodbye."
+        }
+      }
+    },
+    "SC-LOC-JP-23217-03-001": {
+      "turns": {
+        "DLG-SC-LOC-JP-23217-03-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "初診の受付を行います。お名前を確認した後、待合へご案内します。",
+          "translation": "We will register you as a first-time patient. After confirming your name, we will direct you to the waiting area."
+        },
+        "DLG-SC-LOC-JP-23217-03-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "受付の前にお願いがあります。声だけで名前を呼ばれても聞き取りにくいです。順番が来た時に分かる方法を相談できますか。",
+          "hintJa": "音声氏名呼出を聞き取りにくく別案内方法を相談する。日本語で伝えてください。",
+          "translation": "I have a request before registration. I have difficulty hearing my name when it is only called aloud. Could we discuss a way for me to know when it is my turn?",
+          "hintTranslation": "Explain that you have difficulty hearing spoken name announcements and ask about an alternative way of notifying you. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-03-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "呼出しに気づけるよう担当へ伝えます。お話の内容は、文字でも確認した方がよろしいでしょうか。",
+          "translation": "I will tell the staff so that you can notice when you are called. Would it also be better to confirm what we say in writing?"
+        },
+        "DLG-SC-LOC-JP-23217-03-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "はい。短い言葉を紙に書いてもらえると分かります。自分の名前の書き方は、この資料で確認してください。",
+          "hintJa": "短い筆記確認を希望し本人名資料を示す。日本語で伝えてください。",
+          "translation": "Yes. I can understand if you write short phrases on paper. Please check how my name is written using this document.",
+          "hintTranslation": "Request brief written confirmation and show a document with your name. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-03-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "お名前を確認しました。今日は受付番号を紙でお渡しし、順番が来たら係が座席へご案内に参ります。",
+          "translation": "I have confirmed your name. Today we will give you your registration number on paper, and a staff member will come to your seat to notify you when it is your turn."
+        },
+        "DLG-SC-LOC-JP-23217-03-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "番号の紙をもらい、順番になったら席まで来ていただけるのですね。助かります。",
+          "hintJa": "紙の受付番号と座席までの呼出し案内を確認する。日本語で伝えてください。",
+          "translation": "So I will get a paper with my number, and someone will come to my seat when it is my turn. That is very helpful.",
+          "hintTranslation": "Confirm the paper registration number and notification at your seat. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-03-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "待合の手前の席をご利用ください。席を移られる時は、受付へお知らせください。",
+          "translation": "Please use a seat near the entrance to the waiting area. Let reception know if you change seats."
+        },
+        "DLG-SC-LOC-JP-23217-03-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "この席で待ちます。トイレへ行く時も、案内する方が探さなくてよいよう、先に受付へ伝えます。",
+          "hintJa": "指定席を守り席離脱前に受付へ知らせると述べる。日本語で伝えてください。",
+          "translation": "I will wait in this seat. Even when I go to the restroom, I will tell reception first so the person notifying me will not have to look for me.",
+          "hintTranslation": "Say that you will stay in the designated seat and inform reception before leaving it. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-03-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "こちらの紙に番号と、ご案内の方法を書きました。お読みいただけましたか。",
+          "translation": "I have written your number and the notification method on this paper. Were you able to read it?"
+        },
+        "DLG-SC-LOC-JP-23217-03-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "番号と、係が席へ来るという文が読めました。声だけでは気づきにくいことを担当へ伝えてくださって、ありがとうございます。",
+          "hintJa": "番号と座席案内の文を読み担当共有へ感謝する。日本語で伝えてください。",
+          "translation": "I could read the number and the sentence saying a staff member will come to my seat. Thank you for telling the staff that I have difficulty noticing a call by voice alone.",
+          "hintTranslation": "Read the number and the sentence about notification at your seat, and thank them for sharing this with the staff. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-03-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "それでは、その席でご案内をお待ちください。お困りの時は紙を持って受付へどうぞ。お大事になさってください。",
+          "translation": "Please wait in that seat until we come for you. If you need help, bring the paper to reception. Take care."
+        }
+      }
+    },
+    "SC-LOC-JP-23217-04-001": {
+      "turns": {
+        "DLG-SC-LOC-JP-23217-04-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "拾われた物をお届けですね。何をお持ちですか。",
+          "translation": "You are handing in something you found, correct? What have you brought?"
+        },
+        "DLG-SC-LOC-JP-23217-04-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "道にこの小さなケースが落ちていました。透明な所から補聴器のような物が見えますが、壊しそうなので開けていません。",
+          "hintJa": "未開封のケース内に補聴器らしい物が見えると報告する。日本語で伝えてください。",
+          "translation": "This small case was lying on the street. I can see something that looks like a hearing aid through the transparent part, but I have not opened it because I might damage it.",
+          "hintTranslation": "Report that something resembling a hearing aid is visible inside the unopened case. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-04-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "発見した場所と時刻を教えてください。",
+          "translation": "Please tell me where and when you found it."
+        },
+        "DLG-SC-LOC-JP-23217-04-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "今日の九時ごろ、商店街の花屋の前です。店の中ではなく歩道にありました。場所を地図で示せます。",
+          "hintJa": "九時の花屋前歩道という発見位置を説明する。日本語で伝えてください。",
+          "translation": "Around nine this morning, in front of the florist in the shopping street. It was on the sidewalk, not inside the shop. I can show you the location on a map.",
+          "hintTranslation": "Explain that you found it around nine on the sidewalk in front of the florist. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-04-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "地図をお願いします。拾った後に、どなたかへお渡しになりましたか。",
+          "translation": "Please show me the map. Did you hand it to anyone after finding it?"
+        },
+        "DLG-SC-LOC-JP-23217-04-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "誰にも渡していません。花屋で落とした人を見たか聞きましたが、分からないそうなので、ケースごとこちらへ持って来ました。",
+          "hintJa": "他者へ渡しておらず店にも尋ねた経緯を伝える。日本語で伝えてください。",
+          "translation": "I have not given it to anyone. I asked at the florist whether they had seen who dropped it, but they did not know, so I brought the whole case here.",
+          "hintTranslation": "Explain that you did not hand it to anyone and that you also asked at the shop. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-04-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "ケースと中の物をこちらで確認します。拾った方のご連絡先も伺ってよろしいでしょうか。",
+          "translation": "We will check the case and its contents here. May I also have your contact details as the finder?"
+        },
+        "DLG-SC-LOC-JP-23217-04-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "はい、連絡先はこちらです。中の物は透明な所から見ただけなので、種類はそちらで確認していただけますか。",
+          "hintJa": "連絡先を示し機器種類を断定せず見えた様子と述べる。日本語で伝えてください。",
+          "translation": "Yes, here are my contact details. I only saw the item through the transparent part, so could you check what type of device it is?",
+          "hintTranslation": "Give your contact details and describe what you saw without declaring the device type as certain. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-04-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "発見場所は、こちらの印の所で間違いありませんか。",
+          "translation": "Is the place where you found it correctly marked here?"
+        },
+        "DLG-SC-LOC-JP-23217-04-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "その印の所です。機器のボタンや電池には触っていません。落とした方に戻るよう、このままお預けします。",
+          "hintJa": "地図位置と未操作を確認してケースごと預ける。日本語で伝えてください。",
+          "translation": "It is where that mark is. I have not touched the device's buttons or battery. I will leave it with you as it is so it can be returned to its owner.",
+          "hintTranslation": "Confirm the map location and that you did not operate the device, then hand over the case with its contents. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-04-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "場所と取扱いを確認しました。お届けありがとうございます。それでは、こちらでお預かりします。お気をつけて。",
+          "translation": "We have confirmed the location and how it was handled. Thank you for bringing it in. We will take care of it here. Take care."
+        }
+      }
+    },
+    "SC-LOC-JP-23217-05-001": {
+      "turns": {
+        "DLG-SC-LOC-JP-23217-05-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "宛名の違う郵便物をお持ちですね。届いた状況をお聞かせください。",
+          "translation": "You have mail addressed to someone else. Please tell me how it arrived."
+        },
+        "DLG-SC-LOC-JP-23217-05-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "引っ越した部屋の郵便受けに、知らない名前の封筒が入っていました。住所は今の部屋と同じですが、私の名前ではありません。",
+          "hintJa": "新居の住所は合うが別人名の郵便が届いたと相談する。日本語で伝えてください。",
+          "translation": "There was an envelope with an unfamiliar name in the mailbox of the apartment I moved into. The address matches my current apartment, but it is not my name.",
+          "hintTranslation": "Explain that mail arrived at your new home's correct address but with someone else's name. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-05-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "封筒は開けていらっしゃいませんか。",
+          "translation": "Have you opened the envelope?"
+        },
+        "DLG-SC-LOC-JP-23217-05-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "開けていません。大家さんには前の住人かもしれないと言われましたが、その人の今の住所は分かりません。",
+          "hintJa": "未開封で前住人の現住所は不明と説明する。日本語で伝えてください。",
+          "translation": "No, I have not. The landlord said it might be for the previous tenant, but I do not know that person's current address.",
+          "hintTranslation": "Explain that it is unopened and you do not know the former tenant's current address. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-05-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "宛名が別の方だという事情を確認します。封筒をそのままお見せください。",
+          "translation": "We will check the circumstances of it being addressed to someone else. Please show us the envelope as it is."
+        },
+        "DLG-SC-LOC-JP-23217-05-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "こちらです。中身から連絡先を探そうとはしていません。私の転居届を出せば、この人の分も止まるのでしょうか。",
+          "hintJa": "封筒を示し自分の転居届と別人郵便の関係を尋ねる。日本語で伝えてください。",
+          "translation": "Here it is. I have not tried looking inside for contact details. If I submit my change-of-address notice, will that stop this person's mail as well?",
+          "hintTranslation": "Show the envelope and ask how your own change-of-address notice relates to mail for someone else. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-05-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "ご自身の転居の手続きと、この別人宛ての郵便物は分けてご相談ください。こちらの封筒については担当へ確認します。",
+          "translation": "Please discuss your own moving procedures separately from this mail addressed to someone else. I will check with the person in charge about this envelope."
+        },
+        "DLG-SC-LOC-JP-23217-05-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "自分の転居届とは別に、この封筒の件を確認していただけるのですね。お願いします。",
+          "hintJa": "自分の転居手続きとは別の郵便物相談として確認を依頼する。日本語で伝えてください。",
+          "translation": "So you can check this envelope separately from my own change-of-address notice. Please do.",
+          "hintTranslation": "Ask them to check the mail as a separate matter from your own moving procedures. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-05-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "はい。担当へ渡すため、お客様のお住まいの部屋と、宛名が一致しないことを確認します。",
+          "translation": "Yes. Before handing it to the person in charge, I will confirm which apartment you live in and that the addressee's name does not match yours."
+        },
+        "DLG-SC-LOC-JP-23217-05-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "今住むのはこの住所の二〇一号室です。私の名前とは違います。開けていない封筒を、そのままお渡しします。",
+          "hintJa": "現住二〇一号室と宛名相違を確認し未開封で渡す。日本語で伝えてください。",
+          "translation": "I currently live in apartment 201 at this address. The name is different from mine. I will hand over the unopened envelope as it is.",
+          "hintTranslation": "Confirm that you currently live in apartment 201 and that the addressee differs, then hand it over unopened. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-05-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "確認いたしました。担当へ引き継ぎます。それでは、お預かりします。ご相談ありがとうございました。失礼します。",
+          "translation": "I have confirmed that. I will pass this on to the person in charge. We will take the envelope. Thank you for consulting us. Goodbye."
+        }
+      }
+    },
+    "SC-LOC-JP-23217-06-001": {
+      "turns": {
+        "DLG-SC-LOC-JP-23217-06-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "ご住所の変更をご希望ですか。",
+          "translation": "Would you like to change your address?"
+        },
+        "DLG-SC-LOC-JP-23217-06-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "住む所は変わっていません。昼は家にいないので、銀行からの郵便だけ会社へ送ってほしいのですが、相談できますか。",
+          "hintJa": "転居ではなく銀行郵便のみ勤務先受取にしたいと相談する。日本語で伝えてください。",
+          "translation": "I have not moved. I am not home during the day, so I would like only my bank mail sent to my workplace. Could I discuss that with you?",
+          "hintTranslation": "Explain that you are not moving but would like to receive only your bank mail at work. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-06-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "居住先の変更ではなく、郵便の受取先のご希望ですね。まず、どの郵便物についてか伺います。",
+          "translation": "You mean your preferred mailing destination, rather than a change of residence. First, please tell me which mail you mean."
+        },
+        "DLG-SC-LOC-JP-23217-06-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "今度届く手続きの案内です。通帳やカードを会社で受け取りたいという話ではなく、その案内の受取りについてです。",
+          "hintJa": "対象を手続案内に限定しカード通帳ではないと説明する。日本語で伝えてください。",
+          "translation": "The upcoming notice about procedures. I am not asking to receive a bankbook or card at work, only that notice.",
+          "hintTranslation": "Limit your request to the procedural notice and explain that you do not mean a card or bankbook. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-06-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "郵便物によって取扱いが違いますので、送付先を変えられるか担当が確認します。ご本人の資料をお願いします。",
+          "translation": "Handling differs depending on the mail, so the person in charge will check whether the destination can be changed. Please show your identification documents."
+        },
+        "DLG-SC-LOC-JP-23217-06-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "こちらです。会社で自分宛ての郵便を受け取れるかは、まだ事務の人に聞いていません。",
+          "hintJa": "本人資料を示し会社の受取可否は未確認と述べる。日本語で伝えてください。",
+          "translation": "Here they are. I have not yet asked the office staff whether I can receive mail addressed to me at work.",
+          "hintTranslation": "Show your identification documents and say you have not confirmed whether your workplace can receive it. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-06-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "会社側の受取り条件も、ご自身で確認してください。住宅の住所を会社の住所へ書き換える用紙ではありません。",
+          "translation": "Please also check your company's conditions for receiving mail yourself. This is not a form for changing your residential address to your workplace address."
+        },
+        "DLG-SC-LOC-JP-23217-06-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "住んでいる住所の変更とは別なのですね。送付先について、どの用紙を使えばよいか担当の方に聞きたいです。",
+          "hintJa": "居住住所変更と送付先相談を区別し必要な用紙を尋ねる。日本語で伝えてください。",
+          "translation": "So this is separate from changing the address where I live. I would like to ask the person in charge which form I should use regarding the mailing destination.",
+          "hintTranslation": "Distinguish a residential address change from a mailing destination inquiry and ask which form is needed. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-06-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "では、担当へ希望する案内の種類を引き継ぎます。確認後、必要な手続きをご説明します。",
+          "translation": "I will tell the person in charge which kind of notice you want sent. Once it has been checked, we will explain the necessary procedures."
+        },
+        "DLG-SC-LOC-JP-23217-06-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "お願いします。会社の受取りも確認し、銀行で対応できるかの説明を聞いてから送付先を決めます。",
+          "hintJa": "会社と銀行の両条件確認後に送付先を決める。日本語で伝えてください。",
+          "translation": "Thank you. I will check receipt at work as well, and decide on the mailing destination after hearing whether the bank can accommodate it.",
+          "hintTranslation": "Say you will decide on the mailing destination after checking the conditions at both your company and the bank. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-06-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "こちらで少々お待ちください。それでは、担当へ引き継ぎます。失礼いたします。",
+          "translation": "Please wait here a moment. I will hand this over to the person in charge. Excuse me."
+        }
+      }
+    },
+    "SC-LOC-JP-23217-07-001": {
+      "turns": {
+        "DLG-SC-LOC-JP-23217-07-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "お菓子の表示をお探しでしょうか。",
+          "translation": "Are you looking for the label on the sweets?"
+        },
+        "DLG-SC-LOC-JP-23217-07-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "子どもたちに配るつもりでしたが、この箱に洋酒使用とあります。ぶどうの絵があるので、果汁の味だけだと思っていました。",
+          "hintJa": "子供用菓子を絵で果汁と思ったが洋酒表示を発見したと述べる。日本語で伝えてください。",
+          "translation": "I was planning to give these to children, but this box says it contains liquor. Because there is a picture of grapes, I thought it was only flavored with fruit juice.",
+          "hintTranslation": "Say that you thought the sweets for children were fruit juice flavored because of the picture, but found a liquor label. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-07-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "原材料の表示はこちらです。洋酒の記載があります。",
+          "translation": "Here is the ingredient label. Liquor is listed."
+        },
+        "DLG-SC-LOC-JP-23217-07-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "見えました。今日は子どもへの物なので、この箱は買わず、別の候補を見ます。外側の絵だけで決めていました。",
+          "hintJa": "洋酒記載を読んで購入候補から外す。日本語で伝えてください。",
+          "translation": "I can see it. These are for children today, so I will not buy this box and will look at another option. I had been deciding only by the picture outside.",
+          "hintTranslation": "Read the liquor listing and remove this box from your purchase options. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-07-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "こちらにも同じ大きさの箱がありますが、商品の表示をそれぞれご確認ください。",
+          "translation": "There is another box of the same size here, but please check each product's label individually."
+        },
+        "DLG-SC-LOC-JP-23217-07-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "二つ目は洋酒の文字が見つかりません。文字が小さいので、表示面を明るい所で見てもよいですか。",
+          "hintJa": "別候補の小文字を明るい台で未開封確認したいと頼む。日本語で伝えてください。",
+          "translation": "I cannot find the word liquor on the second one. The print is small, so may I look at the label in a brighter place?",
+          "hintTranslation": "Ask to inspect the second option's small print on a well-lit counter without opening it. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-07-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "こちらの台でご覧ください。包装を開けずに、外側の表示を確認できます。",
+          "translation": "Please look at it on this counter. You can check the label outside without opening the wrapping."
+        },
+        "DLG-SC-LOC-JP-23217-07-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "確認しました。ただ、子どもたちのほかの食べられない物までは聞いていません。今日この場で全部決めない方がよさそうです。",
+          "hintJa": "子の他の食べられない物は未確認で即決を避ける。日本語で伝えてください。",
+          "translation": "I have checked it. But I have not asked about other things the children cannot eat. It seems better not to decide everything here today.",
+          "hintTranslation": "Say you have not checked other foods the children cannot eat and avoid deciding immediately. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-07-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "お渡しする相手の条件を確認してから、選んでいただけます。",
+          "translation": "You can choose after checking the requirements of the people you will give them to."
+        },
+        "DLG-SC-LOC-JP-23217-07-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "先に親へ聞きます。今日はどちらも買わず、最初の箱も二つ目も元の売場へ戻すので、置場を教えてください。",
+          "hintJa": "親へ確認してから選ぶため両候補を買わず置場を尋ねる。日本語で伝えてください。",
+          "translation": "I will ask the parents first. I will not buy either today, and will return both the first and second boxes to their original displays. Please tell me where they go.",
+          "hintTranslation": "Ask the parents before choosing, decline to buy either option today, and ask where to return them. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-07-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "最初の箱はこちら、二つ目は隣です。それでは、ご確認の後にまたお選びください。お気をつけてお帰りください。",
+          "translation": "The first box goes here, and the second one next to it. Please choose again after checking. Have a safe trip home."
+        }
+      }
+    },
+    "SC-LOC-JP-23217-08-001": {
+      "turns": {
+        "DLG-SC-LOC-JP-23217-08-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "散歩コースのご案内ですか。",
+          "translation": "Would you like directions for a walking route?"
+        },
+        "DLG-SC-LOC-JP-23217-08-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "犬と一周する予定でしたが、ここで犬が歩きたがらなくなりました。原因は分かりません。近い出口までの短い道を知りたいです。",
+          "hintJa": "犬が歩かず周回をやめ近い出口への短経路を尋ねる。日本語で伝えてください。",
+          "translation": "I was going to do a full circuit with my dog, but it has stopped wanting to walk here. I do not know why. I would like to know a short route to a nearby exit.",
+          "hintTranslation": "Say your dog will not walk, cancel the full circuit, and ask for a short route to a nearby exit. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-08-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "今いる場所からは、西口が近いです。奥の坂道より、花壇の横の道が短くなります。",
+          "translation": "The west exit is close to where you are now. The path beside the flower bed is shorter than the slope farther inside."
+        },
+        "DLG-SC-LOC-JP-23217-08-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "坂を上る予定はやめます。花壇の横へ行く前に、ここで少し休んでも通る人の邪魔になりませんか。",
+          "hintJa": "坂をやめ花壇経路前の休憩場所を確認する。日本語で伝えてください。",
+          "translation": "I will cancel the plan to go up the slope. Before heading beside the flower bed, could we rest here a little without getting in people's way?",
+          "hintTranslation": "Cancel the slope route and check where to rest before taking the flower bed route. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-08-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "道の中央は空けて、右の広い所をお使いください。",
+          "translation": "Please keep the center of the path clear and use the wide space on the right."
+        },
+        "DLG-SC-LOC-JP-23217-08-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "右へ寄りました。リードを持ったままここで休ませます。花壇の道へ進む時は、西口の表示を見ながら行けばよいですか。",
+          "hintJa": "右の休憩場所へ移りリードを保持し西口表示に沿って進むか確認する。日本語で伝えてください。",
+          "translation": "I have moved to the right. I will let my dog rest here while keeping hold of the leash. When we take the flower bed path, should we follow the west exit signs?",
+          "hintTranslation": "Move to the resting area on the right, keep hold of the leash, and confirm whether to follow the west exit signs. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-08-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "はい、西口の表示に沿ってお進みください。分かれ道は一つで、花壇側の道です。",
+          "translation": "Yes, please follow the west exit signs. There is one fork; take the path on the flower bed side."
+        },
+        "DLG-SC-LOC-JP-23217-08-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "分かれ道で花壇側へ行くのですね。休んでも歩けなければ、抱えて戻れるか自分で考え、無理に引いて歩かせません。",
+          "hintJa": "分岐を確認し無理に引かず戻る方法を考える。日本語で伝えてください。",
+          "translation": "So at the fork, I take the flower bed side. If my dog still cannot walk after resting, I will consider whether I can carry it back myself and will not drag it along.",
+          "hintTranslation": "Confirm the fork, say you will not pull the dog by force, and consider how to return. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-08-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "出口に向かう際も、ほかの方の通行をご確認ください。",
+          "translation": "Please watch out for other people passing when heading to the exit as well."
+        },
+        "DLG-SC-LOC-JP-23217-08-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "はい。今日は一周できたかより、犬の様子を見て帰ります。西口と短い道が分かりました。ありがとうございます。",
+          "hintJa": "一周達成より犬の様子に応じ西口から帰ると決める。日本語で伝えてください。",
+          "translation": "Yes. Today I will head home according to my dog's condition rather than focus on completing the circuit. I now know the west exit and the short route. Thank you.",
+          "hintTranslation": "Decide to go home through the west exit according to the dog's condition rather than prioritize completing the circuit. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23217-08-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "それでは、ゆっくりお休みになってから、お気をつけてお帰りください。",
+          "translation": "Please rest at your own pace first, then have a safe trip home."
+        }
+      }
+    },
+    "SC-LOC-JP-23219-01-001": {
+      "turns": {
+        "DLG-SC-LOC-JP-23219-01-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "お客様、傘を少し持ち直していただけますか。",
+          "translation": "Excuse me, could you adjust how you are holding your umbrella?"
+        },
+        "DLG-SC-LOC-JP-23219-01-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "長い傘の先がドアの所へ出ていました。下を向けているつもりでしたが、気づきませんでした。",
+          "hintJa": "傘先がドア部へ出ていたことを認める。日本語で伝えてください。",
+          "translation": "The tip of my long umbrella was sticking out into the doorway. I thought I was pointing it down, but I did not notice.",
+          "hintTranslation": "Acknowledge that the umbrella tip was sticking into the doorway. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23219-01-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "ドアが閉まる所へ入らないよう、ご自身の方へ寄せてください。",
+          "translation": "Please bring it closer to you so that it does not enter the space where the doors close."
+        },
+        "DLG-SC-LOC-JP-23219-01-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "こちらへ寄せます。足元に立てて手を離すと倒れそうなので、柄を持ったままにします。",
+          "hintJa": "本人側へ寄せ柄を持ち倒さない。日本語で伝えてください。",
+          "translation": "I will bring it this way. It might fall over if I stand it by my feet and let go, so I will keep holding the handle.",
+          "hintTranslation": "Bring it toward yourself and hold the handle so it does not fall. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23219-01-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "乗り降りする方の足にも当たらないようお願いします。",
+          "translation": "Please make sure it does not hit the feet of people getting on or off either."
+        },
+        "DLG-SC-LOC-JP-23219-01-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "人が通る時は、傘も体の方へ寄せて持ちます。かばんも肩へ掛けた方がよさそうです。",
+          "hintJa": "通行時には傘を本人側へ寄せかばんの肩掛けを考える。日本語で伝えてください。",
+          "translation": "When people pass, I will also hold the umbrella closer to my body. It seems better to put my bag over my shoulder as well.",
+          "hintTranslation": "Say you will hold the umbrella toward your body when people pass and consider carrying your bag over your shoulder. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23219-01-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "お荷物は、ほかにもございますか。",
+          "translation": "Do you have any other luggage?"
+        },
+        "DLG-SC-LOC-JP-23219-01-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "小さいかばんだけです。かばんを肩へ掛けて、片手で傘を持てるようにしました。",
+          "hintJa": "鞄を肩掛けにして傘保持用片手を空ける。日本語で伝えてください。",
+          "translation": "Just a small bag. I have put it over my shoulder so I can hold the umbrella with one hand.",
+          "hintTranslation": "Put the bag over your shoulder to free one hand to hold the umbrella. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23219-01-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "乗ってからも、ドア付近ではご注意ください。",
+          "translation": "Please be careful near the doors after boarding too."
+        },
+        "DLG-SC-LOC-JP-23219-01-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "はい。傘を自分の側へ向けて、乗り込む方の通る所を空けます。降りる時も手に持って出ます。",
+          "hintJa": "乗降中も本人側で保持し通路を空ける。日本語で伝えてください。",
+          "translation": "Yes. I will point the umbrella toward myself and leave space for people boarding to pass. I will also carry it in my hand when I get off.",
+          "hintTranslation": "Keep holding it toward yourself during boarding and alighting, and leave the passage clear. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23219-01-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "ご協力ありがとうございます。それでは、お気をつけてお乗りください。",
+          "translation": "Thank you for your cooperation. Please take care as you board."
+        }
+      }
+    },
+    "SC-LOC-JP-23219-02-001": {
+      "turns": {
+        "DLG-SC-LOC-JP-23219-02-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "講座のお申し込みについて、ご質問ですか。",
+          "translation": "Do you have a question about registering for the course?"
+        },
+        "DLG-SC-LOC-JP-23219-02-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "はい。案内に質疑の時間があります。初めて参加するので、質問する時の順番を教えてください。",
+          "hintJa": "初参加講座の質疑で発言順の取り方を尋ねる。日本語で伝えてください。",
+          "translation": "Yes. The information says there is time for questions. This will be my first time attending, so please tell me how to take my turn when asking a question.",
+          "hintTranslation": "Ask how to take your turn to speak during questions at a course you are attending for the first time. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23219-02-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "進行役がご案内します。手を挙げ、指名されてからマイクでお話しください。",
+          "translation": "The moderator will guide you. Raise your hand and speak into the microphone after you are called on."
+        },
+        "DLG-SC-LOC-JP-23219-02-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "分かりました。聞きたいことが三つあるのですが、一度に全部話してよいでしょうか。",
+          "hintJa": "三つの質問を一度に話してよいか確認する。日本語で伝えてください。",
+          "translation": "Understood. I have three things I would like to ask. May I ask them all at once?",
+          "hintTranslation": "Check whether you may ask three questions at once. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23219-02-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "まず一つを短くお話しください。残りの質問は、進行役へお知らせください。",
+          "translation": "Please start with one brief question. Tell the moderator about your remaining questions."
+        },
+        "DLG-SC-LOC-JP-23219-02-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "一番聞きたいことを先にします。残り二つはメモして、時間があるか進行役に聞きます。",
+          "hintJa": "最優先の一問を選び残りは進行役へ相談する。日本語で伝えてください。",
+          "translation": "I will ask my most important question first. I will note down the other two and ask the moderator whether there is time for them.",
+          "hintTranslation": "Choose your highest-priority question and consult the moderator about the others. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23219-02-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "話し終えたら、マイクは係へお戻しください。",
+          "translation": "When you finish speaking, please return the microphone to a staff member."
+        },
+        "DLG-SC-LOC-JP-23219-02-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "係の方へ返すのですね。次の人へ渡そうと席を移動せず、その場で返します。",
+          "hintJa": "発言後は席を移動せず係へマイクを返すと確認する。日本語で伝えてください。",
+          "translation": "So I return it to the staff. I will give it back where I am instead of leaving my seat to pass it to the next person.",
+          "hintTranslation": "Confirm that after speaking you will return the microphone to staff without leaving your seat. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23219-02-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "当日の進行に変更があれば、会場でご案内します。",
+          "translation": "If the proceedings change on the day, we will explain at the venue."
+        },
+        "DLG-SC-LOC-JP-23219-02-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "当日の説明も聞きます。手を挙げて指名を待ち、質問の後はマイクを返す流れで準備しておきます。",
+          "hintJa": "当日の説明に従い指名待ちと返却の流れを準備する。日本語で伝えてください。",
+          "translation": "I will listen to the instructions on the day too. I will prepare to raise my hand, wait to be called on, and return the microphone after my question.",
+          "hintTranslation": "Follow the day's instructions and prepare for the sequence of waiting to be called on and returning the microphone. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23219-02-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "それでは、当日のご参加をお待ちしています。失礼いたします。",
+          "translation": "We look forward to seeing you on the day. Goodbye."
+        }
+      }
+    },
+    "SC-LOC-JP-23219-03-001": {
+      "turns": {
+        "DLG-SC-LOC-JP-23219-03-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "検査の準備について、確認させてください。",
+          "translation": "Let me check with you about preparation for the examination."
+        },
+        "DLG-SC-LOC-JP-23219-03-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "指輪を外そうとしていますが、今日は指がむくんで抜けません。力を入れて引く前に相談したいです。",
+          "hintJa": "むくみで指輪を外せず無理に引く前に相談する。日本語で伝えてください。",
+          "translation": "I am trying to take off my ring, but my finger is swollen today and it will not come off. I would like to ask before pulling hard.",
+          "hintTranslation": "Explain that swelling prevents you from removing your ring and ask for help before pulling forcefully. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23219-03-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "そのままにして、こちらで状況を確認します。痛みはありますか。",
+          "translation": "Please leave it as it is, and we will check the situation. Does it hurt?"
+        },
+        "DLG-SC-LOC-JP-23219-03-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "引いた時に少し痛かったので、今は引いていません。指輪は右手の薬指です。",
+          "hintJa": "右薬指で引くと痛み今は引いていないと伝える。日本語で伝えてください。",
+          "translation": "It hurt a little when I pulled, so I am not pulling now. The ring is on the ring finger of my right hand.",
+          "hintTranslation": "Say it is on your right ring finger, that pulling hurt, and that you are not pulling now. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23219-03-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "検査担当へお伝えします。別のアクセサリーは外せましたか。",
+          "translation": "I will tell the examination staff. Were you able to remove your other accessories?"
+        },
+        "DLG-SC-LOC-JP-23219-03-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "ネックレスは外して、自分の袋に入れました。残っているのは、この指輪だけです。",
+          "hintJa": "首飾りは保管済みだが指輪一つが残ると報告する。日本語で伝えてください。",
+          "translation": "I have taken off my necklace and put it in my own bag. This ring is the only item still on.",
+          "hintTranslation": "Report that you have put away your necklace but one ring remains. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23219-03-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "指輪をした状態での対応も、担当が確認します。",
+          "translation": "The person in charge will also check how to handle the examination with the ring on."
+        },
+        "DLG-SC-LOC-JP-23219-03-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "分かりました。検査の予約時刻が近いのですが、この確認に時間がかかりそうなことも担当へ伝えていただけますか。",
+          "hintJa": "予約時刻が近いため指輪の確認で時間がかかることを担当へ知らせてほしいと頼む。日本語で伝えてください。",
+          "translation": "Understood. My examination appointment is coming up soon. Could you also tell the person in charge that checking this may take some time?",
+          "hintTranslation": "Ask them to tell the person in charge that checking the ring may take time, since your appointment time is near. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23219-03-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "予約の担当にも伝えます。こちらでお待ちいただけますか。",
+          "translation": "I will tell the appointment staff as well. Could you wait here?"
+        },
+        "DLG-SC-LOC-JP-23219-03-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "はい。右の薬指の指輪が外れないことと、引くと痛かったことを、担当にも説明します。",
+          "hintJa": "待機して右薬指の状況と牽引時痛みを説明する。日本語で伝えてください。",
+          "translation": "Yes. I will also explain to the person in charge that the ring on my right ring finger will not come off and that it hurt when I pulled.",
+          "hintTranslation": "Wait and explain the situation with your right ring finger and the pain when pulling. Say this in Japanese."
+        },
+        "DLG-SC-LOC-JP-23219-03-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "それでは、担当を呼びます。このままお待ちください。お大事になさってください。",
+          "translation": "I will call the person in charge. Please wait here as you are. Take care."
+        }
+      }
+    }
+  }
+}
