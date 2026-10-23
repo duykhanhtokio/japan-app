@@ -1,5 +1,5 @@
 {
-  "status": "AUTHOR_READY_PACKS_CHECKPOINT",
+  "status": "PASS_AI_TRANSLATION_COHORT",
   "scopeBatches": [
     "450",
     "451",
@@ -16,16 +16,15 @@
   ],
   "baselineCommit": "ea6540844510696b821db905e4b95485958db0e4",
   "preparedScenarios": 120,
-  "localeFiles": 141,
-  "readyFileUtterances": 15510,
-  "readyFileTaskHints": 7050,
-  "completeScenarios": 4581,
-  "remainingScenarios": 2547,
-  "missingLocaleFiles": [
-    "src/data/dialogue-content/locale-batches/km/456.json",
-    "src/data/dialogue-content/locale-batches/km/458.json",
-    "src/data/dialogue-content/locale-batches/km/457.json"
-  ],
+  "addedIntegratedScenarios": 120,
+  "localeFiles": 144,
+  "readyFileUtterances": 15840,
+  "readyFileTaskHints": 7200,
+  "completeScenarios": 4611,
+  "remainingScenarios": 2517,
+  "authorHoldFiles": 0,
+  "missingLocaleFiles": [],
+  "preservedPreexistingLocaleFiles": 5400,
   "authorReadyMarkers": [
     {
       "owner": "dialogue_en_vi",
@@ -752,7 +751,7 @@
       "language": "ne",
       "batch": "456",
       "path": "src/data/dialogue-content/locale-batches/ne/456.json",
-      "sha256": "bb4a0e7a69e1f32c38794c36a8fe7ffa5de35ffc1ffaf708d3fec421116cac68",
+      "sha256": "e9e334714a5ed3de4d4606798fe51aa05f30f8704d8b82c450a9c620e07862cb",
       "sourceSha256": "c3785b622256dc7bc921f3271df60bda16985fab6acf5d36b3251d33480faff1",
       "fullUtteranceFidelityChecked": true
     },
@@ -771,6 +770,15 @@
       "batch": "456",
       "path": "src/data/dialogue-content/locale-batches/th/456.json",
       "sha256": "646f8ee06e78e4003d649895f38e2171dd705228ac2b95cd3d3764320bee6a51",
+      "sourceSha256": "c3785b622256dc7bc921f3271df60bda16985fab6acf5d36b3251d33480faff1",
+      "fullUtteranceFidelityChecked": true
+    },
+    {
+      "owner": "dialogue_en_vi",
+      "language": "km",
+      "batch": "456",
+      "path": "src/data/dialogue-content/locale-batches/km/456.json",
+      "sha256": "b95870c64c1a3f400884e03649194bd2075623d0207e36382bb40de9b10f36de",
       "sourceSha256": "c3785b622256dc7bc921f3271df60bda16985fab6acf5d36b3251d33480faff1",
       "fullUtteranceFidelityChecked": true
     },
@@ -982,6 +990,15 @@
       "fullUtteranceFidelityChecked": true
     },
     {
+      "owner": "dialogue_zh",
+      "language": "km",
+      "batch": "458",
+      "path": "src/data/dialogue-content/locale-batches/km/458.json",
+      "sha256": "dc28e02b24203ce9acd4525197ceb6d514ee71f79acdb230897030d99b6bc82b",
+      "sourceSha256": "28f1c2f87a5c7a5e7733ba4ab489030422b4bd34d264443c95e314c0645af19a",
+      "fullUtteranceFidelityChecked": true
+    },
+    {
       "owner": "dialogue_hi_bn",
       "language": "en",
       "batch": "459",
@@ -1189,6 +1206,15 @@
       "fullUtteranceFidelityChecked": true
     },
     {
+      "owner": "dialogue_id_tl",
+      "language": "km",
+      "batch": "457",
+      "path": "src/data/dialogue-content/locale-batches/km/457.json",
+      "sha256": "08a4efd868bd411560872d036fbd05ea347ee601271e91db0ce1dd4d452a803a",
+      "sourceSha256": "73ae023834876f438c36fe3959360ad867aa03dcc84a2f12000e5cb53e1ffac6",
+      "fullUtteranceFidelityChecked": true
+    },
+    {
       "owner": "dialogue_th_km",
       "language": "en",
       "batch": "461",
@@ -1297,24 +1323,23 @@
       "fullUtteranceFidelityChecked": true
     }
   ],
+  "actualLoader": {
+    "status": "PASS",
+    "actualLoader": true,
+    "authoredNpcRubyLines": 36,
+    "authoredPlayerRubyLines": 20,
+    "actualScenarios": 4611,
+    "actualTurns": 608652,
+    "actualHints": 276660,
+    "lazyJsonModulesRead": 10236,
+    "moduleCacheLimit": 32,
+    "directAndGenericScenarioBindings": true,
+    "stableTurnIds": true,
+    "staleSourceRejected": true,
+    "speakerMismatchRejected": true,
+    "fixturesOnly": false
+  },
   "nativeReviewed": false,
   "semanticCrossReview": false,
-  "finalLoaderQa": "Deferred until the complete cohort; no full-cohort completion claim",
-  "remotePersistence": "Publication must pass exact tree/blob/ref readback and scoped WORK PERSISTENCE gate",
-  "controlledOwnAuthorRevisions": [
-    {
-      "owner": "dialogue_hi_bn",
-      "language": "zh-CN",
-      "batch": "459",
-      "path": "src/data/dialogue-content/locale-batches/zh-CN/459.json",
-      "status": "RECHECKED_FULL_BY_AUTHOR",
-      "previousSha256": "8203d5052e7688a23c32151f37c70cdc9584ba7620033f24d2b14c3bd0aa7e35",
-      "previousVersionPersisted": false,
-      "resolvedSha256": "b51665e1fd18d6492ece36783d59148e796f64e4bd19df1629dec6bd3abc141a",
-      "fullUtteranceFidelityChecked": true,
-      "resolvedAt": "2026-10-23T06:54:40.055Z",
-      "resolution": "Own author one-unit typo correction; immutable prior/revised pack and markers archived in docs/localization-workspace/translation-revisions/459/zh-CN/revision-01",
-      "nativeReviewed": false
-    }
-  ]
+  "remotePersistence": "Final publication and scoped WORK PERSISTENCE verification required"
 }

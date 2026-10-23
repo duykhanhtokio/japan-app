@@ -2371,3 +2371,16 @@ Integrated 459: all12 own-source-fidelity markers, logical owners, exact final f
 ## Continuation450–461 2026-10-23T07:09:50.970Z
 
 Integrated 460,461: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 4581/7128; remaining 2547. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+Own ne456 author withdrew initial readiness and corrected a partial-information wording. One utterance changed; exact source, prior/revised bytes and markers preserved in translation-revisions/456/ne/revision-01. Original unintegrated version was not counted complete. Native/domain review false; no semantic cross-review.
+
+
+## Continuation450–461 2026-10-23T07:13:00.556Z
+
+Integrated 456,457,458: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 4611/7128; remaining 2517. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+### Cohort450–461 complete
+
+All144 immutable own-source-fidelity-checked locale packs integrated:120 new scenarios across12 languages,15,840 utterances and7,200 task hints. Exact canonical source/ID/speaker/task and marker hashes pass. Actual app loader PASS4611 scenarios; 5400 preexisting locale files unchanged. Complete4611/7128, remaining2517; no author holds. Native/domain review false; no semantic cross-review. Next unstarted source462,start4611. Final remote publication and scoped persistence verification follow.
