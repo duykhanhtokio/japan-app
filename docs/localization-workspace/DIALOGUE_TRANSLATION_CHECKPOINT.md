@@ -2084,3 +2084,8 @@ Integrated 426: all12 own-source-fidelity markers, logical owners, exact final f
 ## Continuation426–431 2026-10-23T04:00:40.945Z
 
 Integrated 427: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 4271/7128; remaining 2857. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+## Own-author editorial withdrawal426–429
+
+Hindi/Bengali author withdrew final readiness for all8 own packs426–429 due to telegraphic target utterances. Hold status REVISION_REQUIRED; previous immutable packs/markers archived under translation-revisions. Exact-source technical coverage remains separate. Held indexed scenarios excluded from complete counts until author-reviewed complete revisions carry matching new hashes. No semantic cross-review.
