@@ -1,0 +1,697 @@
+{
+  "language": "en",
+  "status": "translated_ai_unreviewed",
+  "nativeReviewed": false,
+  "scenarios": {
+    "SC-LOC-JP-25209-06-001": {
+      "turns": {
+        "DLG-SC-LOC-JP-25209-06-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "登録する送金先の表示について、ご質問ですか。",
+          "translation": "Do you have a question about how a transfer recipient you register is displayed?"
+        },
+        "DLG-SC-LOC-JP-25209-06-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "自分で付ける名前の欄へ「家賃」と書きたいです。相手の口座名を家賃に変える意味ではないですよね。",
+          "hintJa": "自分用送金先ラベルと受取人名変更を区別して尋ねる。日本語で伝えてください。",
+          "translation": "I want to write “Rent” in the field for a name I choose myself. That doesn't mean changing the other person's account name to “Rent,” does it?",
+          "hintTranslation": "Ask about the distinction between a transfer recipient label for your own use and changing the recipient's name. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25209-06-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "この欄は、ご自身が見分けるための呼び名です。受取人名は別に表示されます。",
+          "translation": "This field is a name for your own identification. The recipient's name is displayed separately."
+        },
+        "DLG-SC-LOC-JP-25209-06-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "では、自分用の目印として書きます。今は前の家と新しい家の二つがあるので、両方を家賃だけにすると迷いそうです。",
+          "hintJa": "二住居を同じ家賃名にすると迷うと説明する。日本語で伝えてください。",
+          "translation": "Then I'll write it as a label for myself. I currently have both my previous home and my new home, so calling both just “Rent” could be confusing.",
+          "hintTranslation": "Explain that giving both homes the same “Rent” name would be confusing. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25209-06-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "それぞれ見分けられる呼び名をお考えください。送金先自体は資料と照合してください。",
+          "translation": "Please choose names that let you distinguish them. Check the actual transfer recipients against your documents."
+        },
+        "DLG-SC-LOC-JP-25209-06-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "「前の住まい」と「今の住まい」に分けます。部屋の愛称だけでは相手を特定できないので、銀行名と番号も見ます。",
+          "hintJa": "二呼称に分け資料上の銀行名番号も照合すると述べる。日本語で伝えてください。",
+          "translation": "I'll separate them as “Previous home” and “Current home.” A nickname for the room alone can't identify the recipient, so I'll also check the bank name and number.",
+          "hintTranslation": "State that you will use two different names and also check the bank names and numbers on the documents. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25209-06-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "登録しただけでは、振込を行ったことにはなりません。",
+          "translation": "Registering a recipient alone does not mean you have made a transfer."
+        },
+        "DLG-SC-LOC-JP-25209-06-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "今日は表示を整理するだけです。新しい家へ払う日に、呼び名だけで選ばず受取人も確認します。",
+          "hintJa": "今日は表示整理だけで支払日には実受取人を確認する。日本語で伝えてください。",
+          "translation": "Today I'm only organizing the display. On the day I pay for my new home, I'll check the recipient too, rather than selecting by the label alone.",
+          "hintTranslation": "Explain that today you are only organizing the display and will check the actual recipient on the payment day. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25209-06-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "古い送金先を今後使うかも、ご自身でご検討ください。",
+          "translation": "Please also consider for yourself whether you will use the old transfer recipient again."
+        },
+        "DLG-SC-LOC-JP-25209-06-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "前の家の精算が残るので、すぐ消しません。精算を確認してから残すか決め、今の分とは別の呼び名にします。",
+          "hintJa": "旧住居精算が残るため即削除せず新旧呼称を分ける。日本語で伝えてください。",
+          "translation": "There is still a settlement outstanding for my previous home, so I won't delete it immediately. After checking the settlement, I'll decide whether to keep it and give it a different label from my current home.",
+          "hintTranslation": "Explain that you will not immediately delete the old home because its settlement is outstanding and will distinguish the old and new labels. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25209-06-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "担当が登録画面をご案内します。それでは、失礼いたします。",
+          "translation": "The staff member will guide you through the registration screen. Goodbye."
+        }
+      }
+    },
+    "SC-LOC-JP-25209-07-001": {
+      "turns": {
+        "DLG-SC-LOC-JP-25209-07-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "レシートについて、ご質問でしょうか。",
+          "translation": "Do you have a question about the receipt?"
+        },
+        "DLG-SC-LOC-JP-25209-07-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "二種類のパンを買いましたが、どちらもレシートには「パン」とだけあります。家族へ渡す時に分けて説明したいです。",
+          "hintJa": "同一レシート品名の二種パンを家族へ区別したいと相談する。日本語で伝えてください。",
+          "translation": "I bought two kinds of bread, but both are listed simply as “Bread” on the receipt. I want to explain the difference when I give them to my family.",
+          "hintTranslation": "Ask about distinguishing two kinds of bread with the same receipt item name for your family. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25209-07-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "商品の包装はお持ちですか。",
+          "translation": "Do you have the product packaging?"
+        },
+        "DLG-SC-LOC-JP-25209-07-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "はい。片方はクリーム入り、もう片方は中身のない丸パンです。レシートの名前だけで、中身まで同じと思っていました。",
+          "hintJa": "包装を示し中身が異なる二商品を説明する。日本語で伝えてください。",
+          "translation": "Yes. One has cream inside and the other is a plain round roll. Based only on the receipt name, I thought the contents were the same too.",
+          "hintTranslation": "Show the packaging and explain that the contents of the two products differ. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25209-07-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "こちらの商品ごとに、お会計の価格を確認しましょう。",
+          "translation": "Let's check the price charged for each of these products."
+        },
+        "DLG-SC-LOC-JP-25209-07-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "値段は合っていました。返品したいのではなく、家族用にどちらを買ったか説明を残したいです。",
+          "hintJa": "価格一致と返品でなく購入説明目的を述べる。日本語で伝えてください。",
+          "translation": "The prices were correct. I don't want to return them; I want to leave a note explaining which ones I bought for my family.",
+          "hintTranslation": "State that the prices match and your purpose is to explain the purchase, not return it. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25209-07-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "包装の表示で、それぞれの商品名を確認できます。",
+          "translation": "You can check each product name on its packaging label."
+        },
+        "DLG-SC-LOC-JP-25209-07-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "商品名を自分のメモへ書きます。レシートに新しい品名を足して、店がそう印字したようには見せません。",
+          "hintJa": "本人メモへ正式品名を書き店印字の改変をしない。日本語で伝えてください。",
+          "translation": "I'll write the product names in my own notes. I won't add new item names to the receipt and make it look as though the shop printed them that way.",
+          "hintTranslation": "Write the official product names in your own notes without altering the shop's printed receipt. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25209-07-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "袋を分けるご希望はありますか。",
+          "translation": "Would you like separate bags?"
+        },
+        "DLG-SC-LOC-JP-25209-07-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "持参袋を二つ使います。クリーム入りを姉へ、丸パンを父へ分け、包装も付けたまま渡します。",
+          "hintJa": "二持参袋で姉父用を分け包装付きで渡すと伝える。日本語で伝えてください。",
+          "translation": "I'll use the two bags I brought. I'll separate the cream-filled bread for my older sister and the round roll for my father, and give them both with the packaging still on.",
+          "hintTranslation": "Explain that you will use two bags you brought to separate your older sister's and father's bread and hand it over with its packaging. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25209-07-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "承知しました。それでは、お気をつけてお帰りください。ありがとうございました。",
+          "translation": "Certainly. Have a safe trip home. Thank you."
+        }
+      }
+    },
+    "SC-LOC-JP-25209-08-001": {
+      "turns": {
+        "DLG-SC-LOC-JP-25209-08-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "輪投げの道具を返却されますか。",
+          "translation": "Are you returning the ring toss equipment?"
+        },
+        "DLG-SC-LOC-JP-25209-08-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "はい。隣の組の輪が一つこちらへ飛んできたので、私たちの物と分けて返したいです。",
+          "hintJa": "隣組の輪が混ざり借用品と分けて返したいと述べる。日本語で伝えてください。",
+          "translation": "Yes. One ring from the neighboring group flew over to us, so I want to return it separately from ours.",
+          "hintTranslation": "Explain that a neighboring group's ring got mixed in and you want to return it separately from the borrowed equipment. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25209-08-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "お借りになった輪は、何色でしょうか。",
+          "translation": "What color are the rings you borrowed?"
+        },
+        "DLG-SC-LOC-JP-25209-08-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "私たちは青い輪です。黄色い一つは隣の組が使っていましたが、その人たちはまだ遊んでいます。",
+          "hintJa": "本人青輪と使用継続中の隣組黄色を区別する。日本語で伝えてください。",
+          "translation": "Ours are blue. The neighboring group was using the one yellow ring, but those people are still playing.",
+          "hintTranslation": "Distinguish your blue rings from the neighboring group's yellow one while they are still playing. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25209-08-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "こちらの黄色は、私から隣の組へ確認します。青い輪を数えてください。",
+          "translation": "I'll check this yellow one with the neighboring group. Please count the blue rings."
+        },
+        "DLG-SC-LOC-JP-25209-08-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "青は五つそろっています。黄色を足して六つ借りたことにはしません。",
+          "hintJa": "青五つを確認し黄色を貸出数へ加えない。日本語で伝えてください。",
+          "translation": "All five blue ones are here. I won't add the yellow one and say we borrowed six.",
+          "hintTranslation": "Confirm the five blue rings and do not include the yellow one in your borrowed total. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25209-08-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "台の方も、ご返却でしょうか。",
+          "translation": "Are you returning the stand too?"
+        },
+        "DLG-SC-LOC-JP-25209-08-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "台も戻します。輪を台へ無理に押し込まず、青い五つを横へ重ねて渡します。",
+          "hintJa": "台と輪を無理に押込まず分けて返す。日本語で伝えてください。",
+          "translation": "I'll return the stand too. I'll stack the five blue rings beside it and hand them over, without forcing the rings into the stand.",
+          "hintTranslation": "Return the stand and rings separately without forcing the rings into it. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25209-08-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "お借りになった一組として確認できました。",
+          "translation": "I've confirmed this is the one set you borrowed."
+        },
+        "DLG-SC-LOC-JP-25209-08-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "黄色い物は職員さんへ別に渡しました。隣の組の数は私には分からないので、その確認はお任せします。",
+          "hintJa": "隣組の総数は不明として黄色の照合を職員へ任せる。日本語で伝えてください。",
+          "translation": "I handed the yellow one separately to a staff member. I don't know the neighboring group's total, so I'll leave that check to you.",
+          "hintTranslation": "Explain that you do not know the neighboring group's total and leave checking the yellow ring to the staff. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25209-08-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "一組をお預かりしました。それでは、またご利用ください。さようなら。",
+          "translation": "We've received the set. Please come again. Goodbye."
+        }
+      }
+    },
+    "SC-LOC-JP-25210-01-001": {
+      "turns": {
+        "DLG-SC-LOC-JP-25210-01-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "お召し物に白い粉が付いているようですね。",
+          "translation": "You seem to have some white powder on your clothing."
+        },
+        "DLG-SC-LOC-JP-25210-01-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "パン作りの作業後で、エプロンを脱ぎ忘れました。待合の椅子へ座る前にしまいたいです。",
+          "hintJa": "パン作りエプロンを脱ぎ忘れ着席前に収納したいと述べる。日本語で伝えてください。",
+          "translation": "I forgot to take off my apron after making bread. I want to put it away before sitting on a chair in the waiting area.",
+          "hintTranslation": "Explain that you forgot to remove your bread-making apron and want to put it away before sitting down. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-01-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "通路で粉を払わず、人の少ない所で外してください。",
+          "translation": "Please take it off where there are few people, without brushing the flour off in the passageway."
+        },
+        "DLG-SC-LOC-JP-25210-01-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "はたくのはやめます。中へ折ってから持参した袋に入れたいので、少し立ち止まれる所はありますか。",
+          "hintJa": "粉を払わず内折り収納のため停止場所を求める。日本語で伝えてください。",
+          "translation": "I won't shake it off. I'd like to fold it inward and put it in the bag I brought. Is there somewhere I can stop briefly?",
+          "hintTranslation": "Ask for a place to stop so you can fold the apron inward and put it away without brushing off the flour. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-01-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "こちらの端なら、通行を妨げず外せます。",
+          "translation": "You can take it off at this side without blocking people passing through."
+        },
+        "DLG-SC-LOC-JP-25210-01-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "ここで外します。粉が付いた面を内側にして、椅子には置かず袋へ入れました。",
+          "hintJa": "端で粉面を内にして椅子へ置かず袋へ収める。日本語で伝えてください。",
+          "translation": "I'll take it off here. I put it in my bag with the flour-covered side folded inward, without placing it on a chair.",
+          "hintTranslation": "At the side, fold the flour-covered side inward and put it in your bag without placing it on a chair. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-01-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "かばんや手にも、粉は付いていませんか。",
+          "translation": "Is there any flour on your bag or hands too?"
+        },
+        "DLG-SC-LOC-JP-25210-01-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "持ち手に少しあります。乾いた紙でこすると散りそうなので、持っている湿った布で自分の持ち手だけ拭きます。",
+          "hintJa": "かばんの持ち手の粉を散らさず本人布で拭くと伝える。日本語で伝えてください。",
+          "translation": "There's a little on the handle. Rubbing it with dry paper might scatter it, so I'll use the damp cloth I have to wipe only my own bag handle.",
+          "hintTranslation": "Explain that you will wipe the flour from your bag handle with your own cloth without scattering it. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-01-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "駅の椅子などに付いていたら、職員へお知らせください。",
+          "translation": "If there is any on the station's chairs or other surfaces, please tell a staff member."
+        },
+        "DLG-SC-LOC-JP-25210-01-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "椅子にはまだ座っていません。身の回りを整えてから待合へ入り、袋も人の席へ載せません。",
+          "hintJa": "未着席を明示し整えてから入室して席を荷物で占めない。日本語で伝えてください。",
+          "translation": "I haven't sat on a chair yet. I'll tidy myself and my belongings before entering the waiting area, and I won't put my bag on someone else's seat either.",
+          "hintTranslation": "Make clear that you have not sat down, will tidy up before entering, and will not occupy seats with luggage. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-01-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "ありがとうございます。それでは、ご出発までおくつろぎください。失礼します。",
+          "translation": "Thank you. Please relax until your departure. Goodbye."
+        }
+      }
+    },
+    "SC-LOC-JP-25210-02-001": {
+      "turns": {
+        "DLG-SC-LOC-JP-25210-02-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "清掃活動では、どの係を希望されますか。",
+          "translation": "Which role would you like in the cleanup activity?"
+        },
+        "DLG-SC-LOC-JP-25210-02-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "道具の受取りを手伝えます。途中でごみ拾いにも行きたいですが、両方を同時にできるか相談したいです。",
+          "hintJa": "道具受取りと拾ごみ参加を兼ねられるか相談する。日本語で伝えてください。",
+          "translation": "I can help receive the equipment. I'd also like to go pick up litter partway through, but I want to ask whether I can do both at the same time.",
+          "hintTranslation": "Ask whether you can combine receiving equipment with participating in litter collection. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-02-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "受取り係には、戻ってくる人を待つ時間があります。作業へ出る間、代わりの方が必要です。",
+          "translation": "Those receiving equipment need to wait for people to return. You will need someone to cover for you while you go out to work."
+        },
+        "DLG-SC-LOC-JP-25210-02-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "なら、最初から両方を引き受けたと言わないほうがよいですね。受取りが終わるまでは受付に残ります。",
+          "hintJa": "代替要員なしで兼任を引受けず受付残留を考える。日本語で伝えてください。",
+          "translation": "Then I shouldn't say I've taken on both roles from the start. I'll stay at reception until receiving the equipment is finished.",
+          "hintTranslation": "Consider staying at reception rather than accepting both roles without a replacement. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-02-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "作業へ参加する時間を優先したいご希望なら、ほかの係も検討できます。",
+          "translation": "If you want to prioritize time participating in the cleanup, we can consider other roles too."
+        },
+        "DLG-SC-LOC-JP-25210-02-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "今日は時間が短いので、道具を集める方だけにします。集めた袋の中身を私が開けて仕分けする役ではありませんね。",
+          "hintJa": "短時間のため道具回収のみ選び袋内容仕分けと区別する。日本語で伝えてください。",
+          "translation": "I have little time today, so I'll just collect the equipment. That doesn't mean I'm supposed to open the collected rubbish bags and sort their contents, does it?",
+          "hintTranslation": "Choose only equipment collection because time is short, and distinguish that from sorting the bags' contents. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-02-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "はい、回収物の扱いは担当が行います。返された道具をまとめる係です。",
+          "translation": "That's right. The person in charge handles the collected waste. Your role is to gather the returned equipment."
+        },
+        "DLG-SC-LOC-JP-25210-02-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "道具だけ確認します。壊れた物があったら自分で修理せず、ほかの物と分けて担当へ知らせます。",
+          "hintJa": "返却道具の破損は修理せず分け報告すると述べる。日本語で伝えてください。",
+          "translation": "I'll check only the equipment. If anything is broken, I won't repair it myself; I'll separate it from the other items and tell the person in charge.",
+          "hintTranslation": "State that you will separate and report damaged returned equipment instead of repairing it. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-02-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "確認したことを、交代する方へ伝えてください。",
+          "translation": "Please tell the person taking over what you have checked."
+        },
+        "DLG-SC-LOC-JP-25210-02-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "数がそろった物と破損を報告した物を分けて引き継ぎます。交代相手が来てから持ち場を離れます。",
+          "hintJa": "正常破損を区別し交代到着後に離れると伝える。日本語で伝えてください。",
+          "translation": "I'll distinguish the items whose counts are complete from those whose damage I've reported when handing over. I'll leave my post after my replacement arrives.",
+          "hintTranslation": "Explain that you will distinguish intact and damaged items and leave after your replacement arrives. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-02-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "その役割でお願いします。それでは、当日お待ちしております。失礼します。",
+          "translation": "Please take that role. We'll see you on the day. Goodbye."
+        }
+      }
+    },
+    "SC-LOC-JP-25210-03-001": {
+      "turns": {
+        "DLG-SC-LOC-JP-25210-03-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "体温の記録をお持ちですね。",
+          "translation": "You have your temperature record with you."
+        },
+        "DLG-SC-LOC-JP-25210-03-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "母が「温かかったから熱があった」と言いますが、その時は測っていません。数字を足さず、そう言われたことだけ伝えます。",
+          "hintJa": "家族触感の発熱印象を測定値として追加しないと述べる。日本語で伝えてください。",
+          "translation": "My mother says, “You felt warm, so you had a fever,” but I didn't measure it then. I won't add a number; I'll only report what she said.",
+          "hintTranslation": "State that you will not add your family's impression of fever from touch as a measured value. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-03-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "測った時の記録はありますか。",
+          "translation": "Do you have a record from when you measured it?"
+        },
+        "DLG-SC-LOC-JP-25210-03-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "昨夜測った数字はここにあります。母が額を触ったのは今朝なので、時刻も違います。",
+          "hintJa": "昨夜の測定と今朝の触感の時刻差を示す。日本語で伝えてください。",
+          "translation": "The number I measured last night is here. My mother touched my forehead this morning, so the times are different too.",
+          "hintTranslation": "Show the time difference between last night's measurement and this morning's impression from touch. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-03-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "その二つを別々に伺います。測った物は、ご自身の体温計ですか。",
+          "translation": "We'll ask about those separately. Was the thermometer you used your own?"
+        },
+        "DLG-SC-LOC-JP-25210-03-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "自分の物です。ただ、測った直後に表示を読む前、家族に呼ばれて少し席を離れました。その経過も言っておきたいです。",
+          "hintJa": "本人機器と表示確認前の離席経過を申告する。日本語で伝えてください。",
+          "translation": "It was mine. However, just after measuring, before I read the display, my family called me and I left my seat briefly. I'd like to explain that sequence too.",
+          "hintTranslation": "Report that the device was yours and that you left before checking the display. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-03-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "測り方についての不明点は、診療担当が確認します。",
+          "translation": "The medical staff will check any uncertainties about how you measured it."
+        },
+        "DLG-SC-LOC-JP-25210-03-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "お願いします。数字を消して母の感覚だけにするのではなく、測定の経過を添えます。",
+          "hintJa": "数字を家族感覚で置換せず測定条件を添える。日本語で伝えてください。",
+          "translation": "Please do. Rather than erasing the number and replacing it with just my mother's impression, I'll include the circumstances of the measurement.",
+          "hintTranslation": "Include the measurement conditions without replacing the number with your family's impression. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-03-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "今のご様子についても、先生へお話しいただけます。",
+          "translation": "You can also tell the doctor how you feel now."
+        },
+        "DLG-SC-LOC-JP-25210-03-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "昨夜の記録と今朝の家族の言葉を分け、今の様子は診察で自分から話します。",
+          "hintJa": "過去記録家族発言現在状態を分け医師へ話す。日本語で伝えてください。",
+          "translation": "I'll distinguish last night's record from my family's words this morning, and describe my current condition myself during the consultation.",
+          "hintTranslation": "Distinguish the past record, your family's comments, and your current condition when speaking to the doctor. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-03-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "その内容を担当へ申し送ります。それでは、お大事になさってください。",
+          "translation": "I'll pass that information to the person in charge. Take care."
+        }
+      }
+    },
+    "SC-LOC-JP-25210-04-001": {
+      "turns": {
+        "DLG-SC-LOC-JP-25210-04-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "先ほどお返しした財布について、ご質問ですか。",
+          "translation": "Do you have a question about the wallet we returned earlier?"
+        },
+        "DLG-SC-LOC-JP-25210-04-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "はい。私の財布で間違いありませんが、中に見覚えのない名刺が一枚ありました。帰る前にお伝えしたいです。",
+          "hintJa": "本人財布で一致するが未知名刺一枚が混入していたと報告する。日本語で伝えてください。",
+          "translation": "Yes. It is definitely my wallet, but there was one business card inside that I don't recognize. I want to tell you before I leave.",
+          "hintTranslation": "Report that the wallet is yours but one unfamiliar business card was inside. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-04-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "どちらの名刺でしょうか。取り出していただけますか。",
+          "translation": "Which business card is it? Could you take it out?"
+        },
+        "DLG-SC-LOC-JP-25210-04-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "こちらです。なくす前には入れていませんでした。ただ、拾った人が入れたと分かったわけではありません。",
+          "hintJa": "名刺を示し紛失前なしと挿入者未確認を分ける。日本語で伝えてください。",
+          "translation": "This one. It wasn't inside before I lost the wallet. However, that doesn't mean I've established that the person who found it put it in.",
+          "hintTranslation": "Show the business card and distinguish its absence before the loss from the unconfirmed identity of whoever inserted it. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-04-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "受取りの時に確認した内容も担当へ照会します。",
+          "translation": "I'll also ask the person in charge what was checked when it was received."
+        },
+        "DLG-SC-LOC-JP-25210-04-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "お願いします。財布が私の物だったという確認は変えません。この名刺だけ、元からあった物として扱わないでください。",
+          "hintJa": "財布所有確認は維持し名刺だけ元所持品扱いにしないと頼む。日本語で伝えてください。",
+          "translation": "Please do. I'm not changing my confirmation that the wallet was mine. Please just don't treat this business card as something that was originally mine.",
+          "hintTranslation": "Maintain your confirmation of wallet ownership and ask that only the business card not be treated as an original possession. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-04-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "この名刺に書かれた方へ、ご自身で連絡しましたか。",
+          "translation": "Have you contacted the person named on this card yourself?"
+        },
+        "DLG-SC-LOC-JP-25210-04-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "まだです。財布を拾ってくれた人だと思ってお礼の電話をする前に、名刺が入っていたことを確認したいです。",
+          "hintJa": "拾得者と思い礼電話する前で未連絡と説明する。日本語で伝えてください。",
+          "translation": "Not yet. Before calling to thank them under the assumption that they found my wallet, I want to confirm how the card came to be inside.",
+          "hintTranslation": "Explain that you have not contacted them and want to check before calling to thank them as the finder. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-04-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "担当が状況を確認する間、少しお待ちいただけますか。",
+          "translation": "Could you wait a little while the person in charge checks the circumstances?"
+        },
+        "DLG-SC-LOC-JP-25210-04-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "待ちます。名刺を財布へ戻さず担当の方に見ていただき、自分のカードが全部戻ったかも確かめてから帰ります。",
+          "hintJa": "未知名刺を財布へ戻さず職員へ示し本人カードの返却も確認して退出する。日本語で伝えてください。",
+          "translation": "I'll wait. I'll show the card to the person in charge without putting it back in the wallet, and check that all my own cards have been returned before leaving.",
+          "hintTranslation": "Show the unfamiliar card to staff without returning it to the wallet, and check that your own cards have been returned before leaving. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-04-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "内容を担当へ伝えます。お知らせいただきありがとうございました。失礼します。",
+          "translation": "I'll tell the person in charge. Thank you for letting us know. Goodbye."
+        }
+      }
+    },
+    "SC-LOC-JP-25210-05-001": {
+      "turns": {
+        "DLG-SC-LOC-JP-25210-05-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "こちらの箱をお送りになりますか。",
+          "translation": "Are you sending this box?"
+        },
+        "DLG-SC-LOC-JP-25210-05-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "友人へ古い参考書を送りたかったのですが、今の返事で必要ないと言われました。用意したからと送らず、いったんやめます。",
+          "hintJa": "友人が不要と返答した参考書贈物の発送を取消す意向を示す。日本語で伝えてください。",
+          "translation": "I wanted to send some old reference books to a friend, but they've just replied that they don't need them. I won't send them just because I've prepared them; I'll stop for now.",
+          "hintTranslation": "Indicate that you want to cancel sending the reference books as a gift because your friend said they do not need them. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-05-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "まだお預かりしていませんので、そのままお持ち帰りいただけます。",
+          "translation": "We haven't accepted it yet, so you can take it home as it is."
+        },
+        "DLG-SC-LOC-JP-25210-05-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "はい。先に送料を払えば送るしかないと思って急いでいましたが、まだ差し出していませんね。",
+          "hintJa": "準備しても未差出しなので送料手続を急がないと確認する。日本語で伝えてください。",
+          "translation": "Yes. I was hurrying because I thought paying postage first would mean I had to send it, but I haven't handed it over yet, have I?",
+          "hintTranslation": "Confirm that, despite the preparation, you have not handed it over and need not hurry through the postage procedure. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-05-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "こちらでは、まだ受付の手続きを始めておりません。",
+          "translation": "We haven't started the acceptance procedure here yet."
+        },
+        "DLG-SC-LOC-JP-25210-05-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "分かりました。友人が受け取ると返事したわけでもないので、贈り物だから喜ぶと決め付けません。",
+          "hintJa": "受取同意なしで贈り物なら喜ぶと決め付けない。日本語で伝えてください。",
+          "translation": "I understand. My friend hasn't agreed to receive it either, so I won't assume they'll be happy just because it's a gift.",
+          "hintTranslation": "Do not assume someone will welcome a gift without their agreement to receive it. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-05-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "箱は重そうですが、ご自身で運べますか。",
+          "translation": "The box looks heavy. Can you carry it yourself?"
+        },
+        "DLG-SC-LOC-JP-25210-05-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "手提げかばんへ入れて持って来たので、そのまま運べます。処分を郵便局へ頼むつもりはありません。",
+          "hintJa": "本人運搬可能と郵便局処分依頼でないと説明する。日本語で伝えてください。",
+          "translation": "I brought it inside a tote bag, so I can carry it back the same way. I'm not intending to ask the post office to dispose of it.",
+          "hintTranslation": "Explain that you can carry it yourself and are not asking the post office to dispose of it. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-05-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "別の所へ送るご予定はありますか。",
+          "translation": "Are you planning to send it somewhere else?"
+        },
+        "DLG-SC-LOC-JP-25210-05-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "まだ決めません。別の友人へ送り先だけ変えて差し出すのではなく、欲しい人がいるか自分で聞いてから考えます。",
+          "hintJa": "宛先だけ替えて再発送せず他人の希望を先に聞くと決める。日本語で伝えてください。",
+          "translation": "I won't decide yet. Instead of simply changing the address to another friend's and sending it, I'll ask whether anyone wants it before considering it.",
+          "hintTranslation": "Decide to ask others what they want first instead of sending it again with only the address changed. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-05-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "承知しました。それでは、お荷物をお忘れにならずお気をつけてお帰りください。失礼します。",
+          "translation": "Certainly. Please don't forget your parcel, and have a safe trip home. Goodbye."
+        }
+      }
+    },
+    "SC-LOC-JP-25210-06-001": {
+      "turns": {
+        "DLG-SC-LOC-JP-25210-06-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "こちらの現金をお預けになりますか。",
+          "translation": "Are you depositing this cash?"
+        },
+        "DLG-SC-LOC-JP-25210-06-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "封筒に「家賃七万円」とありますが、家賃を払う手続きではありません。今日は自分の口座へ預けるだけです。",
+          "hintJa": "家賃記載封筒だが本人預金のみと用件を示す。日本語で伝えてください。",
+          "translation": "The envelope says “Rent: 70,000 yen,” but this isn't a rent payment procedure. Today I'm only depositing it into my own account.",
+          "hintTranslation": "Explain that although the envelope says rent, your purpose is only to deposit money into your own account. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-06-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "ご自身の口座へのお預けですね。実際の金額を確認してください。",
+          "translation": "A deposit into your own account, then. Please check the actual amount."
+        },
+        "DLG-SC-LOC-JP-25210-06-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "封筒の文字を信じて七万円と言いましたが、数えると六万五千円です。五千円は昨日別の支払いに使いました。",
+          "hintJa": "七万の古記載と六万五千現金差の理由を説明する。日本語で伝えてください。",
+          "translation": "I trusted the writing on the envelope and said 70,000 yen, but when I count it, it's 65,000 yen. I used 5,000 yen for another payment yesterday.",
+          "hintTranslation": "Explain the reason for the difference between the old 70,000-yen note and the 65,000 yen in cash. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-06-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "お預けの金額を、実際の現金に合わせましょう。",
+          "translation": "Let's make the deposit amount match the actual cash."
+        },
+        "DLG-SC-LOC-JP-25210-06-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "六万五千円としてお願いします。家賃に足りない五千円をどう用意するかは、帰ってから自分の家計を見直します。",
+          "hintJa": "六万五千の実額入金を頼み不足五千の準備を本人家計で検討すると述べる。日本語で伝えてください。",
+          "translation": "Please deposit 65,000 yen. After I go home, I'll review my own household budget to work out how to cover the 5,000 yen shortfall in rent.",
+          "hintTranslation": "Request a deposit of the actual 65,000 yen and say you will consider how to cover the missing 5,000 yen through your household budget. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-06-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "今日のお預けと、今後のお支払いの準備は分けてご確認ください。",
+          "translation": "Please check today's deposit separately from preparation for future payments."
+        },
+        "DLG-SC-LOC-JP-25210-06-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "はい。今後の支払いは家で整理します。ここでは古い封筒のメモと、現金の額を分けます。",
+          "hintJa": "今後支払は家で整理し封筒の用途メモと実現金額を区別する。日本語で伝えてください。",
+          "translation": "Yes. I'll organize my future payments at home. Here, I'll distinguish the old note about the envelope's purpose from the actual cash amount.",
+          "hintTranslation": "Explain that you will organize future payments at home and distinguish the envelope's purpose note from the actual cash amount. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-06-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "確認用紙の金額は、六万五千円でよろしいですか。",
+          "translation": "Is 65,000 yen the correct amount for the confirmation form?"
+        },
+        "DLG-SC-LOC-JP-25210-06-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "その額です。数え直した現金を渡します。預けたことで今月の家賃が払われたとは考えません。",
+          "hintJa": "再計数額を渡し入金で家賃支払完了ではないと述べる。日本語で伝えてください。",
+          "translation": "That's the amount. I'll hand over the cash I've counted again. I won't consider this month's rent paid just because I deposited it.",
+          "hintTranslation": "Hand over the recounted amount and state that a deposit does not complete the rent payment. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-06-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "六万五千円のお預けとして確認します。それでは、失礼いたします。",
+          "translation": "We'll confirm a deposit of 65,000 yen. Goodbye."
+        }
+      }
+    },
+    "SC-LOC-JP-25210-07-001": {
+      "turns": {
+        "DLG-SC-LOC-JP-25210-07-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "小麦粉は、こちらの売場です。",
+          "translation": "The flour is in this section."
+        },
+        "DLG-SC-LOC-JP-25210-07-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "母のメモに二百グラムとあります。その量の袋がなく、買う物が分からなくなりました。",
+          "hintJa": "母メモ二百グラム相当の購入袋がなく迷うと相談する。日本語で伝えてください。",
+          "translation": "My mother's note says 200 grams. There isn't a bag of that size, and now I'm unsure what to buy.",
+          "hintTranslation": "Ask for help because there is no bag matching the 200 grams on your mother's note and you are unsure what to buy. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-07-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "料理に使う量のメモでしょうか、それとも袋の指定でしょうか。",
+          "translation": "Is that a note about the amount to use in cooking, or a specified bag size?"
+        },
+        "DLG-SC-LOC-JP-25210-07-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "料理で使う量です。母へ聞いたら、残りは家に置いてよいと言っています。",
+          "hintJa": "母への確認で調理使用量と判明し残り保存可能と伝える。日本語で伝えてください。",
+          "translation": "It's the amount to use in cooking. I asked my mother, and she says it's fine to keep the rest at home.",
+          "hintTranslation": "Explain that your mother confirmed it is the cooking quantity and that you can store the remainder. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-07-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "購入する袋の量と、料理で使う量は別に確認しましょう。",
+          "translation": "Let's check the amount in the bag you buy separately from the amount used in cooking."
+        },
+        "DLG-SC-LOC-JP-25210-07-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "この五百グラムの袋なら、全部一度に使う必要はないのですね。母の料理には必要な分を量って使います。",
+          "hintJa": "購入五百と一回使用二百を区別する。日本語で伝えてください。",
+          "translation": "With this 500-gram bag, I don't have to use it all at once, then. I'll measure out the amount needed for my mother's recipe.",
+          "hintTranslation": "Distinguish the 500 grams purchased from the 200 grams used at one time. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-07-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "保存の仕方も商品の表示をご覧ください。",
+          "translation": "Please also read the product label for storage instructions."
+        },
+        "DLG-SC-LOC-JP-25210-07-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "開封後の説明を読みます。家には目盛り付きの容器だけで秤がないので、二百グラムの量り方は母へ聞きます。",
+          "hintJa": "保存表示を見て秤なしの計量方法を母へ尋ねる。日本語で伝えてください。",
+          "translation": "I'll read the instructions for after opening. At home I only have a graduated container and no scales, so I'll ask my mother how to measure 200 grams.",
+          "hintTranslation": "Read the storage label and ask your mother how to measure without scales. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-07-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "商品の袋に、二百グラムずつ区切った目印はありません。",
+          "translation": "There are no marks on the bag dividing it into 200-gram portions."
+        },
+        "DLG-SC-LOC-JP-25210-07-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "袋の半分を二百と思って使うのはやめます。五百の袋を買い、家で量る道具を用意してから料理します。",
+          "hintJa": "半袋を二百とせず計量道具を準備してから調理すると述べる。日本語で伝えてください。",
+          "translation": "I won't assume half the bag is 200 grams and use that. I'll buy the 500-gram bag and prepare measuring equipment at home before cooking.",
+          "hintTranslation": "State that you will not treat half a bag as 200 grams and will prepare measuring equipment before cooking. Say it in Japanese."
+        },
+        "DLG-SC-LOC-JP-25210-07-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "それでは、こちらの商品をご確認ください。お買物をお楽しみください。さようなら。",
+          "translation": "Please check this product, then. Enjoy your shopping. Goodbye."
+        }
+      }
+    }
+  }
+}
