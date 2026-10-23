@@ -2580,3 +2580,8 @@ Integrated 503: all12 own-source-fidelity markers, logical owners, exact final f
 
 
 Own zh-CN509 author withdrew initial readiness and restored one NPC utterance and clarified another after indexed-edit self-check. Two utterances changed; exact source, prior/revised bytes and markers preserved in translation-revisions/509/zh-CN/revision-01. Original unintegrated version was not counted complete. Native/domain review false; no semantic cross-review.
+
+
+## Continuation498–509 2026-10-23T11:41:43.674Z
+
+Integrated 505,506: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 5051/7128; remaining 2077. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
