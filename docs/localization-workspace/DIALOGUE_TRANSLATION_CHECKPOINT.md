@@ -2715,3 +2715,16 @@ Integrated 528: all12 own-source-fidelity markers, logical owners, exact final f
 ## Continuation522–533 2026-10-23T14:03:57.047Z
 
 Integrated 530: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 5301/7128; remaining 1827. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+## Continuation522–533 2026-10-23T14:05:23.575Z
+
+Integrated 531: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 5311/7128; remaining 1817. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+Own my532 author withdrew initial readiness and clarified one player one-utterance time-reference clause. One utterance changed; exact source, prior/revised bytes and markers preserved in translation-revisions/532/my/revision-01. Original unintegrated version was not counted complete. Native/domain review false; no semantic cross-review.
+
+
+## Continuation522–533 2026-10-23T14:08:26.273Z
+
+Integrated 532: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 5321/7128; remaining 1807. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
