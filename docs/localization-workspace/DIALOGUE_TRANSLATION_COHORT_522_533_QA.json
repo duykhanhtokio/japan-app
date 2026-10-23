@@ -1,5 +1,5 @@
 {
-  "status": "AUTHOR_READY_PACKS_CHECKPOINT",
+  "status": "PASS_AI_TRANSLATION_COHORT",
   "scopeBatches": [
     "522",
     "523",
@@ -16,14 +16,15 @@
   ],
   "baselineCommit": "9218167af1d07630641f5c99f69ea4175976d777",
   "preparedScenarios": 120,
-  "localeFiles": 143,
-  "readyFileUtterances": 15730,
-  "readyFileTaskHints": 7150,
-  "completeScenarios": 5321,
-  "remainingScenarios": 1807,
-  "missingLocaleFiles": [
-    "src/data/dialogue-content/locale-batches/km/533.json"
-  ],
+  "addedIntegratedScenarios": 120,
+  "localeFiles": 144,
+  "readyFileUtterances": 15840,
+  "readyFileTaskHints": 7200,
+  "completeScenarios": 5331,
+  "remainingScenarios": 1797,
+  "authorHoldFiles": 0,
+  "missingLocaleFiles": [],
+  "preservedPreexistingLocaleFiles": 6264,
   "authorReadyMarkers": [
     {
       "owner": "dialogue_en_vi",
@@ -1311,26 +1312,34 @@
       "sha256": "c23fd15a553bc6ee48c41beff2ff05f6794cd20effde77b0d8e8b336acd6c4f8",
       "sourceSha256": "c3fa7262b7053f6aea429d5b0f4ab769060953cd46241a036288b31a20718ac3",
       "fullUtteranceFidelityChecked": true
+    },
+    {
+      "owner": "dialogue_th_km",
+      "language": "km",
+      "batch": "533",
+      "path": "src/data/dialogue-content/locale-batches/km/533.json",
+      "sha256": "326a22f6830024b692912fb51b16835d1a0cf9060dc6aca1c719331a84ce8496",
+      "sourceSha256": "c3fa7262b7053f6aea429d5b0f4ab769060953cd46241a036288b31a20718ac3",
+      "fullUtteranceFidelityChecked": true
     }
   ],
+  "actualLoader": {
+    "status": "PASS",
+    "actualLoader": true,
+    "authoredNpcRubyLines": 36,
+    "authoredPlayerRubyLines": 20,
+    "actualScenarios": 5331,
+    "actualTurns": 703692,
+    "actualHints": 319860,
+    "lazyJsonModulesRead": 11820,
+    "moduleCacheLimit": 32,
+    "directAndGenericScenarioBindings": true,
+    "stableTurnIds": true,
+    "staleSourceRejected": true,
+    "speakerMismatchRejected": true,
+    "fixturesOnly": false
+  },
   "nativeReviewed": false,
   "semanticCrossReview": false,
-  "finalLoaderQa": "Deferred until the complete cohort; no full-cohort completion claim",
-  "remotePersistence": "Publication must pass exact tree/blob/ref readback and scoped WORK PERSISTENCE gate",
-  "controlledOwnAuthorRevisions": [
-    {
-      "owner": "dialogue_ne_my",
-      "language": "my",
-      "batch": "532",
-      "path": "src/data/dialogue-content/locale-batches/my/532.json",
-      "status": "RECHECKED_FULL_BY_AUTHOR",
-      "previousSha256": "297580708839ece273d0fec239c07bf7d3eeceb2e955e580dcfb13a61172dcae",
-      "previousVersionPersisted": false,
-      "resolvedSha256": "ffc51fc004e459fe75ee1b0e6e6ce1271d92f28a6e3b6bed6a6c78efafc237e3",
-      "fullUtteranceFidelityChecked": true,
-      "resolvedAt": "2026-10-23T14:07:48.549Z",
-      "resolution": "Own author one-unit one-utterance time-reference clarification; immutable prior/revised pack and markers archived in docs/localization-workspace/translation-revisions/532/my/revision-01",
-      "nativeReviewed": false
-    }
-  ]
+  "remotePersistence": "Final publication and scoped WORK PERSISTENCE verification required"
 }
