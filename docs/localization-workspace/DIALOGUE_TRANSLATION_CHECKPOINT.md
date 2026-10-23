@@ -2462,3 +2462,6 @@ Integrated 475: all12 own-source-fidelity markers, logical owners, exact final f
 ## Continuation474–485 2026-10-23T09:06:05.504Z
 
 Integrated 477,479: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 4791/7128; remaining 2337. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+Own tl483 author withdrew initial readiness and corrected one NPC verb typo. One utterance changed; exact source, prior/revised bytes and markers preserved in translation-revisions/483/tl/revision-01. Original unintegrated version was not counted complete. Native/domain review false; no semantic cross-review.
