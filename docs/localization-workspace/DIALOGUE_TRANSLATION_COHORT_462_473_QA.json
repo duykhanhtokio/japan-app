@@ -1,5 +1,5 @@
 {
-  "status": "AUTHOR_READY_PACKS_CHECKPOINT",
+  "status": "PASS_AI_TRANSLATION_COHORT",
   "scopeBatches": [
     "462",
     "463",
@@ -16,15 +16,15 @@
   ],
   "baselineCommit": "f0f622626f8ff20c5f10242a8e145f1f3414aa01",
   "preparedScenarios": 120,
-  "localeFiles": 142,
-  "readyFileUtterances": 15620,
-  "readyFileTaskHints": 7100,
-  "completeScenarios": 4711,
-  "remainingScenarios": 2417,
-  "missingLocaleFiles": [
-    "src/data/dialogue-content/locale-batches/km/471.json",
-    "src/data/dialogue-content/locale-batches/km/472.json"
-  ],
+  "addedIntegratedScenarios": 120,
+  "localeFiles": 144,
+  "readyFileUtterances": 15840,
+  "readyFileTaskHints": 7200,
+  "completeScenarios": 4731,
+  "remainingScenarios": 2397,
+  "authorHoldFiles": 0,
+  "missingLocaleFiles": [],
+  "preservedPreexistingLocaleFiles": 5544,
   "authorReadyMarkers": [
     {
       "owner": "dialogue_en_vi",
@@ -1098,6 +1098,15 @@
       "fullUtteranceFidelityChecked": true
     },
     {
+      "owner": "dialogue_hi_bn",
+      "language": "km",
+      "batch": "471",
+      "path": "src/data/dialogue-content/locale-batches/km/471.json",
+      "sha256": "c26f55f9777c1a63cf891bd769081537317fb555e4562b560667bdb1ed0afe47",
+      "sourceSha256": "ba0dcbb49bacf8958fcf2b816ffa0b633b02e3dfbac7af49d8ff57410ff799c4",
+      "fullUtteranceFidelityChecked": true
+    },
+    {
       "owner": "dialogue_ne_my",
       "language": "en",
       "batch": "472",
@@ -1193,6 +1202,15 @@
       "batch": "472",
       "path": "src/data/dialogue-content/locale-batches/th/472.json",
       "sha256": "fbe4672f7344fc63d1cf97a3a72bb570d4878d2ed48beb318272ba7fb8db6503",
+      "sourceSha256": "cf37a3318d381082dea643f0b7fef0a6e40ed7dbbe56875e97e716c20ec64715",
+      "fullUtteranceFidelityChecked": true
+    },
+    {
+      "owner": "dialogue_ne_my",
+      "language": "km",
+      "batch": "472",
+      "path": "src/data/dialogue-content/locale-batches/km/472.json",
+      "sha256": "1abdaf3a53944839eb3cde83b4753a5a2cbae779c5518a1de917310ea26eae63",
       "sourceSha256": "cf37a3318d381082dea643f0b7fef0a6e40ed7dbbe56875e97e716c20ec64715",
       "fullUtteranceFidelityChecked": true
     },
@@ -1305,9 +1323,23 @@
       "fullUtteranceFidelityChecked": true
     }
   ],
+  "actualLoader": {
+    "status": "PASS",
+    "actualLoader": true,
+    "authoredNpcRubyLines": 36,
+    "authoredPlayerRubyLines": 20,
+    "actualScenarios": 4731,
+    "actualTurns": 624492,
+    "actualHints": 283860,
+    "lazyJsonModulesRead": 10500,
+    "moduleCacheLimit": 32,
+    "directAndGenericScenarioBindings": true,
+    "stableTurnIds": true,
+    "staleSourceRejected": true,
+    "speakerMismatchRejected": true,
+    "fixturesOnly": false
+  },
   "nativeReviewed": false,
   "semanticCrossReview": false,
-  "finalLoaderQa": "Deferred until the complete cohort; no full-cohort completion claim",
-  "remotePersistence": "Publication must pass exact tree/blob/ref readback and scoped WORK PERSISTENCE gate",
-  "controlledOwnAuthorRevisions": []
+  "remotePersistence": "Final publication and scoped WORK PERSISTENCE verification required"
 }
