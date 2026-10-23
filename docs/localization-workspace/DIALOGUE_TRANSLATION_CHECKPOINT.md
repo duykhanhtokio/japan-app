@@ -2089,3 +2089,8 @@ Integrated 427: all12 own-source-fidelity markers, logical owners, exact final f
 ## Own-author editorial withdrawal426–429
 
 Hindi/Bengali author withdrew final readiness for all8 own packs426–429 due to telegraphic target utterances. Hold status REVISION_REQUIRED; previous immutable packs/markers archived under translation-revisions. Exact-source technical coverage remains separate. Held indexed scenarios excluded from complete counts until author-reviewed complete revisions carry matching new hashes. No semantic cross-review.
+
+
+## Broader own-author quality withdrawal
+
+Original Hindi/Bengali author explicitly withdrew410–425 (32packs) for own natural-utterance audit, in addition to426–429 (8packs). Original Tagalog author withdrew426–430 (5packs). Prior versions remain in verified Git and current originals are preserved; technical source-bound completeness is distinct from editorial completion. These holds are excluded from complete counts. Previously reported4251 was a structural/source-coverage checkpoint and no longer an editorial-complete count. All other work preserved; no semantic cross-review.
