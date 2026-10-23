@@ -2444,3 +2444,11 @@ All144 immutable own-source-fidelity-checked locale packs integrated:120 new sce
 ## Cohort474–485 continuation
 
 Baseline0bc7151b3d9b:4731/7128 complete,2397 remaining,no author holds. User retains120 scenario turn. Six explicitly authorized authors exclusively own474–479 all12 locales each;480–485 reserved wholly unstarted for fresh sessions. Full160 strings per pack, full own Japanese fidelity and expanded script QA before immutable publication. Incremental authenticated publication; native/domain review false,no semantic cross-review.
+
+
+Own km478 author withdrew initial readiness and clarified one NPC postal acceptance clause. One utterance changed; exact source, prior/revised bytes and markers preserved in translation-revisions/478/km/revision-01. Original unintegrated version was not counted complete. Native/domain review false; no semantic cross-review.
+
+
+## Continuation474–485 2026-10-23T09:02:17.820Z
+
+Integrated 474,476,478: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 4761/7128; remaining 2367. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
