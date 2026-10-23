@@ -2652,3 +2652,26 @@ Integrated 517: all12 own-source-fidelity markers, logical owners, exact final f
 ## Continuation510–521 2026-10-23T12:58:39.595Z
 
 Integrated 519: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 5171/7128; remaining 1957. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+Own km521 author withdrew initial readiness and clarified one player one-utterance Khmer grammar clause. One utterance changed; exact source, prior/revised bytes and markers preserved in translation-revisions/521/km/revision-01. Original unintegrated version was not counted complete. Native/domain review false; no semantic cross-review.
+
+
+## Continuation510–521 2026-10-23T13:03:04.841Z
+
+Integrated 518,521: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 5191/7128; remaining 1937. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+## Continuation510–521 2026-10-23T13:03:26.771Z
+
+Integrated 516: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 5201/7128; remaining 1927. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+## Continuation510–521 2026-10-23T13:04:04.483Z
+
+Integrated 520: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 5211/7128; remaining 1917. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
+
+
+### Cohort510–521 complete
+
+All144 immutable own-source-fidelity-checked locale packs integrated:120 new scenarios across12 languages,15,840 utterances and7,200 task hints. Exact canonical source/ID/speaker/task and marker hashes pass. Actual app loader PASS5211 scenarios; 6120 preexisting locale files unchanged. Complete5211/7128, remaining1917; no author holds. Native/domain review false; no semantic cross-review. Next unstarted source522,start5211. Final remote publication and scoped persistence verification follow.
