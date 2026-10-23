@@ -1904,3 +1904,8 @@ Integrated 389,390: all12 own-source-fidelity markers, logical owners, exact fin
 ### Cohort385–390 final AI translation QA
 
 72 final own-source-fidelity locale packs; 60 added fully integrated scenarios. Complete 3901/7128; remaining 3227. All six exclusive author assignments finished. Ready markers, logical owners, exact source/IDs/roles/task bindings pass; 4620 preexisting locale files unchanged. Actual-loader PASS3901 scenarios. Native/domain review false; no semantic cross-review. Dictionary-generated source-bound furigana was added by a separate session at88d7ba08; native pronunciation/device review remains pending. Remote publication and scoped persistence gate follow. Resume batch391, start3901.
+
+
+## Continuation391–396 2026-10-23T00:43:51.883Z
+
+Integrated 392,393: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 3921/7128; remaining 3207. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
