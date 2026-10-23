@@ -1,5 +1,5 @@
 {
-  "status": "AUTHOR_READY_PACKS_CHECKPOINT",
+  "status": "PASS_AI_TRANSLATION_COHORT",
   "scopeBatches": [
     "414",
     "415",
@@ -10,15 +10,15 @@
   ],
   "baselineCommit": "703e41dcfae6998dfd7a3e321817e0e6c725bba9",
   "preparedScenarios": 60,
-  "localeFiles": 70,
-  "readyFileUtterances": 7700,
-  "readyFileTaskHints": 3500,
-  "completeScenarios": 4181,
-  "remainingScenarios": 2947,
-  "missingLocaleFiles": [
-    "src/data/dialogue-content/locale-batches/ne/419.json",
-    "src/data/dialogue-content/locale-batches/my/419.json"
-  ],
+  "addedIntegratedScenarios": 60,
+  "localeFiles": 72,
+  "readyFileUtterances": 7920,
+  "readyFileTaskHints": 3600,
+  "completeScenarios": 4191,
+  "remainingScenarios": 2937,
+  "missingLocaleFiles": [],
+  "blockedAuthors": [],
+  "preservedPreexistingLocaleFiles": 4968,
   "authorReadyMarkers": [
     {
       "owner": "dialogue_en_vi",
@@ -543,6 +543,24 @@
       "fullUtteranceFidelityChecked": true
     },
     {
+      "owner": "dialogue_th_km",
+      "language": "ne",
+      "batch": "419",
+      "path": "src/data/dialogue-content/locale-batches/ne/419.json",
+      "sha256": "7d93e7a1a130b29916fd0540265b289ec2c03ae85cbc30d0bb3cec5b0c99353a",
+      "sourceSha256": "bd29c352376519f48cdf319f0131cd01919a0815591c1439f2fe26144455175b",
+      "fullUtteranceFidelityChecked": true
+    },
+    {
+      "owner": "dialogue_th_km",
+      "language": "my",
+      "batch": "419",
+      "path": "src/data/dialogue-content/locale-batches/my/419.json",
+      "sha256": "d3dd3beae9f7d899fffa9899413fd7d2dbd6c8526a487e8036f95b2fc09dba3b",
+      "sourceSha256": "bd29c352376519f48cdf319f0131cd01919a0815591c1439f2fe26144455175b",
+      "fullUtteranceFidelityChecked": true
+    },
+    {
       "owner": "dialogue_en_vi",
       "language": "th",
       "batch": "414",
@@ -651,9 +669,24 @@
       "fullUtteranceFidelityChecked": true
     }
   ],
+  "actualLoader": {
+    "status": "PASS",
+    "actualLoader": true,
+    "authoredNpcRubyLines": 36,
+    "authoredPlayerRubyLines": 20,
+    "actualScenarios": 4191,
+    "actualTurns": 553212,
+    "actualHints": 251460,
+    "lazyJsonModulesRead": 9312,
+    "moduleCacheLimit": 32,
+    "directAndGenericScenarioBindings": true,
+    "stableTurnIds": true,
+    "staleSourceRejected": true,
+    "speakerMismatchRejected": true,
+    "fixturesOnly": false
+  },
   "nativeReviewed": false,
   "semanticCrossReview": false,
-  "finalLoaderQa": "Deferred until the complete cohort; no full-cohort completion claim",
-  "remotePersistence": "Publication must pass exact tree/blob/ref readback and scoped WORK PERSISTENCE gate",
+  "remotePersistence": "Final publication followed by scoped WORK PERSISTENCE gate required",
   "controlledOwnAuthorRevisions": []
 }
