@@ -2521,3 +2521,8 @@ Integrated 488: all12 own-source-fidelity markers, logical owners, exact final f
 
 
 Own th492 author withdrew initial readiness and corrected one player question particle. One utterance changed; exact source, prior/revised bytes and markers preserved in translation-revisions/492/th/revision-01. Original unintegrated version was not counted complete. Native/domain review false; no semantic cross-review.
+
+
+## Continuation486–497 2026-10-23T10:40:17.698Z
+
+Integrated 496: all12 own-source-fidelity markers, logical owners, exact final file/source hashes and canonical IDs/roles/task bindings pass. Complete 4921/7128; remaining 2207. Native/domain review false; no semantic cross-review. Other files remain unfinished until author-ready. Remote publication and scoped persistence verification follow.
