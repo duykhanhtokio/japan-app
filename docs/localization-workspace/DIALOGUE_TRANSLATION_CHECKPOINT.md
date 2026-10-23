@@ -2264,3 +2264,8 @@ Integrated 437: all12 own-source-fidelity markers, logical owners, exact final f
 ### Cohort432–437 complete
 
 All72 immutable own-source-fidelity-checked locale packs integrated:60 new scenarios across12 languages,7,920 utterances and3,600 task hints. Exact canonical source/ID/speaker/task and marker hashes pass. Actual app loader PASS4371 scenarios; 5184 preexisting locale files unchanged. Complete4371/7128, remaining2757; no author holds. Native/domain review false; no semantic cross-review. Next unstarted source438,start4371. Final remote publication and scoped persistence verification follow.
+
+
+## Cohort438–443 continuation
+
+Baseline7f60e71db309:4371/7128 complete,2757 remaining,no author holds. Six authors explicitly acknowledged whole-batch ownership438–443,one ten-scenario batch and all12 locales each,matching the phase2 logical ownership policy. This balances long-script workload while preserving disjoint paths and source-only own-language fidelity checks. Publish each complete natural160-string locale independently after full clauses/conditions/numbers/hints QA; immutable final markers, exact technical checks and incremental remote publication remain mandatory. Drafts are not completion; native/domain review false,no semantic cross-review.
