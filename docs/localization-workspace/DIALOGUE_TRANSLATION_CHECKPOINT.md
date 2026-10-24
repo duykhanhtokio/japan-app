@@ -3508,3 +3508,8 @@ Applied 93 new original-owner repair packets; cumulative 879. Corrected 309 cano
 ## Content quality repair 2026-10-24T16:22:18.213Z
 
 Applied 47 new original-owner repair packets; cumulative 926. Corrected 309 canonical hint locations and 7481 unique translation locations. Full7128-scenario coverage preserved. Quality review has completed AI screening and author repairs; structure/coverage is not semantic/native approval. Archives retain before/after/proposals. Remote verification follows.
+
+
+## Closed screening checkpoint with completed687dependency
+
+The earlier shared-tree report at111566 was not a self-contained committed snapshot. This checkpoint includes the exact already-reviewed12-locale687versions on which112flagged verdicts depended (997additional changed translation locations;1920source/target-hash-bound context reviews). The integration before/after archive is reconstructed explicitly from committed111566data and surviving immutable reviewer payloads. Fresh exhaustive screening, all7388verdict hashes, all714batches, actual app loading and approvedUI checks pass for this closed snapshot. Other full-corpus work is preserved separately and remains incomplete; no native certification is claimed.

@@ -1,0 +1,1487 @@
+{
+  "locale": "en",
+  "batch": "687",
+  "scenarios": 10,
+  "utterancesReviewed": 110,
+  "hintsReviewed": 50,
+  "changedUnits": 85,
+  "packetId": "all12-687-en-20261025-v1",
+  "sourceSha256": "fe87352c6d81543861deeb23351860d976fad9d3ffafd43528944fb61ba4e6e0",
+  "packSha256": "7ad563b22f947b29e7b57700f5fc500016b6a0a8afd8fd4b36cd46c625b87a29",
+  "reviewer": "AI",
+  "nativeReviewed": false,
+  "scopeReviewComplete": true,
+  "structuralValidation": "PASS via repair-worker.validateBatch",
+  "examples": [
+    {
+      "scenarioId": "SC-LOC-JP-44205-04-001",
+      "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-01",
+      "field": "translation",
+      "before": "You are concerned about a message. Is the other person nearby right now?",
+      "after": "You would like to discuss a message that concerns you, is that right? Is the person who contacted you nearby at the moment?",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-04-001",
+      "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-02",
+      "field": "translation",
+      "before": "No, it is only a message. It says parcel redelivery and demands payment by the end of today.",
+      "after": "No, I only received a message. It says it is about redelivering a parcel and asks me to pay a fee by the end of today.",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-04-001",
+      "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-04",
+      "field": "hintTranslation",
+      "before": "Explain you were expecting a parcel but opened no link, replied to nothing, and paid nothing. Say it in Japanese.",
+      "after": "Explain in Japanese that you were expecting a parcel, but have not opened the link, replied to the message, or made a payment.",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    }
+  ],
+  "remainingIssues": [],
+  "limitations": [
+    "AI semantic review of batch687 only; not native-speaker certification or a claim about other batches."
+  ],
+  "unitReviews": [
+    {
+      "scenarioId": "SC-LOC-JP-44205-04-001",
+      "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-01",
+      "field": "translation",
+      "sourceSha256": "dfc86f0ac4b3bb6eb478f8d5e52b36bdcdb3daf23e9e915f4a2350efc4f1339a",
+      "translationSha256": "6309954854e3f6caa8c0da71ae20c26b72a23ddc16354c843590248ae0826905",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-04-001",
+      "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-02",
+      "field": "translation",
+      "sourceSha256": "18423e1a612c4e4bf4ef4c5118c8958799364309d96ed97cce7084b205f39fba",
+      "translationSha256": "8ba31482c32e1368ce8160b8aa3fbc1a47eefe09836879aa3dc41e1e3173f0f4",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-04-001",
+      "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-02",
+      "field": "hintTranslation",
+      "sourceSha256": "e73b3abc3cbdda72745abb96df7592b0aea83c1a7fca2e5b6b9d157cf252892c",
+      "translationSha256": "37a9822efec116c2183dbf9ba8f0319cc0384ac10027cc9705c8e0f42a581dbb",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked message provenance, no link/reply/payment, cropped sender/time, original retention and no identification assumption. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-04-001",
+      "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-03",
+      "field": "translation",
+      "sourceSha256": "37bc63ccdc0d8fde3a4050a7a75696d066e8ca7517becef4d38f8935ab397e70",
+      "translationSha256": "a9728bbd9e0d127a632df8e642d04cc052929aa97abcec49b6fed73128a66d76",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked message provenance, no link/reply/payment, cropped sender/time, original retention and no identification assumption. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-04-001",
+      "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-04",
+      "field": "translation",
+      "sourceSha256": "4462fe8666b3937f691c3eb0c0d610945d94a32604effcadf2667567ceaa64f7",
+      "translationSha256": "4922fdffe7d18fa47bbefd108eebdee3692f69cfeed1b5531d68aa9d0f36d3d6",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked message provenance, no link/reply/payment, cropped sender/time, original retention and no identification assumption. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-04-001",
+      "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-04",
+      "field": "hintTranslation",
+      "sourceSha256": "6f0f006e201435bbf9024064ae3f82524d4fda1c86612e0c69c7551554620ed9",
+      "translationSha256": "55f70ba5b3772e544253f0166c1e8b5cc129da599a9e61c89691a2d38712372b",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-04-001",
+      "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-05",
+      "field": "translation",
+      "sourceSha256": "081f5594bea6b7ea91ecd21b35176639b53d86f121609a482d372d2e12d0b905",
+      "translationSha256": "3b692e11e586b296b3798c8790869d567e79026d3a3189bb1af82ddc694977e8",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-04-001",
+      "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-06",
+      "field": "translation",
+      "sourceSha256": "c0eacf37afa22e04a7dfbbf1d05f9945c4bddca22cbf91cc68ac0bae8637e548",
+      "translationSha256": "7a75ad31ef88384ef2eb0509544d1bc17df772c0916841ff152b688fa432ca7d",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked message provenance, no link/reply/payment, cropped sender/time, original retention and no identification assumption. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-04-001",
+      "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-06",
+      "field": "hintTranslation",
+      "sourceSha256": "1e3d3cef4cb7b3f85793a3eff3be2be0cf09dcacc49e73406e8a90eab996389d",
+      "translationSha256": "82bae170b2c41d3ceacdcf81e4e986f4810a418fec2513f3433c5d4053e26bf8",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked message provenance, no link/reply/payment, cropped sender/time, original retention and no identification assumption. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-04-001",
+      "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-07",
+      "field": "translation",
+      "sourceSha256": "9a7f393e4d0792bed52e21a53ce655bdaac1ccfcbe17914135a94de8eabab2e5",
+      "translationSha256": "d192a2432ef588759461bfd02e8af512bf7d95ca6c35523dc4b65af5f2cca77a",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-04-001",
+      "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-08",
+      "field": "translation",
+      "sourceSha256": "238f153911969ad0a2310f465561e2638a739fb9d4dda9f8704d75e4e34b036e",
+      "translationSha256": "9868d6094e7fa21a1fbd44963914ec20dce1cd994488b2a0c0d8f709cf555668",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked message provenance, no link/reply/payment, cropped sender/time, original retention and no identification assumption. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-04-001",
+      "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-08",
+      "field": "hintTranslation",
+      "sourceSha256": "2a456c8a745de612e57b64240ce7b727385c83b207fe1c2075778080525b9112",
+      "translationSha256": "4d9965edb560ba335cb177a596c4ed55f8c3fb827567d8a11c4050d2256920b0",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-04-001",
+      "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-09",
+      "field": "translation",
+      "sourceSha256": "8f7e0b28d6cd4300e58d7a73117792fe9b4ab7d1f7d9e2a3745bbe7ac2c6cc50",
+      "translationSha256": "20f0e817e5efd9a25d3bcc0545942ea1978e1d9d19c0166ab7655a9bb4950422",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-04-001",
+      "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-10",
+      "field": "translation",
+      "sourceSha256": "f33aa6891ca39cf97960d860a7df2309a86cdd85e6925844cdff6c971d09a14e",
+      "translationSha256": "66cc40e0ca13687dc30b868aa66d2113cf167b3d8bb168c3ec13ba062879151b",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-04-001",
+      "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-10",
+      "field": "hintTranslation",
+      "sourceSha256": "e993c0fe08dbc5b946e57094ccd7486faf2095f50acd80fa2a62a430ad0c432c",
+      "translationSha256": "8032c52c6ff40453b0b9d5758733b1312c7c3ab1790ef20902a4a90f75285c55",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-04-001",
+      "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-11",
+      "field": "translation",
+      "sourceSha256": "4eaae4125b18916bc272e0855eaac2071150d8dfa5d66f894ea38e353badf88b",
+      "translationSha256": "1f382f2ebe20a8fb6d7c3056f261b455cf435954b0bc522ba7fac551d7c2e193",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-05-001",
+      "turnId": "DLG-SC-LOC-JP-44205-05-001-SHARED-01",
+      "field": "translation",
+      "sourceSha256": "34410855d6ac291e9531b88d0f1ea5f2b61bdd3957c73dfd1e05c6b78e705afb",
+      "translationSha256": "2ea3cf4bf4d16018cfeccd91c3781a611e8372932764b18ae18f697db65c6ee1",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-05-001",
+      "turnId": "DLG-SC-LOC-JP-44205-05-001-SHARED-02",
+      "field": "translation",
+      "sourceSha256": "bb3734cc3aa861b9efffb104ca02a6fb71c46f6a679a74779d673b30dd2879bf",
+      "translationSha256": "b01ccdfbc7c012aac45a7d12b804e4ac2363c56b7a388f9de88e26010eaf98bb",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-05-001",
+      "turnId": "DLG-SC-LOC-JP-44205-05-001-SHARED-02",
+      "field": "hintTranslation",
+      "sourceSha256": "06111568bc4461004d533b8ca0f04d09ab080b019b864ae3d37d321691783401",
+      "translationSha256": "494700dbbd407abf95e0e4fba09c9af4411cb0beca8247e9189aec6eecad0da6",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked books plus framed photo, packaging uncertainty, missing current room number and taking the box home. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-05-001",
+      "turnId": "DLG-SC-LOC-JP-44205-05-001-SHARED-03",
+      "field": "translation",
+      "sourceSha256": "8b9b740c068e07d01e1e9f6dda490dbee71b9e7014b6338c8e37ed5c37fe79d3",
+      "translationSha256": "1b6e15bd1a7d42dbcdeee571a040a0ca9c58f4ccc88ec4243017a66c8a3f5ae0",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-05-001",
+      "turnId": "DLG-SC-LOC-JP-44205-05-001-SHARED-04",
+      "field": "translation",
+      "sourceSha256": "6eae8c538989ccba36c3ac14dacd3d637c39ab7bafcc3b75e56876373c3b78f1",
+      "translationSha256": "862ceeb13490a413dc357d579107bac3793a98e0069433259a4259a750a63b96",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked books plus framed photo, packaging uncertainty, missing current room number and taking the box home. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-05-001",
+      "turnId": "DLG-SC-LOC-JP-44205-05-001-SHARED-04",
+      "field": "hintTranslation",
+      "sourceSha256": "e8cab29538ca18386cb0b2671d5aa72bb7510369955755d19f93c9912f23b16f",
+      "translationSha256": "82cbc57e540172cf815fb1996e355735ce031734151a1def9499cb339e302c05",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked books plus framed photo, packaging uncertainty, missing current room number and taking the box home. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-05-001",
+      "turnId": "DLG-SC-LOC-JP-44205-05-001-SHARED-05",
+      "field": "translation",
+      "sourceSha256": "f876aa6d967ddb21ed7d6ee7edb2c28f090735e77031bf0e0ede665f50e8a602",
+      "translationSha256": "7df6dea8a049aff86d22b99be0d5bbe4398ccc415611419bf24fb165c0ada02c",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-05-001",
+      "turnId": "DLG-SC-LOC-JP-44205-05-001-SHARED-06",
+      "field": "translation",
+      "sourceSha256": "94e42b26c29ec986ed09a1c949d21803ddfa0015f0f1c2a2d882614b377592a0",
+      "translationSha256": "fd6668fea93e0086e041c90cfb4cf890eecfc31b0f602f24836f9d77d2587e05",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked books plus framed photo, packaging uncertainty, missing current room number and taking the box home. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-05-001",
+      "turnId": "DLG-SC-LOC-JP-44205-05-001-SHARED-06",
+      "field": "hintTranslation",
+      "sourceSha256": "d45a2751d6f340700e4ba1b353646abeb21ac95548ce86f7ae32ee09617abfd4",
+      "translationSha256": "b89e5948808e337917343d03541b92b8ebde81e2419cb3b61aa991b3feb6bcc1",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked books plus framed photo, packaging uncertainty, missing current room number and taking the box home. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-05-001",
+      "turnId": "DLG-SC-LOC-JP-44205-05-001-SHARED-07",
+      "field": "translation",
+      "sourceSha256": "413739009ac230e8e54b53a7085e99885f0dc55f2ecae14f71072442a492dce6",
+      "translationSha256": "d949341bd219e80fd4406e252eac0cc5074422ded64bef450266b8e4b091b6cb",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-05-001",
+      "turnId": "DLG-SC-LOC-JP-44205-05-001-SHARED-08",
+      "field": "translation",
+      "sourceSha256": "504cb9d3ccdc40be39f0f39e844f2835e451d9e2c708bf6ac72cbc6992f28e05",
+      "translationSha256": "83f956cd0d84ff7f7cec5081dd0689421784042d666fabe404c89fb7bd510be8",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked books plus framed photo, packaging uncertainty, missing current room number and taking the box home. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-05-001",
+      "turnId": "DLG-SC-LOC-JP-44205-05-001-SHARED-08",
+      "field": "hintTranslation",
+      "sourceSha256": "2cceeeb8717d51fe11fd68b0c5590cade2b787e5597acd919a7ec8f0ad7c76d9",
+      "translationSha256": "800af1e7a71086420672d32e0f1b8a695173a18e8360fd4a53c44c9c41fab164",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked books plus framed photo, packaging uncertainty, missing current room number and taking the box home. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-05-001",
+      "turnId": "DLG-SC-LOC-JP-44205-05-001-SHARED-09",
+      "field": "translation",
+      "sourceSha256": "ac2443288813e77cc34d90497e25a7b12ca1d0286de898c8bef10d1e9d9c3921",
+      "translationSha256": "43ff8b84f7c3aae98c57e92a03bbf5fb5525c0bbb4be75a4316d2da51ae88ebf",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-05-001",
+      "turnId": "DLG-SC-LOC-JP-44205-05-001-SHARED-10",
+      "field": "translation",
+      "sourceSha256": "fa6881e218d98e8443cd33a32dc2024f043bb65d6dfc66784926a7f2d820600a",
+      "translationSha256": "623012d581edb1baee549a070d856178bf53a275f297bccfa05928b1de17ae6b",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-05-001",
+      "turnId": "DLG-SC-LOC-JP-44205-05-001-SHARED-10",
+      "field": "hintTranslation",
+      "sourceSha256": "7921217f705ea6a60b6a9d85ab16ee5b5bb3de8a530a9213f9bbb98165b5ce75",
+      "translationSha256": "771b7235d360e36b0210f1fcb734c719d4e8c2be73cdce89178bef0bdab6a336",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-05-001",
+      "turnId": "DLG-SC-LOC-JP-44205-05-001-SHARED-11",
+      "field": "translation",
+      "sourceSha256": "8200293963ffd1c05f995b277df82a460feacd82e4155992961f68477eddcdee",
+      "translationSha256": "912a2a03a92061b75f6934dbf498c080bcd41fe0108de8ed2e012e35616f31b0",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnId": "DLG-SC-LOC-JP-44205-06-001-SHARED-01",
+      "field": "translation",
+      "sourceSha256": "0b9bbe5aaf4e6b20496de3d1fabb481768bc8b41e428852942bdd82963a67d6f",
+      "translationSha256": "e7149192c66e62c5e8f3f2f644aeb26374422c95776751d2706e1b76c4427ce7",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked recipient versus remitter identity, room-number/name ordering, no transfer yet and decision only after cost clarification. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnId": "DLG-SC-LOC-JP-44205-06-001-SHARED-02",
+      "field": "translation",
+      "sourceSha256": "16dbafbf52fbd3b83aad22a11dbf48e3cbb9ec8a99a4e792244620ce2cb1422c",
+      "translationSha256": "cd3d83e97b3048b37f799041eb4e6df069da3c26350f3e58c36b8e382b3ea2c5",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked recipient versus remitter identity, room-number/name ordering, no transfer yet and decision only after cost clarification. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnId": "DLG-SC-LOC-JP-44205-06-001-SHARED-02",
+      "field": "hintTranslation",
+      "sourceSha256": "5899860008251b1f1701388d3a47fdc145053d7af9c18e48946ffcfa3688d769",
+      "translationSha256": "b4be7df988459ec8ca241c0622ab1a3d22402ff5213ac7093aba4226a8d6fd53",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked recipient versus remitter identity, room-number/name ordering, no transfer yet and decision only after cost clarification. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnId": "DLG-SC-LOC-JP-44205-06-001-SHARED-03",
+      "field": "translation",
+      "sourceSha256": "d5c64e62787531eb733eae30c24734f7c4628d86b8ae9126b176ff70bdc78a74",
+      "translationSha256": "89d3733f6c3d631cdf820ffd6640ca1daaa6fbeb8a97fd0adc9855a58e80c868",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnId": "DLG-SC-LOC-JP-44205-06-001-SHARED-04",
+      "field": "translation",
+      "sourceSha256": "50bcd08d57edbb6eaa00acd6979069511a67ce77bd2ddbea4db8aa6faf240ee9",
+      "translationSha256": "3ef99075e3cc118da3c5411d50e23e8f454c6d810e1d35a85f45df384306b7b4",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked recipient versus remitter identity, room-number/name ordering, no transfer yet and decision only after cost clarification. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnId": "DLG-SC-LOC-JP-44205-06-001-SHARED-04",
+      "field": "hintTranslation",
+      "sourceSha256": "5457bbaf2c016beef25d75578fb46f236152952cc928602a81bdc54c6fe4d5ea",
+      "translationSha256": "aac0a879668c010d72779248851c948b4aac55f7b6efc323690507b1051219ff",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnId": "DLG-SC-LOC-JP-44205-06-001-SHARED-05",
+      "field": "translation",
+      "sourceSha256": "1ba21c98d6be53d44e7d056dc1500e1044f339d1afcbe71a7a688a82ef57ab24",
+      "translationSha256": "70add5dd0db213cddfd70ed2f634ad57b18f372ec04ca7f3a61dc4f419546497",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked recipient versus remitter identity, room-number/name ordering, no transfer yet and decision only after cost clarification. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnId": "DLG-SC-LOC-JP-44205-06-001-SHARED-06",
+      "field": "translation",
+      "sourceSha256": "f1e9f228a99212f5fa5bcb156f1c8a089b2ff4fc26dc264ed820e232e71d28be",
+      "translationSha256": "4586117a97c24cb41488664f7c2e2942107966c4545e5194d3aa0cbb4e165cf9",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked recipient versus remitter identity, room-number/name ordering, no transfer yet and decision only after cost clarification. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnId": "DLG-SC-LOC-JP-44205-06-001-SHARED-06",
+      "field": "hintTranslation",
+      "sourceSha256": "17a488c7e0b736749a4c25c642e3b62fec49d695a14b648e2fbbab93494ec474",
+      "translationSha256": "3e47173444ce534dc4dcfb1e2849ac1fb37e311b8b5d672104788ea64280ced1",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked recipient versus remitter identity, room-number/name ordering, no transfer yet and decision only after cost clarification. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnId": "DLG-SC-LOC-JP-44205-06-001-SHARED-07",
+      "field": "translation",
+      "sourceSha256": "a0583c5de4d609a82bd88928b392efec70e31e0b9ba25ad965c0b993c36041c1",
+      "translationSha256": "3f764509166ffdbe45e982294ec91a972a02c48cfbb52d4aaaef71049be6e274",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnId": "DLG-SC-LOC-JP-44205-06-001-SHARED-08",
+      "field": "translation",
+      "sourceSha256": "ae35e080ee8f0acd65e8fe12e65dc2475c6fb456465a1ed7097bf4780f5debeb",
+      "translationSha256": "1eb4618625bf24d50c254e7539c8d428a4726e455930974d22dca228f75019fc",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnId": "DLG-SC-LOC-JP-44205-06-001-SHARED-08",
+      "field": "hintTranslation",
+      "sourceSha256": "b775a7310cff3c75f07ef7650a4e70da76214dab853d929f9be555f00888f115",
+      "translationSha256": "5d906cdf48a8282e451860bbf1d0b05a917213d579474a6def14429e6e050c5b",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnId": "DLG-SC-LOC-JP-44205-06-001-SHARED-09",
+      "field": "translation",
+      "sourceSha256": "60dcd1ca50daf9feb485f87d412e5933ba1e0058ece456b9d1482cfa0c6a3674",
+      "translationSha256": "cbf3e029fead52266fb9c16b8082e02445b2d90afe8ba45564df2003ffb30b94",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnId": "DLG-SC-LOC-JP-44205-06-001-SHARED-10",
+      "field": "translation",
+      "sourceSha256": "191358b6966a2aecd7275251f1f419659a315d73f02536e750e9325a1754e0d4",
+      "translationSha256": "eb7c112b72771b1627ed0837836c8f4498be1fb5f67a33f5a551e166114f3dd7",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnId": "DLG-SC-LOC-JP-44205-06-001-SHARED-10",
+      "field": "hintTranslation",
+      "sourceSha256": "a6a1b77640d95d159f3215c761ba4348c903a8e8f7de71cde8701324bd7683c9",
+      "translationSha256": "ab2940c0384526ee898cd0fea1e163aaad37e21aa0d86da73ddd767cc8cc5887",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnId": "DLG-SC-LOC-JP-44205-06-001-SHARED-11",
+      "field": "translation",
+      "sourceSha256": "00b65c180dd5dba283b5a4c838b9b051f1c9fa20b4d2bcd8ad13fd6c04f9d453",
+      "translationSha256": "4f6ee15387994f3b69ca4912d1f0b0c1e3ffa12348e91208162a1d4f75a45b8f",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnId": "DLG-SC-LOC-JP-44205-07-001-SHARED-01",
+      "field": "translation",
+      "sourceSha256": "f9f176e2c8df2aa1516575319061fd0d4e170e5a63af04187e2c632fcc796357",
+      "translationSha256": "9267a98254ffdddb37512469e5ade19e72adafbbe1c464488c76b526c6f0e9ae",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnId": "DLG-SC-LOC-JP-44205-07-001-SHARED-02",
+      "field": "translation",
+      "sourceSha256": "b3ef76962394f6e3a3651e53e9512d0cfaca6ad2dc6f454ec3557a185ca5569f",
+      "translationSha256": "89fef5c6d19014694af13cbf71534136800e4d73c9a8bc2685c7ed84556615e5",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnId": "DLG-SC-LOC-JP-44205-07-001-SHARED-02",
+      "field": "hintTranslation",
+      "sourceSha256": "6436c6b59e412ffb845c50673f52660f4788699c7a5974fbead63d4a6bf0845b",
+      "translationSha256": "40e472e0fba4e817aa2f604132d80c63a085728377d2d4f0727dd9ce6c08e492",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnId": "DLG-SC-LOC-JP-44205-07-001-SHARED-03",
+      "field": "translation",
+      "sourceSha256": "1fb2460abb9f92bc8bf30d11e5a318b0947ba49d12d378c89e5e9d05280300c1",
+      "translationSha256": "f7bdd63cb7e07a3f3ae1a301ed5e91d634d39e471ee7e7b89bb9f9960b6bfc86",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked self versus neighbor purchases, corrected milk ownership, generic detergent and separate bags/receipts/payment order. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnId": "DLG-SC-LOC-JP-44205-07-001-SHARED-04",
+      "field": "translation",
+      "sourceSha256": "4ef059450f466e6e80c1c7c041bd8ee224524f6fe9fd31eadbceeb4fc044fd1c",
+      "translationSha256": "d830b268aedb4d3861d503384f9a3a994757c8f1bbdfc7187e3ef51925cdd309",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked self versus neighbor purchases, corrected milk ownership, generic detergent and separate bags/receipts/payment order. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnId": "DLG-SC-LOC-JP-44205-07-001-SHARED-04",
+      "field": "hintTranslation",
+      "sourceSha256": "943224ce19ad3a243c3aaeae98610ca4561a78b1e79666382fcb11d04d930f2f",
+      "translationSha256": "a5987acb17cbf0e65639f504795a63343d767e5cc609eca8f767d473c83ac420",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnId": "DLG-SC-LOC-JP-44205-07-001-SHARED-05",
+      "field": "translation",
+      "sourceSha256": "c3b4a79463fb56a26b8299b11928b904b1a17db09afe4a40d4f4eac950157efe",
+      "translationSha256": "b989bd6a1190f39f4000003be5dc5b362b91bc26fc63598def28174da19d566e",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked self versus neighbor purchases, corrected milk ownership, generic detergent and separate bags/receipts/payment order. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnId": "DLG-SC-LOC-JP-44205-07-001-SHARED-06",
+      "field": "translation",
+      "sourceSha256": "7539c164aa1b028df983f1d6ae73cd306379645535cc2e7693344ff59e5d09e6",
+      "translationSha256": "2202371a809cab04bbb38e7b8c7370c391e5fb11876ffe7868f716662bcee9c3",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnId": "DLG-SC-LOC-JP-44205-07-001-SHARED-06",
+      "field": "hintTranslation",
+      "sourceSha256": "0c74feda7f04c1e19799abba3c071c95974ce225eef92bae3ef49ea10ff021a6",
+      "translationSha256": "f91bf25eefec4aef66ff483ad0a2234cab1570e8593975b397b761058b328042",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked self versus neighbor purchases, corrected milk ownership, generic detergent and separate bags/receipts/payment order. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnId": "DLG-SC-LOC-JP-44205-07-001-SHARED-07",
+      "field": "translation",
+      "sourceSha256": "78ac6e35d1f775f561eb908c389a15c7f8fc06f7600d964bbf3cb2da10c8a671",
+      "translationSha256": "acbaca11f40513c61a85eac527624a51ab8ec964775da5309deed92a42934399",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked self versus neighbor purchases, corrected milk ownership, generic detergent and separate bags/receipts/payment order. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnId": "DLG-SC-LOC-JP-44205-07-001-SHARED-08",
+      "field": "translation",
+      "sourceSha256": "c8689597a75ac8ff796acc8f3c2811e9d4c1d54051440a9ebe1e5895e8310f9b",
+      "translationSha256": "81b8ec1c480c6101235bfeb56383c05a2f82493f88d8ec6d35ce0ecccbe03e56",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked self versus neighbor purchases, corrected milk ownership, generic detergent and separate bags/receipts/payment order. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnId": "DLG-SC-LOC-JP-44205-07-001-SHARED-08",
+      "field": "hintTranslation",
+      "sourceSha256": "bbe7059b1098b951586b0db9e2ade20328d1d5d4a3bf0c59f34722a5c4ae3930",
+      "translationSha256": "154968fcc933739644ab658e6240dca984b0ca53c5527b511e79e559293b2858",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked self versus neighbor purchases, corrected milk ownership, generic detergent and separate bags/receipts/payment order. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnId": "DLG-SC-LOC-JP-44205-07-001-SHARED-09",
+      "field": "translation",
+      "sourceSha256": "9c126ab84edb9c79914e224ace9ed8be8a12c3029c06887469ce3b96893d66c0",
+      "translationSha256": "4ef48dadf59161a200ee870990db7c4d69b03b342ab1837a9dfcad261ab72b04",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked self versus neighbor purchases, corrected milk ownership, generic detergent and separate bags/receipts/payment order. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnId": "DLG-SC-LOC-JP-44205-07-001-SHARED-10",
+      "field": "translation",
+      "sourceSha256": "4051e60b750922672e595af2db8ac892183e90b8e3a784b0a5bc30ff60d9c339",
+      "translationSha256": "e69632d5750979d706fc73d8ef7baa37bb83cc7223a81a43c3bac603dec860d2",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnId": "DLG-SC-LOC-JP-44205-07-001-SHARED-10",
+      "field": "hintTranslation",
+      "sourceSha256": "1fc9ce6f19cd6242c67b3e47763eb4ece6638f0f3eb0f5ff5a9333c869b43b2b",
+      "translationSha256": "b4fe8d5b186c9449f2bbd8f1984504e1923972ddd7b10660223cf881dbdccc25",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnId": "DLG-SC-LOC-JP-44205-07-001-SHARED-11",
+      "field": "translation",
+      "sourceSha256": "98449992210e82d28a12ab92387e6436ba49f5f145b0d20c99d318ac46df5779",
+      "translationSha256": "73451a955553cd74700d9d877bab7f03a2f2bc83b9baa178fd1efcd03484a2de",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked self versus neighbor purchases, corrected milk ownership, generic detergent and separate bags/receipts/payment order. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-08-001",
+      "turnId": "DLG-SC-LOC-JP-44205-08-001-SHARED-01",
+      "field": "translation",
+      "sourceSha256": "3673c0c0836f51130570d7e2d4a32918f1b8841647e2cbebc51a0511c0a08665",
+      "translationSha256": "4353bd8bd28bf5aedda640bc5e6f58b99d53d97933db31b6070597bb9a1a7f8e",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked old versus current map, bridge closure, rest area before bridge and return to original entrance. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-08-001",
+      "turnId": "DLG-SC-LOC-JP-44205-08-001-SHARED-02",
+      "field": "translation",
+      "sourceSha256": "db5e80f90ee904c5658a6121053a45f437ee884c75fae75e19ca912aa12ef38f",
+      "translationSha256": "b00e9aa329a20487858f8390b4462db6b31f0f5ae689d84841d3fdabe3a13fdd",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-08-001",
+      "turnId": "DLG-SC-LOC-JP-44205-08-001-SHARED-02",
+      "field": "hintTranslation",
+      "sourceSha256": "7e578fdf76ed42c81eff5c34aab20db2db03a0045cbda1331c82862f6285fe5d",
+      "translationSha256": "7a7bbffda6c5b2f1fb5835af8f35e4fbb4a8ca8030403e3b0867464c31cedd33",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-08-001",
+      "turnId": "DLG-SC-LOC-JP-44205-08-001-SHARED-03",
+      "field": "translation",
+      "sourceSha256": "08be779603a1ec6d30b3c1e245c20a295b06734e5d9236b9ecd61ddbebb29948",
+      "translationSha256": "3eb94f856fba464023ba2b8f27ad3465af878c002bccb6220352cc828ad775c6",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked old versus current map, bridge closure, rest area before bridge and return to original entrance. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-08-001",
+      "turnId": "DLG-SC-LOC-JP-44205-08-001-SHARED-04",
+      "field": "translation",
+      "sourceSha256": "936d958b5171e4a95a5a5e871905beed4ed2ed162b819c28fbc89b126ab16943",
+      "translationSha256": "4798c480b89ecaa65646f12b51b55c66b6b7e640699f743b54399356cf12c521",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-08-001",
+      "turnId": "DLG-SC-LOC-JP-44205-08-001-SHARED-04",
+      "field": "hintTranslation",
+      "sourceSha256": "e8acebb657428911242f19e84eec6166b3862c5ea2ca049f31143ff63e7c367a",
+      "translationSha256": "07cf12b288ea406b74343978166f9c1650691a4c6eecb6b759f8aca5ad1d2c07",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked old versus current map, bridge closure, rest area before bridge and return to original entrance. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-08-001",
+      "turnId": "DLG-SC-LOC-JP-44205-08-001-SHARED-05",
+      "field": "translation",
+      "sourceSha256": "b885f79b56a53706c132d81946faaf8f9bfc7e281ce3ea6bd5d257f98fbd12b2",
+      "translationSha256": "4a100307c417a334130de4c1c2267577d4e87e6fe30e43dfe500b8f4f2b50615",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked old versus current map, bridge closure, rest area before bridge and return to original entrance. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-08-001",
+      "turnId": "DLG-SC-LOC-JP-44205-08-001-SHARED-06",
+      "field": "translation",
+      "sourceSha256": "3cc0029190f6f9723f134a46e3b74bc8dc8575aecf944b504a2184bed458a82b",
+      "translationSha256": "2778e2ccda74244a9037e23b6e585fbdf9885173a8b35955c7b98dfc3306e1f7",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-08-001",
+      "turnId": "DLG-SC-LOC-JP-44205-08-001-SHARED-06",
+      "field": "hintTranslation",
+      "sourceSha256": "4ba6e33f9f37e94e8d62153e7ed5ea8d8bdd05f16f9431e7dc7cece23463823c",
+      "translationSha256": "86bec2fdd7a68507992fa1fa708a678f74cf781bce136d8f2b8b050727a05fd1",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-08-001",
+      "turnId": "DLG-SC-LOC-JP-44205-08-001-SHARED-07",
+      "field": "translation",
+      "sourceSha256": "034f67729160b7bbceba65eab0ce442ae4ab7e38759a55973df04c0331b2e750",
+      "translationSha256": "592afda655c6ee8cebf4675641c17e683dd9dea8a43330d95f062b812f2f968e",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked old versus current map, bridge closure, rest area before bridge and return to original entrance. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-08-001",
+      "turnId": "DLG-SC-LOC-JP-44205-08-001-SHARED-08",
+      "field": "translation",
+      "sourceSha256": "a109930a648f268df5cad19d1552382185a3f26ea613fdbf0e40680e07fff024",
+      "translationSha256": "9b67dd99ed3b33b59e32be989253d2076bd4de37fb26a54fd2ae9f702727b076",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked old versus current map, bridge closure, rest area before bridge and return to original entrance. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-08-001",
+      "turnId": "DLG-SC-LOC-JP-44205-08-001-SHARED-08",
+      "field": "hintTranslation",
+      "sourceSha256": "630300ddfe9bd6437af4a8d96ad777899a25cc751e5cc5a6f55fc07ea2aa0e02",
+      "translationSha256": "486008f6a2cff91088736a4b31276a8dcbd2b793ffcc30073d3fefe0163282ba",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked old versus current map, bridge closure, rest area before bridge and return to original entrance. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-08-001",
+      "turnId": "DLG-SC-LOC-JP-44205-08-001-SHARED-09",
+      "field": "translation",
+      "sourceSha256": "f3f3c1394ff9598c1c068529adbc6d50b6e3c19f96eb52a9cf2a4e87e74d7ba1",
+      "translationSha256": "2eb4360d2eee96578f7fc5afb8afbee5479b1d0b73a6b47c32612073da466764",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-08-001",
+      "turnId": "DLG-SC-LOC-JP-44205-08-001-SHARED-10",
+      "field": "translation",
+      "sourceSha256": "41f8ddfb28cac0e5959021cff6d39faad4a27bc9b96a26e481ed3e422563083c",
+      "translationSha256": "43cec2bdf0e3b9b9ae2d528fd97612e9438ada7dc29e6cc5cc65aeabd373e992",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-08-001",
+      "turnId": "DLG-SC-LOC-JP-44205-08-001-SHARED-10",
+      "field": "hintTranslation",
+      "sourceSha256": "da274d59d4cabe62e7c5744143af0f1024eee47968c259c0a9f429d8d36b393c",
+      "translationSha256": "1be0f464f5a5d1f377ef038256ab2ead2c229940986522b5992fc5a88e177249",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44205-08-001",
+      "turnId": "DLG-SC-LOC-JP-44205-08-001-SHARED-11",
+      "field": "translation",
+      "sourceSha256": "1dacc6326fe9d49f80268b9162597ef21d5b2fe51023f8ce515045fd57fb8cc8",
+      "translationSha256": "d22faa164e6ee39f6372169d1c798eccb17712297be7b3b1b8e7fa5b026a4c0a",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked old versus current map, bridge closure, rest area before bridge and return to original entrance. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-01-001",
+      "turnId": "DLG-SC-LOC-JP-44206-01-001-SHARED-01",
+      "field": "translation",
+      "sourceSha256": "4b2e837ce4c2bd33d519309bae4602f6578913a0f61429eb5889cdaeb930d5fd",
+      "translationSha256": "c4461a1314752169d3580f3ca75b0ef44486bdcfacce31e0c31e677302eb6c6a",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-01-001",
+      "turnId": "DLG-SC-LOC-JP-44206-01-001-SHARED-02",
+      "field": "translation",
+      "sourceSha256": "da4ae312ce4cd008e557a536a62ed02f0521bff1b7bfa2ac92fdbd4533350a66",
+      "translationSha256": "24a5c9a1b559ab2a199d479acaa435be870a347364f7cace86fdfabe13f25d42",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked outdated delay information, unknown arrival time, conditional estimates, no automatic full refund and pickup update sequence. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-01-001",
+      "turnId": "DLG-SC-LOC-JP-44206-01-001-SHARED-02",
+      "field": "hintTranslation",
+      "sourceSha256": "75fb44d5f3ff9894d6ebe064190409d7ec3d38cffc8ce41f77d2ffc0426fc212",
+      "translationSha256": "0222f93b6d19c1cfab0688d073ac0ef43d19b424e03193df988678aed3434c55",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-01-001",
+      "turnId": "DLG-SC-LOC-JP-44206-01-001-SHARED-03",
+      "field": "translation",
+      "sourceSha256": "86cb21170038ef552c0578405bdc87552a606a8cc40862690a886816116cef95",
+      "translationSha256": "9e33c8f453e98f7ad6a8ec20569328920d57b9678d8615bda7299970a10c4ac3",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-01-001",
+      "turnId": "DLG-SC-LOC-JP-44206-01-001-SHARED-04",
+      "field": "translation",
+      "sourceSha256": "0939fbe7c4904f2fdb43649a8406f33fc1560f9ebe7b018fb1d038099b0e63dc",
+      "translationSha256": "18341fafb8fe1d99d7270a1cc4a779bed0035ce2f68ec0090afcfa7a5967a394",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-01-001",
+      "turnId": "DLG-SC-LOC-JP-44206-01-001-SHARED-04",
+      "field": "hintTranslation",
+      "sourceSha256": "5a3e20be6fef9de35f7404d5e9a3cc6c31460c2f2cdedb2262f1ad899a0c4911",
+      "translationSha256": "7c3a0bdf77b89217cb69973b9c5039919772b1cd1fca5416e5a9103515a4f1f3",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-01-001",
+      "turnId": "DLG-SC-LOC-JP-44206-01-001-SHARED-05",
+      "field": "translation",
+      "sourceSha256": "0a55bf8f342c67559a26cb6e641c45b436ae53ff43dcd98ef46496994d759646",
+      "translationSha256": "ea4a08345b4f0cb90b7759d1a9e218275bd7513c49d287ae865ff60d821a1a78",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked outdated delay information, unknown arrival time, conditional estimates, no automatic full refund and pickup update sequence. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-01-001",
+      "turnId": "DLG-SC-LOC-JP-44206-01-001-SHARED-06",
+      "field": "translation",
+      "sourceSha256": "91cbbb716463a54cf171de062b883e1fb16c204dea4d5bc5a736e633cbe57773",
+      "translationSha256": "15da9c97f825b525708320b09b340984dc77cecb68840acebaae95cc2c00d305",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked outdated delay information, unknown arrival time, conditional estimates, no automatic full refund and pickup update sequence. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-01-001",
+      "turnId": "DLG-SC-LOC-JP-44206-01-001-SHARED-06",
+      "field": "hintTranslation",
+      "sourceSha256": "e9ebc7a35b0224c50ebedeb62cdbb570720b9a8aea882adfcded96ea7fb39bbb",
+      "translationSha256": "3b1dec94ebafa5752a27a5a8ad562cb169650f4d2ff3007fa5bfc598b324ba1e",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked outdated delay information, unknown arrival time, conditional estimates, no automatic full refund and pickup update sequence. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-01-001",
+      "turnId": "DLG-SC-LOC-JP-44206-01-001-SHARED-07",
+      "field": "translation",
+      "sourceSha256": "a9ae2e4b6671139c1e05b99d81f22a4a350450765ee89196c37e5906c6aeb966",
+      "translationSha256": "eb43bf5065f2f45cbf18e67cbe0998bd604f60681d2b83bda372deccda36054b",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-01-001",
+      "turnId": "DLG-SC-LOC-JP-44206-01-001-SHARED-08",
+      "field": "translation",
+      "sourceSha256": "16c2ddd45ddf58b44a41e73801d21220244d85982ddcaa146d0cae7d448721e6",
+      "translationSha256": "0ff3aabd1aa672a80eb58ba46f658776fa17d4a3793aa96563396ccdfea22a48",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-01-001",
+      "turnId": "DLG-SC-LOC-JP-44206-01-001-SHARED-08",
+      "field": "hintTranslation",
+      "sourceSha256": "9dae2847cfe4c914f1a6157bdacc8c00f4c103c5e3de8e4002dd2868c92a638e",
+      "translationSha256": "4a9bbe6ae1add03e9c1142d3a1840faa69a03680be710c0f27f1bda86db6a4a4",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked outdated delay information, unknown arrival time, conditional estimates, no automatic full refund and pickup update sequence. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-01-001",
+      "turnId": "DLG-SC-LOC-JP-44206-01-001-SHARED-09",
+      "field": "translation",
+      "sourceSha256": "09891c6af5d54530ed55531986d388d5494f9c43b754c4d92512179e96ded2f4",
+      "translationSha256": "e31925eb8a8080d882abb09bc4d767355dde2519cff4ecc7dd5dbdef21ec1137",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked outdated delay information, unknown arrival time, conditional estimates, no automatic full refund and pickup update sequence. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-01-001",
+      "turnId": "DLG-SC-LOC-JP-44206-01-001-SHARED-10",
+      "field": "translation",
+      "sourceSha256": "4c878202be54114f6f217387f44d7fdd8d19c5f2cf7ca95cb59d46ac61261c8c",
+      "translationSha256": "8d713de2275aa7eeb6205f596042b864f3c9f75268785479ed50f42a91c57fc2",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-01-001",
+      "turnId": "DLG-SC-LOC-JP-44206-01-001-SHARED-10",
+      "field": "hintTranslation",
+      "sourceSha256": "c959b32c1e9638d9517e250d279f0b0280ff1c00058a5067a553fe1439f6330f",
+      "translationSha256": "cba85b67dcbf022b0699cb76b8598186cc701b02911a8ec203c2cc4c14480ba5",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-01-001",
+      "turnId": "DLG-SC-LOC-JP-44206-01-001-SHARED-11",
+      "field": "translation",
+      "sourceSha256": "0494ca08d3c9655cccd028d33c7204eb23ab6fd22901b6176a9efacba38ad9f7",
+      "translationSha256": "2a63e63b36c17f2911c781cd75ddad18b01a2917586f58c053c92901fa199d1c",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked outdated delay information, unknown arrival time, conditional estimates, no automatic full refund and pickup update sequence. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-02-001",
+      "turnId": "DLG-SC-LOC-JP-44206-02-001-SHARED-01",
+      "field": "translation",
+      "sourceSha256": "dd526e56a635a3b0788d8da180875c4a28eff100776579d1478f5711e060a478",
+      "translationSha256": "5d8acb97bd73a5c4a6fd52cf8cd83473bf379c0f42d33e3d9d885cdce48ffe20",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-02-001",
+      "turnId": "DLG-SC-LOC-JP-44206-02-001-SHARED-02",
+      "field": "translation",
+      "sourceSha256": "00aeca6f5e4a16b04233f1788418d9904187a0548536d3cb4a7b4f4472713d46",
+      "translationSha256": "9f0ad1a77babad5eddc269d3ff7d9e38022672da35c7e8462190da9c24729133",
+      "decision": "fixed",
+      "reason": "Distinguish administrative nonacceptance for processing from a final merits rejection; preserve the request to clarify correction locations."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-02-001",
+      "turnId": "DLG-SC-LOC-JP-44206-02-001-SHARED-02",
+      "field": "hintTranslation",
+      "sourceSha256": "531c6381faf70a802b5698c3d44247f80e04ead9cdb621be7619d78f9e0a066f",
+      "translationSha256": "5e151258e863dea8544b619272da67c886f45dff05a5c4277a8f41b3ed169a3c",
+      "decision": "fixed",
+      "reason": "Distinguish administrative nonacceptance for processing from a final merits rejection; preserve the request to clarify correction locations."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-02-001",
+      "turnId": "DLG-SC-LOC-JP-44206-02-001-SHARED-03",
+      "field": "translation",
+      "sourceSha256": "1d5f232ed8b11ce533eb4415ec34b8c4f7268ecbb9f659a1012c57e154828cde",
+      "translationSha256": "c72939f9e9f078f1c2c3820ad680e0b8807cce1e2b8dbecd583fa9c6914e937c",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-02-001",
+      "turnId": "DLG-SC-LOC-JP-44206-02-001-SHARED-04",
+      "field": "translation",
+      "sourceSha256": "01d0985b5a764b93e0cd8e72d073726e9f220ca049c39e9a485f68df45bcc6b4",
+      "translationSha256": "439c9bfc498b0bf15b0ba1ffb880c4a7251886f394ff99eae3518f862dc64b8a",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked returned application versus final decision, three sticky notes, written date/time confirmation, afternoon and Vietnamese support availability, booking not yet established. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-02-001",
+      "turnId": "DLG-SC-LOC-JP-44206-02-001-SHARED-04",
+      "field": "hintTranslation",
+      "sourceSha256": "adad0f7bee7a866c0c9596322f9f3c73bbab48db54bbcd22350bf63a9b62fe16",
+      "translationSha256": "feca01fd66ef8a4e8b5ad915f2decba3deb88b8161e9f4375c45cf00c8b24346",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked returned application versus final decision, three sticky notes, written date/time confirmation, afternoon and Vietnamese support availability, booking not yet established. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-02-001",
+      "turnId": "DLG-SC-LOC-JP-44206-02-001-SHARED-05",
+      "field": "translation",
+      "sourceSha256": "9f5a7fa2e553582a38914c6f0126dfe9bc8a3e0ea18dde6197e6a97de6d4ff7f",
+      "translationSha256": "1fc44b1191a9558ff7033443189f9f9ff7b9a09ad6fe8191d800ac3693143bec",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-02-001",
+      "turnId": "DLG-SC-LOC-JP-44206-02-001-SHARED-06",
+      "field": "translation",
+      "sourceSha256": "c083d51b6f412558ee659b686dc28f4054a541fd132d9152a048d62334ddcd17",
+      "translationSha256": "4b532bf8f25bae6abb07a1e3ffdcf3a0db5f90193c91f0747a048fee1350254b",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked returned application versus final decision, three sticky notes, written date/time confirmation, afternoon and Vietnamese support availability, booking not yet established. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-02-001",
+      "turnId": "DLG-SC-LOC-JP-44206-02-001-SHARED-06",
+      "field": "hintTranslation",
+      "sourceSha256": "a804494b6831f40dfabb82448c20e7068ace648dbd1f6d5718f54ed4663a79fc",
+      "translationSha256": "da18c3ceba80a1afca696631b0efab6ca809d341cfc702c16c1fd53b4f2b7650",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked returned application versus final decision, three sticky notes, written date/time confirmation, afternoon and Vietnamese support availability, booking not yet established. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-02-001",
+      "turnId": "DLG-SC-LOC-JP-44206-02-001-SHARED-07",
+      "field": "translation",
+      "sourceSha256": "540a67a97cfb55f66676c73b6977f9fab3c873c750f25d3016cfcd5cc16848c3",
+      "translationSha256": "74cb244ab9c9351a348827ee374129d5c86caefac1e08072782f4c0f341501f0",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-02-001",
+      "turnId": "DLG-SC-LOC-JP-44206-02-001-SHARED-08",
+      "field": "translation",
+      "sourceSha256": "69092f68d9885a3e2deb867f1d943dc05b953310b1b53cce073c80105febeef9",
+      "translationSha256": "9d9f8c38ecce4b8c61d5e7af964d7f9e9955be45c982ad2d723291640d79b9cb",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-02-001",
+      "turnId": "DLG-SC-LOC-JP-44206-02-001-SHARED-08",
+      "field": "hintTranslation",
+      "sourceSha256": "3fdd2da49fc00d59e044ab3a61e033e2b919e5f5a7101100066bbf449f966149",
+      "translationSha256": "d91e2fa4e9a789f58fbaae6959a55f1a1537a257739f293662aa887d551cbde2",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked returned application versus final decision, three sticky notes, written date/time confirmation, afternoon and Vietnamese support availability, booking not yet established. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-02-001",
+      "turnId": "DLG-SC-LOC-JP-44206-02-001-SHARED-09",
+      "field": "translation",
+      "sourceSha256": "b2889478255cd2606df5050212fff2cd924ffae0982180b972f5d7bc20fa8602",
+      "translationSha256": "fd7b36ab5dac542cb5f52a98f30b35e3628cf78776af45d8b22ef3f3949eef74",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked returned application versus final decision, three sticky notes, written date/time confirmation, afternoon and Vietnamese support availability, booking not yet established. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-02-001",
+      "turnId": "DLG-SC-LOC-JP-44206-02-001-SHARED-10",
+      "field": "translation",
+      "sourceSha256": "b80b1a38abb7943ba8578321a51a133501407f451734417be3c1908bc8654beb",
+      "translationSha256": "e43cbc7de6f629421aa514236179a51110197ae3968543f7369a02a088a8fe14",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-02-001",
+      "turnId": "DLG-SC-LOC-JP-44206-02-001-SHARED-10",
+      "field": "hintTranslation",
+      "sourceSha256": "613293f5451ffe777c85183370e40baa8e2deabf8f2fb42c8da8704973d198f8",
+      "translationSha256": "139924acefc59c7a90ec5d48f5063b3a4e2c12bd12a41203a1719f2fb4bb3eeb",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked returned application versus final decision, three sticky notes, written date/time confirmation, afternoon and Vietnamese support availability, booking not yet established. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-02-001",
+      "turnId": "DLG-SC-LOC-JP-44206-02-001-SHARED-11",
+      "field": "translation",
+      "sourceSha256": "11edb35246e5b29b4397020ce2dbbed426b39a44faa2dbdd9623737853c5a017",
+      "translationSha256": "4844736b353c94c0cf5ece94b2a13415ac9a7c9d0de8fb1015eaf5d1278890cb",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked returned application versus final decision, three sticky notes, written date/time confirmation, afternoon and Vietnamese support availability, booking not yet established. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-03-001",
+      "turnId": "DLG-SC-LOC-JP-44206-03-001-SHARED-01",
+      "field": "translation",
+      "sourceSha256": "eee7ec342050643026a5a4c9552ba450954c9a2adaf3355b160b52b3ca97a660",
+      "translationSha256": "801d1875166693a55da750596035395106598a9d3c8f5e3d86487406dcb33be8",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-03-001",
+      "turnId": "DLG-SC-LOC-JP-44206-03-001-SHARED-02",
+      "field": "translation",
+      "sourceSha256": "9deddec8ccf35b967c3517de69bae465a8a5de977f526496235f8c0c045ec2a3",
+      "translationSha256": "983e8f155c53b1042bc64634d5c3004b1f72d4d29566d4e88a611856c3d96bcc",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-03-001",
+      "turnId": "DLG-SC-LOC-JP-44206-03-001-SHARED-02",
+      "field": "hintTranslation",
+      "sourceSha256": "b5ee4a32d556129d62f912c0dbd64c8c855f615fd1f1629868780599a0788498",
+      "translationSha256": "603871cd0751089700557d2d0721f826361616a55ac1603113dcfbc6d0654fa4",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked invoice versus receipt, card-terminal completion not conclusive proof, no duplicate payment and payment proof versus visit proof. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-03-001",
+      "turnId": "DLG-SC-LOC-JP-44206-03-001-SHARED-03",
+      "field": "translation",
+      "sourceSha256": "91456759db9755f06c1d3291a6404be0bf42cfa3fa2bf08a3ea421d5ab9e3aa9",
+      "translationSha256": "fd20c44720c5e17f619e1516746a8a570d71186972bc12cbe03845389edb2a13",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-03-001",
+      "turnId": "DLG-SC-LOC-JP-44206-03-001-SHARED-04",
+      "field": "translation",
+      "sourceSha256": "694421f7b8aa880fd0978164a40ad22f916ddd54777f778b2f3da620dd152bcb",
+      "translationSha256": "ca2b7ddb7abe2d1eb9888f66f804f8b776cc8c8af3849b4916d242bd202562aa",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked invoice versus receipt, card-terminal completion not conclusive proof, no duplicate payment and payment proof versus visit proof. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-03-001",
+      "turnId": "DLG-SC-LOC-JP-44206-03-001-SHARED-04",
+      "field": "hintTranslation",
+      "sourceSha256": "7243014add920f191225e537801410d6dc15b3ef386e366491678b2176667eab",
+      "translationSha256": "0bc9f624aebbdb13a5e85ca1c371fd5c6069a542b4ecbdd459d631492b3bbd6d",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked invoice versus receipt, card-terminal completion not conclusive proof, no duplicate payment and payment proof versus visit proof. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-03-001",
+      "turnId": "DLG-SC-LOC-JP-44206-03-001-SHARED-05",
+      "field": "translation",
+      "sourceSha256": "14f07b587ead232b422d49ef21d4398f10e0d6f61396fcc49212521e17cbcdf2",
+      "translationSha256": "edf54c11ccf6bfa83451e77be783a9d3267675ba2ab93279efaa74239cfd49ee",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-03-001",
+      "turnId": "DLG-SC-LOC-JP-44206-03-001-SHARED-06",
+      "field": "translation",
+      "sourceSha256": "029c6893114b0798c62f25c55ec86b87153039325f95f3c0402946998e2734b6",
+      "translationSha256": "f3354b2e2629bb320eec5434973ad0d461ca242e0abed5bc3541d52452bbb944",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-03-001",
+      "turnId": "DLG-SC-LOC-JP-44206-03-001-SHARED-06",
+      "field": "hintTranslation",
+      "sourceSha256": "81e4332887621e6deee33ceac3d91ff04acc1dc87cd72e3e0eb807956858adbb",
+      "translationSha256": "3b82429b8537f7a33d616334f88c74d29716047de5f4fa68e363ea1441151610",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-03-001",
+      "turnId": "DLG-SC-LOC-JP-44206-03-001-SHARED-07",
+      "field": "translation",
+      "sourceSha256": "1489570e61bb0d7255708a4186b12fb018f0a17834f33efa20e7eb68e97e69b0",
+      "translationSha256": "57e3735fd2e0029cfc7adfff512f9b4e8ff62861356d0946dbe52121257f9372",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked invoice versus receipt, card-terminal completion not conclusive proof, no duplicate payment and payment proof versus visit proof. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-03-001",
+      "turnId": "DLG-SC-LOC-JP-44206-03-001-SHARED-08",
+      "field": "translation",
+      "sourceSha256": "f815767da4023cfba54ea8732dac839671672eae9926a9599f4c838eaddeb4c1",
+      "translationSha256": "9a913908df0f187b2dae3b5ba1adc20d90d9b8a7c1a972b69b597f6351c7f028",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-03-001",
+      "turnId": "DLG-SC-LOC-JP-44206-03-001-SHARED-08",
+      "field": "hintTranslation",
+      "sourceSha256": "b5175910675900e359d8403758e86e156bfc558c3e6360b68d29ca967917abca",
+      "translationSha256": "431ae44934efb2b00e150cee2b4807fa9db10f7f47b61f9021aab060e0ee3a49",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked invoice versus receipt, card-terminal completion not conclusive proof, no duplicate payment and payment proof versus visit proof. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-03-001",
+      "turnId": "DLG-SC-LOC-JP-44206-03-001-SHARED-09",
+      "field": "translation",
+      "sourceSha256": "58f01d90338115ccfb966271fefb56f5750adba071325e376d8fe3f3b20c353f",
+      "translationSha256": "2f9cc1f3ae09b8b02af859a4db22bbdd87de5c869c672b805edc57d183907ba6",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked invoice versus receipt, card-terminal completion not conclusive proof, no duplicate payment and payment proof versus visit proof. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-03-001",
+      "turnId": "DLG-SC-LOC-JP-44206-03-001-SHARED-10",
+      "field": "translation",
+      "sourceSha256": "8d81e450fc4ab42ea3006b6f411b9f053d47ece6cf345f15d8225cb7b1f5ca27",
+      "translationSha256": "0d3876a7bf4fed1e2793479b30a5c4ccecc8c450c1d18141248bc5c01509ab4c",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-03-001",
+      "turnId": "DLG-SC-LOC-JP-44206-03-001-SHARED-10",
+      "field": "hintTranslation",
+      "sourceSha256": "5a25a174d167331c51fe6fa4c785c14d67e3afabfe8e12a0463a451b0001bc1c",
+      "translationSha256": "3fc39b981e4dfb6e9cfd055daa939444eb4caa616c07be11e09ceab8e6b6d203",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked invoice versus receipt, card-terminal completion not conclusive proof, no duplicate payment and payment proof versus visit proof. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-03-001",
+      "turnId": "DLG-SC-LOC-JP-44206-03-001-SHARED-11",
+      "field": "translation",
+      "sourceSha256": "66bc6ffb0c7e315938137e75bae750d435e99a604f64066d4f836d6796a6f54d",
+      "translationSha256": "6f7003490518f32d3ff46465c3887fdcf1bc0ef0d9bc54cdd541ccc98165920f",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-04-001",
+      "turnId": "DLG-SC-LOC-JP-44206-04-001-SHARED-01",
+      "field": "translation",
+      "sourceSha256": "0b65306f46e67388e5c80eafc6283b7d12137abc1dd08e5c766aeb6c1a08f5a7",
+      "translationSha256": "d8294fb10ceed0244a379b8d6a12e53a9dd481aff3639c32c15909aa7d729e9f",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-04-001",
+      "turnId": "DLG-SC-LOC-JP-44206-04-001-SHARED-02",
+      "field": "translation",
+      "sourceSha256": "da8d469969c2b4ebbf43b0fb2a357cee0339c749151612f5cca8fa77d79cc3b4",
+      "translationSha256": "a64de559218a25852578a568edee27f88cbf70c5741a57003d4bdd17369864a4",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-04-001",
+      "turnId": "DLG-SC-LOC-JP-44206-04-001-SHARED-02",
+      "field": "hintTranslation",
+      "sourceSha256": "d44c2abe1525180b935c9a2bc655648c5fd0d114f2930ec8255a3c7894af0646",
+      "translationSha256": "0e6bee3a6a36846fadba6800a10937a2a9cb372632f0f2f2146c7ffe13371347",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked navy bag versus old photo, one gray repair, last possession versus discovery, privacy of key/address and notification after self-recovery. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-04-001",
+      "turnId": "DLG-SC-LOC-JP-44206-04-001-SHARED-03",
+      "field": "translation",
+      "sourceSha256": "9a15780231ec7e3d2b10592bfaa6b549b451e00dde40c90885bf47709df723e4",
+      "translationSha256": "155b5d6a1d2c4ecf543f56c82c5cb775a58ebabb491c226b35758904ad0bec41",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked navy bag versus old photo, one gray repair, last possession versus discovery, privacy of key/address and notification after self-recovery. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-04-001",
+      "turnId": "DLG-SC-LOC-JP-44206-04-001-SHARED-04",
+      "field": "translation",
+      "sourceSha256": "21eed0bbfe27bc1ee5f2a1ecb07b2de7f636540e4bd19149eba0be0c5dcd166d",
+      "translationSha256": "9fe1ff92916ec06770f2035602a81ab793952351cb5ec8bf84e52b0f9dd25b4a",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked navy bag versus old photo, one gray repair, last possession versus discovery, privacy of key/address and notification after self-recovery. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-04-001",
+      "turnId": "DLG-SC-LOC-JP-44206-04-001-SHARED-04",
+      "field": "hintTranslation",
+      "sourceSha256": "69aa91eabce59e3e209a03ca000436109f192921d935eec733ad97200e19da33",
+      "translationSha256": "392974c488cc4075644863d08b3a8e3d660ffec85aff7b48edd75f6bb9168c05",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked navy bag versus old photo, one gray repair, last possession versus discovery, privacy of key/address and notification after self-recovery. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-04-001",
+      "turnId": "DLG-SC-LOC-JP-44206-04-001-SHARED-05",
+      "field": "translation",
+      "sourceSha256": "0fe8a1d0ee59e250b93d000049cd16eff02b410b7ba8a60ca6b31467f1857b9e",
+      "translationSha256": "b1de20b15c66ba673d00bf5a05d158a76d840542d18ba88cb9e92d86b3f09006",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-04-001",
+      "turnId": "DLG-SC-LOC-JP-44206-04-001-SHARED-06",
+      "field": "translation",
+      "sourceSha256": "00a20b217e4cc5fc673da7da7318481a1a25b69809fd8c0953b84b8ffa8906bd",
+      "translationSha256": "8ba7d1ec3cc37ec8fe6cd220911ba908e9055363ce686237e86ee2c27bd66321",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked navy bag versus old photo, one gray repair, last possession versus discovery, privacy of key/address and notification after self-recovery. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-04-001",
+      "turnId": "DLG-SC-LOC-JP-44206-04-001-SHARED-06",
+      "field": "hintTranslation",
+      "sourceSha256": "2d952607f09c6490e3fb089da75e0ae0b74ab613df6c617eb389fb2a3e6e7f0e",
+      "translationSha256": "c312521dbe81e2fdf06c689f930da92c9d6a3b2f33b411ad7966a130d57c438c",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked navy bag versus old photo, one gray repair, last possession versus discovery, privacy of key/address and notification after self-recovery. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-04-001",
+      "turnId": "DLG-SC-LOC-JP-44206-04-001-SHARED-07",
+      "field": "translation",
+      "sourceSha256": "a0acd40e62ee9c64fb853eb2eb06e7933f945e5a82a188671a97a0c70fa510d9",
+      "translationSha256": "49da74c58f65f124633c6b8802b90ade95d63a0123058ad324bc4ad1db70a92d",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-04-001",
+      "turnId": "DLG-SC-LOC-JP-44206-04-001-SHARED-08",
+      "field": "translation",
+      "sourceSha256": "5e2b33b06fe20e1a1df74a9d712e14195f5dee4d97694e2b6079339a7e0c6d30",
+      "translationSha256": "8cc1e9c5fc563f6ecd40ccfe3bab8ca7e2fafd9b29a86f85dd992bab5b5a4770",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-04-001",
+      "turnId": "DLG-SC-LOC-JP-44206-04-001-SHARED-08",
+      "field": "hintTranslation",
+      "sourceSha256": "687620a302d04357f1b20d00bc01491fc4346a3bc8e69e78fb16595677cc4000",
+      "translationSha256": "9c3cae9cea3cbb0f4d2dd529d97d7bbfeb967eaed7d9cdf1b071bc0fdc18952d",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked navy bag versus old photo, one gray repair, last possession versus discovery, privacy of key/address and notification after self-recovery. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-04-001",
+      "turnId": "DLG-SC-LOC-JP-44206-04-001-SHARED-09",
+      "field": "translation",
+      "sourceSha256": "8b3657b3972ebf4dd6708bdb68c28d852434538434bb0aba5b09f93a1ed7115c",
+      "translationSha256": "63b1055eb18b46d1a675d59a883b3a903b1ea2c8a1201c223a8d00c8fffde2e8",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked navy bag versus old photo, one gray repair, last possession versus discovery, privacy of key/address and notification after self-recovery. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-04-001",
+      "turnId": "DLG-SC-LOC-JP-44206-04-001-SHARED-10",
+      "field": "translation",
+      "sourceSha256": "78287f2997b839e4701f93020517c1d2273142016f9e558c9de0b3ab3b9231d7",
+      "translationSha256": "36e6bd5f592d82919323c808b3d4dc8e8562b359be6406581698f23c820957f3",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-04-001",
+      "turnId": "DLG-SC-LOC-JP-44206-04-001-SHARED-10",
+      "field": "hintTranslation",
+      "sourceSha256": "1b2350e4a3af9d8529e7e35fbfd1f9199831c3a973dfab3dbceb3ee392ed6d65",
+      "translationSha256": "c8a4995a5da690354917cc796e33f0bef62eb1f0fd9a37e1d54bce172102178b",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-04-001",
+      "turnId": "DLG-SC-LOC-JP-44206-04-001-SHARED-11",
+      "field": "translation",
+      "sourceSha256": "71469708ef65b1fadf06500eebc53ece0812e3449a2e6287cb573e83758a6e9a",
+      "translationSha256": "a811c22c2ec59bca69dcf06a6a708965d35d0288cf9484e71d455a157fd72c25",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked navy bag versus old photo, one gray repair, last possession versus discovery, privacy of key/address and notification after self-recovery. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-05-001",
+      "turnId": "DLG-SC-LOC-JP-44206-05-001-SHARED-01",
+      "field": "translation",
+      "sourceSha256": "1b186ff1bf66b26daf7bdd9ebe6909fd27076f0c2f2570dce68453f09abd5744",
+      "translationSha256": "e7300fe6b5f73b594e9f3cb73ceef222040c579860b4ec691f78e29020741fca",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked two distinct parcel numbers, submitted versus unsubmitted requests, individual storage deadlines, unconfirmed collection place and conditions. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-05-001",
+      "turnId": "DLG-SC-LOC-JP-44206-05-001-SHARED-02",
+      "field": "translation",
+      "sourceSha256": "80bb0dfb68965acf6da130d8ca07db7ef09c5e0a1f75422a3db29a6f05e1f463",
+      "translationSha256": "d59cc86de4075f53bf6b83cfee5d97d1dd70b1696de415899ecd7999d87bbacf",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked two distinct parcel numbers, submitted versus unsubmitted requests, individual storage deadlines, unconfirmed collection place and conditions. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-05-001",
+      "turnId": "DLG-SC-LOC-JP-44206-05-001-SHARED-02",
+      "field": "hintTranslation",
+      "sourceSha256": "e8bcb3f76581f4871cb2d3a3b7aca2cc3985e647908fe5c5665fe2ea759aa06a",
+      "translationSha256": "5df0f3c84c1ec4fc6faf0024688b5ccf4ff66933ab7d436df26c2ecfc3d408b3",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked two distinct parcel numbers, submitted versus unsubmitted requests, individual storage deadlines, unconfirmed collection place and conditions. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-05-001",
+      "turnId": "DLG-SC-LOC-JP-44206-05-001-SHARED-03",
+      "field": "translation",
+      "sourceSha256": "44c430725c074c974298d5a457b45424ebcf6b80bb9ebfe4ab1cabf5c35cf300",
+      "translationSha256": "3f15ff4e01402e8c5661c03f9018c96fcbe3799e7777530ccd3acdb72f2988ac",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-05-001",
+      "turnId": "DLG-SC-LOC-JP-44206-05-001-SHARED-04",
+      "field": "translation",
+      "sourceSha256": "9595786bb18ee60232bef273d918b09c5dcf50a0a6704a711dcb526ee12b8af2",
+      "translationSha256": "eb279010d947156918cf01516040dd6c6c80d7e4bfeb1896d91f78fe6bdfe9a7",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-05-001",
+      "turnId": "DLG-SC-LOC-JP-44206-05-001-SHARED-04",
+      "field": "hintTranslation",
+      "sourceSha256": "f7e360af424fcac174941da9a78e7179bbd535884663a0426f2e293c502b2e56",
+      "translationSha256": "09744e23343d598c5896b949e477f4eb3ac8ac14643cd6305a52bd7e9aff0e74",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked two distinct parcel numbers, submitted versus unsubmitted requests, individual storage deadlines, unconfirmed collection place and conditions. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-05-001",
+      "turnId": "DLG-SC-LOC-JP-44206-05-001-SHARED-05",
+      "field": "translation",
+      "sourceSha256": "1ebff495f4c2af4d981d0a08581c57d1acf0d9f3bb046cd759657553efd13839",
+      "translationSha256": "081907ef259337d4d5d4189d483c7c98bab2826a9b5f3e6262ccb0f5cdd8bf9f",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-05-001",
+      "turnId": "DLG-SC-LOC-JP-44206-05-001-SHARED-06",
+      "field": "translation",
+      "sourceSha256": "b0e0ca94bb8753c3692c6c3d42043720456b89ff0a4953dffe2006bc70d6f944",
+      "translationSha256": "a760f614abe69a514a7eebec6c8db83a8afda29447c69f3b8378bc873fcb4147",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-05-001",
+      "turnId": "DLG-SC-LOC-JP-44206-05-001-SHARED-06",
+      "field": "hintTranslation",
+      "sourceSha256": "baa2f0ed1203277ad25b5b1abb7b1322ad5ff01aaf33b16bc5a61baf1e6b0c92",
+      "translationSha256": "e15d3720c9865f223d24903e74dde63ecfd550b82ed142057ae12441b94b7bbb",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked two distinct parcel numbers, submitted versus unsubmitted requests, individual storage deadlines, unconfirmed collection place and conditions. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-05-001",
+      "turnId": "DLG-SC-LOC-JP-44206-05-001-SHARED-07",
+      "field": "translation",
+      "sourceSha256": "fbb749a6bc60f7f78bfb97357159bfcd11e17192a9a026914f67c68782066bd9",
+      "translationSha256": "1d63e73f9bd10862729975d27fe9f52dd9b0dcd4f577d3830261af2c31f9c590",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-05-001",
+      "turnId": "DLG-SC-LOC-JP-44206-05-001-SHARED-08",
+      "field": "translation",
+      "sourceSha256": "15701ebaa04562d83dcc59f4a661cc351e68d2df8111386d95ea2636142e7102",
+      "translationSha256": "0d5a6b05dc01e4119029d6d7733b2deb809f114e8373db3c5cb41cea61062d9f",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-05-001",
+      "turnId": "DLG-SC-LOC-JP-44206-05-001-SHARED-08",
+      "field": "hintTranslation",
+      "sourceSha256": "8501a607a638458fbd3673344e38623b2dff7e5619e5203a1cef33222216d50d",
+      "translationSha256": "526ca011b45a0e246a06f85e1b594449234d5c8e08d8e9bc33c4d0001805cc56",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked two distinct parcel numbers, submitted versus unsubmitted requests, individual storage deadlines, unconfirmed collection place and conditions. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-05-001",
+      "turnId": "DLG-SC-LOC-JP-44206-05-001-SHARED-09",
+      "field": "translation",
+      "sourceSha256": "6a1a984a7b853852080c5f638d93029a5fec3c2963f921edd2bdf5bfc990baf3",
+      "translationSha256": "d62584de0c43028d387cf4c8ba6fdb52bd539585e3960fca5eb5dfb86d8f435a",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-05-001",
+      "turnId": "DLG-SC-LOC-JP-44206-05-001-SHARED-10",
+      "field": "translation",
+      "sourceSha256": "1511068808954fc3ed22599e43161868b776bf2e1ed8aeabe19891849ce5ef5e",
+      "translationSha256": "4bf2516f71f070a4fa8cf1c01744e286a8081fb489809f5504692b536fee1709",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-05-001",
+      "turnId": "DLG-SC-LOC-JP-44206-05-001-SHARED-10",
+      "field": "hintTranslation",
+      "sourceSha256": "239a53e8134fe02aa445880c3b73b43da821d3781c28d953cd16bfedaa6c0471",
+      "translationSha256": "7817dd51719277aca9aa3816f7de0748c3f3590429770d59dcf5f06a69e8659a",
+      "decision": "acceptable",
+      "reason": "Full contextual comparison: checked two distinct parcel numbers, submitted versus unsubmitted requests, individual storage deadlines, unconfirmed collection place and conditions. This wording retains the relevant meaning without needing expansion."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44206-05-001",
+      "turnId": "DLG-SC-LOC-JP-44206-05-001-SHARED-11",
+      "field": "translation",
+      "sourceSha256": "9b23c0ea45c3230968fb703243bff4c5398bce8132a3cf9d67328fce41de80d9",
+      "translationSha256": "2c18ea8cad9b3accc006deafe799d54ca8fd66b6a29f5a2bacf0a52610895bde",
+      "decision": "fixed",
+      "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+    }
+  ]
+}

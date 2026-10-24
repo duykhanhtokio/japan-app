@@ -1,14 +1,14 @@
 {
   "status": "PASS",
-  "scope": "Exhaustive mechanical screening plus contextual original-AI-author adjudication of every candidate, additional diagnostic and broad pack repairs; not a native or full-corpus semantic certification",
-  "checkedAt": "2026-10-24T16:20:52.223Z",
+  "checkedAt": "2026-10-24T17:26:17.932Z",
+  "validationBranch": "quality-validation/8f363a97-111566",
+  "baseCommit": "111566ec1dcbf1bad0f91ecb28a583966e47a8e5",
+  "scope": "Closed snapshot with exact batch687 dependencies; not an entire-corpus contextual or native certification.",
   "screenedFiles": 9284,
-  "dataInventorySha256": "ddc49d17392321d83681a880b21857b28aa2ffe0d33b17b729aca7136db65969",
+  "dataInventorySha256": "dea1499872a1f42db6974efbe6d4405bf85877e6ff267c01f0ee2b0cd5ac0bdb",
   "canonicalScenarios": 7128,
   "targetLocales": 12,
   "targetUnits": 1368576,
-  "screeningSignalsRemaining": 3039,
-  "unadjudicatedSignals": 0,
   "adjudications": {
     "status": "PASS_REVIEW_EVIDENCE",
     "candidateUnits": 7388,
@@ -72,6 +72,8 @@
     "nativeReviewed": false,
     "semanticCertification": false
   },
+  "unadjudicatedSignals": 0,
+  "screeningSignalsRemaining": 3039,
   "sourceIdCoverage": {
     "status": "PASS_SOURCE_ID_COVERAGE",
     "batches": 714,
@@ -94,19 +96,21 @@
     "speakerMismatchRejected": true,
     "fixturesOnly": false
   },
+  "approvedJlptUiLock": "JLPT APPROVED UI LOCK PASS: 10/10 byte-locked files match; registries satisfy structural policy.",
   "sourceFormat": {
-    "scenarios": 7128,
     "turns": 78408,
     "hints": 35640,
-    "duplicatePeriods": 0,
+    "doublePeriods": 0,
     "numericContradictions": 0
   },
-  "approvedJlptUiLock": {
-    "status": "PASS",
-    "byteLockedFiles": 10,
-    "checkedEarlierInThisReview": true,
-    "uiChanges": false
+  "dependentContextReview": {
+    "batch": "687",
+    "locales": 12,
+    "units": 1920,
+    "extraChangedTranslationLocations": 997
   },
   "nativeReviewed": false,
-  "unflaggedContentSemanticallyCertified": false
+  "fullCorpusSemanticReviewComplete": false,
+  "unflaggedContentSemanticallyCertified": false,
+  "supersedes": "111566 validation read the shared working tree. This closed snapshot includes every reviewed version required by its7388verdicts and excludes other ongoing corpus work."
 }
