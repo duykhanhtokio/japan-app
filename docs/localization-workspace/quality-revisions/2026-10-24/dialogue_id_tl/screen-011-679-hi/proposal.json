@@ -1,0 +1,65 @@
+{
+  "packetId": "screen-011-679-hi",
+  "owner": "dialogue_id_tl",
+  "kind": "unit-translations",
+  "batch": "679",
+  "language": "hi",
+  "expectedSourceSha256": "428df862df3f1d14fbfc3cdcb2160266b6bf9ab6a99d5e7904f9fb1edc4b01b8",
+  "expectedPackSha256": "2f5d8fcc17c38d28815b6d4610777fbc9bdcb7a834b9333b6426da5ffb3c7f18",
+  "reason": "Original-owner contextual adjudication: restore precise full meaning and natural dialogue in screened units.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-43205-01-001",
+      "turnId": "DLG-SC-LOC-JP-43205-01-001-SHARED-08",
+      "field": "translation",
+      "expectedTranslationSha256": "4cde34244319b12dab267c662e606e8ae66417698c2591bd7c91857d5ca7a764",
+      "translation": "साथी का जवाब आया है कि वे इस ओर आएँगे। मैं अभी जहाँ हूँ, वहाँ से किस दिशा में जाऊँ तो लिफ़्ट तक पहुँचूँगा?",
+      "reason": "Restore companion reply and direction from present place to elevator as full question."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-43205-02-001",
+      "turnId": "DLG-SC-LOC-JP-43205-02-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "df832796a5a84a401233dd232ad0f63e1f4c9642ac6c8c71916daaa32d76c1fa",
+      "translation": "वह नोट और पुराने पते पर मिले दस्तावेज़ संबंधित काउंटर पर दिखाएँ। क्या कोई और बात भी साथ में पूछना चाहते हैं?",
+      "reason": "Restore documents received at old address and full additional-consultation question."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-43205-03-001",
+      "turnId": "DLG-SC-LOC-JP-43205-03-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "48771d840b52b2f5065b533b1d479c207dda513f4fb1b9fd80adf8a9407dfa20",
+      "translation": "पंद्रह तारीख की दोपहर, है न? क्या इस महीने की पंद्रह तारीख के लिए समय देखूँ?",
+      "reason": "Restore date unit and full current-month check, preserving source month misunderstanding for correction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-43205-03-001",
+      "turnId": "DLG-SC-LOC-JP-43205-03-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "d3c6e72fd462a63b977ead11f986ff63d48d36af8c9ef3544d1969541fcbf9b0",
+      "translation": "ठीक है। बदलाव अभी पक्का नहीं हुआ है। जाँच का परिणाम हम आपसे संपर्क करके बता दें, यह ठीक रहेगा?",
+      "reason": "Restore full not-yet-confirmed change and permission for staff callback with checked result."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-43205-04-001",
+      "turnId": "DLG-SC-LOC-JP-43205-04-001-SHARED-01",
+      "field": "translation",
+      "expectedTranslationSha256": "9ee97362d444311751c360593e68df78d812c83292a6d62ecc85705b7de88ac8",
+      "translation": "आपकी साइकिल नहीं मिल रही है, है न? कृपया शुरुआत उस जगह से बताएँ जहाँ आखिरी बार देखी थी।",
+      "reason": "Restore reported missing bicycle and specific last-seen-location request instead of आखिरी जगह से fragment."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-43205-04-001",
+      "turnId": "DLG-SC-LOC-JP-43205-04-001-SHARED-06",
+      "field": "translation",
+      "expectedTranslationSha256": "1ec94212f42e1b53682928cc5a62b19ca09255d52d932e30ef7d4f946ca31361",
+      "translation": "अभी तक पूछताछ नहीं की है। उसे हटाया गया है या चोरी हुई है, यह अभी नहीं जानता।",
+      "reason": "Restore no inquiry yet and uncertain relocation-versus-theft, not bare अभी नहीं."
+    }
+  ]
+}

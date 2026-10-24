@@ -1,0 +1,257 @@
+{
+  "shared": [
+    {
+      "id": "DLG-SC-LOC-JP-44205-07-001-SHARED-01",
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnOrder": 1,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "お預かりする商品は、このかごの分でよろしいでしょうか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-07-001-SHARED-02",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-07-001-SHARED-02",
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnOrder": 2,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "request_two_checkouts_before_scanning",
+        "requiredSemanticComponents": {
+          "goal": "自分と隣人の品が混在するため、先に商品を分けて会計を二つにしたいと申し出る。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "はい。ただ、自分の分と隣の人に頼まれた分が混ざっています。会計を二つに分けたいので、先に商品を分けてもよいですか。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "自分と隣人の品が混在するため、先に商品を分けて会計を二つにしたいと申し出る。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "自分と隣人の品が混在するため、先に商品を分けて会計を二つにしたいと申し出る。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-07-001-SHARED-03",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-07-001-SHARED-03",
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnOrder": 3,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "では、まずご自分の分をこちらへお出しください。牛乳はどちらに入りますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-07-001-SHARED-04",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-07-001-SHARED-04",
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnOrder": 4,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "correct_milk_owner_from_shopping_note",
+        "requiredSemanticComponents": {
+          "goal": "牛乳を自分の分と言ったがメモでは隣人の分だったと訂正し移す。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "牛乳は私の分です。いえ、メモを見ると隣の人の分でした。今そちらの組へ移します。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "牛乳を自分の分と言ったがメモでは隣人の分だったと訂正し移す。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "牛乳を自分の分と言ったがメモでは隣人の分だったと訂正し移す。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-07-001-SHARED-05",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-07-001-SHARED-05",
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnOrder": 5,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "牛乳は頼まれた方へ移しました。ほかの商品も、このメモと合っていますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-07-001-SHARED-06",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-07-001-SHARED-06",
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnOrder": 6,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "match_two_product_groups_and_bags",
+        "requiredSemanticComponents": {
+          "goal": "パンと卵は自分、牛乳と洗剤は隣人と確認し、二つの袋をそれぞれに使うと伝える。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "パンと卵が私の分で、牛乳と洗剤が頼まれた分です。この二つの袋も、それぞれに使います。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "パンと卵は自分、牛乳と洗剤は隣人と確認し、二つの袋をそれぞれに使うと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "パンと卵は自分、牛乳と洗剤は隣人と確認し、二つの袋をそれぞれに使うと伝える。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-07-001-SHARED-07",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-07-001-SHARED-07",
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnOrder": 7,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "二つの組を確認できました。レシートも、それぞれのお会計で分けてお渡ししますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-07-001-SHARED-08",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-07-001-SHARED-08",
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnOrder": 8,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "request_separate_receipts_for_neighbor",
+        "requiredSemanticComponents": {
+          "goal": "隣人へ頼まれた分のレシートを渡すため、二会計のレシートを別に受け取りたいと述べる。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "はい、別々にお願いします。頼まれた分のレシートを隣の人に渡せるようにしたいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "隣人へ頼まれた分のレシートを渡すため、二会計のレシートを別に受け取りたいと述べる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "隣人へ頼まれた分のレシートを渡すため、二会計のレシートを別に受け取りたいと述べる。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-07-001-SHARED-09",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-07-001-SHARED-09",
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnOrder": 9,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "それでは、先にご自分の分の会計を進めます。こちらの商品と袋でお間違いありませんか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-07-001-SHARED-10",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-07-001-SHARED-10",
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnOrder": 10,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "confirm_own_items_and_payment_sequence",
+        "requiredSemanticComponents": {
+          "goal": "先にパンと卵を自分の袋で払い、終了後に牛乳と洗剤の会計へ進むと確認する。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "パンと卵、こちらの袋で合っています。自分の分を払い終えてから、牛乳と洗剤の分を続けて払います。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "先にパンと卵を自分の袋で払い、終了後に牛乳と洗剤の会計へ進むと確認する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "先にパンと卵を自分の袋で払い、終了後に牛乳と洗剤の会計へ進むと確認する。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-07-001-SHARED-11",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-07-001-SHARED-11",
+      "scenarioId": "SC-LOC-JP-44205-07-001",
+      "turnOrder": 11,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "かしこまりました。まずこちらのお会計から伺います。袋とレシートをそれぞれ取り違えないよう、順番にお渡しします。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    }
+  ],
+  "authoring": {
+    "locale": "ja",
+    "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
+    "contentScope": "simulated_learning_scenario",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "editorialSource": "scripts/dialogue-authoring/prf-044-city-cty-jp-44205.json",
+    "premise": "架空のスーパーのレジ。利用者は自分と隣人の買物を同じかごに入れており、先に分けてほしいと申し出る。牛乳一つの所属を途中で訂正し、それぞれの袋とレシートを合わせてから順に支払う。実在店舗の支払い方法やレジ運用規則を示さない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
+  }
+}

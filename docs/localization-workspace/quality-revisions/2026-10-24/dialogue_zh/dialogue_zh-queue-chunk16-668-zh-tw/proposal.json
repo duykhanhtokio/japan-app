@@ -1,0 +1,33 @@
+{
+  "packetId": "dialogue_zh-queue-chunk16-668-zh-tw",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "668",
+  "language": "zh-TW",
+  "expectedSourceSha256": "a60bf308b6562ba6581d5675ff4f6c7e4d2b3b9b8084d4488cbbda9057f00550",
+  "expectedPackSha256": "78be942b991064d8445dc2097c081899186e03b51506ac40173c4747f71e75b4",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-41204-06-001",
+      "turnId": "DLG-SC-LOC-JP-41204-06-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "da47204c7862deb876ca5e552c545013e108424482784c0d25bc067cdbc4543a",
+      "translation": "我們先處理停用。您最後一次使用這張卡是什麼時候？也有帶能確認身分的證件嗎？",
+      "reason": "優先停用卡最後何時用 is clipped; restore first card suspension and full last-use/identity-document questions."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-41204-06-001",
+      "turnId": "DLG-SC-LOC-JP-41204-06-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "baf4060e8c07bc42f0c19f411989782680c27eba149b62376d7bec7b790997c6",
+      "translation": "謝謝。為了核對身分，請在這張表上填寫姓名和地址。不需要說出密碼。",
+      "reason": "為確認 is incomplete phrase; restore verification purpose, this form name/address and no spoken PIN needed."
+    }
+  ]
+}

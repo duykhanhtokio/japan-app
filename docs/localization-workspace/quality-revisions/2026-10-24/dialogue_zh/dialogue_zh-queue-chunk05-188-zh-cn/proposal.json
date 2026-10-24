@@ -1,0 +1,49 @@
+{
+  "packetId": "dialogue_zh-queue-chunk05-188-zh-cn",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "188",
+  "language": "zh-CN",
+  "expectedSourceSha256": "cbdd1be253e08c181a8537056dc01a29ccefae62aafed216cb04f93594d342ba",
+  "expectedPackSha256": "b394e554f467c649f6dd4646a1472404e3f88b6a74a5f419b245c906c4102fe6",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-NAR-KASHIHARA-06-001",
+      "turnId": "DLG-SC-LOC-NAR-KASHIHARA-06-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "3c57832816b558a40331c8d5bbd5740218efd7c2366f3a641a85276b71da90c6",
+      "translation": "我会到三号窗口交这三份材料。谢谢您为我指路。",
+      "reason": "三号交这三样 is fragmentary; restore counter3, all three documents, complete thanks for guidance."
+    },
+    {
+      "scenarioId": "SC-LOC-NAR-KASHIHARA-08-001",
+      "turnId": "DLG-SC-LOC-NAR-KASHIHARA-08-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "185724faa826d890ea3c0fa22c4aa8f730def7722efaee4a2b430ff66ef67c4c",
+      "translation": "两位的付款都收到了。谢谢您，回去路上请小心。",
+      "reason": "两位都收到了 is ambiguous about receiving people/items; restore staff received both people's payments and safe-return thanks."
+    },
+    {
+      "scenarioId": "SC-LOC-NAR-TENRI-04-001",
+      "turnId": "DLG-SC-LOC-NAR-TENRI-04-001-SHARED-04",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "45c69cf03b4029a47a4adcb84136e460163f664c3574b5d6c9d9ed6a024ee472",
+      "translation": "说明自己没有使用语音留言服务，并请求只取消这项服务。请用日语表达。",
+      "reason": "Hint 未用求仅取消留言 is telegram fragment and vague service; restore nonuse and request to cancel only voicemail service with Japanese instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-NAR-TENRI-04-001",
+      "turnId": "DLG-SC-LOC-NAR-TENRI-04-001-SHARED-08",
+      "field": "translation",
+      "expectedTranslationSha256": "37c3fdc828eb1939880686f29c6a5d329dd9e767f02714d6f4dff099be56597f",
+      "translation": "那就请取消这项服务。请问从什么时候起不再收取这三百日元？",
+      "reason": "Three hundred currency unit yen omitted and player request clipped; restore cancelling service and when300yen charge ceases."
+    }
+  ]
+}

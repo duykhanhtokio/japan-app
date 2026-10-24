@@ -1,0 +1,49 @@
+{
+  "packetId": "queue010-640-zh-cn",
+  "owner": "dialogue_ne_my",
+  "kind": "unit-translations",
+  "batch": "640",
+  "language": "zh-CN",
+  "expectedSourceSha256": "38564806190b147cffa218084dca1820441d59e33f23a99bc8db2340438923e0",
+  "expectedPackSha256": "2f7a5af8953af81787068f322926f98ebf422174df86248223b6deee003b9afa",
+  "reason": "Original-author scenario-context review repairs exact screened unit defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-38207-04-001",
+      "turnId": "DLG-SC-LOC-JP-38207-04-001-SHARED-06",
+      "field": "translation",
+      "expectedTranslationSha256": "c33f58ca8b85b5f7280ca0011236e91aca91265359f089440ca0894df9171647",
+      "translation": "长椅旁边有散步路线图。伞是蓝色的，手柄上缠着白色胶带。",
+      "reason": "Restore bench-specific landmark and full umbrella descriptors rather than 旁边 lacking referent."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-38207-06-001",
+      "turnId": "DLG-SC-LOC-JP-38207-06-001-SHARED-02",
+      "field": "translation",
+      "expectedTranslationSha256": "90c8f8f5134cffcceb22badca71a179c0e5216d1d4abe191e1851ed2d93a9140",
+      "translation": "我写了门牌号和房间号码，但忘了写建筑物名称。我想先改好，再交给您。",
+      "reason": "Restore complete filled/omitted address fields and correction-before-handover intention."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-38207-06-001",
+      "turnId": "DLG-SC-LOC-JP-38207-06-001-SHARED-06",
+      "field": "translation",
+      "expectedTranslationSha256": "121bf8c4988cc83b9e368ad3d3449260a68558239e7d6912e0502bf1f4e2283f",
+      "translation": "我希望通知寄到新的住址。因为也登记了工作单位的地址，我担心是不是把两者弄混了。",
+      "reason": "Restore notification as object and explicit registered work-address confusion concern."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-38207-06-001",
+      "turnId": "DLG-SC-LOC-JP-38207-06-001-SHARED-08",
+      "field": "translation",
+      "expectedTranslationSha256": "8c94d604466ef384989537098ed1885741c019768ad69385a3e03a2c8aac23b6",
+      "translation": "只改家庭住址。工作单位的地址没有变，所以我不打算修改那一栏。",
+      "reason": "Restore only-home-information change and unchanged work field as complete clauses."
+    }
+  ]
+}

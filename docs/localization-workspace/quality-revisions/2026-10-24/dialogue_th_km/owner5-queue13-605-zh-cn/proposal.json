@@ -1,0 +1,49 @@
+{
+  "packetId": "owner5-queue13-605-zh-cn",
+  "owner": "dialogue_th_km",
+  "kind": "unit-translations",
+  "batch": "605",
+  "language": "zh-CN",
+  "expectedSourceSha256": "b82e63b8c3c9b1705cda67576c8161825e3dc70e3b33091630382f7efcb42f5e",
+  "expectedPackSha256": "396de0a9f8ac5d7e06cdb7e695d45f4944b58fe1adb15307d96be936f3ca7574",
+  "reason": "Original-owner complete contextual review of queue chunk13; correct missing clauses, awkward fragments and one dialogue-answer substitution for a hint.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-29212-07-001",
+      "turnId": "DLG-SC-LOC-JP-29212-07-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "d34989d2372584241ec5999e3395dd9f24567ef296ec9eb250d8309d2a10f5a4",
+      "translation": "是的，上面写着只取出要用的量，把袋口封好后再放回冷冻柜。",
+      "reason": "Restored label-attribution written instruction, use-only-needed-amount and reseal-before-freezer sequence."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29212-07-001",
+      "turnId": "DLG-SC-LOC-JP-29212-07-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "5a76f75da2d99f094e5df7ac4164bc42e15cdbd26e8a9cd188fd00354267d4c1",
+      "translation": "没有附带。如果您没有，日用品货架上有封袋用的夹子。",
+      "reason": "Restored distinct no-included-clip statement versus conditional customer lacking one, with shelf location."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29212-08-001",
+      "turnId": "DLG-SC-LOC-JP-29212-08-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "9f3e83d467f26f436aa8d961e892251152d27531a53ffe1283820ad63e5c3c88",
+      "translation": "个人写生可以，请选择不会挡住通道的位置。",
+      "reason": "Restored natural location requirement, not awkward bare do-not-block phrasing."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29212-08-001",
+      "turnId": "DLG-SC-LOC-JP-29212-08-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "9c513457a215280b9fd61cbd49a7caf20770268c9816558430e4a246273c6df1",
+      "translation": "好的，请把物品集中放在椅子旁边。不要进入花坛，请从这一侧画。",
+      "reason": "Restored natural complete belongings-gathering instruction and flowerbed boundary while painting from indicated side."
+    }
+  ]
+}

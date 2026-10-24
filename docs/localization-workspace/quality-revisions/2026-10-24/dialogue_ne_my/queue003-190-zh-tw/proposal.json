@@ -1,0 +1,41 @@
+{
+  "packetId": "queue003-190-zh-tw",
+  "owner": "dialogue_ne_my",
+  "kind": "unit-translations",
+  "batch": "190",
+  "language": "zh-TW",
+  "expectedSourceSha256": "a4d402c1a836ff3e5c20e0c79d5459f40fb718f2e91d091f8ae3b2003fdfd71d",
+  "expectedPackSha256": "aaf8d6ad9187dd53bd45c0848db464a1c9b60464ba30626e8624b2d3a72f1234",
+  "reason": "Original-author scenario-context review repairs exact screened unit defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-NGN-KARUIZAWA-04-001",
+      "turnId": "DLG-SC-LOC-NGN-KARUIZAWA-04-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "44abaf38eab6672a2580efb6ea707e254530bb5d7dfdee2f3cc189177cd43e69",
+      "translation": "請店員按樣品的大小切分，並說明回家後也會分開包裝。請用日語表達。",
+      "reason": "Expand fragmentary hint 依樣品切，回家分包 into explicit request to cut by sample size and statement about separate wrapping at home."
+    },
+    {
+      "scenarioId": "SC-LOC-NGN-MATSUMOTO-02-001",
+      "turnId": "DLG-SC-LOC-NGN-MATSUMOTO-02-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "dfd99c07394c23a48fd7af913e4bcb7c729c7caf40e5b54db541d62926a6687d",
+      "translation": "如果不知道名稱的漢字，也可以先把聽到的讀音記下來。",
+      "reason": "Restore name-specific kanji and recording heard pronunciation; original 記聲音 is vague and can imply recording arbitrary sound."
+    },
+    {
+      "scenarioId": "SC-LOC-NGN-MATSUMOTO-03-001",
+      "turnId": "DLG-SC-LOC-NGN-MATSUMOTO-03-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "11b543af9b0c24409c5359888933c8c952d1344a9ca28ff24caf44fee80bd634",
+      "translation": "謝謝。下次我會說：「說明我已經明白了，請保留原來的訂單。」",
+      "reason": "Replace clipped 說明懂了 with natural complete quoted clarification preserving order unchanged."
+    }
+  ]
+}

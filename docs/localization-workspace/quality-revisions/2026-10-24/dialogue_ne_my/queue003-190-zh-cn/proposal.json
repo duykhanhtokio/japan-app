@@ -1,0 +1,33 @@
+{
+  "packetId": "queue003-190-zh-cn",
+  "owner": "dialogue_ne_my",
+  "kind": "unit-translations",
+  "batch": "190",
+  "language": "zh-CN",
+  "expectedSourceSha256": "a4d402c1a836ff3e5c20e0c79d5459f40fb718f2e91d091f8ae3b2003fdfd71d",
+  "expectedPackSha256": "0c968e6a558b0890c2d8cefa1991e8a6e86405865790c41a018da875ebf36baa",
+  "reason": "Original-author scenario-context review repairs exact screened unit defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-NGN-MATSUMOTO-03-001",
+      "turnId": "DLG-SC-LOC-NGN-MATSUMOTO-03-001-SHARED-01",
+      "field": "translation",
+      "expectedTranslationSha256": "4925487edbb4e208a3042f0d48badd360ee77bc2837b829dcf2d7773ee7679f3",
+      "translation": "您刚才说了“不用了”，请问是要取消订单吗？",
+      "reason": "Restore contextually ambiguous refusal phrase もういいです rather than 已经可以了 so server cancellation question matches misunderstanding."
+    },
+    {
+      "scenarioId": "SC-LOC-NGN-MATSUMOTO-03-001",
+      "turnId": "DLG-SC-LOC-NGN-MATSUMOTO-03-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "d8d3857fe8277ba466fd1ffd3307ef947e241d6c5e092f83f0e655eae0f139ce",
+      "translation": "我已告诉厨房，您的订单继续保留。请再稍等一会儿，等餐点做好。我先告辞了。",
+      "reason": "Fix ungrammatical 再稍候菜做好 and make order continuation explicit; preserve wait until prepared and leave-taking."
+    }
+  ]
+}

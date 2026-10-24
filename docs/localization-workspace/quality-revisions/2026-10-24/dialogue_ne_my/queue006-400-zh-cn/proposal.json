@@ -1,0 +1,33 @@
+{
+  "packetId": "queue006-400-zh-cn",
+  "owner": "dialogue_ne_my",
+  "kind": "unit-translations",
+  "batch": "400",
+  "language": "zh-CN",
+  "expectedSourceSha256": "a2abe52fdc7537608a0b6f3e0131ce01c29c2e9411601ad75f6cabd5cd58c7a5",
+  "expectedPackSha256": "b6da684fa99c8f9f73ed714eb66d813dcf189bf0c0c408ec85b706db6d59c50d",
+  "reason": "Original-author scenario-context review repairs exact screened unit defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-12216-05-001",
+      "turnId": "DLG-SC-LOC-JP-12216-05-001-SHARED-02",
+      "field": "translation",
+      "expectedTranslationSha256": "a3d05d854b86face8dcb852be66447e5c8383e3f6c809a857bbb64998c625634",
+      "translation": "谢谢。有这张凭据，就能证明对方已经收到了，是吗？",
+      "reason": "Restore full confirmation question tied to this receipt, not generic 有纸; keep customer's mistaken delivery assumption for correction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-12216-05-001",
+      "turnId": "DLG-SC-LOC-JP-12216-05-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "5c40b7fdb6089ba85b69a30d183b7e7bd0e91b00c12a97781354725a3149faea",
+      "translation": "明白了。我现在只记录为已经寄出，是否签收会另行确认。",
+      "reason": "Restore full record-as-dispatched and separately verify receipt task; original telegraphic 现记已寄."
+    }
+  ]
+}

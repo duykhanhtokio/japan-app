@@ -1,0 +1,73 @@
+{
+  "packetId": "slot0-queue-002-192-zh-tw",
+  "owner": "dialogue_en_vi",
+  "kind": "unit-translations",
+  "batch": "192",
+  "language": "zh-TW",
+  "expectedSourceSha256": "405e76f1cf4e965c5904b5a22342b746737c247dd2147064406a9b5420623cfc",
+  "expectedPackSha256": "3cb77e5e42413c5eed69202dd1b8947700b396e88e90e75e9354cb10a4125406",
+  "reason": "Repair individually reviewed screening candidates against complete Japanese scenario context.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-NGN-SUWA-07-001",
+      "turnId": "DLG-SC-LOC-NGN-SUWA-07-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "37531f710fa06a1841ec27176084d0c75eecda5f31c0eb7de6381b88937677db",
+      "translation": "請用日語說明，您不會編造不清楚的號碼，而是想依據資料核實年金號碼及相關期間的參保紀錄。",
+      "reason": "The old hint omits both the pension-number object and period enrollment records. Restore both checks, no invented number and the Japanese-speaking instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-NGN-SUWA-08-001",
+      "turnId": "DLG-SC-LOC-NGN-SUWA-08-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "87b0397446c79f53ea63fe6e6cf5f0e2902ef87156d06c99c557c00f9bb964f1",
+      "translation": "我明白您準備資料的安排了。資料備齊後，請再來諮詢。謝謝您。",
+      "reason": "Replace clipped preparation-policy wording with natural full acknowledgment and conditional invitation to return once documents are ready."
+    },
+    {
+      "scenarioId": "SC-LOC-NGN-UEDA-02-001",
+      "turnId": "DLG-SC-LOC-NGN-UEDA-02-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "c0e0273407a059fb44a057addb63cffd31626cfe4cd75964855800d03bca6eb0",
+      "translation": "祝您留下美好的回憶。請在這裡悠閒地度過這段時光。",
+      "reason": "The source asks for an unhurried stay, not just resting. Restore natural wishes and the wider spending-time meaning."
+    },
+    {
+      "scenarioId": "SC-LOC-NGN-UEDA-04-001",
+      "turnId": "DLG-SC-LOC-NGN-UEDA-04-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "bb704a9e60a680778a90dd5ebc816f1f806d6457acef6217c4d47b7c201776f3",
+      "translation": "請使用這個分食盤。您可以自己分成方便入口的分量。",
+      "reason": "The old 自己好吃的量 changes easy-to-eat portions into tasty amounts. Restore using the small plate to portion food comfortably."
+    },
+    {
+      "scenarioId": "SC-LOC-NGN-UEDA-06-001",
+      "turnId": "DLG-SC-LOC-NGN-UEDA-06-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "ab649432ce01ff983bfa07dfd81dd0fff3e14c2b0cd0b6fbf39f57060281aafe",
+      "translation": "謝謝。現在我們想了解的是您聽得是否清楚。剛才的話，您有從頭到尾都聽清楚嗎？",
+      "reason": "Restore the specific audibility check and full question about hearing the entire utterance, rather than clipped 聽感 fragments."
+    },
+    {
+      "scenarioId": "SC-LOC-NGN-UEDA-07-001",
+      "turnId": "DLG-SC-LOC-NGN-UEDA-07-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "144ac5868a5b780033b613829420d98b9bed3c36da60aaa502484627dea07b45",
+      "translation": "請保留用於辨識藥品的標示，不要塗掉。如果在意別人看到，可以商量在外面再套一個袋子。",
+      "reason": "Restore a complete natural label-preservation instruction and the option to discuss outer-bag wrapping if visibility is a concern."
+    },
+    {
+      "scenarioId": "SC-LOC-NGN-UEDA-07-001",
+      "turnId": "DLG-SC-LOC-NGN-UEDA-07-001-SHARED-08",
+      "field": "translation",
+      "expectedTranslationSha256": "b9f0f624ccb769eea5f3f486427d7f0e5a25b7ed07d214d368bed13c409b5bb0",
+      "translation": "是的，我今天只是詢問袋子的事，並不是希望您向別人說這些藥是其他人的。",
+      "reason": "Restore grammatical full clauses preserving the distinction between a packaging inquiry and asking staff to misrepresent whose medicine it is."
+    }
+  ]
+}

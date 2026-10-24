@@ -1,0 +1,33 @@
+{
+  "packetId": "slot0-queue-003-192-zh-tw",
+  "owner": "dialogue_en_vi",
+  "kind": "unit-translations",
+  "batch": "192",
+  "language": "zh-TW",
+  "expectedSourceSha256": "405e76f1cf4e965c5904b5a22342b746737c247dd2147064406a9b5420623cfc",
+  "expectedPackSha256": "2ddca026c26604963e3be2a300dd6c1b8fd733714b2f63ccf9adc6fa6bc841a8",
+  "reason": "Repair individually reviewed screening candidates against complete Japanese scenario context.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-NGN-UEDA-07-001",
+      "turnId": "DLG-SC-LOC-NGN-UEDA-07-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "5a5572d63cd5e3dabb60e65ec103aa16d17c746e27bd7c3a5ec310af5aaba1fb",
+      "translation": "我會把藥裝在這個袋子裡交給您。如果有任何想確認的事，請隨時問我們。祝您早日康復。",
+      "reason": "Restore full natural packaging and invitation clauses; the old 用這袋給您 and 有不清 are malformed service language."
+    },
+    {
+      "scenarioId": "SC-NGN-UEDA-001",
+      "turnId": "DLG-SC-NGN-UEDA-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "3ac51baabe3277115f713ed743fb2f69ac753e9920fe7ec1de469670b5451b34",
+      "translation": "我收下這份記錄了。今天的工作就在這裡交接，辛苦您了。",
+      "reason": "Restore complete acknowledgment of receiving the work record and handing over today's work, rather than clipped fragments."
+    }
+  ]
+}

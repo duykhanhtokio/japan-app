@@ -1,0 +1,33 @@
+{
+  "packetId": "slot0-queue-003-216-hi",
+  "owner": "dialogue_en_vi",
+  "kind": "unit-translations",
+  "batch": "216",
+  "language": "hi",
+  "expectedSourceSha256": "09113b9a7fbd334399174851edd66503d3645d49ff12f86899e410ef6e2176e3",
+  "expectedPackSha256": "5c3e13f4dd0495eb92522238579a9afa54089dc86e4fe0d1adb3f147dfa49e69",
+  "reason": "Repair individually reviewed screening candidates against complete Japanese scenario context.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-SAG-URESHINO-03-001",
+      "turnId": "DLG-SC-LOC-SAG-URESHINO-03-001-SHARED-04",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "f7d2a46fc1abf6c275bbf208d05fd4b46edcb2f392ab784aa41071e4eb5ecc17",
+      "translation": "जापानी में बताएं कि टी बैग आपके मित्र के काम आ सकता है, और पूछें कि क्या एक बैग से दो लोगों के लिए दो मग चाय बन सकती है।",
+      "reason": "Replace clipped Hindi with the friend's likely usability and a full question about one tea bag brewing two mugs for two people."
+    },
+    {
+      "scenarioId": "SC-LOC-SAG-URESHINO-04-001",
+      "turnId": "DLG-SC-LOC-SAG-URESHINO-04-001-SHARED-01",
+      "field": "translation",
+      "expectedTranslationSha256": "2e6bf628ac6769cd12d48fb5c60d2e988795498c321911a61a9a3ed9a7f74b39",
+      "translation": "आज आप निगिरी सुशी का मिला-जुला सेट लेना चाहेंगे, या अपनी पसंद की चीज़ें एक-एक करके चुनेंगे?",
+      "reason": "Restore a complete polite choice question between an assorted nigiri set and individually selected pieces; the old wording is fragmentary."
+    }
+  ]
+}

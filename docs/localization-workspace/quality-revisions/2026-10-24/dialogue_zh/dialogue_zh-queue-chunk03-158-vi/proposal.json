@@ -1,0 +1,57 @@
+{
+  "packetId": "dialogue_zh-queue-chunk03-158-vi",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "158",
+  "language": "vi",
+  "expectedSourceSha256": "519e58302c3e579f130fb8834bed2588c0065894a430b4351a9f58376ee008f3",
+  "expectedPackSha256": "6cfb068bd5bca8792f9293de58380400b193dd4648db1c1d828ea59fa47cd9a6",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-KCH-SUSAKI-02-001",
+      "turnId": "DLG-SC-LOC-KCH-SUSAKI-02-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "be2d099064c47f17c41529a328ea9f623bbe0db5b262b45d09ef5bf0c0d6041a",
+      "translation": "Bốn xiên đúng không ạ? Anh chị muốn cả bốn xiên cùng một vị, hay mỗi người chọn một vị khác nhau?",
+      "reason": "Vietnamese compressed word order unnatural; retain four skewers and same flavour versus two people selecting different flavours."
+    },
+    {
+      "scenarioId": "SC-LOC-KCH-SUSAKI-02-001",
+      "turnId": "DLG-SC-LOC-KCH-SUSAKI-02-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "bd04a1782391ede37eec0600cd8a83c7d078534834c0d6099dbedac4772bbbc6",
+      "translation": "Cho tôi hai xiên vị muối và hai xiên vị sốt. Hai xiên vị muối tôi mang về, còn hai xiên vị sốt tôi muốn ăn tại đây.",
+      "reason": "Restore two salt and two sauce skewers, salt takeaway versus sauce eaten here, with full polite player clauses."
+    },
+    {
+      "scenarioId": "SC-LOC-KCH-SUSAKI-02-001",
+      "turnId": "DLG-SC-LOC-KCH-SUSAKI-02-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "2034ae9bced1b6e435c7abd8b2db44f5e865c040c953c503edbf7d6e2748aa92",
+      "translation": "Khi chọn được chỗ ngồi, anh chị gọi tôi rồi tôi sẽ đưa phần ăn tại đây. Tôi có cần ghi vị lên túi đựng phần mang về không ạ?",
+      "reason": "Restore seat-decided conditional handover and polite offer to label takeaway bag, not a bare imperative."
+    },
+    {
+      "scenarioId": "SC-LOC-KCH-SUSAKI-02-001",
+      "turnId": "DLG-SC-LOC-KCH-SUSAKI-02-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "3c973d43cc5b64fddb4e4c87c541d0c868684550e830b2424c7262fa570a69ce",
+      "translation": "Tôi ghi đơn là gói hai xiên vị muối và đưa hai xiên vị sốt không gói. Số lượng như vậy đúng chưa ạ?",
+      "reason": "đưa nguyên hai sốt is ambiguous; state recording wrapped salt skewers and unwrapped sauce skewers, then verify count."
+    },
+    {
+      "scenarioId": "SC-LOC-KCH-SUSAKI-04-001",
+      "turnId": "DLG-SC-LOC-KCH-SUSAKI-04-001-SHARED-01",
+      "field": "translation",
+      "expectedTranslationSha256": "8c691a6c7f162e6d0385bd273aa7bdff756609498535e17452788f92f8ecf860",
+      "translation": "Anh đang tìm trà để làm quà phải không ạ? Người nhận thường pha trà như thế nào?",
+      "reason": "trà quà is unnatural fragment; restore gift-tea intention and recipient's usual tea preparation method."
+    }
+  ]
+}

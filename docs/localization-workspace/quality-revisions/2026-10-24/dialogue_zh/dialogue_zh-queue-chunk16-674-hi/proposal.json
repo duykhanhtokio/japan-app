@@ -1,0 +1,41 @@
+{
+  "packetId": "dialogue_zh-queue-chunk16-674-hi",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "674",
+  "language": "hi",
+  "expectedSourceSha256": "f74566661a09b9b08106849801b257e4e7763d3e4f60e406e343b2dd62a89f7e",
+  "expectedPackSha256": "557ca6a5c9c6b070893c7dd517308d5aa0b16c03792fd7cf719e18cfe639d80b",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-42209-07-001",
+      "turnId": "DLG-SC-LOC-JP-42209-07-001-SHARED-06",
+      "field": "translation",
+      "expectedTranslationSha256": "10684f8817b2fe823064981198baa584005d6f6127a839ab5faf168cffccca19",
+      "translation": "कृपया ऐसा कर दीजिए। मेरे पास जो एक हज़ार येन का नोट है, उससे ठीक-ठीक भुगतान हो जाएगा, है न? पॉइंट से भुगतान करने की प्रक्रिया नहीं चाहिए।",
+      "reason": "Restore1000yen note, exact payment and no loyalty-points-payment operation in full Hindi; अंक is not natural points-service term."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-42210-01-001",
+      "turnId": "DLG-SC-LOC-JP-42210-01-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "9ddc1b4b4272a50369138b91461f2e06920b47a3783884cab1be03f02e63c2a6",
+      "translation": "दिशा उलटी थी। यहाँ लिखे बस सेवा के नंबर को मैंने चढ़ने की जगह का नंबर समझ लिया था।",
+      "reason": "Service number vs stop loses numbered boarding place distinction; restore opposite direction and mistake explicitly."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-42210-02-001",
+      "turnId": "DLG-SC-LOC-JP-42210-02-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "f89284aba50fdbfafbefc4dcfec1fb62e9a2b6e93703d19fdad828124701e07a",
+      "translation": "कार्यक्रम एक के बाद एक हों, तब भी भवन के प्रबंधन को बताएँ कि आवाज़ होगी। आज आप तारीख तय करना चाहते हैं या पहले इस्तेमाल के लिए कमरा ढूँढ़ना चाहते हैं?",
+      "reason": "सुविधा is wrong facility sense and fragments lose scheduling question; restore venue management and date-versus-room search choice."
+    }
+  ]
+}

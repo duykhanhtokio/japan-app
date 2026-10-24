@@ -1,0 +1,65 @@
+{
+  "packetId": "slot0-queue-008-672-zh-cn",
+  "owner": "dialogue_en_vi",
+  "kind": "unit-translations",
+  "batch": "672",
+  "language": "zh-CN",
+  "expectedSourceSha256": "ab8682eb105ff3dbf5f02483dedf211ee92302a5e62037a0b742510091a948bb",
+  "expectedPackSha256": "c7ffbaad0d23e62ef0144b4e7d320262de13202e945d7cb35d2c4f4f1a4564c7",
+  "reason": "Repair individually reviewed screening candidates against complete Japanese scenario context.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-42207-02-001",
+      "turnId": "DLG-SC-LOC-JP-42207-02-001-SHARED-02",
+      "field": "translation",
+      "expectedTranslationSha256": "80bbe7f768de47e2b3d6525382f30848e2292ed46d119922333715a7ceaa7678",
+      "translation": "通知上写着下周三来检查，但那天我要出差。如果我不在家，也会进房间吗？",
+      "reason": "Restore complete natural Chinese identifying the notification and the absence condition for entering the room."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-42207-03-001",
+      "turnId": "DLG-SC-LOC-JP-42207-03-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "9d75f1e1a1cbc71d8439582e3baabcf6190859fd568904b60d9d539a7a5c9895",
+      "translation": "请把带来的文件交给挂号处。就诊前如果症状有变化，请告诉附近的工作人员。叫您名字时，您可能不容易听清楚，对吗？",
+      "reason": "Restore document object, reception destination, symptom-change condition and hearing uncertainty at name call as full polite clauses."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-42207-04-001",
+      "turnId": "DLG-SC-LOC-JP-42207-04-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "2e0edc20ab120585e2cc6cfc430a61c628f61ead4896c818c2f0f2b4a2e277fb",
+      "translation": "我们已经连同袋子一起收下了。这是您的回执。确认失主的事请交给我们。谢谢您的配合，回去路上请小心。",
+      "reason": "Restore full custody acknowledgment and identifying the owner as staff responsibility; old 主人确认交我们 is malformed."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-42207-06-001",
+      "turnId": "DLG-SC-LOC-JP-42207-06-001-SHARED-01",
+      "field": "translation",
+      "expectedTranslationSha256": "56763817d2e3230a9987190a314d3e10b14020ec623585ec285c0a5e86719abb",
+      "translation": "您想咨询地址方面的事，对吗？新的住处已经确定了吗？",
+      "reason": "Restore a natural acknowledgment and complete question whether the new residence is decided."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-42207-07-001",
+      "turnId": "DLG-SC-LOC-JP-42207-07-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "a8e2fde7523fdd0f3c0605aed3c3f51e830616fea4c52c48d54cd747c5424376",
+      "translation": "海苔受潮后口感容易改变，所以标签说明开封后要封好袋口，放在干燥处保存。",
+      "reason": "Restore causal moisture/texture explanation and clearly attribute closing and dry storage instructions to the label."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-42207-07-001",
+      "turnId": "DLG-SC-LOC-JP-42207-07-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "4237545d655ef8d8558342d6f41191d1f49d1aaf9ae3d2b74de8bd3980985cff",
+      "translation": "上层有使用开封后可重新密封袋子的商品。原材料和海苔的尺寸相同，但每袋的片数较少。",
+      "reason": "Restore product-in-resealable-bag relation, same ingredients and sheet size, and fewer sheets per bag as full clauses."
+    }
+  ]
+}

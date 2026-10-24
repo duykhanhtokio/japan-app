@@ -1,0 +1,257 @@
+{
+  "shared": [
+    {
+      "id": "DLG-SC-MYZ-NOBEOKA-001-SHARED-01",
+      "scenarioId": "SC-MYZ-NOBEOKA-001",
+      "turnOrder": 1,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "記録の確認で手が止まっていましたね。どの部分を見ていますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-MYZ-NOBEOKA-001-SHARED-02",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-MYZ-NOBEOKA-001-SHARED-02",
+      "scenarioId": "SC-MYZ-NOBEOKA-001",
+      "turnOrder": 2,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "report_uncertain_blank_inspection_record",
+        "requiredSemanticComponents": {
+          "goal": "空欄へ数値を足す前に、どの製品の記録か確信がないと報告する。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "この欄が空いています。数値を書き足そうと思いましたが、どの製品の記録か自信がなくなりました。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "空欄へ数値を足す前に、どの製品の記録か確信がないと報告する。。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "空欄へ数値を足す前に、どの製品の記録か確信がないと報告する。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-MYZ-NOBEOKA-001-SHARED-03",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-MYZ-NOBEOKA-001-SHARED-03",
+      "scenarioId": "SC-MYZ-NOBEOKA-001",
+      "turnOrder": 3,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "空欄だけで未測定やゼロとは決められません。まず、製品の表示と記録票の識別番号は対応していますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-MYZ-NOBEOKA-001-SHARED-04",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-MYZ-NOBEOKA-001-SHARED-04",
+      "scenarioId": "SC-MYZ-NOBEOKA-001",
+      "turnOrder": 4,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "identify_product_record_suffix_mismatch",
+        "requiredSemanticComponents": {
+          "goal": "製品表示と記録票の識別番号の末尾が異なると伝える。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "見比べると末尾が違います。手元の製品の表示と、この記録票は別の番号です。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "製品表示と記録票の識別番号の末尾が異なると伝える。。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "製品表示と記録票の識別番号の末尾が異なると伝える。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-MYZ-NOBEOKA-001-SHARED-05",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-MYZ-NOBEOKA-001-SHARED-05",
+      "scenarioId": "SC-MYZ-NOBEOKA-001",
+      "turnOrder": 5,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "対応が確認できないまま数値を移さず、番号の違いを責任者へ伝えましょう。もう何か書き換えましたか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-MYZ-NOBEOKA-001-SHARED-06",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-MYZ-NOBEOKA-001-SHARED-06",
+      "scenarioId": "SC-MYZ-NOBEOKA-001",
+      "turnOrder": 6,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "state_no_edits_and_preserve_original_number",
+        "requiredSemanticComponents": {
+          "goal": "まだ記入も変更もせず、別番号を書き足して直したことにもしないと述べる。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "まだ書いていません。空欄もそのままです。この票に別の番号を書き足して直したことにするのも避けます。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "まだ記入も変更もせず、別番号を書き足して直したことにもしないと述べる。。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "まだ記入も変更もせず、別番号を書き足して直したことにもしないと述べる。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-MYZ-NOBEOKA-001-SHARED-07",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-MYZ-NOBEOKA-001-SHARED-07",
+      "scenarioId": "SC-MYZ-NOBEOKA-001",
+      "turnOrder": 7,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "はい。元の状態を保って確認しましょう。報告では、見た事実とまだ分からないことをどう説明しますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-MYZ-NOBEOKA-001-SHARED-08",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-MYZ-NOBEOKA-001-SHARED-08",
+      "scenarioId": "SC-MYZ-NOBEOKA-001",
+      "turnOrder": 8,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "separate_visible_record_facts_from_measurement_unknowns",
+        "requiredSemanticComponents": {
+          "goal": "番号の違いと空欄は事実だが、測定者や測定完了は不明だと説明する。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "製品と記録票の末尾が違い、記録の一欄が空いていると伝えます。誰が測ったかや、測定が済んだかは分かりません。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "番号の違いと空欄は事実だが、測定者や測定完了は不明だと説明する。。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "番号の違いと空欄は事実だが、測定者や測定完了は不明だと説明する。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-MYZ-NOBEOKA-001-SHARED-09",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-MYZ-NOBEOKA-001-SHARED-09",
+      "scenarioId": "SC-MYZ-NOBEOKA-001",
+      "turnOrder": 9,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "その内容で責任者に確認を依頼します。良否を判断したり、別の記録で埋めたりせず、返答を待ちましょう。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-MYZ-NOBEOKA-001-SHARED-10",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-MYZ-NOBEOKA-001-SHARED-10",
+      "scenarioId": "SC-MYZ-NOBEOKA-001",
+      "turnOrder": 10,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "pause_entry_for_responsible_person_mapping_check",
+        "requiredSemanticComponents": {
+          "goal": "記入を進めず、二つの表示と空欄を示して責任者に対応関係を確認してもらうと伝える。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "この分の記入は進めずに待ちます。二つの表示と空欄を示して、どの記録に対応するのか責任者に確認してもらいます。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "記入を進めず、二つの表示と空欄を示して責任者に対応関係を確認してもらうと伝える。。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "記入を進めず、二つの表示と空欄を示して責任者に対応関係を確認してもらうと伝える。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-MYZ-NOBEOKA-001-SHARED-11",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-MYZ-NOBEOKA-001-SHARED-11",
+      "scenarioId": "SC-MYZ-NOBEOKA-001",
+      "turnOrder": 11,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "承知しました。今の状態と報告内容を引き継ぎます。確認が済むまでは、この記録への追加を止めておいてください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    }
+  ],
+  "authoring": {
+    "locale": "ja",
+    "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
+    "contentScope": "simulated_learning_scenario",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "editorialSource": "scripts/dialogue-authoring/prf-045-city-cty-myz-nobeoka.json",
+    "premise": "延岡市にひもづく架空の工場の検査記録確認。利用者は空欄を埋めようとして、製品の識別番号と手元の記録票の番号が違うことに気づく。空欄を未測定やゼロと決めず、記録の対応関係を責任者へ報告して確認を待つ。実在の検査基準、測定手順や合否判断を示さない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
+  }
+}

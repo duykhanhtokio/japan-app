@@ -1,0 +1,257 @@
+{
+  "shared": [
+    {
+      "id": "DLG-SC-LOC-JP-46216-01-001-SHARED-01",
+      "scenarioId": "SC-LOC-JP-46216-01-001",
+      "turnOrder": 1,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "お連れの方と合わせて切符をお探しでしょうか。どのような席をご希望ですか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-46216-01-001-SHARED-02",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-46216-01-001-SHARED-02",
+      "scenarioId": "SC-LOC-JP-46216-01-001",
+      "turnOrder": 2,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "request_same_carriage_assuming_adjacent_seat",
+        "requiredSemanticComponents": {
+          "goal": "友人が予約済みで、同じ車両を選べば隣になると思っていると伝える。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "先に予約した友人と同じ車両にしたいです。同じ車両の切符を買えば、隣に座れると思っています。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "友人が予約済みで、同じ車両を選べば隣になると思っていると伝える。。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "友人が予約済みで、同じ車両を選べば隣になると思っていると伝える。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-46216-01-001-SHARED-03",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-46216-01-001-SHARED-03",
+      "scenarioId": "SC-LOC-JP-46216-01-001",
+      "turnOrder": 3,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "同じ車両でも、隣の席とは限りません。ご友人の座席の番号まで分かるものはございますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-46216-01-001-SHARED-04",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-46216-01-001-SHARED-04",
+      "scenarioId": "SC-LOC-JP-46216-01-001",
+      "turnOrder": 4,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "identify_cropped_seat_information_and_contact_friend",
+        "requiredSemanticComponents": {
+          "goal": "画像は車両番号だけで座席部分が切れているため、友人へ詳細を聞き直すと述べる。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "送ってもらった画像には車両の番号しか写っていません。座席の部分が切れているので、もう一度友人に聞きます。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "画像は車両番号だけで座席部分が切れているため、友人へ詳細を聞き直すと述べる。。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "画像は車両番号だけで座席部分が切れているため、友人へ詳細を聞き直すと述べる。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-46216-01-001-SHARED-05",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-46216-01-001-SHARED-05",
+      "scenarioId": "SC-LOC-JP-46216-01-001",
+      "turnOrder": 5,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "座席が分かったら、その位置とご自身の希望を照らし合わせましょう。隣の席を選べない場合、ほかに優先したいことはありますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-46216-01-001-SHARED-06",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-46216-01-001-SHARED-06",
+      "scenarioId": "SC-LOC-JP-46216-01-001",
+      "turnOrder": 6,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "prioritize_aisle_if_adjacent_unavailable",
+        "requiredSemanticComponents": {
+          "goal": "隣がなければ同じ車両の通路側を優先し、窓より席を立ちやすい方を希望すると伝える。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "隣がなければ、同じ車両の通路側を優先したいです。窓の近くより、席を立ちやすい方を希望します。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "隣がなければ同じ車両の通路側を優先し、窓より席を立ちやすい方を希望すると伝える。。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "隣がなければ同じ車両の通路側を優先し、窓より席を立ちやすい方を希望すると伝える。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-46216-01-001-SHARED-07",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-46216-01-001-SHARED-07",
+      "scenarioId": "SC-LOC-JP-46216-01-001",
+      "turnOrder": 7,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "通路側をご希望ですね。どの席が選べるかは、対象の列車の確認が必要です。ご友人から詳しい情報は届きましたか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-46216-01-001-SHARED-08",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-46216-01-001-SHARED-08",
+      "scenarioId": "SC-LOC-JP-46216-01-001",
+      "turnOrder": 8,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "present_full_seat_image_and_rank_requests",
+        "requiredSemanticComponents": {
+          "goal": "座席入りの画像を示し、隣の席の可否と難しい場合の通路側を順に相談する。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "座席まで入った画像が来ました。こちらです。友人の隣が選べるかと、難しい場合の通路側を順に相談したいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "座席入りの画像を示し、隣の席の可否と難しい場合の通路側を順に相談する。。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "座席入りの画像を示し、隣の席の可否と難しい場合の通路側を順に相談する。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-46216-01-001-SHARED-09",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-46216-01-001-SHARED-09",
+      "scenarioId": "SC-LOC-JP-46216-01-001",
+      "turnOrder": 9,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "その順序で候補を確認します。今の画像だけで、ご自身の席も確保されたわけではないので、ご案内後にお選びください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-46216-01-001-SHARED-10",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-46216-01-001-SHARED-10",
+      "scenarioId": "SC-LOC-JP-46216-01-001",
+      "turnOrder": 10,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "defer_choice_until_position_and_seat_type_review",
+        "requiredSemanticComponents": {
+          "goal": "候補を見て選び、同じ車両だけで隣と決めず位置と席の種類を確認すると述べる。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "候補を見てから選びます。同じ車両という条件だけで隣と決めず、友人の席との位置と自分の席の種類を確かめます。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "候補を見て選び、同じ車両だけで隣と決めず位置と席の種類を確認すると述べる。。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "候補を見て選び、同じ車両だけで隣と決めず位置と席の種類を確認すると述べる。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-46216-01-001-SHARED-11",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-46216-01-001-SHARED-11",
+      "scenarioId": "SC-LOC-JP-46216-01-001",
+      "turnOrder": 11,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "お二人の位置関係を確認する相談として承ります。画像をこちらでお見せいただき、対象の列車と席の候補を一緒に確かめましょう。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    }
+  ],
+  "authoring": {
+    "locale": "ja",
+    "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
+    "contentScope": "simulated_learning_scenario",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "editorialSource": "scripts/dialogue-authoring/prf-046-city-cty-jp-46216.json",
+    "premise": "日置市にひもづく架空の駅窓口。利用者は友人と同じ車両なら隣に座れると思っているが、車両番号だけでは座席の位置まで分からないと気づく。友人の座席情報を確認し、隣がなければ通路側を優先する希望を伝える。実在列車の座席、空席、料金や予約成立は示さない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
+  }
+}

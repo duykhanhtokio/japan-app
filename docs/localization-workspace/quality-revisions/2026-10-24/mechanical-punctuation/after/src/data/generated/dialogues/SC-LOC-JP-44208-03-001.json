@@ -1,0 +1,257 @@
+{
+  "shared": [
+    {
+      "id": "DLG-SC-LOC-JP-44208-03-001-SHARED-01",
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnOrder": 1,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "予約の変更をご希望ですね。今お持ちの予約票は一枚でしょうか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44208-03-001-SHARED-02",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44208-03-001-SHARED-02",
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnOrder": 2,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "identify_two_appointments_before_change",
+        "requiredSemanticComponents": {
+          "goal": "診察と検査の予約票が二枚あり、一方だけの変更でよいか相談する。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "診察と検査で二枚あります。勤務が変わったので、どちらか一枚だけ直せばよいのか相談したいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "診察と検査の予約票が二枚あり、一方だけの変更でよいか相談する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "診察と検査の予約票が二枚あり、一方だけの変更でよいか相談する。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44208-03-001-SHARED-03",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44208-03-001-SHARED-03",
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnOrder": 3,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "二つを分けて確認します。変更したい理由と、来られない予定の範囲を教えてください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44208-03-001-SHARED-04",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44208-03-001-SHARED-04",
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnOrder": 4,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "state_unavailable_morning_without_test_assumption",
+        "requiredSemanticComponents": {
+          "goal": "来週水曜午前が仕事で午後なら来られるが、午後の検査可否は分からないと伝える。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "来週の水曜の午前が仕事になりました。午後なら来られますが、その時間に検査ができるとは思っていません。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "来週水曜午前が仕事で午後なら来られるが、午後の検査可否は分からないと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "来週水曜午前が仕事で午後なら来られるが、午後の検査可否は分からないと伝える。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44208-03-001-SHARED-05",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44208-03-001-SHARED-05",
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnOrder": 5,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "診察の空きと検査の対応を別に調べます。先に一方を取り消すのではなく、担当の確認を待っていただけますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44208-03-001-SHARED-06",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44208-03-001-SHARED-06",
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnOrder": 6,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "retain_both_bookings_pending_sequence_check",
+        "requiredSemanticComponents": {
+          "goal": "両予約を残すよう依頼し、検査順が不明なため一括変更を判断しないと述べる。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "両方の予約はまだ残してください。検査の順番が決まっているかも分からないので、まとめて動かす判断はしません。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "両予約を残すよう依頼し、検査順が不明なため一括変更を判断しないと述べる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "両予約を残すよう依頼し、検査順が不明なため一括変更を判断しないと述べる。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44208-03-001-SHARED-07",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44208-03-001-SHARED-07",
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnOrder": 7,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "現在の予約を残した相談として受けます。前回の診察から、体調に変化はありましたか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44208-03-001-SHARED-08",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44208-03-001-SHARED-08",
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnOrder": 8,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "separate_new_health_concern_to_nurse",
+        "requiredSemanticComponents": {
+          "goal": "気になる変化が増えたので受付に判断を求めず、看護師へ別に伝えたいと申し出る。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "前回からの変化を受付だけで判断してもらうつもりはありません。気になることが増えたので、看護師へ別に伝えたいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "気になる変化が増えたので受付に判断を求めず、看護師へ別に伝えたいと申し出る。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "気になる変化が増えたので受付に判断を求めず、看護師へ別に伝えたいと申し出る。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44208-03-001-SHARED-09",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44208-03-001-SHARED-09",
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnOrder": 9,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "そのご相談もおつなぎします。日程の回答ができるまで、どの連絡方法をご希望ですか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44208-03-001-SHARED-10",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44208-03-001-SHARED-10",
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnOrder": 10,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "wait_for_both_schedules_before_accepting_slot",
+        "requiredSemanticComponents": {
+          "goal": "窓口で待てると答え、診察と検査の両方を確認してから候補へ返事したいと伝える。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "今日はここで待てます。候補の日時が出ても、検査と診察の両方が確認できてから返事をしたいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "窓口で待てると答え、診察と検査の両方を確認してから候補へ返事したいと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "窓口で待てると答え、診察と検査の両方を確認してから候補へ返事したいと伝える。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44208-03-001-SHARED-11",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44208-03-001-SHARED-11",
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnOrder": 11,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "では、看護師へのご相談と日程照会を分けて進めます。変更済みにはせず、まず担当へ確認しますのでお待ちください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    }
+  ],
+  "authoring": {
+    "locale": "ja",
+    "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
+    "contentScope": "simulated_learning_scenario",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "editorialSource": "scripts/dialogue-authoring/prf-044-city-cty-jp-44208.json",
+    "premise": "竹田市を背景にした架空の病院予約相談受付。診察と検査の二枚の予約票を持つ利用者が仕事の変更で来院日を相談する。受付は空き状況を調べるが、検査や診療を遅らせてよいかは医療担当へ確認する。日時は架空で実在病院の枠ではない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
+  }
+}

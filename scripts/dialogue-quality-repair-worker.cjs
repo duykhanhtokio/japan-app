@@ -8,11 +8,19 @@ const json=v=>Buffer.from(JSON.stringify(v,null,2)+'\n');
 const bytes=p=>fs.existsSync(path.join(root,p))?fs.readFileSync(path.join(root,p)):null;
 const stamp='2026-10-24';
 function writeAtomic(file,data){fs.mkdirSync(path.dirname(file),{recursive:true});const temp=file+'.'+process.pid+'.tmp';fs.writeFileSync(temp,data);fs.renameSync(temp,file);}
-function lock(){const file=path.join(root,'.git/dialogue-quality-repair.lock');for(let i=0;i<600;i++){try{const fd=fs.openSync(file,'wx');fs.writeFileSync(fd,String(process.pid));return ()=>{fs.closeSync(fd);fs.unlinkSync(file);};}catch(e){if(e.code!=='EEXIST')throw e;const pid=Number(fs.readFileSync(file,'utf8'));try{process.kill(pid,0);}catch(err){if(err.code==='ESRCH'){fs.unlinkSync(file);continue;}throw err;}Atomics.wait(new Int32Array(new SharedArrayBuffer(4)),0,0,100);}}throw Error('Quality repair lock busy; preserve draft and retry after coordinator checkpoint');}
+function lock(){
+ const file=path.join(root,'.git/dialogue-quality-repair.lock'),token=crypto.randomUUID();
+ for(let i=0;i<600;i++){
+  try{const fd=fs.openSync(file,'wx');fs.writeFileSync(fd,JSON.stringify({token,pid:process.pid,createdAt:new Date().toISOString()}));fs.closeSync(fd);
+   return ()=>{const current=JSON.parse(fs.readFileSync(file,'utf8'));assert.equal(current.token,token,'Never release another repair process lock');fs.unlinkSync(file);};
+  }catch(e){if(e.code!=='EEXIST')throw e;Atomics.wait(new Int32Array(new SharedArrayBuffer(4)),0,0,100);}
+ }
+ throw Error('Quality repair lock busy for60s; preserve draft and ask coordinator to inspect. No PID-based stale deletion across namespaces.');
+}
 function validateProposal(p){
  assert(/^[a-z0-9_-]+$/.test(p.packetId),'Safe unique packetId required');assert(/^dialogue_[a-z_]+$/.test(p.owner),'Owner required');assert(/^\d{3}$/.test(p.batch));
  for(const k of ['sourceFidelity','scenarioContext','naturalness'])assert.equal(p.review?.[k],true,'Explicit own author review required: '+k);
- assert(typeof p.reason==='string'&&p.reason.trim());assert(['translations','source-hints'].includes(p.kind));
+ assert(typeof p.reason==='string'&&p.reason.trim());assert(['translations','unit-translations','source-hints'].includes(p.kind));
 }
 function prepare(p){
  validateProposal(p);validateBatch(p.batch);const sourcePath=base+'sources/dialogue-batch-'+p.batch+'.ja.json',source=read(sourcePath);
@@ -21,11 +29,16 @@ function prepare(p){
  const put=(file,value)=>{const before=bytes(file);changes.set(file,{before,after:json(value)});};
  const packPath=l=>'src/data/dialogue-content/locale-batches/'+l+'/'+p.batch+'.json';
  const own=l=>assert.equal(ownerFor(p.batch,l,policy),p.owner,'Exclusive ownership violated: '+packPath(l));
- if(p.kind==='translations'){
+ if(p.kind==='translations'||p.kind==='unit-translations'){
   assert(locales.includes(p.language));own(p.language);assert.notEqual(p.batch,'000','Batch000 repairs require serialized legacy mirror workflow');
   const file=packPath(p.language),before=bytes(file),pack=JSON.parse(before);assert.equal(sha(before),p.expectedPackSha256,'Pack revision changed; do not overwrite another revision');
-  const rows=units(source);assert.equal(p.values.length,rows.length,'Exactly one full value per source N/P/H unit');
-  rows.forEach((r,i)=>{const v=p.values[i];assert(typeof v==='string'&&v.trim(),'Nonempty full translation required');assert(!/^(TODO|TBD|pending)$/i.test(v));const field=r.kind==='H'?'hintTranslation':'translation',t=pack.scenarios[r.sid].turns[r.tid];if(t[field]!==v){changedUnits.push({scenarioId:r.sid,turnId:r.tid,field,beforeSha256:sha(Buffer.from(t[field])),afterSha256:sha(Buffer.from(v))});t[field]=v;}});
+  const rows=units(source);
+  const replace=(sid,tid,field,v)=>{assert(typeof v==='string'&&v.trim(),'Nonempty full translation required');assert(!/^(TODO|TBD|pending)$/i.test(v));const t=pack.scenarios[sid].turns[tid];if(t[field]!==v){changedUnits.push({scenarioId:sid,turnId:tid,field,beforeSha256:sha(Buffer.from(t[field])),afterSha256:sha(Buffer.from(v))});t[field]=v;}};
+  if(p.kind==='translations'){
+   assert.equal(p.values.length,rows.length,'Exactly one full value per source N/P/H unit');rows.forEach((r,i)=>replace(r.sid,r.tid,r.kind==='H'?'hintTranslation':'translation',p.values[i]));
+  }else{
+   assert(p.changes?.length);const seen=new Set();for(const c of p.changes){assert(['translation','hintTranslation'].includes(c.field));const key=c.scenarioId+':'+c.turnId+':'+c.field;assert(!seen.has(key));seen.add(key);const original=source.scenarios[c.scenarioId]?.turns[c.turnId],t=pack.scenarios[c.scenarioId]?.turns[c.turnId];assert(original&&t,'Unknown source binding');if(c.field==='hintTranslation')assert(original.hintJa);assert.equal(sha(Buffer.from(t[c.field])),c.expectedTranslationSha256,'Target unit changed; review current text');assert(typeof c.reason==='string'&&c.reason.trim());replace(c.scenarioId,c.turnId,c.field,c.translation);}
+  }
   put(file,pack);
  }else{
   assert(p.changes?.length,'Source-hint changes required');for(const l of locales)own(l);

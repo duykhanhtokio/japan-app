@@ -1,0 +1,257 @@
+{
+  "shared": [
+    {
+      "id": "DLG-SC-LOC-JP-44205-06-001-SHARED-01",
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnOrder": 1,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "家賃のお振込みについて、案内の読みにくい所がございますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-06-001-SHARED-02",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-06-001-SHARED-02",
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnOrder": 2,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "ask_room_number_in_recipient_name",
+        "requiredSemanticComponents": {
+          "goal": "部屋番号を名前の前に付ける指示を見て、受取人名を変える意味か尋ねる。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "部屋番号を名前の前に付けると書いてあります。受取人の名前を、部屋番号付きに変えるのでしょうか。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "部屋番号を名前の前に付ける指示を見て、受取人名を変える意味か尋ねる。。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "部屋番号を名前の前に付ける指示を見て、受取人名を変える意味か尋ねる。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-06-001-SHARED-03",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-06-001-SHARED-03",
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnOrder": 3,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "どの欄の名前か、案内の見出しも読みましょう。ここは振込人名と書かれていますね。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-06-001-SHARED-04",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-06-001-SHARED-04",
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnOrder": 4,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "correct_payer_versus_recipient_field",
+        "requiredSemanticComponents": {
+          "goal": "振込人は自分の名前であり、相手の欄に部屋番号を足しかけた誤解を訂正する。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "受取人名ではなく、振り込む私の名前のことですね。送る相手の欄に足そうとしていました。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "振込人は自分の名前であり、相手の欄に部屋番号を足しかけた誤解を訂正する。。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "振込人は自分の名前であり、相手の欄に部屋番号を足しかけた誤解を訂正する。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-06-001-SHARED-05",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-06-001-SHARED-05",
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnOrder": 5,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "相手の口座情報と、ご自分を示す情報は分けてください。案内に書かれた受取人と、入力しようとしていた相手は一致していますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-06-001-SHARED-06",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-06-001-SHARED-06",
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnOrder": 6,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "compare_recipient_and_uncertain_payer_order",
+        "requiredSemanticComponents": {
+          "goal": "受取人は案内と一致するが、部屋番号と自分の名前の並べ方を案内で再確認したいと述べる。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "相手の名前は案内と同じです。ただ、部屋番号の後に私の名前をどう並べるかは、もう一度この案内を見て確かめたいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "受取人は案内と一致するが、部屋番号と自分の名前の並べ方を案内で再確認したいと述べる。。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "受取人は案内と一致するが、部屋番号と自分の名前の並べ方を案内で再確認したいと述べる。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-06-001-SHARED-07",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-06-001-SHARED-07",
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnOrder": 7,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "不明な書き方は、依頼元や担当へ確認してから進めましょう。まだ振込を実行してはいませんね。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-06-001-SHARED-08",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-06-001-SHARED-08",
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnOrder": 8,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "state_not_executed_and_request_fee_review",
+        "requiredSemanticComponents": {
+          "goal": "振込は未実行で、入力前に案内を担当と照合し手数料込みの支払額を知りたいと伝える。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "まだ実行していません。入力する前に担当の方と案内を照らし合わせ、手数料を含む支払額も知りたいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "振込は未実行で、入力前に案内を担当と照合し手数料込みの支払額を知りたいと伝える。。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "振込は未実行で、入力前に案内を担当と照合し手数料込みの支払額を知りたいと伝える。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-06-001-SHARED-09",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-06-001-SHARED-09",
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnOrder": 9,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "実行前の相談として、担当へお伝えします。受取人、振込人の表示、費用の確認という三点でよろしいですか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-06-001-SHARED-10",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-06-001-SHARED-10",
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnOrder": 10,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "confirm_three_checks_before_execution_decision",
+        "requiredSemanticComponents": {
+          "goal": "受取人・自分の表示・費用の三点を確認し、相手名は変えず費用判明後に実行を決めると述べる。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "その三点です。相手の名前を書き換えず、私の表示を確認します。費用も分かってから、実行するか決めます。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "受取人・自分の表示・費用の三点を確認し、相手名は変えず費用判明後に実行を決めると述べる。。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "受取人・自分の表示・費用の三点を確認し、相手名は変えず費用判明後に実行を決めると述べる。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-06-001-SHARED-11",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-06-001-SHARED-11",
+      "scenarioId": "SC-LOC-JP-44205-06-001",
+      "turnOrder": 11,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "承知しました。案内をお持ちのまま、こちらの担当へご相談ください。まだ実行前であることも引き継ぎます。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    }
+  ],
+  "authoring": {
+    "locale": "ja",
+    "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
+    "contentScope": "simulated_learning_scenario",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "editorialSource": "scripts/dialogue-authoring/prf-044-city-cty-jp-44205.json",
+    "premise": "架空の銀行相談窓口。家賃の案内で部屋番号を付けるよう求められた利用者は、受取人名に足すと誤解している。案内の振込人名の欄を読み直し、受取人と依頼人を分ける。実行前に記載と手数料を担当と確かめる方針とし、振込はまだ行わない。実在銀行の入力形式、手数料や送金完了は示さない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
+  }
+}

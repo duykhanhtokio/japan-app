@@ -1,0 +1,41 @@
+{
+  "packetId": "dialogue_zh-queue-chunk07-218-zh-cn",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "218",
+  "language": "zh-CN",
+  "expectedSourceSha256": "0a9e836eff2ab0c2c85e5df2cb58d71844f14b6148c549f1f663d8a29897d63e",
+  "expectedPackSha256": "728f469bf2fa4e4cc94cf64b8a5d7f3e64843357e996f074d59be34a7131d236",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-SHG-KUSATSU-02-001",
+      "turnId": "DLG-SC-LOC-SHG-KUSATSU-02-001-SHARED-08",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "b11506280e5c1fb32320a2c93bb45d8d8d4a4ed133d0bc29ea4d58b35696940e",
+      "translation": "说明接班人指了另一个步骤，所以自己看着同一张作业单，重新说明了尚未完成的步骤。请用日语表达。",
+      "reason": "对方误指按同单重说 omits handover worker, remaining step and report; restore precise context and Japanese instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-SHG-KUSATSU-03-001",
+      "turnId": "DLG-SC-LOC-SHG-KUSATSU-03-001-SHARED-04",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "ab1749aa7b4bc676f7bf8768d1e7f2ef9c3948f53f4d4c73c5c9fd6c5cd4006d",
+      "translation": "表示会从外面读商品名称，让商品留在冷藏柜里再作选择，不会拿出来一直握着商量。请用日语表达。",
+      "reason": "Hint loses selecting while chilled inside case; restore read name outside, avoid holding product while lengthy discussion."
+    },
+    {
+      "scenarioId": "SC-LOC-SHG-KUSATSU-04-001",
+      "turnId": "DLG-SC-LOC-SHG-KUSATSU-04-001-SHARED-08",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "843244b41e329cf4d46d328d0236e62b399d859d4888ea54050aca1805d57daa",
+      "translation": "说明已经把包放进置物架，也把伸到通道上的背带收进去了。请用日语表达。",
+      "reason": "包入且带收内 is telegram fragment; restore bag put away and strap protruding into aisle now tucked inside."
+    }
+  ]
+}

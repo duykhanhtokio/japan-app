@@ -1,0 +1,257 @@
+{
+  "shared": [
+    {
+      "id": "DLG-SC-LOC-JP-44210-05-001-SHARED-01",
+      "scenarioId": "SC-LOC-JP-44210-05-001",
+      "turnOrder": 1,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "不在票をお持ちですね。二枚ともについて、お受け取りを希望なさいますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44210-05-001-SHARED-02",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44210-05-001-SHARED-02",
+      "scenarioId": "SC-LOC-JP-44210-05-001",
+      "turnOrder": 2,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "avoid_duplicate_redelivery_for_two_notices",
+        "requiredSemanticComponents": {
+          "goal": "昨日と今日の二枚が同じ荷物か分からず、再配達を重複して頼まないようにしたいと伝える。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "昨日と今日の二枚がありますが、同じ荷物なのか別々なのか分かりません。再配達を二回頼まないようにしたいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "昨日と今日の二枚が同じ荷物か分からず、再配達を重複して頼まないようにしたいと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "昨日と今日の二枚が同じ荷物か分からず、再配達を重複して頼まないようにしたいと伝える。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44210-05-001-SHARED-03",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44210-05-001-SHARED-03",
+      "scenarioId": "SC-LOC-JP-44210-05-001",
+      "turnOrder": 3,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "まず番号を一枚ずつ見比べましょう。投函された日付以外に、違いは見つかりますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44210-05-001-SHARED-04",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44210-05-001-SHARED-04",
+      "scenarioId": "SC-LOC-JP-44210-05-001",
+      "turnOrder": 4,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "compare_matching_numbers_before_new_application",
+        "requiredSemanticComponents": {
+          "goal": "番号が同じに見えると答え、今日の票で申し込み直す前に同一荷物か照会を頼む。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "番号は同じに見えます。今日のほうだけを使って申し込み直す前に、同じ物か確認してほしいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "番号が同じに見えると答え、今日の票で申し込み直す前に同一荷物か照会を頼む。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "番号が同じに見えると答え、今日の票で申し込み直す前に同一荷物か照会を頼む。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44210-05-001-SHARED-05",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44210-05-001-SHARED-05",
+      "scenarioId": "SC-LOC-JP-44210-05-001",
+      "turnOrder": 5,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "番号と現在の取扱状況を調べます。すでに再配達を申し込む操作はされましたか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44210-05-001-SHARED-06",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44210-05-001-SHARED-06",
+      "scenarioId": "SC-LOC-JP-44210-05-001",
+      "turnOrder": 6,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "report_interrupted_request_without_completion_assumption",
+        "requiredSemanticComponents": {
+          "goal": "希望日選択後に最後の画面前で閉じ、再配達申込が完了したか分からないと説明する。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "昨日、希望日を選ぶところまでは進みましたが、最後の画面の前に閉じてしまいました。完了したか分かりません。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "希望日選択後に最後の画面前で閉じ、再配達申込が完了したか分からないと説明する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "希望日選択後に最後の画面前で閉じ、再配達申込が完了したか分からないと説明する。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44210-05-001-SHARED-07",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44210-05-001-SHARED-07",
+      "scenarioId": "SC-LOC-JP-44210-05-001",
+      "turnOrder": 7,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "完了の確認ができていないのですね。その申込状況も照会しましょう。受け取り方を変更したいご希望はありますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44210-05-001-SHARED-08",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44210-05-001-SHARED-08",
+      "scenarioId": "SC-LOC-JP-44210-05-001",
+      "turnOrder": 8,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "seek_counter_collection_without_availability_assumption",
+        "requiredSemanticComponents": {
+          "goal": "翌日不在のため窓口受取を相談し、まだここで受け取れると決まっていないと確認する。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "明日は家にいないので、窓口で受け取れるか相談したいです。ただ、まだここへ取りに来てよいと決まったわけではないですね。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "翌日不在のため窓口受取を相談し、まだここで受け取れると決まっていないと確認する。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "翌日不在のため窓口受取を相談し、まだここで受け取れると決まっていないと確認する。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44210-05-001-SHARED-09",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44210-05-001-SHARED-09",
+      "scenarioId": "SC-LOC-JP-44210-05-001",
+      "turnOrder": 9,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "はい、今の保管先と利用できる方法を確かめてからご案内します。不在票二枚を、確認の間こちらで拝見してもよろしいですか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44210-05-001-SHARED-10",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44210-05-001-SHARED-10",
+      "scenarioId": "SC-LOC-JP-44210-05-001",
+      "turnOrder": 10,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "provide_both_notices_and_pause_overlapping_request",
+        "requiredSemanticComponents": {
+          "goal": "二枚の票を確認用に渡し、現在の申込状態が分かるまで別の希望日を重ねて送らず待つと決める。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "二枚とも見てください。申込の状態が分かるまでは、自分で新しい希望日を重ねて送らずに待ちます。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "二枚の票を確認用に渡し、現在の申込状態が分かるまで別の希望日を重ねて送らず待つと決める。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "二枚の票を確認用に渡し、現在の申込状態が分かるまで別の希望日を重ねて送らず待つと決める。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44210-05-001-SHARED-11",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44210-05-001-SHARED-11",
+      "scenarioId": "SC-LOC-JP-44210-05-001",
+      "turnOrder": 11,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "承知しました。番号、申込状況、受取方法の順に照会します。分かった内容をお伝えするまで、こちらのお席でお待ちください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    }
+  ],
+  "authoring": {
+    "locale": "ja",
+    "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
+    "contentScope": "simulated_learning_scenario",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "editorialSource": "scripts/dialogue-authoring/prf-044-city-cty-jp-44210.json",
+    "premise": "架空の郵便受取相談窓口。違う日に投函された不在票を二枚持つ客が、同じ番号かを照合し、途中で画面を閉じた再配達申込の状態も相談する。郵便物の保管、申込完了や窓口受取の可否は調査前に保証しない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
+  }
+}
