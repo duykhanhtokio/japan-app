@@ -2998,3 +2998,8 @@ Integrated 601,605: all12 final own-source-fidelity markers and canonical source
 ## Continuation594–605 2026-10-24T02:49:30.849Z
 
 Integrated 600: all12 final own-source-fidelity markers and canonical source/ID/role/hint bindings pass. Complete 6031/7128; remaining 1097. Native/domain review false; no semantic cross-review. Remote persistence verification follows.
+
+
+## Continuation594–605 2026-10-24T02:57:35.413Z
+
+Integrated 596: all12 final own-source-fidelity markers and canonical source/ID/role/hint bindings pass. Complete 6041/7128; remaining 1087. Native/domain review false; no semantic cross-review. Remote persistence verification follows.
