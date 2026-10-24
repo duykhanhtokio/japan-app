@@ -1,0 +1,41 @@
+{
+  "packetId": "queue_008_267_zh-tw_v1",
+  "owner": "dialogue_hi_bn",
+  "kind": "unit-translations",
+  "batch": "267",
+  "language": "zh-TW",
+  "expectedSourceSha256": "02f2a860061ff3f0d7a6d3dd6eb807d68d689605477b057a7adfac6453c329a9",
+  "expectedPackSha256": "a436d0b56eb9bbd018e1b0790c4ea1d771a4ab92a513eb7507c17ba1a8a2af0f",
+  "reason": "Original-author source/context/naturalness adjudication of screening candidates; repair actual omissions, foreign-script leakage or clipped unnatural clauses.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-YMN-FUEFUKI-06-001",
+      "turnId": "DLG-SC-LOC-YMN-FUEFUKI-06-001-SHARED-02",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "146fb3308bca59b99014487959b6a6299317adfa5070b48528f624c20b1aa2dd",
+      "translation": "結合自己的返家安排，詢問放映後的感想會是否每個人都必須參加。請用日語表達。",
+      "reason": "Restore after-screening discussion, all-attendance requirement question and own return plans as complete hint."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUEFUKI-07-001",
+      "turnId": "DLG-SC-LOC-YMN-FUEFUKI-07-001-SHARED-08",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "0b886d65b89478406b8e18a3fec12e8c884cbad874f6e45c747477ca3c903102",
+      "translation": "補充數量是一個，並表示會把數字也加進便條。請用日語表達。",
+      "reason": "Restore omitted quantity one and adding numeral to memo; original 一數補筆記 opaque and not natural instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-YMN-FUJIKAWAGUCHIKO-02-001",
+      "turnId": "DLG-SC-LOC-YMN-FUJIKAWAGUCHIKO-02-001-SHARED-08",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "33a05cc2f677dd197397232d870bf030098ee820cd93c513b5a087b02ee27501",
+      "translation": "表示會在寄放行李之前，先向乘務員確認車輛的班次名稱。請用日語表達。",
+      "reason": "Restore baggage custody before checking vehicle service identity as complete task; crew recipient supported by actual player line."
+    }
+  ]
+}

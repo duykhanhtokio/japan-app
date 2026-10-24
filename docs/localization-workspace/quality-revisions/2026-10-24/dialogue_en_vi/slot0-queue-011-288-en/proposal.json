@@ -1,0 +1,41 @@
+{
+  "packetId": "slot0-queue-011-288-en",
+  "owner": "dialogue_en_vi",
+  "kind": "unit-translations",
+  "batch": "288",
+  "language": "en",
+  "expectedSourceSha256": "7a902bf1300d52aadc406e4107e8bee4ead9ca19ebe8118139312f7fc04c39ee",
+  "expectedPackSha256": "c4a254a90a6874585aab1101f39c33aa44d1b86ac2b18b57e2606b1e4d888b94",
+  "reason": "Repair individually reviewed screening candidates against complete Japanese scenario context.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-01229-01-001",
+      "turnId": "DLG-SC-LOC-JP-01229-01-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "c315e71a12b9b2304e7cbfa0281ae8f84a5af394efd2f53dac9460f2b602aec5",
+      "translation": "The ticket just handed to you is for October 3, and its route matches your itinerary. Your family is holding the October 4 ticket. Could you check the date yourself as well?",
+      "reason": "Replace unnatural travel section with route and clarify ticket handover while retaining both dates and the self-check question."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01229-01-001",
+      "turnId": "DLG-SC-LOC-JP-01229-01-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "7f662ebe33727473b93d5d8bfbd67c0062e45df9ebb54cecb5bbc5cd5a1d065a",
+      "translation": "Confirm in Japanese that you have received your own paper ticket for October 3 and that its date and route are correct. Say that you will keep it separate from your family's ticket for tomorrow and check the boarding instructions.",
+      "reason": "Replace unnatural travel section with route and preserve paper ticket, date, separation and boarding-instruction tasks."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01229-01-001",
+      "turnId": "DLG-SC-LOC-JP-01229-01-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "3a46546d89cf44e7a684023397fe62281adec175b29d67f89ea3388b312e7905",
+      "translation": "Yes, I have received the paper ticket for October 3. Its route is correct too. Now that it is separate from my family's October 4 ticket, I will check the boarding instructions with my own ticket in hand.",
+      "reason": "Restore natural route wording and avoid unsupported plural tickets while preserving October 3/4 separation and own-ticket boarding check."
+    }
+  ]
+}

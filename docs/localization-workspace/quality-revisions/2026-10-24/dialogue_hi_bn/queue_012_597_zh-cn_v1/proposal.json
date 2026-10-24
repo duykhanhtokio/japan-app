@@ -1,0 +1,65 @@
+{
+  "packetId": "queue_012_597_zh-cn_v1",
+  "owner": "dialogue_hi_bn",
+  "kind": "unit-translations",
+  "batch": "597",
+  "language": "zh-CN",
+  "expectedSourceSha256": "5723c83bfadcb6564eaa8aa534f3b8981013c6cce802a8f3695e1ba4c44e0787",
+  "expectedPackSha256": "ac7d669767a1e0df310386df9b0ab6d8ab83e609485e8de90d17fe8ec34145e1",
+  "reason": "Original-author source/context/naturalness adjudication of screening candidates; repair actual omissions, foreign-script leakage or clipped unnatural clauses.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-28227-03-001",
+      "turnId": "DLG-SC-LOC-JP-28227-03-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "0c227e64c4a8f72a91642b5f1673b6269cba375d25ca705a120b1e558c0a0fa1",
+      "translation": "把这个变化也写下来，就诊时会比较容易说明。您记得曾经受伤吗？",
+      "reason": "Restore easier communication at consultation, rather than merely convenient visit, and natural question about recalled injury."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28227-04-001",
+      "turnId": "DLG-SC-LOC-JP-28227-04-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "27c4ac7170e61dcabb030e3c9b65d1c164ff57b990c0cf5221f6c4007765325a",
+      "translation": "我没有付款，也没有输入卡号，就关掉了页面。",
+      "reason": "Restore full grammatical denial of payment/card entry and closing page, preserving suspicious-message facts."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28227-04-001",
+      "turnId": "DLG-SC-LOC-JP-28227-04-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "ba484cf24e642cb324e775faa57c7bc38832604a25291b065ce5a3c41f9bd19f",
+      "translation": "请到这边负责咨询的座位来。谢谢您过来。",
+      "reason": "Restore responsible consultation seat and natural thanks for coming, replacing ungrammatical 负责席/谢谢来 fragments."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28227-07-001",
+      "turnId": "DLG-SC-LOC-JP-28227-07-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "8fec1c79516ad80539283c9aa736a0e743baf66a6d94931567706dfc5c18b16d",
+      "translation": "谢谢您。我已确认可以只按茶叶的金额开具收据。",
+      "reason": "Restore staff confirmation of receipt issuance for tea only and full object, not truncated 开茶金额 wording."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28227-07-001",
+      "turnId": "DLG-SC-LOC-JP-28227-07-001-SHARED-08",
+      "field": "translation",
+      "expectedTranslationSha256": "7ffe8dcdcf3a15b19868581740ffe5c459ddb4ffa834426b2281ad481d73916f",
+      "translation": "谢谢。也可以把购物小票还给我吗？我想用它记录家庭开支。",
+      "reason": "Restore polite return request for cash receipt and purpose recording household spending, not use family accounts fragment."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28227-08-001",
+      "turnId": "DLG-SC-LOC-JP-28227-08-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "c5eae4f98e97828948ff8c6d188b09c1d7afb371a500a1a7e07beebf21b4a1a0",
+      "translation": "我会走到通道左端，在雨势变大前从正门出去，前往公交车站。",
+      "reason": "Restore full route plan via passage left end and main gate to bus stop before rain worsens; truncated 站 lacked bus-stop specificity."
+    }
+  ]
+}

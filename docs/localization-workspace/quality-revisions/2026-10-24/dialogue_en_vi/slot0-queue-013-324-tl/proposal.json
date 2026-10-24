@@ -1,0 +1,41 @@
+{
+  "packetId": "slot0-queue-013-324-tl",
+  "owner": "dialogue_en_vi",
+  "kind": "unit-translations",
+  "batch": "324",
+  "language": "tl",
+  "expectedSourceSha256": "650e35af98f835322411fac5a2c38dffe300879fd7276ca31ed5dec11c8748d2",
+  "expectedPackSha256": "199e838906bd55a4a966626deedbcac28529bf565908d2d6aa1d89542dba4618",
+  "reason": "Repair individually reviewed screening candidates against complete Japanese scenario context.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-06212-05-001",
+      "turnId": "DLG-SC-LOC-JP-06212-05-001-SHARED-02",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "acbfe02bf7879c8deb5d066035f243f2b662067066e334ba142906aa5133f01e",
+      "translation": "Itanong sa wikang Hapones kung tama bang pagsabayin ang 御中 pagkatapos ng pangalan ng kumpanya at ang 様 pagkatapos ng pangalan ng taong tatanggap.",
+      "reason": "Restore natural full Tagalog question about both suffix placements, instead of mixed fragments about company/contact titles."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-06212-05-001",
+      "turnId": "DLG-SC-LOC-JP-06212-05-001-SHARED-06",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "994f6612cde8993e8cce3f39570a17c675465e36b513f0d8aa1d2a3a2b9e7383",
+      "translation": "Sagutin sa wikang Hapones na pananatilihin ang pangalan ng kumpanya at departamento, at itatama ang pangalan ng indibidwal na tatanggap bilang 佐藤様.",
+      "reason": "Restore complete natural Tagalog correction of recipient name while retaining company and department fields."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-06212-05-001",
+      "turnId": "DLG-SC-LOC-JP-06212-05-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "0eccb5a294cd84298488ce2233ed53dfa72ad744de1035a0bd5938b6705f6a0d",
+      "translation": "Sabihin sa wikang Hapones na susuriin ang pangalan ng kumpanya, departamento, pangalan ng taong may 様 at address bago magpadala, nang hindi pinagsasama ang dalawang pantawag na paggalang.",
+      "reason": "Restore natural name-plus-honorific relation and checking details/address before dispatch without stacked honorifics."
+    }
+  ]
+}

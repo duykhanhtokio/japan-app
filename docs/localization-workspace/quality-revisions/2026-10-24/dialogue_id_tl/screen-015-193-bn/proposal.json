@@ -1,0 +1,33 @@
+{
+  "packetId": "screen-015-193-bn",
+  "owner": "dialogue_id_tl",
+  "kind": "unit-translations",
+  "batch": "193",
+  "language": "bn",
+  "expectedSourceSha256": "a5d5259731188c87f3a38881b69a51ca0e7a6341e673e125ec03d55a005111a5",
+  "expectedPackSha256": "fa7bf4d298d0fd8158f0ecca3fa0411e8717b02ec71662cece15c5c594b56663",
+  "reason": "Original-owner contextual adjudication: restore precise full meaning and natural dialogue in screened units.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-NGN-UEDA-08-001",
+      "turnId": "DLG-SC-LOC-NGN-UEDA-08-001-SHARED-01",
+      "field": "translation",
+      "expectedTranslationSha256": "fb33c3bfa6c796fcbd0b311b0c1c2c981f1a0ce0c6d48fb9c4716ace414c4831",
+      "translation": "আপনি যে টাকার অঙ্ক নিয়ে পরামর্শ চান, সেটি কি এই নোটের ‘১২’ সংখ্যাটি?",
+      "reason": "Restore courteous question identifying相談 amount as memo12 rather than awkward টাকা সংখ্যাটি."
+    },
+    {
+      "scenarioId": "SC-LOC-NGN-UEDA-08-001",
+      "turnId": "DLG-SC-LOC-NGN-UEDA-08-001-SHARED-02",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "199e08914b8c8840743a5169bda06b38925749a198455f492aabbda784a6943c",
+      "translation": "ব্যাখ্যা করুন যে একক ছাড়া লেখা ‘১২’ দিয়ে এক লাখ কুড়ি হাজার ইয়েন বোঝাতে চেয়েছিলেন। জাপানি ভাষায় বলুন।",
+      "reason": "Restore yen currency for120000 and intention in unitless12 notation."
+    }
+  ]
+}

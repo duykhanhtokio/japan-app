@@ -1,0 +1,33 @@
+{
+  "packetId": "dialogue_zh-queue-chunk25-272-bn",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "272",
+  "language": "bn",
+  "expectedSourceSha256": "1a7bc6e92707b4d00db135f25d343e254b7149cea2bf4fee825b3181f43888bb",
+  "expectedPackSha256": "a2228759a272db608899abbc5abcd7bb2143f09c339eae85f63ee5e55931c2d1",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "fbb9a1519cde5a9dfd9835533fa21eb8780e009a50b44d21bcb650bc7a6d608f",
+      "translation": "১ অক্টোবর দুই দফার ঘুম আর ২ অক্টোবর রাত দুটো নাগাদের ঘুমঘুম ভাব আলাদা করে লিখেছি। ঘুমের মধ্যে বারবার জেগেছেন, তা নয়; দুই দফা ঘুমের মাঝখানে জেগে ছিলেন, ঠিক তো?",
+      "reason": "জেগেছেন নয় is ungrammatical; restore two sleep periods Oct1 versus sleepiness Oct2 at2AM and awake between, not repeated wakings."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "db4b1703e25a9dded42eb4b834e20625e08d456de82c10a24a47c146ea3b663a",
+      "translation": "জাপানি ভাষায় নিশ্চিত করুন যে তিন ঘণ্টা ও দুই ঘণ্টা—দুই দফায় ঘুমিয়েছেন, টানা পাঁচ ঘণ্টা নয়; পরদিনের ঘুমঘুম ভাবও আলাদা লাইনে আছে। নোটটি চিকিৎসাকর্মীকে দিতে চান বলুন।",
+      "reason": "Hint omits explicit five hours despite original contrast; restore3and2hour periods not continuous5, next-day sleepiness separate and note to medical staff."
+    }
+  ]
+}

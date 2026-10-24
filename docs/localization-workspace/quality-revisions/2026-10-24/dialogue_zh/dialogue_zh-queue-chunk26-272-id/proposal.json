@@ -1,0 +1,57 @@
+{
+  "packetId": "dialogue_zh-queue-chunk26-272-id",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "272",
+  "language": "id",
+  "expectedSourceSha256": "1a7bc6e92707b4d00db135f25d343e254b7149cea2bf4fee825b3181f43888bb",
+  "expectedPackSha256": "7f1c390317377ce1641bdb29c59264b335fc0d314c09171183fb00f2f60e298f",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-04",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "3d6f5ae5a8b361c9b1958ec9c5f3731a4fa20efbde07efea133474a2718a7c4d",
+      "translation": "Jelaskan dalam bahasa Jepang bahwa pada 1 Oktober Anda tidur dalam dua periode, pukul 09.00–12.00 dan 15.00–17.00, bukan lima jam terus-menerus.",
+      "reason": "Restore natural full Indonesian task clause with two Oct1 sleep periods09–12and15–17, not5continuous, Japanese instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "5b94ff3ad3dd985de9209e228a530bad8a46436c2fdd40a740adff0f8c4bd6f3",
+      "translation": "Tidak. Pada 1 Oktober saya tidur dua kali, pukul sembilan pagi sampai dua belas siang dan pukul tiga sampai lima sore. Karena saya hanya menulis totalnya, catatan itu mungkin terbaca sebagai tidur lima jam terus-menerus.",
+      "reason": "Clarify nine in morning to noon versus3–5afternoon explicitly and natural full possible-misread clause."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "a9b363841ec6931493028d706d4636caa28e9e4ba882c779313a3bde6289b8b4",
+      "translation": "Yang pertama tiga jam, lalu dua jam, jadi total lima jam, ya. Saya akan menulis waktu kedua periode itu pada baris terpisah. Silakan konsultasikan kecukupan waktu tidur kepada tenaga medis.",
+      "reason": "Tulis is command to patient instead of staff writing; restore staff will enter both periods separately,3+2=5 and defer sufficiency to medical staff."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "03d19c552858fbcb6d3f3355cd51ca1e552171e8dda0ababbe58995a9554f577",
+      "translation": "Pastikan bahwa Anda tidur dalam dua periode, tiga jam dan dua jam, bukan lima jam terus-menerus, dan bahwa rasa kantuk keesokan harinya ditulis pada baris terpisah. Sampaikan keinginan untuk menyerahkan catatan itu kepada tenaga medis. Sampaikan dalam bahasa Jepang.",
+      "reason": "Restore explicit separate sleep periods and separate line for next-day sleepiness; complete natural task including handing note to medical staff."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "616f94c468fc3686711cf3c1afe8ca69ead3238b9f6c34cd30ad425293255a5d",
+      "translation": "Benar. Saya tidur dalam dua periode, tiga jam dan dua jam, bukan lima jam terus-menerus. Rasa kantuk sekitar pukul dua pagi keesokan harinya juga ditulis pada baris terpisah. Saya ingin menyerahkan catatan ini kepada tenaga medis.",
+      "reason": "Dua kali tiga jam dan dua jam can sound twice-three; restore two distinct3hour and2hour periods, not5continuous,2AMnextday separate."
+    }
+  ]
+}

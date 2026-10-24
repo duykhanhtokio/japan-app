@@ -1,0 +1,41 @@
+{
+  "packetId": "dialogue_zh-queue-chunk25-272-hi",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "272",
+  "language": "hi",
+  "expectedSourceSha256": "1a7bc6e92707b4d00db135f25d343e254b7149cea2bf4fee825b3181f43888bb",
+  "expectedPackSha256": "b2ea521d7ae22dddb16270d1b5d9efedc1bdd0bebbe650c8d12c3ccfa15b2ee3",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "03b0b3a196a0dfeacc63be37d70a3a5bc2fc89081d0e6dfbf31500a420b613fb",
+      "translation": "नहीं, एक अक्टूबर को सुबह नौ से बारह बजे तक और दोपहर तीन से पाँच बजे तक, दो बार सोया था। केवल कुल समय लिखा था, इसलिए इसे लगातार पाँच घंटे सोना समझा जा सकता है।",
+      "reason": "Hindi two-times phrase lacks sleep verb; restore slept twice with precise date/intervals and possible misread due total only."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "d502088a98a63413c69b6f80c3a40c5fa384e030cb7eba7d412f9a5e7aeeb9d2",
+      "translation": "पुष्टि कीजिए कि तीन घंटे और दो घंटे की दो अलग अवधियों में सोए थे, लगातार पाँच घंटे नहीं, और अगले दिन का उनींदापन भी अलग पंक्ति में है। बताइए कि यह नोट चिकित्साकर्मी को देना चाहते हैं। जापानी में कहिए।",
+      "reason": "अगले दिन की नींद wrongly names next-day sleep rather than sleepiness; preserve उनींदापन and complete3+2not5continuous task."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "e23a483a2ef11fa8438c07d92453995d771c460f254b10b1b81e08aa88715d13",
+      "translation": "सही है। तीन घंटे और दो घंटे की दो अलग अवधियों में सोया था, लगातार पाँच घंटे नहीं। अगले दिन सुबह लगभग दो बजे का उनींदापन भी अलग पंक्ति में है। यह नोट चिकित्साकर्मी को देना चाहता हूँ।",
+      "reason": "दो नींदें is unnatural; restore two sleep periods3and2hours, not5continuous and nextday2AMsleepiness separate plus note handover."
+    }
+  ]
+}

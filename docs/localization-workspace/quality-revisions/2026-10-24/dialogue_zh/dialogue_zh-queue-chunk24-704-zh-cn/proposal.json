@@ -1,0 +1,41 @@
+{
+  "packetId": "dialogue_zh-queue-chunk24-704-zh-cn",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "704",
+  "language": "zh-CN",
+  "expectedSourceSha256": "99cfb22aae08c48ce2b1bcdbf1c7cf2f445dac9915e99de2d87efb71f1774f93",
+  "expectedPackSha256": "017dc95e4170e8bfb30bcc980c0561a8d21a6f6430738d6f96c4c3466a307c18",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-46221-04-001",
+      "turnId": "DLG-SC-LOC-JP-46221-04-001-SHARED-01",
+      "field": "translation",
+      "expectedTranslationSha256": "46a6649ed6e26df8987ee132f3539aaf5fe43abf9c3431b9d46385f8a034773f",
+      "translation": "您来交这个信封，对吧？可以告诉我在哪里找到的吗？",
+      "reason": "您交信封 is unnatural bare assertion; restore brought found envelope and polite where found question."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-46221-07-001",
+      "turnId": "DLG-SC-LOC-JP-46221-07-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "b6e22d0eed62ae43828aa440e9e9ba379557de6aeb4b72472b07db52bf939457",
+      "translation": "请确认这件商品的情况后再选。这两种的保存方法也未必相同。您打算怎么使用？",
+      "reason": "该品未必同 is editorial shorthand; restore check product before choose, storage may differ and intended use question."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-46221-07-001",
+      "turnId": "DLG-SC-LOC-JP-46221-07-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "2f1bb807aef10f0c0bdf1063107b22a4345d5c1958d8d59876a0e549d523ac3a",
+      "translation": "这个袋子上也有开封后处理方式的说明。如果内容无法确认，可以和原料问题一起向厂家咨询。",
+      "reason": "此袋也有开封后处理 lacks explanation noun; restore handling instructions and inquiry with ingredient questions if unclear."
+    }
+  ]
+}

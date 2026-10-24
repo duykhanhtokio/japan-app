@@ -1,0 +1,49 @@
+{
+  "packetId": "dialogue_zh-queue-chunk20-680-zh-tw",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "680",
+  "language": "zh-TW",
+  "expectedSourceSha256": "4e84d055526657146aed36b8b93f57a7e19d052e880962c77ee5a5b22e680bff",
+  "expectedPackSha256": "316854ff40139c6cd7a5967c4e306a07ffbfff022e7930ae2be9637744b007cc",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-43205-07-001",
+      "turnId": "DLG-SC-LOC-JP-43205-07-001-SHARED-02",
+      "field": "translation",
+      "expectedTranslationSha256": "630cdd768618c6c4d36f0ada54546d1c5f21d4d2e3fd4eec3e72e3d1edd8587b",
+      "translation": "我要這盒茶。大字寫的價格是指一盒的價錢嗎？",
+      "reason": "Taiwan 大字價格 unnatural; restore this box tea and whether large printed amount applies one box."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-43205-07-001",
+      "turnId": "DLG-SC-LOC-JP-43205-07-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "3382496b66558fde552aad2fbf332cd206e891074a87d77d20a0f2303574e75d",
+      "translation": "這張價牌顯示的是兩盒一起買的價格。一盒的價格標示在這裡。",
+      "reason": "Restore price label applies two boxes bought together and separate one-box display here, full Taiwan clauses."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-43205-07-001",
+      "turnId": "DLG-SC-LOC-JP-43205-07-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "9c9c086deabf9263e3109594e41d93cceeafe617068ac4b1eb1ed1422e3db49c",
+      "translation": "那請看單盒的價格標示。旁邊也有同樣名稱、尺寸較小的盒裝茶。",
+      "reason": "旁有同名小盒 is clipped; restore then check single-item price and same tea name smaller box next to it."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-43205-07-001",
+      "turnId": "DLG-SC-LOC-JP-43205-07-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "e67cee549df1c29111d20a09e0204dd2aa0a7c59fb3f68c8653eb66b06298b21",
+      "translation": "我們把盒上標的數量和價牌上的數量對照看看。這張就是小盒的價格標示。",
+      "reason": "這個對小盒 is unnatural; restore matching counts printed box vs tag and this display corresponding small box."
+    }
+  ]
+}

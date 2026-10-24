@@ -1,0 +1,49 @@
+{
+  "packetId": "queue_012_603_bn_v1",
+  "owner": "dialogue_hi_bn",
+  "kind": "unit-translations",
+  "batch": "603",
+  "language": "bn",
+  "expectedSourceSha256": "8262f89c8e4660fdc02feee527714ea5b675852de5972a637819fa32587a409c",
+  "expectedPackSha256": "06395ec28c528ff2ef96f4d91a2424ce38bcd00144c795c9d53721943353b051",
+  "reason": "Original-author source/context/naturalness adjudication of screening candidates; repair actual omissions, foreign-script leakage or clipped unnatural clauses.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-29208-04-001",
+      "turnId": "DLG-SC-LOC-JP-29208-04-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "1364a2eba4b597855c4981183a2bf926aa4dae789094d83bb5c5c3dd573108fc",
+      "translation": "ধন্যবাদ। পরে খোঁজ নেওয়ার সময় এই নম্বরটি ব্যবহার করব, তাই তো?",
+      "reason": "Restore complete confirmation question about later inquiry using receipt number, not clipped পরে প্রশ্নে এই নম্বর phrase."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29208-04-001",
+      "turnId": "DLG-SC-LOC-JP-29208-04-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "d2f774b5a2d01455c4d9d827f72313576f4317afb757045fc916ca090fefc35c",
+      "translation": "হ্যাঁ, খোঁজ নেওয়ার সময় এই নম্বরটি বলবেন। পাওয়া চাবিগুলি জমা দেওয়ার জন্য ধন্যবাদ।",
+      "reason": "Restore inquiry-number instruction and grammatical thanks for handing in found keys, not vague then say and জমার ধন্যবাদ."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29208-05-001",
+      "turnId": "DLG-SC-LOC-JP-29208-05-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "b709689abb0ea9edbee12dbfb3fd832deb5a4b636d2d611c047cafeb0c75f9bf",
+      "translation": "এ৪ কাগজ ধরে এমন বড় খাম আছে। সাধারণ কাগজ ও একটু মোটা কাগজের দুই ধরনের খাম রয়েছে।",
+      "reason": "Restore envelope fitsA4 distinction and two paper thickness types, not ambiguous বড় A4 খাম implying envelope itself A4-sized."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29208-05-001",
+      "turnId": "DLG-SC-LOC-JP-29208-05-001-SHARED-06",
+      "field": "translation",
+      "expectedTranslationSha256": "01f248f015f36187a06e1f2fd6bb27ca74362a189db1878b46b87edcc5c1baf5",
+      "translation": "আশি ইয়েন দিচ্ছি। প্রাপকের নাম-ঠিকানা লিখে কাগজপত্র ঢোকানোর পরে এখানে ফিরে আসব, তাই তো?",
+      "reason": "Restore80yen payment amount/currency, recipient addressing and documents inserted before returning as complete Bengali question."
+    }
+  ]
+}

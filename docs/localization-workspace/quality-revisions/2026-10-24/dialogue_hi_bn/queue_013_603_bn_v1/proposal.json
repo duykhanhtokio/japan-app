@@ -1,0 +1,209 @@
+{
+  "packetId": "queue_013_603_bn_v1",
+  "owner": "dialogue_hi_bn",
+  "kind": "unit-translations",
+  "batch": "603",
+  "language": "bn",
+  "expectedSourceSha256": "8262f89c8e4660fdc02feee527714ea5b675852de5972a637819fa32587a409c",
+  "expectedPackSha256": "2481b54324de465de23c536f4526d0b9b9409b9f83da73dd595cf705a57aad17",
+  "reason": "Original-author source/context/naturalness adjudication of screening candidates; repair actual omissions, foreign-script leakage or clipped unnatural clauses.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-29208-05-001",
+      "turnId": "DLG-SC-LOC-JP-29208-05-001-SHARED-08",
+      "field": "translation",
+      "expectedTranslationSha256": "566a8ec7bee771a44e0544c60aea0368f642030025dca5e4d454d32bfe053f96",
+      "translation": "ঠিকানা লিখে দশটি কাগজই খামের মধ্যে রেখেছি। এবার কি এর ওজন মেপে দিতে পারবেন?",
+      "reason": "Restores both completed actions, all ten sheets and explicit weighing request rather than telegraphic nouns."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29208-05-001",
+      "turnId": "DLG-SC-LOC-JP-29208-05-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "c9faf2f978bb97ccd8ded3375b0deb1fdbe8d6be87bf4d95b578bacff049e447",
+      "translation": "হ্যাঁ, এই ওজন অনুযায়ী ডাকমাশুল দুইশো ইয়েন হবে। খামের মুখ বন্ধ করার পর আমরা এটি গ্রহণ করব।",
+      "reason": "Restores weight-based postage condition, yen and receiving only after sealing."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29208-06-001",
+      "turnId": "DLG-SC-LOC-JP-29208-06-001-SHARED-02",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "3ed3cd21b0eafbf53418263b5b4e4a997a784eea794fb98b0b5a02c18edf25ab",
+      "translation": "বলুন যে পাসবইয়ের সব লেখার ঘর ভরে গেছে এবং সেটি বদলে নতুন পাসবই দেওয়ার অনুরোধ করুন। জাপানি ভাষায় বলুন।",
+      "reason": "Full task restores filled entry spaces and replacement request with explicit Japanese-speaking instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29208-06-001",
+      "turnId": "DLG-SC-LOC-JP-29208-06-001-SHARED-02",
+      "field": "translation",
+      "expectedTranslationSha256": "a7c8fc044f63da0888334da2d50a59dc800535df5d9828cb458fbf426d32e4a7",
+      "translation": "হ্যাঁ, শেষ লাইন পর্যন্ত ছাপা হয়ে গেছে। দয়া করে এটি বদলে আমাকে একটি নতুন পাসবই দিন।",
+      "reason": "Restores completed printing and explicit replacement of passbook in a natural sentence."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29208-06-001",
+      "turnId": "DLG-SC-LOC-JP-29208-06-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "568e38719442d0a875ce3e2cc51e90ee5abfa6489928b064ef4266f673db2684",
+      "translation": "আপনার জন্য একটি নতুন পাসবই তৈরি করছি। পুরোনো পাসবইটিও ফেরত দেব, তাই এখানেই একটু অপেক্ষা করুন।",
+      "reason": "Restores new passbook creation, old passbook return and resulting instruction to wait there."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29208-06-001",
+      "turnId": "DLG-SC-LOC-JP-29208-06-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "cac853bf342fb4619722ddb4b82f4aadab9b11a0f1a0552420786ae045429da3",
+      "translation": "হ্যাঁ, আগের একই স্থিতি নতুন পাসবইয়ে বহাল রাখা হয়েছে। এখন থেকে লেনদেনের তথ্য ছাপানোর জন্য নতুন পাসবইটি ব্যবহার করুন।",
+      "reason": "Restores carried-over balance and future transaction-entry instruction, not a fragment saying same."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29208-07-001",
+      "turnId": "DLG-SC-LOC-JP-29208-07-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "2dbbc58a6ae6f295c4b56b7c34eea7610ee7735056d75c02dfe3f42bd0bb29b2",
+      "translation": "চারশো মিলিলিটারের প্যাকেটটির দাম দুইশো ইয়েন। সঠিক দাম লেখা লেবেলটি এখানে নিচের তাকে রয়েছে।",
+      "reason": "Restores subject capacity, yen and location of correct price label."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29208-07-001",
+      "turnId": "DLG-SC-LOC-JP-29208-07-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "8b4a2e5fc1b01aa4781f6604a1f6133968a65f800cffbc18b4c067eedf899cd0",
+      "translation": "এটি একই সুগন্ধের ডিটারজেন্টের রিফিল। বড় প্যাকেটটি হলো এই আটশো মিলিলিটারের প্যাকেট।",
+      "reason": "Restores detergent refill meaning, same fragrance and explicit larger bag capacity."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29208-07-001",
+      "turnId": "DLG-SC-LOC-JP-29208-07-001-SHARED-08",
+      "field": "translation",
+      "expectedTranslationSha256": "70bd4db14efe681d51014489efd7b74ca5b8c772631eb27b116aee123ef9d8d1",
+      "translation": "আমি দুবার রিফিল করার মতো পরিমাণ চাই, তাই আটশো মিলিলিটারের একটি প্যাকেট কিনব।",
+      "reason": "Restores reason and complete purchase choice with capacity and one bag."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29208-08-001",
+      "turnId": "DLG-SC-LOC-JP-29208-08-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "1cc07df57480c94d8440651135f762114fe795123d13efb5a5b9ea98f24ceb08",
+      "translation": "অন্য পাশেও নির্মাণকাজের বেড়া থাকায় পথ বন্ধ। আজ যে পথ দিয়ে এসেছেন, সেই পথ দিয়েই ফিরে যান।",
+      "reason": "Restores opposite-side closure cause and today’s return instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29210-02-001",
+      "turnId": "DLG-SC-LOC-JP-29210-02-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "9cdae1fbb556074f68aade3c4b3e99e2e2e88f3bbe736fb58df98f119378e8be",
+      "translation": "এখানে শুধু আপনার নিজের তথ্যসহ এক কপি দেওয়ার কথা লেখা আছে। আপনি কি এখন এক সদস্যের পরিবারে থাকেন?",
+      "reason": "Restores document instruction for one personal-only copy and one-person household question."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29210-02-001",
+      "turnId": "DLG-SC-LOC-JP-29210-02-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "03c5970fcff56710bd45db8c40eb0043d1d579afa91f19c75ec17314618470be",
+      "translation": "এই নির্দেশিকায় শুধু আপনার নিজের তথ্য চাওয়া হয়েছে, তাই আবেদনপত্রে 「一部」 বা পরিবারের কিছু সদস্যের তথ্যের বিকল্পটি বেছে নিন।",
+      "reason": "Restores guidance-based reason and exact Japanese form choice; 一部 here means subset of household, not copy count."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29210-02-001",
+      "turnId": "DLG-SC-LOC-JP-29210-02-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "325278ea32072134624cb7b63a6bb7038ffea92c684df836726050adbe2e75e5",
+      "translation": "হ্যাঁ, আবেদনপত্রের ঠিকানার ঘরে সেটি লিখুন। আপনার পরিচয়পত্রটিও দেখতে চাই।",
+      "reason": "Restores form/address field and polite identity-document request."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29210-03-001",
+      "turnId": "DLG-SC-LOC-JP-29210-03-001-SHARED-01",
+      "field": "translation",
+      "expectedTranslationSha256": "18f630ec465e90d70193d6a24fa2f4b4025fc6b46936ec22e8801377c273d1fd",
+      "translation": "রোগের তথ্যের ফর্মে “ব্যথার ধরন” ঘরটি খালি রয়েছে। কোনো বিষয় লিখতে অসুবিধা হচ্ছে কি?",
+      "reason": "Restores medical questionnaire field and asks whether anything is difficult to express."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29210-03-001",
+      "turnId": "DLG-SC-LOC-JP-29210-03-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "64c7463b2b0a5ed42862981b5c6959ef05f082eb04d456babe2c79a9e1a893b2",
+      "translation": "হ্যাঁ, এই বর্ণনাটিই যেমন বলেছেন তেমন করে লিখুন। কবে থেকে ব্যথা হচ্ছে?",
+      "reason": "Restores instruction to write explanation unchanged and explicit pain-onset question."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29210-03-001",
+      "turnId": "DLG-SC-LOC-JP-29210-03-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "4d80c1d09b0e739387256345fbc1d18ec60ac6b59e60634c1cdc449144d48695",
+      "translation": "কবে থেকে ব্যথা হচ্ছে এবং সিঁড়িতে নামার সময় ব্যথা বেড়ে যায়—দুটিই লিখে রাখব। ব্যথা কি শুধু ডান হাঁটুতেই হচ্ছে?",
+      "reason": "Restores onset and staircase exacerbation record plus right-knee-only question, using preceding line’s descending context."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29210-03-001",
+      "turnId": "DLG-SC-LOC-JP-29210-03-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "def3927cf90fe193b81935e58fb68babe89e1111f1211ab54f8859aa3e326ca2",
+      "translation": "আপনার এই অনুরোধটিও জানিয়ে দেব। আপনি এখন যা বললেন, তা আমি ফর্মে লিখেছি; দয়া করে পড়ে দেখুন।",
+      "reason": "Restores relaying requested explanation speed and asks review of staff’s recorded account."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29210-03-001",
+      "turnId": "DLG-SC-LOC-JP-29210-03-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "7b7dfe47db756a2052c46ef7a545f4cfdb1860b02be5f592f46bd765d845a64b",
+      "translation": "পড়েছি। ব্যথার জায়গা আর শুরু হওয়ার দিন ঠিক লেখা আছে, তাই এই তথ্য দিয়েই এগিয়ে যান।",
+      "reason": "Restores reading confirmation, correct location/onset and acceptance of recorded information."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29210-04-001",
+      "turnId": "DLG-SC-LOC-JP-29210-04-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "be2e5ef34754dc72cd7e597dbfd5eae35cf95c6c3b061168f12c61d540170a98",
+      "translation": "কখন থেকে বার্তাগুলো আসছে? আপনি কি প্রেরককে উত্তর দিয়েছেন বা টাকা দিয়েছেন?",
+      "reason": "Restores received-message onset and both separate reply/payment questions."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29210-04-001",
+      "turnId": "DLG-SC-LOC-JP-29210-04-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "d3a0e28b501955afb1a63d8b09af50b7594e90574cea4ead35f10b3d725f1685",
+      "translation": "প্রথম বার্তাটি খুলে দেখাবেন? বার্তার মূল লেখা ও প্রেরকের তথ্য দেখতে চাই।",
+      "reason": "本文 is message body, not subject; restores polite opening request and sender inspection."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29210-04-001",
+      "turnId": "DLG-SC-LOC-JP-29210-04-001-SHARED-06",
+      "field": "translation",
+      "expectedTranslationSha256": "06ffbb82cee097d7b2c182091ec793923f52bfcba224b6be42a7e01b449a51d6",
+      "translation": "এই যে। স্ক্রিনের ছবি রাখার পাশাপাশি মূল বার্তাটিও কি রেখে দেওয়া উচিত?",
+      "reason": "Restores distinction between screen photograph and original message and asks preservation advice."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29210-04-001",
+      "turnId": "DLG-SC-LOC-JP-29210-04-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "20cc15aa0afd57dd82e1bdfd187f9fcc2257d5db53cff469339a7b430caf7a57",
+      "translation": "আবার যোগাযোগ করলে তার রেকর্ড রেখে আমাদের এখানে পরামর্শ নিতে আসুন। তাহলে সাবধানে যাবেন।",
+      "reason": "Restores condition, record retention and consultation rather than merely returning here."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29210-05-001",
+      "turnId": "DLG-SC-LOC-JP-29210-05-001-SHARED-01",
+      "field": "translation",
+      "expectedTranslationSha256": "92fb7cae6cb57b1d5c10d90d13152307fc73696c854485b3f4b2e495e1d4d474",
+      "translation": "দেখছি, বাক্সের ঢাকনা এখনও বন্ধ করেননি। ভেতরে কী আছে জানতে পারি?",
+      "reason": "Restores not-yet-closed observation and polite permission to ask contents."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29210-05-001",
+      "turnId": "DLG-SC-LOC-JP-29210-05-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "6a5ea08c9bf06582dc4ed639c19fe13cbdebde113f4cc30d1b236b2941d0e15b",
+      "translation": "ফাঁকা জায়গায় পোশাক ভরে দিলে ভেতরের জিনিস কম নড়বে। বইগুলো কি ব্যাগ বা অন্য কিছু দিয়ে মুড়ে রেখেছেন?",
+      "reason": "Restores causal packing guidance and asks whether books are wrapped, not merely in a bag fragment."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "packetId": "queue_011_591_bn_v1",
+  "owner": "dialogue_hi_bn",
+  "kind": "unit-translations",
+  "batch": "591",
+  "language": "bn",
+  "expectedSourceSha256": "e53cf5d20895f4fb648abec6b22f91bc695de203d0c7ecfb27f2590b54c87099",
+  "expectedPackSha256": "35b4eaf8b3deebaea74a375e354c0ea89636173d50023b78c1e8988b841ac863",
+  "reason": "Original-author source/context/naturalness adjudication of screening candidates; repair actual omissions, foreign-script leakage or clipped unnatural clauses.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-28219-06-001",
+      "turnId": "DLG-SC-LOC-JP-28219-06-001-SHARED-06",
+      "field": "translation",
+      "expectedTranslationSha256": "7bb729bff917820f6204392a9e22d3d7cf304f06cc64209d09c05e94bd4d4447",
+      "translation": "অনুগ্রহ করে জেনে দিন। আমি ভেবেছিলাম প্রথম কিস্তির জন্যও শুধু পনেরো হাজার ইয়েন প্রস্তুত রাখলেই হবে।",
+      "reason": "Restore critical15000yen amount and first payment preparation assumption; original পনেরো omitted thousand and currency, materially changing quantity."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28219-08-001",
+      "turnId": "DLG-SC-LOC-JP-28219-08-001-SHARED-08",
+      "field": "translation",
+      "expectedTranslationSha256": "879e32b7c0194f5da8fb8ef3739e1e93385c9e0a4eb0fcb94045197e8fe22306",
+      "translation": "তাহলে এখন মাছটির বৈশিষ্ট্য লিখে রাখব। লাল রেখা আছে, সেটিও নোট করব।",
+      "reason": "Restore complete Bengali intention to record observed fish features and red line, without prematurely identifying species."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28220-02-001",
+      "turnId": "DLG-SC-LOC-JP-28220-02-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "f2dd6da915948b0123ca8f0023d50110fbf2f02b0ea871d4281cf278a90337e0",
+      "translation": "তাহলে বাকি দুটি প্যানেল এই ট্রলিতেই রেখে দেব। ফিরে এসে আমাকে ডাকবেন।",
+      "reason": "Correct Bengali দুই ট্রলিতে implying two trolleys; source is two remaining panels on this trolley, plus call upon return."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28220-05-001",
+      "turnId": "DLG-SC-LOC-JP-28220-05-001-SHARED-06",
+      "field": "translation",
+      "expectedTranslationSha256": "475ea55b120b4ed0277eb982a0be340cf458c31bb5498176066c9cc3725a1490",
+      "translation": "পোস্টকোড লিখেছি। এই ফেরত পাঠানোর খামে কি নিজের ঠিকানাও লিখব?",
+      "reason": "Restore explicit written number and reply-envelope object, with natural full question about adding own sender address."
+    }
+  ]
+}

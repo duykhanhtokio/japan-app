@@ -1,0 +1,33 @@
+{
+  "packetId": "queue_009_399_zh-tw_v1",
+  "owner": "dialogue_hi_bn",
+  "kind": "unit-translations",
+  "batch": "399",
+  "language": "zh-TW",
+  "expectedSourceSha256": "7355343ffd792c89d2df703d3c56df81dd73c065bec3d1397e7d3c75e2a95e61",
+  "expectedPackSha256": "75134208aa870bf05a89bae9cc35d1f3fff04c5177f3d099b5795e0c35652de1",
+  "reason": "Original-author source/context/naturalness adjudication of screening candidates; repair actual omissions, foreign-script leakage or clipped unnatural clauses.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-12215-04-001",
+      "turnId": "DLG-SC-LOC-JP-12215-04-001-SHARED-08",
+      "field": "translation",
+      "expectedTranslationSha256": "0b9f322a3013b4ca162ed778bd6c57f04ffcbdaadf3af6730fa4f52d2e11fbda",
+      "translation": "紀錄裡有一些難懂的詞。我不會在還不明白意思時，就回答內容沒錯。",
+      "reason": "Restore agreement with record content rather than 答對 answering correctly; preserve refusal to confirm without understanding difficult terms."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-12215-04-001",
+      "turnId": "DLG-SC-LOC-JP-12215-04-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "d95333353a3b6536d952f23f1c2254f99e438c72f21321a0369be2b1e40e0c9b",
+      "translation": "明白了。我會確認紀錄裡既寫明門當時開著，也寫明我沒有看見有人進去。",
+      "reason": "Restore full Traditional Chinese clauses checking both open door and no witnessed person, retaining crucial negation in statement record."
+    }
+  ]
+}

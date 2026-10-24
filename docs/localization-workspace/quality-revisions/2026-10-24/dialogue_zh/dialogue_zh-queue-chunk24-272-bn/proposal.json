@@ -1,0 +1,33 @@
+{
+  "packetId": "dialogue_zh-queue-chunk24-272-bn",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "272",
+  "language": "bn",
+  "expectedSourceSha256": "1a7bc6e92707b4d00db135f25d343e254b7149cea2bf4fee825b3181f43888bb",
+  "expectedPackSha256": "0e1dab97b5d33a018f9c831608ecb63043baedb038099c421d32cc65b6f49fae",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-04",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "5871526fcedcdc6a808dd9f008e2098b6a88cbbcce362478c61745d4aae03e51",
+      "translation": "জাপানি ভাষায় বলুন যে ১ অক্টোবর সকাল ৯টা থেকে ১২টা এবং বিকেল ৩টা থেকে ৫টা—দুই দফায় ঘুমিয়েছেন, টানা পাঁচ ঘণ্টা নয়।",
+      "reason": "Bengali hint lacks sleep verb; restore two sleep blocks Oct1 morning9–12 and afternoon3–5, not continuous5hours, Japanese instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "442e4c37e06f95293326327c03dbe97b856d04e49bd811a0fb1b637e1f18362d",
+      "translation": "না, ১ অক্টোবর সকাল ৯টা থেকে ১২টা এবং বিকেল ৩টা থেকে ৫টা—দুই দফায় ঘুমিয়েছি। শুধু মোট সময় লিখেছি বলে টানা পাঁচ ঘণ্টা মনে হতে পারে।",
+      "reason": "Restore explicit slept twice, all Oct1 time blocks and possible misreading due only total written, no numbers omitted."
+    }
+  ]
+}

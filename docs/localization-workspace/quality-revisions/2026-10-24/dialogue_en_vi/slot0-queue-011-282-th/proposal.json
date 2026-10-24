@@ -1,0 +1,49 @@
+{
+  "packetId": "slot0-queue-011-282-th",
+  "owner": "dialogue_en_vi",
+  "kind": "unit-translations",
+  "batch": "282",
+  "language": "th",
+  "expectedSourceSha256": "8d3a0124f29a46ca472f0d7625f0cbc55c33d18e4fbaeed33ac519d8c3451db7",
+  "expectedPackSha256": "6c3b4d978b4310b225d6a2f0daaab4422998531c2e5eca31f2f23f758c047c4c",
+  "reason": "Repair individually reviewed screening candidates against complete Japanese scenario context.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-01222-03-001",
+      "turnId": "DLG-SC-LOC-JP-01222-03-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "cbaf24fe83e2fb7401388f736afbcbaac6b919d3fa0165b63baee0ab5f6d4d3e",
+      "translation": "ใบนัดระบุวันที่ 15 ตุลาคม 2026 เวลา 10 นาฬิกา แต่ปฏิทินของคุณเป็นปี 2025 ครับ ข้อมูลการนัดในระบบปัจจุบันก็ตรงกัน คือวันที่ 15 ตุลาคม 2026 เวลา 10 นาฬิกา วันนั้นคุณสะดวกเรื่องงานใช่ไหมครับ",
+      "reason": "Restore natural Thai spacing and full appointment-record/calendar comparison with exact dates, years, time and work-availability question."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01222-03-001",
+      "turnId": "DLG-SC-LOC-JP-01222-03-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "38c14ddb737e528b16c9a37432ab56c9d3d91ab00cdeaa5e6d4b760b87cd2b72",
+      "translation": "ครับ เรายังไม่ได้สร้างนัดใหม่ คุณช่วยเขียนวันที่ 15 ตุลาคม เวลา 10 นาฬิกา และสิ่งที่ต้องนำมาใหม่ในปฏิทินปี 2026 ได้ไหมครับ",
+      "reason": "Restore complete Thai no-new-booking statement and polite rewrite request with exact date/time and required items."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01222-03-001",
+      "turnId": "DLG-SC-LOC-JP-01222-03-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "4067fed4b3956ea35775eaec7b2a480bc52bef75a33026991fbd8c696566464c",
+      "translation": "บอกเป็นภาษาญี่ปุ่นว่าจะเขียนวันที่ 15 ตุลาคม เวลา 10 นาฬิกา ลงในปฏิทินปี 2026 คงนัดปัจจุบันไว้ และนำใบนัดกับสมุดบันทึกยามาด้วย",
+      "reason": "Restore the calendar object, exact October 15 at ten, retained appointment and both documents in natural complete Thai task wording."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01222-03-001",
+      "turnId": "DLG-SC-LOC-JP-01222-03-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "113a5f6a4747eecd8d9e304eeef76abdfdd1cb1097f92cb9fcfd94870274fb73",
+      "translation": "ผมเขียนวันที่ 15 ตุลาคม เวลา 10 นาฬิกา ลงในปฏิทินปี 2026 แล้วครับ จะคงนัดปัจจุบันไว้และนำใบนัดกับสมุดบันทึกยามาด้วย ส่วนปฏิทินปีก่อนจะเก็บแยกไว้ครับ",
+      "reason": "Restore full Thai answer and normal numeric spacing, preserving current booking, documents and previous-calendar separation."
+    }
+  ]
+}

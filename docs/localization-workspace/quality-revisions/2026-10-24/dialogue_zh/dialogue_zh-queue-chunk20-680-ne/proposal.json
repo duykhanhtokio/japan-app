@@ -1,0 +1,65 @@
+{
+  "packetId": "dialogue_zh-queue-chunk20-680-ne",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "680",
+  "language": "ne",
+  "expectedSourceSha256": "4e84d055526657146aed36b8b93f57a7e19d052e880962c77ee5a5b22e680bff",
+  "expectedPackSha256": "eef896681fe3bac2794bfcab3be7765f7798531738c656aac8e9a497ef4038e7",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-43206-04-001",
+      "turnId": "DLG-SC-LOC-JP-43206-04-001-SHARED-06",
+      "field": "translation",
+      "expectedTranslationSha256": "f1378c36436daf9a26f4b6220cd01c493db61b271c4694b8f0763003b368a6dc",
+      "translation": "पठाउनेहरूको नम्बर फरक छ। एउटा हिजो र अर्को आज आएको हो, तर फोटोहरू मिलाउँदा क्रम उल्टो भएको छ।",
+      "reason": "Restore sender numbers differ, one message yesterday one today and photo rearrangement reversed order, full Nepali clauses."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-43206-05-001",
+      "turnId": "DLG-SC-LOC-JP-43206-05-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "8963658042782e9dfbb31931f5c5bccae18eaaf5b593e9d2f4c2c4d4c09612cc",
+      "translation": "प्रेषणपत्रमा घर नम्बरसम्म छ, तर मोबाइलको सन्देशमा त्यसपछि पनि ठेगाना बाँकी देखिन्छ। त्यो भवनको नाम हो?",
+      "reason": "Restore waybill through street number, mobile text has address continuation and whether building name."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-43206-06-001",
+      "turnId": "DLG-SC-LOC-JP-43206-06-001-SHARED-06",
+      "field": "translation",
+      "expectedTranslationSha256": "fe386008e1853a6ed86f681ef290bc479fbc85eba04056467e098c5ca80137c5",
+      "translation": "सम्झौतामा नम्बर छ, तर कहाँ जोड्ने हो याद छैन। नामभन्दा अघि हो कि पछि, निर्देशन फेरि पढ्न दिनुहोस्।",
+      "reason": "Restore number in contract, insertion location not remembered and request reread before/after name."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-43206-07-001",
+      "turnId": "DLG-SC-LOC-JP-43206-07-001-SHARED-08",
+      "field": "translation",
+      "expectedTranslationSha256": "28a9c7d047e1ad2c72f746917b9b41c3a93fd620b829e1c11f6036946914c811",
+      "translation": "यही कार्डले तिर्ने सोचेको थिएँ, तर यसमा ‘पोइन्टका लागि मात्र’ लेखिएको छ। यो भुक्तानी गर्ने कार्डभन्दा फरक हो?",
+      "reason": "अंक is wrong loyalty terminology and payment intention omitted; restore intended payment, points-only label and payment-card distinction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-43206-07-001",
+      "turnId": "DLG-SC-LOC-JP-43206-07-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "69a1947f4314562d563b816d679a9fd15e6c624c05f289b7b575e03278e53d61",
+      "translation": "यो कार्ड पोइन्टका लागि हो, सामानको मूल्य तिर्न प्रयोग गर्न मिल्दैन। नगद तिर्नुहुन्छ?",
+      "reason": "Restore points card cannot pay merchandise price and ask cash choice, no noun fragments."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-43206-07-001",
+      "turnId": "DLG-SC-LOC-JP-43206-07-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "129e33bda7ba0b3bfe65c7b2f9e4dd57318360e94f18b9203cdd9a417d993551",
+      "translation": "स्क्रिनमा सामान र जम्मा रकम हेर्नुहोस्। नगद भुक्तानीपछि रसिद दिन्छु। धन्यवाद।",
+      "reason": "Restore screen location, goods and total, receipt after cash checkout and thanks, natural complete service speech."
+    }
+  ]
+}

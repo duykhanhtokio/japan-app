@@ -1,0 +1,33 @@
+{
+  "packetId": "dialogue_zh-queue-chunk28-272-vi",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "272",
+  "language": "vi",
+  "expectedSourceSha256": "1a7bc6e92707b4d00db135f25d343e254b7149cea2bf4fee825b3181f43888bb",
+  "expectedPackSha256": "d23b357163d00cdfc22a80d2300a34db0ae7b273402da4b0f6f5041b7ca14858",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-04",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "19c7e816aff84076851d7eb37b35ef4934de6d49b5d882aac63705d97b5811d0",
+      "translation": "Giải thích rằng ngày 1 tháng 10 ngủ hai lần, từ chín giờ sáng đến mười hai giờ trưa và từ ba đến năm giờ chiều, không phải ngủ liên tục năm giờ. Hãy nói bằng tiếng Nhật.",
+      "reason": "mười hai giờ sáng can mean midnight, source noon; restore9AMto12noon and3–5PMtwo sleep periods not5continuous."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "7406d70d5c1c2ca72593c4f36fbede16a2397991be9b5fb4dc85ac02e90e6429",
+      "translation": "Không. Ngày 1 tháng 10 tôi ngủ hai lần: từ chín giờ sáng đến mười hai giờ trưa và từ ba giờ đến năm giờ chiều. Vì chỉ ghi tổng thời gian nên có thể bị hiểu là ngủ liên tục năm giờ.",
+      "reason": "Restore noon explicitly instead of ambiguous twelve morning, preserve two exact Oct1intervals and possible5continuous misreading."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "packetId": "slot0-queue-013-324-bn",
+  "owner": "dialogue_en_vi",
+  "kind": "unit-translations",
+  "batch": "324",
+  "language": "bn",
+  "expectedSourceSha256": "650e35af98f835322411fac5a2c38dffe300879fd7276ca31ed5dec11c8748d2",
+  "expectedPackSha256": "eaa17e8d8f8114e453bb76ad910a98e83e18b84d3d8333cf046203e1fc62695f",
+  "reason": "Repair individually reviewed screening candidates against complete Japanese scenario context.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-06212-05-001",
+      "turnId": "DLG-SC-LOC-JP-06212-05-001-SHARED-02",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "a5788614bca393c386fea3b357065699b6eb9988fdc6740972ba001b8bfd9163",
+      "translation": "জাপানি ভাষায় জিজ্ঞেস করুন, কোম্পানির নামের পরে 御中 এবং দায়িত্বপ্রাপ্ত ব্যক্তির নামের পরে 様 দুটোই লেখা থাকলে সেই সম্বোধন ঠিক কি না।",
+      "reason": "Restore a complete natural Bengali question about the combined honorifics after company and person names, preserving the literal Japanese forms."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-06212-05-001",
+      "turnId": "DLG-SC-LOC-JP-06212-05-001-SHARED-06",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "d1973007e3a160a6c39920d6881bdfff94e2a8650d917499e816687bc1c202cd",
+      "translation": "জাপানি ভাষায় উত্তর দিন যে কোম্পানি ও বিভাগের নাম রেখে ব্যক্তির নামের শেষে 佐藤様 লিখে ঠিক করবেন।",
+      "reason": "Clarify keeping company/department and correcting the final individual addressee to 佐藤様, rather than making the recipient the person label itself."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-06212-05-001",
+      "turnId": "DLG-SC-LOC-JP-06212-05-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "f3f492f77c8301bb6b0836eef850b3ef3909a5d95a10e4b59027a678a73625f8",
+      "translation": "জাপানি ভাষায় বলুন যে কোম্পানির নাম, বিভাগ, ব্যক্তির নামের সঙ্গে 様 এবং ঠিকানা যাচাই করে সম্মানসূচক শব্দ একসঙ্গে না জুড়ে পাঠাবেন।",
+      "reason": "Restore a natural relation between personal name and 様 plus address verification and no stacked honorifics."
+    }
+  ]
+}

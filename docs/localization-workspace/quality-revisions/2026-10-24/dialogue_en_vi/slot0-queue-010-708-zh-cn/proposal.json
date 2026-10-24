@@ -1,0 +1,73 @@
+{
+  "packetId": "slot0-queue-010-708-zh-cn",
+  "owner": "dialogue_en_vi",
+  "kind": "unit-translations",
+  "batch": "708",
+  "language": "zh-CN",
+  "expectedSourceSha256": "402999eff111e5a41f0129fd84979a312b75befe1a0a15a5407ecba378d9d093",
+  "expectedPackSha256": "350d84ca18d7ba4fa2ea980505d4772e8fe94fd7f99295ef401e60647ed47273",
+  "reason": "Repair individually reviewed screening candidates against complete Japanese scenario context.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-46225-07-001",
+      "turnId": "DLG-SC-LOC-JP-46225-07-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "9c3107c05d089a7f7665941096365449fe59ae121aa338061638af1804d11ee1",
+      "translation": "今天您不购买，只确认标签内容，对吗？请用记录下来的信息进行咨询。谢谢您。",
+      "reason": "Restore natural full acknowledgment of label-checking without purchase and using noted information in the inquiry."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-46225-08-001",
+      "turnId": "DLG-SC-LOC-JP-46225-08-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "0c99a5752e41d1210d6c150ffcf7049469c379f39b5f3970bd41039e7124fc08",
+      "translation": "请带上这张纸。避开活动区域，并根据身体状况和周围情况调整行程。祝您散步愉快。",
+      "reason": "Restore complete instructions taking paper, avoiding event area and adjusting to health/surroundings, rather than compressed phrases."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-47205-03-001",
+      "turnId": "DLG-SC-LOC-JP-47205-03-001-SHARED-06",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "700ae9f2b97b406379d93f2e2dd123ca7a08714dab8c803c75f74fbf3ade3a8f",
+      "translation": "请出示预约单，并用日语请对方转告，您在同一周的星期四可以请假，希望安排在那天。",
+      "reason": "Restore same-week Thursday availability and request for staff relay; old hint asks to show a slip in Japanese and truncates the task."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-47205-03-001",
+      "turnId": "DLG-SC-LOC-JP-47205-03-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "dbed32e3dece990fe112a58b077ac45f52c484fac2b6a49cf8d1fc2295763b18",
+      "translation": "请用日语请求在引导单上填写与预约单相同的姓名，并说明会带着两张单据前往右侧的挂号处。",
+      "reason": "Restore exact same-name reference, both slips and right-hand reception destination in full instructional clauses."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-47205-04-001",
+      "turnId": "DLG-SC-LOC-JP-47205-04-001-SHARED-08",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "8bbec73c8aa9d6317bcc2f3dae2582843b7e1c8795e6a32468945e62328584ae",
+      "translation": "请用日语区分说明：您记得锁了后轮，但不确定是否用了另外的钢索锁。",
+      "reason": "Restore remembered rear-wheel locking versus uncertain separate cable-lock use, rather than nouns without actions."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-47205-06-001",
+      "turnId": "DLG-SC-LOC-JP-47205-06-001-SHARED-08",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "fc9bc1f32f9c1e2dafc8f4a3544b80c15e71a5bcdba4945b938341343ae03fbc",
+      "translation": "请用日语回答提交账号的期限是星期五，并表示想告诉公司，不能保证当天就能开户。",
+      "reason": "Restore what Friday is the deadline for and intention to tell the company same-day account opening is uncertain."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-47205-07-001",
+      "turnId": "DLG-SC-LOC-JP-47205-07-001-SHARED-08",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "6fed5224f25d15930a7b7b6517d57e64fcba24af8ba198ca54d0b0921cd135a7",
+      "translation": "请用日语解释自己没有原装瓶，决定不买两袋补充装，改买一瓶带泵头的原装产品。",
+      "reason": "Restore no original bottle and exact change from two refill bags to one pump bottle, avoiding 本体 jargon and fragments."
+    }
+  ]
+}

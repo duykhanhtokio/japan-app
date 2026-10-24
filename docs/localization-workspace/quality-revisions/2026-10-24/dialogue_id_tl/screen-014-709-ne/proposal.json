@@ -1,0 +1,41 @@
+{
+  "packetId": "screen-014-709-ne",
+  "owner": "dialogue_id_tl",
+  "kind": "unit-translations",
+  "batch": "709",
+  "language": "ne",
+  "expectedSourceSha256": "58b505616028a011839966c265baa8c5f866caf8c068b6d5b26e4aaf0a3c621a",
+  "expectedPackSha256": "352e0fcdb1637b07c9d8c600a66e181751e448c304c897aaa45e38f6c1e2e2ea",
+  "reason": "Original-owner contextual adjudication: restore precise full meaning and natural dialogue in screened units.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-47210-04-001",
+      "turnId": "DLG-SC-LOC-JP-47210-04-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "293475188fc217410a8600f60628f970325e158c9a08e665571e940d6aad0e59",
+      "translation": "ठेगाना मात्र लेख्नुभएको हो? कार्ड नम्बर वा पिनजस्ता विवरण पनि राख्नुभएको थियो?",
+      "reason": "Restore input action and card number not card object in information-compromise check."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-47210-07-001",
+      "turnId": "DLG-SC-LOC-JP-47210-07-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "35b040c2a604a52c76a1cc0fd6c7aee17869ec21b561544fc7f75e90da7a50b1",
+      "translation": "तलको सर्तअनुसार सामानको मूल्य दुई हजार येन वा बढी भएमा कुपन प्रयोग गर्न मिल्छ। यसपटक सय येन कम छ।",
+      "reason": "Restore coupon eligibility >=2000yen and100yen shortfall with full units."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-47210-07-001",
+      "turnId": "DLG-SC-LOC-JP-47210-07-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "569ae404469c32653f88e3f23a8688ede05a20b00605ef477307129c90ff3bef",
+      "translation": "ठ्याक्कै रकम पाएँ। कुपन र रसिद फिर्ता दिँदै छु। किनमेलका लागि धन्यवाद।",
+      "reason": "Restore exact cash receipt and return actions for coupon/receipt rather than noun list."
+    }
+  ]
+}

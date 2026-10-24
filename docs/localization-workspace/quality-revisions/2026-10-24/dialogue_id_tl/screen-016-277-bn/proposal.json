@@ -1,0 +1,41 @@
+{
+  "packetId": "screen-016-277-bn",
+  "owner": "dialogue_id_tl",
+  "kind": "unit-translations",
+  "batch": "277",
+  "language": "bn",
+  "expectedSourceSha256": "26144445bf5cc58897d7d5069fab5be95ad104a7e3777bb633a4f68c1943cd99",
+  "expectedPackSha256": "ec866eb617c73a3e3c4e7ce9fe68c17ddd5c44fe21f218fceba4893e174cd9a9",
+  "reason": "Original-owner contextual adjudication: restore precise full meaning and natural dialogue in screened units.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-01215-01-001",
+      "turnId": "DLG-SC-LOC-JP-01215-01-001-SHARED-08",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "b4768e9f9a1ede9927ef9c25f8749b9eec4e295728b6a16a3520947489536a50",
+      "translation": "নিবন্ধন দশটায়, এখন নয়টা চল্লিশ; পনেরো মিনিট হাঁটলে প্রায় নয়টা পঞ্চান্নে পৌঁছে পাঁচ মিনিট হাতে থাকবে—এটি হিসাব করুন। পথ না জানলে পথে জিজ্ঞেস করার জন্য মানচিত্র নিয়ে হাঁটতে চান বলুন। জাপানি ভাষায় বলুন।",
+      "reason": "Restore carrying map to ask directions if unclear, while retaining10:00/9:40/15min/9:55/5min calculation."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01215-01-001",
+      "turnId": "DLG-SC-LOC-JP-01215-01-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "8695984c8ec836ba5aaf8614b3216f33e98eca7016364fe2f7e67eb2cdb7b091",
+      "translation": "অন্য শহরের একই নামের ভবন নয়, নির্দেশনার মানচিত্রে দেখানো উত্তর প্রবেশপথে হেঁটে যাবেন বলুন। প্রায় নয়টা পঞ্চান্নে পৌঁছানো একটি অনুমান এবং হাতে পাঁচ মিনিট থাকবে—এটি বুঝেছেন জানান। জাপানি ভাষায় বলুন।",
+      "reason": "Restore same-named facility in other town and exact9:55estimate omitted from hint."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01215-01-001",
+      "turnId": "DLG-SC-LOC-JP-01215-01-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "90128b6ddd2d0f716cf2649030d2bb65139517a8c067665d2977d436523f011f",
+      "translation": "অন্য শহরের একই নামের ভবনে নয়, এই মানচিত্রের উত্তর প্রবেশপথে হেঁটে যাব। প্রায় নয়টা পঞ্চান্নে পৌঁছানো আনুমানিক এবং হাতে পাঁচ মিনিট থাকবে বুঝেছি; মানচিত্র নিয়ে বেরোব।",
+      "reason": "Restore same-name rather than same-place distinction and full north-entrance route/estimated arrival."
+    }
+  ]
+}

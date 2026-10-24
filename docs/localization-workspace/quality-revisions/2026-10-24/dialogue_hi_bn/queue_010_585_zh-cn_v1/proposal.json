@@ -1,0 +1,33 @@
+{
+  "packetId": "queue_010_585_zh-cn_v1",
+  "owner": "dialogue_hi_bn",
+  "kind": "unit-translations",
+  "batch": "585",
+  "language": "zh-CN",
+  "expectedSourceSha256": "cc1ec77884d1cbc1d8569410f0791299c78a40853f69524a4a9f312508db0ff2",
+  "expectedPackSha256": "8cbf9264d9a746c51d48bb78c7187dbcff05322d90d430232904bcf97217105e",
+  "reason": "Original-author source/context/naturalness adjudication of screening candidates; repair actual omissions, foreign-script leakage or clipped unnatural clauses.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-28212-07-001",
+      "turnId": "DLG-SC-LOC-JP-28212-07-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "311b2b7bac70c93164e737958f3357183faa740f71548de14f2a6284aa638b27",
+      "translation": "对，请拿好这张号码牌。鱼处理好后，我们会交给您。",
+      "reason": "Restore full polite Chinese readiness/handover clause and ticket as concrete object; original 做好给您 telegraphic service wording."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28212-08-001",
+      "turnId": "DLG-SC-LOC-JP-28212-08-001-SHARED-02",
+      "field": "translation",
+      "expectedTranslationSha256": "347d1b015a1dfff41a9bee2b0d83457a0223a9ff368ef034d0617409c540c2fe",
+      "translation": "是的。我和朋友约好三点见面，但塔上的钟好像停了。",
+      "reason": "Restore tower-clock referent and natural complete meeting-time sentence while preserving uncertainty seems stopped."
+    }
+  ]
+}

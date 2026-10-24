@@ -1,0 +1,41 @@
+{
+  "packetId": "slot0-queue-010-282-bn",
+  "owner": "dialogue_en_vi",
+  "kind": "unit-translations",
+  "batch": "282",
+  "language": "bn",
+  "expectedSourceSha256": "8d3a0124f29a46ca472f0d7625f0cbc55c33d18e4fbaeed33ac519d8c3451db7",
+  "expectedPackSha256": "987dd9846d2b1e2e38cedca08ca82ad6bccbba3a63b61623c1002af5248fcffd",
+  "reason": "Repair individually reviewed screening candidates against complete Japanese scenario context.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-01222-03-001",
+      "turnId": "DLG-SC-LOC-JP-01222-03-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "2adbeaa2edb63cec60556eb75b13f3e4920e3b9f3ecd0faacfe75eab2a0bd913",
+      "translation": "অ্যাপয়েন্টমেন্টের কাগজে ২০২৬ সালের ১৫ অক্টোবর সকাল দশটা লেখা আছে, আর আপনার ক্যালেন্ডারটি ২০২৫ সালের। বর্তমান রিসেপশনের রেকর্ডেও ২০২৬ সালের ১৫ অক্টোবর সকাল দশটাই আছে। ওই দিনে কাজের দিক থেকে আপনার কোনো অসুবিধা নেই তো?",
+      "reason": "Restore full natural date comparison, explicit record agreement and work-availability question while preserving both years and exact appointment date/time."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01222-03-001",
+      "turnId": "DLG-SC-LOC-JP-01222-03-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "75ae91c69d573d8c735f47d961fdf5dfbd1646e2be5209516f33043cfd3616e7",
+      "translation": "জি, নতুন অ্যাপয়েন্টমেন্ট করা হয়নি। আপনার ২০২৬ সালের ক্যালেন্ডারে ১৫ অক্টোবর সকাল দশটা এবং সঙ্গে আনার জিনিসগুলো লিখে নিতে পারবেন?",
+      "reason": "Restore complete no-new-booking statement and request to rewrite exact date/time plus required items in the 2026 calendar."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01222-03-001",
+      "turnId": "DLG-SC-LOC-JP-01222-03-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "33f8ab068f1e253d1323ab6a8967de4dca180f84cf7056a7435a647aec802082",
+      "translation": "জাপানি ভাষায় বলুন যে ২০২৬ সালের ক্যালেন্ডারে ১৫ অক্টোবর সকাল দশটা লিখবেন, বর্তমান অ্যাপয়েন্টমেন্ট বহাল রাখবেন এবং অ্যাপয়েন্টমেন্টের কাগজ ও ওষুধের খাতা সঙ্গে আনবেন।",
+      "reason": "The old hint omits exact October 15 at ten and fails to clearly keep current appointment. Restore date, time, existing booking and both required documents."
+    }
+  ]
+}

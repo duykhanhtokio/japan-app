@@ -1,0 +1,33 @@
+{
+  "packetId": "slot0-queue-013-324-hi",
+  "owner": "dialogue_en_vi",
+  "kind": "unit-translations",
+  "batch": "324",
+  "language": "hi",
+  "expectedSourceSha256": "650e35af98f835322411fac5a2c38dffe300879fd7276ca31ed5dec11c8748d2",
+  "expectedPackSha256": "cc167dca649c3beac6aca4eee051de544865f542c7a8de9b667ce9ab104a7389",
+  "reason": "Repair individually reviewed screening candidates against complete Japanese scenario context.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-06212-05-001",
+      "turnId": "DLG-SC-LOC-JP-06212-05-001-SHARED-06",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "aa44bed02d713013215be84ddbf96c2fef43d8754d1003004fd9433cc4fb7fb7",
+      "translation": "जापानी में उत्तर दें कि कंपनी और विभाग का नाम बनाए रखकर व्यक्तिगत प्राप्तकर्ता का नाम 佐藤様 के रूप में ठीक करेंगे।",
+      "reason": "Restore grammatical Hindi wording for correcting the personal addressee while keeping company and department names."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-06212-05-001",
+      "turnId": "DLG-SC-LOC-JP-06212-05-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "38c60506841637c322dcda3a1dec8efeb43a33c6423b6c235ceaf8a9ebbaa902",
+      "translation": "जापानी में बताएं कि कंपनी, विभाग, व्यक्ति के नाम के साथ 様 और पते की जाँच करके भेजेंगे, तथा 御中 और 様 को साथ नहीं जोड़ेंगे।",
+      "reason": "Clarify 様 attached to the individual's name and the no-combined-honorific requirement while retaining address checks."
+    }
+  ]
+}

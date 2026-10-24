@@ -1,0 +1,41 @@
+{
+  "packetId": "dialogue_zh-queue-chunk28-278-zh-tw",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "278",
+  "language": "zh-TW",
+  "expectedSourceSha256": "0d1636a8c150bb9bbc1d0560bb26b302144a12f91b21bd02ac8933e8e3247b37",
+  "expectedPackSha256": "9741161aa3ef86c8ca41bc6349f858cc160226d1282eb673320d07be769bfc4f",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-01216-03-001",
+      "turnId": "DLG-SC-LOC-JP-01216-03-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "ad78b4df71496b3e2148b2493349c69bcad36510d13cd5d2ebc0c86693d7138d",
+      "translation": "付款證明書費用為三百日圓，可從下一個營業日起由本人到繳費窗口領取。今天無法交給您相同的收據。您要先向公司確認是否接受這份證明嗎？",
+      "reason": "Clarify next business day is inclusive using 起, preserving300yen personal billing-counter collection and no identical receipt today."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01216-03-001",
+      "turnId": "DLG-SC-LOC-JP-01216-03-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "ad7ba1389562af6cff1605a301fa983c54f28c6d3369dacc1755de421f219564",
+      "translation": "複述替代文件是付款證明書、費用三百日圓，可從下一個營業日起由本人到繳費窗口領取，並表示今天不申請，待公司確認接受後再辦。請用日語表達。",
+      "reason": "下一營業日後 may exclude that day; restore from next business day inclusive,300yen and employer acceptance before application, full task."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01216-03-001",
+      "turnId": "DLG-SC-LOC-JP-01216-03-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "c827bd2a184347d78dd68b63e086b0b789ee77c6d32ed0674190e468a63c3fcb",
+      "translation": "付款證明書、三百日圓，可從下一個營業日起由本人到繳費窗口領取，對吧？今天先不申請開立，等公司確認接受這些條件後再申請。",
+      "reason": "Clarify inclusive from next business day, preserving personal pickup300yen and employer check before requesting issuance."
+    }
+  ]
+}

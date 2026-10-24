@@ -1,0 +1,41 @@
+{
+  "packetId": "screen-016-277-id",
+  "owner": "dialogue_id_tl",
+  "kind": "unit-translations",
+  "batch": "277",
+  "language": "id",
+  "expectedSourceSha256": "26144445bf5cc58897d7d5069fab5be95ad104a7e3777bb633a4f68c1943cd99",
+  "expectedPackSha256": "f56beb84cfd6c25c31c69548516c47eee7a150300d2fe13b29b45af2aaef5f01",
+  "reason": "Original-owner contextual adjudication: restore precise full meaning and natural dialogue in screened units.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-01215-01-001",
+      "turnId": "DLG-SC-LOC-JP-01215-01-001-SHARED-08",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "2d23d5d216faea8592b570922c4b780e5da3885b8d8b6489b80c2a6fa657a2aa",
+      "translation": "Hitung bahwa pendaftaran pukul10.00, sekarang09.40, dan berjalan15menit berarti tiba sekitar09.55dengan sisa5menit. Katakan ingin berjalan membawa peta agar bisa bertanya arah jika rute tidak jelas. Sampaikan dalam bahasa Jepang.",
+      "reason": "Restore registration as10.00referent,approx arrival and intent to walk with map to ask directions."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01215-01-001",
+      "turnId": "DLG-SC-LOC-JP-01215-01-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "26eb6c29a25c1e7cf75fabe12394d17a6735717be410ed4e0be9e90caac2dc02",
+      "translation": "Katakan akan berjalan ke pintu utara pada peta ini, bukan fasilitas bernama sama di kota lain, dan memahami bahwa sekitar09.55adalah perkiraan tiba dengan sisa5menit. Sampaikan dalam bahasa Jepang.",
+      "reason": "Restore map and exclusion of same-named facility in another town, omitted from earlier hint."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01215-01-001",
+      "turnId": "DLG-SC-LOC-JP-01215-01-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "f7ebc3fd5c691478e0cc7e96ee7b6013f0c5050c7b5a5f2b3d7e5f6d96157928",
+      "translation": "Saya akan berjalan ke pintu utara pada peta ini, bukan fasilitas bernama sama di kota lain. Saya memahami bahwa sekitar09.55adalah perkiraan tiba dengan sisa lima menit, lalu berangkat membawa peta.",
+      "reason": "Restore same-named rather than same facility distinction in full player commitment."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "packetId": "screen-015-271-bn",
+  "owner": "dialogue_id_tl",
+  "kind": "unit-translations",
+  "batch": "271",
+  "language": "bn",
+  "expectedSourceSha256": "200838db2ffa9381bb06a471be7454cae14f56fb70bf61c80d783b8decaf9a0e",
+  "expectedPackSha256": "c5f7efcbbf973d3678156471e91bd15b5187ef1df728fdb7730ff04c48294fc6",
+  "reason": "Original-owner contextual adjudication: restore precise full meaning and natural dialogue in screened units.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-01208-01-001",
+      "turnId": "DLG-SC-LOC-JP-01208-01-001-SHARED-08",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "03a19ffefcb7f7fcf9bfff8278eb78cd7484cb668ea983efb5d8917b64a81e87",
+      "translation": "হেঁটে বিশ মিনিট এবং কাজ শেষের সময় উনিশটা চল্লিশ হলে স্টেশনে কুড়িটায় পৌঁছে আগের ট্রেনের আগে দশ মিনিট থাকবে—এটি হিসাব করুন। দেরি হলে না দৌড়ে কোম্পানির যাতায়াতের ব্যবস্থাও জানতে চাইবেন বলুন। জাপানি ভাষায় বলুন।",
+      "reason": "Restore company-provided transport option explicitly, all20min/19:40/20:00/10min calculation and no-running contingency."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01208-01-001",
+      "turnId": "DLG-SC-LOC-JP-01208-01-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "70ba1e1fa19360177d4b62fd6254cd5bd79c550b893916affec2c083b145f9e6",
+      "translation": "আগের ট্রেন কুড়িটা দশ এবং শেষ ট্রেন একুশটা পাঁচ, দুটিতেই বদলাতে হবে না—এটি লিখে নিন। সময়মতো হলে আগেরটি ধরবেন, আর কাজ শেষ হতে দেরি হলে বেরোনোর আগেই যাতায়াতের ব্যবস্থা জানতে চাইবেন বলুন। জাপানি ভাষায় বলুন।",
+      "reason": "Restore exact20:10/21:05 times omitted in old hint and no-transfer plus prior company-transport consultation sequence."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01208-04-001",
+      "turnId": "DLG-SC-LOC-JP-01208-04-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "ca3154e3c1d5d3e9b8f9a75a9a6ab9f0002ba74f8a9f1ebc811d4dd3f85b0680",
+      "translation": "পুনরায় পড়ে নিশ্চিত করুন যে K-27-এর সংশোধিত সময় প্রায় নটা কুড়ি, স্থান অপরিবর্তিত, বারোটা পাঁচ হলো ছবি পাঠানোর সময় এবং পাওয়ার সঠিক মিনিট এখনও নিশ্চিত নয়। জাপানি ভাষায় বলুন।",
+      "reason": "Restore corrected9:20approx time missing before and unchanged place versus12:05forwarding time with exact-minute uncertainty."
+    }
+  ]
+}

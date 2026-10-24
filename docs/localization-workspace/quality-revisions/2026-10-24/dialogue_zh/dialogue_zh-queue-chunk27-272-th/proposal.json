@@ -1,0 +1,41 @@
+{
+  "packetId": "dialogue_zh-queue-chunk27-272-th",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "272",
+  "language": "th",
+  "expectedSourceSha256": "1a7bc6e92707b4d00db135f25d343e254b7149cea2bf4fee825b3181f43888bb",
+  "expectedPackSha256": "81efd02d14a965357cd09f6bb62faa1405b95c6d88b1d3cc0bb9e08462df2e41",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-04",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "177c5560202786a8763069f5d8b832e71f117d27a77c5d068fd61c8b6b3fca44",
+      "translation": "อธิบายว่าในวันที่ 1 ตุลาคม นอนสองช่วง คือ 9.00–12.00 น. และ 15.00–17.00 น. ไม่ได้นอนต่อเนื่องห้าชั่วโมง กรุณาพูดเป็นภาษาญี่ปุ่น",
+      "reason": "Thai hint lacks explicit sleep verb and natural clause boundaries; restore exact Oct1two blocks09–12and15–17not5continuous plus Japanese instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "f757587f18e40841bf3f07babe32e3b8c1e3ede53ea67f1736c6d2c469679e82",
+      "translation": "ไม่ครับ วันที่ 1 ตุลาคม ผมนอนสองช่วง คือเก้าโมงเช้าถึงเที่ยง และบ่ายสามถึงห้าโมงเย็น ผมเขียนแต่เวลารวม จึงอาจถูกเข้าใจว่านอนต่อเนื่องห้าชั่วโมงครับ",
+      "reason": "Restore explicit slept twice and complete Thai possible misread due total-only note, exact morning9-noon and afternoon3–5."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-08",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "20f7e8498a8b916ba70f77441ad96c3fc1a2fa1903666f0b3304601d2028dfb6",
+      "translation": "บอกว่าง่วงในกะถัดไป ราวตีสองของวันที่ 2 ตุลาคม และขอให้เขียนแยกบรรทัดจากการนอนวันที่ 1 ตุลาคม กรุณาพูดเป็นภาษาญี่ปุ่น",
+      "reason": "Approximate2AM lost in Thai hint; restore around2AMOct2nextshift and separate line fromOct1sleep, complete Japanese task."
+    }
+  ]
+}

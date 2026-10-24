@@ -1,0 +1,49 @@
+{
+  "packetId": "queue021-652-zh-tw",
+  "owner": "dialogue_ne_my",
+  "kind": "unit-translations",
+  "batch": "652",
+  "language": "zh-TW",
+  "expectedSourceSha256": "543ecbeb43ccb73d1576d5b52b61cab00038a08c36fc965dc9a1667dd30361d2",
+  "expectedPackSha256": "0fba1216b9482ac532651a3743a183fcd09f713696a35fbe721c46f2d7a3f727",
+  "reason": "Original-author scenario-context review repairs exact screened unit defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-40210-06-001",
+      "turnId": "DLG-SC-LOC-JP-40210-06-001-SHARED-04",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "01fb0119f1a957c24a432c13271b8329c67c9749a517501c64d46dbbcfd37363",
+      "translation": "確認會員卡後發現缺少的是銀行卡，並修正只憑顏色所作的判斷。請用日語表達。",
+      "reason": "Correct mixed simplified 銀行/糾正/表達 and preserve card identification after checking membership card."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-40210-06-001",
+      "turnId": "DLG-SC-LOC-JP-40210-06-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "7edf1e2a9690d68104d4f764d4d2aab1cff18db521c4bab7f867ee1c1eaea280",
+      "translation": "會員卡在這裡，銀行卡找不到了。我剛才只憑顏色的記憶就來詢問。",
+      "reason": "Correct simplified 里/银行卡/刚 while preserving mistaken color-only inference."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-40210-06-001",
+      "turnId": "DLG-SC-LOC-JP-40210-06-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "f938ff415904cee79b5401cdbfcb4c19783733ba73c655a9ff75f993b072a232",
+      "translation": "表示即使找到也不認定可以使用，會記錄諮詢內容，並問下一步要確認什麼。請用日語表達。",
+      "reason": "Correct instruction script and retain no assume usable when found plus next-step question."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-40210-07-001",
+      "turnId": "DLG-SC-LOC-JP-40210-07-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "8c3bc24110dfd2eb5f0147dc9154b5bc53d88e3c66b03c6e6aa5dfc9b6db9c5a",
+      "translation": "我沒有摔過，但回家時袋裡也放了罐頭。在店裡是否已經有缺損，我沒有看。",
+      "reason": "Correct traditional location forms and natural full no-drop/unknown-prior-damage contrast."
+    }
+  ]
+}

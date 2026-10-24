@@ -1,0 +1,33 @@
+{
+  "packetId": "slot0-queue-013-324-th",
+  "owner": "dialogue_en_vi",
+  "kind": "unit-translations",
+  "batch": "324",
+  "language": "th",
+  "expectedSourceSha256": "650e35af98f835322411fac5a2c38dffe300879fd7276ca31ed5dec11c8748d2",
+  "expectedPackSha256": "792cfadca957b68205b60d8839f7ea3f0fddd11bd56f447de03512e4d39a1068",
+  "reason": "Repair individually reviewed screening candidates against complete Japanese scenario context.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-06212-05-001",
+      "turnId": "DLG-SC-LOC-JP-06212-05-001-SHARED-06",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "596b19294bfd3bc005b788bb1c1832da0dd4dcd689a7727e8c7301543e0a3949",
+      "translation": "ตอบเป็นภาษาญี่ปุ่นว่าจะคงชื่อบริษัทและแผนกไว้ แล้วแก้ชื่อผู้รับรายบุคคลเป็น 佐藤様",
+      "reason": "Restore natural complete Thai relation between retained company/department and corrected personal recipient name."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-06212-05-001",
+      "turnId": "DLG-SC-LOC-JP-06212-05-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "070ec3256e250f5bcbbeeb24581fe8e8a1b8080682a2fbaab862c8ac0ac70611",
+      "translation": "บอกเป็นภาษาญี่ปุ่นว่าจะตรวจชื่อบริษัท แผนก ชื่อบุคคลที่ตามด้วย 様 และที่อยู่ก่อนส่ง โดยไม่ใช้คำยกย่องซ้อนกัน",
+      "reason": "Restore the individual's name followed by 様 and clear verification-before-sending task, rather than the awkward person-様 fragment."
+    }
+  ]
+}

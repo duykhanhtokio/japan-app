@@ -1,0 +1,49 @@
+{
+  "packetId": "dialogue_zh-queue-chunk27-272-tl",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "272",
+  "language": "tl",
+  "expectedSourceSha256": "1a7bc6e92707b4d00db135f25d343e254b7149cea2bf4fee825b3181f43888bb",
+  "expectedPackSha256": "9e58815022c62f49837e891061f43aa2628f137d6789a34467f793d349cc7937",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-04",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "cd5df14666eb5a043ef9de66e2c400c45146c7d113aed26866f24f7df77a5667",
+      "translation": "Ipaliwanag sa Japanese na noong Oktubre 1 ay natulog ka sa dalawang magkahiwalay na panahon, 9.00–12.00 at 15.00–17.00, hindi nang tuloy-tuloy sa loob ng limang oras.",
+      "reason": "dalawang tulog awkward noun phrase; restore slept twice with precise Oct1time blocks and not5continuous instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "c7668a5c0401a79c55990dec86435c411065d6cdf1103d623dc9c0ad738ca62c",
+      "translation": "Hindi. Noong Oktubre 1, dalawang beses akong natulog: alas-nuwebe ng umaga hanggang alas-dose ng tanghali, at alas-tres hanggang alas-singko ng hapon. Kabuuang oras lang ang isinulat ko, kaya baka isipin nilang limang oras iyon nang tuloy-tuloy.",
+      "reason": "12:00ngumaga can imply midnight; restore9AMto12noon and3–5PM explicitly, two sleep periods and possible5continuous misreading."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "c4d373c2f8ab6d52716c12eb0089b0327c08803dafcec69df2b0c69345f0ee1f",
+      "translation": "Tatlong oras ang una at dalawang oras ang sumunod, kaya limang oras lahat. Isusulat natin sa magkahiwalay na linya ang oras ng bawat panahon ng pagtulog. Kumonsulta sa medical staff kung sapat ang haba ng tulog.",
+      "reason": "ang dalawang oras means two hours rather than times of two sleep blocks; restore recording both period times on separate lines and3+2=5."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-06",
+      "field": "translation",
+      "expectedTranslationSha256": "29345f611e5aa495404365f978e60f4de123d00b477fd1916d29a428b881d4cd",
+      "translation": "Opo, hindi ko hinihiling sa reception na magpasiyang sapat ang limang oras. Gusto kong hiwalay na ipaliwanag ang pagiging gising sa pagitan ng dalawang panahon ng pagtulog at ang pagkaantok habang nagtatrabaho.",
+      "reason": "paggising means awakening event, source contextual awake-between; restore pagiging gising and no reception adequacy decision."
+    }
+  ]
+}

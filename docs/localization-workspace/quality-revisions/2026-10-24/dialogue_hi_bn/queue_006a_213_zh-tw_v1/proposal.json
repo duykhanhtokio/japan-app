@@ -1,0 +1,33 @@
+{
+  "packetId": "queue_006a_213_zh-tw_v1",
+  "owner": "dialogue_hi_bn",
+  "kind": "unit-translations",
+  "batch": "213",
+  "language": "zh-TW",
+  "expectedSourceSha256": "b3b04c552fa7856a905f1d81995d71e5d15fc57ceaec7d802d159bc8dab94a86",
+  "expectedPackSha256": "700f30bdd39bb99926268ee198a8092ffa6fcabfe227320b9b69da5005430fed",
+  "reason": "Original-author source/context/naturalness adjudication of screening candidates; repair actual omissions, foreign-script leakage or clipped unnatural clauses.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-OSK-TOYONAKA-08-001",
+      "turnId": "DLG-SC-LOC-OSK-TOYONAKA-08-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "ae350ad71c5d32eac83a8a7f98b1d9a9fa067a75a6774d8940577f75a0ec35e5",
+      "translation": "表示盤子都備齊了，可以兩人一起吃，並會每次分取少量。請用日語表達。",
+      "reason": "Restore full task meaning that plates are ready and food will be portioned little by little; original 漸分吃 was opaque shorthand."
+    },
+    {
+      "scenarioId": "SC-SAG-IMARI-001",
+      "turnId": "DLG-SC-SAG-IMARI-001-SHARED-02",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "3dadc8b17ff08bc770b3d0113c3f14dda623fe47588d717eaba3ba66c5eac81b",
+      "translation": "表示想在畫葉子圖案之前先練習。請用日語表達。",
+      "reason": "Restore learner's wish to practice before drawing leaf pattern, rather than clipped instruction directly commanding practice."
+    }
+  ]
+}

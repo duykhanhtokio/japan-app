@@ -1,0 +1,57 @@
+{
+  "packetId": "dialogue_zh-queue-chunk27-272-ne",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "272",
+  "language": "ne",
+  "expectedSourceSha256": "1a7bc6e92707b4d00db135f25d343e254b7149cea2bf4fee825b3181f43888bb",
+  "expectedPackSha256": "0c6075557ed8728b0f1849aa192ffcb6d7abca3d2b89a29137fa4119ce06a845",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-04",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "3aa2723355f0e0d5330d7fd0678b90369d7dfd3eed71840d361662a2299f349f",
+      "translation": "अक्टोबर १ मा बिहान नौदेखि बाह्र बजेसम्म र दिउँसो तीनदेखि पाँच बजेसम्म दुई पटक सुत्नुभएको, लगातार पाँच घण्टा नसुतेको कुरा बताउनुहोस्। जापानी भाषामा भन्नुहोस्।",
+      "reason": "Restore natural sleep verb and hour units with Oct1morning9–12afternoon3–5two periods not5continuous, full Japanese task."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-06",
+      "field": "translation",
+      "expectedTranslationSha256": "799d04b12c28ffb50c7c2d7e36636b5ea4f66206d399536919fa69a172bae754",
+      "translation": "हो, पाँच घण्टा पर्याप्त हो कि होइन भनेर रिसेप्सनलाई निर्णय गर्न लगाउन चाहेको होइन। दुई पटकको निद्राको बीचमा जागा रहेको र काम गर्दा निद्रा लागेको कुरा अलग-अलग बताउन चाहन्छु।",
+      "reason": "बीचमा उठेको can mean getting up once; restore remained awake between periods and work sleepiness distinct, not reception judging adequacy."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "8ac1973369341f785b5839adbc5ba4adf012189f2056757843b51a9274133ac0",
+      "translation": "अक्टोबर १ मा दुई पटक सुतेको र अक्टोबर २ बिहान दुई बजेतिर निद्रा लागेको कुरा अलग लेखिएको छ। सुतिरहेका बेला बारम्बार ब्युँझनुभएको होइन, दुई पटक सुतेको बीचमा जागा रहनुभएको हो, ठीक हो?",
+      "reason": "दुई निद्राको is unnatural; restore two sleep periods and precise awake-between not repeated waking confirmation, all dates retained."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "cbff4e438f788dd2bd1600531cd03767b3add1ef6fd9c9ffbfd588f67a5bcdf3",
+      "translation": "तीन घण्टा र दुई घण्टाका दुई अलग अवधिमा सुत्नुभएको, लगातार पाँच घण्टा नभएको र त्यसको भोलिपल्टको निद्रा लागेको कुरा पनि अलग हरफमा लेखिएको पुष्टि गर्नुहोस्। टिपोट स्वास्थ्यकर्मीलाई दिन चाहेको कुरा जापानी भाषामा भन्नुहोस्।",
+      "reason": "भोलिको निद्रा mislabels nextday sleepiness as sleep and future tomorrow; restore next-day drowsiness, separate line,3+2not5continuous and note."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01209-03-001",
+      "turnId": "DLG-SC-LOC-JP-01209-03-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "a1aae901c512114d4a8497e192cd527d518583b3c32109bd39cc8cbf61e83dc0",
+      "translation": "ठीक हो। तीन घण्टा र दुई घण्टाका दुई अलग अवधिमा सुतेको हुँ, लगातार पाँच घण्टा होइन। भोलिपल्ट बिहान दुई बजेतिर निद्रा लागेको कुरा पनि अलग हरफमा छ। यो टिपोट स्वास्थ्यकर्मीलाई दिन चाहन्छु।",
+      "reason": "Restore sleep-period naturalness and nextday2AMdrowsiness rather than actual sleep, note to medical staff."
+    }
+  ]
+}

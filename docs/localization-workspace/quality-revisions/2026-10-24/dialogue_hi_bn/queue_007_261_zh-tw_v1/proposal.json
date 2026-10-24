@@ -1,0 +1,41 @@
+{
+  "packetId": "queue_007_261_zh-tw_v1",
+  "owner": "dialogue_hi_bn",
+  "kind": "unit-translations",
+  "batch": "261",
+  "language": "zh-TW",
+  "expectedSourceSha256": "1ddc5e8cf4cbd9b384fc82e2203d3fb0274a1c7973915963b57d23120d9974ed",
+  "expectedPackSha256": "6579e3c4a32c1dd6561b4c3dbe94d9ade4e6f2d82ff369c56c3074da0f00801d",
+  "reason": "Original-author source/context/naturalness adjudication of screening candidates; repair actual omissions, foreign-script leakage or clipped unnatural clauses.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-YGT-TENDO-06-001",
+      "turnId": "DLG-SC-LOC-YGT-TENDO-06-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "f19d0659ef29e380c043215bc7f1e70ade6cd78b7e1a980530c44e56ca8602f8",
+      "translation": "表示已把樣品的眼距、焦距和背帶調整好，確認價籤後會購買同款商品一個。請用日語表達。",
+      "reason": "Restore completed binocular sample adjustments and one matching product purchase after price check; original compressed width/focus/strap shorthand unnatural."
+    },
+    {
+      "scenarioId": "SC-LOC-YGT-TENDO-07-001",
+      "turnId": "DLG-SC-LOC-YGT-TENDO-07-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "d7e6d1e570506af97018a18dba11509a3b0edfbd7241f07e6d59de634bdcf88f",
+      "translation": "表示不會斷定是某種動物的叫聲，只會保留作為聽到聲音時間的紀錄。請用日語表達。",
+      "reason": "Restore explicit uncertainty about animal identification and keeping heard-time record, as complete natural task rather than cryptic fragments."
+    },
+    {
+      "scenarioId": "SC-YGT-TSURUOKA-001",
+      "turnId": "DLG-SC-YGT-TSURUOKA-001-SHARED-04",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "a1baec3feb48d687f6794dc35448dfb9553df11d6703f24094d06bb65c39be70",
+      "translation": "說明曾用用餐的湯匙量糖，但後來注意到有專用量匙。請用日語表達。",
+      "reason": "Restore learner explanation of dinner spoon measurement and noticing measuring spoon; full cooking context confirms sugar referent."
+    }
+  ]
+}
