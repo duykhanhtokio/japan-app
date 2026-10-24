@@ -1,0 +1,41 @@
+{
+  "packetId": "slot0-queue-008-678-hi",
+  "owner": "dialogue_en_vi",
+  "kind": "unit-translations",
+  "batch": "678",
+  "language": "hi",
+  "expectedSourceSha256": "c8ad82e4e4a47dd5646008f2cd3f28d19da81f516b7fad42b4cc91dca15991b0",
+  "expectedPackSha256": "805df36df84a3d3cf19490160bf1c3f4a2e78bb64062fa972d8e62749e5ec27f",
+  "reason": "Repair individually reviewed screening candidates against complete Japanese scenario context.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-42214-06-001",
+      "turnId": "DLG-SC-LOC-JP-42214-06-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "04f17b7b61c7ff6ba261dfd9b999c53200b46d354ed1a93eb2c9eee9afe033b5",
+      "translation": "कार्ड जारी करने वाला वित्तीय संस्थान कौन-सा है, क्या आपको पता है? पहले जाँच लें कि यह इसी बैंक का कार्ड है या नहीं। कृपया अपना पिन न बताएं।",
+      "reason": "Restore complete polite questions and the explicit PIN prohibition while identifying the financial issuer and own-bank distinction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-42214-07-001",
+      "turnId": "DLG-SC-LOC-JP-42214-07-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "711ef498897c25739b391f18f68edfe99c58fb3c7e1fb6da4f72125161769f46",
+      "translation": "रसीद में एक ही उत्पाद की दो पैकेट दर्ज हैं। आपने जो बात देखी है, क्या वह केवल साथ लाए इस एक पैकेट के बारे में है?",
+      "reason": "Restore two identical products on the receipt and question about the single brought pack, rather than vague समान दो fragments."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-43204-01-001",
+      "turnId": "DLG-SC-LOC-JP-43204-01-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "8602babc6d21832c57522d8d2ea1827b750d766b0386755d760f8f68de08da74",
+      "translation": "केवल एक तरफ़ का टिकट चाहिए, सही है? यात्रा की तारीख आज नहीं, कल है न?",
+      "reason": "Restore one-way-only confirmation and full question contrasting tomorrow's travel date with today."
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "packetId": "dialogue_zh-queue-chunk08-218-zh-cn",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "218",
+  "language": "zh-CN",
+  "expectedSourceSha256": "0a9e836eff2ab0c2c85e5df2cb58d71844f14b6148c549f1f663d8a29897d63e",
+  "expectedPackSha256": "2f242802d68eb64b7187b2d638ccae6053e48ee2722df4e61b645291fcc3f1e5",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-SHG-KUSATSU-05-001",
+      "turnId": "DLG-SC-LOC-SHG-KUSATSU-05-001-SHARED-06",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "b0208749d1e508a61e8a0db7c6c90dc410cc5ecd3712a17f9e481333ca53ddd8",
+      "translation": "说明昨天喝水时没有那种不适感，但并没有试过所有饮料。请用日语表达。",
+      "reason": "Medical hint compression loses water yesterday no discomfort and not testing every drink; restore scope and uncertainty, no clinical inference."
+    },
+    {
+      "scenarioId": "SC-LOC-SHG-KUSATSU-06-001",
+      "turnId": "DLG-SC-LOC-SHG-KUSATSU-06-001-SHARED-08",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "842b2322a9086706541cfc1e3c5ae22b3b199d81a512b3dfbd301f7b11beaae5",
+      "translation": "表示轮到自己倾听时只问一个问题，不会又只有自己说很久。请用日语表达。",
+      "reason": "听者一问不独长说 is broken hint; restore listening role one question only and avoid speaker dominating time."
+    },
+    {
+      "scenarioId": "SC-LOC-SHG-NAGAHAMA-02-001",
+      "turnId": "DLG-SC-LOC-SHG-NAGAHAMA-02-001-SHARED-04",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "77afe5548900d45b23b38107b8a99ac79fc1cb6afcfd2409cc3bedd12ad3ebf4",
+      "translation": "表示不会无限期等待放晴，而是欣赏现在看得到的岸边和树木。请用日语表达。",
+      "reason": "Restore no indefinite wait for clear weather and decision to enjoy currently visible shore and trees, not just choose trees."
+    },
+    {
+      "scenarioId": "SC-LOC-SHG-NAGAHAMA-03-001",
+      "turnId": "DLG-SC-LOC-SHG-NAGAHAMA-03-001-SHARED-04",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "25af33c2a72375e39e91eed9a9dec8295628e9cf1ba294ebfacd9e42af35b385",
+      "translation": "说明结打得太紧，请对方先解开，再试戴夹扣，不要拉扯布料。请用日语表达。",
+      "reason": "Restore untie tight scarf knot first and request clasp trial without pulling fabric, with complete instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-SHG-NAGAHAMA-03-001",
+      "turnId": "DLG-SC-LOC-SHG-NAGAHAMA-03-001-SHARED-08",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "4b10cf723c935327697bd23f0ed46555e160ae0920cef614f7095079c3c4a39c",
+      "translation": "表示决定购买小款夹扣，并明确说明不买试过的大款。请用日语表达。",
+      "reason": "Restore buying smaller clasp and explicit not buying larger trial item; previous 退样 adds ambiguous return shorthand."
+    },
+    {
+      "scenarioId": "SC-SHG-NAGAHAMA-001",
+      "turnId": "DLG-SC-SHG-NAGAHAMA-001-SHARED-04",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "42cd89525ac0595ecb2f249b4e7ffe071ddd92978a68ddc4c287145f56ceb8a6",
+      "translation": "说明还没有折纸，上次是蓝面朝外，这次想改为白面朝外。请用日语表达。",
+      "reason": "旧蓝外改白 can imply already folded; restore paper not yet folded and wanting white outside this time rather than prior blue."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "packetId": "dialogue_zh-queue-chunk01-019-zh-cn",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "019",
+  "language": "zh-CN",
+  "expectedSourceSha256": "b8e5be62a090074dd06ca6200c45ed9c82de1a2506403fc79b2cfd84b1078458",
+  "expectedPackSha256": "c7d272dfb82aa0fa9cd105237a6f470b8faa7d829d5883e7575133451046b909",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-009-20-001",
+      "turnId": "DLG-SC-LOC-009-20-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "89e8669b1fb8b4647e97044bea04d79b612c7a1a8ece1b3c27ad25eb9587c728",
+      "translation": "请也让那位搬运负责人到现场来。在确认之前，请不要移动材料。",
+      "reason": "現地 onsite is omitted; restore request for transport worker to come onsite and prohibition until confirmation."
+    },
+    {
+      "scenarioId": "SC-LOC-009-21-001",
+      "turnId": "DLG-SC-LOC-009-21-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "61e3d946d8534b5895f6e977566234d8220c9eaa05a819062b28f62e76b4cbcf",
+      "translation": "我打开了封面，但粘在一起的书页还保持原样。担心会撕破，所以还没有把它们分开。",
+      "reason": "粘页没动 is fragmentary; restore opened cover versus untouched stuck pages, risk of tearing and not yet separating."
+    },
+    {
+      "scenarioId": "SC-LOC-010-01-001",
+      "turnId": "DLG-SC-LOC-010-01-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "442e7e0a7e1681c59e901e3419988edf26a9e4a4fa691f97736038a048b83191",
+      "translation": "那就请把行李也带走。储物柜里还有没有留下什么东西？",
+      "reason": "残留 used for belongings is unnatural; restore polite take-luggage instruction and explicit locker check."
+    }
+  ]
+}

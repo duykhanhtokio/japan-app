@@ -1,0 +1,73 @@
+{
+  "packetId": "screen-008-601-hi",
+  "owner": "dialogue_id_tl",
+  "kind": "unit-translations",
+  "batch": "601",
+  "language": "hi",
+  "expectedSourceSha256": "7bc8d11e994a09985cc3c838e3983a77191ab502ba31de9d38ed3ec849828142",
+  "expectedPackSha256": "ef4b58acb4676622d1ea5056429278dfb8703f07b7360a351e489f36358a1cba",
+  "reason": "Original-owner contextual adjudication: restore precise full meaning and natural dialogue in screened units.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-29206-01-001",
+      "turnId": "DLG-SC-LOC-JP-29206-01-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "8f255b2ce4697c9cda3781d0f9a27457c3a0bfdeae4f539dd4555720ca132e45",
+      "translation": "राशि ले रहा हूँ। यह बदला हुआ टिकट लीजिए। संभलकर जाइए, शुभ यात्रा।",
+      "reason": "Restore receiving payment and handing changed ticket rather than noun fragment बदला टिकट."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29206-02-001",
+      "turnId": "DLG-SC-LOC-JP-29206-02-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "ca7ebfd88770244d2db8a94fec662123a0163b698139740aa1a34e7ab9cb383b",
+      "translation": "डाक से भेजने का पता फॉर्म के पीछे है। फॉर्म साथ ले जाइए और संभलकर घर जाइए।",
+      "reason": "Restore postal-submission address and full safe-return instruction instead of घर ध्यान से fragment."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29206-04-001",
+      "turnId": "DLG-SC-LOC-JP-29206-04-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "155299175b1d1af80ba3417632e19796fb518ffddf1ea94d4e3ade54ea9e667c",
+      "translation": "आज सुबह नौ बजे स्टेशन के दक्षिण की ओर वाली साइकिल पार्किंग में रखी थी। दोपहर एक बजे तक वह गायब हो चुकी थी।",
+      "reason": "Restore bicycle parking place, placing action and by1pm missing state; original9 स्टेशन दक्षिण loses essential event/location detail."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29206-07-001",
+      "turnId": "DLG-SC-LOC-JP-29206-07-001-SHARED-02",
+      "field": "translation",
+      "expectedTranslationSha256": "f7ccea65bf2911c38bfdf8310964c3623e9c3d3c91fc3cd2bd452eb34d6a5f93",
+      "translation": "शेल्फ पर तीन सौ अस्सी येन लिखा था। क्या वह इस जार की कीमत नहीं है?",
+      "reason": "Restore380yen price unit and complete jar-price question."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29206-07-001",
+      "turnId": "DLG-SC-LOC-JP-29206-07-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "cef4c8a0f2a9e15f18fe57c75f1fe3d5a5ea2271c9f595f253730c127e9a82e5",
+      "translation": "तीन सौ अस्सी येन का मूल्य-लेबल छोटे जार का था। इस जार में दो सौ ग्राम जैम है।",
+      "reason": "Restore small-jar price tag,380yen unit and current jar's200g contents as full explanation."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29206-07-001",
+      "turnId": "DLG-SC-LOC-JP-29206-07-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "d5aab0a9346fbdbb45117ac119246a35aa928b8dcc2f5be5c831a031a1d6b615",
+      "translation": "जी, केवल छोटे जार का ही बिल बनाएँगे। धन्यवाद, फिर आइए।",
+      "reason": "Restore acknowledgement and explicit billing only small jar, not छोटा बिल ambiguity."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29207-01-001",
+      "turnId": "DLG-SC-LOC-JP-29207-01-001-SHARED-08",
+      "field": "translation",
+      "expectedTranslationSha256": "10cd353b94f94f32622f4e4598a1383cb7b8bfdad0b49b1589d2590fcbbe0bd3",
+      "translation": "धन्यवाद। क्या टिकट गेट पर मुझे केवल यही नया टिकट इस्तेमाल करना है?",
+      "reason": "Restore ticket-gate action and only-this-new-ticket question; original केवल नया noun fragment."
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "packetId": "dialogue_zh-queue-chunk08-224-hi",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "224",
+  "language": "hi",
+  "expectedSourceSha256": "5ee2f7029b42c75d0d97dc122a7269d77bbbc1adc692d96b2b3f0f2fe36bed52",
+  "expectedPackSha256": "183a4f3e6ce054693d30c1b64fe73e6320af48727b4fa137787db4f452011e8f",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-SMN-HAMADA-04-001",
+      "turnId": "DLG-SC-LOC-SMN-HAMADA-04-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "0bf577f54d24cb5c485b455cd57d970004fe8155c6619939a1242ea91961e75a",
+      "translation": "जी। हम उत्पादन के रिकॉर्ड से मिलान करेंगे, इसलिए कृपया बताइए कि गट्ठर कहाँ रखा है।",
+      "reason": "निर्माण alone loses production records and bundle location; restore acknowledgement, checking records and polite location request."
+    },
+    {
+      "scenarioId": "SC-LOC-SMN-HAMADA-05-001",
+      "turnId": "DLG-SC-LOC-SMN-HAMADA-05-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "b0524f10388a732105744131e8622af778b62d416ca45333034cbd27a436bf2b",
+      "translation": "काम पूरा हो जाए तो अपनी बनाई चीज़ कार्य-मेज़ पर ले आइए। आराम से इसका आनंद लीजिए।",
+      "reason": "मेज़ लाइए wrongly asks bring table; source asks bring finished piece to workbench. Restore correct object and unhurried enjoyment."
+    },
+    {
+      "scenarioId": "SC-LOC-SMN-HAMADA-06-001",
+      "turnId": "DLG-SC-LOC-SMN-HAMADA-06-001-SHARED-01",
+      "field": "translation",
+      "expectedTranslationSha256": "960e17bf7a0e60be7287fabf09ef3d47ec5c389a5b626ac2d42ef1d1386eafb5",
+      "translation": "क्या आवेदन फ़ॉर्म भर लिया है? जमा करने से पहले किसी बात में कठिनाई हो तो बताइए।",
+      "reason": "Restore application form completed question and offer to hear difficulties before submission rather than vague first questions."
+    },
+    {
+      "scenarioId": "SC-LOC-SMN-HAMADA-06-001",
+      "turnId": "DLG-SC-LOC-SMN-HAMADA-06-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "85a21411741b47c3cfe580910af8c8d8a9c88674a8321b8a9c00e675053761bc",
+      "translation": "यह पुराने पते वाला खाना है। अभी फ़ॉर्म जमा नहीं किया है, इसलिए पहले देख लें कि किस जगह क्या भरना है।",
+      "reason": "अभी पहले है is broken and loses before-submission reason; restore old-address field and check filled location before submission."
+    },
+    {
+      "scenarioId": "SC-LOC-SMN-HAMADA-07-001",
+      "turnId": "DLG-SC-LOC-SMN-HAMADA-07-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "87eaf7ce1ef2ee9ffd223ed94b09de6ad8f976fd31f247e18847e0cb542210bb",
+      "translation": "हम मिलने की परिस्थिति दर्ज करेंगे, इसलिए कृपया जाँच लें कि अभी बताए गए स्थान और समय में कोई गलती तो नहीं है।",
+      "reason": "Restore recording finding circumstances as purpose and verify just-provided location/time correctness."
+    },
+    {
+      "scenarioId": "SC-SMN-HAMADA-001",
+      "turnId": "DLG-SC-SMN-HAMADA-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "372927d31de58a47268856275c99cbefedf5b276dbbeb38d2baeaddbc9ffb8aa",
+      "translation": "यहाँ पीछे बैठेंगे तो उठते समय भी आसपास के लोगों को कम परेशानी होगी।",
+      "reason": "Restore standing-up condition, rear-seat location and tentative lower impact on surrounding audience."
+    }
+  ]
+}

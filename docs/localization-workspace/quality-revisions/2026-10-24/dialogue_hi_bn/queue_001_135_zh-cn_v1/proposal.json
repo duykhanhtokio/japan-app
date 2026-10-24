@@ -1,0 +1,33 @@
+{
+  "packetId": "queue_001_135_zh-cn_v1",
+  "owner": "dialogue_hi_bn",
+  "kind": "unit-translations",
+  "batch": "135",
+  "language": "zh-CN",
+  "expectedSourceSha256": "b2e49040a227a3d3190ed2d26f306d8680c1834a09974cd09284e11d61317b43",
+  "expectedPackSha256": "9e0376cc20fc4f96186966752ada0ad5e272a7052ed475df4d038591e044ded1",
+  "reason": "Original-author source/context/naturalness adjudication of screening candidates; repair actual omissions, foreign-script leakage or clipped unnatural clauses.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-GNM-TAKASAKI-02-001",
+      "turnId": "DLG-SC-LOC-GNM-TAKASAKI-02-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "9d5d5f299263b7cd846b999d8cec630603815476c1ed6ebd1bc7eaf0a98db87f",
+      "translation": "请把样品放回去，我给您拿同样颜色的。是您自己用的吗？",
+      "reason": "Replace clipped take same color with full natural staff offer; sample and item referents are clear from scenario."
+    },
+    {
+      "scenarioId": "SC-LOC-GNM-TAKASAKI-04-001",
+      "turnId": "DLG-SC-LOC-GNM-TAKASAKI-04-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "71b4cca4c7ce152d0eb28f99983e1f6406f6fd97365bb289a258a4490fb5db57",
+      "translation": "我会把这些情况转告负责人。在确认清楚之前，我们会暂缓把便当交给您。",
+      "reason": "Restore full natural staff commitment, responsible recipient and withholding bento until allergy checks confirmed."
+    }
+  ]
+}

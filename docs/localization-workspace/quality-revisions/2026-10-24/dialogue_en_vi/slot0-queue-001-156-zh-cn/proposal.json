@@ -1,0 +1,41 @@
+{
+  "packetId": "slot0-queue-001-156-zh-cn",
+  "owner": "dialogue_en_vi",
+  "kind": "unit-translations",
+  "batch": "156",
+  "language": "zh-CN",
+  "expectedSourceSha256": "ddf52addd4056adf56bc41514115e73cd256f03a3ab9e794e0122a4446810f9f",
+  "expectedPackSha256": "a6cd66ede0e1614797fd04fccae55037d6e6495cca06f8e78eac9908bcabcdba",
+  "reason": "Repair individually reviewed screening candidates against complete Japanese scenario context.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-KCH-AKI-001",
+      "turnId": "DLG-SC-KCH-AKI-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "41751c6b4c327650d1fb8508acd9df8474133592b0228806427b0ee41217f3ee",
+      "translation": "那个果实请先留着。采摘前如果拿不准某个果实能不能摘，请先叫我确认。",
+      "reason": "Restore complete natural instructions and the fruit referent; the customer must ask before picking uncertain fruit, not after taking it."
+    },
+    {
+      "scenarioId": "SC-KCH-AKI-001",
+      "turnId": "DLG-SC-KCH-AKI-001-SHARED-08",
+      "field": "translation",
+      "expectedTranslationSha256": "417151fec1adebd43373e1ef43e21b653adbdbf5d4da5794db456b5be6976bdf",
+      "translation": "我本来想把箱子放在自己脚边，但这样会不会妨碍其他人通行？",
+      "reason": "The source asks whether placing the box at the speaker's feet would obstruct passers-by; restore grammatical clauses and the specific passage concern."
+    },
+    {
+      "scenarioId": "SC-KCH-AKI-001",
+      "turnId": "DLG-SC-KCH-AKI-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "7d347e16d47daa1420375399bd9ac52175c580061b286fe0b702f37fdb9834c9",
+      "translation": "请把箱子放在通道外的这个位置。箱子装满之前，请通知负责搬运的工作人员。",
+      "reason": "Restore complete instructions locating the box outside the walkway and notifying transport staff before it becomes full, instead of clipped fragments."
+    }
+  ]
+}

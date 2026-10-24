@@ -1,0 +1,257 @@
+{
+  "shared": [
+    {
+      "id": "DLG-SC-LOC-JP-44205-01-001-SHARED-01",
+      "scenarioId": "SC-LOC-JP-44205-01-001",
+      "turnOrder": 1,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "経路検索のことでしょうか。どこに、何時ごろ着きたいかをお聞かせください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-01-001-SHARED-02",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-01-001-SHARED-02",
+      "scenarioId": "SC-LOC-JP-44205-01-001",
+      "turnOrder": 2,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "request_review_of_three_oclock_route_search",
+        "requiredSemanticComponents": {
+          "goal": "友人宅に午後三時までに着く約束で、三時を入れた検索結果の見方を尋ねる。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "友人の家に午後三時までに着きたいです。三時と入れて検索しましたが、この結果でよいのか見ていただけますか。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "友人宅に午後三時までに着く約束で、三時を入れた検索結果の見方を尋ねる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "友人宅に午後三時までに着く約束で、三時を入れた検索結果の見方を尋ねる。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-01-001-SHARED-03",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-01-001-SHARED-03",
+      "scenarioId": "SC-LOC-JP-44205-01-001",
+      "turnOrder": 3,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "この画面は三時に出発する設定ですね。ご希望は、三時までに到着する経路を探すことですね。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-01-001-SHARED-04",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-01-001-SHARED-04",
+      "scenarioId": "SC-LOC-JP-44205-01-001",
+      "turnOrder": 4,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "correct_departure_setting_to_arrival_goal",
+        "requiredSemanticComponents": {
+          "goal": "三時は訪問の約束であり、出発設定を到着基準に直したいと伝える。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "はい。家を訪ねる約束が三時です。出発の設定にしていたので、到着を基準に調べ直したいです。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "三時は訪問の約束であり、出発設定を到着基準に直したいと伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "三時は訪問の約束であり、出発設定を到着基準に直したいと伝える。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-01-001-SHARED-05",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-01-001-SHARED-05",
+      "scenarioId": "SC-LOC-JP-44205-01-001",
+      "turnOrder": 5,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "設定を到着に替える前に、検索先を確かめましょう。この駅への到着と、ご友人の家への到着は同じではありません。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-01-001-SHARED-06",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-01-001-SHARED-06",
+      "scenarioId": "SC-LOC-JP-44205-01-001",
+      "turnOrder": 6,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "identify_missing_station_to_house_leg",
+        "requiredSemanticComponents": {
+          "goal": "駅から家への移動を含めておらず、友人に最寄り駅からの行き方を聞くと述べる。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "駅から家までの移動を入れていませんでした。友人のメッセージには駅名だけなので、そこからどう行くかを聞きます。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "駅から家への移動を含めておらず、友人に最寄り駅からの行き方を聞くと述べる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "駅から家への移動を含めておらず、友人に最寄り駅からの行き方を聞くと述べる。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-01-001-SHARED-07",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-01-001-SHARED-07",
+      "scenarioId": "SC-LOC-JP-44205-01-001",
+      "turnOrder": 7,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "最寄り駅と、その先の移動を分けて確かめてください。駅までの経路では、速さと乗換えの少なさのどちらを優先なさいますか。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-01-001-SHARED-08",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-01-001-SHARED-08",
+      "scenarioId": "SC-LOC-JP-44205-01-001",
+      "turnOrder": 8,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "prefer_fewer_transfers_after_last_leg_confirmation",
+        "requiredSemanticComponents": {
+          "goal": "初めてなので乗換えの少なさを優先し、家までの時間を確認して駅の到着目標を決めると伝える。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "初めてなので、乗換えが少ない方を比べたいです。家までの時間が分かってから、駅に何時までに着くか決めます。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "初めてなので乗換えの少なさを優先し、家までの時間を確認して駅の到着目標を決めると伝える。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "初めてなので乗換えの少なさを優先し、家までの時間を確認して駅の到着目標を決めると伝える。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-01-001-SHARED-09",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-01-001-SHARED-09",
+      "scenarioId": "SC-LOC-JP-44205-01-001",
+      "turnOrder": 9,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "その条件で検索し直せますね。結果は候補として、当日の運行案内やホームの表示もご確認ください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-01-001-SHARED-10",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-01-001-SHARED-10",
+      "scenarioId": "SC-LOC-JP-44205-01-001",
+      "turnOrder": 10,
+      "speaker": "PLAYER",
+      "npc": null,
+      "player": {
+        "communicativeIntent": "record_route_conditions_before_train_choice",
+        "requiredSemanticComponents": {
+          "goal": "友人への質問と到着設定をメモし、乗換えの少ない候補を見て列車を決めると述べる。"
+        },
+        "optionalSemanticComponents": {},
+        "recommendedAnswerJa": "友人への質問と、到着を基準にする設定をメモしました。乗換えの少ない候補を見てから、利用する列車を決めます。",
+        "recommendedAnswerFurigana": null,
+        "acceptableExamples": [],
+        "hint": "友人への質問と到着設定をメモし、乗換えの少ない候補を見て列車を決めると述べる。日本語で伝えてください。",
+        "translations": {},
+        "evaluationNotes": "友人への質問と到着設定をメモし、乗換えの少ない候補を見て列車を決めると述べる。。言い換えは許容する。直前のNPCの問いに応じているかを確認する。",
+        "unexpectedIntents": [],
+        "allowMinorGrammarErrors": true,
+        "targetGrammarIds": [],
+        "targetVocabularyIds": []
+      },
+      "nextDialogueId": "DLG-SC-LOC-JP-44205-01-001-SHARED-11",
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    },
+    {
+      "id": "DLG-SC-LOC-JP-44205-01-001-SHARED-11",
+      "scenarioId": "SC-LOC-JP-44205-01-001",
+      "turnOrder": 11,
+      "speaker": "NPC",
+      "npc": {
+        "textJa": "検索する条件が整理できましたね。駅の先の移動も確かめ、表示を見てご乗車ください。それでは、お気をつけてお出掛けください。",
+        "furigana": null,
+        "translationVi": null,
+        "translations": {}
+      },
+      "player": null,
+      "nextDialogueId": null,
+      "status": "Japanese editorial draft",
+      "qualityCheck": "Individually rewritten Japanese exchange; prefecture content QA pending; no translation certification.",
+      "mappingConfidence": null
+    }
+  ],
+  "authoring": {
+    "locale": "ja",
+    "cluster": "CLUSTER_14_SOUTH_KYUSHU_OKINAWA_2026-09-30",
+    "contentScope": "simulated_learning_scenario",
+    "nativeSpeakerReviewed": false,
+    "translationState": "deferred_until_all_japanese_complete",
+    "editorialSource": "scripts/dialogue-authoring/prf-044-city-cty-jp-44205.json",
+    "premise": "佐伯市にひもづく架空の駅案内窓口。友人宅に午後三時までに着きたい利用者は、経路検索を三時出発に設定してしまっている。到着を基準に検索し直すだけでなく、駅から家への移動も別に含める必要があると気づき、友人に最寄り駅の情報を確かめる。実在駅や列車、所要時間を示さない。",
+    "contentReview": "individual causal/location rewrite complete; cross-prefecture semantic comparison pending",
+    "contentPass": false
+  }
+}

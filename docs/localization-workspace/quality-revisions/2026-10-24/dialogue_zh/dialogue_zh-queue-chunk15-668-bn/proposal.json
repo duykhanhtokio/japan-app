@@ -1,0 +1,65 @@
+{
+  "packetId": "dialogue_zh-queue-chunk15-668-bn",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "668",
+  "language": "bn",
+  "expectedSourceSha256": "a60bf308b6562ba6581d5675ff4f6c7e4d2b3b9b8084d4488cbbda9057f00550",
+  "expectedPackSha256": "7166f2ab645d781a203dd1953fc1f234fc0dd9310f7253400f8f4a2a9d8d989c",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-41204-03-001",
+      "turnId": "DLG-SC-LOC-JP-41204-03-001-SHARED-01",
+      "field": "translation",
+      "expectedTranslationSha256": "a6a8daa0193a7aacd0ecb331b31aa14717abd54d167b9b00fc3fb2027e9bb51e",
+      "translation": "আপনার বিল মেটানো হয়ে গেছে, তাই তো? আর কোনো বিষয় যাচাই করে নিতে চান?",
+      "reason": "Bengali billing confirmation is abrupt fragment; restore payment already completed and ask what customer wants to verify."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-41204-04-001",
+      "turnId": "DLG-SC-LOC-JP-41204-04-001-SHARED-01",
+      "field": "translation",
+      "expectedTranslationSha256": "416a0ea68517f24146ccb3e43bc0e144aa8888806593ee96ce63dc5a0d37246f",
+      "translation": "শুনলাম আপনার কিছু হারিয়েছে। প্রথমে কী ধরনের জিনিস হারিয়েছে জানতে পারি?",
+      "reason": "Restore lost-item consultation confirmation and polite request to first ask type of lost possession."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-41204-04-001",
+      "turnId": "DLG-SC-LOC-JP-41204-04-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "554174b17f75a85140328c1967432d5f833b321e3719c78db7370c9dde98e69c",
+      "translation": "এখানে আপনার রিপোর্ট গ্রহণ করছি। বর্ণনার সঙ্গে মেলে এমন জিনিস পাওয়া গেলে যোগাযোগ করব। সাবধানে বাড়ি ফিরুন।",
+      "reason": "এখানে নেবমিললে যোগাযোগ fragments omit accepted report and matching item condition; restore full lost-property closing."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-41204-06-001",
+      "turnId": "DLG-SC-LOC-JP-41204-06-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "98b44d65d709e4879024bfaa772c4b0f967b47cd8b2dcc510348df22074ec5c5",
+      "translation": "আগে কার্ড বন্ধ করার ব্যবস্থা করি। শেষ কবে কার্ড ব্যবহার করেছেন? পরিচয় যাচাইয়ের জন্য কোনো নথি সঙ্গে আছে?",
+      "reason": "Restore prioritize card suspension, last card use question and identity-document possession question with nouns intact."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-41204-06-001",
+      "turnId": "DLG-SC-LOC-JP-41204-06-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "e7e7de748484a75cc3943a3e8901cc0b8af1c2bf2b6430ce256745005180fa6a",
+      "translation": "ধন্যবাদ। যাচাইয়ের জন্য এই ফর্মে আপনার নাম ও ঠিকানা লিখুন। পিন নম্বর মুখে বলার প্রয়োজন নেই।",
+      "reason": "Restore thanks, verification purpose, name/address in this form and no need to say PIN aloud; avoid broken লাগবে না phrase."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-41204-07-001",
+      "turnId": "DLG-SC-LOC-JP-41204-07-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "bb15c8bf730c326d2cf1ee83713a64f5585e9bc8328326586b0a229088b53cdd",
+      "translation": "পণ্যটি দেখে নিচ্ছি। এখানে নষ্ট অংশ আছে। কখন কিনেছিলেন জানেন, বা রসিদ আছে?",
+      "reason": "Restore inspecting actual pumpkin, spoiled portion and complete purchase-time/receipt question, not fragments."
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "packetId": "dialogue_zh-queue-chunk03-158-zh-cn",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "158",
+  "language": "zh-CN",
+  "expectedSourceSha256": "519e58302c3e579f130fb8834bed2588c0065894a430b4351a9f58376ee008f3",
+  "expectedPackSha256": "efeffe54824eadd8c14bb0d751ba3a82c76dc011ec6b3ce06071fbbb2987086c",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-KCH-SUSAKI-001",
+      "turnId": "DLG-SC-KCH-SUSAKI-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "b9fa09a2d11f36b68078a31cda876c41dfcda1b2283198261b84b8a00191765c",
+      "translation": "不能只凭鱼的种类决定送到哪里。请把那个箱子留在现在的位置，不要和其他箱子混在一起。",
+      "reason": "Chinese fragments omit destination and box mixing object; restore fish-type-only insufficiency and both handling restrictions."
+    },
+    {
+      "scenarioId": "SC-KCH-SUSAKI-001",
+      "turnId": "DLG-SC-KCH-SUSAKI-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "eec33c106e4bbae8df101b42fbaa1ecf69f103e5efc65e7a688bd9dcffe0f58c",
+      "translation": "我不移动那个箱子。旁边箱子的标签能读清楚，可以先称那个箱子吗？",
+      "reason": "旁箱可读 loses label as readable object; preserve not moving first box and permission to weigh adjacent labelled box first."
+    },
+    {
+      "scenarioId": "SC-KCH-SUSAKI-001",
+      "turnId": "DLG-SC-KCH-SUSAKI-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "89ef515fd51f4616e0a9d7ddaab294886130e4c5757e11e862a8a3ffe87c1413",
+      "translation": "先处理标签能读清楚的箱子吧。不过负责称重的人还没到，请先不要放到秤上，把标签上的号码记下来。",
+      "reason": "Restore readable-label boxes, weighing staff not arrived, do not put on scale and record label number, all complete clauses."
+    },
+    {
+      "scenarioId": "SC-KCH-SUSAKI-001",
+      "turnId": "DLG-SC-KCH-SUSAKI-001-SHARED-06",
+      "field": "translation",
+      "expectedTranslationSha256": "6d3d53e99cf477f5c26393a9556f7692361379633430918922ae83d42188cf1c",
+      "translation": "我会记下标签上的号码。标签看不清的箱子，也可以先写一个临时号码吗？",
+      "reason": "未知箱 wrongly means unknown box; source says box with unreadable label. Restore record label number and temporary-number question."
+    },
+    {
+      "scenarioId": "SC-KCH-SUSAKI-001",
+      "turnId": "DLG-SC-KCH-SUSAKI-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "9165b5dd877000898463fa20a6e91076e16a1030aef791f3a52b2ed98411b0a7",
+      "translation": "等我回来，我们一起检查箱子。现在请先记下号码，之后我会再来这里叫您。",
+      "reason": "Restore explicit return condition, joint box check, polite number-recording request and staff calling again here."
+    },
+    {
+      "scenarioId": "SC-LOC-KCH-SHIMANTO-04-001",
+      "turnId": "DLG-SC-LOC-KCH-SHIMANTO-04-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "1b21a53cb67d3225e62f5081afd78babc42fdade4b0a6f58b6915bed598dfe33",
+      "translation": "我们用这份清单确认吧。分工不清楚的项目，请不要自行接下，先问我。",
+      "reason": "用这清单 is fragment; restore reviewing list and asking supervisor instead of self-accepting unclear responsibilities."
+    },
+    {
+      "scenarioId": "SC-LOC-KCH-SHIMANTO-04-001",
+      "turnId": "DLG-SC-LOC-KCH-SHIMANTO-04-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "fa9ee76e5bdebb2ddd2644bd7f47f10383f5828e3c8696cee918ad72729478cb",
+      "translation": "就按这样整理好的内容交接吧。我去向填写人和负责人确认。谢谢您到目前为止逐项核对。",
+      "reason": "Target omits actual handover action; restore handover with agreed distinctions, ask writer and responsible staff, thanks for checks so far."
+    },
+    {
+      "scenarioId": "SC-LOC-KCH-SHIMANTO-05-001",
+      "turnId": "DLG-SC-LOC-KCH-SHIMANTO-05-001-SHARED-01",
+      "field": "translation",
+      "expectedTranslationSha256": "81c7df12da4a9ea3a30dca890e1f74f32a09744d50c8096cef4484d11f60828c",
+      "translation": "您在考虑这个架子，对吧？量过准备摆放它的地方的尺寸了吗？",
+      "reason": "放处 is unnatural clipped noun; restore considering this shelf and dimensions of intended location."
+    },
+    {
+      "scenarioId": "SC-LOC-KCH-SHIMANTO-05-001",
+      "turnId": "DLG-SC-LOC-KCH-SHIMANTO-05-001-SHARED-02",
+      "field": "translation",
+      "expectedTranslationSha256": "0721179e529d8dca0b3fb8f517f8035f402f58e75d54b35289d06b3c22fd3d65",
+      "translation": "我量过墙的宽度了，这个架子应该放得下。我也想咨询能不能请你们配送。",
+      "reason": "配送 bare noun loses request possibility; restore wall width measured, this shelf seems to fit, ask whether delivery can be arranged."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "packetId": "dialogue_zh-queue-chunk01-020-zh-cn",
+  "owner": "dialogue_zh",
+  "kind": "unit-translations",
+  "batch": "020",
+  "language": "zh-CN",
+  "expectedSourceSha256": "81e4be71a936a9810c1c6ea6e9db2d5b935614d89fb97493d13ec05b8eb387fe",
+  "expectedPackSha256": "598c923f3019dbffc6816830f43337e213cc6b4c2409bbc172580f1fe305b8c8",
+  "reason": "Original-author contextual queue review: restore complete natural source-bound clauses and correct concrete lexical defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-010-10-001",
+      "turnId": "DLG-SC-LOC-010-10-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "8f30055d2ba67316833f10698b174bc4392a05a10ba31d2703ad51e42b020fdc",
+      "translation": "我的本子背面有一张小猫贴纸，朋友的那本没有。可以请您看一下吗？",
+      "reason": "Fragment loses possessive distinction: sticker is on own book back cover, absent from friend's book, then polite request."
+    },
+    {
+      "scenarioId": "SC-LOC-010-12-001",
+      "turnId": "DLG-SC-LOC-010-12-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "48012e3d67b5c363ef0bcd08b5aaf2c4583821ba4dcfa091a7a45c778a8207f8",
+      "translation": "这一行是绷带，另一行对应的是这件商品。",
+      "reason": "Receipt line mapping is rendered as noun fragments; restore complete statements identifying bandage line versus other product."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "packetId": "queue008-604-hi",
+  "owner": "dialogue_ne_my",
+  "kind": "unit-translations",
+  "batch": "604",
+  "language": "hi",
+  "expectedSourceSha256": "69e89a07cca963c4c6fc538744ff6f5122a19d6517830c5a2298305c9004fe55",
+  "expectedPackSha256": "523fc1dd1b14143dd1a33f64f8b63fbc086fb09589697d7cdf16339d3d794b13",
+  "reason": "Original-author scenario-context review repairs exact screened unit defects.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-29211-06-001",
+      "turnId": "DLG-SC-LOC-JP-29211-06-001-SHARED-01",
+      "field": "translation",
+      "expectedTranslationSha256": "1c2df1ae0f12f9c5fd52351f34521b3fd9a7823c2475912624d9162f3ea1d9de",
+      "translation": "आपने बताया कि कार्ड खो गया है। कृपया खाते में दर्ज अपना नाम बताइए।",
+      "reason": "Restore polite account-holder-name request after reported loss rather than noun fragment."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29211-06-001",
+      "turnId": "DLG-SC-LOC-JP-29211-06-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "d957d2751ce3c3f8c95d6b1ae7b261519f51857846fa638fb8ad9f624a4e7900",
+      "translation": "मैं देखता हूँ। जानकारी मिल गई है, तो क्या अब इस कार्ड का उपयोग रोकने की प्रक्रिया आगे बढ़ाएँ?",
+      "reason": "Restore verification and permission for card-use suspension; original मिल गया ambiguous match and action."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29211-06-001",
+      "turnId": "DLG-SC-LOC-JP-29211-06-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "435ecb4bf220e1f7e213fd807a2fdaab09d63bd726eedab500a71aea464ae66b",
+      "translation": "इस काउंटर की प्रक्रिया में नया कार्ड आपके पंजीकृत पते पर डाक से भेजेंगे। क्या पंजीकृत पता बदला है?",
+      "reason": "Restore complete registered-address postal-delivery rule and address-change question; original दर्ज पते डाक fragment."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-29211-07-001",
+      "turnId": "DLG-SC-LOC-JP-29211-07-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "164c651fe701f34bb17c4060a12f50a2021e71d755ab4983985801056a4d457c",
+      "translation": "हाँ, यहाँ हम साथ में उसकी हालत देख सकते हैं। यह बदले में दिया जाने वाला नया सामान है।",
+      "reason": "Restore joint condition inspection and replacement item; original साथ यहाँ/बदला हुआ incomplete."
+    }
+  ]
+}
