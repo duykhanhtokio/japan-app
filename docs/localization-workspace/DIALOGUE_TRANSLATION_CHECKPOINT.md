@@ -3198,3 +3198,33 @@ Integrated 643,644,646,647: all12 final own-source-fidelity markers and canonica
 ## Continuation642–653 2026-10-24T07:27:58.427Z
 
 Integrated 653: all12 final own-source-fidelity markers and canonical source/ID/role/hint bindings pass. Complete 6481/7128; remaining 647. Native/domain review false; no semantic cross-review. Remote persistence verification follows.
+
+
+## Continuation642–653 2026-10-24T07:29:03.389Z
+
+Integrated 648: all12 final own-source-fidelity markers and canonical source/ID/role/hint bindings pass. Complete 6491/7128; remaining 637. Native/domain review false; no semantic cross-review. Remote persistence verification follows.
+
+
+## Continuation642–653 2026-10-24T07:30:05.153Z
+
+Integrated 651: all12 final own-source-fidelity markers and canonical source/ID/role/hint bindings pass. Complete 6501/7128; remaining 627. Native/domain review false; no semantic cross-review. Remote persistence verification follows.
+
+
+## Continuation642–653 2026-10-24T07:31:43.177Z
+
+Integrated 652: all12 final own-source-fidelity markers and canonical source/ID/role/hint bindings pass. Complete 6511/7128; remaining 617. Native/domain review false; no semantic cross-review. Remote persistence verification follows.
+
+
+## Continuation642–653 2026-10-24T07:32:26.955Z
+
+Integrated 650: all12 final own-source-fidelity markers and canonical source/ID/role/hint bindings pass. Complete 6521/7128; remaining 607. Native/domain review false; no semantic cross-review. Remote persistence verification follows.
+
+
+## Continuation642–653 2026-10-24T07:34:16.445Z
+
+Integrated 649: all12 final own-source-fidelity markers and canonical source/ID/role/hint bindings pass. Complete 6531/7128; remaining 597. Native/domain review false; no semantic cross-review. Remote persistence verification follows.
+
+
+### Cohort642–653 complete
+
+All144 own-source-fidelity-checked locale packs integrated:120 new scenarios,15840 utterances and7200 task hints. Actual app loader PASS6531 scenarios. 7704 preexisting locale files unchanged. Complete6531/7128, remaining597. Native/domain review false; no semantic cross-review. Next654,start6531. Remote publication and persistence verification follow.
