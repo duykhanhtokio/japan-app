@@ -1,0 +1,401 @@
+{
+  "packetId": "owner5-queue41-689-zh-cn",
+  "owner": "dialogue_th_km",
+  "kind": "unit-translations",
+  "batch": "689",
+  "language": "zh-CN",
+  "expectedSourceSha256": "078af4d0543085369417ff0f6548321e29c876dc13fb7efc80c61405cc45333a",
+  "expectedPackSha256": "4aa53d7320d2959666793557ff718abd595a13884e3289df133e04b1fcd69e65",
+  "reason": "Original-owner complete contextual review of queue chunk41; correct missing clauses, awkward fragments and one dialogue-answer substitution for a hint.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnId": "DLG-SC-LOC-JP-44208-03-001-SHARED-02",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "5c3ae0ec3285a04bdba0040e0b42f8d47e47f6475578c087c549e011a5e2d26f",
+      "translation": "说明自己有看诊和检查两张预约单，并咨询是否只更改其中一项就可以。请用日语表达。",
+      "reason": "Restore complete task identifying consultation and test slips and asking whether changing only one suffices, with Japanese instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnId": "DLG-SC-LOC-JP-44208-03-001-SHARED-02",
+      "field": "translation",
+      "expectedTranslationSha256": "e53d3ae09e330998ab6edf6da7f0c8fb91d02e9c9d52146b260223763ca4c0f3",
+      "translation": "看诊和检查各有一张，一共两张。因为工作安排变了，我想咨询是不是只改其中一张就可以。",
+      "reason": "Restore two appointment slips, changed work schedule and consultation about changing just one."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnId": "DLG-SC-LOC-JP-44208-03-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "b6b1c23daf63c6c7ee63534d45c30d86cc79f0d1ecca418ffcaa5c6757dacbab",
+      "translation": "我会把这两项分开确认。请告诉我您想更改的原因，以及哪些时间无法前来。",
+      "reason": "Restore separate checks, reason for change and range of unavailable times."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnId": "DLG-SC-LOC-JP-44208-03-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "84fc70b53a0e8bd35968efd6b7ac32bf1c48e6e1a6abdc12122f1749b1a963b1",
+      "translation": "下周三上午临时安排了工作。下午我可以来，但我并没有认为那个时间就一定能做检查。",
+      "reason": "Restore next Wednesday morning work, afternoon availability and no assumption of afternoon test availability."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnId": "DLG-SC-LOC-JP-44208-03-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "7cc97018863f3c3357270963e58775c7d2c30d79064e7c37babfa3d09239178d",
+      "translation": "我会分别查询看诊的空位和检查能否安排。请不要先取消其中一项，能等负责人员确认后再决定吗？",
+      "reason": "Restore separate consultation-slot and test checks, no unilateral cancellation and waiting for staff confirmation."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnId": "DLG-SC-LOC-JP-44208-03-001-SHARED-06",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "d53ae418613369fbba2f58eee0bafbfded8c0db0331824d1e2045f0b45c672f3",
+      "translation": "请求暂时保留两个预约，并说明因为还不知道检查顺序是否有规定，所以不会自行决定一并更改。请用日语表达。",
+      "reason": "Restore task preserving both bookings and refusing joint change decision while test sequence unknown, with Japanese instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnId": "DLG-SC-LOC-JP-44208-03-001-SHARED-06",
+      "field": "translation",
+      "expectedTranslationSha256": "2a1421369850dff42abfdeffd5feec8c80843c99a54c04ffa453ffe9bf3ed369",
+      "translation": "请先保留两个预约。我还不知道检查的顺序是不是已经定好了，所以不会自行决定把它们一起调整。",
+      "reason": "Restore both current bookings retained and unknown fixed test sequence preventing joint rescheduling decision."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnId": "DLG-SC-LOC-JP-44208-03-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "8d5f36751bbeb39f3a7655398c65d4f1d08114a1d603845885faf70d428aea87",
+      "translation": "我们会按保留现有预约的情况来受理咨询。自上次看诊以来，您的身体状况有变化吗？",
+      "reason": "Restore consultation without changing current bookings and question about health changes since last visit."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnId": "DLG-SC-LOC-JP-44208-03-001-SHARED-08",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "3b411d3355c7bdc16d7627a3d1b8309416e0277e50cb29f28cf01a9b779eb4e5",
+      "translation": "说明令自己担心的变化增多了，不要求接待人员判断，而是想另外告知护士。请用日语表达。",
+      "reason": "Restore task with increased concerning changes, receptionist not judging and separate nurse communication plus Japanese instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnId": "DLG-SC-LOC-JP-44208-03-001-SHARED-08",
+      "field": "translation",
+      "expectedTranslationSha256": "ee73fe59b7c68147fb473a4f2a6f2ce6816bd7c598479d077922eb558a6ee1bb",
+      "translation": "我不打算只让接待人员判断上次看诊以来的变化。让我担心的情况增多了，我想另外告诉护士。",
+      "reason": "Restore no reception-only judgment and increased concerns to be communicated separately to nurse."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnId": "DLG-SC-LOC-JP-44208-03-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "5968e73ef55e80788d28d0ac18d8269dd859e88eb4277e8f694a77f40e9626a9",
+      "translation": "这方面的咨询我们也会帮您转接。在能够答复日程之前，您希望我们通过什么方式联系您？",
+      "reason": "Restore connecting medical concern separately and question about preferred contact method pending schedule answer."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnId": "DLG-SC-LOC-JP-44208-03-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "1fc315012c21f73365aac69d1ec70e2f00c7698cdccfeb76fba5a07ae9722ce1",
+      "translation": "回答今天可以在窗口等候，并说明希望先确认好看诊和检查两项，再答复提出的时间方案。请用日语表达。",
+      "reason": "Restore task waiting at counter and answering proposed slots only after consultation and test checks, with Japanese instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnId": "DLG-SC-LOC-JP-44208-03-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "d9dc5a823021208c8dc9ca77246126c18f6322ee6f6d0f59fafd7f7ba6a54230",
+      "translation": "今天我可以在这里等。即使有了备选日期和时间，我也想等检查和看诊两项都确认好后再答复。",
+      "reason": "Restore ability to wait today and deferred reply even after candidate times until both appointments confirmed."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-03-001",
+      "turnId": "DLG-SC-LOC-JP-44208-03-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "fa621863cef5722be3322f6664ace46f4db26baf207558da78b4ea359d88b160",
+      "translation": "那么，我们会把向护士咨询和查询日程分开进行。现在不会当作已经更改，我们会先向负责人员确认，请您稍等。",
+      "reason": "Restore nurse consultation versus schedule inquiry, not marking changed and waiting for responsible staff confirmation."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-04-001",
+      "turnId": "DLG-SC-LOC-JP-44208-04-001-SHARED-01",
+      "field": "translation",
+      "expectedTranslationSha256": "fba728325671bf7858729d604987b9023cfa75762602a167232b39e8d9a763b4",
+      "translation": "您是来咨询自行车找不到的事情吧。能先告诉我最后一次看到它时的情况吗？",
+      "reason": "Restore missing-bicycle consultation and question about last-seen circumstances."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-04-001",
+      "turnId": "DLG-SC-LOC-JP-44208-04-001-SHARED-02",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "d336e683fb673d2cf86bd31dbe10173454292cb001edbc6b650cd7b51ae07513",
+      "translation": "说明昨天下午停车、今天早上发现车不在的情况，并表示还不能断定照片中那辆相似的自行车就是自己的。请用日语表达。",
+      "reason": "Restore task with yesterday evening parking, morning absence and unconfirmed photo ownership, with Japanese instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-04-001",
+      "turnId": "DLG-SC-LOC-JP-44208-04-001-SHARED-02",
+      "field": "translation",
+      "expectedTranslationSha256": "b08bea5fb329a28fe716a301044a17fb04010a2ef8f677fbd4fbe2b63378ed95",
+      "translation": "昨天下午，我把车停在停车区里面。今天早上找不到了，我拍了一辆相似自行车的照片，但还不能说那就是我的。",
+      "reason": "Restore yesterday evening parking at rear, morning absence and photographed similar bike without asserting ownership."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-04-001",
+      "turnId": "DLG-SC-LOC-JP-44208-04-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "ffb934df777b8f2c64787758f0af4c910283421704f07f299e72d47a7a1ef09a",
+      "translation": "我们把相似车辆的信息和您自己车辆的信息分开吧。您有没有能查到自己车号的资料？",
+      "reason": "Restore separation of similar bicycle and own bicycle information, and request for number evidence."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-04-001",
+      "turnId": "DLG-SC-LOC-JP-44208-04-001-SHARED-04",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "c8e9ac0f6a71070d3f5f253894bf8f77a374947ca9deb925b2084b25f33a4021",
+      "translation": "回答购买凭据上有自己的车号，但还没有确认照片中车辆的车号，不能仅凭颜色判断是不是同一辆。请用日语表达。",
+      "reason": "Restore task contrasting own purchase-record number with unverified photographed number and insufficient color comparison, with Japanese instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-04-001",
+      "turnId": "DLG-SC-LOC-JP-44208-04-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "de1eb9813087b87f795d127e71c1621b83f3ba34add6eb3a032a567f2e1863ae",
+      "translation": "购买时的凭据上有车号。我还没有看清照片中那辆自行车的车号，不能只根据颜色来判断是不是同一辆。",
+      "reason": "Restore purchase-record number, unread photographed bicycle number and refusal to identify by color alone."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-04-001",
+      "turnId": "DLG-SC-LOC-JP-44208-04-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "b61221306fbdae264e9bfdcc88a735b5e766f12a63700c6121f80057daa7d671",
+      "translation": "我来确认这份凭据。您有没有向停车地点的管理人员询问，车是否被移走了？",
+      "reason": "Restore examination of purchase record and question about manager inquiry into relocation."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-04-001",
+      "turnId": "DLG-SC-LOC-JP-44208-04-001-SHARED-06",
+      "field": "translation",
+      "expectedTranslationSha256": "cea71950ff2580cff26d7808359fabf10f9850186d5d88d0f5ba59cd94ce6262",
+      "translation": "公告栏上有移车通知，但我还没确认我的自行车是不是在其中。打电话过去也还没有得到回复。",
+      "reason": "Restore relocation notice but unconfirmed applicability to own bicycle and phone reply still pending."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-04-001",
+      "turnId": "DLG-SC-LOC-JP-44208-04-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "655e17ac77395c5d67925b02efe2f562d8108caf84598222a3410fd79ecd9670",
+      "translation": "我会把这点记为尚未收到确认的回复。您的自行车有没有后来加装的东西等特征？",
+      "reason": "Restore reply status recorded as unconfirmed and question about later-added identifying features."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-04-001",
+      "turnId": "DLG-SC-LOC-JP-44208-04-001-SHARED-08",
+      "field": "translation",
+      "expectedTranslationSha256": "0e3175f330d1cff94332579f32c35e9f5d5650f61504045026b9aee97c16e6d9",
+      "translation": "我换过前面的车篮。购买时照片里的样子和现在不一样，我觉得只拿那张照片来找，可能很难说清楚。",
+      "reason": "Restore replaced front basket, mismatch with purchase photo and difficulty identifying bicycle from photo alone."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-04-001",
+      "turnId": "DLG-SC-LOC-JP-44208-04-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "f6f19cb99a3a2c2154a12c47d7578f2078e83aa81e75cc07a491a6f149c97bb9",
+      "translation": "我们也把更换后的特征写上吧。您能在这张图上指出最后停车的位置吗？",
+      "reason": "Restore noting changed features and request to mark last parked position on map."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-04-001",
+      "turnId": "DLG-SC-LOC-JP-44208-04-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "42e67bba9bb567061c11e72de85e74ea758caec23058f5f833af2d07c3a5e450",
+      "translation": "在图上指出车停在顶棚内侧，说明收到管理人员回复后会转告，并表示暂不认定遭窃，想继续咨询。请用日语表达。",
+      "reason": "Restore task locating roof's inner area, reporting future manager reply and continuing without theft assumption plus Japanese instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-04-001",
+      "turnId": "DLG-SC-LOC-JP-44208-04-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "36647b3396afe1e37b1db20465a96e763e06d57c05f3b954d12798bdaa9ef9fc",
+      "translation": "是在这个顶棚的里面一侧。如果管理人员回复了，我也会转告内容，但现在我不想断定车被偷了，希望继续咨询。",
+      "reason": "Restore inner roof location, conditional manager reply forwarding and present refusal to conclude theft."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-04-001",
+      "turnId": "DLG-SC-LOC-JP-44208-04-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "4d0d49927b70f3694d36c02fa99ab98bec2e3711faecc09e37e0351673bf34e3",
+      "translation": "我们已经分别了解了位置、特征和尚未确认的事项。我会整理需要核实的内容再为您说明，请把那份凭据放在手边。",
+      "reason": "Restore separately collected location, features and unknowns, organizing checks and keeping purchase record handy."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-05-001",
+      "turnId": "DLG-SC-LOC-JP-44208-05-001-SHARED-01",
+      "field": "translation",
+      "expectedTranslationSha256": "8cb59e4587d5f705b9a31bfe705ea604233513f7d38f5630ec06408545be6a15",
+      "translation": "您是要咨询寄送文件吧。您已经决定要保留哪一种记录了吗？",
+      "reason": "Restore document-shipping consultation and question whether desired record type is already decided."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-05-001",
+      "turnId": "DLG-SC-LOC-JP-44208-05-001-SHARED-02",
+      "field": "translation",
+      "expectedTranslationSha256": "cf001fd349425120bfef28ca326e473c9fefe4c6d62f7cffc747fd6fb1d9c147",
+      "translation": "收件方只说了“要保留记录”。能证明寄出日期的凭据，和能看出已经送达的记录，是一样的吗？",
+      "reason": "Restore recipient's nonspecific record request and question contrasting sent-date receipt with proof of arrival."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-05-001",
+      "turnId": "DLG-SC-LOC-JP-44208-05-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "c1d97218ceb8a257bb409695e34ae5c17e157928a843d66825683e505e78db34",
+      "translation": "寄件受理时的记录和配送情况的信息要分开考虑。能让我看看收件方的说明吗？",
+      "reason": "Restore acceptance record distinct from delivery-status information and request to see recipient guidance."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-05-001",
+      "turnId": "DLG-SC-LOC-JP-44208-05-001-SHARED-04",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "2cd9dc68434ed13b25b3ed64d7d5defcedadfdc6c4a8c9f041526b5a1c076363",
+      "translation": "出示没有注明具体记录名称的说明，并表示想在封口前确认要求。请用日语表达。",
+      "reason": "Restore task showing unnamed-record guidance and confirming conditions before sealing, with Japanese instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-05-001",
+      "turnId": "DLG-SC-LOC-JP-44208-05-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "dc2b70a1c0e17e9a11d58e79fa05727dd76c631030a2e443692c69a701663a02",
+      "translation": "就是这张纸。不过，上面没有具体写明要哪种记录。我想先确认要求，再把信封封好。",
+      "reason": "Restore presented paper with no named required record and desire to verify conditions before sealing."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-05-001",
+      "turnId": "DLG-SC-LOC-JP-44208-05-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "8ac5142b533226c662883c0e0bf1cd62488d02d594405cf56875d92eae13f881",
+      "translation": "我们不能替收件方决定他们的要求。关于期限的写法，您还有想确认的地方吗？",
+      "reason": "Restore postal staff cannot decide recipient requirements and question about deadline wording."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-05-001",
+      "turnId": "DLG-SC-LOC-JP-44208-05-001-SHARED-06",
+      "field": "translation",
+      "expectedTranslationSha256": "cc53be3dbca1901d7843fadf983c810c5c6679e052a8493cddd2e24ad21f69a8",
+      "translation": "上面只写了日期，不知道指的是“送达日”还是“寄出日”。最好不要只根据邮寄预计时间就认定一定来得及，对吧？",
+      "reason": "Restore date-only ambiguity between arrival and dispatch and no guaranteed timeliness from postal estimate alone."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-05-001",
+      "turnId": "DLG-SC-LOC-JP-44208-05-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "04afdaf7bc9fc32a3000fe5841bc85e81ad4e2b5f3cd5eb512090cd0ece9227f",
+      "translation": "这一点请向收件方确认。在选择寄送方式之前，您也要确认信封上的收件地址信息吗？",
+      "reason": "Restore recipient confirmation and checking envelope addressee before choosing shipping method."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-05-001",
+      "turnId": "DLG-SC-LOC-JP-44208-05-001-SHARED-08",
+      "field": "translation",
+      "expectedTranslationSha256": "8c9bc90fc096703047c2119f2b378076654b472bc45071e512d8a5feddceb00f",
+      "translation": "上面写了两个部门名称，所以收件人该怎么写，我也会先问清楚。我不会自己划掉其中一个就寄出去。",
+      "reason": "Restore two department names, asking correct addressee first and not independently deleting either."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-05-001",
+      "turnId": "DLG-SC-LOC-JP-44208-05-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "a2d7d248cbc02721f78c48a482294041164fdab155390c67fb4d1d5df1039a99",
+      "translation": "那么，您今天先不寄，等确认了需要的记录、期限和收件信息后，再比较寄送方式，是这样吗？",
+      "reason": "Restore question confirming no dispatch today and comparison after record, deadline and address checks."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-05-001",
+      "turnId": "DLG-SC-LOC-JP-44208-05-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "f838b49cdc573fc5d7a5c65755465f5de4c469f48d6be12cbd17f2cc1b9cc6be",
+      "translation": "说明将询问记录种类、期限和收件信息，记下答复，并准备好文件副本后再来。请用日语表达。",
+      "reason": "Restore task querying all three matters, noting replies and returning with document copies plus Japanese instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-05-001",
+      "turnId": "DLG-SC-LOC-JP-44208-05-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "e76c70ac1ac6c2d1f04580c3faf2c0986e795b9a68a30efb5c7172e16a823d52",
+      "translation": "是的，我会向收件方询问这三点。我会记下答复内容，也准备好文件副本，然后再回来。",
+      "reason": "Restore affirmative three questions to recipient, memo of replies and copies prepared before return."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-05-001",
+      "turnId": "DLG-SC-LOC-JP-44208-05-001-SHARED-11",
+      "field": "translation",
+      "expectedTranslationSha256": "76551b1b77f22f2d774b9ea4d8eb6a6fe9bddce16674cd285aefd1335fb8674b",
+      "translation": "明白了。确认要求后，我们就能为您介绍寄送方式。请先把信封保持原样带回去。",
+      "reason": "Restore acknowledgment, guidance after conditions known and taking unsealed envelope home unchanged."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-06-001",
+      "turnId": "DLG-SC-LOC-JP-44208-06-001-SHARED-01",
+      "field": "translation",
+      "expectedTranslationSha256": "b92c772a0cc5ccc08c5157b39c403f2773ec7e2b50de0ffc493ce81b1514ae2b",
+      "translation": "您是来咨询接收工资的账户吧。您以前在本行有使用过的账户吗？",
+      "reason": "Restore salary-receipt account context and question about previous account at this bank."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-06-001",
+      "turnId": "DLG-SC-LOC-JP-44208-06-001-SHARED-02",
+      "field": "translation",
+      "expectedTranslationSha256": "932f8c68abfe502ec673ee9f0847eeef460f64fcebf1b860480333716a81ee31",
+      "translation": "几年前工作时可能用过，但我不记得银行名称了。公司让我来，所以我想咨询新开账户的事情。",
+      "reason": "Restore possible use in former job, forgotten bank and company prompting new-account consultation."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-06-001",
+      "turnId": "DLG-SC-LOC-JP-44208-06-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "1038b1615cd82437a67b43964455d4694073241fe075b7a515f6c8e6592f6497",
+      "translation": "我们只能为您介绍本行账户在核实身份后的查询方法。公司告诉您需要提供哪些账户信息？",
+      "reason": "Restore inquiry limited to this bank after identity verification and employer-required account-information question."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-06-001",
+      "turnId": "DLG-SC-LOC-JP-44208-06-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "86c4594a6bdd8737acb40532a2c3937d58999e928b03052a6556a8d1c181782b",
+      "translation": "我拿到了一张要填写金融机构名称和账户持有人姓名的表格。不过，我还没有问清楚是不是指定必须使用这家银行。",
+      "reason": "Restore form fields for financial institution and account-holder name, plus unconfirmed mandatory-bank designation."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-06-001",
+      "turnId": "DLG-SC-LOC-JP-44208-06-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "04ddf4d2ec0ac97e27daf21cbc2f0907840ed041f26d377a015a2d66d70a1903",
+      "translation": "您最好也确认一下公司的具体要求。您手边有没有能帮助查询以前账户的线索？",
+      "reason": "Restore recommendation to verify employer requirements and question about clues to prior account."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-06-001",
+      "turnId": "DLG-SC-LOC-JP-44208-06-001-SHARED-06",
+      "field": "translation",
+      "expectedTranslationSha256": "22c303e45b9ccaea740058cab431b2477dbdda433630eccedf7af9deba720c17",
+      "translation": "我有以前工作单位汇款的记录便条。不过，上面只有部分账号，我不认为只凭这个就能断定是我的账户。",
+      "reason": "Restore old employer deposit memo, partial account number and no conclusive ownership from that alone."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-44208-06-001",
+      "turnId": "DLG-SC-LOC-JP-44208-06-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "326f1f49f5bdc3541e19b04820a4c4ac8f5bc987def618a513fd3f66fdc099b1",
+      "translation": "我也会向负责人员询问，这份资料能用于确认到什么程度。您是否打算今天也确定能不能开户？",
+      "reason": "Restore staff inquiry into evidence usability and question whether opening eligibility expected to be settled today."
+    }
+  ]
+}

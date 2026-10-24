@@ -1,0 +1,41 @@
+{
+  "packetId": "queue_026_273_th_v1",
+  "owner": "dialogue_hi_bn",
+  "kind": "unit-translations",
+  "batch": "273",
+  "language": "th",
+  "expectedSourceSha256": "3d07a97c5c50c7f5746197bdad1ce9b3115678b2698f61c7a7ea54e2eee68571",
+  "expectedPackSha256": "f63d448fbff627cb9b73ed32f7bb1a9f92441f0b6d618ea146bb7fbcd823b171",
+  "reason": "Original-author source/context/naturalness adjudication of screening candidates; repair actual omissions, foreign-script leakage or clipped unnatural clauses.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-01211-01-001",
+      "turnId": "DLG-SC-LOC-JP-01211-01-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "88fd57ab0cf1fef98d9c5ec8612b9d650e3303759f25d768ed13cf2e407f6b51",
+      "translation": "ผู้ที่ติดต่อมาคือเคาน์เตอร์ A แต่ในคำแนะนำสถานที่เก็บระบุเคาน์เตอร์ B และเลขสอบถาม G-14 ครับ กำหนดรับด้วยตัวเองคือ8ตุลาคม คุณตั้งใจจะไปเองไหมครับ",
+      "reason": "Repairs precise natural task/relationship wording while keeping full source identifiers, dates and conditions: 連絡元は窓口Aですが、保管案内には窓口B、照会番号G-14とあります。ご本人の受取期限は10月8日です。ご本人が行く予定ですか。"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01211-01-001",
+      "turnId": "DLG-SC-LOC-JP-01211-01-001-SHARED-08",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "3a2ed5eb712c5a5efa8a5e624884b69ea81d941b65b94d9dcbc17a0c47ef2a61",
+      "translation": "บอกว่ากำหนดการของคนรู้จักยังไม่แน่นอน แต่คุณไปเองได้ในวันที่6ตุลาคมซึ่งยังอยู่ในกำหนด จึงไม่ขอให้ตัวแทนรับ และอยากยืนยันเวลารับด้วยตัวเองกับเคาน์เตอร์ที่เก็บ B กรุณาพูดเป็นภาษาญี่ปุ่น",
+      "reason": "Repairs precise natural task/relationship wording while keeping full source identifiers, dates and conditions: 知人は未定だが自分は期限内の10月6日に行けるので、代理を申し込まず保管先Bへ本人受取の時刻を確認したいと伝える。日本語で伝えてください。"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01211-01-001",
+      "turnId": "DLG-SC-LOC-JP-01211-01-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "87b95ef8203da9ac4c73974b358bf491cddabe133f3c432909db654b3d8ebdaa",
+      "translation": "บอกว่าจะปรึกษาเรื่องรับด้วยตัวเองกับเคาน์เตอร์ที่เก็บ B ไม่ใช่ A ที่ติดต่อมา โดยแจ้งเลขสอบถาม G-14 และจะไปหลังจากยืนยันเวลาในวันที่6ตุลาคมกับสิ่งที่ต้องนำไปแล้ว กรุณาพูดเป็นภาษาญี่ปุ่น",
+      "reason": "Repairs precise natural task/relationship wording while keeping full source identifiers, dates and conditions: 連絡元Aでなく保管先Bへ照会番号G-14で本人受取を相談し、10月6日の訪問時刻と持参物を確認してから行くと伝える。日本語で伝えてください。"
+    }
+  ]
+}

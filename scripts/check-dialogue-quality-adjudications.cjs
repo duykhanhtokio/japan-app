@@ -21,6 +21,7 @@ for (const [owner,queue] of [...queueByOwner].sort(([a],[b])=>a.localeCompare(b)
   const log = fs.existsSync(logPath) ? read(logPath) : {owner, decisions:{}};
   assert.equal(log.owner, owner);
   const ids = new Set(queue.map(r => r.id));
+  assert.equal(ids.size,queue.length,'Duplicate candidate IDs');
   for (const id of Object.keys(log.decisions)) assert(ids.has(id), 'Decision absent from queue: '+id);
   const result = {owner,total:queue.length,recorded:0,fixed:0,acceptable:0,pending:0,stale:0};
   for (const row of queue) {

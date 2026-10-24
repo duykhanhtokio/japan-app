@@ -33,8 +33,13 @@ SIMPLIFIED = set('这为个来时说话见会车进请让还没样问门开关�
 COMMON_EN = re.compile(r'\b(the|please|without|whether|because|instead|should|would|your|their|then|check|confirm|explain)\b', re.I)
 
 
+INVENTORY = {}
+
+
 def read(path):
-    return json.loads(path.read_text(encoding='utf-8'))
+    raw = path.read_bytes()
+    INVENTORY[path.relative_to(ROOT).as_posix()] = hashlib.sha256(raw).hexdigest()
+    return json.loads(raw)
 
 
 def digest(text):
@@ -174,11 +179,14 @@ def main():
     summary = {'status': 'SCREENING_SIGNALS_REQUIRE_AUTHOR_ADJUDICATION',
                'baselineCommit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
                'canonicalScenarios': len(index), 'batches': len(batches),
+               'screenedFileCount': len(INVENTORY),
+               'inventorySha256': digest('\n'.join(k+'\0'+v for k,v in sorted(INVENTORY.items()))),
                'coverage': dict(counts), 'byLocale': dict(by_locale), 'byOwner': dict(by_owner),
                'flaggedPacks': len(pack_summary), 'nativeReviewed': False,
                'semanticReviewComplete': False,
                'limitations': ['Length, numeral, script, and duplicate signals are not automatic mistranslation verdicts.',
                                'Unflagged content is not certified semantically or stylistically correct.']}
+    (out / 'screening-inventory.json').write_text(json.dumps(INVENTORY, sort_keys=True, indent=2) + '\n', encoding='utf-8')
     (out / 'screening-summary.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     (out / 'screening-packs.json').write_text(json.dumps(pack_summary, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({'scenarios': len(index), 'batches': len(batches), 'counts': dict(counts), 'flaggedPacks': len(pack_summary), 'byOwner': dict(by_owner)}, ensure_ascii=False))

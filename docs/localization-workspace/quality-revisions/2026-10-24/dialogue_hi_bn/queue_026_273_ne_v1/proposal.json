@@ -1,0 +1,73 @@
+{
+  "packetId": "queue_026_273_ne_v1",
+  "owner": "dialogue_hi_bn",
+  "kind": "unit-translations",
+  "batch": "273",
+  "language": "ne",
+  "expectedSourceSha256": "3d07a97c5c50c7f5746197bdad1ce9b3115678b2698f61c7a7ea54e2eee68571",
+  "expectedPackSha256": "37b8f03873be40e996294d81e63d86ef2ca2078603e0708bf611abb54aae7c22",
+  "reason": "Original-author source/context/naturalness adjudication of screening candidates; repair actual omissions, foreign-script leakage or clipped unnatural clauses.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-01211-01-001",
+      "turnId": "DLG-SC-LOC-JP-01211-01-001-SHARED-05",
+      "field": "translation",
+      "expectedTranslationSha256": "0069518bc4e2f7d4e03ecc5a1b32f483a78c705d6b4fbe3ea03bdae6b3776922",
+      "translation": "सम्पर्क गर्ने काउन्टर A हो, तर सामान राखिएको ठाउँको सूचनामा काउन्टर B र सोधपुछ नम्बर G-14 छ। तपाईं आफैँले बुझिलिने अन्तिम मिति अक्टोबर८ हो। आफैँ जाने योजना छ?",
+      "reason": "Repairs precise natural task/relationship wording while keeping full source identifiers, dates and conditions: 連絡元は窓口Aですが、保管案内には窓口B、照会番号G-14とあります。ご本人の受取期限は10月8日です。ご本人が行く予定ですか。"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01211-01-001",
+      "turnId": "DLG-SC-LOC-JP-01211-01-001-SHARED-07",
+      "field": "translation",
+      "expectedTranslationSha256": "91ab271cab34e606a6e107e0da5cd46c9d27272d46b3c658faf6e4591a0361d9",
+      "translation": "यो सूचनाबाट मात्र प्रतिनिधिले बुझिलिन मिल्ने वा नमिल्ने कुरा निश्चित भएको छैन। काउन्टर B मा छुट्टै सोध्नुपर्छ। आफैँ जाने हो भने अक्टोबर८ सम्म समय छ; त्यसभित्र जान मिल्ने कुनै दिन छ?",
+      "reason": "Repairs precise natural task/relationship wording while keeping full source identifiers, dates and conditions: 代理受取は、この案内だけでは可否が決まっていません。窓口Bへ個別に確認が必要です。ご本人なら10月8日までですが、その間に行ける日はありますか。"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01211-01-001",
+      "turnId": "DLG-SC-LOC-JP-01211-01-001-SHARED-08",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "a33ed04bdf6c417b4cc6ad01d22f0cbb86547ffd70334cd65072535bd13d4174",
+      "translation": "चिनेको व्यक्तिको कार्यक्रम अझै तय नभए पनि आफू म्यादभित्रको अक्टोबर६ मा जान सक्ने बताउनुहोस्। त्यसैले प्रतिनिधिको अनुरोध नगरी सामान राख्ने काउन्टर B मा आफैँ बुझिलिने समय सोध्न चाहेको भन्नुहोस्। जापानीमा भन्नुहोस्।",
+      "reason": "Repairs precise natural task/relationship wording while keeping full source identifiers, dates and conditions: 知人は未定だが自分は期限内の10月6日に行けるので、代理を申し込まず保管先Bへ本人受取の時刻を確認したいと伝える。日本語で伝えてください。"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01211-01-001",
+      "turnId": "DLG-SC-LOC-JP-01211-01-001-SHARED-08",
+      "field": "translation",
+      "expectedTranslationSha256": "7324149a315a274014a0abca97a5f51ce39b8ce368035c71150528ab72098f3d",
+      "translation": "चिनेको व्यक्तिको कार्यक्रम तय भएको छैन, तर म अक्टोबर६ मा जान सक्छु। म्यादभित्र भएकाले प्रतिनिधिको अनुरोध नगरी आफैँ बुझिलिन B मा जाने समय पुष्टि गर्न चाहन्छु।",
+      "reason": "Repairs precise natural task/relationship wording while keeping full source identifiers, dates and conditions: 知人の予定は未確定ですが、私は10月6日に行けます。期限内なので、代理は申し込まず本人受取で、Bに訪問時刻を確認したいです。"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01211-01-001",
+      "turnId": "DLG-SC-LOC-JP-01211-01-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "076d8e50d244efe80d01e3b5a8ade6cd66edf9f7176fca27880abc8d31feadb0",
+      "translation": "तपाईं आफैँ बुझिलिन चाहनुहुन्छ, होइन? G-14 बताएर काउन्टर B मा अक्टोबर६ को चाहेको समय र साथमा ल्याउनुपर्ने वस्तु पुष्टि गरौँ। आउने समय अझै बुक गरिएको छैन।",
+      "reason": "Repairs precise natural task/relationship wording while keeping full source identifiers, dates and conditions: 本人受取の希望ですね。G-14を伝えて、10月6日の希望時刻と持参物を窓口Bへ確認しましょう。来訪の時刻はまだ予約していません。"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01211-01-001",
+      "turnId": "DLG-SC-LOC-JP-01211-01-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "3f55a08477de24d0faec04e038d4c891bacfee659a334d0e1871f598023e3c62",
+      "translation": "सम्पर्क गर्ने A होइन, सामान राखिएको काउन्टर B मा सोधपुछ नम्बर G-14 दिएर आफैँ बुझिलिनेबारे सल्लाह गर्ने बताउनुहोस्। अक्टोबर६ मा जाने समय र साथमा ल्याउनुपर्ने वस्तु पुष्टि गरेर मात्र जाने भन्नुहोस्। जापानीमा भन्नुहोस्।",
+      "reason": "Repairs precise natural task/relationship wording while keeping full source identifiers, dates and conditions: 連絡元Aでなく保管先Bへ照会番号G-14で本人受取を相談し、10月6日の訪問時刻と持参物を確認してから行くと伝える。日本語で伝えてください。"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01211-01-001",
+      "turnId": "DLG-SC-LOC-JP-01211-01-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "ad65f475fcc55d8e58b50a03cbca176fdac4db4f79c4ca69908eead406198c01",
+      "translation": "सम्पर्क गर्ने A होइन, सामान राख्ने B मा G-14 दिएर आफैँ बुझिलिनेबारे सल्लाह गर्छु। अक्टोबर६ को समय र साथमा ल्याउनुपर्ने वस्तु पुष्टि गरेर जान्छु, प्रतिनिधिको अनुरोध गर्दिनँ।",
+      "reason": "Repairs precise natural task/relationship wording while keeping full source identifiers, dates and conditions: 連絡元Aではなく保管先Bへ、G-14で本人受取を相談します。10月6日の時刻と持参物を確認してから訪問し、代理は申し込みません。"
+    }
+  ]
+}
