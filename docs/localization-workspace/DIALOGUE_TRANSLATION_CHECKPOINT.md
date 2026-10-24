@@ -3273,3 +3273,13 @@ Integrated 660: all12 final own-source-fidelity markers and canonical source/ID/
 ## Continuation654–665 2026-10-24T08:55:00.271Z
 
 Integrated 663: all12 final own-source-fidelity markers and canonical source/ID/role/hint bindings pass. Complete 6641/7128; remaining 487. Native/domain review false; no semantic cross-review. Remote persistence verification follows.
+
+
+## Continuation654–665 2026-10-24T08:57:09.431Z
+
+Integrated 661: all12 final own-source-fidelity markers and canonical source/ID/role/hint bindings pass. Complete 6651/7128; remaining 477. Native/domain review false; no semantic cross-review. Remote persistence verification follows.
+
+
+### Cohort654–665 complete
+
+All144 own-source-fidelity-checked locale packs integrated:120 new scenarios,15840 utterances and7200 task hints. Actual app loader PASS6651 scenarios. 7848 preexisting locale files unchanged. Complete6651/7128, remaining477. Native/domain review false; no semantic cross-review. Next654,start6651. Remote publication and persistence verification follow.
