@@ -1,0 +1,33 @@
+{
+  "packetId": "owner5-queue50-593-vi",
+  "owner": "dialogue_th_km",
+  "kind": "unit-translations",
+  "batch": "593",
+  "language": "vi",
+  "expectedSourceSha256": "c4b2d0433759aae1b464fc246b0761c4034b4c548254af77c6b4139c25bf7835",
+  "expectedPackSha256": "4ed6e91e81aa0b25e1946b74927019319b73ee2b6dc314973d1bd133acb25633",
+  "reason": "Original-owner complete contextual review of queue chunk50; correct missing clauses, awkward fragments and one dialogue-answer substitution for a hint.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-28222-01-001",
+      "turnId": "DLG-SC-LOC-JP-28222-01-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "0d97004a1c5ebc9097e7d23dc349b9e073b0e03c08525e36b6a643e1ae1c608e",
+      "translation": "Biển đích đến sẽ ghi “東谷”, là bến cuối. Nhà giao lưu cộng đồng là một bến dừng dọc đường.",
+      "reason": "Restore destination display showing terminal 東谷 and community center as intermediate bus stop, not physical midpoint or train station."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28222-01-001",
+      "turnId": "DLG-SC-LOC-JP-28222-01-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "322afcd976df499ffaecdde620c969f779d1fd7b098d012feb86ac8322b20925",
+      "translation": "Tóm tắt kế hoạch lên xe buýt đi “東谷” và xuống ở bến nhà giao lưu cộng đồng dọc đường. Hãy nói bằng tiếng Nhật.",
+      "reason": "Restore complete task boarding 東谷-bound bus and alighting at intermediate community-center stop with Japanese instruction."
+    }
+  ]
+}

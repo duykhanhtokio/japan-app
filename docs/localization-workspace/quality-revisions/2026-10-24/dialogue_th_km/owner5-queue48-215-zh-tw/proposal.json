@@ -1,0 +1,33 @@
+{
+  "packetId": "owner5-queue48-215-zh-tw",
+  "owner": "dialogue_th_km",
+  "kind": "unit-translations",
+  "batch": "215",
+  "language": "zh-TW",
+  "expectedSourceSha256": "c30b1b8fa1aa220028cc12712cf9937fd2d24df05ab8b7bcad9cfba9ee5cc769",
+  "expectedPackSha256": "02e4051076a381e24a14b36423bb7156b8f73877352363ecee993d2e1632c914",
+  "reason": "Original-owner complete contextual review of queue chunk48; correct missing clauses, awkward fragments and one dialogue-answer substitution for a hint.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-SAG-KARATSU-04-001",
+      "turnId": "DLG-SC-LOC-SAG-KARATSU-04-001-SHARED-02",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "e082b4c11c9ab66c400352944de6bc7fd3f76a80088b23b3e8c3e66ad7393182",
+      "translation": "說明投入了五百日圓、買了三百日圓的車票，但找不到找零。請用日語表達。",
+      "reason": "Restore complete Traditional Chinese task and explicit yen units for500 inserted and300 ticket."
+    },
+    {
+      "scenarioId": "SC-LOC-SAG-KARATSU-04-001",
+      "turnId": "DLG-SC-LOC-SAG-KARATSU-04-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "fb62033b0b9619fb1688b7bfcb77d1cdfe47f9c786af329a40bc7b6e2a5876be",
+      "translation": "找到兩枚一百日圓的硬幣了，不好意思，我以為車票和找零的出口在同一個地方。",
+      "reason": "Clarify hundred-yen coins rather than unspecified local currency while preserving two coins and exit misunderstanding."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "packetId": "owner5-queue50-593-hi",
+  "owner": "dialogue_th_km",
+  "kind": "unit-translations",
+  "batch": "593",
+  "language": "hi",
+  "expectedSourceSha256": "c4b2d0433759aae1b464fc246b0761c4034b4c548254af77c6b4139c25bf7835",
+  "expectedPackSha256": "9d459f9873fb97ad2d1b6cbd85feeffbfc2ac6f91a5d6bc648f916fc806250c3",
+  "reason": "Original-owner complete contextual review of queue chunk50; correct missing clauses, awkward fragments and one dialogue-answer substitution for a hint.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-28222-01-001",
+      "turnId": "DLG-SC-LOC-JP-28222-01-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "328db6874c40529c993ed7075a5ef7489935c6b2b05e1c8be12a4c7b283ecb95",
+      "translation": "गंतव्य के संकेत पर आखिरी स्टॉप “東谷” लिखा होगा। सामुदायिक केंद्र रास्ते में पड़ने वाला एक स्टॉप है।",
+      "reason": "Restore destination display showing terminal 東谷 and community center as intermediate bus stop, not physical midpoint or train station."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28222-01-001",
+      "turnId": "DLG-SC-LOC-JP-28222-01-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "58798668a6c23e6fc0c67c45cc8711506e308877c4f77a5fbdfee404a98eadc6",
+      "translation": "“東谷” जाने वाली बस में चढ़ने और रास्ते में सामुदायिक केंद्र के स्टॉप पर उतरने की योजना संक्षेप में बताएँ। जापानी में कहें।",
+      "reason": "Restore complete task boarding 東谷-bound bus and alighting at intermediate community-center stop with Japanese instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28222-01-001",
+      "turnId": "DLG-SC-LOC-JP-28222-01-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "a4ca1c5c0471836f55890fd0c5817f48e52b8e5479216f847dbe447a45704909",
+      "translation": "मैं “東谷” जाने वाली बस में चढ़ूँगा और सामुदायिक केंद्र वाले स्टॉप पर उतरूँगा। छुट्टी के दिन बस में चढ़ने की जगह भी समझ में आ गई है।",
+      "reason": "Restore natural full bus-boarding and community-center alighting plan, plus understanding holiday boarding point."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28223-01-001",
+      "turnId": "DLG-SC-LOC-JP-28223-01-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "b5bdf714d7e408fe21d3e55dafd2271e35c63626dfd1ae29f4982fbad857ee44",
+      "translation": "यह आज के लिए “東町” जाने का टिकट है। क्या मुझे नया टिकट खरीदना होगा?",
+      "reason": "Restore complete ticket-focused statement and question about replacement purchase."
+    }
+  ]
+}

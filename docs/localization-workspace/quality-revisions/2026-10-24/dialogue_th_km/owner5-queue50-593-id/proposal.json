@@ -1,0 +1,49 @@
+{
+  "packetId": "owner5-queue50-593-id",
+  "owner": "dialogue_th_km",
+  "kind": "unit-translations",
+  "batch": "593",
+  "language": "id",
+  "expectedSourceSha256": "c4b2d0433759aae1b464fc246b0761c4034b4c548254af77c6b4139c25bf7835",
+  "expectedPackSha256": "73c50127d5ecaf6742c840c7f2d6d7dac0b9f4e76e03f84bbb9f462143744b5b",
+  "reason": "Original-owner complete contextual review of queue chunk50; correct missing clauses, awkward fragments and one dialogue-answer substitution for a hint.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-28222-01-001",
+      "turnId": "DLG-SC-LOC-JP-28222-01-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "2e4ea6ec78228287a76bf74d55adfdbab83d78957f5bd3026d93b93591098305",
+      "translation": "Rangkum rencana naik bus tujuan “東谷” dan turun di halte balai komunitas yang berada di tengah rute. Sampaikan dalam bahasa Jepang.",
+      "reason": "Restore complete task boarding 東谷-bound bus and alighting at intermediate community-center stop with Japanese instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28222-01-001",
+      "turnId": "DLG-SC-LOC-JP-28222-01-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "bb2533d6ef59be77a13c91fe828cf263c9751a1a3a0d5f2d126b06cbcab67d8d",
+      "translation": "Saya akan naik bus tujuan “東谷” dan turun di balai komunitas. Saya juga sudah paham tempat naik bus pada hari libur.",
+      "reason": "Restore natural full bus-boarding and community-center alighting plan, plus understanding holiday boarding point."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28223-01-001",
+      "turnId": "DLG-SC-LOC-JP-28223-01-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "8c5f1e72e5ca0b519b5501b5bc1495ef86a51eed9de6d5e4a96246beb807ef94",
+      "translation": "Ini tiket tujuan “東町” untuk hari ini. Apakah saya perlu membeli tiket baru?",
+      "reason": "Restore complete ticket-focused statement and question about replacement purchase."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28223-01-001",
+      "turnId": "DLG-SC-LOC-JP-28223-01-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "1de598117976d17c983f05e691f6c61ae464efa0e06656902a2d44695fcc8ea4",
+      "translation": "Baik, saya mengerti. Saya akan menerima kembali tiket tujuan “東町” dan masuk melalui jalur yang dijaga petugas.",
+      "reason": "Restore receiving 東町-bound ticket back and passage staffed by personnel, not staff-only passage."
+    }
+  ]
+}

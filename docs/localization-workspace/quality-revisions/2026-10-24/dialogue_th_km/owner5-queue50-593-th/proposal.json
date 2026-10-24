@@ -1,0 +1,57 @@
+{
+  "packetId": "owner5-queue50-593-th",
+  "owner": "dialogue_th_km",
+  "kind": "unit-translations",
+  "batch": "593",
+  "language": "th",
+  "expectedSourceSha256": "c4b2d0433759aae1b464fc246b0761c4034b4c548254af77c6b4139c25bf7835",
+  "expectedPackSha256": "cc0ecc635149c79498828faaf3f512bbdec4713cb7fc800de5869981bb5dd5e1",
+  "reason": "Original-owner complete contextual review of queue chunk50; correct missing clauses, awkward fragments and one dialogue-answer substitution for a hint.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-28222-01-001",
+      "turnId": "DLG-SC-LOC-JP-28222-01-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "b14df3eead6f500c1a3144a0437dbbdfe602bf175b113fe91f8da9ed3b888f5f",
+      "translation": "ป้ายปลายทางจะแสดงชื่อ “東谷” ซึ่งเป็นป้ายสุดท้ายค่ะ ส่วนศูนย์ชุมชนเป็นป้ายที่รถจอดระหว่างทาง",
+      "reason": "Restore destination display showing terminal 東谷 and community center as intermediate bus stop, not physical midpoint or train station."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28222-01-001",
+      "turnId": "DLG-SC-LOC-JP-28222-01-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "58afd1be5cdce799e27c42d716bffc0442aaa6c1df1a7db93cf277d8dc795c31",
+      "translation": "สรุปว่าจะขึ้นรถประจำทางที่ไป “東谷” และลงที่ป้ายศูนย์ชุมชนซึ่งอยู่ระหว่างทาง กรุณาพูดเป็นภาษาญี่ปุ่น",
+      "reason": "Restore complete task boarding 東谷-bound bus and alighting at intermediate community-center stop with Japanese instruction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28222-01-001",
+      "turnId": "DLG-SC-LOC-JP-28222-01-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "343dd22cadbf538255e229c4f9c50226f8b641d223f96ec7f7c6778ce81c3ba4",
+      "translation": "ฉันจะขึ้นรถไป “東谷” แล้วลงที่ศูนย์ชุมชนค่ะ และเข้าใจจุดขึ้นรถในวันหยุดแล้วด้วย",
+      "reason": "Restore natural full bus-boarding and community-center alighting plan, plus understanding holiday boarding point."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28223-01-001",
+      "turnId": "DLG-SC-LOC-JP-28223-01-001-SHARED-04",
+      "field": "translation",
+      "expectedTranslationSha256": "bc524cc4e5879e43faf4bbe8c054e287ce1e1bcf6899ef186438f56d3f46c80c",
+      "translation": "เป็นตั๋วไป “東町” สำหรับวันนี้ค่ะ ฉันต้องซื้อตั๋วใหม่หรือเปล่าคะ",
+      "reason": "Restore complete ticket-focused statement and question about replacement purchase."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28223-01-001",
+      "turnId": "DLG-SC-LOC-JP-28223-01-001-SHARED-10",
+      "field": "translation",
+      "expectedTranslationSha256": "b60ca8cae5ab1fa69940bd38770b8a70ea0e39419931ebd2c38ed134eaeadfb3",
+      "translation": "เข้าใจแล้วค่ะ ฉันจะรับตั๋วไป “東町” กลับมา แล้วเข้าทางช่องที่มีเจ้าหน้าที่ประจำอยู่ค่ะ",
+      "reason": "Restore receiving 東町-bound ticket back and passage staffed by personnel, not staff-only passage."
+    }
+  ]
+}

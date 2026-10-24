@@ -1,0 +1,33 @@
+{
+  "packetId": "owner5-queue51-671-vi",
+  "owner": "dialogue_th_km",
+  "kind": "unit-translations",
+  "batch": "671",
+  "language": "vi",
+  "expectedSourceSha256": "74f7a0042ea7694c2b1b809db31f3aeadceb609a83f63bc0041519311c592793",
+  "expectedPackSha256": "7e42a5cea137620c5aeaf44d17c3305b91bcaffb25353d5c3beb6bee99fde92f",
+  "reason": "Original-owner complete contextual review of queue chunk51; correct missing clauses, awkward fragments and one dialogue-answer substitution for a hint.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-41208-06-001",
+      "turnId": "DLG-SC-LOC-JP-41208-06-001-SHARED-02",
+      "field": "translation",
+      "expectedTranslationSha256": "a367a8a05c7fa6200f871b98495f4202a28334141317a3426dd71cbb2a312d2c",
+      "translation": "Tôi chưa bấm. Hóa đơn tiền sửa chữa ghi “青葉設備株式会社”, nhưng màn hình lại hiện “カ）アオバセツビ” nên tôi thấy lo.",
+      "reason": "Restore not-yet-executed transfer, repair invoice versus abbreviated on-screen company name and speaker concern."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-41208-06-001",
+      "turnId": "DLG-SC-LOC-JP-41208-06-001-SHARED-03",
+      "field": "translation",
+      "expectedTranslationSha256": "a9e065b082f7b8e962e7227deda940af61cb10c41e8d0b59a56c13bbfdd68eb9",
+      "translation": "Trong cách ghi bằng katakana, phần “株式会社” đôi khi được hiển thị dưới dạng viết tắt. Tuy nhiên, chúng ta đừng chỉ dựa vào tên mà kết luận người nhận chuyển khoản là đúng; hãy đối chiếu cả số tài khoản và các thông tin khác.",
+      "reason": "Restore natural Vietnamese explanation of abbreviated company designation and account-number comparison, not name-only recipient validation."
+    }
+  ]
+}

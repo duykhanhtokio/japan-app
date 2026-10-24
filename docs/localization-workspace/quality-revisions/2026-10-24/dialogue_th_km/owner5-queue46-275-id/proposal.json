@@ -1,0 +1,33 @@
+{
+  "packetId": "owner5-queue46-275-id",
+  "owner": "dialogue_th_km",
+  "kind": "unit-translations",
+  "batch": "275",
+  "language": "id",
+  "expectedSourceSha256": "c2225946d90c2589742b8a772da4dc705c164bcfefb63b0d82157904e2a2b4a1",
+  "expectedPackSha256": "cc8a80b786d2e804911332c14b60e21d1af3205ebb1506e640ac11a8cce62894",
+  "reason": "Original-owner complete contextual review of queue chunk46; correct missing clauses, awkward fragments and one dialogue-answer substitution for a hint.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-01212-04-001",
+      "turnId": "DLG-SC-LOC-JP-01212-04-001-SHARED-04",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "4cc8de25eae621f471d3bf1ae8ae74e49e7cdc7a7483849184b947d7a14dd90e",
+      "translation": "Jelaskan bahwa terakhir kali Anda memakainya di dalam mobil adalah pukul 18.10, sedangkan layar lokasi diperbarui pada pukul 16.40 di hari yang sama. Sampaikan dalam bahasa Jepang.",
+      "reason": "Restore natural complete Indonesian task with in-car last use18:10 versus same-day location update16:40."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-01212-04-001",
+      "turnId": "DLG-SC-LOC-JP-01212-04-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "6ecd80afd0b520bd4d755c3c25430fe612a332677f94f108c0ded6d5eac43b59",
+      "translation": "Konfirmasikan bahwa penggunaan pada pukul 18.10 dan pembaruan lokasi pada pukul 16.40 telah dicatat secara terpisah. Sampaikan bahwa Anda akan menerima kabar melalui nomor keluarga dan juga menanyakan prosedur perlindungan kepada penyedia layanan. Sampaikan dalam bahasa Jepang.",
+      "reason": "Restore complete task grammar, two distinct timestamps, family number for contact and provider protection procedures."
+    }
+  ]
+}

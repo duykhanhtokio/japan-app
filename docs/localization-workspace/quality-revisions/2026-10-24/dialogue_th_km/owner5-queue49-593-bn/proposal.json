@@ -1,0 +1,33 @@
+{
+  "packetId": "owner5-queue49-593-bn",
+  "owner": "dialogue_th_km",
+  "kind": "unit-translations",
+  "batch": "593",
+  "language": "bn",
+  "expectedSourceSha256": "c4b2d0433759aae1b464fc246b0761c4034b4c548254af77c6b4139c25bf7835",
+  "expectedPackSha256": "dd084f3b978f46ef2ad0414534b6fc0a305a712530572f2e31b9285e0374642d",
+  "reason": "Original-owner complete contextual review of queue chunk49; correct missing clauses, awkward fragments and one dialogue-answer substitution for a hint.",
+  "review": {
+    "sourceFidelity": true,
+    "scenarioContext": true,
+    "naturalness": true
+  },
+  "changes": [
+    {
+      "scenarioId": "SC-LOC-JP-28222-01-001",
+      "turnId": "DLG-SC-LOC-JP-28222-01-001-SHARED-09",
+      "field": "translation",
+      "expectedTranslationSha256": "ce3a18dfb64a957e57129d11c366775c7b745469ccb528a2d3f706e63d147825",
+      "translation": "বাসের গন্তব্যের জায়গায় শেষ স্টপ “東谷” লেখা থাকবে। “交流館” হলো পথে যে স্টপে বাস থামে, সেটি।",
+      "reason": "Restore complete Bengali endpoint display versus intermediate named Exchange Hall stop distinction."
+    },
+    {
+      "scenarioId": "SC-LOC-JP-28222-01-001",
+      "turnId": "DLG-SC-LOC-JP-28222-01-001-SHARED-10",
+      "field": "hintTranslation",
+      "expectedTranslationSha256": "7105f7ea7af452329de0aa0d4dfa355af2a9172a14e1ad942dcfdb71720b03a7",
+      "translation": "“東谷”গামী বাসে উঠবেন এবং পথে “交流館” স্টপে নামবেন—এই দুই বিষয় একসঙ্গে সংক্ষেপে বলুন। জাপানি ভাষায় বলুন।",
+      "reason": "Restore named intermediate stop and natural summary task while preserving terminal-bound bus and Japanese instruction."
+    }
+  ]
+}
