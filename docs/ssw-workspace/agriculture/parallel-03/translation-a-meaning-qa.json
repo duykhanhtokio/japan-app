@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "agri_crop_management_independent_ai",
+  "reviewedPacket": "docs/ssw-workspace/agriculture/parallel-03/translations-a.json",
+  "snapshotSha256": "3fd7fcff8a5a2c6a0c8dda0fa4ea09c2bc302c8f21be9061a342e61ec74a3a5e",
+  "snapshotOnly": true,
+  "completedEntriesAtSnapshot": 44,
+  "localesAtSnapshot": [
+    "en",
+    "vi",
+    "id",
+    "zh-CN",
+    "zh-TW",
+    "hi",
+    "bn",
+    "ne",
+    "th",
+    "tl",
+    "my"
+  ],
+  "unfinishedOrAbsentLocalesNotWaitedFor": [
+    "km"
+  ],
+  "sourceHashMismatches": [],
+  "reviewScope": {
+    "lessonIds": [
+      "agr-vegetables",
+      "agr-fruit",
+      "agr-statistics"
+    ],
+    "lessonLocalePairs": 33,
+    "paragraphsPerLocale": {
+      "agr-vegetables": [
+        "p4",
+        "p5"
+      ],
+      "agr-fruit": [
+        "p2",
+        "p3",
+        "p4"
+      ],
+      "agr-statistics": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5"
+      ]
+    },
+    "targetParagraphsRead": 110,
+    "notFullEntryOrNativeReview": true
+  },
+  "status": "TARGET_MEANINGS_PRESERVED_WITH_TWO_CLARITY_EDITS_PROPOSED",
+  "blockingIssues": [],
+  "findings": [
+    {
+      "topic": "source_date_fidelity",
+      "result": "2019 and Heisei30 remain historical references in all11reviewed locales. No conversion into current statistics was found."
+    },
+    {
+      "topic": "percentages_and_denominators",
+      "result": "24/20/9/4 percent remain tied to2019agricultural output value. Cultivated-area/weight shares remain distinct. Floriculture share within all agriculture remains distinct from cut-flower share within floriculture."
+    },
+    {
+      "topic": "monetary_units",
+      "result": "Yen /100million yen /1trillion yen distinction preserved across reviewed statistics-p3. No factor-of10/100error found."
+    },
+    {
+      "topic": "calorie_and_weight",
+      "result": "2019weight table remains distinct from calorie-based indicator; texts do not treat them as equal-denominator percentages."
+    },
+    {
+      "topic": "evergreen_deciduous",
+      "result": "Satsuma/citrus and loquat remain evergreen, apple/grape/pear/peach/persimmon remain deciduous. Cold-region apple/warm-region satsuma tendency is not turned into exclusivity."
+    },
+    {
+      "topic": "year_round_vs_regional_relay",
+      "result": "Environmental-control-based year-round same-kind production is distinguished from shifting production areas by climate/elevation in all11reviewed locales. No conflation with repeated same-place monocropping was found."
+    }
+  ],
+  "proposedCorrections": [
+    {
+      "locale": "en",
+      "lessonId": "agr-fruit",
+      "field": "paragraphs.agr-fruit-p2",
+      "severity": "clarity_taxonomic_grouping",
+      "before": "Citrus trees such as satsuma mandarin, and loquat, are classified as evergreen fruit trees. Learn the names together with their classification, rather than memorizing the names alone.",
+      "after": "Citrus trees, including satsuma mandarin, are evergreen fruit trees. Loquat is also an evergreen fruit tree. Learn the names together with their classification, rather than memorizing the names alone.",
+      "sourceJa": "ウンシュウミカンなどのかんきつ類や、ビワは常緑果樹として整理します。名前を覚えるだけでなく、分類と組み合わせて確認してください。",
+      "sourceReferences": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 7,
+          "printedPage": 1
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 6,
+          "printedPage": 4
+        }
+      ],
+      "reason": "Separate loquat explicitly from citrus examples; current punctuation is awkward and can be misread.",
+      "requiresSourceHashChange": false,
+      "applyOnlyIfBeforeStillMatches": true
+    },
+    {
+      "locale": "th",
+      "lessonId": "agr-fruit",
+      "field": "paragraphs.agr-fruit-p2",
+      "severity": "clarity_taxonomic_grouping",
+      "before": "พืชตระกูลส้ม เช่น ส้มอุนชู และปี่แป่ อยู่ในกลุ่มไม้ผลไม่ผลัดใบ นอกจากจำชื่อแล้ว ให้ตรวจสอบประเภทควบคู่กันด้วย",
+      "after": "พืชตระกูลส้ม เช่น ส้มอุนชู จัดอยู่ในกลุ่มไม้ผลไม่ผลัดใบ ส่วนต้นปี่แป่ก็เป็นไม้ผลไม่ผลัดใบเช่นกัน นอกจากจำชื่อแล้ว ให้ตรวจสอบประเภทควบคู่กันด้วย",
+      "sourceJa": "ウンシュウミカンなどのかんきつ類や、ビワは常緑果樹として整理します。名前を覚えるだけでなく、分類と組み合わせて確認してください。",
+      "sourceReferences": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 7,
+          "printedPage": 1
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 6,
+          "printedPage": 4
+        }
+      ],
+      "reason": "Explicitly separates loquat from citrus so it is not read as another example of the citrus family.",
+      "requiresSourceHashChange": false,
+      "applyOnlyIfBeforeStillMatches": true
+    }
+  ],
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "originalPacketModified": false,
+  "livePacketMayContainLaterEntries": true
+}
