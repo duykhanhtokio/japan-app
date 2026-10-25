@@ -884,12 +884,6 @@ const styles =
         },
 
         plantButtonPressed: {
-            transform: [
-                {
-                    scale:
-                        0.96,
-                },
-            ],
         },
 
         plantButtonText: {fontFamily: ROYAL_FONT.body,

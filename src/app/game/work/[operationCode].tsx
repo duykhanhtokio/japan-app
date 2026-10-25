@@ -2512,7 +2512,7 @@ const styles =
             fontSize: 74,
         },
 
-        npcName: {color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:15,textShadowColor:ROYAL.lacquer,textShadowOffset:{width:0,height:1},textShadowRadius:4},
+        npcName: {color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:15,},
 
         dialogueArea: {paddingHorizontal:ROYAL_LAYOUT.screenGutter,paddingBottom:12},
 

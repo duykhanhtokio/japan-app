@@ -1,9 +1,10 @@
+import { useBackdropOcclusion } from '@/components/ui/AppBackdrop';
 import { EffectPressable as Pressable } from '@/components/effects/EffectPressable';
 import { backPrepared } from '@/components/ui/prepareSceneRoute';
 import fontAdvances from './royal-font-advances.json';
 
-import { useMemo, useRef } from 'react';
-import { Animated, useWindowDimensions, Image, ImageSourcePropType, StyleSheet, View } from 'react-native';
+import { useMemo } from 'react';
+import { useWindowDimensions, Image, ImageSourcePropType, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { RoyalMapPill, ROYAL, ROYAL_CONTENT_GROUP, ROYAL_FONT, ROYAL_LAYOUT, useRoyalGroupHeight } from '@/components/ui/RoyalSurface';
 import { WorldTitleHeader } from '@/components/world/WorldTitleHeader';
@@ -16,6 +17,7 @@ export type ResponsiveMapAssets = Record<MapMode, ImageSourcePropType>;
 export type MapLandZones = Record<MapMode,{width:number;height:number;rects:readonly (readonly [number,number,number,number])[]}>;
 
 export default function ResponsiveWorldMap({assets,items,onItemPress,title,subtitle,regionLabel,landZones}:{assets:ResponsiveMapAssets;items:WorldMapItem[];onItemPress:(item:WorldMapItem)=>void;title?:string;subtitle?:string;regionLabel?:string;landZones?:MapLandZones}) {
+ useBackdropOcclusion(true);
  const insets=useSafeAreaInsets(),size=useWindowDimensions();
  const markerSizing=useRoyalGroupHeight(ROYAL_CONTENT_GROUP.worldMapMarker,ROYAL_LAYOUT.mapMarkerHeight);
  const advance=(text:string,role:'heading'|'body',fontSize:number)=>Array.from(text).reduce((sum,char)=>sum+((fontAdvances[role] as Record<string,number>)[char]??1)*fontSize,0);
@@ -110,18 +112,18 @@ export default function ResponsiveWorldMap({assets,items,onItemPress,title,subti
 }
 
 function MapMarker({item,width,height,label,anchor,onPress}:{item:WorldMapItem;width:number;height:number;label:Point;anchor:Point;onPress:()=>void}){
- const press=useRef(new Animated.Value(0)).current; const cx=label.x,cy=label.y+height/2,dx=anchor.x-cx,dy=anchor.y-cy;
- const length=Math.sqrt(dx*dx+dy*dy),angle=`${Math.atan2(dy,dx)}rad`; const release=()=>Animated.spring(press,{toValue:0,speed:20,bounciness:9,useNativeDriver:true}).start();
+ const cx=label.x,cy=label.y+height/2,dx=anchor.x-cx,dy=anchor.y-cy;
+ const length=Math.sqrt(dx*dx+dy*dy),angle=`${Math.atan2(dy,dx)}rad`;
  return <><View pointerEvents="none" style={[s.connector,{left:cx,top:cy,width:length,transform:[{rotate:angle}]}]}/><View pointerEvents="none" style={[s.pin,{left:anchor.x-5,top:anchor.y-5}]}/>
-  <Animated.View style={[s.marker,{left:label.x-width/2,top:label.y,width,minHeight:height,transform:[{translateY:press.interpolate({inputRange:[0,1],outputRange:[0,5]})},{scale:press.interpolate({inputRange:[0,1],outputRange:[1,.965]})}]}]}>
-   <Pressable style={s.markerButton} onPressIn={()=>Animated.timing(press,{toValue:1,duration:70,useNativeDriver:true}).start()} onPressOut={release} onPress={onPress} accessibilityRole="button" accessibilityLabel={item.ja}>
+  <View style={[s.marker,{left:label.x-width/2,top:label.y,width,minHeight:height}]}>
+   <Pressable style={s.markerButton} onPress={onPress} accessibilityRole="button" accessibilityLabel={item.ja}>
     <RoyalMapPill primary={item.ja} secondary={item.en} color={item.color} style={s.markerCapsule}/>
    </Pressable>
-  </Animated.View></>
+  </View></>
 }
 
 const s=StyleSheet.create({
  screen:{flex:1,overflow:'hidden',backgroundColor:'transparent'},background:{...StyleSheet.absoluteFillObject,width:'100%',height:'100%'},
  hero:{position:'absolute',zIndex:20,alignItems:'center'},
- connector:{position:'absolute',height:2,borderRadius:1,transformOrigin:'left center',opacity:.92,zIndex:14,backgroundColor:ROYAL.gold,shadowColor:'#fff1b0',shadowOpacity:.8,shadowRadius:3},pin:{position:'absolute',width:10,height:10,borderRadius:5,backgroundColor:ROYAL.gold,zIndex:15,shadowColor:'#fff2a8',shadowOpacity:.9,shadowRadius:5},marker:{position:'absolute',zIndex:18,shadowColor:'#020713',shadowOffset:{width:0,height:6},shadowOpacity:.5,shadowRadius:8,elevation:12},markerButton:{flex:1,width:'100%'},markerCapsule:{width:'100%',minHeight:ROYAL_LAYOUT.mapMarkerHeight,minWidth:0},ja:{fontFamily:ROYAL_FONT.heading}
+ connector:{position:'absolute',height:2,borderRadius:1,transformOrigin:'left center',opacity:.92,zIndex:14,backgroundColor:ROYAL.gold,},pin:{position:'absolute',width:10,height:10,borderRadius:5,backgroundColor:ROYAL.gold,zIndex:15,},marker:{position:'absolute',zIndex:18,},markerButton:{flex:1,width:'100%'},markerCapsule:{width:'100%',minHeight:ROYAL_LAYOUT.mapMarkerHeight,minWidth:0},ja:{fontFamily:ROYAL_FONT.heading}
 });

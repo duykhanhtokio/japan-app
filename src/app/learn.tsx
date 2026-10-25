@@ -489,12 +489,6 @@ const styles =
 
         pressed: {
             opacity: 0.68,
-
-            transform: [
-                {
-                    scale: 0.985,
-                },
-            ],
         },
 
         /*
@@ -538,16 +532,6 @@ const styles =
             fontSize: 28,
             fontFamily: ROYAL_FONT.heading,
             textAlign:'center',
-
-            textShadowColor:
-                '#fffdf7',
-
-            textShadowOffset: {
-                width: 0,
-                height: 1,
-            },
-
-            textShadowRadius: 1,
         },
 
         headingVi: {
@@ -646,7 +630,7 @@ const styles =
          */
 
         levelBadge: {width:72,height:72,flexShrink:0,overflow:'hidden',alignItems:'center',justifyContent:'center',marginRight:12},
-        levelBadgeText: {color:'#fff0bd',fontSize:22,fontWeight:'900',textShadowColor:'#020a17',textShadowOffset:{width:0,height:2},textShadowRadius:3},
+        levelBadgeText: {color:'#fff0bd',fontSize:22,fontWeight:'900',},
 
         /*
          * LEVEL CONTENT

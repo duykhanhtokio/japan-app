@@ -12,4 +12,4 @@ export default function WaitingSpeechDots(){
  },[lights]);
  return <View accessibilityLabel="マイク入力待ち" style={s.row}>{lights.map((opacity,index)=><Animated.View key={index} style={[s.dot,{opacity}]}/>)}</View>;
 }
-const s=StyleSheet.create({row:{minHeight:32,flexDirection:'row',justifyContent:'center',alignItems:'center',gap:9},dot:{width:6,height:6,borderRadius:3,backgroundColor:'#bd8b30',shadowColor:'#e9bc55',shadowOpacity:.9,shadowRadius:4,shadowOffset:{width:0,height:0}}});
+const s=StyleSheet.create({row:{minHeight:32,flexDirection:'row',justifyContent:'center',alignItems:'center',gap:9},dot:{width:6,height:6,borderRadius:3,backgroundColor:'#bd8b30',}});

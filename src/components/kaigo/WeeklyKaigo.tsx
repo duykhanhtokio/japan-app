@@ -1,3 +1,4 @@
+import { useBackdropOcclusion } from '@/components/ui/AppBackdrop';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {
   useCallback,
@@ -610,6 +611,7 @@ export function WeeklyKaigo({
     [tab, setTab] = useState<"calendar" | "mocks">("calendar"),
     [endReached, setEndReached] = useState(false),
     [frameWidth, setFrameWidth] = useState(350);
+  useBackdropOcclusion(!!route);
   const { colors } = useStudyAppearance(),
     { fontScale } = useWindowDimensions(),
     scroll = useRef<ScrollView>(null),

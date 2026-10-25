@@ -1,3 +1,4 @@
+import { useBackdropOcclusion } from '@/components/ui/AppBackdrop';
 import { useAppLanguage } from '@/context/LanguageContext';
 import { legacyFieldTranslation } from '@/i18n/selected-content';
 import { Text } from '@/components/app/LocalizedText';
@@ -58,6 +59,7 @@ export default function ProfileScreen() {
     const modalInsets = useSafeAreaInsets();
     const modalFrame = useSafeAreaFrame();
     const [detailsVisible,setDetailsVisible]=useState(false);
+    useBackdropOcclusion(detailsVisible);
     const navigate=(href:Parameters<typeof router.push>[0])=>{void pushPrepared(href, () => setDetailsVisible(false));};
     const [economy,setEconomy]=useState<LearningEconomy|null>(null);
     useFocusEffect(useCallback(()=>{let active=true;void syncJlptQualification().then(value=>{if(active)setEconomy(value)});return()=>{active=false}},[]));

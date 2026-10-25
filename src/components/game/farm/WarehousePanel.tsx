@@ -1,6 +1,6 @@
 import FarmAreaIcon from './FarmAreaIcon';
 import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
-import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
+import { FarmPanel as RoyalContentPanel } from './FarmPanel';
 import {
     Image,
     Modal,

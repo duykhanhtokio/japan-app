@@ -376,3 +376,10 @@ docs/localization-workspace/furigana-qa/*.png -filter -diff -merge -text
 
 # Small initial NPC voice recordings are ordinary Git blobs.
 assets/dialogue-voice/*.mp3 -filter -diff -merge -text
+
+# Small generated UI frames travel with their renderer (no extra LFS download).
+assets/app/ui/royal-af/paper-merged.png -filter -diff -merge -text
+assets/app/ui/royal-af/hud-merged.png -filter -diff -merge -text
+assets/app/ui/royal-af/open-merged.png -filter -diff -merge -text
+# Bounded visual evidence for the layer change.
+docs/checkpoints/ui-layers-2026-10-25/*.webp -filter -diff -merge -text

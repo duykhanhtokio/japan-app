@@ -391,10 +391,6 @@ const styles = StyleSheet.create({
     selected: {
         borderColor: '#FFE47A',
         backgroundColor: 'rgba(255,228,122,0.14)',
-        shadowColor: '#FFD43B',
-        shadowOpacity: 0.65,
-        shadowRadius: 7,
-        elevation: 6,
     },
     pressed: {
         opacity: 0.82,
@@ -423,9 +419,6 @@ const styles = StyleSheet.create({
     feedText: {fontFamily: ROYAL_FONT.body,
 
         color: '#FFF4D6',
-        textShadowColor: '#251708',
-        textShadowOffset: { width: 0, height: 1 },
-        textShadowRadius: 3,
         fontSize: 11,
         fontWeight: '900',
         textAlign: 'center',

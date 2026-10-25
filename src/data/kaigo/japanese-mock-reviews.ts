@@ -11,7 +11,7 @@ export type JapaneseMockReview = { titleJa: string; questions: Record<string, Re
 export type JapaneseReviewedMockForm = MockForm & { japaneseReviewApplied?: boolean; japaneseCoreCorrected?: boolean; titleJa?: string };
 type Correction = { expected: Partial<MockQuestion>; replacement: Partial<MockQuestion> };
 export const japaneseMockCoreCorrections: Record<string, { questions: Record<string, Correction> }> = correctionData.forms;
-export const japaneseMockFigureLabelsPending = new Set(figureLanguageReview.pendingJapaneseLabels);
+export const japaneseMockFigureLabelsPending = new Set<string>(figureLanguageReview.pendingJapaneseLabels);
 export const japaneseMockReviews: Record<string, JapaneseMockReview> = Object.assign(
   {}, ...japaneseMockReviewBatches.map(batch => batch.forms),
 );

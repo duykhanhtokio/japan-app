@@ -3,7 +3,6 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { useAppLanguage } from '@/context/LanguageContext';
 import { getGrammarMeaning, getGrammarExampleTranslation, type GeneratedGrammar } from '@/data/jlpt-study-data';
 import { getGrammarCopy } from '@/i18n/grammar-copy';
-import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
 
 type Props = { grammar: GeneratedGrammar[]; learnedIds: string[]; limit: number; onToggle: (id: string) => void };
@@ -17,7 +16,7 @@ export default function GrammarCatalog({ grammar, learnedIds, limit, onToggle }:
         <Text testID="grammar-notation-guide" style={styles.help}>{copy.legend}</Text>
         {grammar.slice(0, limit).map(item => {
             const complete = learned.has(item.id);
-            return <RoyalPaperPanel key={item.id} style={styles.card}>
+            return <View key={item.id} style={styles.card}>
                 <View testID={`grammar-card-${item.id}`}>
                     <View style={styles.cardTop}>
                         <Text style={styles.itemTitle}>{item.name}</Text>
@@ -42,7 +41,7 @@ export default function GrammarCatalog({ grammar, learnedIds, limit, onToggle }:
                         {item.commonMistakes.map((value, i) => <Fragment key={i}><Text style={styles.detail}>{value}</Text></Fragment>)}
                     </View>}
                 </View>
-            </RoyalPaperPanel>;
+            </View>;
         })}
         {limit < grammar.length && <Text style={styles.loading}>{copy.loading}</Text>}
     </>;
@@ -50,7 +49,7 @@ export default function GrammarCatalog({ grammar, learnedIds, limit, onToggle }:
 
 const styles = StyleSheet.create({
     help: { fontFamily: ROYAL_FONT.body, color: '#625f57', lineHeight: 23, marginBottom: 15 },
-    card: { paddingHorizontal: 28, paddingVertical: 26, marginBottom: 14 },
+    card: { paddingHorizontal: 16, paddingVertical: 20, marginBottom: 8, borderBottomWidth: 1, borderBottomColor: '#c8bea8' },
     cardTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', gap: 10 },
     itemTitle: { fontFamily: ROYAL_FONT.body, flex: 1, fontSize: 21, fontWeight: '900', color: '#24231f' },
     mark: { maxWidth: '46%', flexShrink: 1, backgroundColor: 'transparent', borderWidth: 1, borderColor: '#b8b1a5', paddingHorizontal: 10, paddingVertical: 8, borderRadius: 10 },

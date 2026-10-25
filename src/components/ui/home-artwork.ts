@@ -1,9 +1,9 @@
-import { OPEN_FRAME_SLICES } from './RoyalPaperPanel';
+import { MERGED_FRAMES } from './RoyalPaperPanel';
 
 // Only artwork actually displayed on Home. The generated transitive inventory
 // also includes map pills, every frame tone and unused controls from shared modules.
 export const HOME_ARTWORK = [
-  ...OPEN_FRAME_SLICES,
+  MERGED_FRAMES.open,
   require('../../../assets/app/ui/royal-af/button-back-curved-a-v1.png'),
   require('../../../assets/app/ui/royal-af/nav-home-v1.png'),
   require('../../../assets/app/ui/royal-af/nav-game-v1.png'),

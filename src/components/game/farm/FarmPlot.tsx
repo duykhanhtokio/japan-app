@@ -438,30 +438,11 @@ const styles =
 
             backgroundColor:
                 'rgba(255, 226, 72, 0.15)',
-
-            shadowColor:
-                '#FFD33D',
-
-            shadowOpacity:
-                0.9,
-
-            shadowRadius:
-                9,
-
-            elevation:
-                8,
         },
 
         pressed: {
             opacity:
                 0.78,
-
-            transform: [
-                {
-                    scale:
-                        0.97,
-                },
-            ],
         },
 
         locked: {

@@ -136,7 +136,6 @@ const styles =
         title: {
             fontFamily:ROYAL_FONT.heading,
             color: '#fff3cf',
-            textShadowColor:'#07101f',textShadowOffset:{width:0,height:2},textShadowRadius:4,
 
             fontSize: 25,
 
@@ -146,7 +145,6 @@ const styles =
         subtitle: {
             fontFamily:ROYAL_FONT.body,
             color: '#fffdf7',
-            textShadowColor:'#07101f',textShadowOffset:{width:0,height:1},textShadowRadius:3,
 
             fontSize: 16,
         },

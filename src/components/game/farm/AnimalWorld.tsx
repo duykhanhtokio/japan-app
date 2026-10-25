@@ -2109,13 +2109,6 @@ const styles =
         pressed: {
             opacity:
                 0.76,
-
-            transform: [
-                {
-                    scale:
-                        0.97,
-                },
-            ],
         },
 
         /*

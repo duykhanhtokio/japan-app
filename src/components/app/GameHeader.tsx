@@ -1,6 +1,6 @@
 import { EffectPressable as Pressable } from '@/components/effects/EffectPressable';
 import { pushPrepared, replacePrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
-import { OPEN_FRAME_SLICES, royalOpenFrameGeometry } from '@/components/ui/RoyalPaperPanel';
+import RoyalPaperPanel, { royalOpenFrameGeometry } from '@/components/ui/RoyalPaperPanel';
 import { router } from 'expo-router';
 import { Image, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { RoyalBackButton, ROYAL, ROYAL_FONT, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
@@ -101,12 +101,7 @@ function EnergyBar({label,value,ratio,tint,large=false}:{label:string;value:stri
  const percentage=Math.round(clamp01(ratio)*100);
  return <View testID={`hud-energy-${label.startsWith('CREDIT')?'credit':'exp'}`} style={[s.energyFrame,large&&s.approvedEnergyFrame]}>
   <View pointerEvents="none" style={[s.energyInset,{left:inset.left,right:inset.right,top:inset.top,bottom:inset.bottom,borderRadius:inset.radius,backgroundColor:'#fff7e7'}]}><View style={[s.energyColorClip,{width:`${percentage}%`,backgroundColor:tint}]}/></View>
-  <View pointerEvents="none" style={StyleSheet.absoluteFillObject}>{OPEN_FRAME_SLICES.map((source,index)=>{
-   const cell=index<4?index:index+1,row=Math.floor(cell/3),col=cell%3;
-   const horizontal=col===0?{left:0,width:inset.cornerX}:col===2?{right:0,width:inset.cornerX}:{left:inset.cornerX,right:inset.cornerX};
-   const vertical=row===0?{top:0,height:inset.cornerY}:row===2?{bottom:0,height:inset.cornerY}:{top:inset.cornerY,bottom:inset.cornerY};
-   return <View key={cell} style={{position:'absolute',...horizontal,...vertical}}><Image fadeDuration={0} source={source} resizeMode="stretch" style={{width:'100%',height:'100%'}}/></View>;
-  })}</View>
+  <RoyalPaperPanel borderOnly edgeScale={inset.cornerX/36} style={{...StyleSheet.absoluteFillObject,minHeight:0,padding:0}} />
   <View pointerEvents="none" style={s.energyTextSafe}><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.78} maxFontSizeMultiplier={1} style={[s.energyCenteredText,percentage>=55&&s.creditText]}>{label}{value?`  ${value}`:''}</Text></View>
  </View>;
 }
@@ -129,7 +124,7 @@ const s=StyleSheet.create({
  approvedCoins:{width:'25%',minWidth:78,height:58},
  approvedCoinIcon:{width:22,height:22,flexShrink:0},
  approvedCoinValue:{flex:1,minWidth:0,color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:16,lineHeight:22,textAlign:'center',includeFontPadding:false},
- studyContainer:{width:'100%',paddingHorizontal:10,paddingTop:8,paddingBottom:10,borderWidth:1,borderRadius:16,borderColor:ROYAL.gold,backgroundColor:ROYAL.lacquer,shadowColor:'#07101f',shadowOpacity:.24,shadowRadius:8,shadowOffset:{width:0,height:4},elevation:4},
+ studyContainer:{width:'100%',paddingHorizontal:10,paddingTop:8,paddingBottom:10,borderWidth:1,borderRadius:16,borderColor:ROYAL.gold,backgroundColor:ROYAL.lacquer,},
  studyTop:{minHeight:48,flexDirection:'row',alignItems:'center',gap:8},
  studyIdentity:{flex:1,minWidth:0,flexDirection:'row',alignItems:'center',gap:6},
  studyAvatar:{width:38,height:38},studyIdentityText:{flex:1,minWidth:0},
@@ -162,7 +157,7 @@ const s=StyleSheet.create({
  energyInset:{position:'absolute',overflow:'hidden'},
  energyColorClip:{height:'100%'},
  energyTextSafe:{position:'absolute',left:36,right:36,top:0,bottom:0,alignItems:'center',justifyContent:'center'},
- energyCenteredText:{width:'100%',textAlign:'center',color:'#142335',fontFamily:ROYAL_FONT.heading,fontSize:13,lineHeight:20,includeFontPadding:false,textShadowColor:'transparent',textShadowOffset:{width:0,height:0},textShadowRadius:0},
- creditText:{color:'#fff7df',fontWeight:'700',textShadowColor:'#43121a',textShadowOffset:{width:0,height:1},textShadowRadius:1},
- pressed:{opacity:.84,transform:[{translateY:2},{scale:.985}]}
+ energyCenteredText:{width:'100%',textAlign:'center',color:'#142335',fontFamily:ROYAL_FONT.heading,fontSize:13,lineHeight:20,includeFontPadding:false,},
+ creditText:{color:'#fff7df',fontWeight:'700',},
+ pressed:{opacity:.84,}
 });

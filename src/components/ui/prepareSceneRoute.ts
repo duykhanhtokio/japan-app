@@ -1,11 +1,10 @@
 import { Dimensions, type ImageSourcePropType } from 'react-native';
 import { japanAssets, regionMaps, type RegionMapId } from '@/data/world-map-config';
 import { prepareArtwork, isArtworkSource, type ArtworkSource } from './prepareArtwork';
-import { ROUTE_ARTWORK } from './route-artwork';
 import { COMMON_UI_ARTWORK } from './common-artwork';
 import { HOME_ARTWORK } from './home-artwork';
 import { router } from 'expo-router';
-import { matchRoutePattern, previousRoutePath, type NavigationState } from './navigation-path';
+import { previousRoutePath, type NavigationState } from './navigation-path';
 
 type PreparedBackdrop = { source: ImageSourcePropType; blurRadius: number; city?: boolean };
 const routeBackdrops = new Map<string, PreparedBackdrop>();
@@ -13,12 +12,8 @@ export const preparedRouteBackdrop = (path: string) => routeBackdrops.get(path);
 
 export async function prepareSceneRoute(path: string) {
   path = path.split(/[?#]/)[0].replace(/\/$/, '') || '/';
-  const pattern = matchRoutePattern(path, Object.keys(ROUTE_ARTWORK));
-  // Dynamic world scenes are selected below. Their generated route list
-  // includes every category's backgrounds/NPCs; do not decode all of them.
-  const dynamicWorldScene = /^\/world\/(?:city|location|dialogue)\//.test(path);
-  const routeImages = path === '/home' ? HOME_ARTWORK
-    : [...COMMON_UI_ARTWORK, ...(!dynamicWorldScene && pattern ? ROUTE_ARTWORK[pattern] : [])];
+  // Warm the visible shared controls, never the transitive inventory of other screens.
+  const routeImages = path === '/home' ? HOME_ARTWORK : COMMON_UI_ARTWORK;
   const additional: ArtworkSource[] = [];
   const { width, height } = Dimensions.get('window');
   const ratio = height ? width / height : .46;
@@ -91,8 +86,9 @@ export async function prepareSceneRoute(path: string) {
   if (isArtworkSource(backdrop)) routeBackdrops.set(path, { source: typeof backdrop === 'string' ? { uri: backdrop } : backdrop, blurRadius: ownsPreparedFullScreen ? blurRadius : 40, city: cityBackdrop });
   // Publish the correct target before waiting: the bounded navigation fallback
   // must never render a generic backdrop and then replace it with this scene.
-  // Decode the destination and its controls in one parallel pass, without neighbours.
-  await prepareArtwork([...routeImages, ...additional, ...(isArtworkSource(artwork) ? [artwork] : [])]);
+  // The background is critical; controls warm without delaying navigation.
+  void prepareArtwork([...routeImages, ...additional]).catch(error => console.warn('Control artwork:', error));
+  if (isArtworkSource(artwork)) await prepareArtwork(artwork);
 }
 
 let navigationIntent = 0;
@@ -114,7 +110,7 @@ export function navigateWithPreparedArtwork(path: string, navigate: () => void, 
     timeout = setTimeout(() => {
       console.warn('Destination artwork timed out; continuing navigation:', path);
       resolve();
-    }, 2500);
+    }, 180);
   })]);
   return Promise.all([boundedArtwork, Promise.resolve().then(() => prepareState?.())]).then(() => {
     if (intent !== navigationIntent) return false;

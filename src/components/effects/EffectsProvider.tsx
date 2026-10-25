@@ -25,6 +25,8 @@ export function EffectsProvider({ children }: PropsWithChildren) {
       for (const key of Object.keys(defaults) as (keyof EffectPreferences)[]) {
         if (typeof stored?.[key] === 'boolean') clean[key] = stored[key];
       }
+      clean.lighting = false;
+      clean.motion = false;
       latest.current = clean;
       setPreferences(clean);
     }).catch(error => console.warn('Load effects preferences:', error))
@@ -41,7 +43,7 @@ export function EffectsProvider({ children }: PropsWithChildren) {
     return () => { mounted = false; motion.remove(); app.remove(); };
   }, []);
   function update(key: keyof EffectPreferences, value: boolean) {
-    const next = { ...latest.current, [key]: value };
+    const next = { ...latest.current, [key]: value, lighting: false, motion: false };
     latest.current = next;
     setPreferences(next);
     // Serialize rapid toggles so an older disk write cannot win.

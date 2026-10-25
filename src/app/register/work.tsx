@@ -908,11 +908,9 @@ const styles =
                 '900',
 
             lineHeight:36,textAlign:'center',textAlignVertical:'center',includeFontPadding:false,
-
-            textShadowColor:'#503716',textShadowOffset:{width:0,height:2},textShadowRadius:4,
         },
 
-        titleLocalized:{width:'100%',marginTop:3,color:'#fff7e5',fontSize:10.5,lineHeight:15,fontFamily:ROYAL_FONT.body,textAlign:'center',textAlignVertical:'center',includeFontPadding:false,textShadowColor:'rgba(0,0,0,.55)',textShadowOffset:{width:0,height:1},textShadowRadius:3},
+        titleLocalized:{width:'100%',marginTop:3,color:'#fff7e5',fontSize:10.5,lineHeight:15,fontFamily:ROYAL_FONT.body,textAlign:'center',textAlignVertical:'center',includeFontPadding:false,},
 
         subtitle: {
             color:

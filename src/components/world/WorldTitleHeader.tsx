@@ -23,6 +23,6 @@ const s = StyleSheet.create({
   titleRow:{width:'100%',height:76,position:'relative'},
   titlePanel:{position:'absolute',left:0,right:0,height:76},
   title:{alignSelf:'stretch',color:ROYAL.white,fontFamily:ROYAL_FONT.heading,fontSize:24,lineHeight:32,textAlign:'center',includeFontPadding:false},
-  subtitle:{alignSelf:'stretch',color:ROYAL.paleGold,fontFamily:ROYAL_FONT.body,fontSize:13,lineHeight:18,textAlign:'center',marginTop:-3,textShadowColor:'#061020',textShadowOffset:{width:0,height:2},textShadowRadius:3},
-  detail:{alignSelf:'stretch',color:ROYAL.white,fontFamily:ROYAL_FONT.body,fontSize:12,lineHeight:17,textAlign:'center',paddingHorizontal:18,marginTop:2,textShadowColor:'#061020',textShadowOffset:{width:0,height:2},textShadowRadius:3},
+  subtitle:{alignSelf:'stretch',color:ROYAL.paleGold,fontFamily:ROYAL_FONT.body,fontSize:13,lineHeight:18,textAlign:'center',marginTop:-3,},
+  detail:{alignSelf:'stretch',color:ROYAL.white,fontFamily:ROYAL_FONT.body,fontSize:12,lineHeight:17,textAlign:'center',paddingHorizontal:18,marginTop:2,},
 });

@@ -2185,12 +2185,6 @@ const styles =
         },
 
         harvestButtonPressed: {
-            transform: [
-                {
-                    scale:
-                        0.97,
-                },
-            ],
 
             opacity:
                 0.9,
@@ -2286,12 +2280,6 @@ const styles =
         },
 
         devButtonPressed: {
-            transform: [
-                {
-                    scale:
-                        0.95,
-                },
-            ],
 
             opacity:
                 0.85,

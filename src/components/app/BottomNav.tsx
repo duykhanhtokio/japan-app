@@ -47,9 +47,9 @@ function ApprovedTab({tab,active,scale}:{tab:typeof TABS[number];active:boolean;
 const styles=StyleSheet.create({
  container:{width:'100%',height:ROYAL_LAYOUT.homeBottomNavHeight,flexDirection:'row',gap:2},
  item:{flex:1,minWidth:0,height:'100%'},frame:{flex:1,alignItems:'center',justifyContent:'center',paddingHorizontal:14,paddingTop:10,paddingBottom:10},
- icon:{width:28,height:28},label:{width:'100%',color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:11.5,lineHeight:15,textAlign:'center',includeFontPadding:false,textShadowColor:'#211305',textShadowOffset:{width:0,height:1},textShadowRadius:2},labelActive:{color:ROYAL.darkGold,textShadowColor:'rgba(255,255,255,.5)'},
+ icon:{width:28,height:28},label:{width:'100%',color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:11.5,lineHeight:15,textAlign:'center',includeFontPadding:false,},labelActive:{color:ROYAL.darkGold,},
  studyItem:{height:54},studyContainer:{height:'auto',minHeight:ROYAL_LAYOUT.homeBalancedBottomNavHeight,paddingHorizontal:6,paddingTop:7,paddingBottom:6,gap:6,borderWidth:1,borderRadius:14,borderColor:ROYAL.gold,backgroundColor:ROYAL.lacquer},
  studyFrame:{flex:1,minWidth:0,alignItems:'center',justifyContent:'center',gap:1,borderRadius:10,borderWidth:1,borderColor:'transparent'},studyFrameActive:{borderColor:ROYAL.gold,backgroundColor:ROYAL.lacquerLight},studyIcon:{width:23,height:23},studyLabel:{width:'100%',paddingHorizontal:2,color:ROYAL.white,fontFamily:ROYAL_FONT.body,fontSize:11,lineHeight:15,textAlign:'center'},studyLabelActive:{color:ROYAL.paleGold},
  approvedContainer:{width:'100%',height:ROYAL_LAYOUT.homeBottomNavHeight,flexDirection:'row',position:'relative',overflow:'hidden'},approvedArtwork:{position:'absolute',left:0},approvedArtworkImage:{width:'100%',height:'100%'},approvedItem:{flex:1,minWidth:0},approvedTouch:{flex:1,alignItems:'center',justifyContent:'center',paddingTop:4,paddingBottom:4,paddingHorizontal:6},approvedIcon:{width:31,height:31},approvedLabel:{width:'100%',color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:14,lineHeight:19,textAlign:'center',includeFontPadding:false},approvedLabelActive:{color:ROYAL.ivory,fontWeight:'700'},
- pressed:{transform:[{translateY:4},{scale:.975}]},
+ pressed:{},
 });

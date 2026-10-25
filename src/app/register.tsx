@@ -524,19 +524,17 @@ const styles =
 
             fontWeight:
                 '900',
-
-            textShadowColor:'#503716',textShadowOffset:{width:0,height:2},textShadowRadius:4,
             lineHeight:36,textAlign:'center',textAlignVertical:'center',includeFontPadding:false,
         },
 
         titleCopy:{width:'100%',alignItems:'center',justifyContent:'center',paddingVertical:10,paddingHorizontal:40},
-        titleDescription:{width:'100%',marginTop:3,color:'#fff7e5',fontSize:10.5,lineHeight:15,fontFamily:ROYAL_FONT.body,textAlign:'center',textAlignVertical:'center',includeFontPadding:false,textShadowColor:'rgba(0,0,0,.55)',textShadowOffset:{width:0,height:1},textShadowRadius:3},
+        titleDescription:{width:'100%',marginTop:3,color:'#fff7e5',fontSize:10.5,lineHeight:15,fontFamily:ROYAL_FONT.body,textAlign:'center',textAlignVertical:'center',includeFontPadding:false,},
 
         subtitle: {
             color:
                 '#fff7e5',
 
-            fontSize: 13,fontFamily:ROYAL_FONT.body,marginTop:3,textShadowColor:'rgba(0,0,0,.55)',textShadowOffset:{width:0,height:1},textShadowRadius:3,
+            fontSize: 13,fontFamily:ROYAL_FONT.body,marginTop:3,
         },
 
         field:{marginBottom:ROYAL_PLACEMENT.fieldGap,minHeight:ROYAL_LAYOUT.registrationFieldHeight},
@@ -627,7 +625,7 @@ const styles =
         languageHelp: {
             color:'#fff7df',
 
-            fontSize: 11,fontFamily:ROYAL_FONT.body,marginTop:0,lineHeight:15,textAlign:'center',textShadowColor:'rgba(0,0,0,.7)',textShadowOffset:{width:0,height:1},textShadowRadius:3,
+            fontSize: 11,fontFamily:ROYAL_FONT.body,marginTop:0,lineHeight:15,textAlign:'center',
         },
 
         nextButton: {

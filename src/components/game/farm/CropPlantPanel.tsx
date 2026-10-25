@@ -1,6 +1,6 @@
 import { ROYAL_FONT } from '@/components/ui/RoyalSurface';
 import FarmAreaIcon from './FarmAreaIcon';
-import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
+import { FarmPanel as RoyalContentPanel } from './FarmPanel';
 import {
     Image,
     Modal,
@@ -639,13 +639,6 @@ const styles =
         cropCardPressed: {
             opacity:
                 0.8,
-
-            transform: [
-                {
-                    scale:
-                        0.985,
-                },
-            ],
         },
 
         cropIconBox: {

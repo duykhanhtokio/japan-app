@@ -352,12 +352,6 @@ const styles =
         },
 
         plotPressed: {
-            transform: [
-                {
-                    scale:
-                        0.96,
-                },
-            ],
         },
 
         soil: {
