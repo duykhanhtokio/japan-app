@@ -52,7 +52,7 @@ const adapters={safe:'export const useSafeAreaInsets=()=>({top:0,bottom:0,left:0
   const openLesson=async(lesson,language)=>{const level=lesson.levels[0],week=manifest.levels[level].weeks.find(w=>w.lessonIds.includes(lesson.id));await start(level,language);await page.getByRole('button',{name:new RegExp('^第'+week.number+'週')}).click();await page.getByTestId('agri-day-'+level+'-'+(week.lessonIds.indexOf(lesson.id)+1)).click();};
   for(const id of batch.newLessonIds){const lesson=lessons.find(l=>l.id===id);await openLesson(lesson,'ja');const text=await page.locator('body').innerText();assert(text.includes(lesson.objectiveJa)&&text.includes(lesson.activityJa));for(const p of lesson.paragraphs)assert(text.includes(p.textJa)&&text.includes(p.titleJa));newJapaneseLessonCases++;}
   const missing=lessons.find(l=>l.id===batch.newLessonIds[0]);
-  for(const language of Object.keys(translatedFixture.locales)){await openLesson(missing,language);await page.getByRole('button',{name:'訳を表示',exact:true}).click();assert((await page.locator('body').innerText()).includes('この言語の訳は準備中です。'));newLessonMissingTranslationCases++;}
+  if(missing)for(const language of Object.keys(translatedFixture.locales)){await openLesson(missing,language);await page.getByRole('button',{name:'訳を表示',exact:true}).click();assert((await page.locator('body').innerText()).includes('この言語の訳は準備中です。'));newLessonMissingTranslationCases++;}
   const diagrams=require('../../src/data/agriculture/diagrams.json').diagrams;
   for(const d of diagrams){for(const [width,height]of [[390,844],[844,390],[768,1024],[1440,900]])for(const mode of ['昼','夜']){
    await page.setViewportSize({width,height});const lesson=lessons.find(l=>l.id===d.lessonIds[0]);await openLesson(lesson,'ja');await page.getByRole('button',{name:mode,exact:true}).click();const figure=page.getByTestId(d.id);await figure.scrollIntoViewIfNeeded();const text=await figure.innerText();assert(text.includes(d.titleJa)&&d.panels.every(p=>text.includes(p.titleJa)&&text.includes(p.bodyJa)));assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1));
@@ -65,14 +65,17 @@ const adapters={safe:'export const useSafeAreaInsets=()=>({top:0,bottom:0,left:0
  // Exercise the longest newly translated lesson in each locale at all four sizes.
  let newTranslationResponsiveCases=0;
  for(const [language,entries]of Object.entries(translatedFixture.locales)){
-  const candidates=Object.entries(entries).filter(([id])=>/^agr-(safety|ricework|vegwork)-/.test(id));
+  const translatedBatchName=process.env.AGRICULTURE_QA_TRANSLATED_BATCH;
+  let translatedIds=null;
+  if(translatedBatchName){assert(/^parallel-[0-9]+-manifest\.json$/.test(translatedBatchName));translatedIds=new Set(JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/agriculture',translatedBatchName),'utf8')).translatedLessonIds);}
+  const candidates=Object.entries(entries).filter(([id])=>translatedIds?translatedIds.has(id):/^agr-(safety|ricework|vegwork)-/.test(id));
   if(!candidates.length)continue;
   const [id,t]=candidates.sort((a,b)=>Object.values(b[1].paragraphs).join('').length-Object.values(a[1].paragraphs).join('').length)[0];
   const lesson=lessons.find(l=>l.id===id),level=lesson.levels[0],week=manifest.levels[level].weeks.find(w=>w.lessonIds.includes(id)),day=week.lessonIds.indexOf(id)+1;
   for(const [width,height]of [[390,844],[844,390],[768,1024],[1440,900]]){
    await page.setViewportSize({width,height});await start(level,language);await page.getByRole('button',{name:new RegExp('^第'+week.number+'週')}).click();await page.getByTestId('agri-day-'+level+'-'+day).click();await page.getByRole('button',{name:'訳を表示',exact:true}).click();
    assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),language+'/'+id+'/'+width);
-   await page.getByRole('button',{name:'完了する',exact:true}).scrollIntoViewIfNeeded();assert(await page.getByRole('button',{name:'完了する',exact:true}).isVisible());
+   const complete=page.getByRole('button',{name:'完了する',exact:true});await complete.scrollIntoViewIfNeeded();assert(await complete.isVisible());const box=await complete.boundingBox();assert(box&&box.y>=-1&&box.y+box.height<=height+1,language+'/'+id+'/completion bounds');
    const text=await page.locator('body').innerText();assert(Object.values(t.paragraphs).every(v=>text.includes(v)));
    if(width===390){const file='new-long-'+language+'-390x844.png';await page.screenshot({path:path.join(out,file)});screenshots.push(file);}
    newTranslationResponsiveCases++;
