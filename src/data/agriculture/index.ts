@@ -1,6 +1,6 @@
 import content from './lessons.ja.json';
 import manifest from './course-manifest.json';
-import translated from './translations.json';
+import translated from './translations';
 import checks from './weekly-checks.ja.json';
 export type AgricultureLevel = '1' | '2';
 export type AgricultureLesson = (typeof content.lessons)[number];
