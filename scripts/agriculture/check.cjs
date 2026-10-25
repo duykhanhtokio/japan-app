@@ -1,6 +1,6 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const root=path.resolve(__dirname,'../..'),read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
-const content=read('src/data/agriculture/lessons.ja.json'),manifest=read('src/data/agriculture/course-manifest.json'),translations=read('src/data/agriculture/translations.json'),checks=read('src/data/agriculture/weekly-checks.ja.json'),inventory=read('docs/ssw-workspace/agriculture/source-inventory.json'),ledger=read('docs/ssw-workspace/agriculture/knowledge-ledger.json');
+const content=read('src/data/agriculture/lessons.ja.json'),manifest=read('src/data/agriculture/course-manifest.json'),translations=require('./translation-fixture.cjs')(),checks=read('src/data/agriculture/weekly-checks.ja.json'),inventory=read('docs/ssw-workspace/agriculture/source-inventory.json'),ledger=read('docs/ssw-workspace/agriculture/knowledge-ledger.json');
 const sort=x=>Array.isArray(x)?x.map(sort):x&&typeof x==='object'?Object.fromEntries(Object.keys(x).sort().map(k=>[k,sort(x[k])])):x;
 const hash=x=>crypto.createHash('sha256').update(JSON.stringify(sort(x))).digest('hex');
 const byId=new Map(content.lessons.map(l=>[l.id,l])),knowledge=new Map(ledger.knowledge.map(k=>[k.id,k]));assert.equal(byId.size,content.lessons.length);assert.equal(inventory.pageCount,237);assert.equal(inventory.documents.reduce((n,d)=>n+d.pages.length,0),237);
