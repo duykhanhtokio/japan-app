@@ -2,6 +2,12 @@
 
 Status: IN_PROGRESS. This checkpoint does not certify the corpus.
 
+Active resume authority: `prefecture-queue.json`. Work by prefecture, then city,
+then complete scenario sets across all 12 target locales. Ishikawa PRF-017 has
+101 scenarios across 11 cities; Kaga and Komatsu now have all 16 sentence/task
+sets context-reviewed. Metadata, Japanese author issues and visual/native review
+are distinct and unfinished. Next: SC-ISK-NANAO-001, batch 151.
+
 Publisher scope: all 7,128 Japanese scenarios and all 12 target locales,
 including dialogue, task hints, scenario metadata, other learning content and
 localized UI. Construction assessment translation additions remain excluded.
@@ -76,8 +82,46 @@ Base: 8b24294265354983600c5796401275adee6ab374.
 - No Chromium, React Native Web or script-font dependency set is available in
   this checkout's test environment; no device/browser visual check is claimed.
 
-Next: SC-LOC-ISK-KOMATSU-05-001 (batch150), all12locales, then the remaining
+Historical resume after pass02: SC-LOC-ISK-KOMATSU-05-001 (batch150), all12locales, then the remaining
 unreviewed batch150scenarios and the canonical batch order, excluding the two
 reviewed sentence/task sets. Keep source/metadata issues separate from target
 review status. Only2of7,128scenario sentence/task sets have this pass's complete
 12locale contextual review; neither is a native-certified/release-approved item.
+
+## Prefecture pass03 — complete Kaga–Komatsu sentence/task cluster
+
+Publisher requested a larger amount per turn and grouping by prefecture.
+Membership is now derived from the actual city.prefectureId mapping and effective
+scenario overrides, rather than matching scenario-name prefixes. The queue
+contains all 7,128 scenarios exactly once across all 47 prefectures.
+
+This pass adds 14 scenarios, 168 scenario/locale sets, and 2,688 reviewed fields
+(seven times pass02's review volume). It repairs 653 fields in all 12 target
+locales, leaving unrelated scenarios, Japanese source, metadata and approved UI
+untouched. `prefecture-pass-03.json` records every edited before/after value,
+every reviewed Japanese/target hash and the exact source issues left open.
+
+The three touched batches are 149, 150 and 151. Source/ID/speaker/task checks
+pass for all 12 locales. The real application loader verifies all 3,072 reviewed
+fields across the combined 16 Kaga/Komatsu scenarios, including the two preserved
+pass02 scenarios. Full technical coverage still resolves 7,128 scenarios;
+structural coverage is not an additional semantic-review count.
+
+Notable corrections retain reference-item checks on measuring equipment,
+distinguish each postcard's writing date from its mailing date, avoid portraying
+flower containers as being carried on their side, distinguish baggage storage
+from parcel collection, preserve current ID documents as documents, and correct
+the Hindi photograph line that said other customers would not come rather than
+that they would be kept out of the photo. Instructions now identify the intended
+speech/action where the earlier wording was abstract or confusing.
+
+Ishikawa sentence/task context review: Kaga 8/8, Komatsu 8/8, total 16/101;
+85 scenarios remain in the prefecture. Next city: Nanao, then Wajima, then
+Kanazawa and the other Ishikawa cities. The wider app learning/UI translation
+scope and scenario metadata audit remain open. Native review and actual
+device/browser visual validation have not been performed.
+
+Work for this pass is isolated in `japan-app-prefecture-review` so concurrent
+ambient-lighting/UI changes in the earlier checkout remain untouched. Commit
+only the 36 locale data files and this review's documents; do not piggyback
+unpublished changes from another checkout.
