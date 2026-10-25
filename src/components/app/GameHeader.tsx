@@ -1,7 +1,8 @@
+import { EffectPressable as Pressable } from '@/components/effects/EffectPressable';
 import { pushPrepared, replacePrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
 import { OPEN_FRAME_SLICES, royalOpenFrameGeometry } from '@/components/ui/RoyalPaperPanel';
 import { router } from 'expo-router';
-import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Image, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { RoyalBackButton, ROYAL, ROYAL_FONT, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
 import { CREDIT_CAPACITY, RANK_COLORS, RANKS, type JlptRank } from '@/services/learning-economy';
 

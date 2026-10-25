@@ -1,3 +1,4 @@
+import { EffectsSettings } from '@/components/effects/EffectsSettings';
 import { backPrepared } from '@/components/ui/prepareSceneRoute';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
 
@@ -94,10 +95,9 @@ export default function SettingsScreen() {
                 </Text>
             </View>
 
-            <View
-                style={
-                    styles.content
-                }
+            <ScrollView
+                style={styles.content}
+                contentContainerStyle={{ paddingBottom: 32 }}
             >
                 <Text
                     style={
@@ -165,7 +165,8 @@ export default function SettingsScreen() {
                         ›
                     </Text>
                 </Pressable>
-            </View>
+                <EffectsSettings />
+            </ScrollView>
 
             {modalVisible && <Modal
                 visible={

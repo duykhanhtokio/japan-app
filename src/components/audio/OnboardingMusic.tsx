@@ -1,3 +1,4 @@
+import { useEffects } from '@/components/effects/EffectsProvider';
 import { setAudioModeAsync, useAudioPlayer } from 'expo-audio';
 import { usePathname } from 'expo-router';
 import { useEffect, useRef, useState } from 'react';
@@ -16,6 +17,7 @@ function isMusicRoute(pathname: string) {
 
 export function OnboardingMusic() {
   const pathname = usePathname();
+  const { preferences, ready, active: appActive } = useEffects();
   const [webActivated, setWebActivated] = useState(Platform.OS !== 'web');
   useEffect(() => {
     if (Platform.OS !== 'web' || webActivated) return;
@@ -82,6 +84,8 @@ export function OnboardingMusic() {
           });
         }
 
+        if (!ready || !appActive || !preferences.music) { player.pause(); return; }
+
         player.loop = true;
         player.volume = 0.38;
 
@@ -104,7 +108,7 @@ export function OnboardingMusic() {
       active = false;
       if (fadeToken.current === token) fadeToken.current += 1;
     };
-  }, [pathname, player, webActivated]);
+  }, [pathname, player, webActivated, ready, appActive, preferences.music]);
 
   return null;
 }

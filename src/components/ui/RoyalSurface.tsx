@@ -1,7 +1,9 @@
+import { LanternGlow } from '@/components/effects/LanternGlow';
+import { EffectPressable as Pressable } from '@/components/effects/EffectPressable';
 import { RoyalExplanationPanel } from './RoyalPanels';
 import { APP_TYPOGRAPHY } from '@/theme/app-design-system';
 import { type PropsWithChildren, type ReactNode } from 'react';
-import { Image, Pressable, StyleSheet, Text, View, type ImageSourcePropType, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
+import { Image, StyleSheet, Text, View, type ImageSourcePropType, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
 import { ROYAL_CONTROL_SIZE, ROYAL_LAYOUT, ROYAL_SAFE_AREA, useRoyalGroupHeight, useRoyalGroupSize, type RoyalContentGroup } from './RoyalPositioning';
 
 export { ROYAL_CONTENT_GROUP, ROYAL_CONTROL_SIZE, ROYAL_LAYOUT, ROYAL_PLACEMENT, ROYAL_SAFE_AREA, ROYAL_TEXT_FIT, resolveRoyalGrid, useRoyalGroupHeight, useRoyalGroupSize, useRoyalPositioning } from './RoyalPositioning';
@@ -116,7 +118,7 @@ export function RoyalChevron({style,direction='right',variant='navigation'}:{sty
 }
 
 export function RoyalHintButton({onPress,style,color='gold'}:{onPress:()=>void;style?:StyleProp<ViewStyle>;color?:'gold'|'red'}) {
-  return <Pressable accessibilityRole="button" accessibilityLabel="ヒント" hitSlop={8} onPress={onPress} style={({pressed})=>[s.hintAsset,style,pressed&&s.hintPressed]}><Image fadeDuration={0} source={color==='red'?RED_HINT_LANTERN:HINT_LANTERN} resizeMode="contain" style={s.fillImage}/></Pressable>;
+  return <Pressable accessibilityRole="button" accessibilityLabel="ヒント" hitSlop={8} onPress={onPress} style={({pressed})=>[s.hintAsset,style,pressed&&s.hintPressed]}><LanternGlow /><Image fadeDuration={0} source={color==='red'?RED_HINT_LANTERN:HINT_LANTERN} resizeMode="contain" style={s.fillImage}/></Pressable>;
 }
 
 export function RoyalSelectionMark({style}:{style?:StyleProp<ViewStyle>}) {

@@ -1,7 +1,8 @@
+import { EffectPressable as Pressable } from '@/components/effects/EffectPressable';
 import { replacePrepared } from '@/components/ui/prepareSceneRoute';
 import { useIsFocused } from '@react-navigation/native';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
-import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions, type ImageSourcePropType } from 'react-native';
+import { Image, StyleSheet, Text, View, useWindowDimensions, type ImageSourcePropType } from 'react-native';
 import { ROYAL, ROYAL_FONT, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
 
 const NAV_NAVY=require('../../../assets/app/ui/royal-af/button-wide-v2.png');
